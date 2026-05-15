@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/highlight-editor-unlimited@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.highlight_editor_unlimited",
+  "skill": {
+    "id": 44126,
+    "skillKey": "clawhub-highlight-editor-unlimited",
+    "name": "Highlight Editor Unlimited"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "highlight-editor-unlimited",
+    "url": "https://clawhub.ai/skills/highlight-editor-unlimited",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/highlight-editor-unlimited-28f506340c1209dd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "create raw video footage into highlight reel clips with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. sports creators, vloggers, event videog..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775925908985,
+      "changelog": "Initial release of Highlight Editor Unlimited — Extract and Export Video Highlights.\n\n- Upload raw MP4, MOV, AVI, or WebM videos (up to 500MB) and extract short highlight reels in 1080p MP4 format.\n- Works for sports creators, vloggers, and event videographers; highlights generation is done in the cloud and takes 1–2 minutes.\n- Automatic token management: supports both environment-based and anonymous authentication for seamless onboarding.\n- Guides users to upload, request highlight extraction, manage credits, and export results with simple instructions.\n- Robust error handling and clear feedback on file types, credit status, and export limits.\n- Supports batching, iterative editing, and timeline previews; summarize changes if edits return no direct response.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cf2074e4d2ce8deec03698e2529e05ee3199e0e1c3e22bedbd3612edf7583b4a"
+}

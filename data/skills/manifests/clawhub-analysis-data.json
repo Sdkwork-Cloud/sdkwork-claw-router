@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20760,
+  "uuid": "skill-clawhub-analysis-data",
+  "skillKey": "clawhub-analysis-data",
+  "name": "Analysis Data",
+  "summary": "Use this skill when the user wants to create visualizations (charts, dashboards, diagrams, Gantt, PPT), analyze data (Excel/CSV upload, cross-file analysis,...",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.analysis_data",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ChartGen AI",
+      "features": [
+        "Use this skill when the user wants to create visualizations (charts, dashboards, diagrams, Gant."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/analysis-data@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128801127?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "analysis-data",
+      "url": "https://clawhub.ai/skills/analysis-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "analysis-data",
+    "url": "https://clawhub.ai/skills/analysis-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/analysis-data-b37f6969b50c2d11.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/analysis-data@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-analysis-data-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c8fd0827e74e6c456c92ef00e552c67612cd9f9c48f6e108dae30880d5c29d4b",
+      "artifactSizeBytes": 2541
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T04:52:42.045Z"
+}

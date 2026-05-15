@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/instagram@2.1.1",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.instagram",
+  "skill": {
+    "id": 13884,
+    "skillKey": "clawhub-instagram",
+    "name": "Instagram"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "instagram",
+    "url": "https://clawhub.ai/skills/instagram",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/instagram-5ede56738376a8c5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A local-first Instagram content system for hooks, captions, content structure, and draft storage. Acts as The Attention Sculptor to optimize stop-rate and re..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agenticio",
+      "userId": "publishers:agenticio",
+      "displayName": "agenticio",
+      "image": "https://avatars.githubusercontent.com/u/259287600?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1132,
+      "installsAllTime": 10,
+      "installsCurrent": 7,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.1.1",
+      "createdAt": 1773231628615,
+      "changelog": "- Major refactor and rewrite of documentation for clarity and focus on content optimization.\n- Now positions the skill as \"The Attention Sculptor\", emphasizing stop-rate and retention optimization for Instagram posts.\n- Updated privacy and safety details: explicit local-only storage, no API connection, no auto-posting, and no automation.\n- Introduced new content architecture, detailing funnel logic, hook diagnosis, retention, and draft storage processes.\n- Separated \"Content Optimization\" and \"Account Strategy\" operating modes with detailed usage scenarios.\n- Added detailed instructions for output modes (\"Quick Fix\" vs \"Deep Audit\") and refined CTA best practices.\n- Old SKILL.md replaced with more detailed skill.md, new documentation and example files added.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fca047266136e4c5c51edb17520d4eb2cca101b9c3abd1e8a02de861ee73271e"
+}

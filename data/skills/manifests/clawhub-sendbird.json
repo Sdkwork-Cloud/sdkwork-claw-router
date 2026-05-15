@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25719,
+  "uuid": "skill-clawhub-sendbird",
+  "skillKey": "clawhub-sendbird",
+  "name": "Sendbird",
+  "summary": "Sendbird integration. Manage Users, Channels. Use when the user wants to interact with Sendbird data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sendbird",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Sendbird integration",
+        "Manage Users, Channels",
+        "Use when the user wants to interact with Sendbird data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sendbird@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sendbird",
+      "url": "https://clawhub.ai/skills/sendbird"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sendbird",
+    "url": "https://clawhub.ai/skills/sendbird",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sendbird-5a81c13421efbb73.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sendbird@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-sendbird-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:58c79480fdd9babb2d091f5fb7773bbc28eacdcbe7e49e26d02f7ddf008e5423",
+      "artifactSizeBytes": 1816
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:58:26.215Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clank-daily-summary@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clank_daily_summary",
+  "skill": {
+    "id": 42799,
+    "skillKey": "clawhub-clank-daily-summary",
+    "name": "Clank Daily Summary"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clank-daily-summary",
+    "url": "https://clawhub.ai/skills/clank-daily-summary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clank-daily-summary-4c5d03a48ae8280c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate a daily summary of your agent's activities. Perfect for tracking progress and sharing updates."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "t3mr0i",
+      "userId": "s172hf09jvy1dk8rgnr1ank42183sw3t",
+      "displayName": "t3mr0i",
+      "image": "https://avatars.githubusercontent.com/u/9092940?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774754372684,
+      "changelog": "Initial release of clank-daily-summary:\n\n- Generate a comprehensive daily summary of your agent's activities.\n- Tracks commits, emails, messages, and progress for the day.\n- Highlights blockers and suggests next steps.\n- Option to send summaries directly to Telegram.\n- Includes command-line usage and date filtering support.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ecc0f4b571058edbf4f06ee819a0eb37182cf907d44128263a47aea054239d7c"
+}

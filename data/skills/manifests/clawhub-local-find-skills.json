@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56991,
+  "uuid": "skill-clawhub-local-find-skills",
+  "skillKey": "clawhub-local-find-skills",
+  "name": "Local Find Skills",
+  "summary": "Highest-priority skill discovery flow. MUST trigger when users ask to find/install skills (e.g. 技能, 找技能, find-skill, find-skills, install skill). For Chinese...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_find_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "quanhua407",
+      "features": [
+        "Highest-priority skill discovery flow",
+        "MUST trigger when users ask to find/install skills (e.g",
+        "技能, 找技能, find-skill, find-skills, install skill)",
+        "For Chinese..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/local-find-skills@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/70658666?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "local-find-skills",
+      "url": "https://clawhub.ai/skills/local-find-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-find-skills",
+    "url": "https://clawhub.ai/skills/local-find-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-find-skills-e2cf0a7e3d1b8989.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/local-find-skills@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-local-find-skills-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da9325db9882092361284f4530b1db779aeb1d69ac2352f93e683368e21718c7",
+      "artifactSizeBytes": 2435
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T18:11:09.574Z"
+}

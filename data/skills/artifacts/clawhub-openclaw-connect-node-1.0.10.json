@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-connect-node@1.0.10",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_connect_node",
+  "skill": {
+    "id": 62863,
+    "skillKey": "clawhub-openclaw-connect-node",
+    "name": "openclaw-connect子节点专用skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-connect-node",
+    "url": "https://clawhub.ai/skills/openclaw-connect-node",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-connect-node-3a7e8b914df04b62.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw Connect Enterprise 子节点。将当前 OpenClaw 实例注册为远程 Hub 的子节点，通过 appId/key/token 三重验证绑定。提供本地管理界面（任务查看、记忆管理、系统监控）。子节点只能看自己的数据，所有被主节点控制的数据不可操作。当用户说\"连接主节点\"、\"注册子..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ai-scarlett",
+      "userId": "s175xj198rm3z5erf3rhe7tszh83hytd",
+      "displayName": "Scarlett_AI",
+      "image": "https://avatars.githubusercontent.com/u/264102358?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 313,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.0.10",
+      "createdAt": 1774589114201,
+      "changelog": "Version 1.0.10\n\n- No file changes detected in this release.\n- Documentation, code, and functionality remain unchanged from the previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0b0eea3cc0a239008c5fde0ea9e44756040b1b01e67efef8b24d330f28401fd2"
+}

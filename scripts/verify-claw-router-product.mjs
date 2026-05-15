@@ -10,8 +10,9 @@ Run the standard sdkwork-claw-router verification sequence.
 
 Options:
   --fast                 Run the low-cost local iteration gate for Codex loops.
+  --with-edge-dev-smoke  Also run the real pnpm dev edge server smoke.
   --skip-edge-dev-smoke
-                         Skip the real pnpm dev edge server smoke.
+                         Skip the real pnpm dev edge server smoke even when CI or env opts in.
   --skip-rust-tests      Skip cargo test --workspace.
   --skip-python-tests    Skip python -B -m unittest discover tests.
   --skip-schema-gate     Skip python -B -m tools.schema_quality_gate.
@@ -25,6 +26,7 @@ Options:
 function parseArgs(argv) {
   const settings = {
     fast: false,
+    withEdgeDevSmoke: false,
     skipEdgeDevSmoke: false,
     skipRustTests: false,
     skipPythonTests: false,
@@ -42,7 +44,12 @@ function parseArgs(argv) {
       case '--fast':
         settings.fast = true;
         break;
+      case '--with-edge-dev-smoke':
+        settings.withEdgeDevSmoke = true;
+        settings.skipEdgeDevSmoke = false;
+        break;
       case '--skip-edge-dev-smoke':
+        settings.withEdgeDevSmoke = false;
         settings.skipEdgeDevSmoke = true;
         break;
       case '--skip-rust-tests':
@@ -87,6 +94,21 @@ function pnpmCommand(platform = process.platform) {
   return platform === 'win32' ? 'pnpm.cmd' : 'pnpm';
 }
 
+function isEnabled(value) {
+  return ['1', 'true', 'yes', 'on'].includes(String(value ?? '').trim().toLowerCase());
+}
+
+function shouldRunEdgeDevSmoke(settings, env = process.env) {
+  if (settings.skipEdgeDevSmoke || isEnabled(env.CLAWROUTER_EDGE_DEV_SMOKE_SKIP)) {
+    return false;
+  }
+  return (
+    settings.withEdgeDevSmoke === true
+    || isEnabled(env.CLAWROUTER_VERIFY_EDGE_DEV_SMOKE)
+    || isEnabled(env.CLAWROUTER_EDGE_DEV_SMOKE_REQUIRED)
+  );
+}
+
 function cargoVerifyEnv(env = process.env) {
   return {
     ...env,
@@ -129,9 +151,27 @@ function buildFastVerificationPlan(env = process.env) {
       env,
     },
     {
+      label: 'app store seed check',
+      command: pnpmCommand(),
+      args: ['app-store:seed:check'],
+      env,
+    },
+    {
+      label: 'skills seed check',
+      command: pnpmCommand(),
+      args: ['skills:seed:check'],
+      env,
+    },
+    {
       label: 'tooling contract tests',
       command: 'node',
       args: ['scripts/run-claw-router-product.test.mjs'],
+      env,
+    },
+    {
+      label: 'portal auth runtime tests',
+      command: pnpmCommand(),
+      args: ['--dir', 'apps/sdkwork-claw-router-portal', 'exec', 'tsx', 'auth-runtime.test.ts'],
       env,
     },
     {
@@ -194,18 +234,36 @@ function buildVerificationPlan(settings, env = process.env) {
     args: ['--experimental-strip-types', 'apps/sdkwork-claw-router-portal/vite-config-runtime.test.ts'],
     env,
   });
-  if (!settings.skipEdgeDevSmoke && env.CLAWROUTER_EDGE_DEV_SMOKE_SKIP !== '1') {
+  if (shouldRunEdgeDevSmoke(settings, env)) {
     plan.push({
       label: 'edge dev server smoke',
       command: 'node',
       args: ['scripts/smoke-edge-dev-server.mjs'],
-      env,
+      env: rustEnv,
     });
   }
   plan.push({
+    label: 'app SDK runtime build',
+    command: pnpmCommand(),
+    args: ['--dir', 'sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript', 'build'],
+    env,
+  });
+  plan.push({
+    label: 'backend SDK runtime build',
+    command: pnpmCommand(),
+    args: ['--dir', 'sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript', 'build'],
+    env,
+  });
+  plan.push({
+    label: 'open SDK runtime build',
+    command: pnpmCommand(),
+    args: ['--dir', 'sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript', 'build'],
+    env,
+  });
+  plan.push({
     label: 'portal frontend typecheck',
     command: pnpmCommand(),
-    args: ['--dir', 'apps/sdkwork-claw-router-portal', 'typecheck', '--force'],
+    args: ['--dir', 'apps/sdkwork-claw-router-portal', 'typecheck'],
     env,
   });
   plan.push({
@@ -240,8 +298,8 @@ function buildVerificationPlan(settings, env = process.env) {
   });
   plan.push({
     label: 'portal auth runtime tests',
-    command: 'node',
-    args: ['--experimental-strip-types', 'apps/sdkwork-claw-router-portal/auth-runtime.test.ts'],
+    command: pnpmCommand(),
+    args: ['--dir', 'apps/sdkwork-claw-router-portal', 'exec', 'tsx', 'auth-runtime.test.ts'],
     env,
   });
   plan.push({
@@ -282,8 +340,8 @@ function buildVerificationPlan(settings, env = process.env) {
   });
   plan.push({
     label: 'portal api reference playground runtime tests',
-    command: 'node',
-    args: ['--experimental-strip-types', 'apps/sdkwork-claw-router-portal/api-reference-playground-runtime.test.ts'],
+    command: pnpmCommand(),
+    args: ['--dir', 'apps/sdkwork-claw-router-portal', 'exec', 'tsx', 'api-reference-playground-runtime.test.ts'],
     env,
   });
   plan.push({
@@ -467,4 +525,12 @@ if (process.argv[1] && import.meta.url.endsWith(process.argv[1].replaceAll('\\',
   });
 }
 
-export { buildFastVerificationPlan, buildVerificationPlan, cargoVerifyEnv, mergeRustFlags, parseArgs, pnpmCommand };
+export {
+  buildFastVerificationPlan,
+  buildVerificationPlan,
+  cargoVerifyEnv,
+  mergeRustFlags,
+  parseArgs,
+  pnpmCommand,
+  shouldRunEdgeDevSmoke,
+};

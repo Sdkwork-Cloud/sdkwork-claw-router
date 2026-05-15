@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11093,
+  "uuid": "skill-clawhub-performance-profiler",
+  "skillKey": "clawhub-performance-profiler",
+  "name": "Performance Profiler",
+  "summary": "Analyze code performance to identify bottlenecks, detect redundant computations and blocking operations, and provide optimization recommendations.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.performance_profiler",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HonestQiao",
+      "features": [
+        "Analyze code performance to identify bottlenecks, detect redundant computations and blocking op."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/performance-profiler@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/696708?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "performance-profiler",
+      "url": "https://clawhub.ai/skills/performance-profiler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "performance-profiler",
+    "url": "https://clawhub.ai/skills/performance-profiler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/performance-profiler-aaa4124446a02e72.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/performance-profiler@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-performance-profiler-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bb4790ba5d89dbb34312a948118ec1303cec65d9be354f30e64e262d29ad075a",
+      "artifactSizeBytes": 2290
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T23:20:31.922Z"
+}

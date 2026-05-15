@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63317,
+  "uuid": "skill-clawhub-fastmoss-report",
+  "skillKey": "clawhub-fastmoss-report",
+  "name": "Fastmoss Report",
+  "summary": "自动生成美国时尚配件品类TikTok热推日榜与周榜Top10数据报告，含分析与选品建议。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fastmoss_report",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "islcy",
+      "features": [
+        "自动生成美国时尚配件品类TikTok热推日榜与周榜Top10数据报告，含分析与选品建议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fastmoss-report@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/112626295?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fastmoss-report",
+      "url": "https://clawhub.ai/skills/fastmoss-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fastmoss-report",
+    "url": "https://clawhub.ai/skills/fastmoss-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fastmoss-report-bbaca1e3fb0a3681.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fastmoss-report@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-fastmoss-report-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:61155f25e45a6c9523c829a4b924e590fce11b4a3d381b98a569c330b2317512",
+      "artifactSizeBytes": 2141
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T05:25:30.868Z"
+}

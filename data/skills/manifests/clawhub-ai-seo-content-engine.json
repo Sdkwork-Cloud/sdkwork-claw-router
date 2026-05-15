@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21823,
+  "uuid": "skill-clawhub-ai-seo-content-engine",
+  "skillKey": "clawhub-ai-seo-content-engine",
+  "name": "Ai Seo Content Engine",
+  "summary": "Automated SEO content generator that schedules daily SaaS review articles using OpenAI GPT-4o, publishes to a Hugo blog via API, and tracks output in Google...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_seo_content_engine",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Muhammad H.M. Alvi",
+      "features": [
+        "Automated SEO content generator that schedules daily SaaS review articles using OpenAI GPT-4o,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-seo-content-engine@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74125579?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-seo-content-engine",
+      "url": "https://clawhub.ai/skills/ai-seo-content-engine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-seo-content-engine",
+    "url": "https://clawhub.ai/skills/ai-seo-content-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-seo-content-engine-eeffad6f5a413d9c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-seo-content-engine@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-seo-content-engine-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:64a9129f962f09e5b5a6e02cedcdb16883e6514ad719ed6817e32f4a02bda9d7",
+      "artifactSizeBytes": 1978
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T16:59:41.782Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20238,
+  "uuid": "skill-clawhub-openclaw-n8n-orchestrator",
+  "skillKey": "clawhub-openclaw-n8n-orchestrator",
+  "name": "OpenClaw n8n Orchestrator",
+  "summary": "When the user wants to connect an OpenClaw agent to n8n workflows, create n8n webhook skills for OpenClaw, route agent API calls through n8n for credential i...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_n8n_orchestrator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kristopher Dunham",
+      "features": [
+        "When the user wants to connect an OpenClaw agent to n8n workflows, create n8n webhook skills fo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-n8n-orchestrator@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/113450238?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-n8n-orchestrator",
+      "url": "https://clawhub.ai/skills/openclaw-n8n-orchestrator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-n8n-orchestrator",
+    "url": "https://clawhub.ai/skills/openclaw-n8n-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-n8n-orchestrator-5f1d04f02ab011f9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-n8n-orchestrator@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-n8n-orchestrator-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fd4a1ca91a5b848a3162a64ad2e734a338eb37498cc43e39ed9873780d9137ac",
+      "artifactSizeBytes": 2976
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T15:11:06.409Z"
+}

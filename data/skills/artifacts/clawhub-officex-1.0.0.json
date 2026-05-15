@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/officex@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.officex",
+  "skill": {
+    "id": 18834,
+    "skillKey": "clawhub-officex",
+    "name": "OfficeX"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "officex",
+    "url": "https://clawhub.ai/skills/officex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/officex-febb8605b90f6f15.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete OfficeX platform skill for end-user consumers and app developers interacting with the OfficeX REST API. Covers the full credit-based app marketplace..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mevdragon",
+      "userId": "publishers:mevdragon",
+      "displayName": "OfficeX",
+      "image": "https://avatars.githubusercontent.com/u/179434923?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 647,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771922080244,
+      "changelog": "OfficeX 1.0.0 initial release\n\n- Full support for the OfficeX credit-based app marketplace and REST API.\n- Enables app building, publishing, installations, billing (reserve/settle/sip/payout), and user/wallet management.\n- Handles webhooks (install, uninstall, rate limit change) and embedding apps in iframes.\n- Includes integration patterns for OfficeX AI chat agent and agent context management.\n- Provides clear authentication modes and credit economy documentation for vendors and consumers.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:96b371df2630223720267d2588781a1b02255e845e189811469153f016fed799"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/system-monitor-tool@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.system_monitor_tool",
+  "skill": {
+    "id": 19228,
+    "skillKey": "clawhub-system-monitor-tool",
+    "name": "system-monitor-tool"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "system-monitor-tool",
+    "url": "https://clawhub.ai/skills/system-monitor-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/system-monitor-tool-b3b316ab76f7b00b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "System resource monitoring (CPU, memory, disk, network). Use when user asks \"system status\", \"CPU usage\", \"memory usage\", \"disk space\", or wants to monitor s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yushimohuang",
+      "userId": "publishers:yushimohuang",
+      "displayName": "yushimohuang",
+      "image": "https://avatars.githubusercontent.com/u/197757967?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 609,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773119034359,
+      "changelog": "- Initial release of the system-monitor skill.\n- Provides real-time monitoring of system resources: CPU, memory, disk, network, uptime, and temperature (if available).\n- Includes commands for full system status, specific resource usage, top processes, and continuous monitoring.\n- Responds to natural language prompts like \"CPU usage,\" \"disk space,\" or \"system status.\"\n- Outputs results in a clear, easy-to-read summary format.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:48a7d388a304981ae8829c047bf61506f273e1c4b46144f6a8ddb9da38899190"
+}

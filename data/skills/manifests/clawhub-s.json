@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73485,
+  "uuid": "skill-clawhub-s",
+  "skillKey": "clawhub-s",
+  "name": "智能代码助手",
+  "summary": "智能理解和精准诊断代码，提供修复、重构建议及自动生成文档，提升代码质量与维护效率。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.s",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bittao",
+      "features": [
+        "智能理解和精准诊断代码，提供修复、重构建议及自动生成文档，提升代码质量与维护效率。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/s@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17961407?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "s",
+      "url": "https://clawhub.ai/skills/s"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "s",
+    "url": "https://clawhub.ai/skills/s",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/s-043a718774c572bd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/s@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-s-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4f5d485efd464b2226e52cee33e7832ec61d5670c388f7badeb5955878faad22",
+      "artifactSizeBytes": 2228
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T06:05:56.041Z"
+}

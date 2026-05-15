@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gotchi-finder@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gotchi_finder",
+  "skill": {
+    "id": 17247,
+    "skillKey": "clawhub-gotchi-finder",
+    "name": "Gotchi Finder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gotchi-finder",
+    "url": "https://clawhub.ai/skills/gotchi-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gotchi-finder-8697ca3590048797.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch Aavegotchi by ID from Base mainnet and display image with full traits. Shows on-chain SVG, converts to PNG, and displays complete gotchi stats."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aaigotchi",
+      "userId": "s17274ydba008dctsvmwydrqk183rfhq",
+      "displayName": "aaigotchi",
+      "image": "https://avatars.githubusercontent.com/u/258886199?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 779,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1772826855961,
+      "changelog": "Updated trait display and SVG rendering",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f34e94a4ba7f019148a8c51544619e5487de6874a3f74d20a14c77169669bc6b"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-send-files@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_send_files",
+  "skill": {
+    "id": 66302,
+    "skillKey": "clawhub-feishu-send-files",
+    "name": "Feishu Send Files"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-send-files",
+    "url": "https://clawhub.ai/skills/feishu-send-files",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-send-files-dd4cf941783ea13a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "飞书文件批量发送技能，支持机器人触发和命令行调用，自动配置，零依赖"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangxusong637",
+      "userId": "s17c4c9xbhzwedxdg97qtzs1kn83kr6h",
+      "displayName": "zhangxusong637",
+      "image": "https://avatars.githubusercontent.com/u/252850179?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 254,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774529114484,
+      "changelog": "- Improved documentation to clearly distinguish between bot-triggered and command line modes, emphasizing correct usage to avoid sending files to the wrong recipient.\n- Added detailed instructions and table for command line arguments, including --file, --files, --search, and --to parameters.\n- Clarified best practices, highlighting the recommendation to trigger via bot mention for safest recipient targeting.\n- Included troubleshooting for common mistakes, especially misdirected file sends when using command line without explicit --to.\n- Added a new metadata file for enhanced skill management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d601bff928b6cc32a4e7d66f1e1e804338b346098303d9becc33c8fa7d69999e"
+}

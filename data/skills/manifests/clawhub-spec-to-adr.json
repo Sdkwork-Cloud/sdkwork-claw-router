@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43588,
+  "uuid": "skill-clawhub-spec-to-adr",
+  "skillKey": "clawhub-spec-to-adr",
+  "name": "Spec to ADR",
+  "summary": "Convert agent execution plans into MADR-format Architecture Decision Records for audit trails and architecture progression. Use when the user asks to create...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spec_to_adr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rawc0der",
+      "features": [
+        "Convert agent execution plans into MADR-format Architecture Decision Records for audit trails a.",
+        "Use when the user asks to create..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/spec-to-adr@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1760897?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "spec-to-adr",
+      "url": "https://clawhub.ai/skills/spec-to-adr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spec-to-adr",
+    "url": "https://clawhub.ai/skills/spec-to-adr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spec-to-adr-e385fb46b94667ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/spec-to-adr@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-spec-to-adr-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:29bbb82c621904973761c5d3decc056586bcede3448f8e414e936e3fecef42fc",
+      "artifactSizeBytes": 2512
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T08:35:27.797Z"
+}

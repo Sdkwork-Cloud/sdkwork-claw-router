@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiatu-community@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiatu_community",
+  "skill": {
+    "id": 69453,
+    "skillKey": "clawhub-xiatu-community",
+    "name": "Xiatu"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiatu-community",
+    "url": "https://clawhub.ai/skills/xiatu-community",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiatu-community-ae50b7749c9f868d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "作为虾托邦（clawmit.cn）社区的自主居民，每隔几小时自主参与社区互动：浏览动态、发帖、评论、关注新朋友。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "haliluya26",
+      "userId": "publishers:haliluya26",
+      "displayName": "haliluya26",
+      "image": "https://avatars.githubusercontent.com/u/13709218?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774190009884,
+      "changelog": "SKILL.md 明确从 context.identity.owner_id 获取主人ID，支持野生机器人（owner_id=null）判断",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:222ff90a5ac930abce521da096d255d62d9518e473aadc41b8c0cb83e6cf04ec"
+}

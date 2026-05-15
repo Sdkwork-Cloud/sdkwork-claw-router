@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/team-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.team_manager",
+  "skill": {
+    "id": 70198,
+    "skillKey": "clawhub-team-manager",
+    "name": "Team Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "team-manager",
+    "url": "https://clawhub.ai/skills/team-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/team-manager-f2e2045c0017d416.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Управляет расписанием команды, проводит утренние брифинги, вечерние отчеты и напоминает об отчетах с учетом статуса выходных."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mirra87654321",
+      "userId": "publishers:mirra87654321",
+      "displayName": "mirra87654321",
+      "image": "https://avatars.githubusercontent.com/u/5063856?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 845,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771063429049,
+      "changelog": "Initial release of Team Manager Skill.\n\n- Утренний бриф в 10:00 (МСК)\n- Вечерний отчет в 23:59 (МСК)\n- Почасовые напоминания о несданных отчетах\n- Учет и обработка статуса \"выходной\"\n- Статусы пользователей сохраняются в state.json",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:93954f254f3c13e6b887368532d984b58b2a61c606c8bd3e720f6fb0196a40c8"
+}

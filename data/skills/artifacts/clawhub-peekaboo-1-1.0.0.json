@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/peekaboo-1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.peekaboo_1",
+  "skill": {
+    "id": 23642,
+    "skillKey": "clawhub-peekaboo-1",
+    "name": "Peekaboo 1"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "peekaboo-1",
+    "url": "https://clawhub.ai/skills/peekaboo-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/peekaboo-1-56d29cb6d2ae7c2a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Capture and automate macOS UI with the Peekaboo CLI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tonydesign1999",
+      "userId": "publishers:tonydesign1999",
+      "displayName": "tonydesign1999",
+      "image": "https://avatars.githubusercontent.com/u/245508141?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 404,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773658086895,
+      "changelog": "Initial release of Peekaboo, a macOS UI automation CLI.\n\n- Provides comprehensive CLI commands to capture, inspect, and automate macOS UI elements, input, apps, and windows.\n- Supports screen/window/region capture, element targeting, snapshot annotation, and UI interaction (click, type, drag, swipe, scroll).\n- Manages apps, windows, dialogs, Dock, and menu items; includes clipboard and Spaces commands.\n- Features scripting-friendly options (`--json`, `--verbose`), snapshot cache, and command-specific targeting parameters.\n- Includes extensive quickstart instructions and practical command examples.\n- Installation available via Homebrew. Requires Screen Recording and Accessibility permissions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e05bc452aa92a8a2a41a5d658ee133dfdf13d33324d1100b7911d43caf356389"
+}

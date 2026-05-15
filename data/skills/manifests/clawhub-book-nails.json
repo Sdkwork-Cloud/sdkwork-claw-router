@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13575,
+  "uuid": "skill-clawhub-book-nails",
+  "skillKey": "clawhub-book-nails",
+  "name": "Book Nails",
+  "summary": "Book nails services through Lokuli MCP. Use when user needs to find and book nails. Triggers on requests like \"book a nails\", \"find nails near me\", or any nails service request.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_nails",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lokuli",
+      "features": [
+        "Book nails services through Lokuli MCP",
+        "Use when user needs to find and book nails",
+        "Triggers on requests like \"book a nails\", \"find nails near me\", or any nails service request."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-nails@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224194606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-nails",
+      "url": "https://clawhub.ai/skills/book-nails"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-nails",
+    "url": "https://clawhub.ai/skills/book-nails",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-nails-d31515934ea0e15a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-nails@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-nails-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6932168b23dfa1b23737af63163d9d143a99ea5fab575021a28e9d4e87777e71",
+      "artifactSizeBytes": 1899
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T01:04:46.092Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/spec-engine@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spec_engine",
+  "skill": {
+    "id": 63132,
+    "skillKey": "clawhub-spec-engine",
+    "name": "Spec Engine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spec-engine",
+    "url": "https://clawhub.ai/skills/spec-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spec-engine-9190555b35cc404a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "项目规格自动生成与验证工具 — 从想法到任务清单的全流程自动化。 支持：(1) 智能生成 spec (2) 可配置验证评分 (3) 自动拆解子任务 (4) Web 仪表盘 (5) 版本对比 (6) 历史分析"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yj85814",
+      "userId": "s17capesg62asvkg019erzgj6n83xb81",
+      "displayName": "YJ85814",
+      "image": "https://avatars.githubusercontent.com/u/263635191?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1774864019427,
+      "changelog": "spec-engine v3.0.0 introduces major new features and enhancements for automated project spec generation and management.\n\n- 新增 decompose 子任务拆解：自动根据 spec 提取需求，并生成子任务清单、工时、依赖、负责人建议与关键路径分析。\n- 新增 Web 仪表盘 dashboard：可视化所有 spec 的评分、技术栈分布和完整性状态。\n- 所有核心功能命令均支持命令行调用，支持多种输出格式与自定义校验规则。\n- 保持纯 Python 标准库实现，无需第三方依赖，完全兼容前序版本。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5b683e715510755b739509780b69d966c2735a0c62afa75e67b24c162ca5d1c3"
+}

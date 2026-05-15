@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61082,
+  "uuid": "skill-clawhub-free-web-search-js",
+  "skillKey": "clawhub-free-web-search-js",
+  "name": "free-web-search-js",
+  "summary": "Playwright驱动的联网搜索工具，自动抓取前三条网页内容，无需API Key，支持国内Bing和海外DDG搜索。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_web_search_js",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ucsdzehualiu",
+      "features": [
+        "Playwright驱动的联网搜索工具，自动抓取前三条网页内容，无需API Key，支持国内Bing和海外DDG搜索。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/free-web-search-js@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37421937?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "free-web-search-js",
+      "url": "https://clawhub.ai/skills/free-web-search-js"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-web-search-js",
+    "url": "https://clawhub.ai/skills/free-web-search-js",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-web-search-js-abb5f666cefe02ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/free-web-search-js@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-free-web-search-js-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6f2da8a86a493d6ad97ef93919351d3753e89796eb74a2d51ac560d41623bf1b",
+      "artifactSizeBytes": 2673
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T07:38:13.589Z"
+}

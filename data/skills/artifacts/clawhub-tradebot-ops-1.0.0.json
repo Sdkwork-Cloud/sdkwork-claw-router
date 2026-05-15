@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tradebot-ops@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tradebot_ops",
+  "skill": {
+    "id": 21253,
+    "skillKey": "clawhub-tradebot-ops",
+    "name": "Tradebot Ops"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tradebot-ops",
+    "url": "https://clawhub.ai/skills/tradebot-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tradebot-ops-4a818918f5308655.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor trading bot health by detecting stalls, verifying LIVE status and data freshness, restarting safely if needed, and summarizing status clearly."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "motivationationdaily",
+      "userId": "publishers:motivationationdaily",
+      "displayName": "motivationationdaily",
+      "image": "https://avatars.githubusercontent.com/u/213118378?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 506,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772275263572,
+      "changelog": "Initial release of tradebot-ops.\n\n- Monitors trading bot health and detects operational stalls.\n- Validates bot state (LIVE/halting), data freshness, and signal updates.\n- Provides concise human-readable health summaries.\n- Automates safe restarts and stale state recovery actions.\n- Ensures safety by never auto-increasing risk and preferring self-heal.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e8e4bdd1d753fc040f8844aceea5bef9b6f5cd84e69ad738b77df2c25efd860f"
+}

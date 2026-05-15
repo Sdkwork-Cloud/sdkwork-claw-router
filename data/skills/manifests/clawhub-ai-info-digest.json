@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72553,
+  "uuid": "skill-clawhub-ai-info-digest",
+  "skillKey": "clawhub-ai-info-digest",
+  "name": "AI Info Digest",
+  "summary": "微信公众号文章摘要整理工具。获取用户关注的微信公众号在指定时间范围内发布的文章，逐篇阅读全文，然后按主题聚合整理成一篇简明的摘要文章，标注来源便于评估各公众号的价值。 当用户提到以下场景时触发：整理公众号文章、公众号周报/日报、微信文章摘要、帮我看看公众号最近发了什么、总结一下这几天的公众号内容、公众号阅读整理、...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_info_digest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jinntrance",
+      "features": [
+        "微信公众号文章摘要整理工具。获取用户关注的微信公众号在指定时间范围内发布的文章，逐篇阅读全文，然后按主题聚合整理成一篇简明的摘要文章，标注来源便于评估各公众号的价值。 当用户提到以下场景时触."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-info-digest@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2414660?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-info-digest",
+      "url": "https://clawhub.ai/skills/ai-info-digest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-info-digest",
+    "url": "https://clawhub.ai/skills/ai-info-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-info-digest-aadfbb8820878bac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-info-digest@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-info-digest-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dd49a18020d264d8507bc82cb2fcb1373b6ff7c3ca23bb1435813d7a02b6ff6d",
+      "artifactSizeBytes": 2710
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T00:40:11.733Z"
+}

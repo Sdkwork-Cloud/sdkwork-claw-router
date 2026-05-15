@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chinese-tts@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chinese_tts",
+  "skill": {
+    "id": 57063,
+    "skillKey": "clawhub-chinese-tts",
+    "name": "Chinese TTS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chinese-tts",
+    "url": "https://clawhub.ai/skills/chinese-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chinese-tts-9a434fc5c51a6956.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate Chinese TTS audio and send as Feishu voice message. Use when user asks for voice/audio/语音/播报/朗读 in Chinese, or when sending audio messages via Feishu."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "waao666",
+      "userId": "publishers:waao666",
+      "displayName": "Waao666",
+      "image": "https://avatars.githubusercontent.com/u/43161158?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 577,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772767197474,
+      "changelog": "Edge TTS + Feishu opus voice messages",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:11b37d2dc86e2f25523583c36281262bcfa184cb5d8d1937522468b0ed89e385"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13699,
+  "uuid": "skill-clawhub-symptoms",
+  "skillKey": "clawhub-symptoms",
+  "name": "Symptoms",
+  "summary": "Build a private symptom tracker for logging health patterns and preparing for doctor visits.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.symptoms",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Build a private symptom tracker for logging health patterns and preparing for doctor visits."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/symptoms@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "symptoms",
+      "url": "https://clawhub.ai/skills/symptoms"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "symptoms",
+    "url": "https://clawhub.ai/skills/symptoms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/symptoms-4f8413e951f36c28.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/symptoms@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-symptoms-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6a38f7c07159721536617dbb29e7d76e62471b52ce3ef1db00757e2ebd4724ad",
+      "artifactSizeBytes": 1773
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T02:17:17.280Z"
+}

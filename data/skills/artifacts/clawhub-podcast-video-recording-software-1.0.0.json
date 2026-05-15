@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/podcast-video-recording-software@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.podcast_video_recording_software",
+  "skill": {
+    "id": 43576,
+    "skillKey": "clawhub-podcast-video-recording-software",
+    "name": "Podcast Video Recording Software"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "podcast-video-recording-software",
+    "url": "https://clawhub.ai/skills/podcast-video-recording-software",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/podcast-video-recording-software-d49074ef4608a573.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "convert raw audio/video into polished podcast videos with this skill. Works with MP4, MOV, WAV, MP3 files up to 500MB. podcasters use it for converting podca..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776026873867,
+      "changelog": "Podcast Video Recording Software v1.0.0\n\n- Initial release: Convert audio/video files (MP4, MOV, WAV, MP3) into polished podcast videos up to 500MB each, with fast AI processing on cloud GPUs.\n- Supports 1080p MP4 exports, waveform animation, captions, speaker labels, and timeline-based editing.\n- Automatic authentication handling via NEMO_TOKEN, with easy setup for new users.\n- File upload, timeline editing, video export, status, and credits check workflows via chat commands.\n- Full error handling for session, file, credit, and export issues, with clear user feedback.\n- Designed for quick turnarounds (1–3 minutes per job) and optimized for shareable social content.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2ee5b6f864d47bf6b543f0cfdcd515688e9736b2e06178a11b149e3d60ac4939"
+}

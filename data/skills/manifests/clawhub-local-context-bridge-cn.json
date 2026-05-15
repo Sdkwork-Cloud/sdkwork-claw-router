@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67113,
+  "uuid": "skill-clawhub-local-context-bridge-cn",
+  "skillKey": "clawhub-local-context-bridge-cn",
+  "name": "Local ContextBridge 中文",
+  "summary": "使用语义关键词搜索本地个人和内部文档(Word/Excel/PDF/Markdown)。当用户询问本地文件、私人数据或内部知识时使用此工具。它会返回高度相关的文本片段和文件路径。注意：始终使用提取的核心实体作为关键词，而不是完整句子。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_context_bridge_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "whyischen",
+      "features": [
+        "使用语义关键词搜索本地个人和内部文档(Word/Excel/PDF/Markdown)。当用户询问本地文件、私人数据或内部知识时使用此工具。它会返回高度相关的文本片段和文件路径。注意：始终使."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/local-context-bridge-cn@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25917825?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "local-context-bridge-cn",
+      "url": "https://clawhub.ai/skills/local-context-bridge-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-context-bridge-cn",
+    "url": "https://clawhub.ai/skills/local-context-bridge-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-context-bridge-cn-34f6aea1b9d2bad7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/local-context-bridge-cn@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-local-context-bridge-cn-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:101e598b9fa59242a55526f3220c89ddbb0c8ebacda87f5bb38694184e7d8fd3",
+      "artifactSizeBytes": 2298
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T01:36:00.152Z"
+}

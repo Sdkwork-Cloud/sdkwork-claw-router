@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/s2-geo-intent-crafter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.s2_geo_intent_crafter",
+  "skill": {
+    "id": 71960,
+    "skillKey": "clawhub-s2-geo-intent-crafter",
+    "name": "品牌 GEO 降维提炼师"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "s2-geo-intent-crafter",
+    "url": "https://clawhub.ai/skills/s2-geo-intent-crafter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/s2-geo-intent-crafter-895ac775faeaf490.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "品牌 GEO 降维提炼师。运用品牌生态学理论，将传统品牌宣发文案转化为大模型原生可读的“树冠/树根”结构与“买家意图”生态位标签。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "spacesq",
+      "userId": "s17c8pmv1e8tb2mcc5aset88e183hq1t",
+      "displayName": "MilesXiang",
+      "image": "https://avatars.githubusercontent.com/u/259359437?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 216,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774537149043,
+      "changelog": "Initial release of s2-geo-intent-crafter:\n\n- Transforms traditional brand copy into machine-readable “canopy/root” structure with buyer intent niche tags.\n- Prohibits use of conventional industry classifications, emphasizing brand-ecology metaphors.\n- Supports full Chinese-language interactions and analysis (except for code fields).\n- Warns users if critical data (patents, ESG) are missing for model optimization.\n- Outputs standardized GEO intent profiles in JSON/Markdown for direct use in S2 brand systems.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b16d2724ab9c70f9d56bfc1b8f708d5d4c7240d77a6a8dc330d29724b080cf49"
+}

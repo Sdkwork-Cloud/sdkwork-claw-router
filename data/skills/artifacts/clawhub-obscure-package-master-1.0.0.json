@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/obscure-package-master@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obscure_package_master",
+  "skill": {
+    "id": 55488,
+    "skillKey": "clawhub-obscure-package-master",
+    "name": "Obscure Package Master"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obscure-package-master",
+    "url": "https://clawhub.ai/skills/obscure-package-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obscure-package-master-4469057d2455c297.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill if your uncertainty with a package's API is > 5% to create a deterministic, versioned mirror of the package repo with a built-in coordinate sy..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "amberlee2427",
+      "userId": "s17e7hkmv2w69wbksqgpkmy8d184rg91",
+      "displayName": "Amber Malpas",
+      "image": "https://avatars.githubusercontent.com/u/26697369?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 124,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776046109002,
+      "changelog": "Initial release of obscure-package-master\n\n- Provides a method to create deterministic, versioned mirrors of obscure Python packages, with an AST-derived \"grep map\" of all classes and functions.\n- Enables users to efficiently locate and read precise code segments, reducing uncertainty about unfamiliar package APIs.\n- Integrates local skill generation and activation for package versions using a script.\n- Compatible with multiple AI agent providers, with configurable installation paths via environment variables or config files.\n- Designed to prevent API hallucinations by relying solely on source code structure, not LLM interpretations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:06fc3e7423308bb8c6c07b4bbeb9d2f797c48277a0aa8f31d9c61f81ebce20d5"
+}

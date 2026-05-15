@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67357,
+  "uuid": "skill-clawhub-zhihu-keyword-content-search",
+  "skillKey": "clawhub-zhihu-keyword-content-search",
+  "name": "Zhihu Keyword Content Search",
+  "summary": "爬取知乎问题和回答。当用户要求爬取知乎、抓取知乎数据、搜索知乎问答，或提到\"知乎\"+\"爬虫/爬取/抓取/搜索\"时使用此技能。支持按关键词搜索问题、按回答数排序、抓取全部回答并保存为JSON和纯文本。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhihu_keyword_content_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "taiyuexiao",
+      "features": [
+        "爬取知乎问题和回答。当用户要求爬取知乎、抓取知乎数据、搜索知乎问答，或提到\"知乎\"+\"爬虫/爬取/抓取/搜索\"时使用此技能。支持按关键词搜索问题、按回答数排序、抓取全部回答并保存为JSON和."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zhihu-keyword-content-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/167285506?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zhihu-keyword-content-search",
+      "url": "https://clawhub.ai/skills/zhihu-keyword-content-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhihu-keyword-content-search",
+    "url": "https://clawhub.ai/skills/zhihu-keyword-content-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhihu-keyword-content-search-2c30d12aa92f77dc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zhihu-keyword-content-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zhihu-keyword-content-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:65b9ccfddd7cd089e0f8ae2210b461af30afae092241ae75ea113dd0abaf05f6",
+      "artifactSizeBytes": 2439
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T13:45:22.926Z"
+}

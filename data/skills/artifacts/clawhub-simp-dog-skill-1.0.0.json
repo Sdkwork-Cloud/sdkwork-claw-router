@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/simp-dog-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.simp_dog_skill",
+  "skill": {
+    "id": 58281,
+    "skillKey": "clawhub-simp-dog-skill",
+    "name": "simp-dog-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "simp-dog-skill",
+    "url": "https://clawhub.ai/skills/simp-dog-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/simp-dog-skill-1e8f4aa86076ec82.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Distill a simp dog into an AI Skill. Import WeChat history, generate Simping Memory + Persona, with continuous evolution. | 把舔狗蒸馏成 AI Skill，导入微信聊天记录、朋友圈，生成舔狗..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brother-yang",
+      "userId": "s17bd6f5mnm19950c70s5x3xwx84tp2n",
+      "displayName": "Brother-Yang",
+      "image": "https://avatars.githubusercontent.com/u/61639572?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 119,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776145141701,
+      "changelog": "Initial release of simp-dog-skill.\n\n- Create a fully interactive \"Simp Dog\" character Skill from chat history, with user-guided memory and personality extraction.\n- Supports both English and Chinese, with automatic language detection for responses.\n- Guides users through multi-step creation: basic info intake, chat/social record import, memory/persona analysis, and preview before file generation.\n- Grants continuous evolution: update, append, or correct the Simp Dog’s memory and behavior at any time.\n- Multiple management commands for listing, rollback, and removal of Simp Dogs.\n- Strict safety boundaries: privacy protection, no real-world contact, and reminders if unhealthy attitudes are detected.\n- All generated data is stored locally; nothing is uploaded.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fd7a926d9c7455c964a8e640c1a15f19a780a0c998b5dca72c94faa855246a65"
+}

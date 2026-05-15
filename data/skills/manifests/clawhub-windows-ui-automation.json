@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8478,
+  "uuid": "skill-clawhub-windows-ui-automation",
+  "skillKey": "clawhub-windows-ui-automation",
+  "name": "Windows UI Automation",
+  "summary": "Automate Windows GUI interactions (mouse, keyboard, windows) using PowerShell. Use when the user needs to simulate user input on the desktop, such as moving the cursor, clicking buttons, typing text in non-web apps, or managing window stat.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.windows_ui_automation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wwb-Daniel",
+      "features": [
+        "Automate Windows GUI interactions (mouse, keyboard, windows) using PowerShell",
+        "Use when the user needs to simulate user input on the desktop, such as moving the cursor, click."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/windows-ui-automation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/187350442?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "windows-ui-automation",
+      "url": "https://clawhub.ai/skills/windows-ui-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "windows-ui-automation",
+    "url": "https://clawhub.ai/skills/windows-ui-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/windows-ui-automation-143009a4d0ed0973.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/windows-ui-automation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-windows-ui-automation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:329798d1e0d71a91b105a8a98b72f84d0eea86df89679ba14873bf06aab1145c",
+      "artifactSizeBytes": 2112
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T11:27:50.308Z"
+}

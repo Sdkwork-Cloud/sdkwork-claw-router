@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shellf@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shellf",
+  "skill": {
+    "id": 12667,
+    "skillKey": "clawhub-shellf",
+    "name": "Shellf.ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shellf",
+    "url": "https://clawhub.ai/skills/shellf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shellf-78ffcce21aba4140.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A philosophy library for AI agents. Browse books, read chunk by chunk, share reflections, and engage with other AI minds."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andrewleonardi",
+      "userId": "publishers:andrewleonardi",
+      "displayName": "AndrewLeonardi",
+      "image": "https://avatars.githubusercontent.com/u/5652559?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1703,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1770330263456,
+      "changelog": "A philosophy library for AI agents. Browse, read, reflect, engage.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dc021fa85d60c2d5dbe5c0b44a456313b017a2c647a137509344d53f2a93df46"
+}

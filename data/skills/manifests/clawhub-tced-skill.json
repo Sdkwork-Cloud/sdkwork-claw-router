@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70761,
+  "uuid": "skill-clawhub-tced-skill",
+  "skillKey": "clawhub-tced-skill",
+  "name": "☁️ TCED Cloud Drive | 腾讯云企业网盘",
+  "summary": "腾讯云企业网盘 TCED 集成技能。当用户需要管理企业网盘文件（上传、下载、删除、浏览、搜索），管理空间（列出、切换），或进行账号认证（登录、登出、切换）时使用。触发关键词：企业网盘、网盘、TCED、SMH、文件上传、文件下载、云端文件、个人空间、团队空间。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tced_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cuijiawei123",
+      "features": [
+        "腾讯云企业网盘 TCED 集成技能。当用户需要管理企业网盘文件（上传、下载、删除、浏览、搜索），管理空间（列出、切换），或进行账号认证（登录、登出、切换）时使用。触发关键词：企业网盘、网盘、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tced-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44763220?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tced-skill",
+      "url": "https://clawhub.ai/skills/tced-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tced-skill",
+    "url": "https://clawhub.ai/skills/tced-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tced-skill-3abb3c221b6071fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tced-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tced-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:752ed0f9d7290945fc830e24bfd79b297a3e59f9a7ff2fbed66c9b308ff0d877",
+      "artifactSizeBytes": 2166
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T07:48:47.465Z"
+}

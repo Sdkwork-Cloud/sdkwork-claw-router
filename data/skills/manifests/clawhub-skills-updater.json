@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28439,
+  "uuid": "skill-clawhub-skills-updater",
+  "skillKey": "clawhub-skills-updater",
+  "name": "Skills Updater",
+  "summary": "Automatically detect, backup, and update OpenClaw skills using caching, retry logic, dry-run mode, and detailed upgrade reports.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skills_updater",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "thunder1743",
+      "features": [
+        "Automatically detect, backup, and update OpenClaw skills using caching, retry logic, dry-run mo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skills-updater@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267053921?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skills-updater",
+      "url": "https://clawhub.ai/skills/skills-updater"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skills-updater",
+    "url": "https://clawhub.ai/skills/skills-updater",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skills-updater-a8031a1e32d5bda0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skills-updater@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skills-updater-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba8c19ae9fa4120be54fbcf5905426778bca5aaa9bde79a2ec38a064ca2d1188",
+      "artifactSizeBytes": 2016
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T14:30:25.716Z"
+}

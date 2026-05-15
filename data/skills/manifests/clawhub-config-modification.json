@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17264,
+  "uuid": "skill-clawhub-config-modification",
+  "skillKey": "clawhub-config-modification",
+  "name": "Config Modification",
+  "summary": "Enforces a two-layer guarded process for modifying critical JSON config files with immediate syntax checks and periodic health validation to prevent faulty c...",
+  "version": "2.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.config_modification",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "halfmoon82",
+      "features": [
+        "Enforces a two-layer guarded process for modifying critical JSON config files with immediate sy."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/config-modification@2.6.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261569221?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "config-modification",
+      "url": "https://clawhub.ai/skills/config-modification"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "config-modification",
+    "url": "https://clawhub.ai/skills/config-modification",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/config-modification-606fd087b8df743d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/config-modification@2.6.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-config-modification-2.6.0.json",
+      "version": "2.6.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dca35459f28c3ef0dad2148915b086783b083d22fe314c1f176ca8f295cc7bd4",
+      "artifactSizeBytes": 2320
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T17:52:58.097Z"
+}

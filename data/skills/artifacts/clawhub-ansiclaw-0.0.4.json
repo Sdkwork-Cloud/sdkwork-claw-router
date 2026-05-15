@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ansiclaw@0.0.4",
+  "version": "0.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ansiclaw",
+  "skill": {
+    "id": 20141,
+    "skillKey": "clawhub-ansiclaw",
+    "name": "ANSIClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ansiclaw",
+    "url": "https://clawhub.ai/skills/ansiclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ansiclaw-75060d2095e446ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Draws BBS compatible ANSI art via the Clawbius API"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "n2tr0n",
+      "userId": "s178egeyf2mjzenq496b982fr583fnhf",
+      "displayName": "n2tr0n",
+      "image": "https://avatars.githubusercontent.com/u/161380167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 460,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.0.4",
+      "createdAt": 1772773842612,
+      "changelog": "- Adds strict session guidelines: only one ANSI art iteration per session, with mandatory operator approval for further iterations (max 5 at a time).\n- Clarifies process for studying reference files and stresses detective-like analysis of all resources before drawing.\n- Expands and organizes color and dithering rules, with emphasis on correct use of ice colors and block types.\n- Refines \"no-tocar\" (no-touch) style rule details and when to apply it.\n- Aligns documentation for output file naming and version management for each iteration.\n- General documentation cleanup and updated links for project and dependencies.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:51f903d2a2d5e2f9299e08841c0687ff2822781c3c5e474052fbef1396c4d618"
+}

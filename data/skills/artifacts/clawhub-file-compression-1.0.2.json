@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/file-compression@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_compression",
+  "skill": {
+    "id": 17182,
+    "skillKey": "clawhub-file-compression",
+    "name": "File Compression"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-compression",
+    "url": "https://clawhub.ai/skills/file-compression",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-compression-2208f1931efcc93d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Compress files to reduce storage and transfer size. Use this skill when users ask to shrink PDFs or images, optimize upload/share size, or balance quality an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hexavi8",
+      "userId": "s17bccdx9ndspa7v05zjqag21s83m3zd",
+      "displayName": "HeXavi8",
+      "image": "https://avatars.githubusercontent.com/u/51332043?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 577,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1777533110451,
+      "changelog": "- Improved logic in the PDF compression Node.js script (`compress_pdf_node.mjs`).\n- No user-facing changes to documentation or options.\n- Minor version bump to reflect internal scripting updates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ced83de4c6d8b4d8c8b520f77304ff77e89e2c25e96904f304b27fec302085d5"
+}

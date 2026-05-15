@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/local-gmncode-vision-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_gmncode_vision_pro",
+  "skill": {
+    "id": 40994,
+    "skillKey": "clawhub-local-gmncode-vision-pro",
+    "name": "Local GMNCODE Vision Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-gmncode-vision-pro",
+    "url": "https://clawhub.ai/skills/local-gmncode-vision-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-gmncode-vision-pro-91117bfa33f77acc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Advanced local vision infrastructure for agents when built-in image tools are unavailable or unreliable. Use for batch image analysis, structured JSON output..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "io2077",
+      "userId": "s17472y975hqvz6yyssqprrqvn83grwg",
+      "displayName": "iO2077",
+      "image": "https://avatars.githubusercontent.com/u/124873010?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774390245318,
+      "changelog": "Initial Pro release: batch image analysis, JSON output, and resilient fallback vision workflows for agents.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:131668850a3c70c515d43bed13f9f9bb48615d7189e334a8bc3f1722c809c51c"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/intranet@3.2.7",
+  "version": "3.2.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intranet",
+  "skill": {
+    "id": 13249,
+    "skillKey": "clawhub-intranet",
+    "name": "Intranet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intranet",
+    "url": "https://clawhub.ai/skills/intranet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intranet-088282c5a834543d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Lightweight local HTTP file server with plugin support. Serves static files from a webroot, mounts plugin directories at URL prefixes via config, and runs in..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "odrobnik",
+      "userId": "s175mv7e1vzhser8sz79yq23fd83h54z",
+      "displayName": "Oliver Drobnik",
+      "image": "https://avatars.githubusercontent.com/u/333270?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1497,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 28
+    },
+    "latestVersion": {
+      "version": "3.2.7",
+      "createdAt": 1773306392500,
+      "changelog": "Make session cookies deterministic so they survive server restarts",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:de3d5f221c140ccfa55e2e3233eb877aac81caa1a07d46b6e004384cb4e4fcbc"
+}

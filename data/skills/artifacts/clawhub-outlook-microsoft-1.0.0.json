@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/outlook-microsoft@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.outlook_microsoft",
+  "skill": {
+    "id": 61343,
+    "skillKey": "clawhub-outlook-microsoft",
+    "name": "outlook-microsoft"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "outlook-microsoft",
+    "url": "https://clawhub.ai/skills/outlook-microsoft",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/outlook-microsoft-f37c0252a968cc5f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "微软 Outlook 邮箱和日历管理工具（支持世纪互联版 Office 365）。当用户要求查看邮件、发送邮件、搜索邮件、管理日历日程、创建会议、查询忙闲状态时使用。注意：此 Skill 仅支持世纪互联（21Vianet）版本的 Microsoft 365，使用 login.chinacloudapi.cn /..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lurking9527",
+      "userId": "s179wdtzmagw14cqajqgbchb9n84af01",
+      "displayName": "Lurking9527",
+      "image": "https://avatars.githubusercontent.com/u/46019214?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775487117980,
+      "changelog": "Microsoft Outlook skill for 21Vianet version of Office 365 – initial release:\n\n- Supports viewing, sending, searching, organizing, and deleting emails.\n- Provides calendar management: view, create, and delete events; check free/busy status.\n- Includes detailed environment setup instructions with required API permissions.\n- Offers command-line scripts for all operations with JSON input over stdin.\n- Implements OAuth authorization flow and token management for secure access.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:70eb021f5f0d61bf14899874bf880c4d0ba06786fd4e3e165e669c1f106edde1"
+}

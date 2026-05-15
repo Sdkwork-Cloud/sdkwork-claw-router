@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51596,
+  "uuid": "skill-clawhub-hn-prospecting",
+  "skillKey": "clawhub-hn-prospecting",
+  "name": "Hacker News Lead Finder",
+  "summary": "Find high-intent leads on Hacker News via the free Algolia API — no API key needed. Score posts, surface Ask HN threads, and identify technical founders acti...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hn_prospecting",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pbopps",
+      "features": [
+        "Find high-intent leads on Hacker News via the free Algolia API — no API key needed",
+        "Score posts, surface Ask HN threads, and identify technical founders acti..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hn-prospecting@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130667201?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hn-prospecting",
+      "url": "https://clawhub.ai/skills/hn-prospecting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hn-prospecting",
+    "url": "https://clawhub.ai/skills/hn-prospecting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hn-prospecting-4d755f167fe4fb7e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hn-prospecting@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hn-prospecting-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc7f9173e110fa394039375f6e2e2be66dd559f42247a90dbe5cef9ca342fdd6",
+      "artifactSizeBytes": 2263
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T09:03:33.940Z"
+}

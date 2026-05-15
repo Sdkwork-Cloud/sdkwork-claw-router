@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58346,
+  "uuid": "skill-clawhub-backup-manager-pro",
+  "skillKey": "clawhub-backup-manager-pro",
+  "name": "Backup Manager Pro",
+  "summary": "Manage automated backups for OpenClaw configurations, clean expired backups, and create pre-modification snapshots. 自动化备份管理系统：配置备份、过期清理、修改前快照。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.backup_manager_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "reaperchen",
+      "features": [
+        "Manage automated backups for OpenClaw configurations, clean expired backups, and create pre-mod.",
+        "自动化备份管理系统：配置备份、过期清理、修改前快照。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/backup-manager-pro@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40925742?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "backup-manager-pro",
+      "url": "https://clawhub.ai/skills/backup-manager-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "backup-manager-pro",
+    "url": "https://clawhub.ai/skills/backup-manager-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/backup-manager-pro-992bc4ecf9acbbe5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/backup-manager-pro@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-backup-manager-pro-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f41bba5318453362a8dfced0fd8e86c71eb405059c85511d10fe8163bce6c45d",
+      "artifactSizeBytes": 2290
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T15:44:44.567Z"
+}

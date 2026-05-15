@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73387,
+  "uuid": "skill-clawhub-literature-parser",
+  "skillKey": "clawhub-literature-parser",
+  "name": "文献自动解析",
+  "summary": "自动提取文献内容的摘要、关键词和核心结论，帮助快速理解学术资料的重点信息。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.literature_parser",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lyt0302",
+      "features": [
+        "自动提取文献内容的摘要、关键词和核心结论，帮助快速理解学术资料的重点信息。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/literature-parser@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260444451?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "literature-parser",
+      "url": "https://clawhub.ai/skills/literature-parser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "literature-parser",
+    "url": "https://clawhub.ai/skills/literature-parser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/literature-parser-2baae4eef7dcb37a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/literature-parser@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-literature-parser-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:71ff05f128a4c614b3522e885ff0e420559b6b8e9006249fa939c5803cb9f98c",
+      "artifactSizeBytes": 2107
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T02:01:52.730Z"
+}

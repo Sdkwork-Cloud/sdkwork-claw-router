@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/normieclaw-masterclass-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.normieclaw_masterclass_builder",
+  "skill": {
+    "id": 39890,
+    "skillKey": "clawhub-normieclaw-masterclass-builder",
+    "name": "Masterclass Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "normieclaw-masterclass-builder",
+    "url": "https://clawhub.ai/skills/normieclaw-masterclass-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/normieclaw-masterclass-builder-9ecc75e345c95ccd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create personalized multi-day masterclasses on any topic. Triggers on \"teach me [topic]\", \"create a masterclass on [topic]\", \"I want to learn [topic]\", \"next..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nollio",
+      "userId": "s17c2xg0new3nrgc4axt7teszh83v8r6",
+      "displayName": "Nollio",
+      "image": "https://avatars.githubusercontent.com/u/259667367?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774812790607,
+      "changelog": "Initial publish from NormieClaw.ai — Free OpenClaw skills for everyone.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:da833d4d284c7d4802b997e232f9d9e170ce8895b8450776b83b259bf5cecace"
+}

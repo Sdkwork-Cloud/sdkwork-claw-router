@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11110,
+  "uuid": "skill-clawhub-suno-automation",
+  "skillKey": "clawhub-suno-automation",
+  "name": "Suno Automation",
+  "summary": "Control Suno.com via OpenClaw browser to input lyrics, style, title, create, and play AI-generated music tracks.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.suno_automation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "upstatemovingimages-cmyk",
+      "features": [
+        "Control Suno.com via OpenClaw browser to input lyrics, style, title, create, and play AI-genera."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/suno-automation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256867021?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "suno-automation",
+      "url": "https://clawhub.ai/skills/suno-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "suno-automation",
+    "url": "https://clawhub.ai/skills/suno-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/suno-automation-3138d64dc1d3872a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/suno-automation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-suno-automation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f1b7db75acc334d583b7dfa5403e33253f7f4978841d895ec6ab53c049253919",
+      "artifactSizeBytes": 1925
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T00:23:30.565Z"
+}

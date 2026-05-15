@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67567,
+  "uuid": "skill-clawhub-investment-workflow",
+  "skillKey": "clawhub-investment-workflow",
+  "name": "Investment Workflow",
+  "summary": "［何时使用］当用户需要投研分析时；当用户说'分析这个标的'、'现在什么值得买'、'对 XX 行业怎么看'、'这个热点有什么影响'、'开会讨论投资'时触发。场景驱动的投研全流程，覆盖 6 个场景。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.investment_workflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lj22503",
+      "features": [
+        "［何时使用］当用户需要投研分析时；当用户说'分析这个标的'、'现在什么值得买'、'对 XX 行业怎么看'、'这个热点有什么影响'、'开会讨论投资'时触发。场景驱动的投研全流程，覆盖 6 个场."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/investment-workflow@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/170225356?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "investment-workflow",
+      "url": "https://clawhub.ai/skills/investment-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "investment-workflow",
+    "url": "https://clawhub.ai/skills/investment-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/investment-workflow-4edb0f1bb3be15a3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/investment-workflow@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-investment-workflow-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5798521c380d636e25e58b1328975257807deb715c8c30f343bc430fa9a2a5e1",
+      "artifactSizeBytes": 2088
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T09:18:38.489Z"
+}

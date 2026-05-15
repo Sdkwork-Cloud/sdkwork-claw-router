@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71155,
+  "uuid": "skill-clawhub-kaogong-study-tracker",
+  "skillKey": "clawhub-kaogong-study-tracker",
+  "name": "考公备考追踪",
+  "summary": "朱批录 · 国考备考追踪 Skill。当用户发来套题成绩、错题截图、备考打卡或复习进度时触发。 核心功能：识别错题截图 → 分类错题原因 → 更新本地记录 → 生成每日总结 → 导出 Excel / 同步飞书。 触发关键词：做了一套题、今天做了、错了几道、帮我分析、备考打卡、行测、申论、 判断推理、资料分析、言语...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kaogong_study_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KaguraNanaga",
+      "features": [
+        "朱批录 · 国考备考追踪 Skill。当用户发来套题成绩、错题截图、备考打卡或复习进度时触发。 核心功能：识别错题截图 → 分类错题原因 → 更新本地记录 → 生成每日总结 → 导出 Exc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kaogong-study-tracker@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/92779937?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kaogong-study-tracker",
+      "url": "https://clawhub.ai/skills/kaogong-study-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kaogong-study-tracker",
+    "url": "https://clawhub.ai/skills/kaogong-study-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kaogong-study-tracker-6b2aa46886138103.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kaogong-study-tracker@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-kaogong-study-tracker-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1294e6723f5a8b2b9c9d852a18894b129fcd16e6cd71d22d97abfe4851c985bb",
+      "artifactSizeBytes": 2618
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T13:40:24.705Z"
+}

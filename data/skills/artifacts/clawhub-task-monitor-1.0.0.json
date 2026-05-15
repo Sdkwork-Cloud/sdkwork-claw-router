@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/task-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_monitor",
+  "skill": {
+    "id": 9109,
+    "skillKey": "clawhub-task-monitor",
+    "name": "Task Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-monitor",
+    "url": "https://clawhub.ai/skills/task-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-monitor-c03508fb9a814409.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real-time web dashboard for OpenClaw sessions and background tasks. Mobile-responsive with auto-refresh."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jorgermp",
+      "userId": "publishers:jorgermp",
+      "displayName": "jorgermp",
+      "image": "https://avatars.githubusercontent.com/u/1401249?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3810,
+      "installsAllTime": 23,
+      "installsCurrent": 20,
+      "stars": 10,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770049062894,
+      "changelog": "Initial release of Task Monitor: a mobile-responsive, real-time dashboard for monitoring OpenClaw sessions and background tasks.\n\n- Web dashboard with modern, gradient dark theme and responsive design\n- Real-time updates with client-side auto-refresh every 60 seconds\n- Exposes a fast JSON API endpoint for current status and stats\n- Intelligent in-memory caching system (30s TTL) for low-latency responses\n- Supports session, Discord, sub-agent, and cron job monitoring\n- Legacy Markdown dashboard generator and CRON job automation included",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:da8cd9a49e277565f0731537d624e469dc046458911d868c4484f3b6795af8b7"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65760,
+  "uuid": "skill-clawhub-new-agent-onboarding",
+  "skillKey": "clawhub-new-agent-onboarding",
+  "name": "New Agent Onboarding",
+  "summary": "新 Agent 入职培训手册 - 从资深 Agent 的经验教训中学习。包含：工作区管理、与用户沟通、错误处理、工具使用、自我改进等实战经验。安装后阅读此文件，学习如何成为一个靠谱的 Agent。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.new_agent_onboarding",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "harrot90-code",
+      "features": [
+        "新 Agent 入职培训手册",
+        "从资深 Agent 的经验教训中学习。包含：工作区管理、与用户沟通、错误处理、工具使用、自我改进等实战经验。安装后阅读此文件，学习如何成为一个靠谱的 Agent。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/new-agent-onboarding@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266251749?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "new-agent-onboarding",
+      "url": "https://clawhub.ai/skills/new-agent-onboarding"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "new-agent-onboarding",
+    "url": "https://clawhub.ai/skills/new-agent-onboarding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/new-agent-onboarding-0e3c2a678f4cc667.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/new-agent-onboarding@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-new-agent-onboarding-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ccbbdded9e2bc7a2fe7a1a7480e96e8f4324660fefc8b00a5852b1007eebdee",
+      "artifactSizeBytes": 2460
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T10:42:31.810Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29984,
+  "uuid": "skill-clawhub-error-prone",
+  "skillKey": "clawhub-error-prone",
+  "name": "Error Prone",
+  "summary": "Makes AI-generated text sound more human by intentionally introducing realistic imperfections. Use when writing emails, messages, social posts, or any text t...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.error_prone",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dylan Feltus",
+      "features": [
+        "Makes AI-generated text sound more human by intentionally introducing realistic imperfections",
+        "Use when writing emails, messages, social posts, or any text t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/error-prone@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12265899?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "error-prone",
+      "url": "https://clawhub.ai/skills/error-prone"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "error-prone",
+    "url": "https://clawhub.ai/skills/error-prone",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/error-prone-326b31c0adc2687b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/error-prone@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-error-prone-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:be95751970678b418fe43499a0480813c068a3b979d0d98b2e31dbc721149f3b",
+      "artifactSizeBytes": 2227
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T18:46:11.304Z"
+}

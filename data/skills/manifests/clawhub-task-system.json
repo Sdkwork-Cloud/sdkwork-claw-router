@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11389,
+  "uuid": "skill-clawhub-task-system",
+  "skillKey": "clawhub-task-system",
+  "name": "Task System",
+  "summary": "Manage tasks with automatic creation, SQLite tracking, heartbeat updates, notifications, stuck task detection, and recovery in a complete lifecycle system.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_system",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "npmisantosh",
+      "features": [
+        "Manage tasks with automatic creation, SQLite tracking, heartbeat updates, notifications, stuck."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/task-system@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47918757?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "task-system",
+      "url": "https://clawhub.ai/skills/task-system"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-system",
+    "url": "https://clawhub.ai/skills/task-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-system-aab879f371b511e3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/task-system@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-task-system-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:231b83287fb721d528da33d79df8078e7b9cb16f4fd757e524ea0ca52a378932",
+      "artifactSizeBytes": 2111
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T17:38:56.671Z"
+}

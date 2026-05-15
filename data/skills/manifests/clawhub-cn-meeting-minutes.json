@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72286,
+  "uuid": "skill-clawhub-cn-meeting-minutes",
+  "skillKey": "clawhub-cn-meeting-minutes",
+  "name": "会议纪要生成",
+  "summary": "会议纪要生成工具。输入会议录音文件，自动生成结构化纪要文档，包含关键讨论点、决策结论、待办事项，输出Markdown格式。",
+  "version": "1.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_meeting_minutes",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "freedompixels",
+      "features": [
+        "会议纪要生成工具。输入会议录音文件，自动生成结构化纪要文档，包含关键讨论点、决策结论、待办事项，输出Markdown格式。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cn-meeting-minutes@1.4.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/220853702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cn-meeting-minutes",
+      "url": "https://clawhub.ai/skills/cn-meeting-minutes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-meeting-minutes",
+    "url": "https://clawhub.ai/skills/cn-meeting-minutes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-meeting-minutes-dcfbbc66d8722fd5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cn-meeting-minutes@1.4.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-cn-meeting-minutes-1.4.1.json",
+      "version": "1.4.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aff4463548c55be4f1e64760abd61668c25de63b89259003f1a98c24479b1134",
+      "artifactSizeBytes": 1993
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T01:56:04.785Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51863,
+  "uuid": "skill-clawhub-rail-cli",
+  "skillKey": "clawhub-rail-cli",
+  "name": "Rail CLI",
+  "summary": "UK National Rail CLI — live departures, arrivals, station search, destination filtering, batch station search from stdin, and lightweight field selection for...",
+  "version": "0.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rail_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shan8851",
+      "features": [
+        "UK National Rail CLI — live departures, arrivals, station search, destination filtering, batch."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rail-cli@0.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39712238?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rail-cli",
+      "url": "https://clawhub.ai/skills/rail-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rail-cli",
+    "url": "https://clawhub.ai/skills/rail-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rail-cli-f458814010e1997f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rail-cli@0.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-rail-cli-0.2.2.json",
+      "version": "0.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c940da9cb8605ef9179c54d82705ae86e0effa23b9ed9ada67b83a6906b8eff6",
+      "artifactSizeBytes": 1879
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T23:08:53.973Z"
+}

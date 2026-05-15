@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cyber-owasp-review@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cyber_owasp_review",
+  "skill": {
+    "id": 18202,
+    "skillKey": "clawhub-cyber-owasp-review",
+    "name": "Cyber Owasp Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cyber-owasp-review",
+    "url": "https://clawhub.ai/skills/cyber-owasp-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cyber-owasp-review-9b0737d2d04d78e4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Map application security findings to OWASP Top 10 categories and generate remediation checklists. Use for normalized AppSec review outputs and category-level..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0x-professor",
+      "userId": "s17bg4xm5b50d70ncct7b9shxh83n6jb",
+      "displayName": "Muhammad Mazhar Saeed",
+      "image": "https://avatars.githubusercontent.com/u/160357695?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 679,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772130053421,
+      "changelog": "- Initial release of cyber-owasp-review.\n- Maps application security findings to OWASP Top 10 categories.\n- Generates remediation checklists grouped by category and severity.\n- Includes scripts and guides for deterministic mapping and category heuristics.\n- Focuses strictly on remediation—no exploit or offensive guidance provided.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0afee73458d726029032b2ae1c44cbcc02a5620f47a860eb10da4ab085767424"
+}

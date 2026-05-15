@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28693,
+  "uuid": "skill-clawhub-yiliu",
+  "skillKey": "clawhub-yiliu",
+  "name": "Yiliu",
+  "summary": "Yiliu - AI-powered note-taking knowledge base with semantic search, auto-summarization, and version management",
+  "version": "1.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yiliu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DamingDong",
+      "features": [
+        "AI-powered note-taking knowledge base with semantic search, auto-summarization, and version man."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yiliu@1.2.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24807880?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yiliu",
+      "url": "https://clawhub.ai/skills/yiliu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yiliu",
+    "url": "https://clawhub.ai/skills/yiliu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yiliu-233786bb4a1398d8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yiliu@1.2.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-yiliu-1.2.3.json",
+      "version": "1.2.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:474031e6f9f257ad9d71ab67655500e08d164cdc171c0a5ffd10391a72f141a1",
+      "artifactSizeBytes": 1856
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T11:31:05.497Z"
+}

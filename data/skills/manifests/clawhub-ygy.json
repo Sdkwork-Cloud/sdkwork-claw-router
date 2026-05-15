@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32214,
+  "uuid": "skill-clawhub-ygy",
+  "skillKey": "clawhub-ygy",
+  "name": "Ygy",
+  "summary": "Y.gy integration. Manage data, records, and automate workflows. Use when the user wants to interact with Y.gy data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ygy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Y.gy integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Y.gy data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ygy@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ygy",
+      "url": "https://clawhub.ai/skills/ygy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ygy",
+    "url": "https://clawhub.ai/skills/ygy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ygy-f1f1777ddc51376d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ygy@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ygy-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:570453fb99af5972c07c4cdaebf48bc74f0085011c25ab8261691eed08f4738b",
+      "artifactSizeBytes": 1787
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:04:05.533Z"
+}

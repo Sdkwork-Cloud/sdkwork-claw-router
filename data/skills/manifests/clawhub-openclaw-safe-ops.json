@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19135,
+  "uuid": "skill-clawhub-openclaw-safe-ops",
+  "skillKey": "clawhub-openclaw-safe-ops",
+  "name": "OpenClaw Safe Ops",
+  "summary": "Guards high-risk OpenClaw operations with preflight backups, post-change health checks, and rollback guidance. Use when running gateway restart/start/stop, c...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_safe_ops",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dhrxy",
+      "features": [
+        "Guards high-risk OpenClaw operations with preflight backups, post-change health checks, and rol.",
+        "Use when running gateway restart/start/stop, c..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-safe-ops@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51009660?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-safe-ops",
+      "url": "https://clawhub.ai/skills/openclaw-safe-ops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-safe-ops",
+    "url": "https://clawhub.ai/skills/openclaw-safe-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-safe-ops-da66276c7ed2a9a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-safe-ops@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-safe-ops-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:09c06e04b3ca0544ecc9184457a93766c47b9d11b9ea674cde3b5cf4bdd9b1a3",
+      "artifactSizeBytes": 1979
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T07:27:51.178Z"
+}

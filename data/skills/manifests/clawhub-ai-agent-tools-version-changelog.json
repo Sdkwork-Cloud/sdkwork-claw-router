@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59278,
+  "uuid": "skill-clawhub-ai-agent-tools-version-changelog",
+  "skillKey": "clawhub-ai-agent-tools-version-changelog",
+  "name": "Ai Agent Tools Version Changelog",
+  "summary": "查询Claude Code、OpenClaw和Hermes Agent的最新版本和版本日志，包括发布日期及主要更新内容。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_agent_tools_version_changelog",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jzx0",
+      "features": [
+        "查询Claude Code、OpenClaw和Hermes Agent的最新版本和版本日志，包括发布日期及主要更新内容。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-agent-tools-version-changelog@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13664106?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-agent-tools-version-changelog",
+      "url": "https://clawhub.ai/skills/ai-agent-tools-version-changelog"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-agent-tools-version-changelog",
+    "url": "https://clawhub.ai/skills/ai-agent-tools-version-changelog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-agent-tools-version-changelog-391a0ff8e891d75c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-agent-tools-version-changelog@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-agent-tools-version-changelog-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:25728180c1340b837c83aaabf98d57baa392af3f19af83d3fdabe63d2cac5730",
+      "artifactSizeBytes": 2439
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T07:40:36.730Z"
+}

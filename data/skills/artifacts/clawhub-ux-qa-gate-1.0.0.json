@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ux-qa-gate@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ux_qa_gate",
+  "skill": {
+    "id": 26499,
+    "skillKey": "clawhub-ux-qa-gate",
+    "name": "UX QA Gate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ux-qa-gate",
+    "url": "https://clawhub.ai/skills/ux-qa-gate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ux-qa-gate-b73f42a4578b0d3c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Self-review gate for UI/UX work before delivering to the user. Run automatically after building, modifying, or completing any user-facing feature, page, comp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "michellebolander",
+      "userId": "publishers:michellebolander",
+      "displayName": "michellebolander",
+      "image": "https://avatars.githubusercontent.com/u/166651145?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 268,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773806888393,
+      "changelog": "Initial release: UX QA gate with Nielsen Norman heuristic checklist",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:613fc629397651b0fca46271fbd400a48694cafb333454b297f7f1ddc1126730"
+}

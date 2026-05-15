@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25203,
+  "uuid": "skill-clawhub-trigger-evaluator",
+  "skillKey": "clawhub-trigger-evaluator",
+  "name": "Trigger Evaluator",
+  "summary": "Evaluate real OpenClaw trigger rules against the current database state. Use for heartbeat-style trigger checks, especially stale mission detection backed by...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trigger_evaluator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EcosincronIA",
+      "features": [
+        "Evaluate real OpenClaw trigger rules against the current database state",
+        "Use for heartbeat-style trigger checks, especially stale mission detection backed by..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trigger-evaluator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/242621438?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trigger-evaluator",
+      "url": "https://clawhub.ai/skills/trigger-evaluator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trigger-evaluator",
+    "url": "https://clawhub.ai/skills/trigger-evaluator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trigger-evaluator-b10ba7fabb283974.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trigger-evaluator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trigger-evaluator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:88132c4dc9c194456207b4040e169713cbd8424391b74a2660b9c70fbf89b270",
+      "artifactSizeBytes": 2349
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T08:50:13.688Z"
+}

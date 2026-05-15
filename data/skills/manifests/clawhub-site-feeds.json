@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27711,
+  "uuid": "skill-clawhub-site-feeds",
+  "skillKey": "clawhub-site-feeds",
+  "name": "Site Feeds",
+  "summary": "Use this skill when the user wants to get updates or content from websites and platforms like YouTube, GitHub, Instagram, Reddit, news sites, blogs, etc. Thi...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.site_feeds",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "heqi201255",
+      "features": [
+        "Use this skill when the user wants to get updates or content from websites and platforms like Y."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/site-feeds@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33139237?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "site-feeds",
+      "url": "https://clawhub.ai/skills/site-feeds"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "site-feeds",
+    "url": "https://clawhub.ai/skills/site-feeds",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/site-feeds-dd7878ddd937c6bf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/site-feeds@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-site-feeds-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a7302e741ed7cc589989a874c01199873198b10e2f9e56084737d007b2b513d5",
+      "artifactSizeBytes": 2095
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T02:26:53.787Z"
+}

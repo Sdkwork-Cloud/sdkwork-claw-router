@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19163,
+  "uuid": "skill-clawhub-qa-patrol",
+  "skillKey": "clawhub-qa-patrol",
+  "name": "Qa Patrol",
+  "summary": "Automated QA testing for web apps using local browser automation. Runs entirely on your machine — no data leaves, no cloud services, no external servers. Lev...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qa_patrol",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tahseen-ur Rahman",
+      "features": [
+        "Automated QA testing for web apps using local browser automation",
+        "Runs entirely on your machine — no data leaves, no cloud services, no external servers"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qa-patrol@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/217856162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qa-patrol",
+      "url": "https://clawhub.ai/skills/qa-patrol"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qa-patrol",
+    "url": "https://clawhub.ai/skills/qa-patrol",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qa-patrol-794d692db7edaad5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qa-patrol@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-qa-patrol-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:75fa2122f0cb63418c5f0e7d37afa277533acbaf70dbfe3b81278794e33b2743",
+      "artifactSizeBytes": 2007
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T23:27:42.338Z"
+}

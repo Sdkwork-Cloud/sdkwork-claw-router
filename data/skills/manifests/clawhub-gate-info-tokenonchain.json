@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35580,
+  "uuid": "skill-clawhub-gate-info-tokenonchain",
+  "skillKey": "clawhub-gate-info-tokenonchain",
+  "name": "gate-info-tokenonchain",
+  "summary": "Token on-chain analysis via Gate-Info MCP: holder distribution, on-chain activity, and large or unusual transfers (scopes holders / activity / transfers). Sm...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_info_tokenonchain",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gate",
+      "features": [
+        "Token on-chain analysis via Gate-Info MCP: holder distribution, on-chain activity, and large or."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gate-info-tokenonchain@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33109813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gate-info-tokenonchain",
+      "url": "https://clawhub.ai/skills/gate-info-tokenonchain"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-info-tokenonchain",
+    "url": "https://clawhub.ai/skills/gate-info-tokenonchain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-info-tokenonchain-76a8f8e41bc6e158.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gate-info-tokenonchain@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-gate-info-tokenonchain-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:05a2f53e6baf57b4a1df3408f7ae623c01f2176070f771c1db63089a1e11fdb5",
+      "artifactSizeBytes": 2372
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T10:34:55.238Z"
+}

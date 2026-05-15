@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zhihu-search-api-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhihu_search_api_skill",
+  "skill": {
+    "id": 30777,
+    "skillKey": "clawhub-zhihu-search-api-skill",
+    "name": "zhihu-search-api-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhihu-search-api-skill",
+    "url": "https://clawhub.ai/skills/zhihu-search-api-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhihu-search-api-skill-1c3d5eac593139ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill helps users automatically extract structured article details and full content from Zhihu via the BrowserAct API. Agent should proactively apply th..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "browseract-ai",
+      "userId": "s17eex5avkmwj7pwmzbzewhvah83n8t8",
+      "displayName": "browser-act",
+      "image": "https://avatars.githubusercontent.com/u/209727774?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 267,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774007476786,
+      "changelog": "Initial release of zhihu-search-api-skill.\n\n- Automatically extracts structured article details and full content from Zhihu using BrowserAct API.\n- Supports keyword search, publication date filtering, and configurable extraction limits.\n- Handles CAPTCHA, IP, and geo-fencing issues transparently—no extra user action required.\n- Provides robust error handling and user guidance for API key configuration and failures.\n- Suitable for industry tracking, PR monitoring, market research, and news summarization from Zhihu.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:efc44ced3ac40b5b9993942867a01c157d965030de11e5180612f2e3b47d018d"
+}

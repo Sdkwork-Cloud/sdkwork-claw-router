@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10558,
+  "uuid": "skill-clawhub-gifhorse",
+  "skillKey": "clawhub-gifhorse",
+  "name": "GifHorse",
+  "summary": "Search video dialogue and create reaction GIFs with timed subtitles. Perfect for creating meme-worthy clips from movies and TV shows.",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gifhorse",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Coyote-git",
+      "features": [
+        "Search video dialogue and create reaction GIFs with timed subtitles",
+        "Perfect for creating meme-worthy clips from movies and TV shows."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gifhorse@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255712340?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gifhorse",
+      "url": "https://clawhub.ai/skills/gifhorse"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gifhorse",
+    "url": "https://clawhub.ai/skills/gifhorse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gifhorse-b1ca3b6ebc30f666.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gifhorse@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gifhorse-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f7b14bfe1fe152dea566fb9d9d8942053f29becff5271b31bd3b415998745a11",
+      "artifactSizeBytes": 1922
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T19:11:39.051Z"
+}

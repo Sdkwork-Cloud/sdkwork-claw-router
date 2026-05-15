@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57070,
+  "uuid": "skill-clawhub-baoyu-post-to-weibo-2",
+  "skillKey": "clawhub-baoyu-post-to-weibo-2",
+  "name": "Baoyu Post To Weibo",
+  "summary": "Posts content to Weibo (微博). Supports regular posts with text, images, and videos, and headline articles (头条文章) with Markdown input via Chrome CDP. Use when...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baoyu_post_to_weibo_2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nengnengZ",
+      "features": [
+        "Posts content to Weibo (微博)",
+        "Supports regular posts with text, images, and videos, and headline articles (头条文章) with Markdow.",
+        "Use when..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baoyu-post-to-weibo-2@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/124799184?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baoyu-post-to-weibo-2",
+      "url": "https://clawhub.ai/skills/baoyu-post-to-weibo-2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baoyu-post-to-weibo-2",
+    "url": "https://clawhub.ai/skills/baoyu-post-to-weibo-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baoyu-post-to-weibo-2-976018b2005695f4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baoyu-post-to-weibo-2@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-baoyu-post-to-weibo-2-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4819e6762e1a783c9ad29403e0a69e53fdabdfaf1afa758dbe070f8db3995032",
+      "artifactSizeBytes": 2328
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T06:48:56.270Z"
+}

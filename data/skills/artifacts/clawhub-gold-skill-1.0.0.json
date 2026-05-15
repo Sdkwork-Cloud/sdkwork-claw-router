@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gold-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gold_skill",
+  "skill": {
+    "id": 71451,
+    "skillKey": "clawhub-gold-skill",
+    "name": "gold-analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gold-skill",
+    "url": "https://clawhub.ai/skills/gold-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gold-skill-717fc22f76c5b477.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "黄金投资分析工具，提供实时金价查询、技术指标分析、新闻基本面分析功能。当用户询问黄金价格、黄金走势、黄金投资、黄金分析、黄金新闻、黄金技术分析、黄金支撑位阻力位等相关问题时触发此 Skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fmouseboy",
+      "userId": "s172cbtek476cw42nfxa6hxczx83pzaf",
+      "displayName": "FMouse",
+      "image": "https://avatars.githubusercontent.com/u/36061597?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 61,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773225816050,
+      "changelog": "gold-analysis 1.0.0\n\n- 初始版本发布，支持黄金投资分析相关功能。\n- 提供实时国际/国内金价查询，技术指标分析（RSI、MACD、均线）、支撑阻力位。\n- 集成 Tavily API 用于黄金新闻和数据检索，支持自定义 API 密钥。\n- 分析报告涵盖价格、技术面、基本面及风险提示。\n- 设有默认密钥，便于开箱即用，可按需配置更高频调用。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:036180770cd29aa70fd2fa9ae02d758384e85829df4799ef2bc244a4379484fa"
+}

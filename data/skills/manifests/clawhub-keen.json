@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35704,
+  "uuid": "skill-clawhub-keen",
+  "skillKey": "clawhub-keen",
+  "name": "Keen",
+  "summary": "Keen integration. Manage data, records, and automate workflows. Use when the user wants to interact with Keen data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.keen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Keen integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Keen data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/keen@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "keen",
+      "url": "https://clawhub.ai/skills/keen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "keen",
+    "url": "https://clawhub.ai/skills/keen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/keen-7471bdb1765a28da.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/keen@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-keen-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:843bba37ba970b68f74c2877f886ed09c1a8a8b629739628206b4fe6d0fa026d",
+      "artifactSizeBytes": 1794
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:03:24.940Z"
+}

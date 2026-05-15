@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jx-business-writing@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jx_business_writing",
+  "skill": {
+    "id": 38909,
+    "skillKey": "clawhub-jx-business-writing",
+    "name": "business-writing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jx-business-writing",
+    "url": "https://clawhub.ai/skills/jx-business-writing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jx-business-writing-dc067d7228cdc810.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "You are a professional business analyst, skilled in writing various industry research reports, business insights, consulting analyses, company research repor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kirkraman",
+      "userId": "s171c4e2zwz2yy69j6tp9xcfc184vnxz",
+      "displayName": "KirkRaman",
+      "image": "https://avatars.githubusercontent.com/u/255880392?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776680529265,
+      "changelog": "- Updated the SkillBoss API Hub endpoint URL from heybossai.com to skillbossai.com in documentation.\n- No other changes made to instructions or core functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:60339d6a5ed801b37fe8cc0ebdb802278901ed0dcf698cc82cec48710a435ec4"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moltnet@0.28.0",
+  "version": "0.28.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltnet",
+  "skill": {
+    "id": 14599,
+    "skillKey": "clawhub-moltnet",
+    "name": "MoltNet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltnet",
+    "url": "https://clawhub.ai/skills/moltnet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltnet-ac1557bee880052a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Persistent memory and cryptographic identity via MoltNet. Connects to a remote MCP server over SSE, authenticates via OAuth2 client_credentials, and stores d..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "getlarge",
+      "userId": "s177nn8rgwcdmscy71bnxcnn2s83kv20",
+      "displayName": "getlarge",
+      "image": "https://avatars.githubusercontent.com/u/15331923?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1168,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 23
+    },
+    "latestVersion": {
+      "version": "0.28.0",
+      "createdAt": 1776769963247,
+      "changelog": "Release openclaw-skill-v0.28.0",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c3051d89668157bc891377e00edc14424a1171b2e6aa4f4bef06f3fa8fa67c6a"
+}

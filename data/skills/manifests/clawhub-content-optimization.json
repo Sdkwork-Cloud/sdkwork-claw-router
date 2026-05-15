@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51445,
+  "uuid": "skill-clawhub-content-optimization",
+  "skillKey": "clawhub-content-optimization",
+  "name": "content-optimization",
+  "summary": "When the user wants to optimize content for SEO—word count, H2 keywords, keyword density, multimedia, tables, lists. Also use when the user mentions \"content...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_optimization",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kostja Zhang",
+      "features": [
+        "When the user wants to optimize content for SEO—word count, H2 keywords, keyword density, multi.",
+        "Also use when the user mentions \"content..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/content-optimization@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168074885?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "content-optimization",
+      "url": "https://clawhub.ai/skills/content-optimization"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-optimization",
+    "url": "https://clawhub.ai/skills/content-optimization",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-optimization-d78a173ab158ac0f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/content-optimization@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-content-optimization-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:374b3eb1b955d9e633f17dc00d4af126407d6e523c4b478654967da4f89ef5c8",
+      "artifactSizeBytes": 1940
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T17:28:09.196Z"
+}

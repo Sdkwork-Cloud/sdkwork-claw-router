@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kesslerio-stealth-browser@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kesslerio_stealth_browser",
+  "skill": {
+    "id": 9234,
+    "skillKey": "clawhub-kesslerio-stealth-browser",
+    "name": "Stealth Browser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kesslerio-stealth-browser",
+    "url": "https://clawhub.ai/skills/kesslerio-stealth-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kesslerio-stealth-browser-a0f178cd4a2ca624.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Anti-bot browser automation using Camoufox and Nodriver. Bypasses Cloudflare Turnstile, Datadome, and aggressive anti-bot on sites like Airbnb and Yelp. Use when standard Playwright/Selenium gets blocked."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kesslerio",
+      "userId": "publishers:kesslerio",
+      "displayName": "kesslerio",
+      "image": "https://avatars.githubusercontent.com/u/2647990?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4015,
+      "installsAllTime": 14,
+      "installsCurrent": 14,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770018481564,
+      "changelog": "Initial release: Camoufox and curl_cffi for anti-bot bypass",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:17f48ee227dfe032823517da321ca468e899f7e2ba43ef2319df0cd807a78830"
+}

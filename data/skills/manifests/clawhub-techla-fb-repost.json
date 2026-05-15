@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58166,
+  "uuid": "skill-clawhub-techla-fb-repost",
+  "skillKey": "clawhub-techla-fb-repost",
+  "name": "Techla FB Repost",
+  "summary": "Skill để lấy nội dung từ link bài viết Facebook, viết lại bài theo phong cách phù hợp, tạo ảnh minh họa bằng Gemini, rồi đăng lên Facebook Page qua Graph API...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.techla_fb_repost",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "techlaai",
+      "features": [
+        "Skill để lấy nội dung từ link bài viết Facebook, viết lại bài theo phong cách phù hợp, tạo ảnh."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/techla-fb-repost@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/249414167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "techla-fb-repost",
+      "url": "https://clawhub.ai/skills/techla-fb-repost"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "techla-fb-repost",
+    "url": "https://clawhub.ai/skills/techla-fb-repost",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/techla-fb-repost-4f27baef8360649d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/techla-fb-repost@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-techla-fb-repost-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:66e2e0b1776a61142d187b22f496e7fee29ddd2f6dbf3e79ed6a21d79d987630",
+      "artifactSizeBytes": 2481
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T09:45:31.141Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eastmoney-stock-simulator@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eastmoney_stock_simulator",
+  "skill": {
+    "id": 67590,
+    "skillKey": "clawhub-eastmoney-stock-simulator",
+    "name": "eastmoney skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eastmoney-stock-simulator",
+    "url": "https://clawhub.ai/skills/eastmoney-stock-simulator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eastmoney-stock-simulator-b43a59ebbf585634.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "妙想提供的股票模拟组合管理系统，支持持仓查询、买卖操作、撤单、委托查询、历史成交查询和资金查询等功能。通过安全认证的API接口实现真实交易体验。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qqk000",
+      "userId": "s17frcy5ptth9431pqd3x1fxg183kmjr",
+      "displayName": "eastmoney_dev",
+      "image": "https://avatars.githubusercontent.com/u/109639273?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 9045,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 2,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1773890582881,
+      "changelog": "eastmoney-stock-simulator 1.0.4 Changelog\n\n- Added primary_credential field for clearer credential configuration.\n- No changes to code or functional logic—metadata update only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:760fef0cd95ccbb7fde7da1365e618dd92476297dd537388436417f4b6c5a159"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/equipment-maintenance-log@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.equipment_maintenance_log",
+  "skill": {
+    "id": 27236,
+    "skillKey": "clawhub-equipment-maintenance-log",
+    "name": "Equipment Maintenance Log"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "equipment-maintenance-log",
+    "url": "https://clawhub.ai/skills/equipment-maintenance-log",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/equipment-maintenance-log-2f4bac4ce7190d37.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track lab equipment calibration dates and send maintenance reminders"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shanruoyu",
+      "userId": "s172s7npdfrd0d2tnzjfje1hhn83gpfa",
+      "displayName": "shanruoyu",
+      "image": "https://avatars.githubusercontent.com/u/56035842?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 352,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773394139678,
+      "changelog": "Initial release of equipment-maintenance-log\n\n- Track calibration dates and maintenance intervals for lab equipment.\n- Send maintenance reminders and generate overdue alerts.\n- Supports adding new equipment, checking upcoming maintenance, and listing all records.\n- No external dependencies; runs with standard Python.\n- Includes security and risk assessment guidelines.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:54429a9ee790573c513fcdedb959e1176ebf3d48078d1244d687d073d75190aa"
+}

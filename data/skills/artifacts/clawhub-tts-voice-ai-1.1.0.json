@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tts-voice-ai@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tts_voice_ai",
+  "skill": {
+    "id": 68550,
+    "skillKey": "clawhub-tts-voice-ai",
+    "name": "Tts Voice Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tts-voice-ai",
+    "url": "https://clawhub.ai/skills/tts-voice-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tts-voice-ai-ecd7a2203121a76b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI多语言文字转语音工具，支持中文、英文、日语、韩语、粤语语音生成、配音、有声书及语音克隆。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiachuan-1",
+      "userId": "s17b177xs3ybmb0gncm3md3q7583h4n5",
+      "displayName": "jiachuan-1",
+      "image": "https://avatars.githubusercontent.com/u/189439716?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 672,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 27,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773655765793,
+      "changelog": "- Added support for the --language-boost parameter to enhance small language and dialect recognition.\n- Updated documentation and usage examples to recommend --language-boost \"Chinese,Yue\" for Cantonese TTS.\n- Expanded parameter table: now includes --language-boost / -b.\n- Added section explaining Language Boost usage and recommended values for each language.\n- Clarified that Cantonese requires \"Chinese,Yue\" for proper output.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:48fd342e96dd0b3cb24344c5ea0c966a47b65fc2bde597969a4b112925e4d610"
+}

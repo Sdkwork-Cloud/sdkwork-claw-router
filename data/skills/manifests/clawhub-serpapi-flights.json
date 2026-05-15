@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55977,
+  "uuid": "skill-clawhub-serpapi-flights",
+  "skillKey": "clawhub-serpapi-flights",
+  "name": "SerpApi Flights (Google Flights)",
+  "summary": "Query Google Flights via SerpApi for flight schedules, prices, and cabin class info. Use when user asks about flight/机票/航班 prices, schedules, or comparisons.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.serpapi_flights",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kirorab",
+      "features": [
+        "Query Google Flights via SerpApi for flight schedules, prices, and cabin class info",
+        "Use when user asks about flight/机票/航班 prices, schedules, or comparisons."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/serpapi-flights@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/88550600?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "serpapi-flights",
+      "url": "https://clawhub.ai/skills/serpapi-flights"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "serpapi-flights",
+    "url": "https://clawhub.ai/skills/serpapi-flights",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/serpapi-flights-bde9a097d45ad614.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/serpapi-flights@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-serpapi-flights-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:15c953eb34035485f9b7c49ece6ee83d92a6d9767c25ed0d16471e463e45c807",
+      "artifactSizeBytes": 1994
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T07:21:31.891Z"
+}

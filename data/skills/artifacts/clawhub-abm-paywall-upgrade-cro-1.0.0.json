@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/abm-paywall-upgrade-cro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abm_paywall_upgrade_cro",
+  "skill": {
+    "id": 35878,
+    "skillKey": "clawhub-abm-paywall-upgrade-cro",
+    "name": "Paywall Upgrade Cro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abm-paywall-upgrade-cro",
+    "url": "https://clawhub.ai/skills/abm-paywall-upgrade-cro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abm-paywall-upgrade-cro-d1125604194e16ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When the user wants to create or optimize in-app paywalls, upgrade screens, upsell modals, or feature gates. Also use when the user mentions \"paywall,\" \"upgr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mariokarras",
+      "userId": "s1714hxad423m02rtb4r6n2vmn83e4f5",
+      "displayName": "Mario Karras",
+      "image": "https://avatars.githubusercontent.com/u/199292356?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 210,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773975616107,
+      "changelog": "- Initial release of the paywall-upgrade-cro skill.\n- Provides comprehensive guidance for creating and optimizing in-app paywalls, upgrade screens, upsell modals, and feature gates.\n- Focuses on converting free users to paid or encouraging upgrades at key in-product moments after users have experienced value.\n- Includes best practices for feature gating, usage limits, trial expiration, and timing/frequency of upgrade prompts.\n- Offers actionable templates, core principles, anti-patterns to avoid, and suggestions for effective A/B testing.\n- Distinguishes in-product paywall optimization from public pricing pages and other related skills.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:42f1bed794872eae2e7824faf09d271caf06c4a035d98605d3f110292135f8b1"
+}

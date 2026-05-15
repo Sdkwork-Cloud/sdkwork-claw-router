@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70293,
+  "uuid": "skill-clawhub-douyin-transcribe",
+  "skillKey": "clawhub-douyin-transcribe",
+  "name": "抖音视频转文字",
+  "summary": "抖音视频转文字。用户发抖音链接或视频文件，自动转录为带标点的中文文本。 触发词：抖音、转文字、转录、视频转文本、douyin、transcribe",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_transcribe",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "junweiren98-rgb",
+      "features": [
+        "抖音视频转文字。用户发抖音链接或视频文件，自动转录为带标点的中文文本。 触发词：抖音、转文字、转录、视频转文本、douyin、transcribe"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/douyin-transcribe@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/239141115?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "douyin-transcribe",
+      "url": "https://clawhub.ai/skills/douyin-transcribe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-transcribe",
+    "url": "https://clawhub.ai/skills/douyin-transcribe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-transcribe-bcce27ae21b37f80.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/douyin-transcribe@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-douyin-transcribe-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aa200b07e153905d8f10d7b46969ac82414258e594ae8f435188cd77c4ad8ef5",
+      "artifactSizeBytes": 1985
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T09:27:43.547Z"
+}

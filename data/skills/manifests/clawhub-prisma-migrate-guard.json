@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27890,
+  "uuid": "skill-clawhub-prisma-migrate-guard",
+  "skillKey": "clawhub-prisma-migrate-guard",
+  "name": "Prisma Migrate Guard",
+  "summary": "Preflight Prisma migration state before deploy; fails fast on drift, failed migrations, missing DB URLs, or unapplied migration files.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prisma_migrate_guard",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daniel Lummis",
+      "features": [
+        "Preflight Prisma migration state before deploy",
+        "fails fast on drift, failed migrations, missing DB URLs, or unapplied migration files."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prisma-migrate-guard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65238171?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prisma-migrate-guard",
+      "url": "https://clawhub.ai/skills/prisma-migrate-guard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prisma-migrate-guard",
+    "url": "https://clawhub.ai/skills/prisma-migrate-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prisma-migrate-guard-537a718ac3c29cb9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prisma-migrate-guard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-prisma-migrate-guard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d0f440813c23a2a30ad4f5d582d4d92301989803ee4a9ff289aabb496cba1af",
+      "artifactSizeBytes": 1946
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T16:06:30.548Z"
+}

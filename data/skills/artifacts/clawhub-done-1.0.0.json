@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/done@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.done",
+  "skill": {
+    "id": 61402,
+    "skillKey": "clawhub-done",
+    "name": "done"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "done",
+    "url": "https://clawhub.ai/skills/done",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/done-a4c3ed04a95a3da1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动解压并安装技能压缩包到 WSL2 和 Windows 桌面。支持 zip 格式。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aetik-yue",
+      "userId": "s1713a6pccstx5c7yk69mm370h84vdt5",
+      "displayName": "Aetik",
+      "image": "https://avatars.githubusercontent.com/u/79252578?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 434,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773154271699,
+      "changelog": "Initial release of the Done skill—automatic skill package installer for WSL2 and Windows desktop.\n\n- Installs ZIP-packaged skills in one step, supporting both Windows and Linux/WSL2 paths.\n- Automatically extracts, reads SKILL.md, and copies skills to WSL2 and Windows desktop folders.\n- Supports common command phrases such as Done, done, 帮我 done, and variations.\n- Provides detailed installation progress and error handling.\n- Cleans up temporary files and overwrites existing skills if needed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e0636b565ffe6817e4878c92fcf44d8dac91ccd98b89bf5c8e61401f4612707c"
+}

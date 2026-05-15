@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57802,
+  "uuid": "skill-clawhub-china-rental-price",
+  "skillKey": "clawhub-china-rental-price",
+  "name": "获取一嗨租车的租车价格",
+  "summary": "Use when the user needs a China domestic rental-car reference price, especially for same-day or holiday travel where train-station or airport store choice ma...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_rental_price",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tengjiaozhai",
+      "features": [
+        "Use when the user needs a China domestic rental-car reference price, especially for same-day or."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/china-rental-price@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/85268289?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "china-rental-price",
+      "url": "https://clawhub.ai/skills/china-rental-price"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-rental-price",
+    "url": "https://clawhub.ai/skills/china-rental-price",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-rental-price-f2713954dfa8fe8f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/china-rental-price@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-china-rental-price-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6c72ae391b8ebfd5e42e9792d96ad436012f071040a44ce14bc404aeecc31f51",
+      "artifactSizeBytes": 2430
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T14:21:22.214Z"
+}

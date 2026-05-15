@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63883,
+  "uuid": "skill-clawhub-openclaw-cn",
+  "skillKey": "clawhub-openclaw-cn",
+  "name": "Openclaw Cn 百度搜索",
+  "summary": "通过百度 AI 搜索 API 进行网页搜索，获取实时信息和搜索结果。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "iDOTOOLS",
+      "features": [
+        "通过百度 AI 搜索 API 进行网页搜索，获取实时信息和搜索结果。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13565934?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-cn",
+      "url": "https://clawhub.ai/skills/openclaw-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-cn",
+    "url": "https://clawhub.ai/skills/openclaw-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-cn-a774ca60a53ccd41.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b939d7f6170abed82b3183f96a3fcea83e36f4c41f62131d535b8c3ed7308044",
+      "artifactSizeBytes": 2113
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T01:36:49.787Z"
+}

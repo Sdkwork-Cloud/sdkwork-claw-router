@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17932,
+  "uuid": "skill-clawhub-openclaw-paid-actions",
+  "skillKey": "clawhub-openclaw-paid-actions",
+  "name": "OpenClaw Paid Actions",
+  "summary": "Use the openclaw_paid_action tool to list actions, generate USDC invoices, and execute only after manual payment confirmation on Solana.",
+  "version": "0.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_paid_actions",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Icey",
+      "features": [
+        "Use the openclaw_paid_action tool to list actions, generate USDC invoices, and execute only aft."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-paid-actions@0.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14633666?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-paid-actions",
+      "url": "https://clawhub.ai/skills/openclaw-paid-actions"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-paid-actions",
+    "url": "https://clawhub.ai/skills/openclaw-paid-actions",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-paid-actions-8a59027ed782aa3c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-paid-actions@0.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-paid-actions-0.2.2.json",
+      "version": "0.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ed2b6bece3c9e468bf3247a67dfe3bf33d49da2d9544c3343f4d035253e8b71",
+      "artifactSizeBytes": 1990
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T01:17:00.385Z"
+}

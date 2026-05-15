@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39732,
+  "uuid": "skill-clawhub-cross-platform-memory",
+  "skillKey": "clawhub-cross-platform-memory",
+  "name": "Cross-Platform Memory Bridge",
+  "summary": "Injects recent conversations from Telegram and Discord into the OpenClaw gateway session context. Enables the agent to remember and reference cross-platform...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cross_platform_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dan",
+      "features": [
+        "Injects recent conversations from Telegram and Discord into the OpenClaw gateway session context",
+        "Enables the agent to remember and reference cross-platform..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cross-platform-memory@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/241004359?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cross-platform-memory",
+      "url": "https://clawhub.ai/skills/cross-platform-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cross-platform-memory",
+    "url": "https://clawhub.ai/skills/cross-platform-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cross-platform-memory-3aec08219d2d7221.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cross-platform-memory@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cross-platform-memory-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a35358476de5e77491ac4b9e67f0a4877515a96e642262e2f37511561d61d457",
+      "artifactSizeBytes": 2575
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T23:04:15.300Z"
+}

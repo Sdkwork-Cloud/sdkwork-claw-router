@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47380,
+  "uuid": "skill-clawhub-ucts-investigate",
+  "skillKey": "clawhub-ucts-investigate",
+  "name": "Ucts Investigate",
+  "summary": "Root cause debugging methodology. Systematic hypothesis-driven investigation with strict rules: no fixes without investigation, stop after 3 failed attempts....",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ucts_investigate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MUTHUKUMARAN-K-1",
+      "features": [
+        "Root cause debugging methodology",
+        "Systematic hypothesis-driven investigation with strict rules: no fixes without investigation, s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ucts-investigate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/180547780?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ucts-investigate",
+      "url": "https://clawhub.ai/skills/ucts-investigate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ucts-investigate",
+    "url": "https://clawhub.ai/skills/ucts-investigate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ucts-investigate-f6fd21a3f51a77b5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ucts-investigate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ucts-investigate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:58719bf340e46ce20ba580849e84078135b5355d18709db837ce557d7ae6bf52",
+      "artifactSizeBytes": 2397
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T07:51:06.180Z"
+}

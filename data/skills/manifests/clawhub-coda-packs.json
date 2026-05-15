@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15027,
+  "uuid": "skill-clawhub-coda-packs",
+  "skillKey": "clawhub-coda-packs",
+  "name": "Coda Packs",
+  "summary": "Manage private Coda Packs by listing, creating, updating metadata, and deleting Packs using the Coda REST API v1 and CODA_API_TOKEN.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coda_packs",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TFM",
+      "features": [
+        "Manage private Coda Packs by listing, creating, updating metadata, and deleting Packs using the."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coda-packs@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7838269?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coda-packs",
+      "url": "https://clawhub.ai/skills/coda-packs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coda-packs",
+    "url": "https://clawhub.ai/skills/coda-packs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coda-packs-8113176a500c91e4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coda-packs@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-coda-packs-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:691070e856f72a4285b111e2bdd9af12ba4c84f6c5b57f27f91c32ceb3571a06",
+      "artifactSizeBytes": 2002
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T21:23:06.575Z"
+}

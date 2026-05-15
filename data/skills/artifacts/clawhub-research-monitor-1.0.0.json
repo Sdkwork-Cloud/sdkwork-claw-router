@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/research-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.research_monitor",
+  "skill": {
+    "id": 63872,
+    "skillKey": "clawhub-research-monitor",
+    "name": "research-monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "research-monitor",
+    "url": "https://clawhub.ai/skills/research-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/research-monitor-0380c953b124716b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "뉴스, 트렌드, 경쟁사 동향, 기술 업데이트를 키워드 기반으로 자동 수집하고 요약해 일일 및 주간 리포트를 제공합니다."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ryuchanyul",
+      "userId": "s17edach0qhmevscr0tqewbpf983en6p",
+      "displayName": "ryuchanyul",
+      "image": "https://avatars.githubusercontent.com/u/239348978?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774310603448,
+      "changelog": "Initial release of research-monitor skill.\n\n- 자동으로 뉴스, 트렌드, 경쟁사, 기술 동향을 수집·요약합니다.\n- 키워드 기반 뉴스 요약, 기술 블로그 모니터링, 경쟁사 웹사이트 변경 감지를 지원합니다.\n- 매일/매주 정해진 시간에 뉴스 브리핑과 트렌드 리포트를 자동 전송합니다.\n- 실시간 키워드 뉴스 알림과 텔레그램 알림 기능을 포함합니다.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4dfdf7b84067d3516be46a9164a7be2aa930ca195c686d5414b20fd8498bf897"
+}

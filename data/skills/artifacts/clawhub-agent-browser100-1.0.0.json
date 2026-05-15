@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-browser100@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_browser100",
+  "skill": {
+    "id": 27016,
+    "skillKey": "clawhub-agent-browser100",
+    "name": "Agent Browser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-browser100",
+    "url": "https://clawhub.ai/skills/agent-browser100",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-browser100-df83a147d8989696.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A fast Rust-based headless browser automation CLI with Node.js fallback that enables AI agents to navigate, click, type, and snapshot pages via structured co..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "keyserkazi1",
+      "userId": "s17bvxr9ghaw7616fae0pa41g983p16z",
+      "displayName": "Keyserkazi1",
+      "image": "https://avatars.githubusercontent.com/u/255859250?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 355,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773703875028,
+      "changelog": "Agent Browser 1.0.0\n\n- Initial release of a Rust-based headless browser automation CLI with Node.js fallback.\n- Enables agents to navigate, extract data, fill forms, and test web UIs via structured shell commands.\n- Supports navigation, snapshots, clicking, filling, and typing using element references.\n- Provides advanced features: screenshots, PDF and video recording, mouse/keyboard control, semantic element finding, cookie/storage management, network interception, multi-tab handling, dialogs, and session state management.\n- Installation available via npm or from source, with wide command coverage for automation and testing workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:59289a2516ef775751ec950a3a8a02ab4239c0d046ba91edc2383e1261a12c4e"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/germanic@0.2.3",
+  "version": "0.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.germanic",
+  "skill": {
+    "id": 22121,
+    "skillKey": "clawhub-germanic",
+    "name": "GERMANIC"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "germanic",
+    "url": "https://clawhub.ai/skills/germanic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/germanic-a8b7ce631370ef0c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Validate JSON data against schemas and compile to binary .grm files. Schema-enforced data contracts for AI agents. Catches missing fields, wrong types, empty..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "porco-rs",
+      "userId": "publishers:porco-rs",
+      "displayName": "porco_rs",
+      "image": "https://avatars.githubusercontent.com/u/248896577?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 385,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.3",
+      "createdAt": 1772357783646,
+      "changelog": "MCP server now included in default binary.  germanic serve-mcp works out of the box with Homebrew and cargo install. Pre-built binaries for macOS (ARM + Intel) and Linux (ARM + Intel). No more --features mcp required.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:25e99800663cf2e7a7585ef701aa8f1ae8a9fa1e3e4a8108c6c442a5e72980cc"
+}

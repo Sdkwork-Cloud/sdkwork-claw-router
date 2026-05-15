@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73619,
+  "uuid": "skill-clawhub-shishi-bazi",
+  "skillKey": "clawhub-shishi-bazi",
+  "name": "诗诗八字命理分析",
+  "summary": "通过交互收集姓名、生日、时辰、性别、出生地等信息，排出四柱八字并结合经典命理典籍进行专业命理分析。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shishi_bazi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "howtimeschange",
+      "features": [
+        "通过交互收集姓名、生日、时辰、性别、出生地等信息，排出四柱八字并结合经典命理典籍进行专业命理分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shishi-bazi@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4083536?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shishi-bazi",
+      "url": "https://clawhub.ai/skills/shishi-bazi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shishi-bazi",
+    "url": "https://clawhub.ai/skills/shishi-bazi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shishi-bazi-e77c66f4c1d5e991.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shishi-bazi@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shishi-bazi-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fb9be16a1123510000229bccccbd84862d06daf7efa2f5bb2ee8aa565a367841",
+      "artifactSizeBytes": 2026
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T08:48:03.025Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sycm-analysis-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sycm_analysis_skill",
+  "skill": {
+    "id": 36074,
+    "skillKey": "clawhub-sycm-analysis-skill",
+    "name": "Sycm Analysis Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sycm-analysis-skill",
+    "url": "https://clawhub.ai/skills/sycm-analysis-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sycm-analysis-skill-faaa19b2f10a3a8d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Taobao Sycm (Business Advisor) data analysis tool. Use when the user wants to retrieve a store's weekly business report, generate business insights, or fetch..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "simoncai519",
+      "userId": "s173dng2k1aa2nm91ggjy3sx5984hyga",
+      "displayName": "simoncai519",
+      "image": "https://avatars.githubusercontent.com/u/57803232?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776063040044,
+      "changelog": "- Added version field (1.0.0) to the skill metadata.\n- Appended maintainer and repository information to the documentation footer.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4be8793034a28653797567d49ca8b508db3b6b1780c3df4365a1b13764f91366"
+}

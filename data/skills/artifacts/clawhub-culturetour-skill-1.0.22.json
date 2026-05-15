@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/culturetour-skill@1.0.22",
+  "version": "1.0.22",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.culturetour_skill",
+  "skill": {
+    "id": 64376,
+    "skillKey": "clawhub-culturetour-skill",
+    "name": "文旅素材搜索"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "culturetour-skill",
+    "url": "https://clawhub.ai/skills/culturetour-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/culturetour-skill-754cdf677ece9de7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "指导智能体检索文旅素材（数游神州 data0086.com）并走通「搜索 → 列表 → 预览(HLS/MP4) → 选择/购买 → Mock交易返回 → 视频下载到本地」。搜索请求默认 3条，最多 5 条（pageSize≤5），用户可要求更少；列表用表格展示（颜色徽章状态 + img + video），用户通过..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fengyily",
+      "userId": "s17fj1rh6s7jxkgy9ke3nqavws84dq60",
+      "displayName": "F1",
+      "image": "https://avatars.githubusercontent.com/u/13551903?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 363,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 23
+    },
+    "latestVersion": {
+      "version": "1.0.22",
+      "createdAt": 1776758769157,
+      "changelog": "No changes detected in this version.\n\n- Version 1.0.22 released with no updates to files or documentation.\n- Functionality and usage remain unchanged from the previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0440950cf3d1c33d342289bcd7afddd18e2d3aed09856e57c928089a4e5139c2"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/multiplatform-content-repurposer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multiplatform_content_repurposer",
+  "skill": {
+    "id": 27250,
+    "skillKey": "clawhub-multiplatform-content-repurposer",
+    "name": "Content Repurposer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multiplatform-content-repurposer",
+    "url": "https://clawhub.ai/skills/multiplatform-content-repurposer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multiplatform-content-repurposer-0306227299e831e0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Content repurposing agent. Transforms long-form content (blog posts, video transcripts, podcast notes) into platform-optimized formats: LinkedIn post, X/Twit..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mguozhen",
+      "userId": "s170nk66cz4zpwnnsv8bxksrp983f82k",
+      "displayName": "mguozhen",
+      "image": "https://avatars.githubusercontent.com/u/1411875?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 351,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773989379518,
+      "changelog": "Initial release of multiplatform-content-repurposer:\n\n- Transforms long-form content (blog, transcript, summaries) into platform-ready formats: LinkedIn post, X/Twitter thread, email newsletter, Instagram caption, YouTube description, and TikTok script.\n- Extracts and analyzes source content for key insights, tone, and intended audience.\n- Adapts messaging, hooks, and calls-to-action per platform’s algorithm and style requirements.\n- Outputs labeled, ready-to-use content sections for each platform.\n- Supports custom brand voice, tone, and template overrides.\n- Organizes content and outputs in a structured workspace for easy project and brand management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7c1ac11b369683a87c28b699dba24ae22f23d40c851c5d873e96eeaf5e6c7b4d"
+}

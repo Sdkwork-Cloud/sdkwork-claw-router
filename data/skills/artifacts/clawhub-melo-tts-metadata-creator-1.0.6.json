@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/melo-tts-metadata-creator@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.melo_tts_metadata_creator",
+  "skill": {
+    "id": 61105,
+    "skillKey": "clawhub-melo-tts-metadata-creator",
+    "name": "melo-tts-metadata-creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "melo-tts-metadata-creator",
+    "url": "https://clawhub.ai/skills/melo-tts-metadata-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/melo-tts-metadata-creator-7cf5a9fb7f3b6241.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "当用户需要为 **MeloTTS** 训练或微调生成 metadata.list 文件时自动触发。 专门处理 .wav 音频文件和对应的 .txt 转录文本，自动生成符合 MeloTTS 官方最新标准的 metadata.list（格式：音频路径|speaker|语言|文本）。 支持单音色和多音色模式： - wa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangminrui2022",
+      "userId": "s17de4avhxep6e2yxdr6snee9h83v08q",
+      "displayName": "顶尖王牌程序员",
+      "image": "https://avatars.githubusercontent.com/u/11627332?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 311,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1776696563636,
+      "changelog": "No changes detected in this version.\n\n- Version 1.0.6 contains no file or documentation changes from the previous release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7f1953cddccbfb4620a32f272e56b1d5b42b7b9ca0ec81e6bc5e6835e9b07560"
+}

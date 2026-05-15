@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editing-classes@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editing_classes",
+  "skill": {
+    "id": 47153,
+    "skillKey": "clawhub-video-editing-classes",
+    "name": "Video Editing Classes"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editing-classes",
+    "url": "https://clawhub.ai/skills/video-editing-classes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editing-classes-674b281d5ae70c8c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get edited tutorial clips ready to post, without touching a single slider. Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say something li..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susan4731-wilfordf",
+      "userId": "s1782w3wqej6a5gnp3w63eb80184cckp",
+      "displayName": "susan4731-wilfordf",
+      "image": "https://avatars.githubusercontent.com/u/208907675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 118,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777222529582,
+      "changelog": "Initial release of Video Editing Classes skill.\n\n- Upload raw video files (up to 500MB) and request edits like trimming pauses, adding transitions, or overlaying text labels.\n- No local installation required; editing and export happen on a cloud backend with GPU acceleration.\n- Automatic account setup and 100 free credits for new users; manage credits and session directly in chat.\n- Supports multiple video, audio, and image formats; outputs 1080p MP4 ready for download.\n- Handles common workflows: quick edits, batch processing, and iterative refinements with stateful sessions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b9d1b965ec4e638503ead085281f5754d80895cc56e9f1da0c72f974769098fb"
+}

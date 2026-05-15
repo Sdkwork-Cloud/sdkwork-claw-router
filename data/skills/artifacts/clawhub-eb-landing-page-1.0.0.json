@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eb-landing-page@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eb_landing_page",
+  "skill": {
+    "id": 44102,
+    "skillKey": "clawhub-eb-landing-page",
+    "name": "Landing Page"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eb-landing-page",
+    "url": "https://clawhub.ai/skills/eb-landing-page",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eb-landing-page-1dca04b73f49d312.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build high-conversion landing pages. Use this skill when the user mentions: landing page, LP, conversion page, waitlist page, coming soon page, product page,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "emersonbraun",
+      "userId": "s17et1m19hdc751hkgrqtzjf6184b55r",
+      "displayName": "Emerson Braun",
+      "image": "https://avatars.githubusercontent.com/u/25778027?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775529350825,
+      "changelog": "Initial release of the landing page skill focused on high-conversion, copy-driven landing pages.\n\n- Provides step-by-step frameworks for landing page structure and direct-response copy.\n- Outlines a 7-section formula covering hero, social proof, problem, solution, feature, testimonial, and CTA sections.\n- Includes actionable copywriting guidelines (PAS, AIDA) plus anti-patterns to avoid.\n- Details technical stack (Next.js, Tailwind, shadcn/ui), SSG, SEO, and analytics best practices.\n- Defines output formats: copy doc, working code, and conversion checklist.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e67eba23845c01bbdc1830d3b733d5987329d1bba57f733495a192b740a3e48e"
+}

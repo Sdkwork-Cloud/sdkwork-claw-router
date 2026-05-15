@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8246,
+  "uuid": "skill-clawhub-stock-analysis",
+  "skillKey": "clawhub-stock-analysis",
+  "name": "Stock Analysis",
+  "summary": "Analyze stocks and cryptocurrencies using Yahoo Finance data. Supports portfolio management, watchlists with alerts, dividend analysis, 8-dimension stock scoring, viral trend detection (Hot Scanner), and rumor/early signal detection. Use f.",
+  "version": "6.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_analysis",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "udiedrichsen",
+      "features": [
+        "Analyze stocks and cryptocurrencies using Yahoo Finance data",
+        "Supports portfolio management, watchlists with alerts, dividend analysis, 8-dimension stock sco.",
+        "Use for stock analysis, portfolio tracking, earnings reactions, crypto monitoring, trending sto."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-analysis@6.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4386398?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-analysis",
+      "url": "https://clawhub.ai/skills/stock-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-analysis",
+    "url": "https://clawhub.ai/skills/stock-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-analysis-576b055977213be4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-analysis@6.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-analysis-6.2.0.json",
+      "version": "6.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:15d452a046f16758ab57ea1d765f33d481ce15eb0973bca616f9e9e844c5d1fa",
+      "artifactSizeBytes": 2035
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T14:09:13.575Z"
+}

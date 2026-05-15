@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18005,
+  "uuid": "skill-clawhub-clawfeed-digest",
+  "skillKey": "clawhub-clawfeed-digest",
+  "name": "Clawfeed Digest",
+  "summary": "Fetch ClawFeed AI news digests (4h/daily/weekly) and save them automatically to a specified Obsidian directory with flexible CLI options.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawfeed_digest",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Anonymous",
+      "features": [
+        "Fetch ClawFeed AI news digests (4h/daily/weekly) and save them automatically to a specified Obs."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawfeed-digest@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32920883?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawfeed-digest",
+      "url": "https://clawhub.ai/skills/clawfeed-digest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawfeed-digest",
+    "url": "https://clawhub.ai/skills/clawfeed-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawfeed-digest-073603faa1f728f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawfeed-digest@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawfeed-digest-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e362617b108aee0b56ccad5c99a840db065aceb69389b974be6488e12f83130a",
+      "artifactSizeBytes": 1975
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T11:32:40.136Z"
+}

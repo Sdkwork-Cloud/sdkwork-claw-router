@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-screener@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_screener",
+  "skill": {
+    "id": 38001,
+    "skillKey": "clawhub-claw-screener",
+    "name": "Claw Screener"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-screener",
+    "url": "https://clawhub.ai/skills/claw-screener",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-screener-fbff967412f62950.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Stock screener combining Williams %R oversold signals with Warren Buffett-style fundamental analysis. Supports US (S&P 500) and Thai (SET) markets."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rsoutar",
+      "userId": "s17cttwb02wzbs8yc86j5d8rcx83npaf",
+      "displayName": "Richard Soutar",
+      "image": "https://avatars.githubusercontent.com/u/13177655?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 783,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1772041168176,
+      "changelog": "**Changelog for claw-screener v1.0.3**\n\n- Added explicit file requirements and runtime version (Bun ≥1.3.1) to SKILL.md metadata\n- Declared additional persisted files: `sec_cache.db` and `price_cache.db` in SKILL.md\n- Listed config path and described storage files in documentation\n- Updated installation instructions to clarify Bun as required runtime\n- No functional code changes—documentation and metadata improvements only",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5db17fba28d07089eba8ac5aa5499b3c86f054fba9c09d3a872d4d9de9d62aef"
+}

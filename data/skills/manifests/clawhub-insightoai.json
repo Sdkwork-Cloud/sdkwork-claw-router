@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29992,
+  "uuid": "skill-clawhub-insightoai",
+  "skillKey": "clawhub-insightoai",
+  "name": "Insightoai",
+  "summary": "Insighto.ai integration. Manage Organizations, Users. Use when the user wants to interact with Insighto.ai data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.insightoai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Insighto.ai integration",
+        "Manage Organizations, Users",
+        "Use when the user wants to interact with Insighto.ai data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/insightoai@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "insightoai",
+      "url": "https://clawhub.ai/skills/insightoai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "insightoai",
+    "url": "https://clawhub.ai/skills/insightoai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/insightoai-d4bb2166199d363d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/insightoai@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-insightoai-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:844edacf2e2c044ac36c194715b8c2d0de8440e5d64046c37e29c223e1f60710",
+      "artifactSizeBytes": 1833
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:59:29.470Z"
+}

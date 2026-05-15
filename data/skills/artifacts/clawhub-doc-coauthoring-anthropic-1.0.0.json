@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/doc-coauthoring-anthropic@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doc_coauthoring_anthropic",
+  "skill": {
+    "id": 17984,
+    "skillKey": "clawhub-doc-coauthoring-anthropic",
+    "name": "Doc Coauthoring Anthropic"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doc-coauthoring-anthropic",
+    "url": "https://clawhub.ai/skills/doc-coauthoring-anthropic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doc-coauthoring-anthropic-1241c9b640883333.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guide users through a structured workflow for co-authoring documentation. Use when user wants to write documentation, proposals, technical specs, decision do..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pupuking723",
+      "userId": "publishers:pupuking723",
+      "displayName": "pupuking723",
+      "image": "https://avatars.githubusercontent.com/u/169750518?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 698,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773498684397,
+      "changelog": "- Initial release introducing a guided, structured workflow for co-authoring documentation, proposals, and technical specs.\n- Guides users through three stages: Context Gathering, Refinement & Structure, and Reader Testing.\n- Offers tailored context-gathering, including info dumps and integration with team docs and messaging platforms.\n- Iterative, section-by-section refinement via clarifying questions, brainstorming, structured feedback, and collaborative drafting.\n- Supports artifact creation and integration, with fallbacks for different environments.\n- Special support for checking images, encouraging accessibility, and utilizing available connectors.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9be4ea0040d58e84ecda8052dc5329effc7f6b50e03e71958cf74280484c3d95"
+}

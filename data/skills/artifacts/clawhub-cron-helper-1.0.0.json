@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cron-helper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cron_helper",
+  "skill": {
+    "id": 13056,
+    "skillKey": "clawhub-cron-helper",
+    "name": "Cron Helper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cron-helper",
+    "url": "https://clawhub.ai/skills/cron-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cron-helper-2bb4d2780f35f8fa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Schedule and manage recurring tasks for your agent. Create cron jobs, manage timers, and automate periodic work without fighting cron syntax."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imaflytok",
+      "userId": "publishers:imaflytok",
+      "displayName": "FLY",
+      "image": "https://avatars.githubusercontent.com/u/258594521?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1492,
+      "installsAllTime": 9,
+      "installsCurrent": 9,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772397608198,
+      "changelog": "Initial release of cron-helper.\n\n- Schedule and manage recurring tasks for your agent using simple natural language.\n- List, pause, resume, and delete scheduled tasks.\n- View execution history and track failures.\n- Timezone-aware scheduling eliminates manual time calculations.\n- Supports common patterns like health checks and daily briefings.\n- Tips for batching tasks, optimizing model selection, and preventing runaway jobs included.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e9d08f281032eceb46addae1844c0baa7f6687af48aa0b0d1f0117a383868dfc"
+}

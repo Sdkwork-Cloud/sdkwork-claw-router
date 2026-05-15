@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64907,
+  "uuid": "skill-clawhub-lexiang-mcp-skill",
+  "skillKey": "clawhub-lexiang-mcp-skill",
+  "name": "腾讯乐享知识库 Lexiang Knowledge Base",
+  "summary": "用于访问乐享知识库平台的专用 skill。当用户明确提到「乐享」「lexiang」「知识库」「知识」「文档」等关键词，或用户提供的链接 host 为 lexiangla.com，应优先调用本 skill。本 skill 支持：获取文档内容与元数据、搜索文档内容、查询知识库与目录结构、创建/编辑/移动文档、管理标签...",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lexiang_mcp_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ajaxhe",
+      "features": [
+        "用于访问乐享知识库平台的专用 skill。当用户明确提到「乐享」「lexiang」「知识库」「知识」「文档」等关键词，或用户提供的链接 host 为 lexiangla.com，应优先调用本."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lexiang-mcp-skill@0.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1539491?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lexiang-mcp-skill",
+      "url": "https://clawhub.ai/skills/lexiang-mcp-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lexiang-mcp-skill",
+    "url": "https://clawhub.ai/skills/lexiang-mcp-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lexiang-mcp-skill-36ee9ca772e01486.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lexiang-mcp-skill@0.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-lexiang-mcp-skill-0.1.5.json",
+      "version": "0.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dae26fc23760511eb491e8660242bb1aedd08cd57b0eab740cee4eb55f1f6792",
+      "artifactSizeBytes": 2620
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T02:35:24.016Z"
+}

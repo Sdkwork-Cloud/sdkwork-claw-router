@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18778,
+  "uuid": "skill-clawhub-google-workspace-integration",
+  "skillKey": "clawhub-google-workspace-integration",
+  "name": "Google Workspace",
+  "summary": "Google Workspace integration. Manage Users, Groups, Calendars, Drives, Mailboxs, Contacts. Use when the user wants to interact with Google Workspace data.",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_workspace_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Google Workspace integration",
+        "Manage Users, Groups, Calendars, Drives, Mailboxs, Contacts",
+        "Use when the user wants to interact with Google Workspace data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-workspace-integration@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-workspace-integration",
+      "url": "https://clawhub.ai/skills/google-workspace-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-workspace-integration",
+    "url": "https://clawhub.ai/skills/google-workspace-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-workspace-integration-8e23e1ca1d3f515e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-workspace-integration@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-workspace-integration-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0996204fd9f416632139a7bd5a0813b2ada9075936ea19758d5daa11d8d473d5",
+      "artifactSizeBytes": 1989
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:53:43.925Z"
+}

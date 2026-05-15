@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30266,
+  "uuid": "skill-clawhub-skill-invocation",
+  "skillKey": "clawhub-skill-invocation",
+  "name": "skill invocation",
+  "summary": "Choose the best OpenClaw skill by matching trigger keywords to the TOOLS.md index, then applying strict judgment rules (most specific first; if in doubt, use...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_invocation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xuchang9337-dev",
+      "features": [
+        "Choose the best OpenClaw skill by matching trigger keywords to the TOOLS.md index, then applyin.",
+        "if in doubt, use..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-invocation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265716492?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-invocation",
+      "url": "https://clawhub.ai/skills/skill-invocation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-invocation",
+    "url": "https://clawhub.ai/skills/skill-invocation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-invocation-2e4394e86124a505.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-invocation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-invocation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bce242606bf2ea6d71de63f690e23456fbe45dc21a66172cc4f1f3c783c38cc4",
+      "artifactSizeBytes": 2525
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T01:36:35.321Z"
+}

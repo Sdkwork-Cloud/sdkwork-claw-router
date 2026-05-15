@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23738,
+  "uuid": "skill-clawhub-prompt-token-counter",
+  "skillKey": "clawhub-prompt-token-counter",
+  "name": "Prompt Token Counter",
+  "summary": "Count tokens and estimate costs for 300+ LLM models. Primary use: audit OpenClaw workspace token consumption (memory, persona, skills).",
+  "version": "1.0.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_token_counter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zhaobudaoyuema",
+      "features": [
+        "Count tokens and estimate costs for 300+ LLM models",
+        "Primary use: audit OpenClaw workspace token consumption (memory, persona, skills)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prompt-token-counter@1.0.11",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/66905526?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prompt-token-counter",
+      "url": "https://clawhub.ai/skills/prompt-token-counter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-token-counter",
+    "url": "https://clawhub.ai/skills/prompt-token-counter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-token-counter-41d5fee3114a14e1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prompt-token-counter@1.0.11",
+      "artifactUrl": "data/skills/artifacts/clawhub-prompt-token-counter-1.0.11.json",
+      "version": "1.0.11",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c974fb47df97902e622566cc13fabda7befd1cd4020e77e183852608eae66f1c",
+      "artifactSizeBytes": 2395
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T05:17:47.540Z"
+}

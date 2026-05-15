@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19688,
+  "uuid": "skill-clawhub-aerobase-jetlag",
+  "skillKey": "clawhub-aerobase-jetlag",
+  "name": "Aerobase Jetlag",
+  "summary": "Jetlag recovery optimization - score flights, generate recovery plans, optimize travel timing",
+  "version": "3.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aerobase_jetlag",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aerobase",
+      "features": [
+        "Jetlag recovery optimization",
+        "score flights, generate recovery plans, optimize travel timing"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aerobase-jetlag@3.3.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95127236?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aerobase-jetlag",
+      "url": "https://clawhub.ai/skills/aerobase-jetlag"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aerobase-jetlag",
+    "url": "https://clawhub.ai/skills/aerobase-jetlag",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aerobase-jetlag-a73ab90bbbd9e2b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aerobase-jetlag@3.3.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-aerobase-jetlag-3.3.1.json",
+      "version": "3.3.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:832be54f37c537dc14244f568199e5a922c8c7d09630115da7aded788376fdb2",
+      "artifactSizeBytes": 1881
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T03:44:29.565Z"
+}

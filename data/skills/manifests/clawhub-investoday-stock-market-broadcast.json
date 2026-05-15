@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69590,
+  "uuid": "skill-clawhub-investoday-stock-market-broadcast",
+  "skillKey": "clawhub-investoday-stock-market-broadcast",
+  "name": "investoday-stock-market-broadcast",
+  "summary": "面向A股盘面播报与市场情绪快评，聚焦市场涨跌分布、指数表现、热点主线与盘中阶段解读。基于今日投资金融数据接口，输出口播化、结构化的盘面行情播报。触发词：盘面播报、早盘、午盘、盘中、收盘后、市场怎么样、盘面总结。",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.investoday_stock_market_broadcast",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "investoday",
+      "features": [
+        "面向A股盘面播报与市场情绪快评，聚焦市场涨跌分布、指数表现、热点主线与盘中阶段解读。基于今日投资金融数据接口，输出口播化、结构化的盘面行情播报。触发词：盘面播报、早盘、午盘、盘中、收盘后、市."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/investoday-stock-market-broadcast@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19256972?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "investoday-stock-market-broadcast",
+      "url": "https://clawhub.ai/skills/investoday-stock-market-broadcast"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "investoday-stock-market-broadcast",
+    "url": "https://clawhub.ai/skills/investoday-stock-market-broadcast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/investoday-stock-market-broadcast-d9cf5f7fe4e83897.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/investoday-stock-market-broadcast@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-investoday-stock-market-broadcast-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:22336866b10022c43c6bdc58a6f08495fafc9f742a6abb98dfc6053d822b6201",
+      "artifactSizeBytes": 2198
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T07:03:36.323Z"
+}

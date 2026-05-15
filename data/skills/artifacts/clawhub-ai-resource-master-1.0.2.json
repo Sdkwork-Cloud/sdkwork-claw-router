@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-resource-master@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_resource_master",
+  "skill": {
+    "id": 70276,
+    "skillKey": "clawhub-ai-resource-master",
+    "name": "Ai Resource Master"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-resource-master",
+    "url": "https://clawhub.ai/skills/ai-resource-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-resource-master-61d274cf84bd3bad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "大模型服务器资源评估。用于医疗行业大模型应用场景的算力资源需求评估和测算，根据门诊/住院诊疗量和大模型应用场景数推导GPU算力需求。使用场景：用户询问大模型算力评估、AI服务器资源配置、GPU算力需求测算等。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hellohushuai",
+      "userId": "s17afc6pzvsmvb48a4ypa98kg983qve2",
+      "displayName": "hellohushuai",
+      "image": "https://avatars.githubusercontent.com/u/40168227?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 303,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773988278396,
+      "changelog": "- Updated documentation in SKILL.md with refined formatting and minor clarifications.\n- No logic, parameter, or code changes were made—documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:73a1b2c5b3dc1b3cd40b6475712fa8a5b4c7cacb386d15663ecd162634340abe"
+}

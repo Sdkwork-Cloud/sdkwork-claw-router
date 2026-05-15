@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67171,
+  "uuid": "skill-clawhub-top-learner",
+  "skillKey": "clawhub-top-learner",
+  "name": "Top-Learner",
+  "summary": "认知科学驱动的元学习教练。基于Barbara Oakley《学习之道》、Make It Stick、MIT/Stanford主动学习，提供：①直觉先于形式的深度教学 ②诊断最优知识结构的五维检验 ③面向考试或应用的刻意练习编排。触发词：学习方法、学习材料讲解、备考、复习策略、知识点理解、做题训练。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.top_learner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "崔之行",
+      "features": [
+        "认知科学驱动的元学习教练。基于Barbara Oakley《学习之道》、Make It Stick、MIT/Stanford主动学习，提供：①直觉先于形式的深度教学 ②诊断最优知识结构的五维."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/top-learner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/126934792?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "top-learner",
+      "url": "https://clawhub.ai/skills/top-learner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "top-learner",
+    "url": "https://clawhub.ai/skills/top-learner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/top-learner-205fce83cfaec59c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/top-learner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-top-learner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f964125f018c65460354d8e82df9a2b2df8f634d901a3b9d5c58305351671fd3",
+      "artifactSizeBytes": 2988
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T12:40:40.767Z"
+}

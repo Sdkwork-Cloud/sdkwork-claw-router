@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pclaw-sourcing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pclaw_sourcing",
+  "skill": {
+    "id": 59568,
+    "skillKey": "clawhub-pclaw-sourcing",
+    "name": "Project sourcing engine. Supports 6 resource types (Skill/Service/Material/Equipment/Human/Digital). Built for engineers and AI."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pclaw-sourcing",
+    "url": "https://clawhub.ai/skills/pclaw-sourcing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pclaw-sourcing-379ca2384178018e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Pclaw工程寻源技能 - 知识变现平台的核心技能。当用户需要发布工程需求、匹配资源、查询技能、管理分润、创建展会等Pclaw平台操作时使用。触发词：发布需求、寻源、查技能、上架、创建展会、展会、需求广场、知识商店。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shuangxipop1",
+      "userId": "s179caf4ckmjdbe63ascp69jax83gr39",
+      "displayName": "shuangxipop1",
+      "image": "https://avatars.githubusercontent.com/u/223013916?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774407019730,
+      "changelog": "pclaw-sourcing 1.0.0 – 首发上线\n\n- 提供发布工程需求、匹配资源、查询技能、管理分润及数字展会等一体化寻源技能。\n- 支持多类资源（技能、服务、材料、设备、人力、数字）发布与匹配。\n- 分润机制透明自动结算，按多方比例分配收益。\n- 内置需求广场、知识商店、数字展会等平台入口及定价参考。\n- 明确资源上架、下架及多资源匹配的业务流程和注意事项。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a84213d85be46bf1dedaa0d11cd1c3909cac8422468e4e3fd1538778ec605a45"
+}

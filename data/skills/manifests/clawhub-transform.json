@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35634,
+  "uuid": "skill-clawhub-transform",
+  "skillKey": "clawhub-transform",
+  "name": "Transform",
+  "summary": "TransForm integration. Manage data, records, and automate workflows. Use when the user wants to interact with TransForm data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.transform",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "TransForm integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with TransForm data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/transform@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "transform",
+      "url": "https://clawhub.ai/skills/transform"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "transform",
+    "url": "https://clawhub.ai/skills/transform",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/transform-aa214ea38326805d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/transform@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-transform-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:76b1e694dffac7ab46055efb975fa16f35105aee73d6a1c1c74d33db9c9a5b33",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:06:44.171Z"
+}

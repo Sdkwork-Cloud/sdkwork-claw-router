@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26871,
+  "uuid": "skill-clawhub-tuhucar-knowledge-assistant",
+  "skillKey": "clawhub-tuhucar-knowledge-assistant",
+  "name": "TuhuCar Knowledge Assistant",
+  "summary": "Use when answering car maintenance, service interval, oil, brake fluid, tire pressure, or ownership questions through the TuhuCar CLI knowledge gateway.",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tuhucar_knowledge_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Fini",
+      "features": [
+        "Use when answering car maintenance, service interval, oil, brake fluid, tire pressure, or owner."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tuhucar-knowledge-assistant@0.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/162498?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tuhucar-knowledge-assistant",
+      "url": "https://clawhub.ai/skills/tuhucar-knowledge-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tuhucar-knowledge-assistant",
+    "url": "https://clawhub.ai/skills/tuhucar-knowledge-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tuhucar-knowledge-assistant-317698ca2738e0e9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tuhucar-knowledge-assistant@0.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-tuhucar-knowledge-assistant-0.0.3.json",
+      "version": "0.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:53eebdb80e182accc8daa98874ed8e6e3fcbc6450655ecfc0a2962165be9e8fa",
+      "artifactSizeBytes": 1985
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T03:21:11.779Z"
+}

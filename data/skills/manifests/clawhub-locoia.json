@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33687,
+  "uuid": "skill-clawhub-locoia",
+  "skillKey": "clawhub-locoia",
+  "name": "Locoia",
+  "summary": "Locoia integration. Manage data, records, and automate workflows. Use when the user wants to interact with Locoia data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.locoia",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Locoia integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Locoia data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/locoia@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "locoia",
+      "url": "https://clawhub.ai/skills/locoia"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "locoia",
+    "url": "https://clawhub.ai/skills/locoia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/locoia-f96546019b4df995.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/locoia@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-locoia-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7cb9abc5978ccb1d45fd03e1f9a84730a75fea652bd4d1b19d2b3c4d00cfb8cc",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:08:40.385Z"
+}

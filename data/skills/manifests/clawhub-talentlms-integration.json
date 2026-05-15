@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37123,
+  "uuid": "skill-clawhub-talentlms-integration",
+  "skillKey": "clawhub-talentlms-integration",
+  "name": "Talentlms",
+  "summary": "TalentLMS integration. Manage Users, Branchs, Categories, Rules, Certificates, Tags and more. Use when the user wants to interact with TalentLMS data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.talentlms_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "TalentLMS integration",
+        "Manage Users, Branchs, Categories, Rules, Certificates, Tags and more",
+        "Use when the user wants to interact with TalentLMS data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/talentlms-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "talentlms-integration",
+      "url": "https://clawhub.ai/skills/talentlms-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "talentlms-integration",
+    "url": "https://clawhub.ai/skills/talentlms-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/talentlms-integration-fffb4ff6ff36ba40.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/talentlms-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-talentlms-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:99dcc931abe8541433c4a414ca32cfaf2b91fd2d7ff054de56a0cce938633bf7",
+      "artifactSizeBytes": 1936
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:49:58.603Z"
+}

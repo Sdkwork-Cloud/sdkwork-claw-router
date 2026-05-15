@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linkedin-post@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkedin_post",
+  "skill": {
+    "id": 58772,
+    "skillKey": "clawhub-linkedin-post",
+    "name": "Linkedin Post"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkedin-post",
+    "url": "https://clawhub.ai/skills/linkedin-post",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkedin-post-ebf3cfbaf2353441.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "LinkedIn文案生成、开头Hook、热门话题标签、轮播内容规划、高质量评论、个人简介优化。LinkedIn post writer with hooks, hashtags, carousel planning, comment templates."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ckchzh",
+      "userId": "s1722v35hsq964bw64ecjw43z583fbex",
+      "displayName": "BytesAgain2",
+      "image": "https://avatars.githubusercontent.com/u/44366898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 549,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1773830763676,
+      "changelog": "update",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f378f6bd313ba9c8b04dd2a3ae6cafbd2f85a0682bc8b79222b0e10bb34f7059"
+}

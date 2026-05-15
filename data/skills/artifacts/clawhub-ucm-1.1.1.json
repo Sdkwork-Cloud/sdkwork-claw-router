@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ucm@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ucm",
+  "skill": {
+    "id": 15782,
+    "skillKey": "clawhub-ucm",
+    "name": "Ucm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ucm",
+    "url": "https://clawhub.ai/skills/ucm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ucm-154ff27b46f35521.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides API marketplace access for AI agents. Discovers and calls external capabilities including web search, image generation, code execution, text-to-spee..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ucmai",
+      "userId": "publishers:ucmai",
+      "displayName": "UCM.AI",
+      "image": "https://avatars.githubusercontent.com/u/259021010?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 771,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1771762382155,
+      "changelog": "Remove undocumented UCM_REGISTRY_URL env var to resolve security flag.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ccb5e746864b9c2fb94418a053d76cb2ee82794c43578ec4cb4ee543b0e504aa"
+}

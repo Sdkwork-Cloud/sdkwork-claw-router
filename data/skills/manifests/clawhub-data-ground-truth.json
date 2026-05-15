@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25942,
+  "uuid": "skill-clawhub-data-ground-truth",
+  "skillKey": "clawhub-data-ground-truth",
+  "name": "Data Ground Truth",
+  "summary": "Before presenting numbers in reports or recommendations, verify facts and check values against industry baselines.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_ground_truth",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CutTheMustard",
+      "features": [
+        "Before presenting numbers in reports or recommendations, verify facts and check values against."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/data-ground-truth@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63439451?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "data-ground-truth",
+      "url": "https://clawhub.ai/skills/data-ground-truth"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-ground-truth",
+    "url": "https://clawhub.ai/skills/data-ground-truth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-ground-truth-1c53d4a15b5ca7d8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/data-ground-truth@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-data-ground-truth-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2df123e110bd47d55926c50d91dabfe7af59df687162c34c2c4c6d0a7020d90b",
+      "artifactSizeBytes": 1871
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T01:00:12.243Z"
+}

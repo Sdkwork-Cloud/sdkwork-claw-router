@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63196,
+  "uuid": "skill-clawhub-lovart",
+  "skillKey": "clawhub-lovart",
+  "name": "lovart skill",
+  "summary": "与 Lovart.ai API 集成，生成 AI 设计、图片和视频。支持图像生成、图像编辑、视频创建和模板工作流。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lovart",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mendynew",
+      "features": [
+        "与 Lovart.ai API 集成，生成 AI 设计、图片和视频。支持图像生成、图像编辑、视频创建和模板工作流。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lovart@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4647009?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lovart",
+      "url": "https://clawhub.ai/skills/lovart"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lovart",
+    "url": "https://clawhub.ai/skills/lovart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lovart-f7f87acc7dfc3615.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lovart@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lovart-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b78811f718bdd052b693ec9cf086f406847740e63d7fcf84b7c52a52c08ad117",
+      "artifactSizeBytes": 2183
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T11:40:32.380Z"
+}

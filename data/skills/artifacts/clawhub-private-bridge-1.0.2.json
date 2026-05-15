@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/private-bridge@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.private_bridge",
+  "skill": {
+    "id": 52179,
+    "skillKey": "clawhub-private-bridge",
+    "name": "Private Bridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "private-bridge",
+    "url": "https://clawhub.ai/skills/private-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/private-bridge-062666996ddc87e8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Secure outbound-only relay for remote OpenClaw control — no exposed ports, no SSH, no Telegram."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jason-czar",
+      "userId": "publishers:jason-czar",
+      "displayName": "Jason Czarnecki",
+      "image": "https://avatars.githubusercontent.com/u/118073592?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 568,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771972517981,
+      "changelog": "- Rebranded and renamed the skill as \"private-bridge\" for secure outbound-only remote OpenClaw control.\n- Removes reliance on SSH, Telegram, and Discord by using a TLS-encrypted WebSocket relay channel.\n- Adds node lifecycle management with defined Online, Reconnecting, and Offline states.\n- Enforces strict capability-based remote command execution (chat, status, restart, workflow).\n- Clarifies security posture: outbound-only network activity, limited data transmission, and no external data persistence.\n- Expanded documentation with configuration steps, protocol details, and explicit trust statement.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c59a851262adff7fbe2322e366b2778fddb2b613dbdaa405ad7fbc733ab0a010"
+}

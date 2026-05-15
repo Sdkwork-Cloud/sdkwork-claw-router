@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13249,
+  "uuid": "skill-clawhub-intranet",
+  "skillKey": "clawhub-intranet",
+  "name": "Intranet",
+  "summary": "Lightweight local HTTP file server with plugin support. Serves static files from a webroot, mounts plugin directories at URL prefixes via config, and runs in...",
+  "version": "3.2.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intranet",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Oliver Drobnik",
+      "features": [
+        "Lightweight local HTTP file server with plugin support",
+        "Serves static files from a webroot, mounts plugin directories at URL prefixes via config, and r."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/intranet@3.2.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/333270?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "intranet",
+      "url": "https://clawhub.ai/skills/intranet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intranet",
+    "url": "https://clawhub.ai/skills/intranet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intranet-088282c5a834543d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/intranet@3.2.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-intranet-3.2.7.json",
+      "version": "3.2.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:de3d5f221c140ccfa55e2e3233eb877aac81caa1a07d46b6e004384cb4e4fcbc",
+      "artifactSizeBytes": 1900
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T09:06:32.500Z"
+}

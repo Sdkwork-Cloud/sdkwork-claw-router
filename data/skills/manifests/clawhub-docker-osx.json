@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19390,
+  "uuid": "skill-clawhub-docker-osx",
+  "skillKey": "clawhub-docker-osx",
+  "name": "Docker Osx",
+  "summary": "Run macOS in Docker on Linux with KVM. Use when: user wants to build iOS apps/IPAs, needs macOS environment, wants to compile Apple apps without Mac, or want...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docker_osx",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "NightVibes3",
+      "features": [
+        "Run macOS in Docker on Linux with KVM",
+        "Use when: user wants to build iOS apps/IPAs, needs macOS environment, wants to compile Apple ap."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/docker-osx@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/220617177?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "docker-osx",
+      "url": "https://clawhub.ai/skills/docker-osx"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docker-osx",
+    "url": "https://clawhub.ai/skills/docker-osx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docker-osx-d54e72d65f526394.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/docker-osx@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-docker-osx-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:595c14642d1dfcd84299e3c119f06dfeee83bc895a0c165c858e6b5665ec6f29",
+      "artifactSizeBytes": 2246
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T17:44:10.460Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-web-search-js@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_web_search_js",
+  "skill": {
+    "id": 61082,
+    "skillKey": "clawhub-free-web-search-js",
+    "name": "free-web-search-js"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-web-search-js",
+    "url": "https://clawhub.ai/skills/free-web-search-js",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-web-search-js-abb5f666cefe02ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Playwright驱动的联网搜索工具，自动抓取前三条网页内容，无需API Key，支持国内Bing和海外DDG搜索。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ucsdzehualiu",
+      "userId": "s17bk47xgrxy45rkmxpwv5p1z983nsd8",
+      "displayName": "ucsdzehualiu",
+      "image": "https://avatars.githubusercontent.com/u/37421937?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777102693589,
+      "changelog": "Initial release of free-web-search-js, a one-step Playwright-based web search and content scraping tool, requiring no API keys.\n\n- Supports both domestic (Bing CN via Playwright) and overseas (DDG via HTTP) search engines, auto-detecting region and using appropriate engines/strategies.\n- Automatically crawls and summarizes top 3 search results after searching.\n- Intelligent duplication removal based on core URLs, with Bing redirect decoding.\n- Adaptive content extraction: handles API responses, JSON-LD, Next.js data, meta tags, and GBK encoding.\n- Performance-optimized with optional browser daemon for faster repeated searches.\n- CLI tools for both search+fetch and standalone fetching by URL.\n- Includes robust region/IP detection and fallback strategies; manual override available.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6f2da8a86a493d6ad97ef93919351d3753e89796eb74a2d51ac560d41623bf1b"
+}

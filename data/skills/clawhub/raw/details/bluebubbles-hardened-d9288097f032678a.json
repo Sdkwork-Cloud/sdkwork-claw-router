@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "bluebubbles-hardened",
+    "displayName": "Bluebubbles Hardened",
+    "summary": "Build or update the BlueBubbles external channel plugin for OpenClaw (extension package, REST send/probe, webhook inbound).",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1776814489559,
+    "updatedAt": 1777527836385
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1776814489559,
+    "changelog": "Initial release of the BlueBubbles plugin for OpenClaw with security guardrails.\n\n- Provides an extension package for BlueBubbles channel integration, including REST helpers and webhook support.\n- Implements internal helper functions for safe, consistent BlueBubbles operations (probe, send, reactions, attachments, etc.).\n- Adds defensive normalization of webhook payloads, with core reply pipeline integration and safe attachment handling.\n- Enforces key security guardrails: safe attachment path validation, no unsanitized URLs, no accidental cross-chat forwarding, and credential protection.\n- Configuration options cover server URL, password, webhook path, and action gating for reactions.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "snazar-faberlens",
+    "userId": "s17er0wp685j1z14w6vqrsnqrh83h5er",
+    "displayName": "Faberlens",
+    "image": "https://avatars.githubusercontent.com/u/261834257?v=4"
+  },
+  "moderation": null
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ide-agent-kit@0.4.1",
+  "version": "0.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ide_agent_kit",
+  "skill": {
+    "id": 18093,
+    "skillKey": "clawhub-ide-agent-kit",
+    "name": "IDE Agent Kit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ide-agent-kit",
+    "url": "https://clawhub.ai/skills/ide-agent-kit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ide-agent-kit-e91e25f2799d00a6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Filesystem message bus and webhook relay for multi-agent IDE coordination. Use when agents need to share events, poll Ant Farm rooms, receive GitHub/GitLab w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thinkoffapp",
+      "userId": "publishers:thinkoffapp",
+      "displayName": "Petrus Pennanen",
+      "image": "https://avatars.githubusercontent.com/u/233579950?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 708,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "0.4.1",
+      "createdAt": 1772452478300,
+      "changelog": "Fix display name",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b96cf31dd327ee85f8266341aeae21645e752cf64d6c17fda9507f2a7a91aff8"
+}

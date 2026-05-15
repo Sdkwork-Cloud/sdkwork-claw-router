@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30385,
+  "uuid": "skill-clawhub-github-webhook-architect",
+  "skillKey": "clawhub-github-webhook-architect",
+  "name": "Github Webhook Architect",
+  "summary": "Guides users through configuring OpenClaw, Nginx, and GitHub Actions to establish a secure, autonomous GitHub integration pipeline.",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_webhook_architect",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Patrik Ekenberg",
+      "features": [
+        "Guides users through configuring OpenClaw, Nginx, and GitHub Actions to establish a secure, aut."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-webhook-architect@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31476631?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-webhook-architect",
+      "url": "https://clawhub.ai/skills/github-webhook-architect"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-webhook-architect",
+    "url": "https://clawhub.ai/skills/github-webhook-architect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-webhook-architect-23e9a293d92992a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-webhook-architect@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-webhook-architect-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e9981c0bbf2d2f8151e6b747c5191b867afbdbbc6b090926b5ae8f2899c5c679",
+      "artifactSizeBytes": 2195
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T18:04:19.290Z"
+}

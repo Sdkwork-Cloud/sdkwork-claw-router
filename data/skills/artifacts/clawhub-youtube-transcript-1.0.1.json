@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-transcript@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_transcript",
+  "skill": {
+    "id": 8350,
+    "skillKey": "clawhub-youtube-transcript",
+    "name": "YouTube Transcript"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-transcript",
+    "url": "https://clawhub.ai/skills/youtube-transcript",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-transcript-526d8dabc45a7956.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch and summarize YouTube video transcripts. Use when asked to summarize, transcribe, or extract content from YouTube videos. Handles transcript fetching via residential IP proxy to bypass YouTube's cloud IP blocks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xthezealot",
+      "userId": "publishers:xthezealot",
+      "displayName": "The Zealot",
+      "image": "https://avatars.githubusercontent.com/u/9503891?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 21289,
+      "installsAllTime": 186,
+      "installsCurrent": 182,
+      "stars": 23,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769532361984,
+      "changelog": "Initial public release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d764ab60d6017faeb0e6a68feea0e6dfcd6f87ae2cdd8bd43dc79e70266bc162"
+}

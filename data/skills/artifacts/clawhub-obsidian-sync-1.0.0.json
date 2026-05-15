@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/obsidian-sync@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_sync",
+  "skill": {
+    "id": 9209,
+    "skillKey": "clawhub-obsidian-sync",
+    "name": "Obsidian Sync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-sync",
+    "url": "https://clawhub.ai/skills/obsidian-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-sync-72e1aceaae57da39.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sync files between Clawdbot workspace and Obsidian. Run the sync server to enable two-way file synchronization with the OpenClaw Obsidian plugin."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andybold",
+      "userId": "s174zbxjngdkjbmpn9m0tqnecn843ay4",
+      "displayName": "AndyBold",
+      "image": "https://avatars.githubusercontent.com/u/1006021?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3756,
+      "installsAllTime": 29,
+      "installsCurrent": 29,
+      "stars": 6,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769962118168,
+      "changelog": "Initial release: Two-way file sync between Clawdbot and Obsidian",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a8b9af388c1d4275fe5a5662a9f0aa1bfd97b45f6cd10bdffa7f130e0d7712b0"
+}

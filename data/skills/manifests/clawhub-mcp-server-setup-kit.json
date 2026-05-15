@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25793,
+  "uuid": "skill-clawhub-mcp-server-setup-kit",
+  "skillKey": "clawhub-mcp-server-setup-kit",
+  "name": "MCP Server Setup Kit",
+  "summary": "Guides you step-by-step to quickly connect Claude to Notion, Linear, Slack, and GitHub using a tested MCP server setup protocol with config templates and tes...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcp_server_setup_kit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "flynndavid",
+      "features": [
+        "Guides you step-by-step to quickly connect Claude to Notion, Linear, Slack, and GitHub using a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mcp-server-setup-kit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11565009?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mcp-server-setup-kit",
+      "url": "https://clawhub.ai/skills/mcp-server-setup-kit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcp-server-setup-kit",
+    "url": "https://clawhub.ai/skills/mcp-server-setup-kit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcp-server-setup-kit-b7c79932f86e0f9b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mcp-server-setup-kit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mcp-server-setup-kit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1a48004acada05215b28f858efd6181d5ca6fa1cc6c8a74c7905a66443232f3d",
+      "artifactSizeBytes": 2450
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T22:42:43.070Z"
+}

@@ -3,6 +3,7 @@ use std::time::{SystemTime, UNIX_EPOCH};
 
 use sdkwork_claw_config::{ApiKeySecurityConfig, DatabaseConfig};
 use sdkwork_claw_gateway::runtime::router_with_database_and_api_key_config;
+use sdkwork_claw_product::infrastructure::sql::installer::DatabaseInstaller;
 use sqlx::sqlite::{SqliteConnectOptions, SqlitePoolOptions};
 use sqlx::Row;
 use std::str::FromStr;
@@ -35,7 +36,7 @@ async fn gateway_startup_installs_empty_sqlite_database_before_loading_catalog()
             .await
             .unwrap();
     assert_eq!("installed", state.get::<String, _>("status"));
-    assert_eq!("2026.05.07.3", state.get::<String, _>("schema_version"));
+    assert_eq!("2026.05.08.1", state.get::<String, _>("schema_version"));
     assert_eq!("2026.05.08.1", state.get::<String, _>("catalog_version"));
 
     let gpt_5_5_count: i64 =
@@ -78,6 +79,73 @@ async fn gateway_startup_installs_empty_sqlite_database_before_loading_catalog()
     );
 }
 
+#[tokio::test]
+async fn gateway_env_startup_can_skip_installer_when_workspace_already_ensured_database() {
+    let database_url = unique_sqlite_url();
+    let options = SqliteConnectOptions::from_str(database_url.as_str())
+        .unwrap()
+        .create_if_missing(true);
+    let pool = SqlitePoolOptions::new()
+        .max_connections(1)
+        .connect_with(options)
+        .await
+        .unwrap();
+    DatabaseInstaller::for_sqlite(pool.clone())
+        .ensure_installed()
+        .await
+        .unwrap();
+    sqlx::query(
+        "UPDATE system_installation_state SET upgraded_at = '2000-01-01 00:00:00' WHERE id = 1",
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+    pool.close().await;
+
+    let _guard = env_guard().lock().unwrap();
+    let saved_database_url = std::env::var("SDKWORK_CLAW_DATABASE_URL").ok();
+    let saved_max_connections = std::env::var("SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS").ok();
+    let saved_api_key_pepper = std::env::var("SDKWORK_CLAW_API_KEY_PEPPER").ok();
+    let saved_startup_install_mode = std::env::var("SDKWORK_CLAW_STARTUP_INSTALL_MODE").ok();
+    std::env::set_var("SDKWORK_CLAW_DATABASE_URL", database_url.as_str());
+    std::env::set_var("SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS", "1");
+    std::env::set_var(
+        "SDKWORK_CLAW_API_KEY_PEPPER",
+        "0123456789abcdef0123456789abcdef",
+    );
+    std::env::set_var("SDKWORK_CLAW_STARTUP_INSTALL_MODE", "skip");
+
+    let _router = sdkwork_claw_gateway::runtime::router_from_env()
+        .await
+        .unwrap();
+
+    restore_env_var("SDKWORK_CLAW_DATABASE_URL", saved_database_url);
+    restore_env_var(
+        "SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS",
+        saved_max_connections,
+    );
+    restore_env_var("SDKWORK_CLAW_API_KEY_PEPPER", saved_api_key_pepper);
+    restore_env_var(
+        "SDKWORK_CLAW_STARTUP_INSTALL_MODE",
+        saved_startup_install_mode,
+    );
+
+    let options = SqliteConnectOptions::from_str(database_url.as_str())
+        .unwrap()
+        .create_if_missing(false);
+    let pool = SqlitePoolOptions::new()
+        .max_connections(1)
+        .connect_with(options)
+        .await
+        .unwrap();
+    let upgraded_at: String =
+        sqlx::query_scalar("SELECT upgraded_at FROM system_installation_state WHERE id = 1")
+            .fetch_one(&pool)
+            .await
+            .unwrap();
+    assert_eq!("2000-01-01 00:00:00", upgraded_at);
+}
+
 fn unique_sqlite_url() -> String {
     let millis = SystemTime::now()
         .duration_since(UNIX_EPOCH)
@@ -89,4 +157,17 @@ fn unique_sqlite_url() -> String {
         "sdkwork-claw-gateway-startup-{millis}-{counter}.sqlite"
     ));
     format!("sqlite://{}", path.to_string_lossy().replace('\\', "/"))
+}
+
+fn env_guard() -> &'static std::sync::Mutex<()> {
+    static GUARD: std::sync::OnceLock<std::sync::Mutex<()>> = std::sync::OnceLock::new();
+    GUARD.get_or_init(|| std::sync::Mutex::new(()))
+}
+
+fn restore_env_var(name: &str, value: Option<String>) {
+    if let Some(value) = value {
+        std::env::set_var(name, value);
+    } else {
+        std::env::remove_var(name);
+    }
 }

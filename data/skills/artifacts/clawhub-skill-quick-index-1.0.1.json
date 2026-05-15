@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-quick-index@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_quick_index",
+  "skill": {
+    "id": 21504,
+    "skillKey": "clawhub-skill-quick-index",
+    "name": "Skill Quick Index"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-quick-index",
+    "url": "https://clawhub.ai/skills/skill-quick-index",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-quick-index-bc57002eaf771142.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build a wide-trigger, precise-match index for local OpenClaw skills (L1-L3), then quickly route by intent/category/keywords."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "halfmoon82",
+      "userId": "s173a0sd7rjbb7s3bsayc8607s83n58t",
+      "displayName": "halfmoon82",
+      "image": "https://avatars.githubusercontent.com/u/261569221?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 478,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772279486395,
+      "changelog": "新增相关度评分、多关键词命中权重、结果排序优化",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1ee136403b9ae209d377698de29b7481a8c34bb6fb7e24a615f31188e7e75a65"
+}

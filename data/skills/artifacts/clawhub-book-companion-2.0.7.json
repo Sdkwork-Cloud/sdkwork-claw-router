@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/book-companion@2.0.7",
+  "version": "2.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_companion",
+  "skill": {
+    "id": 65966,
+    "skillKey": "clawhub-book-companion",
+    "name": "书搭子"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-companion",
+    "url": "https://clawhub.ai/skills/book-companion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-companion-bef6e24aa98b522c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "最懂你的书搭子 - AI 读书伴侣与思想交流伙伴。基于本地 workspace 的隐私保护型共读 Agent，支持语音朗读。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ai-innopower",
+      "userId": "s172rttg8t6hmkhcy6pxk4bcrs83tawg",
+      "displayName": "AI-innopower",
+      "image": "https://avatars.githubusercontent.com/u/248300332?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "2.0.7",
+      "createdAt": 1776413923956,
+      "changelog": "**Summary:**  \nMajor refactor for improved privacy, local data storage, and modularity.\n\n- All user data now stored in the Skill's own `./data/` directory (no access outside), ensuring strict local privacy.\n- Removed all hardcoded script calls and dependencies on external directories (e.g., OpenClaw workspace/scripts).\n- Voice (TTS) output is now fully optional—only triggered if the user has set the appropriate environment variable; no forced or path-dependent scripts.\n- Simplified and modularized data structure: separate markdown files for user profile, reading library, and emotion logs.\n- All features are self-contained; no network requests or environment changes outside the Skill.\n- Reduced file set: unnecessary scripts and references removed to focus on core reading companion experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6649d6943b6cc4b75640ce5063174abdab93b88ee0f391a755d6d23bfa70fc95"
+}

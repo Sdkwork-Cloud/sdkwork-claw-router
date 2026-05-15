@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19129,
+  "uuid": "skill-clawhub-campaign-analytics",
+  "skillKey": "clawhub-campaign-analytics",
+  "name": "Campaign Analytics",
+  "summary": "Analyzes campaign performance with multi-touch attribution, funnel conversion analysis, and ROI calculation for marketing optimization. Use when analyzing ma...",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.campaign_analytics",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alireza Rezvani",
+      "features": [
+        "Analyzes campaign performance with multi-touch attribution, funnel conversion analysis, and ROI.",
+        "Use when analyzing ma..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/campaign-analytics@2.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5697919?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "campaign-analytics",
+      "url": "https://clawhub.ai/skills/campaign-analytics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "campaign-analytics",
+    "url": "https://clawhub.ai/skills/campaign-analytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/campaign-analytics-b7090b605e3c30f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/campaign-analytics@2.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-campaign-analytics-2.1.1.json",
+      "version": "2.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8bab9468b6e571d832be9baf54f536c977354f215fbbb6e15457466d99b961ce",
+      "artifactSizeBytes": 1948
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T16:55:41.589Z"
+}

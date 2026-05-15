@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nutrition-provider-r2@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nutrition_provider_r2",
+  "skill": {
+    "id": 26077,
+    "skillKey": "clawhub-nutrition-provider-r2",
+    "name": "Nutrition Provider R2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nutrition-provider-r2",
+    "url": "https://clawhub.ai/skills/nutrition-provider-r2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nutrition-provider-r2-e777c1028666a7e8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "crawl the Vietnam nutrition provider page-by-page with scrapling-official and upload each raw provider record to Cloudflare R2 after fetch. use for provider-..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "snailb1007",
+      "userId": "s17fj940hnx4ze0htg1zmnn965840rtf",
+      "displayName": "snailb1007",
+      "image": "https://avatars.githubusercontent.com/u/69341804?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 375,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1773555546819,
+      "changelog": "Expanded the skill to support both the Vietnam nutrition foods lookup and prepared-dish lookup flows, documented the second canonical API and schema, clarified per-record uploads for both sources, and added guidance to separate R2 namespaces between foods and dishes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a748e2c58addd56f1d3970b3d7b5b628a33e8a2c18e00a772914252840a418c1"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sylea@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sylea",
+  "skill": {
+    "id": 52898,
+    "skillKey": "clawhub-sylea",
+    "name": "Syléa"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sylea",
+    "url": "https://clawhub.ai/skills/sylea",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sylea-8e7fc6fc4eb30172.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Personal life coach & decision assistant. Analyzes dilemmas with a probability-based framework, tracks life goals across 5 psychological dimensions, and runs..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clotilde563",
+      "userId": "s1796n7eh4fptx5d9053ryqgf1854cvx",
+      "displayName": "Clotilde563",
+      "image": "https://avatars.githubusercontent.com/u/212732850?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 211,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1776640207916,
+      "changelog": "Initial release of sylea, a French-first personal life coach and decision assistant.\n\n- Analyzes dilemmas using a probability-based framework with user-defined scoring.\n- Tracks and estimates progress toward life goals across 5 psychological dimensions.\n- Provides daily well-being check-ins and actionable micro-improvements.\n- Stores all user data locally in `~/.sylea/` for privacy—no network or telemetry.\n- Responds in French by default, with English support.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d8bddd1a42a0a55a3ccbd1aea5f9202c55be58fe76c715fe45fe379920592494"
+}

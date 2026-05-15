@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weather-forecast-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_forecast_ai",
+  "skill": {
+    "id": 31743,
+    "skillKey": "clawhub-weather-forecast-ai",
+    "name": "Weather"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-forecast-ai",
+    "url": "https://clawhub.ai/skills/weather-forecast-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-forecast-ai-acdd7b3c14086fbd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get current weather and forecasts via wttr.in or Open-Meteo. Use when: user asks about weather, temperature, or forecasts for any location. NOT for: historic..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "utromaya-code",
+      "userId": "publishers:utromaya-code",
+      "displayName": "utromaya-code",
+      "image": "https://avatars.githubusercontent.com/u/254962629?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 253,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774206368934,
+      "changelog": "Initial release of weather-forecast-ai.\n\n- Provides current weather conditions and forecasts using wttr.in and Open-Meteo.\n- Answers questions about weather, temperature, and forecasts for any city or location.\n- Offers sample curl commands for quick weather checks and different output formats (text, JSON, PNG).\n- Does not support historical data, severe weather alerts, or detailed meteorological analysis.\n- No API key required; works globally with just city or airport codes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c6a92f38f523facbf943ac9133f27ec280649b1a47cae919c3d750af8f302a0d"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34862,
+  "uuid": "skill-clawhub-pinterest-video-download",
+  "skillKey": "clawhub-pinterest-video-download",
+  "name": "Pinterest Video Download",
+  "summary": "Download the main video from a Pinterest pin and save it as a local MP4 for personal media workflows such as wallpaper saving, repost preparation, or Live Ph...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pinterest_video_download",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "He Kai",
+      "features": [
+        "Download the main video from a Pinterest pin and save it as a local MP4 for personal media work."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pinterest-video-download@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37147072?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pinterest-video-download",
+      "url": "https://clawhub.ai/skills/pinterest-video-download"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pinterest-video-download",
+    "url": "https://clawhub.ai/skills/pinterest-video-download",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pinterest-video-download-9d9b690ae5783f6a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pinterest-video-download@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-pinterest-video-download-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:191da4fead72444c36b282b529ebad41247feae65c53f6e3d8d943e34511d181",
+      "artifactSizeBytes": 2014
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T06:24:25.230Z"
+}

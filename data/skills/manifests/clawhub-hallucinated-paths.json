@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45738,
+  "uuid": "skill-clawhub-hallucinated-paths",
+  "skillKey": "clawhub-hallucinated-paths",
+  "name": "Hallucinated Paths",
+  "summary": "Reply cites file paths, directories, or module locations that do not exist in the current project.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hallucinated_paths",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mvogt99",
+      "features": [
+        "Reply cites file paths, directories, or module locations that do not exist in the current proje."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hallucinated-paths@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/911083?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hallucinated-paths",
+      "url": "https://clawhub.ai/skills/hallucinated-paths"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hallucinated-paths",
+    "url": "https://clawhub.ai/skills/hallucinated-paths",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hallucinated-paths-c9665c81649c2a87.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hallucinated-paths@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hallucinated-paths-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cef7a4db4ab64418232945d99fed29979a0c0b2d70912d32f41d09bdc49acff6",
+      "artifactSizeBytes": 2277
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T17:16:14.367Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/boka-movie-skills@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.boka_movie_skills",
+  "skill": {
+    "id": 20847,
+    "skillKey": "clawhub-boka-movie-skills",
+    "name": "Bona Movie Production"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "boka-movie-skills",
+    "url": "https://clawhub.ai/skills/boka-movie-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/boka-movie-skills-92b7836221474f37.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bona Movie Production is Bona Group's film-grade production skill. It covers image generation, image editing, and video generation, using Nano Banana 2 and N..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chengzipidaily",
+      "userId": "publishers:chengzipidaily",
+      "displayName": "Genaro Kaba",
+      "image": "https://avatars.githubusercontent.com/u/131429250?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 335,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774138575314,
+      "changelog": "No major functional changes detected in this release.\n\n- Minor metadata update: author changed to \"chengzipi\" in documentation.\n- Removed default API endpoint information from the compatibility section.\n- No changes to code or core functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:da504b7e28dbb78b91b241b6d7558433e4ea7de11ab5d3586c00cf64483ff4d2"
+}

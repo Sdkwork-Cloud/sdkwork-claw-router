@@ -1,0 +1,56 @@
+{
+  "skill": {
+    "slug": "skill-vettr",
+    "displayName": "Skill Vettr",
+    "summary": "Static analysis security scanner for third-party OpenClaw skills. Detects eval/spawn risks, malicious dependencies, typosquatting, and prompt injection patte...",
+    "tags": {
+      "analysis": "2.0.3",
+      "latest": "2.0.3",
+      "scanner": "2.0.3",
+      "security": "2.0.3",
+      "static-analysis": "2.0.3",
+      "vetting": "2.0.3"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1035,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1771152355065,
+    "updatedAt": 1778385956960
+  },
+  "latestVersion": {
+    "version": "2.0.3",
+    "createdAt": 1771158561137,
+    "changelog": "v2.0.3 introduces .vettrignore file support, customizable vetting roots, and safer filesystem defaults.\n\n- Added support for .vettrignore files to exclude files/directories from scans using glob patterns.\n- Introduced allowCwd config option: by default, only os.tmpdir(), ~/.openclaw, and ~/Downloads are accepted as vetting roots; set allowCwd: true to scan under the current working directory.\n- Added startup verification for required .wasm artifacts with descriptive error messages when files are missing after install.\n- Added formal install spec to registry metadata declaring npm install command, required .wasm artifacts, and lifecycle script safety notes.\n- Updated documentation to explain filesystem scope, configuration, and .vettrignore format and usage.",
+    "license": null
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "britrik",
+    "userId": "s172xesqq5b1rv6mev9dafba8n83tdtk",
+    "displayName": "Britrik",
+    "image": "https://avatars.githubusercontent.com/u/214915099?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.dangerous_exec",
+      "suspicious.dynamic_code_execution",
+      "suspicious.env_credential_access",
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.dangerous_exec, suspicious.dynamic_code_execution, suspicious.env_credential_access (+2 more)",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778385956960
+  }
+}

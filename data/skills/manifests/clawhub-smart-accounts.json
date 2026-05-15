@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26959,
+  "uuid": "skill-clawhub-smart-accounts",
+  "skillKey": "clawhub-smart-accounts",
+  "name": "Smart Accounts",
+  "summary": "Deploy and manage multi-signature smart accounts. Use when you or the user want to create a smart wallet, deploy a multi-sig, add or remove owners, change th...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_accounts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rachid Jarray",
+      "features": [
+        "Deploy and manage multi-signature smart accounts",
+        "Use when you or the user want to create a smart wallet, deploy a multi-sig, add or remove owner."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-accounts@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111736103?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-accounts",
+      "url": "https://clawhub.ai/skills/smart-accounts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-accounts",
+    "url": "https://clawhub.ai/skills/smart-accounts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-accounts-3127c245f8442710.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-accounts@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-accounts-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b63e15b968ae076635d25373f94a6c7e324e435c449b5c39f8ac571396d59562",
+      "artifactSizeBytes": 2243
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T06:03:38.590Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43430,
+  "uuid": "skill-clawhub-porkbun-domains",
+  "skillKey": "clawhub-porkbun-domains",
+  "name": "Porkbun Domains & DNS",
+  "summary": "Manage domains and DNS via the Porkbun API. Use when asked to list domains, check domain availability, manage DNS records (A, AAAA, CNAME, MX, TXT, etc.), up...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.porkbun_domains",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DanielGrobelny",
+      "features": [
+        "Manage domains and DNS via the Porkbun API",
+        "Use when asked to list domains, check domain availability, manage DNS records (A, AAAA, CNAME,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/porkbun-domains@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7581754?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "porkbun-domains",
+      "url": "https://clawhub.ai/skills/porkbun-domains"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "porkbun-domains",
+    "url": "https://clawhub.ai/skills/porkbun-domains",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/porkbun-domains-07b6dd5c64cbaed7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/porkbun-domains@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-porkbun-domains-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a76fbd9b458704fed21770bdd79018ea304efcae379c0389a48c855da45b0f9c",
+      "artifactSizeBytes": 1986
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T09:15:26.381Z"
+}

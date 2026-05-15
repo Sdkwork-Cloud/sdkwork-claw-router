@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68776,
+  "uuid": "skill-clawhub-design-ads",
+  "skillKey": "clawhub-design-ads",
+  "name": "design-ads 海报制作",
+  "summary": "AI 知识类海报/封面图设计生成器。根据用户提供的主题内容，自动生成 1200x1800 像素的竖版海报图片， 风格统一为深色科技感设计（暗黑背景 + 渐变强调色 + 思源宋体标题 + 思源黑体正文）。 支持 6 种模板布局：3 种封面样式（居中图标型、特性网格型、列表展示型）和 3 种内页样式（工具详情型、提示...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.design_ads",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bozoyan",
+      "features": [
+        "AI 知识类海报/封面图设计生成器。根据用户提供的主题内容，自动生成 1200x1800 像素的竖版海报图片， 风格统一为深色科技感设计（暗黑背景 + 渐变强调色 + 思源宋体标题 + 思源."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/design-ads@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4261158?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "design-ads",
+      "url": "https://clawhub.ai/skills/design-ads"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "design-ads",
+    "url": "https://clawhub.ai/skills/design-ads",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/design-ads-d54d7004aadf8c95.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/design-ads@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-design-ads-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:869ab80554a2b7c59e2a67a7b968c37f5c16a0db0a3c01941d15f19c218de996",
+      "artifactSizeBytes": 2852
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T01:20:38.983Z"
+}

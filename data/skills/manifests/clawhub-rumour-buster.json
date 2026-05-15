@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60030,
+  "uuid": "skill-clawhub-rumour-buster",
+  "skillKey": "clawhub-rumour-buster",
+  "name": "Rumour Buster",
+  "summary": "谣言终结者。双引擎验证消息真假：中文搜索（kimi_search + multi-search-engine）+ 英文搜索（Tavily + multi-search-engine），交叉验证，溯源消息来源。首次使用自动运行 setup 配置。",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rumour_buster",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "harry720320",
+      "features": [
+        "谣言终结者。双引擎验证消息真假：中文搜索（kimi_search + multi-search-engine）+ 英文搜索（Tavily + multi-search-engine），交叉验."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rumour-buster@0.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15187103?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rumour-buster",
+      "url": "https://clawhub.ai/skills/rumour-buster"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rumour-buster",
+    "url": "https://clawhub.ai/skills/rumour-buster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rumour-buster-b449f527c7e0d82e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rumour-buster@0.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rumour-buster-0.3.0.json",
+      "version": "0.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aeb82e07040c931a35a4307647c382e609f46ad9841af37c1619a260e223dd6c",
+      "artifactSizeBytes": 2565
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T07:03:40.303Z"
+}

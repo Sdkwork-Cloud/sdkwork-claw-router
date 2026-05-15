@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skillboss-tiny@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skillboss_tiny",
+  "skill": {
+    "id": 49919,
+    "skillKey": "clawhub-skillboss-tiny",
+    "name": "Skillboss"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skillboss-tiny",
+    "url": "https://clawhub.ai/skills/skillboss-tiny",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skillboss-tiny-d1bf6d45940162c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-AI gateway. 50+ models: chat, image, video, TTS, music, search."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "marjoriebroad",
+      "userId": "s17evr8hna69xbf4mv5z0nppgx84m26f",
+      "displayName": "MarjorieBroad",
+      "image": "https://avatars.githubusercontent.com/u/260425366?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 61,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773216969166,
+      "changelog": "Initial release of skillboss – a multi-AI gateway.\n\n- Supports 50+ models for chat, image, video, TTS, STT, music, and web search via a single API key\n- Provides CLI scripts to list available models and run models by type or provider\n- Includes \"Smart Mode\" for task-based model selection\n- Outputs media results as downloadable URLs\n- Requires SKILLBOSS_API_KEY environment variable for authentication",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2c5d155d2864a0a83510f3f4128a21fdd0105cf1de0b52768d5335fc675b3d30"
+}

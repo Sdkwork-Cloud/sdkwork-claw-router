@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11980,
+  "uuid": "skill-clawhub-quit-caffeine",
+  "skillKey": "clawhub-quit-caffeine",
+  "name": "Quit Caffeine",
+  "summary": "Reduce or quit caffeine with withdrawal tracking, tapering plans, and energy milestones",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quit_caffeine",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jhillin8",
+      "features": [
+        "Reduce or quit caffeine with withdrawal tracking, tapering plans, and energy milestones"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quit-caffeine@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/79551560?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quit-caffeine",
+      "url": "https://clawhub.ai/skills/quit-caffeine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quit-caffeine",
+    "url": "https://clawhub.ai/skills/quit-caffeine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quit-caffeine-922474c06826fc92.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quit-caffeine@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-quit-caffeine-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f2d644f3516513d9845e09dbc02c3d76c4b767607f622f7f31ad68741af6622f",
+      "artifactSizeBytes": 2208
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-25T07:35:52.593Z"
+}

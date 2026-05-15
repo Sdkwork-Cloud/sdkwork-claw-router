@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51332,
+  "uuid": "skill-clawhub-binance-event-contract-fetcher",
+  "skillKey": "clawhub-binance-event-contract-fetcher",
+  "name": "Binance Event Contract Data Fetcher",
+  "summary": "Fetches 100% accurate, real-time Binance BTCUSDT and ETHUSDT Event Contract data every minute, including K-lines, liquidity, prices, and contract rules.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.binance_event_contract_fetcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "acwxpunh",
+      "features": [
+        "Fetches 100% accurate, real-time Binance BTCUSDT and ETHUSDT Event Contract data every minute,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/binance-event-contract-fetcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218176710?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "binance-event-contract-fetcher",
+      "url": "https://clawhub.ai/skills/binance-event-contract-fetcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "binance-event-contract-fetcher",
+    "url": "https://clawhub.ai/skills/binance-event-contract-fetcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/binance-event-contract-fetcher-9cda54109bab92b4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/binance-event-contract-fetcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-binance-event-contract-fetcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c6a7e65067709ac86515fa2ac2e894e33071774c6b21f77b3147afc27f2ef1d5",
+      "artifactSizeBytes": 2436
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T12:18:26.902Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54088,
+  "uuid": "skill-clawhub-cove-plugin",
+  "skillKey": "clawhub-cove-plugin",
+  "name": "cove",
+  "summary": "Chain of Verification (CoVe) — fact-check your responses against the user's knowledge base, memory, and web search before presenting them.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cove_plugin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bhawanakatiyar",
+      "features": [
+        "Chain of Verification (CoVe) — fact-check your responses against the user's knowledge base, mem."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cove-plugin@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/436956?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cove-plugin",
+      "url": "https://clawhub.ai/skills/cove-plugin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cove-plugin",
+    "url": "https://clawhub.ai/skills/cove-plugin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cove-plugin-c928f48f7ef4fe8d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cove-plugin@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-cove-plugin-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b63d219731da0a9b2f073ab5a5be5c3a2adeff3d5782d78fb985a5333cd0cbec",
+      "artifactSizeBytes": 2259
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T15:35:53.903Z"
+}

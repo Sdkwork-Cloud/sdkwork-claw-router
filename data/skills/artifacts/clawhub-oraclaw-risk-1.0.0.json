@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oraclaw-risk@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oraclaw_risk",
+  "skill": {
+    "id": 37093,
+    "skillKey": "clawhub-oraclaw-risk",
+    "name": "Oraclaw Risk"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oraclaw-risk",
+    "url": "https://clawhub.ai/skills/oraclaw-risk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oraclaw-risk-c79aee6cd9066bdc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Risk assessment engine for AI agents. Value at Risk (VaR), CVaR, stress testing, and multi-factor risk scoring. Monte Carlo powered. Built for trading agents..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whatsonyourmind",
+      "userId": "s1742adj1ngn7vhc26tve4753183j86s",
+      "displayName": "Whatsonyourmind",
+      "image": "https://avatars.githubusercontent.com/u/248369826?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774612963717,
+      "changelog": "- Initial release of oraclaw-risk: a risk assessment engine for AI agents.\n- Supports Value at Risk (VaR), Conditional VaR (CVaR), stress testing, and multi-factor risk scoring.\n- Powered by Monte Carlo simulation, Bayesian inference, and convergence analysis.\n- Designed for trading agents, lending agents, and portfolio managers.\n- Provides detailed risk outputs: VaR, CVaR, per-asset contribution, and stress scenarios.\n- Accessible via API with USDC-based pricing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:10d2b2331f19d2c1bda2a46ce5308c5cc1aea3f2d5bc5b217ee8956af5201351"
+}

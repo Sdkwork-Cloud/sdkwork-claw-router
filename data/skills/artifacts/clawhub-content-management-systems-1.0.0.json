@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/content-management-systems@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_management_systems",
+  "skill": {
+    "id": 48419,
+    "skillKey": "clawhub-content-management-systems",
+    "name": "Content Management Systems"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-management-systems",
+    "url": "https://clawhub.ai/skills/content-management-systems",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-management-systems-55fc49a0b40b27c5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Workflow for building and modifying content management systems across WordPress, Shopify, Wix, Squarespace, Drupal, WooCommerce, Joomla, HubSpot CMS Hub, Web..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jhauga",
+      "userId": "s17ch25466qc0g2bcymk2dr8zx83pfny",
+      "displayName": "John Haugabook",
+      "image": "https://avatars.githubusercontent.com/u/10998676?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 100,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777760044582,
+      "changelog": "Initial release — guidance for working with content management systems:\n\n- Covers workflows for building and modifying themes, plugins, modules, admin panels, media uploads, content models, editors, and static export in major CMS platforms.\n- Details how to identify key CMS seams and approach common platform constraints.\n- Provides actionable rules and best practices for themes/templates, plugins/extensions, admin/editor UX, media handling, content models, migrations, and markdown/static export workflows.\n- Includes advice for distinguishing CMS roles and making safe, minimal changes.\n- Reference section points to mappings for common CMS platforms.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:15360739e1157c3863d0453ccaf98d703104a57434672caba706b8fd01c5b303"
+}

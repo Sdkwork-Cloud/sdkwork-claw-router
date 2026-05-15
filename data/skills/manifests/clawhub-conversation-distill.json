@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39974,
+  "uuid": "skill-clawhub-conversation-distill",
+  "skillKey": "clawhub-conversation-distill",
+  "name": "conversation-distill",
+  "summary": "At the natural end of a conversation, proactively suggest a structured wrap-up (distill): scan the full session, classify outputs into 6 categories (insights...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.conversation_distill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "YING99",
+      "features": [
+        "At the natural end of a conversation, proactively suggest a structured wrap-up (distill): scan."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/conversation-distill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/217683404?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "conversation-distill",
+      "url": "https://clawhub.ai/skills/conversation-distill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "conversation-distill",
+    "url": "https://clawhub.ai/skills/conversation-distill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/conversation-distill-8c717a348a1f09f6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/conversation-distill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-conversation-distill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f8c5ed938d62baec0047d3577925880e57ca38d03765e646c3899c20074e859f",
+      "artifactSizeBytes": 2044
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T05:24:43.147Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45349,
+  "uuid": "skill-clawhub-ak-data-daily-timeout-report",
+  "skillKey": "clawhub-ak-data-daily-timeout-report",
+  "name": "AK Data Daily Timeout Report",
+  "summary": "Unified daily timeout entry for AK Data single job type: task timeout + crawler timeout + comparison + drill-down examples with log request.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ak_data_daily_timeout_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeeHoo29",
+      "features": [
+        "Unified daily timeout entry for AK Data single job type: task timeout + crawler timeout + compa."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ak-data-daily-timeout-report@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/213423857?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ak-data-daily-timeout-report",
+      "url": "https://clawhub.ai/skills/ak-data-daily-timeout-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ak-data-daily-timeout-report",
+    "url": "https://clawhub.ai/skills/ak-data-daily-timeout-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ak-data-daily-timeout-report-0212b124b8b08607.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ak-data-daily-timeout-report@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ak-data-daily-timeout-report-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8c9aabab116560e441165198cc0c40edd4abd544321a09b8cc1b3a997526ae3b",
+      "artifactSizeBytes": 1984
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T10:07:18.815Z"
+}

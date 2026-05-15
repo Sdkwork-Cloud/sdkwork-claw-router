@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51640,
+  "uuid": "skill-clawhub-nested-pdf-merger",
+  "skillKey": "clawhub-nested-pdf-merger",
+  "name": "Nested PDF Merger",
+  "summary": "Use this skill when the task is to merge PDFs from a nested directory tree into a single PDF with hierarchical bookmarks by invoking the external `nestedpdfm...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nested_pdf_merger",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Briant",
+      "features": [
+        "Use this skill when the task is to merge PDFs from a nested directory tree into a single PDF wi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nested-pdf-merger@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11176022?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nested-pdf-merger",
+      "url": "https://clawhub.ai/skills/nested-pdf-merger"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nested-pdf-merger",
+    "url": "https://clawhub.ai/skills/nested-pdf-merger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nested-pdf-merger-75d24af4daccc78d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nested-pdf-merger@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nested-pdf-merger-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e16a10f862dd4901006b87e5d396641208e5077da6b3c6583dd895ee87f4b57a",
+      "artifactSizeBytes": 2353
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T19:24:34.394Z"
+}

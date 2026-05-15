@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quality-gates@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quality_gates",
+  "skill": {
+    "id": 27118,
+    "skillKey": "clawhub-quality-gates",
+    "name": "Quality Gates"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quality-gates",
+    "url": "https://clawhub.ai/skills/quality-gates",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quality-gates-23bf448c2a4f691e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Quality checkpoints at every development stage — pre-commit through post-deploy — with configuration examples, threshold tables, bypass protocols, and CI/CD integration. Use when setting up quality automation, configuring CI pipelines, est."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wpank",
+      "userId": "publishers:wpank",
+      "displayName": "wpank",
+      "image": "https://avatars.githubusercontent.com/u/9498646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 960,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770729954347,
+      "changelog": "Initial release: introduce comprehensive quality gate guidance, configuration, and enforcement examples for every stage of the development lifecycle.\n\n- Defines quality gates for pre-commit, pre-push, pre-merge, pre-/post-deploy, and code review.\n- Provides ready-to-use setup instructions for tools including Husky, lint-staged, pre-commit, gitleaks, and major CI/CD platforms.\n- Details minimum thresholds and configuration examples for code coverage, security scanning, performance budgets, and review requirements.\n- Outlines bypass protocols with mandatory documentation and approval steps.\n- Includes CODEOWNERS and branch protection recommendations to enforce gate checks.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:10d8d478834b0cc7e8e8bc189e27607613b4817f1522c3da5ea9e54c8ec8ed4b"
+}

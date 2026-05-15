@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54619,
+  "uuid": "skill-clawhub-envato-comment-task-to-sheet",
+  "skillKey": "clawhub-envato-comment-task-to-sheet",
+  "name": "Envato Comment → Task → Google Sheet",
+  "summary": "Analyzes Envato comments to classify and prioritize tasks, extracting details into JSON formatted for Google Sheets integration.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.envato_comment_task_to_sheet",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lokendra Gami",
+      "features": [
+        "Analyzes Envato comments to classify and prioritize tasks, extracting details into JSON formatt."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/envato-comment-task-to-sheet@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/96611901?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "envato-comment-task-to-sheet",
+      "url": "https://clawhub.ai/skills/envato-comment-task-to-sheet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "envato-comment-task-to-sheet",
+    "url": "https://clawhub.ai/skills/envato-comment-task-to-sheet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/envato-comment-task-to-sheet-fe88b3551e83cabd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/envato-comment-task-to-sheet@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-envato-comment-task-to-sheet-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:80d8d4eabee63cfeb8b87e0fe8f4efca8cb64414607967fc08de6ee635f1dece",
+      "artifactSizeBytes": 2430
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T07:43:14.735Z"
+}

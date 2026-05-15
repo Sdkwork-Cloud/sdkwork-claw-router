@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61174,
+  "uuid": "skill-clawhub-force-unwrap-scanner",
+  "skillKey": "clawhub-force-unwrap-scanner",
+  "name": "Force Unwrap Scanner",
+  "summary": "扫描并报告 Swift 项目中的强制解包（!）和 try! 使用情况，识别潜在崩溃风险",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.force_unwrap_scanner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "soponcd",
+      "features": [
+        "扫描并报告 Swift 项目中的强制解包（!）和 try! 使用情况，识别潜在崩溃风险"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/force-unwrap-scanner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31302208?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "force-unwrap-scanner",
+      "url": "https://clawhub.ai/skills/force-unwrap-scanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "force-unwrap-scanner",
+    "url": "https://clawhub.ai/skills/force-unwrap-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/force-unwrap-scanner-253411186cf4dcf3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/force-unwrap-scanner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-force-unwrap-scanner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8fac602bf13f7a055a1a6fe1be3403ce6da59671af11c4937393b492983c23f6",
+      "artifactSizeBytes": 2205
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T10:10:45.270Z"
+}

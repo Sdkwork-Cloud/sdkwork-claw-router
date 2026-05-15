@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39641,
+  "uuid": "skill-clawhub-medical-unit-converter",
+  "skillKey": "clawhub-medical-unit-converter",
+  "name": "Medical Unit Converter",
+  "summary": "Convert medical laboratory values between units (mg/dL to mmol/L, etc.) with formula transparency and clinical reference ranges. Supports glucose, cholestero...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.medical_unit_converter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Convert medical laboratory values between units (mg/dL to mmol/L, etc.) with formula transparen.",
+        "Supports glucose, cholestero..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/medical-unit-converter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "medical-unit-converter",
+      "url": "https://clawhub.ai/skills/medical-unit-converter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "medical-unit-converter",
+    "url": "https://clawhub.ai/skills/medical-unit-converter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/medical-unit-converter-82607fc001b7cbc9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/medical-unit-converter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-medical-unit-converter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a7066e2af8a8314f32446a9e5d3051362810ce8946de26e7f022083e803f16d8",
+      "artifactSizeBytes": 2534
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T01:20:49.715Z"
+}

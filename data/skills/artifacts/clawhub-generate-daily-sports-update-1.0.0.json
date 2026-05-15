@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/generate-daily-sports-update@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.generate_daily_sports_update",
+  "skill": {
+    "id": 23229,
+    "skillKey": "clawhub-generate-daily-sports-update",
+    "name": "Generate Daily Sports Update"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "generate-daily-sports-update",
+    "url": "https://clawhub.ai/skills/generate-daily-sports-update",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/generate-daily-sports-update-fe9e01ac6d9efb71.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Runs the sports science crawler to generate a daily report, sync to Notion, and prevent duplicate content."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "w2478328197-arch",
+      "userId": "publishers:w2478328197-arch",
+      "displayName": "王琛",
+      "image": "https://avatars.githubusercontent.com/u/255297550?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 447,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772598035682,
+      "changelog": "- Initial release of the generate-daily-sports-update skill.\n- Runs a Python script to fetch recent sports science and wearable tech news, deduplicates entries, and syncs reports to Notion.\n- Requires Python 3, Notion API credentials, and access to the run_command tool.\n- Outputs a daily Markdown report and updates local history to prevent duplicate content.\n- Utilizes several external endpoints, including PubMed and Notion APIs, with local file management for tracking processed items.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4750b6a3700f77235744be22b9e8f1354b8575fd12832642c4f9baa84278499d"
+}

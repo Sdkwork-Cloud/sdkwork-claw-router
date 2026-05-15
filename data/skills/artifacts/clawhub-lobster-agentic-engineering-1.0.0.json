@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lobster-agentic-engineering@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobster_agentic_engineering",
+  "skill": {
+    "id": 34751,
+    "skillKey": "clawhub-lobster-agentic-engineering",
+    "name": "Lobster Agentic Engineering"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobster-agentic-engineering",
+    "url": "https://clawhub.ai/skills/lobster-agentic-engineering",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobster-agentic-engineering-2c978f6dac325890.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Operate as an agentic engineer using eval-first execution, decomposition, and cost-aware model routing."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangxiaofei860208-source",
+      "userId": "s17937syhc72vf48t0a5914v8d847evs",
+      "displayName": "wangxiaofei860208-source",
+      "image": "https://avatars.githubusercontent.com/u/260913269?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 211,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775301788654,
+      "changelog": "Initial release of lobster-agentic-engineering skill.\n\n- Enables agentic engineering workflows using eval-first execution and cost-aware model routing.\n- Provides principles for decomposing work into independently-verifiable, risk-scoped units.\n- Details best practices for routing tasks to appropriate AI model tiers (Haiku, Sonnet, Opus).\n- Introduces an eval-first feedback loop with baseline comparisons and regression checks.\n- Recommends strategies for session management and disciplined code review of AI-generated outputs.\n- Emphasizes tracking resource usage and escalating model sophistication only as needed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:55b1bef8dc509048f58672ffeb3000d0f0623ba54c95fb18596c5b974fcfeff0"
+}

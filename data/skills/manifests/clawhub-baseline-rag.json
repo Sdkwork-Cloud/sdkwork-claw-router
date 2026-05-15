@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55959,
+  "uuid": "skill-clawhub-baseline-rag",
+  "skillKey": "clawhub-baseline-rag",
+  "name": "Baseline-RAG",
+  "summary": "Extracts and checks factual claims with web sources, scoring confidence around 50–70% and flags for higher verification if needed.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baseline_rag",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "crftsmnd",
+      "features": [
+        "Extracts and checks factual claims with web sources, scoring confidence around 50–70% and flags."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baseline-rag@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224760604?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baseline-rag",
+      "url": "https://clawhub.ai/skills/baseline-rag"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baseline-rag",
+    "url": "https://clawhub.ai/skills/baseline-rag",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baseline-rag-5f032d93afb21a80.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baseline-rag@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-baseline-rag-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6c97623bb11b7725e1bd41112e28b1c7a38213cc6e2ed078b8bb0670b6528873",
+      "artifactSizeBytes": 1862
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T05:30:44.765Z"
+}

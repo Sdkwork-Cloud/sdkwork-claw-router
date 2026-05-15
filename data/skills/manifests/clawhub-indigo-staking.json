@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27442,
+  "uuid": "skill-clawhub-indigo-staking",
+  "skillKey": "clawhub-indigo-staking",
+  "name": "Indigo Staking",
+  "summary": "Query and manage INDY token staking positions on Indigo Protocol.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.indigo_staking",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Angelos Kappos",
+      "features": [
+        "Query and manage INDY token staking positions on Indigo Protocol."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/indigo-staking@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9395707?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "indigo-staking",
+      "url": "https://clawhub.ai/skills/indigo-staking"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "indigo-staking",
+    "url": "https://clawhub.ai/skills/indigo-staking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/indigo-staking-9169d5d8fb6a562a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/indigo-staking@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-indigo-staking-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc9eb07f5eee18932b4e408f195101dad4edb4401a46c4d71b9e52e94fd8360a",
+      "artifactSizeBytes": 1784
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T00:01:53.741Z"
+}

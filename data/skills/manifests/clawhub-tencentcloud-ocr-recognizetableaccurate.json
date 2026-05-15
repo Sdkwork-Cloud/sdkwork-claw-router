@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64812,
+  "uuid": "skill-clawhub-tencentcloud-ocr-recognizetableaccurate",
+  "skillKey": "clawhub-tencentcloud-ocr-recognizetableaccurate",
+  "name": "TencentCloud RecognizeTable OCR",
+  "summary": "腾讯云表格识别v3(RecognizeTableAccurateOCR)接口调用技能。当用户需要从表格图片或PDF中识别常规表格、无线表格、多表格的内容,提取每个单元格的文字信息,或将表格图片识别结果导出为Excel文件时,应使用此技能。支持中英文表格图片、旋转表格图片、嵌套表格图片等复杂场景,识别效果优于表格识...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencentcloud_ocr_recognizetableaccurate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tencent-ocr",
+      "features": [
+        "腾讯云表格识别v3(RecognizeTableAccurateOCR)接口调用技能。当用户需要从表格图片或PDF中识别常规表格、无线表格、多表格的内容,提取每个单元格的文字信息,或将表格图."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tencentcloud-ocr-recognizetableaccurate@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/246965649?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tencentcloud-ocr-recognizetableaccurate",
+      "url": "https://clawhub.ai/skills/tencentcloud-ocr-recognizetableaccurate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencentcloud-ocr-recognizetableaccurate",
+    "url": "https://clawhub.ai/skills/tencentcloud-ocr-recognizetableaccurate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencentcloud-ocr-recognizetableaccurate-6bfc2ed13f7972cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tencentcloud-ocr-recognizetableaccurate@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-tencentcloud-ocr-recognizetableaccurate-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9625beb115b5c043a6f1c3c30ef2d4de2c545c6628accc57cd8621efc157c137",
+      "artifactSizeBytes": 2362
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T02:43:12.856Z"
+}

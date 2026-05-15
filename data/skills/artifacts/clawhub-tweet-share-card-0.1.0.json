@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tweet-share-card@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tweet_share_card",
+  "skill": {
+    "id": 42166,
+    "skillKey": "clawhub-tweet-share-card",
+    "name": "Tweet Share Card"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tweet-share-card",
+    "url": "https://clawhub.ai/skills/tweet-share-card",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tweet-share-card-0f2fbf5af2ff8e21.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert an X/Twitter post URL into a polished share card image by capturing the tweet content and compositing it on a styled background."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "efficiency97",
+      "userId": "publishers:efficiency97",
+      "displayName": "Efficiency97",
+      "image": "https://avatars.githubusercontent.com/u/26136099?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774172730764,
+      "changelog": "Initial release: generate tweet share cards with peach default and color presets",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:76623d2dee285a2f58d949cd2e4aa24def008d01e37fe7a0c7e6b9ca570df447"
+}

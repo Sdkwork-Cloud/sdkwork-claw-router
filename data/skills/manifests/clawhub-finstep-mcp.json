@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72395,
+  "uuid": "skill-clawhub-finstep-mcp",
+  "skillKey": "clawhub-finstep-mcp",
+  "name": "finstep-mcp",
+  "summary": "财跃星辰金融数据服务。提供实时行情、板块数据、公司信息、宏观经济、研报新闻等全方位金融数据。触发条件：用户查询股票行情、板块涨跌、公司财务、宏观数据、研报公告等金融信息。",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finstep_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fa1c0n4826",
+      "features": [
+        "财跃星辰金融数据服务。提供实时行情、板块数据、公司信息、宏观经济、研报新闻等全方位金融数据。触发条件：用户查询股票行情、板块涨跌、公司财务、宏观数据、研报公告等金融信息。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/finstep-mcp@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/189065513?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "finstep-mcp",
+      "url": "https://clawhub.ai/skills/finstep-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finstep-mcp",
+    "url": "https://clawhub.ai/skills/finstep-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finstep-mcp-ef1dedb54daa3042.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/finstep-mcp@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-finstep-mcp-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:91cb457681eba09f9296272f4fa796a4d841f8fd9a318eb78eb1f421ba15d8a4",
+      "artifactSizeBytes": 2208
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T09:07:53.204Z"
+}

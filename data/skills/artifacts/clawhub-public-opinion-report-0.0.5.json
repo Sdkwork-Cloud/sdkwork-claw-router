@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/public-opinion-report@0.0.5",
+  "version": "0.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.public_opinion_report",
+  "skill": {
+    "id": 67242,
+    "skillKey": "clawhub-public-opinion-report",
+    "name": "public-opinion-report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "public-opinion-report",
+    "url": "https://clawhub.ai/skills/public-opinion-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/public-opinion-report-b16f7d71105d94c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "调用Midu-Public-Opinion-Report接口，生成一篇舆情分析报告。支持的报告类型：事件专报、话题报告、行业报告、活动报告、周期性报告、直报点上报快评、直报点上报综述、直报点热点报送、品牌传播洞察报告、城市对标分析报告、城市传播影响力报告、区域网络信息报告、公共政策网络舆情报告。Call the..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bitallin",
+      "userId": "s17fbc977wmez255xj0vrg1n1n8438qf",
+      "displayName": "bitallin",
+      "image": "https://avatars.githubusercontent.com/u/35096126?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 223,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.0.5",
+      "createdAt": 1775123966401,
+      "changelog": "- Added a note clarifying that completing a report may take 5 to 20 minutes and recommends waiting for the API response before proceeding.\n- No other functional or interface changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b56593939d1e1368ffa6fba6fe89cc12b12a6e5e03d8c55dfa0fdcb862158c15"
+}

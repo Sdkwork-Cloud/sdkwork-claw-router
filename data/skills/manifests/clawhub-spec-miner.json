@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11950,
+  "uuid": "skill-clawhub-spec-miner",
+  "skillKey": "clawhub-spec-miner",
+  "name": "Spec Miner",
+  "summary": "Use when understanding legacy or undocumented systems, creating documentation for existing code, or extracting specifications from implementations. Invoke for legacy analysis, code archaeology, undocumented features.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spec_miner",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Veera",
+      "features": [
+        "Use when understanding legacy or undocumented systems, creating documentation for existing code.",
+        "Invoke for legacy analysis, code archaeology, undocumented features."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/spec-miner@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/119089869?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "spec-miner",
+      "url": "https://clawhub.ai/skills/spec-miner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spec-miner",
+    "url": "https://clawhub.ai/skills/spec-miner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spec-miner-ed550510dce1be64.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/spec-miner@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-spec-miner-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3d40228101fbb5241e5bd201f896d5eaf2ff2907e51146dea195f1ffa53edc29",
+      "artifactSizeBytes": 2394
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T05:56:38.614Z"
+}

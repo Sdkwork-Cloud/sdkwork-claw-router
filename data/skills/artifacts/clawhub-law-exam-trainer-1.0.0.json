@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/law-exam-trainer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.law_exam_trainer",
+  "skill": {
+    "id": 70639,
+    "skillKey": "clawhub-law-exam-trainer",
+    "name": "Law Exam Trainer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "law-exam-trainer",
+    "url": "https://clawhub.ai/skills/law-exam-trainer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/law-exam-trainer-026108e4ed5f5356.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "法考复习助手 - 根据法考视频/文档资料整理题库，支持选择题练习、错题解析、知识点定位。当用户说：法考、刷题、司法考试、法律职业资格考试、练习题、错题整理时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lujun2508",
+      "userId": "s17fvfkn1ffzjp1mats1dk351583h595",
+      "displayName": "lujun2508",
+      "image": "https://avatars.githubusercontent.com/u/267008723?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776746036952,
+      "changelog": "法考复习助手 skill，支持题库生成、练习模式、错题解析",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:50d7806bc36f295d0d85332e46c74d06b0cd09b202121de784e29d266b0dd3e6"
+}

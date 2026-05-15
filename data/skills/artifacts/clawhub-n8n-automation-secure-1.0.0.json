@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/n8n-automation-secure@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.n8n_automation_secure",
+  "skill": {
+    "id": 34573,
+    "skillKey": "clawhub-n8n-automation-secure",
+    "name": "N8n Automation Secure"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "n8n-automation-secure",
+    "url": "https://clawhub.ai/skills/n8n-automation-secure",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/n8n-automation-secure-4480fb0fbf04f946.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Secure n8n workflow automation integration for coding tasks. This skill implements enterprise-grade security with credential isolation, input validation, aud..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nelmaz",
+      "userId": "s176x4jhvghz5tsywww6mmywh583gjka",
+      "displayName": "nelmaz",
+      "image": "https://avatars.githubusercontent.com/u/12268467?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775724949405,
+      "changelog": "Initial release focusing on secure, enterprise-grade n8n workflow automation.\n\n- Implements credential isolation, input validation, audit logging, rate limiting, and granular permissions.\n- Enforces HTTPS-only connections and validates all environment configuration.\n- Default \"read-only\" mode with explicit confirmation required for workflow modifications or dangerous operations.\n- Provides detailed audit logging of all actions performed.\n- Includes comprehensive documentation for secure setup and usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:864a399d130bc9f11b46db87c25a14b48e348f243043bba00f394d15a7615e26"
+}

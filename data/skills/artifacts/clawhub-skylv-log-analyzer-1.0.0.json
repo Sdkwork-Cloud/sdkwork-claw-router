@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skylv-log-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_log_analyzer",
+  "skill": {
+    "id": 36505,
+    "skillKey": "clawhub-skylv-log-analyzer",
+    "name": "Skylv Log Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-log-analyzer",
+    "url": "https://clawhub.ai/skills/skylv-log-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-log-analyzer-1f14b0acba6dfebe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Parses and summarizes log files. Extracts errors, warnings, patterns, and insights from server logs and debug output. Triggers: analyze logs, parse log file,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 195,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776733399646,
+      "changelog": "Initial release of skylv-log-analyzer.\n\n- Parses and summarizes log files, identifying errors, warnings, patterns, and insights.\n- Supports analysis of various log formats including text and JSON.\n- Extracts key information: log level, timestamp, source, and message.\n- Generates concise analysis reports highlighting totals, common errors, anomalies, and recommendations.\n- Designed for debugging, monitoring, and error-tracking use cases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1ed53ec5722101cd28856f38a9d5f77d4f3594d8ed9a6a5a6b3447d8c19dfd83"
+}

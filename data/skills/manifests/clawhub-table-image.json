@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10014,
+  "uuid": "skill-clawhub-table-image",
+  "skillKey": "clawhub-table-image",
+  "name": "Table Image",
+  "summary": "Generate images from tables for better readability in messaging apps like Telegram. Use when displaying tabular data.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.table_image",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "joargp",
+      "features": [
+        "Generate images from tables for better readability in messaging apps like Telegram",
+        "Use when displaying tabular data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/table-image@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1954952?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "table-image",
+      "url": "https://clawhub.ai/skills/table-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "table-image",
+    "url": "https://clawhub.ai/skills/table-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/table-image-e7b082d56e7d0c59.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/table-image@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-table-image-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6c731816b28dbcdd50091d8268bd5cbeb748588f10b115b840c9b219f6fce7c0",
+      "artifactSizeBytes": 1786
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-05T20:22:38.924Z"
+}

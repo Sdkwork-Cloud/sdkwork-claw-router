@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73262,
+  "uuid": "skill-clawhub-brain-trust-private-board",
+  "skillKey": "clawhub-brain-trust-private-board",
+  "name": "智囊团：私董会",
+  "summary": "智囊团式私董会多专家协作分析框架，支持2-5位专家私董会式动态讨论、正反辩论、红队审查、方案对比和综合决策判断。当用户需要多角度分析复杂问题、战略决策、产品方向、商业方案评审、管理困惑、学习规划、研究分析时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brain_trust_private_board",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "e2e5g",
+      "features": [
+        "智囊团式私董会多专家协作分析框架，支持2-5位专家私董会式动态讨论、正反辩论、红队审查、方案对比和综合决策判断。当用户需要多角度分析复杂问题、战略决策、产品方向、商业方案评审、管理困惑、学习."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/brain-trust-private-board@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130967590?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "brain-trust-private-board",
+      "url": "https://clawhub.ai/skills/brain-trust-private-board"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brain-trust-private-board",
+    "url": "https://clawhub.ai/skills/brain-trust-private-board",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brain-trust-private-board-b0d409a853193bcb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/brain-trust-private-board@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-brain-trust-private-board-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4c332b348dd270bacd0a9a4e4b58d544b549e22bd29951d879f934a289b25795",
+      "artifactSizeBytes": 2610
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T11:34:33.292Z"
+}

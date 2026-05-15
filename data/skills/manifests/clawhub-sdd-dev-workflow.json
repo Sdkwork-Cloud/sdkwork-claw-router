@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59780,
+  "uuid": "skill-clawhub-sdd-dev-workflow",
+  "skillKey": "clawhub-sdd-dev-workflow",
+  "name": "Sdd Dev Workflow",
+  "summary": "规范驱动开发工作流（SDD + Speckit + Claude Code）。用于复杂软件开发项目。⚠️ 必需环境变量: ZHIPU_API_KEY。可选: GITHUB_TOKEN, ANTHROPIC_API_KEY。当用户需要开发复杂应用、进行多迭代开发项目、使用 sessions_spawn 自动化开发时...",
+  "version": "1.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sdd_dev_workflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mydearzsy",
+      "features": [
+        "规范驱动开发工作流（SDD + Speckit + Claude Code）。用于复杂软件开发项目。⚠️ 必需环境变量: ZHIPU_API_KEY。可选: GITHUB_TOKEN, AN."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sdd-dev-workflow@1.4.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5027137?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sdd-dev-workflow",
+      "url": "https://clawhub.ai/skills/sdd-dev-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sdd-dev-workflow",
+    "url": "https://clawhub.ai/skills/sdd-dev-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sdd-dev-workflow-3cd605d6a6b8bd46.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sdd-dev-workflow@1.4.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sdd-dev-workflow-1.4.1.json",
+      "version": "1.4.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:118cd395d22b680096fed84dc489dbd2a133253721b406e56e3a062c435833e9",
+      "artifactSizeBytes": 2078
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T07:08:29.947Z"
+}

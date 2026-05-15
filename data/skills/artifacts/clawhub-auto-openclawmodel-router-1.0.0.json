@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-openclawmodel-router@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_openclawmodel_router",
+  "skill": {
+    "id": 40373,
+    "skillKey": "clawhub-auto-openclawmodel-router",
+    "name": "Auto Model Router"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-openclawmodel-router",
+    "url": "https://clawhub.ai/skills/auto-openclawmodel-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-openclawmodel-router-363cdd94c6b53121.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Auto Model Router - Automatically select the best model based on task complexity for OpenClaw agents"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hmchenggh",
+      "userId": "s179rhdzvhtpfay7nkjd67x8vd848ybv",
+      "displayName": "HMCHENGGH",
+      "image": "https://avatars.githubusercontent.com/u/131386732?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775542932397,
+      "changelog": "Initial release of auto-model-router for OpenClaw.\n\n- Automatically selects the best model for each task based on complexity and type.\n- Supports intelligent task classification into 8 major categories (e.g., logic reasoning, code generation, creative writing).\n- Users can set up with as few as 1 model; system auto-fills remaining categories.\n- Provides multiple model plans (international, domestic, and GLM “lazy” mode).\n- Built-in support for sub-agent dispatch for sudden tasks and fallback on unknown input.\n- Easy setup and configuration via simple commands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2079b176dc871e80d1506d5bc7a4a7b0745fb1cd7a17f12e33bb4d10c63be14e"
+}

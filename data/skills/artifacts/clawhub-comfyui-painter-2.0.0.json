@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/comfyui-painter@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.comfyui_painter",
+  "skill": {
+    "id": 60930,
+    "skillKey": "clawhub-comfyui-painter",
+    "name": "ComfyUI Painter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "comfyui-painter",
+    "url": "https://clawhub.ai/skills/comfyui-painter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/comfyui-painter-3a4cb694d442769b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "本地 ComfyUI 画图工作流 + CivitAI 集成。通过 API 控制本地 ComfyUI 生成图片（文生图/图生视频），支持 CivitAI 模型搜索/下载/更新检查/自动调参。Use when: 用户说画图、生成图片、generate image、comfyui、换模型、调参数、出图、搜模型、下载模型..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zeron-g",
+      "userId": "s1756x7v1arh0g2bntf7yax3as843bmq",
+      "displayName": "Rongze Gao",
+      "image": "https://avatars.githubusercontent.com/u/90145946?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 953,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1772141834242,
+      "changelog": "v2.0.0: CivitAI integration (search/download/update-check/recommended-params), auto-tune from sample metadata, 4 models updated (Hassaku v3.4, JANKU v6.9, PornMaster noob V6, Nova 3DCG v8.0), 8 model aliases, per-model tuned params",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c261fe737d0c2af48ea070eaa0773b3c0f3b589782c3d04e45c2033e137ee45a"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34268,
+  "uuid": "skill-clawhub-web-profiler-bundle",
+  "skillKey": "clawhub-web-profiler-bundle",
+  "name": "Web Profiler Bundle",
+  "summary": "Profile HTTP requests with timing, memory, and query breakdowns. Use when debugging slow routes, analyzing queries, inspecting middleware, or optimizing.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_profiler_bundle",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain1",
+      "features": [
+        "Profile HTTP requests with timing, memory, and query breakdowns",
+        "Use when debugging slow routes, analyzing queries, inspecting middleware, or optimizing."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-profiler-bundle@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261107384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-profiler-bundle",
+      "url": "https://clawhub.ai/skills/web-profiler-bundle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-profiler-bundle",
+    "url": "https://clawhub.ai/skills/web-profiler-bundle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-profiler-bundle-33ba3ae4885f35d7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-profiler-bundle@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-profiler-bundle-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2114ed5e26005753b9c5992e7a7e59017e22ed7f7d5bb4902e5c91c9441a4315",
+      "artifactSizeBytes": 1919
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T05:19:49.472Z"
+}

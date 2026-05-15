@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ck-rag-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ck_rag_skill",
+  "skill": {
+    "id": 68841,
+    "skillKey": "clawhub-ck-rag-skill",
+    "name": "ck-rag-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ck-rag-skill",
+    "url": "https://clawhub.ai/skills/ck-rag-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ck-rag-skill-a41f47bd5163dcdb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "RAGFlow知识库问答与操作指导。调用RAGFlow知识库API进行智能问答，并基于知识库返回结果提供agent操作建议。支持流式输出，耐心等待完整响应生成。当用户提出技术问题、故障排查、操作指导或需要知识库检索时触发此技能。适用于容器/Docker问题、系统运维、开发相关问题等场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenkun-nuaa",
+      "userId": "publishers:chenkun-nuaa",
+      "displayName": "chenkun-nuaa",
+      "image": "https://avatars.githubusercontent.com/u/50040804?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1158,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770789762715,
+      "changelog": "- Initial release of the RAGFlow知识库问答Skill for intelligent Q&A and operational guidance using the RAGFlow Knowledge Base API.\n- Supports technical Q&A, fault diagnosis, and operational instructions for scenarios such as container/Docker issues and system administration.\n- Utilizes streaming responses with user feedback and detailed timeout settings for optimal experience (5-10s typical, up to 60s max).\n- Provides summarized answers with actionable suggestions and references from knowledge sources.\n- Includes step-by-step usage instructions, debug mode support, and troubleshooting guides for API connectivity and authentication issues.\n- Highlights best practices for summarizing results, offering executable commands, and maintaining session context.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6707d2f715b028366e3aa0908f4413ce7962fde5cf543be48f108f56a4093d51"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rss-content-flow@1.2.5",
+  "version": "1.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rss_content_flow",
+  "skill": {
+    "id": 66894,
+    "skillKey": "clawhub-rss-content-flow",
+    "name": "RSS内容流"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rss-content-flow",
+    "url": "https://clawhub.ai/skills/rss-content-flow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rss-content-flow-7232dbd631fc8b7c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "RSS 订阅 + AI 内容流引擎。监控多个 RSS 源，自动抓取最新文章， AI 分析提取核心观点，一键生成适配知乎/小红书/公众号的原创内容。 触发场景：用户说\"帮我找今天的选题\"、\"RSS订阅\"、\"监控XX的更新\"、 \"把XX的文章改写成小红书\"、\"我需要一些内容灵感\"、\"自动生成今日内容\"。 Keywor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "freedompixels",
+      "userId": "s17cmvaw2cy01v6y6fpq1h7yts84k0r0",
+      "displayName": "freedompixels",
+      "image": "https://avatars.githubusercontent.com/u/220853702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 282,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.2.5",
+      "createdAt": 1777697319530,
+      "changelog": "rss-content-flow v1.2.5\n\n- 精简 SKILL.md，聚焦于 RSS 抓取与订阅管理功能，移除内置 AI 内容生成与分析描述\n- 明确 Skill 仅支持数据抓取，不再自动生成平台文案\n- 配置和默认项文档更清晰，新增初始化默认订阅命令说明\n- 描述结构更简明，突出与其他内容生成/分发 Skill 的配合场景",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:17278bb4387778fe58049b3f815e9c51c49bb4779d08a3d6b4c1a02e1c615c1e"
+}

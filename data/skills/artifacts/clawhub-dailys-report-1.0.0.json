@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dailys-report@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dailys_report",
+  "skill": {
+    "id": 57355,
+    "skillKey": "clawhub-dailys-report",
+    "name": "每日日报生成器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dailys-report",
+    "url": "https://clawhub.ai/skills/dailys-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dailys-report-4af80d8d8051cdfb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Daily report generator - automatically summarizes today's tasks and generates formatted daily reports. Use when user asks for daily report, work summary, or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "youyancheng1",
+      "userId": "publishers:youyancheng1",
+      "displayName": "小艺",
+      "image": "https://avatars.githubusercontent.com/u/264456141?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 281,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773758237703,
+      "changelog": "Initial release with full-featured daily report generation, export, and template support.\n\n- Generates formatted daily reports by extracting tasks from memory or user input\n- Supports exporting reports in plain text, Markdown, and Word (.docx) formats\n- Configurable with custom templates and output options via JSON config\n- Includes command-line scripts for report generation and packaging\n- Multilingual interface with user prompts in both English and Chinese",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e0038b3cac3f01235aa70c836244bd62b9e0cde77def4085608f79d5b9f73800"
+}

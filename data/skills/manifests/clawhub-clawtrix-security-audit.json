@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52461,
+  "uuid": "skill-clawhub-clawtrix-security-audit",
+  "skillKey": "clawhub-clawtrix-security-audit",
+  "name": "Clawtrix Security Audit",
+  "summary": "Keeps your agent lean of dangerous skills. Audits your installed ClawHub skill stack for security risks personalized to your mission — then recommends clean...",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawtrix_security_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nicobot",
+      "features": [
+        "Keeps your agent lean of dangerous skills",
+        "Audits your installed ClawHub skill stack for security risks personalized to your mission — the."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawtrix-security-audit@0.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16653864?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawtrix-security-audit",
+      "url": "https://clawhub.ai/skills/clawtrix-security-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawtrix-security-audit",
+    "url": "https://clawhub.ai/skills/clawtrix-security-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawtrix-security-audit-d93b7c4fc37cf056.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawtrix-security-audit@0.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawtrix-security-audit-0.3.0.json",
+      "version": "0.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7fe3fe6404cc14e6a79dbc0f7c654efe17e0d5289c0b28f4f223bee1395bfddb",
+      "artifactSizeBytes": 2094
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T07:23:59.544Z"
+}

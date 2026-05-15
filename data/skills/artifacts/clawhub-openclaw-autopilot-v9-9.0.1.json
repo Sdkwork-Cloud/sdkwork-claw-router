@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-autopilot-v9@9.0.1",
+  "version": "9.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_autopilot_v9",
+  "skill": {
+    "id": 42269,
+    "skillKey": "clawhub-openclaw-autopilot-v9",
+    "name": "Autopilot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-autopilot-v9",
+    "url": "https://clawhub.ai/skills/openclaw-autopilot-v9",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-autopilot-v9-3a3259e075c6cca0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw is the high-autonomy agent mode. It proactively decides, plans, and executes tasks with deep context fusion, including a full sweep of historical me..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hendr15k",
+      "userId": "s1716bcbj94efvtys9zqjcy0yh83e7tq",
+      "displayName": "Hendrik Schmitz",
+      "image": "https://avatars.githubusercontent.com/u/46162994?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "9.0.1",
+      "createdAt": 1775239213302,
+      "changelog": "Rename published skill display name to Autopilot.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ce4ebc704a0d4a39fd85f1b83ecd436287c1d362b7c4c63fbb0628443a89e400"
+}

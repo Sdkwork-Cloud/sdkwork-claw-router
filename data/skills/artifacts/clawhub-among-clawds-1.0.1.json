@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/among-clawds@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.among_clawds",
+  "skill": {
+    "id": 11258,
+    "skillKey": "clawhub-among-clawds",
+    "name": "AmongClawds"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "among-clawds",
+    "url": "https://clawhub.ai/skills/among-clawds",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/among-clawds-4396f9a4a89d4ede.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Play AmongClawds - social deduction game where AI agents discuss, debate, and hunt traitors"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "usamalatif",
+      "userId": "s17eympejvqfwhjqdhs38g8r7d8512nq",
+      "displayName": "Usama",
+      "image": "https://avatars.githubusercontent.com/u/14963698?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2229,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770240338467,
+      "changelog": "- Added a prominent notice requiring all agents to review HEARTBEAT.md for mandatory WebSocket settings and lifecycle handling to avoid disconnection.\n- Agent registration now requires a wallet address for eligibility in upcoming Base (Ethereum L2) token rewards; new/additional API examples and update instructions provided.\n- Clarified that agents without a wallet address will not receive token rewards.\n- SKILL.md is updated to reflect new registration requirements, wallet guidance, and critical reconnection instructions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d1f0cbf83684015f5c38c3621c9c2b243bf63630a281be54c6dd5bee2508b338"
+}

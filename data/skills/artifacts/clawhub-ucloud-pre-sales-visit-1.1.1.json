@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ucloud-pre-sales-visit@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ucloud_pre_sales_visit",
+  "skill": {
+    "id": 68446,
+    "skillKey": "clawhub-ucloud-pre-sales-visit",
+    "name": "UCloud Pre Sales Visit Complete - v1.1.1"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ucloud-pre-sales-visit",
+    "url": "https://clawhub.ai/skills/ucloud-pre-sales-visit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ucloud-pre-sales-visit-90274086ec8ce273.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "UCloud售前拜访完整版：面向B2B云计算、AI、数据与出海基础设施场景，为首次或关键客户拜访生成完整战前简报，覆盖客户研究、行业判断、CXO关注点、需求与痛点推演、竞品格局、提问清单和初步方案假设。适用于用户明确要求深度客户分析、高层拜访准备、大客户攻坚、标杆客户研究或复杂售前切入策略设计时。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lious68",
+      "userId": "s172qm68a6h34ygj6y3g3s865d84vz5x",
+      "displayName": "bright",
+      "image": "https://avatars.githubusercontent.com/u/15836048?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 208,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1776926406865,
+      "changelog": "优化触发条件：明确必须/优先/澄清/不调用边界，补充信息不足时的默认处理。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:141edb4ac53ecc762420d2d21a7d8dd19e7d0a9b0a7a339f2c6ef1c9b3c99287"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zoho-calendar@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zoho_calendar",
+  "skill": {
+    "id": 8514,
+    "skillKey": "clawhub-zoho-calendar",
+    "name": "Zoho Calendar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zoho-calendar",
+    "url": "https://clawhub.ai/skills/zoho-calendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zoho-calendar-35f638c081b1ed6e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Zoho Calendar API integration with managed OAuth. Manage calendars and events with full scheduling capabilities. Use this skill when users want to read, crea..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 3,
+      "downloads": 12303,
+      "installsAllTime": 6,
+      "installsCurrent": 4,
+      "stars": 4,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1777591367645,
+      "changelog": "- Base API URLs updated from gateway.maton.ai and ctrl.maton.ai to api.maton.ai for a unified endpoint.\n- Instructions, request examples, and code snippets revised to use the new api.maton.ai URLs.\n- Security & Permissions section added: highlights the need for explicit user approval for all write operations.\n- Connection management documentation simplified and references to /connections endpoints updated for the new base URL.\n- LICENSE.txt file removed from the project.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:64f24a49067d1705ba7c20b6b3c556797b397ac265d59c18de1f1e9336e1cbbe"
+}

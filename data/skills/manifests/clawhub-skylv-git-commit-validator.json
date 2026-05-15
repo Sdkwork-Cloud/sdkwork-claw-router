@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47505,
+  "uuid": "skill-clawhub-skylv-git-commit-validator",
+  "skillKey": "clawhub-skylv-git-commit-validator",
+  "name": "Skylv Git Commit Validator",
+  "summary": "Validates git commit messages against conventional commits format. Triggers: commit lint, conventional commits, commit format.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_git_commit_validator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "Validates git commit messages against conventional commits format",
+        "Triggers: commit lint, conventional commits, commit format."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skylv-git-commit-validator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skylv-git-commit-validator",
+      "url": "https://clawhub.ai/skills/skylv-git-commit-validator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-git-commit-validator",
+    "url": "https://clawhub.ai/skills/skylv-git-commit-validator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-git-commit-validator-5a9cc4426797c61a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skylv-git-commit-validator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skylv-git-commit-validator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ed1af6f41deb84fa172a5746adabcd03005277dc1c733f4bad9ae0c6bf08e682",
+      "artifactSizeBytes": 2241
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T22:49:28.319Z"
+}

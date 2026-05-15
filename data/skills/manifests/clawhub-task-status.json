@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8536,
+  "uuid": "skill-clawhub-task-status",
+  "skillKey": "clawhub-task-status",
+  "name": "Task Status",
+  "summary": "Send short status descriptions in chat for long-running tasks. Use when you need to provide periodic updates during multi-step operations, confirm task completion, or notify of failures. Includes automated periodic monitoring that sends up.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_status",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mightyprime1",
+      "features": [
+        "Send short status descriptions in chat for long-running tasks",
+        "Use when you need to provide periodic updates during multi-step operations, confirm task comple.",
+        "Includes automated periodic monitoring that sends updates every 5 seconds, status message templ."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/task-status@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13576702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "task-status",
+      "url": "https://clawhub.ai/skills/task-status"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-status",
+    "url": "https://clawhub.ai/skills/task-status",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-status-8d913e2443c56b3d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/task-status@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-task-status-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c9aef88e40456bba5c2841603c01d9ee44dea04bad593e00b52237b3ec3d07a4",
+      "artifactSizeBytes": 2395
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-27T09:01:28.946Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28557,
+  "uuid": "skill-clawhub-vx-usage",
+  "skillKey": "clawhub-vx-usage",
+  "name": "Vx Usage",
+  "summary": "Teaches AI agents how to use vx, the universal dev tool manager. Use when the project has vx.toml or .vx/, or when the user mentions vx, tool version managem...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vx_usage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hal",
+      "features": [
+        "Teaches AI agents how to use vx, the universal dev tool manager",
+        "Use when the project has vx.toml or .vx/, or when the user mentions vx, tool version managem..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vx-usage@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13111745?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vx-usage",
+      "url": "https://clawhub.ai/skills/vx-usage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vx-usage",
+    "url": "https://clawhub.ai/skills/vx-usage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vx-usage-fa6cd8eb46871c06.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vx-usage@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-vx-usage-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f29f4a26c59e93ff09c6b32a8fd51e0f1482a6b012fc2df4378d17c299fecb22",
+      "artifactSizeBytes": 1901
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T11:47:30.401Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12947,
+  "uuid": "skill-clawhub-privacy-cards",
+  "skillKey": "clawhub-privacy-cards",
+  "name": "Privacy Cards",
+  "summary": "Create and manage Privacy.com virtual cards. Use for generating single-use cards, merchant-locked cards, listing cards, setting spending limits, pausing/closing cards, and viewing transactions via the Privacy.com API.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.privacy_cards",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JohnieLee",
+      "features": [
+        "Create and manage Privacy.com virtual cards",
+        "Use for generating single-use cards, merchant-locked cards, listing cards, setting spending lim."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/privacy-cards@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1005830?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "privacy-cards",
+      "url": "https://clawhub.ai/skills/privacy-cards"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "privacy-cards",
+    "url": "https://clawhub.ai/skills/privacy-cards",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/privacy-cards-d5d69e05105863ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/privacy-cards@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-privacy-cards-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:926959781068c8c48c6131dd6c5dc4d38b17512de7394483aff2441358943d9e",
+      "artifactSizeBytes": 1922
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T02:43:17.595Z"
+}

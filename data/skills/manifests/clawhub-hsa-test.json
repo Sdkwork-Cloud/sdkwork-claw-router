@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71632,
+  "uuid": "skill-clawhub-hsa-test",
+  "skillKey": "clawhub-hsa-test",
+  "name": "H test",
+  "summary": "萤石餐饮行业智能巡检技能。通过设备抓图 + 智能体分析接口，实现对餐厅/厨房场景的 AI 巡检，包括地面卫生、动火离人、垃圾桶状态、货品存放和口罩佩戴等关键指标。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hsa_test",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hu Shuan",
+      "features": [
+        "萤石餐饮行业智能巡检技能。通过设备抓图 + 智能体分析接口，实现对餐厅/厨房场景的 AI 巡检，包括地面卫生、动火离人、垃圾桶状态、货品存放和口罩佩戴等关键指标。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hsa-test@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62202132?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hsa-test",
+      "url": "https://clawhub.ai/skills/hsa-test"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hsa-test",
+    "url": "https://clawhub.ai/skills/hsa-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hsa-test-e34b76d2e57182fd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hsa-test@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hsa-test-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:822c71cbbca23840b3ace4307897ba8106dff6e2585ab5ff7ef6e18d3ee871e4",
+      "artifactSizeBytes": 2504
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T08:06:59.288Z"
+}

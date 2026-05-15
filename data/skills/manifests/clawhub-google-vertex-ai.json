@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24340,
+  "uuid": "skill-clawhub-google-vertex-ai",
+  "skillKey": "clawhub-google-vertex-ai",
+  "name": "Google Vertex Ai",
+  "summary": "Google Vertex AI integration. Manage Projects. Use when the user wants to interact with Google Vertex AI data.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_vertex_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Google Vertex AI integration",
+        "Manage Projects",
+        "Use when the user wants to interact with Google Vertex AI data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-vertex-ai@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-vertex-ai",
+      "url": "https://clawhub.ai/skills/google-vertex-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-vertex-ai",
+    "url": "https://clawhub.ai/skills/google-vertex-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-vertex-ai-a7359484f7a8139c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-vertex-ai@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-vertex-ai-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c1fee9188694d15706e8a28f64b45ded317e2224f450eaf1f3c8980aee5dedd",
+      "artifactSizeBytes": 1855
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T14:56:46.552Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tg-voice-whisper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tg_voice_whisper",
+  "skill": {
+    "id": 9409,
+    "skillKey": "clawhub-tg-voice-whisper",
+    "name": "TG Voice Whisper Transcriber"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tg-voice-whisper",
+    "url": "https://clawhub.ai/skills/tg-voice-whisper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tg-voice-whisper-aa4f5b3d819debb9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automation skill for TG Voice Whisper Transcriber."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "drones277",
+      "userId": "s17bsrhdh2k4q72y10spy3r3f984yafm",
+      "displayName": "RigdenDjapo",
+      "image": "https://avatars.githubusercontent.com/u/240135008?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3792,
+      "installsAllTime": 20,
+      "installsCurrent": 17,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770600948272,
+      "changelog": "Initial safe release: local Whisper for OpenClaw Telegram voice auto-transcribe + privacy rm. Min 4GB RAM rec.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:17e96dd7390f5846d3d45719d8518348847ab539ccd8cc67f3f67cf8b53e24ca"
+}

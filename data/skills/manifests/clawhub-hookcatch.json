@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17817,
+  "uuid": "skill-clawhub-hookcatch",
+  "skillKey": "clawhub-hookcatch",
+  "name": "HookCatch",
+  "summary": "Test webhooks and expose local services using HookCatch - a developer-friendly webhook testing tool",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hookcatch",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HookCatch",
+      "features": [
+        "Test webhooks and expose local services using HookCatch",
+        "a developer-friendly webhook testing tool"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hookcatch@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260569928?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hookcatch",
+      "url": "https://clawhub.ai/skills/hookcatch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hookcatch",
+    "url": "https://clawhub.ai/skills/hookcatch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hookcatch-1911d1b6d4f28de6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hookcatch@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-hookcatch-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:324579bff90ba435d6d135d9fa40de2d943b1694f074b20e1d3c886293664a85",
+      "artifactSizeBytes": 1975
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T17:38:54.194Z"
+}

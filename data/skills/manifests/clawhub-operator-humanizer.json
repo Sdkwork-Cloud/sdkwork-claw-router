@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11813,
+  "uuid": "skill-clawhub-operator-humanizer",
+  "skillKey": "clawhub-operator-humanizer",
+  "name": "Operator Humanizer",
+  "summary": "Transform AI-generated text into authentic human writing. Detects and eliminates AI tells across 24 content/language/style/communication patterns, 500+ AI vo...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.operator_humanizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kevin Jeppesen @ TheOperatorVault.io",
+      "features": [
+        "Transform AI-generated text into authentic human writing",
+        "Detects and eliminates AI tells across 24 content/language/style/communication patterns, 500+ A."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/operator-humanizer@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/205432013?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "operator-humanizer",
+      "url": "https://clawhub.ai/skills/operator-humanizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "operator-humanizer",
+    "url": "https://clawhub.ai/skills/operator-humanizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/operator-humanizer-07a44403735a1383.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/operator-humanizer@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-operator-humanizer-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f6c47c2a7bf6b3e5a79c05a177c50d360f3ad171760c557afeef4464e9434213",
+      "artifactSizeBytes": 2240
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T22:02:37.074Z"
+}

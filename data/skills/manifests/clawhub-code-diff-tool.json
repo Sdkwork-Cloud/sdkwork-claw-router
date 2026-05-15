@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44733,
+  "uuid": "skill-clawhub-code-diff-tool",
+  "skillKey": "clawhub-code-diff-tool",
+  "name": "Code Diff Tool",
+  "summary": "Generates beautiful side-by-side diff comparisons for code review",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_diff_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "Generates beautiful side-by-side diff comparisons for code review"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/code-diff-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "code-diff-tool",
+      "url": "https://clawhub.ai/skills/code-diff-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-diff-tool",
+    "url": "https://clawhub.ai/skills/code-diff-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-diff-tool-6ac9d2bb09acbdea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/code-diff-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-code-diff-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:04541a1eea1fba5d96aa16ad4c78c9a621154984fe197a9d7cc2c5274c74f622",
+      "artifactSizeBytes": 2193
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T05:08:11.484Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tax-professional@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tax_professional",
+  "skill": {
+    "id": 9554,
+    "skillKey": "clawhub-tax-professional",
+    "name": "Tax Professional"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tax-professional",
+    "url": "https://clawhub.ai/skills/tax-professional",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tax-professional-04c40fe405366bc1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive US tax advisor, deduction optimizer, and expense tracker. Covers all employment types (W-2, 1099, S-Corp, mixed), estimated tax payments, audit risk assessment, life event triggers, multi-state filing, RV-as-home rules, tax b."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "scottfo",
+      "userId": "publishers:scottfo",
+      "displayName": "ScotTFO",
+      "image": "https://avatars.githubusercontent.com/u/5895214?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3311,
+      "installsAllTime": 9,
+      "installsCurrent": 9,
+      "stars": 4,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769408414295,
+      "changelog": "Added GitHub URL",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c456b80fedb80f87fe5887ba4f773a32ada66419f3af05bc6cf122e93f9fd552"
+}

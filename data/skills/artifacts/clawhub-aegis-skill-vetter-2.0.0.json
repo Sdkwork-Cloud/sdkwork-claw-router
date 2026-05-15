@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aegis-skill-vetter@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aegis_skill_vetter",
+  "skill": {
+    "id": 16618,
+    "skillKey": "clawhub-aegis-skill-vetter",
+    "name": "aegis-skill-vetter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aegis-skill-vetter",
+    "url": "https://clawhub.ai/skills/aegis-skill-vetter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aegis-skill-vetter-7cd000172cc2aed1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enterprise-grade security vetting protocol for AI agent skills. Automated threat detection, quantified risk scoring, and zero-trust code analysis."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "r00tfe1",
+      "userId": "publishers:r00tfe1",
+      "displayName": "r00tFe1",
+      "image": "https://avatars.githubusercontent.com/u/42533458?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 726,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773385558277,
+      "changelog": "Enterprise-grade security vetting protocol for AI agent skills. Automated threat detection, quantified risk scoring, and zero-trust code analysis.\n\nInitial release: Aegis security vetting system v2.0\nFeatures:\n- 5-layer security vetting protocol (Source, Code, Permissions, Dependencies, Behavior)\n- Quantified risk scoring (0-100 scale)\n- Automated threat detection with CRITICAL/WARNING classification\n- AI-friendly decision tree for autonomous agents\n- Structured audit reports with traceability\n- MIT licensed, open source",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bb5b662773cfeabc07b6dcf86c793d7dda21a73dc39780486fdfc771f8f8d313"
+}

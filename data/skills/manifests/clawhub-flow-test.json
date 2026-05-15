@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28968,
+  "uuid": "skill-clawhub-flow-test",
+  "skillKey": "clawhub-flow-test",
+  "name": "flow test",
+  "summary": "Designs agent-evaluated flow tests for browser tasks, LLM outputs, and tool workflows. Invoke when exact asserts are brittle and semantic success matters mor...",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flow_test",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "QipengGuo",
+      "features": [
+        "Designs agent-evaluated flow tests for browser tasks, LLM outputs, and tool workflows",
+        "Invoke when exact asserts are brittle and semantic success matters mor..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flow-test@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8382210?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flow-test",
+      "url": "https://clawhub.ai/skills/flow-test"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flow-test",
+    "url": "https://clawhub.ai/skills/flow-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flow-test-985daf9db0f27076.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flow-test@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-flow-test-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b97551025b1dd5807d7aa86f84dcfeb23b5bc38c4be7d3f575640574a39e2d02",
+      "artifactSizeBytes": 2444
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T17:56:14.364Z"
+}

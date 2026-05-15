@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-omni-todo@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_omni_todo",
+  "skill": {
+    "id": 72452,
+    "skillKey": "clawhub-feishu-omni-todo",
+    "name": "飞书全场景待办助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-omni-todo",
+    "url": "https://clawhub.ai/skills/feishu-omni-todo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-omni-todo-1415246760a02baa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "飞书全场景Todo管理器，深度整合飞书生态。必须触发场景：用户发送待办事项、用户提到'/todo'指令、用户询问待办列表、用户要求保存待办、用户发送包含时间的任务安排、用户询问日历日程、用户要求同步到日历。支持多渠道消息（飞书/微信/短信等）接收Todo，自动同步飞书日历。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangyu68",
+      "userId": "s17ebetxvynkc6f2jnptwrv7g583gmeb",
+      "displayName": "zhangyu68",
+      "image": "https://avatars.githubusercontent.com/u/36838019?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "v1.0.1",
+      "createdAt": 1777276321843,
+      "changelog": "v1.0.1 更新：\n1. 新增链接管理功能，支持自动识别和存储待办中的链接\n2. 优化展示格式，链接转为可点击Markdown格式\n3. 新增/todo link系列指令，支持链接的添加/删除/查询\n4. 优化数据结构，分离内容和链接信息",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6ca01389c87ccb67caaa9f9f541d3e64fd3d7dc6c1e3fd85a955fbfff9a91c63"
+}

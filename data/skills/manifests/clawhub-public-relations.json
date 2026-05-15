@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27455,
+  "uuid": "skill-clawhub-public-relations",
+  "skillKey": "clawhub-public-relations",
+  "name": "public-relations",
+  "summary": "When the user wants to plan PR, write a press release, or manage media relations. Also use when the user mentions \"public relations,\" \"PR,\" \"press release,\"...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.public_relations",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kostja Zhang",
+      "features": [
+        "When the user wants to plan PR, write a press release, or manage media relations",
+        "Also use when the user mentions \"public relations,\" \"PR,\" \"press release,\"..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/public-relations@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168074885?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "public-relations",
+      "url": "https://clawhub.ai/skills/public-relations"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "public-relations",
+    "url": "https://clawhub.ai/skills/public-relations",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/public-relations-a44d804f5422436b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/public-relations@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-public-relations-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:845c102f7a078bf6ad54e1d4a9cd355bdec614690e18ab920888edd5cee21751",
+      "artifactSizeBytes": 1914
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T10:23:23.886Z"
+}

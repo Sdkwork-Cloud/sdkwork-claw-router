@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "00-action-guard",
+    "displayName": "00 Action Guard",
+    "summary": "【最高优先级】操作守卫。任何工具调用前必须先完成权限检查！AI 在执行任何非日常对话的操作前，必须先调用 permission-gate 验证权限。",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 379,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1773461819260,
+    "updatedAt": 1778308497331
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1773461819260,
+    "changelog": "- Initial release of 00-action-guard skill for highest-priority operation permission checks.\n- Enforces mandatory permission-gate validation before any non-chat/tool/action (except daily conversation).\n- Clearly defines which actions require permission, with operation flow and forbidden behaviors.\n- Provides correct and incorrect usage examples for clarity.\n- Ensures all users and systems follow a strict permission check protocol before tool or skill invocation.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "rancho718",
+    "userId": "publishers:rancho718",
+    "displayName": "rancho718",
+    "image": "https://avatars.githubusercontent.com/u/263117204?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778308497331
+  }
+}

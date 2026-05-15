@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63205,
+  "uuid": "skill-clawhub-smart-weekly-report",
+  "skillKey": "clawhub-smart-weekly-report",
+  "name": "Report Generator",
+  "summary": "根据您的职业角色和本周工作内容，自动提炼关键信息，生成结构化、专业且具有洞察力的周报，包括问题分析与下周计划。",
+  "version": "1.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_weekly_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "enoyao",
+      "features": [
+        "根据您的职业角色和本周工作内容，自动提炼关键信息，生成结构化、专业且具有洞察力的周报，包括问题分析与下周计划。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-weekly-report@1.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17243165?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-weekly-report",
+      "url": "https://clawhub.ai/skills/smart-weekly-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-weekly-report",
+    "url": "https://clawhub.ai/skills/smart-weekly-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-weekly-report-7479fbb54eccaa24.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-weekly-report@1.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-weekly-report-1.1.3.json",
+      "version": "1.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5498694076e0096610cd175f6bbfc57bdb0226d3dd2ea41b726d4c60249da0ad",
+      "artifactSizeBytes": 2132
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T07:59:48.172Z"
+}

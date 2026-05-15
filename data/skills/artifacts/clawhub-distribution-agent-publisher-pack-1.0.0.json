@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/distribution-agent-publisher-pack@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.distribution_agent_publisher_pack",
+  "skill": {
+    "id": 54842,
+    "skillKey": "clawhub-distribution-agent-publisher-pack",
+    "name": "Distribution Agent — Publisher Pack"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "distribution-agent-publisher-pack",
+    "url": "https://clawhub.ai/skills/distribution-agent-publisher-pack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/distribution-agent-publisher-pack-12ffcb788d161304.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn 1–9 images into platform-specific captions + mood-matched music hints, then route to mock/dry-run/real publishers with publish logs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "milab-bit",
+      "userId": "s176cgybeb23yca1qyvepct25185y7bs",
+      "displayName": "MiLab",
+      "image": "https://avatars.githubusercontent.com/u/105380387?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 373,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772581841398,
+      "changelog": "Initial release: publish pack + mood-to-music + router modes",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9f1e9cfb33cd29a3fc93b3a7e1c2605cb9b4db5bc57961bd3356b5a7763a79ee"
+}

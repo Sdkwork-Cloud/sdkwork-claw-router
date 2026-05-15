@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52709,
+  "uuid": "skill-clawhub-financial-analyzer-lite",
+  "skillKey": "clawhub-financial-analyzer-lite",
+  "name": "Financial Data Analyzer Lite",
+  "summary": "Free stock analysis skill — pull live data via yfinance, analyze any ticker with valuation metrics, financial health, and analyst consensus.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.financial_analyzer_lite",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "apex-stack-ai",
+      "features": [
+        "Free stock analysis skill — pull live data via yfinance, analyze any ticker with valuation metr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/financial-analyzer-lite@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267395928?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "financial-analyzer-lite",
+      "url": "https://clawhub.ai/skills/financial-analyzer-lite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "financial-analyzer-lite",
+    "url": "https://clawhub.ai/skills/financial-analyzer-lite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/financial-analyzer-lite-7adb1a4630f66e52.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/financial-analyzer-lite@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-financial-analyzer-lite-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0a22a5501d8f4ea741e1ca20f22b67974c2a54e6e8c3af8227e09309f94981b1",
+      "artifactSizeBytes": 2422
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T00:34:53.878Z"
+}

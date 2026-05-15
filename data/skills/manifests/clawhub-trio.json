@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31806,
+  "uuid": "skill-clawhub-trio",
+  "skillKey": "clawhub-trio",
+  "name": "Trio",
+  "summary": "Trio integration. Manage data, records, and automate workflows. Use when the user wants to interact with Trio data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Trio integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Trio data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trio@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trio",
+      "url": "https://clawhub.ai/skills/trio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trio",
+    "url": "https://clawhub.ai/skills/trio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trio-163e49567eef0c05.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trio@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-trio-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a429e323ed8e85cd958fdb70796cd00a786f8b2fd2c7340d6408aa31ea44686a",
+      "artifactSizeBytes": 1794
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:55:22.234Z"
+}

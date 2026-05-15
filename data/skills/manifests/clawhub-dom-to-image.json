@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49226,
+  "uuid": "skill-clawhub-dom-to-image",
+  "skillKey": "clawhub-dom-to-image",
+  "name": "HTML DOM To Image",
+  "summary": "Convert HTML DOM nodes to images (PNG/JPEG/SVG/Blob). Supports rendering options such as filter, backgroundColor, quality, and pixelRatio.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dom_to_image",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OpenLark",
+      "features": [
+        "Convert HTML DOM nodes to images (PNG/JPEG/SVG/Blob)",
+        "Supports rendering options such as filter, backgroundColor, quality, and pixelRatio."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dom-to-image@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260858787?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dom-to-image",
+      "url": "https://clawhub.ai/skills/dom-to-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dom-to-image",
+    "url": "https://clawhub.ai/skills/dom-to-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dom-to-image-895424bf93f886f3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dom-to-image@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dom-to-image-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7a528ba430cedd537c77447cfdd7df1e1e17bded81e1cffcbfc33a84e4f63954",
+      "artifactSizeBytes": 2204
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T01:21:26.507Z"
+}

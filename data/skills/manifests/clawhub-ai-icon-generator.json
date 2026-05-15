@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29607,
+  "uuid": "skill-clawhub-ai-icon-generator",
+  "skillKey": "clawhub-ai-icon-generator",
+  "name": "AI Icon Generator",
+  "summary": "Generate custom icons using artificial intelligence from text prompts or descriptions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_icon_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToolWeb",
+      "features": [
+        "Generate custom icons using artificial intelligence from text prompts or descriptions."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-icon-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245780162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-icon-generator",
+      "url": "https://clawhub.ai/skills/ai-icon-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-icon-generator",
+    "url": "https://clawhub.ai/skills/ai-icon-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-icon-generator-9d7f66799336f3cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-icon-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-icon-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0dafe029fd38297cad15fef728238fef04da7eb90cf73da5c393dd891cfccc90",
+      "artifactSizeBytes": 2282
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T20:22:08.447Z"
+}

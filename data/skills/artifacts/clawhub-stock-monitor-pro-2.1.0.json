@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-monitor-pro@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_monitor_pro",
+  "skill": {
+    "id": 61694,
+    "skillKey": "clawhub-stock-monitor-pro",
+    "name": "Stock Monitor Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-monitor-pro",
+    "url": "https://clawhub.ai/skills/stock-monitor-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-monitor-pro-a329eb03a57b28c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专业级智能股票监控预警系统 V2.1。支持收盘日报自动生成、反爬虫优化(Session级UA、多数据源冗余)、成本百分比预警、均线金叉死叉、RSI超买超卖、成交量异动监控、智能错误提醒。符合中国投资者习惯（红涨绿跌）。Use when user needs stock market monitoring, pri..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eaveluo",
+      "userId": "s1793x8vtxdn7z8tgw09yq9zgn84ecf4",
+      "displayName": "Eave Luo",
+      "image": "https://avatars.githubusercontent.com/u/59219111?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2258,
+      "installsAllTime": 15,
+      "installsCurrent": 15,
+      "stars": 4,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1772701193891,
+      "changelog": "V2.1: 新增收盘日报功能 - 每日15:00-15:30自动发送持仓汇总、盈亏统计、市场点评",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:767cfda88a188df2b41717c046233f2c56e0cfd7d9b9e1f0a8e1526cd2689c77"
+}

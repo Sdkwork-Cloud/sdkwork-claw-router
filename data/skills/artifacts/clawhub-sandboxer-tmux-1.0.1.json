@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sandboxer-tmux@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sandboxer_tmux",
+  "skill": {
+    "id": 15778,
+    "skillKey": "clawhub-sandboxer-tmux",
+    "name": "Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sandboxer-tmux",
+    "url": "https://clawhub.ai/skills/sandboxer-tmux",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sandboxer-tmux-a722386b48304b5f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Dispatch coding tasks to tmux sessions via Sandboxer. Use when you need to spawn Claude Code, Gemini, OpenCode, bash, or lazygit sessions in workspace repos, monitor their progress, or send them commands."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chriopter",
+      "userId": "publishers:chriopter",
+      "displayName": "chriopter",
+      "image": "https://avatars.githubusercontent.com/u/82179548?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 951,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770900048185,
+      "changelog": "Add power-user disclaimer",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c708165d6d46a87ee8d5eddeeaeafaaa80a7f70f37791a2d85c0f3942a16effe"
+}

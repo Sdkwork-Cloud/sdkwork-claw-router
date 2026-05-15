@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14576,
+  "uuid": "skill-clawhub-vikunja-kanban",
+  "skillKey": "clawhub-vikunja-kanban",
+  "name": "Vikunja Kanban",
+  "summary": "Manage Vikunja kanban boards via API to read, create, move, and complete tasks across predefined buckets with integrated cron sync.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vikunja_kanban",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shad0wca7",
+      "features": [
+        "Manage Vikunja kanban boards via API to read, create, move, and complete tasks across predefine."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vikunja-kanban@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9969843?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vikunja-kanban",
+      "url": "https://clawhub.ai/skills/vikunja-kanban"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vikunja-kanban",
+    "url": "https://clawhub.ai/skills/vikunja-kanban",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vikunja-kanban-733c56d7c433a9e3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vikunja-kanban@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vikunja-kanban-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:413d6d1bc6b40aff8f40c910c854c22b2c43208891e12db9e3731f912c5606e9",
+      "artifactSizeBytes": 1905
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T04:59:05.658Z"
+}

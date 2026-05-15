@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56057,
+  "uuid": "skill-clawhub-trae-orchestrator",
+  "skillKey": "clawhub-trae-orchestrator",
+  "name": "TRAE指挥官",
+  "summary": "Orchestrates TRAE IDE for automated software development with multi-agent collaboration. Invoke when user wants to develop software using TRAE or needs autom...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trae_orchestrator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wang Weicheng",
+      "features": [
+        "Orchestrates TRAE IDE for automated software development with multi-agent collaboration",
+        "Invoke when user wants to develop software using TRAE or needs autom..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trae-orchestrator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/64695121?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trae-orchestrator",
+      "url": "https://clawhub.ai/skills/trae-orchestrator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trae-orchestrator",
+    "url": "https://clawhub.ai/skills/trae-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trae-orchestrator-6f30d4d71a532c54.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trae-orchestrator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trae-orchestrator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:154abe62e057dcc1731c4e18f4331a1e86d314cc5f0325816c0e645a3f494999",
+      "artifactSizeBytes": 2200
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T06:30:11.290Z"
+}

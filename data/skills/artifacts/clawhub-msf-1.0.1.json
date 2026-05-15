@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/msf@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.msf",
+  "skill": {
+    "id": 72836,
+    "skillKey": "clawhub-msf",
+    "name": "Msf"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "msf",
+    "url": "https://clawhub.ai/skills/msf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/msf-7b8c8ebdd4a28d34.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供无国界医生的医疗救援项目、灾害响应、工作地区、捐赠信息及最新实地新闻动态查询。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776295462809,
+      "changelog": "- 概述内容由“无国界医生 - 国际医疗人道组织技能”更改为“msf 品牌档案”，定位更为宽泛。\n- 精简并更新了适用场景，从医疗援助扩展为品牌背景查询和了解。\n- 新增“快速了解”与“深入探索”板块，强化品牌档案风格，并引导用户关注官方渠道。\n- 移除了具体医疗、人道援助、捐赠等详细功能描述，实现通用化信息呈现。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3fc49efc9bd0c7c6bf74e5989678b45ea1f0f65e302abe1be932b45409b19c40"
+}

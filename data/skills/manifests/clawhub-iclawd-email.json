@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31246,
+  "uuid": "skill-clawhub-iclawd-email",
+  "skillKey": "clawhub-iclawd-email",
+  "name": "iClawd Email",
+  "summary": "Get a real email address for your AI agent. Create an inbox, send and receive email, with optional PGP encryption and DID verified identity.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iclawd_email",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Badr",
+      "features": [
+        "Get a real email address for your AI agent",
+        "Create an inbox, send and receive email, with optional PGP encryption and DID verified identity."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/iclawd-email@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19235303?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "iclawd-email",
+      "url": "https://clawhub.ai/skills/iclawd-email"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iclawd-email",
+    "url": "https://clawhub.ai/skills/iclawd-email",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iclawd-email-4a52f706ac5bb06e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/iclawd-email@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-iclawd-email-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6e5397e750be6e3873f28992e9be1c2ec4939c8b4546e9883788e9b75f8a9c0b",
+      "artifactSizeBytes": 2460
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T08:11:50.995Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21641,
+  "uuid": "skill-clawhub-quantum",
+  "skillKey": "clawhub-quantum",
+  "name": "Hackathon Quantinuum",
+  "summary": "Enables building and deploying quantum computing applications with Quantinuum, Guppy, Selene, and Fly.io. Use for the OpenClaw Clinical Hackathon, clinical o...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quantum",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Arun Nadarasa",
+      "features": [
+        "Enables building and deploying quantum computing applications with Quantinuum, Guppy, Selene, a.",
+        "Use for the OpenClaw Clinical Hackathon, clinical o..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quantum@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/186420617?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quantum",
+      "url": "https://clawhub.ai/skills/quantum"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quantum",
+    "url": "https://clawhub.ai/skills/quantum",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quantum-8fb7cf7a46995c95.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quantum@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-quantum-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d4fca106ff219eb0ed41dd2184bf18c1981cabb229200bfe61bc0949bb1cbabc",
+      "artifactSizeBytes": 2319
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T16:59:33.058Z"
+}

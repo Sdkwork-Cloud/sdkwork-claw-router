@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63332,
+  "uuid": "skill-clawhub-xhs-viral-post",
+  "skillKey": "clawhub-xhs-viral-post",
+  "name": "XiaoHongShu Viral Post Generator",
+  "summary": "AI 一键生成小红书爆款笔记（标题、正文、标签、封面提示、发帖策略）。真实种草风，防封号友好。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhs_viral_post",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ArthuronAI",
+      "features": [
+        "AI 一键生成小红书爆款笔记（标题、正文、标签、封面提示、发帖策略）。真实种草风，防封号友好。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xhs-viral-post@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/96152579?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xhs-viral-post",
+      "url": "https://clawhub.ai/skills/xhs-viral-post"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhs-viral-post",
+    "url": "https://clawhub.ai/skills/xhs-viral-post",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhs-viral-post-8b8aa0e00cf2b020.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xhs-viral-post@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-xhs-viral-post-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:84c864719f054ff0c51e7bba733480bda14b9374975fa0f73662397f02c86811",
+      "artifactSizeBytes": 2403
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T00:58:36.790Z"
+}

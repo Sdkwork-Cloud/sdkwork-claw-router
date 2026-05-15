@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36557,
+  "uuid": "skill-clawhub-claw-browser-automation",
+  "skillKey": "clawhub-claw-browser-automation",
+  "name": "Claw Browser Automation",
+  "summary": "A fast Rust-based headless browser automation CLI with Node.js fallback that enables AI agents to navigate, click, type, and snapshot pages via structured co...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_browser_automation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangsaizz",
+      "features": [
+        "A fast Rust-based headless browser automation CLI with Node.js fallback that enables AI agents."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-browser-automation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9312086?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-browser-automation",
+      "url": "https://clawhub.ai/skills/claw-browser-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-browser-automation",
+    "url": "https://clawhub.ai/skills/claw-browser-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-browser-automation-65f71515f096b9b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-browser-automation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-browser-automation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ae2a9b972cd9eed40c6657148e2406fcc26d9be9c242f94d297da7fdd189725f",
+      "artifactSizeBytes": 2435
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T01:59:46.947Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/plydb@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plydb",
+  "skill": {
+    "id": 28812,
+    "skillKey": "clawhub-plydb",
+    "name": "plydb"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plydb",
+    "url": "https://clawhub.ai/skills/plydb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plydb-a4e03e17f8cb8e52.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skill for using the PlyDB CLI to perform SQL analysis of connected data sources. Use for SQL queries across heterogeneous databases and files such as Postgre..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ypt",
+      "userId": "publishers:ypt",
+      "displayName": "ypt",
+      "image": "https://avatars.githubusercontent.com/u/2073178?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 316,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773414519684,
+      "changelog": "Initial release of the plydb skill:\n\n- Provides instructions for using the PlyDB CLI to query across heterogeneous data sources with SQL.\n- Supports Postgres, MySQL, CSV, Parquet, JSON, Excel, SQLite, DuckDB, and Google Sheets.\n- Details configuration of data sources and usage of fully qualified table names.\n- Explains how to generate and enrich semantic context using database comments and overlays adhering to the Open Semantic Interchange (OSI) specification.\n- Includes troubleshooting guidance for Google Sheets data source with interactive OAuth.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f1a28618fcd1dc9ce1319c918c21f4033cc39543c60213cddc5ed0573e8cabbf"
+}

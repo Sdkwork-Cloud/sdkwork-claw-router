@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alex-self-improving-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alex_self_improving_agent",
+  "skill": {
+    "id": 41084,
+    "skillKey": "clawhub-alex-self-improving-agent",
+    "name": "Self Improving Agent (Alex)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alex-self-improving-agent",
+    "url": "https://clawhub.ai/skills/alex-self-improving-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alex-self-improving-agent-305704f11a6fc1b4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shendingyi",
+      "userId": "s178d9nbbpefvhetxhnpnawa9183mjqg",
+      "displayName": "shendingyi",
+      "image": "https://avatars.githubusercontent.com/u/266918069?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775862864439,
+      "changelog": "Initial release of the self-improvement skill for OpenClaw and similar agent frameworks:\n\n- Introduces structured logging of learnings, errors, and feature requests using markdown files for continuous agent improvement.\n- Provides a detailed quick reference for when and where to log different types of events (errors, user corrections, feature requests, etc).\n- Documents directory/file structure for OpenClaw integration, including where to promote broadly applicable knowledge.\n- Defines consistent markdown formats and ID conventions for learnings, errors, and feature requests.\n- Includes guidance on promoting key learnings to persistent project memory and outlines workflows for session-based agent communication.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9307136051e2aa1bb09da228e407e2e700e235673c4e0adcb6d9d682b4d6666a"
+}

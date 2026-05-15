@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15769,
+  "uuid": "skill-clawhub-glitch-homeassistant",
+  "skillKey": "clawhub-glitch-homeassistant",
+  "name": "Homeassistant",
+  "summary": "Control and monitor Home Assistant smart devices using commands for lights, switches, covers, climate, scenes, and scripts via the HA API.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.glitch_homeassistant",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Glitch",
+      "features": [
+        "Control and monitor Home Assistant smart devices using commands for lights, switches, covers, c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/glitch-homeassistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258746291?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "glitch-homeassistant",
+      "url": "https://clawhub.ai/skills/glitch-homeassistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "glitch-homeassistant",
+    "url": "https://clawhub.ai/skills/glitch-homeassistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/glitch-homeassistant-6b70973e5c5f672e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/glitch-homeassistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-glitch-homeassistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ce276954d1576772daa570d3ce0f80a6e76700e0c6122d1aad7eef67bb7cb47f",
+      "artifactSizeBytes": 2476
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T13:34:52.629Z"
+}

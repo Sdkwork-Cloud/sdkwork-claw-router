@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67145,
+  "uuid": "skill-clawhub-shwuyeyanjiu",
+  "skillKey": "clawhub-shwuyeyanjiu",
+  "name": "Shwuyeyanjiu",
+  "summary": "上海物业招标公告研究工具。从上海住宅物业网(962121.fgj.sh.gov.cn)获取招标公告、中标公告、评标结果公告，使用 OCR 提取项目信息（项目面积、物业费标准、停车位数量、停车管理费等），并计算饱和收入。**当以下情况时使用此 Skill**：(1) 用户要求查找某个项目的物业中标信息；(2) 用户...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shwuyeyanjiu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "misbah-boop",
+      "features": [
+        "上海物业招标公告研究工具。从上海住宅物业网(962121.fgj.sh.gov.cn)获取招标公告、中标公告、评标结果公告，使用 OCR 提取项目信息（项目面积、物业费标准、停车位数量、停车."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shwuyeyanjiu@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/221802232?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shwuyeyanjiu",
+      "url": "https://clawhub.ai/skills/shwuyeyanjiu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shwuyeyanjiu",
+    "url": "https://clawhub.ai/skills/shwuyeyanjiu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shwuyeyanjiu-fa986c0c9e94b8b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shwuyeyanjiu@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shwuyeyanjiu-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dd7f02f900ffef8c0985934818b9d745d696b13428b26b5b00401bf09b1548c7",
+      "artifactSizeBytes": 2905
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T17:15:37.562Z"
+}

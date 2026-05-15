@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71936,
+  "uuid": "skill-clawhub-dy-prohibited-word",
+  "skillKey": "clawhub-dy-prohibited-word",
+  "name": "dy-prohibited-word（抖音违禁词检测）",
+  "summary": "当用户需要查询抖音平台违禁词、检查文案/笔记是否含敏感词、或对上传文件与网页做合规筛查并希望获得替换建议与修改后文案时使用；能力摘要：文本/文件/网页/图片输入的一站式检测，标红违禁词、表格化替换建议、输出优化文案并按规定交付纯文本文件。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dy_prohibited_word",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "if530770",
+      "features": [
+        "当用户需要查询抖音平台违禁词、检查文案/笔记是否含敏感词、或对上传文件与网页做合规筛查并希望获得替换建议与修改后文案时使用；能力摘要：文本/文件/网页/图片输入的一站式检测，标红违禁词、表格."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dy-prohibited-word@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46310539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dy-prohibited-word",
+      "url": "https://clawhub.ai/skills/dy-prohibited-word"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dy-prohibited-word",
+    "url": "https://clawhub.ai/skills/dy-prohibited-word",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dy-prohibited-word-38723327ce5b5350.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dy-prohibited-word@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dy-prohibited-word-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7510e194287f9e4a24cc4a3d5d102b2536d78d5b7e92dfd9dd65d3256c80d894",
+      "artifactSizeBytes": 2748
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T08:09:09.815Z"
+}

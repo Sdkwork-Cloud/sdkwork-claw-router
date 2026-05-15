@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59926,
+  "uuid": "skill-clawhub-feishu-project-connector",
+  "skillKey": "clawhub-feishu-project-connector",
+  "name": "Feishu Project(Meego) Connector",
+  "summary": "通过 MCP 服务连接 Meego（飞书项目），支持 OAuth 认证，可查询和管理工作项、视图等。",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_project_connector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wadxm",
+      "features": [
+        "通过 MCP 服务连接 Meego（飞书项目），支持 OAuth 认证，可查询和管理工作项、视图等。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-project-connector@1.0.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9190997?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-project-connector",
+      "url": "https://clawhub.ai/skills/feishu-project-connector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-project-connector",
+    "url": "https://clawhub.ai/skills/feishu-project-connector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-project-connector-ad7363e8cfe5a4e8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-project-connector@1.0.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-project-connector-1.0.10.json",
+      "version": "1.0.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:63f946bd30e79354dd539687b9e1883275a5bf2c34513ab4d513dbaa7637a4a5",
+      "artifactSizeBytes": 1986
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T15:55:10.957Z"
+}

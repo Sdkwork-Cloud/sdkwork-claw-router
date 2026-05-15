@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ltx-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ltx_video",
+  "skill": {
+    "id": 20713,
+    "skillKey": "clawhub-ltx-video",
+    "name": "LTX-2.3 Video API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ltx-video",
+    "url": "https://clawhub.ai/skills/ltx-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ltx-video-3fe0b65118a45601.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate videos via LTX-2.3 API (ltx.video). Supports text-to-video, image-to-video, audio-to-video (lip-sync from audio + image), extend, and retake. Use wh..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pauldelavallaz",
+      "userId": "publishers:pauldelavallaz",
+      "displayName": "Paul de Lavallaz",
+      "image": "https://avatars.githubusercontent.com/u/51497690?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 501,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773017015532,
+      "changelog": "Skill inicial: text-to-video, image-to-video, audio-to-video lip-sync, extend. Prompting guide LTX-2.3, reglas criticas de HTTPS/MIME, limites de resolucion y consistencia facial.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:31e5ab6b21d935334251203cdba7f3b2ec99bac0ae400d2b2ebcdd9e8b8fd98c"
+}

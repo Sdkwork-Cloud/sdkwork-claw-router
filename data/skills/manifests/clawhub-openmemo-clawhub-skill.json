@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50134,
+  "uuid": "skill-clawhub-openmemo-clawhub-skill",
+  "skillKey": "clawhub-openmemo-clawhub-skill",
+  "name": "OpenMemo Memory – Persistent Memory for OpenClaw Agents",
+  "summary": "Provides OpenClaw agents with local, scene-aware, persistent structured memory for task deduplication and long-term workflow recall.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openmemo_clawhub_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "openmemoai",
+      "features": [
+        "Provides OpenClaw agents with local, scene-aware, persistent structured memory for task dedupli."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openmemo-clawhub-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46662906?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openmemo-clawhub-skill",
+      "url": "https://clawhub.ai/skills/openmemo-clawhub-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openmemo-clawhub-skill",
+    "url": "https://clawhub.ai/skills/openmemo-clawhub-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openmemo-clawhub-skill-8a6349e35ac99e40.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openmemo-clawhub-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openmemo-clawhub-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c21b74b534db6bd7cca78c33fda8421457d1c5914a24e7f7a74b4773e3f149b0",
+      "artifactSizeBytes": 2572
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T07:19:05.718Z"
+}

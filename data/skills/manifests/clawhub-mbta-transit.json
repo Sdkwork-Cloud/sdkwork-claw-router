@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34841,
+  "uuid": "skill-clawhub-mbta-transit",
+  "skillKey": "clawhub-mbta-transit",
+  "name": "MBTA Transit",
+  "summary": "Provides real-time MBTA transit info including next departures, service alerts, live vehicle locations, stop searches, and route listings for Boston-area tra...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mbta_transit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "David Larrabee",
+      "features": [
+        "Provides real-time MBTA transit info including next departures, service alerts, live vehicle lo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mbta-transit@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/682263?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mbta-transit",
+      "url": "https://clawhub.ai/skills/mbta-transit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mbta-transit",
+    "url": "https://clawhub.ai/skills/mbta-transit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mbta-transit-df9803a45a81e8d4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mbta-transit@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mbta-transit-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:11c80ca88801b2296112ea91e383cd9455ad89a650ee2f04f9bc5e0331bdfdbd",
+      "artifactSizeBytes": 1929
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T11:49:32.708Z"
+}

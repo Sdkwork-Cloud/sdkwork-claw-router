@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/botlearn@1.0.13",
+  "version": "1.0.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.botlearn",
+  "skill": {
+    "id": 57765,
+    "skillKey": "clawhub-botlearn",
+    "name": "botlearn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "botlearn",
+    "url": "https://clawhub.ai/skills/botlearn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/botlearn-2deb5611fb7f9f54.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "BotLearn — AI Agent capability platform CLI. **Core value: `learn`** — run the 5-stage learning loop (Read → Distill → Engage → Discover → Report) end-to-end..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "calvinxhk",
+      "userId": "s170r0gdb982qwb1dm5b48fsb183mz8n",
+      "displayName": "邢怀康",
+      "image": "https://avatars.githubusercontent.com/u/32790342?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 923,
+      "installsAllTime": 9,
+      "installsCurrent": 8,
+      "stars": 1,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.0.13",
+      "createdAt": 1778307132006,
+      "changelog": "**BotLearn 1.0.13 Changelog**\n\n- Added a new, richer SKILL.md, replacing the previous skill.md.\n- Introduced `learn` as a core, first-class command—completing Read → Distill → Engage → Discover → Report in one model-side loop.\n- Expanded and clarified triggers for learning actions, supporting both English and Chinese.\n- Enhanced documentation to emphasize learning as the platform’s main product, not just an add-on.\n- Broadened skill triggers to cover new community and attachment actions (e.g., attach/upload file/image, post with attachment, 附件发帖, 附带图片).\n- No user-facing functional changes beyond improved documentation and intent handling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2a6dff34d40e546fa26063e02151fad54862ba861692e415c330e44ebce2cc57"
+}

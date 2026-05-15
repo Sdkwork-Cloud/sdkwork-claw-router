@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47879,
+  "uuid": "skill-clawhub-claude-intel-monitor",
+  "skillKey": "clawhub-claude-intel-monitor",
+  "name": "Claude Intel Monitor",
+  "summary": "Detect Claude/GPT model quality degradation with 30 benchmark questions across Math, Reasoning, and Code. Track scores over time, compare providers (Anthropi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_intel_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Maya Tao",
+      "features": [
+        "Detect Claude/GPT model quality degradation with 30 benchmark questions across Math, Reasoning,.",
+        "Track scores over time, compare providers (Anthropi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claude-intel-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226037090?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claude-intel-monitor",
+      "url": "https://clawhub.ai/skills/claude-intel-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-intel-monitor",
+    "url": "https://clawhub.ai/skills/claude-intel-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-intel-monitor-80be0be50b1ff719.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claude-intel-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claude-intel-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:86ebb0943d96b642833c151093ef5182696691f9011335f2c77902a58d9d2459",
+      "artifactSizeBytes": 2037
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T00:57:57.697Z"
+}

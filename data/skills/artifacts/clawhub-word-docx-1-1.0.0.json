@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/word-docx-1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.word_docx_1",
+  "skill": {
+    "id": 14577,
+    "skillKey": "clawhub-word-docx-1",
+    "name": "Word Docx 1"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "word-docx-1",
+    "url": "https://clawhub.ai/skills/word-docx-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/word-docx-1-6b3ee14c5d25193f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create, inspect, and edit Microsoft Word documents and DOCX files with reliable styles, numbering, tracked changes, tables, sections, and compatibility check..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tonydesign1999",
+      "userId": "publishers:tonydesign1999",
+      "displayName": "tonydesign1999",
+      "image": "https://avatars.githubusercontent.com/u/245508141?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1064,
+      "installsAllTime": 12,
+      "installsCurrent": 12,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773658081348,
+      "changelog": "- Strengthened guidance for handling Word/DOCX files in fragile review and reference workflows.\n- Added detailed rules to prevent layout drift and maintain style and numbering integrity.\n- Enhanced advice for working with tracked changes, comments, fields, and compatibility concerns.\n- Clarified traps and best practices for round-trip editing and review scenarios.\n- Updated documentation to align with results from a stricter external audit.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a6f8b373762c42f649c75474ff6b5b46f1aeb6a6dffe01ba283f470ccc21e34f"
+}

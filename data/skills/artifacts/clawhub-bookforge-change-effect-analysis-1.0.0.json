@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bookforge-change-effect-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bookforge_change_effect_analysis",
+  "skill": {
+    "id": 48336,
+    "skillKey": "clawhub-bookforge-change-effect-analysis",
+    "name": "Change Effect Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bookforge-change-effect-analysis",
+    "url": "https://clawhub.ai/skills/bookforge-change-effect-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bookforge-change-effect-analysis-f052216ec1a236cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trace the blast radius of a legacy code change and produce a test placement plan with pinch points. Use whenever a developer needs to decide WHERE to write t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quochungto",
+      "userId": "s176b6gfk8djgcz320d83ta4e184bx1v",
+      "displayName": "Hung Quoc To",
+      "image": "https://avatars.githubusercontent.com/u/88069966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 101,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777466766230,
+      "changelog": "- Initial release of the skill \"change-effect-analysis\" for software engineers working with legacy code.\n- Provides a systematic process to identify the ripple effects (\"blast radius\") of a proposed code change.\n- Produces a focused test placement plan by identifying high-leverage test \"pinch points.\"\n- Supports use cases where changes affect multiple classes or have complex propagation.\n- Designed to be language-agnostic and useful even where existing tests are missing.\n- Requires identification of the change point, change description, and access to the codebase.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f24b1ea897e0674b5fb6e35111de91c9c70ea48921694dfb87b52030b27a3ac5"
+}

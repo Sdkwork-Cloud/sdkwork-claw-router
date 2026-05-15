@@ -97,3 +97,56 @@ fn postgres_forum_uses_postgres_placeholders_and_jsonb_casts() {
     assert_sql_not_contains(POSTGRES_FORUM_STORE, "?2");
     assert_sql_not_contains(POSTGRES_FORUM_STORE, "INSERT OR REPLACE");
 }
+
+#[test]
+fn postgres_forum_comment_reads_are_tenant_scoped() {
+    for expected in [
+        "load_comment_page(",
+        "load_comment_parent(",
+        "load_comment_items_by_parent(",
+        "require_comment_item(",
+        "scope_filter = postgres_scope_filter(\"plus_comments\")",
+        "WHERE content_type = $3",
+        "WHERE parent_id = $3",
+        "WHERE id = $3",
+        "AND {scope_filter}",
+    ] {
+        assert_sql_contains(POSTGRES_FORUM_STORE, expected);
+    }
+
+    assert_sql_not_contains(
+        POSTGRES_FORUM_STORE,
+        "WHERE content_type = $1 AND content_id = $2 AND COALESCE(status, 0) = $3 AND {parent_filter}",
+    );
+}
+
+#[test]
+fn postgres_forum_feed_side_effects_are_subject_scoped() {
+    for expected in [
+        "if load_feed_by_id(&self.pool, feed_id, subject)",
+        ".await? .is_none()",
+        "increment_feed_view_count(&self.pool, feed_id, subject).await?",
+        "scope_filter = postgres_scope_filter(\"plus_feeds\")",
+        "WHERE id = $3 AND COALESCE(status, 0) = $4 AND {scope_filter}",
+        "require_feed(&self.pool, feed_id, Some(subject)).await?",
+        "let feed = require_feed(&self.pool, feed_id, Some(subject)).await?",
+        "fn share_feed<'a>(",
+        "subject: ForumSubject,",
+        "SET share_count = COALESCE(share_count, 0) + 1, updated_at = CURRENT_TIMESTAMP WHERE id = $3 AND COALESCE(status, 0) = $4 AND tenant_id = $1 AND organization_id = $2",
+    ] {
+        assert_sql_contains(POSTGRES_FORUM_STORE, expected);
+    }
+
+    assert_sql_not_contains(
+        POSTGRES_FORUM_STORE,
+        "async fn load_feed_title(pool: &PgPool, feed_id: i64)",
+    );
+    assert_sql_not_contains(
+        POSTGRES_FORUM_STORE,
+        "UPDATE plus_feeds SET view_count = COALESCE(view_count, 0) + 1, updated_at = CURRENT_TIMESTAMP WHERE id = $1 AND COALESCE(status, 0) = $2",
+    );
+    assert_sql_not_contains(
+        POSTGRES_FORUM_STORE,
+        "UPDATE plus_feeds SET share_count = COALESCE(share_count, 0) + 1, updated_at = CURRENT_TIMESTAMP WHERE id = $1 AND COALESCE(status, 0) = $2",
+    );
+}

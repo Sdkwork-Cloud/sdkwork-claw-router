@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/academic-research-conflict@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.academic_research_conflict",
+  "skill": {
+    "id": 28490,
+    "skillKey": "clawhub-academic-research-conflict",
+    "name": "Academic Research Conflict"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "academic-research-conflict",
+    "url": "https://clawhub.ai/skills/academic-research-conflict",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/academic-research-conflict-2edafb91be071ade.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search academic papers and conduct literature reviews using OpenAlex API (free, no key needed). Use when the user needs to find scholarly papers by topic/aut..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "feiyang2007",
+      "userId": "s170y1xt88170bf6qccpa3pbtx83g7mh",
+      "displayName": "Feiyang2007",
+      "image": "https://avatars.githubusercontent.com/u/195324643?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 324,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773397956728,
+      "changelog": "Academic Research v1.0.0 initial release:\n\n- Search 250M+ academic papers via the OpenAlex API without an API key.\n- Supports queries by topic, author, or DOI, plus citation chain exploration.\n- Fetches structured metadata (title, authors, abstract, citation count, DOI, open access URL).\n- Automated literature reviews with theme identification and synthesis.\n- Provides both human-readable markdown and machine-friendly JSON outputs.\n- Includes example scripts and workflow tips for efficient scholarly research.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:534db6d17652f8dea977977038f3cae4b7a6f61f5980ae253c7e394ca58e75bb"
+}

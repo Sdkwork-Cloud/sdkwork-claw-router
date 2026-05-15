@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shelly-seo-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shelly_seo_analyzer",
+  "skill": {
+    "id": 14532,
+    "skillKey": "clawhub-shelly-seo-analyzer",
+    "name": "SEO Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shelly-seo-analyzer",
+    "url": "https://clawhub.ai/skills/shelly-seo-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shelly-seo-analyzer-3de351f946116a62.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze any webpage URL for SEO issues and get actionable recommendations. Checks title tags, meta descriptions, heading structure, keyword density, image al..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "claudiodrusus",
+      "userId": "publishers:claudiodrusus",
+      "displayName": "claudiodrusus",
+      "image": "https://avatars.githubusercontent.com/u/258132540?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1194,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771785555136,
+      "changelog": "Initial release of seo-analyzer.\n\n- Analyze any webpage URL for common SEO issues.\n- Checks include title and meta description tags, heading structure, keyword density, image alt tags, Open Graph/Twitter cards, canonical URL, and word count.\n- Provides a plain text report with findings and prioritized recommendations.\n- Supports command-line use with `curl` or via `web_fetch`.\n- Requires standard Unix tools: curl, grep, sed, and awk.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2e9dc50aaa1d153b9603a088b360d1411c12f097c3f09dfccf1ab615434e0503"
+}

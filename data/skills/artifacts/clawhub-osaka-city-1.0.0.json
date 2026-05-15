@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/osaka-city@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.osaka_city",
+  "skill": {
+    "id": 48285,
+    "skillKey": "clawhub-osaka-city",
+    "name": "Osaka City"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "osaka-city",
+    "url": "https://clawhub.ai/skills/osaka-city",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/osaka-city-aedaf1c3ed6e9bcb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides detailed information on Osaka's history, economy, food culture, and significance as Japan's merchant capital and host of Expos 1970 and 2025."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 102,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777417485345,
+      "changelog": "- Initial release of the Osaka city skill.\n- Comprehensive overview of Osaka’s history, economic profile, food culture, and key statistics.\n- Summaries of Osaka’s merchant legacy, Expo history, and influence on Japanese urban and culinary identity.\n- Detailed explanations of iconic foods (takoyaki, okonomiyaki, kushikatsu) and the concept of “kuidaore.”\n- Highlights on Expo 1970, upcoming Expo 2025, and major landmarks such as Osaka Castle and the Tower of the Sun.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:89b3812aea2b394c3c667c93758e1511a63afaa753f51c7381117c1cbe4aadc4"
+}

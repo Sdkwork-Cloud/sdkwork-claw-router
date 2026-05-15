@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18234,
+  "uuid": "skill-clawhub-skill-safety-checker",
+  "skillKey": "clawhub-skill-safety-checker",
+  "name": "Skill Safety Checker",
+  "summary": "Runs VirusTotal-style security checks on OpenClaw/Cursor skills before install, including remote code execution (RCE) and malicious code (obfuscation, exfilt...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_safety_checker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "austindixson",
+      "features": [
+        "Runs VirusTotal-style security checks on OpenClaw/Cursor skills before install, including remot."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-safety-checker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52183161?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-safety-checker",
+      "url": "https://clawhub.ai/skills/skill-safety-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-safety-checker",
+    "url": "https://clawhub.ai/skills/skill-safety-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-safety-checker-e165589f8ac3b341.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-safety-checker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-safety-checker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a4e2547b9f5155b7d4d0820ea06efad2796d2bfd85795719d31755e36faafc1c",
+      "artifactSizeBytes": 2717
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T02:24:33.265Z"
+}

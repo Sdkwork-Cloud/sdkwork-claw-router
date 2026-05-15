@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73108,
+  "uuid": "skill-clawhub-feishu-media",
+  "skillKey": "clawhub-feishu-media",
+  "name": "飞书媒体发送",
+  "summary": "飞书媒体文件发送技能。适用于：发送文件、图片、URL图片、视频、音频、语音消息，以及打包压缩后发送。当用户要求在飞书中发送任何类型的媒体文件时激活此技能。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_media",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "godzff",
+      "features": [
+        "飞书媒体文件发送技能。适用于：发送文件、图片、URL图片、视频、音频、语音消息，以及打包压缩后发送。当用户要求在飞书中发送任何类型的媒体文件时激活此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-media@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14889649?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-media",
+      "url": "https://clawhub.ai/skills/feishu-media"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-media",
+    "url": "https://clawhub.ai/skills/feishu-media",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-media-0586973fb5eac079.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-media@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-media-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:58a0d053cdd2d5fa8fa4cccc599a6b3db6bf70f5a39f3c777c5efaf87459d348",
+      "artifactSizeBytes": 1982
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T17:06:01.014Z"
+}

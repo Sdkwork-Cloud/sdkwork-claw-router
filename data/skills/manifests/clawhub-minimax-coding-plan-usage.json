@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57335,
+  "uuid": "skill-clawhub-minimax-coding-plan-usage",
+  "skillKey": "clawhub-minimax-coding-plan-usage",
+  "name": "国内Minimax Coding Plan订阅计划用量查询",
+  "summary": "Monitor Minimax Coding Plan usage to stay within API limits. Fetches current usage stats and provides status alerts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_coding_plan_usage",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "franky0617",
+      "features": [
+        "Monitor Minimax Coding Plan usage to stay within API limits",
+        "Fetches current usage stats and provides status alerts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/minimax-coding-plan-usage@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257217961?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "minimax-coding-plan-usage",
+      "url": "https://clawhub.ai/skills/minimax-coding-plan-usage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-coding-plan-usage",
+    "url": "https://clawhub.ai/skills/minimax-coding-plan-usage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-coding-plan-usage-9a58b0ce623f14ea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/minimax-coding-plan-usage@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-minimax-coding-plan-usage-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5643cd4bb4d29aa11f02fbe3f3264560f2bf80870b9306123c34bb987549693d",
+      "artifactSizeBytes": 2266
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-29T11:29:23.598Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/document-converter-pro@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.document_converter_pro",
+  "skill": {
+    "id": 18607,
+    "skillKey": "clawhub-document-converter-pro",
+    "name": "Doc Converter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "document-converter-pro",
+    "url": "https://clawhub.ai/skills/document-converter-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/document-converter-pro-fc88b243b496e496.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Document format converter. Use when user needs to convert between Word, PDF, Markdown, HTML formats. Supports docx-to-pdf, md-to-pdf, md-to-docx, html-to-pdf..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tobewin",
+      "userId": "s174rz3f0862tcfw7pzfh5w8kn83hv2z",
+      "displayName": "ToBeWin",
+      "image": "https://avatars.githubusercontent.com/u/145168989?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 546,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774355236588,
+      "changelog": "修复依赖声明：移除node，统一使用python-docx和fpdf2",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dd2545808fab1c1bc9230f7f8be48a19ff8e975c05310a2b4279864cc3ea85aa"
+}

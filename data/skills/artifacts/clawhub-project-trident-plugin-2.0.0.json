@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/project-trident-plugin@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.project_trident_plugin",
+  "skill": {
+    "id": 46472,
+    "skillKey": "clawhub-project-trident-plugin",
+    "name": "Trident Plugin"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "project-trident-plugin",
+    "url": "https://clawhub.ai/skills/project-trident-plugin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/project-trident-plugin-35ea3b3aefec9ea2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Permanent memory for OpenClaw agents. Lossless capture, intelligent routing, semantic recall, and disaster recovery in five tiers."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shivaclaw",
+      "userId": "s17en5fpjwrkkkz2azf8m3akg983rtkm",
+      "displayName": "Shiva&G",
+      "image": "https://avatars.githubusercontent.com/u/268223005?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 125,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1777060451579,
+      "changelog": "**Major release: Trident v2.0 introduces a full five-tier memory system and makes semantic recall mandatory for all agents.**\n\n- Implements five-tier architecture for agent memory: lossless capture, signal routing, hierarchical storage, semantic recall, and disaster recovery.\n- Semantic recall (Layer 1.5) with Qdrant + FalkorDB is now required for all deployments, improving context retrieval at scale.\n- Four core utilities available: memory search, expand, update, and high-precision recall with vector and entity graph backing.\n- Installation process now automatically handles the setup and download of required Qdrant and FalkorDB binaries.\n- Flexible deployment across native binaries, Docker, cloud, and air-gapped environments. \n- Clear configuration and cost breakdown for self-hosted and cloud-based options.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:02e667c5a64464394af0248bf0c1832c4193809e52b8eae4b2d6a68f7fda5da1"
+}

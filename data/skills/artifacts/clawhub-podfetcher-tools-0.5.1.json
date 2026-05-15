@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/podfetcher-tools@0.5.1",
+  "version": "0.5.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.podfetcher_tools",
+  "skill": {
+    "id": 29025,
+    "skillKey": "clawhub-podfetcher-tools",
+    "name": "Podfetcher Tools"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "podfetcher-tools",
+    "url": "https://clawhub.ai/skills/podfetcher-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/podfetcher-tools-b0bb665db7e3b26f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search podcasts, browse episodes, and fetch podcast transcripts from Podfetcher using the bundled Node.js CLI, SDK, or MCP server."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flohiwg",
+      "userId": "s17d6p1jrk32bpmktwez82fwzx83m183",
+      "displayName": "Florian Heiwig",
+      "image": "https://avatars.githubusercontent.com/u/6436637?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 312,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.5.1",
+      "createdAt": 1773671942598,
+      "changelog": "Clarify discovery text, add API key setup guidance, and declare required environment metadata",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:302631f5d369524a350c534f0cc62315f762d9768c785c68f51bc7b433b5d857"
+}

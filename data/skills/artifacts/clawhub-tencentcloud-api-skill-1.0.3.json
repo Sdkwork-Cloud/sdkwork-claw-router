@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tencentcloud-api-skill@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencentcloud_api_skill",
+  "skill": {
+    "id": 58611,
+    "skillKey": "clawhub-tencentcloud-api-skill",
+    "name": "tencentcloud-api-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencentcloud-api-skill",
+    "url": "https://clawhub.ai/skills/tencentcloud-api-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencentcloud-api-skill-56e62cdb6e38ec02.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skill to call Cloud API for Tencent Cloud (腾讯云). Used for cloud automation or resource management. 当用户需要查询、创建、管理腾讯云资源，或执行云 API 自动化操作时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tencent-adm",
+      "userId": "s171cxjdnjyqjxa91pj2bfmr6x83gyg1",
+      "displayName": "腾讯开源",
+      "image": "https://avatars.githubusercontent.com/u/19383298?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1777277594862,
+      "changelog": "- Initial public release of 腾讯云 API 助手 (tcapi skill) for cloud resource management and automation using tccli.\n- Supports querying, creating, modifying, and deleting resources across 200+ Tencent Cloud products via Cloud API.\n- Provides step-by-step guidance for API documentation retrieval, credential configuration, and API invocation.\n- Emphasizes security best practices: no secret collection, least-privilege principle, and output validation.\n- Details error handling, usage scenarios, limitations, and examples for frequent cloud operations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c92536824331183ee2b07c6249bd28c122364fd0dfd73f8ea178a4c764a04d4e"
+}

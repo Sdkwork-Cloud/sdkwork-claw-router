@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/basjoofan@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.basjoofan",
+  "skill": {
+    "id": 59214,
+    "skillKey": "clawhub-basjoofan",
+    "name": "Easy run test"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "basjoofan",
+    "url": "https://clawhub.ai/skills/basjoofan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/basjoofan-f744f647054daf60.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when user needs to run api test, performance test, load test, stress test, http test etc. 当用户需要运行接口测试、性能测试、负载测试、压力测试、HTTP测试等时使用。 触发词: 接口测试、API测试、性能测试、负载测..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lamb",
+      "userId": "s17awrsdx4pm6w7b90jjd55v9183kevy",
+      "displayName": "金氧",
+      "image": "https://avatars.githubusercontent.com/u/841911?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1774625005444,
+      "changelog": "basjoofan 0.0.1 – Initial Release\n\n- Introduced a new tool for API, performance, load, stress, and HTTP testing.\n- Added CLI options for concurrency, duration, number of runs, script path, result recording, and statistics output.\n- Provided sample scripts for GET and POST requests (including form, multipart, and JSON payloads).\n- Included a command decision tree for typical testing scenarios.\n- Installation instructions and examples are documented in both English and Chinese.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ade072c8cd17b618d1a90c6949d3d4aa1a6aa2d35ecc62689f22232f2ec97f5c"
+}

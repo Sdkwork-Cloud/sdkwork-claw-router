@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19238,
+  "uuid": "skill-clawhub-kiro-search-aggregator",
+  "skillKey": "clawhub-kiro-search-aggregator",
+  "name": "Kiro Search Aggregator",
+  "summary": "Multi-source search skill for Kiro on OpenClaw. Aggregate and rank results from Google, Google Scholar, YouTube, and X, then output a concise brief.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kiro_search_aggregator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xinjin",
+      "features": [
+        "Multi-source search skill for Kiro on OpenClaw",
+        "Aggregate and rank results from Google, Google Scholar, YouTube, and X, then output a concise b."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kiro-search-aggregator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/105750766?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kiro-search-aggregator",
+      "url": "https://clawhub.ai/skills/kiro-search-aggregator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kiro-search-aggregator",
+    "url": "https://clawhub.ai/skills/kiro-search-aggregator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kiro-search-aggregator-a6ff0d2a9975373b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kiro-search-aggregator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kiro-search-aggregator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a25864df2f644be351c1d9ad160c2d91d50723aaa4334f67a6b16f025bcaa8a9",
+      "artifactSizeBytes": 2214
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T19:42:46.395Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/korean-business-email@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.korean_business_email",
+  "skill": {
+    "id": 62910,
+    "skillKey": "clawhub-korean-business-email",
+    "name": "Korean Business Email"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "korean-business-email",
+    "url": "https://clawhub.ai/skills/korean-business-email",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/korean-business-email-29719dd186b1f306.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "한국 기업 문화에 맞게 전문적이고 공손한 어투로 신규 문의, 제안서, 보고서, 감사·사과 이메일을 작성합니다."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jochoonhwan",
+      "userId": "s1759xggfr7af71g842gdc4dg183y1rx",
+      "displayName": "jochoonhwan",
+      "image": "https://avatars.githubusercontent.com/u/258758600?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774969353341,
+      "changelog": "- Initial release of the skill for writing professional Korean business emails.\n- Provides templates for various scenarios: inquiry, proposals, reports, thanks/apologies.\n- Ensures tone, format, and language align with Korean corporate culture.\n- Includes key cultural tips and best practices for effective communication.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1e620a5e5a42d20284b857352e26c8d58073cdea35d5b08334f47c62458a25f1"
+}

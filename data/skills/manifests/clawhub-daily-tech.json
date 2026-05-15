@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64668,
+  "uuid": "skill-clawhub-daily-tech",
+  "skillKey": "clawhub-daily-tech",
+  "name": "Daily Tech",
+  "summary": "每日科技/AI/大模型热榜推送。当用户说\"今日科技\"、\"每日AI\"、\"科技日报\"、\"大模型动态\"、\"AI资讯\"、\"开启科技推送\"时触发。主打AI、大模型、OpenClaw、机器人、GitHubTrending等硬科技，附国际市场动态，来源覆盖中英文。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_tech",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "foxxc",
+      "features": [
+        "每日科技/AI/大模型热榜推送。当用户说\"今日科技\"、\"每日AI\"、\"科技日报\"、\"大模型动态\"、\"AI资讯\"、\"开启科技推送\"时触发。主打AI、大模型、OpenClaw、机器人、GitHu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-tech@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46275479?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-tech",
+      "url": "https://clawhub.ai/skills/daily-tech"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-tech",
+    "url": "https://clawhub.ai/skills/daily-tech",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-tech-a91670963ecf5aac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-tech@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-tech-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8feb8637fdbbb66efa46a23062aed0a43933be531733ee10f51e7ec11f748d11",
+      "artifactSizeBytes": 2122
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T01:03:49.115Z"
+}

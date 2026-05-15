@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30986,
+  "uuid": "skill-clawhub-feedier",
+  "skillKey": "clawhub-feedier",
+  "name": "Feedier",
+  "summary": "Feedier integration. Manage Surveys, Integrations, Users. Use when the user wants to interact with Feedier data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feedier",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Feedier integration",
+        "Manage Surveys, Integrations, Users",
+        "Use when the user wants to interact with Feedier data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feedier@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feedier",
+      "url": "https://clawhub.ai/skills/feedier"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feedier",
+    "url": "https://clawhub.ai/skills/feedier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feedier-07248f56e200af25.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feedier@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-feedier-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6f7bd91b6748455d69f500df61a93cfa80749971bb435dbc8960a4f4d3335f4a",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:46:39.192Z"
+}

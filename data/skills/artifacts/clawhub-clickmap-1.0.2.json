@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clickmap@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clickmap",
+  "skill": {
+    "id": 20654,
+    "skillKey": "clawhub-clickmap",
+    "name": "ClickMap"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clickmap",
+    "url": "https://clawhub.ai/skills/clickmap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clickmap-31b5151034fac679.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Chrome UI automation skill for saving named on-screen targets and reusing them with reliable click/type actions. Use when browser automation is flaky, select..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jayton123456789-hub",
+      "userId": "publishers:jayton123456789-hub",
+      "displayName": "jayton123456789-hub",
+      "image": "https://avatars.githubusercontent.com/u/225095006?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 514,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772662157629,
+      "changelog": "Boost discoverability and trigger-matching copy",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a07167c1ad0b6620e1b270cc612d2b59c1437447f870beffbdcfc9f09bb0c5da"
+}

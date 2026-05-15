@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32352,
+  "uuid": "skill-clawhub-foundriesio",
+  "skillKey": "clawhub-foundriesio",
+  "name": "Foundriesio",
+  "summary": "Foundries.io integration. Manage data, records, and automate workflows. Use when the user wants to interact with Foundries.io data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.foundriesio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Foundries.io integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Foundries.io data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/foundriesio@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "foundriesio",
+      "url": "https://clawhub.ai/skills/foundriesio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "foundriesio",
+    "url": "https://clawhub.ai/skills/foundriesio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/foundriesio-de11bde1a8f48314.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/foundriesio@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-foundriesio-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:537b93bcd6388ed2f4b785460ab002433c1cd87da2508378cd09062640bd9503",
+      "artifactSizeBytes": 1859
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:49:49.328Z"
+}

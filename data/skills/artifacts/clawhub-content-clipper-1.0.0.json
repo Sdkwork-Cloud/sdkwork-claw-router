@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/content-clipper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_clipper",
+  "skill": {
+    "id": 56092,
+    "skillKey": "clawhub-content-clipper",
+    "name": "Content Clipper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-clipper",
+    "url": "https://clawhub.ai/skills/content-clipper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-clipper-87cfdc416c0c80f3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract and summarize web articles, 小红书, and Twitter content, then save clips to flomo via webhook or local markdown files with optional tags and summaries."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ma-tiezhu",
+      "userId": "publishers:ma-tiezhu",
+      "displayName": "Ma-tiezhu",
+      "image": "https://avatars.githubusercontent.com/u/265853321?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 357,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773951735783,
+      "changelog": "Initial release: clip web articles, 小红书, Twitter/X to flomo or local markdown",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1e466e57fae2521b2ad37ad37b4875fd8547bd2e532a7779604f5ce0efc5b8ed"
+}

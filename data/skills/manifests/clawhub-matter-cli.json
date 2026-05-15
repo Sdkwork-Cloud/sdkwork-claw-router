@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38273,
+  "uuid": "skill-clawhub-matter-cli",
+  "skillKey": "clawhub-matter-cli",
+  "name": "Matter CLI",
+  "summary": "Manage and interact with your Matter reading library: browse, search, save, tag, archive, highlight, summarize, and track reading progress via Matter CLI.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.matter_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nicholope",
+      "features": [
+        "Manage and interact with your Matter reading library: browse, search, save, tag, archive, highl."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/matter-cli@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/103054646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "matter-cli",
+      "url": "https://clawhub.ai/skills/matter-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "matter-cli",
+    "url": "https://clawhub.ai/skills/matter-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/matter-cli-d047769d9b005510.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/matter-cli@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-matter-cli-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b5457736538cb9922c43bd920d0f737b65cffffca834366f35c431069a18751c",
+      "artifactSizeBytes": 1964
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T03:38:38.175Z"
+}

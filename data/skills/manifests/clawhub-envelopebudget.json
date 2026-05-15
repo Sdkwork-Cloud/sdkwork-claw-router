@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27434,
+  "uuid": "skill-clawhub-envelopebudget",
+  "skillKey": "clawhub-envelopebudget",
+  "name": "EnvelopeBudget",
+  "summary": "Manage budgets, transactions, accounts, envelopes, payees, and reports using the EnvelopeBudget.com API for tracking and organizing finances.",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.envelopebudget",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dustin Davis",
+      "features": [
+        "Manage budgets, transactions, accounts, envelopes, payees, and reports using the EnvelopeBudget."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/envelopebudget@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/177353?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "envelopebudget",
+      "url": "https://clawhub.ai/skills/envelopebudget"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "envelopebudget",
+    "url": "https://clawhub.ai/skills/envelopebudget",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/envelopebudget-30e887404f77dafc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/envelopebudget@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-envelopebudget-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c9231c12a0252332ada9bd7307f2aa7064bb843d5c5441c6e358844175e336de",
+      "artifactSizeBytes": 1981
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T11:42:53.616Z"
+}

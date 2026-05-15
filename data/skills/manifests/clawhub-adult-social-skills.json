@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32520,
+  "uuid": "skill-clawhub-adult-social-skills",
+  "skillKey": "clawhub-adult-social-skills",
+  "name": "Adult Social Skills",
+  "summary": "Building and maintaining social connections as an adult. Use when someone is lonely, has moved to a new city, wants to make friends, struggles in group setti...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adult_social_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HowToUseHumans",
+      "features": [
+        "Building and maintaining social connections as an adult",
+        "Use when someone is lonely, has moved to a new city, wants to make friends, struggles in group."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/adult-social-skills@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/151727669?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "adult-social-skills",
+      "url": "https://clawhub.ai/skills/adult-social-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adult-social-skills",
+    "url": "https://clawhub.ai/skills/adult-social-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adult-social-skills-8b4d7012d810e8c9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/adult-social-skills@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-adult-social-skills-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:95328a808c17ded13f2c66142f6be01d1d329280df303673b19c1d5be55e28b7",
+      "artifactSizeBytes": 2520
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T14:51:49.175Z"
+}

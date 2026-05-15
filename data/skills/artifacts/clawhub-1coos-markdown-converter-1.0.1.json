@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/1coos-markdown-converter@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.1coos_markdown_converter",
+  "skill": {
+    "id": 32873,
+    "skillKey": "clawhub-1coos-markdown-converter",
+    "name": "1coos-markdown-converter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "1coos-markdown-converter",
+    "url": "https://clawhub.ai/skills/1coos-markdown-converter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/1coos-markdown-converter-699bea99ced5ff61.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert files to beautifully formatted Markdown. TRIGGER when user asks to convert a file to Markdown, extract text from PDF/DOCX/PPTX/XLSX, or format a docu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1coos",
+      "userId": "s1729f78g961b6np6hxd6sz95d83h5cn",
+      "displayName": "1coos",
+      "image": "https://avatars.githubusercontent.com/u/125862072?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 235,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775401548037,
+      "changelog": "- Major refactor: removed TypeScript source, configs, and tests; now uses a single main.js script.\n- SKILL.md updated to reflect current capabilities and simplified description.\n- Configuration options and usage instructions remain unchanged for end users.\n- Streamlined maintenance by consolidating codebase and removing redundant files.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0a2514915fedd6433c33366ae085cfad2ad34015d70a35d8a54276e504bf43d0"
+}

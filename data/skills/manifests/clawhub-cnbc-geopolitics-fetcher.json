@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21624,
+  "uuid": "skill-clawhub-cnbc-geopolitics-fetcher",
+  "skillKey": "clawhub-cnbc-geopolitics-fetcher",
+  "name": "Cnbc Geopolitics Fetcher",
+  "summary": "Automated geopolitical intelligence agent that fetches 5 hottest CNBC news articles from last 24 hours, extracts structured data (Title, URL, Market Impact,...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cnbc_geopolitics_fetcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dimas Chandra",
+      "features": [
+        "Automated geopolitical intelligence agent that fetches 5 hottest CNBC news articles from last 2."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cnbc-geopolitics-fetcher@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34400000?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cnbc-geopolitics-fetcher",
+      "url": "https://clawhub.ai/skills/cnbc-geopolitics-fetcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cnbc-geopolitics-fetcher",
+    "url": "https://clawhub.ai/skills/cnbc-geopolitics-fetcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cnbc-geopolitics-fetcher-3ef54e35638f22bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cnbc-geopolitics-fetcher@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-cnbc-geopolitics-fetcher-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:77e34c575b0be9197cb3db336d7225b24a059601bb9ac30ad8fff3c602ccd9b1",
+      "artifactSizeBytes": 2041
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T13:58:44.726Z"
+}

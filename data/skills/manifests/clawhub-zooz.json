@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30420,
+  "uuid": "skill-clawhub-zooz",
+  "skillKey": "clawhub-zooz",
+  "name": "Zooz",
+  "summary": "ZOOZ integration. Manage data, records, and automate workflows. Use when the user wants to interact with ZOOZ data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zooz",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "ZOOZ integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with ZOOZ data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zooz@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zooz",
+      "url": "https://clawhub.ai/skills/zooz"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zooz",
+    "url": "https://clawhub.ai/skills/zooz",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zooz-0b6a25ff56add50d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zooz@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-zooz-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d66b30a37a8bed88079586f79a09b0b7e72210cb90ee084eed91a5b3e60fd42f",
+      "artifactSizeBytes": 1794
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:06:28.969Z"
+}

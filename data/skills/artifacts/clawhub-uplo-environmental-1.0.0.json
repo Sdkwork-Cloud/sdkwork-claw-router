@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/uplo-environmental@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uplo_environmental",
+  "skill": {
+    "id": 29833,
+    "skillKey": "clawhub-uplo-environmental",
+    "name": "Uplo Environmental"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uplo-environmental",
+    "url": "https://clawhub.ai/skills/uplo-environmental",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uplo-environmental-ddd5ce6a018c7ac6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered environmental knowledge management. Search impact assessments, compliance monitoring data, sustainability reports, and environmental permits with..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "roojenkins",
+      "userId": "publishers:roojenkins",
+      "displayName": "RooJenkins",
+      "image": "https://avatars.githubusercontent.com/u/47111622?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 294,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774007019449,
+      "changelog": "- Initial release of the uplo-environmental skill for AI-powered environmental knowledge management.\n- Enables structured search and extraction from impact assessments, compliance data, sustainability reports, and environmental permits.\n- Introduces key tools: search_with_context, search_knowledge, get_directives, report_knowledge_gap, and flag_outdated.\n- Provides example workflows for permit renewal and carbon footprint reduction planning.\n- Includes operational tips for handling temporal data, compliance status, and access-restricted records.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5f310751fc1b61cfa10b101aedef3fb54849a3ec02cd1e3c74288d679c594b75"
+}

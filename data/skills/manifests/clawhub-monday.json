@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8458,
+  "uuid": "skill-clawhub-monday",
+  "skillKey": "clawhub-monday",
+  "name": "Monday.com",
+  "summary": "Monday.com API integration with managed OAuth. Manage boards, items, columns, groups, and workspaces using GraphQL. Use this skill when users want to create,...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.monday",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byungkyu",
+      "features": [
+        "Monday.com API integration with managed OAuth",
+        "Manage boards, items, columns, groups, and workspaces using GraphQL",
+        "Use this skill when users want to create,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/monday@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16563684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "monday",
+      "url": "https://clawhub.ai/skills/monday"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "monday",
+    "url": "https://clawhub.ai/skills/monday",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/monday-d618fb157a4b382e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/monday@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-monday-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0739db61a935ae48e4fa0958b5953daaf6929d39a31311712a5e1e3aa3735fdc",
+      "artifactSizeBytes": 2236
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T23:47:38.267Z"
+}

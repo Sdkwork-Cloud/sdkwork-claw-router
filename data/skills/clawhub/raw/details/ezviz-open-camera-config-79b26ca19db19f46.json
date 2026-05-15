@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "ezviz-open-camera-config",
+    "displayName": "Ezviz Open Camera Config",
+    "summary": "萤石设备配置技能。支持 9 个设备配置 API，包括布防/撤防、镜头遮蔽、全天录像、移动侦测灵敏度等。 Use when: 需要远程配置萤石设备参数、修改设备布防状态、调整设备功能开关。 ⚠️ 安全要求：必须设置 EZVIZ_APP_KEY 和 EZVIZ_APP_SECRET 环境变量，使用最小权限凭证。",
+    "tags": {
+      "latest": "1.0.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 420,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "createdAt": 1773402764798,
+    "updatedAt": 1778308058682
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1773842178140,
+    "changelog": "**Added advanced credential sourcing and global token caching.**\n\n- Added `lib/token_manager.py` for managing Ezviz token caching and credential sourcing.\n- Now supports loading Ezviz credentials from OpenClaw configuration files as a fallback (with environment variables taking priority).\n- Introduced global access token caching in system temp directory for efficiency, with configurable enable/disable via `EZVIZ_TOKEN_CACHE`.\n- Updated documentation to provide clear security warnings, credential priority order, and token cache details.\n- No changes to API usage or device config functionality—upgrade is backward compatible.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "ezviz-open",
+    "userId": "s174s8a00r18xwt2q5p7j85f5183gavv",
+    "displayName": "EzvizOpenTeam",
+    "image": "https://avatars.githubusercontent.com/u/16202450?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778308058682
+  }
+}

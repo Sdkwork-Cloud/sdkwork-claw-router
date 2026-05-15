@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42325,
+  "uuid": "skill-clawhub-ccapi",
+  "skillKey": "clawhub-ccapi",
+  "name": "O n e A P I . A l w a y s o n . Aggregate multiple AI providers under the hood. Smart routing auto-switches on failure. You cal.",
+  "summary": "Use CCAPI unified AI API gateway to access 60+ models (GPT-5.2, Claude, Gemini, DeepSeek, Sora 2, Kling 3.0, Seedance 2.0, Suno, etc.) across text, image, vi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ccapi",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zane",
+      "features": [
+        "Use CCAPI unified AI API gateway to access 60+ models (GPT-5.2, Claude, Gemini, DeepSeek, Sora."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ccapi@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81791778?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ccapi",
+      "url": "https://clawhub.ai/skills/ccapi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ccapi",
+    "url": "https://clawhub.ai/skills/ccapi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ccapi-09e613e5505bde71.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ccapi@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ccapi-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:05cdfb932a6a6ce3eb5f02c989ff059153b39e47bffbe3c0d44d52ad9268917a",
+      "artifactSizeBytes": 2555
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T13:17:04.193Z"
+}

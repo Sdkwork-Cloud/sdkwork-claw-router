@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42868,
+  "uuid": "skill-clawhub-pilot-incident-response-setup",
+  "skillKey": "clawhub-pilot-incident-response-setup",
+  "name": "Pilot Incident Response Setup",
+  "summary": "Deploy an incident response pipeline with 4 agents. Use this skill when: 1. User wants to set up automated incident detection and response 2. User is configu...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_incident_response_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "Deploy an incident response pipeline with 4 agents",
+        "Use this skill when: 1",
+        "User wants to set up automated incident detection and response 2",
+        "User is configu..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-incident-response-setup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-incident-response-setup",
+      "url": "https://clawhub.ai/skills/pilot-incident-response-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-incident-response-setup",
+    "url": "https://clawhub.ai/skills/pilot-incident-response-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-incident-response-setup-c1922a54c1f95b08.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-incident-response-setup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-incident-response-setup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ddb262a49c966387de55539da31da96af480cc80b95b9095c89b53a68216606c",
+      "artifactSizeBytes": 1995
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T01:36:35.389Z"
+}

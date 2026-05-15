@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-privacy-guard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_privacy_guard",
+  "skill": {
+    "id": 46230,
+    "skillKey": "clawhub-skill-privacy-guard",
+    "name": "skill-privacy-guard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-privacy-guard",
+    "url": "https://clawhub.ai/skills/skill-privacy-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-privacy-guard-cac4e7d9e9a09c5e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "STOPS all sensitive information from entering skill files. Automatically blocks usernames, paths, personal data when creating or updating skills. CRITICAL -..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhanggroot7",
+      "userId": "s17ew4e4gyxp8tpg5e9czvzpj5850pwa",
+      "displayName": "zhanggroot7",
+      "image": "https://avatars.githubusercontent.com/u/253443270?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776933726513,
+      "changelog": "Initial release of skill-privacy-guard: \n\n- Automatically detects and blocks sensitive information from skill files, including usernames, file paths, credentials, personal data, network identifiers, and more.\n- Auto-triggers after every skill file creation or edit to ensure no sensitive data is saved.\n- Enforces strict sanitization with regular expressions for common secrets, PII, infrastructure details, and other confidential info.\n- Maintains all skill files in generic, shareable, and secure form by replacing or removing sensitive patterns.\n- CRITICAL: Runs at highest priority after any skill modification to guarantee privacy protection.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:27f79030aa74f169a6bc60eacab8f21706487afaa32842908bff2fdd799d8e74"
+}

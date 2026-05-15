@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58098,
+  "uuid": "skill-clawhub-fcp-assistant",
+  "skillKey": "clawhub-fcp-assistant",
+  "name": "FCP Assistant",
+  "summary": "Auto video production, TTS voiceover, media management, batch export | AI 自动成片、TTS 配音、素材管理、批量导出. Triggers: FCP, Final Cut, make video, auto video, voiceover,...",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fcp_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lasbder-ops",
+      "features": [
+        "Auto video production, TTS voiceover, media management, batch export | AI 自动成片、TTS 配音、素材管理、批量导出",
+        "Triggers: FCP, Final Cut, make video, auto video, voiceover,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fcp-assistant@2.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/251972173?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fcp-assistant",
+      "url": "https://clawhub.ai/skills/fcp-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fcp-assistant",
+    "url": "https://clawhub.ai/skills/fcp-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fcp-assistant-af9fa682cdaf9596.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fcp-assistant@2.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fcp-assistant-2.2.0.json",
+      "version": "2.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:13703483331c0914cd7522080a2c1ee0e4751643f4b19648a040a2a32f226ce3",
+      "artifactSizeBytes": 2000
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T10:40:59.786Z"
+}

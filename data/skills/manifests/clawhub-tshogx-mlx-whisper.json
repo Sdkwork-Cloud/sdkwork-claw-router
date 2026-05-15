@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24137,
+  "uuid": "skill-clawhub-tshogx-mlx-whisper",
+  "skillKey": "clawhub-tshogx-mlx-whisper",
+  "name": "mlx-whisper",
+  "summary": "Local speech-to-text with MLX Whisper (Apple Silicon optimized, no API key).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tshogx_mlx_whisper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shiwen Han",
+      "features": [
+        "Local speech-to-text with MLX Whisper (Apple Silicon optimized, no API key)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tshogx-mlx-whisper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46259514?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tshogx-mlx-whisper",
+      "url": "https://clawhub.ai/skills/tshogx-mlx-whisper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tshogx-mlx-whisper",
+    "url": "https://clawhub.ai/skills/tshogx-mlx-whisper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tshogx-mlx-whisper-e64c9ac95ffb6e00.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tshogx-mlx-whisper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tshogx-mlx-whisper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba8dd18baa817735dff296d32e5bf62a262998c06372b2b9ca91c715135e8731",
+      "artifactSizeBytes": 2157
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T11:33:22.052Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/html-publisher@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.html_publisher",
+  "skill": {
+    "id": 64428,
+    "skillKey": "clawhub-html-publisher",
+    "name": "html-publisher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "html-publisher",
+    "url": "https://clawhub.ai/skills/html-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/html-publisher-ed105034a1f7e3b1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将 HTML 内容发布为在线网页并返回可访问的 URL。当用户想把 HTML 发布上线、生成分享链接、或需要把网页内容转为公开 URL 时调用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huyi9531",
+      "userId": "s170a0qka1xk58nc8bmxjg53ns8430cc",
+      "displayName": "AIconductor",
+      "image": "https://avatars.githubusercontent.com/u/128768925?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775108773595,
+      "changelog": "- 添加了 gnomic-cli 的开源地址信息，方便用户获取源码和文档\n- 其余内容无更改，功能和用法保持不变",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ae2abb7e45aaf849f17ac5bc350bdb2e9d86064932c7db6e24cfdec4de222dd9"
+}

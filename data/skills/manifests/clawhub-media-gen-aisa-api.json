@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49683,
+  "uuid": "skill-clawhub-media-gen-aisa-api",
+  "skillKey": "clawhub-media-gen-aisa-api",
+  "name": "Media Gen",
+  "summary": "Generate images and videos with AIsa. Supports four image models (Google Gemini 3 Pro Image, Alibaba Wan 2.7 image + image-pro, ByteDance Seedream) and four...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.media_gen_aisa_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bibaofeng",
+      "features": [
+        "Generate images and videos with AIsa",
+        "Supports four image models (Google Gemini 3 Pro Image, Alibaba Wan 2.7 image + image-pro, ByteD."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/media-gen-aisa-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86095131?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "media-gen-aisa-api",
+      "url": "https://clawhub.ai/skills/media-gen-aisa-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "media-gen-aisa-api",
+    "url": "https://clawhub.ai/skills/media-gen-aisa-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/media-gen-aisa-api-f3758a4dafac3095.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/media-gen-aisa-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-media-gen-aisa-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4654224ca8ad6cb20e62db7911aed8dabeaf2133e88fffece0a507f6de679839",
+      "artifactSizeBytes": 2439
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T20:53:42.530Z"
+}

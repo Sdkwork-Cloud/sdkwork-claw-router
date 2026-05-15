@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58203,
+  "uuid": "skill-clawhub-group-buy-helper",
+  "skillKey": "clawhub-group-buy-helper",
+  "name": "Group Buy Helper",
+  "summary": "Analyze group-buy and bargain campaigns, estimate success probability, and suggest participation strategies. Use when the user asks to 分析拼团、估算砍价成功率、判断是否值得参团、...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.group_buy_helper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Analyze group-buy and bargain campaigns, estimate success probability, and suggest participatio.",
+        "Use when the user asks to 分析拼团、估算砍价成功率、判断是否值得参团、..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/group-buy-helper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "group-buy-helper",
+      "url": "https://clawhub.ai/skills/group-buy-helper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "group-buy-helper",
+    "url": "https://clawhub.ai/skills/group-buy-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/group-buy-helper-ddd0d47a104b69c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/group-buy-helper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-group-buy-helper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:07f69e784b75c4d746f31fd3eab19486ed6ec62a9ff56938fd911f5a8a5fdfb7",
+      "artifactSizeBytes": 1945
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T09:25:42.643Z"
+}

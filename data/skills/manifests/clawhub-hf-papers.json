@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22454,
+  "uuid": "skill-clawhub-hf-papers",
+  "skillKey": "clawhub-hf-papers",
+  "name": "HF Papers",
+  "summary": "Browse trending papers, search by keyword, and get paper details from Hugging Face Papers",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hf_papers",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Will.hou",
+      "features": [
+        "Browse trending papers, search by keyword, and get paper details from Hugging Face Papers"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hf-papers@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8574759?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hf-papers",
+      "url": "https://clawhub.ai/skills/hf-papers"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hf-papers",
+    "url": "https://clawhub.ai/skills/hf-papers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hf-papers-2aa40f0f7bd84a3f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hf-papers@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-hf-papers-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e8a041aeb034dd4be17d2b879828b9a546fccfc170c6fb483ed23639d4541436",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T09:33:34.739Z"
+}

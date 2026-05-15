@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-sec-blogger-repo@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_sec_blogger_repo",
+  "skill": {
+    "id": 24586,
+    "skillKey": "clawhub-auto-sec-blogger-repo",
+    "name": "Auto Sec Blogger Repo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-sec-blogger-repo",
+    "url": "https://clawhub.ai/skills/auto-sec-blogger-repo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-sec-blogger-repo-1a66d85b28e44d14.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Collects security news from multiple sources, generates expert-level blog posts with GLM-4.7, publishes drafts to Notion, and auto-deploys approved posts to..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rebugui",
+      "userId": "s175zt27th00qfbj07phqnkqtn83k9pg",
+      "displayName": "rebugui",
+      "image": "https://avatars.githubusercontent.com/u/51498462?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 397,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773473980170,
+      "changelog": "auto-sec-blogger-repo 1.0.1\n\n- Added a comprehensive README.md for user onboarding and documentation.\n- No changes to functionality; documentation update only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c179cb9877050c409d67e8094b98307b5f94e01615b352d2f393687492b68c35"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/podcast-video-editing-software@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.podcast_video_editing_software",
+  "skill": {
+    "id": 43575,
+    "skillKey": "clawhub-podcast-video-editing-software",
+    "name": "Podcast Video Editing Software"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "podcast-video-editing-software",
+    "url": "https://clawhub.ai/skills/podcast-video-editing-software",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/podcast-video-editing-software-15cc5891e9f9042b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 45-minute raw podcast recording with two speakers into 1080p polished podcast videos just by typing what you need. Whether it's editing raw podcast re..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776027887817,
+      "changelog": "- Initial release of Podcast Video Editing Software.\n- Upload raw podcast video and describe desired edits; get a polished 1080p episode in 1-2 minutes.\n- No need for dragging timelines or export settings; all processing happens on cloud GPU nodes.\n- Supports file uploads, aspect ratio changes, text overlays, BGM, quick exports, and session-based workflows.\n- Handles authentication and session setup automatically; 100 free credits with quick anonymous sign-up.\n- Export to various formats, including MP4, MOV, and audio files.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:097d251a73e8637a16693479b23345062802ab3333d889c24a42a68ee25b886c"
+}

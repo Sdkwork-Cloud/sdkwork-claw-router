@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26705,
+  "uuid": "skill-clawhub-orderly-deposit-withdraw",
+  "skillKey": "clawhub-orderly-deposit-withdraw",
+  "name": "Orderly Deposit Withdraw",
+  "summary": "Handle token deposits and withdrawals across chains, including allowance approval, vault interactions, and cross-chain operations",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.orderly_deposit_withdraw",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mario Reder",
+      "features": [
+        "Handle token deposits and withdrawals across chains, including allowance approval, vault intera."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/orderly-deposit-withdraw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5855071?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "orderly-deposit-withdraw",
+      "url": "https://clawhub.ai/skills/orderly-deposit-withdraw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "orderly-deposit-withdraw",
+    "url": "https://clawhub.ai/skills/orderly-deposit-withdraw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/orderly-deposit-withdraw-a3e008b26152ebf8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/orderly-deposit-withdraw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-orderly-deposit-withdraw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:89a8fbc6287b68111b05f24d074a25b975bd33d13dde4ee28ce58117df75d089",
+      "artifactSizeBytes": 2434
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T16:23:32.128Z"
+}

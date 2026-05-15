@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13568,
+  "uuid": "skill-clawhub-mlx-tts",
+  "skillKey": "clawhub-mlx-tts",
+  "name": "MLX TTS",
+  "summary": "Text-To-Speech with MLX (Apple Silicon) and opensource models (default QWen3-TTS) locally.",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mlx_tts",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "guoqiao",
+      "features": [
+        "Text-To-Speech with MLX (Apple Silicon) and opensource models (default QWen3-TTS) locally."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mlx-tts@0.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1306111?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mlx-tts",
+      "url": "https://clawhub.ai/skills/mlx-tts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mlx-tts",
+    "url": "https://clawhub.ai/skills/mlx-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mlx-tts-9f389e1d799fa2e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mlx-tts@0.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-mlx-tts-0.0.3.json",
+      "version": "0.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d0ac5cd359f3cb06e3e4e6aa710389f792a5a59a0e961b483eda588c58c93a07",
+      "artifactSizeBytes": 2135
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T02:46:46.812Z"
+}

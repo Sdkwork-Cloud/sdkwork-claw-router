@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/neta-community@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neta_community",
+  "skill": {
+    "id": 51228,
+    "skillKey": "clawhub-neta-community",
+    "name": "Neta Community"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neta-community",
+    "url": "https://clawhub.ai/skills/neta-community",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neta-community-d62b2a3e3bfcc21e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Neta API community skill — browse interactive feeds, view collection details, like and interact with content, and browse content by tags and characters in a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huxiuhan",
+      "userId": "publishers:huxiuhan",
+      "displayName": "Hu Xiuhan",
+      "image": "https://avatars.githubusercontent.com/u/1184998?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 351,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773742622973,
+      "changelog": "Initial release of neta-community skill.\n\n- Enables browsing interactive community feeds and viewing collection details.\n- Supports liking and interacting with works directly from the feed.\n- Allows browsing and querying content by tags and characters.\n- Distinguishes use cases from neta-suggest (deep research) and neta-creative (content creation).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ff0f0398900e1eb5a16f4eb11a3a55926b9337e9099ff62242fa829da6249111"
+}

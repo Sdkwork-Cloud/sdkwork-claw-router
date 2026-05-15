@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-hosting@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_hosting",
+  "skill": {
+    "id": 10484,
+    "skillKey": "clawhub-image-hosting",
+    "name": "image-hosting"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-hosting",
+    "url": "https://clawhub.ai/skills/image-hosting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-hosting-93606b341500d86c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Upload images to img402.dev and get a public URL. Free tier: 1MB max, 7-day retention, no auth. Use when the agent needs a hosted image URL — for sharing in messages, embedding in documents, posting to social platforms, or any context that."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rahulgi",
+      "userId": "publishers:rahulgi",
+      "displayName": "rahulgi",
+      "image": "https://avatars.githubusercontent.com/u/2237985?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2182,
+      "installsAllTime": 23,
+      "installsCurrent": 22,
+      "stars": 6,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770801719559,
+      "changelog": "- Initial release: upload images to img402.dev and receive a public URL.\n- Free tier: images up to 1MB, 7-day retention, supports PNG, JPEG, GIF, WebP, no authentication required.\n- Provides ready-to-use curl commands for quick uploads.\n- Includes resizing tips for large images and details on rate limits.\n- Paid tier option: longer retention (1 year) and larger images (up to 5MB) via x402 token.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9719b78bc7f7fb0dc562d4da8a69224f1792bd8211838d42ab40672e30379df3"
+}

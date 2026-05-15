@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/truematch@0.1.33",
+  "version": "0.1.33",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.truematch",
+  "skill": {
+    "id": 48492,
+    "skillKey": "clawhub-truematch",
+    "name": "Truematch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "truematch",
+    "url": "https://clawhub.ai/skills/truematch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/truematch-707979a9c6d1259a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Every dating profile is a performance. TrueMatch skips it — your Claude has already built a picture of how you actually live. It negotiates on your behalf. W..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "goeldivyam",
+      "userId": "publishers:goeldivyam",
+      "displayName": "goeldivyam",
+      "image": "https://avatars.githubusercontent.com/u/152270353?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 577,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "0.1.33",
+      "createdAt": 1772626650929,
+      "changelog": "fix: remove truematch from requires.bins — skill was permanently ineligible on all setups",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f5fc3dbf03ad9db0b998a02c084c82a1152bdee43dda10c3563a82a3bdccdbc7"
+}

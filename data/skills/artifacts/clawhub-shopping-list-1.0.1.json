@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shopping-list@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shopping_list",
+  "skill": {
+    "id": 22793,
+    "skillKey": "clawhub-shopping-list",
+    "name": "Shopping List"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shopping-list",
+    "url": "https://clawhub.ai/skills/shopping-list",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shopping-list-5dc537310e16f1b9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Conversational shopping list with categories, family sharing, and purchase history. Add items, check them off, organize by category — all through natural lan..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ajeenkya",
+      "userId": "publishers:ajeenkya",
+      "displayName": "Ajeenkya Bhatalkar",
+      "image": "https://avatars.githubusercontent.com/u/173892?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 795,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771976330161,
+      "changelog": "- Updated the initial user prompt to \"What's your name? I'll use it to track who added each item.\"\n- No functional logic changes; documentation clarification only.\n- Added _meta.json file for metadata tracking.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ee64f3054a4662ab7dc8778598679a996dab881e74831090f58487ed10ed6c9e"
+}

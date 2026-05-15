@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/performance-review-narrative@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.performance_review_narrative",
+  "skill": {
+    "id": 48919,
+    "skillKey": "clawhub-performance-review-narrative",
+    "name": "Performance Review Narrative"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "performance-review-narrative",
+    "url": "https://clawhub.ai/skills/performance-review-narrative",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/performance-review-narrative-879393d5fb322ddb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transforms collected goals, accomplishments, metrics, and feedback into a balanced, evidence-based performance review narrative with growth and goal alignment."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 90,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778034448311,
+      "changelog": "- Initial release: Generates a balanced, evidence-backed performance review narrative from scattered accomplishments.\n- Clusters accomplishments into impact themes with clear business value.\n- Provides structured output: executive summary, impact themes, evidence, growth narrative, and next-period goals.\n- Requires explicit inputs including review period, goals, accomplishments, metrics, and feedback.\n- Includes clear safety boundaries to prevent fabrication or misleading advice.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7ccef989607b6cc2c6b322eff21a0a7e06ae2d82567bc6b0493f5e5ee2cc2d48"
+}

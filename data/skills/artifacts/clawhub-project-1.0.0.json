@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/project@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.project",
+  "skill": {
+    "id": 19225,
+    "skillKey": "clawhub-project",
+    "name": "Project"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "project",
+    "url": "https://clawhub.ai/skills/project",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/project-244210e48437b655.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The AI project manager that never forgets, never drops a task, and never lets a deadline sneak up on anyone. Break any goal into phases, tasks, and milestone..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "duclawbot",
+      "userId": "publishers:duclawbot",
+      "displayName": "Duclawbot",
+      "image": "https://avatars.githubusercontent.com/u/216468018?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 579,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773040143717,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c71d9c256988fa9d1a12de0c58ca1f9437d14b58c95bc893725a0cb5feb11819"
+}

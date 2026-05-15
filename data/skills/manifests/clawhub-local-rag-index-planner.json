@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59947,
+  "uuid": "skill-clawhub-local-rag-index-planner",
+  "skillKey": "clawhub-local-rag-index-planner",
+  "name": "Local Rag Index Planner",
+  "summary": "规划本地知识库的目录、分片粒度、命名、更新时间与访问边界，而不是直接堆 RAG。；use for rag, indexing, knowledge workflows；do not use for 直接部署向量数据库, 忽略权限隔离.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_rag_index_planner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "规划本地知识库的目录、分片粒度、命名、更新时间与访问边界，而不是直接堆 RAG。；use for rag, indexing, knowledge workflows；do not use."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/local-rag-index-planner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "local-rag-index-planner",
+      "url": "https://clawhub.ai/skills/local-rag-index-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-rag-index-planner",
+    "url": "https://clawhub.ai/skills/local-rag-index-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-rag-index-planner-7185b592f4e8ef3c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/local-rag-index-planner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-local-rag-index-planner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b2baa46b28dc27bd8fb1227135095d7d811831e2e3c056ec5c6617a366a9005c",
+      "artifactSizeBytes": 2624
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T06:32:20.093Z"
+}

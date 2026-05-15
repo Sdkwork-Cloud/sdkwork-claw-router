@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-trending-daily@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_trending_daily",
+  "skill": {
+    "id": 61466,
+    "skillKey": "clawhub-github-trending-daily",
+    "name": "Github Trending Daily"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-trending-daily",
+    "url": "https://clawhub.ai/skills/github-trending-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-trending-daily-bd3dc97399079b25.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "定时获取并推送每日、每周或每月 GitHub Trending 热门项目至钉钉群，支持测试和只获取模式。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiangzhiyu",
+      "userId": "s17a5qqen3mfw2emw3fpcjype183gbfr",
+      "displayName": "johnson",
+      "image": "https://avatars.githubusercontent.com/u/2647732?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 543,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772434991125,
+      "changelog": "Initial release of github-trending-daily\n\n- Automatically fetches daily, weekly, or monthly GitHub Trending projects\n- Pushes trending lists to a specified DingTalk group\n- Supports dry-run and no-push modes for testing and customization\n- Provides sample crontab configurations for scheduled delivery\n- Customizable message format using Markdown\n- Includes troubleshooting tips and related skills references",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ff0143ac79be4ac2e2374f265de9622e8190eb928a61e75adf7c9217ba54d1b2"
+}

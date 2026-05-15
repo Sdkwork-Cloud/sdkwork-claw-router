@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/plant-care-doctor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plant_care_doctor",
+  "skill": {
+    "id": 54919,
+    "skillKey": "clawhub-plant-care-doctor",
+    "name": "Plant Care Doctor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plant-care-doctor",
+    "url": "https://clawhub.ai/skills/plant-care-doctor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plant-care-doctor-24c6f3de855a61ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Diagnose common plant problems and get personalized care plans — stop killing your houseplants."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 60,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778218979103,
+      "changelog": "Initial release — diagnose plant issues and provide step-by-step care plans for houseplants.\n\n- Identifies symptoms, analyzes likely causes, and explains reasoning to the user\n- Offers actionable care plans: watering, light, humidity, soil, fertilizer, and pest treatment\n- Supports species-specific advice when possible; provides quick reference guides\n- Prioritizes pet/child safety and recommends non-toxic remedies\n- Includes monitoring tips and when to seek professional help\n- Uses an empathetic, educational tone for plant owners of all experience levels",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cf86bf3680d251100b20533ee86f95f8700a10b3da456742a37a87ed8c162972"
+}

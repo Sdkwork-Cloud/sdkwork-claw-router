@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54194,
+  "uuid": "skill-clawhub-browser-audio-capture",
+  "skillKey": "clawhub-browser-audio-capture",
+  "name": "Browser Audio Capture",
+  "summary": "Capture audio from any browser tab — meetings, YouTube, podcasts, courses, webinars — and stream to any AI agent. Zero API keys, works with any framework.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_audio_capture",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jarvis563",
+      "features": [
+        "Capture audio from any browser tab — meetings, YouTube, podcasts, courses, webinars — and strea.",
+        "Zero API keys, works with any framework."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/browser-audio-capture@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258515214?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "browser-audio-capture",
+      "url": "https://clawhub.ai/skills/browser-audio-capture"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-audio-capture",
+    "url": "https://clawhub.ai/skills/browser-audio-capture",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-audio-capture-ea2b2a1873cdf3d5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/browser-audio-capture@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-browser-audio-capture-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:85a773a1eb3901b61a8a29e8d7e7f8bb63af77c13bb2dca350b93c6faa606dc7",
+      "artifactSizeBytes": 2276
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T23:43:03.101Z"
+}

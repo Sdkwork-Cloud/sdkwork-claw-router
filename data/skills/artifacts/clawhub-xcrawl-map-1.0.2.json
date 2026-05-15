@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xcrawl-map@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xcrawl_map",
+  "skill": {
+    "id": 14603,
+    "skillKey": "clawhub-xcrawl-map",
+    "name": "XCrawl Map"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xcrawl-map",
+    "url": "https://clawhub.ai/skills/xcrawl-map",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xcrawl-map-678f9d591ec14286.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill for XCrawl map tasks, including site URL discovery, regex filtering, scope estimation, and crawl planning before full-site crawling."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wykings",
+      "userId": "s17244kdayw88439d10krayx2d842n1y",
+      "displayName": "wykings",
+      "image": "https://avatars.githubusercontent.com/u/15644256?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1068,
+      "installsAllTime": 11,
+      "installsCurrent": 10,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773285638020,
+      "changelog": "Initial release of xcrawl-map skill for site URL discovery and crawl planning:\n\n- Supports XCrawl Map API for site URL mapping with regex filtering, subdomain inclusion, and optional query ignoring.\n- Reads API key only from `~/.xcrawl/config.json`; no global environment variables required.\n- Requires `curl` or `node` tools; no Python or extra scripts.\n- Includes setup guidance for XCrawl account and free credits activation.\n- Provides sample Bash (curl) and Node usage examples.\n- Raw API responses are returned as-is unless a summary is explicitly requested.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b7984559e5ac975a067d271f33d02e1f51bc082907ae5b94d9ee071cbd79b00a"
+}

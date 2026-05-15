@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gh-taskqueue@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gh_taskqueue",
+  "skill": {
+    "id": 42967,
+    "skillKey": "clawhub-gh-taskqueue",
+    "name": "Taskqueue"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gh-taskqueue",
+    "url": "https://clawhub.ai/skills/gh-taskqueue",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gh-taskqueue-39450fe20e0f562e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "In-memory priority task queue for AI agents. Create tasks with priorities and tags, claim the next highest-priority task, mark tasks complete or failed, filt..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mirni",
+      "userId": "s1711srsc0t5e7tx4tkwpmygw584bfmq",
+      "displayName": "mirni",
+      "image": "https://avatars.githubusercontent.com/u/13551232?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776118008480,
+      "changelog": "- Initial release of gh-taskqueue: an in-memory priority task queue for AI agent workflows.\n- Supports creating tasks with priorities and tags.\n- Allows claiming the highest-priority pending task.\n- Tasks can be marked as complete or failed.\n- Filter tasks by status or tag and retrieve queue statistics.\n- Lightweight API endpoints provided for easy integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ab0c3cbaff12a0f3c8c59887ea9dae91eef771a06efd33c9dbf6810f0e4caedb"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meshcore-marketplace@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meshcore_marketplace",
+  "skill": {
+    "id": 50431,
+    "skillKey": "clawhub-meshcore-marketplace",
+    "name": "MeshCore Marketplace"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meshcore-marketplace",
+    "url": "https://clawhub.ai/skills/meshcore-marketplace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meshcore-marketplace-7751d9900401accd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover and call paid AI agents from the MeshCore marketplace. Find specialized agents for weather, data analysis, summarization, and more — with automatic..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anegash",
+      "userId": "publishers:anegash",
+      "displayName": "anegash",
+      "image": "https://avatars.githubusercontent.com/u/4349479?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 495,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772298137125,
+      "changelog": "Initial release — discover and call paid AI agents from the MeshCore marketplace",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f7198b0f9002bc5105f43fa6b6a7196927d75a8fb2312169aa6a1cb414bea075"
+}

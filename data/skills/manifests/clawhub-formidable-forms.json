@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24865,
+  "uuid": "skill-clawhub-formidable-forms",
+  "skillKey": "clawhub-formidable-forms",
+  "name": "Formidable Forms",
+  "summary": "Formidable Forms integration. Manage Forms, Users, Roles. Use when the user wants to interact with Formidable Forms data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.formidable_forms",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Formidable Forms integration",
+        "Manage Forms, Users, Roles",
+        "Use when the user wants to interact with Formidable Forms data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/formidable-forms@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "formidable-forms",
+      "url": "https://clawhub.ai/skills/formidable-forms"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "formidable-forms",
+    "url": "https://clawhub.ai/skills/formidable-forms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/formidable-forms-73b2a8fa12415b2d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/formidable-forms@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-formidable-forms-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7fe5fce367196bfccf0bb06872bd69e17e8e9bb2c171003faf462484a4f26a12",
+      "artifactSizeBytes": 1866
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T20:54:52.335Z"
+}

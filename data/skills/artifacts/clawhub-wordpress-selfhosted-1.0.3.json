@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wordpress-selfhosted@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wordpress_selfhosted",
+  "skill": {
+    "id": 19614,
+    "skillKey": "clawhub-wordpress-selfhosted",
+    "name": "WordPress Self-Hosted"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wordpress-selfhosted",
+    "url": "https://clawhub.ai/skills/wordpress-selfhosted",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wordpress-selfhosted-082baa2809e08194.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage a self-hosted WordPress site via SSH+WP-CLI (primary) and WP REST API (when direct HTTPS access is available). Use when asked to write, draft, publish..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eddygk",
+      "userId": "s1722zx8vry8w4hn5t6vf7zsq183n6a6",
+      "displayName": "Eddy",
+      "image": "https://avatars.githubusercontent.com/u/832737?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 502,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773620466759,
+      "changelog": "Declare WP_HOST/WP_SSH_USER/WP_ROOT as required env vars (gating); switch SSH default to StrictHostKeyChecking=accept-new; document StrictHostKeyChecking=no as CI-only opt-in",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e85ca9bddcbb24db15c00418ea0a380cce50bb66183d389049a00a70ab991136"
+}

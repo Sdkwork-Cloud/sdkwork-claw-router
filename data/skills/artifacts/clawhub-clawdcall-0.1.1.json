@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawdcall@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdcall",
+  "skill": {
+    "id": 44362,
+    "skillKey": "clawhub-clawdcall",
+    "name": "ClawdCall"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdcall",
+    "url": "https://clawhub.ai/skills/clawdcall",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdcall-93c47b4a6fc62f7e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Orchestrate outbound AI voice calls and asynchronous call results through ClawdCall from OpenClaw. Use when: placing outbound voice calls, creating call task..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chitrang89",
+      "userId": "s173m04cvvxzy0z4zvbwpr59f984rpgr",
+      "displayName": "Chitrang  T",
+      "image": "https://avatars.githubusercontent.com/u/1250576?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1776070280527,
+      "changelog": "Initial ClawdCall OpenClaw skill with optional callback support",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c1b0cd39014e69036d0db56a7c348e41bd3539825a00c9fa2a9001becccc9667"
+}

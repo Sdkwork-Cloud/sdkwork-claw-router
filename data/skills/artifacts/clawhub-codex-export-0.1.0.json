@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/codex-export@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codex_export",
+  "skill": {
+    "id": 27991,
+    "skillKey": "clawhub-codex-export",
+    "name": "codex-export"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codex-export",
+    "url": "https://clawhub.ai/skills/codex-export",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codex-export-2662492b8cd328da.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Export a Codex CLI or Codex Desktop (App) session to a Markdown transcript. Use when the user asks to export, save, share, or review a past chat, session, or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jinghan23",
+      "userId": "publishers:jinghan23",
+      "displayName": "jinghan23",
+      "image": "https://avatars.githubusercontent.com/u/60429420?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 336,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773833177606,
+      "changelog": "Initial release of codex-export.\n\n- Export Codex CLI or Codex Desktop sessions to Markdown transcripts.\n- Supports listing recent sessions, brief mode (user + assistant only), and exporting by session ID.\n- Automatically filters system messages and environment context blocks.\n- Handles both Codex CLI and Desktop app sessions.\n- Includes or omits tool call outputs based on `--brief` flag.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b246c6ccce25395ec474e03f2ecd586f1068eda37d449b3410b98efc19ca6cbc"
+}

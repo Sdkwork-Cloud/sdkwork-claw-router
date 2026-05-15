@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69673,
+  "uuid": "skill-clawhub-smart-chatbot-builder",
+  "skillKey": "clawhub-smart-chatbot-builder",
+  "name": "smart-chatbot-builder（智能聊天机器人构建器，快速创建客服/销售/内部助手聊天机器人，支持知识库、多轮对话、多渠道集成。）",
+  "summary": "智能聊天机器人构建器，快速创建客服/销售/内部助手聊天机器人，支持知识库、多轮对话、API 集成。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_chatbot_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "careytian",
+      "features": [
+        "智能聊天机器人构建器，快速创建客服/销售/内部助手聊天机器人，支持知识库、多轮对话、API 集成。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-chatbot-builder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264030747?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-chatbot-builder",
+      "url": "https://clawhub.ai/skills/smart-chatbot-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-chatbot-builder",
+    "url": "https://clawhub.ai/skills/smart-chatbot-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-chatbot-builder-fc7334ef7b32ab74.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-chatbot-builder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-chatbot-builder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9bd6c068dae1bf9039f87debe0bdedd07a2c775fd332590b1445cd8d9779b710",
+      "artifactSizeBytes": 2526
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T14:41:30.773Z"
+}

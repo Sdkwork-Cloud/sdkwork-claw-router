@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-ops-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_ops_pro",
+  "skill": {
+    "id": 61970,
+    "skillKey": "clawhub-github-ops-pro",
+    "name": "Github Ops"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-ops-pro",
+    "url": "https://clawhub.ai/skills/github-ops-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-ops-pro-850aae17d5f2d0b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "GitHub 操作技能 - 创建仓库、推送代码、管理 Release。全自动，无需用户干预。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shenghoo123-png",
+      "userId": "s17dv44xed17vb7n7v728mr4dd846y7m",
+      "displayName": "shenghoo123-png",
+      "image": "https://avatars.githubusercontent.com/u/265226019?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775452802991,
+      "changelog": "- Initial release of github-ops skill for fully automated GitHub operations with no user intervention.\n- Supports automatic repository creation, code push, and release management using secure, pre-configured tokens.\n- Example commands and test cases provided for creating repositories, pushing code, and creating releases.\n- Integrated environment variable management for secure GITHUB_TOKEN handling.\n- Automated deployment workflow enabled, including Vercel integration.\n- Performance metrics and end-to-end automation status included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f475f0ce6c3c055c456ae865592fd7c94d78d1b5fddd0e7701519ac514457ccb"
+}

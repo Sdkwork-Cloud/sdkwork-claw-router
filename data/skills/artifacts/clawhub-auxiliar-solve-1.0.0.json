@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auxiliar-solve@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auxiliar_solve",
+  "skill": {
+    "id": 53418,
+    "skillKey": "clawhub-auxiliar-solve",
+    "name": "Auxiliar Solve"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auxiliar-solve",
+    "url": "https://clawhub.ai/skills/auxiliar-solve",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auxiliar-solve-b99fca00363f3723.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Ranked installable tools for agent jobs — OCR, PDF extraction, NFS-e invoices, bookkeeping, boletos, receipts, web scraping. Reproducible evals on real-world..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tlalvarez",
+      "userId": "s17arz86bvw2nwj17032xx7b3185e0j3",
+      "displayName": "Tlalvarez",
+      "image": "https://avatars.githubusercontent.com/u/167329671?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "v0.1.0",
+      "createdAt": 1777009287225,
+      "changelog": "auxiliar-solve v0.1.0\n\n- Initial release of the auxiliar-solve skill for agent task tool ranking.\n- Supports ranked recommendations for OCR, PDF extraction, Brazilian NFS-e invoices, boletos, receipts, web scraping, and bookkeeping.\n- Provides reproducible evals on real-world corpora, with detailed scorecards and installation instructions.\n- Enables agents to discover, compare, and select tools based on accuracy, speed, cost, and compatibility.\n- Offers transparent evaluation methodology, alternatives considered, and agent compatibility information.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dac63cc1e1cba0d490b78dc662a8162a99e176f2180628fd9ec956fa5473cf83"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sync-discord-identity@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sync_discord_identity",
+  "skill": {
+    "id": 36075,
+    "skillKey": "clawhub-sync-discord-identity",
+    "name": "Sync Discord Identity"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sync-discord-identity",
+    "url": "https://clawhub.ai/skills/sync-discord-identity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sync-discord-identity-781f7a9605bfcef8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sync a Discord bot profile into an OpenClaw agent IDENTITY.md, save the avatar under workspace/avatars, and safely add Avatar and Discord metadata."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xli",
+      "userId": "s17asytjngwetpy8rf9kwwm5j983zvw4",
+      "displayName": "Wei Li",
+      "image": "https://avatars.githubusercontent.com/u/27795509?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1776719733926,
+      "changelog": "Read token from current workspace openclaw.json",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bc23abb9af49c9533b469f33ab4d81192216961c2f27d56eea75972b19a0c604"
+}

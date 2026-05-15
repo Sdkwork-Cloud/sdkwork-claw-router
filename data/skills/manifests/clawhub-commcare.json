@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26778,
+  "uuid": "skill-clawhub-commcare",
+  "skillKey": "clawhub-commcare",
+  "name": "Commcare",
+  "summary": "CommCare integration. Manage data, records, and automate workflows. Use when the user wants to interact with CommCare data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.commcare",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "CommCare integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with CommCare data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/commcare@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "commcare",
+      "url": "https://clawhub.ai/skills/commcare"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "commcare",
+    "url": "https://clawhub.ai/skills/commcare",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/commcare-da8566b62f16a2f7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/commcare@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-commcare-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7cedc4c70e66adb31e4633f71fbd443038f45e0f4ff19429205f72481a475883",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T21:09:09.705Z"
+}

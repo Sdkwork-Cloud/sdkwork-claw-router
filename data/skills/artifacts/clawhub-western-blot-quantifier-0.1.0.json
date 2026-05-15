@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/western-blot-quantifier@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.western_blot_quantifier",
+  "skill": {
+    "id": 51022,
+    "skillKey": "clawhub-western-blot-quantifier",
+    "name": "Western Blot Quantifier"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "western-blot-quantifier",
+    "url": "https://clawhub.ai/skills/western-blot-quantifier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/western-blot-quantifier-752477899821feee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically identify Western Blot gel bands, perform densitometric analysis, and calculate normalized values relative to loading controls (GAPDH, β-actin,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lyla0921",
+      "userId": "publishers:lyla0921",
+      "displayName": "Lyla0921",
+      "image": "https://avatars.githubusercontent.com/u/219433372?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 356,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773395019153,
+      "changelog": "Initial release: Automated tool for quantifying and normalizing Western Blot gel bands.\n\n- Automatically detects bands and lanes in Western Blot images.\n- Performs densitometric analysis and background correction.\n- Supports normalization to loading controls (GAPDH, β-actin, Tubulin).\n- Exports quantitative results in CSV format.\n- Includes Python API and command line usage.\n- Batch analysis and various background correction methods supported.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eb110c2b09baf03df859871ab91830b4d6dc933627f1df0a8ffe3ded99067fbc"
+}

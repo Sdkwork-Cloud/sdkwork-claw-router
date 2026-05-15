@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editor-free-windows@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editor_free_windows",
+  "skill": {
+    "id": 42904,
+    "skillKey": "clawhub-video-editor-free-windows",
+    "name": "Video Editor Free Windows"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editor-free-windows",
+    "url": "https://clawhub.ai/skills/video-editor-free-windows",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editor-free-windows-53f396fe25d600aa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "edit raw video clips into edited MP4 clips with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. Windows PC users and casual creators use it for..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776770214758,
+      "changelog": "Initial release of Video Editor Free Windows — Edit and export videos easily on any Windows PC.\n\n- Allows users to upload and edit video files (MP4, MOV, AVI, WebM up to 500MB) with free cloud-based AI rendering.\n- 1080p MP4 export supported without installing paid software; full process takes 1-2 minutes per video.\n- Smart intent matching: recognizes prompts for export, upload, credits, status, and editing commands.\n- Simple onboarding with free token generation (100 credits, valid 7 days); setup is automatic and minimal.\n- Full export workflow and error handling included, with timeline summaries and common troubleshooting tips.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e477d98fe44481ab77f29d9f176261e2f7d8cf68d2d933bcaddb282c5d2d0f28"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-agent-add@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_agent_add",
+  "skill": {
+    "id": 58077,
+    "skillKey": "clawhub-feishu-agent-add",
+    "name": "feishuAgentAdd"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-agent-add",
+    "url": "https://clawhub.ai/skills/feishu-agent-add",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-agent-add-fa41c27f03582dc8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when users want to add a Feishu agent for OpenClaw, especially when they say things like “帮我增加一个名字叫xxx，用来做xxx的飞书agent”, want a guided prompt f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cyecho-io",
+      "userId": "publishers:cyecho-io",
+      "displayName": "cyecho-io",
+      "image": "https://avatars.githubusercontent.com/u/19159859?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 405,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773553168625,
+      "changelog": "Initial release of feishu-agent-add\n\n- Introduces a conversational skill for adding Feishu agents to OpenClaw without manual config editing.\n- Guides users through necessary input collection (agent name, purpose, app id/secret) with minimal questions.\n- Presents a summary preview before executing the setup script.\n- Runs a script to generate and update agent configuration, then summarizes results and next steps.\n- Supports both guided flows and ready-to-run terminal commands for advanced users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e7d25f54fe6a5205aa1ac397160e68a7aafe44e564f690f332eacb7d05fa2380"
+}

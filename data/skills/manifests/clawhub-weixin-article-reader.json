@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33409,
+  "uuid": "skill-clawhub-weixin-article-reader",
+  "skillKey": "clawhub-weixin-article-reader",
+  "name": "Weixin Article Reader",
+  "summary": "Extract the title, author, publish date, and full body text from Weixin official account article links on mp.weixin.qq.com. Use this skill when a user wants...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weixin_article_reader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RickNote",
+      "features": [
+        "Extract the title, author, publish date, and full body text from Weixin official account articl.",
+        "Use this skill when a user wants..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weixin-article-reader@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201586270?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weixin-article-reader",
+      "url": "https://clawhub.ai/skills/weixin-article-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weixin-article-reader",
+    "url": "https://clawhub.ai/skills/weixin-article-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weixin-article-reader-b7dca5633783f4be.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weixin-article-reader@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-weixin-article-reader-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0a87f4bad8f21c12c4dd3bb9a637817dc315e1bd130ca572aa3a43e08999ee34",
+      "artifactSizeBytes": 1995
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T08:52:40.795Z"
+}

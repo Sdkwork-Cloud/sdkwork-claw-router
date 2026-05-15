@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44739,
+  "uuid": "skill-clawhub-drift-bottle",
+  "skillKey": "clawhub-drift-bottle",
+  "name": "Drift Bottle",
+  "summary": "Retrieve a random drift bottle message with life insights, stories, wishes, or inspirational quotes for inspiration or reflection.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.drift_bottle",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "enihsago",
+      "features": [
+        "Retrieve a random drift bottle message with life insights, stories, wishes, or inspirational qu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/drift-bottle@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265008639?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "drift-bottle",
+      "url": "https://clawhub.ai/skills/drift-bottle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "drift-bottle",
+    "url": "https://clawhub.ai/skills/drift-bottle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/drift-bottle-4d7fca39a1b81df2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/drift-bottle@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-drift-bottle-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c6e94123eea43ef14d2dd8c1697fe5fb5c7193a27f2c32dc63f5a8d97d3629a8",
+      "artifactSizeBytes": 2167
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T07:22:15.603Z"
+}

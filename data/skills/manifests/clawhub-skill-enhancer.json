@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27932,
+  "uuid": "skill-clawhub-skill-enhancer",
+  "skillKey": "clawhub-skill-enhancer",
+  "name": "Skill Auditor & Enhancer",
+  "summary": "Periodically audit all workspace skills, learnings, memory, and configuration files to recommend refactoring, new skill ideas, and workflow improvements. Tri...",
+  "version": "1.0.0-alpha",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_enhancer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "omaression",
+      "features": [
+        "Periodically audit all workspace skills, learnings, memory, and configuration files to recommen."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-enhancer@1.0.0-alpha",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/69020772?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-enhancer",
+      "url": "https://clawhub.ai/skills/skill-enhancer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-enhancer",
+    "url": "https://clawhub.ai/skills/skill-enhancer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-enhancer-5564c0d5ef056a78.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-enhancer@1.0.0-alpha",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-enhancer-1.0.0-alpha.json",
+      "version": "1.0.0-alpha",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c37aa54daba5512b540719200f8c6adacabf46310258a06869173a257497453f",
+      "artifactSizeBytes": 2550
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T00:38:26.530Z"
+}

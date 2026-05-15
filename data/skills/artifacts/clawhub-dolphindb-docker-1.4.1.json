@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dolphindb-docker@1.4.1",
+  "version": "1.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dolphindb_docker",
+  "skill": {
+    "id": 51554,
+    "skillKey": "clawhub-dolphindb-docker",
+    "name": "Dolphindb Docker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dolphindb-docker",
+    "url": "https://clawhub.ai/skills/dolphindb-docker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dolphindb-docker-c4d77e79a4614789.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate DolphinDB Docker deployment with auto architecture detection (ARM64/x86_64), smart memory allocation (50% rule), and full data persistence."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ugpoor",
+      "userId": "s177qqrp481qedfn5w9m5nmte183ge14",
+      "displayName": "superStupidBear",
+      "image": "https://avatars.githubusercontent.com/u/6762468?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 326,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.4.1",
+      "createdAt": 1776774514794,
+      "changelog": "- New automated deployment script: deploy-dolphindb.sh\n- Auto-detects CPU architecture (ARM64/x86_64) and system memory, allocating 50% of available RAM for Docker container.\n- Full data persistence for DolphinDB server directory and automatic license fingerprint collection.\n- Simplified usage examples for both shell and Python invocation.\n- Redesigned documentation (SKILL.md, README.md) with concise, practical deployment and troubleshooting instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1b8cf9e152685091e87b823358d1b68320ba0e3c8969e258b5037a3b48994768"
+}

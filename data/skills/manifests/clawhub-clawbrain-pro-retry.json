@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63290,
+  "uuid": "skill-clawhub-clawbrain-pro-retry",
+  "skillKey": "clawhub-clawbrain-pro-retry",
+  "name": "ClawBrain Smart Retry",
+  "summary": "v1.2 错误恢复：三级恢复策略 + 双模型共识 + 循环检测 + 降级告知 + 长对话恢复。出错自动换方案，不重复同样的错误。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawbrain_pro_retry",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "michaelfeng",
+      "features": [
+        "v1.2 错误恢复：三级恢复策略 + 双模型共识 + 循环检测 + 降级告知 + 长对话恢复。出错自动换方案，不重复同样的错误。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawbrain-pro-retry@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2228296?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawbrain-pro-retry",
+      "url": "https://clawhub.ai/skills/clawbrain-pro-retry"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawbrain-pro-retry",
+    "url": "https://clawhub.ai/skills/clawbrain-pro-retry",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawbrain-pro-retry-dc968d4e96e04aae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawbrain-pro-retry@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawbrain-pro-retry-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6821f660d0e1ddecad7cac2b86a3fbc53de363b42451f732ffd731e7c8c85898",
+      "artifactSizeBytes": 1944
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T04:56:41.599Z"
+}

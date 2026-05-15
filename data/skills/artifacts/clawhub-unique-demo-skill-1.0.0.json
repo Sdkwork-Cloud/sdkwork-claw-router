@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/unique-demo-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unique_demo_skill",
+  "skill": {
+    "id": 36627,
+    "skillKey": "clawhub-unique-demo-skill",
+    "name": "Unique Demo Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unique-demo-skill",
+    "url": "https://clawhub.ai/skills/unique-demo-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unique-demo-skill-ad85e4017417269c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Demonstrates dynamic JSON data processing and Node.js console output to showcase ClawHub skill capabilities."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhanglong12138",
+      "userId": "s174txc4rdgsxdv67j1x03jnt583k1tn",
+      "displayName": "Taolu",
+      "image": "https://avatars.githubusercontent.com/u/20243414?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774255786927,
+      "changelog": "unique-demo-skill 1.0.0\n\n- Initial release showcasing an improved demo for ClawHub.\n- Processes sample JSON data and demonstrates basic Node.js console output.\n- Designed to fulfill ClawHub skill requirements and replaces the previous placeholder.\n- Provides standalone example logic for output handling of simple lists.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b1b5f51865af202496ff6dffd12a2849a8c9ff607d8f584f64484e6f2cad2c6f"
+}

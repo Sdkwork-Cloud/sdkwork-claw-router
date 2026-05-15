@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32655,
+  "uuid": "skill-clawhub-brand-intelligence",
+  "skillKey": "clawhub-brand-intelligence",
+  "name": "Brand Intelligence",
+  "summary": "Search, compare, and analyze 5,600+ companies with AI visibility scores, knowledge graphs, and competitive intelligence across 30 industry verticals.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brand_intelligence",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sigai",
+      "features": [
+        "Search, compare, and analyze 5,600+ companies with AI visibility scores, knowledge graphs, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/brand-intelligence@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49531722?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "brand-intelligence",
+      "url": "https://clawhub.ai/skills/brand-intelligence"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brand-intelligence",
+    "url": "https://clawhub.ai/skills/brand-intelligence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brand-intelligence-1f2e706c91df469b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/brand-intelligence@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-brand-intelligence-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ed2d7a75c49a33858d4e28ad99207ba4953cbbf49bd53f2a000e8f1a37f2230b",
+      "artifactSizeBytes": 2295
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T06:09:47.983Z"
+}

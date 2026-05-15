@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/visnote-image-creator@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.visnote_image_creator",
+  "skill": {
+    "id": 56172,
+    "skillKey": "clawhub-visnote-image-creator",
+    "name": "Visnote Image Creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "visnote-image-creator",
+    "url": "https://clawhub.ai/skills/visnote-image-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/visnote-image-creator-f1f286e1067439ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when generating XiaoHongShu (小红书) style images. The AI analyzes user requirements, reads template registry to select appropriate te..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "katherine0325",
+      "userId": "s1767vtscq1p94r82q06scj65d847qta",
+      "displayName": "katherine0325",
+      "image": "https://avatars.githubusercontent.com/u/23134442?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775315898360,
+      "changelog": "Initial release of visnote-image-creator skill: automate XiaoHongShu-style image generation.\n\n- Analyzes user input, extracts relevant information, and selects suitable templates from a live registry.\n- Merges user-provided content with template defaults to generate highly contextual images.\n- Fetches and caches template lists using API, with smart cache reuse or refresh based on user request flow.\n- Prerequisite check for API Key in config.json before processing any generation requests, with clear user messaging if missing.\n- Supports advanced template selection logic based on content type, tags, and user intent.\n- Facilitates seamless, automated production of social media cover images and content visuals.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a92d44b0c547e61ea868e2b3fcd1cf1a8536ec59052e92c89a39e7feea024d26"
+}

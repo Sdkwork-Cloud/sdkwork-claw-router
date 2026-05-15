@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61062,
+  "uuid": "skill-clawhub-local-file-converter",
+  "skillKey": "clawhub-local-file-converter",
+  "name": "Local File Converter",
+  "summary": "本地文件转换技能，使用命令行工具实现 1000+ 格式互转。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_file_converter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tiantian-pago",
+      "features": [
+        "本地文件转换技能，使用命令行工具实现 1000+ 格式互转。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/local-file-converter@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47686704?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "local-file-converter",
+      "url": "https://clawhub.ai/skills/local-file-converter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-file-converter",
+    "url": "https://clawhub.ai/skills/local-file-converter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-file-converter-adfe3c518f45ee63.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/local-file-converter@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-local-file-converter-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c467162020bd5cded5f007bdf3a85e7f56e283caa5e8684bec104f5ff0541aaf",
+      "artifactSizeBytes": 1877
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T14:26:32.104Z"
+}

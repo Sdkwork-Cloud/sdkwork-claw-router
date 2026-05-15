@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/my-computer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_computer",
+  "skill": {
+    "id": 22413,
+    "skillKey": "clawhub-my-computer",
+    "name": "my-computer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-computer",
+    "url": "https://clawhub.ai/skills/my-computer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-computer-0140090ff45909b5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Desktop automation agent that uses CLI commands, application automation, and scripting to work directly with the user's local machine. Use this skill wheneve..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mikewang817",
+      "userId": "s178qscd9vwhy63f2x7jtgw1e183mma9",
+      "displayName": "mike wang",
+      "image": "https://avatars.githubusercontent.com/u/223770224?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 473,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773763350031,
+      "changelog": "my-computer 1.0.0 – Initial Release\n\n- Introduces a desktop automation agent for automating tasks directly on your local machine using CLI commands, scripting, and application automation.\n- Supports intelligent file organization, batch processing, deduplication, and format conversion, leveraging metadata and content analysis.\n- Provides workflows for automating desktop applications (Finder, browsers, IDEs, etc.), scheduling tasks, and utilizing local compute resources.\n- Safety-first approach: includes reconnaissance, planning, dry run previews, manifest-based execution, and detailed post-operation reporting.\n- Designed for both one-off and large-scale repetitive tasks with undo/rollback safety built in.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d5fe51045284d9f419e371f5ece40c4ec6d7e05e69b044a43033948a750c71f0"
+}

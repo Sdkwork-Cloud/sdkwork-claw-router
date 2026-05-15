@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70180,
+  "uuid": "skill-clawhub-skills-5",
+  "skillKey": "clawhub-skills-5",
+  "name": "Wecom Channel Fix",
+  "summary": "企业微信通道配置诊断与修复。当用户遇到企微通道无法连接、配置错误、插件 ID 不匹配、多账号模式不支持等问题时激活。支持配置检测、自动修复、单账号/多账号模式切换。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skills_5",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fclwtt",
+      "features": [
+        "企业微信通道配置诊断与修复。当用户遇到企微通道无法连接、配置错误、插件 ID 不匹配、多账号模式不支持等问题时激活。支持配置检测、自动修复、单账号/多账号模式切换。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skills-5@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74441449?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skills-5",
+      "url": "https://clawhub.ai/skills/skills-5"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skills-5",
+    "url": "https://clawhub.ai/skills/skills-5",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skills-5-039971f952496423.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skills-5@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skills-5-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a30253e66f78a672205bf9a4eb0b56a92e5940a8a0e3310af603a7e2ab4c2661",
+      "artifactSizeBytes": 2537
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T16:47:35.660Z"
+}

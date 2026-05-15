@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25800,
+  "uuid": "skill-clawhub-prompt-git",
+  "skillKey": "clawhub-prompt-git",
+  "name": "Prompt Git",
+  "summary": "Git for your prompts. Track every change, diff versions, rollback mistakes, never lose a good prompt again. All local, zero dependencies, works offline.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_git",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shadow Rose",
+      "features": [
+        "Git for your prompts",
+        "Track every change, diff versions, rollback mistakes, never lose a good prompt again",
+        "All local, zero dependencies, works offline."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prompt-git@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262919821?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prompt-git",
+      "url": "https://clawhub.ai/skills/prompt-git"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-git",
+    "url": "https://clawhub.ai/skills/prompt-git",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-git-b4953a60c03a0dce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prompt-git@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-prompt-git-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:462819f6da0342471841aef295b6a440d6a812d70d29553a85b0373e79797c52",
+      "artifactSizeBytes": 2111
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T14:22:08.449Z"
+}

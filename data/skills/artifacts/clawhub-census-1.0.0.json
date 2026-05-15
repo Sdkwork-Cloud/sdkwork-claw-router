@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/census@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.census",
+  "skill": {
+    "id": 53148,
+    "skillKey": "clawhub-census",
+    "name": "Census"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "census",
+    "url": "https://clawhub.ai/skills/census",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/census-7969bf2d3a9ceff9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "US Census Bureau — population, demographics, ACS data, economic indicators, and geographic data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiwithabidi",
+      "userId": "publishers:aiwithabidi",
+      "displayName": "aiwithabidi",
+      "image": "https://avatars.githubusercontent.com/u/208891229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 562,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771639480881,
+      "changelog": "Census Skill v1.0.0 — Initial Release\n\n- Adds support for querying US Census Bureau data: population, demographics, ACS data, economic indicators, and geographic data.\n- Provides a single CLI tool for accessing multiple Census datasets (ACS, Decennial Census, Population, CBP, Poverty, Income, Housing).\n- Outputs results in JSON format.\n- Includes commands for listing available datasets, variables, and geographies.\n- Requires a Census API key via the CENSUS_API_KEY environment variable.\n- No external dependencies; uses Python 3.10+ standard library only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a3509d3964438e3615bef2a80ec8f227414a81b1d5b28ec909f5eed186863c5d"
+}

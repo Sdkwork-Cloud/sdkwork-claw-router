@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13708,
+  "uuid": "skill-clawhub-defi-yield-scanner",
+  "skillKey": "clawhub-defi-yield-scanner",
+  "name": "Defi Yield Scanner",
+  "summary": "Scan DeFi protocols for the best yield opportunities. Covers Aave, Compound, Curve, Yearn, Uniswap v3, and emerging L2 protocols. Compares APY vs risk, track...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.defi_yield_scanner",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JamieRossouw",
+      "features": [
+        "Scan DeFi protocols for the best yield opportunities",
+        "Covers Aave, Compound, Curve, Yearn, Uniswap v3, and emerging L2 protocols",
+        "Compares APY vs risk, track..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/defi-yield-scanner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/219507116?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "defi-yield-scanner",
+      "url": "https://clawhub.ai/skills/defi-yield-scanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "defi-yield-scanner",
+    "url": "https://clawhub.ai/skills/defi-yield-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/defi-yield-scanner-09546dbc0bd90c0f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/defi-yield-scanner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-defi-yield-scanner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0c7d2c3bc095a0b5ebb0f8592820b562663cd4a5a35c06927beaa6859ea0db03",
+      "artifactSizeBytes": 2320
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T19:38:15.686Z"
+}

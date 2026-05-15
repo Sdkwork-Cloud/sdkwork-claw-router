@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/diskclean@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.diskclean",
+  "skill": {
+    "id": 36666,
+    "skillKey": "clawhub-diskclean",
+    "name": "diskclean"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "diskclean",
+    "url": "https://clawhub.ai/skills/diskclean",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/diskclean-f21c2e9d148389af.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-assisted disk space scanner and cleaner. Finds reclaimable space (node_modules, build caches, package caches, downloads, Docker, Xcode, logs) and intellig..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xj7r",
+      "userId": "s170b58pdhpk2d4qn5kcc9a24583s11x",
+      "displayName": "Jack Reid",
+      "image": "https://avatars.githubusercontent.com/u/114296700?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774706248768,
+      "changelog": "Initial release: AI-assisted disk space scanner and cleaner",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a40fda8697354c354dad52660faa3886b1421c86ec3cd8dc235c8ea94c2785c4"
+}

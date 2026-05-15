@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58867,
+  "uuid": "skill-clawhub-note-taker",
+  "skillKey": "clawhub-note-taker",
+  "name": "Note Taker",
+  "summary": "笔记整理助手。康奈尔笔记法、卡片盒笔记(Zettelkasten)、思维导图笔记、会议笔记、课堂笔记、笔记整理。Note-taking with Cornell method, Zettelkasten, mind maps, meeting notes, lecture notes.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.note_taker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain3",
+      "features": [
+        "笔记整理助手。康奈尔笔记法、卡片盒笔记(Zettelkasten)、思维导图笔记、会议笔记、课堂笔记、笔记整理。Note-taking with Cornell method, Zettel."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/note-taker@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218212813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "note-taker",
+      "url": "https://clawhub.ai/skills/note-taker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "note-taker",
+    "url": "https://clawhub.ai/skills/note-taker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/note-taker-94650970d58df474.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/note-taker@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-note-taker-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:72b9b0374b2aead3e6050dd2f0f8188e4f9c555b54ccdd0b06bd12787b5a602b",
+      "artifactSizeBytes": 1926
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T10:47:33.659Z"
+}

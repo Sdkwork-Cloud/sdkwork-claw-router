@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fadada-esign@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fadada_esign",
+  "skill": {
+    "id": 69148,
+    "skillKey": "clawhub-fadada-esign",
+    "name": "fadada-esign"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fadada-esign",
+    "url": "https://clawhub.ai/skills/fadada-esign",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fadada-esign-c965bd8bd8ce1ba3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "法大大电子合同与电子签署技能（FASC API 5.0）。一键发送合同给对方签署，支持查询签署状态、下载已签署合同。适用于HR合同、销售合同、协议签署等场景。当用户提到\"发合同\"、\"让对方签合同\"、\"电子签\"、\"法大大\"、\"合同签署\"、\"查询签署状态\"、\"下载合同\"等场景时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imadentive",
+      "userId": "s173tdmatvcgk6e4vghpkjzf5n83p0kf",
+      "displayName": "imadentive",
+      "image": "https://avatars.githubusercontent.com/u/9497741?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774841758982,
+      "changelog": "fadada-esign 1.0.0\n\n- 初始发布，基于法大大 FASC API 5.0 实现电子合同一键发送、状态查询、下载等完整电子签流程\n- 提供 Python SDK 和命令行工具，支持多种配置方式（环境变量、配置文件、代码参数）\n- 支持单人和多方签署，签署状态实时查询，合同文件安全下载\n- 内置错误处理和丰富示例，适用于HR、销售及通用协议签署场景",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5bee908e06ccdb1dd7e4682c176b61eae1bdde96947cd90e1cc38785f5c4434d"
+}

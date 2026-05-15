@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9851,
+  "uuid": "skill-clawhub-pushover-notify",
+  "skillKey": "clawhub-pushover-notify",
+  "name": "Notify with Pushover",
+  "summary": "Send push notifications to your phone via Pushover (pushover.net). Use when you want reliable out-of-band alerts from OpenClaw: reminders, monitoring alerts, cron/heartbeat summaries, or 'notify me when X happens' workflows.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pushover_notify",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DigitallyBorn",
+      "features": [
+        "Send push notifications to your phone via Pushover (pushover.net)",
+        "Use when you want reliable out-of-band alerts from OpenClaw: reminders, monitoring alerts, cron."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pushover-notify@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16527?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pushover-notify",
+      "url": "https://clawhub.ai/skills/pushover-notify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pushover-notify",
+    "url": "https://clawhub.ai/skills/pushover-notify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pushover-notify-dcd40437c7f05b3c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pushover-notify@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pushover-notify-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:42082b1097708d0c51655337c4016bd4c14c11b73a629d45b5bbd2008798b250",
+      "artifactSizeBytes": 2350
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T00:16:30.997Z"
+}

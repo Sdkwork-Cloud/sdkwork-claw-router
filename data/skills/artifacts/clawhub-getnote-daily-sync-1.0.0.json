@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/getnote-daily-sync@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.getnote_daily_sync",
+  "skill": {
+    "id": 59748,
+    "skillKey": "clawhub-getnote-daily-sync",
+    "name": "Getnote Daily Sync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "getnote-daily-sync",
+    "url": "https://clawhub.ai/skills/getnote-daily-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/getnote-daily-sync-0fec9a22485fd4a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "每日自动将 Get笔记（biji.com）当天的录音笔记、会议记录、待办事项汇总后写入 Notion 数据库，生成结构化日报页面。 Use when user says \"同步今日 Get笔记\", \"生成今日日报\", \"把今天的笔记写到 Notion\", \"getnote daily sync\", or trig..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "phoenixyy",
+      "userId": "publishers:phoenixyy",
+      "displayName": "phoenixyy",
+      "image": "https://avatars.githubusercontent.com/u/16120579?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 541,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773202817104,
+      "changelog": "getnote-daily-sync 1.0.0 — Initial release\n\n- Automatically syncs today’s audio notes, meeting records, and to-dos from Get笔记 (biji.com) to a structured Notion database daily report.\n- Supports both manual and scheduled sync triggers.\n- Creates a detailed Notion page with meeting summaries, audio highlights, inspirations, and prioritized to-do items.\n- Simple setup using environment variables for API credentials and Notion database configuration.\n- No additional dependencies required beyond Python 3 standard library.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:652f7230845b0530586076512971f313335a76c4d85f6e0cb37f8930f64763f9"
+}

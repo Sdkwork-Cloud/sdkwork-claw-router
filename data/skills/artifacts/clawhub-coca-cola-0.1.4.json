@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/coca-cola@0.1.4",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coca_cola",
+  "skill": {
+    "id": 31826,
+    "skillKey": "clawhub-coca-cola",
+    "name": "Coca Cola"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coca-cola",
+    "url": "https://clawhub.ai/skills/coca-cola",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coca-cola-e357fc9a6a65dc31.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Information assistant for Coca-Cola. Search products, news, financials, and official resources for Coca-Cola."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 251,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.1.4",
+      "createdAt": 1776238326907,
+      "changelog": "- 精简并更新了 coca-cola 品牌介绍及背景\n- 优化“快速了解”板块，突出品牌影响力与核心优势\n- 新增“深入探索”部分，指引用户获取详细信息\n- 删除冗余细节与数据，提升可读性",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e8baa309b1b8119bcc58f9c1f65add8b1f9e4880ec3fbba934a18ffd033f27c2"
+}

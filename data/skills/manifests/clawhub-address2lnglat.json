@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65813,
+  "uuid": "skill-clawhub-address2lnglat",
+  "skillKey": "clawhub-address2lnglat",
+  "name": "address2lnglat",
+  "summary": "调用百度地图开放平台API，将地名批量转换为BD-09（百度）经纬度坐标，自动搜索地点 → 用户填入AK → 批量爬取坐标 → 保存CSV+JSON → 直接发送给用户。坐标保留6位小数，无需转换。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.address2lnglat",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ggyybb",
+      "features": [
+        "调用百度地图开放平台API，将地名批量转换为BD-09（百度）经纬度坐标，自动搜索地点 → 用户填入AK → 批量爬取坐标 → 保存CSV+JSON → 直接发送给用户。坐标保留6位小数，无."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/address2lnglat@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61568153?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "address2lnglat",
+      "url": "https://clawhub.ai/skills/address2lnglat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "address2lnglat",
+    "url": "https://clawhub.ai/skills/address2lnglat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/address2lnglat-6f12056afc65ae10.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/address2lnglat@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-address2lnglat-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:28f2893d03c46b96789e99b293109e05d141c0673ea98014ff5633cf80e46ffd",
+      "artifactSizeBytes": 2326
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T08:27:29.724Z"
+}

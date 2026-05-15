@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73594,
+  "uuid": "skill-clawhub-ctrip-hotel-search",
+  "skillKey": "clawhub-ctrip-hotel-search",
+  "name": "携程酒店搜索",
+  "summary": "自动搜索携程酒店，支持实时比价和详情获取。使用浏览器自动化技术，实现携程账号登录、酒店搜索、详情获取和对比分析功能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ctrip_hotel_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alexfeng75",
+      "features": [
+        "自动搜索携程酒店，支持实时比价和详情获取。使用浏览器自动化技术，实现携程账号登录、酒店搜索、详情获取和对比分析功能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ctrip-hotel-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25864319?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ctrip-hotel-search",
+      "url": "https://clawhub.ai/skills/ctrip-hotel-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ctrip-hotel-search",
+    "url": "https://clawhub.ai/skills/ctrip-hotel-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ctrip-hotel-search-863faa52b21c9fc6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ctrip-hotel-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ctrip-hotel-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9eb1094744b2b565e7e879233a8a661275ccf5ef5d4310fc5c0cac909d00cae8",
+      "artifactSizeBytes": 1974
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T05:32:01.953Z"
+}

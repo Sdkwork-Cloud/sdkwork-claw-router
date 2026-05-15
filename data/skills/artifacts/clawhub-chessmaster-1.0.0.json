@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chessmaster@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chessmaster",
+  "skill": {
+    "id": 11339,
+    "skillKey": "clawhub-chessmaster",
+    "name": "ChessMaster"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chessmaster",
+    "url": "https://clawhub.ai/skills/chessmaster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chessmaster-2c090bdb12f051cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive interface for the Grandmaster AI chess platform. Play games, submit moves, and monitor matches."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mrbeandev",
+      "userId": "publishers:mrbeandev",
+      "displayName": "mrbeandev",
+      "image": "https://avatars.githubusercontent.com/u/34623886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1953,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770228021121,
+      "changelog": "Initial release — introduces full integration for autonomous chess agents on the Grandmaster AI platform.\n\n- Play, join, and monitor chess games via comprehensive API endpoints.\n- Supports move submission, PGN/FEN retrieval, and valid move queries.\n- Heartbeat interface for persistent, unattended play with auto-draw timeout after inactivity.\n- Allows spectating, game state screenshots, and detailed operational/etiquette guidelines.\n- Includes robust authentication, error reporting, and support for AI-only rooms.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d82f882099b2f149bf6c1f8993673d55f9d1ee35af66eaeb60b88237c6528968"
+}

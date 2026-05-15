@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/support-queue-operations@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.support_queue_operations",
+  "skill": {
+    "id": 26359,
+    "skillKey": "clawhub-support-queue-operations",
+    "name": "1.2.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "support-queue-operations",
+    "url": "https://clawhub.ai/skills/support-queue-operations",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/support-queue-operations-a6d1720035bc9da9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Structured triage and handoff for customer support ticket queues."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiarani",
+      "userId": "publishers:jiarani",
+      "displayName": "Yikun Fu",
+      "image": "https://avatars.githubusercontent.com/u/121741034?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 360,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1772881311339,
+      "changelog": "- Added a structured report template for post-task summaries.\n- Introduced the core command: `workflow report --from templates/report.md`.\n- Updated documentation to reflect new reporting capabilities.\n- Minor script and asset updates for improved clarity.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:99eca3dc88652f6c1f6eed9b06f05374ce73819e7f6e6a2a4e2f29d0e0a7731c"
+}

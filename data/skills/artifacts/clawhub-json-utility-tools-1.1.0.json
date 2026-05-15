@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/json-utility-tools@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.json_utility_tools",
+  "skill": {
+    "id": 56577,
+    "skillKey": "clawhub-json-utility-tools",
+    "name": "Json Formatter Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "json-utility-tools",
+    "url": "https://clawhub.ai/skills/json-utility-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/json-utility-tools-00f6399203730204.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "All-in-one JSON toolkit — format, validate, query, minify, and extract data from JSON. Built-in JMESPath query, JSONPath support, syntax highlighting. 适合API调..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "darbling",
+      "userId": "s1735cfbwbr6ybnmzw58m9bhkx85my84",
+      "displayName": "darbling",
+      "image": "https://avatars.githubusercontent.com/u/105998927?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 179,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777290539338,
+      "changelog": "- Updated branding: Renamed to \"JSON Utility Tools\" and refreshed description to highlight JSONPath/JMESPath support and syntax highlighting.\n- Expanded bilingual documentation (English & Chinese), covering usage and feature list.\n- Clarified usage examples and simplified command-line interface in docs.\n- Added and updated disclaimer for better readability and scope clarification.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:550a43c4cc586ceb83283689e3a5ef9bd7ea0923d80bbdcaba716834534727ab"
+}

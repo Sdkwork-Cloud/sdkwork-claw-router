@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/modelscope-image@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.modelscope_image",
+  "skill": {
+    "id": 60504,
+    "skillKey": "clawhub-modelscope-image",
+    "name": "modelscope-image"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "modelscope-image",
+    "url": "https://clawhub.ai/skills/modelscope-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/modelscope-image-646084ffe2b1dc34.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过魔搭社区(ModelScope) API 生成图片。先使用 --list-models 查看可用模型，然后根据用户需求由 AI 生成专业的提示词，最后调用 API 生成图片。支持 Kolors、Stable Diffusion XL、FLUX 等多种文生图模型。当用户需要使用魔搭社区、ModelScope 或..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "baiyz0825",
+      "userId": "s17ayq95w12dp24y2nbg2mtsw583wx0h",
+      "displayName": "baiyz0825",
+      "image": "https://avatars.githubusercontent.com/u/81071870?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 354,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773680119612,
+      "changelog": "- modelscope-image-gen 功能的初始版本发布。\n- 通过 ModelScope API 使用多种预配置模型（如 Kolors、Stable Diffusion XL、FLUX）实现图像生成。\n- 提供工作流程：列出模型 → 选择模型（支持子代理） → AI 优化的提示生成 → 图像创建。\n- 包含内置的提示工程指导和高质量结果场景，针对中文和多语言支持进行了优化。\n- 命令行界面提供灵活的参数设置，可用于提示、模型、输出和模型列表。\n- 文档提供详细的使用示例、排障指南以及其他资源的链接。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:875c11601a6facce1ef17b27861fa7d14228ab1e6504b67176d83bcb767f8cd2"
+}

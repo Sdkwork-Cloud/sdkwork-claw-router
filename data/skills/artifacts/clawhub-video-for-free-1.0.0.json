@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-for-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_for_free",
+  "skill": {
+    "id": 48313,
+    "skillKey": "clawhub-video-for-free",
+    "name": "Video For Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-for-free",
+    "url": "https://clawhub.ai/skills/video-for-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-for-free-10822e7461fccdf0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute MP4 recorded on a smartphone into 1080p edited MP4 videos just by typing what you need. Whether it's editing and exporting videos at no cost..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 102,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777741979918,
+      "changelog": "- Initial release of \"Video For Free — Edit and Export Videos Free\".\n- Upload a 2-minute MP4 and edit/export 1080p MP4s by describing your needs—no timeline or settings required.\n- Automated backend setup with free 7-day token for 100 credits, no registration needed.\n- Supports quick edits: trimming, background music, aspect ratio changes, and more with simple prompts.\n- Exports videos in multiple formats (MP4, MOV, AVI, etc.) for free, up to 500MB.\n- Real-time communication about upload and processing status; handles common error codes gracefully.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4c89d7185c2070a2f8d9718db563efc5f66543dd97cd3b2655bd25e84f8aecd1"
+}

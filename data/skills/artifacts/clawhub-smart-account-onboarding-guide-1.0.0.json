@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smart-account-onboarding-guide@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_account_onboarding_guide",
+  "skill": {
+    "id": 54156,
+    "skillKey": "clawhub-smart-account-onboarding-guide",
+    "name": "Smart Account Onboarding Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-account-onboarding-guide",
+    "url": "https://clawhub.ai/skills/smart-account-onboarding-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-account-onboarding-guide-ac2d6ac31f14ae30.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Explains account abstraction (ERC-4337) and smart accounts — how they differ from EOAs, when to adopt, and what new risks they introduce."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 68,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778132442157,
+      "changelog": "- Initial release of the Smart Account Onboarding Guide skill.\n- Explains account abstraction (ERC-4337) and how smart accounts differ from EOAs in clear, non-technical language.\n- Provides scenario-based guidance, staged adoption paths, and surfaces key new risks of programmable accounts.\n- Includes direct comparison between EOAs and smart accounts across custody, recovery, gas payment, batching, and security.\n- Does not recommend specific wallets, implementations, or verify the security of any provider.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:36251859b6a17d6bb66b42cf6fe2a4fc64c4a97fdfcb434373fe1ec3c830fd00"
+}

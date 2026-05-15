@@ -349,14 +349,15 @@ fn parses_provider_secret_map_without_leaking_secret_values() {
     assert_eq!(2, config.secret_count());
     assert_eq!(
         Some("sk-provider-token"),
-        config.bearer_token("vault://providers/openrouter/account/main")
+        config.secret_value("vault://providers/openrouter/account/main")
     );
     assert_eq!(
         Some("sk-local-token"),
-        config.bearer_token("env://providers/local/account/dev")
+        config.secret_value("env://providers/local/account/dev")
     );
     assert!(!format!("{config:?}").contains("sk-provider-token"));
     assert!(!format!("{config:?}").contains("sk-local-token"));
+    assert!(!format!("{config:?}").contains("bearer_tokens"));
 }
 
 #[test]
@@ -379,8 +380,8 @@ fn rejects_invalid_provider_secret_map_config() {
         ProviderSecretMapConfig::from_json(r#"{"  ":"sk-provider"}"#).unwrap_err();
     assert!(blank_secret_ref.contains("secret_ref must not be blank"));
 
-    let blank_token =
+    let blank_secret_value =
         ProviderSecretMapConfig::from_json(r#"{"vault://providers/openrouter/account/main":"  "}"#)
             .unwrap_err();
-    assert!(blank_token.contains("bearer token must not be blank"));
+    assert!(blank_secret_value.contains("secret value must not be blank"));
 }

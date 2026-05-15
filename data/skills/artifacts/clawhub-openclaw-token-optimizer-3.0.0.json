@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-token-optimizer@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_token_optimizer",
+  "skill": {
+    "id": 8475,
+    "skillKey": "clawhub-openclaw-token-optimizer",
+    "name": "OpenClaw Token Optimizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-token-optimizer",
+    "url": "https://clawhub.ai/skills/openclaw-token-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-token-optimizer-c2492daa1f81fd5e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reduce OpenClaw token usage and API costs through smart model routing, heartbeat optimization, budget tracking, and native 2026.2.15 features (session prunin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "asif2bd",
+      "userId": "s172w5rqenpwn4qb4g5n563hx9845890",
+      "displayName": "Asif",
+      "image": "https://avatars.githubusercontent.com/u/2099592?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 10416,
+      "installsAllTime": 92,
+      "installsCurrent": 87,
+      "stars": 30,
+      "versions": 19
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1772243871515,
+      "changelog": "**Major update: v3.0 introduces lazy skill loading and restructures optimization logic for maximum token savings.**\n\n- Added native support and documentation for lazy skill loading (SKILLS.md-based), now the largest single optimization.\n- Removed bundled cronjob guide and multi-provider reference/config files; external strategies are now referenced but not included.\n- Simplified documentation to focus on core, local-only optimizations and integration patterns.\n- Updated AGENTS.md and heartbeat optimization templates for compatibility with session pruning and newer OpenClaw features.\n- All scripts and documentation updated for consistency with v3.0 best practices.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5390971818d02c209314f93021b0d5c7b81ff6f2559c85ebdf786fc9ef10f9b8"
+}

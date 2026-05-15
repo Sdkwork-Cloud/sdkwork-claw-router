@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12687,
+  "uuid": "skill-clawhub-attio-cli",
+  "skillKey": "clawhub-attio-cli",
+  "name": "Attio CRM CLI",
+  "summary": "Command-line tool to list, get, and manage objects, records, and lists in your Attio CRM workspace via the Attio API.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.attio_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FroeMic",
+      "features": [
+        "Command-line tool to list, get, and manage objects, records, and lists in your Attio CRM worksp."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/attio-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15179255?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "attio-cli",
+      "url": "https://clawhub.ai/skills/attio-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "attio-cli",
+    "url": "https://clawhub.ai/skills/attio-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/attio-cli-1fda75f09c7a70a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/attio-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-attio-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c922b23d7919aa1c6513cbda6d6947cc17d680a21893778f732d2f7d93eb102",
+      "artifactSizeBytes": 2294
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T18:46:24.504Z"
+}

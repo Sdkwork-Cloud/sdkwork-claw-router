@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33857,
+  "uuid": "skill-clawhub-premium-pdf",
+  "skillKey": "clawhub-premium-pdf",
+  "name": "Premium PDF",
+  "summary": "Generate premium enterprise-style PDFs from markdown content, with automatic de-AI text humanization (removes em dashes, AI filler phrases, overly formal lan...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.premium_pdf",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bulldozzer",
+      "features": [
+        "Generate premium enterprise-style PDFs from markdown content, with automatic de-AI text humaniz."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/premium-pdf@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/131347676?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "premium-pdf",
+      "url": "https://clawhub.ai/skills/premium-pdf"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "premium-pdf",
+    "url": "https://clawhub.ai/skills/premium-pdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/premium-pdf-ef17e8118cc71128.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/premium-pdf@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-premium-pdf-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:afc1dd3f23c6f2679bb79f662e9790fd6b8534e511aa324b07f7acd28460497e",
+      "artifactSizeBytes": 2208
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T20:14:59.955Z"
+}

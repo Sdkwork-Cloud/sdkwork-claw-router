@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-zulip-bridge@2026.5.1",
+  "version": "2026.5.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_zulip_bridge",
+  "skill": {
+    "id": 54440,
+    "skillKey": "clawhub-openclaw-zulip-bridge",
+    "name": "OpenClaw Zulip"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-zulip-bridge",
+    "url": "https://clawhub.ai/skills/openclaw-zulip-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-zulip-bridge-ad71033f44052ef1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "💬 High-performance Zulip bridge skill. Enables messaging, stream monitoring, and administrative actions on Zulip servers."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "niyazmft",
+      "userId": "s17cgmcba7qzg2k2gt6mskczrn83tyv2",
+      "displayName": "niyazmft",
+      "image": "https://avatars.githubusercontent.com/u/9331133?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 113,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2026.5.1",
+      "createdAt": 1777845510214,
+      "changelog": "SDK 2026.4.29 migration: added channelConfigs, migrated to channelEnvVars",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6dd1aa49202b434ce6148973ccd618611c2c55f8022404a57dfc118a480f93b1"
+}

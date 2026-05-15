@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x-tag-responder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_tag_responder",
+  "skill": {
+    "id": 45042,
+    "skillKey": "clawhub-x-tag-responder",
+    "name": "X Tag Responder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-tag-responder",
+    "url": "https://clawhub.ai/skills/x-tag-responder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-tag-responder-3f257947c723c562.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detects when a human tags their AI familiar in someone else's X/Twitter thread, fetches full conversation context, infers intent, and crafts an appropriate r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "m-lwatcher",
+      "userId": "s1715044nr9rzk332dgaj1888n83za3x",
+      "displayName": "m-lwatcher",
+      "image": "https://avatars.githubusercontent.com/u/267762552?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774967412223,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1c0e8795fbb2d473d873a200f2a650af3fafcb1079bdf08e06cad57f53f8d184"
+}

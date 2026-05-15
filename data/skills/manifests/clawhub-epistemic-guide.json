@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14612,
+  "uuid": "skill-clawhub-epistemic-guide",
+  "skillKey": "clawhub-epistemic-guide",
+  "name": "Epistemic Guide",
+  "summary": "Helps users critically examine their beliefs by gently questioning potentially false or questionable claims on sensitive topics.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.epistemic_guide",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Michał Turek",
+      "features": [
+        "Helps users critically examine their beliefs by gently questioning potentially false or questio."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/epistemic-guide@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1997264?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "epistemic-guide",
+      "url": "https://clawhub.ai/skills/epistemic-guide"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "epistemic-guide",
+    "url": "https://clawhub.ai/skills/epistemic-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/epistemic-guide-f4c533d5c0bf5aa9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/epistemic-guide@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-epistemic-guide-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e095facea4990a48c9669457481fdbef5cd43f6cbb0dbaaeda71d6ebf27c308c",
+      "artifactSizeBytes": 2490
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T02:29:08.085Z"
+}

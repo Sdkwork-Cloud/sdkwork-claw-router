@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-memory-distiller@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_memory_distiller",
+  "skill": {
+    "id": 22663,
+    "skillKey": "clawhub-auto-memory-distiller",
+    "name": "Auto Memory Distiller"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-memory-distiller",
+    "url": "https://clawhub.ai/skills/auto-memory-distiller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-memory-distiller-9bc5431a7ef84829.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically converts raw long conversations into structured, themed Markdown knowledge cards with source traceability, running incrementally and silently i..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mashirops",
+      "userId": "publishers:mashirops",
+      "displayName": "Peng Shu",
+      "image": "https://avatars.githubusercontent.com/u/58142289?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 434,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772642602539,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:40c2efe93e818a163d368c16b0f607b962c2b4d683331f5caf4ba53b9308424b"
+}

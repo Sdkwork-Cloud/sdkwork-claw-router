@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54151,
+  "uuid": "skill-clawhub-formula-1",
+  "skillKey": "clawhub-formula-1",
+  "name": "Formula 1",
+  "summary": "Access detailed insights on Formula 1’s history, technology, economics, teams, and global impact as the premier motorsport championship.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.formula_1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Access detailed insights on Formula 1’s history, technology, economics, teams, and global impac."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/formula-1@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "formula-1",
+      "url": "https://clawhub.ai/skills/formula-1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "formula-1",
+    "url": "https://clawhub.ai/skills/formula-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/formula-1-af82844ae7716688.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/formula-1@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-formula-1-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:48052a8bfbe53b583ad07fdaaf59038ea5b29fffea1bcba04e3393b0625e8f6e",
+      "artifactSizeBytes": 2169
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T11:02:28.976Z"
+}

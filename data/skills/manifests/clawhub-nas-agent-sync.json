@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16097,
+  "uuid": "skill-clawhub-nas-agent-sync",
+  "skillKey": "clawhub-nas-agent-sync",
+  "name": "NAS Agent Sync",
+  "summary": "Centralizes multi-agent file storage by routing all file operations through a designated File Master agent using SSH to a Synology NAS or any SSH-accessible...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nas_agent_sync",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nealbuilds",
+      "features": [
+        "Centralizes multi-agent file storage by routing all file operations through a designated File M."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nas-agent-sync@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258675471?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nas-agent-sync",
+      "url": "https://clawhub.ai/skills/nas-agent-sync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nas-agent-sync",
+    "url": "https://clawhub.ai/skills/nas-agent-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nas-agent-sync-4ab5ab8ffd35fa2e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nas-agent-sync@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nas-agent-sync-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7b63fc7788e191471eee2f4aba2fd36e36a65d5842df4c3232e3779707bc1c70",
+      "artifactSizeBytes": 1955
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T06:07:16.879Z"
+}

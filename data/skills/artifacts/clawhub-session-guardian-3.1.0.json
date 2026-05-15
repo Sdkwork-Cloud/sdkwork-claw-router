@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/session-guardian@3.1.0",
+  "version": "3.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_guardian",
+  "skill": {
+    "id": 25496,
+    "skillKey": "clawhub-session-guardian",
+    "name": "Session Guardian — Never Lose a Conversation Again"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-guardian",
+    "url": "https://clawhub.ai/skills/session-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-guardian-56202622c0537658.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Never lose a conversation again. Auto-backup, smart recovery, and health monitoring for OpenClaw sessions. Protects against gateway crashes, model disconnect..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1052326311",
+      "userId": "s177f5ktn67kqs87s4jf12dhks83jehf",
+      "displayName": "1052326311",
+      "image": "https://avatars.githubusercontent.com/u/65798732?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 730,
+      "installsAllTime": 3,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "3.1.0",
+      "createdAt": 1774094566382,
+      "changelog": "v3.1.0: Complete SKILL.md rewrite (16KB→8KB), bilingual EN+CN, concise ClawHub-optimized format, fixed health-check auto-modify bug, removed hardcoded model names",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:836af4dbfbbe1ba25f39daeb9f842de3f1a375d983eccfd139be461773fa669f"
+}

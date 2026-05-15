@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25744,
+  "uuid": "skill-clawhub-cron-watchdog",
+  "skillKey": "clawhub-cron-watchdog",
+  "name": "Cron Watchdog",
+  "summary": "Monitor all OpenClaw cron jobs for failures and auto-fix common errors (model-not-allowed, timeouts). Posts to Slack only when issues are found. Runs every 6...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cron_watchdog",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mpbshhx",
+      "features": [
+        "Monitor all OpenClaw cron jobs for failures and auto-fix common errors (model-not-allowed, time.",
+        "Posts to Slack only when issues are found",
+        "Runs every 6..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cron-watchdog@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/235782436?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cron-watchdog",
+      "url": "https://clawhub.ai/skills/cron-watchdog"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cron-watchdog",
+    "url": "https://clawhub.ai/skills/cron-watchdog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cron-watchdog-bf9d32fabfce6b4c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cron-watchdog@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cron-watchdog-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4aa7d91cba849f7db7fd242da72f1bc887c311532b3adf79251e3eb904aded31",
+      "artifactSizeBytes": 1989
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T22:26:49.189Z"
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13268,
+  "uuid": "skill-clawhub-book-acupuncture",
+  "skillKey": "clawhub-book-acupuncture",
+  "name": "Book Acupuncture",
+  "summary": "Book acupuncture services through Lokuli MCP. Use when user needs to find and book acupuncture. Triggers on requests like \"book a acupuncture\", \"find acupuncture near me\", or any acupuncture service request.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_acupuncture",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lokuli",
+      "features": [
+        "Book acupuncture services through Lokuli MCP",
+        "Use when user needs to find and book acupuncture",
+        "Triggers on requests like \"book a acupuncture\", \"find acupuncture near me\", or any acupuncture."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-acupuncture@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224194606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-acupuncture",
+      "url": "https://clawhub.ai/skills/book-acupuncture"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-acupuncture",
+    "url": "https://clawhub.ai/skills/book-acupuncture",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-acupuncture-eeafcf5237e38bec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-acupuncture@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-acupuncture-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:00e39c96dc13e1e20845fc15af0fe2638ca6ed3d35e335f490c1dd4072524d1e",
+      "artifactSizeBytes": 1971
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T01:05:43.039Z"
+}

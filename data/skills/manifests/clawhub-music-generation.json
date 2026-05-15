@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9415,
+  "uuid": "skill-clawhub-music-generation",
+  "skillKey": "clawhub-music-generation",
+  "name": "Music Generation",
+  "summary": "Generate AI music with optimized prompts, style control, and production-ready audio output.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.music_generation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Generate AI music with optimized prompts, style control, and production-ready audio output."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/music-generation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "music-generation",
+      "url": "https://clawhub.ai/skills/music-generation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "music-generation",
+    "url": "https://clawhub.ai/skills/music-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/music-generation-626aeba4623eaa0f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/music-generation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-music-generation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2d45564b518b618b8909ea551951fc1bd05464ef2e98f0591126736d56b029f",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T02:14:08.086Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19093,
+  "uuid": "skill-clawhub-careerclaw",
+  "skillKey": "clawhub-careerclaw",
+  "name": "CareerClaw",
+  "summary": "Run a job search briefing, find job matches, draft outreach emails, or track job applications. Triggers on: daily briefing, job search, find jobs, job matche...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.careerclaw",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Orestes Garcia Martinez",
+      "features": [
+        "Run a job search briefing, find job matches, draft outreach emails, or track job applications",
+        "Triggers on: daily briefing, job search, find jobs, job matche..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/careerclaw@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12090452?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "careerclaw",
+      "url": "https://clawhub.ai/skills/careerclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "careerclaw",
+    "url": "https://clawhub.ai/skills/careerclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/careerclaw-b12e52a9581440e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/careerclaw@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-careerclaw-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:401a48f7651d818746370322882741806f240626e198ac3cd06e1a30b41bbe8d",
+      "artifactSizeBytes": 1960
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T06:44:44.269Z"
+}

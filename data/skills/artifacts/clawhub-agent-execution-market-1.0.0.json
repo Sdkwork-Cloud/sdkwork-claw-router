@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-execution-market@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_execution_market",
+  "skill": {
+    "id": 25568,
+    "skillKey": "clawhub-agent-execution-market",
+    "name": "agent execution market"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-execution-market",
+    "url": "https://clawhub.ai/skills/agent-execution-market",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-execution-market-7118f54a6ad8b5f0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage user intents through submission, validation, lifecycle tracking, cancellation, bidding, execution, and completion with cryptographic verification and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhenstaff",
+      "userId": "s173q0k18pjbw86jqbmsmgkz7h83h3vm",
+      "displayName": "Justin Liu",
+      "image": "https://avatars.githubusercontent.com/u/34432727?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 384,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773396688441,
+      "changelog": "Agent Execution Market v1.0.0\n\n- Initial public release of Agent Execution Market.\n- Provides robust intent management with lifecycle tracking, validation, and cancellation.\n- Includes autonomous agent (solver) registry with capability matching and reputation scoring.\n- Features a competitive bid-based matching engine for optimal solver selection.\n- Integrates end-to-end cryptographic verification and fraud detection.\n- Real-time event system, REST API, TypeScript SDK, and CLI tools for full developer support.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9597469f2522d5fb27a6db910aed0abfb93e32cbdf490b93996cc0f22d679155"
+}

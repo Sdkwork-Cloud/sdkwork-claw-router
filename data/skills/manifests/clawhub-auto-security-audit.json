@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59588,
+  "uuid": "skill-clawhub-auto-security-audit",
+  "skillKey": "clawhub-auto-security-audit",
+  "name": "Auto Security Audit",
+  "summary": "一键自动化安全审计：nmap 端口扫描 + nuclei 12000+ CVE 漏洞检测（内外网双扫）+ SSL/TLS 检查 + SSH/防火墙/fail2ban 系统审计 + Markdown 报告生成。支持 cron 定时扫描 + 飞书推送。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_security_audit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nashbuaa-ops",
+      "features": [
+        "一键自动化安全审计：nmap 端口扫描 + nuclei 12000+ CVE 漏洞检测（内外网双扫）+ SSL/TLS 检查 + SSH/防火墙/fail2ban 系统审计 + Markd."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-security-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/234331966?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-security-audit",
+      "url": "https://clawhub.ai/skills/auto-security-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-security-audit",
+    "url": "https://clawhub.ai/skills/auto-security-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-security-audit-e4a55ae99fbafa35.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-security-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-security-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:412eff989a6a96543ea579c8f68a553e2c9f2fae876030cf5ace540779513e88",
+      "artifactSizeBytes": 2551
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T16:04:33.119Z"
+}

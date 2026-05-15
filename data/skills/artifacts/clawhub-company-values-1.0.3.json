@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/company-values@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.company_values",
+  "skill": {
+    "id": 31762,
+    "skillKey": "clawhub-company-values",
+    "name": "Company Values"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "company-values",
+    "url": "https://clawhub.ai/skills/company-values",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/company-values-4e4e55ea53113dbe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Help define company values and culture for a minimalist business. Use when someone is setting up their company culture, preparing to hire, or wanting to codi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "carollili",
+      "userId": "s17azmw6dq9sp51pe6gwsyjgax844n33",
+      "displayName": "Aoli",
+      "image": "https://avatars.githubusercontent.com/u/86242993?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 222,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775554640634,
+      "changelog": "SKILL.md 新增中文技能说明和适用场景",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:51106314e473d223938bcc829d109ef7d83fcb50ba64183e6865576cfdabb9af"
+}

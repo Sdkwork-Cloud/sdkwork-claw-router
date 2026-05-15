@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/task-resume@1.3.0",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_resume",
+  "skill": {
+    "id": 16915,
+    "skillKey": "clawhub-task-resume",
+    "name": "Task Resume"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-resume",
+    "url": "https://clawhub.ai/skills/task-resume",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-resume-3885d669e8af5ff7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatic interrupted-task resume workflow with queueing and recovery. Use when a user asks to resume interrupted work after temporary context switches, prot..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "richardsun700",
+      "userId": "publishers:richardsun700",
+      "displayName": "RichardSun",
+      "image": "https://avatars.githubusercontent.com/u/126285946?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 827,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.3.0",
+      "createdAt": 1772303611370,
+      "changelog": "Add watchdog auto-continue mode (30m checks), stalled-task auto-resume behavior, and delivery reliability guidance for main/systemEvent continuity updates.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fb98e15e9488a60e2b92a2576aa722665a2b70e02459a518712f80111e18fdf6"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/harry-potter@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.harry_potter",
+  "skill": {
+    "id": 63457,
+    "skillKey": "clawhub-harry-potter",
+    "name": "Harry Potter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "harry-potter",
+    "url": "https://clawhub.ai/skills/harry-potter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/harry-potter-927f175fde7b0690.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "哈利·波特系列介绍和魔法世界指南"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775634647495,
+      "changelog": "- Version bumped to 1.0.2; no file changes detected.\n- No content or functional updates in this release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ccef099c0f32b9958f31d6871e58162a98774a63273c8de9e6b117f20f0b87e9"
+}

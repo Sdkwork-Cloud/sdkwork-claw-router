@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13085,
+  "uuid": "skill-clawhub-ragflow-skill",
+  "skillKey": "clawhub-ragflow-skill",
+  "name": "RAGFlow",
+  "summary": "Use for RAGFlow dataset tasks: create, list, inspect, update, or delete datasets; upload, list, update, or delete documents; start or stop parsing; check par...",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ragflow_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yingfeng",
+      "features": [
+        "Use for RAGFlow dataset tasks: create, list, inspect, update, or delete datasets",
+        "upload, list, update, or delete documents",
+        "start or stop parsing",
+        "check par..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ragflow-skill@1.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7248?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ragflow-skill",
+      "url": "https://clawhub.ai/skills/ragflow-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ragflow-skill",
+    "url": "https://clawhub.ai/skills/ragflow-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ragflow-skill-94b886984dde7cc5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ragflow-skill@1.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-ragflow-skill-1.0.8.json",
+      "version": "1.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:263755123f4b6801a4480166c9ec5fc6a08df94e14f165f27c5dc29dc27e3e4e",
+      "artifactSizeBytes": 2394
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T05:55:40.805Z"
+}

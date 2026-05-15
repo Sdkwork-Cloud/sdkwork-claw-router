@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zhheo-blog-tools@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhheo_blog_tools",
+  "skill": {
+    "id": 71059,
+    "skillKey": "clawhub-zhheo-blog-tools",
+    "name": "张洪Heo博客助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhheo-blog-tools",
+    "url": "https://clawhub.ai/skills/zhheo-blog-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhheo-blog-tools-134c2d9fe4824aff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "与张洪Heo的智能体（洪墨AI）进行聊天或搜索文章。支持文章搜索、今日热门、标签/分类获取、装备与项目查询。 触发词：张洪Heo、博客、博主、张洪、Heo。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhheo",
+      "userId": "s17chsjhvde63axkes4ybr9z8s8459tv",
+      "displayName": "zhheo",
+      "image": "https://avatars.githubusercontent.com/u/33177975?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 604,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1773742325627,
+      "changelog": "- 更新描述，补充并细化触发词为“张洪Heo、博客、博主、张洪、Heo”\n- 明确功能覆盖：聊天、文章搜索、今日热门、标签/分类获取、装备与项目查询\n- 内容结构与说明未改动，仅增强 skill 总览信息与可发现性\n- 版本本体逻辑与实现细节未变",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:335f02ee73e6341e9cb8f807a1df6a9765060136ac3354f2e73a2634f5227779"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tts-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tts_api",
+  "skill": {
+    "id": 34095,
+    "skillKey": "clawhub-tts-api",
+    "name": "TTS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tts-api",
+    "url": "https://clawhub.ai/skills/tts-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tts-api-6f27f131aa895f11.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill whenever the user wants to convert text to speech, generate audio from text, create voiceovers, or produce spoken audio files. Triggers includ..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fengwm64",
+      "userId": "s17en3qz3wz95mk32167vddkax83kmj7",
+      "displayName": "fengwm",
+      "image": "https://avatars.githubusercontent.com/u/52602131?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 229,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774103744571,
+      "changelog": "first commit",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3450e8aa121fc4de642a4bcd5ad0095ca243425414a6c6d1505711f16fbeeb96"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28410,
+  "uuid": "skill-clawhub-atomic-memory-manager",
+  "skillKey": "clawhub-atomic-memory-manager",
+  "name": "Atomic Memory Manager",
+  "summary": "Recall and write workspace memory for OpenClaw agents using MEMORY.md, memory/YYYY-MM-DD.md, memory_search, and memory_get. Use when the user asks about prio...",
+  "version": "1.0.0-alpha",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.atomic_memory_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "omaression",
+      "features": [
+        "Recall and write workspace memory for OpenClaw agents using MEMORY.md, memory/YYYY-MM-DD.md, me.",
+        "Use when the user asks about prio..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/atomic-memory-manager@1.0.0-alpha",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/69020772?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "atomic-memory-manager",
+      "url": "https://clawhub.ai/skills/atomic-memory-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "atomic-memory-manager",
+    "url": "https://clawhub.ai/skills/atomic-memory-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/atomic-memory-manager-81a815215b4727c7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/atomic-memory-manager@1.0.0-alpha",
+      "artifactUrl": "data/skills/artifacts/clawhub-atomic-memory-manager-1.0.0-alpha.json",
+      "version": "1.0.0-alpha",
+      "runtime": "metadata",
+      "checksumHash": "sha256:248c369b87cf18585112a06db3964d2a1d7b3dd371e0da3caad4f42f5ab2054c",
+      "artifactSizeBytes": 2449
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T00:41:18.077Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54650,
+  "uuid": "skill-clawhub-nano-gpt-cli",
+  "skillKey": "clawhub-nano-gpt-cli",
+  "name": "Nano Gpt",
+  "summary": "Use when tasks need the NanoGPT API for text, image, or video generation through the local `nano-gpt` CLI and bundled wrapper scripts for OpenClaw or ClawHub...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nano_gpt_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "icework",
+      "features": [
+        "Use when tasks need the NanoGPT API for text, image, or video generation through the local `nan."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nano-gpt-cli@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1180838?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nano-gpt-cli",
+      "url": "https://clawhub.ai/skills/nano-gpt-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nano-gpt-cli",
+    "url": "https://clawhub.ai/skills/nano-gpt-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nano-gpt-cli-80ca3bb31a67bd74.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nano-gpt-cli@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-nano-gpt-cli-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8a3579cf6974a28eb72c4793932c7dd300eedbfcdf3e9b9d03494a7714d9d219",
+      "artifactSizeBytes": 2073
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T20:21:50.498Z"
+}

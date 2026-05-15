@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zeplin-to-prompt@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zeplin_to_prompt",
+  "skill": {
+    "id": 27856,
+    "skillKey": "clawhub-zeplin-to-prompt",
+    "name": "Zeplin to Prompt"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zeplin-to-prompt",
+    "url": "https://clawhub.ai/skills/zeplin-to-prompt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zeplin-to-prompt-76ca4f9cb076b7a2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Export one or more Zeplin screen URLs into a structured layer tree with local assets and package the result as a zip file. Use when a user shares an app.zepl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sullivangu",
+      "userId": "s174e9kv2zc706qdx9r9yb5jb583g75q",
+      "displayName": "sullivangu89",
+      "image": "https://avatars.githubusercontent.com/u/1876794?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 339,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773490775882,
+      "changelog": "- Improves handling of Zeplin screen links: extracts valid screen URLs and prompts users for correct links if needed.\n- Adds per-project token management, including automated token lookup, masked prompts for missing tokens, and secure storage.\n- Supports exporting multiple Zeplin screens in one command and packages local assets and metadata into a zip file.\n- Replies with clear export status and usage instructions, including a summary of successes and failures.\n- Includes real-time progress updates when exporting multiple screens.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5892456a23456c4852eb4374dcd85ca48618816fb856e52c1c99cc831f859f2c"
+}

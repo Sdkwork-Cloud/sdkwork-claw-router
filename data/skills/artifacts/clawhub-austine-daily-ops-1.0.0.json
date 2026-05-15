@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/austine-daily-ops@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.austine_daily_ops",
+  "skill": {
+    "id": 26375,
+    "skillKey": "clawhub-austine-daily-ops",
+    "name": "Austine Daily Ops"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "austine-daily-ops",
+    "url": "https://clawhub.ai/skills/austine-daily-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/austine-daily-ops-315902f3efacb355.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Daily execution and trip-ops command system for Austine. Use when asked to run daily brief/checklist/status workflows, track priorities, or plan and procure..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "austineyapp",
+      "userId": "publishers:austineyapp",
+      "displayName": "austineyapp",
+      "image": "https://avatars.githubusercontent.com/u/43059393?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 369,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772459721254,
+      "changelog": "Austine Daily Ops 1.0.0 – Initial release\n\n- Enables concise daily execution and trip operations workflow management for Austine.\n- Structured commands for daily status, planning, and priorities, including blockers and concrete next actions.\n- End-to-end trip operations assistance: requirements gathering, sourcing, quoting, recommendation, and decision handoff.\n- Pending vendor follow-up tracking with owner, due date, reminders, and escalation.\n- Always provides best value, convenience, and fallback travel options with clear trade-offs.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:58213debdc2cbc1f413bb80578b17943b8f5f68c7ae3b86a8eb6a0606d4e34cc"
+}

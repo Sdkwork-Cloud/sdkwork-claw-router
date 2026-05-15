@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nasply-wechat-mp-reader@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nasply_wechat_mp_reader",
+  "skill": {
+    "id": 30347,
+    "skillKey": "clawhub-nasply-wechat-mp-reader",
+    "name": "WeChat MP Reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nasply-wechat-mp-reader",
+    "url": "https://clawhub.ai/skills/nasply-wechat-mp-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nasply-wechat-mp-reader-9a8168fe453a84f0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch WeChat Official Account articles from either a public account name or a WeChat article URL. Use when the user wants to extract full article content, id..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nasplycc",
+      "userId": "s17awvdy31r2yyyb547xqanc4183kzk1",
+      "displayName": "nasplycc",
+      "image": "https://avatars.githubusercontent.com/u/257000910?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 274,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1775126992719,
+      "changelog": "修复二维码登录链路：login-start 现在会生成真实可扫码 PNG，并修复多 uuid cookie 导致的二维码获取问题；补充使用文档说明。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:86bf0166fb6ca1fe0f4c695252ecd8466619843735bd41a0b39a125ff8dfa1c7"
+}

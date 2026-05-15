@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28587,
+  "uuid": "skill-clawhub-readme-env-table-sync",
+  "skillKey": "clawhub-readme-env-table-sync",
+  "name": "README Env Table Sync",
+  "summary": "Generate and sync a README environment-variable table from .env.example using marker blocks, with drift detection for CI.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.readme_env_table_sync",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daniel Lummis",
+      "features": [
+        "Generate and sync a README environment-variable table from .env.example using marker blocks, wi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/readme-env-table-sync@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65238171?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "readme-env-table-sync",
+      "url": "https://clawhub.ai/skills/readme-env-table-sync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "readme-env-table-sync",
+    "url": "https://clawhub.ai/skills/readme-env-table-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/readme-env-table-sync-202c8d147c6d9574.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/readme-env-table-sync@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-readme-env-table-sync-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c289ac4e106e9ccb698654e96e22d2a6097b0cf22d59208365f261969da98b98",
+      "artifactSizeBytes": 2322
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T20:07:08.197Z"
+}

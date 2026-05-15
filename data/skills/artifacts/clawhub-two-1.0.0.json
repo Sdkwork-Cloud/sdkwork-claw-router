@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/two@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.two",
+  "skill": {
+    "id": 58531,
+    "skillKey": "clawhub-two",
+    "name": "two"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "two",
+    "url": "https://clawhub.ai/skills/two",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/two-3fc4ccfe745870e2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "介绍数字 2 的文化含义和象征意义（中英文双语）。Use when users ask about the cultural meaning of number 2, \"二的文化\", \"symbolism of two\", \"为什么 2 很重要\", \"meaning of number two\" etc."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leocryptoflow",
+      "userId": "publishers:leocryptoflow",
+      "displayName": "Leo Sheng",
+      "image": "https://avatars.githubusercontent.com/u/149644278?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774000012337,
+      "changelog": "- Initial release of the \"two\" skill, providing cultural and symbolic meanings of the number 2 in both Chinese and English.\n- Covers philosophical, religious, and modern significance of the number 2 in Eastern and Western contexts.\n- Includes cultural symbolism with examples from Chinese and Western traditions.\n- Offers concise usage guidelines and sample trigger scenarios for relevant user queries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6900cec8096db1150906bcd480420a95d328e3b3c3a94f14754798353af0b56a"
+}

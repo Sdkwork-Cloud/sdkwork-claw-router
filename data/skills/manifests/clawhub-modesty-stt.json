@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40572,
+  "uuid": "skill-clawhub-modesty-stt",
+  "skillKey": "clawhub-modesty-stt",
+  "name": "stt",
+  "summary": "Transcribe audio files using SkillBoss API Hub STT",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.modesty_stt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ModestyRichards",
+      "features": [
+        "Transcribe audio files using SkillBoss API Hub STT"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/modesty-stt@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261238899?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "modesty-stt",
+      "url": "https://clawhub.ai/skills/modesty-stt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "modesty-stt",
+    "url": "https://clawhub.ai/skills/modesty-stt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/modesty-stt-92f27a554f553fc9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/modesty-stt@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-modesty-stt-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fd948c0318073a7b0e4ca3ae5c22b224875fb1c5b5b052215ebe8ed7210e5298",
+      "artifactSizeBytes": 2150
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T02:02:42.310Z"
+}

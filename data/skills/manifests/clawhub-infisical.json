@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34484,
+  "uuid": "skill-clawhub-infisical",
+  "skillKey": "clawhub-infisical",
+  "name": "Infisical",
+  "summary": "Infisical integration. Manage data, records, and automate workflows. Use when the user wants to interact with Infisical data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.infisical",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Infisical integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Infisical data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/infisical@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "infisical",
+      "url": "https://clawhub.ai/skills/infisical"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "infisical",
+    "url": "https://clawhub.ai/skills/infisical",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/infisical-2ce1d14038a732cc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/infisical@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-infisical-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3d73a7ae0f4a83f5a3de3c0ff833e8ce8f5a91efa1d41b9d30585931544cd129",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:35:08.470Z"
+}

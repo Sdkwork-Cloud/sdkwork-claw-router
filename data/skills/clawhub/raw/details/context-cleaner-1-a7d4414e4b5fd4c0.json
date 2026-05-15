@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "context-cleaner-1",
+    "displayName": "Context Cleaner",
+    "summary": "Automatically compress large contexts and clean up expired sessions, sub-agents, and temporary files.",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1776395810019,
+    "updatedAt": 1777527648686
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1776395810019,
+    "changelog": "- New context-cleaner skill automatically compresses large contexts and cleans up expired sessions, sub-agents, and temporary files.\n- Runs in the background during heartbeat checks or can be triggered manually.\n- Monitors session context size, archives old sessions, and terminates sub-agents idle for over 30 minutes.\n- Ensures safety by never deleting active sessions, preserving recent history, and archiving before deletion.\n- Provides cleanup reports summarizing actions and token savings.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "liujc007",
+    "userId": "s17anmqxcwyva50qwjz9dffjs584yrgg",
+    "displayName": "liujc007",
+    "image": "https://avatars.githubusercontent.com/u/12581949?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527648686
+  }
+}

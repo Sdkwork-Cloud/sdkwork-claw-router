@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72452,
+  "uuid": "skill-clawhub-feishu-omni-todo",
+  "skillKey": "clawhub-feishu-omni-todo",
+  "name": "飞书全场景待办助手",
+  "summary": "飞书全场景Todo管理器，深度整合飞书生态。必须触发场景：用户发送待办事项、用户提到'/todo'指令、用户询问待办列表、用户要求保存待办、用户发送包含时间的任务安排、用户询问日历日程、用户要求同步到日历。支持多渠道消息（飞书/微信/短信等）接收Todo，自动同步飞书日历。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_omni_todo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangyu68",
+      "features": [
+        "飞书全场景Todo管理器，深度整合飞书生态。必须触发场景：用户发送待办事项、用户提到'/todo'指令、用户询问待办列表、用户要求保存待办、用户发送包含时间的任务安排、用户询问日历日程、用户."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-omni-todo@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36838019?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-omni-todo",
+      "url": "https://clawhub.ai/skills/feishu-omni-todo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-omni-todo",
+    "url": "https://clawhub.ai/skills/feishu-omni-todo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-omni-todo-1415246760a02baa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-omni-todo@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-omni-todo-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6ca01389c87ccb67caaa9f9f541d3e64fd3d7dc6c1e3fd85a955fbfff9a91c63",
+      "artifactSizeBytes": 2393
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T07:52:01.843Z"
+}

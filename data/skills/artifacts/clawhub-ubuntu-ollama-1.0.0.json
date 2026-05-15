@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ubuntu-ollama@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ubuntu_ollama",
+  "skill": {
+    "id": 53129,
+    "skillKey": "clawhub-ubuntu-ollama",
+    "name": "Ubuntu Ollama"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ubuntu-ollama",
+    "url": "https://clawhub.ai/skills/ubuntu-ollama",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ubuntu-ollama-9a2377b95e25a89b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Ubuntu Ollama — run Ollama on Ubuntu with fleet routing across multiple Ubuntu machines. Ubuntu Ollama setup with apt, systemd, and NVIDIA CUDA. Route Ollama..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775261540882,
+      "changelog": "New skill: Ubuntu Ollama fleet routing with apt, systemd, and CUDA",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d14fad17a1894ea671dafa7f623d888553bae46bdbdd52d4fdcfae85444e4e3a"
+}

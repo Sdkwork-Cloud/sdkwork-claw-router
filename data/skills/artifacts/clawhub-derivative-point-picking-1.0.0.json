@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/derivative-point-picking@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.derivative_point_picking",
+  "skill": {
+    "id": 56818,
+    "skillKey": "clawhub-derivative-point-picking",
+    "name": "导数取点"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "derivative-point-picking",
+    "url": "https://clawhub.ai/skills/derivative-point-picking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/derivative-point-picking-7a73a5ef3e693028.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Solve high-school or college-entrance-exam style derivative problems centered on root existence, root count, and parameter ranges. Use when a problem asks wh..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiuxiao-yunwai",
+      "userId": "s1743w48pp26dvthmmtzzwtaxd86cs83",
+      "displayName": "Jiuxiao",
+      "image": "https://avatars.githubusercontent.com/u/148369812?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 49,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778335673744,
+      "changelog": "Initial public release with bilingual root-existence proof workflow and examples.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:88b1fac0222a15f670562ac4a758da7a55ae4f1877e3ebea9e6251c7486f839a"
+}

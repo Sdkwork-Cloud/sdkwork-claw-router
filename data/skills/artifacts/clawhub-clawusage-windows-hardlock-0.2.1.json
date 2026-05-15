@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawusage-windows-hardlock@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawusage_windows_hardlock",
+  "skill": {
+    "id": 53651,
+    "skillKey": "clawhub-clawusage-windows-hardlock",
+    "name": "ClawUsage Windows Hardlock"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawusage-windows-hardlock",
+    "url": "https://clawhub.ai/skills/clawusage-windows-hardlock",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawusage-windows-hardlock-d86e952015e76e9d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run local clawusage monitoring commands from chat (Telegram/Feishu). Use when user types `/clawusage ...` or asks to check Codex usage, enable/disable auto i..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fantasyengineercdream",
+      "userId": "publishers:fantasyengineercdream",
+      "displayName": "fantasyengineercdream",
+      "image": "https://avatars.githubusercontent.com/u/211698591?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 614,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1772682371117,
+      "changelog": "Route A hardening: publish-safe script payload (.ps1.txt), runtime rehydration to .clawusage/skill-runtime, and skill-only execution path that no longer depends on global clawusage.cmd.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:de6fa9cb168d16302f0991048f41ffcae5a1a5b03426d631c8f2b94fc39490a3"
+}

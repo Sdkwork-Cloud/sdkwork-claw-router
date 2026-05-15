@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pump-fun@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pump_fun",
+  "skill": {
+    "id": 10255,
+    "skillKey": "clawhub-pump-fun",
+    "name": "Pump Fun"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pump-fun",
+    "url": "https://clawhub.ai/skills/pump-fun",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pump-fun-49d5ed58e2e0c1c5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Buy, sell, and launch tokens on Pump.fun using the PumpPortal API"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "playdadev",
+      "userId": "s1762zavtq6bmvra9d858tdvfs83ygvw",
+      "displayName": "Playda",
+      "image": "https://avatars.githubusercontent.com/u/186032871?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2395,
+      "installsAllTime": 5,
+      "installsCurrent": 3,
+      "stars": 4,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770296631987,
+      "changelog": "- Removed all source code and supplementary files; only documentation (SKILL.md) remains.\n- No functional skill code is included in this version.\n- Documentation is unchanged except for file removals in the package.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1ba4e70de3c2d036a34a78beab19b573dafc8ddcb2e35121e189076627948a23"
+}

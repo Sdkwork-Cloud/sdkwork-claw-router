@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-aisa-youtube-aisa@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_aisa_youtube_aisa",
+  "skill": {
+    "id": 44784,
+    "skillKey": "clawhub-openclaw-aisa-youtube-aisa",
+    "name": "Openclaw AIsa Youtube AIsa"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-aisa-youtube-aisa",
+    "url": "https://clawhub.ai/skills/openclaw-aisa-youtube-aisa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-aisa-youtube-aisa-249e8f53ce6a7bdb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search YouTube videos, channels, and trends through the AISA YouTube SERP client. Use when: the user needs YouTube search, trend discovery, channel research,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bibaofeng",
+      "userId": "s1740zrgcnwxsxgzt9bfj5a1jn842mag",
+      "displayName": "bibaofeng",
+      "image": "https://avatars.githubusercontent.com/u/86095131?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777563744659,
+      "changelog": "- Added README.md for improved documentation.\n- Refined and simplified SKILL.md frontmatter and metadata for clarity.\n- Updated maintainer/author information.\n- Improved cross-platform compatibility notes.\n- No changes to runtime functionality or command surface.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fa6faea7943a9bdb3bac4b412914a29781e1f3f150c16286ed778c5d9c18f223"
+}

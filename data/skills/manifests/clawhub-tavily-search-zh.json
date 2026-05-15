@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66614,
+  "uuid": "skill-clawhub-tavily-search-zh",
+  "skillKey": "clawhub-tavily-search-zh",
+  "name": "tavily-search-zh",
+  "summary": "通过 AISA 调用 Tavily 网页搜索，并支持深度、主题和时间范围过滤。触发条件：当用户需要比普通关键词搜索更灵活的网页检索过滤能力时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tavily_search_zh",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIsa",
+      "features": [
+        "通过 AISA 调用 Tavily 网页搜索，并支持深度、主题和时间范围过滤。触发条件：当用户需要比普通关键词搜索更灵活的网页检索过滤能力时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tavily-search-zh@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245991925?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tavily-search-zh",
+      "url": "https://clawhub.ai/skills/tavily-search-zh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tavily-search-zh",
+    "url": "https://clawhub.ai/skills/tavily-search-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tavily-search-zh-79e4827b608b5be5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tavily-search-zh@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tavily-search-zh-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:036dfe4405fad576d377486094880a5522e4102294532eb4c896fc851147db7e",
+      "artifactSizeBytes": 2243
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T09:31:14.817Z"
+}

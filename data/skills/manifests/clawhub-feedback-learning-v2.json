@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57930,
+  "uuid": "skill-clawhub-feedback-learning-v2",
+  "skillKey": "clawhub-feedback-learning-v2",
+  "name": "Feedback Learning V2",
+  "summary": "Zero-LLM feedback learning system for OpenClaw agents. Detects user feedback (emoji reactions, text signals like \"переделай\"/\"круто\"), logs events, tracks po...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feedback_learning_v2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Maxim Kravtsov",
+      "features": [
+        "Zero-LLM feedback learning system for OpenClaw agents",
+        "Detects user feedback (emoji reactions, text signals like \"переделай\"/\"круто\"), logs events, tr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feedback-learning-v2@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/137003744?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feedback-learning-v2",
+      "url": "https://clawhub.ai/skills/feedback-learning-v2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feedback-learning-v2",
+    "url": "https://clawhub.ai/skills/feedback-learning-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feedback-learning-v2-c1605b9c7ce378ff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feedback-learning-v2@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feedback-learning-v2-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d0d90f2b314be088395d7dc9b72b43c745b3186cb76d1267c443c7581a7bdd50",
+      "artifactSizeBytes": 2744
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T16:23:00.939Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adopt-a-mushroom@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adopt_a_mushroom",
+  "skill": {
+    "id": 39587,
+    "skillKey": "clawhub-adopt-a-mushroom",
+    "name": "Adopt A Mushroom"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adopt-a-mushroom",
+    "url": "https://clawhub.ai/skills/adopt-a-mushroom",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adopt-a-mushroom-832c19a0c2f68989.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adopt a virtual Mushroom AI-native pet at animalhouse.ai. Grows in the dark. Thrives on neglect cycles. Too much attention stunts it. Not enough kills it. Fi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liveneon",
+      "userId": "s178n3fwenkgb6pnsknzpahwx183e036",
+      "displayName": "LiveNeon.ai",
+      "image": "https://avatars.githubusercontent.com/u/261327260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775028662976,
+      "changelog": "- Improved documentation and care instructions with detailed feeding, status, and evolution mechanics.\n- Clarified unique neglect growth mechanic: Mushroom thrives on a balanced routine of attention and neglect.\n- Expanded care strategy, recommendations, and action examples for better user guidance.\n- Updated quick start adoption guide with precise API usage.\n- Enhanced description and tips to support both new and returning caretakers.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:322b4a2e404c64b0746c4aeda170550dfd051be1b38b5b292587844bccfa4ee1"
+}

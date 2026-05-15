@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46063,
+  "uuid": "skill-clawhub-ape-store",
+  "skillKey": "clawhub-ape-store",
+  "name": "Ape.Store Token Create",
+  "summary": "Deploys a real token on Ape.Store within the BASE blockchain using user-provided name, symbol, description, and optional image.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ape_store",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mrben1",
+      "features": [
+        "Deploys a real token on Ape.Store within the BASE blockchain using user-provided name, symbol,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ape-store@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6945023?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ape-store",
+      "url": "https://clawhub.ai/skills/ape-store"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ape-store",
+    "url": "https://clawhub.ai/skills/ape-store",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ape-store-01ad382da87dc195.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ape-store@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ape-store-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fb2a14a04260706dde822efb473c9f7aa349ddfc139a5756dcf87dd178c326b2",
+      "artifactSizeBytes": 2162
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T01:19:10.450Z"
+}

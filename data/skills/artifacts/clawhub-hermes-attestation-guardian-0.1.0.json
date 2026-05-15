@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hermes-attestation-guardian@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hermes_attestation_guardian",
+  "skill": {
+    "id": 42395,
+    "skillKey": "clawhub-hermes-attestation-guardian",
+    "name": "hermes-attestation-guardian"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hermes-attestation-guardian",
+    "url": "https://clawhub.ai/skills/hermes-attestation-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hermes-attestation-guardian-2497faeaec3a89e5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Hermes-only runtime security attestation and drift detection skill for operator-managed Hermes infrastructure."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "davida-ps",
+      "userId": "s17ewxqmthh68xc4bv5vc6f30183jsf1",
+      "displayName": "davida-ps",
+      "image": "https://avatars.githubusercontent.com/u/232346510?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1776769207586,
+      "changelog": "Release 0.1.0 via CI",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3b1f6604835a1fdfb5cee6d30847dc076e14a35677fbe47eb61e721302d36653"
+}

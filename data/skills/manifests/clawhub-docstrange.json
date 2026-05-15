@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8866,
+  "uuid": "skill-clawhub-docstrange",
+  "skillKey": "clawhub-docstrange",
+  "name": "Nanonets OCR",
+  "summary": "Document extraction API by Nanonets. Convert PDFs and images to markdown, JSON, or CSV with confidence scoring. Use when you need to OCR documents, extract invoice fields, parse receipts, or convert tables to structured data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docstrange",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shhdwi",
+      "features": [
+        "Document extraction API by Nanonets",
+        "Convert PDFs and images to markdown, JSON, or CSV with confidence scoring",
+        "Use when you need to OCR documents, extract invoice fields, parse receipts, or convert tables t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/docstrange@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/72087189?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "docstrange",
+      "url": "https://clawhub.ai/skills/docstrange"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docstrange",
+    "url": "https://clawhub.ai/skills/docstrange",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docstrange-ead7f975ec6e108b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/docstrange@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-docstrange-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:428ace0041133ff923d4cc3bd5db01eea59c36e90bb7ea295e4a373e4e5e68c3",
+      "artifactSizeBytes": 2564
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T09:52:39.686Z"
+}

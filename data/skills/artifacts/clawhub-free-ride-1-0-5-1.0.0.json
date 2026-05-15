@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-ride-1-0-5@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_ride_1_0_5",
+  "skill": {
+    "id": 27629,
+    "skillKey": "clawhub-free-ride-1-0-5",
+    "name": "Free Ride 1.0.5"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-ride-1-0-5",
+    "url": "https://clawhub.ai/skills/free-ride-1-0-5",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-ride-1-0-5-219b6c2c3c3d1a36.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manages free AI models from OpenRouter for OpenClaw. Automatically ranks models by quality, configures fallbacks for rate-limit handling, and updates opencla..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andy27725",
+      "userId": "s1771zaa2s144y84bcq90bv6h183h8km",
+      "displayName": "Andy27725",
+      "image": "https://avatars.githubusercontent.com/u/259773669?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 254,
+      "installsAllTime": 9,
+      "installsCurrent": 9,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774367474683,
+      "changelog": "- Initial release of the freeride skill for OpenClaw.\n- Automatically configures OpenClaw to use free AI models from OpenRouter, ranking them by quality.\n- Adds fallback models to minimize disruptions from rate limits and preserves your existing configuration.\n- Provides CLI commands to list models, switch primaries or fallbacks, and refresh the model list.\n- Updates only agent model settings in openclaw.json, keeping other settings unchanged.\n- Includes optional watcher tools for automatic model rotation during rate limits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bb7df7095c0575a66ed81f54a3086baed548a623d56227d89c5c02b6853b46b0"
+}

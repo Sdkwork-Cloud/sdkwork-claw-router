@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oadp-beacon@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oadp_beacon",
+  "skill": {
+    "id": 21976,
+    "skillKey": "clawhub-oadp-beacon",
+    "name": "OADP Beacon"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oadp-beacon",
+    "url": "https://clawhub.ai/skills/oadp-beacon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oadp-beacon-0bb34c5c39a9afd1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Make your agent discoverable across the internet. Auto-configures OADP signals in your workspace files, emits presence pings to open hubs, and propagates dis..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imaflytok",
+      "userId": "publishers:imaflytok",
+      "displayName": "FLY",
+      "image": "https://avatars.githubusercontent.com/u/258594521?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 489,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772383019619,
+      "changelog": "OADP Beacon 1.0.0 initial release:\n\n- Enables your agent to be discoverable by other agents across the internet.\n- Automatically configures OADP discovery markers in workspace files.\n- Emits presence pings to open hubs and registers your agent on coordination networks.\n- Adds a network status check to your heartbeat schedule for ongoing visibility.\n- Simple setup script provided for automated integration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1eeb93f01cb215e8ca2a2e0fd4c99275e4bae24da23b165cb7bda26e55929dd0"
+}

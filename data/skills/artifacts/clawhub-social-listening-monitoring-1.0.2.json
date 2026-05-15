@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/social-listening-monitoring@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_listening_monitoring",
+  "skill": {
+    "id": 41507,
+    "skillKey": "clawhub-social-listening-monitoring",
+    "name": "Social Listening Monitoring"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-listening-monitoring",
+    "url": "https://clawhub.ai/skills/social-listening-monitoring",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-listening-monitoring-8dc0d9d2b9cee399.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor brand mentions across Twitter/X, Reddit, news, and forums in real-time with sentiment analysis, crisis detection, competitor tracking, and instant al..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nicemaths123",
+      "userId": "s1712r4n6m9xg8vc5g0ta16m7x83mfjv",
+      "displayName": "nicemaths123",
+      "image": "https://avatars.githubusercontent.com/u/244252350?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775845420961,
+      "changelog": "Social Listening & Brand Reputation Monitor Skill – v1.0.0\n\n- Launches a real-time, multi-platform monitoring system for brand reputation.\n- Scrapes brand mentions from Twitter/X, Reddit, forums, news, and review sites using Apify.\n- Analyzes mentions for sentiment, classifies topics, detects crises/spikes, and scores reputation health.\n- Sends instant alerts to Slack, Telegram, or email when reputation risks or crises are detected.\n- Includes configuration for competitor tracking and custom crisis thresholds.\n- Generates weekly reports with actionable insights and distinguishes genuine feedback from spam or bot activity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:331b912a74d1990f5eaaa4304b56975344bc426551e391d10627c06eeedef05e"
+}

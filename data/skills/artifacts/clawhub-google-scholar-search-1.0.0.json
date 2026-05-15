@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-scholar-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_scholar_search",
+  "skill": {
+    "id": 15734,
+    "skillKey": "clawhub-google-scholar-search",
+    "name": "Google Scholar Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-scholar-search",
+    "url": "https://clawhub.ai/skills/google-scholar-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-scholar-search-d55c61003373d671.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Academic paper search using Semantic Scholar API. Free API - no key required. Search research papers, get citations, abstracts, authors, and download PDFs. U..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhoujc11",
+      "userId": "s173kzy0b70kdd3jc0kfdcxtas83gjsv",
+      "displayName": "zzwd",
+      "image": "https://avatars.githubusercontent.com/u/163382423?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 769,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773713253102,
+      "changelog": "- Initial release of google-scholar-search skill.\n- Search academic papers using the free Semantic Scholar API—no API key needed.\n- Supports advanced filters: year range, minimum citation count, and result limit.\n- Provides detailed paper metadata: title, authors, year, venue, citation count, abstract, URLs, and PDF links if available.\n- Offers JSON output for easy integration with other tools.\n- Includes command-line tools for searching papers and retrieving detailed information using paper IDs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:03526223edc5d74faf5933ec20b14ee4b4980391e438fe31e6003aaf73605f6a"
+}

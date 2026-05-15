@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65933,
+  "uuid": "skill-clawhub-airline-info-to-website",
+  "skillKey": "clawhub-airline-info-to-website",
+  "name": "Airline Info To Website",
+  "summary": "抓取航空公司机型座位图数据，自动分类整理图片，生成网站展示航司信息。支持 seatmaps.com 数据源，自动处理机型详情、舱位配置、座椅图片和机上设施信息。",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.airline_info_to_website",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangxinyu123",
+      "features": [
+        "抓取航空公司机型座位图数据，自动分类整理图片，生成网站展示航司信息。支持 seatmaps.com 数据源，自动处理机型详情、舱位配置、座椅图片和机上设施信息。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/airline-info-to-website@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40056997?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "airline-info-to-website",
+      "url": "https://clawhub.ai/skills/airline-info-to-website"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "airline-info-to-website",
+    "url": "https://clawhub.ai/skills/airline-info-to-website",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/airline-info-to-website-232e2a6f0744f968.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/airline-info-to-website@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-airline-info-to-website-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bbbfd843ed782399630d25fbb0fa14d7432815ca58653ad0899a021fb20ad1f0",
+      "artifactSizeBytes": 2394
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T08:12:16.392Z"
+}

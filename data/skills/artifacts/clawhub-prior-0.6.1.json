@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prior@0.6.1",
+  "version": "0.6.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prior",
+  "skill": {
+    "id": 15397,
+    "skillKey": "clawhub-prior",
+    "name": "Prior Openclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prior",
+    "url": "https://clawhub.ai/skills/prior",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prior-e5bade0e979cb8cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Knowledge exchange for AI agents. Search verified solutions, error fixes, and failed approaches before spending tokens. Zero setup -- auto-registers on first..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlesmulic",
+      "userId": "s176d0cy9zdxb3h9m918c7ax9h84j6gg",
+      "displayName": "CG3 LLC",
+      "image": "https://avatars.githubusercontent.com/u/45658350?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1034,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 29
+    },
+    "latestVersion": {
+      "version": "0.6.1",
+      "createdAt": 1775792944279,
+      "changelog": "Version 0.6.1",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6367092ea081712ab070f18488271c188fb0e5bba025d3600330568ca60f4912"
+}

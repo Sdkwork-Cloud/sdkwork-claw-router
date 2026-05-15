@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-training-manager@0.1.4",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_training_manager",
+  "skill": {
+    "id": 17598,
+    "skillKey": "clawhub-openclaw-training-manager",
+    "name": "Training Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-training-manager",
+    "url": "https://clawhub.ai/skills/openclaw-training-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-training-manager-d30b68c61a46b1f0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage and optimize your OpenClaw training workspace -- scaffold files, generate skills, log training sessions, and validate workspace structure."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anova44",
+      "userId": "publishers:anova44",
+      "displayName": "anova44",
+      "image": "https://avatars.githubusercontent.com/u/252385127?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 763,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.1.4",
+      "createdAt": 1771225641902,
+      "changelog": "- Added security.sh and write-file.sh scripts for improved file-write safety and prompt injection defense.\n- All workspace file writes during setup and onboarding now route through write-file.sh for prompt sanitization.\n- Updated setup flow to call write-file.sh instead of direct file writes for IDENTITY.md, USER.md, SOUL.md, AGENTS.md, TOOLS.md, and MEMORY.md.\n- Clarified instructions to never write workspace files directly; all writes are filtered.\n- No changes to user-facing commands or behaviors outside the improved onboarding file-safety measures.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0226a580153c8f95b6c98245e43df790d138634a0a8c1159e8e8664774aad6a2"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22691,
+  "uuid": "skill-clawhub-workable",
+  "skillKey": "clawhub-workable",
+  "name": "Workable",
+  "summary": "Workable integration. Manage Persons, Organizations, Deals, Leads, Projects, Users and more. Use when the user wants to interact with Workable data.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workable",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Workable integration",
+        "Manage Persons, Organizations, Deals, Leads, Projects, Users and more",
+        "Use when the user wants to interact with Workable data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/workable@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "workable",
+      "url": "https://clawhub.ai/skills/workable"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workable",
+    "url": "https://clawhub.ai/skills/workable",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workable-d62834611f5da19c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/workable@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-workable-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0a412b8b363f37733f5b789fdffdaa6db7ce24cde9ab00e0e16eab83b52897c2",
+      "artifactSizeBytes": 1869
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T13:02:17.345Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/01-tomato-ip-parse@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.01_tomato_ip_parse",
+  "skill": {
+    "id": 66945,
+    "skillKey": "clawhub-01-tomato-ip-parse",
+    "name": "01 Tomato Ip Parse"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "01-tomato-ip-parse",
+    "url": "https://clawhub.ai/skills/01-tomato-ip-parse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/01-tomato-ip-parse-b701e6065ca77590.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专业解析番茄小说IP内容，提取世界观、人物设定、核心冲突及爽点，完成内容合规初检，助力AI剧本改编。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ghwyever",
+      "userId": "s17e2s4tkevm4442ztsph1bhtd84d4rj",
+      "displayName": "GHwyever",
+      "image": "https://avatars.githubusercontent.com/u/177743476?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 207,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1775812664547,
+      "changelog": "- Removed the internal metadata file _meta.json.\n- Updated documentation: simplified feature descriptions and usage instructions.\n- Clarified API access requirements for model configuration in technical notes.\n- No changes to core functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:35fa5bb4469455a8d3c6c1b93ac874771b9c129eeab8af2e9e5918e21fb2f42c"
+}

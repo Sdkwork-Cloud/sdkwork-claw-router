@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18850,
+  "uuid": "skill-clawhub-ocas-scout",
+  "skillKey": "clawhub-ocas-scout",
+  "name": "Scout",
+  "summary": "Structured OSINT research on people, companies, and organizations. Use when the user wants a provenance-backed brief, entity resolution across public sources...",
+  "version": "2.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ocas_scout",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Indigo Karasu",
+      "features": [
+        "Structured OSINT research on people, companies, and organizations",
+        "Use when the user wants a provenance-backed brief, entity resolution across public sources..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ocas-scout@2.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265148029?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ocas-scout",
+      "url": "https://clawhub.ai/skills/ocas-scout"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ocas-scout",
+    "url": "https://clawhub.ai/skills/ocas-scout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ocas-scout-af7a2f52855c22db.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ocas-scout@2.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ocas-scout-2.3.0.json",
+      "version": "2.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3bb33f5e9415d913898de1fc8aa5f6fb50a53d024d16d0051e579b5cc8cec3e5",
+      "artifactSizeBytes": 2511
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T07:38:31.441Z"
+}

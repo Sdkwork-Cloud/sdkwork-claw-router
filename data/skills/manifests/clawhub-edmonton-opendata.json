@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36120,
+  "uuid": "skill-clawhub-edmonton-opendata",
+  "skillKey": "clawhub-edmonton-opendata",
+  "name": "City of Edmonton Open Data",
+  "summary": "Access 2,179+ datasets from the City of Edmonton open data portal. Search, fetch, and analyze city data on transit, traffic, environment, census, and more. D...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edmonton_opendata",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ray Chan, PMP",
+      "features": [
+        "Access 2,179+ datasets from the City of Edmonton open data portal",
+        "Search, fetch, and analyze city data on transit, traffic, environment, census, and more"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/edmonton-opendata@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63657868?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "edmonton-opendata",
+      "url": "https://clawhub.ai/skills/edmonton-opendata"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edmonton-opendata",
+    "url": "https://clawhub.ai/skills/edmonton-opendata",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edmonton-opendata-5f2761b69be6fc57.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/edmonton-opendata@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-edmonton-opendata-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:502cc845c41004a0e2ff167ff30cee5430ab0120dba70f428250af0328efe6fd",
+      "artifactSizeBytes": 1987
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T02:24:47.059Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28568,
+  "uuid": "skill-clawhub-check-transaction",
+  "skillKey": "clawhub-check-transaction",
+  "name": "check-transaction",
+  "summary": "Allows users to check the status of a blockchain transaction by submitting a TxId. Queries the AOX transaction API and returns human-readable results.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.check_transaction",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charles-lpd",
+      "features": [
+        "Allows users to check the status of a blockchain transaction by submitting a TxId",
+        "Queries the AOX transaction API and returns human-readable results."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/check-transaction@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/90810762?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "check-transaction",
+      "url": "https://clawhub.ai/skills/check-transaction"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "check-transaction",
+    "url": "https://clawhub.ai/skills/check-transaction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/check-transaction-3ec3b2714446fca3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/check-transaction@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-check-transaction-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3d40bc72cd47ded2d1eba54896994bc0ae4344a05e7816a1614813e5c7de5862",
+      "artifactSizeBytes": 2264
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T04:02:06.484Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12491,
+  "uuid": "skill-clawhub-hydra-evolver",
+  "skillKey": "clawhub-hydra-evolver",
+  "name": "Hydra Evolver",
+  "summary": "A Proxmox-native orchestration skill that turns any home lab into a Self-Healing AI Swarm.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hydra_evolver",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "spamtylor",
+      "features": [
+        "A Proxmox-native orchestration skill that turns any home lab into a Self-Healing AI Swarm."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hydra-evolver@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/160678082?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hydra-evolver",
+      "url": "https://clawhub.ai/skills/hydra-evolver"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hydra-evolver",
+    "url": "https://clawhub.ai/skills/hydra-evolver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hydra-evolver-42560b648afe7a0b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hydra-evolver@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hydra-evolver-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ed884f16ac40d18a85e4e42c4b49ad88b535e25d2f9fb3ebc15e367f0b10cda1",
+      "artifactSizeBytes": 1820
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T03:42:33.522Z"
+}

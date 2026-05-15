@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67125,
+  "uuid": "skill-clawhub-notion-accounting-analysis",
+  "skillKey": "clawhub-notion-accounting-analysis",
+  "name": "Notion记账财务分析",
+  "summary": "Notion记账财务数据分析技能，自动读取支出收入流水表，全量翻页获取数据，100%解析relation类别字段，按年月类别标签多维分析并生成Markdown财务报告。",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notion_accounting_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jimislg",
+      "features": [
+        "Notion记账财务数据分析技能，自动读取支出收入流水表，全量翻页获取数据，100%解析relation类别字段，按年月类别标签多维分析并生成Markdown财务报告。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/notion-accounting-analysis@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52199033?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "notion-accounting-analysis",
+      "url": "https://clawhub.ai/skills/notion-accounting-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notion-accounting-analysis",
+    "url": "https://clawhub.ai/skills/notion-accounting-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notion-accounting-analysis-584278821bcf2edd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/notion-accounting-analysis@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-notion-accounting-analysis-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1aca857a0c37eae4775e29778df16b1cdcc51f765f671e3cd17531d4693dc6b8",
+      "artifactSizeBytes": 2110
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T11:39:16.295Z"
+}

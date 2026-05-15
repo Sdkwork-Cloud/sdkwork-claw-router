@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57532,
+  "uuid": "skill-clawhub-ledger-project-expense-entry",
+  "skillKey": "clawhub-ledger-project-expense-entry",
+  "name": "Ledger Project Expense Entry",
+  "summary": "Record natural-language project expense messages into ledger JSONL. Use when user sends \"项目+支出\" directly (e.g., \"OpenClaw 服务器 89\"), wants quick记账, or asks to...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ledger_project_expense_entry",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shing19",
+      "features": [
+        "Record natural-language project expense messages into ledger JSONL",
+        "Use when user sends \"项目+支出\" directly (e.g., \"OpenClaw 服务器 89\"), wants quick记账, or asks to..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ledger-project-expense-entry@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38907754?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ledger-project-expense-entry",
+      "url": "https://clawhub.ai/skills/ledger-project-expense-entry"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ledger-project-expense-entry",
+    "url": "https://clawhub.ai/skills/ledger-project-expense-entry",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ledger-project-expense-entry-e3bbdbe3875f009d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ledger-project-expense-entry@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ledger-project-expense-entry-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:241d3e8324a059fd416e71d39d9b8b1f009b051cf9be9bc605ba57ba59d1a045",
+      "artifactSizeBytes": 2003
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T05:47:51.838Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65977,
+  "uuid": "skill-clawhub-tvdr-obsidian-kb",
+  "skillKey": "clawhub-tvdr-obsidian-kb",
+  "name": "Obsidian知识库集成",
+  "summary": "通过API与本地Obsidian知识库交互，实现笔记创建、语义搜索及笔记管理功能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tvdr_obsidian_kb",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "admirobot",
+      "features": [
+        "通过API与本地Obsidian知识库交互，实现笔记创建、语义搜索及笔记管理功能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tvdr-obsidian-kb@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5316996?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tvdr-obsidian-kb",
+      "url": "https://clawhub.ai/skills/tvdr-obsidian-kb"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tvdr-obsidian-kb",
+    "url": "https://clawhub.ai/skills/tvdr-obsidian-kb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tvdr-obsidian-kb-937c9f84c567fcf2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tvdr-obsidian-kb@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tvdr-obsidian-kb-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2dc643cf9cccc63a461793e3af1fbb7e2a9392c0213d990d159bf508e2f65535",
+      "artifactSizeBytes": 1877
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T07:23:33.294Z"
+}

@@ -1,0 +1,48 @@
+{
+  "skill": {
+    "slug": "cc-godmode",
+    "displayName": "Openclaw Godmode Skill Repo",
+    "summary": "Self-orchestrating multi-agent development workflows. You say WHAT, the AI decides HOW.",
+    "tags": {
+      "latest": "5.11.3"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4815,
+      "installsAllTime": 23,
+      "installsCurrent": 23,
+      "stars": 12,
+      "versions": 3
+    },
+    "createdAt": 1770210020925,
+    "updatedAt": 1778383501811
+  },
+  "latestVersion": {
+    "version": "5.11.3",
+    "createdAt": 1771254085149,
+    "changelog": "v5.11.3 – Security Declaration Alignment\n\nThis release fixes security-scan findings caused by inconsistent runtime declarations in v5.11.2.\n\nWhat changed\n\n• Updated runtime declarations to match actual workflow behavior:\n• requires_binaries: true\n• requires_credentials: true\n• requires_network: true\n• Clarified package behavior:\n• The package itself remains documentation-only (no install-time executable payload).\n• Agent workflows may execute shell/network actions at runtime when invoked by the user.\n• Added explicit runtime transparency:\n• Required/optional runtime binaries\n• Optional credentials/environment expectations (e.g. GH_TOKEN, Claude auth, MCP configuration)\n• Refined security semantics to distinguish:\n• install-time safety\n• runtime agent capabilities\n\nWhy this release\n\nv5.11.2 could create a misleading security impression by claiming no network/credentials/code-execution requirements while documenting workflows that use shell, GitHub, Playwright, and web tools.\nv5.11.3 resolves that mismatch for clearer trust and more accurate scanner interpretation.\n\nCompatibility\n\n• No breaking workflow changes\n• Backward-compatible behavior\n• Metadata/security declaration update only",
+    "license": null
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "cubetribe",
+    "userId": "publishers:cubetribe",
+    "displayName": "TonyNoScope",
+    "image": "https://avatars.githubusercontent.com/u/176912438?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778383501811
+  }
+}

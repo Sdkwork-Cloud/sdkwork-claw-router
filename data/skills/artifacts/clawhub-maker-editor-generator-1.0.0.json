@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/maker-editor-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maker_editor_generator",
+  "skill": {
+    "id": 45631,
+    "skillKey": "clawhub-maker-editor-generator",
+    "name": "Maker Editor Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maker-editor-generator",
+    "url": "https://clawhub.ai/skills/maker-editor-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maker-editor-generator-0c0506ffd6f2e338.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "create raw video clips into edited video clips with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators use it for creating and ed..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susan4731-wilfordf",
+      "userId": "s1782w3wqej6a5gnp3w63eb80184cckp",
+      "displayName": "susan4731-wilfordf",
+      "image": "https://avatars.githubusercontent.com/u/208907675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776833532844,
+      "changelog": "Initial release of Maker Editor Generator — fast AI-powered video editing from raw clips.\n\n- Upload raw video (MP4, MOV, AVI, WebM up to 500MB) and describe edits; receive edited 1080p MP4 in 1–2 minutes.\n- Automatic setup with free token generation and seamless cloud connection.\n- Supports quick operations: cutting pauses, adding music, text overlays, exporting, credits checking, and batch editing.\n- Clear workflows for quick, batch, and iterative editing.\n- Error codes guide troubleshooting (format, size, credits, export limits).\n- Streamlined interactions: upload, instruct, download — fast results for content creators.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1aba86352e69f8a11213321dc67ec63bb4f49f87019935ddd7e24ec37cfa4ef2"
+}

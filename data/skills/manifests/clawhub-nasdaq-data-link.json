@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31491,
+  "uuid": "skill-clawhub-nasdaq-data-link",
+  "skillKey": "clawhub-nasdaq-data-link",
+  "name": "Nasdaq Data Link",
+  "summary": "Nasdaq Data Link integration. Manage Datasets. Use when the user wants to interact with Nasdaq Data Link data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nasdaq_data_link",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Nasdaq Data Link integration",
+        "Manage Datasets",
+        "Use when the user wants to interact with Nasdaq Data Link data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nasdaq-data-link@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nasdaq-data-link",
+      "url": "https://clawhub.ai/skills/nasdaq-data-link"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nasdaq-data-link",
+    "url": "https://clawhub.ai/skills/nasdaq-data-link",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nasdaq-data-link-eff5c564584a2ad2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nasdaq-data-link@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-nasdaq-data-link-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:81263efe63d899a74eca570c30ba416e935e612a17e4c3e3d29d7e97cf20b1c7",
+      "artifactSizeBytes": 1873
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:16:41.168Z"
+}

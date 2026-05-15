@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cancorteaw-app@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cancorteaw_app",
+  "skill": {
+    "id": 17887,
+    "skillKey": "clawhub-cancorteaw-app",
+    "name": "Cancorteaw App"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cancorteaw-app",
+    "url": "https://clawhub.ai/skills/cancorteaw-app",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cancorteaw-app-04382efecf12fc2c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Expo React Native apps on OpenClaw: create apps, add screens, start web previews on localhost, and check preview status safely within /home/patron/apps."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cancorleone",
+      "userId": "publishers:cancorleone",
+      "displayName": "cancorleone",
+      "image": "https://avatars.githubusercontent.com/u/203013411?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 735,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1771882035833,
+      "changelog": "- Added initial SKILL.md documentation describing the cancorteaw-app skill.\n- Outlines commands for creating a new Expo app, adding screens, starting a web preview, and checking preview status.\n- Details safety guardrails, restricted script execution, and troubleshooting steps.\n- Specifies allowed commands, directory constraints, and environment variables for safe operation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a87f98e2f6ae8a19c007991385b9040dc25e94ee14e4821e828ca64613f07da6"
+}

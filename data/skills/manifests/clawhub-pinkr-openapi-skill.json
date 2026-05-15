@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68883,
+  "uuid": "skill-clawhub-pinkr-openapi-skill",
+  "skillKey": "clawhub-pinkr-openapi-skill",
+  "name": "品氪 OpenApi 开放平台 Skill",
+  "summary": "品氪提供的OpenApi开放平台，支持门店、导购、会员、订单、退单、库存、商品、积分、储值、卡券、销售等全链路CRM/SCRM数据同步与管理。通过安全认证的API接口实现第三方系统与品氪平台的数据互通。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pinkr_openapi_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ikaijian",
+      "features": [
+        "品氪提供的OpenApi开放平台，支持门店、导购、会员、订单、退单、库存、商品、积分、储值、卡券、销售等全链路CRM/SCRM数据同步与管理。通过安全认证的API接口实现第三方系统与品氪平台."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pinkr-openapi-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40664684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pinkr-openapi-skill",
+      "url": "https://clawhub.ai/skills/pinkr-openapi-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pinkr-openapi-skill",
+    "url": "https://clawhub.ai/skills/pinkr-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pinkr-openapi-skill-ae4f983a3cdb49d2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pinkr-openapi-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pinkr-openapi-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:51db5ee4d5497c1507f9e11c47ac176001ca3c44e37123f1ca4f0b5259c73c86",
+      "artifactSizeBytes": 2129
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T12:24:50.326Z"
+}

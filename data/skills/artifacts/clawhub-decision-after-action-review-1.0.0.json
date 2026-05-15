@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/decision-after-action-review@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.decision_after_action_review",
+  "skill": {
+    "id": 50110,
+    "skillKey": "clawhub-decision-after-action-review",
+    "name": "Decision After Action Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "decision-after-action-review",
+    "url": "https://clawhub.ai/skills/decision-after-action-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/decision-after-action-review-c48b4d145c9a56cd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guide a structured review of past decisions to separate outcome from process, identify biases, and develop improved personal decision rules."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 36,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778370654243,
+      "changelog": "Initial release of decision-after-action-review skill.\n\n- Guides users in reviewing past decisions by separating outcome quality from decision quality.\n- Helps identify sources of misjudgment and cognitive bias.\n- Assists in developing personal decision rules for future situations.\n- Generates a concise after-action review memo based on user input.\n- Includes clear instructions and safety boundaries for reflective and responsible use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ca2e88361f769fd2be07331040f21b9d483ae2772a2dcd5e70edafc5154b5202"
+}

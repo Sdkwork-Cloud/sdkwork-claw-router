@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ad-account-health-checker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ad_account_health_checker",
+  "skill": {
+    "id": 26503,
+    "skillKey": "clawhub-ad-account-health-checker",
+    "name": "Ads Account Health"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ad-account-health-checker",
+    "url": "https://clawhub.ai/skills/ad-account-health-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ad-account-health-checker-f0dac9fa6025148a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Assess ad account readiness and risk status across Meta (Facebook/Instagram), Google Ads, TikTok Ads, YouTube Ads, Amazon Ads, and DSP/programmatic."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danyangliu-sandwichlab",
+      "userId": "publishers:danyangliu-sandwichlab",
+      "displayName": "danyangliu",
+      "image": "https://avatars.githubusercontent.com/u/184733968?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 367,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772498737909,
+      "changelog": "Initial release – assess ad account health, risks, and launch readiness across major ad platforms.\n\n- Supports Meta (Facebook/Instagram), Google Ads, TikTok Ads, YouTube Ads, Amazon Ads, and DSP/programmatic.\n- Evaluates account structure, permissions, policy risk, billing status, and readiness to launch or scale campaigns.\n- Standardizes inputs and outputs with clear contracts for goals, KPIs, constraints, and platform preferences.\n- Delivers concise findings, prioritized next steps, risks/guardrails, and a handoff payload for downstream use.\n- Includes decision rules for missing data, compliance risks, and platform ambiguity.\n- Provides platform-specific recommendations and actionable examples.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:43d9890378ef9629e0c28f4d636ddc5524480a108e9b4eee517f7850ef67c0fa"
+}

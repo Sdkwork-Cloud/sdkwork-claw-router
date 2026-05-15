@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/options-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.options_analyzer",
+  "skill": {
+    "id": 60167,
+    "skillKey": "clawhub-options-analyzer",
+    "name": "Options Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "options-analyzer",
+    "url": "https://clawhub.ai/skills/options-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/options-analyzer-26837fb7db285962.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "📊 专业期权策略分析器 — 期权链、Greeks、IV分析、策略推荐一站式解决！ 使用 yfinance 获取实时期权数据，Black-Scholes 计算 Greeks。 触发条件: 用户询问期权链、Greeks计算、IV分析、期权策略分析、策略推荐、 Iron Condor/Butterfly/Straddle/Strangle/Spread等策略、\"分析期权\"、 \"推荐期权策略\"、\"看涨/看跌期权\"、Delta/Gamma/Theta/Vega计算、隐含波动率。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "benzema216",
+      "userId": "s17ac87h0ykrwjr0pne81kd5w1845j96",
+      "displayName": "BENZEMA",
+      "image": "https://avatars.githubusercontent.com/u/43908081?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1954,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770013543866,
+      "changelog": "- Initial release of options-analyzer.\n- Provides one-stop professional analysis for options: option chains, Greeks calculation, IV analysis, P&L and break-even computation for 15+ strategies, and intelligent strategy recommendations.\n- Utilizes yfinance for real-time data and Black-Scholes model for Greek calculations.\n- Includes detailed CLI usage examples and documentation for ease of use.\n- Supports popular option strategies such as Iron Condor, Butterfly, Straddle, Strangle, and Spreads.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e780f587c3790e985cb5171e1608b85821e340c97e73e76cbd24704bbefff9ef"
+}

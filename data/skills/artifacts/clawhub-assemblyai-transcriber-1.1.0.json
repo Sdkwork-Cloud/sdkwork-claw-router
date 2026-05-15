@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/assemblyai-transcriber@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.assemblyai_transcriber",
+  "skill": {
+    "id": 13254,
+    "skillKey": "clawhub-assemblyai-transcriber",
+    "name": "AssemblyAI Transcriber"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "assemblyai-transcriber",
+    "url": "https://clawhub.ai/skills/assemblyai-transcriber",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/assemblyai-transcriber-1a0c629407d8db47.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transcribe audio files with speaker diarization (who speaks when). Supports 100+ languages, automatic language detection, and timestamps. Use for meetings, interviews, podcasts, or voice messages. Requires AssemblyAI API key."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xenofex7",
+      "userId": "publishers:xenofex7",
+      "displayName": "xenofex7",
+      "image": "https://avatars.githubusercontent.com/u/41230096?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1515,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1770826161167,
+      "changelog": "English docs, added metadata with required env vars",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:032d19a28565da8dce39a14938b76cbf1a82b776a7a63da36dadfb8428d56fcd"
+}

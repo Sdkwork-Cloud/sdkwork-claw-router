@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24778,
+  "uuid": "skill-clawhub-ahrefs-integration",
+  "skillKey": "clawhub-ahrefs-integration",
+  "name": "Ahrefs",
+  "summary": "Ahrefs integration. Manage Projects. Use when the user wants to interact with Ahrefs data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ahrefs_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Ahrefs integration",
+        "Manage Projects",
+        "Use when the user wants to interact with Ahrefs data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ahrefs-integration@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ahrefs-integration",
+      "url": "https://clawhub.ai/skills/ahrefs-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ahrefs-integration",
+    "url": "https://clawhub.ai/skills/ahrefs-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ahrefs-integration-7ed76d92ead433e6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ahrefs-integration@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-ahrefs-integration-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0781ae5b1c52df76e1eb6230cf759d42c58e1b7ee7cee2839e9c75e349278733",
+      "artifactSizeBytes": 1863
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:08:39.250Z"
+}

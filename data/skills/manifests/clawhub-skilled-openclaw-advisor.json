@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20489,
+  "uuid": "skill-clawhub-skilled-openclaw-advisor",
+  "skillKey": "clawhub-skilled-openclaw-advisor",
+  "name": "Skilled OpenClaw Advisor",
+  "summary": "Query the local OpenClaw docs index for accurate answers about configuration, features, CLI commands, channels, providers, plugins, cron, sessions, agents, p...",
+  "version": "1.4.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skilled_openclaw_advisor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sean Ford",
+      "features": [
+        "Query the local OpenClaw docs index for accurate answers about configuration, features, CLI com."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skilled-openclaw-advisor@1.4.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1264471?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skilled-openclaw-advisor",
+      "url": "https://clawhub.ai/skills/skilled-openclaw-advisor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skilled-openclaw-advisor",
+    "url": "https://clawhub.ai/skills/skilled-openclaw-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skilled-openclaw-advisor-577e76f7518fa65a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skilled-openclaw-advisor@1.4.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-skilled-openclaw-advisor-1.4.2.json",
+      "version": "1.4.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:06c52e08243d5c32076df07276c8c7e80f985cbf1a9ee13dcd6494305bf40061",
+      "artifactSizeBytes": 2049
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T21:15:19.079Z"
+}

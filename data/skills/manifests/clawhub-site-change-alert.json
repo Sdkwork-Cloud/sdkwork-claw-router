@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26424,
+  "uuid": "skill-clawhub-site-change-alert",
+  "skillKey": "clawhub-site-change-alert",
+  "name": "Site Change Alert",
+  "summary": "Use when monitoring websites for content changes, comparing page snapshots with diff, scheduling periodic checks, or sending alerts via email and webhook not...",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.site_change_alert",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain3",
+      "features": [
+        "Use when monitoring websites for content changes, comparing page snapshots with diff, schedulin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/site-change-alert@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218212813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "site-change-alert",
+      "url": "https://clawhub.ai/skills/site-change-alert"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "site-change-alert",
+    "url": "https://clawhub.ai/skills/site-change-alert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/site-change-alert-64bbd2b608e1276e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/site-change-alert@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-site-change-alert-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a461b930778fbd4b919abe509c291a98faea845cb07bc15c559cebc535439263",
+      "artifactSizeBytes": 1942
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T14:55:43.638Z"
+}

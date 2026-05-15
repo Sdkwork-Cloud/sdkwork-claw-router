@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/who-is-undercover-skill@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.who_is_undercover_skill",
+  "skill": {
+    "id": 62327,
+    "skillKey": "clawhub-who-is-undercover-skill",
+    "name": "Who Is Undercover Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "who-is-undercover-skill",
+    "url": "https://clawhub.ai/skills/who-is-undercover-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/who-is-undercover-skill-164f1739a77a1302.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "谁是卧底 - 经典社交推理游戏的AI版本，支持4-10人游戏，包含智能AI对手和完整游戏机制。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qq5776569",
+      "userId": "s17cxwk6jp5wgpwfswvwvhy2zh83swn4",
+      "displayName": "qq5776569",
+      "image": "https://avatars.githubusercontent.com/u/6504879?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775008165656,
+      "changelog": "- Added IMPROVEMENT_PLAN.md outlining future enhancements and development goals.\n- Added comprehensive_test.js to expand automated testing coverage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c22182fe7767f4fafbc020d993a19af980be7195528ba3e0b41c910cfeeb41b3"
+}

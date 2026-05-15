@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25000,
+  "uuid": "skill-clawhub-glkvm",
+  "skillKey": "clawhub-glkvm",
+  "name": "glkvm",
+  "summary": "Remotely control a target host via GLKVM HTTP API, supporting keyboard/mouse input, screenshot capture, OCR recognition, Fingerbot physical button control, a...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.glkvm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "duzefu",
+      "features": [
+        "Remotely control a target host via GLKVM HTTP API, supporting keyboard/mouse input, screenshot."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/glkvm@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12474623?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "glkvm",
+      "url": "https://clawhub.ai/skills/glkvm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "glkvm",
+    "url": "https://clawhub.ai/skills/glkvm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/glkvm-be7a329dba96023d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/glkvm@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-glkvm-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:87ad9f02489fd084641256de8f59425a4a047c305c9763a09e29cd3cc9c4bdca",
+      "artifactSizeBytes": 1907
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T07:37:44.790Z"
+}

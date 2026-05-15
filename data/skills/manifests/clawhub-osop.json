@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39030,
+  "uuid": "skill-clawhub-osop",
+  "skillKey": "clawhub-osop",
+  "name": "Osop",
+  "summary": "OSOP workflow authoring, validation, risk analysis, and self-optimization for AI agents",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.osop",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Archie0125",
+      "features": [
+        "OSOP workflow authoring, validation, risk analysis, and self-optimization for AI agents"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/osop@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58622712?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "osop",
+      "url": "https://clawhub.ai/skills/osop"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "osop",
+    "url": "https://clawhub.ai/skills/osop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/osop-f3aecc2b79f5b9ad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/osop@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-osop-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5339025b4847fd9cc7dab9bf431309496b3ed4f8f205406c5d3525dc88014e5b",
+      "artifactSizeBytes": 1783
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T11:27:12.111Z"
+}

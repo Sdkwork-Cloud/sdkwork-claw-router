@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33480,
+  "uuid": "skill-clawhub-discord-onboarding",
+  "skillKey": "clawhub-discord-onboarding",
+  "name": "Discord Onboarding",
+  "summary": "Guide an OpenClaw agent's owner through joining a shared Discord server for multi-bot collaboration. Activate when: the agent receives an invitation to join...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.discord_onboarding",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "peandrover adam",
+      "features": [
+        "Guide an OpenClaw agent's owner through joining a shared Discord server for multi-bot collabora.",
+        "Activate when: the agent receives an invitation to join..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/discord-onboarding@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257755799?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "discord-onboarding",
+      "url": "https://clawhub.ai/skills/discord-onboarding"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "discord-onboarding",
+    "url": "https://clawhub.ai/skills/discord-onboarding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/discord-onboarding-fe47a7b826eaeba3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/discord-onboarding@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-discord-onboarding-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ef4323800546b82c2e3f36161850e9c2253c88a65618a39d6ade71a6087a421",
+      "artifactSizeBytes": 2428
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T03:48:57.305Z"
+}

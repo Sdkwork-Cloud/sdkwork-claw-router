@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mimo-tts-asr@2.5.4",
+  "version": "2.5.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mimo_tts_asr",
+  "skill": {
+    "id": 61251,
+    "skillKey": "clawhub-mimo-tts-asr",
+    "name": "Mimo Tts Asr"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mimo-tts-asr",
+    "url": "https://clawhub.ai/skills/mimo-tts-asr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mimo-tts-asr-ee027ebb3f4e5890.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Xiaomi MiMo V2.5 TTS + ASR 全能语音技能。支持高质量中英文语音合成（TTS）和语音识别（ASR）。 TTS: 三款模型（精品音色 / VoiceDesign 音色设计 / VoiceClone 音色克隆）、方言支持、情感控制、多格式输出。 ASR: 音频转文字、多语言识别、方言、Code..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aaroncxxx",
+      "userId": "s17509zamkdtrtbahz6xrwbmx585c88m",
+      "displayName": "aaroncxxx",
+      "image": "https://avatars.githubusercontent.com/u/255621878?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.5.4",
+      "createdAt": 1776985862664,
+      "changelog": "## v2.5.4\n\n- 新增 VoiceDesign（音色设计）和 VoiceClone（音色克隆）TTS 模型支持\n- TTS 支持三种模型选择（精品音色/VoiceDesign/VoiceClone），扩展参数说明及示例\n- ASR 支持本地部署，补充开源项目文档与演示链接\n- 文档增加官方 API/发布/体验/开源资源汇总，内容优化，与官方发布说明对齐",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e8bc2abfa9c8b974dd459ac3138938c49c6a3c81a1911cd90b094959fbe18134"
+}

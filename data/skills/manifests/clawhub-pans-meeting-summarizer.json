@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61632,
+  "uuid": "skill-clawhub-pans-meeting-summarizer",
+  "skillKey": "clawhub-pans-meeting-summarizer",
+  "name": "Pans Meeting Summarizer",
+  "summary": "AI算力销售会议智能总结工具。从会议录音或文字记录自动生成结构化纪要、行动项和客户洞察，支持同步更新CRM系统。 触发词：会议纪要, 会议总结, 录音转文字, 待办提取, 客户洞察, meeting minutes, call notes, action items, CRM更新",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pans_meeting_summarizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dashiming",
+      "features": [
+        "AI算力销售会议智能总结工具。从会议录音或文字记录自动生成结构化纪要、行动项和客户洞察，支持同步更新CRM系统。 触发词：会议纪要, 会议总结, 录音转文字, 待办提取, 客户洞察, mee."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pans-meeting-summarizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28342384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pans-meeting-summarizer",
+      "url": "https://clawhub.ai/skills/pans-meeting-summarizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pans-meeting-summarizer",
+    "url": "https://clawhub.ai/skills/pans-meeting-summarizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pans-meeting-summarizer-c68f4d9434cbaf1e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pans-meeting-summarizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pans-meeting-summarizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2c9f1ecffe4df13e6c561e886e8f6b7e0c1cb82674b14c0916c2e46cb4becaa2",
+      "artifactSizeBytes": 2556
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T06:40:24.854Z"
+}

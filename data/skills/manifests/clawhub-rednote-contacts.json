@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40596,
+  "uuid": "skill-clawhub-rednote-contacts",
+  "skillKey": "clawhub-rednote-contacts",
+  "name": "rednote-contacts",
+  "summary": "Run the installed red-crawler CLI for Xiaohongshu contact discovery. Requires the red-crawler command and Playwright browser runtime; not instruction-only.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rednote_contacts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tommy",
+      "features": [
+        "Run the installed red-crawler CLI for Xiaohongshu contact discovery",
+        "Requires the red-crawler command and Playwright browser runtime",
+        "not instruction-only."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rednote-contacts@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7824431?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rednote-contacts",
+      "url": "https://clawhub.ai/skills/rednote-contacts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rednote-contacts",
+    "url": "https://clawhub.ai/skills/rednote-contacts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rednote-contacts-7b02e09235e85b26.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rednote-contacts@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rednote-contacts-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:122e956299d4d0b791e315487553e2b2ab856aa98e34fec8f039741e372e9ba8",
+      "artifactSizeBytes": 1931
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T05:11:12.785Z"
+}

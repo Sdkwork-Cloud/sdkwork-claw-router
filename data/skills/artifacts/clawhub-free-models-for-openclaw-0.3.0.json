@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-models-for-openclaw@0.3.0",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_models_for_openclaw",
+  "skill": {
+    "id": 17613,
+    "skillKey": "clawhub-free-models-for-openclaw",
+    "name": "Free Models for OpenClaw and other Agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-models-for-openclaw",
+    "url": "https://clawhub.ai/skills/free-models-for-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-models-for-openclaw-564d6c0b14200d7f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover, filter, and select free or low-cost AI models from OpenRouter for OpenClaw and other agent workflows based on context, price, and capabilities."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qidu",
+      "userId": "s1716ddt8wrq7dhxd61hprgpgs83q1qw",
+      "displayName": "christo",
+      "image": "https://avatars.githubusercontent.com/u/1757861?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 622,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.3.0",
+      "createdAt": 1773304936765,
+      "changelog": "free-models-for-openclaw v0.3.0\n\n- Updated documentation with detailed usage examples and API references for discovering, filtering, and selecting models.\n- Added clear instructions for CLI usage and API key setup.\n- Provided common free/cheap model recommendations with best use cases.\n- Clarified filtering options and advanced model selection methods.\n- Improved skill description and metadata to reflect features for OpenClaw and agent workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:afbc8572b540d556e04d1317b38e024b8240f860bb0d652f10f607bf3476168d"
+}

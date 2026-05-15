@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29350,
+  "uuid": "skill-clawhub-wechat-trending",
+  "skillKey": "clawhub-wechat-trending",
+  "name": "Wechat",
+  "summary": "Extract and summarize publicly accessible WeChat shared pages including announcements, app info, and group invite details without login or private data access.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_trending",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawKK",
+      "features": [
+        "Extract and summarize publicly accessible WeChat shared pages including announcements, app info."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-trending@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111570001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-trending",
+      "url": "https://clawhub.ai/skills/wechat-trending"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-trending",
+    "url": "https://clawhub.ai/skills/wechat-trending",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-trending-e9f482ff8c36b71c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-trending@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-trending-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7b77ce944fc1d5cd13b1188a518b90482f36ff1b15b773a72d85b5ce18a82437",
+      "artifactSizeBytes": 2347
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T08:28:36.311Z"
+}

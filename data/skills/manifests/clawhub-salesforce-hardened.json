@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55738,
+  "uuid": "skill-clawhub-salesforce-hardened",
+  "skillKey": "clawhub-salesforce-hardened",
+  "name": "Salesforce Hardened",
+  "summary": "Query and manage Salesforce CRM data via the Salesforce CLI (`sf`). Run SOQL/SOSL queries, inspect object schemas, create/update/delete records, bulk import/...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.salesforce_hardened",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Faberlens",
+      "features": [
+        "Query and manage Salesforce CRM data via the Salesforce CLI (`sf`)",
+        "Run SOQL/SOSL queries, inspect object schemas, create/update/delete records, bulk import/..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/salesforce-hardened@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261834257?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "salesforce-hardened",
+      "url": "https://clawhub.ai/skills/salesforce-hardened"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "salesforce-hardened",
+    "url": "https://clawhub.ai/skills/salesforce-hardened",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/salesforce-hardened-179b73e1487b682a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/salesforce-hardened@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-salesforce-hardened-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3fb2d98c2daf49f34e4f35ef55acfdb5d70b7e0819f2cde51197e1c1e084b8b3",
+      "artifactSizeBytes": 2502
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T13:00:29.852Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71177,
+  "uuid": "skill-clawhub-life-sim",
+  "skillKey": "clawhub-life-sim",
+  "name": "人生模拟器 | Life Sim",
+  "summary": "人生模拟器。用户说\"如果当初\"、\"如果我没有\"、\"如果那时候\"、\"平行人生\"、\"人生模拟\"、\"假如\"时触发。用户一句话描述一个曾经的选择，AI 模拟另一条路。紧扣真实时代背景，揣测用户真实性格和行为模式，聚焦核心问题，有戏剧性，有结局。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.life_sim",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hxx_ghmily",
+      "features": [
+        "人生模拟器。用户说\"如果当初\"、\"如果我没有\"、\"如果那时候\"、\"平行人生\"、\"人生模拟\"、\"假如\"时触发。用户一句话描述一个曾经的选择，AI 模拟另一条路。紧扣真实时代背景，揣测用户真实性."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/life-sim@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37283697?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "life-sim",
+      "url": "https://clawhub.ai/skills/life-sim"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "life-sim",
+    "url": "https://clawhub.ai/skills/life-sim",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/life-sim-d872892d28e89cdf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/life-sim@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-life-sim-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:993001e799a21cdde4598695c0f543164e12b2c1d2dad194c0b5c713d51c8b3c",
+      "artifactSizeBytes": 2139
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T08:18:34.322Z"
+}

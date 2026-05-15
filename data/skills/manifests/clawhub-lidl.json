@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70359,
+  "uuid": "skill-clawhub-lidl",
+  "skillKey": "clawhub-lidl",
+  "name": "Lidl",
+  "summary": "德国折扣零售巨头，拥有12,000+门店，专注有限品类和自有品牌，致力于高效供应链与数字化转型。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lidl",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "德国折扣零售巨头，拥有12,000+门店，专注有限品类和自有品牌，致力于高效供应链与数字化转型。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lidl@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lidl",
+      "url": "https://clawhub.ai/skills/lidl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lidl",
+    "url": "https://clawhub.ai/skills/lidl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lidl-712739d2658cd5ca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lidl@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lidl-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cd40d535b3af9197ee2719def14e191f1dcddf5dd7cc0c6e597a8fa4bc2e0a91",
+      "artifactSizeBytes": 2120
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T07:44:12.195Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chat-ask@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chat_ask",
+  "skill": {
+    "id": 31547,
+    "skillKey": "clawhub-chat-ask",
+    "name": "Chat Ask"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chat-ask",
+    "url": "https://clawhub.ai/skills/chat-ask",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chat-ask-bfd4d81658c714b0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Chat and ask functionality for OpenClaw"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xander-art",
+      "userId": "publishers:xander-art",
+      "displayName": "xander-art",
+      "image": "https://avatars.githubusercontent.com/u/178459432?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 265,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773671711226,
+      "changelog": "Initial release of chat-ask skill.\n\n- Provides tools for chat conversations, Q&A, and chat history management for OpenClaw.\n- Supports starting/continuing chats, asking questions (with optional detailed answers), and managing chat history (get, clear, summary).\n- Each tool returns a structured JSON response indicating status and results.\n- Designed for simple, out-of-the-box conversational functionality with no special configuration needed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e3e7d13dcf41e8d15c7a03d89570c83ace4a70d34f73ffb544a407c5a64c7edf"
+}

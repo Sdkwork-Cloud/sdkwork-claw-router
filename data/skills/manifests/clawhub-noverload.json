@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11525,
+  "uuid": "skill-clawhub-noverload",
+  "skillKey": "clawhub-noverload",
+  "name": "Noverload - Knowledge Memory",
+  "summary": "Give your agent a searchable knowledge brain - semantic search, topic synthesis, and action tracking across your saved YouTube videos, articles, Reddit threads, X posts, and PDFs",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.noverload",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "drewautomates",
+      "features": [
+        "Give your agent a searchable knowledge brain",
+        "semantic search, topic synthesis, and action tracking across your saved YouTube videos, article."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/noverload@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26078370?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "noverload",
+      "url": "https://clawhub.ai/skills/noverload"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "noverload",
+    "url": "https://clawhub.ai/skills/noverload",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/noverload-1f306371ef0b22a4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/noverload@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-noverload-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e7f8bfef53b735add47c34e04a434d0dfa6b35d5daf64014937aaf7fceef0985",
+      "artifactSizeBytes": 2535
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T15:36:02.250Z"
+}

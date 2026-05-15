@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/telegram-post@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.telegram_post",
+  "skill": {
+    "id": 65181,
+    "skillKey": "clawhub-telegram-post",
+    "name": "Telegram Post"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "telegram-post",
+    "url": "https://clawhub.ai/skills/telegram-post",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/telegram-post-7e789ce69bcdd7ae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Отправляет текстовые и мультимедийные сообщения в указанные Telegram-группы через OpenClaw CLI с использованием заданного CHAT_ID."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "larthe",
+      "userId": "s17dkm69hjehx5h951cjvv844x83vreb",
+      "displayName": "larthe",
+      "image": "https://avatars.githubusercontent.com/u/7958413?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774784643923,
+      "changelog": "Initial release of the Telegram Post Skill:\n\n- Send messages, photos, and videos to Telegram groups using OpenClaw CLI.\n- Supports posting plain text or media files to specified group IDs.\n- Provides command usage examples and group/channel IDs.\n- Includes instructions for sending albums (multiple images) via Telegram API.\n- Details bot permissions, group policies, and health/status check commands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c7e72a7aedeb34dac889c1892e69f3ecc03af5a6742b385b4183859fec8ecc9e"
+}

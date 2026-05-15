@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-security-audit-enhanced@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_security_audit_enhanced",
+  "skill": {
+    "id": 64342,
+    "skillKey": "clawhub-skill-security-audit-enhanced",
+    "name": "Skill Security Audit Enhanced"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-security-audit-enhanced",
+    "url": "https://clawhub.ai/skills/skill-security-audit-enhanced",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-security-audit-enhanced-a65a0135a32ff6b9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "🔍 增强版技能安全审计 - 检测AI代理技能中的恶意模式，包含13种检测器，覆盖后门、凭证窃取、数据外传和供应链攻击。基于SlowMist的ClawHub威胁情报(472+恶意技能)。纯Python实现，零外部依赖。优化清理版，移除无关文件，性能更佳。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "confidentkai",
+      "userId": "s178zptfxy85cb8ggdvqzq875183hvjc",
+      "displayName": "kvs-GoN",
+      "image": "https://avatars.githubusercontent.com/u/35253862?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1776225134345,
+      "changelog": "优化版本：清理无关文件、更新文档、保持核心功能完整、性能优化",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:02b9ef16ce1a5b15a266f546324daeec5789d79e87bdc836588e4c0476ed5f0a"
+}

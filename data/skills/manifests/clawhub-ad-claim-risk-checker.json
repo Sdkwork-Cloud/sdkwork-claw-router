@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32648,
+  "uuid": "skill-clawhub-ad-claim-risk-checker",
+  "skillKey": "clawhub-ad-claim-risk-checker",
+  "name": "Ad Claim Risk Checker",
+  "summary": "Analyzes ad copy to identify and reduce risky claims by flagging unsupported, absolute, or sensitive wording and providing safer rewrite alternatives.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ad_claim_risk_checker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeroyCreates",
+      "features": [
+        "Analyzes ad copy to identify and reduce risky claims by flagging unsupported, absolute, or sens."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ad-claim-risk-checker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130833525?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ad-claim-risk-checker",
+      "url": "https://clawhub.ai/skills/ad-claim-risk-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ad-claim-risk-checker",
+    "url": "https://clawhub.ai/skills/ad-claim-risk-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ad-claim-risk-checker-489c4912c9c15da7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ad-claim-risk-checker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ad-claim-risk-checker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1941898c8fdf0bc2512e52912614a10025b26f980c66fb05b58ba874f4f92f92",
+      "artifactSizeBytes": 2373
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T17:21:29.621Z"
+}

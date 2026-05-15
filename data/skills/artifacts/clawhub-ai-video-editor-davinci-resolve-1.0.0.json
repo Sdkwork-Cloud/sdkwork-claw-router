@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-editor-davinci-resolve@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_editor_davinci_resolve",
+  "skill": {
+    "id": 45574,
+    "skillKey": "clawhub-ai-video-editor-davinci-resolve",
+    "name": "Ai Video Editor Davinci Resolve"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-editor-davinci-resolve",
+    "url": "https://clawhub.ai/skills/ai-video-editor-davinci-resolve",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-editor-davinci-resolve-3724d060929b4573.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get edited video files ready to post, without touching a single slider. Upload your raw video footage (MP4, MOV, AVI, MKV, up to 500MB), say something like \"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776081866543,
+      "changelog": "Initial release of AI Video Editor for DaVinci Resolve — edit and export polished videos with AI automation.\n\n- Upload raw video footage and specify edit instructions for automatic, cloud-based processing.\n- Supports cutting silences, adding transitions, color grading, and exporting 4K MP4s.\n- No manual DaVinci Resolve workflow needed — cloud pipeline handles all edits and rendering.\n- Handles user authentication, session management, file uploads, and result exports through the API.\n- Multiple input formats supported; credits system in place for usage tracking.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9cbd7d464fc857c1c4e8ddee463207f08287b9793b771686782f9a8ecdc6d416"
+}

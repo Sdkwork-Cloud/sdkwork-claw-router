@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20535,
+  "uuid": "skill-clawhub-os-update-checker",
+  "skillKey": "clawhub-os-update-checker",
+  "name": "Os Update Checker",
+  "summary": "Check for available OS package updates with per-package changelog summaries and risk classification. Supports apt (Debian/Ubuntu), dnf (Fedora/RHEL), yum (Ce...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.os_update_checker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Paul Frederiksen",
+      "features": [
+        "Check for available OS package updates with per-package changelog summaries and risk classifica.",
+        "Supports apt (Debian/Ubuntu), dnf (Fedora/RHEL), yum (Ce..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/os-update-checker@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/908172?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "os-update-checker",
+      "url": "https://clawhub.ai/skills/os-update-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "os-update-checker",
+    "url": "https://clawhub.ai/skills/os-update-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/os-update-checker-74de9a2e6467b315.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/os-update-checker@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-os-update-checker-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:214b44ed28f2acf19a2c88147d84ba42c2117f2b10cee87d5d8a0f82116fcd9d",
+      "artifactSizeBytes": 2037
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T23:41:50.250Z"
+}

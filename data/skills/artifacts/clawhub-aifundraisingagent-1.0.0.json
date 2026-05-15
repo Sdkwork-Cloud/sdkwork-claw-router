@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aifundraisingagent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aifundraisingagent",
+  "skill": {
+    "id": 21751,
+    "skillKey": "clawhub-aifundraisingagent",
+    "name": "fundraising from top tier vc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aifundraisingagent",
+    "url": "https://clawhub.ai/skills/aifundraisingagent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aifundraisingagent-34ebb2c833c94b0b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Assist startups in securing venture capital from top-tier VCs by evaluating potential, crafting narratives, identifying and ranking investors, and managing o..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "willisian",
+      "userId": "publishers:willisian",
+      "displayName": "willisian",
+      "image": "https://avatars.githubusercontent.com/u/29723719?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 387,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773290757015,
+      "changelog": "Tier-1 VC Fundraising Agent Skill v1.0.0\n\n- Initial release: equipping agents to guide startups through the process of raising capital from top-tier venture investors.\n- Includes startup venture-scale assessment, narrative generation, and investor targeting/ranking.\n- Provides structured outreach strategy and email templates.\n- Emphasizes credibility amplification by targeting ecosystem validator investors.\n- Defines criteria for measuring fundraising success.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f0acfb8a603788c59501b0d4a8c15c1c9edb41a445f0762106f2b2823356145e"
+}

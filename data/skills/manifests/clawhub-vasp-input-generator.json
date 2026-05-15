@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29834,
+  "uuid": "skill-clawhub-vasp-input-generator",
+  "skillKey": "clawhub-vasp-input-generator",
+  "name": "vasp-input-generator",
+  "summary": "Generate VASP input files (INCAR, KPOINTS, POSCAR.template) for DFT tasks like relaxation, static, MD, band structure, and DOS calculations.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vasp_input_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Runye",
+      "features": [
+        "Generate VASP input files (INCAR, KPOINTS, POSCAR.template) for DFT tasks like relaxation, stat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vasp-input-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/71996184?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vasp-input-generator",
+      "url": "https://clawhub.ai/skills/vasp-input-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vasp-input-generator",
+    "url": "https://clawhub.ai/skills/vasp-input-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vasp-input-generator-1feea64f49d0dfcf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vasp-input-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vasp-input-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3e75b639c5cd302fba645b82c6f25307315001e70336b894b865b130da450629",
+      "artifactSizeBytes": 2243
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T12:46:51.300Z"
+}

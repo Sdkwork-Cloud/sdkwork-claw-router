@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kansodata-jira-ops@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kansodata_jira_ops",
+  "skill": {
+    "id": 54647,
+    "skillKey": "clawhub-kansodata-jira-ops",
+    "name": "Kansodata Jira Ops"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kansodata-jira-ops",
+    "url": "https://clawhub.ai/skills/kansodata-jira-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kansodata-jira-ops-d60eb7ed1f5bbeba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skill operativa read-only para análisis de Jira Cloud con enfoque en contexto, bloqueadores y triage."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kansodata",
+      "userId": "s175kr3s12fvk4nb7y0k33c9h184h30w",
+      "displayName": "Marcos CF.",
+      "image": "https://avatars.githubusercontent.com/u/225288021?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1776440084912,
+      "changelog": "Initial public release of the Jira read-only operational skill for OpenClaw.\n\nIncluded:\n- search_issue_context\n- summarize_issue\n- analyze_blockers\n- triage_backlog\n- prepare_status_update\n\nNotes:\n- Read-only only\n- Jira Cloud focused\n- No write actions\n- Designed to work with the @kansodata/kansodata-jira-plugin plugin",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:62f568fd3d72ff8a04488b27a79b9c8343ff72da424b4c7aa2769cb60333e54b"
+}

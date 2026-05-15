@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34392,
+  "uuid": "skill-clawhub-galdr",
+  "skillKey": "clawhub-galdr",
+  "name": "Galdr",
+  "summary": "Analyze music and generate impressionistic listening experiences using galdr, an open-source audio analysis CLI. Use when a user asks to analyze a song or tr...",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.galdr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sellemain",
+      "features": [
+        "Analyze music and generate impressionistic listening experiences using galdr, an open-source au.",
+        "Use when a user asks to analyze a song or tr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/galdr@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269647807?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "galdr",
+      "url": "https://clawhub.ai/skills/galdr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "galdr",
+    "url": "https://clawhub.ai/skills/galdr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/galdr-3025c8d1e59f8e13.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/galdr@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-galdr-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:adfbb42411992db1349839e866ea973a0c8d0d652fee0e86de506ebd9cb55259",
+      "artifactSizeBytes": 1903
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T21:20:06.698Z"
+}

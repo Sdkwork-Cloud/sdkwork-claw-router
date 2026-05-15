@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17907,
+  "uuid": "skill-clawhub-hash-toolkit",
+  "skillKey": "clawhub-hash-toolkit",
+  "name": "Hash Toolkit",
+  "summary": "Content hashing for deduplication with MD5, SHA256, and perceptual hashing",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hash_toolkit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "raghulpasupathi",
+      "features": [
+        "Content hashing for deduplication with MD5, SHA256, and perceptual hashing"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hash-toolkit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15859053?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hash-toolkit",
+      "url": "https://clawhub.ai/skills/hash-toolkit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hash-toolkit",
+    "url": "https://clawhub.ai/skills/hash-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hash-toolkit-c065dee75514f8c8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hash-toolkit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hash-toolkit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3e9c7a9d64a6ae1ae166a436f781b03525d97dd3773335bf711cbc3c657b9082",
+      "artifactSizeBytes": 2173
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T16:19:02.094Z"
+}

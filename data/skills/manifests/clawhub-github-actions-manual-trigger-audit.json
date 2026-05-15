@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28580,
+  "uuid": "skill-clawhub-github-actions-manual-trigger-audit",
+  "skillKey": "clawhub-github-actions-manual-trigger-audit",
+  "name": "GitHub Actions Manual Trigger Audit",
+  "summary": "Audit manual GitHub Actions trigger dependence by workflow/event to flag automation gaps and intervention risk.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_actions_manual_trigger_audit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daniel Lummis",
+      "features": [
+        "Audit manual GitHub Actions trigger dependence by workflow/event to flag automation gaps and in."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-actions-manual-trigger-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65238171?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-actions-manual-trigger-audit",
+      "url": "https://clawhub.ai/skills/github-actions-manual-trigger-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-actions-manual-trigger-audit",
+    "url": "https://clawhub.ai/skills/github-actions-manual-trigger-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-actions-manual-trigger-audit-90fc63746c088b2d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-actions-manual-trigger-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-actions-manual-trigger-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:350d6128f85d273113bccd757291ae750e3d6d77206eb6e9cc22af1b3e53c5f7",
+      "artifactSizeBytes": 2428
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T12:07:45.037Z"
+}

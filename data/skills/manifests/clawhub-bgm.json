@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23329,
+  "uuid": "skill-clawhub-bgm",
+  "skillKey": "clawhub-bgm",
+  "name": "BGM Maker",
+  "summary": "Generate original background music for short videos from a natural language description. Use when creators need royalty-free BGM, video background music, or...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bgm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "scikkk",
+      "features": [
+        "Generate original background music for short videos from a natural language description",
+        "Use when creators need royalty-free BGM, video background music, or..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bgm@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77485593?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bgm",
+      "url": "https://clawhub.ai/skills/bgm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bgm",
+    "url": "https://clawhub.ai/skills/bgm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bgm-e0ee4e4fbfb32299.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bgm@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bgm-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dc728110c66055b0110bda1e8eabf7fbe6281c119402f7114c71cb083dfb6037",
+      "artifactSizeBytes": 2310
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T14:45:02.319Z"
+}

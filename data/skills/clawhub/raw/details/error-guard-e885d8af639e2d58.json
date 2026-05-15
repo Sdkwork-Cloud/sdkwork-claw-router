@@ -1,0 +1,50 @@
+{
+  "skill": {
+    "slug": "error-guard",
+    "displayName": "Error Guard — Control‑Plane Safety",
+    "summary": "System safety and control-plane skill that prevents agent deadlocks and freezes. Provides non-LLM control commands to inspect task state, flush message queues, cancel long-running work, and recover safely without restarting the container. Use when implementing or operating long-running tasks, sub-agents, benchmarks, background monitors (e.g., Moltbook, PNR checks), or when the system becomes unresponsive and needs immediate recovery controls.",
+    "tags": {
+      "latest": "1.0.0",
+      "orchestration": "1.0.0",
+      "reliability": "1.0.0",
+      "safety": "1.0.0",
+      "sub-agent": "1.0.0",
+      "system": "1.0.0",
+      "watchdog": "1.0.0"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 3289,
+      "installsAllTime": 13,
+      "installsCurrent": 13,
+      "stars": 8,
+      "versions": 1
+    },
+    "createdAt": 1769934317761,
+    "updatedAt": 1778382904057
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1769934317761,
+    "changelog": "Control‑plane safety skill for OpenClaw that prevents agent freezes and deadlocks using sub‑agent isolation, event‑driven execution, watchdogs, and crash‑safe recovery.",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "amar1432",
+    "userId": "publishers:amar1432",
+    "displayName": "Amar1432",
+    "image": "https://avatars.githubusercontent.com/u/30319096?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778382904057
+  }
+}

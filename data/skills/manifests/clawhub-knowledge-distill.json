@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70069,
+  "uuid": "skill-clawhub-knowledge-distill",
+  "skillKey": "clawhub-knowledge-distill",
+  "name": "Knowledge Distill",
+  "summary": "知识蒸馏归档工具，将讨论成果按5类分类写入对应知识文档。支持小龙虾命令记忆库、专业工作知识、工作外知识、讨论过程、思维蒸馏五类归档。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knowledge_distill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mwangxiang",
+      "features": [
+        "知识蒸馏归档工具，将讨论成果按5类分类写入对应知识文档。支持小龙虾命令记忆库、专业工作知识、工作外知识、讨论过程、思维蒸馏五类归档。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/knowledge-distill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/127031609?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "knowledge-distill",
+      "url": "https://clawhub.ai/skills/knowledge-distill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knowledge-distill",
+    "url": "https://clawhub.ai/skills/knowledge-distill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knowledge-distill-848b11c7b2ab75c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/knowledge-distill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-knowledge-distill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:289267d67defe0dcee233e5daad5a29b1b930e07831ddfee65a08b3ecaeeb170",
+      "artifactSizeBytes": 1935
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T15:15:07.402Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31937,
+  "uuid": "skill-clawhub-polymarket-bundle-cs2-maps-trader",
+  "skillKey": "clawhub-polymarket-bundle-cs2-maps-trader",
+  "name": "Polymarket Bundle Cs2 Maps Trader",
+  "summary": "Trades CS2 BO3 Winner markets when individual map winner probabilities imply a different BO3 outcome on Polymarket. Uses the binomial BO3 model to calculate...",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_bundle_cs2_maps_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "diagnostikon",
+      "features": [
+        "Trades CS2 BO3 Winner markets when individual map winner probabilities imply a different BO3 ou.",
+        "Uses the binomial BO3 model to calculate..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-bundle-cs2-maps-trader@0.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17246180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-bundle-cs2-maps-trader",
+      "url": "https://clawhub.ai/skills/polymarket-bundle-cs2-maps-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-bundle-cs2-maps-trader",
+    "url": "https://clawhub.ai/skills/polymarket-bundle-cs2-maps-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-bundle-cs2-maps-trader-6ce97069e6c36044.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-bundle-cs2-maps-trader@0.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-bundle-cs2-maps-trader-0.0.3.json",
+      "version": "0.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:43f4b263fb8c7c58ddd93ed333dc75834dbef7df172791ad39c4ebe8c2ebb432",
+      "artifactSizeBytes": 2060
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T14:27:20.634Z"
+}

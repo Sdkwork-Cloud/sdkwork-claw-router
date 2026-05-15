@@ -6,7 +6,7 @@ use axum::body::Body;
 use axum::http::{Request, StatusCode};
 use sdkwork_claw_config::DatabaseConfig;
 use sdkwork_claw_test_support::{
-    api_key_security_config, app_session_bearer_token, app_session_config,
+    api_key_security_config, app_session_config, app_session_dual_token_headers,
     default_trusted_request_subject, trusted_subject_config,
 };
 use sqlx::sqlite::{SqliteConnectOptions, SqlitePoolOptions};
@@ -31,7 +31,7 @@ async fn database_config_admin_app_route_manages_market_state_without_runtime_al
         .oneshot(
             Request::builder()
                 .method("POST")
-                .uri("/backend/v3/api/app/list")
+                .uri("/backend/v3/api/platform/apps/list")
                 .header("content-type", "application/json")
                 .body(Body::from("{}"))
                 .unwrap(),
@@ -44,7 +44,7 @@ async fn database_config_admin_app_route_manages_market_state_without_runtime_al
         router.clone(),
         app_session_request(
             "POST",
-            "/backend/v3/api/app",
+            "/backend/v3/api/platform/apps",
             Body::from(
                 r#"{"name":"Admin API Integrated App","status":"INACTIVE","marketStatus":"DRAFT","version":"1.0.0","config":{"standard":{"appKey":"admin-api-integrated-app"}},"platforms":{"platforms":["web"]},"installPlatforms":{"platforms":["web"]},"releaseNotes":[{"version":"1.0.0","notes":["Initial admin API route coverage"]}]}"#,
             ),
@@ -73,7 +73,7 @@ async fn database_config_admin_app_route_manages_market_state_without_runtime_al
         router.clone(),
         app_session_request(
             "POST",
-            &format!("/backend/v3/api/app/{app_id}/publish"),
+            &format!("/backend/v3/api/platform/apps/{app_id}/publish"),
             Body::from("{}"),
         ),
     )
@@ -90,7 +90,7 @@ async fn database_config_admin_app_route_manages_market_state_without_runtime_al
         router.clone(),
         app_session_request(
             "POST",
-            "/backend/v3/api/app/list",
+            "/backend/v3/api/platform/apps/list",
             Body::from(
                 r#"{"keyword":"Integrated","status":"INACTIVE","marketStatus":"PUBLISHED"}"#,
             ),
@@ -141,13 +141,15 @@ async fn request_json(router: axum::Router, request: Request<Body>) -> serde_jso
 fn app_session_request(method: &str, path: &str, body: Body) -> Request<Body> {
     let issued_at = current_unix_seconds();
     let expires_at = issued_at + 3600;
-    let authorization =
-        app_session_bearer_token(default_trusted_request_subject(), issued_at, expires_at).unwrap();
+    let (authorization, access_token) =
+        app_session_dual_token_headers(default_trusted_request_subject(), issued_at, expires_at)
+            .unwrap();
     Request::builder()
         .method(method)
         .uri(path)
         .header("content-type", "application/json")
         .header("authorization", authorization)
+        .header("Sdkwork-Access-Token", access_token)
         .body(body)
         .unwrap()
 }

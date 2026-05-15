@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qmd-memory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qmd_memory",
+  "skill": {
+    "id": 20545,
+    "skillKey": "clawhub-qmd-memory",
+    "name": "QMD Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qmd-memory",
+    "url": "https://clawhub.ai/skills/qmd-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qmd-memory-876716d8bf7f866b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enables local hybrid memory search and embedding using QMD to reduce API costs by $50-300/month with automatic setup, smart indexing, and multi-agent sharing."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "asabovetech",
+      "userId": "publishers:asabovetech",
+      "displayName": "asabovetech",
+      "image": "https://avatars.githubusercontent.com/u/259675373?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 941,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772311298602,
+      "changelog": "Initial release: Local hybrid search for OpenClaw. Save $50-300/month in API costs.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:52e3d3ca1e650ea6cbeca84fd0aaddb4dd53f68cbefba32de2ad0cfeb6d9edfc"
+}

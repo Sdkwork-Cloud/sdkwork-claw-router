@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58330,
+  "uuid": "skill-clawhub-jump-once-proxy",
+  "skillKey": "clawhub-jump-once-proxy",
+  "name": "通过 JumpOnce 代理服务访问海外被封禁的 API（币安 US、GitHub、Google、OpenAI 等），支持 HTTP 转发和 WebSocket 透传，出口节点位于 Oracle Cloud 美国凤凰城",
+  "summary": "Access overseas/external URLs via JumpOnce proxy service (jumptox.top). Use when: (1) needing to fetch content from websites blocked or unreachable from the...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jump_once_proxy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "men459",
+      "features": [
+        "Access overseas/external URLs via JumpOnce proxy service (jumptox.top)",
+        "Use when: (1) needing to fetch content from websites blocked or unreachable from the..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jump-once-proxy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78955316?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jump-once-proxy",
+      "url": "https://clawhub.ai/skills/jump-once-proxy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jump-once-proxy",
+    "url": "https://clawhub.ai/skills/jump-once-proxy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jump-once-proxy-d37995f79884491f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jump-once-proxy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jump-once-proxy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:926aa0ee309dbe07330350284c17e3f174cb325a036984e573c54cb36f4c27e0",
+      "artifactSizeBytes": 2470
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T09:28:41.341Z"
+}

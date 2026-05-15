@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/slipbot-logseq-importer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slipbot_logseq_importer",
+  "skill": {
+    "id": 15370,
+    "skillKey": "clawhub-slipbot-logseq-importer",
+    "name": "SlipBot Logseq Importer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slipbot-logseq-importer",
+    "url": "https://clawhub.ai/skills/slipbot-logseq-importer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slipbot-logseq-importer-64149e558c32414a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Import notes from Logseq pages into the slipbox. Use when user pastes a Logseq page with properties and bulleted notes. Parses page-level properties, extracts each bullet as an individual note, handles nested bullets by adding parent conte."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jrswab",
+      "userId": "publishers:jrswab",
+      "displayName": "Jaron Swab",
+      "image": "https://avatars.githubusercontent.com/u/1689426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1037,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770781572813,
+      "changelog": "Slipbot Logseq Importer\n\n1.0.0 initial release\n\n- Imports Logseq pages by parsing both page-level properties and bulleted notes.\n- Creates individual slipbox entries for each bullet, including nested bullets, by adding parent context to child notes.\n- Ignores all Logseq tags and related metadata to avoid conflicts with slipbot-generated tags.\n- Converts properties and markdown page references according to defined mapping and cleanup rules.\n- Pre-import summary and note count are provided for user confirmation before proceeding.\n- Reports number of notes created and any issues after import.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1cc91b13f586b4536ae6174f6fba7a0ada62c1afd28813f11f63e1c98da8d2f2"
+}

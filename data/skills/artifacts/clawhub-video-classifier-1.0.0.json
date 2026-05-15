@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-classifier@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_classifier",
+  "skill": {
+    "id": 46022,
+    "skillKey": "clawhub-video-classifier",
+    "name": "Video Classifier"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-classifier",
+    "url": "https://clawhub.ai/skills/video-classifier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-classifier-4ea6c69f95cd4274.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Classify unstructured long videos by selecting them in the backend and applying tags. Use when: user wants to classify videos, tag videos with specific label..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wulooongcha",
+      "userId": "s177mcz2d80cq0dfhc1g6ykce983jz23",
+      "displayName": "wulooongcha",
+      "image": "https://avatars.githubusercontent.com/u/270391360?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 119,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776420982466,
+      "changelog": "video-classifier 1.0.0\n\n- Initial release of the video classification workflow.\n- Automates tagging and structuring of unstructured long videos in the backend.\n- Supports selecting/tagging videos based on user-provided labels and quantity.\n- Provides step-by-step browser automation instructions for streamlined operation.\n- Includes usage examples and recommended batch sizes for reliability.\n- Highlights important tags and critical notes for successful video classification.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1ddd6df623ebd406af4978b49a16061dbf83b35155e5f268a58136332c71cc85"
+}

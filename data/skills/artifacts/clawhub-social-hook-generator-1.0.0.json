@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/social-hook-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_hook_generator",
+  "skill": {
+    "id": 33455,
+    "skillKey": "clawhub-social-hook-generator",
+    "name": "Social Hook Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-hook-generator",
+    "url": "https://clawhub.ai/skills/social-hook-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-hook-generator-5c1fc3b5e8fce51b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Viral hook generator for social media posts. Generate 10+ scroll-stopping opening lines for X/Twitter, LinkedIn, TikTok, Instagram, and Threads optimized for..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mguozhen",
+      "userId": "s170nk66cz4zpwnnsv8bxksrp983f82k",
+      "displayName": "mguozhen",
+      "image": "https://avatars.githubusercontent.com/u/1411875?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774257210462,
+      "changelog": "Initial release of social-hook-generator.\n\n- Instantly generate 10+ viral hooks for social media posts across X/Twitter, LinkedIn, TikTok, Instagram, and Threads.\n- Hooks are platform-optimized and use varying styles: questions, bold claims, stories, data, and controversies.\n- Incorporates emotional triggers like curiosity, FOMO, surprise, relatability, and aspiration.\n- Provides top 3 A/B test hook pairs and scoring based on predicted CTR and scroll-stopping ability.\n- Includes tips for customizing hooks to fit your unique voice or topic.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac8a5ac7277aa39fb142c89fd889781bf8ed6feff14ded8fd7dc7373ab5e03d5"
+}

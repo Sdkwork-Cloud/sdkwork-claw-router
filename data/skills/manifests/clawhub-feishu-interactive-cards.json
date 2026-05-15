@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9293,
+  "uuid": "skill-clawhub-feishu-interactive-cards",
+  "skillKey": "clawhub-feishu-interactive-cards",
+  "name": "Feishu Interactive Cards",
+  "summary": "Create and send interactive cards to Feishu (Lark) with buttons, forms, polls, and rich UI elements. Use when replying to Feishu messages and there is ANY uncertainty - send an interactive card instead of plain text to let users choose via.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_interactive_cards",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "leecyang",
+      "features": [
+        "Create and send interactive cards to Feishu (Lark) with buttons, forms, polls, and rich UI elem.",
+        "Use when replying to Feishu messages and there is ANY uncertainty",
+        "send an interactive card instead of plain text to let users choose via buttons",
+        "Automatically handles callbacks via long-polling connection"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-interactive-cards@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/164771957?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-interactive-cards",
+      "url": "https://clawhub.ai/skills/feishu-interactive-cards"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-interactive-cards",
+    "url": "https://clawhub.ai/skills/feishu-interactive-cards",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-interactive-cards-a147df95ee4b6fc5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-interactive-cards@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-interactive-cards-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6ee083c50b28504c3b545ae877d72ed023f97665545df61486b1adde6e3d6225",
+      "artifactSizeBytes": 2178
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T14:04:50.427Z"
+}

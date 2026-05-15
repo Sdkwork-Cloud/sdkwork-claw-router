@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/project-manager-agent@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.project_manager_agent",
+  "skill": {
+    "id": 24244,
+    "skillKey": "clawhub-project-manager-agent",
+    "name": "Project Manager Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "project-manager-agent",
+    "url": "https://clawhub.ai/skills/project-manager-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/project-manager-agent-2a3838c525c75b9e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitors active sub-agents, detects stalls, provides status updates, and steers stuck agents via sessions_send."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "austindixson",
+      "userId": "s17472vm40hmrgybr4rdjmet6h84bcs0",
+      "displayName": "austindixson",
+      "image": "https://avatars.githubusercontent.com/u/52183161?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 407,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772284299386,
+      "changelog": "Project Manager Agent v0.2.0 introduces proactive monitoring and management of sub-agents.\n\n- Monitors active OpenClaw sub-agents and checks for stalls or failures.\n- Detects sub-agents with stalled or aborted runs, using a configurable staleness threshold.\n- Provides both human-readable and JSON status reports, including stalled session keys for automated handling.\n- Supports steering of stuck agents via sessions_send, with cooldown tracking to prevent repeated actions.\n- Adds detailed usage instructions for integrating monitoring and steering steps, as well as cron job setup.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:06a60402eca91972a6761340b9e95923d1e893f4d44f1803eac7994d6ff5a04f"
+}

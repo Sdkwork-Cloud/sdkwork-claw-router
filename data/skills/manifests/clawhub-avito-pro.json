@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69757,
+  "uuid": "skill-clawhub-avito-pro",
+  "skillKey": "clawhub-avito-pro",
+  "name": "Avito Pro",
+  "summary": "Работа с API Авито (Авторизация, Мессенджер, Объявления, Статистика). Позволяет получать токены, читать/отправлять сообщения в чатах Авито и управлять объявл...",
+  "version": "2026.3.16",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.avito_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "thisisevgeniy",
+      "features": [
+        "Работа с API Авито (Авторизация, Мессенджер, Объявления, Статистика)",
+        "Позволяет получать токены, читать/отправлять сообщения в чатах Авито и управлять объявл..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/avito-pro@2026.3.16",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/122456341?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "avito-pro",
+      "url": "https://clawhub.ai/skills/avito-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "avito-pro",
+    "url": "https://clawhub.ai/skills/avito-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/avito-pro-9357f492f45006f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/avito-pro@2026.3.16",
+      "artifactUrl": "data/skills/artifacts/clawhub-avito-pro-2026.3.16.json",
+      "version": "2026.3.16",
+      "runtime": "metadata",
+      "checksumHash": "sha256:675f8bc5bc3b8097310784a86afb343f407977feed85920d00346ef17c8a86d6",
+      "artifactSizeBytes": 2759
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T17:05:32.602Z"
+}

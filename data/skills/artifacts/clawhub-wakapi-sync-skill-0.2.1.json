@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wakapi-sync-skill@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wakapi_sync_skill",
+  "skill": {
+    "id": 30900,
+    "skillKey": "clawhub-wakapi-sync-skill",
+    "name": "Wakapi Sync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wakapi-sync-skill",
+    "url": "https://clawhub.ai/skills/wakapi-sync-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wakapi-sync-skill-ffa391fb783dd04a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Daily Wakapi (WakaTime-compatible) summary → local CSV files. Fetch today stats and append/update CSVs for totals, top projects, and top languages."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cosformula",
+      "userId": "publishers:cosformula",
+      "displayName": "cosformula",
+      "image": "https://avatars.githubusercontent.com/u/18232501?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 892,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1771133245402,
+      "changelog": "Release v0.2.1",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:720bc6be1834b442d9a439d7aa02ea029b070cfe3437e34940d98421ceeea698"
+}

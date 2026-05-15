@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/product-doc-hub@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.product_doc_hub",
+  "skill": {
+    "id": 61661,
+    "skillKey": "clawhub-product-doc-hub",
+    "name": "product-doc-hub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "product-doc-hub",
+    "url": "https://clawhub.ai/skills/product-doc-hub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/product-doc-hub-369f1adb0011b947.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "面向 AI 产品团队的一站式文档解决方案，一套工具覆盖从产品定义到 API 上线的全链路文档：PRD（功能规格说明书）、Product Brief（投资人/团队轻量介绍）、Experience Framework（体验验证方法论，含四维模型+埋点指标+SUS/EV/NPS/SAM量表设计）、API Console..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ildar981105-create",
+      "userId": "s17cftxcpmw4jz83rwx7gb0zzs85135c",
+      "displayName": "ildar981105-create",
+      "image": "https://avatars.githubusercontent.com/u/265237862?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776416820245,
+      "changelog": "Initial release: PRD, Product Brief, Experience Framework, API Console 四合一",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5916f6860bda1dabc1e9cfb0ffdd3c33aa977addba0188c96bb27588cb226fbb"
+}

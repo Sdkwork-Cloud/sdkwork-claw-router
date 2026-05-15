@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54916,
+  "uuid": "skill-clawhub-monday-workflows",
+  "skillKey": "clawhub-monday-workflows",
+  "name": "Monday",
+  "summary": "Manage boards, items, subscribers, users, and workflow operations in monday.com — powered by ClawLink.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.monday_workflows",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hithesh Jay",
+      "features": [
+        "Manage boards, items, subscribers, users, and workflow operations in monday.com — powered by Cl."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/monday-workflows@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83839061?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "monday-workflows",
+      "url": "https://clawhub.ai/skills/monday-workflows"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "monday-workflows",
+    "url": "https://clawhub.ai/skills/monday-workflows",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/monday-workflows-ff01c125e9df3c14.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/monday-workflows@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-monday-workflows-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1428a5fe776d3250e0a36bb0f38c2ffeee0a38ff3cd8da914283aa62abfa92a8",
+      "artifactSizeBytes": 2303
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T14:21:58.728Z"
+}

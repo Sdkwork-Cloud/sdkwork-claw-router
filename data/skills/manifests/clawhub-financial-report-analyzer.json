@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59526,
+  "uuid": "skill-clawhub-financial-report-analyzer",
+  "skillKey": "clawhub-financial-report-analyzer",
+  "name": "financial-report-analyzer",
+  "summary": "智能解析PDF格式财务报告，自动提取关键财务指标，生成可视化分析图表和投资参考报告。适用于分析中国A股、港股、美股上市公司的财务报表。Use when user needs to analyze financial reports, extract financial data from PDFs, compar...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.financial_report_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HJ2916",
+      "features": [
+        "智能解析PDF格式财务报告，自动提取关键财务指标，生成可视化分析图表和投资参考报告。适用于分析中国A股、港股、美股上市公司的财务报表。Use when user needs to analy."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/financial-report-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/205438258?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "financial-report-analyzer",
+      "url": "https://clawhub.ai/skills/financial-report-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "financial-report-analyzer",
+    "url": "https://clawhub.ai/skills/financial-report-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/financial-report-analyzer-956494c4e67e1d17.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/financial-report-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-financial-report-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b1e66600aa263c8bb539c89140c3159d448a7476c6ad174acca1a0e093b8a321",
+      "artifactSizeBytes": 2720
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T12:04:15.875Z"
+}

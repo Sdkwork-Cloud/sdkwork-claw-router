@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skylv-code-quality-reviewer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_code_quality_reviewer",
+  "skill": {
+    "id": 46666,
+    "skillKey": "clawhub-skylv-code-quality-reviewer",
+    "name": "Skylv Code Quality Reviewer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-code-quality-reviewer",
+    "url": "https://clawhub.ai/skills/skylv-code-quality-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-code-quality-reviewer-739503837c79b45c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyzes code for bugs, security flaws, complexity, and style issues; provides improvement suggestions and potential automatic fixes."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 113,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777682967666,
+      "changelog": "- Initial release of Code Reviewer skill.\n- Provides automated code quality analysis, detecting bugs and security issues.\n- Suggests improvements for code quality, security, performance, and best practices.\n- Includes tool functions for code review, complexity analysis, and design pattern detection.\n- Customizable rules for code review focus areas and thresholds.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4df7aa83957b41d8a822beeadc1f4df2c4e5b303b869870260eac67491fec375"
+}

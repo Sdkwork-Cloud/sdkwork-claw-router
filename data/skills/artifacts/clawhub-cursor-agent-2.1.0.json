@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cursor-agent@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cursor_agent",
+  "skill": {
+    "id": 8492,
+    "skillKey": "clawhub-cursor-agent",
+    "name": "Cursor CLI Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cursor-agent",
+    "url": "https://clawhub.ai/skills/cursor-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cursor-agent-4bae6fa05458912f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A comprehensive skill for using the Cursor CLI agent for various software engineering tasks (updated for 2026 features, includes tmux automation guide)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "swiftlysingh",
+      "userId": "publishers:swiftlysingh",
+      "displayName": "swiftlysingh",
+      "image": "https://avatars.githubusercontent.com/u/47032662?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 10915,
+      "installsAllTime": 90,
+      "installsCurrent": 87,
+      "stars": 17,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1768339191701,
+      "changelog": "Add tmux automation guide for AI agents - Cursor CLI requires real TTY for automated execution",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1b289add8e01a7b5cf0e023d354ee8c8c20bee93eaec74da11730c3093a33747"
+}

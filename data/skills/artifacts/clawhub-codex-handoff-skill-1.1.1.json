@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/codex-handoff-skill@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codex_handoff_skill",
+  "skill": {
+    "id": 40513,
+    "skillKey": "clawhub-codex-handoff-skill",
+    "name": "Codex Handoff (OpenClaw Plans, Codex Codex, OpenClaw Judges)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codex-handoff-skill",
+    "url": "https://clawhub.ai/skills/codex-handoff-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codex-handoff-skill-189b5a971955bd53.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Offload finalized coding plans to Codex CLI for automated execution. Use when: user says \"hand off to codex\", \"let codex do it\", \"offload to codex\", runs /co..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "philipbankier",
+      "userId": "s17fm2rjpsacq9h06qmpdfzvjn83g8xb",
+      "displayName": "philipbankier",
+      "image": "https://avatars.githubusercontent.com/u/17358075?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1774062308041,
+      "changelog": "Added skill:\n- OpenClaw/Claude Code skill that offloads coding plans to Codex CLI for execution, with an automated supervisor/judge loop",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6b7f97ab31584cf2d074463eb21bdc33e12b2e208a6ff70fd9d0fb5cd5c6085f"
+}

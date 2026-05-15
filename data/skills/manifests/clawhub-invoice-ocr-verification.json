@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70060,
+  "uuid": "skill-clawhub-invoice-ocr-verification",
+  "skillKey": "clawhub-invoice-ocr-verification",
+  "name": "发票OCR与查验",
+  "summary": "在 OpenClaw 中提取发票图片信息并完成核验，适合上传图片、本地图片路径和批量图片文件夹场景。",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.invoice_ocr_verification",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "weidd130",
+      "features": [
+        "在 OpenClaw 中提取发票图片信息并完成核验，适合上传图片、本地图片路径和批量图片文件夹场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/invoice-ocr-verification@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45308376?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "invoice-ocr-verification",
+      "url": "https://clawhub.ai/skills/invoice-ocr-verification"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "invoice-ocr-verification",
+    "url": "https://clawhub.ai/skills/invoice-ocr-verification",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/invoice-ocr-verification-352d74e5682d935b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/invoice-ocr-verification@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-invoice-ocr-verification-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e7d17640c3beb62670cc433a23c739a545e9def42dde3c0e9e99eb9fbc7246a7",
+      "artifactSizeBytes": 1983
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T06:14:59.113Z"
+}

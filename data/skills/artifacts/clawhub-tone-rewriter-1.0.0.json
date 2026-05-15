@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tone-rewriter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tone_rewriter",
+  "skill": {
+    "id": 19148,
+    "skillKey": "clawhub-tone-rewriter",
+    "name": "tone-rewriter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tone-rewriter",
+    "url": "https://clawhub.ai/skills/tone-rewriter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tone-rewriter-317fa1ea5e0d1a4c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Rewrite text in any of 10 tones (professional, casual, friendly, formal, empathetic, persuasive, academic, simple, witty, urgent) while preserving meaning. x..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daisuke134",
+      "userId": "publishers:daisuke134",
+      "displayName": "Daisuke Narita",
+      "image": "https://avatars.githubusercontent.com/u/140220114?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 634,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772154183283,
+      "changelog": "Initial release: 10-tone text rewriter for AI agents",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8b9c2372690a40e5c1af2b9b170237906e099eef5c247b261ed3ea6af76ca222"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/airdrop-alert@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.airdrop_alert",
+  "skill": {
+    "id": 22378,
+    "skillKey": "clawhub-airdrop-alert",
+    "name": "Airdrop Alert"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "airdrop-alert",
+    "url": "https://clawhub.ai/skills/airdrop-alert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/airdrop-alert-1a5e38a8ee335688.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor and track potential crypto airdrops. Get alerts for new airdrop opportunities. Never miss an airdrop again!"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alexbrc20",
+      "userId": "publishers:alexbrc20",
+      "displayName": "eddie",
+      "image": "https://avatars.githubusercontent.com/u/26967962?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 464,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772776487889,
+      "changelog": "Initial release of airdrop-alert.\n\n- Monitor and track potential crypto airdrops with Telegram alerts.\n- Get notified of new airdrop opportunities (5 daily alerts for free users).\n- Pro plan offers unlimited alerts, early project notifications, eligibility checker, auto-generated task lists, multi-account support, and estimated airdrop values.\n- Simple commands to discover, check eligibility, and set custom alerts.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:966d22c93817deee5e9e5d271dfef3db066d26a0bc7c72e04b6f146805f366ec"
+}

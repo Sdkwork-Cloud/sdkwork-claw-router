@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12823,
+  "uuid": "skill-clawhub-crypto-watcher",
+  "skillKey": "clawhub-crypto-watcher",
+  "name": "Crypto Watcher",
+  "summary": "Monitor ETH wallets and DeFi positions across chains with alerts for balance changes, gas prices, health factors, and large token transfers.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_watcher",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "0xRaini",
+      "features": [
+        "Monitor ETH wallets and DeFi positions across chains with alerts for balance changes, gas price."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crypto-watcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/190923101?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crypto-watcher",
+      "url": "https://clawhub.ai/skills/crypto-watcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-watcher",
+    "url": "https://clawhub.ai/skills/crypto-watcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-watcher-d819b22b66b53e06.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crypto-watcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crypto-watcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cbbab754a55794629a2fa47723b2d9203bf72c1d0dc2bef0aff06486b381d993",
+      "artifactSizeBytes": 2188
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T15:37:10.479Z"
+}

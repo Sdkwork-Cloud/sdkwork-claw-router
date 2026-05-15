@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-motion-video-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_motion_video_skill",
+  "skill": {
+    "id": 42537,
+    "skillKey": "clawhub-free-motion-video-skill",
+    "name": "Free Motion Video Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-motion-video-skill",
+    "url": "https://clawhub.ai/skills/free-motion-video-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-motion-video-skill-cca1c20004dfc8af.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "animate video clips into motion-enhanced videos with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators use it for adding cinemat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775941127250,
+      "changelog": "Free Motion Video Skill — Initial Release\n\n- Add smooth, cinematic camera motion to static or flat video clips.\n- Supports MP4, MOV, AVI, and WebM files up to 500MB; output is 1080p MP4.\n- Automatic connection to cloud processing with free token setup; no local install needed.\n- Quick turnaround — most clips process in 30–90 seconds; batch and iterative workflows supported.\n- Clear status/error messages and visual timeline previews for edits and exports.\n- Useful for content creators seeking automated, high-quality video motion enhancement.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:72d01eec2442b37e5aa67e06e1e23b80375fb3a0ea4f57527040646f07fed692"
+}

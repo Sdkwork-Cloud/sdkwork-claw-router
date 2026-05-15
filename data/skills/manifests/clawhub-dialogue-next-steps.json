@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26512,
+  "uuid": "skill-clawhub-dialogue-next-steps",
+  "skillKey": "clawhub-dialogue-next-steps",
+  "name": "Dialogue Next Steps",
+  "summary": "Three-step pipeline: Deep Understanding (intent/emotion/missing info), Precise Answer, Divergent Guidance. When the user is a beginner or the question is con...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dialogue_next_steps",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sqfcyily",
+      "features": [
+        "Three-step pipeline: Deep Understanding (intent/emotion/missing info), Precise Answer, Divergen.",
+        "When the user is a beginner or the question is con..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dialogue-next-steps@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38500955?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dialogue-next-steps",
+      "url": "https://clawhub.ai/skills/dialogue-next-steps"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dialogue-next-steps",
+    "url": "https://clawhub.ai/skills/dialogue-next-steps",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dialogue-next-steps-fa3d8b33fc211c08.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dialogue-next-steps@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dialogue-next-steps-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d3cb9397831cc9e7f2588495ca0a14e4d8700b5176faabeac75322eaaf130e0e",
+      "artifactSizeBytes": 2524
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T03:26:34.563Z"
+}

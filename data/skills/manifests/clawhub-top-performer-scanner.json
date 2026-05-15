@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34438,
+  "uuid": "skill-clawhub-top-performer-scanner",
+  "skillKey": "clawhub-top-performer-scanner",
+  "name": "Top Performer Scanner",
+  "summary": "Find the true top-performing US stocks per year by downloading all NASDAQ-listed symbols, filtering by liquidity (Top 500 daily dollar volume), and ranking b...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.top_performer_scanner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tltby12341",
+      "features": [
+        "Find the true top-performing US stocks per year by downloading all NASDAQ-listed symbols, filte."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/top-performer-scanner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30487767?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "top-performer-scanner",
+      "url": "https://clawhub.ai/skills/top-performer-scanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "top-performer-scanner",
+    "url": "https://clawhub.ai/skills/top-performer-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/top-performer-scanner-05e55d902eb4e0b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/top-performer-scanner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-top-performer-scanner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c0bbfe511c87c35dcce937846323edc8d2af59673d1434ea77a7b2a9eb52c952",
+      "artifactSizeBytes": 2623
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T14:21:20.399Z"
+}

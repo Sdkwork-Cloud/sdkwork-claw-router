@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/milvus-skill@0.0.2",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.milvus_skill",
+  "skill": {
+    "id": 33380,
+    "skillKey": "clawhub-milvus-skill",
+    "name": "Milvus Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "milvus-skill",
+    "url": "https://clawhub.ai/skills/milvus-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/milvus-skill-5894b5e3881f78ed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Operate Milvus vector database with pymilvus Python SDK. Use when the user wants to connect to Milvus, create collections, insert vectors, perform similarity..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhanshuyou",
+      "userId": "s1721fzbh9me4ambk09w7z72b983h5ws",
+      "displayName": "Shuyoou",
+      "image": "https://avatars.githubusercontent.com/u/7420640?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 239,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.2",
+      "createdAt": 1774429355872,
+      "changelog": "- No changes detected in this version; documentation and functionality remain the same.\n- All usage instructions, requirements, and capabilities are consistent with the previous release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bfbbfc00a01a0da654edb46995130ea626cbb6a5e68dbf0dfb7be691a1d0e25a"
+}

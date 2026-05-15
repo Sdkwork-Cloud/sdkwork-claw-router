@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26071,
+  "uuid": "skill-clawhub-hankoio",
+  "skillKey": "clawhub-hankoio",
+  "name": "Hankoio",
+  "summary": "Hanko.io integration. Manage data, records, and automate workflows. Use when the user wants to interact with Hanko.io data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hankoio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Hanko.io integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Hanko.io data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hankoio@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hankoio",
+      "url": "https://clawhub.ai/skills/hankoio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hankoio",
+    "url": "https://clawhub.ai/skills/hankoio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hankoio-b15945df36194608.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hankoio@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-hankoio-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b0c6b2b555d98d3f80f0c6fc4116604962393a83a8fa6fafef139f16b142dea",
+      "artifactSizeBytes": 1823
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:55:08.766Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45701,
+  "uuid": "skill-clawhub-anti-centralization-probe",
+  "skillKey": "clawhub-anti-centralization-probe",
+  "name": "Anti Centralization Probe",
+  "summary": "Detect centralization risks in proposals and designs; output structural critiques and safer decentralization alternatives.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anti_centralization_probe",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mauricio Z.",
+      "features": [
+        "Detect centralization risks in proposals and designs",
+        "output structural critiques and safer decentralization alternatives."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/anti-centralization-probe@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26634695?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "anti-centralization-probe",
+      "url": "https://clawhub.ai/skills/anti-centralization-probe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anti-centralization-probe",
+    "url": "https://clawhub.ai/skills/anti-centralization-probe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anti-centralization-probe-6bce21c843d140f2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/anti-centralization-probe@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-anti-centralization-probe-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eff523d9aa38c4ae2913d1be302a2362b531e3e25e75491a7d2078f83a9e49ac",
+      "artifactSizeBytes": 2263
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T14:55:50.133Z"
+}

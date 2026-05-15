@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/huozi@0.3.2",
+  "version": "0.3.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huozi",
+  "skill": {
+    "id": 54280,
+    "skillKey": "clawhub-huozi",
+    "name": "Huozi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huozi",
+    "url": "https://clawhub.ai/skills/huozi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huozi-fffa0cc78bd92eb3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Publish Markdown and HTML to huozi.app as beautiful, shareable web pages. Register, manage, and publish — all through conversation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dachein",
+      "userId": "s17fhcn4jegsxjvyzv0g5fhv5983xwce",
+      "displayName": "Dachein",
+      "image": "https://avatars.githubusercontent.com/u/149984401?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "0.3.2",
+      "createdAt": 1776166698237,
+      "changelog": "Add docs4agent reference for full API docs in agent-friendly Markdown format",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:09320ae7f4cf38377d21470a44d1122f0a3a4b79d45bcf2fb930893c93f3328e"
+}

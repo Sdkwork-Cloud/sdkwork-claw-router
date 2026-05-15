@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/afrexai-ai-spend-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_ai_spend_audit",
+  "skill": {
+    "id": 20914,
+    "skillKey": "clawhub-afrexai-ai-spend-audit",
+    "name": "Ai Spend Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-ai-spend-audit",
+    "url": "https://clawhub.ai/skills/afrexai-ai-spend-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-ai-spend-audit-0d21d7d3356ac919.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit and optimize your company's AI spending by identifying waste, measuring ROI, right-sizing tool tiers, and consolidating vendors for cost savings."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1kalin",
+      "userId": "s17e1q0nx23qnh4n429zzqc05x83hvsw",
+      "displayName": "1kalin",
+      "image": "https://avatars.githubusercontent.com/u/15705344?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 532,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771755979558,
+      "changelog": "- Initial release of the AI Spend Audit skill.\n- Provides a structured framework to audit AI spending, identify waste, and measure ROI.\n- Includes step-by-step guidance: inventory spend, score tools, optimize costs, consolidate vendors, and report savings.\n- Offers benchmarks and red flags to spot excess spend across company sizes.\n- Includes industry-specific adjustments for more accurate analysis.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:82ab5e5c61c8da71361ab841e47bc22cf3d9d3d7d4ba8282394ff0a43df3127e"
+}

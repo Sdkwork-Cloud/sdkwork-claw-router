@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qr-code-intelligence@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qr_code_intelligence",
+  "skill": {
+    "id": 12003,
+    "skillKey": "clawhub-qr-code-intelligence",
+    "name": "QR Code Generator & Reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qr-code-intelligence",
+    "url": "https://clawhub.ai/skills/qr-code-intelligence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qr-code-intelligence-0cca9bdf28efea25.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate and read QR codes. Use when the user wants to create a QR code from text/URL, or decode/read a QR code from an image file. Supports PNG/JPG output and can read QR codes from screenshots or image files."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "omar-khaleel",
+      "userId": "publishers:omar-khaleel",
+      "displayName": "Omar-Khaleel",
+      "image": "https://avatars.githubusercontent.com/u/240748662?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1831,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770331557920,
+      "changelog": "Initial release: High-precision QR generation and decoding modules.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c692abc9cd55f1d09daf831940197eb774bf1a2433131bd87a6cfbcfb62abd29"
+}

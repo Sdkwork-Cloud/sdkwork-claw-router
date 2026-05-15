@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hilight-video-generate@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hilight_video_generate",
+  "skill": {
+    "id": 63770,
+    "skillKey": "clawhub-hilight-video-generate",
+    "name": "Hilight Video Generate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hilight-video-generate",
+    "url": "https://clawhub.ai/skills/hilight-video-generate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hilight-video-generate-aecf7dcdf0a768f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "电商视频生成技能。通过 MCP（mcporter）调用远程视频生成 API， 自动为用户生成营销短视频。支持任务创建、进度查询、视频下载。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lu200852",
+      "userId": "publishers:lu200852",
+      "displayName": "lu200852",
+      "image": "https://avatars.githubusercontent.com/u/12244137?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 429,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773391421851,
+      "changelog": "- 新增详细 SKILL.md，系统化说明电商视频自动生成技能的功能、触发意图与禁止事项。\n- 明确列出通过 MCP 可用的四类工具：创建视频、查询进度、下载视频、历史任务列表。\n- 完善典型执行流程，包括视频生成、进度查询、视频下载的对话与操作模板。\n- 明确常见错误码及对应用户提示，提升容错与交互体验。\n- 详细补充 API Key 存储、权限和安全管理规范。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1a9475c33c0226455fb7967789a3586826e78acd845cb9fad9edb9c3b76f3408"
+}

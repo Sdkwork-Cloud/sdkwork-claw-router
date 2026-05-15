@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57763,
+  "uuid": "skill-clawhub-math-notes-katex",
+  "skillKey": "clawhub-math-notes-katex",
+  "name": "Math Notes KaTeX",
+  "summary": "Render math-heavy notes to PNG using KaTeX (LaTeX) + headless Brave. Use when the user asks for a clean “solution/конспект as an image”, “formulas as a pictu...",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.math_notes_katex",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ilysha",
+      "features": [
+        "Render math-heavy notes to PNG using KaTeX (LaTeX) + headless Brave",
+        "Use when the user asks for a clean “solution/конспект as an image”, “formulas as a pictu..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/math-notes-katex@0.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121713022?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "math-notes-katex",
+      "url": "https://clawhub.ai/skills/math-notes-katex"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "math-notes-katex",
+    "url": "https://clawhub.ai/skills/math-notes-katex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/math-notes-katex-19fb744c88bfa149.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/math-notes-katex@0.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-math-notes-katex-0.1.3.json",
+      "version": "0.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b020619b81ab86135bbb90cca48bff63932d936bb27908f829e480aab9a2674",
+      "artifactSizeBytes": 1949
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T12:55:44.886Z"
+}

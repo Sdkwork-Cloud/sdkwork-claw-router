@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lookupmark-git-sync@1.3.0",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lookupmark_git_sync",
+  "skill": {
+    "id": 52814,
+    "skillKey": "clawhub-lookupmark-git-sync",
+    "name": "Git Sync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lookupmark-git-sync",
+    "url": "https://clawhub.ai/skills/lookupmark-git-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lookupmark-git-sync-866eacccde49c9af.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage whitelisted git repositories from chat. Status, log, diff, pull, push with security controls — only approved repos, write commands need confirmation...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lookupmark",
+      "userId": "s17cfewgg96e4pw82ktkrftcmx845h5p",
+      "displayName": "LookUpMark",
+      "image": "https://avatars.githubusercontent.com/u/93028124?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 210,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.3.0",
+      "createdAt": 1775460863834,
+      "changelog": "Removed ghost commands from WRITE_COMMANDS",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d1efcc73787735d7c6d149b548829eccf141ee5346f8ec23f185eb3346b8205c"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70243,
+  "uuid": "skill-clawhub-test20260402",
+  "skillKey": "clawhub-test20260402",
+  "name": "multi-image-to-text",
+  "summary": "批量识别图片中的文字内容并按图片分段输出为结构化文档；当用户需要从多张图片中提取文字、整理图片文字内容、将图片文字转为可编辑文档时使用",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test20260402",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AsianGiantDuck",
+      "features": [
+        "批量识别图片中的文字内容并按图片分段输出为结构化文档；当用户需要从多张图片中提取文字、整理图片文字内容、将图片文字转为可编辑文档时使用"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/test20260402@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/158334715?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "test20260402",
+      "url": "https://clawhub.ai/skills/test20260402"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test20260402",
+    "url": "https://clawhub.ai/skills/test20260402",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test20260402-ebea3066ee25ecc7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/test20260402@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-test20260402-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:30edc539e6bd305e6dbe760021947ad179d85c96818f68590b69cfd236a2c4ab",
+      "artifactSizeBytes": 2404
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T02:21:12.579Z"
+}

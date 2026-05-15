@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deepsop-artist@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deepsop_artist",
+  "skill": {
+    "id": 60490,
+    "skillKey": "clawhub-deepsop-artist",
+    "name": "支持图片生成（SEEDREAM5_0/NANO_BANANA_2）和视频生成（SEEDANCE_1_5_PRO/SORA2/VEO3.1/WAN2.6），SORA2 支持文生视频和首尾帧图生视频"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deepsop-artist",
+    "url": "https://clawhub.ai/skills/deepsop-artist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deepsop-artist-bee2d1e00880843c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI 图片与视频异步生成技能，调用 AI Artist API 根据文本提示词生成图片或视频，自动轮询直到任务完成。 ⚠️ 使用前必须设置环境变量 AI_ARTIST_TOKEN 为你自己的 API Key！ 获取 API Key：访问 https://ai.deepsop.com/ 注册登录后创建。 支持图片模..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "2393970875",
+      "userId": "s173p09z4j1qye13kdnmwvvc3183krpw",
+      "displayName": "2393970875",
+      "image": "https://avatars.githubusercontent.com/u/139337194?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1777026840029,
+      "changelog": "No user-facing changes detected in this version.\n\n- No file changes since the previous release.\n- Functionality, documentation, and user experience remain the same.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f80b96756d350b387c580e4d0c66aae9ae02b00b4d33e74cc8c3e8fd77161665"
+}

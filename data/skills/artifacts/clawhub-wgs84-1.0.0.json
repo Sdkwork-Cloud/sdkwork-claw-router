@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wgs84@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wgs84",
+  "skill": {
+    "id": 34269,
+    "skillKey": "clawhub-wgs84",
+    "name": "wgs84"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wgs84",
+    "url": "https://clawhub.ai/skills/wgs84",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wgs84-6b02dd6c327214e9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Explain and work with the WGS 84 coordinate system for GPS-style longitude/latitude data, including EPSG:4326 usage, axis-order checks, range validation, UTM..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jvy",
+      "userId": "s17drhqvqmrfz94tm5320kfgj983kf7m",
+      "displayName": "jvy",
+      "image": "https://avatars.githubusercontent.com/u/5337221?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 227,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774056152278,
+      "changelog": "WGS84 Skill 1.0.0 – Initial Release\n\n- Provides explanations and guidance for WGS 84 (EPSG:4326) coordinate usage, validation, and best practices.\n- Supports numeric range validation, coordinate axis-order checks, UTM zone/EPSG code recommendations, and China mapping offset warnings.\n- Offers practical Python command examples for validating, analyzing, and reprojecting GPS-style coordinates.\n- Outlines clear decision rules for choosing between WGS84, Web Mercator, or projected CRSs based on analysis or display needs.\n- Includes guidance on potential confusion with GCJ-02/BD-09 in Chinese coordinate workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:148c5a22c8e0c41be3422dd44e504b238df07e3a1ec44984d9365909dec6fbf9"
+}

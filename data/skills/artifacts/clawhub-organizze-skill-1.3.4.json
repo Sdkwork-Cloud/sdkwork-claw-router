@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/organizze-skill@1.3.4",
+  "version": "1.3.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.organizze_skill",
+  "skill": {
+    "id": 36961,
+    "skillKey": "clawhub-organizze-skill",
+    "name": "Organizze Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "organizze-skill",
+    "url": "https://clawhub.ai/skills/organizze-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/organizze-skill-05b58b2052badc30.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Runs Organizze personal finance API operations via Node.js CLI scripts: accounts, categories, transactions (filters, tag grouping), credit cards (invoices, p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leaofelipe",
+      "userId": "s174e8545kpxbjhg3hy1xyh44d83n2j6",
+      "displayName": "Felipe Leão",
+      "image": "https://avatars.githubusercontent.com/u/1847691?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.3.4",
+      "createdAt": 1775245338991,
+      "changelog": "docs(readme): add ClawHub link after badges",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:964b453d878166ad64dffb17a50481af180160b3b2d71328fc3a29f9ff93dbca"
+}

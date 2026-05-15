@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18958,
+  "uuid": "skill-clawhub-byt-workflow",
+  "skillKey": "clawhub-byt-workflow",
+  "name": "Byt Workflow",
+  "summary": "YouTube video translation workflow, download audio, launch Doubao, play audio, capture translation",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.byt_workflow",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "banner90",
+      "features": [
+        "YouTube video translation workflow, download audio, launch Doubao, play audio, capture translat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/byt-workflow@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25845636?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "byt-workflow",
+      "url": "https://clawhub.ai/skills/byt-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "byt-workflow",
+    "url": "https://clawhub.ai/skills/byt-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/byt-workflow-bab4354ed874389e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/byt-workflow@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-byt-workflow-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1428218fe866fa13d915c44b5d1322f9ef15359b55ad932f9fb1ff510af52757",
+      "artifactSizeBytes": 1989
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T09:07:16.501Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nudge-cli@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nudge_cli",
+  "skill": {
+    "id": 53297,
+    "skillKey": "clawhub-nudge-cli",
+    "name": "Nudge CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nudge-cli",
+    "url": "https://clawhub.ai/skills/nudge-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nudge-cli-cd7bab988a6f5908.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "How to use the nudge CLI — commands, flags, setup, and onboarding. Use this skill whenever the user wants to create a task, add a secret, check status, confi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "neilsanghrajka",
+      "userId": "s17e414qm2pbs29zhtgw49ww1x83scjg",
+      "displayName": "neilsanghrajka",
+      "image": "https://avatars.githubusercontent.com/u/61964667?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774696837022,
+      "changelog": "Added --proof and --reason flags for verified completions/failures",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:705d569a99190a44f46af7f424493e75d96ebf8efb2df60c770f355fe4bb4901"
+}

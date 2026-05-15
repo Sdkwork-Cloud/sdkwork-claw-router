@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13423,
+  "uuid": "skill-clawhub-pattern-analyst",
+  "skillKey": "clawhub-pattern-analyst",
+  "name": "Pattern Analyst",
+  "summary": "Analyze interactions to identify patterns in what Enzo shares, why he shares it, and how it connects to his goals. Use during heartbeats for periodic analysis, when Enzo asks about his patterns/interests, or when significant new content is.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pattern_analyst",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "enzoricciulli",
+      "features": [
+        "Analyze interactions to identify patterns in what Enzo shares, why he shares it, and how it con.",
+        "Use during heartbeats for periodic analysis, when Enzo asks about his patterns/interests, or wh."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pattern-analyst@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16671702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pattern-analyst",
+      "url": "https://clawhub.ai/skills/pattern-analyst"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pattern-analyst",
+    "url": "https://clawhub.ai/skills/pattern-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pattern-analyst-421ca21006b0bfca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pattern-analyst@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pattern-analyst-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:939f5772b2dbd45bf902fc0a2df47935d6eb535f3b187cabafa4f4946f37649f",
+      "artifactSizeBytes": 2659
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T10:37:28.412Z"
+}

@@ -1,6 +1,9 @@
 import { SdkworkAppClient, type SdkworkAppConfig } from '@sdkwork/clawrouter-app-sdk';
 import { SdkworkBackendClient, type SdkworkBackendConfig } from '@sdkwork/clawrouter-backend-sdk';
-import { getStoredAppSessionToken } from './app-session-token.ts';
+import {
+  getStoredAppSessionAccessToken,
+  getStoredAppSessionAuthToken,
+} from './app-session-token.ts';
 import { normalizeGeneratedSdkBaseUrl } from './sdk-base-url.ts';
 import { readClawRouterRuntimeEnv } from './utils/env.ts';
 
@@ -29,7 +32,7 @@ export const CLAWROUTER_APP_SDK_REFERENCE_METADATA: ClawRouterGeneratedSdkMetada
   sdkType: 'app',
   apiPrefix: APP_API_PREFIX,
   runtimeEnvName: 'VITE_CLAWROUTER_APP_API_BASE_URL',
-  sourceDir: 'sdks/clawrouter-app-sdk',
+  sourceDir: 'sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript',
   archiveLanguage: 'typescript',
   archiveName: 'sdkwork-clawrouter-app-sdk-typescript-0.1.0.zip',
   description: 'SDKWork Claw Router app API SDK',
@@ -42,7 +45,7 @@ export const CLAWROUTER_BACKEND_SDK_REFERENCE_METADATA: ClawRouterGeneratedSdkMe
   sdkType: 'backend',
   apiPrefix: BACKEND_API_PREFIX,
   runtimeEnvName: 'VITE_CLAWROUTER_BACKEND_API_BASE_URL',
-  sourceDir: 'sdks/clawrouter-backend-sdk',
+  sourceDir: 'sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript',
   archiveLanguage: 'typescript',
   archiveName: 'sdkwork-clawrouter-backend-sdk-typescript-0.1.0.zip',
   description: 'SDKWork Claw Router backend API SDK',
@@ -50,14 +53,14 @@ export const CLAWROUTER_BACKEND_SDK_REFERENCE_METADATA: ClawRouterGeneratedSdkMe
 
 export const CLAWROUTER_AI_SDK_REFERENCE_METADATA: ClawRouterGeneratedSdkMetadata = {
   name: 'SdkworkAiClient',
-  packageName: '@sdkwork/ai-sdk',
+  packageName: '@sdkwork/clawrouter-open-sdk',
   version: '0.1.0',
   sdkType: 'ai',
   apiPrefix: '/v1',
   runtimeEnvName: 'VITE_API_BASE_URL',
-  sourceDir: 'spring-ai-plus-ai-api/sdkwork-sdk-ai',
+  sourceDir: 'sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript',
   archiveLanguage: 'typescript',
-  archiveName: 'sdkwork-ai-sdk-typescript-0.1.0.zip',
+  archiveName: 'sdkwork-clawrouter-open-sdk-typescript-0.1.0.zip',
   description: 'SDKWork OpenAI-compatible AI API SDK',
 };
 
@@ -68,6 +71,7 @@ export const SDK_SYSTEM_CONFIG = {
 } as const satisfies Record<string, ClawRouterGeneratedSdkMetadata>;
 
 export interface ClawRouterAppSdkClientOptions {
+  accessToken?: string;
   appBaseUrl?: string;
   authToken?: string;
   platform?: string;
@@ -75,16 +79,25 @@ export interface ClawRouterAppSdkClientOptions {
 }
 
 export interface ClawRouterBackendSdkClientOptions {
+  accessToken?: string;
   backendBaseUrl?: string;
   authToken?: string;
   platform?: string;
   timeout?: number;
 }
 
+export type ClawRouterAppSdkClient = SdkworkAppClient;
+export type ClawRouterBackendSdkClient = SdkworkBackendClient;
+
+type ClawRouterSdkRuntimeHost = typeof globalThis & {
+  __SDKWORK_CLAW_ROUTER_APP_SDK_CLIENT__?: ClawRouterAppSdkClient | null;
+  __SDKWORK_CLAW_ROUTER_BACKEND_SDK_CLIENT__?: ClawRouterBackendSdkClient | null;
+};
+
 let appClient: SdkworkAppClient | null = null;
-let appClientSessionToken: string | undefined;
+let appClientSessionKey: string | undefined;
 let backendClient: SdkworkBackendClient | null = null;
-let backendClientSessionToken: string | undefined;
+let backendClientSessionKey: string | undefined;
 
 export function createClawRouterAppSdkClient(options: ClawRouterAppSdkClientOptions = {}): SdkworkAppClient {
   return new SdkworkAppClient(buildAppConfig(options));
@@ -98,10 +111,16 @@ export function getClawRouterAppSdkClient(options: ClawRouterAppSdkClientOptions
   if (hasRuntimeOverrides(options)) {
     return createClawRouterAppSdkClient(options);
   }
-  const sessionToken = getStoredAppSessionToken();
-  if (!appClient || appClientSessionToken !== sessionToken) {
-    appClient = createClawRouterAppSdkClient(sessionToken ? { authToken: sessionToken } : {});
-    appClientSessionToken = sessionToken;
+  const injected = readInjectedAppSdkClient();
+  if (injected) {
+    return injected;
+  }
+  const authToken = getStoredAppSessionAuthToken();
+  const accessToken = getStoredAppSessionAccessToken();
+  const sessionKey = createSessionKey(authToken, accessToken);
+  if (!appClient || appClientSessionKey !== sessionKey) {
+    appClient = createClawRouterAppSdkClient(authToken || accessToken ? { accessToken, authToken } : {});
+    appClientSessionKey = sessionKey;
   }
   return appClient;
 }
@@ -110,19 +129,25 @@ export function getClawRouterBackendSdkClient(options: ClawRouterBackendSdkClien
   if (hasRuntimeOverrides(options)) {
     return createClawRouterBackendSdkClient(options);
   }
-  const sessionToken = getStoredAppSessionToken();
-  if (!backendClient || backendClientSessionToken !== sessionToken) {
-    backendClient = createClawRouterBackendSdkClient(sessionToken ? { authToken: sessionToken } : {});
-    backendClientSessionToken = sessionToken;
+  const injected = readInjectedBackendSdkClient();
+  if (injected) {
+    return injected;
+  }
+  const authToken = getStoredAppSessionAuthToken();
+  const accessToken = getStoredAppSessionAccessToken();
+  const sessionKey = createSessionKey(authToken, accessToken);
+  if (!backendClient || backendClientSessionKey !== sessionKey) {
+    backendClient = createClawRouterBackendSdkClient(authToken || accessToken ? { accessToken, authToken } : {});
+    backendClientSessionKey = sessionKey;
   }
   return backendClient;
 }
 
 export function resetClawRouterSdkClients(): void {
   appClient = null;
-  appClientSessionToken = undefined;
+  appClientSessionKey = undefined;
   backendClient = null;
-  backendClientSessionToken = undefined;
+  backendClientSessionKey = undefined;
 }
 
 export function createClawRouterAppSdkModelExample(modelId: string, nodeEnvReference = 'process.env'): string {
@@ -137,9 +162,11 @@ export function createClawRouterAppSdkModelExample(modelId: string, nodeEnvRefer
     '});',
     '',
     'async function main() {',
-    '  const response = await client.router.fetchModels({',
-    `    model: ${JSON.stringify(modelId)},`,
-    '  });',
+    '  const params = {',
+    `    searchQuery: ${JSON.stringify(modelId)},`,
+    '    limit: 1,',
+    '  };',
+    '  const response = await client.ai.models.list(params);',
     '  return response;',
     '}',
     '',
@@ -153,7 +180,8 @@ function buildAppConfig(options: ClawRouterAppSdkClientOptions): SdkworkAppConfi
       options.appBaseUrl ?? readClawRouterRuntimeEnv('VITE_CLAWROUTER_APP_API_BASE_URL') ?? APP_API_PREFIX,
       APP_API_PREFIX,
     ),
-    authToken: options.authToken ?? getStoredAppSessionToken(),
+    accessToken: options.accessToken ?? getStoredAppSessionAccessToken(),
+    authToken: options.authToken ?? getStoredAppSessionAuthToken(),
     platform: options.platform ?? 'web',
     timeout: options.timeout,
   };
@@ -165,7 +193,8 @@ function buildBackendConfig(options: ClawRouterBackendSdkClientOptions): Sdkwork
       options.backendBaseUrl ?? readClawRouterRuntimeEnv('VITE_CLAWROUTER_BACKEND_API_BASE_URL') ?? BACKEND_API_PREFIX,
       BACKEND_API_PREFIX,
     ),
-    authToken: options.authToken ?? getStoredAppSessionToken(),
+    accessToken: options.accessToken ?? getStoredAppSessionAccessToken(),
+    authToken: options.authToken ?? getStoredAppSessionAuthToken(),
     platform: options.platform ?? 'web-admin',
     timeout: options.timeout,
   };
@@ -175,4 +204,16 @@ function hasRuntimeOverrides(
   options: ClawRouterAppSdkClientOptions | ClawRouterBackendSdkClientOptions,
 ): boolean {
   return Object.keys(options).length > 0;
+}
+
+function createSessionKey(authToken: string | undefined, accessToken: string | undefined): string {
+  return `${authToken ?? ''}:${accessToken ?? ''}`;
+}
+
+function readInjectedAppSdkClient(): ClawRouterAppSdkClient | undefined {
+  return (globalThis as ClawRouterSdkRuntimeHost).__SDKWORK_CLAW_ROUTER_APP_SDK_CLIENT__ ?? undefined;
+}
+
+function readInjectedBackendSdkClient(): ClawRouterBackendSdkClient | undefined {
+  return (globalThis as ClawRouterSdkRuntimeHost).__SDKWORK_CLAW_ROUTER_BACKEND_SDK_CLIENT__ ?? undefined;
 }

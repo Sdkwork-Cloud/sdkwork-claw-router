@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-trade-hub@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_trade_hub",
+  "skill": {
+    "id": 64259,
+    "skillKey": "clawhub-claw-trade-hub",
+    "name": "Claw Trade Hub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-trade-hub",
+    "url": "https://clawhub.ai/skills/claw-trade-hub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-trade-hub-eeb4cbb0ef9cf7cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "服务交易模块 - 支持服务挂牌、竞价、议价、交易记录管理"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tangboheng",
+      "userId": "s171qfxzvp2eha7vdrtgavf56h83gmbz",
+      "displayName": "TangBoheng",
+      "image": "https://avatars.githubusercontent.com/u/16973161?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 231,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775717000854,
+      "changelog": "Initial release - 服务交易与议价",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4490a86930924e54bbe6f7753cafd35680b4b3d539aa6ce6cb2dadbc00585fb8"
+}

@@ -1,0 +1,37 @@
+{
+  "skill": {
+    "slug": "hk-bus-eta",
+    "displayName": "Hong Kong Bus ETA | 香港巴士預計到達時間",
+    "summary": "Fast, reliable Hong Kong bus ETA lookup (KMB/CTB/LWB) with fuzzy stop matching, bilingual output (zh-HK/en), and multi-route parallel queries. Built for “nex...",
+    "tags": {
+      "latest": "1.0.2"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 437,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 3
+    },
+    "createdAt": 1773388588354,
+    "updatedAt": 1777619129282
+  },
+  "latestVersion": {
+    "version": "1.0.2",
+    "createdAt": 1773507744732,
+    "changelog": "v1.0.2 is a safety-hardened, ClawHub-scan-friendly update with query robustness and parallel performance improvements.\n\n- Safer output policy: allows minimal formatting for clarity and compliance; no fabricated ETAs; always uses real script output or fixed fallback.\n- Explicit command and network allowlists; write access limited to skill-local cache/data only; secrets strictly forbidden.\n- Multi-route queries now require per-route fallback labeling if no results found.\n- Performance maintained: parallel API fetch, cache-first stop lookup, and guidance for quick responses.\n- Query retry logic clarified; max two retries for latency stability.\n- No functional changes to user-facing queries or ETA features.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "tomfong",
+    "userId": "s174bz62x9vysjk1fdewm65yd183hybm",
+    "displayName": "Tom FONG",
+    "image": "https://avatars.githubusercontent.com/u/43058990?v=4"
+  },
+  "moderation": null
+}

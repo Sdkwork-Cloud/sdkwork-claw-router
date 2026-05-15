@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-workspace-rave@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_workspace_rave",
+  "skill": {
+    "id": 56149,
+    "skillKey": "clawhub-google-workspace-rave",
+    "name": "google-workspace-rave"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-workspace-rave",
+    "url": "https://clawhub.ai/skills/google-workspace-rave",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-workspace-rave-d3da9ac3825a0015.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Google Workspace via the `gws` CLI — Drive, Gmail, Calendar, Sheets, Docs, Chat, Admin, Tasks, Meet, Slides, Forms, Contacts, and every other Workspac..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eladrave",
+      "userId": "s173v5nncrn4twk8aykszn2tr583et7r",
+      "displayName": "eladrave",
+      "image": "https://avatars.githubusercontent.com/u/86946294?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 188,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774547918691,
+      "changelog": "Added explicit first-time setup & authentication workflow for AI agents",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:21059c383e7f3af7427b5a7a1f857185c144b8552f00a2bb6e9968684d9e8247"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51110,
+  "uuid": "skill-clawhub-xt-exchange",
+  "skillKey": "clawhub-xt-exchange",
+  "name": "XT Exchange",
+  "summary": "XT.COM exchange CLI — spot & futures trading via progressive conversation. Market data, balance, orders, transfer, and withdrawal.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xt_exchange",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "0xH4rry",
+      "features": [
+        "XT.COM exchange CLI — spot & futures trading via progressive conversation",
+        "Market data, balance, orders, transfer, and withdrawal."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xt-exchange@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4386252?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xt-exchange",
+      "url": "https://clawhub.ai/skills/xt-exchange"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xt-exchange",
+    "url": "https://clawhub.ai/skills/xt-exchange",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xt-exchange-eb192539eb8989e4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xt-exchange@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xt-exchange-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e0bec2b475073de832fc7e5a624af55ab1fae3b5a4abb83d91ef70bc6c93e654",
+      "artifactSizeBytes": 1878
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T06:43:16.798Z"
+}

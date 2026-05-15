@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26704,
+  "uuid": "skill-clawhub-openclaw-grok-search",
+  "skillKey": "clawhub-openclaw-grok-search",
+  "name": "Openclaw Grok Search",
+  "summary": "Cross-platform real-time web research and search via an OpenAI-compatible Grok endpoint, returning JSON with content and sources. Use for version checks, API...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_grok_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "莫循",
+      "features": [
+        "Cross-platform real-time web research and search via an OpenAI-compatible Grok endpoint, return.",
+        "Use for version checks, API..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-grok-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/68231637?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-grok-search",
+      "url": "https://clawhub.ai/skills/openclaw-grok-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-grok-search",
+    "url": "https://clawhub.ai/skills/openclaw-grok-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-grok-search-ff72910afec92d3a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-grok-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-grok-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b1e282add2571245715e23f7a8834645141b91671ba1bef83636ed0e247f343f",
+      "artifactSizeBytes": 2508
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T19:19:22.263Z"
+}

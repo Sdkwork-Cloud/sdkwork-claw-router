@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47196,
+  "uuid": "skill-clawhub-free-editor-text",
+  "skillKey": "clawhub-free-editor-text",
+  "name": "Free Editor Text",
+  "summary": "Get text-overlaid videos ready to post, without touching a single slider. Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"add...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_editor_text",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mory128",
+      "features": [
+        "Get text-overlaid videos ready to post, without touching a single slider",
+        "Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"add..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/free-editor-text@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270709915?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "free-editor-text",
+      "url": "https://clawhub.ai/skills/free-editor-text"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-editor-text",
+    "url": "https://clawhub.ai/skills/free-editor-text",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-editor-text-e0926f8867eaadb8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/free-editor-text@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-free-editor-text-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ecaa758358325d4a63e61fe5fac707c9ff8be7533038c661d9c57345a1494c32",
+      "artifactSizeBytes": 2397
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T06:04:43.574Z"
+}

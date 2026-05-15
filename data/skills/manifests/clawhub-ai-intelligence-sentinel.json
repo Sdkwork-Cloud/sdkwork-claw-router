@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70960,
+  "uuid": "skill-clawhub-ai-intelligence-sentinel",
+  "skillKey": "clawhub-ai-intelligence-sentinel",
+  "name": "AI前沿哨兵",
+  "summary": "AI情报追踪系统。当用户需要追踪AI领域动态、生成AI晨报/晚报时使用。触发词：AI情报、AI哨兵、AI资讯、AI动态、科技新闻、论文追踪、开源项目追踪、晨报、晚报。",
+  "version": "1.4.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_intelligence_sentinel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaopeng",
+      "features": [
+        "AI情报追踪系统。当用户需要追踪AI领域动态、生成AI晨报/晚报时使用。触发词：AI情报、AI哨兵、AI资讯、AI动态、科技新闻、论文追踪、开源项目追踪、晨报、晚报。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-intelligence-sentinel@1.4.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4183002?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-intelligence-sentinel",
+      "url": "https://clawhub.ai/skills/ai-intelligence-sentinel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-intelligence-sentinel",
+    "url": "https://clawhub.ai/skills/ai-intelligence-sentinel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-intelligence-sentinel-9cb77a17b22f12b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-intelligence-sentinel@1.4.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-intelligence-sentinel-1.4.2.json",
+      "version": "1.4.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:21652974fcfd7e3ea82b4ac5f3e7fb033f908247413a366bd940bce718d1d114",
+      "artifactSizeBytes": 2049
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T01:45:13.664Z"
+}

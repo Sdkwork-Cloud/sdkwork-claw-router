@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31010,
+  "uuid": "skill-clawhub-tawkto",
+  "skillKey": "clawhub-tawkto",
+  "name": "Tawkto",
+  "summary": "Tawk.to integration. Manage Persons, Organizations, Leads, Deals, Projects, Activities and more. Use when the user wants to interact with Tawk.to data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tawkto",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Tawk.to integration",
+        "Manage Persons, Organizations, Leads, Deals, Projects, Activities and more",
+        "Use when the user wants to interact with Tawk.to data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tawkto@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tawkto",
+      "url": "https://clawhub.ai/skills/tawkto"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tawkto",
+    "url": "https://clawhub.ai/skills/tawkto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tawkto-092e08d192483c82.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tawkto@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-tawkto-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9304878cddca6997dd464ee17fbd89a6852258294e63a201bd23829c103894c2",
+      "artifactSizeBytes": 1844
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:50:22.404Z"
+}

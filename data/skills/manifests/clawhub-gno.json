@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9432,
+  "uuid": "skill-clawhub-gno",
+  "skillKey": "clawhub-gno",
+  "name": "Gno",
+  "summary": "Search local documents, files, notes, and knowledge bases. Index directories, search with BM25/vector/hybrid, get AI answers with citations. Use when user wa...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gno",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gmickel",
+      "features": [
+        "Search local documents, files, notes, and knowledge bases",
+        "Index directories, search with BM25/vector/hybrid, get AI answers with citations",
+        "Use when user wa..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gno@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139907?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gno",
+      "url": "https://clawhub.ai/skills/gno"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gno",
+    "url": "https://clawhub.ai/skills/gno",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gno-a5477a787d4a66a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gno@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gno-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:66a461fee59d68ca647c8904d264e61ab7f170659a2c793232794e64daa2ef6e",
+      "artifactSizeBytes": 2291
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T10:02:31.226Z"
+}

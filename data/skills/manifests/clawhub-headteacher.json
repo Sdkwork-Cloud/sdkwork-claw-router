@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45740,
+  "uuid": "skill-clawhub-headteacher",
+  "skillKey": "clawhub-headteacher",
+  "name": "headteacher",
+  "summary": "Bootstrap and operate an AI-native headteacher workspace. Guide users through backend selection, environment-aware Feishu Base access routing, schema install...",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.headteacher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeyuDame2",
+      "features": [
+        "Bootstrap and operate an AI-native headteacher workspace",
+        "Guide users through backend selection, environment-aware Feishu Base access routing, schema ins."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/headteacher@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/176376265?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "headteacher",
+      "url": "https://clawhub.ai/skills/headteacher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "headteacher",
+    "url": "https://clawhub.ai/skills/headteacher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/headteacher-7f78fcb85e56f7d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/headteacher@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-headteacher-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fe33d2c018f4237ea2b3fb128805a96fe6f42f84253e9ae555f0560c31866f1d",
+      "artifactSizeBytes": 1876
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T01:28:33.688Z"
+}

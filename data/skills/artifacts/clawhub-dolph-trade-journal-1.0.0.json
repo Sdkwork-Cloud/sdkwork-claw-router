@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dolph-trade-journal@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dolph_trade_journal",
+  "skill": {
+    "id": 44623,
+    "skillKey": "clawhub-dolph-trade-journal",
+    "name": "Prediction Trade Journal"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dolph-trade-journal",
+    "url": "https://clawhub.ai/skills/dolph-trade-journal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dolph-trade-journal-de8f196363726716.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Auto-log trades with context, track outcomes, generate calibration reports to improve trading."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "richducat",
+      "userId": "s172pm13k2nd0gwew35ac7tnf9846t3e",
+      "displayName": "richducat",
+      "image": "https://avatars.githubusercontent.com/u/15804981?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775345725776,
+      "changelog": "- Initial release of the Prediction Trade Journal skill (version 1.0.0).\n- Automatically logs trades, tracks their context and outcomes, and stores them locally.\n- Provides CLI commands for syncing trades, viewing history, generating reports, and exporting to CSV.\n- Supports configuration with a required API key (SIMMER_API_KEY).\n- Allows skill integration to enrich trade logs with thesis, confidence, and source.\n- Generates reports with win rate, P&L, and calibration analysis to help improve trading.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a7eada1abe8d194c0f8b2c4ab794471e387959bcad9f5ec5df80d745fcecd790"
+}

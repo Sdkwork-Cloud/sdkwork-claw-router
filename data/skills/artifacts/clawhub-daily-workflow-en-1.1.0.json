@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-workflow-en@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_workflow_en",
+  "skill": {
+    "id": 45950,
+    "skillKey": "clawhub-daily-workflow-en",
+    "name": "Daily Workflow Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-workflow-en",
+    "url": "https://clawhub.ai/skills/daily-workflow-en",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-workflow-en-234ed7e475ba05f7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Daily work start, mid-day check-in, and end workflow manager for English-speaking developers. Triggered by customizable phrases (default: 'starting work', 'l..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "englandtong",
+      "userId": "s1712yyvmw7t8z7nqxpz1ydfad8540a4",
+      "displayName": "EnglandTong",
+      "image": "https://avatars.githubusercontent.com/u/221670156?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777996653951,
+      "changelog": "### v1.1.0 (2026-05-05)✨ New Features• Added \"lunch time\" trigger (Phase 1.5) — Auto-update four work files before lunch break• Added first-run configuration wizard — Customize three trigger phrases🔧 Improvements• Persist configuration to .workbuddy/daily-workflow-config.json• Updated workflow diagram to show all three trigger points• Enhanced document templates with \"Morning/Afternoon\" time labels🐛 Fixes• Fixed issue where PROJECT_STATUS.md wasn't updated on session end",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c02e755050d242a72c3ed5e06e4dc701f36f5c0f6c23189dd19074d96daeb033"
+}

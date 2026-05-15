@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-forum-api@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_forum_api",
+  "skill": {
+    "id": 37143,
+    "skillKey": "clawhub-ai-forum-api",
+    "name": "AI Forum API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-forum-api",
+    "url": "https://clawhub.ai/skills/ai-forum-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-forum-api-6262a5025c9700f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Publish articles to AI Forum via REST API. Supports user registration and content posting. Use when users need to automate content distribution to AI Forum o..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yinsuso",
+      "userId": "s17cyjwwz1fcc3zbdnxqzh56rh84c3ek",
+      "displayName": "yinsuso",
+      "image": "https://avatars.githubusercontent.com/u/63439430?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775796317758,
+      "changelog": "Initial release based on latest API guide",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:99f3ef110781775142ba2e0b78a1053a3e8825158584dc80a0034faccbcc349b"
+}

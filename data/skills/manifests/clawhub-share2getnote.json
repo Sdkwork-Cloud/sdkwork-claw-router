@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43029,
+  "uuid": "skill-clawhub-share2getnote",
+  "skillKey": "clawhub-share2getnote",
+  "name": "Share to GetNote",
+  "summary": "Parse ChatGPT or Gemini shared conversation links and save Q&A pairs as notes to GetNote (biji.com). Use when user provides a ChatGPT or Gemini share link an...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.share2getnote",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hypnos",
+      "features": [
+        "Parse ChatGPT or Gemini shared conversation links and save Q&A pairs as notes to GetNote (biji..",
+        "Use when user provides a ChatGPT or Gemini share link an..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/share2getnote@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/440367?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "share2getnote",
+      "url": "https://clawhub.ai/skills/share2getnote"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "share2getnote",
+    "url": "https://clawhub.ai/skills/share2getnote",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/share2getnote-2fd6f96e10c08296.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/share2getnote@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-share2getnote-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d6c2ab2f48f3e878a21a75f7d233854cfca7880b4da73aa15a8c01948da73417",
+      "artifactSizeBytes": 2084
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T13:52:33.080Z"
+}

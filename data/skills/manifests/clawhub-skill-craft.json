@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53169,
+  "uuid": "skill-clawhub-skill-craft",
+  "skillKey": "clawhub-skill-craft",
+  "name": "skill-craft",
+  "summary": "Create, optimize, or update AgentSkills with evidence-based design. Two modes: (1) CREATE — build new skills from scratch with proven design patterns. (2) OP...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_craft",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeoNardo-LB",
+      "features": [
+        "Create, optimize, or update AgentSkills with evidence-based design",
+        "Two modes: (1) CREATE — build new skills from scratch with proven design patterns",
+        "(2) OP..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-craft@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58056860?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-craft",
+      "url": "https://clawhub.ai/skills/skill-craft"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-craft",
+    "url": "https://clawhub.ai/skills/skill-craft",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-craft-dcd5e02bae64e0b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-craft@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-craft-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6270ee6c997c3cf2831f12f827a6c0442c953498ab589e9446a642164f9dfb2b",
+      "artifactSizeBytes": 2043
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T06:40:11.108Z"
+}

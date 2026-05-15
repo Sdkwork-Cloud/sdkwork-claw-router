@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54248,
+  "uuid": "skill-clawhub-skill-openclaw",
+  "skillKey": "clawhub-skill-openclaw",
+  "name": "Skill Openclaw",
+  "summary": "Give your OpenClaw agent the power to spend. Stablecoin payments, spending policies, and compliance — built-in.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fluxaventures",
+      "features": [
+        "Give your OpenClaw agent the power to spend",
+        "Stablecoin payments, spending policies, and compliance — built-in."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-openclaw@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254086339?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-openclaw",
+      "url": "https://clawhub.ai/skills/skill-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-openclaw",
+    "url": "https://clawhub.ai/skills/skill-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-openclaw-60b1b9007a21c4f9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-openclaw@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-openclaw-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac87dfc96c904fcba761e04d7dc459b98ba413676acdc3fb3f874492c5557c5f",
+      "artifactSizeBytes": 2129
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T15:51:18.004Z"
+}

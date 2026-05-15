@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30686,
+  "uuid": "skill-clawhub-kite-suite",
+  "skillKey": "clawhub-kite-suite",
+  "name": "Kite Suite",
+  "summary": "Kite Suite integration. Manage Organizations, Pipelines, Users, Goals, Filters. Use when the user wants to interact with Kite Suite data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kite_suite",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Kite Suite integration",
+        "Manage Organizations, Pipelines, Users, Goals, Filters",
+        "Use when the user wants to interact with Kite Suite data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kite-suite@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kite-suite",
+      "url": "https://clawhub.ai/skills/kite-suite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kite-suite",
+    "url": "https://clawhub.ai/skills/kite-suite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kite-suite-fe01ba3ad856bd17.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kite-suite@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-kite-suite-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9448d84b5030f20993b22ea7832fb071fb957f44ce0552a7f001429c3cbdff2a",
+      "artifactSizeBytes": 1858
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:04:03.221Z"
+}

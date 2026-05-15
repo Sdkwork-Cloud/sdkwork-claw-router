@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57288,
+  "uuid": "skill-clawhub-dashscope-image-gen",
+  "skillKey": "clawhub-dashscope-image-gen",
+  "name": "Dashscope Image Gen",
+  "summary": "Generate images via Alibaba DashScope OpenAI-compatible endpoint (compatible-mode) using qwen-image-max. Use when the user asks for 文生图/图片生成/image generation...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dashscope_image_gen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DHDragon",
+      "features": [
+        "Generate images via Alibaba DashScope OpenAI-compatible endpoint (compatible-mode) using qwen-i.",
+        "Use when the user asks for 文生图/图片生成/image generation..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dashscope-image-gen@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30099625?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dashscope-image-gen",
+      "url": "https://clawhub.ai/skills/dashscope-image-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dashscope-image-gen",
+    "url": "https://clawhub.ai/skills/dashscope-image-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dashscope-image-gen-429374d72b3cd04d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dashscope-image-gen@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dashscope-image-gen-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e0f1785c9b8b51376ef93057ee643145fd708d0b476148ad2005d35c48dc3d8d",
+      "artifactSizeBytes": 2262
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T03:35:11.242Z"
+}

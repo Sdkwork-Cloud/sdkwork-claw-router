@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63861,
+  "uuid": "skill-clawhub-popeye-translation",
+  "skillKey": "clawhub-popeye-translation",
+  "name": "Popeye Translation",
+  "summary": "翻译助手 - 中英互译、润色、本地化。触发词：翻译、润色、本地化",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.popeye_translation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiangtaoid",
+      "features": [
+        "中英互译、润色、本地化。触发词：翻译、润色、本地化"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/popeye-translation@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62326134?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "popeye-translation",
+      "url": "https://clawhub.ai/skills/popeye-translation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "popeye-translation",
+    "url": "https://clawhub.ai/skills/popeye-translation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/popeye-translation-0c6730de0878cec5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/popeye-translation@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-popeye-translation-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9883ff907ba081508e28935f06eb40eeb6e760f10279e66998097e56346f8c0d",
+      "artifactSizeBytes": 1862
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T09:03:46.228Z"
+}

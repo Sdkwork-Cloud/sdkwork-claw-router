@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/elecz@1.9.2",
+  "version": "1.9.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.elecz",
+  "skill": {
+    "id": 23673,
+    "skillKey": "clawhub-elecz",
+    "name": "Elecz Energy Signal"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "elecz",
+    "url": "https://clawhub.ai/skills/elecz",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/elecz-a9df2de40913a937.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real-time Nordic electricity prices and optimization for AI agents. Get spot prices, cheapest hours, and contract recommendations for Finland, Sweden, Norway..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zemloai-ctrl",
+      "userId": "s170tcx6t2ttgq4r6580pzj8zh83kx5g",
+      "displayName": "Sakari",
+      "image": "https://avatars.githubusercontent.com/u/261597728?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 334,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.9.2",
+      "createdAt": 1776068721797,
+      "changelog": "Expanded to 8 markets across Europe and Oceania (GB, AU, NZ added). MCP surface reduced to 3 tools.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fbd4b9e57803e08d65194797d54ac305bf8722cdfb4a6e1fd9e6833d987a8951"
+}

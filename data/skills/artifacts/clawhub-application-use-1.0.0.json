@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/application-use@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.application_use",
+  "skill": {
+    "id": 41541,
+    "skillKey": "clawhub-application-use",
+    "name": "application-use"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "application-use",
+    "url": "https://clawhub.ai/skills/application-use",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/application-use-e4d2c34c2d8c8259.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate macOS tasks by opening apps, clicking elements, filling forms, typing, scrolling, and controlling the desktop via CLI commands."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qdore",
+      "userId": "s17ftwqz8x33tjq3dr24tjnnpd83tyd5",
+      "displayName": "Wei Qiang",
+      "image": "https://avatars.githubusercontent.com/u/6831829?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774761048023,
+      "changelog": "Initial release of `application-use` for macOS desktop automation.\n\n- Introduces a CLI tool for opening apps, clicking elements, filling forms, scrolling, and automating tasks on macOS.\n- Supports actionable commands: `open`, `click`, `fill`, `sendkey`, `scroll`, `screenshot`, `search`, `close`, and `type`.\n- Features a hint system for element and area targeting.\n- Provides snapshot-based feedback after each command for visual confirmation.\n- Includes pattern examples for form filling, browser navigation, and Finder automation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fe5bf83b2afe7bb598a9039d3147f85335e12709aa21cdd64aed7194ea899710"
+}

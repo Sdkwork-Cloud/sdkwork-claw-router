@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27402,
+  "uuid": "skill-clawhub-lucid-skill",
+  "skillKey": "clawhub-lucid-skill",
+  "name": "Lucid Skill",
+  "summary": "AI-native data analysis via natural language. Connect Excel, CSV, MySQL, PostgreSQL data sources and query with SQL. Use when: (1) user asks to query, analyz...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lucid_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wenkang-xie",
+      "features": [
+        "AI-native data analysis via natural language",
+        "Connect Excel, CSV, MySQL, PostgreSQL data sources and query with SQL",
+        "Use when: (1) user asks to query, analyz..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lucid-skill@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58462870?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lucid-skill",
+      "url": "https://clawhub.ai/skills/lucid-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lucid-skill",
+    "url": "https://clawhub.ai/skills/lucid-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lucid-skill-80bfd7a6f38c5d70.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lucid-skill@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lucid-skill-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba6ee5ff65bad461d1665463606b718e12953dcd436d7d0cbbf5551de2afcb54",
+      "artifactSizeBytes": 1941
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T01:13:11.958Z"
+}

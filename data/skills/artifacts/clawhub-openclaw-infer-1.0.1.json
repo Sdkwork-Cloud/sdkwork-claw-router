@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-infer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_infer",
+  "skill": {
+    "id": 55966,
+    "skillKey": "clawhub-openclaw-infer",
+    "name": "OpenClaw Infer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-infer",
+    "url": "https://clawhub.ai/skills/openclaw-infer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-infer-362256df07c5a2a4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the OpenClaw `infer` CLI for provider-backed model, image, audio transcription, TTS, video, web-search, and embedding tasks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "takhoffman",
+      "userId": "s171ztv5za8xa04kqfrw24fczn84gxs2",
+      "displayName": "Tak Hoffman",
+      "image": "https://avatars.githubusercontent.com/u/781889?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775789115775,
+      "changelog": "- Added CLI install instructions and quick verification steps for setup.\n- Declared explicit binary (`openclaw`) requirement in metadata.\n- Added installation metadata and homepage link.\n- No command syntax or workflow changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e609377f2206ae0ae31053d09ca4011487bfe8918fd7699387d51e30df175731"
+}

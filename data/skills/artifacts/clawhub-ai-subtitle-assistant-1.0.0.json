@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-subtitle-assistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_subtitle_assistant",
+  "skill": {
+    "id": 34184,
+    "skillKey": "clawhub-ai-subtitle-assistant",
+    "name": "Subtitle Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-subtitle-assistant",
+    "url": "https://clawhub.ai/skills/ai-subtitle-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-subtitle-assistant-e1239e3a157c5cac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Download YouTube subtitles and use AI to summarize, translate, or extract key points. No login or cookies required. Powered by evolink.ai"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "evolinkai",
+      "userId": "s176k82x7tm60j2kx309p7evxs83j3z7",
+      "displayName": "EvolinkAI",
+      "image": "https://avatars.githubusercontent.com/u/253253881?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 227,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775891338046,
+      "changelog": "Initial release: Download YouTube subtitles + AI summarize, translate, extract key points",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ea7efde8a0e8d9e4a0ecec6f713111cfcc0537d2677672f7f06af9e5a63f2e3e"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jira-m@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jira_m",
+  "skill": {
+    "id": 18143,
+    "skillKey": "clawhub-jira-m",
+    "name": "Jira"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jira-m",
+    "url": "https://clawhub.ai/skills/jira-m",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jira-m-bb1cfb13267b88c7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Jira issues and worklogs via REST API: search, view, create, comment, assign, transition status, and log or report work hours."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weihezhai",
+      "userId": "publishers:weihezhai",
+      "displayName": "whz",
+      "image": "https://avatars.githubusercontent.com/u/45926667?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 714,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771685915213,
+      "changelog": "- Initial release of the Jira skill for issue and worklog management via the Jira Cloud REST API.\n- Supports searching, viewing, creating, and updating Jira issues from command line scripts.\n- Enables logging and summarizing work hours, with JSON output for integration.\n- Includes commands for assigning issues, commenting, status transitions, and opening issue links.\n- Requires basic setup with Jira API token and environment variables; supports board/project scoping.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2692c6f9e044fa075987a5969fb3d21d1bc97b03b26a6685e40239e25ac4120d"
+}

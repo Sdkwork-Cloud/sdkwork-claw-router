@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70676,
+  "uuid": "skill-clawhub-image-crawler",
+  "skillKey": "clawhub-image-crawler",
+  "name": "Image-crawler",
+  "summary": "图片采集/爬虫工具，支持百度和Bing图片搜索引擎。当用户要求采集、爬取、下载、 搜集图片时使用。支持关键词拓展、图片去重（URL+内容hash，跨次运行持久化）、 进度监控和停滞检测。触发词：采集图片、爬取图片、下载图片、图片爬虫、抓取图片。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_crawler",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MagicWolf",
+      "features": [
+        "图片采集/爬虫工具，支持百度和Bing图片搜索引擎。当用户要求采集、爬取、下载、 搜集图片时使用。支持关键词拓展、图片去重（URL+内容hash，跨次运行持久化）、 进度监控和停滞检测。触发."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-crawler@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16423859?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-crawler",
+      "url": "https://clawhub.ai/skills/image-crawler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-crawler",
+    "url": "https://clawhub.ai/skills/image-crawler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-crawler-819eeffef882b8a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-crawler@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-crawler-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e3f5bf1addb9ecbd6987922321eaa2f2d8d68099be7b31d7c5eccef602fc7a77",
+      "artifactSizeBytes": 2440
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T06:43:21.793Z"
+}

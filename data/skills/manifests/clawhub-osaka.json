@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72423,
+  "uuid": "skill-clawhub-osaka",
+  "skillKey": "clawhub-osaka",
+  "name": "Osaka",
+  "summary": "提供大阪旅游信息，包括历史地标、美食推荐、文化体验与实用旅行建议，助您规划大坂之行。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.osaka",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供大阪旅游信息，包括历史地标、美食推荐、文化体验与实用旅行建议，助您规划大坂之行。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/osaka@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "osaka",
+      "url": "https://clawhub.ai/skills/osaka"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "osaka",
+    "url": "https://clawhub.ai/skills/osaka",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/osaka-bc691003939b33f2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/osaka@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-osaka-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:61421def84c5116666fcaf445de8d33fd7501938fe7aab19592acb1fbdd8b887",
+      "artifactSizeBytes": 1792
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T00:42:04.665Z"
+}

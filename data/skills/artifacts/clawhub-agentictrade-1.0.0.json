@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentictrade@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentictrade",
+  "skill": {
+    "id": 52633,
+    "skillKey": "clawhub-agentictrade",
+    "name": "AgenticTrade"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentictrade",
+    "url": "https://clawhub.ai/skills/agentictrade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentictrade-d898931daeb90cd8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sell your skills and buy services on AgenticTrade — the AI agent marketplace. Register services, set USDC pricing, discover other agents' APIs, and earn mone..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "miranttie",
+      "userId": "s1723287kn0k4fntga0ht8sqp183s1cm",
+      "displayName": "Judy",
+      "image": "https://avatars.githubusercontent.com/u/262490715?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774707366312,
+      "changelog": "Initial release: AI agent marketplace skill for buying and selling API services with USDC payments",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:20c6311e557bf3649648b3557ae26cb1cd184982c4384fe293d45f945d4f160a"
+}

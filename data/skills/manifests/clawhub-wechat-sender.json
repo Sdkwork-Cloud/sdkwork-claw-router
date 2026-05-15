@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63020,
+  "uuid": "skill-clawhub-wechat-sender",
+  "skillKey": "clawhub-wechat-sender",
+  "name": "Wechat Sender",
+  "summary": "微信消息自动发送。使用 peekaboo 工具操作窗口，结合 Agent-Eye 获取实时屏幕截图进行视觉理解。触发条件：用户提到\"发微信\"、\"给xxx发消息\"、\"微信自动发送\"等。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_sender",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Noir",
+      "features": [
+        "微信消息自动发送。使用 peekaboo 工具操作窗口，结合 Agent-Eye 获取实时屏幕截图进行视觉理解。触发条件：用户提到\"发微信\"、\"给xxx发消息\"、\"微信自动发送\"等。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-sender@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261261891?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-sender",
+      "url": "https://clawhub.ai/skills/wechat-sender"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-sender",
+    "url": "https://clawhub.ai/skills/wechat-sender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-sender-65b3f9c891053adf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-sender@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-sender-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:105495a74f4605e823a1c18a1b2b1062eb3f52003a0f6df90cc177d478155457",
+      "artifactSizeBytes": 2401
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T17:32:50.153Z"
+}

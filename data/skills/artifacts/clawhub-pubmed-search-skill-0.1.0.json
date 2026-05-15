@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pubmed-search-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pubmed_search_skill",
+  "skill": {
+    "id": 14457,
+    "skillKey": "clawhub-pubmed-search-skill",
+    "name": "PubMed Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pubmed-search-skill",
+    "url": "https://clawhub.ai/skills/pubmed-search-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pubmed-search-skill-6c0bfa4625c037b1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered tool for searching and analyzing PubMed biomedical literature"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jackkuo666",
+      "userId": "publishers:jackkuo666",
+      "displayName": "JackKuo666",
+      "image": "https://avatars.githubusercontent.com/u/41313632?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1138,
+      "installsAllTime": 7,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772155016526,
+      "changelog": "Initial public release of PubMed-Search skill.\n\n- Search PubMed articles by keywords with advanced filters (title, author, journal, date range).\n- Retrieve detailed article metadata using PMIDs; supports batch lookup.\n- Analyze PubMed articles, providing research background, methods, findings, and limitations.\n- Attempt to download full-text PDFs for open access articles via PubMed Central.\n- Multiple installation options (uv, conda, pip) and flexible configuration support.\n- Output available in human-readable, JSON, or Markdown formats.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ea6b23b71f475fa3f820e1b9ccf876d96b12db2675fdae08f9a269666ced2c8f"
+}

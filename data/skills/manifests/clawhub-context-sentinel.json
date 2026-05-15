@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12069,
+  "uuid": "skill-clawhub-context-sentinel",
+  "skillKey": "clawhub-context-sentinel",
+  "name": "Context Sentinel",
+  "summary": "Monitors session context and automatically manages model switching based on a cascading protocol. Use as part of a heartbeat or cron job to maintain session health and optimize token usage.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_sentinel",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nietzsche247",
+      "features": [
+        "Monitors session context and automatically manages model switching based on a cascading protocol",
+        "Use as part of a heartbeat or cron job to maintain session health and optimize token usage."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/context-sentinel@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/231786691?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "context-sentinel",
+      "url": "https://clawhub.ai/skills/context-sentinel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-sentinel",
+    "url": "https://clawhub.ai/skills/context-sentinel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-sentinel-81adcec4135d0841.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/context-sentinel@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-context-sentinel-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ee9ed37d6124cfa50e4b892e9b923d7e66f5e69fbf150e363640eda548ee44f",
+      "artifactSizeBytes": 2343
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T16:27:25.484Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50848,
+  "uuid": "skill-clawhub-respawn",
+  "skillKey": "clawhub-respawn",
+  "name": "Auto Respawn",
+  "summary": "Your agent always comes back. Anchor identity and memory on-chain so any new instance can resurrect from just an address — no local state, no single point of...",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.respawn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "0xautonomys",
+      "features": [
+        "Your agent always comes back",
+        "Anchor identity and memory on-chain so any new instance can resurrect from just an address — no."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/respawn@0.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262559771?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "respawn",
+      "url": "https://clawhub.ai/skills/respawn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "respawn",
+    "url": "https://clawhub.ai/skills/respawn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/respawn-d4a29946d0b054f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/respawn@0.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-respawn-0.3.0.json",
+      "version": "0.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:50feae58171379dc6f6d563d0cb532f3be97bad226b039b626fea21791ea6cc8",
+      "artifactSizeBytes": 2127
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T12:29:03.800Z"
+}

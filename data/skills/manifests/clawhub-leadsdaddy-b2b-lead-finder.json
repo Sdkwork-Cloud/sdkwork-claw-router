@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43123,
+  "uuid": "skill-clawhub-leadsdaddy-b2b-lead-finder",
+  "skillKey": "clawhub-leadsdaddy-b2b-lead-finder",
+  "name": "LeadsDaddy B2B Lead Finder",
+  "summary": "Find global B2B prospects with LeadsDaddy via MCP. Use this skill when the user wants to find importers, distributors, wholesalers, restaurant supply buyers,...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.leadsdaddy_b2b_lead_finder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "energypantry",
+      "features": [
+        "Find global B2B prospects with LeadsDaddy via MCP",
+        "Use this skill when the user wants to find importers, distributors, wholesalers, restaurant sup."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/leadsdaddy-b2b-lead-finder@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34472578?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "leadsdaddy-b2b-lead-finder",
+      "url": "https://clawhub.ai/skills/leadsdaddy-b2b-lead-finder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "leadsdaddy-b2b-lead-finder",
+    "url": "https://clawhub.ai/skills/leadsdaddy-b2b-lead-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/leadsdaddy-b2b-lead-finder-c89f68f8dce6aece.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/leadsdaddy-b2b-lead-finder@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-leadsdaddy-b2b-lead-finder-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d3b140e2da935983988e4e6f6960f40da421f408fbe45a1fd2dab59ab0463849",
+      "artifactSizeBytes": 2173
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T04:57:14.709Z"
+}

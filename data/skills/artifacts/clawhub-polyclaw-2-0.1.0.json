@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polyclaw-2@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polyclaw_2",
+  "skill": {
+    "id": 21027,
+    "skillKey": "clawhub-polyclaw-2",
+    "name": "Polyclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polyclaw-2",
+    "url": "https://clawhub.ai/skills/polyclaw-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polyclaw-2-3a2bbdab00516220.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trade on Polymarket via split + CLOB execution. Browse markets, track positions with P&L, discover hedges via LLM. Polygon/Web3."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "woody2434",
+      "userId": "publishers:woody2434",
+      "displayName": "woody2434",
+      "image": "https://avatars.githubusercontent.com/u/115105907?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 526,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772577906681,
+      "changelog": "Initial release of polyclaw-2.  \nKey features and usage highlights:\n\n- Browse Polymarket markets, view details, and search by keyword.\n- Trade on Polymarket via split + CLOB execution (YES/NO positions), with support for market hedging.\n- Manage wallet and contract approvals via environment variable (`POLYCLAW_PRIVATE_KEY`).\n- Track all positions with entry prices, P&L, and wallet status.\n- Hedge discovery using LLM-based analysis with multiple output and filtering options.\n- Includes CLI usage examples, proxy support for CLOB, environment variable setup, and troubleshooting guidance.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bd97177270ec378ebb60617569c2242bea42082c91ca086ca7f9f63c34127b3e"
+}

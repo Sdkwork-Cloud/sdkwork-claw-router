@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62510,
+  "uuid": "skill-clawhub-05-behavior-decoder",
+  "skillKey": "clawhub-05-behavior-decoder",
+  "name": "05 Behavior Decoder",
+  "summary": "Miki行为解码 · 解读12-36月龄常见行为（打人/扔东西/哭闹/说\"不\"），判断是否正常，给出应对策略",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.05_behavior_decoder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nic-yuan",
+      "features": [
+        "Miki行为解码 · 解读12-36月龄常见行为（打人/扔东西/哭闹/说\"不\"），判断是否正常，给出应对策略"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/05-behavior-decoder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/195308903?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "05-behavior-decoder",
+      "url": "https://clawhub.ai/skills/05-behavior-decoder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "05-behavior-decoder",
+    "url": "https://clawhub.ai/skills/05-behavior-decoder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/05-behavior-decoder-b25384bb106d2b3a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/05-behavior-decoder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-05-behavior-decoder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d7e794e737d9c9b18ba3513629b72f5b60bdfeb714688fc24673ce46c9a16c8f",
+      "artifactSizeBytes": 2396
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T16:43:32.984Z"
+}

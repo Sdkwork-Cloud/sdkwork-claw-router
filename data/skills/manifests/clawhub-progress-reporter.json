@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18582,
+  "uuid": "skill-clawhub-progress-reporter",
+  "skillKey": "clawhub-progress-reporter",
+  "name": "Progress Reporter",
+  "summary": "Automatically reports task progress every 10 minutes during execution, including current status, recent work, overall progress, and next steps.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.progress_reporter",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zenmejiang-commits",
+      "features": [
+        "Automatically reports task progress every 10 minutes during execution, including current status."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/progress-reporter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/231708860?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "progress-reporter",
+      "url": "https://clawhub.ai/skills/progress-reporter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "progress-reporter",
+    "url": "https://clawhub.ai/skills/progress-reporter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/progress-reporter-bae1d4c01e2b1704.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/progress-reporter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-progress-reporter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ed28c8ec0dc7bb719795c9f63311938afdf1e94024d4d0d1f09b3a488a47f0e",
+      "artifactSizeBytes": 2391
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T07:32:45.763Z"
+}

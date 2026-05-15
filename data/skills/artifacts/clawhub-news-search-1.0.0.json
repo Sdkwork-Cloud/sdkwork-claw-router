@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/news-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_search",
+  "skill": {
+    "id": 69319,
+    "skillKey": "clawhub-news-search",
+    "name": "news-search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-search",
+    "url": "https://clawhub.ai/skills/news-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-search-94093a7f1512c760.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专门用于查询各大搜索网站的新闻结果。支持百度新闻、今日头条、Bing新闻、Google新闻和新浪新闻。可以同时聚合多个来源的结果，并进行去重处理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dlutwuwei",
+      "userId": "s1790bqjfz22tdpqtw7rac6qph83hwf8",
+      "displayName": "wei.wu",
+      "image": "https://avatars.githubusercontent.com/u/3362483?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 513,
+      "installsAllTime": 5,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773763182239,
+      "changelog": "- Initial release of the news-search skill.\n- Supports searching news from Baidu, Toutiao, Bing, Google, and Sina.\n- Aggregates results from multiple sources and removes duplicates.\n- Offers options to specify news engines, result limits, and output formats (Markdown or JSON).\n- Uses Playwright and related libraries for web scraping and anti-bot measures.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1368d1739cf4226f940ecaf22f65476394706e120b639ed69281d41cfb47b264"
+}

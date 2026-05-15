@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49483,
+  "uuid": "skill-clawhub-justoneapi-reddit-get-post-comments",
+  "skillKey": "clawhub-justoneapi-reddit-get-post-comments",
+  "name": "Reddit Post Comments API",
+  "summary": "Call GET /api/reddit/get-post-comments/v1 for Reddit Post Comments through JustOneAPI with postId.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_reddit_get_post_comments",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Call GET /api/reddit/get-post-comments/v1 for Reddit Post Comments through JustOneAPI with post."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-reddit-get-post-comments@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-reddit-get-post-comments",
+      "url": "https://clawhub.ai/skills/justoneapi-reddit-get-post-comments"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-reddit-get-post-comments",
+    "url": "https://clawhub.ai/skills/justoneapi-reddit-get-post-comments",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-reddit-get-post-comments-091ce7583fb8f922.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-reddit-get-post-comments@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-reddit-get-post-comments-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3e856febee8984188e11aa510b5a96b299a1f5b52d9cdacf422779834bd38c61",
+      "artifactSizeBytes": 1963
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T04:09:20.596Z"
+}

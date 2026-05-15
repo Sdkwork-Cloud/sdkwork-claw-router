@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-dianzhang@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_dianzhang",
+  "skill": {
+    "id": 72174,
+    "skillKey": "clawhub-ai-dianzhang",
+    "name": "AI店长 - 电商助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-dianzhang",
+    "url": "https://clawhub.ai/skills/ai-dianzhang",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-dianzhang-f8659743a6064f97.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI店长为电商卖家提供竞品监控、爆款文案、客服话术、选品建议及每日数据分析，支持多平台内容生成。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xdd-xund",
+      "userId": "publishers:xdd-xund",
+      "displayName": "xund",
+      "image": "https://avatars.githubusercontent.com/u/194621946?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 924,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771263534927,
+      "changelog": "AI店长 1.0.0 首发上线！\n\n- 整合竞品监控、爆款文案、客服话术、数据日报、选品建议等核心电商管理功能\n- 支持淘宝、拼多多、小红书、1688、抖音等多平台内容生成和适配\n- 无需账号授权，所有数据来自公开信息，保障安全\n- 支持定时竞品监控和行业动态自动推送\n- 推荐与国产大模型路由（如 chinese-llm-router）配合使用，降低成本",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f4347b6701efbb2f7da47a92000c10027de3b727efa976a084def684f7f5354b"
+}

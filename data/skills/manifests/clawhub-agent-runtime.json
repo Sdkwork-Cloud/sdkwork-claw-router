@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61867,
+  "uuid": "skill-clawhub-agent-runtime",
+  "skillKey": "clawhub-agent-runtime",
+  "name": "Agent Runtime",
+  "summary": "智能体运行时系统。整合工具注册、权限控制、Hook拦截、上下文压缩、Usage追踪的完整Agent运行时。 当用户说\"创建Agent\"、\"运行Agent\"、\"Agent Runtime\"、\"子代理\"时触发。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_runtime",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xhmqq616",
+      "features": [
+        "智能体运行时系统。整合工具注册、权限控制、Hook拦截、上下文压缩、Usage追踪的完整Agent运行时。 当用户说\"创建Agent\"、\"运行Agent\"、\"Agent Runtime\"、\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-runtime@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/230696037?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-runtime",
+      "url": "https://clawhub.ai/skills/agent-runtime"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-runtime",
+    "url": "https://clawhub.ai/skills/agent-runtime",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-runtime-39949fb73e3c4171.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-runtime@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-runtime-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:87432b64ad352103cd86f927a0860b7ca98290d9fabd0d73964da85e3bc0407d",
+      "artifactSizeBytes": 2597
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T13:33:24.003Z"
+}

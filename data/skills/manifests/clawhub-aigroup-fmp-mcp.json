@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54779,
+  "uuid": "skill-clawhub-aigroup-fmp-mcp",
+  "skillKey": "clawhub-aigroup-fmp-mcp",
+  "name": "Aigroup Fmp Mcp",
+  "summary": "Use `aigroup-fmp-mcp` for listed-equity data from Financial Modeling Prep, including quotes, company profiles, statements, ratios, sector context, and calend...",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aigroup_fmp_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jackdark",
+      "features": [
+        "Use `aigroup-fmp-mcp` for listed-equity data from Financial Modeling Prep, including quotes, co."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aigroup-fmp-mcp@0.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201514154?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aigroup-fmp-mcp",
+      "url": "https://clawhub.ai/skills/aigroup-fmp-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aigroup-fmp-mcp",
+    "url": "https://clawhub.ai/skills/aigroup-fmp-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aigroup-fmp-mcp-ddec98659ee207e3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aigroup-fmp-mcp@0.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-aigroup-fmp-mcp-0.1.4.json",
+      "version": "0.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5b8e2e86fc8c3bb308797e579a255d1ad078a716d6a7e2e7b3e1c53cebde909b",
+      "artifactSizeBytes": 2211
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T09:01:15.436Z"
+}

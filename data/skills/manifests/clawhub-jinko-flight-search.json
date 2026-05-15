@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10664,
+  "uuid": "skill-clawhub-jinko-flight-search",
+  "skillKey": "clawhub-jinko-flight-search",
+  "name": "Jinko",
+  "summary": "Search flights and discover travel destinations using the Jinko MCP server. Provides two core capabilities: (1) Destination discovery — find where to travel based on criteria like budget, climate, or activities when the user has no specifi.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jinko_flight_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kevinjinko",
+      "features": [
+        "Search flights and discover travel destinations using the Jinko MCP server",
+        "Provides two core capabilities: (1) Destination discovery — find where to travel based on crite.",
+        "Use this skill when the user wants to: search for flights, find cheap flights, discover travel.",
+        "Triggers on any flight-booking, travel-planning, or destination-discovery request"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jinko-flight-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/186920377?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jinko-flight-search",
+      "url": "https://clawhub.ai/skills/jinko-flight-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jinko-flight-search",
+    "url": "https://clawhub.ai/skills/jinko-flight-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jinko-flight-search-3935993679af090a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jinko-flight-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jinko-flight-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d3a96f7f63255c8ed60750c1a0e925a235b04eb542941e470ee26cecb158d65",
+      "artifactSizeBytes": 2502
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T12:49:44.560Z"
+}

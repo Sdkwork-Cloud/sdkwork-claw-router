@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tx-decoder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tx_decoder",
+  "skill": {
+    "id": 66769,
+    "skillKey": "clawhub-tx-decoder",
+    "name": "TX Decoder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tx-decoder",
+    "url": "https://clawhub.ai/skills/tx-decoder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tx-decoder-f35caf866f1ad69c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "解码任意链上交易，分析交易详情、调用的合约函数、转账记录。触发词：交易解码、tx decode、交易分析、hash查询。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deeplearning1993",
+      "userId": "publishers:deeplearning1993",
+      "displayName": "deeplearning1993",
+      "image": "https://avatars.githubusercontent.com/u/106026146?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 345,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772756857500,
+      "changelog": "交易解码，0.001 USDT/次",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7eb6975e91536ee51f6ac65ee299cf0b580f564437d991378c39892ff7f471f3"
+}

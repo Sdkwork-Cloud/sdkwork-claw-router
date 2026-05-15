@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yep-search@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yep_search",
+  "skill": {
+    "id": 36210,
+    "skillKey": "clawhub-yep-search",
+    "name": "Web search via Yep Search API. Own index, fast results with domain filtering and date ranges."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yep-search",
+    "url": "https://clawhub.ai/skills/yep-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yep-search-191cb27ae9d2006f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Web search via Yep Search API. Own index, fast results with domain filtering and date ranges."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "elrandar",
+      "userId": "s17cpkgvk4ehhv9fm18gtgt55983ywth",
+      "displayName": "Alexandre Bourquelot",
+      "image": "https://avatars.githubusercontent.com/u/26814183?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 208,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1774070391754,
+      "changelog": "- Initial release of yep-search: web search using the Yep Search API with an independent index.\n- Supports search result filtering by domain, date ranges, safe search, and language.\n- Allows fetching content highlights for results.\n- Command-line interface with multiple options for customizing queries and results.\n- No external dependencies; requires only Python 3.8+ and an API key.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7be8617f49740fcb846cc56958d064f6845c64f3fbbb97010acc03f30647055d"
+}

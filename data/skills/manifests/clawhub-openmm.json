@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23238,
+  "uuid": "skill-clawhub-openmm",
+  "skillKey": "clawhub-openmm",
+  "name": "OpenMM",
+  "summary": "Open-source market making for AI agents. Multi-exchange trading, grid strategies, and real-time market data. CLI + MCP + Skills.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openmm",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Angelos Kappos",
+      "features": [
+        "Open-source market making for AI agents",
+        "Multi-exchange trading, grid strategies, and real-time market data",
+        "CLI + MCP + Skills."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openmm@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9395707?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openmm",
+      "url": "https://clawhub.ai/skills/openmm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openmm",
+    "url": "https://clawhub.ai/skills/openmm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openmm-c1730e145416efc7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openmm@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openmm-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a92dff841f3e190ca407847edf0cc32ad9b46f1f6f79216266ebb5a0981d94b3",
+      "artifactSizeBytes": 2285
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T16:31:25.278Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21039,
+  "uuid": "skill-clawhub-karakeep-app",
+  "skillKey": "clawhub-karakeep-app",
+  "name": "Karakeep",
+  "summary": "Official skill for how to use karakeep (the bookmark manager) and interact with it programmatically.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.karakeep_app",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Karakeep",
+      "features": [
+        "Official skill for how to use karakeep (the bookmark manager) and interact with it programmatic."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/karakeep-app@1.0.3",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/karakeep-app/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "karakeep-app",
+      "url": "https://clawhub.ai/skills/karakeep-app"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "karakeep-app",
+    "url": "https://clawhub.ai/skills/karakeep-app",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/karakeep-app-bea39ad43fe7f87a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/karakeep-app@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-karakeep-app-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6fb4d657541d9d46c5283d59fbe4ad25f0969cd386befba772acb8370e171e5a",
+      "artifactSizeBytes": 2087
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T14:15:11.017Z"
+}

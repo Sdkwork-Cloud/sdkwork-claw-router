@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26352,
+  "uuid": "skill-clawhub-sendit-openclaw",
+  "skillKey": "clawhub-sendit-openclaw",
+  "name": "SendIt OpenClaw",
+  "summary": "Execute SendIt social publishing workflows in OpenClaw using the official @senditapp/openclaw plugin tools.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sendit_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shree-git",
+      "features": [
+        "Execute SendIt social publishing workflows in OpenClaw using the official @senditapp/openclaw p."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sendit-openclaw@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/56151022?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sendit-openclaw",
+      "url": "https://clawhub.ai/skills/sendit-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sendit-openclaw",
+    "url": "https://clawhub.ai/skills/sendit-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sendit-openclaw-c7f827d31a592595.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sendit-openclaw@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sendit-openclaw-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:09d6e5d388dffa48217cc456edacadf99fe9b06840405a975e6acd3bac003302",
+      "artifactSizeBytes": 1832
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T06:38:49.936Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jpeng-date-utils@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jpeng_date_utils",
+  "skill": {
+    "id": 33987,
+    "skillKey": "clawhub-jpeng-date-utils",
+    "name": "date-utils"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jpeng-date-utils",
+    "url": "https://clawhub.ai/skills/jpeng-date-utils",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jpeng-date-utils-9fe7b17afc9a3ca1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides date and time manipulation operations for working with dates. Use when you need to format, parse, compare, or manipulate dates and times."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jpengcheng523-netizen",
+      "userId": "s177n9nwg73ep3g6fp9z19025n83h4xr",
+      "displayName": "jpengcheng523-netizen",
+      "image": "https://avatars.githubusercontent.com/u/226868999?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 230,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774573352908,
+      "changelog": "Initial release of date-utils\n\n- Provides utilities for formatting, parsing, comparing, and manipulating dates and times.\n- Supports date arithmetic, timezone handling, calendar generation, relative time, and duration calculations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1b52484cf90935992b903b696e0d0ce82cea859e20faa5d9bac7a2f8a49c81dc"
+}

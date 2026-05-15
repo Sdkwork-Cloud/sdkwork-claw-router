@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42023,
+  "uuid": "skill-clawhub-uo-razor-assistant",
+  "skillKey": "clawhub-uo-razor-assistant",
+  "name": "UO Razor Assistant",
+  "summary": "Slash-invocable Razor and UO Outlands reference assistant for macros, scripts, hotkeys, profile XML, validation, and shard-safe guidance.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uo_razor_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Christopher L Haynes",
+      "features": [
+        "Slash-invocable Razor and UO Outlands reference assistant for macros, scripts, hotkeys, profile."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uo-razor-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130129909?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uo-razor-assistant",
+      "url": "https://clawhub.ai/skills/uo-razor-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uo-razor-assistant",
+    "url": "https://clawhub.ai/skills/uo-razor-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uo-razor-assistant-daedc78477cdb768.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uo-razor-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-uo-razor-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:855f7080c3324e6ee7ade541a9abc93dbda85b7669097cf4605955c8098655d1",
+      "artifactSizeBytes": 2623
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T03:39:13.290Z"
+}

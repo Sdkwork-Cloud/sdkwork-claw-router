@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16572,
+  "uuid": "skill-clawhub-4090ctl",
+  "skillKey": "clawhub-4090ctl",
+  "name": "4090ctl",
+  "summary": "Remotely manage the 4090 server via SSH to monitor Docker containers, restart services, and check system status.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.4090ctl",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "olmmlo-cmd",
+      "features": [
+        "Remotely manage the 4090 server via SSH to monitor Docker containers, restart services, and che."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/4090ctl@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256234782?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "4090ctl",
+      "url": "https://clawhub.ai/skills/4090ctl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "4090ctl",
+    "url": "https://clawhub.ai/skills/4090ctl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/4090ctl-0823f40e4b822306.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/4090ctl@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-4090ctl-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:13523d40bd9951627b502970d9e23caaf356563f9346545bd952836f74519015",
+      "artifactSizeBytes": 2198
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T03:09:27.884Z"
+}

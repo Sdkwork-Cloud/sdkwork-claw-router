@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65420,
+  "uuid": "skill-clawhub-iris-code-formatter",
+  "skillKey": "clawhub-iris-code-formatter",
+  "name": "iris-code-formatter",
+  "summary": "对InterSystems IRIS/Cache ObjectScript代码进行格式化检查、审查和自动修正。 当用户需要格式化IRIS代码、检查代码规范合规性、审查代码质量或修正不符合规范的代码时触发此技能。 支持变量命名、方法命名、锁、事务、陷阱、格式、空行、注释等多个维度的规范检查。",
+  "version": "3.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iris_code_formatter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yaoxin521123",
+      "features": [
+        "对InterSystems IRIS/Cache ObjectScript代码进行格式化检查、审查和自动修正。 当用户需要格式化IRIS代码、检查代码规范合规性、审查代码质量或修正不符合规范."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/iris-code-formatter@3.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/68988205?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "iris-code-formatter",
+      "url": "https://clawhub.ai/skills/iris-code-formatter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iris-code-formatter",
+    "url": "https://clawhub.ai/skills/iris-code-formatter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iris-code-formatter-b2478eb8ff737b68.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/iris-code-formatter@3.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-iris-code-formatter-3.1.0.json",
+      "version": "3.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dad4b521072cdbc3f15d1144a74f632602464fcd7184ddee2844eaea99fd1a1a",
+      "artifactSizeBytes": 2636
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T03:22:57.801Z"
+}

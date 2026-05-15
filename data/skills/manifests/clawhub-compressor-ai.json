@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42071,
+  "uuid": "skill-clawhub-compressor-ai",
+  "skillKey": "clawhub-compressor-ai",
+  "name": "Compressor Ai",
+  "summary": "Get compressed MP4 files ready to post, without touching a single slider. Upload your video files (MP4, MOV, AVI, WebM, up to 500MB), say something like \"com...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.compressor_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "susan4731-wilfordf",
+      "features": [
+        "Get compressed MP4 files ready to post, without touching a single slider",
+        "Upload your video files (MP4, MOV, AVI, WebM, up to 500MB), say something like \"com..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/compressor-ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208907675?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "compressor-ai",
+      "url": "https://clawhub.ai/skills/compressor-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "compressor-ai",
+    "url": "https://clawhub.ai/skills/compressor-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/compressor-ai-23de257f4376e0d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/compressor-ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-compressor-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:acf663ed1400aed8460c1a5213b9fe4a109381d478834a64bb50a5408d695dc2",
+      "artifactSizeBytes": 2521
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T00:04:08.157Z"
+}

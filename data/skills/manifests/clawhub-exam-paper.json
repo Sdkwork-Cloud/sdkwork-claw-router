@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71907,
+  "uuid": "skill-clawhub-exam-paper",
+  "skillKey": "clawhub-exam-paper",
+  "name": "Exam Paper",
+  "summary": "【考试试卷生成器 | 题库管理 | 错题本】输入学科和题目数量，自动从题库随机抽题，生成考卷PDF和答案PDF两份文件。支持单选题、判断题、编程填空题。内置题库增删查、错题记录与复习标记功能。当前内置信息学奥赛22题，支持扩展其它学科。 触发词：出卷、组卷、考试卷、试卷、生成试卷、生成考试、题库、错题本、错题库、...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.exam_paper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kreator666",
+      "features": [
+        "【考试试卷生成器 | 题库管理 | 错题本】输入学科和题目数量，自动从题库随机抽题，生成考卷PDF和答案PDF两份文件。支持单选题、判断题、编程填空题。内置题库增删查、错题记录与复习标记功能."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/exam-paper@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8794453?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "exam-paper",
+      "url": "https://clawhub.ai/skills/exam-paper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "exam-paper",
+    "url": "https://clawhub.ai/skills/exam-paper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/exam-paper-e3a4782b8b91675b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/exam-paper@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-exam-paper-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c5293fddb212259161a81764a1e69581b7e8ea4a28fad4968bf3b17c815de45d",
+      "artifactSizeBytes": 2538
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T03:47:12.641Z"
+}

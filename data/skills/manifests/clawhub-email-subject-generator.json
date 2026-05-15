@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22959,
+  "uuid": "skill-clawhub-email-subject-generator",
+  "skillKey": "clawhub-email-subject-generator",
+  "name": "Email Subject Generator",
+  "summary": "AI-powered email subject line generator. Create subject lines that get opened.",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_subject_generator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "icepopma",
+      "features": [
+        "AI-powered email subject line generator",
+        "Create subject lines that get opened."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/email-subject-generator@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259024160?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "email-subject-generator",
+      "url": "https://clawhub.ai/skills/email-subject-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-subject-generator",
+    "url": "https://clawhub.ai/skills/email-subject-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-subject-generator-37ca5c6b8d5d9dc2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/email-subject-generator@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-email-subject-generator-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1899f5bfb657fcd5864ef2a47ad4c46adebb0f7cf702e50556062b053b0e441b",
+      "artifactSizeBytes": 2037
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T16:34:05.255Z"
+}

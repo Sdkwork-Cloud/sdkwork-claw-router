@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41610,
+  "uuid": "skill-clawhub-logvibe",
+  "skillKey": "clawhub-logvibe",
+  "name": "Logvibe",
+  "summary": "Colorizes HTTP status codes in log files for quick visual identification of successes, redirects, client, and server errors in your terminal.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.logvibe",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "albionaiinc-del",
+      "features": [
+        "Colorizes HTTP status codes in log files for quick visual identification of successes, redirect."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/logvibe@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269741383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "logvibe",
+      "url": "https://clawhub.ai/skills/logvibe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "logvibe",
+    "url": "https://clawhub.ai/skills/logvibe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/logvibe-848e9bac3f7596bd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/logvibe@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-logvibe-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:832aeb0d4d3544d60aad04ce977795b591ac1d12aa4db3ec4725cecf9324262f",
+      "artifactSizeBytes": 2080
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T10:10:55.072Z"
+}

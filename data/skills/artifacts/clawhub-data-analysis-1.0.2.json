@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/data-analysis@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_analysis",
+  "skill": {
+    "id": 8281,
+    "skillKey": "clawhub-data-analysis",
+    "name": "Data Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-analysis",
+    "url": "https://clawhub.ai/skills/data-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-analysis-c938b7391e1aebdb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Data analysis and visualization. Query databases, generate reports, automate spreadsheets, and turn raw data into clear, actionable insights. Use when (1) yo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 31047,
+      "installsAllTime": 357,
+      "installsCurrent": 340,
+      "stars": 104,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773241910484,
+      "changelog": "Added metric contracts, chart guidance, and decision brief templates for more reliable analysis.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c70cc918ffa88bfbf8c2e1f58bb92231b1a301ba887fa7219abe159d94686e77"
+}

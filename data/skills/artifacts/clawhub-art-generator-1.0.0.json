@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/art-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.art_generator",
+  "skill": {
+    "id": 55548,
+    "skillKey": "clawhub-art-generator",
+    "name": "Art Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "art-generator",
+    "url": "https://clawhub.ai/skills/art-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/art-generator-a02dfeabf4ea13f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — generate an animated art video from my prompt with a cinematic style — and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776445022946,
+      "changelog": "Art Generator — Generate Art Videos from Text (v1.0.0)\n\n- Initial release: instantly create cinematic animated art videos from text prompts or uploaded media.\n- Supports uploads (MP4, MOV, PNG, JPG) up to 200MB per file, handles all AI rendering in the cloud.\n- No drawing or editing skills required; generates ready-to-use videos in about 30–60 seconds.\n- Manages session and token setup automatically, including free starter credits for new users.\n- Simple commands: generate art, upload media, export videos, check credits, and monitor project status.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0a4dc17d873fe965da48b1603b6d149696c7bcd6ad6058d310d7bb5e766d62dc"
+}

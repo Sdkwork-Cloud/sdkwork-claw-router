@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yuyonghao-proactive-agent@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yuyonghao_proactive_agent",
+  "skill": {
+    "id": 38846,
+    "skillKey": "clawhub-yuyonghao-proactive-agent",
+    "name": "Proactive Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yuyonghao-proactive-agent",
+    "url": "https://clawhub.ai/skills/yuyonghao-proactive-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yuyonghao-proactive-agent-2c34e989b58c2804.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transform AI agents from task-followers into proactive partners that anticipate needs and continuously improve. Now with WAL Protocol, Working Buffer, Autono..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuyonghao-123",
+      "userId": "s173qtadqbwthef9dwg283f54n83np6t",
+      "displayName": "yuyonghao-123",
+      "image": "https://avatars.githubusercontent.com/u/267580628?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774587712908,
+      "changelog": "proactive-agent v3.1.0 adds key proactivity and reliability features to AI agents.\n\n- New guidance on autonomous vs prompted crons (`systemEvent` vs `isolated agentTurn`)\n- Reinforces \"verify implementation, not intent\" for robust changes\n- Introduces a tool migration checklist for safe deprecation and updates\n- Expands documentation on WAL Protocol, Working Buffer, and compaction handling\n- Updates memory safety, security hardening, and self-improvement guardrails",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d5241fa31df976a5f2cb457a6b09667521051cf09e708323474a628de7f65c7f"
+}

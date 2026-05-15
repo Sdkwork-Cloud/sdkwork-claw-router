@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71941,
+  "uuid": "skill-clawhub-ly-wechat-publisher",
+  "skillKey": "clawhub-ly-wechat-publisher",
+  "name": "微信公众号发布技能",
+  "summary": "自动收集15条AI新闻，生成HTML内容，并发布到微信公众号草稿箱，支持多模板和自定义发布时间。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ly_wechat_publisher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "403914291",
+      "features": [
+        "自动收集15条AI新闻，生成HTML内容，并发布到微信公众号草稿箱，支持多模板和自定义发布时间。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ly-wechat-publisher@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95468942?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ly-wechat-publisher",
+      "url": "https://clawhub.ai/skills/ly-wechat-publisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ly-wechat-publisher",
+    "url": "https://clawhub.ai/skills/ly-wechat-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ly-wechat-publisher-7dd55c989432d660.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ly-wechat-publisher@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ly-wechat-publisher-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fae1d933dc520a8575965c9852b307238af8ed30abf181fe0ea38f7bf099c135",
+      "artifactSizeBytes": 1953
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T12:25:19.934Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kugou@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kugou",
+  "skill": {
+    "id": 72369,
+    "skillKey": "clawhub-kugou",
+    "name": "Kugou"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kugou",
+    "url": "https://clawhub.ai/skills/kugou",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kugou-82225dad60b80e1a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "访问和摘要酷狗音乐公开歌单、排行榜及歌手作品的播放和收藏数据，支持趋势与风格分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mike47512",
+      "userId": "s17916ncgb6bpm0fs1wdm6932d83gha4",
+      "displayName": "mike47512",
+      "image": "https://avatars.githubusercontent.com/u/199718167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 239,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773854729994,
+      "changelog": "kugou-hot-trend v0.1.0\n\n- Initial release registering the Kugou Music trending skill.\n- Enables retrieval and summary of public Kugou playlists, rankings, and artist performance data.\n- Focuses on lightweight analysis: song metadata, popularity stats, and style/language distribution.\n- No downloading, batch scraping, or API reverse engineering.\n- For compliant, automated extraction and internal reminders based on public Kugou pages only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aa12284e7bb616b10b0134aa3481653718aa430d04f7981249f2b1e935a7887e"
+}

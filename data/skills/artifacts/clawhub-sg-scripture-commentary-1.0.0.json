@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sg-scripture-commentary@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sg_scripture_commentary",
+  "skill": {
+    "id": 37771,
+    "skillKey": "clawhub-sg-scripture-commentary",
+    "name": "SG Scripture Commentary"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sg-scripture-commentary",
+    "url": "https://clawhub.ai/skills/sg-scripture-commentary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sg-scripture-commentary-ab500b8d254b2ca4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Format and write scripture commentary for religious texts (Buddhist sutras, Daoist classics, Bible, etc.) with original text and explanations. Use when asked..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "siegrainwong",
+      "userId": "s170s8znf83xva7z7ge29cq7vs83ygc8",
+      "displayName": "BaiYue",
+      "image": "https://avatars.githubusercontent.com/u/11625599?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 194,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774924638312,
+      "changelog": "Initial release supporting scripture commentary formatting and annotation:\n\n- Enables commentary for religious and philosophical texts (Buddhist, Daoist, Bible, etc.) with original text and explanations.\n- Interactive workflow: requests original text/source URL and output path before processing.\n- Processes content in sections, matching existing file formats if present.\n- Applies strict formatting: original text in code blocks, explanations below, sections separated by headers and rules.\n- Provides progress updates at each 10% milestone and after each major section.\n- Ensures output uses UTF-8 encoding and seeks user confirmation before overwriting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0457c0eb022cb44a78fabaacef31a6fc65620485531444ea4bf7d1bfa9458014"
+}

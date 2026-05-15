@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30698,
+  "uuid": "skill-clawhub-perf-prof",
+  "skillKey": "clawhub-perf-prof",
+  "name": "Perf Profiler",
+  "summary": "Linux system performance analysis using perf-prof for real-time event processing and profiling CPU, memory, IO, scheduling, virtualization, and custom scripts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.perf_prof",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "duanery",
+      "features": [
+        "Linux system performance analysis using perf-prof for real-time event processing and profiling."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/perf-prof@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42316014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "perf-prof",
+      "url": "https://clawhub.ai/skills/perf-prof"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "perf-prof",
+    "url": "https://clawhub.ai/skills/perf-prof",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/perf-prof-8625e5d8cd69db3a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/perf-prof@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-perf-prof-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9bf4591f3c7b3d52e9cd2efb37d7e4ccc129626fb1c58506912e26449fdbd34f",
+      "artifactSizeBytes": 2482
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T08:59:44.491Z"
+}

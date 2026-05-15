@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67499,
+  "uuid": "skill-clawhub-stock-portfolio-zh-aisa",
+  "skillKey": "clawhub-stock-portfolio-zh-aisa",
+  "name": "stock-portfolio-zh-aisa",
+  "summary": "通过 AISA 的实时价格与盈亏跟踪来创建和管理股票加密投资组合。触发条件：当用户想新增持仓、查看组合表现、重命名组合或审查当前盈亏时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_portfolio_zh_aisa",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIsa",
+      "features": [
+        "通过 AISA 的实时价格与盈亏跟踪来创建和管理股票加密投资组合。触发条件：当用户想新增持仓、查看组合表现、重命名组合或审查当前盈亏时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-portfolio-zh-aisa@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245991925?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-portfolio-zh-aisa",
+      "url": "https://clawhub.ai/skills/stock-portfolio-zh-aisa"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-portfolio-zh-aisa",
+    "url": "https://clawhub.ai/skills/stock-portfolio-zh-aisa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-portfolio-zh-aisa-d501ba93451175d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-portfolio-zh-aisa@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-portfolio-zh-aisa-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2121bd38d189be4a11f7c907b729a20d77a0a1ea68bcf325d2b4359ee6bc83fa",
+      "artifactSizeBytes": 2352
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T12:58:10.533Z"
+}

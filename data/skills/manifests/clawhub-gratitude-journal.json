@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10683,
+  "uuid": "skill-clawhub-gratitude-journal",
+  "skillKey": "clawhub-gratitude-journal",
+  "name": "Gratitude Journal",
+  "summary": "Build gratitude practice with daily entries, streaks, and reflection prompts",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gratitude_journal",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jhillin8",
+      "features": [
+        "Build gratitude practice with daily entries, streaks, and reflection prompts"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gratitude-journal@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/79551560?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gratitude-journal",
+      "url": "https://clawhub.ai/skills/gratitude-journal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gratitude-journal",
+    "url": "https://clawhub.ai/skills/gratitude-journal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gratitude-journal-82c9b6d6a73c8eb0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gratitude-journal@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gratitude-journal-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1a41db014a3c105e28195317e1796fd3de9d4252234563c7665e4e5df60b14ef",
+      "artifactSizeBytes": 2199
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-25T07:34:14.006Z"
+}

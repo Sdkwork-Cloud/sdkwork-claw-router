@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bcra-central-deudores@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bcra_central_deudores",
+  "skill": {
+    "id": 43774,
+    "skillKey": "clawhub-bcra-central-deudores",
+    "name": "Central de Deudores BCRA"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bcra-central-deudores",
+    "url": "https://clawhub.ai/skills/bcra-central-deudores",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bcra-central-deudores-ca72c247486d0825.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query the BCRA (Banco Central de la República Argentina) Central de Deudores API to check the credit status of individuals or companies in Argentina's financ..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ferminrp",
+      "userId": "publishers:ferminrp",
+      "displayName": "Fermin Rodriguez Penelas",
+      "image": "https://avatars.githubusercontent.com/u/21282919?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 688,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771376051129,
+      "changelog": "- Initial release of the \"bcra-central-deudores\" skill.\n- Enables credit status and debt checks in Argentina via the public BCRA API.\n- Supports queries using CUIT, CUIL, or CDI for individuals or companies.\n- Provides access to current and historical debts, and reports on rejected checks.\n- Results include interpretation of credit situation codes and highlight key risk indicators.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cada3693f7559e0df5a0102da6ae814627b7e2c4c127bb80cb727a641b49c8a4"
+}

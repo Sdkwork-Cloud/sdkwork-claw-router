@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42606,
+  "uuid": "skill-clawhub-tk-price-monitor",
+  "skillKey": "clawhub-tk-price-monitor",
+  "name": "Price Monitor",
+  "summary": "Monitor competitor and product pricing changes across websites. Set price thresholds, get alerts on drops/increases, track historical pricing, and identify p...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tk_price_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tktk-ai",
+      "features": [
+        "Monitor competitor and product pricing changes across websites",
+        "Set price thresholds, get alerts on drops/increases, track historical pricing, and identify p..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tk-price-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59158345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tk-price-monitor",
+      "url": "https://clawhub.ai/skills/tk-price-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tk-price-monitor",
+    "url": "https://clawhub.ai/skills/tk-price-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tk-price-monitor-b67cede99e47b48b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tk-price-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tk-price-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1a848933eb34ba6832ef3021d30fe5b6cabc7daee5ae3103ac03406b41644f36",
+      "artifactSizeBytes": 1964
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T17:06:29.980Z"
+}

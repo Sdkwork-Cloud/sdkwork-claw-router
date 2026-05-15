@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66235,
+  "uuid": "skill-clawhub-skill-trend-analysis",
+  "skillKey": "clawhub-skill-trend-analysis",
+  "name": "Skill Trend Analysis",
+  "summary": "当用户需要分析 ClawHub Skills 的增长趋势、排行变化、时间范围表现或相关接口数据时使用。支持增速榜、榜单对比、搜索筛选、统计、标签、作者、时间范围与导出等 API 查询与结果解读。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_trend_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Divine king",
+      "features": [
+        "当用户需要分析 ClawHub Skills 的增长趋势、排行变化、时间范围表现或相关接口数据时使用。支持增速榜、榜单对比、搜索筛选、统计、标签、作者、时间范围与导出等 API 查询与结果解."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-trend-analysis@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/75709333?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-trend-analysis",
+      "url": "https://clawhub.ai/skills/skill-trend-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-trend-analysis",
+    "url": "https://clawhub.ai/skills/skill-trend-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-trend-analysis-2bf9251848214c87.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-trend-analysis@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-trend-analysis-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:37a64a30cd0dc6b086d8e81922174a919c08b82f73e9a9e6f0c82cee8ad8fb36",
+      "artifactSizeBytes": 2024
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T08:13:29.166Z"
+}

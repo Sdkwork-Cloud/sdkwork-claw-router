@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59318,
+  "uuid": "skill-clawhub-session-digest",
+  "skillKey": "clawhub-session-digest",
+  "name": "Session Digest",
+  "summary": "自动总结当天对话到 memory/YYYY-MM-DD.md。cron 23:00 自动运行，提取对话让 agent 自己总结。",
+  "version": "4.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_digest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pazzilivo",
+      "features": [
+        "自动总结当天对话到 memory/YYYY-MM-DD.md。cron 23:00 自动运行，提取对话让 agent 自己总结。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/session-digest@4.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1618972?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "session-digest",
+      "url": "https://clawhub.ai/skills/session-digest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-digest",
+    "url": "https://clawhub.ai/skills/session-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-digest-3c929248ac055efa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/session-digest@4.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-session-digest-4.1.3.json",
+      "version": "4.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:561a16f54add27a736692293d98e1c1eae71e3925e8a0688e0feb18313a60a24",
+      "artifactSizeBytes": 1857
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T02:20:23.807Z"
+}

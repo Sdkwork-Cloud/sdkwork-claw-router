@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yuyonghao-summarize@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yuyonghao_summarize",
+  "skill": {
+    "id": 14910,
+    "skillKey": "clawhub-yuyonghao-summarize",
+    "name": "Summarize"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yuyonghao-summarize",
+    "url": "https://clawhub.ai/skills/yuyonghao-summarize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yuyonghao-summarize-987b91a07cd92811.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Summarize URLs or files with the summarize CLI (web, PDFs, images, audio, YouTube)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuyonghao-123",
+      "userId": "s173qtadqbwthef9dwg283f54n83np6t",
+      "displayName": "yuyonghao-123",
+      "image": "https://avatars.githubusercontent.com/u/267580628?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1075,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774587633057,
+      "changelog": "- Initial release of the Summarize skill.\n- Supports summarizing web URLs, PDFs, images, audio files, and YouTube links via the CLI.\n- Allows choosing models from OpenAI, Anthropic, xAI, or Google Gemini; defaults to Gemini 3 Flash Preview.\n- Includes flexible output controls (summary length, token limits, JSON output).\n- Provides fallback extraction via Firecrawl and YouTube extraction with Apify.\n- Configurable using API keys and optional config file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:043cf0a6c54c16f5e7360c08c0a0c01be81c985ba795ede83eb7d33c8ac388eb"
+}

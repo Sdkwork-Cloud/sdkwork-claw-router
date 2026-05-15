@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/inner-life-memory@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inner_life_memory",
+  "skill": {
+    "id": 18122,
+    "skillKey": "clawhub-inner-life-memory",
+    "name": "Inner Life Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inner-life-memory",
+    "url": "https://clawhub.ai/skills/inner-life-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inner-life-memory-ea79ea80c595a22c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Your agent loses context between sessions and performs familiarity instead of genuine recall. inner-life-memory transforms passive logging into active develo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dkistenev",
+      "userId": "s17fcfc5pwws03amaarb3yarwx84cc3j",
+      "displayName": "Danila",
+      "image": "https://avatars.githubusercontent.com/u/36852400?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 617,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1772297468114,
+      "changelog": "- Added a prerequisites check section to ensure inner-life-core is initialized before use.\n- Instructions now prompt the user to install and initialize inner-life-core if required files are missing.\n- No other functional changes documented.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f7855fe7c63497a869dba32921e65848fde4378589663e19609f15363384b554"
+}

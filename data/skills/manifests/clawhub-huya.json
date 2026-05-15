@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72609,
+  "uuid": "skill-clawhub-huya",
+  "skillKey": "clawhub-huya",
+  "name": "Huya",
+  "summary": "提供虎牙直播公开页面的直播分类、活动信息、主播规则、帮助中心与安全说明的整理服务。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huya",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codenova58",
+      "features": [
+        "提供虎牙直播公开页面的直播分类、活动信息、主播规则、帮助中心与安全说明的整理服务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/huya@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191358186?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "huya",
+      "url": "https://clawhub.ai/skills/huya"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huya",
+    "url": "https://clawhub.ai/skills/huya",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huya-5cf445fbf9598abe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/huya@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-huya-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:972c070b8a0934a236b4f672769576dda686bb0ac947321a8c717d5c8d51187a",
+      "artifactSizeBytes": 2157
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T17:56:10.874Z"
+}

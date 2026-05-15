@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/korean-video-editing-with@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.korean_video_editing_with",
+  "skill": {
+    "id": 44998,
+    "skillKey": "clawhub-korean-video-editing-with",
+    "name": "Korean Video Editing With"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "korean-video-editing-with",
+    "url": "https://clawhub.ai/skills/korean-video-editing-with",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/korean-video-editing-with-27b1e978e8f91d3d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Korean content creators edit raw video footage into edited Korean videos using this skill. Accepts MP4, MOV, AVI, WebM up to 500MB, renders on cloud GPUs at..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775873735979,
+      "changelog": "Korean Video Editing With AI — Version 1.0.0\n\n- First release: enables AI-driven editing of Korean-language videos with cloud GPU rendering.\n- Supports MP4, MOV, AVI, WebM uploads up to 500MB, exports at 1080p MP4.\n- Features rapid processing (1-2 minutes per short clip) with AI-generated Korean subtitles and automatic silent cut detection.\n- Easy upload, edit, preview, and export workflows, including session management and credit handling.\n- Includes automated session setup, API authentication, error handling, and support for common Korean creator use cases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3e8ec840df07d43d8895ad83e37fba987e868c3be154ff751d229eca5c122ee8"
+}

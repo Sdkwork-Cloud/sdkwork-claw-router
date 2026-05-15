@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12740,
+  "uuid": "skill-clawhub-photo-captions",
+  "skillKey": "clawhub-photo-captions",
+  "name": "Photo Captions",
+  "summary": "Generate platform-tuned social media captions for photography. Use when a user shares a photo and wants captions for posting. Triggers on sharing photos with...",
+  "version": "1.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.photo_captions",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Paul Frederiksen",
+      "features": [
+        "Generate platform-tuned social media captions for photography",
+        "Use when a user shares a photo and wants captions for posting",
+        "Triggers on sharing photos with..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/photo-captions@1.2.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/908172?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "photo-captions",
+      "url": "https://clawhub.ai/skills/photo-captions"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "photo-captions",
+    "url": "https://clawhub.ai/skills/photo-captions",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/photo-captions-92395b3ab198050d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/photo-captions@1.2.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-photo-captions-1.2.5.json",
+      "version": "1.2.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6fca282114e8dd1793743ec63d06dc2400271749caf1ff9cb10a19e138936437",
+      "artifactSizeBytes": 2112
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T20:14:40.067Z"
+}

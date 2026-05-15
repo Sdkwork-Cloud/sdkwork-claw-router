@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70233,
+  "uuid": "skill-clawhub-algorithm-solver",
+  "skillKey": "clawhub-algorithm-solver",
+  "name": "algorithm-solver",
+  "summary": "系统性地解析和解决算法题。覆盖题目理解、暴力解到优化解的推导、算法模板讲解、测试用例设计、生产级代码实践。适用于 LeetCode、面试题、竞赛题等场景。当用户提出算法题、数据结构问题、或要求解题时自动触发。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.algorithm_solver",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WD1993",
+      "features": [
+        "系统性地解析和解决算法题。覆盖题目理解、暴力解到优化解的推导、算法模板讲解、测试用例设计、生产级代码实践。适用于 LeetCode、面试题、竞赛题等场景。当用户提出算法题、数据结构问题、或要."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/algorithm-solver@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45744691?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "algorithm-solver",
+      "url": "https://clawhub.ai/skills/algorithm-solver"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "algorithm-solver",
+    "url": "https://clawhub.ai/skills/algorithm-solver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/algorithm-solver-2259d7d9bb95bf66.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/algorithm-solver@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-algorithm-solver-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a5f4baa4478e32f85b4a0302b5606fb823e4cc91f450b41a39cc2b1512c5b773",
+      "artifactSizeBytes": 2587
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T00:52:20.995Z"
+}

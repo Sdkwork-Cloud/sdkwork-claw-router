@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/demon-slayer-oc-maker-cli-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.demon_slayer_oc_maker_cli_skill",
+  "skill": {
+    "id": 56339,
+    "skillKey": "clawhub-demon-slayer-oc-maker-cli-skill",
+    "name": "Demon Slayer OC Maker – Create Your Own KNY Character with AI – CLI-powered"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "demon-slayer-oc-maker-cli-skill",
+    "url": "https://clawhub.ai/skills/demon-slayer-oc-maker-cli-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/demon-slayer-oc-maker-cli-skill-caa4062fa65ebb59.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI Demon Slayer OC maker — transform a person into a Kimetsu no Yaiba anime character"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkleming",
+      "userId": "s173eywkn9gkx5va9p2tb6kh5h843s3s",
+      "displayName": "sparkleMing",
+      "image": "https://avatars.githubusercontent.com/u/38350996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776607966493,
+      "changelog": "Initial release of Demon Slayer OC Maker CLI skill.\n\n- Transform photos into Kimetsu no Yaiba anime-style characters using the WeShop CLI.\n- Optional prompt customization and batch image generation supported.\n- Requires weshop-cli and a WESHOP_API_KEY environment variable.\n- Ensures API key security by restricting key usage to the official WeShop API endpoint.\n- Detailed setup, usage examples, and output format provided in documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dcfdaaea6c400ce259a21c7ed2d3ff82e87375ba26724ce90fe6390019ac60d9"
+}

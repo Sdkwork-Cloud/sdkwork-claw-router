@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/corespeed-art@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.corespeed_art",
+  "skill": {
+    "id": 27535,
+    "skillKey": "clawhub-corespeed-art",
+    "name": "Core Speed Art"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "corespeed-art",
+    "url": "https://clawhub.ai/skills/corespeed-art",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/corespeed-art-9c1776352e4f8ec6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate video, images, audio, and music using 40+ AI models via fal.ai. Use for video generation (Kling v3, Sora 2, Veo 3.1, LTX 2.3, Pixverse v5), image ge..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiweiyuan",
+      "userId": "publishers:jiweiyuan",
+      "displayName": "Jiwei,Yuan",
+      "image": "https://avatars.githubusercontent.com/u/23147684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 236,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773935465529,
+      "changelog": "- Added pip-based installation instructions for the required uv tool.\n- Removed Homebrew-specific install step for broader platform compatibility.\n- Updated notes to explain that Python setup and dependencies are handled automatically via uv and PEP 723.\n- No changes to core features or APIs; usage and model support remain the same.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6fea4479995e0f8288e7b692ba7c108776640e0bce9c41138c2977814b74e7eb"
+}

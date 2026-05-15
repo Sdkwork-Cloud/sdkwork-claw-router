@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amap-cli-skill@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amap_cli_skill",
+  "skill": {
+    "id": 63786,
+    "skillKey": "clawhub-amap-cli-skill",
+    "name": "Gaode Map CLI - 高德官方命令行工具 Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amap-cli-skill",
+    "url": "https://clawhub.ai/skills/amap-cli-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amap-cli-skill-2430a456db98b737.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过 CLI 命令行参数实时操控运行在容器中的高德地图 JSAPI 2.0 实例， 支持地图状态控制、路径规划、POI 搜索等，所有操作均以结构化 JSON 输出，适合 AI Agent 驱动的地图可视化交互场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lbs-amap",
+      "userId": "s175kkx7bgg448fksjnhth7b1n83p4n5",
+      "displayName": "GaodeMapOfficial",
+      "image": "https://avatars.githubusercontent.com/u/15030363?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 605,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776426015284,
+      "changelog": "优化展示名称，Map 关键词前置提升搜索排名",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:149154fbbf2f76274d7378f8f8f9445f6df2538c52d9cd363570782a06daaecf"
+}

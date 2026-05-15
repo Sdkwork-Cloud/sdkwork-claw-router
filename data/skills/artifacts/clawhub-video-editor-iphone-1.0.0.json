@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editor-iphone@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editor_iphone",
+  "skill": {
+    "id": 55575,
+    "skillKey": "clawhub-video-editor-iphone",
+    "name": "Video Editor Iphone"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editor-iphone",
+    "url": "https://clawhub.ai/skills/video-editor-iphone",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editor-iphone-58abd24fcd9f58e3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — trim the shaky parts, add transitions, and export in portrait mode — and g..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susan4731-wilfordf",
+      "userId": "s1782w3wqej6a5gnp3w63eb80184cckp",
+      "displayName": "susan4731-wilfordf",
+      "image": "https://avatars.githubusercontent.com/u/208907675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776040655019,
+      "changelog": "Video Editor iPhone — Initial Release\n\n- Instantly edit iPhone video clips using plain instructions (e.g., trim, add transitions, export portrait).\n- Supports MP4, MOV, HEVC, M4V uploads up to 500MB; MOV files need no conversion.\n- Fast cloud-based AI editing; returns edited videos in 30–60 seconds.\n- Export in 1080p MP4 by default; customizable aspect ratios, overlays, and audio.\n- Intuitive session and API handling—no desktop app required.\n- Error handling for token expiry, file issues, and export restrictions included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac8a2ec190d6ee2c04f36711bb194575e0c8cd963035d7c33d5454f83309632b"
+}

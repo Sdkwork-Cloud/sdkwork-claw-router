@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rba-rate-intelligence@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rba_rate_intelligence",
+  "skill": {
+    "id": 12509,
+    "skillKey": "clawhub-rba-rate-intelligence",
+    "name": "Rba Rate Intelligence"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rba-rate-intelligence",
+    "url": "https://clawhub.ai/skills/rba-rate-intelligence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rba-rate-intelligence-4b4701707fc10466.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "RBA cash rate monitor, meeting schedule, CPI tracker, and mortgage impact calculator for Australia."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tianshizhimao-sudo",
+      "userId": "publishers:tianshizhimao-sudo",
+      "displayName": "tianshizhimao-sudo",
+      "image": "https://avatars.githubusercontent.com/u/226936721?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1626,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770261698320,
+      "changelog": "- Initial release of rba-rate-intelligence: RBA cash rate monitor, meeting schedule, CPI tracker, and mortgage impact calculator for Australia.\n- Includes real-time RBA cash rate and historical changes, with recent milestones and trends.\n- Provides full 2026 RBA meeting schedule and announcement times.\n- Features a mortgage repayment impact calculator with quick tables for common loan sizes.\n- Tracks recent CPI trends and explains RBA's inflation target.\n- Lists indicative current variable and fixed mortgage rates.\n- Offers proactive alert examples for RBA meetings, rate changes, and CPI releases.\n- Comprehensive resource links and clear disclaimer included.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fcb2ab9310f95590a408ede8efcaa92a9be8497880610af8fc17dcafdfc45973"
+}

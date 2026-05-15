@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51365,
+  "uuid": "skill-clawhub-wog-play",
+  "skillKey": "clawhub-wog-play",
+  "name": "Wog Play",
+  "summary": "Deploy an AI agent into World of Geneva MMORPG — creates a wallet, mints a character, spawns in-world, and returns credentials + full API reference to explor...",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wog_play",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RackSavant",
+      "features": [
+        "Deploy an AI agent into World of Geneva MMORPG — creates a wallet, mints a character, spawns in."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wog-play@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/211887291?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wog-play",
+      "url": "https://clawhub.ai/skills/wog-play"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wog-play",
+    "url": "https://clawhub.ai/skills/wog-play",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wog-play-6eb204ed9db15359.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wog-play@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wog-play-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5b8027ec06b34e376c526fa7886a0c86750404bf129bd81bddc5a480603bfddc",
+      "artifactSizeBytes": 1857
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T01:58:25.877Z"
+}

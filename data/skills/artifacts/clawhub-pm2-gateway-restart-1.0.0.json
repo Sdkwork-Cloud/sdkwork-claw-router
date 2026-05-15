@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pm2-gateway-restart@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pm2_gateway_restart",
+  "skill": {
+    "id": 36494,
+    "skillKey": "clawhub-pm2-gateway-restart",
+    "name": "PM2 Gateway Restart"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pm2-gateway-restart",
+    "url": "https://clawhub.ai/skills/pm2-gateway-restart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pm2-gateway-restart-c32f742d03c63c91.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use PM2 to reliably restart OpenClaw gateway on Windows. Use when the user wants to restart the OpenClaw gateway, fix port conflicts, or recover from a crash..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zitao666",
+      "userId": "s170nq4wjvz4zs4t70n3h7ksax83k2mn",
+      "displayName": "zitao666",
+      "image": "https://avatars.githubusercontent.com/u/39297924?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 205,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774449289588,
+      "changelog": "pm2-gateway-restart v1.0.0 – Initial release\n\n- Provides a reliable way to restart the OpenClaw gateway on Windows using PM2.\n- Addresses issues with Windows TCP FIN_WAIT_2 timeouts and scheduled task failures from standard commands.\n- Includes step-by-step usage for restart, status checking, troubleshooting, and initial setup.\n- Offers clear examples for common operational and recovery scenarios.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9f9dcf320c3bcb966d7a0bd10659fff6965a32729bb6eb1bef77681bb9a58e45"
+}

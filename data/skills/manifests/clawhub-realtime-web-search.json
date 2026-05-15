@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57923,
+  "uuid": "skill-clawhub-realtime-web-search",
+  "skillKey": "clawhub-realtime-web-search",
+  "name": "Realtime Web Search",
+  "summary": "Realtime web search and fact-checking via enhanced Baidu routes with fallback and traceable outputs. Use when users ask 查一下/搜一下/最新消息/实时信息 or need cross-sourc...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.realtime_web_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangziiiiii",
+      "features": [
+        "Realtime web search and fact-checking via enhanced Baidu routes with fallback and traceable out.",
+        "Use when users ask 查一下/搜一下/最新消息/实时信息 or need cross-sourc..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/realtime-web-search@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/202627748?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "realtime-web-search",
+      "url": "https://clawhub.ai/skills/realtime-web-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "realtime-web-search",
+    "url": "https://clawhub.ai/skills/realtime-web-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/realtime-web-search-ab1031814589c6df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/realtime-web-search@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-realtime-web-search-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:182660f10d121d1a98ff918edad8e2480403639ccd7af73137b07679777291c4",
+      "artifactSizeBytes": 1972
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T10:32:48.499Z"
+}

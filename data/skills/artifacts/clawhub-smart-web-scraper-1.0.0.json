@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smart-web-scraper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_web_scraper",
+  "skill": {
+    "id": 10444,
+    "skillKey": "clawhub-smart-web-scraper",
+    "name": "Smart Web Scraper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-web-scraper",
+    "url": "https://clawhub.ai/skills/smart-web-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-web-scraper-366e3e72a49dc61f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract structured data from any web page. Supports CSS selectors, auto-detection of tables and lists, JSON/CSV output formats. Use when asked to scrape a we..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mariusfit",
+      "userId": "publishers:mariusfit",
+      "displayName": "mariusfit",
+      "image": "https://avatars.githubusercontent.com/u/53900085?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2550,
+      "installsAllTime": 15,
+      "installsCurrent": 15,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771877309570,
+      "changelog": "Initial release of smart-web-scraper:\n\n- Extract structured data from any web page using CSS selectors or auto-detection.\n- Supports multiple output formats: text, JSON, CSV, and Markdown.\n- Includes commands for extracting tables, links, structured page data, and multi-page crawling.\n- Respects robots.txt and includes configurable rate limiting.\n- CLI documentation and usage examples provided for quick start.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8e4d18b97e244cceee239a7573ba508ac33cdcb0ab2ae980775e72b0f3bf148f"
+}

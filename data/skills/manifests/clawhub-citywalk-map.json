@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62271,
+  "uuid": "skill-clawhub-citywalk-map",
+  "skillKey": "clawhub-citywalk-map",
+  "name": "Citywalk Map",
+  "summary": "生成基于OpenStreetMap和OSRM步行路线的Citywalk地图HTML，支持自定义主题色，自动适配全屏并输出详细步行数据与站点信息。",
+  "version": "2.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.citywalk_map",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huangfeng1995",
+      "features": [
+        "生成基于OpenStreetMap和OSRM步行路线的Citywalk地图HTML，支持自定义主题色，自动适配全屏并输出详细步行数据与站点信息。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/citywalk-map@2.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/113488508?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "citywalk-map",
+      "url": "https://clawhub.ai/skills/citywalk-map"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "citywalk-map",
+    "url": "https://clawhub.ai/skills/citywalk-map",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/citywalk-map-64dec4763d6e2cd9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/citywalk-map@2.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-citywalk-map-2.0.7.json",
+      "version": "2.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1024a55907fa07c0b87c8c537357a61e9737eda86e2f646f8b32383ae5c6c018",
+      "artifactSizeBytes": 2082
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T02:12:24.916Z"
+}

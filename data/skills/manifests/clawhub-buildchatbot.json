@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38136,
+  "uuid": "skill-clawhub-buildchatbot",
+  "skillKey": "clawhub-buildchatbot",
+  "name": "Buildchatbot",
+  "summary": "BuildChatbot integration. Manage data, records, and automate workflows. Use when the user wants to interact with BuildChatbot data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.buildchatbot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "BuildChatbot integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with BuildChatbot data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/buildchatbot@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "buildchatbot",
+      "url": "https://clawhub.ai/skills/buildchatbot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "buildchatbot",
+    "url": "https://clawhub.ai/skills/buildchatbot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/buildchatbot-2bd85acce15acb7d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/buildchatbot@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-buildchatbot-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e134cbed516a598360a026227106ab0084f9d1f3a0a7edace345cbe2af0484bf",
+      "artifactSizeBytes": 1874
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:15:58.072Z"
+}

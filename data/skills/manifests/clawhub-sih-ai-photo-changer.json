@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67056,
+  "uuid": "skill-clawhub-sih-ai-photo-changer",
+  "skillKey": "clawhub-sih-ai-photo-changer",
+  "name": "Sih.AI Photo Changer",
+  "summary": "AI图片生成与编辑工具，使用Sih.AI API进行自然语言驱动的图片处理。支持换装、换背景、换脸、风格转换（动漫/粘土/油画等）、美颜修图等功能。当用户需要通过自然语言描述来编辑图片（如\"把衣服换成bikini\"、\"背景换成海边\"、\"转换成动漫风格\"）时使用此skill。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sih_ai_photo_changer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "a3273283",
+      "features": [
+        "AI图片生成与编辑工具，使用Sih.AI API进行自然语言驱动的图片处理。支持换装、换背景、换脸、风格转换（动漫/粘土/油画等）、美颜修图等功能。当用户需要通过自然语言描述来编辑图片（如\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sih-ai-photo-changer@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/92772341?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sih-ai-photo-changer",
+      "url": "https://clawhub.ai/skills/sih-ai-photo-changer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sih-ai-photo-changer",
+    "url": "https://clawhub.ai/skills/sih-ai-photo-changer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sih-ai-photo-changer-ab300e5efcaf400c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sih-ai-photo-changer@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-sih-ai-photo-changer-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5957321b78bd6ecaca0d3a22dc1a8b8fbc058e394379695ff4ea2e28c4857924",
+      "artifactSizeBytes": 2194
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T10:17:35.141Z"
+}

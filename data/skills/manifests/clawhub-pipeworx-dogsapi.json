@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54627,
+  "uuid": "skill-clawhub-pipeworx-dogsapi",
+  "skillKey": "clawhub-pipeworx-dogsapi",
+  "name": "Pipeworx dogsapi",
+  "summary": "Detailed dog breed encyclopedia — weight ranges, life spans, temperament, and breed groups from dogapi.dog",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_dogsapi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Detailed dog breed encyclopedia — weight ranges, life spans, temperament, and breed groups from."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-dogsapi@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138315805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-dogsapi",
+      "url": "https://clawhub.ai/skills/pipeworx-dogsapi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-dogsapi",
+    "url": "https://clawhub.ai/skills/pipeworx-dogsapi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-dogsapi-47f7880b2da64c07.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-dogsapi@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-dogsapi-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a53b2e89c408e3d22b0ed8d86d210de49eec02f3499953265bcf2f4bb970e810",
+      "artifactSizeBytes": 1855
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T18:01:28.120Z"
+}

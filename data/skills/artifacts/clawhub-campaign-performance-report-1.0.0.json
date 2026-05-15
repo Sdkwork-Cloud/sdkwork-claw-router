@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/campaign-performance-report@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.campaign_performance_report",
+  "skill": {
+    "id": 51683,
+    "skillKey": "clawhub-campaign-performance-report",
+    "name": "Campaign Performance Report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "campaign-performance-report",
+    "url": "https://clawhub.ai/skills/campaign-performance-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/campaign-performance-report-6c6845eeb56a13b3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-channel marketing performance agent. Pulls together Meta, Google, email, and organic data into a unified weekly report with AI executive commentary — e..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mguozhen",
+      "userId": "s170nk66cz4zpwnnsv8bxksrp983f82k",
+      "displayName": "mguozhen",
+      "image": "https://avatars.githubusercontent.com/u/1411875?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 233,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774042965884,
+      "changelog": "- Initial release of campaign-performance-report skill.\n- Unifies Meta, Google, email, and organic data into a single weekly marketing report.\n- Accepts manual entry, CSV exports, or verbal summaries for flexible data input.\n- Normalizes and analyzes cross-channel KPIs, highlighting key wins, misses, and recommended actions.\n- Flags anomalies, budget pacing issues, and attribution window mismatches.\n- Saves weekly reports in organized markdown format, with executive-level summaries and action items.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:559f7692632233ef29bbef2c4669d12a6c38545d6f75141153aacf8f0d496cf2"
+}

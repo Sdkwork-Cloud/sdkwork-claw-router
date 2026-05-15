@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/personal-search-results-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_search_results_audit",
+  "skill": {
+    "id": 50225,
+    "skillKey": "clawhub-personal-search-results-audit",
+    "name": "Personal Search Results Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-search-results-audit",
+    "url": "https://clawhub.ai/skills/personal-search-results-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-search-results-audit-03a617675fc8b0bc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides a structured audit of your online presence, identifies reputation risks, and creates a plan to update profiles and content for a consistent, profess..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 0,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778382473784,
+      "changelog": "Initial release: helps users audit and improve their public online presence.\n\n- Provides a structured framework to review search results, bios, old profiles, and public posts.\n- Identifies inconsistencies, stale content, risk items, and missing assets.\n- Suggests reputation-friendly rewrites and updates.\n- Creates a safe, non-destructive update plan with platform-specific guidance.\n- Focuses on education and personal control without scraping or performing takedowns.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f76a705d11d9691f4fc6b157f33c37c6ab7ddfd8ba295897194ecb1318bbfc7a"
+}

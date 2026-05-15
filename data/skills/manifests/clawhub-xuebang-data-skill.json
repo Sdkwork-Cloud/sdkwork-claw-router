@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65972,
+  "uuid": "skill-clawhub-xuebang-data-skill",
+  "skillKey": "clawhub-xuebang-data-skill",
+  "name": "查看学邦数据。用于登录学邦后台并读取首页今日经营数据与待办数据。",
+  "summary": "查看学邦数据。用于登录学邦后台并读取首页今日经营数据与待办数据。 Use this skill when the user wants to: - 查看学邦今日数据 - 查看学邦数据 - 学邦今日数据 - 学邦数据 - 查看校区今日经营数据 Triggers: 学邦, 今日数据，经营数据，待办数据，校区数据",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xuebang_data_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chuanSir123",
+      "features": [
+        "查看学邦数据。用于登录学邦后台并读取首页今日经营数据与待办数据。 Use this skill when the user wants to:",
+        "查看学邦今日数据",
+        "查看校区今日经营数据 Triggers: 学邦, 今日数据，经营数据，待办数据，校区数据"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xuebang-data-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36980634?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xuebang-data-skill",
+      "url": "https://clawhub.ai/skills/xuebang-data-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xuebang-data-skill",
+    "url": "https://clawhub.ai/skills/xuebang-data-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xuebang-data-skill-80d81bd36ec5fffd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xuebang-data-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-xuebang-data-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:876013eae689cdfa92c550accf2fa5969e90ffaa62f565cda2dad33b651be143",
+      "artifactSizeBytes": 2650
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T15:17:40.167Z"
+}

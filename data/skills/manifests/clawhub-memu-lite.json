@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18021,
+  "uuid": "skill-clawhub-memu-lite",
+  "skillKey": "clawhub-memu-lite",
+  "name": "memU-lite",
+  "summary": "Lightweight structured memory system for OpenClaw - inspired by memU, zero external dependencies. Provides atomic memory storage with categories (preferences...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memu_lite",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yoo-unison",
+      "features": [
+        "Lightweight structured memory system for OpenClaw",
+        "inspired by memU, zero external dependencies",
+        "Provides atomic memory storage with categories (preferences..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memu-lite@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/123747067?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memu-lite",
+      "url": "https://clawhub.ai/skills/memu-lite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memu-lite",
+    "url": "https://clawhub.ai/skills/memu-lite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memu-lite-c8708fa58d2117c8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memu-lite@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memu-lite-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:59fa857f79eddcd82f02fc7786db16303f294dea8111bfee790c1d9ac3b61152",
+      "artifactSizeBytes": 1967
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T07:22:45.197Z"
+}

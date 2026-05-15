@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67614,
+  "uuid": "skill-clawhub-fidelity",
+  "skillKey": "clawhub-fidelity",
+  "name": "Fidelity",
+  "summary": "提供fidelity品牌的详细信息，包括成立时间、核心业务、市场分布、行业地位及最新动态。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fidelity",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供fidelity品牌的详细信息，包括成立时间、核心业务、市场分布、行业地位及最新动态。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fidelity@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fidelity",
+      "url": "https://clawhub.ai/skills/fidelity"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fidelity",
+    "url": "https://clawhub.ai/skills/fidelity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fidelity-f611beab46437c76.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fidelity@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-fidelity-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:066bda1393d2f8c064042dcafe0e0e555e50d91bb1711362b91b7e14a400d2ed",
+      "artifactSizeBytes": 2171
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T17:35:06.970Z"
+}

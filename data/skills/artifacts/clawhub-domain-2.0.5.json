@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/domain@2.0.5",
+  "version": "2.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.domain",
+  "skill": {
+    "id": 9622,
+    "skillKey": "clawhub-domain",
+    "name": "DomainKits - domain name data and insights"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "domain",
+    "url": "https://clawhub.ai/skills/domain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/domain-f2ff83860a4dc203.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Check availability. Search related domains. Find more possibilities. Explore connections. Turn AI into your domain agent."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abtdomain",
+      "userId": "s17ag3na5d0j1e8wh8akqmrqwn83g27m",
+      "displayName": "Abtdomain",
+      "image": "https://avatars.githubusercontent.com/u/219991333?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3134,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 5,
+      "versions": 15
+    },
+    "latestVersion": {
+      "version": "2.0.5",
+      "createdAt": 1778347860887,
+      "changelog": "- Removed references to backlink analysis; this tool is no longer listed.\n- Updated \"Make informed decisions\" to clarify supported analysis focuses on keyword value, brand risk, and safety.\n- Removed \"backlink_summary\" from the Analysis tools section.\n- No functional or breaking changes to setup, workflow, or API coverage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0bb29fe2b77b786eb24cb10bb46d7d67049a6943f6113d3851f671fef83fc635"
+}

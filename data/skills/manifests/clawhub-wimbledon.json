@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70471,
+  "uuid": "skill-clawhub-wimbledon",
+  "skillKey": "clawhub-wimbledon",
+  "name": "Wimbledon",
+  "summary": "提供温布尔登网球锦标赛的历史、赛制规则、知名选手及最新赛程和结果信息。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wimbledon",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供温布尔登网球锦标赛的历史、赛制规则、知名选手及最新赛程和结果信息。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wimbledon@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wimbledon",
+      "url": "https://clawhub.ai/skills/wimbledon"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wimbledon",
+    "url": "https://clawhub.ai/skills/wimbledon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wimbledon-fc8254ae0ec6c028.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wimbledon@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wimbledon-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:522dd766e1a78974a46e1fc04b21b915a45debab08ac74bfbf7e1b65159d8309",
+      "artifactSizeBytes": 2181
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T07:07:16.222Z"
+}

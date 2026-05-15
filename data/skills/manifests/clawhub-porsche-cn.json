@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70273,
+  "uuid": "skill-clawhub-porsche-cn",
+  "skillKey": "clawhub-porsche-cn",
+  "name": "Porsche Cn",
+  "summary": "提供保时捷车型、价格、电动车技术及经销商信息，支持试驾预约和售后服务查询。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.porsche_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供保时捷车型、价格、电动车技术及经销商信息，支持试驾预约和售后服务查询。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/porsche-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "porsche-cn",
+      "url": "https://clawhub.ai/skills/porsche-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "porsche-cn",
+    "url": "https://clawhub.ai/skills/porsche-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/porsche-cn-6fb757961e2297fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/porsche-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-porsche-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6248baa61bba01a4074029d733ad8fd1fee9d053792f4adeff30d61f8e1a2bad",
+      "artifactSizeBytes": 2073
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T08:40:33.316Z"
+}

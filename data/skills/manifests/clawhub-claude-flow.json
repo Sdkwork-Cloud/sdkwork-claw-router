@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65606,
+  "uuid": "skill-clawhub-claude-flow",
+  "skillKey": "clawhub-claude-flow",
+  "name": "Skill",
+  "summary": "Claude Code 多智能体编排平台，部署 100+ 专业 AI 智能体协同工作，通过蜂群拓扑（层级/网状/环形/星形）协调自主工作流，内置自学习、向量记忆和原生 MCP 集成",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_flow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CN-big-cabbage",
+      "features": [
+        "Claude Code 多智能体编排平台，部署 100+ 专业 AI 智能体协同工作，通过蜂群拓扑（层级/网状/环形/星形）协调自主工作流，内置自学习、向量记忆和原生 MCP 集成"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claude-flow@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63539779?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claude-flow",
+      "url": "https://clawhub.ai/skills/claude-flow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-flow",
+    "url": "https://clawhub.ai/skills/claude-flow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-flow-e5c9870fa95dec7e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claude-flow@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claude-flow-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b3dd64cfbcffc40b737182d44baf1901d40e708054858dd5a34267061cad6cbf",
+      "artifactSizeBytes": 2506
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T00:41:58.300Z"
+}

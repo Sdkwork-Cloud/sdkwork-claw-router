@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13756,
+  "uuid": "skill-clawhub-trial",
+  "skillKey": "clawhub-trial",
+  "name": "kaspa-wallet",
+  "summary": "Send and receive KAS cryptocurrency. Check balances, send payments, generate wallets.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trial",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Manyfestation",
+      "features": [
+        "Send and receive KAS cryptocurrency",
+        "Check balances, send payments, generate wallets."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trial@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/240733973?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trial",
+      "url": "https://clawhub.ai/skills/trial"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trial",
+    "url": "https://clawhub.ai/skills/trial",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trial-79891e980747ffbd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trial@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trial-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f4fed9d516f7839f8131e5502e4e2d41deafa4e7abe8cfd71f93c52e0794a8a9",
+      "artifactSizeBytes": 2154
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T17:36:00.070Z"
+}

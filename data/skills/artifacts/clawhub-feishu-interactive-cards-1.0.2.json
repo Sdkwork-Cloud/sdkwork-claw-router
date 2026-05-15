@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-interactive-cards@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_interactive_cards",
+  "skill": {
+    "id": 9293,
+    "skillKey": "clawhub-feishu-interactive-cards",
+    "name": "Feishu Interactive Cards"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-interactive-cards",
+    "url": "https://clawhub.ai/skills/feishu-interactive-cards",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-interactive-cards-a147df95ee4b6fc5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and send interactive cards to Feishu (Lark) with buttons, forms, polls, and rich UI elements. Use when replying to Feishu messages and there is ANY uncertainty - send an interactive card instead of plain text to let users choose via."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leecyang",
+      "userId": "s1750vjewhh79h5cadsx397r3x83wb62",
+      "displayName": "leecyang",
+      "image": "https://avatars.githubusercontent.com/u/164771957?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3543,
+      "installsAllTime": 23,
+      "installsCurrent": 21,
+      "stars": 6,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770386690427,
+      "changelog": "Critical security fix: Prevent arbitrary file read via --template parameter. Added directory whitelist, file extension validation, and JSON format validation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6ee083c50b28504c3b545ae877d72ed023f97665545df61486b1adde6e3d6225"
+}

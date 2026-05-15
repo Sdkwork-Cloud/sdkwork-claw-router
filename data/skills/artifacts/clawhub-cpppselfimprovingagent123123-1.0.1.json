@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cpppselfimprovingagent123123@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cpppselfimprovingagent123123",
+  "skill": {
+    "id": 23292,
+    "skillKey": "clawhub-cpppselfimprovingagent123123",
+    "name": "Cpppselfimprovingagent123123"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cpppselfimprovingagent123123",
+    "url": "https://clawhub.ai/skills/cpppselfimprovingagent123123",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cpppselfimprovingagent123123-f8e5624db4e278c0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "blockcloud",
+      "userId": "publishers:blockcloud",
+      "displayName": "blockcloud",
+      "image": "https://avatars.githubusercontent.com/u/19220974?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 435,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772371758096,
+      "changelog": "- Removed `.learnings/ERRORS.md`, `.learnings/FEATURE_REQUESTS.md`, and `.learnings/LEARNINGS.md` from the repository.\n- Updated metadata in `_meta.json`.\n- No changes to core documentation or workflow.\n- The skill now expects users or agents to create log files manually as needed.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9eef48966470a13d34ebc23efddc6f6b7618c257ef4ed6fcb00db85a586ea2b4"
+}

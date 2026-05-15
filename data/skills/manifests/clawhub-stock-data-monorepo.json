@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59512,
+  "uuid": "skill-clawhub-stock-data-monorepo",
+  "skillKey": "clawhub-stock-data-monorepo",
+  "name": "Stock Data Monorepo",
+  "summary": "A 股数据查询技能集合，包含 4 个子技能：cn-stock-volume（成交量）、stock-top-gainers（涨幅排名）、ths-stock-themes（题材概念）、stock-theme-events（题材事件）。 **触发场景**: - 作为 stock-daily-report 的数据源依赖...",
+  "version": "1.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_data_monorepo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shinelp100",
+      "features": [
+        "A 股数据查询技能集合，包含 4 个子技能：cn-stock-volume（成交量）、stock-top-gainers（涨幅排名）、ths-stock-themes（题材概念）、stock.",
+        "作为 stock-daily-report 的数据源依赖..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-data-monorepo@1.2.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19980132?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-data-monorepo",
+      "url": "https://clawhub.ai/skills/stock-data-monorepo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-data-monorepo",
+    "url": "https://clawhub.ai/skills/stock-data-monorepo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-data-monorepo-88796eb7ed9c05d8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-data-monorepo@1.2.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-data-monorepo-1.2.5.json",
+      "version": "1.2.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9548514c3c5e32957140cc7f854a8098ec73a211760af6a0572cd2099b1250d0",
+      "artifactSizeBytes": 2099
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T15:30:49.520Z"
+}

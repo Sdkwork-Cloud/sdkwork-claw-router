@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nccl-optimizer@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nccl_optimizer",
+  "skill": {
+    "id": 28808,
+    "skillKey": "clawhub-nccl-optimizer",
+    "name": "Nccl Optimizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nccl-optimizer",
+    "url": "https://clawhub.ai/skills/nccl-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nccl-optimizer-3fb90fc3f3f7cfbf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detect the optimal NCCL configuration for distributed GPU training on this machine. Checks GPU topology (NVLink/PCIe), whether RDMA (InfiniBand / RoCE) is av..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mitsuha-m",
+      "userId": "publishers:mitsuha-m",
+      "displayName": "Rui",
+      "image": "https://avatars.githubusercontent.com/u/49475075?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 316,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773999219962,
+      "changelog": "Linux compatibility hardening: platform guard, container detection, robust interface scanning, fixed CUDA version parsing, distro-aware MPI install hints",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:34ff833825421df0ad9ee182f1bdce3e727705659f82c9243b87b8101e519741"
+}

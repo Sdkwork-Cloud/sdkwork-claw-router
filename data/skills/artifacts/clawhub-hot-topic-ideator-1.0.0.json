@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hot-topic-ideator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hot_topic_ideator",
+  "skill": {
+    "id": 63350,
+    "skillKey": "clawhub-hot-topic-ideator",
+    "name": "hot-topic-ideator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hot-topic-ideator",
+    "url": "https://clawhub.ai/skills/hot-topic-ideator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hot-topic-ideator-24cd883587c27a1b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "生成小红书热点选题和内容创意。当用户提到\"热点选题\"、\"内容创意\"、\"小红书选题\"、\"trending topics\"、\"content ideas\"、\"热门话题\"、\"爆款选题\"时使用。适用于品牌社媒运营、内容策划、热点借势营销场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yyobject",
+      "userId": "publishers:yyobject",
+      "displayName": "yyobject",
+      "image": "https://avatars.githubusercontent.com/u/48043998?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 963,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772162768333,
+      "changelog": "Hot Topic Ideator 1.0.0\n\n- Initial release of “热点选题生成器” for 小红书 content ideation.\n- Delivers 5–10 hot topic ideas for brands based on real data, output as a professional HTML report (convertible to PDF).\n- Follows a standardized, step-by-step workflow: brand info collection, keyword generation, note search & analysis, topic mining, trend validation, detailed report generation.\n- Strict design and output standards: Tailwind CSS, single-file HTML, high information density, professional visual style, and no use of external images or complex CSS visualizations.\n- Includes comprehensive error handling and fallback strategies for insufficient data or API failures.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e9100d8da1e6f80348e4d8bb1933da5757ee0b3df1c2b7f2b8b25773d6555c11"
+}

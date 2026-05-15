@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trade@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trade",
+  "skill": {
+    "id": 14724,
+    "skillKey": "clawhub-trade",
+    "name": "Trade"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trade",
+    "url": "https://clawhub.ai/skills/trade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trade-276446ba01e3aa38.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Swap or trade tokens on Base network. Use when you or the user want to trade, swap, exchange, buy, sell, or convert between tokens like USDC, ETH, and WETH. Covers phrases like \"buy ETH\", \"sell ETH for USDC\", \"convert USDC to ETH\", \"get so."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xrag",
+      "userId": "publishers:0xrag",
+      "displayName": "0xRAG",
+      "image": "https://avatars.githubusercontent.com/u/15928227?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1093,
+      "installsAllTime": 6,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770843443390,
+      "changelog": "Initial release of the trade skill for swapping tokens on the Base network.\n\n- Enables trading, swapping, buying, selling, and converting tokens (e.g., USDC, ETH, WETH) via simple commands.\n- Supports amount input in USD, decimal, whole number, and atomic unit formats.\n- Includes token alias resolution and auto-detection of decimals for known tokens and contract addresses.\n- Allows custom slippage settings and JSON output.\n- Provides detailed examples, prerequisites, and error handling guidelines.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:75fa9660b18f87985dbcdc843d19d9b0b0b7056273beb293311ffe3fd7dbbd01"
+}

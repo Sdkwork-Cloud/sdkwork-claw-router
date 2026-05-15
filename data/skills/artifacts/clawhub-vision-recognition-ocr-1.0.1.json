@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vision-recognition-ocr@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vision_recognition_ocr",
+  "skill": {
+    "id": 57645,
+    "skillKey": "clawhub-vision-recognition-ocr",
+    "name": "Vision Recognition Ocr"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vision-recognition-ocr",
+    "url": "https://clawhub.ai/skills/vision-recognition-ocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vision-recognition-ocr-3599c3ae4158be3c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Vehicle/animal/plant recognition plus OCR for screenshots, photos, invoices, and tables. Use when users ask 识别车型/看图识别/提取文字/OCR. Supports local path, URL, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangziiiiii",
+      "userId": "s17drex5bt1j1qb2b8tyfhtg4583gj72",
+      "displayName": "wangziiiiii",
+      "image": "https://avatars.githubusercontent.com/u/202627748?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1082,
+      "installsAllTime": 9,
+      "installsCurrent": 8,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773829977229,
+      "changelog": "Sync latest local fixes and docs",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6e10667911ccda4c164b7e809e08efa8802627f72e57aa80b5d1f66879943e43"
+}

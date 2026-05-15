@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69351,
+  "uuid": "skill-clawhub-wewrite",
+  "skillKey": "clawhub-wewrite",
+  "name": "WeWrite",
+  "summary": "微信公众号内容全流程助手：热点抓取 → 选题 → 框架 → 写作 → SEO/去AI痕迹 → 视觉AI → 排版推送草稿箱。 触发关键词：公众号、推文、微信文章、微信推文、草稿箱、微信排版、选题、热搜、 热点抓取、封面图、配图、写公众号、写一篇、主题画廊、排版主题、容器语法。 也覆盖：markdown 转微信格式...",
+  "version": "1.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wewrite",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ray Wang",
+      "features": [
+        "微信公众号内容全流程助手：热点抓取 → 选题 → 框架 → 写作 → SEO/去AI痕迹 → 视觉AI → 排版推送草稿箱。 触发关键词：公众号、推文、微信文章、微信推文、草稿箱、微信排版、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wewrite@1.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16276127?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wewrite",
+      "url": "https://clawhub.ai/skills/wewrite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wewrite",
+    "url": "https://clawhub.ai/skills/wewrite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wewrite-2ed9ea1632a71de0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wewrite@1.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-wewrite-1.1.3.json",
+      "version": "1.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:320a00146328dc04c105d15a743d609f61fee5c69962b2b381d2f16192854044",
+      "artifactSizeBytes": 2883
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T05:47:21.935Z"
+}

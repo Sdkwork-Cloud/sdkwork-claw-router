@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30257,
+  "uuid": "skill-clawhub-pabbly",
+  "skillKey": "clawhub-pabbly",
+  "name": "Pabbly",
+  "summary": "Pabbly integration. Manage data, records, and automate workflows. Use when the user wants to interact with Pabbly data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pabbly",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Pabbly integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Pabbly data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pabbly@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pabbly",
+      "url": "https://clawhub.ai/skills/pabbly"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pabbly",
+    "url": "https://clawhub.ai/skills/pabbly",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pabbly-75ac0aeb97bbbd55.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pabbly@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-pabbly-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:38874c144fbe3bc1ba79fc37dc1f6667f0c7f09d1f27d523f93d932a0c344d12",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:21:10.942Z"
+}

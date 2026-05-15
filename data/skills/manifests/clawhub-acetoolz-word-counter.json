@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41879,
+  "uuid": "skill-clawhub-acetoolz-word-counter",
+  "skillKey": "clawhub-acetoolz-word-counter",
+  "name": "AceToolz Word Counter",
+  "summary": "Count words, characters, sentences, paragraphs, and reading time for any text using AceToolz.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acetoolz_word_counter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AceToolz",
+      "features": [
+        "Count words, characters, sentences, paragraphs, and reading time for any text using AceToolz."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/acetoolz-word-counter@1.0.1",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/acetoolz-word-counter/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "acetoolz-word-counter",
+      "url": "https://clawhub.ai/skills/acetoolz-word-counter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acetoolz-word-counter",
+    "url": "https://clawhub.ai/skills/acetoolz-word-counter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acetoolz-word-counter-0d11a8e4668d94c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/acetoolz-word-counter@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-acetoolz-word-counter-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:59896dd28d9e84f03551e3f653e01c8bcf639c76636497827c40cac50ab75f85",
+      "artifactSizeBytes": 2108
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T15:33:55.979Z"
+}

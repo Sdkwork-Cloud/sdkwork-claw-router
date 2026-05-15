@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gemini-nano-banana@0.1.4",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gemini_nano_banana",
+  "skill": {
+    "id": 21069,
+    "skillKey": "clawhub-gemini-nano-banana",
+    "name": "Gemini Nano Banana"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gemini-nano-banana",
+    "url": "https://clawhub.ai/skills/gemini-nano-banana",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gemini-nano-banana-8659537c7175ac8f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Auto-generated skill for gemini tools via OneKey Gateway."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ai-hub-admin",
+      "userId": "s17d1vfn6f6qk27s9f66nbe8ed83hcrr",
+      "displayName": "AI-Hub-Admin",
+      "image": "https://avatars.githubusercontent.com/u/184629057?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 315,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.1.4",
+      "createdAt": 1774174639513,
+      "changelog": "- Improved SKILL.md formatting with clearer structure for environment setup and dependencies.\n- Added a dedicated installation section for both npm and pip with explicit commands.\n- Changed the `env_vars` section to a more structured `env` block.\n- No changes to actual functionality or APIs; documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0cee6d0651bd03ac45e91904d09a0188a43fcc15e9d7c2338bec727d7e7bf528"
+}

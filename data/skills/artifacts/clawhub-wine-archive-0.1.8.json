@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wine-archive@0.1.8",
+  "version": "0.1.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wine_archive",
+  "skill": {
+    "id": 28734,
+    "skillKey": "clawhub-wine-archive",
+    "name": "Wine Archive"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wine-archive",
+    "url": "https://clawhub.ai/skills/wine-archive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wine-archive-6888eed3b1c32ea9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Store, recall, and manage personal wine tastings and labels using natural language queries with durable image storage in a local SQLite database."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sidvorak",
+      "userId": "s179cx4r5mt4arv6jfbykw7v3984r6x3",
+      "displayName": "Simon I Dvorak",
+      "image": "https://avatars.githubusercontent.com/u/1139415?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 219,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "0.1.8",
+      "createdAt": 1776320300823,
+      "changelog": "Auto-migrate image paths from old workspace location to skill directory on database open, handle broken paths gracefully",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bf5fcf7a44b63d1f3ac41ace861b3a47ec8a18b204c0786b2a5d4b11e1448eb9"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/white-castle@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.white_castle",
+  "skill": {
+    "id": 69846,
+    "skillKey": "clawhub-white-castle",
+    "name": "White Castle"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "white-castle",
+    "url": "https://clawhub.ai/skills/white-castle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/white-castle-7623dccf655d8c3e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供白色城堡品牌历史、滑动汉堡起源、核心菜单及其在美国快餐文化中地位的全面信息。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 134,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776496028883,
+      "changelog": "- Initial release of the White Castle skill, providing a detailed brand guide in Chinese.\n- Covers the origins, historical milestones, and cultural significance of White Castle as the first American fast food chain.\n- Includes signature products, unique burger-making techniques, and modern digital adaptations.\n- Highlights White Castle's role in midnight dining culture and its iconic status in US pop culture.\n- Features concise brand facts, sample menu, and key milestones for quick reference.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5482a4a1ecc8e5a4a3fa183ecd53be2521020cd93a4fece9b10faa3215f689ba"
+}

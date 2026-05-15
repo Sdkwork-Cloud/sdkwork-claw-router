@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weather-cn-fixed@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_cn_fixed",
+  "skill": {
+    "id": 64661,
+    "skillKey": "clawhub-weather-cn-fixed",
+    "name": "weather-cn-fixed"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-cn-fixed",
+    "url": "https://clawhub.ai/skills/weather-cn-fixed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-cn-fixed-5e0799ddfc46cbe6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "中文天气查询工具 - 使用中国天气网获取实时天气（无需API密钥，不依赖大模型）"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ziqi-jin",
+      "userId": "s1727a95sx7zkrvwr4k3rg66j983vhf4",
+      "displayName": "ziqi",
+      "image": "https://avatars.githubusercontent.com/u/67993288?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 359,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773550500140,
+      "changelog": "修复温度显示问题：使用正确的hidden_title字段获取实时天气数据",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e380f659a5dc6f18be46c4de83f0b628cfe975d38cac0b4ca4e05bea0793f66f"
+}

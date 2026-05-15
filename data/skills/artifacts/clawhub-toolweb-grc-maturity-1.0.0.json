@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toolweb-grc-maturity@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toolweb_grc_maturity",
+  "skill": {
+    "id": 40067,
+    "skillKey": "clawhub-toolweb-grc-maturity",
+    "name": "GRC Maturity"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toolweb-grc-maturity",
+    "url": "https://clawhub.ai/skills/toolweb-grc-maturity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toolweb-grc-maturity-d8e7a219271e485a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Conduct detailed assessments of an organization's Governance, Risk & Compliance maturity with reports, level frameworks, gaps, and recommendations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krishnakumarmahadevan-cmd",
+      "userId": "s177cvva4qaee9r80e44xt5cqx83ga38",
+      "displayName": "ToolWeb",
+      "image": "https://avatars.githubusercontent.com/u/245780162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775134764275,
+      "changelog": "GRC Maturity Assessment Skill v1.0.0\n\n- Initial release providing a comprehensive Governance, Risk & Compliance (GRC) maturity evaluation platform.\n- Supports generating detailed assessment reports with maturity levels, gap analysis, and prioritized recommendations.\n- Offers standardized maturity level definitions and GRC building block frameworks.\n- Includes API endpoints for assessments, maturity levels, and building blocks.\n- Multiple pricing plans available, including a free tier.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fa8c8c334d2794f6595db243d47fb4cbcbbf003c39797f8b09675fb46befcab3"
+}

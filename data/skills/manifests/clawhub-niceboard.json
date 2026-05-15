@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31860,
+  "uuid": "skill-clawhub-niceboard",
+  "skillKey": "clawhub-niceboard",
+  "name": "Niceboard",
+  "summary": "Niceboard integration. Manage data, records, and automate workflows. Use when the user wants to interact with Niceboard data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.niceboard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Niceboard integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Niceboard data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/niceboard@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "niceboard",
+      "url": "https://clawhub.ai/skills/niceboard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "niceboard",
+    "url": "https://clawhub.ai/skills/niceboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/niceboard-cb7c9eb8a97f24fe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/niceboard@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-niceboard-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d102b5614c08d5ec327c5ecb21045e26a09b1e01bcbfe184a36b049b0cad9a38",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:46:54.360Z"
+}

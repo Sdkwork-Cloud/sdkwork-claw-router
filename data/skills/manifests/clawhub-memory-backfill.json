@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66317,
+  "uuid": "skill-clawhub-memory-backfill",
+  "skillKey": "clawhub-memory-backfill",
+  "name": "Memory Backfill",
+  "summary": "规范升级 Agent 记忆，将抽象原则转为包含项目事实和结果闭环的全面项目级记忆，并固化验收标准。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_backfill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiangwill2023",
+      "features": [
+        "规范升级 Agent 记忆，将抽象原则转为包含项目事实和结果闭环的全面项目级记忆，并固化验收标准。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-backfill@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259636428?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-backfill",
+      "url": "https://clawhub.ai/skills/memory-backfill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-backfill",
+    "url": "https://clawhub.ai/skills/memory-backfill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-backfill-2a6e7050fdf0965f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-backfill@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-backfill-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0381baa6f1143d4b01a46f79c3faedb0bdac064e0e1549bcd99fb2988743e513",
+      "artifactSizeBytes": 2426
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T14:11:20.437Z"
+}

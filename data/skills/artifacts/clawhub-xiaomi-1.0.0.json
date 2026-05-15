@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaomi@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaomi",
+  "skill": {
+    "id": 58418,
+    "skillKey": "clawhub-xiaomi",
+    "name": "Xiaomi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaomi",
+    "url": "https://clawhub.ai/skills/xiaomi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaomi-c608c4787821de1b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "[English] Control Xiaomi Home devices via local LAN using miiocli. Supports status checks, toggling power, and MIOT property manipulation for devices like smart plugs, humidifiers, and rice cookers. | [中文] 通过局域网利用 miiocli 控制米家智能设备。支持查看状态、开."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yiqiezhenxi",
+      "userId": "publishers:yiqiezhenxi",
+      "displayName": "yiqiezhenxi",
+      "image": "https://avatars.githubusercontent.com/u/10209519?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1498,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770271463902,
+      "changelog": "Initial release: Control Xiaomi (Mi Home) devices on your local network using miiocli.\n\n- Supports status checks, power toggles, and MIOT property adjustments for devices like smart plugs, humidifiers, and rice cookers.\n- Includes a built-in token extraction script for easy device setup.\n- Ready-to-use workflows for common device types.\n- Automated dependency fix for common Python library issues.\n- Full documentation in both English and Chinese.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c0ed800ec65fe40a8036794470976b5579ab2fd01252f024d592c5fbab4be91a"
+}

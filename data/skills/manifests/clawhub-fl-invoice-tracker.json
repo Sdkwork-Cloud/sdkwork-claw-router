@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29853,
+  "uuid": "skill-clawhub-fl-invoice-tracker",
+  "skillKey": "clawhub-fl-invoice-tracker",
+  "name": "Invoice & Expense Tracker",
+  "summary": "AI-powered invoice and expense tracking from natural language. Maintain a local ledger, generate monthly reports by category/vendor, export to CSV for QuickB...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fl_invoice_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PhilipStark",
+      "features": [
+        "AI-powered invoice and expense tracking from natural language",
+        "Maintain a local ledger, generate monthly reports by category/vendor, export to CSV for QuickB.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fl-invoice-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/186941063?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fl-invoice-tracker",
+      "url": "https://clawhub.ai/skills/fl-invoice-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fl-invoice-tracker",
+    "url": "https://clawhub.ai/skills/fl-invoice-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fl-invoice-tracker-1566b643b8c3e52a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fl-invoice-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fl-invoice-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:75c4c1482ce3ced3232de3e4cbe9d3a049742a747d84cd432da863fc857f0d5a",
+      "artifactSizeBytes": 1980
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T16:28:26.457Z"
+}

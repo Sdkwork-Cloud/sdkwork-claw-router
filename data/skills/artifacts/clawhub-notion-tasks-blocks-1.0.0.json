@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/notion-tasks-blocks@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notion_tasks_blocks",
+  "skill": {
+    "id": 19337,
+    "skillKey": "clawhub-notion-tasks-blocks",
+    "name": "Notion Tasks Blocks"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notion-tasks-blocks",
+    "url": "https://clawhub.ai/skills/notion-tasks-blocks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notion-tasks-blocks-2b61de54dfdde730.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Notion checklist blocks inside a page (no database required). Use when the user has plain to-do blocks and wants to list tasks, add tasks, and mark ta..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luciorenovato",
+      "userId": "publishers:luciorenovato",
+      "displayName": "luciorenovato",
+      "image": "https://avatars.githubusercontent.com/u/6399604?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 621,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771470606937,
+      "changelog": "Initial release of notion-tasks-blocks skill:\n\n- Manage Notion to-do blocks inside a page—no database required.\n- List, add, mark as done, and undo checklist tasks via simple commands.\n- Requires Notion integration and page ID environment variables.\n- Supports only top-level to-do blocks on the specified page.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:59a84b177ced6e388256f38fa289a1887caf68d23a947a97f4f9542519cba7ad"
+}

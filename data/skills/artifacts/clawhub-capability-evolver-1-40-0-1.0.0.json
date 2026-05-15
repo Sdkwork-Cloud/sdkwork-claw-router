@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/capability-evolver-1-40-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.capability_evolver_1_40_0",
+  "skill": {
+    "id": 18889,
+    "skillKey": "clawhub-capability-evolver-1-40-0",
+    "name": "Capability Evolver 1.40.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "capability-evolver-1-40-0",
+    "url": "https://clawhub.ai/skills/capability-evolver-1-40-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/capability-evolver-1-40-0-8af5ca636dc55a80.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A self-evolution engine for AI agents. Analyzes runtime history to identify improvements and applies protocol-constrained evolution."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zengyu199009",
+      "userId": "s170z1at1gwv710hepjeqgepg183re5y",
+      "displayName": "zengyu199009",
+      "image": "https://avatars.githubusercontent.com/u/139990220?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 613,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774801181546,
+      "changelog": "Initial release of capability-evolver: a self-evolution engine for AI agents.\n\n- Enables agents to analyze their own runtime history, identify failures or inefficiencies, and autonomously evolve using protocol-constrained methods.\n- Supports log analysis, self-repair, and one-command or continuous evolution cycles.\n- Integrates with EvoMap for node identity and collaborative protocol functionality.\n- Highly configurable via environment variables, including evolution strategy, review/rollback options, and network endpoints.\n- Provides built-in commands for code reviews, asset management, and memory graph syncing.\n- Designed for safe operation with fine-grained permission controls and safeguards for self-modification.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0848576ee191d6e6f6edb2ba8b7dde336dab08540e0900fa4720d5abc912ac49"
+}

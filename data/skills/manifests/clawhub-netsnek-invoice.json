@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18095,
+  "uuid": "skill-clawhub-netsnek-invoice",
+  "skillKey": "clawhub-netsnek-invoice",
+  "name": "Invoice",
+  "summary": "Creates and manages invoices as JSON files on GitHub with sequential numbering, preview, and upload.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.netsnek_invoice",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kleberbaum",
+      "features": [
+        "Creates and manages invoices as JSON files on GitHub with sequential numbering, preview, and up."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/netsnek-invoice@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26285351?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "netsnek-invoice",
+      "url": "https://clawhub.ai/skills/netsnek-invoice"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "netsnek-invoice",
+    "url": "https://clawhub.ai/skills/netsnek-invoice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/netsnek-invoice-8cd5cd184eefe1f7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/netsnek-invoice@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-netsnek-invoice-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f147cdf1633ec2440431f416e76d42630e29125e6ddab48eee275328268603cb",
+      "artifactSizeBytes": 1972
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T22:08:11.946Z"
+}

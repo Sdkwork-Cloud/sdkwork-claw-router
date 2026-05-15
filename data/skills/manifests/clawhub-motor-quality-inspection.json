@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65001,
+  "uuid": "skill-clawhub-motor-quality-inspection",
+  "skillKey": "clawhub-motor-quality-inspection",
+  "name": "Motor Quality Inspection",
+  "summary": "军用电机质量检验助手 | 根据GJB标准生成检验规程，覆盖来料检验、过程检验、成品检验、出厂检验全流程",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.motor_quality_inspection",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yongjie666888",
+      "features": [
+        "军用电机质量检验助手 | 根据GJB标准生成检验规程，覆盖来料检验、过程检验、成品检验、出厂检验全流程"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/motor-quality-inspection@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/177016990?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "motor-quality-inspection",
+      "url": "https://clawhub.ai/skills/motor-quality-inspection"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "motor-quality-inspection",
+    "url": "https://clawhub.ai/skills/motor-quality-inspection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/motor-quality-inspection-25795209493b75a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/motor-quality-inspection@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-motor-quality-inspection-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:141aae253d42842ed59577b43469fb2a185dedab80355522ba9ac2d4ffd393c0",
+      "artifactSizeBytes": 2023
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T17:25:33.242Z"
+}

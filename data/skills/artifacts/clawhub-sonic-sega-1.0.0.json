@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sonic-sega@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sonic_sega",
+  "skill": {
+    "id": 54092,
+    "skillKey": "clawhub-sonic-sega",
+    "name": "Sonic Sega"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sonic-sega",
+    "url": "https://clawhub.ai/skills/sonic-sega",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sonic-sega-225ee9e24d5ac7ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sega's Sonic is a blue hedgehog mascot known for speed-based gameplay, evolving across 30+ years into a $10B franchise spanning games, film, and merchandise."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 87,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777871205148,
+      "changelog": "- Initial release introducing the Sonic the Hedgehog franchise skill\n- Covers Sonic’s 30+ year history, major game/film milestones, and business evolution\n- Highlights Sonic’s rivalry with Mario and Sega’s shift from hardware to third-party publisher\n- Provides franchise revenue, sales figures, and data on film success\n- Explains Sonic’s iconic design and cultural/media impact",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1b5ad732233a8af623fba2148dc93233317f35b4a0d2e4bc33cf6a7557f002de"
+}

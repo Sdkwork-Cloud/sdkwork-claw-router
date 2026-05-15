@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28399,
+  "uuid": "skill-clawhub-uplo-insurance",
+  "skillKey": "clawhub-uplo-insurance",
+  "name": "Uplo Insurance",
+  "summary": "AI-powered insurance knowledge management. Search policy documents, claims records, underwriting guidelines, and actuarial data with structured extraction.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uplo_insurance",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RooJenkins",
+      "features": [
+        "AI-powered insurance knowledge management",
+        "Search policy documents, claims records, underwriting guidelines, and actuarial data with struc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uplo-insurance@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47111622?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uplo-insurance",
+      "url": "https://clawhub.ai/skills/uplo-insurance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uplo-insurance",
+    "url": "https://clawhub.ai/skills/uplo-insurance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uplo-insurance-010b5a73044f72f6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uplo-insurance@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-uplo-insurance-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f921666adf1ea2c6d4be3ad205dfc0492d9224a6e4cb6fa93d203002b89fc4ca",
+      "artifactSizeBytes": 2436
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T10:09:32.365Z"
+}

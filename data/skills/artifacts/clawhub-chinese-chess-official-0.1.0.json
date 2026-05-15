@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chinese-chess-official@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chinese_chess_official",
+  "skill": {
+    "id": 58874,
+    "skillKey": "clawhub-chinese-chess-official",
+    "name": "chinese-chess-official"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chinese-chess-official",
+    "url": "https://clawhub.ai/skills/chinese-chess-official",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chinese-chess-official-69d7d1c3bc9d593b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "中国传统棋类游戏"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775260619677,
+      "changelog": "Initial release of the chinese-chess skill:\n\n- Provides a comprehensive overview of Chinese Chess (象棋) including history, facts, and key data.\n- Delivers the latest news, updates, and related statistics about Chinese Chess.\n- Offers official resources, useful links, and related topics.\n- Supports example queries for information, news, and statistics on Chinese Chess.\n- Utilizes web search to supply real-time, authoritative information.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:36f20286254a0c0120593796b69a73296547452d1041c175425c889b77e782d8"
+}

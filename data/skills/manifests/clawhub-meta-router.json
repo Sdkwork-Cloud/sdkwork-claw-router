@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21402,
+  "uuid": "skill-clawhub-meta-router",
+  "skillKey": "clawhub-meta-router",
+  "name": "Meta-Router",
+  "summary": "Automatically indexes and routes user intents to installed OpenClaw skills by scanning SKILL.md files and dynamically injecting relevant skill contexts.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meta_router",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lawliet-ai",
+      "features": [
+        "Automatically indexes and routes user intents to installed OpenClaw skills by scanning SKILL.md."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meta-router@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261297622?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meta-router",
+      "url": "https://clawhub.ai/skills/meta-router"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meta-router",
+    "url": "https://clawhub.ai/skills/meta-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meta-router-c029e1bf9b9c5067.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meta-router@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-meta-router-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:229e89561a83d42e60762f007b7983a7451889541bd34d1e726f53245a1aa4c2",
+      "artifactSizeBytes": 2465
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T10:47:39.089Z"
+}

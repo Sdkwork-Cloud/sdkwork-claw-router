@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49381,
+  "uuid": "skill-clawhub-wendian-stock-skill",
+  "skillKey": "clawhub-wendian-stock-skill",
+  "name": "wendian stock",
+  "summary": "Provides real-time and historical market data, heatmaps, sector rotation analytics, and concept linking from Wendian Starmap's professional stock data platform.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wendian_stock_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "问象星图",
+      "features": [
+        "Provides real-time and historical market data, heatmaps, sector rotation analytics, and concept."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wendian-stock-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270246255?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wendian-stock-skill",
+      "url": "https://clawhub.ai/skills/wendian-stock-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wendian-stock-skill",
+    "url": "https://clawhub.ai/skills/wendian-stock-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wendian-stock-skill-7a48d22273d0a75a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wendian-stock-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wendian-stock-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ede07fd8e5a5d87eb844c2538b6b6c230bb8a543c53e319e6da87d65b43accf",
+      "artifactSizeBytes": 2482
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T07:10:40.004Z"
+}

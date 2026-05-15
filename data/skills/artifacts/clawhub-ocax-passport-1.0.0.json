@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ocax-passport@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ocax_passport",
+  "skill": {
+    "id": 30761,
+    "skillKey": "clawhub-ocax-passport",
+    "name": "OCAX Passport"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ocax-passport",
+    "url": "https://clawhub.ai/skills/ocax-passport",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ocax-passport-d997cc674a88f25f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate and manage node passports showing hardware info, reputation score, supported task types, and auto-update node data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "catcherintheroad-hub",
+      "userId": "s17avhfzbj3gkd9rhx60nyxqcn83qswd",
+      "displayName": "catcherintheroad-hub",
+      "image": "https://avatars.githubusercontent.com/u/264535810?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 277,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773545532858,
+      "changelog": "OCAX Passport Skill 1.0.0\n\n- Initial release for generating and managing node passports.\n- Provides hardware info detection (CPU, GPU, memory, storage, network).\n- Calculates and displays node reputation scores.\n- Generates unique Node and Passport IDs.\n- Detects and lists supported task types.\n- Supports auto-updating of node information.\n- Includes example usage and trigger phrases for ease of use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:011246e0abbdca0dfdc07012238dca44c57d53a7ac4d12c40b556d05b1dd4b7e"
+}

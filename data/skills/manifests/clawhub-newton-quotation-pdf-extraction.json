@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66569,
+  "uuid": "skill-clawhub-newton-quotation-pdf-extraction",
+  "skillKey": "clawhub-newton-quotation-pdf-extraction",
+  "name": "Newton Quotation Pdf Extraction",
+  "summary": "从PDF报价单中提取产品信息（型号、数量、价格、币种、图片）。当用户需要从PDF报价单或产品目录中提取结构化产品数据时使用，特别适用于电商产品列表或价格表。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.newton_quotation_pdf_extraction",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1688AiInfra",
+      "features": [
+        "从PDF报价单中提取产品信息（型号、数量、价格、币种、图片）。当用户需要从PDF报价单或产品目录中提取结构化产品数据时使用，特别适用于电商产品列表或价格表。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/newton-quotation-pdf-extraction@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266033968?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "newton-quotation-pdf-extraction",
+      "url": "https://clawhub.ai/skills/newton-quotation-pdf-extraction"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "newton-quotation-pdf-extraction",
+    "url": "https://clawhub.ai/skills/newton-quotation-pdf-extraction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/newton-quotation-pdf-extraction-85444a294d8d669c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/newton-quotation-pdf-extraction@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-newton-quotation-pdf-extraction-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:00e7ccae19f5501a84f6d69cfc282bfa198f4de6e08d0f38c1590fa3ffa26358",
+      "artifactSizeBytes": 2618
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T07:09:45.835Z"
+}

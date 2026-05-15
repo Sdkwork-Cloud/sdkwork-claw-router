@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aliyun-fc-agentrun@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun_fc_agentrun",
+  "skill": {
+    "id": 44952,
+    "skillKey": "clawhub-aliyun-fc-agentrun",
+    "name": "Aliyun Fc Agentrun"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun-fc-agentrun",
+    "url": "https://clawhub.ai/skills/aliyun-fc-agentrun",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-fc-agentrun-6b2f87c8f979ae10.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when managing Function Compute AgentRun resources via OpenAPI (runtime, sandbox, model, memory, credentials), including creating runtimes/endpoints, quer..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cinience",
+      "userId": "s1707avh05gnzr3g6e3m9ka6fh840rtd",
+      "displayName": "cinience",
+      "image": "https://avatars.githubusercontent.com/u/557426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775081275426,
+      "changelog": "Initial release of aliyun-fc-agentrun skill:\n\n- Provides management for Alibaba Cloud Function Compute AgentRun resources using OpenAPI (ROA).\n- Supports workflows to create and manage runtimes, endpoints, sandboxes, model services, and credentials.\n- Includes quickstart, runtime flow, and cleanup scripts with environment variable configuration.\n- Guides users on region and endpoint selection, OpenAPI/SDK usage, and output directory structure.\n- Adds validation and reproducibility guidelines for evidence and artifact storage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8951ad28fc4f8b68308b5814aaa85382567f9e1f0d17008f375df5e54dc7bad6"
+}

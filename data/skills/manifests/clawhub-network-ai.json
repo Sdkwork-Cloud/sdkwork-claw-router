@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9795,
+  "uuid": "skill-clawhub-network-ai",
+  "skillKey": "clawhub-network-ai",
+  "name": "Network AI",
+  "summary": "Local Python orchestration skill: multi-agent workflows via shared blackboard file, permission gating, token budget scripts, and persistent project context....",
+  "version": "5.3.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.network_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jovan Marinovic",
+      "features": [
+        "Local Python orchestration skill: multi-agent workflows via shared blackboard file, permission."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/network-ai@5.3.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/120467681?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "network-ai",
+      "url": "https://clawhub.ai/skills/network-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "network-ai",
+    "url": "https://clawhub.ai/skills/network-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/network-ai-8a70ce3d9d9057df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/network-ai@5.3.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-network-ai-5.3.2.json",
+      "version": "5.3.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:48b9422867ddd71188dff65a5adc0700547ca62478602f754782b3dddf6d6aef",
+      "artifactSizeBytes": 2484
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T16:52:37.419Z"
+}

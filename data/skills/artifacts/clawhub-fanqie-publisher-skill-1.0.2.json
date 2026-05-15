@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fanqie-publisher-skill@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fanqie_publisher_skill",
+  "skill": {
+    "id": 71760,
+    "skillKey": "clawhub-fanqie-publisher-skill",
+    "name": "番茄小说自动发布"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fanqie-publisher-skill",
+    "url": "https://clawhub.ai/skills/fanqie-publisher-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fanqie-publisher-skill-1661895f0085bd2b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "番茄小说章节自动发布工具。使用场景：(1) 发布单个章节到番茄小说平台；(2) 批量发布多个章节；(3) 存入草稿箱；(4) 登录番茄小说作家后台；(5) 查看作品列表和状态。触发词：番茄发布、番茄小说上传、发布章节、存入草稿箱、番茄登录。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "followaf",
+      "userId": "s17e2r7mkqz4413yfz4nf56wjs83xq88",
+      "displayName": "followaf",
+      "image": "https://avatars.githubusercontent.com/u/100986905?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 278,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775620086017,
+      "changelog": "新增“存入草稿箱”功能，支持内容临时保存：\n\n- 增加 draft 模式，可将章节保存到草稿箱，适合内容待完善时使用\n- 文档说明详细区分直接发布与存入草稿箱的操作方式和场景\n- 新增存入草稿箱的代码用法示例\n- 触发词、功能清单、发布流程均补充对草稿箱支持\n- 草稿箱保存的章节可后续随时编辑发布",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:29d3c355639e7b1a5a19a0218f4c40fcd7c9a8eba68f45c0e46b15baad3fb0ef"
+}

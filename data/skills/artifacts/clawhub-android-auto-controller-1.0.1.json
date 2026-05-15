@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/android-auto-controller@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.android_auto_controller",
+  "skill": {
+    "id": 67845,
+    "skillKey": "clawhub-android-auto-controller",
+    "name": "android-auto-controller"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "android-auto-controller",
+    "url": "https://clawhub.ai/skills/android-auto-controller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/android-auto-controller-aecd97ccdab2a541.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "控制 Android 手机的终极工具。具备视觉状态感知、自动关闭干扰弹窗、模拟人手操作的能力。内置严格的反幻觉校验机制和防绕过限制，以真实的屏幕视觉反馈为唯一判断标准。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liseng1997",
+      "userId": "publishers:liseng1997",
+      "displayName": "lifeng",
+      "image": "https://avatars.githubusercontent.com/u/198548900?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 343,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774012319867,
+      "changelog": "- Removed sample file: readme.md\n- Updated SKILL.md with improved user instructions, environment preparation steps, and clearer configuration guidance.\n- Consolidated and clarified core action descriptions and strict usage protocols for automation.\n- No functional changes to the code; this is a documentation and onboarding improvement release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1204326576f67a26cc48335ad6d199e63e5b7192bc0c73aa7ad4f1ab487dda3d"
+}

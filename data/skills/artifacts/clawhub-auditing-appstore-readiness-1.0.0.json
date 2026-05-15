@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auditing-appstore-readiness@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auditing_appstore_readiness",
+  "skill": {
+    "id": 11541,
+    "skillKey": "clawhub-auditing-appstore-readiness",
+    "name": "Audit App Store Readiness"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auditing-appstore-readiness",
+    "url": "https://clawhub.ai/skills/auditing-appstore-readiness",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auditing-appstore-readiness-c1622b9fa54d2a85.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit an iOS app repo (Swift/Xcode or React Native/Expo) for App Store compliance and release readiness; output a pass/warn/fail report and publish checklist."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tristanmanchester",
+      "userId": "s17c3xv8wvvzzbj84z9vcj498n83gnkp",
+      "displayName": "Tristan Manchester",
+      "image": "https://avatars.githubusercontent.com/u/108270628?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2089,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770112715841,
+      "changelog": "- Initial release of auditing-appstore-readiness.\n- Audits iOS app repositories (Swift/Xcode, React Native, Expo) for App Store/TestFlight compliance.\n- Outputs a structured PASS/WARN/FAIL report with evidence, remediation steps, and a publish checklist.\n- Implements static compliance checks and optional build-accuracy checks if Xcode is available.\n- Follows strict safety rules: defaults to read-only actions and clearly labels any changes.\n- Includes manual review checklist items for areas automation cannot fully verify.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0069aba08d9166ac98a3ca1a335be98c1e1612b851d76f3a673f7260c6178d53"
+}

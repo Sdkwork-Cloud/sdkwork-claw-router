@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openai-image-gen-1-0-1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openai_image_gen_1_0_1",
+  "skill": {
+    "id": 56278,
+    "skillKey": "clawhub-openai-image-gen-1-0-1",
+    "name": "Openai Image Gen 1.0.1"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openai-image-gen-1-0-1",
+    "url": "https://clawhub.ai/skills/openai-image-gen-1-0-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openai-image-gen-1-0-1-574dd129059f0e74.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Batch-generate images via OpenAI Images API. Random prompt sampler + `index.html` gallery."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shi8103312",
+      "userId": "s17dbpsjngbp9qf3hapn4v148s83hhh5",
+      "displayName": "shi8103312",
+      "image": "https://avatars.githubusercontent.com/u/24645716?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774327926890,
+      "changelog": "- Initial release of openai-image-gen skill.\n- Batch-generates images using the OpenAI Images API with random or custom prompts.\n- Outputs: PNG images, prompt–file mapping (prompts.json), and a thumbnail gallery (index.html).\n- Supports flexible parameters, including image count, model, prompt, size, output directory, and quality via command line flags.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5c3e2a484ee87ed5fdf17e1d0529ca137a9e81064f6d0bf97053251e115a9862"
+}

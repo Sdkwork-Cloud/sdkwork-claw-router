@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23377,
+  "uuid": "skill-clawhub-rillet",
+  "skillKey": "clawhub-rillet",
+  "name": "Rillet",
+  "summary": "Rillet integration. Manage Organizations, Pipelines, Projects, Users, Filters. Use when the user wants to interact with Rillet data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rillet",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Rillet integration",
+        "Manage Organizations, Pipelines, Projects, Users, Filters",
+        "Use when the user wants to interact with Rillet data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rillet@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rillet",
+      "url": "https://clawhub.ai/skills/rillet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rillet",
+    "url": "https://clawhub.ai/skills/rillet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rillet-54347562c0e0da1c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rillet@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-rillet-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:874f29959505f49b3e560021a144f0546995923a11cd6e4878661a166e2201fd",
+      "artifactSizeBytes": 1825
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:34:56.959Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/play-chess@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.play_chess",
+  "skill": {
+    "id": 23644,
+    "skillKey": "clawhub-play-chess",
+    "name": "Play Chess on ChessWithClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "play-chess",
+    "url": "https://clawhub.ai/skills/play-chess",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/play-chess-7d8fc3e3a039e373.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Play live chess as Black against the user on ChessWithClaw by connecting to their game invite and responding to their first move."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alightttt",
+      "userId": "s17978sjjma0anpn8phnwjvtr583kb4m",
+      "displayName": "Alightttt",
+      "image": "https://avatars.githubusercontent.com/u/168413990?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 325,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776327573664,
+      "changelog": "No changes detected in this version.\n\n- No file changes were made for version 1.0.3.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a73c88b3b51cca49b2cf22621179e2c8bbb63c530264aafeba6e1fa05c0b4035"
+}

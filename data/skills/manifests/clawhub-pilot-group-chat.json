@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36163,
+  "uuid": "skill-clawhub-pilot-group-chat",
+  "skillKey": "clawhub-pilot-group-chat",
+  "name": "Pilot Group Chat",
+  "summary": "Multi-agent group conversations with membership management over the Pilot Protocol network. Use this skill when: 1. You need multi-party discussions with 3+...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_group_chat",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "Multi-agent group conversations with membership management over the Pilot Protocol network",
+        "Use this skill when: 1",
+        "You need multi-party discussions with 3+..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-group-chat@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-group-chat",
+      "url": "https://clawhub.ai/skills/pilot-group-chat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-group-chat",
+    "url": "https://clawhub.ai/skills/pilot-group-chat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-group-chat-e5dff1ce91856a42.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-group-chat@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-group-chat-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:09b890e65436be3beadfb5a12da56a0ff5e23bb06485e1043a105f8eb9e7ed73",
+      "artifactSizeBytes": 1903
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T04:21:49.089Z"
+}

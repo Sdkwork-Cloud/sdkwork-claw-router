@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56584,
+  "uuid": "skill-clawhub-argument-selfloop",
+  "skillKey": "clawhub-argument-selfloop",
+  "name": "Argument Selfloop",
+  "summary": "Argument self-loop: maintain an argument ledger + premise consistency report for drafted sections. **Trigger**: argument self-loop, argument chain, premise c...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.argument_selfloop",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WILLOSCAR",
+      "features": [
+        "Argument self-loop: maintain an argument ledger + premise consistency report for drafted sectio.",
+        "**Trigger**: argument self-loop, argument chain, premise c..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/argument-selfloop@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63443351?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "argument-selfloop",
+      "url": "https://clawhub.ai/skills/argument-selfloop"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "argument-selfloop",
+    "url": "https://clawhub.ai/skills/argument-selfloop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/argument-selfloop-b5a6dce13fa8e62d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/argument-selfloop@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-argument-selfloop-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2c541abfb682a618c228579dec3beed7761934cdfbc75c8b2fa6be5aa33001a6",
+      "artifactSizeBytes": 2689
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T09:14:54.541Z"
+}

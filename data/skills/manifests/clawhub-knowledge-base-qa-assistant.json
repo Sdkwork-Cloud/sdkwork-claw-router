@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37620,
+  "uuid": "skill-clawhub-knowledge-base-qa-assistant",
+  "skillKey": "clawhub-knowledge-base-qa-assistant",
+  "name": "knowledge-base-qa-assistant",
+  "summary": "Build private knowledge bases for AI-powered document Q&A. Supports PDF, Word, TXT, Markdown uploads with smart chunking and vector retrieval. Automatically...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knowledge_base_qa_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huajianjiu",
+      "features": [
+        "Build private knowledge bases for AI-powered document Q&A",
+        "Supports PDF, Word, TXT, Markdown uploads with smart chunking and vector retrieval",
+        "Automatically..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/knowledge-base-qa-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/163974966?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "knowledge-base-qa-assistant",
+      "url": "https://clawhub.ai/skills/knowledge-base-qa-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knowledge-base-qa-assistant",
+    "url": "https://clawhub.ai/skills/knowledge-base-qa-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knowledge-base-qa-assistant-3aef1a1cef9654ee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/knowledge-base-qa-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-knowledge-base-qa-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a52657f464da1a0dcfb29374702aad3cc7d22d419716b91f74014f503b1737c9",
+      "artifactSizeBytes": 2359
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T03:04:37.112Z"
+}

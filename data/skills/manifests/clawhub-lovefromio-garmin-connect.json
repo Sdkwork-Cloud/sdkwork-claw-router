@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34663,
+  "uuid": "skill-clawhub-lovefromio-garmin-connect",
+  "skillKey": "clawhub-lovefromio-garmin-connect",
+  "name": "Lovefromio Garmin Connect",
+  "summary": "Garmin Connect integration for Clawdbot: sync fitness data (steps, HR, calories, workouts, sleep) every 5 minutes using OAuth.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lovefromio_garmin_connect",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AI",
+      "features": [
+        "Garmin Connect integration for Clawdbot: sync fitness data (steps, HR, calories, workouts, slee."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lovefromio-garmin-connect@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/235840214?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lovefromio-garmin-connect",
+      "url": "https://clawhub.ai/skills/lovefromio-garmin-connect"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lovefromio-garmin-connect",
+    "url": "https://clawhub.ai/skills/lovefromio-garmin-connect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lovefromio-garmin-connect-352e0f0611406d9e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lovefromio-garmin-connect@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-lovefromio-garmin-connect-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0733a5d6090fb3e3b04b9409383743fc6be99df7bac7c3ddddaaa98485e093b7",
+      "artifactSizeBytes": 2036
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T02:05:07.605Z"
+}

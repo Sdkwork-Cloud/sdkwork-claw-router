@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72210,
+  "uuid": "skill-clawhub-legal-brief-drafter",
+  "skillKey": "clawhub-legal-brief-drafter",
+  "name": "Legal Brief Drafter",
+  "summary": "整理和起草法律文书（庭后意见书、代理词、上诉状、答辩状、反驳意见书、质证意见等）。当用户提供案件素材（庭审笔录、证据清单、法律条文、口头陈述要点）需要整理成结构化法律文书时使用。支持行政诉讼、民事诉讼、消费者权益保护、互联网平台纠纷、合同纠纷等场景。",
+  "version": "3.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.legal_brief_drafter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1126053051-lgtm",
+      "features": [
+        "整理和起草法律文书（庭后意见书、代理词、上诉状、答辩状、反驳意见书、质证意见等）。当用户提供案件素材（庭审笔录、证据清单、法律条文、口头陈述要点）需要整理成结构化法律文书时使用。支持行政诉讼."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/legal-brief-drafter@3.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267632505?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "legal-brief-drafter",
+      "url": "https://clawhub.ai/skills/legal-brief-drafter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "legal-brief-drafter",
+    "url": "https://clawhub.ai/skills/legal-brief-drafter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/legal-brief-drafter-d0d21725922f56e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/legal-brief-drafter@3.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-legal-brief-drafter-3.0.2.json",
+      "version": "3.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:773b0f69a1d8b0ab2d342a1a78951b409d4a45e82e1eb9313780337774026f98",
+      "artifactSizeBytes": 2195
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T09:35:22.358Z"
+}

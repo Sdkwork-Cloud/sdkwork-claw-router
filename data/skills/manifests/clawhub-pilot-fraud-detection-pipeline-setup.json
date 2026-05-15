@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41491,
+  "uuid": "skill-clawhub-pilot-fraud-detection-pipeline-setup",
+  "skillKey": "clawhub-pilot-fraud-detection-pipeline-setup",
+  "name": "Pilot Fraud Detection Pipeline Setup",
+  "summary": "Deploy a fraud detection pipeline with 4 agents. Use this skill when: 1. User wants to set up real-time transaction monitoring with escalation through analys...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_fraud_detection_pipeline_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "Deploy a fraud detection pipeline with 4 agents",
+        "Use this skill when: 1",
+        "User wants to set up real-time transaction monitoring with escalation through analys..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-fraud-detection-pipeline-setup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-fraud-detection-pipeline-setup",
+      "url": "https://clawhub.ai/skills/pilot-fraud-detection-pipeline-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-fraud-detection-pipeline-setup",
+    "url": "https://clawhub.ai/skills/pilot-fraud-detection-pipeline-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-fraud-detection-pipeline-setup-dd87ad99ff1d7a95.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-fraud-detection-pipeline-setup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-fraud-detection-pipeline-setup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:de653a73fd50d03e9c56f794bb13ac0702d25a7bd2f91ae3ca4285b3e6122232",
+      "artifactSizeBytes": 2044
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T00:34:46.380Z"
+}

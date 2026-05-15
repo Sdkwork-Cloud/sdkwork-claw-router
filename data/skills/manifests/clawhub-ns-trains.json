@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11717,
+  "uuid": "skill-clawhub-ns-trains",
+  "skillKey": "clawhub-ns-trains",
+  "name": "NS Trains",
+  "summary": "Check Dutch train schedules, departures, disruptions, and plan journeys using the NS API. Perfect for daily commute checks.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ns_trains",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "eggressive",
+      "features": [
+        "Check Dutch train schedules, departures, disruptions, and plan journeys using the NS API",
+        "Perfect for daily commute checks."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ns-trains@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47664474?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ns-trains",
+      "url": "https://clawhub.ai/skills/ns-trains"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ns-trains",
+    "url": "https://clawhub.ai/skills/ns-trains",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ns-trains-3f4bf7aed7a5d64c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ns-trains@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ns-trains-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:91fd0b1af40e5fc65b64d452c72f41842a285c21fbba0efd553613ef0f8831aa",
+      "artifactSizeBytes": 1979
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T22:07:48.394Z"
+}

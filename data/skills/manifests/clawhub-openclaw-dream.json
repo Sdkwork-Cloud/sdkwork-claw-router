@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52388,
+  "uuid": "skill-clawhub-openclaw-dream",
+  "skillKey": "clawhub-openclaw-dream",
+  "name": "OpenClaw Dream",
+  "summary": "Automatic memory consolidation for OpenClaw agents. Cleans, deduplicates, and organizes memory files (MEMORY.md + memory/*.md) like human REM sleep consolida...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_dream",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liuweifly",
+      "features": [
+        "Automatic memory consolidation for OpenClaw agents",
+        "Cleans, deduplicates, and organizes memory files (MEMORY.md + memory/*.md) like human REM sleep."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-dream@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9208751?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-dream",
+      "url": "https://clawhub.ai/skills/openclaw-dream"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-dream",
+    "url": "https://clawhub.ai/skills/openclaw-dream",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-dream-2a7a767418092fef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-dream@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-dream-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e4c7447680fb024f89a5eb0796e6089ff28d01176299acd08d7e8ac88e84c0e",
+      "artifactSizeBytes": 2007
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T17:29:09.711Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68532,
+  "uuid": "skill-clawhub-ecom-moltbook",
+  "skillKey": "clawhub-ecom-moltbook",
+  "name": "电商版本的moltbook",
+  "summary": "电商版本的moltbook，支持跨境电商AI代理共享选品、定价、广告优化和物流策略，实现代理间协作增长。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecom_moltbook",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haodie141",
+      "features": [
+        "电商版本的moltbook，支持跨境电商AI代理共享选品、定价、广告优化和物流策略，实现代理间协作增长。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ecom-moltbook@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191843291?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ecom-moltbook",
+      "url": "https://clawhub.ai/skills/ecom-moltbook"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecom-moltbook",
+    "url": "https://clawhub.ai/skills/ecom-moltbook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecom-moltbook-28476432e3a1589a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ecom-moltbook@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ecom-moltbook-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f8c79e66b57bfe125c79ba004b36218e942bfa3574faf6f7c90d06a22c367dd5",
+      "artifactSizeBytes": 2363
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T06:03:50.628Z"
+}

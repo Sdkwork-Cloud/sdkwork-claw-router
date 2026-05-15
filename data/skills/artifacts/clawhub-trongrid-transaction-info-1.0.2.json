@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trongrid-transaction-info@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trongrid_transaction_info",
+  "skill": {
+    "id": 23272,
+    "skillKey": "clawhub-trongrid-transaction-info",
+    "name": "trongrid-transaction-info"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trongrid-transaction-info",
+    "url": "https://clawhub.ai/skills/trongrid-transaction-info",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trongrid-transaction-info-945c4c79f80ff6f1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query and decode TRON transactions including status, confirmation, sender/receiver, resource costs, internal transactions, event logs, and failure analysis...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "greason",
+      "userId": "s176mhh3c31n267h3brgrreh1x83jhx8",
+      "displayName": "greason",
+      "image": "https://avatars.githubusercontent.com/u/12513158?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 347,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773913633433,
+      "changelog": "- Updated instruction for block height retrieval: replaced `getNowBlock` with `getBlock` (no params).\n- No code changes detected—documentation update only.\n- All skill usage and behavior remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8ed38af6078284e86b4af56c8b9437dc6cd405c372558d6fe3d4c61875d56e43"
+}

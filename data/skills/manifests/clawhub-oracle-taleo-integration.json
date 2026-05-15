@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42859,
+  "uuid": "skill-clawhub-oracle-taleo-integration",
+  "skillKey": "clawhub-oracle-taleo-integration",
+  "name": "Oracle Taleo",
+  "summary": "Oracle Taleo integration. Manage data, records, and automate workflows. Use when the user wants to interact with Oracle Taleo data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oracle_taleo_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Oracle Taleo integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Oracle Taleo data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oracle-taleo-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oracle-taleo-integration",
+      "url": "https://clawhub.ai/skills/oracle-taleo-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oracle-taleo-integration",
+    "url": "https://clawhub.ai/skills/oracle-taleo-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oracle-taleo-integration-325a886d9186592d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oracle-taleo-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-oracle-taleo-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c000a5c5d546c107d30a1f2cf6614ba0ece647b347e1bd5ddaf2424a728c890",
+      "artifactSizeBytes": 1946
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:48:49.725Z"
+}

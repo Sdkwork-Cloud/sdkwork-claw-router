@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/anylink-to-note@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anylink_to_note",
+  "skill": {
+    "id": 69765,
+    "skillKey": "clawhub-anylink-to-note",
+    "name": "AnyLink to Note"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anylink-to-note",
+    "url": "https://clawhub.ai/skills/anylink-to-note",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anylink-to-note-6667d6209c022fd4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将任意链接一键转化为结构化笔记。支持的链接类型：微信公众号文章、Get 笔记共享链接、RSS 播客订阅、任意公开网页。当用户分享或发送链接并希望\"保存\"、\"解析\"、\"总结\"、\"收藏\"时触发。输出包含标题、正文内容、摘要和标签。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fanxlab",
+      "userId": "s17fanxpssvnt5h3evs93pwdjs83gwm4",
+      "displayName": "FanX",
+      "image": "https://avatars.githubusercontent.com/u/231185438?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776509171430,
+      "changelog": "Remove misleading URL conversion warning",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:91d00be0b3ebd67abd6a2ca022d3bac789d454bc6a99e274c16565401769d40a"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10101,
+  "uuid": "skill-clawhub-bring-shopping",
+  "skillKey": "clawhub-bring-shopping",
+  "name": "Bring! Shopping List App (Unofficial)",
+  "summary": "Manage Bring! shopping lists via the unofficial bring-shopping Node.js library using email/password login. Use for listing lists, reading items, adding/removing items, and checking/unchecking items when API-style access is acceptable.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bring_shopping",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cutzenfriend",
+      "features": [
+        "Manage Bring! shopping lists via the unofficial bring-shopping Node.js library using email/pass.",
+        "Use for listing lists, reading items, adding/removing items, and checking/unchecking items when."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bring-shopping@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1510611?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bring-shopping",
+      "url": "https://clawhub.ai/skills/bring-shopping"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bring-shopping",
+    "url": "https://clawhub.ai/skills/bring-shopping",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bring-shopping-a0ea07779cb4b0fb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bring-shopping@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bring-shopping-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ff54433aaee2b7844c00a1299523c9eed82de58cb2f0ae4b9c559c28d6f68a90",
+      "artifactSizeBytes": 2370
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-14T15:48:08.116Z"
+}

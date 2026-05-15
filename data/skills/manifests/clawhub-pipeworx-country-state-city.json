@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44160,
+  "uuid": "skill-clawhub-pipeworx-country-state-city",
+  "skillKey": "clawhub-pipeworx-country-state-city",
+  "name": "Pipeworx country-state-city",
+  "summary": "Provides country, state, and city data including ISO codes, capitals, phone codes, currencies, and regions via Pipeworx CountryStateCity API.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_country_state_city",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Provides country, state, and city data including ISO codes, capitals, phone codes, currencies,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-country-state-city@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138315805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-country-state-city",
+      "url": "https://clawhub.ai/skills/pipeworx-country-state-city"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-country-state-city",
+    "url": "https://clawhub.ai/skills/pipeworx-country-state-city",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-country-state-city-0766b5fa137b52fd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-country-state-city@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-country-state-city-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:351397e9cadb0be9ae5670e5b3b915547ff69626722d5ef475bcdef062300176",
+      "artifactSizeBytes": 1965
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T19:07:37.147Z"
+}

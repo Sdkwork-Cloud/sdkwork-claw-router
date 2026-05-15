@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54646,
+  "uuid": "skill-clawhub-poyo-nano-banana",
+  "skillKey": "clawhub-poyo-nano-banana",
+  "name": "Nano Banana",
+  "summary": "Use PoYo AI Nano Banana for general image generation and image editing across many aspect ratios through the `https://api.poyo.ai/api/generate/submit` endpoi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.poyo_nano_banana",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "coolhackboy",
+      "features": [
+        "Use PoYo AI Nano Banana for general image generation and image editing across many aspect ratio."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/poyo-nano-banana@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13427145?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "poyo-nano-banana",
+      "url": "https://clawhub.ai/skills/poyo-nano-banana"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "poyo-nano-banana",
+    "url": "https://clawhub.ai/skills/poyo-nano-banana",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/poyo-nano-banana-93ca2ace53031dc2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/poyo-nano-banana@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-poyo-nano-banana-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:683e2f4940a2416c514b1f2e340ed2f46feba07efe376ea2a192509f19bf7d45",
+      "artifactSizeBytes": 2350
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T00:07:42.506Z"
+}

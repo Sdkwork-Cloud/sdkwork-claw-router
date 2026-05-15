@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37316,
+  "uuid": "skill-clawhub-image-duplication-detector",
+  "skillKey": "clawhub-image-duplication-detector",
+  "name": "Image Duplication Detector",
+  "summary": "Detect image duplication and tampering in manuscript figures using computer vision algorithms",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_duplication_detector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Detect image duplication and tampering in manuscript figures using computer vision algorithms"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-duplication-detector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-duplication-detector",
+      "url": "https://clawhub.ai/skills/image-duplication-detector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-duplication-detector",
+    "url": "https://clawhub.ai/skills/image-duplication-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-duplication-detector-5b383a5a35c4316b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-duplication-detector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-duplication-detector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5fa9d6466f896fbdba8ca14d4f359f88a897dcf9e414114cf2d3152714157ec7",
+      "artifactSizeBytes": 2456
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T07:50:51.471Z"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8607,
+  "uuid": "skill-clawhub-notion-api-skill",
+  "skillKey": "clawhub-notion-api-skill",
+  "name": "Notion",
+  "summary": "Notion API integration with managed OAuth. Query databases, search pages, and read workspace content. Write operations require explicit user confirmation of...",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notion_api_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byungkyu",
+      "features": [
+        "Notion API integration with managed OAuth",
+        "Query databases, search pages, and read workspace content",
+        "Write operations require explicit user confirmation of..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/notion-api-skill@1.0.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16563684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "notion-api-skill",
+      "url": "https://clawhub.ai/skills/notion-api-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notion-api-skill",
+    "url": "https://clawhub.ai/skills/notion-api-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notion-api-skill-4f0402e6b4c9dcf7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/notion-api-skill@1.0.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-notion-api-skill-1.0.10.json",
+      "version": "1.0.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba7848df95a0b7f0170d0e71f1d2f1c0fb38d6e91d98d314eae6612dc3d075fb",
+      "artifactSizeBytes": 2369
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T10:27:03.751Z"
+}

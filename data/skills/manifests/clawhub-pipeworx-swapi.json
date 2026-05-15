@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44796,
+  "uuid": "skill-clawhub-pipeworx-swapi",
+  "skillKey": "clawhub-pipeworx-swapi",
+  "name": "Pipeworx swapi",
+  "summary": "Search Star Wars characters, planets, starships, and films with detailed attributes from the original six movies via the Star Wars API.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_swapi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Search Star Wars characters, planets, starships, and films with detailed attributes from the or."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-swapi@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138315805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-swapi",
+      "url": "https://clawhub.ai/skills/pipeworx-swapi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-swapi",
+    "url": "https://clawhub.ai/skills/pipeworx-swapi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-swapi-e06e6696a1d002fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-swapi@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-swapi-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3a85cf46f9b388d6925f9c09eaec82f5bea2809a3f3ddf21ef8ad60cfff358f1",
+      "artifactSizeBytes": 1868
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T21:51:29.328Z"
+}

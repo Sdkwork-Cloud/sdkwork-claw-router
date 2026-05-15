@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/venue-polling@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.venue_polling",
+  "skill": {
+    "id": 55689,
+    "skillKey": "clawhub-venue-polling",
+    "name": "venue-polling"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "venue-polling",
+    "url": "https://clawhub.ai/skills/venue-polling",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/venue-polling-fca48851d59768e8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when the user wants to poll gym venue availability, inspect or modify the `venue_polling.py` order-signing flow, or run the bundled signature..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ruokkkkk",
+      "userId": "s17cr80zfyjanhr6aw65fxg0rh85fnh4",
+      "displayName": "ruok Lee",
+      "image": "https://avatars.githubusercontent.com/u/7558849?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777000971442,
+      "changelog": "Initial release of venue-polling skill.\n\n- Provides tools for polling gym venue availability and managing order-signing for mini-program booking APIs.\n- Includes scripts for venue polling, signature debugging, signature replay, and public key verification.\n- Offers references and guidance for modifying polling and signing workflows.\n- Supports investigation and modification of RSA-based request signatures used in booking flows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f2048322272ae4cd33340b2c0daf2b2f3cbcbca36ee8f4f86e705290b3524f25"
+}

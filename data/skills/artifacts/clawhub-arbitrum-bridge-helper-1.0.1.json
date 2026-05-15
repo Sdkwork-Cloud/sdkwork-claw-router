@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/arbitrum-bridge-helper@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arbitrum_bridge_helper",
+  "skill": {
+    "id": 55297,
+    "skillKey": "clawhub-arbitrum-bridge-helper",
+    "name": "Arbitrum Bridge Helper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arbitrum-bridge-helper",
+    "url": "https://clawhub.ai/skills/arbitrum-bridge-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arbitrum-bridge-helper-eeb954ddb5c70e03.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guide users through official Arbitrum bridge actions—deposits, withdrawals, claims, tracking, and diagnostics—across Ethereum, Arbitrum One, Nova, and testne..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "merdikim",
+      "userId": "s174m66mf4e8wbxembzck1w5bn845c69",
+      "displayName": "merdikim",
+      "image": "https://avatars.githubusercontent.com/u/70149872?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775231211904,
+      "changelog": "**Major update: The skill now executes Arbitrum bridge operations using a wallet located on disk, when requested.**\n\n- Switches from purely guidance-based to execution when the user explicitly requests it, utilizing a wallet the agent can securely find on disk.\n- Adds strict rules: never reveal seed phrases, private keys, or secret config contents in chat; wallets are referenced by public address only.\n- Workflow updated to include wallet discovery, balance/gas checks, explicit user confirmation, and structured transaction status reporting.\n- Maintains rigorous distinctions between USDC and USDC.e on Arbitrum One.\n- Preserves official bridge routing rules, warnings, and multi-step withdrawal/claim flows.\n- Pure guidance mode is replaced with agent-driven execution, but the skill will clearly stop if wallet discovery or preconditions are not met.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:21343e490cd9799402097d5ffaab66ce6d01d616e986ea4abde4387e7f657bc3"
+}

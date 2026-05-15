@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-demo-recorder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_demo_recorder",
+  "skill": {
+    "id": 37899,
+    "skillKey": "clawhub-ai-demo-recorder",
+    "name": "AI Demo Recorder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-demo-recorder",
+    "url": "https://clawhub.ai/skills/ai-demo-recorder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-demo-recorder-68de8796b00d8482.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Record AI-driven browser demos with screencli. One command creates a polished screen recording with gradient backgrounds, auto-zoom, click highlights, and cu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leshems",
+      "userId": "s17b9cfm98qt5by19pqtarngfn83nd6a",
+      "displayName": "leshems",
+      "image": "https://avatars.githubusercontent.com/u/32818149?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774594491632,
+      "changelog": "- Initial release of screencli-record skill.\n- Enables AI-driven browser demo recording with a single command.\n- Produces polished MP4 videos with gradient backgrounds, auto-zoom, click highlights, and cursor trails.\n- Supports authentication flows, cloud uploads, and generating shareable links.\n- Includes export presets for platforms like YouTube, Twitter, Instagram, and GitHub.\n- Requires Node.js 18+ and FFmpeg; works on macOS, Linux, and Windows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:637da2a0ef949c5ad44e1970230018d0356c23416cde442d14269719493ca72e"
+}

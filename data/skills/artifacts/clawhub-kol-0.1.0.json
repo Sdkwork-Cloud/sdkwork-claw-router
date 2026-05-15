@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kol@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kol",
+  "skill": {
+    "id": 67773,
+    "skillKey": "clawhub-kol",
+    "name": "KOL"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kol",
+    "url": "https://clawhub.ai/skills/kol",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kol-f642974cfcb13951.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供KOL合作管理的可落地指南与SOP。在开展KOL合作管理相关工作时调用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clawkk",
+      "userId": "s170g5yz1q3ksjnn4gz6v24af983h1mh",
+      "displayName": "clawkk",
+      "image": "https://avatars.githubusercontent.com/u/265748372?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 244,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774231563606,
+      "changelog": "KOL合作管理 0.1.0\n\n- 提供KOL合作管理的可落地指南与SOP，包括操作步骤和关键指标体系。\n- 明确业务目标、应用场景、负责人及落地时限。\n- 涵盖数据集成、小流量试点、复盘优化和知识库更新流程。\n- 强调合规要求，遵守本地法律和保护个人信息。\n- 提供可复用的清单资源，如模板、脚本、报表等。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fced6cef135a7f57f727e264392929d0ea9e6c4096120772d5e53c8f206ef5bc"
+}

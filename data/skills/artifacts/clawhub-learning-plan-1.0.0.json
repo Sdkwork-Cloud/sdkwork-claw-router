@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/learning-plan@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.learning_plan",
+  "skill": {
+    "id": 70036,
+    "skillKey": "clawhub-learning-plan",
+    "name": "Learning Plan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "learning-plan",
+    "url": "https://clawhub.ai/skills/learning-plan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/learning-plan-04c73d5f90751e3c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能根据目标和时间规划分阶段学习计划，生成每日任务并提供资源，适用多种技能与考试备考场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huajianjiu000",
+      "userId": "s17f54gbrv7gfj1z72d0e3d24h84b2ep",
+      "displayName": "huajianjiu",
+      "image": "https://avatars.githubusercontent.com/u/163974966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776792689445,
+      "changelog": "Initial release of the Learning Plan Generator skill.\n\n- Intelligently generates customized study plans based on user goals and current level\n- Breaks learning into stages with clear milestones and daily/weekly tasks\n- Recommends learning resources and tracks progress\n- Supports multiple learning scenarios (exam prep, language learning, skill improvement, etc.)\n- Does not require external APIs and runs on Python 3.8+",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1072d4c273f488643d57a951696842e9ac401ac7126730eb2638141f4fdfc060"
+}

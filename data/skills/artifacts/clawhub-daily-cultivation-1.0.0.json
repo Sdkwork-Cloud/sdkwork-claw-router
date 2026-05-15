@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-cultivation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_cultivation",
+  "skill": {
+    "id": 67585,
+    "skillKey": "clawhub-daily-cultivation",
+    "name": "人格修行系统 Daily Cultivation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-cultivation",
+    "url": "https://clawhub.ai/skills/daily-cultivation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-cultivation-cb420707252388bc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "人格修行系统 - 每天10分钟，晨间智慧，晚上记录精进，持续修炼更好的自己。触发场景：用户提到\"晨语\"、\"晚复盘\"、\"美德修炼\"、\"人格修行\"、\"每日反思\"、\"大师语录\"，或需要定时发送晨间/晚间提醒时使用此 Skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "opc8838-hub",
+      "userId": "s17fbcr5natzgy7ddqkreh9gch84xm9j",
+      "displayName": "opc8838-hub",
+      "image": "https://avatars.githubusercontent.com/u/249858329?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776264629939,
+      "changelog": "Initial release of 人格修行系统 (daily-cultivation):\n\n- 支持定时发送每日晨语和晚复盘，内容涵盖美德提醒与自我反思。\n- 内置美德轮转（默认13美德、可自定义），每周切换修炼主题。\n- 提供大师语录库管理，支持最多6位大师，语录自动轮换不重复。\n- 晚复盘可自动归档到本地（推荐 Obsidian vault），形成个人成长档案。\n- 完整初始化流程，包含渠道/时间/模板/大师/美德体系灵活配置。\n- 支持多渠道提醒，如飞书、Discord、Telegram。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1ed2304cee4e08707cc96c71c22c72210ea8ce1745a1a3661a706fd4be5764f9"
+}

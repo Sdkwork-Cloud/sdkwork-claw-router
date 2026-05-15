@@ -1,0 +1,37 @@
+{
+  "skill": {
+    "slug": "hermes-minimax-oauth",
+    "displayName": "Hermes Minimax Oauth",
+    "summary": "Add MiniMax OAuth authentication support to Hermes Agent. Use when integrating MiniMax OAuth into Hermes, fixing MiniMax auth issues, or adding new OAuth pro...",
+    "tags": {
+      "hermes": "1.0.1",
+      "latest": "1.0.1",
+      "minimax": "1.0.1",
+      "oauth": "1.0.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 264,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1776638234441,
+    "updatedAt": 1777527759266
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1777313962734,
+    "changelog": "**MiniMax OAuth login support integrated for Hermes Agent.**\n\n- Added MiniMax OAuth authentication (\"minimax-oauth\" & \"minimax-cn-oauth\") with PKCE + user_code flow.\n- Provided correct OAuth endpoints, client_id, and scope for both Global and China regions.\n- Implemented new auth functions for login, token refresh, and status checking.\n- Allowed `hermes auth add minimax-oauth` / `hermes auth add minimax-cn-oauth` CLI commands for simple OAuth login.\n- Dropped the OpenClaw OAuth implementation reference; docs now reference MiniMax endpoints and process directly.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "eddieguan801-oss",
+    "userId": "s17d4mpw0w2mm2kxbtvh1psmpx844w1h",
+    "displayName": "eddieguan801-oss",
+    "image": "https://avatars.githubusercontent.com/u/260124777?v=4"
+  },
+  "moderation": null
+}

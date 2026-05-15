@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65960,
+  "uuid": "skill-clawhub-choice",
+  "skillKey": "clawhub-choice",
+  "name": "Choice",
+  "summary": "帮助用户搜索并预订Choice Hotels旗下酒店，查询优惠及管理会员权益，主要覆盖美国市场。",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.choice",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "帮助用户搜索并预订Choice Hotels旗下酒店，查询优惠及管理会员权益，主要覆盖美国市场。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/choice@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "choice",
+      "url": "https://clawhub.ai/skills/choice"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "choice",
+    "url": "https://clawhub.ai/skills/choice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/choice-cf83f0f9828551b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/choice@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-choice-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0feaf5d14fb2b3630a0e98e16b5aca5ee68726225f352cd826901fd956ed776f",
+      "artifactSizeBytes": 2084
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T07:29:21.516Z"
+}

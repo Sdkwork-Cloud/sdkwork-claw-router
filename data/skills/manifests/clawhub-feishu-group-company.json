@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55172,
+  "uuid": "skill-clawhub-feishu-group-company",
+  "skillKey": "clawhub-feishu-group-company",
+  "name": "Feishu Group Company",
+  "summary": "Configure a Feishu multi-bot company group so one coordinator bot, for example `company-ceo`, handles normal group messages, while specialist bots reply only...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_group_company",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AlexShen",
+      "features": [
+        "Configure a Feishu multi-bot company group so one coordinator bot, for example `company-ceo`, h."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-group-company@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/73343630?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-group-company",
+      "url": "https://clawhub.ai/skills/feishu-group-company"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-group-company",
+    "url": "https://clawhub.ai/skills/feishu-group-company",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-group-company-1a17dfc50907282e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-group-company@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-group-company-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ab47d6d06abe22fbce7e3d7a8be4c52876ce66190d7e5163769d12bf0281331f",
+      "artifactSizeBytes": 2061
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T17:18:31.693Z"
+}

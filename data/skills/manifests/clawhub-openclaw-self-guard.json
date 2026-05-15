@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42129,
+  "uuid": "skill-clawhub-openclaw-self-guard",
+  "skillKey": "clawhub-openclaw-self-guard",
+  "name": "openclawselfguard",
+  "summary": "Monitors local OpenClaw version daily at 06:00 Beijing time against NVD and GitHub advisories, reporting found CVEs with remediation steps.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_self_guard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aaronjager92",
+      "features": [
+        "Monitors local OpenClaw version daily at 06:00 Beijing time against NVD and GitHub advisories,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-self-guard@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/140129711?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-self-guard",
+      "url": "https://clawhub.ai/skills/openclaw-self-guard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-self-guard",
+    "url": "https://clawhub.ai/skills/openclaw-self-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-self-guard-d2983428d815ed5f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-self-guard@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-self-guard-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c017ec63caa834db7b5cf8faa6f4fcf706183cdb97c217c32fd01c50100ef917",
+      "artifactSizeBytes": 2382
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T11:03:52.718Z"
+}

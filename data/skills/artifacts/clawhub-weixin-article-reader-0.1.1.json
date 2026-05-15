@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weixin-article-reader@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weixin_article_reader",
+  "skill": {
+    "id": 33409,
+    "skillKey": "clawhub-weixin-article-reader",
+    "name": "Weixin Article Reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weixin-article-reader",
+    "url": "https://clawhub.ai/skills/weixin-article-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weixin-article-reader-b7dca5633783f4be.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract the title, author, publish date, and full body text from Weixin official account article links on mp.weixin.qq.com. Use this skill when a user wants..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ricknote",
+      "userId": "s172kq2eawfteg3jphabem2kzn83y9kc",
+      "displayName": "RickNote",
+      "image": "https://avatars.githubusercontent.com/u/201586270?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 239,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1774947160795,
+      "changelog": "Improve publish date parsing and align license metadata with platform MIT-0.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0a87f4bad8f21c12c4dd3bb9a637817dc315e1bd130ca572aa3a43e08999ee34"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62958,
+  "uuid": "skill-clawhub-git-workflow",
+  "skillKey": "clawhub-git-workflow",
+  "name": "Git Workflow",
+  "summary": "OpenClaw Git 工作流技能。 当用户提及以下任务时使用： - 提交代码或文档 - 推送到远程仓库 - 管理多个 Git 仓库 - 查看 Git 状态 核心能力: - 自动检测文件变更 - 自动生成提交信息 - 自动推送到远程仓库 - 多仓库管理",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_workflow",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "broommonk",
+      "features": [
+        "OpenClaw Git 工作流技能。 当用户提及以下任务时使用：",
+        "管理多个 Git 仓库",
+        "查看 Git 状态 核心能力:",
+        "自动检测文件变更"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/git-workflow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46682368?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "git-workflow",
+      "url": "https://clawhub.ai/skills/git-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-workflow",
+    "url": "https://clawhub.ai/skills/git-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-workflow-37a483ff7d848b16.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/git-workflow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-git-workflow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9f14eac22ffcffdf33191ecd4d8151b3c3d46e89c30ab6ace3e1addfcbdf8cc4",
+      "artifactSizeBytes": 2240
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T05:18:41.210Z"
+}

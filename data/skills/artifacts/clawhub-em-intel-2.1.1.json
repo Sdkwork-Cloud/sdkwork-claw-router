@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/em-intel@2.1.1",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.em_intel",
+  "skill": {
+    "id": 50194,
+    "skillKey": "clawhub-em-intel",
+    "name": "Engineering Manager Intelligence — Team Performance & Project Health"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "em-intel",
+    "url": "https://clawhub.ai/skills/em-intel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/em-intel-fde7b8a8670f890c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Engineering Manager Intelligence: track team performance, engineer contributions, and project health across GitLab/GitHub + Jira/GitHub Issues. Use when aske..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "larryfang",
+      "userId": "publishers:larryfang",
+      "displayName": "larryfang",
+      "image": "https://avatars.githubusercontent.com/u/672772?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 445,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "2.1.1",
+      "createdAt": 1773050396948,
+      "changelog": "v2.1.1: Re-publish with all v2.1.0 changes — Docker support, run.sh launcher, setup wizard, HTML email, --dry-run on all commands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:58168a3fecb676be8f7c25408078289b7ee6ae72b77a6244e184f3bf8afde861"
+}

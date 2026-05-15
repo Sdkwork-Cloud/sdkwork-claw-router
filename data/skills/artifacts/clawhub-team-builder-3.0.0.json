@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/team-builder@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.team_builder",
+  "skill": {
+    "id": 59912,
+    "skillKey": "clawhub-team-builder",
+    "name": "Team Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "team-builder",
+    "url": "https://clawhub.ai/skills/team-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/team-builder-e77a80fd43c481ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在 OpenClaw 上一键部署多 Agent SaaS 团队工作区。内置双开发轨（devops 交付 + fullstack-dev 实现）、实时 spawn 调度、cron 巡检、Deep Dive 产品知识目录、onboarding 引导。支持自定义角色、模型、时区，可选 Telegram 接入。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "beyound87",
+      "userId": "s17dg3qthhjbatdnrgq35n8jrh83j4ba",
+      "displayName": "beyound87",
+      "image": "https://avatars.githubusercontent.com/u/3038772?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1028,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 33
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1775143796429,
+      "changelog": "不使用acp session模式来模拟claude持久化",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d38c7ee652482b12bcd1f5a4b522bd98bd79519e7646d28c2b900feb3f1b580f"
+}

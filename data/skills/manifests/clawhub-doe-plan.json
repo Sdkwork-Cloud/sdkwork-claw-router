@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42223,
+  "uuid": "skill-clawhub-doe-plan",
+  "skillKey": "clawhub-doe-plan",
+  "name": "doe-plan",
+  "summary": "Evidence-backed bioprocess DOE planning for fermentation and upstream optimization. Use this skill when a task requires turning fetched patent, paper, and we...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doe_plan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "minmin-patsnap",
+      "features": [
+        "Evidence-backed bioprocess DOE planning for fermentation and upstream optimization",
+        "Use this skill when a task requires turning fetched patent, paper, and we..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doe-plan@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/166365843?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doe-plan",
+      "url": "https://clawhub.ai/skills/doe-plan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doe-plan",
+    "url": "https://clawhub.ai/skills/doe-plan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doe-plan-ff1537452d51618c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doe-plan@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-doe-plan-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:791c367889eaaa855f39b41e2b711553dc0622714defdb8f2f1dc3380cb1ccdb",
+      "artifactSizeBytes": 2543
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T09:26:57.058Z"
+}

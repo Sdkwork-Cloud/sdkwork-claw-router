@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73586,
+  "uuid": "skill-clawhub-personal-review-report-chinese",
+  "skillKey": "clawhub-personal-review-report-chinese",
+  "name": "个人发展复盘助手",
+  "summary": "根据用户提供的文本或文件，生成结构清晰、内容详实的中文个人发展复盘报告，涵盖职业、人际、健康等多方面分析。",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_review_report_chinese",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yalin Feng",
+      "features": [
+        "根据用户提供的文本或文件，生成结构清晰、内容详实的中文个人发展复盘报告，涵盖职业、人际、健康等多方面分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/personal-review-report-chinese@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65708658?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "personal-review-report-chinese",
+      "url": "https://clawhub.ai/skills/personal-review-report-chinese"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-review-report-chinese",
+    "url": "https://clawhub.ai/skills/personal-review-report-chinese",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-review-report-chinese-26fa322e78e995d4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/personal-review-report-chinese@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-personal-review-report-chinese-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6f0a49bc7e18eeabaf5d510aa77d3fe60e3769f32cb8ea88a5b9ef76c06c9cee",
+      "artifactSizeBytes": 2283
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T09:53:33.394Z"
+}

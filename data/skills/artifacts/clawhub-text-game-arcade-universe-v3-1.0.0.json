@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/text-game-arcade-universe-v3@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_game_arcade_universe_v3",
+  "skill": {
+    "id": 67874,
+    "skillKey": "clawhub-text-game-arcade-universe-v3",
+    "name": "text-game-arcade-universe-v3"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-game-arcade-universe-v3",
+    "url": "https://clawhub.ai/skills/text-game-arcade-universe-v3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-game-arcade-universe-v3-3739f0a4aee44b6d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "综合性 ASCII 文字游戏大厅。严格按规则渲染和裁判五子棋、围棋、井字棋、黑白棋、四子棋、海战棋、中国象棋、国际象棋、扫雷、数独、2048、推箱子、文字迷宫，以及接龙、猜词、猜数、Lights Out、Nim、汉诺塔等小游戏；带强触发词、统一大厅、标准棋盘模板、合法性校验、难度、悔棋与裁判模式。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "52yuanchangxing",
+      "userId": "s178sqjkywrs4vbnfcrr7wx7f583gef5",
+      "displayName": "vx：17605205782",
+      "image": "https://avatars.githubusercontent.com/u/39086567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 786,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773243408702,
+      "changelog": "Text Game Arcade Universe 3.0.0 is a major update with a unified multi-game text game hub, enhanced rule enforcement, and improved rendering.\n\n- 全新综合性文字游戏大厅，支持20+种棋类、益智及文字小游戏切换游玩。\n- 按严格游戏规则渲染和裁判五子棋、围棋、黑白棋、象棋、国际象棋等，棋盘模板更标准有特色。\n- 支持悔棋、难度切换、AI对手、裁判模式，增强互动性与可持续游玩。\n- 全面优化棋盘/谜题渲染，按手机端优化，确保座标明确和个性化字符展示。\n- 大厅入口统一，提供一键切换、规则说明、提示等常用命令。\n- 明确区分触发与非触发情景，防止误触发游戏流程。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bf1d6631d7fa815a5f15cccff9f8e8331e74dddd23bc174f0594998cb98e6981"
+}

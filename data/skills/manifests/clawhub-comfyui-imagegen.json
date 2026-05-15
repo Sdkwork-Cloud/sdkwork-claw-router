@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12924,
+  "uuid": "skill-clawhub-comfyui-imagegen",
+  "skillKey": "clawhub-comfyui-imagegen",
+  "name": "ComfyUI ImageGen (Flux2)",
+  "summary": "Generate images via ComfyUI API (localhost:8188) using Flux2 workflow. Supports structured JSON prompts sent directly as positive prompt parameter, seed/steps customization. Async watcher via sub-agent for low-latency, token-efficient poll.",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.comfyui_imagegen",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "halr9000",
+      "features": [
+        "Generate images via ComfyUI API (localhost:8188) using Flux2 workflow",
+        "Supports structured JSON prompts sent directly as positive prompt parameter, seed/steps customi.",
+        "Async watcher via sub-agent for low-latency, token-efficient polling (every 5s)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/comfyui-imagegen@1.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18482?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "comfyui-imagegen",
+      "url": "https://clawhub.ai/skills/comfyui-imagegen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "comfyui-imagegen",
+    "url": "https://clawhub.ai/skills/comfyui-imagegen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/comfyui-imagegen-dd9fb03880712811.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/comfyui-imagegen@1.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-comfyui-imagegen-1.5.0.json",
+      "version": "1.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8549ba58068e8e877cd0f1eeff0f780e01932b1c741dcb71d0913a0e2e0f3599",
+      "artifactSizeBytes": 2089
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T01:43:47.736Z"
+}

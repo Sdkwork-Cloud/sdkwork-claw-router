@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sysinfo@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sysinfo",
+  "skill": {
+    "id": 70261,
+    "skillKey": "clawhub-sysinfo",
+    "name": "show sysinfo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sysinfo",
+    "url": "https://clawhub.ai/skills/sysinfo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sysinfo-6e0399bbd6a3b310.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "检查和收集系统信息。当用户请求查看系统信息、服务器状态、主机配置、操作系统版本、CPU/内存/磁盘使用情况、网络配置、已安装软件等，使用此 skill。关键词包括：系统信息、服务器状态、主机名、uname、top、磁盘空间、内存占用、网络接口、系统巡检。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xyxsz",
+      "userId": "publishers:xyxsz",
+      "displayName": "xyxsz",
+      "image": "https://avatars.githubusercontent.com/u/134246794?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 258,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773891654812,
+      "changelog": "Initial release of sysinfo skill:\n\n- Collects and summarizes key system information (OS, kernel, CPU, memory, disk, network, uptime, users).\n- Outputs results as a concise Markdown report.\n- Highlights issues (e.g. high disk or memory usage) in the report.\n- Suitable for system inspection, server status checks, and generating system summaries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:52f62ed8e87aa941c4bb844f022d04db52b0f1ca6659da361b49f30401b4ec32"
+}

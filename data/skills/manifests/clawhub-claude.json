@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15991,
+  "uuid": "skill-clawhub-claude",
+  "skillKey": "clawhub-claude",
+  "name": "Claude",
+  "summary": "Optimize long-context reasoning for commercial, legal, and high-stakes documents. Built for users who need stronger logic, cleaner structure, and deeper anal...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Duclawbot",
+      "features": [
+        "Optimize long-context reasoning for commercial, legal, and high-stakes documents",
+        "Built for users who need stronger logic, cleaner structure, and deeper anal..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claude@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/216468018?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claude",
+      "url": "https://clawhub.ai/skills/claude"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude",
+    "url": "https://clawhub.ai/skills/claude",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-c857d09db23e6822.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claude@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claude-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a0430c5bd5c63251196607b3315fdbb3900c55f3f6b4fccd56b6da4056f15273",
+      "artifactSizeBytes": 2406
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T18:56:31.839Z"
+}

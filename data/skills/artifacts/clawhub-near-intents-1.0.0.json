@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/near-intents@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.near_intents",
+  "skill": {
+    "id": 18698,
+    "skillKey": "clawhub-near-intents",
+    "name": "NEAR Intents 1click Api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "near-intents",
+    "url": "https://clawhub.ai/skills/near-intents",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/near-intents-b543ade2d227f8d9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Universal cross-chain swap & bridge skill for OpenClaw using the NEAR Intents 1Click SDK. Supports 14+ blockchains including NEAR, Base, Ethereum, Solana, an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cuongdcdev",
+      "userId": "s172vmzpek995ehsz9f94dw2qx84zp1v",
+      "displayName": "Cuong DC",
+      "image": "https://avatars.githubusercontent.com/u/12132077?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 667,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771182064788,
+      "changelog": "Initial release of universal cross-chain swap & bridge skill using NEAR Intents 1Click SDK.\n\n- Enables cross-chain swaps and bridging across 14+ blockchains, including NEAR, Base, Ethereum, Solana, and Bitcoin.\n- Provides a simple `executeIntent()` API supporting flexible asset, recipient, and mode parameters.\n- Supports both auto (from NEAR) and manual (from other chains) deposit modes.\n- Enforces explicit `refundAddress` for safety with non-NEAR origin swaps.\n- Integrates with 1Click API for seamless quotes, swaps, and bridging—no direct user interaction with NEAR contracts required.\n- Includes detailed usage documentation and asset naming conventions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9f7bdfe1fb87180aa3b513439d1b3e35d4ddf647f0102b0a6578bdb442810a25"
+}

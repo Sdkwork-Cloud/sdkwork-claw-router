@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/breathing-exercise@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.breathing_exercise",
+  "skill": {
+    "id": 59794,
+    "skillKey": "clawhub-breathing-exercise",
+    "name": "Breathing Exercise"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "breathing-exercise",
+    "url": "https://clawhub.ai/skills/breathing-exercise",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/breathing-exercise-36344475d8714434.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "呼吸练习 - 4-7-8 呼吸、盒式呼吸、放松引导"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kaising-openclaw1",
+      "userId": "s17epxftgh3h1zzcr8g36j2dax83xh8g",
+      "displayName": "kaising-openclaw1",
+      "image": "https://avatars.githubusercontent.com/u/266910723?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776839445337,
+      "changelog": "Initial release of breathing-exercise.\n\n- Supports 4-7-8 breathing, box breathing, and relaxation guidance.\n- Allows custom breathing rhythms.\n- Provides usage statistics reports.\n- Command-line interface for easy access to breathing exercises.\n- Offers free and Pro versions with different feature sets.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d1eaa2e4149f173a872408ad2893a93bce6ed3e8af8786be4d623e2702df2b38"
+}

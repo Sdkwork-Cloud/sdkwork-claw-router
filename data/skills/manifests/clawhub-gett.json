@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71217,
+  "uuid": "skill-clawhub-gett",
+  "skillKey": "clawhub-gett",
+  "name": "Gett",
+  "summary": "提供以色列Gett平台叫车、行程查询、费用估算及企业出行服务，支持多车型和路线规划。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gett",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供以色列Gett平台叫车、行程查询、费用估算及企业出行服务，支持多车型和路线规划。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gett@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gett",
+      "url": "https://clawhub.ai/skills/gett"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gett",
+    "url": "https://clawhub.ai/skills/gett",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gett-faee43bbeb24d842.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gett@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gett-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f258d063b555447d9f4e9cd78d1190864ea39155be848f190afcb16b11d89950",
+      "artifactSizeBytes": 2241
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T08:47:46.882Z"
+}

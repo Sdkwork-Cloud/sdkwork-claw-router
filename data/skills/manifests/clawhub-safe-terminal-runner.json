@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22417,
+  "uuid": "skill-clawhub-safe-terminal-runner",
+  "skillKey": "clawhub-safe-terminal-runner",
+  "name": "Safe Script Runner",
+  "summary": "Forces the AI to use a \"temporary file + environment variable isolation\" workflow for script execution, completely resolving terminal freezes and escaping er...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safe_terminal_runner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zaynzhu",
+      "features": [
+        "Forces the AI to use a \"temporary file + environment variable isolation\" workflow for script ex."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/safe-terminal-runner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/66192627?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "safe-terminal-runner",
+      "url": "https://clawhub.ai/skills/safe-terminal-runner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safe-terminal-runner",
+    "url": "https://clawhub.ai/skills/safe-terminal-runner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safe-terminal-runner-00e7a4f5fca14d04.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/safe-terminal-runner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-safe-terminal-runner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0d2dd1b3d118e47ec94ea26fde4c09104e1efd6c24c5e428512123584179031a",
+      "artifactSizeBytes": 2531
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T01:54:32.258Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51179,
+  "uuid": "skill-clawhub-undertow",
+  "skillKey": "clawhub-undertow",
+  "name": "Undertow",
+  "summary": "Skill discovery engine for AI coding agents. Recommends and installs the right skill when you need it — code review, test generation, debugging, commit messa...",
+  "version": "0.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.undertow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "8co",
+      "features": [
+        "Skill discovery engine for AI coding agents",
+        "Recommends and installs the right skill when you need it — code review, test generation, debugg."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/undertow@0.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1120377?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "undertow",
+      "url": "https://clawhub.ai/skills/undertow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "undertow",
+    "url": "https://clawhub.ai/skills/undertow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/undertow-facbd27829f29f15.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/undertow@0.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-undertow-0.2.2.json",
+      "version": "0.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:86f2d6955d6d55196b55fd8c02ca7812320836baed9049001cfbd24bb2a913c9",
+      "artifactSizeBytes": 2538
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T21:17:42.703Z"
+}

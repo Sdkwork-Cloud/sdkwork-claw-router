@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/caoliao-qrcode-markdown-content-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.caoliao_qrcode_markdown_content_skill",
+  "skill": {
+    "id": 59598,
+    "skillKey": "clawhub-caoliao-qrcode-markdown-content-skill",
+    "name": "Caoliao Qrcode Markdown Content"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "caoliao-qrcode-markdown-content-skill",
+    "url": "https://clawhub.ai/skills/caoliao-qrcode-markdown-content-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/caoliao-qrcode-markdown-content-skill-150819e825714d3d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "从草料二维码链接获取 Markdown 内容。当用户提供匹配 https://qr61.cn/{path1}/{path2} 格式的 URL，或要求获取草料二维码链接内容时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nbjedi",
+      "userId": "publishers:nbjedi",
+      "displayName": "nbjedi",
+      "image": "https://avatars.githubusercontent.com/u/15520487?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 420,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772279499799,
+      "changelog": "- Initial release of caoliao-qrcode-markdown-content-skill.\n- Allows retrieval of Markdown content from 草料二维码 short links matching https://qr61.cn/{segment1}/{segment2}.\n- Appends `.md` to the provided URL to fetch Markdown content.\n- Compatible with Windows (PowerShell using curl.exe) and macOS/Linux (curl).\n- Provides clear feedback if the request fails or an invalid URL is provided.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:57923255f4d25de8d564fe8f7dd07b935a0571cda6b4f411daca55089888d09a"
+}

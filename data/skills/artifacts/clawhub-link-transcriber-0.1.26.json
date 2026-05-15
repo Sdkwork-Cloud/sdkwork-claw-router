@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/link-transcriber@0.1.26",
+  "version": "0.1.26",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.link_transcriber",
+  "skill": {
+    "id": 24163,
+    "skillKey": "clawhub-link-transcriber",
+    "name": "Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "link-transcriber",
+    "url": "https://clawhub.ai/skills/link-transcriber",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/link-transcriber-b27f089e326fced1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a Douyin or Xiaohongshu link into a concise summary, an actionable todo list, and a recommended reminder time. The hosted service handles the platform a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bobobo2026",
+      "userId": "s17627w7ea76n9atagptyjddcn8418a2",
+      "displayName": "bobobo2026",
+      "image": "https://avatars.githubusercontent.com/u/268898726?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 419,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 21
+    },
+    "latestVersion": {
+      "version": "0.1.26",
+      "createdAt": 1776822995825,
+      "changelog": "Default skill script now renders summary, todo, reminder, and comment reference directly instead of requiring the caller to reconstruct sections from JSON.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b8b79927a9e00f288eb59b7df29bc339f52bd8c8ec7450b1797361f13336c523"
+}

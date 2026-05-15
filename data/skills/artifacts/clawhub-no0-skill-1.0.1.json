@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/no0-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.no0_skill",
+  "skill": {
+    "id": 50061,
+    "skillKey": "clawhub-no0-skill",
+    "name": "No.0-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "no0-skill",
+    "url": "https://clawhub.ai/skills/no0-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/no0-skill-257db07a010cbc8a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitors and protects AI agent identity and sensitive data by detecting tampering and enforcing access control with rollback and audit capabilities."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wanghaoyu-xiaolu",
+      "userId": "s170a384s0fr12zftzfd61c82986btda",
+      "displayName": "WangHaoyu-xiaolu",
+      "image": "https://avatars.githubusercontent.com/u/260648422?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 46,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778305185632,
+      "changelog": "- Initial release of No.0 — AI Agent Safety Guardian.\n- Provides cognitive identity protection for AI agents using file integrity monitoring and rollback (Core module).\n- Adds optional data-layer control (DLC) for strict access control, file classification, authorization, audit logging, and anomaly detection.\n- CLI supports monitoring, versioning, diffing, rollbacks, classification commands, and audit review.\n- Designed for easy install, zero required dependencies for Core, and clear separation between Core and DLC functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:21983bacc69e0151013ee85a93b4d8f867137022e00deaa478c59a0e50d9496c"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13427,
+  "uuid": "skill-clawhub-openclaw-marshal",
+  "skillKey": "clawhub-openclaw-marshal",
+  "name": "Openclaw Marshal",
+  "summary": "Compliance and policy enforcement for agent workspaces. Define security policies, audit compliance, check command restrictions, and generate audit-ready reports. Free alert layer — upgrade to openclaw-marshal-pro for active enforcement, bl.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_marshal",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AtlasPA",
+      "features": [
+        "Compliance and policy enforcement for agent workspaces",
+        "Define security policies, audit compliance, check command restrictions, and generate audit-read.",
+        "Free alert layer — upgrade to openclaw-marshal-pro for active enforcement, blocking, and automa."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-marshal@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/231540010?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-marshal",
+      "url": "https://clawhub.ai/skills/openclaw-marshal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-marshal",
+    "url": "https://clawhub.ai/skills/openclaw-marshal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-marshal-7e9a63f04587ebc2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-marshal@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-marshal-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d3f5c96dc982907a60fa04b566259dcf42428567aae0cea266e359039956d40",
+      "artifactSizeBytes": 2227
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T10:26:26.082Z"
+}

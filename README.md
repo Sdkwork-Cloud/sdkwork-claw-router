@@ -19,6 +19,9 @@ Rust handlers, persistence implementations, and repeatable verification.
   hand-edited.
 - Schema registry is the source of truth for business tables, field contracts,
   OpenAPI payloads, generated SDKs, and frontend data audits.
+- Canonical standards live under `specs/`: `specs/API_SPEC.md` for API,
+  OpenAPI, operationId, auth context, and SDK generation rules, and
+  `specs/DATABASE_SPEC.md` for database and schema-registry rules.
 - `docs/schema-registry/frontend-route-classification.yaml` is the source of
   truth for portal route delivery class. Every actual route is one of
   `sdk_backed_business_runtime`, `schema_provenanced_content`, or
@@ -46,9 +49,11 @@ Rust handlers, persistence implementations, and repeatable verification.
 - `services/` - Rust product crates for gateway, app API, admin API, and shared
   product logic.
 - `apps/sdkwork-claw-router-portal/` - React portal workspace.
-- `sdks/clawrouter-app-sdk/` - generated app API SDK.
-- `sdks/clawrouter-backend-sdk/` - generated backend API SDK.
+- `sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/` - generated app API TypeScript SDK.
+- `sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/` - generated backend API TypeScript SDK.
+- `sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript/` - generated OpenAI-compatible gateway TypeScript SDK.
 - `docs/schema-registry/` - table and frontend contract registry.
+- `specs/` - canonical API and database standards.
 - `data/sdkwork-models/` - standalone model catalog submodule mount point for
   vendor-scoped JSON model facts, pricing data, overlays, and language SDK
   loaders. See `docs/32-sdkwork-models-standard.md` and
@@ -69,6 +74,8 @@ pnpm.cmd build
 pnpm.cmd start
 pnpm.cmd release
 pnpm.cmd portal:dev
+pnpm.cmd desktop:dev
+pnpm.cmd service:dev
 pnpm.cmd server:dev
 pnpm.cmd smoke:dev
 pnpm.cmd product:check
@@ -174,6 +181,10 @@ Command intent:
   the release binary when it exists.
 - `pnpm.cmd release` runs `release:preflight` and the full `verify` gate.
 - `pnpm.cmd portal:dev` starts the browser portal only.
+- `pnpm.cmd desktop:dev` starts the full install-checked workspace with
+  desktop environment flags.
+- `pnpm.cmd service:dev` starts the full install-checked workspace with
+  service-mode environment flags.
 - `pnpm.cmd server:dev` starts Rust services plus the portal dev server.
 - `pnpm.cmd smoke:dev` starts the root `pnpm dev` entrypoint on isolated
   random local ports, verifies the edge and direct OpenAPI/runtime URLs, and
@@ -296,7 +307,8 @@ Run the full commercial gate before delivery:
 pnpm.cmd verify
 ```
 
-`pnpm.cmd verify` runs:
+`pnpm.cmd verify` runs the static, build, production-smoke, and broad test gates
+without starting the live `pnpm dev` workspace by default:
 
 - `cargo fmt --check`
 - `cargo check --all-targets` with `RUSTFLAGS=-D warnings`
@@ -314,7 +326,6 @@ pnpm.cmd verify
 - `python -B -m tools.frontend_operation_audit`
 - `python -B -m tools.frontend_field_audit`
 - `python -B -m tools.java_legacy_contract_audit`
-- edge dev server smoke test through root `pnpm dev`
 - portal forced typecheck
 - production artifact build
 - portal bundle budget audit
@@ -333,19 +344,32 @@ node scripts/verify-claw-router-product.mjs --skip-contract-guardians
 
 Do not use `--skip-contract-guardians` for final delivery.
 
-If the local shell sandbox blocks `child_process.spawn`, `pnpm.cmd smoke:dev`
-and the edge dev smoke inside `pnpm.cmd verify` print a skip message instead
-of failing. CI and release environments should force that smoke to be mandatory:
+The live edge dev smoke still exists, but it is opt-in because it launches
+the root `pnpm dev` entrypoint, installer/catalog startup, Rust services, and
+the portal dev server. Run it directly when you need that coverage:
+
+```powershell
+pnpm.cmd smoke:dev
+```
+
+To include the same live dev smoke inside `verify`, opt in explicitly:
+
+```powershell
+pnpm.cmd verify -- --with-edge-dev-smoke
+```
+
+If the local shell sandbox blocks `child_process.spawn`, the smoke prints a
+skip message instead of failing. CI and release environments that require this
+coverage should make the smoke mandatory:
 
 ```powershell
 $env:CLAWROUTER_EDGE_DEV_SMOKE_REQUIRED="1"
-pnpm.cmd smoke:dev
-pnpm.cmd verify
+pnpm.cmd verify -- --with-edge-dev-smoke
 ```
 
-Use `node scripts/verify-claw-router-product.mjs --skip-edge-dev-smoke` only
-for constrained local environments after a separate mandatory smoke has run in
-CI or on a release host.
+`CLAWROUTER_VERIFY_EDGE_DEV_SMOKE=1` also opts `verify` into the live dev smoke.
+Use `node scripts/verify-claw-router-product.mjs --skip-edge-dev-smoke` only to
+override an environment that would otherwise enable it.
 
 ## Fast Local Iteration
 
@@ -359,6 +383,7 @@ pnpm.cmd verify:fast
 and source-standard regressions:
 
 - `node scripts/run-claw-router-product.test.mjs`
+- `pnpm.cmd --dir apps/sdkwork-claw-router-portal exec tsx auth-runtime.test.ts`
 - `python -B -m unittest tests.test_frontend_source_hygiene_standard`
 
 It intentionally skips Rust compile/tests, SDK and architecture guardians,
@@ -650,7 +675,7 @@ set to an explicit generator origin; when it is empty, the edge server defaults
 to the current web page origin derived from the incoming request host and
 scheme. Configure `PORTAL_TOOL_API_SDK_GENERATOR_API_KEY` when the generator
 requires a bearer token. Standard `pnpm.cmd build` also creates generated
-TypeScript app and backend SDK runtime packages and writes release ZIP archives
+TypeScript app and backend SDK runtime packages and writes prebuilt SDK ZIP archives
 into `apps/sdkwork-claw-router-portal/dist/sdk-archives`; `pnpm.cmd start`
 uses that directory as `PORTAL_TOOL_API_SDK_ARCHIVE_ROOT` by default. When a
 live generator request fails and `PORTAL_TOOL_API_SDK_ARCHIVE_ROOT` is
@@ -687,12 +712,15 @@ configured but the normalized archive is missing, it returns
    `pnpm.cmd release:preflight -- --strict --strict-root-clean` on CI or a
    release host.
 2. Run `pnpm.cmd verify`.
-3. In CI or release packaging, run the same gate with
+3. In CI or release packaging, opt into the live dev edge smoke when required
+   with `pnpm.cmd verify -- --with-edge-dev-smoke` and
+   `CLAWROUTER_EDGE_DEV_SMOKE_REQUIRED=1`.
+4. In CI or release packaging, run the same gate with
    `CLAWROUTER_BROWSER_SMOKE_REQUIRED=1` and a working Chrome/Edge/Chromium
    DevTools target.
-4. Run `pnpm.cmd test:postgres:docker` when Docker Desktop is available.
-5. Review generated audits under `generated/schema/frontend/`.
-6. Review `docs/schema-registry/frontend-route-classification.yaml` for any
+5. Run `pnpm.cmd test:postgres:docker` when Docker Desktop is available.
+6. Review generated audits under `generated/schema/frontend/`.
+7. Review `docs/schema-registry/frontend-route-classification.yaml` for any
    added or touched route, including evidence files, package binding, and
    delivery kind. For `schema_provenanced_content`, verify
    `source_manifest_ref` exists in

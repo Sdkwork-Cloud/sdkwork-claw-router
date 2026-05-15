@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/omega-notation@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.omega_notation",
+  "skill": {
+    "id": 30158,
+    "skillKey": "clawhub-omega-notation",
+    "name": "Omega Notation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "omega-notation",
+    "url": "https://clawhub.ai/skills/omega-notation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/omega-notation-21bbee71c930fcde.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Structured output compression for AI agents. Dramatically reduces token cost on structured data (evals, decisions, routing, policies, media summaries). Desig..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "theshadowrose",
+      "userId": "s1736mx5m1zt9qzh6fvzvffnhh83hgf8",
+      "displayName": "Shadow Rose",
+      "image": "https://avatars.githubusercontent.com/u/262919821?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 288,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774056987593,
+      "changelog": "Removed child_process from test runner, clean security scan",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d2cd4135246175973893bf67bb7de7f44afb7c536b25f261efeb7ae3acad0ca6"
+}

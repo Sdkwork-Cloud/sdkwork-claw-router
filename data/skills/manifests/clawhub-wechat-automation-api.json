@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66851,
+  "uuid": "skill-clawhub-wechat-automation-api",
+  "skillKey": "clawhub-wechat-automation-api",
+  "name": "Wechat Automation Api",
+  "summary": "微信发信能力：控制本机发送微信文本或图片。触发词：给[某人]发微信、通知[某人]、把这个用微信发给[某人]、用微信发个图片",
+  "version": "1.0.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_automation_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "niansen3-svg",
+      "features": [
+        "微信发信能力：控制本机发送微信文本或图片。触发词：给[某人]发微信、通知[某人]、把这个用微信发给[某人]、用微信发个图片"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-automation-api@1.0.11",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266380453?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-automation-api",
+      "url": "https://clawhub.ai/skills/wechat-automation-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-automation-api",
+    "url": "https://clawhub.ai/skills/wechat-automation-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-automation-api-c6f7c9c642cdbbe7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-automation-api@1.0.11",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-automation-api-1.0.11.json",
+      "version": "1.0.11",
+      "runtime": "metadata",
+      "checksumHash": "sha256:215b89d8e26f71c1a92d80b1e8d40576f6718d6e543a3f11a0b6de6b2c126486",
+      "artifactSizeBytes": 2061
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T05:35:12.156Z"
+}

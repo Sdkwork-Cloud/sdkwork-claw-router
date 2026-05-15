@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/synapse-layer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.synapse_layer",
+  "skill": {
+    "id": 47442,
+    "skillKey": "clawhub-synapse-layer",
+    "name": "Synapse Layer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "synapse-layer",
+    "url": "https://clawhub.ai/skills/synapse-layer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/synapse-layer-4df5b2ac8f4da803.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides persistent, encrypted AI agent memory with a 4-layer security pipeline for storing, retrieving, sharing, and analyzing agent memories."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rafacpti23",
+      "userId": "s17b5n47g1qm79fvgwxrsnk4m583na4y",
+      "displayName": "Rafa Martins",
+      "image": "https://avatars.githubusercontent.com/u/146174365?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 114,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776443181615,
+      "changelog": "Initial release: Python SDK for Synapse Layer persistent memory infrastructure with 4-layer Cognitive Security Pipeline (PII redaction, AES-256-GCM encryption, intent validation, differential privacy). Includes complete documentation, API reference, security details, framework integrations, and test scripts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cab6221b80e2449f2a4b7fe428d3b7176cef8f153c7fcb2d97b58c548c5831f3"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54276,
+  "uuid": "skill-clawhub-twilio-comms",
+  "skillKey": "clawhub-twilio-comms",
+  "name": "Twilio Comms",
+  "summary": "Twilio SMS, Voice, WhatsApp, and Verify (2FA) — send messages, make calls, and run verification flows from the CLI.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twilio_comms",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fr3kstyle",
+      "features": [
+        "Twilio SMS, Voice, WhatsApp, and Verify (2FA) — send messages, make calls, and run verification."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/twilio-comms@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218435724?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "twilio-comms",
+      "url": "https://clawhub.ai/skills/twilio-comms"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twilio-comms",
+    "url": "https://clawhub.ai/skills/twilio-comms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twilio-comms-76120cd2c53b7486.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/twilio-comms@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-twilio-comms-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d211c6b59e8eb5d5a63a53ac7959bc0c760e9172146e725de7d9f9ac7b677f45",
+      "artifactSizeBytes": 1851
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T11:13:11.097Z"
+}

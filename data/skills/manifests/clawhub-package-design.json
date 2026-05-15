@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69771,
+  "uuid": "skill-clawhub-package-design",
+  "skillKey": "clawhub-package-design",
+  "name": "package design包装设计&改进",
+  "summary": "包装设计能力；支持包装方案设计、材料选择、法规审核；当进行产品包装设计或包材选型时使用",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.package_design",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tinker",
+      "features": [
+        "包装设计能力；支持包装方案设计、材料选择、法规审核；当进行产品包装设计或包材选型时使用"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/package-design@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3884483?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "package-design",
+      "url": "https://clawhub.ai/skills/package-design"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "package-design",
+    "url": "https://clawhub.ai/skills/package-design",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/package-design-a38fca519b4a2fa8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/package-design@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-package-design-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5dfd3ae3c1aa81322e325ff2a0d30a483a357dd6dfadf6d1d841f93857e88d3c",
+      "artifactSizeBytes": 1892
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T06:06:40.752Z"
+}

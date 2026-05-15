@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-keyboard@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_keyboard",
+  "skill": {
+    "id": 32407,
+    "skillKey": "clawhub-claw-keyboard",
+    "name": "Claw Keyboard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-keyboard",
+    "url": "https://clawhub.ai/skills/claw-keyboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-keyboard-057d2ed654342c8e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control keyboard RGB backlight, custom LEDs, macros, key mapping, and profile settings via USB HID. Use when the user asks to control keyboard lighting, mana..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dionren",
+      "userId": "s176bnjg578frkqygx1mbxq1ts83ybbs",
+      "displayName": "任嘉",
+      "image": "https://avatars.githubusercontent.com/u/5842910?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 252,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1774088221290,
+      "changelog": "修复 ClawHub 安全扫描告警：metadata 改为纯 YAML 格式、破坏性操作添加用户确认标注、新增 Safety 章节",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fb22bfdb3acd6ba3fa4cbeda0184ef25c8e860d9163f8cfb9e73f07688237dae"
+}

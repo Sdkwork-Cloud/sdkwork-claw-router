@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39889,
+  "uuid": "skill-clawhub-news-telegram-push",
+  "skillKey": "clawhub-news-telegram-push",
+  "name": "News Telegram Push",
+  "summary": "Curate and send twice-daily English Telegram news updates featuring top 10 vetted stories on FX/CFD, crypto, trading tech, finance, and global politics.",
+  "version": "2.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_telegram_push",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chamic24",
+      "features": [
+        "Curate and send twice-daily English Telegram news updates featuring top 10 vetted stories on FX."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/news-telegram-push@2.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/182578680?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "news-telegram-push",
+      "url": "https://clawhub.ai/skills/news-telegram-push"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-telegram-push",
+    "url": "https://clawhub.ai/skills/news-telegram-push",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-telegram-push-166edc5489654b0d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/news-telegram-push@2.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-news-telegram-push-2.0.4.json",
+      "version": "2.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:979bd2ac24dbc3ec26bbd0860978297ae8f1aa0ab496855f30d8f66479829fa1",
+      "artifactSizeBytes": 2367
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T20:36:10.729Z"
+}

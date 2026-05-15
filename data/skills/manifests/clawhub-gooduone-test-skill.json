@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41147,
+  "uuid": "skill-clawhub-gooduone-test-skill",
+  "skillKey": "clawhub-gooduone-test-skill",
+  "name": "Test Skill",
+  "summary": "Get current weather and forecasts (no API key required).",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gooduone_test_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gooduone",
+      "features": [
+        "Get current weather and forecasts (no API key required)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gooduone-test-skill@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11918362?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gooduone-test-skill",
+      "url": "https://clawhub.ai/skills/gooduone-test-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gooduone-test-skill",
+    "url": "https://clawhub.ai/skills/gooduone-test-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gooduone-test-skill-1ce1d960b223d410.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gooduone-test-skill@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gooduone-test-skill-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ed2772dc76dd3b0fa86d79f8e798ea7361a6a80936708a36170987e4f0a992ef",
+      "artifactSizeBytes": 1890
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T02:23:52.087Z"
+}

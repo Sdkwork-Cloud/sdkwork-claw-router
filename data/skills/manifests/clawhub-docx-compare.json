@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49265,
+  "uuid": "skill-clawhub-docx-compare",
+  "skillKey": "clawhub-docx-compare",
+  "name": "DOCX Compare",
+  "summary": "Compare two Word documents (DOCX) to find duplicate text paragraphs and duplicate images. Supports exact string matching, fuzzy matching (difflib), and image...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docx_compare",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zmz209",
+      "features": [
+        "Compare two Word documents (DOCX) to find duplicate text paragraphs and duplicate images",
+        "Supports exact string matching, fuzzy matching (difflib), and image..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/docx-compare@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23046174?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "docx-compare",
+      "url": "https://clawhub.ai/skills/docx-compare"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docx-compare",
+    "url": "https://clawhub.ai/skills/docx-compare",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docx-compare-1b4ad4176298b7e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/docx-compare@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-docx-compare-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:607a824e5a8f9ad5104bed8f0ce214db0bab9a7434c5e32ca606f7d4e02bb309",
+      "artifactSizeBytes": 1912
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T05:20:32.007Z"
+}

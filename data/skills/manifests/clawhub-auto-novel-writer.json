@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70514,
+  "uuid": "skill-clawhub-auto-novel-writer",
+  "skillKey": "clawhub-auto-novel-writer",
+  "name": "auto-novel-writer",
+  "summary": "长篇爽文小说写作助手，支持多小说管理、章节记忆管理、大纲追踪、AI味去除。专为男频爽文（扮猪吃虎、金手指系统、无敌流）设计，解决长上下文限制问题。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_novel_writer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CaptainDaveluo",
+      "features": [
+        "长篇爽文小说写作助手，支持多小说管理、章节记忆管理、大纲追踪、AI味去除。专为男频爽文（扮猪吃虎、金手指系统、无敌流）设计，解决长上下文限制问题。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-novel-writer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8756014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-novel-writer",
+      "url": "https://clawhub.ai/skills/auto-novel-writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-novel-writer",
+    "url": "https://clawhub.ai/skills/auto-novel-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-novel-writer-dd19c2384800ed01.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-novel-writer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-novel-writer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d445860fab673b01e021638f7a80e9d87249735448fbb2dca00bb4796a2a74e",
+      "artifactSizeBytes": 2579
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T07:51:41.914Z"
+}

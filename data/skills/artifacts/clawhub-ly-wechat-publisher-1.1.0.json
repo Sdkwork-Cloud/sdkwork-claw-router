@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ly-wechat-publisher@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ly_wechat_publisher",
+  "skill": {
+    "id": 71941,
+    "skillKey": "clawhub-ly-wechat-publisher",
+    "name": "微信公众号发布技能"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ly-wechat-publisher",
+    "url": "https://clawhub.ai/skills/ly-wechat-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ly-wechat-publisher-7dd55c989432d660.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动收集15条AI新闻，生成HTML内容，并发布到微信公众号草稿箱，支持多模板和自定义发布时间。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "403914291",
+      "userId": "s173w6c6a6hdnc51n5eg51s2cx83qd4z",
+      "displayName": "403914291",
+      "image": "https://avatars.githubusercontent.com/u/95468942?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774614319934,
+      "changelog": "试用次数增加到 50 次，覆盖用户学习成本和模板测试",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fae1d933dc520a8575965c9852b307238af8ed30abf181fe0ea38f7bf099c135"
+}

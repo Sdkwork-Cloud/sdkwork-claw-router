@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/airfoil@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.airfoil",
+  "skill": {
+    "id": 10959,
+    "skillKey": "clawhub-airfoil",
+    "name": "Airfoil"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "airfoil",
+    "url": "https://clawhub.ai/skills/airfoil",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/airfoil-621306704b3c1b42.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control AirPlay speakers via Airfoil from the command line. Connect, disconnect, set volume, and manage multi-room audio with simple CLI commands."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "asteinberger",
+      "userId": "publishers:asteinberger",
+      "displayName": "Andy Steinberger",
+      "image": "https://avatars.githubusercontent.com/u/133219358?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2337,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769324953058,
+      "changelog": "Added YAML frontmatter with description for ClawdHub",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d831083d17cb6c95b25a3452630a20ee4c143cb91c61a4102dcbdac7f844966e"
+}

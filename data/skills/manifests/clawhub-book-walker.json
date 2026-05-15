@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69755,
+  "uuid": "skill-clawhub-book-walker",
+  "skillKey": "clawhub-book-walker",
+  "name": "Book Walker",
+  "summary": "交互式 PDF 逐行阅读器。当用户想要阅读 PDF 文档、控制阅读进度（下一页、上一页、跳转第 X 页）、搜索内容、添加书签、整理 PDF 列表时使用此 skill。支持「开始读」「下一句」「去第 X 页」「搜索」「书签」等自然语言指令。适用于长文档分块阅读、定位特定章节、关键词搜索等场景。",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_walker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "YoungAndSure",
+      "features": [
+        "交互式 PDF 逐行阅读器。当用户想要阅读 PDF 文档、控制阅读进度（下一页、上一页、跳转第 X 页）、搜索内容、添加书签、整理 PDF 列表时使用此 skill。支持「开始读」「下一句」."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-walker@2.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20354109?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-walker",
+      "url": "https://clawhub.ai/skills/book-walker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-walker",
+    "url": "https://clawhub.ai/skills/book-walker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-walker-2776b166dfd91d41.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-walker@2.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-walker-2.0.2.json",
+      "version": "2.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8adea796f0c4bb233be307a7c28b6cdf20c0d4ce2daa09bf770487c8973b7e5b",
+      "artifactSizeBytes": 2450
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T12:00:41.735Z"
+}

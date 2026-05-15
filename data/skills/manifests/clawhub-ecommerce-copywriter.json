@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71049,
+  "uuid": "skill-clawhub-ecommerce-copywriter",
+  "skillKey": "clawhub-ecommerce-copywriter",
+  "name": "电商爆款文案生成器",
+  "summary": "电商爆款文案生成技能。为淘宝/拼多多/抖音/京东卖家生成高转化率的商品标题、详情页文案、卖点提炼和促销文案。使用场景：(1) 商品标题优化，(2) 详情页文案生成，(3) 卖点提炼，(4) 促销活动文案，(5) 竞品文案分析。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecommerce_copywriter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "changeworldy-cyber",
+      "features": [
+        "电商爆款文案生成技能。为淘宝/拼多多/抖音/京东卖家生成高转化率的商品标题、详情页文案、卖点提炼和促销文案。使用场景：(1) 商品标题优化，(2) 详情页文案生成，(3) 卖点提炼，(4)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ecommerce-copywriter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/253863426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ecommerce-copywriter",
+      "url": "https://clawhub.ai/skills/ecommerce-copywriter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecommerce-copywriter",
+    "url": "https://clawhub.ai/skills/ecommerce-copywriter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecommerce-copywriter-94889f67ad72189d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ecommerce-copywriter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ecommerce-copywriter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:62e2ce55d2879318f992f0df049b5d0f876775f20f0ce8087a22fe11b5a7b220",
+      "artifactSizeBytes": 2146
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T03:58:44.460Z"
+}

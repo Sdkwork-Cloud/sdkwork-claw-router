@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40718,
+  "uuid": "skill-clawhub-move-planner",
+  "skillKey": "clawhub-move-planner",
+  "name": "Move Planner",
+  "summary": "Plan and manage residential moves with timelines, tasks, vendors, address changes, school enrollment, and budget tracking using smart templates for all move...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.move_planner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chris-openclaw",
+      "features": [
+        "Plan and manage residential moves with timelines, tasks, vendors, address changes, school enrol."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/move-planner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271059507?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "move-planner",
+      "url": "https://clawhub.ai/skills/move-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "move-planner",
+    "url": "https://clawhub.ai/skills/move-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/move-planner-5ba10eb8934a8bcb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/move-planner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-move-planner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d2ce3eea738d89993dd97645bf4f96fb9fd001a498ebdb794d3198739f51f54d",
+      "artifactSizeBytes": 2434
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T18:38:32.770Z"
+}

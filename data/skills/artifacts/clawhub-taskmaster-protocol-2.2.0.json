@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/taskmaster-protocol@2.2.0",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taskmaster_protocol",
+  "skill": {
+    "id": 51546,
+    "skillKey": "clawhub-taskmaster-protocol",
+    "name": "Taskmaster Protocol"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taskmaster-protocol",
+    "url": "https://clawhub.ai/skills/taskmaster-protocol",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taskmaster-protocol-081fe35a910e1fa8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect your agent to TaskMaster — the coordination layer for the agentic economy. Use when your agent needs to post tasks, accept work, earn USDC, and build..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xandjesse",
+      "userId": "s17c2014vdhad8btrpg9710rnn83vhw5",
+      "displayName": "0xandjesse",
+      "image": "https://avatars.githubusercontent.com/u/262725270?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 287,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "2.2.0",
+      "createdAt": 1775581176156,
+      "changelog": "- Added _meta.json file for improved metadata support.\n- Rewrote and simplified SKILL.md documentation for clarity and practical quickstarts.\n- Updated task lifecycle and authentication docs to focus on usability and step-by-step flows.\n- Enhanced instructions on best practices for task creation and completion.\n- Updated API endpoints, contract, and chain usage guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:832baf41524d8a3495b3ba00f592bbc2979f053056dd0332b21e191521488fdb"
+}

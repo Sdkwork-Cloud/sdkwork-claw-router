@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71899,
+  "uuid": "skill-clawhub-text-polish",
+  "skillKey": "clawhub-text-polish",
+  "name": "Text Polish",
+  "summary": "对文本进行润色和语义纠错。移除错别字、改善表达、修正语义不一致、保持风格一致。用于用户说检查文字、校对、润色、修正表达、改一改。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_polish",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Primordia",
+      "features": [
+        "对文本进行润色和语义纠错。移除错别字、改善表达、修正语义不一致、保持风格一致。用于用户说检查文字、校对、润色、修正表达、改一改。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/text-polish@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224094441?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "text-polish",
+      "url": "https://clawhub.ai/skills/text-polish"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-polish",
+    "url": "https://clawhub.ai/skills/text-polish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-polish-21ee2b9698646fb7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/text-polish@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-text-polish-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:91f14b91d6059fa00769609a5092c1bac023a69f3a048e5224063dcb41f99c8c",
+      "artifactSizeBytes": 2249
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T18:05:16.199Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47525,
+  "uuid": "skill-clawhub-clipx-skills",
+  "skillKey": "clawhub-clipx-skills",
+  "name": "BNBCHAIN Protocol & Matrices Analysis — Powered by ClipX",
+  "summary": "Thin client for the private ClipX BNBChain API, returning text-only JSON metrics and rankings for BNB Chain (no scraping code, no API keys).",
+  "version": "1.0.20",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clipx_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClipX",
+      "features": [
+        "Thin client for the private ClipX BNBChain API, returning text-only JSON metrics and rankings f."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clipx-skills@1.0.20",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/241464339?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clipx-skills",
+      "url": "https://clawhub.ai/skills/clipx-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clipx-skills",
+    "url": "https://clawhub.ai/skills/clipx-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clipx-skills-463bbdb946636250.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clipx-skills@1.0.20",
+      "artifactUrl": "data/skills/artifacts/clawhub-clipx-skills-1.0.20.json",
+      "version": "1.0.20",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a4ba83a3410638914e56f6f1789c090db23f140dd3a6c4024683da1e193356e",
+      "artifactSizeBytes": 2092
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T23:33:40.580Z"
+}

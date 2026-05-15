@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/health-reminder@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.health_reminder",
+  "skill": {
+    "id": 20230,
+    "skillKey": "clawhub-health-reminder",
+    "name": "Health Reminder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "health-reminder",
+    "url": "https://clawhub.ai/skills/health-reminder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/health-reminder-fe9e332dce38690d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Health reminder assistant - medication reminders, water intake tracking, activity prompts"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 556,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775129095790,
+      "changelog": "Restore the intended health reminder content and harden local data initialization.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:61c98c92991f32a90ebee6458ab5be3f08a0ce55f2f6ad74e6855c8537fad92a"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tavily-zhipu-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tavily_zhipu_search",
+  "skill": {
+    "id": 61175,
+    "skillKey": "clawhub-tavily-zhipu-search",
+    "name": "Tavily + Zhipu Web Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tavily-zhipu-search",
+    "url": "https://clawhub.ai/skills/tavily-zhipu-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tavily-zhipu-search-6882113c3955df0b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "统一网络搜索（Tavily 优先 + 智谱兜底）。当用户需要搜索最新新闻、实时信息、查询网络资料时使用此 skill。优先 Tavily（分钟级实时），失败自动回退智谱 MCP web_search_prime（Coding Plan 免费额度）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mydearzsy",
+      "userId": "s17c4sh7gjhrxz0m04w738q56183g4ym",
+      "displayName": "mydearzsy",
+      "image": "https://avatars.githubusercontent.com/u/5027137?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775698718406,
+      "changelog": "Unified web search: Tavily primary, Zhipu MCP fallback. Zero hardcoded keys.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e2be9b8f4d203bdbc44cc29c35f4c20f8233e2a68e6892f4c81f44d5f41fbee9"
+}

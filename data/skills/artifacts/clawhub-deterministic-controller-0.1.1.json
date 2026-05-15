@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deterministic-controller@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deterministic_controller",
+  "skill": {
+    "id": 16766,
+    "skillKey": "clawhub-deterministic-controller",
+    "name": "deterministic-controller"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deterministic-controller",
+    "url": "https://clawhub.ai/skills/deterministic-controller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deterministic-controller-89ec63dfbe267c13.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deterministic, evidence-gated controller templates for OpenClaw enabling repeatable orchestration loops with heartbeat, cron poll, and sprint planning."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "variable190",
+      "userId": "publishers:variable190",
+      "displayName": "Dan",
+      "image": "https://avatars.githubusercontent.com/u/50242220?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 851,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1771436314691,
+      "changelog": "Docs safety hardening: add SECURITY.md; clarify heartbeat full-refresh reads include memory; note Telegram logging is optional.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:07ba14de7e5a769bb39d38df3a2adcb0eeae74146f8bd316f6a7ae9d69592a2d"
+}

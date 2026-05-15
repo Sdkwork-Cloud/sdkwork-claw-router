@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28643,
+  "uuid": "skill-clawhub-tender-deadline-tracker",
+  "skillKey": "clawhub-tender-deadline-tracker",
+  "name": "Tender Deadline Tracker",
+  "summary": "Help a bid manager track multiple tender submissions, deadlines, required documents, and document completeness for construction bids.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tender_deadline_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nitevity",
+      "features": [
+        "Help a bid manager track multiple tender submissions, deadlines, required documents, and docume."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tender-deadline-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/206263748?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tender-deadline-tracker",
+      "url": "https://clawhub.ai/skills/tender-deadline-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tender-deadline-tracker",
+    "url": "https://clawhub.ai/skills/tender-deadline-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tender-deadline-tracker-d42d66d87532f2ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tender-deadline-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tender-deadline-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5512ca15b9e7c1390c59bf7fe60cd8dd9ce9b93daa2170ea188404cc1d1ec7fc",
+      "artifactSizeBytes": 2601
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T19:48:54.996Z"
+}

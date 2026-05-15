@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/grsai-nano-banana@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grsai_nano_banana",
+  "skill": {
+    "id": 60216,
+    "skillKey": "clawhub-grsai-nano-banana",
+    "name": "grsai nano-banana 生图技能"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grsai-nano-banana",
+    "url": "https://clawhub.ai/skills/grsai-nano-banana",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grsai-nano-banana-018f4d5ee2e131a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 grsai 平台的 nano-banana 模型生成图片（支持文生图、图生图）"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ruiww",
+      "userId": "s1769k2tdkq0vm058vykgv8wn583g4dd",
+      "displayName": "Ruiww",
+      "image": "https://avatars.githubusercontent.com/u/32722522?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 513,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772608208888,
+      "changelog": "初始版本 - 支持文生图/图生图，异步轮询，自动保存",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3785ad428ced61e55849964e00e1462712e7dbc1b972044af4533679cec24320"
+}

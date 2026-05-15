@@ -10,7 +10,7 @@ import {
   CollapsibleSection,
   FilterCheckbox,
 } from 'sdkwork-claw-router-commons';
-import { getLoadErrorMessage } from 'sdkwork-claw-router-commons/runtime';
+import { getLoadErrorMessage, hasStoredPortalSession } from 'sdkwork-claw-router-commons/runtime';
 import {
   deriveSkillCatalogViewModel,
   type InstalledSkill,
@@ -52,7 +52,7 @@ export function SkillsHub() {
     setLoadError(null);
     try {
       const fetchedSkills = await skillService.getSkills({
-        search: searchQuery,
+        searchQuery,
         categories: selectedCategory !== 'All' ? [selectedCategory] : undefined,
         sortBy: sortBy
       });
@@ -73,6 +73,11 @@ export function SkillsHub() {
 
   const loadInstalledSkills = useCallback(async (isActive: () => boolean = () => true) => {
     setInstalledLoadError(null);
+    if (!hasStoredPortalSession()) {
+      setInstalledSkills([]);
+      setInstalledLoadError(null);
+      return;
+    }
     try {
       const fetchedInstalledSkills = await skillService.getMySkills();
       if (isActive()) {

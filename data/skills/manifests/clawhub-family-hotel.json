@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53542,
+  "uuid": "skill-clawhub-family-hotel",
+  "skillKey": "clawhub-family-hotel",
+  "name": "family-hotel",
+  "summary": "Find hotels perfect for families — multi-bed rooms, kid-friendly amenities, nearby playgrounds, and family-oriented services. Also supports: flight booking,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.family_hotel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiejinsong",
+      "features": [
+        "Find hotels perfect for families — multi-bed rooms, kid-friendly amenities, nearby playgrounds,.",
+        "Also supports: flight booking,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/family-hotel@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1642572?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "family-hotel",
+      "url": "https://clawhub.ai/skills/family-hotel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "family-hotel",
+    "url": "https://clawhub.ai/skills/family-hotel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/family-hotel-3d30592bf7d8acdb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/family-hotel@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-family-hotel-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4d21a87f659ceba4d034f37e33bf0a2d3a2845681d3ea2cf2ef9129a9cc95198",
+      "artifactSizeBytes": 1973
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T07:21:36.750Z"
+}

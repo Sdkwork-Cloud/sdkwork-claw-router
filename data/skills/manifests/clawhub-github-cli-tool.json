@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57755,
+  "uuid": "skill-clawhub-github-cli-tool",
+  "skillKey": "clawhub-github-cli-tool",
+  "name": "GitHub CLI",
+  "summary": "Interact with GitHub using the `gh` CLI. Use `gh issue`, `gh pr`, `gh run`, and `gh api` for issues, PRs, CI runs, and advanced queries.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_cli_tool",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhengxinjipai",
+      "features": [
+        "Interact with GitHub using the `gh` CLI",
+        "Use `gh issue`, `gh pr`, `gh run`, and `gh api` for issues, PRs, CI runs, and advanced queries."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-cli-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130424576?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-cli-tool",
+      "url": "https://clawhub.ai/skills/github-cli-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-cli-tool",
+    "url": "https://clawhub.ai/skills/github-cli-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-cli-tool-8a7030f7e02ec73d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-cli-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-cli-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d2eba9330b9a573ccdd92e588dc6af6785a26eea3282426ad915b95be24ffaab",
+      "artifactSizeBytes": 2274
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T13:23:05.181Z"
+}

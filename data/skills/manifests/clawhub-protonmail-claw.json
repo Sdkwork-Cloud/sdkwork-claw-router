@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17567,
+  "uuid": "skill-clawhub-protonmail-claw",
+  "skillKey": "clawhub-protonmail-claw",
+  "name": "Proton Mail",
+  "summary": "Manage ProtonMail emails via Playwright browser automation. Login, read, send, and manage your encrypted inbox.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.protonmail_claw",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Christopher",
+      "features": [
+        "Manage ProtonMail emails via Playwright browser automation",
+        "Login, read, send, and manage your encrypted inbox."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/protonmail-claw@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210261288?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "protonmail-claw",
+      "url": "https://clawhub.ai/skills/protonmail-claw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "protonmail-claw",
+    "url": "https://clawhub.ai/skills/protonmail-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/protonmail-claw-3fab63465127ad21.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/protonmail-claw@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-protonmail-claw-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6475d016c0d43ce1f25e71bec92940a1509a5ea27409b1b59483ae2d9bf6b0a8",
+      "artifactSizeBytes": 2471
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T22:23:09.832Z"
+}

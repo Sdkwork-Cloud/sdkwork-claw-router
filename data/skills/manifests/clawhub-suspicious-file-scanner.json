@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39439,
+  "uuid": "skill-clawhub-suspicious-file-scanner",
+  "skillKey": "clawhub-suspicious-file-scanner",
+  "name": "Suspicious File Scanner",
+  "summary": "Analyzes uploaded files to detect suspicious characteristics and potential security threats.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.suspicious_file_scanner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToolWeb",
+      "features": [
+        "Analyzes uploaded files to detect suspicious characteristics and potential security threats."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/suspicious-file-scanner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245780162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "suspicious-file-scanner",
+      "url": "https://clawhub.ai/skills/suspicious-file-scanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "suspicious-file-scanner",
+    "url": "https://clawhub.ai/skills/suspicious-file-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/suspicious-file-scanner-28a198d9dcf9b1a3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/suspicious-file-scanner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-suspicious-file-scanner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:14f40c95ebd6e4414f5a4ef771e1a980bed4cf070cfd40d1dff755b00339d3e2",
+      "artifactSizeBytes": 2215
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T06:53:51.350Z"
+}

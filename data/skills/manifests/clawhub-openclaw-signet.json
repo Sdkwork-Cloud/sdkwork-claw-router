@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13717,
+  "uuid": "skill-clawhub-openclaw-signet",
+  "skillKey": "clawhub-openclaw-signet",
+  "name": "Openclaw Signet",
+  "summary": "Cryptographic skill verification. Sign installed skills with SHA-256 content hashes and verify they haven't been tampered with. Detects modified, added, and removed files within skill directories. Free alert layer — upgrade to openclaw-sig.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_signet",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AtlasPA",
+      "features": [
+        "Cryptographic skill verification",
+        "Sign installed skills with SHA-256 content hashes and verify they haven't been tampered with",
+        "Detects modified, added, and removed files within skill directories",
+        "Free alert layer — upgrade to openclaw-signet-pro for rejection, quarantine, and trust chain re."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-signet@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/231540010?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-signet",
+      "url": "https://clawhub.ai/skills/openclaw-signet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-signet",
+    "url": "https://clawhub.ai/skills/openclaw-signet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-signet-01dcd598ec62bb40.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-signet@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-signet-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:94931d39be44eea9e5d0d5a6824eb0fb53be2b5a4b3b967428fa5239aa4367ab",
+      "artifactSizeBytes": 2214
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T10:26:41.535Z"
+}

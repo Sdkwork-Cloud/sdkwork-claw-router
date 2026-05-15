@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-form-automation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_form_automation",
+  "skill": {
+    "id": 9298,
+    "skillKey": "clawhub-web-form-automation",
+    "name": "Web Form Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-form-automation",
+    "url": "https://clawhub.ai/skills/web-form-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-form-automation-12923b89703b98fe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate web form interactions including login, file upload, text input, and form submission using Playwright. Use when user needs to automate website intera..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flyingzl",
+      "userId": "s17etm6wrjeb7k53x666jfet2583pgn7",
+      "displayName": "石头",
+      "image": "https://avatars.githubusercontent.com/u/492952?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3764,
+      "installsAllTime": 50,
+      "installsCurrent": 47,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771326781261,
+      "changelog": "- Initial release of **web-form-automation** skill.\n- Automates web form interactions using Playwright, including login, file upload (with webp compression), text input, and reliable form submission.\n- Supports session management via cookies and storage data.\n- Ensures proper event triggering with `pressSequentially` for text fields.\n- Includes best practices for file upload sequences and handling disabled/hidden buttons.\n- Provides troubleshooting tips and example scripts for common automation tasks.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6cbb9aac44ab20cb66337515c1bbd7525bcbc7c256974affa84ef2d712e904d7"
+}

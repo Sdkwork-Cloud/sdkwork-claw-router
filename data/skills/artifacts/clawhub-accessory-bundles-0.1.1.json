@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/accessory-bundles@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.accessory_bundles",
+  "skill": {
+    "id": 27521,
+    "skillKey": "clawhub-accessory-bundles",
+    "name": "Accessory Bundles"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "accessory-bundles",
+    "url": "https://clawhub.ai/skills/accessory-bundles",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/accessory-bundles-9b0b419ea9996e3d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Designs cross-sell and bundle structures for multi-SKU accessory stores (e.g. full-range phone cases, watch bands). Use when the user mentions bundles, start..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rijoyai",
+      "userId": "s17968d4vetrx5cj2yx3105heh83hrb4",
+      "displayName": "RIJOY-AI",
+      "image": "https://avatars.githubusercontent.com/u/219251023?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 346,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773138099519,
+      "changelog": "- Initial release of evaluation, assets, references, and scripts directories to support documentation and testing.\n- Added multiple README files for easier onboarding and navigation.\n- Introduced a sample `evals/evals.json` file to enable future evaluation workflows.\n- No changes to core logic or skill design; this update is focused on supporting files and documentation structure.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:65ca8fc197f62dc7ea9705e4f21e3b10ee9bae29f568aedbc85e1c1158020f8a"
+}

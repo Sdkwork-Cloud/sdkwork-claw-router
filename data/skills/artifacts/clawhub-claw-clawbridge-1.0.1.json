@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-clawbridge@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_clawbridge",
+  "skill": {
+    "id": 11985,
+    "skillKey": "clawhub-claw-clawbridge",
+    "name": "ClawBridge - Find Connections"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-clawbridge",
+    "url": "https://clawhub.ai/skills/claw-clawbridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-clawbridge-9f018cf6343a430e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Runs nightly searches to identify and rank relevant candidates matching your offer and ask, delivering evidence-backed connection briefs for human review."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "moltlife",
+      "userId": "publishers:moltlife",
+      "displayName": "moltlife",
+      "image": "https://avatars.githubusercontent.com/u/258533364?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1735,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769969532278,
+      "changelog": "claw-clawbridge 1.0.1\n\n- Updated installation instructions: now includes ClawHub CLI and legacy clawdbot CLI methods, plus a revised manual install process.\n- Clarified step-by-step installation, making it easier for new users to add and configure the skill.\n- No functionality changes; all other sections (inputs, workflow, rules, etc.) remain the same.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b9a59b31c665fd18b4342efaef09ad51afeeda6dc7561facb96af5a5373dd30b"
+}

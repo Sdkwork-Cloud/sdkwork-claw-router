@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/360-translate@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.360_translate",
+  "skill": {
+    "id": 50305,
+    "skillKey": "clawhub-360-translate",
+    "name": "File Translate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "360-translate",
+    "url": "https://clawhub.ai/skills/360-translate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/360-translate-be782fe893860de0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Immersive file & image translation — preserving original layout, formatting, and visuals. Drop in a PDF, Word, PPT, Excel, image, ePub and get back a fully t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ray771",
+      "userId": "s17e19he6gfkpk30cp73wkft1s83g4jy",
+      "displayName": "ray771",
+      "image": "https://avatars.githubusercontent.com/u/150011097?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 436,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774324836787,
+      "changelog": "- Added explicit privacy and data handling disclosures to SKILL.md, describing file uploads, retention, and access control.\n- Updated prerequisites section with a security tip and API key handling guidance.\n- The SKILL.md description now warns users about uploading files and images to api.360.cn and advises against use with confidential documents unless data transfer is acceptable.\n- Added Openclaw metadata specifying required environment variables.\n- No core functionality changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0c040e26af3852d10c52856a2e230d319782c3ddd14e9692b1de6939fbf2a0e8"
+}

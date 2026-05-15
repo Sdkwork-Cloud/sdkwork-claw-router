@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66527,
+  "uuid": "skill-clawhub-feishu-doc-reviewer",
+  "skillKey": "clawhub-feishu-doc-reviewer",
+  "name": "feishu-doc-reviewer",
+  "summary": "为智能体提供飞书文档读写能力：导出全文、读取评论与段落、写回修改并回复评论。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_doc_reviewer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jachian-lee",
+      "features": [
+        "为智能体提供飞书文档读写能力：导出全文、读取评论与段落、写回修改并回复评论。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-doc-reviewer@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/214004897?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-doc-reviewer",
+      "url": "https://clawhub.ai/skills/feishu-doc-reviewer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-doc-reviewer",
+    "url": "https://clawhub.ai/skills/feishu-doc-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-doc-reviewer-1957e05e40e40c9b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-doc-reviewer@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-doc-reviewer-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9f0cac58ace9db09ac45e208e3d8dfd2ef245cd3bb39aa20a9666151c6632bd7",
+      "artifactSizeBytes": 2364
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T11:09:41.242Z"
+}

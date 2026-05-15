@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/configure-openclaw@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.configure_openclaw",
+  "skill": {
+    "id": 30498,
+    "skillKey": "clawhub-configure-openclaw",
+    "name": "configure OpenClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "configure-openclaw",
+    "url": "https://clawhub.ai/skills/configure-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/configure-openclaw-3f90eafcb7a2f333.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when asked to change, configure, or update any OpenClaw setting — model selection, channel setup, auth, tools, gateway, session, cron, hooks, env, skills..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "onenameneo",
+      "userId": "s178zztpjb2dgyjqjzrvkef5eh83hn4j",
+      "displayName": "onenameneo",
+      "image": "https://avatars.githubusercontent.com/u/6267834?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 519,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 3,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774926337323,
+      "changelog": "configure-openclaw 1.1.0\n\n- Expanded skill coverage to include new OpenClaw config sections: messages, commands, plugins, compaction, context pruning, subagents, and more.\n- Updated quick reference examples with additional agent and channel fields, broader provider support, and new options for sandboxing, context management, and streaming.\n- Endpoint for live documentation changed from Jina AI redirect links to direct docs.openclaw.ai URLs.\n- Now uses \"WebFetch\" for fetching live docs when validating unknown fields.\n- Changelog clarifies that file changes are not present—documentation and instructions updated only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7219930222362c9c8cffcec29a5470e0c4c092b291c1569129428cac72fc473a"
+}

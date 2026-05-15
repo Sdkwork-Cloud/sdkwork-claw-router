@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/byted-seedance-video-generate@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.byted_seedance_video_generate",
+  "skill": {
+    "id": 34721,
+    "skillKey": "clawhub-byted-seedance-video-generate",
+    "name": "Byted Seedance Video Generate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "byted-seedance-video-generate",
+    "url": "https://clawhub.ai/skills/byted-seedance-video-generate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/byted-seedance-video-generate-02d8fd9c9314d9cc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate videos using Seedance models. Invoke when user wants to create videos from text prompts, images, or reference materials."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "volcengine-skills",
+      "userId": "s17bcxs73bckd3eercvtn6cmsx83g5kg",
+      "displayName": "volcengine-skills",
+      "image": "https://avatars.githubusercontent.com/u/260939792?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 221,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774846137174,
+      "changelog": "byted-seedance-video-generate 1.0.0\n\n- Initial release of the video generation skill powered by Doubao Seedance 1.0/1.5 models.\n- Supports generating videos from text prompts, images (first/last frame), reference images, reference videos, and audio.\n- Provides detailed configuration options for aspect ratio, duration, resolution, seed, watermark, and more.\n- Returns both the downloadable video file path and Markdown-embedded video URLs for user access.\n- Includes robust error handling for missing API keys and model fallback mechanisms.\n- Offers command-line usage examples and comprehensive parameter documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a7a905c6de6e64c0bce84fb7aa5e77e89753111b10d9f629df7f38c0760fb742"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sports-highlight-maker@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sports_highlight_maker",
+  "skill": {
+    "id": 56111,
+    "skillKey": "clawhub-sports-highlight-maker",
+    "name": "Sports Highlight Maker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sports-highlight-maker",
+    "url": "https://clawhub.ai/skills/sports-highlight-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sports-highlight-maker-6155063f4c8f3773.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sports Highlight Maker â Create Game Highlights and Recap Videos from Sports Footage. The final buzzer sounded twenty minutes ago. Parents are already aski..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 234,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1774859773840,
+      "changelog": "- Version number updated to 1.0.5.\n- Clarified SSE handling in the API section: now specifies \"Process internally\" for tool-related events.\n- Minor formatting and instruction updates for clarity.\n- No functional or backend changes introduced.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fb060bc9d729e5afbc05e2ec4922640cd31dee0e23d463358500d88527430002"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61997,
+  "uuid": "skill-clawhub-video-to-skill",
+  "skillKey": "clawhub-video-to-skill",
+  "name": "Youtube To Skill",
+  "summary": "自动从任意视频链接（YouTube、Bilibili、西瓜视频、抖音、小红书视频等）生成 OpenClaw Skill 并上传到 GitHub。用户分享任意视频链接，希望将其内容自动转化为 Skill 时触发。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_to_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "eeyan2025-art",
+      "features": [
+        "自动从任意视频链接（YouTube、Bilibili、西瓜视频、抖音、小红书视频等）生成 OpenClaw Skill 并上传到 GitHub。用户分享任意视频链接，希望将其内容自动转化为."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-to-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259014150?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-to-skill",
+      "url": "https://clawhub.ai/skills/video-to-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-to-skill",
+    "url": "https://clawhub.ai/skills/video-to-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-to-skill-5f4f3d6a4924c96e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-to-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-to-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7bec8d4f0b263fa3dec8258c8020f20ca9f845b906ba45818eb32571b0e02fbe",
+      "artifactSizeBytes": 2449
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T06:29:17.677Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64534,
+  "uuid": "skill-clawhub-seedance-3x3-optimizer",
+  "skillKey": "clawhub-seedance-3x3-optimizer",
+  "name": "Seedance 3x3 Optimizer",
+  "summary": "将普通剧情文本重写成适配 Seedance 的“3x3 法则”视觉化脚本（对峙/爆发/终结或和谐/裂痕/决裂，共 9 段）。当用户说“按 3x3/33 法则优化剧情”“把这段故事改成更有画面感的 Seedance 文本”“做成可直接粘贴的视频生成脚本”时使用。",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seedance_3x3_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Reed",
+      "features": [
+        "将普通剧情文本重写成适配 Seedance 的“3x3 法则”视觉化脚本（对峙/爆发/终结或和谐/裂痕/决裂，共 9 段）。当用户说“按 3x3/33 法则优化剧情”“把这段故事改成更有画面."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/seedance-3x3-optimizer@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/129141816?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "seedance-3x3-optimizer",
+      "url": "https://clawhub.ai/skills/seedance-3x3-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seedance-3x3-optimizer",
+    "url": "https://clawhub.ai/skills/seedance-3x3-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seedance-3x3-optimizer-c329aa00e1ba702b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/seedance-3x3-optimizer@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-seedance-3x3-optimizer-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2512166162a31a5f01e93e3b091bb9dd731840e9e45dca2d036eb99043e09887",
+      "artifactSizeBytes": 2165
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T04:30:02.792Z"
+}

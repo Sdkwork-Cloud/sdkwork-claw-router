@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/retro-travel-poster-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.retro_travel_poster_generator",
+  "skill": {
+    "id": 43024,
+    "skillKey": "clawhub-retro-travel-poster-generator",
+    "name": "Retro Travel Poster Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "retro-travel-poster-generator",
+    "url": "https://clawhub.ai/skills/retro-travel-poster-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/retro-travel-poster-generator-15501ffb15dc7921.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate vintage-style travel posters inspired by the golden age of tourism advertising (1920s-1960s WPA, art deco, mid-century modern) featuring iconic dest..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "blammectrappora",
+      "userId": "s17e1t07j9b4mkk29p15qwbst983hdan",
+      "displayName": "blammectrappora",
+      "image": "https://avatars.githubusercontent.com/u/258436334?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776942790928,
+      "changelog": "- Initial release of Retro Travel Poster Generator.\n- Generate vintage-style travel posters inspired by 1920s-1960s tourism art (WPA, art deco, mid-century modern).\n- Supports various destinations, styles, and customization options.\n- Ideal for Etsy sellers, print-on-demand, wall art, postcards, branding, and vintage decor.\n- Requires Neta API token for image generation.\n- Includes options for image size and reference-based style inheritance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:624873753efcb4f598947b0620a378c520c907a40970476f24785947c6376c25"
+}

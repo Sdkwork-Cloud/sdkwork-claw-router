@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nova-memory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nova_memory",
+  "skill": {
+    "id": 71178,
+    "skillKey": "clawhub-nova-memory",
+    "name": "Nova Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nova-memory",
+    "url": "https://clawhub.ai/skills/nova-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nova-memory-fd8c36d442da4bea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "本地存储和语义检索工作空间记忆，支持实体管理、标签搜索、图谱可视化及自动反思，无外部依赖，安全可靠。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "catplus-eric",
+      "userId": "s175k4jdmqmctrtd6pa55wsakn83qe7e",
+      "displayName": "CatPluZ",
+      "image": "https://avatars.githubusercontent.com/u/63648021?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 120,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776249100682,
+      "changelog": "nova-memory 1.0.0 初始发布：\n\n- 提供本地语义记忆存储与检索、实体管理、自动反思能力，纯 Python 实现，无外部依赖。\n- 支持 TF-IDF + Cosine Similarity 本地语义检索、标签搜索、结构化实体图谱与索引。\n- 集成 SQLite 本地 OLAP 模块，内置多维度分析（趋势、标签、实体、内容多样性）。\n- 丰富 API & CLI 工具，便于开发者二次集成和终端快速操作。\n- 数据本地安全持久化，每条存为 JSON，支持 save/load。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:374b8f7757527abc1f69d5308b8b79db18837595a98e93a96e0d38936b05e36c"
+}

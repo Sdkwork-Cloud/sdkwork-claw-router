@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claude-cli-proxy@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_cli_proxy",
+  "skill": {
+    "id": 52328,
+    "skillKey": "clawhub-claude-cli-proxy",
+    "name": "Claude CLI Proxy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-cli-proxy",
+    "url": "https://clawhub.ai/skills/claude-cli-proxy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-cli-proxy-946e13849db6c54c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set up a local HTTP proxy that routes OpenClaw model requests through Claude Code CLI using a Team/Max/Pro subscription instead of API keys, achieving $0 per..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maxsorto",
+      "userId": "s174nz2wh1ze2kkre40xyqafax848k98",
+      "displayName": "Max",
+      "image": "https://avatars.githubusercontent.com/u/5273024?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 213,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1775414353974,
+      "changelog": "v2.1.0: Auto-reset session on context overflow or missing session. Fix acpx commands (close instead of delete). Detect 'No acpx session found' errors. Clean up duplicate sessions on reset.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:84d3abb87961c95371a43fe9ff4637903170cf63ecf65016b4a87352888a27f5"
+}

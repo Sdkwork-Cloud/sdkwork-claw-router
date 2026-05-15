@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/android-dev-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.android_dev_agent",
+  "skill": {
+    "id": 40491,
+    "skillKey": "clawhub-android-dev-agent",
+    "name": "Android Dev Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "android-dev-agent",
+    "url": "https://clawhub.ai/skills/android-dev-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/android-dev-agent-e326e5f6b0f394f4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Assist with AOSP builds, HAL analysis, Framework edits, ROM customization, and SDK/NDK issues using isolated environments and detailed reports."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "happysurfingeveryday-art",
+      "userId": "s17a4q4a8xcy9b54vvvh2mr6r584t3tv",
+      "displayName": "happysurfingeveryday-art",
+      "image": "https://avatars.githubusercontent.com/u/228150380?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776150034251,
+      "changelog": "Initial release of the Android Dev Agent Skill.\n\n- Supports AOSP 编译、HAL 分析、Framework 修改、ROM 定制等任务\n- 提供独立环境隔离、防污染主目录\n- 日志记录所有编译/分析命令，输出标准报告\n- 明确区分 Android 版本，遇阻时补充 workaround\n- 详细规范常用流程、任务触发条件和输出响应内容",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b7f8ec499734ba963db44d00ad4ed941fc57de54458b37049e39275da19b9e1b"
+}

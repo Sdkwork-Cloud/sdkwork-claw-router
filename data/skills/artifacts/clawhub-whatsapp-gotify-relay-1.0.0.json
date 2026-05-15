@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/whatsapp-gotify-relay@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whatsapp_gotify_relay",
+  "skill": {
+    "id": 44816,
+    "skillKey": "clawhub-whatsapp-gotify-relay",
+    "name": "whatsapp-gotify-relay"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whatsapp-gotify-relay",
+    "url": "https://clawhub.ai/skills/whatsapp-gotify-relay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whatsapp-gotify-relay-025d0dce8a320467.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when operating or extending this WhatsApp Gotify relay as the bridge to OpenClaw. Prefer Unix tools for Docker, logs, Gotify queue checks, webhook valida..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jr551",
+      "userId": "s17drmfd03rese7t0cet2b4edh83mbzc",
+      "displayName": "jr551",
+      "image": "https://avatars.githubusercontent.com/u/2920328?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776949351377,
+      "changelog": "Initial release of the OpenClaw WhatsApp Gotify relay skill.\n\n- Introduces a bridge between WhatsApp and OpenClaw using Gotify and webhooks.\n- Documents outbound (OpenClaw → WhatsApp) and inbound (WhatsApp → OpenClaw) messaging flows and payload shapes.\n- Lists required Unix tools (e.g., rg, sed, curl, docker).\n- Outlines key environment variables for both relay and OpenClaw integration.\n- Includes preferred operational commands for testing, logging, and queue inspection.\n- Emphasizes clear, flat payloads and lean contracts for maintainability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:42553b29193bb7f249c9a409c5a8ce84f728e9d8d41f3b9a265aa8b554d3149e"
+}

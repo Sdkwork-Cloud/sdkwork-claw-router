@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meeting-signal-decoder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meeting_signal_decoder",
+  "skill": {
+    "id": 50150,
+    "skillKey": "clawhub-meeting-signal-decoder",
+    "name": "Meeting Signal Decoder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meeting-signal-decoder",
+    "url": "https://clawhub.ai/skills/meeting-signal-decoder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meeting-signal-decoder-46faa17c1fc22cb4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extracts real decisions, hidden disagreements, unspoken risks, and action ownership from detailed meeting notes or transcripts for clearer follow-up."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 25,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778374640093,
+      "changelog": "Initial release: Analyze meeting notes to extract real decisions, hidden disagreements, unspoken risks, and next-step ownership.\n\n- Surfaces clear decisions versus mere discussions.\n- Identifies implicit disagreements and unspoken risks.\n- Extracts action items with responsible parties.\n- Provides a signal map and suggested follow-up questions.\n- Built with strict privacy boundaries; no data storage or attribution of intent.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f0eaf8262cd1cfce1ad78d9a6e74bef865cbda31ca86a855fdbf47ea18992f17"
+}

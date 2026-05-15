@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53851,
+  "uuid": "skill-clawhub-predicate-snapshot",
+  "skillKey": "clawhub-predicate-snapshot",
+  "name": "Predicate Snapshot",
+  "summary": "ML-powered DOM pruning for 95% smaller browser prompts",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.predicate_snapshot",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rcholic",
+      "features": [
+        "ML-powered DOM pruning for 95% smaller browser prompts"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/predicate-snapshot@0.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/135060?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "predicate-snapshot",
+      "url": "https://clawhub.ai/skills/predicate-snapshot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "predicate-snapshot",
+    "url": "https://clawhub.ai/skills/predicate-snapshot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/predicate-snapshot-0ac67ad20becbb66.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/predicate-snapshot@0.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-predicate-snapshot-0.4.0.json",
+      "version": "0.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0e0e9a621e260f603270a9cd8dc11cc4ffe7b5ef4e725a3edae92a3f31721136",
+      "artifactSizeBytes": 1868
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T03:16:10.486Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49553,
+  "uuid": "skill-clawhub-linkedin-search",
+  "skillKey": "clawhub-linkedin-search",
+  "name": "linkedin-search",
+  "summary": "Search LinkedIn for candidates matching user-defined role, location, and criteria, classify requirements, and save profiles to avoid duplicates.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkedin_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qianjunye",
+      "features": [
+        "Search LinkedIn for candidates matching user-defined role, location, and criteria, classify req."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linkedin-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3345643?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linkedin-search",
+      "url": "https://clawhub.ai/skills/linkedin-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkedin-search",
+    "url": "https://clawhub.ai/skills/linkedin-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkedin-search-4dfaf8931e2605e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linkedin-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-linkedin-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bd410e60a142ca34aed2bc3c0d6898e55196ce16a2e2c96582d82575da1a4120",
+      "artifactSizeBytes": 2440
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T02:36:46.386Z"
+}

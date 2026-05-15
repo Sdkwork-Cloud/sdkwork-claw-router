@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jina-web-fetcher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jina_web_fetcher",
+  "skill": {
+    "id": 61223,
+    "skillKey": "clawhub-jina-web-fetcher",
+    "name": "Jina Web Fetcher - 网页抓取"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jina-web-fetcher",
+    "url": "https://clawhub.ai/skills/jina-web-fetcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jina-web-fetcher-71979159d8597760.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 Jina AI 抓取网页内容，绕过搜索引擎限制。支持任意URL，支持 Google 搜索结果抓取。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xaiohuangningde",
+      "userId": "publishers:xaiohuangningde",
+      "displayName": "xaiohuangningde",
+      "image": "https://avatars.githubusercontent.com/u/143916959?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1873,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772070352302,
+      "changelog": "Jina Web Fetcher 1.0.0 — Initial release\n\n- Fetch web content using Jina AI by proxying any URL.\n- Supports scraping Google search results.\n- Simple usage via curl commands; no installation required.\n- Provides example commands for popular sites.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:767646b9893f93e1c9e6ec72b9a478831c0c4af70d1d6ddc0139153dd2af9468"
+}

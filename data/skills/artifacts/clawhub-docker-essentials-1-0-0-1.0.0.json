@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/docker-essentials-1-0-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docker_essentials_1_0_0",
+  "skill": {
+    "id": 11510,
+    "skillKey": "clawhub-docker-essentials-1-0-0",
+    "name": "Docker Essentials 1.0.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docker-essentials-1-0-0",
+    "url": "https://clawhub.ai/skills/docker-essentials-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docker-essentials-1-0-0-f4d3593bf04b2210.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Essential Docker commands and workflows for container management, image operations, and debugging."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pespringer",
+      "userId": "publishers:pespringer",
+      "displayName": "pespringer",
+      "image": "https://avatars.githubusercontent.com/u/13845171?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1862,
+      "installsAllTime": 16,
+      "installsCurrent": 16,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770417064273,
+      "changelog": "- Initial release of \"docker-essentials\" skill.\n- Provides a comprehensive collection of Docker commands for container management, image operations, and debugging.\n- Includes guides for Docker Compose, networking, volumes, and system management.\n- Features common workflows and tips for development, database usage, debugging, and multi-stage builds.\n- Offers quick references to essential command flags and official documentation links.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:91c74def019c224976a22016f821b566df540f6de0220955ed3d7da383e5cc7b"
+}

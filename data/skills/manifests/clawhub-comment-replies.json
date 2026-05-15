@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28963,
+  "uuid": "skill-clawhub-comment-replies",
+  "skillKey": "clawhub-comment-replies",
+  "name": "Comment Replies",
+  "summary": "Draft short, high-clarity replies for comments, objections, and pre-sale questions. Use when responding to public comments on TikTok, X, Instagram, YouTube,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.comment_replies",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeroyCreates",
+      "features": [
+        "Draft short, high-clarity replies for comments, objections, and pre-sale questions",
+        "Use when responding to public comments on TikTok, X, Instagram, YouTube,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/comment-replies@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130833525?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "comment-replies",
+      "url": "https://clawhub.ai/skills/comment-replies"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "comment-replies",
+    "url": "https://clawhub.ai/skills/comment-replies",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/comment-replies-b3b1903cef3d98ff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/comment-replies@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-comment-replies-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cae1ab41ecb27a3d286201c91d8c0fcc81aa4ea6d00092eda02b2526fe49166a",
+      "artifactSizeBytes": 1898
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T02:15:58.254Z"
+}

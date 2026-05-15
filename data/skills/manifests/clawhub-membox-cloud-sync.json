@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50658,
+  "uuid": "skill-clawhub-membox-cloud-sync",
+  "skillKey": "clawhub-membox-cloud-sync",
+  "name": "Membox Cloud Sync",
+  "summary": "Private zero-knowledge encrypted cross-device memory sync, backup, and recovery for OpenClaw. Helps agents install Membox, pair devices, securely sync `MEMOR...",
+  "version": "0.1.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.membox_cloud_sync",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tingrui Zhang",
+      "features": [
+        "Private zero-knowledge encrypted cross-device memory sync, backup, and recovery for OpenClaw",
+        "Helps agents install Membox, pair devices, securely sync `MEMOR..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/membox-cloud-sync@0.1.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83890569?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "membox-cloud-sync",
+      "url": "https://clawhub.ai/skills/membox-cloud-sync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "membox-cloud-sync",
+    "url": "https://clawhub.ai/skills/membox-cloud-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/membox-cloud-sync-ab347c00bf141bf7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/membox-cloud-sync@0.1.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-membox-cloud-sync-0.1.12.json",
+      "version": "0.1.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:acaef3902c59f02a85be1ad031888e7934539b3a2a18ddc4cb0372937a0eb633",
+      "artifactSizeBytes": 1995
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T18:15:06.320Z"
+}

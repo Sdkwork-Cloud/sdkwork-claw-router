@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/camscanner-image-erase-handwriting@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.camscanner_image_erase_handwriting",
+  "skill": {
+    "id": 48672,
+    "skillKey": "clawhub-camscanner-image-erase-handwriting",
+    "name": "CamScanner Erase Handwriting"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "camscanner-image-erase-handwriting",
+    "url": "https://clawhub.ai/skills/camscanner-image-erase-handwriting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/camscanner-image-erase-handwriting-cb7716eb29fb3665.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use CamScanner to erase handwriting from images while preserving the printed content and original layout. Powered by a high-precision image enhancement engin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "camscanner-ai",
+      "userId": "s173fgwczhaenp3btzq1h17qss84dnaa",
+      "displayName": "CamScanner-AI",
+      "image": "https://avatars.githubusercontent.com/u/269073986?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 96,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777535881722,
+      "changelog": "- Initial release of the CamScanner Image Erase Handwriting skill.\n- Allows users to remove handwriting, annotations, or signatures from images and scans while preserving printed content and layout.\n- Powered by CamScanner’s high-precision image enhancement engine with a dedicated handwriting erasure mode.\n- Supports both a three-step upload-enhance-download process and a streamlined two-step raw output mode.\n- Provides detailed usage instructions, privacy/data handling notes, API reference, and troubleshooting tips.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7c2e0c95e9bf523bdd82ddce6773cee65df819816004c25a79e7e05a29dbd4b6"
+}

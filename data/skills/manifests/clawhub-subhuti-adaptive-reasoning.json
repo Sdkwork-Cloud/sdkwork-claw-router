@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48617,
+  "uuid": "skill-clawhub-subhuti-adaptive-reasoning",
+  "skillKey": "clawhub-subhuti-adaptive-reasoning",
+  "name": "Adaptive Reasoning",
+  "summary": "Automatically assess task complexity and adjust reasoning level. Triggers on every user message to evaluate whether extended thinking (reasoning mode) would...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subhuti_adaptive_reasoning",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dorjenorbulim",
+      "features": [
+        "Automatically assess task complexity and adjust reasoning level",
+        "Triggers on every user message to evaluate whether extended thinking (reasoning mode) would..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/subhuti-adaptive-reasoning@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269761677?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "subhuti-adaptive-reasoning",
+      "url": "https://clawhub.ai/skills/subhuti-adaptive-reasoning"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subhuti-adaptive-reasoning",
+    "url": "https://clawhub.ai/skills/subhuti-adaptive-reasoning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subhuti-adaptive-reasoning-6638c34a06f97f1d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/subhuti-adaptive-reasoning@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-subhuti-adaptive-reasoning-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:62c43a58dc1e86963f96093bed3b2502226021f0ed1fff816916d09f1f112fd2",
+      "artifactSizeBytes": 1966
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T17:13:54.414Z"
+}

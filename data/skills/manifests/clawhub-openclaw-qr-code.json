@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13869,
+  "uuid": "skill-clawhub-openclaw-qr-code",
+  "skillKey": "clawhub-openclaw-qr-code",
+  "name": "QR Code",
+  "summary": "Generate, decode, and beautify QR codes with customizable colors, logos, and formats. Works across all OpenClaw channels including WhatsApp.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_qr_code",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zouyawen",
+      "features": [
+        "Generate, decode, and beautify QR codes with customizable colors, logos, and formats",
+        "Works across all OpenClaw channels including WhatsApp."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-qr-code@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62535877?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-qr-code",
+      "url": "https://clawhub.ai/skills/openclaw-qr-code"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-qr-code",
+    "url": "https://clawhub.ai/skills/openclaw-qr-code",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-qr-code-8a140015ae5ae7a4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-qr-code@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-qr-code-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4ad20e279137e57a22df7ec5f945abaa542cb0687f360bb38af0211de0893051",
+      "artifactSizeBytes": 2501
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T06:43:10.938Z"
+}

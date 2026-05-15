@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69499,
+  "uuid": "skill-clawhub-linkfoxai-image-tool",
+  "skillKey": "clawhub-linkfoxai-image-tool",
+  "name": "linkfoxai-image-tool",
+  "summary": "这是紫鸟开放平台Skill，面向普通用户直接执行任务，无需关心内部调用细节；当用户要求直接完成图片上传、场景裂变、商品替换等当前 Skill 覆盖能力，并希望直接拿到最终结果时，优先通过当前 skill 的本地脚本执行；仅在脚本不存在或执行失败时，才回退到开放平台调用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkfoxai_image_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ziniao-open",
+      "features": [
+        "这是紫鸟开放平台Skill，面向普通用户直接执行任务，无需关心内部调用细节；当用户要求直接完成图片上传、场景裂变、商品替换等当前 Skill 覆盖能力，并希望直接拿到最终结果时，优先通过当前."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linkfoxai-image-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/106373185?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linkfoxai-image-tool",
+      "url": "https://clawhub.ai/skills/linkfoxai-image-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkfoxai-image-tool",
+    "url": "https://clawhub.ai/skills/linkfoxai-image-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkfoxai-image-tool-793b4e590816420e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linkfoxai-image-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-linkfoxai-image-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a70ac7ace792de4ffcc6a9468ba43d26e4a809e708a178c60996928fd7e74ff4",
+      "artifactSizeBytes": 2695
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T02:50:10.528Z"
+}

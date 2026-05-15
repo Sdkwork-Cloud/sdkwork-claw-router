@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56539,
+  "uuid": "skill-clawhub-feishu-bitable-sync",
+  "skillKey": "clawhub-feishu-bitable-sync",
+  "name": "Feishu Bitable Data Sync",
+  "summary": "Feishu Bitable Data Sync - Sync data between multiple bitables or external sources. **Features**: - Sync data between two bitables - Import data from externa...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_bitable_sync",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ramlee77",
+      "features": [
+        "Feishu Bitable Data Sync",
+        "Sync data between multiple bitables or external sources",
+        "**Features**:",
+        "Sync data between two bitables"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-bitable-sync@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/227747378?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-bitable-sync",
+      "url": "https://clawhub.ai/skills/feishu-bitable-sync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-bitable-sync",
+    "url": "https://clawhub.ai/skills/feishu-bitable-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-bitable-sync-d66f1c2ae9c0a4a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-bitable-sync@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-bitable-sync-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf53bdd9431f64a10dae9042408eea1ae074e9ca8defbf3e25cb3eab647fab74",
+      "artifactSizeBytes": 1952
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T08:55:14.260Z"
+}

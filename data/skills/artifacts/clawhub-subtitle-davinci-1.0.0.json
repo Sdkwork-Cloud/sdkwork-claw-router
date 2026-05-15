@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/subtitle-davinci@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subtitle_davinci",
+  "skill": {
+    "id": 55747,
+    "skillKey": "clawhub-subtitle-davinci",
+    "name": "Subtitle Davinci"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subtitle-davinci",
+    "url": "https://clawhub.ai/skills/subtitle-davinci",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subtitle-davinci-786e0b1b504f2a7f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — add burned-in subtitles to my DaVinci Resolve video in English — and get c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 103,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777396755406,
+      "changelog": "Initial release — add burned-in subtitles to DaVinci Resolve videos via cloud AI.\n\n- Upload MP4, MOV, AVI, MKV files up to 500MB for automatic subtitle generation.\n- Fast cloud rendering: download captioned MP4 files in 30–60 seconds.\n- No manual editing; just describe the subtitles you want and get video back.\n- Simple token-based authentication with 100 free credits for 7 days.\n- Supports direct editing and export workflows for video editors and YouTubers.\n- In-app error handling and tips for best results.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c0e792d21a766f3ba8c3103a02d39da27ce43de8ad718d8cc54b1acc7eb07a42"
+}

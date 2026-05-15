@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-autonomy-kit-1-0-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_autonomy_kit_1_0_0",
+  "skill": {
+    "id": 23748,
+    "skillKey": "clawhub-agent-autonomy-kit-1-0-0",
+    "name": "Agent Autonomy Kit 1.0.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-autonomy-kit-1-0-0",
+    "url": "https://clawhub.ai/skills/agent-autonomy-kit-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-autonomy-kit-1-0-0-43f7611326d9d4fb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Stop waiting for prompts. Keep working."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "123oo123442",
+      "userId": "publishers:123oo123442",
+      "displayName": "123oo123442",
+      "image": "https://avatars.githubusercontent.com/u/222740780?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 390,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773555817225,
+      "changelog": "Initial release of Agent Autonomy Kit\n\n- Empowers agents to act proactively instead of waiting for prompts\n- Introduces a task queue system (QUEUE.md) to manage work status\n- Implements a \"heartbeat\" mechanic for continuous, autonomous task processing\n- Supports automated workflows, including cron job scheduling for routine operations and reporting\n- Designed for seamless integration—watch your agent work autonomously",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:74bd1d08979acfb7769a4986b58d5dce3551d26badc187368baceb1efbceaf3c"
+}

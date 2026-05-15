@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72005,
+  "uuid": "skill-clawhub-showstart-bot",
+  "skillKey": "clawhub-showstart-bot",
+  "name": "Showstart Skills",
+  "summary": "秀动演出查询与管理工具。用于查询秀动平台上的演出信息，包括演出详情、城市搜索、分类搜索、风格搜索、艺人搜索、附近演出等功能。当用户需要查找演出信息、了解演出详情、按城市/分类/风格搜索演出、或查找附近演出时使用此技能。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.showstart_bot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Austin-AM",
+      "features": [
+        "秀动演出查询与管理工具。用于查询秀动平台上的演出信息，包括演出详情、城市搜索、分类搜索、风格搜索、艺人搜索、附近演出等功能。当用户需要查找演出信息、了解演出详情、按城市/分类/风格搜索演出、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/showstart-bot@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32726878?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "showstart-bot",
+      "url": "https://clawhub.ai/skills/showstart-bot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "showstart-bot",
+    "url": "https://clawhub.ai/skills/showstart-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/showstart-bot-a41e4e12cebeb2aa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/showstart-bot@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-showstart-bot-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:05ed9683897cfac7030349d0e0502d7519884549288d2393244fc5e7d1984995",
+      "artifactSizeBytes": 2187
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T03:54:24.009Z"
+}

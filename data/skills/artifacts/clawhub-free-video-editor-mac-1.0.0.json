@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-video-editor-mac@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_video_editor_mac",
+  "skill": {
+    "id": 37185,
+    "skillKey": "clawhub-free-video-editor-mac",
+    "name": "Free Video Editor Mac"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-video-editor-mac",
+    "url": "https://clawhub.ai/skills/free-video-editor-mac",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-video-editor-mac-d9ed852ffdf19609.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 3-minute screen recording from a MacBook into 1080p edited MP4 clips just by typing what you need. Whether it's editing and trimming video clips on a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776616672047,
+      "changelog": "Initial release of Free Video Editor for Mac — edit and export videos online, no installation required.\n\n- Enables AI-powered video editing and 1080p MP4 export from Mac screen recordings.\n- Simple setup: automatic backend connection with free token (100 credits, 7-day validity).\n- Drag-and-drop uploads; describe desired edits in plain language.\n- Common actions supported: trimming, adding transitions, overlaying text, audio, and quick exporting.\n- Cloud GPU backend processes typical videos in 1–2 minutes; supports batch and iterative workflows.\n- Clear feedback for session status, credits, file limits, and error messages.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:65bf07fb0727b0c0e3c32800fc905db61a676c4bea83a05d474e43358bd4ac0c"
+}

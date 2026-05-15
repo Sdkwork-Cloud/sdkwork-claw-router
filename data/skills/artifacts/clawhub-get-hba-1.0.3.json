@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/get-hba@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.get_hba",
+  "skill": {
+    "id": 19379,
+    "skillKey": "clawhub-get-hba",
+    "name": "Get a clank.money Human Bitcoin Address"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "get-hba",
+    "url": "https://clawhub.ai/skills/get-hba",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/get-hba-8ccec2e295a7a3b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent-first service to register and manage Human Bitcoin Addresses (BIP-353) on clank.money with L402 bitcoin payments."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "matbalez",
+      "userId": "publishers:matbalez",
+      "displayName": "matbalez",
+      "image": "https://avatars.githubusercontent.com/u/60949391?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 616,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1772056951042,
+      "changelog": "Summary: Registration flow clarified, token storage made critical, price updated, and new bash example added.\n\n- Skill name is now \"Clank Human Bitcoin Address\" and description is updated for clarity.\n- Registration flow rewritten with step-by-step \"Strict Registration Checklist\" and explicit error handling.\n- Registration fee changed from 200 sats to 999 sats.\n- Bash copy-paste example for full registration, payment, and token storage now included.\n- Management token handling is emphasized as critical: lost tokens mean updates are impossible.\n- API details and update procedure remain, but with reinforced input and security requirements.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:760c6c9792aad9e73d59addfcb02cc71990bf2dc31ab8a95d20a890001765414"
+}

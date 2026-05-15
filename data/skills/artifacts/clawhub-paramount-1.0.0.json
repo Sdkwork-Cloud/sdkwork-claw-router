@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paramount@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paramount",
+  "skill": {
+    "id": 70269,
+    "skillKey": "clawhub-paramount",
+    "name": "Paramount"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paramount",
+    "url": "https://clawhub.ai/skills/paramount",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paramount-639e88cb4135ffa6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "派拉蒙影业成立于1912年，是好莱坞五大制片厂之一，知名作品包括《教父》《阿甘正传》和《变形金刚》等。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776368825047,
+      "changelog": "Paramount skill 1.0.0 – initial release\n\n- 提供派拉蒙影业知识卡片，涵盖公司起源、百年发展、代表作品、行业地位等核心信息。\n- 重点介绍派拉蒙影业的经典电影、标志Logo、历史节点和IP矩阵。\n- 涵盖关于公司结构、母公司、总部、以及2024年Skydance收购新闻。\n- 适用于查询派拉蒙历史、好莱坞五大制片厂、重要法律事件和商业模式。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:53bccbb3b628cfc11c1eae096ab68e13994f17de9e5788c83d12057a8a3fcfb1"
+}

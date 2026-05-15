@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9742,
+  "uuid": "skill-clawhub-gitload",
+  "skillKey": "clawhub-gitload",
+  "name": "gitload",
+  "summary": "This skill should be used when the user asks to \"download files from GitHub\", \"fetch a folder from a repo\", \"grab code from GitHub\", \"download a GitHub repository\", \"get files from a GitHub URL\", \"clone just a folder\", or needs to download.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gitload",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "waldekmastykarz",
+      "features": [
+        "This skill should be used when the user asks to \"download files from GitHub\", \"fetch a folder f."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gitload@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11164679?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gitload",
+      "url": "https://clawhub.ai/skills/gitload"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gitload",
+    "url": "https://clawhub.ai/skills/gitload",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gitload-9671f0a2f16df191.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gitload@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gitload-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b29b3342559fb707332281771d4d9ffd905dae10d8b3fc723d244c7d8b4f805e",
+      "artifactSizeBytes": 2489
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-11T09:09:59.257Z"
+}

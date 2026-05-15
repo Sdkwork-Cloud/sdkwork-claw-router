@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42015,
+  "uuid": "skill-clawhub-tick-coord",
+  "skillKey": "clawhub-tick-coord",
+  "name": "Tick-Coord: Multi-Agent Task Coordination",
+  "summary": "Multi-agent task coordination via Git-backed Markdown (tick-md). Use when coordinating work across avatars or agents, managing tasks, tracking dependencies,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tick_coord",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CryptoReuMD",
+      "features": [
+        "Multi-agent task coordination via Git-backed Markdown (tick-md)",
+        "Use when coordinating work across avatars or agents, managing tasks, tracking dependencies,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tick-coord@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/106553699?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tick-coord",
+      "url": "https://clawhub.ai/skills/tick-coord"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tick-coord",
+    "url": "https://clawhub.ai/skills/tick-coord",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tick-coord-c7bd76c926af1eaf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tick-coord@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tick-coord-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e6f04e95d93a42dc0e994a92e4615923d27bc12e6159cf643b486ac94f29bef5",
+      "artifactSizeBytes": 2392
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T15:49:23.320Z"
+}

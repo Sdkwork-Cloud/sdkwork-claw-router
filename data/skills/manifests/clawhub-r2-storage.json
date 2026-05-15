@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55493,
+  "uuid": "skill-clawhub-r2-storage",
+  "skillKey": "clawhub-r2-storage",
+  "name": "R2 Storage",
+  "summary": "Cloudflare R2 Storage management — setup, upload, download, sync via rclone",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.r2_storage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "junwatu",
+      "features": [
+        "Cloudflare R2 Storage management — setup, upload, download, sync via rclone"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/r2-storage@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/948279?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "r2-storage",
+      "url": "https://clawhub.ai/skills/r2-storage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "r2-storage",
+    "url": "https://clawhub.ai/skills/r2-storage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/r2-storage-07bd2aec9a48e7a1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/r2-storage@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-r2-storage-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:02db8dc0534052040bcc66f510c5a58ce37b8547488cee285cee5ab58b1be30f",
+      "artifactSizeBytes": 2144
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T01:32:32.892Z"
+}

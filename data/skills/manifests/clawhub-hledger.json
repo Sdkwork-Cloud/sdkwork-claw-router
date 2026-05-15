@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21897,
+  "uuid": "skill-clawhub-hledger",
+  "skillKey": "clawhub-hledger",
+  "name": "Hledger",
+  "summary": "Execute hledger CLI commands to query balances, registers, reports, and journals, returning structured output from local ledger files.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hledger",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bisbeebucky",
+      "features": [
+        "Execute hledger CLI commands to query balances, registers, reports, and journals, returning str."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hledger@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19618919?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hledger",
+      "url": "https://clawhub.ai/skills/hledger"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hledger",
+    "url": "https://clawhub.ai/skills/hledger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hledger-6a4df82419833ef8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hledger@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hledger-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:109bed4fc77b9917a83cc70f0900379289e4259166492bd20354c74dbc84d1c5",
+      "artifactSizeBytes": 2153
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T17:37:10.082Z"
+}

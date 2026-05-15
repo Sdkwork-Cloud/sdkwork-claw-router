@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14460,
+  "uuid": "skill-clawhub-aura-openclaw",
+  "skillKey": "clawhub-aura-openclaw",
+  "name": "Aura for OpenClaw",
+  "summary": "Compile multi-format documents into local queryable knowledge bases and manage persistent AI memory tiers using Aura Core with zero network requests.",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aura_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rta Labs AI",
+      "features": [
+        "Compile multi-format documents into local queryable knowledge bases and manage persistent AI me."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aura-openclaw@0.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257883678?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aura-openclaw",
+      "url": "https://clawhub.ai/skills/aura-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aura-openclaw",
+    "url": "https://clawhub.ai/skills/aura-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aura-openclaw-d0e7d0accdad1faa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aura-openclaw@0.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-aura-openclaw-0.1.5.json",
+      "version": "0.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:09f415c5618397d0b15cb8089ab100207337c4043c12603f1d547950f89251bf",
+      "artifactSizeBytes": 2158
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T16:50:19.326Z"
+}

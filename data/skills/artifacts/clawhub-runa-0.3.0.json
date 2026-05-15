@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/runa@0.3.0",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.runa",
+  "skill": {
+    "id": 35620,
+    "skillKey": "clawhub-runa",
+    "name": "Runa"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "runa",
+    "url": "https://clawhub.ai/skills/runa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/runa-f33c7a4fbfb5dc36.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Save, search, list, update, and delete bookmarks and text notes in Runa. Use when the user wants to bookmark a URL, save text/thoughts/snippets, find a saved..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imprakharshukla",
+      "userId": "s174p8qe2801bw6g030d2v4amx83r4nc",
+      "displayName": "imprakharshukla",
+      "image": "https://avatars.githubusercontent.com/u/39938009?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 213,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.3.0",
+      "createdAt": 1774916212172,
+      "changelog": "Reddit enrichment proxy, file uploads, bookmark import, MCP server, billing improvements",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7c28bb6d38ac97bc3beb82e7f150cb795fe7daf5513ce7de284c0ac66942631d"
+}

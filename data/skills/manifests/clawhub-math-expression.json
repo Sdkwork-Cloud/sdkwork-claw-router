@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35049,
+  "uuid": "skill-clawhub-math-expression",
+  "skillKey": "clawhub-math-expression",
+  "name": "Math Expression",
+  "summary": "Use when the user wants an actual math result, simplification, expansion, exact value, high-precision value, analytic solution, or numerical solution for alg...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.math_expression",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "span",
+      "features": [
+        "Use when the user wants an actual math result, simplification, expansion, exact value, high-pre."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/math-expression@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/132832634?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "math-expression",
+      "url": "https://clawhub.ai/skills/math-expression"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "math-expression",
+    "url": "https://clawhub.ai/skills/math-expression",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/math-expression-12a36b899cf610c0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/math-expression@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-math-expression-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ff13f7a15205e7275798140ede948c414894f29387e9181d4d4d98b700751197",
+      "artifactSizeBytes": 1970
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T02:22:24.264Z"
+}

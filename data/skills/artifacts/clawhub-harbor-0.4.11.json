@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/harbor@0.4.11",
+  "version": "0.4.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.harbor",
+  "skill": {
+    "id": 54338,
+    "skillKey": "clawhub-harbor",
+    "name": "Harbor — Curated and shared Memory for AI Agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "harbor",
+    "url": "https://clawhub.ai/skills/harbor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/harbor-c1d64b2d4cb30f1b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Persistent cross-session memory, credential isolation, and schema learning for your OpenClaw agent. Stores data locally at ~/.harbor/ (memory, encrypted keyc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zx13719",
+      "userId": "publishers:zx13719",
+      "displayName": "Jiaxi",
+      "image": "https://avatars.githubusercontent.com/u/57628462?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 378,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.4.11",
+      "createdAt": 1773909842321,
+      "changelog": "- Renamed skill to harbor-openclaw to reflect OpenClaw plugin integration.\n- Clarified cloud sync behavior: plugin now creates a cloud account on first load for credential setup page support, but no data is synced until harbor remember is called.\n- Added mention of zero-knowledge credentials: credentials are encrypted client-side; Harbor Cloud cannot decrypt API keys.\n- Improved documentation for plugin users and data privacy guarantees.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:80f1d727d110bc010fd18b045685468d8f3bb61cb11e3b169b108a45012634a3"
+}

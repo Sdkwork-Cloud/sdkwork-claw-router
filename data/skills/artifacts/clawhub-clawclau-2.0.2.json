@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawclau@2.0.2",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawclau",
+  "skill": {
+    "id": 63103,
+    "skillKey": "clawhub-clawclau",
+    "name": "Clawclau"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawclau",
+    "url": "https://clawhub.ai/skills/clawclau",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawclau-e09501b38cea36d7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "异步 Claude Code 任务调度工具集（ClawClau）。基于 tmux 派发后台 Claude Code 任务，含进度汇报、完成通知、状态查询、中途纠偏。触发场景：让乌萨奇做xxx、派发任务给Claude Code、查看后台任务状态、终止后台任务、batch任务派发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "barryyjj",
+      "userId": "publishers:barryyjj",
+      "displayName": "BarryYJJ",
+      "image": "https://avatars.githubusercontent.com/u/168513523?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 418,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "2.0.2",
+      "createdAt": 1773941983953,
+      "changelog": "加 YAML frontmatter；SKILL.md 瘦身至 142 行，拆分 references/schema.md 和 references/design.md",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:15bb1ce261cbc7ee04cbd0c57fe01bdacb65ed7739df299413cdb5344dcc290d"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21244,
+  "uuid": "skill-clawhub-digital-oracle",
+  "skillKey": "clawhub-digital-oracle",
+  "name": "Digital Oracle",
+  "summary": "Answer prediction questions using market trading data, not opinions. Use when the user asks probability questions about geopolitics, economics, markets, indu...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.digital_oracle",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Komako",
+      "features": [
+        "Answer prediction questions using market trading data, not opinions",
+        "Use when the user asks probability questions about geopolitics, economics, markets, indu..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/digital-oracle@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4157988?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "digital-oracle",
+      "url": "https://clawhub.ai/skills/digital-oracle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "digital-oracle",
+    "url": "https://clawhub.ai/skills/digital-oracle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/digital-oracle-d2d49cf41b1ec6ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/digital-oracle@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-digital-oracle-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:21c63c7020fd69bda1e57116e458e70caed5cc527d9e8eae821e83673b86c727",
+      "artifactSizeBytes": 1987
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T02:42:30.185Z"
+}

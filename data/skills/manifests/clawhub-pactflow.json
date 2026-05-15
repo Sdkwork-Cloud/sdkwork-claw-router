@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46352,
+  "uuid": "skill-clawhub-pactflow",
+  "skillKey": "clawhub-pactflow",
+  "name": "pactflow",
+  "summary": "Expert assistant for PactFlow and Pact contract testing. Use this skill whenever the user mentions PactFlow, Pact, contract testing, consumer-driven contract...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pactflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kevin Rohan Vaz",
+      "features": [
+        "Expert assistant for PactFlow and Pact contract testing",
+        "Use this skill whenever the user mentions PactFlow, Pact, contract testing, consumer-driven con."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pactflow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36708857?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pactflow",
+      "url": "https://clawhub.ai/skills/pactflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pactflow",
+    "url": "https://clawhub.ai/skills/pactflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pactflow-1c69ff39b24f7b39.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pactflow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pactflow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0400066386573dfbdd2933cf04987bbc89b72296c2d0b53029045240c3715cbc",
+      "artifactSizeBytes": 2526
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T19:15:11.949Z"
+}

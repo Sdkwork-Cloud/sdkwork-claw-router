@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61000,
+  "uuid": "skill-clawhub-share-transfer-tool",
+  "skillKey": "clawhub-share-transfer-tool",
+  "name": "Cloud Share Downloader",
+  "summary": "网盘分享链接转存 - 完全自动化，发的链接就能下",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.share_transfer_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SxLiuYu",
+      "features": [
+        "网盘分享链接转存",
+        "完全自动化，发的链接就能下"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/share-transfer-tool@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95198625?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "share-transfer-tool",
+      "url": "https://clawhub.ai/skills/share-transfer-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "share-transfer-tool",
+    "url": "https://clawhub.ai/skills/share-transfer-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/share-transfer-tool-96a47cb53312524e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/share-transfer-tool@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-share-transfer-tool-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:db939fda671cda6d47c5c5a0a1745e7f9c1a2771ec40256c550470b8d24d32bc",
+      "artifactSizeBytes": 2257
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T09:54:56.692Z"
+}

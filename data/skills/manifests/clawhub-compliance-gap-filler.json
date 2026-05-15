@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37034,
+  "uuid": "skill-clawhub-compliance-gap-filler",
+  "skillKey": "clawhub-compliance-gap-filler",
+  "name": "Compliance Gap Filler",
+  "summary": "Identifies and fills compliance control gaps across security frameworks like ISO 27001, NIST, and SOC 2.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.compliance_gap_filler",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToolWeb",
+      "features": [
+        "Identifies and fills compliance control gaps across security frameworks like ISO 27001, NIST, a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/compliance-gap-filler@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245780162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "compliance-gap-filler",
+      "url": "https://clawhub.ai/skills/compliance-gap-filler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "compliance-gap-filler",
+    "url": "https://clawhub.ai/skills/compliance-gap-filler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/compliance-gap-filler-4ab1852b5bb7a88b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/compliance-gap-filler@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-compliance-gap-filler-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:847cd7ce2c664269e6d08a2020b8ec2e62fff238bc8cfc20ef4bc9adfc4217ca",
+      "artifactSizeBytes": 2304
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T08:44:29.279Z"
+}

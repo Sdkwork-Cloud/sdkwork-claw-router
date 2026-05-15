@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rust-rebuilder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rust_rebuilder",
+  "skill": {
+    "id": 22042,
+    "skillKey": "clawhub-rust-rebuilder",
+    "name": "rust-rebuilder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rust-rebuilder",
+    "url": "https://clawhub.ai/skills/rust-rebuilder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rust-rebuilder-2e3f43bfb4259714.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Plan and execute incremental project rewrites to Rust with architecture mapping, parity verification, idiomatic Rust guidance, dependency preflight checks, a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dandandujie",
+      "userId": "publishers:dandandujie",
+      "displayName": "dandandujie",
+      "image": "https://avatars.githubusercontent.com/u/142396650?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 487,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772522941468,
+      "changelog": "Initial release of rust-rebuilder: a skill for methodical project rewrites to Rust with automated dependency checks, architecture mapping, parity verification, and upstream GitHub synchronization.\n\n- Supports incremental, verifiable, and reversible rewrites with detailed migration workflow.\n- Enforces mandatory dependency preflight checks for grok-search and github-helper, pausing execution if missing.\n- Provides explicit output contracts covering migration scope, equivalence strategy, Rust design decisions, risk register, and upstream sync notes.\n- Includes strict backend Rust guardrails and integrates external guideline/reference documents.\n- Enables continuous synchronization with GitHub source repositories.\n- Supplies quick-start prompt patterns and resource mapping for smooth adoption.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:723ab19d29b62e936192a89e1d958998a2c0bf3d776f91361779916ead1843dc"
+}

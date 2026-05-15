@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11014,
+  "uuid": "skill-clawhub-plaud-unofficial",
+  "skillKey": "clawhub-plaud-unofficial",
+  "name": "Plaud Unofficial Skill",
+  "summary": "Use when accessing Plaud voice recorder data (recordings, transcripts, AI summaries) - guides credential setup and provides patterns for plaud_client.py",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plaud_unofficial",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "leonardsellem",
+      "features": [
+        "Use when accessing Plaud voice recorder data (recordings, transcripts, AI summaries)",
+        "guides credential setup and provides patterns for plaud_client.py"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/plaud-unofficial@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2162208?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "plaud-unofficial",
+      "url": "https://clawhub.ai/skills/plaud-unofficial"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plaud-unofficial",
+    "url": "https://clawhub.ai/skills/plaud-unofficial",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plaud-unofficial-79ce9053b238eb1d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/plaud-unofficial@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-plaud-unofficial-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d2774e99ac992f411259f0bf95329c1df893d1995dbff9603b0352ef616037c",
+      "artifactSizeBytes": 2463
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-26T08:34:08.262Z"
+}

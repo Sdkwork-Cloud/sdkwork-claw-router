@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ttt@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ttt",
+  "skill": {
+    "id": 11493,
+    "skillKey": "clawhub-ttt",
+    "name": "Tiny Talking Todos"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ttt",
+    "url": "https://clawhub.ai/skills/ttt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ttt-3f7c54571faee024.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage TinyTalkingTodos lists and items via the ttt CLI"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "joshuacrowley",
+      "userId": "publishers:joshuacrowley",
+      "displayName": "joshuacrowley",
+      "image": "https://avatars.githubusercontent.com/u/312676?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1998,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1770118265769,
+      "changelog": "No changes detected in this release.\n\n- Version 0.1.2 contains no file changes compared to the previous release.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1b41430df7f3135a285671d829e54c2c49ca0a06beef40617178754198c75fe0"
+}

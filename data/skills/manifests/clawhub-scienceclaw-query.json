@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50438,
+  "uuid": "skill-clawhub-scienceclaw-query",
+  "skillKey": "clawhub-scienceclaw-query",
+  "name": "ScienceClaw: Query (Dry Run)",
+  "summary": "Run a scientific investigation on any topic and return findings directly to chat — without posting to Infinite. Use this for quick research, previews, or whe...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scienceclaw_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Fiona Wang",
+      "features": [
+        "Run a scientific investigation on any topic and return findings directly to chat — without post.",
+        "Use this for quick research, previews, or whe..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/scienceclaw-query@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/132936425?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "scienceclaw-query",
+      "url": "https://clawhub.ai/skills/scienceclaw-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scienceclaw-query",
+    "url": "https://clawhub.ai/skills/scienceclaw-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scienceclaw-query-246431523b54ce12.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/scienceclaw-query@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-scienceclaw-query-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3cb5dc185a9da939545fea31c2c6faba14b6c22818316bd4314ca5d3e5fcee5e",
+      "artifactSizeBytes": 1980
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T21:21:20.137Z"
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13099,
+  "uuid": "skill-clawhub-book-waxing",
+  "skillKey": "clawhub-book-waxing",
+  "name": "Book Waxing",
+  "summary": "Book waxing services through Lokuli MCP. Use when user needs to find and book waxing. Triggers on requests like \"book a waxing\", \"find waxing near me\", or any waxing service request.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_waxing",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lokuli",
+      "features": [
+        "Book waxing services through Lokuli MCP",
+        "Use when user needs to find and book waxing",
+        "Triggers on requests like \"book a waxing\", \"find waxing near me\", or any waxing service request."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-waxing@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224194606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-waxing",
+      "url": "https://clawhub.ai/skills/book-waxing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-waxing",
+    "url": "https://clawhub.ai/skills/book-waxing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-waxing-f13cedf22c9fe9e1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-waxing@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-waxing-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:79e8ad16116962c32c897c4c27cf5385fc9b630a262f8505ddc1d55e574dde2f",
+      "artifactSizeBytes": 1911
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T01:04:53.482Z"
+}

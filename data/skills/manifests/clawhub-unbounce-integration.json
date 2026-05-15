@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33647,
+  "uuid": "skill-clawhub-unbounce-integration",
+  "skillKey": "clawhub-unbounce-integration",
+  "name": "Unbounce",
+  "summary": "Unbounce integration. Manage data, records, and automate workflows. Use when the user wants to interact with Unbounce data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unbounce_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Unbounce integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Unbounce data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/unbounce-integration@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "unbounce-integration",
+      "url": "https://clawhub.ai/skills/unbounce-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unbounce-integration",
+    "url": "https://clawhub.ai/skills/unbounce-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unbounce-integration-97aaeb8427c3115e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/unbounce-integration@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-unbounce-integration-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a8515302d3d5a2cab83ac363fbb6b978f4d89daaf7db781b67977ef78f900707",
+      "artifactSizeBytes": 1902
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:57:05.486Z"
+}

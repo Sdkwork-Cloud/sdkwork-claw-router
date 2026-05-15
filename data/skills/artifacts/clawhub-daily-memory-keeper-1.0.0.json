@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-memory-keeper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_memory_keeper",
+  "skill": {
+    "id": 66624,
+    "skillKey": "clawhub-daily-memory-keeper",
+    "name": "Daily Memory Keeper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-memory-keeper",
+    "url": "https://clawhub.ai/skills/daily-memory-keeper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-memory-keeper-b6aa774abe8917f7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动按日期整理AI记忆文件，支持关键词检索、跨会话继承，每日生成简报并定期清理过期数据。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linbo405",
+      "userId": "s17404ahym3v74cyh9f41zw9s183h5ga",
+      "displayName": "linbo405",
+      "image": "https://avatars.githubusercontent.com/u/259021343?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774414616750,
+      "changelog": "Memory Archiver 1.0.0 — First Release\n\n- 自动归档 AI Agent 的记忆文件，按日期整理为结构化知识库\n- 支持关键词快速检索及跨会话记忆继承\n- 系统每日生成记忆简报，重要信息不遗漏\n- 定期清理过期文件，节省存储空间\n- 可自定义归档目录、保留天数和清理规则",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:73cc481a55d56f6168e8d372664590b45d35a1fe596274fb4edf9143bc1f4891"
+}

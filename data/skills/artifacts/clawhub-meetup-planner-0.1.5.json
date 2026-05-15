@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meetup-planner@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meetup_planner",
+  "skill": {
+    "id": 15822,
+    "skillKey": "clawhub-meetup-planner",
+    "name": "Meetup Planner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meetup-planner",
+    "url": "https://clawhub.ai/skills/meetup-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meetup-planner-91c8408befe18698.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "An intelligent event finder that searches for meetups and events based on your interests, tracks them, and reminds you before they happen"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "apresmoi",
+      "userId": "publishers:apresmoi",
+      "displayName": "apresmoi",
+      "image": "https://avatars.githubusercontent.com/u/11778792?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 955,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1770933613364,
+      "changelog": "- Refined storage paths for config and data files to use only the `~/.openclaw/workspace/meetup-planner/` directory.\n- Updated instructions and agent workflow to support any available search and scraping tool, rather than specifying particular skills.\n- Clarified that users must provide their own web search and crawling tools if not already installed.\n- Simplified and streamlined documentation for easier setup and use.\n- Removed obsolete documentation files, including previous changelogs and security summaries.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:87cde00988390c6302ec8bc4fc2d27d6770c808a864601d2d3dbe02d5396e81b"
+}

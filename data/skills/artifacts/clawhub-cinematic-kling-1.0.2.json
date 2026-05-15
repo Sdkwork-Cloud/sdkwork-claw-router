@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cinematic-kling@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cinematic_kling",
+  "skill": {
+    "id": 28749,
+    "skillKey": "clawhub-cinematic-kling",
+    "name": "Cinematic Kling"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cinematic-kling",
+    "url": "https://clawhub.ai/skills/cinematic-kling",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cinematic-kling-c505335886414314.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate 5-second cinematic AI videos using Kling via ComfyDeploy. Takes a character image, item image, and location image, then produces a character sheet,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pauldelavallaz",
+      "userId": "publishers:pauldelavallaz",
+      "displayName": "Paul de Lavallaz",
+      "image": "https://avatars.githubusercontent.com/u/51497690?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 318,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773810544785,
+      "changelog": "Fix: mandatory image tool verification before assigning character/item/location roles",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1fbec29d4fb1648557e410a58e2eab059b14688c6f5da23975b52562491edbf7"
+}

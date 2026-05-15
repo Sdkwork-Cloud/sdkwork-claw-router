@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/afrexai-workplace-safety@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_workplace_safety",
+  "skill": {
+    "id": 16005,
+    "skillKey": "clawhub-afrexai-workplace-safety",
+    "name": "Workplace Safety Compliance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-workplace-safety",
+    "url": "https://clawhub.ai/skills/afrexai-workplace-safety",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-workplace-safety-ec2f9f7466b7e76a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate workplace safety audits, incident reports, hazard assessments, training matrices, and compliance programs aligned with OSHA standards."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1kalin",
+      "userId": "s17e1q0nx23qnh4n429zzqc05x83hvsw",
+      "displayName": "1kalin",
+      "image": "https://avatars.githubusercontent.com/u/15705344?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 830,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771163071941,
+      "changelog": "- Initial release of workplace safety & OSHA compliance skill.\n- Generate workplace safety audits, incident reports, and hazard assessments.\n- Build complete safety programs for key hazards (e.g., LOTO, Fall Protection, HazCom).\n- Create role-based safety training matrices and job hazard analyses (JHA).\n- Outputs include compliance checklists, gap analyses, action plans, and ready-to-use field documents.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:97fa9074e04c864551b3066403b1bce72f96d10ed813bb27966defd99bcf84ca"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37933,
+  "uuid": "skill-clawhub-git-backup",
+  "skillKey": "clawhub-git-backup",
+  "name": "Git Backup",
+  "summary": "Backup the agent workspace to a GitHub repository. Use when: asked to save/remember something important, after significant changes to memory files, on a sche...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_backup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Netanel Abergel",
+      "features": [
+        "Backup the agent workspace to a GitHub repository",
+        "Use when: asked to save/remember something important, after significant changes to memory files."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/git-backup@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/89765095?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "git-backup",
+      "url": "https://clawhub.ai/skills/git-backup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-backup",
+    "url": "https://clawhub.ai/skills/git-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-backup-9e7be270baead038.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/git-backup@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-git-backup-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d78fd2b2e48e828e6e142e431251e21882692c7f70dc2e92d16af3fbc7131983",
+      "artifactSizeBytes": 2296
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T19:51:19.183Z"
+}

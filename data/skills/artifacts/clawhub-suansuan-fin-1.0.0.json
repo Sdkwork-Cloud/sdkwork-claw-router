@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/suansuan-fin@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.suansuan_fin",
+  "skill": {
+    "id": 71593,
+    "skillKey": "clawhub-suansuan-fin",
+    "name": "suansuan-10agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "suansuan-fin",
+    "url": "https://clawhub.ai/skills/suansuan-fin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/suansuan-fin-7956fe0ae58a5485.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "激活\"算算\"财务经营官角色。当用户涉及财务分析、现金流管理、成本优化、融资方案、投资回报、定价策略、财务报表解读、预算管理、经营数据、盈利能力、降本增效等财务经营问题时，必须调用此skill。关键词包括：现金流、利润、成本、财务、资金、融资、ROI、定价、预算、报表、亏损、盈利、降本、毛利率。只要涉及钱的问题，立..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lanxy32",
+      "userId": "s172gs284vpqe0n58s4kc6w1ps83kewb",
+      "displayName": "lanxy32",
+      "image": "https://avatars.githubusercontent.com/u/240639876?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777098930655,
+      "changelog": "suansuan-fin 1.0.0\n\n- 首次发布“算算”财务经营官技能，聚焦企业财务健康诊断与经营决策支持\n- 覆盖利润表、现金流量表、资产负债表三大核心报表的实用分析框架\n- 提供成本优化、定价策略、融资方案、投资决策等常见经营财务场景的标准化处理模板\n- 输出结构化财务报告，聚焦量化数据和行动建议\n- 面向非财务人员，强调用经营语言解读复杂财务问题",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:482f478f77aa75bf971f967cecbec6ad7d1f6f9321abef7e687f0d6c2c42267b"
+}

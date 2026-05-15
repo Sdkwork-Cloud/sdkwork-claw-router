@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/file-archive-system@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_archive_system",
+  "skill": {
+    "id": 65404,
+    "skillKey": "clawhub-file-archive-system",
+    "name": "file-archive-system"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-archive-system",
+    "url": "https://clawhub.ai/skills/file-archive-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-archive-system-82c5c6ee2144c914.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "本地文件归档系统。把习惯、偏好、日程、每日记录和长期知识结构化存放到四层记忆目录，并通过 index.json 建立可检索索引。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lingmoon96-dev",
+      "userId": "s170394dw8f0kpn2y14g0hq36n83sw7z",
+      "displayName": "lingmoon96-dev",
+      "image": "https://avatars.githubusercontent.com/u/250243307?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 262,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774942608007,
+      "changelog": "Sync local workspace skills into ClawHub tracking from the current OpenClaw workspace.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:23c007d461dc0fcaeb0a36a661dd7947d4a17fd3c0562bcb6a278a8d42fe2aba"
+}

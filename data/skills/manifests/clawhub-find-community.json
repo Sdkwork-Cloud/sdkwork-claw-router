@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30583,
+  "uuid": "skill-clawhub-find-community",
+  "skillKey": "clawhub-find-community",
+  "name": "Find Community",
+  "summary": "Help identify and evaluate communities to build a minimalist business around. Use when someone is looking for a business idea, trying to find their community...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_community",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aoli",
+      "features": [
+        "Help identify and evaluate communities to build a minimalist business around",
+        "Use when someone is looking for a business idea, trying to find their community..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/find-community@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86242993?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "find-community",
+      "url": "https://clawhub.ai/skills/find-community"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-community",
+    "url": "https://clawhub.ai/skills/find-community",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-community-d961270b1b834acf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/find-community@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-find-community-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8bc4212ceb20edfb49b9848fd77c3f3b189ff1e043b66681102557c1f773770b",
+      "artifactSizeBytes": 1915
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T09:37:24.596Z"
+}

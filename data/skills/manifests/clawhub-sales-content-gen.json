@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41495,
+  "uuid": "skill-clawhub-sales-content-gen",
+  "skillKey": "clawhub-sales-content-gen",
+  "name": "Sales Content Gen Agent",
+  "summary": "Generates tailored marketing images, videos, music, and ad copy using AI tools for social media, ads, and brand campaigns on demand.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sales_content_gen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Fuzzyb33s",
+      "features": [
+        "Generates tailored marketing images, videos, music, and ad copy using AI tools for social media."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sales-content-gen@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/221636957?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sales-content-gen",
+      "url": "https://clawhub.ai/skills/sales-content-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sales-content-gen",
+    "url": "https://clawhub.ai/skills/sales-content-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sales-content-gen-81f840f1e64c03b0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sales-content-gen@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sales-content-gen-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a07c24614444a48c848c710c4e6cad68dabd274b992e255f108183e84d380ba7",
+      "artifactSizeBytes": 1935
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T17:20:40.564Z"
+}

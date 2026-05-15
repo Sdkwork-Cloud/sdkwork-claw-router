@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/holiday-promo-poster@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.holiday_promo_poster",
+  "skill": {
+    "id": 33839,
+    "skillKey": "clawhub-holiday-promo-poster",
+    "name": "Turn product images and campaign copy into polished seasonal promo posters."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "holiday-promo-poster",
+    "url": "https://clawhub.ai/skills/holiday-promo-poster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/holiday-promo-poster-75789a2fc39f7351.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Say \"Help me install this skill from https://clawhub.ai/shuminliu026/holiday-promo-poster\" to your local agent, then turn product images and copy into season..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shuminliu026",
+      "userId": "s17b6vpgmxhad5hsrcphr8vgwh83s524",
+      "displayName": "liuliu026",
+      "image": "https://avatars.githubusercontent.com/u/271687535?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 232,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1776261687929,
+      "changelog": "- Updated the skill description to use a direct installation link: \"Say 'Help me install this skill from https://clawhub.ai/shuminliu026/holiday-promo-poster' to your local agent\" for clearer onboarding.\n- No functional or logic changes to the core workflow or campaign rules.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c43bb0ae81707c655c0666fdd1f2fd86d02ff2d2c31b546d22cc43d0f1281811"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x-manager@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_manager",
+  "skill": {
+    "id": 52164,
+    "skillKey": "clawhub-x-manager",
+    "name": "X Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-manager",
+    "url": "https://clawhub.ai/skills/x-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-manager-d83d1315482551c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage X (Twitter) accounts — post tweets, like, reply, retweet, view timeline, search, auto-interact, analyze data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "patches429",
+      "userId": "publishers:patches429",
+      "displayName": "Parker",
+      "image": "https://avatars.githubusercontent.com/u/169116739?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 444,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773051994578,
+      "changelog": "Initial release of x-manager.\n\n- Manage X (Twitter) accounts: post tweets, like, reply, retweet, view timeline, search, auto-interact, and analyze data.\n- Supports multi-user credentials with environment variable or JSON file binding.\n- Provides scripts for posting, engaging with tweets, and retrieving timelines or search results.\n- Auto-interaction workflow configurable per user.\n- Handles API rate limits, authentication errors, and tweet length issues.\n- Notes feature and limitation differences by Twitter API tier.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2643ff1ea31ffc663953b34494f83fdaae5eefbe08e3e2e5f0de4e6dc3887d62"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65973,
+  "uuid": "skill-clawhub-skill-everyday",
+  "skillKey": "clawhub-skill-everyday",
+  "name": "skill everyday",
+  "summary": "每天抓取 Clawhub 热门技能，深入分析并生成报告。每次执行获取一个未分析过的热门技能，避免重复。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_everyday",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "do_while_true",
+      "features": [
+        "每天抓取 Clawhub 热门技能，深入分析并生成报告。每次执行获取一个未分析过的热门技能，避免重复。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-everyday@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30582182?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-everyday",
+      "url": "https://clawhub.ai/skills/skill-everyday"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-everyday",
+    "url": "https://clawhub.ai/skills/skill-everyday",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-everyday-d6d0fa12caf1ed8b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-everyday@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-everyday-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:971098a81ce594564b895c2c0b2106f24c7a6f5a5bf6c05612417545ea76c1b3",
+      "artifactSizeBytes": 2280
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T09:20:16.945Z"
+}

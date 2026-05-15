@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73295,
+  "uuid": "skill-clawhub-tender-express-search-bidizhaobiao",
+  "skillKey": "clawhub-tender-express-search-bidizhaobiao",
+  "name": "地方标讯极速检索-比地招标",
+  "summary": "地方标讯极速检索-比地招标，当用户指定省份、城市或特定地域进行下沉标讯搜索时调用，必须严格应用地域过滤器参数，快速返回按时间倒序排列的地方采购公告及预算金额。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tender_express_search_bidizhaobiao",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liu-jiapeng",
+      "features": [
+        "地方标讯极速检索-比地招标，当用户指定省份、城市或特定地域进行下沉标讯搜索时调用，必须严格应用地域过滤器参数，快速返回按时间倒序排列的地方采购公告及预算金额。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tender-express-search-bidizhaobiao@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37843351?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tender-express-search-bidizhaobiao",
+      "url": "https://clawhub.ai/skills/tender-express-search-bidizhaobiao"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tender-express-search-bidizhaobiao",
+    "url": "https://clawhub.ai/skills/tender-express-search-bidizhaobiao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tender-express-search-bidizhaobiao-3c0ba3914ebccde0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tender-express-search-bidizhaobiao@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tender-express-search-bidizhaobiao-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:34217e5ab1e51dcdf6ce16545a46a56e6f99615f51fac4c8a2818e3454efd076",
+      "artifactSizeBytes": 2874
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T12:08:38.817Z"
+}

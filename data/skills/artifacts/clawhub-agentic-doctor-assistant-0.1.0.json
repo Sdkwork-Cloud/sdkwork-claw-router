@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentic-doctor-assistant@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentic_doctor_assistant",
+  "skill": {
+    "id": 71809,
+    "skillKey": "clawhub-agentic-doctor-assistant",
+    "name": "医生工作台助手 (Agentic AI 科研平台)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentic-doctor-assistant",
+    "url": "https://clawhub.ai/skills/agentic-doctor-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentic-doctor-assistant-de73776a06ecf325.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "医生工作台助手。整理患者基本信息、关键时间线、检验趋势、待办事项并生成随访任务草稿。当用户以医生身份查询患者情况或需要随访建议时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "emergenceronearth",
+      "userId": "s177bkapgfmz12gyr1kc5fwknx83p9pz",
+      "displayName": "EmergencerOnEarth",
+      "image": "https://avatars.githubusercontent.com/u/128658416?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 181,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774619030399,
+      "changelog": "initial publish",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4e0bad98a2b65c2d5dd4d83b45d77a9ef0a3e18e0c4adb0d19916a0e21b09890"
+}

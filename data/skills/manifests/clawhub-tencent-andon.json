@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71688,
+  "uuid": "skill-clawhub-tencent-andon",
+  "skillKey": "clawhub-tencent-andon",
+  "name": "AndonQ",
+  "summary": "腾讯云 AndonQ 工单与智能客服助手 — 不切窗口、不排队，即刻获得腾讯云全产品线专业解答。支持工单查询（列表/详情/流水）、集团工单与需求单管理，以及腾讯云全产品线智能问答。当用户查询工单、查看工单详情、咨询腾讯云产品问题（如 CVM、轻量应用服务器、COS 等）、查询集团工单/需求单，或要求找人工客服时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencent_andon",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AutoClaw",
+      "features": [
+        "腾讯云 AndonQ 工单与智能客服助手 — 不切窗口、不排队，即刻获得腾讯云全产品线专业解答。支持工单查询（列表/详情/流水）、集团工单与需求单管理，以及腾讯云全产品线智能问答。当用户查询."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tencent-andon@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/145959662?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tencent-andon",
+      "url": "https://clawhub.ai/skills/tencent-andon"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencent-andon",
+    "url": "https://clawhub.ai/skills/tencent-andon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencent-andon-61f8f851b32f7002.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tencent-andon@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tencent-andon-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:29ee7715f45e0c79131e29309b168181bbfd7179e86e8e6d48ad7089c49bd5de",
+      "artifactSizeBytes": 2724
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T07:08:23.718Z"
+}

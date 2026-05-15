@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tmp-feishu-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tmp_feishu_skill",
+  "skill": {
+    "id": 61465,
+    "skillKey": "clawhub-tmp-feishu-skill",
+    "name": "Tmp Feishu Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tmp-feishu-skill",
+    "url": "https://clawhub.ai/skills/tmp-feishu-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tmp-feishu-skill-1e1fb3c7852a1d2a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "指导在Windows环境下创建并配置飞书机器人，绑定至OpenClaw指定Agent，实现多Agent多角色管理和消息交互。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "song123-wq",
+      "userId": "s17eqszctvrfnf8p95vkc9hy1984wtfj",
+      "displayName": "song123-wq",
+      "image": "https://avatars.githubusercontent.com/u/276361447?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 105,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777679695222,
+      "changelog": "Initial release: Quickly create Feishu bots and connect them to OpenClaw as dedicated Agents in a Windows environment.\n\n- Detailed step-by-step guide for creating a Feishu bot and linking it to an Agent\n- Environment-specific instructions for Windows and OpenClaw 2026.4.26\n- Naming conventions and structure recommendations for new Agents\n- Workspace and memory file setup using PowerShell commands\n- Clear configuration flow for credentials, permissions, and binding\n- Troubleshooting checklist for smooth integration and connection validation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:387a6650aea4c70ca9ea20ed5ba348474665b07607c0b406cfe70e75f257eb4e"
+}

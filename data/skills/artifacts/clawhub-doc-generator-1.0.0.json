@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/doc-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doc_generator",
+  "skill": {
+    "id": 38151,
+    "skillKey": "clawhub-doc-generator",
+    "name": "Doc Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doc-generator",
+    "url": "https://clawhub.ai/skills/doc-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doc-generator-fb0b23a07d5b8118.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Auto-generates professional README.md from code structure, package.json, and directory analysis. Triggers: generate readme, create readme, readme from code,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776931867693,
+      "changelog": "- Initial release of README generator tool.\n- Automatically analyzes code structure and project files to produce a professional README.md.\n- Detects project type and customizes documentation for JS, Python, Rust, Go, and Java.\n- Generates sections including title, badges, description, features, install/usage instructions, API reference, contributing, and license.\n- Uses real badges and extracts code examples from the source code.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ee834257d310e1057ef9f927dc609e24fc93087f045aea929021c9396dcb7bc8"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nocodb-skills@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nocodb_skills",
+  "skill": {
+    "id": 35053,
+    "skillKey": "clawhub-nocodb-skills",
+    "name": "Nocodb"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nocodb-skills",
+    "url": "https://clawhub.ai/skills/nocodb-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nocodb-skills-3b8afe741f2f5570.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access and manage NocoDB databases via v3 REST API. Use for managing workspaces, bases, tables, fields, views, records, and more. Supports filtering, sorting..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jkmchinese",
+      "userId": "s17czbxx3e6593a1gmgg9xcws983h9xh",
+      "displayName": "Transfen",
+      "image": "https://avatars.githubusercontent.com/u/3047745?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774238229250,
+      "changelog": "- Initial release with feature-complete CLI for NocoDB v3 API.\n- Manage workspaces, bases, tables, fields, views, records, filters, sorts, attachments, scripts, teams, and tokens.\n- Supports filtering, sorting, pagination, linked records, attachments, and team management.\n- Use IDs or human-readable names for resources, with support for ID resolution.\n- Includes full reference for commands, filter/where syntax, and quick examples.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:da75a2f322dfe2d4e19b1ebe357a3e408c33b881591b651dcdd42e0d9fbbe73b"
+}

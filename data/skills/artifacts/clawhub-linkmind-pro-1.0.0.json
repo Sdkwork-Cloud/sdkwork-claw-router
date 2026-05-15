@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linkmind-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkmind_pro",
+  "skill": {
+    "id": 58549,
+    "skillKey": "clawhub-linkmind-pro",
+    "name": "Linkmind"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkmind-pro",
+    "url": "https://clawhub.ai/skills/linkmind-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkmind-pro-3354e4b117a7662e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "LinkMind 知识连接引擎 Phase 2 - 本地化知识中枢 CLI 工具，支持 storage adapter 抽象层和 OpenAI-compatible embedding provider。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775378328763,
+      "changelog": "LinkMind Phase 2 introduces major new capabilities for local knowledge retrieval:\n\n- Added Storage Adapter abstraction: supports both JSON (default, backward compatible) and high-performance SQLite.\n- Added Embedding Provider abstraction: includes offline MockProvider and OpenAI-compatible provider (works with OpenAI/vLLM/Ollama).\n- Enabled dual-layer retrieval: combines keyword recall and cosine similarity-based vector search with deduplication.\n- Fully backward compatible with Phase 1 JSON data—no migration needed.\n- Enhanced CLI: new commands for ingesting content, querying, status checks, and workspace resetting.\n- Provided extensive examples, architecture details, and self-test scripts in documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5c65ad136dbd7bc1a0a507cff6c5b0ff927d732fa9e1efe0597d4739abda812d"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21036,
+  "uuid": "skill-clawhub-gov-competitive-intel",
+  "skillKey": "clawhub-gov-competitive-intel",
+  "name": "Gov Competitive Intel",
+  "summary": "SEC filings, company news, federal contracts, and company profiles. 4 tools for competitive intelligence.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gov_competitive_intel",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Martin",
+      "features": [
+        "SEC filings, company news, federal contracts, and company profiles",
+        "4 tools for competitive intelligence."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gov-competitive-intel@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138740843?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gov-competitive-intel",
+      "url": "https://clawhub.ai/skills/gov-competitive-intel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gov-competitive-intel",
+    "url": "https://clawhub.ai/skills/gov-competitive-intel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gov-competitive-intel-9c8b1d5bdab2dc0f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gov-competitive-intel@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gov-competitive-intel-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a70825c40e21b68dd36b92288559d6d0d119060e66d2271fcc77d2437f579104",
+      "artifactSizeBytes": 2390
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T17:59:03.763Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36426,
+  "uuid": "skill-clawhub-brainz-tasks",
+  "skillKey": "clawhub-brainz-tasks",
+  "name": "Tasks",
+  "summary": "Manage Todoist tasks using the `todoist` CLI. Add, list, and complete tasks from the command line.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brainz_tasks",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xejrax",
+      "features": [
+        "Manage Todoist tasks using the `todoist` CLI",
+        "Add, list, and complete tasks from the command line."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/brainz-tasks@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/148405630?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "brainz-tasks",
+      "url": "https://clawhub.ai/skills/brainz-tasks"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brainz-tasks",
+    "url": "https://clawhub.ai/skills/brainz-tasks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brainz-tasks-299ab3bd1275fa68.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/brainz-tasks@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-brainz-tasks-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dcb07f99e07c0cb0edf1a9b0636abf31f32de94f561d563029d6dd30d4e0bb6f",
+      "artifactSizeBytes": 1782
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T16:51:55.880Z"
+}

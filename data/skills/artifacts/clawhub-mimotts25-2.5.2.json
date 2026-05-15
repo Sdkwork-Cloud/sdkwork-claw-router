@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mimotts25@2.5.2",
+  "version": "2.5.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mimotts25",
+  "skill": {
+    "id": 59434,
+    "skillKey": "clawhub-mimotts25",
+    "name": "Mimotts25"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mimotts25",
+    "url": "https://clawhub.ai/skills/mimotts25",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mimotts25-72fadf6fffa818b9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小米大模型 MiMo TTS 2.5 语音合成。支持多种预设音色（中文/英文/默认）、风格控制（情感、方言、角色扮演、语速）、音频标签精细控制。Use when the user asks to convert text to speech, generate audio, read text aloud wit..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aaroncxxx",
+      "userId": "s17509zamkdtrtbahz6xrwbmx585c88m",
+      "displayName": "aaroncxxx",
+      "image": "https://avatars.githubusercontent.com/u/255621878?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 225,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.5.2",
+      "createdAt": 1776929893908,
+      "changelog": "新增4种音色（男声、童声、粤语、四川话），新增mp3/ogg音频格式支持，添加重试机制和错误处理优化，新增风格标签和情感风格，新增命令行参数。Added 4 new voices (male, child, Cantonese, Sichuan dialect), added mp3/ogg audio format support, added retry mechanism and improved error handling, added new style tags and emotional styles, added new command line parameters.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0bd06557d432a82807446270a82782a146790c0f7b8a7617f34a56eb3f896d4c"
+}

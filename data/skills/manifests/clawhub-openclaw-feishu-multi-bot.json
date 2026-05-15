@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51400,
+  "uuid": "skill-clawhub-openclaw-feishu-multi-bot",
+  "skillKey": "clawhub-openclaw-feishu-multi-bot",
+  "name": "Feishu Multi-Bot",
+  "summary": "Configure multiple Feishu/Lark bot identities within a single OpenClaw instance — each Agent gets its own Feishu App, name, avatar, and message routing. Use...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_feishu_multi_bot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "simonlin",
+      "features": [
+        "Configure multiple Feishu/Lark bot identities within a single OpenClaw instance — each Agent ge."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-feishu-multi-bot@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/166034225?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-feishu-multi-bot",
+      "url": "https://clawhub.ai/skills/openclaw-feishu-multi-bot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-feishu-multi-bot",
+    "url": "https://clawhub.ai/skills/openclaw-feishu-multi-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-feishu-multi-bot-3c4ee6cca530efe9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-feishu-multi-bot@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-feishu-multi-bot-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b88a72532bbe1ee50993da2e0b16ed1941d259aaec953199ab3a3793441f5bfc",
+      "artifactSizeBytes": 1985
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T16:10:57.158Z"
+}

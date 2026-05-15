@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/swipenode@1.6.4",
+  "version": "1.6.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swipenode",
+  "skill": {
+    "id": 50387,
+    "skillKey": "clawhub-swipenode",
+    "name": "SwipeNode Web Extractor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swipenode",
+    "url": "https://clawhub.ai/skills/swipenode",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swipenode-73f909944a488ab7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Give your agent the superpower to read the modern web without getting blocked by Cloudflare. Extracts clean JSON, saves 98% of LLM tokens, and executes zero..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sirtoby99",
+      "userId": "publishers:sirtoby99",
+      "displayName": "sirToby",
+      "image": "https://avatars.githubusercontent.com/u/252211629?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 406,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.6.4",
+      "createdAt": 1773171336642,
+      "changelog": "No functional changes; only metadata updated.\n\n- Version bumped from 1.6.3 to 1.6.4 in SKILL.md.\n- Added a \"Legal & Credits\" section acknowledging use of bogdanfinn/tls-client.\n- No code or functional documentation changes detected.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2b5d476dc540f5faefeafc42ced7070eae428ae9e162e864803ac9ef50489126"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71271,
+  "uuid": "skill-clawhub-knowledgeskill",
+  "skillKey": "clawhub-knowledgeskill",
+  "name": "TANGSUAN1994",
+  "summary": "将文档摘要、分类和原链接记录到「工作知识库」智能表格中。当用户提到「知识库」，或要求\"记录/存入/归档到知识库\"，或发来文档链接并希望整理归档时触发。流程：AI 自动生成简短摘要 → 用户指定主题分类 → 写入企业微信智能表格。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knowledgeskill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TangSuan1221",
+      "features": [
+        "将文档摘要、分类和原链接记录到「工作知识库」智能表格中。当用户提到「知识库」，或要求\"记录/存入/归档到知识库\"，或发来文档链接并希望整理归档时触发。流程：AI 自动生成简短摘要 → 用户指."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/knowledgeskill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/217690903?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "knowledgeskill",
+      "url": "https://clawhub.ai/skills/knowledgeskill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knowledgeskill",
+    "url": "https://clawhub.ai/skills/knowledgeskill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knowledgeskill-16cb64b77d50d3a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/knowledgeskill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-knowledgeskill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9a7373aca9487258960c380ef59d3d3d756306948a0221a7fc0337fbcfbf4f4f",
+      "artifactSizeBytes": 2033
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T09:28:43.104Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23722,
+  "uuid": "skill-clawhub-aigc-news-sentiment",
+  "skillKey": "clawhub-aigc-news-sentiment",
+  "name": "AI News Sentiment",
+  "summary": "Analyze financial news sentiment, assess short- to long-term impacts, and classify news by type like earnings, contracts, investments, policies, and reports.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aigc_news_sentiment",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GBABYZS",
+      "features": [
+        "Analyze financial news sentiment, assess short",
+        "to long-term impacts, and classify news by type like earnings, contracts, investments, policies."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aigc-news-sentiment@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264446239?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aigc-news-sentiment",
+      "url": "https://clawhub.ai/skills/aigc-news-sentiment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aigc-news-sentiment",
+    "url": "https://clawhub.ai/skills/aigc-news-sentiment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aigc-news-sentiment-b2e0956d96130f4f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aigc-news-sentiment@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aigc-news-sentiment-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d2a61332530a349226cd8edab8f69f7c304e316f4dc5f1240424d13b8447e46",
+      "artifactSizeBytes": 1962
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T01:35:01.207Z"
+}

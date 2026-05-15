@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8341,
+  "uuid": "skill-clawhub-outlook-api",
+  "skillKey": "clawhub-outlook-api",
+  "name": "Outlook",
+  "summary": "Microsoft Outlook API integration with managed OAuth. Read, send, and manage emails, folders, calendar events, and contacts via Microsoft Graph. Use this ski...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.outlook_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byungkyu",
+      "features": [
+        "Microsoft Outlook API integration with managed OAuth",
+        "Read, send, and manage emails, folders, calendar events, and contacts via Microsoft Graph",
+        "Use this ski..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/outlook-api@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16563684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "outlook-api",
+      "url": "https://clawhub.ai/skills/outlook-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "outlook-api",
+    "url": "https://clawhub.ai/skills/outlook-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/outlook-api-42672b87cf7039ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/outlook-api@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-outlook-api-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2a19b1033b49a0dcb77e87a7c463c5755b95ce465d2a42438b9ab66397cfeee4",
+      "artifactSizeBytes": 2460
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T10:07:49.709Z"
+}

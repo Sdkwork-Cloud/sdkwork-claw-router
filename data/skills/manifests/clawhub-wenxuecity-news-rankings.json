@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31596,
+  "uuid": "skill-clawhub-wenxuecity-news-rankings",
+  "skillKey": "clawhub-wenxuecity-news-rankings",
+  "name": "Wenxuecity News Rankings",
+  "summary": "Fetch and format Wenxuecity News rankings from https://www.wenxuecity.com/news/, specifically the two 24-hour lists (hot ranking and discussion ranking). Use...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wenxuecity_news_rankings",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tonyguo2010",
+      "features": [
+        "Fetch and format Wenxuecity News rankings from https://www.wenxuecity.com/news/, specifically t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wenxuecity-news-rankings@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17005666?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wenxuecity-news-rankings",
+      "url": "https://clawhub.ai/skills/wenxuecity-news-rankings"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wenxuecity-news-rankings",
+    "url": "https://clawhub.ai/skills/wenxuecity-news-rankings",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wenxuecity-news-rankings-33a4e050cf34a0d4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wenxuecity-news-rankings@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wenxuecity-news-rankings-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b4aeb0810d46c4613b6ccf57aa199b6c44e3c1ab19b607476bbc62056b4dac3",
+      "artifactSizeBytes": 1961
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T00:04:46.225Z"
+}

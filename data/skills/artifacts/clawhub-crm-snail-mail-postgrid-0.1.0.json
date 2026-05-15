@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crm-snail-mail-postgrid@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crm_snail_mail_postgrid",
+  "skill": {
+    "id": 26545,
+    "skillKey": "clawhub-crm-snail-mail-postgrid",
+    "name": "Crm Snail Mail Postgrid"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crm-snail-mail-postgrid",
+    "url": "https://clawhub.ai/skills/crm-snail-mail-postgrid",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crm-snail-mail-postgrid-3d564aec16cbdbf1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send physical mail from CRM contacts using PostGrid. Use when pulling contacts from GoHighLevel (GHL) or Follow Up Boss (FUB), mapping contact/address fields..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danielfoch",
+      "userId": "publishers:danielfoch",
+      "displayName": "danielfoch",
+      "image": "https://avatars.githubusercontent.com/u/152220262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 365,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772720937472,
+      "changelog": "crm-snail-mail-postgrid v0.1.0 – Initial release\n\n- Enables sending personalized physical mail (letters or postcards) from CRM contacts via PostGrid.\n- Supports contacts from GoHighLevel (GHL), Follow Up Boss (FUB), or pre-exported JSON files.\n- Normalizes, filters, and processes contact data to generate and submit mail jobs.\n- Includes dry-run capability for payload inspection and real send limiting for safer operations.\n- Provides command-line utilities for mail job creation, template rendering, direct API calls, and contact exporting.\n- Detailed environment variable and usage instructions included for all core workflows.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f4550c698fac1b00afb3429fc03c87e42ed1fd829273d7e961d65b91f1aaf127"
+}

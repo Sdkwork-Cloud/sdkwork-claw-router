@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/marl-middleware@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.marl_middleware",
+  "skill": {
+    "id": 48117,
+    "skillKey": "clawhub-marl-middleware",
+    "name": "MARL — Multi-stage Reasoning Middleware"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "marl-middleware",
+    "url": "https://clawhub.ai/skills/marl-middleware",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/marl-middleware-27d5d03f3c069dd4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-stage multi-agent reasoning middleware that reduces LLM hallucination by 70%+. 9 specialized emergence engines for invention, creative, pharma, genomic..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cutechicken99",
+      "userId": "s17a3wc5vcj36cafq4m7e7ebvh83n19s",
+      "displayName": "VIDRAFT",
+      "image": "https://avatars.githubusercontent.com/u/131574842?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 493,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 6,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773036157231,
+      "changelog": "Initial release of marl-middleware.\n\n- Provides multi-stage, multi-agent reasoning middleware for LLMs with 70%+ hallucination reduction.\n- Offers 9 specialized emergence engines for diverse domains including invention, pharma, chemistry, ecology, law, and more.\n- Simple integration: one line to connect, compatible with any OpenAI-format LLM endpoint.\n- Supports Docker, pip, or instant HuggingFace Space deployment.\n- Seamlessly switches reasoning modes by appending ::mode to the model name.\n- Runs locally, ensuring data does not leave your infrastructure.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:185c8ccdec74d064afe90c71cef00863be875dd38df7807e80cc42671c4bdf21"
+}

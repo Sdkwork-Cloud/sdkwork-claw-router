@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21671,
+  "uuid": "skill-clawhub-typeform-integration",
+  "skillKey": "clawhub-typeform-integration",
+  "name": "Typeform",
+  "summary": "Typeform integration. Manage Forms, Workspaces. Use when the user wants to interact with Typeform data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.typeform_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Typeform integration",
+        "Manage Forms, Workspaces",
+        "Use when the user wants to interact with Typeform data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/typeform-integration@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "typeform-integration",
+      "url": "https://clawhub.ai/skills/typeform-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "typeform-integration",
+    "url": "https://clawhub.ai/skills/typeform-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/typeform-integration-bccdfc1a8a1d6d8f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/typeform-integration@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-typeform-integration-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:30563e27afb73a329c55a0d7f5e509d76f35c0363a4a4787c615c675ced6bb3b",
+      "artifactSizeBytes": 1882
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:56:27.658Z"
+}

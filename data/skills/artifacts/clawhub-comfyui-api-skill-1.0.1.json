@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/comfyui-api-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.comfyui_api_skill",
+  "skill": {
+    "id": 68418,
+    "skillKey": "clawhub-comfyui-api-skill",
+    "name": "ComfyUI执行器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "comfyui-api-skill",
+    "url": "https://clawhub.ai/skills/comfyui-api-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/comfyui-api-skill-8fe12372f0545db4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过 HTTP API 与 ComfyUI 服务交互，支持工作流提交与执行、队列管理、文件上传和能力探测；自动检测视频工作流并使用合适超时；简洁输出执行结果；当用户需要使用 ComfyUI 生成图像、视频、音频或管理服务时使用"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chsengni",
+      "userId": "s172t2cqn6bkejwsdy7q01de3x83g1hk",
+      "displayName": "Chsengni",
+      "image": "https://avatars.githubusercontent.com/u/31051072?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775023801928,
+      "changelog": "- Initial release of `comfyui-api-skill` on version 1.0.1.\n- Added `_meta.json` metadata file.\n- No changes to functionality or documentation; all core features and scripts remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0273bb695d2afd476d8ac7edec8306e3b2822832d92d5a7306a292a34af9c9dc"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64967,
+  "uuid": "skill-clawhub-ai-video-pro",
+  "skillKey": "clawhub-ai-video-pro",
+  "name": "Ai Video Pro",
+  "summary": "电影级镜头语言解码器。零依赖可用：将创意描述解码为影视级提示词，系统化建模打击感/面部表情渐变/机甲运动五维镜头语言。可选配 API Key 直接生成视频（LumaAI/Runway/Replicate/ComfyUI）。提示词优化本身无需任何外部服务。",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AAAlenwow",
+      "features": [
+        "电影级镜头语言解码器。零依赖可用：将创意描述解码为影视级提示词，系统化建模打击感/面部表情渐变/机甲运动五维镜头语言。可选配 API Key 直接生成视频（LumaAI/Runway/Rep."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-video-pro@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/76036294?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-video-pro",
+      "url": "https://clawhub.ai/skills/ai-video-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-pro",
+    "url": "https://clawhub.ai/skills/ai-video-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-pro-c2ef8cbc6030a75f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-video-pro@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-video-pro-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aaab0446d1a3d59f831ade9707170d9503feade1c148c42627711aa4b3b19da4",
+      "artifactSizeBytes": 2233
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T07:12:37.608Z"
+}

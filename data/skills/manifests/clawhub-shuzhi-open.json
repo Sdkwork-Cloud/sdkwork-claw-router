@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68438,
+  "uuid": "skill-clawhub-shuzhi-open",
+  "skillKey": "clawhub-shuzhi-open",
+  "name": "Shuzhi Open",
+  "summary": "数秦开放平台统一接口封装，支持区块链API服务、自动化取证、保管单组件、电子签章",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shuzhi_open",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alex098929",
+      "features": [
+        "数秦开放平台统一接口封装，支持区块链API服务、自动化取证、保管单组件、电子签章"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shuzhi-open@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/217886385?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shuzhi-open",
+      "url": "https://clawhub.ai/skills/shuzhi-open"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shuzhi-open",
+    "url": "https://clawhub.ai/skills/shuzhi-open",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shuzhi-open-692771869a1a91a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shuzhi-open@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-shuzhi-open-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8e065b75b13e64551fb44bceddf6febc2814c82950600d967a73ddb094e39223",
+      "artifactSizeBytes": 2237
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T09:01:36.207Z"
+}

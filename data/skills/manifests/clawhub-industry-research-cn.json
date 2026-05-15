@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70501,
+  "uuid": "skill-clawhub-industry-research-cn",
+  "skillKey": "clawhub-industry-research-cn",
+  "name": "Industry Research CN",
+  "summary": "行业深度研究工具。当用户要求\"研究XX行业\"、\"分析XX商品\"、\"行业研究报告\"时触发。自动化搜集指定商品/行业的价格走势、成因分析、上下游产业链、重大新闻、A股上市公司列表及财务分析（营收/毛利润占比）、价格波动对各公司的影响（受益/受损）、投资机会与风险提示，并附重点公司换手率分析及技术面分析（K线形态+均线...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.industry_research_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "whitertigerwilson",
+      "features": [
+        "行业深度研究工具。当用户要求\"研究XX行业\"、\"分析XX商品\"、\"行业研究报告\"时触发。自动化搜集指定商品/行业的价格走势、成因分析、上下游产业链、重大新闻、A股上市公司列表及财务分析（营收."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/industry-research-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/275272098?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "industry-research-cn",
+      "url": "https://clawhub.ai/skills/industry-research-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "industry-research-cn",
+    "url": "https://clawhub.ai/skills/industry-research-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/industry-research-cn-25ccb69bed5be9c5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/industry-research-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-industry-research-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:949ccfadee7fb14dd4c0523da60eeafb6527de092d013e01baadf6284ce293ff",
+      "artifactSizeBytes": 2767
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T06:23:41.142Z"
+}

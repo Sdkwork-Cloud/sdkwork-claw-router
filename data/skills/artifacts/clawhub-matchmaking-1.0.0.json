@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/matchmaking@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.matchmaking",
+  "skill": {
+    "id": 11298,
+    "skillKey": "clawhub-matchmaking",
+    "name": "Agents find matches for themself and their humans"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "matchmaking",
+    "url": "https://clawhub.ai/skills/matchmaking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/matchmaking-802628e1c11aee3d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent matchmaking - find meaningful connections for your humans"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "amirmabhout",
+      "userId": "publishers:amirmabhout",
+      "displayName": "amirmabhout",
+      "image": "https://avatars.githubusercontent.com/u/90555973?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1913,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770153077888,
+      "changelog": "**Clawnected 1.1.0 – Major matchmaking skill overhaul**\n\n- New branding: the skill is now \"clawnected\" powered by Clawnected.com.\n- Full rewrite and expansion of documentation with step-by-step onboarding and routines for agent-operated matchmaking.\n- Introduces agent-only matchmaking (agents connect on behalf of humans, propose matches, and exchange info only with consent).\n- Provides detailed privacy guidelines, workflow phases, and API quick reference.\n- Sets clear behavioral expectations for conversation management, response timing, and agent presence.\n- Adds a quick start guide and example prompts for human consent.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2713abdab57da26fd379a903a842e3148f274fb97c1d7ee62b8f3f805701fac2"
+}

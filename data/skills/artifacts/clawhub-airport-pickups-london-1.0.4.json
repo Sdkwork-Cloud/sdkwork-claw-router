@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/airport-pickups-london@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.airport_pickups_london",
+  "skill": {
+    "id": 23027,
+    "skillKey": "clawhub-airport-pickups-london",
+    "name": "Airport Pickups London"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "airport-pickups-london",
+    "url": "https://clawhub.ai/skills/airport-pickups-london",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/airport-pickups-london-cfe71f31990dceef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Book UK airport and cruise port transfers via Airport Pickups London. Get instant fixed-price quotes, validate flights, create bookings, amend, cancel, and t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mfy-apl",
+      "userId": "s17bhxyd4hksj538ntk14wad2183swqk",
+      "displayName": "mfy-apl",
+      "image": "https://avatars.githubusercontent.com/u/261432847?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 454,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1775754233412,
+      "changelog": "Expanded feature set for full transfer management:\n\n- Added new tools: look up, amend, cancel bookings, live driver tracking, and service info/FAQ, increasing available actions from 3 to 8.\n- Updated authentication/setup instructions for clarity; emphasized free, instant API key registration.\n- Revised cancellation policy: now free up to 12+ hours before pickup (was 24+).\n- Expanded privacy section describing transmitted data and GDPR compliance.\n- Improved documentation of tool capabilities, example prompts, and agent best practices.\n- Removed deprecated metadata file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0fa966759c6ec385988ad5ddb502be34f963722bcc359e5ea8b4a8886866bffe"
+}

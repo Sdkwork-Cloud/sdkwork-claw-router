@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bio-ontology-mapper-1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bio_ontology_mapper_1",
+  "skill": {
+    "id": 44605,
+    "skillKey": "clawhub-bio-ontology-mapper-1",
+    "name": "Bio-Ontology Mapper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bio-ontology-mapper-1",
+    "url": "https://clawhub.ai/skills/bio-ontology-mapper-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bio-ontology-mapper-1-755946f703ed02b0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Map unstructured biomedical text to standardized ontologies (SNOMED CT."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775107951052,
+      "changelog": "Bio-Ontology Mapper v1.0.0\n\n- Initial release of bio-ontology-mapper for mapping unstructured biomedical text to standardized ontologies (SNOMED CT, MeSH, ICD-10, LOINC, RxNorm, HGNC).\n- Supports entity recognition, fuzzy matching, confidence scoring, batch normalization, cross-ontology translation, and reliability validation.\n- Includes workflow guidance, audit-ready commands, quick checks for entry points, and a detailed quality checklist.\n- Provides structured results, fallback paths for missing inputs or errors, and emphasizes reproducibility and explicit assumptions.\n- Example Python interface and CLI usage included for mapping, scoring, and batch processing tasks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ab7af5cdd71d948d7e823ad766f785e782e650f990e9ab8388f862ae74f99211"
+}

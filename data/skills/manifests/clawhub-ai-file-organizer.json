@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62769,
+  "uuid": "skill-clawhub-ai-file-organizer",
+  "skillKey": "clawhub-ai-file-organizer",
+  "name": "Ai File Organizer",
+  "summary": "AI 智能文件整理 - 批量重命名、自动分类、智能归档（异步引擎 + 云同步）",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_file_organizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SxLiuYu",
+      "features": [
+        "AI 智能文件整理",
+        "批量重命名、自动分类、智能归档（异步引擎 + 云同步）"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-file-organizer@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95198625?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-file-organizer",
+      "url": "https://clawhub.ai/skills/ai-file-organizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-file-organizer",
+    "url": "https://clawhub.ai/skills/ai-file-organizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-file-organizer-6d3a69731318ff6e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-file-organizer@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-file-organizer-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5fc90ff0cc8779bba5cbe1ec1797e55200a8c3ce093b25ea4da034b436e35077",
+      "artifactSizeBytes": 1980
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T11:03:06.926Z"
+}

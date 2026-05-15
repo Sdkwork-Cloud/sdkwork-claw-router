@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/direct-analysis@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.direct_analysis",
+  "skill": {
+    "id": 65752,
+    "skillKey": "clawhub-direct-analysis",
+    "name": "Direct Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "direct-analysis",
+    "url": "https://clawhub.ai/skills/direct-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/direct-analysis-cdc84c465e1bb1a3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Анализ рекламных кампаний Яндекс.Директ"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nimblemarketingapex-netizen",
+      "userId": "publishers:nimblemarketingapex-netizen",
+      "displayName": "nimblemarketingapex-netizen",
+      "image": "https://avatars.githubusercontent.com/u/259936701?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 826,
+      "installsAllTime": 6,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771304602666,
+      "changelog": "- Обновлено описание кейсов использования: теперь явно перечислены ключевые слова, по которым рекомендуется запускать навык.\n- Остальная документация и функциональные шаги остались без изменений.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:beb0cd404c2bf10c37f624c3dd6e37604ab4496947b20966a39079eb96ffc05c"
+}

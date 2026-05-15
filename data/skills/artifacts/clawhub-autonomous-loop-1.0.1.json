@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/autonomous-loop@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autonomous_loop",
+  "skill": {
+    "id": 27277,
+    "skillKey": "clawhub-autonomous-loop",
+    "name": "Autonomous Loop"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autonomous-loop",
+    "url": "https://clawhub.ai/skills/autonomous-loop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autonomous-loop-429808397e070266.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Add self-sustaining autonomous loop capability to an OpenClaw agent. The agent keeps working after each reply until a stop file is placed. Use when: (1) crea..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lucasye378",
+      "userId": "s17e4df8t4sjvp29fe5batabwd83pgxk",
+      "displayName": "lucasye378",
+      "image": "https://avatars.githubusercontent.com/u/266547926?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 351,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774230655281,
+      "changelog": "v1.0.1: Plugin code improvements and configuration enhancements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:211127be1f4eae03636a1d599b37a9455d4be0c2e3c2ed8a9ccd9d214e4596c3"
+}

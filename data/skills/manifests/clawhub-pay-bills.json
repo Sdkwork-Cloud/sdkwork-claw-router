@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15196,
+  "uuid": "skill-clawhub-pay-bills",
+  "skillKey": "clawhub-pay-bills",
+  "name": "Pay Bills",
+  "summary": "Purchase data, airtime, and digital products for Nigerian phone numbers instantly using wallet balance with network and plan validation.",
+  "version": "0.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pay_bills",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DevEze",
+      "features": [
+        "Purchase data, airtime, and digital products for Nigerian phone numbers instantly using wallet."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pay-bills@0.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31377258?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pay-bills",
+      "url": "https://clawhub.ai/skills/pay-bills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pay-bills",
+    "url": "https://clawhub.ai/skills/pay-bills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pay-bills-fe4e1e95bee1adc2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pay-bills@0.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-pay-bills-0.0.5.json",
+      "version": "0.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a40c9ce06804ea1523493d008fbbddf3a7b864b8c1b8945f171602ede5580508",
+      "artifactSizeBytes": 2113
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T13:18:15.133Z"
+}

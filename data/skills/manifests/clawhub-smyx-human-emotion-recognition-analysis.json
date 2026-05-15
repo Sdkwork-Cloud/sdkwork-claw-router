@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57653,
+  "uuid": "skill-clawhub-smyx-human-emotion-recognition-analysis",
+  "skillKey": "clawhub-smyx-human-emotion-recognition-analysis",
+  "name": "人体视觉情绪识别技能",
+  "summary": "Uses visual AI on frontal faces to recognize multi-dimensional emotions like happiness, sadness, depression, calmness, anger, surprise, and fear in real-time...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smyx_human_emotion_recognition_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smyx-skills",
+      "features": [
+        "Uses visual AI on frontal faces to recognize multi-dimensional emotions like happiness, sadness."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smyx-human-emotion-recognition-analysis@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/272124705?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smyx-human-emotion-recognition-analysis",
+      "url": "https://clawhub.ai/skills/smyx-human-emotion-recognition-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smyx-human-emotion-recognition-analysis",
+    "url": "https://clawhub.ai/skills/smyx-human-emotion-recognition-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smyx-human-emotion-recognition-analysis-109d325f73ab06f0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smyx-human-emotion-recognition-analysis@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-smyx-human-emotion-recognition-analysis-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9f67bb277cea92b1e0e640905d05142a78089d0d653f3ff29ad4c1490606804b",
+      "artifactSizeBytes": 2185
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T21:19:39.316Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64915,
+  "uuid": "skill-clawhub-audio-processor",
+  "skillKey": "clawhub-audio-processor",
+  "name": "Audio Processor",
+  "summary": "音频处理工具集 - 支持音频录制、剪辑、格式转换、频谱分析、降噪、变速变调等操作。Use when: (1) 需要处理音频文件（录音、剪辑、合并、分割）, (2) 需要转换音频格式（MP3/WAV/FLAC/OGG等）, (3) 需要分析音频特征（频谱、音量、静音检测）, (4) 需要对音频进行效果处理（降噪、变...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audio_processor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lv Lancer",
+      "features": [
+        "支持音频录制、剪辑、格式转换、频谱分析、降噪、变速变调等操作。Use when: (1) 需要处理音频文件（录音、剪辑、合并、分割）, (2) 需要转换音频格式（MP3/WAV/FLAC/O."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/audio-processor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29176686?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "audio-processor",
+      "url": "https://clawhub.ai/skills/audio-processor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audio-processor",
+    "url": "https://clawhub.ai/skills/audio-processor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audio-processor-c5da4012fc70b71c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/audio-processor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-audio-processor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7fd76feeab2f30e0c28c35d322792d6403adbc5bd8512e4ef6039516d0441b3d",
+      "artifactSizeBytes": 2526
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T07:23:52.798Z"
+}

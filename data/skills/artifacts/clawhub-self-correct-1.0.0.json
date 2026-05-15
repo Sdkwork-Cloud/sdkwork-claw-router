@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/self-correct@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_correct",
+  "skill": {
+    "id": 67722,
+    "skillKey": "clawhub-self-correct",
+    "name": "Self-Correct"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-correct",
+    "url": "https://clawhub.ai/skills/self-correct",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-correct-e561776997aa6f44.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自纠错工具调用框架 - 轻量修正策略库 + 状态快照。对常见错误自动应对，高风险操作前保存快照。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jokerli530",
+      "userId": "s1719v1jt7x7wxjtr1h3jg32rd84zg4q",
+      "displayName": "Jokerli530",
+      "image": "https://avatars.githubusercontent.com/u/130817653?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776577754146,
+      "changelog": "v1.0.0: 初始版本 - 修正策略库 + 错误标签 + 状态快照脚本 + HEARTBEAT验证层集成（全部3 Phase今天完成）",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b0e2dcf66d9ed6d02996a0aa15bef935997106c90e49ca4d24ff7fb6b6cb66bf"
+}

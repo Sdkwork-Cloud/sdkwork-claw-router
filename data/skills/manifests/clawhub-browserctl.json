@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44358,
+  "uuid": "skill-clawhub-browserctl",
+  "skillKey": "clawhub-browserctl",
+  "name": "BrowseCTL",
+  "summary": "WebDriver automation CLI for AI-driven browser control. Provides session management, tab control, element interaction, screenshots, batch execution, and an i...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browserctl",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yorelog",
+      "features": [
+        "WebDriver automation CLI for AI-driven browser control",
+        "Provides session management, tab control, element interaction, screenshots, batch execution, an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/browserctl@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6009347?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "browserctl",
+      "url": "https://clawhub.ai/skills/browserctl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browserctl",
+    "url": "https://clawhub.ai/skills/browserctl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browserctl-07802f640ac6055a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/browserctl@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-browserctl-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c015a580f98a2eab865beac9739fda230cbddbce7c6ea9ec7c919cff33f8eec",
+      "artifactSizeBytes": 2175
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T06:45:29.573Z"
+}

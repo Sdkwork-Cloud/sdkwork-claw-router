@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35551,
+  "uuid": "skill-clawhub-agave",
+  "skillKey": "clawhub-agave",
+  "name": "Agave",
+  "summary": "Agave integration. Manage data, records, and automate workflows. Use when the user wants to interact with Agave data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agave",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Agave integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Agave data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agave@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agave",
+      "url": "https://clawhub.ai/skills/agave"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agave",
+    "url": "https://clawhub.ai/skills/agave",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agave-95fb1fa9a88b393c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agave@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-agave-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8f4f1c80602913ab3fbd4d42b556255bbfbc7527e73167b15e85ee719c505608",
+      "artifactSizeBytes": 1811
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:08:28.300Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10818,
+  "uuid": "skill-clawhub-claw-skill-guard",
+  "skillKey": "clawhub-claw-skill-guard",
+  "name": "Skill Security Scanner",
+  "summary": "Security scanner for OpenClaw skills. Detects malicious patterns, suspicious URLs, and install traps before you install a skill. Use before installing ANY sk...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_skill_guard",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vincentchan",
+      "features": [
+        "Security scanner for OpenClaw skills",
+        "Detects malicious patterns, suspicious URLs, and install traps before you install a skill",
+        "Use before installing ANY sk..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-skill-guard@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/229261?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-skill-guard",
+      "url": "https://clawhub.ai/skills/claw-skill-guard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-skill-guard",
+    "url": "https://clawhub.ai/skills/claw-skill-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-skill-guard-d80cadc8ea3986c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-skill-guard@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-skill-guard-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:39f78798ff862d1d3d6cd90542d94472570aa17f7e98e1b31418eb74a3696b4b",
+      "artifactSizeBytes": 1981
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T07:30:12.721Z"
+}

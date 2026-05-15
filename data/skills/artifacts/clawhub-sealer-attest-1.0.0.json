@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sealer-attest@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sealer_attest",
+  "skill": {
+    "id": 40327,
+    "skillKey": "clawhub-sealer-attest",
+    "name": "Sealer Attest"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sealer-attest",
+    "url": "https://clawhub.ai/skills/sealer-attest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sealer-attest-fd6a22f314609056.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with The Sealer Protocol to preview difficulty, make onchain SMART commitments, check agent profiles, leaderboards, obtain Sealer IDs, and generate..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "iamdevving",
+      "userId": "s170jk6rcc23bdm0mxt9zc96d58478kn",
+      "displayName": "iamdevving",
+      "image": "https://avatars.githubusercontent.com/u/262317360?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775341171504,
+      "changelog": "Initial release of sealer-attest skill.\n\n- Interact with The Sealer Protocol for onchain attestation and agent trust infrastructure on Base.\n- Preview difficulty score for commitments, make onchain SMART commitments, and check commitment status by UID.\n- Look up agent profiles or leaderboard rankings by wallet or handle.\n- Register for a Sealer ID (SID) onchain identity, and generate EIP-712 signing payloads.\n- Read and preview APIs are free; onchain operations require x402 USDC payment.\n- Comprehensive support for major onchain agent commitment use cases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:288c2b827c2d2bc3b29ffdce6245f25c82621e891e4e8ad9f7016bc916c51374"
+}

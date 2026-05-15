@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-animation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_animation",
+  "skill": {
+    "id": 48028,
+    "skillKey": "clawhub-video-animation",
+    "name": "Video Animation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-animation",
+    "url": "https://clawhub.ai/skills/video-animation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-animation-de120761cdfa4d00.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get animated video clips ready to post, without touching a single slider. Upload your images or video clips (MP4, MOV, PNG, JPG, up to 500MB), say something..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 106,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777911008116,
+      "changelog": "Version 1.0.0\n\n- Initial release of the video-animation skill.\n- Instantly animate uploaded images or video clips into 1080p MP4 videos with AI-powered motion effects.\n- Streamlined workflow for marketers and content creators; no need to adjust sliders or learn complex animation tools.\n- Supports multiple formats (MP4, MOV, PNG, JPG, etc.) up to 500MB file size.\n- Automatic authentication and cloud rendering with clear feedback and error handling.\n- Actions include upload, animate, export, check credits/balance, and session state management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e6da3d680afd587b211625987837f1f50a98508e32e649b6d80b964cd0eb1096"
+}

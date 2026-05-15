@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claude-swarm@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_swarm",
+  "skill": {
+    "id": 42216,
+    "skillKey": "clawhub-claude-swarm",
+    "name": "Claude Swarm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-swarm",
+    "url": "https://clawhub.ai/skills/claude-swarm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-swarm-11b9095d6604ed4e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Claude-native multi-agent swarm orchestration for parallel coding. Use when spawning multiple Claude Code agents to work in parallel on a project with git wo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linkbag",
+      "userId": "s17a122hqxcf57e9gczk0db71s83g8n8",
+      "displayName": "linkbag",
+      "image": "https://avatars.githubusercontent.com/u/208331216?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775317486116,
+      "changelog": "Initial release of Claude Swarm: a multi-agent orchestration tool for parallel Claude-native coding workflows.\n\n- Enables spawning and coordinating multiple Claude Code agents for parallel project work via scripts and git worktrees.\n- Supports task endorsement gates, tmux session tracking, auto-reviews (with reviewer agents), and integration merging (with conflict resolution).\n- Distinct agent roles use different Claude models: opus for architects and integrators; sonnet for builders/reviewers.\n- Provides notification options via webhook or Telegram on batch and review completion.\n- Offers a modular script system for spawning, endorsing, monitoring, reviewing, integrating, and cleaning up parallel task agents.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:25a917c027e71bc5559cea1cd0173dd614d46ab8fed2725e92b473f971ad42fd"
+}

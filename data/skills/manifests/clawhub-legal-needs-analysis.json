@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73463,
+  "uuid": "skill-clawhub-legal-needs-analysis",
+  "skillKey": "clawhub-legal-needs-analysis",
+  "name": "法律需求分析",
+  "summary": "将客户的日常语言陈述转化为结构化法律事实和问题，帮助律师快速识别案件性质及处理方向。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.legal_needs_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ZaJ7373",
+      "features": [
+        "将客户的日常语言陈述转化为结构化法律事实和问题，帮助律师快速识别案件性质及处理方向。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/legal-needs-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/273246124?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "legal-needs-analysis",
+      "url": "https://clawhub.ai/skills/legal-needs-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "legal-needs-analysis",
+    "url": "https://clawhub.ai/skills/legal-needs-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/legal-needs-analysis-ce8f93be3a65a7e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/legal-needs-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-legal-needs-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9651a406b1f3fe3aa093b92b518c99d63a44fed92dd6b9d6a95bdd477914fc73",
+      "artifactSizeBytes": 2447
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T07:11:34.797Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49902,
+  "uuid": "skill-clawhub-instagra",
+  "skillKey": "clawhub-instagra",
+  "name": "video",
+  "summary": "Download an Instagram Reel via sssinstagram.com and return it as a WhatsApp-ready video file. Use when a reel URL is provided and yt-dlp is blocked or not pr...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.instagra",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tharuka Nisal",
+      "features": [
+        "Download an Instagram Reel via sssinstagram.com and return it as a WhatsApp-ready video file",
+        "Use when a reel URL is provided and yt-dlp is blocked or not pr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/instagra@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/97947640?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "instagra",
+      "url": "https://clawhub.ai/skills/instagra"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "instagra",
+    "url": "https://clawhub.ai/skills/instagra",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/instagra-2228769d3ca2dfd1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/instagra@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-instagra-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:36294efcd2fe54198777224990a0650336dba08b87bfb1f6ebfdaece7d67940c",
+      "artifactSizeBytes": 2355
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T16:37:16.192Z"
+}

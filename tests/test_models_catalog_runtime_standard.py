@@ -125,6 +125,71 @@ class ModelsCatalogRuntimeStandardTest(unittest.TestCase):
         for category in ("Recommended", "Open Source", "Proprietary", "Free", "New"):
             self.assertIn(category, model_catalog_source)
 
+    def test_playground_model_groups_are_derived_from_standard_app_model_catalog(self) -> None:
+        contract = yaml.safe_load(CONTRACT_PATH.read_text(encoding="utf-8"))
+        app_openapi = json.loads((ROOT / "generated" / "openapi" / "clawrouter-app-openapi.json").read_text(encoding="utf-8"))
+        playground_types_source = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-playground"
+            / "src"
+            / "playgroundTypes.ts"
+        ).read_text(encoding="utf-8")
+        playground_service_source = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-playground"
+            / "src"
+            / "playgroundService.ts"
+        ).read_text(encoding="utf-8")
+        playground_runtime_test_source = (
+            ROOT / "apps" / "sdkwork-claw-router-portal" / "console-app-runtime.test.ts"
+        ).read_text(encoding="utf-8")
+        rust_api_source = (ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "app_models.rs").read_text(encoding="utf-8")
+        sdk_ai_source = (
+            ROOT
+            / "sdks"
+            / "clawrouter-app-sdk"
+            / "clawrouter-app-sdk-typescript"
+            / "src"
+            / "api"
+            / "ai.ts"
+        ).read_text(encoding="utf-8")
+
+        operation = self._operation(
+            contract,
+            "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/playgroundService.ts",
+            "fetchModelGroups",
+        )
+        group_schema = operation["response_schema"]["properties"]["groups"]["items"]
+
+        self.assertEqual("/app/v3/api/ai/models", operation["api_path"])
+        self.assertFalse(operation["openapi_exposed"])
+        removed_playground_models_path = "/app/v3/api/ai/playground" + "/models"
+        self.assertNotIn(removed_playground_models_path, app_openapi["paths"])
+        self.assertNotIn("PlaygroundModelVendorGroup", app_openapi["components"]["schemas"])
+        self.assertNotIn("AiPlaygroundModelsApi", sdk_ai_source)
+        self.assertNotIn("playground.models.list", sdk_ai_source)
+        self.assertNotIn("ai.playground.models.list", playground_service_source)
+        self.assertIn("getClawRouterAppSdkClient().ai.models.list()", playground_service_source)
+
+        self.assertEqual(["id", "vendor", "llms", "images", "videos", "audios", "music", "sfx"], group_schema["required"])
+        self.assertIn("id: string;", playground_types_source)
+        self.assertIn("llms: PlaygroundModelOption[];", playground_types_source)
+        self.assertIn("audios: PlaygroundModelOption[];", playground_types_source)
+        self.assertNotIn("agents: PlaygroundModelOption[];", playground_types_source)
+        self.assertIn("id: option.vendorCode,", playground_service_source)
+        self.assertIn('group.id === "openai"', playground_runtime_test_source)
+        self.assertIn('assert.ok(openai)', playground_runtime_test_source)
+        self.assertIn("openai.llms", playground_runtime_test_source)
+        self.assertIn("elevenlabs.audios", playground_runtime_test_source)
+        self.assertNotIn("AppPlaygroundModelVendorGroupResponse", rust_api_source)
+        self.assertNotIn(removed_playground_models_path, rust_api_source)
+
     def test_static_model_catalog_public_copy_is_ascii_only(self) -> None:
         model_data_path = MODELS_PACKAGE / "src" / "data" / "models.ts"
         violations: list[str] = []
@@ -146,7 +211,7 @@ class ModelsCatalogRuntimeStandardTest(unittest.TestCase):
         classification = yaml.safe_load(CLASSIFICATION_PATH.read_text(encoding="utf-8"))
         model_service_path = MODELS_PACKAGE / "src" / "modelService.ts"
         runtime_catalog_path = MODELS_PACKAGE / "src" / "runtimeModelCatalog.ts"
-        app_sdk_types_path = ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "types"
+        app_sdk_types_path = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types"
 
         self.assertTrue(
             model_service_path.exists(),
@@ -180,7 +245,7 @@ class ModelsCatalogRuntimeStandardTest(unittest.TestCase):
         self.assertEqual("read", operation["kind"])
         self.assertEqual("app", operation["api_surface"])
         self.assertEqual("GET", operation["api_method"])
-        self.assertEqual("/app/v3/api/router/models", operation["api_path"])
+        self.assertEqual("/app/v3/api/ai/models", operation["api_path"])
         self.assertEqual(
             ["ai_model_vendor", "ai_model", "ai_model_capability", "ai_model_pricing"],
             operation["read_sources"],
@@ -208,10 +273,10 @@ class ModelsCatalogRuntimeStandardTest(unittest.TestCase):
             "grossMarginPerUnit",
         ):
             self.assertNotIn(sensitive_field, price_availability_properties)
-            self.assertNotIn(sensitive_field, app_price_availability_source)
+        self.assertNotIn(sensitive_field, app_price_availability_source)
 
         self.assertIn("getClawRouterAppSdkClient", model_service_source)
-        self.assertIn(".router.fetchModels", model_service_source)
+        self.assertIn(".ai.models.list", model_service_source)
         self.assertIn("mergeRuntimeModelCatalog", runtime_catalog_source)
         self.assertIn("resolveRuntimeModelCatalog", model_service_source)
         self.assertIn("resolveRuntimeModelCatalog", runtime_catalog_source)
@@ -462,9 +527,10 @@ class ModelsCatalogRuntimeStandardTest(unittest.TestCase):
         self.assertIn("runtime model catalog maps backend-owned model taxonomy instead of deriving sidebar filters locally", runtime_test_source)
         self.assertIn("model service sends sidebar filters through the generated app SDK query contract", runtime_test_source)
         self.assertIn("vendorCodes: [\"openai\", \"anthropic\"]", runtime_test_source)
-        self.assertIn('requestUrl.searchParams.get("vendorCodes")', runtime_test_source)
+        self.assertIn('requestUrl.searchParams.get("vendor_codes")', runtime_test_source)
         self.assertIn('requestUrl.searchParams.get("categories")', runtime_test_source)
         self.assertIn('requestUrl.searchParams.get("groups")', runtime_test_source)
+        self.assertIn('requestUrl.searchParams.get("q")', runtime_test_source)
         self.assertIn('selectedCategories: ["Recommended"]', runtime_test_source)
         self.assertIn('selectedCategories: ["New"]', runtime_test_source)
         self.assertIn('selectedCategories: ["Unsupported"]', runtime_test_source)
@@ -547,7 +613,7 @@ class ModelsCatalogRuntimeStandardTest(unittest.TestCase):
         self.assertIn('pathName: "/models/newvendor%2Fglobal%2Fruntime-good?__browser-smoke-detail=1"', smoke_source)
         self.assertIn('pathName: "/models/unpricedvendor%2Fglobal%2Fruntime-unpriced?__browser-smoke-unavailable-detail=1"', smoke_source)
         self.assertIn("APP_SDK_MODEL_FIXTURE_MODE", smoke_source)
-        self.assertIn("/app/v3/api/router/models", smoke_source)
+        self.assertIn("/app/v3/api/ai/models", smoke_source)
         self.assertIn("Runtime Good", smoke_source)
         self.assertIn("Runtime Enterprise", smoke_source)
         self.assertIn("Runtime Unpriced", smoke_source)
@@ -566,10 +632,10 @@ class ModelsCatalogRuntimeStandardTest(unittest.TestCase):
         ):
             self.assertIn(sensitive_field, smoke_source)
 
-        self.assertIn("getClawRouterAppSdkClient().router.fetchModels", service_source)
-        self.assertIn("joinQueryValues(filters.vendorCodes)", service_source)
-        self.assertIn("joinQueryValues(filters.categories)", service_source)
-        self.assertIn("joinQueryValues(filters.groups)", service_source)
+        self.assertIn("getClawRouterAppSdkClient().ai.models.list", service_source)
+        self.assertIn("normalizeQueryValues(filters.vendorCodes)", service_source)
+        self.assertIn("normalizeQueryValues(filters.categories)", service_source)
+        self.assertIn("normalizeQueryValues(filters.groups)", service_source)
         self.assertIn("filterModelsForCatalog", catalog_source)
         self.assertIn("resetModelCatalogFilters", catalog_source)
         self.assertIn("resolveProviderShowMoreStateForCatalog", catalog_source)

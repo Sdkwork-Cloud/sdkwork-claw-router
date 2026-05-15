@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/microsoft-365-graph-openclaw@0.2.2",
+  "version": "0.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.microsoft_365_graph_openclaw",
+  "skill": {
+    "id": 17587,
+    "skillKey": "clawhub-microsoft-365-graph-openclaw",
+    "name": "Microsoft 365 Graph Openclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "microsoft-365-graph-openclaw",
+    "url": "https://clawhub.ai/skills/microsoft-365-graph-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/microsoft-365-graph-openclaw-0609a9428e2bd703.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Microsoft 365 Graph for OpenClaw with webhook-based wake signals. Reduce recurring LLM cost from inbox polling while managing Outlook mail, calendar, OneDriv..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "draeden79",
+      "userId": "s17bfrm6mx2gkn2r10vef9apeh83txx8",
+      "displayName": "draeden79",
+      "image": "https://avatars.githubusercontent.com/u/197928474?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 624,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.2.2",
+      "createdAt": 1773834596927,
+      "changelog": "Version 0.2.2\n\n- Updated documentation to clarify required and optional environment variables for push-mode setup.\n- Service-level runtime configuration now emphasizes systemd integration using `/etc/default/graph-mail-webhook`.\n- README, SKILL.md, and troubleshooting docs improved for minimal-input and e2e setup workflows.\n- Guidance for handling missing or auto-generated `GRAPH_WEBHOOK_CLIENT_STATE` variables in automation scripts.\n- No user-facing code changes; this release is documentation-focused.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c372c914402e3979939b8fa0a05dbcdb2c94aed5ceffcc0f9e13fc2e809e8177"
+}

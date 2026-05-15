@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26800,
+  "uuid": "skill-clawhub-mileage",
+  "skillKey": "clawhub-mileage",
+  "name": "Mileage",
+  "summary": "Log vehicle mileage, review driving trends, and export trip reports for tracking. Use when logging trips, tracking fuel economy, exporting mileage data.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mileage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "Log vehicle mileage, review driving trends, and export trip reports for tracking",
+        "Use when logging trips, tracking fuel economy, exporting mileage data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mileage@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mileage",
+      "url": "https://clawhub.ai/skills/mileage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mileage",
+    "url": "https://clawhub.ai/skills/mileage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mileage-8741995dbd2877e9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mileage@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mileage-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b8be70efccda3e97ba1d5a9013f7bbc212665f656a447baee9ff60c23269ac3d",
+      "artifactSizeBytes": 1855
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T01:46:51.601Z"
+}

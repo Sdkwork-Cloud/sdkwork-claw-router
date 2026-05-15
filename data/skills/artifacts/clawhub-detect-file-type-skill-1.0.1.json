@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/detect-file-type-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.detect_file_type_skill",
+  "skill": {
+    "id": 54328,
+    "skillKey": "clawhub-detect-file-type-skill",
+    "name": "Detect File Type Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "detect-file-type-skill",
+    "url": "https://clawhub.ai/skills/detect-file-type-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/detect-file-type-skill-543398c32e0f6fb6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "DEPRECATED — remove this legacy listing; superseded by detect-file-type-local"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pgeraghty",
+      "userId": "publishers:pgeraghty",
+      "displayName": "pgeraghty",
+      "image": "https://avatars.githubusercontent.com/u/11458?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 424,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772138797101,
+      "changelog": "Deprecated legacy listing due to early API lag; replaced with detect-file-type-local.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:14b66964682ec4141ba3779dbaf37ba8432161ad34c22dae6debe90f398359da"
+}

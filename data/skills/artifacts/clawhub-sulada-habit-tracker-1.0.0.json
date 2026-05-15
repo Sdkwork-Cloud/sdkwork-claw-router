@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sulada-habit-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sulada_habit_tracker",
+  "skill": {
+    "id": 25345,
+    "skillKey": "clawhub-sulada-habit-tracker",
+    "name": "habit-tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sulada-habit-tracker",
+    "url": "https://clawhub.ai/skills/sulada-habit-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sulada-habit-tracker-f70f2a2fb306d219.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track habit formation with daily check-ins, reminders for missed logs, and statistics on consecutive completion days."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanksu7889",
+      "userId": "s17dyxy6zkmck00ptaa0txem3h83nny1",
+      "displayName": "HankSU7889",
+      "image": "https://avatars.githubusercontent.com/u/32285831?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 391,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772727577753,
+      "changelog": "Initial release of Habit Tracker\n\n- Add, track, and manage custom habits\n- Daily check-in (打卡) functionality\n- Progress statistics, including streaks and total completions\n- Reminders for incomplete habits\n- Preset habits available and customizable",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1f45dd5bc7a389825eaf681814b4a019ee9860204551516887a2208e87affc11"
+}

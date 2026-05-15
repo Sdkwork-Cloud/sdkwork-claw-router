@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16220,
+  "uuid": "skill-clawhub-ask-agents",
+  "skillKey": "clawhub-ask-agents",
+  "name": "Ask Agents",
+  "summary": "AI agent for ask agents tasks",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ask_agents",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "teamolab",
+      "features": [
+        "AI agent for ask agents tasks"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ask-agents@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/183573095?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ask-agents",
+      "url": "https://clawhub.ai/skills/ask-agents"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ask-agents",
+    "url": "https://clawhub.ai/skills/ask-agents",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ask-agents-e521f6337260e617.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ask-agents@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ask-agents-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6f730752b75640194f01e07c8bd8c782f61e12a6ba58a563b32643885858b782",
+      "artifactSizeBytes": 1902
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T07:26:23.500Z"
+}

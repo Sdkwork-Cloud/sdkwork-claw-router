@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaomi-tts@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaomi_tts",
+  "skill": {
+    "id": 72950,
+    "skillKey": "clawhub-xiaomi-tts",
+    "name": "小米tts文字转语音"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaomi-tts",
+    "url": "https://clawhub.ai/skills/xiaomi-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaomi-tts-a71e8d48e9017267.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "把文字转成语音。可以发语音、念给我听、唱歌、用方言或夹子音说话，支持各种情绪和风格。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangalexhy",
+      "userId": "s17fnysdn13tb167vvb7bn1qes83gjf5",
+      "displayName": "zhangalexhy",
+      "image": "https://avatars.githubusercontent.com/u/51531505?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775198344966,
+      "changelog": "xiaomi-tts 1.0.0 初始版本\n\n- 支持将文本转换为多种风格和方言的语音\n- 可通过命令行使用，支持自定义音色、语速、情绪、角色和方言\n- 支持文本中的 `<style>` 标签和细粒度音频标签控制语音表现\n- 输出为 base64 编码的 WAV 音频\n- 需要设置或传递 API KEY",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a7b4319aa0f2742bf803a358429bf4d12377dbcbca3de7f89be6e3079fcc993e"
+}

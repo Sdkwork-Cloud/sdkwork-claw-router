@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54789,
+  "uuid": "skill-clawhub-nuvc",
+  "skillKey": "clawhub-nuvc",
+  "name": "NUVC — VC-Grade Business Intelligence",
+  "summary": "Score business ideas, get startup roasts, analyze markets, and extract structured data — powered by the same AI engine behind 250+ VC investment memos",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nuvc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nuvcai",
+      "features": [
+        "Score business ideas, get startup roasts, analyze markets, and extract structured data — powere."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nuvc@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/101111923?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nuvc",
+      "url": "https://clawhub.ai/skills/nuvc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nuvc",
+    "url": "https://clawhub.ai/skills/nuvc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nuvc-eb22b2691f853be0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nuvc@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nuvc-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4b1e7c0ac44ff864e012da9267907756fe68c939670d24faa3035c27f28981a9",
+      "artifactSizeBytes": 2309
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T11:49:19.741Z"
+}

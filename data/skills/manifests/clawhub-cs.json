@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35138,
+  "uuid": "skill-clawhub-cs",
+  "skillKey": "clawhub-cs",
+  "name": "cs",
+  "summary": "Automatically extract key points from long texts in Chinese or English using keywords or length triggers, outputting clear, concise bullet-point summaries.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cs",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1466561686",
+      "features": [
+        "Automatically extract key points from long texts in Chinese or English using keywords or length."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cs@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/153876980?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cs",
+      "url": "https://clawhub.ai/skills/cs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cs",
+    "url": "https://clawhub.ai/skills/cs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cs-3b8b91c75627bee5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cs@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cs-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3cf7ecf2bff66c75525e50035c62c131e9d6dafc3b4f5dce7590bc13cb82e97b",
+      "artifactSizeBytes": 2221
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T08:44:12.063Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/promo-offer-angler@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.promo_offer_angler",
+  "skill": {
+    "id": 43144,
+    "skillKey": "clawhub-promo-offer-angler",
+    "name": "CraveGo Promo Offer Angler"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "promo-offer-angler",
+    "url": "https://clawhub.ai/skills/promo-offer-angler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/promo-offer-angler-9e7b2057059e020c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate safe signup promo offer angles for CraveGo.ph (Philippines). Use friendly & casual brand voice. Focus ONLY on new-user/sign-up promos and avoid lega..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bobneobux",
+      "userId": "s1708a8mc2vfza00vam9p9wyeh84e0bj",
+      "displayName": "bobneobux",
+      "image": "https://avatars.githubusercontent.com/u/29719384?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775690482514,
+      "changelog": "- Initial release of cravego-promo-offer-angler skill.\n- Generates safe, friendly & casual promo offer angles for CraveGo.ph, focused exclusively on new-user/signup promotions.\n- Requires at least 5 unique angles centered on “₱ discount on first order”.\n- Requires at least 5 unique, rotating angles with no fixed promo (e.g., waived delivery, bundle deals, signup points).\n- Outputs suggestions in JSON format for use on FB, IG, or TikTok.\n- Designed to avoid financial/legal claims and guarantees.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fe0a03842df754ae3cd298bd1740dcbb4bbc9ebd53eb5edc574310948916e074"
+}

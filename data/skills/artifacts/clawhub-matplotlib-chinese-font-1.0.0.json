@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/matplotlib-chinese-font@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.matplotlib_chinese_font",
+  "skill": {
+    "id": 21686,
+    "skillKey": "clawhub-matplotlib-chinese-font",
+    "name": "Matplotlib Chinese Font"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "matplotlib-chinese-font",
+    "url": "https://clawhub.ai/skills/matplotlib-chinese-font",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/matplotlib-chinese-font-8ab9c747cf8bf0ea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Configure Chinese fonts for matplotlib plotting. Use when plotting charts with Chinese characters or getting garbled text."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tazio7",
+      "userId": "s17762aa7ycwmv16srwdy9ccch83h4nv",
+      "displayName": "Tazio7",
+      "image": "https://avatars.githubusercontent.com/u/260568855?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 471,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773109524182,
+      "changelog": "- Initial release of matplotlib-chinese-font.\n- Provides guidance for configuring Chinese fonts in matplotlib to avoid garbled text.\n- Includes quick configuration methods (global and element-wise) for Chinese labels and titles.\n- Offers troubleshooting steps for common font display issues and negative sign rendering.\n- Adds script utilities for clearing font cache, listing available fonts, and testing font display.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2cdb9f51201dad6bfee331e1bd014959c28baf90cf78c65fad03b7cd7e39391e"
+}

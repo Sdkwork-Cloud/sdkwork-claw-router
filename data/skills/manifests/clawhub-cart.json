@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50767,
+  "uuid": "skill-clawhub-cart",
+  "skillKey": "clawhub-cart",
+  "name": "InstaClaw | Buy my groceries",
+  "summary": "Instacart ordering skill. Easy-to-use agentic wallets powered by Stripe. Use your existing Stripe/Link to top-up this versatile x402 wallet for any purchases...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cart",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codejika",
+      "features": [
+        "Instacart ordering skill",
+        "Easy-to-use agentic wallets powered by Stripe",
+        "Use your existing Stripe/Link to top-up this versatile x402 wallet for any purchases..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cart@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36914612?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cart",
+      "url": "https://clawhub.ai/skills/cart"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cart",
+    "url": "https://clawhub.ai/skills/cart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cart-1c42ddc0285b9c25.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cart@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cart-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5cafcdbdc317ddf86754e590290e6e9dbd5e9f5f719c1fd0278cb8b813061baf",
+      "artifactSizeBytes": 2243
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T01:34:58.263Z"
+}

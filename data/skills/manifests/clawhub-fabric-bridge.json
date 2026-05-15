@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11769,
+  "uuid": "skill-clawhub-fabric-bridge",
+  "skillKey": "clawhub-fabric-bridge",
+  "name": "Fabric Bridge",
+  "summary": "Run Fabric AI patterns for text transformation, analysis, and content creation. Use when the user asks to use a Fabric pattern, extract wisdom, analyze claims, improve writing, summarize with Fabric, or mentions 'fabric' CLI. Supports 242+.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fabric_bridge",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "koriyoshi2041",
+      "features": [
+        "Run Fabric AI patterns for text transformation, analysis, and content creation",
+        "Use when the user asks to use a Fabric pattern, extract wisdom, analyze claims, improve writing.",
+        "Supports 242+ patterns for tasks like content analysis, writing improvement, code review, threa."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fabric-bridge@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/182183463?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fabric-bridge",
+      "url": "https://clawhub.ai/skills/fabric-bridge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fabric-bridge",
+    "url": "https://clawhub.ai/skills/fabric-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fabric-bridge-d75ab2fbd46ff571.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fabric-bridge@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fabric-bridge-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:49c1cacdbec1c0cc8d6fba00e07e96fd992ac8a614acab0e1ba7779bfeb54caa",
+      "artifactSizeBytes": 2027
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-29T15:47:06.628Z"
+}

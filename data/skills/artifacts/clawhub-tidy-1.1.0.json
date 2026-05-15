@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tidy@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tidy",
+  "skill": {
+    "id": 54473,
+    "skillKey": "clawhub-tidy",
+    "name": "Tidy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tidy",
+    "url": "https://clawhub.ai/skills/tidy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tidy-118a1de593252b71.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Full-featured AI property management — addresses, cleanings, reservations, tasks, pros, and natural language messaging."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mchusma",
+      "userId": "s176x7w2pyxht1c3n0szyhqjx583wh84",
+      "displayName": "mchusma",
+      "image": "https://avatars.githubusercontent.com/u/8185194?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774904346870,
+      "changelog": "Add OpenClaw-compatible metadata, bundled reference docs, and keyword tags for ClawHub discoverability",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:33d3895d57828301e21823ce3f346936cd29344076fdd328f752de8c0b1c064e"
+}

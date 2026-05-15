@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cannon@2.26.0",
+  "version": "2.26.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cannon",
+  "skill": {
+    "id": 22335,
+    "skillKey": "clawhub-cannon",
+    "name": "Cannon"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cannon",
+    "url": "https://clawhub.ai/skills/cannon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cannon-19e0f50bcf2f6457.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cannon package manager for Ethereum deployments. Use when building, testing, deploying, or inspecting Cannon packages. Covers cannonfile syntax, CLI commands..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dbeal-eth",
+      "userId": "publishers:dbeal-eth",
+      "displayName": "dbeal-eth",
+      "image": "https://avatars.githubusercontent.com/u/2107457?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 377,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.26.0",
+      "createdAt": 1773064423698,
+      "changelog": "Initial skill release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2506f23f5cff7fb358854b4d85f5398063d9753f890ff730d456b6068d327fb7"
+}

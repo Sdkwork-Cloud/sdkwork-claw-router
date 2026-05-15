@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawculator@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawculator",
+  "skill": {
+    "id": 50012,
+    "skillKey": "clawhub-clawculator",
+    "name": "Clawculator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawculator",
+    "url": "https://clawhub.ai/skills/clawculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawculator-e3f5623a1da43b28.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze OpenClaw costs and detect billing issues. Source code is fully bundled — nothing is fetched at runtime. Requires only the node binary."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "echoudhry",
+      "userId": "publishers:echoudhry",
+      "displayName": "echoudhry",
+      "image": "https://avatars.githubusercontent.com/u/9954891?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 600,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1772858540097,
+      "changelog": "clawculator 1.2.1\n\n- Updated snapshotCard.js\n- No user-facing changes documented\n- Maintenance update, no impact on usage or features",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2720ee70dd4cbc901913ff906a02cb83819dae6d0b9900a7f0e9e44a681cd36a"
+}

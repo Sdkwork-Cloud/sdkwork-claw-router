@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kaomoji@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kaomoji",
+  "skill": {
+    "id": 29151,
+    "skillKey": "clawhub-kaomoji",
+    "name": "Kaomoji Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kaomoji",
+    "url": "https://clawhub.ai/skills/kaomoji",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kaomoji-6c124c7604e5f12c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Light kaomoji selector based on context tags."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wxuanyuan",
+      "userId": "s17eyyrbc0gbc0kx798wxcbqe583sfg3",
+      "displayName": "WxuanYuan",
+      "image": "https://avatars.githubusercontent.com/u/83860738?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 299,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773322800664,
+      "changelog": "- Initial release of the kaomoji skill.\n- Quickly select kaomojis using context tags via the command line.\n- List all available kaomojis.\n- Add new kaomojis with detailed tags and descriptions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b0f005a543c09a2b68c915ab2387b3067ab59ad49c3d7faa6935a79eeb4842e3"
+}

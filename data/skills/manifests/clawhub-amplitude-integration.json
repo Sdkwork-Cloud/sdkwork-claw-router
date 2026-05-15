@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22479,
+  "uuid": "skill-clawhub-amplitude-integration",
+  "skillKey": "clawhub-amplitude-integration",
+  "name": "Amplitude",
+  "summary": "Amplitude integration. Manage Users, Events. Use when the user wants to interact with Amplitude data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amplitude_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Amplitude integration",
+        "Manage Users, Events",
+        "Use when the user wants to interact with Amplitude data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amplitude-integration@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amplitude-integration",
+      "url": "https://clawhub.ai/skills/amplitude-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amplitude-integration",
+    "url": "https://clawhub.ai/skills/amplitude-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amplitude-integration-4f89f0d80acdbafd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amplitude-integration@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-amplitude-integration-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:afd897fe23a2965ad2b72e86d654c65dcee8751c16c047f12606a43429caebb3",
+      "artifactSizeBytes": 1895
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:10:18.057Z"
+}

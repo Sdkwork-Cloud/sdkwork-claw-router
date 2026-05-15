@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aws-agentcore-langgraph@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aws_agentcore_langgraph",
+  "skill": {
+    "id": 11829,
+    "skillKey": "clawhub-aws-agentcore-langgraph",
+    "name": "aws-agentcore-langgraph"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aws-agentcore-langgraph",
+    "url": "https://clawhub.ai/skills/aws-agentcore-langgraph",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aws-agentcore-langgraph-4176edb9458a2a74.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deploy production LangGraph agents on AWS Bedrock AgentCore. Use for (1) multi-agent systems with orchestrator and specialist agent patterns, (2) building stateful agents with persistent cross-session memory, (3) connecting external tools."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "killerapp",
+      "userId": "s1749z0792n9re64h9fxreaqnh84x1m8",
+      "displayName": "Vaskin Kissoyan",
+      "image": "https://avatars.githubusercontent.com/u/31700?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 1708,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770349609985,
+      "changelog": "From Foundry: Deploy production LangGraph agents on AWS Bedrock AgentCore. Use for (1) multi-a",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:757851bac0dcbfd44f575b502dc1cf93758c9f84b9e5b2a9c347b0595f3cc36e"
+}

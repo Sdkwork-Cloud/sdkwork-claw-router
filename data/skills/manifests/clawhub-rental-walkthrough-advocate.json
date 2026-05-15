@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49845,
+  "uuid": "skill-clawhub-rental-walkthrough-advocate",
+  "skillKey": "clawhub-rental-walkthrough-advocate",
+  "name": "Rental Walkthrough Advocate",
+  "summary": "Guide renters through structured move-in/out inspections with checklists, defect logs, landlord message drafts, and deposit return preparation.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rental_walkthrough_advocate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Guide renters through structured move-in/out inspections with checklists, defect logs, landlord."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rental-walkthrough-advocate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rental-walkthrough-advocate",
+      "url": "https://clawhub.ai/skills/rental-walkthrough-advocate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rental-walkthrough-advocate",
+    "url": "https://clawhub.ai/skills/rental-walkthrough-advocate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rental-walkthrough-advocate-3a305dca7b3c4a72.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rental-walkthrough-advocate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rental-walkthrough-advocate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:27b6418722f51e424ec397eb5301d72bef7ce9d34e1eae84a5a0e6dfe7296e70",
+      "artifactSizeBytes": 2579
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T19:09:46.813Z"
+}

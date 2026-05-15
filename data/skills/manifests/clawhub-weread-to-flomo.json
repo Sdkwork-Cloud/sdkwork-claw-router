@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56580,
+  "uuid": "skill-clawhub-weread-to-flomo",
+  "skillKey": "clawhub-weread-to-flomo",
+  "name": "WeRead to flomo",
+  "summary": "Sync WeRead (微信读书) highlights and notes into flomo with incremental deduplication and configurable sync scope. Use when the user wants to export or sync WeRe...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weread_to_flomo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ericxie777",
+      "features": [
+        "Sync WeRead (微信读书) highlights and notes into flomo with incremental deduplication and configura.",
+        "Use when the user wants to export or sync WeRe..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weread-to-flomo@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/158292332?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weread-to-flomo",
+      "url": "https://clawhub.ai/skills/weread-to-flomo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weread-to-flomo",
+    "url": "https://clawhub.ai/skills/weread-to-flomo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weread-to-flomo-60b8836434d4d6ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weread-to-flomo@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-weread-to-flomo-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cc12068a83c447eb68d86861644c489dcb4755d1f0f338c837ca26307bc81ea4",
+      "artifactSizeBytes": 2003
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T01:48:07.132Z"
+}

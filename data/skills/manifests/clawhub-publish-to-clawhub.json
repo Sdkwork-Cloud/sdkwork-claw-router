@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31063,
+  "uuid": "skill-clawhub-publish-to-clawhub",
+  "skillKey": "clawhub-publish-to-clawhub",
+  "name": "Publish To ClawHub",
+  "summary": "Prepare and publish a local skill to ClawHub and GitHub using a workflow that keeps the local publish directory clean. Use this skill when the user wants to...",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.publish_to_clawhub",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zack",
+      "features": [
+        "Prepare and publish a local skill to ClawHub and GitHub using a workflow that keeps the local p.",
+        "Use this skill when the user wants to..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/publish-to-clawhub@2.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224656189?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "publish-to-clawhub",
+      "url": "https://clawhub.ai/skills/publish-to-clawhub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "publish-to-clawhub",
+    "url": "https://clawhub.ai/skills/publish-to-clawhub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/publish-to-clawhub-467358eda74fa3e1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/publish-to-clawhub@2.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-publish-to-clawhub-2.2.0.json",
+      "version": "2.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2848650c05091c9c4473fc6bb36a6ade21b44f6770a4d5b034c3aea3b59dde02",
+      "artifactSizeBytes": 2055
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T18:36:23.307Z"
+}

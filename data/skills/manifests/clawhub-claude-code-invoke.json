@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59212,
+  "uuid": "skill-clawhub-claude-code-invoke",
+  "skillKey": "clawhub-claude-code-invoke",
+  "name": "Claude Code Invoke",
+  "summary": "通过 claude -p 命令调用 Claude Code 执行单次 Prompt 任务。当用户要求\"用 Claude Code 执行 XXX\"、\"调用 claude -p\"、\"用 Claude Code 调查/分析 XXX\" 时使用。前提：目标目录必须是 Git 仓库。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code_invoke",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bear Xiong",
+      "features": [
+        "通过 claude -p 命令调用 Claude Code 执行单次 Prompt 任务。当用户要求\"用 Claude Code 执行 XXX\"、\"调用 claude -p\"、\"用 Clau."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claude-code-invoke@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5952306?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claude-code-invoke",
+      "url": "https://clawhub.ai/skills/claude-code-invoke"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code-invoke",
+    "url": "https://clawhub.ai/skills/claude-code-invoke",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-invoke-1211d867853cedab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claude-code-invoke@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claude-code-invoke-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:82938071e3b70dc842690d1674c7a4e47302bd0fedf38f5e87d370277dbd9323",
+      "artifactSizeBytes": 2423
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T01:59:40.714Z"
+}

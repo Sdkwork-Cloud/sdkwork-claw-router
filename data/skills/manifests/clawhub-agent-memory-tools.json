@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54914,
+  "uuid": "skill-clawhub-agent-memory-tools",
+  "skillKey": "clawhub-agent-memory-tools",
+  "name": "Agent Memory Tools",
+  "summary": "Searches, stores, and manages agent memory across 4 sources (fact store, vector embeddings, BM25, knowledge graph). Runs 100% local via Ollama — no API keys,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_memory_tools",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Primo-Studio",
+      "features": [
+        "Searches, stores, and manages agent memory across 4 sources (fact store, vector embeddings, BM2.",
+        "Runs 100% local via Ollama — no API keys,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-memory-tools@1.0.0",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/agent-memory-tools/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-memory-tools",
+      "url": "https://clawhub.ai/skills/agent-memory-tools"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-memory-tools",
+    "url": "https://clawhub.ai/skills/agent-memory-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-memory-tools-2e4ea69b9e0e9251.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-memory-tools@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-memory-tools-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:375a44a1b7e927fa5d8b2a32d1bd117ee5f5fb921429b0970208e6548ddfadb7",
+      "artifactSizeBytes": 2542
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T02:09:40.331Z"
+}

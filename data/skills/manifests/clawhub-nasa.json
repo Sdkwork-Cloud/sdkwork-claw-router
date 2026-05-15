@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64315,
+  "uuid": "skill-clawhub-nasa",
+  "skillKey": "clawhub-nasa",
+  "name": "Nasa",
+  "summary": "NASA 美国宇航局介绍和太空探索指南",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nasa",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "NASA 美国宇航局介绍和太空探索指南"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nasa@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nasa",
+      "url": "https://clawhub.ai/skills/nasa"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nasa",
+    "url": "https://clawhub.ai/skills/nasa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nasa-724f92f8cb384087.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nasa@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-nasa-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:52634adf9642f3c1162d480c0ff8bcb867d3aa39e390fd3de05ab499c836369a",
+      "artifactSizeBytes": 1799
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T07:51:27.072Z"
+}

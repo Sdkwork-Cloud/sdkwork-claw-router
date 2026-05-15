@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28957,
+  "uuid": "skill-clawhub-audio-transcribe-summarize",
+  "skillKey": "clawhub-audio-transcribe-summarize",
+  "name": "audio-transcribe-summarize",
+  "summary": "Transcribe audio/video files to text and generate structured summaries using SenseAudio ASR API. Use when the user asks to transcribe, summarize, or take not...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audio_transcribe_summarize",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "q1lin570",
+      "features": [
+        "Transcribe audio/video files to text and generate structured summaries using SenseAudio ASR API",
+        "Use when the user asks to transcribe, summarize, or take not..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/audio-transcribe-summarize@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/249899486?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "audio-transcribe-summarize",
+      "url": "https://clawhub.ai/skills/audio-transcribe-summarize"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audio-transcribe-summarize",
+    "url": "https://clawhub.ai/skills/audio-transcribe-summarize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audio-transcribe-summarize-c3ad38d2df4ac913.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/audio-transcribe-summarize@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-audio-transcribe-summarize-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e1d96336820933f9ced898151a99f0aa372475043f27514e01d437af4264b8f4",
+      "artifactSizeBytes": 2343
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T10:37:16.824Z"
+}

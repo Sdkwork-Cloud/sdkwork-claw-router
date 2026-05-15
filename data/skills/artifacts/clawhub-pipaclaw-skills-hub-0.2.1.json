@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pipaclaw-skills-hub@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipaclaw_skills_hub",
+  "skill": {
+    "id": 17520,
+    "skillKey": "clawhub-pipaclaw-skills-hub",
+    "name": "Pipaclaw Skills Hub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipaclaw-skills-hub",
+    "url": "https://clawhub.ai/skills/pipaclaw-skills-hub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipaclaw-skills-hub-3c52af26df6940b2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Front door for Pipaclaw public skills. Route users to the right skill for presentations, social account operations, and promotional video production without..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xexojay",
+      "userId": "s17cynw0p588p9c67wkj6z3qx983krpz",
+      "displayName": "eric",
+      "image": "https://avatars.githubusercontent.com/u/3752961?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 772,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1774958651088,
+      "changelog": "Expanded promo-video-maker into one-shot and project production flows, added public helper scripts and references, and improved platform-risk guidance for social-account-ops.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f024f35b34bb7298b4601c6dda5848159a3b0c0db4ecdbd7e6224fa631b2b2f5"
+}

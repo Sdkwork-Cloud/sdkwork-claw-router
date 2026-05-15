@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cloudflare-mail-reader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloudflare_mail_reader",
+  "skill": {
+    "id": 55337,
+    "skillKey": "clawhub-cloudflare-mail-reader",
+    "name": "cloudflare-mail-reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloudflare-mail-reader",
+    "url": "https://clawhub.ai/skills/cloudflare-mail-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloudflare-mail-reader-d39fd06da7bbdde4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read one mailbox's messages or a paginated mail list from a Cloudflare temporary mail system through the `/admin/mails` admin API and return structured resul..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jcwang502",
+      "userId": "s17c1me1d8qaq85fh5ebdqjq6h83k1wc",
+      "displayName": "jcwang502",
+      "image": "https://avatars.githubusercontent.com/u/256703513?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774425573772,
+      "changelog": "- Initial release of cloudflare-mail-reader skill.\n- Supports reading mailbox messages and paginated mail lists via Cloudflare temporary mail system admin API.\n- Defaults to limit 20 and offset 0 if not specified by the user.\n- Normalizes output, extracting verification codes where possible.\n- Allows CSV export and inclusion of raw payloads when requested.\n- Requires runtime credentials passed via environment variables; credentials are never stored in the skill.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6ca34ce2729177c7ab96033e7690aa94b0cfa324f0bf1c4b77a5e6c6b436c4c5"
+}

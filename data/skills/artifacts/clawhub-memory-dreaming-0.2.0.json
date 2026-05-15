@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-dreaming@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_dreaming",
+  "skill": {
+    "id": 51798,
+    "skillKey": "clawhub-memory-dreaming",
+    "name": "Memory Dreaming"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-dreaming",
+    "url": "https://clawhub.ai/skills/memory-dreaming",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-dreaming-db51e297f29dd3e4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous memory consolidation for OpenClaw agents — like REM sleep. Periodically gathers signal from daily logs, session transcripts, and learnings; consol..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oryanmoshe",
+      "userId": "s173d33jefbwvxy0sjxr97pvpn83kphx",
+      "displayName": "Oryan Moshe",
+      "image": "https://avatars.githubusercontent.com/u/43927816?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 267,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1774533769328,
+      "changelog": "Plan tracking rewrite: concrete bash commands, file templates, step-by-step Obsidian sync logic. Dream prompt is now fully executable by an isolated agent with zero context.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0bc8c9f6dd27c08ffc747ff5bf1c339b2d7ffd63b0064690d85269f5aea5ec94"
+}

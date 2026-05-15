@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linear-issue-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linear_issue_manager",
+  "skill": {
+    "id": 49656,
+    "skillKey": "clawhub-linear-issue-manager",
+    "name": "Linear Issue Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linear-issue-manager",
+    "url": "https://clawhub.ai/skills/linear-issue-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linear-issue-manager-645ce949f1f17eeb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Linear issues, projects, and cycles with AI-powered triage, prioritization, and workflow automation via the Linear API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 73,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777621252178,
+      "changelog": "Initial release of linear-issue-manager.\n\n- Manage Linear issues, projects, and cycles with AI-powered triage, prioritization, and workflow automation.\n- Supports creating issues from code, triaging bug reports, sprint planning, analyzing velocity, and duplicate detection.\n- Guides users through API setup, error handling, and example queries.\n- Provides detailed reports for triage, team velocity, and release notes.\n- Automates workflows using workspace context, priority suggestions, and smart assignment.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:36a29eb7ae76ae10f2f9be0d57b1d5150787149751031a0b2bfb926e5f54e37b"
+}

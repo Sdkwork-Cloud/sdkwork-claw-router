@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/poxiao@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.poxiao",
+  "skill": {
+    "id": 73153,
+    "skillKey": "clawhub-poxiao",
+    "name": "破晓"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "poxiao",
+    "url": "https://clawhub.ai/skills/poxiao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/poxiao-6fb30bb5e2a1f27c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "🌅 全时段股市资讯生成器。根据当前时间自动判断生成早报/午评/收盘报告，支持交易日检测、模块化新闻抓取、微信友好格式输出。专为投资人设计，助力快速决策。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fslong520",
+      "userId": "s179dxbepyx3dhgg6vsaj80yt583nxj7",
+      "displayName": "fslong",
+      "image": "https://avatars.githubusercontent.com/u/25819806?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1776066614009,
+      "changelog": "v3.2.0 - 强制实时网页数据抓取，禁止API；新增steps/01-realtime-data.md；步骤重新编号",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:be5c75ae571a05ce4a008580d3eb0d13bfcfff2b95008d54add86e0903b247f6"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/code2animation@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code2animation",
+  "skill": {
+    "id": 16371,
+    "skillKey": "clawhub-code2animation",
+    "name": "code2animation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code2animation",
+    "url": "https://clawhub.ai/skills/code2animation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code2animation-7d4d9966a33d60e9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Produce complete code-based animated videos by scripting, generating narration, creating visual assets, and rendering final MP4s using the code2animation fra..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "etrobot",
+      "userId": "publishers:etrobot",
+      "displayName": "Frank Lin",
+      "image": "https://avatars.githubusercontent.com/u/3889058?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 682,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772633068808,
+      "changelog": "- Introduced agent-centric video editor functionality supporting code-driven animations, interactive previews, and TTS narration.\n- New transition system: each media element supports customizable entrance transitions (`fade`, `zoom`, `slide2Left`, `slideUp`, `none`) with smooth easing.\n- Overhauled media and script format: transition behaviors, word-synced animation triggers, and persistent elements per-clip.\n- Added modular project structure with per-project JSON config and self-contained footage, audio, and metadata directories.\n- Upgraded rendering pipeline for robust portrait/landscape output, deterministic animation, and automated frame/audio encoding.\n- Extensive documentation and usage examples for HTML animation guidelines, rendering workflow, and security considerations.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:95387a07aed9b5c1bec676367c0c8124ae8af41969fe99464cb47da7578e90a0"
+}

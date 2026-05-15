@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lab2startup-team-types@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lab2startup_team_types",
+  "skill": {
+    "id": 71410,
+    "skillKey": "clawhub-lab2startup-team-types",
+    "name": "Lab2startup Team Types"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lab2startup-team-types",
+    "url": "https://clawhub.ai/skills/lab2startup-team-types",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lab2startup-team-types-8bbec44708b03166.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "师生共创三大团队类型辨析与选择决策。当用户需要选择师生共创的团队主导模式、了解老师主导型/学生主导型/师生共同主导型的优劣势时使用。触发词：师生共创、团队类型、老师主导、学生主导、团队分工、创业团队、师生分工、谁来主导、师生关系"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "earthwalking",
+      "userId": "s17c22xptvm4zbcs3vbdf4mwj583hzep",
+      "displayName": "Roma",
+      "image": "https://avatars.githubusercontent.com/u/105550312?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775028401010,
+      "changelog": "- Initial release of \"lab2startup-team-types\" skill.\n- Provides clear analysis and decision guidelines for selecting between teacher-led, student-led, and co-led university start-up teams.\n- Features detailed overviews, typical cases, pros and cons, and suitability criteria for each team type.\n- Includes a decision matrix and dynamic leadership adjustment strategy based on team stage.\n- Supplies practical advice for role allocation, team evaluation, and leveraging external mentors.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5f253636d85db9bc409bb749eab5f81f873d57ab4663c0e2273d6405fec0945f"
+}

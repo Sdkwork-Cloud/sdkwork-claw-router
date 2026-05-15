@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50705,
+  "uuid": "skill-clawhub-chrome-cdp-remote",
+  "skillKey": "clawhub-chrome-cdp-remote",
+  "name": "Remote Chrome CDP",
+  "summary": "Control Chrome/Chromium via CDP (Chrome DevTools Protocol) — open tabs, navigate URLs, take screenshots, execute JS. Supports local and remote machines via S...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chrome_cdp_remote",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Noé Rivera",
+      "features": [
+        "Control Chrome/Chromium via CDP (Chrome DevTools Protocol) — open tabs, navigate URLs, take scr.",
+        "Supports local and remote machines via S..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chrome-cdp-remote@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95829890?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chrome-cdp-remote",
+      "url": "https://clawhub.ai/skills/chrome-cdp-remote"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chrome-cdp-remote",
+    "url": "https://clawhub.ai/skills/chrome-cdp-remote",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chrome-cdp-remote-775f0e22072b8386.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chrome-cdp-remote@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chrome-cdp-remote-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b8333fd1f8fbb606bf7d368689dac0c1b5c64de1abaf7b2b0e33c56fda0f6cc",
+      "artifactSizeBytes": 2470
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T20:50:21.270Z"
+}

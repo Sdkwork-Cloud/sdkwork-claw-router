@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nmvnb@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nmvnb",
+  "skill": {
+    "id": 32495,
+    "skillKey": "clawhub-nmvnb",
+    "name": "SEEK"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nmvnb",
+    "url": "https://clawhub.ai/skills/nmvnb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nmvnb-a8d564225e00276a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manages free AI models from OpenRouter for OpenClaw. Automatically ranks models by quality, configures fallbacks for rate-limit handling, and updates opencla..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pz33y",
+      "userId": "publishers:pz33y",
+      "displayName": "pz33y",
+      "image": "https://avatars.githubusercontent.com/u/193047069?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 250,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774012940700,
+      "changelog": "Initial release with new free AI model management for OpenClaw via OpenRouter:\n\n- Introduces the FreeRide skill to automate selection, ranking, and fallback setup of free AI models.\n- Adds CLI tool (`freeride`) and optional watcher utility for auto-rotation on rate limits.\n- Updates OpenClaw configuration with optimal free model and dynamic fallback chain—preserves user’s other settings.\n- Provides detailed usage instructions, troubleshooting steps, and command reference.\n- Removes legacy molt.py script; all functionality migrated to new components.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:851ac9adc3f4fd22922a7822505c8fa818ba53dd9a012e911933267506fae92a"
+}

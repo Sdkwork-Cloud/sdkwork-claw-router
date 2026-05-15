@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-sec-plus@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_sec_plus",
+  "skill": {
+    "id": 26482,
+    "skillKey": "clawhub-openclaw-sec-plus",
+    "name": "Openclaw Sec"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-sec-plus",
+    "url": "https://clawhub.ai/skills/openclaw-sec-plus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-sec-plus-fbcd52ca9768eba6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI Agent Security Suite - Real-time protection against prompt injection, command injection, SSRF, path traversal, secrets exposure, and content policy violat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lockdown56",
+      "userId": "s178vcrwnckq4116ayaacyc02x83p30z",
+      "displayName": "lockdown56",
+      "image": "https://avatars.githubusercontent.com/u/9158712?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 367,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773847872981,
+      "changelog": "- Added initial test coverage with new file: `tests/zeroleaks-pentest.ts`\n- No changes to core functionality or documentation\n- Begin groundwork for automated security regression tests",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:54f23f44b22acdf4040525f3cce61c372a293ad845ee7b68912a1e19391d84a3"
+}

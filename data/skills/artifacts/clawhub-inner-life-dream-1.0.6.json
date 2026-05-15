@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/inner-life-dream@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inner_life_dream",
+  "skill": {
+    "id": 34176,
+    "skillKey": "clawhub-inner-life-dream",
+    "name": "Inner Life Dream"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inner-life-dream",
+    "url": "https://clawhub.ai/skills/inner-life-dream",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inner-life-dream-d73edad119f6defa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Your agent only works on tasks and never thinks creatively. inner-life-dream adds freeform exploration during quiet hours — hypotheticals, future scenarios,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dkistenev",
+      "userId": "s17fcfc5pwws03amaarb3yarwx84cc3j",
+      "displayName": "Danila",
+      "image": "https://avatars.githubusercontent.com/u/36852400?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 695,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1772297457853,
+      "changelog": "- Added a core prerequisites check: ensures `inner-life-core` is initialized before running.\n- Updated documentation with clear setup instructions and error messages if prerequisites are missing.\n- No changes to core dreaming logic or output; changes improve reliability and user onboarding.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:373d15ef4a981311177ce88f8fefd52ad9443add7f21800753b7ae598ca16650"
+}

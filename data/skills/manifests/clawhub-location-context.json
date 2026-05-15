@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14425,
+  "uuid": "skill-clawhub-location-context",
+  "skillKey": "clawhub-location-context",
+  "name": "Location Context",
+  "summary": "Get comprehensive context about a location including nearby places, area description, and optional weather. Use when you need to understand what's around a l...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.location_context",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "James-southendsolutions",
+      "features": [
+        "Get comprehensive context about a location including nearby places, area description, and optio.",
+        "Use when you need to understand what's around a l..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/location-context@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/93152760?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "location-context",
+      "url": "https://clawhub.ai/skills/location-context"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "location-context",
+    "url": "https://clawhub.ai/skills/location-context",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/location-context-5738cc5c48e6b09b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/location-context@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-location-context-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5a6979fe9e6127d11df43fd5375f35fd4c609817452b7e09d61f96ec8c7db327",
+      "artifactSizeBytes": 2450
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T19:59:26.758Z"
+}

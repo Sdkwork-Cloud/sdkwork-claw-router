@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-adversarial-engine@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_adversarial_engine",
+  "skill": {
+    "id": 67945,
+    "skillKey": "clawhub-openclaw-adversarial-engine",
+    "name": "Adversarial Engine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-adversarial-engine",
+    "url": "https://clawhub.ai/skills/openclaw-adversarial-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-adversarial-engine-9821ce58931dc19d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "多模型对抗引擎 - 四模型真实对抗辩论系统。架构师+工程师+安全官+仲裁者协作，代码沙箱验证，向量检索增强，收敛判断自动熔断。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "timo2026",
+      "userId": "s174wprm496tppjgz41wv2b6tn83faym",
+      "displayName": "Timo2026",
+      "image": "https://avatars.githubusercontent.com/u/258531684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1775096010042,
+      "changelog": "- Improved stability and internal logic in async_engine.py and engine.py.\n- Minor code refactoring for better performance and maintainability.\n- No changes to external API or documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:de2a1c032a0a1660cf40c9807e61d0604b06c732e246193b5157696c0177a0b7"
+}

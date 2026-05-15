@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70856,
+  "uuid": "skill-clawhub-my-diary",
+  "skillKey": "clawhub-my-diary",
+  "name": "My Diary",
+  "summary": "个人日记管理技能。用于记录日记、查询日记、查看日记列表、删除日记等操作。当用户说\"写入日记\"、\"查看日记\"、\"列出日记\"、\"删除日记\"时触发此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_diary",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nancyzhong2024",
+      "features": [
+        "个人日记管理技能。用于记录日记、查询日记、查看日记列表、删除日记等操作。当用户说\"写入日记\"、\"查看日记\"、\"列出日记\"、\"删除日记\"时触发此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/my-diary@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/170227834?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "my-diary",
+      "url": "https://clawhub.ai/skills/my-diary"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-diary",
+    "url": "https://clawhub.ai/skills/my-diary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-diary-bf3c0c2a1cb5c477.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/my-diary@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-my-diary-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:13cefd3aa6eaa18de6371e3572d548e052038b7b4da3c92eebdabc34aa0b334e",
+      "artifactSizeBytes": 2297
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T09:44:33.955Z"
+}

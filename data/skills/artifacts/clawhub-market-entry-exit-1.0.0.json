@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/market-entry-exit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.market_entry_exit",
+  "skill": {
+    "id": 34666,
+    "skillKey": "clawhub-market-entry-exit",
+    "name": "Market Entry Exit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "market-entry-exit",
+    "url": "https://clawhub.ai/skills/market-entry-exit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/market-entry-exit-9bba239ca3ff843b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze barriers to market entry and exit. Use for market attractiveness assessment, competitive dynamics, and strategic planning."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linuszz",
+      "userId": "s17e0e5q8g0sjf5mpwdq1sy65183gmj7",
+      "displayName": "linuszz",
+      "image": "https://avatars.githubusercontent.com/u/46770204?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 222,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774179547948,
+      "changelog": "- Initial release of the market-entry-exit skill for analyzing barriers to market entry and exit.\n- Provides structured frameworks and rating tables for both entry and exit barrier assessment.\n- Includes output templates for summarizing entry/exit analysis, strategic recommendations, competitive dynamics, and overall attractiveness.\n- Covers structural, behavioral, and regulatory barriers based on industry examples.\n- Offers practical tips and references for effective barrier analysis in strategic planning.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b6a82924afa36c57a4a6863c7b201007fb5b70a442583408bdd09d73ed4848ac"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62257,
+  "uuid": "skill-clawhub-dbcheck",
+  "skillKey": "clawhub-dbcheck",
+  "name": "DBCheck 数据库巡检",
+  "summary": "执行 MySQL、PostgreSQL、Oracle、SQL Server、DM8、TiDB 数据库健康巡检，内置 130+ 条增强风险分析规则 + 慢查询深度分析引擎 + 本地 Ollama AI 大模型诊断建议，一键生成专业 Word 巡检报告。适用于 DBA 和运维人员快速掌握数据库运行状况、排查风险。项目...",
+  "version": "2.3.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dbcheck",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fiyo",
+      "features": [
+        "执行 MySQL、PostgreSQL、Oracle、SQL Server、DM8、TiDB 数据库健康巡检，内置 130+ 条增强风险分析规则 + 慢查询深度分析引擎 + 本地 Ollam."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dbcheck@2.3.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5062945?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dbcheck",
+      "url": "https://clawhub.ai/skills/dbcheck"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dbcheck",
+    "url": "https://clawhub.ai/skills/dbcheck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dbcheck-e386d96ce639cd58.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dbcheck@2.3.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-dbcheck-2.3.6.json",
+      "version": "2.3.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ff06d06707a79c4731ad82c0046ce54edc46a0412c954a5f1a3396764d231945",
+      "artifactSizeBytes": 2817
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T12:22:34.972Z"
+}

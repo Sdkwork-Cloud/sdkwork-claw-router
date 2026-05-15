@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55470,
+  "uuid": "skill-clawhub-himalaya-skill",
+  "skillKey": "clawhub-himalaya-skill",
+  "name": "Himalaya",
+  "summary": "Expert guidance for querying, writing, and managing emails using the `himalaya` CLI. Use this skill whenever the user wants to list emails, search envelopes,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.himalaya_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bird-frank",
+      "features": [
+        "Expert guidance for querying, writing, and managing emails using the `himalaya` CLI",
+        "Use this skill whenever the user wants to list emails, search envelopes,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/himalaya-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7122030?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "himalaya-skill",
+      "url": "https://clawhub.ai/skills/himalaya-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "himalaya-skill",
+    "url": "https://clawhub.ai/skills/himalaya-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/himalaya-skill-bf8cad9963c3716b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/himalaya-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-himalaya-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ef469fb90a311315aed39e10d5f3668c95e272484ffd890d8ec6704813535a8",
+      "artifactSizeBytes": 2239
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T04:46:49.995Z"
+}

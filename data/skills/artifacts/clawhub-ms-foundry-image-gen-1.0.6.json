@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ms-foundry-image-gen@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ms_foundry_image_gen",
+  "skill": {
+    "id": 15323,
+    "skillKey": "clawhub-ms-foundry-image-gen",
+    "name": "Microsoft Foundry image generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ms-foundry-image-gen",
+    "url": "https://clawhub.ai/skills/ms-foundry-image-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ms-foundry-image-gen-20d27baac49aa078.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Azure Foundry image generation skill for OpenClaw; generates images via a Foundry deployment and returns image bytes or URLs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jacqueskang",
+      "userId": "publishers:jacqueskang",
+      "displayName": "Jacques Kang",
+      "image": "https://avatars.githubusercontent.com/u/15269748?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 844,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1771850273738,
+      "changelog": "- Updated the usage example to save intermediate and output files into the `/tmp` directory instead of the current directory.\n- Improved script hygiene by avoiding local file clutter for generated images and results.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:03481a7c3e7dd0ffdbe79becdbb4da41796a769fb82768d142431b20d6387922"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaozhua-copywriting@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaozhua_copywriting",
+  "skill": {
+    "id": 72336,
+    "skillKey": "clawhub-xiaozhua-copywriting",
+    "name": "Copywriting"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaozhua-copywriting",
+    "url": "https://clawhub.ai/skills/xiaozhua-copywriting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaozhua-copywriting-de8da926c919d6d4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "文案优化与措辞调整。根据角色（产品负责人/汇报人/团队成员）、场景（给老板/给同事/给客服/给群聊）、受众调整措辞风格和内容深度。支持简化、正式化、口语化、中英文切换。使用场景：给老板的汇报措辞、回复客服的产品视角、群消息优化、邮件起草。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mirowangl-ops",
+      "userId": "s179h5jf34zret158qs9qjvfh984mbz0",
+      "displayName": "mirowangl-ops",
+      "image": "https://avatars.githubusercontent.com/u/267263361?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 230,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775907770859,
+      "changelog": "- Initial release of the copywriting skill focused on text optimization and wording adjustment.\n- Supports multiple roles (e.g., product owner, reportee, team member) and scenarios (e.g., reporting to boss, replying to customer service, group chat).\n- Provides style and content depth adjustment for various audiences.\n- Enables simplification, formalization, conversational tone, and Chinese/English switching.\n- Outlines clear guidelines for wording in different communication contexts such as reports, emails, and group messages.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cae54e213ffec83501a5c6dca8fbce0a5d4c6cd86ba415b771258447edbaf3d0"
+}

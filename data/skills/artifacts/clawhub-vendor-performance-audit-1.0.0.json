@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vendor-performance-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vendor_performance_audit",
+  "skill": {
+    "id": 22816,
+    "skillKey": "clawhub-vendor-performance-audit",
+    "name": "Vendor Performance Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vendor-performance-audit",
+    "url": "https://clawhub.ai/skills/vendor-performance-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vendor-performance-audit-cbbf28fa651b09c1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Conduct quarterly vendor reviews using KPI scoring across delivery, quality, communication, cost, and alignment to guide renewal, improvement, or offboarding..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flynndavid",
+      "userId": "publishers:flynndavid",
+      "displayName": "flynndavid",
+      "image": "https://avatars.githubusercontent.com/u/11565009?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 460,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772576523179,
+      "changelog": "- Initial release of the Vendor Performance Audit skill.\n- Provides a structured quarterly audit system for vendor evaluation using a weighted KPI scorecard.\n- Includes phase-based process: scoring, composite tier assignment, incident log review, improvement planning, and offboarding criteria.\n- Designed for regular reviews, triggered incidents, or pre-renewal assessments.\n- Includes templates for improvement plans and audit scheduling.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:da0f32f00147fa067440864cf33d72293ae7ff85c450af0695444c325ce0f8f1"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaohongshu-win@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_win",
+  "skill": {
+    "id": 61148,
+    "skillKey": "clawhub-xiaohongshu-win",
+    "name": "Xiaohongshu Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-win",
+    "url": "https://clawhub.ai/skills/xiaohongshu-win",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-win-9f927f135df653c8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小红书内容工具 Windows 原生版。 基于 Node.js + Playwright，直接控制本地 Chromium 浏览器， 无需 WSL、无需 Linux 二进制、无需 Python、无需任何外部服务。 核心功能： - 🔍 内容搜索 - 关键词搜索，分析热度排行 - 📊 话题报告 - 自动生成热点分析..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ken0521",
+      "userId": "publishers:ken0521",
+      "displayName": "多动朕",
+      "image": "https://avatars.githubusercontent.com/u/34393112?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 402,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773841817524,
+      "changelog": "Version 1.1.0 highlights several new features and enhancements:\n\n- 新增定时任务功能，支持 Cron 定时自动搜热点内容\n- 集成即梦AI，支持生成封面图片\n- 支持 Browser Relay，可复用本地 Chrome 浏览器\n- 新增 metadata 字段（author、tags）\n- 更新说明文档，强调核心功能与使用场景",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:44e1e6a5b4d2b2ebcece0a9fe119dd113a31c7f171ac9d7c625e2f83cf561c25"
+}

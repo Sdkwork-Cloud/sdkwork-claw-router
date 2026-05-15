@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/open-source-license@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.open_source_license",
+  "skill": {
+    "id": 30467,
+    "skillKey": "clawhub-open-source-license",
+    "name": "Open Source License"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "open-source-license",
+    "url": "https://clawhub.ai/skills/open-source-license",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/open-source-license-2e625fd998384a1e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Open Source License guidance, selection, compliance review, and drafting. Use this skill when users ask about choosing open source licenses, checking license..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sunny0826",
+      "userId": "s1771ge6btfxw88pj48v2asgbs83zeqa",
+      "displayName": "Xudong Guo",
+      "image": "https://avatars.githubusercontent.com/u/24563928?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774924269408,
+      "changelog": "Initial release of the Open Source License skill.\n\n- Provides guidance on selecting, comparing, and complying with open source licenses (e.g., MIT, Apache, GPL, Mulan PSL v2).\n- Supports generation of LICENSE, NOTICE, and source file headers using canonical templates.\n- Reviews projects for compliance and license compatibility, flagging issues and remediation steps.\n- Offers detailed answers for common OSS licensing questions, including license characteristics and project examples.\n- Includes special support for Mulan PSL v2, with guidance and official materials in Chinese and English.\n- Clearly states not to paraphrase or alter license texts; always use canonical forms.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a1cc05814af40cd803d5fcdb2f6baaf08c1b500292a062580047daba856048a3"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aegis-protocol@0.12.9",
+  "version": "0.12.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aegis_protocol",
+  "skill": {
+    "id": 38231,
+    "skillKey": "clawhub-aegis-protocol",
+    "name": "Aegis Protocol"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aegis-protocol",
+    "url": "https://clawhub.ai/skills/aegis-protocol",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aegis-protocol-2d9fca091333a900.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Self-healing stability monitor for AI agents - 5 core checks + 15 extended checks, auto-recovery, health scoring"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ankechenlab-node",
+      "userId": "s17b8543dq7w9kmxgky4dqy1bn83g5r4",
+      "displayName": "ankechenlab-node",
+      "image": "https://avatars.githubusercontent.com/u/260451964?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 17
+    },
+    "latestVersion": {
+      "version": "0.12.9",
+      "createdAt": 1775479922726,
+      "changelog": "v0.12.9 - Added VirusTotal hash and false positive explanation to security audit.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6ff5df99f34ff3cf24e6457eeee079f9122722cf83cf95fbc977625d5c5ba0ef"
+}

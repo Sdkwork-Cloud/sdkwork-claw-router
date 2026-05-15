@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64117,
+  "uuid": "skill-clawhub-runningcoach",
+  "skillKey": "clawhub-runningcoach",
+  "name": "Running Coach",
+  "summary": "基于全频训练法为跑者生成和管理训练计划，支持自动同步到Intervals.icu并提供配速区间指导。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.runningcoach",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "popstarxu-spec",
+      "features": [
+        "基于全频训练法为跑者生成和管理训练计划，支持自动同步到Intervals.icu并提供配速区间指导。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/runningcoach@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/241874747?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "runningcoach",
+      "url": "https://clawhub.ai/skills/runningcoach"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "runningcoach",
+    "url": "https://clawhub.ai/skills/runningcoach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/runningcoach-5111847758708da7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/runningcoach@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-runningcoach-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2071241c5b93e43cc2a3de242a9ce59b1f65d5a873f94512234ac9209dac6eea",
+      "artifactSizeBytes": 2020
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T12:29:05.144Z"
+}

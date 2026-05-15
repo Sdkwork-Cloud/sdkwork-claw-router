@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wihy-health@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wihy_health",
+  "skill": {
+    "id": 27317,
+    "skillKey": "clawhub-wihy-health",
+    "name": "Wihy Health"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wihy-health",
+    "url": "https://clawhub.ai/skills/wihy-health",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wihy-health-ef3430c5ebcd34f4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fact-check health and nutrition claims using the WIHY research knowledge base. Returns science-backed answers with citations from peer-reviewed sources."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kortney-lee",
+      "userId": "s17aednfvkmk0d88p2m4d78hjs846jd2",
+      "displayName": "Wihy-Ai",
+      "image": "https://avatars.githubusercontent.com/u/172641264?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 351,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1772817135001,
+      "changelog": "- No user-facing changes in this version.\n- Internal version increment; documentation and functionality remain unchanged.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9630246a668ec0b117088582c092fc3a38ef0af1e99782e4128bf01ad2fe412c"
+}

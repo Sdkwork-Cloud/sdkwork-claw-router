@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/generate-alipay-wechat-report@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.generate_alipay_wechat_report",
+  "skill": {
+    "id": 57579,
+    "skillKey": "clawhub-generate-alipay-wechat-report",
+    "name": "Generate Alipay WeChat Report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "generate-alipay-wechat-report",
+    "url": "https://clawhub.ai/skills/generate-alipay-wechat-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/generate-alipay-wechat-report-f2da28402edacd42.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate an interactive local HTML spending report from native Alipay CSV exports and WeChat Pay XLSX exports. Use when an agent needs to turn 支付宝交易明细 or 微信支..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yeyitech",
+      "userId": "s17d1zgzjsw3eb2v4h9t09ayvd83kk8r",
+      "displayName": "yeyitech",
+      "image": "https://avatars.githubusercontent.com/u/231244789?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 408,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1772964831875,
+      "changelog": "Refined marketplace metadata and improved skill presentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0a6c3f6fc984029b37ce93f704a0370fd2b0c47d16e3cabff80fb5ef08a17242"
+}

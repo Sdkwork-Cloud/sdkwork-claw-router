@@ -115,7 +115,7 @@ where
     C: PricingCatalog + Send + Sync + 'static,
 {
     Router::new()
-        .route("/app/v3/api/router/api-keys", get(fetch_catalog_keys::<C>))
+        .route("/app/v3/api/iam/api_keys", get(fetch_catalog_keys::<C>))
         .with_state(ReadOnlyAppApiKeyState { catalog })
 }
 
@@ -126,10 +126,7 @@ pub fn app_api_key_router_with_read_store_and_command_store(
     secret_generator: Arc<dyn ApiKeySecretGenerator + Send + Sync>,
 ) -> Router {
     Router::new()
-        .route(
-            "/app/v3/api/router/api-keys",
-            get(fetch_keys).post(create_key),
-        )
+        .route("/app/v3/api/iam/api_keys", get(fetch_keys).post(create_key))
         .with_state(AppApiKeyState {
             read_store,
             command_store,

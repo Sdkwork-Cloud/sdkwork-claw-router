@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63513,
+  "uuid": "skill-clawhub-met-museum",
+  "skillKey": "clawhub-met-museum",
+  "name": "Met Museum",
+  "summary": "200万件藏品、5000年文明史、每年700万参观者——大都会艺术博物馆",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.met_museum",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "200万件藏品、5000年文明史、每年700万参观者——大都会艺术博物馆"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/met-museum@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "met-museum",
+      "url": "https://clawhub.ai/skills/met-museum"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "met-museum",
+    "url": "https://clawhub.ai/skills/met-museum",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/met-museum-2348df828a13d396.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/met-museum@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-met-museum-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7405fecc48f1f5b7c74d9d920d80b933faa352d7337f404babce2209e06b2cd2",
+      "artifactSizeBytes": 2040
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T23:08:15.486Z"
+}

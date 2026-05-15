@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-editor-change-face@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_editor_change_face",
+  "skill": {
+    "id": 46500,
+    "skillKey": "clawhub-ai-video-editor-change-face",
+    "name": "Ai Video Editor Change Face"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-editor-change-face",
+    "url": "https://clawhub.ai/skills/ai-video-editor-change-face",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-editor-change-face-0a0f2c493bc3f174.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "swap video clips into face-swapped video with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators use it for replacing faces in vi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 124,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776334237582,
+      "changelog": "AI Video Editor Change Face — Initial Release\n\n- Launches AI-powered face swapping for video clips, supporting MP4, MOV, AVI, and WebM files up to 500MB.\n- Lets users upload a video, describe face replacement requests, and download the 1080p MP4 result in 1–2 minutes.\n- Requires a token-based cloud session; automatically handles token generation for new users.\n- Includes workflows for uploading, editing, previewing, credits checking, and exporting videos.\n- Provides a streamlined chat interface tailored for content creators needing quick, high-quality face swaps.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0af486c3746adbf8f8a3944fcf63d9d3dd56781c422b82ed9c0c22c1fe89367e"
+}

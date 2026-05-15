@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rocom-merchant-inventory@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rocom_merchant_inventory",
+  "skill": {
+    "id": 72110,
+    "skillKey": "clawhub-rocom-merchant-inventory",
+    "name": "远行商人库存查询"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rocom-merchant-inventory",
+    "url": "https://clawhub.ai/skills/rocom-merchant-inventory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rocom-merchant-inventory-81f654a897654ae4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询《洛克王国世界》远行商人当前库存，自动过滤出本轮仍有效的商品。适用于想查看远行商人当前卖什么，或需要输出简洁文本、JSON 结果时使用；需要用户自行提供 API key。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nitansde",
+      "userId": "s17fyzry42n290bx3rzvz063w584my0j",
+      "displayName": "Nitan SDE",
+      "image": "https://avatars.githubusercontent.com/u/240224320?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 99,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1777442792236,
+      "changelog": "补充来源、所需环境变量、依赖与远程接口说明；保持简洁面向用户的技能文案。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bcce7e30e4e9809bb104ec1e9caa1944fd0a5b47ed2e98f3a050108f453662a4"
+}

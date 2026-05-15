@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71505,
+  "uuid": "skill-clawhub-software-copyright-doc-generator",
+  "skillKey": "clawhub-software-copyright-doc-generator",
+  "name": "software-copyright",
+  "summary": "用于生成软件著作权申请相关文档的工具。当用户需要填写软件著作权登记表、生成软件说明书、创建技术文档、准备软著申请材料时使用。支持中国软件著作权登记所需的各类文档模板和信息收集。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.software_copyright_doc_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Grancy-zgs",
+      "features": [
+        "用于生成软件著作权申请相关文档的工具。当用户需要填写软件著作权登记表、生成软件说明书、创建技术文档、准备软著申请材料时使用。支持中国软件著作权登记所需的各类文档模板和信息收集。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/software-copyright-doc-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51734516?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "software-copyright-doc-generator",
+      "url": "https://clawhub.ai/skills/software-copyright-doc-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "software-copyright-doc-generator",
+    "url": "https://clawhub.ai/skills/software-copyright-doc-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/software-copyright-doc-generator-e52eabd40057e7cb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/software-copyright-doc-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-software-copyright-doc-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d335cc72c9e831dbc075e8840dea7c4252e791beb7033d79e3136aa5c724785",
+      "artifactSizeBytes": 2168
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T09:08:09.663Z"
+}

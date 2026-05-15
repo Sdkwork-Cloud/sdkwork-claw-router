@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/workspace-local-retrieval@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workspace_local_retrieval",
+  "skill": {
+    "id": 37572,
+    "skillKey": "clawhub-workspace-local-retrieval",
+    "name": "Workspace Local Retrieval"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workspace-local-retrieval",
+    "url": "https://clawhub.ai/skills/workspace-local-retrieval",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workspace-local-retrieval-861b7d1dace8d3e1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build boundary-first local retrieval for OpenClaw with explicit corpora, deny-by-default agent access, separate memory layers, and a validated minimal demo p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ys-c-23",
+      "userId": "s175y8r80kssks5b6netf02wrx83g8zv",
+      "displayName": "YS-c-23",
+      "image": "https://avatars.githubusercontent.com/u/263110631?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774406822313,
+      "changelog": "Release 1.0.0: npm-friendly CLI bootstrapping with prerequisite checks and updated documentation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3c33c785b8781e0e253a9bb5d9c9b193c678bdc883d917c4d63594b847c4643c"
+}

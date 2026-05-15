@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54883,
+  "uuid": "skill-clawhub-swamp",
+  "skillKey": "clawhub-swamp",
+  "name": "swamp",
+  "summary": "Model any API with Swamp, test it, and enrich *Claw with new capabilities — full lifecycle from idea to working integration",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swamp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Magistr",
+      "features": [
+        "Model any API with Swamp, test it, and enrich *Claw with new capabilities — full lifecycle from."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/swamp@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2269529?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "swamp",
+      "url": "https://clawhub.ai/skills/swamp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swamp",
+    "url": "https://clawhub.ai/skills/swamp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swamp-d83a900c42d48e2a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/swamp@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-swamp-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9cbcaac594432b92b44fc2f27cfface587c0f1c8f559789f78a422604d459781",
+      "artifactSizeBytes": 2285
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T12:24:43.721Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60562,
+  "uuid": "skill-clawhub-manus-agent",
+  "skillKey": "clawhub-manus-agent",
+  "name": "Manus Agent",
+  "summary": "Manus AI Agent 助手，精通通用 AI Agent 任务执行、浏览器操作、代码生成、数据分析",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.manus_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangifonly",
+      "features": [
+        "Manus AI Agent 助手，精通通用 AI Agent 任务执行、浏览器操作、代码生成、数据分析"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/manus-agent@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121886591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "manus-agent",
+      "url": "https://clawhub.ai/skills/manus-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "manus-agent",
+    "url": "https://clawhub.ai/skills/manus-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/manus-agent-7a95cfb6ab2e4ff7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/manus-agent@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-manus-agent-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:62a50cd3a3ef18f94f36d0f77ae44ea736fad6dce6d4adf2283390ef795ab275",
+      "artifactSizeBytes": 2219
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T15:48:02.422Z"
+}

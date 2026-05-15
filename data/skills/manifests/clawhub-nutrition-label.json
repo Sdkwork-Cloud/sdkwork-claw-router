@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50371,
+  "uuid": "skill-clawhub-nutrition-label",
+  "skillKey": "clawhub-nutrition-label",
+  "name": "Nutrition Label",
+  "summary": "Reference tool for life — covers intro, quickstart, patterns and more. Quick lookup for Nutrition Label concepts, best practices, and implementation patterns.",
+  "version": "4.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nutrition_label",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain1",
+      "features": [
+        "Reference tool for life — covers intro, quickstart, patterns and more",
+        "Quick lookup for Nutrition Label concepts, best practices, and implementation patterns."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nutrition-label@4.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261107384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nutrition-label",
+      "url": "https://clawhub.ai/skills/nutrition-label"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nutrition-label",
+    "url": "https://clawhub.ai/skills/nutrition-label",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nutrition-label-18484e49c2c6b24f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nutrition-label@4.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-nutrition-label-4.0.1.json",
+      "version": "4.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0775d512293315405c10f790257f0aad638e15635dd57a7661b114f553a8ebcf",
+      "artifactSizeBytes": 1900
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T00:47:01.963Z"
+}

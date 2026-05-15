@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40624,
+  "uuid": "skill-clawhub-zeroloss",
+  "skillKey": "clawhub-zeroloss",
+  "name": "zero-loss-methodology",
+  "summary": "Executable AI-assisted research and planning that ensures zero content loss, zero hallucination, and full traceability across multiple source documents.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zeroloss",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "markbunyevacz",
+      "features": [
+        "Executable AI-assisted research and planning that ensures zero content loss, zero hallucination."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zeroloss@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/213811079?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zeroloss",
+      "url": "https://clawhub.ai/skills/zeroloss"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zeroloss",
+    "url": "https://clawhub.ai/skills/zeroloss",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zeroloss-b6e7c4ab915d50d6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zeroloss@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zeroloss-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e4a3f0a6425a6689ae03366f3f6bc4b1d29c98f78cf97ad095eeea61ddc3174",
+      "artifactSizeBytes": 2579
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T21:13:10.534Z"
+}

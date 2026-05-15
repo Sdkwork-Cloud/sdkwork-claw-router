@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cto@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cto",
+  "skill": {
+    "id": 11355,
+    "skillKey": "clawhub-cto",
+    "name": "CTO / Chief Technology Officer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cto",
+    "url": "https://clawhub.ai/skills/cto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cto-99970df0d9fbd47d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Be the CTO with technical strategy, architecture decisions, team scaling, hiring, tech debt management, and engineering leadership."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1517,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 6,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1771526077145,
+      "changelog": "Added Build vs Buy framework, Tech Stack Decisions, expanded traps and communication guidance",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3903bc19461dc1d2edf2c73d8e910641b033b40ee00c8763fcdbeaafb90e93df"
+}

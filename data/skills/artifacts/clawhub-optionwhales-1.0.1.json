@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/optionwhales@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.optionwhales",
+  "skill": {
+    "id": 19920,
+    "skillKey": "clawhub-optionwhales",
+    "name": "optionwhales"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "optionwhales",
+    "url": "https://clawhub.ai/skills/optionwhales",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/optionwhales-6e9acaf4d6861201.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query real-time option flow intelligence and generate AI-powered trade analysis reports. Use when users ask about option flow, unusual options activity, inst..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "psdsam-niuniuking",
+      "userId": "s17f080mghgqkh5vq7ftzt18m583k663",
+      "displayName": "psdsam-NiuNiuKing",
+      "image": "https://avatars.githubusercontent.com/u/154928863?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 484,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774493739713,
+      "changelog": "AI-powered trade report generation added alongside option flow.\n- New AI Report feature: generate institutional-grade buy/sell/hold trade analysis via LLM pipeline.\n- Added support for managing and retrieving AI report job status and report history.\n- SKILL.md now documents both Option Flow API and AI Report API, with required authentication details.\n- Helper script for AI report queries added: scripts/aireport.py.\n- Skill name changed from \"option-flow\" to \"option_whales\" and flow description updated.\n- No breaking changes to option flow functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:62e1505a21b9bb0f5f8e269fc213580fbb090460a749a0ce221540053dfba0f1"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/technical-writing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.technical_writing",
+  "skill": {
+    "id": 15304,
+    "skillKey": "clawhub-technical-writing",
+    "name": "technical writing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "technical-writing",
+    "url": "https://clawhub.ai/skills/technical-writing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/technical-writing-18ff28f95dc30244.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Activate this skill whenever a user asks to write, structure, or improve developer documentation. Covers README templates, API documentation (OpenAPI, JSDoc,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "royhk920",
+      "userId": "s179273w43zh8y75zyzst8wa2h83gwxh",
+      "displayName": "royhk920",
+      "image": "https://avatars.githubusercontent.com/u/129730053?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 848,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773593292684,
+      "changelog": "Technical Writing skill initial release:\n\n- Enables structured, high-quality developer documentation for projects and APIs.\n- Includes comprehensive README templates for libraries, CLI tools, and API services.\n- Covers best practices and templates for API docs (OpenAPI, JSDoc/TSDoc), ADRs, RFCs, changelogs, and runbooks.\n- Provides guidance on documentation structure (Diataxis framework), audience analysis, and docs lifecycle management.\n- Offers style guides, docs-as-code workflow tips, and code example conventions.\n- Contains a common pitfalls reference to help avoid frequent documentation mistakes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d7b68f4f0d506cfa38ef883cd6f50a36b6e08d79ef0c91c1cf3850618cb314ab"
+}

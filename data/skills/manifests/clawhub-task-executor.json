@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66734,
+  "uuid": "skill-clawhub-task-executor",
+  "skillKey": "clawhub-task-executor",
+  "name": "Task Executor",
+  "summary": "任务执行器。接收用户需求，自动拆分任务，异步执行，返回结果。 **核心功能**： - 需求输入：用户直接说需求 - 任务拆分：AI 分析，自动拆分 - 自动执行：subagent 异步执行 - 进度跟踪：本地状态 **使用场景**： - \"帮我分析AI发展趋势\" - \"调研某个话题\" - \"写一份报告",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_executor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mao XiaoHei！",
+      "features": [
+        "任务执行器。接收用户需求，自动拆分任务，异步执行，返回结果。 **核心功能**：",
+        "需求输入：用户直接说需求",
+        "任务拆分：AI 分析，自动拆分",
+        "自动执行：subagent 异步执行"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/task-executor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263579830?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "task-executor",
+      "url": "https://clawhub.ai/skills/task-executor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-executor",
+    "url": "https://clawhub.ai/skills/task-executor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-executor-5d9d9029bd4cd3b5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/task-executor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-task-executor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:253d6e150e5eaaafb59a53c2b616a2a705ac9558f568792ffe5f22c24a902340",
+      "artifactSizeBytes": 2714
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T12:05:33.445Z"
+}

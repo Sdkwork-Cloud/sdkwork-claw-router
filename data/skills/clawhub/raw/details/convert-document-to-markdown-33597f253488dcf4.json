@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "convert-document-to-markdown",
+    "displayName": "Convert Document To Markdown",
+    "summary": "Convert supported local files into Markdown by running this repository's Dockerized file-only CLI. This skill must run through Docker with a prebuilt Aliyun...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1774716118557,
+    "updatedAt": 1777624600158
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1774716118557,
+    "changelog": "Initial release: convert local files to Markdown using Dockerized CLI with fixed-version Aliyun CR images.\n\n- Supports converting `.pdf`, `.docx`, `.pptx`, `.xlsx`, common image formats, and plain/text files to Markdown.\n- Requires Docker; does not support local Python or alternative runtimes.\n- Selects prebuilt Aliyun CR image (`arm64` or `x64`) based on host architecture.\n- Returns structured JSON with markdown output, logs, and metadata for downstream processing.\n- Only the `file` command is exposed; URL, health, and version commands are not included.\n- Requires configuration of VL API credentials via OpenClaw config or `.env`.\n- Does not support legacy Office formats (`.doc`, `.ppt`, `.xls`) or audio/video files.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "kadbbz",
+    "userId": "s17c9yyt2sff7jk8nmf7ptf3r183g8kf",
+    "displayName": "宁伟",
+    "image": "https://avatars.githubusercontent.com/u/1631544?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777624600158
+  }
+}

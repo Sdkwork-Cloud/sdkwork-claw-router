@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71373,
+  "uuid": "skill-clawhub-lyft",
+  "skillKey": "clawhub-lyft",
+  "name": "Lyft",
+  "summary": "提供Lyft叫车服务、行程查询、费用估算及预约，支持多车型和支付管理，覆盖美国主要城市。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lyft",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供Lyft叫车服务、行程查询、费用估算及预约，支持多车型和支付管理，覆盖美国主要城市。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lyft@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lyft",
+      "url": "https://clawhub.ai/skills/lyft"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lyft",
+    "url": "https://clawhub.ai/skills/lyft",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lyft-09a2f4897466c7a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lyft@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-lyft-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:33fbe4c46996e9dc43dd14a579e87a1093d60e3476e44560ca5431caec419059",
+      "artifactSizeBytes": 2174
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T23:23:44.652Z"
+}

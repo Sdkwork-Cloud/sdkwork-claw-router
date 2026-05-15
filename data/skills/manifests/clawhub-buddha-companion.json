@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69894,
+  "uuid": "skill-clawhub-buddha-companion",
+  "skillKey": "clawhub-buddha-companion",
+  "name": "Buddha Companion",
+  "summary": "佛法实践与智慧对话助手。用于：(1) 帮用户理解佛法核心义理（缘起性空、无我、中道）， (2) 在对话中引导用户看到自己的执着，(3) 以有力道的方式点拨，而非说教。 当用户问佛法问题、修行困惑、或在生活中遇到境界时触发。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.buddha_companion",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TTtael",
+      "features": [
+        "佛法实践与智慧对话助手。用于：(1) 帮用户理解佛法核心义理（缘起性空、无我、中道）， (2) 在对话中引导用户看到自己的执着，(3) 以有力道的方式点拨，而非说教。 当用户问佛法问题、修行."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/buddha-companion@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/163815070?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "buddha-companion",
+      "url": "https://clawhub.ai/skills/buddha-companion"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "buddha-companion",
+    "url": "https://clawhub.ai/skills/buddha-companion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/buddha-companion-83a30e8cf84064d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/buddha-companion@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-buddha-companion-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b3928e419b861049177df0f4627e7cc55e2b95ff629d6ac234386053c98541d4",
+      "artifactSizeBytes": 2026
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T02:12:51.634Z"
+}

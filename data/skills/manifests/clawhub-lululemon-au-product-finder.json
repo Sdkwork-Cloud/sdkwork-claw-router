@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33991,
+  "uuid": "skill-clawhub-lululemon-au-product-finder",
+  "skillKey": "clawhub-lululemon-au-product-finder",
+  "name": "Lululemon AU Finder",
+  "summary": "Find a product on the Lululemon Australia site from a natural-language clothing description and return structured details such as product name, variant color...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lululemon_au_product_finder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ensonfun",
+      "features": [
+        "Find a product on the Lululemon Australia site from a natural-language clothing description and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lululemon-au-product-finder@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2123100?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lululemon-au-product-finder",
+      "url": "https://clawhub.ai/skills/lululemon-au-product-finder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lululemon-au-product-finder",
+    "url": "https://clawhub.ai/skills/lululemon-au-product-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lululemon-au-product-finder-0dcaa51890d974f9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lululemon-au-product-finder@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lululemon-au-product-finder-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8b08cdfb27eb825b49a97968b71389ae11eb100c39a2e6bd5eb40213cea98be1",
+      "artifactSizeBytes": 2267
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T10:26:14.081Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-update-delta-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_update_delta_monitor",
+  "skill": {
+    "id": 19006,
+    "skillKey": "clawhub-skill-update-delta-monitor",
+    "name": "skill-update-delta-monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-update-delta-monitor",
+    "url": "https://clawhub.ai/skills/skill-update-delta-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-update-delta-monitor-07659318cb27f203.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helps detect security-relevant changes in AI skills after installation. Tracks deltas between the audited version and current version, flagging updates that..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andyxinweiminicloud",
+      "userId": "publishers:andyxinweiminicloud",
+      "displayName": "andyxinweiminicloud",
+      "image": "https://avatars.githubusercontent.com/u/201528876?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 645,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771749297742,
+      "changelog": "- Initial release of skill-update-delta-monitor.\n- Detects security-relevant updates in AI skills after installation.\n- Tracks changes in permission scope, network endpoints, dependencies, behavioral instructions, and update frequency.\n- Generates detailed delta reports with risk classifications (CLEAN / WATCH / REVIEW / ROLLBACK).\n- Supports input via skill identifier, local directory, or direct version snapshots.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:38921ed2e6e936f0f5ea8cc3328bafb8427d2a252b96b2d17b18ed39b7c3ae15"
+}

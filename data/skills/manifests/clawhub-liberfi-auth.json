@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37834,
+  "uuid": "skill-clawhub-liberfi-auth",
+  "skillKey": "clawhub-liberfi-auth",
+  "name": "Liberfi Auth",
+  "summary": "Authenticate with LiberFi: register a new account, log in, manage session state, and verify wallet assignments. Two login modes are supported: 1. Key-based (...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.liberfi_auth",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bombmod",
+      "features": [
+        "Authenticate with LiberFi: register a new account, log in, manage session state, and verify wal.",
+        "Two login modes are supported: 1",
+        "Key-based (..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/liberfi-auth@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/212038798?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "liberfi-auth",
+      "url": "https://clawhub.ai/skills/liberfi-auth"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "liberfi-auth",
+    "url": "https://clawhub.ai/skills/liberfi-auth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/liberfi-auth-4a8e529958c088b4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/liberfi-auth@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-liberfi-auth-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d12fe4524ede343dd72df4c3d8dbed4359c3868458ca599845987958e789fdc5",
+      "artifactSizeBytes": 2063
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T14:53:17.540Z"
+}

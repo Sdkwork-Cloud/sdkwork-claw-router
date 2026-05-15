@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25633,
+  "uuid": "skill-clawhub-expedia",
+  "skillKey": "clawhub-expedia",
+  "name": "Expedia",
+  "summary": "Search Expedia stays, packages, cars, and activities, compare real trip costs, and run partner-safe booking workflows with web and API modes.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.expedia",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Search Expedia stays, packages, cars, and activities, compare real trip costs, and run partner-."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/expedia@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "expedia",
+      "url": "https://clawhub.ai/skills/expedia"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "expedia",
+    "url": "https://clawhub.ai/skills/expedia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/expedia-bf4e1570f8a4a1cd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/expedia@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-expedia-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf233bc08f2f85ae44ef51de0190949aa50880509ad97a3b5b5949b40453a290",
+      "artifactSizeBytes": 1921
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T15:50:17.852Z"
+}

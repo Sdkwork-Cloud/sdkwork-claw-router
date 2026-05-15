@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cc-insider@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cc_insider",
+  "skill": {
+    "id": 60539,
+    "skillKey": "clawhub-cc-insider",
+    "name": "cc-insider"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cc-insider",
+    "url": "https://clawhub.ai/skills/cc-insider",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cc-insider-1c9fa8610480651c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Claude Code v2.1.88 深度掌握。整合架构体系、源码解析、实战模式。涵盖 Tool/Task/Agent 三层模型、Coordinator 协调、Hooks 钩子、权限系统、Context 缓存、MCP 集成。触发场景：理解 Claude Code 内部工作原理、行为异常诊断、扩展开发（Tool/..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1491007406",
+      "userId": "s17ezs6qzpjj7425mbzx23e8g983kb0y",
+      "displayName": "1491007406",
+      "image": "https://avatars.githubusercontent.com/u/106150429?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 242,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775009271091,
+      "changelog": "cc-insider 是专注 Claude Code 的原生内部知识库，基于源码全维度解析打造。摒弃入门操作教程，聚焦底层内核、运行机制与源码核心逻辑，是高阶研发、问题诊断、扩展开发的专属技术参考手册。\n\ncc-insider is a professional internal knowledge base for Claude Code, fully sorted out from systematic source code analysis. It abandons basic beginner guides, focusing on kernel principles, operating mechanisms and core source logic — an exclusive technical reference for advanced research, fault diagnosis and extension development.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7e54d120419b87530d20371acc69dcd04fa04e20bbb9fd1ed0d2048163b6568e"
+}

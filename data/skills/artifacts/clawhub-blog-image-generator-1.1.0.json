@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/blog-image-generator@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blog_image_generator",
+  "skill": {
+    "id": 52405,
+    "skillKey": "clawhub-blog-image-generator",
+    "name": "Blog Image Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blog-image-generator",
+    "url": "https://clawhub.ai/skills/blog-image-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blog-image-generator-8d95b18c7938fb20.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "DEPRECATED — superseded by memorable-image-gen. This skill has been replaced by the Memorable Image Generator, which uses science-backed memorability scoring..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kiwi-phantomworks",
+      "userId": "s171c5jr28gpb7ccv03j28b1tx844hpt",
+      "displayName": "kiwi-phantomworks",
+      "image": "https://avatars.githubusercontent.com/u/270056198?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776908188753,
+      "changelog": "DEPRECATED: This skill is superseded by memorable-image-gen. Updated SKILL.md to redirect users to the new science-backed image generation skill with ResMem memorability scoring. Install memorable-image-gen instead.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2087d08c5612267a71b971086a4d8020eef269a2c12da487aff521d25b5df9a4"
+}

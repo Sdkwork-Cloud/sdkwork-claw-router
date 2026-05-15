@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71221,
+  "uuid": "skill-clawhub-barclays",
+  "skillKey": "clawhub-barclays",
+  "name": "Barclays",
+  "summary": "提供巴克莱银行的公司介绍、产品服务、市场数据、全球布局及最新动态等信息查询。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.barclays",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供巴克莱银行的公司介绍、产品服务、市场数据、全球布局及最新动态等信息查询。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/barclays@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "barclays",
+      "url": "https://clawhub.ai/skills/barclays"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "barclays",
+    "url": "https://clawhub.ai/skills/barclays",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/barclays-71f566aba763fb76.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/barclays@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-barclays-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9cd5ce7f1160fa940255afca9bc434f9649578a3f3dd43b16af011022283a63d",
+      "artifactSizeBytes": 1906
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T06:01:51.820Z"
+}

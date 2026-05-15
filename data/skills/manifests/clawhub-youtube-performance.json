@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33581,
+  "uuid": "skill-clawhub-youtube-performance",
+  "skillKey": "clawhub-youtube-performance",
+  "name": "Youtube Performance",
+  "summary": "Track YouTube channel performance and analytics. Use when the user says 'YouTube analytics', 'YouTube metrics', 'how is my YouTube doing', 'video views', 'wa...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_performance",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "snoopyrain",
+      "features": [
+        "Track YouTube channel performance and analytics",
+        "Use when the user says 'YouTube analytics', 'YouTube metrics', 'how is my YouTube doing', 'vide."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-performance@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9717776?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-performance",
+      "url": "https://clawhub.ai/skills/youtube-performance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-performance",
+    "url": "https://clawhub.ai/skills/youtube-performance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-performance-5f5e93b77678a7a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-performance@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-performance-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9be91c56cd8e8cccf29135969c807b6475feb9ed2351b517cc3efd976cff0abe",
+      "artifactSizeBytes": 2368
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T07:18:34.162Z"
+}

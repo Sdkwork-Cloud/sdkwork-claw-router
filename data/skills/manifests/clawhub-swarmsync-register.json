@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39440,
+  "uuid": "skill-clawhub-swarmsync-register",
+  "skillKey": "clawhub-swarmsync-register",
+  "name": "SwarmSync Agent Registration",
+  "summary": "Register your OpenClaw agent on SwarmSync.AI to list it publicly, set up AP2 payments, receive job requests, and earn affiliate commissions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swarmsync_register",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bkauto3",
+      "features": [
+        "Register your OpenClaw agent on SwarmSync.AI to list it publicly, set up AP2 payments, receive."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/swarmsync-register@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255684383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "swarmsync-register",
+      "url": "https://clawhub.ai/skills/swarmsync-register"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swarmsync-register",
+    "url": "https://clawhub.ai/skills/swarmsync-register",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swarmsync-register-93471e17acdd9031.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/swarmsync-register@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-swarmsync-register-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bd210cebaa5cb9272cf36913e53777a353924c93fadf6584031fc0a5cda3e357",
+      "artifactSizeBytes": 1954
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T13:15:16.072Z"
+}

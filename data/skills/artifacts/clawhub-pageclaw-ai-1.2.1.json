@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pageclaw-ai@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pageclaw_ai",
+  "skill": {
+    "id": 53003,
+    "skillKey": "clawhub-pageclaw-ai",
+    "name": "PageClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pageclaw-ai",
+    "url": "https://clawhub.ai/skills/pageclaw-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pageclaw-ai-d551178e19089d7a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI skills for managing Facebook business pages — auto-reply, content posting, bookings, reviews, and lead capture across 9 industries"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "proship1",
+      "userId": "s175b99607mkdcww7mcjzgeyc1845er2",
+      "displayName": "Vik",
+      "image": "https://avatars.githubusercontent.com/u/126449787?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1775283462071,
+      "changelog": "Fix display name",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4493fc38fc918eae7777f9ebc8ffa1b6d7cd54ff6484679f30c628ec1559e5c7"
+}

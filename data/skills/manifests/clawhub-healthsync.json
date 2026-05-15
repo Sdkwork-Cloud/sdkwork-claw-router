@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20392,
+  "uuid": "skill-clawhub-healthsync",
+  "skillKey": "clawhub-healthsync",
+  "name": "healthsync",
+  "summary": "Queries Apple Health data stored in a local SQLite database. Use this skill to read heart rate, steps, SpO2, VO2 Max, sleep, workouts, resting heart rate, HR...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.healthsync",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Siddhartha Varma",
+      "features": [
+        "Queries Apple Health data stored in a local SQLite database",
+        "Use this skill to read heart rate, steps, SpO2, VO2 Max, sleep, workouts, resting heart rate, H."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/healthsync@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39856034?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "healthsync",
+      "url": "https://clawhub.ai/skills/healthsync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "healthsync",
+    "url": "https://clawhub.ai/skills/healthsync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/healthsync-92bc78e561332920.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/healthsync@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-healthsync-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fcf11bda80ac9a703723f43c91138c52fddd1fb2f49f915f7d821b0e51237954",
+      "artifactSizeBytes": 2511
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T13:47:13.013Z"
+}

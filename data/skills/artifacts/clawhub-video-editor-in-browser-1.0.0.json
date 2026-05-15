@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editor-in-browser@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editor_in_browser",
+  "skill": {
+    "id": 39342,
+    "skillKey": "clawhub-video-editor-in-browser",
+    "name": "Video Editor In Browser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editor-in-browser",
+    "url": "https://clawhub.ai/skills/video-editor-in-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editor-in-browser-5e7746989c937250.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "edit video clips into edited MP4 clips with this skill. Works with MP4, MOV, WebM, AVI files up to 500MB. content creators and marketers use it for editing a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 179,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776617761558,
+      "changelog": "Initial release of Video Editor in Browser — edit and export videos online directly in your browser.\n\n- Upload and edit MP4, MOV, WebM, or AVI files up to 500MB, then export 1080p MP4s.\n- No software install required; all processing happens on cloud GPUs in 1–2 minutes per job.\n- Simple, conversational commands for editing operations (trim, add overlays, export, etc).\n- Automatic session and token management for seamless first-time setup.\n- User prompts route intelligently to upload, edit, export, credit check, or status actions.\n- Supports modern video and audio formats for both input and output.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a3dfc869262c4adef8dcfe2a6418a7cfbd8bb7bcad36a330f25ccdd1b8129d84"
+}

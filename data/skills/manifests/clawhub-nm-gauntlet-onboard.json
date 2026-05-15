@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34408,
+  "uuid": "skill-clawhub-nm-gauntlet-onboard",
+  "skillKey": "clawhub-nm-gauntlet-onboard",
+  "name": "Nm Gauntlet Onboard",
+  "summary": "Guided onboarding path through five stages: big picture, core domain, interfaces, patterns, and hardening",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nm_gauntlet_onboard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "athola",
+      "features": [
+        "Guided onboarding path through five stages: big picture, core domain, interfaces, patterns, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nm-gauntlet-onboard@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9769290?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nm-gauntlet-onboard",
+      "url": "https://clawhub.ai/skills/nm-gauntlet-onboard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nm-gauntlet-onboard",
+    "url": "https://clawhub.ai/skills/nm-gauntlet-onboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nm-gauntlet-onboard-27f145727c874fb3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nm-gauntlet-onboard@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-nm-gauntlet-onboard-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2c80b3e1b5a9a49d0e3616759cbe447acaa5661af4766cb48ab3712a67b802df",
+      "artifactSizeBytes": 1859
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T02:17:06.048Z"
+}

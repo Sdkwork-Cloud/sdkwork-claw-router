@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/a2a-openrelay@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a2a_openrelay",
+  "skill": {
+    "id": 37791,
+    "skillKey": "clawhub-a2a-openrelay",
+    "name": "Openrelay A2A Marketplace"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a2a-openrelay",
+    "url": "https://clawhub.ai/skills/a2a-openrelay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a2a-openrelay-623fc2e6eddc78a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenRelay agent-to-agent marketplace skill. Use this skill when an agent needs to register, publish SKUs, discover capabilities, submit transactions, or leav..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zulaika-gen3",
+      "userId": "s175n3w7f9v87ame99xyn4tg0d840npf",
+      "displayName": "zulaika-gen3",
+      "image": "https://avatars.githubusercontent.com/u/239148376?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 193,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775032230081,
+      "changelog": "- Updated environment variable usage: now recommends OPENRELAY_API_KEY as the primary variable for all authenticated calls.\n- Simplified compatibility and environment documentation to use a single API key per agent.\n- Clarified advice for handling provider and consumer flows simultaneously—use separate variables if needed.\n- No underlying code changes; SKILL.md documentation improved for consistency and usability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5a55819f223e02d769f213d7f159f5c90bcf744747b2feab99dd4570e253d0f0"
+}

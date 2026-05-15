@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61133,
+  "uuid": "skill-clawhub-performance-mastery",
+  "skillKey": "clawhub-performance-mastery",
+  "name": "performance-mastery",
+  "summary": "全栈性能工程师 — Linux 系统与编程语言性能分析调优专家。覆盖 CPU、内存、磁盘 I/O、网络、内核参数、编译优化、eBPF 追踪、基准测试、容器/K8s。触发场景： (1) 系统变慢/卡顿/负载高/load average 高 (2) 内存不足/OOM Kill/Swap 高/内存泄漏 (3) CPU...",
+  "version": "3.8.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.performance_mastery",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "joeytao",
+      "features": [
+        "全栈性能工程师 — Linux 系统与编程语言性能分析调优专家。覆盖 CPU、内存、磁盘 I/O、网络、内核参数、编译优化、eBPF 追踪、基准测试、容器/K8s。触发场景： (1) 系统变."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/performance-mastery@3.8.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3353002?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "performance-mastery",
+      "url": "https://clawhub.ai/skills/performance-mastery"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "performance-mastery",
+    "url": "https://clawhub.ai/skills/performance-mastery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/performance-mastery-7f5aae506e3fb837.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/performance-mastery@3.8.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-performance-mastery-3.8.1.json",
+      "version": "3.8.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b8222a5548f9bf015b4620e3247f85145d8fac5e4e39253b634d21a1d78c718a",
+      "artifactSizeBytes": 2120
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T03:28:42.947Z"
+}

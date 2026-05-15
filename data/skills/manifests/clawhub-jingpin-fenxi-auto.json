@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70869,
+  "uuid": "skill-clawhub-jingpin-fenxi-auto",
+  "skillKey": "clawhub-jingpin-fenxi-auto",
+  "name": "竞品分析自动化",
+  "summary": "竞品分析自动化工具。输入竞品关键词或网站，自动抓取竞品公开信息（产品特点、价格、评价），生成结构化竞品分析报告，支持导出 JSON/Markdown 格式结果。SEO/运营/产品经理必备。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jingpin_fenxi_auto",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jpengcheng523-netizen",
+      "features": [
+        "竞品分析自动化工具。输入竞品关键词或网站，自动抓取竞品公开信息（产品特点、价格、评价），生成结构化竞品分析报告，支持导出 JSON/Markdown 格式结果。SEO/运营/产品经理必备。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jingpin-fenxi-auto@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226868999?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jingpin-fenxi-auto",
+      "url": "https://clawhub.ai/skills/jingpin-fenxi-auto"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jingpin-fenxi-auto",
+    "url": "https://clawhub.ai/skills/jingpin-fenxi-auto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jingpin-fenxi-auto-98bf6212c99673ab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jingpin-fenxi-auto@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jingpin-fenxi-auto-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2369f997adce7f49b40fbd2924baace482846ecb81085bf34a708fc451d8999b",
+      "artifactSizeBytes": 2022
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T06:14:23.875Z"
+}

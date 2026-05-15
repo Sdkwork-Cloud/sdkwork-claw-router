@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73566,
+  "uuid": "skill-clawhub-zhihu-top-answer-generator",
+  "skillKey": "clawhub-zhihu-top-answer-generator",
+  "name": "知乎高赞回答生成器",
+  "summary": "自动生成结构清晰、风格多样且具爆款潜力的知乎高赞回答，支持冷启动、争议与专业深度三种模式。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhihu_top_answer_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jessabuivolova-sketch",
+      "features": [
+        "自动生成结构清晰、风格多样且具爆款潜力的知乎高赞回答，支持冷启动、争议与专业深度三种模式。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zhihu-top-answer-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260901069?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zhihu-top-answer-generator",
+      "url": "https://clawhub.ai/skills/zhihu-top-answer-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhihu-top-answer-generator",
+    "url": "https://clawhub.ai/skills/zhihu-top-answer-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhihu-top-answer-generator-3c00c20562bb2d2b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zhihu-top-answer-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zhihu-top-answer-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:63159406f9316ea702a98e5fa6d259d91b4352032bd0cfb0e790a6d61bfac99c",
+      "artifactSizeBytes": 1972
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T04:34:56.971Z"
+}

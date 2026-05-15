@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/portfolio-risk-desk@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.portfolio_risk_desk",
+  "skill": {
+    "id": 39423,
+    "skillKey": "clawhub-portfolio-risk-desk",
+    "name": "Portfolio Risk Desk"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "portfolio-risk-desk",
+    "url": "https://clawhub.ai/skills/portfolio-risk-desk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/portfolio-risk-desk-56b2ecc60b84e4cd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate a portfolio-aware daily or on-demand risk analysis brief from public market data, company updates, earnings material, and macro context, then emit a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "prashamshah115",
+      "userId": "s17bwfremet0y33seaa8m5h48d83k8h0",
+      "displayName": "prashamshah115",
+      "image": "https://avatars.githubusercontent.com/u/155808867?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774476289840,
+      "changelog": "Addressed some security concerns regard APIFY.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:191bf301ffbc9930ac8e395f58a25cdcea33015e3a30f0b9417291a190c729fa"
+}

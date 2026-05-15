@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trustskills@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trustskills",
+  "skill": {
+    "id": 36625,
+    "skillKey": "clawhub-trustskills",
+    "name": "TrustSkills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trustskills",
+    "url": "https://clawhub.ai/skills/trustskills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trustskills-4297b33af19ec940.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when a user wants a trust decision before installing from a skill URL, marketplace, or GitHub repo. It checks a compact allowlist of trusted d..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "likw99",
+      "userId": "publishers:likw99",
+      "displayName": "K",
+      "image": "https://avatars.githubusercontent.com/u/32830172?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774101201307,
+      "changelog": "trustskills 0.1.0 – Initial release\n\n- Provides a trust decision for skill sources before installation by checking a compact allowlist of official distribution channels.\n- Distinguishes between vendor-owned repos, official directories/marketplaces, and unverified third-party sources.\n- Responds with a clear verdict: Trusted, Not trusted, or Trust the index but not automatically the item.\n- Does not perform code or malware analysis; focuses strictly on source provenance.\n- Excludes skill functionality explanations unless explicitly requested.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:050e4ddb49fef2698b53c1ea88360fe925c38103e64a9a7b88697626c92cee50"
+}

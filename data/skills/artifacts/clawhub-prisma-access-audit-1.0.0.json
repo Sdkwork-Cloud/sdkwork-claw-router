@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prisma-access-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prisma_access_audit",
+  "skill": {
+    "id": 52994,
+    "skillKey": "clawhub-prisma-access-audit",
+    "name": "Prisma Access Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prisma-access-audit",
+    "url": "https://clawhub.ai/skills/prisma-access-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prisma-access-audit-6d8ce2b93884863d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Palo Alto Prisma Access SASE audit — security policy evaluation for mobile users and remote networks, GlobalProtect Cloud Service configuration review, servi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vahagn-madatyan",
+      "userId": "s172e0s6wm08gdxkw6pxzkwzgh841b69",
+      "displayName": "Vahagn Madatyan",
+      "image": "https://avatars.githubusercontent.com/u/74753362?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775025506430,
+      "changelog": "Initial release of Palo Alto Prisma Access SASE audit skill.\n\n- Provides comprehensive audit of Prisma Access security posture across mobile users and remote networks.\n- Evaluates GlobalProtect Cloud Service configuration, security policies, threat prevention profiles, and service connection health.\n- Supports Strata Cloud Manager and Panorama Cloud Services plugin-managed deployments.\n- Offers checks for policy gaps, profile coverage, tunnel status, and configuration drift.\n- Requires Prisma Access API credentials for use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:446b459c9f1f8f5cca690b324fd74ebbc3b48046bb9775b3d26c21791fdd0e1a"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42250,
+  "uuid": "skill-clawhub-jyt-m3u8-downloader",
+  "skillKey": "clawhub-jyt-m3u8-downloader",
+  "name": "m3u8 video downloader",
+  "summary": "This skill should be used when the user wants to download videos from M3U8 streaming URLs. It handles parsing M3U8 playlists (including nested multi-bitrate...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jyt_m3u8_downloader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "unixsam",
+      "features": [
+        "This skill should be used when the user wants to download videos from M3U8 streaming URLs",
+        "It handles parsing M3U8 playlists (including nested multi-bitrate..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jyt-m3u8-downloader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45375171?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jyt-m3u8-downloader",
+      "url": "https://clawhub.ai/skills/jyt-m3u8-downloader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jyt-m3u8-downloader",
+    "url": "https://clawhub.ai/skills/jyt-m3u8-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jyt-m3u8-downloader-3cd549e57c889c7e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jyt-m3u8-downloader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jyt-m3u8-downloader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:30ba59618a5819a53ba253c89a5b490059e6f980a469654151f6d149e07e1f42",
+      "artifactSizeBytes": 1925
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T10:24:14.666Z"
+}

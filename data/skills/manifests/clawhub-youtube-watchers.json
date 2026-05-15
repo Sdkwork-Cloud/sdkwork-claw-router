@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26723,
+  "uuid": "skill-clawhub-youtube-watchers",
+  "skillKey": "clawhub-youtube-watchers",
+  "name": "Pub Youtube",
+  "summary": "Fetch and read transcripts from YouTube videos for summarization and content extraction. And also 50+ models for image generation, video generation, text-to-...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_watchers",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AbelTennyson",
+      "features": [
+        "Fetch and read transcripts from YouTube videos for summarization and content extraction",
+        "And also 50+ models for image generation, video generation, text-to-..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-watchers@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261241122?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-watchers",
+      "url": "https://clawhub.ai/skills/youtube-watchers"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-watchers",
+    "url": "https://clawhub.ai/skills/youtube-watchers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-watchers-417e6742ec25e568.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-watchers@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-watchers-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b28d8999a258d5ea1c981fecb79adecba7a7d695ca434398f5a2509a953de494",
+      "artifactSizeBytes": 2249
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T06:12:36.027Z"
+}

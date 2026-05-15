@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/data-construction-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_construction_skill",
+  "skill": {
+    "id": 49261,
+    "skillKey": "clawhub-data-construction-skill",
+    "name": "Data Construction Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-construction-skill",
+    "url": "https://clawhub.ai/skills/data-construction-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-construction-skill-de2c0bd8b5201bb6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "build concept, process, and case-application supervision datasets from markdown books or long markdown documents. use when generating training data from many..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "technomad-ds",
+      "userId": "s17eqkqrqs1zdmb17twq50mnxd83hrx1",
+      "displayName": "TechNomad-ds",
+      "image": "https://avatars.githubusercontent.com/u/195676642?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 83,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777607492654,
+      "changelog": "- Renamed the skill from \"Text2QA\" to \"Data Construction Skill\".\n- Updated branding details in the skill name and documentation; functionality and usage remain unchanged.\n- No other changes to files or behavior.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:04c30a5a47209ae6c7507597170be9872327c31450cca05675006cb7802dfbbb"
+}

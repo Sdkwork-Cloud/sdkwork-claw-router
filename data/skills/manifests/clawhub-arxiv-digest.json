@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21782,
+  "uuid": "skill-clawhub-arxiv-digest",
+  "skillKey": "clawhub-arxiv-digest",
+  "name": "arXiv Paper Digest",
+  "summary": "Daily AI/ML paper digest from HuggingFace Papers Trending with accessible interpretations. Fetch trending papers from arXiv, provide plain-language summaries...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arxiv_digest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lifei68801",
+      "features": [
+        "Daily AI/ML paper digest from HuggingFace Papers Trending with accessible interpretations",
+        "Fetch trending papers from arXiv, provide plain-language summaries..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/arxiv-digest@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130719648?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "arxiv-digest",
+      "url": "https://clawhub.ai/skills/arxiv-digest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arxiv-digest",
+    "url": "https://clawhub.ai/skills/arxiv-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arxiv-digest-f8a4f93830946457.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/arxiv-digest@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-arxiv-digest-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:42826e2743795e16f697d0d206f49ce7401f4ca3222a28e490b21b9663008632",
+      "artifactSizeBytes": 1923
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T15:39:20.386Z"
+}

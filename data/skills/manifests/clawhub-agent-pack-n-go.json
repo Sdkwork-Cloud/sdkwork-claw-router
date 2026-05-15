@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57807,
+  "uuid": "skill-clawhub-agent-pack-n-go",
+  "skillKey": "clawhub-agent-pack-n-go",
+  "name": "agent-pack-n-go",
+  "summary": "Clone your OpenClaw Agent to a new device — configs, memory, skills, credentials, everything. Triggers: '帮我迁移', '搬到新设备', 'migrate device', 'device move', '设备...",
+  "version": "2.3.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_pack_n_go",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AICodeLion",
+      "features": [
+        "Clone your OpenClaw Agent to a new device — configs, memory, skills, credentials, everything",
+        "Triggers: '帮我迁移', '搬到新设备', 'migrate device', 'device move', '设备..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-pack-n-go@2.3.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/190163814?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-pack-n-go",
+      "url": "https://clawhub.ai/skills/agent-pack-n-go"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-pack-n-go",
+    "url": "https://clawhub.ai/skills/agent-pack-n-go",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-pack-n-go-95c53537511021ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-pack-n-go@2.3.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-pack-n-go-2.3.2.json",
+      "version": "2.3.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:10d36e029b84e3ac4f8e6a367657d9f8b5b93f2b215010a196fa033ede49abf7",
+      "artifactSizeBytes": 1960
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T08:35:28.216Z"
+}

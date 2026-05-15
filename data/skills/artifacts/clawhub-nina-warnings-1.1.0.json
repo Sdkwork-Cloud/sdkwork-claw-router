@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nina-warnings@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nina_warnings",
+  "skill": {
+    "id": 51571,
+    "skillKey": "clawhub-nina-warnings",
+    "name": "NINA Warnings"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nina-warnings",
+    "url": "https://clawhub.ai/skills/nina-warnings",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nina-warnings-977247439b1ed139.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read-only access to current German public warnings via the official NINA / warnung.bund.de API. Use when asked about NINA alerts, Bevölkerungswarnungen, civi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wolf128058",
+      "userId": "s1788y7cne0vvadxttdpcnzbr183fbae",
+      "displayName": "Wolf",
+      "image": "https://avatars.githubusercontent.com/u/946255?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775171680231,
+      "changelog": "add ARS normalization, warning details, geojson, and source feeds",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b47ab5cc131f18f46c4b52f171a14a393bdf6845858c4424da08fa8d8812594f"
+}

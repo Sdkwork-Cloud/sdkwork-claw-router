@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibabacloud-aes-sysom-os-diagnosis@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_aes_sysom_os_diagnosis",
+  "skill": {
+    "id": 39594,
+    "skillKey": "clawhub-alibabacloud-aes-sysom-os-diagnosis",
+    "name": "Alibabacloud Aes Sysom Os Diagnosis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-aes-sysom-os-diagnosis",
+    "url": "https://clawhub.ai/skills/alibabacloud-aes-sysom-os-diagnosis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-aes-sysom-os-diagnosis-2533908144612cc7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Perform SysOM deep OS-level diagnosis on Alibaba Cloud ECS instances to identify root causes of performance issues (CPU spikes, memory leaks, IO latency, etc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdk-team",
+      "userId": "s173swjet2yrebzqrp6hjkvmy583mxef",
+      "displayName": "alibabacloud-skills-team",
+      "image": "https://avatars.githubusercontent.com/u/49941014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1776682093463,
+      "changelog": "alibabacloud-aes-sysom-os-diagnosis 0.0.1 — Initial Release\n\n- Introduces deep OS-level diagnosis workflows for Alibaba Cloud ECS, including CPU, memory, and IO troubleshooting.\n- Enables secure, user-guided ECS instance diagnosis with parameter confirmation and credential security checks.\n- Supports both real-time and historical analysis with customizable diagnosis parameters.\n- Allows continuous diagnosis setup, instance enrollment, and DingTalk alert integration.\n- Enforces strict permission and credential handling based on Alibaba Cloud best practices.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:84827033ef2c6d59f71a6cf7e5c9df64dfc700903339a139dd6674e33d5bd09b"
+}

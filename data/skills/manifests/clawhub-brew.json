@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20449,
+  "uuid": "skill-clawhub-brew",
+  "skillKey": "clawhub-brew",
+  "name": "Homebrew",
+  "summary": "Manage Homebrew end-to-end on macOS, including detecting whether Homebrew is installed, understanding formula vs cask, updating metadata and packages, instal...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brew",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "weichengwu",
+      "features": [
+        "Manage Homebrew end-to-end on macOS, including detecting whether Homebrew is installed, underst."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/brew@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17878528?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "brew",
+      "url": "https://clawhub.ai/skills/brew"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brew",
+    "url": "https://clawhub.ai/skills/brew",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brew-a9aa09fca88e0982.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/brew@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-brew-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:876f56171b3e0d539042f4c26e2e64d4edaad9491be5cf4b48db6718396352a4",
+      "artifactSizeBytes": 2296
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T13:47:37.593Z"
+}

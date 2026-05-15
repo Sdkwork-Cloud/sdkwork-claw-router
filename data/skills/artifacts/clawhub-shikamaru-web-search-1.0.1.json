@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shikamaru-web-search@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shikamaru_web_search",
+  "skill": {
+    "id": 27600,
+    "skillKey": "clawhub-shikamaru-web-search",
+    "name": "Web Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shikamaru-web-search",
+    "url": "https://clawhub.ai/skills/shikamaru-web-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shikamaru-web-search-3abfd04a3dcb48f3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search the public web through Exa's hosted MCP endpoint without an API key. Use this whenever the user needs discovery rather than direct retrieval: finding..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shikamaru-cc",
+      "userId": "s17c9d6p3cxshrzk2y47krm9tn83w3g3",
+      "displayName": "shikamaru-cc",
+      "image": "https://avatars.githubusercontent.com/u/72937950?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 345,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775385659662,
+      "changelog": "- Minor release with no functional changes.\n- SKILL.md was updated to correct minor formatting, without changing instructions or usage.\n- No updates to core features or functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:14a743ba21174e0c5a53dd4bc3c142e557e3e6897202e1568ab14c82b3248c46"
+}

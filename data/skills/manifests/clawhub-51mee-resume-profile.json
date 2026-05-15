@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66908,
+  "uuid": "skill-clawhub-51mee-resume-profile",
+  "skillKey": "clawhub-51mee-resume-profile",
+  "name": "51mee Resume Profile",
+  "summary": "简历画像。触发场景：用户要求生成候选人画像；用户想了解候选人的多维度标签和能力评估。",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.51mee_resume_profile",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "51mee",
+      "features": [
+        "简历画像。触发场景：用户要求生成候选人画像；用户想了解候选人的多维度标签和能力评估。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/51mee-resume-profile@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226007355?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "51mee-resume-profile",
+      "url": "https://clawhub.ai/skills/51mee-resume-profile"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "51mee-resume-profile",
+    "url": "https://clawhub.ai/skills/51mee-resume-profile",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/51mee-resume-profile-93029f11db6075c5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/51mee-resume-profile@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-51mee-resume-profile-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f439c0121f08dd94992eb043a6f0e0378a90da5965f5d99410fdc65e7e5c6784",
+      "artifactSizeBytes": 2377
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T10:43:24.138Z"
+}

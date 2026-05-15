@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/books-for-agents@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.books_for_agents",
+  "skill": {
+    "id": 18372,
+    "skillKey": "clawhub-books-for-agents",
+    "name": "Books For Agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "books-for-agents",
+    "url": "https://clawhub.ai/skills/books-for-agents",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/books-for-agents-e72170fce210c9bc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access and search a structured open source knowledge base of book summaries optimized for AI agents via the MCP protocol."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danpalmieri",
+      "userId": "publishers:danpalmieri",
+      "displayName": "danpalmieri",
+      "image": "https://avatars.githubusercontent.com/u/1392562?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 676,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771687908640,
+      "changelog": "Initial release of Books for Agents — an open source structured summary knowledge base for books, accessible via MCP.\n\n- Search for books with hybrid semantic/keyword queries using `search_books`.\n- Retrieve full or partial book summaries using `get_book` and `get_book_section`.\n- Browse categories and see counts per category with `list_categories`.\n- Suggest new books for inclusion and monitor the backlog with `suggest_book` and `list_backlog`.\n- Generate and publish new book summaries through a guided workflow (`generate_book`, `submit_book`).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1c7353a63a09631dd8aecba0b0a8ce57f7fce23b087bade40415df1b870362f3"
+}

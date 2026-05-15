@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/new-skill-creator@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.new_skill_creator",
+  "skill": {
+    "id": 31120,
+    "skillKey": "clawhub-new-skill-creator",
+    "name": "Skill Creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "new-skill-creator",
+    "url": "https://clawhub.ai/skills/new-skill-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/new-skill-creator-475d0801df93f6c0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create a new agent skill from scratch with guided, step-by-step assistance. Generates a complete SKILL.md package with frontmatter, workflow, examples, and c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fwwdn",
+      "userId": "s170ex8ttg10hrew681fwjwejh83gvm4",
+      "displayName": "Weiwei Fan",
+      "image": "https://avatars.githubusercontent.com/u/3015434?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 271,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774005728470,
+      "changelog": "- Initial release of Skill Creator: a guided tool that helps users create a new agent skill from scratch.\n- Provides step-by-step assistance to generate a full SKILL.md package, including frontmatter, workflow, examples, and metadata.\n- Supports scaffolding instruction-only, script-backed, or asset-backed skills via the provided Python script.\n- Includes clear phase-driven workflow, writing guidelines, and quality/SEO checks.\n- Adds example prompts, usage boundaries, and a definition of done for new skills.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:afc80a92d0d8ed519844d8dbafffabb1051757a1a0d1a2929a5fb2dd95b049d4"
+}

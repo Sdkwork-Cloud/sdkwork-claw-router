@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14231,
+  "uuid": "skill-clawhub-unifuncs-deep-research",
+  "skillKey": "clawhub-unifuncs-deep-research",
+  "name": "Unifuncs Deep Research",
+  "summary": "Use UniFuncs Deep Research API to run in-depth research and generate long-form reports (10,000 words or more). Use this skill when users request deep researc...",
+  "version": "0.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unifuncs_deep_research",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "UniFuncs",
+      "features": [
+        "Use UniFuncs Deep Research API to run in-depth research and generate long-form reports (10,000.",
+        "Use this skill when users request deep researc..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/unifuncs-deep-research@0.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20235341?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "unifuncs-deep-research",
+      "url": "https://clawhub.ai/skills/unifuncs-deep-research"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unifuncs-deep-research",
+    "url": "https://clawhub.ai/skills/unifuncs-deep-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unifuncs-deep-research-f5f03929cd60f606.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/unifuncs-deep-research@0.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-unifuncs-deep-research-0.0.7.json",
+      "version": "0.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f0bd6cd3787049caf8f82f2d59b8ac398a1e86de89517dd72c64fc96073e7e0",
+      "artifactSizeBytes": 2422
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T14:29:45.128Z"
+}

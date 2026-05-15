@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27718,
+  "uuid": "skill-clawhub-writing-tone-clone",
+  "skillKey": "clawhub-writing-tone-clone",
+  "name": "Writing Tone Clone",
+  "summary": "Clone someone's writing tone from sample text and produce a ready-to-use voice skill. Provide writing samples (diary, blog posts, emails, social posts) and g...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.writing_tone_clone",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chris Couriard",
+      "features": [
+        "Clone someone's writing tone from sample text and produce a ready-to-use voice skill",
+        "Provide writing samples (diary, blog posts, emails, social posts) and g..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/writing-tone-clone@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128924221?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "writing-tone-clone",
+      "url": "https://clawhub.ai/skills/writing-tone-clone"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "writing-tone-clone",
+    "url": "https://clawhub.ai/skills/writing-tone-clone",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/writing-tone-clone-49a3ce717563d7bf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/writing-tone-clone@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-writing-tone-clone-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ef9489f1f60bfc13eb48eebd2877506e2e2fe93e7fcaa83215eaf0703b1ce661",
+      "artifactSizeBytes": 2036
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T08:42:57.542Z"
+}

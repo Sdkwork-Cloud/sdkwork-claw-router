@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentphone@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentphone",
+  "skill": {
+    "id": 18722,
+    "skillKey": "clawhub-agentphone",
+    "name": "AgentPhone"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentphone",
+    "url": "https://clawhub.ai/skills/agentphone",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentphone-e1f6745c5c62c898.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Make real phone calls to businesses. Book reservations, cancel subscriptions, navigate IVR menus. Get transcripts and recordings."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yanmellata",
+      "userId": "publishers:yanmellata",
+      "displayName": "Yanis Mellata",
+      "image": "https://avatars.githubusercontent.com/u/145732834?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 565,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772650230360,
+      "changelog": "Shorten description to fit ClawHub display",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5581c534562269ada4d0d51860b70cc1557b85e95181606597e248102e0c26b0"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/founder-story-brand-narrative@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.founder_story_brand_narrative",
+  "skill": {
+    "id": 25179,
+    "skillKey": "clawhub-founder-story-brand-narrative",
+    "name": "Founder Story Brand Narrative"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "founder-story-brand-narrative",
+    "url": "https://clawhub.ai/skills/founder-story-brand-narrative",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/founder-story-brand-narrative-e1535dafb5c6fd85.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Creates and refines Founder Story and brand narrative content for DTC/independent stores selling founder-driven products (e.g. handcrafted leather, artisan s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rijoyai",
+      "userId": "s17968d4vetrx5cj2yx3105heh83hrb4",
+      "displayName": "RIJOY-AI",
+      "image": "https://avatars.githubusercontent.com/u/219251023?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 384,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773140168800,
+      "changelog": "Version 0.1.1\n\n- Added six new files providing evaluation, example briefs, example copy, generation, and linting scripts.\n- Introduced evals/evals.json for skill evaluation configuration.\n- Included scripts for generating and linting founder story briefs and narrative copy.\n- Added documentation and examples to support consistent output and internal testing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b2b09b2f6d20c92e17fce74e8b2204463d8ccfc5bc4d41b69ea7fb424a71a780"
+}

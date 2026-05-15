@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30209,
+  "uuid": "skill-clawhub-mafengwo",
+  "skillKey": "clawhub-mafengwo",
+  "name": "Mafengwo",
+  "summary": "Retrieve and summarize public travel notes and popular attraction data from Mafengwo for destinations, including ratings, reviews, tickets, and opening times.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mafengwo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawKK",
+      "features": [
+        "Retrieve and summarize public travel notes and popular attraction data from Mafengwo for destin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mafengwo@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111570001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mafengwo",
+      "url": "https://clawhub.ai/skills/mafengwo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mafengwo",
+    "url": "https://clawhub.ai/skills/mafengwo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mafengwo-b56c4decc081e0ab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mafengwo@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mafengwo-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:49efa8483b3639364930a4418fdd96b4367b66071a143db45aae9fa63b18e6ad",
+      "artifactSizeBytes": 2357
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T13:06:58.930Z"
+}

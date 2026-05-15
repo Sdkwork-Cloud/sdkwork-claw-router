@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73096,
+  "uuid": "skill-clawhub-skill-steward",
+  "skillKey": "clawhub-skill-steward",
+  "name": "技能随行官",
+  "summary": "每次AI回复后自动分析本轮实际调用的专项技能，在回复末尾追加汇报。自动挂载，无需命令触发。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_steward",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chn012cjus",
+      "features": [
+        "每次AI回复后自动分析本轮实际调用的专项技能，在回复末尾追加汇报。自动挂载，无需命令触发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-steward@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266467448?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-steward",
+      "url": "https://clawhub.ai/skills/skill-steward"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-steward",
+    "url": "https://clawhub.ai/skills/skill-steward",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-steward-489bd8802cf4d4f7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-steward@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-steward-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:06000d2326399dfed60fbc39c19688a93c8234ca166d8a5fb73f2873589a1876",
+      "artifactSizeBytes": 2226
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T14:35:29.779Z"
+}

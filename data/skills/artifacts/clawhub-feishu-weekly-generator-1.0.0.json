@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-weekly-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_weekly_generator",
+  "skill": {
+    "id": 25411,
+    "skillKey": "clawhub-feishu-weekly-generator",
+    "name": "Feishu Weekly Report Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-weekly-generator",
+    "url": "https://clawhub.ai/skills/feishu-weekly-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-weekly-generator-3fe779e8802bb609.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate professional weekly work reports for Feishu/Lark users. Automatically collect work data from various sources and create formatted weekly reports com..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiahui220",
+      "userId": "publishers:jiahui220",
+      "displayName": "jiahui220",
+      "image": "https://avatars.githubusercontent.com/u/9251120?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 388,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773385152683,
+      "changelog": "Initial release: Generate professional weekly reports for Feishu users with git integration",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d890f092df00a55f6e4991aeb94896ca91fae0c2e7ec1d644ff2cf4395c40710"
+}

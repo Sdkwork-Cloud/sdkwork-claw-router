@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63237,
+  "uuid": "skill-clawhub-cms-bp-manager",
+  "skillKey": "clawhub-cms-bp-manager",
+  "name": "Cms Bp Manager",
+  "summary": "BP管理助手 — 查看/管理自己与下级的BP（目标/关键成果/关键举措）、AI质量检查。触发词：bp/BP/BP管理/BP目标/BP成果/BP举措/衡量标准/对齐/关键任务/关键成果/上级BP/下级BP/承接/目标管理/OKR/KR/我的目标/我的成果/查看BP/查看目标/检查BP/审计BP。",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cms_bp_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "spzwin",
+      "features": [
+        "BP管理助手 — 查看/管理自己与下级的BP（目标/关键成果/关键举措）、AI质量检查。触发词：bp/BP/BP管理/BP目标/BP成果/BP举措/衡量标准/对齐/关键任务/关键成果/上级B."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cms-bp-manager@2.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48741773?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cms-bp-manager",
+      "url": "https://clawhub.ai/skills/cms-bp-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cms-bp-manager",
+    "url": "https://clawhub.ai/skills/cms-bp-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cms-bp-manager-2befdf6258308e18.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cms-bp-manager@2.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-cms-bp-manager-2.0.2.json",
+      "version": "2.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:055a9d2dae70c93f9318545871a0519e480f82c66a678ef18dd4fd9d3ca7427f",
+      "artifactSizeBytes": 2461
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T07:47:36.164Z"
+}

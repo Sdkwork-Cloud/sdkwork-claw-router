@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8334,
+  "uuid": "skill-clawhub-academic-deep-research",
+  "skillKey": "clawhub-academic-deep-research",
+  "name": "Academic Deep Research",
+  "summary": "Transparent, rigorous research with full methodology — not a black-box API wrapper. Conducts exhaustive investigation through mandated 2-cycle research per theme, APA 7th citations, evidence hierarchy, and 3 user checkpoints. Self-containe.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.academic_deep_research",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kesslerio",
+      "features": [
+        "Transparent, rigorous research with full methodology — not a black-box API wrapper",
+        "Conducts exhaustive investigation through mandated 2-cycle research per theme, APA 7th citation.",
+        "Self-contained using native OpenClaw tools (web_search, web_fetch, sessions_spawn)",
+        "Use for literature reviews, competitive intelligence, or any research requiring academic rigor."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/academic-deep-research@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2647990?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "academic-deep-research",
+      "url": "https://clawhub.ai/skills/academic-deep-research"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "academic-deep-research",
+    "url": "https://clawhub.ai/skills/academic-deep-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/academic-deep-research-543c8e145ce3192a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/academic-deep-research@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-academic-deep-research-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0955764680d400e23ab6f5570d73bd9f79d8484697ea5f40703cfbcc7a8473d7",
+      "artifactSizeBytes": 2151
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T08:20:32.089Z"
+}

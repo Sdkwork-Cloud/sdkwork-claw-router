@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/capacities@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.capacities",
+  "skill": {
+    "id": 11953,
+    "skillKey": "clawhub-capacities",
+    "name": "Capacities"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "capacities",
+    "url": "https://clawhub.ai/skills/capacities",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/capacities-5f910bd6e4312856.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Capacities notes, daily entries, and weblinks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "davidsmorais",
+      "userId": "publishers:davidsmorais",
+      "displayName": "davidsmorais",
+      "image": "https://avatars.githubusercontent.com/u/22729436?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1827,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770062508325,
+      "changelog": "Initial release of the Capacities skill.\n\n- Add and manage daily notes, tasks, and thoughts in Capacities.\n- Save weblinks directly to a Capacities space.\n- Search for object IDs within your Capacities workspace.\n- Retrieve space information, including object types and structures.\n- Requires CAPACITIES_API_TOKEN; optional CAPACITIES_SPACE_ID support.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:be9607fe0f1d2a8e28282c731c85d82a39636e9a5c510ec1493d07fbb27a2d3a"
+}

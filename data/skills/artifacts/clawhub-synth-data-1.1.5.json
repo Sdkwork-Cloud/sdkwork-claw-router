@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/synth-data@1.1.5",
+  "version": "1.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.synth_data",
+  "skill": {
+    "id": 9452,
+    "skillKey": "clawhub-synth-data",
+    "name": "Synth Data"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "synth-data",
+    "url": "https://clawhub.ai/skills/synth-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/synth-data-1a919c02b879a127.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query volatility forecasts from Synthdata.co for crypto, commodities, and stocks. Compare assets and run Monte Carlo simulations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "emsin44",
+      "userId": "publishers:emsin44",
+      "displayName": "emsin44",
+      "image": "https://avatars.githubusercontent.com/u/187098839?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3641,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 3,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.1.5",
+      "createdAt": 1770914369073,
+      "changelog": "- Added metadata to SKILL.md for improved compatibility (includes emoji and requirements).\n- No changes to code or functionality. Documentation now conforms to Openclaw schema.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e805a05021c4c76be68d1b10bd6c69454a5d50e0c374f3dfea035a25a886608d"
+}

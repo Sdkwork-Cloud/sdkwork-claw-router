@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eonik-creative-audit@1.0.10",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eonik_creative_audit",
+  "skill": {
+    "id": 18044,
+    "skillKey": "clawhub-eonik-creative-audit",
+    "name": "eonik creative audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eonik-creative-audit",
+    "url": "https://clawhub.ai/skills/eonik-creative-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eonik-creative-audit-cdfdf9c816501dd5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Identifies creative fatigue, budget leaks, and scaling opportunities by running the eonik creative audit engine."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "techievena",
+      "userId": "s1734zsyqd1hqjsg7rxrqz84th83z0e8",
+      "displayName": "Abinash Senapati",
+      "image": "https://avatars.githubusercontent.com/u/17270966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 612,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.0.10",
+      "createdAt": 1778048120520,
+      "changelog": "**Changelog for version 1.0.10**\n\n- Improved security and privacy: Now requires explicit Meta Account ID (act_...) in config, with auto-resolve disabled by default.\n- Added mandatory private channel confirmation before running audits.\n- Updated documentation to clarify explicit config steps and limit automated scheduling to owner-approved use cases.\n- Revised agent instructions to enforce explicit account scoping and private result delivery.\n- Sample and example configuration files updated for clarity and stricter defaults.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8f138c9bac79be727964f9977b99e8f1d64bf7c92eccecce81ed98fb1f14132f"
+}

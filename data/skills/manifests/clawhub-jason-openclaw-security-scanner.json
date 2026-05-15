@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64615,
+  "uuid": "skill-clawhub-jason-openclaw-security-scanner",
+  "skillKey": "clawhub-jason-openclaw-security-scanner",
+  "name": "Jason's OpenClaw Security Scanner",
+  "summary": "扫描 OpenClaw 配置权限和安全隐患。当用户提到\"安全扫描\"、\"权限检查\"、\"安全检查\"、\"扫描权限\"、\"检查配置安全\"时使用此技能。输出具体漏洞内容、安全评分和修复建议，支持交互式一键修复。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jason_openclaw_security_scanner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ITHACAJASON",
+      "features": [
+        "扫描 OpenClaw 配置权限和安全隐患。当用户提到\"安全扫描\"、\"权限检查\"、\"安全检查\"、\"扫描权限\"、\"检查配置安全\"时使用此技能。输出具体漏洞内容、安全评分和修复建议，支持交互式一."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jason-openclaw-security-scanner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199630942?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jason-openclaw-security-scanner",
+      "url": "https://clawhub.ai/skills/jason-openclaw-security-scanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jason-openclaw-security-scanner",
+    "url": "https://clawhub.ai/skills/jason-openclaw-security-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jason-openclaw-security-scanner-f7cfeabcfb613372.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jason-openclaw-security-scanner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jason-openclaw-security-scanner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6772c817302594a28965c617d97608dda002ace95f7b4ee896481a350e49eb8e",
+      "artifactSizeBytes": 2641
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T09:07:25.313Z"
+}

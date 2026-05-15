@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17736,
+  "uuid": "skill-clawhub-agent-privacy-skill",
+  "skillKey": "clawhub-agent-privacy-skill",
+  "name": "Clawked",
+  "summary": "Interact with the Ceaser privacy protocol on Base L2. Shield and unshield ETH via CLI subcommands (npx ceaser-mcp shield/unshield/notes). Query pool stats, d...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_privacy_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Se7enHvn",
+      "features": [
+        "Interact with the Ceaser privacy protocol on Base L2",
+        "Shield and unshield ETH via CLI subcommands (npx ceaser-mcp shield/unshield/notes)",
+        "Query pool stats, d..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-privacy-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/96977499?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-privacy-skill",
+      "url": "https://clawhub.ai/skills/agent-privacy-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-privacy-skill",
+    "url": "https://clawhub.ai/skills/agent-privacy-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-privacy-skill-e2c888808facfaf1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-privacy-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-privacy-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:64fce4c9710b3d4f1c51608bca32af1f590f7a974f935333528f904f3a8b111f",
+      "artifactSizeBytes": 2459
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T16:10:27.067Z"
+}

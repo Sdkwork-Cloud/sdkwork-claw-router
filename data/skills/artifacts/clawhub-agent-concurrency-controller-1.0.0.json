@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-concurrency-controller@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_concurrency_controller",
+  "skill": {
+    "id": 64755,
+    "skillKey": "clawhub-agent-concurrency-controller",
+    "name": "Agent并发安全控制器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-concurrency-controller",
+    "url": "https://clawhub.ai/skills/agent-concurrency-controller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-concurrency-controller-a716514eca03325d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于Claude Code三层架构，实现Agent串行队列调度、权限审计和Fail-Closed并发安全控制，防止会话冲突和敏感操作风险。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "suda6632",
+      "userId": "s170amp03tqxv8pftne8shj4098458zt",
+      "displayName": "suda6632",
+      "image": "https://avatars.githubusercontent.com/u/194589286?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775204499306,
+      "changelog": "基于Claude Code Fail-Closed设计的并发安全调度器",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:71b8eb020d75d1bc7c81ffe0b2208b148eac4d004131a58ae0f5f8b749e857c5"
+}

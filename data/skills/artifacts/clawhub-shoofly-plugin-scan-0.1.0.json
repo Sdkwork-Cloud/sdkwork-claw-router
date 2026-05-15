@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shoofly-plugin-scan@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shoofly_plugin_scan",
+  "skill": {
+    "id": 39045,
+    "skillKey": "clawhub-shoofly-plugin-scan",
+    "name": "Shoofly Plugin Scan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shoofly-plugin-scan",
+    "url": "https://clawhub.ai/skills/shoofly-plugin-scan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shoofly-plugin-scan-8c42c631f7f52c03.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Pre-install plugin security scanner for OpenClaw plugins"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wow-leeroy-jenkins05",
+      "userId": "s178g202whexww1hvxqpvd48y983fp65",
+      "displayName": "wow-leeroy-jenkins05",
+      "image": "https://avatars.githubusercontent.com/u/266177925?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774309254160,
+      "changelog": "Initial release. Pre-install security scanner for OpenClaw plugins — scans for credentials, obfuscated code, suspicious network calls, and exec injection before you install. Hardened: exec false-positive fix, base64 entropy gate, automated test suite.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f0ea38cfa3bceb0b53efe630298189715c52b27c623e52d215a6fa70b06a5e32"
+}

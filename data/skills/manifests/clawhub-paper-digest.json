@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15229,
+  "uuid": "skill-clawhub-paper-digest",
+  "skillKey": "clawhub-paper-digest",
+  "name": "Paper Digest",
+  "summary": "Given an arXiv ID or URL, fetch the paper, spawn sub-agents to read its key citations, and write an executive summary under.",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_digest",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Damoon",
+      "features": [
+        "Given an arXiv ID or URL, fetch the paper, spawn sub-agents to read its key citations, and writ."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paper-digest@0.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38424443?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paper-digest",
+      "url": "https://clawhub.ai/skills/paper-digest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-digest",
+    "url": "https://clawhub.ai/skills/paper-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-digest-5c79336af9270a0a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paper-digest@0.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-paper-digest-0.0.2.json",
+      "version": "0.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aee172e22054fd8dc82f46396b0b055a83d2b71081b87853b376339107042c85",
+      "artifactSizeBytes": 1808
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T01:05:05.827Z"
+}

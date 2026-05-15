@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ollama-2@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ollama_2",
+  "skill": {
+    "id": 60046,
+    "skillKey": "clawhub-ollama-2",
+    "name": "Ollama"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ollama-2",
+    "url": "https://clawhub.ai/skills/ollama-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ollama-2-acc08b58b8445a7e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Ollama 本地大模型调用技能。支持通过 API 与 Ollama 实例交互进行文本生成。 Use when: (1) 需要调用本地或远程 Ollama 模型 (2) 需要执行 LLM 推理任务 (3) 需要通过 Python 脚本与特定 Ollama 实例 (如 qwen3.5:9b) 交互。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ayflying",
+      "userId": "s17ed3dphdpfn0e0vvzazd3y718582mg",
+      "displayName": "乔焰阳",
+      "image": "https://avatars.githubusercontent.com/u/7576624?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 264,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774255015787,
+      "changelog": "- Initial release of the Ollama skill for local LLM inference.\n- Supports interaction with Ollama models via API for text generation.\n- Allows customizing the host, model name, and prompt.\n- Includes example scripts for querying models and connectivity testing.\n- Provides detailed usage instructions and environment setup guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e0453268a83f47643c2a6fb73310a265afae21518dc5fde6b9f4febb104a1176"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/low-resource-ai-researcher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.low_resource_ai_researcher",
+  "skill": {
+    "id": 43274,
+    "skillKey": "clawhub-low-resource-ai-researcher",
+    "name": "Low-Resource AI Researcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "low-resource-ai-researcher",
+    "url": "https://clawhub.ai/skills/low-resource-ai-researcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/low-resource-ai-researcher-c6845dacc16c4854.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Train high-performance medical LLMs on consumer GPUs using parameter-efficient fine-tuning"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774503230508,
+      "changelog": "- Initial release of Low-Resource AI Researcher skill (v1.0.0)\n- Enables training of high-performance medical large language models on consumer GPUs using parameter-efficient fine-tuning (LoRA, QLoRA)\n- Supports popular medical datasets (PubMedQA, MedQA, MIMIC-III) and multiple LLM architectures (LLaMA, Mistral, Yi, Qwen, Baichuan, ChatGLM)\n- Provides configurable hardware profiles, quantization options, and CLI/API usage for flexible training and evaluation\n- Includes security, troubleshooting, and best practice guidelines for safe and efficient usage",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:efac73ec64911d21e35c74929f281e92d6ccfb36b7fbf91b58ec8a281c201d35"
+}

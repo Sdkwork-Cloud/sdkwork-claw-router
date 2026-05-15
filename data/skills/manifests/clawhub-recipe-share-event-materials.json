@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19853,
+  "uuid": "skill-clawhub-recipe-share-event-materials",
+  "skillKey": "clawhub-recipe-share-event-materials",
+  "name": "Recipe Share Event Materials",
+  "summary": "Share Google Drive files with all attendees of a Google Calendar event.",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recipe_share_event_materials",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Share Google Drive files with all attendees of a Google Calendar event."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/recipe-share-event-materials@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "recipe-share-event-materials",
+      "url": "https://clawhub.ai/skills/recipe-share-event-materials"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recipe-share-event-materials",
+    "url": "https://clawhub.ai/skills/recipe-share-event-materials",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recipe-share-event-materials-0f19c807cfe622bf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/recipe-share-event-materials@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-recipe-share-event-materials-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:17eb361dd97e5dc22c24c74afe14a7bbeb174b58d93186fe6208e581fb58c666",
+      "artifactSizeBytes": 2014
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:37:08.303Z"
+}

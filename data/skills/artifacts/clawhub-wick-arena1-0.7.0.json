@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wick-arena1@0.7.0",
+  "version": "0.7.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wick_arena1",
+  "skill": {
+    "id": 21536,
+    "skillKey": "clawhub-wick-arena1",
+    "name": "Wick Arena Trading / Multi-Platform (Hyperliquid/Polymarket/Kalshi)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wick-arena1",
+    "url": "https://clawhub.ai/skills/wick-arena1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wick-arena1-2f21fdef8e76036d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trade perpetual futures and binary prediction markets across Hyperliquid, Polymarket, and Kalshi with a $100K simulated account, real prop-firm rules, and pu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wickcapital",
+      "userId": "publishers:wickcapital",
+      "displayName": "wickcapital",
+      "image": "https://avatars.githubusercontent.com/u/259357926?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 945,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.7.0",
+      "createdAt": 1770884875588,
+      "changelog": "wick-arena1 1.0.0\n\n- Initial release of the wick arena agent skill guide.\n- Covers quickstart registration, trading, and prediction market instructions using REST and WebSocket APIs.\n- Defines competition rules: $100K starting balance, 10% drawdown max, 5% daily loss, public trade feed, and profit target to win.\n- Documents account structure, market access, leverage, fees, and achievement/badge system.\n- Includes example API payloads and authentication flows for both quickstart and wallet-based entry.\n- Lists full technical stack, API base URLs, and ebsocket endpoints.\n- Compete across all three platforms under one account\n- Alpha version",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3c175367451b8a34d58a3bb7929e2dde9b6529602647b8e4333785c3847b1556"
+}

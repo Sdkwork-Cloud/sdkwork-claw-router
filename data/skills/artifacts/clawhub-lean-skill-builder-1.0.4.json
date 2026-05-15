@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lean-skill-builder@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lean_skill_builder",
+  "skill": {
+    "id": 27837,
+    "skillKey": "clawhub-lean-skill-builder",
+    "name": "Skill Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lean-skill-builder",
+    "url": "https://clawhub.ai/skills/lean-skill-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lean-skill-builder-95e85d73affcf927.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Builds lean SKILL.md-based skills: decides when a skill is justified, drafts a minimal skill skeleton, and audits existing skills for bloat and drift. Use wh..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zurbrick",
+      "userId": "s17644fr465554b2j12pdyaxrh83ekff",
+      "displayName": "Don Zurbrick",
+      "image": "https://avatars.githubusercontent.com/u/24554955?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 330,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1773958405541,
+      "changelog": "Improved trigger design, added writing guidance and smoke-test checks, expanded support for assets, and strengthened build/audit quality without adding bloat.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f032f3859b4ff12ba8d698919c066756d2a78cac4600e0238993df55859711fe"
+}

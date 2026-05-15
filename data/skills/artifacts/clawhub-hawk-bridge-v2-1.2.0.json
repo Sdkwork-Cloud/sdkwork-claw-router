@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hawk-bridge-v2@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hawk_bridge_v2",
+  "skill": {
+    "id": 45089,
+    "skillKey": "clawhub-hawk-bridge-v2",
+    "name": "Workspace"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hawk-bridge-v2",
+    "url": "https://clawhub.ai/skills/hawk-bridge-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hawk-bridge-v2-8841efb08623906f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automates project inspection and iteration by analyzing from user, product, project, and tech perspectives to continuously improve code quality and delivery."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "relunctance",
+      "userId": "s179e9xsggcv2prncrtr7kasyn83r45g",
+      "displayName": "Gao.QiLin",
+      "image": "https://avatars.githubusercontent.com/u/1791740?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1775878140196,
+      "changelog": "Add memory reliability system with forget/verify/correct UX",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9e9ba4a37c1f7654e51ff96798dfb2557a6d912e3a2730ac6b2c55ac4e3975a3"
+}

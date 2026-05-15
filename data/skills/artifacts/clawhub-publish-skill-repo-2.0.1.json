@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/publish-skill-repo@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.publish_skill_repo",
+  "skill": {
+    "id": 63384,
+    "skillKey": "clawhub-publish-skill-repo",
+    "name": "publish-skill-repo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "publish-skill-repo",
+    "url": "https://clawhub.ai/skills/publish-skill-repo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/publish-skill-repo-5af2b097f4f066ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将当前项目中的 Skill 发布到 GitHub 并同步到 ClawHub。新项目自动走完流程，已有仓库的项目会总结变更、确认提交信息和建议版本号。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhouchang1988",
+      "userId": "s1720bd1njpgkfeygpnhevb7z184dag4",
+      "displayName": "Zhou Chang",
+      "image": "https://avatars.githubusercontent.com/u/1515205?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 125,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1776998408865,
+      "changelog": "Release v2.0.1 from GitHub",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:75d5d8a430c301c72d24f84a0808f8b1747cc6575749ef2d376b6010c7b58713"
+}

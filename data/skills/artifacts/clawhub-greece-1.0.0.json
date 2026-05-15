@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/greece@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.greece",
+  "skill": {
+    "id": 28254,
+    "skillKey": "clawhub-greece",
+    "name": "Greece"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "greece",
+    "url": "https://clawhub.ai/skills/greece",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/greece-4839625482ad8576.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Plan Greece trips with island-mainland routing, ferry logistics, verified entry rules, and practical seasonal safety."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 330,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773052888822,
+      "changelog": "Initial release with island-mainland routing, ferry logistics, and practical Greece travel playbooks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3ebc56f9045f1fc51bc9a1cc4ab9b9372062c7799d5e6dd83bbbb1f45437374c"
+}

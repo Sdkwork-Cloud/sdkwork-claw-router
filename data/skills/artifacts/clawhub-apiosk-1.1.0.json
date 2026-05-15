@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apiosk@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apiosk",
+  "skill": {
+    "id": 14349,
+    "skillKey": "clawhub-apiosk",
+    "name": "Apiosk Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apiosk",
+    "url": "https://clawhub.ai/skills/apiosk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apiosk-8a12d9e14d07fee6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Pay-per-request API gateway using USDC micropayments on Base blockchain with no API keys, supporting 15+ production APIs and simple wallet setup."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "obcraft",
+      "userId": "publishers:obcraft",
+      "displayName": "obcraft",
+      "image": "https://avatars.githubusercontent.com/u/26278348?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1229,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1771192503066,
+      "changelog": "Fix: corrected API URL path (/api/ID -> /ID) to match gateway routes in call-api.sh, apiosk-client.js, apiosk_client.py",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:55c07c5294689692943a071ace9069aa98b2bea01f91b0975c5e3e2430277fd7"
+}

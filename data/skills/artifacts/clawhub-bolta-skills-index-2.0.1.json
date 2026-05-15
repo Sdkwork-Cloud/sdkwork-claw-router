@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bolta-skills-index@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bolta_skills_index",
+  "skill": {
+    "id": 13780,
+    "skillKey": "clawhub-bolta-skills-index",
+    "name": "Social Media Automation Skills Registry"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bolta-skills-index",
+    "url": "https://clawhub.ai/skills/bolta-skills-index",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bolta-skills-index-be228d2448e07e80.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bolta Skills Registry - canonical index and orchestration layer for all Bolta skills, organized by plane"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maxfritzhand",
+      "userId": "s177yvdsjmtw59b1me1c4wv4kh848ex6",
+      "displayName": "Max Fritzhand",
+      "image": "https://avatars.githubusercontent.com/u/11081366?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 960,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 4,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1775435694284,
+      "changelog": "bolta-skills-index 2.0.1\n\n- Updated metadata with new trusted domain (`mcp.bolta.ai`) and endpoint definitions.\n- Added detailed documentation for Bolta API key types (regular vs agent), scopes, and security implications.\n- Clarified permission handling and agent roles for skill access and orchestration.\n- Linked to additional related repositories and API documentation resources.\n- No code logic or interface changes; documentation and metadata focused update.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e7db1b7ad5481e55f8f07853a36d656f2dc824b6d0b3b8b7b1902f07c1028812"
+}

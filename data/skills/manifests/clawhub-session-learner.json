@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43299,
+  "uuid": "skill-clawhub-session-learner",
+  "skillKey": "clawhub-session-learner",
+  "name": "Use when a session reveals stable user preferences, workflow corrections, or project conventions that should be preserved for f.",
+  "summary": "Use when a session reveals stable user preferences, workflow corrections, or project conventions that should be preserved for future sessions. Also use when...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_learner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TaiChangXieBuWan",
+      "features": [
+        "Use when a session reveals stable user preferences, workflow corrections, or project convention.",
+        "Also use when..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/session-learner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29980602?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "session-learner",
+      "url": "https://clawhub.ai/skills/session-learner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-learner",
+    "url": "https://clawhub.ai/skills/session-learner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-learner-63a158f4b64bbdac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/session-learner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-session-learner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f347ce793f7d84ac0dd86193d714d362ef16843930ea0e6dfdeec69d54876c65",
+      "artifactSizeBytes": 2649
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T07:59:31.243Z"
+}

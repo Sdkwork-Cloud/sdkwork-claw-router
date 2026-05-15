@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18276,
+  "uuid": "skill-clawhub-modelshow",
+  "skillKey": "clawhub-modelshow",
+  "name": "modelshow",
+  "summary": "Blind multi-model comparison with architecturally guaranteed de-anonymization. Trigger with \"mdls\" or \"modelshow\" for double-blind evaluation of AI model res...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.modelshow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sky Sloane",
+      "features": [
+        "Blind multi-model comparison with architecturally guaranteed de-anonymization",
+        "Trigger with \"mdls\" or \"modelshow\" for double-blind evaluation of AI model res..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/modelshow@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83876856?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "modelshow",
+      "url": "https://clawhub.ai/skills/modelshow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "modelshow",
+    "url": "https://clawhub.ai/skills/modelshow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/modelshow-3b1693f04e446038.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/modelshow@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-modelshow-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bcc0a80d4180d6e58c30169f9155e6b32f3ae6878709d2da804332e956edc5e8",
+      "artifactSizeBytes": 2615
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T23:15:53.677Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46043,
+  "uuid": "skill-clawhub-code-audit-claw",
+  "skillKey": "clawhub-code-audit-claw",
+  "name": "Code Audit",
+  "summary": "Three-mode code auditor for OpenClaw workspaces. (1) Security audit — finds hardcoded secrets, dangerous shell commands, SQL injection, unsafe deserializatio...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_audit_claw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanwenyolo-dot",
+      "features": [
+        "Three-mode code auditor for OpenClaw workspaces",
+        "(1) Security audit — finds hardcoded secrets, dangerous shell commands, SQL injection, unsafe d."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/code-audit-claw@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263520194?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "code-audit-claw",
+      "url": "https://clawhub.ai/skills/code-audit-claw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-audit-claw",
+    "url": "https://clawhub.ai/skills/code-audit-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-audit-claw-bc0a79a29853c107.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/code-audit-claw@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-code-audit-claw-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:41ad40b32b173285744850f3bb5c9033d82791659b051380ac37889ff873c8f2",
+      "artifactSizeBytes": 2270
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T08:40:16.040Z"
+}

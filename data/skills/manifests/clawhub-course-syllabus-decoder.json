@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50067,
+  "uuid": "skill-clawhub-course-syllabus-decoder",
+  "skillKey": "clawhub-course-syllabus-decoder",
+  "name": "Course Syllabus Decoder",
+  "summary": "Convert course syllabi into structured semester plans with grade breakdowns, deadlines, study schedules, and first-week action steps for effective learning m...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.course_syllabus_decoder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Convert course syllabi into structured semester plans with grade breakdowns, deadlines, study s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/course-syllabus-decoder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "course-syllabus-decoder",
+      "url": "https://clawhub.ai/skills/course-syllabus-decoder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "course-syllabus-decoder",
+    "url": "https://clawhub.ai/skills/course-syllabus-decoder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/course-syllabus-decoder-2a0087777c71e643.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/course-syllabus-decoder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-course-syllabus-decoder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e889d412a2f19b226321a46f66469ba7ebdc553a920da6c75008ad576d64d194",
+      "artifactSizeBytes": 2534
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T04:10:47.409Z"
+}

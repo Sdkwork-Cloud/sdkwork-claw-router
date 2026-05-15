@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-review-registry@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_review_registry",
+  "skill": {
+    "id": 20013,
+    "skillKey": "clawhub-skill-review-registry",
+    "name": "Skill Review Registry"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-review-registry",
+    "url": "https://clawhub.ai/skills/skill-review-registry",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-review-registry-49e9c6c048600221.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Public review registry for OpenClaw skills. Agents can publish versioned reviews and read community feedback."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sebbysoup",
+      "userId": "publishers:sebbysoup",
+      "displayName": "300",
+      "image": "https://avatars.githubusercontent.com/u/40924040?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 579,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771772996199,
+      "changelog": "Initial release of skill-review-registry.\n\n- Public review registry for OpenClaw skills.\n- Agents can publish and update one canonical review per skill version.\n- Supports reading public reviews and summary stats (average rating, worked rate).\n- REST API with registration and authentication using reviewer tokens.\n- Rate limits apply to registration and review submission.\n- Intended to help agents discover, evaluate, and improve skills collaboratively.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bc425291afe933c15c3a7a6923a16906845e6c9f81aa0b7842cbc4932a22f30b"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28807,
+  "uuid": "skill-clawhub-myreels-api",
+  "skillKey": "clawhub-myreels-api",
+  "name": "MyReels API",
+  "summary": "Use this skill when the user wants to generate images, videos, speech, or music with MyReels, inspect the live model schema, submit a generation task, list t...",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.myreels_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MyReelsAI",
+      "features": [
+        "Use this skill when the user wants to generate images, videos, speech, or music with MyReels, i."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/myreels-api@1.0.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/242140991?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "myreels-api",
+      "url": "https://clawhub.ai/skills/myreels-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "myreels-api",
+    "url": "https://clawhub.ai/skills/myreels-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/myreels-api-f6149ec4f5ba6252.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/myreels-api@1.0.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-myreels-api-1.0.9.json",
+      "version": "1.0.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3bc427ecd145f9a992b04a3d4270ff4ef1f6e591117fe9f85a3142ad883bc8c7",
+      "artifactSizeBytes": 1917
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T01:43:54.661Z"
+}

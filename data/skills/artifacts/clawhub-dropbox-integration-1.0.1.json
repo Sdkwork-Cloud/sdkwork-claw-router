@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dropbox-integration@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dropbox_integration",
+  "skill": {
+    "id": 12527,
+    "skillKey": "clawhub-dropbox-integration",
+    "name": "Dropbox Integration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dropbox-integration",
+    "url": "https://clawhub.ai/skills/dropbox-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dropbox-integration-68c18b30528d30f0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read-only Dropbox integration for browsing, searching, and downloading files from your Dropbox account. Includes automatic OAuth token refresh, secure credential storage, and comprehensive setup guide. Perfect for accessing your Dropbox fi."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tirandagan",
+      "userId": "s1790acmcnk4qdxxf093dqbcd583vv25",
+      "displayName": "Tiran Dagan",
+      "image": "https://avatars.githubusercontent.com/u/1196339?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1537,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770547240304,
+      "changelog": "Enhanced documentation: Comprehensive setup guide included with step-by-step OAuth configuration, permissions setup, troubleshooting, and security best practices (393-line guide in references/setup-guide.md)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8e01a20093b5829f32e0e1c7ceb8a4b3a938bb98450d1a1d46155c71b9e9ca68"
+}

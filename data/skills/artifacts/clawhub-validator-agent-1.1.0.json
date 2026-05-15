@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/validator-agent@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.validator_agent",
+  "skill": {
+    "id": 16084,
+    "skillKey": "clawhub-validator-agent",
+    "name": "Validator Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "validator-agent",
+    "url": "https://clawhub.ai/skills/validator-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/validator-agent-2997bd5706ab107d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Validates project pre-deployment by running comprehensive security, testing, quality, documentation, CI/CD, privacy, maintainability, usability, marketabilit..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "up2itnow",
+      "userId": "publishers:up2itnow",
+      "displayName": "up2itnow",
+      "image": "https://avatars.githubusercontent.com/u/80590273?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 920,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772004741689,
+      "changelog": "Validator Agent 1.1.0 — concise pipeline, 8-entry checklist, and TypeScript/Solidity focus\n\n- Overhauled documentation: now describes a focused 8-round validation pipeline (compile, lint, test, security, type coverage, docs, changelog, final summary)\n- Skill narrowed to TypeScript/Solidity; project detection clarified via `package.json` and `foundry.toml`\n- Removed extensive/complex checklist and broad language support; simplified for clarity and reliability\n- Dropped README.md in favor of documentation in SKILL.md\n- Improved output and review flow: produces a `validator-YYYY-MM-DD-HH-[project].md` report with clear pass/block decision\n- Makes clear this skill never auto-publishes, only reports and recommends",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fa8bfade73d10d999bcf63fa759e9fe3bbc70b39d1a8ad743acf22b3b1f61ff7"
+}

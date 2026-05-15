@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skylv-automated-code-reviewer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_automated_code_reviewer",
+  "skill": {
+    "id": 42593,
+    "skillKey": "clawhub-skylv-automated-code-reviewer",
+    "name": "Skylv Automated Code Reviewer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-automated-code-reviewer",
+    "url": "https://clawhub.ai/skills/skylv-automated-code-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-automated-code-reviewer-4e864368ebc24b05.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Review code in seconds, not hours. Detect bugs, security flaws, and style issues before they reach production."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777852260185,
+      "changelog": "- Updated SKILL.md for version 1.0.1 with a more concise and user-friendly overview.\n- Revised the description to emphasize speed, thoroughness, and unbiased code review.\n- Clarified and reorganized capabilities and commands for easier reference.\n- Expanded quick start and use case examples with clearer, more practical command-line usage.\n- Updated trigger phrases for broader invocation support.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d59998e9c488217c1dd49049da45cfe320dfd5680ea0e4270ba2d0153ebb228d"
+}

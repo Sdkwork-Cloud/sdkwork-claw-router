@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13108,
+  "uuid": "skill-clawhub-onchain-skill-audit",
+  "skillKey": "clawhub-onchain-skill-audit",
+  "name": "On-Chain Skill Audit",
+  "summary": "On-chain skill provenance registry. Check, register, audit, and vouch for agent skills on Solana. Use when evaluating skill safety, registering new skills, or looking up provenance before installation.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.onchain_skill_audit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rocket",
+      "features": [
+        "On-chain skill provenance registry",
+        "Check, register, audit, and vouch for agent skills on Solana",
+        "Use when evaluating skill safety, registering new skills, or looking up provenance before insta."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/onchain-skill-audit@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/127072685?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "onchain-skill-audit",
+      "url": "https://clawhub.ai/skills/onchain-skill-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "onchain-skill-audit",
+    "url": "https://clawhub.ai/skills/onchain-skill-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/onchain-skill-audit-f91b7a54cea8051d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/onchain-skill-audit@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-onchain-skill-audit-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d02a5a2f73a3c3eae460d4d17907e5c665947e7add32f91c8b67731c8f369bb7",
+      "artifactSizeBytes": 1976
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T06:38:59.968Z"
+}

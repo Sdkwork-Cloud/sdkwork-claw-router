@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/god-mode@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.god_mode",
+  "skill": {
+    "id": 9787,
+    "skillKey": "clawhub-god-mode",
+    "name": "God's eye view of your dev repos. Multi-project tracking across GitHub/Azure DevOps. AI learns from your commits to upgrade you."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "god-mode",
+    "url": "https://clawhub.ai/skills/god-mode",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/god-mode-1a53380b51f56ece.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Developer oversight and AI agent coaching. Use when viewing project status across repos, syncing GitHub data, or analyzing agents.md against commit patterns."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "infantlab",
+      "userId": "publishers:infantlab",
+      "displayName": "InfantLab",
+      "image": "https://avatars.githubusercontent.com/u/497993?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3140,
+      "installsAllTime": 16,
+      "installsCurrent": 14,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769957202407,
+      "changelog": "god-mode 0.1.0 – Initial Release\n\n- Provides a unified dashboard for developer oversight across multiple coding projects.\n- Syncs and analyzes GitHub data with local SQLite caching for fast project status queries.\n- Analyzes agent instructions (agents.md) against commit history and suggests improvements.\n- Command-line interface for project management, sync, and AI agent coaching.\n- Requires GitHub CLI (gh), sqlite3, and jq.\n- No token storage; delegates authentication to trusted CLIs.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5d047ed905983c7bacb9c39612e2a2bd758edb65d9d53564e7d9c1b1373bd5d8"
+}

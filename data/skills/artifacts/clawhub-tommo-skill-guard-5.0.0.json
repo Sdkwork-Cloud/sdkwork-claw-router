@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tommo-skill-guard@5.0.0",
+  "version": "5.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tommo_skill_guard",
+  "skill": {
+    "id": 23108,
+    "skillKey": "clawhub-tommo-skill-guard",
+    "name": "Skill Guard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tommo-skill-guard",
+    "url": "https://clawhub.ai/skills/tommo-skill-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tommo-skill-guard-25ec5c29b879bbb8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Security scanner for OpenClaw agent skills. Pre-install check via ClawHub page, local pattern scanning via read tool (zero exec), integrity verification. Use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tommot2",
+      "userId": "s17fzh9kw6g9v8fg9kppsbmwt183p1kd",
+      "displayName": "TommoT2",
+      "image": "https://avatars.githubusercontent.com/u/106430507?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 252,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "5.0.0",
+      "createdAt": 1775173552613,
+      "changelog": "Removed ALL exec usage. Pattern scanning and integrity checks via read tool only. No Node, no shell, no injection risk. Zero exec guarantee.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:539681f6eefc30583f9486ee4f5c6b9f004d434a7bf8f6c54165513f5e90830c"
+}

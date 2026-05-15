@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ios-simulator@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ios_simulator",
+  "skill": {
+    "id": 9311,
+    "skillKey": "clawhub-ios-simulator",
+    "name": "iOS Simulator Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ios-simulator",
+    "url": "https://clawhub.ai/skills/ios-simulator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ios-simulator-d34e594487171911.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "21 production-ready scripts for iOS app testing, building, and automation. Provides semantic UI navigation, build automation, accessibility testing, and simulator lifecycle management. Optimized for AI agents with minimal token output."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tristanmanchester",
+      "userId": "s17c3xv8wvvzzbj84z9vcj498n83gnkp",
+      "displayName": "Tristan Manchester",
+      "image": "https://avatars.githubusercontent.com/u/108270628?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3960,
+      "installsAllTime": 18,
+      "installsCurrent": 17,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1768942983013,
+      "changelog": "Major update: Migrated to a minimal Node-based CLI, focusing on simctl/idb automation and streamlined command set.\n\n- Replaced 21+ mixed Python/bash scripts with a single `ios-sim.mjs` Node CLI.\n- Simplified functionality: core iOS Simulator device, app, and UI automation (create/boot/install/launch/tap/screenshot/etc).\n- Default output is now single-line JSON for token efficiency; pretty output and summaries are opt-in.\n- Added structured troubleshooting documentation.\n- All advanced/specialized scripts removed; only essential simctl/idb workflows remain.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:037242f8dd976580b795f5211c82b46e1cdaef9fdf9283247ba1eef38f865871"
+}

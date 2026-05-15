@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11419,
+  "uuid": "skill-clawhub-nanophoto-nano-banana-pro",
+  "skillKey": "clawhub-nanophoto-nano-banana-pro",
+  "name": "Nano Banana Pro",
+  "summary": "Generate or edit AI images with the NanoPhoto.AI Nano Banana Pro API. Use when: (1) User wants text-to-image generation from a prompt, (2) User wants image-t...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nanophoto_nano_banana_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "NanoPhoto.AI",
+      "features": [
+        "Generate or edit AI images with the NanoPhoto.AI Nano Banana Pro API",
+        "Use when: (1) User wants text-to-image generation from a prompt, (2) User wants image-t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nanophoto-nano-banana-pro@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260005344?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nanophoto-nano-banana-pro",
+      "url": "https://clawhub.ai/skills/nanophoto-nano-banana-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nanophoto-nano-banana-pro",
+    "url": "https://clawhub.ai/skills/nanophoto-nano-banana-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nanophoto-nano-banana-pro-f47f9cda7a882d53.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nanophoto-nano-banana-pro@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-nanophoto-nano-banana-pro-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8ac428ed194e7b8d7ba6d7e1c17a8ec5928e527c3da314734267dba5b601acae",
+      "artifactSizeBytes": 2126
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T13:15:36.602Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chicago@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chicago",
+  "skill": {
+    "id": 71242,
+    "skillKey": "clawhub-chicago",
+    "name": "Chicago"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chicago",
+    "url": "https://clawhub.ai/skills/chicago",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chicago-a2470c9d137c1c5d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供芝加哥旅游景点、美食、交通、天气及职业体育等实用城市信息与攻略。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776238110661,
+      "changelog": "- 更新了 summary 和 read_when，聚焦于 chicago 品牌资料与使用指南\n- 重写内容，新增品牌创立背景、核心产品、全球布局、行业地位等结构化信息点\n- 明确了适用场景，包括市场调研、商业决策及学术参考\n- 增加数据来源建议，推荐使用官方与权威渠道",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:80fbe4b8eb0974347a96c9441e6668bbf7b6a89345ee27cab7227d69489cebb3"
+}

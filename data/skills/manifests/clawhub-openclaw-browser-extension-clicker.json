@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61553,
+  "uuid": "skill-clawhub-openclaw-browser-extension-clicker",
+  "skillKey": "clawhub-openclaw-browser-extension-clicker",
+  "name": "openclaw-browser-extension-clicker",
+  "summary": "自动点击浏览器扩展图标（如 OpenClaw Browser Relay）。 使用系统级 GUI 自动化，绕过浏览器安全限制。 当需要操作浏览器工具栏、扩展图标、系统菜单时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_browser_extension_clicker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BinbinHihi",
+      "features": [
+        "自动点击浏览器扩展图标（如 OpenClaw Browser Relay）。 使用系统级 GUI 自动化，绕过浏览器安全限制。 当需要操作浏览器工具栏、扩展图标、系统菜单时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-browser-extension-clicker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/75616204?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-browser-extension-clicker",
+      "url": "https://clawhub.ai/skills/openclaw-browser-extension-clicker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-browser-extension-clicker",
+    "url": "https://clawhub.ai/skills/openclaw-browser-extension-clicker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-browser-extension-clicker-f79a785afa5be445.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-browser-extension-clicker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-browser-extension-clicker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3d5b48ab80f13aa7d4ad3ce2163aee7941d58b9e1bd22e4e9c7ba5e88be28d03",
+      "artifactSizeBytes": 2570
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T08:01:51.067Z"
+}

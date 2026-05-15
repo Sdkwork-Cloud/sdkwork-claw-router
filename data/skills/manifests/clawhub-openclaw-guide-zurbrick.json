@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31056,
+  "uuid": "skill-clawhub-openclaw-guide-zurbrick",
+  "skillKey": "clawhub-openclaw-guide-zurbrick",
+  "name": "OpenClaw Guide",
+  "summary": "Guide for OpenClaw setup, config, commands, routing, and troubleshooting. Use when the user asks how OpenClaw works, how to configure it, why a channel or ag...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_guide_zurbrick",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Don Zurbrick",
+      "features": [
+        "Guide for OpenClaw setup, config, commands, routing, and troubleshooting",
+        "Use when the user asks how OpenClaw works, how to configure it, why a channel or ag..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-guide-zurbrick@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24554955?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-guide-zurbrick",
+      "url": "https://clawhub.ai/skills/openclaw-guide-zurbrick"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-guide-zurbrick",
+    "url": "https://clawhub.ai/skills/openclaw-guide-zurbrick",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-guide-zurbrick-e09aafb5b7c80d4c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-guide-zurbrick@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-guide-zurbrick-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6b66d54eee60fa94cccb3eaf509a0cbe8824d4b8a6dc6716854e0256d4881cd3",
+      "artifactSizeBytes": 2046
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T01:27:35.803Z"
+}

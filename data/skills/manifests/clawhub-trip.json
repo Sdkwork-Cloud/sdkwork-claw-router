@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20469,
+  "uuid": "skill-clawhub-trip",
+  "skillKey": "clawhub-trip",
+  "name": "Trip",
+  "summary": "Help users make better Trip.com or Ctrip booking decisions from public travel-booking factors. Use when the user wants to compare flight, train, or hotel boo...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trip",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Help users make better Trip.com or Ctrip booking decisions from public travel-booking factors",
+        "Use when the user wants to compare flight, train, or hotel boo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trip@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trip",
+      "url": "https://clawhub.ai/skills/trip"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trip",
+    "url": "https://clawhub.ai/skills/trip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trip-34a389d790fc2bdd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trip@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trip-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:113ad4309ef56c207f46c9cccf873f27453f22608deb024e2f71020b05cc15b6",
+      "artifactSizeBytes": 1918
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T12:52:17.017Z"
+}

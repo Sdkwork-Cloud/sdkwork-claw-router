@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/near-subaccount@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.near_subaccount",
+  "skill": {
+    "id": 14353,
+    "skillKey": "clawhub-near-subaccount",
+    "name": "Near Subaccount"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "near-subaccount",
+    "url": "https://clawhub.ai/skills/near-subaccount",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/near-subaccount-890b84549e2317a6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create, list, delete, and manage NEAR subaccounts with bulk distribution operations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shaiss",
+      "userId": "publishers:shaiss",
+      "displayName": "shaiss",
+      "image": "https://avatars.githubusercontent.com/u/113060?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1229,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770568923751,
+      "changelog": "- Initial release of near-subaccount skill.\n- Create, list, and delete NEAR subaccounts from the command line.\n- Support for bulk NEAR token distribution to multiple subaccounts via JSON file.\n- Clean and simple command-line interface.\n- Optional parameters for master account and amount customization.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:037392d541fe0bb9666043ac126dcb899b58925cbb692d74134e065b7848c42d"
+}

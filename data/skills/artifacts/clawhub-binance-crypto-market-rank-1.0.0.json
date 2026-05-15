@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/binance-crypto-market-rank@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.binance_crypto_market_rank",
+  "skill": {
+    "id": 43077,
+    "skillKey": "clawhub-binance-crypto-market-rank",
+    "name": "Binance Crypto Market Rank"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "binance-crypto-market-rank",
+    "url": "https://clawhub.ai/skills/binance-crypto-market-rank",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/binance-crypto-market-rank-7c216f59bac48908.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Crypto market rankings and leaderboards. Query trending tokens, Binance Alpha tokens, smart money inflow rankings, meme token rankings, and top trader PnL le..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dexploarer",
+      "userId": "s17egvpamsdg48m9t22pe28nqd8402a8",
+      "displayName": "Dexploarer",
+      "image": "https://avatars.githubusercontent.com/u/211557447?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775054165646,
+      "changelog": "Initial release from milady-ai/skills",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3e879224337a9d36706c9872c67be57699e0d2194d1325ac04149f1b7adff9b8"
+}

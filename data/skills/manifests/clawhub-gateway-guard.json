@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13348,
+  "uuid": "skill-clawhub-gateway-guard",
+  "skillKey": "clawhub-gateway-guard",
+  "name": "Gateway Guard",
+  "summary": "Ensures OpenClaw gateway auth consistency. Use when checking or fixing gateway token/password mismatch, device_token_mismatch errors, or before delegating to...",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gateway_guard",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "austindixson",
+      "features": [
+        "Ensures OpenClaw gateway auth consistency",
+        "Use when checking or fixing gateway token/password mismatch, device_token_mismatch errors, or b."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gateway-guard@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52183161?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gateway-guard",
+      "url": "https://clawhub.ai/skills/gateway-guard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gateway-guard",
+    "url": "https://clawhub.ai/skills/gateway-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gateway-guard-c7c4804944c2124c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gateway-guard@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-gateway-guard-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0fe2a09e73175b1d02261fd6399665af0bdae2d907c777cc92bec3c55c1277c4",
+      "artifactSizeBytes": 2020
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T05:37:05.504Z"
+}

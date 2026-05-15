@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24176,
+  "uuid": "skill-clawhub-video-multi-publish",
+  "skillKey": "clawhub-video-multi-publish",
+  "name": "Video Multi-Platform Publish",
+  "summary": "One-stop multi-platform video publishing workflow. From video clipping to multi-platform publishing, full process automation. Supports automatic clipping for...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_multi_publish",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Roma",
+      "features": [
+        "One-stop multi-platform video publishing workflow",
+        "From video clipping to multi-platform publishing, full process automation",
+        "Supports automatic clipping for..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-multi-publish@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/105550312?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-multi-publish",
+      "url": "https://clawhub.ai/skills/video-multi-publish"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-multi-publish",
+    "url": "https://clawhub.ai/skills/video-multi-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-multi-publish-448ceba028a8ea90.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-multi-publish@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-multi-publish-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4f017340f11692e357ab439823fdda4d9e2236fad9d08b12e3c483f13b7403bc",
+      "artifactSizeBytes": 2432
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T14:02:30.526Z"
+}

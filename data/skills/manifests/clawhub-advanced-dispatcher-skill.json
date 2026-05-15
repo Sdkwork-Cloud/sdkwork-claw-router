@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20340,
+  "uuid": "skill-clawhub-advanced-dispatcher-skill",
+  "skillKey": "clawhub-advanced-dispatcher-skill",
+  "name": "Advanced Dispatcher",
+  "summary": "Route mid-session work to the right spawned model without changing the fixed main session. Use for coding, architecture, math, algorithms, web development, b...",
+  "version": "1.0.1-alpha",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.advanced_dispatcher_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "omaression",
+      "features": [
+        "Route mid-session work to the right spawned model without changing the fixed main session",
+        "Use for coding, architecture, math, algorithms, web development, b..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/advanced-dispatcher-skill@1.0.1-alpha",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/69020772?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "advanced-dispatcher-skill",
+      "url": "https://clawhub.ai/skills/advanced-dispatcher-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "advanced-dispatcher-skill",
+    "url": "https://clawhub.ai/skills/advanced-dispatcher-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/advanced-dispatcher-skill-0f73a5ad246cc30b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/advanced-dispatcher-skill@1.0.1-alpha",
+      "artifactUrl": "data/skills/artifacts/clawhub-advanced-dispatcher-skill-1.0.1-alpha.json",
+      "version": "1.0.1-alpha",
+      "runtime": "metadata",
+      "checksumHash": "sha256:74b5a326765fe9c0e1820944b9799fc3fe46a609b6d5d0395c524e7a07592a59",
+      "artifactSizeBytes": 2356
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T00:37:05.637Z"
+}

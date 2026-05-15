@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/swarm-coding-skill@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swarm_coding_skill",
+  "skill": {
+    "id": 14639,
+    "skillKey": "clawhub-swarm-coding-skill",
+    "name": "Hackathon Swarm Coding"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swarm-coding-skill",
+    "url": "https://clawhub.ai/skills/swarm-coding-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swarm-coding-skill-703cd285a7c04a98.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomously plans, develops, tests, and delivers full software projects from plain-English prompts using coordinated multi-agent roles and automated quality..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "arunnadarasa",
+      "userId": "s175spnx5m2qksm07wmc9jw9qh83hq8x",
+      "displayName": "Arun Nadarasa",
+      "image": "https://avatars.githubusercontent.com/u/186420617?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 872,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1771120047093,
+      "changelog": "- Introduced a structured YAML frontmatter specifying description, capabilities, required/optional environment variables, output paths, and external services.\n- Added explicit warnings about workspace writes and handling of sensitive data in logs and decision files.\n- Clarified environment variable requirements and improved documentation on configuration and outputs.\n- Enhanced summary of capabilities, including clearer descriptions of knowledge grounding and continuous improvement features.\n- Maintained all core functionality and agent workflow as previously described; no file or code changes detected.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:18ec22f90f121874479506df0843fe9300d326a8265aad0af004caba90d94113"
+}

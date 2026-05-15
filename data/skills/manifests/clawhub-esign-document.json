@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40684,
+  "uuid": "skill-clawhub-esign-document",
+  "skillKey": "clawhub-esign-document",
+  "name": "E-Sign a Document",
+  "summary": "Help users choose the right e-signature approach for a document, structure the signing workflow, and explain what to prepare before sending. Use when a user...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.esign_document",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "notasign",
+      "features": [
+        "Help users choose the right e-signature approach for a document, structure the signing workflow.",
+        "Use when a user..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/esign-document@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268593162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "esign-document",
+      "url": "https://clawhub.ai/skills/esign-document"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "esign-document",
+    "url": "https://clawhub.ai/skills/esign-document",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/esign-document-cac5a913d5b55b5b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/esign-document@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-esign-document-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fbcb86f1eb3ea1f090f4cdc6001ff9f9836f35b721b9dea641838abfa7022cad",
+      "artifactSizeBytes": 2328
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T10:25:17.287Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49338,
+  "uuid": "skill-clawhub-papyrus",
+  "skillKey": "clawhub-papyrus",
+  "name": "Papyrus",
+  "summary": "Transforms arXiv papers into bilingual PDFs with original text, Chinese translation, expert commentary, figures, formulas, and professional academic typesett...",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.papyrus",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ZaneChen76",
+      "features": [
+        "Transforms arXiv papers into bilingual PDFs with original text, Chinese translation, expert com."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/papyrus@0.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/70149446?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "papyrus",
+      "url": "https://clawhub.ai/skills/papyrus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "papyrus",
+    "url": "https://clawhub.ai/skills/papyrus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/papyrus-3567dd408c98adb2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/papyrus@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-papyrus-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:df9904c1f60150334eef0ab228ab89192954cc0fad2542296600055da702f7bd",
+      "artifactSizeBytes": 2068
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T10:28:39.581Z"
+}

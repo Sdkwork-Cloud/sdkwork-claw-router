@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34420,
+  "uuid": "skill-clawhub-qbittorrent-api",
+  "skillKey": "clawhub-qbittorrent-api",
+  "name": "Qbittorrent Api",
+  "summary": "Use when working with qBittorrent Web API - adding torrents, managing downloads, checking status, or any qBittorrent automation task. Includes curl examples...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qbittorrent_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HxBreak",
+      "features": [
+        "Use when working with qBittorrent Web API",
+        "adding torrents, managing downloads, checking status, or any qBittorrent automation task",
+        "Includes curl examples..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qbittorrent-api@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15846180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qbittorrent-api",
+      "url": "https://clawhub.ai/skills/qbittorrent-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qbittorrent-api",
+    "url": "https://clawhub.ai/skills/qbittorrent-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qbittorrent-api-1c31fa824767e81e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qbittorrent-api@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qbittorrent-api-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d8ae3d301df39a5a6fcc7c54bdef2880d4fdab0097f600d48554269ce5ce5d2e",
+      "artifactSizeBytes": 2302
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T08:02:21.374Z"
+}

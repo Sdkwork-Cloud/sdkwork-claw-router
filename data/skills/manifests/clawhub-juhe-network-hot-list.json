@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71267,
+  "uuid": "skill-clawhub-juhe-network-hot-list",
+  "skillKey": "clawhub-juhe-network-hot-list",
+  "name": "全网热搜榜查询 - 聚合数据",
+  "summary": "全网热搜榜查询。查询各大平台（微博、抖音、快手、知乎、百度等）的实时热搜榜单。使用场景：用户说\"查热搜\"、\"看热搜榜\"、\"现在什么最火\"、\"全网热门话题\"、\"微博热搜\"、\"抖音热搜\"等。通过聚合数据（juhe.cn）API 实时查询，免费注册每天免费调用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.juhe_network_hot_list",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "juhe-skills",
+      "features": [
+        "全网热搜榜查询。查询各大平台（微博、抖音、快手、知乎、百度等）的实时热搜榜单。使用场景：用户说\"查热搜\"、\"看热搜榜\"、\"现在什么最火\"、\"全网热门话题\"、\"微博热搜\"、\"抖音热搜\"等。通过."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/juhe-network-hot-list@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/203600343?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "juhe-network-hot-list",
+      "url": "https://clawhub.ai/skills/juhe-network-hot-list"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "juhe-network-hot-list",
+    "url": "https://clawhub.ai/skills/juhe-network-hot-list",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/juhe-network-hot-list-5bc85450abe52427.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/juhe-network-hot-list@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-juhe-network-hot-list-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b1df562b5833fd49c66c7cbd83d7e6dca6daa5f53ba1493d755d0ba7bc5afd3",
+      "artifactSizeBytes": 2544
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T03:22:42.829Z"
+}

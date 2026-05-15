@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10024,
+  "uuid": "skill-clawhub-video",
+  "skillKey": "clawhub-video",
+  "name": "Video",
+  "summary": "Process, edit, and optimize videos for any platform with compression, format conversion, captioning, and repurposing workflows.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Process, edit, and optimize videos for any platform with compression, format conversion, captio."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video",
+      "url": "https://clawhub.ai/skills/video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video",
+    "url": "https://clawhub.ai/skills/video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-0cab1c9617404faf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cadae3c3e6512f176e20c9db1ef1c6dcc78644b97fc9bc4aec197b22561abb0c",
+      "artifactSizeBytes": 1882
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T16:32:40.557Z"
+}

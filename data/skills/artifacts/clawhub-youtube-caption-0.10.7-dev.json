@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-caption@0.10.7-dev",
+  "version": "0.10.7-dev",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_caption",
+  "skill": {
+    "id": 51081,
+    "skillKey": "clawhub-youtube-caption",
+    "name": "YouTube Caption"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-caption",
+    "url": "https://clawhub.ai/skills/youtube-caption",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-caption-e1d09c4aef918051.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage YouTube video captions. Use this skill to list, insert, update, download, or delete video captions. Useful when working with YouTube caption — provide..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openwaygate",
+      "userId": "s17ceqc046w9bhxqw6az7jvb9h83j6hq",
+      "displayName": "OpenWaygate",
+      "image": "https://avatars.githubusercontent.com/u/27287694?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 366,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.10.7-dev",
+      "createdAt": 1773496624925,
+      "changelog": "- Added detailed `openclaw` metadata, including environment variables, required binaries, config files, emoji, homepage, and install instructions.\n- Removed general compatibility section and replaced with structured requirements under metadata.\n- No changes to main usage instructions or operations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8376ce1e354214ed55be69685d28723a4d7236b80df620080b479c10db6753a4"
+}

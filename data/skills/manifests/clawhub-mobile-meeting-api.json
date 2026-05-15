@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67237,
+  "uuid": "skill-clawhub-mobile-meeting-api",
+  "skillKey": "clawhub-mobile-meeting-api",
+  "name": "移动会议API",
+  "summary": "提及移动会议/云视讯、视频会议、会议API集成时,自动激活本技能, 也可使用手动加载本技能（ use_skill mobile-meeting-api）。涵盖登录鉴权、会议管理（创建/编辑/取消/查询）、会议控制（会中操作）、网络研讨会管理等模块。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mobile_meeting_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zq",
+      "features": [
+        "提及移动会议/云视讯、视频会议、会议API集成时,自动激活本技能, 也可使用手动加载本技能（ use_skill mobile-meeting-api）。涵盖登录鉴权、会议管理（创建/编辑/."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mobile-meeting-api@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10104156?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mobile-meeting-api",
+      "url": "https://clawhub.ai/skills/mobile-meeting-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mobile-meeting-api",
+    "url": "https://clawhub.ai/skills/mobile-meeting-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mobile-meeting-api-fc4c0ec2293331d7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mobile-meeting-api@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mobile-meeting-api-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:71c7714661e1243c2b640c1a873a9893b67d9158f30b325fc1e901110e360ddb",
+      "artifactSizeBytes": 2409
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T09:17:59.260Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19311,
+  "uuid": "skill-clawhub-skill-creator-latest",
+  "skillKey": "clawhub-skill-creator-latest",
+  "name": "skill-creator",
+  "summary": "Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, update or optimize...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_creator_latest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shimmernight",
+      "features": [
+        "Create new skills, modify and improve existing skills, and measure skill performance",
+        "Use when users want to create a skill from scratch, update or optimize..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-creator-latest@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/53256477?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-creator-latest",
+      "url": "https://clawhub.ai/skills/skill-creator-latest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-creator-latest",
+    "url": "https://clawhub.ai/skills/skill-creator-latest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-creator-latest-73b114178feca49e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-creator-latest@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-creator-latest-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:13a9ed6d4be1aa5075cfb08bda055b2d02359dadc734f36ecfd8e5567ca378ba",
+      "artifactSizeBytes": 2664
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T04:28:18.868Z"
+}

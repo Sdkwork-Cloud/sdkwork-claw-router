@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10835,
+  "uuid": "skill-clawhub-weather-infographic",
+  "skillKey": "clawhub-weather-infographic",
+  "name": "Weather TV style",
+  "summary": "Generate a TV-style weather infographic with a location-specific seasonal background. Use when the user asks for a visual weather forecast or a weather infographic for a specific address.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_infographic",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "silverkiwi",
+      "features": [
+        "Generate a TV-style weather infographic with a location-specific seasonal background",
+        "Use when the user asks for a visual weather forecast or a weather infographic for a specific ad."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weather-infographic@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13608461?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weather-infographic",
+      "url": "https://clawhub.ai/skills/weather-infographic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-infographic",
+    "url": "https://clawhub.ai/skills/weather-infographic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-infographic-ba5778ea5c461dfb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weather-infographic@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-weather-infographic-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b90b63abcaca03d51d99efc2e191e6abf5651cc5f0dfe24533d6ceec58c1823",
+      "artifactSizeBytes": 2189
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T21:42:53.987Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57261,
+  "uuid": "skill-clawhub-cell-video-packaging-diagnosis",
+  "skillKey": "clawhub-cell-video-packaging-diagnosis",
+  "name": "视频封标诊断",
+  "summary": "Video packaging diagnosis for Chinese short-form creators. Use when Codex needs to diagnose why a video's title, cover, opening hook, or payoff structure is...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cell_video_packaging_diagnosis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cellinlab",
+      "features": [
+        "Video packaging diagnosis for Chinese short-form creators",
+        "Use when Codex needs to diagnose why a video's title, cover, opening hook, or payoff structure."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cell-video-packaging-diagnosis@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46317258?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cell-video-packaging-diagnosis",
+      "url": "https://clawhub.ai/skills/cell-video-packaging-diagnosis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cell-video-packaging-diagnosis",
+    "url": "https://clawhub.ai/skills/cell-video-packaging-diagnosis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cell-video-packaging-diagnosis-a44f33cb6fae6d01.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cell-video-packaging-diagnosis@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cell-video-packaging-diagnosis-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c2fa7cef38a16865332ce1859136ba24fae3a2d92fb67209464867ffc2002972",
+      "artifactSizeBytes": 1993
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T02:53:45.589Z"
+}

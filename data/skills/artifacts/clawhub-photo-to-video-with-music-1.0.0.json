@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/photo-to-video-with-music@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.photo_to_video_with_music",
+  "skill": {
+    "id": 49409,
+    "skillKey": "clawhub-photo-to-video-with-music",
+    "name": "Photo To Video With Music"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "photo-to-video-with-music",
+    "url": "https://clawhub.ai/skills/photo-to-video-with-music",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/photo-to-video-with-music-121359150cb3f24f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get music-backed video ready to post, without touching a single slider. Upload your images and audio (JPG, PNG, HEIC, MP3, up to 200MB), say something like \"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 79,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778063821230,
+      "changelog": "Photo to Video with Music — initial release\n\n- Instantly turn your photos and an audio track into a ready-to-share 1080p MP4 video.\n- Upload images (JPG, PNG, HEIC) and audio (MP3) up to 200MB; supports batch uploads and cloud rendering on remote GPU.\n- No editing software required — simple chat instructions handle slideshow creation, background music, and export.\n- Designed for fast workflows: typical processing time is 30–90 seconds; export with a single request.\n- Built-in session management, credit handling, export pipeline, and clear error reporting.\n- Ideal for social creators and everyday users seeking fast, AI-powered video creation from photos.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6cf258a603dcee074cba1bdbbe240b4c8dfdcf605d0a112d34ccfd12ff5283c5"
+}

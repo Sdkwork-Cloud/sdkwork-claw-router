@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prediction-stack-setup@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prediction_stack_setup",
+  "skill": {
+    "id": 24132,
+    "skillKey": "clawhub-prediction-stack-setup",
+    "name": "Prediction Stack Setup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prediction-stack-setup",
+    "url": "https://clawhub.ai/skills/prediction-stack-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prediction-stack-setup-f9e0027353c6cdc2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interactive setup wizard for the OpenClaw Prediction Market Trading Stack. Detects installed skills, walks through API key configuration, creates cron jobs f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kingmadellc",
+      "userId": "publishers:kingmadellc",
+      "displayName": "kingmadellc",
+      "image": "https://avatars.githubusercontent.com/u/257369583?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 419,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1773512232050,
+      "changelog": "Generate template config.yaml on first run instead of crashing. Runs full validation against template.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:956946fcb4c7949079adeb85dd5775188b4d6174132e074c1ddb00214cf87dd3"
+}

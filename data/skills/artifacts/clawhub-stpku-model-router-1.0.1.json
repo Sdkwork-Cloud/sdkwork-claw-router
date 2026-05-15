@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stpku-model-router@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stpku_model_router",
+  "skill": {
+    "id": 42296,
+    "skillKey": "clawhub-stpku-model-router",
+    "name": "Model Router"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stpku-model-router",
+    "url": "https://clawhub.ai/skills/stpku-model-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stpku-model-router-8d640018d8caa19c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Intelligent model routing for OpenClaw. Automatically selects the best model from 8 available models based on task type, content length, and quality requirem..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stpku",
+      "userId": "s176px32qjgcnsvzjx32htfm6n83q1dp",
+      "displayName": "stpku",
+      "image": "https://avatars.githubusercontent.com/u/83755634?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774582150396,
+      "changelog": "Add pricing: $1 USD one-time purchase",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:defd54d2126a1d9b5cf46e70c90a9ac02368f1a7e7590a2db265fb49142e4af1"
+}

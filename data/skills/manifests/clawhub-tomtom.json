@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31886,
+  "uuid": "skill-clawhub-tomtom",
+  "skillKey": "clawhub-tomtom",
+  "name": "Tomtom",
+  "summary": "TomTom integration. Manage data, records, and automate workflows. Use when the user wants to interact with TomTom data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tomtom",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "TomTom integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with TomTom data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tomtom@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tomtom",
+      "url": "https://clawhub.ai/skills/tomtom"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tomtom",
+    "url": "https://clawhub.ai/skills/tomtom",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tomtom-a75c0838e8467bc0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tomtom@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-tomtom-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:71d50153a68b480c087a9111383a55bfc48608ebd33985c807e5044ecd52809e",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:54:16.969Z"
+}

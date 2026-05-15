@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32220,
+  "uuid": "skill-clawhub-action-guard",
+  "skillKey": "clawhub-action-guard",
+  "name": "Action Guard",
+  "summary": "Prevents duplicate external actions (posts, replies, sends, transfers, deploys). Check before acting, record after. Use when: (1) replying to social media po...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.action_guard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wrentheai",
+      "features": [
+        "Prevents duplicate external actions (posts, replies, sends, transfers, deploys)",
+        "Check before acting, record after",
+        "Use when: (1) replying to social media po..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/action-guard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257617545?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "action-guard",
+      "url": "https://clawhub.ai/skills/action-guard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "action-guard",
+    "url": "https://clawhub.ai/skills/action-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/action-guard-05e6ea194e86c9ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/action-guard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-action-guard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2957d1b9bebbfe764c035ff608d027642cab789e39d41b03e884b88ab9c6956c",
+      "artifactSizeBytes": 1945
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T06:16:22.644Z"
+}

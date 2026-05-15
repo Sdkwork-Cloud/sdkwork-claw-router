@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/robot-id-card@0.4.0",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.robot_id_card",
+  "skill": {
+    "id": 59377,
+    "skillKey": "clawhub-robot-id-card",
+    "name": "Robot Id Card"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "robot-id-card",
+    "url": "https://clawhub.ai/skills/robot-id-card",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/robot-id-card-ef127178ec01e560.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bot 身份认证标准 — 为 AI Agent 和机器人签发加密身份证书，让网站信任你的 bot。 遵循 RFC 9421 HTTP Message Signatures 国际标准，与 Cloudflare Web Bot Auth 生态兼容。 内置 Ed25519 签名注册中心、JWKS 公钥目录、nonce..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cosmofang",
+      "userId": "s171tf9j3dvx7de9j9b2wg5mzs83g5b4",
+      "displayName": "Cosmos Fang",
+      "image": "https://avatars.githubusercontent.com/u/255512740?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.4.0",
+      "createdAt": 1776438169770,
+      "changelog": "v0.4.0: RFC 9421 HTTP Message Signatures alignment — standard Signature/Signature-Input/Signature-Agent headers, JWKS well-known endpoint, nonce replay protection, ric sign command, backward compat with X-RIC-* (deprecated)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e19f7b290c5fd87d293b71e0f28b63ca59d15eae38cc78ece2e24e8e8414c240"
+}

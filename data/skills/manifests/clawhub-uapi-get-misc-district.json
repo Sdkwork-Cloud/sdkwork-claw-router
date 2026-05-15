@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58952,
+  "uuid": "skill-clawhub-uapi-get-misc-district",
+  "skillKey": "clawhub-uapi-get-misc-district",
+  "name": "UAPI Adcode 国内外行政区域查询 接口",
+  "summary": "使用 UAPI 的“Adcode 国内外行政区域查询”单接口 skill，处理 Adcode 国内外行政区域查询、行政区查询 等请求。 Use when the user wants get misc district, misc district, district, district lookup, or w...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uapi_get_misc_district",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "速冻饺子",
+      "features": [
+        "使用 UAPI 的“Adcode 国内外行政区域查询”单接口 skill，处理 Adcode 国内外行政区域查询、行政区查询 等请求。 Use when the user wants get."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uapi-get-misc-district@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/149454909?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uapi-get-misc-district",
+      "url": "https://clawhub.ai/skills/uapi-get-misc-district"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uapi-get-misc-district",
+    "url": "https://clawhub.ai/skills/uapi-get-misc-district",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uapi-get-misc-district-a2f7e94761d93d68.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uapi-get-misc-district@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-uapi-get-misc-district-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fdb1b86abbf1b8cad73d13db51720b844e19d69158bbcadd56494c9df9dcf7e7",
+      "artifactSizeBytes": 2036
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T19:31:39.809Z"
+}

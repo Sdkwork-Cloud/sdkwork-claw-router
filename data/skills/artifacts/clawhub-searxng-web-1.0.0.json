@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/searxng-web@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.searxng_web",
+  "skill": {
+    "id": 16494,
+    "skillKey": "clawhub-searxng-web",
+    "name": "Searxng Web"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "searxng-web",
+    "url": "https://clawhub.ai/skills/searxng-web",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/searxng-web-27af6f138f491590.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Proxies search queries to a local searxng instance and returns json-formatted search results with titles, URLs, snippets, and sources."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zomgirprogrammer",
+      "userId": "publishers:zomgirprogrammer",
+      "displayName": "ZomgIrProgrammer",
+      "image": "https://avatars.githubusercontent.com/u/15881379?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 880,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771265989305,
+      "changelog": "searxng-web v1.0.0\n\n- Initial release.\n- Provides a minimal tool for proxying search queries to a local searxng instance.\n- Introduces the command: searxng_search(query, count=5).\n- Returns normalized JSON results including title, url, snippet, and source.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ff833ccfffc628a4526f111ba4f0db4741dcd3f3239f353b45482175debf1d0e"
+}

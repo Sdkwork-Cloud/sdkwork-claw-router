@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cookiy@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cookiy",
+  "skill": {
+    "id": 22956,
+    "skillKey": "clawhub-cookiy",
+    "name": "Cookiy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cookiy",
+    "url": "https://clawhub.ai/skills/cookiy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cookiy-7ed47208cb578c43.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered user research through natural language. Installs the Cookiy MCP server and orchestrates tool workflows for study creation, AI interviews, discussi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yupeng-dev",
+      "userId": "s17dgvfxtpwqqj0pxq8fxs51vh83hry3",
+      "displayName": "yupeng-dev",
+      "image": "https://avatars.githubusercontent.com/u/253433872?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 445,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1774675553967,
+      "changelog": "Quantitative survey workflow docs now guide create/list -> detail -> patch -> report, and public wording now says Cookiy is recruiting without exposing downstream supplier or questionnaire engine names.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8e6e5fca728b7243a8ec1fef5dd88ddf9ca2e4522bd5dd1091088eadac11dff1"
+}

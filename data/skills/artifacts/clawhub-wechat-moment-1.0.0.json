@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-moment@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_moment",
+  "skill": {
+    "id": 71254,
+    "skillKey": "clawhub-wechat-moment",
+    "name": "微信操作手册"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-moment",
+    "url": "https://clawhub.ai/skills/wechat-moment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-moment-3aa310b2c20d6b97.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "微信朋友圈操作技能。用于打开朋友圈、浏览动态、滚动查看内容等。使用场景：(1) 打开朋友圈，(2) 滚动浏览朋友圈内容，(3) 查看好友动态，(4) 给朋友圈点赞评论"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "islandlxl",
+      "userId": "publishers:islandlxl",
+      "displayName": "islandlxl",
+      "image": "https://avatars.githubusercontent.com/u/43034650?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774171803460,
+      "changelog": "wechat-moments v1.0.0 released.\n\n- Initial release with skills to automate WeChat Moments:\n  - Open WeChat Moments, scroll through posts, and interact with friend updates.\n  - Click-to-activate and coordinate-based navigation for consistent operation.\n  - Includes sample PowerShell scripts for key actions: activation, opening Moments, scrolling, searching contacts, sending messages, and making voice calls.\n  - Added tips for coordinate adaptation and troubleshooting common issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:33e3ad19cebfd68cb04ba5b75e8462808b36bd20cfa8efe57adc9915fa7107e2"
+}

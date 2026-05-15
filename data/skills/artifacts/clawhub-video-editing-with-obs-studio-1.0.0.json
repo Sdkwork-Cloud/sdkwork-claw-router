@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editing-with-obs-studio@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editing_with_obs_studio",
+  "skill": {
+    "id": 42902,
+    "skillKey": "clawhub-video-editing-with-obs-studio",
+    "name": "Video Editing With Obs Studio"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editing-with-obs-studio",
+    "url": "https://clawhub.ai/skills/video-editing-with-obs-studio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editing-with-obs-studio-8d7aef0be16510c6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 10-minute OBS screen recording into 1080p edited video clips just by typing what you need. Whether it's trimming and polishing OBS screen recordings f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776780177298,
+      "changelog": "Initial release — quickly turn OBS recordings into edited 1080p clips via text prompts.\n\n- Upload raw OBS screen recordings and describe your edits for instant AI processing.\n- No timeline editing or manual export settings; just type what you want and download the result.\n- Automatic token setup, session management, and cloud GPU rendering (1-2 minutes per job).\n- Supports edit requests like trimming, transitions, aspect ratio, overlays, and more.\n- Handles errors such as token expiry, credits, and unsupported file types with clear guidance.\n- Accepts common video/audio/image formats; tip provided for faster processing (remux to MP4).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c1059b43e0ca672dc9f02e173be3deaadc4441b355d609b7e2eb95ba8cca1c67"
+}

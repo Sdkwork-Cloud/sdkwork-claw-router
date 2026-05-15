@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-bug-hunter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_bug_hunter",
+  "skill": {
+    "id": 27982,
+    "skillKey": "clawhub-agent-bug-hunter",
+    "name": "Agent Bug Hunter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-bug-hunter",
+    "url": "https://clawhub.ai/skills/agent-bug-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-bug-hunter-1e23cf08e0a37098.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Imported specialist agent skill for bug hunter. Use when requests match this domain or role."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nntrivi2001",
+      "userId": "s179r5ge1jnhf1sr1kvb6ky3fx83mcs1",
+      "displayName": "Nguyễn Ngọc Trí Vĩ",
+      "image": "https://avatars.githubusercontent.com/u/74729720?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 326,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773803418019,
+      "changelog": "- Initial release of the agent-bug-hunter skill.\n- Provides a proactive bug hunting agent based on root cause analysis and verified fixes.\n- Designed for early bug detection, in-depth analysis, and rigorous validation before declaring issues resolved.\n- Integrates with systematic-debugging and other specialist agents for comprehensive bug resolution workflows.\n- Includes a severity classification matrix, core competencies, and a robust checklist before claiming any fix is complete.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e10dc6bb716d2ec641130246d135cc3e9bf20fe7eda686d96edb54dd1128e1f4"
+}

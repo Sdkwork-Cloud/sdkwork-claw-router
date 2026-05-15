@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/giggle-generation-aimv@0.0.10",
+  "version": "0.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.giggle_generation_aimv",
+  "skill": {
+    "id": 50985,
+    "skillKey": "clawhub-giggle-generation-aimv",
+    "name": "Giggle Generation Aimv"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "giggle-generation-aimv",
+    "url": "https://clawhub.ai/skills/giggle-generation-aimv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/giggle-generation-aimv-307500df05ada55d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user wants to create AI music videos (MV)—including generating music from text prompts or using custom lyrics. Triggers: generate MV, music vide..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "patches429",
+      "userId": "publishers:patches429",
+      "displayName": "Parker",
+      "image": "https://avatars.githubusercontent.com/u/169116739?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 362,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.10",
+      "createdAt": 1773628473215,
+      "changelog": "**v0.0.10 Summary: English support, simplified setup, and environment requirements clarified.**\n\n- SKILL.md rewritten in English with improved clarity and concise usage notes\n- Explicit environment and pip dependencies listed (`python3 (>=3.6)`, `requests`, `GIGGLE_API_KEY`)\n- Separated configuration instructions: now always require system environment variable for API key\n- Error handling guidance updated: on error, do not retry automatically, prompt user intervention\n- Added SKILL.zh-CN.md for Simplified Chinese documentation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cc22f82a998cb2baee1d5604d897e357432efa503b15d3794cd334b43c91bed2"
+}

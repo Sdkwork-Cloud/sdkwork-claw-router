@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-soul-ledger@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_soul_ledger",
+  "skill": {
+    "id": 53375,
+    "skillKey": "clawhub-openclaw-soul-ledger",
+    "name": "Openclaw Soul Ledger"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-soul-ledger",
+    "url": "https://clawhub.ai/skills/openclaw-soul-ledger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-soul-ledger-f8a783b88f3bf0eb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Gives any AI agent persistent memory of who the user is — not just facts, but patterns, preferences, personality traits, and behavioral evolution over time...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "albionaiinc-del",
+      "userId": "s17a02897swm2wgc0ge6g3j8ss83mx5y",
+      "displayName": "albionaiinc-del",
+      "image": "https://avatars.githubusercontent.com/u/269741383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775611690813,
+      "changelog": "Initial release of Soul Ledger — persistent, evolving user memory for AI agents.\n\n- Provides a workspace-based `soul_ledger.json` to record user's patterns, traits, drives, communication style, and behavioral evolution.\n- Agent silently loads and adapts to this model at conversation start; updates after meaningful interactions.\n- Maintains a distilled model, not a log — traits, drives, communication signals, and growth tracked over time.\n- Includes a clear schema, lifecycle, and practical guidance for merging history into a living persona.\n- Prioritizes collaboration and adaptability; specifically not for profiling, surveillance, or advertising.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:20dc21e539cc8bfead15cfdbc44a03f9fe0966c30725c6f3f162edfc910f55c8"
+}

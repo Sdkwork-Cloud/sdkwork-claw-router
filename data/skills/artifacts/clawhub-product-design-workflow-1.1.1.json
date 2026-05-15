@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/product-design-workflow@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.product_design_workflow",
+  "skill": {
+    "id": 63491,
+    "skillKey": "clawhub-product-design-workflow",
+    "name": "Product Design Workflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "product-design-workflow",
+    "url": "https://clawhub.ai/skills/product-design-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/product-design-workflow-460eef344a995726.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "完整的产品设计全流程（含每日定时任务+汇报机制）： 1. 每日定时生成3个产品idea（按市场行情/A股/基金主题，1个小白向+2个普通向） 2. 生成PRD产品设计文档 3. 制作HTML原型页面 4. 上传到服务器 5. 分步骤汇报到指定群 【需要用户提供的参数】： - 服务器配置：server-host,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hoovaycn",
+      "userId": "s17c94ncxf7zg6p8t4ey9v6jc1868m3y",
+      "displayName": "hoovaycn",
+      "image": "https://avatars.githubusercontent.com/u/213030021?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 96,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1778143410975,
+      "changelog": "修复隐私泄露问题：对服务器IP、用户名、汇报群ID等示例值进行了脱敏处理。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:24db1a597a8770a352f5de9654bc6a8fad93ed5201aeac8f9a49bc995ec2c8a0"
+}

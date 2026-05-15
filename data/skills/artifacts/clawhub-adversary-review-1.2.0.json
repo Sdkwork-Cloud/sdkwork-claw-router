@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adversary-review@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adversary_review",
+  "skill": {
+    "id": 25732,
+    "skillKey": "clawhub-adversary-review",
+    "name": "Adversary Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adversary-review",
+    "url": "https://clawhub.ai/skills/adversary-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adversary-review-9814dc1ca320ef54.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Mandatory adversarial review of all agent outputs. After drafting any response, a second AI instance (sub-agent) reviews and challenges the draft before deli..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "keaneyan",
+      "userId": "s175yzrrq3eprcjhzkvybty9th83gy12",
+      "displayName": "KeaneYan",
+      "image": "https://avatars.githubusercontent.com/u/18630645?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1775136694778,
+      "changelog": "Fix security scan: removed false 'local' claims, honest data flow disclosure, added local model option for privacy-conscious users",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b7e746e40d008fa996df0157c5d631ccc83a8b8b0e6668d561950bcbd89f5009"
+}

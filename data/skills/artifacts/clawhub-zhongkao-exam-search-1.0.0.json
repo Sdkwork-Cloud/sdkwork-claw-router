@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zhongkao-exam-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhongkao_exam_search",
+  "skill": {
+    "id": 73724,
+    "skillKey": "clawhub-zhongkao-exam-search",
+    "name": "中考真题检索"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhongkao-exam-search",
+    "url": "https://clawhub.ai/skills/zhongkao-exam-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhongkao-exam-search-2ccb881be32501e2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "搜索并下载全国各地中考真题试卷。触发词：中考真题、中考试卷、中考英语、中考数学、中考语文、中考物理、中考化学、真题下载、历年中考、中考备考、中考复习、湖南中考、长沙中考、北京中考、上海中考、各省中考真题下载"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abill6688",
+      "userId": "s17agnr2zmrtvxzk2rja8qzehs85pg3m",
+      "displayName": "ABill6688",
+      "image": "https://avatars.githubusercontent.com/u/275390810?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 109,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777344135656,
+      "changelog": "Initial release: search, download and verify Zhongkao exam papers from multiple free sources across China",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:90a8d1aceb83bdfcc5c129941de74c85bcfd153b016562db9ab075bb18464097"
+}

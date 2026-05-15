@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aicc-security-guard@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aicc_security_guard",
+  "skill": {
+    "id": 38612,
+    "skillKey": "clawhub-aicc-security-guard",
+    "name": "Aicc Security Guard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aicc-security-guard",
+    "url": "https://clawhub.ai/skills/aicc-security-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aicc-security-guard-cc5b48c403d00023.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Ensure the AICC native plugin is active before handling confidential data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "senmud",
+      "userId": "s17enhj8v245vd7esvkefw6fms83hxfz",
+      "displayName": "senmud",
+      "image": "https://avatars.githubusercontent.com/u/83488945?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775350789300,
+      "changelog": "aicc-security-guard 0.1.0\n\n- Initial release.\n- Ensures the openclaw-aicc-plugin-native is installed and enabled before any confidential data handling.\n- Rejects confidential data processing if the required plugin is missing or status cannot be confirmed.\n- Provides clear user instructions for installing or enabling the required plugin.\n- Includes recommended verification steps and standardized prompt for missing plugin situations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7c069e6b64410dcb059e2b7ff658ae32372a746cb56aaf496cb21699f48f85b8"
+}

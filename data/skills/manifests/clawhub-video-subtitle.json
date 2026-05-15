@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39171,
+  "uuid": "skill-clawhub-video-subtitle",
+  "skillKey": "clawhub-video-subtitle",
+  "name": "Video Subtitle",
+  "summary": "Get captioned video files ready to post, without touching a single slider. Upload your video files (MP4, MOV, AVI, WebM, up to 500MB), say something like \"ad...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_subtitle",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "whitejohnk-26",
+      "features": [
+        "Get captioned video files ready to post, without touching a single slider",
+        "Upload your video files (MP4, MOV, AVI, WebM, up to 500MB), say something like \"ad..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-subtitle@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210889495?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-subtitle",
+      "url": "https://clawhub.ai/skills/video-subtitle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-subtitle",
+    "url": "https://clawhub.ai/skills/video-subtitle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-subtitle-062e10290188aecd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-subtitle@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-subtitle-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:88ef2ae08e6281af433a14a485791d15c4159e49fa9ab0e2f46fead6438987da",
+      "artifactSizeBytes": 2426
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T16:13:56.940Z"
+}

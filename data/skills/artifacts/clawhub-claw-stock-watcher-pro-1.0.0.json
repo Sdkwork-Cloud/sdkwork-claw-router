@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-stock-watcher-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_stock_watcher_pro",
+  "skill": {
+    "id": 33129,
+    "skillKey": "clawhub-claw-stock-watcher-pro",
+    "name": "Claw Stock Watcher Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-stock-watcher-pro",
+    "url": "https://clawhub.ai/skills/claw-stock-watcher-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-stock-watcher-pro-00ad624f2cecd545.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage and monitor a personal stock watchlist with support for adding, removing, listing stocks, and summarizing their recent performance using data from 10j..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "williamwang-wh",
+      "userId": "s172rhar6d3wa14s0z6j1e0pbs83wt9z",
+      "displayName": "Williamwang-wh",
+      "image": "https://avatars.githubusercontent.com/u/75006654?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 222,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774861024345,
+      "changelog": "Initial release of Stock Watcher Skill:\n\n- Manage your personal stock watchlist: add, remove, list, or clear stocks by code.\n- View a concise performance summary for all watchlist stocks, including key indicators and quick links.\n- Real-time data sourced from 同花顺 (10jqka.com.cn); supports沪深A股 and 科创板 stocks.\n- Stores watchlist in a user directory for easy management.\n- Includes install/uninstall scripts and robust error/network handling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a068da254c15c67dfd86b9fdce67f0c96ce2a215414e700d4a38ecb39993cf85"
+}

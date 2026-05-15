@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18322,
+  "uuid": "skill-clawhub-go-music-skill",
+  "skillKey": "clawhub-go-music-skill",
+  "name": "Music Skill",
+  "summary": "Search songs, download playable audio, fetch lyrics, parse music share links, configure platform cookies, and switch music sources through a local go-music-a...",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.go_music_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "scavin",
+      "features": [
+        "Search songs, download playable audio, fetch lyrics, parse music share links, configure platfor."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/go-music-skill@0.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/716584?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "go-music-skill",
+      "url": "https://clawhub.ai/skills/go-music-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "go-music-skill",
+    "url": "https://clawhub.ai/skills/go-music-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/go-music-skill-4c4ac52c536e1484.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/go-music-skill@0.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-go-music-skill-0.0.2.json",
+      "version": "0.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6b5209f9b42caa9bc02bf9a1c2975f8e92d826f8b24351a2733bdc40bb09263c",
+      "artifactSizeBytes": 2223
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T02:32:10.734Z"
+}

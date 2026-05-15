@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stegstr@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stegstr",
+  "skill": {
+    "id": 13162,
+    "skillKey": "clawhub-stegstr",
+    "name": "Stegstr"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stegstr",
+    "url": "https://clawhub.ai/skills/stegstr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stegstr-2717ce7dfaec909e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Decode and embed Stegstr payloads in PNG images. Use when the user needs to extract hidden Nostr data from a Stegstr image, encode a payload into a cover PNG, or work with steganographic social networking (Nostr-in-images). Supports CLI (s."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brunkstr",
+      "userId": "publishers:brunkstr",
+      "displayName": "brunkstr",
+      "image": "https://avatars.githubusercontent.com/u/132263425?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1448,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770444070894,
+      "changelog": "Schema link fix, install script",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:270db424164492598e88278c1af45a2746a38816f73e9326c676d3a8d385f122"
+}

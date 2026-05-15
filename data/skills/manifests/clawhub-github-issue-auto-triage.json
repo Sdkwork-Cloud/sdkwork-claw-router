@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59412,
+  "uuid": "skill-clawhub-github-issue-auto-triage",
+  "skillKey": "clawhub-github-issue-auto-triage",
+  "name": "GitHub Issue Auto Triage",
+  "summary": "自动分类 GitHub Issue，AI 打标签、分配负责人、检测重复、回复 FAQ",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_issue_auto_triage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SxLiuYu",
+      "features": [
+        "自动分类 GitHub Issue，AI 打标签、分配负责人、检测重复、回复 FAQ"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-issue-auto-triage@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95198625?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-issue-auto-triage",
+      "url": "https://clawhub.ai/skills/github-issue-auto-triage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-issue-auto-triage",
+    "url": "https://clawhub.ai/skills/github-issue-auto-triage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-issue-auto-triage-7cccf8f9cd2aadbe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-issue-auto-triage@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-issue-auto-triage-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a1ae629a7f708248f9480ff07e520b39e703f823746cf948f9e768e808268c1c",
+      "artifactSizeBytes": 1854
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T09:55:27.591Z"
+}

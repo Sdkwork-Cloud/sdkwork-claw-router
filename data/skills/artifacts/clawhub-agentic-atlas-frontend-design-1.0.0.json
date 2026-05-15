@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentic-atlas-frontend-design@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentic_atlas_frontend_design",
+  "skill": {
+    "id": 38535,
+    "skillKey": "clawhub-agentic-atlas-frontend-design",
+    "name": "Frontend Design"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentic-atlas-frontend-design",
+    "url": "https://clawhub.ai/skills/agentic-atlas-frontend-design",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentic-atlas-frontend-design-e4c797e41f3571d2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates production-ready UI components from natural language. Use when the user asks to design a component, create a button, build a form, prototype a layo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "asimons81",
+      "userId": "s17cyvwqx8jp9cdsp14hbw4wgs83gw6d",
+      "displayName": "Tony Simons",
+      "image": "https://avatars.githubusercontent.com/u/214744153?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775944862691,
+      "changelog": "Initial release of frontend-design skill:\n\n- Generates production-ready UI components from natural language prompts.\n- Outputs React + Tailwind CSS code by default, including TypeScript types.\n- Integrates accessibility best practices: ARIA, keyboard navigation, semantic HTML.\n- Supports responsive design, dark mode, and component variants.\n- Provides complete code examples with usage and accessibility guidance.\n- Designed for frontend/UI tasks only (not backend, API, or database).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6b65ef5a1d8ae043a68cbfdd2dde1d4ed8f02cad8c3aee99e3d3721314659a62"
+}

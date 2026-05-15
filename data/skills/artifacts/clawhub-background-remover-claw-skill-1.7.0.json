@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/background-remover-claw-skill@1.7.0",
+  "version": "1.7.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.background_remover_claw_skill",
+  "skill": {
+    "id": 20548,
+    "skillKey": "clawhub-background-remover-claw-skill",
+    "name": "Background Remover Claw Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "background-remover-claw-skill",
+    "url": "https://clawhub.ai/skills/background-remover-claw-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/background-remover-claw-skill-857fd3de0dc8486b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate ai background remover images with AI via the Neta AI image generation API (free trial at neta.art/open)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "barbaraledbettergq",
+      "userId": "s17cdh3qbqwjv3b81j7va5t8hx83gnds",
+      "displayName": "BarbaraLedbettergq",
+      "image": "https://avatars.githubusercontent.com/u/260827804?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 540,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.7.0",
+      "createdAt": 1774573191803,
+      "changelog": "**Now requires a Neta API token and updates description for clarity.**\n\n- Requires users to provide a Neta API token for operation (free trial details included).\n- Updated description to reference the Neta AI image generation API directly.\n- Added documentation on how to set and use the `NETA_TOKEN` environment variable.\n- Clarified usage instructions and example commands.\n- Removed the `--style` option from documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dd308238f95cc137e8aacd9e1d512c93db96916dd626712e0e1474e7ef4f2fab"
+}

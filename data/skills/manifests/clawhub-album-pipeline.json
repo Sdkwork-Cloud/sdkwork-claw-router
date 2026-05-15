@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68143,
+  "uuid": "skill-clawhub-album-pipeline",
+  "skillKey": "clawhub-album-pipeline",
+  "name": "Album Pipeline",
+  "summary": "提供从专辑概念设计到最终发布的完整AI音乐专辑制作流水线，包含6个阶段和多专家子任务协调。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.album_pipeline",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Raylan LIN",
+      "features": [
+        "提供从专辑概念设计到最终发布的完整AI音乐专辑制作流水线，包含6个阶段和多专家子任务协调。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/album-pipeline@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/251113698?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "album-pipeline",
+      "url": "https://clawhub.ai/skills/album-pipeline"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "album-pipeline",
+    "url": "https://clawhub.ai/skills/album-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/album-pipeline-88b8a0fe8244a8bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/album-pipeline@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-album-pipeline-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c64f923b817680b8213083e2f3af0fdf3080916a3ceb4bbed8486e91b368f50e",
+      "artifactSizeBytes": 2003
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T06:08:49.173Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64296,
+  "uuid": "skill-clawhub-performance-monitoring",
+  "skillKey": "clawhub-performance-monitoring",
+  "name": "Performance Monitoring",
+  "summary": "监控Agent调度、执行及内存性能指标，自动记录日志，分析趋势，识别瓶颈并提供优化建议。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.performance_monitoring",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "daxiangnaoyang",
+      "features": [
+        "监控Agent调度、执行及内存性能指标，自动记录日志，分析趋势，识别瓶颈并提供优化建议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/performance-monitoring@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/223295173?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "performance-monitoring",
+      "url": "https://clawhub.ai/skills/performance-monitoring"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "performance-monitoring",
+    "url": "https://clawhub.ai/skills/performance-monitoring",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/performance-monitoring-dc6310bbb138b2ab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/performance-monitoring@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-performance-monitoring-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ae94858c0c8498d82bb4804ceffe681f4756de5e2ed5148df03c1a40fc9076b1",
+      "artifactSizeBytes": 2463
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T03:20:08.773Z"
+}

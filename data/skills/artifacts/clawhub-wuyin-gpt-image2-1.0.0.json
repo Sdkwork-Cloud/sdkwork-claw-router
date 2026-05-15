@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wuyin-gpt-image2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wuyin_gpt_image2",
+  "skill": {
+    "id": 56627,
+    "skillKey": "clawhub-wuyin-gpt-image2",
+    "name": "WuyinKeji GPT-Image-2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wuyin-gpt-image2",
+    "url": "https://clawhub.ai/skills/wuyin-gpt-image2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wuyin-gpt-image2-43afb235caa981f9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images using the WuyinKeji GPT-Image-2 API (速创科技). Supports text-to-image, reference images, multiple aspect ratios, and async result polling. Use w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alex-shen1121",
+      "userId": "s17e8rt3ehqr1jwgx55v915cb983gp22",
+      "displayName": "AlexShen",
+      "image": "https://avatars.githubusercontent.com/u/73343630?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776854791547,
+      "changelog": "Initial release: GPT-Image-2 async image generation workflow with reference image support",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2feca15b4a500caae85bbfc396e6c3329a3dc8295dbf454fac69b48c9b8367a7"
+}

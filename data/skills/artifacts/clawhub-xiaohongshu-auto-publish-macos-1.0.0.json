@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaohongshu-auto-publish-macos@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_auto_publish_macos",
+  "skill": {
+    "id": 69922,
+    "skillKey": "clawhub-xiaohongshu-auto-publish-macos",
+    "name": "小红书自动发布(macOS)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-auto-publish-macos",
+    "url": "https://clawhub.ai/skills/xiaohongshu-auto-publish-macos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-auto-publish-macos-c06674d4418f5f14.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小红书自动发布技能 - 支持图片搜索下载、自动上传发布一键完成"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "richardx0319",
+      "userId": "publishers:richardx0319",
+      "displayName": "richardx0319",
+      "image": "https://avatars.githubusercontent.com/u/143338009?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 433,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773497224911,
+      "changelog": "适用于macOS的小红书自动发布技能",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:99e67199caec5c8a524af1baaa701db68c3336b231d9c899f30128a12a1b0dc3"
+}

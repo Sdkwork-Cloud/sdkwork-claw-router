@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46985,
+  "uuid": "skill-clawhub-api-versioning",
+  "skillKey": "clawhub-api-versioning",
+  "name": "api-versioning",
+  "summary": "API versioning strategies — URL path, header, query param, content negotiation — with breaking change classification, deprecation timelines, migration patterns, and multi-version support. Use when evolving APIs, planning breaking changes,.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_versioning",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wpank",
+      "features": [
+        "API versioning strategies — URL path, header, query param, content negotiation — with breaking.",
+        "Use when evolving APIs, planning breaking changes, or managing version lifecycles."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/api-versioning@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9498646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "api-versioning",
+      "url": "https://clawhub.ai/skills/api-versioning"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-versioning",
+    "url": "https://clawhub.ai/skills/api-versioning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-versioning-c42fbddd40dc4389.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/api-versioning@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-api-versioning-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8b61af4c75e204988d379bbfad5f516e1f359c7bc1f34db0a067847f8c10fd74",
+      "artifactSizeBytes": 2488
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T12:06:20.443Z"
+}

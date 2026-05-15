@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65076,
+  "uuid": "skill-clawhub-feishu-bgm",
+  "skillKey": "clawhub-feishu-bgm",
+  "name": "Feishu BGM",
+  "summary": "飞书场景化背景音乐生成器。通过 MiniMax Music API 生成纯音乐 BGM，以音频消息发送到飞书群。 触发词：\"来点BGM\"、\"开会背景音\"、\"加班音乐\"、\"头脑风暴BGM\"、\"会议音乐\"、\"工作BGM\"、 \"放点音乐\"、\"背景音乐\"、\"需要BGM\"。当用户在飞书群中描述场景并希望获得背景音乐时激活。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_bgm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rong",
+      "features": [
+        "飞书场景化背景音乐生成器。通过 MiniMax Music API 生成纯音乐 BGM，以音频消息发送到飞书群。 触发词：\"来点BGM\"、\"开会背景音\"、\"加班音乐\"、\"头脑风暴BGM\"、\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-bgm@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/220700654?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-bgm",
+      "url": "https://clawhub.ai/skills/feishu-bgm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-bgm",
+    "url": "https://clawhub.ai/skills/feishu-bgm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-bgm-032bfff26c9c809c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-bgm@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-bgm-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7bfb0f105cef1537c6c4b078a8863dc40da17a3c34ed47fcfeb73af99f5cea5a",
+      "artifactSizeBytes": 2136
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T04:14:22.759Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37643,
+  "uuid": "skill-clawhub-proliant",
+  "skillKey": "clawhub-proliant",
+  "name": "Proliant",
+  "summary": "Proliant integration. Manage data, records, and automate workflows. Use when the user wants to interact with Proliant data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proliant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Proliant integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Proliant data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/proliant@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "proliant",
+      "url": "https://clawhub.ai/skills/proliant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proliant",
+    "url": "https://clawhub.ai/skills/proliant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proliant-40b39457b402aa67.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/proliant@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-proliant-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7b62690472d93640d3a0dd6de62d5f5165426849dead7ce8c8933b812ee24f3b",
+      "artifactSizeBytes": 1838
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:53:22.967Z"
+}

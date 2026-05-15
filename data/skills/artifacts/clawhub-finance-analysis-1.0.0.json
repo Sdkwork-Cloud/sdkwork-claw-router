@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/finance-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finance_analysis",
+  "skill": {
+    "id": 60677,
+    "skillKey": "clawhub-finance-analysis",
+    "name": "Finance Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finance-analysis",
+    "url": "https://clawhub.ai/skills/finance-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finance-analysis-e922f16534d7b32a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "财务分析 CLI 技能 - 财报分析、股票估值、风险评估"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alsoforever",
+      "userId": "s17f0evzccwehgwj730qqdx2r983kc17",
+      "displayName": "alsoforever",
+      "image": "https://avatars.githubusercontent.com/u/265420698?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1805,
+      "installsAllTime": 7,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774703835161,
+      "changelog": "finance-analysis 1.0.0 初始版本发布\n\n- 提供财报分析功能（规模、成长、盈利指标分析）\n- 支持股票估值（DCF 及相对估值方法）\n- 实现风险评估（偿债、盈利、成长能力评分）\n- 支持命令行操作，易于投资与财务决策分析\n- 提供详细使用示例和依赖安装指南",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:36851a6882d21cbbe2bc51c35b88acf94c74ec835ccd6a733c698c54c251d4ea"
+}

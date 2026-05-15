@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56909,
+  "uuid": "skill-clawhub-leadgen-b2b",
+  "skillKey": "clawhub-leadgen-b2b",
+  "name": "LeadGenerator",
+  "summary": "Wyszukuj i generuj listy firm B2B w Polsce według branży, lokalizacji i filtrów, eksportując dane kontaktowe w formatach CSV, JSON, TXT.",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.leadgen_b2b",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tomasz-Pedzierski-Infinity",
+      "features": [
+        "Wyszukuj i generuj listy firm B2B w Polsce według branży, lokalizacji i filtrów, eksportując da."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/leadgen-b2b@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267662562?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "leadgen-b2b",
+      "url": "https://clawhub.ai/skills/leadgen-b2b"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "leadgen-b2b",
+    "url": "https://clawhub.ai/skills/leadgen-b2b",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/leadgen-b2b-a0fe402a10a66a4d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/leadgen-b2b@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-leadgen-b2b-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e3e5b49feeec7bd17ddf29a58693ce09a3c3ab4652a8defc3bc50448358e135",
+      "artifactSizeBytes": 2083
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T22:12:15.399Z"
+}

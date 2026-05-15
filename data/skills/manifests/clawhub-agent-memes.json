@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24985,
+  "uuid": "skill-clawhub-agent-memes",
+  "skillKey": "clawhub-agent-memes",
+  "name": "Agent Memes",
+  "summary": "Send meme reaction images in chat. One command to pick & send. Multi-platform (Discord, Feishu, Telegram, etc). Use when the conversation calls for a visual...",
+  "version": "2.11.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_memes",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kagura-agent",
+      "features": [
+        "Send meme reaction images in chat",
+        "One command to pick & send",
+        "Multi-platform (Discord, Feishu, Telegram, etc)",
+        "Use when the conversation calls for a visual..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-memes@2.11.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268167063?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-memes",
+      "url": "https://clawhub.ai/skills/agent-memes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-memes",
+    "url": "https://clawhub.ai/skills/agent-memes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-memes-c1d039594d5aaadc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-memes@2.11.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-memes-2.11.0.json",
+      "version": "2.11.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bdba86cf2e2efc79d7716e0866713a2320a1ed932b12a5ce6eced6e76115b699",
+      "artifactSizeBytes": 2081
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T01:31:26.454Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/best-video-editing-app@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.best_video_editing_app",
+  "skill": {
+    "id": 48793,
+    "skillKey": "clawhub-best-video-editing-app",
+    "name": "Best Video Editing App"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "best-video-editing-app",
+    "url": "https://clawhub.ai/skills/best-video-editing-app",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/best-video-editing-app-c1459642109ad0f7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute unedited phone recording into 1080p polished edited clips just by typing what you need. Whether it's quickly editing raw footage into shareab..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 92,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778107742776,
+      "changelog": "- Initial release of Best Video Editing App skill.\n- Instantly edit and export 1080p polished videos from raw clips with simple text prompts.\n- No manual timeline editing; just upload files and describe your desired result.\n- Connects to the NemoVideo cloud backend using a secure session and token.\n- Supports popular video, image, and audio formats up to 500MB.\n- Handles editing, tracking credits, previewing timeline, and fast server-side exporting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5aea7f4735a205ea7cb2bd46990bdd3e5ea17b9160a1ad3fa522c31462908813"
+}

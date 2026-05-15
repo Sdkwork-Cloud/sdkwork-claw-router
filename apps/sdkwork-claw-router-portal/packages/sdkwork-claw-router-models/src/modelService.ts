@@ -23,27 +23,26 @@ export interface ModelCatalogServiceFilters {
 
 export class ModelService {
   static async fetchModels(filters: ModelCatalogServiceFilters = {}): Promise<Model[]> {
-    const result = await getClawRouterAppSdkClient().router.fetchModels(
-      normalizeQueryString(filters.billingMeter),
-      undefined,
-      joinQueryValues(filters.vendorCodes),
-      joinQueryValues(filters.modalities),
-      joinQueryValues(filters.capabilities),
-      joinQueryValues(filters.categories),
-      joinQueryValues(filters.groups),
-      normalizeQueryString(filters.searchQuery),
-      filters.limit,
-    );
+    const result = await getClawRouterAppSdkClient().ai.models.list({
+      billingMeter: normalizeQueryString(filters.billingMeter),
+      vendorCodes: normalizeQueryValues(filters.vendorCodes),
+      modalities: normalizeQueryValues(filters.modalities),
+      capabilities: normalizeQueryValues(filters.capabilities),
+      categories: normalizeQueryValues(filters.categories),
+      groups: normalizeQueryValues(filters.groups),
+      q: normalizeQueryString(filters.searchQuery),
+      limit: filters.limit,
+    });
     ensurePlusApiSuccess(result, 'Failed to fetch models');
     return resolveRuntimeModelCatalog(readRequiredApiItems(result, 'Failed to fetch models'));
   }
 }
 
-function joinQueryValues(values: readonly string[] | undefined): string | undefined {
+function normalizeQueryValues(values: readonly string[] | undefined): string[] | undefined {
   const normalized = values
     ?.map((value) => value.trim())
     .filter(Boolean);
-  return normalized && normalized.length > 0 ? normalized.join(',') : undefined;
+  return normalized && normalized.length > 0 ? [...normalized] : undefined;
 }
 
 function normalizeQueryString(value: string | undefined): string | undefined {

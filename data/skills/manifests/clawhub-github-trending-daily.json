@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61466,
+  "uuid": "skill-clawhub-github-trending-daily",
+  "skillKey": "clawhub-github-trending-daily",
+  "name": "Github Trending Daily",
+  "summary": "定时获取并推送每日、每周或每月 GitHub Trending 热门项目至钉钉群，支持测试和只获取模式。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_trending_daily",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "johnson",
+      "features": [
+        "定时获取并推送每日、每周或每月 GitHub Trending 热门项目至钉钉群，支持测试和只获取模式。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-trending-daily@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2647732?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-trending-daily",
+      "url": "https://clawhub.ai/skills/github-trending-daily"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-trending-daily",
+    "url": "https://clawhub.ai/skills/github-trending-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-trending-daily-bd3dc97399079b25.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-trending-daily@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-trending-daily-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ff0143ac79be4ac2e2374f265de9622e8190eb928a61e75adf7c9217ba54d1b2",
+      "artifactSizeBytes": 2293
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T07:03:11.125Z"
+}

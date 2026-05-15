@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57500,
+  "uuid": "skill-clawhub-personal-shopper",
+  "skillKey": "clawhub-personal-shopper",
+  "name": "جاك العلم",
+  "summary": "Personal Shopper — multi-agent product/service research and recommendation for Saudi Arabia. USE WHEN: - User asks to find, compare, recommend, or buy a prod...",
+  "version": "2.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_shopper",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Abdullah AlRashoudi",
+      "features": [
+        "Personal Shopper — multi-agent product/service research and recommendation for Saudi Arabia",
+        "USE WHEN:",
+        "User asks to find, compare, recommend, or buy a prod..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/personal-shopper@2.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/92252803?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "personal-shopper",
+      "url": "https://clawhub.ai/skills/personal-shopper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-shopper",
+    "url": "https://clawhub.ai/skills/personal-shopper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-shopper-f64c36a86ebdb612.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/personal-shopper@2.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-personal-shopper-2.0.3.json",
+      "version": "2.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1359af11fa0183d3275c6206453393d4d1a7a8c88ef220cce8a34494f1f603e3",
+      "artifactSizeBytes": 2183
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T21:37:47.506Z"
+}

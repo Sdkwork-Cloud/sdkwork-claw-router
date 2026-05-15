@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-backup-skill@0.2.2",
+  "version": "0.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_backup_skill",
+  "skill": {
+    "id": 36275,
+    "skillKey": "clawhub-openclaw-backup-skill",
+    "name": "Openclaw Backup Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-backup-skill",
+    "url": "https://clawhub.ai/skills/openclaw-backup-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-backup-skill-7e1613bd58b4cc90.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run and schedule local OpenClaw backup operations with a bundled Bash script. Use when the user wants to create, prune, or automate local OpenClaw backups, i..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "synbraino",
+      "userId": "s17esjp4rrg19cgqphxq9h8jm983vz2j",
+      "displayName": "Synbrain",
+      "image": "https://avatars.githubusercontent.com/u/268387202?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 207,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.2.2",
+      "createdAt": 1774821124869,
+      "changelog": "Initial public release of the OpenClaw Backup Skill with auto/manual modes, deterministic prune, rolling recent retention, and recovery-oriented backup metadata.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f7b3bd7394be4d23da898967c36936a3bb4dbdb48996edb6c09dcfd5cda8c158"
+}

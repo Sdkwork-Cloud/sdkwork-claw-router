@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tommy-monitoring-dashboard@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tommy_monitoring_dashboard",
+  "skill": {
+    "id": 22161,
+    "skillKey": "clawhub-tommy-monitoring-dashboard",
+    "name": "Live Monitoring Dashboard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tommy-monitoring-dashboard",
+    "url": "https://clawhub.ai/skills/tommy-monitoring-dashboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tommy-monitoring-dashboard-ddf8c11781df99d2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Zero-token real-time Discord monitoring dashboard for OpenClaw. Displays system health, cron jobs, sessions, and performance analytics via persistent Discord..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "keylimesoda",
+      "userId": "s17f7pbrm7y4kfe2hvyj54nmj983fjv7",
+      "displayName": "Ric Lewis",
+      "image": "https://avatars.githubusercontent.com/u/7773610?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 483,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1772707943833,
+      "changelog": "Zero-token Discord monitoring with direct API, 4-slice architecture, performance analytics",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8116c73d9d61e3bd790708a812a757122346fb87ea021b3a4e685088cf9a8b1a"
+}

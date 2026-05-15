@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/opennews-mcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opennews_mcp",
+  "skill": {
+    "id": 8401,
+    "skillKey": "clawhub-opennews-mcp",
+    "name": "opennews"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opennews-mcp",
+    "url": "https://clawhub.ai/skills/opennews-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opennews-mcp-a120e1f74eedae7b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Crypto news search, AI ratings, trading signals, and real-time updates via the OpenNews 6551 API. Supports keyword search, coin filtering, source filtering,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "infra403",
+      "userId": "publishers:infra403",
+      "displayName": "infra403",
+      "image": "https://avatars.githubusercontent.com/u/117965724?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 16272,
+      "installsAllTime": 24,
+      "installsCurrent": 24,
+      "stars": 29,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772091927485,
+      "changelog": "- Initial release of the OpenNews crypto news skill.\n- Search and filter crypto news via the 6551 API, with support for keywords, coins, engine/source, and AI-based rating.\n- Provides access to real-time updates via WebSocket feeds.\n- Includes AI ratings, trading signals, and summary fields on articles.\n- Requires an API token via the OPENNEWS_TOKEN environment variable.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:98d662ffb0048c6f74d85e50a9352d746107f5e3a80e156b07bc7ac57c8140f0"
+}

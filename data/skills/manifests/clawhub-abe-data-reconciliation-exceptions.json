@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41878,
+  "uuid": "skill-clawhub-abe-data-reconciliation-exceptions",
+  "skillKey": "clawhub-abe-data-reconciliation-exceptions",
+  "name": "data-reconciliation-exceptions",
+  "summary": "Reconciles data sources using stable identifiers (Pay Number, driving licence, driver card, and driver qualification card numbers), producing exception repor...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abe_data_reconciliation_exceptions",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AlvisDunlop",
+      "features": [
+        "Reconciles data sources using stable identifiers (Pay Number, driving licence, driver card, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/abe-data-reconciliation-exceptions@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255881479?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "abe-data-reconciliation-exceptions",
+      "url": "https://clawhub.ai/skills/abe-data-reconciliation-exceptions"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abe-data-reconciliation-exceptions",
+    "url": "https://clawhub.ai/skills/abe-data-reconciliation-exceptions",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abe-data-reconciliation-exceptions-6c7f27912c781acf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/abe-data-reconciliation-exceptions@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-abe-data-reconciliation-exceptions-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a4e696abccd8e9db8d5909ef57948dfd5076106abd5b91dace98beba30a4ec9b",
+      "artifactSizeBytes": 2604
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T04:17:42.290Z"
+}

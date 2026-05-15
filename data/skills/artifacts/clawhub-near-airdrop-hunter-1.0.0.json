@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/near-airdrop-hunter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.near_airdrop_hunter",
+  "skill": {
+    "id": 15391,
+    "skillKey": "clawhub-near-airdrop-hunter",
+    "name": "Near Airdrop Hunter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "near-airdrop-hunter",
+    "url": "https://clawhub.ai/skills/near-airdrop-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/near-airdrop-hunter-6a63cc9f2d47d508.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover NEAR airdrops, check eligibility, claim rewards, and track claimed airdrops across multiple platforms."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shaiss",
+      "userId": "publishers:shaiss",
+      "displayName": "shaiss",
+      "image": "https://avatars.githubusercontent.com/u/113060?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1035,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770554487653,
+      "changelog": "Initial release of NEAR Airdrop Hunter.\n\n- Discover active NEAR airdrops across multiple platforms.\n- Check user eligibility for specific airdrops.\n- Claim eligible airdrops seamlessly.\n- Track claimed airdrops and view full airdrop status per account.\n- Support for filtering and scanning on different platforms.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fabb4e915c526c81243e759eba6b09dee7214d25367601aa6307f0fd2d520b0a"
+}

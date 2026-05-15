@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22250,
+  "uuid": "skill-clawhub-x-single-tweet-article-skill",
+  "skillKey": "clawhub-x-single-tweet-article-skill",
+  "name": "X Single Tweet + Article",
+  "summary": "Fetch a single X tweet or X Article with charge-first billing (0.001 USDT/call).",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_single_tweet_article_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huangkefeng-ai",
+      "features": [
+        "Fetch a single X tweet or X Article with charge-first billing (0.001 USDT/call)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-single-tweet-article-skill@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/113394381?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-single-tweet-article-skill",
+      "url": "https://clawhub.ai/skills/x-single-tweet-article-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-single-tweet-article-skill",
+    "url": "https://clawhub.ai/skills/x-single-tweet-article-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-single-tweet-article-skill-6386b8348862ecee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-single-tweet-article-skill@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-single-tweet-article-skill-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:94664f4e77ce9772e60ccf393520343d91c115e0106fd0c9541fcf773dbe8b9e",
+      "artifactSizeBytes": 2033
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T16:55:43.005Z"
+}

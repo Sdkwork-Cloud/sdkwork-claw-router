@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-enterprise@2.0.3",
+  "version": "2.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_enterprise",
+  "skill": {
+    "id": 62984,
+    "skillKey": "clawhub-openclaw-enterprise",
+    "name": "OpenClaw Enterprise"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-enterprise",
+    "url": "https://clawhub.ai/skills/openclaw-enterprise",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-enterprise-2d00292f5bb3e3e3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "企业级AI Agent编排平台 - 让多个AI智能体协同完成复杂业务。Use when 需要多Agent协作、企业工作流自动化、Agent编排调度。专为中大型企业、电商平台、运营团队转型设计。Trigger on AI员工、多Agent、企业自动化、工作流编排。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangm-a3",
+      "userId": "s178tfk08y1fqgtvraxrr20g4h84g03e",
+      "displayName": "WangM-A3",
+      "image": "https://avatars.githubusercontent.com/u/274818589?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 508,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 20
+    },
+    "latestVersion": {
+      "version": "2.0.3",
+      "createdAt": 1778291099841,
+      "changelog": "openclaw-enterprise 2.0.3\n\n- 新增英文技能文档（SKILL_EN.md）\n- 完善README.md和技能说明，提升快速上手指引和实际用例细节\n- SKILL.md全面结构优化，突出核心功能、20个专业Agent清单、安全声明与常见场景\n- 版本号更新至2.0.3，metadata与package.json等配置同步\n- 优化多处说明文本，增强用户友好性",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:648af8bd921f8a34327c5fadb15af94daec09ab45722c2ba4fe3831d44b3b657"
+}

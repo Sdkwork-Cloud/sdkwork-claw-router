@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14855,
+  "uuid": "skill-clawhub-subagent-development",
+  "skillKey": "clawhub-subagent-development",
+  "name": "Subagent Development",
+  "summary": "Use when executing implementation plans with independent tasks in the current session",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subagent_development",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wpank",
+      "features": [
+        "Use when executing implementation plans with independent tasks in the current session"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/subagent-development@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9498646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "subagent-development",
+      "url": "https://clawhub.ai/skills/subagent-development"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subagent-development",
+    "url": "https://clawhub.ai/skills/subagent-development",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subagent-development-53bd1e85da7d4cfb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/subagent-development@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-subagent-development-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:15e0bbd2c8c7a0cd2dd38a484166c343f7019300c4cad365e500658ffb157795",
+      "artifactSizeBytes": 2348
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T13:15:01.620Z"
+}

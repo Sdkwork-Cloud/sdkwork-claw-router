@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68656,
+  "uuid": "skill-clawhub-cron-creator-feishu",
+  "skillKey": "clawhub-cron-creator-feishu",
+  "name": "Cron Creator 定时任务创建器",
+  "summary": "【针对飞书优化】定时任务创建指引，专门针对飞书、尤其是多 Agent 场景进行优化，解决定时任务不稳定问题。",
+  "version": "1.0.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cron_creator_feishu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jhc888007",
+      "features": [
+        "【针对飞书优化】定时任务创建指引，专门针对飞书、尤其是多 Agent 场景进行优化，解决定时任务不稳定问题。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cron-creator-feishu@1.0.13",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4169185?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cron-creator-feishu",
+      "url": "https://clawhub.ai/skills/cron-creator-feishu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cron-creator-feishu",
+    "url": "https://clawhub.ai/skills/cron-creator-feishu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cron-creator-feishu-2c900f989202f870.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cron-creator-feishu@1.0.13",
+      "artifactUrl": "data/skills/artifacts/clawhub-cron-creator-feishu-1.0.13.json",
+      "version": "1.0.13",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e39b8a8b8dbf3454428a1e3b34c34e91702601b211a8ea9fabb0aaa64feaaec9",
+      "artifactSizeBytes": 2050
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T11:17:11.399Z"
+}

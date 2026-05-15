@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rainman-exchange-rate@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rainman_exchange_rate",
+  "skill": {
+    "id": 59604,
+    "skillKey": "clawhub-rainman-exchange-rate",
+    "name": "exchange-rate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rainman-exchange-rate",
+    "url": "https://clawhub.ai/skills/rainman-exchange-rate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rainman-exchange-rate-d0571f3460ef6e9e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "汇率换算 — 查询实时汇率、历史汇率、汇率趋势。数据源为欧洲央行 (ECB)。 触发词: 汇率, 换算, exchange rate, convert currency, 多少钱, 美元, 欧元, 日元, 英镑, USD, EUR, JPY, GBP, 或任何 \"[金额] [货币A] 转/换/to [货币B]\"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deusyu",
+      "userId": "s179bbz2mxt1jgta0f5jsdqnjs85qrsd",
+      "displayName": "Rainman",
+      "image": "https://avatars.githubusercontent.com/u/42929363?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 345,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773326914528,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:536018bb2e9f4bb0b00be560789e1ff36d2cbda46e66aad6b08b4d7af117cd1e"
+}

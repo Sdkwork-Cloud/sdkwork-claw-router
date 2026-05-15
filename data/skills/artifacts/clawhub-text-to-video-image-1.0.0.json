@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/text-to-video-image@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_video_image",
+  "skill": {
+    "id": 45792,
+    "skillKey": "clawhub-text-to-video-image",
+    "name": "Text To Video Image"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-video-image",
+    "url": "https://clawhub.ai/skills/text-to-video-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-video-image-5eee47285b749a97.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a written description of a sunset over a mountain lake into 1080p AI-generated video just by typing what you need. Whether it's generating short video c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776356460989,
+      "changelog": "Text to Video Image 1.0.0 — initial release!\n\n- Generate 1080p AI video clips from written text prompts in 30–90 seconds.\n- No manual editing needed: just type your idea to get a rendered video.\n- Automatic first-time cloud backend setup with token generation.\n- Supports export to multiple formats (mp4, mov, avi, webm, gif, etc.).\n- Rapid workflows: upload, generate, preview, and export, all in the same session.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4e90a13ae3ecd4f8b821c1ffa7558cb5c60a8b144787ca9220c88710f45b087d"
+}

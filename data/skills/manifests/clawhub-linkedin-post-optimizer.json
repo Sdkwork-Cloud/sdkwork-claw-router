@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47285,
+  "uuid": "skill-clawhub-linkedin-post-optimizer",
+  "skillKey": "clawhub-linkedin-post-optimizer",
+  "name": "LinkedIn Post Optimizer",
+  "summary": "Takes an existing LinkedIn draft and returns a fully optimized version with a change log explaining every decision. Use when a user pastes a LinkedIn post an...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkedin_post_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zepoldani",
+      "features": [
+        "Takes an existing LinkedIn draft and returns a fully optimized version with a change log explai.",
+        "Use when a user pastes a LinkedIn post an..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linkedin-post-optimizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36488767?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linkedin-post-optimizer",
+      "url": "https://clawhub.ai/skills/linkedin-post-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkedin-post-optimizer",
+    "url": "https://clawhub.ai/skills/linkedin-post-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkedin-post-optimizer-a83583d9cb60e11b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linkedin-post-optimizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-linkedin-post-optimizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:87e78c9ebe4cc88cc33bc27f70f1402c4ec9fceb631404c8cf0da9c817342660",
+      "artifactSizeBytes": 1950
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T16:21:26.455Z"
+}

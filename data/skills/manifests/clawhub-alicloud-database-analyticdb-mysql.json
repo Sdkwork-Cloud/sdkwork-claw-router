@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13797,
+  "uuid": "skill-clawhub-alicloud-database-analyticdb-mysql",
+  "skillKey": "clawhub-alicloud-database-analyticdb-mysql",
+  "name": "Alicloud Database Analyticdb Mysql",
+  "summary": "Manage Alibaba Cloud AnalyticDB for MySQL (ADB) via OpenAPI/SDK. Use whenever the user needs AnalyticDB resource lifecycle and configuration operations, stat...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alicloud_database_analyticdb_mysql",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cinience",
+      "features": [
+        "Manage Alibaba Cloud AnalyticDB for MySQL (ADB) via OpenAPI/SDK",
+        "Use whenever the user needs AnalyticDB resource lifecycle and configuration operations, stat..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alicloud-database-analyticdb-mysql@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/557426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alicloud-database-analyticdb-mysql",
+      "url": "https://clawhub.ai/skills/alicloud-database-analyticdb-mysql"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alicloud-database-analyticdb-mysql",
+    "url": "https://clawhub.ai/skills/alicloud-database-analyticdb-mysql",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alicloud-database-analyticdb-mysql-4ae19357c7511612.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alicloud-database-analyticdb-mysql@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-alicloud-database-analyticdb-mysql-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ec208dca00954a68f78af78762fc2661a089af52735a9d2a02f2be55ede7cc93",
+      "artifactSizeBytes": 2057
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T09:39:13.754Z"
+}

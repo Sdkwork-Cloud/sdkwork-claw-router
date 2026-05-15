@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72226,
+  "uuid": "skill-clawhub-bie-zheng-luan-prototype",
+  "skillKey": "clawhub-bie-zheng-luan-prototype",
+  "name": "别整乱七八糟的原型",
+  "summary": "将产品原型转换为详细技术规范的技能。深度解析HTML原型，提取完整的菜单结构、筛选条件、表格列、操作按钮等信息。支持URL原型、本地HTML文件、图片原型、XMind文件四种输入类型。输出包含前端组件描述、后端接口设计、数据库表设计的完整技术文档。增强版包含智能路由推断、业务API接口推断、完整数据库表结构设计、...",
+  "version": "2.3.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bie_zheng_luan_prototype",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jermyn-zmj",
+      "features": [
+        "将产品原型转换为详细技术规范的技能。深度解析HTML原型，提取完整的菜单结构、筛选条件、表格列、操作按钮等信息。支持URL原型、本地HTML文件、图片原型、XMind文件四种输入类型。输出包."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bie-zheng-luan-prototype@2.3.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/178545461?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bie-zheng-luan-prototype",
+      "url": "https://clawhub.ai/skills/bie-zheng-luan-prototype"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bie-zheng-luan-prototype",
+    "url": "https://clawhub.ai/skills/bie-zheng-luan-prototype",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bie-zheng-luan-prototype-bfe2a75a0aa0ea28.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bie-zheng-luan-prototype@2.3.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-bie-zheng-luan-prototype-2.3.2.json",
+      "version": "2.3.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:950e299c8721a17d89ba403ac4dc89db75990ad3b7e36b77fbdb52b69cb25ba6",
+      "artifactSizeBytes": 2448
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T06:49:13.511Z"
+}

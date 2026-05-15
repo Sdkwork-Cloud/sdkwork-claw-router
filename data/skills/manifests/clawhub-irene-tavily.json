@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64726,
+  "uuid": "skill-clawhub-irene-tavily",
+  "skillKey": "clawhub-irene-tavily",
+  "name": "Irene Tavily Search",
+  "summary": "使用Tavily API进行智能网络搜索。无需信用卡，每月1000次免费查询。支持AI增强的搜索结果和深度研究模式。Use when: 需要高质量搜索结果、学术研究、或不想绑定信用卡的场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.irene_tavily",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chyher",
+      "features": [
+        "使用Tavily API进行智能网络搜索。无需信用卡，每月1000次免费查询。支持AI增强的搜索结果和深度研究模式。Use when: 需要高质量搜索结果、学术研究、或不想绑定信用卡的场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/irene-tavily@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48779725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "irene-tavily",
+      "url": "https://clawhub.ai/skills/irene-tavily"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "irene-tavily",
+    "url": "https://clawhub.ai/skills/irene-tavily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/irene-tavily-f6f0777b26baa82a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/irene-tavily@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-irene-tavily-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c0b384bedcb4d167e6ff334043f3714e992f9ed343560d6a7c3920fdbc36c9b0",
+      "artifactSizeBytes": 2000
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T06:51:29.642Z"
+}

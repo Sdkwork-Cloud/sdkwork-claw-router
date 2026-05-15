@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31191,
+  "uuid": "skill-clawhub-propertyguru-sg-sale-browser-crawl",
+  "skillKey": "clawhub-propertyguru-sg-sale-browser-crawl",
+  "name": "PropertyGuru SG Sale Browser Crawl",
+  "summary": "extract around 50 Singapore for-sale listings from a PropertyGuru search results URL using a real browser session after Cloudflare verification. use when the...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.propertyguru_sg_sale_browser_crawl",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "snailb1007",
+      "features": [
+        "extract around 50 Singapore for-sale listings from a PropertyGuru search results URL using a re.",
+        "use when the..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/propertyguru-sg-sale-browser-crawl@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/69341804?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "propertyguru-sg-sale-browser-crawl",
+      "url": "https://clawhub.ai/skills/propertyguru-sg-sale-browser-crawl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "propertyguru-sg-sale-browser-crawl",
+    "url": "https://clawhub.ai/skills/propertyguru-sg-sale-browser-crawl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/propertyguru-sg-sale-browser-crawl-2b84433b38440724.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/propertyguru-sg-sale-browser-crawl@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-propertyguru-sg-sale-browser-crawl-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:33668ae18f78e3363b317dd3a02b9c5d1a33cdc07090b5669f0b809ffb1cc0b7",
+      "artifactSizeBytes": 2077
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T15:12:22.316Z"
+}

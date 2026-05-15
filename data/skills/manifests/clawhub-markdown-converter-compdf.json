@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8601,
+  "uuid": "skill-clawhub-markdown-converter-compdf",
+  "skillKey": "clawhub-markdown-converter-compdf",
+  "name": "Markdown convert",
+  "summary": "Process, convert, edit, and extract data from PDF files using the ComPDF Cloud API. Supports format conversion (Word, Excel, Image), page manipulation (merge...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.markdown_converter_compdf",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ComPDF",
+      "features": [
+        "Process, convert, edit, and extract data from PDF files using the ComPDF Cloud API",
+        "Supports format conversion (Word, Excel, Image), page manipulation (merge..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/markdown-converter-compdf@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/108785628?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "markdown-converter-compdf",
+      "url": "https://clawhub.ai/skills/markdown-converter-compdf"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "markdown-converter-compdf",
+    "url": "https://clawhub.ai/skills/markdown-converter-compdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/markdown-converter-compdf-e75e63709be91a38.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/markdown-converter-compdf@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-markdown-converter-compdf-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:36efc95400f0310b0d82361506c657b56edd077fca1da808a2a80d4cf52898ef",
+      "artifactSizeBytes": 2476
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T10:50:01.589Z"
+}

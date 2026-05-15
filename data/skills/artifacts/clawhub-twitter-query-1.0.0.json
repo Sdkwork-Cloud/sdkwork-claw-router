@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/twitter-query@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twitter_query",
+  "skill": {
+    "id": 28516,
+    "skillKey": "clawhub-twitter-query",
+    "name": "Twitter Query"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twitter-query",
+    "url": "https://clawhub.ai/skills/twitter-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twitter-query-f55696921b67a79c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query X/Twitter via twitterapi.io read-only APIs by account (user timeline) or by keyword (advanced search). Outputs structured JSON; no LLM, no trend scorin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alexander10011",
+      "userId": "s175jqp8a4cz486fak5mecq16x83p6tb",
+      "displayName": "alexander10011",
+      "image": "https://avatars.githubusercontent.com/u/194767108?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 324,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774840089702,
+      "changelog": "Initial release: X/Twitter read-only queries by user timeline (last_tweets) and keyword (advanced_search) via twitterapi.io. Requires TWITTER_API_KEY. No bundled LLM.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:af0427674a38b46ddb7f15d016bf8820c67e51d0bbce68b06851989e73d3cae1"
+}

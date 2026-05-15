@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57012,
+  "uuid": "skill-clawhub-news-orf",
+  "skillKey": "clawhub-news-orf",
+  "name": "ORF news",
+  "summary": "ORF.at RSS: news/sport (RDF) + science (RSS2). Überblick: 3× news (orf.at) + 1× sport + 1× science — science.orf.at niemals unter Nachrichten; drei ###-Sekti...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_orf",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Maxim Edogawa",
+      "features": [
+        "ORF.at RSS: news/sport (RDF) + science (RSS2)",
+        "Überblick: 3× news (orf.at) + 1× sport + 1× science — science.orf.at niemals unter Nachrichten",
+        "drei ###-Sekti..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/news-orf@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/118206726?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "news-orf",
+      "url": "https://clawhub.ai/skills/news-orf"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-orf",
+    "url": "https://clawhub.ai/skills/news-orf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-orf-a015721a48a326d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/news-orf@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-news-orf-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c8c8feb49522d40246072221defd1b631c8527944211d733d33d550e382af04d",
+      "artifactSizeBytes": 2456
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T18:40:24.707Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18301,
+  "uuid": "skill-clawhub-nova-act-usability",
+  "skillKey": "clawhub-nova-act-usability",
+  "name": "Website Usability Test Nova Act",
+  "summary": "AI-orchestrated usability testing using Amazon Nova Act. The agent generates personas, runs tests to collect raw data, interprets responses to determine goal...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nova_act_usability",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zouchaoqun",
+      "features": [
+        "AI-orchestrated usability testing using Amazon Nova Act",
+        "The agent generates personas, runs tests to collect raw data, interprets responses to determine."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nova-act-usability@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14595?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nova-act-usability",
+      "url": "https://clawhub.ai/skills/nova-act-usability"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nova-act-usability",
+    "url": "https://clawhub.ai/skills/nova-act-usability",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nova-act-usability-2dd49983fbd3b97b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nova-act-usability@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-nova-act-usability-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:22bbe4e29479300572a8934200158faf58beef08ae314972011f10d11e18dffe",
+      "artifactSizeBytes": 1963
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T07:49:39.980Z"
+}

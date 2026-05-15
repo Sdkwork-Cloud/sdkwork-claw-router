@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26821,
+  "uuid": "skill-clawhub-yula-web-search",
+  "skillKey": "clawhub-yula-web-search",
+  "name": "yula-web-search",
+  "summary": "Yula's custom web search - NO API KEY required. Uses multiple fallback search methods with public services that allow anonymous access. Works by direct curl...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yula_web_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yula",
+      "features": [
+        "Yula's custom web search",
+        "NO API KEY required",
+        "Uses multiple fallback search methods with public services that allow anonymous access",
+        "Works by direct curl..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yula-web-search@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8390602?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yula-web-search",
+      "url": "https://clawhub.ai/skills/yula-web-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yula-web-search",
+    "url": "https://clawhub.ai/skills/yula-web-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yula-web-search-39159a95b508e0d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yula-web-search@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-yula-web-search-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ec716773d4e01c0bd0f4ad988026802c4b51216402ce28e04a1eed7a0df7466",
+      "artifactSizeBytes": 1911
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T09:23:18.259Z"
+}

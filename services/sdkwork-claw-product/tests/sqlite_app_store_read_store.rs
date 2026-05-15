@@ -4,21 +4,39 @@ use sqlx::sqlite::SqlitePoolOptions;
 use sqlx::SqlitePool;
 
 #[tokio::test]
-async fn sqlite_app_store_requires_trusted_subject() {
+async fn sqlite_app_store_reads_public_catalog_without_trusted_subject() {
     let pool = sqlite_pool().await;
     create_app_store_tables(&pool).await;
+    seed_app_store(&pool).await;
+    insert_app(
+        &pool,
+        20_001_001,
+        20_001,
+        0,
+        0,
+        "Public Seed App",
+        "Product-level public catalog app",
+        "1.0.0",
+        "https://cdn.example.test/apps/public-seed.png",
+        r#"{"standard":{"appKey":"public-seed-app"},"portal":{"developer":"SDKWork","marketStatus":"PUBLISHED"}}"#,
+        1,
+        "APP_HTML",
+        "{}",
+        "https://cdn.example.test/apps/public-seed.zip",
+        "https://public-seed.example.test",
+        "2026-06-05 09:30:00",
+    )
+    .await;
 
     let store = SqliteAppStoreReadStore::new(pool);
-    let error = store
+    let items = store
         .load_apps(AppStoreQuery::default(), None)
         .await
-        .unwrap_err();
+        .unwrap();
 
     assert!(
-        error
-            .to_string()
-            .contains("trusted request subject is required"),
-        "real app store read model must fail closed without a trusted subject"
+        items.iter().any(|item| item.id == "public-seed-app"),
+        "anonymous users must be able to browse the product-level public App Store catalog"
     );
 }
 
@@ -292,6 +310,50 @@ async fn sqlite_app_store_falls_back_to_tenant_public_apps_for_authenticated_org
 }
 
 #[tokio::test]
+async fn sqlite_app_store_includes_product_public_apps_for_authenticated_subjects() {
+    let pool = sqlite_pool().await;
+    create_app_store_tables(&pool).await;
+    seed_app_store(&pool).await;
+    insert_app(
+        &pool,
+        20_001_002,
+        20_001,
+        0,
+        0,
+        "SDKWork Router App",
+        "Product-level App Center entry",
+        "1.0.0",
+        "https://cdn.example.test/apps/sdkwork-router.png",
+        r#"{"standard":{"appKey":"sdkwork-router-app"},"portal":{"developer":"SDKWork","marketStatus":"PUBLISHED"}}"#,
+        1,
+        "APP_HTML",
+        "{}",
+        "https://cdn.example.test/apps/sdkwork-router.zip",
+        "https://sdkwork-router.example.test",
+        "2026-06-05 10:30:00",
+    )
+    .await;
+
+    let store = SqliteAppStoreReadStore::new(pool);
+    let items = store
+        .load_apps(
+            AppStoreQuery {
+                keyword: Some("sdkwork router".to_owned()),
+                ..AppStoreQuery::default()
+            },
+            Some(owner_subject()),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(
+        vec!["sdkwork-router-app".to_owned()],
+        items.into_iter().map(|item| item.id).collect::<Vec<_>>(),
+        "logged-in users must still see product-level App Center seed data"
+    );
+}
+
+#[tokio::test]
 async fn sqlite_app_store_only_exposes_published_market_apps() {
     let pool = sqlite_pool().await;
     create_app_store_tables(&pool).await;
@@ -379,7 +441,9 @@ async fn sqlite_app_store_applies_status_and_updated_time_window_filters() {
             .await
             .unwrap_err();
         assert!(
-            error.to_string().contains("status must be ACTIVE or INACTIVE"),
+            error
+                .to_string()
+                .contains("status must be ACTIVE or INACTIVE"),
             "store-level app status filter must reject non-standard runtime status `{unsupported_status}`"
         );
     }

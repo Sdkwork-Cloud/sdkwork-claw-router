@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/self-improving-1-2-10@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_improving_1_2_10",
+  "skill": {
+    "id": 10190,
+    "skillKey": "clawhub-self-improving-1-2-10",
+    "name": "Self Improving 1.2.10"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-improving-1-2-10",
+    "url": "https://clawhub.ai/skills/self-improving-1-2-10",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-improving-1-2-10-09367150cb3c3454.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Self-reflection + Self-criticism + Self-learning + Self-organizing memory. Agent evaluates its own work, catches mistakes, and improves permanently. Use befo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yiyi-9",
+      "userId": "publishers:yiyi-9",
+      "displayName": "yiyi-9",
+      "image": "https://avatars.githubusercontent.com/u/220494133?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2397,
+      "installsAllTime": 51,
+      "installsCurrent": 45,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772981407831,
+      "changelog": "- Sharper setup: now lists relevant memory before starting non-trivial work, emphasizing proactive self-reflection.\n- Title updated to highlight proactive self-reflection as a core feature.\n- Improved documentation of triggers for self-reflection and logging corrections.\n- Clear description of memory architecture and promotion/demotion rules.\n- Enhanced transparency: sources cited for memory actions and digest/export features described.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9671e90e0118ca569ff49cea017ef5f6e0b0cec144ae5e560269340d813d3fbf"
+}

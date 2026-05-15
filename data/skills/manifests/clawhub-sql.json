@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9555,
+  "uuid": "skill-clawhub-sql",
+  "skillKey": "clawhub-sql",
+  "name": "SQL",
+  "summary": "Master relational databases with SQL. Schema design, queries, performance, migrations for PostgreSQL, MySQL, SQLite, SQL Server.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sql",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Master relational databases with SQL",
+        "Schema design, queries, performance, migrations for PostgreSQL, MySQL, SQLite, SQL Server."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sql@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sql",
+      "url": "https://clawhub.ai/skills/sql"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sql",
+    "url": "https://clawhub.ai/skills/sql",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sql-4ec7c53222c8a758.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sql@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sql-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5f5f757236100efa9819aeeec3956073d073b752d2207af028dcad72f33fd86d",
+      "artifactSizeBytes": 1901
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T11:20:27.721Z"
+}

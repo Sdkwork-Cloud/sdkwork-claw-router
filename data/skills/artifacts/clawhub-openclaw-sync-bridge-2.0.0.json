@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-sync-bridge@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_sync_bridge",
+  "skill": {
+    "id": 37437,
+    "skillKey": "clawhub-openclaw-sync-bridge",
+    "name": "OpenClaw Sync Bridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-sync-bridge",
+    "url": "https://clawhub.ai/skills/openclaw-sync-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-sync-bridge-5355edcb3ea3da3c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically sync local and cloud OpenClaw configurations via private GitHub Gist with token-based setup and full overwrite synchronization."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jayshna",
+      "userId": "s175mtcka5xacf87fm785jq7cx83hkmr",
+      "displayName": "JayShna",
+      "image": "https://avatars.githubusercontent.com/u/25737838?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 197,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1774255545059,
+      "changelog": "OpenClaw Sync Bridge 2.0.0 — Major Update\n\n- Added intelligent workspace detection with auto-scan, env variable, and interactive selection.\n- Introduced confirmation/preview steps before push and pull operations.\n- Implemented automatic backup with version history (last 10 backups).\n- Added diff command to preview changes before syncing.\n- Enhanced GitHub Token validation with expiry prompts and improved safety.\n- Updated documentation and install process for a smoother setup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3cda39886dc0e61b52ba00b202dec1d8d32899fb872837d0dec3f92e7d6ae7ce"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37274,
+  "uuid": "skill-clawhub-primitives-dsl",
+  "skillKey": "clawhub-primitives-dsl",
+  "name": "Universal Game Primitives",
+  "summary": "Universal game architecture DSL with six primitives (LOOP, TILEGRID, CONTROLBLOCK, POOL, EVENT, DISPATCHER). Use when: (1) designing portable game/sim loops, (2) translating between architectures (68K ↔ Cell ↔ CUDA ↔ ECS), (3) explaining e.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.primitives_dsl",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "stusatwork-oss",
+      "features": [
+        "Universal game architecture DSL with six primitives (LOOP, TILEGRID, CONTROLBLOCK, POOL, EVENT,.",
+        "Use when: (1) designing portable game/sim loops, (2) translating between architectures (68K ↔ C.",
+        "Invocation produces: Primitive Map, Dataflow Sketch, Worked Example, Portability Notes."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/primitives-dsl@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/239813197?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "primitives-dsl",
+      "url": "https://clawhub.ai/skills/primitives-dsl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "primitives-dsl",
+    "url": "https://clawhub.ai/skills/primitives-dsl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/primitives-dsl-81f8da2c339c63c6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/primitives-dsl@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-primitives-dsl-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1fa824c1aebf32ff067bc920b62a87b5db2aba7252a3d048456dde61e7f4d134",
+      "artifactSizeBytes": 2541
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T16:27:49.375Z"
+}

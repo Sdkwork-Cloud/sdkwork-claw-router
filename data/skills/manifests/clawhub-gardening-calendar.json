@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24118,
+  "uuid": "skill-clawhub-gardening-calendar",
+  "skillKey": "clawhub-gardening-calendar",
+  "name": "Gardening Calendar",
+  "summary": "Provides accurate monthly sowing and harvesting guidance for 160+ plants, tailored to UK and selected international climates.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gardening_calendar",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "siatrial",
+      "features": [
+        "Provides accurate monthly sowing and harvesting guidance for 160+ plants, tailored to UK and se."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gardening-calendar@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29793076?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gardening-calendar",
+      "url": "https://clawhub.ai/skills/gardening-calendar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gardening-calendar",
+    "url": "https://clawhub.ai/skills/gardening-calendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gardening-calendar-7d8cb417e5d19a25.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gardening-calendar@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gardening-calendar-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:abe6e7dd68e8f09317ae9b7eb2402753e856fad3d9b744807ee0f730ea3c4762",
+      "artifactSizeBytes": 2124
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T13:58:30.725Z"
+}

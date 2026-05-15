@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/health-data-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.health_data_analyzer",
+  "skill": {
+    "id": 68280,
+    "skillKey": "clawhub-health-data-analyzer",
+    "name": "Health Data Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "health-data-analyzer",
+    "url": "https://clawhub.ai/skills/health-data-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/health-data-analyzer-daa927589bc53bb6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "健康数据分析专家，通过 mcporter 访问 healthdata MCP 服务器进行睡眠、运动、恢复等健康数据的查询和分析。当用户询问健康数据、睡眠质量、运动表现、身体恢复状态、心率变异性、血氧水平等健康相关问题时使用此技能。支持多维度健康数据分析、趋势分析、个性化健康建议。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tianchuanjun64-afk",
+      "userId": "s173jgy9ed7rps5x7ep1kky4k983s0nh",
+      "displayName": "tianchuanjun64-afk",
+      "image": "https://avatars.githubusercontent.com/u/255294215?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 435,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773035978709,
+      "changelog": "- Initial release of health-data-analyzer, a professional tool for multi-dimensional health data analysis via the MCP server.\n- Supports sleep, exercise, and recovery data queries and analysis, including personalized health trends and recommendations.\n- Provides clear workflow and command-line steps for data access (list tables, get schema, query data).\n- Offers detailed table overview, analysis workflows, data quality checks, and output formats.\n- Includes troubleshooting guidance for common issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:11d74c49e9f72ffe40e3ddb54152f67ddd33e853232ed573398b3d33f59916bc"
+}

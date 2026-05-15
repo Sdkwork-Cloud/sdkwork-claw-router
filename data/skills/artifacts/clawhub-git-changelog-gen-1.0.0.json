@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/git-changelog-gen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_changelog_gen",
+  "skill": {
+    "id": 13475,
+    "skillKey": "clawhub-git-changelog-gen",
+    "name": "Git Changelog Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-changelog-gen",
+    "url": "https://clawhub.ai/skills/git-changelog-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-changelog-gen-629c89177b3ae452.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate changelogs from git commits. Supports markdown, plain text, and JSON output with date ranges and tag-based filtering."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rogue-agent1",
+      "userId": "s1712mz6nx5trtnxw701pn7ajd83ph8x",
+      "displayName": "rogue-agent1",
+      "image": "https://avatars.githubusercontent.com/u/259556880?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1363,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771286673760,
+      "changelog": "Initial release: markdown/plain/JSON output, date ranges, tag-based filtering",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0bed626161e61331cede1681c03b0e927de4b8e681acc723637e8976ce240b56"
+}

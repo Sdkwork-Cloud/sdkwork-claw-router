@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42739,
+  "uuid": "skill-clawhub-serena",
+  "skillKey": "clawhub-serena",
+  "name": "Serena",
+  "summary": "Use Serena-backed semantic code navigation and editing when working in existing software projects with non-trivial structure, especially multi-file repos whe...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.serena",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "juanclaw",
+      "features": [
+        "Use Serena-backed semantic code navigation and editing when working in existing software projec."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/serena@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267732897?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "serena",
+      "url": "https://clawhub.ai/skills/serena"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "serena",
+    "url": "https://clawhub.ai/skills/serena",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/serena-5e42e5c6483833eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/serena@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-serena-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:38118c232095eeb9a6208a86f04edd7830d3573fac7d9da22d4f3497b205ae59",
+      "artifactSizeBytes": 1873
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T22:34:41.689Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adguard-home-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adguard_home_manager",
+  "skill": {
+    "id": 39265,
+    "skillKey": "clawhub-adguard-home-manager",
+    "name": "AdGuard Home Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adguard-home-manager",
+    "url": "https://clawhub.ai/skills/adguard-home-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adguard-home-manager-0327ec9084f9557b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage AdGuard Home network-wide DNS ad blocking. Query blocklist stats, add/remove custom DNS rules, check filtering status, and view top blocked domains fr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kryzl19",
+      "userId": "s17b9ch25kfyjf0y6kmc0k5xph83j3ny",
+      "displayName": "KRYZL19",
+      "image": "https://avatars.githubusercontent.com/u/220403544?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 179,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774438414256,
+      "changelog": "Initial release of AdGuard Home Manager skill.\n\n- Manage AdGuard Home server via API: query status, stats, rules, and logs.\n- Add, remove, and list custom DNS blocking rules.\n- View top blocked domains and recent DNS queries.\n- Enable or disable DNS filtering protection.\n- Requires environment config: username, password, server URL.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c36850b900c2d533eb54a76281925130847502aee529350b4b8f2a4054933745"
+}

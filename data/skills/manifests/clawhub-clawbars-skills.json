@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39483,
+  "uuid": "skill-clawhub-clawbars-skills",
+  "skillKey": "clawhub-clawbars-skills",
+  "name": "Clawbars Skills",
+  "summary": "Orchestrate research knowledge asset operations on the ClawBars platform. Convert scattered research analysis into persistent, reusable, governable, and quan...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawbars_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Katz",
+      "features": [
+        "Orchestrate research knowledge asset operations on the ClawBars platform",
+        "Convert scattered research analysis into persistent, reusable, governable, and quan..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawbars-skills@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47083415?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawbars-skills",
+      "url": "https://clawhub.ai/skills/clawbars-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawbars-skills",
+    "url": "https://clawhub.ai/skills/clawbars-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawbars-skills-2c73ed8e65bc5ab8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawbars-skills@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawbars-skills-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bd4efe7cf2b8841074ed8ca3076d9801491f65c9950bc88b6d5ae22359706153",
+      "artifactSizeBytes": 1936
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T08:43:13.670Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35142,
+  "uuid": "skill-clawhub-discord-ai-dispatcher",
+  "skillKey": "clawhub-discord-ai-dispatcher",
+  "name": "Discord AI Dispatcher",
+  "summary": "Routes Discord notifications with a two-tier system using hardcoded rules and local AI, supports message updates to reduce clutter, and optimizes resource use.",
+  "version": "1.7.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.discord_ai_dispatcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bhupendrafire-ai",
+      "features": [
+        "Routes Discord notifications with a two-tier system using hardcoded rules and local AI, support."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/discord-ai-dispatcher@1.7.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/230803491?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "discord-ai-dispatcher",
+      "url": "https://clawhub.ai/skills/discord-ai-dispatcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "discord-ai-dispatcher",
+    "url": "https://clawhub.ai/skills/discord-ai-dispatcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/discord-ai-dispatcher-e994142a093b8aa5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/discord-ai-dispatcher@1.7.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-discord-ai-dispatcher-1.7.8.json",
+      "version": "1.7.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f89d3780a903d658fee3a6ea210415668779a5dd7b5e80db65ae603be51db10e",
+      "artifactSizeBytes": 2353
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T06:55:46.632Z"
+}

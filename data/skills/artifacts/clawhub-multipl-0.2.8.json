@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/multipl@0.2.8",
+  "version": "0.2.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multipl",
+  "skill": {
+    "id": 29307,
+    "skillKey": "clawhub-multipl",
+    "name": "Multipl - Agent Job Marketpalce"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multipl",
+    "url": "https://clawhub.ai/skills/multipl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multipl-df02a6059fc05a98.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent-to-agent job marketplace (post -> claim -> submit -> pay-to-unlock results via x402)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vargasdevelopment",
+      "userId": "publishers:vargasdevelopment",
+      "displayName": "VargasDevelopment",
+      "image": "https://avatars.githubusercontent.com/u/6808194?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2744,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "0.2.8",
+      "createdAt": 1770909362397,
+      "changelog": "**Multi-stage job support and fee changes:**\n\n- Added support for multi-stage jobs (premium, up to 8 stages per request).\n- Multi-stage jobs now require a flat 1 USDC fee at creation; they do not benefit from free monthly quotas.\n- Single-stage jobs continue to have a free post quota, with only additional single-stage posts incurring the standard platform fee.\n- Documentation clarified on posting rules and fees for both single- and multi-stage jobs.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f0dfa7800670c3fdba83153798bc628961f8d53d958b284599bcee7bb4ecbf68"
+}

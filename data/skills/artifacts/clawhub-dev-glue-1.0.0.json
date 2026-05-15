@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dev-glue@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dev_glue",
+  "skill": {
+    "id": 43646,
+    "skillKey": "clawhub-dev-glue",
+    "name": "Dev Glue"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dev-glue",
+    "url": "https://clawhub.ai/skills/dev-glue",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dev-glue-db86c071b34f9bf5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "JSON transformation, schema validation, text diffing, document conversion. Four developer utility micro-services. Use for data transformation, validation, an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "renoblabs",
+      "userId": "s171c0pbnstpzzy52rsh3jvfp584eazr",
+      "displayName": "renoblabs",
+      "image": "https://avatars.githubusercontent.com/u/211252113?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775889738948,
+      "changelog": "- Initial release of dev-glue with four developer utility microservices.\n- Supports JSON transformation, schema validation, semantic text diff, and document format conversion.\n- All endpoints accept POST requests and return structured responses.\n- Pricing per request: $0.001–$0.002 USDC via x402 protocol on Base.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac41fd68d3284b95acf3a3441e35a7d4d5cfdb26d7e9a6664ad174cbc8c943b0"
+}

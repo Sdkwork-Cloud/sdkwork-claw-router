@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15187,
+  "uuid": "skill-clawhub-calibre-metadata-apply",
+  "skillKey": "clawhub-calibre-metadata-apply",
+  "name": "Calibre Metadata Apply",
+  "summary": "Primary skill for Calibre metadata edits (write operations) over a running Content server. Use ONLY when the user explicitly requests changing/editing/fixing...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.calibre_metadata_apply",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Altair",
+      "features": [
+        "Primary skill for Calibre metadata edits (write operations) over a running Content server",
+        "Use ONLY when the user explicitly requests changing/editing/fixing..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/calibre-metadata-apply@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1401591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "calibre-metadata-apply",
+      "url": "https://clawhub.ai/skills/calibre-metadata-apply"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "calibre-metadata-apply",
+    "url": "https://clawhub.ai/skills/calibre-metadata-apply",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/calibre-metadata-apply-42b16751548ddcd8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/calibre-metadata-apply@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-calibre-metadata-apply-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b30f2d754a438239d232ee6b8352ab3847e763f5196c7be5678fcc4d7b2653c5",
+      "artifactSizeBytes": 2472
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T10:51:12.595Z"
+}

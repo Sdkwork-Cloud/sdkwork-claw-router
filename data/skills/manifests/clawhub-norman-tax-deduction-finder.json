@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16874,
+  "uuid": "skill-clawhub-norman-tax-deduction-finder",
+  "skillKey": "clawhub-norman-tax-deduction-finder",
+  "name": "Norman: Tax Deduction Finder",
+  "summary": "Scan transactions for potentially missed tax deductions and suggest proper categorization. Use when the user asks about saving taxes, Steueroptimierung, dedu...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.norman_tax_deduction_finder",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Stan Kharlap",
+      "features": [
+        "Scan transactions for potentially missed tax deductions and suggest proper categorization",
+        "Use when the user asks about saving taxes, Steueroptimierung, dedu..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/norman-tax-deduction-finder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/117379032?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "norman-tax-deduction-finder",
+      "url": "https://clawhub.ai/skills/norman-tax-deduction-finder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "norman-tax-deduction-finder",
+    "url": "https://clawhub.ai/skills/norman-tax-deduction-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/norman-tax-deduction-finder-173df2b4c3c1f3ad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/norman-tax-deduction-finder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-norman-tax-deduction-finder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:15c9d6106ec1748d71a8e8c56c1d53df800712b02ddd20bce6e73af3e0c4ff1e",
+      "artifactSizeBytes": 2524
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T20:51:04.235Z"
+}

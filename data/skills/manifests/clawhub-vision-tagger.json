@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13094,
+  "uuid": "skill-clawhub-vision-tagger",
+  "skillKey": "clawhub-vision-tagger",
+  "name": "Vision Tagger",
+  "summary": "Tag and annotate images using Apple Vision framework (macOS only). Detects faces, bodies, hands, text (OCR), barcodes, objects, scene labels, and saliency re...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vision_tagger",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sagar Jha",
+      "features": [
+        "Tag and annotate images using Apple Vision framework (macOS only)",
+        "Detects faces, bodies, hands, text (OCR), barcodes, objects, scene labels, and saliency re..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vision-tagger@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8811907?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vision-tagger",
+      "url": "https://clawhub.ai/skills/vision-tagger"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vision-tagger",
+    "url": "https://clawhub.ai/skills/vision-tagger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vision-tagger-b29e48e8823beb65.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vision-tagger@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vision-tagger-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c73f1c139dd39a06315eb4948fe72221b24686cee783f1f153f680cb6c180598",
+      "artifactSizeBytes": 1943
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T02:48:28.601Z"
+}

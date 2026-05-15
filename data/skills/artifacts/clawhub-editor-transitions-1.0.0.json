@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/editor-transitions@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.editor_transitions",
+  "skill": {
+    "id": 42527,
+    "skillKey": "clawhub-editor-transitions",
+    "name": "Editor Transitions"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "editor-transitions",
+    "url": "https://clawhub.ai/skills/editor-transitions",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/editor-transitions-da3db093823bb9c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn three 30-second clips from a vlog shoot into 1080p transition-edited clips just by typing what you need. Whether it's adding seamless transitions betwee..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776843251543,
+      "changelog": "editor-transitions 1.0.0\n\n- Initial release: Seamlessly add AI-powered transitions and edits to up to three 30-second video clips with simple text prompts.\n- Instant setup: Automatic backend connection and free token generation for new users.\n- Drag-and-drop uploads: Supports multiple standard video, audio, and image formats (MP4, MOV, MP3, JPG, etc.).\n- Rapid 1080p exports: 30-90 seconds from upload to download, no timeline editing required.\n- Built-in credit management, export tracking, and error handling for a streamlined workflow.\n- All actions available via natural language (e.g. \"add smooth transitions to all clips\"), with cloud processing and attribution headers included automatically.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:37510a0be165641d937d4a270ac23585748bd53d9710914a366fb0ea7c816e3c"
+}

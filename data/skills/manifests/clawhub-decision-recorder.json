@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22762,
+  "uuid": "skill-clawhub-decision-recorder",
+  "skillKey": "clawhub-decision-recorder",
+  "name": "Decision Recorder",
+  "summary": "Record, review, search, and analyze decisions from technical work, product work, team discussions, and personal planning. Use when the user wants to capture...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.decision_recorder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Record, review, search, and analyze decisions from technical work, product work, team discussio.",
+        "Use when the user wants to capture..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/decision-recorder@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "decision-recorder",
+      "url": "https://clawhub.ai/skills/decision-recorder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "decision-recorder",
+    "url": "https://clawhub.ai/skills/decision-recorder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/decision-recorder-3229d312e2eb49b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/decision-recorder@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-decision-recorder-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:176dd9261a8bcffd354a6079de039435efd274cb70c35cf2238322d3020ab0b8",
+      "artifactSizeBytes": 1924
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T05:02:49.401Z"
+}

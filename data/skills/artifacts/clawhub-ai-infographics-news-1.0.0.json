@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-infographics-news@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_infographics_news",
+  "skill": {
+    "id": 60632,
+    "skillKey": "clawhub-ai-infographics-news",
+    "name": "ai-infographics-news"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-infographics-news",
+    "url": "https://clawhub.ai/skills/ai-infographics-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-infographics-news-379f000687a6f32a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "搜索近30天内热门AI产品、工具和新闻，优先OpenClaw/MaxClaw，生成高质时效性AI资讯信息图。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leahliang",
+      "userId": "publishers:leahliang",
+      "displayName": "LeahLiang",
+      "image": "https://avatars.githubusercontent.com/u/40543830?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 360,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773190571958,
+      "changelog": "ai-infographic-news 1.0.0\n\n- Initial release of AI Infographic News skill.\n- Searches the latest and most trending AI products, tools, and news, with strong emphasis on OpenClaw/MaxClaw updates.\n- Generates a visually-rich, high-resolution infographic summarizing 6–9 key AI news highlights from the past month.\n- Delivers professional, shareable infographics in either 9:16 or 16:9, saved directly to workspace.\n- Includes quality checks to ensure timeliness, clarity, and OpenClaw/MaxClaw topic prioritization.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c03121cf75510eb2c63c72a975c523c0e48c99f9856d1f7adb38eac9da3ef2fe"
+}

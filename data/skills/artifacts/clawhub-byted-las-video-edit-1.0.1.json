@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/byted-las-video-edit@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.byted_las_video_edit",
+  "skill": {
+    "id": 29558,
+    "skillKey": "clawhub-byted-las-video-edit",
+    "name": "Byted Las Video Edit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "byted-las-video-edit",
+    "url": "https://clawhub.ai/skills/byted-las-video-edit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/byted-las-video-edit-5e1664beb5b6115b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extracts and clips video segments from long videos using natural language descriptions. AI-powered smart video editing, video trimming, and video cutting pow..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "volcengine-skills",
+      "userId": "s17bcxs73bckd3eercvtn6cmsx83g5kg",
+      "displayName": "volcengine-skills",
+      "image": "https://avatars.githubusercontent.com/u/260939792?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 300,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776411112402,
+      "changelog": "byted-las-video-edit 1.0.1\n\n- Added shell scripts and workflow documentation for environment initialization, formatting checks, and background polling.\n- Introduced `references/prices.md` and checklist for improved task management and price estimation.\n- Updated documentation to a more concise, stepwise workflow with stricter environment and billing checks.\n- Removed `scripts/skill.py` in favor of a shell-based tooling approach.\n- Enforced mandatory user confirmation for billing estimates before processing.\n- Clearer requirements for environment variables and output path validation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:de775013a2b46fda43a9b0d6a68804f1939d6a7f5b0154ca4bc37f6b1dc9fdc1"
+}

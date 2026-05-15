@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/onchain-skill-audit@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.onchain_skill_audit",
+  "skill": {
+    "id": 13108,
+    "skillKey": "clawhub-onchain-skill-audit",
+    "name": "On-Chain Skill Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "onchain-skill-audit",
+    "url": "https://clawhub.ai/skills/onchain-skill-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/onchain-skill-audit-f91b7a54cea8051d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "On-chain skill provenance registry. Check, register, audit, and vouch for agent skills on Solana. Use when evaluating skill safety, registering new skills, or looking up provenance before installation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "emanz1",
+      "userId": "publishers:emanz1",
+      "displayName": "Rocket",
+      "image": "https://avatars.githubusercontent.com/u/127072685?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1545,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1770619139968,
+      "changelog": "Removed internal file paths. Public-safe release.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d02a5a2f73a3c3eae460d4d17907e5c665947e7add32f91c8b67731c8f369bb7"
+}

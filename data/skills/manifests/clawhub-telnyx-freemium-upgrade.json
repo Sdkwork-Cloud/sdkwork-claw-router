@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17478,
+  "uuid": "skill-clawhub-telnyx-freemium-upgrade",
+  "skillKey": "clawhub-telnyx-freemium-upgrade",
+  "name": "Telnyx Freemium Upgrade",
+  "summary": "Automatically upgrade Telnyx account from freemium to professional tier",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.telnyx_freemium_upgrade",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "teamtelnyx",
+      "features": [
+        "Automatically upgrade Telnyx account from freemium to professional tier"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/telnyx-freemium-upgrade@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/176328014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "telnyx-freemium-upgrade",
+      "url": "https://clawhub.ai/skills/telnyx-freemium-upgrade"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "telnyx-freemium-upgrade",
+    "url": "https://clawhub.ai/skills/telnyx-freemium-upgrade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/telnyx-freemium-upgrade-0defd4eac8907ecf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/telnyx-freemium-upgrade@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-telnyx-freemium-upgrade-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:095d55e2189f72f06d31ed2208151f2c066e597d01c2d87b2921b00d010e6c87",
+      "artifactSizeBytes": 2043
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T19:36:05.035Z"
+}

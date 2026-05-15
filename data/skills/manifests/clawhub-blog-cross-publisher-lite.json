@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45168,
+  "uuid": "skill-clawhub-blog-cross-publisher-lite",
+  "skillKey": "clawhub-blog-cross-publisher-lite",
+  "name": "Blog Cross-Publisher Lite",
+  "summary": "Publish markdown articles to Dev.to via their REST API. Use this skill whenever the user wants to publish a blog post or article to Dev.to.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blog_cross_publisher_lite",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "apex-stack-ai",
+      "features": [
+        "Publish markdown articles to Dev.to via their REST API",
+        "Use this skill whenever the user wants to publish a blog post or article to Dev.to."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/blog-cross-publisher-lite@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267395928?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "blog-cross-publisher-lite",
+      "url": "https://clawhub.ai/skills/blog-cross-publisher-lite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blog-cross-publisher-lite",
+    "url": "https://clawhub.ai/skills/blog-cross-publisher-lite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blog-cross-publisher-lite-930a0a258c2da534.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/blog-cross-publisher-lite@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-blog-cross-publisher-lite-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:17b7bb32dd56c569016c6db1e7cb48b5071674b837cf634edd532ed0c7984298",
+      "artifactSizeBytes": 2313
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T00:33:42.527Z"
+}

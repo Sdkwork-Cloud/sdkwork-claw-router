@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43520,
+  "uuid": "skill-clawhub-email-web-interface",
+  "skillKey": "clawhub-email-web-interface",
+  "name": "Email Web Interface",
+  "summary": "Web interface for agent email communication (Lourens, Ace, etc.). Provides inbox viewing, draft creation/editing, and sending functionality via Gmail/Gog CLI...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_web_interface",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "stefanferreira",
+      "features": [
+        "Web interface for agent email communication (Lourens, Ace, etc.)",
+        "Provides inbox viewing, draft creation/editing, and sending functionality via Gmail/Gog CLI..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/email-web-interface@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6356549?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "email-web-interface",
+      "url": "https://clawhub.ai/skills/email-web-interface"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-web-interface",
+    "url": "https://clawhub.ai/skills/email-web-interface",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-web-interface-6a3ee1aa20ac7899.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/email-web-interface@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-email-web-interface-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1393d6ca804532a5224425b7e3d16fa420a7076ca1bb3b21eec2268342f65b3c",
+      "artifactSizeBytes": 2415
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T07:12:56.554Z"
+}

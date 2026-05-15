@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57032,
+  "uuid": "skill-clawhub-alicloud-ai-audio-asr",
+  "skillKey": "clawhub-alicloud-ai-audio-asr",
+  "name": "Alicloud Ai Audio Asr",
+  "summary": "Transcribe non-realtime speech with Alibaba Cloud Model Studio Qwen ASR models (`qwen3-asr-flash`, `qwen-audio-asr`, `qwen3-asr-flash-filetrans`). Use when c...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alicloud_ai_audio_asr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cinience",
+      "features": [
+        "Transcribe non-realtime speech with Alibaba Cloud Model Studio Qwen ASR models (`qwen3-asr-flas.",
+        "Use when c..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alicloud-ai-audio-asr@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/557426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alicloud-ai-audio-asr",
+      "url": "https://clawhub.ai/skills/alicloud-ai-audio-asr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alicloud-ai-audio-asr",
+    "url": "https://clawhub.ai/skills/alicloud-ai-audio-asr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alicloud-ai-audio-asr-64ea18ac181c093b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alicloud-ai-audio-asr@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-alicloud-ai-audio-asr-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:77e65d3c4ebae07e83bc579e5f4ae1cac51312274a9e887d8d3fc6991801fee5",
+      "artifactSizeBytes": 1965
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T09:36:47.633Z"
+}

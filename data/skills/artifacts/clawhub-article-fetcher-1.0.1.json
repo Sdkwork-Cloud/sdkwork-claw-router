@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/article-fetcher@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.article_fetcher",
+  "skill": {
+    "id": 63486,
+    "skillKey": "clawhub-article-fetcher",
+    "name": "Article Fetcher（文章抓取+Notion存档）"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "article-fetcher",
+    "url": "https://clawhub.ai/skills/article-fetcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/article-fetcher-90b53980767ce25a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "抓取微信公众号、小红书、豆瓣、知乎文章，自动上传 OSS 图片，LLM 智能提取关键词，一键存档到 Notion"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ajayhao",
+      "userId": "s17145mdmb9rthykrxn51j1yrx849jek",
+      "displayName": "haozhenjie",
+      "image": "https://avatars.githubusercontent.com/u/3146777?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 101,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778161439595,
+      "changelog": "## v1.0.1 (2026-05-07)\n\n### 🔒 安全修复（ClawScan 扫描）\n\n- **Cookie 域隔离**: `base_fetcher.py` 重构 `_load_cookies()` 保留 domain 字段，新增 `_apply_cookies_for_url(url)` 按目标域名过滤，防止登录态泄露到非目标站点\n- **URL 严格校验**: `platform_detector.py` 改用 `urllib.parse.urlparse` + 白名单匹配 hostname，拒绝路径拼接攻击（如 `https://evil.com/mp.weixin.qq.com/...`）\n- **依赖版本锁定**: `requirements.txt` `>=` → `==` 精确版本，降低供应链风险\n\n### 📝 文档\n\n- **安全说明**: SKILL.md 新增「安全与隐私」章节，披露 LLM 数据外发、Cookie 隔离、权限最小化等安全边界\n- **扩展指南**: 更新平台扩展步骤（`ALLOWED_HOSTS` 替换旧正则描述）",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:062967e1968da507a3ceea33cadf15bf68e7a2c5753909c60a33924b58644555"
+}

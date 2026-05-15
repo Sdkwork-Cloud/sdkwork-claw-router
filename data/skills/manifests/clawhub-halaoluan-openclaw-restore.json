@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64124,
+  "uuid": "skill-clawhub-halaoluan-openclaw-restore",
+  "skillKey": "clawhub-halaoluan-openclaw-restore",
+  "name": "Openclaw Restore",
+  "summary": "一键恢复 OpenClaw 数据，支持加密和未加密备份，自动备份旧数据并重启服务确保恢复成功。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.halaoluan_openclaw_restore",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "halaoluan",
+      "features": [
+        "一键恢复 OpenClaw 数据，支持加密和未加密备份，自动备份旧数据并重启服务确保恢复成功。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/halaoluan-openclaw-restore@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/145438585?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "halaoluan-openclaw-restore",
+      "url": "https://clawhub.ai/skills/halaoluan-openclaw-restore"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "halaoluan-openclaw-restore",
+    "url": "https://clawhub.ai/skills/halaoluan-openclaw-restore",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/halaoluan-openclaw-restore-df150decc3a5d475.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/halaoluan-openclaw-restore@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-halaoluan-openclaw-restore-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:68e0abc681c6fee37f5de43cda0863a46e589dd06cc8c731e7b873ee17601b8b",
+      "artifactSizeBytes": 1981
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T18:02:06.009Z"
+}

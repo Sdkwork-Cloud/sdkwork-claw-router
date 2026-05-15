@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16478,
+  "uuid": "skill-clawhub-stonebornbot",
+  "skillKey": "clawhub-stonebornbot",
+  "name": "StonebornBot",
+  "summary": "High-speed NFT mint bot for Ethereum and EVM chains. Use when the user wants to snipe NFT mints, speed-mint collections, set up multi-wallet minting bots, configure mint sniping with pre-signed transactions, or automate NFT minting across.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stonebornbot",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "thepublisher",
+      "features": [
+        "High-speed NFT mint bot for Ethereum and EVM chains",
+        "Use when the user wants to snipe NFT mints, speed-mint collections, set up multi-wallet minting.",
+        "Supports ERC721A, Archetype contracts, Flashbots, war mode gas, WebSocket monitoring, mempool w."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stonebornbot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45623312?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stonebornbot",
+      "url": "https://clawhub.ai/skills/stonebornbot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stonebornbot",
+    "url": "https://clawhub.ai/skills/stonebornbot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stonebornbot-68874b6a857d8b18.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stonebornbot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stonebornbot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fdb919c66cdc065a422edbb34f3d4dcf83cd52273238886add889655459ff423",
+      "artifactSizeBytes": 2079
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T02:32:30.735Z"
+}

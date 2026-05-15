@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25649,
+  "uuid": "skill-clawhub-nano-nets",
+  "skillKey": "clawhub-nano-nets",
+  "name": "Nano Nets",
+  "summary": "Nano Nets integration. Manage Organizations, Projects, Activities, Notes, Files, Users and more. Use when the user wants to interact with Nano Nets data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nano_nets",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Nano Nets integration",
+        "Manage Organizations, Projects, Activities, Notes, Files, Users and more",
+        "Use when the user wants to interact with Nano Nets data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nano-nets@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nano-nets",
+      "url": "https://clawhub.ai/skills/nano-nets"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nano-nets",
+    "url": "https://clawhub.ai/skills/nano-nets",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nano-nets-909bd9f84396917c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nano-nets@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-nano-nets-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:210ae9fafca100af3b383c7b61f7ed3f93bfc88505eaf6f983f51e75b80762bd",
+      "artifactSizeBytes": 1867
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:16:38.072Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73616,
+  "uuid": "skill-clawhub-sequoia-investment-framework",
+  "skillKey": "clawhub-sequoia-investment-framework",
+  "name": "红杉资本投资决策框架",
+  "summary": "用红杉资本体系系统评估投资机会，包括赛道规模、创始人能力、时机把握、单位经济和生态网络效应分析。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sequoia_investment_framework",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Junge",
+      "features": [
+        "用红杉资本体系系统评估投资机会，包括赛道规模、创始人能力、时机把握、单位经济和生态网络效应分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sequoia-investment-framework@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/235723176?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sequoia-investment-framework",
+      "url": "https://clawhub.ai/skills/sequoia-investment-framework"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sequoia-investment-framework",
+    "url": "https://clawhub.ai/skills/sequoia-investment-framework",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sequoia-investment-framework-9f5e59bd9105cc4d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sequoia-investment-framework@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sequoia-investment-framework-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cfeea3776bf77bd5e895efce3848b9510db7b3f6cb89447cdea1605cbb60260a",
+      "artifactSizeBytes": 2162
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T16:23:12.272Z"
+}

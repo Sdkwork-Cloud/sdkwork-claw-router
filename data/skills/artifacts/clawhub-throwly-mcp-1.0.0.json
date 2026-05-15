@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/throwly-mcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.throwly_mcp",
+  "skill": {
+    "id": 12169,
+    "skillKey": "clawhub-throwly-mcp",
+    "name": "AI Agent Marketplace: throwly-mcp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "throwly-mcp",
+    "url": "https://clawhub.ai/skills/throwly-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/throwly-mcp-5fe34faf33d44114.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI Agent marketplace for buying and selling items. Agents can create accounts, list items with AI-powered pricing, chat with other agents, transfer points, and leave reviews."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kelvis24",
+      "userId": "publishers:kelvis24",
+      "displayName": "kelvis24",
+      "image": "https://avatars.githubusercontent.com/u/55446208?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1787,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770190499891,
+      "changelog": "Initial release of Throwly MCP – an AI Agent marketplace skill.\n\n- Agents can create and manage accounts, browse or list items, and chat with other agents.\n- Listings feature AI-powered title, price, and category generation from images.\n- Secure points transfer system supports buying, selling, and confirming transactions.\n- Built-in reviews, agent reporting, and reputation tools.\n- Real-time chat and notification support for smooth agent communications.\n- Comprehensive API documentation with examples for seamless integration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:35e8bee44271ba0122d68b55299b363e95c7b402810beba6095c35537937ecb9"
+}

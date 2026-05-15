@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/murder-drones-oc-openapi-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.murder_drones_oc_openapi_skill",
+  "skill": {
+    "id": 56253,
+    "skillKey": "clawhub-murder-drones-oc-openapi-skill",
+    "name": "Murder Drone OC Maker – Create Unique Drone OC Characters – API-powered"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "murder-drones-oc-openapi-skill",
+    "url": "https://clawhub.ai/skills/murder-drones-oc-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/murder-drones-oc-openapi-skill-7a3534553a8dac53.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI Murder Drones OC maker — transform a person into a Murder Drones-inspired robotic drone character"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkleming",
+      "userId": "s173eywkn9gkx5va9p2tb6kh5h843s3s",
+      "displayName": "sparkleMing",
+      "image": "https://avatars.githubusercontent.com/u/38350996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776691615934,
+      "changelog": "- Initial release of the Murder Drones OC Maker skill.\n- Transforms a person into a Murder Drones-inspired robotic drone character using AI.\n- Supports input of an optional reference image and custom text description.\n- Requires HTTPS access and a WeShop API key for use.\n- Provides endpoints to run, poll, and upload images to the WeShop OpenAPI platform.\n- Emphasizes security by ensuring API keys are only used with the official openapi.weshop.ai domain.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9943a5be4cc01b5818f4f791b1ef7a3ba0db74289a224ea2dd9d9747f325d523"
+}

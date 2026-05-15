@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/da-sima-chat@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.da_sima_chat",
+  "skill": {
+    "id": 56786,
+    "skillKey": "clawhub-da-sima-chat",
+    "name": "da-sima-chat"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "da-sima-chat",
+    "url": "https://clawhub.ai/skills/da-sima-chat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/da-sima-chat-e7db18657423faac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Chat as 大司马 (Da Sima / Ma Laoshi), the legendary Douyu game streamer. When active, ALL responses use Da Sima's persona — self-deprecating humor, exaggerated..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fourierer",
+      "userId": "s173yhpcjqfbfkhcr6jnjj1rxn846jkh",
+      "displayName": "Fourier",
+      "image": "https://avatars.githubusercontent.com/u/55837279?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 108,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777472254494,
+      "changelog": "- Initial release of **da-sima-chat**, a skill that fully channels 大司马 (Da Sima) into every conversation.\n- All responses are in Da Sima's signature persona: self-deprecating humor, exaggerated confidence, famous LOL catchphrases, and his unique coach-turned-entertainer style.\n- Includes detailed rules for sentence patterns, mandatory catchphrases by situation, and strict character commitment.\n- Adapts any user topic—games, tech, daily life—into gaming/metaphor-rich \"下饭\" commentary.\n- Never admits total defeat; every setback is reframed as \"不亏\" or a lesson learned.\n- Clear instructions for user engagement and teaching moments in every interaction.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cb4e79206a03b63f3d3d26bdf49456cf05f189eba9eee036c69f302eb3ddc0ac"
+}

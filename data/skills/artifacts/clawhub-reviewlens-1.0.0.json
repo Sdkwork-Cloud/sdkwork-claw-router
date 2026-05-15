@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reviewlens@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reviewlens",
+  "skill": {
+    "id": 56811,
+    "skillKey": "clawhub-reviewlens",
+    "name": "评论透镜"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reviewlens",
+    "url": "https://clawhub.ai/skills/reviewlens",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reviewlens-012af7cbcb3d9de5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Review intelligence skill for mainland China shopping that compresses large volumes of marketplace reviews into a decision card, surfaces repeated praise and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775291580075,
+      "changelog": "Launch 评论透镜 (ReviewLens), a review-intelligence skill that compresses marketplace reviews into a decision card with repeated praise, repeated complaints, fit, regret risk, and cheap-versus-steady judgment.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6420702fe495b04940fc782e8234637f19768a76cdb72ff0e856dd9b2bb6c6ce"
+}

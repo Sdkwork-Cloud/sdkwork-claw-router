@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62902,
+  "uuid": "skill-clawhub-langextract",
+  "skillKey": "clawhub-langextract",
+  "name": "Skill",
+  "summary": "Google 出品的 Python 库，用 LLM 从非结构化文本中提取结构化信息，每个提取结果精确对应源文本位置，支持交互式可视化，适配 Gemini/OpenAI/Ollama 等多种模型",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.langextract",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CN-big-cabbage",
+      "features": [
+        "Google 出品的 Python 库，用 LLM 从非结构化文本中提取结构化信息，每个提取结果精确对应源文本位置，支持交互式可视化，适配 Gemini/OpenAI/Ollama 等多种模型"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/langextract@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63539779?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "langextract",
+      "url": "https://clawhub.ai/skills/langextract"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "langextract",
+    "url": "https://clawhub.ai/skills/langextract",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/langextract-0ec8777e280878bd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/langextract@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-langextract-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:756ff3425d502b35b3ccd3f3558633ffdf8bbfc8975b90aac1a98fc838b41893",
+      "artifactSizeBytes": 2482
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T00:41:36.952Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/duoplus-agent@1.0.11",
+  "version": "1.0.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.duoplus_agent",
+  "skill": {
+    "id": 15868,
+    "skillKey": "clawhub-duoplus-agent",
+    "name": "Duoplus Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "duoplus-agent",
+    "url": "https://clawhub.ai/skills/duoplus-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/duoplus-agent-61f5851309511972.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control Android cloud phones via ADB broadcast commands - tap, swipe, type, screenshot, read UI elements. Requires DuoPlus CloudPhone service running on the..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "duoplusofficial",
+      "userId": "s17cgqfp6h5zx61xa067h4xkdd83n4hp",
+      "displayName": "DuoPlus Cloud Phone",
+      "image": "https://avatars.githubusercontent.com/u/250914426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 727,
+      "installsAllTime": 3,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "1.0.11",
+      "createdAt": 1776151557276,
+      "changelog": "- Update to version 1.0.11 with documentation-only changes.\n- README.md updated with no feature or code changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:34cb9fa55732394bea958e4a8af770d50fb9216b8f34ee390b394ea5f8c48bcd"
+}

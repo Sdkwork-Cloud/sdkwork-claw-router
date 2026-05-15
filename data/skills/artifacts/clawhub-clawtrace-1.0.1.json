@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawtrace@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawtrace",
+  "skill": {
+    "id": 38875,
+    "skillKey": "clawhub-clawtrace",
+    "name": "ClawTrace"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawtrace",
+    "url": "https://clawhub.ai/skills/clawtrace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawtrace-bebd6e62d4a9385a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trace and debug a single OpenClaw conversation session. Use when you need to analyze openclaw logs, correlate them with the current session context, inspect..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leoluo0814",
+      "userId": "s17a5wtzxrtzywvdy7pd81sb8h84fjgx",
+      "displayName": "LeoLuo",
+      "image": "https://avatars.githubusercontent.com/u/39358425?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775651437315,
+      "changelog": "- Removed the README.md file from the repository.\n- No changes were made to the skill logic, behavior, or documentation in SKILL.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4f3db5a3693e475f07b7654aa34645aacd3ee6a1e2835b2365f29091e893ecbe"
+}

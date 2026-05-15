@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11323,
+  "uuid": "skill-clawhub-unifai-trading-suite",
+  "skillKey": "clawhub-unifai-trading-suite",
+  "name": "UnifAI Trading Suite",
+  "summary": "AI-powered trading insights suite: prediction markets (Polymarket/Kalshi) and social sentiment signals powered by UnifAI.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unifai_trading_suite",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zheng \"Bruce\" Li",
+      "features": [
+        "AI-powered trading insights suite: prediction markets (Polymarket/Kalshi) and social sentiment."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/unifai-trading-suite@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24281959?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "unifai-trading-suite",
+      "url": "https://clawhub.ai/skills/unifai-trading-suite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unifai-trading-suite",
+    "url": "https://clawhub.ai/skills/unifai-trading-suite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unifai-trading-suite-ad8fe7897f6f1de3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/unifai-trading-suite@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-unifai-trading-suite-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:44b6d47493084d2c101e58571deff5834d9d46d5a2690f38700a3f1e68764a21",
+      "artifactSizeBytes": 1960
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-30T00:00:32.918Z"
+}

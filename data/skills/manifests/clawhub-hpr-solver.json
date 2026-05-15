@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50778,
+  "uuid": "skill-clawhub-hpr-solver",
+  "skillKey": "clawhub-hpr-solver",
+  "name": "HPR Solver",
+  "summary": "Solve optimization & planning problems using natural language. Just describe what you need — fast, accurate, and built for AI agents.",
+  "version": "0.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hpr_solver",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiawei_polyu",
+      "features": [
+        "Solve optimization & planning problems using natural language",
+        "Just describe what you need — fast, accurate, and built for AI agents."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hpr-solver@0.0.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/205506567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hpr-solver",
+      "url": "https://clawhub.ai/skills/hpr-solver"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hpr-solver",
+    "url": "https://clawhub.ai/skills/hpr-solver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hpr-solver-ecadcde57c0db63e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hpr-solver@0.0.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-hpr-solver-0.0.9.json",
+      "version": "0.0.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:09961cea7efc5efa15b06860dacb0dbeb41ee5767398b59af8fbc7d7a003be64",
+      "artifactSizeBytes": 1914
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T11:29:14.766Z"
+}

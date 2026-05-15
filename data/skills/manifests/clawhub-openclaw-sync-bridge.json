@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37437,
+  "uuid": "skill-clawhub-openclaw-sync-bridge",
+  "skillKey": "clawhub-openclaw-sync-bridge",
+  "name": "OpenClaw Sync Bridge",
+  "summary": "Automatically sync local and cloud OpenClaw configurations via private GitHub Gist with token-based setup and full overwrite synchronization.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_sync_bridge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JayShna",
+      "features": [
+        "Automatically sync local and cloud OpenClaw configurations via private GitHub Gist with token-b."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-sync-bridge@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25737838?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-sync-bridge",
+      "url": "https://clawhub.ai/skills/openclaw-sync-bridge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-sync-bridge",
+    "url": "https://clawhub.ai/skills/openclaw-sync-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-sync-bridge-5355edcb3ea3da3c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-sync-bridge@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-sync-bridge-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3cda39886dc0e61b52ba00b202dec1d8d32899fb872837d0dec3f92e7d6ae7ce",
+      "artifactSizeBytes": 2381
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T08:45:45.059Z"
+}

@@ -23,7 +23,7 @@ class ConsoleProvidersBackendRuntimeStandardTest(unittest.TestCase):
         self.assertIn("mod app_providers;", product_api_mod)
         self.assertIn("app_providers_router", product_api_mod)
         self.assertIn("app_providers_router_with_read_store", product_api_mod)
-        self.assertIn("/app/v3/api/router/providers", app_providers)
+        self.assertIn("/app/v3/api/ai/providers", app_providers)
         self.assertIn("TrustedRequestSubject", app_providers)
         self.assertIn("require_subject", app_providers)
         self.assertIn("AppProvidersReadStore", app_providers)
@@ -184,7 +184,7 @@ class ConsoleProvidersBackendRuntimeStandardTest(unittest.TestCase):
         contract = (
             ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml"
         ).read_text(encoding="utf-8")
-        operation_marker = "api_path: /app/v3/api/router/providers"
+        operation_marker = "api_path: /app/v3/api/ai/providers"
         operation_index = contract.index(operation_marker)
         schema_index = contract.index("name: ProvidersResponse", operation_index)
         self.assertLess(schema_index - operation_index, 1200)
@@ -239,6 +239,7 @@ class ConsoleProvidersBackendRuntimeStandardTest(unittest.TestCase):
             ROOT
             / "sdks"
             / "clawrouter-app-sdk"
+            / "clawrouter-app-sdk-typescript"
             / "src"
             / "types"
             / "providers-response.ts"
@@ -247,10 +248,23 @@ class ConsoleProvidersBackendRuntimeStandardTest(unittest.TestCase):
             ROOT
             / "sdks"
             / "clawrouter-app-sdk"
+            / "clawrouter-app-sdk-typescript"
             / "src"
             / "types"
             / "provider-config.ts"
         )
+        sdk_ai = (
+            ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "api" / "ai.ts"
+        ).read_text(encoding="utf-8")
+        frontend = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-console-providers"
+            / "src"
+            / "providerService.ts"
+        ).read_text(encoding="utf-8")
 
         self.assertIn('"ProviderConfig"', openapi)
         self.assertIn('"$ref": "#/components/schemas/ProviderConfig"', openapi)
@@ -265,6 +279,9 @@ class ConsoleProvidersBackendRuntimeStandardTest(unittest.TestCase):
         self.assertIn("status: 'active' | 'inactive';", provider_config)
         self.assertIn("import type { ProviderConfig } from './provider-config';", provider_response)
         self.assertIn("items: ProviderConfig[];", provider_response)
+        self.assertIn("async list(): Promise<ProvidersListResult>", sdk_ai)
+        self.assertIn("appApiPath(`/ai/providers`)", sdk_ai)
+        self.assertIn("getClawRouterAppSdkClient().ai.providers.list()", frontend)
 
     def test_integration_provider_database_contract_uses_integration_type_column(self) -> None:
         registry = (

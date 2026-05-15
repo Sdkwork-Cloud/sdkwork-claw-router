@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/security-news-feed@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.security_news_feed",
+  "skill": {
+    "id": 21301,
+    "skillKey": "clawhub-security-news-feed",
+    "name": "Security News Feed"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "security-news-feed",
+    "url": "https://clawhub.ai/skills/security-news-feed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/security-news-feed-8e30ac201634ba78.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Collects and summarizes Korean security news hourly from 11 sources using Gemini API, then publishes to Notion and optionally to Tistory blog."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rebugui",
+      "userId": "s175zt27th00qfbj07phqnkqtn83k9pg",
+      "displayName": "rebugui",
+      "image": "https://avatars.githubusercontent.com/u/51498462?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 494,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773474473065,
+      "changelog": "## Version 1.1.0 (formerly 1.0.1)\n\n- Added skill version field to SKILL.md and updated documentation structure.\n- Removed deprecated log file (logs/security_aggregator.log) and unused analysis metadata.\n- Refactored and adjusted modules and configuration for improved maintainability.\n- Updated dependencies in requirements.txt.\n- No user-facing feature additions or removals; internal improvements and cleanup only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:56b3e83e050c7d5b571b2bd80d401e25a1381c386ec196bb2ad89aadaab02f40"
+}

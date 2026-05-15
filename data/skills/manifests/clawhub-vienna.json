@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20219,
+  "uuid": "skill-clawhub-vienna",
+  "skillKey": "clawhub-vienna",
+  "name": "Vienna",
+  "summary": "Navigate Vienna as visitor, resident, tech worker, student, or entrepreneur with neighborhoods, transport, costs, safety, and local insights.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vienna",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Navigate Vienna as visitor, resident, tech worker, student, or entrepreneur with neighborhoods,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vienna@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vienna",
+      "url": "https://clawhub.ai/skills/vienna"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vienna",
+    "url": "https://clawhub.ai/skills/vienna",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vienna-4419c07588b7aa80.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vienna@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vienna-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b59fcccc5212c15821b47d4a3e487369db9824700214f206ff31057d94d14136",
+      "artifactSizeBytes": 1807
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T22:47:39.119Z"
+}

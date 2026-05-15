@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63873,
+  "uuid": "skill-clawhub-agent-browser-cli",
+  "skillKey": "clawhub-agent-browser-cli",
+  "name": "Agent Browser CLI",
+  "summary": "使用 agent-browser CLI 进行浏览器自动化。用于签到、填表、截图、信息抓取等需要控制浏览器的任务。触发条件：(1) 用户要求自动化浏览器操作 (2) 需要签到、填表、点击按钮 (3) 需要抓取网页内容作为研究素材",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_browser_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Joshhuang123",
+      "features": [
+        "使用 agent-browser CLI 进行浏览器自动化。用于签到、填表、截图、信息抓取等需要控制浏览器的任务。触发条件：(1) 用户要求自动化浏览器操作 (2) 需要签到、填表、点击按钮."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-browser-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/209654952?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-browser-cli",
+      "url": "https://clawhub.ai/skills/agent-browser-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-browser-cli",
+    "url": "https://clawhub.ai/skills/agent-browser-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-browser-cli-9ea9e64b47119118.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-browser-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-browser-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8ad75cbfc4b77e46a3dfb5a70e67aacf8a5edd9bce1ed734b268dc3a7f2cda0b",
+      "artifactSizeBytes": 2106
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T00:34:22.105Z"
+}

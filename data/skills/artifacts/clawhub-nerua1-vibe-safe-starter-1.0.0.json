@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nerua1-vibe-safe-starter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nerua1_vibe_safe_starter",
+  "skill": {
+    "id": 53033,
+    "skillKey": "clawhub-nerua1-vibe-safe-starter",
+    "name": "VibeSafe Starter — Minimum Security for Vibe Coders"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nerua1-vibe-safe-starter",
+    "url": "https://clawhub.ai/skills/nerua1-vibe-safe-starter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nerua1-vibe-safe-starter-4e412ef0e0cd00ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides a minimal, zero-config security starter pack for Vibe coders to detect known vulnerabilities, unmaintained packages, and credential leaks before ins..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nerua1",
+      "userId": "s178f4bnw35dnxc3ymhvgf114983yzer",
+      "displayName": "nerua1",
+      "image": "https://avatars.githubusercontent.com/u/271220546?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 70,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778054044515,
+      "changelog": "VibeSafe Starter 1.0.0 — Initial Release\n\n- Provides a lightweight, zero-config security starter pack for AI-generated code projects.\n- Includes GitHub Actions workflow, dependency audit script, and package vetting script.\n- Helps catch common risks: known CVEs, abandoned or unmaintained packages, credential leaks, and supply chain attacks.\n- Quick setup: just copy three files into any repo to enable basic security checks on push and before installing dependencies.\n- Designed for maximum impact with minimal setup—no frameworks or databases required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7a821ee14a25444b77c7eaa97f485f1b6ed1c84c1b6f84370f8697acc0972f7a"
+}

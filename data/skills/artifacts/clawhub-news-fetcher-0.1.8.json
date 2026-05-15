@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/news-fetcher@0.1.8",
+  "version": "0.1.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_fetcher",
+  "skill": {
+    "id": 18186,
+    "skillKey": "clawhub-news-fetcher",
+    "name": ".Publish Temp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-fetcher",
+    "url": "https://clawhub.ai/skills/news-fetcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-fetcher-496a3f4805d96545.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install, configure, validate, and run the news-fetcher Python CLI for aggregating RSS/Atom and HTML news sources with deduplication, clustering, ranking, sou..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "miniade",
+      "userId": "s172y6r6hbe8kk96b1m916hshs84128c",
+      "displayName": "miniade",
+      "image": "https://avatars.githubusercontent.com/u/261718829?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 672,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "0.1.8",
+      "createdAt": 1775021283994,
+      "changelog": "Release v0.1.8 - Published from GitHub Actions",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:447a46c0f86b056f65fa0ec28ec55c2858cd63e70a8d902f77679173b850ca89"
+}

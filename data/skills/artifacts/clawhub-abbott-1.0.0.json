@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/abbott@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abbott",
+  "skill": {
+    "id": 65075,
+    "skillKey": "clawhub-abbott",
+    "name": "Abbott"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abbott",
+    "url": "https://clawhub.ai/skills/abbott",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abbott-f98407019f8c4af6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供雅培公司背景、核心产品及市场领先的连续血糖监测系统FreeStyle Libre相关信息查询。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776530711146,
+      "changelog": "- 新增关于雅培（Abbott）的技能，涵盖公司发展历程、核心业务及优势。\n- 提供主要营收、研发投入、员工数等关键信息。\n- 介绍 FreeStyle Libre 血糖监测系统的全球领先地位。\n- 适用于查询雅培相关信息和了解医疗健康行业发展。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f77cfabad81dd34497a0d0b96d7cb865da1c99fa434c6cab6a90e7aa003130b5"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24219,
+  "uuid": "skill-clawhub-ai-safety-guard",
+  "skillKey": "clawhub-ai-safety-guard",
+  "name": "AI Safety Guard",
+  "summary": "Lightweight passive privacy guard for OpenClaw — intelligently prevents user data from leaking externally. TRIGGER: before the AI sends or outputs any data t...",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_safety_guard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Andre Wu",
+      "features": [
+        "Lightweight passive privacy guard for OpenClaw — intelligently prevents user data from leaking.",
+        "TRIGGER: before the AI sends or outputs any data t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-safety-guard@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49448095?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-safety-guard",
+      "url": "https://clawhub.ai/skills/ai-safety-guard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-safety-guard",
+    "url": "https://clawhub.ai/skills/ai-safety-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-safety-guard-fc4cafaf5d68d3b0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-safety-guard@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-safety-guard-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:42a7e9e62e85e4c5eb6a5aa004900ed2ba17b020d6bc05372e77822d370b5a98",
+      "artifactSizeBytes": 2626
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T03:54:37.799Z"
+}

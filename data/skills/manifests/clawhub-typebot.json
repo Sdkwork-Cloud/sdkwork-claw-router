@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33182,
+  "uuid": "skill-clawhub-typebot",
+  "skillKey": "clawhub-typebot",
+  "name": "Typebot",
+  "summary": "Typebot integration. Manage data, records, and automate workflows. Use when the user wants to interact with Typebot data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.typebot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Typebot integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Typebot data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/typebot@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "typebot",
+      "url": "https://clawhub.ai/skills/typebot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "typebot",
+    "url": "https://clawhub.ai/skills/typebot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/typebot-015cff1b40f23510.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/typebot@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-typebot-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9c241ec4745175af28a2e1c87a0f70e7ea37f0a1a45d911a165b95d482a0002a",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:56:20.622Z"
+}

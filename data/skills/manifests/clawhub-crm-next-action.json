@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59931,
+  "uuid": "skill-clawhub-crm-next-action",
+  "skillKey": "clawhub-crm-next-action",
+  "name": "Crm Next Action",
+  "summary": "为机会池或客户列表逐条生成下一步动作、跟进理由和不推进原因。；use for crm, next-action, sales workflows；do not use for 伪造客户互动记录, 擅自发消息.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crm_next_action",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "为机会池或客户列表逐条生成下一步动作、跟进理由和不推进原因。；use for crm, next-action, sales workflows；do not use for 伪造客户互动记."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crm-next-action@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crm-next-action",
+      "url": "https://clawhub.ai/skills/crm-next-action"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crm-next-action",
+    "url": "https://clawhub.ai/skills/crm-next-action",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crm-next-action-dfaf92655cd16f86.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crm-next-action@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crm-next-action-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:380162c7ca067e36758604510863058087ef50350b9fc3dcfc84a323c56167ca",
+      "artifactSizeBytes": 2505
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T05:59:40.680Z"
+}

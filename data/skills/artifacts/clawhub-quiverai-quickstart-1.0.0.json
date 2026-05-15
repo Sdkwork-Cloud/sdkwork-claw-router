@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quiverai-quickstart@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quiverai_quickstart",
+  "skill": {
+    "id": 62232,
+    "skillKey": "clawhub-quiverai-quickstart",
+    "name": "QuiverAI Quickstart"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quiverai-quickstart",
+    "url": "https://clawhub.ai/skills/quiverai-quickstart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quiverai-quickstart-4d031d13327aebe8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "QuiverAI API快速入门指南。当用户想要学习如何使用QuiverAI的SVG生成API时使用此技能。包括API密钥创建、环境配置、SDK安装和发送请求的完整流程。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charmmm718",
+      "userId": "publishers:charmmm718",
+      "displayName": "charmmm718",
+      "image": "https://avatars.githubusercontent.com/u/221862276?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 383,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772123232548,
+      "changelog": "Initial release - QuiverAI API快速入门指南",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:74ff12447efc5fd9e78efc60722c10f27fb95b88b2df75a83917c9806abfcfcc"
+}

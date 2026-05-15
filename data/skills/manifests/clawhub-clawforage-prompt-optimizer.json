@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30623,
+  "uuid": "skill-clawhub-clawforage-prompt-optimizer",
+  "skillKey": "clawhub-clawforage-prompt-optimizer",
+  "name": "ClawForage Prompt Optimizer",
+  "summary": "Analyzes your conversation transcripts daily to find patterns, suggest SOUL.md improvements, and recommend skills",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawforage_prompt_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "InspireHub.ai",
+      "features": [
+        "Analyzes your conversation transcripts daily to find patterns, suggest SOUL.md improvements, an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawforage-prompt-optimizer@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6275522?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawforage-prompt-optimizer",
+      "url": "https://clawhub.ai/skills/clawforage-prompt-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawforage-prompt-optimizer",
+    "url": "https://clawhub.ai/skills/clawforage-prompt-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawforage-prompt-optimizer-62ac2c66ea098cfe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawforage-prompt-optimizer@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawforage-prompt-optimizer-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:19d8b800ecd5ed4d5117866f1a46b90daf8b1aac711252d5f87f87f9113c6934",
+      "artifactSizeBytes": 2517
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T09:11:21.589Z"
+}

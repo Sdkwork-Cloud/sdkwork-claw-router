@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67467,
+  "uuid": "skill-clawhub-composition-correction",
+  "skillKey": "clawhub-composition-correction",
+  "name": "墨灵高考作文批改",
+  "summary": "墨灵高考作文批改。调用 InkCraft API 提交批改并返回结构化结果。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.composition_correction",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dignite",
+      "features": [
+        "墨灵高考作文批改。调用 InkCraft API 提交批改并返回结构化结果。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/composition-correction@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60802943?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "composition-correction",
+      "url": "https://clawhub.ai/skills/composition-correction"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "composition-correction",
+    "url": "https://clawhub.ai/skills/composition-correction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/composition-correction-b725f5ab34e9b6b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/composition-correction@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-composition-correction-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:56d8872bf318c5b580bff5f165c08ef655c78d6b9405d885aa22abd0795ce770",
+      "artifactSizeBytes": 2286
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T11:43:01.531Z"
+}

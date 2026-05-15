@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-watchlist-aisa@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_watchlist_aisa",
+  "skill": {
+    "id": 43036,
+    "skillKey": "clawhub-stock-watchlist-aisa",
+    "name": "stock-watchlist-aisa"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-watchlist-aisa",
+    "url": "https://clawhub.ai/skills/stock-watchlist-aisa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-watchlist-aisa-8d9c9901c9609abc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage a stock crypto watchlist with target and stop alerts using live AISA price checks. Use when: the user wants to add watchlist items, set targets, track..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bibaofeng",
+      "userId": "s1740zrgcnwxsxgzt9bfj5a1jn842mag",
+      "displayName": "bibaofeng",
+      "image": "https://avatars.githubusercontent.com/u/86095131?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776476231912,
+      "changelog": "- Initial release of stock-watchlist skill.\n- Allows users to manage a stock and crypto watchlist with target and stop alerts.\n- Provides live price checks via AISA.\n- Supports adding, removing, listing, and checking watchlist entries from the command line.\n- Watchlist state is stored locally by default for safe publishing.\n- Requires an AISA API key and Python 3.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:97f5b787e061da140f1a738e71c5b24a7b72dada322835bb739f54eefa87436b"
+}

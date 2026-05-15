@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deer-flow-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deer_flow_manager",
+  "skill": {
+    "id": 59539,
+    "skillKey": "clawhub-deer-flow-manager",
+    "name": "deer-flow-manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deer-flow-manager",
+    "url": "https://clawhub.ai/skills/deer-flow-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deer-flow-manager-0d20ddd3071383c8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "DeerFlow 2.0（字节跳动开源 Deep Research 框架）管理技能。 用于安装、配置、更新、卸载 DeerFlow 2.0，以及排查启动问题。 触发词：DeerFlow部署、DeerFlow安装、DeerFlow配置、DeerFlow更新、DeerFlow卸载、DeerFlow启动、deer-flow"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "braveheartzjh",
+      "userId": "s179a8e8mw6y7qs767qrm25vwx83j3j9",
+      "displayName": "BraveHeartZJH",
+      "image": "https://avatars.githubusercontent.com/u/69007802?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776725439665,
+      "changelog": "Initial release of DeerFlow 2.0 management skill.\n\n- Supports installation, configuration, update, uninstallation, and troubleshooting for DeerFlow 2.0.\n- Guides users through collecting and setting up large language model configuration.\n- Provides step-by-step instructions for dependency checks and installation across macOS, Linux, and Windows (WSL2 recommended).\n- Includes update and uninstall workflows.\n- Offers troubleshooting tips for common setup issues (e.g., startup hangs, port conflicts, model API connectivity).\n- Outputs a quick-reference command table and relevant file locations after setup or update.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3ee32618475436b74061b1660d12a47f735b99c5f8071b06294acb128acea142"
+}

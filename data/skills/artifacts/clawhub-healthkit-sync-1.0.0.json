@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/healthkit-sync@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.healthkit_sync",
+  "skill": {
+    "id": 9055,
+    "skillKey": "clawhub-healthkit-sync",
+    "name": "HealthKit Sync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "healthkit-sync",
+    "url": "https://clawhub.ai/skills/healthkit-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/healthkit-sync-0b3d5cee81cc16af.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "iOS HealthKit data sync CLI commands and patterns. Use when working with healthsync CLI, fetching Apple Health data (steps, heart rate, sleep, workouts), pairing iOS devices over local network, or understanding the iOS Health Sync project."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mneves75",
+      "userId": "publishers:mneves75",
+      "displayName": "mneves75",
+      "image": "https://avatars.githubusercontent.com/u/2423436?v=4"
+    },
+    "stats": {
+      "comments": 9,
+      "downloads": 3736,
+      "installsAllTime": 27,
+      "installsCurrent": 27,
+      "stars": 12,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1767835301685,
+      "changelog": "Initial release of healthkit-sync\n\n- Provides CLI patterns for securely syncing Apple HealthKit data from iPhone to Mac over local network using mTLS.\n- Supports device pairing, certificate pinning, and Keychain storage for secure connections.\n- Includes commands for discovering devices, scanning pairing QR codes, and fetching health data (steps, heart rate, sleep, workouts, etc).\n- Documents available data types, config file details, and security architecture.\n- Offers troubleshooting tips and links to further references.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a4d9a1f12fd3445550c7063441b9243e157c57cf34079bf3739e1a7c9dff7f06"
+}

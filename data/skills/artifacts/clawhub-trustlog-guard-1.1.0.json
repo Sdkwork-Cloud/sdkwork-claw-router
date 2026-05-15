@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trustlog-guard@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trustlog_guard",
+  "skill": {
+    "id": 20471,
+    "skillKey": "clawhub-trustlog-guard",
+    "name": "TrustLog Guard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trustlog-guard",
+    "url": "https://clawhub.ai/skills/trustlog-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trustlog-guard-ccf68aa89fc5b712.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Financial governance for OpenClaw agents. Tracks API spend, enforces budget limits, detects runaway loops, delivers cost briefings. Reads session .jsonl logs..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anouartrust",
+      "userId": "publishers:anouartrust",
+      "displayName": "AnouarTrust",
+      "image": "https://avatars.githubusercontent.com/u/261806514?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 555,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1771887710090,
+      "changelog": "Financial governance for OpenClaw",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0951c294ea1f6412d67239d125cb71435a2f63c7127c2e93745b7710508a0596"
+}

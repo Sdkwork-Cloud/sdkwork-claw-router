@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/repo-insights@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.repo_insights",
+  "skill": {
+    "id": 52747,
+    "skillKey": "clawhub-repo-insights",
+    "name": "Repo Insights"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "repo-insights",
+    "url": "https://clawhub.ai/skills/repo-insights",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/repo-insights-d7bc70026c770e4e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered GitHub repository analysis. POST a repo URL and get back a Claude-generated summary of the top open issues — what developers are asking for, what..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "albionaiinc-del",
+      "userId": "s17a02897swm2wgc0ge6g3j8ss83mx5y",
+      "displayName": "albionaiinc-del",
+      "image": "https://avatars.githubusercontent.com/u/269741383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 197,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775912030772,
+      "changelog": "Repo Insights 1.1.0 — Major update with hosted API, API key support, and revised docs\n\n- Added MeshCore hosted API endpoint for instant use ($0.05 per call).\n- API now requires an Anthropic API key in the request body (no longer via environment variable).\n- Updated documentation with example usage for both hosted and self-hosted options.\n- Requirements and usage sections revised for clarity.\n- Expanded \"About\" section to reflect extensive deployment and stability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:990736f359c8b40d4cfd25934f330d925faf68f1f889e4ccc4c978ba225088d1"
+}

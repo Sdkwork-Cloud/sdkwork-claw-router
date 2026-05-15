@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70002,
+  "uuid": "skill-clawhub-article-to-html",
+  "skillKey": "clawhub-article-to-html",
+  "name": "Article To Html",
+  "summary": "文章转信息图。将文章/笔记转化为手机可读的 HTML 信息图，自动匹配视觉风格。触发场景：文章转图、笔记转图、信息图、转小红书图、做张图、可视化这篇文章、文生图。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.article_to_html",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "johney.zhoa",
+      "features": [
+        "文章转信息图。将文章/笔记转化为手机可读的 HTML 信息图，自动匹配视觉风格。触发场景：文章转图、笔记转图、信息图、转小红书图、做张图、可视化这篇文章、文生图。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/article-to-html@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/146687600?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "article-to-html",
+      "url": "https://clawhub.ai/skills/article-to-html"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "article-to-html",
+    "url": "https://clawhub.ai/skills/article-to-html",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/article-to-html-e01de417514cd849.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/article-to-html@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-article-to-html-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c077db7ea59ed06e95166bfb20722206d37e172a9808885940f0a142514ff8a0",
+      "artifactSizeBytes": 2470
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T14:34:26.013Z"
+}

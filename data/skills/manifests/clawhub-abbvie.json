@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68488,
+  "uuid": "skill-clawhub-abbvie",
+  "skillKey": "clawhub-abbvie",
+  "name": "Abbvie",
+  "summary": "提供 abbvie 品牌历史、产品服务、市场数据、全球布局及最新动态的详尽信息查询与分析。",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abbvie",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供 abbvie 品牌历史、产品服务、市场数据、全球布局及最新动态的详尽信息查询与分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/abbvie@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "abbvie",
+      "url": "https://clawhub.ai/skills/abbvie"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abbvie",
+    "url": "https://clawhub.ai/skills/abbvie",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abbvie-3ab2fef92c7c1d8d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/abbvie@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-abbvie-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6dac3cdb516ac5ee87df4ea69b323a710f65a1897efd7a0ddce1f06bddb1bc05",
+      "artifactSizeBytes": 2025
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T07:24:14.130Z"
+}

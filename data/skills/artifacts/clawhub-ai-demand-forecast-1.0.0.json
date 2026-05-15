@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-demand-forecast@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_demand_forecast",
+  "skill": {
+    "id": 58980,
+    "skillKey": "clawhub-ai-demand-forecast",
+    "name": "Ai Intelligent Demand Forecasting"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-demand-forecast",
+    "url": "https://clawhub.ai/skills/ai-demand-forecast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-demand-forecast-4551cea324d0e897.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "需求预测，销售预测 + 补货计划。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yang1002378395-cmyk",
+      "userId": "s17627rpbb3atq3mbfabqbgtm983g9et",
+      "displayName": "yang1002378395-cmyk",
+      "image": "https://avatars.githubusercontent.com/u/261632147?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774778565290,
+      "changelog": "- Initial release of AI智能需求预测系统 (ai-intelligent-demand-forecasting) version 1.0.0.\n- Enables AI-powered demand and sales forecasting, including automated replenishment planning.\n- Features seasonal analysis, promotion impact assessment, and forecasting accuracy/error analysis.\n- Offers tiered pricing: Basic, Professional, and Enterprise plans.\n- Suitable for sales forecasting, inventory planning, supply chain, and retail scenarios.\n- Built with Python, FastAPI, time series forecasting, machine learning, and error analysis.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:934d7ca17df7609798666abecc9979029f38999b9ac0a825bd09e565a410d359"
+}

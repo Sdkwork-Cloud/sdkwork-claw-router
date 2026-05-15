@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9809,
+  "uuid": "skill-clawhub-liveavatar",
+  "skillKey": "clawhub-liveavatar",
+  "name": "LiveAvatar",
+  "summary": "Talk face-to-face with your OpenClaw agent using a real-time video avatar powered by LiveAvatar",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.liveavatar",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "eNNNo",
+      "features": [
+        "Talk face-to-face with your OpenClaw agent using a real-time video avatar powered by LiveAvatar"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/liveavatar@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7410613?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "liveavatar",
+      "url": "https://clawhub.ai/skills/liveavatar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "liveavatar",
+    "url": "https://clawhub.ai/skills/liveavatar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/liveavatar-a4e6ab4d922a1723.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/liveavatar@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-liveavatar-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:77accb9d1c358ac4f366f68c7417b0ec67f56e0f947bfebef3e71200f5b7ec5a",
+      "artifactSizeBytes": 1816
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T22:12:01.874Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/porkbun-domains@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.porkbun_domains",
+  "skill": {
+    "id": 43430,
+    "skillKey": "clawhub-porkbun-domains",
+    "name": "Porkbun Domains & DNS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "porkbun-domains",
+    "url": "https://clawhub.ai/skills/porkbun-domains",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/porkbun-domains-07b6dd5c64cbaed7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage domains and DNS via the Porkbun API. Use when asked to list domains, check domain availability, manage DNS records (A, AAAA, CNAME, MX, TXT, etc.), up..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danielgrobelny",
+      "userId": "s1707neksyywgz1cnjq6552yk583h31v",
+      "displayName": "DanielGrobelny",
+      "image": "https://avatars.githubusercontent.com/u/7581754?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774516526381,
+      "changelog": "Initial release — full Porkbun API v3 wrapper (domains, DNS, URL forwarding, SSL, pricing)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a76fbd9b458704fed21770bdd79018ea304efcae379c0389a48c855da45b0f9c"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flight-itinerary-ocr@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flight_itinerary_ocr",
+  "skill": {
+    "id": 70358,
+    "skillKey": "clawhub-flight-itinerary-ocr",
+    "name": "Flight Itinerary Ocr"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flight-itinerary-ocr",
+    "url": "https://clawhub.ai/skills/flight-itinerary-ocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flight-itinerary-ocr-2359d1efc180fcfe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "支持从航空运输电子客票行程单中提取旅客姓名、身份证号、航班号、起降地、起降时间、票价、燃油附加费、民航发展基金及电子客票号码等信息识别并提取出来"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "scnet-sugon",
+      "userId": "s17aan1jdk93c5398r3ypc523d83hqys",
+      "displayName": "SCNet-sugon",
+      "image": "https://avatars.githubusercontent.com/u/267813088?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 249,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1776308553488,
+      "changelog": "- Added required_env_vars, optional_env_vars, and primary_credential fields to SKILL.md for improved environment variable documentation.\n- No changes to functionality or code; documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:89c04870688896445d3e6121c387bc9d2689772d19277e36aad4154b6b96f176"
+}

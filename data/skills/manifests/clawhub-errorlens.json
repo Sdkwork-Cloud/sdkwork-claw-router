@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41583,
+  "uuid": "skill-clawhub-errorlens",
+  "skillKey": "clawhub-errorlens",
+  "name": "errorlens",
+  "summary": "Error handling & exception safety analyzer -- scans codebases for empty catches, swallowed exceptions, missing error boundaries, unhandled rejections, generi...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.errorlens",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "suhteevah",
+      "features": [
+        "Error handling & exception safety analyzer -",
+        "scans codebases for empty catches, swallowed exceptions, missing error boundaries, unhandled re."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/errorlens@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2342183?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "errorlens",
+      "url": "https://clawhub.ai/skills/errorlens"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "errorlens",
+    "url": "https://clawhub.ai/skills/errorlens",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/errorlens-8251931a2a3ddcfe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/errorlens@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-errorlens-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a7e4005444a447c3f67538378bb57c97d2c1faeea3eb91f7dd311b4c843ea722",
+      "artifactSizeBytes": 1888
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T17:23:38.532Z"
+}

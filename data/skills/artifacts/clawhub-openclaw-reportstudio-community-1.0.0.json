@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-reportstudio-community@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_reportstudio_community",
+  "skill": {
+    "id": 57413,
+    "skillKey": "clawhub-openclaw-reportstudio-community",
+    "name": "openclaw-reportstudio-community"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-reportstudio-community",
+    "url": "https://clawhub.ai/skills/openclaw-reportstudio-community",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-reportstudio-community-2c4d36174078015f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate polished, read-only business reports from CSV/XLSX into static deliverables (xlsx+pdf+pptx) using ReportStudio Community. Use when a user says things like “用这个表生成月报/周报/经营分析/PPT+PDF汇报材料”, provides a file path, asks for trends (day/."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xutianliang77-create",
+      "userId": "s172y0wnxsdwn98rt11ewbtjmn83rqxk",
+      "displayName": "xutianliang77-create",
+      "image": "https://avatars.githubusercontent.com/u/232584503?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1181,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770807392179,
+      "changelog": "Initial release of openclaw-reportstudio-community — an interface for generating professional business reports from CSV/XLSX files.\n\n- Converts user input and spreadsheet files into read-only XLSX, PDF, and PPTX deliverables.\n- Automatically extracts reporting parameters (e.g., trends, breakdowns, TopN) from natural language requests.\n- Protects original data: generates reports without modifying sources or writing to external databases.\n- Enforces strict reporting boundaries: only produces data-supported, quantifiable insights; flags insufficient data with clear warnings.\n- Summarizes results and any processing issues in output for easy acceptance checking.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ccc541f28780933db38cb2d2ec4c6cc3a7565dd6938230d28d308327bf6dfdbd"
+}

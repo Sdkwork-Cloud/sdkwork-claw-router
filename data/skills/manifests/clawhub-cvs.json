@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69692,
+  "uuid": "skill-clawhub-cvs",
+  "skillKey": "clawhub-cvs",
+  "name": "Cvs",
+  "summary": "提供美国最大药店连锁CVS Health的历史、服务、产品及最新动态信息，助您全面了解其业务与市场地位。",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cvs",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供美国最大药店连锁CVS Health的历史、服务、产品及最新动态信息，助您全面了解其业务与市场地位。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cvs@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cvs",
+      "url": "https://clawhub.ai/skills/cvs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cvs",
+    "url": "https://clawhub.ai/skills/cvs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cvs-ca59bad8cead7a84.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cvs@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-cvs-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3967b1e305d04253c00a9bb2d06a593144d211c322d637baad321fa2d3074ce3",
+      "artifactSizeBytes": 2078
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T07:34:37.732Z"
+}

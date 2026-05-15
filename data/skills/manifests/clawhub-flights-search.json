@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10234,
+  "uuid": "skill-clawhub-flights-search",
+  "skillKey": "clawhub-flights-search",
+  "name": "Flights",
+  "summary": "Search flights via Google Flights. Find nonstop/connecting flights, filter by time and cabin class, get booking links. Supports city names (NYC, London, Toky...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flights_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BrennerSpear",
+      "features": [
+        "Search flights via Google Flights",
+        "Find nonstop/connecting flights, filter by time and cabin class, get booking links",
+        "Supports city names (NYC, London, Toky..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flights-search@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12127609?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flights-search",
+      "url": "https://clawhub.ai/skills/flights-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flights-search",
+    "url": "https://clawhub.ai/skills/flights-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flights-search-7901a8b0bdfdcf7f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flights-search@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-flights-search-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ae70374a8d6496b0f9157f08834a6fb04178f83af68f7012e31ce6a846ae0447",
+      "artifactSizeBytes": 1923
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T19:46:34.036Z"
+}

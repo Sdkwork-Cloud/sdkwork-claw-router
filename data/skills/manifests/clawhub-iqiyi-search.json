@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73259,
+  "uuid": "skill-clawhub-iqiyi-search",
+  "skillKey": "clawhub-iqiyi-search",
+  "name": "爱奇艺影视搜索",
+  "summary": "搜索爱奇艺平台的电影、电视剧、综艺等影视内容，返回搜索结果和播放链接。当用户需要搜索爱奇艺上的影视内容、查找爱奇艺播放链接、或询问\"爱奇艺上有什么\"时使用此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iqiyi_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xingcl",
+      "features": [
+        "搜索爱奇艺平台的电影、电视剧、综艺等影视内容，返回搜索结果和播放链接。当用户需要搜索爱奇艺上的影视内容、查找爱奇艺播放链接、或询问\"爱奇艺上有什么\"时使用此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/iqiyi-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12965231?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "iqiyi-search",
+      "url": "https://clawhub.ai/skills/iqiyi-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iqiyi-search",
+    "url": "https://clawhub.ai/skills/iqiyi-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iqiyi-search-bc27cb049b0470d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/iqiyi-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-iqiyi-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:02dbcbe6a896a00e440481864804283a45eea1f388f07ac4aac5e0803d1fe0a0",
+      "artifactSizeBytes": 2301
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T09:30:59.162Z"
+}

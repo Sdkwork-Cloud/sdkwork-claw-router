@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-forms-app@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_forms_app",
+  "skill": {
+    "id": 38375,
+    "skillKey": "clawhub-google-forms-app",
+    "name": "Google Forms iOS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-forms-app",
+    "url": "https://clawhub.ai/skills/google-forms-app",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-forms-app-56290d845eca52df.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Google Forms API integration with managed OAuth. Create forms, add questions, export responses to Excel, and summarize response data. Use this skill when use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dfaaa",
+      "userId": "s176ywbrxc064rq1jxg32vy48x83ga55",
+      "displayName": "dfaaa",
+      "image": "https://avatars.githubusercontent.com/u/64463763?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 188,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774341923972,
+      "changelog": "- Updated the authorization check to use a direct API HTTP status method for improved reliability.\n- Changed the user onboarding/setup message link to https://gformsfree.com/app.\n- Updated rules to require outputting the unauthorized setup message verbatim, with no summaries or extra text.\n- Version bump to 1.2.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2a98d0e4bbfd0438188b14a03ebaf7c0a19e9d9ef1bb41f7b49523037e6c8e87"
+}

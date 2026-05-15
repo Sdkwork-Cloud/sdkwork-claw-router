@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56027,
+  "uuid": "skill-clawhub-chichbong-content-skill",
+  "skillKey": "clawhub-chichbong-content-skill",
+  "name": "Parser content trên web 24h Chích Bông",
+  "summary": "read one public product page from 24h.chichbong.com and turn it into a compact zalo-shop-ready product block. use when the user provides a single 24h.chichbo...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chichbong_content_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hải Nguyễn",
+      "features": [
+        "read one public product page from 24h.chichbong.com and turn it into a compact zalo-shop-ready.",
+        "use when the user provides a single 24h.chichbo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chichbong-content-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39843964?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chichbong-content-skill",
+      "url": "https://clawhub.ai/skills/chichbong-content-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chichbong-content-skill",
+    "url": "https://clawhub.ai/skills/chichbong-content-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chichbong-content-skill-807f304bfde78d61.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chichbong-content-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chichbong-content-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:487abfbd978f7dda7815cb38f0ebb5abf47318dc11f4b45a7fde1a9680dcffc8",
+      "artifactSizeBytes": 2734
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T23:38:38.266Z"
+}

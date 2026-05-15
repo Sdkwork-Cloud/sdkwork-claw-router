@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ainotes-of-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ainotes_of_video",
+  "skill": {
+    "id": 44593,
+    "skillKey": "clawhub-ainotes-of-video",
+    "name": "ai-note-of-video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ainotes-of-video",
+    "url": "https://clawhub.ai/skills/ainotes-of-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ainotes-of-video-3ddf93eebc9f8af0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate AI-powered notes from videos (document, outline, or graphic-text formats)"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "marjoriebroad",
+      "userId": "s17evr8hna69xbf4mv5z0nppgx84m26f",
+      "displayName": "MarjorieBroad",
+      "image": "https://avatars.githubusercontent.com/u/260425366?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775919212954,
+      "changelog": "Initial release—generate AI-powered notes from video URLs in multiple structured formats.\n\n- Supports three note types: document, outline, and graphic-text notes.\n- Uses SkillBoss API Hub for synchronous note generation from public video URLs.\n- Provides scripts for manual or automatic polling of note generation.\n- Includes clear error messages for invalid URLs, processing errors, and timeouts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1b7b59d066ffc387d557a1e28e5eca3c72108b1ad567b43d4bf600d61bd0fe6d"
+}

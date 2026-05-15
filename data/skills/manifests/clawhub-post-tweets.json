@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53005,
+  "uuid": "skill-clawhub-post-tweets",
+  "skillKey": "clawhub-post-tweets",
+  "name": "Post Tweets",
+  "summary": "Use when the user needs to interact with X (Twitter) — searching tweets, looking up users/followers, posting tweets/replies, liking, retweeting, following/un...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.post_tweets",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xquik",
+      "features": [
+        "Use when the user needs to interact with X (Twitter) — searching tweets, looking up users/follo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/post-tweets@1.0.1",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/post-tweets/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "post-tweets",
+      "url": "https://clawhub.ai/skills/post-tweets"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "post-tweets",
+    "url": "https://clawhub.ai/skills/post-tweets",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/post-tweets-60fe03d95ce9bbb4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/post-tweets@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-post-tweets-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:17e2161d580bde7b80cf0dc32ba7967ec41a5a021e4425949450d5ef13024427",
+      "artifactSizeBytes": 2219
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T00:14:43.551Z"
+}

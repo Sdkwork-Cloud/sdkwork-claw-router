@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72717,
+  "uuid": "skill-clawhub-resume-helper",
+  "skillKey": "clawhub-resume-helper",
+  "name": "简历优化助手",
+  "summary": "简历优化助手。帮我写简历，改简历、导出PDF、准备面试问答。适用于：更新简历、补充项目经验、排版调整、导出PDF、准备面试问答。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resume_helper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "beikeliu",
+      "features": [
+        "简历优化助手。帮我写简历，改简历、导出PDF、准备面试问答。适用于：更新简历、补充项目经验、排版调整、导出PDF、准备面试问答。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/resume-helper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49637524?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "resume-helper",
+      "url": "https://clawhub.ai/skills/resume-helper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resume-helper",
+    "url": "https://clawhub.ai/skills/resume-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resume-helper-b0fe15e47a8650fe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/resume-helper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-resume-helper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4242c0e21c22a7489031384af93a3c87522db72c074e67fe7a44141738a33b1",
+      "artifactSizeBytes": 2274
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T16:43:23.029Z"
+}

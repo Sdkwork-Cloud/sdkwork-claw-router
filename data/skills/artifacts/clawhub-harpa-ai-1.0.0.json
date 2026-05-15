@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/harpa-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.harpa_ai",
+  "skill": {
+    "id": 15067,
+    "skillKey": "clawhub-harpa-ai",
+    "name": "HARPA AI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "harpa-ai",
+    "url": "https://clawhub.ai/skills/harpa-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/harpa-ai-7b65dc28a3904a5e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate web browsers, scrape pages, search the web, and run AI prompts on live websites via HARPA AI Grid REST API"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alxsharuk",
+      "userId": "publishers:alxsharuk",
+      "displayName": "Alex",
+      "image": "https://avatars.githubusercontent.com/u/127110127?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 876,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771263260008,
+      "changelog": "Initial release. Scrape web pages, search the web, run AI commands and prompts on live websites via HARPA AI Grid REST API.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8320bc4df6ff50e3e736eeed0ede4abe24d6836a1630cdc1a06b7a7ee0ad75ba"
+}

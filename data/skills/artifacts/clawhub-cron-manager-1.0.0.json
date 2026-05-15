@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cron-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cron_manager",
+  "skill": {
+    "id": 28248,
+    "skillKey": "clawhub-cron-manager",
+    "name": "Cron Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cron-manager",
+    "url": "https://clawhub.ai/skills/cron-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cron-manager-cca5d9d3ddb46216.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage, schedule, monitor, and report on recurring cron tasks with flexible patterns and handle dependencies, priorities, timezones, and execution logs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "indigas",
+      "userId": "s17bxmdv11wtsw9rmzpgbdgzy5851d8f",
+      "displayName": "Indigas",
+      "image": "https://avatars.githubusercontent.com/u/69516204?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 320,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776479636544,
+      "changelog": "Initial release of cron-manager for OpenClaw.\n\n- Provides flexible scheduling, monitoring, and management of recurring tasks for autonomous agents.\n- Supports task creation, scheduling, pause/resume, manual runs, and deletion.\n- Tracks execution history, success/failure rates, and offers health/stats reporting.\n- Handles task dependencies, priorities, resource limits, timezones, and DST.\n- Offers standardized JSON output for all commands and both cron and human-friendly schedule input.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ed8651f4f38cd03ae32a2f2fa2ab3b426121a84b8307b7248c02483535e87e88"
+}

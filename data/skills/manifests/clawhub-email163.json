@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68444,
+  "uuid": "skill-clawhub-email163",
+  "skillKey": "clawhub-email163",
+  "name": "基于163邮箱SMTP发送邮件功能",
+  "summary": "基于Go的163邮箱SMTP发送工具，支持HTML格式邮件、多收件人及发送日志记录，需设置邮箱授权码环境变量。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email163",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "x760591483",
+      "features": [
+        "基于Go的163邮箱SMTP发送工具，支持HTML格式邮件、多收件人及发送日志记录，需设置邮箱授权码环境变量。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/email163@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19815840?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "email163",
+      "url": "https://clawhub.ai/skills/email163"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email163",
+    "url": "https://clawhub.ai/skills/email163",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email163-b3dbd38bec0eee95.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/email163@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-email163-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:83acbd0c6be2b3c09940f443ac1169d4574af5f82a5cb07b704dc6f8325f3a0e",
+      "artifactSizeBytes": 2252
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T03:36:35.725Z"
+}

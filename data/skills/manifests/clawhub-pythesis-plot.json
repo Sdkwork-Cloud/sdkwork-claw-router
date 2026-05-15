@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56384,
+  "uuid": "skill-clawhub-pythesis-plot",
+  "skillKey": "clawhub-pythesis-plot",
+  "name": "Pythesis Plot",
+  "summary": "Python scientific plotting tool for thesis/dissertation scenarios. Workflow: data upload → analysis → recommendations → confirmation → generation. Triggers w...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pythesis_plot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "stephenlzc",
+      "features": [
+        "Python scientific plotting tool for thesis/dissertation scenarios",
+        "Workflow: data upload → analysis → recommendations → confirmation → generation",
+        "Triggers w..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pythesis-plot@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52523593?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pythesis-plot",
+      "url": "https://clawhub.ai/skills/pythesis-plot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pythesis-plot",
+    "url": "https://clawhub.ai/skills/pythesis-plot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pythesis-plot-bae8140a2befa1a6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pythesis-plot@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-pythesis-plot-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3a0b87fba5472660066e4ee5de9075f38208fbbf04eeab11b61c7cbb07bb4ae2",
+      "artifactSizeBytes": 2212
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T12:38:04.261Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61186,
+  "uuid": "skill-clawhub-xiaoxia-image-gen",
+  "skillKey": "clawhub-xiaoxia-image-gen",
+  "name": "通用文生图",
+  "summary": "通用文生图技能。使用 MiniMax、OpenAI、DALL-E、Stability 等模型生成图片。用户需要配置自己的 API Key（MINIMAX_API_KEY、OPENAI_API_KEY 等）。当用户需要生成图片、AI绘图时使用此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaoxia_image_gen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaoliang1319-cloud",
+      "features": [
+        "通用文生图技能。使用 MiniMax、OpenAI、DALL-E、Stability 等模型生成图片。用户需要配置自己的 API Key（MINIMAX_API_KEY、OPENAI_API."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaoxia-image-gen@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/247145506?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaoxia-image-gen",
+      "url": "https://clawhub.ai/skills/xiaoxia-image-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaoxia-image-gen",
+    "url": "https://clawhub.ai/skills/xiaoxia-image-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaoxia-image-gen-6581c1bf00f97e9e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaoxia-image-gen@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaoxia-image-gen-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:369f3412a1b0bb5ced6f303c5e62218a08b96eef555780e10f52e37e13f61abe",
+      "artifactSizeBytes": 2359
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T05:57:50.713Z"
+}

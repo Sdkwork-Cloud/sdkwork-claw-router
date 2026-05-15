@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60503,
+  "uuid": "skill-clawhub-ev-calculator",
+  "skillKey": "clawhub-ev-calculator",
+  "name": "Ev Calculator",
+  "summary": "🎯 EV 期望值计算器 - 交易决策必备工具",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ev_calculator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jinboh68-prog",
+      "features": [
+        "🎯 EV 期望值计算器",
+        "交易决策必备工具"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ev-calculator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264225243?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ev-calculator",
+      "url": "https://clawhub.ai/skills/ev-calculator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ev-calculator",
+    "url": "https://clawhub.ai/skills/ev-calculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ev-calculator-ff231f6cdd79fbdf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ev-calculator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ev-calculator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:813b7ad7308174e08d3182dfd1ed4c1700242b1722683b1db7f90615aed8cd64",
+      "artifactSizeBytes": 2120
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T21:20:02.984Z"
+}

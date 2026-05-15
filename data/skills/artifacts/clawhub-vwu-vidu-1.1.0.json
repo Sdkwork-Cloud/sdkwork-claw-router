@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vwu-vidu@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vwu_vidu",
+  "skill": {
+    "id": 61152,
+    "skillKey": "clawhub-vwu-vidu",
+    "name": "Vidu"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vwu-vidu",
+    "url": "https://clawhub.ai/skills/vwu-vidu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vwu-vidu-25145df611899f70.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "调用vwu.ai平台上的vidu系列模型，支持7种型号，兼容OpenAI API格式，需配置vwu.ai API密钥使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "a3273283",
+      "userId": "s175jabaxjxb6749jqkdczqb4n842w5q",
+      "displayName": "a3273283",
+      "image": "https://avatars.githubusercontent.com/u/92772341?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 365,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773650598121,
+      "changelog": "修正API端点(api.vwu.ai)，添加图生视频支持，更新模型列表，添加API Key配置指引",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:70b7b6ea38bb5e15eeb737b8e344199207e1edd712753e62a62828b9c9c8e642"
+}

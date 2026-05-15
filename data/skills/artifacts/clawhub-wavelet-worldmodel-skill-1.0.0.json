@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wavelet-worldmodel-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wavelet_worldmodel_skill",
+  "skill": {
+    "id": 26238,
+    "skillKey": "clawhub-wavelet-worldmodel-skill",
+    "name": "WaveletWorldModel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wavelet-worldmodel-skill",
+    "url": "https://clawhub.ai/skills/wavelet-worldmodel-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wavelet-worldmodel-skill-264ff426a67eaa53.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates a world model representation from state inputs using discrete wavelet transforms (DWT) to capture multi-resolution temporal and spatial features."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aadipapp",
+      "userId": "s17dpk5mcc97a4cwfszm5yd0vd83kh02",
+      "displayName": "Krishna Aditya",
+      "image": "https://avatars.githubusercontent.com/u/12190815?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 372,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772305499672,
+      "changelog": "Initial release of wavelet-world-model skill.\n\n- Introduces world model representation using discrete wavelet transforms (DWT)\n- Captures both high-frequency details and low-frequency components for robust state encoding\n- Designed for efficient processing of high-dimensional sequential state data\n- Provides a `wavelet-model` command for initializing and processing state inputs",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:527effd3e666d9d96866dc74a291873c7ce9a1e9c0ca5f304cc62fbe7a7c8fd7"
+}

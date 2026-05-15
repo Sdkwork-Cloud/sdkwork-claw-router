@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qianfan-tools@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qianfan_tools",
+  "skill": {
+    "id": 58425,
+    "skillKey": "clawhub-qianfan-tools",
+    "name": "Baidu Qianfan Tools"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qianfan-tools",
+    "url": "https://clawhub.ai/skills/qianfan-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qianfan-tools-3659cd757ffeb03f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "百度千帆工具箱 - 集成百度千帆平台多种免费 API | Baidu Qianfan Tools - Integrate Baidu Qianfan Platform APIs"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yingyangdao",
+      "userId": "s17ev7n5483jn18206n1yjb9hh83hc3b",
+      "displayName": "yingyangdao",
+      "image": "https://avatars.githubusercontent.com/u/152696161?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 548,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772914069067,
+      "changelog": "- Added bilingual (Chinese and English) descriptions and instructions throughout the documentation.\n- Improved clarity in feature lists and usage instructions by providing both Chinese and English.\n- Enhanced documentation format for greater accessibility to international users.\n- No functional changes to scripts or APIs; all updates are documentation-related for broader user support.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9728ac3ef421c4ca4bbad9c755a4c9c37d750e34016f9ddc2b0b7c175ab624d7"
+}

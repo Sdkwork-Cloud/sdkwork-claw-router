@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gitea-routine-report@1.2.2",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gitea_routine_report",
+  "skill": {
+    "id": 60916,
+    "skillKey": "clawhub-gitea-routine-report",
+    "name": "gitea-routine-report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gitea-routine-report",
+    "url": "https://clawhub.ai/skills/gitea-routine-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gitea-routine-report-3f4916e74301d5f8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "获取 Gitea 各仓库提交记录，调用 AI 生成进度报告，并发送 HTML 邮件给仓库管理员"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhcolin0313",
+      "userId": "s17ag0v1yypnyssnf4mgdyxvkx842kvm",
+      "displayName": "Colin",
+      "image": "https://avatars.githubusercontent.com/u/165698485?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.2.2",
+      "createdAt": 1775802182387,
+      "changelog": "Version 1.2.2\n\n- Added a new file: skill.yaml.\n- Removed metadata, credential, and environment variable sections from SKILL.md (now included in skill.yaml).\n- No changes to the described functionality or usage instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5a6992cb11205d9a2ba9ae0a8a7aeebb2cbfddc43a67f8683232406aaa4b9abc"
+}

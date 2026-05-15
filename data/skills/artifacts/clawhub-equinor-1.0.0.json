@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/equinor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.equinor",
+  "skill": {
+    "id": 72018,
+    "skillKey": "clawhub-equinor",
+    "name": "Equinor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "equinor",
+    "url": "https://clawhub.ai/skills/equinor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/equinor-8f32e4a36a849115.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "挪威最大能源公司，全球领先的海上油气生产商和欧洲主要天然气供应商，推动海上风电与氢能转型。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776661565583,
+      "changelog": "Equinor skill version 1.0.0 – Initial Release\n\n- 提供详细的Equinor（挪威国家石油）公司简介、历史、业务结构与核心竞争优势\n- 包含关键时间线、护城河分析和近年主要经营数据\n- 总结可用于公司调研、行业分析、投资参考与竞品对比\n- 涵盖石油天然气、可再生能源（风电、氢能）、天然气销售及炼化零售业务情况",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f145a25061991d5813cdeb7fe2c04118b507cfc1ded8e46e284905c18c6131e8"
+}

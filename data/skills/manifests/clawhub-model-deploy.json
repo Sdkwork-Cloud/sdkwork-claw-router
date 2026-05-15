@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23936,
+  "uuid": "skill-clawhub-model-deploy",
+  "skillKey": "clawhub-model-deploy",
+  "name": "Model Deploy Skill",
+  "summary": "Use this skill when users request to deploy LLMs (Qwen, DeepSeek, etc.) on specified GPU servers and start the model service. This skill can Download models...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_deploy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wang Wei",
+      "features": [
+        "Use this skill when users request to deploy LLMs (Qwen, DeepSeek, etc.) on specified GPU server.",
+        "This skill can Download models..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/model-deploy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3480154?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "model-deploy",
+      "url": "https://clawhub.ai/skills/model-deploy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-deploy",
+    "url": "https://clawhub.ai/skills/model-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-deploy-a66b6ad8db1e50ff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/model-deploy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-model-deploy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c1f8fcd10a13050d5f246789a2209a7ce6e2cbb546e8c3bfb5065e7168ae48d",
+      "artifactSizeBytes": 2330
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T12:53:28.864Z"
+}

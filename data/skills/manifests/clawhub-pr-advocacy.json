@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20397,
+  "uuid": "skill-clawhub-pr-advocacy",
+  "skillKey": "clawhub-pr-advocacy",
+  "name": "PR Advocacy",
+  "summary": "Monitor PR status every 4 hours, promptly address feedback and CI issues, communicate clearly within 24 hours, and drive reviews to timely merge.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pr_advocacy",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Andy Tien",
+      "features": [
+        "Monitor PR status every 4 hours, promptly address feedback and CI issues, communicate clearly w."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pr-advocacy@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35169750?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pr-advocacy",
+      "url": "https://clawhub.ai/skills/pr-advocacy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pr-advocacy",
+    "url": "https://clawhub.ai/skills/pr-advocacy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pr-advocacy-752ee4b39343773c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pr-advocacy@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-pr-advocacy-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4dbd02c3008f1a96095fbeeb2e4e40948f7a510209a7ce2421cf79e10af1df66",
+      "artifactSizeBytes": 2261
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T16:35:02.529Z"
+}

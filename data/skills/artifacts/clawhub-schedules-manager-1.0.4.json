@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/schedules-manager@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.schedules_manager",
+  "skill": {
+    "id": 64748,
+    "skillKey": "clawhub-schedules-manager",
+    "name": "Schedule Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "schedules-manager",
+    "url": "https://clawhub.ai/skills/schedules-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/schedules-manager-aa60c32fa2d3ea0c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "管理用户日程与任务安排。用于以下场景：(1) 用户要求\"安排日程\"\"规划任务\"\"帮我排日程\"；(2) 用户要求\"新增日程\"\"添加任务\"\"记住这个日程\"；(3) 用户要求\"查看日程\"\"今日安排\"\"明天任务\"\"本周日程\"\"下周日程\"\"本月日程\"\"下月日程\"；(4) 用户要求\"修改日程\"\"改一下DDL\"\"调整优先级\"；..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "h3avysword",
+      "userId": "s175cq758hh2hzb9jxwgwkpnc583m38h",
+      "displayName": "H3avySword",
+      "image": "https://avatars.githubusercontent.com/u/258721301?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 329,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1775069005120,
+      "changelog": "- 修正相对路径下的schedule保存目录，兼容版本更新\n- 去除任务id的组内优先排序，现在日程表显示配置文件内的真实id，以便于通过任务id指定并提示openclaw修改",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:73510baa3188d137ecaf89fd100c73afb2eb90256dc77508f2eb6a735bf588ec"
+}

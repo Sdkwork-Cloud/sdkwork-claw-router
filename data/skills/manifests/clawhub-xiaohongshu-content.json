@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63246,
+  "uuid": "skill-clawhub-xiaohongshu-content",
+  "skillKey": "clawhub-xiaohongshu-content",
+  "name": "Xiaohongshu Content Creator",
+  "summary": "小紅書內容創作技能 - 爆款筆記標題、內容模板、hashtag策略、發布時間優化。適合博主、品牌、MCN。觸發詞：小紅書、紅書、xiaohongshu、筆記、種草、爆款、小紅書文案、筆記標題。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_content",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "isaacloi1995-dot",
+      "features": [
+        "小紅書內容創作技能",
+        "爆款筆記標題、內容模板、hashtag策略、發布時間優化。適合博主、品牌、MCN。觸發詞：小紅書、紅書、xiaohongshu、筆記、種草、爆款、小紅書文案、筆記標題。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaohongshu-content@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257231061?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaohongshu-content",
+      "url": "https://clawhub.ai/skills/xiaohongshu-content"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-content",
+    "url": "https://clawhub.ai/skills/xiaohongshu-content",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-content-e2c0476ea12cfb4d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaohongshu-content@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaohongshu-content-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:baf861e0d3f3e4a62f8a519129ee701ebdeba4aa304c47058059732d938d91f0",
+      "artifactSizeBytes": 2063
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T05:07:07.907Z"
+}

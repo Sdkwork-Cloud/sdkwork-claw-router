@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50122,
+  "uuid": "skill-clawhub-payspawn",
+  "skillKey": "clawhub-payspawn",
+  "name": "PaySpawn — On-Chain Spending Limits for AI Agents",
+  "summary": "Add spending controls to any AI agent that makes API payments. Supports x402 auto-pay, daily limits, per-transaction limits, address allowlists, and fleet pr...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.payspawn",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "adambrainai",
+      "features": [
+        "Add spending controls to any AI agent that makes API payments",
+        "Supports x402 auto-pay, daily limits, per-transaction limits, address allowlists, and fleet pr.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/payspawn@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260548252?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "payspawn",
+      "url": "https://clawhub.ai/skills/payspawn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "payspawn",
+    "url": "https://clawhub.ai/skills/payspawn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/payspawn-00dccda62d7953ba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/payspawn@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-payspawn-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ee43a9ae3c51f876d8901f0eaacf5e0e8aebdcdaa319de78bef5974e39ab697e",
+      "artifactSizeBytes": 2113
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T03:50:09.109Z"
+}

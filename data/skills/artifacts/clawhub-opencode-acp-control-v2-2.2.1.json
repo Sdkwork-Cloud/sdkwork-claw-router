@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/opencode-acp-control-v2@2.2.1",
+  "version": "2.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opencode_acp_control_v2",
+  "skill": {
+    "id": 22243,
+    "skillKey": "clawhub-opencode-acp-control-v2",
+    "name": "OpenCode ACP Control v2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opencode-acp-control-v2",
+    "url": "https://clawhub.ai/skills/opencode-acp-control-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opencode-acp-control-v2-d4af6bf42c361c94.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control OpenCode directly via the Agent Client Protocol (ACP). Start sessions, send prompts, resume conversations, and manage OpenCode updates. Includes auto..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "studio-hakke",
+      "userId": "publishers:studio-hakke",
+      "displayName": "Bastian Berrios Alarcon",
+      "image": "https://avatars.githubusercontent.com/u/253074697?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 480,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.2.1",
+      "createdAt": 1772724345355,
+      "changelog": "v2.2.1: Added opencode-session.sh helper script with auto-retry, adaptive polling",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:329293159fb2bfe3712544628ed15f507412195ceb8146b026f148c32fa35408"
+}

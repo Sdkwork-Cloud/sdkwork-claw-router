@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sqlformat@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sqlformat",
+  "skill": {
+    "id": 26665,
+    "skillKey": "clawhub-sqlformat",
+    "name": "Sqlformat"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sqlformat",
+    "url": "https://clawhub.ai/skills/sqlformat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sqlformat-6aa27ef339fedb31.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Format, lint, and pretty-print SQL with dialect conversion. Use when checking style, validating syntax, formatting queries, generating clean SQL."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bytesagain3",
+      "userId": "s17b0rz2zaqen3pqpq807a6q6983fgq5",
+      "displayName": "bytesagain3",
+      "image": "https://avatars.githubusercontent.com/u/218212813?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 353,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773831763093,
+      "changelog": "Domain-specific upgrade",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0901d52fa429527f3232a4eb774830f4c593a36034c9dba69fbba3df727fcb65"
+}

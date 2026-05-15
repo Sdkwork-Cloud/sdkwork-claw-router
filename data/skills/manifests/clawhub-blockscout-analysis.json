@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50749,
+  "uuid": "skill-clawhub-blockscout-analysis",
+  "skillKey": "clawhub-blockscout-analysis",
+  "name": "Blockchain Analysis",
+  "summary": "MANDATORY — invoke this skill BEFORE making any Blockscout MCP tool calls or writing any blockchain data scripts, even when the Blockscout MCP server is alre...",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blockscout_analysis",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alexander Kolotov",
+      "features": [
+        "MANDATORY — invoke this skill BEFORE making any Blockscout MCP tool calls or writing any blockc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/blockscout-analysis@0.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20793260?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "blockscout-analysis",
+      "url": "https://clawhub.ai/skills/blockscout-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blockscout-analysis",
+    "url": "https://clawhub.ai/skills/blockscout-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blockscout-analysis-a2ae4733c3b670f5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/blockscout-analysis@0.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-blockscout-analysis-0.4.0.json",
+      "version": "0.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d98e20548e32602bb738f98baa4ef9349cb29ccb94d6f2efcd4d251cb2e07e1c",
+      "artifactSizeBytes": 2625
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T21:38:40.860Z"
+}

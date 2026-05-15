@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37757,
+  "uuid": "skill-clawhub-openprovider",
+  "skillKey": "clawhub-openprovider",
+  "name": "openprovider",
+  "summary": "OpenProvider domain registrar & DNS management. Triggers on: register domain, buy domain, renew domain, transfer domain, delete domain, restore domain, add D...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openprovider",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jens Jung",
+      "features": [
+        "OpenProvider domain registrar & DNS management",
+        "Triggers on: register domain, buy domain, renew domain, transfer domain, delete domain, restore."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openprovider@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260768413?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openprovider",
+      "url": "https://clawhub.ai/skills/openprovider"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openprovider",
+    "url": "https://clawhub.ai/skills/openprovider",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openprovider-b8493a37d1e2b230.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openprovider@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-openprovider-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8a62acd605cbf0c5a3e43a607ce9c63f11ba7df0b61d40bf4fe80b6074cdb89d",
+      "artifactSizeBytes": 1993
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T06:43:37.274Z"
+}

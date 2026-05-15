@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mar-emotion-state@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mar_emotion_state",
+  "skill": {
+    "id": 46197,
+    "skillKey": "clawhub-mar-emotion-state",
+    "name": "mar-emotion-state"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mar-emotion-state",
+    "url": "https://clawhub.ai/skills/mar-emotion-state",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mar-emotion-state-e3ed461b00f809f4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "NL emotion tracking + prompt injection via OpenClaw hook"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "marjoriebroad",
+      "userId": "s17evr8hna69xbf4mv5z0nppgx84m26f",
+      "displayName": "MarjorieBroad",
+      "image": "https://avatars.githubusercontent.com/u/260425366?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777009623465,
+      "changelog": "- Initial release of Emotion State skill for OpenClaw.\n- Tracks user and agent emotions as natural-language phrases and persists per-user state.\n- Injects current emotion state and a trend line into the system prompt via a workspace hook.\n- Provides simple installation and configuration steps, including environment variables for customizing hook behavior.\n- Utilizes SkillBoss API Hub for automatic LLM-based emotion detection.\n- Ensures privacy by storing only inferred emotion summaries, not raw user text.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7049ebd00f3a3519c7cdeb1ab12ce3156fe5a4818342ab91d0091708912f2cfd"
+}

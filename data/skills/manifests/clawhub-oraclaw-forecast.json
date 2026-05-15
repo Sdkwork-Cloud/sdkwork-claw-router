@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30595,
+  "uuid": "skill-clawhub-oraclaw-forecast",
+  "skillKey": "clawhub-oraclaw-forecast",
+  "name": "Oraclaw Forecast",
+  "summary": "Time series forecasting for AI agents. ARIMA and Holt-Winters predictions with confidence intervals. Predict revenue, traffic, prices, or any sequential data...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oraclaw_forecast",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Whatsonyourmind",
+      "features": [
+        "Time series forecasting for AI agents",
+        "ARIMA and Holt-Winters predictions with confidence intervals",
+        "Predict revenue, traffic, prices, or any sequential data..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oraclaw-forecast@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/248369826?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oraclaw-forecast",
+      "url": "https://clawhub.ai/skills/oraclaw-forecast"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oraclaw-forecast",
+    "url": "https://clawhub.ai/skills/oraclaw-forecast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oraclaw-forecast-c37fc7ca22230f15.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oraclaw-forecast@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-oraclaw-forecast-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6ce87aba4d5108e10423de6928681c3206feeee50ad57466770f92583f2b8e27",
+      "artifactSizeBytes": 2408
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T13:03:00.575Z"
+}

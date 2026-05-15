@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32740,
+  "uuid": "skill-clawhub-fixture",
+  "skillKey": "clawhub-fixture",
+  "name": "Fixture",
+  "summary": "Generate and manage test data fixtures using CLI templates. Use when creating seed data, mock records, or reproducible test datasets.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fixture",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "Generate and manage test data fixtures using CLI templates",
+        "Use when creating seed data, mock records, or reproducible test datasets."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fixture@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fixture",
+      "url": "https://clawhub.ai/skills/fixture"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fixture",
+    "url": "https://clawhub.ai/skills/fixture",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fixture-f16d05ec6b29248d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fixture@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fixture-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2d6e2db3a9d57b16778898d7dbc5210e7662e9fd3d74bae8d50852a252912cca",
+      "artifactSizeBytes": 1815
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T22:37:06.562Z"
+}

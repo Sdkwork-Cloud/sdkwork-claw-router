@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/01-exchange-kill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.01_exchange_kill",
+  "skill": {
+    "id": 12564,
+    "skillKey": "clawhub-01-exchange-kill",
+    "name": "01-exchange-skill(not official)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "01-exchange-kill",
+    "url": "https://clawhub.ai/skills/01-exchange-kill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/01-exchange-kill-7ac8af5a9f93c031.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered 01.xyz exchange development skill for monitoring, trading strategies, and N1 blockchain integration. Covers REST API (FTX-inspired), Nord.ts SDK (@n1xyz/nord-ts), non-custodial trading patterns, and market making on Solana."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bouncyknighter",
+      "userId": "publishers:bouncyknighter",
+      "displayName": "Bouncyknighter",
+      "image": "https://avatars.githubusercontent.com/u/42419480?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1744,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770209823759,
+      "changelog": "Initial release of the 01xyz-developer skill for 01.xyz exchange integration.\n\n- Enables market monitoring, trading strategies, and risk analysis for 01.xyz (N1 blockchain) using FTX-inspired REST API and Nord.ts SDK.\n- Supports read-only integration: fetch orderbooks, market data, and funding rates without authentication.\n- Covers non-custodial trading patterns: local signing, user-controlled funds, and security best practices.\n- Provides step-by-step guidance for monitoring, account tracking, SDK setup, and safe trading automation.\n- Includes documentation references, example code, and detailed architecture flow.\n- MIT licensed and suitable for Solana, DeFi, and perpetual trading development.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:825915e585cb65ed7397485787efa9b38c2875bc4710761ca2eb36a22f21a7e2"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60854,
+  "uuid": "skill-clawhub-gmncode-usage",
+  "skillKey": "clawhub-gmncode-usage",
+  "name": "GMNCODE Usage",
+  "summary": "通过 HTTP 接口查询 GMNCODE / gmncode.cn 中转站的大模型用量，包括 dashboard 汇总、每日趋势、按模型拆分的 token 与费用数据。当用户要求查看 GMNCODE token 用量、每日模型消耗、API/中转站花费、dashboard 用量，或希望用脚本/HTTP 接口直接获取...",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gmncode_usage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AlexShen",
+      "features": [
+        "通过 HTTP 接口查询 GMNCODE / gmncode.cn 中转站的大模型用量，包括 dashboard 汇总、每日趋势、按模型拆分的 token 与费用数据。当用户要求查看 GMN."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gmncode-usage@0.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/73343630?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gmncode-usage",
+      "url": "https://clawhub.ai/skills/gmncode-usage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gmncode-usage",
+    "url": "https://clawhub.ai/skills/gmncode-usage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gmncode-usage-6c436d3a971b125e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gmncode-usage@0.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-gmncode-usage-0.1.3.json",
+      "version": "0.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:480a27a0acc436b611af4174c205b187ed6296ada34a05ea4e9c1f67e28d27e2",
+      "artifactSizeBytes": 2291
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T17:37:16.326Z"
+}

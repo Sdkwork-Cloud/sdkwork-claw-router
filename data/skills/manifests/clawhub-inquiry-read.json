@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62196,
+  "uuid": "skill-clawhub-inquiry-read",
+  "skillKey": "clawhub-inquiry-read",
+  "name": "inquiry-read",
+  "summary": "从 Tradew 平台分页读取客户网站询盘信息，支持多语言、自定义字段和 AI Agent 调用。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inquiry_read",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mouxiaming",
+      "features": [
+        "从 Tradew 平台分页读取客户网站询盘信息，支持多语言、自定义字段和 AI Agent 调用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/inquiry-read@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45960106?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "inquiry-read",
+      "url": "https://clawhub.ai/skills/inquiry-read"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inquiry-read",
+    "url": "https://clawhub.ai/skills/inquiry-read",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inquiry-read-9a330bf64cb9182e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/inquiry-read@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-inquiry-read-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:76197c029a60754d18396550db920f7ff609161d1befc1b877a74b8e4267eea2",
+      "artifactSizeBytes": 1927
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T04:00:11.196Z"
+}

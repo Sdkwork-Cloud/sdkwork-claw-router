@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crypto-sentiment-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_sentiment_monitor",
+  "skill": {
+    "id": 29139,
+    "skillKey": "clawhub-crypto-sentiment-monitor",
+    "name": "Crypto Sentiment Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-sentiment-monitor",
+    "url": "https://clawhub.ai/skills/crypto-sentiment-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-sentiment-monitor-2c84187c7501e438.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real-time crypto market sentiment analysis. Aggregates Twitter/X, Reddit, Google Trends, and exchange data. Detects FOMO/FUD cycles and whale movements. Trig..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dzxiatian-crypto",
+      "userId": "s177p06fq8cr84gf46ws5pgqqs84h2r8",
+      "displayName": "dzxiatian-crypto",
+      "image": "https://avatars.githubusercontent.com/u/266891090?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 309,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775708317592,
+      "changelog": "Initial release of Crypto Sentiment Monitor.\n\n- Real-time analysis of crypto market sentiment using data from Twitter/X, Reddit, Google Trends, and exchanges.\n- Detects FOMO (Fear of Missing Out) and FUD (Fear, Uncertainty, Doubt) sentiment cycles.\n- Monitors whale transactions and market movements.\n- Calculates a Crypto Fear & Greed Index based on multiple data signals.\n- Command-line usage examples and open-source data sources provided.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b6298c7998e9bca5726ded0434de16c95fd2fa8ea68355504301b980713a13af"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70055,
+  "uuid": "skill-clawhub-uwvwko-current-weather",
+  "skillKey": "clawhub-uwvwko-current-weather",
+  "name": "current_weather",
+  "summary": "获取用户当前位置和当前时间，通过浏览器访问天气网站查询天气信息。 支持查询今天、明天、后天等不同日期的天气情况。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uwvwko_current_weather",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "uwvwko",
+      "features": [
+        "获取用户当前位置和当前时间，通过浏览器访问天气网站查询天气信息。 支持查询今天、明天、后天等不同日期的天气情况。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uwvwko-current-weather@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/222942329?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uwvwko-current-weather",
+      "url": "https://clawhub.ai/skills/uwvwko-current-weather"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uwvwko-current-weather",
+    "url": "https://clawhub.ai/skills/uwvwko-current-weather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uwvwko-current-weather-e24d63b83ccfcace.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uwvwko-current-weather@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-uwvwko-current-weather-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:904ab5acacc9469d9dad628d6452f08efd2403badcffc6dd81626c0096730fe3",
+      "artifactSizeBytes": 2485
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T10:01:02.524Z"
+}

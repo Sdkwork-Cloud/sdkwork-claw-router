@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/publish-to-mdpage@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.publish_to_mdpage",
+  "skill": {
+    "id": 32201,
+    "skillKey": "clawhub-publish-to-mdpage",
+    "name": "Publish To Mdpage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "publish-to-mdpage",
+    "url": "https://clawhub.ai/skills/publish-to-mdpage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/publish-to-mdpage-7d2377c8e3c4f27d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn any markdown into a shareable web page via md.page. Use when the user asks to \"share this\", \"publish this markdown\", \"create a shareable link\", \"make th..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maypaz",
+      "userId": "s173q8ge42gmerg8ydwx0fjwx583nf47",
+      "displayName": "Or May-Paz",
+      "image": "https://avatars.githubusercontent.com/u/9199821?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 256,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774991757084,
+      "changelog": "Add secret scanning before publish, remove rate-limit/bot-blocking warnings, add keywords for discoverability",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c3b22f142746d07760580f027182cd62d28c58a588dd88479502e67426e7c3db"
+}

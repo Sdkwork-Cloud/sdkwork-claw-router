@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25167,
+  "uuid": "skill-clawhub-binance-trading-assistant",
+  "skillKey": "clawhub-binance-trading-assistant",
+  "name": "Binance Trading Assistant",
+  "summary": "Monitor Binance spot and futures balances, open positions with P&L, portfolio performance, and set price alerts via your AI assistant.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.binance_trading_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dagangtj",
+      "features": [
+        "Monitor Binance spot and futures balances, open positions with P&L, portfolio performance, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/binance-trading-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65108318?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "binance-trading-assistant",
+      "url": "https://clawhub.ai/skills/binance-trading-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "binance-trading-assistant",
+    "url": "https://clawhub.ai/skills/binance-trading-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/binance-trading-assistant-0aca61df45d81a81.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/binance-trading-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-binance-trading-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e34b4c912cecb934efce1d0c01c4a416c4ec797063f423bfecb96b20cdc66d25",
+      "artifactSizeBytes": 2252
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T21:08:17.309Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/system-controller@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.system_controller",
+  "skill": {
+    "id": 33641,
+    "skillKey": "clawhub-system-controller",
+    "name": "System Controller"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "system-controller",
+    "url": "https://clawhub.ai/skills/system-controller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/system-controller-f9dd3f2d68c4ca41.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control Windows desktop software, hardware, and IoT devices. This skill should be used when the user wants to open/close/resize windows, start/stop/monitor p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangjiaocheng",
+      "userId": "s175zq13kt63ypfry5rgxh1pv18440m2",
+      "displayName": "波动几何",
+      "image": "https://avatars.githubusercontent.com/u/25478397?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 235,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775224743945,
+      "changelog": "Universal Software & Hardware Control.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cad821d771c56025723e7beb8df3189977cdf3157f192f03c84971d51db1d127"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60782,
+  "uuid": "skill-clawhub-feishu-multi-agent-factory",
+  "skillKey": "clawhub-feishu-multi-agent-factory",
+  "name": "Feishu Multi Agent Factory",
+  "summary": "批量配置 OpenClaw 多 agent + 飞书 channel。当用户说「添加 agent」「新建 agent」「配置飞书」「批量创建 agent」「添加新机器人」时触发。通过对话引导收集信息，一键写入 openclaw.json 并初始化工作区。",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_multi_agent_factory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cchenwei",
+      "features": [
+        "批量配置 OpenClaw 多 agent + 飞书 channel。当用户说「添加 agent」「新建 agent」「配置飞书」「批量创建 agent」「添加新机器人」时触发。通过对话引导."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-multi-agent-factory@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17821177?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-multi-agent-factory",
+      "url": "https://clawhub.ai/skills/feishu-multi-agent-factory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-multi-agent-factory",
+    "url": "https://clawhub.ai/skills/feishu-multi-agent-factory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-multi-agent-factory-3258094e42cef77d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-multi-agent-factory@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-multi-agent-factory-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a947ac68a0204ed63e73ed97e438e3ac21350e16deb568acc9e4b775e7c26001",
+      "artifactSizeBytes": 2360
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T11:01:52.400Z"
+}

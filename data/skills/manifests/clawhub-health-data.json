@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26518,
+  "uuid": "skill-clawhub-health-data",
+  "skillKey": "clawhub-health-data",
+  "name": "Health Data",
+  "summary": "Analyze Apple Health exports (export.zip or the exported folder) using xmlstarlet/jq to summarize activity, steps, sleep, and source counts. Trigger this ski...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.health_data",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pp",
+      "features": [
+        "Analyze Apple Health exports (export.zip or the exported folder) using xmlstarlet/jq to summari.",
+        "Trigger this ski..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/health-data@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263042322?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "health-data",
+      "url": "https://clawhub.ai/skills/health-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "health-data",
+    "url": "https://clawhub.ai/skills/health-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/health-data-ad4280cfdf5ce0af.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/health-data@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-health-data-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aa901941db42ea2194df68b761637f0ddf16dc4d7c3cfe26ccbf24198def1278",
+      "artifactSizeBytes": 1904
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T18:36:07.374Z"
+}

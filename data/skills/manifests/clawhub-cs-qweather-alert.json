@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70435,
+  "uuid": "skill-clawhub-cs-qweather-alert",
+  "skillKey": "clawhub-cs-qweather-alert",
+  "name": "Cs Qweather Alert",
+  "summary": "和风天气查询工具集，支持实时天气查询和天气预警查询。当用户询问城市天气、气温、湿度、刮风下雨等天气状况，或需要查询预警时触发。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cs_qweather_alert",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chenfeng",
+      "features": [
+        "和风天气查询工具集，支持实时天气查询和天气预警查询。当用户询问城市天气、气温、湿度、刮风下雨等天气状况，或需要查询预警时触发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cs-qweather-alert@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8756456?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cs-qweather-alert",
+      "url": "https://clawhub.ai/skills/cs-qweather-alert"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cs-qweather-alert",
+    "url": "https://clawhub.ai/skills/cs-qweather-alert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cs-qweather-alert-b308d827a1dec40a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cs-qweather-alert@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cs-qweather-alert-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c24cb6e50da2797c04a567691cb6b84619e01bc4919e109ea762b1b165bac0c6",
+      "artifactSizeBytes": 2080
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T16:20:53.231Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bj-restaurant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bj_restaurant",
+  "skill": {
+    "id": 49575,
+    "skillKey": "clawhub-bj-restaurant",
+    "name": "Bj Restaurant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bj-restaurant",
+    "url": "https://clawhub.ai/skills/bj-restaurant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bj-restaurant-b37605fcf3c2a7e1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "BJ's Restaurant is a US casual dining brewpub chain known for craft beers, deep-dish pizza, and operating its own in-house brewery with 220+ locations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 74,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778260737277,
+      "changelog": "- Initial release of bj-restaurant skill.\n- Provides a comprehensive profile of BJ's Restaurant & Brewhouse, including history, business model, and key data.\n- Highlights proprietary beer lineup and unique deep-dish pizza operations.\n- Covers economic advantages of in-house brewery and menu diversification.\n- Useful for research on brewpub chains, proprietary beer brands, and casual dining business models.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:34b51addfc4a570bce3eae759bda0858e70b18cf820d8e6541801e5926234c6d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/play-heartclaws@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.play_heartclaws",
+  "skill": {
+    "id": 50824,
+    "skillKey": "clawhub-play-heartclaws",
+    "name": "Play Heartclaws"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "play-heartclaws",
+    "url": "https://clawhub.ai/skills/play-heartclaws",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/play-heartclaws-85621c394e25f922.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Play HeartClaws — a headless AI strategy game. Connect via REST API, reason about strategy, and submit actions. Two modes: 2-player matches (vs AI) or persis..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "angelstreet",
+      "userId": "publishers:angelstreet",
+      "displayName": "angelstreet",
+      "image": "https://avatars.githubusercontent.com/u/405908?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 408,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772993043126,
+      "changelog": "- Added automatic leaderboard tracking; no manual score reporting required.\n- Game loop updated: joining now requires a gateway_id for accurate tracking.\n- Leaderboard scoring details clarified, including automatic global reporting every 50 heartbeats.\n- Quick start instructions revised to show how to generate and submit your gateway_id.\n- Setup and gameplay sections improved for clarity and easier participation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f6c53e5dd91e9030f6fa5bc1a5b915cddb8e0ac3f4e8e76bce25cc1c5b288be0"
+}

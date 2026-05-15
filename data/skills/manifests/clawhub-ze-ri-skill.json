@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73561,
+  "uuid": "skill-clawhub-ze-ri-skill",
+  "skillKey": "clawhub-ze-ri-skill",
+  "name": "择日学技能",
+  "summary": "择日学技能。支持查询吉日凶日、建除十二神、黄道黑道、神煞吉凶，提供婚嫁、开业、动土、出行等择日建议。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ze_ri_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dglijin-oss",
+      "features": [
+        "择日学技能。支持查询吉日凶日、建除十二神、黄道黑道、神煞吉凶，提供婚嫁、开业、动土、出行等择日建议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ze-ri-skill@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/251980243?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ze-ri-skill",
+      "url": "https://clawhub.ai/skills/ze-ri-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ze-ri-skill",
+    "url": "https://clawhub.ai/skills/ze-ri-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ze-ri-skill-f34960aad50437dd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ze-ri-skill@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ze-ri-skill-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b39fdb101167e7f585581b9b6e0bc824f292b32eba9b1b6b1e9d14ad549206fb",
+      "artifactSizeBytes": 1910
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T15:10:59.458Z"
+}

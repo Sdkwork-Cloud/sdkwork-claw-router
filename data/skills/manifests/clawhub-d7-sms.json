@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33478,
+  "uuid": "skill-clawhub-d7-sms",
+  "skillKey": "clawhub-d7-sms",
+  "name": "D7 Sms",
+  "summary": "D7 SMS integration. Manage data, records, and automate workflows. Use when the user wants to interact with D7 SMS data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.d7_sms",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "D7 SMS integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with D7 SMS data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/d7-sms@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "d7-sms",
+      "url": "https://clawhub.ai/skills/d7-sms"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "d7-sms",
+    "url": "https://clawhub.ai/skills/d7-sms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/d7-sms-75da3d95eb975fd6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/d7-sms@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-d7-sms-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:36a92cdb5249dd0f13dabd9f75afeaf9680cba500a2df924232d6f07791a48fb",
+      "artifactSizeBytes": 1820
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:22:10.443Z"
+}

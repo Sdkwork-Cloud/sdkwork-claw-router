@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69321,
+  "uuid": "skill-clawhub-zjtj-sar-calculator",
+  "skillKey": "clawhub-zjtj-sar-calculator",
+  "name": "ZJTJ-SAR指标计算器",
+  "summary": "基于A股行情数据计算SAR抛物线指标，并用机构资金流向近似替代ZJTJ庄家抬轿指标，实现四维选股策略。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zjtj_sar_calculator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haohanyang92",
+      "features": [
+        "基于A股行情数据计算SAR抛物线指标，并用机构资金流向近似替代ZJTJ庄家抬轿指标，实现四维选股策略。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zjtj-sar-calculator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61062925?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zjtj-sar-calculator",
+      "url": "https://clawhub.ai/skills/zjtj-sar-calculator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zjtj-sar-calculator",
+    "url": "https://clawhub.ai/skills/zjtj-sar-calculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zjtj-sar-calculator-1f83cd5ce062d73b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zjtj-sar-calculator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zjtj-sar-calculator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d51428b2e6e6f856ae73b171a3a5247d26950d005b6eb2e6c844d9eb3015e206",
+      "artifactSizeBytes": 2265
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T14:58:19.506Z"
+}

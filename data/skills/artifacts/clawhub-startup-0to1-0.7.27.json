@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/startup-0to1@0.7.27",
+  "version": "0.7.27",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.startup_0to1",
+  "skill": {
+    "id": 51947,
+    "skillKey": "clawhub-startup-0to1",
+    "name": "Startup Agent (→ raon-os)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "startup-0to1",
+    "url": "https://clawhub.ai/skills/startup-0to1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/startup-0to1-c43c6ce1f3915f67.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Alias for raon-os — AI-powered startup companion for Korean founders. Install the main package for full functionality."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lifeissea",
+      "userId": "s170g3z8qxdg1sz9j7s6tkffvn83s571",
+      "displayName": "Tomas",
+      "image": "https://avatars.githubusercontent.com/u/67946543?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1062,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 20
+    },
+    "latestVersion": {
+      "version": "0.7.27",
+      "createdAt": 1771637332434,
+      "changelog": "Clarify: this is an alias for raon-os. Install raon-os for full code.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:81ec8eb64845a8c3836ed2e5c0a745922fda3be16c9a7eb61f89d2665d04dbfd"
+}

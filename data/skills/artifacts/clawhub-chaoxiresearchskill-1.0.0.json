@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chaoxiresearchskill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chaoxiresearchskill",
+  "skill": {
+    "id": 57255,
+    "skillKey": "clawhub-chaoxiresearchskill",
+    "name": "潮汐调研框架"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chaoxiresearchskill",
+    "url": "https://clawhub.ai/skills/chaoxiresearchskill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chaoxiresearchskill-4b8674c6756531e7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when the user requests a structured, in-depth research on a specific topic, industry, technology, product, market, person, organiza..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "orzmicke-coder",
+      "userId": "s1799qr9ggjta7bmm9b2rsxh5s85d0c3",
+      "displayName": "orzmicke-coder",
+      "image": "https://avatars.githubusercontent.com/u/265168944?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776914343973,
+      "changelog": "deep-research-framework v1.0.0 – Initial release\n\n- Introduces a structured, multi-phase deep research skill designed for rigorous, balanced, and actionable research reports.\n- Features a methodology that defines objectives, audience, scope, and research dimensions before starting.\n- Enforces multi-source evidence gathering with credibility ratings and mandatory counterevidence inclusion.\n- Flags all information gaps transparently; prohibits data fabrication and false certainty.\n- Outputs both a fully structured research report and a one-page summary card with key findings and confidence scores.\n- Includes clear quality rules and a checklist for report integrity and transparency.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8aa6cb74995305c5b7db602760f9add5ee2c436da9531dd89b38d4b5924278d4"
+}

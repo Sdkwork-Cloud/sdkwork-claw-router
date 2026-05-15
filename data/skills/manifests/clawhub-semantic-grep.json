@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42290,
+  "uuid": "skill-clawhub-semantic-grep",
+  "skillKey": "clawhub-semantic-grep",
+  "name": "Semantic Grep",
+  "summary": "Offline local semantic code search using embeddings to find and index code by meaning with llama.cpp, ONNX, or Ollama backends.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.semantic_grep",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rizperdana",
+      "features": [
+        "Offline local semantic code search using embeddings to find and index code by meaning with llam."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/semantic-grep@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11896928?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "semantic-grep",
+      "url": "https://clawhub.ai/skills/semantic-grep"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "semantic-grep",
+    "url": "https://clawhub.ai/skills/semantic-grep",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/semantic-grep-d844447fe48c161a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/semantic-grep@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-semantic-grep-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c57459d50bacf8bf7df2dd527f56a1d724a2ef5ce316256b454f530361cfe76b",
+      "artifactSizeBytes": 2384
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T22:18:40.419Z"
+}

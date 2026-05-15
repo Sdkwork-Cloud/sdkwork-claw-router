@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-to-video-ai-discord@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_to_video_ai_discord",
+  "skill": {
+    "id": 47202,
+    "skillKey": "clawhub-image-to-video-ai-discord",
+    "name": "Image To Video Ai Discord"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-to-video-ai-discord",
+    "url": "https://clawhub.ai/skills/image-to-video-ai-discord",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-to-video-ai-discord-2ff9a86211a38c6b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "convert still images into animated video clips with this skill. Works with JPG, PNG, WEBP, GIF files up to 200MB. Discord community members use it for conver..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vynbosserman65",
+      "userId": "s175xbynxxje7z8y8jbn28x5vx84dckp",
+      "displayName": "vynbosserman65",
+      "image": "https://avatars.githubusercontent.com/u/208823770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 117,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777104201963,
+      "changelog": "Image to Video AI Discord — first release!\n\n- Convert still images (JPG, PNG, WEBP, GIF, up to 200MB) into 1080p MP4 videos, ready to share in Discord.\n- Fast cloud GPU rendering — most videos are ready within 30–60 seconds.\n- Simple onboarding: automatic session setup, including free anonymous tokens with 100 credits (7-day expiry) if needed.\n- Multiple prompt types supported — generate, edit, add text, and more, all processed via intent classification.\n- Exports and uploads supported; credits, session state, and error handling included.\n- Works entirely server-side; no local installation required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6499187b8abaf4a4d56ede1db0a9b7f36b4c2b0c2ae8ea1873d618c867d6e610"
+}

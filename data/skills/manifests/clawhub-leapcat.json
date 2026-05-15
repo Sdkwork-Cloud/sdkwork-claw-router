@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43551,
+  "uuid": "skill-clawhub-leapcat",
+  "skillKey": "clawhub-leapcat",
+  "name": "Leapcat Skills",
+  "summary": "Trade stocks, subscribe to IPOs, manage wallet, complete KYC, and access real-time market data via AI agent. 7 skills for the Leapcat platform.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.leapcat",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "raymondxu813-finance",
+      "features": [
+        "Trade stocks, subscribe to IPOs, manage wallet, complete KYC, and access real-time market data.",
+        "7 skills for the Leapcat platform."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/leapcat@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/249978016?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "leapcat",
+      "url": "https://clawhub.ai/skills/leapcat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "leapcat",
+    "url": "https://clawhub.ai/skills/leapcat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/leapcat-0aff9bd28bcceceb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/leapcat@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-leapcat-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d57ddb9153db935d89464fe4af0ef76546ddd47e97f6e9d5c275fe5eb924cb7",
+      "artifactSizeBytes": 2364
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T00:47:19.455Z"
+}

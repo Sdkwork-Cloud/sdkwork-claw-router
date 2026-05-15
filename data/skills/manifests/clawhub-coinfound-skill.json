@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28833,
+  "uuid": "skill-clawhub-coinfound-skill",
+  "skillKey": "clawhub-coinfound-skill",
+  "name": "CoinFound-Skill",
+  "summary": "Read-only CoinFound RWA data skill backed by a bundled endpoint catalog and schema snapshots.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coinfound_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DarrenLuo",
+      "features": [
+        "Read-only CoinFound RWA data skill backed by a bundled endpoint catalog and schema snapshots."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coinfound-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6427009?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coinfound-skill",
+      "url": "https://clawhub.ai/skills/coinfound-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coinfound-skill",
+    "url": "https://clawhub.ai/skills/coinfound-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coinfound-skill-30e432cbc01108c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coinfound-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-coinfound-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:978fbefae6413b6e4a8e9e1c5e9361d0815cef8cc5d38750a6970c2133d86470",
+      "artifactSizeBytes": 2224
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T09:13:09.249Z"
+}

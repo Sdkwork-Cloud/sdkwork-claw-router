@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/insurance-claims-intelligence@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.insurance_claims_intelligence",
+  "skill": {
+    "id": 62743,
+    "skillKey": "clawhub-insurance-claims-intelligence",
+    "name": "Insurance Claims Intelligence Expert"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "insurance-claims-intelligence",
+    "url": "https://clawhub.ai/skills/insurance-claims-intelligence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/insurance-claims-intelligence-629b989b03bd3708.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供多模态医疗票据OCR识别、智能判责、反欺诈检测和全险种覆盖的保险理赔智能分析与自动化支持。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gechengling",
+      "userId": "s17ewqc4f2s6gpcbm88hy7fgvn85kg1g",
+      "displayName": "lingfeng-19",
+      "image": "https://avatars.githubusercontent.com/u/8140166?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1777919161472,
+      "changelog": "v1.2.0 Security & Compliance Update: (1) Added prominent disclaimers (EN/CN) stating this is advisory-only with NO executable models; (2) All accuracy figures now labeled as literature benchmarks, NOT validated results; (3) Removed ALL auto-approval language (no more 'auto-approve' or amount thresholds); (4) Added data security notices (PII redaction, API key management, vendor data retention policy); (5) Added anti-fraud data governance section (retention limits, access control, correction workflow); (6) All outputs now clearly labeled as 'drafts requiring licensed professional review'. Files changed: SKILL.md, README.md, references/claims_ocr_tech.md, references/claims_liability_engine.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:224b823abeeb4c1f83349df83ebd020202a0584da8579a67730b104cb7fb3210"
+}

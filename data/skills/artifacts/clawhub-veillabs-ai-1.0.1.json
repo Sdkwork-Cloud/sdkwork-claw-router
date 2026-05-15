@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/veillabs-ai@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.veillabs_ai",
+  "skill": {
+    "id": 34790,
+    "skillKey": "clawhub-veillabs-ai",
+    "name": "Veillabs Integration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "veillabs-ai",
+    "url": "https://clawhub.ai/skills/veillabs-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/veillabs-ai-873bb2e65a8a74ad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with Veillabs privacy-focused DEX API for cross-chain swaps, private seed distributions, and transaction tracking."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "veillabsapp",
+      "userId": "s179eq11x132j4x4nqpcm1axjh83j6qf",
+      "displayName": "Veillabsapp",
+      "image": "https://avatars.githubusercontent.com/u/266322587?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 221,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774513798089,
+      "changelog": "- Documentation update: Clarified error handling instructions by removing mention of \"invalid private key\" from 400 Bad Request responses.\n- No changes to code or functionality; behavior remains the same.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:46c00eef044fd068ea6276788841254d33f3c6fe8039fdded3e0d599d9581f34"
+}

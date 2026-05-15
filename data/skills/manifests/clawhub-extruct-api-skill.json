@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46717,
+  "uuid": "skill-clawhub-extruct-api-skill",
+  "skillKey": "clawhub-extruct-api-skill",
+  "name": "Extruct API Skill",
+  "summary": "Run explicit Extruct API tasks through the bundled Extruct CLI. Covers Deep Search, semantic search, lookalike search, company and people tables, column oper...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.extruct_api_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zkid18",
+      "features": [
+        "Run explicit Extruct API tasks through the bundled Extruct CLI",
+        "Covers Deep Search, semantic search, lookalike search, company and people tables, column oper..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/extruct-api-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8243154?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "extruct-api-skill",
+      "url": "https://clawhub.ai/skills/extruct-api-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "extruct-api-skill",
+    "url": "https://clawhub.ai/skills/extruct-api-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/extruct-api-skill-9d81f158e5b5ba92.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/extruct-api-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-extruct-api-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c41eeb11fee00f39c69eb28f9aa1e42c743798aaf5cc422f7367a49864a40ab7",
+      "artifactSizeBytes": 2363
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T21:43:21.530Z"
+}

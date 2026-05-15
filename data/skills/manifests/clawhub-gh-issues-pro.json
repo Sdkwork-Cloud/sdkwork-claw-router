@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45858,
+  "uuid": "skill-clawhub-gh-issues-pro",
+  "skillKey": "clawhub-gh-issues-pro",
+  "name": "GitHub Issues Manager",
+  "summary": "Fetch GitHub issues, spawn sub-agents to implement fixes and open PRs, then monitor and address PR review comments. Usage: /gh-issues [owner/repo] [--label b...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gh_issues_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hsyhph",
+      "features": [
+        "Fetch GitHub issues, spawn sub-agents to implement fixes and open PRs, then monitor and address.",
+        "Usage: /gh-issues [owner/repo] [--label b..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gh-issues-pro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/73018559?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gh-issues-pro",
+      "url": "https://clawhub.ai/skills/gh-issues-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gh-issues-pro",
+    "url": "https://clawhub.ai/skills/gh-issues-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gh-issues-pro-6a005bba4e29a25a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gh-issues-pro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gh-issues-pro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:842e759f46cdfb07239a7e641d9450b0a81a35438c5812fd691fc0abc4168ce1",
+      "artifactSizeBytes": 1882
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T06:56:12.157Z"
+}

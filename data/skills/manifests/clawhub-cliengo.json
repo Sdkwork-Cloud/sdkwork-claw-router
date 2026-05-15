@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30905,
+  "uuid": "skill-clawhub-cliengo",
+  "skillKey": "clawhub-cliengo",
+  "name": "Cliengo",
+  "summary": "Cliengo integration. Manage data, records, and automate workflows. Use when the user wants to interact with Cliengo data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cliengo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Cliengo integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Cliengo data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cliengo@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cliengo",
+      "url": "https://clawhub.ai/skills/cliengo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cliengo",
+    "url": "https://clawhub.ai/skills/cliengo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cliengo-1d924a8ac3e82398.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cliengo@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-cliengo-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d1eacb415ddc1b20dca26df5cfba751cd2d4d29b8a378c2d74e8c49b8a60f61e",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:18:45.173Z"
+}

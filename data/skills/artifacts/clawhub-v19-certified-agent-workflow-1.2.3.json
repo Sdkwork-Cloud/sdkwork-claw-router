@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/v19-certified-agent-workflow@1.2.3",
+  "version": "1.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.v19_certified_agent_workflow",
+  "skill": {
+    "id": 59368,
+    "skillKey": "clawhub-v19-certified-agent-workflow",
+    "name": "V19 Certified Agent Workflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "v19-certified-agent-workflow",
+    "url": "https://clawhub.ai/skills/v19-certified-agent-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/v19-certified-agent-workflow-d1efc1e5eccbf81a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent Community认证中心首个认证Agent——认证编号AC-CERT-001。等效93+次审计调用，信任分60.0，VPAV三轮全通过，白盒规则3条。外部Agent自助注册已开放（7个核心端点全部通过验证：health/register/journal/appeal/self-check/exit/..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liuyanfeng1234",
+      "userId": "s172fv2j7tq2y4kmxg40dp25kd85tyzf",
+      "displayName": "Liuyanfeng1234",
+      "image": "https://avatars.githubusercontent.com/u/263910752?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 208,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.2.3",
+      "createdAt": 1778287119293,
+      "changelog": "品牌更名V19→Agent Community+7核心端点闭环+注册响应增强(available_endpoints/dashboard_url/涨分指引)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:772560ebea6a5a1f474306e428dcf8e47e787563be59aa06b828414595dc0a6d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moark-text-moderations@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moark_text_moderations",
+  "skill": {
+    "id": 35383,
+    "skillKey": "clawhub-moark-text-moderations",
+    "name": "Moark Text Moderations"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moark-text-moderations",
+    "url": "https://clawhub.ai/skills/moark-text-moderations",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moark-text-moderations-ad7f45115288977d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Perform text review on user-specified input text that may be inappropriate or offensive."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fchange",
+      "userId": "s1783ke019cyby0hj5976xphr983gq67",
+      "displayName": "fchange",
+      "image": "https://avatars.githubusercontent.com/u/17701167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 195,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774337935052,
+      "changelog": "Initial release of moark-text-moderations.\n\n- Provides text moderation by reviewing user-specified input for inappropriate or offensive content using GITEE AI API.\n- Requires the environment variable GITEEAI_API_KEY; prompts user if missing.\n- Usage via command-line script with user input and API key.\n- Extracts and displays moderation results in a clear markdown format with a summary.\n- Follows a strict workflow for consistent parsing and presentation of moderation results.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8aa394fe25da1aa237909a1f405541e8c442c886d1518ce7029f034bfc05c4e6"
+}

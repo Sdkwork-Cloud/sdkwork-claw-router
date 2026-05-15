@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72641,
+  "uuid": "skill-clawhub-webnovel-writer",
+  "skillKey": "clawhub-webnovel-writer",
+  "name": "Novel Writer",
+  "summary": "长篇网络小说创作引擎，支持写作、续写、审稿、一致性检查、矛盾检测、角色状态管理。适用于番茄小说等平台的都市/奇幻/悬疑/催泪等类型长篇连载（50万字以上）。当用户提到写小说、续写章节、检查章节矛盾、审查小说质量、角色设定管理、时间线梳理、大纲规划、弹幕角色管理时触发。覆盖从大纲设计到逐章写作到质量审校的完整流程。",
+  "version": "3.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.webnovel_writer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ZYuanJia",
+      "features": [
+        "长篇网络小说创作引擎，支持写作、续写、审稿、一致性检查、矛盾检测、角色状态管理。适用于番茄小说等平台的都市/奇幻/悬疑/催泪等类型长篇连载（50万字以上）。当用户提到写小说、续写章节、检查章."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/webnovel-writer@3.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/194580702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "webnovel-writer",
+      "url": "https://clawhub.ai/skills/webnovel-writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "webnovel-writer",
+    "url": "https://clawhub.ai/skills/webnovel-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/webnovel-writer-f6d436fb4b448578.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/webnovel-writer@3.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-webnovel-writer-3.3.0.json",
+      "version": "3.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f3a6d8b40fcc1b351ec0dd32e67a56e252991eed6d6e9a432e50963f1ad5713",
+      "artifactSizeBytes": 2263
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T08:57:38.413Z"
+}

@@ -7,6 +7,9 @@ import { renderToStaticMarkup } from "react-dom/server";
 import {
   buildApiCategorySidebarTree,
   buildApiReferenceSystemsFromTabs,
+  formatApiOperationDisplayName,
+  getApiSystemDisplayName,
+  getDefaultApiReferenceEndpoint,
   loadApiReferenceSystems,
   sortApiSchemaTabs,
   type ApiSchemaTab,
@@ -384,9 +387,104 @@ const conversationGatewaySpec = {
   },
 };
 
+const recursiveGatewaySpec = {
+  components: {
+    schemas: {
+      RecursiveJsonSchemaAdditionalProperties: {
+        oneOf: [
+          { type: "boolean" },
+          { $ref: "#/components/schemas/RecursiveJsonSchema" },
+        ],
+      },
+      RecursiveJsonSchema: {
+        type: "object",
+        additionalProperties: true,
+        properties: {
+          type: {
+            type: "string",
+            description: "JSON schema primitive type.",
+          },
+          items: {
+            allOf: [{ $ref: "#/components/schemas/RecursiveJsonSchema" }],
+            description: "Nested schema item.",
+          },
+          properties: {
+            type: "object",
+            additionalProperties: {
+              allOf: [{ $ref: "#/components/schemas/RecursiveJsonSchema" }],
+              description: "Property schema map values.",
+            },
+          },
+          additionalProperties: {
+            allOf: [{ $ref: "#/components/schemas/RecursiveJsonSchemaAdditionalProperties" }],
+            description: "Additional properties schema.",
+          },
+        },
+      },
+      RecursiveChatTool: {
+        type: "object",
+        required: ["name", "parameters"],
+        properties: {
+          name: { type: "string" },
+          parameters: { $ref: "#/components/schemas/RecursiveJsonSchema" },
+        },
+      },
+      RecursiveChatRequest: {
+        type: "object",
+        required: ["model", "tools"],
+        properties: {
+          model: { type: "string" },
+          tools: {
+            type: "array",
+            items: { $ref: "#/components/schemas/RecursiveChatTool" },
+          },
+        },
+      },
+      RecursiveChatResponse: {
+        type: "object",
+        required: ["id", "schema"],
+        properties: {
+          id: { type: "string" },
+          schema: {
+            allOf: [{ $ref: "#/components/schemas/RecursiveJsonSchema" }],
+            description: "Returned recursive schema.",
+          },
+        },
+      },
+    },
+  },
+  paths: {
+    "/v1/chat/completions": {
+      post: {
+        operationId: "createRecursiveChatCompletion",
+        summary: "Create Recursive Chat Completion",
+        tags: ["Chat"],
+        requestBody: {
+          required: true,
+          content: {
+            "application/json": {
+              schema: { $ref: "#/components/schemas/RecursiveChatRequest" },
+            },
+          },
+        },
+        responses: {
+          "200": {
+            description: "ok",
+            content: {
+              "application/json": {
+                schema: { $ref: "#/components/schemas/RecursiveChatResponse" },
+              },
+            },
+          },
+        },
+      },
+    },
+  },
+};
+
 const appSpec = {
   paths: {
-    "/app/v3/api/router/models": {
+    "/app/v3/api/ai/models": {
       get: {
         operationId: "listAppModels",
         summary: "List App Models",
@@ -424,7 +522,36 @@ test("api reference builds one system per backend schema tab", async () => {
 
   assert.deepEqual(systems.map((system) => system.id), ["gateway", "app"]);
   assert.equal(systems[0].categories[0].name, "Chat");
-  assert.equal(systems[1].categories[0].endpoints[0].path, "/app/v3/api/router/models");
+  assert.equal(systems[1].categories[0].endpoints[0].path, "/app/v3/api/ai/models");
+});
+
+test("api reference formats operation summaries as stable display titles", () => {
+  assert.equal(formatApiOperationDisplayName("Create chat completion"), "Create Chat Completion");
+  assert.equal(formatApiOperationDisplayName("Google Gemini stream generate content"), "Google Gemini Stream Generate Content");
+  assert.equal(formatApiOperationDisplayName("POST /v1/chat/completions"), "POST /v1/chat/completions");
+});
+
+test("api reference defaults gateway display to Default Open API and opens chat completions first", async () => {
+  const gatewayOpenApi = JSON.parse(readFileSync(
+    new URL("./public/openapi.json", import.meta.url),
+    "utf8",
+  ));
+  const manifest: ApiSchemaTabsDocument = {
+    cacheTtlSeconds: 30,
+    tabs: [
+      { id: "gateway", name: "Claw Router Open API", order: 10, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
+    ],
+  };
+
+  const systems = await buildApiReferenceSystemsFromTabs(manifest, async (url) => {
+    if (url === "/openapi.json") return gatewayOpenApi;
+    throw new Error(`unexpected url ${url}`);
+  });
+  const defaultEndpoint = getDefaultApiReferenceEndpoint(systems[0]);
+
+  assert.equal(getApiSystemDisplayName(systems[0]), "Default Open API");
+  assert.equal(defaultEndpoint?.name, "Create Chat Completion");
+  assert.equal(defaultEndpoint?.path, "/v1/chat/completions");
 });
 
 test("api reference keeps vendor multimodal endpoints under their OpenAI modality groups", async () => {
@@ -456,6 +583,34 @@ test("api reference keeps vendor multimodal endpoints under their OpenAI modalit
     systems[0].categories.find((category) => category.name === "Files/google")?.endpoints[0].path,
     "/google/v1beta/files",
   );
+});
+
+test("api reference shows Google Gemini content endpoints under chat", async () => {
+  const gatewayOpenApi = JSON.parse(readFileSync(
+    new URL("./public/openapi.json", import.meta.url),
+    "utf8",
+  ));
+  const manifest: ApiSchemaTabsDocument = {
+    cacheTtlSeconds: 30,
+    tabs: [
+      { id: "gateway", name: "Claw Router Open API", order: 10, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
+    ],
+  };
+  const systems = await buildApiReferenceSystemsFromTabs(manifest, async (url) => {
+    if (url === "/openapi.json") return gatewayOpenApi;
+    throw new Error(`unexpected url ${url}`);
+  });
+  const sidebarTree = buildApiCategorySidebarTree(systems[0].categories);
+  const chat = sidebarTree.find((node) => node.name === "Chat");
+  const google = chat?.children.find((node) => node.name === "google");
+  const googlePaths = google?.endpoints.map((endpoint) => endpoint.path).sort();
+
+  assert.ok(google);
+  assert.deepEqual(googlePaths, [
+    "/google/v1beta/models/{model}:countTokens",
+    "/google/v1beta/models/{model}:generateContent",
+    "/google/v1beta/models/{model}:streamGenerateContent",
+  ]);
 });
 
 test("api reference sidebar builds nested modality vendor tree", async () => {
@@ -586,6 +741,44 @@ test("api reference expands referenced request and response schemas into detaile
   assert.equal(endpoint.response, '{\n  "task_id": "string",\n  "state": "string",\n  "creations": [\n    {}\n  ]\n}');
 });
 
+test("api and sdk reference builders render recursive schema tabs without overflowing the stack", async () => {
+  const manifest: ApiSchemaTabsDocument = {
+    cacheTtlSeconds: 30,
+    tabs: [
+      { id: "gateway", name: "Claw Router Open API", order: 10, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
+    ],
+  };
+  const fetchJson = async (url: string) => {
+    if (url === "/openapi.json") return recursiveGatewaySpec;
+    throw new Error(`unexpected url ${url}`);
+  };
+
+  const apiSystems = await buildApiReferenceSystemsFromTabs(manifest, fetchJson);
+  const sdkSystems = await buildSdkReferenceSystems(manifest, fetchJson);
+  const apiEndpoint = apiSystems[0].categories.flatMap((category) => category.endpoints)[0];
+  const sdkEndpoint = sdkSystems[0].categories.flatMap((category) => category.endpoints)[0];
+
+  assert.equal(apiEndpoint.name, "Create Recursive Chat Completion");
+  assert.equal(sdkEndpoint.name, "Create Recursive Chat Completion");
+  assert.ok(apiEndpoint.body.some((param) => param.name === "tools"));
+  assert.ok(apiEndpoint.responseProperties?.some((param) => param.name === "schema"));
+  assert.deepEqual(
+    apiEndpoint.body
+      .find((param) => param.name === "tools")
+      ?.children
+      ?.find((param) => param.name === "parameters")
+      ?.children
+      ?.find((param) => param.name === "items")
+      ?.children,
+    [{
+      name: "value",
+      type: "object",
+      desc: "Nested schema item.",
+      required: false,
+    }],
+  );
+});
+
 test("api reference documents multipart request bodies and binary success responses", async () => {
   const manifest: ApiSchemaTabsDocument = {
     cacheTtlSeconds: 30,
@@ -617,7 +810,7 @@ test("api reference documents multipart request bodies and binary success respon
   assert.equal(binaryEndpoint.responseProperties?.some((param) => param.name === "value" && param.type === "string<binary>"), true);
 });
 
-test("api endpoint view exposes response object and renders response parameters as a table", () => {
+test("api endpoint view exposes response object and renders response properties as a table", () => {
   const source = readFileSync(
     new URL("./packages/sdkwork-claw-router-api-reference/src/components/ApiEndpointView.tsx", import.meta.url),
     "utf8",
@@ -627,10 +820,10 @@ test("api endpoint view exposes response object and renders response parameters 
   assert.equal(source.includes("endpoint.responseObject"), true);
   assert.equal(source.includes("<table"), true);
   assert.equal(source.includes("<th className"), true);
-  assert.equal(source.includes("Response Parameters"), true);
+  assert.equal(source.includes("Response Properties"), true);
 });
 
-test("api endpoint view keeps response object and parameters table visible for empty response schemas", () => {
+test("api endpoint view keeps response object and properties table visible for empty response schemas", () => {
   const html = renderToStaticMarkup(React.createElement(ApiEndpointView, {
     endpoint: {
       id: "empty-response-schema",
@@ -650,7 +843,7 @@ test("api endpoint view keeps response object and parameters table visible for e
 
   assert.equal(html.includes("Response Object"), true);
   assert.equal(html.includes("EmptyResponse"), true);
-  assert.equal(html.includes("Response Parameters"), true);
+  assert.equal(html.includes("Response Properties"), true);
   assert.equal(html.includes("<table"), true);
   assert.equal(html.includes("No response parameters are defined for this response object."), true);
 });
@@ -901,7 +1094,7 @@ test("sdk reference reuses schema tabs and maps tabs to generated SDK metadata",
     if (url === "/backend/v3/api/openapi.json") {
       return {
         paths: {
-          "/backend/v3/api/apikey": {
+          "/backend/v3/api/iam/api_keys": {
             get: {
               operationId: "fetchApiKeysMap",
               summary: "Fetch API Keys",
@@ -916,7 +1109,7 @@ test("sdk reference reuses schema tabs and maps tabs to generated SDK metadata",
   });
 
   assert.deepEqual(systems.map((system) => system.id), ["app", "backend"]);
-  assert.equal(systems[0].categories[0].endpoints[0].path, "/app/v3/api/router/models");
+  assert.equal(systems[0].categories[0].endpoints[0].path, "/app/v3/api/ai/models");
   assert.equal(getGeneratedSdkMetadataForSystem("app").packageName, "@sdkwork/clawrouter-app-sdk");
   assert.equal(getGeneratedSdkMetadataForSystem("backend").packageName, "@sdkwork/clawrouter-backend-sdk");
 
@@ -1568,7 +1761,8 @@ test("api playground request builder focuses validation and rejects managed head
     headerParams: [],
     bodyValue: "{}",
     authType: "current_user",
-    sessionToken: "session-token",
+    authToken: "auth-token",
+    accessToken: "access-token",
   });
 
   assert.equal(missingRequired.ok, false);
@@ -1583,13 +1777,48 @@ test("api playground request builder focuses validation and rejects managed head
     headerParams: [{ id: "custom-header-1", key: "Authorization", value: "Bearer unsafe", description: "", enabled: true, isSchema: false }],
     bodyValue: "{}",
     authType: "current_user",
-    sessionToken: "session-token",
+    authToken: "auth-token",
+    accessToken: "access-token",
   });
 
   assert.equal(managedHeader.ok, false);
   assert.equal(managedHeader.activeTab, "headers");
   assert.deepEqual(managedHeader.errors, { "custom-header-1": true });
   assert.equal(managedHeader.response.statusText, "Managed Header");
+
+  const managedAccessTokenHeader = buildPlaygroundRequest({
+    baseUrl: "https://api.example.test",
+    endpoint,
+    pathParams: [{ id: "schema-path-0-model", key: "model", value: "gpt-4o", description: "", enabled: true, isSchema: true, required: true }],
+    queryParams: [],
+    headerParams: [{ id: "custom-header-2", key: "Sdkwork-Access-Token", value: "unsafe", description: "", enabled: true, isSchema: false }],
+    bodyValue: "{}",
+    authType: "current_user",
+    authToken: "auth-token",
+    accessToken: "access-token",
+  });
+
+  assert.equal(managedAccessTokenHeader.ok, false);
+  assert.equal(managedAccessTokenHeader.activeTab, "headers");
+  assert.deepEqual(managedAccessTokenHeader.errors, { "custom-header-2": true });
+  assert.equal(managedAccessTokenHeader.response.statusText, "Managed Header");
+
+  const currentUserRequest = buildPlaygroundRequest({
+    baseUrl: "https://api.example.test",
+    endpoint,
+    pathParams: [{ id: "schema-path-0-model", key: "model", value: "gpt-4o", description: "", enabled: true, isSchema: true, required: true }],
+    queryParams: [],
+    headerParams: [],
+    bodyValue: "{}",
+    authType: "current_user",
+    authToken: "auth-token",
+    accessToken: "access-token",
+  });
+
+  assert.equal(currentUserRequest.ok, true);
+  assert.equal(currentUserRequest.requestInit.headers.Authorization, "Bearer auth-token");
+  assert.equal(currentUserRequest.requestInit.headers["Sdkwork-Access-Token"], "access-token");
+  assert.equal(currentUserRequest.requestInit.headers["Access-Token"], undefined);
 
   const invalidBody = buildPlaygroundRequest({
     baseUrl: "https://api.example.test",
@@ -1599,12 +1828,31 @@ test("api playground request builder focuses validation and rejects managed head
     headerParams: [],
     bodyValue: "{invalid",
     authType: "current_user",
-    sessionToken: "session-token",
+    authToken: "auth-token",
+    accessToken: "access-token",
   });
 
   assert.equal(invalidBody.ok, false);
   assert.equal(invalidBody.activeTab, "body");
   assert.deepEqual(invalidBody.errors, { body: true });
+});
+
+test("api playground current user send requires login before network requests", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-api-reference/src/components/ApiPlayground.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(source, /useLocation/u);
+  assert.match(source, /useNavigate/u);
+  assert.match(source, /buildPortalAuthLoginRedirect/u);
+  assert.match(source, /hasStoredPortalSession/u);
+  assert.match(source, /if \(authType === 'current_user' && !hasStoredPortalSession\(\)\) \{\s*navigate\(buildPortalAuthLoginRedirect\(location\)\);\s*return null;\s*\}/u);
+  const loginGuardIndex = source.indexOf("authType === 'current_user' && !hasStoredPortalSession()");
+  const fetchIndex = source.indexOf("await fetch(request.url, request.requestInit)");
+  assert.notEqual(loginGuardIndex, -1);
+  assert.notEqual(fetchIndex, -1);
+  assert.ok(loginGuardIndex < fetchIndex, "login guard must run before the playground network request");
 });
 
 test("api playground request builder focuses required header errors on headers tab", () => {
@@ -1627,7 +1875,8 @@ test("api playground request builder focuses required header errors on headers t
     }],
     bodyValue: "",
     authType: "current_user",
-    sessionToken: "session-token",
+    authToken: "auth-token",
+    accessToken: "access-token",
   });
 
   assert.equal(result.ok, false);
@@ -1655,7 +1904,8 @@ test("api playground request builder rejects unresolved path template variables"
     headerParams: [],
     bodyValue: "",
     authType: "current_user",
-    sessionToken: "session-token",
+    authToken: "auth-token",
+    accessToken: "access-token",
   });
 
   assert.equal(result.ok, false);

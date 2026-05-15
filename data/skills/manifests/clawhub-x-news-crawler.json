@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52862,
+  "uuid": "skill-clawhub-x-news-crawler",
+  "skillKey": "clawhub-x-news-crawler",
+  "name": "X News Crawler",
+  "summary": "Crawl X (Twitter) search results through a local CLI that wraps `abs` (agent-browser). Use when the user asks to scrape X posts by keyword, collect Top/Lates...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_news_crawler",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "郭立lee",
+      "features": [
+        "Crawl X (Twitter) search results through a local CLI that wraps `abs` (agent-browser)",
+        "Use when the user asks to scrape X posts by keyword, collect Top/Lates..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-news-crawler@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9278645?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-news-crawler",
+      "url": "https://clawhub.ai/skills/x-news-crawler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-news-crawler",
+    "url": "https://clawhub.ai/skills/x-news-crawler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-news-crawler-590cebbc708f2d2e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-news-crawler@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-news-crawler-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d2d86a742c4e3790eb9bfed57292d843f9757a8e373194d9861a23084db1032",
+      "artifactSizeBytes": 1900
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T07:44:47.393Z"
+}

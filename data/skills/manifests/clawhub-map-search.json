@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69572,
+  "uuid": "skill-clawhub-map-search",
+  "skillKey": "clawhub-map-search",
+  "name": "Map Search",
+  "summary": "更适合中国体质宝宝的地图搜索工具，支持高德、百度、腾讯地图聚合搜索。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.map_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "收藏夹1区",
+      "features": [
+        "更适合中国体质宝宝的地图搜索工具，支持高德、百度、腾讯地图聚合搜索。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/map-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41465042?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "map-search",
+      "url": "https://clawhub.ai/skills/map-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "map-search",
+    "url": "https://clawhub.ai/skills/map-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/map-search-de371af3c414b15c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/map-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-map-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:76e9174ea0b749bb077370bca6d925f355b78f28f7081cc6f8a93e4780dff6b8",
+      "artifactSizeBytes": 2208
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T14:29:29.373Z"
+}

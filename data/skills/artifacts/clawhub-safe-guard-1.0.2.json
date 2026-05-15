@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/safe-guard@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safe_guard",
+  "skill": {
+    "id": 59572,
+    "skillKey": "clawhub-safe-guard",
+    "name": "safe-guard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safe-guard",
+    "url": "https://clawhub.ai/skills/safe-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safe-guard-8f39fa589941ed42.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Claude Code / OpenClaw Skill 安全防护工具。 三大能力：(1) 始终生效的 PreToolUse Hook，拦截高危操作； (2) 静态正则 + LLM 语义审计的深度扫描； (3) 沙盒隔离环境运行脚本并监控行为。 支持 scan-only、safe-run、sandbox-test..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "igloomatics",
+      "userId": "s173bz569qgrver92httc9gac5841f19",
+      "displayName": "Igloos",
+      "image": "https://avatars.githubusercontent.com/u/140521398?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 363,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773734099433,
+      "changelog": "- Added local settings file support: `.claude/settings.local.json` is now included for environment or configuration customization.\n- No other changes to core functionality or audit logic.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1f813efcf9e8d99776cea665d876776e03ae2d291a17fa8e5e543b3b7c1d846d"
+}

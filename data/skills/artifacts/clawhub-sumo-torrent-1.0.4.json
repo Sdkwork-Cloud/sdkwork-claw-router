@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sumo-torrent@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sumo_torrent",
+  "skill": {
+    "id": 35529,
+    "skillKey": "clawhub-sumo-torrent",
+    "name": "Sumo Torrent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sumo-torrent",
+    "url": "https://clawhub.ai/skills/sumo-torrent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sumo-torrent-40129eccf63d797c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search BT4G for torrents and add magnet links to qBittorrent. Manual workflow with tracker enrichment. For OpenClaw agents with browser capability."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sumo0221",
+      "userId": "s17ch16p11fcnsf2kmgcgrc3nx847pq9",
+      "displayName": "Sumo0221",
+      "image": "https://avatars.githubusercontent.com/u/266116930?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1775455672944,
+      "changelog": "Updated to 110 trackers from MIDE-690.torrent, improved magnet link generation for YUJ042",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c8b43a51f222a88adeb7e8c47b48508a5e40b445d6b61fa867ff956d2d8b3283"
+}

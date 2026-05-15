@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22930,
+  "uuid": "skill-clawhub-knods",
+  "skillKey": "clawhub-knods",
+  "name": "Knods",
+  "summary": "Build and modify Knods visual AI workflows using either the OpenClaw Gateway polling protocol or the Knods headless flows API. Use for Knods polling payloads...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knods",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rolf",
+      "features": [
+        "Build and modify Knods visual AI workflows using either the OpenClaw Gateway polling protocol o.",
+        "Use for Knods polling payloads..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/knods@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1956781?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "knods",
+      "url": "https://clawhub.ai/skills/knods"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knods",
+    "url": "https://clawhub.ai/skills/knods",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knods-b7770f3efd345ee0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/knods@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-knods-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0824bb22ef7e5cd4a2771cce00ce70f85b7faf190f57e493c65ddb3c18d4a651",
+      "artifactSizeBytes": 1882
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T16:28:15.261Z"
+}

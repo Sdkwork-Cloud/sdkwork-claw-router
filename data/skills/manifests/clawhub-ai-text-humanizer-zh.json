@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69611,
+  "uuid": "skill-clawhub-ai-text-humanizer-zh",
+  "skillKey": "clawhub-ai-text-humanizer-zh",
+  "name": "AI 文本净化器（中文版）",
+  "summary": "中文AI文本检测与改写工具。当用户需要检测AI生成文本、优化AI文本使其更自然、降低AI痕迹、文本去重、论文降重时使用。支持检测16+类AI特征，自动改写冗余表达，清理Markdown格式，移除chatbot痕迹，输出详细报告和AI概率分数。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_text_humanizer_zh",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "runze123",
+      "features": [
+        "中文AI文本检测与改写工具。当用户需要检测AI生成文本、优化AI文本使其更自然、降低AI痕迹、文本去重、论文降重时使用。支持检测16+类AI特征，自动改写冗余表达，清理Markdown格式，."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-text-humanizer-zh@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267236224?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-text-humanizer-zh",
+      "url": "https://clawhub.ai/skills/ai-text-humanizer-zh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-text-humanizer-zh",
+    "url": "https://clawhub.ai/skills/ai-text-humanizer-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-text-humanizer-zh-faa7a461a28a0be5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-text-humanizer-zh@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-text-humanizer-zh-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:45ca129c07b0d8bbca9fb1337d8eba190628842544f92f011b78e0ddb01084e9",
+      "artifactSizeBytes": 2536
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T09:02:14.200Z"
+}

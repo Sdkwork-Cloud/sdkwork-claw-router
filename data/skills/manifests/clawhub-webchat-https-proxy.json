@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19699,
+  "uuid": "skill-clawhub-webchat-https-proxy",
+  "skillKey": "clawhub-webchat-https-proxy",
+  "name": "WebChat HTTPS Proxy",
+  "summary": "HTTPS/WSS reverse proxy for OpenClaw WebChat Control UI. Serves the Control UI over HTTPS with TLS cert management, proxies WebSocket connections to the gate...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.webchat_https_proxy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "neldar",
+      "features": [
+        "HTTPS/WSS reverse proxy for OpenClaw WebChat Control UI",
+        "Serves the Control UI over HTTPS with TLS cert management, proxies WebSocket connections to the."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/webchat-https-proxy@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/387537?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "webchat-https-proxy",
+      "url": "https://clawhub.ai/skills/webchat-https-proxy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "webchat-https-proxy",
+    "url": "https://clawhub.ai/skills/webchat-https-proxy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/webchat-https-proxy-f9d3bcbceb93f4af.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/webchat-https-proxy@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-webchat-https-proxy-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c3f1a86c229208ea1c21661aeb375a819887281069fbb0927efa6420b7d338a1",
+      "artifactSizeBytes": 1985
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T02:00:51.620Z"
+}

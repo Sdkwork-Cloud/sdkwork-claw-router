@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trip-guide-pdf-car-sleep@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trip_guide_pdf_car_sleep",
+  "skill": {
+    "id": 43446,
+    "skillKey": "clawhub-trip-guide-pdf-car-sleep",
+    "name": "Trip Guide PDF Car Sleep"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trip-guide-pdf-car-sleep",
+    "url": "https://clawhub.ai/skills/trip-guide-pdf-car-sleep",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trip-guide-pdf-car-sleep-eaa86bd690cf7e11.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Research, plan, revise, and deliver car-sleep travel guides as HTML/PDF with verified overnight parking, charging, toilet access, next-morning route anchors,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "allensu0314",
+      "userId": "s175kt7cgm5y4gjpcdtdzemfhd83wsdy",
+      "displayName": "oldShade",
+      "image": "https://avatars.githubusercontent.com/u/13867741?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775222660673,
+      "changelog": "Initial release: car-sleep travel guide workflow with overnight anchor ranking, camping-signal prioritization, charger/toilet verification, and fallback-point logic.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:74fa18bc87baa660089eb40c40e19d97989f27fa7ed54de0f0f8192a54050b05"
+}

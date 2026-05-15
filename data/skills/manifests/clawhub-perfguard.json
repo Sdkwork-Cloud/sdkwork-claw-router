@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54388,
+  "uuid": "skill-clawhub-perfguard",
+  "skillKey": "clawhub-perfguard",
+  "name": "perfguard",
+  "summary": "Performance anti-pattern scanner — finds N+1 queries, sync I/O, missing pagination, and memory leaks before they hit production",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.perfguard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "suhteevah",
+      "features": [
+        "Performance anti-pattern scanner — finds N+1 queries, sync I/O, missing pagination, and memory."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/perfguard@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2342183?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "perfguard",
+      "url": "https://clawhub.ai/skills/perfguard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "perfguard",
+    "url": "https://clawhub.ai/skills/perfguard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/perfguard-c2cab8a7834acb90.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/perfguard@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-perfguard-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:99bb0668e7ba3607a145863b7430a32e49113d1f1965f1e66a3fd71b5bcf1a35",
+      "artifactSizeBytes": 1872
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T15:19:24.207Z"
+}

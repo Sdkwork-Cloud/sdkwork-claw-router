@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61630,
+  "uuid": "skill-clawhub-mjolnir-brain",
+  "skillKey": "clawhub-mjolnir-brain",
+  "name": "雷神之脑 v3.0.2",
+  "summary": "AI Agent 自进化记忆系统。核心功能 100% 本地运行 (纯 Markdown+JSON)。网络备份/节点通信为可选 opt-in，需手动配置凭证。",
+  "version": "3.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mjolnir_brain",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "king6381",
+      "features": [
+        "AI Agent 自进化记忆系统。核心功能 100% 本地运行 (纯 Markdown+JSON)。网络备份/节点通信为可选 opt-in，需手动配置凭证。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mjolnir-brain@3.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/127765961?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mjolnir-brain",
+      "url": "https://clawhub.ai/skills/mjolnir-brain"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mjolnir-brain",
+    "url": "https://clawhub.ai/skills/mjolnir-brain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mjolnir-brain-ee71ec79a91eb8ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mjolnir-brain@3.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-mjolnir-brain-3.0.2.json",
+      "version": "3.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0bac2b50fdb2a425eb1ce856cb5c80b35f54b0ce0d459b8043085fee014505e7",
+      "artifactSizeBytes": 1936
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T03:23:47.572Z"
+}

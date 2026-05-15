@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/neuraldebug@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neuraldebug",
+  "skill": {
+    "id": 39888,
+    "skillKey": "clawhub-neuraldebug",
+    "name": "NeuralDebug"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neuraldebug",
+    "url": "https://clawhub.ai/skills/neuraldebug",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neuraldebug-66a431e34e5804c6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered debugging for software (8 languages) and LLM/transformer reasoning. Debug programs with natural language via real debuggers (GDB, LLDB, CDB, JDB,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dennysun2020",
+      "userId": "s17138jznmww7b97zdh2ha0vhh83g0cv",
+      "displayName": "DennySun2020",
+      "image": "https://avatars.githubusercontent.com/u/43426074?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774314454893,
+      "changelog": "Initial release: AI-powered debugging for 8 languages + LLM interpretability",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:76051330b3447e4d18d041ba76bddabebc0a5efc43968ae0f9b09ed576bf9b53"
+}

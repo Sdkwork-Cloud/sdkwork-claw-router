@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/simmer-calibration-report@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.simmer_calibration_report",
+  "skill": {
+    "id": 24924,
+    "skillKey": "clawhub-simmer-calibration-report",
+    "name": "Simmer Calibration Report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "simmer-calibration-report",
+    "url": "https://clawhub.ai/skills/simmer-calibration-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/simmer-calibration-report-e2f8909b9364b5dc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run a calibration report on any Simmer trade journal. Win rate and EV broken down by strategy, time of day, price band, and market type. Know exactly where y..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "djdyll",
+      "userId": "s177z7jqdqsa5nwzx2s7fmj6mn83gnz7",
+      "displayName": "Dyll",
+      "image": "https://avatars.githubusercontent.com/u/6473326?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 390,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1773502191783,
+      "changelog": "AgentSkills spec frontmatter + UTF-8 stdout",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:24f1f8a13683cc7d68340d281cd914bd5d0a1717e46bf2ad1de93182aecb6b64"
+}

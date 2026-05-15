@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66965,
+  "uuid": "skill-clawhub-hotrankhub",
+  "skillKey": "clawhub-hotrankhub",
+  "name": "获取各大平台热榜",
+  "summary": "聚合 47 个平台热榜数据的 API 服务",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hotrankhub",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rpeng666",
+      "features": [
+        "聚合 47 个平台热榜数据的 API 服务"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hotrankhub@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/75829128?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hotrankhub",
+      "url": "https://clawhub.ai/skills/hotrankhub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hotrankhub",
+    "url": "https://clawhub.ai/skills/hotrankhub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hotrankhub-033c28586569dffb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hotrankhub@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hotrankhub-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0d6481aa17a80c20b26b7640304be78586ce229cf0b4bc74b5e1d302eceb1508",
+      "artifactSizeBytes": 2210
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T10:48:35.069Z"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10195,
+  "uuid": "skill-clawhub-clawd-presence",
+  "skillKey": "clawhub-clawd-presence",
+  "name": "Clawd Presence",
+  "summary": "Physical presence display for AI agents. Shows a customizable monogram (A-Z), status state, and current activity on a dedicated terminal/screen. Provides faster feedback than chat - glance at the display to see what the agent is doing. Use.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawd_presence",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "voidcooks",
+      "features": [
+        "Physical presence display for AI agents",
+        "Shows a customizable monogram (A-Z), status state, and current activity on a dedicated terminal.",
+        "Provides faster feedback than chat",
+        "glance at the display to see what the agent is doing"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawd-presence@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/195980960?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawd-presence",
+      "url": "https://clawhub.ai/skills/clawd-presence"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawd-presence",
+    "url": "https://clawhub.ai/skills/clawd-presence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawd-presence-ca0b45905706b7f8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawd-presence@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawd-presence-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fa6edc78100bcc296763edefe362001ac934a504a608548b0e2d2301c6d3f66a",
+      "artifactSizeBytes": 1995
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-29T23:23:35.501Z"
+}

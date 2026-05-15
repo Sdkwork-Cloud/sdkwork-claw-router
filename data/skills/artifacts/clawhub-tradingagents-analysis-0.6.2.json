@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tradingagents-analysis@0.6.2",
+  "version": "0.6.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tradingagents_analysis",
+  "skill": {
+    "id": 64622,
+    "skillKey": "clawhub-tradingagents-analysis",
+    "name": "A股多智能体投研-15 AI 分析师"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tradingagents-analysis",
+    "url": "https://clawhub.ai/skills/tradingagents-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tradingagents-analysis-f6e006bca628df84.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A股多智能体 AI 投研分析工具 — 15 名 AI 分析师协作完成技术分析、基本面分析、 市场情绪研判、资金流向追踪（北向资金/主力资金）、宏观经济分析及博弈论推演， 输出结构化买卖建议与风险评估。支持沪深 A 股股票代码和中文名称。 Multi-agent AI stock analysis for Chin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kylinmountain",
+      "userId": "s17be26ny652mmq9k9qhwkjb7d83g3bw",
+      "displayName": "Kylin",
+      "image": "https://avatars.githubusercontent.com/u/3996229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1057,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 1,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "0.6.2",
+      "createdAt": 1774748921096,
+      "changelog": "Version 0.6.1\n\n- Added explicit OpenClaw metadata: now declares required environment variables and dependencies (curl, python3, bash) under `metadata.openclaw`.\n- Specifies `TRADINGAGENTS_TOKEN` as the primary environment variable in the metadata for improved integration and credential management.\n- No changes to core functionality or code; documentation/metadata update only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:92d6152bcfb1a8421e4931e28703c034f85765e2a668dd57679675efd23bba87"
+}

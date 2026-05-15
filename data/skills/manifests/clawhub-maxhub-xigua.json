@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65125,
+  "uuid": "skill-clawhub-maxhub-xigua",
+  "skillKey": "clawhub-maxhub-xigua",
+  "name": "Maxhub Xigua",
+  "summary": "西瓜视频/Xigua平台公开内容搜索与信息查询。当用户提到西瓜视频、xigua、长视频、资讯等相关需求时激活此Skill。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maxhub_xigua",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xie Hao",
+      "features": [
+        "西瓜视频/Xigua平台公开内容搜索与信息查询。当用户提到西瓜视频、xigua、长视频、资讯等相关需求时激活此Skill。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/maxhub-xigua@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128963651?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "maxhub-xigua",
+      "url": "https://clawhub.ai/skills/maxhub-xigua"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maxhub-xigua",
+    "url": "https://clawhub.ai/skills/maxhub-xigua",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maxhub-xigua-4a110470d1245b6d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/maxhub-xigua@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-maxhub-xigua-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e7d2674f3c695aa426fe847c08e2a1bc7053f9feb9204e88a441288485b77db9",
+      "artifactSizeBytes": 1907
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T16:12:39.680Z"
+}

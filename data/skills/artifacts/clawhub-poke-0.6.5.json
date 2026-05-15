@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/poke@0.6.5",
+  "version": "0.6.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.poke",
+  "skill": {
+    "id": 30819,
+    "skillKey": "clawhub-poke",
+    "name": "Poke Bridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "poke",
+    "url": "https://clawhub.ai/skills/poke",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/poke-d138d529354619a2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send SMS/iMessage to the user via Poke and process inbound Poke events. Use when the user asks to be texted, for SMS-based alerts, when processing events for..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "g9pedro",
+      "userId": "s170qw9ry89qte3815nzjvz1sh83mzvt",
+      "displayName": "G9Pedro",
+      "image": "https://avatars.githubusercontent.com/u/78662829?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 275,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.6.5",
+      "createdAt": 1774034570569,
+      "changelog": "Auto-patches Poke SDK tunnel bug, auto-starts tunnel systemd service, README rewritten, versions synced",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e5544f7556a0291b6cf52a0b37ffeb74d1674f84efdbfd1ba248e5b59f73886f"
+}

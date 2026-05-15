@@ -1,0 +1,48 @@
+{
+  "skill": {
+    "slug": "raigo-af",
+    "displayName": "raigo agent firewall",
+    "summary": "RAIGO Agent Firewall — comprehensive AI security policy enforcement for OpenClaw agents. Covers all known prompt security attack vectors: prompt injection, j...",
+    "tags": {
+      "latest": "1.0.3"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 223,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "createdAt": 1774601644105,
+    "updatedAt": 1777624153567
+  },
+  "latestVersion": {
+    "version": "1.0.3",
+    "createdAt": 1774941348691,
+    "changelog": "- Expanded security coverage: now includes protections for indirect prompt injection, multi-agent attacks, supply chain threats, agent identity spoofing, memory poisoning, and more.\n- Refined rule tiers: DENY (hard block), WARN (require human confirmation), and AUDIT (proceed but log/flag), with clearer escalation.\n- Major improvements to prompt injection/jailbreak detection—including sophisticated obfuscation, encoded payloads, and persona/authority spoofing.\n- Policies for blocking credential leaks, system prompt extraction, and blocking destructive or dangerous command execution clarified and strengthened.\n- Cloud upgrade path now mentioned for custom organisation policies and audit logging.\n- Out-of-the-box usage remains—no additional setup steps required.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "musharsec",
+    "userId": "s1772nr8nxscpx426vqbp5k4xs83q6gw",
+    "displayName": "musharsec",
+    "image": "https://avatars.githubusercontent.com/u/45098359?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.prompt_injection_instructions"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.prompt_injection_instructions",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777624153567
+  }
+}

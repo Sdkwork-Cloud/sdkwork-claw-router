@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ult-xiaoyou@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ult_xiaoyou",
+  "skill": {
+    "id": 43320,
+    "skillKey": "clawhub-ult-xiaoyou",
+    "name": "LiveVideoStore"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ult-xiaoyou",
+    "url": "https://clawhub.ai/skills/ult-xiaoyou",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ult-xiaoyou-fc63dc21cc886b34.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Python-based LiveVideoStore client with voice interaction, GUI, volume control, session management, and encrypted audio transmission for live streaming."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "robertlee-lab",
+      "userId": "s170c697gec5sq6vjxjsh55dhd83gwjs",
+      "displayName": "robertlee-lab",
+      "image": "https://avatars.githubusercontent.com/u/267372584?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774943284616,
+      "changelog": "1.提交基本技能框架\n- 语音交互\n- 图形化界面\n- 音量控制\n- 会话管理\n- 加密音频传输",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cd1bd44509aa5028c5f5b49c6d98f12f9d8e0aadd4fb93943fe8d27601a58788"
+}

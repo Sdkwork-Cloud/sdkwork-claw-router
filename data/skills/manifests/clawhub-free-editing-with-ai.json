@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45083,
+  "uuid": "skill-clawhub-free-editing-with-ai",
+  "skillKey": "clawhub-free-editing-with-ai",
+  "name": "Free Editing With Ai",
+  "summary": "Get edited video clips ready to post, without touching a single slider. Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say something like...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_editing_with_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mory128",
+      "features": [
+        "Get edited video clips ready to post, without touching a single slider",
+        "Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say something like..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/free-editing-with-ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270709915?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "free-editing-with-ai",
+      "url": "https://clawhub.ai/skills/free-editing-with-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-editing-with-ai",
+    "url": "https://clawhub.ai/skills/free-editing-with-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-editing-with-ai-a4aeeb65cfa0281d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/free-editing-with-ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-free-editing-with-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:753c960470a0c6d1d27e9af4835540e43aa2bc83716d0ed25d579b8d29b44853",
+      "artifactSizeBytes": 2430
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T21:19:56.380Z"
+}

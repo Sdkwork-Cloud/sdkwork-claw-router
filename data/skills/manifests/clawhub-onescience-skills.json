@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65836,
+  "uuid": "skill-clawhub-onescience-skills",
+  "skillKey": "clawhub-onescience-skills",
+  "name": "OneScience-Skills",
+  "summary": "OneScience 技能管理器，提供热点模型、数据集和组件内容，将用户需求转化为结构化流程，并自动编排调用相关 OneScience 技能。当用户使用 OneScience 模式开发代码、读取数据、训练模型或执行研究项目时，自动路由到正确的技能组合。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.onescience_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "onescience-ai",
+      "features": [
+        "OneScience 技能管理器，提供热点模型、数据集和组件内容，将用户需求转化为结构化流程，并自动编排调用相关 OneScience 技能。当用户使用 OneScience 模式开发代码、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/onescience-skills@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/214482097?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "onescience-skills",
+      "url": "https://clawhub.ai/skills/onescience-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "onescience-skills",
+    "url": "https://clawhub.ai/skills/onescience-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/onescience-skills-1cf84931306f2983.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/onescience-skills@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-onescience-skills-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:58fc0d0d524922e9929cc8da9c88b21257400b863913e946ef24ded2a45dbddd",
+      "artifactSizeBytes": 2800
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T12:41:11.641Z"
+}

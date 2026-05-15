@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/universe@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.universe",
+  "skill": {
+    "id": 34789,
+    "skillKey": "clawhub-universe",
+    "name": "Universe explorer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "universe",
+    "url": "https://clawhub.ai/skills/universe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/universe-327a7380d2cc7cf0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provide clear, structured explanations of cosmic structures, celestial bodies, fundamental physics, space exploration, and the universe's future based on cur..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "duanc-chao",
+      "userId": "publishers:duanc-chao",
+      "displayName": "wow",
+      "image": "https://avatars.githubusercontent.com/u/178591028?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 221,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773936307147,
+      "changelog": "Cosmic Explorer: Universe & Astrophysics Literacy skill – initial release\n\n- Enables structured explanations on cosmology, astronomy, and the universe’s architecture.\n- Covers celestial nomenclature, classification, and essential physical phenomena (gravity, expansion, time dilation).\n- Details tools and missions for space exploration, differentiating telescope types and space program examples.\n- Provides clear definitions and corrections for common misconceptions (e.g., zero gravity, dark matter vs. dark energy).\n- Includes discussion of the universe’s possible futures and suggests pathways for skill extension (astrobiology, exoplanet hunting, cosmic calendar).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2a7afac5920b80bd1310e31e4087f5a522f4520929a45d04e2b743ebda6c64bb"
+}

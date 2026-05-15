@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smart-pdf-reader@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_pdf_reader",
+  "skill": {
+    "id": 23078,
+    "skillKey": "clawhub-smart-pdf-reader",
+    "name": "Smart PDF Reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-pdf-reader",
+    "url": "https://clawhub.ai/skills/smart-pdf-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-pdf-reader-cde6b49a1955833b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Intelligent PDF reader and content extractor powered by MinerU API. Read and extract content from any PDF document including scanned files, academic papers,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "veeicwgy",
+      "userId": "s17b190tf85c34fs78qx3mh12n83g7at",
+      "displayName": "veeicwgy",
+      "image": "https://avatars.githubusercontent.com/u/108802128?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 453,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1775481134757,
+      "changelog": "Added MinerU API integration via mineru-open-api CLI for intelligent PDF reading",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:97b29c8f0c24bdc52206d674d843b9cdbc5e426ede4317f6be66df30a2114fe7"
+}

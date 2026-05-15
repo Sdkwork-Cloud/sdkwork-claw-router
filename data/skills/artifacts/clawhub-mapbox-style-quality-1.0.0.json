@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mapbox-style-quality@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mapbox_style_quality",
+  "skill": {
+    "id": 42253,
+    "skillKey": "clawhub-mapbox-style-quality",
+    "name": "Mapbox Style Quality"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mapbox-style-quality",
+    "url": "https://clawhub.ai/skills/mapbox-style-quality",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mapbox-style-quality-f3b2a51d181afef5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Expert guidance on validating, optimizing, and ensuring quality of Mapbox styles through validation, accessibility checks, and optimization. Use when prepari..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mapbox",
+      "userId": "s1788z7b0bkaaj7e70n1x8vr0583qtta",
+      "displayName": "Mapbox",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774944675348,
+      "changelog": "Initial release of mapbox-style-quality skill.\n\n- Provides expert guidance on validating, optimizing, and ensuring quality of Mapbox styles.\n- Covers style validation, accessibility checks (color contrast, WCAG compliance), and optimization strategies.\n- Includes step-by-step quality workflows for pre-production, development, troubleshooting, and deployment.\n- Lists common Mapbox style issues with recommended solutions and prevention tips.\n- Offers quick reference for included validation and optimization tools.\n- Links to additional reference files and official documentation for in-depth guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a9d6b8fd7633a921e66255633a1ccb664a9dfb62e84646da159139f360e7ab00"
+}

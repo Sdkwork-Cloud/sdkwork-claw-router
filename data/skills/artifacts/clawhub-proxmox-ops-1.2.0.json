@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/proxmox-ops@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proxmox_ops",
+  "skill": {
+    "id": 29309,
+    "skillKey": "clawhub-proxmox-ops",
+    "name": "Proxmox Ops"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proxmox-ops",
+    "url": "https://clawhub.ai/skills/proxmox-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proxmox-ops-37ab73007e052d0e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Ops-focused Proxmox VE management via REST API — monitor, control, provision, and troubleshoot VMs and LXC containers with battle-tested operational patterns..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eddygk",
+      "userId": "s1722zx8vry8w4hn5t6vf7zsq183n6a6",
+      "displayName": "Eddy",
+      "image": "https://avatars.githubusercontent.com/u/832737?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 876,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1773620973261,
+      "changelog": "Rename display name from 'Proxmox Ops Skill' to 'Proxmox Ops'; sync with GitHub latest (commit 823dee2)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:89cb7db6dcdcc6f88f36edd26db12ad991a9d2dfea6835ab7fe9517decc46b3a"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tmap-jsapi-gl-skill@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tmap_jsapi_gl_skill",
+  "skill": {
+    "id": 68664,
+    "skillKey": "clawhub-tmap-jsapi-gl-skill",
+    "name": "tmap-jsapi-gl-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tmap-jsapi-gl-skill",
+    "url": "https://clawhub.ai/skills/tmap-jsapi-gl-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tmap-jsapi-gl-skill-ac2a8c61b7470d17.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "腾讯地图 JavaScript GL（JSAPIGL）开发指南。适用于地图应用或者工具的编写。在编写、审查或调试使用腾讯地图 API的代码时应运用此技能。适用于涉及地图初始化、覆盖物展示、图层控制、事件处理、控件交互、可视化渲染、地图工具、检索、路线规划、查地址、行政区划、ip定位、几何计算、三维模型展示、性能优..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vajrabodhi",
+      "userId": "s17erncvy6kz6emph79t831df183h1mm",
+      "displayName": "tencent map",
+      "image": "https://avatars.githubusercontent.com/u/16058915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 675,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774425882568,
+      "changelog": "tmap-jsapi-gl-skill 1.0.2\n\n- Updated skill metadata: environment requirement for \"bins\" changed from \"node\" to an empty string\n- No changes to documentation content or example files\n- No new features or API changes introduced",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d87ce2f3563d615c50f2d6b35b3df524167ae89b5c93d79e180ecb42d0f48479"
+}

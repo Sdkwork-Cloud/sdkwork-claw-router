@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flight-deals@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flight_deals",
+  "skill": {
+    "id": 72936,
+    "skillKey": "clawhub-flight-deals",
+    "name": "特价机票"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flight-deals",
+    "url": "https://clawhub.ai/skills/flight-deals",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flight-deals-6a3a8d67274f9f66.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI机票助手 - 实现国内航班搜索、舱位查询、预订下单、机票改期、机票退票。适用于用户询问航班、查询机票价格、提交机票订单、改期航班、退票时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gaogao605",
+      "userId": "s17cxwwzm94v9ntkczkmq0r2x983km1s",
+      "displayName": "fenbeitong-trip",
+      "image": "https://avatars.githubusercontent.com/u/265222913?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774871139988,
+      "changelog": "flightAI v1.0.0 — Initial Release\n\n- Introduces comprehensive AI-powered assistant for domestic flight search, booking, change, and refund scenarios.\n- Supports authentication via SMS and automatic apiKey management for secure operations.\n- Provides step-by-step command usage, including flight search, seat details, booking, order management, flight rescheduling, and refunds.\n- Implements user privacy guidance regarding handling and transmission of personal information.\n- Includes clear prompts, parameter requirements, table output specifications, and context-awareness for efficient user interaction.\n- Offers sample workflows to illustrate typical user journeys from search to order completion or post-booking services.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8f53fa59d7d4cc942a836be9c0451dabf5a97cbe54c63eee7ea8d10b89d210fb"
+}

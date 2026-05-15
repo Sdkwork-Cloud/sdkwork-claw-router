@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24994,
+  "uuid": "skill-clawhub-ctf-web",
+  "skillKey": "clawhub-ctf-web",
+  "name": "Ctf Web",
+  "summary": "Provides web exploitation techniques for CTF challenges. Use when solving web security challenges involving XSS, SQLi, SSTI, SSRF, CSRF, XXE, file upload byp...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ctf_web",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gandli",
+      "features": [
+        "Provides web exploitation techniques for CTF challenges",
+        "Use when solving web security challenges involving XSS, SQLi, SSTI, SSRF, CSRF, XXE, file uploa."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ctf-web@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/85359251?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ctf-web",
+      "url": "https://clawhub.ai/skills/ctf-web"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ctf-web",
+    "url": "https://clawhub.ai/skills/ctf-web",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ctf-web-fa0d864bc07b8d42.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ctf-web@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ctf-web-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73270044b252c7aeb79a6c84440a851e4cb645109125c126286deb50d86b390d",
+      "artifactSizeBytes": 2502
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T10:24:23.458Z"
+}

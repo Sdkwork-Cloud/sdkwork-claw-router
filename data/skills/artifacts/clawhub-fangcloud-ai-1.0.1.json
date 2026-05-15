@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fangcloud-ai@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fangcloud_ai",
+  "skill": {
+    "id": 40686,
+    "skillKey": "clawhub-fangcloud-ai",
+    "name": "fangcloud-api skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fangcloud-ai",
+    "url": "https://clawhub.ai/skills/fangcloud-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fangcloud-ai-fc70a75a61b72738.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automation skill for fangcloud-api skills."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiema123",
+      "userId": "s179c39wc2n2af52q3f9cf96j583nb6e",
+      "displayName": "jiema123",
+      "image": "https://avatars.githubusercontent.com/u/3347781?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775117872080,
+      "changelog": "Version 1.0.1\n\n优化新功能，支持智识库场景",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a56b90710dc0e0f2fc9f88680246f5869b89657a37436db7a4d9e293c9a46a42"
+}

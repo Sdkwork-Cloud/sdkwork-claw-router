@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66310,
+  "uuid": "skill-clawhub-claws-daily",
+  "skillKey": "clawhub-claws-daily",
+  "name": "Claws Daily",
+  "summary": "小龙虾日报，将你最关心的资讯主动送到你眼前。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claws_daily",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chenhui7au",
+      "features": [
+        "小龙虾日报，将你最关心的资讯主动送到你眼前。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claws-daily@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218535552?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claws-daily",
+      "url": "https://clawhub.ai/skills/claws-daily"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claws-daily",
+    "url": "https://clawhub.ai/skills/claws-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claws-daily-b2afe294338a475d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claws-daily@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-claws-daily-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fb01d565518d31a1610971fa1fb1e1a87e2e76a55e18a2252d61c13c0f8b14da",
+      "artifactSizeBytes": 1949
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T09:57:53.936Z"
+}

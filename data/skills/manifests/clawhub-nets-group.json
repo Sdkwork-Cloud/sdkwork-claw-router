@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33770,
+  "uuid": "skill-clawhub-nets-group",
+  "skillKey": "clawhub-nets-group",
+  "name": "Nets Group",
+  "summary": "Nets Group integration. Manage data, records, and automate workflows. Use when the user wants to interact with Nets Group data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nets_group",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Nets Group integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Nets Group data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nets-group@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nets-group",
+      "url": "https://clawhub.ai/skills/nets-group"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nets-group",
+    "url": "https://clawhub.ai/skills/nets-group",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nets-group-59713fc10a873ce4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nets-group@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-nets-group-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e75b62e666322e686a03cc3faae323eb6cbc71dc35ded3958917850fea4e50f5",
+      "artifactSizeBytes": 1848
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:17:10.833Z"
+}

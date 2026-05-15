@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/psn-deals@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.psn_deals",
+  "skill": {
+    "id": 57186,
+    "skillKey": "clawhub-psn-deals",
+    "name": "PSN Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "psn-deals",
+    "url": "https://clawhub.ai/skills/psn-deals",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/psn-deals-efe64a1ff6355636.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "PSN Assistant | PlayStation 会员助手 — PS Store deals, PS Plus free games, cross-region price comparison, game ratings, trophy guides, new releases, PSN status...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jundonggit",
+      "userId": "s17a83c71cp1sqafw5jmcby6rn83s7vw",
+      "displayName": "jundongGit",
+      "image": "https://avatars.githubusercontent.com/u/41845422?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 241,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774232931139,
+      "changelog": "Full bilingual (English + Chinese) SKILL.md for global discoverability",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6c6e8fd0214f1d702dbc94370c2dc3256f6d2f018bdf521510c2bc088d209974"
+}

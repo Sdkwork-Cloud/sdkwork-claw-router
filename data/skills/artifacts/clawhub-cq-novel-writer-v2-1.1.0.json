@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cq-novel-writer-v2@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cq_novel_writer_v2",
+  "skill": {
+    "id": 72411,
+    "skillKey": "clawhub-cq-novel-writer-v2",
+    "name": "Novel Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cq-novel-writer-v2",
+    "url": "https://clawhub.ai/skills/cq-novel-writer-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cq-novel-writer-v2-5624f7a15bf8753d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "长篇小说持续创作技能。重生穿越文写作专用。自动读取故事总纲、前文、范本，确保章节连贯风格一致。内置记忆系统维护人物关系和剧情连续性。适用：写网文、写小说、写重生穿越文、每日定期写章节。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yisihenji1972",
+      "userId": "s170xms9y9016d4b4r74qq4ndh83g26f",
+      "displayName": "yisihenji1972",
+      "image": "https://avatars.githubusercontent.com/u/265436713?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 246,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774348151047,
+      "changelog": "cq-novel-writer-v2 1.1.0 更新日志\n\n- 新增详细SKILL.md文档，规范工作流、章节模板和记忆系统的操作说明\n- 明确每次写作前后需读取/更新的文件种类及触发时机\n- 完善人物、剧情线、世界观维护方法，提升长篇写作连贯性和一致性\n- 补充写作规范与节奏、禁忌事项，确保风格专注重生穿越题材\n- 自动化每小时写作及同步流程，提高创作效率",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:984a66b6a50193c40f097c39d528f9150dc0873fd9fc6f0d80432ea31ce1a9a4"
+}

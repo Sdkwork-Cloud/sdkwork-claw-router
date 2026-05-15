@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/perfetto-analyse@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.perfetto_analyse",
+  "skill": {
+    "id": 28353,
+    "skillKey": "clawhub-perfetto-analyse",
+    "name": "perfetto-analyse"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "perfetto-analyse",
+    "url": "https://clawhub.ai/skills/perfetto-analyse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/perfetto-analyse-93f3d32cb884d94c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Captures and analyzes Android Perfetto traces via CLI and config files. Covers trace collection (CPU, GPU, memory, rendering, power), editing TraceConfig (.p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linkecoding",
+      "userId": "publishers:linkecoding",
+      "displayName": "linkecoding",
+      "image": "https://avatars.githubusercontent.com/u/19832315?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 328,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773421249789,
+      "changelog": "Initial release of perfetto-analyse.\n\n- Capture and analyze Android Perfetto traces via CLI and config files.\n- Supports trace collection for CPU, GPU, memory, rendering, and power.\n- Guides on editing TraceConfig (.pbtx) files for precise data capture.\n- Includes instructions for analyzing jank, latency, overdraw, and power using Perfetto UI and trace_processor SQL.\n- Provides ready-to-use config templates and SQL script integration for automated trace queries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a873b8cb9fb804c21e920c42737910ec978b1f189ebac67148ef8b266db273b3"
+}

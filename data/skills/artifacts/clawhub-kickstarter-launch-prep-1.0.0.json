@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kickstarter-launch-prep@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kickstarter_launch_prep",
+  "skill": {
+    "id": 49625,
+    "skillKey": "clawhub-kickstarter-launch-prep",
+    "name": "Kickstarter Launch Prep"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kickstarter-launch-prep",
+    "url": "https://clawhub.ai/skills/kickstarter-launch-prep",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kickstarter-launch-prep-80968cebaaff4844.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Plan and execute Kickstarter and Indiegogo crowdfunding launches end-to-end. Covers pre-launch list building, page copy, video script, reward tier design, fu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 74,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777617733300,
+      "changelog": "Initial release—comprehensive Kickstarter and Indiegogo launch planning skill.\n\n- Guides you through every step of preparing a crowdfunding campaign, from pre-launch list-building and funnel setup to reward tier structuring and fulfillment cost math.\n- Offers detailed funding goal calculations using industry-standard benchmarks like the 30% rule.\n- Provides templates and advice for campaign page copy and 90-second video scripting.\n- Includes recommendations for landing page tools, email list growth strategies, and campaign launch-day sequencing.\n- Covers ongoing campaign management, stretch goals, and post-funding best practices.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2c18548e37d2343ab6698411993accc8ea1adc51b79259b181130cecf72de131"
+}

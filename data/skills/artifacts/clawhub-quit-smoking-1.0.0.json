@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quit-smoking@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quit_smoking",
+  "skill": {
+    "id": 11840,
+    "skillKey": "clawhub-quit-smoking",
+    "name": "Quit Smoking"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quit-smoking",
+    "url": "https://clawhub.ai/skills/quit-smoking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quit-smoking-862f8e183f134290.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Quit cigarettes with smoke-free tracking, craving support, and health recovery timeline"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jhillin8",
+      "userId": "publishers:jhillin8",
+      "displayName": "jhillin8",
+      "image": "https://avatars.githubusercontent.com/u/79551560?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1893,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769326572090,
+      "changelog": "Initial release – helps users quit smoking with tracking, support, and motivation.\n\n- Start and track your quit journey with persistent memory of smoke-free days.\n- Get real-time craving support, including substitutions, breathing exercises, and motivational help.\n- View a detailed health recovery timeline showing benefits as you stay quit.\n- Celebrate quit milestones and track your progress streak.\n- Monitor money saved based on cigarettes not purchased.\n- All data remains private and stored locally on your device.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c01f3a9cfedddb7c029f6f14c1d41e7457bd5f775b990c2e5cfdc8d42cf70c61"
+}

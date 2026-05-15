@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12416,
+  "uuid": "skill-clawhub-polymarket-signal-sniper",
+  "skillKey": "clawhub-polymarket-signal-sniper",
+  "name": "Polymarket Signal Sniper",
+  "summary": "Snipe Polymarket opportunities from your own signal sources. Monitors RSS feeds with Trading Agent-grade safeguards.",
+  "version": "1.5.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_signal_sniper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AD88",
+      "features": [
+        "Snipe Polymarket opportunities from your own signal sources",
+        "Monitors RSS feeds with Trading Agent-grade safeguards."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-signal-sniper@1.5.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6263940?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-signal-sniper",
+      "url": "https://clawhub.ai/skills/polymarket-signal-sniper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-signal-sniper",
+    "url": "https://clawhub.ai/skills/polymarket-signal-sniper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-signal-sniper-dfdef5a357e9c289.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-signal-sniper@1.5.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-signal-sniper-1.5.2.json",
+      "version": "1.5.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e18a22a063ff2ba4057e6ca00e4175a293e9829efffcee0db18a3080ba24ea2d",
+      "artifactSizeBytes": 2078
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T10:07:03.901Z"
+}

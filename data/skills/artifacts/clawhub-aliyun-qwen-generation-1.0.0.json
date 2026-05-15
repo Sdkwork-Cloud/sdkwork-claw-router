@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aliyun-qwen-generation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun_qwen_generation",
+  "skill": {
+    "id": 57145,
+    "skillKey": "clawhub-aliyun-qwen-generation",
+    "name": "Aliyun Qwen Generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun-qwen-generation",
+    "url": "https://clawhub.ai/skills/aliyun-qwen-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-qwen-generation-8d62b46fbe078917.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when generating or reasoning over text with Alibaba Cloud Model Studio Qwen flagship text models (`qwen3-max`, `qwen3.5-plus`, `qwen3.5-flash`, snapshots..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cinience",
+      "userId": "s1707avh05gnzr3g6e3m9ka6fh840rtd",
+      "displayName": "cinience",
+      "image": "https://avatars.githubusercontent.com/u/557426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775069970759,
+      "changelog": "Initial release of aliyun-qwen-generation skill.\n\n- Supports general text generation, reasoning, chat, and tool-calling using Alibaba Cloud Model Studio Qwen models.\n- Includes support for flagship and open-source Qwen model variants.\n- Provides a normalized interface compatible with common text generation workflows.\n- Offers validation instructions, quick-start curl example, and local request helper script.\n- Details guidance for model selection, reproducibility, and request/response formatting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9fa53d12912a73e6e62420192e1c7807d5879455c85bfaad45c8223057002181"
+}

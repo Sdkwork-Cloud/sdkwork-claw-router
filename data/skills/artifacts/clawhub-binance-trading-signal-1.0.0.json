@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/binance-trading-signal@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.binance_trading_signal",
+  "skill": {
+    "id": 20298,
+    "skillKey": "clawhub-binance-trading-signal",
+    "name": "Binance Trading Signal"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "binance-trading-signal",
+    "url": "https://clawhub.ai/skills/binance-trading-signal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/binance-trading-signal-6808a105b36cae78.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Subscribe and retrieve on-chain Smart Money signals. Monitor trading activities of smart money addresses, including buy/sell signals, trigger price, current..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "viktor-huang",
+      "userId": "publishers:viktor-huang",
+      "displayName": "viktor-huang",
+      "image": "https://avatars.githubusercontent.com/u/131138970?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 552,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772693585799,
+      "changelog": "- Initial release of the binance-trading-signal skill.\n- Retrieve and subscribe to on-chain Smart Money trading signals, including buy/sell actions, trigger price, current price, max gain, and exit rate.\n- Supports filtering signals by chain (BSC and Solana) and various token tags.\n- Provides detailed signal, token, and performance data for monitoring professional investor activities and discovering new trading opportunities.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:554e60e5e3d66c038f4ffa34477b3ca0f890c5eef888fa7af605c46c06ee3763"
+}

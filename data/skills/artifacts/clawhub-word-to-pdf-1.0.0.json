@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/word-to-pdf@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.word_to_pdf",
+  "skill": {
+    "id": 10872,
+    "skillKey": "clawhub-word-to-pdf",
+    "name": "word-to-pdf"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "word-to-pdf",
+    "url": "https://clawhub.ai/skills/word-to-pdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/word-to-pdf-dc0c378f4fac2063.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert Word documents (.docx) to PDF using Python's reportlab library. Supports Chinese characters, emojis, and proper formatting preservation. Usage: word-..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lirenweim",
+      "userId": "publishers:lirenweim",
+      "displayName": "lirenweiM",
+      "image": "https://avatars.githubusercontent.com/u/202453089?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1936,
+      "installsAllTime": 18,
+      "installsCurrent": 18,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772114639675,
+      "changelog": "- Initial release of \"word-to-pdf\" tool.\n- Converts Word (.docx) files to PDF, preserving formatting, Chinese text, and emoji.\n- Supports document structure: paragraphs, headings, and lists.\n- Uses reportlab and python-docx Python libraries.\n- Handles Chinese fonts automatically on Windows; guides provided for Linux/Mac.\n- Command-line usage with optional output file path.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9ec118bc48e74e6ab7095b005cd70175871a0e4e57a0d30ce707e4226cb72f43"
+}

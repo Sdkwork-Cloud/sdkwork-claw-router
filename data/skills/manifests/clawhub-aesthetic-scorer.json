@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59294,
+  "uuid": "skill-clawhub-aesthetic-scorer",
+  "skillKey": "clawhub-aesthetic-scorer",
+  "name": "摄影照片评分Aesthetic Scorer",
+  "summary": "给你的照片打分、评价反馈、给出改进建议或美学分析 / Aesthetic photo scorer with detailed analysis",
+  "version": "1.4.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aesthetic_scorer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kooui",
+      "features": [
+        "给你的照片打分、评价反馈、给出改进建议或美学分析 / Aesthetic photo scorer with detailed analysis"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aesthetic-scorer@1.4.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35019576?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aesthetic-scorer",
+      "url": "https://clawhub.ai/skills/aesthetic-scorer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aesthetic-scorer",
+    "url": "https://clawhub.ai/skills/aesthetic-scorer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aesthetic-scorer-d45b977b3ceffb73.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aesthetic-scorer@1.4.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-aesthetic-scorer-1.4.9.json",
+      "version": "1.4.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ee95640669fbbe398925d88af7052ef8544bce51cd05a7a085226ebcf0960752",
+      "artifactSizeBytes": 1866
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T07:11:02.016Z"
+}

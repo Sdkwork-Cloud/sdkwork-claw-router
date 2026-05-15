@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/minimal-memory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimal_memory",
+  "skill": {
+    "id": 15960,
+    "skillKey": "clawhub-minimal-memory",
+    "name": "Minimal Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimal-memory",
+    "url": "https://clawhub.ai/skills/minimal-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimal-memory-7b3898903cded792.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Maintain organized agent memory by tagging entries as GOOD, BAD, or NEUTRAL, storing essentials in MEMORY.md and daily logs for efficient search and cleanup."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zencrust-ai",
+      "userId": "publishers:zencrust-ai",
+      "displayName": "zencrust-ai",
+      "image": "https://avatars.githubusercontent.com/u/259543217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 926,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771168626453,
+      "changelog": "Initial release: GOOD/BAD/NEUTRAL categorization with semantic search utilities",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2da6c08bee58a147a6ac8885f30b0317681ab103997ba7326f75fed869e0a4cc"
+}

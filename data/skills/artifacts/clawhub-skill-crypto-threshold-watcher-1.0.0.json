@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-crypto-threshold-watcher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_crypto_threshold_watcher",
+  "skill": {
+    "id": 28549,
+    "skillKey": "clawhub-skill-crypto-threshold-watcher",
+    "name": "Crypto Threshold Watcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-crypto-threshold-watcher",
+    "url": "https://clawhub.ai/skills/skill-crypto-threshold-watcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-crypto-threshold-watcher-f0016e62f31abaef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor any crypto token against configurable price/volume thresholds. Fires alerts when entry conditions are met. Use when you need proactive notification t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zero2ai-hub",
+      "userId": "s17a1b8dv4hc6x68q9m057m67n83ryrt",
+      "displayName": "Zero2Ai",
+      "image": "https://avatars.githubusercontent.com/u/244362887?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 312,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773789192680,
+      "changelog": "- Initial release of Crypto Threshold Watcher: proactively monitors any token for configurable price and volume thresholds.\n- Supports multiple tokens, with threshold types including price above/below, volume spikes, and RSI conditions.\n- Custom alert messages on threshold crossings; outputs detailed, actionable signals.\n- Easily configurable via `watchlist.json` and command-line options.\n- Data sources: Binance API (primary), CoinGecko API (fallback).\n- Integrates with alerting (Telegram), cron scheduling, and other trading pipeline skills.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f17b883051c64bc71684e94c22b7bfcd31ef86b536a927c851e78066264b995e"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31135,
+  "uuid": "skill-clawhub-smart-skill-finder",
+  "skillKey": "clawhub-smart-skill-finder",
+  "name": "Smart Skill Finder",
+  "summary": "Finds and recommends relevant AI agent skills across multiple ecosystems (Skills CLI, Clawhub, GitHub) using intelligent semantic understanding to match user...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_skill_finder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Eron",
+      "features": [
+        "Finds and recommends relevant AI agent skills across multiple ecosystems (Skills CLI, Clawhub,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-skill-finder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/212718401?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-skill-finder",
+      "url": "https://clawhub.ai/skills/smart-skill-finder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-skill-finder",
+    "url": "https://clawhub.ai/skills/smart-skill-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-skill-finder-6b8b5a3da3d4b62f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-skill-finder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-skill-finder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4baa0ff835c292fafc9e571b21a7911f4881e6de26e5532697fb2f2bddf9b248",
+      "artifactSizeBytes": 2463
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T16:38:03.464Z"
+}

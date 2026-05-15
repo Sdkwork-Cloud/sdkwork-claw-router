@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67135,
+  "uuid": "skill-clawhub-flash-redeem-knight",
+  "skillKey": "clawhub-flash-redeem-knight",
+  "name": "闪兑骑士 Flash Redeem Knight",
+  "summary": "自动化完成预付费H5券的门店及规格选择，确认兑换并提取取餐码，附带结构化回执和最终页面截图。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flash_redeem_knight",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vshen009",
+      "features": [
+        "自动化完成预付费H5券的门店及规格选择，确认兑换并提取取餐码，附带结构化回执和最终页面截图。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flash-redeem-knight@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24835634?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flash-redeem-knight",
+      "url": "https://clawhub.ai/skills/flash-redeem-knight"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flash-redeem-knight",
+    "url": "https://clawhub.ai/skills/flash-redeem-knight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flash-redeem-knight-6836cc5008ac6931.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flash-redeem-knight@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-flash-redeem-knight-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:794bbc2744c749f8c641caccf45885db852404dd21f5f910f83a0d3b9b8b0632",
+      "artifactSizeBytes": 2053
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T00:15:17.706Z"
+}

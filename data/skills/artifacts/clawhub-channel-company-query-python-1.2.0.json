@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/channel-company-query-python@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.channel_company_query_python",
+  "skill": {
+    "id": 70170,
+    "skillKey": "clawhub-channel-company-query-python",
+    "name": "渠道单位查询"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "channel-company-query-python",
+    "url": "https://clawhub.ai/skills/channel-company-query-python",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/channel-company-query-python-f96b84e64f04e294.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询渠道单位信息（Python3实现）。通过名称模糊搜索获取列表，或通过ID查询详情。包括CRM账号、站点标识和环境URL。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "romicboy",
+      "userId": "s172sh6z2pmn5q6em9s06b2qzx85krbk",
+      "displayName": "沈荣明",
+      "image": "https://avatars.githubusercontent.com/u/2356195?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 244,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1777700011172,
+      "changelog": "- Updated skill version to 1.2.0.\n- Changed author in metadata from lejian to romicboy.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:19a27cf1121110a50a0c2f378b70efc9ba83839d2efe5e7fbafd5373c8ec3673"
+}

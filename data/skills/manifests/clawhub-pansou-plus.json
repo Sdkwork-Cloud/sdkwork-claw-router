@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68746,
+  "uuid": "skill-clawhub-pansou-plus",
+  "skillKey": "clawhub-pansou-plus",
+  "name": "Pansou",
+  "summary": "盘搜（PanSou）— 国内聚合资源搜索最强工具。搜索百度网盘、阿里云盘、夸克网盘、迅雷、115、磁力链接等 14 种资源类型， 支持链接有效性检测、智能排序、迅雷一键下载。 自动降级 + 混合搜索策略：先 PanSou 查网盘，未找到则切 SearXNG 磁力搜索，再未找到则主动告知用户可手动指定搜索策略。 触...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pansou_plus",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pmt5nxwcyw-commits",
+      "features": [
+        "盘搜（PanSou）— 国内聚合资源搜索最强工具。搜索百度网盘、阿里云盘、夸克网盘、迅雷、115、磁力链接等 14 种资源类型， 支持链接有效性检测、智能排序、迅雷一键下载。 自动降级 +."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pansou-plus@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255065717?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pansou-plus",
+      "url": "https://clawhub.ai/skills/pansou-plus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pansou-plus",
+    "url": "https://clawhub.ai/skills/pansou-plus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pansou-plus-da7d332d3fe3be84.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pansou-plus@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pansou-plus-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9dd40f99260157070c3b36c093a94be79fedbf29a9a6f70199c21124f7d9dcab",
+      "artifactSizeBytes": 2241
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-10T00:17:12.506Z"
+}

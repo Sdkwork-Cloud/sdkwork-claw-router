@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60555,
+  "uuid": "skill-clawhub-multi-agent-feishu",
+  "skillKey": "clawhub-multi-agent-feishu",
+  "name": "multi-agent-feishu 多飞书账号接入不同agent",
+  "summary": "在 OpenClaw Gateway 中创建多个 Agent 并绑定多个飞书账号。 适用于：(1) 需要多个独立 AI 助手 (2) 不同用户使用不同 Agent (3) 需要隔离的记忆/身份场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_agent_feishu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zeng Guoming",
+      "features": [
+        "在 OpenClaw Gateway 中创建多个 Agent 并绑定多个飞书账号。 适用于：(1) 需要多个独立 AI 助手 (2) 不同用户使用不同 Agent (3) 需要隔离的记忆/身."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/multi-agent-feishu@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/105090370?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "multi-agent-feishu",
+      "url": "https://clawhub.ai/skills/multi-agent-feishu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-agent-feishu",
+    "url": "https://clawhub.ai/skills/multi-agent-feishu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-agent-feishu-575e2609678c99cd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/multi-agent-feishu@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-multi-agent-feishu-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b2af06ebd67d18074c047f6f99dd7ad38bf163f662de170115ba1e5f40d3903d",
+      "artifactSizeBytes": 2331
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T15:14:22.543Z"
+}

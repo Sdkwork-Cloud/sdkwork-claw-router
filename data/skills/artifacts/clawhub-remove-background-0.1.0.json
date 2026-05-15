@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/remove-background@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.remove_background",
+  "skill": {
+    "id": 24396,
+    "skillKey": "clawhub-remove-background",
+    "name": "remove-bg"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "remove-background",
+    "url": "https://clawhub.ai/skills/remove-background",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/remove-background-03afe9fa59f301b9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Remove single-color light backgrounds from images and output transparent PNGs using a luminance threshold."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jwh-hsm",
+      "userId": "publishers:jwh-hsm",
+      "displayName": "jwh",
+      "image": "https://avatars.githubusercontent.com/u/44798246?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 412,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773460731769,
+      "changelog": "background removal with auto‑open preview image",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cd3e1e2a126479a01e400de7fdef059ad10fe8a6d87097fcc5184ddf670ff9b0"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32175,
+  "uuid": "skill-clawhub-givingfuel",
+  "skillKey": "clawhub-givingfuel",
+  "name": "Givingfuel",
+  "summary": "GivingFuel integration. Manage Campaigns, Donors, Funds. Use when the user wants to interact with GivingFuel data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.givingfuel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "GivingFuel integration",
+        "Manage Campaigns, Donors, Funds",
+        "Use when the user wants to interact with GivingFuel data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/givingfuel@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "givingfuel",
+      "url": "https://clawhub.ai/skills/givingfuel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "givingfuel",
+    "url": "https://clawhub.ai/skills/givingfuel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/givingfuel-be4bf147e6d168e8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/givingfuel@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-givingfuel-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3211ab13d88d6fe5a83cb4770408b84501105501873671b2d17b99afe4ec8268",
+      "artifactSizeBytes": 1835
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:52:05.326Z"
+}

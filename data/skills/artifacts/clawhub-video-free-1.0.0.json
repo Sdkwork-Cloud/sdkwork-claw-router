@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_free",
+  "skill": {
+    "id": 55843,
+    "skillKey": "clawhub-video-free",
+    "name": "Video Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-free",
+    "url": "https://clawhub.ai/skills/video-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-free-411cdd6be52dfb3a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — edit and export this video without a watermark for free — and get watermar..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 104,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777741863594,
+      "changelog": "- Initial release of Video Free — cloud-based, watermark-free video editing and export.\n- Simple setup: authenticate instantly and start editing with no subscriptions or installs.\n- Supports MP4, MOV, AVI, WebM uploads up to 500MB; export MP4 in 1080p by default.\n- All common edit, preview, and export actions routed by natural language prompts.\n- Free, fast turnaround: expect download links within 30-90 seconds for most clips.\n- No watermarks, no hidden costs—ideal for creators who want quick, professional results.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:20d2dd2fb00c8453cfba3a0b86902020a3987de2dd6fce88e05e2b62ea776c52"
+}

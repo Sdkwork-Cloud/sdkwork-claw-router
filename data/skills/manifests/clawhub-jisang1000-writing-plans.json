@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28624,
+  "uuid": "skill-clawhub-jisang1000-writing-plans",
+  "skillKey": "clawhub-jisang1000-writing-plans",
+  "name": "Writing Plans",
+  "summary": "Break work into clear, ordered plans before execution. Use when a task is multi-step, long-running, easy to derail, or needs coordination across tools, files...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jisang1000_writing_plans",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jisang1000",
+      "features": [
+        "Break work into clear, ordered plans before execution",
+        "Use when a task is multi-step, long-running, easy to derail, or needs coordination across tools."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jisang1000-writing-plans@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/200382408?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jisang1000-writing-plans",
+      "url": "https://clawhub.ai/skills/jisang1000-writing-plans"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jisang1000-writing-plans",
+    "url": "https://clawhub.ai/skills/jisang1000-writing-plans",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jisang1000-writing-plans-89e996c960090a9f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jisang1000-writing-plans@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jisang1000-writing-plans-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:40575a088262db3e2fbf9530314b3632b9739bdee1e3aac0ec3db97dbcbf7101",
+      "artifactSizeBytes": 1938
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T16:18:11.898Z"
+}

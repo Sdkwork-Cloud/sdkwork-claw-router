@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pdd-rebate@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdd_rebate",
+  "skill": {
+    "id": 70450,
+    "skillKey": "clawhub-pdd-rebate",
+    "name": "拼多多返利"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdd-rebate",
+    "url": "https://clawhub.ai/skills/pdd-rebate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdd-rebate-05cdadb0ec149466.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "返利宝统一技能。只按 3 个用户场景工作：S01 授权与教程、S02 链接返利、S03 商品搜索。用户说“返利”“教程”“详细教程”“提现教程”“提现10元”“确认提现”“我已授权”“账户余额”等走 S01；发送淘宝、京东、拼多多商品链接走 S02；表达想买什么商品时走 S03。S03 的职责是提取商品搜索信息，..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "skyfile",
+      "userId": "s17bd2r0nkxz2d5hs4348pgbh183mqj9",
+      "displayName": "wuweizhen",
+      "image": "https://avatars.githubusercontent.com/u/6679752?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775892010642,
+      "changelog": "**提现流程和话术升级：本版本新增提现流程路由与话术，完善对提现场景（如“提现10元”“确认提现”）的识别与处理。**",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e6f0e848ca68d7351589c2a04542413d7cb5b2a3f7763b33eaddb7de9098bb7c"
+}

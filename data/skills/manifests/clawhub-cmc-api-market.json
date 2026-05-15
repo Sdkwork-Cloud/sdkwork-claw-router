@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16178,
+  "uuid": "skill-clawhub-cmc-api-market",
+  "skillKey": "clawhub-cmc-api-market",
+  "name": "CoinMarketCap Market Overview APIs",
+  "summary": "API reference for CoinMarketCap market-wide endpoints including global metrics, fear/greed, indices, trending topics, and charts. Use this skill whenever the...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cmc_api_market",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CoinMarketCap",
+      "features": [
+        "API reference for CoinMarketCap market-wide endpoints including global metrics, fear/greed, ind.",
+        "Use this skill whenever the..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cmc-api-market@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/158990050?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cmc-api-market",
+      "url": "https://clawhub.ai/skills/cmc-api-market"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cmc-api-market",
+    "url": "https://clawhub.ai/skills/cmc-api-market",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cmc-api-market-8393f48518f5cfb7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cmc-api-market@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-cmc-api-market-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:27ce64ee1a27edd6db41ed9f1b30a417e80d5341888b1f27145150e3a171d7ff",
+      "artifactSizeBytes": 2067
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T16:39:22.983Z"
+}

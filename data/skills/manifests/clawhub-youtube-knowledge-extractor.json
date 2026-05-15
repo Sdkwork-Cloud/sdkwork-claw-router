@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14617,
+  "uuid": "skill-clawhub-youtube-knowledge-extractor",
+  "skillKey": "clawhub-youtube-knowledge-extractor",
+  "name": "Youtube Knowledge Extractor",
+  "summary": "Multimodal YouTube video analysis through both audio (transcript) and visual (frame extraction + image analysis) channels. Especially powerful for HowTo vide...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_knowledge_extractor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sdrabent",
+      "features": [
+        "Multimodal YouTube video analysis through both audio (transcript) and visual (frame extraction.",
+        "Especially powerful for HowTo vide..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-knowledge-extractor@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5302548?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-knowledge-extractor",
+      "url": "https://clawhub.ai/skills/youtube-knowledge-extractor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-knowledge-extractor",
+    "url": "https://clawhub.ai/skills/youtube-knowledge-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-knowledge-extractor-3cde6bd63a60f28e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-knowledge-extractor@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-knowledge-extractor-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c474d7af9c6fecb2b1ba5e47c253ecc846b986765f6206bd01587d0d71e076ec",
+      "artifactSizeBytes": 2037
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T10:27:59.470Z"
+}

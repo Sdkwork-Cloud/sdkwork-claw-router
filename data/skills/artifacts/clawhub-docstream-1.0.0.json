@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/docstream@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docstream",
+  "skill": {
+    "id": 50614,
+    "skillKey": "clawhub-docstream",
+    "name": "DocStream"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docstream",
+    "url": "https://clawhub.ai/skills/docstream",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docstream-063ad82b1a0ffb21.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Document processing via DocStream API — text extraction, summarization, format conversion, PDF parsing. Use when user needs to extract text from documents, s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jbennett111",
+      "userId": "publishers:jbennett111",
+      "displayName": "Jbennett111",
+      "image": "https://avatars.githubusercontent.com/u/86585533?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 474,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772548658315,
+      "changelog": "Initial release — Document processing API client (extraction, summarization, conversion). Free tier: 100 req/day.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e4083f8d5c17c4b71f2823059af994258fa18b441ff39a722a0c367ff38ef156"
+}

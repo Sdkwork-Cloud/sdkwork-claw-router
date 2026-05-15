@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/superpowers-systematic-debugging@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.superpowers_systematic_debugging",
+  "skill": {
+    "id": 50595,
+    "skillKey": "clawhub-superpowers-systematic-debugging",
+    "name": "Superpowers Systematic Debugging"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "superpowers-systematic-debugging",
+    "url": "https://clawhub.ai/skills/superpowers-systematic-debugging",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/superpowers-systematic-debugging-d6c9f262891da46c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enforce a four-phase debugging process—root cause investigation, pattern analysis, hypothesis testing, and evidence-based fix verification—for all bugs and f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "axelhu",
+      "userId": "s172yaxxd2drm0sc92554g9aq983hegj",
+      "displayName": "AxelHu",
+      "image": "https://avatars.githubusercontent.com/u/12809280?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 789,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774502514359,
+      "changelog": "Initial release: OpenClaw-adapted skill for the Superpowers development methodology suite.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:27e80085aae6eab975c4101a3775d10c8b90e273588e5cb75d5e81106005c377"
+}

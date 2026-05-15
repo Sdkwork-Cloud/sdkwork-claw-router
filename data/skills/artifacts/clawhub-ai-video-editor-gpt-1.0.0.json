@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-editor-gpt@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_editor_gpt",
+  "skill": {
+    "id": 43481,
+    "skillKey": "clawhub-ai-video-editor-gpt",
+    "name": "Ai Video Editor Gpt"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-editor-gpt",
+    "url": "https://clawhub.ai/skills/ai-video-editor-gpt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-editor-gpt-58c585d647572a9e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute unedited screen recording into 1080p edited MP4 videos just by typing what you need. Whether it's editing raw footage into a finished video u..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776783276459,
+      "changelog": "AI Video Editor GPT version 1.0.0 — Initial Release\n\n- Instantly edit and export 2-minute screen recordings into 1080p MP4 videos using AI-powered instructions.\n- Supports drag-and-drop video uploads; simply describe the edits you want, no timeline or manual exports required.\n- Automatic backend connection and anonymous token authentication, with 100 free credits for new users.\n- Step-by-step cloud edit pipeline: upload, edit, preview, export, and download finished videos within 1-2 minutes.\n- Comprehensive error handling, status tracking, timeline summaries, and support for text, audio, and transitions.\n- Output supports multiple formats including MP4, MOV, AVI, WebM, GIF, JPG, PNG, MP3, and WAV.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:24f6538efe5399364da5f07b86cea1343b20a332dfb5e14914b30d6768f0ee85"
+}

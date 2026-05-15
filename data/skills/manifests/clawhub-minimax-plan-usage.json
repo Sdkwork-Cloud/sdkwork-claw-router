@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58538,
+  "uuid": "skill-clawhub-minimax-plan-usage",
+  "skillKey": "clawhub-minimax-plan-usage",
+  "name": "minimax-plan-usage",
+  "summary": "查询 MiniMax Token Plan 剩余用量。slash command。 查询 MiniMax Token Plan 剩余次数和重置时间，支持 M2.7/Speech/视频/图片/音乐等模型的用量查询。 Query MiniMax Token Plan usage and reset time. Sup...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_plan_usage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ZxYz",
+      "features": [
+        "查询 MiniMax Token Plan 剩余用量。slash command。 查询 MiniMax Token Plan 剩余次数和重置时间，支持 M2.7/Speech/视频/图片/."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/minimax-plan-usage@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/80997892?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "minimax-plan-usage",
+      "url": "https://clawhub.ai/skills/minimax-plan-usage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-plan-usage",
+    "url": "https://clawhub.ai/skills/minimax-plan-usage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-plan-usage-b7fb8a21f1cdf3c9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/minimax-plan-usage@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-minimax-plan-usage-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:beecbecfba156ddc739c057b3dd3e572217b04e38ee6fb23f6b31839ea23e9fe",
+      "artifactSizeBytes": 2034
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T03:45:31.579Z"
+}

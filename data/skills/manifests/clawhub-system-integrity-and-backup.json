@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16487,
+  "uuid": "skill-clawhub-system-integrity-and-backup",
+  "skillKey": "clawhub-system-integrity-and-backup",
+  "name": "System Integrity And Backup",
+  "summary": "Encrypted backups, integrity verification, and data retention enforcement for Greek legal requirements (5-20 year retention). AES-256.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.system_integrity_and_backup",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Stems",
+      "features": [
+        "Encrypted backups, integrity verification, and data retention enforcement for Greek legal requi.",
+        "AES-256."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/system-integrity-and-backup@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/70470779?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "system-integrity-and-backup",
+      "url": "https://clawhub.ai/skills/system-integrity-and-backup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "system-integrity-and-backup",
+    "url": "https://clawhub.ai/skills/system-integrity-and-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/system-integrity-and-backup-9d0a78675b99dac1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/system-integrity-and-backup@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-system-integrity-and-backup-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e39b4aad1b9c7cd7c6fcca26ba53e62d9bc1ed5bdb3e977925d2167d115060a",
+      "artifactSizeBytes": 2648
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T13:50:09.248Z"
+}

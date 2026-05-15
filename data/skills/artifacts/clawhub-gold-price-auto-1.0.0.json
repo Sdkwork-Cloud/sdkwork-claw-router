@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gold-price-auto@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gold_price_auto",
+  "skill": {
+    "id": 62755,
+    "skillKey": "clawhub-gold-price-auto",
+    "name": "gold-price-auto"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gold-price-auto",
+    "url": "https://clawhub.ai/skills/gold-price-auto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gold-price-auto-036ef9934d2f2b31.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "金价自动汇报 - 每小时自动查询国内外金价并汇报"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hongjiahao371-pixel",
+      "userId": "s172drmjfggz6kkkd9qxtb9bwn83mzpn",
+      "displayName": "hongjiahao371-pixel",
+      "image": "https://avatars.githubusercontent.com/u/249543018?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 337,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773551922776,
+      "changelog": "- Initial release of gold-price-auto skill.\n- Automatically queries domestic and international gold prices every hour and reports them.\n- Supports manual execution or scheduled execution with cron.\n- Data sourced from huangjinjiage.cn using playwright-scraper-skill.\n- Reports prices for Gold 9999, major brand gold (e.g., Chow Tai Fook, Lao Feng Xiang), and bank gold bars.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3f722290d53ec1a118dc2c5afca61e78a5a41447b811c60e7337d8984ced42b7"
+}

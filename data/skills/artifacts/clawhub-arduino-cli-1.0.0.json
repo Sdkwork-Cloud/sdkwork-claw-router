@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/arduino-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arduino_cli",
+  "skill": {
+    "id": 32336,
+    "skillKey": "clawhub-arduino-cli",
+    "name": "Arduino CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arduino-cli",
+    "url": "https://clawhub.ai/skills/arduino-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arduino-cli-c94d68365c4ff639.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides commands and workflows for Arduino CLI. Use when the user wants to create, compile, or upload Arduino sketches, manage boards (list, attach), instal..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "547895019",
+      "userId": "s1700dbw372a56f2bh7btr8vwh83g45x",
+      "displayName": "547895019",
+      "image": "https://avatars.githubusercontent.com/u/7350824?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 253,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774425168584,
+      "changelog": "Initial release of the Arduino CLI skill.\n\n- Provides reference commands for Arduino CLI setup, board management, core/platform management, sketch creation/compilation/upload, and library management.\n- Includes instructions for adding third-party cores.\n- Useful for creating, compiling, uploading Arduino sketches, and managing boards, cores, and libraries from the command line.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7786727a9a283ba2c7ea4254d84ce11992affb000c33c77d578ed5f0fdb7779b"
+}

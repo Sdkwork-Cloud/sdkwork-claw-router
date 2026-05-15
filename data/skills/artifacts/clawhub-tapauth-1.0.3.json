@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tapauth@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tapauth",
+  "skill": {
+    "id": 34794,
+    "skillKey": "clawhub-tapauth",
+    "name": "TapAuth"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tapauth",
+    "url": "https://clawhub.ai/skills/tapauth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tapauth-8569b2d895ca9777.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OAuth token provider for OpenClaw agents — Google Calendar, Gmail, GitHub, Slack, Linear, Notion, Vercel, Sentry, Asana, Discord, or Apify. Integrates with O..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "schwartzdev",
+      "userId": "s171pfd56y4q14h879xmfz6ny983egve",
+      "displayName": "Jonah Schwartz",
+      "image": "https://avatars.githubusercontent.com/u/4267882?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 795,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776373657166,
+      "changelog": "Cache-only credentials, expired-grant reauth, and OpenClaw packaging/docs updates",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4343a8a82bc43d45dbf9f4556ed86807d79ecf3fa63b9d3fe233535406263cbd"
+}

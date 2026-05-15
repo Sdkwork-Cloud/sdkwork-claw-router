@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61206,
+  "uuid": "skill-clawhub-nano-banana-image-t8-alluse",
+  "skillKey": "clawhub-nano-banana-image-t8-alluse",
+  "name": "Nano Banana Image T8",
+  "summary": "调用 Nano Banana API 生成或编辑图片，支持文生图和图生图，需提供API Key和提示词，支持自定义尺寸比例。",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nano_banana_image_t8_alluse",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "flywhale",
+      "features": [
+        "调用 Nano Banana API 生成或编辑图片，支持文生图和图生图，需提供API Key和提示词，支持自定义尺寸比例。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nano-banana-image-t8-alluse@0.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/136772759?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nano-banana-image-t8-alluse",
+      "url": "https://clawhub.ai/skills/nano-banana-image-t8-alluse"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nano-banana-image-t8-alluse",
+    "url": "https://clawhub.ai/skills/nano-banana-image-t8-alluse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nano-banana-image-t8-alluse-895f5925b4975602.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nano-banana-image-t8-alluse@0.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-nano-banana-image-t8-alluse-0.1.4.json",
+      "version": "0.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b09f94ee46c47ba927965a261d1193a38f79c369223eef1af5fef95c9b1230a",
+      "artifactSizeBytes": 2107
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T13:12:11.132Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tavily-search1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tavily_search1",
+  "skill": {
+    "id": 49920,
+    "skillKey": "clawhub-tavily-search1",
+    "name": "tavily-search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tavily-search1",
+    "url": "https://clawhub.ai/skills/tavily-search1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tavily-search1-d9594250e1d81421.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-optimized web search via Tavily API. Returns concise, relevant results for AI agents."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cp33333333333",
+      "userId": "publishers:cp33333333333",
+      "displayName": "cp33333333333",
+      "image": "https://avatars.githubusercontent.com/u/219774774?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 61,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773040255749,
+      "changelog": "Initial release of Tavily Search skill.\n\n- Provides AI-optimized web search via the Tavily API, returning concise, relevant results.\n- Supports customizable search options: result count, deep search, topic (general/news), and date filtering for news.\n- Allows extraction of clean content from any URL.\n- Requires a TAVILY_API_KEY.\n- Designed specifically for integration with AI agents and workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5ef2c369edd9f8cef92df1a6903e56fcc3f0beb0ad43f153e4477df5df4bb477"
+}

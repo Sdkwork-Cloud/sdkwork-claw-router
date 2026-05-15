@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24602,
+  "uuid": "skill-clawhub-manufacturing-skill",
+  "skillKey": "clawhub-manufacturing-skill",
+  "name": "Manufacturing",
+  "summary": "Submit manufacturing requests (OEM/ODM) to Genichi Tool Co., Ltd. Use when the user needs physical product manufacturing, CNC machining, forging, OEM/ODM pro...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.manufacturing_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smokey7958",
+      "features": [
+        "Submit manufacturing requests (OEM/ODM) to Genichi Tool Co., Ltd",
+        "Use when the user needs physical product manufacturing, CNC machining, forging, OEM/ODM pro..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/manufacturing-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5418053?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "manufacturing-skill",
+      "url": "https://clawhub.ai/skills/manufacturing-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "manufacturing-skill",
+    "url": "https://clawhub.ai/skills/manufacturing-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/manufacturing-skill-5dd10ecd15698a27.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/manufacturing-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-manufacturing-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:58383a00cae8c40b3e7251032659c79517295f88cf195cd4a0374ead8ba30dee",
+      "artifactSizeBytes": 1929
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T02:03:36.433Z"
+}

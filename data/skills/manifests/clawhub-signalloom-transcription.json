@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40050,
+  "uuid": "skill-clawhub-signalloom-transcription",
+  "skillKey": "clawhub-signalloom-transcription",
+  "name": "Transcription",
+  "summary": "Transcribe audio and video files using the Signal Loom AI API. Supports MP3, WAV, M4A, MP4, MOV, and more. Runs locally on Apple Silicon for speed and privacy.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.signalloom_transcription",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AVale-SLAI",
+      "features": [
+        "Transcribe audio and video files using the Signal Loom AI API",
+        "Supports MP3, WAV, M4A, MP4, MOV, and more",
+        "Runs locally on Apple Silicon for speed and privacy."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/signalloom-transcription@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270702039?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "signalloom-transcription",
+      "url": "https://clawhub.ai/skills/signalloom-transcription"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "signalloom-transcription",
+    "url": "https://clawhub.ai/skills/signalloom-transcription",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/signalloom-transcription-e309223f69ed574e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/signalloom-transcription@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-signalloom-transcription-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2402f0271a72c2a64c410783e5ad74a0e61732cfef029ab2f4dda5cdf85fa4a9",
+      "artifactSizeBytes": 2028
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T23:51:29.198Z"
+}

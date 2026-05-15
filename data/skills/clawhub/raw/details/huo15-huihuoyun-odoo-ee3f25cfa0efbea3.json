@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "huo15-huihuoyun-odoo",
+    "displayName": "Huo15 Huihuoyun Odoo",
+    "summary": "自然语言操作 辉火云企业套件 — 实施经理助手，覆盖任务/CRM/项目/工单/财务/销售/HR/库存/生产/客服/知识/Studio 元编程 13 业务域 204 个工具。v1.23.0 默认权限模型反转：odoo_connect 默认按 sender_id 隔离（每个企微/钉钉/飞书成员配自己的 Odoo 账号...",
+    "tags": {
+      "latest": "1.23.0",
+      "plugin": "1.23.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 311,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "createdAt": 1775888835918,
+    "updatedAt": 1778146008411
+  },
+  "latestVersion": {
+    "version": "1.23.0",
+    "createdAt": 1778145591849,
+    "changelog": "- 默认权限策略改为按 sender_id 隔离，odoo_connect 默认每个人配自己账号，与 Odoo 内部权限同步。\n- 新增 shared 参数（默认 false，原 private 参数标为 deprecated 并兼容），显式支持组织共用公共账号场景。\n- 明确规定不再主动判断/质疑用户上传附件内容是否与意图相符，避免错误拦截用户流程。\n- SKILL.md 文档更新：详细说明 sender_id 隔离/共享账号用法，补充 LLM 附件处理硬规则。\n- 继承 v1.22+ 功能（record_id、include_lines、永久 RPC hook 修复、审批工作流等）。",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "zhaobod1",
+    "userId": "s17f6q72skfgyjycm2frgdc8dn83v5mk",
+    "displayName": "Job Zhao",
+    "image": "https://avatars.githubusercontent.com/u/13188275?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.potential_exfiltration",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.potential_exfiltration, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778146008411
+  }
+}

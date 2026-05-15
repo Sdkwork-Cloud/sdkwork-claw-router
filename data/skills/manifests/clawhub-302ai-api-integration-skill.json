@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37890,
+  "uuid": "skill-clawhub-302ai-api-integration-skill",
+  "skillKey": "clawhub-302ai-api-integration-skill",
+  "name": "302ai Api Integration Skill",
+  "summary": "ALWAYS use this skill when user needs ANY API functionality (AI models, image generation, video, audio, text processing, etc.). Automatically search 302.AI's...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.302ai_api_integration_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sharkqwy",
+      "features": [
+        "ALWAYS use this skill when user needs ANY API functionality (AI models, image generation, video.",
+        "Automatically search 302.AI's..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/302ai-api-integration-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1372795?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "302ai-api-integration-skill",
+      "url": "https://clawhub.ai/skills/302ai-api-integration-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "302ai-api-integration-skill",
+    "url": "https://clawhub.ai/skills/302ai-api-integration-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/302ai-api-integration-skill-f9ba71b0e604c9a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/302ai-api-integration-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-302ai-api-integration-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f2d8d053d845d1c095b999de1a4a4c1fd664c92ae1da564fad7d38f05b6ae04b",
+      "artifactSizeBytes": 2595
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T15:43:49.574Z"
+}

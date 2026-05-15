@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20352,
+  "uuid": "skill-clawhub-logic",
+  "skillKey": "clawhub-logic",
+  "name": "logic",
+  "summary": "Start from what must be true. Stop answering on autopilot.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.logic",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ProjectSnowWork",
+      "features": [
+        "Start from what must be true",
+        "Stop answering on autopilot."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/logic@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/216470608?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "logic",
+      "url": "https://clawhub.ai/skills/logic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "logic",
+    "url": "https://clawhub.ai/skills/logic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/logic-08e4e1c34e288c71.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/logic@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-logic-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:628e2a7337896e2ea4c12163fc46d47186f456e7802d17a6ab2c18b1b9a47de4",
+      "artifactSizeBytes": 2167
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T16:51:47.904Z"
+}

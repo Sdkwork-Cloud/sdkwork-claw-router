@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pionex-bot@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pionex_bot",
+  "skill": {
+    "id": 47434,
+    "skillKey": "clawhub-pionex-bot",
+    "name": "pionex-bot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pionex-bot",
+    "url": "https://clawhub.ai/skills/pionex-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pionex-bot-d9be6d5fdde382af.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user asks to create, query, list, adjust, reduce, or cancel Pionex bot orders (Futures Grid, Spot Grid, Smart Copy). Includes listing/paginating..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pibrandon",
+      "userId": "s177wjgj7xtp8yv5w1gv2bpb8184zcjm",
+      "displayName": "pibrandon",
+      "image": "https://avatars.githubusercontent.com/u/248439762?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 115,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776327177891,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0970fed9e883513ce7f3b789863a661372e841283a15fdca32f2c07b5667468b"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/viral-note-distributor@3.0.3",
+  "version": "3.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.viral_note_distributor",
+  "skill": {
+    "id": 64308,
+    "skillKey": "clawhub-viral-note-distributor",
+    "name": "Content Adaptation for Xiaohongshu, Douyin, Bilibili, WeChat"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "viral-note-distributor",
+    "url": "https://clawhub.ai/skills/viral-note-distributor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/viral-note-distributor-a4334c74f6dccd2c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "写完一篇内容，想要发到小红书、抖音、B站、公众号还要分别适配？通过渐进式确认流程，帮助你快速生成多平台适配文案，确保每个平台的内容都符合字数和风格规范。触发词：多平台分发、发到XX平台。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jrnonr",
+      "userId": "s17fydhpb0bgzxveq6td3g7cpx84158g",
+      "displayName": "JRnonr",
+      "image": "https://avatars.githubusercontent.com/u/103875921?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 255,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "3.0.3",
+      "createdAt": 1775740839829,
+      "changelog": "- Description updated to remove English text and streamline trigger word instructions.\n- Version number incremented from 3.0.0 to 3.0.1 in SKILL.md.\n- No workflow or logic changes were made; documentation and metadata only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3e867b0e57815f16674609402db7a43c5ddf133988a877254649e1119b30ed23"
+}

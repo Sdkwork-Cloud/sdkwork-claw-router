@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20555,
+  "uuid": "skill-clawhub-i-skill",
+  "skillKey": "clawhub-i-skill",
+  "name": "i-skill",
+  "summary": "Generates personalized interaction guides by analyzing user conversations. Invoke when users seek personalized responses, want AI assistants to better unders...",
+  "version": "3.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.i_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanli",
+      "features": [
+        "Generates personalized interaction guides by analyzing user conversations",
+        "Invoke when users seek personalized responses, want AI assistants to better unders..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/i-skill@3.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/133091538?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "i-skill",
+      "url": "https://clawhub.ai/skills/i-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "i-skill",
+    "url": "https://clawhub.ai/skills/i-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/i-skill-87e609b16515869f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/i-skill@3.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-i-skill-3.1.0.json",
+      "version": "3.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6626b51994503789ce6540115206412ced4e6ea518df771e03d12e645cb073c2",
+      "artifactSizeBytes": 2391
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T14:42:20.496Z"
+}

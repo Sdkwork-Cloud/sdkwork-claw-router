@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8201,
+  "uuid": "skill-clawhub-mcp",
+  "skillKey": "clawhub-mcp",
+  "name": "mcp-builder",
+  "summary": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Veera",
+      "features": [
+        "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to intera.",
+        "Use when building MCP servers to integrate external APIs or services, whether in Python (FastMC."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mcp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/119089869?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mcp",
+      "url": "https://clawhub.ai/skills/mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcp",
+    "url": "https://clawhub.ai/skills/mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcp-10182ab855ff7727.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mcp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mcp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3d221884adb3560538fac71315ed67b5954f9e2debd6163fd182690c5fa92a24",
+      "artifactSizeBytes": 2563
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T05:30:00.086Z"
+}

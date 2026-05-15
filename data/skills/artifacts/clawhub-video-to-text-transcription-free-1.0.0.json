@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-to-text-transcription-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_to_text_transcription_free",
+  "skill": {
+    "id": 46980,
+    "skillKey": "clawhub-video-to-text-transcription-free",
+    "name": "Video To Text Transcription Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-to-text-transcription-free",
+    "url": "https://clawhub.ai/skills/video-to-text-transcription-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-to-text-transcription-free-7fc4cf4621914ed6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get text transcripts ready to post, without touching a single slider. Upload your video files (MP4, MOV, AVI, WebM, up to 500MB), say something like \"transcr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 120,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777169984924,
+      "changelog": "Video-to-Text Transcription Free — Initial Release\n\n- Upload MP4, MOV, AVI, or WebM (up to 500MB) for free, fast, and accurate AI speech-to-text transcription.\n- Automatic setup with free token generation—no local install or paid software required.\n- Simple workflow: upload your video, request transcription, and download in 1080p MP4 or subtitle format.\n- Clear status updates, session management, and error handling for smooth user experience.\n- Designed for students, content creators, and journalists needing quick transcripts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:25d25487b5c8f6c4245da544adf70be8e346f12f2c80a62e1f7a49aa53180716"
+}

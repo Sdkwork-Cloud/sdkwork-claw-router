@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72821,
+  "uuid": "skill-clawhub-long-task-checkin",
+  "skillKey": "clawhub-long-task-checkin",
+  "name": "强制进度检查点。当龙虾助手在执行任务时超过60秒没有完成，必须立即向用户发送进度反馈，说明：任务是否正常运行、当前执行到哪个步骤、预计还要多久。用于防止用户对长时间运行任务的不确定感。 触发场景：搜索/爬虫、文件批量处理、多步骤写作、调用外部API 核心.",
+  "summary": "强制进度检查点。当龙虾助手在执行任务时超过60秒没有完成，必须立即向用户发送进度反馈，说明：任务是否正常运行、当前执行到哪个步骤、预计还要多久。用于防止用户对长时间运行任务的不确定感。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.long_task_checkin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chrislawyeryounger-spec",
+      "features": [
+        "强制进度检查点。当龙虾助手在执行任务时超过60秒没有完成，必须立即向用户发送进度反馈，说明：任务是否正常运行、当前执行到哪个步骤、预计还要多久。用于防止用户对长时间运行任务的不确定感。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/long-task-checkin@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274015848?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "long-task-checkin",
+      "url": "https://clawhub.ai/skills/long-task-checkin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "long-task-checkin",
+    "url": "https://clawhub.ai/skills/long-task-checkin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/long-task-checkin-470215e61d0b574f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/long-task-checkin@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-long-task-checkin-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e7d27eec409a0f79b74faec0712ae8226326e3b1b1cf38aa2481f97be98e8a52",
+      "artifactSizeBytes": 2928
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T12:05:27.167Z"
+}

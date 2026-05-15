@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quick-reminder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quick_reminder",
+  "skill": {
+    "id": 52249,
+    "skillKey": "clawhub-quick-reminder",
+    "name": "Quick Reminder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quick-reminder",
+    "url": "https://clawhub.ai/skills/quick-reminder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quick-reminder-6ec7d6017d241c31.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detecta frases tipo \"recordatorio para ... a las HH:MM\" o \"remind me to ... at HH:MM\" en tus mensajes. Programa un aviso exacto usando el método disponible:..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jul879n",
+      "userId": "s1723pkdcq7rxzywf899cjt02583ps02",
+      "displayName": "Julián Araya",
+      "image": "https://avatars.githubusercontent.com/u/89546666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 219,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774632132949,
+      "changelog": "Initial release of Quick Reminder.\n\n- Detects natural language reminders in Spanish and English (e.g., \"recordatorio para ... a las HH:MM\", \"remind me to ... at HH:MM\").\n- Schedules a reminder for the specified time via Telegram or console.\n- Simple, fast operation designed for basic one-time reminders (no repeats, only HH:MM format).\n- Works out-of-the-box for Telegram and TTY; easily extensible to other patterns or languages.\n- Lightweight alternative to complex reminder skills.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:329a6a9f99f58ed3c2d7f7e6ae294a15abebd9bd9fc3b9185bd029d8934dacf6"
+}

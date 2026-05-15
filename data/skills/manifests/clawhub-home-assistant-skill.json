@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28888,
+  "uuid": "skill-clawhub-home-assistant-skill",
+  "skillKey": "clawhub-home-assistant-skill",
+  "name": "Home Assistant Integration",
+  "summary": "Control and query Home Assistant via natural language. Covers lights, switches, climate, temperature sensors, cameras, automations, energy monitoring, EV cha...",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.home_assistant_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Only 1 Naren",
+      "features": [
+        "Control and query Home Assistant via natural language",
+        "Covers lights, switches, climate, temperature sensors, cameras, automations, energy monitoring,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/home-assistant-skill@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/233563303?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "home-assistant-skill",
+      "url": "https://clawhub.ai/skills/home-assistant-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "home-assistant-skill",
+    "url": "https://clawhub.ai/skills/home-assistant-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/home-assistant-skill-82e9ce0f047b47b1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/home-assistant-skill@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-home-assistant-skill-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f23e55a450b0f798d6dee2b0e31dad13e545024c3104b67e76b8297b15e95f1",
+      "artifactSizeBytes": 2226
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T15:38:57.968Z"
+}

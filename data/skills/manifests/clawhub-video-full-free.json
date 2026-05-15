@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67094,
+  "uuid": "skill-clawhub-video-full-free",
+  "skillKey": "clawhub-video-full-free",
+  "name": "Ai video for free",
+  "summary": "بايبلاين إنتاج فيديو قصير (60-90 ثانية) بالكامل بالذكاء الاصطناعي. المستخدم يعطي فكرة أو عنوان → يولّد سكريبت مقسّم لمشاهد (كل مشهد 10 ثوانٍ) → يولّد فيديو ك...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_full_free",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Eslamshtain11",
+      "features": [
+        "بايبلاين إنتاج فيديو قصير (60-90 ثانية) بالكامل بالذكاء الاصطناعي",
+        "المستخدم يعطي فكرة أو عنوان → يولّد سكريبت مقسّم لمشاهد (كل مشهد 10 ثوانٍ) → يولّد فيديو ك..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-full-free@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/195687865?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-full-free",
+      "url": "https://clawhub.ai/skills/video-full-free"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-full-free",
+    "url": "https://clawhub.ai/skills/video-full-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-full-free-72735a53378eba56.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-full-free@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-full-free-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:26648683be7781af77d8d44ef152293cb0479f7d863a64674d2bbd6dd574f870",
+      "artifactSizeBytes": 2748
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T16:53:09.772Z"
+}

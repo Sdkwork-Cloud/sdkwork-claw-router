@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/turkey-news@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.turkey_news",
+  "skill": {
+    "id": 57074,
+    "skillKey": "clawhub-turkey-news",
+    "name": "Turkey News"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "turkey-news",
+    "url": "https://clawhub.ai/skills/turkey-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/turkey-news-1bf535eb5bde283b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Türkiye'den önemli haberleri RSS ile çekip özetleyen skill. Cron ile otomatik bildirim yapar."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yalcindemir",
+      "userId": "publishers:yalcindemir",
+      "displayName": "yalcindemir",
+      "image": "https://avatars.githubusercontent.com/u/1515589?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 853,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770910971080,
+      "changelog": "Initial release of turkey-news\n\n- Collects and summarizes important news from Türkiye using various RSS sources.\n- Supports both manual and automatic (cron-based) news fetching and notifications.\n- Filters and summarizes the top recent news items, sending concise updates via Telegram.\n- Includes a script to fetch news and output as JSON for agent processing.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c1cc77133b9669a7bbb055e58d6ca68d87e56785bfc1ff24347732d799d5b809"
+}

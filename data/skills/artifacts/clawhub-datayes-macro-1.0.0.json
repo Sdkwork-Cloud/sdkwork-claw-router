@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/datayes-macro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.datayes_macro",
+  "skill": {
+    "id": 66412,
+    "skillKey": "clawhub-datayes-macro",
+    "name": "Datayes 宏观指标"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "datayes-macro",
+    "url": "https://clawhub.ai/skills/datayes-macro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/datayes-macro-a2daa4ca74d97089.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询 Datayes/通联的宏观与行业指标数据。用户询问 GDP、CPI、PPI、PMI、M2、社融、利率、就业、贸易、产量、价格等宏观或行业时间序列时使用。优先通过仓库内 Python 脚本搜索候选指标并拉取明细，不要手写 HTTP 请求。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "datayes",
+      "userId": "s177a02znezdzgzfx8yct5s8bh83y0ds",
+      "displayName": "Datayes",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775649483710,
+      "changelog": "Initial release: Macro & industry data skill, replaces previous stock-oriented version\n\n- Supports querying macroeconomic and industry indicators (e.g., GDP, CPI, M2, PMI) via Python scripts.\n- New script datayes_macro.py for searching and retrieving indicator details and time series.\n- Usage focused on Datayes macro API: search, query, and detail commands.\n- Stock-specific scripts and documentation removed; only macro-related functionality retained.\n- Updated documentation to reflect new command examples, selection, and output requirements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:25fb83523c601e521a8801fa0007dd6ee557fed5180598adc4057016cdf9f717"
+}

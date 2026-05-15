@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41516,
+  "uuid": "skill-clawhub-uk-tax-calculator",
+  "skillKey": "clawhub-uk-tax-calculator",
+  "name": "UK Tax Calculator & MTD Prep",
+  "summary": "Calculate UK freelancer tax liability for 2025/26. Computes Income Tax, Class 4 NI, Class 2 NI, VAT threshold tracking, and MTD quarterly summaries from inco...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uk_tax_calculator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ExternalOS",
+      "features": [
+        "Calculate UK freelancer tax liability for 2025/26",
+        "Computes Income Tax, Class 4 NI, Class 2 NI, VAT threshold tracking, and MTD quarterly summarie."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uk-tax-calculator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270515205?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uk-tax-calculator",
+      "url": "https://clawhub.ai/skills/uk-tax-calculator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uk-tax-calculator",
+    "url": "https://clawhub.ai/skills/uk-tax-calculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uk-tax-calculator-67f7fb6f81b388d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uk-tax-calculator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-uk-tax-calculator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7237b71cfbb2181c87b6842f70b50ca934765d85b78885c0abd606bf0344e880",
+      "artifactSizeBytes": 2553
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T07:55:30.612Z"
+}

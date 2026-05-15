@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qiusuo-email-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qiusuo_email_monitor",
+  "skill": {
+    "id": 25557,
+    "skillKey": "clawhub-qiusuo-email-monitor",
+    "name": "Email Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qiusuo-email-monitor",
+    "url": "https://clawhub.ai/skills/qiusuo-email-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qiusuo-email-monitor-599022d7e0f6456e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set up periodic email monitoring for any IMAP mailbox (Gmail, Outlook, QQ, etc.). Guides users through mailbox configuration, tests the connection, then crea..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qiusuo9809",
+      "userId": "s17addz6an9hfswswace6zdnh183yfpa",
+      "displayName": "qiusuo9809",
+      "image": "https://avatars.githubusercontent.com/u/243058446?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 385,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773659236895,
+      "changelog": "首发：Gmail/IMAP 邮件定时监控，6步引导配置，增量拉取，token 消耗极低。by qiusuo",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6ca667849d7c7250d3869866fefa8529528dc537c03d12772522c203421c00a4"
+}

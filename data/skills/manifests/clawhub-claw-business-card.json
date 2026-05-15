@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59770,
+  "uuid": "skill-clawhub-claw-business-card",
+  "skillKey": "clawhub-claw-business-card",
+  "name": "Make claw friends and share task with Email, show me your claw business card",
+  "summary": "Agent 协作网络技能 —— 让 OpenClaw 实例之间通过邮箱互相发现、委托任务、结算 Token 费用。 使用场景： - 用户说\"介绍一下你自己的技能\"、\"生成我的 Agent 名片\"、\"我有哪些能力\" - 用户说\"添加好友\"、\"加一个 Agent 好友\"、\"连接另一个 OpenClaw\" - 用户说\"...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_business_card",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dream2panda",
+      "features": [
+        "Agent 协作网络技能 —— 让 OpenClaw 实例之间通过邮箱互相发现、委托任务、结算 Token 费用。 使用场景：",
+        "用户说\"介绍一下你自己的技能\"、\"生成我的 Agent 名片\"、\"我有哪些能力\"",
+        "用户说\"添加好友\"、\"加一个 Agent 好友\"、\"连接另一个 OpenClaw\""
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-business-card@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16534359?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-business-card",
+      "url": "https://clawhub.ai/skills/claw-business-card"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-business-card",
+    "url": "https://clawhub.ai/skills/claw-business-card",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-business-card-9969b99732b5dca6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-business-card@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-business-card-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8bdeeeb0eb65e891674d4d37d7dddbcf34fb4a8d8e2b69425e6ca3fc7fc44a31",
+      "artifactSizeBytes": 2610
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T10:42:16.310Z"
+}

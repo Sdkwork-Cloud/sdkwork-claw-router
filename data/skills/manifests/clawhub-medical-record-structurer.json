@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18758,
+  "uuid": "skill-clawhub-medical-record-structurer",
+  "skillKey": "clawhub-medical-record-structurer",
+  "name": "Medical Record Structurer",
+  "summary": "Medical record structuring and standardization tool. Converts doctor's oral or handwritten medical records into standardized electronic medical records (EMR)...",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.medical_record_structurer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "joe",
+      "features": [
+        "Medical record structuring and standardization tool",
+        "Converts doctor's oral or handwritten medical records into standardized electronic medical reco."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/medical-record-structurer@1.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26564438?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "medical-record-structurer",
+      "url": "https://clawhub.ai/skills/medical-record-structurer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "medical-record-structurer",
+    "url": "https://clawhub.ai/skills/medical-record-structurer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/medical-record-structurer-90ab7adcece35387.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/medical-record-structurer@1.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-medical-record-structurer-1.4.0.json",
+      "version": "1.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:98f651f8e89c4f494cc62ce3885426536f7b2bf4991d7856e3823c48b60c5b4f",
+      "artifactSizeBytes": 2527
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T01:53:47.117Z"
+}

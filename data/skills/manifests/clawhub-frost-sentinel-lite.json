@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18393,
+  "uuid": "skill-clawhub-frost-sentinel-lite",
+  "skillKey": "clawhub-frost-sentinel-lite",
+  "name": "Frost Sentinel Lite",
+  "summary": "Lightweight temperature monitoring. Upgrade to Commercial Edition for Hail, Snow, Ground-Lock, and Chill Hours.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.frost_sentinel_lite",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TonyJB",
+      "features": [
+        "Lightweight temperature monitoring",
+        "Upgrade to Commercial Edition for Hail, Snow, Ground-Lock, and Chill Hours."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/frost-sentinel-lite@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18352293?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "frost-sentinel-lite",
+      "url": "https://clawhub.ai/skills/frost-sentinel-lite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "frost-sentinel-lite",
+    "url": "https://clawhub.ai/skills/frost-sentinel-lite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/frost-sentinel-lite-c58c23a8106ff79c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/frost-sentinel-lite@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-frost-sentinel-lite-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c9e1e3a35fb7f162ec1530db05771cbc0d2601f52bdb927036fff8506648149c",
+      "artifactSizeBytes": 2239
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T22:47:39.429Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-image-to-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_image_to_video",
+  "skill": {
+    "id": 55269,
+    "skillKey": "clawhub-youtube-image-to-video",
+    "name": "Youtube Image To Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-image-to-video",
+    "url": "https://clawhub.ai/skills/youtube-image-to-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-image-to-video-66544edfedffa54e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — turn these images into a YouTube video with music and transitions — and ge..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susan4731-wilfordf",
+      "userId": "s1782w3wqej6a5gnp3w63eb80184cckp",
+      "displayName": "susan4731-wilfordf",
+      "image": "https://avatars.githubusercontent.com/u/208907675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776439250618,
+      "changelog": "YouTube Image to Video 1.0.0 — Initial release\n\n- Instantly converts uploaded images (JPG, PNG, WEBP, HEIC) into YouTube-ready videos with music and transitions, no editing software needed.\n- Automatic token and session management for fast setup and free starter credits.\n- Streamlined workflows: upload photos, describe your video, and receive a 1080p MP4 download in 1–2 minutes.\n- Supports file uploads up to 200MB and seamless preview, export, and credit check commands.\n- Responsive backend handles edits, state queries, and error codes with clear chat feedback.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1a7e12d02e9f681bbd9a3c2e3ded6a64683d014cbdbbba9749a0202bfcef6285"
+}

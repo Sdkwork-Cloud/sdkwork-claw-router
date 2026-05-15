@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31078,
+  "uuid": "skill-clawhub-zqtest",
+  "skillKey": "clawhub-zqtest",
+  "name": "zqtest",
+  "summary": "Typed knowledge graph for structured agent memory and composable skills. Use when creating/querying entities (Person, Project, Task, Event, Document), linkin...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zqtest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ywqsimmon",
+      "features": [
+        "Typed knowledge graph for structured agent memory and composable skills",
+        "Use when creating/querying entities (Person, Project, Task, Event, Document), linkin..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zqtest@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6362207?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zqtest",
+      "url": "https://clawhub.ai/skills/zqtest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zqtest",
+    "url": "https://clawhub.ai/skills/zqtest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zqtest-93aad919729b5f06.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zqtest@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zqtest-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e8f9d4485b7472ac9685b8de35b7d106bbf91a58abb29b7d1b0d107e9147e271",
+      "artifactSizeBytes": 2322
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T08:05:25.420Z"
+}

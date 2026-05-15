@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22670,
+  "uuid": "skill-clawhub-cursor-dispatch",
+  "skillKey": "clawhub-cursor-dispatch",
+  "name": "Cursor Dispatch",
+  "summary": "Orchestrate Cursor Agent CLI for coding tasks with concurrency control, timeout recovery, and multi-task coordination. Use when: (1) dispatching coding tasks...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cursor_dispatch",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "slk1061569042-lab",
+      "features": [
+        "Orchestrate Cursor Agent CLI for coding tasks with concurrency control, timeout recovery, and m.",
+        "Use when: (1) dispatching coding tasks..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cursor-dispatch@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/246635832?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cursor-dispatch",
+      "url": "https://clawhub.ai/skills/cursor-dispatch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cursor-dispatch",
+    "url": "https://clawhub.ai/skills/cursor-dispatch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cursor-dispatch-cdb7df0234537db7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cursor-dispatch@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cursor-dispatch-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ae45e328ed32594238c36d5967f08a45585c745ef4bd883274a8cc2b9801bd0",
+      "artifactSizeBytes": 2346
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T13:33:01.776Z"
+}

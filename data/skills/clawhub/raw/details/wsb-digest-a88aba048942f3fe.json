@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "wsb-digest",
+    "displayName": "WSB 热股日报",
+    "summary": "自动抓取 r/wallstreetbets 热股数据，生成每日报告推送到 Discord。使用 ApeWisdom API，支持分片发送避免 Discord 2000 字符限制。",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 428,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1772558645142,
+    "updatedAt": 1778303708976
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1772558645142,
+    "changelog": "Initial release of wsb-digest.\n\n- Automatically fetches r/wallstreetbets hot stock data daily via ApeWisdom API.\n- Generates detailed multi-dimensional reports and sends them to Discord, with automatic message chunking to avoid character limits.\n- Supports scheduled (cron) pushes and basic trend tracking (fast risers, newcomers).\n- Simple installation; only requires Node.js (no external npm packages needed).\n- Includes troubleshooting, configuration guides, and sample output.",
+    "license": null
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "mingkko",
+    "userId": "publishers:mingkko",
+    "displayName": "DIO",
+    "image": "https://avatars.githubusercontent.com/u/47838987?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.destructive_delete_command"
+    ],
+    "summary": "Detected: suspicious.destructive_delete_command",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778303708976
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/code-review-automation@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_review_automation",
+  "skill": {
+    "id": 25743,
+    "skillKey": "clawhub-code-review-automation",
+    "name": "Code Review Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-review-automation",
+    "url": "https://clawhub.ai/skills/code-review-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-review-automation-c81cb4b4d7ffadd8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated code review for GitHub pull requests using Claude LLM. PR analysis, security scanning, and style checking."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hirofumiko",
+      "userId": "publishers:hirofumiko",
+      "displayName": "HiroFumiko",
+      "image": "https://avatars.githubusercontent.com/u/45387273?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 361,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773527818919,
+      "changelog": "- Added comprehensive SKILL.md documentation describing all features, commands, technical details, examples, and roadmap for Code Review Automation.\n- Clarified purpose: Automated code reviews for GitHub pull requests using Claude LLM.\n- Outlined usage instructions, including installation, setup, and command-line interface.\n- Provided details on security practices, configuration, and support resources.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:711670e154874129a673c1be87fe00b58e3e66da46dc5e2d9ee233d3f6df796b"
+}

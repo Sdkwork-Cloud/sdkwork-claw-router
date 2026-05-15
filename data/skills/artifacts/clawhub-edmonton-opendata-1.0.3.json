@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/edmonton-opendata@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edmonton_opendata",
+  "skill": {
+    "id": 36120,
+    "skillKey": "clawhub-edmonton-opendata",
+    "name": "City of Edmonton Open Data"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edmonton-opendata",
+    "url": "https://clawhub.ai/skills/edmonton-opendata",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edmonton-opendata-5f2761b69be6fc57.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access 2,179+ datasets from the City of Edmonton open data portal. Search, fetch, and analyze city data on transit, traffic, environment, census, and more. D..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "raychanpmp",
+      "userId": "s17emyjj884k31zwctbp78w72d83nwm4",
+      "displayName": "Ray Chan, PMP",
+      "image": "https://avatars.githubusercontent.com/u/63657868?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 208,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774923887059,
+      "changelog": "Fixed: cache now in skill directory instead of home; documented optional env var",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:502cc845c41004a0e2ff167ff30cee5430ab0120dba70f428250af0328efe6fd"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hotdog@10.1.1",
+  "version": "10.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hotdog",
+  "skill": {
+    "id": 10271,
+    "skillKey": "clawhub-hotdog",
+    "name": "Hotdog"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hotdog",
+    "url": "https://clawhub.ai/skills/hotdog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hotdog-35602208e86ac7d6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Hot dog or not? Classify food photos and battle Nemotron. Use when a user sends a food photo, asks if something is a hot dog, or says 'hotdog', '/hotdog', or 'hot dog battle'."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mishafyi",
+      "userId": "s176wr2bhk87vrtp1ggqyb12ds83jcnz",
+      "displayName": "mishafyi",
+      "image": "https://avatars.githubusercontent.com/u/46460368?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2511,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 3,
+      "versions": 18
+    },
+    "latestVersion": {
+      "version": "10.1.1",
+      "createdAt": 1770726274959,
+      "changelog": "Version 10.1.1\n\n- Added _meta.json file for enhanced skill metadata management.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b7fdbd0a80bac8376304e6d2bce13bcd6d7d4887ec327b573bfb9e5ac61ad0d2"
+}

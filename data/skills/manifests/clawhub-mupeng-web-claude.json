@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49986,
+  "uuid": "skill-clawhub-mupeng-web-claude",
+  "skillKey": "clawhub-mupeng-web-claude",
+  "name": "Web Claude",
+  "summary": "Unified web search skill. Fallback order — web_search(Brave) → duckduckgo → claude.ai. Auto-cache search results (saved to memory/research/)",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mupeng_web_claude",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mupengi-bot",
+      "features": [
+        "Unified web search skill",
+        "Fallback order — web_search(Brave) → duckduckgo → claude.ai",
+        "Auto-cache search results (saved to memory/research/)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mupeng-web-claude@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259087580?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mupeng-web-claude",
+      "url": "https://clawhub.ai/skills/mupeng-web-claude"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mupeng-web-claude",
+    "url": "https://clawhub.ai/skills/mupeng-web-claude",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mupeng-web-claude-277a36bb268a4ac3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mupeng-web-claude@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mupeng-web-claude-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e8a62e5eb3d978c15cd7b24efc5d1a333477d66d5dd520b99e0f765d122869e3",
+      "artifactSizeBytes": 1940
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T23:31:15.015Z"
+}

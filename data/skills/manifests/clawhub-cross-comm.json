@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17969,
+  "uuid": "skill-clawhub-cross-comm",
+  "skillKey": "clawhub-cross-comm",
+  "name": "Pywayne Cross Comm",
+  "summary": "WebSocket-based cross-language communication service with support for multiple message types (text, JSON, dict, bytes, images, files, folders) and client man...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cross_comm",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangyendt",
+      "features": [
+        "WebSocket-based cross-language communication service with support for multiple message types (t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cross-comm@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18455758?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cross-comm",
+      "url": "https://clawhub.ai/skills/cross-comm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cross-comm",
+    "url": "https://clawhub.ai/skills/cross-comm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cross-comm-c1521a6bfe7b7f36.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cross-comm@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cross-comm-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7414eb6dd5405070a1f6a69d65d885ae9b624c02824b85990577e6a8f8c455e8",
+      "artifactSizeBytes": 2468
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T13:25:50.641Z"
+}

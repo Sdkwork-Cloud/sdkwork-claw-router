@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54364,
+  "uuid": "skill-clawhub-ship24-tracking",
+  "skillKey": "clawhub-ship24-tracking",
+  "name": "Ship24 Order Tracking",
+  "summary": "Track shipments and manage trackers using Ship24's universal tracking API — 2,500+ couriers and eCommerce platforms worldwide.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ship24_tracking",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ship24",
+      "features": [
+        "Track shipments and manage trackers using Ship24's universal tracking API — 2,500+ couriers and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ship24-tracking@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264068739?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ship24-tracking",
+      "url": "https://clawhub.ai/skills/ship24-tracking"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ship24-tracking",
+    "url": "https://clawhub.ai/skills/ship24-tracking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ship24-tracking-bc5912a38877ce27.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ship24-tracking@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ship24-tracking-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c231a9f79bb2ac3f1cf19256aee5566216df8c3baf5886b62eb80bae2606428e",
+      "artifactSizeBytes": 3175
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T03:41:26.341Z"
+}

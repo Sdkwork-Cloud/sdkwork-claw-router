@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46506,
+  "uuid": "skill-clawhub-amazon-brand-shield",
+  "skillKey": "clawhub-amazon-brand-shield",
+  "name": "Amazon Brand Shield",
+  "summary": "Amazon brand protection toolkit. Detect hijackers, counterfeits, and unauthorized sellers. Includes MAP violation detection, trademark abuse detection, templ...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_brand_shield",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WangM-A3",
+      "features": [
+        "Amazon brand protection toolkit",
+        "Detect hijackers, counterfeits, and unauthorized sellers",
+        "Includes MAP violation detection, trademark abuse detection, templ..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amazon-brand-shield@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274818589?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amazon-brand-shield",
+      "url": "https://clawhub.ai/skills/amazon-brand-shield"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-brand-shield",
+    "url": "https://clawhub.ai/skills/amazon-brand-shield",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-brand-shield-b0a3df554ae06458.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amazon-brand-shield@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-amazon-brand-shield-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b70dbff77a73187f61b6d62c31e79654028d8a04bbe78e07f718783ac4961b9c",
+      "artifactSizeBytes": 1918
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T00:56:22.213Z"
+}

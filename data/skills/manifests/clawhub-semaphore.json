@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32562,
+  "uuid": "skill-clawhub-semaphore",
+  "skillKey": "clawhub-semaphore",
+  "name": "Semaphore",
+  "summary": "Semaphore integration. Manage Organizations. Use when the user wants to interact with Semaphore data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.semaphore",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Semaphore integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Semaphore data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/semaphore@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "semaphore",
+      "url": "https://clawhub.ai/skills/semaphore"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "semaphore",
+    "url": "https://clawhub.ai/skills/semaphore",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/semaphore-2bbd2a7aba16378c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/semaphore@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-semaphore-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c1910de761e0bb8dc92b1162d336ee28775ad1d31d98b83ac6d604cc63db1288",
+      "artifactSizeBytes": 1823
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:58:19.331Z"
+}

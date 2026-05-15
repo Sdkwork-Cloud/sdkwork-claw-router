@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73003,
+  "uuid": "skill-clawhub-toutiao-article-reader",
+  "skillKey": "clawhub-toutiao-article-reader",
+  "name": "头条文章阅读",
+  "summary": "使用浏览器自动化阅读今日头条、微信公众号、知乎等平台文章。自动提取标题、作者、发布时间、正文内容，支持内容清洗和 AI 总结。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toutiao_article_reader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "brainpower168",
+      "features": [
+        "使用浏览器自动化阅读今日头条、微信公众号、知乎等平台文章。自动提取标题、作者、发布时间、正文内容，支持内容清洗和 AI 总结。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/toutiao-article-reader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267845763?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "toutiao-article-reader",
+      "url": "https://clawhub.ai/skills/toutiao-article-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toutiao-article-reader",
+    "url": "https://clawhub.ai/skills/toutiao-article-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toutiao-article-reader-005fb30a4e61d65f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/toutiao-article-reader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-toutiao-article-reader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:709cd60b467c66bb4b7426ca716054e56c84c06a7c3e87d8ff47306391a8a24b",
+      "artifactSizeBytes": 2408
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T00:55:05.310Z"
+}

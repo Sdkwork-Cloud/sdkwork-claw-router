@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-drive-share-file@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_drive_share_file",
+  "skill": {
+    "id": 44632,
+    "skillKey": "clawhub-google-drive-share-file",
+    "name": "Google Drive Share File"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-drive-share-file",
+    "url": "https://clawhub.ai/skills/google-drive-share-file",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-drive-share-file-54001d90ec4b07ed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Atomic node skill to share a file in Google Drive using the gog CLI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zvirb",
+      "userId": "s178ycq6n64frv7zswtx5rvyfd85kc2g",
+      "displayName": "zvirb",
+      "image": "https://avatars.githubusercontent.com/u/130008533?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777263347844,
+      "changelog": "- Switched implementation from GoogleWorkspace plugin to the native gog CLI for sharing files.\n- Updated requirements to use the gog binary instead of a plugin.\n- Revised description and usage instructions to reflect the new gog CLI syntax.\n- Updated schema example and output to match gog CLI output format.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:13124b852e25ffb31cb7b344451d513dcba79f23f010c9b70f4ca646447e095f"
+}

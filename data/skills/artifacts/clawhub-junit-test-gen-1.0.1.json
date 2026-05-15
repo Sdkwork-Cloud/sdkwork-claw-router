@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/junit-test-gen@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.junit_test_gen",
+  "skill": {
+    "id": 39011,
+    "skillKey": "clawhub-junit-test-gen",
+    "name": "junit-test-generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "junit-test-gen",
+    "url": "https://clawhub.ai/skills/junit-test-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/junit-test-gen-f41d8ba0364c39d5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates JUnit 5 test classes from JSON test case files. Invoke when user wants to generate Spring Boot JUnit 5 tests from JSON test cases."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hcyyy0120",
+      "userId": "s173vzcqfv4b915ncgsy9j6mnd83gs0r",
+      "displayName": "Hcyyy0120",
+      "image": "https://avatars.githubusercontent.com/u/82436308?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774406234300,
+      "changelog": "- Generalized JSON input/output code examples to use generic names and fields for improved documentation clarity.\n- Unified package name and naming conventions in generated Java code examples; class names now use PascalCase with \"Test\" suffix and remove non-ASCII characters automatically.\n- Simplified Python API usage; now a single generator entry point with configurable package name.\n- Added explicit documentation of code quality standards, naming conventions, assertion usage, and test result locations.\n- Updated prompt templates and version/date info for improved guidance and traceability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c25db2d988ab7bb4c36680037fc1667bcd014708f31ab54fe2f20e8edf9613af"
+}

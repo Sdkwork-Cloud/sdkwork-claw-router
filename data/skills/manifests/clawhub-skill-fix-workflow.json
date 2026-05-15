@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40448,
+  "uuid": "skill-clawhub-skill-fix-workflow",
+  "skillKey": "clawhub-skill-fix-workflow",
+  "name": "Skill Fix Workflow",
+  "summary": "Automatically extracts and stitches sequential skills into a configurable, exception-handled workflow saved as an automated program.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_fix_workflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "superStupidBear",
+      "features": [
+        "Automatically extracts and stitches sequential skills into a configurable, exception-handled wo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-fix-workflow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6762468?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-fix-workflow",
+      "url": "https://clawhub.ai/skills/skill-fix-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-fix-workflow",
+    "url": "https://clawhub.ai/skills/skill-fix-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-fix-workflow-6255f8a65f86d458.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-fix-workflow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-fix-workflow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8008bb9dc9b1f492b0bd324222db5688f4245e299811cb47cad8204e4869be5d",
+      "artifactSizeBytes": 2380
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T23:51:22.143Z"
+}

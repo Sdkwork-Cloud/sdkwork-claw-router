@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/iqiyi@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iqiyi",
+  "skill": {
+    "id": 70438,
+    "skillKey": "clawhub-iqiyi",
+    "name": "IQIYI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iqiyi",
+    "url": "https://clawhub.ai/skills/iqiyi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iqiyi-1647ac9ce0a3bb68.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供爱奇艺独家自制剧、电影及综艺点播指引。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mike47512",
+      "userId": "s17916ncgb6bpm0fs1wdm6932d83gha4",
+      "displayName": "mike47512",
+      "image": "https://avatars.githubusercontent.com/u/199718167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 286,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1773765991540,
+      "changelog": "- Updated skill name and description for clarity and focus on guiding iQIYI on-demand content.\n- Revised structure to include filtering options (category, scenario, device, status).\n- Enhanced returned fields to cover interaction guides, feature highlights, tracking, and security.\n- Added sample requests for typical use cases.\n- Noted update frequency based on product and community feedback.\n- Included privacy and third-party interface cautions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5482bcfbc0f13d2d138145e854d413f7037443ec407ed3e36e53ab80e2a03758"
+}

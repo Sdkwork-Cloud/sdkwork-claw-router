@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/festival-sale@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.festival_sale",
+  "skill": {
+    "id": 70548,
+    "skillKey": "clawhub-festival-sale",
+    "name": "节日大促"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "festival-sale",
+    "url": "https://clawhub.ai/skills/festival-sale",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/festival-sale-dd890bef958c6a0a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "618年中大促冲刺GMV与用户增长；适用于平台与自营。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clawkk",
+      "userId": "s170g5yz1q3ksjnn4gz6v24af983h1mh",
+      "displayName": "clawkk",
+      "image": "https://avatars.githubusercontent.com/u/265748372?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774227546797,
+      "changelog": "Initial release of \"618大促\" skill for festival sales.\n\n- Provides a reusable promotion template targeting GMV and user growth during major festivals.\n- Covers best practices for scenario selection, strategic levers, eligibility/rewards, and SOP execution.\n- Specifies key metrics for performance tracking (traffic, transactions, promotions, affiliate ROI).\n- Outlines technical requirements for rule engines, attribution, risk control, and unified data tracking.\n- Includes compliance notes, FAQ, and troubleshooting for seamless campaign operations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:522102455d91bf429e128f7f2c352d0d715325d10f6879f80e20c9f5074034c5"
+}

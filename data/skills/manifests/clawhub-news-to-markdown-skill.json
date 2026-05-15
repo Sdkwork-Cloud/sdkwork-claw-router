@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62208,
+  "uuid": "skill-clawhub-news-to-markdown-skill",
+  "skillKey": "clawhub-news-to-markdown-skill",
+  "name": "News To Markdown",
+  "summary": "输入文章 URL，输出干净的 Markdown 正文。支持17个平台专项优化（头条、微信公众号、知乎、36kr、虎嗅、华尔街见闻、澎湃、InfoQ 等），双引擎提取、图片本地化、三层抓取策略。常与 browser-web-search skill 配合：先用 bws 搜索拿到 url 列表，再逐篇调用本 skil...",
+  "version": "3.1.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_to_markdown_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PING SI",
+      "features": [
+        "输入文章 URL，输出干净的 Markdown 正文。支持17个平台专项优化（头条、微信公众号、知乎、36kr、虎嗅、华尔街见闻、澎湃、InfoQ 等），双引擎提取、图片本地化、三层抓取策略."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/news-to-markdown-skill@3.1.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19371897?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "news-to-markdown-skill",
+      "url": "https://clawhub.ai/skills/news-to-markdown-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-to-markdown-skill",
+    "url": "https://clawhub.ai/skills/news-to-markdown-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-to-markdown-skill-75dc581b534c840a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/news-to-markdown-skill@3.1.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-news-to-markdown-skill-3.1.7.json",
+      "version": "3.1.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8a7a832ab3a6c5b860ea03e93e381c1a58533c4fe95294a1c0c22ad707056bb2",
+      "artifactSizeBytes": 2721
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T07:48:25.572Z"
+}

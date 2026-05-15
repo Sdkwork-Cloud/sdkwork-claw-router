@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/photo-video-youtube@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.photo_video_youtube",
+  "skill": {
+    "id": 39896,
+    "skillKey": "clawhub-photo-video-youtube",
+    "name": "Photo Video Youtube"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "photo-video-youtube",
+    "url": "https://clawhub.ai/skills/photo-video-youtube",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/photo-video-youtube-790a1b8b810cd858.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get YouTube-ready videos ready to post, without touching a single slider. Upload your images or photos (JPG, PNG, HEIC, WebP, up to 500MB), say something lik..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775938072741,
+      "changelog": "Photo Video YouTube — Version 1.0.0\n\n- Initial release enabling users to turn uploaded photos into YouTube-ready videos with music and transitions, rendered on the cloud.\n- Supports major image formats (JPG, PNG, HEIC, WebP) with uploads up to 500MB, and generates 1080p MP4 downloads.\n- Automatic connection setup with anonymous token support (100 free credits, 7-day expiry) for quick start.\n- Flexible prompt system routes user commands to actions like upload, export, credits check, and status updates.\n- Full cloud-based workflow: no installation needed, fast GPU rendering, and API-driven video editing.\n- Designed for creators who want to make YouTube videos from photos without traditional video editing skills.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dba42e8f07b0344b93cff6d97b61006df48cedb096c83c3912f0e1bcf4bffc52"
+}

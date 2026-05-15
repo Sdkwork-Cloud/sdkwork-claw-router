@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/douyin-upload-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_upload_skill",
+  "skill": {
+    "id": 18755,
+    "skillKey": "clawhub-douyin-upload-skill",
+    "name": "Douyin Upload Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-upload-skill",
+    "url": "https://clawhub.ai/skills/douyin-upload-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-upload-skill-19e0fa9d0f8f0db6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Login and publish Douyin (China mainland) videos from local files with OAuth, local speech-to-text, and generated caption drafts. Use when users ask to autho..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yjli-new",
+      "userId": "publishers:yjli-new",
+      "displayName": "YJLi-new",
+      "image": "https://avatars.githubusercontent.com/u/175589775?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 653,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772619890612,
+      "changelog": "Initial public release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dda86fa72745002d64efdddbaa907a4297fb4fac8db267fddc21356a4228f9a2"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59919,
+  "uuid": "skill-clawhub-springboot-standardizer",
+  "skillKey": "clawhub-springboot-standardizer",
+  "name": "springboot-standardizer",
+  "summary": "Java SpringBoot + MyBatis 项目标准化重构工具。用于分析非标准项目结构， 生成标准化目录结构，提供重构迁移方案。支持标准三层架构（Controller → Service → DAO）， 自动识别 Entity/DTO/VO 分层，生成 MyBatis/Redis/Kafka 等标准配置模...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.springboot_standardizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Davieyang",
+      "features": [
+        "Java SpringBoot + MyBatis 项目标准化重构工具。用于分析非标准项目结构， 生成标准化目录结构，提供重构迁移方案。支持标准三层架构（Controller → Servi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/springboot-standardizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81294360?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "springboot-standardizer",
+      "url": "https://clawhub.ai/skills/springboot-standardizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "springboot-standardizer",
+    "url": "https://clawhub.ai/skills/springboot-standardizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/springboot-standardizer-343799daad2d9fc9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/springboot-standardizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-springboot-standardizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:61a54be4ac6cbcb858413d6c1ae619460d2884584410444730d4a22cc9c6f0d7",
+      "artifactSizeBytes": 2512
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T18:12:08.253Z"
+}

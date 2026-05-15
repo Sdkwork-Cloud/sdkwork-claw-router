@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36182,
+  "uuid": "skill-clawhub-sematext",
+  "skillKey": "clawhub-sematext",
+  "name": "Sematext",
+  "summary": "Sematext integration. Manage data, records, and automate workflows. Use when the user wants to interact with Sematext data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sematext",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Sematext integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Sematext data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sematext@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sematext",
+      "url": "https://clawhub.ai/skills/sematext"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sematext",
+    "url": "https://clawhub.ai/skills/sematext",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sematext-a07ca6d37c820c3b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sematext@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-sematext-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e095f26051c87f77ee66a0bc96bb7a19a1d4e4f76e9c3987b36d79c848b6b95c",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:39:28.219Z"
+}

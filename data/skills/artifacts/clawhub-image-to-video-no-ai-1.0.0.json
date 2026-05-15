@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-to-video-no-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_to_video_no_ai",
+  "skill": {
+    "id": 55481,
+    "skillKey": "clawhub-image-to-video-no-ai",
+    "name": "Image To Video No Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-to-video-no-ai",
+    "url": "https://clawhub.ai/skills/image-to-video-no-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-to-video-no-ai-0ba1b039f547732f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — turn these photos into a slideshow video with transitions and music — and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776363170172,
+      "changelog": "Initial release of Image to Video No AI — quickly convert your photos into slideshow videos, no AI-generated content required.\n\n- Upload JPG, PNG, WEBP, or GIF files up to 200MB and receive a rendered MP4 video in 30-60 seconds\n- Handles authentication, session creation, and remote GPU-based rendering automatically\n- Supports video customization: transitions, music, 1080p output, aspect ratio, text overlays, and audio tracks\n- Simple workflows for quick edits, batch processing, and iterative refinement\n- Users receive clear, concise feedback during video creation and export\n- Displays helpful error messages for authentication, upload, or rendering issues",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5dfee2ed052eba315c3af03d1d88e04700873cd842a0561700777acb00349357"
+}

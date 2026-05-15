@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jiuge-base-behavior@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jiuge_base_behavior",
+  "skill": {
+    "id": 70220,
+    "skillKey": "clawhub-jiuge-base-behavior",
+    "name": "声音制作规范，Jiuge_Flow_Perfect_V1.skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jiuge-base-behavior",
+    "url": "https://clawhub.ai/skills/jiuge-base-behavior",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jiuge-base-behavior-60855053bfa2101a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "九歌传媒机器人的基础行为规范，约束文件发送、定时任务、文档生成三大核心行为。当需要发送文件时、安排定时任务时、生成文档时，必须遵循本规范。本规范优先级高于其他技能的具体指令。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lzgsrbs",
+      "userId": "s17a8c49dcx26pfchb60knp0gd85167v",
+      "displayName": "lzgsrbs",
+      "image": "https://avatars.githubusercontent.com/u/167130850?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777664341205,
+      "changelog": "Changelog for jiuge-base-behavior v1.0.1\n\n- Rebranded and refactored as “Jiuge Flow Perfect V1” audio processing pipeline.\n- Added main script: scripts/jiuge_flow.sh implementing a 3-step, no-wash 48kHz audio workflow.\n- Removed previous behavior/config specification (config.json).\n- Introduced step-by-step instructions, command-line usage, parameter options, and technical specs.\n- Included bug fix summary and detailed feature list in documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5e96f94084791f868e7af521e6b94bcd112f6b7e6e981b9fbcadc83e95bf8fb1"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/universal-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.universal_agent",
+  "skill": {
+    "id": 41379,
+    "skillKey": "clawhub-universal-agent",
+    "name": "Universal Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "universal-agent",
+    "url": "https://clawhub.ai/skills/universal-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/universal-agent-9e9e07d5bd1a642e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when the user needs to execute tasks through a complete automated workflow: understand natural language intent, dynamically generat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangjiaocheng",
+      "userId": "s175zq13kt63ypfry5rgxh1pv18440m2",
+      "displayName": "波动几何",
+      "image": "https://avatars.githubusercontent.com/u/25478397?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775417126763,
+      "changelog": "Universal Agent 1.0.0 – Initial Release\n\n- Introduces a minimal universal agent that automates end-to-end task execution from natural language input, including command/script generation, execution, error recovery, and result summarization.\n- Provides standalone, bridge, and inline simulation usage modes to suit various integration scenarios.\n- Supports shell commands, Python scripting, API/API calls, CLI tools, and basic hardware control.\n- Features auto-retry on error and safety checks to ensure reliable automation workflows.\n- Includes detailed protocol for external agent integration (environment variables) and full file structure/documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:34d34fc16b54919e7a43e564105b958ff606db47331137a5174f4ee766290b00"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-model-switcher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_model_switcher",
+  "skill": {
+    "id": 70946,
+    "skillKey": "clawhub-ai-model-switcher",
+    "name": "AI模型切换器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-model-switcher",
+    "url": "https://clawhub.ai/skills/ai-model-switcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-model-switcher-b168dda1c9199468.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI模型切换器：日常本地模型 + 复杂任务云模型的混合使用方案。根据任务类型自动选择最优模型，最大化利用本地模型（零token成本），最小化云模型token消耗。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "savidwilbert",
+      "userId": "s17d1r3wcq8yqc11mccnbsm9ad83q4kg",
+      "displayName": "savidwilbert",
+      "image": "https://avatars.githubusercontent.com/u/134845010?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774579807306,
+      "changelog": "ai-model-switcher 1.0.0 – Initial Release\n\n- Introduces automatic AI model switching between local and cloud models based on task type.\n- Supports 7 task modes (chat, simple, research, longdoc, code, analysis, creative) with model recommendations.\n- Provides cost optimization strategies (aggressive, balanced, performance).\n- Tracks usage statistics: model switches, token consumption, and cost.\n- Includes customizable configuration for models, task types, and optimization strategy.\n- Simple command-line interface for status checks, chat, code, research, and statistics.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:31b0b333297e077de2d5cc1d2a832416c71531dc7ee55228dcc804f2130c6794"
+}

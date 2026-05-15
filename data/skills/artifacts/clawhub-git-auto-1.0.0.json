@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/git-auto@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_auto",
+  "skill": {
+    "id": 15974,
+    "skillKey": "clawhub-git-auto",
+    "name": "Git Auto"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-auto",
+    "url": "https://clawhub.ai/skills/git-auto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-auto-2585d5f0091ed46a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Git workspace automation (status/commit/push/log/diff)"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mupengi-bot",
+      "userId": "s17cb0n67gxg14m41wrqex0hr183j5d2",
+      "displayName": "mupengi-bot",
+      "image": "https://avatars.githubusercontent.com/u/259087580?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 914,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771382990533,
+      "changelog": "Initial release of git-auto — automate and simplify common Git tasks with smart defaults.\n\n- Provides commands for status, commit (with message generation), push (with branch safety), log, and diff.\n- Supports batch and multi-repo operations.\n- Auto-detects git repositories and integrates with conventional commit standards.\n- Includes built-in safety checks for push, branch protection, and conflict detection.\n- User-friendly error handling for common git issues.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a176df6e2e04161b882ed4ff9b0222bfa9ae31ceec69ff2ee1d1ff4b634ba6f3"
+}

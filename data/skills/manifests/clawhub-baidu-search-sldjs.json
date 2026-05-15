@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36890,
+  "uuid": "skill-clawhub-baidu-search-sldjs",
+  "skillKey": "clawhub-baidu-search-sldjs",
+  "name": "Baidu Search Sldjs",
+  "summary": "Open browser and search for keywords. Use when user wants to search online.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_search_sldjs",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sldjs",
+      "features": [
+        "Open browser and search for keywords",
+        "Use when user wants to search online."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baidu-search-sldjs@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33193195?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baidu-search-sldjs",
+      "url": "https://clawhub.ai/skills/baidu-search-sldjs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-search-sldjs",
+    "url": "https://clawhub.ai/skills/baidu-search-sldjs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-search-sldjs-a67eedd91efcee65.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baidu-search-sldjs@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-baidu-search-sldjs-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c11a658c0bfcb5d045c728aa22821dc7340db5b659dda0e28c04d17afbde670c",
+      "artifactSizeBytes": 2036
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T07:48:26.489Z"
+}

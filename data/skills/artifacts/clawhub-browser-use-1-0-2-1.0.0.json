@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/browser-use-1-0-2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_use_1_0_2",
+  "skill": {
+    "id": 16031,
+    "skillKey": "clawhub-browser-use-1-0-2",
+    "name": "Browser Use 1.0.2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-use-1-0-2",
+    "url": "https://clawhub.ai/skills/browser-use-1-0-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-use-1-0-2-c7c35269ba77df80.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automates browser interactions for web testing, form filling, screenshots, and data extraction. Use when the user needs to navigate websites, interact with w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zlshiny",
+      "userId": "publishers:zlshiny",
+      "displayName": "shiny",
+      "image": "https://avatars.githubusercontent.com/u/4814669?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 625,
+      "installsAllTime": 21,
+      "installsCurrent": 17,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772617330321,
+      "changelog": "Initial release of browser-use: automates browser interactions for web testing, automation, and data extraction.\n\n- Enables browser navigation, web page interactions, form filling, and screenshots via CLI commands.\n- Supports persistent browser sessions for multi-step automation.\n- Offers multiple browser modes: headless Chromium, real Chrome (with profile support), and remote/cloud.\n- Comprehensive commands for navigation, tab management, page state status, interactions, JavaScript execution, data extraction, cookies, waiting conditions, and remote agent tasks.\n- Includes built-in Python scripting with persistent session state and access to browser context.\n- Extensive documentation and usage examples for all major commands and options.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:84ec011a153e445cc2e6676717069394a26e79804a8c8cad885454d9f5d04476"
+}

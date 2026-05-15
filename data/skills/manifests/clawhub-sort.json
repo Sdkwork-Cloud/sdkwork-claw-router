@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23181,
+  "uuid": "skill-clawhub-sort",
+  "skillKey": "clawhub-sort",
+  "name": "Sort",
+  "summary": "Sort files, lines, and columns with custom ordering and dedup. Use when scanning duplicates, monitoring changes, reporting results, alerting anomalies.",
+  "version": "3.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sort",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "Sort files, lines, and columns with custom ordering and dedup",
+        "Use when scanning duplicates, monitoring changes, reporting results, alerting anomalies."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sort@3.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sort",
+      "url": "https://clawhub.ai/skills/sort"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sort",
+    "url": "https://clawhub.ai/skills/sort",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sort-646964943fd22711.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sort@3.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-sort-3.0.2.json",
+      "version": "3.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bab3de9ab8a5c19f3f3ad0a3dbf312c25356bba1ec81a9f2690ac058abcc6b96",
+      "artifactSizeBytes": 1886
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T09:59:35.818Z"
+}

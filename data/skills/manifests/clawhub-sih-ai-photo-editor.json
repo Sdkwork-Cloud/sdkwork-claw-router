@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68512,
+  "uuid": "skill-clawhub-sih-ai-photo-editor",
+  "skillKey": "clawhub-sih-ai-photo-editor",
+  "name": "Sih Ai Photo Editor",
+  "summary": "AI图片编辑工具，支持自然语言驱动的换装、换背景、换脸、风格转换（动漫/粘土/油画等）、美颜修图。当用户需要AI图片处理、人像编辑、背景替换、风格迁移、服装更换、脸部融合时使用此skill。支持用户通过描述性prompt（如\"把衣服换成bikini\"、\"背景换成海边\"、\"转换成动漫风格\"）进行图片编辑。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sih_ai_photo_editor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "a3273283",
+      "features": [
+        "AI图片编辑工具，支持自然语言驱动的换装、换背景、换脸、风格转换（动漫/粘土/油画等）、美颜修图。当用户需要AI图片处理、人像编辑、背景替换、风格迁移、服装更换、脸部融合时使用此skill。."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sih-ai-photo-editor@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/92772341?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sih-ai-photo-editor",
+      "url": "https://clawhub.ai/skills/sih-ai-photo-editor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sih-ai-photo-editor",
+    "url": "https://clawhub.ai/skills/sih-ai-photo-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sih-ai-photo-editor-38256ea118657843.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sih-ai-photo-editor@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sih-ai-photo-editor-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ad736d02ba856a3cea75ed36c671137c5c8249e4dff05c3ab2642bf5b7f0cf67",
+      "artifactSizeBytes": 2247
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T08:53:50.772Z"
+}

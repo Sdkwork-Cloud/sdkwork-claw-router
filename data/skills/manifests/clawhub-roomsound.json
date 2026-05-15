@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19061,
+  "uuid": "skill-clawhub-roomsound",
+  "skillKey": "clawhub-roomsound",
+  "name": "RoomSound",
+  "summary": "RoomSound gives your agent the skill to play audio to your speakers. Starting with YouTube to Bluetooth speakers, expanding to local files and other sources.",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.roomsound",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "icecat2005",
+      "features": [
+        "RoomSound gives your agent the skill to play audio to your speakers",
+        "Starting with YouTube to Bluetooth speakers, expanding to local files and other sources."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/roomsound@0.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39443757?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "roomsound",
+      "url": "https://clawhub.ai/skills/roomsound"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "roomsound",
+    "url": "https://clawhub.ai/skills/roomsound",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/roomsound-3bab92a367db7a71.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/roomsound@0.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-roomsound-0.1.5.json",
+      "version": "0.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a52fa0b070befeb37ae22fd97940a545d5d7186006e9e3f83726a0a2e8baf9a2",
+      "artifactSizeBytes": 2271
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T20:10:00.465Z"
+}

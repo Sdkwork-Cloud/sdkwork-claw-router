@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hevycli@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hevycli",
+  "skill": {
+    "id": 11997,
+    "skillKey": "clawhub-hevycli",
+    "name": "Hevy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hevycli",
+    "url": "https://clawhub.ai/skills/hevycli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hevycli-6387b7849dd87dd6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access and analyze your Hevy fitness data via CLI to view workouts, routines, exercises, export JSON data, and track fitness progress."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nsampre",
+      "userId": "publishers:nsampre",
+      "displayName": "nsampre",
+      "image": "https://avatars.githubusercontent.com/u/61302509?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1842,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1769552660320,
+      "changelog": "Initial release of hevycli skill — command-line access and analysis for Hevy fitness data.\n\n- View and export workout history, details, and totals with filters and JSON output.\n- List and inspect workout routines and exercise templates.\n- Analyze user fitness progress over time (volume, patterns, frequency).\n- Supports short IDs, pagination (max 10/page), and debug mode.\n- Requires Hevy Pro and API key configuration.\n- Data is read-only; outputs support table and JSON formats.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:75be6f9b36b017408a9ae626b412342f69cb382439fa58d5e1faa92ba01a37f8"
+}

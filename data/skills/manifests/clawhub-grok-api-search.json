@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61238,
+  "uuid": "skill-clawhub-grok-api-search",
+  "skillKey": "clawhub-grok-api-search",
+  "name": "Grok Api Search",
+  "summary": "使用 Grok API 进行网络搜索。默认使用中转端点节省成本。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grok_api_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xianyu110",
+      "features": [
+        "使用 Grok API 进行网络搜索。默认使用中转端点节省成本。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/grok-api-search@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/53889513?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "grok-api-search",
+      "url": "https://clawhub.ai/skills/grok-api-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grok-api-search",
+    "url": "https://clawhub.ai/skills/grok-api-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grok-api-search-10cdbbbd48145235.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/grok-api-search@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-grok-api-search-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:792868a4ef14a2b5bc9606b26b6bc75e866a8a582c5c760ae010acc0bbf174fd",
+      "artifactSizeBytes": 1844
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T01:55:04.529Z"
+}

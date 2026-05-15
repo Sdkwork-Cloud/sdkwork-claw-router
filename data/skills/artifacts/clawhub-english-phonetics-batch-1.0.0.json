@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/english-phonetics-batch@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.english_phonetics_batch",
+  "skill": {
+    "id": 69074,
+    "skillKey": "clawhub-english-phonetics-batch",
+    "name": "English Phonetics Batch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "english-phonetics-batch",
+    "url": "https://clawhub.ai/skills/english-phonetics-batch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/english-phonetics-batch-656e50d87220b252.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "批量为英文单词添加、检查和标注美式国际音标（IPA）。支持从文本文件批量导入单词，自动查询每个单词的美式发音音标，验证现有音标正确性，并输出格式化结果。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pe1984",
+      "userId": "s178qd8bx3ycgdjwcs3edebhtn83vff6",
+      "displayName": "pe1984",
+      "image": "https://avatars.githubusercontent.com/u/188165691?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774777238120,
+      "changelog": "Initial release: 批量标注美式IPA音标，自动修复单词与词性粘连错误，支持修复编码损坏的音标",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b93d94942fbecb446eb99f4e118fda805819b4dc16a436105382e5747f1d8c87"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prospairrow-websites-mcp@1.2.5",
+  "version": "1.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prospairrow_websites_mcp",
+  "skill": {
+    "id": 45044,
+    "skillKey": "clawhub-prospairrow-websites-mcp",
+    "name": "Prospairrow Websites MCP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prospairrow-websites-mcp",
+    "url": "https://clawhub.ai/skills/prospairrow-websites-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prospairrow-websites-mcp-e992e5cbc55cd2b0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate more revenue with high-quality leads. Give your AI agent direct access to Prospairrow — extract prospects, enrich with deep company insights, discov..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "discry",
+      "userId": "publishers:discry",
+      "displayName": "discry",
+      "image": "https://avatars.githubusercontent.com/u/1464183?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 677,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "1.2.5",
+      "createdAt": 1772320650381,
+      "changelog": "Harden defaults: disable OpenClaw config API-key fallback unless explicitly enabled; disable invocation logging by default; add optional storage-state write disable flag; document security toggles.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:402c3ce59f36aa2418c843055ed026b5de33492edcaaea544dbae46c43b6c7b5"
+}

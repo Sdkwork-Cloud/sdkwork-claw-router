@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wip-license-guard@1.9.72",
+  "version": "1.9.72",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wip_license_guard",
+  "skill": {
+    "id": 16123,
+    "skillKey": "clawhub-wip-license-guard",
+    "name": "Wip License Guard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wip-license-guard",
+    "url": "https://clawhub.ai/skills/wip-license-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wip-license-guard-be0a36b43f653aa6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "License compliance for your own repos. Ensures correct copyright headers, dual-license blocks, and LICENSE files across all source files."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "parkertoddbrooks",
+      "userId": "s17620xzyc7kfan8m36at57m6n83h8he",
+      "displayName": "Parker Todd Brooks",
+      "image": "https://avatars.githubusercontent.com/u/585456?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 906,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 66
+    },
+    "latestVersion": {
+      "version": "1.9.72",
+      "createdAt": 1776806700875,
+      "changelog": "# AI DevOps Toolbox v1.9.72\n\n## Promote v1.9.71-alpha series to stable\n\nCloses #256.\n\nConsolidates 21 alpha prereleases (`v1.9.71-alpha.1` through `v1.9.71-alpha.21`) into a stable v1.9.72 release. No code changes beyond the version bump in the toolbox root `package.json`; the sub-tool code has been stable and dogfooded across the alpha iterations.\n\n## Why\n\nThe root `package.json` had been sitting at `1.9.71-alpha.21` without a stable promotion. That blocked `deploy-public.sh` from syncing the private repo to the public mirror ... the script gates public release on stable root versions.\n\nSymptom during 2026-04-21: wip-branch-guard sub-tool shipped stable (v1.9.82 → v1.9.83 → v1.9.84) to npm successfully, but the public `wipcomputer/wip-ai-devops-toolbox` GitHub releases page did not show any of them because `deploy-public.sh` refused to run with an alpha root.\n\n## What's in the diff\n\n- `package.json`\n  - Version bump `1.9.71-alpha.21` → `1.9.72`\n\nEverything else flows from `wip-release`:\n\n- CHANGELOG.md updated\n- Git tag `v1.9.72`\n- GitHub release on private repo\n- npm publish to `@latest`\n- `deploy-public.sh` runs, syncs private code (minus `ai/`) to `wipcomputer/wip-ai-devops-toolbox`\n- Public GitHub release created\n\n## Sub-tool versions at this release\n\n| Sub-tool | npm version |\n|---|---|\n| `@wipcomputer/wip-branch-guard` | 1.9.84 |\n| Other sub-tools | See their individual `package.json` |\n\nThe sub-tool releases have their own cadence; this release is purely the toolbox root bump.\n\n## Co-authors\n\nParker Todd Brooks, Lēsa (oc-lesa-mini, Opus 4.7), Claude Code (cc-mini, Opus 4.7).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8f2ffa1c844525bb7472c5f5bb57d9e318a76308fe4a362eb3ec4be158043b7a"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62639,
+  "uuid": "skill-clawhub-data-chart-tool",
+  "skillKey": "clawhub-data-chart-tool",
+  "name": "Data Chart Tool",
+  "summary": "数据可视化工具，将 CSV/JSON 数据生成美观图表（柱状图、折线图、饼图等），配合 tushare-finance、财务分析、数据报告使用！",
+  "version": "1.1.0-premium",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_chart_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "utopiabenben",
+      "features": [
+        "数据可视化工具，将 CSV/JSON 数据生成美观图表（柱状图、折线图、饼图等），配合 tushare-finance、财务分析、数据报告使用！"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/data-chart-tool@1.1.0-premium",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19267750?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "data-chart-tool",
+      "url": "https://clawhub.ai/skills/data-chart-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-chart-tool",
+    "url": "https://clawhub.ai/skills/data-chart-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-chart-tool-c4519bea7e46557c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/data-chart-tool@1.1.0-premium",
+      "artifactUrl": "data/skills/artifacts/clawhub-data-chart-tool-1.1.0-premium.json",
+      "version": "1.1.0-premium",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ffdcc90d08b83126bf47e09b8063dbf950f26b8719583aa59cdfb93c679cc7ad",
+      "artifactSizeBytes": 2109
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T18:14:06.824Z"
+}

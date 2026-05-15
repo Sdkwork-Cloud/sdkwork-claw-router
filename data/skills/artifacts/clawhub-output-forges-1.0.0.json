@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/output-forges@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.output_forges",
+  "skill": {
+    "id": 41485,
+    "skillKey": "clawhub-output-forges",
+    "name": "OutputForge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "output-forges",
+    "url": "https://clawhub.ai/skills/output-forges",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/output-forges-049b23da94cf54f0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transforms input into clear, structured, and high-quality outputs quickly by organizing, simplifying, speeding, and refining responses."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "theshimaw-svg",
+      "userId": "s17bqg08nqtkqtxp44tqkv87sh848ejp",
+      "displayName": "theshimaw-svg",
+      "image": "https://avatars.githubusercontent.com/u/266850601?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775589415749,
+      "changelog": "Follow me on x for even better skills @SaasKafle",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c322e0a3391cdc45cc18d4fec85596446b978873ea2d21513c75724b072443b5"
+}

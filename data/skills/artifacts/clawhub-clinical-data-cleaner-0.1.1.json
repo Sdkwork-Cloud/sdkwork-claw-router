@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clinical-data-cleaner@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clinical_data_cleaner",
+  "skill": {
+    "id": 20729,
+    "skillKey": "clawhub-clinical-data-cleaner",
+    "name": "Clinical Data Cleaner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clinical-data-cleaner",
+    "url": "https://clawhub.ai/skills/clinical-data-cleaner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clinical-data-cleaner-0597a03bafae2baa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when cleaning clinical trial data, preparing data for FDA/EMA submission, standardizing SDTM datasets, handling missing values in clinical studies, detec..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "renhaosu2024",
+      "userId": "s17534xmdczbhta6sndb7d2eq983mqk6",
+      "displayName": "renhaosu2024",
+      "image": "https://avatars.githubusercontent.com/u/194580685?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 531,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773395428181,
+      "changelog": "No changes detected in this version.\n\n- No file or documentation updates since the previous release.\n- Functionality and usage remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:802c723e78f579a3335279b7e64a92320bd01283dbd11f4370fdc338614276ba"
+}

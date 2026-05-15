@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10554,
+  "uuid": "skill-clawhub-fanvue",
+  "skillKey": "clawhub-fanvue",
+  "name": "Fanvue",
+  "summary": "Manage content, chats, subscribers, and earnings on the Fanvue creator platform via OAuth 2.0 API.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fanvue",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "igorls",
+      "features": [
+        "Manage content, chats, subscribers, and earnings on the Fanvue creator platform via OAuth 2.0 A."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fanvue@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4753812?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fanvue",
+      "url": "https://clawhub.ai/skills/fanvue"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fanvue",
+    "url": "https://clawhub.ai/skills/fanvue",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fanvue-e89f9776b34a0c78.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fanvue@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fanvue-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7db87c63fafec2b07c4c06a181dbe12a548b4bddfd752112e86c6bcc95b93547",
+      "artifactSizeBytes": 2241
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T20:57:56.733Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49794,
+  "uuid": "skill-clawhub-clawroam",
+  "skillKey": "clawhub-clawroam",
+  "name": "ClawRoam",
+  "summary": "Portable identity vault for OpenClaw. Syncs knowledge, packages, and memory across machines like iCloud — automatic, invisible, encrypted. Bring your own sto...",
+  "version": "3.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawroam",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "getlighty",
+      "features": [
+        "Portable identity vault for OpenClaw",
+        "Syncs knowledge, packages, and memory across machines like iCloud — automatic, invisible, encry.",
+        "Bring your own sto..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawroam@3.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26691300?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawroam",
+      "url": "https://clawhub.ai/skills/clawroam"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawroam",
+    "url": "https://clawhub.ai/skills/clawroam",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawroam-485d4216308831b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawroam@3.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawroam-3.0.1.json",
+      "version": "3.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f4b93a49fa22cfd45ed74851fac665a1e7c8dcb5f3dcdc6e693596505e88e91",
+      "artifactSizeBytes": 2092
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T17:12:19.379Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42138,
+  "uuid": "skill-clawhub-pilot-legal-contract-review-setup",
+  "skillKey": "clawhub-pilot-legal-contract-review-setup",
+  "name": "Pilot Legal Contract Review Setup",
+  "summary": "Deploy a legal contract review pipeline with 3 agents. Use this skill when: 1. User wants to set up an automated contract review or legal document analysis p...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_legal_contract_review_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "Deploy a legal contract review pipeline with 3 agents",
+        "Use this skill when: 1",
+        "User wants to set up an automated contract review or legal document analysis p..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-legal-contract-review-setup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-legal-contract-review-setup",
+      "url": "https://clawhub.ai/skills/pilot-legal-contract-review-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-legal-contract-review-setup",
+    "url": "https://clawhub.ai/skills/pilot-legal-contract-review-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-legal-contract-review-setup-bafdf0bfca08f862.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-legal-contract-review-setup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-legal-contract-review-setup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:489dcdca7d71b6614cf6788c82ae78579397403e75edf8c24412e3f0ae0da9db",
+      "artifactSizeBytes": 2023
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T01:37:02.688Z"
+}

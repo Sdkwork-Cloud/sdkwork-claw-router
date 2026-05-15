@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nexus-reader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nexus_reader",
+  "skill": {
+    "id": 71258,
+    "skillKey": "clawhub-nexus-reader",
+    "name": "读书每日推荐"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nexus-reader",
+    "url": "https://clawhub.ai/skills/nexus-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nexus-reader-403e44acff9f0547.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "微信读书飙升榜每日推荐卡片生成器。从微信读书飙升榜抓取热门书籍数据，生成精美的每日读书推荐卡片（HTML/PNG）。当用户说「读书推荐」「微信读书」「飙升榜」「今日好书」「推荐一本书」「读书卡片」「book recommendation」时触发。也可用于每日定时推送读书推荐场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lwter",
+      "userId": "s176d675ym6asee2mm13zz5c558652j6",
+      "displayName": "Neway Lau",
+      "image": "https://avatars.githubusercontent.com/u/5044960?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 105,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777972093583,
+      "changelog": "nexus-reader v1.0.0\n\n- 初始发布，支持从微信读书飙升榜每日抓取热门书籍数据\n- 自动生成含金句标题、宜忌、个性化推荐语的精美每日读书推荐卡片（HTML/PNG）\n- 内置缓存、榜单解析、LLM内容创作、农历日期计算等核心流程\n- 支持命令行控制抓取、生成卡片及图片输出\n- 可用于关键词触发或每日定时自动推送推荐",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:33338f07007ad2c9cbb2eb3ad986732ea4d72dad528de10930535d3ce4c46831"
+}

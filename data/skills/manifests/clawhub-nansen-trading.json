@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21203,
+  "uuid": "skill-clawhub-nansen-trading",
+  "skillKey": "clawhub-nansen-trading",
+  "name": "Nansen Trading",
+  "summary": "Execute DEX swaps on Solana or Base, including cross-chain bridges. Use when buying or selling a token, getting a swap quote, or executing a trade.",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nansen_trading",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nansen AI",
+      "features": [
+        "Execute DEX swaps on Solana or Base, including cross-chain bridges",
+        "Use when buying or selling a token, getting a swap quote, or executing a trade."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nansen-trading@0.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/93130718?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nansen-trading",
+      "url": "https://clawhub.ai/skills/nansen-trading"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nansen-trading",
+    "url": "https://clawhub.ai/skills/nansen-trading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nansen-trading-5bf42f10d67fba7e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nansen-trading@0.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-nansen-trading-0.1.5.json",
+      "version": "0.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:19969c0b61e10eec529f2a76d1cd2d047d1cabbf98314a5fb1f8b590db61ba68",
+      "artifactSizeBytes": 2363
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T13:40:21.072Z"
+}

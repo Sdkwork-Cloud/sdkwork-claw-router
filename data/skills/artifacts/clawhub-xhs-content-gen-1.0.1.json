@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xhs-content-gen@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhs_content_gen",
+  "skill": {
+    "id": 72559,
+    "skillKey": "clawhub-xhs-content-gen",
+    "name": "小红书内容生成器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhs-content-gen",
+    "url": "https://clawhub.ai/skills/xhs-content-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhs-content-gen-c3edaf38eacb329d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小红书爆款内容生成器 - 自动创作标题、正文、标签，基于真实运营经验优化。 适用于：育儿、知识分享、生活方式等垂直领域。 触发词：\"生成小红书内容\"、\"写小红书文案\"、\"爆款标题"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "arraylee",
+      "userId": "publishers:arraylee",
+      "displayName": "arraylee",
+      "image": "https://avatars.githubusercontent.com/u/8087773?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 309,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773826060552,
+      "changelog": "添加定制服务联系方式和引流信息",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d9b524a6460fdcfe5614424bea4764b7d9bd0ee421ba608191779ac766146d94"
+}

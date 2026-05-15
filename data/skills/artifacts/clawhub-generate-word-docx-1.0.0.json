@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/generate-word-docx@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.generate_word_docx",
+  "skill": {
+    "id": 14728,
+    "skillKey": "clawhub-generate-word-docx",
+    "name": "Generate a Word (.docx) document based on the content list provided by the user."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "generate-word-docx",
+    "url": "https://clawhub.ai/skills/generate-word-docx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/generate-word-docx-a5061108919accb1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create professional Word (.docx) documents from a user-provided content list with styled headings, paragraphs, colors, alignment, and formatting."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sereinzhi",
+      "userId": "s177wgz0mmca0h702we5p4v6tx83z99d",
+      "displayName": "sereinZhi",
+      "image": "https://avatars.githubusercontent.com/u/179953691?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1112,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773758684992,
+      "changelog": "Word Document Generator Skill v1.0.0\n\n- Initial release of the skill for generating formatted Word (.docx) documents.\n- Automatically manages python-docx dependency installation.\n- Supports styled document creation: Headings, Paragraphs, and Quotes.\n- Enables formatting options: Bold text, custom text colors (hex codes), and alignment (Left, Center, Right).\n- Content is input as a list of configurable paragraph objects, following structured data rules.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5bd0c5d062323e4799c860c25b8c33619d9ab03b031e3631340eeb277989204b"
+}

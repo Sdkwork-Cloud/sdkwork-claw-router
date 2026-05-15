@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19471,
+  "uuid": "skill-clawhub-live-stream-monitor",
+  "skillKey": "clawhub-live-stream-monitor",
+  "name": "live-stream-monitor",
+  "summary": "Monitor live streams (YouTube, Bilibili) and get notified when specific keywords are mentioned. Uses browser SpeechRecognition API for real-time transcriptio...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.live_stream_monitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaoxu1232",
+      "features": [
+        "Monitor live streams (YouTube, Bilibili) and get notified when specific keywords are mentioned",
+        "Uses browser SpeechRecognition API for real-time transcriptio..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/live-stream-monitor@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210492338?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "live-stream-monitor",
+      "url": "https://clawhub.ai/skills/live-stream-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "live-stream-monitor",
+    "url": "https://clawhub.ai/skills/live-stream-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/live-stream-monitor-d0a346debbee1b12.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/live-stream-monitor@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-live-stream-monitor-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0c4b5d13179341e1226bf45a82829196d65d6cbf78a32d2d5a9ecff483250568",
+      "artifactSizeBytes": 1965
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T14:23:55.996Z"
+}

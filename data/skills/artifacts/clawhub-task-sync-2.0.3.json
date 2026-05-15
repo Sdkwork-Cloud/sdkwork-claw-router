@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/task-sync@2.0.3",
+  "version": "2.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_sync",
+  "skill": {
+    "id": 12601,
+    "skillKey": "clawhub-task-sync",
+    "name": "Task Sync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-sync",
+    "url": "https://clawhub.ai/skills/task-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-sync-eb506bd99c7389c1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Synchronize TickTick (Dida) and Google Tasks bidirectionally, including list/project mapping, task content sync, completion sync, and smart-list export (Today, Next 7 Days, All). Use when users ask to set up OAuth, run or schedule sync, fi."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jp1222",
+      "userId": "publishers:jp1222",
+      "displayName": "Jiapeng Chen",
+      "image": "https://avatars.githubusercontent.com/u/130532438?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1607,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "2.0.3",
+      "createdAt": 1770709956672,
+      "changelog": "Globalized setup scripts, removed Chinese README, and improved path portability for OAuth token setup.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5e9991eccf6bb35fbfb2a08d83c1391fa897cef07ead40437c1bb8ecca80eeb1"
+}

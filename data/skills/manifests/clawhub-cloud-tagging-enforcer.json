@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44614,
+  "uuid": "skill-clawhub-cloud-tagging-enforcer",
+  "skillKey": "clawhub-cloud-tagging-enforcer",
+  "name": "Cloud Tag Enforcer",
+  "summary": "Enforce cloud resource tagging policies for cost allocation, compliance, and governance across AWS/GCP/Azure",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloud_tagging_enforcer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Enforce cloud resource tagging policies for cost allocation, compliance, and governance across."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cloud-tagging-enforcer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cloud-tagging-enforcer",
+      "url": "https://clawhub.ai/skills/cloud-tagging-enforcer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloud-tagging-enforcer",
+    "url": "https://clawhub.ai/skills/cloud-tagging-enforcer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloud-tagging-enforcer-812e2b900c2fa136.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cloud-tagging-enforcer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-cloud-tagging-enforcer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:04e4ad8ec7300a9f12782057949f898e96d907c2a46b8babed0cba486b161b6b",
+      "artifactSizeBytes": 1952
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T23:58:43.500Z"
+}

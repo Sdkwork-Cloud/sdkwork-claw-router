@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/isekai-character-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.isekai_character_generator",
+  "skill": {
+    "id": 52794,
+    "skillKey": "clawhub-isekai-character-generator",
+    "name": "Isekai Character Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "isekai-character-generator",
+    "url": "https://clawhub.ai/skills/isekai-character-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/isekai-character-generator-ac32f986120cd3e6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate isekai anime characters and light novel protagonists — design transported-to-another-world heroes, JRPG main characters, fantasy adventurers, magica..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "blammectrappora",
+      "userId": "s17e1t07j9b4mkk29p15qwbst983hdan",
+      "displayName": "blammectrappora",
+      "image": "https://avatars.githubusercontent.com/u/258436334?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777033359049,
+      "changelog": "Initial release of Isekai Character Generator.\n\n- Generate unique isekai anime characters and light novel protagonists in popular Niji-style anime aesthetics.\n- Supports custom prompts, various image aspect ratios, and style inheritance via reference image.\n- Integrates with the Neta AI image generation API (token required).\n- Perfect for fanart, OC design, manga concepts, and character sheets.\n- Simple command-line interface with quick start instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:05469d2e383b51a347893bee0b64df368a707499a08a2d0959ae1a462e408cc8"
+}

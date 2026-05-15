@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40502,
+  "uuid": "skill-clawhub-binance-trader",
+  "skillKey": "clawhub-binance-trader",
+  "name": "Binance Trader",
+  "summary": "Provide Binance spot and futures trading with account info, price quotes, order placement, position tracking, and historical data retrieval.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.binance_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Henry Sun",
+      "features": [
+        "Provide Binance spot and futures trading with account info, price quotes, order placement, posi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/binance-trader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39635430?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "binance-trader",
+      "url": "https://clawhub.ai/skills/binance-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "binance-trader",
+    "url": "https://clawhub.ai/skills/binance-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/binance-trader-485c68309637a89e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/binance-trader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-binance-trader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:20184185d0820dede5780fb289ac746b2d2c0c7e64a44abe48f18da3a7c07467",
+      "artifactSizeBytes": 2265
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T17:44:43.838Z"
+}

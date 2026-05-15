@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10214,
+  "uuid": "skill-clawhub-midea-ac",
+  "skillKey": "clawhub-midea-ac",
+  "name": "Midea Air Conditioners",
+  "summary": "Control Midea ACs. Use this skill when the user wants to control ACs. Supports turning ACs on/off, setting temperature, setting fan speed, switching modes, and more.",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.midea_ac",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iamanorange",
+      "features": [
+        "Control Midea ACs",
+        "Use this skill when the user wants to control ACs",
+        "Supports turning ACs on/off, setting temperature, setting fan speed, switching modes, and more."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/midea-ac@0.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6018925?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "midea-ac",
+      "url": "https://clawhub.ai/skills/midea-ac"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "midea-ac",
+    "url": "https://clawhub.ai/skills/midea-ac",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/midea-ac-c7d7a254a630951e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/midea-ac@0.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-midea-ac-0.0.3.json",
+      "version": "0.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b173b0834eb7a8f2315af506501fc5c5997988de0318f84c3a31037a92d06914",
+      "artifactSizeBytes": 1928
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T09:50:50.486Z"
+}

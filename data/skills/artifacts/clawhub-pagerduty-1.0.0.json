@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pagerduty@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pagerduty",
+  "skill": {
+    "id": 52261,
+    "skillKey": "clawhub-pagerduty",
+    "name": "Pagerduty"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pagerduty",
+    "url": "https://clawhub.ai/skills/pagerduty",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pagerduty-1c6cda31110c57fa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "PagerDuty incident management — manage incidents, services, schedules, escalation policies, and on-call via REST API"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiwithabidi",
+      "userId": "publishers:aiwithabidi",
+      "displayName": "aiwithabidi",
+      "image": "https://avatars.githubusercontent.com/u/208891229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 446,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772758368356,
+      "changelog": "Initial release — enables PagerDuty incident management via CLI.\n\n- Manage incidents, services, schedules, escalation policies, on-calls, users, and more using PagerDuty's REST API.\n- Single script CLI: list, create, update, and fetch resources such as incidents and services.\n- All commands output JSON, with optional human-readable format.\n- Requires only Python 3.10+ and a PagerDuty API key (no external dependencies).\n- Designed for integration with OpenClaw agents.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b7dc92317592671a5817c1697cf4675176d7ab2188b87dde1df4a9d1b78e17b2"
+}

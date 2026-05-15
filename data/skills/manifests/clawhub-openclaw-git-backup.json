@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28893,
+  "uuid": "skill-clawhub-openclaw-git-backup",
+  "skillKey": "clawhub-openclaw-git-backup",
+  "name": "OpenClaw Git Backup",
+  "summary": "Create, update, validate, or troubleshoot automated git backup workflows for OpenClaw repositories. Use when a user wants a scheduled commit-and-push backup...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_git_backup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BlackTor-tor",
+      "features": [
+        "Create, update, validate, or troubleshoot automated git backup workflows for OpenClaw repositor.",
+        "Use when a user wants a scheduled commit-and-push backup..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-git-backup@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/104402822?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-git-backup",
+      "url": "https://clawhub.ai/skills/openclaw-git-backup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-git-backup",
+    "url": "https://clawhub.ai/skills/openclaw-git-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-git-backup-0352f9de034c94cd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-git-backup@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-git-backup-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9f66a28c3f789d54b8b6439a178256935de19eade5a47ebea49ff7d702b3b0e5",
+      "artifactSizeBytes": 1935
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T16:18:18.450Z"
+}

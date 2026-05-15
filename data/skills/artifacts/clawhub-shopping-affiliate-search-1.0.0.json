@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shopping-affiliate-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shopping_affiliate_search",
+  "skill": {
+    "id": 66677,
+    "skillKey": "clawhub-shopping-affiliate-search",
+    "name": "Shopping Affiliate Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shopping-affiliate-search",
+    "url": "https://clawhub.ai/skills/shopping-affiliate-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shopping-affiliate-search-38608316e5d43dc2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "全球购物搜索联盟工具 - 搜索淘宝/京东/亚马逊等平台商品，自动添加你的推荐码获取佣金。当用户想买东西、搜索商品、比价时自动激活。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mi426878",
+      "userId": "publishers:mi426878",
+      "displayName": "mi426878",
+      "image": "https://avatars.githubusercontent.com/u/29305211?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 356,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773816628276,
+      "changelog": "- 首发上线，支持淘宝、京东、拼多多、亚马逊、1688等主流电商平台商品一键搜索。\n- 自动注入你的推广推荐码，生成带佣金的分享链接。\n- 配置简单，支持多平台佣金比例和联盟账号设置。\n- 支持全平台比价、佣金预估及热门商品筛选。\n- 提供佣金收入预期及最佳推广实践建议。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d53ec5956dd5175a0a77b92d901356d80859dc61c2aa75e359b60bc3ef5d9352"
+}

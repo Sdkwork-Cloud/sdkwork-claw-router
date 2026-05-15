@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/browser-cash@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_cash",
+  "skill": {
+    "id": 9235,
+    "skillKey": "clawhub-browser-cash",
+    "name": "Browser Cash"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-cash",
+    "url": "https://clawhub.ai/skills/browser-cash",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-cash-ab6e042b908d88e0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Spin up unblocked browser sessions via Browser.cash for web automation. Sessions bypass anti-bot protections (Cloudflare, DataDome, etc.) making them ideal for scraping and automation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alexander-spring",
+      "userId": "publishers:alexander-spring",
+      "displayName": "alexander-spring",
+      "image": "https://avatars.githubusercontent.com/u/198828894?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3972,
+      "installsAllTime": 18,
+      "installsCurrent": 18,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769492089776,
+      "changelog": "- Updated skill.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9d67ce9cbc7a13eeee484b8c9c01bdb8222d8b08490e91e50e931c7a03920fa3"
+}

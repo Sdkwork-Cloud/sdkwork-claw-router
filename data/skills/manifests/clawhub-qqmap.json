@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69970,
+  "uuid": "skill-clawhub-qqmap",
+  "skillKey": "clawhub-qqmap",
+  "name": "腾讯地图api调用技能",
+  "summary": "腾讯地图Web服务API集成，用于地点搜索、路线规划、逆地理编码等功能",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qqmap",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "coreyleung-art",
+      "features": [
+        "腾讯地图Web服务API集成，用于地点搜索、路线规划、逆地理编码等功能"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qqmap@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258091586?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qqmap",
+      "url": "https://clawhub.ai/skills/qqmap"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qqmap",
+    "url": "https://clawhub.ai/skills/qqmap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qqmap-09babafdafa17506.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qqmap@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qqmap-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:44f8623e90f8f93c7f87efd706f7a5e7089977858c0ba6bd260bd84d156df62f",
+      "artifactSizeBytes": 2148
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T16:33:03.293Z"
+}

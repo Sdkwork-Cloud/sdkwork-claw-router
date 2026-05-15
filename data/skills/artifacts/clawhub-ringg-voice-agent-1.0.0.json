@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ringg-voice-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ringg_voice_agent",
+  "skill": {
+    "id": 12951,
+    "skillKey": "clawhub-ringg-voice-agent",
+    "name": "Ringg Voice Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ringg-voice-agent",
+    "url": "https://clawhub.ai/skills/ringg-voice-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ringg-voice-agent-b35af3b2c4938b4f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Integrate Ringg AI voice agents with OpenClaw for making, receiving, and managing phone calls powered by Ringg's Voice OS. Use this skill when the user wants to: (1) make outbound voice calls via Ringg AI agents, (2) trigger Ringg AI campa."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "siddharthpilani",
+      "userId": "publishers:siddharthpilani",
+      "displayName": "siddharthpilani",
+      "image": "https://avatars.githubusercontent.com/u/19509099?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 1412,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770402670753,
+      "changelog": "Initial release: Ringg AI voice agent integration for OpenClaw",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:514d346d2b4943b7fd0be50593f4eea8a9e367008dfab8025e500e10c97e3c05"
+}

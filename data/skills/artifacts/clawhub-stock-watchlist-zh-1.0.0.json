@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-watchlist-zh@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_watchlist_zh",
+  "skill": {
+    "id": 69477,
+    "skillKey": "clawhub-stock-watchlist-zh",
+    "name": "stock-watchlist-zh"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-watchlist-zh",
+    "url": "https://clawhub.ai/skills/stock-watchlist-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-watchlist-zh-f816877a62c1e46d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "利用 AISA 的实时价格检查来管理股票加密观察列表，并设置目标位和止损提醒。触发条件：当用户想添加观察标的、设置目标价、跟踪止损或检查提醒触发情况时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aisadocs",
+      "userId": "s172yz541n4361fw0sapygg0r583eghk",
+      "displayName": "AIsa",
+      "image": "https://avatars.githubusercontent.com/u/245991925?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776516407300,
+      "changelog": "Initial release of stock-watchlist-zh skill.\n\n- 管理股票和加密货币观察列表，支持添加、移除、列出和检查标的。\n- 支持为每个标的设置目标价和止损提醒。\n- 通过集成 AISA 实时价格检查提供提醒触发功能。\n- 默认在本地目录安全存储观察列表状态。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d622341032d11554cb2e15d5df5a2700a03a423537c68127471727a605e9c63f"
+}

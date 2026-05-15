@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-graphify@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_graphify",
+  "skill": {
+    "id": 26088,
+    "skillKey": "clawhub-skill-graphify",
+    "name": "Skill Graphify"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-graphify",
+    "url": "https://clawhub.ai/skills/skill-graphify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-graphify-6c8d4790b9355a6f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn any folder of code, docs, papers, or images into a queryable knowledge graph. Cross-platform wrapper for graphify CLI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flobo3",
+      "userId": "s179zg9xncbgjedmxmj0yx1q2983sn3q",
+      "displayName": "Flo",
+      "image": "https://avatars.githubusercontent.com/u/268352850?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 365,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775811236459,
+      "changelog": "Initial-release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aca0d66e195e8d958fcf25609c41a8719e32494b1057d78a599606b3d0871346"
+}

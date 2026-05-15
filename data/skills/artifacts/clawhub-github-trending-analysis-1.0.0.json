@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-trending-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_trending_analysis",
+  "skill": {
+    "id": 66604,
+    "skillKey": "clawhub-github-trending-analysis",
+    "name": "Github Trending"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-trending-analysis",
+    "url": "https://clawhub.ai/skills/github-trending-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-trending-analysis-951b9e720b5e4339.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "获取 GitHub 热门趋势项目（每日/每周/每月），访问每个仓库了解项目功能。默认返回前 10 个项目，包含描述、统计数据和从 README 提取的实际功能。用于用户询问 GitHub 趋势、热门仓库、流行项目时。始终用中文输出结果。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhuxiaoke27",
+      "userId": "s17e25npr2cqa0gh1ffkxrycpx83nf5f",
+      "displayName": "Zhu Xiaoke",
+      "image": "https://avatars.githubusercontent.com/u/133197887?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 298,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774670042013,
+      "changelog": "- 初始版本发布，支持获取 GitHub 不同时间段的热门趋势项目（每日/每周/每月），默认返回前 10 个项目。\n- 提供项目基础信息、统计数据，并从 README 提取功能描述，全部结果以中文输出。\n- 支持按编程语言过滤结果。\n- 新增对比模式，可对比两个时间段的趋势项目，分析新上榜、持续热门及热度变化。\n- 新增趋势报告模式，生成周报或月报，分析技术和领域趋势并提供推荐项目。\n- 内置丰富的错误处理逻辑，保证稳定输出。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9821eddee5aff462ab9f1aedd8abd7f06b7f1ac44aa2523d964fa935d6cb6cde"
+}

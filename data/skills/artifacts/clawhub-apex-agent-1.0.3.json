@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apex-agent@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apex_agent",
+  "skill": {
+    "id": 49971,
+    "skillKey": "clawhub-apex-agent",
+    "name": "APEX-AGENT: Cognitive Upgrade for AI Agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apex-agent",
+    "url": "https://clawhub.ai/skills/apex-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apex-agent-7145e2da673d0232.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transforms your OpenClaw agent with the APEX cognitive framework — a battle-tested thinking system built by a solo founder over 10 months of AI product devel..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "contrario",
+      "userId": "s1792c5vx84nge37ssxtv8y23h83gyvv",
+      "displayName": "Hlias Staurou",
+      "image": "https://avatars.githubusercontent.com/u/12682510?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 425,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1772827981938,
+      "changelog": "v1.0.3: Safety override moved to top of skill, added domains_not_recommended metadata for medical/legal/financial contexts",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e9ce4e7f8b6e36ccc41e65ab1a605c94691c92a21a3bec713bb6be77cc97fbe0"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27959,
+  "uuid": "skill-clawhub-myclub",
+  "skillKey": "clawhub-myclub",
+  "name": "myClub",
+  "summary": "Fetch accounts' sports schedules, practices, games, and events from myclub.fi. Auto-discovers accounts and clubs from your myclub.fi account. Use for checkin...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.myclub",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aki Hänninen",
+      "features": [
+        "Fetch accounts' sports schedules, practices, games, and events from myclub.fi",
+        "Auto-discovers accounts and clubs from your myclub.fi account",
+        "Use for checkin..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/myclub@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/779448?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "myclub",
+      "url": "https://clawhub.ai/skills/myclub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "myclub",
+    "url": "https://clawhub.ai/skills/myclub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/myclub-1ddfbaffd0df08d8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/myclub@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-myclub-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3d8b54c93782488e0946d4401a88dc94160e7382c96aeaa74f9fc69be70b63d3",
+      "artifactSizeBytes": 1987
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T20:08:50.621Z"
+}

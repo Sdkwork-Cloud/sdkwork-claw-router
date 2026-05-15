@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41238,
+  "uuid": "skill-clawhub-rwagenthub",
+  "skillKey": "clawhub-rwagenthub",
+  "name": "Agenthub",
+  "summary": "Call 32 real-world APIs — flights, hotels, weather, crypto prices, DeFi yields, stock quotes, web search, geocoding, IP reputation, blockchain data, code exe...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rwagenthub",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Marcelo",
+      "features": [
+        "Call 32 real-world APIs — flights, hotels, weather, crypto prices, DeFi yields, stock quotes, w."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rwagenthub@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/169067224?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rwagenthub",
+      "url": "https://clawhub.ai/skills/rwagenthub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rwagenthub",
+    "url": "https://clawhub.ai/skills/rwagenthub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rwagenthub-82ddf8335e3fdc97.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rwagenthub@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-rwagenthub-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7ecbdd6a15deb83760e9eeb4094782a075bc697db0d28375f5b6d49bf4f4b8fd",
+      "artifactSizeBytes": 1930
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T21:49:59.886Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22351,
+  "uuid": "skill-clawhub-proof",
+  "skillKey": "clawhub-proof",
+  "name": "proof",
+  "summary": "A local-first cryptographic toolkit. Executes zero-knowledge proof (ZKP) generation, circuit compilation via SnarkJS/ZoKrates, and formal verification analys...",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proof",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "agenticio",
+      "features": [
+        "A local-first cryptographic toolkit",
+        "Executes zero-knowledge proof (ZKP) generation, circuit compilation via SnarkJS/ZoKrates, and f."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/proof@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259287600?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "proof",
+      "url": "https://clawhub.ai/skills/proof"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proof",
+    "url": "https://clawhub.ai/skills/proof",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proof-c1cda26362828b69.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/proof@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-proof-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eea3dab73a199d491e5c42a8fccedc8d318c2d68a1d73313a8713ebc18916ffe",
+      "artifactSizeBytes": 1883
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T17:54:51.437Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fluora-setup@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fluora_setup",
+  "skill": {
+    "id": 13729,
+    "skillKey": "clawhub-fluora-setup",
+    "name": "Fluora Setup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fluora-setup",
+    "url": "https://clawhub.ai/skills/fluora-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fluora-setup-a28e30e781e55bf5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interactive setup wizard for Fluora marketplace integration. Clones fluora-mcp from GitHub, builds locally, generates wallet, and configures mcporter."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chetan-guevara",
+      "userId": "publishers:chetan-guevara",
+      "displayName": "chetan-guevara",
+      "image": "https://avatars.githubusercontent.com/u/3173623?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1362,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1770935822212,
+      "changelog": "fluora-setup 1.2.1\n\n- Reduced minimum recommended wallet funding from $5–10 USDC to $1 USDC throughout documentation and next steps.\n- Updated cost summary and best practices sections to reflect new minimum.\n- Added/modified guidance text in return values and after-setup instructions for lower funding requirements.\n- Added _meta.json file for improved metadata management.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9da591d9b663a44cab3ff49938b9a096d747651faf83374d6acc9b03ba35363e"
+}

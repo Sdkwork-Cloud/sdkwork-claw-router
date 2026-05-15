@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67281,
+  "uuid": "skill-clawhub-feishu-messaging-bak2",
+  "skillKey": "clawhub-feishu-messaging-bak2",
+  "name": "Feishu Messaging.Bak2",
+  "summary": "飞书消息发送与文档创建工作流。 触发场景：查找群成员、查找群ID、发送消息失败需要重新尝试。 适用于：发送飞书消息。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_messaging_bak2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "make453",
+      "features": [
+        "飞书消息发送与文档创建工作流。 触发场景：查找群成员、查找群ID、发送消息失败需要重新尝试。 适用于：发送飞书消息。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-messaging-bak2@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/200362598?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-messaging-bak2",
+      "url": "https://clawhub.ai/skills/feishu-messaging-bak2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-messaging-bak2",
+    "url": "https://clawhub.ai/skills/feishu-messaging-bak2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-messaging-bak2-7b43f98ae03f4842.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-messaging-bak2@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-messaging-bak2-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:92981cf077f7e486eef8e3c6f786dd3525190c0ebdda061f08475481af02145d",
+      "artifactSizeBytes": 2367
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T16:07:23.536Z"
+}

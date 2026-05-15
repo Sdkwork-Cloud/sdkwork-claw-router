@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/soft-pillow@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.soft_pillow",
+  "skill": {
+    "id": 17847,
+    "skillKey": "clawhub-soft-pillow",
+    "name": "Soft Pillow - Sleep & dream journal"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "soft-pillow",
+    "url": "https://clawhub.ai/skills/soft-pillow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/soft-pillow-6600e59ef661b769.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user asks about their sleep data, dream history, or wants to query sleep entries from the Soft Pillow app."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kivs",
+      "userId": "publishers:kivs",
+      "displayName": "kivS",
+      "image": "https://avatars.githubusercontent.com/u/3810567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 740,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771433511064,
+      "changelog": "- Added a metadata field to the SKILL.md file for improved integration and discoverability.\n- No changes to the API, endpoints, or app functionality.\n- Version bumped from 1.0.1 to 1.0.2.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a9852db622c23eb0a28c870928b6b07ba206b97a7c175e7448c008cdae558ac9"
+}

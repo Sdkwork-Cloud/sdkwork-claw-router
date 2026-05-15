@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15974,
+  "uuid": "skill-clawhub-git-auto",
+  "skillKey": "clawhub-git-auto",
+  "name": "Git Auto",
+  "summary": "Git workspace automation (status/commit/push/log/diff)",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_auto",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mupengi-bot",
+      "features": [
+        "Git workspace automation (status/commit/push/log/diff)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/git-auto@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259087580?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "git-auto",
+      "url": "https://clawhub.ai/skills/git-auto"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-auto",
+    "url": "https://clawhub.ai/skills/git-auto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-auto-2585d5f0091ed46a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/git-auto@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-git-auto-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a176df6e2e04161b882ed4ff9b0222bfa9ae31ceec69ff2ee1d1ff4b634ba6f3",
+      "artifactSizeBytes": 2200
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T02:49:50.533Z"
+}

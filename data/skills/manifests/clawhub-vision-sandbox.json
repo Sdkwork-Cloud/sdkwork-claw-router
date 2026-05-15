@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8850,
+  "uuid": "skill-clawhub-vision-sandbox",
+  "skillKey": "clawhub-vision-sandbox",
+  "name": "Vision Sandbox",
+  "summary": "Agentic Vision via Gemini's native Code Execution sandbox. Use for spatial grounding, visual math, and UI auditing.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vision_sandbox",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jo Alex",
+      "features": [
+        "Agentic Vision via Gemini's native Code Execution sandbox",
+        "Use for spatial grounding, visual math, and UI auditing."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vision-sandbox@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17249308?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vision-sandbox",
+      "url": "https://clawhub.ai/skills/vision-sandbox"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vision-sandbox",
+    "url": "https://clawhub.ai/skills/vision-sandbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vision-sandbox-09fd2aad56ee6913.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vision-sandbox@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vision-sandbox-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:75ec0ccd579cb64d4d0106c1f44a729dc31af40897b211dd994d5c5892c130de",
+      "artifactSizeBytes": 1873
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T08:29:36.198Z"
+}

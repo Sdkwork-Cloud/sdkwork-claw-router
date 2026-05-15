@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38916,
+  "uuid": "skill-clawhub-lookupmark-log-analyzer",
+  "skillKey": "clawhub-lookupmark-log-analyzer",
+  "name": "LookupMark Log Analyzer",
+  "summary": "Securely analyze system and application logs with automatic sensitive data redaction. Supports OpenClaw gateway logs (journalctl), RAG indexing logs, and que...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lookupmark_log_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LookUpMark",
+      "features": [
+        "Securely analyze system and application logs with automatic sensitive data redaction",
+        "Supports OpenClaw gateway logs (journalctl), RAG indexing logs, and que..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lookupmark-log-analyzer@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/93028124?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lookupmark-log-analyzer",
+      "url": "https://clawhub.ai/skills/lookupmark-log-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lookupmark-log-analyzer",
+    "url": "https://clawhub.ai/skills/lookupmark-log-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lookupmark-log-analyzer-4198693e918fcf38.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lookupmark-log-analyzer@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lookupmark-log-analyzer-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c2302988998f681753e96ea9b9c9820f27ee35203cefcadc10998595bbce4e5",
+      "artifactSizeBytes": 2028
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T18:03:15.240Z"
+}

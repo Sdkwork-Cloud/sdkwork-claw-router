@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73142,
+  "uuid": "skill-clawhub-xiapi-stock-analysis",
+  "skillKey": "clawhub-xiapi-stock-analysis",
+  "name": "个股分析大师：面向A股支持单股深度分析与多股对比（综合/技术面/财报/价值面）。触发词：个股分析、个股对比、财报对比、价值分析、技术分析、买卖点、基本面、选时、ST分析。适用场景：用户需要对一个或多个明确股票标的做结构化分析与对比。",
+  "summary": "个股分析大师：面向A股支持单股深度分析与多股对比（综合/技术面/财报/价值面）。触发词：个股分析、个股对比、财报对比、价值分析、技术分析、买卖点、基本面、选时、ST分析。适用场景：用户需要对一个或多个明确股票标的做结构化分析与对比。不适用场景：未提供股票标的、仅做盘口超短交易指令、非A股标的。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiapi_stock_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "三水清",
+      "features": [
+        "个股分析大师：面向A股支持单股深度分析与多股对比（综合/技术面/财报/价值面）。触发词：个股分析、个股对比、财报对比、价值分析、技术分析、买卖点、基本面、选时、ST分析。适用场景：用户需要对."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiapi-stock-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1073262?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiapi-stock-analysis",
+      "url": "https://clawhub.ai/skills/xiapi-stock-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiapi-stock-analysis",
+    "url": "https://clawhub.ai/skills/xiapi-stock-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiapi-stock-analysis-a7dd22ba0573b610.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiapi-stock-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiapi-stock-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e32f67d498de7c0d4baee08b00c2f5292998f61dcdbdda634e8d8c236a839d04",
+      "artifactSizeBytes": 2942
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T11:30:24.070Z"
+}

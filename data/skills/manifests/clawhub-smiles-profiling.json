@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39049,
+  "uuid": "skill-clawhub-smiles-profiling",
+  "skillKey": "clawhub-smiles-profiling",
+  "name": "SMILES Profiling",
+  "summary": "Comprehensive SMILES profiling through SwissTargetPrediction, PubChem, ADMETlab 3.0, ChEMBL, and PK-Smart. Use when given a single SMILES to extract predicte...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smiles_profiling",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hendrik Schmitz",
+      "features": [
+        "Comprehensive SMILES profiling through SwissTargetPrediction, PubChem, ADMETlab 3.0, ChEMBL, an.",
+        "Use when given a single SMILES to extract predicte..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smiles-profiling@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46162994?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smiles-profiling",
+      "url": "https://clawhub.ai/skills/smiles-profiling"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smiles-profiling",
+    "url": "https://clawhub.ai/skills/smiles-profiling",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smiles-profiling-d050ef9e258cfc15.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smiles-profiling@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-smiles-profiling-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:291e68eb7c77aadbb8cd78779d766bbb1bc77c9ee652260074ab1c85a36ca4a0",
+      "artifactSizeBytes": 1954
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T17:21:58.353Z"
+}

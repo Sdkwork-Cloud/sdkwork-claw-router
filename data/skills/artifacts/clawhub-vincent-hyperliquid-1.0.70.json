@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vincent-hyperliquid@1.0.70",
+  "version": "1.0.70",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vincent_hyperliquid",
+  "skill": {
+    "id": 23742,
+    "skillKey": "clawhub-vincent-hyperliquid",
+    "name": "Vincent - Hyperliquid"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vincent-hyperliquid",
+    "url": "https://clawhub.ai/skills/vincent-hyperliquid",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vincent-hyperliquid-833be7c95533e8c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill to create a HyperLiquid perpetuals and spot wallet for your agent. Trade perps, manage spot balances, transfer USDC between sub-accounts, get..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "glitch003",
+      "userId": "s173aadqv5xdar8hm4yg2jb52d83fv08",
+      "displayName": "Chris Cassano",
+      "image": "https://avatars.githubusercontent.com/u/1285652?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 431,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.70",
+      "createdAt": 1773276273684,
+      "changelog": "- Added instructions for withdrawing USDC to another HyperLiquid address using the `withdraw` command.\n- Included parameters and response codes for the new withdrawal functionality.\n- Updated quick start workflow: \"Withdraw USDC\" is a separate step before \"Fund the Wallet\".\n- No other functional changes; help documentation expanded for more complete coverage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:50b87e06fb19b36f0a4d1405aedf98a15178642315798ae20f66d2c38e940306"
+}

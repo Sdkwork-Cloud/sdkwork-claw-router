@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/code-reputation@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_reputation",
+  "skill": {
+    "id": 15909,
+    "skillKey": "clawhub-code-reputation",
+    "name": "Code Reputation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-reputation",
+    "url": "https://clawhub.ai/skills/code-reputation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-reputation-778788dac322838d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Semantic code caching for AI agents. Cache, retrieve, and reuse code from prior agent executions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ryx2",
+      "userId": "publishers:ryx2",
+      "displayName": "ryx2",
+      "image": "https://avatars.githubusercontent.com/u/21298347?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 952,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770921935422,
+      "changelog": "Fix upload/search compatibility with current Raysurfer SDK fields",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0a7efd48bb0c5507fd0a1f90457090074a0d6fa1ec81e730594e75bc3614ebbf"
+}

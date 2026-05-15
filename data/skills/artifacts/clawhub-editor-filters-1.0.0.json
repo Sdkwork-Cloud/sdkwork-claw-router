@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/editor-filters@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.editor_filters",
+  "skill": {
+    "id": 53482,
+    "skillKey": "clawhub-editor-filters",
+    "name": "Editor Filters"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "editor-filters",
+    "url": "https://clawhub.ai/skills/editor-filters",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/editor-filters-3d69c4984105630e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — apply a cinematic color grade filter and smooth skin tone across the whole..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776835384770,
+      "changelog": "Initial release of Editor Filters — Apply Filters and Export Videos.\n\n- Instantly apply AI-powered video filters (e.g., cinematic color grade, skin smoothing) to uploaded clips.\n- Supports MP4, MOV, AVI, WebM files up to 500MB; returns filtered videos in 30-60 seconds.\n- Automatically manages API authentication with anonymous tokens or user-provided NEMO_TOKEN.\n- Allows video uploads, filter requests, exports, and session state checks via simple chat prompts.\n- Includes error handling for file limits, authentication, credits, and export restrictions.\n- Designed for creators seeking fast, pro-level video enhancements without manual editing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d0751765832a006abda714a71ec67cc9e0c27215663f5697a09fc38b4f72d077"
+}

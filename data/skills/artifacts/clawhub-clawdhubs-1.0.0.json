@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawdhubs@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdhubs",
+  "skill": {
+    "id": 25363,
+    "skillKey": "clawhub-clawdhubs",
+    "name": "Pub Clawdhub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdhubs",
+    "url": "https://clawhub.ai/skills/clawdhubs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdhubs-d036bd2d18e27a14.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the ClawdHub CLI to search, install, update, and publish agent skills. And also 50+ models for image generation, video generation, text-to-speech, speech..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abeltennyson",
+      "userId": "s174gfyzm9cmcv1mx6226h2s3584rfxt",
+      "displayName": "AbelTennyson",
+      "image": "https://avatars.githubusercontent.com/u/261241122?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 389,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773303663664,
+      "changelog": "Initial release of the clawdhub skill.\n\n- Provides ClawdHub CLI access to search, install, update, and publish agent skills.\n- Supports 50+ AI models for image, video, text-to-speech, speech-to-text, music, chat, search, document parsing, email, and SMS.\n- Unified API documentation for calling models directly by ID or via smart routing.\n- Requires SKILLBOSS_API_KEY for authentication.\n- Includes detailed usage examples for major features and model types.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f93fb0713b7ddf264db392f3f7e41c8035ead3fab64f4c04183015638315760b"
+}

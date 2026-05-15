@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24486,
+  "uuid": "skill-clawhub-twelve-data",
+  "skillKey": "clawhub-twelve-data",
+  "name": "Twelve Data Market API",
+  "summary": "Use Twelve Data REST/WebSocket APIs for market quotes, latest prices, historical time series, symbol discovery, and technical indicators. Trigger when users...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twelve_data",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "softtrymee",
+      "features": [
+        "Use Twelve Data REST/WebSocket APIs for market quotes, latest prices, historical time series, s.",
+        "Trigger when users..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/twelve-data@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35638008?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "twelve-data",
+      "url": "https://clawhub.ai/skills/twelve-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twelve-data",
+    "url": "https://clawhub.ai/skills/twelve-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twelve-data-0784a00e8ad0378a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/twelve-data@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-twelve-data-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:900cfe31aff74ba53bd661ec306d0dc08a244800c82ef61ca2cee4787876d267",
+      "artifactSizeBytes": 1898
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T08:22:45.339Z"
+}

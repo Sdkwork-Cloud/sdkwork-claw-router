@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48724,
+  "uuid": "skill-clawhub-latex-scaffold",
+  "skillKey": "clawhub-latex-scaffold",
+  "name": "latex-scaffold",
+  "summary": "Scaffold LaTeX papers into modular structure. Use for organizing .tex files, generating figure code, and table highlighting. Trigger on LaTeX paper organizat...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.latex_scaffold",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TongZJ",
+      "features": [
+        "Scaffold LaTeX papers into modular structure",
+        "Use for organizing .tex files, generating figure code, and table highlighting",
+        "Trigger on LaTeX paper organizat..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/latex-scaffold@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/88012627?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "latex-scaffold",
+      "url": "https://clawhub.ai/skills/latex-scaffold"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "latex-scaffold",
+    "url": "https://clawhub.ai/skills/latex-scaffold",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/latex-scaffold-c1b20300c161956c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/latex-scaffold@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-latex-scaffold-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1642e928fa99d418122d88c17f7442b517cb8b752a96a3d3fd72fc4ecc4668ef",
+      "artifactSizeBytes": 2335
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T15:34:46.460Z"
+}

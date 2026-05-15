@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44027,
+  "uuid": "skill-clawhub-slicknode-integration",
+  "skillKey": "clawhub-slicknode-integration",
+  "name": "Slicknode",
+  "summary": "Slicknode integration. Manage data, records, and automate workflows. Use when the user wants to interact with Slicknode data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slicknode_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Slicknode integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Slicknode data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/slicknode-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "slicknode-integration",
+      "url": "https://clawhub.ai/skills/slicknode-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slicknode-integration",
+    "url": "https://clawhub.ai/skills/slicknode-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slicknode-integration-8b769f34e9b81873.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/slicknode-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-slicknode-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c73e835893bb15b242815a6fd7684f2807861f630702ee5134eb6c1beed05a85",
+      "artifactSizeBytes": 1919
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:00:50.621Z"
+}

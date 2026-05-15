@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quotewise@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quotewise",
+  "skill": {
+    "id": 12446,
+    "skillKey": "clawhub-quotewise",
+    "name": "Quotewise semantic quote search via MCP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quotewise",
+    "url": "https://clawhub.ai/skills/quotewise",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quotewise-30a79c4fab7debe2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Semantic quote search with source transparency. Find quotes by meaning, not keywords."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quotewisio",
+      "userId": "publishers:quotewisio",
+      "displayName": "quotewisio",
+      "image": "https://avatars.githubusercontent.com/u/256663063?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1488,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770516288781,
+      "changelog": "- Added User-Agent header to `mcporter` setup instructions for improved agent identification.\n- Updated anonymous access policy: reduced free usage from 100 requests/hour to 20 requests/day.\n- Provided guidance for agents on custom User-Agent formatting.\n- Minor improvements to authentication setup documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e0765b70787ff2887603534fd3e542fc3a766e53d0623935c0e14d09cf3d2508"
+}

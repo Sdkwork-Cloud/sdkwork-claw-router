@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bleisure-micro-vacation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bleisure_micro_vacation",
+  "skill": {
+    "id": 71358,
+    "skillKey": "clawhub-bleisure-micro-vacation",
+    "name": "bleisure-micro-vacation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bleisure-micro-vacation",
+    "url": "https://clawhub.ai/skills/bleisure-micro-vacation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bleisure-micro-vacation-7eb3af77aa3713f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "像一个经常出差的朋友，根据城市/酒店/地标与时段，用共情开场 + 嵌入式选项智能捕捉隐性需求（散步/喝一杯/放松等），不用固定菜单；用系统时间编排松弛的时间线，白天追问能玩多久、晚间追问是否早起；联网整理可执行方案；输出氛围图、故事感时间线、情境文案、高德导航链接、小红书关键词，结尾推你出门。全程提供强情绪价值，..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "keyikoi",
+      "userId": "s17a98te59fgza3ns6rs8sd4w183kr6g",
+      "displayName": "keyikoi",
+      "image": "https://avatars.githubusercontent.com/u/135075047?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775181931776,
+      "changelog": "travel-evening-micro-vacation v1.0.0\n\n- Initial release of \"差旅微度假\"，为出差人群提供基于城市、酒店、地标和系统时间的高情绪价值微度假动线。\n- 强共情开场+嵌入式选项，精准捕捉用户隐性需求（如散步、喝一杯、放松等），非攻略式输出。\n- 一条主推荐：氛围图、故事感时间线、情境文案、可点高德导航链接、小红书关键词/笔记。\n- 结合用户历史偏好（持久记忆）、时段情绪地图和安全提醒，动态生成松弛的当晚方案。\n- 晚间自动追问是否早起，日间追问可用时长，严格使用系统/上下文时间。\n- 联网实时查附近可达地标，拒绝模板填空与无情绪输出，结尾推用户「",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:442bae226c61277b25adeba51714351084642be0978266518a92d44e76860ee9"
+}

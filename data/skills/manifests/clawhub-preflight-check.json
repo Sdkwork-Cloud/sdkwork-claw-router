@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53758,
+  "uuid": "skill-clawhub-preflight-check",
+  "skillKey": "clawhub-preflight-check",
+  "name": "Preflight Check",
+  "summary": "Pre-flight environment validator — checks that all required binaries, environment variables, and services are available before running other skills",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.preflight_check",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Guilherme Favaron",
+      "features": [
+        "Pre-flight environment validator — checks that all required binaries, environment variables, an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/preflight-check@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109181842?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "preflight-check",
+      "url": "https://clawhub.ai/skills/preflight-check"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "preflight-check",
+    "url": "https://clawhub.ai/skills/preflight-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/preflight-check-57e5befbbc114769.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/preflight-check@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-preflight-check-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:77c5a0c636100a06155944e30f72b216047e83ee707fd619dadcd651b1dd4614",
+      "artifactSizeBytes": 2489
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T01:15:27.322Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44636,
+  "uuid": "skill-clawhub-hkipo-profile-watchlist-manager",
+  "skillKey": "clawhub-hkipo-profile-watchlist-manager",
+  "name": "HK IPO Profile and Watchlist Manager",
+  "summary": "Manage Hong Kong IPO user preferences and watchlists, including risk profile, default output, budget, financing preference, and tracked symbols. Use when the...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hkipo_profile_watchlist_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hackstoic",
+      "features": [
+        "Manage Hong Kong IPO user preferences and watchlists, including risk profile, default output, b.",
+        "Use when the..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hkipo-profile-watchlist-manager@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7455951?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hkipo-profile-watchlist-manager",
+      "url": "https://clawhub.ai/skills/hkipo-profile-watchlist-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hkipo-profile-watchlist-manager",
+    "url": "https://clawhub.ai/skills/hkipo-profile-watchlist-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hkipo-profile-watchlist-manager-ece530b1454eaefc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hkipo-profile-watchlist-manager@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hkipo-profile-watchlist-manager-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba046b9176c9a2a7d9eacf16fb5cfb2f8672586b233f04bab02439b243a10223",
+      "artifactSizeBytes": 2018
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T16:12:39.744Z"
+}

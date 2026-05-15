@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35597,
+  "uuid": "skill-clawhub-mabl",
+  "skillKey": "clawhub-mabl",
+  "name": "Mabl",
+  "summary": "Mabl integration. Manage data, records, and automate workflows. Use when the user wants to interact with Mabl data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mabl",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Mabl integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Mabl data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mabl@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mabl",
+      "url": "https://clawhub.ai/skills/mabl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mabl",
+    "url": "https://clawhub.ai/skills/mabl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mabl-7ce6748979cbac6e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mabl@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-mabl-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c0d479e9dab271eaa0736ef27604307aef0dfea53b6b90a382973dc6b24fddba",
+      "artifactSizeBytes": 1794
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:09:54.851Z"
+}

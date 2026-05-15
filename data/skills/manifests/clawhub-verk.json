@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39263,
+  "uuid": "skill-clawhub-verk",
+  "skillKey": "clawhub-verk",
+  "name": "Verk Task Management",
+  "summary": "Manage tasks, projects, and workflows in Verk — AI-powered task management. Create, update, assign, and track tasks. Add comments, change status, list automa...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.verk",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "abhibavishi",
+      "features": [
+        "Manage tasks, projects, and workflows in Verk — AI-powered task management",
+        "Create, update, assign, and track tasks",
+        "Add comments, change status, list automa..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/verk@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7823146?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "verk",
+      "url": "https://clawhub.ai/skills/verk"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "verk",
+    "url": "https://clawhub.ai/skills/verk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/verk-e5c6639d8414afb6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/verk@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-verk-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8089762551f732a79be687a0259f8ebae77b6f66c76539cc0bbc32f25e2d8465",
+      "artifactSizeBytes": 1924
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T12:16:13.114Z"
+}

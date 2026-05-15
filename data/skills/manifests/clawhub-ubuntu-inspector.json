@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67955,
+  "uuid": "skill-clawhub-ubuntu-inspector",
+  "skillKey": "clawhub-ubuntu-inspector",
+  "name": "Ubuntu Inspector",
+  "summary": "Ubuntu 系统巡检工具。用于执行全面的系统健康检查，包括 CPU、内存、磁盘、网络、服务状态、安全审计等。当用户需要检查 Ubuntu 服务器状态、排查系统问题、生成系统报告或进行日常运维巡检时触发。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ubuntu_inspector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chengchiangwork",
+      "features": [
+        "Ubuntu 系统巡检工具。用于执行全面的系统健康检查，包括 CPU、内存、磁盘、网络、服务状态、安全审计等。当用户需要检查 Ubuntu 服务器状态、排查系统问题、生成系统报告或进行日常运."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ubuntu-inspector@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144765024?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ubuntu-inspector",
+      "url": "https://clawhub.ai/skills/ubuntu-inspector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ubuntu-inspector",
+    "url": "https://clawhub.ai/skills/ubuntu-inspector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ubuntu-inspector-4564e1b1aa947be7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ubuntu-inspector@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ubuntu-inspector-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4c7409ecdcb883d4870960ee3c1f68d34368b32d9ec45b0758081911e301bba2",
+      "artifactSizeBytes": 2599
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T00:25:52.802Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-scan@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_scan",
+  "skill": {
+    "id": 10377,
+    "skillKey": "clawhub-skill-scan",
+    "name": "Skill Scan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-scan",
+    "url": "https://clawhub.ai/skills/skill-scan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-scan-de75f4e77ad606ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Security scanner for OpenClaw skill packages. Scans skills for malicious code, evasion techniques, prompt injection, and misaligned behavior BEFORE installation. Use to audit any skill from ClawHub or local directories."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dgriffin831",
+      "userId": "publishers:dgriffin831",
+      "displayName": "dgriffin831",
+      "image": "https://avatars.githubusercontent.com/u/16494003?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 2376,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770063427151,
+      "changelog": "Initial release of skill-scan – a multi-layered security scanner for OpenClaw skills.\n\n- Scans skills (local or from ClawHub) for malicious code, evasion, prompt injection, and misaligned behavior before installation.\n- Features 6 analysis layers, 60+ detection rules, and context-aware scoring to reduce false positives.\n- Supports static and optional LLM-powered deep inspection.\n- Provides detailed risk scores with actionable exit codes for automation.\n- Integrates with agent workflows via AGENTS.md templates (automatic or manual scanning).\n- Flexible output (text, JSON, compact, quiet) and supports batch audits.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9e521b0eae94114a7098447b715d63291b907682966591dc8789e7d2114a1938"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/token-image@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.token_image",
+  "skill": {
+    "id": 32388,
+    "skillKey": "clawhub-token-image",
+    "name": "token-aware-image"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "token-image",
+    "url": "https://clawhub.ai/skills/token-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/token-image-254117a12e59b548.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate themed social/marketing image React components using design tokens. Produces TSX files that render to PNG. Use when the user asks to generate images..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "czl9707",
+      "userId": "s17cmb0tds1jaxb3h9an0ehx7585cpbp",
+      "displayName": "czl9707",
+      "image": "https://avatars.githubusercontent.com/u/99708452?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776906750433,
+      "changelog": "token-image 1.0.0\n\n- Initial release of the token-image skill for generating themed social/marketing image React components using design tokens.\n- Guides users through image generation with a structured, multi-phase workflow: Pre-flight checks, Intake Q&A, Content Planning, and Generation.\n- Supports various image formats (Twitter cards, Instagram squares, og-images, custom sizes) and per-image layouts/branding.\n- Automates setup of the design token workspace and imports token sets and design guides.\n- Produces TSX component files that render to PNG, with shared Viewport, Stylesheet, and per-image content briefs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2f8bbb489729d6b63df9995eecdb84b0ea43ba59cbc1b5c09a1c76ee4248b773"
+}

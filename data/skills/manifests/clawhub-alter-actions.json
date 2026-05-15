@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10915,
+  "uuid": "skill-clawhub-alter-actions",
+  "skillKey": "clawhub-alter-actions",
+  "name": "Alter Actions",
+  "summary": "Trigger Alter macOS app actions via x-callback-urls. Catalog of 84+ actions including ask-anything, translate, summarize, grammar correction, and more.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alter_actions",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OlivierAlter",
+      "features": [
+        "Trigger Alter macOS app actions via x-callback-urls",
+        "Catalog of 84+ actions including ask-anything, translate, summarize, grammar correction, and mo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alter-actions@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/196311677?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alter-actions",
+      "url": "https://clawhub.ai/skills/alter-actions"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alter-actions",
+    "url": "https://clawhub.ai/skills/alter-actions",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alter-actions-94d8ae12665896a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alter-actions@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-alter-actions-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d4cdd3de0693d43196379c9c728bc97f6a5427984d340855b1301babef36d734",
+      "artifactSizeBytes": 1874
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-25T23:18:54.550Z"
+}

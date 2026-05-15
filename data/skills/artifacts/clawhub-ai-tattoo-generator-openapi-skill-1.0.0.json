@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-tattoo-generator-openapi-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_tattoo_generator_openapi_skill",
+  "skill": {
+    "id": 56296,
+    "skillKey": "clawhub-ai-tattoo-generator-openapi-skill",
+    "name": "Free AI Tattoo Generator – Create Custom Tattoo Designs from Text or Image – API-powered"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-tattoo-generator-openapi-skill",
+    "url": "https://clawhub.ai/skills/ai-tattoo-generator-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-tattoo-generator-openapi-skill-1a07079597ddd051.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI tattoo generator — create a tattoo design try-on from text or reference image"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkleming",
+      "userId": "s173eywkn9gkx5va9p2tb6kh5h843s3s",
+      "displayName": "sparkleMing",
+      "image": "https://avatars.githubusercontent.com/u/38350996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776130540362,
+      "changelog": "- Initial release of ai-tattoo-generator-openapi-skill.\n- Create tattoo design try-ons from a text prompt or reference image.\n- Supports image upload and generating up to 16 variations per request.\n- Secure API key handling; only allow keys to be used with openapi.weshop.ai.\n- Includes clear endpoint and run parameter documentation.\n- See https://www.weshop.ai/tools/ai-tattoo-generator for more details.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0dfbbd1fb49b5c06750dcfa238e65f6371e1c08f53072797aaa7082849a1a0dc"
+}

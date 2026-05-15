@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57745,
+  "uuid": "skill-clawhub-jdxb",
+  "skillKey": "clawhub-jdxb",
+  "name": "节点小宝管理",
+  "summary": "Manage 节点小宝 (Node Baby Link / JDxB) remote access service on Linux. Install, start/stop/restart the systemd service, check status, view logs, get pairing cod...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jdxb",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "skipper-chen",
+      "features": [
+        "Manage 节点小宝 (Node Baby Link / JDxB) remote access service on Linux",
+        "Install, start/stop/restart the systemd service, check status, view logs, get pairing cod..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jdxb@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41282877?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jdxb",
+      "url": "https://clawhub.ai/skills/jdxb"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jdxb",
+    "url": "https://clawhub.ai/skills/jdxb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jdxb-e49b4b40e453b365.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jdxb@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jdxb-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:68f4259963e618a26275b5ead3e84cd45b1a430754fa428a2dda1aac0ab1591d",
+      "artifactSizeBytes": 1889
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T03:42:47.791Z"
+}

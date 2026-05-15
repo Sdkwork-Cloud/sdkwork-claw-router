@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72637,
+  "uuid": "skill-clawhub-resume-screening",
+  "skillKey": "clawhub-resume-screening",
+  "name": "专业简历筛选技能",
+  "summary": "专业的简历筛选与评估技能，按照\"先硬后软，先筛后读\"的漏斗式流程，从基础匹配度、能力匹配度、动机稳定匹配度三个维度对候选人简历进行量化评估，筛选出最合适且最真实的候选人。使用场景：(1) 招聘时批量筛选简历池，(2) 单个候选人简历深度评估，(3) 生成面试推荐名单与评估意见。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resume_screening",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yuyang-rgb094",
+      "features": [
+        "专业的简历筛选与评估技能，按照\"先硬后软，先筛后读\"的漏斗式流程，从基础匹配度、能力匹配度、动机稳定匹配度三个维度对候选人简历进行量化评估，筛选出最合适且最真实的候选人。使用场景：(1) 招."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/resume-screening@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254345698?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "resume-screening",
+      "url": "https://clawhub.ai/skills/resume-screening"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resume-screening",
+    "url": "https://clawhub.ai/skills/resume-screening",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resume-screening-875ea020a3055e2b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/resume-screening@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-resume-screening-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:097400651644ee9aa22da44d24e993633ea0f004433fb9cbbd0de3b200dbc323",
+      "artifactSizeBytes": 2732
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T08:45:36.772Z"
+}

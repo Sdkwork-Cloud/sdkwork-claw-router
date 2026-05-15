@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66160,
+  "uuid": "skill-clawhub-wechat-articles",
+  "skillKey": "clawhub-wechat-articles",
+  "name": "wechat_articles 公众号文章收集器",
+  "summary": "搜索和读取微信公众号文章的完整工具，支持关键词搜索与全文提取。 **只要用户提到以下任何场景，必须使用此 skill：** (1) 搜索公众号文章、按关键词查找微信内容 (2) 读取、摘要、分析、翻译 mp.weixin.qq.com 链接的内容 (3) 用户说\"帮我找公众号文章\"、\"读这篇微信文章\"、\"搜索公众...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_articles",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "johan-oilman",
+      "features": [
+        "搜索和读取微信公众号文章的完整工具，支持关键词搜索与全文提取。 **只要用户提到以下任何场景，必须使用此 skill：** (1) 搜索公众号文章、按关键词查找微信内容 (2) 读取、摘要、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-articles@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/227382902?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-articles",
+      "url": "https://clawhub.ai/skills/wechat-articles"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-articles",
+    "url": "https://clawhub.ai/skills/wechat-articles",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-articles-2ce5cb9dadcab61f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-articles@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-articles-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d77d322e888042bb28c94dd6d1450c96d8d1f25e73de76fb6013a8f66f5c6ec",
+      "artifactSizeBytes": 2314
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T08:40:25.961Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60444,
+  "uuid": "skill-clawhub-paper2diagram",
+  "skillKey": "clawhub-paper2diagram",
+  "name": "Paper2diagram",
+  "summary": "论文 PDF → 方法/结构抽取 → 学术评审式总结 → 多张论文风格配图（依托 Gemini + nano_banana 网关）。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper2diagram",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "QBC-OIO",
+      "features": [
+        "论文 PDF → 方法/结构抽取 → 学术评审式总结 → 多张论文风格配图（依托 Gemini + nano_banana 网关）。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paper2diagram@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/194389243?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paper2diagram",
+      "url": "https://clawhub.ai/skills/paper2diagram"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper2diagram",
+    "url": "https://clawhub.ai/skills/paper2diagram",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper2diagram-4c2e015c09bbb551.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paper2diagram@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-paper2diagram-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:352db7312813df1cc355fb967b038fb6467f6b57354fb0531e0694ad06132b49",
+      "artifactSizeBytes": 1893
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T07:01:12.440Z"
+}

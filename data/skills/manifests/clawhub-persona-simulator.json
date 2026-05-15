@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68317,
+  "uuid": "skill-clawhub-persona-simulator",
+  "skillKey": "clawhub-persona-simulator",
+  "name": "persona-simulator",
+  "summary": "模拟自定义 AI 人格，使助手以特定性格、语言风格和行为特质与用户交互。当用户要求\"扮演某种性格\"、\"以XX风格回答\"、\"模拟人格\"、\"角色扮演\"时使用本 Skill。支持温和/直率/幽默/沉稳/俏皮/理性/感性等多种性格基调，以及自定义语言风格、行为特质和身份背景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.persona_simulator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "githubchenda",
+      "features": [
+        "模拟自定义 AI 人格，使助手以特定性格、语言风格和行为特质与用户交互。当用户要求\"扮演某种性格\"、\"以XX风格回答\"、\"模拟人格\"、\"角色扮演\"时使用本 Skill。支持温和/直率/幽默/."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/persona-simulator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45201753?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "persona-simulator",
+      "url": "https://clawhub.ai/skills/persona-simulator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "persona-simulator",
+    "url": "https://clawhub.ai/skills/persona-simulator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/persona-simulator-d2e2852fc5d19552.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/persona-simulator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-persona-simulator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ef8d21dfa645465c0198a8ebfa22124e32c0b9902de279c8c17609ed74a5bd3d",
+      "artifactSizeBytes": 2662
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T07:58:37.005Z"
+}

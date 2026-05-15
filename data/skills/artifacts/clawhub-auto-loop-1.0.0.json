@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-loop@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_loop",
+  "skill": {
+    "id": 70323,
+    "skillKey": "clawhub-auto-loop",
+    "name": "Auto Loop"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-loop",
+    "url": "https://clawhub.ai/skills/auto-loop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-loop-9a2881edb935fc58.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供定时触发、任务调度、状态追踪及失败自动恢复的自动化任务调度功能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pagoda111king",
+      "userId": "s1746mhemcg917609xsdwamt1183gyw3",
+      "displayName": "pagoda111king",
+      "image": "https://avatars.githubusercontent.com/u/177529007?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776045797041,
+      "changelog": "Initial release of auto-loop skill:\n\n- Provides automated task scheduling with support for timers, recurring jobs, monitoring, and auto-recovery.\n- Features cron-like scheduling, priority queue management, and concurrency control.\n- Includes status tracking with execution history and statistics.\n- Supports task retries and automatic recovery on failure.\n- Offers configuration options for retries and scheduler concurrency.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4b9f95c1454d3a758207fc0f1e7e785cb670639746cc9ccd6b9bea9142787a22"
+}

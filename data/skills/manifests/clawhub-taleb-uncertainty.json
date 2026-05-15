@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73627,
+  "uuid": "skill-clawhub-taleb-uncertainty",
+  "skillKey": "clawhub-taleb-uncertainty",
+  "name": "塔勒布不确定性思维",
+  "summary": "系统解读塔勒布《黑天鹅》和《随机漫步的傻瓜》，揭示不确定性认知偏误及应对策略如杠铃策略与反脆弱。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taleb_uncertainty",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SMS",
+      "features": [
+        "系统解读塔勒布《黑天鹅》和《随机漫步的傻瓜》，揭示不确定性认知偏误及应对策略如杠铃策略与反脆弱。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/taleb-uncertainty@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33817483?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "taleb-uncertainty",
+      "url": "https://clawhub.ai/skills/taleb-uncertainty"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taleb-uncertainty",
+    "url": "https://clawhub.ai/skills/taleb-uncertainty",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taleb-uncertainty-5e85b55b96d87426.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/taleb-uncertainty@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-taleb-uncertainty-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8c7142a3aebfe71d426498b3b39fd22c65f6f8c66f243e84d0b1d00284210ec8",
+      "artifactSizeBytes": 2380
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T07:18:39.027Z"
+}

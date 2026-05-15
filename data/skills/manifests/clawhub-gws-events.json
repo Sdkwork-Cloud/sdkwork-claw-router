@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17677,
+  "uuid": "skill-clawhub-gws-events",
+  "skillKey": "clawhub-gws-events",
+  "name": "Gws Events",
+  "summary": "Subscribe to Google Workspace events.",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gws_events",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Subscribe to Google Workspace events."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gws-events@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gws-events",
+      "url": "https://clawhub.ai/skills/gws-events"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gws-events",
+    "url": "https://clawhub.ai/skills/gws-events",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gws-events-295fa1d8d07b6293.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gws-events@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-gws-events-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2cfe285ca5e846cfd7e25128d8bd792e8ef45a88acb9ece95f8292fd5e967cb5",
+      "artifactSizeBytes": 1877
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:33:47.964Z"
+}

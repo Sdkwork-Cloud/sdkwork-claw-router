@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/svn-code-review@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.svn_code_review",
+  "skill": {
+    "id": 36842,
+    "skillKey": "clawhub-svn-code-review",
+    "name": "Svn Code Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "svn-code-review",
+    "url": "https://clawhub.ai/skills/svn-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/svn-code-review-f03f2fd6609ebeee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when completing tasks, implementing major features, or before merging to verify work meets requirements"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhouzy-creator",
+      "userId": "s174enc8xnnpwsvz16pg3ge6rx8573mb",
+      "displayName": "zhouzy-creator",
+      "image": "https://avatars.githubusercontent.com/u/80381240?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1776674591337,
+      "changelog": "Initial release of svn-code-review documentation and workflow guidance.\n\n- Introduced clear guidelines for when to request code reviews, emphasizing review after each task and before major merges.\n- Added detailed instructions for gathering SVN revision numbers and dispatching a code-reviewer subagent.\n- Provided examples illustrating the code review request and feedback process.\n- Outlined integration strategies for different development workflows (subagent-driven, batch, ad-hoc).\n- Listed red flags and correct handling of reviewer feedback to ensure quality and accountability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2a020b2d0ce0041b6c35fc5a51dc237cc9394f1aaca5819fe02e21b92c22dd8b"
+}

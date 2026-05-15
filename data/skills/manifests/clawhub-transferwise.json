@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62045,
+  "uuid": "skill-clawhub-transferwise",
+  "skillKey": "clawhub-transferwise",
+  "name": "Transferwise",
+  "summary": "Wise (原TransferWise) 提供透明汇率和低费率的跨境汇款服务，支持80+货币并为银行提供跨境汇款API基础设施。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.transferwise",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Wise (原TransferWise) 提供透明汇率和低费率的跨境汇款服务，支持80+货币并为银行提供跨境汇款API基础设施。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/transferwise@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "transferwise",
+      "url": "https://clawhub.ai/skills/transferwise"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "transferwise",
+    "url": "https://clawhub.ai/skills/transferwise",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/transferwise-3565aa0ed836a51c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/transferwise@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-transferwise-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b6c407554aebb0cc965f60efe747148b5c3e887973a36af2027bb4b2c34caf3f",
+      "artifactSizeBytes": 2373
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T13:02:57.402Z"
+}

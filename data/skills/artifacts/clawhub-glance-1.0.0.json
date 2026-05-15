@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/glance@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.glance",
+  "skill": {
+    "id": 12725,
+    "skillKey": "clawhub-glance",
+    "name": "Glance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "glance",
+    "url": "https://clawhub.ai/skills/glance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/glance-e776a070909341e9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create, update, and manage Glance dashboard widgets. Use when user wants to: add something to their dashboard, create a widget, track data visually, show metrics/stats, display API data, or monitor usage."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "acfranzen",
+      "userId": "publishers:acfranzen",
+      "displayName": "acfranzen",
+      "image": "https://avatars.githubusercontent.com/u/29310979?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1664,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770310570244,
+      "changelog": "Initial release of Glance skill. Create and manage dashboard widgets through AI-driven configuration.\n\n- Add, edit, and track visual widgets on your Glance dashboard\n- Auto-generate widget definitions using strict JSON Schema for reliability\n- Supports data collection via AI agent, server code, or webhooks\n- Includes detailed setup and configuration instructions\n- Quick reference for widget workflows and essential requirements",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b39f99b70810e14570d43f1bc0b91e719440dbbdfd2a2f57526add486f0ade8b"
+}

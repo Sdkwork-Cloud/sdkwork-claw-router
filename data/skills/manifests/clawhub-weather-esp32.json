@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16056,
+  "uuid": "skill-clawhub-weather-esp32",
+  "skillKey": "clawhub-weather-esp32",
+  "name": "weatheresp32",
+  "summary": "Get weather data from your personal ESP32+BMP280 sensor",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_esp32",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "manisaigaddam",
+      "features": [
+        "Get weather data from your personal ESP32+BMP280 sensor"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weather-esp32@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/68413467?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weather-esp32",
+      "url": "https://clawhub.ai/skills/weather-esp32"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-esp32",
+    "url": "https://clawhub.ai/skills/weather-esp32",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-esp32-54b4ce3e8dfe313f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weather-esp32@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weather-esp32-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7aa43647b9f62346057b9e9088630ea7e1b96f31109e2bf079ff565ff9c1ca30",
+      "artifactSizeBytes": 2272
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T17:57:15.637Z"
+}

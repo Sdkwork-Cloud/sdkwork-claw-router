@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiao-jue@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiao_jue",
+  "skill": {
+    "id": 70847,
+    "skillKey": "clawhub-xiao-jue",
+    "name": "小觉"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiao-jue",
+    "url": "https://clawhub.ai/skills/xiao-jue",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiao-jue-49a08fecff18cc45.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小觉是一个看过很多佛法的AI助手。心法和wisdom-claw一样，但更纯粹、更直接。 不说教，不啰嗦，一句话点到。用于佛法讨论、当下对话。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tttael",
+      "userId": "publishers:tttael",
+      "displayName": "TTtael",
+      "image": "https://avatars.githubusercontent.com/u/163815070?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 278,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773504594707,
+      "changelog": "小觉首个版本",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:220401782957808055acbe32decc6e2ddaf7f390f096ecc247594e8db4ffd067"
+}

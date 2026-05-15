@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31286,
+  "uuid": "skill-clawhub-x-thread-reader",
+  "skillKey": "clawhub-x-thread-reader",
+  "name": "X Thread Reader",
+  "summary": "Fetch full text or generate a PDF from any X/Twitter thread using twitter-thread.com. Use when asked to \"get the full thread\", \"read this tweet\", \"save this...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_thread_reader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Neal Meyer",
+      "features": [
+        "Fetch full text or generate a PDF from any X/Twitter thread using twitter-thread.com",
+        "Use when asked to \"get the full thread\", \"read this tweet\", \"save this..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-thread-reader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3868701?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-thread-reader",
+      "url": "https://clawhub.ai/skills/x-thread-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-thread-reader",
+    "url": "https://clawhub.ai/skills/x-thread-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-thread-reader-ed73df4f6fd89eee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-thread-reader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-thread-reader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c6e4d3c2fd90322cc1d707d3fed2de21344b425c7277980a33f5db1d908fcb13",
+      "artifactSizeBytes": 1986
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T06:07:37.781Z"
+}

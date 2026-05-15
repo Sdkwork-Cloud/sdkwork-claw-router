@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/osop-report@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.osop_report",
+  "skill": {
+    "id": 41627,
+    "skillKey": "clawhub-osop-report",
+    "name": "Osop Report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "osop-report",
+    "url": "https://clawhub.ai/skills/osop-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/osop-report-6f3e89249a5d0ebc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert .osop and .osoplog.yaml into standalone HTML report with dark mode and expandable nodes"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "archie0125",
+      "userId": "s179s8ypm6jvmks7shkyy813rd840pdv",
+      "displayName": "Archie0125",
+      "image": "https://avatars.githubusercontent.com/u/58622712?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1775042844052,
+      "changelog": "Initial ClawHub release — OSOP HTML report generator",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b92a81e0a18871a28c5b26f42a887d79976ec2a4eaf09e0d36f6a44241b75907"
+}

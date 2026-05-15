@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/snapbyte-digest-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.snapbyte_digest_api",
+  "skill": {
+    "id": 15975,
+    "skillKey": "clawhub-snapbyte-digest-api",
+    "name": "Snapbyte Digest API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "snapbyte-digest-api",
+    "url": "https://clawhub.ai/skills/snapbyte-digest-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/snapbyte-digest-api-45c3d1288e30f615.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch personalized developer news digests from Snapbyte External API with API-key auth. Use for Hacker News digest, Reddit digest, Lobsters digest, and DEV.t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "onatm",
+      "userId": "publishers:onatm",
+      "displayName": "Onat Yiğit Mercan",
+      "image": "https://avatars.githubusercontent.com/u/802299?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 744,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771252562424,
+      "changelog": "Initial public release of Snapbyte Digest API skill for OpenClaw.\n- Add API-key authenticated digest access via SNAPBYTE_API_KEY\n- Support latest, history, digest, and digest item retrieval commands\n- Add quickstart docs and daily cron automation examples\nIf validation still complains:\n- Make sure you uploaded the skill folder itself, not openclaw/ root.\n- Confirm the file is named exactly SKILL.md (uppercase).\n- Recheck display name is not empty.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:20790f821997b2e3d6b379f9f3b81261d19da02ca20356abd6cbe0e9ce09f486"
+}

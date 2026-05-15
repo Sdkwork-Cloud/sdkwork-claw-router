@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/share-onetime-link@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.share_onetime_link",
+  "skill": {
+    "id": 36400,
+    "skillKey": "clawhub-share-onetime-link",
+    "name": "Share One-Time Link"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "share-onetime-link",
+    "url": "https://clawhub.ai/skills/share-onetime-link",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/share-onetime-link-3444d83189297d39.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate public one-shot or time-limited download links for files using a local Express server exposed via Cloudflare Tunnel. Links are tokenized, expire aut..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hitman86r",
+      "userId": "s17baya0m9yj1qcs8bc5a030md84egq4",
+      "displayName": "Hitman86R",
+      "image": "https://avatars.githubusercontent.com/u/5153596?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1776329036822,
+      "changelog": "Security fix: SHARE_SECRET is now mandatory (server exits if not set); added env_vars to registry metadata; removed unprotected endpoint bypass; aligned install mechanism declaration",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5d66ac7791b69922ef6184453124938c41d3f92498308e57e37f6a6d66ff7c35"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21825,
+  "uuid": "skill-clawhub-clawcontrol-logger",
+  "skillKey": "clawhub-clawcontrol-logger",
+  "name": "ClawControl",
+  "summary": "Real-time, audit-ready logging integration for ClawControl.space. Ensures deterministic, per-action observability.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawcontrol_logger",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qasimnaqvi",
+      "features": [
+        "Real-time, audit-ready logging integration for ClawControl.space",
+        "Ensures deterministic, per-action observability."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawcontrol-logger@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11540356?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawcontrol-logger",
+      "url": "https://clawhub.ai/skills/clawcontrol-logger"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawcontrol-logger",
+    "url": "https://clawhub.ai/skills/clawcontrol-logger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawcontrol-logger-c3f7776728c083a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawcontrol-logger@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawcontrol-logger-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2369ca712adb33d39ff209edfa1f0a8e31843980314f6c46a74837f6ee1f5b0b",
+      "artifactSizeBytes": 2227
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T17:46:13.890Z"
+}

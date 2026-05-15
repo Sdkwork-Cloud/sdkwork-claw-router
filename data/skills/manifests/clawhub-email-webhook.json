@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13658,
+  "uuid": "skill-clawhub-email-webhook",
+  "skillKey": "clawhub-email-webhook",
+  "name": "Email Webhook",
+  "summary": "Receive incoming emails via JSON webhooks and wake the agent. Built for AI Commander.",
+  "version": "2.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_webhook",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Coder AI",
+      "features": [
+        "Receive incoming emails via JSON webhooks and wake the agent",
+        "Built for AI Commander."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/email-webhook@2.6.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/72931508?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "email-webhook",
+      "url": "https://clawhub.ai/skills/email-webhook"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-webhook",
+    "url": "https://clawhub.ai/skills/email-webhook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-webhook-6cc7b533728e3c34.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/email-webhook@2.6.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-email-webhook-2.6.0.json",
+      "version": "2.6.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:393f5d799748acfa78f5356ac8bbf507acb7f45917106343466da8e13c7f32b0",
+      "artifactSizeBytes": 1924
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T10:21:47.189Z"
+}

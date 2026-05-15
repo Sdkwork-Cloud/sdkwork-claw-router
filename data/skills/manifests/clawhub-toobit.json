@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26668,
+  "uuid": "skill-clawhub-toobit",
+  "skillKey": "clawhub-toobit",
+  "name": "Toobit Trading",
+  "summary": "Trade crypto on Toobit exchange via natural language. Spot & USDT-M futures trading, market data queries, wallet management. Use when user mentions Toobit, o...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toobit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xizhen",
+      "features": [
+        "Trade crypto on Toobit exchange via natural language",
+        "Spot & USDT-M futures trading, market data queries, wallet management",
+        "Use when user mentions Toobit, o..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/toobit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12782730?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "toobit",
+      "url": "https://clawhub.ai/skills/toobit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toobit",
+    "url": "https://clawhub.ai/skills/toobit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toobit-e3052569d5fd7a58.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/toobit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-toobit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a92d0a0c1a9edb5a53e0bf1e3df77b278d881b5b6784146aedd2e6710e18037b",
+      "artifactSizeBytes": 1902
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T02:54:33.422Z"
+}

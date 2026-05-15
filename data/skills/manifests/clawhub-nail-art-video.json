@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73661,
+  "uuid": "skill-clawhub-nail-art-video",
+  "skillKey": "clawhub-nail-art-video",
+  "name": "美甲制作过程视频",
+  "summary": "生成美甲制作过程短视频。猫眼、流沙、星空、奶油胶、微缩立体美甲——小尺寸极高细节，近景治愈感强，支持节日主题，一句话出片。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nail_art_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "parallel world",
+      "features": [
+        "生成美甲制作过程短视频。猫眼、流沙、星空、奶油胶、微缩立体美甲——小尺寸极高细节，近景治愈感强，支持节日主题，一句话出片。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nail-art-video@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16458879?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nail-art-video",
+      "url": "https://clawhub.ai/skills/nail-art-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nail-art-video",
+    "url": "https://clawhub.ai/skills/nail-art-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nail-art-video-c43f9c8649a01c4c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nail-art-video@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-nail-art-video-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5af50d3b19ada1023ae6adec89da599ba3677411acc246ce6b384db9ac08d479",
+      "artifactSizeBytes": 2068
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T15:29:26.226Z"
+}

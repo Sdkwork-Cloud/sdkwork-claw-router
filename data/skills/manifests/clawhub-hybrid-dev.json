@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28302,
+  "uuid": "skill-clawhub-hybrid-dev",
+  "skillKey": "clawhub-hybrid-dev",
+  "name": "Hybrid Dev",
+  "summary": "Hybrid development workflow: local model plans, Copilot codes, local model validates. Use when: starting a new project iteration, generating a Copilot task p...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hybrid_dev",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangyoumo",
+      "features": [
+        "Hybrid development workflow: local model plans, Copilot codes, local model validates",
+        "Use when: starting a new project iteration, generating a Copilot task p..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hybrid-dev@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6176462?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hybrid-dev",
+      "url": "https://clawhub.ai/skills/hybrid-dev"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hybrid-dev",
+    "url": "https://clawhub.ai/skills/hybrid-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hybrid-dev-4f2e09834f79a378.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hybrid-dev@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hybrid-dev-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3af9b12d34350c0fa40e5f5a207c7d91b07c9a5c009d76aaba06ed62e223bf59",
+      "artifactSizeBytes": 2468
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T11:08:16.996Z"
+}

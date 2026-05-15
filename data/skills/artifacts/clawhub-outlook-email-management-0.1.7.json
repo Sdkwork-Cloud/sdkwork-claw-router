@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/outlook-email-management@0.1.7",
+  "version": "0.1.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.outlook_email_management",
+  "skill": {
+    "id": 52982,
+    "skillKey": "clawhub-outlook-email-management",
+    "name": "Outlook Email"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "outlook-email-management",
+    "url": "https://clawhub.ai/skills/outlook-email-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/outlook-email-management-3ec44994a000e27d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Outlook and Microsoft 365 email with AI agents — triage inbox by sender trust, draft replies with tone matching, organize folders, create inbox rules,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stevenobiajulu",
+      "userId": "s17846kvqgde4k0takks4byt0184fe4h",
+      "displayName": "Steven Obiajulu",
+      "image": "https://avatars.githubusercontent.com/u/183783362?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "0.1.7",
+      "createdAt": 1775691654389,
+      "changelog": "Apply Trust Boundary preemptive disclosure technique that achieved Benign on email-cleanup v0.1.4 and docx-editing. Add a 'Trust Boundary: What This Skill Can and Cannot Enforce' section between Safety Model and Authentication & Required Scopes. Explicitly acknowledge instruction-only nature, high-risk scopes (Mail.Send, MailboxSettings.ReadWrite), runtime-dependent enforcement, and autonomous-invocation risk. Mirror scanner's own 6-point pre-install checklist as actionable guidance with source file citations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8b12ed5a769c5d861807e608b55ce837e05d0931f119f5459898e85d39490e9e"
+}

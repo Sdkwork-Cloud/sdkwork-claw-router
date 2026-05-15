@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/unifi-inforjota-integration@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unifi_inforjota_integration",
+  "skill": {
+    "id": 36300,
+    "skillKey": "clawhub-unifi-inforjota-integration",
+    "name": "Unifi Inforjota Integration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unifi-inforjota-integration",
+    "url": "https://clawhub.ai/skills/unifi-inforjota-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unifi-inforjota-integration-565b68251bb9fca9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query and monitor a UniFi network using a UniFi Integration API key (X-API-KEY) plus compatible read-only classic UniFi Network endpoints. Use when the user..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mrjq1987",
+      "userId": "s173wej3sjt6p20ecrv75j1dy983gkr1",
+      "displayName": "MrJQ1987",
+      "image": "https://avatars.githubusercontent.com/u/238114329?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 207,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774339722033,
+      "changelog": "Add UniFi Integration API key support plus compatible classic read-only endpoints; improve dashboard with console/version/networks/WLANs/alarms; add graceful alarms and DPI handling; sanitize docs and examples before publication.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:85d5d2b79460840e4602ab6a4deb5b01a9f1b9fe22cfa17c05851646ba374fdb"
+}

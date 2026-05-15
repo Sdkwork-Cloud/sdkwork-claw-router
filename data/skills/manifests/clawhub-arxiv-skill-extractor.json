@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14055,
+  "uuid": "skill-clawhub-arxiv-skill-extractor",
+  "skillKey": "clawhub-arxiv-skill-extractor",
+  "name": "Arxiv Skill Extractor",
+  "summary": "Automates the process of extracting reusable skill code from arXiv papers. Use this skill to turn paper insights into actual OpenClaw skills.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arxiv_skill_extractor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WANGJUNJIE",
+      "features": [
+        "Automates the process of extracting reusable skill code from arXiv papers",
+        "Use this skill to turn paper insights into actual OpenClaw skills."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/arxiv-skill-extractor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32323900?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "arxiv-skill-extractor",
+      "url": "https://clawhub.ai/skills/arxiv-skill-extractor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arxiv-skill-extractor",
+    "url": "https://clawhub.ai/skills/arxiv-skill-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arxiv-skill-extractor-b98b7c7bb657fab4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/arxiv-skill-extractor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-arxiv-skill-extractor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:166effb97ba3b3a249fa71e5aee7b53f9cfc819b6d1b26f51471106749393860",
+      "artifactSizeBytes": 2232
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T15:29:49.744Z"
+}

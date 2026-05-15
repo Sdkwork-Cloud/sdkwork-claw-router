@@ -407,34 +407,34 @@ test("admin skill service calls generated backend SDK asset and artifact paths",
   await withBackendSdkFetch(
     (url, init) => {
       const method = init?.method ?? "GET";
-      if (url === "/backend/v3/api/skill/8101/assets" && method === "GET") {
+      if (url === "/backend/v3/api/ecosystem/skills/8101/assets" && method === "GET") {
         return { items: [sampleAsset()] };
       }
-      if (url === "/backend/v3/api/skill/8101/assets/9101" && method === "GET") {
+      if (url === "/backend/v3/api/ecosystem/skills/8101/assets/9101" && method === "GET") {
         return { item: sampleAsset() };
       }
-      if (url === "/backend/v3/api/skill/8101/assets" && method === "POST") {
+      if (url === "/backend/v3/api/ecosystem/skills/8101/assets" && method === "POST") {
         return { item: sampleAsset({ id: "9102", title: "Created asset" }) };
       }
-      if (url === "/backend/v3/api/skill/8101/assets/9101" && method === "PUT") {
+      if (url === "/backend/v3/api/ecosystem/skills/8101/assets/9101" && method === "PUT") {
         return { item: sampleAsset({ title: "Updated asset", sortOrder: 20 }) };
       }
-      if (url === "/backend/v3/api/skill/8101/assets/9101" && method === "DELETE") {
+      if (url === "/backend/v3/api/ecosystem/skills/8101/assets/9101" && method === "DELETE") {
         return { deleted: true };
       }
-      if (url === "/backend/v3/api/skill/8101/artifacts" && method === "GET") {
+      if (url === "/backend/v3/api/ecosystem/skills/8101/artifacts" && method === "GET") {
         return { items: [sampleArtifact()] };
       }
-      if (url === "/backend/v3/api/skill/8101/artifacts/9201" && method === "GET") {
+      if (url === "/backend/v3/api/ecosystem/skills/8101/artifacts/9201" && method === "GET") {
         return { item: sampleArtifact() };
       }
-      if (url === "/backend/v3/api/skill/8101/artifacts" && method === "POST") {
+      if (url === "/backend/v3/api/ecosystem/skills/8101/artifacts" && method === "POST") {
         return { item: sampleArtifact({ id: "9202", version: "1.1.0" }) };
       }
-      if (url === "/backend/v3/api/skill/8101/artifacts/9201" && method === "PUT") {
+      if (url === "/backend/v3/api/ecosystem/skills/8101/artifacts/9201" && method === "PUT") {
         return { item: sampleArtifact({ version: "1.2.0", frameworks: ["Rust service"] }) };
       }
-      if (url === "/backend/v3/api/skill/8101/artifacts/9201" && method === "DELETE") {
+      if (url === "/backend/v3/api/ecosystem/skills/8101/artifacts/9201" && method === "DELETE") {
         return { deleted: true };
       }
       throw new Error(`Unexpected request ${method} ${url}`);
@@ -494,16 +494,16 @@ test("admin skill service calls generated backend SDK asset and artifact paths",
       assert.equal(deletedArtifact, true);
 
       assert.deepEqual(captured.map((request) => `${request.method} ${request.url}`), [
-        "GET /backend/v3/api/skill/8101/assets",
-        "GET /backend/v3/api/skill/8101/assets/9101",
-        "POST /backend/v3/api/skill/8101/assets",
-        "PUT /backend/v3/api/skill/8101/assets/9101",
-        "DELETE /backend/v3/api/skill/8101/assets/9101",
-        "GET /backend/v3/api/skill/8101/artifacts",
-        "GET /backend/v3/api/skill/8101/artifacts/9201",
-        "POST /backend/v3/api/skill/8101/artifacts",
-        "PUT /backend/v3/api/skill/8101/artifacts/9201",
-        "DELETE /backend/v3/api/skill/8101/artifacts/9201",
+        "GET /backend/v3/api/ecosystem/skills/8101/assets",
+        "GET /backend/v3/api/ecosystem/skills/8101/assets/9101",
+        "POST /backend/v3/api/ecosystem/skills/8101/assets",
+        "PUT /backend/v3/api/ecosystem/skills/8101/assets/9101",
+        "DELETE /backend/v3/api/ecosystem/skills/8101/assets/9101",
+        "GET /backend/v3/api/ecosystem/skills/8101/artifacts",
+        "GET /backend/v3/api/ecosystem/skills/8101/artifacts/9201",
+        "POST /backend/v3/api/ecosystem/skills/8101/artifacts",
+        "PUT /backend/v3/api/ecosystem/skills/8101/artifacts/9201",
+        "DELETE /backend/v3/api/ecosystem/skills/8101/artifacts/9201",
       ]);
       assert.deepEqual(JSON.parse(captured[2].body), {
         assetUrl: "artifact://skills/research/cover.png",
@@ -540,7 +540,7 @@ test("admin skill service calls generated backend SDK paths and normalizes packa
   await withBackendSdkFetch(
     (url, init) => {
       const method = init?.method ?? "GET";
-      if (url === "/backend/v3/api/skill/categories" && method === "GET") {
+      if (url === "/backend/v3/api/ecosystem/skills/categories" && method === "GET") {
         return {
           items: [
             {
@@ -559,87 +559,87 @@ test("admin skill service calls generated backend SDK paths and normalizes packa
           ],
         };
       }
-      if (url === "/backend/v3/api/skill/list" && method === "POST") {
+      if (url === "/backend/v3/api/ecosystem/skills?q=research&page=1&page_size=20" && method === "GET") {
         return { items: [sampleSkill()] };
       }
-      if (url === "/backend/v3/api/skill/package/list" && method === "POST") {
+      if (url === "/backend/v3/api/ecosystem/skills/package?q=agent&enabled=true" && method === "GET") {
         return { items: [samplePackage()] };
       }
-      if (url === "/backend/v3/api/skill/package/7101" && method === "GET") {
+      if (url === "/backend/v3/api/ecosystem/skills/package/7101" && method === "GET") {
         return { item: samplePackage() };
       }
-      if (url === "/backend/v3/api/skill/package" && method === "POST") {
+      if (url === "/backend/v3/api/ecosystem/skills/package" && method === "POST") {
         return { item: samplePackage({ id: "7201", packageKey: "quality_pack", name: "Quality Pack" }) };
       }
-      if (url === "/backend/v3/api/skill/package/7101" && method === "PUT") {
+      if (url === "/backend/v3/api/ecosystem/skills/package/7101" && method === "PUT") {
         return { item: samplePackage({ name: "Agent Productivity Pro", featured: false }) };
       }
-      if (url === "/backend/v3/api/skill/package/7101/disable" && method === "POST") {
+      if (url === "/backend/v3/api/ecosystem/skills/package/7101/disable" && method === "POST") {
         return { item: samplePackage({ enabled: false }) };
       }
-      if (url === "/backend/v3/api/skill/package/7101/enable" && method === "POST") {
+      if (url === "/backend/v3/api/ecosystem/skills/package/7101/enable" && method === "POST") {
         return { item: samplePackage({ enabled: true }) };
       }
-      if (url === "/backend/v3/api/skill/package/7101" && method === "DELETE") {
+      if (url === "/backend/v3/api/ecosystem/skills/package/7101" && method === "DELETE") {
         return { deleted: true };
       }
-      if (url === "/backend/v3/api/skill/8101" && method === "GET") {
+      if (url === "/backend/v3/api/ecosystem/skills/8101" && method === "GET") {
         return { item: sampleSkill({ marketStatus: "PUBLISHED", reviewStatus: "APPROVED" }) };
       }
-      if (url === "/backend/v3/api/skill" && method === "POST") {
+      if (url === "/backend/v3/api/ecosystem/skills" && method === "POST") {
         return { item: sampleSkill({ id: "9001", skillKey: "draft_skill", name: "Draft Skill" }) };
       }
-      if (url === "/backend/v3/api/skill/8101" && method === "PUT") {
+      if (url === "/backend/v3/api/ecosystem/skills/8101" && method === "PUT") {
         return { item: sampleSkill({ name: "Research Brief Pro" }) };
       }
-      if (url === "/backend/v3/api/skill/8101/assets" && method === "GET") {
+      if (url === "/backend/v3/api/ecosystem/skills/8101/assets" && method === "GET") {
         return { items: [sampleAsset()] };
       }
-      if (url === "/backend/v3/api/skill/8101/assets/9101" && method === "GET") {
+      if (url === "/backend/v3/api/ecosystem/skills/8101/assets/9101" && method === "GET") {
         return { item: sampleAsset() };
       }
-      if (url === "/backend/v3/api/skill/8101/assets" && method === "POST") {
+      if (url === "/backend/v3/api/ecosystem/skills/8101/assets" && method === "POST") {
         return { item: sampleAsset({ id: "9102", title: "Skill demo cover" }) };
       }
-      if (url === "/backend/v3/api/skill/8101/assets/9101" && method === "PUT") {
+      if (url === "/backend/v3/api/ecosystem/skills/8101/assets/9101" && method === "PUT") {
         return { item: sampleAsset({ title: "Skill cover updated", thumbnailUrl: null }) };
       }
-      if (url === "/backend/v3/api/skill/8101/assets/9101" && method === "DELETE") {
+      if (url === "/backend/v3/api/ecosystem/skills/8101/assets/9101" && method === "DELETE") {
         return { deleted: true };
       }
-      if (url === "/backend/v3/api/skill/8101/artifacts" && method === "GET") {
+      if (url === "/backend/v3/api/ecosystem/skills/8101/artifacts" && method === "GET") {
         return { items: [sampleArtifact()] };
       }
-      if (url === "/backend/v3/api/skill/8101/artifacts/9201" && method === "GET") {
+      if (url === "/backend/v3/api/ecosystem/skills/8101/artifacts/9201" && method === "GET") {
         return { item: sampleArtifact() };
       }
-      if (url === "/backend/v3/api/skill/8101/artifacts" && method === "POST") {
+      if (url === "/backend/v3/api/ecosystem/skills/8101/artifacts" && method === "POST") {
         return { item: sampleArtifact({ id: "9202", version: "1.0.1" }) };
       }
-      if (url === "/backend/v3/api/skill/8101/artifacts/9201" && method === "PUT") {
+      if (url === "/backend/v3/api/ecosystem/skills/8101/artifacts/9201" && method === "PUT") {
         return { item: sampleArtifact({ version: "1.0.2", checksumHash: null }) };
       }
-      if (url === "/backend/v3/api/skill/8101/artifacts/9201" && method === "DELETE") {
+      if (url === "/backend/v3/api/ecosystem/skills/8101/artifacts/9201" && method === "DELETE") {
         return { deleted: true };
       }
-      if (url === "/backend/v3/api/skill/8101/review/approve" && method === "POST") {
+      if (url === "/backend/v3/api/ecosystem/skills/8101/review/approve" && method === "POST") {
         return { item: sampleSkill({ reviewStatus: "APPROVED", reviewComment: "Approved" }) };
       }
-      if (url === "/backend/v3/api/skill/8101/publish" && method === "POST") {
+      if (url === "/backend/v3/api/ecosystem/skills/8101/publish" && method === "POST") {
         return { item: sampleSkill({ marketStatus: "PUBLISHED", latestPublishedAt: "2026-05-09T01:00:00Z" }) };
       }
-      if (url === "/backend/v3/api/skill/8101/disable" && method === "POST") {
+      if (url === "/backend/v3/api/ecosystem/skills/8101/disable" && method === "POST") {
         return { item: sampleSkill({ enabled: false }) };
       }
-      if (url === "/backend/v3/api/skill/8101" && method === "DELETE") {
+      if (url === "/backend/v3/api/ecosystem/skills/8101" && method === "DELETE") {
         return { deleted: true };
       }
       throw new Error(`Unexpected request ${method} ${url}`);
     },
     async (captured) => {
       const categories = await AdminSkillService.fetchSkillCategories();
-      const skills = await AdminSkillService.fetchSkills({ keyword: "research", pageNo: 1, pageSize: 20 });
-      const packages = await AdminSkillService.fetchSkillPackages({ keyword: "agent", enabled: true });
+      const skills = await AdminSkillService.fetchSkills({ searchQuery: "research", page: 1, pageSize: 20 });
+      const packages = await AdminSkillService.fetchSkillPackages({ searchQuery: "agent", enabled: true });
       const skillPackage = await AdminSkillService.getSkillPackage("7101");
       const createdPackage = await AdminSkillService.createSkillPackage({
         packageKey: "quality_pack",
@@ -728,37 +728,37 @@ test("admin skill service calls generated backend SDK paths and normalizes packa
       assert.equal(deleted, true);
 
       assert.deepEqual(captured.map((request) => `${request.method} ${request.url}`), [
-        "GET /backend/v3/api/skill/categories",
-        "POST /backend/v3/api/skill/list",
-        "POST /backend/v3/api/skill/package/list",
-        "GET /backend/v3/api/skill/package/7101",
-        "POST /backend/v3/api/skill/package",
-        "PUT /backend/v3/api/skill/package/7101",
-        "POST /backend/v3/api/skill/package/7101/disable",
-        "POST /backend/v3/api/skill/package/7101/enable",
-        "DELETE /backend/v3/api/skill/package/7101",
-        "GET /backend/v3/api/skill/8101",
-        "POST /backend/v3/api/skill",
-        "PUT /backend/v3/api/skill/8101",
-        "GET /backend/v3/api/skill/8101/assets",
-        "GET /backend/v3/api/skill/8101/assets/9101",
-        "POST /backend/v3/api/skill/8101/assets",
-        "PUT /backend/v3/api/skill/8101/assets/9101",
-        "DELETE /backend/v3/api/skill/8101/assets/9101",
-        "GET /backend/v3/api/skill/8101/artifacts",
-        "GET /backend/v3/api/skill/8101/artifacts/9201",
-        "POST /backend/v3/api/skill/8101/artifacts",
-        "PUT /backend/v3/api/skill/8101/artifacts/9201",
-        "DELETE /backend/v3/api/skill/8101/artifacts/9201",
-        "POST /backend/v3/api/skill/8101/review/approve",
-        "POST /backend/v3/api/skill/8101/publish",
-        "POST /backend/v3/api/skill/8101/disable",
-        "DELETE /backend/v3/api/skill/8101",
+        "GET /backend/v3/api/ecosystem/skills/categories",
+        "GET /backend/v3/api/ecosystem/skills?q=research&page=1&page_size=20",
+        "GET /backend/v3/api/ecosystem/skills/package?q=agent&enabled=true",
+        "GET /backend/v3/api/ecosystem/skills/package/7101",
+        "POST /backend/v3/api/ecosystem/skills/package",
+        "PUT /backend/v3/api/ecosystem/skills/package/7101",
+        "POST /backend/v3/api/ecosystem/skills/package/7101/disable",
+        "POST /backend/v3/api/ecosystem/skills/package/7101/enable",
+        "DELETE /backend/v3/api/ecosystem/skills/package/7101",
+        "GET /backend/v3/api/ecosystem/skills/8101",
+        "POST /backend/v3/api/ecosystem/skills",
+        "PUT /backend/v3/api/ecosystem/skills/8101",
+        "GET /backend/v3/api/ecosystem/skills/8101/assets",
+        "GET /backend/v3/api/ecosystem/skills/8101/assets/9101",
+        "POST /backend/v3/api/ecosystem/skills/8101/assets",
+        "PUT /backend/v3/api/ecosystem/skills/8101/assets/9101",
+        "DELETE /backend/v3/api/ecosystem/skills/8101/assets/9101",
+        "GET /backend/v3/api/ecosystem/skills/8101/artifacts",
+        "GET /backend/v3/api/ecosystem/skills/8101/artifacts/9201",
+        "POST /backend/v3/api/ecosystem/skills/8101/artifacts",
+        "PUT /backend/v3/api/ecosystem/skills/8101/artifacts/9201",
+        "DELETE /backend/v3/api/ecosystem/skills/8101/artifacts/9201",
+        "POST /backend/v3/api/ecosystem/skills/8101/review/approve",
+        "POST /backend/v3/api/ecosystem/skills/8101/publish",
+        "POST /backend/v3/api/ecosystem/skills/8101/disable",
+        "DELETE /backend/v3/api/ecosystem/skills/8101",
       ]);
 
-      assert.deepEqual(JSON.parse(captured[1].body), { keyword: "research", pageNo: 1, pageSize: 20 });
-      assert.deepEqual(JSON.parse(captured[2].body), { keyword: "agent", enabled: true });
-      const createAssetRequest = captured.find((request) => request.method === "POST" && request.url === "/backend/v3/api/skill/8101/assets");
+      assert.equal(captured[1].body, "");
+      assert.equal(captured[2].body, "");
+      const createAssetRequest = captured.find((request) => request.method === "POST" && request.url === "/backend/v3/api/ecosystem/skills/8101/assets");
       assert.ok(createAssetRequest);
       assert.deepEqual(JSON.parse(createAssetRequest.body), {
         assetUrl: "https://cdn.example.test/skills/research/demo.png",
@@ -772,7 +772,7 @@ test("admin skill service calls generated backend SDK paths and normalizes packa
         sortOrder: 20,
         status: 1,
       });
-      const createArtifactRequest = captured.find((request) => request.method === "POST" && request.url === "/backend/v3/api/skill/8101/artifacts");
+      const createArtifactRequest = captured.find((request) => request.method === "POST" && request.url === "/backend/v3/api/ecosystem/skills/8101/artifacts");
       assert.ok(createArtifactRequest);
       assert.deepEqual(JSON.parse(createArtifactRequest.body), {
         version: "1.0.1",
@@ -783,10 +783,10 @@ test("admin skill service calls generated backend SDK paths and normalizes packa
         frameworks: ["Rust service", "OpenAI-compatible"],
         checksumHash: "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
       });
-      const updateArtifactRequest = captured.find((request) => request.method === "PUT" && request.url === "/backend/v3/api/skill/8101/artifacts/9201");
+      const updateArtifactRequest = captured.find((request) => request.method === "PUT" && request.url === "/backend/v3/api/ecosystem/skills/8101/artifacts/9201");
       assert.ok(updateArtifactRequest);
       assert.deepEqual(JSON.parse(updateArtifactRequest.body), { version: "1.0.2", checksumHash: null });
-      const approveRequest = captured.find((request) => request.url === "/backend/v3/api/skill/8101/review/approve");
+      const approveRequest = captured.find((request) => request.url === "/backend/v3/api/ecosystem/skills/8101/review/approve");
       assert.ok(approveRequest);
       assert.deepEqual(JSON.parse(approveRequest.body), { reviewComment: "Approved" });
       for (const request of captured.filter((item) => item.method === "POST" || item.method === "PUT")) {

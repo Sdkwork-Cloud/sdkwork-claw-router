@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22529,
+  "uuid": "skill-clawhub-name-analyzer",
+  "skillKey": "clawhub-name-analyzer",
+  "name": "Name Analyzer",
+  "summary": "Analyze names for meaning, origin, cultural associations, and personality traits. Use when user wants to (1) understand the meaning of a name, (2) check name...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.name_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Analyze names for meaning, origin, cultural associations, and personality traits",
+        "Use when user wants to (1) understand the meaning of a name, (2) check name..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/name-analyzer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "name-analyzer",
+      "url": "https://clawhub.ai/skills/name-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "name-analyzer",
+    "url": "https://clawhub.ai/skills/name-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/name-analyzer-b2d2f5d44b7ee6e0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/name-analyzer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-name-analyzer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e204a378f627b2835306b9b8cf1650977b155a1f8a6429d79b4f6a08d7f1e90b",
+      "artifactSizeBytes": 1989
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T10:38:27.282Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23580,
+  "uuid": "skill-clawhub-github-actions-conclusion-volatility-audit",
+  "skillKey": "clawhub-github-actions-conclusion-volatility-audit",
+  "name": "GitHub Actions Conclusion Volatility Audit",
+  "summary": "Audit GitHub Actions workflow conclusion volatility to surface unstable pipelines before they become chronic failures.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_actions_conclusion_volatility_audit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daniel Lummis",
+      "features": [
+        "Audit GitHub Actions workflow conclusion volatility to surface unstable pipelines before they b."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-actions-conclusion-volatility-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65238171?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-actions-conclusion-volatility-audit",
+      "url": "https://clawhub.ai/skills/github-actions-conclusion-volatility-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-actions-conclusion-volatility-audit",
+    "url": "https://clawhub.ai/skills/github-actions-conclusion-volatility-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-actions-conclusion-volatility-audit-dbcf3526aa582a5e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-actions-conclusion-volatility-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-actions-conclusion-volatility-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:44f562c93fd427da10e5c3c6d0f9be77153ae4f44365f30ba8682880d5b368a7",
+      "artifactSizeBytes": 2557
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T15:11:18.600Z"
+}

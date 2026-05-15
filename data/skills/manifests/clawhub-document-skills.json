@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9275,
+  "uuid": "skill-clawhub-document-skills",
+  "skillKey": "clawhub-document-skills",
+  "name": "Create Skills",
+  "summary": "Write or update a skill (SKILL.md and supporting files) to match host structure and best practices. Use when user says create skill, write skill, update SKIL...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.document_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ryanallen",
+      "features": [
+        "Write or update a skill (SKILL.md and supporting files) to match host structure and best practi.",
+        "Use when user says create skill, write skill, update SKIL..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/document-skills@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1077040?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "document-skills",
+      "url": "https://clawhub.ai/skills/document-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "document-skills",
+    "url": "https://clawhub.ai/skills/document-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/document-skills-52c8f3430a06a78f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/document-skills@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-document-skills-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:938267a554174529a65b731c35edb61ba81627b12f6f63291bca70fd67906045",
+      "artifactSizeBytes": 2325
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T17:26:17.727Z"
+}

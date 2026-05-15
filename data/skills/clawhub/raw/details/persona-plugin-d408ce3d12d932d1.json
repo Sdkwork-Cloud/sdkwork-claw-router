@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "persona-plugin",
+    "displayName": "ClawdTalk Persona Plugin",
+    "summary": "Manage persistent caller memory by retrieving caller info at call start and logging detailed call summaries to update identity, personality, and memories aut...",
+    "tags": {
+      "latest": "1.0.4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 236,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "createdAt": 1774096343260,
+    "updatedAt": 1777622160902
+  },
+  "latestVersion": {
+    "version": "1.0.4",
+    "createdAt": 1774134209632,
+    "changelog": "**Adds a new step to caller memory updates with a third tool.**\n\n- Introduces `persona_update_docs` for explicit persona updates after each call.\n- The call flow now requires: get caller info → log call → update persona documents.\n- `persona_log_call` is now focused on logging call metadata only.\n- Detailed guidance on structuring `soul`, `identity`, and `memory` updates, including examples.\n- Clear separation between logging and updating, emphasizing both steps after each call.\n- Updated instructions and notes to reflect this two-step post-call update process.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "noahvandal",
+    "userId": "publishers:noahvandal",
+    "displayName": "noahvandal",
+    "image": "https://avatars.githubusercontent.com/u/58602431?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777622160902
+  }
+}

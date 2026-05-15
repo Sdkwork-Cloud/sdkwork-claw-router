@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26742,
+  "uuid": "skill-clawhub-halo-cli-shared",
+  "skillKey": "clawhub-halo-cli-shared",
+  "name": "Halo Cli Shared",
+  "summary": "Use when a task broadly involves Halo CLI and the correct command area is not yet clear, or when you need shared rules for profiles, JSON output, help discov...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.halo_cli_shared",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ryan Wang",
+      "features": [
+        "Use when a task broadly involves Halo CLI and the correct command area is not yet clear, or whe."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/halo-cli-shared@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21301288?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "halo-cli-shared",
+      "url": "https://clawhub.ai/skills/halo-cli-shared"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "halo-cli-shared",
+    "url": "https://clawhub.ai/skills/halo-cli-shared",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/halo-cli-shared-012b3a71c9545c98.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/halo-cli-shared@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-halo-cli-shared-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ac6dc9477156465255f1593887412b6f036e7047fc5ed7dfea53d281e8daef8",
+      "artifactSizeBytes": 2036
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T14:27:58.460Z"
+}

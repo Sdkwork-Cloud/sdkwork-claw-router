@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/botlearn-rss-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.botlearn_rss_manager",
+  "skill": {
+    "id": 22114,
+    "skillKey": "clawhub-botlearn-rss-manager",
+    "name": "botlearn-rss-manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "botlearn-rss-manager",
+    "url": "https://clawhub.ai/skills/botlearn-rss-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/botlearn-rss-manager-16eab11809b35afe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Aggregate and deduplicate multiple RSS/Atom feeds, score and cluster articles by importance, and generate concise, source-attributed daily digests."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "calvinxhk",
+      "userId": "s170r0gdb982qwb1dm5b48fsb183mz8n",
+      "displayName": "邢怀康",
+      "image": "https://avatars.githubusercontent.com/u/32790342?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 455,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772364570477,
+      "changelog": "rss-manager 1.0.0 — Initial release\n\n- Provides robust RSS and Atom feed parsing with error handling for encoding, XML issues, and namespace conflicts\n- Deduplicates articles using advanced similarity detection (URL, title, content fingerprinting, entity overlap)\n- Scores and ranks articles based on authority, recency, corroboration, social signals, and topic relevance\n- Clusters related articles by topic using vectorization and entity analysis, surfacing representative stories\n- Produces structured daily digests with clear topic organization, source attribution, and trend indicators\n- Ensures no duplicate items, preserves attribution, and respects feed publisher update intervals",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2a264ea6104e461cf077568c3cd5377a84f67378bfc7e12ec644e58dd9a7f186"
+}

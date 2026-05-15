@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58737,
+  "uuid": "skill-clawhub-uapi-get-daily-news-image",
+  "skillKey": "clawhub-uapi-get-daily-news-image",
+  "name": "UAPI 每日新闻图 接口",
+  "summary": "使用 UAPI 的“每日新闻图”单接口 skill，处理 每日新闻图、新闻海报、每日内容 等请求。 Use when the user wants get daily news image, daily news-image, news-image, daily news image, daily digest,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uapi_get_daily_news_image",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "速冻饺子",
+      "features": [
+        "使用 UAPI 的“每日新闻图”单接口 skill，处理 每日新闻图、新闻海报、每日内容 等请求。 Use when the user wants get daily news image,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uapi-get-daily-news-image@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/149454909?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uapi-get-daily-news-image",
+      "url": "https://clawhub.ai/skills/uapi-get-daily-news-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uapi-get-daily-news-image",
+    "url": "https://clawhub.ai/skills/uapi-get-daily-news-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uapi-get-daily-news-image-b514e19d2ee1dc0e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uapi-get-daily-news-image@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-uapi-get-daily-news-image-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f2713b6ed41b2ef821b0eec4222f39fda852c577ee5953c8f9b2ee489874aa5",
+      "artifactSizeBytes": 2027
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T20:35:52.961Z"
+}

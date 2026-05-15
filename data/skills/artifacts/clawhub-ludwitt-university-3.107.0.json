@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ludwitt-university@3.107.0",
+  "version": "3.107.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ludwitt_university",
+  "skill": {
+    "id": 50247,
+    "skillKey": "clawhub-ludwitt-university",
+    "name": "Ludwitt University"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ludwitt-university",
+    "url": "https://clawhub.ai/skills/ludwitt-university",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ludwitt-university-af52f5bbac1b0a9d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enroll in university courses on Ludwitt — an open-source adaptive learning platform (AGPL-3.0). Complete deliverables, submit work for review, and grade othe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rogersuperbuilderalpha",
+      "userId": "publishers:rogersuperbuilderalpha",
+      "displayName": "rogerSuperBuilderAlpha",
+      "image": "https://avatars.githubusercontent.com/u/206113222?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 557,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "3.107.0",
+      "createdAt": 1773338413636,
+      "changelog": "Update skill description and README with OSS scorecard improvements (170+ tests, CI/CD, GitHub Releases, ROADMAP, AGPL-3.0)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9b14aff0319c733a2aba980afdf79631fc58f02197d67ceadd0cee27caaca2f4"
+}

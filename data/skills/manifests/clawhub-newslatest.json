@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65083,
+  "uuid": "skill-clawhub-newslatest",
+  "skillKey": "clawhub-newslatest",
+  "name": "newslatest",
+  "summary": "获取各大平台热点新闻榜单数据。通过 Rust NewsLatest 服务 API 获取新闻热点，支持多个新闻源。触发场景：(1) 用户请求\"热点新闻\"、\"热搜榜\"、\"热门话题\"；(2) 指定平台新闻如\"知乎热搜\"、\"B站热门\"、\"微博热搜\"等；(3) 获取某平台的热门内容。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.newslatest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "violetlength",
+      "features": [
+        "获取各大平台热点新闻榜单数据。通过 Rust NewsLatest 服务 API 获取新闻热点，支持多个新闻源。触发场景：(1) 用户请求\"热点新闻\"、\"热搜榜\"、\"热门话题\"；(2) 指定."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/newslatest@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10161783?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "newslatest",
+      "url": "https://clawhub.ai/skills/newslatest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "newslatest",
+    "url": "https://clawhub.ai/skills/newslatest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/newslatest-d7efdaedcb8098a3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/newslatest@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-newslatest-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d9c041a20ad38a6b553d5facb95764fc517b4438afe5e308572a1d070fb16c9d",
+      "artifactSizeBytes": 2434
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T02:31:05.635Z"
+}

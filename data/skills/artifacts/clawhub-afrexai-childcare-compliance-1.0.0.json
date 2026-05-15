@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/afrexai-childcare-compliance@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_childcare_compliance",
+  "skill": {
+    "id": 23152,
+    "skillKey": "clawhub-afrexai-childcare-compliance",
+    "name": "Childcare Compliance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-childcare-compliance",
+    "url": "https://clawhub.ai/skills/afrexai-childcare-compliance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-childcare-compliance-fe49af6a9611aae4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides detailed US state licensing, staffing ratios, background checks, health, safety, and operational compliance for childcare centers and family daycare..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1kalin",
+      "userId": "s17e1q0nx23qnh4n429zzqc05x83hvsw",
+      "displayName": "1kalin",
+      "image": "https://avatars.githubusercontent.com/u/15705344?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 450,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772046794659,
+      "changelog": "Initial release: comprehensive US childcare compliance resource.\n\n- Covers licensing, health & safety, staffing, background checks, accreditation, and subsidy compliance for childcare centers and family daycare homes.\n- Details staff-to-child ratios, required trainings, and recordkeeping by program type.\n- Provides facility safety checklists and step-by-step incident reporting procedures.\n- Includes financial compliance guidelines: subsidies, tax, payroll, and QRIS incentives.\n- Offers quick-reference tables for key requirements, deadlines, and operational standards.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:779c62da951b4529eabf4d066a850f8bd8185a75383986aa99fd4a49055740da"
+}

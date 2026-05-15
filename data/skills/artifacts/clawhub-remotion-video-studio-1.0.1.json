@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/remotion-video-studio@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.remotion_video_studio",
+  "skill": {
+    "id": 41649,
+    "skillKey": "clawhub-remotion-video-studio",
+    "name": "video by remotion"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "remotion-video-studio",
+    "url": "https://clawhub.ai/skills/remotion-video-studio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/remotion-video-studio-3153efb7d6621f06.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated video production studio using Remotion + React + TTS. Creates animated explainer videos from JSON content scripts through a make-driven pipeline: T..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hzsunzixiang",
+      "userId": "s17069wbwf7gnepk3p3g4wa06183g8zb",
+      "displayName": "hzsunzixiang",
+      "image": "https://avatars.githubusercontent.com/u/5396165?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776323310984,
+      "changelog": "- Clarified the \"make only\" rule: all project operations must use `make` except for `init_project.py` during initial scaffolding.\n- Added a note explaining that the skill package stores files like `Makefile` as `Makefile.txt` and omits `.gitignore` for publishing compliance; these are restored by `init_project.py`.\n- No functional or code changes in this release; documentation improved for easier onboarding and clearer project initialization workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4f318980226cea4b2d48b770069c6395a2073113666eb2e607dd6c7ddf2f9c5f"
+}

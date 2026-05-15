@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24925,
+  "uuid": "skill-clawhub-skill-discovery-monitor",
+  "skillKey": "clawhub-skill-discovery-monitor",
+  "name": "Skill Discovery Monitor",
+  "summary": "Monitor and discover popular skills across platforms with daily reports, analytics, usage flowcharts, and multi-channel notifications.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_discovery_monitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhdryanchang",
+      "features": [
+        "Monitor and discover popular skills across platforms with daily reports, analytics, usage flowc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-discovery-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/252296405?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-discovery-monitor",
+      "url": "https://clawhub.ai/skills/skill-discovery-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-discovery-monitor",
+    "url": "https://clawhub.ai/skills/skill-discovery-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-discovery-monitor-0cb275394c1efae2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-discovery-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-discovery-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:28340dac46053ba6cb5c2902e866a48dfcf969a6f89413e8960297de5d8f6e24",
+      "artifactSizeBytes": 2131
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T07:14:28.598Z"
+}

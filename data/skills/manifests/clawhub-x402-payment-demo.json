@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12154,
+  "uuid": "skill-clawhub-x402-payment-demo",
+  "skillKey": "clawhub-x402-payment-demo",
+  "name": "x402-payment-demo",
+  "summary": "Demo of x402 payment protocol by fetching a protected image. Triggers: 'demo x402-payment'",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x402_payment_demo",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "open-aibank",
+      "features": [
+        "Demo of x402 payment protocol by fetching a protected image",
+        "Triggers: 'demo x402-payment'"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x402-payment-demo@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/195556239?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x402-payment-demo",
+      "url": "https://clawhub.ai/skills/x402-payment-demo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x402-payment-demo",
+    "url": "https://clawhub.ai/skills/x402-payment-demo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x402-payment-demo-69410c6e5e996995.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x402-payment-demo@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-x402-payment-demo-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e9876a862c1059a9a18a7c9d14afc4e3b2e47b963fecb734058013c1b3044d17",
+      "artifactSizeBytes": 1933
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T15:51:47.625Z"
+}

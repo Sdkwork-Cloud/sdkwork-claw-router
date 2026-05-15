@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72232,
+  "uuid": "skill-clawhub-aliyun",
+  "skillKey": "clawhub-aliyun",
+  "name": "Aliyun",
+  "summary": "提供阿里云公开产品规格、定价、账单趋势及服务公告的合规摘要，不涉及账号操作或敏感信息处理。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codenova58",
+      "features": [
+        "提供阿里云公开产品规格、定价、账单趋势及服务公告的合规摘要，不涉及账号操作或敏感信息处理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aliyun@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191358186?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aliyun",
+      "url": "https://clawhub.ai/skills/aliyun"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun",
+    "url": "https://clawhub.ai/skills/aliyun",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-5a5c07672a4efaf6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aliyun@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aliyun-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7ba94f90b7747588cb9bcc0bac6c2385597af4f91d4951b9dba07a8936b0a46c",
+      "artifactSizeBytes": 2447
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T18:11:24.075Z"
+}

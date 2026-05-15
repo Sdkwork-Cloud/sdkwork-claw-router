@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flutter-schema@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flutter_schema",
+  "skill": {
+    "id": 60292,
+    "skillKey": "clawhub-flutter-schema",
+    "name": "flutter-schema"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flutter-schema",
+    "url": "https://clawhub.ai/skills/flutter-schema",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flutter-schema-cadae98e57fc2a18.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Flutter GetX 三层架构规范。core + shared + modules 纵向分层，业务模块 GetX 化。适用于新模块创建、目录设计、代码评审。支持 scaffold 搭建目录结构。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "symboy",
+      "userId": "publishers:symboy",
+      "displayName": "symboy",
+      "image": "https://avatars.githubusercontent.com/u/55651883?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 305,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773220204856,
+      "changelog": "Initial release.\n\n- Provides a three-layer vertical architecture guideline for Flutter using GetX: shared, core, modules.\n- Defines recommended directory structure, naming conventions, and dependency rules.\n- Supports scaffold-based directory and module creation.\n- Includes guidance for module and page generation using helper scripts.\n- Suitable for new module creation, directory planning, and code review.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fdfbbb089ca0472befd3cca0865d15a565e39d0f099909a37159f71dcb819870"
+}

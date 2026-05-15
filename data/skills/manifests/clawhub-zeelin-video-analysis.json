@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67362,
+  "uuid": "skill-clawhub-zeelin-video-analysis",
+  "skillKey": "clawhub-zeelin-video-analysis",
+  "name": "ZeeLin-video-analysis 视频拉片",
+  "summary": "视频分析技能，支持本地视频文件直接上传分析。当用户说'分析视频'、'视频处理'、'分析这个视频'等并上传视频文件时使用此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zeelin_video_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liyayong",
+      "features": [
+        "视频分析技能，支持本地视频文件直接上传分析。当用户说'分析视频'、'视频处理'、'分析这个视频'等并上传视频文件时使用此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zeelin-video-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/247490724?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zeelin-video-analysis",
+      "url": "https://clawhub.ai/skills/zeelin-video-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zeelin-video-analysis",
+    "url": "https://clawhub.ai/skills/zeelin-video-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zeelin-video-analysis-0347817ddc161e91.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zeelin-video-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zeelin-video-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0cf626b109503b9d31fee8107c612ee6fd777392a890805cdba25cefb26f2fc1",
+      "artifactSizeBytes": 2502
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T06:39:42.082Z"
+}

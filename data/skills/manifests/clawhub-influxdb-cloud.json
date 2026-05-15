@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34555,
+  "uuid": "skill-clawhub-influxdb-cloud",
+  "skillKey": "clawhub-influxdb-cloud",
+  "name": "Influxdb Cloud",
+  "summary": "InfluxDB Cloud integration. Manage data, records, and automate workflows. Use when the user wants to interact with InfluxDB Cloud data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.influxdb_cloud",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "InfluxDB Cloud integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with InfluxDB Cloud data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/influxdb-cloud@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "influxdb-cloud",
+      "url": "https://clawhub.ai/skills/influxdb-cloud"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "influxdb-cloud",
+    "url": "https://clawhub.ai/skills/influxdb-cloud",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/influxdb-cloud-07ecae0f45840a9f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/influxdb-cloud@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-influxdb-cloud-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c222eebf1f556dcdc92cd99c247aac9ae546ad062975c69020c4f8d3c1987eb",
+      "artifactSizeBytes": 1892
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:35:11.776Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-comment@0.10.7-dev",
+  "version": "0.10.7-dev",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_comment",
+  "skill": {
+    "id": 26181,
+    "skillKey": "clawhub-youtube-comment",
+    "name": "YouTube Comment"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-comment",
+    "url": "https://clawhub.ai/skills/youtube-comment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-comment-5b8fbcf24a961fdf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage YouTube comments. Use this skill to list, create, update, delete, mark as spam, or set moderation status for comments. Useful when working with YouTub..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openwaygate",
+      "userId": "s17ceqc046w9bhxqw6az7jvb9h83j6hq",
+      "displayName": "OpenWaygate",
+      "image": "https://avatars.githubusercontent.com/u/27287694?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 372,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.10.7-dev",
+      "createdAt": 1773496832798,
+      "changelog": "- Updated skill metadata to use the new openclaw format, specifying requirements and installation details.\n- Added homepage, emojis, and install instructions for improved discoverability and setup.\n- No changes to command usage or functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:697f9dfd0a5b80838cfa3f1dc0bce7cb41a4832d1a1b2bccb8d9468a8232ab8f"
+}

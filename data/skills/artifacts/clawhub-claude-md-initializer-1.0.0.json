@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claude-md-initializer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_md_initializer",
+  "skill": {
+    "id": 35897,
+    "skillKey": "clawhub-claude-md-initializer",
+    "name": "CLAUDE MD Initializer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-md-initializer",
+    "url": "https://clawhub.ai/skills/claude-md-initializer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-md-initializer-c4a29bfed8be3a69.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when onboarding a repository into Claude Code by creating or improving CLAUDE.md, and optionally identifying useful skills, hooks, and verifier setup."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wimi321",
+      "userId": "s177xf3genmsr92b653psf6fas83zzd8",
+      "displayName": "wimi321",
+      "image": "https://avatars.githubusercontent.com/u/34830250?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775133886130,
+      "changelog": "Initial extraction from local Claude Code source",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c3bc636f0204a5a651268eb33cb7a8292bd02cd70643dc492158de179d22cdd0"
+}

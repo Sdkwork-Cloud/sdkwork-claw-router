@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wishfinity@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wishfinity",
+  "skill": {
+    "id": 12244,
+    "skillKey": "clawhub-wishfinity",
+    "name": "Wishfinity +W"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wishfinity",
+    "url": "https://clawhub.ai/skills/wishfinity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wishfinity-ba51d73771c9335c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Add \"save for later\" to shopping agents, product recommendation engines, gift idea generators, and AI commerce experiences. Saves any product URL to a universal wishlist. Requires MCP config and free Wishfinity account."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leebellon",
+      "userId": "publishers:leebellon",
+      "displayName": "leebellon",
+      "image": "https://avatars.githubusercontent.com/u/221430639?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1761,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769895557421,
+      "changelog": "- Initial release adds Wishfinity integration for universal \"save for later\" functionality.\n- Lets users save any product URL to a Wishfinity wishlist from shopping and product recommendation agents.\n- Requires MCP server config and a free Wishfinity account.\n- Provides an `add_to_wishlist` tool for agents to generate save links.\n- Compatible with all retailers and shopping agents; wishlists are shareable and support price tracking.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:28164b8601aefd5592ed82140e73a8d6fd073fbf3e7df8f7db67ccca1902d105"
+}

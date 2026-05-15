@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sentiment-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sentiment_analyzer",
+  "skill": {
+    "id": 70248,
+    "skillKey": "clawhub-sentiment-analyzer",
+    "name": "Sentiment Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sentiment-analyzer",
+    "url": "https://clawhub.ai/skills/sentiment-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sentiment-analyzer-5bffb205155edf26.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "客服场景文本情绪分析工具。当需要对客户消息进行情绪识别（愤怒/焦虑/中性/满意/热情）、敏感词检测、情绪波动告警时使用。适用于：自动调整回复语气、触发紧急转接、投诉分级处理、NPS情绪追踪。触发词：情绪分析、情感检测、客户情绪、愤怒检测、情绪告警、sentiment。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hongfeng-wenfang",
+      "userId": "s175c3vwkkxh430pjqprq7kkd983xp2y",
+      "displayName": "hongfeng-wenfang",
+      "image": "https://avatars.githubusercontent.com/u/79987880?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 276,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774850674151,
+      "changelog": "sentiment-analyzer 1.0.0 初始版本发布\n\n- 提供客服场景下的文本情绪分析工具，支持愤怒、焦虑、中性、满意、热情五类情绪识别。\n- 内置敏感词检测与情绪波动告警机制，输出结构化 JSON，包括情绪分类、分数、关键词、敏感词、告警标记等字段。\n- 自动匹配并推荐合适的回复语气（如歉意、安抚、中性、积极、热情）。\n- 提供情绪追踪脚本，支持对话过程中连续情绪波动监测，便于及时人工介入及分级处理。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4144a7139d842458ace448995f86f594a23268b8627599df0ed44af0fefbf1f2"
+}

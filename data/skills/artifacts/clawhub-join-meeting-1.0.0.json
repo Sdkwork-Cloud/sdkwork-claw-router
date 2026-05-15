@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/join-meeting@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.join_meeting",
+  "skill": {
+    "id": 51304,
+    "skillKey": "clawhub-join-meeting",
+    "name": "Join meeting"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "join-meeting",
+    "url": "https://clawhub.ai/skills/join-meeting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/join-meeting-6696b8bb9f514d09.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AgentCall (agentcall.dev) — Join a video meeting (Google Meet, Teams, Zoom) as an AI bot with voice and visual presence. Supports audio-only mode with voice..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johnpatternai",
+      "userId": "s17fkca5h4de8s2egf7hfnwgx185b6zx",
+      "displayName": "johnpatternai",
+      "image": "https://avatars.githubusercontent.com/u/207832710?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776853035239,
+      "changelog": "Initial release of join-meeting.\n\n- Join Google Meet, Teams, or Zoom calls as an AI bot with voice and visual presence with screenshare, voice and webpage share (secure temporary url) to connect and control your bots\n- Supports multiple modes: audio-only, animated avatar, screenshare, and custom webpage UI.\n- Includes voice intelligence features: barge-in, interruption handling, and text-to-speech.\n- Automatic user onboarding, API key management, and mode selection with persistent preferences.\n- Flexible options for default mode, voice strategy, bot naming, and timeout settings.\n- Thorough setup and usage documentation for all features and requirements.\n- Free initial usage. No card required. Voice included. Just one API Key needed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5aed8af3876c6be3600c4b7c83cb4d06a4ac43124e5ad3237f3ca1118efcc230"
+}

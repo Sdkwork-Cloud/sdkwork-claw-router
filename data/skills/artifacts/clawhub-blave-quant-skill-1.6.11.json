@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/blave-quant-skill@1.6.11",
+  "version": "1.6.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blave_quant_skill",
+  "skill": {
+    "id": 58247,
+    "skillKey": "clawhub-blave-quant-skill",
+    "name": "Blave Quant Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blave-quant-skill",
+    "url": "https://clawhub.ai/skills/blave-quant-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blave-quant-skill-f0a6025df99bcf12.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use for: (1) Blave market alpha data — 籌碼集中度 Holder Concentration, 多空力道 Taker Intensity, 巨鯨警報 Whale Hunter, 擠壓動能 Squeeze Momentum, 市場方向 Market Direction, 資金稀..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "blave-wei",
+      "userId": "s177d3gec876fq6yd96yxsjfhd841bk3",
+      "displayName": "Tseng Wei-Yu",
+      "image": "https://avatars.githubusercontent.com/u/158068248?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 676,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 53
+    },
+    "latestVersion": {
+      "version": "1.6.11",
+      "createdAt": 1777277745218,
+      "changelog": "fix HC backtest: don't force-close last open trade at end of data",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4e4bebf95e1d28072824b4d793c2f8252ac35e1e481de9ac061f90f68b2683c7"
+}

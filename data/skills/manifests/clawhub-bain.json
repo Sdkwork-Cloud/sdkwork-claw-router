@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72708,
+  "uuid": "skill-clawhub-bain",
+  "skillKey": "clawhub-bain",
+  "name": "Bain",
+  "summary": "提供贝恩公司的战略咨询信息，涵盖其历史、商业模式、私募股权领导地位及结果导向的咨询方法。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bain",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供贝恩公司的战略咨询信息，涵盖其历史、商业模式、私募股权领导地位及结果导向的咨询方法。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bain@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bain",
+      "url": "https://clawhub.ai/skills/bain"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bain",
+    "url": "https://clawhub.ai/skills/bain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bain-e39456c14927ddcc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bain@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bain-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bfe633d4817fd3d311d370cbafc8036b3933e4f3c4d657d3c932e05175c6c117",
+      "artifactSizeBytes": 2134
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T17:06:05.829Z"
+}

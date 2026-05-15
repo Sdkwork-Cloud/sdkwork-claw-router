@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawbio-pharmgx-reporter@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawbio_pharmgx_reporter",
+  "skill": {
+    "id": 20849,
+    "skillKey": "clawhub-clawbio-pharmgx-reporter",
+    "name": "Pharmgx Reporter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawbio-pharmgx-reporter",
+    "url": "https://clawhub.ai/skills/clawbio-pharmgx-reporter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawbio-pharmgx-reporter-fa6d26f6217cc4ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Pharmacogenomic report from DTC genetic data (23andMe/AncestryDNA)"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "manuelcorpas",
+      "userId": "publishers:manuelcorpas",
+      "displayName": "manuelcorpas",
+      "image": "https://avatars.githubusercontent.com/u/383303?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 534,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772049212167,
+      "changelog": "Initial release of PharmGx Reporter – generate a pharmacogenomic report from DTC genetic data.\n\n- Parses 23andMe or AncestryDNA raw genetic files and auto-detects the format.\n- Extracts 31 pharmacogenomic SNPs across 12 genes relevant to drug response.\n- Calls star alleles and determines metabolizer phenotypes.\n- Provides CPIC-based recommendations for 51 medications, covering multiple drug classes.\n- Outputs a comprehensive markdown report with gene profiles, drug recommendations, and safety alerts.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:06b74b65d1f38e17c74b0b13f6aa8134eaaa31a0449484f92f583ab691ae2bb6"
+}

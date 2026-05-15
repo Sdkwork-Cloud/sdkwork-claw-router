@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24198,
+  "uuid": "skill-clawhub-iemail-send",
+  "skillKey": "clawhub-iemail-send",
+  "name": "Send transactional email via DmartechX/Iemail OpenAPI. Configure in OpenClaw skills env or use secret.md.",
+  "summary": "Send transactional email via Iemail OpenAPI. Configure via OpenClaw skill env only.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iemail_send",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jack",
+      "features": [
+        "Send transactional email via Iemail OpenAPI",
+        "Configure via OpenClaw skill env only."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/iemail-send@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3220935?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "iemail-send",
+      "url": "https://clawhub.ai/skills/iemail-send"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iemail-send",
+    "url": "https://clawhub.ai/skills/iemail-send",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iemail-send-a708271361b2d5f0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/iemail-send@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-iemail-send-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:88284686530eb540ccc0036f652f4d4dd858d5361e1f0310da444de9170a0e8d",
+      "artifactSizeBytes": 2089
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T01:23:27.122Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/filed@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.filed",
+  "skill": {
+    "id": 50857,
+    "skillKey": "clawhub-filed",
+    "name": "Filed — US Business Entity Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "filed",
+    "url": "https://clawhub.ai/skills/filed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/filed-d0481a767ebfdcc5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search and retrieve US business entity data (LLCs, corporations, partnerships) from official Secretary of State records via the Filed.dev API. Use when looki..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mgrantley",
+      "userId": "publishers:mgrantley",
+      "displayName": "mgrantley",
+      "image": "https://avatars.githubusercontent.com/u/5124499?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 356,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773703393934,
+      "changelog": "Add metadata.openclaw declaring FILED_API_KEY as required credential",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b10c6f343de0c0d7103817831a8a5bf4d3c0b45b02c0cb27b566ade2c7cc2078"
+}

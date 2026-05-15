@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64709,
+  "uuid": "skill-clawhub-sausg",
+  "skillKey": "clawhub-sausg",
+  "name": "sausg",
+  "summary": "SAUSG（结构通用分析与设计软件）自动计算与操作工具。用于弹塑性计算、非线性分析、动力时程分析、隔震减震设计、钢结构分析等。当用户提及 SAUSG、SAUSAGE、OpenSAUSG、SAUSGDelta、SAUSGJG、SAUSGPI、SAUSGZeta 等相关软件，或要求进行弹塑性计算、读取计算结果时使用此技能。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sausg",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiasu1017-beep",
+      "features": [
+        "SAUSG（结构通用分析与设计软件）自动计算与操作工具。用于弹塑性计算、非线性分析、动力时程分析、隔震减震设计、钢结构分析等。当用户提及 SAUSG、SAUSAGE、OpenSAUSG、SA."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sausg@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259021401?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sausg",
+      "url": "https://clawhub.ai/skills/sausg"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sausg",
+    "url": "https://clawhub.ai/skills/sausg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sausg-31ee7f1bc6d2eacd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sausg@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sausg-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6101a52501efc694d5b2ac53383950b9f47ec67f571195fce78150a2f324724c",
+      "artifactSizeBytes": 2251
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T06:09:00.431Z"
+}

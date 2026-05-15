@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42287,
+  "uuid": "skill-clawhub-save-video",
+  "skillKey": "clawhub-save-video",
+  "name": "Save Video",
+  "summary": "Download and save videos from mainstream websites by providing a video URL for automatic extraction and local saving.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.save_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Skill",
+      "features": [
+        "Download and save videos from mainstream websites by providing a video URL for automatic extrac."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/save-video@1.0.0",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/save-video/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "save-video",
+      "url": "https://clawhub.ai/skills/save-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "save-video",
+    "url": "https://clawhub.ai/skills/save-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/save-video-f02def4067509bc4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/save-video@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-save-video-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a262f7747b584b9233822781f5d1f21457be1d51f6f4ddb343ed42f7b01fd149",
+      "artifactSizeBytes": 2031
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T10:35:54.423Z"
+}

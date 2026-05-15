@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59709,
+  "uuid": "skill-clawhub-amazon-analyse",
+  "skillKey": "clawhub-amazon-analyse",
+  "name": "Amazon Analyse",
+  "summary": "对亚马逊竞品Listing进行全维度穿透分析，包括文案逻辑、评论分析、关键词分析、市场动态等。分析完成后自动保存为Markdown报告文档到reports/目录。Invoke when user uses /amazon-analyse command with a product ASIN.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_analyse",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ChanaLii",
+      "features": [
+        "对亚马逊竞品Listing进行全维度穿透分析，包括文案逻辑、评论分析、关键词分析、市场动态等。分析完成后自动保存为Markdown报告文档到reports/目录。Invoke when us."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amazon-analyse@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20842481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amazon-analyse",
+      "url": "https://clawhub.ai/skills/amazon-analyse"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-analyse",
+    "url": "https://clawhub.ai/skills/amazon-analyse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-analyse-7f20aaa7c53fd88f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amazon-analyse@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-amazon-analyse-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:165a3743e4a2d223969a68ef2ddd27d57609bea5ca3c3df470da5cd463c030f9",
+      "artifactSizeBytes": 2537
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T09:08:49.437Z"
+}

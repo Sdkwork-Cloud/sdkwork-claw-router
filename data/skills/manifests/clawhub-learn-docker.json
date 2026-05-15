@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28720,
+  "uuid": "skill-clawhub-learn-docker",
+  "skillKey": "clawhub-learn-docker",
+  "name": "Learn Docker",
+  "summary": "Learn Docker on LabEx via container fundamentals courses and image or compose labs. Docker courses and labs through LabEx MCP; return labex.io URLs for conti...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.learn_docker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huhuhang",
+      "features": [
+        "Learn Docker on LabEx via container fundamentals courses and image or compose labs",
+        "Docker courses and labs through LabEx MCP",
+        "return labex.io URLs for conti..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/learn-docker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5147530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "learn-docker",
+      "url": "https://clawhub.ai/skills/learn-docker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "learn-docker",
+    "url": "https://clawhub.ai/skills/learn-docker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/learn-docker-ec538b6d31afaf7c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/learn-docker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-learn-docker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dc912000e7cb98b5ee778b9034fb667cea99b8ffacd1a0f5c775b48fe1bfdbdf",
+      "artifactSizeBytes": 2277
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T07:18:36.712Z"
+}

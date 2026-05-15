@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45043,
+  "uuid": "skill-clawhub-xie-code-review",
+  "skillKey": "clawhub-xie-code-review",
+  "name": "Xie Code Review",
+  "summary": "Automated code review assistant. Analyzes code changes, PRs, and files for quality issues, best practices, security concerns, and style violations. Provides...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xie_code_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "michealxie001",
+      "features": [
+        "Automated code review assistant",
+        "Analyzes code changes, PRs, and files for quality issues, best practices, security concerns, an.",
+        "Provides..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xie-code-review@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/231448030?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xie-code-review",
+      "url": "https://clawhub.ai/skills/xie-code-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xie-code-review",
+    "url": "https://clawhub.ai/skills/xie-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xie-code-review-abfb92a2fb478c08.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xie-code-review@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xie-code-review-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a39effb552576e82f206d5cfe315973748ba0310fdf3642ebcd87611a1dd8ae6",
+      "artifactSizeBytes": 1967
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T08:30:28.267Z"
+}

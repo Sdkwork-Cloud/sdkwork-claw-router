@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30779,
+  "uuid": "skill-clawhub-1msg",
+  "skillKey": "clawhub-1msg",
+  "name": "1Msg",
+  "summary": "1msg integration. Manage data, records, and automate workflows. Use when the user wants to interact with 1msg data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.1msg",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "1msg integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with 1msg data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/1msg@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "1msg",
+      "url": "https://clawhub.ai/skills/1msg"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "1msg",
+    "url": "https://clawhub.ai/skills/1msg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/1msg-da310dc3d51a2d09.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/1msg@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-1msg-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6399f4f91e75feda1539df387fbb544f21b0d4767e0e9464648d40467586ff39",
+      "artifactSizeBytes": 1802
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:06:41.465Z"
+}

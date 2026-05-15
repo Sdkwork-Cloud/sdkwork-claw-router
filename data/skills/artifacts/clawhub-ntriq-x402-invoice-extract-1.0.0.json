@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ntriq-x402-invoice-extract@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ntriq_x402_invoice_extract",
+  "skill": {
+    "id": 54320,
+    "skillKey": "clawhub-ntriq-x402-invoice-extract",
+    "name": "Ntriq X402 Invoice Extract"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ntriq-x402-invoice-extract",
+    "url": "https://clawhub.ai/skills/ntriq-x402-invoice-extract",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ntriq-x402-invoice-extract-49d1a1be424b1797.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract structured invoice data (vendor, line items, totals, tax) from any invoice image. Pay $0.03 USDC via x402."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ntriq-gh",
+      "userId": "s170tfc8cnswm72pmy4aqs9yd5841wq0",
+      "displayName": "ntriq",
+      "image": "https://avatars.githubusercontent.com/u/215101248?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776384037975,
+      "changelog": "- Initial release of ntriq-x402-invoice-extract.\n- Extracts structured data from invoice or receipt images, including vendor, line items, totals, and tax.\n- Accepts image URL or base64; supports optional output language selection.\n- No cloud upload or API key required—runs locally.\n- Charges $0.03 USDC per call via x402 on Base mainnet.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1fa38be11c509340b43d34257fb797cd5541c89288ce94828c1c842ca1a39fb2"
+}

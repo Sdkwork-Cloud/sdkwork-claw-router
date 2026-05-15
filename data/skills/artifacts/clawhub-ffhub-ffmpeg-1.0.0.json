@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ffhub-ffmpeg@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ffhub_ffmpeg",
+  "skill": {
+    "id": 23225,
+    "skillKey": "clawhub-ffhub-ffmpeg",
+    "name": "FFHub FFmpeg Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ffhub-ffmpeg",
+    "url": "https://clawhub.ai/skills/ffhub-ffmpeg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ffhub-ffmpeg-c0176882b393fa7d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Process video/audio files using FFHub.io cloud FFmpeg API. Use when the user wants to convert, compress, trim, resize, extract audio, generate thumbnails, or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gangbo",
+      "userId": "publishers:gangbo",
+      "displayName": "gangbo",
+      "image": "https://avatars.githubusercontent.com/u/1749700?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 447,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773023476978,
+      "changelog": "Initial release: cloud FFmpeg processing via FFHub.io API",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9c724a144a41ad27f22b6af9bd2069da0769306e0aa494581559b916a86893d0"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openmm-grid-trading@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openmm_grid_trading",
+  "skill": {
+    "id": 14615,
+    "skillKey": "clawhub-openmm-grid-trading",
+    "name": "OpenMM Grid Trading"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openmm-grid-trading",
+    "url": "https://clawhub.ai/skills/openmm-grid-trading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openmm-grid-trading-d293bdf81476bfbc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and manage grid trading strategies with OpenMM. Automated buy/sell around center price."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adacapo21",
+      "userId": "publishers:adacapo21",
+      "displayName": "Angelos Kappos",
+      "image": "https://avatars.githubusercontent.com/u/9395707?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1106,
+      "installsAllTime": 7,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772037551670,
+      "changelog": "Initial release — automate grid trading strategies using OpenMM.\n\n- Supports multiple exchanges: MEXC, Bitget, Gate.io, Kraken.\n- Flexible grid configuration: adjustable levels, spacing (linear, geometric, custom), and size models (flat, pyramidal).\n- Volatility-based spread adjustment to dynamically adapt grid in changing markets.\n- JSON grid profiles for advanced setups.\n- Includes dry-run mode, balance checks, risk controls (max position, safety reserve), and graceful shutdown.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e6adc298014849a5a4b37d6ea4f506c6c3b8b866611d1a6f3b4339084496e9e7"
+}

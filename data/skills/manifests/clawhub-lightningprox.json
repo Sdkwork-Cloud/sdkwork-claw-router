@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25975,
+  "uuid": "skill-clawhub-lightningprox",
+  "skillKey": "clawhub-lightningprox",
+  "name": "Lightningprox",
+  "summary": "Pay-per-use AI gateway via Bitcoin Lightning. No API keys, no account — pay sats, get inference. Supports Anthropic (claude-opus-4-5-20251101, claude-sonnet-...",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lightningprox",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "unixlamadev-spec",
+      "features": [
+        "Pay-per-use AI gateway via Bitcoin Lightning",
+        "No API keys, no account — pay sats, get inference",
+        "Supports Anthropic (claude-opus-4-5-20251101, claude-sonnet-..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lightningprox@1.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/251052015?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lightningprox",
+      "url": "https://clawhub.ai/skills/lightningprox"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lightningprox",
+    "url": "https://clawhub.ai/skills/lightningprox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lightningprox-7cd8298c38546f8d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lightningprox@1.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lightningprox-1.4.0.json",
+      "version": "1.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2c0cc479d2fc878bcbd1df92400fd2c839b570f9b5df30fa7ed9bdf2f39cdd6d",
+      "artifactSizeBytes": 1952
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T00:38:09.045Z"
+}

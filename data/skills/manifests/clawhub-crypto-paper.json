@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38147,
+  "uuid": "skill-clawhub-crypto-paper",
+  "skillKey": "clawhub-crypto-paper",
+  "name": "Crypto Paper Analyzer",
+  "summary": "Research, analyze, and summarize cryptocurrency whitepapers and research papers. Locate papers via web_search, fetch/extract with web_fetch, apply structured...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_paper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "skunnyo",
+      "features": [
+        "Research, analyze, and summarize cryptocurrency whitepapers and research papers",
+        "Locate papers via web_search, fetch/extract with web_fetch, apply structured..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crypto-paper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51137961?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crypto-paper",
+      "url": "https://clawhub.ai/skills/crypto-paper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-paper",
+    "url": "https://clawhub.ai/skills/crypto-paper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-paper-47228adaaf19f651.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crypto-paper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crypto-paper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:28e07f60112613c939fb7eb15673b89b6701a55521c8249b20b65b6ae6e157cc",
+      "artifactSizeBytes": 2050
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T06:55:22.803Z"
+}

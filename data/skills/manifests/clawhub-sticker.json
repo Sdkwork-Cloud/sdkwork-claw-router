@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71849,
+  "uuid": "skill-clawhub-sticker",
+  "skillKey": "clawhub-sticker",
+  "name": "sticker",
+  "summary": "对话情绪感知表情包技能。根据对话上下文的情绪和状况，自动选择合适的关键词搜索表情包并展示。当此技能被加载时，说明语境适合发表情——主动发一张。触发词：发个表情、来个表情包、斗图、emoji、sticker、谢谢、感谢、辛苦了、太好了、太棒了、厉害、牛、666、哈哈、笑死、搞笑、无语、累了、摸鱼、躺平、加油、你好、...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sticker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chensanle",
+      "features": [
+        "对话情绪感知表情包技能。根据对话上下文的情绪和状况，自动选择合适的关键词搜索表情包并展示。当此技能被加载时，说明语境适合发表情——主动发一张。触发词：发个表情、来个表情包、斗图、emoji、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sticker@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31087327?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sticker",
+      "url": "https://clawhub.ai/skills/sticker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sticker",
+    "url": "https://clawhub.ai/skills/sticker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sticker-57c4b13a4c7335e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sticker@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-sticker-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fbb6d7e4f92736d1b0abf9d80b49e46e47f15b5169e3d67c80f68ae8ae88ab5f",
+      "artifactSizeBytes": 2275
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T03:41:43.428Z"
+}

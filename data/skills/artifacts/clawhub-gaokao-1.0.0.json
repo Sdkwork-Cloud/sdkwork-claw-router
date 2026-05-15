@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gaokao@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gaokao",
+  "skill": {
+    "id": 50816,
+    "skillKey": "clawhub-gaokao",
+    "name": "高考 (Gaokao)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gaokao",
+    "url": "https://clawhub.ai/skills/gaokao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gaokao-abc4d81d33a1504c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Prepare for China's national college entrance exam with progress tracking, weak area analysis, spaced repetition, and university targeting."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 956,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770993267538,
+      "changelog": "Initial release: comprehensive Gaokao preparation with 7 auxiliary files covering exam structure, tracking, study methods, wellbeing, university targeting, user types, and feedback system",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b017cf90db23b72ebca09c16e80a8e163c1f13aa147e2bceaec48917bd5a49d0"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21575,
+  "uuid": "skill-clawhub-coze-image-gen",
+  "skillKey": "clawhub-coze-image-gen",
+  "name": "Coze Image Gen",
+  "summary": "Create images from text prompts. Use when you need to generate/draw/create images based on descriptions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coze_image_gen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Create images from text prompts",
+        "Use when you need to generate/draw/create images based on descriptions."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coze-image-gen@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coze-image-gen",
+      "url": "https://clawhub.ai/skills/coze-image-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coze-image-gen",
+    "url": "https://clawhub.ai/skills/coze-image-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coze-image-gen-fd40cb2037557bc6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coze-image-gen@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-coze-image-gen-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:10788f6fb32bda460757996d0a9c2eab03ff8c892dba1ac70e22eb8d8c99900f",
+      "artifactSizeBytes": 2170
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T09:34:39.267Z"
+}

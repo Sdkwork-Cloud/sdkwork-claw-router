@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/llm-evaluator-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llm_evaluator_pro",
+  "skill": {
+    "id": 15938,
+    "skillKey": "clawhub-llm-evaluator-pro",
+    "name": "LLM Evaluator Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llm-evaluator-pro",
+    "url": "https://clawhub.ai/skills/llm-evaluator-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llm-evaluator-pro-4b110b55d6e0a74b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "LLM-as-a-Judge evaluator via Langfuse. Scores traces on relevance, accuracy, hallucination, and helpfulness using GPT-5-nano as judge. Supports single trace..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiwithabidi",
+      "userId": "publishers:aiwithabidi",
+      "displayName": "aiwithabidi",
+      "image": "https://avatars.githubusercontent.com/u/208891229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 839,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771140092289,
+      "changelog": "LLM-as-a-Judge evaluator via Langfuse",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d7e5c0c6993cbfb52fbfcc10994ce4de6e1c2324cbf2ddb5b4cf84c3269cd6df"
+}

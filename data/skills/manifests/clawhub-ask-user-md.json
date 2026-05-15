@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71232,
+  "uuid": "skill-clawhub-ask-user-md",
+  "skillKey": "clawhub-ask-user-md",
+  "name": "ask-user-md",
+  "summary": "引导用户通过行业模板逐步选择产品类型、功能和需求，最终形成结构化需求文档，帮助明确产品设计和开发方向。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ask_user_md",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ecparter",
+      "features": [
+        "引导用户通过行业模板逐步选择产品类型、功能和需求，最终形成结构化需求文档，帮助明确产品设计和开发方向。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ask-user-md@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/89874920?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ask-user-md",
+      "url": "https://clawhub.ai/skills/ask-user-md"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ask-user-md",
+    "url": "https://clawhub.ai/skills/ask-user-md",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ask-user-md-76a62a34174e6dbb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ask-user-md@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ask-user-md-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6c557209b34db361d6b974fc23ce95133c01197cb0cf3193f0e2a220c7467273",
+      "artifactSizeBytes": 2330
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T04:04:36.999Z"
+}

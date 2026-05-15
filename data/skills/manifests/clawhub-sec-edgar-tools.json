@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62279,
+  "uuid": "skill-clawhub-sec-edgar-tools",
+  "skillKey": "clawhub-sec-edgar-tools",
+  "name": "Sec Edgar Tools",
+  "summary": "从 SEC EDGAR 系统获取和解析公司监管文件，支持 SEC 文件检索、财务报表（10-K/10-Q）提取、内部人交易（Form 4）追踪及机构持仓（13F）分析。。",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sec_edgar_tools",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tang Weigang",
+      "features": [
+        "从 SEC EDGAR 系统获取和解析公司监管文件，支持 SEC 文件检索、财务报表（10-K/10-Q）提取、内部人交易（Form 4）追踪及机构持仓（13F）分析。。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sec-edgar-tools@0.3.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259277235?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sec-edgar-tools",
+      "url": "https://clawhub.ai/skills/sec-edgar-tools"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sec-edgar-tools",
+    "url": "https://clawhub.ai/skills/sec-edgar-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sec-edgar-tools-55616ea657d16962.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sec-edgar-tools@0.3.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-sec-edgar-tools-0.3.3.json",
+      "version": "0.3.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5b668a35608f47d35dc062c5f0746a3e461dac8d903442a087ba060035d31aeb",
+      "artifactSizeBytes": 2058
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T14:30:00.293Z"
+}

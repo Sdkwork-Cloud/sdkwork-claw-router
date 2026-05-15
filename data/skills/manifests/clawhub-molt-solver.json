@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14652,
+  "uuid": "skill-clawhub-molt-solver",
+  "skillKey": "clawhub-molt-solver",
+  "name": "Molt-Solver",
+  "summary": "Automatically solves Moltbook math captchas by parsing English text, extracting operations, calculating results, and formatting answers with two decimals.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.molt_solver",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "0xRaini",
+      "features": [
+        "Automatically solves Moltbook math captchas by parsing English text, extracting operations, cal."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/molt-solver@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/190923101?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "molt-solver",
+      "url": "https://clawhub.ai/skills/molt-solver"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "molt-solver",
+    "url": "https://clawhub.ai/skills/molt-solver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/molt-solver-47103020c1e95698.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/molt-solver@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-molt-solver-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b1f1e609a623ed1d785b2ce4c79242ef3e5f0eec0f2248352206dab07093b6a7",
+      "artifactSizeBytes": 1867
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T13:17:28.102Z"
+}

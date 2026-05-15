@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-odoo-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_odoo_skill",
+  "skill": {
+    "id": 25476,
+    "skillKey": "clawhub-openclaw-odoo-skill",
+    "name": "Openclaw Odoo Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-odoo-skill",
+    "url": "https://clawhub.ai/skills/openclaw-odoo-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-odoo-skill-1887a93d3234bbf6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build or use the Odoo ERP connector for OpenClaw (Sales, CRM, Purchase, Inventory, Projects, HR, Fleet, Manufacturing integration via XML-RPC)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hjrhjr",
+      "userId": "s176rxv965ptthf7pdge45wqvd845tam",
+      "displayName": "hjrhjr",
+      "image": "https://avatars.githubusercontent.com/u/13395235?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 387,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773402951826,
+      "changelog": "Initial release of Odoo ERP Connector for OpenClaw:\n\n- Integrates OpenClaw with Odoo 19 via XML-RPC, covering 153+ business modules.\n- Supports natural language control for Sales, CRM, Purchase, Inventory, Projects, HR, Fleet, Manufacturing, Calendar, and eCommerce.\n- Introduces \"smart actions\" with fuzzy matching and auto-create logic for seamless operations.\n- Includes comprehensive command examples for each module.\n- Provides robust API coverage through modular Ops classes and a SmartActionHandler.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0498923bf5bfdd4548d212b7e0917a76144b7954038266afbd957a40547aba87"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54881,
+  "uuid": "skill-clawhub-pipeworx-nationalize",
+  "skillKey": "clawhub-pipeworx-nationalize",
+  "name": "Pipeworx nationalize",
+  "summary": "Nationalize MCP — nationality prediction from first name (nationalize.io, free, no auth)",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_nationalize",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Nationalize MCP — nationality prediction from first name (nationalize.io, free, no auth)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-nationalize@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270792185?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-nationalize",
+      "url": "https://clawhub.ai/skills/pipeworx-nationalize"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-nationalize",
+    "url": "https://clawhub.ai/skills/pipeworx-nationalize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-nationalize-0f6d33a5d2d8c82f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-nationalize@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-nationalize-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0283a6009a29c5900032762f3136f20d92290853504cb10a6d16d5c1acc0deaf",
+      "artifactSizeBytes": 1862
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T18:29:20.467Z"
+}

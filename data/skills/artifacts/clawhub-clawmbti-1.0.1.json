@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawmbti@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawmbti",
+  "skill": {
+    "id": 42066,
+    "skillKey": "clawhub-clawmbti",
+    "name": "clawmbti"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawmbti",
+    "url": "https://clawhub.ai/skills/clawmbti",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawmbti-1a5ac5b89a742e97.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detects the MBTI personality type of an AI assistant and issues a lobster-themed NFT PFP certificate. Supports three trigger modes: user-initiated, passive t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "joyboy-sats",
+      "userId": "s1702atjw6y94whg3ngv4xy3d183qgh3",
+      "displayName": "Joyboy",
+      "image": "https://avatars.githubusercontent.com/u/43311360?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775793788461,
+      "changelog": "- Skill renamed from \"mbti-nft\" to \"clawmbti\".\n- No changes to execution flow, triggers, or behavior.\n- Description updated to reflect new skill name.\n- All core functionality and user experience remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6897b1f25627647e641fd142fe2161c0e11e549bdbc4b6d623447c5561fb34ec"
+}

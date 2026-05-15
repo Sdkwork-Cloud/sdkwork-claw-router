@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27078,
+  "uuid": "skill-clawhub-trello-orchestrator-runner",
+  "skillKey": "clawhub-trello-orchestrator-runner",
+  "name": "Trello Orchestrator Runner",
+  "summary": "Run a Trello-backed closed-loop delivery workflow for OpenClaw multi-agent execution. Use when a user says to run tasks from Trello automatically, keep cards...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trello_orchestrator_runner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jeremiahdingal",
+      "features": [
+        "Run a Trello-backed closed-loop delivery workflow for OpenClaw multi-agent execution",
+        "Use when a user says to run tasks from Trello automatically, keep cards..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trello-orchestrator-runner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38214105?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trello-orchestrator-runner",
+      "url": "https://clawhub.ai/skills/trello-orchestrator-runner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trello-orchestrator-runner",
+    "url": "https://clawhub.ai/skills/trello-orchestrator-runner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trello-orchestrator-runner-c1ac22fe91722101.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trello-orchestrator-runner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trello-orchestrator-runner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d7517c2f1959a03dd51b2a20ba97d66c93cc135d9888ecaca5e3cedf73148952",
+      "artifactSizeBytes": 2055
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T18:41:20.369Z"
+}

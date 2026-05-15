@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16477,
+  "uuid": "skill-clawhub-aoi-prompt-injection-sentinel",
+  "skillKey": "clawhub-aoi-prompt-injection-sentinel",
+  "name": "AOI Prompt Injection Sentinel",
+  "summary": "Detects and scores prompt injection attempts in text, outputting severity, action, and matched rules without external calls or secret handling.",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aoi_prompt_injection_sentinel",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "edmonddantesj",
+      "features": [
+        "Detects and scores prompt injection attempts in text, outputting severity, action, and matched."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aoi-prompt-injection-sentinel@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/217761516?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aoi-prompt-injection-sentinel",
+      "url": "https://clawhub.ai/skills/aoi-prompt-injection-sentinel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aoi-prompt-injection-sentinel",
+    "url": "https://clawhub.ai/skills/aoi-prompt-injection-sentinel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aoi-prompt-injection-sentinel-016de91af526caaf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aoi-prompt-injection-sentinel@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-aoi-prompt-injection-sentinel-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:117cebe655454e21335dad500b00050328d6ce7362a592f93350dfa64a337f4f",
+      "artifactSizeBytes": 2008
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T06:57:50.165Z"
+}

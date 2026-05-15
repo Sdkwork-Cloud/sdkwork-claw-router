@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/local-ai-search@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_ai_search",
+  "skill": {
+    "id": 23098,
+    "skillKey": "clawhub-local-ai-search",
+    "name": "Local Ai Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-ai-search",
+    "url": "https://clawhub.ai/skills/local-ai-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-ai-search-f7cd06e746a61f4a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Natural language search for local files (100G-1T). Supports xlsx, pptx, pdf, docx formats with location info. Triggered when user asks to search local/comput..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gaoshuping99",
+      "userId": "publishers:gaoshuping99",
+      "displayName": "gaoshuping99",
+      "image": "https://avatars.githubusercontent.com/u/212238372?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 351,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1774058919653,
+      "changelog": "feat: add local OCR support for scanned PDFs and .doc file format",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9a7779033160e97c75f8ec36a632861f0cf005e0302f4d101881597db7a2d159"
+}

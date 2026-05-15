@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/firstdollar@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.firstdollar",
+  "skill": {
+    "id": 53150,
+    "skillKey": "clawhub-firstdollar",
+    "name": "First Dollar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "firstdollar",
+    "url": "https://clawhub.ai/skills/firstdollar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/firstdollar-75e237694459b4e5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A curriculum that teaches AI agents how to spend their own money. Ten lessons from \"what is a wallet\" to \"your first x402 purchase.\" Teacher, not butler — ex..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lisamaraventano-spine",
+      "userId": "s175xrq6x3cqftxqsebzpa0vbx83k7h3",
+      "displayName": "Lisa Maraventano",
+      "image": "https://avatars.githubusercontent.com/u/261433524?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1776986968566,
+      "changelog": "Fix Solana purchase instructions (x402Client + @solana/kit), remove stale spend limit warnings, add Smart Wallet troubleshooting",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:891c2394da4bd0ec258aa8bc909694a3647560c14e93d9496e09261466a52819"
+}

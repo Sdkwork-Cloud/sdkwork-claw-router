@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/graineai@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.graineai",
+  "skill": {
+    "id": 37509,
+    "skillKey": "clawhub-graineai",
+    "name": "graineai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "graineai",
+    "url": "https://clawhub.ai/skills/graineai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/graineai-0c6f6b88fcada1c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage voice agents, place and transfer calls, handle telephony events, and retrieve call records using the NoddyAI API at graine.ai."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rishabh171998",
+      "userId": "s171f8ffa5xv4def2q389zxvn183h27g",
+      "displayName": "Rishabh Bhanot",
+      "image": "https://avatars.githubusercontent.com/u/34419911?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774845823398,
+      "changelog": "- Added a dedicated \"Security, credentials, and user consent\" section: clarifies no secrets ship in this skill, credentials must come from user/host, and webhooks must use user-controlled endpoints.\n- Explicit instructions to confirm with the user before any high-impact operation (outbound/batch calls, transfers, token revocation, agent deletion, webhook URL changes).\n- Rewrote credential/setup guidance to stress credentials are not embedded and must be user-supplied; updated examples accordingly.\n- Clarified policies for retaining agent IDs and call SIDs (only within active session/task, not across conversations).\n- Improved response handling directions: always show HTTP status and redact Bearer tokens if echoing headers.\n- Documentation-only change, no code or API behavior altered.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:55f61da5c7c4ea83f000dcbaa560bf66a06a811c7a1c12330aa3fef35f2b28a5"
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42237,
+  "uuid": "skill-clawhub-genvr-skills",
+  "skillKey": "clawhub-genvr-skills",
+  "name": "GenVR Skills",
+  "summary": "Generate images, videos, and process media using the GenVR API. Standalone Node.js CLI.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.genvr_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "genvrlabs",
+      "features": [
+        "Generate images, videos, and process media using the GenVR API",
+        "Standalone Node.js CLI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/genvr-skills@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128718626?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "genvr-skills",
+      "url": "https://clawhub.ai/skills/genvr-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "genvr-skills",
+    "url": "https://clawhub.ai/skills/genvr-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/genvr-skills-310b2af66823f5bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/genvr-skills@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-genvr-skills-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d24ea2d49aaba2c3032b1d8bd66c99275059c492cadfca54803d16fad1076038",
+      "artifactSizeBytes": 2194
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T12:10:00.121Z"
+}

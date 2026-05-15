@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/techpulse@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.techpulse",
+  "skill": {
+    "id": 66098,
+    "skillKey": "clawhub-techpulse",
+    "name": "TechPulse"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "techpulse",
+    "url": "https://clawhub.ai/skills/techpulse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/techpulse-8e1a67fac7ec2ba4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-анализатор трендов в IoT, EV, играх, DIY и Emerging Tech с ежедневными сводками, бизнес-инсайтами и рекомендациями для предпринимателей и девелоперов."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "voronindenis5",
+      "userId": "s17b6amkd3wzqgg640v03a9r1n83gxs1",
+      "displayName": "voronindenis5",
+      "image": "https://avatars.githubusercontent.com/u/214994038?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 591,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1771593023037,
+      "changelog": "- Updated installation instructions: now uses a ZIP archive instead of manual file copy.\n- Revised usage examples: commands are run via python3 main.py with category options.\n- Added detailed source list: shows specific monitored Reddit communities for each trend category.\n- Simplified API requirements: now uses Reddit's public API without authentication or key setup.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:44e62d4d0a425e866544233c462bfc7d2f94f6c92930c38c4b144185268d2b9c"
+}

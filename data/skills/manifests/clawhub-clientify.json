@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32468,
+  "uuid": "skill-clawhub-clientify",
+  "skillKey": "clawhub-clientify",
+  "name": "Clientify",
+  "summary": "Clientify integration. Manage data, records, and automate workflows. Use when the user wants to interact with Clientify data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clientify",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Clientify integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Clientify data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clientify@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clientify",
+      "url": "https://clawhub.ai/skills/clientify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clientify",
+    "url": "https://clawhub.ai/skills/clientify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clientify-b4b3e02892476e65.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clientify@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-clientify-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8922be34602e3766d288d23a34829626d04c3a99d197bf3b5822d2b5392a9ce6",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:31:32.066Z"
+}

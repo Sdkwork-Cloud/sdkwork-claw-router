@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66059,
+  "uuid": "skill-clawhub-xiaohongshu-auto-poster",
+  "skillKey": "clawhub-xiaohongshu-auto-poster",
+  "name": "xiaohongshu-auto-poster",
+  "summary": "小红书自动发帖套装。输入主题，自动生成文案并发布到小红书。包含 MCP 配置、内容模板、自动化工作流。适用于已配置好本地 MCP 服务的用户。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_auto_poster",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JMin1113",
+      "features": [
+        "小红书自动发帖套装。输入主题，自动生成文案并发布到小红书。包含 MCP 配置、内容模板、自动化工作流。适用于已配置好本地 MCP 服务的用户。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaohongshu-auto-poster@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258832386?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaohongshu-auto-poster",
+      "url": "https://clawhub.ai/skills/xiaohongshu-auto-poster"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-auto-poster",
+    "url": "https://clawhub.ai/skills/xiaohongshu-auto-poster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-auto-poster-2f449af51e307dd3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaohongshu-auto-poster@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaohongshu-auto-poster-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f1af77d2cd0430557e1a5ed8e16b89ed976e391551a73e9005348dbc55e2ef0c",
+      "artifactSizeBytes": 1979
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T14:57:53.502Z"
+}

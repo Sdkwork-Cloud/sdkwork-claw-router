@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19296,
+  "uuid": "skill-clawhub-clawdoctor",
+  "skillKey": "clawhub-clawdoctor",
+  "name": "ClawDoctor",
+  "summary": "Behavioral cost coach for OpenClaw fleets. Analyzes your sessions, shows what you did that cost money, and coaches you on what to do differently. Finds both...",
+  "version": "4.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdoctor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nabilrehman",
+      "features": [
+        "Behavioral cost coach for OpenClaw fleets",
+        "Analyzes your sessions, shows what you did that cost money, and coaches you on what to do diffe.",
+        "Finds both..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawdoctor@4.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1691107?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawdoctor",
+      "url": "https://clawhub.ai/skills/clawdoctor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdoctor",
+    "url": "https://clawhub.ai/skills/clawdoctor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdoctor-9ccc90a6b768ec45.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawdoctor@4.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawdoctor-4.0.0.json",
+      "version": "4.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e891c31ff1075d986a1b18c00b2265452ffdfe34c3a3ad5013b659adeab05c2f",
+      "artifactSizeBytes": 1944
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T09:17:13.847Z"
+}

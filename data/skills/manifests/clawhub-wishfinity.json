@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12244,
+  "uuid": "skill-clawhub-wishfinity",
+  "skillKey": "clawhub-wishfinity",
+  "name": "Wishfinity +W",
+  "summary": "Add \"save for later\" to shopping agents, product recommendation engines, gift idea generators, and AI commerce experiences. Saves any product URL to a universal wishlist. Requires MCP config and free Wishfinity account.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wishfinity",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "leebellon",
+      "features": [
+        "Add \"save for later\" to shopping agents, product recommendation engines, gift idea generators,.",
+        "Saves any product URL to a universal wishlist",
+        "Requires MCP config and free Wishfinity account."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wishfinity@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/221430639?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wishfinity",
+      "url": "https://clawhub.ai/skills/wishfinity"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wishfinity",
+    "url": "https://clawhub.ai/skills/wishfinity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wishfinity-ba51d73771c9335c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wishfinity@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wishfinity-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:28164b8601aefd5592ed82140e73a8d6fd073fbf3e7df8f7db67ccca1902d105",
+      "artifactSizeBytes": 2337
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T21:39:17.421Z"
+}

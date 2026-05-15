@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prd-workflow@5.1.0",
+  "version": "5.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prd_workflow",
+  "skill": {
+    "id": 56741,
+    "skillKey": "clawhub-prd-workflow",
+    "name": "Prd Workflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prd-workflow",
+    "url": "https://clawhub.ai/skills/prd-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prd-workflow-ffbf0310ce4aa8c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete PRD workflow with integrated review, flowchart, and export. Deep interview → Requirement analysis → PRD generation → Review → Flowchart → Quality ch..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gotomanutd-dot",
+      "userId": "s17a5dw6d01bhhet3p8fyfgfa183s2rz",
+      "displayName": "gotomanutd-dot",
+      "image": "https://avatars.githubusercontent.com/u/263017920?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 625,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 32
+    },
+    "latestVersion": {
+      "version": "5.1.0",
+      "createdAt": 1776697266416,
+      "changelog": "v5.1.0: Wiki增强 + AI驱动原型v6.1.0 + 设计系统持久化",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:af3e8813f2704d27b0cbc8b6e176ced8b459157b3550d1162e9572b2f16810a7"
+}

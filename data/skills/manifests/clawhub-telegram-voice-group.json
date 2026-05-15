@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58668,
+  "uuid": "skill-clawhub-telegram-voice-group",
+  "skillKey": "clawhub-telegram-voice-group",
+  "name": "Telegram Voice Group",
+  "summary": "向指定 Telegram 群组发送语音消息",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.telegram_voice_group",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sanwe",
+      "features": [
+        "向指定 Telegram 群组发送语音消息"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/telegram-voice-group@0.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/101993515?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "telegram-voice-group",
+      "url": "https://clawhub.ai/skills/telegram-voice-group"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "telegram-voice-group",
+    "url": "https://clawhub.ai/skills/telegram-voice-group",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/telegram-voice-group-cca078556e3dfe9f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/telegram-voice-group@0.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-telegram-voice-group-0.1.5.json",
+      "version": "0.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:80d4f066f0c55e56971af85950865e0a72d1b472f5b2dcc52a13b8836663ab40",
+      "artifactSizeBytes": 2340
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T20:24:26.609Z"
+}

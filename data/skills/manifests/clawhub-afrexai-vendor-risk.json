@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18456,
+  "uuid": "skill-clawhub-afrexai-vendor-risk",
+  "skillKey": "clawhub-afrexai-vendor-risk",
+  "name": "Vendor Risk Assessment",
+  "summary": "Evaluate and score vendors on security, financials, compliance, operations, and data handling to classify risk and manage remediation plans effectively.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_vendor_risk",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1kalin",
+      "features": [
+        "Evaluate and score vendors on security, financials, compliance, operations, and data handling t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/afrexai-vendor-risk@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15705344?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "afrexai-vendor-risk",
+      "url": "https://clawhub.ai/skills/afrexai-vendor-risk"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-vendor-risk",
+    "url": "https://clawhub.ai/skills/afrexai-vendor-risk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-vendor-risk-30db7c2c0d72a62f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/afrexai-vendor-risk@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-afrexai-vendor-risk-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:102594bfe25d914ef2af462cf641a8f444e87c21e17f78ceeebc8d7157e82827",
+      "artifactSizeBytes": 2549
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T18:45:11.015Z"
+}

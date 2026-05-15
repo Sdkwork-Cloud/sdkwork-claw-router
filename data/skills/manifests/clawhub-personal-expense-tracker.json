@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33776,
+  "uuid": "skill-clawhub-personal-expense-tracker",
+  "skillKey": "clawhub-personal-expense-tracker",
+  "name": "Personal Expense Tracker",
+  "summary": "Personal expense tracker - record expenses, auto-categorize, monthly statistics with total and category breakdown",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_expense_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Personal expense tracker",
+        "record expenses, auto-categorize, monthly statistics with total and category breakdown"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/personal-expense-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "personal-expense-tracker",
+      "url": "https://clawhub.ai/skills/personal-expense-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-expense-tracker",
+    "url": "https://clawhub.ai/skills/personal-expense-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-expense-tracker-81b8426dcc67db87.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/personal-expense-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-personal-expense-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:48519765ef3148aab7a233d3956ab9baf137342dc7a0d170462b3f393ca2498d",
+      "artifactSizeBytes": 1967
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T11:50:20.404Z"
+}

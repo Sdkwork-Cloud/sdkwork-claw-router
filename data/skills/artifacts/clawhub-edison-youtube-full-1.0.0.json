@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/edison-youtube-full@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edison_youtube_full",
+  "skill": {
+    "id": 19407,
+    "skillKey": "clawhub-edison-youtube-full",
+    "name": "Edison Youtube Full"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edison-youtube-full",
+    "url": "https://clawhub.ai/skills/edison-youtube-full",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edison-youtube-full-b56191d51d1ce64c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete YouTube toolkit for agents: search videos, fetch metadata, browse channels and playlists, and pull transcripts. Use when you need comprehensive YouT..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "edisonchenai",
+      "userId": "publishers:edisonchenai",
+      "displayName": "EdisonChenAI",
+      "image": "https://avatars.githubusercontent.com/u/27086130?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 585,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772891260206,
+      "changelog": "Initial release: Complete YouTube workflow toolkit for agents.\n\n- Search YouTube videos, fetch video/channel/playlist metadata, and pull transcripts in one workflow.\n- Includes reusable scripts for common tasks: searching, querying metadata (video, channel, playlist), and extracting transcripts.\n- Scripts accept multiple IDs for batch processing; all output JSON for easy integration.\n- Requires YouTube Data API key and minimal Python dependencies.\n- Comprehensive README (SKILL.md) with quickstart guides, troubleshooting, and best practices.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e358b55eece6cfd82fb28e8ccff0f59ed28ba485cf33cf615216b235cde3d3ab"
+}

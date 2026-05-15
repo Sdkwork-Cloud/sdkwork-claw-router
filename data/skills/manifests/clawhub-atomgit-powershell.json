@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60638,
+  "uuid": "skill-clawhub-atomgit-powershell",
+  "skillKey": "clawhub-atomgit-powershell",
+  "name": "Atomgit Powershell",
+  "summary": "AtomGit (GitCode) 代码托管平台集成 - PowerShell 版本。完整支持 PR 审查、批准、合并、仓库管理、Issues 管理。特色功能：批量并行处理 (性能提升 80%)、CI 流水线检查、仓库协作管理。跨平台：Windows/Linux/macOS。",
+  "version": "3.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.atomgit_powershell",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "panchenbo",
+      "features": [
+        "AtomGit (GitCode) 代码托管平台集成",
+        "PowerShell 版本。完整支持 PR 审查、批准、合并、仓库管理、Issues 管理。特色功能：批量并行处理 (性能提升 80%)、CI 流水线检查、仓库协作管理。跨平台：Window."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/atomgit-powershell@3.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/75836904?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "atomgit-powershell",
+      "url": "https://clawhub.ai/skills/atomgit-powershell"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "atomgit-powershell",
+    "url": "https://clawhub.ai/skills/atomgit-powershell",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/atomgit-powershell-6e9cfa2616b721d6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/atomgit-powershell@3.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-atomgit-powershell-3.0.1.json",
+      "version": "3.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c5a23c437727537bb78d1a1b0e9fafa4f0792b663af057c3615a3e702913090",
+      "artifactSizeBytes": 2122
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T02:05:26.675Z"
+}

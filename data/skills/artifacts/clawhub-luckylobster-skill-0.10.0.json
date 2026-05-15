@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/luckylobster-skill@0.10.0",
+  "version": "0.10.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.luckylobster_skill",
+  "skill": {
+    "id": 12776,
+    "skillKey": "clawhub-luckylobster-skill",
+    "name": "LuckyLobster"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "luckylobster-skill",
+    "url": "https://clawhub.ai/skills/luckylobster-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/luckylobster-skill-ca6c4f0a69973175.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trade prediction markets on Polymarket. Search markets, place orders, and manage positions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rachelbastian",
+      "userId": "publishers:rachelbastian",
+      "displayName": "LuckyLobster",
+      "image": "https://avatars.githubusercontent.com/u/107372767?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1566,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.10.0",
+      "createdAt": 1771652046174,
+      "changelog": "Skill v10 — synced from production deploy",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:55cd06bcc43481acf00fafd986cfead13e7dc64ad56f59dbcdbd992dbc15bff7"
+}

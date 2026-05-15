@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59036,
+  "uuid": "skill-clawhub-mineru",
+  "skillKey": "clawhub-mineru",
+  "name": "MinerU PDF Parser",
+  "summary": "用 MinerU API 解析 PDF/Word/PPT/图片为 Markdown，支持公式、表格、OCR。适用于论文解析、文档提取。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mineru",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EasonAI-5589",
+      "features": [
+        "用 MinerU API 解析 PDF/Word/PPT/图片为 Markdown，支持公式、表格、OCR。适用于论文解析、文档提取。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mineru@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109504000?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mineru",
+      "url": "https://clawhub.ai/skills/mineru"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mineru",
+    "url": "https://clawhub.ai/skills/mineru",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mineru-db6f83b37fdd149f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mineru@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mineru-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:141b5b53c6887f3eb0e8472ea6758a37cf49371391d2c151dbceca28e5fde436",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T12:18:38.908Z"
+}

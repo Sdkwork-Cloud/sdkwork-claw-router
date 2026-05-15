@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16731,
+  "uuid": "skill-clawhub-strava-cli",
+  "skillKey": "clawhub-strava-cli",
+  "name": "Strava CLI",
+  "summary": "Interact with Strava via the strava-client-cli Python tool. Use for viewing activities, athlete profiles, stats, and exporting data. Covers setup (creating a Strava account, API app, and OAuth) and all CLI commands.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.strava_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "geodeterra",
+      "features": [
+        "Interact with Strava via the strava-client-cli Python tool",
+        "Use for viewing activities, athlete profiles, stats, and exporting data",
+        "Covers setup (creating a Strava account, API app, and OAuth) and all CLI commands."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/strava-cli@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258517480?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "strava-cli",
+      "url": "https://clawhub.ai/skills/strava-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "strava-cli",
+    "url": "https://clawhub.ai/skills/strava-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/strava-cli-b46c0bbd5eda17c9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/strava-cli@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-strava-cli-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c9b8d4cb7223a9ffbab328c1d811867a8168444a8edc8e620e344130f2e50f74",
+      "artifactSizeBytes": 1952
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T07:26:18.491Z"
+}

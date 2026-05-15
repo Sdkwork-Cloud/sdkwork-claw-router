@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71520,
+  "uuid": "skill-clawhub-04-supply-chain",
+  "skillKey": "clawhub-04-supply-chain",
+  "name": "04 Supply Chain",
+  "summary": "社区团购供应链与采购管理全链路技能包。涵盖供应商开发、资质审核、评分卡、采购谈判、仓储管理、配送履约及配套工具。适用于平台采购负责人、供应链管理者。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.04_supply_chain",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nic-yuan",
+      "features": [
+        "社区团购供应链与采购管理全链路技能包。涵盖供应商开发、资质审核、评分卡、采购谈判、仓储管理、配送履约及配套工具。适用于平台采购负责人、供应链管理者。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/04-supply-chain@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/195308903?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "04-supply-chain",
+      "url": "https://clawhub.ai/skills/04-supply-chain"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "04-supply-chain",
+    "url": "https://clawhub.ai/skills/04-supply-chain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/04-supply-chain-4c39a14628be9e21.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/04-supply-chain@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-04-supply-chain-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0c816e038b0fcb33780f634f626f598e9f3fac4483477b4ca089f9920e635daa",
+      "artifactSizeBytes": 2663
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T01:18:26.308Z"
+}

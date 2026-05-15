@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43599,
+  "uuid": "skill-clawhub-toolflow-openclaw-operator",
+  "skillKey": "clawhub-toolflow-openclaw-operator",
+  "name": "ToolFlow OpenClaw Operator",
+  "summary": "Enables running jobs as durable, stepwise ToolFlow workflows with approvals, recovery, and progress tracking via OpenClaw integration.",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toolflow_openclaw_operator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mcg-tries-to-code",
+      "features": [
+        "Enables running jobs as durable, stepwise ToolFlow workflows with approvals, recovery, and prog."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/toolflow-openclaw-operator@0.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/189920618?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "toolflow-openclaw-operator",
+      "url": "https://clawhub.ai/skills/toolflow-openclaw-operator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toolflow-openclaw-operator",
+    "url": "https://clawhub.ai/skills/toolflow-openclaw-operator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toolflow-openclaw-operator-673e301ce4cb44c0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/toolflow-openclaw-operator@0.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-toolflow-openclaw-operator-0.3.0.json",
+      "version": "0.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c9409539f41958de17caf4440ed0b7f4b6cff451929bfb03fbe476ff32bf4a55",
+      "artifactSizeBytes": 2185
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T19:54:02.408Z"
+}

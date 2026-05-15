@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nm-abstract-methodology-curator@1.8.5",
+  "version": "1.8.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nm_abstract_methodology_curator",
+  "skill": {
+    "id": 29201,
+    "skillKey": "clawhub-nm-abstract-methodology-curator",
+    "name": "Nm Abstract Methodology Curator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nm-abstract-methodology-curator",
+    "url": "https://clawhub.ai/skills/nm-abstract-methodology-curator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nm-abstract-methodology-curator-ee4fa3e00c693c03.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Surface expert frameworks and methodologies"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "athola",
+      "userId": "s17emme0e2m3cpf7k2jvp3a84984b8z9",
+      "displayName": "athola",
+      "image": "https://avatars.githubusercontent.com/u/9769290?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 297,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.8.5",
+      "createdAt": 1778292892755,
+      "changelog": "Release v1.9.5",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5d354bf92b9adb7f1f2e49f6ab52942e61d32954bcef11a9cd0c7cbfefb633c5"
+}

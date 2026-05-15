@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18542,
+  "uuid": "skill-clawhub-discover",
+  "skillKey": "clawhub-discover",
+  "name": "Discover",
+  "summary": "Discover new ideas, sources, opportunities, and angles with durable watchlists, novelty rules, and heartbeat-backed finding logs.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.discover",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Discover new ideas, sources, opportunities, and angles with durable watchlists, novelty rules,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/discover@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "discover",
+      "url": "https://clawhub.ai/skills/discover"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "discover",
+    "url": "https://clawhub.ai/skills/discover",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/discover-5b90071aea261a5b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/discover@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-discover-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d270ea6f896e3b861802afc2fba2f90ec018c3e10a359e5750ad6f6c72e50d1a",
+      "artifactSizeBytes": 1910
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T22:22:15.953Z"
+}

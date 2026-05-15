@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawhub-skill-publishing-guide@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_skill_publishing_guide",
+  "skill": {
+    "id": 61767,
+    "skillKey": "clawhub-clawhub-skill-publishing-guide",
+    "name": "ClawHub Skill 发布避坑指南"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-skill-publishing-guide",
+    "url": "https://clawhub.ai/skills/clawhub-skill-publishing-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-skill-publishing-guide-b642ab51a6db527f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ClawHub Skill 发布避坑指南。让你的 Skill 发布后能被搜索到，避免安全扫描导致隐藏。适用于需要发布 Skill 到 ClawHub 的开发者。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tudoubudou",
+      "userId": "s177mr4bm5r6d57rg8ekz3pvdd83he07",
+      "displayName": "tudoubudou",
+      "image": "https://avatars.githubusercontent.com/u/1090255?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 442,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1773656787226,
+      "changelog": "新增触发词：发布、更新",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2b8d8ef3a566a8e43320dff68cafb08fdae0fd812ee6195b158e258bf4e7e578"
+}

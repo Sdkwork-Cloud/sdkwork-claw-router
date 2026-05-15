@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42222,
+  "uuid": "skill-clawhub-director-invoice-generator",
+  "skillKey": "clawhub-director-invoice-generator",
+  "name": "Invoice Generator",
+  "summary": "Create professional invoices, quotes, and billing documents. Use when user wants to (1) generate an invoice, (2) create a quote, (3) make a receipt, (4) trac...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.director_invoice_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "di5cip1e",
+      "features": [
+        "Create professional invoices, quotes, and billing documents",
+        "Use when user wants to (1) generate an invoice, (2) create a quote, (3) make a receipt, (4) tra."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/director-invoice-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/87604837?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "director-invoice-generator",
+      "url": "https://clawhub.ai/skills/director-invoice-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "director-invoice-generator",
+    "url": "https://clawhub.ai/skills/director-invoice-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/director-invoice-generator-b372d7af4e0a3216.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/director-invoice-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-director-invoice-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9616b31ffe9f91e91556fd6bd45a44ed2fcc71d4ebbceff722ae42aa459822ee",
+      "artifactSizeBytes": 1996
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T16:56:35.550Z"
+}

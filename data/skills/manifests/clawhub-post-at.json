@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11540,
+  "uuid": "skill-clawhub-post-at",
+  "skillKey": "clawhub-post-at",
+  "name": "Post.at Tracking",
+  "summary": "Manage Austrian Post (post.at) deliveries - list packages, check delivery status, set delivery place preferences.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.post_at",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KrauseFx",
+      "features": [
+        "Manage Austrian Post (post.at) deliveries",
+        "list packages, check delivery status, set delivery place preferences."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/post-at@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/869950?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "post-at",
+      "url": "https://clawhub.ai/skills/post-at"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "post-at",
+    "url": "https://clawhub.ai/skills/post-at",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/post-at-951aeee7646ae752.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/post-at@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-post-at-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c41e62df55f40e3beac278113a377270b65a05f3fde2fce0bcf3c3b71fd4866",
+      "artifactSizeBytes": 2182
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-06T19:51:11.705Z"
+}

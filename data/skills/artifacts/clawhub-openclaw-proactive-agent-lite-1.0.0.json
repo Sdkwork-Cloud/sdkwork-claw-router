@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-proactive-agent-lite@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_proactive_agent_lite",
+  "skill": {
+    "id": 18111,
+    "skillKey": "clawhub-openclaw-proactive-agent-lite",
+    "name": "Openclaw Proactive Agent Lite"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-proactive-agent-lite",
+    "url": "https://clawhub.ai/skills/openclaw-proactive-agent-lite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-proactive-agent-lite-e19fbb65fe8cdc10.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transform AI agents from task-followers into proactive partners with memory architecture, reverse prompting, and self-healing patterns. Lightweight version f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jpzhengcn",
+      "userId": "s173afppv4r7cjgjk1ggx4ttq583yxpd",
+      "displayName": "jpzhengcn",
+      "image": "https://avatars.githubusercontent.com/u/268075627?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 688,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774955328891,
+      "changelog": "Initial release of Proactive Agent Lite—adds proactive capabilities to OpenClaw agents.\n\n- Introduces memory architecture with pre-compaction flush for better context retention.\n- Implements reverse prompting to suggest unasked ideas.\n- Adds self-healing patterns for automatic diagnosis and issue resolution.\n- Includes security hardening with safe defaults.\n- Integrates alignment systems to keep agents mission-focused.\n- Lightweight and compatible with all OpenClaw agents.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6ee4e00afa2a2f927ec20b415e0c898277fa2473f7559bf37267680c8f038a1e"
+}

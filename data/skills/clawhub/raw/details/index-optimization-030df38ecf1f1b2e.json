@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "index-optimization",
+    "displayName": "index-optimization",
+    "summary": "针对指定表或集合做查询模式分析、可复用索引设计与 explain 迭代验证。支持两种优化模式：默认全量模式（定位该表/集合所有查询）与单查询模式（用户指定某条查询时，仅分析该查询并查询数据库现有索引）；支持两种执行确认模式：需确认模式与免确认模式。",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 357,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1773395769051,
+    "updatedAt": 1778307993825
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1773395769051,
+    "changelog": "index-optimization v1.0.0\n\n- Initial release with end-to-end index optimization for single tables/collections, supporting both full (all queries) and single-query modes.\n- Two execution confirmation modes: require-confirmation and no-confirmation.\n- Includes detailed steps: query discovery (with clickable code location links), query pattern analysis, reusable index design per DB type, explain-based validation, and iterative improvement.\n- Provides clear output requirements, including explain results with actual index hit, change justification, and rollback SQL.\n- Emphasizes safety for index deletion, requiring evidence, replacement index, and non-regressing explain plan before drop.\n- Includes quick command-line scripts for query extraction and index checking.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "jiang-zx",
+    "userId": "s17dw269b0vgkw3d6kj4yb1kc183rv4j",
+    "displayName": "jiang-zx",
+    "image": "https://avatars.githubusercontent.com/u/25993096?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778307993825
+  }
+}

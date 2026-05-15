@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-whatsapp@0.3.0",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_whatsapp",
+  "skill": {
+    "id": 10462,
+    "skillKey": "clawhub-openclaw-whatsapp",
+    "name": "OpenClaw WhatsApp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-whatsapp",
+    "url": "https://clawhub.ai/skills/openclaw-whatsapp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-whatsapp-15ead8100eafa252.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "WhatsApp bridge for OpenClaw — send/receive messages, auto-reply agents, QR pairing, message search, contact sync"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xs4m1337",
+      "userId": "publishers:0xs4m1337",
+      "displayName": "sam1337",
+      "image": "https://avatars.githubusercontent.com/u/191755408?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3213,
+      "installsAllTime": 24,
+      "installsCurrent": 19,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.3.0",
+      "createdAt": 1771703554964,
+      "changelog": "Queue-based auto-reply architecture, portable scripts",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c76499cd18d81a5dadfdfaa00094e2c9da8d2df0aade22e6d74f8dadca45403e"
+}

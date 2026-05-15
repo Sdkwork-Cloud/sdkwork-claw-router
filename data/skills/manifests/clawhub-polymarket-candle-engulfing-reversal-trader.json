@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30648,
+  "uuid": "skill-clawhub-polymarket-candle-engulfing-reversal-trader",
+  "skillKey": "clawhub-polymarket-candle-engulfing-reversal-trader",
+  "name": "Polymarket Candle Engulfing Reversal Trader",
+  "summary": "Detects engulfing reversal patterns in crypto 5-minute interval markets on Polymarket. A bullish engulfing occurs when an interval completely reverses the pr...",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_candle_engulfing_reversal_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "diagnostikon",
+      "features": [
+        "Detects engulfing reversal patterns in crypto 5-minute interval markets on Polymarket",
+        "A bullish engulfing occurs when an interval completely reverses the pr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-candle-engulfing-reversal-trader@0.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17246180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-candle-engulfing-reversal-trader",
+      "url": "https://clawhub.ai/skills/polymarket-candle-engulfing-reversal-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-candle-engulfing-reversal-trader",
+    "url": "https://clawhub.ai/skills/polymarket-candle-engulfing-reversal-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-candle-engulfing-reversal-trader-2aecba87f678662e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-candle-engulfing-reversal-trader@0.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-candle-engulfing-reversal-trader-0.0.3.json",
+      "version": "0.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:93c4e6194c5f6ef96fa66ec90aacc5173919304c30a9577860185536d3c643aa",
+      "artifactSizeBytes": 2131
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T14:29:40.728Z"
+}

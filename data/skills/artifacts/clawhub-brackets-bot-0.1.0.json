@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brackets-bot@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brackets_bot",
+  "skill": {
+    "id": 27823,
+    "skillKey": "clawhub-brackets-bot",
+    "name": "Bracketsbot Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brackets-bot",
+    "url": "https://clawhub.ai/skills/brackets-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brackets-bot-b4194af47c838fdb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate, validate, and submit BracketsBot NCAA tournament brackets."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sbauch",
+      "userId": "publishers:sbauch",
+      "displayName": "sbauch",
+      "image": "https://avatars.githubusercontent.com/u/923033?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 339,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773676779624,
+      "changelog": "brackets-bot 0.1.0 initial release:\n\n- Introduces onboarding flow to guide users through building NCAA brackets using BracketsBot CLI.\n- Supports three bracket-picking modes: stepwise chat (“Together”), general rule (“Instructed”), and custom-coded model (“Coded”).\n- Provides clear submission options: shareable frontend link for browser-based wallet signing or transaction payload for CLI/wallet tool.\n- Emphasizes validation before submission and offers recommended workflows for each picking mode.\n- Includes detailed CLI command usage and guidance on when to use each.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1c16726ef66902fcc445293c9bd7171b27f7088fe13afd3e150d728807e308bd"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54475,
+  "uuid": "skill-clawhub-ntriq-x402-document-intel-batch",
+  "skillKey": "clawhub-ntriq-x402-document-intel-batch",
+  "name": "Ntriq X402 Document Intel Batch",
+  "summary": "Batch document OCR, classification, and extraction for up to 500 images. Flat $15.00 USDC via x402.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ntriq_x402_document_intel_batch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ntriq",
+      "features": [
+        "Batch document OCR, classification, and extraction for up to 500 images",
+        "Flat $15.00 USDC via x402."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ntriq-x402-document-intel-batch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/215101248?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ntriq-x402-document-intel-batch",
+      "url": "https://clawhub.ai/skills/ntriq-x402-document-intel-batch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ntriq-x402-document-intel-batch",
+    "url": "https://clawhub.ai/skills/ntriq-x402-document-intel-batch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ntriq-x402-document-intel-batch-459dbd045c7f4dd7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ntriq-x402-document-intel-batch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ntriq-x402-document-intel-batch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:42c58abd6688cc7cb964863db566020e6b38f7cfd61392f3c12a87d5d1d0765f",
+      "artifactSizeBytes": 2370
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T18:59:25.993Z"
+}

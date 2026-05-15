@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/multi-agent-deploy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_agent_deploy",
+  "skill": {
+    "id": 60899,
+    "skillKey": "clawhub-multi-agent-deploy",
+    "name": "multi-agent-deploy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-agent-deploy",
+    "url": "https://clawhub.ai/skills/multi-agent-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-agent-deploy-ce9d9abff3ed4518.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "快速部署新的 assistant agent。当用户需要新增 agent 时自动创建，编号递增，沿用现有 workspace 和 agentDir 结构。使用场景：「新增一个 agent」、「创建 assistant2」、「加一个日常助手」等请求。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhou19931993",
+      "userId": "s17azc3x2wmejha5gnqz9mv0vs83j9kw",
+      "displayName": "zhou19931993",
+      "image": "https://avatars.githubusercontent.com/u/25190470?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 335,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773976752642,
+      "changelog": "快速部署新的 assistant agent，编号递增，沿用现有 workspace 和 agentDir 结构",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ecb3b3fed046b9085d6f9d0875f5ee88f4f0ef78f1b11c81b619a981a54e2aff"
+}

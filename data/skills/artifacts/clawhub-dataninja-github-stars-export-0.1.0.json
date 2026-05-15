@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dataninja-github-stars-export@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dataninja_github_stars_export",
+  "skill": {
+    "id": 28209,
+    "skillKey": "clawhub-dataninja-github-stars-export",
+    "name": "GitHub Stars Export"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dataninja-github-stars-export",
+    "url": "https://clawhub.ai/skills/dataninja-github-stars-export",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dataninja-github-stars-export-b1c120ef63ff066b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Export GitHub starred repositories by category and sync them to a Notion database."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nick-tsyen",
+      "userId": "s173av0khtq51c4mp0py3ms7y183qk9n",
+      "displayName": "Nick T.",
+      "image": "https://avatars.githubusercontent.com/u/110740178?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 330,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773926353327,
+      "changelog": "Initial release of GitHub Stars to Notion Sync Skill:\n\n- Export your starred GitHub repositories, organized by categories, into a Markdown file.\n- Sync the exported starred repositories into a structured Notion database.\n- Includes shell and Python scripts for exporting and syncing tasks.\n- Requirements: GitHub CLI for export, Notion API key and requests library for syncing.\n- Local sync state tracked for efficient updates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f426e4fe013948e33b02e388e0a724f1f31ae47ce22eedab7f18f740ce668f4c"
+}

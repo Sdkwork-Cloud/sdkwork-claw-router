@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41003,
+  "uuid": "skill-clawhub-modesty-build-education-faq-page",
+  "skillKey": "clawhub-modesty-build-education-faq-page",
+  "name": "build-education-faq-page",
+  "summary": "Generate customer-facing answers for common education questions. Use when working on FAQ content for teachers, tutors, educational institutions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.modesty_build_education_faq_page",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ModestyRichards",
+      "features": [
+        "Generate customer-facing answers for common education questions",
+        "Use when working on FAQ content for teachers, tutors, educational institutions."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/modesty-build-education-faq-page@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261238899?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "modesty-build-education-faq-page",
+      "url": "https://clawhub.ai/skills/modesty-build-education-faq-page"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "modesty-build-education-faq-page",
+    "url": "https://clawhub.ai/skills/modesty-build-education-faq-page",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/modesty-build-education-faq-page-bc36755da7b3d6b5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/modesty-build-education-faq-page@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-modesty-build-education-faq-page-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:422e790853cf1b4ff52493d891258396ffdc5660496c9fa0629c822e6d508a1a",
+      "artifactSizeBytes": 2408
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T05:10:57.625Z"
+}

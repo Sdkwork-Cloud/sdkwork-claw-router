@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14395,
+  "uuid": "skill-clawhub-feed-digest",
+  "skillKey": "clawhub-feed-digest",
+  "name": "Feed Digest",
+  "summary": "Agentic feed digest using the feed CLI. Fetch, triage, and summarize RSS/Atom/JSON feeds to surface high-signal posts. Use when: (1) reading feeds or catching up on news, (2) user asks for a digest, roundup, or summary of recent posts, (3).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feed_digest",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "George Zhang",
+      "features": [
+        "Agentic feed digest using the feed CLI",
+        "Fetch, triage, and summarize RSS/Atom/JSON feeds to surface high-signal posts",
+        "Use when: (1) reading feeds or catching up on news, (2) user asks for a digest, roundup, or sum."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feed-digest@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8635094?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feed-digest",
+      "url": "https://clawhub.ai/skills/feed-digest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feed-digest",
+    "url": "https://clawhub.ai/skills/feed-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feed-digest-5e65ff863d7c1fe8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feed-digest@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feed-digest-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1992b8d271230da691814f1f41302d0ca91d37890388d2b44554ab077c560e20",
+      "artifactSizeBytes": 2379
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T07:59:39.800Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29932,
+  "uuid": "skill-clawhub-billsby",
+  "skillKey": "clawhub-billsby",
+  "name": "Billsby",
+  "summary": "Billsby integration. Manage data, records, and automate workflows. Use when the user wants to interact with Billsby data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.billsby",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Billsby integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Billsby data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/billsby@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "billsby",
+      "url": "https://clawhub.ai/skills/billsby"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "billsby",
+    "url": "https://clawhub.ai/skills/billsby",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/billsby-73db77b870bbe30b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/billsby@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-billsby-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3f8d1309a87dfb0c08f32c1fb372642edbb7f519f8add78ffbd5798c5e3710b7",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:13:52.986Z"
+}

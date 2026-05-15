@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gtm-engineer-onboarding-coach@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gtm_engineer_onboarding_coach",
+  "skill": {
+    "id": 49864,
+    "skillKey": "clawhub-gtm-engineer-onboarding-coach",
+    "name": "Gtm Engineer Onboarding Coach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gtm-engineer-onboarding-coach",
+    "url": "https://clawhub.ai/skills/gtm-engineer-onboarding-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gtm-engineer-onboarding-coach-6bbfef7ab0ee61fd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Coach a newly-hired or recently-promoted GTM (Go-to-Market) Engineer, RevOps Engineer, Marketing Engineer, or Sales Engineer-of-systems through their first 9..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 63,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778283529080,
+      "changelog": "- Initial release of gtm-engineer-onboarding-coach skill.\n- Guides newly hired or promoted GTM, RevOps, Marketing, or Sales Engineers through their first 90 days and ongoing role definition.\n- Provides detailed role disambiguation, key stakeholder mapping, and diagnostic intake questions to clarify expectations and reporting lines.\n- Covers modern GTM stack tooling, build-vs-buy decisions, and emerging AI-native GTM tools.\n- Outlines common organizational and individual failure modes, prioritization frameworks, and compensation benchmarks.\n- Triggered by relevant job titles and GTM automation, stack, and tooling phrases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f55043b82f47c12be6eba09e01f59dfc8f945a9879469d05ae276cd5bd36cb89"
+}

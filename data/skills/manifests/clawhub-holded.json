@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27834,
+  "uuid": "skill-clawhub-holded",
+  "skillKey": "clawhub-holded",
+  "name": "Holded",
+  "summary": "Holded integration. Manage Organizations. Use when the user wants to interact with Holded data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.holded",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Holded integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Holded data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/holded@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "holded",
+      "url": "https://clawhub.ai/skills/holded"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "holded",
+    "url": "https://clawhub.ai/skills/holded",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/holded-2abb1b687153f52a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/holded@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-holded-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e72d53647b1b3a8ebb9b451bbfc2c7c48c3ae2d9b19304169b378f1d4fb9c076",
+      "artifactSizeBytes": 1770
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T21:13:04.945Z"
+}

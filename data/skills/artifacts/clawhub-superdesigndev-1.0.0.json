@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/superdesigndev@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.superdesigndev",
+  "skill": {
+    "id": 20540,
+    "skillKey": "clawhub-superdesigndev",
+    "name": "Superdesign"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "superdesigndev",
+    "url": "https://clawhub.ai/skills/superdesigndev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/superdesigndev-3b45faec8caf9937.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Superdesign is a design agent specialized in frontend UI/UX design. Use this skill before implementing any UI that requires design thinking. Common commands:..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jayzeedesign",
+      "userId": "s1720qsvd9skz9m86ty9ysnekd83vsxt",
+      "displayName": "JayZeeDesign",
+      "image": "https://avatars.githubusercontent.com/u/22532527?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 550,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772425998625,
+      "changelog": "Initial release of the Superdesign skill:\n\n- Renamed from \"frontend-design\" to \"superdesign\" with a new focus on procedural UI/UX design agent workflows.\n- Adds strict repo analysis via superdesign init, requiring automated creation and population of `.superdesign/init/` context files before any design task.\n- Enforces step-by-step CLI usage, including installation and authentication checks before any superdesign command runs.\n- Documents supported CLI commands and usage patterns for managing projects, drafts, components, and design iterations.\n- Requires fetching and following remote guideline files (INIT.md, SUPERDESIGN.md) for always up-to-date instructions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c1b0360721e293959aed645a78bd0f292808103aff48e42c0b891031382ac651"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/a-share-market-query@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_share_market_query",
+  "skill": {
+    "id": 73222,
+    "skillKey": "clawhub-a-share-market-query",
+    "name": "我的技能"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-share-market-query",
+    "url": "https://clawhub.ai/skills/a-share-market-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-share-market-query-76ae073a88e3919a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "获取股票行情与新闻情报并结构化输出。用户要求查询个股/指数、新闻追踪或多源交叉验证时调用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sunnycpk",
+      "userId": "s173nwyhpyazkcpcyhpz1ndsqh83nz7s",
+      "displayName": "sunnycpk",
+      "image": "https://avatars.githubusercontent.com/u/30063698?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 313,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773628654152,
+      "changelog": "1.获取股票行情与新闻信息，多信息源交叉验证。\n2.参考十多种技术分析策略，输出对股票的分析。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:35251eca06f79fca8cec37f4c4329102e4caa8093998f0823a123bf7dbf803dc"
+}

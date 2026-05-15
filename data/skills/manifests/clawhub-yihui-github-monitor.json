@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48668,
+  "uuid": "skill-clawhub-yihui-github-monitor",
+  "skillKey": "clawhub-yihui-github-monitor",
+  "name": "YiHui GITHUB MONITOR",
+  "summary": "Monitor multiple GitHub repos with configurable alert policies for releases, PRs, and security, sending low-noise notifications via scheduled cron jobs.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yihui_github_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "辉哥",
+      "features": [
+        "Monitor multiple GitHub repos with configurable alert policies for releases, PRs, and security,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yihui-github-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/197358991?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yihui-github-monitor",
+      "url": "https://clawhub.ai/skills/yihui-github-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yihui-github-monitor",
+    "url": "https://clawhub.ai/skills/yihui-github-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yihui-github-monitor-ca5a130b6a94c986.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yihui-github-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yihui-github-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0f430cdad64107c29683dc4b2b6da70515c73c2fe3efd2d81d635fef81bce000",
+      "artifactSizeBytes": 1915
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T08:50:19.017Z"
+}

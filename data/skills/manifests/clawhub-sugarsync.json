@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37774,
+  "uuid": "skill-clawhub-sugarsync",
+  "skillKey": "clawhub-sugarsync",
+  "name": "Sugarsync",
+  "summary": "SugarSync integration. Manage data, records, and automate workflows. Use when the user wants to interact with SugarSync data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sugarsync",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "SugarSync integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with SugarSync data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sugarsync@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sugarsync",
+      "url": "https://clawhub.ai/skills/sugarsync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sugarsync",
+    "url": "https://clawhub.ai/skills/sugarsync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sugarsync-e19e8968ebe18ea4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sugarsync@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-sugarsync-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e2c05e11f7cb67ec6e057350ffeaf16ec0ed96f58f67eceea8d6bacb38bfc85a",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:48:17.317Z"
+}

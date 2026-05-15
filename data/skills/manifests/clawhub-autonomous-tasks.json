@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57841,
+  "uuid": "skill-clawhub-autonomous-tasks",
+  "skillKey": "clawhub-autonomous-tasks",
+  "name": "autonomous-tasks",
+  "summary": "Self-driven AI worker. Reads goals, generates tasks, executes, and logs progress. Keywords: create goal, new goal, set goal, run goals, 创建目标, 新目标, 设定目标, 执行目标.",
+  "version": "10.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autonomous_tasks",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "glimmer",
+      "features": [
+        "Self-driven AI worker",
+        "Reads goals, generates tasks, executes, and logs progress",
+        "Keywords: create goal, new goal, set goal, run goals, 创建目标, 新目标, 设定目标, 执行目标."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/autonomous-tasks@10.3.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28428761?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "autonomous-tasks",
+      "url": "https://clawhub.ai/skills/autonomous-tasks"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autonomous-tasks",
+    "url": "https://clawhub.ai/skills/autonomous-tasks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autonomous-tasks-3939ade87e77c586.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/autonomous-tasks@10.3.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-autonomous-tasks-10.3.1.json",
+      "version": "10.3.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5421eb5aa3d7078a27796fba8a33940adbda365e1d7a1296e611d1c2a44d180a",
+      "artifactSizeBytes": 1982
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T10:46:16.591Z"
+}

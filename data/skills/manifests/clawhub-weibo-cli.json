@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56906,
+  "uuid": "skill-clawhub-weibo-cli",
+  "skillKey": "clawhub-weibo-cli",
+  "name": "Weibo CLI",
+  "summary": "Query Weibo (微博) public data via CLI. Use when user asks about: - Weibo hot searches / trending topics (微博热搜) - Searching Weibo posts, users, or topics - Get...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weibo_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "m3",
+      "features": [
+        "Query Weibo (微博) public data via CLI",
+        "Use when user asks about:",
+        "Weibo hot searches / trending topics (微博热搜)",
+        "Searching Weibo posts, users, or topics"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weibo-cli@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11957602?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weibo-cli",
+      "url": "https://clawhub.ai/skills/weibo-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weibo-cli",
+    "url": "https://clawhub.ai/skills/weibo-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weibo-cli-4e7bd10f75b49fbf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weibo-cli@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-weibo-cli-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b8d43e5af17706e4efaec2723bef88346837c3a9bb3ee5092dd55d54fbded9d8",
+      "artifactSizeBytes": 1889
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T13:44:52.337Z"
+}

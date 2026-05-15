@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54343,
+  "uuid": "skill-clawhub-hanging-out",
+  "skillKey": "clawhub-hanging-out",
+  "name": "Hanging Out",
+  "summary": "Casual social rhythm—light reminders for match pacing and pending replies. Low pressure; same official AILove agent API as loveq.",
+  "version": "1.4.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hanging_out",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "许晨阳",
+      "features": [
+        "Casual social rhythm—light reminders for match pacing and pending replies",
+        "Low pressure",
+        "same official AILove agent API as loveq."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hanging-out@1.4.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/92981790?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hanging-out",
+      "url": "https://clawhub.ai/skills/hanging-out"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hanging-out",
+    "url": "https://clawhub.ai/skills/hanging-out",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hanging-out-8819450a744851db.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hanging-out@1.4.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-hanging-out-1.4.2.json",
+      "version": "1.4.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6a5e8404b1943c240957a2425d980e95a931bf94afce3d919dba8db8d0ff2f36",
+      "artifactSizeBytes": 1895
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T08:34:34.201Z"
+}

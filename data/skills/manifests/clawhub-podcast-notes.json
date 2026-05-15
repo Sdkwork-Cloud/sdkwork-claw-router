@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58394,
+  "uuid": "skill-clawhub-podcast-notes",
+  "skillKey": "clawhub-podcast-notes",
+  "name": "Podcast Notes",
+  "summary": "播客大纲、Show Notes生成、开场白、嘉宾问题、变现策略、分发渠道。Podcast assistant with outlines, show notes, intro scripts, guest questions, monetization strategies.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.podcast_notes",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "播客大纲、Show Notes生成、开场白、嘉宾问题、变现策略、分发渠道。Podcast assistant with outlines, show notes, intro scripts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/podcast-notes@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "podcast-notes",
+      "url": "https://clawhub.ai/skills/podcast-notes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "podcast-notes",
+    "url": "https://clawhub.ai/skills/podcast-notes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/podcast-notes-44dd081fc2830bfb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/podcast-notes@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-podcast-notes-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c99921372d8a7e03bc3bfdc81f59efbcd7ebd85c179c2142afa6dc074421b510",
+      "artifactSizeBytes": 1909
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T10:48:45.184Z"
+}

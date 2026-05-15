@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/privatedeepsearch-melt@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.privatedeepsearch_melt",
+  "skill": {
+    "id": 12039,
+    "skillKey": "clawhub-privatedeepsearch-melt",
+    "name": "Private Deep Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "privatedeepsearch-melt",
+    "url": "https://clawhub.ai/skills/privatedeepsearch-melt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/privatedeepsearch-melt-3e7312899cfc7dcc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Performs private, multi-round deep web searches excluding Google/Bing, synthesizes results with citations, and does not retain user data or logs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "romancircus",
+      "userId": "publishers:romancircus",
+      "displayName": "romancircus",
+      "image": "https://avatars.githubusercontent.com/u/253068059?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1837,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770208869492,
+      "changelog": "Privacy-first deep research with multi-iteration search and content scraping",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8908af864e4c4a440aae40bcfea33d54aa1595a83d894f255c3058e8c4489a9b"
+}

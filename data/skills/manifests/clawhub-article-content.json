@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51105,
+  "uuid": "skill-clawhub-article-content",
+  "skillKey": "clawhub-article-content",
+  "name": "article-content",
+  "summary": "When the user wants to write, generate, or create article body content—blog post body, long-form content, how-to guide, listicle. Also use when the user ment...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.article_content",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kostja Zhang",
+      "features": [
+        "When the user wants to write, generate, or create article body content—blog post body, long-for.",
+        "Also use when the user ment..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/article-content@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168074885?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "article-content",
+      "url": "https://clawhub.ai/skills/article-content"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "article-content",
+    "url": "https://clawhub.ai/skills/article-content",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/article-content-31573ec90fe16c78.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/article-content@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-article-content-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:09c085c6567a4c84e4371b72c866cf3eb0b9eb71b2325eaf39d77e8526f43180",
+      "artifactSizeBytes": 1914
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T08:39:55.944Z"
+}

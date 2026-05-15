@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19264,
+  "uuid": "skill-clawhub-antibody-engineering",
+  "skillKey": "clawhub-antibody-engineering",
+  "name": "Antibody Engineering",
+  "summary": "Antibody engineering workflow combining ANARCI, BioPhi, IgFold, FoldX, and Rosetta tools through SciMiner.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.antibody_engineering",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SciMiner",
+      "features": [
+        "Antibody engineering workflow combining ANARCI, BioPhi, IgFold, FoldX, and Rosetta tools throug."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/antibody-engineering@1.0.4",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/antibody-engineering/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "antibody-engineering",
+      "url": "https://clawhub.ai/skills/antibody-engineering"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "antibody-engineering",
+    "url": "https://clawhub.ai/skills/antibody-engineering",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/antibody-engineering-c2a5960d6eadd0fb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/antibody-engineering@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-antibody-engineering-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c8332e793e9e2b6883e0e21e9b9b687f70a98597a9f2dc1c73bc42dafb12aa2c",
+      "artifactSizeBytes": 1962
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T16:07:07.264Z"
+}

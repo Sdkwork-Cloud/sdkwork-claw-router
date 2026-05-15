@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44673,
+  "uuid": "skill-clawhub-pipeworx-uselessfacts",
+  "skillKey": "clawhub-pipeworx-uselessfacts",
+  "name": "Pipeworx uselessfacts",
+  "summary": "Provides random or daily useless facts with sources and links for trivia enthusiasts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_uselessfacts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Provides random or daily useless facts with sources and links for trivia enthusiasts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-uselessfacts@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270792185?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-uselessfacts",
+      "url": "https://clawhub.ai/skills/pipeworx-uselessfacts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-uselessfacts",
+    "url": "https://clawhub.ai/skills/pipeworx-uselessfacts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-uselessfacts-efbd58fbd4890977.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-uselessfacts@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-uselessfacts-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5eff191b46b6996d4dfe36e88d92ffd03b1ffb3a9c7b58ac6063d829411ec352",
+      "artifactSizeBytes": 1864
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T17:12:00.619Z"
+}

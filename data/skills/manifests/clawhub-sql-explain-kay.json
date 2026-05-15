@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60300,
+  "uuid": "skill-clawhub-sql-explain-kay",
+  "skillKey": "clawhub-sql-explain-kay",
+  "name": "sql-explain",
+  "summary": "解析并解读 PostgreSQL、MySQL、SQLite 的 SQL 执行计划，提供性能问题识别与优化建议。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sql_explain_kay",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shenghoo123-png",
+      "features": [
+        "解析并解读 PostgreSQL、MySQL、SQLite 的 SQL 执行计划，提供性能问题识别与优化建议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sql-explain-kay@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265226019?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sql-explain-kay",
+      "url": "https://clawhub.ai/skills/sql-explain-kay"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sql-explain-kay",
+    "url": "https://clawhub.ai/skills/sql-explain-kay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sql-explain-kay-d38d1ffbc447f02f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sql-explain-kay@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sql-explain-kay-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a89968165f3f53f2a1434a3849db1246e612cab89743617199143d19b6ad338e",
+      "artifactSizeBytes": 1852
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T08:24:42.554Z"
+}

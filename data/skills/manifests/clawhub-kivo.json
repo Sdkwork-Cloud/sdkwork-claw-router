@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68366,
+  "uuid": "skill-clawhub-kivo",
+  "skillKey": "clawhub-kivo",
+  "name": "KIVO",
+  "summary": "Agent 知识平台 — 覆盖知识提取、存储、检索、迭代、调研闭环的完整生命周期",
+  "version": "1.11.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kivo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yuchangxu",
+      "features": [
+        "Agent 知识平台 — 覆盖知识提取、存储、检索、迭代、调研闭环的完整生命周期"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kivo@1.11.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259125079?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kivo",
+      "url": "https://clawhub.ai/skills/kivo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kivo",
+    "url": "https://clawhub.ai/skills/kivo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kivo-3d1ebb06f245bc2c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kivo@1.11.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kivo-1.11.0.json",
+      "version": "1.11.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f774196e04763d423eece38936e4eed8c8f2094611572b400f670b563c8faf4b",
+      "artifactSizeBytes": 1803
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T05:40:51.087Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hm-brand@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hm_brand",
+  "skill": {
+    "id": 49231,
+    "skillKey": "clawhub-hm-brand",
+    "name": "Hm Brand"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hm-brand",
+    "url": "https://clawhub.ai/skills/hm-brand",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hm-brand-3e1be6e8a80cb2cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "H&M is a global fast-fashion retailer known for cost-efficient large-scale sourcing, diverse brands, and leadership in sustainable fashion initiatives."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 84,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777572378316,
+      "changelog": "- Initial release of the hm-brand skill.\n- Includes a company overview, history timeline, business model, and moat analysis for H&M.\n- Covers key metrics (revenue, store count, online sales, etc.) and notable facts.\n- Highlights sustainability initiatives, multi-brand strategy, and industry context.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:34086a14578006aa3bdbf70a87257e486037af842f845c4cfcc2831b5b236004"
+}

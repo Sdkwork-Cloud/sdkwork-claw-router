@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tautulli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tautulli",
+  "skill": {
+    "id": 10723,
+    "skillKey": "clawhub-tautulli",
+    "name": "Tautullu"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tautulli",
+    "url": "https://clawhub.ai/skills/tautulli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tautulli-a3572671b392b982.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor Plex activity and stats via Tautulli API. Check who's watching, view history, get library stats, and see server info."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rjmurillo",
+      "userId": "publishers:rjmurillo",
+      "displayName": "rjmurillo",
+      "image": "https://avatars.githubusercontent.com/u/6811113?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2157,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769971794389,
+      "changelog": "Initial release – Monitor Plex activity and stats via the Tautulli API:\n\n- View current activity, watch history, and recently added media.\n- Get detailed library and user statistics.\n- Check Plex server info and connection status.\n- Requires curl, jq, TAUTULLI_URL, and TAUTULLI_API_KEY.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0d8c7b25e9915516bc06fa8b71f9d5678d26f34da5a5d533ae436fb48ed3de94"
+}

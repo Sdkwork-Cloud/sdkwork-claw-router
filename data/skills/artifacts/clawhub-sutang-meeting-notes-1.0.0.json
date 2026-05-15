@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sutang-meeting-notes@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sutang_meeting_notes",
+  "skill": {
+    "id": 65880,
+    "skillKey": "clawhub-sutang-meeting-notes",
+    "name": "会议纪要AI整理器 Meeting Notes Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sutang-meeting-notes",
+    "url": "https://clawhub.ai/skills/sutang-meeting-notes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sutang-meeting-notes-9dc9592aab36251e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "5秒钟把会议录音/文字转成标准纪要，自动提取决议事项、待办任务和负责人"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "miromiraclemiro-ux",
+      "userId": "s174n7mmwbjrzq8dxdm33799t983py86",
+      "displayName": "miromiraclemiro-ux",
+      "image": "https://avatars.githubusercontent.com/u/267398765?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 246,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774609029653,
+      "changelog": "Initial release: 5秒把会议录音/文字转成标准纪要，自动提取决议和待办",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:94be7a99662daeca924ea982de1094c0bb6e66ae0eef4125a8f14aea230ea6bb"
+}

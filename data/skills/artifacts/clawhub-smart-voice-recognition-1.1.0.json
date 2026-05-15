@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smart-voice-recognition@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_voice_recognition",
+  "skill": {
+    "id": 49523,
+    "skillKey": "clawhub-smart-voice-recognition",
+    "name": "Voice Recognition"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-voice-recognition",
+    "url": "https://clawhub.ai/skills/smart-voice-recognition",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-voice-recognition-7132b0088f1a8414.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Intelligent speech-to-text using local OpenAI Whisper (no API key needed, fully private). Use when you need to transcribe audio files, convert voice messages..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "08jacky04",
+      "userId": "s17bh49kgzhtwya6p6q0fq88h985stnf",
+      "displayName": "08Jacky04",
+      "image": "https://avatars.githubusercontent.com/u/189535931?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 76,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1778049294901,
+      "changelog": "Added token savings comparison table. Highlighted zero token consumption as key differentiator.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:205972fd4790a4110e420b4b10bfc76ee3dc74cf1c5e63bb2cbfb271bdaab391"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pinyin-box@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pinyin_box",
+  "skill": {
+    "id": 67472,
+    "skillKey": "clawhub-pinyin-box",
+    "name": "pinyin-box"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pinyin-box",
+    "url": "https://clawhub.ai/skills/pinyin-box",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pinyin-box-367b68d6e33fbe2f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "汉字小助手 - 将文字或图片中的文字转换为拼音格或米字格练习纸。 当用户需要：(1) 把文字转换成练字帖或米字格，(2) 提取图片中的文字并生成拼音格， (3) 生成汉字书写练习材料，(4) 把任何内容做成拼音格或米字格格式时，使用此 Skill。 支持文字输入、图片 OCR 识别，输出 PNG 或 PDF 格式。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yanglinzhen",
+      "userId": "s17a6w61g2h7deefg481g848vd83hfk8",
+      "displayName": "yanglinzhen",
+      "image": "https://avatars.githubusercontent.com/u/6395823?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774100851829,
+      "changelog": "Initial release of pinyin-box skill.\n\n- Converts text or text extracted from images into standard pinyin grid or 米字格 practice sheets.\n- Supports both text input and image OCR recognition.\n- Outputs in PNG (default) or PDF format.\n- Filters out extraneous information (such as UI elements) from images before processing.\n- Automatically paginates for longer texts and informs user of character and page count.\n- Provides CLI usage instructions and examples for generating practice materials.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:27d89d06a2561f877bd4bb6f11cb01e74401589dad8ffb8349406a773c03edaa"
+}

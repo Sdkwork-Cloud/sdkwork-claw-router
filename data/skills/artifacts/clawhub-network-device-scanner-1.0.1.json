@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/network-device-scanner@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.network_device_scanner",
+  "skill": {
+    "id": 65462,
+    "skillKey": "clawhub-network-device-scanner",
+    "name": "network-device-scanner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "network-device-scanner",
+    "url": "https://clawhub.ai/skills/network-device-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/network-device-scanner-12c83a0425fb964b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "扫描局域网内活跃设备及其开放端口，返回格式化Markdown表格。触发场景：(1) 用户说\"查一下周边设备有哪些\"、\"扫描周边设备\"、\"看看网络有哪些设备\"、\"局域网有哪些设备\" (2) 用户提到IP地址、MAC地址、端口扫描相关的查询"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "doooxu",
+      "userId": "s177v45v618sderyj9r8k0wyyh83hxjk",
+      "displayName": "Li Xudong",
+      "image": "https://avatars.githubusercontent.com/u/33438241?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 579,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773913785254,
+      "changelog": "- 跨平台支持：新增对 Linux 和 macOS 的扫描方法及命令说明，补充了 Python 脚本执行示例。\n- 明确用途声明：强调本功能仅限管理用户自有网络。\n- 补充环境要求：罗列对 Python 3.7+ 及网络扫描工具的需求。\n- 设备发现细化：详细说明设备发现的多种优先级策略（/proc/net/arp、arp、fping、nmap等）。\n- 常用端口扩展：扫描端口列表增加 53, 554, 8000, 37777 等。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fd19fbdb8a2cd233e512f7f629f5463079d922e044d5e9ecad59bea21911774f"
+}

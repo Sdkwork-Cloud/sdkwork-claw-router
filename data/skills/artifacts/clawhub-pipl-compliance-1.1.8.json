@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pipl-compliance@1.1.8",
+  "version": "1.1.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipl_compliance",
+  "skill": {
+    "id": 68619,
+    "skillKey": "clawhub-pipl-compliance",
+    "name": "PIPL-Compliance（PIPL合规工具）"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipl-compliance",
+    "url": "https://clawhub.ai/skills/pipl-compliance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipl-compliance-8f1948cc0ca70e81.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "中国个人信息保护法（PIPL）合规检查、风险评估和文档生成工具。为企业提供全面的PIPL合规解决方案。Use when: 需要进行PIPL合规自查、个人信息处理风险评估、合规文档生成、企业合规管理。触发关键词：PIPL、个人信息保护法、合规检查、风险评估、隐私合规、数据保护"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wwumit",
+      "userId": "s171gysg9m3c2gxwwc6pvt62z983jxn1",
+      "displayName": "Wei Wu",
+      "image": "https://avatars.githubusercontent.com/u/5894591?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 321,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 16
+    },
+    "latestVersion": {
+      "version": "1.1.8",
+      "createdAt": 1774692398166,
+      "changelog": "- Added SECURITY_CHECK_GUIDE.md to provide users with security check guidance and best practices.\n- Introduced scripts/security_check_enhanced.py for enhanced security verification in the compliance workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:69c7d734049f24184b55aeddb2c6a19d81443e7f6ad7b1a1179c3744a700c304"
+}

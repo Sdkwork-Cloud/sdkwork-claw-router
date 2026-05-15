@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17353,
+  "uuid": "skill-clawhub-agent-zero",
+  "skillKey": "clawhub-agent-zero",
+  "name": "AgentZero",
+  "summary": "Interact with the AgentZero real estate listing tracker (local Rust/Axum backend at http://localhost:8000). Use when asked to add a property listing by URL,...",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_zero",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yuchen",
+      "features": [
+        "Interact with the AgentZero real estate listing tracker (local Rust/Axum backend at http://loca.",
+        "Use when asked to add a property listing by URL,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-zero@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3712071?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-zero",
+      "url": "https://clawhub.ai/skills/agent-zero"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-zero",
+    "url": "https://clawhub.ai/skills/agent-zero",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-zero-889a2b1d4d791f65.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-zero@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-zero-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c7cb9df0bb049a61ef4a92cf49207cd4a83bd919ae8d8e5020245130318b9503",
+      "artifactSizeBytes": 2254
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T20:07:42.029Z"
+}

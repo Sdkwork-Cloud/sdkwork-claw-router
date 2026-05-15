@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/axios-supply-chain-attack-check@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.axios_supply_chain_attack_check",
+  "skill": {
+    "id": 41096,
+    "skillKey": "clawhub-axios-supply-chain-attack-check",
+    "name": "axios-supply-chain-attack-check"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "axios-supply-chain-attack-check",
+    "url": "https://clawhub.ai/skills/axios-supply-chain-attack-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/axios-supply-chain-attack-check-fac952b2c162966e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides a quick 1-minute script to detect and handle malicious axios versions and backdoor dependencies in front-end projects."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "preciousdust",
+      "userId": "s1718nngdvzjjd25jvwdbte2ks84d0dn",
+      "displayName": "hometown",
+      "image": "https://avatars.githubusercontent.com/u/30769426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775540399434,
+      "changelog": "- Initial release of axios-supply-chain-attack-check.\n- Provides a 1-minute rapid inspection script for detecting malicious axios versions (1.14.1/0.30.4) and related supply chain threats.\n- Suitable for all frontend projects to quickly check dependency trees and handle emergencies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:78ac4e8898049620e3fb83c311fb7021cdf308ea29e733c09581b130151da469"
+}

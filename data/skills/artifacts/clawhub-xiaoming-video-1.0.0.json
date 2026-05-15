@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaoming-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaoming_video",
+  "skill": {
+    "id": 44709,
+    "skillKey": "clawhub-xiaoming-video",
+    "name": "Xiaoming Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaoming-video",
+    "url": "https://clawhub.ai/skills/xiaoming-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaoming-video-52501a077a11d416.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get edited video clips ready to post, without touching a single slider. Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say something like..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susan4731-wilfordf",
+      "userId": "s1782w3wqej6a5gnp3w63eb80184cckp",
+      "displayName": "susan4731-wilfordf",
+      "image": "https://avatars.githubusercontent.com/u/208907675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776505276947,
+      "changelog": "- Initial release of Xiaoming Video skill for fast personal video editing and export.\n- Upload raw video clips (MP4, MOV, AVI, WebM, up to 500MB) and request edits by describing your needs.\n- Automated connection to the cloud video processing API—handles token setup, session creation, and status feedback.\n- Supports actions like trimming, adding subtitles, viewing credits, exporting as 1080p MP4, and more via simple prompts.\n- Designed for quick, easy edits for casual creators; no editing experience required.\n- Backend handles error cases (file types, credit usage, export restrictions) and guides users accordingly.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1d0da3cd9b9dccf5ef088138789a773f5256a608df9d9eb976219abdb16a4f54"
+}

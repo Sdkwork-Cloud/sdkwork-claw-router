@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13353,
+  "uuid": "skill-clawhub-trustra-escrow",
+  "skillKey": "clawhub-trustra-escrow",
+  "name": "Trustra Escrow",
+  "summary": "Escrow as a Service for AI agents. Create trustless USDC escrow transactions on Solana.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trustra_escrow",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xasus1",
+      "features": [
+        "Escrow as a Service for AI agents",
+        "Create trustless USDC escrow transactions on Solana."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trustra-escrow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/179913068?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trustra-escrow",
+      "url": "https://clawhub.ai/skills/trustra-escrow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trustra-escrow",
+    "url": "https://clawhub.ai/skills/trustra-escrow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trustra-escrow-09f19721487cd917.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trustra-escrow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trustra-escrow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c3fe8e3869af6267a6a6a41dc0c50f41ba802d611018c3be9489748f0627289c",
+      "artifactSizeBytes": 2290
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T01:38:00.648Z"
+}

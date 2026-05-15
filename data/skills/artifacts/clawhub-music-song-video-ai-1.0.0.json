@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/music-song-video-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.music_song_video_ai",
+  "skill": {
+    "id": 41478,
+    "skillKey": "clawhub-music-song-video-ai",
+    "name": "Music Song Video Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "music-song-video-ai",
+    "url": "https://clawhub.ai/skills/music-song-video-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/music-song-video-ai-8de4f2e9c484ab45.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate audio files into music video MP4 with this skill. Works with MP3, WAV, AAC, FLAC files up to 200MB. musicians and content creators use it for genera..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776787784071,
+      "changelog": "- Initial release of \"Music Song Video AI\" skill (v1.0.0).\n- Turn audio files (MP3, WAV, AAC, FLAC, up to 200MB) into AI-generated music videos in 1080p MP4 format.\n- Fast cloud GPU processing: most jobs complete in 1-2 minutes.\n- Simple setup with automatic token management; first 100 credits are free.\n- Supports quick edits, batch processing, and iterative workflows.\n- Clear user prompts and robust error handling for a smooth experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:775cd1a0b2ede339064aabebe3a70a170af3efa1c858825073db95c1e8c344b0"
+}

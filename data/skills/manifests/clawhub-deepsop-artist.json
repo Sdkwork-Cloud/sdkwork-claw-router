@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60490,
+  "uuid": "skill-clawhub-deepsop-artist",
+  "skillKey": "clawhub-deepsop-artist",
+  "name": "支持图片生成（SEEDREAM5_0/NANO_BANANA_2）和视频生成（SEEDANCE_1_5_PRO/SORA2/VEO3.1/WAN2.6），SORA2 支持文生视频和首尾帧图生视频",
+  "summary": "AI 图片与视频异步生成技能，调用 AI Artist API 根据文本提示词生成图片或视频，自动轮询直到任务完成。 ⚠️ 使用前必须设置环境变量 AI_ARTIST_TOKEN 为你自己的 API Key！ 获取 API Key：访问 https://ai.deepsop.com/ 注册登录后创建。 支持图片模...",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deepsop_artist",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "2393970875",
+      "features": [
+        "AI 图片与视频异步生成技能，调用 AI Artist API 根据文本提示词生成图片或视频，自动轮询直到任务完成。 ⚠️ 使用前必须设置环境变量 AI_ARTIST_TOKEN 为你自己的."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deepsop-artist@1.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139337194?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deepsop-artist",
+      "url": "https://clawhub.ai/skills/deepsop-artist"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deepsop-artist",
+    "url": "https://clawhub.ai/skills/deepsop-artist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deepsop-artist-bee2d1e00880843c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deepsop-artist@1.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-deepsop-artist-1.0.8.json",
+      "version": "1.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f80b96756d350b387c580e4d0c66aae9ae02b00b4d33e74cc8c3e8fd77161665",
+      "artifactSizeBytes": 2339
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T10:34:00.029Z"
+}

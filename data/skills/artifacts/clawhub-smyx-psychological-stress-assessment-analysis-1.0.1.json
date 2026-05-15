@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smyx-psychological-stress-assessment-analysis@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smyx_psychological_stress_assessment_analysis",
+  "skill": {
+    "id": 57447,
+    "skillKey": "clawhub-smyx-psychological-stress-assessment-analysis",
+    "name": "心理压力评估技能"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smyx-psychological-stress-assessment-analysis",
+    "url": "https://clawhub.ai/skills/smyx-psychological-stress-assessment-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smyx-psychological-stress-assessment-analysis-5037e4cad97b8c8f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Combines facial blood flow and emotional characteristics to analyze stress index, anxiety tendency, and depression tendency, suitable for mental health monit..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "smyx-sunjinhui",
+      "userId": "s17cfv2h26b7hq5w47tgfy23xx83z9x6",
+      "displayName": "smyx-sunjinhui",
+      "image": "https://avatars.githubusercontent.com/u/272464691?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 4,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778122958820,
+      "changelog": "- Minor update with config and code maintenance.\n- Updated configuration files (`config.yaml`, `config-dev.yaml`, `config-test.yaml`).\n- Adjusted core scripts in `skills/face_analysis/scripts` and `skills/smyx_common/scripts` for improved consistency.\n- No major user-facing change; workflow and API behaviors remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d75550bfb4c98fbe6f11f67f3ff467a6030b330d87361c40ad6a0a118b0dcdc0"
+}

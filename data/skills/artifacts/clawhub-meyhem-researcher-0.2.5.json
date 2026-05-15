@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meyhem-researcher@0.2.5",
+  "version": "0.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meyhem_researcher",
+  "skill": {
+    "id": 16689,
+    "skillKey": "clawhub-meyhem-researcher",
+    "name": "Meyhem Researcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meyhem-researcher",
+    "url": "https://clawhub.ai/skills/meyhem-researcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meyhem-researcher-6587c02698ab9f35.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-query research tool with LLM-ranked results and freshness control. Breaks a topic into focused queries, previews top results. No API key."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "c5huracan",
+      "userId": "s173vpr4map3x4yc4hdhbbhj1d83ra1z",
+      "displayName": "c5huracan",
+      "image": "https://avatars.githubusercontent.com/u/93015898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 800,
+      "installsAllTime": 6,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 17
+    },
+    "latestVersion": {
+      "version": "0.2.5",
+      "createdAt": 1773509740032,
+      "changelog": "- Introduced LLM-ranked search results for higher relevance.\n- Added freshness control: choose realtime, hourly, daily, or weekly result freshness.\n- Updated CLI and REST usage to support freshness options.\n- Enhanced documentation for new features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4d9b20cac899bfd597e21a7ac9a432f86291822fbb59f5e6917ce010c95aeb6c"
+}

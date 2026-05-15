@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ouroboros-superpowers@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ouroboros_superpowers",
+  "skill": {
+    "id": 59964,
+    "skillKey": "clawhub-ouroboros-superpowers",
+    "name": "Ouroboros + Superpowers"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ouroboros-superpowers",
+    "url": "https://clawhub.ai/skills/ouroboros-superpowers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ouroboros-superpowers-eba52eecc1611b63.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "명시적 요청 시에만 사용. 트리거: '우로보로스/ouroboros'(인터뷰→스펙), '슈퍼파워/superpowers'(계획→실행), '스펙부터/풀플로우'(전체)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tty444",
+      "userId": "publishers:tty444",
+      "displayName": "tty444",
+      "image": "https://avatars.githubusercontent.com/u/257260340?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 228,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774246663195,
+      "changelog": "트리거별 시작점 분리",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4270d61c0b6fa8475ed46d9cbd181ef115f6077cf1f8ebf68f617e711927d7a3"
+}

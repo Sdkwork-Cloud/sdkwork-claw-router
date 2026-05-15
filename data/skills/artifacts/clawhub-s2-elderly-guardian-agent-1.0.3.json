@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/s2-elderly-guardian-agent@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.s2_elderly_guardian_agent",
+  "skill": {
+    "id": 72658,
+    "skillKey": "clawhub-s2-elderly-guardian-agent",
+    "name": "S2 零隐私老人守护者智能体"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "s2-elderly-guardian-agent",
+    "url": "https://clawhub.ai/skills/s2-elderly-guardian-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/s2-elderly-guardian-agent-ee41c323b600b611.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "S2 零隐私老人健康哨兵。多模态跌倒监测，向医疗平台或智能家居总线发布健康预警（不包含物理执行裁定）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "spacesq",
+      "userId": "s17c8pmv1e8tb2mcc5aset88e183hq1t",
+      "displayName": "MilesXiang",
+      "image": "https://avatars.githubusercontent.com/u/259359437?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775730536530,
+      "changelog": "## [1.0.3] - 2026-04-09\n### 🛡️ Absolute Coherence & Privacy Sanitization Update\n\nThis release directly addresses the sandbox auditor's feedback regarding internal inconsistencies, Phantom Dependencies, PII exposure, and the divergence between the whitepaper's claims and the shipped code. The agent now achieves 100% architectural and documentary parity.\n\n**Security, Privacy & Architecture Remediations:**\n- **PII Eradication & Privacy Sanitization:** Completely removed all hardcoded Personally Identifiable Information (PII), such as simulated national ID strings, from the codebase. Introduced a safe, anonymized `subject_alias` system to ensure zero privacy leakage during baseline execution.\n- **Dependency Pruning (Least Privilege):** Eliminated unused 'phantom' dependencies (`cryptography` and `numpy`) from both `package.json` and `requirements.txt`. Since the agent was strictly downgraded to a Sentinel in v1.0.2 (removing physical actuation), cryptographic signature validation is no longer required. This significantly shrinks the attack surface.\n- **Persistence Parity (ADL Logging):** Implemented genuine local file I/O operations (`record_adl_log`). The agent now actively writes anonymized Activities of Daily Living (ADL) and health event JSON logs to the `s2_bas_governance/elderly_care/` directory. This completely validates and justifies the filesystem permissions requested in the manifest.\n- **Whitepaper & Codebase Synchronization:** Completely rewrote Chapter 3 of `S2_ELDERLY_WHITEPAPER.md` to reflect the \"Decoupled Sentinel Architecture.\" The whitepaper now explicitly matches the code: the L2 Guardian strictly broadcasts health alerts (`CRITICAL_FALL_DETECTED`) to the bus, formally delegating the final `Fail-Open` physical actuation to the upstream L1 Master Controller.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8475d860679f43e754be05df458e54db132f61a479c3e8348a334315c82488d9"
+}

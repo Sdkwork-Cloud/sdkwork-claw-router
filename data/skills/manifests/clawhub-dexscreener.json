@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15446,
+  "uuid": "skill-clawhub-dexscreener",
+  "skillKey": "clawhub-dexscreener",
+  "name": "Dexscreener API",
+  "summary": "Query DexScreener market data - search pairs, inspect liquidity/volume, check boosted tokens, and fetch token orders.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dexscreener",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ben",
+      "features": [
+        "Query DexScreener market data",
+        "search pairs, inspect liquidity/volume, check boosted tokens, and fetch token orders."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dexscreener@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6516437?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dexscreener",
+      "url": "https://clawhub.ai/skills/dexscreener"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dexscreener",
+    "url": "https://clawhub.ai/skills/dexscreener",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dexscreener-061a93d44fcb177d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dexscreener@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dexscreener-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aaec1f75369047452b625cad9e2894fbb58c078faa2791ea5ab4fb2c82448acb",
+      "artifactSizeBytes": 2221
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T17:32:25.518Z"
+}

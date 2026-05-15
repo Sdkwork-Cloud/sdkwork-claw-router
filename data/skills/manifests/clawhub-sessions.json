@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32936,
+  "uuid": "skill-clawhub-sessions",
+  "skillKey": "clawhub-sessions",
+  "name": "Sessions",
+  "summary": "Sessions integration. Manage Sessions, Persons, Organizations, Notes, Files. Use when the user wants to interact with Sessions data.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sessions",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Sessions integration",
+        "Manage Sessions, Persons, Organizations, Notes, Files",
+        "Use when the user wants to interact with Sessions data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sessions@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sessions",
+      "url": "https://clawhub.ai/skills/sessions"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sessions",
+    "url": "https://clawhub.ai/skills/sessions",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sessions-1225ae6c1ae69dcb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sessions@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sessions-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3cf8855faa48d026643ae2ee44eaf7516a18acd207b4ea3bd9e6cd15a4cd02d2",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:59:17.361Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-routing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_routing",
+  "skill": {
+    "id": 23864,
+    "skillKey": "clawhub-feishu-routing",
+    "name": "feishu-routing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-routing",
+    "url": "https://clawhub.ai/skills/feishu-routing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-routing-6ec44b8339a196be.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Routes messages from specified Feishu group chats to corresponding agents for processing and relays their replies back to the original group."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sunitaly",
+      "userId": "publishers:sunitaly",
+      "displayName": "sunitaly",
+      "image": "https://avatars.githubusercontent.com/u/35386945?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 417,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773067002464,
+      "changelog": "Initial release of feishu-routing skill.\n\n- Supports routing Feishu group chat messages to designated agents based on chat_id.\n- Defines four departments (太子, 中书省, 门下省, 尚书省) with distinct group and agent assignments.\n- Implements routing rules to detect message source and delegate tasks to the appropriate sub-agent using sessions_spawn.\n- Ensures sub-agent replies are relayed back to the original group by the main agent.\n- Includes clear instructions and cautions on session handling and context retention.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7361c4b9224dce8ecfe97c96c3366c7e55ce2f266d86cb665dbb16da35a247d4"
+}

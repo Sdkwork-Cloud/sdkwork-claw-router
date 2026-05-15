@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seedtts2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seedtts2",
+  "skill": {
+    "id": 67201,
+    "skillKey": "clawhub-seedtts2",
+    "name": "豆包语音合成 2.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seedtts2",
+    "url": "https://clawhub.ai/skills/seedtts2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seedtts2-7dbe29b2b722b1d9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "豆包语音合成 2.0，支持情绪控制、多音色、语音指令。34 种音色可选，含 JARVIS 同款男声。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yanmomuyu-sys",
+      "userId": "s174ntp7s3d7snshweezedzwr983eamp",
+      "displayName": "yanmomuyu-sys",
+      "image": "https://avatars.githubusercontent.com/u/258594046?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774306090820,
+      "changelog": "初始版本 - 豆包 SeedTTS 2.0，支持 34 种音色和情绪控制，优化了结束标记检测/Session 复用/超时配置",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dabe5afe7d4514c03e3237d5f2ddb147ebc52f755bfb672cfc3101676d34f538"
+}

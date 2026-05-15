@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19874,
+  "uuid": "skill-clawhub-claw-seatbelt",
+  "skillKey": "clawhub-claw-seatbelt",
+  "name": "Claw Seatbelt",
+  "summary": "Provides a 10-second automatic rollback and restart of OpenClaw Gateway if configuration changes cause it to fail, activating only during backup scripts.",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_seatbelt",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "segasonicye",
+      "features": [
+        "Provides a 10-second automatic rollback and restart of OpenClaw Gateway if configuration change."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-seatbelt@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17370567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-seatbelt",
+      "url": "https://clawhub.ai/skills/claw-seatbelt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-seatbelt",
+    "url": "https://clawhub.ai/skills/claw-seatbelt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-seatbelt-64cafc0d617f66ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-seatbelt@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-seatbelt-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:973e010053c439069ce507d7997f0718098d14c920ff00bfdc329b6cf07c82f5",
+      "artifactSizeBytes": 1907
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T02:53:45.946Z"
+}

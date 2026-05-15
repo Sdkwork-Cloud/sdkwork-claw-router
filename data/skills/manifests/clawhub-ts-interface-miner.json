@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65936,
+  "uuid": "skill-clawhub-ts-interface-miner",
+  "skillKey": "clawhub-ts-interface-miner",
+  "name": "Ts Interface Miner",
+  "summary": "一个专门用于分析 TypeScript (.ts/.tsx) 文件的智能助手。它能够根据用户提供的关键词（功能描述、函数名、API 路径），精准定位相关接口定义。该技能深度解析代码结构与注释（JSDoc/单行注释），提取请求方法、路径、参数细节、响应结构及状态码，最终生成结构清晰、信息完整的 Markdown 表...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ts_interface_miner",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xin Ding",
+      "features": [
+        "一个专门用于分析 TypeScript (.ts/.tsx) 文件的智能助手。它能够根据用户提供的关键词（功能描述、函数名、API 路径），精准定位相关接口定义。该技能深度解析代码结构与注释."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ts-interface-miner@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74651863?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ts-interface-miner",
+      "url": "https://clawhub.ai/skills/ts-interface-miner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ts-interface-miner",
+    "url": "https://clawhub.ai/skills/ts-interface-miner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ts-interface-miner-20ad8fa542e29840.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ts-interface-miner@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ts-interface-miner-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba230b81d0d4c5cbb90382b3a0a3ccd4d915a7e4335488f0b04e86008f657d4b",
+      "artifactSizeBytes": 2722
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T06:37:29.061Z"
+}

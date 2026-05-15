@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/director-content-repurposer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.director_content_repurposer",
+  "skill": {
+    "id": 39611,
+    "skillKey": "clawhub-director-content-repurposer",
+    "name": "Content Repurposer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "director-content-repurposer",
+    "url": "https://clawhub.ai/skills/director-content-repurposer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/director-content-repurposer-28ebde5eb8cf767b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transform long-form content into concise, platform-optimized LinkedIn posts, Twitter threads, or Instagram captions that engage and deliver clear value."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "di5cip1e",
+      "userId": "s17ewhty0883w7qaxe537w985583mxaf",
+      "displayName": "di5cip1e",
+      "image": "https://avatars.githubusercontent.com/u/87604837?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774625200676,
+      "changelog": "Initial release of Content Repurposer Skill.\n\n- Transforms long-form content into optimized social posts for LinkedIn, Twitter/X, and Instagram.\n- Offers platform-specific procedures for content analysis, transformation, and quality checks.\n- Supports direct invocations and trigger phrases for seamless activation.\n- Provides detailed post templates, character limits, and hashtag strategies for each social platform.\n- Emulates a content marketing persona that crafts engaging, value-driven, platform-native posts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:86927b6ed71e3579850fd13e6ce3c4173e91b426b072b57fefbcee3684bfaab3"
+}

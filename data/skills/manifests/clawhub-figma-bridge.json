@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25634,
+  "uuid": "skill-clawhub-figma-bridge",
+  "skillKey": "clawhub-figma-bridge",
+  "name": "Figma Bridge",
+  "summary": "Extract design information from Figma files. Pull design tokens, component structure, colors, typography, spacing, and export assets. Use when the user asks...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.figma_bridge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ha Le",
+      "features": [
+        "Extract design information from Figma files",
+        "Pull design tokens, component structure, colors, typography, spacing, and export assets",
+        "Use when the user asks..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/figma-bridge@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/156477898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "figma-bridge",
+      "url": "https://clawhub.ai/skills/figma-bridge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "figma-bridge",
+    "url": "https://clawhub.ai/skills/figma-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/figma-bridge-642dd64e7b747d02.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/figma-bridge@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-figma-bridge-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6fbd9f30e6fa7996479fc7ba2f710d80c2e8c9cf39793469d15fc4c2e817440d",
+      "artifactSizeBytes": 2057
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T21:02:01.013Z"
+}

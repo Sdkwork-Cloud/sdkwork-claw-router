@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hcloud@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hcloud",
+  "skill": {
+    "id": 16577,
+    "skillKey": "clawhub-hcloud",
+    "name": "Hetzner Cloud CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hcloud",
+    "url": "https://clawhub.ai/skills/hcloud",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hcloud-61ec4ba5d854cbb2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Hetzner Cloud infrastructure using the hcloud CLI. Use when working with Hetzner servers, firewalls, networks, volumes, load balancers, or any Hetzner..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jpj069",
+      "userId": "s17e9pvza196hhvsfw7pyc7cds849ebn",
+      "displayName": "Jens Jung",
+      "image": "https://avatars.githubusercontent.com/u/260768413?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 849,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771540991991,
+      "changelog": "Initial release: Complete hcloud CLI reference with server management, firewalls, SSH keys, volumes, networks, and load balancers",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d5b7a5572ae507a38b96db8a0fea8614d1fe4c1d8bb38f2610a385a98e476505"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/raccoon-data-analysis@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.raccoon_data_analysis",
+  "skill": {
+    "id": 63312,
+    "skillKey": "clawhub-raccoon-data-analysis",
+    "name": "Raccoon Data Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "raccoon-data-analysis",
+    "url": "https://clawhub.ai/skills/raccoon-data-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/raccoon-data-analysis-ffd19c7529a66031.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "当用户需要使用小浣熊(Raccoon)进行数据分析会话管理、文件上传下载、数据可视化、数据分析交互时使用此技能。触发词包括\"小浣熊数据分析\"、\"Raccoon数据分析\"、\"数据分析会话\"。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "raccoon-office",
+      "userId": "s17ewn22qr2ece1jeppe1vw2nh83gmkv",
+      "displayName": "商汤小浣熊",
+      "image": "https://avatars.githubusercontent.com/u/5978574?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 685,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 70,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774489666631,
+      "changelog": "Version 1.0.3\n\n- 简化并优化 SKILL 描述与触发词，突出“小浣熊数据分析”核心用途。\n- 删除了冗长的详细说明与例子，结构更紧凑，重点突出行为规则和要求。\n- 保留核心规则、隐私保护与错误处理流程，内容更聚焦、易查阅。\n- 使用场景、调用流程、注意事项等文档内容未做实质变更。\n- 仅文档/说明调整，无脚本或功能改动。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d70f33904ca9e58a84ea28e48a963c6b7a8d4911562662a9beba31f7cf4d91b8"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pull-request-reviewer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pull_request_reviewer",
+  "skill": {
+    "id": 33450,
+    "skillKey": "clawhub-pull-request-reviewer",
+    "name": "PR Reviewer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pull-request-reviewer",
+    "url": "https://clawhub.ai/skills/pull-request-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pull-request-reviewer-45d9a0308c551956.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reviews pull requests by detecting logic bugs, security risks, test gaps, API changes, and style issues, providing a structured report prioritizing block mer..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lnguyen1996",
+      "userId": "publishers:lnguyen1996",
+      "displayName": "Lnguyen1996",
+      "image": "https://avatars.githubusercontent.com/u/97846628?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 228,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774159574524,
+      "changelog": "- Initial release of pull-request-reviewer skill.\n- Reviews pull requests and code diffs for logic bugs, missing tests, security holes, breaking API changes, and naming issues across any language.\n- Provides structured reports with prioritized sections: block-merge issues, warnings, suggestions, approvals, and summary.\n- Specialized review checklists for major languages (e.g., Python, JavaScript/TypeScript, C#, Go, Rust, Java/Kotlin, SQL migrations).\n- Designed to help users identify and fix the most critical problems before merging.\n- Tracks and surfaces common review issue patterns to aid learning over time.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:93b42b85d0b371795f39e254c83f567f69d51b880d8acf167427ffadc98a3e64"
+}

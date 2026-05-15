@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54105,
+  "uuid": "skill-clawhub-doc-doctor",
+  "skillKey": "clawhub-doc-doctor",
+  "name": "Claude Doc Doctor",
+  "summary": "Say 'lint my docs' to scan your markdown KB for broken links, orphan pages, and missing metadata — then auto-fix them.",
+  "version": "4.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doc_doctor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SingYee",
+      "features": [
+        "Say 'lint my docs' to scan your markdown KB for broken links, orphan pages, and missing metadat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doc-doctor@4.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266048725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doc-doctor",
+      "url": "https://clawhub.ai/skills/doc-doctor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doc-doctor",
+    "url": "https://clawhub.ai/skills/doc-doctor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doc-doctor-4b6dd9498c661014.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doc-doctor@4.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-doc-doctor-4.0.1.json",
+      "version": "4.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1cc18497129284fab4d36477247591ce49487201a32c958f073da796e81d2fb9",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T19:43:04.894Z"
+}

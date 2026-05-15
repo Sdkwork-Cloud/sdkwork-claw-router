@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yt-downloader@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yt_downloader",
+  "skill": {
+    "id": 17924,
+    "skillKey": "clawhub-yt-downloader",
+    "name": "Youtube Downloader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yt-downloader",
+    "url": "https://clawhub.ai/skills/yt-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yt-downloader-5846fe5ddef4fc16.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Download YouTube videos as MP4 at highest quality. Use when user sends a YouTube URL and wants to download/save it. Triggers on YouTube links (youtube.com, y..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "honeybee1130",
+      "userId": "publishers:honeybee1130",
+      "displayName": "honeybee1130",
+      "image": "https://avatars.githubusercontent.com/u/89080729?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 714,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771922894736,
+      "changelog": "Download YouTube videos as MP4 at highest quality",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9eddf0f8e006a0edaaaf0f87239cdcc35b2abc208f993b19d265cb626fe59341"
+}

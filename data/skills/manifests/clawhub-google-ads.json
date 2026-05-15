@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8721,
+  "uuid": "skill-clawhub-google-ads",
+  "skillKey": "clawhub-google-ads",
+  "name": "Google Ads",
+  "summary": "Query, audit, and optimize Google Ads campaigns. Supports two modes: (1) API mode for bulk operations with google-ads Python SDK, (2) Browser automation mode for users without API access - just attach a browser tab to ads.google.com. Use w.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_ads",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jonathan Rhyne",
+      "features": [
+        "Query, audit, and optimize Google Ads campaigns",
+        "Supports two modes: (1) API mode for bulk operations with google-ads Python SDK, (2) Browser au.",
+        "just attach a browser tab to ads.google.com",
+        "Use when asked to check ad performance, pause campaigns/keywords, find wasted spend, audit conv."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-ads@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7828464?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-ads",
+      "url": "https://clawhub.ai/skills/google-ads"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-ads",
+    "url": "https://clawhub.ai/skills/google-ads",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-ads-b17f86d62b42620b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-ads@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-ads-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:534cf3a978526296c6c2abae25ea0933eaf6571e4ba5539bd58f26f785b6b76b",
+      "artifactSizeBytes": 2006
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T08:01:23.223Z"
+}

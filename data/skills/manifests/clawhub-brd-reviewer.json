@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54275,
+  "uuid": "skill-clawhub-brd-reviewer",
+  "skillKey": "clawhub-brd-reviewer",
+  "name": "Review Business Requirement Document Skill",
+  "summary": "Review Business Requirements Documents in `.docx` format by reading the existing BRD, extracting paragraph-level context, drafting clarification questions fo...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brd_reviewer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ChipmunkRPA",
+      "features": [
+        "Review Business Requirements Documents in `.docx` format by reading the existing BRD, extractin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/brd-reviewer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/154071180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "brd-reviewer",
+      "url": "https://clawhub.ai/skills/brd-reviewer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brd-reviewer",
+    "url": "https://clawhub.ai/skills/brd-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brd-reviewer-e23697e1d44fbe16.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/brd-reviewer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-brd-reviewer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6982e67a49d6facc5e526a601b2c5e5362e5f19457a905540ed70b50cbd54061",
+      "artifactSizeBytes": 2523
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T20:38:23.061Z"
+}

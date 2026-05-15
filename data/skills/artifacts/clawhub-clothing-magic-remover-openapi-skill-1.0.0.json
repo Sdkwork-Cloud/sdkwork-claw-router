@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clothing-magic-remover-openapi-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clothing_magic_remover_openapi_skill",
+  "skill": {
+    "id": 56338,
+    "skillKey": "clawhub-clothing-magic-remover-openapi-skill",
+    "name": "AI Clothing Remover – Remove Accessories & Clothing Online – API-powered"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clothing-magic-remover-openapi-skill",
+    "url": "https://clawhub.ai/skills/clothing-magic-remover-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clothing-magic-remover-openapi-skill-aa5edeef4c382b65.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI clothing remover — erase accessories or partial clothing while keeping textures realistic"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkleming",
+      "userId": "s173eywkn9gkx5va9p2tb6kh5h843s3s",
+      "displayName": "sparkleMing",
+      "image": "https://avatars.githubusercontent.com/u/38350996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776389701355,
+      "changelog": "clothing-magic-remover-openapi-skill v1.0.0\n\n- Initial release of the skill for AI-based accessory and partial clothing removal from images.\n- Supports submitting a person photo URL and optional description of clothing to remove.\n- Maintains realistic body textures and proportions in the processed images.\n- Requires API key for authentication (set as WESHOP_API_KEY).\n- Endpoints provided for launching jobs, uploading images, and polling status.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8edfa7c8ac5f86ed3e0b318c3207c1a269b05faf1a6db6e1e6c01018e753218a"
+}

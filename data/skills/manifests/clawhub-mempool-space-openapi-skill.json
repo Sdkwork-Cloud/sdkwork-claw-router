@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34230,
+  "uuid": "skill-clawhub-mempool-space-openapi-skill",
+  "skillKey": "clawhub-mempool-space-openapi-skill",
+  "name": "Mempool Space Openapi Skill",
+  "summary": "Operate mempool.space public Bitcoin and Lightning explorer APIs through UXC with a curated OpenAPI schema, no-auth setup, and read-first guardrails.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mempool_space_openapi_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jolestar",
+      "features": [
+        "Operate mempool.space public Bitcoin and Lightning explorer APIs through UXC with a curated Ope."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mempool-space-openapi-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77268?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mempool-space-openapi-skill",
+      "url": "https://clawhub.ai/skills/mempool-space-openapi-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mempool-space-openapi-skill",
+    "url": "https://clawhub.ai/skills/mempool-space-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mempool-space-openapi-skill-4d741b161dff196e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mempool-space-openapi-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mempool-space-openapi-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b44a59c0bbd6a4975c2ad70cbb5b6932966216208188552c9d5a3a75a4690c2",
+      "artifactSizeBytes": 2511
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T12:11:19.440Z"
+}

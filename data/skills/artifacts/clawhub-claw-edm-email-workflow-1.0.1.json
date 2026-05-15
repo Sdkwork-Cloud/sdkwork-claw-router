@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-edm-email-workflow@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_edm_email_workflow",
+  "skill": {
+    "id": 23421,
+    "skillKey": "clawhub-claw-edm-email-workflow",
+    "name": "EDM Email Manager (via Kanban Plugin)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-edm-email-workflow",
+    "url": "https://clawhub.ai/skills/claw-edm-email-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-edm-email-workflow-53f2e46fa16c4c2f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "An automated email marketing campaign manager that guides your agent to design responsive HTML emails, manage lists, send via Resend, and track analytics on..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "joeyzzyy",
+      "userId": "s17dq2fhrd48s0p37594gvjhw983jh7w",
+      "displayName": "Joey.Z",
+      "image": "https://avatars.githubusercontent.com/u/115637620?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 441,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773976823931,
+      "changelog": "- Added a prominent warning and installation instructions to make plugin/API requirements clearer before use.\n- Updated dashboard tracking API link from \"webkanbanforopenclaw.vercel.app\" to \"teammate.work\".\n- Clarified that this skill serves as a workflow \"brain\" and requires the \"claw-kanban\" plugin for full functionality.\n- No changes to workflow steps or technical functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eb8d3c596e92bfdce05fab87a1ce11e56695d9e72909c1836cb7aed60392e904"
+}

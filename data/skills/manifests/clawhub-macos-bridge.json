@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20233,
+  "uuid": "skill-clawhub-macos-bridge",
+  "skillKey": "clawhub-macos-bridge",
+  "name": "Macos Bridge",
+  "summary": "Bridge Mac-owned tools like imsg, remindctl, memo, things, and peekaboo onto a Linux OpenClaw gateway by installing explicit same-LAN SSH wrappers with optio...",
+  "version": "0.6.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.macos_bridge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Matthew Murphy",
+      "features": [
+        "Bridge Mac-owned tools like imsg, remindctl, memo, things, and peekaboo onto a Linux OpenClaw g."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/macos-bridge@0.6.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/110652790?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "macos-bridge",
+      "url": "https://clawhub.ai/skills/macos-bridge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "macos-bridge",
+    "url": "https://clawhub.ai/skills/macos-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/macos-bridge-9c56af043df77728.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/macos-bridge@0.6.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-macos-bridge-0.6.2.json",
+      "version": "0.6.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5060516bb9ca11bf0697da9f936d2f261266b09f1fe7bee75b90ebf46f972995",
+      "artifactSizeBytes": 2339
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T23:28:22.039Z"
+}

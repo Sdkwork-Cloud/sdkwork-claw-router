@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29096,
+  "uuid": "skill-clawhub-hik-connect-team-skill",
+  "skillKey": "clawhub-hik-connect-team-skill",
+  "name": "hik-connect-team-skill",
+  "summary": "Hik-Connect for Teams (HCT) Developer Skills. Integrates a series of skills for managing and controlling HCT devices, including resource management, access c...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hik_connect_team_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HikConnectTeamOpen",
+      "features": [
+        "Hik-Connect for Teams (HCT) Developer Skills",
+        "Integrates a series of skills for managing and controlling HCT devices, including resource mana."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hik-connect-team-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/167326695?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hik-connect-team-skill",
+      "url": "https://clawhub.ai/skills/hik-connect-team-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hik-connect-team-skill",
+    "url": "https://clawhub.ai/skills/hik-connect-team-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hik-connect-team-skill-a8e52fbc2a024860.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hik-connect-team-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hik-connect-team-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9f31f2c80dccb5d298c40ffe1dad98363ab10719a10685d003b66baecaf5006b",
+      "artifactSizeBytes": 2553
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T08:57:13.030Z"
+}

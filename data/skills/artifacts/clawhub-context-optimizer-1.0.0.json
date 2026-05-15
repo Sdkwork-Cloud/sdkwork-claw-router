@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/context-optimizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_optimizer",
+  "skill": {
+    "id": 8665,
+    "skillKey": "clawhub-context-optimizer",
+    "name": "Context Optimizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-optimizer",
+    "url": "https://clawhub.ai/skills/context-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-optimizer-ae0c428c0a7aa4b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Advanced context management with auto-compaction and dynamic context optimization for DeepSeek's 64k context window. Features intelligent compaction (merging, summarizing, extracting), query-aware relevance scoring, and hierarchical memory."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ad2546",
+      "userId": "publishers:ad2546",
+      "displayName": "ad2546",
+      "image": "https://avatars.githubusercontent.com/u/143520060?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 7206,
+      "installsAllTime": 56,
+      "installsCurrent": 51,
+      "stars": 15,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769831499415,
+      "changelog": "Initial release of context-optimizer (v1.0.0):\n\n- Advanced context management optimized for DeepSeek’s 64k context window.\n- Auto-compaction with multiple strategies: semantic, temporal, extractive, and adaptive.\n- Dynamic, query-aware context selection using relevance scoring and relevance decay.\n- Hierarchical memory system with context archive for selective long-term storage and retrieval.\n- Real-time context health monitoring and optimization event logging to chat.\n- Flexible configuration options for thresholds, strategies, logging format, and archive behavior.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ae5155f3d975f2076851211b2db1ddff615fbe6ec7d85469f9d4345eb0481586"
+}

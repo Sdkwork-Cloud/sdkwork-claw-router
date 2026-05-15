@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63340,
+  "uuid": "skill-clawhub-agent-dlp",
+  "skillKey": "clawhub-agent-dlp",
+  "name": "Agent Dlp",
+  "summary": "Agent DLP - 数据防泄漏系统 功能: 入口防护、记忆保护、工具管控、出口过滤、审计日志 触发: (1)检查状态 (2)检查输入 (3)检查输出",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_dlp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "caidongyun",
+      "features": [
+        "Agent DLP",
+        "数据防泄漏系统 功能: 入口防护、记忆保护、工具管控、出口过滤、审计日志 触发: (1)检查状态 (2)检查输入 (3)检查输出"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-dlp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1638934?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-dlp",
+      "url": "https://clawhub.ai/skills/agent-dlp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-dlp",
+    "url": "https://clawhub.ai/skills/agent-dlp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-dlp-6381749557b92cc2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-dlp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-dlp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dce78e20607b163e2cd3e84f45a45c36b15f6213b43a9aaa8b8e9bac42ee04ca",
+      "artifactSizeBytes": 2235
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T03:15:27.740Z"
+}

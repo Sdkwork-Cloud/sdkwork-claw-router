@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tmap-lbs-service@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tmap_lbs_service",
+  "skill": {
+    "id": 67706,
+    "skillKey": "clawhub-tmap-lbs-service",
+    "name": "tmap-lbs-service"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tmap-lbs-service",
+    "url": "https://clawhub.ai/skills/tmap-lbs-service",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tmap-lbs-service-76ab08a3e522a556.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "腾讯地图位置服务，支持POI搜索、路径规划、旅游规划、周边搜索，轨迹数据可视化和地图数据可视化"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qfish",
+      "userId": "s171h37nkw352xbnyzvabj0tmx840ejj",
+      "displayName": "qfish",
+      "image": "https://avatars.githubusercontent.com/u/679824?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 128,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773198664901,
+      "changelog": "tmap-lbs-service v1.0.2",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ec16ed7ca5395b20ffc85a72958e4881d2cc2dbb9eae5135b2e2b900acaef362"
+}

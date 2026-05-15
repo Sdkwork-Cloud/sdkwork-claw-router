@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11831,
+  "uuid": "skill-clawhub-pdauth",
+  "skillKey": "clawhub-pdauth",
+  "name": "Pdauth",
+  "summary": "Dynamic OAuth for AI agents via Pipedream. Generate OAuth links for 2500+ APIs, let users authorize, then call MCP tools on their behalf.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdauth",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "G9Pedro",
+      "features": [
+        "Dynamic OAuth for AI agents via Pipedream",
+        "Generate OAuth links for 2500+ APIs, let users authorize, then call MCP tools on their behalf."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdauth@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78662829?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdauth",
+      "url": "https://clawhub.ai/skills/pdauth"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdauth",
+    "url": "https://clawhub.ai/skills/pdauth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdauth-5fded7cf6595605d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdauth@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdauth-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ab2f2b3bce6936b142d94b0dd0d3abc658baf4c045bbbf88e17985e01e2cb36f",
+      "artifactSizeBytes": 2346
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T03:18:19.117Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/co-occurrence-engine@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.co_occurrence_engine",
+  "skill": {
+    "id": 64813,
+    "skillKey": "clawhub-co-occurrence-engine",
+    "name": "Co Occurrence Engine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "co-occurrence-engine",
+    "url": "https://clawhub.ai/skills/co-occurrence-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/co-occurrence-engine-fbb2c6082ec86ec0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "独立的 Hebbian 共现图引擎，记录记忆共现，计算关联权重，支持关联查询和数据库维护，服务星型记忆架构。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whoisme007",
+      "userId": "s17fqq02tcx4erebjpdxkpfyfs83gnes",
+      "displayName": "whoisme007",
+      "image": "https://avatars.githubusercontent.com/u/6497382?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773811864611,
+      "changelog": "Initial release of co-occurrence-engine.\n\n- Introduces an independent Hebbian co-occurrence graph engine for associative memory discovery within a star-shaped memory architecture.\n- Features co-occurrence recording, association queries, frequency & time-based weight calculations, stats reporting, and maintenance tools.\n- Provides a dedicated SQLite data backend, optional forgetting curve integration, and adapter for unified memory interfaces.\n- Configurable via environment variables; designed for easy direct use or integration through adapters.\n- Requires Python 3.8+ and SQLite3.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8710fed99979fd12999654566e4a6f14fd9ee9e43c609fb1128e82c45b0902db"
+}

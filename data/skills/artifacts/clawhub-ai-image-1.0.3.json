@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-image@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_image",
+  "skill": {
+    "id": 32153,
+    "skillKey": "clawhub-ai-image",
+    "name": "AI Image"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-image",
+    "url": "https://clawhub.ai/skills/ai-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-image-70e4e9745599956f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build and execute skills.video image generation REST requests from OpenAPI specs. Use when user needs to create, debug, or document image generation calls on..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "skills-video",
+      "userId": "s1794jxnsph7h4dfc4rt0wtmbn83hba0",
+      "displayName": "skills-video",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 256,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774407816502,
+      "changelog": "- Added MIT license information.\n- Included author, supported operating systems, and required binaries in metadata.\n- Expanded CLI help and configuration guidance in metadata.\n- Linked to repository and homepage in metadata.\n- No code changes; documentation and metadata enhancements only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:42640fc52d085c36b12c1ae23f5a407d6b7165b3cefe4536bdc0fbb8f1322b0d"
+}

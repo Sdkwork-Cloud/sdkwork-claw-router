@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48019,
+  "uuid": "skill-clawhub-terraform-plan-reviewer",
+  "skillKey": "clawhub-terraform-plan-reviewer",
+  "name": "Terraform Plan Reviewer",
+  "summary": "Review terraform plan output for risk before apply. Detects destructive changes (force replace and destroy on stateful resources), drift from real state, mis...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.terraform_plan_reviewer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Review terraform plan output for risk before apply",
+        "Detects destructive changes (force replace and destroy on stateful resources), drift from real."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/terraform-plan-reviewer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "terraform-plan-reviewer",
+      "url": "https://clawhub.ai/skills/terraform-plan-reviewer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "terraform-plan-reviewer",
+    "url": "https://clawhub.ai/skills/terraform-plan-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/terraform-plan-reviewer-2b8838deb2cd34b9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/terraform-plan-reviewer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-terraform-plan-reviewer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:54a98639561400d329e350f1c3fb8bf2b89383d0f97e421d5bbb7a5a741f190b",
+      "artifactSizeBytes": 2448
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T23:35:16.877Z"
+}

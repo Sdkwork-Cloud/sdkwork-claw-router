@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/local-community-buying-02-team-operation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_community_buying_02_team_operation",
+  "skill": {
+    "id": 71717,
+    "skillKey": "clawhub-local-community-buying-02-team-operation",
+    "name": "02 Team Operation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-community-buying-02-team-operation",
+    "url": "https://clawhub.ai/skills/local-community-buying-02-team-operation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-community-buying-02-team-operation-7bb51d27fb62dfa8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "社区团购团长运营全链路技能包。涵盖团长招募与分级、激励体系、培训赋能、各平台团长体系差异、流失预警及配套工具。适用于平台运营者、团长管理者。不含选品（模块一）、供应链（模块四）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nic-yuan",
+      "userId": "s17601s6pc41mkraa1bkeshfx983kdsw",
+      "displayName": "nic-yuan",
+      "image": "https://avatars.githubusercontent.com/u/195308903?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 83,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777622003121,
+      "changelog": "community-group-buying-team-operation v1.0.0 — Initial Release\n\n- Introduces a full-chain community group leader (团长) operation skillset: recruitment, tiering, incentives, training, platform differences, attrition warning, and supporting tools.\n- Provides detailed models and benchmarks to classify group leaders, compare major platforms (美团优选, 多多买菜, 兴盛优选, 淘菜菜), and establish recruitment/retention SOPs.\n- Includes group leader motivation systems, multi-stage training curriculum, and early-warning/retention methods for group leader attrition.\n- Bundles a practical commission calculator tool for income estimation.\n- Excludes product selection and supply chain modules for clear module boundaries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3ba1602491c955d228c3c9d1fed8bb8fc5a100e0c592de28333e836654c33ff1"
+}

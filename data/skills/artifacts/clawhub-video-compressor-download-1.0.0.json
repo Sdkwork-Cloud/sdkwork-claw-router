@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-compressor-download@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_compressor_download",
+  "skill": {
+    "id": 46121,
+    "skillKey": "clawhub-video-compressor-download",
+    "name": "Video Compressor Download"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-compressor-download",
+    "url": "https://clawhub.ai/skills/video-compressor-download",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-compressor-download-6a06348520be43eb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 500MB 1080p MP4 recording into 1080p compressed MP4 files just by typing what you need. Whether it's reducing video file size for sharing or uploading..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 128,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776253337753,
+      "changelog": "Initial release of Video Compressor Download — Compress and Download Smaller Videos\n\n- Instantly compress large 1080p MP4 recordings into smaller files with a simple prompt—no manual export settings or timeline dragging required.\n- Automatic setup with free temporary tokens; supports both anonymous and registered users.\n- Secure cloud-based GPU processing: upload videos up to 500MB and receive download links for compressed outputs in 20–60 seconds.\n- Handles user prompts for compression, downloading, credits, status tracking, uploading, editing, and export with clear mappings to backend actions.\n- Supports multiple video and audio formats including mp4, mov, avi, webm, mkv, jpg, png, gif, webp, mp3, wav, m4a, and aac.\n- Provides robust error handling and user-friendly guidance for common issues such as large files, unsupported formats, and authentication problems.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0d8ea893fffbaa64dc768a7324a9dea04d869e8451821b218c0d733d0664f1c7"
+}

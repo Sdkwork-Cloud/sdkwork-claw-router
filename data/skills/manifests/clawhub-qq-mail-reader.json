@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68655,
+  "uuid": "skill-clawhub-qq-mail-reader",
+  "skillKey": "clawhub-qq-mail-reader",
+  "name": "qq-mail-reader",
+  "summary": "读取QQ邮箱邮件。使用IMAP协议连接QQ邮箱，支持多种编码解析。触发场景：用户要求查看邮箱、读取邮件、查看最近邮件、筛选特定邮件等。",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qq_mail_reader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ZaviWayne",
+      "features": [
+        "读取QQ邮箱邮件。使用IMAP协议连接QQ邮箱，支持多种编码解析。触发场景：用户要求查看邮箱、读取邮件、查看最近邮件、筛选特定邮件等。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qq-mail-reader@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/248329820?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qq-mail-reader",
+      "url": "https://clawhub.ai/skills/qq-mail-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qq-mail-reader",
+    "url": "https://clawhub.ai/skills/qq-mail-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qq-mail-reader-f862c8d24a772d3b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qq-mail-reader@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-qq-mail-reader-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6c5761d1133f6dfe6b1d4710266ff5aa37bd9a470a3a4086fca6ab362e28586f",
+      "artifactSizeBytes": 2154
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T11:54:21.209Z"
+}

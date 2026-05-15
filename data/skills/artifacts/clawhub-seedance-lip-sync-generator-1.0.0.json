@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seedance-lip-sync-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seedance_lip_sync_generator",
+  "skill": {
+    "id": 43156,
+    "skillKey": "clawhub-seedance-lip-sync-generator",
+    "name": "Seedance Lip Sync Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seedance-lip-sync-generator",
+    "url": "https://clawhub.ai/skills/seedance-lip-sync-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seedance-lip-sync-generator-4f2c7f133244ff85.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Need to matching mouth movements to a dubbed or replaced audio track? This seedance-lip-sync-generator skill handles AI lip sync generation on a remote backe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhogan2013-9",
+      "userId": "s1734kgyh0j16a86enc51zqp6184cy81",
+      "displayName": "mhogan2013-9",
+      "image": "https://avatars.githubusercontent.com/u/208827708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775680480413,
+      "changelog": "Seedance Lip Sync Generator 1.0.0 — Initial Release\n\n- Instantly syncs mouth movements to dubbed or replaced audio tracks using AI, with 1080p MP4 downloads in 30–60 seconds.\n- Simple cloud-based workflow: upload video and audio, describe your task, and get results (no local GPU or plugins needed).\n- Automatic backend setup: handles NEMO_TOKEN authentication and session management for you, with 100 free credits included.\n- File upload, credits check, project status, and export operations mapped to clear, user-friendly commands.\n- Supports a wide range of video, audio, and image formats for input and export.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4f634de4f6e88176f3d623097d7932219e51e934e4914a8283b8238e469a639b"
+}

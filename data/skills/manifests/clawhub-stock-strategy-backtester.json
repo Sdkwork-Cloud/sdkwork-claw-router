@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9450,
+  "uuid": "skill-clawhub-stock-strategy-backtester",
+  "skillKey": "clawhub-stock-strategy-backtester",
+  "name": "Stock Strategy Backtester",
+  "summary": "Backtest stock trading strategies on historical OHLCV data and report win rate, return, CAGR, drawdown, Sharpe ratio, and trade logs. Use when evaluating or...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_strategy_backtester",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "taylen",
+      "features": [
+        "Backtest stock trading strategies on historical OHLCV data and report win rate, return, CAGR, d.",
+        "Use when evaluating or..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-strategy-backtester@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3099544?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-strategy-backtester",
+      "url": "https://clawhub.ai/skills/stock-strategy-backtester"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-strategy-backtester",
+    "url": "https://clawhub.ai/skills/stock-strategy-backtester",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-strategy-backtester-cee8e3db742776c6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-strategy-backtester@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-strategy-backtester-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cbe40bede023ee58a6e2194d7c591277cef6ead1d8a6cc726ffeffe3c8f1c2aa",
+      "artifactSizeBytes": 2092
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T10:38:07.911Z"
+}

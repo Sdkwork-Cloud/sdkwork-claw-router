@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47569,
+  "uuid": "skill-clawhub-openqbook",
+  "skillKey": "clawhub-openqbook",
+  "name": "openqbook",
+  "summary": "Platform-agnostic skill to post developer questions on OpenQBook, poll for human answers, and manage feedback and resolution when AI agents are blocked.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openqbook",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "XTmingyue",
+      "features": [
+        "Platform-agnostic skill to post developer questions on OpenQBook, poll for human answers, and m."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openqbook@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21193538?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openqbook",
+      "url": "https://clawhub.ai/skills/openqbook"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openqbook",
+    "url": "https://clawhub.ai/skills/openqbook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openqbook-792d61489680d4d2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openqbook@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openqbook-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:43b8721cd8a38bfed9cdc0ac0b2f4388055009d2a51e44dbf692e80ca966da63",
+      "artifactSizeBytes": 2518
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T03:23:36.304Z"
+}

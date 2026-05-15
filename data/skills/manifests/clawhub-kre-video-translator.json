@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27399,
+  "uuid": "skill-clawhub-kre-video-translator",
+  "skillKey": "clawhub-kre-video-translator",
+  "name": "Kre Video Translator",
+  "summary": "Translate local audio or video files into multilingual .srt subtitles with KreTrans. Use when a user wants audio/video translation, subtitle generation, tran...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kre_video_translator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "skz7s",
+      "features": [
+        "Translate local audio or video files into multilingual .srt subtitles with KreTrans",
+        "Use when a user wants audio/video translation, subtitle generation, tran..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kre-video-translator@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37951723?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kre-video-translator",
+      "url": "https://clawhub.ai/skills/kre-video-translator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kre-video-translator",
+    "url": "https://clawhub.ai/skills/kre-video-translator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kre-video-translator-afe529cceb2ee04d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kre-video-translator@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-kre-video-translator-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eed7636820b3e62fdd01e2d2695dee582660a9422309023726cf374128ecdc16",
+      "artifactSizeBytes": 2326
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T10:00:18.449Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66174,
+  "uuid": "skill-clawhub-quick-resurrection",
+  "skillKey": "clawhub-quick-resurrection",
+  "name": "Quick Resurrection",
+  "summary": "打包并恢复你的 OpenClaw Agent 工作区配置。换电脑或重装系统后，一个命令把整个团队迁移到新环境。执行前展示配置内容供用户确认，确认后全自动执行。",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quick_resurrection",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wenlong Zhao",
+      "features": [
+        "打包并恢复你的 OpenClaw Agent 工作区配置。换电脑或重装系统后，一个命令把整个团队迁移到新环境。执行前展示配置内容供用户确认，确认后全自动执行。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quick-resurrection@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6871414?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quick-resurrection",
+      "url": "https://clawhub.ai/skills/quick-resurrection"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quick-resurrection",
+    "url": "https://clawhub.ai/skills/quick-resurrection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quick-resurrection-4e20f5d07e552ac6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quick-resurrection@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-quick-resurrection-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8bcb5a2d2f0018a6dd870b9978cf756b45b90466f3061c00877febf53f593dce",
+      "artifactSizeBytes": 2069
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T22:31:16.593Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45727,
+  "uuid": "skill-clawhub-feishu-news",
+  "skillKey": "clawhub-feishu-news",
+  "name": "Feishu News",
+  "summary": "A skill to fetch and reference news information from Feishu when interacting with users.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_news",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yeats",
+      "features": [
+        "A skill to fetch and reference news information from Feishu when interacting with users."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-news@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11582816?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-news",
+      "url": "https://clawhub.ai/skills/feishu-news"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-news",
+    "url": "https://clawhub.ai/skills/feishu-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-news-a91823fd3d35a315.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-news@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-news-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:56c65e9ac7ce94097245d14bfc41110c8e44966c52adf6a6d4ddb4659489fad2",
+      "artifactSizeBytes": 2113
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T09:44:41.485Z"
+}

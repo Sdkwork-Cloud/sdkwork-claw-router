@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cca-domain1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cca_domain1",
+  "skill": {
+    "id": 60321,
+    "skillKey": "clawhub-cca-domain1",
+    "name": "Cca Domain1"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cca-domain1",
+    "url": "https://clawhub.ai/skills/cca-domain1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cca-domain1-8e43b043fff04ab8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CCA 领域1：代理架构与编排（27%权重）。当用户说\"学domain1\"、\"代理架构\"、\"agent编排\"、\"cca-domain1\"时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sawzhang",
+      "userId": "s17f2a78kmndsznfxp2fqeckyn83h72m",
+      "displayName": "sawzhang",
+      "image": "https://avatars.githubusercontent.com/u/859624?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 187,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774369096154,
+      "changelog": "- Initial release of cca-domain1 skill.\n- Covers CCA Domain 1: Agentic Architecture & Orchestration (27% exam weight).\n- Provides step-by-step instruction on 7 core agent architecture topics with key concepts and hands-on skills.\n- Includes exercises for building a multi-tool agent with escalation and compliance logic.\n- Features a knowledge check with sample exam questions and guided explanations.\n- Recommends official Anthropic Agent SDK docs and related resources for further study.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b9aeb77469bb46b897234483be0e4d1d98a63145467a3112e314655380240369"
+}

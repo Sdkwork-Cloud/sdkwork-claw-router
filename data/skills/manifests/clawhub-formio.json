@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21761,
+  "uuid": "skill-clawhub-formio",
+  "skillKey": "clawhub-formio",
+  "name": "Formio",
+  "summary": "Form.io integration. Manage Forms, Projects. Use when the user wants to interact with Form.io data.",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.formio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Form.io integration",
+        "Manage Forms, Projects",
+        "Use when the user wants to interact with Form.io data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/formio@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "formio",
+      "url": "https://clawhub.ai/skills/formio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "formio",
+    "url": "https://clawhub.ai/skills/formio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/formio-05b72883c66e3d3a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/formio@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-formio-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fadc80608c5cea6bad4c7cfc5567714ffdd3ad3de27558f7e136e9d819420c43",
+      "artifactSizeBytes": 1792
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:49:30.303Z"
+}

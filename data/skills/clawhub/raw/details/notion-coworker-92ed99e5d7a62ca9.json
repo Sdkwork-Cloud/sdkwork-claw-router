@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "notion-coworker",
+    "displayName": "Notion co-worker",
+    "summary": "An autonomous Notion coworker agent that monitors Gmail for Notion comment mentions (from notify@mail.notion.so), reads the comment to understand what's bein...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 341,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1773788768861,
+    "updatedAt": 1778311316482
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1773788768861,
+    "changelog": "- Initial release of notion-coworker: an autonomous agent for handling Notion comment mentions via Gmail notifications.\n- Monitors Gmail for unread Notion mentions, understands the request, researches an answer using memory, Notion workspace, and the web if needed, then replies directly in the Notion discussion thread.\n- Documents all research in a subpage for each handled mention, providing an audit trail.\n- Summarizes all actions for the user, including processed emails and next steps for inbox management.\n- Handles edge cases gracefully, with clear reporting for parsing errors, inaccessible Notion pages, and unmatched discussion threads.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "laurobrcwb",
+    "userId": "publishers:laurobrcwb",
+    "displayName": "Lauro",
+    "image": "https://avatars.githubusercontent.com/u/558427?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778311316482
+  }
+}

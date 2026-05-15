@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rdk-x5-tros@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rdk_x5_tros",
+  "skill": {
+    "id": 59038,
+    "skillKey": "clawhub-rdk-x5-tros",
+    "name": "Rdk X5 Tros"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rdk-x5-tros",
+    "url": "https://clawhub.ai/skills/rdk-x5-tros",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rdk-x5-tros-582a35b61b08a8f7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 RDK X5 上的 TogetheROS.Bot (tros.b) Humble 框架：启动 43 个预装 ROS2 算法包、管理 ROS2 话题/节点/服务、构建摄像头+AI+输出（Web/语音/HDMI）集成 pipeline、创建自定义 ROS2 工作空间。Use when the user ment..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "katherineedwards2475",
+      "userId": "s171fb3mdcgkeseprx9k9hd0v583wsb1",
+      "displayName": "qiaolongli",
+      "image": "https://avatars.githubusercontent.com/u/262944264?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 327,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773211296630,
+      "changelog": "Initial release: TogetheROS.Bot 43 packages, ROS2 pipeline, custom workspace",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2b4ff007c799f725e2f6497c2c398ca269039f88cc7658d34f29279ef0853b14"
+}

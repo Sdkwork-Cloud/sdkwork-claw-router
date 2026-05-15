@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58159,
+  "uuid": "skill-clawhub-white-stone-mem",
+  "skillKey": "clawhub-white-stone-mem",
+  "name": "White Stone Memory",
+  "summary": "Memory system with 5 categories - knowledge, projects, error log, daily review, and tasks. Load on demand to avoid memory pollution. 记忆系统 - 包含常识记忆、项目记忆、错题本、每...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.white_stone_mem",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "russellfei",
+      "features": [
+        "Memory system with 5 categories",
+        "knowledge, projects, error log, daily review, and tasks",
+        "Load on demand to avoid memory pollution",
+        "包含常识记忆、项目记忆、错题本、每..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/white-stone-mem@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3415940?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "white-stone-mem",
+      "url": "https://clawhub.ai/skills/white-stone-mem"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "white-stone-mem",
+    "url": "https://clawhub.ai/skills/white-stone-mem",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/white-stone-mem-3d7b05d4cb2c5ae3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/white-stone-mem@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-white-stone-mem-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dfde194764a505f49080b4facc998dca46d6bb7f835eadf243de1ba718672813",
+      "artifactSizeBytes": 2162
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T04:37:17.349Z"
+}

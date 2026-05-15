@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/travel-procurement@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.travel_procurement",
+  "skill": {
+    "id": 23182,
+    "skillKey": "clawhub-travel-procurement",
+    "name": "Travel Procurement"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "travel-procurement",
+    "url": "https://clawhub.ai/skills/travel-procurement",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/travel-procurement-cdfcdde3e7089ab4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Source, compare, and recommend travel transport options (bus/train/shuttle/taxi/private transfer) from user-provided trip constraints. Use for route planning..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "austineyapp",
+      "userId": "publishers:austineyapp",
+      "displayName": "austineyapp",
+      "image": "https://avatars.githubusercontent.com/u/43059393?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 450,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772459735944,
+      "changelog": "Initial release of travel-procurement skill.\n\n- Enables sourcing, comparison, and recommendation of travel transport options based on user-provided constraints.\n- Supports buses, trains, shuttles, taxis, and private transfers.\n- Standardizes comparison with normalized data (price, duration, cancellation, fit/risk).\n- Delivers concise, decision-ready recommendations including a fallback option.\n- Guided workflow and clear output standards for consistent results.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b24b652a0ac73f6b86eb081bf55a53cc024358689ab01906a5fb75c1b9e9d88e"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ocas-custodian@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ocas_custodian",
+  "skill": {
+    "id": 42127,
+    "skillKey": "clawhub-ocas-custodian",
+    "name": "Custodian"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ocas-custodian",
+    "url": "https://clawhub.ai/skills/ocas-custodian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ocas-custodian-cf23887968d868e0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomously monitors OpenClaw system health, fixes log errors, initializes skills, registers tasks, and performs overnight maintenance to surface unresolved..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "indigokarasu",
+      "userId": "s17bp0q5q5x87yfrmb4876eywh83rcts",
+      "displayName": "Indigo Karasu",
+      "image": "https://avatars.githubusercontent.com/u/265148029?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774671885073,
+      "changelog": "Initial release of ocas-custodian skill.\n\n- Provides automated detection, classification, and repair of OpenClaw operational failures during quiet hours.\n- Supports system health checks, log error fixes, cron failure reviews, skill initialization, and overnight maintenance tasks.\n- Includes both light (fast, heartbeat-driven) and deep (comprehensive, cron-scheduled) scan routines.\n- Defines strict boundaries and fix safety constraints—never modifies skill packages or user data/settings.\n- Integrates optionally with Vesper (insight proposals), Mentor (escalations), and Corvus (activity modeling).\n- Offers a command set for scanning, repair, issue management, schedule optimization, and self-updating.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:97f21235a49ef4005fe118fa794d003dd677245cb40058f20e226408909fe296"
+}

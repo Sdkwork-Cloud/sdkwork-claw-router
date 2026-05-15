@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11237,
+  "uuid": "skill-clawhub-firewall",
+  "skillKey": "clawhub-firewall",
+  "name": "Firewall",
+  "summary": "Configure firewalls on servers and cloud providers with security best practices.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.firewall",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Configure firewalls on servers and cloud providers with security best practices."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/firewall@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "firewall",
+      "url": "https://clawhub.ai/skills/firewall"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "firewall",
+    "url": "https://clawhub.ai/skills/firewall",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/firewall-a3863c5d7ce546d2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/firewall@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-firewall-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fedcb640b67fde5425b68111815ade31666b003f09a927cfb2d3908ecd86bcea",
+      "artifactSizeBytes": 1763
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T16:40:54.497Z"
+}

@@ -1,4 +1,4 @@
-import json
+﻿import json
 import unittest
 from pathlib import Path
 
@@ -52,17 +52,11 @@ class AdminMarketingRuntimeStandardTest(unittest.TestCase):
             / "src"
             / "marketingService.ts"
         ).read_text(encoding="utf-8")
-        coupon_api = (ROOT / "sdks" / "clawrouter-backend-sdk" / "src" / "api" / "coupon.ts").read_text(
+        billing_api = (ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "api" / "billing.ts").read_text(
             encoding="utf-8"
         )
-        coupon_batches_api = (
-            ROOT / "sdks" / "clawrouter-backend-sdk" / "src" / "api" / "coupon-batches.ts"
-        ).read_text(encoding="utf-8")
-        coupon_codes_api = (
-            ROOT / "sdks" / "clawrouter-backend-sdk" / "src" / "api" / "coupon-codes.ts"
-        ).read_text(encoding="utf-8")
         type_exports = (
-            ROOT / "sdks" / "clawrouter-backend-sdk" / "src" / "types" / "index.ts"
+            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "types" / "index.ts"
         ).read_text(encoding="utf-8")
 
         for token in [
@@ -72,9 +66,9 @@ class AdminMarketingRuntimeStandardTest(unittest.TestCase):
             "toCreateCouponRequest",
             "toGenerateBatchRequest",
             "toUpdatePromoCodeStatusRequest",
-            "requestHeaders('admin-coupon-create')",
-            "requestHeaders('admin-coupon-batch-generate')",
-            "requestHeaders('admin-promo-code-status-update')",
+            "createRequestParams('admin-coupon-create')",
+            "createRequestParams('admin-coupon-batch-generate')",
+            "createRequestParams('admin-promo-code-status-update')",
         ]:
             self.assertIn(token, service)
 
@@ -84,24 +78,26 @@ class AdminMarketingRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("as unknown as Record<string, unknown>", service)
 
         self.assertIn(
-            "async add(body: AdminCouponCreateRequest, headers?: Record<string, string>): Promise<AddCouponResult>",
-            coupon_api,
+            "async create(body: AdminCouponCreateRequest, params?: BillingCouponsCreateParams): Promise<CouponsCreateResult>",
+            billing_api,
         )
-        self.assertNotIn("async add(body?: OperationRequest): Promise<PlusApiResult>", coupon_api)
+        self.assertNotIn("async create(body?: OperationRequest): Promise<PlusApiResult>", billing_api)
 
         self.assertIn(
-            "async generateBatch(body: AdminCouponBatchGenerateRequest, headers?: Record<string, string>): Promise<GenerateBatchResult>",
-            coupon_batches_api,
+            "async create(body: AdminCouponBatchGenerateRequest, params?: BillingCouponBatchesCreateParams): Promise<CouponBatchesCreateResult>",
+            billing_api,
         )
         self.assertIn(
-            "async updatePromoCodeStatus(promoCodeId: string | number, body: AdminPromoCodeStatusUpdateRequest, headers?: Record<string, string>): Promise<UpdatePromoCodeStatusResult>",
-            coupon_codes_api,
+            "async update(codeId: string, body: AdminPromoCodeStatusUpdateRequest, params?: BillingCouponCodesStatusUpdateParams): Promise<CouponCodesStatusUpdateResult>",
+            billing_api,
         )
-        self.assertNotIn("async generateBatch(body?: OperationRequest): Promise<PlusApiResult>", coupon_batches_api)
+        self.assertNotIn("async generateBatch(body?: OperationRequest): Promise<PlusApiResult>", billing_api)
         self.assertNotIn(
             "async updatePromoCodeStatus(promoCodeId: string | number, body?: OperationRequest): Promise<PlusApiResult>",
-            coupon_codes_api,
+            billing_api,
         )
+        self.assertNotIn("async updatePromoCodeStatus(promoCodeId: string | number", billing_api)
+        self.assertNotIn("headers?: Record<string, string>", billing_api)
 
         for token in [
             "AdminCouponCreateRequest",
@@ -110,9 +106,9 @@ class AdminMarketingRuntimeStandardTest(unittest.TestCase):
             "AdminCouponBatchGenerateResponse",
             "AdminPromoCodeStatusUpdateRequest",
             "AdminPromoCodeStatusUpdateResponse",
-            "AddCouponResult",
-            "GenerateBatchResult",
-            "UpdatePromoCodeStatusResult",
+            "CouponsCreateResult",
+            "CouponBatchesCreateResult",
+            "CouponCodesStatusUpdateResult",
         ]:
             self.assertIn(f"export type {{ {token} }}", type_exports)
 

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13335,
+  "uuid": "skill-clawhub-skillbench",
+  "skillKey": "clawhub-skillbench",
+  "name": "SkillBench",
+  "summary": "Track skill versions, benchmark performance, compare improvements, and get self-improvement signals. Integrates with tasktime and ClawVault.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skillbench",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "G9Pedro",
+      "features": [
+        "Track skill versions, benchmark performance, compare improvements, and get self-improvement sig.",
+        "Integrates with tasktime and ClawVault."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skillbench@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78662829?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skillbench",
+      "url": "https://clawhub.ai/skills/skillbench"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skillbench",
+    "url": "https://clawhub.ai/skills/skillbench",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skillbench-14763f1fe12b8445.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skillbench@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skillbench-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2e5ee70101b399f2faf769cd7a074a00ae05a9c096b85fe21e9e1376bd4a9ff0",
+      "artifactSizeBytes": 1907
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T17:28:41.286Z"
+}

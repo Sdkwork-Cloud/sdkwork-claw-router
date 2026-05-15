@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brunch-spots@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brunch_spots",
+  "skill": {
+    "id": 40247,
+    "skillKey": "clawhub-brunch-spots",
+    "name": "Nearby Brunch Spots"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brunch-spots",
+    "url": "https://clawhub.ai/skills/brunch-spots",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brunch-spots-2d7010202976655d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find nearby brunch spots. Invoke when user asks for brunch near me."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clawkk",
+      "userId": "s170g5yz1q3ksjnn4gz6v24af983h1mh",
+      "displayName": "clawkk",
+      "image": "https://avatars.githubusercontent.com/u/265748372?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774244838691,
+      "changelog": "Nearby Brunch Spots skill initial release:\n\n- Find brunch spots near your current location with customizable filters (radius, rating, price, etc.).\n- Returns a standardized list of locations for consistent frontend and API integration.\n- Requires user location and supports privacy by avoiding storage of exact coordinates.\n- Includes error handling for invalid location, excessive radius, data source issues, and rate limiting.\n- Supports caching to optimize repeat queries for the same search area.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4d473f08d32e60645e091be54e6e77e42f1156cfb97b052f8a7c16e0d75554e6"
+}

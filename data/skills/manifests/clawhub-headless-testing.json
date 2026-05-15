@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23870,
+  "uuid": "skill-clawhub-headless-testing",
+  "skillKey": "clawhub-headless-testing",
+  "name": "Headless Testing",
+  "summary": "Headless Testing integration. Manage Tests, Projects, Environments, Users, Roles. Use when the user wants to interact with Headless Testing data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.headless_testing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Headless Testing integration",
+        "Manage Tests, Projects, Environments, Users, Roles",
+        "Use when the user wants to interact with Headless Testing data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/headless-testing@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "headless-testing",
+      "url": "https://clawhub.ai/skills/headless-testing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "headless-testing",
+    "url": "https://clawhub.ai/skills/headless-testing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/headless-testing-b87ae51dca69c44d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/headless-testing@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-headless-testing-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c357de04e5508fcf78f2b814345e91d88b4ae9feae435fbfc6a7a37e4f102b2c",
+      "artifactSizeBytes": 1916
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:32:42.967Z"
+}

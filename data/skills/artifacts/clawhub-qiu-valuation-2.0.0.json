@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qiu-valuation@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qiu_valuation",
+  "skill": {
+    "id": 71424,
+    "skillKey": "clawhub-qiu-valuation",
+    "name": "邱国鹭估值分析"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qiu-valuation",
+    "url": "https://clawhub.ai/skills/qiu-valuation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qiu-valuation-aa317f28d8355340.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "［何时使用］当用户需要分析股票估值时；当用户问\"这只股票便宜吗\"时；当需要进行 PE/PB/PS 分析时；当应用邱国鹭估值标准时"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lj22503",
+      "userId": "s17dhbyrvq4rmpz7c0cg1y9yrs83nsxz",
+      "displayName": "lj22503",
+      "image": "https://avatars.githubusercontent.com/u/170225356?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 276,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773976192702,
+      "changelog": "按 v2.0 标准重构",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:73d2c482e673cb71004542be4db18e684acfcf8bff8d528943ff162cdc4218d3"
+}

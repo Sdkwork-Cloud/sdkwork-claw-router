@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14962,
+  "uuid": "skill-clawhub-crypto-prices",
+  "skillKey": "clawhub-crypto-prices",
+  "name": "Crypto Prices",
+  "summary": "Fetch live cryptocurrency and commodity prices from verified sources with caching and fallback, ensuring accurate and up-to-date market data.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_prices",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ryandeangraves",
+      "features": [
+        "Fetch live cryptocurrency and commodity prices from verified sources with caching and fallback,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crypto-prices@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/209055942?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crypto-prices",
+      "url": "https://clawhub.ai/skills/crypto-prices"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-prices",
+    "url": "https://clawhub.ai/skills/crypto-prices",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-prices-8d53e7d9c059dbf0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crypto-prices@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crypto-prices-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8cdeb69bf99e5e6053e4983fad94442b47f2611b148cec22db44a8077aa66f4a",
+      "artifactSizeBytes": 1980
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T20:05:53.243Z"
+}

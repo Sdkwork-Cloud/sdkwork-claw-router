@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66932,
+  "uuid": "skill-clawhub-wechat-pay",
+  "skillKey": "clawhub-wechat-pay",
+  "name": "WeChat Pay",
+  "summary": "提供微信条码支付、转账、红包及账单管理指引。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_pay",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codenova58",
+      "features": [
+        "提供微信条码支付、转账、红包及账单管理指引。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-pay@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191358186?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-pay",
+      "url": "https://clawhub.ai/skills/wechat-pay"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-pay",
+    "url": "https://clawhub.ai/skills/wechat-pay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-pay-84f834f8ecc8a5a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-pay@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-pay-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:472d83130668881087b1665c966203a30de7ee70e4de95dc1c45ec4a133ecdef",
+      "artifactSizeBytes": 2143
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T15:51:54.347Z"
+}

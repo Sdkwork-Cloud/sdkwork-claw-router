@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34659,
+  "uuid": "skill-clawhub-hn-news",
+  "skillKey": "clawhub-hn-news",
+  "name": "Hacker news on topic AI and agent only",
+  "summary": "Fetch and display Hacker News stories about AI, agents, and Claude. Default is past week. Use when the user asks for HN news, Hacker News AI stories, latest...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hn_news",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jay",
+      "features": [
+        "Fetch and display Hacker News stories about AI, agents, and Claude",
+        "Default is past week",
+        "Use when the user asks for HN news, Hacker News AI stories, latest..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hn-news@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1488374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hn-news",
+      "url": "https://clawhub.ai/skills/hn-news"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hn-news",
+    "url": "https://clawhub.ai/skills/hn-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hn-news-897e7a1d97a7dd88.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hn-news@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-hn-news-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4fca3d83d00d7211239dd432a54d7fe1609b91f25896c8cac2a29bac6db78539",
+      "artifactSizeBytes": 2057
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T12:26:56.548Z"
+}

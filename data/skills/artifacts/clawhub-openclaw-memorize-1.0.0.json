@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-memorize@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_memorize",
+  "skill": {
+    "id": 32193,
+    "skillKey": "clawhub-openclaw-memorize",
+    "name": "Openclaw Memorize"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-memorize",
+    "url": "https://clawhub.ai/skills/openclaw-memorize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-memorize-de99bb4b5b1048e4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Simple memory management for OpenClaw. Save, retrieve, and search important information. Store facts, decisions, preferences, and anything you want to rememb..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yang1002378395-cmyk",
+      "userId": "s17627rpbb3atq3mbfabqbgtm983g9et",
+      "displayName": "yang1002378395-cmyk",
+      "image": "https://avatars.githubusercontent.com/u/261632147?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 256,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773925506220,
+      "changelog": "Initial release of openclaw-memorize:\n\n- Save and retrieve key-value memories across sessions\n- Search, list, and delete stored memories\n- Persistent storage within the workspace\n- CLI usage for easy interaction\n- Supports decisions, preferences, metrics, ideas, and links",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f71646029e810c2c0fc7dcb529576f430b267e0a9235dee491d2afe27c74ca2b"
+}

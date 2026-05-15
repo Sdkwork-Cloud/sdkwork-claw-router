@@ -2,10 +2,10 @@ use std::sync::Arc;
 use std::time::{SystemTime, UNIX_EPOCH};
 
 use axum::body::Bytes;
-use axum::extract::{Path, State};
+use axum::extract::{Path, Query, State};
 use axum::http::{HeaderMap, StatusCode};
 use axum::response::{IntoResponse, Response};
-use axum::routing::{delete, get, patch, post};
+use axum::routing::{get, patch, put};
 use axum::{Json, Router};
 use sdkwork_claw_http::TrustedRequestSubject;
 use serde::{Deserialize, Serialize};
@@ -16,10 +16,12 @@ use crate::application::EntityUuidGenerator;
 use crate::domain::DomainError;
 use crate::ports::{
     AdminCouponBatchItem, AdminMarketingStore, AdminMarketingSubject, AdminPromoCodeItem,
-    CreateAdminCouponCommand, DeleteAdminCouponCommand, GenerateAdminCouponBatchCommand,
+    AdminRechargePackageStatus, CreateAdminCouponCommand, CreateAdminRechargePackageCommand,
+    DeleteAdminCouponCommand, DeleteAdminRechargePackageCommand, GenerateAdminCouponBatchCommand,
     ListAdminCouponBatchesQuery, ListAdminCouponsQuery, ListAdminPromoCodesQuery,
-    ListAdminRechargeRecordsQuery, ListAdminRedemptionRecordsQuery, ListAdminReferralStatsQuery,
-    UpdateAdminPromoCodeStatusCommand,
+    ListAdminRechargePackagesQuery, ListAdminRechargeRecordsQuery, ListAdminRedemptionRecordsQuery,
+    ListAdminReferralStatsQuery, UpdateAdminPromoCodeStatusCommand,
+    UpdateAdminRechargePackageCommand,
 };
 
 const REQUEST_ID_HEADER: &str = "X-Request-Id";
@@ -90,11 +92,32 @@ struct UpdatePromoCodeStatusRequest {
     status: Option<String>,
 }
 
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+struct RechargePackageListQueryRequest {
+    status: Option<String>,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+struct RechargePackageMutationRequest {
+    rmb: Option<Value>,
+    bonus: Option<Value>,
+    status: Option<String>,
+}
+
 #[derive(Debug, Clone, PartialEq, Eq)]
 struct NormalizedCouponValue {
     value: String,
     amount_cents: i64,
     discount_value: Option<String>,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+struct NormalizedRechargePackageMutation {
+    rmb: String,
+    bonus: i64,
+    status: AdminRechargePackageStatus,
 }
 
 enum AdminMarketingCommandBuildError {
@@ -107,30 +130,51 @@ pub fn admin_marketing_router_with_store(
     entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
 ) -> Router {
     Router::new()
-        .route("/backend/v3/api/coupon/list", post(fetch_coupons))
-        .route("/backend/v3/api/coupon", post(create_coupon))
-        .route("/backend/v3/api/coupon/{coupon_id}", delete(delete_coupon))
-        .route("/backend/v3/api/router/coupon-batches", get(fetch_batches))
         .route(
-            "/backend/v3/api/router/coupon-batches/generate",
-            post(generate_batch),
+            "/backend/v3/api/billing/coupons",
+            get(fetch_coupons).post(create_coupon),
         )
         .route(
-            "/backend/v3/api/router/coupon-codes",
+            "/backend/v3/api/billing/coupons/{coupon_id}",
+            put(update_coupon).delete(delete_coupon),
+        )
+        .route(
+            "/backend/v3/api/billing/coupon_batches",
+            get(fetch_batches).post(generate_batch),
+        )
+        .route(
+            "/backend/v3/api/billing/coupon_codes",
             get(fetch_promo_codes),
         )
         .route(
-            "/backend/v3/api/router/coupon-codes/{promo_code_id}/status",
+            "/backend/v3/api/billing/coupon_codes/{code_id}/status",
             patch(update_promo_code_status),
         )
         .route(
-            "/backend/v3/api/user/coupon/list",
-            post(fetch_redemption_records),
+            "/backend/v3/api/billing/users/coupons",
+            get(fetch_redemption_records),
         )
         .route(
-            "/backend/v3/api/vip/recharge/list",
-            post(fetch_recharge_records),
+            "/backend/v3/api/billing/recharges/records",
+            get(fetch_recharge_records),
         )
+        .route(
+            "/backend/v3/api/billing/recharges/records/{order_no}",
+            get(unavailable_path_item),
+        )
+        .route(
+            "/backend/v3/api/billing/recharges/packages",
+            get(fetch_recharge_packages).post(create_recharge_package),
+        )
+        .route(
+            "/backend/v3/api/billing/recharges/packages/{package_id}",
+            put(update_recharge_package).delete(delete_recharge_package),
+        )
+        .route(
+            "/backend/v3/api/billing/exchange_rules",
+            get(empty_list).put(unavailable_command),
+        )
+        .route("/backend/v3/api/billing/payments/attempts", get(empty_list))
         .route(
             "/backend/v3/api/router/referrals/stats",
             get(fetch_referral_stats),
@@ -212,6 +256,16 @@ async fn delete_coupon(
     }
 }
 
+async fn update_coupon(headers: HeaderMap, Path(coupon_id): Path<String>) -> Response {
+    if let Err(response) = resolve_subject(&headers) {
+        return response;
+    }
+    if let Err(message) = parse_positive_id(&coupon_id, "coupon id") {
+        return bad_request(message);
+    }
+    unavailable_command_response()
+}
+
 async fn fetch_batches(State(state): State<AdminMarketingState>, headers: HeaderMap) -> Response {
     let subject = match resolve_subject(&headers) {
         Ok(subject) => subject,
@@ -278,14 +332,14 @@ async fn fetch_promo_codes(
 async fn update_promo_code_status(
     State(state): State<AdminMarketingState>,
     headers: HeaderMap,
-    Path(promo_code_id): Path<String>,
+    Path(code_id): Path<String>,
     body: Bytes,
 ) -> Response {
     let subject = match resolve_subject(&headers) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
-    let promo_code_id = match parse_positive_id(&promo_code_id, "promo code id") {
+    let promo_code_id = match parse_positive_id(&code_id, "promo code id") {
         Ok(promo_code_id) => promo_code_id,
         Err(message) => return bad_request(message),
     };
@@ -352,6 +406,136 @@ async fn fetch_recharge_records(
     }
 }
 
+async fn fetch_recharge_packages(
+    State(state): State<AdminMarketingState>,
+    Query(params): Query<RechargePackageListQueryRequest>,
+    headers: HeaderMap,
+) -> Response {
+    let subject = match resolve_subject(&headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    let status = match normalize_optional_recharge_package_status(params.status.as_deref()) {
+        Ok(status) => status,
+        Err(error) => return command_build_error_response(error),
+    };
+    match state
+        .store
+        .list_recharge_packages(ListAdminRechargePackagesQuery { subject, status })
+        .await
+    {
+        Ok(items) => list_response(items),
+        Err(error) => {
+            marketing_system_response("recharge package read model is unavailable", error)
+        }
+    }
+}
+
+async fn create_recharge_package(
+    State(state): State<AdminMarketingState>,
+    headers: HeaderMap,
+    body: Bytes,
+) -> Response {
+    let subject = match resolve_subject(&headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    let request = match parse_json_body::<RechargePackageMutationRequest>(&body, "recharge package")
+    {
+        Ok(request) => request,
+        Err(message) => return bad_request(message),
+    };
+    let command =
+        match build_create_recharge_package_command(state.clone(), &headers, subject, request) {
+            Ok(command) => command,
+            Err(error) => return command_build_error_response(error),
+        };
+
+    match state.store.create_recharge_package(command).await {
+        Ok(item) => {
+            Json(PlusApiResult::success(AdminMarketingItemEnvelope { item })).into_response()
+        }
+        Err(error) if error.is_conflict() => conflict_response(error),
+        Err(error) => {
+            marketing_system_response("recharge package command store is unavailable", error)
+        }
+    }
+}
+
+async fn update_recharge_package(
+    State(state): State<AdminMarketingState>,
+    headers: HeaderMap,
+    Path(package_id): Path<String>,
+    body: Bytes,
+) -> Response {
+    let subject = match resolve_subject(&headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    let package_id = match parse_positive_id(&package_id, "package id") {
+        Ok(package_id) => package_id,
+        Err(message) => return bad_request(message),
+    };
+    let request = match parse_json_body::<RechargePackageMutationRequest>(&body, "recharge package")
+    {
+        Ok(request) => request,
+        Err(message) => return bad_request(message),
+    };
+    let command = match build_update_recharge_package_command(
+        state.clone(),
+        &headers,
+        subject,
+        package_id,
+        request,
+    ) {
+        Ok(command) => command,
+        Err(error) => return command_build_error_response(error),
+    };
+
+    match state.store.update_recharge_package(command).await {
+        Ok(item) => {
+            Json(PlusApiResult::success(AdminMarketingItemEnvelope { item })).into_response()
+        }
+        Err(error) if error.is_not_found() => not_found_response("recharge package was not found"),
+        Err(error) if error.is_conflict() => conflict_response(error),
+        Err(error) => {
+            marketing_system_response("recharge package command store is unavailable", error)
+        }
+    }
+}
+
+async fn delete_recharge_package(
+    State(state): State<AdminMarketingState>,
+    headers: HeaderMap,
+    Path(package_id): Path<String>,
+) -> Response {
+    let subject = match resolve_subject(&headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    let package_id = match parse_positive_id(&package_id, "package id") {
+        Ok(package_id) => package_id,
+        Err(message) => return bad_request(message),
+    };
+    let command =
+        match build_delete_recharge_package_command(state.clone(), &headers, subject, package_id) {
+            Ok(command) => command,
+            Err(error) => return command_build_error_response(error),
+        };
+
+    match state.store.delete_recharge_package(command).await {
+        Ok(true) => Json(PlusApiResult::success(AdminMarketingDeleteResponse {
+            deleted: true,
+        }))
+        .into_response(),
+        Ok(false) => not_found_response("recharge package was not found"),
+        Err(error) if error.is_conflict() => conflict_response(error),
+        Err(error) => {
+            marketing_system_response("recharge package command store is unavailable", error)
+        }
+    }
+}
+
 async fn fetch_referral_stats(
     State(state): State<AdminMarketingState>,
     headers: HeaderMap,
@@ -375,6 +559,27 @@ where
     T: Serialize,
 {
     Json(PlusApiResult::success(AdminMarketingListResponse { items })).into_response()
+}
+
+async fn empty_list(headers: HeaderMap) -> Response {
+    if let Err(response) = resolve_subject(&headers) {
+        return response;
+    }
+    list_response(Vec::<serde_json::Value>::new())
+}
+
+async fn unavailable_path_item(headers: HeaderMap, Path(_id): Path<String>) -> Response {
+    if let Err(response) = resolve_subject(&headers) {
+        return response;
+    }
+    unavailable_read().await
+}
+
+async fn unavailable_command(headers: HeaderMap) -> Response {
+    if let Err(response) = resolve_subject(&headers) {
+        return response;
+    }
+    unavailable_command_response()
 }
 
 fn resolve_subject(headers: &HeaderMap) -> Result<AdminMarketingSubject, Response> {
@@ -486,6 +691,64 @@ fn build_update_promo_code_status_command(
     })
 }
 
+fn build_create_recharge_package_command(
+    state: AdminMarketingState,
+    headers: &HeaderMap,
+    subject: AdminMarketingSubject,
+    request: RechargePackageMutationRequest,
+) -> Result<CreateAdminRechargePackageCommand, AdminMarketingCommandBuildError> {
+    let mutation = normalize_recharge_package_mutation(request)?;
+    Ok(CreateAdminRechargePackageCommand {
+        subject,
+        package_uuid: generate_entity_uuid(&state)?,
+        product_uuid: generate_entity_uuid(&state)?,
+        sku_uuid: generate_entity_uuid(&state)?,
+        audit_log_uuid: generate_entity_uuid(&state)?,
+        rmb: mutation.rmb,
+        bonus: mutation.bonus,
+        status: mutation.status,
+        request_id: normalize_request_id(headers, &state)?,
+        requested_at: current_timestamp_string(),
+    })
+}
+
+fn build_update_recharge_package_command(
+    state: AdminMarketingState,
+    headers: &HeaderMap,
+    subject: AdminMarketingSubject,
+    package_id: i64,
+    request: RechargePackageMutationRequest,
+) -> Result<UpdateAdminRechargePackageCommand, AdminMarketingCommandBuildError> {
+    let mutation = normalize_recharge_package_mutation(request)?;
+    Ok(UpdateAdminRechargePackageCommand {
+        subject,
+        package_id,
+        product_uuid: generate_entity_uuid(&state)?,
+        sku_uuid: generate_entity_uuid(&state)?,
+        audit_log_uuid: generate_entity_uuid(&state)?,
+        rmb: mutation.rmb,
+        bonus: mutation.bonus,
+        status: mutation.status,
+        request_id: normalize_request_id(headers, &state)?,
+        requested_at: current_timestamp_string(),
+    })
+}
+
+fn build_delete_recharge_package_command(
+    state: AdminMarketingState,
+    headers: &HeaderMap,
+    subject: AdminMarketingSubject,
+    package_id: i64,
+) -> Result<DeleteAdminRechargePackageCommand, AdminMarketingCommandBuildError> {
+    Ok(DeleteAdminRechargePackageCommand {
+        subject,
+        package_id,
+        audit_log_uuid: generate_entity_uuid(&state)?,
+        request_id: normalize_request_id(headers, &state)?,
+        requested_at: current_timestamp_string(),
+    })
+}
+
 fn normalize_required_text(
     value: Option<&str>,
     field_name: &str,
@@ -580,27 +843,116 @@ fn normalize_coupon_value(
     })
 }
 
+fn normalize_recharge_package_mutation(
+    request: RechargePackageMutationRequest,
+) -> Result<NormalizedRechargePackageMutation, AdminMarketingCommandBuildError> {
+    Ok(NormalizedRechargePackageMutation {
+        rmb: normalize_recharge_package_rmb(request.rmb.as_ref())?,
+        bonus: normalize_recharge_package_bonus(request.bonus.as_ref())?,
+        status: normalize_recharge_package_status(request.status.as_deref())?,
+    })
+}
+
+fn normalize_recharge_package_rmb(
+    value: Option<&Value>,
+) -> Result<String, AdminMarketingCommandBuildError> {
+    let raw = match value {
+        Some(Value::String(value)) => value.trim().to_owned(),
+        Some(Value::Number(value)) => value.to_string(),
+        Some(_) => {
+            return Err(AdminMarketingCommandBuildError::BadRequest(
+                "recharge package rmb must be a number or string".to_owned(),
+            ))
+        }
+        None => {
+            return Err(AdminMarketingCommandBuildError::BadRequest(
+                "recharge package rmb is required".to_owned(),
+            ))
+        }
+    };
+    let cents = decimal_money_to_cents_with_field(&raw, "recharge package rmb")?;
+    Ok(cents_to_plain_money_string(cents))
+}
+
+fn normalize_recharge_package_bonus(
+    value: Option<&Value>,
+) -> Result<i64, AdminMarketingCommandBuildError> {
+    let bonus = match value {
+        Some(Value::Number(value)) => value.as_i64(),
+        Some(Value::String(value)) => value.trim().parse::<i64>().ok(),
+        Some(_) => None,
+        None => {
+            return Err(AdminMarketingCommandBuildError::BadRequest(
+                "recharge package bonus is required".to_owned(),
+            ))
+        }
+    }
+    .ok_or_else(|| {
+        AdminMarketingCommandBuildError::BadRequest(
+            "recharge package bonus must be a non-negative integer".to_owned(),
+        )
+    })?;
+    if bonus < 0 {
+        return Err(AdminMarketingCommandBuildError::BadRequest(
+            "recharge package bonus must be a non-negative integer".to_owned(),
+        ));
+    }
+    Ok(bonus)
+}
+
+fn normalize_recharge_package_status(
+    value: Option<&str>,
+) -> Result<AdminRechargePackageStatus, AdminMarketingCommandBuildError> {
+    let Some(status) = normalize_optional_recharge_package_status(value)? else {
+        return Ok(AdminRechargePackageStatus::Active);
+    };
+    Ok(status)
+}
+
+fn normalize_optional_recharge_package_status(
+    value: Option<&str>,
+) -> Result<Option<AdminRechargePackageStatus>, AdminMarketingCommandBuildError> {
+    let Some(value) = value.map(str::trim).filter(|value| !value.is_empty()) else {
+        return Ok(None);
+    };
+    match value.to_ascii_lowercase().as_str() {
+        "active" | "enabled" | "normal" => Ok(AdminRechargePackageStatus::Active),
+        "inactive" | "disabled" => Ok(AdminRechargePackageStatus::Inactive),
+        _ => Err(AdminMarketingCommandBuildError::BadRequest(
+            "recharge package status must be active or inactive".to_owned(),
+        )),
+    }
+    .map(Some)
+}
+
 fn decimal_money_to_cents(value: &str) -> Result<i64, AdminMarketingCommandBuildError> {
+    decimal_money_to_cents_with_field(value, "coupon value")
+}
+
+fn decimal_money_to_cents_with_field(
+    value: &str,
+    field_name: &str,
+) -> Result<i64, AdminMarketingCommandBuildError> {
     let value = value.trim().trim_start_matches('$').replace(',', "");
     if value.is_empty() || value.starts_with('-') {
-        return Err(AdminMarketingCommandBuildError::BadRequest(
-            "coupon value must be greater than zero".to_owned(),
-        ));
+        return Err(AdminMarketingCommandBuildError::BadRequest(format!(
+            "{field_name} must be greater than zero"
+        )));
     }
     let parts: Vec<&str> = value.split('.').collect();
     if parts.len() > 2 || parts[0].is_empty() || !parts[0].chars().all(|ch| ch.is_ascii_digit()) {
-        return Err(AdminMarketingCommandBuildError::BadRequest(
-            "coupon value must be a valid money amount".to_owned(),
-        ));
+        return Err(AdminMarketingCommandBuildError::BadRequest(format!(
+            "{field_name} must be a valid money amount"
+        )));
     }
     let dollars = parts[0].parse::<i64>().map_err(|_| {
-        AdminMarketingCommandBuildError::BadRequest("coupon value is too large".to_owned())
+        AdminMarketingCommandBuildError::BadRequest(format!("{field_name} is too large"))
     })?;
     let cents = if parts.len() == 2 {
         if parts[1].len() > 2 || !parts[1].chars().all(|ch| ch.is_ascii_digit()) {
-            return Err(AdminMarketingCommandBuildError::BadRequest(
-                "coupon value must have at most 2 decimal places".to_owned(),
-            ));
+            return Err(AdminMarketingCommandBuildError::BadRequest(format!(
+                "{field_name} must have at most 2 decimal places"
+            )));
         }
         let mut cents = parts[1].to_owned();
         while cents.len() < 2 {
@@ -614,18 +966,22 @@ fn decimal_money_to_cents(value: &str) -> Result<i64, AdminMarketingCommandBuild
         .checked_mul(100)
         .and_then(|value| value.checked_add(cents))
         .ok_or_else(|| {
-            AdminMarketingCommandBuildError::BadRequest("coupon value is too large".to_owned())
+            AdminMarketingCommandBuildError::BadRequest(format!("{field_name} is too large"))
         })?;
     if total <= 0 {
-        return Err(AdminMarketingCommandBuildError::BadRequest(
-            "coupon value must be greater than zero".to_owned(),
-        ));
+        return Err(AdminMarketingCommandBuildError::BadRequest(format!(
+            "{field_name} must be greater than zero"
+        )));
     }
     Ok(total)
 }
 
 fn cents_to_money_string(cents: i64) -> String {
     format!("${}.{:02}", cents / 100, cents.rem_euclid(100))
+}
+
+fn cents_to_plain_money_string(cents: i64) -> String {
+    format!("{}.{:02}", cents / 100, cents.rem_euclid(100))
 }
 
 fn normalize_id_value(
@@ -778,6 +1134,28 @@ fn marketing_system_response(context: &str, error: DomainError) -> Response {
     (
         StatusCode::INTERNAL_SERVER_ERROR,
         Json(PlusApiResult::error("5000", format!("{context}: {error}"))),
+    )
+        .into_response()
+}
+
+async fn unavailable_read() -> Response {
+    (
+        StatusCode::NOT_IMPLEMENTED,
+        Json(PlusApiResult::error(
+            "5010",
+            "commerce admin read model is not configured",
+        )),
+    )
+        .into_response()
+}
+
+fn unavailable_command_response() -> Response {
+    (
+        StatusCode::NOT_IMPLEMENTED,
+        Json(PlusApiResult::error(
+            "5010",
+            "commerce admin command store is not configured",
+        )),
     )
         .into_response()
 }

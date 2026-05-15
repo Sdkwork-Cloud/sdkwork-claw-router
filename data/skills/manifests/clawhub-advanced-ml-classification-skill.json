@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65267,
+  "uuid": "skill-clawhub-advanced-ml-classification-skill",
+  "skillKey": "clawhub-advanced-ml-classification-skill",
+  "name": "Advanced ML Classification Skill",
+  "summary": "自动化生成工业级机器学习分类算法代码、调用算法做预测、输出准确率对比和可视化结果，支持新手友好的结果解读。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.advanced_ml_classification_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bamboo9805",
+      "features": [
+        "自动化生成工业级机器学习分类算法代码、调用算法做预测、输出准确率对比和可视化结果，支持新手友好的结果解读。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/advanced-ml-classification-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/97940776?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "advanced-ml-classification-skill",
+      "url": "https://clawhub.ai/skills/advanced-ml-classification-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "advanced-ml-classification-skill",
+    "url": "https://clawhub.ai/skills/advanced-ml-classification-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/advanced-ml-classification-skill-105e01e817f168db.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/advanced-ml-classification-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-advanced-ml-classification-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0f62135aae465d72e87ef7d5a43bad5351aceed93a13238d6a2624b66cc83f90",
+      "artifactSizeBytes": 2014
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T04:49:18.266Z"
+}

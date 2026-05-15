@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73409,
+  "uuid": "skill-clawhub-skill-qimen-api",
+  "skillKey": "clawhub-skill-qimen-api",
+  "name": "奇门遁甲",
+  "summary": "提供基于数据分析与认知科学的八字和奇门遁甲排盘及解盘，辅助理性传统命理决策参考。",
+  "version": "1.0.20",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_qimen_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "colorwlof",
+      "features": [
+        "提供基于数据分析与认知科学的八字和奇门遁甲排盘及解盘，辅助理性传统命理决策参考。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-qimen-api@1.0.20",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/53787047?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-qimen-api",
+      "url": "https://clawhub.ai/skills/skill-qimen-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-qimen-api",
+    "url": "https://clawhub.ai/skills/skill-qimen-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-qimen-api-b791a6556038903b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-qimen-api@1.0.20",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-qimen-api-1.0.20.json",
+      "version": "1.0.20",
+      "runtime": "metadata",
+      "checksumHash": "sha256:07247494face51c53e6d35d04600827414beb7640551ac7d72c2e7e897498442",
+      "artifactSizeBytes": 1967
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T12:39:58.518Z"
+}

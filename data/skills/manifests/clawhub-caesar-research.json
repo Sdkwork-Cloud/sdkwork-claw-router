@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32800,
+  "uuid": "skill-clawhub-caesar-research",
+  "skillKey": "clawhub-caesar-research",
+  "name": "Deep Research with Caesar.org",
+  "summary": "Deep research using the Caesar API — run queries, follow up with chat, brainstorm, and manage collections.",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.caesar_research",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alexrudloff",
+      "features": [
+        "Deep research using the Caesar API — run queries, follow up with chat, brainstorm, and manage c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/caesar-research@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1984999?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "caesar-research",
+      "url": "https://clawhub.ai/skills/caesar-research"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "caesar-research",
+    "url": "https://clawhub.ai/skills/caesar-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/caesar-research-8010029f7ecd5da7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/caesar-research@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-caesar-research-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4486a984f5944cde20b4aedc42a4585f509ed59fa8f31393a1f7cfafc6b7638c",
+      "artifactSizeBytes": 2336
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T15:52:46.582Z"
+}

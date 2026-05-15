@@ -57,7 +57,7 @@ async fn service_router_exposes_gateway_openapi_document() {
         .await
         .unwrap();
     let payload: serde_json::Value = serde_json::from_slice(&body).unwrap();
-    assert_eq!("3.0.0", payload["openapi"]);
+    assert_eq!("3.0.3", payload["openapi"]);
     assert_eq!("Claw Router Open API", payload["info"]["title"]);
     assert!(payload.get("x-provider-passthrough").is_none());
     let payload_text = serde_json::to_string(&payload)
@@ -197,9 +197,7 @@ async fn service_router_exposes_surface_openapi_documents() {
         .unwrap();
     let app_payload: serde_json::Value = serde_json::from_slice(&app_body).unwrap();
     assert_eq!("/app/v3/api", app_payload["x-api-prefix"]);
-    assert!(app_payload["paths"]
-        .get("/app/v3/api/router/models")
-        .is_some());
+    assert!(app_payload["paths"].get("/app/v3/api/ai/models").is_some());
 
     let backend_response = sdkwork_claw_http::service_router_with_contract_routes(
         "sdkwork-claw-admin-api",
@@ -220,7 +218,7 @@ async fn service_router_exposes_surface_openapi_documents() {
     let backend_payload: serde_json::Value = serde_json::from_slice(&backend_body).unwrap();
     assert_eq!("/backend/v3/api", backend_payload["x-api-prefix"]);
     assert!(backend_payload["paths"]
-        .get("/backend/v3/api/model/list")
+        .get("/backend/v3/api/ai/models")
         .is_some());
 }
 

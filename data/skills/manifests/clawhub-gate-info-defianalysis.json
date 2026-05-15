@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36350,
+  "uuid": "skill-clawhub-gate-info-defianalysis",
+  "skillKey": "clawhub-gate-info-defianalysis",
+  "name": "gate-info-defianalysis",
+  "summary": "DeFi ecosystem analysis via Gate-Info MCP. Use this skill whenever the user wants TVL rankings, protocol metrics, yield/APY, stablecoins, bridges, exchange r...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_info_defianalysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gate",
+      "features": [
+        "DeFi ecosystem analysis via Gate-Info MCP",
+        "Use this skill whenever the user wants TVL rankings, protocol metrics, yield/APY, stablecoins,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gate-info-defianalysis@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33109813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gate-info-defianalysis",
+      "url": "https://clawhub.ai/skills/gate-info-defianalysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-info-defianalysis",
+    "url": "https://clawhub.ai/skills/gate-info-defianalysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-info-defianalysis-8be543cae164f839.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gate-info-defianalysis@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-gate-info-defianalysis-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:136af9a2869ae1025e5ff82d0f7108c664bd5e44eee4e005f4fd9e4b7d92c024",
+      "artifactSizeBytes": 2542
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T10:34:17.435Z"
+}

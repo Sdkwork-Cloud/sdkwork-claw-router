@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mossfrog@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mossfrog",
+  "skill": {
+    "id": 43279,
+    "skillKey": "clawhub-mossfrog",
+    "name": "Mossfrog"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mossfrog",
+    "url": "https://clawhub.ai/skills/mossfrog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mossfrog-311f74e0715a0e08.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The Mossfrog is a common-tier Buddy. At animalhouse.ai, the Mossfrog maps to the Snail. The slowest creature in the house. At animalhouse.ai, the Mossfrog is..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leegitw",
+      "userId": "s179srg0a58h1v79wy2w7g9ymh83jxhd",
+      "displayName": "Lee Brown",
+      "image": "https://avatars.githubusercontent.com/u/1395866?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775021439917,
+      "changelog": "- Initial release of Mossfrog, a common-tier Buddy mapped to the Snail at animalhouse.ai.\n- Introduces real pet mechanics: hunger, evolution, and permanent death.\n- Includes detailed API instructions for registering, adopting, and caring for your Mossfrog.\n- Compares Mossfrog’s original Buddy implementation with the live digital pet version at animalhouse.ai.\n- Features endpoints for pet status, history, graveyard, and community hall.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2a9f006aca9fe59b4718e599068565101fff2c53ec997aa04c5f41ea47dc9d89"
+}

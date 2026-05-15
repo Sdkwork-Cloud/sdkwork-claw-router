@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/visual-concept@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.visual_concept",
+  "skill": {
+    "id": 35327,
+    "skillKey": "clawhub-visual-concept",
+    "name": "Visual Concept"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "visual-concept",
+    "url": "https://clawhub.ai/skills/visual-concept",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/visual-concept-d96dc1c666341532.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transform technical insights into visual concept guides — symbolic imagery, color arcs, and creative direction for video"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leegitw",
+      "userId": "s179srg0a58h1v79wy2w7g9ymh83jxhd",
+      "displayName": "Lee Brown",
+      "image": "https://avatars.githubusercontent.com/u/1395866?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 916,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771985705023,
+      "changelog": "- Clarified data handling: the skill no longer reads files from the workspace or accesses project artifacts directly—output is based only on conversation or user input.\n- Updated documentation to reflect new input model and removed outdated metadata sections about workspace requirements.\n- Expanded \"Security Considerations\" to specify input sources and confirm no external data access or image generation APIs are used.\n- Minor language and structural edits for clarity and conciseness throughout the documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e12a3ac22c60c654b59191c27626e3e016290762ebc2620ce694e9d8d76019cb"
+}

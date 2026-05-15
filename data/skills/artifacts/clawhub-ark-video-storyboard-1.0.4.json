@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ark-video-storyboard@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ark_video_storyboard",
+  "skill": {
+    "id": 24188,
+    "skillKey": "clawhub-ark-video-storyboard",
+    "name": "ark-video-storyboard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ark-video-storyboard",
+    "url": "https://clawhub.ai/skills/ark-video-storyboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ark-video-storyboard-2b2c8187bcc35499.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate a storyboard and prompts from a scene or reference images, confirm the script with the user, then optionally submit multi-segment video generation t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yunni123",
+      "userId": "s17d4pkdsm5dpha1f8ez2msak983g3gd",
+      "displayName": "Heaven",
+      "image": "https://avatars.githubusercontent.com/u/23333359?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 318,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1773887766175,
+      "changelog": "更新后续流程",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:046ce53b5fe49ca2f185b92a84e242e25e3cdba166362f8fe6645745e0b6eafc"
+}

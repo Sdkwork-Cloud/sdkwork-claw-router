@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17692,
+  "uuid": "skill-clawhub-mlops-automation-cn",
+  "skillKey": "clawhub-mlops-automation-cn",
+  "name": "MLOps Automation",
+  "summary": "Task automation, containerization, CI/CD, and experiment tracking",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mlops_automation_cn",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Guohongbin",
+      "features": [
+        "Task automation, containerization, CI/CD, and experiment tracking"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mlops-automation-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/202475309?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mlops-automation-cn",
+      "url": "https://clawhub.ai/skills/mlops-automation-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mlops-automation-cn",
+    "url": "https://clawhub.ai/skills/mlops-automation-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mlops-automation-cn-ff282e4e63cabd44.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mlops-automation-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mlops-automation-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5546a27d508c9981990f11dc869680466742c9159879d9b860a2479302738109",
+      "artifactSizeBytes": 1880
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T15:18:12.174Z"
+}

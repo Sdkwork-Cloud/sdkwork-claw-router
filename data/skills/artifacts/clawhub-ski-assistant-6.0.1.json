@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ski-assistant@6.0.1",
+  "version": "6.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ski_assistant",
+  "skill": {
+    "id": 57536,
+    "skillKey": "clawhub-ski-assistant",
+    "name": "Ski Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ski-assistant",
+    "url": "https://clawhub.ai/skills/ski-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ski-assistant-ce74a5ecc876f3c7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Global ski resort assistant covering 854 resorts across 40+ countries. Plan trips, compare prices, analyze your form, and find early-bird deals. 全球滑雪助手，覆盖 85..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wjyhahaha",
+      "userId": "s176n06kdt8yffptjbherj9nan8445nn",
+      "displayName": "wjy",
+      "image": "https://avatars.githubusercontent.com/u/24526635?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 424,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 34
+    },
+    "latestVersion": {
+      "version": "6.0.1",
+      "createdAt": 1775929587146,
+      "changelog": "- Ski resort database updated: now covers 854 resorts (was 900), including 178 search aliases; China coverage now 470 resorts (was 482).\n- Database and strategy files reduced in size and optimized; region strategy coverage improved to 96.3%.\n- User data: coaching records format changed from JSON Lines to standard JSON array.\n- Docs and module references updated to reflect new database stats, file formats, and covered regions.\n- Various module and reference corrections to align with streamlined datasets and improved coverage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4526fa66820c5592af903dd4941bf0b030b27aaaaabcecc92d431b916ce4a6a5"
+}

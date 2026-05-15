@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/anime-storyboard-creator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anime_storyboard_creator",
+  "skill": {
+    "id": 67341,
+    "skillKey": "clawhub-anime-storyboard-creator",
+    "name": "anime-storyboard-creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anime-storyboard-creator",
+    "url": "https://clawhub.ai/skills/anime-storyboard-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anime-storyboard-creator-7ed5ee190e088fcb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专业级动漫短剧/漫剧分镜脚本文案创作 skill。当用户需要生成动漫短视频分镜脚本、漫剧分镜文案、AI绘图分镜脚本时使用。用户提供宫格规格（9格/16格/25格）和角色参考图，自动输出可直接用于 AI 绘图的标准化结构化分镜脚本。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wutzh195-max",
+      "userId": "s17bbmq1e0jab640z8eszvwf2183h6tn",
+      "displayName": "wutzh195-max",
+      "image": "https://avatars.githubusercontent.com/u/247158680?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 357,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774774379344,
+      "changelog": "Initial release of anime-storyboard-creator\n\n- Generates professional-grade anime short/strip storyboard scripts for AI drawing based on user-specified grid format (9/16/25 panels) and character reference images.\n- Automatically analyzes character style, visual tone, and genre from uploaded images.\n- Searches and matches trending plots and drama segments from major Chinese online novel and comic platforms.\n- Outputs standardized, structured scripts with detailed descriptions for each panel, following strict format and content guidelines.\n- Includes optional AI drawing prompts for each panel and comprehensive quality checklists for script output.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:60ae87a91171586daa65a68ba96df8fd2a7957d2ada73cdea5fe6c2d0cae13b3"
+}

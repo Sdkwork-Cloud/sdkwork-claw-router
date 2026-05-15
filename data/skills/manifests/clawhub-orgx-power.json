@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40872,
+  "uuid": "skill-clawhub-orgx-power",
+  "skillKey": "clawhub-orgx-power",
+  "name": "OrgX Power",
+  "summary": "Power-user OrgX skill for OpenClaw. Use when you explicitly need the full mutation surface for entity CRUD, run control, checkpoints, stream reassignment, or...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.orgx_power",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hope Atina",
+      "features": [
+        "Power-user OrgX skill for OpenClaw",
+        "Use when you explicitly need the full mutation surface for entity CRUD, run control, checkpoint."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/orgx-power@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8039862?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "orgx-power",
+      "url": "https://clawhub.ai/skills/orgx-power"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "orgx-power",
+    "url": "https://clawhub.ai/skills/orgx-power",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/orgx-power-1daf02d4c930f124.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/orgx-power@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-orgx-power-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:299334a65fbf01e7fa1c65fa006d8d99afe985c162f1b6d4b31a874d3f9f4f37",
+      "artifactSizeBytes": 1921
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T21:07:23.274Z"
+}

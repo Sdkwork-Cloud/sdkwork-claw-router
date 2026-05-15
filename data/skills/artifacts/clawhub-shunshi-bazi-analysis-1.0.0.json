@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shunshi-bazi-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shunshi_bazi_analysis",
+  "skill": {
+    "id": 58414,
+    "skillKey": "clawhub-shunshi-bazi-analysis",
+    "name": "Bazi Calculator - Shunshi AI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shunshi-bazi-analysis",
+    "url": "https://clawhub.ai/skills/shunshi-bazi-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shunshi-bazi-analysis-ad3f2e421fc561a9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bazi chart calculation & reading (八字排盘与命理解读 / 四柱推命鑑定 / 사주팔자 감정). Triggers on: \"算八字\" \"bazi reading\" \"四柱推命\" \"사주 봐주세요\". Powered by shunshi-bazi-core with true s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shunshi",
+      "userId": "s175pfqy9zw9pc5n10x6agtf0n84pkdp",
+      "displayName": "Shunshi AI",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776006933502,
+      "changelog": "Bazi Calculator - Shunshi AI 1.0.0\n\n- Initial release of Bazi Calculator skill with multi-language support for Chinese, English, Japanese, and Korean.\n- Provides accurate BaZi (四柱八字) chart calculation using the shunshi-bazi-core engine, including true solar time correction, 40+ shensha, dayun, and wuxing scoring.\n- Guides users step-by-step to collect required birth information, then automatically calls the calculation engine.\n- Delivers structured, layered reading: chart summary, day master strength, Ten Gods, clashes/combinations, key shensha, luck pillar (大运) analysis, and practical advice.\n- Includes special handling for annual (流年) fortune and compatibility (合婚) analysis on follow-up questions.\n- Outputs all results with clear structure, modern psychological tone, and professional interpretation, with proper credit to the calculation engine.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ae4adb1e307e82f046d48c9e0793dbb1ba8235f5ef3943691807ba6cc2a7b9cc"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-config-optimizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_config_optimizer",
+  "skill": {
+    "id": 46656,
+    "skillKey": "clawhub-openclaw-config-optimizer",
+    "name": "Openclaw Config Optimizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-config-optimizer",
+    "url": "https://clawhub.ai/skills/openclaw-config-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-config-optimizer-2715c2e3d63d655a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw Configuration Optimizer. Analyze and optimize OpenClaw config files for better performance and security. Triggers: optimize config, OpenClaw setting..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 113,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777241066670,
+      "changelog": "- Initial release of OpenClaw Config Optimizer.\n- Analyze and optimize OpenClaw configuration files for improved performance and security.\n- Provides config review, performance tuning, security hardening, and best practice recommendations.\n- Includes one-click optimization scripts and detailed checklists for performance, security, and stability.\n- Supports both manual and automatic trigger phrases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c42601f33809e3d7809fd2c59386869671911f4260936f5ef79f275b34b88d79"
+}

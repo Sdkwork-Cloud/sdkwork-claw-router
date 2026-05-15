@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32485,
+  "uuid": "skill-clawhub-kuwo",
+  "skillKey": "clawhub-kuwo",
+  "name": "Kuwo",
+  "summary": "Retrieve and summarize trending public playlists, songs, and artist metrics from Kuwo Music for analysis and lightweight reporting.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kuwo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mike47512",
+      "features": [
+        "Retrieve and summarize trending public playlists, songs, and artist metrics from Kuwo Music for."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kuwo@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199718167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kuwo",
+      "url": "https://clawhub.ai/skills/kuwo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kuwo",
+    "url": "https://clawhub.ai/skills/kuwo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kuwo-47ddaf3f2ef1f599.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kuwo@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kuwo-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ea1fc9c3b9dab1bb969028af9b88f835684d2d9434c5825ad8a808df6cff1cf4",
+      "artifactSizeBytes": 2317
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T23:47:30.328Z"
+}

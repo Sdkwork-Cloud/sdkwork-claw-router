@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13390,
+  "uuid": "skill-clawhub-tork-guardian",
+  "skillKey": "clawhub-tork-guardian",
+  "name": "Tork Guardian",
+  "summary": "AI governance and safety layer for OpenClaw agents. Protects against unsafe actions, redacts sensitive data, and generates compliance audit trails.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tork_guardian",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "torkjacobs",
+      "features": [
+        "AI governance and safety layer for OpenClaw agents",
+        "Protects against unsafe actions, redacts sensitive data, and generates compliance audit trails."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tork-guardian@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199859878?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tork-guardian",
+      "url": "https://clawhub.ai/skills/tork-guardian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tork-guardian",
+    "url": "https://clawhub.ai/skills/tork-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tork-guardian-15cbdcebf307f6a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tork-guardian@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-tork-guardian-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e1d33e66fcf5d309e31e219f98bfdb11048e90c5c9c40cdb28c8d1ecac62838",
+      "artifactSizeBytes": 2525
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T22:39:04.081Z"
+}

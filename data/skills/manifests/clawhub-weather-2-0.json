@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56515,
+  "uuid": "skill-clawhub-weather-2-0",
+  "skillKey": "clawhub-weather-2-0",
+  "name": "Weather 2.0",
+  "summary": "Weather and forecasts (no API key). One wttr.in fetch by default; Open-Meteo if that fails. Chat-style answers — see “How to answer”.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_2_0",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Maxim Edogawa",
+      "features": [
+        "Weather and forecasts (no API key)",
+        "One wttr.in fetch by default",
+        "Open-Meteo if that fails",
+        "Chat-style answers — see “How to answer”."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weather-2-0@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/118206726?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weather-2-0",
+      "url": "https://clawhub.ai/skills/weather-2-0"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-2-0",
+    "url": "https://clawhub.ai/skills/weather-2-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-2-0-8aeb5333ac5d84be.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weather-2-0@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-weather-2-0-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cefe17829e6a345e95c01f02e1729e864326dd7b875a22a41228a83591a5d378",
+      "artifactSizeBytes": 2033
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T22:14:54.461Z"
+}

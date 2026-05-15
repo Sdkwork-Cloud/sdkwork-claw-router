@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amd-inc@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amd_inc",
+  "skill": {
+    "id": 44493,
+    "skillKey": "clawhub-amd-inc",
+    "name": "Amd Inc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amd-inc",
+    "url": "https://clawhub.ai/skills/amd-inc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amd-inc-77edb4e17a71579a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides detailed analysis of AMD's CPU/GPU market position, semiconductor turnaround, AI accelerator products, and competitive dynamics versus Intel and NVI..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776967594764,
+      "changelog": "Version 1.0.0 changelog for \"amd-inc\":\n\n- Initial release covering AMD's history, turnaround, and current position in the semiconductor industry.\n- Includes a detailed timeline from 1969 to 2025, highlighting key events like the Zen launch, ATI/Xilinx acquisitions, and MI300X release.\n- Explains AMD's business model, revenue segments, and strategic market positioning against Intel and NVIDIA.\n- Outlines AMD's moats, including x86 licensing and chiplet architecture advantages, along with honest assessment of ROCm's ecosystem challenges.\n- Provides key financial stats, competitive benchmarking, and notable facts about AMD's leadership and open-source approach.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f6874b3c1bc05f2a82c2c905e6a913a773a903aee9b47ca1328359fc179bd348"
+}

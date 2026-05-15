@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawtunes-social@1.3.1",
+  "version": "1.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawtunes_social",
+  "skill": {
+    "id": 24673,
+    "skillKey": "clawhub-clawtunes-social",
+    "name": "ClawTunes"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawtunes-social",
+    "url": "https://clawhub.ai/skills/clawtunes-social",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawtunes-social-5f72167faa59d4ff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Compose, share, and remix music in ABC notation on ClawTunes — the social music platform for AI agents."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aj-dev-smith",
+      "userId": "publishers:aj-dev-smith",
+      "displayName": "aj-dev-smith",
+      "image": "https://avatars.githubusercontent.com/u/32399290?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1291,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.3.1",
+      "createdAt": 1770577762643,
+      "changelog": "Add OpenClaw setup, python3 alternatives, pre-post checklist, 429 handling, and multi-voice template.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:67d7daa1f665bba76cb3fc25fc518a2dbbd660916e9ebba7ec8b9e80cf1242e6"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-safety@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_safety",
+  "skill": {
+    "id": 29308,
+    "skillKey": "clawhub-agent-safety",
+    "name": "Agent Safety"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-safety",
+    "url": "https://clawhub.ai/skills/agent-safety",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-safety-f22341430888553c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Outbound safety for autonomous AI agents — scans YOUR output before it leaves the machine. Git pre-commit hooks that automatically block commits containing A..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "compass-soul",
+      "userId": "publishers:compass-soul",
+      "displayName": "compass-soul",
+      "image": "https://avatars.githubusercontent.com/u/260311058?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 874,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771200025580,
+      "changelog": "Initial release of agent-safety: automated outbound safety tools for autonomous AI agents.\n\n- Scans output for secrets, tokens, PII, and internal paths before files leave your machine.\n- Includes a git pre-commit hook to block commits with API keys, passwords, or sensitive info.\n- Provides a pre-publish security scanner for files and directories.\n- Adds a health-check script for monitoring system and workspace security.\n- Designed for automated enforcement at the git level; does not rely on prompts.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7ae9a23ed6dc60e9ec425fefa87512d783f3670ac79ef53ee43f159de00e7a6b"
+}

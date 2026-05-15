@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61739,
+  "uuid": "skill-clawhub-garmin-connect-cn",
+  "skillKey": "clawhub-garmin-connect-cn",
+  "name": "Garmin Connect Data Query",
+  "summary": "读取 Garmin Connect 手表/设备数据。 触发场景： - \"今天走了多少步\" - \"昨晚睡眠怎么样\" - \"最近有什么运动\" - \"心率怎么样\" - \"这周跑了多少次\" - 查询任意日期的运动、睡眠、心率等健康数据",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.garmin_connect_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tcyxk",
+      "features": [
+        "读取 Garmin Connect 手表/设备数据。 触发场景：",
+        "\"今天走了多少步\"",
+        "\"昨晚睡眠怎么样\"",
+        "\"最近有什么运动\""
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/garmin-connect-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/129282805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "garmin-connect-cn",
+      "url": "https://clawhub.ai/skills/garmin-connect-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "garmin-connect-cn",
+    "url": "https://clawhub.ai/skills/garmin-connect-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/garmin-connect-cn-452bb832133d3898.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/garmin-connect-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-garmin-connect-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7aa6e09fe9ca59b7675f963b2f0f2730d7fdf0e277a71081eeb496d7a118c2cf",
+      "artifactSizeBytes": 2048
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T02:20:19.862Z"
+}

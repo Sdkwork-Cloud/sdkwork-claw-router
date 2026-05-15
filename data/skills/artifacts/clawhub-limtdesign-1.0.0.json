@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/limtdesign@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.limtdesign",
+  "skill": {
+    "id": 70701,
+    "skillKey": "clawhub-limtdesign",
+    "name": "limtdesign"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "limtdesign",
+    "url": "https://clawhub.ai/skills/limtdesign",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/limtdesign-4c2cd8a6e3b3e7a3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "视觉创意生图提示词生成skill。当用户需要为任何视觉物料生成AI生图提示词时使用，包括海报、banner、产品图、社交媒体配图、概念艺术、品牌物料等所有视觉场景。无论用户的需求是模糊的（\"帮我做张海报\"）、半清晰的（\"科技风新品发布海报\"）还是已有方向的，都应触发此skill。当用户提到生图、出图、画图、提示词..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hitlmt",
+      "userId": "publishers:hitlmt",
+      "displayName": "hitlmt",
+      "image": "https://avatars.githubusercontent.com/u/24528188?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 380,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772536030185,
+      "changelog": "visual-creative skill 1.0.0\n\n- Initial release of a skill for generating AI image prompts for all types of creative visual materials\n- Supports posters, banners, product images, social media graphics, concept art, branding visuals, and more\n- Features a structured creative framework including concept methods, composition strategies, color systems, texture, and style guides\n- Includes detailed prompt output format with modular sections: subject, environment, composition, lighting, style, and text elements\n- Provides a comprehensive process from analyzing user needs to transforming them into creative, high-quality AI image prompts",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3dd9b1cdf58563d32410e60d24a5fb91453bcea53b7bfbc5d63e9a9f185a903c"
+}

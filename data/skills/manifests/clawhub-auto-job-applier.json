@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30241,
+  "uuid": "skill-clawhub-auto-job-applier",
+  "skillKey": "clawhub-auto-job-applier",
+  "name": "Automate Job Application",
+  "summary": "Automatically find and apply to jobs that match the user's resume using the resumex.dev API, web search, and browser automation. Use this skill whenever the...",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_job_applier",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Atharva Badgujar",
+      "features": [
+        "Automatically find and apply to jobs that match the user's resume using the resumex.dev API, we.",
+        "Use this skill whenever the..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-job-applier@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/112540825?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-job-applier",
+      "url": "https://clawhub.ai/skills/auto-job-applier"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-job-applier",
+    "url": "https://clawhub.ai/skills/auto-job-applier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-job-applier-47e238e3e0512d01.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-job-applier@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-job-applier-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4325c9293a55bdfce1bce855b66116a520046bd06d1f15b59dc4530b6bae4ce5",
+      "artifactSizeBytes": 2254
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T17:57:26.998Z"
+}

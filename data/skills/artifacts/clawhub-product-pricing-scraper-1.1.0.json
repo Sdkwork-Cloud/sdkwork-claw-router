@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/product-pricing-scraper@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.product_pricing_scraper",
+  "skill": {
+    "id": 37240,
+    "skillKey": "clawhub-product-pricing-scraper",
+    "name": "Product Pricing Scraper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "product-pricing-scraper",
+    "url": "https://clawhub.ai/skills/product-pricing-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/product-pricing-scraper-a2691c9abcdc2ad2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scrape and compare product prices across e-commerce sites. Use when the user needs to extract pricing data, track price changes, compare prices across retail..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "terrycarter1985",
+      "userId": "s17brwfrqyjhbjgadkvar20h8x8492g8",
+      "displayName": "terrycarter1985",
+      "image": "https://avatars.githubusercontent.com/u/1542987?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777869050428,
+      "changelog": "Rebuilt skill: cleaner SKILL.md, added selectors reference, price normalization script, anti-bot guidance, ethics compliance",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:820fa80074043218f9cc195c798a550d392ec474bccaef96377e9c8e0e2e5b78"
+}

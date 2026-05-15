@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69245,
+  "uuid": "skill-clawhub-video-vocal-remover",
+  "skillKey": "clawhub-video-vocal-remover",
+  "name": "Publish Video Vocal Remover",
+  "summary": "从视频中去除人声但保留机械声/环境声。当用户要求去掉视频里的人声、消除说话声、保留机器声、视频静音但保留环境音、去除语音保留噪声时使用。也适用于用户说\"视频里有说话声想去掉\"、\"只保留机械声音\"、\"去掉录音里的人声\"等场景。不要用于完全去除所有音频（那是去音轨，用 ffmpeg -an 即可），此技能专门用于频率...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_vocal_remover",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Walle",
+      "features": [
+        "从视频中去除人声但保留机械声/环境声。当用户要求去掉视频里的人声、消除说话声、保留机器声、视频静音但保留环境音、去除语音保留噪声时使用。也适用于用户说\"视频里有说话声想去掉\"、\"只保留机械声."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-vocal-remover@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9403745?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-vocal-remover",
+      "url": "https://clawhub.ai/skills/video-vocal-remover"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-vocal-remover",
+    "url": "https://clawhub.ai/skills/video-vocal-remover",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-vocal-remover-d1d38497dcf77629.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-vocal-remover@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-vocal-remover-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6de9c386638835552a81a3ae54ffa5a94fe6f9ad79489407f3ab43f25515cb1b",
+      "artifactSizeBytes": 2737
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T01:49:26.625Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68503,
+  "uuid": "skill-clawhub-energy-tracker",
+  "skillKey": "clawhub-energy-tracker",
+  "name": "Energy Tracker",
+  "summary": "每日能量状态追踪与多日趋势分析；当智能体需要主动采集用户当日能量状态时使用",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.energy_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Martin Xi",
+      "features": [
+        "每日能量状态追踪与多日趋势分析；当智能体需要主动采集用户当日能量状态时使用"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/energy-tracker@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18432950?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "energy-tracker",
+      "url": "https://clawhub.ai/skills/energy-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "energy-tracker",
+    "url": "https://clawhub.ai/skills/energy-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/energy-tracker-d4501fcdde3cee7d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/energy-tracker@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-energy-tracker-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fd29c9029cec7b66724f8877a4829859b977a41d707b7584ee5b2cdd00672c9c",
+      "artifactSizeBytes": 1937
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T06:37:47.147Z"
+}

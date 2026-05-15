@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60630,
+  "uuid": "skill-clawhub-deslop-cn",
+  "skillKey": "clawhub-deslop-cn",
+  "name": "Deslop",
+  "summary": "当文章/文档/分享稿读起来像 AI 写的、充满套话、缺具体细节时使用。中英文反 AI 味两次 pass 重写。 不适用于代码注释和 commit message 的去 AI 味（用 slopbuster --mode code）。参见 doc-gen (用于生成文档)、human-writing (用于项目级中文...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deslop_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "_silhouette",
+      "features": [
+        "当文章/文档/分享稿读起来像 AI 写的、充满套话、缺具体细节时使用。中英文反 AI 味两次 pass 重写。 不适用于代码注释和 commit message 的去 AI 味（用 slop."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deslop-cn@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22570800?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deslop-cn",
+      "url": "https://clawhub.ai/skills/deslop-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deslop-cn",
+    "url": "https://clawhub.ai/skills/deslop-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deslop-cn-ea6e194bf604ca08.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deslop-cn@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-deslop-cn-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:71a415203aed27c56a654a11fdc145f1653a08a5797132078de41223e8f0d2ea",
+      "artifactSizeBytes": 2133
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T15:24:43.874Z"
+}

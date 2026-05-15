@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/content-hunter@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_hunter",
+  "skill": {
+    "id": 59014,
+    "skillKey": "clawhub-content-hunter",
+    "name": "内容捕手 Content Hunter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-hunter",
+    "url": "https://clawhub.ai/skills/content-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-hunter-ca41fe0184b33c38.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "内容捕手 (Content Hunter) - 短视频平台热门内容抓取机器人。支持小红书、抖音、B站，可分批抓取热门内容并自动生成汇报。/Content Hunter - Hot content crawler for Xiaohongshu, Douyin, Bilibili. Supports batch s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "judefluen-coder",
+      "userId": "s1709r97ex4w0z69xwp2n6b2c183g3wm",
+      "displayName": "judefluen-coder",
+      "image": "https://avatars.githubusercontent.com/u/264401641?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 567,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774234925119,
+      "changelog": "支持定时多次抓取模式，每次创建独立任务文件夹，支持10次批量抓取",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3a24caa2e807b22397af02e5c56c079a54773a32035757fe2cbce20f2568abae"
+}

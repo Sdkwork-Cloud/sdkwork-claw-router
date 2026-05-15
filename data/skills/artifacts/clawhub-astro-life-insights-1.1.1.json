@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/astro-life-insights@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.astro_life_insights",
+  "skill": {
+    "id": 28409,
+    "skillKey": "clawhub-astro-life-insights",
+    "name": "Astro Life Insights"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "astro-life-insights",
+    "url": "https://clawhub.ai/skills/astro-life-insights",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/astro-life-insights-41dc5e29f0cde792.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Personalized daily astrological insights focused on relationships, work, personal growth, and luck. Positive framing only. Uses your natal chart + astronomy-..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "unicoleunicron",
+      "userId": "publishers:unicoleunicron",
+      "displayName": "unicoleunicron",
+      "image": "https://avatars.githubusercontent.com/u/207074996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 326,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1773430227870,
+      "changelog": "Fix docs: astronomy-engine not Swiss Ephemeris; zero personal data shipped; added npm install step; strengthened privacy section",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c92f276d3322664d92f795229fedf12273eed64790930ed27652d9bbcc56d765"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26510,
+  "uuid": "skill-clawhub-chase",
+  "skillKey": "clawhub-chase",
+  "name": "Chase Bank - Give your Claw Agent a credit card",
+  "summary": "Let your agent shop tickets online with owner approval.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chase",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jononovo",
+      "features": [
+        "Let your agent shop tickets online with owner approval."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chase@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22595409?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chase",
+      "url": "https://clawhub.ai/skills/chase"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chase",
+    "url": "https://clawhub.ai/skills/chase",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chase-5b3d7e7a15e0c5ff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chase@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-chase-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ee2462dca78d685cd9f34f380bc09b4f2e2241085c21d2ea754b488690859d7",
+      "artifactSizeBytes": 2270
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T21:01:46.989Z"
+}

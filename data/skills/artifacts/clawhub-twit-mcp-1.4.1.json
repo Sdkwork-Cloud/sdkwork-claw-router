@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/twit-mcp@1.4.1",
+  "version": "1.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twit_mcp",
+  "skill": {
+    "id": 51344,
+    "skillKey": "clawhub-twit-mcp",
+    "name": "twit-mcp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twit-mcp",
+    "url": "https://clawhub.ai/skills/twit-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twit-mcp-f101dc2fb4d25e2b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real-time X/Twitter data and write actions via x402 micropayments. Fetch articles, tweets, users, lists, and communities — post tweets, like, retweet, bookma..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "etherlect",
+      "userId": "publishers:etherlect",
+      "displayName": "etherlect",
+      "image": "https://avatars.githubusercontent.com/u/126278230?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 351,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.4.1",
+      "createdAt": 1773156234296,
+      "changelog": "added tools: get_article_by_id, like_tweet, unlike_tweet, bookmark_tweet, unbookmark_tweet, retweet, unretweet, follow_user, unfollow_user",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1732c9a881ee963e46af6bb059ec39b2d5879a8ddef024dbacbb18f5583b82a3"
+}

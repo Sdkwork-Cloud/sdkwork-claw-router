@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/metricool@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.metricool",
+  "skill": {
+    "id": 9636,
+    "skillKey": "clawhub-metricool",
+    "name": "Metricool"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "metricool",
+    "url": "https://clawhub.ai/skills/metricool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/metricool-7f909b6b8f9ca6cd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Schedule and manage social media posts via Metricool API. Use when posting to multiple platforms (LinkedIn, X, Bluesky, Threads, Instagram), checking scheduled posts, or analyzing social metrics."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "willscott-v2",
+      "userId": "publishers:willscott-v2",
+      "displayName": "willscott-v2",
+      "image": "https://avatars.githubusercontent.com/u/207239298?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3051,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 5,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769689615743,
+      "changelog": "Initial release: Schedule posts to LinkedIn, X, Bluesky, Threads, Instagram, Facebook via Metricool API",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:216b4e605af254662ecfc10b5d8a557755a7cc2014c031aa3da45e028903e711"
+}

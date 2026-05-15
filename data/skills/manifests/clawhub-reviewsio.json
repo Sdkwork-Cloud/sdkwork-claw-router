@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26172,
+  "uuid": "skill-clawhub-reviewsio",
+  "skillKey": "clawhub-reviewsio",
+  "name": "Reviewsio",
+  "summary": "Reviews.io integration. Manage Reviews, Products, Companies. Use when the user wants to interact with Reviews.io data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reviewsio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Reviews.io integration",
+        "Manage Reviews, Products, Companies",
+        "Use when the user wants to interact with Reviews.io data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reviewsio@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reviewsio",
+      "url": "https://clawhub.ai/skills/reviewsio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reviewsio",
+    "url": "https://clawhub.ai/skills/reviewsio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reviewsio-8ac22e5842f4fbdd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reviewsio@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-reviewsio-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6836313d67b557ca05a335dc06a2fb68e281ec2fc62ae3edc2b85130b9b8e795",
+      "artifactSizeBytes": 1840
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:56:07.195Z"
+}

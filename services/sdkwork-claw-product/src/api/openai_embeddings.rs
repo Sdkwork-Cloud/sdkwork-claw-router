@@ -18,7 +18,7 @@ use crate::api::openai_runtime::{
     OpenAiRouteError,
 };
 use crate::application::{ApiKeySecretHasher, AuthenticatedApiKeyContext};
-use crate::domain::{BillingMeter, ModelProviderRoute};
+use crate::domain::{BillingMeter, ModelProviderRoute, RoutingCapability};
 use crate::ports::{EmbeddingsRelay, EmbeddingsRelayRequest, PricingCatalog};
 
 struct OpenAiEmbeddingsState<C> {
@@ -167,6 +167,7 @@ where
         state.catalog.as_ref(),
         context,
         model,
+        RoutingCapability::Embedding,
         BillingMeter::EmbeddingInputToken,
     )
 }

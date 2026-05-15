@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/company-search-2@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.company_search_2",
+  "skill": {
+    "id": 26736,
+    "skillKey": "clawhub-company-search-2",
+    "name": "Company Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "company-search-2",
+    "url": "https://clawhub.ai/skills/company-search-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/company-search-2-faaa277d0eca0847.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Company research using Exa search. Finds company info, competitors, news, tweets, financials, LinkedIn profiles, builds company lists. Use when researching c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dunwood",
+      "userId": "publishers:dunwood",
+      "displayName": "dunwood",
+      "image": "https://avatars.githubusercontent.com/u/2607406?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 351,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773545618435,
+      "changelog": "No user-visible changes in this version.\n\n- Version bump without modifications to code or documentation.\n- No new features, fixes, or updates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e2cb956a4492b83c5db66bf490ddcd796354aa425422cc3ea887d531a0dba889"
+}

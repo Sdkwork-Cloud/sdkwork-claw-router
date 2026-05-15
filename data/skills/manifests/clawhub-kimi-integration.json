@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9343,
+  "uuid": "skill-clawhub-kimi-integration",
+  "skillKey": "clawhub-kimi-integration",
+  "name": "Kimi Integration",
+  "summary": "Step-by-step guide for integrating Moonshot AI (Kimi) and Kimi Code models into Clawdbot. Use when someone asks how to add Kimi models, configure Moonshot AI, or set up Kimi for Coding in Clawdbot.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kimi_integration",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "evgyur",
+      "features": [
+        "Step-by-step guide for integrating Moonshot AI (Kimi) and Kimi Code models into Clawdbot",
+        "Use when someone asks how to add Kimi models, configure Moonshot AI, or set up Kimi for Coding."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kimi-integration@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/120411712?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kimi-integration",
+      "url": "https://clawhub.ai/skills/kimi-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kimi-integration",
+    "url": "https://clawhub.ai/skills/kimi-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kimi-integration-eb5e92c09039fa00.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kimi-integration@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kimi-integration-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:180acf8c4908dbc1588260d89a12c86e58e0eaa438b7e3b8194627a32b30ef6f",
+      "artifactSizeBytes": 1987
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-27T22:55:50.648Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/douyu@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyu",
+  "skill": {
+    "id": 72438,
+    "skillKey": "clawhub-douyu",
+    "name": "Douyu"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyu",
+    "url": "https://clawhub.ai/skills/douyu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyu-91f0382e13cc0c83.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "整理斗鱼直播平台公开的直播分类、活动、主播规则及帮助信息，确保内容及时准确且合规公开。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mikeclaw007",
+      "userId": "s173n2mnssqbs3ebpdz3b52ssh83gshx",
+      "displayName": "mikeclaw007",
+      "image": "https://avatars.githubusercontent.com/u/265502950?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 230,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773925178544,
+      "changelog": "Initial release of the douyu skill.\n\n- Registers the “斗鱼” (Douyu) skill for organizing information from the Douyu live streaming platform’s public pages.\n- Focuses on summarizing public information such as live categories, event pages, streamer rules, announcements, and help documentation.\n- Clarifies boundaries—does not support boosting views, proxy streaming, gift-related arbitrage, account takeover, or evading risk controls.\n- Provides key entry points for homepage, streamer centers, event/classification pages, and help/rules/safety documentation.\n- Outlines common use cases like event and rule aggregation, organizing streamer support, regulations, and help resources.\n- Emphasizes compliance: only processes publicly visible data; does not handle private, sensitive, or backend information.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d0696e7049683534a7c88a434dfb4697d59ceb2b3adaa6f385854b425cf6e64a"
+}

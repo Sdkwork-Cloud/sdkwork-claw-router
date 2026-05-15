@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/md-layout-engine@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.md_layout_engine",
+  "skill": {
+    "id": 59861,
+    "skillKey": "clawhub-md-layout-engine",
+    "name": "Convert MD document to HTML"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "md-layout-engine",
+    "url": "https://clawhub.ai/skills/md-layout-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/md-layout-engine-da2628c37244d61e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将 Markdown 转为多主题 HTML 卡片。主题样式定义在 themes/ 目录下独立文件中，可单独修改。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mayfourth96",
+      "userId": "s175as72pv28zyxpertedasby184anp5",
+      "displayName": "五四",
+      "image": "https://avatars.githubusercontent.com/u/271461114?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776091987686,
+      "changelog": "- 修正 ocean 主题中文描述，从“深海主题”更正为“海洋主题”\n- 其余内容无变动",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:89ae468ab732df234a99f7abfe540b5e57080cddc7447f5b4220b7c4fbcd1ed0"
+}

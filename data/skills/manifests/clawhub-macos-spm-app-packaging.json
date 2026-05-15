@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10501,
+  "uuid": "skill-clawhub-macos-spm-app-packaging",
+  "skillKey": "clawhub-macos-spm-app-packaging",
+  "name": "Macos Spm App Packaging",
+  "summary": "Scaffold, build, and package SwiftPM-based macOS apps without an Xcode project. Use when you need a from-scratch macOS app layout, SwiftPM targets/resources, a custom .app bundle assembly script, or signing/notarization/appcast steps outsi.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.macos_spm_app_packaging",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dimillian",
+      "features": [
+        "Scaffold, build, and package SwiftPM-based macOS apps without an Xcode project",
+        "Use when you need a from-scratch macOS app layout, SwiftPM targets/resources, a custom .app bun."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/macos-spm-app-packaging@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/535509?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "macos-spm-app-packaging",
+      "url": "https://clawhub.ai/skills/macos-spm-app-packaging"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "macos-spm-app-packaging",
+    "url": "https://clawhub.ai/skills/macos-spm-app-packaging",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/macos-spm-app-packaging-0838ca88817885ad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/macos-spm-app-packaging@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-macos-spm-app-packaging-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:13e24dac7e82650b52a5c4461c0169ced3f78ad68eca1cd7e5c7aaa6da9fd89f",
+      "artifactSizeBytes": 2013
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-08T09:04:47.164Z"
+}

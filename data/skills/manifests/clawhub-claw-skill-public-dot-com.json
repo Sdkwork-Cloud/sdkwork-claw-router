@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9832,
+  "uuid": "skill-clawhub-claw-skill-public-dot-com",
+  "skillKey": "clawhub-claw-skill-public-dot-com",
+  "name": "public-dot-com",
+  "summary": "Interact with your Public.com brokerage account using the Public.com API. Able to view portfolio, get stock quotes, place trades, and get account updates. To create a Public.com account head to public.com/signup.",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_skill_public_dot_com",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "public-dot-com",
+      "features": [
+        "Interact with your Public.com brokerage account using the Public.com API",
+        "Able to view portfolio, get stock quotes, place trades, and get account updates",
+        "To create a Public.com account head to public.com/signup."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-skill-public-dot-com@0.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/53580980?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-skill-public-dot-com",
+      "url": "https://clawhub.ai/skills/claw-skill-public-dot-com"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-skill-public-dot-com",
+    "url": "https://clawhub.ai/skills/claw-skill-public-dot-com",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-skill-public-dot-com-5b8fb70274646b7e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-skill-public-dot-com@0.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-skill-public-dot-com-0.1.5.json",
+      "version": "0.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0092525ab4993e9d879e2032fc3f075126c154d10fbaeb2d2c608154098e6a15",
+      "artifactSizeBytes": 2427
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T15:49:11.168Z"
+}

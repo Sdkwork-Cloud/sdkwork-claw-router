@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21596,
+  "uuid": "skill-clawhub-wechat-ip-checker",
+  "skillKey": "clawhub-wechat-ip-checker",
+  "name": "Wechat Ip Checker",
+  "summary": "Detect current public IP via ip38.com, compare with stored IP, and auto-publish WeChat articles or alert on mismatch.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_ip_checker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "achievejia",
+      "features": [
+        "Detect current public IP via ip38.com, compare with stored IP, and auto-publish WeChat articles."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-ip-checker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12773008?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-ip-checker",
+      "url": "https://clawhub.ai/skills/wechat-ip-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-ip-checker",
+    "url": "https://clawhub.ai/skills/wechat-ip-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-ip-checker-c6dfb768ec61d0d4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-ip-checker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-ip-checker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:70c50f5fa52fef6392e2df2c31f02e1609f5a92e22228e2771b581bafd72bb33",
+      "artifactSizeBytes": 2192
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T15:01:24.026Z"
+}

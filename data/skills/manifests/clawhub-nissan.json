@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56388,
+  "uuid": "skill-clawhub-nissan",
+  "skillKey": "clawhub-nissan",
+  "name": "nissan",
+  "summary": "Information assistant for Nissan 日产. Search models, specs, pricing, reviews, and dealership info.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nissan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Information assistant for Nissan 日产",
+        "Search models, specs, pricing, reviews, and dealership info."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nissan@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nissan",
+      "url": "https://clawhub.ai/skills/nissan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nissan",
+    "url": "https://clawhub.ai/skills/nissan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nissan-44e8dd36c54ce8a4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nissan@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nissan-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:18c3ecd1c12c6ff37ca1d46d59d0d7bedd876f26c85fe4bbfab11bf5c1e4544c",
+      "artifactSizeBytes": 2076
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T10:30:36.214Z"
+}

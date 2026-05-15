@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11144,
+  "uuid": "skill-clawhub-trainingpeaks",
+  "skillKey": "clawhub-trainingpeaks",
+  "name": "TrainingPeaks",
+  "summary": "Pull real-time training plans, workouts, fitness metrics (CTL/ATL/TSB), and personal records from TrainingPeaks. Uses cookie-based authentication (no API key needed). Use in conjunction with other endurance, cycling, running or swimming tr.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trainingpeaks",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rubengarciam",
+      "features": [
+        "Pull real-time training plans, workouts, fitness metrics (CTL/ATL/TSB), and personal records fr.",
+        "Uses cookie-based authentication (no API key needed)",
+        "Use in conjunction with other endurance, cycling, running or swimming triathlon coach skills fo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trainingpeaks@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2044827?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trainingpeaks",
+      "url": "https://clawhub.ai/skills/trainingpeaks"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trainingpeaks",
+    "url": "https://clawhub.ai/skills/trainingpeaks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trainingpeaks-737a0769787e2106.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trainingpeaks@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-trainingpeaks-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:914a240b6809ee7efbaa600b76882f3d2a0c7ed855279d85fa728631262df8db",
+      "artifactSizeBytes": 2157
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T11:55:45.635Z"
+}

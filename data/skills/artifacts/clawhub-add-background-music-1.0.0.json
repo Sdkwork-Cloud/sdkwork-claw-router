@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/add-background-music@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.add_background_music",
+  "skill": {
+    "id": 55430,
+    "skillKey": "clawhub-add-background-music",
+    "name": "Add Background Music"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "add-background-music",
+    "url": "https://clawhub.ai/skills/add-background-music",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/add-background-music-ed89f196bbdcea1a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — add upbeat background music to my video and fade it out at the end — and g..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776469798294,
+      "changelog": "Initial release of Add Background Music skill.\n\n- Easily add AI-generated background music to your videos in seconds.\n- Supports video uploads (MP4, MOV, AVI, WebM) up to 500MB; overlays and syncs music automatically.\n- Simple instructions: upload a video and describe the music style you'd like.\n- Videos are processed on cloud GPUs and returned ready-to-download, typically within 20–40 seconds.\n- Includes session management, automatic token handling, and real-time progress updates.\n- Provides workflows for quick edits, batch processing, and iterative refinement.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aa6e6c39fcbdbcb6018341a2fd9ef84b77d75b03c844f3c334f1427d656d9e7c"
+}

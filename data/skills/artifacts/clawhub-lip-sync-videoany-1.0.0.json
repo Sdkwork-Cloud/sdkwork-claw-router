@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lip-sync-videoany@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lip_sync_videoany",
+  "skill": {
+    "id": 31115,
+    "skillKey": "clawhub-lip-sync-videoany",
+    "name": "Lip Sync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lip-sync-videoany",
+    "url": "https://clawhub.ai/skills/lip-sync-videoany",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lip-sync-videoany-bd5e65a5d5b0fcf1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guide users to VideoAny Lip Sync Studio to create lip-sync videos from an image and audio."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gaoq1",
+      "userId": "s17dr3s71j2xw2ev71hyr2654183yzq8",
+      "displayName": "Colin",
+      "image": "https://avatars.githubusercontent.com/u/15179604?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 271,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773817702617,
+      "changelog": "Lip Sync Skill v1.0.0\n\n- New skill provides guidance for creating lip-sync videos using VideoAny Lip Sync Studio.\n- Explains available models (Aurora, Fabric, OmniHuman), input formats, and workflow tips.\n- Includes agent instructions for responsible use and quality advice.\n- No local generation—users are directed to the VideoAny web tool for actual processing.\n- No third-party Python dependencies required; the CLI simply prints guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8c0fb052c97a59fbc3e4e88f7223248dfec073bf2e818d8576796fdf8ef75654"
+}

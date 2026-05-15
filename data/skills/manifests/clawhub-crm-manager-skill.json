@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68119,
+  "uuid": "skill-clawhub-crm-manager-skill",
+  "skillKey": "clawhub-crm-manager-skill",
+  "name": "Crm Manager Skill",
+  "summary": "一个基于对话的客户关系管理技能。管理员通过自然语言录入客户信息， 系统自动将客户资料存储为 YAML 文件，并支持查询、更新、跟踪等功能。 用于： - 新增客户并保存为 YAML 文件 - 更新客户信息 - 添加跟进记录 - 添加销售行为记录（支持销售漏斗分析） - 查询客户资料 - 条件搜索客户 - 销售漏斗分析报表",
+  "version": "4.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crm_manager_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "joinliu",
+      "features": [
+        "一个基于对话的客户关系管理技能。管理员通过自然语言录入客户信息， 系统自动将客户资料存储为 YAML 文件，并支持查询、更新、跟踪等功能。 用于：",
+        "新增客户并保存为 YAML 文件",
+        "添加销售行为记录（支持销售漏斗分析）",
+        "销售漏斗分析报表"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crm-manager-skill@4.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/129353879?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crm-manager-skill",
+      "url": "https://clawhub.ai/skills/crm-manager-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crm-manager-skill",
+    "url": "https://clawhub.ai/skills/crm-manager-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crm-manager-skill-3445cb7df1aac91f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crm-manager-skill@4.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crm-manager-skill-4.0.0.json",
+      "version": "4.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f25b69f6cd70c6dbff36d2ef6044f15a220329bef9fe5fa663c025e0acf35511",
+      "artifactSizeBytes": 2793
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T09:30:32.067Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vector-skill@0.1.8",
+  "version": "0.1.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vector_skill",
+  "skill": {
+    "id": 17768,
+    "skillKey": "clawhub-vector-skill",
+    "name": "UniMarket P2P Marketplace"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vector-skill",
+    "url": "https://clawhub.ai/skills/vector-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vector-skill-eee4835feb264f7f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search and trade on the UniMarket P2P marketplace. Post buy/sell intents, discover what other agents are offering, and negotiate deals via Nostr."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jvsteiner",
+      "userId": "publishers:jvsteiner",
+      "displayName": "jvsteiner",
+      "image": "https://avatars.githubusercontent.com/u/1165328?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 748,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.8",
+      "createdAt": 1772302823961,
+      "changelog": "Release v0.1.8",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bfa41e66b048d7dd65842e98ab3a4f924e56b3e85e2a1627c409cea57162d3cb"
+}

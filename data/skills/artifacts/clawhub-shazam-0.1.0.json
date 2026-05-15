@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shazam@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shazam",
+  "skill": {
+    "id": 70043,
+    "skillKey": "clawhub-shazam",
+    "name": "Shazam"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shazam",
+    "url": "https://clawhub.ai/skills/shazam",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shazam-56bf4444142bfcc4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "整理Shazam官网公开信息，涵盖会员权益、公开榜单、音乐入口及版权说明，确保合法合规内容展示。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mike47512",
+      "userId": "s17916ncgb6bpm0fs1wdm6932d83gha4",
+      "displayName": "mike47512",
+      "image": "https://avatars.githubusercontent.com/u/199718167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 231,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773969838157,
+      "changelog": "Shazam Skill v0.1.0 — Initial Release\n\n- Registers the \"Shazam\" skill for organizing public music platform information, membership details, content links, and copyright info.\n- Focuses on official homepage, membership/subscription info, charts, playlists, and help/documentation pages.\n- Excludes features like account sharing, bypassing copyright, API access, private data, or non-public content.\n- Provides workflows for summarizing member benefits, collating chart/playlist/podcast links, and extracting copyright/user support information.\n- Includes guidelines for handling region-based copyright differences and emphasizes output of publicly visible, compliant information only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1b6d083f7807eda0b3216b066d78ec0120ca6c0aca710c70a61f03cc27415715"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36055,
+  "uuid": "skill-clawhub-precise-t-trading",
+  "skillKey": "clawhub-precise-t-trading",
+  "name": "Precise T Trading",
+  "summary": "Professional T+0 intraday trading system for Chinese A-shares. Uses Bayesian inference, Kelly criterion, and VaR risk management to optimize day-trading deci...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.precise_t_trading",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yang77160",
+      "features": [
+        "Professional T+0 intraday trading system for Chinese A-shares",
+        "Uses Bayesian inference, Kelly criterion, and VaR risk management to optimize day-trading deci.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/precise-t-trading@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47843730?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "precise-t-trading",
+      "url": "https://clawhub.ai/skills/precise-t-trading"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "precise-t-trading",
+    "url": "https://clawhub.ai/skills/precise-t-trading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/precise-t-trading-899cff7bd79090ea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/precise-t-trading@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-precise-t-trading-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e972191248998b96421df254e157ec388e9252088d6836c21c72f507a9eb6c82",
+      "artifactSizeBytes": 1943
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T16:30:18.570Z"
+}

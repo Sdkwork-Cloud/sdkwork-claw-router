@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/afrexai-contract-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_contract_analyzer",
+  "skill": {
+    "id": 13961,
+    "skillKey": "clawhub-afrexai-contract-analyzer",
+    "name": "AfrexAI Contract Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-contract-analyzer",
+    "url": "https://clawhub.ai/skills/afrexai-contract-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-contract-analyzer-6db0eda351f0c90d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyzes contracts and agreements for risks, unusual terms, and missing clauses"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1kalin",
+      "userId": "s17e1q0nx23qnh4n429zzqc05x83hvsw",
+      "displayName": "1kalin",
+      "image": "https://avatars.githubusercontent.com/u/15705344?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1258,
+      "installsAllTime": 5,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770951430402,
+      "changelog": "Contract Analyzer 1.0.0 – Initial Release\n\n- New skill for analyzing contracts and agreements for risks, unusual terms, and missing clauses.\n- Provides structured output: summary, risk assessment, missing clauses, plain English explanation, and key negotiation points.\n- Flags common issues: liability, indemnification, termination, IP, non-compete, auto-renewal, payment, confidentiality, force majeure, and data/privacy.\n- Designed to prioritize the concerns of the smaller party in an agreement.\n- Includes clear note that analysis is not legal advice and attorney review is recommended.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:262c2fd65af33f86accb9863e497b3bbd97cd600d10e89639268a83b3cbf7258"
+}

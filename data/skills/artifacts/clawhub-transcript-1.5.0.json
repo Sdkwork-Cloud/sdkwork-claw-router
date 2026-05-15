@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/transcript@1.5.0",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.transcript",
+  "skill": {
+    "id": 9200,
+    "skillKey": "clawhub-transcript",
+    "name": "transcript"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "transcript",
+    "url": "https://clawhub.ai/skills/transcript",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/transcript-54e6289e14c7b0e7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the spoken content of a YouTube video is needed — even if not explicitly requested: pasted video links or IDs, requests to summarize, quote, transcr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "therohitdas",
+      "userId": "s172eaks33v7ygg504kv93sdf584gqev",
+      "displayName": "Rohit Das",
+      "image": "https://avatars.githubusercontent.com/u/43847374?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 5015,
+      "installsAllTime": 16,
+      "installsCurrent": 16,
+      "stars": 1,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.5.0",
+      "createdAt": 1777475120491,
+      "changelog": "Replace auth.js with agent-native auth-setup.md; fix YAML frontmatter (quote descriptions); add version field; move homepage into metadata.openclaw.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:063406e736767d87dff8ded42078438315049f50e16ff56ee30b805f44d87775"
+}

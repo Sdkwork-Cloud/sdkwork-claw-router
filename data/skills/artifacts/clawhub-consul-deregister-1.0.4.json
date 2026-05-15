@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/consul-deregister@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.consul_deregister",
+  "skill": {
+    "id": 35900,
+    "skillKey": "clawhub-consul-deregister",
+    "name": "Consul Service Deregister"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "consul-deregister",
+    "url": "https://clawhub.ai/skills/consul-deregister",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/consul-deregister-c85381d80bb40a9d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Consul service deregistration tool. Triggered when users mention Consul deregister, remove service instance, service removal, or offline. Supports batch dere..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "strongant",
+      "userId": "s174cr6hxwj70cymrk5ame2zvx83pm3f",
+      "displayName": "strongant",
+      "image": "https://avatars.githubusercontent.com/u/7685936?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1774597444297,
+      "changelog": "Clean description with no Chinese text remaining.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5d8c753f55fdaf1de0571f4f0c93e6487dee0a54722777d481dc5b3afec653ba"
+}

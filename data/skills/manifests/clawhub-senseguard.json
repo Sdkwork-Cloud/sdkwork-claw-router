@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12190,
+  "uuid": "skill-clawhub-senseguard",
+  "skillKey": "clawhub-senseguard",
+  "name": "Senseguard",
+  "summary": "Semantic security scanner for OpenClaw skills. Detects prompt injection, data exfiltration, and hidden instructions that traditional code scanners miss. Use when user asks to scan skills, check skill safety, or run a security audit.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.senseguard",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fermionoid",
+      "features": [
+        "Semantic security scanner for OpenClaw skills",
+        "Detects prompt injection, data exfiltration, and hidden instructions that traditional code scan.",
+        "Use when user asks to scan skills, check skill safety, or run a security audit."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/senseguard@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82383584?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "senseguard",
+      "url": "https://clawhub.ai/skills/senseguard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "senseguard",
+    "url": "https://clawhub.ai/skills/senseguard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/senseguard-4b0ca63fc8cd3d2c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/senseguard@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-senseguard-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ffc8ac2dd081dca0bafc8b282e58509b54842d25f42109a7647d0b81e0542df1",
+      "artifactSizeBytes": 2235
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T15:45:23.780Z"
+}

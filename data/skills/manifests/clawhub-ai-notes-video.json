@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9995,
+  "uuid": "skill-clawhub-ai-notes-video",
+  "skillKey": "clawhub-ai-notes-video",
+  "name": "AI Notes Video",
+  "summary": "Generate detailed AI notes including document, outline, and image-text formats from a user-provided video URL using Baidu's video AI notes tool.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_notes_video",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "baidu_qianfan",
+      "features": [
+        "Generate detailed AI notes including document, outline, and image-text formats from a user-prov."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-notes-video@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41750260?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-notes-video",
+      "url": "https://clawhub.ai/skills/ai-notes-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-notes-video",
+    "url": "https://clawhub.ai/skills/ai-notes-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-notes-video-0d82973087e0260f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-notes-video@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-notes-video-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:36150328d35814493a6ff848401cc5707fadcc461a3d8e23bc435f013bebf257",
+      "artifactSizeBytes": 2193
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T07:24:46.011Z"
+}

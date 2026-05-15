@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shieldapi@3.0.3",
+  "version": "3.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shieldapi",
+  "skill": {
+    "id": 50447,
+    "skillKey": "clawhub-shieldapi",
+    "name": "Shieldapi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shieldapi",
+    "url": "https://clawhub.ai/skills/shieldapi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shieldapi-0f250abb40fd05dd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ShieldAPI — x402 Security Intelligence for AI Agents. 11 endpoints: password range check (k-anonymity), password check (deprecated), email breach lookup, dom..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alberthild",
+      "userId": "s172vr4s1bwsmghvpa8sxyvbqn83ms6y",
+      "displayName": "alberthild",
+      "image": "https://avatars.githubusercontent.com/u/3729342?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 532,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "3.0.3",
+      "createdAt": 1774594301240,
+      "changelog": "Added Data & Threat Intelligence Manifesto / Privacy Policy",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6800c5f31fe7a00d70a640bc2878929e8871e3dd1baa3ada5bc4f7b8ed5510f6"
+}

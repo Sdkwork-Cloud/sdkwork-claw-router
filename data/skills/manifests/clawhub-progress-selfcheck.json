@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27066,
+  "uuid": "skill-clawhub-progress-selfcheck",
+  "skillKey": "clawhub-progress-selfcheck",
+  "name": "progress-selfcheck",
+  "summary": "Provides periodic progress self-checks with Feishu notifications, task ledger management, auto-reactivation of stale tasks, and summary reporting for OpenClaw.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.progress_selfcheck",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ulquoirra",
+      "features": [
+        "Provides periodic progress self-checks with Feishu notifications, task ledger management, auto-."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/progress-selfcheck@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58836332?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "progress-selfcheck",
+      "url": "https://clawhub.ai/skills/progress-selfcheck"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "progress-selfcheck",
+    "url": "https://clawhub.ai/skills/progress-selfcheck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/progress-selfcheck-9de8d48270406699.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/progress-selfcheck@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-progress-selfcheck-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d92efe41e0795e7fa5d83631954adf64b96d2e7e5a151fa45b8797179bb9b9b",
+      "artifactSizeBytes": 2407
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T09:01:40.055Z"
+}

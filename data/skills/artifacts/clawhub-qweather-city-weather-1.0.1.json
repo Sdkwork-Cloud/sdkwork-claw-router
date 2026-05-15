@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qweather-city-weather@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qweather_city_weather",
+  "skill": {
+    "id": 26171,
+    "skillKey": "clawhub-qweather-city-weather",
+    "name": "QWeather City Weather"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qweather-city-weather",
+    "url": "https://clawhub.ai/skills/qweather-city-weather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qweather-city-weather-e7c958d2bc43e631.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query QWeather city codes and real-time weather with bundled executable scripts. Use when users need to resolve city names to QWeather location IDs/adcodes,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "richliao1112",
+      "userId": "publishers:richliao1112",
+      "displayName": "9k9k9",
+      "image": "https://avatars.githubusercontent.com/u/98455379?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 363,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772698174398,
+      "changelog": "Initial portable release using QWEATHER_API_HOST and QWEATHER_API_KEY only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c894e29bd76fb4c6756e00102b208c77d046c89e0b23721b6019e5d54d3cce06"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27560,
+  "uuid": "skill-clawhub-airparser",
+  "skillKey": "clawhub-airparser",
+  "name": "Airparser",
+  "summary": "Airparser integration. Manage data, records, and automate workflows. Use when the user wants to interact with Airparser data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.airparser",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Airparser integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Airparser data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/airparser@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "airparser",
+      "url": "https://clawhub.ai/skills/airparser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "airparser",
+    "url": "https://clawhub.ai/skills/airparser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/airparser-e756ec972cf5daa7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/airparser@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-airparser-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cde73f5e975236fc94b7b63abcbae8319232b697fcb8fb4c32416d3980f325aa",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:17:18.590Z"
+}

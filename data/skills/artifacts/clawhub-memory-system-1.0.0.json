@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-system@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_system",
+  "skill": {
+    "id": 71061,
+    "skillKey": "clawhub-memory-system",
+    "name": "大哥的记忆系统"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-system",
+    "url": "https://clawhub.ai/skills/memory-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-system-28c47866199f0a87.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自研三层记忆恢复系统。解决session重启后\"忘记一切\"的问题，提供永久记忆、今日记忆、临时记忆的完整架构。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daoistbro",
+      "userId": "publishers:daoistbro",
+      "displayName": "daoistbro",
+      "image": "https://avatars.githubusercontent.com/u/258697114?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2924,
+      "installsAllTime": 32,
+      "installsCurrent": 29,
+      "stars": 9,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770800350543,
+      "changelog": "memory-system v1.0.0\n\n- Initial release of a three-layer memory recovery system to address session context loss after restarts.\n- Introduces \"permanent,\" \"daily,\" and \"session\" memory layers for granular retention and recovery.\n- Provides detailed recovery workflow and automated session state saving.\n- Includes best practice guidelines and comparisons with vector-based memory systems.\n- Adds fault recovery procedures and scheduled optimization checks.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d9efa6421c5ff831c2e1fe00f27f3c83f78a558c24e2aca2ea0db0c0ec39d577"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72173,
+  "uuid": "skill-clawhub-juhe-bankcard-lookup",
+  "skillKey": "clawhub-juhe-bankcard-lookup",
+  "name": "银行卡类型及归属地查询 - 聚合数据",
+  "summary": "银行卡类型及归属地查询。查询银行卡号的发卡银行、卡类型（借记卡/贷记卡）、归属地（省市）、银行客服电话等信息。使用场景：用户说\"查一下这个银行卡号\"、\"这个卡是哪个银行的\"、\"这张卡是借记卡还是信用卡\"、\"银行卡归属地查询\"、\"查银行卡信息\"等。通过聚合数据（juhe.cn）API实时查询，支持单个或批量卡号查询。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.juhe_bankcard_lookup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "juhe-skills",
+      "features": [
+        "银行卡类型及归属地查询。查询银行卡号的发卡银行、卡类型（借记卡/贷记卡）、归属地（省市）、银行客服电话等信息。使用场景：用户说\"查一下这个银行卡号\"、\"这个卡是哪个银行的\"、\"这张卡是借记卡."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/juhe-bankcard-lookup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/203600343?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "juhe-bankcard-lookup",
+      "url": "https://clawhub.ai/skills/juhe-bankcard-lookup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "juhe-bankcard-lookup",
+    "url": "https://clawhub.ai/skills/juhe-bankcard-lookup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/juhe-bankcard-lookup-ae5d1de19ab46e57.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/juhe-bankcard-lookup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-juhe-bankcard-lookup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8257b5a1259094dbc6a068526a428d104b0c9d6eb44b8763e1ac22bf1605d92f",
+      "artifactSizeBytes": 2723
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T03:13:59.092Z"
+}

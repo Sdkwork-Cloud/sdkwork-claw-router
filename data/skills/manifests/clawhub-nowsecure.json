@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32368,
+  "uuid": "skill-clawhub-nowsecure",
+  "skillKey": "clawhub-nowsecure",
+  "name": "Nowsecure",
+  "summary": "NowSecure integration. Manage data, records, and automate workflows. Use when the user wants to interact with NowSecure data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nowsecure",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "NowSecure integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with NowSecure data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nowsecure@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nowsecure",
+      "url": "https://clawhub.ai/skills/nowsecure"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nowsecure",
+    "url": "https://clawhub.ai/skills/nowsecure",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nowsecure-5ba69b1f564af1bf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nowsecure@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-nowsecure-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ca531100f8b43029979aed954a9bb4dedfe23be792ab11d30338a5f3ccb3ba70",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:18:14.028Z"
+}

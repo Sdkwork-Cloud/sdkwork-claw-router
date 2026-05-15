@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20454,
+  "uuid": "skill-clawhub-deep-memory",
+  "skillKey": "clawhub-deep-memory",
+  "name": "Deep Memory",
+  "summary": "One-click clone of a production-grade semantic memory system: HOT/WARM/COLD tiered storage + Qdrant vector DB + Neo4j graph DB + qwen3-embedding. Enables cro...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deep_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "halfmoon82",
+      "features": [
+        "One-click clone of a production-grade semantic memory system: HOT/WARM/COLD tiered storage + Qd.",
+        "Enables cro..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deep-memory@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261569221?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deep-memory",
+      "url": "https://clawhub.ai/skills/deep-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deep-memory",
+    "url": "https://clawhub.ai/skills/deep-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deep-memory-576e5f4a1aa56f4b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deep-memory@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-deep-memory-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:26144dd3805c6a592c65722d2a64253c9c3d21df6c3eef3f363994d3c43b08ce",
+      "artifactSizeBytes": 2347
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T11:24:35.428Z"
+}

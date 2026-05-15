@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13307,
+  "uuid": "skill-clawhub-cost-prediction",
+  "skillKey": "clawhub-cost-prediction",
+  "name": "Cost Prediction",
+  "summary": "Predict construction project costs using Machine Learning. Use Linear Regression, K-Nearest Neighbors, and Random Forest models on historical project data. Train, evaluate, and deploy cost prediction models.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cost_prediction",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "datadrivenconstruction",
+      "features": [
+        "Predict construction project costs using Machine Learning",
+        "Use Linear Regression, K-Nearest Neighbors, and Random Forest models on historical project data",
+        "Train, evaluate, and deploy cost prediction models."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cost-prediction@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94158709?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cost-prediction",
+      "url": "https://clawhub.ai/skills/cost-prediction"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cost-prediction",
+    "url": "https://clawhub.ai/skills/cost-prediction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cost-prediction-5051f2d26d6979e3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cost-prediction@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cost-prediction-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:59b14265b5c8b9ac278f8029c034001e186ceb2b41efccd472f4afad322b3701",
+      "artifactSizeBytes": 2565
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T16:12:34.376Z"
+}

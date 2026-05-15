@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28761,
+  "uuid": "skill-clawhub-github-actions-sha-rerun-debt-audit",
+  "skillKey": "clawhub-github-actions-sha-rerun-debt-audit",
+  "name": "GitHub Actions SHA Rerun Debt Audit",
+  "summary": "Audit rerun debt by commit SHA to find commits that repeatedly burn CI minutes across workflows.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_actions_sha_rerun_debt_audit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daniel Lummis",
+      "features": [
+        "Audit rerun debt by commit SHA to find commits that repeatedly burn CI minutes across workflows."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-actions-sha-rerun-debt-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65238171?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-actions-sha-rerun-debt-audit",
+      "url": "https://clawhub.ai/skills/github-actions-sha-rerun-debt-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-actions-sha-rerun-debt-audit",
+    "url": "https://clawhub.ai/skills/github-actions-sha-rerun-debt-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-actions-sha-rerun-debt-audit-5da475156e0dcc0e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-actions-sha-rerun-debt-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-actions-sha-rerun-debt-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aaa2fcb2195c30754982fce0a39e8da962d2c3f3295e7bafcc46cf688191f7c0",
+      "artifactSizeBytes": 2529
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T17:07:53.416Z"
+}

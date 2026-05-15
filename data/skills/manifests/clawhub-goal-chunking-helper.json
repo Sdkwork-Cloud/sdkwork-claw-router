@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43252,
+  "uuid": "skill-clawhub-goal-chunking-helper",
+  "skillKey": "clawhub-goal-chunking-helper",
+  "name": "Goal Chunking Helper",
+  "summary": "Helps break a big goal into clear milestones, next actions, dependencies, and a review checkpoint for actionable progress and reduced overwhelm.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.goal_chunking_helper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Helps break a big goal into clear milestones, next actions, dependencies, and a review checkpoi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/goal-chunking-helper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "goal-chunking-helper",
+      "url": "https://clawhub.ai/skills/goal-chunking-helper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "goal-chunking-helper",
+    "url": "https://clawhub.ai/skills/goal-chunking-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/goal-chunking-helper-8bace2bd18bfe966.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/goal-chunking-helper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-goal-chunking-helper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a6cbea9840a19ec361b5c08f1f4f3ab5b7b7a73913f1f2c9025ccc7f96104079",
+      "artifactSizeBytes": 2349
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T02:02:44.692Z"
+}

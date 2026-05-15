@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67813,
+  "uuid": "skill-clawhub-china-stock-toolkit",
+  "skillKey": "clawhub-china-stock-toolkit",
+  "name": "China Stock Toolkit",
+  "summary": "提供A股大盘指数、涨跌停、北向资金监控及交易税费计算，支持多源数据交叉验证和用户自定义接口扩展。",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_stock_toolkit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "darbling",
+      "features": [
+        "提供A股大盘指数、涨跌停、北向资金监控及交易税费计算，支持多源数据交叉验证和用户自定义接口扩展。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/china-stock-toolkit@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/105998927?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "china-stock-toolkit",
+      "url": "https://clawhub.ai/skills/china-stock-toolkit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-stock-toolkit",
+    "url": "https://clawhub.ai/skills/china-stock-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-stock-toolkit-c7efae7b8a3187c5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/china-stock-toolkit@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-china-stock-toolkit-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8e0035057514f92e494aed5aacc6245b1f80bbf58c1510d79372d9351998825f",
+      "artifactSizeBytes": 2360
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T00:30:08.191Z"
+}

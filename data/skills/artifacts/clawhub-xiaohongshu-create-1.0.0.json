@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaohongshu-create@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_create",
+  "skill": {
+    "id": 62716,
+    "skillKey": "clawhub-xiaohongshu-create",
+    "name": "xiaohongshu-create"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-create",
+    "url": "https://clawhub.ai/skills/xiaohongshu-create",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-create-abcdb24e90d83b2e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小红书定制化创作技能 - 固定操作流程，提高发布成功率"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhuchenggong19851114-design",
+      "userId": "s175hh7wvdt1z18hr1txy3da4h83haab",
+      "displayName": "zhuchenggong19851114-design",
+      "image": "https://avatars.githubusercontent.com/u/266258234?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775221352987,
+      "changelog": "xiaohongshu-create 1.0.0\n\n- Introduces a standardized workflow for publishing on 小红书, aimed at reducing failure rates.\n- Provides clear step-by-step instructions for both image-text and long-form publishing.\n- Details best practices for maximizing success, with a strong recommendation for the \"文字配图\" (text-to-image) method.\n- Outlines common issues with troubleshooting tips, such as handling login failures and upload prompts.\n- Specifies required preconditions (browser login, confirmed copy, and images ready).\n- Lists outputs for both successful and failed posts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:38237b88c8c6370d5ab85c0d8dc75c57b72d3da54bb653b898f131dffa70483e"
+}

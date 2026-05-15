@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/repo-discovery-auditor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.repo_discovery_auditor",
+  "skill": {
+    "id": 45782,
+    "skillKey": "clawhub-repo-discovery-auditor",
+    "name": "Repo Discovery Auditor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "repo-discovery-auditor",
+    "url": "https://clawhub.ai/skills/repo-discovery-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/repo-discovery-auditor-77d7a564b307a805.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit an unfamiliar codebase and map architecture, user-facing features, maturity, and risks. Use when the user asks to inspect a repo, summarize the stack,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nalendrax8",
+      "userId": "s17fspygv10ymqehvzm7z4ttmd85pvxn",
+      "displayName": "NalendraX8",
+      "image": "https://avatars.githubusercontent.com/u/111629793?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777391269764,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8a0b021562e14f82e1ff0f30eb86d2f9efe01d1f332ab274c3a5aaf2b3452558"
+}

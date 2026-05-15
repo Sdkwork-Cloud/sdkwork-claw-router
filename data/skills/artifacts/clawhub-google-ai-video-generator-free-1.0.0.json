@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-ai-video-generator-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_ai_video_generator_free",
+  "skill": {
+    "id": 44631,
+    "skillKey": "clawhub-google-ai-video-generator-free",
+    "name": "Google Ai Video Generator Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-ai-video-generator-free",
+    "url": "https://clawhub.ai/skills/google-ai-video-generator-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-ai-video-generator-free-57b41fd2641feb5f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "content creators generate text or images into AI generated videos using this skill. Accepts MP4, MOV, JPG, PNG up to 200MB, renders on cloud GPUs at 1080p, a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775846643524,
+      "changelog": "Google AI Video Generator Free — Initial Release\n\n- Launches tool to generate AI videos from text prompts or images with cloud GPU rendering (1080p, MP4 output, ~1–2 min render time).\n- Supports uploads up to 200MB (MP4, MOV, JPG, PNG) and session-based workflow for iterative edits.\n- Automatic setup via NEMO_TOKEN (100 free credits, 7-day expiry), with transparent status messages and onboarding.\n- Simple command routing for uploads, download/export, credit check, and prompt-based generation.\n- Error handling for common issues (tokens, file limits, credits, rate limits) with clear user guidance.\n- Timeline editing, preview, and batch workflows supported; optimized for quick promotional or creative video creation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2eaa9f3f729a585dd155b3b2fd38dd7ffdf83681159bb968104ed773784e0c1d"
+}

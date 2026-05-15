@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22947,
+  "uuid": "skill-clawhub-temp-publish",
+  "skillKey": "clawhub-temp-publish",
+  "name": "Temp Publish",
+  "summary": "Skill Cortex is the system's capability cortex. When lacking ability, it autonomously acquires Skills from ClawHub or GitHub, then releases them after use. E...",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.temp_publish",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ank Wu",
+      "features": [
+        "Skill Cortex is the system's capability cortex",
+        "When lacking ability, it autonomously acquires Skills from ClawHub or GitHub, then releases the."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/temp-publish@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/221829228?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "temp-publish",
+      "url": "https://clawhub.ai/skills/temp-publish"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "temp-publish",
+    "url": "https://clawhub.ai/skills/temp-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/temp-publish-1b5c7a36ac6500f7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/temp-publish@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-temp-publish-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e87c344973d427f0e04b23718b7f38cd778e55e56bc1b7cf82ab06a5686a15a6",
+      "artifactSizeBytes": 2656
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T17:47:36.388Z"
+}

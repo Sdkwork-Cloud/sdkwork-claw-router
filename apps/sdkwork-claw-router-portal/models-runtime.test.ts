@@ -379,7 +379,8 @@ test("model catalog detail view derives copy route and sidebar rows", () => {
     introLabelKey: "models.data.openai/global/gpt-4o-mini.intro",
     modalityTone: "text",
   });
-  assert.match(detail.apiExample, /model: "openai\/global\/gpt-4o-mini"/);
+  assert.match(detail.apiExample, /searchQuery: "openai\/global\/gpt-4o-mini"/);
+  assert.match(detail.apiExample, /client\.ai\.models\.list\(params\)/);
   assert.match(detail.apiExample, /SdkworkAppClient/);
   assert.match(detail.apiExample, /@sdkwork\/clawrouter-app-sdk/);
   assert.doesNotMatch(detail.apiExample, /ClawRouterClient/);
@@ -435,7 +436,7 @@ test("model catalog detail API example serializes model ids as safe TypeScript s
   const unusualModelId = "vendor/weird'\\model\nnext";
   const detail = deriveModelCatalogDetailView(catalogModel({ id: unusualModelId }));
 
-  assert.equal(detail.apiExample.includes(`    model: ${JSON.stringify(unusualModelId)},`), true);
+  assert.equal(detail.apiExample.includes(`    searchQuery: ${JSON.stringify(unusualModelId)},`), true);
   assert.doesNotMatch(detail.apiExample, /model: 'vendor\/weird'/);
 });
 
@@ -1192,7 +1193,7 @@ test("model service loads the runtime catalog through the generated app SDK", as
   await withAppSdkFetch(
     (url) => {
       const requestUrl = new URL(url, "http://localhost");
-      assert.equal(requestUrl.pathname, "/app/v3/api/router/models");
+      assert.equal(requestUrl.pathname, "/app/v3/api/ai/models");
       assert.equal(requestUrl.searchParams.has("billingMeter"), false);
       return {
         items: [
@@ -1237,7 +1238,7 @@ test("model service loads the runtime catalog through the generated app SDK", as
       assert.equal(models[0].pricing.output, 5);
       assert.equal(models[0].pricing.cachedInput, 0.125);
       assert.equal(captured.every((request) => request.method === "GET"), true);
-      assert.deepEqual(requestedUrls, ["/app/v3/api/router/models"]);
+      assert.deepEqual(requestedUrls, ["/app/v3/api/ai/models"]);
     },
   );
 });
@@ -1246,14 +1247,15 @@ test("model service sends sidebar filters through the generated app SDK query co
   await withAppSdkFetch(
     (url) => {
       const requestUrl = new URL(url, "http://localhost");
-      assert.equal(requestUrl.pathname, "/app/v3/api/router/models");
-      assert.equal(requestUrl.searchParams.get("billingMeter"), "llm_input_token");
-      assert.equal(requestUrl.searchParams.get("vendorCodes"), "openai,anthropic");
+      assert.equal(requestUrl.pathname, "/app/v3/api/ai/models");
+      assert.equal(requestUrl.searchParams.get("billing_meter"), "llm_input_token");
+      assert.equal(requestUrl.searchParams.get("vendor_codes"), "openai,anthropic");
       assert.equal(requestUrl.searchParams.get("modalities"), "text,image");
       assert.equal(requestUrl.searchParams.get("capabilities"), "tools,json mode");
       assert.equal(requestUrl.searchParams.get("categories"), "Recommended,Proprietary");
       assert.equal(requestUrl.searchParams.get("groups"), "enterprise,vip");
-      assert.equal(requestUrl.searchParams.get("searchQuery"), "gpt");
+      assert.equal(requestUrl.searchParams.get("q"), "gpt");
+      assert.equal(requestUrl.searchParams.has("search_query"), false);
       assert.equal(requestUrl.searchParams.get("limit"), "200");
       return { items: [] };
     },
@@ -1271,7 +1273,7 @@ test("model service sends sidebar filters through the generated app SDK query co
 
       assert.deepEqual(models, []);
       assert.deepEqual(captured.map((request) => `${request.method} ${request.url}`), [
-        "GET /app/v3/api/router/models?billingMeter=llm_input_token&vendorCodes=openai%2Canthropic&modalities=text%2Cimage&capabilities=tools%2Cjson%20mode&categories=Recommended%2CProprietary&groups=enterprise%2Cvip&searchQuery=gpt&limit=200",
+        "GET /app/v3/api/ai/models?billing_meter=llm_input_token&vendor_codes=openai%2Canthropic&modalities=text%2Cimage&capabilities=tools%2Cjson%20mode&categories=Recommended%2CProprietary&groups=enterprise%2Cvip&q=gpt&limit=200",
       ]);
     },
   );

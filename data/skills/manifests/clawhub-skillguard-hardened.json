@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57726,
+  "uuid": "skill-clawhub-skillguard-hardened",
+  "skillKey": "clawhub-skillguard-hardened",
+  "name": "SkillGuard Hardened",
+  "summary": "Security guard for OpenClaw skills, developed and maintained by rose北港（小红帽 / 猫猫帽帽）. Audits installed or incoming skills with local rules plus Zenmux AI inten...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skillguard_hardened",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "2404589803",
+      "features": [
+        "Security guard for OpenClaw skills, developed and maintained by rose北港（小红帽 / 猫猫帽帽）",
+        "Audits installed or incoming skills with local rules plus Zenmux AI inten..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skillguard-hardened@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/68528929?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skillguard-hardened",
+      "url": "https://clawhub.ai/skills/skillguard-hardened"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skillguard-hardened",
+    "url": "https://clawhub.ai/skills/skillguard-hardened",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skillguard-hardened-ab793c4338626233.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skillguard-hardened@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-skillguard-hardened-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5d6ca8acb025a1c4e9ca93db277e01449058bc26446e42a24968cfa48c752d3f",
+      "artifactSizeBytes": 2103
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T18:55:53.660Z"
+}

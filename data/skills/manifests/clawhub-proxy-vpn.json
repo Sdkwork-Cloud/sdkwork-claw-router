@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19758,
+  "uuid": "skill-clawhub-proxy-vpn",
+  "skillKey": "clawhub-proxy-vpn",
+  "name": "URnetwork",
+  "summary": "Create and manage HTTPS, SOCKS, or WireGuard proxies via URnetwork API to connect anonymously through specific countries, regions, or cities worldwide.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proxy_vpn",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xcolwell",
+      "features": [
+        "Create and manage HTTPS, SOCKS, or WireGuard proxies via URnetwork API to connect anonymously t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/proxy-vpn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/531246?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "proxy-vpn",
+      "url": "https://clawhub.ai/skills/proxy-vpn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proxy-vpn",
+    "url": "https://clawhub.ai/skills/proxy-vpn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proxy-vpn-28f03b7dccd06e9e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/proxy-vpn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-proxy-vpn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2c8451daed0888bc6c275fc94945bdaa543f06aec88b3daf5333c553f9ff777e",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T06:11:03.623Z"
+}

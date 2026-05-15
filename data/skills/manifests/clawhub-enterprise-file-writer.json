@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61860,
+  "uuid": "skill-clawhub-enterprise-file-writer",
+  "skillKey": "clawhub-enterprise-file-writer",
+  "name": "Enterprise File Writer",
+  "summary": "写入内容到本地文件，支持企业安全策略环境。支持文本文件、Word 文档 (.docx)、Excel 表格 (.xlsx) 等 80+ 种格式，通过正确的编码处理避免乱码问题。",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.enterprise_file_writer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "endcy",
+      "features": [
+        "写入内容到本地文件，支持企业安全策略环境。支持文本文件、Word 文档 (.docx)、Excel 表格 (.xlsx) 等 80+ 种格式，通过正确的编码处理避免乱码问题。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/enterprise-file-writer@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41557700?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "enterprise-file-writer",
+      "url": "https://clawhub.ai/skills/enterprise-file-writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "enterprise-file-writer",
+    "url": "https://clawhub.ai/skills/enterprise-file-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/enterprise-file-writer-ffc72cbf4ed2547e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/enterprise-file-writer@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-enterprise-file-writer-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:097cd5a724cf73275582d563ad65b6f14674c650ee05faf900daf47b8399f557",
+      "artifactSizeBytes": 3129
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T12:59:13.308Z"
+}

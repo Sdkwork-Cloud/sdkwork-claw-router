@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/token-use-optimizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.token_use_optimizer",
+  "skill": {
+    "id": 59229,
+    "skillKey": "clawhub-token-use-optimizer",
+    "name": "token-use-optimizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "token-use-optimizer",
+    "url": "https://clawhub.ai/skills/token-use-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/token-use-optimizer-75e16cf2b124ed3d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI Agent 项目的 Token 消耗审计与系统性优化。提供四层诊断框架、六步优化 SOP、 自动化审计脚本。适用于任何使用 Rules + Memory + Knowledge + Skills 架构的 AI Agent 项目（如 CodeBuddy、Cursor、Windsurf 等）。 This ski..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "louisecxqiu-glitch",
+      "userId": "s1754qjgxa9zak8861afjbexzx83kv54",
+      "displayName": "Louis Qiu",
+      "image": "https://avatars.githubusercontent.com/u/258079601?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774455868838,
+      "changelog": "- Major restructure: the skill is now a comprehensive Token Optimization auditor and SOP for AI Agent projects.\n- Adds a four-layer diagnostic framework (Rules, Memory, Knowledge, Runtime Behavior) with ROI-focused steps.\n- Includes an automated token audit script (`scripts/token_audit.py`) for baselining and structured reporting.\n- Provides step-by-step optimization strategies and an actionable decision tree.\n- Adds two detailed reference files: `references/optimization-strategies.md` (full playbook) and `references/real-world-cases.md` (real cases).\n- README removed; all guidance and instructions consolidated into SKILL.md and references.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:318a49eefbeb9469f67821f9d8348365e034681f5d868223b0fe99149586c6dd"
+}

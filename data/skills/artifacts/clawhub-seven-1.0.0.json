@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seven@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seven",
+  "skill": {
+    "id": 71888,
+    "skillKey": "clawhub-seven",
+    "name": "seven"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seven",
+    "url": "https://clawhub.ai/skills/seven",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seven-3ba8d02b16fd2a01.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "数字 7 的文化介绍技能（中英文版本）。当用户询问数字 7、七的文化含义、七星、七情等相关信息时激活此技能。包含陈朗的个人资料。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leocryptoflow",
+      "userId": "publishers:leocryptoflow",
+      "displayName": "Leo Sheng",
+      "image": "https://avatars.githubusercontent.com/u/149644278?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 233,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774086001217,
+      "changelog": "Initial release—completely redefined skill focus:\n\n- Skill now introduces the cultural, historical, mathematical, and scientific meanings of number 0 (零) in both Chinese and English.\n- Includes Chen Lang’s (陈朗) personal profile and a detailed overview of his OpenClaw project ecosystem.\n- Covers symbolism and significance of zero in Eastern and Western cultures, usage in expressions, and connection to Chen Lang’s philosophy and work.\n- Provides resource sections supporting both cultural research and personal interest in digital and AI projects centered on “starting from zero”.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d18c6572bacbf883479f63f64147d0050f08c01bde90be164a2e3fb70306b8d8"
+}

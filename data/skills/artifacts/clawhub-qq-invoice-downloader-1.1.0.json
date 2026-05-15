@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qq-invoice-downloader@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qq_invoice_downloader",
+  "skill": {
+    "id": 69325,
+    "skillKey": "clawhub-qq-invoice-downloader",
+    "name": "QQ邮箱发票下载器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qq-invoice-downloader",
+    "url": "https://clawhub.ai/skills/qq-invoice-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qq-invoice-downloader-50dacca1921c2376.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动登录QQ邮箱，按日期搜索发票邮件，下载PDF附件和解压ZIP，过滤非发票，生成分类Excel报告。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "frankfushmomentlab",
+      "userId": "s17d1nxrj7tst8t5j0yqsqn0bs83hb95",
+      "displayName": "FrankFuShMomentLab",
+      "image": "https://avatars.githubusercontent.com/u/130262399?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774523330871,
+      "changelog": "v1.1: LLM增强分析 Phase 1完成，33平台selector，真实MiniMax-M2.7 API验证通过",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ec899a06a314dde10efb81d128079ca8155254defd982003d622a1ad7a7ef3e1"
+}

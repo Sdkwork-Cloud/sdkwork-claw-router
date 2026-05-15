@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65187,
+  "uuid": "skill-clawhub-vector-mind-map-fusion",
+  "skillKey": "clawhub-vector-mind-map-fusion",
+  "name": "Vector Mind Map Fusion",
+  "summary": "L1→L2→L3 向量记忆融合系统。用于构建、查询和管理语义记忆图谱。当用户需要提取、加工、记忆、或检索结构化知识时触发。具体场景：(1) 用户说\"记住\"、\"存入记忆\"、\"这个很重要\" → L1 提取；(2) 用户问\"之前有没有\"、\"有没有记录过\"、\"我的记忆里\" → L2+L3 查询；(3) 用户要求\"整理一下...",
+  "version": "1.2.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vector_mind_map_fusion",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dxiaofeng0811-lgtm",
+      "features": [
+        "L1→L2→L3 向量记忆融合系统。用于构建、查询和管理语义记忆图谱。当用户需要提取、加工、记忆、或检索结构化知识时触发。具体场景：(1) 用户说\"记住\"、\"存入记忆\"、\"这个很重要\" →."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vector-mind-map-fusion@1.2.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266959010?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vector-mind-map-fusion",
+      "url": "https://clawhub.ai/skills/vector-mind-map-fusion"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vector-mind-map-fusion",
+    "url": "https://clawhub.ai/skills/vector-mind-map-fusion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vector-mind-map-fusion-b904cbffabecfc76.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vector-mind-map-fusion@1.2.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-vector-mind-map-fusion-1.2.4.json",
+      "version": "1.2.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:abf5300e7ab4b97c970284dceab7bcf4d6a544b778a3c9eab1d0907eb0ee0b2e",
+      "artifactSizeBytes": 2449
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T02:06:10.616Z"
+}

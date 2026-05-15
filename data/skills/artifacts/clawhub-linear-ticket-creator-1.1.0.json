@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linear-ticket-creator@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linear_ticket_creator",
+  "skill": {
+    "id": 38174,
+    "skillKey": "clawhub-linear-ticket-creator",
+    "name": "Linear Ticket Creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linear-ticket-creator",
+    "url": "https://clawhub.ai/skills/linear-ticket-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linear-ticket-creator-f11f225d64238ee7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate well-structured Linear tickets from bugs, features, and improvements. Explores the codebase to auto-populate technical notes, acceptance criteria, a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luduvigo",
+      "userId": "s17bjdmknrqga7krmntfv72cmx83pg7n",
+      "displayName": "Paolo Antonio Rossi",
+      "image": "https://avatars.githubusercontent.com/u/1569913?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774968174500,
+      "changelog": "Fix security scanner false positive: removed shell-like variable syntax and tools list",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cf78890b91fb55e688733d90c80aa8230842b1fe868f4ed6570ccd92d02463de"
+}

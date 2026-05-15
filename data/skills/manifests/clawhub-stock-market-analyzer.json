@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39916,
+  "uuid": "skill-clawhub-stock-market-analyzer",
+  "skillKey": "clawhub-stock-market-analyzer",
+  "name": "Stock Market Analyzer",
+  "summary": "A-share stock market analysis tool with real-time price data, technical indicators, trend analysis, and portfolio tracking. Supports querying opening/closing...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_market_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lv Lancer",
+      "features": [
+        "A-share stock market analysis tool with real-time price data, technical indicators, trend analy.",
+        "Supports querying opening/closing..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-market-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29176686?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-market-analyzer",
+      "url": "https://clawhub.ai/skills/stock-market-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-market-analyzer",
+    "url": "https://clawhub.ai/skills/stock-market-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-market-analyzer-ab027df3f57a7dba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-market-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-market-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2e0926eabde5a1c6f3c1647cdb9e0c09f8cc852785f32fa10b21d9f43048dd76",
+      "artifactSizeBytes": 2237
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T07:20:07.289Z"
+}

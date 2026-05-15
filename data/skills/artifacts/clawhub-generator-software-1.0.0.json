@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/generator-software@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.generator_software",
+  "skill": {
+    "id": 48959,
+    "skillKey": "clawhub-generator-software",
+    "name": "Generator Software"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "generator-software",
+    "url": "https://clawhub.ai/skills/generator-software",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/generator-software-766ad4a55a32bde6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get ready-to-share videos ready to post, without touching a single slider. Upload your text prompts or clips (MP4, MOV, PNG, TXT, up to 500MB), say something..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 90,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777867052206,
+      "changelog": "generator-software 1.0.0 — initial release\n\n- Instantly generate 1080p MP4 videos from text prompts or uploaded files (MP4, MOV, PNG, TXT, up to 500MB)\n- Serve marketers and content creators with fast, server-side video compositing—no manual editing or installation required\n- Automatic cloud handling: connect, upload, edit, export videos directly via text instructions\n- Built-in session/token management and simple credit system for anonymous or registered users\n- Supports a wide variety of output and input formats (mp4, mov, avi, webm, gif, png, mp3, more)\n- Error handling, session state management, and common video editing workflows are fully integrated",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c0f75a5627baa085db1b8f97f0d7fcf39a10d3bc35cc37230703df23884ea3a9"
+}

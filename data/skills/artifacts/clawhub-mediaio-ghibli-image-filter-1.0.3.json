@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mediaio-ghibli-image-filter@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mediaio_ghibli_image_filter",
+  "skill": {
+    "id": 30535,
+    "skillKey": "clawhub-mediaio-ghibli-image-filter",
+    "name": "Studio Ghibli Image Filter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mediaio-ghibli-image-filter",
+    "url": "https://clawhub.ai/skills/mediaio-ghibli-image-filter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mediaio-ghibli-image-filter-65675c7ab6009582.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transform photos and images into Studio Ghibli-style artwork using AI via Media.io OpenAPI. Applies the iconic hand-drawn, painterly aesthetic of Ghibli film..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wondershare-boop",
+      "userId": "s1707d6v06e1pv7bbn814sjdq583gtne",
+      "displayName": "wondershare-boop",
+      "image": "https://avatars.githubusercontent.com/u/208894930?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 281,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773886911824,
+      "changelog": "- Updated metadata to include OpenClaw format and declare a bins requirement for curl.\n- Removed legacy metadata on Media.io provider.\n- No changes to API behavior or invocation flow.\n- Documentation and usage details remain the same.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:045928ee922bae72fa7ad06297f99b9ac4db55b77b849987dc19d41a920dbab5"
+}

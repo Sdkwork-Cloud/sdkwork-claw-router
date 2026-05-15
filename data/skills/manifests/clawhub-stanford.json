@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71732,
+  "uuid": "skill-clawhub-stanford",
+  "skillKey": "clawhub-stanford",
+  "name": "Stanford",
+  "summary": "提供斯坦福大学历史、院系、申请要求、学费资助及创业创新等详细信息，助力留学及了解校园生活。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stanford",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供斯坦福大学历史、院系、申请要求、学费资助及创业创新等详细信息，助力留学及了解校园生活。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stanford@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stanford",
+      "url": "https://clawhub.ai/skills/stanford"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stanford",
+    "url": "https://clawhub.ai/skills/stanford",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stanford-de19c97d557a0e8a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stanford@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-stanford-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b10d562c8d771ecbaeb4c9ba3d9ecbe08aa89d0c002c758c78998a18e0ff2d8",
+      "artifactSizeBytes": 2105
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T23:26:59.704Z"
+}

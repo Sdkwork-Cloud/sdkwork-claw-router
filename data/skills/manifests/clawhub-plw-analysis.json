@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73478,
+  "uuid": "skill-clawhub-plw-analysis",
+  "skillKey": "clawhub-plw-analysis",
+  "name": "排列五分析工具",
+  "summary": "排列五数字彩票分析工具。提供数据分析、选号策略、概率计算、冷热号分析等辅助功能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plw_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shenmeng",
+      "features": [
+        "排列五数字彩票分析工具。提供数据分析、选号策略、概率计算、冷热号分析等辅助功能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/plw-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6897076?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "plw-analysis",
+      "url": "https://clawhub.ai/skills/plw-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plw-analysis",
+    "url": "https://clawhub.ai/skills/plw-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plw-analysis-26f3dc50a5bd0933.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/plw-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-plw-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1a99da417f86667866451b268781623d7226d9eb9fb121a48f25b23cfdeff503",
+      "artifactSizeBytes": 1836
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T10:45:49.020Z"
+}

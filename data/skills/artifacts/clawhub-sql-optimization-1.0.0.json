@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sql-optimization@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sql_optimization",
+  "skill": {
+    "id": 51243,
+    "skillKey": "clawhub-sql-optimization",
+    "name": "Sql Optimization"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sql-optimization",
+    "url": "https://clawhub.ai/skills/sql-optimization",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sql-optimization-2aca30f6a09e2782.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deep SQL performance workflow—symptom framing, execution plans, indexing strategy, query rewrite, locking/transaction behavior, statistics, partitioning, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codekungfu",
+      "userId": "s174hbct7jzfnq4tb6w04gnans83gh5h",
+      "displayName": "ClawKK",
+      "image": "https://avatars.githubusercontent.com/u/111570001?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 320,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774366585889,
+      "changelog": "- Initial release of the SQL Optimization workflow skill.\n- Provides a structured six-stage process for diagnosing and solving SQL performance issues.\n- Covers execution plan analysis, indexing strategy, query and transaction tuning, statistics, and verification.\n- Tailored guidance for handling slow queries, lock waits, index bloat, and changes due to migrations.\n- Includes practical tips, advanced scenarios, and a checklist to ensure safe and measurable improvements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b9283673b448c5374b96de77d248ea183d81362197f71f5ff7a7de354308a1f9"
+}

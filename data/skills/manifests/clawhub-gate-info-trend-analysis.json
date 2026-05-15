@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26462,
+  "uuid": "skill-clawhub-gate-info-trend-analysis",
+  "skillKey": "clawhub-gate-info-trend-analysis",
+  "name": "gate-info-trendanalysis",
+  "summary": "Trend and technical analysis. Use this skill ONLY when the user's query is exclusively about technical indicators or trend analysis for one coin with no othe...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_info_trend_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gate",
+      "features": [
+        "Trend and technical analysis",
+        "Use this skill ONLY when the user's query is exclusively about technical indicators or trend an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gate-info-trend-analysis@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33109813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gate-info-trend-analysis",
+      "url": "https://clawhub.ai/skills/gate-info-trend-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-info-trend-analysis",
+    "url": "https://clawhub.ai/skills/gate-info-trend-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-info-trend-analysis-a0e0901ef6eedfd0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gate-info-trend-analysis@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-gate-info-trend-analysis-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:19f66781be96ee2710ba9ada8afe16b52dc1dab354e44664bfc001e1e8552535",
+      "artifactSizeBytes": 2334
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T10:35:03.363Z"
+}

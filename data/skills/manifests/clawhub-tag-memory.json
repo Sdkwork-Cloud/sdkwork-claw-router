@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69770,
+  "uuid": "skill-clawhub-tag-memory",
+  "skillKey": "clawhub-tag-memory",
+  "name": "TagMemory",
+  "summary": "标签化长期记忆系统。当用户说\"记住...\"时存储记忆，当用户问\"我之前...\"时查询记忆，定期生成总结并询问确认，主动核对记忆正确性。支持标签(#偏好、#决定、#项目等)、BM25搜索、时间范围查询、人类审核机制。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tag_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "luckyboybs",
+      "features": [
+        "标签化长期记忆系统。当用户说\"记住...\"时存储记忆，当用户问\"我之前...\"时查询记忆，定期生成总结并询问确认，主动核对记忆正确性。支持标签(#偏好、#决定、#项目等)、BM25搜索、时间."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tag-memory@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83256944?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tag-memory",
+      "url": "https://clawhub.ai/skills/tag-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tag-memory",
+    "url": "https://clawhub.ai/skills/tag-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tag-memory-81c5cc3b3a082824.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tag-memory@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tag-memory-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:21ba98a1ae0e621ae69f9f82f9f3a5175fb45a1c6dd8c401bf3ed9e787080e2a",
+      "artifactSizeBytes": 2454
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T11:09:03.489Z"
+}

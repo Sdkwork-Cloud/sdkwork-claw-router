@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toutiao-news-trends@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toutiao_news_trends",
+  "skill": {
+    "id": 9460,
+    "skillKey": "clawhub-toutiao-news-trends",
+    "name": "Toutiao News Trends"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toutiao-news-trends",
+    "url": "https://clawhub.ai/skills/toutiao-news-trends",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toutiao-news-trends-75755da2e68b9cbc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch today's Toutiao trending news with titles, hotness scores, links, covers, labels, and category tags across multiple topics in Chinese."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wuchubuzai2018",
+      "userId": "s1700ey73njc718bqxfwpcjchs83rvdq",
+      "displayName": "无处不在",
+      "image": "https://avatars.githubusercontent.com/u/42382506?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3276,
+      "installsAllTime": 30,
+      "installsCurrent": 29,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771057014139,
+      "changelog": "- Initial release: fetches trending news from 今日头条 (toutiao.com) across multiple categories including politics, finance, society, international, technology, and entertainment.\n- Outputs news item title, popularity value, cleaned detail link, cover image (if available), label, aggregation ID, and category tags.\n- Includes command-line interface for retrieving full or partial trending lists.\n- Handles missing fields and features basic anti-scraping measures (random User-Agent, timeout control).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:deb6b0f9ce3facaa27225ce32ab972dcfb5efa8f71239b106aa70bbad7d94c8c"
+}

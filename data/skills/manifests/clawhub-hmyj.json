@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73727,
+  "uuid": "skill-clawhub-hmyj",
+  "skillKey": "clawhub-hmyj",
+  "name": "华目眼镜",
+  "summary": "华目眼镜品牌专属知识库。当用户询问华目眼镜相关任何问题时加载，包括：品牌介绍、品牌特色、品牌优势、门店地址、门店在哪里、哪个城市有门店、商品价格、镜片价格、镜架价格、配镜套餐、共管招商、加盟合作、公众号服务、验光服务、售后服务等。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hmyj",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ahyaobin",
+      "features": [
+        "华目眼镜品牌专属知识库。当用户询问华目眼镜相关任何问题时加载，包括：品牌介绍、品牌特色、品牌优势、门店地址、门店在哪里、哪个城市有门店、商品价格、镜片价格、镜架价格、配镜套餐、共管招商、加盟."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hmyj@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27403976?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hmyj",
+      "url": "https://clawhub.ai/skills/hmyj"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hmyj",
+    "url": "https://clawhub.ai/skills/hmyj",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hmyj-3b16968b4eb8fb49.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hmyj@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hmyj-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:842e364d63aaf6725e762fcaf8f2dca100ab5df3360fba1a143cb2689168fb56",
+      "artifactSizeBytes": 2601
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T13:07:29.789Z"
+}

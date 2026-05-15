@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23816,
+  "uuid": "skill-clawhub-agent-memory-sr",
+  "skillKey": "clawhub-agent-memory-sr",
+  "name": "Agent Memory Persistent Workspace Memory System",
+  "summary": "Stop your AI agent from forgetting everything between sessions. Three-tier memory architecture (long-term owner namespace / daily logs / session handoff), cr...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_memory_sr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shadow Rose",
+      "features": [
+        "Stop your AI agent from forgetting everything between sessions",
+        "Three-tier memory architecture (long-term owner namespace / daily logs / session handoff), cr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-memory-sr@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262919821?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-memory-sr",
+      "url": "https://clawhub.ai/skills/agent-memory-sr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-memory-sr",
+    "url": "https://clawhub.ai/skills/agent-memory-sr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-memory-sr-fdc8a5f11f9ca525.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-memory-sr@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-memory-sr-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4b405918a71e3ddfee7e0335a4a07abf8a04973c065ff63c82639f2ffa2a46c5",
+      "artifactSizeBytes": 1932
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T21:00:12.119Z"
+}

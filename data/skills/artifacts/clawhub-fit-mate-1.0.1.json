@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fit-mate@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fit_mate",
+  "skill": {
+    "id": 41136,
+    "skillKey": "clawhub-fit-mate",
+    "name": "Fit-Mate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fit-mate",
+    "url": "https://clawhub.ai/skills/fit-mate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fit-mate-c92088583b1fb1f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "TRIGGER when: user asks about workout plans, exercise routines, fat loss, muscle gain, body recomposition, meal planning for fitness, calorie or macro tracki..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tankeito",
+      "userId": "s17050jbyjd1x0p5mb5z41j5n983hd2e",
+      "displayName": "tankeito",
+      "image": "https://avatars.githubusercontent.com/u/129169395?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774918608965,
+      "changelog": "- Skill renamed from \"fitness-coach\" to \"fit-mate\".\n- Added new scripts for generating and rendering weekly report PDFs, and for building release bundles.\n- New agent configuration file (agents/openai.yaml) introduced.\n- Removed legacy files: .gitignore and README.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:766bc7942ef42f7e34f66475e88c1b56b565c2ef713d24c2b6dacb8c420fb8fe"
+}

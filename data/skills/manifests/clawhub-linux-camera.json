@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19395,
+  "uuid": "skill-clawhub-linux-camera",
+  "skillKey": "clawhub-linux-camera",
+  "name": "linux-camera",
+  "summary": "Capture photos, record video clips, list cameras, and live stream on Linux. Uses V4L2 and ffmpeg. Supports USB webcams and RTSP/IP cameras.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linux_camera",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Johnny",
+      "features": [
+        "Capture photos, record video clips, list cameras, and live stream on Linux",
+        "Uses V4L2 and ffmpeg",
+        "Supports USB webcams and RTSP/IP cameras."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linux-camera@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22727137?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linux-camera",
+      "url": "https://clawhub.ai/skills/linux-camera"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linux-camera",
+    "url": "https://clawhub.ai/skills/linux-camera",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linux-camera-5f754d00db785207.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linux-camera@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-linux-camera-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:204495b3171ac2d0351a866f3168b90657b9bf644d600736c36962609a5a9427",
+      "artifactSizeBytes": 2430
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T21:19:01.355Z"
+}

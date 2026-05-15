@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29019,
+  "uuid": "skill-clawhub-grounding-anything",
+  "skillKey": "clawhub-grounding-anything",
+  "name": "grounding-anything",
+  "summary": "Use GLM-4.7V's multimodal grounding capability to detect and locate objects/text in images. Activate when user asks to find, locate, detect, or ground specif...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grounding_anything",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ji Qi",
+      "features": [
+        "Use GLM-4.7V's multimodal grounding capability to detect and locate objects/text in images",
+        "Activate when user asks to find, locate, detect, or ground specif..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/grounding-anything@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28889175?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "grounding-anything",
+      "url": "https://clawhub.ai/skills/grounding-anything"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grounding-anything",
+    "url": "https://clawhub.ai/skills/grounding-anything",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grounding-anything-f220c7205e5dc279.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/grounding-anything@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-grounding-anything-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0d886d0835fcb234e9e52e49cdc1acd36ea53817a011122b07934da7102aa04c",
+      "artifactSizeBytes": 2483
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T12:06:29.507Z"
+}

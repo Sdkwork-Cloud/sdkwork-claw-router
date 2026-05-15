@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61027,
+  "uuid": "skill-clawhub-awi",
+  "skillKey": "clawhub-awi",
+  "name": "AWI",
+  "summary": "AWI (Agentic Web Interface) — 联网读取+搜索，单二进制零配置。 三级自动降级：直连 → 智能适配 → 浏览器渲染。 不需要 API Key，不需要 Docker。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.awi",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jzOcb",
+      "features": [
+        "AWI (Agentic Web Interface) — 联网读取+搜索，单二进制零配置。 三级自动降级：直连 → 智能适配 → 浏览器渲染。 不需要 API Key，不需要 Docker。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/awi@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258660657?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "awi",
+      "url": "https://clawhub.ai/skills/awi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "awi",
+    "url": "https://clawhub.ai/skills/awi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/awi-767a4feb8857a737.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/awi@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-awi-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dc4eaa2fe7580604ffe1870767c0a047d9ca1727a0078b4d266bb436357a6406",
+      "artifactSizeBytes": 1877
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T20:09:04.339Z"
+}

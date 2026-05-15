@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9394,
+  "uuid": "skill-clawhub-skillcraft",
+  "skillKey": "clawhub-skillcraft",
+  "name": "Skillcraft",
+  "summary": "Design and build OpenClaw skills. Use when asked to \"make/build/craft a skill\", extract ad-hoc functionality into a skill, or package scripts/instructions for reuse. Covers OpenClaw-specific integration (tool calling, memory, message routi.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skillcraft",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jmz1",
+      "features": [
+        "Design and build OpenClaw skills",
+        "Use when asked to \"make/build/craft a skill\", extract ad-hoc functionality into a skill, or pac.",
+        "Covers OpenClaw-specific integration (tool calling, memory, message routing, cron, canvas, node."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skillcraft@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1452865?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skillcraft",
+      "url": "https://clawhub.ai/skills/skillcraft"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skillcraft",
+    "url": "https://clawhub.ai/skills/skillcraft",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skillcraft-0ea3e271b019b07e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skillcraft@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skillcraft-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:621757e089b87269f42655270a101b2fe21a936067fd44a486d9b1d45abef800",
+      "artifactSizeBytes": 2023
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T10:47:41.463Z"
+}

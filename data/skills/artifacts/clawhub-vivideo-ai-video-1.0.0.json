@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vivideo-ai-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vivideo_ai_video",
+  "skill": {
+    "id": 49350,
+    "skillKey": "clawhub-vivideo-ai-video",
+    "name": "Vivideo Ai Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vivideo-ai-video",
+    "url": "https://clawhub.ai/skills/vivideo-ai-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vivideo-ai-video-0cf7c661dde65bfd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get polished AI videos ready to post, without touching a single slider. Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say something like..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 82,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777551846299,
+      "changelog": "Vivideo AI Video 1.0.0 — Initial Release\n\n- Instantly generate polished AI-edited videos from raw footage (up to 500MB) with simple text instructions.\n- Automatic backend connection and authentication with free credits for new users.\n- Supports common video formats (MP4, MOV, AVI, WebM) and 1080p MP4 export.\n- Includes workflows for uploading, editing, exporting, and managing credits or session status.\n- Provides error codes and handling for smooth troubleshooting.\n- Designed for fast, no-skills-required video creation for content creators.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:25cfffc08fee7e71c1852c2bf02a48b2114bb822bcd0caaed6cf2d55a9dd1eb5"
+}

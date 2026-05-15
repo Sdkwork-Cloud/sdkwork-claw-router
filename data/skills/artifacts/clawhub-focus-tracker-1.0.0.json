@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/focus-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.focus_tracker",
+  "skill": {
+    "id": 22344,
+    "skillKey": "clawhub-focus-tracker",
+    "name": "Focus Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "focus-tracker",
+    "url": "https://clawhub.ai/skills/focus-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/focus-tracker-2a1b7a5e6144ef2d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Maintain persistent focus on active work across compactions and session restarts. Use when starting a multi-step project, when resuming after compaction, whe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "crewhaus",
+      "userId": "s1719mrype24snhrfvby2bkyc983jyaj",
+      "displayName": "crewhaus",
+      "image": "https://avatars.githubusercontent.com/u/261488301?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 467,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773130160162,
+      "changelog": "Initial release — persistent focus across compactions and session restarts",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:35e86c8f9753c2e5f76480a14ee1e21f499cc926246acca5527a715d9276af51"
+}

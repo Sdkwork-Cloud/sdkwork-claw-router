@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63869,
+  "uuid": "skill-clawhub-ea-games",
+  "skillKey": "clawhub-ea-games",
+  "name": "Ea Games",
+  "summary": "提供EA艺电游戏及公司信息，涵盖FIFA、NBA Live等体育游戏和模拟人生系列内容。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ea_games",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供EA艺电游戏及公司信息，涵盖FIFA、NBA Live等体育游戏和模拟人生系列内容。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ea-games@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ea-games",
+      "url": "https://clawhub.ai/skills/ea-games"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ea-games",
+    "url": "https://clawhub.ai/skills/ea-games",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ea-games-0b15bbac907d2e8d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ea-games@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ea-games-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:72f85f43fb7906a00d2904ee106c24c6d35b062cce1ed81c25d48cf561d087e1",
+      "artifactSizeBytes": 2151
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T18:00:26.297Z"
+}

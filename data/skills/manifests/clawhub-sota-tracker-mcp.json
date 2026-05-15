@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11928,
+  "uuid": "skill-clawhub-sota-tracker-mcp",
+  "skillKey": "clawhub-sota-tracker-mcp",
+  "name": "SOTA AI Model Tracker",
+  "summary": "Provides daily updated authoritative data and APIs tracking state-of-the-art AI models across categories from LMArena, Artificial Analysis, and HuggingFace.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sota_tracker_mcp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "romancircus",
+      "features": [
+        "Provides daily updated authoritative data and APIs tracking state-of-the-art AI models across c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sota-tracker-mcp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/253068059?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sota-tracker-mcp",
+      "url": "https://clawhub.ai/skills/sota-tracker-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sota-tracker-mcp",
+    "url": "https://clawhub.ai/skills/sota-tracker-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sota-tracker-mcp-a14b3c3fe2f19286.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sota-tracker-mcp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sota-tracker-mcp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7ca4e08bda2c923f6caa4f729a10981ad8b1c6b15d3e736c1c1419a8230584bf",
+      "artifactSizeBytes": 1956
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T12:41:27.302Z"
+}

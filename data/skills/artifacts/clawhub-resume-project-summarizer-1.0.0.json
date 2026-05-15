@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/resume-project-summarizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resume_project_summarizer",
+  "skill": {
+    "id": 71726,
+    "skillKey": "clawhub-resume-project-summarizer",
+    "name": "resume"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resume-project-summarizer",
+    "url": "https://clawhub.ai/skills/resume-project-summarizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resume-project-summarizer-d71e4188bd8a0702.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能简历项目总结助手。当用户说\"总结项目\"、\"归纳项目\"、\"整理项目\"时，帮助用户从多渠道获取项目信息，按岗位方向（产品/运营/技术/设计/数据等）归纳整理为高质量互联网简历，提升面试通过率。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiubanszd",
+      "userId": "s179h4nqrhf1g7cz87wnhbknxd83t6ha",
+      "displayName": "jiubanszd",
+      "image": "https://avatars.githubusercontent.com/u/174673996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 341,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772775640084,
+      "changelog": "resume-project-summarizer 1.0.0 初始版本\n\n- 发布智能简历项目总结助手，支持用户关键词触发（如“总结项目”、“整理项目”等）。\n- 帮助将杂乱的项目经历信息多渠道收集、提取、拆分与结构化整理。\n- 针对产品、运营、技术、设计、数据等重点方向，归纳生成高质量互联网简历内容。\n- 智能去噪、项目拆分、时间线梳理，并向用户确认整理结果及关键信息补全。\n- 自动根据岗位类型优化项目描述，生成符合互联网招聘标准的简历条目。\n- 输出多格式简历并附带优化建议、面试问题预测等增值内容。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:09da051668fa0e4c34bae0153911a98c72602ba8d5828b761a95883e881ff31e"
+}

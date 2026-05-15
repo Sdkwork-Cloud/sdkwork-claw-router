@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73197,
+  "uuid": "skill-clawhub-jiuma-mata-human",
+  "skillKey": "clawhub-jiuma-mata-human",
+  "name": "九马免费对口型数字人",
+  "summary": "这是一个免费生成对口型数字人对口型的工具, 工具安装需要下载二进制文件到电脑上，只需根据文本和性别生成数字人视频并返回一个下载链接,生成时间在半个小时以内。",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jiuma_mata_human",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kalos-chen",
+      "features": [
+        "这是一个免费生成对口型数字人对口型的工具, 工具安装需要下载二进制文件到电脑上，只需根据文本和性别生成数字人视频并返回一个下载链接,生成时间在半个小时以内。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jiuma-mata-human@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51595132?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jiuma-mata-human",
+      "url": "https://clawhub.ai/skills/jiuma-mata-human"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jiuma-mata-human",
+    "url": "https://clawhub.ai/skills/jiuma-mata-human",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jiuma-mata-human-52b3ec3d45071427.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jiuma-mata-human@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-jiuma-mata-human-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aa997eb433485a7cf14b7e69c434477d0e220d47b1be41e6a7106285db48aa57",
+      "artifactSizeBytes": 2419
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T09:03:36.075Z"
+}

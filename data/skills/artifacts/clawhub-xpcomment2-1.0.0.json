@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xpcomment2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xpcomment2",
+  "skill": {
+    "id": 58792,
+    "skillKey": "clawhub-xpcomment2",
+    "name": "Xpcomment2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xpcomment2",
+    "url": "https://clawhub.ai/skills/xpcomment2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xpcomment2-c466ffe323542bd8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "JPEG/이미지 파일의 XPComment(Windows 사진 코멘트) 메타데이터를 exiftool로 읽고, 추가하고, 제거하는 skill. 사용자가 \"xpcomment add\", \"xpcomment remove\", \"xpcomment read\", \"코멘트 추가\", \"사진에 태그\",..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "happyturbo",
+      "userId": "s170pq8s5ebeyb6f2sr53zpgns85gf8r",
+      "displayName": "happyturbo",
+      "image": "https://avatars.githubusercontent.com/u/94766066?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 117,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777092834647,
+      "changelog": "- Initial release of xpcomment skill.\n- Read, add, or remove JPEG image XPComment metadata using exiftool.\n- Supports both Korean and English commands and file names.\n- Handles multi-file and recursive folder operations.\n- Provides command-line syntax and response formats for user clarity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1644bd1e3de1902752cfd651ed377167bab4e2b84068a59aca9ffc32dc701f39"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65773,
+  "uuid": "skill-clawhub-shopping-agent",
+  "skillKey": "clawhub-shopping-agent",
+  "name": "Shopping Agent",
+  "summary": "提供各大海外电商代下单、转运路线配置及品质关税指引。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shopping_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codenova58",
+      "features": [
+        "提供各大海外电商代下单、转运路线配置及品质关税指引。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shopping-agent@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191358186?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shopping-agent",
+      "url": "https://clawhub.ai/skills/shopping-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shopping-agent",
+    "url": "https://clawhub.ai/skills/shopping-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shopping-agent-c9e2dc25cc789575.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shopping-agent@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shopping-agent-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:515f17c78998af162291dbbfce2bf14dccae70b41113504d1aba0d6554e5039a",
+      "artifactSizeBytes": 2293
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T18:32:14.180Z"
+}

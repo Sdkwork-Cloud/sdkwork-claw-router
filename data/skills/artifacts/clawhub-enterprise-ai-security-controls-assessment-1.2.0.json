@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/enterprise-ai-security-controls-assessment@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.enterprise_ai_security_controls_assessment",
+  "skill": {
+    "id": 50780,
+    "skillKey": "clawhub-enterprise-ai-security-controls-assessment",
+    "name": "Enterprise AI Security Controls Assessment"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "enterprise-ai-security-controls-assessment",
+    "url": "https://clawhub.ai/skills/enterprise-ai-security-controls-assessment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/enterprise-ai-security-controls-assessment-bf6c4ca9aacfa9d1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Assess OT/ICS security posture across 30 controls in 6 principles — Business Driven, Risk Based, Enterprise Wide, Methodical, OT Security Focused, and OT Sec..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krishnakumarmahadevan-cmd",
+      "userId": "s177cvva4qaee9r80e44xt5cqx83ga38",
+      "displayName": "ToolWeb",
+      "image": "https://avatars.githubusercontent.com/u/245780162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 351,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1773906701937,
+      "changelog": "- Major update: Skill rebranded and expanded from OT/ICS to Enterprise AI Security Controls Assessment.\n- Now covers 12 AI security domains (60 controls) such as Identity & Access, Prompt Injection Defense, API Security, Monitoring, Compliance, and more.\n- Inputs and outputs are standardized for enterprise AI security, including maturity ratings, gap analysis, prioritized remediation, and compliance alignment.\n- Detailed API reference, pricing tiers, and domain keys provided.\n- README file removed; core documentation is now in SKILL.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a088593a5644b8c130c7154b9de7d083b73dbc42a50e9e1ce1c7d89d153c1148"
+}

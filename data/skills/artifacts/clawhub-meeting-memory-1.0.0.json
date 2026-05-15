@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meeting-memory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meeting_memory",
+  "skill": {
+    "id": 46552,
+    "skillKey": "clawhub-meeting-memory",
+    "name": "Meeting Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meeting-memory",
+    "url": "https://clawhub.ai/skills/meeting-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meeting-memory-2423a0164688b959.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Record, transcribe, and store meeting notes with persistent semantic memory using BlueColumn. Use when a user wants to save a meeting recording, upload meeti..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bluecolumnconsulting-lgtm",
+      "userId": "s17bvy8gx9dwzphyvevmeh94nh84v4wz",
+      "displayName": "bluecolumnconsulting-lgtm",
+      "image": "https://avatars.githubusercontent.com/u/243032714?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 124,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776367766294,
+      "changelog": "Store and recall meetings, transcripts, and action items via BlueColumn.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:476acc5083aeb6f81bdfdd6f3bfc947b75ad6f6d2944fc1d950dee9fd6573127"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cross-platform-skill-updater@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cross_platform_skill_updater",
+  "skill": {
+    "id": 59839,
+    "skillKey": "clawhub-cross-platform-skill-updater",
+    "name": "Skill Updater"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cross-platform-skill-updater",
+    "url": "https://clawhub.ai/skills/cross-platform-skill-updater",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cross-platform-skill-updater-b92ef001f9bb0529.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "用于检查或更新通过 git 工作树、或通过 .skill-lock.json 这类锁文件方式安装的本地 skills。适用于用户提到“查 skill 更新”“更新 skill”“检查 skills”“同步 skills”“GitHub skill 更新”“OpenClaw skills 更新”“全局 skills..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "viccwang",
+      "userId": "s179zeqfq8d7qs35a66fj2kcn5840yvx",
+      "displayName": "vicwang",
+      "image": "https://avatars.githubusercontent.com/u/6095159?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775031510228,
+      "changelog": "- Added support for OpenClaw skills directories (`~/.openclaw/skills` and `~/.openclaw/workspace/skills`)\n- Updated documentation and usage examples to include OpenClaw-relevant commands and triggers\n- No breaking changes; existing functionality remains intact",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:daa8974f931135b08361fd14fb062cadf959f7444f3e3ed8645bbe5e692492d3"
+}

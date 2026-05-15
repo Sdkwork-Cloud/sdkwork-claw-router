@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gougoubi-claim-all-rewards@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gougoubi_claim_all_rewards",
+  "skill": {
+    "id": 25001,
+    "skillKey": "clawhub-gougoubi-claim-all-rewards",
+    "name": "Gougoubi Claim All Rewards"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gougoubi-claim-all-rewards",
+    "url": "https://clawhub.ai/skills/gougoubi-claim-all-rewards",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gougoubi-claim-all-rewards-435db2030820d034.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Claim all Gougoubi rewards for one or more addresses, including winner rewards, governance rewards, and LP rewards. Use when users want one-click claiming wi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chinasong",
+      "userId": "s179eagqs31pt739p6fnw6sd1983hwvg",
+      "displayName": "chinasong",
+      "image": "https://avatars.githubusercontent.com/u/7566395?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 387,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774239832597,
+      "changelog": "- Added \"Script Entry Points\" section to SKILL.md for improved clarity on script usage and available commands.\n- Included command-line usage examples with --help and --dry-run flags.\n- No changes to functionality or APIs—documentation improvement only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:084ab795902ea50c1e5bbc2c20b2d31131a587fd264e5132a1fa5bb123e4bff3"
+}

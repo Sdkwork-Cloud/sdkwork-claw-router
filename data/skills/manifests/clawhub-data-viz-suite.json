@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61115,
+  "uuid": "skill-clawhub-data-viz-suite",
+  "skillKey": "clawhub-data-viz-suite",
+  "name": "Data Viz Suite",
+  "summary": "数据可视化套件 - 企业级BI工具，支持图表生成、数据报表、交互式仪表盘。支持 Plotly/Matplotlib/Seaborn 多种引擎。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_viz_suite",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lv Lancer",
+      "features": [
+        "企业级BI工具，支持图表生成、数据报表、交互式仪表盘。支持 Plotly/Matplotlib/Seaborn 多种引擎。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/data-viz-suite@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29176686?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "data-viz-suite",
+      "url": "https://clawhub.ai/skills/data-viz-suite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-viz-suite",
+    "url": "https://clawhub.ai/skills/data-viz-suite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-viz-suite-ffbcd2a0b8a13ef0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/data-viz-suite@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-data-viz-suite-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9126f7bb77474d0eb46621b542c1613d485b53e44a715550e45a05de2ac89c78",
+      "artifactSizeBytes": 1914
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T13:45:52.399Z"
+}

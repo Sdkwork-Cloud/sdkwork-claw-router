@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tencentcloud-ocr-idcard@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencentcloud_ocr_idcard",
+  "skill": {
+    "id": 68633,
+    "skillKey": "clawhub-tencentcloud-ocr-idcard",
+    "name": "TencentCloud IDCard OCR"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencentcloud-ocr-idcard",
+    "url": "https://clawhub.ai/skills/tencentcloud-ocr-idcard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencentcloud-ocr-idcard-b46b34c2aaca7636.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "腾讯云身份证识别(IDCardOCR)接口调用技能。当用户需要识别身份证图片中中国大陆居民二代身份证正反面信息（姓名、性别、民族、出生日期、住址、身份证号、签发机关、有效期限等）时,应使用此技能。支持图片Base64和URL两种输入方式,同时支持身份证图片照片裁剪和多种告警功能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zt1314p-design",
+      "userId": "s171696cz5y91nef8xanxra4sh83gdb0",
+      "displayName": "tencent-ocr",
+      "image": "https://avatars.githubusercontent.com/u/246965649?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 511,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1775024492671,
+      "changelog": "- 清理并简化了调用示例和参数表，使调用方式更加统一。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fac9bd4bb567ccb0f20fbb3a468eac21ea4e5020a7aeac4095104476803f87e9"
+}

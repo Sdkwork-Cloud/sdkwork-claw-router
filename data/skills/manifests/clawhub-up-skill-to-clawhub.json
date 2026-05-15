@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38216,
+  "uuid": "skill-clawhub-up-skill-to-clawhub",
+  "skillKey": "clawhub-up-skill-to-clawhub",
+  "name": "Up Skill To Clawhub",
+  "summary": "Package and publish OpenClaw skills to ClawHub registry. Use when user wants to upload, publish, or update a skill to ClawHub. Triggers on phrases like \"uplo...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.up_skill_to_clawhub",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tonakic",
+      "features": [
+        "Package and publish OpenClaw skills to ClawHub registry",
+        "Use when user wants to upload, publish, or update a skill to ClawHub",
+        "Triggers on phrases like \"uplo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/up-skill-to-clawhub@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/183658957?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "up-skill-to-clawhub",
+      "url": "https://clawhub.ai/skills/up-skill-to-clawhub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "up-skill-to-clawhub",
+    "url": "https://clawhub.ai/skills/up-skill-to-clawhub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/up-skill-to-clawhub-1d7fec26dd56a2e8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/up-skill-to-clawhub@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-up-skill-to-clawhub-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:81858d92a1810e8e5edefd16b45f46f358e80078e0b138c5586e8b876c711e81",
+      "artifactSizeBytes": 2022
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T05:23:10.360Z"
+}

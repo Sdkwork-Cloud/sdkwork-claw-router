@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16290,
+  "uuid": "skill-clawhub-youtube-transcript-api",
+  "skillKey": "clawhub-youtube-transcript-api",
+  "name": "Youtube Transcript Api",
+  "summary": "Extract, transcribe, and translate YouTube video transcripts using the YouTubeTranscript.dev V2 API. Supports captions, ASR audio transcription, batch proces...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_transcript_api",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Taimur Khan",
+      "features": [
+        "Extract, transcribe, and translate YouTube video transcripts using the YouTubeTranscript.dev V2.",
+        "Supports captions, ASR audio transcription, batch proces..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-transcript-api@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77480123?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-transcript-api",
+      "url": "https://clawhub.ai/skills/youtube-transcript-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-transcript-api",
+    "url": "https://clawhub.ai/skills/youtube-transcript-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-transcript-api-f0f7b2848e3f0749.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-transcript-api@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-transcript-api-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc4ab5b23eb223b64f6ee8aeb9b4924cbca90b08c3346a357e3d13bef3aac494",
+      "artifactSizeBytes": 2369
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T12:50:34.459Z"
+}

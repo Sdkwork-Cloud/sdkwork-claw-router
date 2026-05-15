@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-weather-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_weather_api",
+  "skill": {
+    "id": 72252,
+    "skillKey": "clawhub-free-weather-api",
+    "name": "weather"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-weather-api",
+    "url": "https://clawhub.ai/skills/free-weather-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-weather-api-0bdeb273b64027af.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询指定城市或地区的天气预报信息，包括温度、天气状况、降水概率、风力风向等。支持实时天气和未来多日预报查询。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "congwupiece",
+      "userId": "publishers:congwupiece",
+      "displayName": "congwupiece",
+      "image": "https://avatars.githubusercontent.com/u/1567682?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 797,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772702614309,
+      "changelog": "- Initial release of the weather query and forecast skill.\n- Supports real-time and multi-day (1-7 days) weather queries by city or region.\n- Provides detailed weather data: temperature, conditions, precipitation probability, wind, humidity, AQI, UV index, and more.\n- Offers intelligent analysis with travel suggestions and key weather highlights.\n- Includes special handling and emphasis for severe weather alerts.\n- Delivers structured reports and recommendations tailored for various usage scenarios.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a08def9bce3f2ca4517e6caa2f635fc4889c6bc0c6ed55f7bde0194d44ce2960"
+}

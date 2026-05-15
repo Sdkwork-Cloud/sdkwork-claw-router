@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-skills-collector@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_skills_collector",
+  "skill": {
+    "id": 59356,
+    "skillKey": "clawhub-agent-skills-collector",
+    "name": "Agent Skills Collector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-skills-collector",
+    "url": "https://clawhub.ai/skills/agent-skills-collector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-skills-collector-68af31705edeb9d4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据Agent业务类型，从SkillHub (skillhub.tencent.com) 实时搜索收集相关的AI Skills并导出为Excel清单。支持交互式选择数据源。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shmiss",
+      "userId": "s17d020qezpdt65bwh3651ncs18407k1",
+      "displayName": "shmiss",
+      "image": "https://avatars.githubusercontent.com/u/266468550?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775702874421,
+      "changelog": "agent-skills-collector v1.0.0\n\n- Initial release.\n- Collects relevant AI Skills for specified agent business types from SkillHub in real time and exports as Excel.\n- Supports interactive selection of data sources.\n- Includes direct search and script-based usage methods.\n- Predefined agent types and keywords provided for convenience.\n- Output Excel file includes detailed skill attributes.\n- Advises API usage best practices and data de-duplication.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e02b850571afe051a7bc1d0eea6fd97081d603b098668a53911370d7c5c6ed7a"
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55182,
+  "uuid": "skill-clawhub-tg-media-resolve",
+  "skillKey": "clawhub-tg-media-resolve",
+  "name": "Telegram Media Resolver",
+  "summary": "Resolve Telegram <media:image>, <media:document>, <media:video> and other media placeholders into actual files for vision/analysis. Use when a Telegram message contains a media placeholder (e.g. <media:image>) that you cannot see — typical.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tg_media_resolve",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kurinzo",
+      "features": [
+        "Resolve Telegram <media:image>, <media:document>, <media:video> and other media placeholders in.",
+        "Use when a Telegram message contains a media placeholder (e.g",
+        "<media:image>) that you cannot see — typically in quoted/replied-to messages or group chat hist.",
+        "Downloads the media via Telegram Bot API and returns a local file path for the image tool or fu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tg-media-resolve@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1148125?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tg-media-resolve",
+      "url": "https://clawhub.ai/skills/tg-media-resolve"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tg-media-resolve",
+    "url": "https://clawhub.ai/skills/tg-media-resolve",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tg-media-resolve-531de3ecec5a2bc5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tg-media-resolve@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tg-media-resolve-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c273c256192ad9f91391d933c308a2bc34be66f869c60347eede625c775f681",
+      "artifactSizeBytes": 2055
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T15:59:48.674Z"
+}

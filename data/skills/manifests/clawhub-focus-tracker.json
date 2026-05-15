@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22344,
+  "uuid": "skill-clawhub-focus-tracker",
+  "skillKey": "clawhub-focus-tracker",
+  "name": "Focus Tracker",
+  "summary": "Maintain persistent focus on active work across compactions and session restarts. Use when starting a multi-step project, when resuming after compaction, whe...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.focus_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "crewhaus",
+      "features": [
+        "Maintain persistent focus on active work across compactions and session restarts",
+        "Use when starting a multi-step project, when resuming after compaction, whe..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/focus-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261488301?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "focus-tracker",
+      "url": "https://clawhub.ai/skills/focus-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "focus-tracker",
+    "url": "https://clawhub.ai/skills/focus-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/focus-tracker-2a1b7a5e6144ef2d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/focus-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-focus-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:35e86c8f9753c2e5f76480a14ee1e21f499cc926246acca5527a715d9276af51",
+      "artifactSizeBytes": 1940
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T08:09:20.162Z"
+}

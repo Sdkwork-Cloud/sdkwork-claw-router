@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/duru-memory@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.duru_memory",
+  "skill": {
+    "id": 46712,
+    "skillKey": "clawhub-duru-memory",
+    "name": "Duru Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "duru-memory",
+    "url": "https://clawhub.ai/skills/duru-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/duru-memory-41a8c2b2bbea7e2f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Markdown-based memory continuity system for agents using local Markdown files as the primary memory source. Use when building or operating local Markdown mem..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "durugy",
+      "userId": "s17803saspx78r3xkafkbmzvbs84bngy",
+      "displayName": "Duru",
+      "image": "https://avatars.githubusercontent.com/u/265482592?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 122,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1776310748925,
+      "changelog": "Initial standalone release with config-driven models, uv-managed runtime, and clarified setup docs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:95dcd3100dc0bc22f27383a822c06b83866e7bb1526e51a3a29a219baf4b205d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skylv-agent-team-coordinator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_agent_team_coordinator",
+  "skill": {
+    "id": 47439,
+    "skillKey": "clawhub-skylv-agent-team-coordinator",
+    "name": "Skylv Agent Team Coordinator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-agent-team-coordinator",
+    "url": "https://clawhub.ai/skills/skylv-agent-team-coordinator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-agent-team-coordinator-3f8647638c64c559.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Coordinates multi-agent teams by decomposing goals, managing task dependencies, scheduling execution, and aggregating collaborative results efficiently."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 104,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777673090863,
+      "changelog": "- Initial release of the Multi-Agent Orchestrator skill.\n- Designs and manages multi-agent collaboration, including task routing and state management.\n- Provides a base Agent class with task fulfillment, memory usage, and LLM integration.\n- Implements Orchestrator for automatic task decomposition, scheduling, and results aggregation.\n- Includes message bus for communication and a state manager for agent lifecycle.\n- Supports role-play and debate orchestration patterns for flexible agent interactions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8a721b8c388ee66542f92dcc5394e6888b8fd74f75a7a8075a6f3f576a7125b9"
+}

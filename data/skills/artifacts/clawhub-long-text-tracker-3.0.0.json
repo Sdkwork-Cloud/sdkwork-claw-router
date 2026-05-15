@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/long-text-tracker@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.long_text_tracker",
+  "skill": {
+    "id": 69111,
+    "skillKey": "clawhub-long-text-tracker",
+    "name": "Long Text Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "long-text-tracker",
+    "url": "https://clawhub.ai/skills/long-text-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/long-text-tracker-c9fae91f05681725.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "长文本追踪系统 - 让分段内容保持连贯。 触发条件（必须全部满足）：分段数≥3 且 总字数≥3000 且 段落间需逻辑连贯。 适用：推文系列、教程系列、报告系列、连载内容。 触发词：写系列推文、写教程系列、写报告系列、连载创作、分段创作长文本 不触发： - 单篇文章（分段数<3） - 独立短文（总字数<3000）..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sjj2026",
+      "userId": "s17c5cc5h6ka4bc1q3je0zwk4983vjj7",
+      "displayName": "sjj2026",
+      "image": "https://avatars.githubusercontent.com/u/271952160?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1776929093478,
+      "changelog": "V3.0 - 100分原创技能：8模块完整+7反模式防护+3完整性原则+41验收等式+状态机+5失败路径含回滚",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8f0111d2c930a8967a7d149f98b652c7daeaad3cdb9a5cd862503256493b46c4"
+}

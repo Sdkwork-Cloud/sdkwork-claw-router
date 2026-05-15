@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nansen-binance-publisher@0.1.8",
+  "version": "0.1.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nansen_binance_publisher",
+  "skill": {
+    "id": 34234,
+    "skillKey": "clawhub-nansen-binance-publisher",
+    "name": "Nansen Binance Publisher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nansen-binance-publisher",
+    "url": "https://clawhub.ai/skills/nansen-binance-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nansen-binance-publisher-ed77d61ff03a7f57.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically fetch multi-dimensional on-chain data using Nansen CLI, compile a comprehensive and beautifully formatted daily report, and publish it to Binan..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xcii",
+      "userId": "s17284t4hbschfbw4pkfwqmz8d83n8cy",
+      "displayName": "0xcii",
+      "image": "https://avatars.githubusercontent.com/u/100404266?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 227,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "0.1.8",
+      "createdAt": 1774181204544,
+      "changelog": "- Expanded on-chain analysis workflow to require both off-chain (web) and on-chain context if a URL or custom topic is provided by the user.\n- Enforced mandatory CLI tool execution via explicit tool running (no faked/placeholder data).\n- Updated report template selection: now includes a sixth analytical template for web-context-triggered reports.\n- Clarified handling instructions and anti-hallucination rules throughout data fetch and synthesis steps.\n- Improved instructions for error and credential handling during CLI execution.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:98f75cfe02dee5e61028edcb263ee31bcd311955bdd3a6a77878bb5a3f4135b7"
+}

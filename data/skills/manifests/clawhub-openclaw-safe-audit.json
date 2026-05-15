@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29813,
+  "uuid": "skill-clawhub-openclaw-safe-audit",
+  "skillKey": "clawhub-openclaw-safe-audit",
+  "name": "OpenClaw Security Audit",
+  "summary": "Security audit and credential hardening tool for OpenClaw instances. Scan for sensitive files, detect credential exposure, check gateway configuration, and m...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_safe_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LuoLuo&Big-fish",
+      "features": [
+        "Security audit and credential hardening tool for OpenClaw instances",
+        "Scan for sensitive files, detect credential exposure, check gateway configuration, and m..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-safe-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29589537?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-safe-audit",
+      "url": "https://clawhub.ai/skills/openclaw-safe-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-safe-audit",
+    "url": "https://clawhub.ai/skills/openclaw-safe-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-safe-audit-130f11d527a94e5d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-safe-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-safe-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d80a3c57c5d60773128170e442f4e032f1e5a80127c0a40b3c1782eab3e9db34",
+      "artifactSizeBytes": 2404
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T17:20:54.692Z"
+}

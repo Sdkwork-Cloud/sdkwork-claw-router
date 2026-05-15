@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/withings-mcp@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.withings_mcp",
+  "skill": {
+    "id": 48623,
+    "skillKey": "clawhub-withings-mcp",
+    "name": "Withings MCP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "withings-mcp",
+    "url": "https://clawhub.ai/skills/withings-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/withings-mcp-7c765a59782b6ccd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect an MCP-compatible agent to local Withings body measures, sleep, activity, workouts, and heart records. Use when an AI agent needs setup, usage, safet..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "davidmosiah",
+      "userId": "s179ta33e7njh2mv4jrf0yxb5n83f191",
+      "displayName": "David Batista",
+      "image": "https://avatars.githubusercontent.com/u/624359?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 97,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1778063915044,
+      "changelog": "Rename skill for provider-first discovery and keep Delx branding in content.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c167ecef6b3b755e44166e049d622bc4a1bd47a718701c9ffadaf508c1db6d0e"
+}

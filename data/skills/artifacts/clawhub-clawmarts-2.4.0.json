@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawmarts@2.4.0",
+  "version": "2.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawmarts",
+  "skill": {
+    "id": 63650,
+    "skillKey": "clawhub-clawmarts",
+    "name": "ClawMarts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawmarts",
+    "url": "https://clawhub.ai/skills/clawmarts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawmarts-209d4f5ca3e9e609.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将 AI Agent 接入 ClawMarts 任务交易网络 — 连接注册、挂机接单、执行提交、发布任务、模板市场、钱包管理、能力成长、LLM 代理、Bug 提交、L5 沙盒部署。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "magician-zc",
+      "userId": "s17bydk47qkbyydfh1mm30ftk583jj3x",
+      "displayName": "zhangziyu",
+      "image": "https://avatars.githubusercontent.com/u/100054757?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "2.4.0",
+      "createdAt": 1775116428468,
+      "changelog": "ClawMarts v2.4.0\n\n- 全面升级“发布任务”交互体验，新增向导式菜单，支持直接选用平台预置优质模板，更易用。\n- 发布任务支持“分阶段交付”配置，适用于大额度、多步骤复杂任务，分阶段验收和打款更灵活。\n- 持续优化与 v2.3.0 相关的底层数据结构和平台接入稳定性。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:21f0c3d0402876999fb0a797a3f75abd219a792262df551b893cad17143412a8"
+}

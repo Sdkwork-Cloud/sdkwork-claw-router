@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rtk-compress@1.15.2",
+  "version": "1.15.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rtk_compress",
+  "skill": {
+    "id": 50973,
+    "skillKey": "clawhub-rtk-compress",
+    "name": "Rtk Compress"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rtk-compress",
+    "url": "https://clawhub.ai/skills/rtk-compress",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rtk-compress-3a66eff8760c2dd4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Save 60-90% of LLM tokens on shell commands, file reads, and test outputs. Wraps rtk CLI for compressed output."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "erscoder",
+      "userId": "publishers:erscoder",
+      "displayName": "erscoder",
+      "image": "https://avatars.githubusercontent.com/u/9429379?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 574,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.15.2",
+      "createdAt": 1772802808326,
+      "changelog": "- Added a structured YAML header with metadata (name, version, description, tags).\n- Expanded and detailed the Commands Reference section, including example usages for file, git, GitHub, test, build, lint, containers, analytics, and token savings features.\n- Updated language throughout for clarity and completeness.\n- Existing agent rules, savings reference table, and installation instructions retained.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4f483a481bfd47e063040853394b10191dc9ed8a4769bc7269d1c75d72cd93db"
+}

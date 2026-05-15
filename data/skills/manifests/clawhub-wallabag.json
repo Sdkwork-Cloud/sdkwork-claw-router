@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18732,
+  "uuid": "skill-clawhub-wallabag",
+  "skillKey": "clawhub-wallabag",
+  "name": "Wallabag",
+  "summary": "Manage Wallabag bookmarks through the Wallabag Developer API with OAuth2 authentication, including creating, reading, updating, deleting, searching, and tag...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wallabag",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Florian Brandel",
+      "features": [
+        "Manage Wallabag bookmarks through the Wallabag Developer API with OAuth2 authentication, includ."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wallabag@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wallabag",
+      "url": "https://clawhub.ai/skills/wallabag"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wallabag",
+    "url": "https://clawhub.ai/skills/wallabag",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wallabag-9acd5100a6ff41e4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wallabag@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wallabag-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3f310a781a5665d3a278ce329b8b9780ce217fd180e147f684ddb0229513b58f",
+      "artifactSizeBytes": 1986
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T19:43:17.230Z"
+}

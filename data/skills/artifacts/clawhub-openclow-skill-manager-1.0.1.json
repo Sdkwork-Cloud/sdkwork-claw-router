@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclow-skill-manager@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclow_skill_manager",
+  "skill": {
+    "id": 60653,
+    "skillKey": "clawhub-openclow-skill-manager",
+    "name": "skill-manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclow-skill-manager",
+    "url": "https://clawhub.ai/skills/openclow-skill-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclow-skill-manager-eb48fb315e22df55.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "管理 OpenClaw Skills：以表格形式列出所有 skills、显示功能介绍、找出功能重复的 skills。Use when: 用户想知道安装了哪些 skills、某个 skill 是做什么的、或者想找出重复功能的 skills。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "damiencronw",
+      "userId": "s17c60c9m3bq316p0h0gym6y1183fdqg",
+      "displayName": "damienCronw",
+      "image": "https://avatars.githubusercontent.com/u/128512183?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1132,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772942038420,
+      "changelog": "Skill Manager 1.0.1 增加了对已安装 Skills 的分类与去重功能，优化展示方式：\n\n- 以表格形式详细列出所有支持的 Skills，包括名称与功能简介\n- 新增 Skills 分类表，便于查找语音、数据库、工具等不同类型\n- 明确标注功能重复的 Skills 及其依赖关系，方便用户排查功能重叠\n- 精简描述，提升可读性和推荐性\n- 增添实用命令，支持分类展示",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dd60c922a37b366bb0e3e88453b6ef3e808a0a50ab00c8936ab73e6ffb1c54ba"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cmic-skill-scanner-linux-arm64@0.8.0",
+  "version": "0.8.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cmic_skill_scanner_linux_arm64",
+  "skill": {
+    "id": 59313,
+    "skillKey": "clawhub-cmic-skill-scanner-linux-arm64",
+    "name": "CMIC Skill Scanner (Linux ARM64)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cmic-skill-scanner-linux-arm64",
+    "url": "https://clawhub.ai/skills/cmic-skill-scanner-linux-arm64",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cmic-skill-scanner-linux-arm64-8c9969affe4e7b3e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用内置 Rust 引擎审计待安装的 skill 包或归档，并可选桥接外部 scanner。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cyzlmh",
+      "userId": "s171nn815hk3s0ht69bn9d96hn858ye2",
+      "displayName": "cyzlmh",
+      "image": "https://avatars.githubusercontent.com/u/24603258?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "0.8.0",
+      "createdAt": 1776792736085,
+      "changelog": "v0.8.0 introduces breaking changes and major documentation/usage updates.\n\n- Renamed the skill to \"skillscan-wrapper\" with a new purpose and description.\n- Completely overhauled documentation: clearer security notes, detailed trust model, Chinese localization.\n- Updated binary info: Version bump to 0.8.0 (Linux ARM64).\n- Added explanations for optional features (`--upload-url`, `--engine external`), which remain disabled by default.\n- Outlined explicit permissions and clarified user responsibilities for verification and security.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:17733484d7eaee0fe6f815bec008ba6225a5f67f5da97665442cd8265a5460a6"
+}

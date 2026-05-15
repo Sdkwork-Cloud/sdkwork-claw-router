@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14110,
+  "uuid": "skill-clawhub-dynamic-model-selector",
+  "skillKey": "clawhub-dynamic-model-selector",
+  "name": "Dynamic Model Selector",
+  "summary": "Dynamically select the best AI model for a task based on complexity, cost, and availability in GitHub Copilot. Use when deciding between free/paid models, or when you want automatic model routing based on query analysis.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dynamic_model_selector",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mpelissari",
+      "features": [
+        "Dynamically select the best AI model for a task based on complexity, cost, and availability in.",
+        "Use when deciding between free/paid models, or when you want automatic model routing based on q."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dynamic-model-selector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2828049?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dynamic-model-selector",
+      "url": "https://clawhub.ai/skills/dynamic-model-selector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dynamic-model-selector",
+    "url": "https://clawhub.ai/skills/dynamic-model-selector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dynamic-model-selector-36208e6ddc95ade4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dynamic-model-selector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dynamic-model-selector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:96eaff448dafeb71619fccc66112e204da96d04dcf5820bcf4fd69b141b1610f",
+      "artifactSizeBytes": 2041
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T13:18:44.726Z"
+}

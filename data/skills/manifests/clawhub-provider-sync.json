@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54565,
+  "uuid": "skill-clawhub-provider-sync",
+  "skillKey": "clawhub-provider-sync",
+  "name": "Provider Sync",
+  "summary": "Sync provider model lists into OpenClaw config (dry-run preview → confirm → apply). Trigger: /provider_sync",
+  "version": "2.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.provider_sync",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Joey-Chen",
+      "features": [
+        "Sync provider model lists into OpenClaw config (dry-run preview → confirm → apply)",
+        "Trigger: /provider_sync"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/provider-sync@2.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48274987?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "provider-sync",
+      "url": "https://clawhub.ai/skills/provider-sync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "provider-sync",
+    "url": "https://clawhub.ai/skills/provider-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/provider-sync-241e3921278669d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/provider-sync@2.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-provider-sync-2.1.5.json",
+      "version": "2.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e0faf5986f00baac2cfc9a8eea2181948820270d8f06ccce58a0d13dc737d74",
+      "artifactSizeBytes": 1981
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T06:33:56.032Z"
+}

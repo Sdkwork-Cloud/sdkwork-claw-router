@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/self-improving-agent-ollieb89@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_improving_agent_ollieb89",
+  "skill": {
+    "id": 54733,
+    "skillKey": "clawhub-self-improving-agent-ollieb89",
+    "name": "Self Improving Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-improving-agent-ollieb89",
+    "url": "https://clawhub.ai/skills/self-improving-agent-ollieb89",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-improving-agent-ollieb89-6bec1e43ef0d1bdf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Capture errors, corrections, and recurring patterns into structured `.learnings/` logs, then promote durable guidance into workspace memory files. Use when c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ollieb89",
+      "userId": "publishers:ollieb89",
+      "displayName": "ollieb89",
+      "image": "https://avatars.githubusercontent.com/u/37653836?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 366,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772689662766,
+      "changelog": "Fork: optimized SKILL structure, added metadata, and normalized package manifest",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5858d322b4e98ab469955523de572590e42f466b42351149daac2798640a5e8f"
+}

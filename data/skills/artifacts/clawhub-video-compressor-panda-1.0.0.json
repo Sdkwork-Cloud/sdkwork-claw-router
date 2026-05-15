@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-compressor-panda@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_compressor_panda",
+  "skill": {
+    "id": 39341,
+    "skillKey": "clawhub-video-compressor-panda",
+    "name": "Video Compressor Panda"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-compressor-panda",
+    "url": "https://clawhub.ai/skills/video-compressor-panda",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-compressor-panda-67312702cf0f4b03.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 500MB 10-minute MP4 recording into 1080p compressed MP4 files just by typing what you need. Whether it's reducing video file size for sharing or uploa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 179,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776752101758,
+      "changelog": "Initial release of Video Compressor Panda — fast and easy AI-powered video compression.\n\n- Instantly compress and export large video files (up to 500MB) to MP4 or other formats via simple text instructions.\n- Automatic cloud setup: effortlessly connects, checks or fetches your token, and manages sessions in the background.\n- Handles uploads, exports, credit checks, and state queries with clear user feedback.\n- All video processing is performed on remote GPU servers, returning results in 30–90 seconds.\n- Robust error handling for authentication, file size/format, and account/plan issues.\n- Optimized for content creators, students, and marketers needing quick, shareable video compression without complex settings.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a6e38b71189791f8b2d38de637360c9db3e7a8ea5238003eb72f9dfe89fe2dc6"
+}

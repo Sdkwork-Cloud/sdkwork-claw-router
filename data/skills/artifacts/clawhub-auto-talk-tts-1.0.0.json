@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-talk-tts@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_talk_tts",
+  "skill": {
+    "id": 30425,
+    "skillKey": "clawhub-auto-talk-tts",
+    "name": "Auto-Talk-TTS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-talk-tts",
+    "url": "https://clawhub.ai/skills/auto-talk-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-talk-tts-e888585627bd9fff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Auto-speak every message using edge-tts. Automatically converts all responses to speech asynchronously in the background. Install the package if needed, then..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stefanochiodino",
+      "userId": "publishers:stefanochiodino",
+      "displayName": "StefanoChiodino",
+      "image": "https://avatars.githubusercontent.com/u/1428893?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774107142943,
+      "changelog": "Initial release: Auto-speak every message using edge-tts. Installs node-edge-tts if needed and speaks asynchronously in background.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:77f0066f2d8d3453553cc2e95e5acb0624ebc88ce371f1fc71282ef467e8b808"
+}

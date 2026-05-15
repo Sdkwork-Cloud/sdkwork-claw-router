@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8351,
+  "uuid": "skill-clawhub-n8n",
+  "skillKey": "clawhub-n8n",
+  "name": "n8n",
+  "summary": "Manage n8n workflows and automations via API. Use when working with n8n workflows, executions, or automation tasks - listing workflows, activating/deactivating, checking execution status, manually triggering workflows, or debugging automat.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.n8n",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "thomasansems",
+      "features": [
+        "Manage n8n workflows and automations via API",
+        "Use when working with n8n workflows, executions, or automation tasks",
+        "listing workflows, activating/deactivating, checking execution status, manually triggering work."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/n8n@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8612092?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "n8n",
+      "url": "https://clawhub.ai/skills/n8n"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "n8n",
+    "url": "https://clawhub.ai/skills/n8n",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/n8n-636396f02b6571e4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/n8n@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-n8n-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:875149f05af9c5cdddc194b7652ca9927c36488088d008ba394d8f1e8645f983",
+      "artifactSizeBytes": 8461
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T18:27:11.005Z"
+}

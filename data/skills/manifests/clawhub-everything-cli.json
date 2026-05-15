@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27536,
+  "uuid": "skill-clawhub-everything-cli",
+  "skillKey": "clawhub-everything-cli",
+  "name": "agent-everything.exe",
+  "summary": "Fast indexed local file and path search on Windows using voidtools Everything. Use this whenever a task needs local file lookup, path lookup, recent-file dis...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.everything_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zhongyi \"William\" Qiu",
+      "features": [
+        "Fast indexed local file and path search on Windows using voidtools Everything",
+        "Use this whenever a task needs local file lookup, path lookup, recent-file dis..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/everything-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130611759?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "everything-cli",
+      "url": "https://clawhub.ai/skills/everything-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "everything-cli",
+    "url": "https://clawhub.ai/skills/everything-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/everything-cli-a5a98cb98de22214.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/everything-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-everything-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6007de1ac3ebefc4478db20dae8737bae2f4b5c6d769f4d1391ad3212375ed1f",
+      "artifactSizeBytes": 2533
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T09:39:41.498Z"
+}

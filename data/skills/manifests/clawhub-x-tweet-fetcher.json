@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8856,
+  "uuid": "skill-clawhub-x-tweet-fetcher",
+  "skillKey": "clawhub-x-tweet-fetcher",
+  "name": "X Tweet Fetcher",
+  "summary": "Fetch full tweets, long tweets, quoted tweets, and X Articles from X/Twitter without login or API keys, using no dependencies and zero configuration.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_tweet_fetcher",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hjw21century",
+      "features": [
+        "Fetch full tweets, long tweets, quoted tweets, and X Articles from X/Twitter without login or A."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-tweet-fetcher@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7070409?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-tweet-fetcher",
+      "url": "https://clawhub.ai/skills/x-tweet-fetcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-tweet-fetcher",
+    "url": "https://clawhub.ai/skills/x-tweet-fetcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-tweet-fetcher-bba8c3f83e1c3fc7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-tweet-fetcher@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-tweet-fetcher-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f15902a5a7e46ed2e0fb542239a65555b10af7deca69ec91d74768447386f113",
+      "artifactSizeBytes": 2420
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T03:55:32.670Z"
+}

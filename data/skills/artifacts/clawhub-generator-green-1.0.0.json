@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/generator-green@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.generator_green",
+  "skill": {
+    "id": 48168,
+    "skillKey": "clawhub-generator-green",
+    "name": "Generator Green"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "generator-green",
+    "url": "https://clawhub.ai/skills/generator-green",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/generator-green-01a242aed5006d84.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate video clips into background-replaced videos with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. YouTubers, streamers, content creator..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhogan2013-9",
+      "userId": "s1734kgyh0j16a86enc51zqp6184cy81",
+      "displayName": "mhogan2013-9",
+      "image": "https://avatars.githubusercontent.com/u/208827708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 103,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777826962969,
+      "changelog": "generator-green 1.0.0 — Initial Release\n\n- Launches \"Generator Green:\" a video processing tool for removing green screens and replacing backgrounds using cloud rendering.\n- Supports video uploads in MP4, MOV, AVI, WebM (up to 500MB) with 1080p MP4 output.\n- Automatic cloud setup with anonymous token and session management; requires minimal setup.\n- Offers quick, intent-based actions for uploads, exports, credits, and timeline edits.\n- Comprehensive error handling and guidance for common workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b5b0076ac82e98a1e2ebc3e557db71b94e211afa3f1c83b7c6e745b684d7b66b"
+}

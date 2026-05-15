@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72299,
+  "uuid": "skill-clawhub-ai-news-research",
+  "skillKey": "clawhub-ai-news-research",
+  "name": "AI行业新闻搜集小技能",
+  "summary": "当需要梳理某段时间内AI行业重要新闻时，可以调用使用这个技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_news_research",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gyifei",
+      "features": [
+        "当需要梳理某段时间内AI行业重要新闻时，可以调用使用这个技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-news-research@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/215229398?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-news-research",
+      "url": "https://clawhub.ai/skills/ai-news-research"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-news-research",
+    "url": "https://clawhub.ai/skills/ai-news-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-news-research-e6c2f271391a17d7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-news-research@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-news-research-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1dff28623667b924b02bfdb2959371dc27b5ef9f750d545a28ed9f63d04decd9",
+      "artifactSizeBytes": 2276
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T13:26:17.241Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8653,
+  "uuid": "skill-clawhub-skills-search",
+  "skillKey": "clawhub-skills-search",
+  "name": "Skills.sh Search",
+  "summary": "Search skills.sh registry from CLI. Find and discover agent skills from the skills.sh ecosystem.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skills_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Seth Rose",
+      "features": [
+        "Search skills.sh registry from CLI",
+        "Find and discover agent skills from the skills.sh ecosystem."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skills-search@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10383809?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skills-search",
+      "url": "https://clawhub.ai/skills/skills-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skills-search",
+    "url": "https://clawhub.ai/skills/skills-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skills-search-2430eae74b231eab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skills-search@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-skills-search-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8c2b3a91fcc96320f1fb4599d669b54bdf8a7e71fc48ec4c13e03fef8a787f69",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-21T04:49:44.785Z"
+}

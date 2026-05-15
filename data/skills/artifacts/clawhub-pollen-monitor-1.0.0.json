@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pollen-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pollen_monitor",
+  "skill": {
+    "id": 67862,
+    "skillKey": "clawhub-pollen-monitor",
+    "name": "Pollen Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pollen-monitor",
+    "url": "https://clawhub.ai/skills/pollen-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pollen-monitor-ea05bb434891a03c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "中国天气网花粉浓度监测技能。查询中国大陆城市花粉浓度等级和防护建议。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "noviarick",
+      "userId": "s177mc9sm0bapb81387ajj1ga583kb23",
+      "displayName": "NoviaRick",
+      "image": "https://avatars.githubusercontent.com/u/13520905?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 219,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774257975045,
+      "changelog": "Pollen Monitor v1.0.0 – Initial Release 🎉\n\n- Provides real-time pollen concentration monitoring for 53 mainland China cities.\n- Offers pollen level and health protection advice via Python or Bash scripts.\n- Fetches official data from China Weather Network and hospitals—no API key needed.\n- Includes detailed usage instructions, supported cities list, and data explanations.\n- Returns 7-day historical and forecast data with daily concentrations and recommendations.\n\n花粉数据监测技能 v1.0.0 – 首次发布 🎉\n- 为中国大陆的 53 个城市提供实时花粉浓度监测服务。\n- 通过 Python 或 Bash 脚本提供花粉浓度水平及健康防护建议。\n- 从中国天气网和医院获取官方数据——无需 API 密钥。\n- 包含详细的使用说明、支持的城市列表以及数据解释。\n- 提供 7 天的历史和预测数据，包括每日浓度和建议。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fab63753c44a3a0d1fff8a7d686d08fd94e744a85fc3200c7f85294f36b4a4f2"
+}

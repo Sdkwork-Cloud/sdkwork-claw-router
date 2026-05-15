@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14877,
+  "uuid": "skill-clawhub-digest",
+  "skillKey": "clawhub-digest",
+  "name": "Digest",
+  "summary": "Curate external information into personalized updates. Auto-learns format, timing, sources, and depth preferences.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.digest",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Curate external information into personalized updates",
+        "Auto-learns format, timing, sources, and depth preferences."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/digest@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "digest",
+      "url": "https://clawhub.ai/skills/digest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "digest",
+    "url": "https://clawhub.ai/skills/digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/digest-0bf474896363505e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/digest@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-digest-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9299646537022e03ff9bb6bda10cd127f655474333abe5930436a4388381e1c9",
+      "artifactSizeBytes": 1780
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T11:07:11.894Z"
+}

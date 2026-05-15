@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fitch-ratings@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fitch_ratings",
+  "skill": {
+    "id": 66567,
+    "skillKey": "clawhub-fitch-ratings",
+    "name": "Fitch Ratings"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fitch-ratings",
+    "url": "https://clawhub.ai/skills/fitch-ratings",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fitch-ratings-5abe8443fcace4cd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "信用评级行业寡头之一，与标普穆迪并列为全球三大评级机构，2024年纽交所上市"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777241188106,
+      "changelog": "Fitch Ratings skill v1.0.0 changelog:\n\n- 新增对Fitch Ratings的详细介绍，包括百年发展历程、核心业务与商业模式说明\n- 重点阐述公司如何与标普、穆迪形成三寡头格局，并分析其难以替代的行业地位\n- 提供2024年公司营收、员工数、市占率等关键数据\n- 详解信用评级在全球金融体系中的核心价值及监管壁垒\n- 增加2008年金融危机中评级机构争议与后续监管改革内容",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b737e7c9f2b013be3f9a97b1a287a415a0f47ba69aa5b29db509ab4dd265a16c"
+}

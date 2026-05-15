@@ -398,35 +398,27 @@ routes:
     package: sdkwork-claw-router-courses
     owner: public-portal
     route_scope: public
-    delivery_kind: schema_provenanced_content
-    provenance_tables: [content_course, content_course_relation, content_reaction]
-    static_delivery:
-      mode: curated_seed_content
-      refresh_policy: manual_content_release
-      max_staleness: release_bound
-      upgrade_triggers: [authoring_workflow, user_personalization, compliance_review]
-      source_manifest_ref: "static-route:/courses"
+    delivery_kind: sdk_backed_business_runtime
+    api_surface: app
+    operation_routes: [/courses]
     evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/data.ts
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseCatalog.ts
-      - generated/schema/manifest/schema-manifest.json
+      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts
+      - services/sdkwork-claw-product/src/api/app_course.rs
+      - generated/openapi/clawrouter-app-openapi.json
+      - docs/schema-registry/frontend-field-contracts.yaml
 
   - route: /courses/:id
     package: sdkwork-claw-router-courses
     owner: public-portal
     route_scope: public
-    delivery_kind: schema_provenanced_content
-    provenance_tables: [content_course, content_course_section, content_course_lesson, content_course_relation]
-    static_delivery:
-      mode: curated_seed_content
-      refresh_policy: manual_content_release
-      max_staleness: release_bound
-      upgrade_triggers: [authoring_workflow, user_personalization, compliance_review]
-      source_manifest_ref: "static-route:/courses/:id"
+    delivery_kind: sdk_backed_business_runtime
+    api_surface: app
+    operation_routes: [/courses, /courses/:id]
     evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/data.ts
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseCatalog.ts
-      - generated/schema/manifest/schema-manifest.json
+      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts
+      - services/sdkwork-claw-product/src/api/app_course.rs
+      - generated/openapi/clawrouter-app-openapi.json
+      - docs/schema-registry/frontend-field-contracts.yaml
 
   - route: /docs
     package: sdkwork-claw-router-api-reference
@@ -558,9 +550,6 @@ routes:
     gate_sources:
       - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-sdk-reference/src/pages/SdkReference.tsx
     browser_network_sources:
-      - endpoint: /openapi.json
-        source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-sdk-reference/src/pages/SdkReference.tsx
-        purpose: local_openapi_snapshot
       - endpoint: /api/sdk-readme
         source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-sdk-reference/src/pages/SdkReference.tsx
         purpose: local_tool_api

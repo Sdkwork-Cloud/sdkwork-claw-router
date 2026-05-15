@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17851,
+  "uuid": "skill-clawhub-codex-skill",
+  "skillKey": "clawhub-codex-skill",
+  "name": "Codex Skill",
+  "summary": "Use when user asks to leverage codex, gpt-5, or gpt-5.1 to implement something (usually implement a plan or feature designed by Claude). Provides non-interac...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codex_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pengfei Ni",
+      "features": [
+        "Use when user asks to leverage codex, gpt-5, or gpt-5.1 to implement something (usually impleme.",
+        "Provides non-interac..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/codex-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/676637?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "codex-skill",
+      "url": "https://clawhub.ai/skills/codex-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codex-skill",
+    "url": "https://clawhub.ai/skills/codex-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codex-skill-d525914c92978b8b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/codex-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-codex-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:308c3f0ef3d5ca0bd452d9cd4671590886c8427e09d44e39732250eb44fdacc2",
+      "artifactSizeBytes": 1917
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T04:34:21.177Z"
+}

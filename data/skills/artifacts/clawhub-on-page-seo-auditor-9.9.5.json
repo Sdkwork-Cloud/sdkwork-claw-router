@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/on-page-seo-auditor@9.9.5",
+  "version": "9.9.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.on_page_seo_auditor",
+  "skill": {
+    "id": 57172,
+    "skillKey": "clawhub-on-page-seo-auditor",
+    "name": "On Page Seo Auditor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "on-page-seo-auditor",
+    "url": "https://clawhub.ai/skills/on-page-seo-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/on-page-seo-auditor-1f61e8e128332b27.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit on-page SEO: titles, headers, images, links with scored report and fix priorities. 页面SEO审计/排名诊断"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aaron-he-zhu",
+      "userId": "s17e1tg8pjra8dn1dvtq21sahx83hrxj",
+      "displayName": "Aaron Zhu",
+      "image": "https://avatars.githubusercontent.com/u/139607425?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3046,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 3,
+      "versions": 23
+    },
+    "latestVersion": {
+      "version": "9.9.5",
+      "createdAt": 1777349139068,
+      "changelog": "Published from v9.9.5 @ 7ecc77b",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a0fe0e9660156c641fb60a3337b91615156867fcbe042e053cebaf2fbcb48395"
+}

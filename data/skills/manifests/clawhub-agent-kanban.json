@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22399,
+  "uuid": "skill-clawhub-agent-kanban",
+  "skillKey": "clawhub-agent-kanban",
+  "name": "Agent Kanban",
+  "summary": "OpenClaw Agent Dashboard - A Bloomberg Terminal-style web interface for real-time monitoring of all Agent status, session history, and session file sizes. Us...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_kanban",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dyh",
+      "features": [
+        "OpenClaw Agent Dashboard",
+        "A Bloomberg Terminal-style web interface for real-time monitoring of all Agent status, session."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-kanban@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1358366?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-kanban",
+      "url": "https://clawhub.ai/skills/agent-kanban"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-kanban",
+    "url": "https://clawhub.ai/skills/agent-kanban",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-kanban-e2c5f6ea61557dee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-kanban@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-kanban-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:70675b934f20f5896d1dbe19737cc887d6e152aa9bb2f71f02097c0c03bd9047",
+      "artifactSizeBytes": 1929
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T10:14:48.301Z"
+}

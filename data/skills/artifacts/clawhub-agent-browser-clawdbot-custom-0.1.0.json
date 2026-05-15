@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-browser-clawdbot-custom@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_browser_clawdbot_custom",
+  "skill": {
+    "id": 38120,
+    "skillKey": "clawhub-agent-browser-clawdbot-custom",
+    "name": "Agent Browser Clawdbot 0.1.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-browser-clawdbot-custom",
+    "url": "https://clawhub.ai/skills/agent-browser-clawdbot-custom",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-browser-clawdbot-custom-75a2364a6002df45.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Headless browser automation CLI optimized for AI agents with accessibility tree snapshots and ref-based element selection"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "baikaishuixyz",
+      "userId": "s17d479rksr3qjbrnjb8k1yyq183reyh",
+      "displayName": "baikaishuixyz",
+      "image": "https://avatars.githubusercontent.com/u/7136405?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774706446658,
+      "changelog": "Initial public release of the agent-browser skill.\n\n- Provides CLI for fast, headless browser automation with accessibility tree snapshots and ref-based element selection.\n- Supports deterministic, multi-step workflows, session isolation, and state saving/loading.\n- Includes commands for navigation, element interaction, network control, cookies/storage, tabs/frames, and taking snapshots/screenshots.\n- Optimized for performance and working with complex SPAs; best used when deterministic automation is needed.\n- Comprehensive SKILL.md documentation included with usage examples and best practices.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8d675b19a8cfb3c67f047fabd33551fd3db36d5b60fa321e3c679e6aadf7344d"
+}

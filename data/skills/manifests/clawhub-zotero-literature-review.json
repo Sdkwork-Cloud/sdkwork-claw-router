@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63073,
+  "uuid": "skill-clawhub-zotero-literature-review",
+  "skillKey": "clawhub-zotero-literature-review",
+  "name": "zotero-literature-review",
+  "summary": "深度集成 Zotero 本地及联网文献检索，验证全文 PDF，精准提取技术细节，生成准确结构化的学术文献综述。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zotero_literature_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sun2001",
+      "features": [
+        "深度集成 Zotero 本地及联网文献检索，验证全文 PDF，精准提取技术细节，生成准确结构化的学术文献综述。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zotero-literature-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47412015?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zotero-literature-review",
+      "url": "https://clawhub.ai/skills/zotero-literature-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zotero-literature-review",
+    "url": "https://clawhub.ai/skills/zotero-literature-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zotero-literature-review-36b707c85f8c76d9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zotero-literature-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zotero-literature-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7b5b236942cfb108ba1dfd8d542c1d43b96f47b37dd6e1c99007975bf8008e8c",
+      "artifactSizeBytes": 12818
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T12:26:39.111Z"
+}

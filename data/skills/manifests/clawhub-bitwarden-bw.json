@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20065,
+  "uuid": "skill-clawhub-bitwarden-bw",
+  "skillKey": "clawhub-bitwarden-bw",
+  "name": "Bitwarden Bw",
+  "summary": "Access and manage Bitwarden passwords securely using the official bw CLI.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bitwarden_bw",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zu",
+      "features": [
+        "Access and manage Bitwarden passwords securely using the official bw CLI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bitwarden-bw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24535089?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bitwarden-bw",
+      "url": "https://clawhub.ai/skills/bitwarden-bw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bitwarden-bw",
+    "url": "https://clawhub.ai/skills/bitwarden-bw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bitwarden-bw-ce86ff6821d1e1ba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bitwarden-bw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bitwarden-bw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0921e7993f3fbea72408454a67a6ddfd87e09fc7d398c5c5bfabbcebeb29954e",
+      "artifactSizeBytes": 2051
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T13:45:58.994Z"
+}

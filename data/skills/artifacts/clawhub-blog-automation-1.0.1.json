@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/blog-automation@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blog_automation",
+  "skill": {
+    "id": 19518,
+    "skillKey": "clawhub-blog-automation",
+    "name": "WordPress Blog Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blog-automation",
+    "url": "https://clawhub.ai/skills/blog-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blog-automation-2139a05ef00e9f6b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated WordPress blog publishing with scheduling"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wespeakallday",
+      "userId": "s173n6dbpr2gymw0t3td3k6fpd83s82b",
+      "displayName": "Carl Luis Olivier",
+      "image": "https://avatars.githubusercontent.com/u/178078524?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 597,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772606703923,
+      "changelog": "Initial publish - WP publishing with scheduling",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6dc2233db39644193482e136310d069bb7d1cd74d4c27890d9f8b37b8e42451d"
+}

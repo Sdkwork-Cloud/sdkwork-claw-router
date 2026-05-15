@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64029,
+  "uuid": "skill-clawhub-yuyonghao-a2a-server",
+  "skillKey": "clawhub-yuyonghao-a2a-server",
+  "name": "A2a Server",
+  "summary": "基于 WebSocket 的多智能体 P2P 通信服务器，支持低延迟消息转发、RPC 调用、发布/订阅、能力发现及离线消息队列。",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yuyonghao_a2a_server",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yuyonghao-123",
+      "features": [
+        "基于 WebSocket 的多智能体 P2P 通信服务器，支持低延迟消息转发、RPC 调用、发布/订阅、能力发现及离线消息队列。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yuyonghao-a2a-server@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267580628?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yuyonghao-a2a-server",
+      "url": "https://clawhub.ai/skills/yuyonghao-a2a-server"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yuyonghao-a2a-server",
+    "url": "https://clawhub.ai/skills/yuyonghao-a2a-server",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yuyonghao-a2a-server-094ae1f2cbe03bda.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yuyonghao-a2a-server@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-yuyonghao-a2a-server-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:26e26710db7e4ec987cc0bc2128e228161a976cae374bac194ababb723369655",
+      "artifactSizeBytes": 2024
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T01:29:07.895Z"
+}

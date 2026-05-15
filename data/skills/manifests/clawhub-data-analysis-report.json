@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67919,
+  "uuid": "skill-clawhub-data-analysis-report",
+  "skillKey": "clawhub-data-analysis-report",
+  "name": "Data Analysis Report",
+  "summary": "自动分析多种格式数据，生成含图表、关键洞察和建议的中文完整报告，支持本地安全处理和批量文件分析。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_analysis_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ruiyongwang",
+      "features": [
+        "自动分析多种格式数据，生成含图表、关键洞察和建议的中文完整报告，支持本地安全处理和批量文件分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/data-analysis-report@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/127424769?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "data-analysis-report",
+      "url": "https://clawhub.ai/skills/data-analysis-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-analysis-report",
+    "url": "https://clawhub.ai/skills/data-analysis-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-analysis-report-991a0619f7e8da14.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/data-analysis-report@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-data-analysis-report-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7b4705d5e984c41de609f1beb23efc8dc34a7f419dca43b8bd37c7fef711651b",
+      "artifactSizeBytes": 2389
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T12:56:47.891Z"
+}

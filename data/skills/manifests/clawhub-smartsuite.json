@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23740,
+  "uuid": "skill-clawhub-smartsuite",
+  "skillKey": "clawhub-smartsuite",
+  "name": "Smartsuite",
+  "summary": "Smartsuite integration. Manage Organizations. Use when the user wants to interact with Smartsuite data.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smartsuite",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Smartsuite integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Smartsuite data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smartsuite@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smartsuite",
+      "url": "https://clawhub.ai/skills/smartsuite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smartsuite",
+    "url": "https://clawhub.ai/skills/smartsuite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smartsuite-46bc687fe006a0ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smartsuite@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-smartsuite-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2a328810c8aa85399639ebba71fb4ae7d215b7a44d092947611862750cd4cd4",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T12:04:32.111Z"
+}

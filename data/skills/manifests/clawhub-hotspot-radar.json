@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70393,
+  "uuid": "skill-clawhub-hotspot-radar",
+  "skillKey": "clawhub-hotspot-radar",
+  "name": "热点雷达",
+  "summary": "全网热榜追踪器，聚合微博/知乎/抖音/B站/小红书热搜榜单，支持趋势分析、话题监控和定时推送 (user)",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hotspot_radar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Peter Dog",
+      "features": [
+        "全网热榜追踪器，聚合微博/知乎/抖音/B站/小红书热搜榜单，支持趋势分析、话题监控和定时推送 (user)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hotspot-radar@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/203931100?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hotspot-radar",
+      "url": "https://clawhub.ai/skills/hotspot-radar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hotspot-radar",
+    "url": "https://clawhub.ai/skills/hotspot-radar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hotspot-radar-7441bca61e66d515.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hotspot-radar@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hotspot-radar-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2e3b0153aa09b4d55689f2695ceb15e414e228248a522ba14fa2fe56939873f0",
+      "artifactSizeBytes": 2335
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T07:20:02.663Z"
+}

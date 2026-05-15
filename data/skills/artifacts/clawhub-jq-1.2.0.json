@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jq@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jq",
+  "skill": {
+    "id": 9150,
+    "skillKey": "clawhub-jq",
+    "name": "jq"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jq",
+    "url": "https://clawhub.ai/skills/jq",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jq-c84d384f2a25cca2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Command-line JSON processor. Extract, filter, transform JSON."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gumadeiras",
+      "userId": "s1753zvp6tjqvngzbef17gxshh849mep",
+      "displayName": "Gustavo Madeira Santana",
+      "image": "https://avatars.githubusercontent.com/u/5599352?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4238,
+      "installsAllTime": 25,
+      "installsCurrent": 23,
+      "stars": 4,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1768679388324,
+      "changelog": "Added installation instructions for all platforms",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3c62f305313da10f783e8e46f4a17af31ab0dcebe4727672dcfbda4aef97e7d3"
+}

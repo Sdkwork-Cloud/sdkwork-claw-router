@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/arta@0.3.0",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arta",
+  "skill": {
+    "id": 25824,
+    "skillKey": "clawhub-arta",
+    "name": "ARTA: Agentic Real-Time Awareness"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arta",
+    "url": "https://clawhub.ai/skills/arta",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arta-12aac3b480d79c5c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A universal layer for agents to have real-time self-awareness across channels and sessions. ARTA enables an agent to know what it is doing in other channels..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "palxislabs",
+      "userId": "s17a4shxkmsdgdgevaj30rqq9983j86a",
+      "displayName": "palxislabs",
+      "image": "https://avatars.githubusercontent.com/u/258656192?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 380,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.3.0",
+      "createdAt": 1772984581967,
+      "changelog": "**ARTA 0.3.0 — Now explicitly in-memory only, no bot tokens required**  \n\n- Clarifies that ARTA currently provides awareness only within a single agent process (in-memory); cross-process sharing not yet implemented\n- Removes bot token configuration and all credential references from documentation\n- Emphasizes ARTA's metadata-only approach (channel, user, session IDs)\n- Updates usage and configuration to reflect in-memory only limitation\n- Adds a section on security and privacy boundaries",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:16ca7acc78f9c7d0327a47909c19c348545d7f87ca8629213f0e888ee1fb1694"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fakturator@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fakturator",
+  "skill": {
+    "id": 56040,
+    "skillKey": "clawhub-fakturator",
+    "name": "Fakturownik"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fakturator",
+    "url": "https://clawhub.ai/skills/fakturator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fakturator-6458d00d6b11fb75.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Profesjonalny generator faktur VAT zgodny z polskim prawem, oferujący szablony, automatyczne obliczenia, numerację i eksport PDF."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tomasz-pedzierski-infinity",
+      "userId": "s17a72yet87n1qy3j93paz2f0s85q7ya",
+      "displayName": "Tomasz-Pedzierski-Infinity",
+      "image": "https://avatars.githubusercontent.com/u/267662562?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 108,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777847723832,
+      "changelog": "- Updated PRO version features: clarified email sending is via SMTP, specified over 10 professional templates with various styles, and noted invoice history is saved in files.\n- Removed duplicate mention of PDF export from the PRO feature list.\n- General feature descriptions and examples remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b5b758fd335d372766c48803d7696b9ac27cef6d588472c7119e2ac6b0451ab6"
+}

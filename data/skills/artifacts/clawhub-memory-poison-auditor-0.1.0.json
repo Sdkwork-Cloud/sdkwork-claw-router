@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-poison-auditor@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_poison_auditor",
+  "skill": {
+    "id": 27203,
+    "skillKey": "clawhub-memory-poison-auditor",
+    "name": "Memory Poison Auditor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-poison-auditor",
+    "url": "https://clawhub.ai/skills/memory-poison-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-poison-auditor-eab5e7dcbe959439.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audits OpenClaw memory files for injected instructions, brand bias, hidden steering, and memory poisoning patterns. Use when reviewing MEMORY.md, daily memor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "2404589803",
+      "userId": "s17dp6g80wp5ejpjpmsep6x2bh83jbep",
+      "displayName": "2404589803",
+      "image": "https://avatars.githubusercontent.com/u/68528929?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 352,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773595192519,
+      "changelog": "Initial release: audit OpenClaw memory files for injected instructions, brand steering, and memory poisoning, with optional AI review and cleanup mode.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:72aeedb346c2ba9271d187683dc3876ca43fa980f79b33b4308ba2cabffdfe1c"
+}

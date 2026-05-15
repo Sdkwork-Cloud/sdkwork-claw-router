@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-pilot@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_pilot",
+  "skill": {
+    "id": 41095,
+    "skillKey": "clawhub-auto-pilot",
+    "name": "AutoPilot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-pilot",
+    "url": "https://clawhub.ai/skills/auto-pilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-pilot-eebc1701cff78b5a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enables an agent to autonomously decide, act, predict outcomes, and plan next steps in a continuous goal-driven loop without waiting for instructions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "theshimaw-svg",
+      "userId": "s17bqg08nqtkqtxp44tqkv87sh848ejp",
+      "displayName": "theshimaw-svg",
+      "image": "https://avatars.githubusercontent.com/u/266850601?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775591031186,
+      "changelog": "AutoPilot 1.0.0\n\n- Introduces an autonomous agent that decides, acts, and iterates without waiting for instructions.\n- Ensures every response follows a proactive loop: current action, reasoning, expected result, and next step.\n- Focuses on execution and progress toward any goal, not just idea generation.\n- Enforces clear, action-first, iterative behavior in all interactions.\n\nFollow me on x for better skills @SaasKafle",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4dc3be80ea7b6d03646fc21dbd8f67e8974ddc5978442df02f4cf95578d12f12"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/emoji-wrapper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.emoji_wrapper",
+  "skill": {
+    "id": 30383,
+    "skillKey": "clawhub-emoji-wrapper",
+    "name": "Emoji Wrapper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "emoji-wrapper",
+    "url": "https://clawhub.ai/skills/emoji-wrapper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/emoji-wrapper-6725c0fbfa909ba6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Wrapper skill for local-auto-emoji - intercepts messages with [markers] and sends emoji images"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wdkmail",
+      "userId": "publishers:wdkmail",
+      "displayName": "Deric",
+      "image": "https://avatars.githubusercontent.com/u/29499992?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 283,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773672031213,
+      "changelog": "Initial release – wraps local-auto-emoji to auto-replace emoji markers in messages.\n\n- Intercepts messages containing `[标记]` patterns and replaces them with emoji images.\n- Sends both the processed text and corresponding emoji images back to the user.\n- Requires the local-auto-emoji skill and a generated emoji pack (or uses static fallback emojis).\n- Simple configuration: just add to your OpenClaw setup, no extra steps needed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:888c37049579032e696d01448e255a42fee6d55b89b1aa90d9c08a27c0493733"
+}

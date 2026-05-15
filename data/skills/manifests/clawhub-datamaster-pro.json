@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65874,
+  "uuid": "skill-clawhub-datamaster-pro",
+  "skillKey": "clawhub-datamaster-pro",
+  "name": "DataMaster Pro",
+  "summary": "数据分析技能包 - 自动抓取、清洗、可视化、生成报告。适合数据分析师、运营人员，告别 Excel 手工操作。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.datamaster_pro",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gdp6539",
+      "features": [
+        "自动抓取、清洗、可视化、生成报告。适合数据分析师、运营人员，告别 Excel 手工操作。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/datamaster-pro@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/198542148?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "datamaster-pro",
+      "url": "https://clawhub.ai/skills/datamaster-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "datamaster-pro",
+    "url": "https://clawhub.ai/skills/datamaster-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/datamaster-pro-ca53c18d1dcbcc1e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/datamaster-pro@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-datamaster-pro-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a3099ee437f434c331ea0565061e698ed2837b302f8a2e8be6ea39cc3f79be02",
+      "artifactSizeBytes": 1875
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T04:27:11.079Z"
+}

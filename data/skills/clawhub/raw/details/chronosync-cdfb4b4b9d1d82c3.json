@@ -1,0 +1,57 @@
+{
+  "skill": {
+    "slug": "chronosync",
+    "displayName": "ChronoSync",
+    "summary": "跨会话聊天记录同步工具。自动备份 OpenClaw 各会话的聊天记录， 实现会话间记忆共享，避免切换会话后丢失上下文。",
+    "tags": {
+      "backup": "1.0.2",
+      "chat-history": "1.0.2",
+      "latest": "1.0.2",
+      "memory": "1.0.2",
+      "session": "1.0.2",
+      "sync": "1.0.2",
+      "chat-backup": "1.0.0",
+      "context": "1.0.0",
+      "knowledge": "1.0.0",
+      "session-sync": "1.0.0",
+      "todo": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 355,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "createdAt": 1773412350018,
+    "updatedAt": 1778308129345
+  },
+  "latestVersion": {
+    "version": "1.0.2",
+    "createdAt": 1773465222440,
+    "changelog": "All notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).\n\n## [1.0.1] - 2026-03-14\n\n### Fixed\n- Fixed Windows UTF-8 encoding issue in console output\n- Fixed OpenClaw 2026.3.x path compatibility (`agents/main/sessions`)\n- Fixed plugin system circular import issue by extracting `plugin_base.py`\n\n### Changed\n- Updated SKILL.md with generic descriptions (removed personal references)\n- Added proper metadata (version, author, license, tags)\n- Added security verification section\n\n### Security\n- Verified no external network connections\n- Verified plugin system works correctly\n- Added data privacy documentation\n\n## [1.0.0] - 2026-03-10\n\n### Added\n- Initial release\n- Basic session synchronization functionality\n- JSON + Markdown dual format output\n- Incremental sync with hash-based change detection\n- Automatic sensitive information sanitization (email, phone, API keys)\n- Plugin system with knowledge and todo plugins\n- Cron job support for automatic syncing",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "smallccwc",
+    "userId": "s172medm5439sgtmq6t15rhqrs83qy23",
+    "displayName": "smallccwc",
+    "image": "https://avatars.githubusercontent.com/u/98419489?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778308129345
+  }
+}

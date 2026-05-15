@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18216,
+  "uuid": "skill-clawhub-pr-triage",
+  "skillKey": "clawhub-pr-triage",
+  "name": "Pr Triage",
+  "summary": "Triage open PRs by detecting duplicates, assessing quality, and generating prioritized reports. Use when a repo has too many PRs to review manually, needs du...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pr_triage",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zerone0x",
+      "features": [
+        "Triage open PRs by detecting duplicates, assessing quality, and generating prioritized reports",
+        "Use when a repo has too many PRs to review manually, needs du..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pr-triage@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39543393?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pr-triage",
+      "url": "https://clawhub.ai/skills/pr-triage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pr-triage",
+    "url": "https://clawhub.ai/skills/pr-triage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pr-triage-af99e330251b3a4f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pr-triage@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pr-triage-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a4572b0ede01db90a7ac0df790ba51728aa39a19b6e9070ef9b0e149cf4e7b9f",
+      "artifactSizeBytes": 2362
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T07:45:16.718Z"
+}

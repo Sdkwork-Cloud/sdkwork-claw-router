@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13997,
+  "uuid": "skill-clawhub-alicloud-compute-ecs",
+  "skillKey": "clawhub-alicloud-compute-ecs",
+  "name": "Alicloud Compute Ecs",
+  "summary": "Manage Alibaba Cloud Elastic Compute Service (ECS) via OpenAPI/SDK. Use for listing or creating instances, starting/stopping/rebooting, managing disks/snapsh...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alicloud_compute_ecs",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cinience",
+      "features": [
+        "Manage Alibaba Cloud Elastic Compute Service (ECS) via OpenAPI/SDK",
+        "Use for listing or creating instances, starting/stopping/rebooting, managing disks/snapsh..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alicloud-compute-ecs@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/557426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alicloud-compute-ecs",
+      "url": "https://clawhub.ai/skills/alicloud-compute-ecs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alicloud-compute-ecs",
+    "url": "https://clawhub.ai/skills/alicloud-compute-ecs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alicloud-compute-ecs-2655e4645513e6c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alicloud-compute-ecs@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-alicloud-compute-ecs-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0800812bba782879dd9bcc2474e9fc59b19dcf1760c97be046f7064e0aafdd05",
+      "artifactSizeBytes": 1959
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T09:38:49.240Z"
+}

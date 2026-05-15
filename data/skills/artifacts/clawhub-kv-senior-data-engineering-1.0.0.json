@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kv-senior-data-engineering@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kv_senior_data_engineering",
+  "skill": {
+    "id": 43849,
+    "skillKey": "clawhub-kv-senior-data-engineering",
+    "name": "Ingeniero de datos"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kv-senior-data-engineering",
+    "url": "https://clawhub.ai/skills/kv-senior-data-engineering",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kv-senior-data-engineering-d73181651e6b7f01.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design and build scalable data pipelines, ETL/ELT systems, and data infrastructure. Use when designing data architectures, choosing between batch and streami..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "felix-antonio-sl",
+      "userId": "s17301x2y8n5dbvbsbv42fvgxx83n922",
+      "displayName": "felix-antonio-sl",
+      "image": "https://avatars.githubusercontent.com/u/143637936?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774973902988,
+      "changelog": "Initial release of Senior Data Engineer skill.\n\n- Provides guidance on designing data pipelines, data modeling, quality frameworks, and DataOps best practices.\n- Includes workflow for classifying requests and referencing detailed guides for architecture, modeling, testing, workflow, and troubleshooting.\n- Supports generating artifacts such as pipeline configs, dbt models, schema DDL, and quality rules.\n- Enforces key engineering guardrails and self-checks for idempotency, error handling, and data quality coverage.\n- Recommends technologies and architectures based on data volume, latency, and complexity requirements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3ea873474ddaa8f45c820dc943267387fd0a6ab731fd6f1597c99a6629885307"
+}

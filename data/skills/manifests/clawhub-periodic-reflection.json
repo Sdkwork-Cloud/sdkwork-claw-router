@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66177,
+  "uuid": "skill-clawhub-periodic-reflection",
+  "skillKey": "clawhub-periodic-reflection",
+  "name": "Periodic Reflection",
+  "summary": "周期性反思报告生成工具。用于自动化生成结构化的自我进化反思报告，支持多场景（EvoMap 发布、Agent 进化、DevOps 运维等）。 **触发场景：** - 用户要求生成周期性反思报告 - 需要量化指标对比和版本追踪 - 需要数据驱动的优化决策 - 用户提到\"反思\"、\"复盘\"、\"进化报告\"、\"周期性总结\"...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.periodic_reflection",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jpengcheng523-netizen",
+      "features": [
+        "周期性反思报告生成工具。用于自动化生成结构化的自我进化反思报告，支持多场景（EvoMap 发布、Agent 进化、DevOps 运维等）。 **触发场景：**",
+        "用户要求生成周期性反思报告",
+        "需要量化指标对比和版本追踪",
+        "需要数据驱动的优化决策"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/periodic-reflection@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226868999?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "periodic-reflection",
+      "url": "https://clawhub.ai/skills/periodic-reflection"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "periodic-reflection",
+    "url": "https://clawhub.ai/skills/periodic-reflection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/periodic-reflection-6db68ccf3ff4f55e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/periodic-reflection@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-periodic-reflection-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4157f7ef34cebe5dcbc0c139e97d6454af32c918195f1a5dd5319287f7ca6279",
+      "artifactSizeBytes": 2761
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T07:32:34.210Z"
+}

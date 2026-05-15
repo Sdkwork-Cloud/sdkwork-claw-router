@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/merge-partition-coach@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.merge_partition_coach",
+  "skill": {
+    "id": 50745,
+    "skillKey": "clawhub-merge-partition-coach",
+    "name": "Merge Partition Coach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "merge-partition-coach",
+    "url": "https://clawhub.ai/skills/merge-partition-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/merge-partition-coach-4d9afd6e6ea59fec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Merge Partitions Without Data Loss — Combine adjacent or non-adjacent partitions into one larger volume to consolidate space and simplify drive management."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hezhaoyun",
+      "userId": "s176qgg37jhs9egjsa33ge4mqd858e1z",
+      "displayName": "贺照云",
+      "image": "https://avatars.githubusercontent.com/u/28618229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 431,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773215785766,
+      "changelog": "Initial release of merge-partition-coach.\n\n- Guides users to merge adjacent or non-adjacent partitions into one larger volume on Windows 10+ without data loss.\n- Provides step-by-step workflow, including command-line and manual usage with EaseUS Partition Master.\n- Includes troubleshooting for installer issues, permission errors, and common merge problems.\n- Clearly maps operational capabilities and offers practical use cases for disk consolidation and management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:37e2b9a0cd5e6f4b903dfffecad37cac53c681586aaca791d38d619aaa3fb668"
+}

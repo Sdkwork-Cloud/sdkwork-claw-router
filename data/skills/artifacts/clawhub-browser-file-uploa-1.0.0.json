@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/browser-file-uploa@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_file_uploa",
+  "skill": {
+    "id": 42650,
+    "skillKey": "clawhub-browser-file-uploa",
+    "name": "browser-file-uploa"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-file-uploa",
+    "url": "https://clawhub.ai/skills/browser-file-uploa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-file-uploa-dc1a29fff697d406.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automates file uploads on web pages via agent-browser CLI or Python script, supporting flexible file paths and optional file input selectors."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weixizi",
+      "userId": "s17b26mqh2v34ennppbwaksxs183qhv6",
+      "displayName": "weixizi",
+      "image": "https://avatars.githubusercontent.com/u/62052773?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774620282626,
+      "changelog": "- Initial release of browser-file-upload skill.\n- Automates file uploads to web pages using agent-browser CLI or a Python script.\n- Supports flexible file path formats: absolute, relative, workspace-relative, and environment variables (including Windows-style).\n- Allows targeting file inputs via CSS selectors or by searching visible label text.\n- Includes quick-start usage, troubleshooting steps, and command examples for common upload scenarios.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:673a0db68347acb29928b90229e5bdcfa2f8b4070245a45a25254f68461ac321"
+}

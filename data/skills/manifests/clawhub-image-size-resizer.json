@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58334,
+  "uuid": "skill-clawhub-image-size-resizer",
+  "skillKey": "clawhub-image-size-resizer",
+  "name": "Image Resizer",
+  "summary": "图片分辨率调整工具。Use when user needs to resize images to specific dimensions. Supports custom size, batch resize, aspect ratio preservation. 图片缩放、分辨率调整、图片裁剪。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_size_resizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToBeWin",
+      "features": [
+        "图片分辨率调整工具。Use when user needs to resize images to specific dimensions",
+        "Supports custom size, batch resize, aspect ratio preservation",
+        "图片缩放、分辨率调整、图片裁剪。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-size-resizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/145168989?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-size-resizer",
+      "url": "https://clawhub.ai/skills/image-size-resizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-size-resizer",
+    "url": "https://clawhub.ai/skills/image-size-resizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-size-resizer-f8cb6a0bd7770fe3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-size-resizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-size-resizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2999d06e9aa56beeaa3779d725d1e94c144c3c538345e663b8918d77aa8811e3",
+      "artifactSizeBytes": 2030
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T13:47:36.794Z"
+}

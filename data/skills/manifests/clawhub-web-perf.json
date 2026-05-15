@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8961,
+  "uuid": "skill-clawhub-web-perf",
+  "skillKey": "clawhub-web-perf",
+  "name": "Web Perf",
+  "summary": "Analyzes web performance using Chrome DevTools MCP. Measures Core Web Vitals (FCP, LCP, TBT, CLS, Speed Index), identifies render-blocking resources, network dependency chains, layout shifts, caching issues, and accessibility gaps. Use whe.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_perf",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "elithrar",
+      "features": [
+        "Analyzes web performance using Chrome DevTools MCP",
+        "Measures Core Web Vitals (FCP, LCP, TBT, CLS, Speed Index), identifies render-blocking resource.",
+        "Use when asked to audit, profile, debug, or optimize page load performance, Lighthouse scores,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-perf@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18544?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-perf",
+      "url": "https://clawhub.ai/skills/web-perf"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-perf",
+    "url": "https://clawhub.ai/skills/web-perf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-perf-66e414b08f6cdbff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-perf@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-perf-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:31bdc83664c15ff4c432ef95eca86e51672082aee78fc05ab31729bed44d10c0",
+      "artifactSizeBytes": 2514
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-06T07:45:45.091Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pyreworld@10.2.0",
+  "version": "10.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pyreworld",
+  "skill": {
+    "id": 50192,
+    "skillKey": "clawhub-pyreworld",
+    "name": "Pyre World"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pyreworld",
+    "url": "https://clawhub.ai/skills/pyreworld",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pyreworld-bb54b21462f1502f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent-first faction warfare kit for Torch Market. Game-semantic wrapper over torchsdk. The game IS the economy. There is no separate game engine — Torch Mark..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mrsirg97-rgb",
+      "userId": "s17d9w2mfj16a1rp60fv63j17h83shtj",
+      "displayName": "mr brightside",
+      "image": "https://avatars.githubusercontent.com/u/255471849?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 594,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 15
+    },
+    "latestVersion": {
+      "version": "10.2.0",
+      "createdAt": 1775154228203,
+      "changelog": "v10.2.0 summary: Faction lifecycle simplified and kit dependency updated.\n\n- Faction lifecycle now transitions directly from READY to ASCEND, removing the VOTE phase.\n- Token buy logic simplified: now 100% of tokens go to the buyer on every buy.\n- Text updates clarify that faction ascension happens when the target is raised, and community votes are no longer explicitly mentioned in the SKILL.md.\n- pyre-world-kit npm version requirement bumped to ^10.2.0 in install instructions.\n- Minor documentation edits for clarity; no functional or environment variable changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5580e46f44672ff4a5625cfa53db847039ae8b94d4be31eb401b203b92724b8a"
+}

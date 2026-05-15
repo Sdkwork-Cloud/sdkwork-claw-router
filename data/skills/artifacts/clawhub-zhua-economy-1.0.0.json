@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zhua-economy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhua_economy",
+  "skill": {
+    "id": 67802,
+    "skillKey": "clawhub-zhua-economy",
+    "name": "Zhua Economy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhua-economy",
+    "url": "https://clawhub.ai/skills/zhua-economy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhua-economy-f99c0c2c481aaf8f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "爪爪自主经济系统 —— 技能变现、任务定价、收益分配、经济自治。Use when 爪爪需要建立经济系统、技能变现、或实现经济自主。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "beipian261",
+      "userId": "publishers:beipian261",
+      "displayName": "beipian261",
+      "image": "https://avatars.githubusercontent.com/u/210724771?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 340,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773768969909,
+      "changelog": "- Initial release of zhua-economy: a system enabling autonomous pricing, skill monetization, and profit distribution for 爪爪.\n- Core features include skill pricing, task billing, value tracking, profit allocation, and economic self-governance.\n- Provides clear pricing models for various service types.\n- Defines a transparent income distribution structure among stakeholders.\n- Includes workflow scripts for transaction recording, profit calculation, revenue distribution, and reporting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5a09834c0e69a60b5963092e7ba3d822b0843e45531a30a4a7a690ceb4de30cb"
+}

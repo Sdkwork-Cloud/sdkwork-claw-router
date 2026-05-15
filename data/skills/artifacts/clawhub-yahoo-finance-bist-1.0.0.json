@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yahoo-finance-bist@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yahoo_finance_bist",
+  "skill": {
+    "id": 57246,
+    "skillKey": "clawhub-yahoo-finance-bist",
+    "name": "yahoo-finance-bist"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yahoo-finance-bist",
+    "url": "https://clawhub.ai/skills/yahoo-finance-bist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yahoo-finance-bist-ca8c2e7a9f6d6ec4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Yahoo Finance API tabanlı tarihsel veri analizi, algoritmik teknik indikatör skoru (RSI, MACD, Stoch, SMA), Excel geçmiş veri dışa aktarma, portföy alarm tak..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nikolayco",
+      "userId": "s175xxbptas8gq3gwefkg7jxmx83e6q6",
+      "displayName": "Niyazi Sönmez",
+      "image": "https://avatars.githubusercontent.com/u/4214678?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 505,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772395566940,
+      "changelog": "- İlk sürüm: yahoo-finance-advisor yeteneği eklendi.\n- Gerçek zamanlı veri, teknik indikatör skoru (RSI, MACD, Stoch, SMA), geçmiş veri excel dışa aktarımı, portföy alarm ve işlem loglama desteği getirildi.\n- BIST (.IS), ABD, kripto, emtia ve parite sembollerine destek sağlandı.\n- Kullanıcıdan gelen anahtar kelimelerle akıllı tetikleyici sistem entegre edildi.\n- FlareSolverr gerektirmeden doğrudan Yahoo Finance API ile çalışır.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:de19f200cff11856f9c69ce26efa24d1d6b8c2544b003916febc65390a923bd4"
+}

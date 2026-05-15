@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22816,
+  "uuid": "skill-clawhub-vendor-performance-audit",
+  "skillKey": "clawhub-vendor-performance-audit",
+  "name": "Vendor Performance Audit",
+  "summary": "Conduct quarterly vendor reviews using KPI scoring across delivery, quality, communication, cost, and alignment to guide renewal, improvement, or offboarding...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vendor_performance_audit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "flynndavid",
+      "features": [
+        "Conduct quarterly vendor reviews using KPI scoring across delivery, quality, communication, cos."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vendor-performance-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11565009?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vendor-performance-audit",
+      "url": "https://clawhub.ai/skills/vendor-performance-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vendor-performance-audit",
+    "url": "https://clawhub.ai/skills/vendor-performance-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vendor-performance-audit-cbbf28fa651b09c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vendor-performance-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vendor-performance-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da0f32f00147fa067440864cf33d72293ae7ff85c450af0695444c325ce0f8f1",
+      "artifactSizeBytes": 2374
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T22:22:03.179Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lookupmark-tailscale-manager@1.3.0",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lookupmark_tailscale_manager",
+  "skill": {
+    "id": 35596,
+    "skillKey": "clawhub-lookupmark-tailscale-manager",
+    "name": "Tailscale Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lookupmark-tailscale-manager",
+    "url": "https://clawhub.ai/skills/lookupmark-tailscale-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lookupmark-tailscale-manager-4c5b33ce55b2c79f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Tailscale tailnet from chat. Check status, list devices, ping hosts, run network diagnostics, check serve/funnel config. All public IPs are automatica..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lookupmark",
+      "userId": "s17cfewgg96e4pw82ktkrftcmx845h5p",
+      "displayName": "LookUpMark",
+      "image": "https://avatars.githubusercontent.com/u/93028124?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 213,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.3.0",
+      "createdAt": 1775460863590,
+      "changelog": "IP masking in JSON output, improved IPv6 regex",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:98f9834b15497482b34d9c5677fe32f5e6946dbc4488bba1c7143729665d1ae0"
+}

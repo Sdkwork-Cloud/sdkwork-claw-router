@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62916,
+  "uuid": "skill-clawhub-pupper0601-memory-manager",
+  "skillKey": "clawhub-pupper0601-memory-manager",
+  "name": "Memory Manager",
+  "summary": "OpenClaw专用三层AI记忆管理系统。管理临时记忆(L1)/长期记忆(L2)/永久记忆(L3)，支持向量语义搜索、自动压缩、OpenClaw用户身份识别和跨设备同步。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pupper0601_memory_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pupper0601",
+      "features": [
+        "OpenClaw专用三层AI记忆管理系统。管理临时记忆(L1)/长期记忆(L2)/永久记忆(L3)，支持向量语义搜索、自动压缩、OpenClaw用户身份识别和跨设备同步。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pupper0601-memory-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58965954?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pupper0601-memory-manager",
+      "url": "https://clawhub.ai/skills/pupper0601-memory-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pupper0601-memory-manager",
+    "url": "https://clawhub.ai/skills/pupper0601-memory-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pupper0601-memory-manager-c32ac006578dceef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pupper0601-memory-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pupper0601-memory-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c2a8edb0103d3800d3b63d34d966ac97eb0587879e70d413d4c0e9a53bffa39b",
+      "artifactSizeBytes": 2020
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T14:50:45.563Z"
+}

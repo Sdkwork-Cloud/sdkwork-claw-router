@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59999,
+  "uuid": "skill-clawhub-lobi-a2a",
+  "skillKey": "clawhub-lobi-a2a",
+  "name": "Lobi A2A",
+  "summary": "Lobi A2A (Agent-to-Agent) 多轮对话 Skill。当用户说'跟 @xxx 讨论 xxx'或'让 Agent 对话'时触发。自动创建 Lobi 群聊、邀请参与者、管理多轮对话、自动停止。使用纯 HTTP 调用 Lobi API。",
+  "version": "1.0.18",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobi_a2a",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jn769812",
+      "features": [
+        "Lobi A2A (Agent-to-Agent) 多轮对话 Skill。当用户说'跟 @xxx 讨论 xxx'或'让 Agent 对话'时触发。自动创建 Lobi 群聊、邀请参与者、管理多."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lobi-a2a@1.0.18",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/197088283?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lobi-a2a",
+      "url": "https://clawhub.ai/skills/lobi-a2a"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobi-a2a",
+    "url": "https://clawhub.ai/skills/lobi-a2a",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobi-a2a-bfda1c0da64692e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lobi-a2a@1.0.18",
+      "artifactUrl": "data/skills/artifacts/clawhub-lobi-a2a-1.0.18.json",
+      "version": "1.0.18",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cd41e45bbb3e02b795318e74e3d6f6c1083b1518d461d5e576d86bfe0fa7d633",
+      "artifactSizeBytes": 1961
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T10:41:57.394Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15206,
+  "uuid": "skill-clawhub-skill-vettr",
+  "skillKey": "clawhub-skill-vettr",
+  "name": "Skill Vettr",
+  "summary": "Static analysis security scanner for third-party OpenClaw skills. Detects eval/spawn risks, malicious dependencies, typosquatting, and prompt injection patte...",
+  "version": "2.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_vettr",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Britrik",
+      "features": [
+        "Static analysis security scanner for third-party OpenClaw skills",
+        "Detects eval/spawn risks, malicious dependencies, typosquatting, and prompt injection patte..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-vettr@2.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/214915099?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-vettr",
+      "url": "https://clawhub.ai/skills/skill-vettr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-vettr",
+    "url": "https://clawhub.ai/skills/skill-vettr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-vettr-eb07370971f81854.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-vettr@2.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-vettr-2.0.3.json",
+      "version": "2.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e1102f2b74549b463b3d07dd8ac080389db7ab6990d63991bb52eec90bfc7924",
+      "artifactSizeBytes": 2619
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T12:29:21.137Z"
+}

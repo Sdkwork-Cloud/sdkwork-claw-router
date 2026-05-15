@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/a2a-bridge@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a2a_bridge",
+  "skill": {
+    "id": 20001,
+    "skillKey": "clawhub-a2a-bridge",
+    "name": "A2A Bridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a2a-bridge",
+    "url": "https://clawhub.ai/skills/a2a-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a2a-bridge-01c5450f4150b11d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bridge between Google A2A protocol and OADP agent networks. Translate agent cards to OADP signals, discover A2A agents from OADP hubs, register your A2A agen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imaflytok",
+      "userId": "publishers:imaflytok",
+      "displayName": "FLY",
+      "image": "https://avatars.githubusercontent.com/u/258594521?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 579,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772387017521,
+      "changelog": "- Initial release of a2a-bridge.\n- Enables interoperability between Google A2A protocol and OADP agent networks.\n- Translates A2A agent cards into OADP signals to improve discoverability.\n- Allows scanning OADP hubs to find A2A-compatible agents.\n- Adds support for registering A2A agents on open coordination networks.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9a5f0dd4dc5543eeddedc5a943b7836d2c703dbfe7d6fd94a9dc5ee3f15d1504"
+}

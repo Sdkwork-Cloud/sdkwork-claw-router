@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vidu-video-analyzer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vidu_video_analyzer",
+  "skill": {
+    "id": 30607,
+    "skillKey": "clawhub-vidu-video-analyzer",
+    "name": "Visual models analyze video to generate reports and highlight frames, provided by the Vidu API."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vidu-video-analyzer",
+    "url": "https://clawhub.ai/skills/vidu-video-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vidu-video-analyzer-46c05cc435321aeb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract and analyze keyframes from MP4, MOV, AVI videos to identify themes, generate reports, and provide 3 representative screenshots."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "x-jihua",
+      "userId": "s1784btgjdbcht1279h27zwrcs83g5md",
+      "displayName": "Vidu AI",
+      "image": "https://avatars.githubusercontent.com/u/25274975?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 270,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774006229081,
+      "changelog": "- Improved documentation with detailed step-by-step workflow for video analysis, including keyframe extraction, vision analysis, and report generation.\n- Added optimization notes on token efficiency using I-frame detection.\n- Clarified supported video formats and user scenarios.\n- Included usage instructions for included scripts and Feishu workflows.\n- Provided token consumption estimates and practical tips for efficient analysis.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0d65548bc7834dc36146f69ead11f95ef91386283b61f12fc0a6a7a41ac0051a"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54683,
+  "uuid": "skill-clawhub-pipeworx-newton",
+  "skillKey": "clawhub-pipeworx-newton",
+  "name": "Pipeworx newton",
+  "summary": "Symbolic math solver — simplify, differentiate, integrate, and factor expressions via the Newton API",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_newton",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Symbolic math solver — simplify, differentiate, integrate, and factor expressions via the Newto."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-newton@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138315805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-newton",
+      "url": "https://clawhub.ai/skills/pipeworx-newton"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-newton",
+    "url": "https://clawhub.ai/skills/pipeworx-newton",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-newton-98fc5d79dab49ac9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-newton@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-newton-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:699fa16344afde4b7fe5b6c09e21d47cc3dbae6bd4e4ba16682942306fd5efcd",
+      "artifactSizeBytes": 1842
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T19:03:14.512Z"
+}

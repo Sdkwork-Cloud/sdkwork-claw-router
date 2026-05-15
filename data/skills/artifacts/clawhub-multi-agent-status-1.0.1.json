@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/multi-agent-status@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_agent_status",
+  "skill": {
+    "id": 35498,
+    "skillKey": "clawhub-multi-agent-status",
+    "name": "Multi-Agent Status"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-agent-status",
+    "url": "https://clawhub.ai/skills/multi-agent-status",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-agent-status-d0fc36f54acd8b68.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cross-agent health monitoring for multi-host OpenClaw deployments. Each agent pushes structured status reports (JSON) to a central location. A PM/monitoring..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agenthyjack",
+      "userId": "s177tg7sywek86kmy8jc563psn847t6s",
+      "displayName": "agenthyjack",
+      "image": "https://avatars.githubusercontent.com/u/268943245?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 214,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775324541354,
+      "changelog": "- Added agent status reporting scripts for both Linux (`agent-status-report.sh`) and Windows (`agent-status-report.ps1`) in the `references` directory.\n- Examples and setup instructions now reference these scripts to simplify multi-agent configuration across environments.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0acf4f64c50915c2603cb36829e0b5ddc377dbcf2ef2eecc6b9e1f3878c492bc"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8695,
+  "uuid": "skill-clawhub-brave-api-search",
+  "skillKey": "clawhub-brave-api-search",
+  "name": "Brave Api Search",
+  "summary": "Real-time web search, autosuggest, and AI-powered answers using the official Brave Search API. Use for searching documentation, facts, current events, or any...",
+  "version": "4.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brave_api_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Broedkrummen",
+      "features": [
+        "Real-time web search, autosuggest, and AI-powered answers using the official Brave Search API",
+        "Use for searching documentation, facts, current events, or any..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/brave-api-search@4.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/146327287?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "brave-api-search",
+      "url": "https://clawhub.ai/skills/brave-api-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brave-api-search",
+    "url": "https://clawhub.ai/skills/brave-api-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brave-api-search-dfc8b8acbcf71410.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/brave-api-search@4.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-brave-api-search-4.2.0.json",
+      "version": "4.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:84b8ff0ff422c321c9cf01e1a1a2889c66fe07c420f19c4b7dd8086953f6e0aa",
+      "artifactSizeBytes": 2364
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T19:49:23.765Z"
+}

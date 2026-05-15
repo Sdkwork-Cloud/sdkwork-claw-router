@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44473,
+  "uuid": "skill-clawhub-openclaw-memory-max",
+  "skillKey": "clawhub-openclaw-memory-max",
+  "name": "Openclaw Memory Max",
+  "summary": "SOTA Memory Suite — auto-recall, cross-encoder reranking, multi-hop deep search, causal knowledge graph, episodic memory, and nightly sleep-cycle consolidation.",
+  "version": "3.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_memory_max",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "stanistolberg",
+      "features": [
+        "SOTA Memory Suite — auto-recall, cross-encoder reranking, multi-hop deep search, causal knowled."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-memory-max@3.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30748445?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-memory-max",
+      "url": "https://clawhub.ai/skills/openclaw-memory-max"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-memory-max",
+    "url": "https://clawhub.ai/skills/openclaw-memory-max",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-memory-max-9559834e5c82bd4e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-memory-max@3.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-memory-max-3.0.4.json",
+      "version": "3.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:638a3fa5c02854aa1a022160fcfafd75a33f211c99781ffc52891460dd507d2f",
+      "artifactSizeBytes": 2204
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T15:40:04.474Z"
+}

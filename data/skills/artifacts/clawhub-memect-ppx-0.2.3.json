@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memect-ppx@0.2.3",
+  "version": "0.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memect_ppx",
+  "skill": {
+    "id": 55475,
+    "skillKey": "clawhub-memect-ppx",
+    "name": "memect-ppx"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memect-ppx",
+    "url": "https://clawhub.ai/skills/memect-ppx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memect-ppx-118b2cd0e4f36b7b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Parse PDFs and images into Markdown/JSON using the `ppx` CLI. Use when the user asks to OCR scanned PDFs or screenshots, extract tables from PDFs, convert PD..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lihanghang",
+      "userId": "s171w8cksnm4vje9j0qeye09eh85c144",
+      "displayName": "HangHang Li",
+      "image": "https://avatars.githubusercontent.com/u/15344401?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.2.3",
+      "createdAt": 1777038478585,
+      "changelog": "启用 user-invocable，支持 /memect-ppx 斜杠调用",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d5ebc26b28a37abc77b49ca1180e3f2d345591dc948ff17ce415e35a954f8a55"
+}

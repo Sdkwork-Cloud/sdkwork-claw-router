@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polymarket-trading-bot@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_trading_bot",
+  "skill": {
+    "id": 20413,
+    "skillKey": "clawhub-polymarket-trading-bot",
+    "name": "Polymarket Trading Bot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-trading-bot",
+    "url": "https://clawhub.ai/skills/polymarket-trading-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-trading-bot-cd015134cabc8fdb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous prediction market agent - analyzes markets, researches news, and identifies trading opportunities"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bombfuock",
+      "userId": "s17cqaxgmejfvdd2sz9zq8kd0s83j4gn",
+      "displayName": "BOMBFUOCK",
+      "image": "https://avatars.githubusercontent.com/u/94738020?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 556,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772685727549,
+      "changelog": "Initial release of polymarket-agent:\n\n- Autonomous prediction market agent for discovering and analyzing Polymarket trading opportunities.\n- Integrates with the poly CLI to fetch markets, balances, positions, and execute trades.\n- Requires post-install setup to enable the CLI and configure user wallet.\n- Uses web search and social media sentiment to inform analysis and recommendations.\n- Supports advanced strategies: news scalping, arbitrage, whale watching, and event-driven trading.\n- Includes structured workflow: market discovery, research, edge calculation, and user-approved execution.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8e1fc87848b54af95006dd8f2720138d422d0de7ae6a3bf46af54b6d1229d288"
+}

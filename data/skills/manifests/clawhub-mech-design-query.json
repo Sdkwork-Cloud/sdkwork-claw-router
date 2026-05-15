@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73207,
+  "uuid": "skill-clawhub-mech-design-query",
+  "skillKey": "clawhub-mech-design-query",
+  "name": "机械设计规范查询助手",
+  "summary": "机械设计规范查询助手 | 查询机械设计常用标准、公差配合、表面粗糙度、材料选用规范，附电机应用场景，含完整速查表和公式",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mech_design_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yongjie666888",
+      "features": [
+        "机械设计规范查询助手 | 查询机械设计常用标准、公差配合、表面粗糙度、材料选用规范，附电机应用场景，含完整速查表和公式"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mech-design-query@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/177016990?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mech-design-query",
+      "url": "https://clawhub.ai/skills/mech-design-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mech-design-query",
+    "url": "https://clawhub.ai/skills/mech-design-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mech-design-query-cf852c2d719fce6a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mech-design-query@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mech-design-query-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:660b930c229b938ee8cb7390e5e4a0a79a3ecf6f868e3ca0869f3140c0cc66e9",
+      "artifactSizeBytes": 2489
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T18:56:31.339Z"
+}

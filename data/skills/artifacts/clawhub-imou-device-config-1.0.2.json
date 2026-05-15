@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/imou-device-config@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.imou_device_config",
+  "skill": {
+    "id": 58460,
+    "skillKey": "clawhub-imou-device-config",
+    "name": "Imou Open Device Config"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "imou-device-config",
+    "url": "https://clawhub.ai/skills/imou-device-config",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/imou-device-config-247eebabe1016e5d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "imou / Imou / 乐橙 / lechange 设备安防配置技能。支持设备动检计划、动检灵敏度、隐私模式（close camera）开关。 Manages device channel security configuration: motion detection schedule, motion de..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imou-openplatform",
+      "userId": "s178avw7h6mqnrcct4bknpbzd183p5rq",
+      "displayName": "Imou-OpenPlatform",
+      "image": "https://avatars.githubusercontent.com/u/188283209?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 321,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774580092159,
+      "changelog": "Version 1.0.0\n\n- Added extensive search aliases and keyword coverage for Imou/乐橙, making it easier to discover and use the skill for various device configuration scenarios.\n- Enhanced and clarified documentation with sections on \"Search Aliases\" and quick-start instructions.\n- Updated environment variable requirements to explicitly include IMOU_BASE_URL as mandatory.\n- Improved skill description for clarity and multi-language discoverability.\n- No functional or code changes; documentation and metadata updates only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c9a338837567c648f6510b14e7bd1f6b12154b2195be2151fad76b5e8bd7a8ba"
+}

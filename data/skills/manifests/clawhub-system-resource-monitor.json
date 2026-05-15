@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8484,
+  "uuid": "skill-clawhub-system-resource-monitor",
+  "skillKey": "clawhub-system-resource-monitor",
+  "name": "System Resource Monitor",
+  "summary": "A clean, reliable system resource monitor for CPU load, RAM, Swap, and Disk usage. Optimized for OpenClaw.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.system_resource_monitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Passersss",
+      "features": [
+        "A clean, reliable system resource monitor for CPU load, RAM, Swap, and Disk usage",
+        "Optimized for OpenClaw."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/system-resource-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81675345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "system-resource-monitor",
+      "url": "https://clawhub.ai/skills/system-resource-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "system-resource-monitor",
+    "url": "https://clawhub.ai/skills/system-resource-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/system-resource-monitor-bf4a53b2116ae52f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/system-resource-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-system-resource-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d62f635ff2040f1cc75d541e2cf43ce9955230db7bea90a9c539a5e83e718ec8",
+      "artifactSizeBytes": 2220
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T07:23:18.112Z"
+}

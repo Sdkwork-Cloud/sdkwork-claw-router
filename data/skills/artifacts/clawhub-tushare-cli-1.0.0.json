@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tushare-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tushare_cli",
+  "skill": {
+    "id": 58276,
+    "skillKey": "clawhub-tushare-cli",
+    "name": "Tushare Cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tushare-cli",
+    "url": "https://clawhub.ai/skills/tushare-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tushare-cli-f0987655edc8a5b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Tushare 数据查询 CLI"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alsoforever",
+      "userId": "s17f0evzccwehgwj730qqdx2r983kc17",
+      "displayName": "alsoforever",
+      "image": "https://avatars.githubusercontent.com/u/265420698?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 232,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774703847866,
+      "changelog": "tushare-cli 1.0.0 初始发布\n\n- 提供通过命令行查询 Tushare 财经数据的功能\n- 支持股票基本信息、财务指标、日线行情和财经新闻的查询\n- 文档包含详细使用说明和示例\n- 需配置 TUSHARE_TOKEN 环境变量",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6d7b3a0976cbfc56ae833825485db58df857d9e5ef6fb0fc11d70793671366fa"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24193,
+  "uuid": "skill-clawhub-engagelab-sms",
+  "skillKey": "clawhub-engagelab-sms",
+  "name": "EngageLab SMS",
+  "summary": "Call EngageLab SMS REST APIs to send SMS messages and manage SMS templates and signatures (sender IDs). Use this skill whenever the user wants to send an SMS...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.engagelab_sms",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DevEngageLab",
+      "features": [
+        "Call EngageLab SMS REST APIs to send SMS messages and manage SMS templates and signatures (send.",
+        "Use this skill whenever the user wants to send an SMS..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/engagelab-sms@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/113164142?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "engagelab-sms",
+      "url": "https://clawhub.ai/skills/engagelab-sms"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "engagelab-sms",
+    "url": "https://clawhub.ai/skills/engagelab-sms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/engagelab-sms-d3380c37f3e744aa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/engagelab-sms@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-engagelab-sms-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5a5a77e7cf8e2639f6bcab5b2cb06e8df06218c393770117941415cbbe823f19",
+      "artifactSizeBytes": 2065
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T06:22:26.210Z"
+}

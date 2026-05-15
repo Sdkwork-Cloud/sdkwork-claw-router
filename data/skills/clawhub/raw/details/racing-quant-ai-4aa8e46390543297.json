@@ -1,0 +1,46 @@
+{
+  "skill": {
+    "slug": "racing-quant-ai",
+    "displayName": "Racing Quant AI",
+    "summary": "赛马量化AI选股系统，集成量化策略选股+个股智能推荐分析。从量化策略数据库筛选符合需求的策略，获取持仓个股，再进行深度分析，最终给出投资参考。触发词：量化选股，racing quant，策略选股，数据库选股，量化分析，AI选股。",
+    "tags": {
+      "latest": "1.6.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 265,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "createdAt": 1774494811116,
+    "updatedAt": 1777623746686
+  },
+  "latestVersion": {
+    "version": "1.6.0",
+    "createdAt": 1777547988348,
+    "changelog": "**v1.6.0（重要更新：引入双数据源自动切换与强数据校验）**\n\n- 新增 baostock 作为行情、财务与资金数据的自动降级备用数据源，确保系统稳定可用。\n- 所有分析维度（行情、财务、资金等）支持 new-akshare-stock/baostock 自动切换，报告强制标注实际使用的数据源。\n- 强化数据准确性校验，对量价、市值、估值、资金流关键数值必须校验，异常结果高亮标记。\n- 个股分析报告中强制注明量化数据来源，提升溯源和可信度。\n- 明确要求不得编造/沿用错误数据，提升分析合规性和专业性。",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "chenxyzcyxpp",
+    "userId": "s171x55q0y9se0j6pbswb1cfd583mtef",
+    "displayName": "chenxyzcyxpp",
+    "image": "https://avatars.githubusercontent.com/u/80017356?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.dangerous_exec",
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.dangerous_exec, suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777623746686
+  }
+}

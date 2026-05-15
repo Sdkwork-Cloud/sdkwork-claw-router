@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nummo@0.1.8",
+  "version": "0.1.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nummo",
+  "skill": {
+    "id": 21228,
+    "skillKey": "clawhub-nummo",
+    "name": "Nummo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nummo",
+    "url": "https://clawhub.ai/skills/nummo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nummo-b0a4ad90afa56d41.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Nummo connects AI agents to the user's bank accounts via Plaid, enabling financial insights through natural language. More info at nummo.ai."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nummo-ai",
+      "userId": "publishers:nummo-ai",
+      "displayName": "nummo-ai",
+      "image": "https://avatars.githubusercontent.com/u/191473687?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 517,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.8",
+      "createdAt": 1772380037745,
+      "changelog": "nummo 0.1.8\n\n- Added reference to \"More info at nummo.ai\" in the skill description for easier access to additional information.\n- No other changes to commands, guidelines, or functionality.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8a927726961e921e14f75a3565bcf347d9b4bc1e94bfbe439b9f5d51f6bfb5ca"
+}

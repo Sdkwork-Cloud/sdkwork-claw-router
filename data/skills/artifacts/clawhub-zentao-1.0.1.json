@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zentao@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zentao",
+  "skill": {
+    "id": 10728,
+    "skillKey": "clawhub-zentao",
+    "name": "zentao"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zentao",
+    "url": "https://clawhub.ai/skills/zentao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zentao-ea3543fd9e275eb1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the zentao CLI to login and query ZenTao products and bugs. ZENTAO_URL usually includes /zentao."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leeguooooo",
+      "userId": "publishers:leeguooooo",
+      "displayName": "郭立lee",
+      "image": "https://avatars.githubusercontent.com/u/9278645?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2063,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 4,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770009091298,
+      "changelog": "- Documentation updated in SKILL.md for improved clarity and brevity\n- Added concise install and usage instructions\n- Provided clear login and verification workflow\n- Listed common commands with sample usage and output options\n- Removed redundant or overly detailed sections to focus on main workflow",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7036d89585b29dc624f573c7eb3dd46d1b97174c0c78d9da37efbcf321a5e420"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58929,
+  "uuid": "skill-clawhub-evomap-publish",
+  "skillKey": "clawhub-evomap-publish",
+  "name": "Evomap Publish",
+  "summary": "EVOMAP 资产发布指南 - 将代码发布为 Gene+Capsule Bundle 并提交任务",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.evomap_publish",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Luke",
+      "features": [
+        "EVOMAP 资产发布指南",
+        "将代码发布为 Gene+Capsule Bundle 并提交任务"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/evomap-publish@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/713423?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "evomap-publish",
+      "url": "https://clawhub.ai/skills/evomap-publish"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "evomap-publish",
+    "url": "https://clawhub.ai/skills/evomap-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/evomap-publish-0770de5de8febf3a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/evomap-publish@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-evomap-publish-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1832fb039b5c8563139c251f831438733fae6d4ac1f648fb0e4a7c1fc9d631d6",
+      "artifactSizeBytes": 2149
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T06:47:42.035Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69987,
+  "uuid": "skill-clawhub-dlt-lottery-prediction",
+  "skillKey": "clawhub-dlt-lottery-prediction",
+  "name": "DLT大乐透预测 v4.0",
+  "summary": "基于2853期历史数据，结合五池加权采样与博弈论遗传算法，生成符合多重约束的DLT复式及单式投注号码预测。",
+  "version": "4.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dlt_lottery_prediction",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "loveNsr",
+      "features": [
+        "基于2853期历史数据，结合五池加权采样与博弈论遗传算法，生成符合多重约束的DLT复式及单式投注号码预测。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dlt-lottery-prediction@4.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267524591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dlt-lottery-prediction",
+      "url": "https://clawhub.ai/skills/dlt-lottery-prediction"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dlt-lottery-prediction",
+    "url": "https://clawhub.ai/skills/dlt-lottery-prediction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dlt-lottery-prediction-f8f9baa8d0fed93e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dlt-lottery-prediction@4.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dlt-lottery-prediction-4.0.0.json",
+      "version": "4.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3d38dd2512846ce2a382111c5c72f9b77fa2eab3b28d526f8f59b0fc68584640",
+      "artifactSizeBytes": 2600
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T19:58:42.167Z"
+}

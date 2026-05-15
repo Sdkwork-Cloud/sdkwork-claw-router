@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20433,
+  "uuid": "skill-clawhub-openclaw-sacred-rules",
+  "skillKey": "clawhub-openclaw-sacred-rules",
+  "name": "OpenClaw Sacred Rules",
+  "summary": "Provides essential safety rules and tools for managing OpenClaw configs, backups, auth troubleshooting, and recovery to prevent system failures.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_sacred_rules",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AgentUnc",
+      "features": [
+        "Provides essential safety rules and tools for managing OpenClaw configs, backups, auth troubles."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-sacred-rules@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16340584?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-sacred-rules",
+      "url": "https://clawhub.ai/skills/openclaw-sacred-rules"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-sacred-rules",
+    "url": "https://clawhub.ai/skills/openclaw-sacred-rules",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-sacred-rules-8ba80fbb34867023.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-sacred-rules@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-sacred-rules-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:124104c54f166e5f6597a86b41733e3887579ebc7714e1572914ba172db42173",
+      "artifactSizeBytes": 2445
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T19:27:25.412Z"
+}

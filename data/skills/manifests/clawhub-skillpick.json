@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25343,
+  "uuid": "skill-clawhub-skillpick",
+  "skillKey": "clawhub-skillpick",
+  "name": "SkillPick",
+  "summary": "Which AI Skill is Worth Installing? The buying guide for AI Skills. 58 tracks, 29,000+ skills, dual-scoring (heat for humans + quality for agents), search re...",
+  "version": "6.9.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skillpick",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huangjihua007-rgb",
+      "features": [
+        "Which AI Skill is Worth Installing? The buying guide for AI Skills",
+        "58 tracks, 29,000+ skills, dual-scoring (heat for humans + quality for agents), search re..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skillpick@6.9.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267920358?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skillpick",
+      "url": "https://clawhub.ai/skills/skillpick"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skillpick",
+    "url": "https://clawhub.ai/skills/skillpick",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skillpick-1e826728dc5db445.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skillpick@6.9.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skillpick-6.9.1.json",
+      "version": "6.9.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0678256be5ad3fb0a43b620930e626b5696522cf21a8af110a33f97cebdde79c",
+      "artifactSizeBytes": 1902
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T13:09:36.744Z"
+}

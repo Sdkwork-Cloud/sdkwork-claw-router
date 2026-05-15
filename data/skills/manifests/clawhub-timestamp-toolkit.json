@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37356,
+  "uuid": "skill-clawhub-timestamp-toolkit",
+  "skillKey": "clawhub-timestamp-toolkit",
+  "name": "Timestamp Toolkit",
+  "summary": "Timestamp conversion tool. Convert between Unix timestamp, datetime, and various date formats.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.timestamp_toolkit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "freeter226",
+      "features": [
+        "Timestamp conversion tool",
+        "Convert between Unix timestamp, datetime, and various date formats."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/timestamp-toolkit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264750079?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "timestamp-toolkit",
+      "url": "https://clawhub.ai/skills/timestamp-toolkit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "timestamp-toolkit",
+    "url": "https://clawhub.ai/skills/timestamp-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/timestamp-toolkit-71a90cf3f76ee504.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/timestamp-toolkit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-timestamp-toolkit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ad2e9c3bb968936c005029a4ebd8ec21267f26b08fcf90af137d58d18efd860",
+      "artifactSizeBytes": 1842
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T06:10:01.033Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41465,
+  "uuid": "skill-clawhub-jobaudit",
+  "skillKey": "clawhub-jobaudit",
+  "name": "Jobaudit",
+  "summary": "Audit your OpenClaw cron job history and estimate how much you've spent on AI agents this week.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jobaudit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AVale-SLAI",
+      "features": [
+        "Audit your OpenClaw cron job history and estimate how much you've spent on AI agents this week."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jobaudit@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270702039?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jobaudit",
+      "url": "https://clawhub.ai/skills/jobaudit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jobaudit",
+    "url": "https://clawhub.ai/skills/jobaudit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jobaudit-8685bb420b705193.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jobaudit@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-jobaudit-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:62e40bbed41cc36968b49697f1bce5d4ed9b5f2d3c4c8b2f5812683c6d5ab45a",
+      "artifactSizeBytes": 1871
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T23:51:12.047Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gate-mcp-installer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_mcp_installer",
+  "skill": {
+    "id": 22261,
+    "skillKey": "clawhub-gate-mcp-installer",
+    "name": "gate-mcp-installer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-mcp-installer",
+    "url": "https://clawhub.ai/skills/gate-mcp-installer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-mcp-installer-539809473e36d3b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "One-click installer and configurator for Gate MCP (mcporter) in OpenClaw. Use when the user wants to (1) Install mcporter CLI tool, (2) Configure Gate MCP se..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kobin-be",
+      "userId": "s173fva92jf9temqd40wjta11n8447vc",
+      "displayName": "kobin2",
+      "image": "https://avatars.githubusercontent.com/u/24364260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 479,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772687133178,
+      "changelog": "- Initial release of gate-mcp-installer skill.\n- Provides one-click automated setup for Gate MCP (mcporter) in OpenClaw.\n- Installs mcporter CLI tool globally and configures server connection.\n- Verifies installation and connectivity, and offers troubleshooting guidance.\n- Includes manual setup instructions and common usage examples.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d7db5f5de722c3fc2d65739d8aa837f01cc9d29a4a95a14e52785772d1e27f36"
+}

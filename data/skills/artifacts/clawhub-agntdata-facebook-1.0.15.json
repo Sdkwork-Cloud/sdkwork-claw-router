@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agntdata-facebook@1.0.15",
+  "version": "1.0.15",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agntdata_facebook",
+  "skill": {
+    "id": 31446,
+    "skillKey": "clawhub-agntdata-facebook",
+    "name": "Facebook API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agntdata-facebook",
+    "url": "https://clawhub.ai/skills/agntdata-facebook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agntdata-facebook-a3f7e65487d3def5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use one API key to pull Facebook data (pages, groups, marketplace, and ads) for agents, automations, and analytics. Structured JSON, credit-based pricing, no se"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jaencarrodine",
+      "userId": "s17d5p6q94jb97qnamxbnpkvq984rfwm",
+      "displayName": "Jaen",
+      "image": "https://avatars.githubusercontent.com/u/53541106?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 265,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.15",
+      "createdAt": 1778370294233,
+      "changelog": "- Version bumped to 1.0.15.\n- Documentation in SKILL.md updated; no changes to endpoints or features.\n- No changes to tool schemas or functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e6a08ec5463a09b642f8fc872db60ebaf0a636c081d6dd7e7811dcc254ed2904"
+}

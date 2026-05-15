@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/attio-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.attio_cli",
+  "skill": {
+    "id": 12687,
+    "skillKey": "clawhub-attio-cli",
+    "name": "Attio CRM CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "attio-cli",
+    "url": "https://clawhub.ai/skills/attio-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/attio-cli-1fda75f09c7a70a7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Command-line tool to list, get, and manage objects, records, and lists in your Attio CRM workspace via the Attio API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "froemic",
+      "userId": "publishers:froemic",
+      "displayName": "FroeMic",
+      "image": "https://avatars.githubusercontent.com/u/15179255?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 1698,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770230784504,
+      "changelog": "Initial release of attio-cli – a command-line tool to interact with your Attio CRM workspace.\n\n- Provides commands to list objects, records, and manage lists (pipelines)\n- Supports viewing object attributes and list entry details\n- Includes script to generate a comprehensive markdown schema of your workspace\n- Setup instructions for API key and environment configuration\n- Examples for common API operations (search, create, and manage records via CLI or curl)\n- Requires `jq` for schema generation script",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1c922b23d7919aa1c6513cbda6d6947cc17d680a21893778f732d2f7d93eb102"
+}

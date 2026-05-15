@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openspec-workflow@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openspec_workflow",
+  "skill": {
+    "id": 16783,
+    "skillKey": "clawhub-openspec-workflow",
+    "name": "OpenSpec Workflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openspec-workflow",
+    "url": "https://clawhub.ai/skills/openspec-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openspec-workflow-70ccea08de9343e9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous spec-driven development with OpenSpec CLI and Claude Code. You orchestrate (draft artifacts, make judgment calls, ship PRs) while Claude Code revi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bobbyradford",
+      "userId": "publishers:bobbyradford",
+      "displayName": "Bobby Radford",
+      "image": "https://avatars.githubusercontent.com/u/6943982?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 830,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771521211464,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2e277904edd87b32f7cf870dc2a261766f1c8c7b0339ae702e3b629c3d8ae447"
+}

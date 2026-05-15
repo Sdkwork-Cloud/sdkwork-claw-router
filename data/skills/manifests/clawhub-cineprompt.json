@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20689,
+  "uuid": "skill-clawhub-cineprompt",
+  "skillKey": "clawhub-cineprompt",
+  "name": "CinePrompt",
+  "summary": "Build CinePrompt video prompts and share links without a browser. Converts natural language shot descriptions into structured CinePrompt state, generates pro...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cineprompt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CinePrompt",
+      "features": [
+        "Build CinePrompt video prompts and share links without a browser",
+        "Converts natural language shot descriptions into structured CinePrompt state, generates pro..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cineprompt@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261809697?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cineprompt",
+      "url": "https://clawhub.ai/skills/cineprompt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cineprompt",
+    "url": "https://clawhub.ai/skills/cineprompt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cineprompt-641649c14c0b93b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cineprompt@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cineprompt-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8566bfb522000890465b4c622ec39b4c5e859586c662e3debf9467183a78a22d",
+      "artifactSizeBytes": 2179
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T07:46:33.246Z"
+}

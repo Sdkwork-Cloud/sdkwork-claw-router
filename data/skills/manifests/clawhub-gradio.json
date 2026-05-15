@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14287,
+  "uuid": "skill-clawhub-gradio",
+  "skillKey": "clawhub-gradio",
+  "name": "Gradio",
+  "summary": "Build and deploy ML demo interfaces with proper state management, queuing, and production patterns.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gradio",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Build and deploy ML demo interfaces with proper state management, queuing, and production patte."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gradio@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gradio",
+      "url": "https://clawhub.ai/skills/gradio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gradio",
+    "url": "https://clawhub.ai/skills/gradio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gradio-95c8ff5c934e2250.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gradio@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gradio-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bb4e774367bda0e9314fb9f66bf7e33fbe953dd4e77f8421f1fc99a9de88211a",
+      "artifactSizeBytes": 1766
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T00:17:41.596Z"
+}

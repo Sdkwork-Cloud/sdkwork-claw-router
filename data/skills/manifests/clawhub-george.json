@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10049,
+  "uuid": "skill-clawhub-george",
+  "skillKey": "clawhub-george",
+  "name": "George Banking Automation",
+  "summary": "Automate George online banking (Erste Bank / Sparkasse Austria): login/logout, list accounts, and fetch transactions via Playwright.",
+  "version": "1.5.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.george",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Oliver Drobnik",
+      "features": [
+        "Automate George online banking (Erste Bank / Sparkasse Austria): login/logout, list accounts, a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/george@1.5.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/333270?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "george",
+      "url": "https://clawhub.ai/skills/george"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "george",
+    "url": "https://clawhub.ai/skills/george",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/george-0522a55e2d5f0993.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/george@1.5.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-george-1.5.4.json",
+      "version": "1.5.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d7dbf5abfa0d2496edc1e61fd19daa733b83080e6537f00c189aba03c19e67a7",
+      "artifactSizeBytes": 1927
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T17:31:23.853Z"
+}

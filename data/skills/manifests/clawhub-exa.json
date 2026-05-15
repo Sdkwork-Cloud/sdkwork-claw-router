@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8743,
+  "uuid": "skill-clawhub-exa",
+  "skillKey": "clawhub-exa",
+  "name": "Exa",
+  "summary": "Neural web search and code context via Exa AI API. Requires EXA_API_KEY. Use for finding documentation, code examples, research papers, or company info.",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.exa",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fardeenxyz",
+      "features": [
+        "Neural web search and code context via Exa AI API",
+        "Requires EXA_API_KEY",
+        "Use for finding documentation, code examples, research papers, or company info."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/exa@0.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/66341435?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "exa",
+      "url": "https://clawhub.ai/skills/exa"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "exa",
+    "url": "https://clawhub.ai/skills/exa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/exa-4968d0cf3b24d26d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/exa@0.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-exa-0.0.2.json",
+      "version": "0.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d40d1ea83ce45a5a01527a996bc2226d640a255a43b7d00fe408893fe2c7c05a",
+      "artifactSizeBytes": 1943
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-06T19:59:54.736Z"
+}

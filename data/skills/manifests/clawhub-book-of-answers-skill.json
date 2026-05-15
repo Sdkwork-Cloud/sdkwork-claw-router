@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56697,
+  "uuid": "skill-clawhub-book-of-answers-skill",
+  "skillKey": "clawhub-book-of-answers-skill",
+  "name": "答案之书.skill",
+  "summary": "Route natural-language questions into a three-book answer experience and return one random cited answer with SQLite-backed minimal per-user memory, duplicate...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_of_answers_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SHAO Zhaoru",
+      "features": [
+        "Route natural-language questions into a three-book answer experience and return one random cite."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-of-answers-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/214261453?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-of-answers-skill",
+      "url": "https://clawhub.ai/skills/book-of-answers-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-of-answers-skill",
+    "url": "https://clawhub.ai/skills/book-of-answers-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-of-answers-skill-f8750468eb6e4a5b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-of-answers-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-of-answers-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eacbf8c09b20c4935b1133363d7bc83c4f22fe0b080eb06927063773921f3bc3",
+      "artifactSizeBytes": 1942
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T03:57:25.688Z"
+}

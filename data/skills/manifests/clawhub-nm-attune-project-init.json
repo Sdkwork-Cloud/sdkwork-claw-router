@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30809,
+  "uuid": "skill-clawhub-nm-attune-project-init",
+  "skillKey": "clawhub-nm-attune-project-init",
+  "name": "Nm Attune Project Init",
+  "summary": "Interactive project initialization with git setup, workflows, hooks, and build configuration. project setup, initialization, scaffold, bootstrap, new project.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nm_attune_project_init",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "athola",
+      "features": [
+        "Interactive project initialization with git setup, workflows, hooks, and build configuration",
+        "project setup, initialization, scaffold, bootstrap, new project."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nm-attune-project-init@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9769290?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nm-attune-project-init",
+      "url": "https://clawhub.ai/skills/nm-attune-project-init"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nm-attune-project-init",
+    "url": "https://clawhub.ai/skills/nm-attune-project-init",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nm-attune-project-init-124b281328760950.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nm-attune-project-init@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-nm-attune-project-init-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5b3e60aa04410a7e9da58a4420d1ab5d6e1ec909ce0f8996dc3b47bf5bc3449b",
+      "artifactSizeBytes": 1933
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T02:15:55.922Z"
+}

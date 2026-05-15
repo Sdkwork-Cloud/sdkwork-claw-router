@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tob-sales-proposal@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tob_sales_proposal",
+  "skill": {
+    "id": 70445,
+    "skillKey": "clawhub-tob-sales-proposal",
+    "name": "ToB销售提案生成器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tob-sales-proposal",
+    "url": "https://clawhub.ai/skills/tob-sales-proposal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tob-sales-proposal-d5d9524971ba6ab6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ToB销售提案生成器 - 基于行业最佳实践，自动生成专业销售提案文档"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "william202404",
+      "userId": "s176t36qq1w6j18d0hyxc24yhx83pa2x",
+      "displayName": "william202404",
+      "image": "https://avatars.githubusercontent.com/u/166906165?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 266,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773885362856,
+      "changelog": "ToB销售提案生成器首次发布：\n\n- 自动生成专业的ToB销售提案文档，适用于B2B场景\n- 支持客户痛点分析、方案匹配、ROI量化、案例推荐、实施路线图等核心功能\n- 提供交互与命令行双模式，支持多参数与RFP输入\n- 内置8大提案结构模块和多种行业方法论\n- 含7个主流行业案例模板，提升方案输出效率\n- 依赖Node.js（必需）和Python（高级分析）",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ad561e98e49edb0b8b01a983502975dc9658bf5bad4a8737e06be57f591e078f"
+}

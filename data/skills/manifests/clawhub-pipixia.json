@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32011,
+  "uuid": "skill-clawhub-pipixia",
+  "skillKey": "clawhub-pipixia",
+  "name": "Pipixia",
+  "summary": "Provides summaries and data analysis of public videos, short dramas, and topics on Pipixia without downloading or bulk scraping.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipixia",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawKK",
+      "features": [
+        "Provides summaries and data analysis of public videos, short dramas, and topics on Pipixia with."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipixia@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111570001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipixia",
+      "url": "https://clawhub.ai/skills/pipixia"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipixia",
+    "url": "https://clawhub.ai/skills/pipixia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipixia-5259f49a0229f011.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipixia@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipixia-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5243f07f238c2c07cb117b30814dc342d6a371c8d6cacd85657acdf87ba5c74a",
+      "artifactSizeBytes": 2263
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T08:26:15.471Z"
+}

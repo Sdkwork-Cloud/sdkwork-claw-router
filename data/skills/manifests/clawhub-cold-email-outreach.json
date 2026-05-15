@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14674,
+  "uuid": "skill-clawhub-cold-email-outreach",
+  "skillKey": "clawhub-cold-email-outreach",
+  "name": "Cold Email Outreach",
+  "summary": "Automated cold email outreach pipeline using Resend API. Builds prospect lists from government databases or web scraping, enriches with contact info, sends p...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cold_email_outreach",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "merjua14",
+      "features": [
+        "Automated cold email outreach pipeline using Resend API",
+        "Builds prospect lists from government databases or web scraping, enriches with contact info, se."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cold-email-outreach@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40038194?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cold-email-outreach",
+      "url": "https://clawhub.ai/skills/cold-email-outreach"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cold-email-outreach",
+    "url": "https://clawhub.ai/skills/cold-email-outreach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cold-email-outreach-db46828d5509b515.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cold-email-outreach@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cold-email-outreach-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:de30b09eb0f71a326876afd354dbb7dae30128c97e0d760b107018b1de8598c8",
+      "artifactSizeBytes": 1995
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T22:07:15.930Z"
+}

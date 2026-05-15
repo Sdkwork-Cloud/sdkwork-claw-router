@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23984,
+  "uuid": "skill-clawhub-bilibili-audio-transcribe",
+  "skillKey": "clawhub-bilibili-audio-transcribe",
+  "name": "Bilibili Audio Transcribe",
+  "summary": "Download audio from Bilibili or b23.tv links and transcribe it into txt, srt, and segment JSON with yt-dlp, ffmpeg, and faster-whisper. Use when a user asks...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilibili_audio_transcribe",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yizh4ng",
+      "features": [
+        "Download audio from Bilibili or b23.tv links and transcribe it into txt, srt, and segment JSON.",
+        "Use when a user asks..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bilibili-audio-transcribe@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/50898990?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bilibili-audio-transcribe",
+      "url": "https://clawhub.ai/skills/bilibili-audio-transcribe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilibili-audio-transcribe",
+    "url": "https://clawhub.ai/skills/bilibili-audio-transcribe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilibili-audio-transcribe-ebeec8170a0d2ec2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bilibili-audio-transcribe@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bilibili-audio-transcribe-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:87b3ed4821751c547a45a031644bbabb76b29b2baac0196ab4e33bef12e66de9",
+      "artifactSizeBytes": 2094
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T12:52:12.477Z"
+}

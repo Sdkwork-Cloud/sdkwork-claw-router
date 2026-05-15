@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62289,
+  "uuid": "skill-clawhub-session-archive-manager",
+  "skillKey": "clawhub-session-archive-manager",
+  "name": "Session Archive Manager",
+  "summary": "智能管理OpenClaw会话文件 - 裁剪大session、生成智能总结、归档旧会话、清理空间。使用场景：session文件过大、需要释放磁盘空间、整理旧会话记录、自动定期归档。当用户提到\"归档session\"、\"裁剪会话\"、\"清理session空间\"、\"整理旧会话\"、\"session太大\"、\"运行session...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_archive_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "delgyd",
+      "features": [
+        "智能管理OpenClaw会话文件",
+        "裁剪大session、生成智能总结、归档旧会话、清理空间。使用场景：session文件过大、需要释放磁盘空间、整理旧会话记录、自动定期归档。当用户提到\"归档session\"、\"裁剪会话\"、\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/session-archive-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8499821?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "session-archive-manager",
+      "url": "https://clawhub.ai/skills/session-archive-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-archive-manager",
+    "url": "https://clawhub.ai/skills/session-archive-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-archive-manager-992b510fd3d1ae99.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/session-archive-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-session-archive-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e04e61fc894f2ed6cf48b346f0f6372e49ade5e285657875490e0a09765d5304",
+      "artifactSizeBytes": 2211
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T00:30:15.648Z"
+}

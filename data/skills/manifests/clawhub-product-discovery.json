@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24611,
+  "uuid": "skill-clawhub-product-discovery",
+  "skillKey": "clawhub-product-discovery",
+  "name": "Product Discovery",
+  "summary": "Use when validating product opportunities, mapping assumptions, planning discovery sprints, or testing problem-solution fit before committing delivery resour...",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.product_discovery",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alireza Rezvani",
+      "features": [
+        "Use when validating product opportunities, mapping assumptions, planning discovery sprints, or."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/product-discovery@2.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5697919?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "product-discovery",
+      "url": "https://clawhub.ai/skills/product-discovery"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "product-discovery",
+    "url": "https://clawhub.ai/skills/product-discovery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/product-discovery-89bb11a294489761.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/product-discovery@2.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-product-discovery-2.1.1.json",
+      "version": "2.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4aa9292adeef3dd9402100c344281313365183f71c904690cd960c8af169309",
+      "artifactSizeBytes": 1941
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T14:31:43.262Z"
+}

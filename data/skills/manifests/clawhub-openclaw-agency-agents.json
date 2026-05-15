@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67152,
+  "uuid": "skill-clawhub-openclaw-agency-agents",
+  "skillKey": "clawhub-openclaw-agency-agents",
+  "name": "OpenClaw Agency Agents",
+  "summary": "从 agency-agents-zh 仓库管理和激活 AI 智能体人格。支持 176 个专业智能体，涵盖工程、设计、营销、销售、产品等领域。安装后首次使用时会自动克隆仓库。当用户要求激活特定智能体（如\"激活小红书运营\"、\"激活前端开发者\"）、列出可用智能体、或搜索智能体时使用此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_agency_agents",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "roymax",
+      "features": [
+        "从 agency-agents-zh 仓库管理和激活 AI 智能体人格。支持 176 个专业智能体，涵盖工程、设计、营销、销售、产品等领域。安装后首次使用时会自动克隆仓库。当用户要求激活特定."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-agency-agents@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/409619?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-agency-agents",
+      "url": "https://clawhub.ai/skills/openclaw-agency-agents"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-agency-agents",
+    "url": "https://clawhub.ai/skills/openclaw-agency-agents",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-agency-agents-51903fdc2459b57b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-agency-agents@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-agency-agents-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:18bab7c67f3ab92ffb028c79bd316442c4b71da3e08be491a5696117cddceb47",
+      "artifactSizeBytes": 2653
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T15:58:19.206Z"
+}

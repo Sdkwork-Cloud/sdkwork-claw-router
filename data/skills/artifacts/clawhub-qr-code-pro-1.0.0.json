@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qr-code-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qr_code_pro",
+  "skill": {
+    "id": 11855,
+    "skillKey": "clawhub-qr-code-pro",
+    "name": "Advanced QR Intelligence"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qr-code-pro",
+    "url": "https://clawhub.ai/skills/qr-code-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qr-code-pro-75912e4f0677781f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate and read QR codes. Use when the user wants to create a QR code from text/URL, or decode/read a QR code from an image file. Supports PNG/JPG output and can read QR codes from screenshots or image files."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "omar-khaleel",
+      "userId": "publishers:omar-khaleel",
+      "displayName": "Omar-Khaleel",
+      "image": "https://avatars.githubusercontent.com/u/240748662?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1685,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770332115093,
+      "changelog": "- Initial release of the QR Code skill.\n- Generate QR codes from text or URLs with customizable options.\n- Save QR codes as PNG files or display in terminal.\n- Decode/read QR codes from image files (PNG, JPG) and screenshots.\n- Includes sample scripts and usage examples for generation and reading.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:46f64094939c0e67b8ac58555bdb960ba29a701167f7715d6badb97cc4fab102"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26359,
+  "uuid": "skill-clawhub-support-queue-operations",
+  "skillKey": "clawhub-support-queue-operations",
+  "name": "1.2.0",
+  "summary": "Structured triage and handoff for customer support ticket queues.",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.support_queue_operations",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yikun Fu",
+      "features": [
+        "Structured triage and handoff for customer support ticket queues."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/support-queue-operations@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121741034?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "support-queue-operations",
+      "url": "https://clawhub.ai/skills/support-queue-operations"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "support-queue-operations",
+    "url": "https://clawhub.ai/skills/support-queue-operations",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/support-queue-operations-a6d1720035bc9da9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/support-queue-operations@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-support-queue-operations-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:99eca3dc88652f6c1f6eed9b06f05374ce73819e7f6e6a2a4e2f29d0e0a7731c",
+      "artifactSizeBytes": 2068
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T11:01:51.339Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60853,
+  "uuid": "skill-clawhub-clawscan-vigil",
+  "skillKey": "clawhub-clawscan-vigil",
+  "name": "Clawscan Vigil",
+  "summary": "安装前扫描 OpenClaw Skill 安全风险，静态+动态双重检测，识别恶意代码",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawscan_vigil",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jjj09090",
+      "features": [
+        "安装前扫描 OpenClaw Skill 安全风险，静态+动态双重检测，识别恶意代码"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawscan-vigil@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2885027?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawscan-vigil",
+      "url": "https://clawhub.ai/skills/clawscan-vigil"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawscan-vigil",
+    "url": "https://clawhub.ai/skills/clawscan-vigil",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawscan-vigil-93cb1ff476a50ca1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawscan-vigil@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawscan-vigil-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ca822e49d7594954a7da38154eca4683dbcdbe0f33ca495d4ea7eab45decb60",
+      "artifactSizeBytes": 2204
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T04:46:59.250Z"
+}

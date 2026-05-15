@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72833,
+  "uuid": "skill-clawhub-jike-word-query",
+  "skillKey": "clawhub-jike-word-query",
+  "name": "汉语词语查询 - 即刻数据",
+  "summary": "汉语词语查询。支持搜索词语、词语详情、随机词语、近义词查询和反义词查询，返回词语、拼音、解释、出处、例句、故事、用法、近义词和反义词。适用场景：用户说“查一下太公钓鱼是什么意思”“一言相关词语”“伟大的近义词”“高兴的反义词”等。数据由即刻数据（jikeapi.cn）开放接口提供。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jike_word_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jikeapi",
+      "features": [
+        "汉语词语查询。支持搜索词语、词语详情、随机词语、近义词查询和反义词查询，返回词语、拼音、解释、出处、例句、故事、用法、近义词和反义词。适用场景：用户说“查一下太公钓鱼是什么意思”“一言相关词."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jike-word-query@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26078515?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jike-word-query",
+      "url": "https://clawhub.ai/skills/jike-word-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jike-word-query",
+    "url": "https://clawhub.ai/skills/jike-word-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jike-word-query-df7f7031c8bf4a6d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jike-word-query@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jike-word-query-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:94b49a8fb26a023c76f839f392aa380342f4738db5aaddd3d0fd02c4472ddc59",
+      "artifactSizeBytes": 2469
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T02:45:34.736Z"
+}

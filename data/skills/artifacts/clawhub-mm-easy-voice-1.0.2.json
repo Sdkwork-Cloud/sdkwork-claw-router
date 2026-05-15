@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mm-easy-voice@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mm_easy_voice",
+  "skill": {
+    "id": 18483,
+    "skillKey": "clawhub-mm-easy-voice",
+    "name": "mmEasyVoice"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mm-easy-voice",
+    "url": "https://clawhub.ai/skills/mm-easy-voice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mm-easy-voice-1aaae17936522e01.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Simple text-to-speech skill using MiniMax Voice API. Converts text to audio with customizable voice selection. Use for generating speech audio from text."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "blue-coconut",
+      "userId": "publishers:blue-coconut",
+      "displayName": "Haolan He",
+      "image": "https://avatars.githubusercontent.com/u/61172629?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 688,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772971293241,
+      "changelog": "- Documentation and instructions remain unchanged; no user-facing updates.\n- Internal changes made to mmvoice.py (details not specified).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fdf2fae7d35ba52cde9e7ceae39f641f2beabcd4d4643968d4f7b6c49cd6efd7"
+}

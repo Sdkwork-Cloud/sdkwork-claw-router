@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9689,
+  "uuid": "skill-clawhub-clawdbot-jira-skill",
+  "skillKey": "clawhub-clawdbot-jira-skill",
+  "name": "Jira",
+  "summary": "Manage Jira issues, transitions, and worklogs via the Jira Cloud REST API.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdbot_jira_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kyjus25",
+      "features": [
+        "Manage Jira issues, transitions, and worklogs via the Jira Cloud REST API."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawdbot-jira-skill@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6710794?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawdbot-jira-skill",
+      "url": "https://clawhub.ai/skills/clawdbot-jira-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdbot-jira-skill",
+    "url": "https://clawhub.ai/skills/clawdbot-jira-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdbot-jira-skill-eaf5b0c76abab09a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawdbot-jira-skill@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawdbot-jira-skill-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:697ad36f97ea7415956b4132c849bd204769c5c4c176cb89b2c718c80a28a226",
+      "artifactSizeBytes": 1892
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-20T02:29:10.052Z"
+}

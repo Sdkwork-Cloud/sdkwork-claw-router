@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29133,
+  "uuid": "skill-clawhub-agent-deployment-checklist",
+  "skillKey": "clawhub-agent-deployment-checklist",
+  "name": "Agent Deployment Checklist",
+  "summary": "Production deployment checklist for AI agent infrastructure. Covers Mac Mini and server deployment with 5-layer stack (base install, IAM config, client softw...",
+  "version": "98.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_deployment_checklist",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "samledger67-dotcom",
+      "features": [
+        "Production deployment checklist for AI agent infrastructure",
+        "Covers Mac Mini and server deployment with 5-layer stack (base install, IAM config, client soft."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-deployment-checklist@98.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261800271?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-deployment-checklist",
+      "url": "https://clawhub.ai/skills/agent-deployment-checklist"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-deployment-checklist",
+    "url": "https://clawhub.ai/skills/agent-deployment-checklist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-deployment-checklist-f35f75fbeaf76400.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-deployment-checklist@98.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-deployment-checklist-98.0.1.json",
+      "version": "98.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4ec238a5e71d2752433d423c6a2d78733adf976ff81c8a182bc314183bc4fca0",
+      "artifactSizeBytes": 2000
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T05:21:49.664Z"
+}

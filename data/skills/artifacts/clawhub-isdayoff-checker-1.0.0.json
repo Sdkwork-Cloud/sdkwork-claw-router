@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/isdayoff-checker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.isdayoff_checker",
+  "skill": {
+    "id": 66936,
+    "skillKey": "clawhub-isdayoff-checker",
+    "name": "Isdayoff Checker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "isdayoff-checker",
+    "url": "https://clawhub.ai/skills/isdayoff-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/isdayoff-checker-150882385c591143.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Определяет, рабочий ли указанный день (по умолчанию — сегодня) с помощью API isdayoff.ru. Использовать, когда нужно быстро ответить «рабочий» или «выходной»..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "freemandigger",
+      "userId": "s174hzse958xft902m8pwm6tkn84fxwm",
+      "displayName": "Dmitry Beketov",
+      "image": "https://avatars.githubusercontent.com/u/616983?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776242604919,
+      "changelog": "isdayoff-checker 1.0.0\n\n- Новый навык для определения, является ли указанный день рабочим или выходным с помощью isdayoff.ru API.\n- Включает скрипт check_day.py для локального и параметризированного использования.\n- Поддержка опции замены API-ендпоинта.\n- Документация с примерами вызова и замечаниями по безопасности.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d00e554dd77f0ed17a956653f98c5ea7288e68901eb9ed7ba4cc721acc9f9cbb"
+}

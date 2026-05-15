@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/log-sift@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.log_sift",
+  "skill": {
+    "id": 44416,
+    "skillKey": "clawhub-log-sift",
+    "name": "Log Sift"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "log-sift",
+    "url": "https://clawhub.ai/skills/log-sift",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/log-sift-a7cf6ed9fa9a744d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Filter large log files by keywords and date ranges quickly from the command line for efficient troubleshooting and analysis."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "albionaiinc-del",
+      "userId": "s17a02897swm2wgc0ge6g3j8ss83mx5y",
+      "displayName": "albionaiinc-del",
+      "image": "https://avatars.githubusercontent.com/u/269741383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776181719971,
+      "changelog": "Initial release of LogSift.\n\n- Filter large log files by keyword(s) or date range from the command line.\n- Supports both file input and stdin for flexible workflow integration.\n- Simple, clear syntax for mixed filtering (keywords and dates).\n- Priced at $2.50.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2ac682af7252330f78ae95b41bd3dd8c2e7f37d00c3c3bddb411b63e8e9484ba"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/douyin-quick-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_quick_search",
+  "skill": {
+    "id": 55853,
+    "skillKey": "clawhub-douyin-quick-search",
+    "name": "Douyin Quick Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-quick-search",
+    "url": "https://clawhub.ai/skills/douyin-quick-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-quick-search-47829a7842d54140.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search Douyin (抖音) content by natural language keyword. Supports video search, trending topics, and video detail extraction. Uses web search + page scraping..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "terrycarter1985",
+      "userId": "s17brwfrqyjhbjgadkvar20h8x8492g8",
+      "displayName": "terrycarter1985",
+      "image": "https://avatars.githubusercontent.com/u/1542987?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 47,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778348289918,
+      "changelog": "- Initial release of douyin-quick-search skill.\n- Search Douyin (抖音) videos using natural language keywords in Chinese or English.\n- Discover trending topics and popular content from Douyin.\n- Extract metadata from specific Douyin video URLs.\n- No login or API key required; uses web search and page scraping.\n- Clear rules for when to trigger searches, show trending, or extract video details.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b0385b7d5fd77f698d2e0d7113e1bfdd4c640944c02707fd1cebc8a5e6bf35ea"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14264,
+  "uuid": "skill-clawhub-company",
+  "skillKey": "clawhub-company",
+  "name": "Company",
+  "summary": "Build an agent-powered organization by mapping functions to skills and iterating on structure.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.company",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Build an agent-powered organization by mapping functions to skills and iterating on structure."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/company@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "company",
+      "url": "https://clawhub.ai/skills/company"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "company",
+    "url": "https://clawhub.ai/skills/company",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/company-f168ccdd91548c5a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/company@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-company-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a4412a1791824e374b0f3ec517ddc3152d6f4017122129a9fc5b3bb2e81265ee",
+      "artifactSizeBytes": 1767
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T13:45:35.641Z"
+}

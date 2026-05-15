@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bangumi-trackr@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bangumi_trackr",
+  "skill": {
+    "id": 41900,
+    "skillKey": "clawhub-bangumi-trackr",
+    "name": "bangumi-tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bangumi-trackr",
+    "url": "https://clawhub.ai/skills/bangumi-trackr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bangumi-trackr-9d44f0850076e6c0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Bangumi collections and track watch progress via OAuth. Use when user wants to track anime/book/game/music progress, manage wish/doing/collect lists,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mountlynx",
+      "userId": "s17f6xfc48q4g0g5317qa2rjcs847yx7",
+      "displayName": "MountLynx",
+      "image": "https://avatars.githubusercontent.com/u/165305764?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775309456920,
+      "changelog": "Manage Bangumi collections and track watch progress via OAuth. Use when user wants to track anime/book/game/music progress, manage wish/doing/collect lists, or access personal Bangumi data.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c09c422915234d91cb17c1ad82c5947b07ac44544855d82fe9ceda57bc3d19b3"
+}

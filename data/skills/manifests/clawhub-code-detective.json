@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69184,
+  "uuid": "skill-clawhub-code-detective",
+  "skillKey": "clawhub-code-detective",
+  "name": "Code Detective",
+  "summary": "Найди баг в коде! Интерактивная игра для тренировки отладки с 3 уровнями сложности. Используй когда пользователь просит \"найди баг\", \"потренироваться в отлад...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_detective",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "russianoracle",
+      "features": [
+        "Найди баг в коде! Интерактивная игра для тренировки отладки с 3 уровнями сложности",
+        "Используй когда пользователь просит \"найди баг\", \"потренироваться в отлад..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/code-detective@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36515336?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "code-detective",
+      "url": "https://clawhub.ai/skills/code-detective"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-detective",
+    "url": "https://clawhub.ai/skills/code-detective",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-detective-d5d5938c35fe04ad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/code-detective@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-code-detective-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cfec0980621707c7b7ae81ab5de2a4d57ce8fe126c63e6e7ae90bee47f8dfd41",
+      "artifactSizeBytes": 2553
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T07:57:02.308Z"
+}

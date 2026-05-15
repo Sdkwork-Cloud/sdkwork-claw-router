@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25502,
+  "uuid": "skill-clawhub-book2kindle",
+  "skillKey": "clawhub-book2kindle",
+  "name": "Book2kindle",
+  "summary": "Search Z-Library and send EPUBs to Kindle",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book2kindle",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hsin-Lan",
+      "features": [
+        "Search Z-Library and send EPUBs to Kindle"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book2kindle@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/115072608?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book2kindle",
+      "url": "https://clawhub.ai/skills/book2kindle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book2kindle",
+    "url": "https://clawhub.ai/skills/book2kindle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book2kindle-b8cb0cba8378a642.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book2kindle@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-book2kindle-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac0fe9593054569e9a2a95bf12e721f222de739555d97d194611bc45a0f45a87",
+      "artifactSizeBytes": 2165
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T08:06:00.626Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/data-report-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_report_generator",
+  "skill": {
+    "id": 51054,
+    "skillKey": "clawhub-data-report-generator",
+    "name": "Data Report Generator — CSV/Excel to Word/PDF with Charts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-report-generator",
+    "url": "https://clawhub.ai/skills/data-report-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-report-generator-b22d94e2698d6887.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically analyze CSV or Excel files and generate professional data analysis reports with charts, summaries, and insights — output as Word (.docx) or PDF..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "suntianchong",
+      "userId": "s1769sgn271n26sq1pdkz7rvqs85zykp",
+      "displayName": "suntianchong",
+      "image": "https://avatars.githubusercontent.com/u/41775375?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 600,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773106643503,
+      "changelog": "- Initial release of the data-report-generator skill.\n- Automatically analyzes CSV and Excel files to create professional data analysis reports with charts, summaries, and insights.\n- Supports output formats: Word (.docx) and PDF.\n- Detects data/report type, generates 3–6 relevant charts, and outputs a structured report with executive summary, analysis, and recommendations.\n- Ideal for generating sales, operations, finance, or marketing reports from tabular data.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bff20c4fc035a42284503b4482f84b8aadaa937bfc7872dd4baf0c19dd13effe"
+}

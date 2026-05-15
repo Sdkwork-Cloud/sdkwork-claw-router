@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69549,
+  "uuid": "skill-clawhub-adv-video-script-generator",
+  "skillKey": "clawhub-adv-video-script-generator",
+  "name": "EMAR adv-video-script-generator",
+  "summary": "信息流视频脚本生成助手。当用户说“帮我写一个视频脚本”“生成广告脚本”“写口播稿”“写信息流脚本”时触发。输入产品名称、卖点、时长，自动输出完整的拍摄脚本（含画面、台词、字幕、时长分配）。",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adv_video_script_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "suwangsen",
+      "features": [
+        "信息流视频脚本生成助手。当用户说“帮我写一个视频脚本”“生成广告脚本”“写口播稿”“写信息流脚本”时触发。输入产品名称、卖点、时长，自动输出完整的拍摄脚本（含画面、台词、字幕、时长分配）。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/adv-video-script-generator@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24741249?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "adv-video-script-generator",
+      "url": "https://clawhub.ai/skills/adv-video-script-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adv-video-script-generator",
+    "url": "https://clawhub.ai/skills/adv-video-script-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adv-video-script-generator-bc22b808a0d3a794.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/adv-video-script-generator@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-adv-video-script-generator-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:09f6557437cc7313f829701c91c61a7de749b626e432f917258a52c8c188fd6e",
+      "artifactSizeBytes": 2506
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T09:23:56.568Z"
+}

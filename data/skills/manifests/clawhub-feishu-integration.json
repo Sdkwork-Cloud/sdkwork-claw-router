@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63953,
+  "uuid": "skill-clawhub-feishu-integration",
+  "skillKey": "clawhub-feishu-integration",
+  "name": "Feishu Integration",
+  "summary": "提供飞书开放平台API统一调用与token管理，支持文档、知识库、文件操作，Markdown导入，消息解析及群欢迎机器人功能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "莫循",
+      "features": [
+        "提供飞书开放平台API统一调用与token管理，支持文档、知识库、文件操作，Markdown导入，消息解析及群欢迎机器人功能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-integration@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/68231637?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-integration",
+      "url": "https://clawhub.ai/skills/feishu-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-integration",
+    "url": "https://clawhub.ai/skills/feishu-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-integration-8feb336996f4f88e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-integration@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-integration-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:46cecd6d72255949df82615c09b5c65bb30e782d3feab64323bf0643c8ce72c7",
+      "artifactSizeBytes": 2474
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T19:20:35.210Z"
+}

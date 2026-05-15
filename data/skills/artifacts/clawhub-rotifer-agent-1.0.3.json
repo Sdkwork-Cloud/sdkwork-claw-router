@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rotifer-agent@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rotifer_agent",
+  "skill": {
+    "id": 44556,
+    "skillKey": "clawhub-rotifer-agent",
+    "name": "Rotifer Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rotifer-agent",
+    "url": "https://clawhub.ai/skills/rotifer-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rotifer-agent-73207eaa85973ba5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "End-to-end guide for building AI Agents from Genes: intent decomposition, Gene selection, Genome composition, Agent creation, and testing. Use when the user..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaoba-dev",
+      "userId": "s174dvd7sg66gw86h4t3c8575d83g51m",
+      "displayName": "Xiaoba",
+      "image": "https://avatars.githubusercontent.com/u/229576266?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776265984118,
+      "changelog": "Add Prerequisites section with CLI and MCP setup instructions (no hardcoded versions)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c5ec8d88ea2b2ab4af5f9415d627b3ddd1bea5db4a76af7876dad7aef710746f"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38317,
+  "uuid": "skill-clawhub-table-1-generator-advanced",
+  "skillKey": "clawhub-table-1-generator-advanced",
+  "name": "Table 1 Generator",
+  "summary": "Automated generation of baseline characteristics tables (Table 1) for clinical research papers.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.table_1_generator_advanced",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Automated generation of baseline characteristics tables (Table 1) for clinical research papers."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/table-1-generator-advanced@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "table-1-generator-advanced",
+      "url": "https://clawhub.ai/skills/table-1-generator-advanced"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "table-1-generator-advanced",
+    "url": "https://clawhub.ai/skills/table-1-generator-advanced",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/table-1-generator-advanced-b9437a799a78e41f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/table-1-generator-advanced@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-table-1-generator-advanced-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:16d5ea523c19a364a4c1d4ba2e003a44f032690fa7bc1fd755cbcb4525f3a00b",
+      "artifactSizeBytes": 2385
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T08:08:43.118Z"
+}

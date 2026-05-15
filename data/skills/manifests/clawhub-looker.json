@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23736,
+  "uuid": "skill-clawhub-looker",
+  "skillKey": "clawhub-looker",
+  "name": "Looker",
+  "summary": "Looker integration. Manage data, records, and automate workflows. Use when the user wants to interact with Looker data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.looker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Looker integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Looker data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/looker@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "looker",
+      "url": "https://clawhub.ai/skills/looker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "looker",
+    "url": "https://clawhub.ai/skills/looker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/looker-d133efd9800e396a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/looker@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-looker-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d577e56560f420e5b2e1278de6a9c0736537963a2662f419feb1e99ecbe7f10",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:09:10.342Z"
+}

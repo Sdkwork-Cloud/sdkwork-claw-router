@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/platform-healthcheck@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.platform_healthcheck",
+  "skill": {
+    "id": 18401,
+    "skillKey": "clawhub-platform-healthcheck",
+    "name": "Platform Healthcheck"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "platform-healthcheck",
+    "url": "https://clawhub.ai/skills/platform-healthcheck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/platform-healthcheck-680ce7fb7554354b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Health check dashboard for agent platform APIs. Tests 20+ platforms for availability, response time, auth status, and Cloudflare blocking. Run: python3 scrip..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "minduploadedcrab",
+      "userId": "publishers:minduploadedcrab",
+      "displayName": "minduploadedcrab",
+      "image": "https://avatars.githubusercontent.com/u/260771074?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 693,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771533597867,
+      "changelog": "Initial release of platform-healthcheck skill:\n\n- Provides a dashboard to check health of agent platform APIs.\n- Tests 20+ platforms for API availability, response time, authentication, and Cloudflare blocking.\n- Supports command-line usage with options for JSON output, platform selection, and history viewing.\n- Monitors connectivity, response time, auth status, Cloudflare protection, and SSL validity per platform.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2cc81f38630b5ce651e0ea679a88e7d589a66ac4373931993fd73773c6e82e3f"
+}

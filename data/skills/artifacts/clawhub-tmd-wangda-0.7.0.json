@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tmd-wangda@0.7.0",
+  "version": "0.7.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tmd_wangda",
+  "skill": {
+    "id": 62434,
+    "skillKey": "clawhub-tmd-wangda",
+    "name": "移动网大自动挂机Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tmd-wangda",
+    "url": "https://clawhub.ai/skills/tmd-wangda",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tmd-wangda-c71196cdf955ee53.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "帮助用户完成中移网大(https://wangda.chinamobile.com)相关课程的学习,当用户需要学习网大课程(例如学习新课程，查询学习进度或终止学习等)或用户提供的url域名是(wangda.chinamobile.com)时使用此技能"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luobusita-ai",
+      "userId": "s176k8c2qrdx9gdysbv2fc6hvx83s8dr",
+      "displayName": "罗布斯塔",
+      "image": "https://avatars.githubusercontent.com/u/1501437?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.7.0",
+      "createdAt": 1774688810659,
+      "changelog": "tmd-wangda v0.7.0\n\n- Improved documentation in SKILL.md for clearer explanations of course, courseware, and session concepts.\n- Detailed the main features: tracking course progress, adding new courses to study, login situations, and terminating existing courses.\n- Clarified tool command usage for all major workflows.\n- Provided step-by-step login process and session/account management instructions.\n- Added guidance for handling multiple scenarios, such as switching accounts and summarizing progress.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c825b56bac35d8b50b5e9a2fe609fea684b5e3ae30290f106c74f1abed9a2266"
+}

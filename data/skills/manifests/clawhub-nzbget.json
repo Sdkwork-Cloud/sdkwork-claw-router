@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11180,
+  "uuid": "skill-clawhub-nzbget",
+  "skillKey": "clawhub-nzbget",
+  "name": "nzbget",
+  "summary": "Check NZBGet download status and queue information. Use when the user asks about NZBGet downloads, wants to know how many things are downloading, check download speed, view the queue, or get a full status report of their Usenet downloads.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nzbget",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rob McClellan",
+      "features": [
+        "Check NZBGet download status and queue information",
+        "Use when the user asks about NZBGet downloads, wants to know how many things are downloading, c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nzbget@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1099260?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nzbget",
+      "url": "https://clawhub.ai/skills/nzbget"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nzbget",
+    "url": "https://clawhub.ai/skills/nzbget",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nzbget-cd66ee30c67a06c9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nzbget@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-nzbget-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:085ab2a53b2a25b7157298b181f02d1eb14c8be57c26143aeba22e3ed9a746c3",
+      "artifactSizeBytes": 1997
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T15:27:26.540Z"
+}

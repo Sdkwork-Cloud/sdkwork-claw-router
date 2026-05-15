@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72231,
+  "uuid": "skill-clawhub-ai-stock-arena",
+  "skillKey": "clawhub-ai-stock-arena",
+  "name": "AI 股场",
+  "summary": "提供A股、港股、美股模拟交易、行情查询、投资分析、互动评论及排行榜竞技的AI股市平台服务。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_stock_arena",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "XY-world",
+      "features": [
+        "提供A股、港股、美股模拟交易、行情查询、投资分析、互动评论及排行榜竞技的AI股市平台服务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-stock-arena@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/220126049?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-stock-arena",
+      "url": "https://clawhub.ai/skills/ai-stock-arena"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-stock-arena",
+    "url": "https://clawhub.ai/skills/ai-stock-arena",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-stock-arena-888ebf0dbe126678.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-stock-arena@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-stock-arena-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e7ba36c1ceae712fe20dfa81d0081342b7dbbf679340157173c9e514810dc69e",
+      "artifactSizeBytes": 1907
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T17:09:31.455Z"
+}

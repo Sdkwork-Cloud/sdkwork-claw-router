@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-model-switch@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_model_switch",
+  "skill": {
+    "id": 66641,
+    "skillKey": "clawhub-auto-model-switch",
+    "name": "Auto Model Switch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-model-switch",
+    "url": "https://clawhub.ai/skills/auto-model-switch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-model-switch-d6217232e79d714d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动切换模型 - 当模型token用完或限流时，自动切换到备用模型，并通知用户。支持配置多个备用模型，智能切换策略。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wei-wei-zhao",
+      "userId": "s172v92tkkpqqtx3wj0xerpcz183hfav",
+      "displayName": "wei-wei-zhao",
+      "image": "https://avatars.githubusercontent.com/u/54010856?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774417606700,
+      "changelog": "auto-model-switch v1.0.0\n\n- 初始版本发布。\n- 自动检测模型token消耗和API限流。\n- 在token用完或遇到限流时，自动切换到备用模型并通知用户。\n- 支持配置多个备用模型及智能切换策略。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a0b7f486795dbcc80ef9c1df2f9e68e7c937340c1742e16f21dfce446c43ed49"
+}

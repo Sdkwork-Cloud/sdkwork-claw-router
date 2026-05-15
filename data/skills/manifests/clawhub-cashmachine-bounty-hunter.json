@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46411,
+  "uuid": "skill-clawhub-cashmachine-bounty-hunter",
+  "skillKey": "clawhub-cashmachine-bounty-hunter",
+  "name": "CashMachine Bounty Hunter",
+  "summary": "Automates multi-repo GitHub bounty searches, estimates values, generates fixes via coding agent, automates PRs, and monitors payout progress.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cashmachine_bounty_hunter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sergey Solovev",
+      "features": [
+        "Automates multi-repo GitHub bounty searches, estimates values, generates fixes via coding agent."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cashmachine-bounty-hunter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13732497?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cashmachine-bounty-hunter",
+      "url": "https://clawhub.ai/skills/cashmachine-bounty-hunter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cashmachine-bounty-hunter",
+    "url": "https://clawhub.ai/skills/cashmachine-bounty-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cashmachine-bounty-hunter-a96fee21f2d6bd9c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cashmachine-bounty-hunter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cashmachine-bounty-hunter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:470f760e5b687e1942b3c0978f5147b6c3158baa74572d0132dd1e98d7f101bd",
+      "artifactSizeBytes": 2110
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T14:21:18.436Z"
+}

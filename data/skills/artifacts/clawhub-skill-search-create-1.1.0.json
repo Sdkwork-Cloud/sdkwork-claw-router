@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-search-create@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_search_create",
+  "skill": {
+    "id": 59918,
+    "skillKey": "clawhub-skill-search-create",
+    "name": "Skill Search & Create"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-search-create",
+    "url": "https://clawhub.ai/skills/skill-search-create",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-search-create-f7bc8dc9d991b424.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在 ClawHub 上搜索现有技能，当找不到匹配时自动创建新的 OpenClaw 技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "condamnation",
+      "userId": "s17bgn8mtg2q9ye0qcewaj7c9s83ksb3",
+      "displayName": "condamnation",
+      "image": "https://avatars.githubusercontent.com/u/133640249?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 716,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774410287983,
+      "changelog": "更新 frontmatter 格式，添加 user-invocable 标记和 metadata 配置",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8ea5c7696dce15981abe7958a4e360cd8118aa6289b010670c501addfb2ea2e5"
+}

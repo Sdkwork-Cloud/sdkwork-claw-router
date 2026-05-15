@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smart-customer-service-cn@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_customer_service_cn",
+  "skill": {
+    "id": 61667,
+    "skillKey": "clawhub-smart-customer-service-cn",
+    "name": "Smart Customer Service Cn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-customer-service-cn",
+    "url": "https://clawhub.ai/skills/smart-customer-service-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-customer-service-cn-32b7434adbc8462d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能客服机器人 - 24小时在线客服，自动回复、知识库管理、多渠道支持"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huyong2023",
+      "userId": "s17agxwnrg48cpbrsngxqb6eg183yzy9",
+      "displayName": "huyong2023",
+      "image": "https://avatars.githubusercontent.com/u/138767654?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1355,
+      "installsAllTime": 11,
+      "installsCurrent": 10,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772605325357,
+      "changelog": "- 移除了SKILL.md中“快速开始”、“使用场景”、“收益预测”、“选择我们”和“联系我们”等详细说明和案例内容，仅保留核心配置信息与定价方案。\n- 精简文档，专注于技能的定价、功能条目和支付方式描述。\n- 便于开发者或集成方快速查阅技能功能与价格。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2e65f590679b1a851473a999d5ad6a0f3c2e2d6fa267b0c24e669af33c548cb2"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50913,
+  "uuid": "skill-clawhub-event-tracking-skill",
+  "skillKey": "clawhub-event-tracking-skill",
+  "name": "Analytics Tracking Automation — GA4 + GTM Setup via AI",
+  "summary": "Use when you need GA4 + GTM tracking delivery from site discovery through publish, or when the right phase entry point is still unclear.",
+  "version": "1.0.14",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.event_tracking_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jtrackingai",
+      "features": [
+        "Use when you need GA4 + GTM tracking delivery from site discovery through publish, or when the."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/event-tracking-skill@1.0.14",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255785219?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "event-tracking-skill",
+      "url": "https://clawhub.ai/skills/event-tracking-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "event-tracking-skill",
+    "url": "https://clawhub.ai/skills/event-tracking-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/event-tracking-skill-5c124921e650f3c6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/event-tracking-skill@1.0.14",
+      "artifactUrl": "data/skills/artifacts/clawhub-event-tracking-skill-1.0.14.json",
+      "version": "1.0.14",
+      "runtime": "metadata",
+      "checksumHash": "sha256:244190c132039d62c9b79e23a305fc2c15df55e2a2450b203e5fdf66f08ba65a",
+      "artifactSizeBytes": 2483
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T06:11:19.300Z"
+}

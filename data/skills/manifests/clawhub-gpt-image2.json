@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35477,
+  "uuid": "skill-clawhub-gpt-image2",
+  "skillKey": "clawhub-gpt-image2",
+  "name": "Gpt Image2",
+  "summary": "Generate high-quality images with GPT Image 2 (OpenAI gpt-image-2) via the ClawdChat tool gateway. Use when the user asks to create / generate / draw / paint...",
+  "version": "0.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gpt_image2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Agentrix",
+      "features": [
+        "Generate high-quality images with GPT Image 2 (OpenAI gpt-image-2) via the ClawdChat tool gatew.",
+        "Use when the user asks to create / generate / draw / paint..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gpt-image2@0.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/156587109?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gpt-image2",
+      "url": "https://clawhub.ai/skills/gpt-image2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gpt-image2",
+    "url": "https://clawhub.ai/skills/gpt-image2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gpt-image2-7a72c9ee80353a8b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gpt-image2@0.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gpt-image2-0.5.0.json",
+      "version": "0.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b20d9f92ee876109b7db88c3165b90f453577014723690e9fdc5251947efb3b8",
+      "artifactSizeBytes": 2245
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T14:32:24.929Z"
+}

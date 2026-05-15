@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39060,
+  "uuid": "skill-clawhub-userorbit",
+  "skillKey": "clawhub-userorbit",
+  "name": "Userorbit",
+  "summary": "Manage Userorbit resources via the public API. Create and manage feedback, announcements, roadmap topics, help center articles, boards, tags, subscribers, an...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.userorbit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mukesh ツ",
+      "features": [
+        "Manage Userorbit resources via the public API",
+        "Create and manage feedback, announcements, roadmap topics, help center articles, boards, tags,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/userorbit@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62496348?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "userorbit",
+      "url": "https://clawhub.ai/skills/userorbit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "userorbit",
+    "url": "https://clawhub.ai/skills/userorbit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/userorbit-3b20500f96ea2b67.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/userorbit@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-userorbit-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:67d950ebccc2c9bd622149b05930388b5bcb5fcff33e65add418b3adebfb9871",
+      "artifactSizeBytes": 1934
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T11:40:52.453Z"
+}

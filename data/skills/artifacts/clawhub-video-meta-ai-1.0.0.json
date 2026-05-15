@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-meta-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_meta_ai",
+  "skill": {
+    "id": 49349,
+    "skillKey": "clawhub-video-meta-ai",
+    "name": "Video Meta Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-meta-ai",
+    "url": "https://clawhub.ai/skills/video-meta-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-meta-ai-f341ba484057b13f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute product demo video into 1080p tagged video metadata just by typing what you need. Whether it's auto-generating titles, descriptions, and tags..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 82,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777950652633,
+      "changelog": "Initial release of Video Meta AI — instant video metadata generation from product demos.\n\n- Generate titles, descriptions, and tags for uploaded video clips using cloud AI.\n- Automatic 1080p video processing (MP4 by default); export ready in 20–40 seconds.\n- No manual editing—simply upload or describe what you need to get started.\n- Simple onboarding with anonymous token authentication for up to 100 free credits.\n- Supports session management, status/credit checks, and batch or iterative workflows.\n- Accepts common video formats (MP4, MOV, AVI, WebM) and enforces max 500MB size.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dc7f294b34f9312aeeae085f0e521b4c3e48a49cbb01984ba7c0fbae41b39a10"
+}

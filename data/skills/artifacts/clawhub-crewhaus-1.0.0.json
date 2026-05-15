@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crewhaus@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crewhaus",
+  "skill": {
+    "id": 27566,
+    "skillKey": "clawhub-crewhaus",
+    "name": "CrewHaus Startup Validation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crewhaus",
+    "url": "https://clawhub.ai/skills/crewhaus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crewhaus-1288da468bfd5c82.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Quick startup idea evaluation from your terminal. Score ideas on 3 dimensions, run deeper scans with real competitor data and risk assessment. A structured t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "crewhaus",
+      "userId": "s1719mrype24snhrfvby2bkyc983jyaj",
+      "displayName": "crewhaus",
+      "image": "https://avatars.githubusercontent.com/u/261488301?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 335,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773116811564,
+      "changelog": "Initial public release. Quick idea scoring and deeper scans with real competitor data.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e9d2c0797084502d4f70c8bfe1b23446ce19b48966c2b5987e904962843f25d8"
+}

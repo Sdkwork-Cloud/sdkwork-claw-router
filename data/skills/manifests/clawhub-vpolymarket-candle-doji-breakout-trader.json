@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52730,
+  "uuid": "skill-clawhub-vpolymarket-candle-doji-breakout-trader",
+  "skillKey": "clawhub-vpolymarket-candle-doji-breakout-trader",
+  "name": "Candle Doji Breakout Trader",
+  "summary": "Detects doji patterns (48-52% probability) in crypto 5-minute interval markets on Polymarket and trades the post-doji breakout in the direction of the pre-do...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vpolymarket_candle_doji_breakout_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "diagnostikon",
+      "features": [
+        "Detects doji patterns (48-52% probability) in crypto 5-minute interval markets on Polymarket an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vpolymarket-candle-doji-breakout-trader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17246180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vpolymarket-candle-doji-breakout-trader",
+      "url": "https://clawhub.ai/skills/vpolymarket-candle-doji-breakout-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vpolymarket-candle-doji-breakout-trader",
+    "url": "https://clawhub.ai/skills/vpolymarket-candle-doji-breakout-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vpolymarket-candle-doji-breakout-trader-aff7982aa71d45b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vpolymarket-candle-doji-breakout-trader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vpolymarket-candle-doji-breakout-trader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fe3a0e1237bbfe64ce4b9c3f81675f6cab43714f34a716387ebf6f7b32a49bc0",
+      "artifactSizeBytes": 2532
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T07:17:50.589Z"
+}

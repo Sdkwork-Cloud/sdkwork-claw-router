@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59010,
+  "uuid": "skill-clawhub-zhihu-draft-writer",
+  "skillKey": "clawhub-zhihu-draft-writer",
+  "name": "知乎草稿写手 Zhihu Draft Writer",
+  "summary": "自动从知乎热榜选题、调用 AI 生成原创回答并保存为草稿，支持自定义话题关键词、写作风格和批量生成。 Draft Zhihu answers automatically: picks hot questions, generates original answers via AI, and saves them...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhihu_draft_writer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "joly123456",
+      "features": [
+        "自动从知乎热榜选题、调用 AI 生成原创回答并保存为草稿，支持自定义话题关键词、写作风格和批量生成。 Draft Zhihu answers automatically: picks hot."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zhihu-draft-writer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/101340515?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zhihu-draft-writer",
+      "url": "https://clawhub.ai/skills/zhihu-draft-writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhihu-draft-writer",
+    "url": "https://clawhub.ai/skills/zhihu-draft-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhihu-draft-writer-3b07c90054bb8efc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zhihu-draft-writer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zhihu-draft-writer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d7908f2859950037897e8db7cec73b9cd82dab13724d255cd6fceded140fce29",
+      "artifactSizeBytes": 2323
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T06:13:25.801Z"
+}

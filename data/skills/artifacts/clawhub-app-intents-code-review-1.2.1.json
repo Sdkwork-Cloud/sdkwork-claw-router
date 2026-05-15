@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/app-intents-code-review@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.app_intents_code_review",
+  "skill": {
+    "id": 31297,
+    "skillKey": "clawhub-app-intents-code-review",
+    "name": "App Intents Code Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "app-intents-code-review",
+    "url": "https://clawhub.ai/skills/app-intents-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/app-intents-code-review-00868d314c28fdf7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reviews App Intents code for intent structure, entities, shortcuts, and parameters. Use when reviewing code with import AppIntents, @AppIntent, AppEntity, Ap..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anderskev",
+      "userId": "s17b1fzefm8nj8j1sdkzrze7gn83pfrg",
+      "displayName": "Kevin Anderson",
+      "image": "https://avatars.githubusercontent.com/u/17010022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 258,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1776831181640,
+      "changelog": "- Adds a new \"Hard gates (before reporting)\" section outlining specific pre-reporting steps for review findings.\n- Details four mandatory checks, including location artifact, scope read, platform/integration verification, and adherence to the review-verification-protocol.\n- Specifies the required format `[FILE:LINE] ISSUE_TITLE` for all reported findings.\n- Clarifies that these hard gates must be completed in order and for each finding before reporting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d4140abc5be16cd43924c12bdc73cd5b0d961af2f5333b1d48fdd0548a9cbd43"
+}

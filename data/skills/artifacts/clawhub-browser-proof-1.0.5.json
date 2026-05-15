@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/browser-proof@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_proof",
+  "skill": {
+    "id": 29935,
+    "skillKey": "clawhub-browser-proof",
+    "name": "Browser Proof"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-proof",
+    "url": "https://clawhub.ai/skills/browser-proof",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-proof-b7a4bca8fd84e033.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browser Proof is a public ClawHub browser-QA evidence skill. Use it when the user says \"browser proof\", \"browser QA report\", \"browser debugging evidence\", or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zack-dev-cm",
+      "userId": "s170hyv1nagjajq3y5c6kpzx3s84jp29",
+      "displayName": "Zakhar Pashkin",
+      "image": "https://avatars.githubusercontent.com/u/112114097?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 282,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1777516598106,
+      "changelog": "Reviewed source and refreshed public ClawHub skill surface.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:701c6b14537d9110a44447c4cdc8e407383db945c503e3717a82d7ac127e9285"
+}

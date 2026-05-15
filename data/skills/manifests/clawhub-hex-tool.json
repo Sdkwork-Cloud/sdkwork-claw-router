@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47890,
+  "uuid": "skill-clawhub-hex-tool",
+  "skillKey": "clawhub-hex-tool",
+  "name": "Hex Tool",
+  "summary": "Convert data between hexadecimal and other formats. Use for debugging binary data, examining file headers, and working with hex dumps.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hex_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BIN",
+      "features": [
+        "Convert data between hexadecimal and other formats",
+        "Use for debugging binary data, examining file headers, and working with hex dumps."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hex-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9191597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hex-tool",
+      "url": "https://clawhub.ai/skills/hex-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hex-tool",
+    "url": "https://clawhub.ai/skills/hex-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hex-tool-4017dd8b01990558.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hex-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hex-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fcdc42b2a24bf5e049ad1af7c98ae8411d23fabf146c61364ff648fff3c34b49",
+      "artifactSizeBytes": 1813
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T21:05:16.424Z"
+}

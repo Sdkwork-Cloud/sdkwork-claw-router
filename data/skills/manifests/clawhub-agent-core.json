@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50883,
+  "uuid": "skill-clawhub-agent-core",
+  "skillKey": "clawhub-agent-core",
+  "name": "Agent Core",
+  "summary": "Complete AI agent operating system — 3-layer memory, heartbeat automation, cron patterns, safety rules, and drop-in workspace configs. Turn any agent from ch...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_core",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nograve.dev",
+      "features": [
+        "Complete AI agent operating system — 3-layer memory, heartbeat automation, cron patterns, safet.",
+        "Turn any agent from ch..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-core@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/193042501?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-core",
+      "url": "https://clawhub.ai/skills/agent-core"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-core",
+    "url": "https://clawhub.ai/skills/agent-core",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-core-d85eea53b6c68d99.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-core@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-core-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bd6174093f261bf9950f9f89c21b7b73cf2d43ee73a8e4c2628dc5b47ea9ceeb",
+      "artifactSizeBytes": 1893
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T15:13:43.649Z"
+}

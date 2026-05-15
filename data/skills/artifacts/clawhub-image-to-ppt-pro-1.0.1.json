@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-to-ppt-pro@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_to_ppt_pro",
+  "skill": {
+    "id": 67055,
+    "skillKey": "clawhub-image-to-ppt-pro",
+    "name": "Image To PPT Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-to-ppt-pro",
+    "url": "https://clawhub.ai/skills/image-to-ppt-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-to-ppt-pro-913ecf20b34e4c6c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将任意图片或幻灯片截图复刻成完全可编辑的PPTX文件，像素级还原布局、颜色、文字与图形元素。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dami2010",
+      "userId": "s174a74ccyqxd5g6e9z9kxbzsh83hq16",
+      "displayName": "dami2010",
+      "image": "https://avatars.githubusercontent.com/u/12042743?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 65,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778130951881,
+      "changelog": "image-to-ppt-pro 1.0.1 Changelog\n\n- SKILL.md rewritten from Chinese to English for better accessibility.\n- All workflow descriptions, rules, and strategies updated to English, preserving original logic.\n- No changes to workflow, logic, or feature set—documentation translation only.\n- No code or functionality changes detected in this release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c48de20c0986ae62aa851d6d927c803ea117b5dcf473503182755ba0f08ad88b"
+}

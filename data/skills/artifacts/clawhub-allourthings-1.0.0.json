@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/allourthings@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.allourthings",
+  "skill": {
+    "id": 53926,
+    "skillKey": "clawhub-allourthings",
+    "name": "AllOurThings"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "allourthings",
+    "url": "https://clawhub.ai/skills/allourthings",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/allourthings-a6e04de46d786a9a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Household and personal inventory management. Use this skill to add, find, update, search, or delete items in the user's AllOurThings vault — covering anythin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "matt-harding",
+      "userId": "s17awm42r6yskjwh1dk92fbts1862es7",
+      "displayName": "Matt",
+      "image": "https://avatars.githubusercontent.com/u/3025116?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 103,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777908248518,
+      "changelog": "Initial release — household inventory MCP server and CLI",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ebd50cb2f97e43adbc7083811e89002e4e22af5d7b36d41b5a6ce7f3b4faad38"
+}

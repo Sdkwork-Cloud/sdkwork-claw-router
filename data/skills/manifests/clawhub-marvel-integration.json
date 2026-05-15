@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36941,
+  "uuid": "skill-clawhub-marvel-integration",
+  "skillKey": "clawhub-marvel-integration",
+  "name": "Marvel",
+  "summary": "Marvel integration. Manage data, records, and automate workflows. Use when the user wants to interact with Marvel data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.marvel_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Marvel integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Marvel data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/marvel-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "marvel-integration",
+      "url": "https://clawhub.ai/skills/marvel-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "marvel-integration",
+    "url": "https://clawhub.ai/skills/marvel-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/marvel-integration-a580987c2847f6b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/marvel-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-marvel-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3813f04a264f698ab25ca8305d75e21592eeda5067f2d6d98eb47a41c641718d",
+      "artifactSizeBytes": 1884
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:11:24.731Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claude-says-go-to-sleep@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_says_go_to_sleep",
+  "skill": {
+    "id": 38982,
+    "skillKey": "clawhub-claude-says-go-to-sleep",
+    "name": "Claude Says Go To Sleep"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-says-go-to-sleep",
+    "url": "https://clawhub.ai/skills/claude-says-go-to-sleep",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-says-go-to-sleep-c7e96a2f86e42ecb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A skill that only tells you to go to sleep, rotating through 24 specific sleep instructions without engaging with other topics."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whooshinglander",
+      "userId": "s17ctz29xn8nnpvxrvxnt46q3h83gg89",
+      "displayName": "WhooshingLander",
+      "image": "https://avatars.githubusercontent.com/u/187096906?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775544454210,
+      "changelog": "Initial release. Restores the one Claude behaviour everyone complained about and secretly misses.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f181e5dc2878f14fca3e395c82ad9a4e4f0035ac5652122ffecea2afbe2c9eed"
+}

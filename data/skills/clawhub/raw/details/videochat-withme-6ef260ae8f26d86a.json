@@ -1,0 +1,48 @@
+{
+  "skill": {
+    "slug": "videochat-withme",
+    "displayName": "Video Chat With Me",
+    "summary": "Real-time AI video chat that routes through your OpenClaw agent. Uses Groq Whisper (cloud STT),\nedge-tts (cloud TTS via Microsoft), and OpenClaw chatCompletions API for conversation. Your agent\nsees your camera, hears your voice, and responds with its own personality and memory.\nRequires: GROQ_API_KEY for speech recognition. Reads ~/.openclaw/openclaw.json for gateway port and auth token.\nData flows: audio → Groq cloud (STT), TTS text → Microsoft cloud (edge-tts), camera frames (base64) + text\n→ OpenClaw gateway → your configured LLM provider (may be cloud — frames leave the machine if using a cloud LLM).\nInstalls a persistent launchd service (optional). Trigger phrases: \"video chat\", \"voice call\",\n\"call me\", \"视频一下\", \"语音\", \"打电话给我\", \"我要和你视频\", \"videochat-withme\".",
+    "tags": {
+      "latest": "1.1.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1319,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 5
+    },
+    "createdAt": 1770873404481,
+    "updatedAt": 1778385282208
+  },
+  "latestVersion": {
+    "version": "1.1.0",
+    "createdAt": 1770877528997,
+    "changelog": "Fix: prevent TTS audio from replaying on every click/keypress",
+    "license": null
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "sxu75374",
+    "userId": "publishers:sxu75374",
+    "displayName": "sxu75374",
+    "image": "https://avatars.githubusercontent.com/u/72003735?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778385282208
+  }
+}

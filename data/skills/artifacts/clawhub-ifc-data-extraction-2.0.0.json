@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ifc-data-extraction@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ifc_data_extraction",
+  "skill": {
+    "id": 13659,
+    "skillKey": "clawhub-ifc-data-extraction",
+    "name": "Ifc Data Extraction"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ifc-data-extraction",
+    "url": "https://clawhub.ai/skills/ifc-data-extraction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ifc-data-extraction-1b3b755bcdc51499.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract structured data from IFC (Industry Foundation Classes) files using IfcOpenShell. Parse BIM models, extract quantities, properties, spatial relationships, and export to various formats."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "datadrivenconstruction",
+      "userId": "publishers:datadrivenconstruction",
+      "displayName": "datadrivenconstruction",
+      "image": "https://avatars.githubusercontent.com/u/94158709?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1375,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1771002651207,
+      "changelog": "Version 2.0.0 (ifc-data-extraction)\n\n- Major update: Introduces a full-featured IFCExtractor Python class for extracting, analyzing, and reporting BIM data from IFC files.\n- Supports extraction of project metadata, elements (walls, slabs, columns, etc.), levels, spaces, quantities, and materials.\n- Returns results as pandas DataFrames for easy data manipulation and export.\n- Utilizes IfcOpenShell utility functions for advanced BIM property and geometry extraction.\n- Expanded documentation and code samples for rapid adoption and integration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:812b03bea29e8664df8f14a072be8040a0213e2caf63e86ff5866fb1e3f8d0ec"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62098,
+  "uuid": "skill-clawhub-smart-travel-planner",
+  "skillKey": "clawhub-smart-travel-planner",
+  "name": "Travel Planner",
+  "summary": "智能旅行规划助手 - 支持行程规划、预算管理、景点推荐、交通查询、酒店比价、 packing清单生成。Use when: (1) 用户需要规划旅行行程或 vacation, (2) 需要推荐目的地或景点, (3) 需要计算旅行预算, (4) 需要查询交通路线/航班/火车, (5) 需要生成 packing 清单,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_travel_planner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lv Lancer",
+      "features": [
+        "智能旅行规划助手",
+        "支持行程规划、预算管理、景点推荐、交通查询、酒店比价、 packing清单生成。Use when: (1) 用户需要规划旅行行程或 vacation, (2) 需要推荐目的地或景点, (3)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-travel-planner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29176686?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-travel-planner",
+      "url": "https://clawhub.ai/skills/smart-travel-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-travel-planner",
+    "url": "https://clawhub.ai/skills/smart-travel-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-travel-planner-6e9e58627457e7c4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-travel-planner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-travel-planner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:13b3fa33df1d42911adebbb2ea64b6cb8767edeeaaa2a3219830fa7bbcfef531",
+      "artifactSizeBytes": 2630
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T07:24:24.824Z"
+}

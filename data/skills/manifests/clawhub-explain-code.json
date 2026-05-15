@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67180,
+  "uuid": "skill-clawhub-explain-code",
+  "skillKey": "clawhub-explain-code",
+  "name": "explain-code",
+  "summary": "用可视化图表和类比解释代码。在解释代码如何工作、教授代码库或用户询问如何工作时使用",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.explain_code",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ChongshiWang",
+      "features": [
+        "用可视化图表和类比解释代码。在解释代码如何工作、教授代码库或用户询问如何工作时使用"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/explain-code@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/56682784?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "explain-code",
+      "url": "https://clawhub.ai/skills/explain-code"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "explain-code",
+    "url": "https://clawhub.ai/skills/explain-code",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/explain-code-2ff5befb3dde2e1e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/explain-code@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-explain-code-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:655af059c85a24a5b0a490cbd6e86188afa058687efa49fa8363d8da9b25b70b",
+      "artifactSizeBytes": 2115
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T09:17:21.554Z"
+}

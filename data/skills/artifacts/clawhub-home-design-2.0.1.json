@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/home-design@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.home_design",
+  "skill": {
+    "id": 71148,
+    "skillKey": "clawhub-home-design",
+    "name": "Home Design"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "home-design",
+    "url": "https://clawhub.ai/skills/home-design",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/home-design-0e00060215faebaa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据户型图生成装修设计方案、效果图及详细施工图纸（含水电路走线和材料清单），支持风格和空间优化建议。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yqrpaul",
+      "userId": "s178f2xn11zafbze6sk7gmya9583ha9e",
+      "displayName": "yqrpaul",
+      "image": "https://avatars.githubusercontent.com/u/77320125?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 248,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1774334360859,
+      "changelog": "户型图分析、效果图生成、施工图纸（含水电路走线图）",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1387fe7a3ac4524cea493625331978bfb5bb78c3ccd6e3208ef5f38389d350c2"
+}

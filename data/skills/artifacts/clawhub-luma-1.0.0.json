@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/luma@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.luma",
+  "skill": {
+    "id": 11565,
+    "skillKey": "clawhub-luma",
+    "name": "Luma Events"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "luma",
+    "url": "https://clawhub.ai/skills/luma",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/luma-53009c20073f1d96.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch upcoming events from Luma (lu.ma) for any city. Use when the user asks about tech events, startup meetups, networking events, conferences, or things happening in cities like Bangalore, Mumbai, Delhi, San Francisco, New York, etc."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "regalstreak",
+      "userId": "s175b1k0z33n2zr6w18ekhmenx8434z5",
+      "displayName": "Neil Agarwal",
+      "image": "https://avatars.githubusercontent.com/u/7759208?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1992,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769672085280,
+      "changelog": "Initial release - fetch tech events, meetups, and conferences from lu.ma for any city worldwide. No API key required.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:af79433b870711feb817618bf882fd2adc38a8b3a197b28f218ea82bfc9d1b6c"
+}

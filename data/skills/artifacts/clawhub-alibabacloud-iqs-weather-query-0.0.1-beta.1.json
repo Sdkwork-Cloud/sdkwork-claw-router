@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibabacloud-iqs-weather-query@0.0.1-beta.1",
+  "version": "0.0.1-beta.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_iqs_weather_query",
+  "skill": {
+    "id": 44335,
+    "skillKey": "clawhub-alibabacloud-iqs-weather-query",
+    "name": "Alibabacloud Iqs Weather Query"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-iqs-weather-query",
+    "url": "https://clawhub.ai/skills/alibabacloud-iqs-weather-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-iqs-weather-query-8ea0b01b3ee9ddcd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "7-day weather forecast query powered by Alibaba Cloud IQS web search and page reading. Triggers: \"weather forecast\", \"7-day weather\", \"weekly weather\", \"weat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdk-team",
+      "userId": "s173swjet2yrebzqrp6hjkvmy583mxef",
+      "displayName": "alibabacloud-skills-team",
+      "image": "https://avatars.githubusercontent.com/u/49941014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1-beta.1",
+      "createdAt": 1775710321218,
+      "changelog": "alibabacloud-iqs-weather-query 0.0.1-beta.1\n\n- Initial beta release providing 7-day weather forecast queries using Alibaba Cloud IQS web search and page reading.\n- Supports both structured output (with dedicated parsers for major Chinese weather sites) and raw extraction mode for other sources.\n- Designed for easy extension: new site parsers can be added and auto-registered for continuous skill improvement.\n- No npm dependencies required; works with Node.js >= 18 using native fetch.\n- Includes detailed setup instructions, API error handling, and best practices for accuracy and evolution.\n- Returns clear output, including data fields like weather, temperature, wind speed/direction, and structured/parse modes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:53d2f662773cfb4e1e4f822136a4e74f9389dfdf69e1c73ad11f4c337f2d15c1"
+}

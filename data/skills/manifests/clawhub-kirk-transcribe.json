@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44263,
+  "uuid": "skill-clawhub-kirk-transcribe",
+  "skillKey": "clawhub-kirk-transcribe",
+  "name": "transcribe",
+  "summary": "Speech-to-text via SkillBoss API Hub (STT, powered by Whisper and more).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kirk_transcribe",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KirkRaman",
+      "features": [
+        "Speech-to-text via SkillBoss API Hub (STT, powered by Whisper and more)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kirk-transcribe@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255880392?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kirk-transcribe",
+      "url": "https://clawhub.ai/skills/kirk-transcribe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kirk-transcribe",
+    "url": "https://clawhub.ai/skills/kirk-transcribe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kirk-transcribe-a8abec37420d2408.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kirk-transcribe@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kirk-transcribe-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:051dabb8b83577c9b152fe01d2cc583b64c8a0524055bf8664435db64302d704",
+      "artifactSizeBytes": 2202
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T03:00:03.761Z"
+}

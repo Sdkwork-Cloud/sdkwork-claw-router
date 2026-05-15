@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/solon-development-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solon_development_skill",
+  "skill": {
+    "id": 43889,
+    "skillKey": "clawhub-solon-development-skill",
+    "name": "solon-development-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solon-development-skill",
+    "url": "https://clawhub.ai/skills/solon-development-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solon-development-skill-1d5c2a3e3b633b20.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Specialized knowledge for developing Java applications with the Solon framework. Covers core concepts, web, data, security, remoting, AI, flow orchestration,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "noear",
+      "userId": "s1755yqcytxd8h8dyeg2sm1dg984w04x",
+      "displayName": "noear",
+      "image": "https://avatars.githubusercontent.com/u/2993611?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776229646470,
+      "changelog": "- Initial release of solon-development-skill.\n- Provides expert guidance for Java application development with the Solon framework (not based on Spring).\n- Includes clear rules to avoid mixing Spring concepts, dependencies, and annotations.\n- Covers core concepts, web, data, security, remoting, AI, orchestration, cloud-native, testing, and more.\n- All examples target Solon version 3.10.0 by default.\n- Supports Chinese responses and code comments when the user communicates in Chinese.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:842ed0f4f0fed835e55905b56e7ea25d51be61e2760bb41e3f87699069071c3e"
+}

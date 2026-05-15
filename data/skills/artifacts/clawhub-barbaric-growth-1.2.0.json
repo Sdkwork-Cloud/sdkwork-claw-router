@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/barbaric-growth@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.barbaric_growth",
+  "skill": {
+    "id": 59998,
+    "skillKey": "clawhub-barbaric-growth",
+    "name": "Barbaric Growth"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "barbaric-growth",
+    "url": "https://clawhub.ai/skills/barbaric-growth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/barbaric-growth-e65a4236e1befe22.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "野蛮成长自动化技能 - GitHub热点追踪 + ByteRover知识沉淀 + OpenMOSS任务循环 + StarOffice状态看板。自主消耗token+产出有价值的知识资产。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jokerli530",
+      "userId": "s1719v1jt7x7wxjtr1h3jg32rd84zg4q",
+      "displayName": "Jokerli530",
+      "image": "https://avatars.githubusercontent.com/u/130817653?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1776576012222,
+      "changelog": "v1.2: 分阶段进度反馈（phase日志格式），参考EvoMap No-Reply Stall Mitigation；静默窗口机制；Token 80%警告优化",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a062f4437e02f598dcbf596ae0be25d36e72202826bb8aaa3a4a0bec0f420f4e"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70859,
+  "uuid": "skill-clawhub-xhs-creator-copilot",
+  "skillKey": "clawhub-xhs-creator-copilot",
+  "name": "xhs-creator-copilot",
+  "summary": "小红书创作者本地辅助桌面工具(期货/财经账号「不期而遇」专用)。 当用户提到小红书选题、写笔记、起草回复、回复粉丝评论、私信回复、 内容去AI化、排版优化、合规预检、批量评论处理时使用。 本工具完全本地运行,**不接触小红书平台任何接口**, 只做内容生成、合规预检、去AI化润色、本地文件输出和回复草稿建议。 所...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhs_creator_copilot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yujietech",
+      "features": [
+        "小红书创作者本地辅助桌面工具(期货/财经账号「不期而遇」专用)。 当用户提到小红书选题、写笔记、起草回复、回复粉丝评论、私信回复、 内容去AI化、排版优化、合规预检、批量评论处理时使用。 本."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xhs-creator-copilot@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267198626?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xhs-creator-copilot",
+      "url": "https://clawhub.ai/skills/xhs-creator-copilot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhs-creator-copilot",
+    "url": "https://clawhub.ai/skills/xhs-creator-copilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhs-creator-copilot-61be76a4c235b0dc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xhs-creator-copilot@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-xhs-creator-copilot-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6769b76546d991606ec6fe4308b7d0aa07e4a295a4401b9378db368e6203dd8d",
+      "artifactSizeBytes": 2558
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T05:56:09.764Z"
+}

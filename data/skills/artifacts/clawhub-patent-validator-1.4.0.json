@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/patent-validator@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.patent_validator",
+  "skill": {
+    "id": 9949,
+    "skillKey": "clawhub-patent-validator",
+    "name": "Patent Validator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "patent-validator",
+    "url": "https://clawhub.ai/skills/patent-validator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/patent-validator-59220b7185d0b4da.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn your concept analysis into search queries — research the landscape before consulting an attorney. NOT legal advice."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leegitw",
+      "userId": "s179srg0a58h1v79wy2w7g9ymh83jxhd",
+      "displayName": "Lee Brown",
+      "image": "https://avatars.githubusercontent.com/u/1395866?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 2446,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 14,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1771829583720,
+      "changelog": "Version 1.4.0\n\n- No changes detected in any files for this version.\n- Behavior, features, and documentation remain unchanged.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e1af3c562cd61cdb6b632adc6854a806e874e1ab954b9fedc7be242390882dfa"
+}

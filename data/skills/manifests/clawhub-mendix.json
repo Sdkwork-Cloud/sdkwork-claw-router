@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39642,
+  "uuid": "skill-clawhub-mendix",
+  "skillKey": "clawhub-mendix",
+  "name": "Mendix",
+  "summary": "Mendix integration. Manage data, records, and automate workflows. Use when the user wants to interact with Mendix data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mendix",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Mendix integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Mendix data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mendix@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mendix",
+      "url": "https://clawhub.ai/skills/mendix"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mendix",
+    "url": "https://clawhub.ai/skills/mendix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mendix-1274d60ff458da72.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mendix@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-mendix-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ca865c39859a87f426265293c04b7c2c5a609fedbdb98d5f7c1aa2db28ddbb24",
+      "artifactSizeBytes": 1794
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T23:01:01.826Z"
+}

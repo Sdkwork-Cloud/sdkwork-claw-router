@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18018,
+  "uuid": "skill-clawhub-joke-teller",
+  "skillKey": "clawhub-joke-teller",
+  "name": "High-quality Joke Teller",
+  "summary": "Generates original, context-aware jokes with structured setups, clear comedic mechanisms, and compressed punchlines tailored to the audience and platform.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.joke_teller",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Generates original, context-aware jokes with structured setups, clear comedic mechanisms, and c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/joke-teller@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "joke-teller",
+      "url": "https://clawhub.ai/skills/joke-teller"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "joke-teller",
+    "url": "https://clawhub.ai/skills/joke-teller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/joke-teller-e035051d64bf7de9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/joke-teller@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-joke-teller-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1b918531b162da3c674733893e820d1ee0edf56641e59e87c93171d49e7cd288",
+      "artifactSizeBytes": 2332
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T13:06:18.098Z"
+}

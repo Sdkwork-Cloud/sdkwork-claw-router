@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zynq-linux-dev@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zynq_linux_dev",
+  "skill": {
+    "id": 59425,
+    "skillKey": "clawhub-zynq-linux-dev",
+    "name": "Zynq Linux Hardware Debug"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zynq-linux-dev",
+    "url": "https://clawhub.ai/skills/zynq-linux-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zynq-linux-dev-e04790bf969f5522.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Zynq-7000 / Zynq UltraScale+ 硬件调试技能。用于在 Xilinx Zynq (Cortex-A9/A53 + FPGA) Linux 环境下调试 I2C、I2S、UART、GPIO 等硬件外设。包括设备树配置、内核驱动、用户空间调试工具、交叉编译和常见问题排查。适用于 PetaLinu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johnwoosz",
+      "userId": "s170nvbn7p223h4a6nzy8zack983jdgy",
+      "displayName": "johnwoosz",
+      "image": "https://avatars.githubusercontent.com/u/3538642?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 225,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1776222721824,
+      "changelog": "Initial release of Zynq Linux hardware debugging skill.\n\n- Provides guides for debugging I2C, I2S, UART, GPIO, and FPGA on Xilinx Zynq Linux systems.\n- Includes device tree examples, kernel module build instructions, and cross-compilation commands.\n- Covers user-space and kernel-space interaction examples for common hardware peripherals.\n- Summarizes troubleshooting steps for typical hardware communication issues.\n- Suitable for PetaLinux, Debian, and custom Linux environments on Zynq platforms.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:35ed9af6019934e0a41abf145d282fd28b8f5a7c0cf8c9e03f77d9b10e7cfed0"
+}

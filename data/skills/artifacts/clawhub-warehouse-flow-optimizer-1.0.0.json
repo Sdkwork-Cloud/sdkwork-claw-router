@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/warehouse-flow-optimizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.warehouse_flow_optimizer",
+  "skill": {
+    "id": 41860,
+    "skillKey": "clawhub-warehouse-flow-optimizer",
+    "name": "Warehouse Flow Optimizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "warehouse-flow-optimizer",
+    "url": "https://clawhub.ai/skills/warehouse-flow-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/warehouse-flow-optimizer-bc9e6464e6a45243.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn warehouse process notes, bottleneck observations, labor constraints, slotting issues, and service targets into a practical flow optimization brief with..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776126438399,
+      "changelog": "- Initial release of Warehouse Flow Optimizer.\n- Transforms warehouse pain points, process notes, and constraints into a structured flow optimization brief.\n- Provides bottleneck hypotheses, lists quick wins, suggests pilot ideas, and outlines operating guardrails.\n- Does not require or connect to live WMS, OMS, or labor systems—works with user-provided observations.\n- Returns practical, markdown-formatted briefs suitable for ecommerce ops, 3PL managers, and consultants.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:62b85f091f04c955c79ece7d7221eb60c028edf38be761f351fc7824c2faa4bf"
+}

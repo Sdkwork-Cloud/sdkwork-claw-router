@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28446,
+  "uuid": "skill-clawhub-video-transcribe-pro",
+  "skillKey": "clawhub-video-transcribe-pro",
+  "name": "Video To Text",
+  "summary": "Convert video or audio files from URLs into text or subtitle formats using a free API with automatic language detection and no local downloads required.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_transcribe_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SxLiuYu",
+      "features": [
+        "Convert video or audio files from URLs into text or subtitle formats using a free API with auto."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-transcribe-pro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95198625?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-transcribe-pro",
+      "url": "https://clawhub.ai/skills/video-transcribe-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-transcribe-pro",
+    "url": "https://clawhub.ai/skills/video-transcribe-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-transcribe-pro-e47965decf64d9f7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-transcribe-pro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-transcribe-pro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3160cafc52e9b438356f8bb2402214bf2cb8ee8d94650195147a3413057d01d0",
+      "artifactSizeBytes": 2474
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T09:55:47.849Z"
+}

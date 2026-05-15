@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20299,
+  "uuid": "skill-clawhub-claude-delegate",
+  "skillKey": "clawhub-claude-delegate",
+  "name": "Claude Delegate",
+  "summary": "Delegate various coding tasks to Claude Code. Use this skill when you need assistance with code generation, bug fixing, feature implementation, code review,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_delegate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "splicer scorn",
+      "features": [
+        "Delegate various coding tasks to Claude Code",
+        "Use this skill when you need assistance with code generation, bug fixing, feature implementatio."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claude-delegate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/146873484?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claude-delegate",
+      "url": "https://clawhub.ai/skills/claude-delegate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-delegate",
+    "url": "https://clawhub.ai/skills/claude-delegate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-delegate-10900aff7b76923f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claude-delegate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claude-delegate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eaa247c10d31e53304642703271ccfbf5e705233c51c49e6e0f2dac5c284a9a0",
+      "artifactSizeBytes": 1901
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T18:34:22.742Z"
+}

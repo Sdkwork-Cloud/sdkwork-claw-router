@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27909,
+  "uuid": "skill-clawhub-aigc-risk-assessment",
+  "skillKey": "clawhub-aigc-risk-assessment",
+  "name": "AI Risk Assessment",
+  "summary": "Provides portfolio risk metrics, stress testing, and position management advice using VaR, CVaR, volatility, Beta, Sharpe ratio, and Kelly formula.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aigc_risk_assessment",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GBABYZS",
+      "features": [
+        "Provides portfolio risk metrics, stress testing, and position management advice using VaR, CVaR."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aigc-risk-assessment@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264446239?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aigc-risk-assessment",
+      "url": "https://clawhub.ai/skills/aigc-risk-assessment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aigc-risk-assessment",
+    "url": "https://clawhub.ai/skills/aigc-risk-assessment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aigc-risk-assessment-1225f2428826dfb0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aigc-risk-assessment@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aigc-risk-assessment-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:52373704f7936787de85d541c0ed4493eb2ab695c1ac979839555c2ae3deaefb",
+      "artifactSizeBytes": 1961
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T01:35:16.627Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60310,
+  "uuid": "skill-clawhub-todo4google",
+  "skillKey": "clawhub-todo4google",
+  "name": "Todo4google",
+  "summary": "管理todo事项，记录工作日志，并与Google Task同步。根据本地ToDo创建Goole Task，并根据完成情况更新Google Task状态。上传todo文件到Google Drive进行归档。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.todo4google",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Leonard",
+      "features": [
+        "管理todo事项，记录工作日志，并与Google Task同步。根据本地ToDo创建Goole Task，并根据完成情况更新Google Task状态。上传todo文件到Google Dri."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/todo4google@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22876690?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "todo4google",
+      "url": "https://clawhub.ai/skills/todo4google"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "todo4google",
+    "url": "https://clawhub.ai/skills/todo4google",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/todo4google-86e1ba4efa7492e1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/todo4google@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-todo4google-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b8012ed0c26677c87a7c6d13618a948bd73e936a89b57ac212202fa39c505cdf",
+      "artifactSizeBytes": 2391
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T16:11:27.480Z"
+}

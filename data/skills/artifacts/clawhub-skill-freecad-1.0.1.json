@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-freecad@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_freecad",
+  "skill": {
+    "id": 17557,
+    "skillKey": "clawhub-skill-freecad",
+    "name": "FreeCAD"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-freecad",
+    "url": "https://clawhub.ai/skills/skill-freecad",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-freecad-eb602140bc13c271.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create or modify 3D CAD models in FreeCAD using parametric JSON operations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ninja7v",
+      "userId": "s177bm4vp9tx2ehd5rj9texs1983sknh",
+      "displayName": "Luc",
+      "image": "https://avatars.githubusercontent.com/u/52052772?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 568,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774740057012,
+      "changelog": "Fix \"suspicious patterns detected\" by OpenClaw:\n- Added Dependencies: Added formal metadata.openclaw frontmatter declaring the python runtime requirement.\n- Auto-Discovery: Implemented a dynamic path-injector in the engine. Standard python will now automatically hunt for and bind to local FreeCAD installations (Windows/Mac/Linux) without crashing.\n- Security (Sandboxing): Enforced os.path.basename() on all file export operations to prevent path traversal attacks. The skill can no longer write files outside of its active workspace directory.\n- Clarified Scope: Updated the description to explicitly clarify the use of parametric JSON operations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d0704b081eafd09cfcdfd2c401f5ada84c016e4121370a56ba08768aaa03c39e"
+}

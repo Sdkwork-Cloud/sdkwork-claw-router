@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xgjk-bp-audit@3.5.0",
+  "version": "3.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xgjk_bp_audit",
+  "skill": {
+    "id": 71863,
+    "skillKey": "clawhub-xgjk-bp-audit",
+    "name": "XGJK BP Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xgjk-bp-audit",
+    "url": "https://clawhub.ai/skills/xgjk-bp-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xgjk-bp-audit-b3730e0ebe8d72b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "BP目标体系全面审计工具：对BP进行五大板块审计——基础合规性审计、向上对齐审计、向下承接审计、GAP 差异分析、数值对齐审计。 覆盖结构完整性、内容质量、逻辑自洽、对齐正确性、承接覆盖率、数值定义与算法、上下级差异识别等维度。 内置数据查询能力，当用户需要对BP目标体系进行系统性审计诊断时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "houtonghoutong",
+      "userId": "s175t2y60wz89xt4e5dtkc4xv183jty0",
+      "displayName": "houtonghoutong",
+      "image": "https://avatars.githubusercontent.com/u/210855804?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.5.0",
+      "createdAt": 1775094286060,
+      "changelog": "Initial public release under a unique slug. Includes BP audit workflows, BP OpenAPI query helpers, child key-result/action creation support, and ID discovery flow when users do not provide task IDs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6512369e85fc3f56295ae5f716676dd7fa1fc1050ded10937e6bb36300aebbe4"
+}

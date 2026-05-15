@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65087,
+  "uuid": "skill-clawhub-regulation-extractor",
+  "skillKey": "clawhub-regulation-extractor",
+  "name": "Regulation Extractor",
+  "summary": "从建筑工程规范PDF中结构化提取条文并同步到飞书多维表格。支持PDF双文字层（原文+OCR）去重、纯图片PDF的RapidOCR识别、条文编号切分（含带空格编号如6. 1. 2. 3）、带圈数字转换（如6.4.④→6.4.4）、OCR错误检测、质量标记、文本清洗（去换行/页眉/符号表/中英文粘连/过长切分）。输出...",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.regulation_extractor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "youfeijun123",
+      "features": [
+        "从建筑工程规范PDF中结构化提取条文并同步到飞书多维表格。支持PDF双文字层（原文+OCR）去重、纯图片PDF的RapidOCR识别、条文编号切分（含带空格编号如6",
+        "3）、带圈数字转换（如6.4.④→6.4.4）、OCR错误检测、质量标记、文本清洗（去换行/页眉/符号表/中英文粘连/过长切分）。输出..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/regulation-extractor@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264719731?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "regulation-extractor",
+      "url": "https://clawhub.ai/skills/regulation-extractor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "regulation-extractor",
+    "url": "https://clawhub.ai/skills/regulation-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/regulation-extractor-3d30b6fb387d9e9a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/regulation-extractor@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-regulation-extractor-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6112be107889a47b5f0988d7762e6f31aba7a5015702643e3ef2baa7572942b8",
+      "artifactSizeBytes": 2342
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T13:05:03.857Z"
+}

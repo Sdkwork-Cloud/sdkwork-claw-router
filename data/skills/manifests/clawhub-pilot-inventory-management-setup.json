@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42869,
+  "uuid": "skill-clawhub-pilot-inventory-management-setup",
+  "skillKey": "clawhub-pilot-inventory-management-setup",
+  "name": "Pilot Inventory Management Setup",
+  "summary": "Deploy an inventory management system with 3 agents. Use this skill when: 1. User wants to set up an automated inventory management system 2. User is configu...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_inventory_management_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "Deploy an inventory management system with 3 agents",
+        "Use this skill when: 1",
+        "User wants to set up an automated inventory management system 2",
+        "User is configu..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-inventory-management-setup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-inventory-management-setup",
+      "url": "https://clawhub.ai/skills/pilot-inventory-management-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-inventory-management-setup",
+    "url": "https://clawhub.ai/skills/pilot-inventory-management-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-inventory-management-setup-ec5a50d7a6b28ef8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-inventory-management-setup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-inventory-management-setup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:17da149184da009d80ce62a2c3e2960a5bdb2a3fe1c8756756d267a7349dae13",
+      "artifactSizeBytes": 2016
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T01:36:41.829Z"
+}

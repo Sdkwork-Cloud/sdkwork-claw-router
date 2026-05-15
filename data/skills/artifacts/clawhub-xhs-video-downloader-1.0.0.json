@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xhs-video-downloader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhs_video_downloader",
+  "skill": {
+    "id": 58004,
+    "skillKey": "clawhub-xhs-video-downloader",
+    "name": "XHS Video Downloader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhs-video-downloader",
+    "url": "https://clawhub.ai/skills/xhs-video-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhs-video-downloader-e28b0d5e02cef997.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Download videos from Xiaohongshu (小红书) pages. Use when the user wants to save or download a video from a xiaohongshu.com URL, or mentions \"小红书视频下载\", \"保存小红书视频..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hviktortsoi",
+      "userId": "publishers:hviktortsoi",
+      "displayName": "KINO",
+      "image": "https://avatars.githubusercontent.com/u/25725035?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 779,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772222721920,
+      "changelog": "Initial release - Download videos from Xiaohongshu (小红书) via browser automation",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6da35e17f2937ce0986c4eb50c150db63f65ff9aa98e6517c888c91380a2ba34"
+}

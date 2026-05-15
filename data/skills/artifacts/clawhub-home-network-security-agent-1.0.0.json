@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/home-network-security-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.home_network_security_agent",
+  "skill": {
+    "id": 43680,
+    "skillKey": "clawhub-home-network-security-agent",
+    "name": "HomeNetworkSecurityAgent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "home-network-security-agent",
+    "url": "https://clawhub.ai/skills/home-network-security-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/home-network-security-agent-bc03612441148127.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audits local network infrastructure, identifies active hosts, and scans the gateway/public IP for exposed ports and vulnerabilities."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "assix",
+      "userId": "s17bfvgwgfjf7wgnf57h1fpvcd83n5mq",
+      "displayName": "Anthony Assi",
+      "image": "https://avatars.githubusercontent.com/u/41215706?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775967231187,
+      "changelog": "Initial release of HomeNetworkSecurityAgent.\n\n- Audits internal and external network security.\n- Discovers active devices on the local network.\n- Scans gateway/public IP for open ports and vulnerabilities.\n- Provides tools for network topology identification, LAN host discovery, and port/vulnerability scanning.\n- Requires python3, nmap, and ip binaries on host system.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:20673f58d2648f5447eb9bde508c892259700b195b173ae2d92f86330050c458"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lap-agentos-api-v3-diary-call-group@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lap_agentos_api_v3_diary_call_group",
+  "skill": {
+    "id": 35820,
+    "skillKey": "clawhub-lap-agentos-api-v3-diary-call-group",
+    "name": "Lap Agentos Api V3 Diary Call Group"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lap-agentos-api-v3-diary-call-group",
+    "url": "https://clawhub.ai/skills/lap-agentos-api-v3-diary-call-group",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lap-agentos-api-v3-diary-call-group-9c60175485476e74.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "agentOS API V3, Diary Call Group API skill. Use when working with agentOS API V3, Diary Call Group for diary. Covers 13 endpoints."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mickmicksh",
+      "userId": "s173hdss607zbfxv4jxwj0ae0583wwjt",
+      "displayName": "mickmicksh",
+      "image": "https://avatars.githubusercontent.com/u/214470470?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776677716220,
+      "changelog": "Initial release of lap-agentos-api-v3-diary-call-group.\n\n- Provides access to 13 endpoints from agentOS API V3 Diary Call Group for appointment and diary management.\n- Supports operations like searching guests, managing appointments (create, retrieve, update, delete, cancel), viewing allocations, appointment types, branches, and recurring appointments.\n- API key authentication required in the header.\n- Includes usage notes, common patterns for user queries, and CLI commands for managing the API spec.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f4522723139371f0f54f6ca2e33a6ea5c5c68ab87979f3977aac5a08458d1c3d"
+}

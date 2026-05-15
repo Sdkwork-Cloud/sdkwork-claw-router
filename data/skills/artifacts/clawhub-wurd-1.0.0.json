@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wurd@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wurd",
+  "skill": {
+    "id": 33105,
+    "skillKey": "clawhub-wurd",
+    "name": "Wurd"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wurd",
+    "url": "https://clawhub.ai/skills/wurd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wurd-2acc0732102b42d8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Compile markdown documents with plugin tags into editorial-quality HTML pages using Wurd. USE FOR: creating documents, adding plugins, configuring layout, wr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vreff",
+      "userId": "s179gz6v72ks4194vjtb5zwy2183w76x",
+      "displayName": "vreff",
+      "image": "https://avatars.githubusercontent.com/u/104409744?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774913180327,
+      "changelog": "- Initial release of the wurd skill.\n- Compile markdown documents with special plugin tags into high-quality HTML pages.\n- Supports both deterministic (e.g., math, citations, binary-stream) and LLM-powered (graph, table) plugins.\n- Allows extensive layout and theme customization via optional YAML frontmatter.\n- Provides guidance for creating and debugging custom plugins, including deterministic and LLM types.\n- Enables external plugin loading and runtime modules for browser interactivity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4e39636e11ab2785b3fdb678fb409c404b6561deb434e7c371ca97a583657a6a"
+}

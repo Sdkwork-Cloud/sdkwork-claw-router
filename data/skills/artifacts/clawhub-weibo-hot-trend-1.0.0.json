@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weibo-hot-trend@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weibo_hot_trend",
+  "skill": {
+    "id": 72995,
+    "skillKey": "clawhub-weibo-hot-trend",
+    "name": "获取微博热搜榜数据，返回热搜标题、热度值和跳转链接。当用户需要查看微博热搜、微博热点、微博热榜时使用此技能。支持自定义获取条数（默认50条）。"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weibo-hot-trend",
+    "url": "https://clawhub.ai/skills/weibo-hot-trend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weibo-hot-trend-dbd3b36a525b641f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "获取微博热搜榜数据，返回热搜标题、热度值和跳转链接。当用户需要查看微博热搜、微博热点、微博热榜时使用此技能。支持自定义获取条数（默认50条）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "geniuslishengbo",
+      "userId": "s176n12rcjaqv45m9bm68gb8es83gmzc",
+      "displayName": "geniusli",
+      "image": "https://avatars.githubusercontent.com/u/85736381?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3076,
+      "installsAllTime": 35,
+      "installsCurrent": 33,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773055782328,
+      "changelog": "- Initial release of weibo-hot-trend skill.\n- Fetches Weibo hot search list with title, hotness value, and direct links.\n- Supports specifying number of results to retrieve (default: 50).\n- Data sourced from Weibo's official public API.\n- Includes usage notes on rate limiting and result labeling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:44c57f634a7afb56e2c66f95f9a235f2e27528d453e2c691f19ab1befbdbc172"
+}

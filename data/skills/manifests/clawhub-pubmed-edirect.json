@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12199,
+  "uuid": "skill-clawhub-pubmed-edirect",
+  "skillKey": "clawhub-pubmed-edirect",
+  "name": "Pubmed Edirect",
+  "summary": "Search and retrieve literature from PubMed using NCBI's EDirect command-line tools. ⚠️ Advanced skill requiring manual installation.",
+  "version": "0.4.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pubmed_edirect",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KGTAF",
+      "features": [
+        "Search and retrieve literature from PubMed using NCBI's EDirect command-line tools",
+        "⚠️ Advanced skill requiring manual installation."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pubmed-edirect@0.4.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32797449?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pubmed-edirect",
+      "url": "https://clawhub.ai/skills/pubmed-edirect"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pubmed-edirect",
+    "url": "https://clawhub.ai/skills/pubmed-edirect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pubmed-edirect-f8328d712781cc94.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pubmed-edirect@0.4.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-pubmed-edirect-0.4.4.json",
+      "version": "0.4.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:695cd66bc3de39618bd4fe81b2d757176b708117d821608261f386ac002daabc",
+      "artifactSizeBytes": 2173
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T03:19:39.370Z"
+}

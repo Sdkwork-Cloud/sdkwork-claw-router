@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sourcing-in-china@2.2.1",
+  "version": "2.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sourcing_in_china",
+  "skill": {
+    "id": 16437,
+    "skillKey": "clawhub-sourcing-in-china",
+    "name": "Sourcing in China"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sourcing-in-china",
+    "url": "https://clawhub.ai/skills/sourcing-in-china",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sourcing-in-china-b73670fed466554d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search products, suppliers, and get detailed product info from Made-in-China.com via MCP server. Use when sourcing products from China, finding manufacturers..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "witcheng",
+      "userId": "s1723djzp338wkmtnesdj6xxwd83hc9t",
+      "displayName": "Jim Cheng",
+      "image": "https://avatars.githubusercontent.com/u/1453732?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 647,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 2,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "2.2.1",
+      "createdAt": 1773287103289,
+      "changelog": "Republish: zero external CLI dependencies, standard HTTP MCP calls, external service fully declared in metadata.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b1458a39d87558865d4d33c1f9ff5198c0e4bd0e45b3cd75c1eea926373ae31e"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45549,
+  "uuid": "skill-clawhub-variant-pathogenicity-predictor-1",
+  "skillKey": "clawhub-variant-pathogenicity-predictor-1",
+  "name": "Variant Pathogenicity Predictor",
+  "summary": "Integrate REVEL, CADD, PolyPhen scores to predict variant pathogenicity.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.variant_pathogenicity_predictor_1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Integrate REVEL, CADD, PolyPhen scores to predict variant pathogenicity."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/variant-pathogenicity-predictor-1@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "variant-pathogenicity-predictor-1",
+      "url": "https://clawhub.ai/skills/variant-pathogenicity-predictor-1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "variant-pathogenicity-predictor-1",
+    "url": "https://clawhub.ai/skills/variant-pathogenicity-predictor-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/variant-pathogenicity-predictor-1-cd05799ac6982b6a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/variant-pathogenicity-predictor-1@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-variant-pathogenicity-predictor-1-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:490bac896aad8c359d475a2bd685f92946edf4deeee37109afe97710244094e3",
+      "artifactSizeBytes": 2532
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T02:07:26.377Z"
+}

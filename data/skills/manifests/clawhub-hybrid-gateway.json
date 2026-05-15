@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43257,
+  "uuid": "skill-clawhub-hybrid-gateway",
+  "skillKey": "clawhub-hybrid-gateway",
+  "name": "Hybrid Gateway",
+  "summary": "Set up and troubleshoot a hybrid OpenClaw architecture where the gateway runs on a cloud VPS and a local machine (Mac Mini, desktop, Raspberry Pi, etc.) acts...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hybrid_gateway",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Johnny Faris",
+      "features": [
+        "Set up and troubleshoot a hybrid OpenClaw architecture where the gateway runs on a cloud VPS an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hybrid-gateway@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/155022265?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hybrid-gateway",
+      "url": "https://clawhub.ai/skills/hybrid-gateway"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hybrid-gateway",
+    "url": "https://clawhub.ai/skills/hybrid-gateway",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hybrid-gateway-b5ebd1c5de6f5c40.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hybrid-gateway@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-hybrid-gateway-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:346955599b51e36483c4dbd60873bbac4c75908d5dd89e395d89a2a3892e3e51",
+      "artifactSizeBytes": 1965
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T16:35:03.946Z"
+}

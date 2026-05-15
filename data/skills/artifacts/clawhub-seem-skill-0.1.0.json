@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seem-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seem_skill",
+  "skill": {
+    "id": 45899,
+    "skillKey": "clawhub-seem-skill",
+    "name": "SEEM"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seem-skill",
+    "url": "https://clawhub.ai/skills/seem-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seem-skill-ee875eea492002b2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Advanced episodic memory system for multi-turn conversations. Store and retrieve structured conversation memories with fact graph, PPR retrieval, and three r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ryantoleco",
+      "userId": "s170zed11gye1g465712r8ak5h83mbg2",
+      "displayName": "RyanToleco",
+      "image": "https://avatars.githubusercontent.com/u/45578913?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774927299829,
+      "changelog": "SEEM v0.1.0 – First Release\n\n- Introduces an advanced episodic memory system with support for multi-turn conversations and structured storage.\n- Features three recall modes (Lite, Pro, Max) controlling memory retrieval granularity.\n- Implements hybrid retrieval strategies: Dense (DPR), Hybrid RRF (dense + sparse fusion), and graph-based PPR retrieval.\n- Supports structured fact extraction, knowledge graph construction with NetworkX, and dynamic memory integration.\n- Offers multimodal support, memory deduplication, and a CLI for storing and recalling memories, viewing facts, and managing state.\n- Centralizes configuration for LLM and embedding models with environment variable and file-based overrides.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0544abf5121c1a2b32848bcff3fe94073a18f3dd532dce80780fae4e26eda7ad"
+}

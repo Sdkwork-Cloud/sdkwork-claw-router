@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-viral-team-video-generation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_viral_team_video_generation",
+  "skill": {
+    "id": 61424,
+    "skillKey": "clawhub-ai-viral-team-video-generation",
+    "name": "Ai Viral Team Video Generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-viral-team-video-generation",
+    "url": "https://clawhub.ai/skills/ai-viral-team-video-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-viral-team-video-generation-c378cff9041cacf0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "视频生成 - AI视频生成与后期剪辑制作 职责：调用Vidu生成视频、模型选择、Prompt调优、视频拼接、质量检测"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "junhongzhang77-ui",
+      "userId": "publishers:junhongzhang77-ui",
+      "displayName": "junhongzhang77-ui",
+      "image": "https://avatars.githubusercontent.com/u/228699128?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 676,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773907277777,
+      "changelog": "- Initial release of ai-viral-team-video-generation (v1.0.0).\n- Automates AI video generation, prompt optimization, model selection, video stitching (with FFmpeg), and quality checks.\n- Integrates with script writing (ai-viral-team-script-writing) and quality checking (ai-viral-team-quality-check) modules.\n- Enforces strict prompt rules: prompts must be complete, only additive modifications allowed, all generations include negative prompts.\n- Supports multiple models and adapts output for platforms like 抖音, 小红书, and B站 with various aspect ratios.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:837981f0c8252ffd1ec0fbbdd2ba74ed6ab4656c107da94087ced667048af15b"
+}

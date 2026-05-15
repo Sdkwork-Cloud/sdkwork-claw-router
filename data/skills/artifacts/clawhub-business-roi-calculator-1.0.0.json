@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/business-roi-calculator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.business_roi_calculator",
+  "skill": {
+    "id": 64890,
+    "skillKey": "clawhub-business-roi-calculator",
+    "name": "Business ROI Calculator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "business-roi-calculator",
+    "url": "https://clawhub.ai/skills/business-roi-calculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/business-roi-calculator-ebc6ace862778e8b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "实时计算商务合作的短期和长期投资回报率（ROI），并基于阈值提供合作执行建议和关键洞察。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gdp6539",
+      "userId": "s1700q9j1d775p2em2makn5qq583emj8",
+      "displayName": "gdp6539",
+      "image": "https://avatars.githubusercontent.com/u/198542148?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 265,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774302237543,
+      "changelog": "Business ROI Calculator v1.0.0 – Initial Release\n\n- Provides real-time business ROI calculation based on expected returns, investment costs, timeframe, and probability of success.\n- Includes 10+ industry-specific templates for common business collaborations (e.g., channel partnerships, SaaS subscription, consulting).\n- Delivers decision recommendations using a clear ROI threshold (≥1.5: recommended, 0.5–1.5: cautious, <0.5: not recommended).\n- Presents results in a structured Markdown report, including short/long-term ROI, expected value, and actionable insights.\n- Supports both short and long-term project assessments with flexible data inputs and practical output examples.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:daf4a851b4e4ba53a9a266c59000706037ab47717e511bd2c12ab4eed5238256"
+}

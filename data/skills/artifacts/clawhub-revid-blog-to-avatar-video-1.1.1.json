@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/revid-blog-to-avatar-video@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.revid_blog_to_avatar_video",
+  "skill": {
+    "id": 53321,
+    "skillKey": "clawhub-revid-blog-to-avatar-video",
+    "name": "Blog to Avatar Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "revid-blog-to-avatar-video",
+    "url": "https://clawhub.ai/skills/revid-blog-to-avatar-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/revid-blog-to-avatar-video-92f923ca51beb54b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a blog post URL into a talking-head avatar video — the avatar reads a summarized script of the post against a clean background. Use when the user wants..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "api00",
+      "userId": "s1728d1rdp70wm5hvmk61q153h85kp8x",
+      "displayName": "api00",
+      "image": "https://avatars.githubusercontent.com/u/57573621?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 135,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1777201797357,
+      "changelog": "Fix: follow 307 redirect in polling; switch workflow to article-to-video for URL inputs",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0b0bd7055c373836bb94c54fb1e11ecd385b2d740df35ba525050dcf1a52da3d"
+}

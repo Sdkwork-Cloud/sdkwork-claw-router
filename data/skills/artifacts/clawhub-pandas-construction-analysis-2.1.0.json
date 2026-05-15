@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pandas-construction-analysis@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pandas_construction_analysis",
+  "skill": {
+    "id": 11935,
+    "skillKey": "clawhub-pandas-construction-analysis",
+    "name": "Pandas Construction Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pandas-construction-analysis",
+    "url": "https://clawhub.ai/skills/pandas-construction-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pandas-construction-analysis-ab16bc1b77c6faf1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive Pandas toolkit for construction data analysis. Filter, group, aggregate BIM elements, calculate quantities, merge datasets, and generate report..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "datadrivenconstruction",
+      "userId": "publishers:datadrivenconstruction",
+      "displayName": "datadrivenconstruction",
+      "image": "https://avatars.githubusercontent.com/u/94158709?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1713,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1771172944545,
+      "changelog": "Version 2.1.0 of pandas-construction-analysis introduces an improved and comprehensive documentation for construction data analysis using Pandas:\n\n- Expanded SKILL.md with step-by-step examples covering data import, DataFrame creation, filtering, grouping, aggregation, and data transformation tailored to construction datasets.\n- Added detailed explanations and code samples for construction-specific operations, including quantity take-off and report generation.\n- Improved documentation of merging/joining, pivot tables, and string/date operations relevant to BIM and construction workflows.\n- Enhanced quick start and practical usage sections to help users swiftly get value from the toolkit.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c9a1b78c91b394744a0baca3098e3c884f8823949169a24c4764d93774c5df04"
+}

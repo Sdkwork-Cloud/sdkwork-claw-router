@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-search-dashscope@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_search_dashscope",
+  "skill": {
+    "id": 62146,
+    "skillKey": "clawhub-web-search-dashscope",
+    "name": "网络搜索助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-search-dashscope",
+    "url": "https://clawhub.ai/skills/web-search-dashscope",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-search-dashscope-78abfb6f0f50829f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 Serper API 进行实时互联网搜索（国内可访问，基于 Google Search）"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tom859174-sketch",
+      "userId": "s179wegn2s7233yxd5w1a8qs1s83k76n",
+      "displayName": "flyingants",
+      "image": "https://avatars.githubusercontent.com/u/230412921?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774057841446,
+      "changelog": "v1.0.0 - First release: web search using Serper API",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1a332d6507a6f4c9f8b647beb2fed9bbc82f2a3e49e213ec6f76fe23043a2109"
+}

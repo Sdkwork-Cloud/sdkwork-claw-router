@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73687,
+  "uuid": "skill-clawhub-douyin-sentiment-dashboard",
+  "skillKey": "clawhub-douyin-sentiment-dashboard",
+  "name": "抖音评论分析",
+  "summary": "分析抖音视频评论情绪、情感和整体口碑。当用户想了解评论是正面的还是负面的、分析评论区整体舆情、评估视频是否受欢迎，或提取评论洞察时，使用此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_sentiment_dashboard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "allinherog-star",
+      "features": [
+        "分析抖音视频评论情绪、情感和整体口碑。当用户想了解评论是正面的还是负面的、分析评论区整体舆情、评估视频是否受欢迎，或提取评论洞察时，使用此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/douyin-sentiment-dashboard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/243965348?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "douyin-sentiment-dashboard",
+      "url": "https://clawhub.ai/skills/douyin-sentiment-dashboard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-sentiment-dashboard",
+    "url": "https://clawhub.ai/skills/douyin-sentiment-dashboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-sentiment-dashboard-dc56bd33f97dc6ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/douyin-sentiment-dashboard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-douyin-sentiment-dashboard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a1697f9263ba6092e3c28516e80765257dd45f657fa0b63f667cb3acebe75a85",
+      "artifactSizeBytes": 2233
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T06:08:19.738Z"
+}

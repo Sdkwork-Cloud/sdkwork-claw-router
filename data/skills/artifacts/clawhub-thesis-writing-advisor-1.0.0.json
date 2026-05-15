@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/thesis-writing-advisor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.thesis_writing_advisor",
+  "skill": {
+    "id": 47309,
+    "skillKey": "clawhub-thesis-writing-advisor",
+    "name": "thesis-writing-advisor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "thesis-writing-advisor",
+    "url": "https://clawhub.ai/skills/thesis-writing-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/thesis-writing-advisor-e226690425a1dc88.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate complete undergraduate thesis topic, proposal, opening-report, and writing guidance from a user's research theme, population, variables, influencing..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "junwugit",
+      "userId": "s171bkct515qe194zt2r7s6fs1851hns",
+      "displayName": "John Do",
+      "image": "https://avatars.githubusercontent.com/u/44743340?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 116,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777460503586,
+      "changelog": "- Initial release of thesis-writing-advisor skill.\n- Generates undergraduate thesis topics, proposals, opening reports, and writing guidance based on user input.\n- Supports both Chinese and English, with a focus on psychology, counseling, education, and social sciences.\n- Recommends appropriate research design (empirical, qualitative, intervention-scheme, review, or mixed-methods) based on available information and user preferences.\n- Provides step-by-step chapter outlines, full writing plans, and practical advice tailored to undergraduate requirements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5b111d14652ca82a6af90d7ae07085b5e55a0e4efce165f1eed7d20253c101af"
+}

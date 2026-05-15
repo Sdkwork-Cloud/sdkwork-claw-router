@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9755,
+  "uuid": "skill-clawhub-hippocampus",
+  "skillKey": "clawhub-hippocampus",
+  "name": "Hippocampus",
+  "summary": "Persistent memory system for AI agents. Automatic encoding, decay, and semantic reinforcement — just like the hippocampus in your brain. Based on Stanford Generative Agents (Park et al., 2023).",
+  "version": "3.9.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hippocampus",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ImpKind",
+      "features": [
+        "Persistent memory system for AI agents",
+        "Automatic encoding, decay, and semantic reinforcement — just like the hippocampus in your brain",
+        "Based on Stanford Generative Agents (Park et al., 2023)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hippocampus@3.9.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/54905270?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hippocampus",
+      "url": "https://clawhub.ai/skills/hippocampus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hippocampus",
+    "url": "https://clawhub.ai/skills/hippocampus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hippocampus-521e146ab8d7e37a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hippocampus@3.9.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hippocampus-3.9.0.json",
+      "version": "3.9.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:12099e0a2d5682aef116eca67b0f420d37b6e4c9bd6ea4e4488d583adc9976de",
+      "artifactSizeBytes": 1923
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T08:46:36.649Z"
+}

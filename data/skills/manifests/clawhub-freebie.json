@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70039,
+  "uuid": "skill-clawhub-freebie",
+  "skillKey": "clawhub-freebie",
+  "name": "Freebie",
+  "summary": "提供线下快闪店、专柜小样免费领券指南及全国网点查询。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.freebie",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codenova58",
+      "features": [
+        "提供线下快闪店、专柜小样免费领券指南及全国网点查询。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/freebie@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191358186?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "freebie",
+      "url": "https://clawhub.ai/skills/freebie"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "freebie",
+    "url": "https://clawhub.ai/skills/freebie",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/freebie-7113e3ea309056dc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/freebie@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-freebie-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:98eaca71a133f22445d6fa7b2a303a33c085b97d5226f340a9ff8da7b5fa2e7e",
+      "artifactSizeBytes": 2199
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T16:39:24.977Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9122,
+  "uuid": "skill-clawhub-notion-sync",
+  "skillKey": "clawhub-notion-sync",
+  "name": "Notion Sync",
+  "summary": "Bi-directional sync and management for Notion pages and databases. Use when working with Notion workspaces for collaborative editing, research tracking, proj...",
+  "version": "2.5.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notion_sync",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "robansuini",
+      "features": [
+        "Bi-directional sync and management for Notion pages and databases",
+        "Use when working with Notion workspaces for collaborative editing, research tracking, proj..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/notion-sync@2.5.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1525892?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "notion-sync",
+      "url": "https://clawhub.ai/skills/notion-sync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notion-sync",
+    "url": "https://clawhub.ai/skills/notion-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notion-sync-f566756bc5cac9e8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/notion-sync@2.5.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-notion-sync-2.5.3.json",
+      "version": "2.5.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8def79fe5629ffb0d3a91ac65ab02d08ff927af5ae2a9b1f8b4b92ef6db6576a",
+      "artifactSizeBytes": 1967
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T10:51:48.895Z"
+}

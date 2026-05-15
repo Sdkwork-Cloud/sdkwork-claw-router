@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-summary@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_summary",
+  "skill": {
+    "id": 57956,
+    "skillKey": "clawhub-stock-summary",
+    "name": "Stock Summary"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-summary",
+    "url": "https://clawhub.ai/skills/stock-summary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-summary-e6835e4ec010bcc1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query stock quotes and technical analysis. Triggers on phrases like 查股价, 看股票, 帮我分析XX股票, XX走势. Input: stock code (A-share like 600519, HK like 00700, US like..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dongdong-bryant",
+      "userId": "s176zxms56sje82aqvy0y88s1n84a9hs",
+      "displayName": "Dongdong-Bryant",
+      "image": "https://avatars.githubusercontent.com/u/114673067?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775481281655,
+      "changelog": "Stock Summary Skill 1.0.0 – Initial Release\n\n- Provides real-time quotes, RSI/MACD technical analysis, buy/sell/hold signal, and trend chart for A-shares, Hong Kong, and US stocks.\n- Triggers on phrases like 查股价, 看股票, 帮我分析XX股票, XX走势.\n- Supports stock codes for A股 (6 digits), 港股 (5 digits), and 美股 (alphabet codes).\n- Outputs a detailed summary with live data, key indicators, and a 1-month trend chart with MA5/MA10 lines.\n- No API key required for A-shares; uses yfinance for Hong Kong and US stocks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e5df49ece7c5f3e2d9e9e69c8db7a952aae2ca0c9967629ca4e7388da73ea6be"
+}

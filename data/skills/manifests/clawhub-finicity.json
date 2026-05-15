@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31468,
+  "uuid": "skill-clawhub-finicity",
+  "skillKey": "clawhub-finicity",
+  "name": "Finicity",
+  "summary": "Finicity integration. Manage data, records, and automate workflows. Use when the user wants to interact with Finicity data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finicity",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Finicity integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Finicity data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/finicity@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "finicity",
+      "url": "https://clawhub.ai/skills/finicity"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finicity",
+    "url": "https://clawhub.ai/skills/finicity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finicity-e9167bfa61674083.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/finicity@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-finicity-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1d453be4381c99e1d81d2c13e18cae0057ebfd3ecd46ec7a947ff4c499b8be18",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:47:24.201Z"
+}

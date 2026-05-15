@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44154,
+  "uuid": "skill-clawhub-oc-llm-tools",
+  "skillKey": "clawhub-oc-llm-tools",
+  "name": "OpenClaw LLM Tools",
+  "summary": "Universal Tool Definition System for LLM function calling. Define tools once, use with any LLM provider (OpenAI, Anthropic, Gemini, etc.). JSON Schema valida...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oc_llm_tools",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "michealxie001",
+      "features": [
+        "Universal Tool Definition System for LLM function calling",
+        "Define tools once, use with any LLM provider (OpenAI, Anthropic, Gemini, etc.)",
+        "JSON Schema valida..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oc-llm-tools@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/231448030?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oc-llm-tools",
+      "url": "https://clawhub.ai/skills/oc-llm-tools"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oc-llm-tools",
+    "url": "https://clawhub.ai/skills/oc-llm-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oc-llm-tools-8d148252ccb5370e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oc-llm-tools@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-oc-llm-tools-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:86db7d496ccf8c5fd70bd5018166d2107617fc74270a8ded7460ad5a7fbb28d2",
+      "artifactSizeBytes": 1983
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T11:23:32.324Z"
+}

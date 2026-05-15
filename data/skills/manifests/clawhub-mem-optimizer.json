@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64891,
+  "uuid": "skill-clawhub-mem-optimizer",
+  "skillKey": "clawhub-mem-optimizer",
+  "name": "Mem Optimizer",
+  "summary": "记忆优化与压缩工具。结合 self-improving 机制，自动统计、压缩和优化记忆文件，减少 token 消耗。支持多智能体优化和24小时工作检测。触发关键词：优化记忆、记忆优化、总结你自己、MemOptimizer、memopt、执行多智能体记忆优化流程",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mem_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "doony15",
+      "features": [
+        "记忆优化与压缩工具。结合 self-improving 机制，自动统计、压缩和优化记忆文件，减少 token 消耗。支持多智能体优化和24小时工作检测。触发关键词：优化记忆、记忆优化、总结你."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mem-optimizer@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/66176253?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mem-optimizer",
+      "url": "https://clawhub.ai/skills/mem-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mem-optimizer",
+    "url": "https://clawhub.ai/skills/mem-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mem-optimizer-91b94a3815911b0b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mem-optimizer@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mem-optimizer-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bf9a794be2bb6e237ae67be40f32a7d30fc8d3ab17abb2ac6f49ed0ac2f5c0a7",
+      "artifactSizeBytes": 2379
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T01:11:34.994Z"
+}

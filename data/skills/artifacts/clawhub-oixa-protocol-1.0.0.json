@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oixa-protocol@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oixa_protocol",
+  "skill": {
+    "id": 38288,
+    "skillKey": "clawhub-oixa-protocol",
+    "name": "OIXA Protocol"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oixa-protocol",
+    "url": "https://clawhub.ai/skills/oixa-protocol",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oixa-protocol-ace10fd1f012a1ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect OpenClaw agents to OIXA Protocol for posting tasks, bidding, delivering work, and earning or paying USDC on Base Mainnet's AI agent marketplace."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivoshemi-sys",
+      "userId": "s17fqh584yfyq0ktn8qf7wbqbx83phtd",
+      "displayName": "ivoshemi-sys",
+      "image": "https://avatars.githubusercontent.com/u/265858627?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774581561716,
+      "changelog": "Initial release — connect any OpenClaw agent to the OIXA agent-to-agent marketplace. Earn USDC, hire agents, post tasks. Live on Base Mainnet.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:97244593a618416c5abd2b120922efa9ba795b1259e0c98fef3da69971f1f6af"
+}

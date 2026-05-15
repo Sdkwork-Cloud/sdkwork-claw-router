@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57648,
+  "uuid": "skill-clawhub-smyx-elderly-bed-exit-wandering-monitoring-analysis",
+  "skillKey": "clawhub-smyx-elderly-bed-exit-wandering-monitoring-analysis",
+  "name": "老人离床徘徊监测技能",
+  "summary": "Identifies abnormal behaviors such as getting out of bed at night, prolonged wandering, and remaining motionless for extended periods. It is suitable for nig...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smyx_elderly_bed_exit_wandering_monitoring_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smyx-skills",
+      "features": [
+        "Identifies abnormal behaviors such as getting out of bed at night, prolonged wandering, and rem.",
+        "It is suitable for nig..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smyx-elderly-bed-exit-wandering-monitoring-analysis@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/272124705?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smyx-elderly-bed-exit-wandering-monitoring-analysis",
+      "url": "https://clawhub.ai/skills/smyx-elderly-bed-exit-wandering-monitoring-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smyx-elderly-bed-exit-wandering-monitoring-analysis",
+    "url": "https://clawhub.ai/skills/smyx-elderly-bed-exit-wandering-monitoring-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smyx-elderly-bed-exit-wandering-monitoring-analysis-ee116a05f32c62e9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smyx-elderly-bed-exit-wandering-monitoring-analysis@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-smyx-elderly-bed-exit-wandering-monitoring-analysis-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d6ac2a257a7344106c2e2bc96e08035ebe7e6ac38a83500dbe9a62c8892cad0e",
+      "artifactSizeBytes": 2480
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T06:25:43.352Z"
+}

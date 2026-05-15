@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/correction-memory@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.correction_memory",
+  "skill": {
+    "id": 19749,
+    "skillKey": "clawhub-correction-memory",
+    "name": "Correction Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "correction-memory",
+    "url": "https://clawhub.ai/skills/correction-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/correction-memory-5c626648fd3bcf9e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Makes agent corrections persistent and reusable. When you override, reject, or correct an agent's output, this skill logs the correction and automatically in..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "donovanpankratz-del",
+      "userId": "s171g2r7jkvrtmp9mdgk8dk12h83fqed",
+      "displayName": "dp-del",
+      "image": "https://avatars.githubusercontent.com/u/262228646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 594,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772076209533,
+      "changelog": "Security fix: agentType path traversal prevention (allowlist sanitization + path.resolve confinement), input length limits, control char stripping on correction content",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8206f92d3e07b0029dc8816c14724cf251cadf2e40efec06f1bd41352d237c0a"
+}

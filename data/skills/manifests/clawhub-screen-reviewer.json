@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44801,
+  "uuid": "skill-clawhub-screen-reviewer",
+  "skillKey": "clawhub-screen-reviewer",
+  "name": "screen reviewer",
+  "summary": "Monitor computer activities via periodic screenshots, extract text with OCR, and generate daily review reports with ROI analysis. Use when the user asks abou...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.screen_reviewer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Doris P",
+      "features": [
+        "Monitor computer activities via periodic screenshots, extract text with OCR, and generate daily.",
+        "Use when the user asks abou..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/screen-reviewer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/124043040?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "screen-reviewer",
+      "url": "https://clawhub.ai/skills/screen-reviewer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "screen-reviewer",
+    "url": "https://clawhub.ai/skills/screen-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/screen-reviewer-e2ffb4ba2c78d7f6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/screen-reviewer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-screen-reviewer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e87ececa82bca6183f295b530338c204b7b1e8946e8aa2b417ece3b8165d4423",
+      "artifactSizeBytes": 2308
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T11:53:28.260Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29642,
+  "uuid": "skill-clawhub-us-stock-financials",
+  "skillKey": "clawhub-us-stock-financials",
+  "name": "US Stock Financials",
+  "summary": "Fetch comprehensive financial data from SEC EDGAR XBRL for US-listed companies (especially Chinese ADRs). Includes balance sheet, income statement, cash flow...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.us_stock_financials",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mli-cj",
+      "features": [
+        "Fetch comprehensive financial data from SEC EDGAR XBRL for US-listed companies (especially Chin.",
+        "Includes balance sheet, income statement, cash flow..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/us-stock-financials@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255225491?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "us-stock-financials",
+      "url": "https://clawhub.ai/skills/us-stock-financials"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "us-stock-financials",
+    "url": "https://clawhub.ai/skills/us-stock-financials",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/us-stock-financials-8b83d4c4372ec75c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/us-stock-financials@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-us-stock-financials-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d2a459a3be69b255753cf04e8bb6b55fb63bb752b8cc31c72839ce1a6f46e67",
+      "artifactSizeBytes": 1902
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T12:46:27.653Z"
+}

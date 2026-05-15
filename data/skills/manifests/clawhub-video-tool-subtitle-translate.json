@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51958,
+  "uuid": "skill-clawhub-video-tool-subtitle-translate",
+  "skillKey": "clawhub-video-tool-subtitle-translate",
+  "name": "WeryAI video tool — subtitle translate",
+  "summary": "Translate subtitles in an existing HTTPS video via WeryAI (video-subtitle-translate). Use when the user wants subtitle translation, not erasure or text-to-vi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_tool_subtitle_translate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "parallel world",
+      "features": [
+        "Translate subtitles in an existing HTTPS video via WeryAI (video-subtitle-translate)",
+        "Use when the user wants subtitle translation, not erasure or text-to-vi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-tool-subtitle-translate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16458879?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-tool-subtitle-translate",
+      "url": "https://clawhub.ai/skills/video-tool-subtitle-translate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-tool-subtitle-translate",
+    "url": "https://clawhub.ai/skills/video-tool-subtitle-translate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-tool-subtitle-translate-7e7b44ae6bfd954d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-tool-subtitle-translate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-tool-subtitle-translate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:50452bb48c9e742a2685708963e4109bd60120f0ab8ac427f2682201b5c548bd",
+      "artifactSizeBytes": 2433
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T05:41:31.774Z"
+}

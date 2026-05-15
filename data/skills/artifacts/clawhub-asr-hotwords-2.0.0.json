@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/asr-hotwords@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.asr_hotwords",
+  "skill": {
+    "id": 63570,
+    "skillKey": "clawhub-asr-hotwords",
+    "name": "ASR Hotwords"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "asr-hotwords",
+    "url": "https://clawhub.ai/skills/asr-hotwords",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/asr-hotwords-b3c3509737c37fd1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动从 OpenClaw 对话记录挖掘高频热词与歧义词，生成供 ASR 模型提升转录准确性的热词表。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lovejing0306",
+      "userId": "s1737h1sykfwzrdc8pzv15bahh85pqtc",
+      "displayName": "莫小苝",
+      "image": "https://avatars.githubusercontent.com/u/14770340?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1777375317138,
+      "changelog": "v2.0.0: 全局热词表（移除 per-agent 隔离），新增旧版迁移脚本，hotwords.md Markdown 分组格式，DMWork 语音纠错上下文自动注入，3项设计问题修复",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5008d441bd7c92e15cfda3322d534bff751611e6dc35418dba9f64a145030d1a"
+}

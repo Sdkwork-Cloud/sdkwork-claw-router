@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-read-flow@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_read_flow",
+  "skill": {
+    "id": 63930,
+    "skillKey": "clawhub-openclaw-read-flow",
+    "name": "openclaw-read-flow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-read-flow",
+    "url": "https://clawhub.ai/skills/openclaw-read-flow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-read-flow-c43434e123efe6ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于 FreshRSS 的漏斗式阅读流总技能：从未读抓取、昨天窗口切片、Digest 构建，到固定 6 栏 Daily Review 和后续知识沉淀。用于需要把聚合信息流加工成可读日报与可复用知识资产的场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gcdd1993",
+      "userId": "s171sbbekcsr07shhkant5dyf583v0q1",
+      "displayName": "阿晨聊技术",
+      "image": "https://avatars.githubusercontent.com/u/26523525?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774785473948,
+      "changelog": "Initial release of the unified OpenClaw read flow skill.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4311c80fa84ebee2082f196f57a3d044e5710996d0323e5c42b659a7e6aae467"
+}

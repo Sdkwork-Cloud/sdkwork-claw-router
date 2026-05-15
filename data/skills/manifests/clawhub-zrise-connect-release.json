@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30372,
+  "uuid": "skill-clawhub-zrise-connect-release",
+  "skillKey": "clawhub-zrise-connect-release",
+  "name": "Zrise Connect Release",
+  "summary": "Connect and operate Zrise tasks via XML-RPC API using Lobster workflows for approval-based task execution and result writeback.",
+  "version": "3.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zrise_connect_release",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Khoa",
+      "features": [
+        "Connect and operate Zrise tasks via XML-RPC API using Lobster workflows for approval-based task."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zrise-connect-release@3.3.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/103617700?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zrise-connect-release",
+      "url": "https://clawhub.ai/skills/zrise-connect-release"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zrise-connect-release",
+    "url": "https://clawhub.ai/skills/zrise-connect-release",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zrise-connect-release-a9fe28b80d16fdde.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zrise-connect-release@3.3.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-zrise-connect-release-3.3.1.json",
+      "version": "3.3.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ccdb9136229c107974d77c3b7ea06007968c2a810a719bc0a746a8d81c0844e0",
+      "artifactSizeBytes": 2401
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T08:24:19.089Z"
+}

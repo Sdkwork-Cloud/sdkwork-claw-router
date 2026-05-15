@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60101,
+  "uuid": "skill-clawhub-rag-ingest",
+  "skillKey": "clawhub-rag-ingest",
+  "name": "rag-ingest",
+  "summary": "将 Agent 已解读好的正文写入 Qdrant（kb_main）。仅做 chunk、embedding 和向量写入，不负责抓取与精炼。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rag_ingest",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Seal-Re",
+      "features": [
+        "将 Agent 已解读好的正文写入 Qdrant（kb_main）。仅做 chunk、embedding 和向量写入，不负责抓取与精炼。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rag-ingest@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/190578785?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rag-ingest",
+      "url": "https://clawhub.ai/skills/rag-ingest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rag-ingest",
+    "url": "https://clawhub.ai/skills/rag-ingest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rag-ingest-4fedaa1e1907734c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rag-ingest@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rag-ingest-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e7b07512a3bd33204cd369d918b17072ea78ab759d8536b39576c2f3a94391ee",
+      "artifactSizeBytes": 2247
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T00:51:00.212Z"
+}

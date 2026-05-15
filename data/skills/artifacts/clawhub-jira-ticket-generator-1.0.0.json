@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jira-ticket-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jira_ticket_generator",
+  "skill": {
+    "id": 43846,
+    "skillKey": "clawhub-jira-ticket-generator",
+    "name": "robertsong"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jira-ticket-generator",
+    "url": "https://clawhub.ai/skills/jira-ticket-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jira-ticket-generator-e990c4829f3290a3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate bilingual (Chinese/English) JIRA ticket descriptions from user input. Use when user asks to create a JIRA ticket, write ticket description, or needs..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "robertsong2019",
+      "userId": "s177t22c3z3mr0580v28t10zh983mkx3",
+      "displayName": "robertsong",
+      "image": "https://avatars.githubusercontent.com/u/55969163?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776136154520,
+      "changelog": "- Initial release of jira-ticket-generator skill.\n- Generates bilingual (Chinese/English) JIRA ticket descriptions from user input.\n- Supports Bug, Task, Story, and Epic issue types with dedicated templates.\n- Enforces title formatting with bilingual content and [PREFIX] tag.\n- Provides structured description sections: Objective, Requirements, and Acceptance Criteria.\n- Includes step-by-step workflow and best practice guidelines for clarity and consistency.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cb2f2edea4b1721f67de5b69ed83e7d98d284d599c49cb9b49268814eb4f4fae"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11045,
+  "uuid": "skill-clawhub-trace-to-svg",
+  "skillKey": "clawhub-trace-to-svg",
+  "name": "Trace To Svg",
+  "summary": "Trace bitmap images (PNG/JPG/WebP) into clean SVG paths using potrace/mkbitmap. Use to convert logos/silhouettes into vectors for downstream CAD workflows (e.g., create-dxf etch_svg_path) and for turning reference images into manufacturabl.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trace_to_svg",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ajmwagar",
+      "features": [
+        "Trace bitmap images (PNG/JPG/WebP) into clean SVG paths using potrace/mkbitmap",
+        "Use to convert logos/silhouettes into vectors for downstream CAD workflows (e.g., create-dxf et."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trace-to-svg@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25015651?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trace-to-svg",
+      "url": "https://clawhub.ai/skills/trace-to-svg"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trace-to-svg",
+    "url": "https://clawhub.ai/skills/trace-to-svg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trace-to-svg-34604edd872eee84.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trace-to-svg@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trace-to-svg-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ea43b49708d84ca40eb9225941aa62bea990e96534e9b8b6d609ea738e34f318",
+      "artifactSizeBytes": 1987
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T13:45:44.013Z"
+}

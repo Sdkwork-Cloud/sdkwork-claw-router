@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-memory-transfer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_memory_transfer",
+  "skill": {
+    "id": 42571,
+    "skillKey": "clawhub-openclaw-memory-transfer",
+    "name": "Openclaw Memory Transfer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-memory-transfer",
+    "url": "https://clawhub.ai/skills/openclaw-memory-transfer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-memory-transfer-785c220d3e3c49cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Zero-friction memory migration from other AI assistants (ChatGPT, Claude.ai, Gemini, Copilot, Perplexity, Cursor, Windsurf, etc.) into OpenClaw. Triggers: \"m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "myclaw-ai",
+      "userId": "s17251tfxrevk7g6eqjs83a11183rhqw",
+      "displayName": "MyClaw.ai",
+      "image": "https://avatars.githubusercontent.com/u/265695449?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774863774679,
+      "changelog": "v1.0.1: Bilingual prompts (EN/ZH), word-boundary tool detection, ZIP path traversal protection, package.json, fixed mixed-language README",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eee9d664ef82a41d5d224df1c2ce83d39f7aa98e8023d3ecce9971524574a625"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/voice-clone-bot@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voice_clone_bot",
+  "skill": {
+    "id": 40466,
+    "skillKey": "clawhub-voice-clone-bot",
+    "name": "Voice Clone Bot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voice-clone-bot",
+    "url": "https://clawhub.ai/skills/voice-clone-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voice-clone-bot-31c40fde4a6daaa0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Synthesize speech by cloning a user's voice from a reference audio sample, then reading generated text aloud in that cloned voice. Use this skill whenever th..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "conanwhf",
+      "userId": "s17630t4f4mg47rk0nkkr09cf983xw8x",
+      "displayName": "conanwhf",
+      "image": "https://avatars.githubusercontent.com/u/14151735?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775492843355,
+      "changelog": "Rename synchronization to voice-clone-bot, skill metadata alignment, docs/scripts naming sync, and skill-creator formatted release package (no TTS logic changes).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f1bca81aef5ab64b114455a64ffb69a5d7787574b331d92c2bb39472fac73e87"
+}

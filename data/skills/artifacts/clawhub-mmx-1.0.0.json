@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mmx@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mmx",
+  "skill": {
+    "id": 43410,
+    "skillKey": "clawhub-mmx",
+    "name": "Mmx"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mmx",
+    "url": "https://clawhub.ai/skills/mmx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mmx-5da9a18734ebf233.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multimodal content generation and analysis via MiniMax CLI, including text chat, image/video creation, speech synthesis, music, vision, and web search with A..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ariffazil",
+      "userId": "s17awd3g3ca6ks5ke3nsy4ajf984r2qd",
+      "displayName": "ariffazil",
+      "image": "https://avatars.githubusercontent.com/u/210893902?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776079273972,
+      "changelog": "Initial release: full MiniMax multimodal CLI reference - text, image, video, speech, music, vision generation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c6f3ad7740a06a38e17e221e5e9b21775c3890616523d89223e1b09420fbd708"
+}

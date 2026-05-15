@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31473,
+  "uuid": "skill-clawhub-giantcampaign",
+  "skillKey": "clawhub-giantcampaign",
+  "name": "Giantcampaign",
+  "summary": "GiantCampaign integration. Manage Leads, Persons, Organizations, Deals, Projects, Activities and more. Use when the user wants to interact with GiantCampaign...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.giantcampaign",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "GiantCampaign integration",
+        "Manage Leads, Persons, Organizations, Deals, Projects, Activities and more",
+        "Use when the user wants to interact with GiantCampaign..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/giantcampaign@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "giantcampaign",
+      "url": "https://clawhub.ai/skills/giantcampaign"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "giantcampaign",
+    "url": "https://clawhub.ai/skills/giantcampaign",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/giantcampaign-f8948ce216fcebc0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/giantcampaign@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-giantcampaign-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0e047311072ec98a819fc095e7768c8b85e488b237e5bc2a07221c524aa1692f",
+      "artifactSizeBytes": 1910
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:29:58.785Z"
+}

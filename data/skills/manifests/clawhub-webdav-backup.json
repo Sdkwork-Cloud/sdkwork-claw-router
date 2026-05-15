@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62907,
+  "uuid": "skill-clawhub-webdav-backup",
+  "skillKey": "clawhub-webdav-backup",
+  "name": "webdav-backup",
+  "summary": "WebDAV 备份工具 - 将 OpenClaw 工作目录备份到 WebDAV 服务器或本地目录（默认 `~/openclaw/output`）。当用户需要备份数据、同步文件到云端、做本地归档、或配置自动备份计划时使用此技能。",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.webdav_backup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CodePlayer",
+      "features": [
+        "WebDAV 备份工具",
+        "将 OpenClaw 工作目录备份到 WebDAV 服务器或本地目录（默认 `~/openclaw/output`）。当用户需要备份数据、同步文件到云端、做本地归档、或配置自动备份计划时使用."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/webdav-backup@1.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21231607?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "webdav-backup",
+      "url": "https://clawhub.ai/skills/webdav-backup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "webdav-backup",
+    "url": "https://clawhub.ai/skills/webdav-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/webdav-backup-79fb4f7eafe06a4b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/webdav-backup@1.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-webdav-backup-1.2.2.json",
+      "version": "1.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b177e1bace47dcd638b796a009e442260582d10bf0de5452bdc967fce87e3aad",
+      "artifactSizeBytes": 2098
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T04:43:14.561Z"
+}

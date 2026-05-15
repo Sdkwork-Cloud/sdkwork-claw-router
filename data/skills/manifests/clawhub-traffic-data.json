@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19774,
+  "uuid": "skill-clawhub-traffic-data",
+  "skillKey": "clawhub-traffic-data",
+  "name": "Traffic-Data",
+  "summary": "Query traffic data - real-time road conditions, traffic incidents, SCATS intersection data",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.traffic_data",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TEweitao",
+      "features": [
+        "Query traffic data",
+        "real-time road conditions, traffic incidents, SCATS intersection data"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/traffic-data@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/133971480?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "traffic-data",
+      "url": "https://clawhub.ai/skills/traffic-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "traffic-data",
+    "url": "https://clawhub.ai/skills/traffic-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/traffic-data-2d2b04a0dc81f68b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/traffic-data@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-traffic-data-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d6e86df6cac105c57b6c9e319ae2aa91537d62231524032323cbe92931567d3d",
+      "artifactSizeBytes": 2089
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T15:55:12.008Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bondcreditanalysis-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bondcreditanalysis_cn",
+  "skill": {
+    "id": 65725,
+    "skillKey": "clawhub-bondcreditanalysis-cn",
+    "name": "BondCreditAnalysis-4CNMarket"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bondcreditanalysis-cn",
+    "url": "https://clawhub.ai/skills/bondcreditanalysis-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bondcreditanalysis-cn-ceba675d8d7e9daa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "固收与信用分析框架，涵盖信用债评级、利差分析、违约风险评估、城投债研究，以及可转债定价与策略研究。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xujuen",
+      "userId": "s179v8vzsyc16ascmd4px584fs84sct5",
+      "displayName": "BondClaw.AI",
+      "image": "https://avatars.githubusercontent.com/u/206630801?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776088778155,
+      "changelog": "Initial release: Provides a comprehensive framework for credit and fixed income analysis.\n\n- Covers bond pricing, credit rating systems, credit spread analysis, and default risk assessment.\n- Includes frameworks for analyzing government bonds, enterprise bonds, convertible bonds (plain bond part), ABS/MBS, and LGFV (China's unique local government financing vehicles).\n- Presents key risk measurement tools: YTM, duration, convexity, DV01, key rate durations, and immunization strategies.\n- Details credit analytics models (Altman Z-Score, Merton, KMV/EDF, credit scoring).\n- Tailored for Chinese fixed income markets with references to domestic market specifics.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2a58ff358aa78b805a9fc4cc0bb1353b4c4302464fb2164a00840b7523378dd1"
+}

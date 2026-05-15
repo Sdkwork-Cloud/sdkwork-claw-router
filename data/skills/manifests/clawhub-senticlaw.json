@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29735,
+  "uuid": "skill-clawhub-senticlaw",
+  "skillKey": "clawhub-senticlaw",
+  "name": "SentiClaw",
+  "summary": "Runtime AI security for OpenClaw agents. Protects against prompt injection, identity spoofing, PII leakage, and runtime abuse. Drop-in 6-layer security middl...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.senticlaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SuperTechGod",
+      "features": [
+        "Runtime AI security for OpenClaw agents",
+        "Protects against prompt injection, identity spoofing, PII leakage, and runtime abuse",
+        "Drop-in 6-layer security middl..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/senticlaw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/212455961?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "senticlaw",
+      "url": "https://clawhub.ai/skills/senticlaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "senticlaw",
+    "url": "https://clawhub.ai/skills/senticlaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/senticlaw-a3de8c650ff2911e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/senticlaw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-senticlaw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:643c1eb56f6988b85ea3aad2ba07a680391eebdb524d2ccaf3ffb01d47145e8f",
+      "artifactSizeBytes": 2330
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T17:07:52.205Z"
+}

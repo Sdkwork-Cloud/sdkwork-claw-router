@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/neural-network-diagnostics@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neural_network_diagnostics",
+  "skill": {
+    "id": 31493,
+    "skillKey": "clawhub-neural-network-diagnostics",
+    "name": "Neural Network Ops"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neural-network-diagnostics",
+    "url": "https://clawhub.ai/skills/neural-network-diagnostics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neural-network-diagnostics-314e68dbb10a7aec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Diagnoses and tunes LLM providers (Groq, OpenRouter, Ollama), resolves rate limits/timeouts, and selects stable primary/fallback models. Use when the bot is..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "utromaya-code",
+      "userId": "publishers:utromaya-code",
+      "displayName": "utromaya-code",
+      "image": "https://avatars.githubusercontent.com/u/254962629?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 256,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774206396556,
+      "changelog": "- Initial release of neural-network-ops skill for diagnosing and tuning LLM providers (Groq, OpenRouter, Ollama).\n- Provides fast triage checks and routing policy recommendations to maintain OpenClaw responsiveness.\n- Details stable model constraints and fallback strategies for local and cloud providers.\n- Includes a step-by-step recovery playbook for common issues such as silent bot, rate limits, and provider errors.\n- Defines standard output format for health reports and introduces strict operational guardrails.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5e4341e08183b76e4364382ef00478326f5f764bd422c02101ee156b8ad39e20"
+}

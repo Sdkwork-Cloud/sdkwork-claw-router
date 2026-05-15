@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rdk-x5-ai-detect@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rdk_x5_ai_detect",
+  "skill": {
+    "id": 60940,
+    "skillKey": "clawhub-rdk-x5-ai-detect",
+    "name": "Rdk X5 Ai Detect"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rdk-x5-ai-detect",
+    "url": "https://clawhub.ai/skills/rdk-x5-ai-detect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rdk-x5-ai-detect-0f08da94804a1649.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在 RDK X5 的 10TOPS BPU 上运行单个 AI 推理算法：YOLO 目标检测、图像分类、语义分割、人脸识别、手势识别、人体关键点、开放词汇检测（DOSOD/YOLO-World）、双目深度估计、语音识别、端侧轻量 LLM（≤2B 参数量化模型）。Use when the user wants to..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "katherineedwards2475",
+      "userId": "s171fb3mdcgkeseprx9k9hd0v583wsb1",
+      "displayName": "qiaolongli",
+      "image": "https://avatars.githubusercontent.com/u/262944264?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 310,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773211132420,
+      "changelog": "Initial release: BPU AI inference for YOLO, classification, segmentation, face/gesture/pose, DOSOD, depth, ASR, LLM",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4ecfe87340b81564a5f76bb4ee633ddfa89cb0c4380becb1f7dd5f6618089ee0"
+}

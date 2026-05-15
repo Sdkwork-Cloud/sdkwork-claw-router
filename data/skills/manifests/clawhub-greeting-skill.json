@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38263,
+  "uuid": "skill-clawhub-greeting-skill",
+  "skillKey": "clawhub-greeting-skill",
+  "name": "Greeting Skill",
+  "summary": "A friendly greeting skill that provides personalized and time-based greetings",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.greeting_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "terrycarter1985",
+      "features": [
+        "A friendly greeting skill that provides personalized and time-based greetings"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/greeting-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1542987?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "greeting-skill",
+      "url": "https://clawhub.ai/skills/greeting-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "greeting-skill",
+    "url": "https://clawhub.ai/skills/greeting-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/greeting-skill-54ac7b04b222eace.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/greeting-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-greeting-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:80bef00e14285861874a5b537688584a7f7bcdedf64d5b544c7c1a1ea44b5310",
+      "artifactSizeBytes": 1813
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T08:24:19.849Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46280,
+  "uuid": "skill-clawhub-autonomy-ladder",
+  "skillKey": "clawhub-autonomy-ladder",
+  "name": "Autonomy Ladder",
+  "summary": "A 3-tier decision framework that defines when your AI agent should act independently, report with detail, or ask before proceeding.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autonomy_ladder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JoeyTbuilds",
+      "features": [
+        "A 3-tier decision framework that defines when your AI agent should act independently, report wi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/autonomy-ladder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/272441554?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "autonomy-ladder",
+      "url": "https://clawhub.ai/skills/autonomy-ladder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autonomy-ladder",
+    "url": "https://clawhub.ai/skills/autonomy-ladder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autonomy-ladder-b9ad2fb18940e50f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/autonomy-ladder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-autonomy-ladder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2a0dabab99bc9d8e6589ea9abfe759b47732553500e24cd4c055a1b5133b25d7",
+      "artifactSizeBytes": 2380
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T20:03:34.672Z"
+}

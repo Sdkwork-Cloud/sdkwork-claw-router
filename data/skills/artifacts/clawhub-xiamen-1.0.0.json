@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiamen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiamen",
+  "skill": {
+    "id": 68891,
+    "skillKey": "clawhub-xiamen",
+    "name": "Xiamen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiamen",
+    "url": "https://clawhub.ai/skills/xiamen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiamen-279a8a822f082b1f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供xiamen的基本信息及行业地位，助力快速了解其业务、市场覆盖和行业影响力。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 134,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776500239808,
+      "changelog": "xiamen skill version 1.0.0 released.\n\n- 提供 xiamen 关键事实卡片，便于快速了解核心信息。\n- 支持搜索 xiamen 及其基本信息场景。\n- 包含行业、业务、市场覆盖和行业地位等维度。\n- 提供商业、学术研究等使用提示。\n- 建议延伸查阅官方内容和行业报告。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5ede77955edd8eb3130728dd8694bc5521e3938389434b833773b733d2747142"
+}

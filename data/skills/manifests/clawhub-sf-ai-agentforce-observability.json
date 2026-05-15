@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45229,
+  "uuid": "skill-clawhub-sf-ai-agentforce-observability",
+  "skillKey": "clawhub-sf-ai-agentforce-observability",
+  "name": "Salesforce AI Agentforce Observability",
+  "summary": "Agentforce session tracing extraction and analysis. TRIGGER when: user extracts STDM data from Data Cloud, analyzes agent session traces, debugs agent conver...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sf_ai_agentforce_observability",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Anush DSouza",
+      "features": [
+        "Agentforce session tracing extraction and analysis",
+        "TRIGGER when: user extracts STDM data from Data Cloud, analyzes agent session traces, debugs ag."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sf-ai-agentforce-observability@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/159198300?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sf-ai-agentforce-observability",
+      "url": "https://clawhub.ai/skills/sf-ai-agentforce-observability"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sf-ai-agentforce-observability",
+    "url": "https://clawhub.ai/skills/sf-ai-agentforce-observability",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sf-ai-agentforce-observability-c35d72910c167bb6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sf-ai-agentforce-observability@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sf-ai-agentforce-observability-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9f5a5e5e0206a3ccdcf72784f62118c56c7e87a5f9e5eb72c23cd8d037a11804",
+      "artifactSizeBytes": 2023
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T00:28:02.503Z"
+}

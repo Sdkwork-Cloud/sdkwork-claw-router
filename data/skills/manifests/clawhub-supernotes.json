@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34166,
+  "uuid": "skill-clawhub-supernotes",
+  "skillKey": "clawhub-supernotes",
+  "name": "Supernotes",
+  "summary": "Supernotes integration. Manage Notes, Users, Groups. Use when the user wants to interact with Supernotes data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.supernotes",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Supernotes integration",
+        "Manage Notes, Users, Groups",
+        "Use when the user wants to interact with Supernotes data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/supernotes@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "supernotes",
+      "url": "https://clawhub.ai/skills/supernotes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "supernotes",
+    "url": "https://clawhub.ai/skills/supernotes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/supernotes-9a5c4ee30405eefc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/supernotes@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-supernotes-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d0c65d9977e110b40333eacca274787b5d47075a68d3f4550a9d80e70d955830",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:03:58.266Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26499,
+  "uuid": "skill-clawhub-ux-qa-gate",
+  "skillKey": "clawhub-ux-qa-gate",
+  "name": "UX QA Gate",
+  "summary": "Self-review gate for UI/UX work before delivering to the user. Run automatically after building, modifying, or completing any user-facing feature, page, comp...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ux_qa_gate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "michellebolander",
+      "features": [
+        "Self-review gate for UI/UX work before delivering to the user",
+        "Run automatically after building, modifying, or completing any user-facing feature, page, comp.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ux-qa-gate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/166651145?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ux-qa-gate",
+      "url": "https://clawhub.ai/skills/ux-qa-gate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ux-qa-gate",
+    "url": "https://clawhub.ai/skills/ux-qa-gate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ux-qa-gate-b73f42a4578b0d3c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ux-qa-gate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ux-qa-gate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:613fc629397651b0fca46271fbd400a48694cafb333454b297f7f1ddc1126730",
+      "artifactSizeBytes": 1921
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T04:08:08.393Z"
+}

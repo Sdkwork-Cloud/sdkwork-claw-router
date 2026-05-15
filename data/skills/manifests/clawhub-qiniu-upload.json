@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29733,
+  "uuid": "skill-clawhub-qiniu-upload",
+  "skillKey": "clawhub-qiniu-upload",
+  "name": "Qiniu Upload",
+  "summary": "Upload local files to Qiniu Cloud and return a publicly accessible URL (or signed private URL). Use when the user wants to upload a local file path to Qiniu,...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qiniu_upload",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chenggongdu",
+      "features": [
+        "Upload local files to Qiniu Cloud and return a publicly accessible URL (or signed private URL)",
+        "Use when the user wants to upload a local file path to Qiniu,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qiniu-upload@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38181431?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qiniu-upload",
+      "url": "https://clawhub.ai/skills/qiniu-upload"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qiniu-upload",
+    "url": "https://clawhub.ai/skills/qiniu-upload",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qiniu-upload-1514e226c796b7e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qiniu-upload@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qiniu-upload-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c7db28c58552032236ff2246b2a59a3688405a4e3b184f75b4417a450e4b0c72",
+      "artifactSizeBytes": 2414
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T00:39:18.526Z"
+}

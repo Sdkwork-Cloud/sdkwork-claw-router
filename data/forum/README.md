@@ -1,12 +1,13 @@
 # SDKWork Forum Seed
 
-`forum-seed.json` is the built-in forum content package imported by the Rust database installer.
-
-The seed targets the Java-compatible forum tables:
+`forum-seed.json` is the install-time forum content bundle for SDKWork Claw Router.
+It initializes professional tutorial discussions in the Java-compatible forum tables:
 
 - `plus_feeds`
 - `plus_comments`
 - `plus_content_vote`
 - `plus_favorite`
 
-`content_forum_post` and `content_forum_comment` are legacy documentation artifacts only and are not active write models for the new Rust application.
+The Rust database installer is the only database writer for this bundle. Keep row ids and UUIDs
+stable so first install, repair, and checksum-based refresh remain idempotent across SQLite and
+PostgreSQL.

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24734,
+  "uuid": "skill-clawhub-quizlet",
+  "skillKey": "clawhub-quizlet",
+  "name": "Quizlet",
+  "summary": "Build high-yield Quizlet study sets, tune Learn and Test sessions, and improve weak cards with spaced repetition diagnostics.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quizlet",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Build high-yield Quizlet study sets, tune Learn and Test sessions, and improve weak cards with."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quizlet@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quizlet",
+      "url": "https://clawhub.ai/skills/quizlet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quizlet",
+    "url": "https://clawhub.ai/skills/quizlet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quizlet-8ace5a64458fad11.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quizlet@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-quizlet-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:77c6b83f1589833962e40b8a4cf3d0ed95c62dd5582af2dde986093b3db8942e",
+      "artifactSizeBytes": 1879
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T15:52:13.879Z"
+}

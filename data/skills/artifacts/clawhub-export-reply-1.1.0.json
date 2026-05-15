@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/export-reply@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.export_reply",
+  "skill": {
+    "id": 56667,
+    "skillKey": "clawhub-export-reply",
+    "name": "Export Reply"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "export-reply",
+    "url": "https://clawhub.ai/skills/export-reply",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/export-reply-cdb94ed8ae940f9e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Save any agent reply or full conversation to a local file. Triggers on: 保存 / 导出 / save / export. Supports MD, TXT, HTML, PDF, DOCX. Two modes: verbatim or co..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ryan-owo",
+      "userId": "s17crtbrczyt5bvek5gv9xgea184s17z",
+      "displayName": "Ryan-owo",
+      "image": "https://avatars.githubusercontent.com/u/194656525?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776067281418,
+      "changelog": "Cleaner README with feature table; fix description; Chrome headless PDF; preference memory",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d6e4bdb1084d244dac4a4554c1cc49e1e21563695a31bbe281830188ea32d7c1"
+}

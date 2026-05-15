@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/self-optimization@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_optimization",
+  "skill": {
+    "id": 34688,
+    "skillKey": "clawhub-self-optimization",
+    "name": "Self Optimization"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-optimization",
+    "url": "https://clawhub.ai/skills/self-optimization",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-optimization-4c5ef935e9b8a008.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn mistakes, corrections, dead ends, and repeated fixes into durable improvements. Use when work reveals a non-obvious lesson, a recurring failure, a missi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alethean-kaw",
+      "userId": "s17cptxy9warn260jdhp2pk05583j0xx",
+      "displayName": "Alethean-kaw",
+      "image": "https://avatars.githubusercontent.com/u/238510429?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 212,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775115207381,
+      "changelog": "self-optimization v1.0.2\n\n- Added standard log files: `.learnings/ERRORS.md`, `.learnings/FEATURE_REQUESTS.md`, and `.learnings/LEARNINGS.md` to structure captured learnings, errors, and feature requests.\n- No changes to logic or process; updated workspace to include these files for consistent tracking and review.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e21af531dae1189bdea5aaed1ec77c9d5d18cfac7f3fb079c2b3d779a8c3c38c"
+}

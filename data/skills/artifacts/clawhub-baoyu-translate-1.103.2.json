@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baoyu-translate@1.103.2",
+  "version": "1.103.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baoyu_translate",
+  "skill": {
+    "id": 10742,
+    "skillKey": "clawhub-baoyu-translate",
+    "name": "Baoyu Translate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baoyu-translate",
+    "url": "https://clawhub.ai/skills/baoyu-translate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baoyu-translate-2d4fbabc164ae910.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Translates articles and documents between languages with three modes - quick (direct), normal (analyze then translate), and refined (analyze, translate, revi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jimliu",
+      "userId": "s17dfbhg0khk4fvtnx0stqg0yx83j25z",
+      "displayName": "Jim Liu 宝玉",
+      "image": "https://avatars.githubusercontent.com/u/648674?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1900,
+      "installsAllTime": 39,
+      "installsCurrent": 39,
+      "stars": 2,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.103.2",
+      "createdAt": 1776809043692,
+      "changelog": "- Added \"User Input Tools\" section specifying how to prompt for user settings, prioritizing built-in agent runtime tools (e.g., AskUserQuestion) and providing fallback instructions.\n- Clarified EXTEND.md discovery order and separated the paths/priorities table for easier reference.\n- Explained batching behavior for user questions depending on the runtime's tool capabilities.\n- No changes to core workflow or translation modes.\n- All other instructions and functionality remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bbd46ecfce729d52f4fd476f3cf109c20503e4721de7dfe66cd5a5207e8fb854"
+}

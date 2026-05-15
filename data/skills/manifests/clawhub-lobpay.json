@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47564,
+  "uuid": "skill-clawhub-lobpay",
+  "skillKey": "clawhub-lobpay",
+  "name": "LobPay",
+  "summary": "Purchase items, pay merchants, retrieve checkout info, record transactions, and leave feedback via X402 protocol on the Base network using LobPay.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobpay",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Amir",
+      "features": [
+        "Purchase items, pay merchants, retrieve checkout info, record transactions, and leave feedback."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lobpay@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/100583738?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lobpay",
+      "url": "https://clawhub.ai/skills/lobpay"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobpay",
+    "url": "https://clawhub.ai/skills/lobpay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobpay-e53bb8c408ea4658.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lobpay@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lobpay-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:006a9d49f78a9a1b9010f32682eee78ffdac4bf66e981718ae7dc507d6f2d9a4",
+      "artifactSizeBytes": 2355
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T11:26:40.667Z"
+}

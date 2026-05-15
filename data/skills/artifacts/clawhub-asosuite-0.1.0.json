@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/asosuite@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.asosuite",
+  "skill": {
+    "id": 21333,
+    "skillKey": "clawhub-asosuite",
+    "name": "ASO Suite"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "asosuite",
+    "url": "https://clawhub.ai/skills/asosuite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/asosuite-20eae4aadde18494.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Do App Store Optimization (ASO) with the ASO Suite CLI across iPhone, iPad, Mac, Apple TV, Apple Watch, and VisionOS by finding keywords with popularity/diff..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hesselbom",
+      "userId": "publishers:hesselbom",
+      "displayName": "viktor hesselbom",
+      "image": "https://avatars.githubusercontent.com/u/628641?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 413,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772040055731,
+      "changelog": "Initial release of asosuite skill.\n\n- Enables App Store Optimization (ASO) workflows across iPhone, iPad, Mac, Apple TV, Apple Watch, and VisionOS using the ASO Suite CLI.\n- Supports keyword discovery with popularity/difficulty data, keyword ranking tracking, monitoring ratings, editorial features, and chart appearances.\n- Provides a comprehensive set of CLI commands for tracking apps, researching keywords, managing related/competitor apps, monitoring charts, ratings, and features, and managing ASO events.\n- JSON output supported for most commands for easy integration and parsing.\n- npm-based installation and authentication instructions included.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:36573c316b4046f92779e43631759694583dee53fa1f603e7a1db668656fabde"
+}

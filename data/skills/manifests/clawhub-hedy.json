@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21864,
+  "uuid": "skill-clawhub-hedy",
+  "skillKey": "clawhub-hedy",
+  "name": "Hedy",
+  "summary": "Access Hedy meeting data: sessions, transcripts, highlights, todos, topics, contexts, and webhooks via the Hedy REST API.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hedy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Julian Pscheid",
+      "features": [
+        "Access Hedy meeting data: sessions, transcripts, highlights, todos, topics, contexts, and webho."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hedy@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/772713?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hedy",
+      "url": "https://clawhub.ai/skills/hedy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hedy",
+    "url": "https://clawhub.ai/skills/hedy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hedy-fe9bab5e32ff1d03.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hedy@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hedy-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7348c11b66a7bcf50f690fd7413a4e90ea4f0d85787bdcf7c4d4acd90e0f9da3",
+      "artifactSizeBytes": 1941
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T15:45:39.289Z"
+}

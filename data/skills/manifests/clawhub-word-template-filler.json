@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64345,
+  "uuid": "skill-clawhub-word-template-filler",
+  "skillKey": "clawhub-word-template-filler",
+  "name": "Word Template Filler",
+  "summary": "Word模板智能填充工具。解析Word模板中的{{占位符}}，AI生成主题内容并填充模板生成新文档。触发场景：(1) 用户上传Word模板需要填充内容 (2) 处理包含占位符的Word文档 (3) 批量生成基于模板的文档 (4) 关键词：模板填充、Word模板、占位符、文档生成、{{}}替换。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.word_template_filler",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smallKeyboy",
+      "features": [
+        "Word模板智能填充工具。解析Word模板中的{{占位符}}，AI生成主题内容并填充模板生成新文档。触发场景：(1) 用户上传Word模板需要填充内容 (2) 处理包含占位符的Word文档."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/word-template-filler@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/68474019?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "word-template-filler",
+      "url": "https://clawhub.ai/skills/word-template-filler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "word-template-filler",
+    "url": "https://clawhub.ai/skills/word-template-filler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/word-template-filler-07d3d84c9bc05be7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/word-template-filler@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-word-template-filler-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:59e6174c2b2e16a995bc2c83fb604904517d1cd1ff137f0b765ce627ddfe7838",
+      "artifactSizeBytes": 2116
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T12:40:48.308Z"
+}

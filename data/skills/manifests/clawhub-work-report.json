@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69539,
+  "uuid": "skill-clawhub-work-report",
+  "skillKey": "clawhub-work-report",
+  "name": "工作报告PPT生成技能",
+  "summary": "生成工作汇报PPT。使用python-pptx库创建演示文稿，用于生成工作周报、月报、项目汇报等。第一页标题用宋体48号，内容页标题36号，正文18号，总页数控制在10页以内，最后一页为\"谢谢观看\"。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.work_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xwzai",
+      "features": [
+        "生成工作汇报PPT。使用python-pptx库创建演示文稿，用于生成工作周报、月报、项目汇报等。第一页标题用宋体48号，内容页标题36号，正文18号，总页数控制在10页以内，最后一页为\"谢."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/work-report@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16172025?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "work-report",
+      "url": "https://clawhub.ai/skills/work-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "work-report",
+    "url": "https://clawhub.ai/skills/work-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/work-report-9bec1edb8a18ea23.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/work-report@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-work-report-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a91399bc9da2adf5879604360ae4e7800f3f7e43ce7667d2e1547dc6b606ee86",
+      "artifactSizeBytes": 2441
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T00:47:05.263Z"
+}

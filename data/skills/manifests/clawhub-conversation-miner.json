@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62957,
+  "uuid": "skill-clawhub-conversation-miner",
+  "skillKey": "clawhub-conversation-miner",
+  "name": "Conversation Miner",
+  "summary": "对话价值提取助手 - 从 AI 对话中自动总结、提取待办/想法/决策，支持持续进化",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.conversation_miner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wanwan2qq",
+      "features": [
+        "对话价值提取助手",
+        "从 AI 对话中自动总结、提取待办/想法/决策，支持持续进化"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/conversation-miner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10196216?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "conversation-miner",
+      "url": "https://clawhub.ai/skills/conversation-miner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "conversation-miner",
+    "url": "https://clawhub.ai/skills/conversation-miner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/conversation-miner-c3282973aa41b9d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/conversation-miner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-conversation-miner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:69c724915876f0d8ab875ee7ae5610c208e9f18626cf526048db300431e82fb3",
+      "artifactSizeBytes": 2521
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T04:48:56.792Z"
+}

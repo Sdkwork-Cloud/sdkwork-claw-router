@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67767,
+  "uuid": "skill-clawhub-openclaw-code-review-assistant",
+  "skillKey": "clawhub-openclaw-code-review-assistant",
+  "name": "OpenClaw代码审查助手",
+  "summary": "自动化代码审查助手，支持 PR 审查、代码质量分析、潜在 bug 检测、安全漏洞扫描。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_code_review_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "keven0706",
+      "features": [
+        "自动化代码审查助手，支持 PR 审查、代码质量分析、潜在 bug 检测、安全漏洞扫描。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-code-review-assistant@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3222199?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-code-review-assistant",
+      "url": "https://clawhub.ai/skills/openclaw-code-review-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-code-review-assistant",
+    "url": "https://clawhub.ai/skills/openclaw-code-review-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-code-review-assistant-9bbf99bc53aeeeb5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-code-review-assistant@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-code-review-assistant-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7663558b8e06df4fa1f5d629aa98aa6c4dcaba0b26b9bd262bf0af1a0a3f0583",
+      "artifactSizeBytes": 1966
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T01:46:45.962Z"
+}

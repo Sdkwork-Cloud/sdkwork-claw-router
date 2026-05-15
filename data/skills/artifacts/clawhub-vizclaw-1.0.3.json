@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vizclaw@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vizclaw",
+  "skill": {
+    "id": 14013,
+    "skillKey": "clawhub-vizclaw",
+    "name": "vizclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vizclaw",
+    "url": "https://clawhub.ai/skills/vizclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vizclaw-50c6b36d0167cfb8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect OpenClaw-style runs to VizClaw live rooms from a ClawHub-installable skill. Use when you need quick room creation, JSONL/websocket bridging, trigger and agent event streaming, or safe overview-mode visualization."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "araa47",
+      "userId": "publishers:araa47",
+      "displayName": "araa47",
+      "image": "https://avatars.githubusercontent.com/u/22760261?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1296,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1770704895904,
+      "changelog": "- No visible changes detected in this version.  \n- Functionality and documentation remain the same as the previous release.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b5675d08578c375079ea1cf520d81605b0d4616d6cdf2f2db762b70564527a0b"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-payment-rail@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_payment_rail",
+  "skill": {
+    "id": 20723,
+    "skillKey": "clawhub-agent-payment-rail",
+    "name": "Agent Payment Rail"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-payment-rail",
+    "url": "https://clawhub.ai/skills/agent-payment-rail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-payment-rail-f11f639e4c855e4a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides a unified API for AI agents to create, query, refund, and cancel multi-currency payments via Stripe and other providers."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhenstaff",
+      "userId": "s173q0k18pjbw86jqbmsmgkz7h83h3vm",
+      "displayName": "Justin Liu",
+      "image": "https://avatars.githubusercontent.com/u/34432727?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 530,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773301045115,
+      "changelog": "Initial release of Agent Payment Rail skill.\n\n- Provides a unified API for integrating multiple payment providers (currently supports Stripe, PayPal in development)\n- Features full transaction management: create payments, get transaction status, refund, and cancel payments\n- Supports multiple currencies (USD, EUR, GBP, CNY, JPY)\n- TypeScript type safety included\n- English and Chinese documentation available\n- Simple setup via npm and environment variables",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e138f94ab9897679873c88eeebeffc599cd371e0c0b2f12ccd88913e381c2b61"
+}

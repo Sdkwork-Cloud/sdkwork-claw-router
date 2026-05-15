@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vispatrol-picture@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vispatrol_picture",
+  "skill": {
+    "id": 60479,
+    "skillKey": "clawhub-vispatrol-picture",
+    "name": "vispatrol-picture"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vispatrol-picture",
+    "url": "https://clawhub.ai/skills/vispatrol-picture",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vispatrol-picture-877088cef8ec003c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在 Windows 上抓取 VisPatrol 设备实时抓拍；仅允许在用户明确批准后读取本机 %TEMP%/vpup.json 以执行只读抓拍查询。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "baymax1957",
+      "userId": "s1716xmq7rmfwk0m8ca08hf88585ctd4",
+      "displayName": "baymax1957",
+      "image": "https://avatars.githubusercontent.com/u/263845230?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 98,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778057199290,
+      "changelog": "- 增加对 Windows 本地配置文件 vpup.json 的访问审批，执行前必须获得用户明确同意。\n- 新增对全设备抓拍范围的二次确认，防止无意进行全部设备抓拍。\n- 文件访问与网络访问范围更严格，只允许读取指定配置及与 VisPatrol 本地服务通信。\n- OpenClaw 配置 now requires 明确的 userApprovedVpupAccess 开关。\n- 增强安全声明与细化入参、执行、报告输出等规范，适应可信本地环境治理。\n- 新增 SECURITY.md 文件，统一收敛本地凭据、边界与用途声明。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5ebf80d623a94260a0caf6cc01ddae181a416361c30dff8b8b66bf9da11b5699"
+}

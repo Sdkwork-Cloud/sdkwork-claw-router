@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53178,
+  "uuid": "skill-clawhub-canopy",
+  "skillKey": "clawhub-canopy",
+  "name": "Canopy",
+  "summary": "Canopy treasury wallet for AI agents — make policy-gated USD payments on-chain (Base), auto-pay paywalled APIs (x402 / MPP), and discover paid services. Ever...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.canopy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Atif Azam",
+      "features": [
+        "Canopy treasury wallet for AI agents — make policy-gated USD payments on-chain (Base), auto-pay."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/canopy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1250466?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "canopy",
+      "url": "https://clawhub.ai/skills/canopy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "canopy",
+    "url": "https://clawhub.ai/skills/canopy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/canopy-fee5dfd46b125f37.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/canopy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-canopy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:27fd4872451bc4ae1ce73e706ba5125bec10848640c9503cc7c54389c30a39d8",
+      "artifactSizeBytes": 2482
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T11:31:55.805Z"
+}

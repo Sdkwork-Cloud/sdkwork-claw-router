@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65376,
+  "uuid": "skill-clawhub-ai-animation-choose",
+  "skillKey": "clawhub-ai-animation-choose",
+  "name": "Ai Animation Studio",
+  "summary": "自动将故事转分镜并生成风格化动画视频，支持两种生成模式、自动配音、字幕烧录和30+首BGM选择。",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_animation_choose",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "systiger",
+      "features": [
+        "自动将故事转分镜并生成风格化动画视频，支持两种生成模式、自动配音、字幕烧录和30+首BGM选择。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-animation-choose@2.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/154035099?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-animation-choose",
+      "url": "https://clawhub.ai/skills/ai-animation-choose"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-animation-choose",
+    "url": "https://clawhub.ai/skills/ai-animation-choose",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-animation-choose-d4e57a28b90fc2d8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-animation-choose@2.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-animation-choose-2.2.0.json",
+      "version": "2.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5afaa123d61612f1aa51ebb1605d77719ffe2ff33dc2c8ba3d779e62efc996aa",
+      "artifactSizeBytes": 2276
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T15:32:23.956Z"
+}

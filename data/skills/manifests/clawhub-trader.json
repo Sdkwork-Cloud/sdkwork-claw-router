@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12704,
+  "uuid": "skill-clawhub-trader",
+  "skillKey": "clawhub-trader",
+  "name": "Trader",
+  "summary": "Analyze markets, manage risk, and execute trades with disciplined strategies and emotional control.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trader",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Analyze markets, manage risk, and execute trades with disciplined strategies and emotional cont."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trader",
+      "url": "https://clawhub.ai/skills/trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trader",
+    "url": "https://clawhub.ai/skills/trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trader-c40e36253c9be87e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:823663694f5eb6d3de804e3ca7d56e381064d92cb77cb68220adeb70026cbffc",
+      "artifactSizeBytes": 1766
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T22:02:09.774Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69366,
+  "uuid": "skill-clawhub-chat-history",
+  "skillKey": "clawhub-chat-history",
+  "name": "Chat History",
+  "summary": "自动归档和分类保存聊天记录，支持关键词触发、快速搜索和命令管理历史会话内容。",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chat_history",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tonyfenwick1982",
+      "features": [
+        "自动归档和分类保存聊天记录，支持关键词触发、快速搜索和命令管理历史会话内容。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chat-history@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210008305?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chat-history",
+      "url": "https://clawhub.ai/skills/chat-history"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chat-history",
+    "url": "https://clawhub.ai/skills/chat-history",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chat-history-c97b7220174b694d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chat-history@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-chat-history-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:86dcdc66acfbe20fb75059c7b226d0624b0fd5ba201a5eb394bde1180f7974a7",
+      "artifactSizeBytes": 2250
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T15:07:16.467Z"
+}

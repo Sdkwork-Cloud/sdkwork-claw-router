@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/markdown-editor-with-chat@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.markdown_editor_with_chat",
+  "skill": {
+    "id": 15302,
+    "skillKey": "clawhub-markdown-editor-with-chat",
+    "name": "Markdown Editor With Chat"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "markdown-editor-with-chat",
+    "url": "https://clawhub.ai/skills/markdown-editor-with-chat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/markdown-editor-with-chat-17f0730e8d29164f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Lightweight markdown editor with optional OpenClaw gateway chat. Filesystem-based, no database required."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "musketyr",
+      "userId": "s1707ee3pcjz3x0kvthaxxjakx83kyve",
+      "displayName": "Vladimir Orany",
+      "image": "https://avatars.githubusercontent.com/u/660405?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1017,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1771777782582,
+      "changelog": "Security: restrict file access to .md only, block dotfiles",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a0ff5c304d7840311dfbb8e4370f712b177efbedaa49f90471bf7eaf0b72b863"
+}

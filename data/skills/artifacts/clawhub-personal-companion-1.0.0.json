@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/personal-companion@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_companion",
+  "skill": {
+    "id": 70274,
+    "skillKey": "clawhub-personal-companion",
+    "name": "personal companion"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-companion",
+    "url": "https://clawhub.ai/skills/personal-companion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-companion-e1db168d377a8450.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能伴侣技能 — 通过多轮对话为用户创建个性化虚拟伴侣角色，并以该角色身份进行情感陪伴对话。 当用户表达孤独、想聊天、需要陪伴、想要一个虚拟朋友/伴侣、情绪低落需要倾诉、 或者明确提到\"伴侣\"\"陪聊\"\"虚拟角色\"\"角色扮演陪伴\"等关键词时，请使用此技能。 即使用户只是说\"我想找个人聊聊\"\"能陪我说说话吗\"\"我今天..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gentleyo",
+      "userId": "s177r9medgqfs6n194fkycgan983gb5m",
+      "displayName": "GentleYo",
+      "image": "https://avatars.githubusercontent.com/u/131584446?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775878347684,
+      "changelog": "smart-companion 1.0.0\n\n- 首次发布：全新个人虚拟伴侣技能，支持多轮对话定制专属情感陪伴角色\n- 两阶段流程：通过自然对话完成角色设定，并以该角色身份进行交流\n- 智能情绪感知：根据用户表达自动匹配回应方式，提供真诚陪伴与积极支持\n- 强化隐私保护：严格拒绝处理敏感个人信息，遇风险内容自动温和提醒并转移话题\n- 适应多种需求：在虚拟形象、语音、视频等扩展需求时，友好指引用户连接外部服务\n- 灵活会话管理：支持角色切换、会话暂停/恢复和礼貌退出伴侣模式",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a5a4d05640642bef941d788250065a9868913c84e558b2c6e57161b2eb479340"
+}

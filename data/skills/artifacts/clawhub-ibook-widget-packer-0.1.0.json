@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ibook-widget-packer@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ibook_widget_packer",
+  "skill": {
+    "id": 60245,
+    "skillKey": "clawhub-ibook-widget-packer",
+    "name": "iBook Widget Packer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ibook-widget-packer",
+    "url": "https://clawhub.ai/skills/ibook-widget-packer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ibook-widget-packer-ea14b32ba5e404fe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将 H5 游戏项目打包成 Apple iBook 支持的 .wdgt（Widget）格式。适用于：已有 H5 游戏项目（包含 index.html、CSS、JS 等文件），需要打包成 iBook Author 可用的 Widget 压缩包（.wdgt.zip）时使用。自动完成目录结构规范化、资源路径修正、Info..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "onedream1985",
+      "userId": "s177e4ybzwybkwj8qbwjvwyh9x84ta91",
+      "displayName": "onedream1985",
+      "image": "https://avatars.githubusercontent.com/u/234325292?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 276,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773906125013,
+      "changelog": "Initial release of ibook-widget-packer:\n\n- Packages H5 game projects into Apple iBook-compatible .wdgt (Widget) zip format.\n- Automates directory structuring, resource path fixing, Info.plist and thumbnail image generation, and final zip packaging.\n- Supports customizable Widget name, display name, version, and dimensions.\n- Provides step-by-step process instructions, usage guidance, and troubleshooting tips.\n- Requires Linux/macOS, Python3 (for thumbnails), and zip command line tool.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d626a2eafa2e7c5591e02ab3ec3a6d7da0a4a86f9b33ea50fa13bab92cf0ab17"
+}

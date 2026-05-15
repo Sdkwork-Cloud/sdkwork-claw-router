@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13468,
+  "uuid": "skill-clawhub-knowledge-management",
+  "skillKey": "clawhub-knowledge-management",
+  "name": "Knowledge Management",
+  "summary": "Organize and classify OpenClaw knowledge entries into local folders by content type (Research, Decision, Insight, Lesson, Pattern, Project, Reference, Tutori...",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knowledge_management",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClaireAICodes",
+      "features": [
+        "Organize and classify OpenClaw knowledge entries into local folders by content type (Research,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/knowledge-management@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260567970?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "knowledge-management",
+      "url": "https://clawhub.ai/skills/knowledge-management"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knowledge-management",
+    "url": "https://clawhub.ai/skills/knowledge-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knowledge-management-79647438cfd6354d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/knowledge-management@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-knowledge-management-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:28ca860c4d1a2e367a95846723c56884ecb8ce20bf2b95c813dd59acdcc100df",
+      "artifactSizeBytes": 2128
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T05:59:13.373Z"
+}

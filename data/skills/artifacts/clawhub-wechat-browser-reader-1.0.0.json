@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-browser-reader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_browser_reader",
+  "skill": {
+    "id": 33712,
+    "skillKey": "clawhub-wechat-browser-reader",
+    "name": "WeChat Browser Reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-browser-reader",
+    "url": "https://clawhub.ai/skills/wechat-browser-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-browser-reader-e1f1b821ac5d905f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read WeChat Official Account articles (mp.weixin.qq.com) via Chrome DevTools browser automation. Use when user provides a WeChat article URL and other extrac..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zmlgit",
+      "userId": "s17an4jcgdp8b47nmz1tm023k183r4kr",
+      "displayName": "反应慢",
+      "image": "https://avatars.githubusercontent.com/u/6995990?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 234,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774741578656,
+      "changelog": "Initial release: read WeChat articles via Chrome DevTools, bypassing captcha and JS encryption",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:12512c1ac0dc109f8ec2c32010f582bd0d0826f61742eb6517609cf109a05107"
+}

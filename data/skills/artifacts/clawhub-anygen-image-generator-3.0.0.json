@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/anygen-image-generator@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anygen_image_generator",
+  "skill": {
+    "id": 17539,
+    "skillKey": "clawhub-anygen-image-generator",
+    "name": "Image Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anygen-image-generator",
+    "url": "https://clawhub.ai/skills/anygen-image-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anygen-image-generator-112b22bc2fbda745.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill any time the user wants to generate, create, or design images, illustrations, or visual assets. This includes: posters, banners, social media..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "logictortoise",
+      "userId": "s17dj5z1vv80h7xrg7qmd05er983j8rd",
+      "displayName": "AnyGenIO",
+      "image": "https://avatars.githubusercontent.com/u/26993581?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 768,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1774865682242,
+      "changelog": "anygen-image-generator 3.0.0\n\n- Migrated from custom Python scripts to the official AnyGen CLI (`@anygen/cli` node package).\n- Removed all legacy Python scripts in `scripts/` (no more `anygen.py`, `auth.py`, or `fileutil.py`).\n- Authentication is now handled via `anygen auth login` (browser or API key) instead of manual config files.\n- Uses `anygen-workflow-generate` skill for image generation workflow.\n- Installation now requires the Node CLI; prerequisites and usage updated accordingly.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9627a1829bdb8cd4c313195a52a6f3f0eb5d9b88275eb2e16c2c56ed3ac64548"
+}

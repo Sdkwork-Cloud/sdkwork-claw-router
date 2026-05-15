@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/anti-centralization-probe@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anti_centralization_probe",
+  "skill": {
+    "id": 45701,
+    "skillKey": "clawhub-anti-centralization-probe",
+    "name": "Anti Centralization Probe"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anti-centralization-probe",
+    "url": "https://clawhub.ai/skills/anti-centralization-probe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anti-centralization-probe-6bce21c843d140f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detect centralization risks in proposals and designs; output structural critiques and safer decentralization alternatives."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mzfshark",
+      "userId": "s17c7t947t48hg8ymjbywz1th583y2n6",
+      "displayName": "Mauricio Z.",
+      "image": "https://avatars.githubusercontent.com/u/26634695?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777128950133,
+      "changelog": "- Initial release of anti-centralization-probe skill.\n- Detects and critiques centralization risks in proposals and designs.\n- Flags single points of control and dependency chains.\n- Outputs risk level, red flags, and decentralization alternatives (e.g., multisig, role separation).\n- Designed for use in governance and structural review contexts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eff523d9aa38c4ae2913d1be302a2362b531e3e25e75491a7d2078f83a9e49ac"
+}

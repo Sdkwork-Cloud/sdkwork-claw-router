@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-ai-subtitle-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_ai_subtitle_generator",
+  "skill": {
+    "id": 36633,
+    "skillKey": "clawhub-youtube-ai-subtitle-generator",
+    "name": "Youtube Ai Subtitle Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-ai-subtitle-generator",
+    "url": "https://clawhub.ai/skills/youtube-ai-subtitle-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-ai-subtitle-generator-16f96f7569b19f9e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get captioned YouTube videos ready to post, without touching a single slider. Upload your YouTube videos (MP4, MOV, AVI, WebM, up to 500MB), say something li..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vynbosserman65",
+      "userId": "s175xbynxxje7z8y8jbn28x5vx84dckp",
+      "displayName": "vynbosserman65",
+      "image": "https://avatars.githubusercontent.com/u/208823770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775951261988,
+      "changelog": "Initial release of YouTube AI Subtitle Generator.\n\n- Generate AI-powered subtitles in multiple languages for YouTube videos up to 500MB (MP4, MOV, AVI, WebM).\n- Upload videos, send commands like \"generate subtitles in English and Spanish,\" and download 1080p MP4s.\n- Automated setup: handles token and session creation, prompts progress and readiness.\n- Supports session management, credit checks, export, and error reporting for a smooth user experience.\n- Handles video editing, subtitle timing, and batch or iterative workflows server-side—no manual setup required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:433660168f5faa0752009c23cb13120ca268156ac42d5195d237fb8a17aee2e2"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66793,
+  "uuid": "skill-clawhub-daily-hot-aggregator",
+  "skillKey": "clawhub-daily-hot-aggregator",
+  "name": "Daily Hot Aggregator",
+  "summary": "🔥 一键获取全平台热榜！B站+抖音+微博+头条，一站搞定所有热点。自媒体运营必备！免费使用，定制开发请联系作者。",
+  "version": "7.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_hot_aggregator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "蓝天",
+      "features": [
+        "🔥 一键获取全平台热榜！B站+抖音+微博+头条，一站搞定所有热点。自媒体运营必备！免费使用，定制开发请联系作者。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-hot-aggregator@7.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49087597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-hot-aggregator",
+      "url": "https://clawhub.ai/skills/daily-hot-aggregator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-hot-aggregator",
+    "url": "https://clawhub.ai/skills/daily-hot-aggregator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-hot-aggregator-5eb74e69533d9e78.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-hot-aggregator@7.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-hot-aggregator-7.1.0.json",
+      "version": "7.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e18e9055b350b3a5c9223e9ffc143690170b54defc0e3b2695f361131f10a1bf",
+      "artifactSizeBytes": 2000
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T05:27:35.863Z"
+}

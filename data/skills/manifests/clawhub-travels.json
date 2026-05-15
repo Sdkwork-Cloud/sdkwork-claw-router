@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73690,
+  "uuid": "skill-clawhub-travels",
+  "skillKey": "clawhub-travels",
+  "name": "分贝通旅行",
+  "summary": "一站式企业差旅服务，提供酒店搜索预订、机票查询预订、改期退票等全流程服务。智能需求确认、后台静默认证、表格对比展示。基于分贝通官方数据，实时准确可靠。",
+  "version": "2.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.travels",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fenbeitong-trip",
+      "features": [
+        "一站式企业差旅服务，提供酒店搜索预订、机票查询预订、改期退票等全流程服务。智能需求确认、后台静默认证、表格对比展示。基于分贝通官方数据，实时准确可靠。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/travels@2.4.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265222913?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "travels",
+      "url": "https://clawhub.ai/skills/travels"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "travels",
+    "url": "https://clawhub.ai/skills/travels",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/travels-fe6c940d9a215116.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/travels@2.4.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-travels-2.4.1.json",
+      "version": "2.4.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:92d2732b277876993a8612f3e3a6f5fdbbd2ca86f9c362f1bd3e0577718ad0f5",
+      "artifactSizeBytes": 2006
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T07:02:16.428Z"
+}

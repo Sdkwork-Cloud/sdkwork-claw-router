@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21018,
+  "uuid": "skill-clawhub-billionverify-skill",
+  "skillKey": "clawhub-billionverify-skill",
+  "name": "Billionverify Skill",
+  "summary": "Verify email addresses using the BillionVerify API. Use when user wants to verify single emails, batch verify email lists, upload files for bulk verification...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.billionverify_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Leo Li",
+      "features": [
+        "Verify email addresses using the BillionVerify API",
+        "Use when user wants to verify single emails, batch verify email lists, upload files for bulk ve."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/billionverify-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/240269386?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "billionverify-skill",
+      "url": "https://clawhub.ai/skills/billionverify-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "billionverify-skill",
+    "url": "https://clawhub.ai/skills/billionverify-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/billionverify-skill-8f6fbebf5c73d4d6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/billionverify-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-billionverify-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ccfc705b4b23bb17c90a0b6b54aa352cc74a1027a37e99730554927522795a08",
+      "artifactSizeBytes": 2293
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T09:22:07.246Z"
+}

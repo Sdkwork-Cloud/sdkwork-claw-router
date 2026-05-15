@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43659,
+  "uuid": "skill-clawhub-ffmpeg-video-watermark-remover",
+  "skillKey": "clawhub-ffmpeg-video-watermark-remover",
+  "name": "FFmpeg Video Watermark Remover",
+  "summary": "Remove watermarks from videos using ffmpeg delogo filter. Use this skill whenever the user wants to remove a watermark from a video, asks to remove a logo/te...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ffmpeg_video_watermark_remover",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OzzyLennon",
+      "features": [
+        "Remove watermarks from videos using ffmpeg delogo filter",
+        "Use this skill whenever the user wants to remove a watermark from a video, asks to remove a log."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ffmpeg-video-watermark-remover@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/202568541?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ffmpeg-video-watermark-remover",
+      "url": "https://clawhub.ai/skills/ffmpeg-video-watermark-remover"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ffmpeg-video-watermark-remover",
+    "url": "https://clawhub.ai/skills/ffmpeg-video-watermark-remover",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ffmpeg-video-watermark-remover-616c49dec22eadad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ffmpeg-video-watermark-remover@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ffmpeg-video-watermark-remover-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7e85da1c46552fcaa18f9f360362fb9ac81ceb89a1663680f34b9e4b0a869394",
+      "artifactSizeBytes": 2067
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T14:12:13.700Z"
+}

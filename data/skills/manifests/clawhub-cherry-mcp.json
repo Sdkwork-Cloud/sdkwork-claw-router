@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12937,
+  "uuid": "skill-clawhub-cherry-mcp",
+  "skillKey": "clawhub-cherry-mcp",
+  "name": "Cherry Mcp",
+  "summary": "HTTP bridge that keeps MCP servers alive and exposes them via REST. Built for OpenClaw agents that need MCP tools without native MCP support.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cherry_mcp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EULOxGOS",
+      "features": [
+        "HTTP bridge that keeps MCP servers alive and exposes them via REST",
+        "Built for OpenClaw agents that need MCP tools without native MCP support."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cherry-mcp@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/106397029?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cherry-mcp",
+      "url": "https://clawhub.ai/skills/cherry-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cherry-mcp",
+    "url": "https://clawhub.ai/skills/cherry-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cherry-mcp-f91817abec6f20f5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cherry-mcp@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-cherry-mcp-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b58e50e577c8be589125233d18226ca671dc01d36e9465756dfec02fed1db17e",
+      "artifactSizeBytes": 1978
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T06:41:13.543Z"
+}

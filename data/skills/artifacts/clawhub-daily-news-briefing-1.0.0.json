@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-news-briefing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_news_briefing",
+  "skill": {
+    "id": 20453,
+    "skillKey": "clawhub-daily-news-briefing",
+    "name": "daily news briefing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-news-briefing",
+    "url": "https://clawhub.ai/skills/daily-news-briefing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-news-briefing-ea5aebc8eca41443.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Produce polished, production-ready daily news briefings, morning reports, market snapshots, executive digests, and founder updates with verified sourcing, cl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fmouseboy",
+      "userId": "s172cbtek476cw42nfxa6hxczx83pzaf",
+      "displayName": "FMouse",
+      "image": "https://avatars.githubusercontent.com/u/36061597?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 535,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773800957022,
+      "changelog": "Initial release of daily-news-briefing.\n\n- Generate polished daily briefings, morning reports, market notes, executive digests, and founder updates with verified sourcing and premium formatting.\n- Features preset workflows for audience, scope, and output style (Markdown by default; HTML optional).\n- Emphasizes a production-quality bar: clean, concise, source-linked, and decision-oriented content.\n- Includes workflow for both ad hoc and recurring briefings, with scripts and templates for streamlined production.\n- Detailed editorial, formatting, sourcing, and audience adaptation guidelines included for immediate commercial use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:22525a64477a24382972f3252710b93fa174332923a548aef12bb10705ae7e5e"
+}

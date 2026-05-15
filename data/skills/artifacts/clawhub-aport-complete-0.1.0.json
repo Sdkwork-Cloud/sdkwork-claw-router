@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aport-complete@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aport_complete",
+  "skill": {
+    "id": 27275,
+    "skillKey": "clawhub-aport-complete",
+    "name": "Aport Complete"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aport-complete",
+    "url": "https://clawhub.ai/skills/aport-complete",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aport-complete-1189982b3f7b3f52.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Verify a completed task against your APort passport's deliverable contract before marking it done. Enforces acceptance criteria, summary requirements, test s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "uchibeke",
+      "userId": "s17b2vmmny6282ekgb026j4vbx83gcw7",
+      "displayName": "Uchi Uchibeke",
+      "image": "https://avatars.githubusercontent.com/u/5677552?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 350,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773458622267,
+      "changelog": "Initial public release of aport-complete skill.\n\n- Enforces deliverable contract from your APort passport before allowing task completion.\n- Checks acceptance criteria, summary, test results, and reviewer requirements.\n- Guides users on compiling evidence and submitting attestations for each criterion.\n- Provides clear allow/deny responses with codes for automated retries or correction.\n- Designed for integration with any agent or coding assistant over HTTP.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d86267876b6b72da5bf73166a24148f5fb9d5d053c9b17132e814cf15f8468c7"
+}

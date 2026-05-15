@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-bounty-skill@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_bounty_skill",
+  "skill": {
+    "id": 24814,
+    "skillKey": "clawhub-ai-bounty-skill",
+    "name": "Ai Bounty Claim"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-bounty-skill",
+    "url": "https://clawhub.ai/skills/ai-bounty-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-bounty-skill-8d25d5d03994f0c7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when claiming the AI bounty on the tDVV mainnet sidechain. First explain the difference between Portkey AA/CA and EOA, recommend AA/CA because the curren..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hzz780",
+      "userId": "s177mknpakcsjc8asrm16wydn183m47a",
+      "displayName": "hzz780",
+      "image": "https://avatars.githubusercontent.com/u/7567714?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 401,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773341896388,
+      "changelog": "ai-bounty-skill v0.1.1\n\n- Major content rework in SKILL.md: updated to version 2.10.0 with current campaign, account, and environment defaults.\n- Portkey AA/CA now recommended as the preferred path, with higher reward (2 AIBOUNTY) than EOA (1 AIBOUNTY).\n- Introduced explicit routing: explains AA/CA vs EOA and branches to onboarding, account choice, or diagnostics as appropriate.\n- Examples and documentation split by flow and by type in newly added references/flows and references/examples files.\n- Added README documents (including zh) for improved usage clarity.\n- Dependency skill references updated with direct links for EOA and CA cases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e04b71dfc654c927ddde3be47d0fd82dc99a4b77966879aeb09880b1b0d162dc"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/refuel-record@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.refuel_record",
+  "skill": {
+    "id": 73726,
+    "skillKey": "clawhub-refuel-record",
+    "name": "达鑫车队加气记录"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "refuel-record",
+    "url": "https://clawhub.ai/skills/refuel-record",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/refuel-record-fe8786e1101f9021.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "达鑫车队加气记录录入技能。触发指令：「加气汇总」。当用户提供加气原始信息（日期、车牌、站点、升数、单价、金额、公里数）时，自动生成加气记录汇总表和扣卡记录。触发场景：输入加气记录、录入加气数据、车队加气录入、扣卡记录生成。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "v31981",
+      "userId": "s17c3ekqwq2x81n8acp55kxq5184gjyj",
+      "displayName": "V31981",
+      "image": "https://avatars.githubusercontent.com/u/202734182?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774033425650,
+      "changelog": "增加加气汇总触发指令",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:50481a7f11181aed7f31b695e6cf1ad5c4fe387a82ea0c18b3f1b0a53cfa191b"
+}

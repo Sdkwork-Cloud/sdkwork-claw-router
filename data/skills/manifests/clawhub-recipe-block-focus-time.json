@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19425,
+  "uuid": "skill-clawhub-recipe-block-focus-time",
+  "skillKey": "clawhub-recipe-block-focus-time",
+  "name": "Recipe Block Focus Time",
+  "summary": "Create recurring focus time blocks on Google Calendar to protect deep work hours.",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recipe_block_focus_time",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Create recurring focus time blocks on Google Calendar to protect deep work hours."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/recipe-block-focus-time@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "recipe-block-focus-time",
+      "url": "https://clawhub.ai/skills/recipe-block-focus-time"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recipe-block-focus-time",
+    "url": "https://clawhub.ai/skills/recipe-block-focus-time",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recipe-block-focus-time-40c4ba16078c71e9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/recipe-block-focus-time@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-recipe-block-focus-time-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:11f587204112b304c57cf696c5ccf087889bce4a588c180f03394ffd9b0aee11",
+      "artifactSizeBytes": 2001
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:35:43.953Z"
+}

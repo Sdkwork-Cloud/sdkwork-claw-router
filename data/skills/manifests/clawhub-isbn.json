@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62622,
+  "uuid": "skill-clawhub-isbn",
+  "skillKey": "clawhub-isbn",
+  "name": "ISBN Book Number Query - ISBN图书书号查询",
+  "summary": "用 ISBN 查图书详情，或按书名关键字搜书。当用户说：9787 开头这本书是什么？帮我搜书名里带 Python 的书，或类似图书 ISBN 问题时，使用本技能。",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.isbn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "极速数据",
+      "features": [
+        "用 ISBN 查图书详情，或按书名关键字搜书。当用户说：9787 开头这本书是什么？帮我搜书名里带 Python 的书，或类似图书 ISBN 问题时，使用本技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/isbn@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30516426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "isbn",
+      "url": "https://clawhub.ai/skills/isbn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "isbn",
+    "url": "https://clawhub.ai/skills/isbn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/isbn-28ef0b80f316d80c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/isbn@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-isbn-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d1dec95e05a87fc9c0241460ef0d76c86687ea098b5ce085f4e2598212f6c80a",
+      "artifactSizeBytes": 2147
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T09:47:32.891Z"
+}

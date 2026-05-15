@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62673,
+  "uuid": "skill-clawhub-skill-security-guard-publish",
+  "skillKey": "clawhub-skill-security-guard-publish",
+  "name": "Skill Security Guard",
+  "summary": "Skill 安全扫描器 - 检测第三方技能的恶意代码、信息泄露等安全风险，保护你的 AI 助手安全！",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_security_guard_publish",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sukimgit",
+      "features": [
+        "Skill 安全扫描器",
+        "检测第三方技能的恶意代码、信息泄露等安全风险，保护你的 AI 助手安全！"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-security-guard-publish@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/131958832?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-security-guard-publish",
+      "url": "https://clawhub.ai/skills/skill-security-guard-publish"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-security-guard-publish",
+    "url": "https://clawhub.ai/skills/skill-security-guard-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-security-guard-publish-9e380e52c0e24c5e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-security-guard-publish@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-security-guard-publish-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:31f9abe49bf7c247ecd24ae884d5a3af961de660e4573c91cc7cbb5c7daca97e",
+      "artifactSizeBytes": 2014
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T14:15:14.407Z"
+}

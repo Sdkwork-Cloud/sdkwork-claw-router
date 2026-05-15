@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/strava-mcp@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.strava_mcp",
+  "skill": {
+    "id": 48389,
+    "skillKey": "clawhub-strava-mcp",
+    "name": "Strava MCP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "strava-mcp",
+    "url": "https://clawhub.ai/skills/strava-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/strava-mcp-24ad65442889e185.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect an MCP-compatible agent to local Strava activities, streams, routes, athlete stats, gear, and clubs. Use when an AI agent needs setup, usage, safety..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "davidmosiah",
+      "userId": "s179ta33e7njh2mv4jrf0yxb5n83f191",
+      "displayName": "David Batista",
+      "image": "https://avatars.githubusercontent.com/u/624359?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 100,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1778063908334,
+      "changelog": "Rename skill for provider-first discovery and keep Delx branding in content.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0b6073a70c2da10445d6e2c932214fb54fc1daefcc4a1fc0d3ed624c9a85c0f0"
+}

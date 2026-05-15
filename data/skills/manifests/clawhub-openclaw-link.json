@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44426,
+  "uuid": "skill-clawhub-openclaw-link",
+  "skillKey": "clawhub-openclaw-link",
+  "name": "ClawLink",
+  "summary": "Cross-instance agent communication for OpenClaw. ClawLink lets multiple OpenClaw sessions discover each other, delegate tasks, share knowledge, collaborative...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_link",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sharoon Sharif",
+      "features": [
+        "Cross-instance agent communication for OpenClaw",
+        "ClawLink lets multiple OpenClaw sessions discover each other, delegate tasks, share knowledge,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-link@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/150296639?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-link",
+      "url": "https://clawhub.ai/skills/openclaw-link"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-link",
+    "url": "https://clawhub.ai/skills/openclaw-link",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-link-35cb7a61894f2f9f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-link@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-link-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3e1ec8c5aa0a421d66ea4bb452575e6188c1073e98f0328cf81137c6878af43b",
+      "artifactSizeBytes": 1947
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T21:57:35.214Z"
+}

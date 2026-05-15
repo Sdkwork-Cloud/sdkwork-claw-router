@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32416,
+  "uuid": "skill-clawhub-gatherup",
+  "skillKey": "clawhub-gatherup",
+  "name": "Gatherup",
+  "summary": "GatherUp integration. Manage Organizations. Use when the user wants to interact with GatherUp data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gatherup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "GatherUp integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with GatherUp data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gatherup@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gatherup",
+      "url": "https://clawhub.ai/skills/gatherup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gatherup",
+    "url": "https://clawhub.ai/skills/gatherup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gatherup-aed2ffe89a984665.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gatherup@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-gatherup-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3cc04ab8724cd19d01fa2cb1e1fd94153de44d58e3411cc9b6d67e4b7a6155c8",
+      "artifactSizeBytes": 1806
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:51:03.731Z"
+}

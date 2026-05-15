@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/authorship-credit-gen@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.authorship_credit_gen",
+  "skill": {
+    "id": 28958,
+    "skillKey": "clawhub-authorship-credit-gen",
+    "name": "Authorship Credit Gen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "authorship-credit-gen",
+    "url": "https://clawhub.ai/skills/authorship-credit-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/authorship-credit-gen-d6abd8cf71bf9a20.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when determining author order on research manuscripts, assigning CRediT contributor roles for transparency, documenting individual contributions to colla..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "googolme",
+      "userId": "s1702mgv785fagvtvv6nqy07kh83n9dy",
+      "displayName": "googolme",
+      "image": "https://avatars.githubusercontent.com/u/162564912?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 313,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773393815994,
+      "changelog": "Initial release of authorship-credit-gen.\n\n- Generates fair and transparent author order based on ICMJE guidelines.\n- Assigns CRediT contributor roles for clear recognition of individual contributions.\n- Supports dispute detection and equity analysis for multi-institutional research.\n- Creates formatted contributor statements ready for common journal requirements.\n- Includes both Python library and command-line usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:95cf1a0e4f0cede318d233507c5463de85969dddc992721da62e01888e9a53a2"
+}

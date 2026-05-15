@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pengbo-space@1.1.1-beta.1",
+  "version": "1.1.1-beta.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pengbo_space",
+  "skill": {
+    "id": 62505,
+    "skillKey": "clawhub-pengbo-space",
+    "name": "Pengbo Space"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pengbo-space",
+    "url": "https://clawhub.ai/skills/pengbo-space",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pengbo-space-cdd0c41b47bfc902.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过 pengbo.space 的 SMM API 查询服务、筛选服务 ID、提交订单、查询订单状态、发起补单和检查余额。适用于需要安全调用 pengbo.space/api/v1 的自动化任务。对写操作默认要求显式确认。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "amadohallal",
+      "userId": "publishers:amadohallal",
+      "displayName": "AmadoHallal",
+      "image": "https://avatars.githubusercontent.com/u/261196056?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 399,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.1-beta.1",
+      "createdAt": 1773200116252,
+      "changelog": "仅文档更新：优化触发策略与示例语句，提升安装后调用命中率；功能与安全策略保持不变。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e67e7f43cdbcfc0e357e26e0d21b78acbfb975314e433ac6b32a7782bf1e3946"
+}

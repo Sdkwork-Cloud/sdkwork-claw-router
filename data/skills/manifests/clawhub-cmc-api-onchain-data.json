@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19720,
+  "uuid": "skill-clawhub-cmc-api-onchain-data",
+  "skillKey": "clawhub-cmc-api-onchain-data",
+  "name": "CoinMarketCap Onchain Data APIs",
+  "summary": "API reference for CoinMarketCap DEX endpoints including token lookup, pools, transactions, trending, and security analysis. Use this skill whenever the user...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cmc_api_onchain_data",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CoinMarketCap",
+      "features": [
+        "API reference for CoinMarketCap DEX endpoints including token lookup, pools, transactions, tren.",
+        "Use this skill whenever the user..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cmc-api-onchain-data@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/158990050?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cmc-api-onchain-data",
+      "url": "https://clawhub.ai/skills/cmc-api-onchain-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cmc-api-onchain-data",
+    "url": "https://clawhub.ai/skills/cmc-api-onchain-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cmc-api-onchain-data-bac1334d4541b41e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cmc-api-onchain-data@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-cmc-api-onchain-data-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bfcb77ab39e7e4cae315bb0a9a4c13c722ac3a30875ab5dc6b8b848e2509b668",
+      "artifactSizeBytes": 1947
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T12:26:24.200Z"
+}

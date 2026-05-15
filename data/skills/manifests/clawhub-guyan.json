@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71788,
+  "uuid": "skill-clawhub-guyan",
+  "skillKey": "clawhub-guyan",
+  "name": "古言 - 中文极简压缩模式",
+  "summary": "古言模式 - 极简中文压缩技能。模拟文言文/成语的压缩逻辑，将日常对话压缩至最短表达，同时保留可理解性和情绪色彩。触发场景：(1) 用户要求\"古言\"、\"极简中文\"、\"压缩对话\"；(2) 需要对记忆文件/长文本进行精简时；(3) 上下文已清楚时。核心原理：单字代词、成语替代表达、删虚词助词、疑问词压缩。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.guyan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Golikegod",
+      "features": [
+        "极简中文压缩技能。模拟文言文/成语的压缩逻辑，将日常对话压缩至最短表达，同时保留可理解性和情绪色彩。触发场景：(1) 用户要求\"古言\"、\"极简中文\"、\"压缩对话\"；(2) 需要对记忆文件/长."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/guyan@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274027073?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "guyan",
+      "url": "https://clawhub.ai/skills/guyan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "guyan",
+    "url": "https://clawhub.ai/skills/guyan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/guyan-4074b60ddc8ed9c7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/guyan@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-guyan-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c13569a0247f7280dca1570d8501ac853b86451125c13081415b50f7fa88c57b",
+      "artifactSizeBytes": 2216
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T07:46:35.993Z"
+}

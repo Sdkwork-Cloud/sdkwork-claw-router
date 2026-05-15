@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68001,
+  "uuid": "skill-clawhub-med-record-gen",
+  "skillKey": "clawhub-med-record-gen",
+  "name": "med-record-gen",
+  "summary": "从中文医患对话文本生成门诊初诊病历，输出结构化分段的病历正文（文本）。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.med_record_gen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aaiccee",
+      "features": [
+        "从中文医患对话文本生成门诊初诊病历，输出结构化分段的病历正文（文本）。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/med-record-gen@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45053675?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "med-record-gen",
+      "url": "https://clawhub.ai/skills/med-record-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "med-record-gen",
+    "url": "https://clawhub.ai/skills/med-record-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/med-record-gen-a9590030e6d2fbff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/med-record-gen@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-med-record-gen-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2fa9df2761e79056f7770298266cbfd1ca37559ce313f59401501fd3e9617c98",
+      "artifactSizeBytes": 2412
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T03:54:19.491Z"
+}

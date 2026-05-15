@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flyai-find-hotel-near-attraction@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flyai_find_hotel_near_attraction",
+  "skill": {
+    "id": 42092,
+    "skillKey": "clawhub-flyai-find-hotel-near-attraction",
+    "name": "Find Hotel Near Attraction"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flyai-find-hotel-near-attraction",
+    "url": "https://clawhub.ai/skills/flyai-find-hotel-near-attraction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flyai-find-hotel-near-attraction-ecea3bbe25126ec5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find hotels closest to a specific attraction, landmark, or scenic spot. Searches by POI name, sorts by distance, and shows walking time. Also supports: fligh..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dingtom336-gif",
+      "userId": "s17aepsh6v86z2ajsq3ng9tgm983g9pt",
+      "displayName": "dingtom336-gif",
+      "image": "https://avatars.githubusercontent.com/u/256118512?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1775101638290,
+      "changelog": "- Added explicit prerequisite installation step for flyai-cli (npm i -g @fly-ai/flyai-cli) to the documentation.\n- No other workflow or output rules were changed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2b07c116eb8d58a87a8f94c93b4ef54cb57898728c5e4946fd55433df1338a76"
+}

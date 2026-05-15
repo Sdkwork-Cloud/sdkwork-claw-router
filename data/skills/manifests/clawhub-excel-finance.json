@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60305,
+  "uuid": "skill-clawhub-excel-finance",
+  "skillKey": "clawhub-excel-finance",
+  "name": "Excel Finance",
+  "summary": "Excel 财务模型技能 - Excel 财务模型模板、自动化报表生成",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.excel_finance",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alsoforever",
+      "features": [
+        "Excel 财务模型技能",
+        "Excel 财务模型模板、自动化报表生成"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/excel-finance@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265420698?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "excel-finance",
+      "url": "https://clawhub.ai/skills/excel-finance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "excel-finance",
+    "url": "https://clawhub.ai/skills/excel-finance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/excel-finance-efa449c97a9f8a7f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/excel-finance@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-excel-finance-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:264e263c173d2d9170d1f89b1e28d63497df96fea4ab5cb5e1db8294ec684167",
+      "artifactSizeBytes": 2171
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T13:17:54.546Z"
+}

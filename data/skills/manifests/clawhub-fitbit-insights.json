@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14743,
+  "uuid": "skill-clawhub-fitbit-insights",
+  "skillKey": "clawhub-fitbit-insights",
+  "name": "Fitbit Insights",
+  "summary": "Fitbit fitness data integration. Use when the user wants fitness insights, workout summaries, step counts, heart rate data, sleep analysis, or to ask questions about their Fitbit activity data. Provides AI-powered analysis of fitness metri.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fitbit_insights",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "poisondminds",
+      "features": [
+        "Fitbit fitness data integration",
+        "Use when the user wants fitness insights, workout summaries, step counts, heart rate data, slee.",
+        "Provides AI-powered analysis of fitness metrics."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fitbit-insights@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17079569?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fitbit-insights",
+      "url": "https://clawhub.ai/skills/fitbit-insights"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fitbit-insights",
+    "url": "https://clawhub.ai/skills/fitbit-insights",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fitbit-insights-961e0d4198146275.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fitbit-insights@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fitbit-insights-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:924d6976fc440a365cb4daced94b39900181b28c0c897006a9db0f67af7b65aa",
+      "artifactSizeBytes": 2369
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T05:55:43.360Z"
+}

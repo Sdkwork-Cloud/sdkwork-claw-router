@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/network-hot-topics@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.network_hot_topics",
+  "skill": {
+    "id": 67445,
+    "skillKey": "clawhub-network-hot-topics",
+    "name": "network hot topics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "network-hot-topics",
+    "url": "https://clawhub.ai/skills/network-hot-topics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/network-hot-topics-53443fae7dc8a3b9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "获取当前网络热点并汇总为 10 条摘要。从微博、知乎、百度等平台或通过搜索获取实时热搜/热榜， 筛选、去重后输出 10 条热点，每条包含标题与一句话摘要。 Use when: 用户需要今日热点、热搜汇总、热榜简报、网络热点 10 条、多平台热点摘要。 NOT for: 单平台单一话题深挖、历史热点分析、需要原文链..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "akang943578",
+      "userId": "s17c4ryw31nngb1ystpryfeyys83p0g8",
+      "displayName": "Hao Jiakang",
+      "image": "https://avatars.githubusercontent.com/u/17521632?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 353,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773823901792,
+      "changelog": "- Skill refocused: now summarizes the top 10 trending network topics from platforms like Weibo, Zhihu, and Baidu.\n- Updated description and output format: each item includes a title and a one-sentence summary.\n- Detailed instructions added: specifies how to gather, filter, and present real-time hot topics.\n- Replaces previous computer networking content with social/online trending topic aggregation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0cf51e04ac83c4fb97b5524e50062eaf87879283297bed62aaff821956e2f353"
+}

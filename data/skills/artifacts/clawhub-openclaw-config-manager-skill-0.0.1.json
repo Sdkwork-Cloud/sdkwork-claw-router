@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-config-manager-skill@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_config_manager_skill",
+  "skill": {
+    "id": 65417,
+    "skillKey": "clawhub-openclaw-config-manager-skill",
+    "name": "OpenClaw配置管理Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-config-manager-skill",
+    "url": "https://clawhub.ai/skills/openclaw-config-manager-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-config-manager-skill-c81fc2902edd47ce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供智能备份、恢复、迁移及Git版本控制，支持加密存储与权限管理的OpenClaw配置管理工具。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wisdom-wozoy",
+      "userId": "publishers:wisdom-wozoy",
+      "displayName": "wisdom-wozoy",
+      "image": "https://avatars.githubusercontent.com/u/128917510?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 458,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1772697148668,
+      "changelog": "OpenClaw Config Manager Skill v1.0.0\n\n- 首次发布，提供OpenClaw环境下的配置管理基础功能\n- 支持一键备份、恢复、迁移配置及跨环境操作\n- 集成Git，实现配置的版本控制和团队协作\n- 提供敏感信息自动脱敏与加密，以及权限细粒度管理\n- 支持定时备份、变更检测和配置健康检查",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:342761f530d32dc8c7f125605f556fa8d27e6c3da1de65130aa31ad49056d586"
+}

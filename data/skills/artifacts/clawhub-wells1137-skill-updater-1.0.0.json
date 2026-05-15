@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wells1137-skill-updater@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wells1137_skill_updater",
+  "skill": {
+    "id": 21166,
+    "skillKey": "clawhub-wells1137-skill-updater",
+    "name": "Skill Updater"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wells1137-skill-updater",
+    "url": "https://clawhub.ai/skills/wells1137-skill-updater",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wells1137-skill-updater-73600112e634fc7c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Updates a specific skill within a repository and triggers the automated publishing pipeline. Use when the user wants to release a new version of a single skill."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wells1137",
+      "userId": "s17enmppbjk5dcqg20qv8ffqms84202b",
+      "displayName": "Wells Wu",
+      "image": "https://avatars.githubusercontent.com/u/195866913?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 510,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772549929687,
+      "changelog": "Initial release: automates single skill version update and ClaWHub publish",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:51e5b34c4fc238ce1567d1c803240643138cb5457a8e2a5c75ed47c8391f8634"
+}

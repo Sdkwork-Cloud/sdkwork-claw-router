@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53253,
+  "uuid": "skill-clawhub-croatia-weather",
+  "skillKey": "clawhub-croatia-weather",
+  "name": "Croatia Weather",
+  "summary": "Swiss-army knife for Croatian weather — 27 commands covering current conditions, forecasts (7-day, 3-day, 3-hourly, regional, outlook), warnings (CAP, heat/c...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.croatia_weather",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jakov Nikolić",
+      "features": [
+        "Swiss-army knife for Croatian weather — 27 commands covering current conditions, forecasts (7-d."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/croatia-weather@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10121208?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "croatia-weather",
+      "url": "https://clawhub.ai/skills/croatia-weather"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "croatia-weather",
+    "url": "https://clawhub.ai/skills/croatia-weather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/croatia-weather-b34694c6ca6c7c1c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/croatia-weather@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-croatia-weather-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ec61395348d7f929837a950f7751c439db6ea1fb332b41a663111769db5f9039",
+      "artifactSizeBytes": 2445
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T09:29:07.776Z"
+}

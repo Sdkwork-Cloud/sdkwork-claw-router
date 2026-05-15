@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62431,
+  "uuid": "skill-clawhub-openclaw-quickref",
+  "skillKey": "clawhub-openclaw-quickref",
+  "name": "OpenClaw QuickRef",
+  "summary": "快速查询 OpenClaw CLI 命令、配置语法和常用模式。当用户问\"怎么配置\"、\"命令是什么\"、\"配置格式\"时触发。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_quickref",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lishiying",
+      "features": [
+        "快速查询 OpenClaw CLI 命令、配置语法和常用模式。当用户问\"怎么配置\"、\"命令是什么\"、\"配置格式\"时触发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-quickref@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23376041?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-quickref",
+      "url": "https://clawhub.ai/skills/openclaw-quickref"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-quickref",
+    "url": "https://clawhub.ai/skills/openclaw-quickref",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-quickref-ce80d94c943e1d53.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-quickref@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-quickref-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0639650f00da031ae1188da05b39a941dda615f88a9ba7ccf18f3233196b19c3",
+      "artifactSizeBytes": 1895
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T22:38:38.297Z"
+}

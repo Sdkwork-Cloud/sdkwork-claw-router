@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68279,
+  "uuid": "skill-clawhub-daily-news-collector",
+  "skillKey": "clawhub-daily-news-collector",
+  "name": "daily-news-collector",
+  "summary": "每天从多个媒体渠道（RSS源、网站、API）自动收集最新资讯，智能分析并生成结构化日报。适用于需要定期监控行业动态、新闻资讯、竞品信息等场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_news_collector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nick Wong",
+      "features": [
+        "每天从多个媒体渠道（RSS源、网站、API）自动收集最新资讯，智能分析并生成结构化日报。适用于需要定期监控行业动态、新闻资讯、竞品信息等场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-news-collector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/55632678?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-news-collector",
+      "url": "https://clawhub.ai/skills/daily-news-collector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-news-collector",
+    "url": "https://clawhub.ai/skills/daily-news-collector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-news-collector-038bf09b51a17432.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-news-collector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-news-collector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8906c9053860cc8d319330b7b0926fc4c326c676aae80106edfa5ad43f240dc6",
+      "artifactSizeBytes": 2332
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T09:10:30.072Z"
+}

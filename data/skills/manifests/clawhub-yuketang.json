@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71644,
+  "uuid": "skill-clawhub-yuketang",
+  "skillKey": "clawhub-yuketang",
+  "name": "yuketang",
+  "summary": "提供雨课堂账户和班级相关查询服务，包括用户ID、开班列表、班级数据、预警名单、今日授课及作业公告完成情况查询等。",
+  "version": "1.0.327853",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yuketang",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xuetangop",
+      "features": [
+        "提供雨课堂账户和班级相关查询服务，包括用户ID、开班列表、班级数据、预警名单、今日授课及作业公告完成情况查询等。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yuketang@1.0.327853",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/75600518?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yuketang",
+      "url": "https://clawhub.ai/skills/yuketang"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yuketang",
+    "url": "https://clawhub.ai/skills/yuketang",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yuketang-b6591160bddc2f0b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yuketang@1.0.327853",
+      "artifactUrl": "data/skills/artifacts/clawhub-yuketang-1.0.327853.json",
+      "version": "1.0.327853",
+      "runtime": "metadata",
+      "checksumHash": "sha256:541902b6574a6f6fd4f6177e1074fa1293ce4cab70e503999b432412a41a1600",
+      "artifactSizeBytes": 1888
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T07:36:40.642Z"
+}

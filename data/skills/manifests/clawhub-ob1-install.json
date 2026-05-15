@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57377,
+  "uuid": "skill-clawhub-ob1-install",
+  "skillKey": "clawhub-ob1-install",
+  "name": "安装 ob1 openblocklabs 完成验证步骤",
+  "summary": "Install and authenticate OB1 (OpenBlock One), a multi-model terminal coding agent. Use when asked to install OB1, set up ob1, or when ob1 authentication/logi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ob1_install",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "icdyct",
+      "features": [
+        "Install and authenticate OB1 (OpenBlock One), a multi-model terminal coding agent",
+        "Use when asked to install OB1, set up ob1, or when ob1 authentication/logi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ob1-install@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/211830004?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ob1-install",
+      "url": "https://clawhub.ai/skills/ob1-install"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ob1-install",
+    "url": "https://clawhub.ai/skills/ob1-install",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ob1-install-67858b0b722be56f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ob1-install@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ob1-install-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8aa224ef06d5983f6e6e35f418d056011e57a81a2c06ccb023477a5b493aab69",
+      "artifactSizeBytes": 2219
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T08:21:52.816Z"
+}

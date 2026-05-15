@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72694,
+  "uuid": "skill-clawhub-indexquery",
+  "skillKey": "clawhub-indexquery",
+  "name": "承运商指数查询",
+  "summary": "基于Excel表格及指标定义，生成承运商维度的指数、行业平均数据，并支持历史趋势图展示与指标构成解析",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.indexquery",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "a-vb",
+      "features": [
+        "基于Excel表格及指标定义，生成承运商维度的指数、行业平均数据，并支持历史趋势图展示与指标构成解析"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/indexquery@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82512088?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "indexquery",
+      "url": "https://clawhub.ai/skills/indexquery"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "indexquery",
+    "url": "https://clawhub.ai/skills/indexquery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/indexquery-a1d23cb0dfc447f4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/indexquery@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-indexquery-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:686964ffe98ee9ae11c6b761472c5be12b1f1883c273aa462371763f9018dec7",
+      "artifactSizeBytes": 2389
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T09:21:21.396Z"
+}

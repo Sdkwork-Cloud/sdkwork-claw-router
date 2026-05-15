@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39947,
+  "uuid": "skill-clawhub-alvis-security-audit-v2",
+  "skillKey": "clawhub-alvis-security-audit-v2",
+  "name": "Security Audit",
+  "summary": "Audit OpenClaw/Clawdbot deployments for misconfigurations and attack vectors. Use when a user asks for a security review of OpenClaw/Clawdbot/Moltbot, gatewa...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alvis_security_audit_v2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AlvisDunlop",
+      "features": [
+        "Audit OpenClaw/Clawdbot deployments for misconfigurations and attack vectors",
+        "Use when a user asks for a security review of OpenClaw/Clawdbot/Moltbot, gatewa..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alvis-security-audit-v2@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255881479?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alvis-security-audit-v2",
+      "url": "https://clawhub.ai/skills/alvis-security-audit-v2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alvis-security-audit-v2",
+    "url": "https://clawhub.ai/skills/alvis-security-audit-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alvis-security-audit-v2-0b03d37bb4be4fe0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alvis-security-audit-v2@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-alvis-security-audit-v2-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c7bacbb84f15337d4d0d6ac5f083eb387436caf5dfb8cc5f0edad8dfa16b164",
+      "artifactSizeBytes": 2235
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T02:03:05.022Z"
+}

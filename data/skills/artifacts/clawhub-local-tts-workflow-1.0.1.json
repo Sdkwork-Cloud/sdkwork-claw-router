@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/local-tts-workflow@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_tts_workflow",
+  "skill": {
+    "id": 37623,
+    "skillKey": "clawhub-local-tts-workflow",
+    "name": "Local Tts Workflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-tts-workflow",
+    "url": "https://clawhub.ai/skills/local-tts-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-tts-workflow-d9978f3d87cf6295.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw text-to-speech workflow for an OpenAI-compatible TTS server, including remote/self-hosted deployments such as vLLM Omni. Use when configuring, testi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mozi1924",
+      "userId": "s174c63w5njkpvrfq9a8zxbj5983hwcp",
+      "displayName": "Mozi Arasaka",
+      "image": "https://avatars.githubusercontent.com/u/70095417?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775223729462,
+      "changelog": "- Updated server references from a remote IP to `127.0.0.1` to assume local deployment.\n- Noted that models may be loaded via local file paths (e.g., `./models/qwen3-tts-0.6b-mlx`), not just registry pulls, and clarified OpenClaw model detection flow accordingly.\n- Documented the local OpenAPI schema endpoint (`/openapi.json`) as the reference source for API details; clarified distinction between schema and server health.\n- Revised TTS endpoint examples to match new field names (`response_format` instead of `format`, added `streaming_interval`), and updated streaming/non-streaming default behaviors per current OpenAPI spec.\n- Expanded documentation of optional and required API parameters and urged users to consult the local OpenAPI for non-parity with OpenAI’s API.\n- Added clarifications for troubleshooting and debugging patterns, focusing on local-path deployments and real server vs. integration failures.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4a1a2bac81f0cf321f6b09775ac4bb250ad64d9726ea1c1e7d70412d76574d90"
+}

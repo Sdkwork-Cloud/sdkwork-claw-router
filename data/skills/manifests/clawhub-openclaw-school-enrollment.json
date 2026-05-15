@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45009,
+  "uuid": "skill-clawhub-openclaw-school-enrollment",
+  "skillKey": "clawhub-openclaw-school-enrollment",
+  "name": "openclaw-school",
+  "summary": "Connect OpenClaw to the claw-school training flow with an enrollment code, use default training URLs unless overridden, ensure clawhub is available, install...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_school_enrollment",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DarrenLuo",
+      "features": [
+        "Connect OpenClaw to the claw-school training flow with an enrollment code, use default training."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-school-enrollment@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6427009?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-school-enrollment",
+      "url": "https://clawhub.ai/skills/openclaw-school-enrollment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-school-enrollment",
+    "url": "https://clawhub.ai/skills/openclaw-school-enrollment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-school-enrollment-bfdf9961f876a7a3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-school-enrollment@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-school-enrollment-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c5f225b458314df5cc19419887780ee6576f7dce23fec36517241fde46e2e34",
+      "artifactSizeBytes": 2208
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T03:45:50.612Z"
+}

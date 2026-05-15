@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cron-watchdog@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cron_watchdog",
+  "skill": {
+    "id": 25744,
+    "skillKey": "clawhub-cron-watchdog",
+    "name": "Cron Watchdog"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cron-watchdog",
+    "url": "https://clawhub.ai/skills/cron-watchdog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cron-watchdog-bf9d32fabfce6b4c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor all OpenClaw cron jobs for failures and auto-fix common errors (model-not-allowed, timeouts). Posts to Slack only when issues are found. Runs every 6..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mpbshhx",
+      "userId": "publishers:mpbshhx",
+      "displayName": "mpbshhx",
+      "image": "https://avatars.githubusercontent.com/u/235782436?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 371,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773872809189,
+      "changelog": "Monitors OpenClaw cron jobs for failures and auto-fixes common errors (model-not-allowed, timeouts). Posts alerts only when issues are found.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4aa7d91cba849f7db7fd242da72f1bc887c311532b3adf79251e3eb904aded31"
+}

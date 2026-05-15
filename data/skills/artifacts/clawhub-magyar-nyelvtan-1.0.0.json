@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/magyar-nyelvtan@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.magyar_nyelvtan",
+  "skill": {
+    "id": 58069,
+    "skillKey": "clawhub-magyar-nyelvtan",
+    "name": "Magyar Nyelvtan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "magyar-nyelvtan",
+    "url": "https://clawhub.ai/skills/magyar-nyelvtan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/magyar-nyelvtan-eb21abb7b0ff1f7b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Magyar helyesírási és nyelvtani ellenőrzés, igeragozás, névszóragozás, nyelvtani szabálymagyarázat és mondatrészek elemzése."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "izsook",
+      "userId": "publishers:izsook",
+      "displayName": "Izsook",
+      "image": "https://avatars.githubusercontent.com/u/96597727?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 224,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773831738350,
+      "changelog": "Helyesírás AKH.12 + fogalmazás javítás",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c559a72c484badc0e5e09748a7ff0be73fc61a2d616eba560f3f380a10be60fe"
+}

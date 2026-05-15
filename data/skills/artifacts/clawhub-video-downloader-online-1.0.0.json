@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-downloader-online@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_downloader_online",
+  "skill": {
+    "id": 40756,
+    "skillKey": "clawhub-video-downloader-online",
+    "name": "Video Downloader Online"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-downloader-online",
+    "url": "https://clawhub.ai/skills/video-downloader-online",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-downloader-online-82a4a3494bd26ddc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get downloaded MP4 files ready to post, without touching a single slider. Upload your video URL link (MP4, WebM, MOV, AVI, up to 500MB), say something like \"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776597136647,
+      "changelog": "Initial release of Video Downloader Online.\n\n- Download and save online videos (MP4, WebM, MOV, AVI, up to 500MB) easily via URL link.\n- Supports direct downloading as 1080p MP4 files for offline viewing or reposting.\n- Requires no installation; everything runs on cloud GPU servers.\n- Automatic session management, including free starter tokens for new users.\n- Clear error handling for issues like expired tokens, unsupported files, and plan upgrades.\n- Designed for students, content creators, and marketers seeking fast video downloads.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c9fbb572fb079b8420a411a634aef30563f563eba978193ea3db72608cad966e"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/get-focus-mode@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.get_focus_mode",
+  "skill": {
+    "id": 10878,
+    "skillKey": "clawhub-get-focus-mode",
+    "name": "Get Focus Mode"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "get-focus-mode",
+    "url": "https://clawhub.ai/skills/get-focus-mode",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/get-focus-mode-d9f525865022beb8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get the current macOS Focus mode"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nickchristensen",
+      "userId": "s170e911n7q2prxws0yzxfm5198408tf",
+      "displayName": "NickChristensen",
+      "image": "https://avatars.githubusercontent.com/u/613826?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2293,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1768338764637,
+      "changelog": "- Skill description shortened to \"Get the current macOS Focus mode\"\n- Removed mention of \"to know if Nick is sleeping, working out, etc.\" from description",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dd1e6082ae43c23cdec24884793551926b2b0aca9dfd70e98d1e8d2cb3015676"
+}

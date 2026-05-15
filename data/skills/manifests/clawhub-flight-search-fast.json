@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19422,
+  "uuid": "skill-clawhub-flight-search-fast",
+  "skillKey": "clawhub-flight-search-fast",
+  "name": "Google Flights",
+  "summary": "Search Google Flights for flight prices and schedules using browser automation. Use when user asks to search flights, find airfare, compare prices, check fli...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flight_search_fast",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "skillhq-ai",
+      "features": [
+        "Search Google Flights for flight prices and schedules using browser automation",
+        "Use when user asks to search flights, find airfare, compare prices, check fli..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flight-search-fast@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257330909?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flight-search-fast",
+      "url": "https://clawhub.ai/skills/flight-search-fast"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flight-search-fast",
+    "url": "https://clawhub.ai/skills/flight-search-fast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flight-search-fast-7a2264e622ccdccc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flight-search-fast@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-flight-search-fast-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:edb3440c6118bb6701c58c8e217a7f99c0df1769a90a6f7d579e0ddc2859e246",
+      "artifactSizeBytes": 2259
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T01:36:37.440Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/model-switcher@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_switcher",
+  "skill": {
+    "id": 13704,
+    "skillKey": "clawhub-model-switcher",
+    "name": "Model Switcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-switcher",
+    "url": "https://clawhub.ai/skills/model-switcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-switcher-5624f7bfbdfd51b0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically switch between different AI models based on task complexity. Supports all available models in your OpenClaw setup. Triggers when detecting comp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "puaservice",
+      "userId": "publishers:puaservice",
+      "displayName": "PUASERVICE",
+      "image": "https://avatars.githubusercontent.com/u/116026672?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1178,
+      "installsAllTime": 20,
+      "installsCurrent": 19,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771868478775,
+      "changelog": "Update summary to remove specific model references",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:604f42e6917a91224f636c0a0360d81861117be44c5084299a001928d55c6d72"
+}

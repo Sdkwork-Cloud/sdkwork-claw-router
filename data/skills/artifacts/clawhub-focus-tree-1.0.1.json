@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/focus-tree@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.focus_tree",
+  "skill": {
+    "id": 23613,
+    "skillKey": "clawhub-focus-tree",
+    "name": "Focus Tree"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "focus-tree",
+    "url": "https://clawhub.ai/skills/focus-tree",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/focus-tree-e9bf72383a32768f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Maintain persistent focus on active work with hierarchical task tracking. Prevents the agent from forgetting mid-project context, drifting between topics, or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "noquant",
+      "userId": "s17bshxxv151rjwnc846j9pw6n83g1hf",
+      "displayName": "noquant",
+      "image": "https://avatars.githubusercontent.com/u/52238228?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 426,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773376038319,
+      "changelog": "**Changelog for focus-tree 1.0.1**\n\n- Major cleanup: Removed TypeScript build artifacts, distribution files, and all node_modules, slimming the repository.\n- Added a dedicated LICENSE file and a single entry-point script at scripts/focus.mjs.\n- Updated documentation to simplify usage: now encourages direct file editing or the use of the streamlined focus.mjs CLI script.\n- Clarified and unified process for FOCUS.md, FOCUS-LOG.md, and MEMORY.md roles.\n- Documentation is now shorter and more focused on plain, manual workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6124817cd9bb715dde3071447291603286d365cfb27792cf786fd9693b279ddf"
+}

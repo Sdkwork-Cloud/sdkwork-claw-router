@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47061,
+  "uuid": "skill-clawhub-wechat-post-skill",
+  "skillKey": "clawhub-wechat-post-skill",
+  "name": "WeChat Post Skill",
+  "summary": "User-authorized WeChat Official Account article workflow for topic selection, drafting, editing, image planning, pre-publish review, and handoff to the user'...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_post_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiao1yin2he3",
+      "features": [
+        "User-authorized WeChat Official Account article workflow for topic selection, drafting, editing."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-post-skill@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61444244?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-post-skill",
+      "url": "https://clawhub.ai/skills/wechat-post-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-post-skill",
+    "url": "https://clawhub.ai/skills/wechat-post-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-post-skill-86078040cdfb31c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-post-skill@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-post-skill-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b43cd4fafbbdf55ae0aef538235acd2031b0fde96c9a1a9af5f44b42e52134c0",
+      "artifactSizeBytes": 1975
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T02:10:48.435Z"
+}

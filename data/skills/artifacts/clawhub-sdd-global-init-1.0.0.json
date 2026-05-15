@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sdd-global-init@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sdd_global_init",
+  "skill": {
+    "id": 67887,
+    "skillKey": "clawhub-sdd-global-init",
+    "name": "SDD Global Init"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sdd-global-init",
+    "url": "https://clawhub.ai/skills/sdd-global-init",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sdd-global-init-9cf0b59a1374639b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "初始化 SDD 工作区，选择工作目录，扫描代码库生成项目概述、架构全景、技术约束、已有功能清单等全局文档。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mahingbun-dev",
+      "userId": "s1704qgspztwnte3w2xmz4g7b183j5bp",
+      "displayName": "mahingbun-dev",
+      "image": "https://avatars.githubusercontent.com/u/174362089?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 313,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773709618778,
+      "changelog": "初始版本",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d8e8af8d5f9c427030953a6c5d71a66341c8e8f173874251150d1a42cfff02d4"
+}

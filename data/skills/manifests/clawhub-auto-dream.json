@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56203,
+  "uuid": "skill-clawhub-auto-dream",
+  "skillKey": "clawhub-auto-dream",
+  "name": "Auto Dream",
+  "summary": "Consolidate long-running agent memory with a 4-phase Orient → Gather → Merge → Prune pass. Use when memory/context is stale, duplicated, contradictory, too l...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_dream",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "brasco05",
+      "features": [
+        "Consolidate long-running agent memory with a 4-phase Orient → Gather → Merge → Prune pass",
+        "Use when memory/context is stale, duplicated, contradictory, too l..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-dream@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256532966?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-dream",
+      "url": "https://clawhub.ai/skills/auto-dream"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-dream",
+    "url": "https://clawhub.ai/skills/auto-dream",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-dream-0744918158bf41a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-dream@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-dream-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fa385013a1dfa11729befa866ae98aae9ce3c0c2a8e157283ea162daac580995",
+      "artifactSizeBytes": 1952
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T07:58:47.021Z"
+}

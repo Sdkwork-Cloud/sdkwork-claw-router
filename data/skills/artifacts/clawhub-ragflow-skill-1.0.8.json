@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ragflow-skill@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ragflow_skill",
+  "skill": {
+    "id": 13085,
+    "skillKey": "clawhub-ragflow-skill",
+    "name": "RAGFlow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ragflow-skill",
+    "url": "https://clawhub.ai/skills/ragflow-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ragflow-skill-94b886984dde7cc5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use for RAGFlow dataset tasks: create, list, inspect, update, or delete datasets; upload, list, update, or delete documents; start or stop parsing; check par..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yingfeng",
+      "userId": "s171cqxgnmkj5rqpyvv2jxqpz983g358",
+      "displayName": "yingfeng",
+      "image": "https://avatars.githubusercontent.com/u/7248?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1074,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 5,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1774331740805,
+      "changelog": "- Documentation has been streamlined for clarity and brevity.\n- Usage instructions now focus on the main dataset, document, parsing, retrieval, and model listing operations.\n- All output must follow the specifications in reference.md, with exact relay of returned fields.\n- Delete actions explicitly require listing items for confirmation and only proceed with exact IDs.\n- Updated sample command lines and clarified the use of --json and confirmation guardrails.\n- Credentials and environment requirements are now stated more clearly.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:263755123f4b6801a4480166c9ec5fc6a08df94e14f165f27c5dc29dc27e3e4e"
+}

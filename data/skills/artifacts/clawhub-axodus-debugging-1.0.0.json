@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/axodus-debugging@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.axodus_debugging",
+  "skill": {
+    "id": 57252,
+    "skillKey": "clawhub-axodus-debugging",
+    "name": "RedHat Debugger"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "axodus-debugging",
+    "url": "https://clawhub.ai/skills/axodus-debugging",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/axodus-debugging-28a02a53568d70e6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Diagnose failures using reproduce → isolate → fix → verify workflow."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mzfshark",
+      "userId": "s17c7t947t48hg8ymjbywz1th583y2n6",
+      "displayName": "Mauricio Z.",
+      "image": "https://avatars.githubusercontent.com/u/26634695?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777035799449,
+      "changelog": "Initial release of the debugging skill.\n\n- Provides a structured workflow: reproduce → isolate → fix → verify.\n- Defines clear inputs including error symptoms, logs, and environment details.\n- Includes step-by-step debugging process and validation requirements.\n- Outputs results in a standardized YAML format.\n- Emphasizes safety, test coverage, and minimal fixes.\n- Offers concrete examples for guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:355d72875d64048271bcb13850a10c381002d479e2fdc8edfa3b2b8fb9f6f0ed"
+}

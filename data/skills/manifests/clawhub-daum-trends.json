@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58820,
+  "uuid": "skill-clawhub-daum-trends",
+  "skillKey": "clawhub-daum-trends",
+  "name": "Daum Trends",
+  "summary": "Daum 실시간 트렌드 TOP10 브리핑. 다음 메인 실시간 검색어 + 대표 뉴스 제목 추출. 크론/텔레그램/디스코드 알림용. Use when user asks for Korean real-time search trends, Daum trending keywords, or 실시간...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daum_trends",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "garibong-labs",
+      "features": [
+        "Daum 실시간 트렌드 TOP10 브리핑",
+        "다음 메인 실시간 검색어 + 대표 뉴스 제목 추출",
+        "크론/텔레그램/디스코드 알림용",
+        "Use when user asks for Korean real-time search trends, Daum trending keywords, or 실시간..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daum-trends@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258610216?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daum-trends",
+      "url": "https://clawhub.ai/skills/daum-trends"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daum-trends",
+    "url": "https://clawhub.ai/skills/daum-trends",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daum-trends-5127d91975050b9b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daum-trends@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daum-trends-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d02cdbf1442d80550d7b072735986db21810419a88d6d45781f1fe946ecb0b11",
+      "artifactSizeBytes": 2077
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T16:00:02.762Z"
+}

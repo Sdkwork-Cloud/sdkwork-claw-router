@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15070,
+  "uuid": "skill-clawhub-discord-context",
+  "skillKey": "clawhub-discord-context",
+  "name": "Discord Context",
+  "summary": "Sync and cache per-thread context for Discord Forum channels. Use when handling /discord-context commands to poll active threads, list cached context, inspec...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.discord_context",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "demitrim",
+      "features": [
+        "Sync and cache per-thread context for Discord Forum channels",
+        "Use when handling /discord-context commands to poll active threads, list cached context, inspec."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/discord-context@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/232672427?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "discord-context",
+      "url": "https://clawhub.ai/skills/discord-context"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "discord-context",
+    "url": "https://clawhub.ai/skills/discord-context",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/discord-context-1cf54ea24076d08e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/discord-context@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-discord-context-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c80d51b6e43a00c0700502988a5e67a2f2f9d40dec86ec9d49ec1931c979fb1a",
+      "artifactSizeBytes": 1988
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T13:56:54.793Z"
+}

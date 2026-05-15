@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26471,
+  "uuid": "skill-clawhub-invoice-automation",
+  "skillKey": "clawhub-invoice-automation",
+  "name": "Invoice Automation",
+  "summary": "AR/AP invoice automation for PrecisionLedger. Handles aging analysis, automated follow-up sequencing, payment matching, and collection priority scoring. Use...",
+  "version": "98.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.invoice_automation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "samledger67-dotcom",
+      "features": [
+        "AR/AP invoice automation for PrecisionLedger",
+        "Handles aging analysis, automated follow-up sequencing, payment matching, and collection priori."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/invoice-automation@98.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261800271?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "invoice-automation",
+      "url": "https://clawhub.ai/skills/invoice-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "invoice-automation",
+    "url": "https://clawhub.ai/skills/invoice-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/invoice-automation-e3c3c5997ec001c5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/invoice-automation@98.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-invoice-automation-98.0.1.json",
+      "version": "98.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1d93d5499854fef0710afa7674a5dfc101366464ab4ec0051b89636c4605d869",
+      "artifactSizeBytes": 1943
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T05:22:43.684Z"
+}

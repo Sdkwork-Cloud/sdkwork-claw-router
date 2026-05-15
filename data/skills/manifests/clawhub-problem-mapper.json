@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71611,
+  "uuid": "skill-clawhub-problem-mapper",
+  "skillKey": "clawhub-problem-mapper",
+  "name": "Problem Mapper",
+  "summary": "［何时使用］当用户需要系统化定义问题、设定成功标准、识别风险时；当用户说\"帮我分析这个问题\"时；当面临重大决策/战略模糊/复杂情境时；当需要将模糊问题转化为清晰行动时；支持两种模式（多轮对话/问题瀑布）",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.problem_mapper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lj22503",
+      "features": [
+        "［何时使用］当用户需要系统化定义问题、设定成功标准、识别风险时；当用户说\"帮我分析这个问题\"时；当面临重大决策/战略模糊/复杂情境时；当需要将模糊问题转化为清晰行动时；支持两种模式（多轮对话."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/problem-mapper@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/170225356?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "problem-mapper",
+      "url": "https://clawhub.ai/skills/problem-mapper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "problem-mapper",
+    "url": "https://clawhub.ai/skills/problem-mapper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/problem-mapper-ed7111ef0ba2d768.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/problem-mapper@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-problem-mapper-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:67635cc81fa251f8edad6a8d86f04185d631b934f38b44c480335ec500713062",
+      "artifactSizeBytes": 2037
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T01:49:03.732Z"
+}

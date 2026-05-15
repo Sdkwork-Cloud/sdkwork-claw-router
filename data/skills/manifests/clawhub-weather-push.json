@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61579,
+  "uuid": "skill-clawhub-weather-push",
+  "skillKey": "clawhub-weather-push",
+  "name": "Weather Push",
+  "summary": "每日天气推送 - 定时发送深圳天气+mihomo服务状态到飞书",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_push",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HankSU7889",
+      "features": [
+        "定时发送深圳天气+mihomo服务状态到飞书"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weather-push@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32285831?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weather-push",
+      "url": "https://clawhub.ai/skills/weather-push"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-push",
+    "url": "https://clawhub.ai/skills/weather-push",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-push-4f39dea963a119a1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weather-push@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weather-push-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3e56922197eb08b57a4179fb185d0cdd698e6749a173d0db375b57effba74651",
+      "artifactSizeBytes": 2209
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T04:40:31.772Z"
+}

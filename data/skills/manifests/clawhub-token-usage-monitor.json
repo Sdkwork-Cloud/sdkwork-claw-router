@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27465,
+  "uuid": "skill-clawhub-token-usage-monitor",
+  "skillKey": "clawhub-token-usage-monitor",
+  "name": "Token Usage Monitor",
+  "summary": "Monitor and display token usage metrics for AI models. Use when you need to track token consumption rates, view historical usage data, or get alerts about hi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.token_usage_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ttjsndx",
+      "features": [
+        "Monitor and display token usage metrics for AI models",
+        "Use when you need to track token consumption rates, view historical usage data, or get alerts a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/token-usage-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29187661?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "token-usage-monitor",
+      "url": "https://clawhub.ai/skills/token-usage-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "token-usage-monitor",
+    "url": "https://clawhub.ai/skills/token-usage-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/token-usage-monitor-5fb4480adac6f4a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/token-usage-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-token-usage-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5b1a4652eb803786d2fd7899486e62024385fdd6d1593ca20b76ed348a8088a3",
+      "artifactSizeBytes": 2327
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T02:23:01.081Z"
+}

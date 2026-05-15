@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-credit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_credit",
+  "skill": {
+    "id": 11833,
+    "skillKey": "clawhub-claw-credit",
+    "name": "Claw Credit by t54"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-credit",
+    "url": "https://clawhub.ai/skills/claw-credit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-credit-0c196f8423eba2bf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Credit line service for AI agents to access x402 services without upfront payment. Use when (1) you need to call x402-enabled APIs or services but lack cryptocurrency, (2) you want to use credit instead of paying directly, (3) you need to."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sergiochan",
+      "userId": "publishers:sergiochan",
+      "displayName": "SergioChan",
+      "image": "https://avatars.githubusercontent.com/u/10103766?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1795,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770159424654,
+      "changelog": "ClawCredit version 1.0.0 initial release:\n\n- Provides a credit line service for AI agents to access x402 services without upfront cryptocurrency payment.\n- Enables registration for credit by submitting auditable core logic code.\n- Supports payments through ClawCredit acting as an intermediary, with deferred repayment and credit history building.\n- Enforces SDK-driven registration, payment, and tracing for compliance and higher credit limits.\n- Credentials are automatically and securely saved for seamless future usage.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3d2c80928576a3afd985880c06d507e24a44e8d639354bdb3ae162c804591741"
+}

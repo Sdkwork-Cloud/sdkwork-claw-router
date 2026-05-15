@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/senseaudio-let-claw-talk@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.senseaudio_let_claw_talk",
+  "skill": {
+    "id": 61240,
+    "skillKey": "clawhub-senseaudio-let-claw-talk",
+    "name": "senseaudio-let-claw-talk"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "senseaudio-let-claw-talk",
+    "url": "https://clawhub.ai/skills/senseaudio-let-claw-talk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/senseaudio-let-claw-talk-69994f0a13ed0574.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "当用户希望把 AudioClaw 变成一个持续监听、开口就说、停顿就回答的本机语音助手时使用。这个 skill 会在 macOS 上启动常驻监听流程，默认优先使用内置 Swift 录音器减少 Python 音频依赖；用户语音通过 SenseAudio ASR 转文字，再发给 audioclaw agent，并用..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kikidouloveme79",
+      "userId": "s1799r8kj1jk2d6bjcn61ycmx583hqp7",
+      "displayName": "Wu Ruixiao",
+      "image": "https://avatars.githubusercontent.com/u/62665119?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774581485432,
+      "changelog": "senseaudio-let-claw-talk 1.0.0\n\n- Initial release: enables a persistent SenseAudio voice assistant on macOS with default settings for hands-free, multi-turn conversations.\n- Minimizes audio backend dependencies by preferring the built-in Swift recorder over Python audio packages.\n- Integrates SenseAudio ASR for speech recognition, audioclaw agent for dialogue, and SenseAudio TTS or system \"say\" for responses.\n- Default setup does not require WeSpeaker speaker verification or streaming TTS, but both remain optional for advanced users.\n- Provides flexible voice preferences, interrupter sensitivity, and “wake/sleep” phrase logic designed for natural, on-device voice assistant use.\n- Emphasizes robust user feedback, persistent settings, and compatibility with existing AudioClaw/OpenClaw workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6d1ed0b034592b7bce779221c97fa9d6c3bfe8fce3667a99652c00079ec68402"
+}

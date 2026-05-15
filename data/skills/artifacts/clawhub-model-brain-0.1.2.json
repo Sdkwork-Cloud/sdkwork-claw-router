@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/model-brain@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_brain",
+  "skill": {
+    "id": 33927,
+    "skillKey": "clawhub-model-brain",
+    "name": "Model Brain"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-brain",
+    "url": "https://clawhub.ai/skills/model-brain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-brain-fd859e3585759f58.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Route each incoming message to the right Bankr/OpenClaw model or to a zero-LLM path based on task type, risk, and cost. Use when you need per-message model s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aaigotchi",
+      "userId": "s17274ydba008dctsvmwydrqk183rfhq",
+      "displayName": "aaigotchi",
+      "image": "https://avatars.githubusercontent.com/u/258886199?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 231,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1774157939332,
+      "changelog": "Fix wrapper quoting for aaigotchi integration",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f637b11389d48f8ae11d7159383cc81cd4981ee0993db6a084da3585b907def1"
+}

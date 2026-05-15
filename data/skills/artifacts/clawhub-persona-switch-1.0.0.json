@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/persona-switch@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.persona_switch",
+  "skill": {
+    "id": 63475,
+    "skillKey": "clawhub-persona-switch",
+    "name": "Persona Switch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "persona-switch",
+    "url": "https://clawhub.ai/skills/persona-switch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/persona-switch-17acae2dd2a9792e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "切换 agent 的人设（soul.md）。支持三套预设人设与原有人设之间自由切换。 触发词：切换人设、persona-switch、赛博朋友、温柔伴侣、创始人龙虾。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 52,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778322655898,
+      "changelog": "- 新增支持三套预设人设与原有人设间自由切换：赛博朋友、创始人龙虾、温柔伴侣。\n- 切换人设时自动备份当前 soul.md，支持一键恢复。\n- 自动同步身份信息（IDENTITY.md）中 Vibe 字段，与人设一致。\n- Name 字段保护机制：已自定义姓名时不会被覆盖。\n- 切换及恢复后以对应人设语气确认反馈，增强体验。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cd61984e31a044b435de2c1916c3e5a633e701d7453b2c5c531dbaa035fbdc7b"
+}

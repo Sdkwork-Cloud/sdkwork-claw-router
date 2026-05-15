@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/coala@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coala",
+  "skill": {
+    "id": 17903,
+    "skillKey": "clawhub-coala",
+    "name": "Coala Client"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coala",
+    "url": "https://clawhub.ai/skills/coala",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coala-98e923857c77dc32.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "How to use the coala-client CLI for chat with LLMs, MCP servers, and skills. Use when the user asks how to use coala, run coala chat, add MCP servers, import..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hubentu",
+      "userId": "publishers:hubentu",
+      "displayName": "qhu",
+      "image": "https://avatars.githubusercontent.com/u/9856666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 734,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1771597607749,
+      "changelog": "- Removed mentions of the optional sandbox run_command tool.\n- Updated description and feature lists to reflect removal of sandbox-related content.\n- All references to sandbox functionality have been omitted for clearer documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e65055b19caff25ca7fa9ad55400c9e4d913d1a6f8528303dfaaeb6e321f9a1c"
+}

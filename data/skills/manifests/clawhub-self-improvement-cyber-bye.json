@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23972,
+  "uuid": "skill-clawhub-self-improvement-cyber-bye",
+  "skillKey": "clawhub-self-improvement-cyber-bye",
+  "name": "Self Improvement Cyber Bye",
+  "summary": "Captures errors, hallucinations, logic bugs, and user corrections immediately. Runs a nightly 11 PM IST review to attempt self-fixes. Failed fixes escalate t...",
+  "version": "4.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_improvement_cyber_bye",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cyber-bye",
+      "features": [
+        "Captures errors, hallucinations, logic bugs, and user corrections immediately",
+        "Runs a nightly 11 PM IST review to attempt self-fixes",
+        "Failed fixes escalate t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/self-improvement-cyber-bye@4.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42940952?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "self-improvement-cyber-bye",
+      "url": "https://clawhub.ai/skills/self-improvement-cyber-bye"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-improvement-cyber-bye",
+    "url": "https://clawhub.ai/skills/self-improvement-cyber-bye",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-improvement-cyber-bye-018801263a1db2bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/self-improvement-cyber-bye@4.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-self-improvement-cyber-bye-4.0.1.json",
+      "version": "4.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6b6547db92d9e600ae096d41bba1288f2035ba09958a29ee2b9616775d4da615",
+      "artifactSizeBytes": 1972
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T00:15:22.383Z"
+}

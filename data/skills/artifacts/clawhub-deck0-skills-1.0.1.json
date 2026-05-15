@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deck0-skills@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deck0_skills",
+  "skill": {
+    "id": 17357,
+    "skillKey": "clawhub-deck0-skills",
+    "name": "DECK-0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deck0-skills",
+    "url": "https://clawhub.ai/skills/deck0-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deck0-skills-721cc3d54bf24ff3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with DECK-0 digital collectibles platform to browse collections, buy card packs, open packs, view leaderboards, and apply as a publisher. Use when the user asks to collect trading cards, purchase NFT packs, manage their collection."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "signorcrypto",
+      "userId": "publishers:signorcrypto",
+      "displayName": "SignorCrypto",
+      "image": "https://avatars.githubusercontent.com/u/96951419?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 789,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770903292805,
+      "changelog": "- Updated requirements in metadata: now explicitly lists `cast`, `curl`, `jq`, `shasum` as required binaries, and `DECK0_PRIVATE_KEY` as a required environment variable for fallback flows.\n- Added explanation for optional `DECK0_CHAIN_ID` environment variable for fallback chain override.\n- Clarified that declared requirements are primarily needed for fallback signing, not for browse-only use with a runtime wallet.\n- Updated setup instructions to recommend installing Foundry via Homebrew and verifying availability of `cast`.\n- Added a \"Security Notes\" section emphasizing the sensitivity of `DECK0_PRIVATE_KEY` and proper usage guidance.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3d536a2a8b37583574d053666c49aed0b2a3935fb42af0814b959eaa1e358cbc"
+}

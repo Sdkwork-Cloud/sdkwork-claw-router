@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73652,
+  "uuid": "skill-clawhub-weekly-planner-skill",
+  "skillKey": "clawhub-weekly-planner-skill",
+  "name": "每周安排助理",
+  "summary": "工作日日报与周记录整理工具，自动生成工作日报，梳理计划、完成、反思；当用户需要生成工作日报、管理周记录或查看总结时使用",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weekly_planner_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ludiansheng",
+      "features": [
+        "工作日日报与周记录整理工具，自动生成工作日报，梳理计划、完成、反思；当用户需要生成工作日报、管理周记录或查看总结时使用"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weekly-planner-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269368209?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weekly-planner-skill",
+      "url": "https://clawhub.ai/skills/weekly-planner-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weekly-planner-skill",
+    "url": "https://clawhub.ai/skills/weekly-planner-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weekly-planner-skill-3bccf3f703917f4d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weekly-planner-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weekly-planner-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4ee519e8e7b5686603c5714d1d7860531f684a5cfb9a5bb061eee6ebd73d2099",
+      "artifactSizeBytes": 2471
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T09:52:28.063Z"
+}

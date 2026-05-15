@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60299,
+  "uuid": "skill-clawhub-openeuler-rpm",
+  "skillKey": "clawhub-openeuler-rpm",
+  "name": "openEuler RPM Packaging",
+  "summary": "🚨 openEuler 专项 RPM 打包规范。任何涉及 openEuler 打包的场景，都必须读取此技能。**openEuler 规则与通用 RPM 不同**：5 包拆分规则、专用 changelog 格式（Type/ID/SUG/DESC）、openEuler 专用宏、检视原则。不适用于其他发行版。",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openeuler_rpm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wei dong",
+      "features": [
+        "🚨 openEuler 专项 RPM 打包规范。任何涉及 openEuler 打包的场景，都必须读取此技能。**openEuler 规则与通用 RPM 不同**：5 包拆分规则、专用 ch."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openeuler-rpm@2.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7512609?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openeuler-rpm",
+      "url": "https://clawhub.ai/skills/openeuler-rpm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openeuler-rpm",
+    "url": "https://clawhub.ai/skills/openeuler-rpm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openeuler-rpm-7442f4bd33fa57cb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openeuler-rpm@2.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openeuler-rpm-2.1.1.json",
+      "version": "2.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fa29e31cd9ce66a3b15e8278c5184465197a82d114e930b07d55640193062911",
+      "artifactSizeBytes": 2084
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T01:57:42.095Z"
+}

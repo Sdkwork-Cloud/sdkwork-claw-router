@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26866,
+  "uuid": "skill-clawhub-rust-code-review",
+  "skillKey": "clawhub-rust-code-review",
+  "name": "Rust Code Review",
+  "summary": "Reviews Rust code for ownership, borrowing, lifetime, error handling, trait design, unsafe usage, and common mistakes. Use when reviewing .rs files, checking...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rust_code_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kevin Anderson",
+      "features": [
+        "Reviews Rust code for ownership, borrowing, lifetime, error handling, trait design, unsafe usag.",
+        "Use when reviewing .rs files, checking..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rust-code-review@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17010022?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rust-code-review",
+      "url": "https://clawhub.ai/skills/rust-code-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rust-code-review",
+    "url": "https://clawhub.ai/skills/rust-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rust-code-review-5bd71b863be171e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rust-code-review@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-rust-code-review-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a4863a6b8f8428993212a03aba60085e8fae909da1727eac36025fd831b0b22f",
+      "artifactSizeBytes": 2450
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T04:16:06.121Z"
+}

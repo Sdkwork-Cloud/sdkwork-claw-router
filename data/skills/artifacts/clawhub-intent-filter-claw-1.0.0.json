@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/intent-filter-claw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intent_filter_claw",
+  "skill": {
+    "id": 71240,
+    "skillKey": "clawhub-intent-filter-claw",
+    "name": "潜在意向筛选虾"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intent-filter-claw",
+    "url": "https://clawhub.ai/skills/intent-filter-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intent-filter-claw-faac896a0a3979ae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "潜在意向筛选虾 — 从公域评论、帖子、私信中识别真实购买意向，生成高意向销售线索并推送给销售团队。 当以下情况时使用此 Skill： (1) 需要从评论区、帖子、私信中挖掘有购买意向的潜在客户 (2) 需要对用户提供的评论数据（CSV/文本）进行意向识别和评分 (3) 需要在竞品帖子下找到对竞品不满意、正在寻找替..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tujinsama",
+      "userId": "s177vqraepq71bz6ynj98rrtdd83j0pd",
+      "displayName": "Ricky",
+      "image": "https://avatars.githubusercontent.com/u/82147388?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775792963617,
+      "changelog": "Initial release: 从公域评论中识别购买意向，生成高意向销售线索",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:16b8633c0697e1e04de929b8b004b43fe8c6f1385a1abe0c49edafed09ecbe56"
+}

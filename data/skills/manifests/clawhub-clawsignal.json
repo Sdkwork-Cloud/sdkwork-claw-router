@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10069,
+  "uuid": "skill-clawhub-clawsignal",
+  "skillKey": "clawhub-clawsignal",
+  "name": "ClawSignal",
+  "summary": "Real-time messaging for AI agents. WebSocket-first, REST fallback.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawsignal",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bmcalister",
+      "features": [
+        "Real-time messaging for AI agents",
+        "WebSocket-first, REST fallback."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawsignal@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1140502?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawsignal",
+      "url": "https://clawhub.ai/skills/clawsignal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawsignal",
+    "url": "https://clawhub.ai/skills/clawsignal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawsignal-7ff06efd91a07e49.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawsignal@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawsignal-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e9ed4b70a3160429e40d18f3150c16cc4485be5947cf87149b534eb4570c50db",
+      "artifactSizeBytes": 2141
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T13:58:32.703Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clinical-trial@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clinical_trial",
+  "skill": {
+    "id": 20790,
+    "skillKey": "clawhub-clinical-trial",
+    "name": "NoahAI clinical-trial query"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clinical-trial",
+    "url": "https://clawhub.ai/skills/clinical-trial",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clinical-trial-a5b2827e77d9accf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search clinical trial databases similar to ClinicalTrials.gov. Use this skill whenever the user asks about clinical trials, drug trials, indications, targets..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bombert",
+      "userId": "s17ezwe11e1pyfxzka699prf4x83j1kd",
+      "displayName": "yichen",
+      "image": "https://avatars.githubusercontent.com/u/3349426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 428,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1776611535551,
+      "changelog": "clinical-trial-search v1.0.8\n\n- Updated accepted value lists for `drug_modality` and `drug_feature` fields; inputs must now use exact strings from specified sets.\n- Clarified field type rules and examples for structured query parameters.\n- Adjusted sample values in field examples to reflect updated allowed terms.\n- Changed API response documentation: `page_size` renamed to `total_count`.\n- No code changes; documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:df5542a870f23757e532f7aee6df00a90583e8659ab1dd95121106e4d3368c82"
+}

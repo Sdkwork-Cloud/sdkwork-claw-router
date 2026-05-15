@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54366,
+  "uuid": "skill-clawhub-coralos-run-remote-agents",
+  "skillKey": "clawhub-coralos-run-remote-agents",
+  "name": "CoralOS",
+  "summary": "End-to-end Coral Cloud workflow — discover registry remote agents, compose and launch a session of agents, then monitor and close it.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coralos_run_remote_agents",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "omni-georgio",
+      "features": [
+        "End-to-end Coral Cloud workflow — discover registry remote agents, compose and launch a session."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coralos-run-remote-agents@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82511949?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coralos-run-remote-agents",
+      "url": "https://clawhub.ai/skills/coralos-run-remote-agents"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coralos-run-remote-agents",
+    "url": "https://clawhub.ai/skills/coralos-run-remote-agents",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coralos-run-remote-agents-248f522c57737ddf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coralos-run-remote-agents@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-coralos-run-remote-agents-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2008fc8862814ce596ddd151353592bb00c39351bde61240eb95c5b27ea86632",
+      "artifactSizeBytes": 2293
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T21:11:13.269Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pincaimao-resume-diagnosis@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pincaimao_resume_diagnosis",
+  "skill": {
+    "id": 58007,
+    "skillKey": "clawhub-pincaimao-resume-diagnosis",
+    "name": "聘才猫（Pincaimao）简历诊断"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pincaimao-resume-diagnosis",
+    "url": "https://clawhub.ai/skills/pincaimao-resume-diagnosis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pincaimao-resume-diagnosis-760a418f33fe72a5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "聘才猫 - 简历诊断 Use when calling Pincaimao Resume Diagnosis Assistant API to parse and diagnosis a candidate resume against a job description. Requires uploading..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pincaimao",
+      "userId": "s1713pekdpzv03xf9a2xmpv2y183mkb1",
+      "displayName": "聘才猫（Pincaimao）",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 230,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775114219044,
+      "changelog": "- Added registration and authentication invitation link for obtaining a free API key.\n- No other functional or interface changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:04354875436b4a38b7f8b048d06a9eca1485ae7382bf7913129646c159c82ffd"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61359,
+  "uuid": "skill-clawhub-chinese-collective-chat",
+  "skillKey": "clawhub-chinese-collective-chat",
+  "name": "中文 集体聊天系统",
+  "summary": "集体聊天系统 - 管理 Axioma Stellaris 集群的代理间通信。使用时机：(1) 代理间通信，(2) 检查队列状态，(3) 写入聊天消息，(4) 读取集体聊天记录。队列顺序：1=Merlin, 2=Ezekiel, 3=Morgana, 1, 2, 3...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chinese_collective_chat",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kofna3369",
+      "features": [
+        "管理 Axioma Stellaris 集群的代理间通信。使用时机：(1) 代理间通信，(2) 检查队列状态，(3) 写入聊天消息，(4) 读取集体聊天记录。队列顺序：1=Merlin, 2."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chinese-collective-chat@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/110220070?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chinese-collective-chat",
+      "url": "https://clawhub.ai/skills/chinese-collective-chat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chinese-collective-chat",
+    "url": "https://clawhub.ai/skills/chinese-collective-chat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chinese-collective-chat-cb917a346e855b4a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chinese-collective-chat@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chinese-collective-chat-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ca2706bda66a89799662f689bbd5c583d2392defa975e785ebcce8a8e58e8fd",
+      "artifactSizeBytes": 2048
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T01:37:54.212Z"
+}

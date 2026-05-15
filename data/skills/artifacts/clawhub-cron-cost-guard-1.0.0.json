@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cron-cost-guard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cron_cost_guard",
+  "skill": {
+    "id": 41747,
+    "skillKey": "clawhub-cron-cost-guard",
+    "name": "Cron Cost Guard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cron-cost-guard",
+    "url": "https://clawhub.ai/skills/cron-cost-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cron-cost-guard-9e9bbdced9aa04ed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit AI agent cron jobs for token cost risks, model-switch loops, and session isolation failures. Use when setting up new cron jobs, debugging unexpected to..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pouria3",
+      "userId": "s17ar1y466kzs60881tm894rqs83hz3d",
+      "displayName": "pouria3",
+      "image": "https://avatars.githubusercontent.com/u/1934314?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775012368041,
+      "changelog": "Initial release. Audit AI agent cron jobs for token cost risks, model-switch loops, and session isolation failures.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:acef22823bf4a7d6365cea0402fdfdddb17865db05c2f8bb75765f741008f95c"
+}

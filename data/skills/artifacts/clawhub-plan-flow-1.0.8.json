@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/plan-flow@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plan_flow",
+  "skill": {
+    "id": 22651,
+    "skillKey": "clawhub-plan-flow",
+    "name": "Plan Flow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plan-flow",
+    "url": "https://clawhub.ai/skills/plan-flow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plan-flow-4f4ad06be4250586.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Structured AI-assisted development workflows - discovery, planning, execution, code reviews, and testing"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brunoscardoso",
+      "userId": "publishers:brunoscardoso",
+      "displayName": "brunoscardoso",
+      "image": "https://avatars.githubusercontent.com/u/47576846?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 465,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1772505676525,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8cfef1f1ab20f1b432c8706d81f649984832c228886a4a4d7e1adbde7dbbf928"
+}

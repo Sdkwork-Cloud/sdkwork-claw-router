@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smart-code-reviewer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_code_reviewer",
+  "skill": {
+    "id": 73073,
+    "skillKey": "clawhub-smart-code-reviewer",
+    "name": "智能代码审查助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-code-reviewer",
+    "url": "https://clawhub.ai/skills/smart-code-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-code-reviewer-183e8773f2b5c50f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "代码审查助手 - 自动分析代码，提供审查意见、性能优化建议、安全漏洞检测。支持多种编程语言，生成详细的代码审查报告。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ryan-wuxl",
+      "userId": "publishers:ryan-wuxl",
+      "displayName": "ryan-wuxl",
+      "image": "https://avatars.githubusercontent.com/u/21093002?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 343,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774017295129,
+      "changelog": "初始版本：支持代码审查、性能优化建议、安全检测",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3dadb2558748cb109708a63f2b9803a0f82e42c8521d9150dd41a4f6eccca088"
+}

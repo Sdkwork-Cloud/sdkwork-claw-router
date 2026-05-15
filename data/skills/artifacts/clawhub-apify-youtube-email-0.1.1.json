@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apify-youtube-email@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apify_youtube_email",
+  "skill": {
+    "id": 42204,
+    "skillKey": "clawhub-apify-youtube-email",
+    "name": "Apify YouTube Email Scraper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apify-youtube-email",
+    "url": "https://clawhub.ai/skills/apify-youtube-email",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apify-youtube-email-dc502bb09accb9eb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when the user asks to \"find YouTube channel emails\", \"scrape YouTube contacts\", \"get YouTuber email addresses\", \"extract YouTube ch..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "futurizerush",
+      "userId": "s174ks6c53yjm9ez7sh6ckryf984dsd6",
+      "displayName": "Futurize Rush",
+      "image": "https://avatars.githubusercontent.com/u/122273125?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1775894581029,
+      "changelog": "Add discovery tags for SEO",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ad48e27184334a0d0d678de358369363d0827045627846312e4d474c26825cab"
+}

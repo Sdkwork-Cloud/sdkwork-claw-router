@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63286,
+  "uuid": "skill-clawhub-captcha-auto",
+  "skillKey": "clawhub-captcha-auto",
+  "name": "Captcha Auto",
+  "summary": "智能验证码自动识别 Skill - 混合模式（本地 Tesseract OCR + 阿里云千问 3 VL Plus）。支持两阶段输入框查找、安全隐私警告。用于网页自动化中的验证码识别、填写和提交。",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.captcha_auto",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MarvelousBean",
+      "features": [
+        "智能验证码自动识别 Skill",
+        "混合模式（本地 Tesseract OCR + 阿里云千问 3 VL Plus）。支持两阶段输入框查找、安全隐私警告。用于网页自动化中的验证码识别、填写和提交。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/captcha-auto@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/153698635?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "captcha-auto",
+      "url": "https://clawhub.ai/skills/captcha-auto"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "captcha-auto",
+    "url": "https://clawhub.ai/skills/captcha-auto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/captcha-auto-236c362071ae6e46.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/captcha-auto@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-captcha-auto-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a04b368602dbbe3eee0228f9d463a0235bed309375a805875f2553997b374fe7",
+      "artifactSizeBytes": 2340
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T07:55:04.443Z"
+}

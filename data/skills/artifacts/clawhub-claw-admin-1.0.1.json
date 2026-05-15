@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-admin@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_admin",
+  "skill": {
+    "id": 12484,
+    "skillKey": "clawhub-claw-admin",
+    "name": "ClawEmail Admin"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-admin",
+    "url": "https://clawhub.ai/skills/claw-admin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-admin-7bf584bb58d647d5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provision and manage @clawemail.com Google Workspace email accounts. Use when the user wants to create an email for their AI agent, check email availability, or manage existing ClawEmail accounts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cto1",
+      "userId": "publishers:cto1",
+      "displayName": "cto1",
+      "image": "https://avatars.githubusercontent.com/u/7560345?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1643,
+      "installsAllTime": 3,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770392590186,
+      "changelog": "Rename to ClawEmail Admin",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d88d15047885c3819f3a67d41a8940fbccff1e090c60b7a00d26f07d37910003"
+}

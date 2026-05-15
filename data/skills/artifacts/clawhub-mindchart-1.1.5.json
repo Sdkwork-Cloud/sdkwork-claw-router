@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mindchart@1.1.5",
+  "version": "1.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mindchart",
+  "skill": {
+    "id": 20371,
+    "skillKey": "clawhub-mindchart",
+    "name": "Mindchart"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mindchart",
+    "url": "https://clawhub.ai/skills/mindchart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mindchart-98eef26866f323eb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create exquisite infographics from user-uploaded files or given text. Used when user requests to create an infographic."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "newtoolai",
+      "userId": "s178s2mvrya768k39ceyabh2pd83qx9w",
+      "displayName": "zhangshulin",
+      "image": "https://avatars.githubusercontent.com/u/17463933?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 449,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.1.5",
+      "createdAt": 1774681014363,
+      "changelog": "Version 1.1.5\n\n- Updated infographic return workflow: now both PNG and SVG files are sent as images to the user when using openclaw or similar bots.\n- Clarified the file return process in the final step of the generation workflow.\n- No other specification or syntax changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3312868f3b3c36b1b6f58fa7c5bb181a502c055256d0a8eb6b79ee7db2030fa2"
+}

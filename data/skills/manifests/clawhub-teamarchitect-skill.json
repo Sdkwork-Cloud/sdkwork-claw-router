@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64527,
+  "uuid": "skill-clawhub-teamarchitect-skill",
+  "skillKey": "clawhub-teamarchitect-skill",
+  "name": "teamarchitect-skill",
+  "summary": "通过对话收集需求，设计多智能体团队架构，并推荐对应 Agent 角色的专业技能供选择和安装。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.teamarchitect_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MarsHong-86",
+      "features": [
+        "通过对话收集需求，设计多智能体团队架构，并推荐对应 Agent 角色的专业技能供选择和安装。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/teamarchitect-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264976087?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "teamarchitect-skill",
+      "url": "https://clawhub.ai/skills/teamarchitect-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "teamarchitect-skill",
+    "url": "https://clawhub.ai/skills/teamarchitect-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/teamarchitect-skill-758fa033bc08e784.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/teamarchitect-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-teamarchitect-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4f06291e69d1f46b8e42cc4b975250cf6818519ca38be4aa3eaab68da87e1a07",
+      "artifactSizeBytes": 2459
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T11:07:41.307Z"
+}

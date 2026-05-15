@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentic-cohort-analyst@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentic_cohort_analyst",
+  "skill": {
+    "id": 70538,
+    "skillKey": "clawhub-agentic-cohort-analyst",
+    "name": "数据映射与队列分析 (Agentic AI 科研平台)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentic-cohort-analyst",
+    "url": "https://clawhub.ai/skills/agentic-cohort-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentic-cohort-analyst-ecfe3839953f7ab3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将研究变量映射到院内数据字典，评估 Cohort 可行性（候选样本量、缺失率、风险提示），并生成纳排标准草案。当用户需要做数据映射或队列可行性分析时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "emergenceronearth",
+      "userId": "s177bkapgfmz12gyr1kc5fwknx83p9pz",
+      "displayName": "EmergencerOnEarth",
+      "image": "https://avatars.githubusercontent.com/u/128658416?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 197,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774615279519,
+      "changelog": "initial publish",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d1eef6780c6efe54087825c5f401df4cd9c989e6811d12da695bd0db9a78567b"
+}

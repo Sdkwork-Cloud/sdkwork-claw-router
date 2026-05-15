@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53250,
+  "uuid": "skill-clawhub-agt0",
+  "skillKey": "clawhub-agt0",
+  "name": "agt0",
+  "summary": "Local-first agent storage — SQLite database, virtual filesystem, and memory in one .db file. Use when persisting agent state, querying CSV/JSONL/logs with SQ...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agt0",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liuhao6741",
+      "features": [
+        "Local-first agent storage — SQLite database, virtual filesystem, and memory in one .db file",
+        "Use when persisting agent state, querying CSV/JSONL/logs with SQ..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agt0@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/157583880?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agt0",
+      "url": "https://clawhub.ai/skills/agt0"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agt0",
+    "url": "https://clawhub.ai/skills/agt0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agt0-6398919ec5c95337.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agt0@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-agt0-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e89de3ea8d426d7630f5df1bbc3c53043a676942e80eb01f5a2ab36e8c4184e",
+      "artifactSizeBytes": 1875
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T09:09:13.655Z"
+}

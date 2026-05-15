@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34537,
+  "uuid": "skill-clawhub-codex-sessions-manager",
+  "skillKey": "clawhub-codex-sessions-manager",
+  "name": "Codex Sessions Manager",
+  "summary": "Use this skill when the user wants to inspect, search, export, verify, clean up, delete, restore, or purge local Codex sessions stored under a Codex root suc...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codex_sessions_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rose",
+      "features": [
+        "Use this skill when the user wants to inspect, search, export, verify, clean up, delete, restor."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/codex-sessions-manager@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/195262969?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "codex-sessions-manager",
+      "url": "https://clawhub.ai/skills/codex-sessions-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codex-sessions-manager",
+    "url": "https://clawhub.ai/skills/codex-sessions-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codex-sessions-manager-113a1411d10f3ee1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/codex-sessions-manager@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-codex-sessions-manager-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e6f5dad517b913adafa9e7f53a3c4811d2f3d8b76fd3d681c14991ffc912da60",
+      "artifactSizeBytes": 2631
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T05:26:52.256Z"
+}

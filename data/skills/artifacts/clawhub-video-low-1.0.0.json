@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-low@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_low",
+  "skill": {
+    "id": 48036,
+    "skillKey": "clawhub-video-low",
+    "name": "Video Low"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-low",
+    "url": "https://clawhub.ai/skills/video-low",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-low-6b22167136f5121e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute 1080p interview recording into 720p compressed video files just by typing what you need. Whether it's reducing video file size for sharing or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 106,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777393965772,
+      "changelog": "Video Low 1.0.0 — Initial Release\n\n- Easily compress and reduce video sizes through natural language instructions.\n- Automatic cloud setup and session handling; requires no local installs.\n- Supports uploads, state checks, credits, and exports for common video formats.\n- Provides helpful feedback during processing and clear guidance for errors.\n- Efficient 30-60 second cloud processing for typical 2-minute clips with flexible output options.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bc756e05e4ea4fa83db4c9a3b7473df7943d5e907b1b7493cb2d7870cfadc61a"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/arb-injection@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arb_injection",
+  "skill": {
+    "id": 13337,
+    "skillKey": "clawhub-arb-injection",
+    "name": "BYOCB ArbInjectionSkill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arb-injection",
+    "url": "https://clawhub.ai/skills/arb-injection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arb-injection-82c2cd6fea56014a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "BYOCB ArbInjectionSkill: Scan EVM smart contracts for arbitrary call injection vulnerabilities. Monitor chains in real-time or scan specific addresses."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cryptotooldev",
+      "userId": "publishers:cryptotooldev",
+      "displayName": "CryptoToolDev",
+      "image": "https://avatars.githubusercontent.com/u/131488347?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1488,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770288657699,
+      "changelog": "Initial public release.\n\n- Scan EVM smart contracts for arbitrary call injection vulnerabilities.\n- Real-time monitoring of blockchain contract deployments on major EVM chains.\n- Immediate user alerts for CRITICAL and HIGH severity findings.\n- Manual scan capability for specific addresses.\n- Built-in false positive detection for common safe patterns and known contracts.\n- Results saved to local directory for review and alerting workflows.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:49521ee9b3a435032dac040d7de73c571634a0310d3b700507f49de2b28f0ee5"
+}

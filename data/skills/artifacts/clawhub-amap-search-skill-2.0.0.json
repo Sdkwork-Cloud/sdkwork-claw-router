@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amap-search-skill@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amap_search_skill",
+  "skill": {
+    "id": 58892,
+    "skillKey": "clawhub-amap-search-skill",
+    "name": "Amap Search Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amap-search-skill",
+    "url": "https://clawhub.ai/skills/amap-search-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amap-search-skill-d16f138a811854a4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "高德地图全功能工具 - 集成POI搜索、路径规划、天气查询、公交查询、实时路况等。/Gaode Map All-in-One - POI search, route planning, weather, bus, traffic."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mahongting",
+      "userId": "publishers:mahongting",
+      "displayName": "mahongting",
+      "image": "https://avatars.githubusercontent.com/u/61448287?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 476,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773664811991,
+      "changelog": "- Added support for the --with-distance parameter to the POI search; now each result can display the actual driving distance.\n- Updated documentation to recommend configuring the API key via environment variable and clarified parameter priority.\n- Added examples for POI distance search in the usage documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:31863482c7452b5f325b967dca65286400b9d7ba3958d86e6d76649e575d0816"
+}

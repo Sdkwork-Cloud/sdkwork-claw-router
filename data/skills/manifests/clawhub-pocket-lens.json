@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18265,
+  "uuid": "skill-clawhub-pocket-lens",
+  "skillKey": "clawhub-pocket-lens",
+  "name": "PocketLens",
+  "summary": "Use when user wants to track expenses, scan receipts, upload card payment screenshots, categorize spending, record transactions, check spending summaries, vi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pocket_lens",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Eden Jeongwoo Hong",
+      "features": [
+        "Use when user wants to track expenses, scan receipts, upload card payment screenshots, categori."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pocket-lens@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2323545?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pocket-lens",
+      "url": "https://clawhub.ai/skills/pocket-lens"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pocket-lens",
+    "url": "https://clawhub.ai/skills/pocket-lens",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pocket-lens-edfa852aa4c11461.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pocket-lens@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pocket-lens-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:021848c948a1868590140ec4be80ba80c001d0a270dfcf814e8ecdff15858210",
+      "artifactSizeBytes": 2424
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T14:40:44.032Z"
+}

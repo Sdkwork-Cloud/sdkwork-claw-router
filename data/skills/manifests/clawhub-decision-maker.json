@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58884,
+  "uuid": "skill-clawhub-decision-maker",
+  "skillKey": "clawhub-decision-maker",
+  "name": "Decision Maker",
+  "summary": "决策分析工具。利弊对比、加权决策矩阵、盲选消除偏见、决策框架推荐、风险评估。Decision maker with pros-cons analysis, weighted matrix, blind choice, decision frameworks.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.decision_maker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "决策分析工具。利弊对比、加权决策矩阵、盲选消除偏见、决策框架推荐、风险评估。Decision maker with pros-cons analysis, weighted matrix,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/decision-maker@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "decision-maker",
+      "url": "https://clawhub.ai/skills/decision-maker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "decision-maker",
+    "url": "https://clawhub.ai/skills/decision-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/decision-maker-2b1c9b4ec96e5e33.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/decision-maker@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-decision-maker-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f21628532f1a2739306267c34be8bc60ea4a782eace6aa018c0a255d8c708d7",
+      "artifactSizeBytes": 1977
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T18:53:19.575Z"
+}

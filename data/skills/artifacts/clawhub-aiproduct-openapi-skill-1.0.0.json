@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aiproduct-openapi-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aiproduct_openapi_skill",
+  "skill": {
+    "id": 56281,
+    "skillKey": "clawhub-aiproduct-openapi-skill",
+    "name": "AI Product Photography – API-powered"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aiproduct-openapi-skill",
+    "url": "https://clawhub.ai/skills/aiproduct-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aiproduct-openapi-skill-d2cfc4314c4d484c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Product still-life photos — replace or enhance the background around a product"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkleming",
+      "userId": "s173eywkn9gkx5va9p2tb6kh5h843s3s",
+      "displayName": "sparkleMing",
+      "image": "https://avatars.githubusercontent.com/u/38350996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776155438655,
+      "changelog": "- Initial release of aiproduct-openapi-skill (v1.0.0) for product still-life photo enhancement and background editing.\n- Allows background replacement or enhancement around a product using AI.\n- Secure integration: uses WESHOP_API_KEY for authentication; warns to never expose keys to other domains.\n- Includes endpoints to start runs, check run status, and upload images.\n- Supports background changes via text description or preset scene ID, with mask customization options.\n- Batch generation supported for up to 16 images per request.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fddaf1a956476472010e59589b38b0ebf3a70479e5fffb7bb822e2dc378c6b1b"
+}

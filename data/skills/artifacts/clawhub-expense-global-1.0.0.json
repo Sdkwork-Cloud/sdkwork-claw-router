@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/expense-global@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.expense_global",
+  "skill": {
+    "id": 61567,
+    "skillKey": "clawhub-expense-global",
+    "name": "海外费用报销"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "expense-global",
+    "url": "https://clawhub.ai/skills/expense-global",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/expense-global-6400d5673648089f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能费控助手，提供预算管理、费用标准设置、超标预警、费用分析、成本优化建议等功能。支持企业级费用管控，实现事前预算、事中控制、事后分析的闭环管理。Invoke when user needs to set budget, check cost standards, monitor spending, or ana..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gaogao605",
+      "userId": "s17cxwwzm94v9ntkczkmq0r2x983km1s",
+      "displayName": "fenbeitong-trip",
+      "image": "https://avatars.githubusercontent.com/u/265222913?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776049472559,
+      "changelog": "Initial release of 智能费控助手 (fb-cost-control-skill):\n\n- 提供预算管理、费用标准设置、超标预警、费用分析、成本优化建议等核心功能\n- 支持企业级事前预算、事中控制、事后分析的闭环费用管控\n- 费用标准体系涵盖差旅、日常费用，按职级与城市等级区分\n- 多维度分析预算与费用，生成可视化报表和优化建议\n- 预警与消息提醒机制保障及时发现超支和异常\n- 详细参数及输出格式，便于与系统集成",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a72e2cba6452c57b3db56f0b702032fd59b3a20d194d4384ab31bc1b61dc84fa"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8839,
+  "uuid": "skill-clawhub-mermaid-diagrams",
+  "skillKey": "clawhub-mermaid-diagrams",
+  "name": "Mermaid Diagrams",
+  "summary": "Create software diagrams using Mermaid syntax. Use when users need to create, visualize, or document software through diagrams including class diagrams, sequence diagrams, flowcharts, ERDs, C4 architecture diagrams, state diagrams, git gra.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mermaid_diagrams",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wpank",
+      "features": [
+        "Create software diagrams using Mermaid syntax",
+        "Use when users need to create, visualize, or document software through diagrams including class.",
+        "Triggers include requests to diagram, visualize, model, map out, or show the flow of a system."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mermaid-diagrams@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9498646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mermaid-diagrams",
+      "url": "https://clawhub.ai/skills/mermaid-diagrams"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mermaid-diagrams",
+    "url": "https://clawhub.ai/skills/mermaid-diagrams",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mermaid-diagrams-c82a594779f4ad3a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mermaid-diagrams@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mermaid-diagrams-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ee9a0250645db781a9daa65b3d4b49e8fb3f069c534fdbf22a1fe3f6d71cdf50",
+      "artifactSizeBytes": 2380
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T13:40:13.646Z"
+}

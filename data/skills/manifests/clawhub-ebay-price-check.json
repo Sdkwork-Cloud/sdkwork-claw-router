@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25219,
+  "uuid": "skill-clawhub-ebay-price-check",
+  "skillKey": "clawhub-ebay-price-check",
+  "name": "Ebay Price Check",
+  "summary": "Search eBay for current and sold item prices, providing price range, shipping, condition filters, and price history summaries.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ebay_price_check",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KL0nLutiy",
+      "features": [
+        "Search eBay for current and sold item prices, providing price range, shipping, condition filter."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ebay-price-check@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5372884?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ebay-price-check",
+      "url": "https://clawhub.ai/skills/ebay-price-check"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ebay-price-check",
+    "url": "https://clawhub.ai/skills/ebay-price-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ebay-price-check-2578e0fbb9b96630.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ebay-price-check@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ebay-price-check-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:23387ab2124594e676adc357225b27e65f263bac5b2616449cd0d8badc79d26e",
+      "artifactSizeBytes": 2144
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T21:30:48.558Z"
+}

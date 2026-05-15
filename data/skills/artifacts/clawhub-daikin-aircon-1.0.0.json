@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daikin-aircon@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daikin_aircon",
+  "skill": {
+    "id": 31166,
+    "skillKey": "clawhub-daikin-aircon",
+    "name": "Daikin Aircon Controller"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daikin-aircon",
+    "url": "https://clawhub.ai/skills/daikin-aircon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daikin-aircon-a8f7d5a1ca892688.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control Daikin air conditioners over WiFi. Use when the user wants to control their Daikin AC units - turn on/off, set temperature, mode, fan speed, swing, o..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leroylim",
+      "userId": "publishers:leroylim",
+      "displayName": "Han Yong Lim",
+      "image": "https://avatars.githubusercontent.com/u/34219969?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 270,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773644433024,
+      "changelog": "Daikin Aircon Skill v1.0.0\n\n- Initial release allowing control of Daikin air conditioners over local WiFi.\n- Supports setup, management, and control of multiple Daikin AC devices across several locations.\n- Device discovery, add, remove, and update functions included, with step-by-step setup guidance.\n- Full command set for power, mode, temperature, fan, swing, and special features (econo, powerful, etc.).\n- Intelligent handling of duplicate device names via location IDs.\n- Configuration persists across sessions for convenience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:843db38408cd672bd301c3cb43384efabe7a63ba9a80eb699d62c8aef59e424a"
+}

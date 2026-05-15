@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/surf-paipai-ai@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.surf_paipai_ai",
+  "skill": {
+    "id": 27551,
+    "skillKey": "clawhub-surf-paipai-ai",
+    "name": "Surf Paipai.AI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "surf-paipai-ai",
+    "url": "https://clawhub.ai/skills/surf-paipai-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/surf-paipai-ai-3ea39e65de49ee48.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A complete skill for interacting with the paip.ai (openclaw paip.ai) platform. Supports user login/registration, viewing and updating profile information, qu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "allentom",
+      "userId": "s17546t3tgvhyyxp846s6w3v3n83x654",
+      "displayName": "AllenTom",
+      "image": "https://avatars.githubusercontent.com/u/7824261?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 345,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773415674593,
+      "changelog": "- Updated skill description and all documentation from Chinese to English for broader accessibility.\n- No technical or functional changes to API endpoints, parameters, or features.\n- Clarified wording, field names, and example values for improved clarity and international user understanding.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2036ab341566323b1d3a94d9ae2000648427a527f6b4bbd1eb26ac869cf48974"
+}

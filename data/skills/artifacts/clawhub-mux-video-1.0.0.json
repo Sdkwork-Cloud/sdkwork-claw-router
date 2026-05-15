@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mux-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mux_video",
+  "skill": {
+    "id": 11535,
+    "skillKey": "clawhub-mux-video",
+    "name": "Mux Video Bot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mux-video",
+    "url": "https://clawhub.ai/skills/mux-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mux-video-c14e5577c6adba34.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Mux Video infrastructure skill for designing, ingesting, transcoding/packaging, playback ID policy, live streaming, clipping, and observability with Mux Data. Use when architecting or operating Mux-based video pipelines, live workflows, pl."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dktrn9ne",
+      "userId": "s177mngm39t32cf3ra87xttztn83jh91",
+      "displayName": "DKTR N9NE",
+      "image": "https://avatars.githubusercontent.com/u/135451135?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1982,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770213482046,
+      "changelog": "Initial release of the mux-video skill, providing best practices and operational guidance for architecting and running video delivery pipelines with Mux.\n\n- Covers end-to-end video workflow: ingest, transcode, package, secure, and deliver.\n- Defines asset lifecycle, playback ID models, and security best practices.\n- Emphasizes separation of control planes and operational reliability.\n- Details live streaming realities, encoder guidelines, clipping, and observability requirements.\n- Includes troubleshooting playbooks, anti-patterns, cost controls, and scaling guidance.\n- Outlines mastery signals and extension points for advanced usage.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3016b42dc2b3c423efe1ccfb007e111a34e87a736db2345b9c02be08e689dd05"
+}

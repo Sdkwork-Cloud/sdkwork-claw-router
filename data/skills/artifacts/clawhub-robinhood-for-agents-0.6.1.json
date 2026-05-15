@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/robinhood-for-agents@0.6.1",
+  "version": "0.6.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.robinhood_for_agents",
+  "skill": {
+    "id": 52100,
+    "skillKey": "clawhub-robinhood-for-agents",
+    "name": "Robinhood for Agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "robinhood-for-agents",
+    "url": "https://clawhub.ai/skills/robinhood-for-agents",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/robinhood-for-agents-9f6ae89cd5734233.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trade stocks, options, and crypto on Robinhood — dual mode (MCP tools or TypeScript client)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kevin1chun",
+      "userId": "publishers:kevin1chun",
+      "displayName": "Kevin Chun",
+      "image": "https://avatars.githubusercontent.com/u/6761698?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 441,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.6.1",
+      "createdAt": 1773268690486,
+      "changelog": "- Added metadata on credential storage (OAuth tokens managed via OS keychain, never stored on disk) and detail about browser login flow (tokens captured via Playwright, no DOM interaction).\n- Declared google-chrome as a requirement for initial login only (not needed for subsequent API usage).\n- No functional, API, or workflow changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ce0999c2aaf575f5c0506afd38a46d172009c311d78b6c82b220e56d997d6aa8"
+}

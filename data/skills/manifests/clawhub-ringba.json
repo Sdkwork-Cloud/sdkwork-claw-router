@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36178,
+  "uuid": "skill-clawhub-ringba",
+  "skillKey": "clawhub-ringba",
+  "name": "Ringba",
+  "summary": "Ringba integration. Manage data, records, and automate workflows. Use when the user wants to interact with Ringba data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ringba",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Ringba integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Ringba data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ringba@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ringba",
+      "url": "https://clawhub.ai/skills/ringba"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ringba",
+    "url": "https://clawhub.ai/skills/ringba",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ringba-a5d32a844132d38e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ringba@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ringba-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d781263bdbe7b3b166f8372837df678d6822de9cce101e62f30727a4d9cdb524",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:35:00.177Z"
+}

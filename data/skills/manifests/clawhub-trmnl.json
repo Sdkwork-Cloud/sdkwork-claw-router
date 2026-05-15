@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10002,
+  "uuid": "skill-clawhub-trmnl",
+  "skillKey": "clawhub-trmnl",
+  "name": "TRMNL Display",
+  "summary": "Generate content for TRMNL e-ink display devices using the TRMNL CSS framework and send via the trmnl CLI. Use when the user wants to display information on their TRMNL device, send messages to an e-ink display, create dashboard content, s.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trmnl",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "peetzweg/",
+      "features": [
+        "Generate content for TRMNL e-ink display devices using the TRMNL CSS framework and send via the.",
+        "Use when the user wants to display information on their TRMNL device, send messages to an e-ink.",
+        "Supports rich layouts with the TRMNL framework (flexbox, grid, tables, progress bars, typograph."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trmnl@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/839848?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trmnl",
+      "url": "https://clawhub.ai/skills/trmnl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trmnl",
+    "url": "https://clawhub.ai/skills/trmnl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trmnl-aaf2819a7ba4e600.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trmnl@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-trmnl-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2c79e3660f4adefdeef2184fa81a39f02d08fb47e0cf18929496ed09d498f43f",
+      "artifactSizeBytes": 2501
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T17:28:08.407Z"
+}

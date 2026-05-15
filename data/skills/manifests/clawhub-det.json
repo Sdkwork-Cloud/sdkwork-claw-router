@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20731,
+  "uuid": "skill-clawhub-det",
+  "skillKey": "clawhub-det",
+  "name": "DailyExpenseTracker",
+  "summary": "DailyExpenseTracker API integration for recording expenses, checking balances, and managing transactions. Use when user mentions expenses, spending, transact...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.det",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gurpreet Kait",
+      "features": [
+        "DailyExpenseTracker API integration for recording expenses, checking balances, and managing tra.",
+        "Use when user mentions expenses, spending, transact..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/det@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/100063447?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "det",
+      "url": "https://clawhub.ai/skills/det"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "det",
+    "url": "https://clawhub.ai/skills/det",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/det-3c2d493a01a75bfe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/det@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-det-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:feb6ebd23f3d67e0f7698eb4686dc890481b2738a6949680971fa4981fe3f5d4",
+      "artifactSizeBytes": 1860
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T23:51:42.464Z"
+}

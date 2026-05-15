@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cm-feature-toggle-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cm_feature_toggle_manager",
+  "skill": {
+    "id": 49258,
+    "skillKey": "clawhub-cm-feature-toggle-manager",
+    "name": "Feature Toggle Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cm-feature-toggle-manager",
+    "url": "https://clawhub.ai/skills/cm-feature-toggle-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cm-feature-toggle-manager-a156de8c28408f59.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit, manage, and clean up feature flags across codebases to reduce toggle debt"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 83,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777610265784,
+      "changelog": "Initial release of Feature Toggle Manager – a skill to audit, manage, and clean up feature flags across codebases.\n\n- Automates discovery and classification of feature flags from popular systems (LaunchDarkly, Unleash, env vars, custom).\n- Provides audit reports with staleness detection, orphan/phantom flag checks, and toggle debt scoring.\n- Generates safe, step-by-step cleanup plans for stale or fully rolled out feature flags.\n- Maps lifecycle management for new toggles, including rollout stages and best practices.\n- Supplies ready-to-use command templates for inventory, assessment, and cleanup operations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:538fe6a6da086a34b6742b527d1b139e86d959dbc64875ca4d54c14fb34e5941"
+}

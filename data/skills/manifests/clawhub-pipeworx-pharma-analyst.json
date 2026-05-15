@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43725,
+  "uuid": "skill-clawhub-pipeworx-pharma-analyst",
+  "skillKey": "clawhub-pipeworx-pharma-analyst",
+  "name": "Pipeworx Pharma Analyst",
+  "summary": "Access integrated clinical trial, FDA drug, and RxNorm data for pharma analysis including drug profiles, pipeline scans, safety reports, and detailed trial i...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_pharma_analyst",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Access integrated clinical trial, FDA drug, and RxNorm data for pharma analysis including drug."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-pharma-analyst@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138315805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-pharma-analyst",
+      "url": "https://clawhub.ai/skills/pipeworx-pharma-analyst"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-pharma-analyst",
+    "url": "https://clawhub.ai/skills/pipeworx-pharma-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-pharma-analyst-f797859f9a78ac7d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-pharma-analyst@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-pharma-analyst-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1d870840ed0daa78ff051dc307db4dfd0ede41c8879105c316279730576c9e4a",
+      "artifactSizeBytes": 1956
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T18:07:51.474Z"
+}

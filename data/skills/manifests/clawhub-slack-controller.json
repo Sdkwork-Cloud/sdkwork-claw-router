@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19312,
+  "uuid": "skill-clawhub-slack-controller",
+  "skillKey": "clawhub-slack-controller",
+  "name": "Slack Controller",
+  "summary": "Control Slack via Browser Automation to send messages, manage huddles, screen share, set status, and react as the logged-in user.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slack_controller",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "adeel-powerhouse",
+      "features": [
+        "Control Slack via Browser Automation to send messages, manage huddles, screen share, set status."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/slack-controller@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/216753589?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "slack-controller",
+      "url": "https://clawhub.ai/skills/slack-controller"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slack-controller",
+    "url": "https://clawhub.ai/skills/slack-controller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slack-controller-06596bed5ece5c3c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/slack-controller@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-slack-controller-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6dbe673955dc337ca36a6a2120c115432b10687742d5008cd0def9482cd7dda3",
+      "artifactSizeBytes": 2520
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T17:57:51.353Z"
+}

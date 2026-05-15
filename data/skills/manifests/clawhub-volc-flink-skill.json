@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59828,
+  "uuid": "skill-clawhub-volc-flink-skill",
+  "skillKey": "clawhub-volc-flink-skill",
+  "name": "Volcano Engine Serverless Flink Skill",
+  "summary": "火山引擎 Flink 版统一管理技能，智能路由到合适的子技能处理 Flink 相关问题。包括工具管理、项目配置、资源管理、连接管理、任务开发、任务运维、监控诊断等全流程功能。Use this skill as the entrypoint when the user expresses a concrete Fl...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.volc_flink_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cui Wenzheng",
+      "features": [
+        "火山引擎 Flink 版统一管理技能，智能路由到合适的子技能处理 Flink 相关问题。包括工具管理、项目配置、资源管理、连接管理、任务开发、任务运维、监控诊断等全流程功能。Use this."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/volc-flink-skill@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2982748?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "volc-flink-skill",
+      "url": "https://clawhub.ai/skills/volc-flink-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "volc-flink-skill",
+    "url": "https://clawhub.ai/skills/volc-flink-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/volc-flink-skill-9fc2e6f812da2572.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/volc-flink-skill@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-volc-flink-skill-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:07f583ad836752ea5d3818d1753480993b4ed1aff0a9530409e197c5d965e80a",
+      "artifactSizeBytes": 2374
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T04:23:50.932Z"
+}

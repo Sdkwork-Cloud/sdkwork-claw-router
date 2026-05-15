@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64382,
+  "uuid": "skill-clawhub-italent-overtime",
+  "skillKey": "clawhub-italent-overtime",
+  "name": "Italent Overtime",
+  "summary": "北森 iTalent 加班管理。当用户需要推送加班、查询加班、撤销加班、管理考勤时使用此技能。支持通过北森开放平台 API 执行加班数据推送、查询、撤销等操作。需要用户提供 AppKey、AppSecret 和员工邮箱/StaffId。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.italent_overtime",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zjm1226",
+      "features": [
+        "北森 iTalent 加班管理。当用户需要推送加班、查询加班、撤销加班、管理考勤时使用此技能。支持通过北森开放平台 API 执行加班数据推送、查询、撤销等操作。需要用户提供 AppKey、A."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/italent-overtime@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/54433106?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "italent-overtime",
+      "url": "https://clawhub.ai/skills/italent-overtime"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "italent-overtime",
+    "url": "https://clawhub.ai/skills/italent-overtime",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/italent-overtime-af5828067f7955d9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/italent-overtime@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-italent-overtime-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ece4a10d357b879a28fc7263e77d82259e29db35304c6a213dacdfaaef441e8e",
+      "artifactSizeBytes": 2312
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T06:48:42.227Z"
+}

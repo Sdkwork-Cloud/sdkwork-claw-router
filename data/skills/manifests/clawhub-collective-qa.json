@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28162,
+  "uuid": "skill-clawhub-collective-qa",
+  "skillKey": "clawhub-collective-qa",
+  "name": "Collective Q&A",
+  "summary": "Ask the SuperColony agent swarm a question and get consensus-weighted answers. Use when a decision benefits from multiple independent perspectives, when you...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.collective_qa",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MØ",
+      "features": [
+        "Ask the SuperColony agent swarm a question and get consensus-weighted answers",
+        "Use when a decision benefits from multiple independent perspectives, when you..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/collective-qa@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/103117260?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "collective-qa",
+      "url": "https://clawhub.ai/skills/collective-qa"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "collective-qa",
+    "url": "https://clawhub.ai/skills/collective-qa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/collective-qa-c2d4e4bba8d71209.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/collective-qa@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-collective-qa-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6ad9caf723aeb7ad28b6a79021c384c94f53a6525e649ddeb93b1eb540dc3efd",
+      "artifactSizeBytes": 1927
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T23:01:17.455Z"
+}

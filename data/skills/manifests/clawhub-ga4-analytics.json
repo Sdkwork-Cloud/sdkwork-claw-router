@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8732,
+  "uuid": "skill-clawhub-ga4-analytics",
+  "skillKey": "clawhub-ga4-analytics",
+  "name": "GA4 Analytics",
+  "summary": "Google Analytics 4, Search Console, and Indexing API toolkit. Analyze website traffic, page performance, user demographics, real-time visitors, search queries, and SEO metrics. Use when the user asks to: check site traffic, analyze page vi.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ga4_analytics",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "adamkristopher",
+      "features": [
+        "Google Analytics 4, Search Console, and Indexing API toolkit",
+        "Analyze website traffic, page performance, user demographics, real-time visitors, search querie.",
+        "Use when the user asks to: check site traffic, analyze page views, see traffic sources, view us.",
+        "Requires a Google Cloud service account with GA4 and Search Console access."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ga4-analytics@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/188609829?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ga4-analytics",
+      "url": "https://clawhub.ai/skills/ga4-analytics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ga4-analytics",
+    "url": "https://clawhub.ai/skills/ga4-analytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ga4-analytics-9a1276f0dab07ecc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ga4-analytics@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ga4-analytics-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b06c836e1a7170c097b0abd4cda7ac67ea3ea659447469747dc94d3f02a44e71",
+      "artifactSizeBytes": 2043
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-26T21:54:06.311Z"
+}

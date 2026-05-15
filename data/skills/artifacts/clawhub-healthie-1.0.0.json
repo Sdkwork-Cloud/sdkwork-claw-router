@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/healthie@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.healthie",
+  "skill": {
+    "id": 54643,
+    "skillKey": "clawhub-healthie",
+    "name": "Healthie"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "healthie",
+    "url": "https://clawhub.ai/skills/healthie",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/healthie-997537afa441cb84.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Healthie — manage patients, appointments, goals, and documents via GraphQL API"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiwithabidi",
+      "userId": "publishers:aiwithabidi",
+      "displayName": "aiwithabidi",
+      "image": "https://avatars.githubusercontent.com/u/208891229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 458,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772621661469,
+      "changelog": "Initial release of Healthie skill (version 1.0.0):\n\n- Manage patients, appointments, goals, and documents with the Healthie GraphQL API.\n- Offers a CLI tool for listing, creating, and managing patients, appointments, goals, providers, forms, tags, and documents.\n- Outputs results in JSON or human-readable formats.\n- Requires a HEALTHIE_API_KEY environment variable for authentication.\n- No external dependencies; works with Python 3.10+ standard library.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1514e91f51ca568fd5fc0afb5146ac60b77fc2a77d7c675a8cd7acf23f0ef728"
+}

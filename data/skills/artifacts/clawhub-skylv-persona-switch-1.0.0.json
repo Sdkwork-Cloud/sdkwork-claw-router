@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skylv-persona-switch@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_persona_switch",
+  "skill": {
+    "id": 62136,
+    "skillKey": "clawhub-skylv-persona-switch",
+    "name": "Skylv Persona Switch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-persona-switch",
+    "url": "https://clawhub.ai/skills/skylv-persona-switch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-persona-switch-2f460ac4f4f00450.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "切换 agent 的人设 soul.md，支持三套预设角色与用户原有人设间自由切换并同步更新身份信息。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 215,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776647687537,
+      "changelog": "- Initial release of persona-switch: enables dynamic switching between three preset personas and the original persona (with full backup/restore support).\n- Provides easy toggle between \"cyber_friend\", \"founder_lobster\", \"gentle_companion\", and original settings through commands.\n- Ensures automatic backup of original persona when switching, and cleans up backup upon restoring.\n- Automatically updates the Vibe field in IDENTITY.md to match the new persona.\n- Provides confirmation messages in the tone of the newly switched persona for immediate feedback.\n- Robust handling for invalid options and edge cases to guide the user.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d9f1ff7656a88ed647de8c761e3a7f9a5bfbeeab0e8b47bad6949472a9f8e1a7"
+}

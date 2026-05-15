@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63378,
+  "uuid": "skill-clawhub-exwind-monitor",
+  "skillKey": "clawhub-exwind-monitor",
+  "name": "Exwind Monitor",
+  "summary": "每10分钟监控EXWIND网站更新，检测到新内容时自动发送飞书消息提醒。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.exwind_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LoRexxar",
+      "features": [
+        "每10分钟监控EXWIND网站更新，检测到新内容时自动发送飞书消息提醒。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/exwind-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12526901?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "exwind-monitor",
+      "url": "https://clawhub.ai/skills/exwind-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "exwind-monitor",
+    "url": "https://clawhub.ai/skills/exwind-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/exwind-monitor-992a86326efbb624.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/exwind-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-exwind-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f4bbc6999f88ba725e4a39d9e225b3e68de1a3c5547060c9abcc856630c37c1",
+      "artifactSizeBytes": 2187
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T03:08:59.869Z"
+}

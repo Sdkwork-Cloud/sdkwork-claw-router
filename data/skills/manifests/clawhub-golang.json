@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20081,
+  "uuid": "skill-clawhub-golang",
+  "skillKey": "clawhub-golang",
+  "name": "Golang",
+  "summary": "Build, test, lint, and format Go projects with integrated dev tooling. Use when compiling binaries, running tests, linting code, or formatting files.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.golang",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain3",
+      "features": [
+        "Build, test, lint, and format Go projects with integrated dev tooling",
+        "Use when compiling binaries, running tests, linting code, or formatting files."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/golang@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218212813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "golang",
+      "url": "https://clawhub.ai/skills/golang"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "golang",
+    "url": "https://clawhub.ai/skills/golang",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/golang-d754ed9f64ac293b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/golang@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-golang-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d48e273ef9aa5224faf6ce7ef6e36976716d8d4a3bddcbe45f57a553df978ad1",
+      "artifactSizeBytes": 1816
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T10:43:57.666Z"
+}

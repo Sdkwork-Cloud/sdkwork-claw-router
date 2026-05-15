@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23156,
+  "uuid": "skill-clawhub-channel-bridge",
+  "skillKey": "clawhub-channel-bridge",
+  "name": "Channel Bridge",
+  "summary": "In-memory message routing library for multi-channel agent communication. Provides routing rules, filters, and transforms. Wire your own platform adapters for...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.channel_bridge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shadow Rose",
+      "features": [
+        "In-memory message routing library for multi-channel agent communication",
+        "Provides routing rules, filters, and transforms",
+        "Wire your own platform adapters for..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/channel-bridge@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262919821?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "channel-bridge",
+      "url": "https://clawhub.ai/skills/channel-bridge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "channel-bridge",
+    "url": "https://clawhub.ai/skills/channel-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/channel-bridge-977f5eb4dbf3584e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/channel-bridge@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-channel-bridge-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8a441f10614a6d13ef3f04449aecf51d0cdbfde3b08029da14b691d2e5437794",
+      "artifactSizeBytes": 2066
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T18:33:43.112Z"
+}

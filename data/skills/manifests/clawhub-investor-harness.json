@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55139,
+  "uuid": "skill-clawhub-investor-harness",
+  "skillKey": "clawhub-investor-harness",
+  "name": "Investor Harness",
+  "summary": "Open prompt stack for public-market investment research. Show this menu after install: 📊 Research: 1.Company Deep-dive 2.Industry Map 3.Investment Thesis 📈...",
+  "version": "0.6.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.investor_harness",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "focusailab",
+      "features": [
+        "Open prompt stack for public-market investment research",
+        "Show this menu after install: 📊 Research: 1.Company Deep-dive 2.Industry Map 3.Investment Thes."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/investor-harness@0.6.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201520547?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "investor-harness",
+      "url": "https://clawhub.ai/skills/investor-harness"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "investor-harness",
+    "url": "https://clawhub.ai/skills/investor-harness",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/investor-harness-3b6b1e8a196215b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/investor-harness@0.6.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-investor-harness-0.6.5.json",
+      "version": "0.6.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1996aeb2a3d624f89b455c282d4bfa73e7fa893bf65592898ddac1dc36bf9539",
+      "artifactSizeBytes": 1981
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T15:42:47.075Z"
+}

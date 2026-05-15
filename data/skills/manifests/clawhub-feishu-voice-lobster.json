@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69655,
+  "uuid": "skill-clawhub-feishu-voice-lobster",
+  "skillKey": "clawhub-feishu-voice-lobster",
+  "name": "飞书语音",
+  "summary": "实现飞书语音消息的上传下载、语音转文字及文字转语音，支持与 ElevenLabs 语音服务集成。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_voice_lobster",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "godzff",
+      "features": [
+        "实现飞书语音消息的上传下载、语音转文字及文字转语音，支持与 ElevenLabs 语音服务集成。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-voice-lobster@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14889649?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-voice-lobster",
+      "url": "https://clawhub.ai/skills/feishu-voice-lobster"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-voice-lobster",
+    "url": "https://clawhub.ai/skills/feishu-voice-lobster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-voice-lobster-3e00c2bc5b605867.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-voice-lobster@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-voice-lobster-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ed8a07c99b01dddf8ea2e4ab076305b8efd2e15df74d83a0def70ec76cae898",
+      "artifactSizeBytes": 2325
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T16:06:42.363Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20121,
+  "uuid": "skill-clawhub-agent-debate",
+  "skillKey": "clawhub-agent-debate",
+  "name": "Agent Debate",
+  "summary": "Coordinates multiple agents to independently argue competing approaches, then synthesizes their positions to identify the best solution for complex decisions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_debate",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "0xrichyrich",
+      "features": [
+        "Coordinates multiple agents to independently argue competing approaches, then synthesizes their."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-debate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/123500475?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-debate",
+      "url": "https://clawhub.ai/skills/agent-debate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-debate",
+    "url": "https://clawhub.ai/skills/agent-debate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-debate-185c7d3819b7c6c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-debate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-debate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:32b340527d2913e50745012840a2c90de2c192c331b2d33b945efda51e3f1c68",
+      "artifactSizeBytes": 2507
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T09:01:52.025Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fund-wallet@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fund_wallet",
+  "skill": {
+    "id": 28500,
+    "skillKey": "clawhub-fund-wallet",
+    "name": "Fund Wallet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fund-wallet",
+    "url": "https://clawhub.ai/skills/fund-wallet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fund-wallet-739fbc9fc452e0e9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Add funds to the wallet. Use when you or the user want to fund, deposit, top up, load, add funds, onramp, buy crypto, or get tokens into the wallet. Also use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rachidjarray-hk-qa-fdt",
+      "userId": "publishers:rachidjarray-hk-qa-fdt",
+      "displayName": "Rachid Jarray",
+      "image": "https://avatars.githubusercontent.com/u/111736103?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 324,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773031670985,
+      "changelog": "Initial release of the \"fund-wallet\" skill:\n\n- Allows users to add funds to their Finance District wallet through credit card/onramp or direct token transfer.\n- Provides clear steps for checking authentication status and retrieving wallet addresses.\n- Includes guidance on verifying funds arrived and chain-specific confirmation advice.\n- User-invocable; recommended when users request help adding funds or encounter insufficient balance.\n- Supports all EVM chains and Solana; emphasizes sending funds on the correct chain for safety.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f7f1c63dc8d72def03cc0a089db684963866a01bab66020545e8de575f401361"
+}

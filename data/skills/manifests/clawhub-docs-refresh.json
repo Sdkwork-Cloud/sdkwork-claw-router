@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32048,
+  "uuid": "skill-clawhub-docs-refresh",
+  "skillKey": "clawhub-docs-refresh",
+  "name": "Docs Refresh",
+  "summary": "Refresh authoritative docs through a routed progressive-disclosure workflow.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docs_refresh",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jzg-lab",
+      "features": [
+        "Refresh authoritative docs through a routed progressive-disclosure workflow."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/docs-refresh@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/248180643?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "docs-refresh",
+      "url": "https://clawhub.ai/skills/docs-refresh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docs-refresh",
+    "url": "https://clawhub.ai/skills/docs-refresh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docs-refresh-d5ccc8096c6eb909.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/docs-refresh@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-docs-refresh-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1fe08da0df052a2125eeae23fdd114f625ae656c22d7b35fd81758fc5ebd93ae",
+      "artifactSizeBytes": 2127
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T10:52:23.858Z"
+}

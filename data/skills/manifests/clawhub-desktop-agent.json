@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38990,
+  "uuid": "skill-clawhub-desktop-agent",
+  "skillKey": "clawhub-desktop-agent",
+  "name": "Desktop Agent",
+  "summary": "Control desktop apps via mouse and keyboard, capture screenshots, teach AI tasks by demonstration, and automate workflows with saved reusable tasks.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.desktop_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Fuzzyb33s",
+      "features": [
+        "Control desktop apps via mouse and keyboard, capture screenshots, teach AI tasks by demonstrati."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/desktop-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/221636957?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "desktop-agent",
+      "url": "https://clawhub.ai/skills/desktop-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "desktop-agent",
+    "url": "https://clawhub.ai/skills/desktop-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/desktop-agent-7d5b24f075ec58bf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/desktop-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-desktop-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:62ba775674c56acfbc3a1d60bbd2ee79bd190821987e32580e84a49cdf5b18b0",
+      "artifactSizeBytes": 2254
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T03:13:24.245Z"
+}

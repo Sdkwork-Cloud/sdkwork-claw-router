@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14655,
+  "uuid": "skill-clawhub-palaia",
+  "skillKey": "clawhub-palaia",
+  "name": "Palaia",
+  "summary": "Local, crash-safe persistent memory for OpenClaw agents. SQLite-backed by default. Semantic search, projects, scopes, auto-capture. After installing or updat...",
+  "version": "2.7.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.palaia",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "iret77",
+      "features": [
+        "Local, crash-safe persistent memory for OpenClaw agents",
+        "SQLite-backed by default",
+        "Semantic search, projects, scopes, auto-capture",
+        "After installing or updat..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/palaia@2.7.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63622643?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "palaia",
+      "url": "https://clawhub.ai/skills/palaia"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "palaia",
+    "url": "https://clawhub.ai/skills/palaia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/palaia-f25d4649d2905394.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/palaia@2.7.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-palaia-2.7.3.json",
+      "version": "2.7.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:304caa7cab4c700cb5ba7177d80ea11ad1bed96496a8ce484eafd678d523e78e",
+      "artifactSizeBytes": 1924
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T10:05:02.057Z"
+}

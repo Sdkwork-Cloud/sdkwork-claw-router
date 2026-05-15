@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qimao-free-novel@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qimao_free_novel",
+  "skill": {
+    "id": 30476,
+    "skillKey": "clawhub-qimao-free-novel",
+    "name": "Qimao Free Novel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qimao-free-novel",
+    "url": "https://clawhub.ai/skills/qimao-free-novel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qimao-free-novel-5fe3fc20a9b4d496.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides organized access to Qimao Free Novel's public book categories, membership details, help topics, and official activity information."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codenova58",
+      "userId": "s173fekm3yw84k7gp861dme7dd83gvyf",
+      "displayName": "codenova58",
+      "image": "https://avatars.githubusercontent.com/u/191358186?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 272,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774161574953,
+      "changelog": "Initial release of qimao-free-novel skill:\n\n- Registers the “七猫免费小说” (Qimao Free Novel) skill for organizing information from public sections of the site.\n- Focuses on book library categories, rankings, membership details, help center, and official activity pages.\n- Explicitly excludes piracy, account sharing, API calls, or handling private user/account data.\n- Gathers and summarizes member benefits, device support, download limits, FAQs, and copyright info.\n- Designed for automation with context-sensitive notes on regional and temporal differences in content.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dde42ebcd138c04e78c80ca9996b87f0537390da31187052bd5edc48b989ed8e"
+}

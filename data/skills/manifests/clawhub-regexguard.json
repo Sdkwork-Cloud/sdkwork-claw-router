@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45316,
+  "uuid": "skill-clawhub-regexguard",
+  "skillKey": "clawhub-regexguard",
+  "name": "regexguard",
+  "summary": "Regex safety & correctness analyzer -- detects catastrophic backtracking, portability errors, correctness bugs, maintainability issues, anchoring problems, a...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.regexguard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "suhteevah",
+      "features": [
+        "Regex safety & correctness analyzer -",
+        "detects catastrophic backtracking, portability errors, correctness bugs, maintainability issues."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/regexguard@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2342183?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "regexguard",
+      "url": "https://clawhub.ai/skills/regexguard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "regexguard",
+    "url": "https://clawhub.ai/skills/regexguard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/regexguard-5a86e75b1d66a3df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/regexguard@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-regexguard-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:860f79bd3ae0c2475c8133e8fa5062a32711cda26e5faa03a5c308c4ecb50a0e",
+      "artifactSizeBytes": 1910
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T15:18:49.403Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22092,
+  "uuid": "skill-clawhub-meegle-connector",
+  "skillKey": "clawhub-meegle-connector",
+  "name": "Meegle Connector",
+  "summary": "Connect to Meegle via MCP service, support OAuth authentication, and enable querying and managing work items, views, etc.",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meegle_connector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wadxm",
+      "features": [
+        "Connect to Meegle via MCP service, support OAuth authentication, and enable querying and managi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meegle-connector@1.0.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9190997?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meegle-connector",
+      "url": "https://clawhub.ai/skills/meegle-connector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meegle-connector",
+    "url": "https://clawhub.ai/skills/meegle-connector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meegle-connector-468056e75558666f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meegle-connector@1.0.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-meegle-connector-1.0.9.json",
+      "version": "1.0.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:239dc8c97aed407ae817ef5eb05916c68011dff21ba4a1204cc922a41c0bb1e8",
+      "artifactSizeBytes": 2300
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T16:12:48.979Z"
+}

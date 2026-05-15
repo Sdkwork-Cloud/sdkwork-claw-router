@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oejts-personality-tuner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oejts_personality_tuner",
+  "skill": {
+    "id": 25711,
+    "skillKey": "clawhub-oejts-personality-tuner",
+    "name": "Oejts Personality Tuner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oejts-personality-tuner",
+    "url": "https://clawhub.ai/skills/oejts-personality-tuner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oejts-personality-tuner-09ed2521164b9edf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Administer and score the Open Extended Jungian Type Scales (OEJTS 1.2), map results to MBTI-style interaction preferences, and propose/apply personality-awar..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "salvagedeck",
+      "userId": "publishers:salvagedeck",
+      "displayName": "salvagedeck",
+      "image": "https://avatars.githubusercontent.com/u/254569927?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 382,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772576719097,
+      "changelog": "Initial release of oejts-personality-tuner.\n\n- Administer and score the Open Extended Jungian Type Scales (OEJTS 1.2) assessment.\n- Map OEJTS results to MBTI-style interaction preferences.\n- Propose and apply updates to USER.md and SOUL.md to adapt assistant behavior based on personality profile.\n- Supports preview of changes (dry run) and appends managed profile blocks without overwriting other content.\n- Includes reference documentation and a command-line workflow for personality-aware tuning.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:012972fe1d57ff0f505ed6e7895db66b3a4f710725cefdd9561ea96d9b740ab9"
+}

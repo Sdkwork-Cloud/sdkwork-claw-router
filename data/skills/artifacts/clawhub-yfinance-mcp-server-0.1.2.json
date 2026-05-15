@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yfinance-mcp-server@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yfinance_mcp_server",
+  "skill": {
+    "id": 17305,
+    "skillKey": "clawhub-yfinance-mcp-server",
+    "name": "Yfinance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yfinance-mcp-server",
+    "url": "https://clawhub.ai/skills/yfinance-mcp-server",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yfinance-mcp-server-1480f7c706c048fd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access Yahoo Finance data — stock prices, history, financials, options, dividends, news, and market screeners"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rizkydwicmt",
+      "userId": "publishers:rizkydwicmt",
+      "displayName": "rizkydwicmt",
+      "image": "https://avatars.githubusercontent.com/u/60995191?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 990,
+      "installsAllTime": 5,
+      "installsCurrent": 2,
+      "stars": 6,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1771314284097,
+      "changelog": "- Added `install.sh` script for automated installation.\n- Enables one-command setup: Python environment, dependencies, mcporter config, and OpenClaw skill registration.\n- Supports customization via environment variables for project, venv, Python version, mcporter config, and skill directory.\n- Documentation updated with install steps and usage instructions for the new installer.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:145ea3e599ce6febd270ac1c24cb84c23bb2e6051bb71ba3252e0f9018fb19de"
+}

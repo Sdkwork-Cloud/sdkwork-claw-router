@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33264,
+  "uuid": "skill-clawhub-windows-native-dialog",
+  "skillKey": "clawhub-windows-native-dialog",
+  "name": "Windows Native Dialog",
+  "summary": "Handles native Windows file picker dialogs from WSL2 using exec and PowerShell",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.windows_native_dialog",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Owlock",
+      "features": [
+        "Handles native Windows file picker dialogs from WSL2 using exec and PowerShell"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/windows-native-dialog@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/135854806?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "windows-native-dialog",
+      "url": "https://clawhub.ai/skills/windows-native-dialog"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "windows-native-dialog",
+    "url": "https://clawhub.ai/skills/windows-native-dialog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/windows-native-dialog-a3bf2feb8a6a3dfd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/windows-native-dialog@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-windows-native-dialog-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:60e3283b722164e9ff655fa2cb18830a2d3b42ac08252dcbb6d246810c034456",
+      "artifactSizeBytes": 1879
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T00:30:05.502Z"
+}

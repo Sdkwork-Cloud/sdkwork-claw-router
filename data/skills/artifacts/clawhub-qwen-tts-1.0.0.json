@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qwen-tts@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qwen_tts",
+  "skill": {
+    "id": 9190,
+    "skillKey": "clawhub-qwen-tts",
+    "name": "Qwen3-tts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qwen-tts",
+    "url": "https://clawhub.ai/skills/qwen-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qwen-tts-061915409dcce59b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local text-to-speech using Qwen3-TTS-12Hz-1.7B-CustomVoice. Use when generating audio from text, creating voice messages, or when TTS is requested. Supports 10 languages including Italian, 9 premium speaker voices, and instruction-based vo."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "paki81",
+      "userId": "publishers:paki81",
+      "displayName": "paki81",
+      "image": "https://avatars.githubusercontent.com/u/32157261?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3446,
+      "installsAllTime": 37,
+      "installsCurrent": 35,
+      "stars": 9,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770109651955,
+      "changelog": "Initial release of qwen-tts v1.0.0:\n\n- Adds offline local text-to-speech using Qwen3-TTS-12Hz-1.7B-CustomVoice.\n- Supports 10 languages, including Italian, with 9 premium speaker voices.\n- Instruction-based voice control: adjust emotion, tone, and style from the command line.\n- Provides easy setup and quick command-line usage; outputs standard WAV files.\n- Integrates with OpenClaw and alternatives to cloud-based TTS (like ElevenLabs).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:65318863e4b30a9114a975208d66db41242025ea18622eab911a7655c43f50d3"
+}

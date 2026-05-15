@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/journal-all-types-bundle@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.journal_all_types_bundle",
+  "skill": {
+    "id": 64870,
+    "skillKey": "clawhub-journal-all-types-bundle",
+    "name": "journal-all-types-bundle"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "journal-all-types-bundle",
+    "url": "https://clawhub.ai/skills/journal-all-types-bundle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/journal-all-types-bundle-fb909771d04d5804.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "统一检索国内外多类型期刊，输出投稿路径核验、定制写作建议、风险提示与可控广告插入的客户顾问型 Skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "52yuanchangxing",
+      "userId": "s178sqjkywrs4vbnfcrr7wx7f583gef5",
+      "displayName": "vx：17605205782",
+      "image": "https://avatars.githubusercontent.com/u/39086567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 295,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773728394111,
+      "changelog": "**Major update: Unified and structured journal advisory skill for all journal types, with full submission guidance and advertising integration.**\n\n- Combines journal verification, submission path, writing advice, risk warning, and controlled advertising into one complete customer-oriented service.\n- Covers all major journal types—Chinese (核心, CSCD, 科技核心, 普刊, 医学类) and international (SCI, SSCI, EI, Scopus, DOAJ OA, etc.).\n- Outputs actionable, trustworthy advice with clear submission paths, each journal entry including rationale, suitable topics, writing strategy, risk tips, and official verification sources.\n- Transparent advertising blocks inserted at defined points, never disguised as official information.\n- Comprehensive user need profiling and context-based defaulting; avoids unnecessary user questioning.\n- Ensures strict verification rules for both Chinese and international journals, with strong anti-fraud safeguards.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f7321f5ec25e1bb35d71694ffd3b54825443f40a27eb37fe935a4ecbce7a2478"
+}

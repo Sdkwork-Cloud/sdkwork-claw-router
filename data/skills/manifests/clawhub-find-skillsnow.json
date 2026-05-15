@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28215,
+  "uuid": "skill-clawhub-find-skillsnow",
+  "skillKey": "clawhub-find-skillsnow",
+  "name": "Find Skills",
+  "summary": "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"find a skill for X\", \"is there a skill that can...\", or express...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_skillsnow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Keyserkazi1",
+      "features": [
+        "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"fi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/find-skillsnow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255859250?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "find-skillsnow",
+      "url": "https://clawhub.ai/skills/find-skillsnow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-skillsnow",
+    "url": "https://clawhub.ai/skills/find-skillsnow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-skillsnow-533baa1da1bfd4e0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/find-skillsnow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-find-skillsnow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5f77112860be2f7205568a20877ae99a2f68a31c4e8b9400bef16603b4ae9ee9",
+      "artifactSizeBytes": 2342
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T22:54:06.272Z"
+}

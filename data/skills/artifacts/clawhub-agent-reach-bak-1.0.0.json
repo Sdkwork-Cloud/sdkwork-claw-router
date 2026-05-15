@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-reach-bak@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_reach_bak",
+  "skill": {
+    "id": 37794,
+    "skillKey": "clawhub-agent-reach-bak",
+    "name": "Agent Reach.Bak"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-reach-bak",
+    "url": "https://clawhub.ai/skills/agent-reach-bak",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-reach-bak-9c616c76a003c0a6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Give your AI agent eyes to see the entire internet. 7500+ GitHub stars. Search and read 14 platforms: Twitter/X, Reddit, YouTube, GitHub, Bilibili, XiaoHongS..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "reiy-leo",
+      "userId": "s172fmpd2mvg2zpt5st26vx08d83e7sh",
+      "displayName": "Reiy Leo",
+      "image": "https://avatars.githubusercontent.com/u/2398514?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 2,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774296152528,
+      "changelog": "Agent Reach 1.0.0 — Initial Release\n\n- Adds support to search and read from 14 platforms, including Twitter/X, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu, Douyin, Weibo, WeChat Articles, LinkedIn, Instagram, RSS, Exa web search, and any web page.\n- Offers one-command install and zero configuration for 8 channels.\n- Includes diagnostic tool (`agent-reach doctor`) to check channel availability and troubleshoot issues.\n- Provides a comprehensive usage guide for platform-specific commands and setup.\n- Enforces clear workspace rules for file management and persistent data.\n- Supports channel setup and interactive use via keyword triggers in both English and Chinese.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:89413aa608d45591d28521f34433f3682a972a1d3abf899177b063c29bc68a3b"
+}

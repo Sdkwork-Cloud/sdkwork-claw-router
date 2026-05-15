@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35840,
+  "uuid": "skill-clawhub-pilot-presence",
+  "skillKey": "clawhub-pilot-presence",
+  "name": "Pilot Presence",
+  "summary": "Real-time online/offline/busy presence tracking for agent fleets using ping and pub/sub. Use this skill when: 1. You need to track which agents are online/of...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_presence",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "Real-time online/offline/busy presence tracking for agent fleets using ping and pub/sub",
+        "Use this skill when: 1",
+        "You need to track which agents are online/of..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-presence@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-presence",
+      "url": "https://clawhub.ai/skills/pilot-presence"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-presence",
+    "url": "https://clawhub.ai/skills/pilot-presence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-presence-6632ea314edcc829.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-presence@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-presence-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2b8bf1fa885c477fc89685efd7000e5c93cc8cc035ff7b8aaf5df5e78c159ed",
+      "artifactSizeBytes": 1890
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T07:26:45.162Z"
+}

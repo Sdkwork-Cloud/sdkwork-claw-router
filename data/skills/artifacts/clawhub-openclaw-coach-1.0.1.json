@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-coach@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_coach",
+  "skill": {
+    "id": 60785,
+    "skillKey": "clawhub-openclaw-coach",
+    "name": "Openclaw Coach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-coach",
+    "url": "https://clawhub.ai/skills/openclaw-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-coach-dd9fc482068bc621.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw 私人教练 - 每日文档同步+技巧教学。用于 (1) 每天自动从官网同步最新文档到 Obsidian 知识库 (2) 每天早上 7:21 发送 OpenClaw 使用技巧 (3) 每天晚上 21:05 让用户选择想了解的技巧主题 (4) 检测 OpenClaw 版本更新并提醒"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rabbot42",
+      "userId": "publishers:rabbot42",
+      "displayName": "rabbot42",
+      "image": "https://avatars.githubusercontent.com/u/258579367?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 325,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772896030305,
+      "changelog": "openclaw-coach v1.0.1\n\n- Added SKILL.md with detailed usage, task schedule, and user interaction process.\n- Documents daily doc sync, scheduled tips, and version update reminders.\n- Describes Obsidian knowledge base structure and tip article template.\n- Lists manual commands for syncing docs and accessing tips.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ff4ae2ebd04cfbab82c465885e9788aa3e57a22505c5e6e95613e3d4287f38b0"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20162,
+  "uuid": "skill-clawhub-claude-code-cli-openclaw",
+  "skillKey": "clawhub-claude-code-cli-openclaw",
+  "name": "Claude Code CLI for OpenClaw",
+  "summary": "Install, authenticate, and use Claude Code CLI as a native coding tool for any OpenClaw agent system.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code_cli_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Asif",
+      "features": [
+        "Install, authenticate, and use Claude Code CLI as a native coding tool for any OpenClaw agent s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claude-code-cli-openclaw@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2099592?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claude-code-cli-openclaw",
+      "url": "https://clawhub.ai/skills/claude-code-cli-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code-cli-openclaw",
+    "url": "https://clawhub.ai/skills/claude-code-cli-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-cli-openclaw-ec8f85ffd2eb6aa5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claude-code-cli-openclaw@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-claude-code-cli-openclaw-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3512339c8aa75f110e732581b2f88b4ec39dcfa13e128f2d5a475e0ea08e1ad2",
+      "artifactSizeBytes": 2091
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T07:04:28.784Z"
+}

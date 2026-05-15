@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60253,
+  "uuid": "skill-clawhub-dingtalk-group-saver",
+  "skillKey": "clawhub-dingtalk-group-saver",
+  "name": "Dingtalk Group Saver",
+  "summary": "自动在钉钉群中被@时保存群ID和群名，双写至JSON和MEMORY.md实现持久化和跨Session共享。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dingtalk_group_saver",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "johnson",
+      "features": [
+        "自动在钉钉群中被@时保存群ID和群名，双写至JSON和MEMORY.md实现持久化和跨Session共享。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dingtalk-group-saver@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2647732?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dingtalk-group-saver",
+      "url": "https://clawhub.ai/skills/dingtalk-group-saver"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dingtalk-group-saver",
+    "url": "https://clawhub.ai/skills/dingtalk-group-saver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dingtalk-group-saver-703a71688ba517cc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dingtalk-group-saver@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dingtalk-group-saver-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0c3a052337f1bc2b7838dcca0ce959ee8352bb7cfdae65013c6e38c662e71dbe",
+      "artifactSizeBytes": 2238
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T07:02:59.851Z"
+}

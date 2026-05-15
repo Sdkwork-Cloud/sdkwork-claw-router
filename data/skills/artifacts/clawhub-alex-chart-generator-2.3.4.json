@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alex-chart-generator@2.3.4",
+  "version": "2.3.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alex_chart_generator",
+  "skill": {
+    "id": 41411,
+    "skillKey": "clawhub-alex-chart-generator",
+    "name": "Chart Generator (Alex)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alex-chart-generator",
+    "url": "https://clawhub.ai/skills/alex-chart-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alex-chart-generator-780eadc317dbd6d9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Data visualization tool producing SVG charts. Use when you need bar charts, line charts, pie charts, tables, sparklines, gauges, or any data visualization fr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shendingyi",
+      "userId": "s178d9nbbpefvhetxhnpnawa9183mjqg",
+      "displayName": "shendingyi",
+      "image": "https://avatars.githubusercontent.com/u/266918069?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.3.4",
+      "createdAt": 1775866524446,
+      "changelog": "- Added comprehensive documentation outlining all chart types, commands, and usage for the chart-generator skill\n- Expanded examples and usage instructions for ASCII and SVG chart outputs\n- Clarified supported input data formats and chart options\n- Included feature summary and comparison to generic AI charting\n- Provided new help references for best practices and support",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7403e07814d619edf9c9effdf625d27b899b45b2208168e7998ed89fb9b51175"
+}

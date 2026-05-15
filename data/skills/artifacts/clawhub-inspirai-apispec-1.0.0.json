@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/inspirai-apispec@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inspirai_apispec",
+  "skill": {
+    "id": 58947,
+    "skillKey": "clawhub-inspirai-apispec",
+    "name": "InspirAI API Spec"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inspirai-apispec",
+    "url": "https://clawhub.ai/skills/inspirai-apispec",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inspirai-apispec-1a1045412065d606.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "API 规范管理工具 - 跨项目 API 文档的初始化、更新、查询与搜索。Triggers: 'API文档', 'API规范', '接口文档', '路由解析', 'apispec', 'API lookup', 'API search'."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alexxxiong",
+      "userId": "publishers:alexxxiong",
+      "displayName": "alexxiong",
+      "image": "https://avatars.githubusercontent.com/u/45865830?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 344,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773583625382,
+      "changelog": "Initial release - API规范管理工具",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4a09eee60668ecbd789a532caea4921da5cc296c74f1fde24194d83905c310e9"
+}

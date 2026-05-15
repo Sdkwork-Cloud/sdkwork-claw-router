@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42876,
+  "uuid": "skill-clawhub-rbw-bitwarden",
+  "skillKey": "clawhub-rbw-bitwarden",
+  "name": "rbw-bitwarden",
+  "summary": "Unofficial Bitwarden CLI written in Rust. Manage passwords, TOTP codes, and secure notes from the terminal with a background agent for stateful sessions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rbw_bitwarden",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GuanM",
+      "features": [
+        "Unofficial Bitwarden CLI written in Rust",
+        "Manage passwords, TOTP codes, and secure notes from the terminal with a background agent for st."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rbw-bitwarden@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30427262?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rbw-bitwarden",
+      "url": "https://clawhub.ai/skills/rbw-bitwarden"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rbw-bitwarden",
+    "url": "https://clawhub.ai/skills/rbw-bitwarden",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rbw-bitwarden-9bb66bb54a1a35e1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rbw-bitwarden@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rbw-bitwarden-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e05fb43e01cb2a723d5d6703ca205d96945ca69c6c781e15a8fb6b8806a60737",
+      "artifactSizeBytes": 2262
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T04:31:42.323Z"
+}

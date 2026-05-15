@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14912,
+  "uuid": "skill-clawhub-olambdao-dev",
+  "skillKey": "clawhub-olambdao-dev",
+  "name": "Olambdao Dev",
+  "summary": "Play on-chain odd/even games on Solana devnet via Clawland. Mint GEM from SOL or USDC, bet odd or even, win 2x. Scripts handle wallet setup, minting, and autoplay.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.olambdao_dev",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "olambdao",
+      "features": [
+        "Play on-chain odd/even games on Solana devnet via Clawland",
+        "Mint GEM from SOL or USDC, bet odd or even, win 2x",
+        "Scripts handle wallet setup, minting, and autoplay."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/olambdao-dev@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/760514?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "olambdao-dev",
+      "url": "https://clawhub.ai/skills/olambdao-dev"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "olambdao-dev",
+    "url": "https://clawhub.ai/skills/olambdao-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/olambdao-dev-2d4377f276a276f7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/olambdao-dev@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-olambdao-dev-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:94b1ed3233a6259eea68b5dfbec3221567711bca8368a464e7b3fe9598a8a08a",
+      "artifactSizeBytes": 2335
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T14:14:17.359Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/corespeed-nanobanana@0.0.2",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.corespeed_nanobanana",
+  "skill": {
+    "id": 32890,
+    "skillKey": "clawhub-corespeed-nanobanana",
+    "name": "corespeed-nanobanana"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "corespeed-nanobanana",
+    "url": "https://clawhub.ai/skills/corespeed-nanobanana",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/corespeed-nanobanana-7d164319e2442785.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate and edit images using Google Gemini models via Corespeed AI Gateway. Supports text-to-image generation, image editing, multi-image input, and text r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zypher-agent",
+      "userId": "s17db0yzvk3x0rrrjkc7rx55mn83mtx4",
+      "displayName": "Zypher Agent",
+      "image": "https://avatars.githubusercontent.com/u/254776469?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 235,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.2",
+      "createdAt": 1774022420821,
+      "changelog": "Version 0.0.2 of corespeed-nanobanana\n\n- No file changes detected in this release.\n- No new features, bug fixes, or documentation updates included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6c3873bd7d7d8c996bab9f81b37ed6d7056628459a5b7ae9aa7014b01881ff51"
+}

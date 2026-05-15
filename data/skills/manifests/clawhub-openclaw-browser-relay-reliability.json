@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36048,
+  "uuid": "skill-clawhub-openclaw-browser-relay-reliability",
+  "skillKey": "clawhub-openclaw-browser-relay-reliability",
+  "name": "OpenClaw Browser Relay Reliability",
+  "summary": "Harden OpenClaw browser extension relay behavior by eliminating blank-target tab churn, fixing download behavior forwarding, and standardizing download paths.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_browser_relay_reliability",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daniel Sinewe",
+      "features": [
+        "Harden OpenClaw browser extension relay behavior by eliminating blank-target tab churn, fixing."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-browser-relay-reliability@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128365422?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-browser-relay-reliability",
+      "url": "https://clawhub.ai/skills/openclaw-browser-relay-reliability"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-browser-relay-reliability",
+    "url": "https://clawhub.ai/skills/openclaw-browser-relay-reliability",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-browser-relay-reliability-1069b12f8b0d2e2f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-browser-relay-reliability@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-browser-relay-reliability-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:09bce683cd8797d7633d57ff60ae9ec61fa02a501901a5d51d3e6a314ab88d85",
+      "artifactSizeBytes": 2153
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T07:03:50.939Z"
+}

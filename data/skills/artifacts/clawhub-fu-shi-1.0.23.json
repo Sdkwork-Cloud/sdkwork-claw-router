@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fu-shi@1.0.23",
+  "version": "1.0.23",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fu_shi",
+  "skill": {
+    "id": 18977,
+    "skillKey": "clawhub-fu-shi",
+    "name": "Fu Shi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fu-shi",
+    "url": "https://clawhub.ai/skills/fu-shi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fu-shi-4ffc37e35639cc02.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Plan and decompose complex tasks into prioritized steps, create execution strategies, and track task progress and blockers."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lt8899789",
+      "userId": "s179v8xedkc48zhrn16wqqz5ad83h8b8",
+      "displayName": "无为上人",
+      "image": "https://avatars.githubusercontent.com/u/269488520?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 646,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 23
+    },
+    "latestVersion": {
+      "version": "1.0.23",
+      "createdAt": 1778270397206,
+      "changelog": "- Bumped version to 1.0.23 in SKILL.md.\n- No functional or content changes; documentation update only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:12100db5b9aa9fdc7685a3466d29daa830f872dde0b2fedffc5332122e4590a1"
+}

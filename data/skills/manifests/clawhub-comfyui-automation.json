@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35569,
+  "uuid": "skill-clawhub-comfyui-automation",
+  "skillKey": "clawhub-comfyui-automation",
+  "name": "ComfyUI Automation",
+  "summary": "Use when you need to automate ComfyUI tasks. This skill provides instructions and scripts for installing ComfyUI, parsing API-format workflow JSON files, che...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.comfyui_automation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nhuquangls",
+      "features": [
+        "Use when you need to automate ComfyUI tasks",
+        "This skill provides instructions and scripts for installing ComfyUI, parsing API-format workflo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/comfyui-automation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24610674?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "comfyui-automation",
+      "url": "https://clawhub.ai/skills/comfyui-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "comfyui-automation",
+    "url": "https://clawhub.ai/skills/comfyui-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/comfyui-automation-be4b076993d87ce8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/comfyui-automation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-comfyui-automation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:24ed9a7b590043ce573adef0975f3b8f46ac00de2a9e3f037544510732761b8b",
+      "artifactSizeBytes": 1917
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T07:43:04.202Z"
+}

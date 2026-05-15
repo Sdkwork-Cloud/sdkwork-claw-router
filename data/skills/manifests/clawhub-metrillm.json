@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20900,
+  "uuid": "skill-clawhub-metrillm",
+  "skillKey": "clawhub-metrillm",
+  "name": "MetriLLM",
+  "summary": "Find the best local LLM for your machine. Tests speed, quality and RAM fit, then tells you if a model is worth running on your hardware.",
+  "version": "0.2.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.metrillm",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TheBlueHouse75",
+      "features": [
+        "Find the best local LLM for your machine",
+        "Tests speed, quality and RAM fit, then tells you if a model is worth running on your hardware."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/metrillm@0.2.11",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/132676556?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "metrillm",
+      "url": "https://clawhub.ai/skills/metrillm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "metrillm",
+    "url": "https://clawhub.ai/skills/metrillm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/metrillm-c791e3eea1a25266.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/metrillm@0.2.11",
+      "artifactUrl": "data/skills/artifacts/clawhub-metrillm-0.2.11.json",
+      "version": "0.2.11",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5b75ac355c700f20eb7e4e1cc173d605faa1593bb0790b941c93fc3807de377b",
+      "artifactSizeBytes": 1843
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T14:13:25.980Z"
+}

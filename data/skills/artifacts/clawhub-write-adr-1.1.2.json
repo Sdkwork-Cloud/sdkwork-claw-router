@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/write-adr@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.write_adr",
+  "skill": {
+    "id": 34172,
+    "skillKey": "clawhub-write-adr",
+    "name": "Write Adr"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "write-adr",
+    "url": "https://clawhub.ai/skills/write-adr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/write-adr-9dc69d91528c42ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when you want to generate Architecture Decision Records from this session. Triggers on \"write ADRs\", \"document our decisions\", \"create decision records\",..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anderskev",
+      "userId": "s17b1fzefm8nj8j1sdkzrze7gn83pfrg",
+      "displayName": "Kevin Anderson",
+      "image": "https://avatars.githubusercontent.com/u/17010022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1775966690111,
+      "changelog": "**Expanded skill description, clarifies triggers and boundaries.**\n\n- Skill description now details phrases that trigger execution and differentiates from related skills (adr-decision-extraction, adr-writing).\n- Emphasizes orchestration of the end-to-end workflow: decision extraction, user confirmation, parallel ADR generation, and verification.\n- Makes clear that this skill does not handle extraction alone or MADR template output.\n- No workflow logic was changed—documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3dadd5a9a2377173e5793b5c60b17fa5195e0bf30103688a2f46942e8fc1ab71"
+}

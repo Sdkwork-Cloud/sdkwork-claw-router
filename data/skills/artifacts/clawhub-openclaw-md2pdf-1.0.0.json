@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-md2pdf@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_md2pdf",
+  "skill": {
+    "id": 29867,
+    "skillKey": "clawhub-openclaw-md2pdf",
+    "name": "md2pdf (Pandoc + Typst)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-md2pdf",
+    "url": "https://clawhub.ai/skills/openclaw-md2pdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-md2pdf-73418592275c4a03.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert Markdown files to beautifully formatted PDFs using Pandoc and Typst. Supports headings, tables, code blocks, links, emojis, and GitHub-style formatti..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hansschinkenwurst78-dev",
+      "userId": "s17953nx0rx09dstaw0250ge5h83xtrg",
+      "displayName": "hansschinkenwurst78-dev",
+      "image": "https://avatars.githubusercontent.com/u/268605143?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 284,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774874835473,
+      "changelog": "Markdown to PDF with Pandoc + Typst, GitHub-style formatting, emoji support, horizontalrule fix",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6278872c4a3e2ffa14f3c30b061f2c9e77106ff6f4de7e818e586af49b960825"
+}

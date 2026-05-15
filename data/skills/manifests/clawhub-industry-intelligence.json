@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70586,
+  "uuid": "skill-clawhub-industry-intelligence",
+  "skillKey": "clawhub-industry-intelligence",
+  "name": "industry-intelligence（行业情报）",
+  "summary": "行业情报 — 构建并维护某一行业的竞争对手资源库，持续采集监管动态/政策动态、媒体关注、企业官方发布、业务动态、企业数智化动态、国际同行、江湖传闻七大类信息，评估可信度与影响力，生成简报或详报。凡是用户提到\"行业情报\"、\"竞争对手动态\"、\"行业动态\"、\"监管动态\"、\"政策动态\"、\"竞争对手资源库\"、\"行业情报收集...",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.industry_intelligence",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "citywanderr",
+      "features": [
+        "行业情报 — 构建并维护某一行业的竞争对手资源库，持续采集监管动态/政策动态、媒体关注、企业官方发布、业务动态、企业数智化动态、国际同行、江湖传闻七大类信息，评估可信度与影响力，生成简报或详."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/industry-intelligence@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271757920?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "industry-intelligence",
+      "url": "https://clawhub.ai/skills/industry-intelligence"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "industry-intelligence",
+    "url": "https://clawhub.ai/skills/industry-intelligence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/industry-intelligence-98976c44afe82d76.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/industry-intelligence@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-industry-intelligence-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7b5582f7453774707c91c7055a8bac969253e7ba2330b5e15184472a7bdd6126",
+      "artifactSizeBytes": 2941
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T04:55:55.457Z"
+}

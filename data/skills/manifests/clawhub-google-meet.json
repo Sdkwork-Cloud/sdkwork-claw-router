@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8405,
+  "uuid": "skill-clawhub-google-meet",
+  "skillKey": "clawhub-google-meet",
+  "name": "Google Meet",
+  "summary": "Google Meet API integration with managed OAuth. Create meeting spaces, list conference records, and manage meeting participants. Use this skill when users wa...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_meet",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byungkyu",
+      "features": [
+        "Google Meet API integration with managed OAuth",
+        "Create meeting spaces, list conference records, and manage meeting participants",
+        "Use this skill when users wa..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-meet@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16563684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-meet",
+      "url": "https://clawhub.ai/skills/google-meet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-meet",
+    "url": "https://clawhub.ai/skills/google-meet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-meet-02dfcb35faf38c07.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-meet@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-meet-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:147f2f4a3492add26099e674daa15206e69af047bce1f7663f859e20a465ad57",
+      "artifactSizeBytes": 2251
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T23:52:48.845Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/equity-valuation-framework@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.equity_valuation_framework",
+  "skill": {
+    "id": 12817,
+    "skillKey": "clawhub-equity-valuation-framework",
+    "name": "Equity Valuation Framework"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "equity-valuation-framework",
+    "url": "https://clawhub.ai/skills/equity-valuation-framework",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/equity-valuation-framework-b4cf3a059b50e144.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides a decision-grade equity valuation playbook and report standard (multiples, DCF, quality assessment, scenarios, margin of safety); used when users re..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ndtchan",
+      "userId": "s172d4r9d0h6bvvd3mpq517yrn861np5",
+      "displayName": "Nguyễn Đức Thành",
+      "image": "https://avatars.githubusercontent.com/u/35481632?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1463,
+      "installsAllTime": 9,
+      "installsCurrent": 9,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1771982391056,
+      "changelog": "equity-valuation-framework v1.0.3\n\n- Documentation updated in SKILL.md for consistency, clarity, and completeness.\n- No changes to core logic or features—functionality remains the same.\n- Structure and documentation practices improved for better reliability and easier use.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4ad4f11058c65743ca42ca48a6cb5287be8ebcb1eeb022afa1e2e8ead30205ed"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26748,
+  "uuid": "skill-clawhub-openhook-cli",
+  "skillKey": "clawhub-openhook-cli",
+  "name": "Openhook Cli",
+  "summary": "Receive real-time webhook events from platforms like GitHub, Stripe, Linear, and coordinate multi-agent workflows via messaging channels.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openhook_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Berkant Ay",
+      "features": [
+        "Receive real-time webhook events from platforms like GitHub, Stripe, Linear, and coordinate mul."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openhook-cli@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27157448?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openhook-cli",
+      "url": "https://clawhub.ai/skills/openhook-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openhook-cli",
+    "url": "https://clawhub.ai/skills/openhook-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openhook-cli-2a49c4169be61482.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openhook-cli@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-openhook-cli-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e6409f3b32ab9830137c92d2bed50401bd093db534a5b2968192aca37044cc8c",
+      "artifactSizeBytes": 1892
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T14:20:36.813Z"
+}

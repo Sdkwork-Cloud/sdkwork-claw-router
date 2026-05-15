@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45018,
+  "uuid": "skill-clawhub-pipeworx-boardgames",
+  "skillKey": "clawhub-pipeworx-boardgames",
+  "name": "Pipeworx boardgames",
+  "summary": "Search and retrieve detailed info on board games, including popular titles, player count, playtime, rating, price, and descriptions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_boardgames",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Search and retrieve detailed info on board games, including popular titles, player count, playt."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-boardgames@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138315805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-boardgames",
+      "url": "https://clawhub.ai/skills/pipeworx-boardgames"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-boardgames",
+    "url": "https://clawhub.ai/skills/pipeworx-boardgames",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-boardgames-487385077fad9020.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-boardgames@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-boardgames-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2c78e35b37350df2eaf73738de6b2fff51338d7387240ef6615974ec22db1dcb",
+      "artifactSizeBytes": 1900
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T04:41:58.009Z"
+}

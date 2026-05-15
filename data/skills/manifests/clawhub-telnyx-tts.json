@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15310,
+  "uuid": "skill-clawhub-telnyx-tts",
+  "skillKey": "clawhub-telnyx-tts",
+  "name": "Telnyx Tts",
+  "summary": "Generate speech audio from text using Telnyx Text-to-Speech API. Use when you need to convert text to spoken audio, create voice messages, or generate audio content.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.telnyx_tts",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "teamtelnyx",
+      "features": [
+        "Generate speech audio from text using Telnyx Text-to-Speech API",
+        "Use when you need to convert text to spoken audio, create voice messages, or generate audio con."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/telnyx-tts@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/176328014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "telnyx-tts",
+      "url": "https://clawhub.ai/skills/telnyx-tts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "telnyx-tts",
+    "url": "https://clawhub.ai/skills/telnyx-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/telnyx-tts-a8001a2b6dedc983.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/telnyx-tts@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-telnyx-tts-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:08afff1821ac34850cab936e0b891adab6f8b6787e3f18cfbfd6058969ecfe27",
+      "artifactSizeBytes": 2160
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T16:08:09.462Z"
+}

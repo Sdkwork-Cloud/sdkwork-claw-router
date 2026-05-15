@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/social-audience-profiler@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_audience_profiler",
+  "skill": {
+    "id": 36610,
+    "skillKey": "clawhub-social-audience-profiler",
+    "name": "Social Audience Profiler"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-audience-profiler",
+    "url": "https://clawhub.ai/skills/social-audience-profiler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-audience-profiler-9be80419ddb9a7d2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Target audience profiler for social media strategy. Build detailed audience personas with psychographics, pain points, content preferences, and platform beha..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mguozhen",
+      "userId": "s170nk66cz4zpwnnsv8bxksrp983f82k",
+      "displayName": "mguozhen",
+      "image": "https://avatars.githubusercontent.com/u/1411875?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774260970018,
+      "changelog": "- Initial release of Social Audience Profiler.\n- Generates three in-depth audience personas for social media strategy.\n- Includes psychographics, pain point analysis, content preferences, and platform behavior.\n- Helps build highly targeted messaging for each persona.\n- Triggered by keywords like \"target audience\", \"audience persona\", and \"ICP social media\".",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2447b1cd3d1427adf1fdf1c8466756e5fb190595bc1f634a5134f899933769ca"
+}

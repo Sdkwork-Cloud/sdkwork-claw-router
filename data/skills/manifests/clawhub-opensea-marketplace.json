@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28809,
+  "uuid": "skill-clawhub-opensea-marketplace",
+  "skillKey": "clawhub-opensea-marketplace",
+  "name": "Opensea Skill",
+  "summary": "Query NFT and token data, trade NFTs on Seaport, swap ERC20 tokens via DEX aggregator, configure wallet signing providers, and build/register/gate AI agent t...",
+  "version": "2.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opensea_marketplace",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OpenSea",
+      "features": [
+        "Query NFT and token data, trade NFTs on Seaport, swap ERC20 tokens via DEX aggregator, configur."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/opensea-marketplace@2.6.0",
+      "screenshots": [
+        "https://static.seadn.io/logos/Logomark-Blue.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "opensea-marketplace",
+      "url": "https://clawhub.ai/skills/opensea-marketplace"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opensea-marketplace",
+    "url": "https://clawhub.ai/skills/opensea-marketplace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opensea-marketplace-ff4615c65adbd0f3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/opensea-marketplace@2.6.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-opensea-marketplace-2.6.0.json",
+      "version": "2.6.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8f4983d1ad424f3c0307bbda8b4e1e0d05d84fcab96c08df2e860b8ff10e569c",
+      "artifactSizeBytes": 2282
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T22:52:29.996Z"
+}

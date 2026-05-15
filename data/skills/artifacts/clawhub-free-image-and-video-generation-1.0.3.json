@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-image-and-video-generation@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_image_and_video_generation",
+  "skill": {
+    "id": 50243,
+    "skillKey": "clawhub-free-image-and-video-generation",
+    "name": "AI Image & Video Toolkit — Free Upscale, Face Enhance, BG Remove & Generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-image-and-video-generation",
+    "url": "https://clawhub.ai/skills/free-image-and-video-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-image-and-video-generation-821307b7e63bbf57.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Free local AI image and video processing toolkit with cloud AI generation. Local tools: upscale (Real-ESRGAN), face enhance (GFPGAN/CodeFormer), background r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xixihhhh",
+      "userId": "s178tcr2rphfrfg0hgzrtz7bs183h25f",
+      "displayName": "MikeWang",
+      "image": "https://avatars.githubusercontent.com/u/60566571?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 411,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773646639775,
+      "changelog": "- Added `.claude/settings.local.json` for local configuration settings.\n- Updated SKILL.md metadata to include version, `openclaw` metadata, and required environment variables/binaries.\n- No changes to scripts or user-facing behavior.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e3cd90ff133da5065b350794a1be44bba8ba329e1bf1ece4fa5e96367f1e206d"
+}

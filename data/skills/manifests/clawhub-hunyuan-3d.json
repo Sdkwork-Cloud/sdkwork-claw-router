@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63294,
+  "uuid": "skill-clawhub-hunyuan-3d",
+  "skillKey": "clawhub-hunyuan-3d",
+  "name": "混元生3D模型能力",
+  "summary": "腾讯混元生3D API (OpenAI兼容接口) - 基于混元大模型的3D模型生成",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hunyuan_3d",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tony",
+      "features": [
+        "腾讯混元生3D API (OpenAI兼容接口)",
+        "基于混元大模型的3D模型生成"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hunyuan-3d@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38256402?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hunyuan-3d",
+      "url": "https://clawhub.ai/skills/hunyuan-3d"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hunyuan-3d",
+    "url": "https://clawhub.ai/skills/hunyuan-3d",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hunyuan-3d-efbd820baea6f423.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hunyuan-3d@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-hunyuan-3d-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ab16d3a59fb8b32606793e7fca9316143066f1c5d5e53a47d329d9f0a659aafc",
+      "artifactSizeBytes": 1938
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T16:06:28.163Z"
+}

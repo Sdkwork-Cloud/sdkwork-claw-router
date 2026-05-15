@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ble-anima-minter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ble_anima_minter",
+  "skill": {
+    "id": 50970,
+    "skillKey": "clawhub-ble-anima-minter",
+    "name": "BLE → $ANIMA Minter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ble-anima-minter",
+    "url": "https://clawhub.ai/skills/ble-anima-minter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ble-anima-minter-bdf6459fe4a110e0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scan nearby BLE MAC addresses to mint unique soulbound $ANIMA tokens stored locally using hash and DAG-based proof-of-remnant logic."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "penguinx01",
+      "userId": "publishers:penguinx01",
+      "displayName": "PenguinX01",
+      "image": "https://avatars.githubusercontent.com/u/204820521?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1693,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769407871485,
+      "changelog": "Initial release of BLE-Anima-Minter.\n\n- Scans for nearby BLE MAC addresses.\n- Hashes MAC addresses with SHA256 and salt.\n- Mints soulbound `$ANIMA` tokens using AnimaChain logic.\n- Stores proofs in a local DAG memory node.\n- Supports optional gossip-sync with other nodes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8bbe99006c33f1af5e05c9dae4c2363c48a11004248f4a0e373cd1d03c615a96"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zapyeti@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zapyeti",
+  "skill": {
+    "id": 27519,
+    "skillKey": "clawhub-zapyeti",
+    "name": "ZapYeti"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zapyeti",
+    "url": "https://clawhub.ai/skills/zapyeti",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zapyeti-940daf6b50f8c738.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the ZapYeti API to list debts, track balances, view payoff schedules, log payments, and monitor debt-free progress via api.zapyeti.com. Use when the user..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "djedi",
+      "userId": "s173kfgkscatys87ccc6dvncys83j59g",
+      "displayName": "Dustin Davis",
+      "image": "https://avatars.githubusercontent.com/u/177353?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 346,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1773661386382,
+      "changelog": "Added homepage and source URL for provenance. Fixed registry metadata consistency.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fd25cce279cf489f7233b35264a10750915e86c7ba282f524d58aa43dcf61900"
+}

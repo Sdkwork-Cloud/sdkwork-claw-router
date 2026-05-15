@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moss-semantic@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moss_semantic",
+  "skill": {
+    "id": 15912,
+    "skillKey": "clawhub-moss-semantic",
+    "name": "moss"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moss-semantic",
+    "url": "https://clawhub.ai/skills/moss-semantic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moss-semantic-89c58cc6ac3dc193.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Documentation and capabilities reference for Moss semantic search. Use for understanding Moss APIs, SDKs, and integration patterns."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "coderomaster",
+      "userId": "s171dvqya1dh1zpnsn97q52pdn85th79",
+      "displayName": "Keshav Arora",
+      "image": "https://avatars.githubusercontent.com/u/119474193?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 953,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770665308452,
+      "changelog": "Initial release of moss-docs: Moss semantic search documentation and reference.\n\n- Introduces complete usage reference for Moss semantic search APIs, SDKs, and integration patterns.\n- Details capabilities including real-time index management, search (semantic, keyword, hybrid), and document lifecycle operations.\n- Provides SDK method mappings for JavaScript and Python.\n- Documents typical workflows: semantic search, hybrid search, offline/edge usage, and integration into voice agent frameworks (LiveKit, Pipecat).\n- Lists authentication requirements, package installation commands, document schema, query parameters, and best practices.\n- Summarizes supported embedding models, expected performance, and troubleshooting guidance.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d11ed97420187c384a7d3c27ede08c213259b0ef361df48f775e2f6f5dcae03f"
+}

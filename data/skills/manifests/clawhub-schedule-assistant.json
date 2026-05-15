@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73229,
+  "uuid": "skill-clawhub-schedule-assistant",
+  "skillKey": "clawhub-schedule-assistant",
+  "name": "大圆虾-日程助手",
+  "summary": "云计算客户经理日程管理与提醒系统。帮助管理客户拜访、合同到期、续费提醒等日程安排。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.schedule_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "guyuanyuan1",
+      "features": [
+        "云计算客户经理日程管理与提醒系统。帮助管理客户拜访、合同到期、续费提醒等日程安排。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/schedule-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/156172462?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "schedule-assistant",
+      "url": "https://clawhub.ai/skills/schedule-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "schedule-assistant",
+    "url": "https://clawhub.ai/skills/schedule-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/schedule-assistant-8e8b097576d302a3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/schedule-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-schedule-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4bf24a8ceeaf2324101d6b24900e728b08a21f67c61ffeda0a8ddbc1d201cd06",
+      "artifactSizeBytes": 2224
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T13:00:06.106Z"
+}

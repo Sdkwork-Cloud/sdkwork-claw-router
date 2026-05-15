@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8338,
+  "uuid": "skill-clawhub-agent-autonomy-kit",
+  "skillKey": "clawhub-agent-autonomy-kit",
+  "name": "Agent Autonomy Kit",
+  "summary": "Stop waiting for prompts. Keep working.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_autonomy_kit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ryancampbell",
+      "features": [
+        "Stop waiting for prompts",
+        "Keep working."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-autonomy-kit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121135?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-autonomy-kit",
+      "url": "https://clawhub.ai/skills/agent-autonomy-kit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-autonomy-kit",
+    "url": "https://clawhub.ai/skills/agent-autonomy-kit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-autonomy-kit-0c00e1647a399f27.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-autonomy-kit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-autonomy-kit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:21b78f6653add957726838b68373aa400408c6968a5c57b59d781ac81b0d7249",
+      "artifactSizeBytes": 2147
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T20:43:41.307Z"
+}

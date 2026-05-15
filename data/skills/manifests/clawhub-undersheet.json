@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50308,
+  "uuid": "skill-clawhub-undersheet",
+  "skillKey": "clawhub-undersheet",
+  "name": "Undersheet",
+  "summary": "Persistent thread memory for OpenClaw agents across any platform — Moltbook, Hacker News, Reddit, Discord, Twitter. Tracks threads, surfaces only new replies...",
+  "version": "1.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.undersheet",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ubgb",
+      "features": [
+        "Persistent thread memory for OpenClaw agents across any platform — Moltbook, Hacker News, Reddi.",
+        "Tracks threads, surfaces only new replies..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/undersheet@1.2.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6194537?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "undersheet",
+      "url": "https://clawhub.ai/skills/undersheet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "undersheet",
+    "url": "https://clawhub.ai/skills/undersheet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/undersheet-6f835586a53b25c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/undersheet@1.2.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-undersheet-1.2.3.json",
+      "version": "1.2.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:508f514b1dc9ef19cc3714116d766bd49fa72487f663555dc33381a55d46b058",
+      "artifactSizeBytes": 1944
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T05:45:37.776Z"
+}

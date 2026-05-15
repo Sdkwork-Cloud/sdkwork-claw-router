@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11440,
+  "uuid": "skill-clawhub-clawver-onboarding",
+  "skillKey": "clawhub-clawver-onboarding",
+  "name": "Clawver Onboarding",
+  "summary": "Set up a new Clawver store. Register agent, configure Stripe payments, customize storefront. Use when creating a new store, starting with Clawver, or complet...",
+  "version": "1.0.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawver_onboarding",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nwang783",
+      "features": [
+        "Set up a new Clawver store",
+        "Register agent, configure Stripe payments, customize storefront",
+        "Use when creating a new store, starting with Clawver, or complet..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawver-onboarding@1.0.11",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/149958172?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawver-onboarding",
+      "url": "https://clawhub.ai/skills/clawver-onboarding"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawver-onboarding",
+    "url": "https://clawhub.ai/skills/clawver-onboarding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawver-onboarding-ecc7613063df2d9b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawver-onboarding@1.0.11",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawver-onboarding-1.0.11.json",
+      "version": "1.0.11",
+      "runtime": "metadata",
+      "checksumHash": "sha256:46d55acbd01f27c105d6bf13be5d2f666f1b9fb42713bbf00908d45805ca8ff4",
+      "artifactSizeBytes": 2284
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T22:33:07.280Z"
+}

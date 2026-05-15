@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10427,
+  "uuid": "skill-clawhub-workspace-explorer",
+  "skillKey": "clawhub-workspace-explorer",
+  "name": "Workspace Explorer",
+  "summary": "Securely share your workspace with your owner via a remote VS Code environment. Use when (1) the owner requests to view or inspect your working files, (2) you need to give the owner live access to browse your codebase, (3) the owner wants.",
+  "version": "1.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workspace_explorer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mrbeandev",
+      "features": [
+        "Securely share your workspace with your owner via a remote VS Code environment",
+        "Use when (1) the owner requests to view or inspect your working files, (2) you need to give the."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/workspace-explorer@1.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34623886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "workspace-explorer",
+      "url": "https://clawhub.ai/skills/workspace-explorer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workspace-explorer",
+    "url": "https://clawhub.ai/skills/workspace-explorer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workspace-explorer-a32af43b85e31525.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/workspace-explorer@1.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-workspace-explorer-1.1.5.json",
+      "version": "1.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:901744649a6b04da3601d6ab3b1eef15da1b4688d0537df0de41c1e6a871fe3d",
+      "artifactSizeBytes": 2328
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T17:03:32.364Z"
+}

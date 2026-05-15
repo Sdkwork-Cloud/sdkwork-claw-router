@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58219,
+  "uuid": "skill-clawhub-br-risk-analyzer",
+  "skillKey": "clawhub-br-risk-analyzer",
+  "name": "Br Risk Analyzer",
+  "summary": "根据需求文档分析风险，分析代码漏洞。analyzes code changes between commits against requirement documents to identify and prioritize risk points.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.br_risk_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ZhiJialin",
+      "features": [
+        "根据需求文档分析风险，分析代码漏洞。analyzes code changes between commits against requirement documents to identi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/br-risk-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44286450?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "br-risk-analyzer",
+      "url": "https://clawhub.ai/skills/br-risk-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "br-risk-analyzer",
+    "url": "https://clawhub.ai/skills/br-risk-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/br-risk-analyzer-44d0767b122dbd30.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/br-risk-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-br-risk-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:22271e612b2d449fd531e474f6b212644088a71703786fbb50101d0a8be2971b",
+      "artifactSizeBytes": 2580
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T08:26:41.876Z"
+}

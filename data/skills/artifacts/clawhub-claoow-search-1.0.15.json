@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claoow-search@1.0.15",
+  "version": "1.0.15",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claoow_search",
+  "skill": {
+    "id": 25938,
+    "skillKey": "clawhub-claoow-search",
+    "name": "claoow search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claoow-search",
+    "url": "https://clawhub.ai/skills/claoow-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claoow-search-356d120c714a3c52.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connects your agent to Claoow Search to fetch, scrape, and submit AI-generated intelligence tasks in batched mode with strict anti-SSRF safeguards."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "biahd",
+      "userId": "s1776fz2x0jpsg8wbf54re758583gnwp",
+      "displayName": "BiaHD",
+      "image": "https://avatars.githubusercontent.com/u/22287223?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 278,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 16
+    },
+    "latestVersion": {
+      "version": "1.0.15",
+      "createdAt": 1774977485122,
+      "changelog": "- Bumped version from 1.0.14 to 1.0.15.\n- No file changes detected in this release.\n- No feature, documentation, or implementation updates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e958f30c49b70bc4b8d20f5f5489f916c4b5b2ba79557191ee0a16166cd3b64e"
+}

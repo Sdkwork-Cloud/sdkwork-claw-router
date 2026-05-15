@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/personal-bookkeeper@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_bookkeeper",
+  "skill": {
+    "id": 19921,
+    "skillKey": "clawhub-personal-bookkeeper",
+    "name": "Personal Bookkeeper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-bookkeeper",
+    "url": "https://clawhub.ai/skills/personal-bookkeeper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-bookkeeper-5d94cd0d03854f1e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Record double-entry bookkeeping for personal finances. Use when logging transactions, categorizing accounts, balancing ledgers, trending expenses."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ckchzh",
+      "userId": "s1722v35hsq964bw64ecjw43z583fbex",
+      "displayName": "BytesAgain2",
+      "image": "https://avatars.githubusercontent.com/u/44366898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 564,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1773830912007,
+      "changelog": "update",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f9aa399e9137d5bf768d848d5e10c067705d3d086f10d064ce55c44dc0669326"
+}

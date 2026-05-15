@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawriosity@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawriosity",
+  "skill": {
+    "id": 51824,
+    "skillKey": "clawhub-clawriosity",
+    "name": "Clawriosity"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawriosity",
+    "url": "https://clawhub.ai/skills/clawriosity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawriosity-300832ff91fa881a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Daily curiosity feed from AIgneous Million Whys — query \"why\" questions by topic or semantic search, delivered as quizzes, articles, or podcast scripts. Try..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lyc11776611",
+      "userId": "s17bb99mg56raanvv5vnx1f3dh83nt58",
+      "displayName": "Yanchong Li",
+      "image": "https://avatars.githubusercontent.com/u/29034466?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 272,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773659500365,
+      "changelog": "Initial release: 5000+ bilingual science questions, 4 formats, semantic search, adaptive learning, community contributions",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fe36104e24c84b3d545033a71c7912930dcdd7d6d3a945c24b3d8d92197882b5"
+}

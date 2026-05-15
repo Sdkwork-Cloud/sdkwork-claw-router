@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48678,
+  "uuid": "skill-clawhub-how-to-use-agent",
+  "skillKey": "clawhub-how-to-use-agent",
+  "name": "How To Use Agent",
+  "summary": "Use when improving an agent's own memory, skills, prompts, runtime rules, tool policies, AGENTS.md/agent.md files, or when adapting ideas from other agent pr...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.how_to_use_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huangrichao2020",
+      "features": [
+        "Use when improving an agent's own memory, skills, prompts, runtime rules, tool policies, AGENTS."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/how-to-use-agent@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/72842645?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "how-to-use-agent",
+      "url": "https://clawhub.ai/skills/how-to-use-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "how-to-use-agent",
+    "url": "https://clawhub.ai/skills/how-to-use-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/how-to-use-agent-eca77fcabf5746f0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/how-to-use-agent@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-how-to-use-agent-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d8a6158c790ea07515d1f7e6fba1042b9ec2c658da998b93a5b5b9721fc7bdef",
+      "artifactSizeBytes": 1965
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T11:40:13.580Z"
+}

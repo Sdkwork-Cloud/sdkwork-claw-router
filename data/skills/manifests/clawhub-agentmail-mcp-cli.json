@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19202,
+  "uuid": "skill-clawhub-agentmail-mcp-cli",
+  "skillKey": "clawhub-agentmail-mcp-cli",
+  "name": "AgentMail MCP CLI",
+  "summary": "Manage AI agent email accounts via AgentMail API. Create inboxes, send/receive/reply to emails, manage threads and attachments. Use for \"email\", \"agentmail\",...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentmail_mcp_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Florian Heiwig",
+      "features": [
+        "Manage AI agent email accounts via AgentMail API",
+        "Create inboxes, send/receive/reply to emails, manage threads and attachments",
+        "Use for \"email\", \"agentmail\",..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentmail-mcp-cli@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6436637?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentmail-mcp-cli",
+      "url": "https://clawhub.ai/skills/agentmail-mcp-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentmail-mcp-cli",
+    "url": "https://clawhub.ai/skills/agentmail-mcp-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentmail-mcp-cli-c69f26e0a7bc8e44.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentmail-mcp-cli@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentmail-mcp-cli-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:053573b282b8cb3515c8ab4d2c73bb7703cb6e32fbae3546a6f12170bcc9b5ab",
+      "artifactSizeBytes": 2352
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T12:03:25.993Z"
+}

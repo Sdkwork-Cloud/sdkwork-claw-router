@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/best-viral-title-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.best_viral_title_generator",
+  "skill": {
+    "id": 44604,
+    "skillKey": "clawhub-best-viral-title-generator",
+    "name": "Best Viral Title Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "best-viral-title-generator",
+    "url": "https://clawhub.ai/skills/best-viral-title-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/best-viral-title-generator-4d5bb00295e1d79b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get viral title suggestions ready to post, without touching a single slider. Upload your video content details (MP4, MOV, AVI, WebM, up to 500MB), say someth..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vynbosserman65",
+      "userId": "s175xbynxxje7z8y8jbn28x5vx84dckp",
+      "displayName": "vynbosserman65",
+      "image": "https://avatars.githubusercontent.com/u/208823770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775961203360,
+      "changelog": "- Initial release of Best Viral Title Generator.\n- Instantly generate viral video title suggestions by uploading content details or giving a prompt.\n- Supports uploads up to 500MB in MP4, MOV, AVI, or WebM formats.\n- Integrated cloud rendering pipeline, delivering 1080p MP4 downloads in under 30–90 seconds.\n- Automatic session setup and free, temporary tokens for quick start.\n- Includes actions for upload, export, credit check, and session state via simple commands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:395c114c848e5184f00ff50cec1f760c8c91a50bfee9aba9f5b944fcea79975b"
+}

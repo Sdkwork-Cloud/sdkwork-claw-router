@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eagle-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eagle_skill",
+  "skill": {
+    "id": 34384,
+    "skillKey": "clawhub-eagle-skill",
+    "name": "Eagle Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eagle-skill",
+    "url": "https://clawhub.ai/skills/eagle-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eagle-skill-4461736ab560f3ed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control Eagle application for digital asset management - search, organize, tag items, manage folders and tag groups. Use when user wants to interact with the..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "roaycl",
+      "userId": "s1766pcn019f79g44xsbm5f1ks83hh85",
+      "displayName": "长安",
+      "image": "https://avatars.githubusercontent.com/u/36761662?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 215,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774314421072,
+      "changelog": "- Initial release of eagle-skill (version 1.0.0)\n- Enables CLI-based control of the Eagle digital asset management application for local libraries\n- Supports searching, tagging, organizing, and managing digital assets, folders, tags, and tag groups\n- Integrates tool categories: App, Item, Folder, Tag, Tag Group, and AI Search\n- Provides CLI command examples and detailed workflow instructions in documentation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:011bbdc8efa67c99447f0ec179fbc207ebd26fcb2f1f7be34ce68daaa131d757"
+}

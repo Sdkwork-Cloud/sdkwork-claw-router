@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8637,
+  "uuid": "skill-clawhub-file-organizer-skill",
+  "skillKey": "clawhub-file-organizer-skill",
+  "name": "File Organizer Skill",
+  "summary": "Organize files in directories by grouping them into folders based on their extensions or date. Includes Dry-Run, Recursive, and Undo capabilities.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_organizer_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "azzar budiyanto",
+      "features": [
+        "Organize files in directories by grouping them into folders based on their extensions or date",
+        "Includes Dry-Run, Recursive, and Undo capabilities."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/file-organizer-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48999412?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "file-organizer-skill",
+      "url": "https://clawhub.ai/skills/file-organizer-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-organizer-skill",
+    "url": "https://clawhub.ai/skills/file-organizer-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-organizer-skill-c603693e14017f1e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/file-organizer-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-file-organizer-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:acc2bc302419402fa098ad87461fc931fed591986d00405300ced611d15de70c",
+      "artifactSizeBytes": 2197
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T23:26:34.313Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30796,
+  "uuid": "skill-clawhub-finmei",
+  "skillKey": "clawhub-finmei",
+  "name": "Finmei",
+  "summary": "Finmei integration. Manage Organizations, Pipelines, Users, Goals, Filters. Use when the user wants to interact with Finmei data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finmei",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Finmei integration",
+        "Manage Organizations, Pipelines, Users, Goals, Filters",
+        "Use when the user wants to interact with Finmei data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/finmei@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "finmei",
+      "url": "https://clawhub.ai/skills/finmei"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finmei",
+    "url": "https://clawhub.ai/skills/finmei",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finmei-6c5d96a96865d667.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/finmei@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-finmei-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:daa0cbd356974bf390d4555be51c0e05cf13191348164ca7971d0171d1cebd17",
+      "artifactSizeBytes": 1822
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:47:30.768Z"
+}

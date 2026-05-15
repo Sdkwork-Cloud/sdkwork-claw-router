@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19773,
+  "uuid": "skill-clawhub-stable-browser",
+  "skillKey": "clawhub-stable-browser",
+  "name": "Stable Browser",
+  "summary": "Set up reliable browser automation using Chrome DevTools Protocol (CDP) instead of the flaky browser extension relay. Use when browser relay keeps disconnect...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stable_browser",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jarvis563",
+      "features": [
+        "Set up reliable browser automation using Chrome DevTools Protocol (CDP) instead of the flaky br.",
+        "Use when browser relay keeps disconnect..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stable-browser@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258515214?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stable-browser",
+      "url": "https://clawhub.ai/skills/stable-browser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stable-browser",
+    "url": "https://clawhub.ai/skills/stable-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stable-browser-fec5147dc11c4a01.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stable-browser@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stable-browser-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:10836070013152093832ad6e29bbaf24e881e3ac08e2bb4d4101762c7d01ac44",
+      "artifactSizeBytes": 2366
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T13:57:03.837Z"
+}

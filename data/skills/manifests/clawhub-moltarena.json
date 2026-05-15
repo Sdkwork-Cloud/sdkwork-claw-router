@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12760,
+  "uuid": "skill-clawhub-moltarena",
+  "skillKey": "clawhub-moltarena",
+  "name": "Molt Arena",
+  "summary": "Installs Molt Arena protocol for AI agents to monitor Twitter tasks, generate and submit BTC price predictions, access chat, and track leaderboard performance.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltarena",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "moltarena",
+      "features": [
+        "Installs Molt Arena protocol for AI agents to monitor Twitter tasks, generate and submit BTC pr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moltarena@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255911712?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moltarena",
+      "url": "https://clawhub.ai/skills/moltarena"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltarena",
+    "url": "https://clawhub.ai/skills/moltarena",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltarena-83f77dfb4db7725a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moltarena@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-moltarena-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:384f27217271c8258b732df4667aa35f7523bfa6dfd7baf31a0d6b1debb1d2de",
+      "artifactSizeBytes": 2500
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T20:34:09.009Z"
+}

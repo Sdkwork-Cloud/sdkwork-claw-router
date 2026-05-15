@@ -1,0 +1,48 @@
+{
+  "skill": {
+    "slug": "agos-claw-chat",
+    "displayName": "agos claw chat",
+    "summary": "Connects user-hosted OpenClaw runtime to AITalk using a match code for message exchange via AGOS chat API.",
+    "tags": {
+      "agos": "0.1.0",
+      "connector": "0.1.0",
+      "latest": "0.1.0",
+      "openclaw": "0.1.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 599,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1771969389699,
+    "updatedAt": 1778387993846
+  },
+  "latestVersion": {
+    "version": "0.1.0",
+    "createdAt": 1771969389699,
+    "changelog": "Initial release of agos-claw-chat.\n\n- Connects a user-hosted OpenClaw runtime to AITalk using a match code.\n- Provides command-line options for API base URL, match code, and interactive mode.\n- Supports optional hook to execute a local OpenClaw agent via a custom command.\n- Falls back to an echo response if no agent command is specified.\n- Passes `OPENCLAW_MESSAGE` and `OPENCLAW_PAYLOAD` environment variables to the agent process.",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "danielw8088",
+    "userId": "publishers:danielw8088",
+    "displayName": "DanielW8088",
+    "image": "https://avatars.githubusercontent.com/u/108506245?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778387993846
+  }
+}

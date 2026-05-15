@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71324,
+  "uuid": "skill-clawhub-wecom-email",
+  "skillKey": "clawhub-wecom-email",
+  "name": "WeCom邮箱",
+  "summary": "企业微信邮箱操作 - 使用专用邮箱发送邮件。 支持读取会议纪要、业务文档等作为邮件内容发送。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wecom_email",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chongjie-ran",
+      "features": [
+        "企业微信邮箱操作",
+        "使用专用邮箱发送邮件。 支持读取会议纪要、业务文档等作为邮件内容发送。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wecom-email@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/198864991?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wecom-email",
+      "url": "https://clawhub.ai/skills/wecom-email"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wecom-email",
+    "url": "https://clawhub.ai/skills/wecom-email",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wecom-email-cf0fb5de1749d1f4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wecom-email@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wecom-email-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:efdb42c3f03768edffb88c4ada702f75edaaf527b6a208f711c049e9c3601e06",
+      "artifactSizeBytes": 2370
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T00:27:40.710Z"
+}

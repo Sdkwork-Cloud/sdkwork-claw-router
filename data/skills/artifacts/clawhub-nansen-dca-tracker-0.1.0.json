@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nansen-dca-tracker@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nansen_dca_tracker",
+  "skill": {
+    "id": 31858,
+    "skillKey": "clawhub-nansen-dca-tracker",
+    "name": "Nansen Dca Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nansen-dca-tracker",
+    "url": "https://clawhub.ai/skills/nansen-dca-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nansen-dca-tracker-f55eb2272b9037c8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "What tokens are whales dollar-cost averaging into? Jupiter DCA strategies by smart money and target token fundamentals."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nansen-devops",
+      "userId": "s174hnr0xtfypzan2x804p4me183nkqz",
+      "displayName": "Nansen AI",
+      "image": "https://avatars.githubusercontent.com/u/93130718?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 251,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773742690713,
+      "changelog": "Initial release of nansen-dca-tracker.\n\n- Tracks Solana tokens being dollar-cost averaged (DCA) by smart money and whales.\n- Surfaces top DCA targets with whale and smart trader wallet strategies.\n- Provides commands for viewing DCA activity, token fundamentals, and fund flow intelligence.\n- Requires a NANSEN_API_KEY environment variable and nansen-cli tool.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d5fa7b824efdcc374bb2ce6b7e0914a8a2e960bd3491c2c6292b78089212679a"
+}

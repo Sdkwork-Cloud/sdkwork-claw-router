@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aether-tarot@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aether_tarot",
+  "skill": {
+    "id": 30070,
+    "skillKey": "clawhub-aether-tarot",
+    "name": "Aether Tarot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aether-tarot",
+    "url": "https://clawhub.ai/skills/aether-tarot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aether-tarot-864a16b04f36a409.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides calm, intuitive 3-card tarot readings for daily reflection, decision support, and emotional clarity in a private, conversational format."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "emmiev573-web",
+      "userId": "s1774kdh36d6w83bfc5a741v4184fq5w",
+      "displayName": "zhaigui60",
+      "image": "https://avatars.githubusercontent.com/u/255498905?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775670353057,
+      "changelog": "Expanded to use the full 78-card tarot deck for richer, more authentic readings.\n\n- Now supports the complete Major and Minor Arcana (Wands, Cups, Swords, Pentacles).\n- Random card selection ensures variety and ethical interpretation in every reading.\n- Updated documentation to reflect the broader card set and clarify deck contents.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fd8e2763133962890d8a6a9245b91ea7ef0cffced1cb625b4722f2733b9255c8"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32621,
+  "uuid": "skill-clawhub-podcast-copilot",
+  "skillKey": "clawhub-podcast-copilot",
+  "name": "podwise-podcast-copilot",
+  "summary": "Podcast copilot workflows with podwise CLI: search podcasts or episodes by keyword, monitor followed shows for new releases, find current popular episodes, a...",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.podcast_copilot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "skoowoo",
+      "features": [
+        "Podcast copilot workflows with podwise CLI: search podcasts or episodes by keyword, monitor fol."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/podcast-copilot@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/834151?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "podcast-copilot",
+      "url": "https://clawhub.ai/skills/podcast-copilot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "podcast-copilot",
+    "url": "https://clawhub.ai/skills/podcast-copilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/podcast-copilot-c730f50285a56675.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/podcast-copilot@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-podcast-copilot-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f43ce4994a5f00a43b8ee0f9ec54a64659427af4bdfb40c7296387c7ac259b1",
+      "artifactSizeBytes": 2435
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T07:00:32.382Z"
+}

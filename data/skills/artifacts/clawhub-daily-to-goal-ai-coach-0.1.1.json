@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-to-goal-ai-coach@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_to_goal_ai_coach",
+  "skill": {
+    "id": 61732,
+    "skillKey": "clawhub-daily-to-goal-ai-coach",
+    "name": "Daily to Goal AI Coach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-to-goal-ai-coach",
+    "url": "https://clawhub.ai/skills/daily-to-goal-ai-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-to-goal-ai-coach-f6fc2724584d9af0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Daily to Goal AI Coach — 在 ClawHub / OpenClaw 中一键安装，自动开通 Daily to Goal 工作空间，通过对话完成目标管理、任务追踪、贡献记录、每日摘要与团队周报的完整闭环。支持个人模式与团队模式，安装全程在 IM 渠道（Telegram 等）对话内完成，无需跳转网页。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaoke-bot",
+      "userId": "publishers:xiaoke-bot",
+      "displayName": "Xiao Ke",
+      "image": "https://avatars.githubusercontent.com/u/261688828?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 179,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1774135613829,
+      "changelog": "补充对话内引导流程设计：新增全程在 IM 渠道完成的安装引导，覆盖新用户注册和已有账号绑定两个场景",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aca1753bb0f7bf0f6cad7c8412917afd8e3dbb9e2866141bd645aa39c12044bc"
+}

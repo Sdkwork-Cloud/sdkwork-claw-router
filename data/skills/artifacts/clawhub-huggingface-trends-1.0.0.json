@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/huggingface-trends@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huggingface_trends",
+  "skill": {
+    "id": 13153,
+    "skillKey": "clawhub-huggingface-trends",
+    "name": "Huggingface Trends"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huggingface-trends",
+    "url": "https://clawhub.ai/skills/huggingface-trends",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huggingface-trends-621bd2c7f23fa533.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor and fetch trending models from Hugging Face with support for filtering by task, library, and popularity metrics. Use when users want to check trending AI models, compare model popularity, or explore popular models by task or librar."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tianxingleo",
+      "userId": "publishers:tianxingleo",
+      "displayName": "tianxingleo",
+      "image": "https://avatars.githubusercontent.com/u/237200863?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1399,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770885123753,
+      "changelog": "Initial release of huggingface-trends.\n\n- Fetches trending Hugging Face models with filters for task (e.g., text-generation), library (e.g., pytorch), and sort order (trending, likes, downloads).\n- Supports exporting results to JSON and displaying in a structured, formatted output.\n- Requires HTTP proxy configuration for Hugging Face API access, suitable for constrained network environments.\n- Provides command-line and Python API usage for daily monitoring or research.\n- Includes troubleshooting tips and use cases for model discovery and comparison.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3c4c84a52ddd9d8261c7c8de20425dfcba8159262ee81e459e8ef089115d373c"
+}

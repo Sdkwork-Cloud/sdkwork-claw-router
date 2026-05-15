@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/maton-agent-tools@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maton_agent_tools",
+  "skill": {
+    "id": 12987,
+    "skillKey": "clawhub-maton-agent-tools",
+    "name": "Maton MCP Tools"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maton-agent-tools",
+    "url": "https://clawhub.ai/skills/maton-agent-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maton-agent-tools-71d8faeaf53475ea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect to SaaS tools via Maton AI. Includes full UI integration for Clawdbot Gateway dashboard. Use when setting up Maton integration, connecting apps (Gmai..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maverick-software",
+      "userId": "s172zy52hz8d9fxcmyr9padghd842s7c",
+      "displayName": "maverick-software",
+      "image": "https://avatars.githubusercontent.com/u/85259593?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1572,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771184297798,
+      "changelog": "- Initial release of Maton integration skill for Clawdbot Gateway.\n- Provides full UI dashboard for managing Maton API key, viewing and managing OAuth app connections.\n- Supports connecting to 50+ SaaS apps (Gmail, Slack, Notion, HubSpot, etc.) via OAuth.\n- Integrates with API Keys tab for easy configuration and centralized key management.\n- Includes backend RPC methods and UI components for seamless workflow.\n- Requires Clawdbot Gateway v2026.1.0 or later with UI enabled.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:392e3be7060988c6e106ec06aea7974693645f655f68a6a8d2c395d8012e73d7"
+}

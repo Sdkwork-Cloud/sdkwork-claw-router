@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26810,
+  "uuid": "skill-clawhub-salesforce-reporting-copilot",
+  "skillKey": "clawhub-salesforce-reporting-copilot",
+  "name": "Salesforce Reporting Copilot",
+  "summary": "Generate a Salesforce report blueprint from real org metadata. Use this skill when someone asks to build a report in Salesforce, understand how to query thei...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.salesforce_reporting_copilot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Benjamin Reynolds",
+      "features": [
+        "Generate a Salesforce report blueprint from real org metadata",
+        "Use this skill when someone asks to build a report in Salesforce, understand how to query thei.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/salesforce-reporting-copilot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22324195?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "salesforce-reporting-copilot",
+      "url": "https://clawhub.ai/skills/salesforce-reporting-copilot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "salesforce-reporting-copilot",
+    "url": "https://clawhub.ai/skills/salesforce-reporting-copilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/salesforce-reporting-copilot-bda541eaf15f4702.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/salesforce-reporting-copilot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-salesforce-reporting-copilot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3392cac00389bedc7f51f0a9002a3d7f27f97432f72c5af015b63b0280430626",
+      "artifactSizeBytes": 2414
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T21:17:21.678Z"
+}

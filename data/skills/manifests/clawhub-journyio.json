@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33222,
+  "uuid": "skill-clawhub-journyio",
+  "skillKey": "clawhub-journyio",
+  "name": "Journyio",
+  "summary": "Journy.io integration. Manage data, records, and automate workflows. Use when the user wants to interact with Journy.io data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.journyio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Journy.io integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Journy.io data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/journyio@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "journyio",
+      "url": "https://clawhub.ai/skills/journyio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "journyio",
+    "url": "https://clawhub.ai/skills/journyio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/journyio-1cf3cb9856bd2967.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/journyio@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-journyio-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1d49229e6cb9bca36cd2af25d78199220f1d06eb59fdbb65a77da9ae25223897",
+      "artifactSizeBytes": 1832
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:02:34.400Z"
+}

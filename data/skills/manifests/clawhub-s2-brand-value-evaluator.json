@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69350,
+  "uuid": "skill-clawhub-s2-brand-value-evaluator",
+  "skillKey": "clawhub-s2-brand-value-evaluator",
+  "name": "S2 品牌价值动态演算模型",
+  "summary": "S2 品牌价值动态演算模型。基于千家品牌实验室的资产剥离评估法，通过 Python 算法双核计算品牌的“累积媒介价值 (V1)”与“转化预期价值 (T)”。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.s2_brand_value_evaluator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MilesXiang",
+      "features": [
+        "S2 品牌价值动态演算模型。基于千家品牌实验室的资产剥离评估法，通过 Python 算法双核计算品牌的“累积媒介价值 (V1)”与“转化预期价值 (T)”。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/s2-brand-value-evaluator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259359437?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "s2-brand-value-evaluator",
+      "url": "https://clawhub.ai/skills/s2-brand-value-evaluator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "s2-brand-value-evaluator",
+    "url": "https://clawhub.ai/skills/s2-brand-value-evaluator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/s2-brand-value-evaluator-9ed432854c265e75.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/s2-brand-value-evaluator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-s2-brand-value-evaluator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:04fd9bb83aa5ddf5331077feee2538e1239de984b66d4e3430dd277ffbf34d30",
+      "artifactSizeBytes": 2412
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T13:07:37.155Z"
+}

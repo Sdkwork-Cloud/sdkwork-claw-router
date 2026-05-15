@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25107,
+  "uuid": "skill-clawhub-skillsindex-mcp",
+  "skillKey": "clawhub-skillsindex-mcp",
+  "name": "Skills Indec MCP",
+  "summary": "Search, score, and submit 11,000+ AI agent tools from SkillsIndex, filtered by ecosystem, category, and rated on security, utility, and maintenance.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skillsindex_mcp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "samoth",
+      "features": [
+        "Search, score, and submit 11,000+ AI agent tools from SkillsIndex, filtered by ecosystem, categ."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skillsindex-mcp@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62956219?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skillsindex-mcp",
+      "url": "https://clawhub.ai/skills/skillsindex-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skillsindex-mcp",
+    "url": "https://clawhub.ai/skills/skillsindex-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skillsindex-mcp-9f5cb5f483ca021a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skillsindex-mcp@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skillsindex-mcp-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:06d4ad82f2a0d33007c461de0db8ec6e173449c9b1c0d3541598a0484e4f5462",
+      "artifactSizeBytes": 2513
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T15:39:44.823Z"
+}

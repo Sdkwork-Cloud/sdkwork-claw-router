@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21528,
+  "uuid": "skill-clawhub-recipe-sync-contacts-to-sheet",
+  "skillKey": "clawhub-recipe-sync-contacts-to-sheet",
+  "name": "Recipe Sync Contacts To Sheet",
+  "summary": "Export Google Contacts directory to a Google Sheets spreadsheet.",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recipe_sync_contacts_to_sheet",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Export Google Contacts directory to a Google Sheets spreadsheet."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/recipe-sync-contacts-to-sheet@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "recipe-sync-contacts-to-sheet",
+      "url": "https://clawhub.ai/skills/recipe-sync-contacts-to-sheet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recipe-sync-contacts-to-sheet",
+    "url": "https://clawhub.ai/skills/recipe-sync-contacts-to-sheet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recipe-sync-contacts-to-sheet-ad3466c2654b23e6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/recipe-sync-contacts-to-sheet@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-recipe-sync-contacts-to-sheet-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:01972a56faf52e9291b0fbd72b56deb3906687059b13c17ccaf7c8fb4f53fb8d",
+      "artifactSizeBytes": 2042
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:37:12.817Z"
+}

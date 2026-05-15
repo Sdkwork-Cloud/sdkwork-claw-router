@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/finclaw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finclaw",
+  "skill": {
+    "id": 30175,
+    "skillKey": "clawhub-finclaw",
+    "name": "FinClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finclaw",
+    "url": "https://clawhub.ai/skills/finclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finclaw-b26beea9d794f9e0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI finance assistant — real-time quotes, charts, technical analysis, portfolio tracking, price alerts, watchlists, daily briefings, macro economics, and sent..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "salihgun",
+      "userId": "publishers:salihgun",
+      "displayName": "salihgun",
+      "image": "https://avatars.githubusercontent.com/u/47421572?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 683,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771176728428,
+      "changelog": "Initial release — AI finance assistant with real-time quotes, charts, technical analysis, portfolio tracking, price alerts, watchlists, daily briefings, macro economics, and sentiment analysis for US stocks, BIST, crypto, and forex.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3db46d674647f33b6aadc37684ac49750ad82a88a72996133029451cb0495ab5"
+}

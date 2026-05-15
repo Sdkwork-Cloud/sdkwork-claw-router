@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30837,
+  "uuid": "skill-clawhub-xiaohongshu-auto-publisher",
+  "skillKey": "clawhub-xiaohongshu-auto-publisher",
+  "name": "Xiaohongshu Auto Publisher",
+  "summary": "Posts content (images/videos) to Xiaohongshu (Little Red Book) automatically using Playwright. Use this skill when you need to publish content to Xiaohongshu.",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_auto_publisher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yi Xu",
+      "features": [
+        "Posts content (images/videos) to Xiaohongshu (Little Red Book) automatically using Playwright",
+        "Use this skill when you need to publish content to Xiaohongshu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaohongshu-auto-publisher@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1227421?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaohongshu-auto-publisher",
+      "url": "https://clawhub.ai/skills/xiaohongshu-auto-publisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-auto-publisher",
+    "url": "https://clawhub.ai/skills/xiaohongshu-auto-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-auto-publisher-7b252ef03ac92663.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaohongshu-auto-publisher@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaohongshu-auto-publisher-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b454ccdcb97604f32540174429d519caa1b68c49d9864498d265aa537edc2d06",
+      "artifactSizeBytes": 1966
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T15:06:16.234Z"
+}

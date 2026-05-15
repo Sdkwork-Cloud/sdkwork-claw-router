@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/teambition-worklog@0.5.0",
+  "version": "0.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.teambition_worklog",
+  "skill": {
+    "id": 60989,
+    "skillKey": "clawhub-teambition-worklog",
+    "name": "Teambition Worklog"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "teambition-worklog",
+    "url": "https://clawhub.ai/skills/teambition-worklog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/teambition-worklog-306cc16dfb0ad789.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据 Git 提交记录 + Teambition 任务数据，AI 推断并填写 Teambition 工时。当用户说「填工时」「登记工时」「填今天的工时」时使用本 skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kenee",
+      "userId": "s179ex4bp6wwhffpv55n2shxvx83g43z",
+      "displayName": "Ken",
+      "image": "https://avatars.githubusercontent.com/u/290026?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 94,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.5.0",
+      "createdAt": 1778078437324,
+      "changelog": "新增：查看活跃任务功能（查看进行中任务、项目今日动态），修正 tasks API 返回结构说明",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9cf3cd9b1bac7b81b8e69a3229ffc51a00107b123025e54588dcb89e6e287236"
+}

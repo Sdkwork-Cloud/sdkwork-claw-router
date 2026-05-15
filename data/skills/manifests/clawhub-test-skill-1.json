@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27464,
+  "uuid": "skill-clawhub-test-skill-1",
+  "skillKey": "clawhub-test-skill-1",
+  "name": "Don't download",
+  "summary": "Remove image background to transparent PNG. Powered by RMBG-2.0, commercially-safe model. Extract subjects for overlays, product photography, logos, and cuto...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_skill_1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Levdavid1",
+      "features": [
+        "Remove image background to transparent PNG",
+        "Powered by RMBG-2.0, commercially-safe model",
+        "Extract subjects for overlays, product photography, logos, and cuto..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/test-skill-1@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/125185764?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "test-skill-1",
+      "url": "https://clawhub.ai/skills/test-skill-1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-skill-1",
+    "url": "https://clawhub.ai/skills/test-skill-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-skill-1-c2f711580574f77a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/test-skill-1@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-test-skill-1-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:34b982fe6d9695f81302f0a66100ddbd920564cabc564b54779d779997f962fb",
+      "artifactSizeBytes": 2263
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T14:54:47.822Z"
+}

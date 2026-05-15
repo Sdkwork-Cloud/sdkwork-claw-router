@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71781,
+  "uuid": "skill-clawhub-ops-pm-bridge",
+  "skillKey": "clawhub-ops-pm-bridge",
+  "name": "\"运营-产品协同加速套件。解决运营与产品之间的信息不对称、需求扯皮、效果归因等痛点。用于：(1) 运营需求翻译为产品语言；(2) 效果归因框架生成；(3) 优先级智能计算；(4) 验收标准自动生成；(5) 数据口径对齐；(6) 协同文档生成。触发词：运营.",
+  "summary": "运营-产品协同加速套件。解决运营与产品之间的信息不对称、需求扯皮、效果归因等痛点。用于：(1) 运营需求翻译为产品语言；(2) 效果归因框架生成；(3) 优先级智能计算；(4) 验收标准自动生成；(5) 数据口径对齐；(6) 协同文档生成。触发词：运营需求、产品协同、效果归因、需求扯皮、数据口径、验收标准、优先级评估。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ops_pm_bridge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Socialite UCL LJH",
+      "features": [
+        "运营-产品协同加速套件。解决运营与产品之间的信息不对称、需求扯皮、效果归因等痛点。用于：(1) 运营需求翻译为产品语言；(2) 效果归因框架生成；(3) 优先级智能计算；(4) 验收标准自动."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ops-pm-bridge@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270577937?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ops-pm-bridge",
+      "url": "https://clawhub.ai/skills/ops-pm-bridge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ops-pm-bridge",
+    "url": "https://clawhub.ai/skills/ops-pm-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ops-pm-bridge-6cfc14c58ce04ce0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ops-pm-bridge@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ops-pm-bridge-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:05f271850c6a0531a324e2f5dc2b1ab4e218c58ad133d05016cdd4da17cdcd1f",
+      "artifactSizeBytes": 3031
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T18:18:28.847Z"
+}

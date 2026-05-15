@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kb-mini@1.3.0",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kb_mini",
+  "skill": {
+    "id": 35485,
+    "skillKey": "clawhub-kb-mini",
+    "name": "Kb Mini"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kb-mini",
+    "url": "https://clawhub.ai/skills/kb-mini",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kb-mini-f549759ad42c9cbd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Store, search, and automatically manage a personal or shared knowledge base integrated with OpenClaw through before/after hooks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thomasliu",
+      "userId": "publishers:thomasliu",
+      "displayName": "Thomas Lau",
+      "image": "https://avatars.githubusercontent.com/u/3435615?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 214,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.3.0",
+      "createdAt": 1774180930679,
+      "changelog": "**Refactored configuration and default storage for easier setup and sharing.**\n\n- Simplified default setup: KB now works out-of-the-box with its own internal data directory, no extra config needed.\n- Added support for shared knowledge bases via KNOWLEDGE_SHARED_NAME environment variable.\n- Explicit knowledge base path can be set with KNOWLEDGE_DB (takes highest priority).\n- Updated documentation to reflect new storage modes, priorities, and directory structure.\n- Removed deprecated keywords and streamlined trigger phrase list in SKILL.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:608ad51616c8852d6d77f4fd50e4c9dd46249bc705f3cbfc95ef8704f337fba3"
+}

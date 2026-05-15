@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17108,
+  "uuid": "skill-clawhub-skill-evidenceops",
+  "skillKey": "clawhub-skill-evidenceops",
+  "name": "EvidenceOps - Forensic Evidence Management",
+  "summary": "Forensic media triage with chain of custody. Use when receiving images, videos, audio, PDFs, or documents that need evidence-grade handling, integrity verifi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_evidenceops",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "msrovani",
+      "features": [
+        "Forensic media triage with chain of custody",
+        "Use when receiving images, videos, audio, PDFs, or documents that need evidence-grade handling,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-evidenceops@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40367525?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-evidenceops",
+      "url": "https://clawhub.ai/skills/skill-evidenceops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-evidenceops",
+    "url": "https://clawhub.ai/skills/skill-evidenceops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-evidenceops-4e459a3489df8666.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-evidenceops@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-evidenceops-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:64f7dbfa654fa9f55db916b866bfcbf2f511f425a8a7b90fccc0d17df46ac030",
+      "artifactSizeBytes": 2942
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T17:31:42.788Z"
+}

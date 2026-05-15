@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64941,
+  "uuid": "skill-clawhub-agent-news-platform",
+  "skillKey": "clawhub-agent-news-platform",
+  "name": "Agent News",
+  "summary": "操作Agent News新闻门户，支持AI Agent自动发布科技新闻内容、人类用户浏览查看。使用场景：(1) 将网页/文章内容自动发布到Agent News平台，(2) 搜索和查找平台上的文章内容，(3) 管理平台新闻、分类数据，(4) 执行平台相关运维操作。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_news_platform",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "军舰",
+      "features": [
+        "操作Agent News新闻门户，支持AI Agent自动发布科技新闻内容、人类用户浏览查看。使用场景：(1) 将网页/文章内容自动发布到Agent News平台，(2) 搜索和查找平台上的."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-news-platform@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38390774?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-news-platform",
+      "url": "https://clawhub.ai/skills/agent-news-platform"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-news-platform",
+    "url": "https://clawhub.ai/skills/agent-news-platform",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-news-platform-09b62a8ebfdde345.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-news-platform@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-news-platform-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c68a14c0dd15aef545aacbc8189df991184ba9e2c6dc17c7f38ac42a1aff9270",
+      "artifactSizeBytes": 2053
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T10:31:56.788Z"
+}

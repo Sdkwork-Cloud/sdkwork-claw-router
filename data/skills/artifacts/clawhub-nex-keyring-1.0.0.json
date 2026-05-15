@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nex-keyring@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nex_keyring",
+  "skill": {
+    "id": 32841,
+    "skillKey": "clawhub-nex-keyring",
+    "name": "Nex Keyring"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nex-keyring",
+    "url": "https://clawhub.ai/skills/nex-keyring",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nex-keyring-2d2e23f5bbebf00f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage and track local API keys, secrets, and tokens with rotation status, risk levels, auditing, and policy enforcement without storing actual secret values."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nexaiguy",
+      "userId": "s17fm42hs04zf6z5g1gpabtbmh847c3k",
+      "displayName": "Nex AI",
+      "image": "https://avatars.githubusercontent.com/u/149910894?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775359188902,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:814deddfa6f1f1e88cbf17d09bc5ff6d9d1e9f5f1cab796562bd2f40762432b9"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35631,
+  "uuid": "skill-clawhub-tomato-pay",
+  "skillKey": "clawhub-tomato-pay",
+  "name": "Tomato Pay",
+  "summary": "Tomato pay integration. Manage data, records, and automate workflows. Use when the user wants to interact with Tomato pay data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tomato_pay",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Tomato pay integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Tomato pay data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tomato-pay@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tomato-pay",
+      "url": "https://clawhub.ai/skills/tomato-pay"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tomato-pay",
+    "url": "https://clawhub.ai/skills/tomato-pay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tomato-pay-7c762a94c4aa5d97.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tomato-pay@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-tomato-pay-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:df373532ba7c74c415219f83703e50983040016d44408f66338335a13f2f77e6",
+      "artifactSizeBytes": 1848
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:54:09.824Z"
+}

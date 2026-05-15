@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28099,
+  "uuid": "skill-clawhub-lotto-agent",
+  "skillKey": "clawhub-lotto-agent",
+  "name": "lotto-agent",
+  "summary": "Private lottery assistant for number generation, drawing fetching, prize checking, report generation, and automation management without prediction or winning...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lotto_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wenjinliuu",
+      "features": [
+        "Private lottery assistant for number generation, drawing fetching, prize checking, report gener."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lotto-agent@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128307646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lotto-agent",
+      "url": "https://clawhub.ai/skills/lotto-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lotto-agent",
+    "url": "https://clawhub.ai/skills/lotto-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lotto-agent-50e54c09d16872bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lotto-agent@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-lotto-agent-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dd9e9fd255b39f9a1bc84455b4c802feca69ed98a5182c747796d170f366c2f8",
+      "artifactSizeBytes": 1999
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-10T01:24:26.825Z"
+}

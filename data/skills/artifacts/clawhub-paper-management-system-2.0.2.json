@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paper-management-system@2.0.2",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_management_system",
+  "skill": {
+    "id": 64614,
+    "skillKey": "clawhub-paper-management-system",
+    "name": "Paper Management System"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-management-system",
+    "url": "https://clawhub.ai/skills/paper-management-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-management-system-530121925cbe7377.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "文献管理系统 - 自动化PDF文献索引、搜索、AI提炼工具。当用户需要管理PDF文献、自动索引、搜索文献、提取元数据时激活。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "crayfish-ai",
+      "userId": "s172k14n492gjdn59cs251gvb584dmkf",
+      "displayName": "crayfish-ai",
+      "image": "https://avatars.githubusercontent.com/u/270082434?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.0.2",
+      "createdAt": 1775830898486,
+      "changelog": "**Major refactor and reorganization of the paper management system.**\n\n- Scripts moved to the scripts/ directory, with naming unified and legacy/duplicate files removed.\n- Configuration and invocation instructions simplified; now focused on environment variables and scripts.\n- Features and usage documentation streamlined in SKILL.md and README.md, reflecting the new workflow.\n- Previous shell scripts and duplicate Python scripts consolidated or deleted.\n- Changelog, migration, and separate process docs removed for clarity.\n- Output paths and environment variables more clearly documented.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3178e59d26bdae0278aeb699ba26711f7de97851888e2e5015053d88e8d6900c"
+}

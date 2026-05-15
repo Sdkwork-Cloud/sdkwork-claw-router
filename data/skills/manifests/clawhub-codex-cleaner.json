@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22028,
+  "uuid": "skill-clawhub-codex-cleaner",
+  "skillKey": "clawhub-codex-cleaner",
+  "name": "Codex Auth Cleaner",
+  "summary": "Monitor and clean invalid codex auth files from CPA (Codex Provider Agent). Checks quota status, disables 401 files, double-verifies before deletion. Use whe...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codex_cleaner",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JupiterWen",
+      "features": [
+        "Monitor and clean invalid codex auth files from CPA (Codex Provider Agent)",
+        "Checks quota status, disables 401 files, double-verifies before deletion",
+        "Use whe..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/codex-cleaner@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13904283?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "codex-cleaner",
+      "url": "https://clawhub.ai/skills/codex-cleaner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codex-cleaner",
+    "url": "https://clawhub.ai/skills/codex-cleaner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codex-cleaner-6e7e20208ce0ca45.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/codex-cleaner@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-codex-cleaner-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:12750f8cd79f4b5f235be421eff3d02f71f5cc5891e5747877dfc086af54fb9e",
+      "artifactSizeBytes": 1929
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T06:24:43.542Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52846,
+  "uuid": "skill-clawhub-faas",
+  "skillKey": "clawhub-faas",
+  "name": "Faas",
+  "summary": "Deep workflow for serverless workloads—event sources, IAM, cold start/latency, limits, observability, security, cost, and deployment patterns (functions, con...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.faas",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clawkk",
+      "features": [
+        "Deep workflow for serverless workloads—event sources, IAM, cold start/latency, limits, observab."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/faas@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265748372?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "faas",
+      "url": "https://clawhub.ai/skills/faas"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "faas",
+    "url": "https://clawhub.ai/skills/faas",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/faas-7e6bde7573f923cb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/faas@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-faas-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6091dec6d3dcada5cfdbb72f50c28d6db09792714f1377f8e881d4fc732dde6c",
+      "artifactSizeBytes": 2451
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T17:33:44.189Z"
+}

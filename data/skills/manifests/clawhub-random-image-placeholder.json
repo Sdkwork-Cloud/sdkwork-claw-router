@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32774,
+  "uuid": "skill-clawhub-random-image-placeholder",
+  "skillKey": "clawhub-random-image-placeholder",
+  "name": "Random Image Placeholder",
+  "summary": "Generate stable or random image placeholder URLs (and optionally download them) using https://picsum.photos. Use when the user mentions picsum, placeholder i...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.random_image_placeholder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hicoldcat",
+      "features": [
+        "Generate stable or random image placeholder URLs (and optionally download them) using https://p.",
+        "Use when the user mentions picsum, placeholder i..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/random-image-placeholder@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15854702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "random-image-placeholder",
+      "url": "https://clawhub.ai/skills/random-image-placeholder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "random-image-placeholder",
+    "url": "https://clawhub.ai/skills/random-image-placeholder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/random-image-placeholder-b379a918b4df4d61.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/random-image-placeholder@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-random-image-placeholder-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:92a34e64309e1a9aa5be43a582e3457f9ac21dd6d4a3a38060b2edc880375a54",
+      "artifactSizeBytes": 2397
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T04:52:35.681Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22784,
+  "uuid": "skill-clawhub-vtiger",
+  "skillKey": "clawhub-vtiger",
+  "name": "Vtiger",
+  "summary": "Vtiger integration. Manage Leads, Organizations, Persons, Deals, Activities, Notes and more. Use when the user wants to interact with Vtiger data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vtiger",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Vtiger integration",
+        "Manage Leads, Organizations, Persons, Deals, Activities, Notes and more",
+        "Use when the user wants to interact with Vtiger data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vtiger@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vtiger",
+      "url": "https://clawhub.ai/skills/vtiger"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vtiger",
+    "url": "https://clawhub.ai/skills/vtiger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vtiger-e9996ffa0becafb2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vtiger@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-vtiger-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:77881e3877f204a8ac0aa6a1a635e4b51fda38f234492a53856d826b9fd88306",
+      "artifactSizeBytes": 1845
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T12:04:52.734Z"
+}

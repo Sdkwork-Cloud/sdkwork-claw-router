@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15264,
+  "uuid": "skill-clawhub-qordinate-structured-memory",
+  "skillKey": "clawhub-qordinate-structured-memory",
+  "name": "Qordinate - Durable lists, facts, and reminders for OpenClaw agents.",
+  "summary": "Qordinate is a chat-native assistant that acts as structured memory for your agents. Use this skill when you want your OpenClaw agent to offload long-term facts, tasks, and reminders into Qordinate over WhatsApp, Telegram, or Slack instead.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qordinate_structured_memory",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SinghCoder",
+      "features": [
+        "Qordinate is a chat-native assistant that acts as structured memory for your agents",
+        "Use this skill when you want your OpenClaw agent to offload long-term facts, tasks, and reminde."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qordinate-structured-memory@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32142363?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qordinate-structured-memory",
+      "url": "https://clawhub.ai/skills/qordinate-structured-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qordinate-structured-memory",
+    "url": "https://clawhub.ai/skills/qordinate-structured-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qordinate-structured-memory-afcb895038bef4bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qordinate-structured-memory@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-qordinate-structured-memory-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bd706f32c7b6bb733336fd81b39b9703cb34e8e3a594474bcd8012a1994ee805",
+      "artifactSizeBytes": 2232
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T05:52:50.636Z"
+}

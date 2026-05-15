@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66786,
+  "uuid": "skill-clawhub-product-analysis",
+  "skillKey": "clawhub-product-analysis",
+  "name": "product-analysis",
+  "summary": "产品需求分析专用 skill。触发词：「分析需求」「产品分析」「业务流程」「功能架构」「PRD」「改版」「迭代需求」， 或用户上传需求文档/PRD 时。支持快速模式（3步）、标准模式（5步）、迭代模式（Diff分析）三种工作流， 输出 Mermaid 流程图、功能架构、埋点方案、PRD、开发 Ticket 等文档。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.product_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Allan_zhang",
+      "features": [
+        "产品需求分析专用 skill。触发词：「分析需求」「产品分析」「业务流程」「功能架构」「PRD」「改版」「迭代需求」， 或用户上传需求文档/PRD 时。支持快速模式（3步）、标准模式（5步）."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/product-analysis@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32677010?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "product-analysis",
+      "url": "https://clawhub.ai/skills/product-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "product-analysis",
+    "url": "https://clawhub.ai/skills/product-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/product-analysis-d457f8a793b30362.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/product-analysis@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-product-analysis-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:21df49dd4fefea99dd4ec979b484c6d4f044c2bda6a1649c93c737fca60f5211",
+      "artifactSizeBytes": 2280
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T20:32:58.813Z"
+}

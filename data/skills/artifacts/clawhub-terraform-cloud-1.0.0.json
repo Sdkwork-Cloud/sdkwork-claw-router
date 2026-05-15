@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/terraform-cloud@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.terraform_cloud",
+  "skill": {
+    "id": 54407,
+    "skillKey": "clawhub-terraform-cloud",
+    "name": "Terraform Cloud"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "terraform-cloud",
+    "url": "https://clawhub.ai/skills/terraform-cloud",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/terraform-cloud-e7668527d34bbbd0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Terraform Cloud — manage workspaces, runs, plans, state, and variables via REST API"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiwithabidi",
+      "userId": "publishers:aiwithabidi",
+      "displayName": "aiwithabidi",
+      "image": "https://avatars.githubusercontent.com/u/208891229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 410,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772837567816,
+      "changelog": "Initial release of Terraform Cloud skill.\n\n- Manage workspaces, runs, plans, state, variables, and teams in Terraform Cloud via REST API.\n- CLI tool provided for common operations: listing, creating, updating, and deleting resources.\n- Outputs JSON by default, with human-readable formatting option.\n- Requires TFC_TOKEN and TFC_ORG environment variables for authentication.\n- No dependencies; compatible with Python 3.10+ standard library.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4927e29a6cb1085cc1d9dd51a68b547ccb4a9393976c16058402c3f05b181edc"
+}

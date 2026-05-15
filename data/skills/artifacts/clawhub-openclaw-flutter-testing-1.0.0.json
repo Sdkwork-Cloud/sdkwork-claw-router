@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-flutter-testing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_flutter_testing",
+  "skill": {
+    "id": 59204,
+    "skillKey": "clawhub-openclaw-flutter-testing",
+    "name": "Flutter Testing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-flutter-testing",
+    "url": "https://clawhub.ai/skills/openclaw-flutter-testing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-flutter-testing-c4361020056a81f8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "全面的 Flutter 测试指导（单元/集成/Widget 测试）"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thomaschangx",
+      "userId": "publishers:thomaschangx",
+      "displayName": "ThomasChangX",
+      "image": "https://avatars.githubusercontent.com/u/10368872?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 454,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772978901022,
+      "changelog": "Initial release of openclaw-flutter-testing.\n\n- Provides comprehensive guidance for all types of Flutter tests: unit, widget, and integration.\n- Includes quick start code examples and running instructions for each test type.\n- Explains best practices, testing workflows, and decision tree for choosing test strategies.\n- Offers advanced tips for mocking, test patterns, and handling plugins in tests.\n- Summarizes test trade-offs, build modes, and critical testing concepts in Flutter.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cbcd381e93e92d34f74047ee3b57af369cccdcb85f94de825416ab9cd51fe663"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60099,
+  "uuid": "skill-clawhub-sql-explain-cli",
+  "skillKey": "clawhub-sql-explain-cli",
+  "name": "sql-explain",
+  "summary": "解析和优化 PostgreSQL、MySQL、SQLite SQL查询计划，支持SQL生成、格式化及语法检查。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sql_explain_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shenghoo123-png",
+      "features": [
+        "解析和优化 PostgreSQL、MySQL、SQLite SQL查询计划，支持SQL生成、格式化及语法检查。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sql-explain-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265226019?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sql-explain-cli",
+      "url": "https://clawhub.ai/skills/sql-explain-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sql-explain-cli",
+    "url": "https://clawhub.ai/skills/sql-explain-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sql-explain-cli-16f645003b1e8d26.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sql-explain-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sql-explain-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:476227c33669a6f821d28af370dd92a7662f6c8ab4445938c9edef30c6a850fd",
+      "artifactSizeBytes": 1850
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T05:40:34.511Z"
+}

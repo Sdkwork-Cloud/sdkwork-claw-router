@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40200,
+  "uuid": "skill-clawhub-tiktok-trend",
+  "skillKey": "clawhub-tiktok-trend",
+  "name": "Tiktok Trend Radar",
+  "summary": "Automatically monitors TikTok and Instagram trends, detects hashtag spikes, generates AI-driven content ideas and scripts, and produces short videos via InVi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tiktok_trend",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nicemaths123",
+      "features": [
+        "Automatically monitors TikTok and Instagram trends, detects hashtag spikes, generates AI-driven."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tiktok-trend@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/244252350?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tiktok-trend",
+      "url": "https://clawhub.ai/skills/tiktok-trend"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tiktok-trend",
+    "url": "https://clawhub.ai/skills/tiktok-trend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tiktok-trend-5297ba4c41e83cd7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tiktok-trend@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tiktok-trend-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8835fadf2a927abb0c662c9a55439f2e9caa85147f93c6e1dacf173e3c8ed325",
+      "artifactSizeBytes": 2421
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T22:40:52.564Z"
+}

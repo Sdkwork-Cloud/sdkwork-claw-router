@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-neural-agent-lead-qualification-framework@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_neural_agent_lead_qualification_framework",
+  "skill": {
+    "id": 31903,
+    "skillKey": "clawhub-ai-neural-agent-lead-qualification-framework",
+    "name": "ai neural agent lead qualification framework"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-neural-agent-lead-qualification-framework",
+    "url": "https://clawhub.ai/skills/ai-neural-agent-lead-qualification-framework",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-neural-agent-lead-qualification-framework-6e81826804aca0d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Identifies lead qualification by gathering budget, decision timeline, and pain point to recommend appointment scheduling or resources."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aineuralagency",
+      "userId": "s174jtv0eh9rp8e7dsb5fv42j18423k6",
+      "displayName": "AiNeuralAgency",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775169596358,
+      "changelog": "This is the core engine used by our agency to automatically qualify potential clients. It's not just a simple prompt; it's a logical structure designed to filter cold leads and identify those ready to buy.\nWhat's included in this Free Version:\n✅ Optimized System Prompt for qualification.\n✅ Decision Logic (If/Then) for tone of voice.\n✅ Data extraction instructions.\nWho is this for:\nFreelancers, Agencies, and Business Owners who want to start testing AI in customer support or sales.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:442b0de52ed3acd279a5d23c520eefbe2d82cb33a0dea5d13d9a3ce17c43b639"
+}

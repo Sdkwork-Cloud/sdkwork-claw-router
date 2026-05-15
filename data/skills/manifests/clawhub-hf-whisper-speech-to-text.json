@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23430,
+  "uuid": "skill-clawhub-hf-whisper-speech-to-text",
+  "skillKey": "clawhub-hf-whisper-speech-to-text",
+  "name": "Speech to Text",
+  "summary": "Transcribe or translate audio files to text using a public Hugging Face Whisper Space over Gradio. Use when the user sends voice notes, audio attachments, me...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hf_whisper_speech_to_text",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shu-hari",
+      "features": [
+        "Transcribe or translate audio files to text using a public Hugging Face Whisper Space over Grad.",
+        "Use when the user sends voice notes, audio attachments, me..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hf-whisper-speech-to-text@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7855660?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hf-whisper-speech-to-text",
+      "url": "https://clawhub.ai/skills/hf-whisper-speech-to-text"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hf-whisper-speech-to-text",
+    "url": "https://clawhub.ai/skills/hf-whisper-speech-to-text",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hf-whisper-speech-to-text-68f45b80ae8db66c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hf-whisper-speech-to-text@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hf-whisper-speech-to-text-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:86276994662634ec92ebd49bc7ee6851d21140b462e0da2186a6416b33a6030c",
+      "artifactSizeBytes": 2032
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T01:40:51.777Z"
+}

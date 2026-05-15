@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43442,
+  "uuid": "skill-clawhub-test-0313-skill",
+  "skillKey": "clawhub-test-0313-skill",
+  "name": "test-0313-skill",
+  "summary": "Summarize URLs or files with the summarize CLI (web, PDFs, images, audio, YouTube).",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_0313_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yuangui",
+      "features": [
+        "Summarize URLs or files with the summarize CLI (web, PDFs, images, audio, YouTube)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/test-0313-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5061317?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "test-0313-skill",
+      "url": "https://clawhub.ai/skills/test-0313-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-0313-skill",
+    "url": "https://clawhub.ai/skills/test-0313-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-0313-skill-e72c981239a03a92.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/test-0313-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-test-0313-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:16ed0eb53dc13826dfafaebff94fd4b4dda92addc0df28b23a07de5af4cd2fac",
+      "artifactSizeBytes": 2180
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T08:47:38.552Z"
+}

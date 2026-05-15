@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/teammate-skill@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.teammate_skill",
+  "skill": {
+    "id": 42301,
+    "skillKey": "clawhub-teammate-skill",
+    "name": "teammate.skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "teammate-skill",
+    "url": "https://clawhub.ai/skills/teammate-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/teammate-skill-a3e9145d419053d7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Distill a teammate into an AI Skill. Auto-collect Slack/Teams/GitHub data, generate Work Skill + 5-layer Persona, with continuous evolution. Use when: user w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "myclaw-ai",
+      "userId": "s17251tfxrevk7g6eqjs83a11183rhqw",
+      "displayName": "MyClaw.ai",
+      "image": "https://avatars.githubusercontent.com/u/265695449?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1774964063697,
+      "changelog": "v2.0.0: Quality Pipeline (Smoke Test + Quality Gate + Privacy Guard), /compare side-by-side teammate comparison, /export-teammate portable packages, Size Guard, 3-tier data volume strategy, non-tech role support, 8-language READMEs, 12 Python tools, 9 prompt templates",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d64d59e6f69ffe8ba74bfa2bc2e3fea852fc198910d7b7a4b7d601e0269f7d81"
+}

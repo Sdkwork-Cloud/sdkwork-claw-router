@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/add-music-to-video-online@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.add_music_to_video_online",
+  "skill": {
+    "id": 48783,
+    "skillKey": "clawhub-add-music-to-video-online",
+    "name": "Add Music To Video Online"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "add-music-to-video-online",
+    "url": "https://clawhub.ai/skills/add-music-to-video-online",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/add-music-to-video-online-0da267aef38e4a7e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute vacation video clip into 1080p music-backed videos just by typing what you need. Whether it's adding background music to personal or social m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhogan2013-9",
+      "userId": "s1734kgyh0j16a86enc51zqp6184cy81",
+      "displayName": "mhogan2013-9",
+      "image": "https://avatars.githubusercontent.com/u/208827708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 93,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777587965210,
+      "changelog": "Add Music to Video Online — Merge Music and Export Video, version 1.0.0\n\n- Initial public release of the skill.\n- Upload video and audio clips, specify edit instructions, and receive a 1080p rendered video in ~20–40 seconds.\n- No need for timeline editing or export settings; describe your edits in plain language.\n- Uses cloud GPU nodes for fast, server-side merging and export.\n- Supports major video, audio, and image formats up to 500MB.\n- Robust handling for authentication, free credits, error cases, and session state.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2264fbabcf85a6badb0151e7f3c54b2b2bab616d952d88e65aea71ca1fa84a2d"
+}

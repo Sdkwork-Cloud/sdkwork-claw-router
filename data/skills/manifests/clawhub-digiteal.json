@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33479,
+  "uuid": "skill-clawhub-digiteal",
+  "skillKey": "clawhub-digiteal",
+  "name": "Digiteal",
+  "summary": "Digiteal integration. Manage data, records, and automate workflows. Use when the user wants to interact with Digiteal data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.digiteal",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Digiteal integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Digiteal data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/digiteal@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "digiteal",
+      "url": "https://clawhub.ai/skills/digiteal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "digiteal",
+    "url": "https://clawhub.ai/skills/digiteal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/digiteal-568ae3e815ecebf1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/digiteal@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-digiteal-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fe06a1e11d13be81ac669a01c42fe3a1d7418a6df9d2d799b609f0661a717e39",
+      "artifactSizeBytes": 1838
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:24:10.246Z"
+}

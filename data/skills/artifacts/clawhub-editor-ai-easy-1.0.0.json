@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/editor-ai-easy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.editor_ai_easy",
+  "skill": {
+    "id": 44509,
+    "skillKey": "clawhub-editor-ai-easy",
+    "name": "Editor Ai Easy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "editor-ai-easy",
+    "url": "https://clawhub.ai/skills/editor-ai-easy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/editor-ai-easy-8102436fa47145e8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "beginner creators edit raw video footage into polished edited clips using this skill. Accepts MP4, MOV, AVI, WebM up to 500MB, renders on cloud GPUs at 1080p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775860433985,
+      "changelog": "- Initial release of Editor AI Easy, designed for beginner creators to quickly edit raw video footage into polished clips with AI.\n- Supports MP4, MOV, AVI, and WebM uploads up to 500MB; renders on cloud GPUs at 1080p and returns edited MP4 files in 30-60 seconds.\n- Includes automatic token and session management for easy setup and use.\n- Offers fast cloud-based trimming, transitions, and audio cleanup with minimal manual effort.\n- Built-in prompt routing to handle exports, credits, uploads, and editing actions via user-friendly commands.\n- Provides clear feedback on job status and guides users through common editing workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c252709d5c7ecbfed9643b2bbe522d39373a1aa383baec8c54f7306b4985164c"
+}

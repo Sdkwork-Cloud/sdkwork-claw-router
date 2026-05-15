@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58721,
+  "uuid": "skill-clawhub-voice-transcription",
+  "skillKey": "clawhub-voice-transcription",
+  "name": "Voice Transcription",
+  "summary": "语音转文本技能 - 基于 SiliconFlow API (SenseVoiceSmall/TeleSpeechASR)，支持四川话等多种方言识别",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voice_transcription",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "datou3456",
+      "features": [
+        "基于 SiliconFlow API (SenseVoiceSmall/TeleSpeechASR)，支持四川话等多种方言识别"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/voice-transcription@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268571179?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "voice-transcription",
+      "url": "https://clawhub.ai/skills/voice-transcription"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voice-transcription",
+    "url": "https://clawhub.ai/skills/voice-transcription",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voice-transcription-3a47653543fc8e56.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/voice-transcription@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-voice-transcription-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:788881ed279a8c3706257c3f5a764ee4138a0cc79a356a320e39fcb29dda65d8",
+      "artifactSizeBytes": 1919
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T08:41:18.836Z"
+}

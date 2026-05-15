@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68399,
+  "uuid": "skill-clawhub-long-task-handler",
+  "skillKey": "clawhub-long-task-handler",
+  "name": "Long Task Handler",
+  "summary": "自动识别并后台执行预计超30秒的长任务，定期推送进度反馈，避免阻塞和任务堆积，支持超时及完成通知管理。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.long_task_handler",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FrankieWay",
+      "features": [
+        "自动识别并后台执行预计超30秒的长任务，定期推送进度反馈，避免阻塞和任务堆积，支持超时及完成通知管理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/long-task-handler@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25837859?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "long-task-handler",
+      "url": "https://clawhub.ai/skills/long-task-handler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "long-task-handler",
+    "url": "https://clawhub.ai/skills/long-task-handler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/long-task-handler-d8fd34fe0533e302.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/long-task-handler@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-long-task-handler-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8cbbbe5ec0ed5390d02de08a56ede175250a43eb7e11bef2abfaa02c5a59b575",
+      "artifactSizeBytes": 1968
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T09:52:56.702Z"
+}

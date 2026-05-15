@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shadcn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shadcn",
+  "skill": {
+    "id": 12839,
+    "skillKey": "clawhub-shadcn",
+    "name": "Shadcn UI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shadcn",
+    "url": "https://clawhub.ai/skills/shadcn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shadcn-d276630b7ec4a6c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build accessible, customizable UIs with shadcn/ui, Radix UI, and Tailwind CSS. Use when setting up shadcn/ui, installing components, building forms with React Hook Form + Zod, customizing themes, or implementing component patterns."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wpank",
+      "userId": "publishers:wpank",
+      "displayName": "wpank",
+      "image": "https://avatars.githubusercontent.com/u/9498646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1473,
+      "installsAllTime": 7,
+      "installsCurrent": 5,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770728192864,
+      "changelog": "Initial documentation release and reference resources.\n\n- Added comprehensive README covering installation, setup, and usage patterns for shadcn/ui, including forms, dialogs, sheets, and component customization.\n- Included reference guides at references/extended-components.md and references/learn.md for further learning and advanced component usage.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a28513d959d827133876c0fff3ae3152ffc5fef5f00ae723a9fd25b901921e8b"
+}

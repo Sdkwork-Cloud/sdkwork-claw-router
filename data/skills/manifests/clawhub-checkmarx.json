@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34466,
+  "uuid": "skill-clawhub-checkmarx",
+  "skillKey": "clawhub-checkmarx",
+  "name": "Checkmarx",
+  "summary": "Checkmarx integration. Manage data, records, and automate workflows. Use when the user wants to interact with Checkmarx data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.checkmarx",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Checkmarx integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Checkmarx data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/checkmarx@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "checkmarx",
+      "url": "https://clawhub.ai/skills/checkmarx"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "checkmarx",
+    "url": "https://clawhub.ai/skills/checkmarx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/checkmarx-c4bc9f13fc13297c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/checkmarx@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-checkmarx-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:19145031a610e2d0777a8c88804fd782e12b54a0d108f79613b17edab75d5bf5",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:17:58.477Z"
+}

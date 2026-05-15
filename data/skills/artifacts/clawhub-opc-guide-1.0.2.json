@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/opc-guide@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opc_guide",
+  "skill": {
+    "id": 29065,
+    "skillKey": "clawhub-opc-guide",
+    "name": "OPC Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opc-guide",
+    "url": "https://clawhub.ai/skills/opc-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opc-guide-3460d9d33192e27a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guides solo founders through validating startup ideas, architecting product design, and defining visual systems with structured design documents as output."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peadue1858",
+      "userId": "s1727dpbget0dqpmpn5gw8esps83nwds",
+      "displayName": "PEADUE1858",
+      "image": "https://avatars.githubusercontent.com/u/211859906?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 211,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774575579161,
+      "changelog": "Complete rewrite for pure business direction.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1d0f649955af05a4001d89d19cd4c27ebc29d514a9841dd40299496997b30bf0"
+}

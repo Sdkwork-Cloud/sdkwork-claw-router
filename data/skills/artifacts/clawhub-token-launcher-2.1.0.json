@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/token-launcher@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.token_launcher",
+  "skill": {
+    "id": 24367,
+    "skillKey": "clawhub-token-launcher",
+    "name": "Pumpclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "token-launcher",
+    "url": "https://clawhub.ai/skills/token-launcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/token-launcher-956607289359e142.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Revenue infrastructure for autonomous AI agents on Base. Deploy ERC20 tokens with Uniswap V4 liquidity — 80% trading fees to creator, LP locked forever, $0 c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clawd800",
+      "userId": "publishers:clawd800",
+      "displayName": "clawd800",
+      "image": "https://avatars.githubusercontent.com/u/257470662?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2058,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1771469015023,
+      "changelog": "Migrated from pumpclaw-base. Updated ERC-8004 agent ID to 17197. Revenue infrastructure for AI agents on Base.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:078f17c389ade812a67b3962362986e4482b6c11162b755066551ad02e76249e"
+}

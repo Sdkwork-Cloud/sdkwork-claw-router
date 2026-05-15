@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fr3k-google-workspace@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fr3k_google_workspace",
+  "skill": {
+    "id": 52985,
+    "skillKey": "clawhub-fr3k-google-workspace",
+    "name": "Google Workspace"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fr3k-google-workspace",
+    "url": "https://clawhub.ai/skills/fr3k-google-workspace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fr3k-google-workspace-16f2eecb32092402.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Google Workspace automation — Gmail, Calendar, Drive, and Sheets via service account or OAuth. Read, write, send, and manage your entire Google stack."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fr3kstyle",
+      "userId": "publishers:fr3kstyle",
+      "displayName": "fr3kstyle",
+      "image": "https://avatars.githubusercontent.com/u/218435724?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774095409007,
+      "changelog": "Initial release — automate Gmail, Calendar, Drive, and Sheets from the command line.\n\n- Automate Google Workspace tasks (Gmail, Calendar, Drive, Sheets) using service accounts or OAuth.\n- Read, send, and label emails; manage calendar events; list, upload, download, and share Drive files.\n- Read, write, and append data in Google Sheets via simple CLI commands.\n- Designed for easy setup and usage for both automation and interactive use cases.\n- Requires Python 3.8+ and Google API Python client libraries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fdddd29e7961e091c61867cf469742ff95d746a0d86464236b4e6a9edaf8205b"
+}

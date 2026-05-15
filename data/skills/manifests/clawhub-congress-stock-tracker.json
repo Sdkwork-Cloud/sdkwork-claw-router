@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70793,
+  "uuid": "skill-clawhub-congress-stock-tracker",
+  "skillKey": "clawhub-congress-stock-tracker",
+  "name": "congress-stock-tracker",
+  "summary": "国会山股神线索追踪工具。追踪美国国会议员最新股票交易动态，识别被多位议员集中买入的重仓标的，结合议员所在委员会和近期立法/监管动态，分析交易背后可能的政策事件催化剂，并检测大额交易、密集交易、跨党派共识等异常信号。当用户询问以下问题时使用本技能：(1) 国会议员最近买了什么股票 (2) 哪些股票被议员重仓买入 (...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.congress_stock_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "goatdeesign",
+      "features": [
+        "国会山股神线索追踪工具。追踪美国国会议员最新股票交易动态，识别被多位议员集中买入的重仓标的，结合议员所在委员会和近期立法/监管动态，分析交易背后可能的政策事件催化剂，并检测大额交易、密集交易."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/congress-stock-tracker@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/250061072?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "congress-stock-tracker",
+      "url": "https://clawhub.ai/skills/congress-stock-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "congress-stock-tracker",
+    "url": "https://clawhub.ai/skills/congress-stock-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/congress-stock-tracker-a9edb3ad2578f95f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/congress-stock-tracker@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-congress-stock-tracker-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f11b3339a397b998dde110eab4a581f76d6fc414308b2eca55b268d3a89dbec",
+      "artifactSizeBytes": 2624
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T01:05:54.568Z"
+}

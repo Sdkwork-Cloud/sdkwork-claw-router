@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zai-vision@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zai_vision",
+  "skill": {
+    "id": 48739,
+    "skillKey": "clawhub-zai-vision",
+    "name": "Zai Vision"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zai-vision",
+    "url": "https://clawhub.ai/skills/zai-vision",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zai-vision-bbd5cc85b20f9d8f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Z.AI Vision analysis using GLM-4.6V model for image and video understanding. Use when Claude needs to analyze images (screenshots, UI designs, photos, diagra..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twolfe1991-cloud",
+      "userId": "s1702v0stdy1kt13zak4wy1pax85sbj4",
+      "displayName": "twolfe1991-cloud",
+      "image": "https://avatars.githubusercontent.com/u/258322580?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 85,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777435394440,
+      "changelog": "Z.AI Vision 1.0.0 – Initial Release\n\n- Provides image and video analysis using the GLM-4.6V model via the Z.AI Vision API.\n- Supports OCR, error diagnosis from screenshots, technical diagram interpretation, UI design analysis, data visualization reading, and video scene description.\n- Includes Python scripts for both image and video analysis with customizable parameters (model, temperature, max tokens, JSON output).\n- Offers detailed setup, error handling, and patterns for batch processing and specialized visual tasks.\n- Integrates safety features when run within the `/root/clawd` workspace.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:89d12cabde232fd488e2b552c952f38738c50ee29f2c50a953d75febf3c53f80"
+}

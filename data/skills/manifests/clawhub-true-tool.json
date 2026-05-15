@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49079,
+  "uuid": "skill-clawhub-true-tool",
+  "skillKey": "clawhub-true-tool",
+  "name": "True Tool",
+  "summary": "Return exit code 0 indicating success. Use as a no-op command that always succeeds in scripts and conditional expressions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.true_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BIN",
+      "features": [
+        "Return exit code 0 indicating success",
+        "Use as a no-op command that always succeeds in scripts and conditional expressions."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/true-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9191597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "true-tool",
+      "url": "https://clawhub.ai/skills/true-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "true-tool",
+    "url": "https://clawhub.ai/skills/true-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/true-tool-f9cd7abcb693cb66.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/true-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-true-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:82d034632d83c75a3b1eabdaab4647f2de0f3ca963de612810cafbaf41a59214",
+      "artifactSizeBytes": 1807
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T16:30:20.111Z"
+}

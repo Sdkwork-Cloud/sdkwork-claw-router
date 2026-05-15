@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58221,
+  "uuid": "skill-clawhub-youtube-shorts-automation",
+  "skillKey": "clawhub-youtube-shorts-automation",
+  "name": "YouTube Shorts Automation",
+  "summary": "YouTube Shorts 자동 생성 및 업로드 파이프라인. Deevid AI Agent로 이미지→영상(BGM+음성 포함) 생성 후 YouTube에 업로드. 크론잡으로 매일 자동 실행 가능. Use when generating short-form vertical videos, creating AI-generated video content, uploading to YouTube Shorts, or automating dail.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_shorts_automation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kangjjang",
+      "features": [
+        "YouTube Shorts 자동 생성 및 업로드 파이프라인",
+        "Deevid AI Agent로 이미지→영상(BGM+음성 포함) 생성 후 YouTube에 업로드",
+        "크론잡으로 매일 자동 실행 가능",
+        "Use when generating short-form vertical videos, creating AI-generated video content, uploading."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-shorts-automation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16265769?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-shorts-automation",
+      "url": "https://clawhub.ai/skills/youtube-shorts-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-shorts-automation",
+    "url": "https://clawhub.ai/skills/youtube-shorts-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-shorts-automation-be1760d92cf1b0bf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-shorts-automation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-shorts-automation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7bc3385d9ca94677f7ffe53a43d2056b4a9085e0f6a2b006475311f7d6fdbe4a",
+      "artifactSizeBytes": 2185
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T09:29:48.359Z"
+}

@@ -28,37 +28,36 @@ class ApiContractManifestGenerator:
     SDK_BOUNDARIES: dict[str, dict[str, str]] = {
         "app": {
             "api_prefix": "/app/v3/api",
-            "sdk_family": "app",
+            "sdk_family": "clawrouter-app-sdk",
             "sdk_client": "SdkworkAppClient",
-            "openapi_source": "spring-ai-plus-app-api/sdkwork-sdk-app/app-openapi-8080.json",
-            "generated_sdk_home": "spring-ai-plus-app-api/sdkwork-sdk-app",
+            "openapi_source": "generated/openapi/clawrouter-app-openapi.json",
+            "generated_sdk_home": "sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript",
             "generator": "sdk/sdkwork-sdk-generator",
         },
         "backend": {
             "api_prefix": "/backend/v3/api",
-            "sdk_family": "backend",
+            "sdk_family": "clawrouter-backend-sdk",
             "sdk_client": "SdkworkBackendClient",
-            "openapi_source": "spring-ai-plus-backend-api/sdkwork-sdk-backend/backend-openapi-8080.json",
-            "generated_sdk_home": "spring-ai-plus-backend-api/sdkwork-sdk-backend",
+            "openapi_source": "generated/openapi/clawrouter-backend-openapi.json",
+            "generated_sdk_home": "sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript",
             "generator": "sdk/sdkwork-sdk-generator",
         },
         "openai_v1": {
             "api_prefix": "/v1",
-            "sdk_family": "ai",
+            "sdk_family": "clawrouter-open-sdk",
             "sdk_client": "SdkworkAiClient",
-            "openapi_source": "spring-ai-plus-ai-api/sdkwork-sdk-ai",
-            "generated_sdk_home": "spring-ai-plus-ai-api/sdkwork-sdk-ai",
+            "openapi_source": "apps/sdkwork-claw-router-portal/public/openapi.json",
+            "generated_sdk_home": "sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript",
             "generator": "sdk/sdkwork-sdk-generator",
         },
     }
-    VALID_KINDS = {"read", "create", "update", "delete", "action", "sync"}
+    VALID_KINDS = {"read", "create", "update", "delete", "action"}
     KIND_METHODS = {
         "read": {"GET"},
         "create": {"POST"},
         "update": {"PATCH", "PUT"},
         "delete": {"DELETE"},
         "action": {"POST"},
-        "sync": {"POST"},
     }
     PATH_PARAM_PATTERN = re.compile(r"\{([A-Za-z_][A-Za-z0-9_]*)\}")
     PAYLOAD_SCHEMA_NAME_PATTERN = re.compile(r"^[A-Z][A-Za-z0-9]*$")
@@ -68,7 +67,158 @@ class ApiContractManifestGenerator:
         "OperationResponse",
         "PageResult",
         "PlusApiResult",
+        "NoData",
     }
+    STANDARD_PAYLOAD_SCHEMA_NAMES = {
+        "NoData",
+    }
+    STANDARD_QUERY_PARAMETER_ALIASES = {
+        "search_query": ("q", "search text"),
+        "searchQuery": ("q", "search text"),
+        "keyword": ("q", "search text"),
+        "search": ("q", "search text"),
+        "size": ("page_size", "page size"),
+        "page_no": ("page", "page index"),
+    }
+    APP_BACKEND_SURFACES = {"app", "backend"}
+    VALID_REQUEST_CONTENT_TYPES = {
+        "application/json",
+        "application/x-www-form-urlencoded",
+        "multipart/form-data",
+    }
+    STANDARD_TAG_DOMAINS = {
+        "auth": "iam",
+        "iam": "iam",
+        "profile": "iam",
+        "billing": "commerce",
+        "content": "content",
+        "communication": "communication",
+        "ai": "intelligence",
+        "system": "system",
+        "platform": "platform",
+        "integration": "integration",
+        "ecosystem": "ecosystem",
+    }
+    DOMAIN_ALIASES = {
+        "auth": "iam",
+        "identity": "iam",
+        "user": "iam",
+        "users": "iam",
+        "profile": "iam",
+        "account": "commerce",
+        "billing": "commerce",
+        "commerce": "commerce",
+        "coupon": "commerce",
+        "course": "content",
+        "feed": "content",
+        "forum": "content",
+        "comment": "content",
+        "content": "content",
+        "model": "intelligence",
+        "models": "intelligence",
+        "router": "intelligence",
+        "ai": "intelligence",
+        "intelligence": "intelligence",
+        "provider": "integration",
+        "providers": "integration",
+        "integration": "integration",
+        "app": "platform",
+        "apps": "platform",
+        "platform": "platform",
+        "skill": "ecosystem",
+        "skills": "ecosystem",
+        "ecosystem": "ecosystem",
+        "system": "system",
+        "ops": "system",
+    }
+    TOP_LEVEL_TAGS = set(STANDARD_TAG_DOMAINS)
+    ROUTER_IAM_SEGMENTS = {"api_keys", "api-keys", "access_groups", "access-groups"}
+    ROUTER_AI_SEGMENTS = {
+        "dashboard",
+        "gateway",
+        "model_rankings",
+        "model-rankings",
+        "model_vendors",
+        "model-vendors",
+        "models",
+        "providers",
+        "routing",
+        "settlements",
+        "usage",
+    }
+    ROUTER_BILLING_SEGMENTS = {
+        "coupon_batches",
+        "coupon-batches",
+        "coupon_codes",
+        "coupon-codes",
+        "finance",
+        "referrals",
+        "settlements",
+    }
+    ROUTER_CONTENT_SEGMENTS = {"announcements"}
+    ROUTER_SYSTEM_SEGMENTS = {"firewall", "monitor", "rate_limits", "rate-limits"}
+    ACTION_SEGMENTS = {
+        "activate",
+        "approve",
+        "cancel",
+        "deactivate",
+        "disable",
+        "enable",
+        "publish",
+        "refresh",
+        "reject",
+        "resend",
+        "restore",
+        "revoke",
+        "submit",
+        "unpublish",
+        "verify",
+    }
+    READ_ACTION_SEGMENTS = {"list"}
+    DETAIL_SEGMENTS = {"detail"}
+    STATIC_SEGMENT_ALIASES = {
+        "apikey": "api_keys",
+        "api-key": "api_keys",
+        "api-keys": "api_keys",
+        "access-group": "access_groups",
+        "access-groups": "access_groups",
+        "announcement": "announcements",
+        "app": "apps",
+        "channel": "channels",
+        "comment": "comments",
+        "coupon": "coupons",
+        "coupon-batches": "coupon_batches",
+        "coupon-codes": "coupon_codes",
+        "feed": "feeds",
+        "firewall": "firewalls",
+        "model": "models",
+        "model-rankings": "model_rankings",
+        "model-vendors": "model_vendors",
+        "notification": "notifications",
+        "provider-secret": "provider_secrets",
+        "provider-secrets": "provider_secrets",
+        "rate-limits": "rate_limits",
+        "record": "records",
+        "skill": "skills",
+        "user": "users",
+    }
+    TABLE_TAG_RULES = (
+        ("iam_", "iam"),
+        ("ai_", "ai"),
+        ("commerce_", "billing"),
+        ("content_", "content"),
+        ("agent_skill", "ecosystem"),
+        ("plus_app", "platform"),
+        ("plus_coupon", "billing"),
+        ("plus_user_coupon", "billing"),
+        ("plus_vip", "billing"),
+        ("plus_order", "billing"),
+        ("plus_payment", "billing"),
+        ("plus_feeds", "content"),
+        ("plus_comments", "content"),
+        ("course_", "content"),
+        ("ops_", "system"),
+    )
     JSON_SCHEMA_CONSTRAINT_KEYS = {
         "$ref",
         "allOf",
@@ -188,11 +338,13 @@ class ApiContractManifestGenerator:
         messages: list[str] = []
         keys: set[str] = set()
         openapi_operations: dict[tuple[str, str, str], str] = {}
+        operation_ids: dict[tuple[str, str], str] = {}
 
         for entry in entries:
             if not isinstance(entry, dict):
                 messages.append("frontend_operations entries must be mappings")
                 continue
+            compiled_entry = self._compile_operation(entry)
 
             source = entry.get("source")
             operation = entry.get("operation")
@@ -201,6 +353,7 @@ class ApiContractManifestGenerator:
             api_surface = entry.get("api_surface")
             api_method = entry.get("api_method")
             api_path = entry.get("api_path")
+            operation_id = compiled_entry.get("operation_id")
             openapi_exposed = entry.get("openapi_exposed", True)
             key = self._operation_key(source, operation)
 
@@ -211,6 +364,11 @@ class ApiContractManifestGenerator:
 
             if "openapi_exposed" in entry and not isinstance(openapi_exposed, bool):
                 messages.append(f"api contract {key} openapi_exposed must be boolean")
+            is_app_backend_openapi_operation = (
+                openapi_exposed is not False
+                and isinstance(api_surface, str)
+                and api_surface in {"app", "backend"}
+            )
 
             if (
                 openapi_exposed is not False
@@ -220,11 +378,12 @@ class ApiContractManifestGenerator:
                 and isinstance(api_method, str)
                 and isinstance(api_path, str)
             ):
-                openapi_key = (api_surface, api_method.upper(), api_path)
+                standard_api_path = self._string(compiled_entry.get("api_path")) or api_path
+                openapi_key = (api_surface, api_method.upper(), standard_api_path)
                 existing = openapi_operations.get(openapi_key)
                 if existing is not None and existing != key:
                     messages.append(
-                        f"duplicate OpenAPI path/method on {api_surface} {api_method.upper()} {api_path}: {existing} and {key}"
+                        f"duplicate OpenAPI path/method on {api_surface} {api_method.upper()} {standard_api_path}: {existing} and {key}"
                     )
                 else:
                     openapi_operations[openapi_key] = key
@@ -233,6 +392,11 @@ class ApiContractManifestGenerator:
                 messages.append(f"api contract {key} must declare source")
             if not isinstance(operation, str) or not operation:
                 messages.append(f"api contract {key} must declare operation")
+            if is_app_backend_openapi_operation and not self._valid_operation_id(operation_id):
+                messages.append(
+                    f"api contract {key} operation_id must use dotted lowerCamel segments, "
+                    "for example sessions.create"
+                )
             if not isinstance(route, str) or not route:
                 messages.append(f"api contract {key} must declare route")
             if not isinstance(kind, str) or kind not in self.VALID_KINDS:
@@ -250,9 +414,6 @@ class ApiContractManifestGenerator:
             if not isinstance(api_path, str):
                 messages.append(f"api contract {key} must declare api_path")
             else:
-                prefix = self.SDK_BOUNDARIES[api_surface]["api_prefix"]
-                if not api_path.startswith(prefix):
-                    messages.append(f"api contract {key} api_path must start with {prefix}")
                 invalid_param = self._invalid_path_param(api_path)
                 if invalid_param:
                     messages.append(f"api contract {key} path param is invalid: {invalid_param}")
@@ -262,6 +423,37 @@ class ApiContractManifestGenerator:
                     messages.append(f"api contract {key} route {route} must use backend api_surface")
                 elif not route.startswith("/admin") and api_surface == "backend":
                     messages.append(f"api contract {key} route {route} must not use backend api_surface")
+            if is_app_backend_openapi_operation:
+                if isinstance(operation_id, str):
+                    operation_id_key = (api_surface, operation_id)
+                    existing_operation = operation_ids.get(operation_id_key)
+                    if existing_operation is not None and existing_operation != key:
+                        messages.append(
+                            f"duplicate OpenAPI operation_id on {api_surface} {operation_id}: "
+                            f"{existing_operation} and {key}"
+                        )
+                    else:
+                        operation_ids[operation_id_key] = key
+                method = api_method.upper() if isinstance(api_method, str) else ""
+                if method == "GET" and "query_parameters" not in entry:
+                    messages.append(
+                        f"api contract {key} GET operations must explicitly declare query_parameters, "
+                        "use [] when there are no query inputs"
+                    )
+                if method in {"POST", "PUT", "PATCH"} and not isinstance(entry.get("request_schema"), dict):
+                    if entry.get("request_body_required") is not False:
+                        messages.append(
+                            f"api contract {key} {method} operations without request_schema must explicitly set "
+                            "request_body_required: false"
+                        )
+                request_content_type = self._string(entry.get("request_content_type"))
+                if request_content_type and request_content_type not in self.VALID_REQUEST_CONTENT_TYPES:
+                    messages.append(
+                        f"api contract {key} request_content_type must be one of "
+                        f"{', '.join(sorted(self.VALID_REQUEST_CONTENT_TYPES))}"
+                    )
+                if not isinstance(entry.get("response_schema"), dict):
+                    messages.append(f"api contract {key} must explicitly declare response_schema")
 
             read_sources = entry.get("read_sources")
             if not isinstance(read_sources, list) or not all(isinstance(item, str) for item in read_sources):
@@ -269,6 +461,9 @@ class ApiContractManifestGenerator:
             write_tables = entry.get("write_tables", [])
             if write_tables and (not isinstance(write_tables, list) or not all(isinstance(item, str) for item in write_tables)):
                 messages.append(f"api contract {key} write_tables must be a string list")
+            file_targets = entry.get("file_targets", [])
+            if file_targets and (not isinstance(file_targets, list) or not all(isinstance(item, str) for item in file_targets)):
+                messages.append(f"api contract {key} file_targets must be a string list")
             messages.extend(self._query_parameter_validation_messages(key, entry.get("query_parameters")))
             for field in ("request_schema", "response_schema"):
                 messages.extend(self._payload_schema_validation_messages(key, field, entry.get(field)))
@@ -281,13 +476,41 @@ class ApiContractManifestGenerator:
         route = self._string(entry.get("route"))
         api_surface = self._string(entry.get("api_surface"))
         api_method = self._string(entry.get("api_method")).upper()
-        api_path = self._string(entry.get("api_path"))
+        raw_api_path = self._string(entry.get("api_path"))
         boundary = self.SDK_BOUNDARIES.get(api_surface, self.SDK_BOUNDARIES["app"])
+        read_sources = self._string_list(entry.get("read_sources"))
+        write_tables = self._string_list(entry.get("write_tables"))
+        file_targets = self._string_list(entry.get("file_targets"))
+        api_path = self._standard_api_path(
+            api_surface=api_surface,
+            api_path=raw_api_path,
+            api_method=api_method,
+            kind=self._string(entry.get("kind")),
+            read_sources=read_sources,
+            write_tables=write_tables,
+            fallback_operation=operation,
+        )
+        tag = self._standard_tag(
+            api_surface=api_surface,
+            api_path=api_path,
+            read_sources=read_sources,
+            write_tables=write_tables,
+        )
+        sdk_domain = self._standard_sdk_domain(entry, tag, read_sources, write_tables)
+        operation_id = self._standard_operation_id(
+            entry=entry,
+            api_surface=api_surface,
+            api_method=api_method,
+            api_path=api_path,
+            tag=tag,
+            fallback_operation=operation,
+        )
 
         compiled = {
             "key": self._operation_key(source, operation),
             "source": source,
             "operation": operation,
+            "operation_id": operation_id,
             "route": route,
             "route_scope": self._route_scope(route),
             "module": self._module_name(source, route),
@@ -295,18 +518,19 @@ class ApiContractManifestGenerator:
             "api_surface": api_surface,
             "api_method": api_method,
             "api_path": api_path,
-            "tag": self._tag(api_surface, api_path),
+            "tag": tag,
             "path_params": self.PATH_PARAM_PATTERN.findall(api_path),
             "sdk_family": boundary["sdk_family"],
             "sdk_client": boundary["sdk_client"],
             "sdk_api_prefix": boundary["api_prefix"],
-            "sdk_domain": self._string(entry.get("sdk_domain")),
+            "sdk_domain": sdk_domain,
             "openapi_exposed": entry.get("openapi_exposed", True) is not False,
             "idempotency_required": bool(entry.get("idempotency_required")),
             "request_id_header": bool(entry.get("request_id_header")),
             "request_body_required": entry.get("request_body_required"),
-            "read_sources": self._string_list(entry.get("read_sources")),
-            "write_tables": self._string_list(entry.get("write_tables")),
+            "read_sources": read_sources,
+            "write_tables": write_tables,
+            "file_targets": file_targets,
             "query_parameters_declared": "query_parameters" in entry,
             "query_parameters": self._normalize_query_parameters(entry.get("query_parameters")),
         }
@@ -316,6 +540,9 @@ class ApiContractManifestGenerator:
         summary = self._string(entry.get("summary"))
         if summary:
             compiled["summary"] = summary
+        request_content_type = self._string(entry.get("request_content_type"))
+        if request_content_type:
+            compiled["request_content_type"] = request_content_type
         request_schema = self._normalize_payload_schema(entry.get("request_schema"))
         if request_schema is not None:
             compiled["request_schema"] = request_schema
@@ -346,16 +573,418 @@ class ApiContractManifestGenerator:
         return contract
 
     def _allowed_methods(self, kind: str, api_surface: str) -> set[str]:
-        methods = set(self.KIND_METHODS[kind])
-        if kind == "read" and api_surface == "backend":
-            methods.add("POST")
-        return methods
+        return set(self.KIND_METHODS[kind])
 
     def _invalid_path_param(self, api_path: str) -> str | None:
         for raw in re.findall(r"\{([^}]*)\}", api_path):
             if not re.match(r"^[A-Za-z_][A-Za-z0-9_]*$", raw):
                 return raw
         return None
+
+    def _standard_api_path(
+        self,
+        *,
+        api_surface: str,
+        api_path: str,
+        api_method: str,
+        kind: str,
+        read_sources: list[str],
+        write_tables: list[str],
+        fallback_operation: str,
+    ) -> str:
+        if api_surface not in self.APP_BACKEND_SURFACES:
+            return api_path
+        boundary = self.SDK_BOUNDARIES.get(api_surface)
+        prefix = boundary["api_prefix"] if boundary else ""
+        if not prefix or not api_path.startswith(prefix):
+            return api_path
+
+        segments = self._relative_path_segments(api_surface, api_path)
+        if not segments:
+            return api_path
+        if api_surface == "app" and self._is_course_path(segments):
+            return api_path
+        tag = self._tag_from_segments(segments, read_sources, write_tables)
+        canonical_segments = self._canonical_resource_segments(
+            segments=segments,
+            tag=tag,
+            api_method=api_method,
+            kind=kind,
+            fallback_operation=fallback_operation,
+        )
+        if canonical_segments and canonical_segments[0] == tag:
+            relative_segments = canonical_segments
+        else:
+            relative_segments = [self._path_segment_from_tag(tag), *canonical_segments]
+        return prefix + "/" + "/".join(relative_segments)
+
+    def _is_course_path(self, segments: list[str]) -> bool:
+        return bool(segments) and self._normalize_static_segment(segments[0]) in {"course", "courses"}
+
+    def _standard_tag(
+        self,
+        *,
+        api_surface: str,
+        api_path: str,
+        read_sources: list[str],
+        write_tables: list[str],
+    ) -> str:
+        if api_surface not in self.APP_BACKEND_SURFACES:
+            return self._tag(api_surface, api_path)
+        segments = self._relative_path_segments(api_surface, api_path)
+        if not segments:
+            return "system"
+        tag = self._tag_from_segments(segments, read_sources, write_tables)
+        return tag if tag in self.TOP_LEVEL_TAGS else self._tag_from_tables(read_sources, write_tables) or "system"
+
+    def _standard_sdk_domain(
+        self,
+        entry: dict[str, Any],
+        tag: str,
+        read_sources: list[str],
+        write_tables: list[str],
+    ) -> str:
+        explicit = self._canonical_domain(self._string(entry.get("sdk_domain")))
+        if explicit:
+            return explicit
+        tag_domain = self.STANDARD_TAG_DOMAINS.get(tag)
+        if tag_domain:
+            return tag_domain
+        table_tag = self._tag_from_tables(read_sources, write_tables)
+        if table_tag:
+            return self.STANDARD_TAG_DOMAINS.get(table_tag, "")
+        return ""
+
+    def _standard_operation_id(
+        self,
+        *,
+        entry: dict[str, Any],
+        api_surface: str,
+        api_method: str,
+        api_path: str,
+        tag: str,
+        fallback_operation: str,
+    ) -> str:
+        if api_surface not in self.APP_BACKEND_SURFACES:
+            return self._string(entry.get("operation_id")) or fallback_operation
+        explicit = self._string(entry.get("operation_id"))
+        if self._valid_standard_operation_id(explicit):
+            return explicit
+        segments = self._relative_path_segments(api_surface, api_path)
+        if segments and segments[0] == self._path_segment_from_tag(tag):
+            segments = segments[1:]
+        kind = self._string(entry.get("kind"))
+        last_segment_is_path_param = bool(segments) and self._is_path_param(segments[-1])
+        resource_segments, explicit_action = self._operation_resource_segments(segments, api_method, kind)
+        action = explicit_action or self._default_action(api_method, resource_segments, kind)
+        if api_method == "GET" and last_segment_is_path_param and action == "list":
+            action = "retrieve"
+        if api_method == "DELETE" and explicit_action in {"like", "pin"}:
+            action = f"un{explicit_action}"
+        resource_segments = self._trim_action_like_resource_segments(resource_segments, action)
+        if not resource_segments:
+            resource_segments = [self._resource_from_operation(fallback_operation) or "operations"]
+        operation_id = ".".join([*resource_segments, action])
+        return operation_id
+
+    def _valid_standard_operation_id(self, value: Any) -> bool:
+        return (
+            isinstance(value, str)
+            and bool(value)
+            and re.match(r"^[a-z][A-Za-z0-9]*(?:\.[a-z][A-Za-z0-9]*)+$", value) is not None
+            and "__" not in value
+        )
+
+    def _relative_path_segments(self, api_surface: str, api_path: str) -> list[str]:
+        boundary = self.SDK_BOUNDARIES.get(api_surface)
+        prefix = boundary["api_prefix"] if boundary else ""
+        path = api_path[len(prefix) :] if prefix and api_path.startswith(prefix) else api_path
+        return [segment for segment in path.split("/") if segment]
+
+    def _tag_from_segments(self, segments: list[str], read_sources: list[str], write_tables: list[str]) -> str:
+        static_segments = [segment for segment in segments if not self._is_path_param(segment)]
+        if not static_segments:
+            return self._tag_from_tables(read_sources, write_tables) or "system"
+        first = self._normalize_static_segment(static_segments[0])
+        if first == "router":
+            router_segments = static_segments[1:]
+            router_tag = self._tag_from_router_segments(router_segments, read_sources, write_tables)
+            return router_tag or self._tag_from_tables(read_sources, write_tables) or "ai"
+        if first in {"auth", "iam", "profile", "system"}:
+            return first
+        if first in {"app", "apps", "platform"}:
+            return "platform"
+        if first in {"skill", "skills", "ecosystem"}:
+            return "ecosystem"
+        if first in {"coupon", "coupons", "payment", "payments", "vip", "account", "finance", "billing"}:
+            return "billing"
+        if first in {"course", "courses", "feed", "feeds", "comment", "comments", "announcement", "announcements", "content"}:
+            return "content"
+        if first in {"message", "messages", "notification", "notifications", "communication"}:
+            return "communication"
+        if first in {"channel", "channels", "provider", "providers", "provider_secrets", "integration"}:
+            return "integration"
+        if first in {"ai", "model", "models", "model_vendors", "model_rankings", "routing", "playground"}:
+            return "ai"
+        if first in {"dashboard", "monitor", "firewall", "rate_limits", "record", "records"}:
+            return "system"
+        return self._tag_from_tables(read_sources, write_tables) or self._lower_camel_segment(first)
+
+    def _tag_from_router_segments(
+        self,
+        segments: list[str],
+        read_sources: list[str],
+        write_tables: list[str],
+    ) -> str:
+        first = self._normalize_static_segment(segments[0]) if segments else ""
+        if first in self.ROUTER_IAM_SEGMENTS:
+            return "iam"
+        if first in self.ROUTER_CONTENT_SEGMENTS:
+            return "content"
+        if first in self.ROUTER_BILLING_SEGMENTS:
+            return "billing"
+        if first in self.ROUTER_SYSTEM_SEGMENTS:
+            return "system"
+        if first in self.ROUTER_AI_SEGMENTS:
+            if first == "settlements":
+                return "billing"
+            return "ai"
+        return self._tag_from_tables(read_sources, write_tables)
+
+    def _tag_from_tables(self, read_sources: list[str], write_tables: list[str]) -> str:
+        tables = [*read_sources, *write_tables]
+        for table in tables:
+            normalized = table.lower()
+            for prefix, tag in self.TABLE_TAG_RULES:
+                if normalized == prefix.rstrip("_") or normalized.startswith(prefix):
+                    return tag
+        return ""
+
+    def _canonical_domain(self, value: str) -> str:
+        if not value:
+            return ""
+        normalized = self._lower_camel_segment(value)
+        return self.DOMAIN_ALIASES.get(normalized, normalized if normalized in set(self.DOMAIN_ALIASES.values()) else "")
+
+    def _canonical_resource_segments(
+        self,
+        *,
+        segments: list[str],
+        tag: str,
+        api_method: str,
+        kind: str,
+        fallback_operation: str,
+    ) -> list[str]:
+        static_segments = list(segments)
+        if static_segments and self._normalize_static_segment(static_segments[0]) == "router":
+            static_segments = static_segments[1:]
+        if static_segments:
+            first = self._normalize_static_segment(static_segments[0])
+            if self._is_top_level_path_segment_for_tag(first, tag):
+                static_segments = static_segments[1:]
+
+        result: list[str] = []
+        for index, segment in enumerate(static_segments):
+            if self._is_path_param(segment):
+                result.append(self._normalize_path_param_segment(segment))
+                continue
+            normalized = self._normalize_static_segment(segment)
+            normalized = self._canonical_static_segment(normalized, result, index, api_method, kind)
+            if not normalized:
+                continue
+            result.append(normalized)
+        operation_action = self._operation_action(fallback_operation, kind, api_method)
+        if operation_action:
+            result = self._replace_terminal_action_segment(result, operation_action)
+        return result
+
+    def _canonical_static_segment(
+        self,
+        segment: str,
+        prior_segments: list[str],
+        index: int,
+        api_method: str,
+        kind: str,
+    ) -> str:
+        alias = self.STATIC_SEGMENT_ALIASES.get(segment, segment)
+        if alias in {"my", "mine"}:
+            return "current"
+        if alias in {"list", "search"}:
+            return ""
+        if alias in self.DETAIL_SEGMENTS:
+            return ""
+        if alias == "test":
+            return "verify"
+        if alias in {"sync", "import"}:
+            return "refresh"
+        if alias == "offline":
+            return "unpublish"
+        return alias
+
+    def _is_top_level_path_segment_for_tag(self, segment: str, tag: str) -> bool:
+        return segment == self._path_segment_from_tag(tag) or segment in self.TOP_LEVEL_TAGS
+
+    def _path_segment_from_tag(self, tag: str) -> str:
+        if tag == "ai":
+            return "ai"
+        return tag
+
+    def _operation_resource_segments(
+        self,
+        path_segments: list[str],
+        api_method: str,
+        kind: str,
+    ) -> tuple[list[str], str]:
+        resource_segments: list[str] = []
+        explicit_action = ""
+        for segment in path_segments:
+            if self._is_path_param(segment):
+                continue
+            normalized = self._normalize_static_segment(segment)
+            if normalized == "list" and kind == "read":
+                explicit_action = self._read_collection_action(api_method)
+                continue
+            if not normalized or normalized == "list":
+                continue
+            if normalized in self.DETAIL_SEGMENTS:
+                continue
+            if normalized == "my":
+                normalized = "mine"
+            if normalized in self.ACTION_SEGMENTS:
+                explicit_action = normalized
+                continue
+            if normalized in self.READ_ACTION_SEGMENTS:
+                explicit_action = normalized
+                continue
+            resource_segments.append(self._lower_camel_segment(normalized))
+        return resource_segments, explicit_action
+
+    def _operation_action(self, operation: str, kind: str, api_method: str) -> str:
+        words = [word.lower() for word in self._operation_words(operation)]
+        if not words:
+            return ""
+
+        joined = "_".join(words)
+        method = api_method.upper()
+        for action in sorted(self.ACTION_SEGMENTS | self.READ_ACTION_SEGMENTS, key=len, reverse=True):
+            action_words = action.split("_")
+            action_joined = "".join(action_words)
+            if words[0] == action or words[0] == action_joined or joined.startswith(action_joined):
+                return self._lower_camel_segment(action)
+
+        verb = words[0]
+        if verb in {"fetch", "list", "query"}:
+            return self._read_collection_action(api_method) if kind == "read" else "list"
+        if verb in {"search"}:
+            return self._read_collection_action(api_method) if kind == "read" else ""
+        if verb in {"get", "load", "read"}:
+            return "retrieve"
+        if verb == "check":
+            return "retrieve" if kind == "read" else "verify"
+        if verb in {"create", "add", "submit", "register"}:
+            return "create"
+        if verb in {"update", "edit", "patch", "set"}:
+            return "update"
+        if verb in {"delete", "remove"}:
+            return "delete"
+        if verb in {"sync", "import"}:
+            return "refresh"
+        if kind == "read":
+            return "retrieve" if method == "GET" else self._read_collection_action(api_method)
+        return ""
+
+    def _replace_terminal_action_segment(self, segments: list[str], operation_action: str) -> list[str]:
+        if not segments:
+            return segments
+        normalized_action = self._normalize_static_segment(operation_action)
+        if normalized_action not in self.ACTION_SEGMENTS and normalized_action not in self.READ_ACTION_SEGMENTS:
+            return segments
+
+        result = list(segments)
+        for index in range(len(result) - 1, -1, -1):
+            segment = result[index]
+            if self._is_path_param(segment):
+                continue
+            normalized = self._normalize_static_segment(segment)
+            if normalized_action.startswith("un") and normalized == normalized_action[2:]:
+                return result
+            if normalized in self.ACTION_SEGMENTS or normalized in self.READ_ACTION_SEGMENTS:
+                result[index] = normalized_action
+            break
+        return result
+
+    def _default_action(self, api_method: str, resource_segments: list[str], kind: str = "") -> str:
+        method = api_method.upper()
+        if method == "GET":
+            return "retrieve" if self._looks_like_singleton_resource(resource_segments) else "list"
+        if method == "POST" and kind == "read":
+            return self._read_collection_action(api_method)
+        if method == "POST":
+            return "create"
+        if method in {"PUT", "PATCH"}:
+            return "update"
+        if method == "DELETE":
+            return "delete"
+        return "execute"
+
+    def _read_collection_action(self, api_method: str) -> str:
+        return "list"
+
+    def _trim_action_like_resource_segments(self, resource_segments: list[str], action: str) -> list[str]:
+        if not resource_segments:
+            return resource_segments
+        last = resource_segments[-1]
+        if last == action:
+            return resource_segments[:-1]
+        if action.startswith("un") and len(action) > 2 and last == action[2:]:
+            return resource_segments[:-1]
+        return resource_segments
+
+    def _looks_like_singleton_resource(self, resource_segments: list[str]) -> bool:
+        if not resource_segments:
+            return False
+        return resource_segments[-1] in {"current", "mine", "status", "overview", "summary", "settings", "detail"}
+
+    def _resource_from_operation(self, operation: str) -> str:
+        words = self._operation_words(operation)
+        if len(words) <= 1:
+            return ""
+        resource_words = [
+            word.lower()
+            for word in words[1:]
+            if word.lower() not in {"by", "for", "and"}
+        ]
+        return self._lower_camel_segment("_".join(resource_words)) if resource_words else ""
+
+    def _operation_words(self, value: str) -> list[str]:
+        spaced = re.sub(r"([a-z0-9])([A-Z])", r"\1 \2", value or "")
+        spaced = re.sub(r"([A-Z]+)([A-Z][a-z])", r"\1 \2", spaced)
+        return [word for word in re.split(r"[^A-Za-z0-9]+", spaced) if word]
+
+    def _normalize_static_segment(self, segment: str) -> str:
+        segment = segment.strip()
+        if not segment:
+            return ""
+        if self._is_path_param(segment):
+            return segment
+        value = re.sub(r"([a-z0-9])([A-Z])", r"\1_\2", segment)
+        value = re.sub(r"[^A-Za-z0-9]+", "_", value)
+        value = re.sub(r"_+", "_", value).strip("_").lower()
+        return value
+
+    def _normalize_path_param_segment(self, segment: str) -> str:
+        name = segment[1:-1]
+        return "{" + self._lower_camel_segment(name) + "}"
+
+    def _is_path_param(self, segment: str) -> bool:
+        return segment.startswith("{") and segment.endswith("}")
+
+    def _valid_operation_id(self, value: Any) -> bool:
+        return (
+            isinstance(value, str)
+            and bool(value)
+            and re.match(r"^[a-z][A-Za-z0-9]*(?:\.[a-z][A-Za-z0-9]*)+$", value) is not None
+        )
 
     def _payload_schema_validation_messages(self, key: str, field: str, value: Any) -> list[str]:
         if value is None:
@@ -367,7 +996,7 @@ class ApiContractManifestGenerator:
         name = value.get("name")
         if not isinstance(name, str) or not self.PAYLOAD_SCHEMA_NAME_PATTERN.match(name):
             messages.append(f"api contract {key} {field}.name must be PascalCase")
-        elif name in self.RESERVED_PAYLOAD_SCHEMA_NAMES:
+        elif name in self.RESERVED_PAYLOAD_SCHEMA_NAMES and name not in self.STANDARD_PAYLOAD_SCHEMA_NAMES:
             messages.append(f"api contract {key} {field}.name must not use reserved schema name {name}")
 
         schema = value.get("schema")
@@ -400,8 +1029,19 @@ class ApiContractManifestGenerator:
                 messages.append(f"api contract {key} query_parameters[{index}] must be an object")
                 continue
             name = parameter.get("name")
-            if not isinstance(name, str) or not re.match(r"^[A-Za-z_][A-Za-z0-9_]*$", name):
-                messages.append(f"api contract {key} query_parameters[{index}].name must be camelCase identifier")
+            if not isinstance(name, str):
+                messages.append(
+                    f"api contract {key} query_parameters[{index}].name must be lower_snake_case URL parameter"
+                )
+            elif name in self.STANDARD_QUERY_PARAMETER_ALIASES:
+                standard_name, meaning = self.STANDARD_QUERY_PARAMETER_ALIASES[name]
+                messages.append(
+                    f"api contract {key} query_parameters[{index}].name must use {standard_name} for {meaning}"
+                )
+            elif not re.match(r"^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$", name):
+                messages.append(
+                    f"api contract {key} query_parameters[{index}].name must be lower_snake_case URL parameter"
+                )
             elif name in names:
                 messages.append(f"api contract {key} query_parameters duplicate name: {name}")
             else:
@@ -444,7 +1084,19 @@ class ApiContractManifestGenerator:
                 messages.append(f"api contract {key} {field}.properties keys must be non-empty strings")
             if not isinstance(property_schema, dict):
                 messages.append(f"api contract {key} {field}.properties.{property_name} must be an object")
+            elif self._is_search_text_property_alias(property_name, property_schema):
+                messages.append(
+                    f"api contract {key} {field}.properties.{property_name} must use q for search text"
+                )
         return messages
+
+    def _is_search_text_property_alias(self, property_name: str, property_schema: dict[str, Any]) -> bool:
+        if property_name not in {"keyword", "search", "search_query", "searchQuery"}:
+            return False
+        schema_type, _ = self._normalize_schema_type(property_schema.get("type"))
+        if schema_type and schema_type != "string":
+            return False
+        return True
 
     def _normalize_payload_schema(self, value: Any) -> dict[str, Any] | None:
         if not isinstance(value, dict) or not isinstance(value.get("name"), str):
@@ -560,7 +1212,7 @@ class ApiContractManifestGenerator:
             if not isinstance(parameter, dict):
                 continue
             name = parameter.get("name")
-            if not isinstance(name, str) or not re.match(r"^[A-Za-z_][A-Za-z0-9_]*$", name):
+            if not isinstance(name, str) or not re.match(r"^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$", name):
                 continue
             if name in seen:
                 continue
@@ -575,6 +1227,15 @@ class ApiContractManifestGenerator:
             description = parameter.get("description")
             if isinstance(description, str) and description:
                 normalized["description"] = description
+            style = parameter.get("style")
+            if isinstance(style, str) and style:
+                normalized["style"] = style
+            if "explode" in parameter:
+                normalized["explode"] = bool(parameter.get("explode"))
+            if "allowReserved" in parameter:
+                normalized["allowReserved"] = bool(parameter.get("allowReserved"))
+            if "deprecated" in parameter:
+                normalized["deprecated"] = bool(parameter.get("deprecated"))
             result.append(normalized)
         return result
 
@@ -601,8 +1262,16 @@ class ApiContractManifestGenerator:
         if not segments:
             return "root"
         if api_surface == "backend" and segments[0] == "router" and len(segments) > 1:
-            return segments[1]
-        return segments[0]
+            return self._lower_camel_segment(segments[1])
+        return self._lower_camel_segment(segments[0])
+
+    def _lower_camel_segment(self, segment: str) -> str:
+        parts = [part for part in re.split(r"[^A-Za-z0-9]+", segment) if part]
+        if not parts:
+            return "root"
+        first = parts[0][0].lower() + parts[0][1:]
+        rest = "".join(part[0].upper() + part[1:] for part in parts[1:])
+        return first + rest
 
     def _route_scope(self, route: str) -> str:
         if route.startswith("/admin"):

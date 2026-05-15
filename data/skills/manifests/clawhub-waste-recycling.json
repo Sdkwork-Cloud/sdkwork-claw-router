@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65120,
+  "uuid": "skill-clawhub-waste-recycling",
+  "skillKey": "clawhub-waste-recycling",
+  "name": "Waste Recycling",
+  "summary": "提供废旧家电、纸箱塑料上门回收预约及积分兑换指引。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.waste_recycling",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codenova58",
+      "features": [
+        "提供废旧家电、纸箱塑料上门回收预约及积分兑换指引。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/waste-recycling@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191358186?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "waste-recycling",
+      "url": "https://clawhub.ai/skills/waste-recycling"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "waste-recycling",
+    "url": "https://clawhub.ai/skills/waste-recycling",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/waste-recycling-af085dab3fbf253f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/waste-recycling@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-waste-recycling-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e7f5f55da899c17684e7dfe2cc32b88dfa8547758313f91114dd91a93179b116",
+      "artifactSizeBytes": 2143
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T17:00:24.119Z"
+}

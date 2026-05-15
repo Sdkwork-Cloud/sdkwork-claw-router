@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69604,
+  "uuid": "skill-clawhub-tts-voice-generator",
+  "skillKey": "clawhub-tts-voice-generator",
+  "name": "Tts Voice Generator",
+  "summary": "文本转语音生成工具，支持浏览声音列表、选择声音、上传自定义音频（带文本内容）并命名保存、生成语音和查询任务状态等功能。",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tts_voice_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SeanFeng1234",
+      "features": [
+        "文本转语音生成工具，支持浏览声音列表、选择声音、上传自定义音频（带文本内容）并命名保存、生成语音和查询任务状态等功能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tts-voice-generator@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/165649584?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tts-voice-generator",
+      "url": "https://clawhub.ai/skills/tts-voice-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tts-voice-generator",
+    "url": "https://clawhub.ai/skills/tts-voice-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tts-voice-generator-4f94ffc1bfdf92e1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tts-voice-generator@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tts-voice-generator-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b4baa9463034194aaa2700034abc7a0b3e6dccdd3429099e1370b666ff23e420",
+      "artifactSizeBytes": 2475
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T10:59:35.797Z"
+}

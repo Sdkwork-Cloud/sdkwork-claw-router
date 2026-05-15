@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/floreo@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.floreo",
+  "skill": {
+    "id": 44392,
+    "skillKey": "clawhub-floreo",
+    "name": "Floreo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "floreo",
+    "url": "https://clawhub.ai/skills/floreo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/floreo-50d7ccf96fd1fdf8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Floreo - Autonomous compounding journal with local storage and open connections. Auto-detects activities, tracks compound metrics (streaks, trends, velocity)..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "coidea",
+      "userId": "s176kgrrm3agn1bxwhkekk8bn983g60f",
+      "displayName": "coidea",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1776275367526,
+      "changelog": "No file changes detected for version 0.2.1.\n\n- No code or documentation changes in this version.\n- Skill functionality and configuration remain the same as in v0.2.0.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:727f777b6e8129efca46bcb5d26280a39db9e227a0e630eee3d7b1d39ddfb468"
+}

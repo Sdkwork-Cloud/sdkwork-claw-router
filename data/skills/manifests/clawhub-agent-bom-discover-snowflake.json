@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31443,
+  "uuid": "skill-clawhub-agent-bom-discover-snowflake",
+  "skillKey": "clawhub-agent-bom-discover-snowflake",
+  "name": "agent-bom discover snowflake",
+  "summary": "Discover Snowflake Cortex, Snowpark, notebook, Streamlit, MCP, and AI-observability assets from the operator's environment, emit canonical agent-bom inventor...",
+  "version": "0.86.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_bom_discover_snowflake",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Agent Bom",
+      "features": [
+        "Discover Snowflake Cortex, Snowpark, notebook, Streamlit, MCP, and AI-observability assets from."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-bom-discover-snowflake@0.86.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34316639?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-bom-discover-snowflake",
+      "url": "https://clawhub.ai/skills/agent-bom-discover-snowflake"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-bom-discover-snowflake",
+    "url": "https://clawhub.ai/skills/agent-bom-discover-snowflake",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-bom-discover-snowflake-a6ffc1bc85d9f797.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-bom-discover-snowflake@0.86.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-bom-discover-snowflake-0.86.2.json",
+      "version": "0.86.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bb67c5e8961cacacc3c714342971be9bb0c61921d282503e8ea6cf16f3f823b7",
+      "artifactSizeBytes": 1986
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T15:45:33.766Z"
+}

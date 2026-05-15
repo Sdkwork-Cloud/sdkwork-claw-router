@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ad-creative-testing@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ad_creative_testing",
+  "skill": {
+    "id": 33345,
+    "skillKey": "clawhub-ad-creative-testing",
+    "name": "Ad Creative Testing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ad-creative-testing",
+    "url": "https://clawhub.ai/skills/ad-creative-testing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ad-creative-testing-9ebc725d121fb719.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design structured A/B test hypotheses for ad creatives, hooks, destination pages, and audience segments with clear success metrics and test duration logic."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leooooooow",
+      "userId": "s17974h9acjg4h7h5djv1hg51d83hcca",
+      "displayName": "LeroyCreates",
+      "image": "https://avatars.githubusercontent.com/u/130833525?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 239,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775577143546,
+      "changelog": "**Ad Creative Testing v1.0.1 Changelog**\n\n- Added assets and reference documentation, including hypothesis templates, metrics reference, and output templates for structured test design.\n- Expanded guidance and quick reference charts for test design quality (variables, sample size, duration, metrics).\n- Included detailed step-by-step workflow for A/B test setup, monitoring, and documentation.\n- Broadened creative testing scope to cover destination pages and clarified terminology (e.g., \"destination pages\" vs. \"landing pages\").\n- Added comprehensive troubleshooting and decision rules for early test termination and learning documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e49a9200bc7029d7ee07917a507972cefb788e361a516aeabc6e5bf050318997"
+}

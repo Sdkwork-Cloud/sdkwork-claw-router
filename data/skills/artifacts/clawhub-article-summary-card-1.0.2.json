@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/article-summary-card@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.article_summary_card",
+  "skill": {
+    "id": 32090,
+    "skillKey": "clawhub-article-summary-card",
+    "name": "Article Summary Card"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "article-summary-card",
+    "url": "https://clawhub.ai/skills/article-summary-card",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/article-summary-card-421768d84203afb1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Summarize articles or webpages into structured bundles exported as JSON, Markdown, HTML, and PNG with consistent layout and tagging."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wiseqingyang",
+      "userId": "s1787hyraq382bx45arsjdz0hh83ghkh",
+      "displayName": "wiseqingyang",
+      "image": "https://avatars.githubusercontent.com/u/11552913?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 257,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774261741613,
+      "changelog": "Fixed screenshot width normalization so exported PNGs consistently crop back to the intended 1125px canvas.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:24dc8802faca23b64c84ac31571be811bd1bdadce8e1315f9a83cfee81f2118e"
+}

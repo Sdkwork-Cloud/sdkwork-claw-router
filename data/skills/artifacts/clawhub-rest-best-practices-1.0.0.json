@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rest-best-practices@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rest_best_practices",
+  "skill": {
+    "id": 51879,
+    "skillKey": "clawhub-rest-best-practices",
+    "name": "Rest Best Practices"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rest-best-practices",
+    "url": "https://clawhub.ai/skills/rest-best-practices",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rest-best-practices-582047b6f0bd1c54.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deep REST workflow—resource modeling, HTTP methods and safety, status codes, errors, pagination, caching, versioning, and idempotency. Use when designing HTT..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mike47512",
+      "userId": "s17916ncgb6bpm0fs1wdm6932d83gha4",
+      "displayName": "mike47512",
+      "image": "https://avatars.githubusercontent.com/u/199718167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 246,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774370877585,
+      "changelog": "REST Best Practices skill—initial release.\n\n- Provides a deep, staged workflow for designing consistent, robust REST APIs.\n- Covers resource modeling, HTTP methods and safety, status codes and errors, pagination, caching, versioning, and idempotency.\n- Includes anti-patterns, review checklist, and practical tips for guidance and handling deviations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:203cd32961d1bebefdfd3bb94593ad08a27d7dd4db5bffbe84dddb0ad627e190"
+}

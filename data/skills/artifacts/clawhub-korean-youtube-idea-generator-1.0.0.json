@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/korean-youtube-idea-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.korean_youtube_idea_generator",
+  "skill": {
+    "id": 61790,
+    "skillKey": "clawhub-korean-youtube-idea-generator",
+    "name": "Korean Youtube Idea Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "korean-youtube-idea-generator",
+    "url": "https://clawhub.ai/skills/korean-youtube-idea-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/korean-youtube-idea-generator-b37ecf2f37f871d1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "한국 유튜브/틱톡 대상 맞춤형 10~30대용 트렌디하고 바이럴 가능한 영상 아이디어와 스크립트 구성을 제공합니다."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jochoonhwan",
+      "userId": "s1759xggfr7af71g842gdc4dg183y1rx",
+      "displayName": "jochoonhwan",
+      "image": "https://avatars.githubusercontent.com/u/258758600?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774969344269,
+      "changelog": "Initial release – generate trendy, viral Korean YouTube/TikTok content ideas.\n\n- Provides tailored video ideas based on channel, target age, and format.\n- Includes strategic tips for trending topics, educational content, reactions, and finance.\n- Outputs ready-to-use content briefs with script structure and suggested hashtags.\n- Strategy guide covers Shorts tactics, upload timing, thumbnail, and title advice.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:728f40e0eccd2a7205253b39a46a773e0e01079fca55d05d4579869492424a02"
+}

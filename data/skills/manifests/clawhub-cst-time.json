@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15670,
+  "uuid": "skill-clawhub-cst-time",
+  "skillKey": "clawhub-cst-time",
+  "name": "Cst Time",
+  "summary": "Provides methods and tools for obtaining local host CST (China Standard Time). Invoke when user needs to get current CST time, convert time zones, or work with China Standard Time in scripts and applications.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cst_time",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xuanpass",
+      "features": [
+        "Provides methods and tools for obtaining local host CST (China Standard Time)",
+        "Invoke when user needs to get current CST time, convert time zones, or work with China Standard."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cst-time@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1873058?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cst-time",
+      "url": "https://clawhub.ai/skills/cst-time"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cst-time",
+    "url": "https://clawhub.ai/skills/cst-time",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cst-time-ad40547e052d81f6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cst-time@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cst-time-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:89f35ab7e82c95cb72d276b978f2762636dda9a29dc9ac810d447eaaa00e0441",
+      "artifactSizeBytes": 2317
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T15:05:51.741Z"
+}

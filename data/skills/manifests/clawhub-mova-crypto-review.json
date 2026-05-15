@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30345,
+  "uuid": "skill-clawhub-mova-crypto-review",
+  "skillKey": "clawhub-mova-crypto-review",
+  "name": "Mova Crypto Review",
+  "summary": "Submit a crypto trade order for automated risk analysis and human-in-the-loop review via MOVA. Trigger when the user mentions a trade order, wallet address,...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mova_crypto_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sergii Miasoiedov",
+      "features": [
+        "Submit a crypto trade order for automated risk analysis and human-in-the-loop review via MOVA",
+        "Trigger when the user mentions a trade order, wallet address,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mova-crypto-review@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258828376?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mova-crypto-review",
+      "url": "https://clawhub.ai/skills/mova-crypto-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mova-crypto-review",
+    "url": "https://clawhub.ai/skills/mova-crypto-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mova-crypto-review-f4548a9233341f51.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mova-crypto-review@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mova-crypto-review-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5a2202e3f65663b9af4150fd7726806f8fde9ab29ca7f64dfb59654cda5b3d1a",
+      "artifactSizeBytes": 1943
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T14:50:11.114Z"
+}

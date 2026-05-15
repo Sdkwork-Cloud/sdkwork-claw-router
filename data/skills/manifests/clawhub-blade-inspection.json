@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24632,
+  "uuid": "skill-clawhub-blade-inspection",
+  "skillKey": "clawhub-blade-inspection",
+  "name": "Blade Inspection",
+  "summary": "Assesses wind turbine blade condition from visual inspection data. Classifies damage type and severity (1-5) across seven failure modes and recommends repair...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blade_inspection",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sertug17",
+      "features": [
+        "Assesses wind turbine blade condition from visual inspection data",
+        "Classifies damage type and severity (1-5) across seven failure modes and recommends repair..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/blade-inspection@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/104278804?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "blade-inspection",
+      "url": "https://clawhub.ai/skills/blade-inspection"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blade-inspection",
+    "url": "https://clawhub.ai/skills/blade-inspection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blade-inspection-dd4f704f8c9fd70c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/blade-inspection@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-blade-inspection-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3941bcf02bc817278999f675c161c71fb4747d8a3ebf429d70c1f6580463071e",
+      "artifactSizeBytes": 2368
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T15:19:41.265Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49588,
+  "uuid": "skill-clawhub-justoneapi-twitter-get-user-detail",
+  "skillKey": "clawhub-justoneapi-twitter-get-user-detail",
+  "name": "Twitter User Profile API",
+  "summary": "Call GET /api/twitter/get-user-detail/v1 for Twitter User Profile through JustOneAPI with restId.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_twitter_get_user_detail",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Call GET /api/twitter/get-user-detail/v1 for Twitter User Profile through JustOneAPI with restI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-twitter-get-user-detail@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-twitter-get-user-detail",
+      "url": "https://clawhub.ai/skills/justoneapi-twitter-get-user-detail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-twitter-get-user-detail",
+    "url": "https://clawhub.ai/skills/justoneapi-twitter-get-user-detail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-twitter-get-user-detail-c7a2b5557ea8eb81.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-twitter-get-user-detail@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-twitter-get-user-detail-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4d03bc2bc57e1d95d680f6e6f65fa48d1ca0c60ee5dc492e647359f360957c7b",
+      "artifactSizeBytes": 1956
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T07:40:51.555Z"
+}

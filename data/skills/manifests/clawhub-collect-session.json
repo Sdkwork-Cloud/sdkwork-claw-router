@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42218,
+  "uuid": "skill-clawhub-collect-session",
+  "skillKey": "clawhub-collect-session",
+  "name": "Collect Session",
+  "summary": "Installs and configures a hook to capture and save detailed Markdown session summaries with telemetry and cost data on /new or /reset commands.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.collect_session",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Paul Lacey",
+      "features": [
+        "Installs and configures a hook to capture and save detailed Markdown session summaries with tel."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/collect-session@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4966805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "collect-session",
+      "url": "https://clawhub.ai/skills/collect-session"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "collect-session",
+    "url": "https://clawhub.ai/skills/collect-session",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/collect-session-425e79b0a667b5a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/collect-session@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-collect-session-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7510a985b7e6e2d5b928b67f292e9489cbf00ab2132d3edc9c61d0f098c576dc",
+      "artifactSizeBytes": 1985
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T03:29:45.283Z"
+}

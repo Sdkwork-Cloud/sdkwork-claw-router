@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16305,
+  "uuid": "skill-clawhub-trend-radar",
+  "skillKey": "clawhub-trend-radar",
+  "name": "Trend Radar",
+  "summary": "Real-time trending topics aggregator across 7 platforms (X/Twitter, Reddit, Google Trends, Hacker News, Zhihu, Bilibili, Weibo). Trigger: when user says 'tre...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trend_radar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "XiaoYiWeio",
+      "features": [
+        "Real-time trending topics aggregator across 7 platforms (X/Twitter, Reddit, Google Trends, Hack.",
+        "Trigger: when user says 'tre..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trend-radar@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/50070170?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trend-radar",
+      "url": "https://clawhub.ai/skills/trend-radar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trend-radar",
+    "url": "https://clawhub.ai/skills/trend-radar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trend-radar-0c82216f85a000c5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trend-radar@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trend-radar-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:788efd15fd8dcaaaac74f1bafdba0a2195c66f19e95dba3dbcfa125536ecd2bd",
+      "artifactSizeBytes": 1920
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T08:29:34.420Z"
+}

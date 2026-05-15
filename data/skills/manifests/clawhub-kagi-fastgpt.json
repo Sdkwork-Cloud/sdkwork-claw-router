@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17986,
+  "uuid": "skill-clawhub-kagi-fastgpt",
+  "skillKey": "clawhub-kagi-fastgpt",
+  "name": "Kagi Fastgpt",
+  "summary": "Ask questions and get AI-synthesized answers backed by live web search, via Kagi's FastGPT API. Returns a direct answer with cited references. Use when you n...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kagi_fastgpt",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jozsef Lazar",
+      "features": [
+        "Ask questions and get AI-synthesized answers backed by live web search, via Kagi's FastGPT API",
+        "Returns a direct answer with cited references",
+        "Use when you n..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kagi-fastgpt@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16268238?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kagi-fastgpt",
+      "url": "https://clawhub.ai/skills/kagi-fastgpt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kagi-fastgpt",
+    "url": "https://clawhub.ai/skills/kagi-fastgpt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kagi-fastgpt-a75d9b0dc41a6a9b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kagi-fastgpt@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kagi-fastgpt-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:660d767e251ac01f81c4583a7101c325a77dd67fe48c9c8233576276b5673b61",
+      "artifactSizeBytes": 2368
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T15:02:58.745Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37163,
+  "uuid": "skill-clawhub-coauthoring",
+  "skillKey": "clawhub-coauthoring",
+  "name": "Doc",
+  "summary": "Guide users through a structured workflow for co-authoring documentation. Use when user wants to write documentation, proposals, technical specs, decision do...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coauthoring",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawKK",
+      "features": [
+        "Guide users through a structured workflow for co-authoring documentation",
+        "Use when user wants to write documentation, proposals, technical specs, decision do..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coauthoring@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111570001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coauthoring",
+      "url": "https://clawhub.ai/skills/coauthoring"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coauthoring",
+    "url": "https://clawhub.ai/skills/coauthoring",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coauthoring-e5f370a9b2ae2d99.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coauthoring@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-coauthoring-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b8fec993eb83c2b5068cf25975b57b78cdafc9c5b2c7070e205d81b0ea08b12d",
+      "artifactSizeBytes": 2467
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T02:19:47.865Z"
+}

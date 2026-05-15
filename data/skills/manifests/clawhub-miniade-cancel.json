@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20431,
+  "uuid": "skill-clawhub-miniade-cancel",
+  "skillKey": "clawhub-miniade-cancel",
+  "name": "Cancel Dispatch Run",
+  "summary": "Cancel an active interactive dispatch run by run-id from slash command cancel. Use when user wants to stop a dispatchi or ralph-loop task immediately.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.miniade_cancel",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xi ErDe",
+      "features": [
+        "Cancel an active interactive dispatch run by run-id from slash command cancel",
+        "Use when user wants to stop a dispatchi or ralph-loop task immediately."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/miniade-cancel@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8788717?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "miniade-cancel",
+      "url": "https://clawhub.ai/skills/miniade-cancel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "miniade-cancel",
+    "url": "https://clawhub.ai/skills/miniade-cancel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/miniade-cancel-b9ccde7389101d06.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/miniade-cancel@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-miniade-cancel-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ee4f4d7ceed42f92d8711793605cc40b16b82eafa70ac355acdf24c2a5c31c51",
+      "artifactSizeBytes": 1852
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T07:58:30.490Z"
+}

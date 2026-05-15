@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40635,
+  "uuid": "skill-clawhub-ai-batch-video-creator",
+  "skillKey": "clawhub-ai-batch-video-creator",
+  "name": "Ai Batch Video Creator",
+  "summary": "Get batch-processed MP4s ready to post, without touching a single slider. Upload your multiple video files (MP4, MOV, AVI, WebM, up to 500MB), say something...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_batch_video_creator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "whitejohnk-26",
+      "features": [
+        "Get batch-processed MP4s ready to post, without touching a single slider",
+        "Upload your multiple video files (MP4, MOV, AVI, WebM, up to 500MB), say something..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-batch-video-creator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210889495?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-batch-video-creator",
+      "url": "https://clawhub.ai/skills/ai-batch-video-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-batch-video-creator",
+    "url": "https://clawhub.ai/skills/ai-batch-video-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-batch-video-creator-69a1a21a66ac3cb4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-batch-video-creator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-batch-video-creator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:77c812502585fefaf967bbffb567b1d035f28ae3940ad325097ebf8da843b90e",
+      "artifactSizeBytes": 2483
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T00:55:24.549Z"
+}

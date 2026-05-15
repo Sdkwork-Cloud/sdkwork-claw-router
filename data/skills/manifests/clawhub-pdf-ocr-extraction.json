@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16240,
+  "uuid": "skill-clawhub-pdf-ocr-extraction",
+  "skillKey": "clawhub-pdf-ocr-extraction",
+  "name": "pdf-ocr-extraction",
+  "summary": "Extract text from image-based or scanned PDFs using Tesseract OCR.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_ocr_extraction",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bilicen700",
+      "features": [
+        "Extract text from image-based or scanned PDFs using Tesseract OCR."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf-ocr-extraction@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/129654345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf-ocr-extraction",
+      "url": "https://clawhub.ai/skills/pdf-ocr-extraction"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-ocr-extraction",
+    "url": "https://clawhub.ai/skills/pdf-ocr-extraction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-ocr-extraction-9f9355971dac2e1e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf-ocr-extraction@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf-ocr-extraction-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a32fcfa66ad8f6871b812f4dba3cb6457964774a346c0a799e16ca62636ed9c2",
+      "artifactSizeBytes": 2393
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T13:37:37.617Z"
+}

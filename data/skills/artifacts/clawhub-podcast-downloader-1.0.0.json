@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/podcast-downloader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.podcast_downloader",
+  "skill": {
+    "id": 64207,
+    "skillKey": "clawhub-podcast-downloader",
+    "name": "Podcast Downloader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "podcast-downloader",
+    "url": "https://clawhub.ai/skills/podcast-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/podcast-downloader-838cfdbbc09255e2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小宇宙播客下载工具。从小宇宙(xiaoyuzhoufm.com)下载播客音频和Show Notes。自动转换为MP3格式（兼容Sanag、小游等骨传导蓝牙耳机、水下游泳时离线播放）。当用户需要下载播客、保存播客音频、提取播客文字内容时使用。支持：(1) 单集下载，(2) 批量下载，(3) 自定义音质，(4) 自动..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zymclaw",
+      "userId": "s177cr65m07mpkbqzqn0t4pmy984fmj5",
+      "displayName": "zhang Yuming",
+      "image": "https://avatars.githubusercontent.com/u/262479155?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 604,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773244127233,
+      "changelog": "Initial release. Download podcast audio and show notes from xiaoyuzhoufm.com with automatic MP3 conversion for Bluetooth headphone compatibility. Supports single and batch downloads, custom audio quality, and show notes extraction.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e3a4a88f8996cedc8807585a64bcb8ddfce76b6d9bb42aede6c98dc10b232725"
+}

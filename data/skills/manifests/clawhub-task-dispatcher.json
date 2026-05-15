@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68860,
+  "uuid": "skill-clawhub-task-dispatcher",
+  "skillKey": "clawhub-task-dispatcher",
+  "name": "Task Dispatcher",
+  "summary": "智能任务分发与子代理协调中枢。当用户提交任何任务时，执行需求分析、任务拆解、分发策略制定，分发给合适的 subagent 执行，监控进度并阶段汇报，最终汇总结果。失败时自动兜底处理。适用于：（1）用户直接下达的任务（2）cron/heartbeat 触发的任务（3）任何需要多步骤处理的工作。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_dispatcher",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ThomasChangX",
+      "features": [
+        "智能任务分发与子代理协调中枢。当用户提交任何任务时，执行需求分析、任务拆解、分发策略制定，分发给合适的 subagent 执行，监控进度并阶段汇报，最终汇总结果。失败时自动兜底处理。适用于：."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/task-dispatcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10368872?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "task-dispatcher",
+      "url": "https://clawhub.ai/skills/task-dispatcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-dispatcher",
+    "url": "https://clawhub.ai/skills/task-dispatcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-dispatcher-d181feb0ad61e32c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/task-dispatcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-task-dispatcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3cb9a057159ea71dda91251d938f76cb9067e28968efbb112115f28336937cb8",
+      "artifactSizeBytes": 2816
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T14:08:32.623Z"
+}

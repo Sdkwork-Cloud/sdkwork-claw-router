@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37394,
+  "uuid": "skill-clawhub-byted-las-audio-convert",
+  "skillKey": "clawhub-byted-las-audio-convert",
+  "name": "Byted Las Audio Convert",
+  "summary": "Converts and transcodes audio file formats and encoding parameters using Volcengine LAS. Audio format conversion between wav, mp3, flac, m4a, ogg, aac and ot...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.byted_las_audio_convert",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "volcengine-skills",
+      "features": [
+        "Converts and transcodes audio file formats and encoding parameters using Volcengine LAS",
+        "Audio format conversion between wav, mp3, flac, m4a, ogg, aac and ot..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/byted-las-audio-convert@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260939792?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "byted-las-audio-convert",
+      "url": "https://clawhub.ai/skills/byted-las-audio-convert"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "byted-las-audio-convert",
+    "url": "https://clawhub.ai/skills/byted-las-audio-convert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/byted-las-audio-convert-7ef19b651582e32e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/byted-las-audio-convert@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-byted-las-audio-convert-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d191138be016b1125bc17bad3b6683cb868c972a4b6edfb031bf97a20bce7a50",
+      "artifactSizeBytes": 2523
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T07:39:44.241Z"
+}

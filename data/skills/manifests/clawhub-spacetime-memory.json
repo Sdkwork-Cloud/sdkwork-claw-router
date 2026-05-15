@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22536,
+  "uuid": "skill-clawhub-spacetime-memory",
+  "skillKey": "clawhub-spacetime-memory",
+  "name": "SpacetimeDB Memory",
+  "summary": "High-performance SpacetimeDB memory integration for OpenClaw. Replaces static file memory with a lightning-fast WebAssembly-powered mind-vault running on a l...",
+  "version": "1.1.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spacetime_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kennethrajsimon",
+      "features": [
+        "High-performance SpacetimeDB memory integration for OpenClaw",
+        "Replaces static file memory with a lightning-fast WebAssembly-powered mind-vault running on a l."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/spacetime-memory@1.1.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32383354?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "spacetime-memory",
+      "url": "https://clawhub.ai/skills/spacetime-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spacetime-memory",
+    "url": "https://clawhub.ai/skills/spacetime-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spacetime-memory-734819d3cc4979e0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/spacetime-memory@1.1.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-spacetime-memory-1.1.7.json",
+      "version": "1.1.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:47c7cf15681f1f01e990da8a4882b10dadbc3517c84991b483774bd98f961d28",
+      "artifactSizeBytes": 1956
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T22:18:38.346Z"
+}

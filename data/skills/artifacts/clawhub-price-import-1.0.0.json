@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/price-import@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.price_import",
+  "skill": {
+    "id": 66243,
+    "skillKey": "clawhub-price-import",
+    "name": "Price Import"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "price-import",
+    "url": "https://clawhub.ai/skills/price-import",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/price-import-6274725a4d631be5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "价易通价格导入技能。支持图片/文本/Excel 原始数据，自动转换、匹配商品库、确认后导入。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "young0529",
+      "userId": "s171v8ar8aavbt91zey5h1zme183rj2r",
+      "displayName": "Young0529",
+      "image": "https://avatars.githubusercontent.com/u/255551652?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774689026258,
+      "changelog": "Initial release of the 价易通价格导入技能 (price-import):\n\n- Supports price data import via images, text, or Excel, triggered by the `/import` command.\n- Automatically converts and standardizes original data, matches with the product library, and generates a detailed matching report.\n- Provides user interaction for importing, modifying rules, or adding new products based on matching results.\n- Integrates rule management, error handling, import record tracking, and requirement feedback via `/fix` commands.\n- Utilizes multi-modal model capabilities for direct image recognition without third-party OCR.\n- Comprehensive step-by-step workflow with clear command and error handling documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:561547816ed11167f47f7c3da3d7df80e0c51bf39625123c2161652323b957e9"
+}

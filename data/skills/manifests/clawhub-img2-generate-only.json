@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62499,
+  "uuid": "skill-clawhub-img2-generate-only",
+  "skillKey": "clawhub-img2-generate-only",
+  "name": "img2-generate-only",
+  "summary": "独立单图 IMG2 生图 Skill。必须显式提供接口地址和密钥，调用 OpenAI 兼容图片接口生成单张图片并本地落盘。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.img2_generate_only",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JerryXn",
+      "features": [
+        "独立单图 IMG2 生图 Skill。必须显式提供接口地址和密钥，调用 OpenAI 兼容图片接口生成单张图片并本地落盘。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/img2-generate-only@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37356803?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "img2-generate-only",
+      "url": "https://clawhub.ai/skills/img2-generate-only"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "img2-generate-only",
+    "url": "https://clawhub.ai/skills/img2-generate-only",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/img2-generate-only-160d84b75f24162c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/img2-generate-only@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-img2-generate-only-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f63026df5abbd5435d6d4dd1f3e3aa3bafb9510a7cd2be99d90f05441cde249",
+      "artifactSizeBytes": 2301
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T09:18:43.894Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62677,
+  "uuid": "skill-clawhub-claw-problem-diagnoser",
+  "skillKey": "clawhub-claw-problem-diagnoser",
+  "name": "Claw Problem Diagnoser",
+  "summary": "自动诊断并修复OpenClaw的配置、依赖、服务和权限问题，提升系统稳定性和运行效率。",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_problem_diagnoser",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SkilledClaw",
+      "features": [
+        "自动诊断并修复OpenClaw的配置、依赖、服务和权限问题，提升系统稳定性和运行效率。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-problem-diagnoser@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/250800479?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-problem-diagnoser",
+      "url": "https://clawhub.ai/skills/claw-problem-diagnoser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-problem-diagnoser",
+    "url": "https://clawhub.ai/skills/claw-problem-diagnoser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-problem-diagnoser-2db66b1b67fe0501.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-problem-diagnoser@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-problem-diagnoser-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5e12693bea56cec95e266e5a8ee3eb73278a7e940543e5ec7f62eb2151ce6f58",
+      "artifactSizeBytes": 1984
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T11:39:44.805Z"
+}

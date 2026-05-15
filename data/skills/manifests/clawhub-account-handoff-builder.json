@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59256,
+  "uuid": "skill-clawhub-account-handoff-builder",
+  "skillKey": "clawhub-account-handoff-builder",
+  "name": "Account Handoff Builder",
+  "summary": "将销售到交付的客户信息整理成交接包，识别承诺风险与实施前提。；use for handoff, customer-success, sales-to-cs workflows；do not use for 删掉不利信息, 替代合同文本.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.account_handoff_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "将销售到交付的客户信息整理成交接包，识别承诺风险与实施前提。；use for handoff, customer-success, sales-to-cs workflows；do not."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/account-handoff-builder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "account-handoff-builder",
+      "url": "https://clawhub.ai/skills/account-handoff-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "account-handoff-builder",
+    "url": "https://clawhub.ai/skills/account-handoff-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/account-handoff-builder-a7c78531bdc7d67a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/account-handoff-builder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-account-handoff-builder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:64d3838672f86a28a298e7470e5a0dc92e7ffd8f4151712fb38c70a950c52207",
+      "artifactSizeBytes": 2447
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T01:51:44.069Z"
+}

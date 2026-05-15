@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-messages@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_messages",
+  "skill": {
+    "id": 53846,
+    "skillKey": "clawhub-video-messages",
+    "name": "Video Messages"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-messages",
+    "url": "https://clawhub.ai/skills/video-messages",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-messages-22ed23c8d6e91748.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — trim the intro silence, add my name as a lower-third, and export for email..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 108,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777830841354,
+      "changelog": "- Initial release of Video Messages (version 1.0.0)\n- Record, edit, and share video messages by describing your desired outcome—no editing software needed\n- Supports MP4, MOV, WebM, and AVI files up to 500MB\n- Upload your clip, specify edits (like trimming or adding text), and get a shareable video in under a minute\n- Automatic session and token setup: free trial available for new users\n- Ideal for sales reps, remote workers, and marketers who need quick, polished video messages",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bdf92869bb5fba0fe66c500ab034e339178228d7d67ec6aa6dbaba28991b1b8d"
+}

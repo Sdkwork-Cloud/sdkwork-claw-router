@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66611,
+  "uuid": "skill-clawhub-flyelep-product-color-change",
+  "skillKey": "clawhub-flyelep-product-color-change",
+  "name": "product-color-change",
+  "summary": "通过 Flyelep AI 工具接口智能识别图片中的商品并进行换色处理。 当用户要求修改商品颜色、保持商品不变只换配色、生成同款不同颜色展示图时使用此技能。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flyelep_product_color_change",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "flyelep",
+      "features": [
+        "通过 Flyelep AI 工具接口智能识别图片中的商品并进行换色处理。 当用户要求修改商品颜色、保持商品不变只换配色、生成同款不同颜色展示图时使用此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flyelep-product-color-change@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/272408277?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flyelep-product-color-change",
+      "url": "https://clawhub.ai/skills/flyelep-product-color-change"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flyelep-product-color-change",
+    "url": "https://clawhub.ai/skills/flyelep-product-color-change",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flyelep-product-color-change-94a8f3acf126d5ff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flyelep-product-color-change@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-flyelep-product-color-change-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ceb267da9beb614a69660ff9dec99b08f69ba93fad61e3c4e5b68dff492a5b80",
+      "artifactSizeBytes": 2187
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T03:58:18.035Z"
+}

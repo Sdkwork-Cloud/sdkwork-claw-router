@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/consumer-research@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.consumer_research",
+  "skill": {
+    "id": 70990,
+    "skillKey": "clawhub-consumer-research",
+    "name": "consumerResearch消费者人群画像分析"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "consumer-research",
+    "url": "https://clawhub.ai/skills/consumer-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/consumer-research-78981fc58bd50931.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "消费者调研能力；支持目标人群画像分析、核心需求挖掘、问卷设计与数据处理；当需要进行消费者洞察、产品定位或用户研究时使用"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cloudyxuq",
+      "userId": "s1705xx83pwxdyafv3n4m2r8s183m72a",
+      "displayName": "Tinker",
+      "image": "https://avatars.githubusercontent.com/u/3884483?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775715282767,
+      "changelog": "Consumer research skill initial release.\n\n- Added core files for consumer insight tasks: questionnaire template, research guidelines, and data analysis script.\n- Replaced audit and regulatory reference documents with consumer research materials.\n- Supports user research, target audience profiling, and needs analysis.\n- Includes resources for questionnaire creation, data collection, and reporting.\n- Data storage strategy and main analysis steps documented for user guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c518af0c2ef3b3bdee8e66269bfcbe017f923e44adb21402d099003948a26dec"
+}

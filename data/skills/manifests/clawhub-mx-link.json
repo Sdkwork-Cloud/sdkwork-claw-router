@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59847,
+  "uuid": "skill-clawhub-mx-link",
+  "skillKey": "clawhub-mx-link",
+  "name": "Office Link",
+  "summary": "通过 MorphixAI 统一链接和管理第三方账号（GitHub、GitLab、Gmail、Outlook、Jira、Slack 等），并通过代理安全调用第三方 API。",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mx_link",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Paul Leo",
+      "features": [
+        "通过 MorphixAI 统一链接和管理第三方账号（GitHub、GitLab、Gmail、Outlook、Jira、Slack 等），并通过代理安全调用第三方 API。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mx-link@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/55380315?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mx-link",
+      "url": "https://clawhub.ai/skills/mx-link"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mx-link",
+    "url": "https://clawhub.ai/skills/mx-link",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mx-link-0bb219a81a4a12c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mx-link@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mx-link-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6c94d674e547dfd6ae18bbef7c7df8ddf3142661c84975d34bd5703b4c500120",
+      "artifactSizeBytes": 2245
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T08:43:54.511Z"
+}

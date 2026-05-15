@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lap-adyen-recurring-api@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lap_adyen_recurring_api",
+  "skill": {
+    "id": 38793,
+    "skillKey": "clawhub-lap-adyen-recurring-api",
+    "name": "Lap Adyen Recurring Api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lap-adyen-recurring-api",
+    "url": "https://clawhub.ai/skills/lap-adyen-recurring-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lap-adyen-recurring-api-be8e4cbbc274a8e6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adyen Recurring API skill. Use when working with Adyen Recurring for createPermit, disable, disablePermit. Covers 6 endpoints."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mickmicksh",
+      "userId": "s173hdss607zbfxv4jxwj0ae0583wwjt",
+      "displayName": "mickmicksh",
+      "image": "https://avatars.githubusercontent.com/u/214470470?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776677706764,
+      "changelog": "- Updated base URL in SKILL.md from paltokenization-test.adyen.com to pal-test.adyen.com for Adyen Recurring API.\n- No changes to endpoints, description, or other content.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5e93ebf7e7444a462d8ceefa9be4eb73a797a1ba95932b979121937713d2a21b"
+}

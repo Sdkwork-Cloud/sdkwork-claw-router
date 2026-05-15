@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/evenrealities-tracker@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.evenrealities_tracker",
+  "skill": {
+    "id": 18154,
+    "skillKey": "clawhub-evenrealities-tracker",
+    "name": "Evenrealities Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "evenrealities-tracker",
+    "url": "https://clawhub.ai/skills/evenrealities-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/evenrealities-tracker-9a4f300b4d692895.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate Evenrealities order monitoring (daily checks, status history, change-only alerts). Uses fast-browser-use to fill the tracker form, compare statuses, and notify Telegram only when something changes, while logging everything into `m."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thibautrey",
+      "userId": "publishers:thibautrey",
+      "displayName": "thibautrey",
+      "image": "https://avatars.githubusercontent.com/u/1433921?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1377,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1770802893124,
+      "changelog": "Security & clarity improvements: Added email/order ID validation (regex patterns), documented Playwright as direct dependency (not fast-browser-use), clarified no credentials needed, documented requirements.txt + install steps, added comprehensive security notes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b114aaf36cc85568709e866e988af78ca35dc9eaf0d1b5e4758a4f4334a2e356"
+}

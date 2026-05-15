@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71124,
+  "uuid": "skill-clawhub-seagate",
+  "skillKey": "clawhub-seagate",
+  "name": "Seagate",
+  "summary": "提供希捷硬盘及存储产品信息、选购建议、技术规格及保修数据支持服务。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seagate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供希捷硬盘及存储产品信息、选购建议、技术规格及保修数据支持服务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/seagate@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "seagate",
+      "url": "https://clawhub.ai/skills/seagate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seagate",
+    "url": "https://clawhub.ai/skills/seagate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seagate-40a8db52d8f58ab1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/seagate@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-seagate-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b9d424ea0f86cfdfa0061e89220391039c379cad75f4f5ffd9bbc1b2519bfbb",
+      "artifactSizeBytes": 2121
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T23:26:28.805Z"
+}

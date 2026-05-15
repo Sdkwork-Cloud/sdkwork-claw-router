@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-dooray-hook-skill@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_dooray_hook_skill",
+  "skill": {
+    "id": 14030,
+    "skillKey": "clawhub-openclaw-dooray-hook-skill",
+    "name": "Dooray Hook"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-dooray-hook-skill",
+    "url": "https://clawhub.ai/skills/openclaw-dooray-hook-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-dooray-hook-skill-f2de349a9cd4f29b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send automated notifications to Dooray! messenger channels via webhooks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "iizs",
+      "userId": "publishers:iizs",
+      "displayName": "Kirin Choi",
+      "image": "https://avatars.githubusercontent.com/u/2024206?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1093,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1770876083042,
+      "changelog": "Version 0.1.1\n\n- Added optional config entry verify_ssl to allow disabling SSL certificate verification (default: true).\n- Updated SKILL.md with enhanced security notes and details about the verify_ssl option.\n- Clarified configuration instructions and parameters in SKILL.md.\n- Improved troubleshooting guidance for SSL and config issues.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5c0ebe4a09cd8a7953fd487583801e4f7945cc7dccf2a8f591d054a3184214bb"
+}

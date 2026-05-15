@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/briefing-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.briefing_agent",
+  "skill": {
+    "id": 45064,
+    "skillKey": "clawhub-briefing-agent",
+    "name": "Briefing Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "briefing-agent",
+    "url": "https://clawhub.ai/skills/briefing-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/briefing-agent-aa2896d32ca3d29d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reads emails, filters key info, summarizes important messages, drafts routine replies, and flags items needing your attention for a clear morning briefing."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "emanxchan",
+      "userId": "s17f98avktkb8g08fgnyaswysx84efbk",
+      "displayName": "EmanxChan",
+      "image": "https://avatars.githubusercontent.com/u/233683271?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775660925194,
+      "changelog": "briefing-agent v1.0.0\n\n- Initial release of the Briefing Agent skill.\n- Reads and filters recent emails for actionable content.\n- Summarizes important emails in concise bullet points.\n- Drafts routine responses, keeping replies short and professional.\n- Flags emails requiring E-man's decision or review.\n- Outputs a clear, categorized morning briefing in markdown for supervisor review.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e1d22e10f3876377fed8c39f205810a479b649aae92e5bbf00c89edf9f2342e3"
+}

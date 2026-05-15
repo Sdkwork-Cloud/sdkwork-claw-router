@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28391,
+  "uuid": "skill-clawhub-resume-email-sender",
+  "skillKey": "clawhub-resume-email-sender",
+  "name": "Resume Email Sender",
+  "summary": "Send resume and cover letter to companies via Gmail. Activate when user wants to send, deliver, or submit a resume by email, apply to a job, or email a compa...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resume_email_sender",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaoxty",
+      "features": [
+        "Send resume and cover letter to companies via Gmail",
+        "Activate when user wants to send, deliver, or submit a resume by email, apply to a job, or emai."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/resume-email-sender@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30049294?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "resume-email-sender",
+      "url": "https://clawhub.ai/skills/resume-email-sender"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resume-email-sender",
+    "url": "https://clawhub.ai/skills/resume-email-sender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resume-email-sender-9fc09f6d1d977183.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/resume-email-sender@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-resume-email-sender-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cc50d11aa809c827adc182bdde0b59ed4019434360a0353f87625f809c78f776",
+      "artifactSizeBytes": 2485
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T09:49:23.668Z"
+}

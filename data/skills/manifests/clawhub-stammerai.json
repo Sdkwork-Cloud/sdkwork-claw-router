@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39674,
+  "uuid": "skill-clawhub-stammerai",
+  "skillKey": "clawhub-stammerai",
+  "name": "Stammerai",
+  "summary": "Stammer.ai integration. Manage Organizations. Use when the user wants to interact with Stammer.ai data.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stammerai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Stammer.ai integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Stammer.ai data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stammerai@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stammerai",
+      "url": "https://clawhub.ai/skills/stammerai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stammerai",
+    "url": "https://clawhub.ai/skills/stammerai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stammerai-3cb827a2c2d9e4fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stammerai@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-stammerai-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d56ec3da7c7ec284e580a84c365024fb6bdb3719bffcb94d47cad5951652329",
+      "artifactSizeBytes": 1817
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:46:58.716Z"
+}

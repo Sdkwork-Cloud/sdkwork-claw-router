@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-maker-hd@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_maker_hd",
+  "skill": {
+    "id": 43907,
+    "skillKey": "clawhub-video-maker-hd",
+    "name": "Video Maker Hd"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-maker-hd",
+    "url": "https://clawhub.ai/skills/video-maker-hd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-maker-hd-73fb89421898b443.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get polished HD videos ready to post, without touching a single slider. Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"combi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776242655120,
+      "changelog": "Video Maker HD 1.0.0 — Initial Release\n\n- Create polished HD videos by combining, editing, and exporting clips in 1080p MP4.\n- Supports uploads of MP4, MOV, AVI, WebM (max 500MB); seamless cloud-based processing.\n- Simple chat-driven workflow: combine clips, add background music, add text, and export.\n- No editing software required — just upload, describe your needs, and download the result.\n- Automatic setup and connection to cloud backend with instant anonymous use (free credits included).\n- Fast processing (usually under 2 minutes for short videos); ideal for rapid content creation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b93e80df93f6d73d31d55a2df0402e384966ab677e6d2538692cf3b79fa379b0"
+}

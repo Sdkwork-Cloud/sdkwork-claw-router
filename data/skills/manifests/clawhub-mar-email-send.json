@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44148,
+  "uuid": "skill-clawhub-mar-email-send",
+  "skillKey": "clawhub-mar-email-send",
+  "name": "mar-email-send",
+  "summary": "Send a quick email via SkillBoss API Hub without a local mail client.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mar_email_send",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MarjorieBroad",
+      "features": [
+        "Send a quick email via SkillBoss API Hub without a local mail client."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mar-email-send@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260425366?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mar-email-send",
+      "url": "https://clawhub.ai/skills/mar-email-send"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mar-email-send",
+    "url": "https://clawhub.ai/skills/mar-email-send",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mar-email-send-a884940f3be9405f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mar-email-send@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mar-email-send-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:13ca0ebad59aee2fd2d95903815795af5bea639374a01c86a268559e908955f3",
+      "artifactSizeBytes": 2112
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T05:46:54.780Z"
+}

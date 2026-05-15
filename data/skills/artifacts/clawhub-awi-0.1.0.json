@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/awi@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.awi",
+  "skill": {
+    "id": 61027,
+    "skillKey": "clawhub-awi",
+    "name": "AWI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "awi",
+    "url": "https://clawhub.ai/skills/awi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/awi-767a4feb8857a737.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AWI (Agentic Web Interface) — 联网读取+搜索，单二进制零配置。 三级自动降级：直连 → 智能适配 → 浏览器渲染。 不需要 API Key，不需要 Docker。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jzocb",
+      "userId": "s171w51c7np1cprte4r1ab11vs83g4bd",
+      "displayName": "jzOcb",
+      "image": "https://avatars.githubusercontent.com/u/258660657?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 508,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772568544339,
+      "changelog": "Initial release — single binary web reader + search, zero config",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dc4eaa2fe7580604ffe1870767c0a047d9ca1727a0078b4d266bb436357a6406"
+}

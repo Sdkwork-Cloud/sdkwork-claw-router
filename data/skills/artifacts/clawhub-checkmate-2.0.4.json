@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/checkmate@2.0.4",
+  "version": "2.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.checkmate",
+  "skill": {
+    "id": 15269,
+    "skillKey": "clawhub-checkmate",
+    "name": "Checkmate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "checkmate",
+    "url": "https://clawhub.ai/skills/checkmate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/checkmate-5d9ad16979934da1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enforces task completion: turns your goal into pass/fail criteria, runs a worker, judges the output, feeds back what's missing, and loops until every criteri..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "insipidpoint",
+      "userId": "publishers:insipidpoint",
+      "displayName": "Shiwei Song",
+      "image": "https://avatars.githubusercontent.com/u/48135?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1023,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "2.0.4",
+      "createdAt": 1771803378432,
+      "changelog": "Redesign intake: goal statement (plain English) replaces checklist. Judge evaluates holistically against goal, not a spec sheet. User reviews a paragraph, not 10 bullet points.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2e6783792b49b54cdfe31439e7e81719f93f3a5a8fecfece0b9b421c96fd9611"
+}

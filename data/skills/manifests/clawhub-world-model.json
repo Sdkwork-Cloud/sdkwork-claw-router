@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20138,
+  "uuid": "skill-clawhub-world-model",
+  "skillKey": "clawhub-world-model",
+  "name": "World Model",
+  "summary": "World Model - Environment understanding, causal reasoning, and prediction for AGI",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.world_model",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tobisamaa",
+      "features": [
+        "World Model",
+        "Environment understanding, causal reasoning, and prediction for AGI"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/world-model@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62774845?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "world-model",
+      "url": "https://clawhub.ai/skills/world-model"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "world-model",
+    "url": "https://clawhub.ai/skills/world-model",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/world-model-f6fafe16f3d1018f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/world-model@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-world-model-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:22ae49716d2fe0fae6e98dab510b2ce07a6b095f5ceb41e9b237a8076290792c",
+      "artifactSizeBytes": 2372
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T01:52:21.441Z"
+}

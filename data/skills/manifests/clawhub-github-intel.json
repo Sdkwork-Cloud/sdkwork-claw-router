@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24385,
+  "uuid": "skill-clawhub-github-intel",
+  "skillKey": "clawhub-github-intel",
+  "name": "Github Intel",
+  "summary": "Analyze any GitHub repository in AI-friendly format. Convert entire repos to single markdown documents, generate architecture diagrams with Mermaid, inspect...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_intel",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aiwithabidi",
+      "features": [
+        "Analyze any GitHub repository in AI-friendly format",
+        "Convert entire repos to single markdown documents, generate architecture diagrams with Mermaid,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-intel@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208891229?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-intel",
+      "url": "https://clawhub.ai/skills/github-intel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-intel",
+    "url": "https://clawhub.ai/skills/github-intel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-intel-2dbc1746b11599f5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-intel@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-intel-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4850c34ed49db8401781ae8cf56ac7884ba4e50532fe05dd7ea30de73d56b5e6",
+      "artifactSizeBytes": 2266
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T04:52:40.684Z"
+}

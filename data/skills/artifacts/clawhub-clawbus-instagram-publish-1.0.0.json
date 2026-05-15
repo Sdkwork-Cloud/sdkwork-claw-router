@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawbus-instagram-publish@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawbus_instagram_publish",
+  "skill": {
+    "id": 49764,
+    "skillKey": "clawhub-clawbus-instagram-publish",
+    "name": "instagram-publish"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawbus-instagram-publish",
+    "url": "https://clawhub.ai/skills/clawbus-instagram-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawbus-instagram-publish-c1447b5b9e9bc3e3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Publish Images, Reels, and Carousels to Instagram using the MyBrandMetrics API. Supports local file uploads and URLs. Handles single posts and multi-item car..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "9ying66",
+      "userId": "s1714nww0520qjy3akv321qsjs86bfp7",
+      "displayName": "9Ying66",
+      "image": "https://avatars.githubusercontent.com/u/191543806?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 67,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778224366049,
+      "changelog": "Initial release from clawbus.com",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:679eab8661d2322854beb3bf2c3448bf8e0ad9f88d1b3056bdf52da8b8c3365a"
+}

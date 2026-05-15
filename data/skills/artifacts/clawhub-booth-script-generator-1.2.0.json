@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/booth-script-generator@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.booth_script_generator",
+  "skill": {
+    "id": 57405,
+    "skillKey": "clawhub-booth-script-generator",
+    "name": "Booth Script Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "booth-script-generator",
+    "url": "https://clawhub.ai/skills/booth-script-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/booth-script-generator-e3f59f8cb7b41790.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate booth conversation scripts for every visitor type — cold walk-ups, warm leads, and live demos. \"Write booth scripts for my team\" / \"帮我写展位话术\" / \"Mess..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weilun88313",
+      "userId": "s1723bcbr1g507y1ekdjmbyct983h3dw",
+      "displayName": "weilun88313",
+      "image": "https://avatars.githubusercontent.com/u/33587196?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 273,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1775030049805,
+      "changelog": "- Added multilingual keywords and translated descriptions to support international and non-English users.\n- Expanded the skill description to include common terms for booth scripts in Chinese, German, Japanese, and Spanish.\n- No changes to workflow or script generation logic; documentation update only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2d76398fe143775547522e62afd04d591e5f75658c0e38e6ef07441b1ebaae3c"
+}

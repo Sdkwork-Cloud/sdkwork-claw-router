@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/editor-kaise@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.editor_kaise",
+  "skill": {
+    "id": 46302,
+    "skillKey": "clawhub-editor-kaise",
+    "name": "Editor Kaise"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "editor-kaise",
+    "url": "https://clawhub.ai/skills/editor-kaise",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/editor-kaise-8a7aec618373a7e0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get edited MP4 videos ready to post, without touching a single slider. Upload your raw video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"tr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776468644934,
+      "changelog": "Initial release of Editor Kaise — AI-powered video editing for quick, clean exports:\n\n- Upload raw video files (MP4, MOV, AVI, WebM up to 500MB) and receive edited 1080p MP4s, ready to post.\n- No manual editing needed: describe your desired edit (e.g., \"trim unnecessary parts, add transitions\") and get fast results.\n- Simple onboarding: free anonymous token for 100 credits (7 days), automatic backend connection.\n- Supports prompt-based editing, text overlays, aspect ratio changes, and audio track management.\n- Full error handling, session/timeline management, cloud GPU rendering.\n- Built for beginner creators and students seeking fast, no-hassle video edits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a9f88343788b9dbce54a28e812d61483e39f42f3309df5ba6dae07e9f4b246c8"
+}

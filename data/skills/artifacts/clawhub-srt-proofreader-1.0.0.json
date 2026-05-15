@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/srt-proofreader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.srt_proofreader",
+  "skill": {
+    "id": 21692,
+    "skillKey": "clawhub-srt-proofreader",
+    "name": "SRT Proofreader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "srt-proofreader",
+    "url": "https://clawhub.ai/skills/srt-proofreader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/srt-proofreader-e083b9e4281eb351.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Proofread SRT subtitles by using srts/source.md as terminology reference while preserving subtitle indices and timestamps. Use when users ask to proofread or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kapiai",
+      "userId": "s174an1p2smxqf8ajdhr3y9d7d83wv0g",
+      "displayName": "KapiAI",
+      "image": "https://avatars.githubusercontent.com/u/26054274?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 501,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773105626933,
+      "changelog": "- Initial release of srt-proofreader.\n- Proofreads SRT subtitles using srts/source.md as an authoritative terminology reference.\n- Preserves subtitle indices, timestamps, and original structure; edits only minimal text issues.\n- Handles optional large SRT files via automatic section splitting and merging.\n- Enforces git-based workflow for tracked, reproducible subtitle edits.\n- Stops with clear error messages for missing prerequisites or ambiguous file choices.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eaefdf20f485b6033d76123318948dbdc01da08e6006a8003d0de85692ddd7cd"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28062,
+  "uuid": "skill-clawhub-my-sg-invoice-parser",
+  "skillKey": "clawhub-my-sg-invoice-parser",
+  "name": "MY/SG Invoice & Receipt Parser",
+  "summary": "Extract structured data from Malaysian & Singaporean invoices/receipts. SST/GST-aware. Supports BM/EN/CN.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_sg_invoice_parser",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wms2537",
+      "features": [
+        "Extract structured data from Malaysian & Singaporean invoices/receipts",
+        "SST/GST-aware",
+        "Supports BM/EN/CN."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/my-sg-invoice-parser@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51080539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "my-sg-invoice-parser",
+      "url": "https://clawhub.ai/skills/my-sg-invoice-parser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-sg-invoice-parser",
+    "url": "https://clawhub.ai/skills/my-sg-invoice-parser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-sg-invoice-parser-2c4e63fe76a7da8f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/my-sg-invoice-parser@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-my-sg-invoice-parser-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:26e6258542dbecdc43254235a88a03086a5ed7d449bca531ec8566a2eb644758",
+      "artifactSizeBytes": 2260
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T16:50:03.558Z"
+}

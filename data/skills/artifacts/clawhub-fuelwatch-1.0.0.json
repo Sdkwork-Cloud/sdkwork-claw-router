@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fuelwatch@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fuelwatch",
+  "skill": {
+    "id": 44118,
+    "skillKey": "clawhub-fuelwatch",
+    "name": "Fuelwatch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fuelwatch",
+    "url": "https://clawhub.ai/skills/fuelwatch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fuelwatch-c1c71eff48b3e298.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build, deploy, and extend the FuelWatch crowdsourced fuel availability tracker for South Africa. Use when working on FuelWatch features, fixing bugs, deployi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stefanferreira",
+      "userId": "s174f5nq8v4pyqpbz80b1gew5d83pkm9",
+      "displayName": "stefanferreira",
+      "image": "https://avatars.githubusercontent.com/u/6356549?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 135,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776150780560,
+      "changelog": "FuelWatch 1.0.0\n\n- Initial release of FuelWatch, a mobile-first web app for tracking fuel prices and availability at South African stations.\n- Features include station list with search, filter, sort; crowdsourced fuel status reporting; and a share button.\n- Data stored in localStorage; prototype runs without backend.\n- XSS-safe input handling, with data flagged as unverified after 2 hours.\n- Documentation includes roadmap for Supabase backend and WhatsApp/voice reporting channel in later phases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a22cfb767f36dd486d12530447e91ca73765d22f17f03b9a88b74e3229dc5eec"
+}

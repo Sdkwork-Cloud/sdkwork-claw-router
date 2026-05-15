@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49947,
+  "uuid": "skill-clawhub-mysql-manager",
+  "skillKey": "clawhub-mysql-manager",
+  "name": "Mysql Manager",
+  "summary": "Manage a shared MySQL Docker container for local dev environments. Handles container lifecycle, database creation/removal, and cross-instance data dumps. Des...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mysql_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jair Pereira",
+      "features": [
+        "Manage a shared MySQL Docker container for local dev environments",
+        "Handles container lifecycle, database creation/removal, and cross-instance data dumps"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mysql-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1306512?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mysql-manager",
+      "url": "https://clawhub.ai/skills/mysql-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mysql-manager",
+    "url": "https://clawhub.ai/skills/mysql-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mysql-manager-9cf4a2ec1c690756.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mysql-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mysql-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:223e9749120730d5c207ca8b1b83a14b1d6239f96237f4b49e242ac7da142fe9",
+      "artifactSizeBytes": 2241
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T11:18:26.598Z"
+}

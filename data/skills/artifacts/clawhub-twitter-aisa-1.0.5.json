@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/twitter-aisa@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twitter_aisa",
+  "skill": {
+    "id": 34262,
+    "skillKey": "clawhub-twitter-aisa",
+    "name": "twitter-aisa"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twitter-aisa",
+    "url": "https://clawhub.ai/skills/twitter-aisa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twitter-aisa-4573913e43a58d48.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Twitter/X command center for research, monitoring, watchlists, and approved posting through AIsa. Use when: the user needs one flagship skill for trend track..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bibaofeng",
+      "userId": "s1740zrgcnwxsxgzt9bfj5a1jn842mag",
+      "displayName": "bibaofeng",
+      "image": "https://avatars.githubusercontent.com/u/86095131?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 226,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1778175482650,
+      "changelog": "**Major rebranding and improvements for usability and documentation.**\n\n- Renamed from \"openclaw-twitter\" to \"aisa-twitter-api\" to reflect a unified Twitter/X command center under AIsa.\n- Significantly revised and clarified SKILL.md: improved usage guidance, security notes, examples, and concise high-intent workflows.\n- Added a new README.md for enhanced documentation.\n- No changes to runtime logic—API usage, OAuth, and posting scripts remain stable.\n- Maintains explicit guardrails against requesting passwords or browser cookies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5de9a00cc5610dbb99a5769c89874755229ec470001828056d01cd2722ad03c4"
+}

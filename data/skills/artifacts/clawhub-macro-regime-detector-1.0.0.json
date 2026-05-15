@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/macro-regime-detector@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.macro_regime_detector",
+  "skill": {
+    "id": 15562,
+    "skillKey": "clawhub-macro-regime-detector",
+    "name": "Macro Regime Detector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "macro-regime-detector",
+    "url": "https://clawhub.ai/skills/macro-regime-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/macro-regime-detector-20a38bfa529f4b6e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detect the current macro regime (Risk-On, Risk-Off, Inflationary, Deflationary, Stagflation) using multi-source intelligence. Combines Fear & Greed, DXY, yie..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jamierossouw",
+      "userId": "publishers:jamierossouw",
+      "displayName": "JamieRossouw",
+      "image": "https://avatars.githubusercontent.com/u/219507116?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 977,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771702700646,
+      "changelog": "Initial release – Macro Regime Detector skill version 1.0.0:\n\n- Detects real-time macro regimes (Risk-On, Risk-Off, Inflationary, Deflationary, Stagflation) using multi-source data.\n- Integrates sentiment, market volatility, DXY, gold/BTC ratio, Reddit trends, news, and on-chain metrics.\n- Provides clear crypto positioning recommendations for each regime.\n- Accepts queries about current macro conditions and portfolio strategy.\n- Outputs regime letter, confidence score, supporting signals, and positioning advice.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c2eb171d62838e3bfd3f5cc38de908fbbd9723f5e7283c719aebfffd06b30793"
+}

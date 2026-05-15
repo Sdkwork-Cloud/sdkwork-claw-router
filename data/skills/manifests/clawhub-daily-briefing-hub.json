@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14810,
+  "uuid": "skill-clawhub-daily-briefing-hub",
+  "skillKey": "clawhub-daily-briefing-hub",
+  "name": "Daily Briefing Hub",
+  "summary": "All-in-one daily briefing that combines Google Calendar events, Gmail/Outlook email highlights, weather forecast, GitHub PR and CI status, Hacker News and RS...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_briefing_hub",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Arik Tulchinsky",
+      "features": [
+        "All-in-one daily briefing that combines Google Calendar events, Gmail/Outlook email highlights,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-briefing-hub@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42210991?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-briefing-hub",
+      "url": "https://clawhub.ai/skills/daily-briefing-hub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-briefing-hub",
+    "url": "https://clawhub.ai/skills/daily-briefing-hub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-briefing-hub-66a2464919d01051.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-briefing-hub@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-briefing-hub-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8bdf3e49ee163de65d9256af15849169894e99c982e193c43a94732ddb507192",
+      "artifactSizeBytes": 2664
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T15:33:06.820Z"
+}

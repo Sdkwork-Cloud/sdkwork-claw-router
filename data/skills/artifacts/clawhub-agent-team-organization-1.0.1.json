@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-team-organization@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_team_organization",
+  "skill": {
+    "id": 26185,
+    "skillKey": "clawhub-agent-team-organization",
+    "name": "Agent Team Organization"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-team-organization",
+    "url": "https://clawhub.ai/skills/agent-team-organization",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-team-organization-99a507290baaa1f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and maintain a Teams management page for OpenClaw Control UI, including named agent teams, parent/child nesting, indented tree rendering, collapsible..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maverick-software",
+      "userId": "s172zy52hz8d9fxcmyr9padghd842s7c",
+      "displayName": "maverick-software",
+      "image": "https://avatars.githubusercontent.com/u/85259593?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 371,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773763138860,
+      "changelog": "Add runtime troubleshooting reference covering parentId save regression, compiled gateway bundle mismatches, verification steps, and regression checks for nested teams.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6ced4e864c17e5812d0ee07883c1be283827ff55786b50204a667ef6e80103c5"
+}

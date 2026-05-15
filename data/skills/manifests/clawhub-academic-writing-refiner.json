@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9105,
+  "uuid": "skill-clawhub-academic-writing-refiner",
+  "skillKey": "clawhub-academic-writing-refiner",
+  "name": "academic-writing-refiner",
+  "summary": "Refine academic writing for computer science research papers targeting top-tier venues (NeurIPS, ICLR, ICML, AAAI, IJCAI, ACL, EMNLP, NAACL, CVPR, WWW, KDD, SIGIR, CIKM, and similar). Use this skill whenever a user asks to improve, polish,.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.academic_writing_refiner",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zihan-Zhu",
+      "features": [
+        "Refine academic writing for computer science research papers targeting top-tier venues (NeurIPS.",
+        "Use this skill whenever a user asks to improve, polish, refine, edit, or proofread academic or.",
+        "Also trigger when users paste LaTeX content and ask for writing help, mention \"camera-ready\", \".",
+        "This skill handles both full paper refinement and section-by-section editing."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/academic-writing-refiner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/110231815?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "academic-writing-refiner",
+      "url": "https://clawhub.ai/skills/academic-writing-refiner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "academic-writing-refiner",
+    "url": "https://clawhub.ai/skills/academic-writing-refiner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/academic-writing-refiner-e46b461985afb253.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/academic-writing-refiner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-academic-writing-refiner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6c1bfe9b86a47868f4623499ab138597278aa7aae8c4689b3a3370b80611f260",
+      "artifactSizeBytes": 2603
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T09:49:48.479Z"
+}

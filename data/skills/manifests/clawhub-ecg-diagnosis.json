@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67907,
+  "uuid": "skill-clawhub-ecg-diagnosis",
+  "skillKey": "clawhub-ecg-diagnosis",
+  "name": "ecg-diagnosis",
+  "summary": "2026 视觉语义化心电助手（增强校验版）。强制执行本地脚本，内置文件名格式审计与拟人进度播报。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecg_diagnosis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fanglucheng",
+      "features": [
+        "2026 视觉语义化心电助手（增强校验版）。强制执行本地脚本，内置文件名格式审计与拟人进度播报。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ecg-diagnosis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109670253?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ecg-diagnosis",
+      "url": "https://clawhub.ai/skills/ecg-diagnosis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecg-diagnosis",
+    "url": "https://clawhub.ai/skills/ecg-diagnosis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecg-diagnosis-7156a92cd05f36ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ecg-diagnosis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ecg-diagnosis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d38beefc908fe508af832fb3c56df8a10515c35337c0132cd323c6656989948e",
+      "artifactSizeBytes": 1907
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T13:55:34.750Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/s2-matrix-pod@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.s2_matrix_pod",
+  "skill": {
+    "id": 52799,
+    "skillKey": "clawhub-s2-matrix-pod",
+    "name": "Xiang miles | Space2.world"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "s2-matrix-pod",
+    "url": "https://clawhub.ai/skills/s2-matrix-pod",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/s2-matrix-pod-fe49776942f120aa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Assigns a 4-square-meter virtual space and visual avatar to your agent, saves local state files, and generates remote image URLs for display."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "spacesq",
+      "userId": "s17c8pmv1e8tb2mcc5aset88e183hq1t",
+      "displayName": "MilesXiang",
+      "image": "https://avatars.githubusercontent.com/u/259359437?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 211,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773931575453,
+      "changelog": "- Initial release of S2-Habitat-Pod, assigning a 4m² virtual space and a visual face to your OpenClaw agent.\n- Creates a local `s2_matrix_data` folder and writes a visible `<POD-ID>.json` state file containing agent info and timestamp.\n- Generates and prints Markdown with remote image URLs for agent avatars (fetched from Space2 CDN when used).\n- Features 24 unique Cyber-Lobster avatars and deterministic Pod-ID/grid assignment based on agent name.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:176975829c385d4491f00f782ee1ffa74e0fee207760d97172d0019fe476a14f"
+}

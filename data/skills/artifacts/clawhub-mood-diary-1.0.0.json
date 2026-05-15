@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mood-diary@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mood_diary",
+  "skill": {
+    "id": 69570,
+    "skillKey": "clawhub-mood-diary",
+    "name": "Mood Diary"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mood-diary",
+    "url": "https://clawhub.ai/skills/mood-diary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mood-diary-d6309d2083fbb085.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "心情日记 — 智能情绪追踪器，通过自然语言记录中文日记、自动识别7种情绪、 1-10分评分、智能标签提取，生成日/周/月报告和趋势分析。 数据纯本地JSON存储，零网络请求，保护隐私。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dyby99-gif",
+      "userId": "publishers:dyby99-gif",
+      "displayName": "dyby99-gif",
+      "image": "https://avatars.githubusercontent.com/u/257656835?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 371,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772435050328,
+      "changelog": "Initial release of mood-diary.\n\n- Record daily moods in natural Chinese language, with automatic detection of 7 emotion types and 1–10 mood scoring.\n- Intelligent tag extraction (people, things, places, weather) from diary entries.\n- Generates daily, weekly, and monthly reports, plus trend analysis and a visual mood calendar.\n- All data stored locally in JSON; zero network requests for maximal privacy.\n- Includes command-line diary and report tools with configurable emotion keywords, emojis, and color codes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2e03a5614031d086ff1002f8ac92d00c91842a43de708c44fb55df561a6b7e83"
+}

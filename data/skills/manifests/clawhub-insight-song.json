@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22704,
+  "uuid": "skill-clawhub-insight-song",
+  "skillKey": "clawhub-insight-song",
+  "name": "Insight Song",
+  "summary": "Transform technical insights into Suno-ready songs with lyrics, style tags, and emotional arc",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.insight_song",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lee Brown",
+      "features": [
+        "Transform technical insights into Suno-ready songs with lyrics, style tags, and emotional arc"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/insight-song@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1395866?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "insight-song",
+      "url": "https://clawhub.ai/skills/insight-song"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "insight-song",
+    "url": "https://clawhub.ai/skills/insight-song",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/insight-song-aae758a92c3c4ea0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/insight-song@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-insight-song-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:68c88e00eb45174389c43c9cf862b8a9e1b16d3fed86901e31a6d4eb264a0d5d",
+      "artifactSizeBytes": 2338
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T02:16:10.345Z"
+}

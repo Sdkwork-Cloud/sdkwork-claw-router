@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13974,
+  "uuid": "skill-clawhub-voice-edge-tts",
+  "skillKey": "clawhub-voice-edge-tts",
+  "name": "Voice (Edge TTS)",
+  "summary": "Convert text to speech using Microsoft Edge TTS with real-time streaming, customizable voice settings, and support for multiple languages including Chinese a...",
+  "version": "1.10.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voice_edge_tts",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhaov",
+      "features": [
+        "Convert text to speech using Microsoft Edge TTS with real-time streaming, customizable voice se."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/voice-edge-tts@1.10.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26203336?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "voice-edge-tts",
+      "url": "https://clawhub.ai/skills/voice-edge-tts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voice-edge-tts",
+    "url": "https://clawhub.ai/skills/voice-edge-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voice-edge-tts-c8d3c62340f751b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/voice-edge-tts@1.10.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-voice-edge-tts-1.10.0.json",
+      "version": "1.10.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:39d8bcfbe54ea24461869842242c55d1af32617fdf1359b22b23ceb4a001f99e",
+      "artifactSizeBytes": 1937
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T17:25:09.121Z"
+}

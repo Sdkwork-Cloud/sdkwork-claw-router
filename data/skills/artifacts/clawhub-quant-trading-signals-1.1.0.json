@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quant-trading-signals@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quant_trading_signals",
+  "skill": {
+    "id": 70923,
+    "skillKey": "clawhub-quant-trading-signals",
+    "name": "量化交易信号"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quant-trading-signals",
+    "url": "https://clawhub.ai/skills/quant-trading-signals",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quant-trading-signals-ca8f69c772708fab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "量化交易信号系统。基于MACD、RSI、KDJ、均线、布林带等技术指标生成买卖信号。支持港股、美股、加密货币。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sanduan003",
+      "userId": "s17eh1scx31yt551rqrw6fc79h83r4zs",
+      "displayName": "sanduan003",
+      "image": "https://avatars.githubusercontent.com/u/125126230?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2622,
+      "installsAllTime": 15,
+      "installsCurrent": 14,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772895220893,
+      "changelog": "- Added support information for Hong Kong stocks, US stocks, and cryptocurrencies.\n- Expanded signal indicator table with clearer descriptions and value ranges.\n- Introduced a star-based explanation for signal strength.\n- Updated output examples and instructions for broader market compatibility.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:74e87bb92b8dc96d8fea65b8176b9585022dcfb383b0bdf28e2517bc4ca5df12"
+}

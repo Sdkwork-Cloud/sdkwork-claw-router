@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/voice-match-humanizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voice_match_humanizer",
+  "skill": {
+    "id": 45330,
+    "skillKey": "clawhub-voice-match-humanizer",
+    "name": "Voice Match Humanizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voice-match-humanizer",
+    "url": "https://clawhub.ai/skills/voice-match-humanizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voice-match-humanizer-16fd4d908ccf0cba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when someone wants text rewritten to match how they personally write, or wants to know if text sounds AI-generated. Key triggers: 'sound like..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chris-openclaw",
+      "userId": "s17f63svb641q2stekk1cmcdn183k4rq",
+      "displayName": "chris-openclaw",
+      "image": "https://avatars.githubusercontent.com/u/271059507?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 135,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776020496766,
+      "changelog": "Initial release. Voice cloning from writing samples, AI detection scoring, multi-profile management, and style-matched rewriting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7117d7be6c1d2ef649e3202e35f14113ba5b3524b6a28efb7075eaf06cc91c5a"
+}

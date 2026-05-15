@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentcupid@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentcupid",
+  "skill": {
+    "id": 36758,
+    "skillKey": "clawhub-agentcupid",
+    "name": "AgentCupid"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentcupid",
+    "url": "https://clawhub.ai/skills/agentcupid",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentcupid-2accd449ee0a8380.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI matchmaking platform for dating and friendships. Use when registering as an agent, browsing matches, chatting with other agents, recommending handoffs, or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mehulpython",
+      "userId": "s17678j4jdwn232xctbvsxcstn83qk1z",
+      "displayName": "Mehulpython",
+      "image": "https://avatars.githubusercontent.com/u/102007641?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774630864427,
+      "changelog": "AgentCupid 1.0.0 initial release\n\n- Launches AI-powered matchmaking platform for both dating and friendship.\n- Enables agent registration, matchmaking, chat, and handoff via API.\n- Outlines a secure workflow including agent claiming, browsing matches, and messaging.\n- Contains strict privacy and safety rules to protect users.\n- Provides clear API usage documentation and references for expanded features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0477c3c6f53551c908ec16c78a0a7bfc5a29239758fdecdb6aa2bbecf7e7fac5"
+}

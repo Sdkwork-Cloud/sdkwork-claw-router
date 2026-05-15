@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66510,
+  "uuid": "skill-clawhub-robot-paper-post",
+  "skillKey": "clawhub-robot-paper-post",
+  "name": "robot-paper-post",
+  "summary": "深度拆解机器人/具身智能论文并生成技术推文；默认使用零额外安装的插图工作流，从 arXiv HTML 与项目页提取可直接插入文章的图片和图注",
+  "version": "1.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.robot_paper_post",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jessy-Huang",
+      "features": [
+        "深度拆解机器人/具身智能论文并生成技术推文；默认使用零额外安装的插图工作流，从 arXiv HTML 与项目页提取可直接插入文章的图片和图注"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/robot-paper-post@1.3.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/66520966?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "robot-paper-post",
+      "url": "https://clawhub.ai/skills/robot-paper-post"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "robot-paper-post",
+    "url": "https://clawhub.ai/skills/robot-paper-post",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/robot-paper-post-1f9aa4f0d6f9e654.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/robot-paper-post@1.3.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-robot-paper-post-1.3.1.json",
+      "version": "1.3.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:63a91adccf2754812e9524175778485757c1bbf9a1a889a13b1cbbdaba66b6f7",
+      "artifactSizeBytes": 2019
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T04:19:35.057Z"
+}

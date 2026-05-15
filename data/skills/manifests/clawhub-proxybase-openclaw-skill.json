@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17128,
+  "uuid": "skill-clawhub-proxybase-openclaw-skill",
+  "skillKey": "clawhub-proxybase-openclaw-skill",
+  "name": "ProxyBase",
+  "summary": "Purchase and manage SOCKS5 residential proxies via ProxyBase API with cryptocurrency payments. Supports order creation, payment polling, proxy delivery, band...",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proxybase_openclaw_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "proxybase-user",
+      "features": [
+        "Purchase and manage SOCKS5 residential proxies via ProxyBase API with cryptocurrency payments",
+        "Supports order creation, payment polling, proxy delivery, band..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/proxybase-openclaw-skill@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/198942971?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "proxybase-openclaw-skill",
+      "url": "https://clawhub.ai/skills/proxybase-openclaw-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proxybase-openclaw-skill",
+    "url": "https://clawhub.ai/skills/proxybase-openclaw-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proxybase-openclaw-skill-e4dd65b54496f393.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/proxybase-openclaw-skill@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-proxybase-openclaw-skill-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:74193be0e824ac6a508eec258171a44a297cef1500c49f560c7796d195587b4e",
+      "artifactSizeBytes": 2016
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T02:43:25.675Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/superpowers-isolated-workspace@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.superpowers_isolated_workspace",
+  "skill": {
+    "id": 30056,
+    "skillKey": "clawhub-superpowers-isolated-workspace",
+    "name": "Isolated Workspace"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "superpowers-isolated-workspace",
+    "url": "https://clawhub.ai/skills/superpowers-isolated-workspace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/superpowers-isolated-workspace-dd35adda9f81ffb2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when starting feature work that needs isolation from current workspace - creates isolated git branches with clean setup and safety verification, adapted..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "axelhu",
+      "userId": "s172yaxxd2drm0sc92554g9aq983hegj",
+      "displayName": "AxelHu",
+      "image": "https://avatars.githubusercontent.com/u/12809280?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 290,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774515933417,
+      "changelog": "OpenClaw-adapted skill for Superpowers development methodology.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:456c22a7a547ac9a770ce06d40903bd910892e1ab92711e5e36d91f497383ca8"
+}

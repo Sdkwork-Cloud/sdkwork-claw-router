@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/easyaccounts@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.easyaccounts",
+  "skill": {
+    "id": 59902,
+    "skillKey": "clawhub-easyaccounts",
+    "name": "Easyaccounts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "easyaccounts",
+    "url": "https://clawhub.ai/skills/easyaccounts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/easyaccounts-e3bf72c726b7e269.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "家庭财务管家 / Family finance manager. 通过自然语言对接 EasyAccounts 个人记账系统,支持记账、查账、批量记账、内部转账、流水修改、收支统计、年度分析、Excel 导出、系统公告查询等。Manage household accounts, expenses, income,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qingheyang",
+      "userId": "s176x9eab1hqvqp82qehb5dzw98417n0",
+      "displayName": "QingHeYang",
+      "image": "https://avatars.githubusercontent.com/u/19968251?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1775615204235,
+      "changelog": "Breaking: EASYACCOUNTS_URL now requires pure baseurl format (http(s)://host[:port], no trailing slash, no path). The /api prefix is automatically appended by scripts. This makes config simpler for users who copy the browser URL directly. Also strengthened LLM behavior rules to enforce script usage instead of manual curl construction.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e2b6c8cb891b838846783364771b9ad46e83b75e367b5a4eb60c923ebd5b4d58"
+}

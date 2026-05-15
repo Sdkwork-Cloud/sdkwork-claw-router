@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bis@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bis",
+  "skill": {
+    "id": 57569,
+    "skillKey": "clawhub-bis",
+    "name": "bis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bis",
+    "url": "https://clawhub.ai/skills/bis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bis-96147cdbfd6955d7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Information assistant for BIS 国际清算银行. Get mission info, latest reports, member states, and organizational resources."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775003535341,
+      "changelog": "Initial release: provides key information and resources about the BIS (国际清算银行).\n\n- Get BIS mission, overview, and organizational focus.\n- Access latest BIS reports, news, and upcoming events.\n- Retrieve member countries and leadership details.\n- Find important BIS databases, tools, and publications.\n- Powered by web search for up-to-date official information.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:46d4303fe59baf80d79c7d2ca909bce103a1741396ba66f4b96ce345f2360c4a"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ambit-cli@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ambit_cli",
+  "skill": {
+    "id": 18254,
+    "skillKey": "clawhub-ambit-cli",
+    "name": "Ambit Cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ambit-cli",
+    "url": "https://clawhub.ai/skills/ambit-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ambit-cli-95b946c1a8005a98.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill for any task involving the ambit CLI: creating or destroying private networks, deploying apps to a private network, checking network or router..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "toxicpine",
+      "userId": "publishers:toxicpine",
+      "displayName": "Arbion Halili",
+      "image": "https://avatars.githubusercontent.com/u/99731180?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 705,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771807479325,
+      "changelog": "Initial release of ambit-cli: Deploy private, internet-invisible apps using Tailscale and Fly.io.\n\n- Supports creating private networks (\"ambits\") with isolated access via Tailscale routing and split DNS.\n- Enables deploying apps to these networks using local fly.toml, Docker images, or GitHub templates—with automatic safety checks.\n- Provides commands to list routers, check network/router health, and view detailed status.\n- Includes network teardown and resource cleanup via `ambit destroy`.\n- Offers a `doctor` command for health checking and troubleshooting of all core components.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:318f76fda6306eb9d95a8fe37e4c0d205d253729c367b4f750906ccf3254bdd6"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-vetter-plus@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_vetter_plus",
+  "skill": {
+    "id": 39243,
+    "skillKey": "clawhub-skill-vetter-plus",
+    "name": "Skill Vetter Plus"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-vetter-plus",
+    "url": "https://clawhub.ai/skills/skill-vetter-plus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-vetter-plus-5c21d6a32809c203.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Security scanner for AI agent skills. 9 built-in detection signatures. Identifies secrets, unsafe execution patterns, and prompt injection. Sub-50ms results."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "certainlogicai",
+      "userId": "s177n1vqbbxjdapw2fqneax5qd8461jb",
+      "displayName": "CertainLogicAI",
+      "image": "https://avatars.githubusercontent.com/u/270056974?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1777652876449,
+      "changelog": "Skill Vetter Plus 2.0.0 – major update with simplified, faster scanning:\n\n- Refactored documentation for clarity; highlights 9 built-in detection signatures.\n- New machine-readable signatures.json file added for easier signature management.\n- Dropped old features and complex documentation; now emphasizes speed and focus on text-based matching.\n- Removed scripts/pattern_loader.py to streamline codebase.\n- Output, usage, and limitations updated to match capabilities – sub-50ms scans, text signature detection only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a0e86ae13d08b2c0b6bca9975b9e1c2c94da5c1597e0f1de7922c5708b71aef3"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xapi-labs@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xapi_labs",
+  "skill": {
+    "id": 15010,
+    "skillKey": "clawhub-xapi-labs",
+    "name": "xAPI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xapi-labs",
+    "url": "https://clawhub.ai/skills/xapi-labs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xapi-labs-d8f11f28df1b5d39.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use xapi CLI to access real-time external data — Twitter/X profiles, tweets, and timelines, crypto token prices and metadata, web search, news, and AI text p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "glacier-luo",
+      "userId": "s17fbpnm9eeb1rbthat7z3ee4h83mmb4",
+      "displayName": "洛冰河",
+      "image": "https://avatars.githubusercontent.com/u/30594509?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1602,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773390906593,
+      "changelog": "- Updated all CLI usage examples and setup instructions to use the new npx entrypoint: npx xapi-to (was npx @xapi-to/xapi)\n- Revised command syntax throughout documentation for consistency with the new CLI alias xapi-to\n- Updated references and examples for registration, configuration, and workflow steps to reflect the new npx usage\n- No feature or functional changes; documentation update only",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:41c8de99254a2947ce34f38cfb929f32f2c8d41ff42f72801351f75faf1fd0ef"
+}

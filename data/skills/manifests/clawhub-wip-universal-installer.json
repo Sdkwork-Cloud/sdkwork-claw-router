@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15957,
+  "uuid": "skill-clawhub-wip-universal-installer",
+  "skillKey": "clawhub-wip-universal-installer",
+  "name": "Wip Universal Installer",
+  "summary": "Reference installer for agent-native software. Scans a repo, detects which interfaces it exposes, and installs them all.",
+  "version": "1.9.72",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wip_universal_installer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Parker Todd Brooks",
+      "features": [
+        "Reference installer for agent-native software",
+        "Scans a repo, detects which interfaces it exposes, and installs them all."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wip-universal-installer@1.9.72",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/585456?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wip-universal-installer",
+      "url": "https://clawhub.ai/skills/wip-universal-installer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wip-universal-installer",
+    "url": "https://clawhub.ai/skills/wip-universal-installer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wip-universal-installer-3a40d6d01ad22f2c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wip-universal-installer@1.9.72",
+      "artifactUrl": "data/skills/artifacts/clawhub-wip-universal-installer-1.9.72.json",
+      "version": "1.9.72",
+      "runtime": "metadata",
+      "checksumHash": "sha256:567b8a9dfb608e15a1aa075cbcbf9c2e32eb5e3745894aac4bef039a38040ace",
+      "artifactSizeBytes": 3568
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T21:25:41.941Z"
+}

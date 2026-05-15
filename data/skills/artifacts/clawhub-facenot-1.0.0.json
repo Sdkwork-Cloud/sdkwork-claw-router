@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/facenot@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.facenot",
+  "skill": {
+    "id": 26109,
+    "skillKey": "clawhub-facenot",
+    "name": "facequet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "facenot",
+    "url": "https://clawhub.ai/skills/facenot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/facenot-e7392244e27dbf93.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extracts the first post text from a given Facebook URL using server-side scraping without handling login or JavaScript content."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "duylori",
+      "userId": "publishers:duylori",
+      "displayName": "duylori",
+      "image": "https://avatars.githubusercontent.com/u/144611153?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 274,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773741420909,
+      "changelog": "Initial release of Facebook Post Reader skill.\n\n- Attempts to fetch the first post content from a provided Facebook page or post URL using server-side scraping.\n- Input: URL of the page to read.\n- Output: JSON with status and extracted content or error message.\n- Not compatible with pages requiring login or JavaScript; see documentation for limitations.\n- Includes legal and technical usage notes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f619d4b2ad65947006c678fbc0c51503bb838b907b5c9f3a3069d6bb82a326ac"
+}

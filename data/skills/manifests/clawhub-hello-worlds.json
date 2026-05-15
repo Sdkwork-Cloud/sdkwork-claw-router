@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59764,
+  "uuid": "skill-clawhub-hello-worlds",
+  "skillKey": "clawhub-hello-worlds",
+  "name": "HelloWorld",
+  "summary": "当用户说“打招呼”时，回复 Hello World",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hello_worlds",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linsirulinsiru",
+      "features": [
+        "当用户说“打招呼”时，回复 Hello World"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hello-worlds@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47562316?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hello-worlds",
+      "url": "https://clawhub.ai/skills/hello-worlds"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hello-worlds",
+    "url": "https://clawhub.ai/skills/hello-worlds",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hello-worlds-e7fd2263082abf4e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hello-worlds@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-hello-worlds-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f075380caa7f0d3e41fd73af3df497c6b0a4c4aeedf8fd085573e2c7cc7fb05",
+      "artifactSizeBytes": 2045
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T09:43:42.254Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29501,
+  "uuid": "skill-clawhub-ace-copilot",
+  "skillKey": "clawhub-ace-copilot",
+  "name": "ACE Copilot",
+  "summary": "Use this skill when working with IBM App Connect Enterprise (ACE) 12.0, including message flow development, ESQL scripting, BAR file deployment, integration...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ace_copilot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shoaib Khan",
+      "features": [
+        "Use this skill when working with IBM App Connect Enterprise (ACE) 12.0, including message flow."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ace-copilot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23154062?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ace-copilot",
+      "url": "https://clawhub.ai/skills/ace-copilot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ace-copilot",
+    "url": "https://clawhub.ai/skills/ace-copilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ace-copilot-5855aa0a65b7a50b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ace-copilot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ace-copilot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bdfc93ad36ff2419759bdf8dee3219c5db660d9388b31374c4deb853ee503e58",
+      "artifactSizeBytes": 2321
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T03:00:05.861Z"
+}

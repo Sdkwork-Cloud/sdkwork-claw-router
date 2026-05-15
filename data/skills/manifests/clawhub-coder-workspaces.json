@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9064,
+  "uuid": "skill-clawhub-coder-workspaces",
+  "skillKey": "clawhub-coder-workspaces",
+  "name": "Coder Workspaces",
+  "summary": "Manage Coder workspaces and AI coding agent tasks via CLI. List, create, start, stop, and delete workspaces. SSH into workspaces to run commands. Create and monitor AI coding tasks with Claude Code, Aider, or other agents.",
+  "version": "1.5.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coder_workspaces",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DevCats",
+      "features": [
+        "Manage Coder workspaces and AI coding agent tasks via CLI",
+        "List, create, start, stop, and delete workspaces",
+        "SSH into workspaces to run commands",
+        "Create and monitor AI coding tasks with Claude Code, Aider, or other agents."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coder-workspaces@1.5.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/176868952?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coder-workspaces",
+      "url": "https://clawhub.ai/skills/coder-workspaces"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coder-workspaces",
+    "url": "https://clawhub.ai/skills/coder-workspaces",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coder-workspaces-4c54350eb397a78a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coder-workspaces@1.5.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-coder-workspaces-1.5.5.json",
+      "version": "1.5.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5a845ecf6e395d816c1d08ee436195091c01497ed1063230822586e43dff5998",
+      "artifactSizeBytes": 2172
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T22:03:22.526Z"
+}

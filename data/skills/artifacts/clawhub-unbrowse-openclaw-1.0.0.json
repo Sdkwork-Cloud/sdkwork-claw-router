@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/unbrowse-openclaw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unbrowse_openclaw",
+  "skill": {
+    "id": 18679,
+    "skillKey": "clawhub-unbrowse-openclaw",
+    "name": "Unbrowse Openclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unbrowse-openclaw",
+    "url": "https://clawhub.ai/skills/unbrowse-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unbrowse-openclaw-9a33c57183785983.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze any website's network traffic and turn it into reusable API skills backed by a shared marketplace. Skills discovered by any agent are published, scor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cnm-byd",
+      "userId": "publishers:cnm-byd",
+      "displayName": "cnm-byd",
+      "image": "https://avatars.githubusercontent.com/u/200731435?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 659,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772432302495,
+      "changelog": "Initial public release of Unbrowse.\n\n- Analyze any website's network traffic to discover, score, and reuse API endpoints via a shared marketplace.\n- Provides CLI commands for intent resolution, API execution with extraction flags (`--path`, `--extract`, `--limit`), feedback submission, session debugging, and more.\n- Automatic cookie-based authentication from Chrome/Firefox.\n- Reinforces strong rules: always use the CLI (never external piping), always submit feedback, and run mutations in dry-run mode first.\n- Supports reusable extraction recipes and feedback-driven endpoint improvement.\n- Full REST API reference documented for advanced integrations.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8a66f83fe8179ec77faa5a74a9be6a59530de2c310e4c15ca71c8def4cb3b6db"
+}

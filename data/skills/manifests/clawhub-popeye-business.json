@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66935,
+  "uuid": "skill-clawhub-popeye-business",
+  "skillKey": "clawhub-popeye-business",
+  "name": "Popeye Business",
+  "summary": "商业助手 - 商业计划、营销文案、竞品分析。触发词：写商业计划、营销策划、竞品分析",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.popeye_business",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiangtaoid",
+      "features": [
+        "商业计划、营销文案、竞品分析。触发词：写商业计划、营销策划、竞品分析"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/popeye-business@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62326134?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "popeye-business",
+      "url": "https://clawhub.ai/skills/popeye-business"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "popeye-business",
+    "url": "https://clawhub.ai/skills/popeye-business",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/popeye-business-61b25194cb9f0f10.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/popeye-business@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-popeye-business-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:60f92bd2dd505174ae0f4a4408e56a649efc1ed357390ef0b1570660b7a3c3c7",
+      "artifactSizeBytes": 1868
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T09:03:28.252Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46107,
+  "uuid": "skill-clawhub-personio-recruiting",
+  "skillKey": "clawhub-personio-recruiting",
+  "name": "Personio Recruiting",
+  "summary": "Personio Recruiting integration. Manage data, records, and automate workflows. Use when the user wants to interact with Personio Recruiting data.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personio_recruiting",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Personio Recruiting integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Personio Recruiting data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/personio-recruiting@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "personio-recruiting",
+      "url": "https://clawhub.ai/skills/personio-recruiting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personio-recruiting",
+    "url": "https://clawhub.ai/skills/personio-recruiting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personio-recruiting-1dfc452125ecaf4f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/personio-recruiting@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-personio-recruiting-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d2636de7c200c081df60d9cfbfa38c568f1bbe4d03d5b00021258c487f246ee1",
+      "artifactSizeBytes": 1935
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T22:17:01.968Z"
+}

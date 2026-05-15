@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/axodus-web3-integration@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.axodus_web3_integration",
+  "skill": {
+    "id": 44601,
+    "skillKey": "clawhub-axodus-web3-integration",
+    "name": "WEB3 Integration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "axodus-web3-integration",
+    "url": "https://clawhub.ai/skills/axodus-web3-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/axodus-web3-integration-5f783fa79dda6ef1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Integrate apps with blockchain providers, wallets, and contract calls safely."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mzfshark",
+      "userId": "s17c7t947t48hg8ymjbywz1th583y2n6",
+      "displayName": "Mauricio Z.",
+      "image": "https://avatars.githubusercontent.com/u/26634695?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777047557389,
+      "changelog": "Initial release of web3-integration skill:\n\n- Enables frontend and backend integration with blockchain providers, wallets, and smart contract calls.\n- Supports major client libraries (`ethers`, `viem`, `web3js`) and common wallet flows.\n- Enforces safe patterns: chain validation, proper signer setup, explicit timeouts/retries, and robust error handling.\n- Outputs wrapper module paths, required environment variables, and validation/test commands.\n- Includes detailed safety rules to prevent key exposure and accidental mainnet transactions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6c31f566f67ca0196f97c0345d17dbe72e01d7aa4a80e9067bb9cc5aa6742308"
+}

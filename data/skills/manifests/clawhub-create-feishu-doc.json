@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20746,
+  "uuid": "skill-clawhub-create-feishu-doc",
+  "skillKey": "clawhub-create-feishu-doc",
+  "name": "Create Feishu Doc",
+  "summary": "Use this skill whenever the user wants to create, generate, write to, or organize content into a Feishu document. Triggers include: any mention of 'Feishu do...",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.create_feishu_doc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "唐超",
+      "features": [
+        "Use this skill whenever the user wants to create, generate, write to, or organize content into.",
+        "Triggers include: any mention of 'Feishu do..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/create-feishu-doc@1.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26533199?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "create-feishu-doc",
+      "url": "https://clawhub.ai/skills/create-feishu-doc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "create-feishu-doc",
+    "url": "https://clawhub.ai/skills/create-feishu-doc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/create-feishu-doc-7c8c380a1d6bd1e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/create-feishu-doc@1.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-create-feishu-doc-1.0.8.json",
+      "version": "1.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c5f330e8e424273f602714adee627f2f1895d56f43556777c2af2d80dc2ef496",
+      "artifactSizeBytes": 2024
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T09:03:23.069Z"
+}

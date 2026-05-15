@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wikipedia-nearby@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wikipedia_nearby",
+  "skill": {
+    "id": 41525,
+    "skillKey": "clawhub-wikipedia-nearby",
+    "name": "Wikipedia Nearby"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wikipedia-nearby",
+    "url": "https://clawhub.ai/skills/wikipedia-nearby",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wikipedia-nearby-8f556a5ed1329c77.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find nearby Wikipedia articles based on geographic location. Use when user asks about \"nearby places\", \"what's around me\", \"places near [location]\", \"Wikiped..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jrrqd",
+      "userId": "s1744qdetx6kce4034de07720583y5mj",
+      "displayName": "rizki suluh adi",
+      "image": "https://avatars.githubusercontent.com/u/213207127?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775874706482,
+      "changelog": "Initial release - find nearby Wikipedia articles by geolocation, supports Telegram/WhatsApp location sharing",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:66cb1157d1f86b2fe83c3c037ea7e8acdeffb0f0e6597502d9e45c298f5dbd5a"
+}

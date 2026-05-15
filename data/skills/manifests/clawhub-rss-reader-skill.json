@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64875,
+  "uuid": "skill-clawhub-rss-reader-skill",
+  "skillKey": "clawhub-rss-reader-skill",
+  "name": "Rss Reader",
+  "summary": "RSS 订阅 + AI 汇总分析 + 飞书推送。 定时拉取新文章，AI 生成每日资讯汇总报告（热门话题、关键趋势、推荐阅读），推送到飞书。 当用户提到\"RSS\"、\"订阅\"、\"RSS阅读器\"、\"文章订阅\"、\"资讯订阅\"、\"资讯汇总\"时使用此 Skill。 首次使用自动添加 18 个精选订阅源（中文 + 国外 AI...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rss_reader_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangluo1",
+      "features": [
+        "RSS 订阅 + AI 汇总分析 + 飞书推送。 定时拉取新文章，AI 生成每日资讯汇总报告（热门话题、关键趋势、推荐阅读），推送到飞书。 当用户提到\"RSS\"、\"订阅\"、\"RSS阅读器\"、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rss-reader-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38807982?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rss-reader-skill",
+      "url": "https://clawhub.ai/skills/rss-reader-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rss-reader-skill",
+    "url": "https://clawhub.ai/skills/rss-reader-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rss-reader-skill-25874d59db2b0d4c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rss-reader-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rss-reader-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c09566f51e11e2f361bfb1f9f855101e4a089ab5c8ea15f3d65f1943984ea473",
+      "artifactSizeBytes": 2751
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T07:32:56.961Z"
+}

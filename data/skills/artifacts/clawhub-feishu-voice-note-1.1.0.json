@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-voice-note@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_voice_note",
+  "skill": {
+    "id": 69463,
+    "skillKey": "clawhub-feishu-voice-note",
+    "name": "🎙️ 飞书语音条生成"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-voice-note",
+    "url": "https://clawhub.ai/skills/feishu-voice-note",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-voice-note-0d4d6b7865b3414f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将文本通过 TTS 生成 MP3，转换为飞书支持的 OPUS 格式后自动发送为飞书语音条，实现语音消息自动化。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "icesumer-lgtm",
+      "userId": "s177qrnn1tw4tydz6g6neevw0d83tmha",
+      "displayName": "icesumer-lgtm",
+      "image": "https://avatars.githubusercontent.com/u/262824601?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774767125396,
+      "changelog": "v1.1.0: 修复命令格式，添加安全审查，完善文档",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6f271559d35b250a85a42cfd00f19ecf5e1d3b95e7b7e14f4dce64bd3fda6662"
+}

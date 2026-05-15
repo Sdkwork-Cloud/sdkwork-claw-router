@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15718,
+  "uuid": "skill-clawhub-linz-public-transport",
+  "skillKey": "clawhub-linz-public-transport",
+  "name": "Linz Public Transport",
+  "summary": "Query Linz public transport stops for IDs and fetch live upcoming departures using Linz Linien EFA endpoints.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linz_public_transport",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fjrevoredo",
+      "features": [
+        "Query Linz public transport stops for IDs and fetch live upcoming departures using Linz Linien."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linz-public-transport@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39350477?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linz-public-transport",
+      "url": "https://clawhub.ai/skills/linz-public-transport"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linz-public-transport",
+    "url": "https://clawhub.ai/skills/linz-public-transport",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linz-public-transport-3fcb07ce4cab5627.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linz-public-transport@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-linz-public-transport-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b94572674f19a05f89b5a78160da864ae09ad89013d8be158959c0dc89f52cf6",
+      "artifactSizeBytes": 2334
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T22:21:12.075Z"
+}

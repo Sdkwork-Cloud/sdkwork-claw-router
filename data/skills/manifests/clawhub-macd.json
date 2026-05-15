@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31333,
+  "uuid": "skill-clawhub-macd",
+  "skillKey": "clawhub-macd",
+  "name": "Macd",
+  "summary": "Calculate MACD from price data. Use when computing MACD/signal/histogram from a price series, spotting crossovers, reading momentum, or planning MACD-based e...",
+  "version": "2.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.macd",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain-lab",
+      "features": [
+        "Calculate MACD from price data",
+        "Use when computing MACD/signal/histogram from a price series, spotting crossovers, reading mome."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/macd@2.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271735676?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "macd",
+      "url": "https://clawhub.ai/skills/macd"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "macd",
+    "url": "https://clawhub.ai/skills/macd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/macd-ed9760edaeb4467f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/macd@2.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-macd-2.0.4.json",
+      "version": "2.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:477e36241613c5618a93416db0a46da28fd4ef4a6ff5abef7774716e28edf6cf",
+      "artifactSizeBytes": 1882
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T16:42:57.365Z"
+}

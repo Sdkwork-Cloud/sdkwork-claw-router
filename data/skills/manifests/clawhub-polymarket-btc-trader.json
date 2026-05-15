@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60125,
+  "uuid": "skill-clawhub-polymarket-btc-trader",
+  "skillKey": "clawhub-polymarket-btc-trader",
+  "name": "Polymarket BTC Trader",
+  "summary": "Polymarket BTC 5分钟 Up/Down 全自动交易机器人。MiniMax AI 驱动，双信号决策，自动止盈止损，真实链上交易，Web控制面板。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_btc_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BillyCHOIU",
+      "features": [
+        "Polymarket BTC 5分钟 Up/Down 全自动交易机器人。MiniMax AI 驱动，双信号决策，自动止盈止损，真实链上交易，Web控制面板。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-btc-trader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/163635002?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-btc-trader",
+      "url": "https://clawhub.ai/skills/polymarket-btc-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-btc-trader",
+    "url": "https://clawhub.ai/skills/polymarket-btc-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-btc-trader-57590fa3f6b0fe6f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-btc-trader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-btc-trader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fdae98c33151f82b07fd3eca95531b810fb01e489e325ee23532ed28dc4a671d",
+      "artifactSizeBytes": 2545
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T11:43:23.510Z"
+}

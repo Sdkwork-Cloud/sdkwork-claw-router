@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49179,
+  "uuid": "skill-clawhub-aweber-integration",
+  "skillKey": "clawhub-aweber-integration",
+  "name": "Aweber",
+  "summary": "AWeber integration. Manage Subscribers, Lists, Broadcasts, Automations, Tags. Use when the user wants to interact with AWeber data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aweber_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "AWeber integration",
+        "Manage Subscribers, Lists, Broadcasts, Automations, Tags",
+        "Use when the user wants to interact with AWeber data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aweber-integration@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aweber-integration",
+      "url": "https://clawhub.ai/skills/aweber-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aweber-integration",
+    "url": "https://clawhub.ai/skills/aweber-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aweber-integration-d87e2f0d5bded94d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aweber-integration@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-aweber-integration-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fb5cf1286408e7dafd719797ee697460f64e9946a30f4633e110cc01c4078427",
+      "artifactSizeBytes": 1901
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:01:29.832Z"
+}

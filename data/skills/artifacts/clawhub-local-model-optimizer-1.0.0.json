@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/local-model-optimizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_model_optimizer",
+  "skill": {
+    "id": 43270,
+    "skillKey": "clawhub-local-model-optimizer",
+    "name": "Local Model Optimizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-model-optimizer",
+    "url": "https://clawhub.ai/skills/local-model-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-model-optimizer-02a60c8097335d77.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Auto-detect hardware (GPU VRAM, system RAM, CPU), recommend optimal local models from Ollama registry, configure Ollama with tuned parameters, and set up hyb..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stevojarvisai-star",
+      "userId": "s173pxzh64yzvzx98c87q8qcxn83v8gw",
+      "displayName": "stevojarvisai-star",
+      "image": "https://avatars.githubusercontent.com/u/266156236?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775381969174,
+      "changelog": "Initial release — Auto-detect hardware and configure optimal local models",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c89ca800417b17a0cce6656c07954205019c49461c4d60d3b45597a1b886e8d0"
+}

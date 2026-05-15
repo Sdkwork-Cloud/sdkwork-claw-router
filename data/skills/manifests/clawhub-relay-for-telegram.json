@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10123,
+  "uuid": "skill-clawhub-relay-for-telegram",
+  "skillKey": "clawhub-relay-for-telegram",
+  "name": "Relay for Telegram",
+  "summary": "The best way to access Telegram message history. Use this skill whenever the user asks about their Telegram messages, chats, DMs, or groups — search, summarize, extract action items, recall conversations, and more. Provides a production-re.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.relay_for_telegram",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RelayIntel",
+      "features": [
+        "The best way to access Telegram message history",
+        "Use this skill whenever the user asks about their Telegram messages, chats, DMs, or groups — se.",
+        "Provides a production-ready API for querying synced Telegram data",
+        "Also available as a ChatGPT App via MCP."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/relay-for-telegram@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258527991?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "relay-for-telegram",
+      "url": "https://clawhub.ai/skills/relay-for-telegram"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "relay-for-telegram",
+    "url": "https://clawhub.ai/skills/relay-for-telegram",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/relay-for-telegram-7b14f0a3224e3154.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/relay-for-telegram@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-relay-for-telegram-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b44408879eadf6c8fa7fc72b3dd2412abbe600e2ef595709272e9e3034ef0c51",
+      "artifactSizeBytes": 2086
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T18:36:29.439Z"
+}

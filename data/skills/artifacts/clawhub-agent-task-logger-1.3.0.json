@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-task-logger@1.3.0",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_task_logger",
+  "skill": {
+    "id": 65384,
+    "skillKey": "clawhub-agent-task-logger",
+    "name": "Agent Task Logger"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-task-logger",
+    "url": "https://clawhub.ai/skills/agent-task-logger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-task-logger-978734bcf6861cfa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "实时记录和展示 Agent 任务执行进度，支持任务开始、命令执行、状态更新及错误日志的统一管理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gerald-luo",
+      "userId": "s17e7zyjp58k9brrdykfcsbp8d84s36t",
+      "displayName": "Gerald Luo",
+      "image": "https://avatars.githubusercontent.com/u/24424407?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 557,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.3.0",
+      "createdAt": 1772619356222,
+      "changelog": "v1.3: 添加工作空间自动检测功能，无需手动指定 workspace 参数",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b179d8cb9d95d98826657f93c4dcacd3f9ca670fd00b26e72d16362dac6a84f3"
+}

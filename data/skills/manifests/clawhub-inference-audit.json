@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26278,
+  "uuid": "skill-clawhub-inference-audit",
+  "skillKey": "clawhub-inference-audit",
+  "name": "Inference Cost Audit",
+  "summary": "Compare your AI inference costs across providers and test cheaper alternatives with real data. Analyze what you spend on LLM, embeddings, image generation, T...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inference_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fjnunezp75",
+      "features": [
+        "Compare your AI inference costs across providers and test cheaper alternatives with real data",
+        "Analyze what you spend on LLM, embeddings, image generation, T..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/inference-audit@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/195777398?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "inference-audit",
+      "url": "https://clawhub.ai/skills/inference-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inference-audit",
+    "url": "https://clawhub.ai/skills/inference-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inference-audit-093c352a7af00027.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/inference-audit@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-inference-audit-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc1c7ea2360e44abcfb8b4e4ecc30a2337dc27c916328974a2399030db77bbe6",
+      "artifactSizeBytes": 2029
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T10:43:42.430Z"
+}

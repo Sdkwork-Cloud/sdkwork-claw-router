@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54363,
+  "uuid": "skill-clawhub-proxy-veil",
+  "skillKey": "clawhub-proxy-veil",
+  "name": "Proxy Veil",
+  "summary": "Residential proxy for AI agents — fetch any URL through 2M+ real IPs, bypass anti-bot, geo-target, sticky sessions.",
+  "version": "1.5.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proxy_veil",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Memijashi",
+      "features": [
+        "Residential proxy for AI agents — fetch any URL through 2M+ real IPs, bypass anti-bot, geo-targ."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/proxy-veil@1.5.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/232191022?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "proxy-veil",
+      "url": "https://clawhub.ai/skills/proxy-veil"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proxy-veil",
+    "url": "https://clawhub.ai/skills/proxy-veil",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proxy-veil-587f887d7a08ce9c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/proxy-veil@1.5.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-proxy-veil-1.5.4.json",
+      "version": "1.5.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e22516e8cbd1c5464c81e03a8f366470b33cf64790c0dc6388f7f568b3dca4b3",
+      "artifactSizeBytes": 1909
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T14:07:38.825Z"
+}

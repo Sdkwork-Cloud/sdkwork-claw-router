@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/telebiz-mcp-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.telebiz_mcp_skill",
+  "skill": {
+    "id": 11857,
+    "skillKey": "clawhub-telebiz-mcp-skill",
+    "name": "Telebiz Mcp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "telebiz-mcp-skill",
+    "url": "https://clawhub.ai/skills/telebiz-mcp-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/telebiz-mcp-skill-10f897210ef4b1a4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access Telegram data via MCP using the telebiz-tt browser client. Lists chats, reads messages, searches, manages folders, and sends messages through an authenticated Telegram session."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "acastellana",
+      "userId": "publishers:acastellana",
+      "displayName": "acastellana",
+      "image": "https://avatars.githubusercontent.com/u/4104509?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1894,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770055774497,
+      "changelog": "telebiz-mcp-skill v0.1.0\n\n- Initial release: MCP integration to access Telegram via the telebiz-tt browser client.\n- Supports listing chats, reading/searching messages, managing folders, and sending messages through an authenticated Telegram session.\n- Detailed rate limit guidance and known issues (notably: `batchAddToFolder` and `linkEntityToChat` limitations) are documented with workarounds.\n- Provides manual and automated health/monitoring scripts, including cron and heartbeat integration instructions.\n- Includes full tool listing for chat, message, folder, member, user, and batch operations with example usage.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b724736b6f179d785bb14c0bfb60fcfdf434fb20cc27daf7ab2168213e35f2a1"
+}

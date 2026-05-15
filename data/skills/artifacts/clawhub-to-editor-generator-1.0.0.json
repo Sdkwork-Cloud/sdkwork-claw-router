@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/to-editor-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.to_editor_generator",
+  "skill": {
+    "id": 55515,
+    "skillKey": "clawhub-to-editor-generator",
+    "name": "To Editor Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "to-editor-generator",
+    "url": "https://clawhub.ai/skills/to-editor-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/to-editor-generator-9272370b9a107fe6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — cut out pauses, add transitions, and export a clean edited video — and get..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776407756977,
+      "changelog": "- Initial release of To Editor Generator: instantly converts raw footage into edited videos using AI.\n- Upload MP4, MOV, AVI, or WebM files (up to 500MB) and describe your editing needs—cut out pauses, add transitions, export clean video, and more.\n- Fully automated cloud pipeline handles all rendering and session management; no software installation required.\n- Real-time feedback and streamlined workflows for quick edits, batch processing, and iterative refinement.\n- Robust error handling for token issues, unsupported files, credit balances, and export restrictions.\n- Clear, user-friendly onboarding: setup is automatic and notifies when ready to use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:25a27c9a79869db00ef6f606ebc3647f15586f10be772edf804c6d58053d2342"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dsb-auto-improve@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dsb_auto_improve",
+  "skill": {
+    "id": 55574,
+    "skillKey": "clawhub-dsb-auto-improve",
+    "name": "Auto Improve"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dsb-auto-improve",
+    "url": "https://clawhub.ai/skills/dsb-auto-improve",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dsb-auto-improve-e651e2b67826c266.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Self-improvement loop that reads learnings, errors, and memory — detects patterns — and updates skills/protocols automatically. Use when the agent should get..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dodge1218",
+      "userId": "s178b280ymzfwn2195mq3dph2h83wdh2",
+      "displayName": "KairoKid",
+      "image": "https://avatars.githubusercontent.com/u/235199066?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775705124039,
+      "changelog": "Initial release: Self-improvement loop that detects error patterns and updates skills automatically.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:18e5cbfe473b4a54e2718b8f2dded17f1605815a83ec53bdfef31d46368c2add"
+}

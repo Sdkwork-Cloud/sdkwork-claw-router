@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/justoneapi-amazon-get-product-top-reviews@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_amazon_get_product_top_reviews",
+  "skill": {
+    "id": 39511,
+    "skillKey": "clawhub-justoneapi-amazon-get-product-top-reviews",
+    "name": "Amazon Product Top Reviews API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-amazon-get-product-top-reviews",
+    "url": "https://clawhub.ai/skills/justoneapi-amazon-get-product-top-reviews",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-amazon-get-product-top-reviews-38bff1c64a2fb97d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Call GET /api/amazon/get-product-top-reviews/v1 for Amazon Product Top Reviews through JustOneAPI with asin."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "justoneapi",
+      "userId": "s17ayjxfh4atw7gc7dgat7n40x845p6b",
+      "displayName": "justoneapi",
+      "image": "https://avatars.githubusercontent.com/u/139095138?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776957121699,
+      "changelog": "- Streamlined the skill docs to focus on the single available endpoint, its required and optional parameters, and supported countries.\n- Clarified that only the asin parameter is required, with country optional.\n- Improved environment and authentication instructions for clarity and security.\n- Updated output guidance to require listing the operation ID and endpoint path, echoing asin, and summarizing response relevance before showing raw JSON.\n- Removed general workflow and selection docs to minimize ambiguity; the skill now only describes the single GET endpoint.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:64f7621b0b92b2efb2587de1cd77e0f4fd213ee1ed09f0c77a15f00f20fe628a"
+}

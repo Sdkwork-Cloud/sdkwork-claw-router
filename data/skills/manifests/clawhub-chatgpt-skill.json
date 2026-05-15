@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21365,
+  "uuid": "skill-clawhub-chatgpt-skill",
+  "skillKey": "clawhub-chatgpt-skill",
+  "name": "ChatGPT Web Skill",
+  "summary": "Automate ChatGPT Web conversations through a local browser session with persistent login state, one-shot prompts, reusable multi-turn sessions, and conversat...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chatgpt_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PlacidusaxAlarak",
+      "features": [
+        "Automate ChatGPT Web conversations through a local browser session with persistent login state,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chatgpt-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/175779303?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chatgpt-skill",
+      "url": "https://clawhub.ai/skills/chatgpt-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chatgpt-skill",
+    "url": "https://clawhub.ai/skills/chatgpt-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chatgpt-skill-2824299fb3906730.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chatgpt-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chatgpt-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:65bc06f259575da51520ccee8aa0dd090aa6cb58e39d1b4d73b59a20741a3563",
+      "artifactSizeBytes": 1901
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T05:43:07.037Z"
+}

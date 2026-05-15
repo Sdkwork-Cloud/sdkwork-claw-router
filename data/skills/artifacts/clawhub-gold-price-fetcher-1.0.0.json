@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gold-price-fetcher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gold_price_fetcher",
+  "skill": {
+    "id": 72814,
+    "skillKey": "clawhub-gold-price-fetcher",
+    "name": "民生黄金价格查询"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gold-price-fetcher",
+    "url": "https://clawhub.ai/skills/gold-price-fetcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gold-price-fetcher-e687a74c1eaabcc0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过京东金融 API 获取实时金价，返回带时间戳的完整信息。当用户查询金价、询问今日金价、获取实时金价时触发此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jayhenry00",
+      "userId": "s1764xwktjc8bz131zm2zb9sw18464e1",
+      "displayName": "Jayhenry",
+      "image": "https://avatars.githubusercontent.com/u/51934624?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775302095361,
+      "changelog": "Initial release of gold-price-fetcher.\n\n- Provides real-time gold price using JD Finance API.\n- Returns gold price with timestamp in a clear format.\n- Caches the last query to reduce API requests.\n- Supports trigger phrases like \"查询今日金价\", \"现在金价多少\", and similar.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:504fe0d273603a1db0998f0f3d014bb84d834dd7b42bdee40ef746e0220050e5"
+}

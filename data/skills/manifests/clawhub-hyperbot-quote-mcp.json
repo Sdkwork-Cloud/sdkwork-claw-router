@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21149,
+  "uuid": "skill-clawhub-hyperbot-quote-mcp",
+  "skillKey": "clawhub-hyperbot-quote-mcp",
+  "name": "hyperbot-quote-mcp",
+  "summary": "Provides cryptocurrency trading data analytics including smart money tracking, whale monitoring, market data queries, and trader statistics. Use this skill w...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hyperbot_quote_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "developHyperbotNetwork",
+      "features": [
+        "Provides cryptocurrency trading data analytics including smart money tracking, whale monitoring.",
+        "Use this skill w..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hyperbot-quote-mcp@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/227840674?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hyperbot-quote-mcp",
+      "url": "https://clawhub.ai/skills/hyperbot-quote-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hyperbot-quote-mcp",
+    "url": "https://clawhub.ai/skills/hyperbot-quote-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hyperbot-quote-mcp-95a04148bb16845e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hyperbot-quote-mcp@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-hyperbot-quote-mcp-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1b5fc19d779e82c15ed95073e9ca7cbec752d59dbb74c01892c40a0e646ea28f",
+      "artifactSizeBytes": 2499
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T06:56:26.757Z"
+}

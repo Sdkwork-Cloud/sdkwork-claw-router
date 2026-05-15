@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pixwith-ai-image-generation@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pixwith_ai_image_generation",
+  "skill": {
+    "id": 51411,
+    "skillKey": "clawhub-pixwith-ai-image-generation",
+    "name": "Ai Image Generation Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pixwith-ai-image-generation",
+    "url": "https://clawhub.ai/skills/pixwith-ai-image-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pixwith-ai-image-generation-fb83c38fb446d99a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI video, image generation. 40+ models — Sora, Veo 3, Kling, Seedance, GPT Image, Hailuo, WAN. Text-to-video, image-to-video, text-to-image,image-to-image."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tate-kt",
+      "userId": "publishers:tate-kt",
+      "displayName": "mango_fish",
+      "image": "https://avatars.githubusercontent.com/u/8767682?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 300,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773552957568,
+      "changelog": "- Skill name changed from \"pixwith-media-generation\" to \"pixwith-ai\"\n- Installation/setup guidance is now shown as a bulleted list for clarity\n- No functional changes or workflow adjustments introduced\n- All core instructions, workflows, and guardrails remain unchanged",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d6d9bad686def29985cf3c4f97c22425461f39a9e2219d8a4317e8df5918a655"
+}

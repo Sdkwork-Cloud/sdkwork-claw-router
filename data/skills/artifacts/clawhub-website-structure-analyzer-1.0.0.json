@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/website-structure-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.website_structure_analyzer",
+  "skill": {
+    "id": 70660,
+    "skillKey": "clawhub-website-structure-analyzer",
+    "name": "Website Structure Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "website-structure-analyzer",
+    "url": "https://clawhub.ai/skills/website-structure-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/website-structure-analyzer-209847f08672d432.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "分析网站功能结构。当用户需要了解某个网站的功能模块、页面结构、核心业务流程、技术栈、或想对目标网站进行竞品分析时使用。触发词包括：分析网站、结构、功能、竞品、网站架构、页面结构、功能模块、网站结构分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wei3bao",
+      "userId": "publishers:wei3bao",
+      "displayName": "wei3bao",
+      "image": "https://avatars.githubusercontent.com/u/89014855?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 493,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774020259323,
+      "changelog": "- Initial release of website-structure-analyzer.\n- Analyze and report website functional structure, including navigation, modules, page structure, tech stack, business model, and competitor differences.\n- Supports structured analysis for home, about, product/service, pricing, and footer navigation pages.\n- Saves detailed, structured reports and screenshots for reference.\n- Provides quick commands for competitor analysis, feature evaluation, tech stack audit, and page interaction review.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ca6cd33680597e3a176c2eab05a1deb857476b83f843116bf37cd932434db491"
+}

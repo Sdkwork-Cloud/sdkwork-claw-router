@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fuzzy-browser-automation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fuzzy_browser_automation",
+  "skill": {
+    "id": 40139,
+    "skillKey": "clawhub-fuzzy-browser-automation",
+    "name": "Browser Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fuzzy-browser-automation",
+    "url": "https://clawhub.ai/skills/fuzzy-browser-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fuzzy-browser-automation-79793a33f99f8533.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate any web browser task with OpenClaw's built-in Playwright browser control. Use when: (1) scraping dynamic pages, (2) filling forms and submitting, (3..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fuzzyb33s",
+      "userId": "s171y86qx1dr1xnbf5etrq3ke984dt9a",
+      "displayName": "Fuzzyb33s",
+      "image": "https://avatars.githubusercontent.com/u/221636957?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777067541656,
+      "changelog": "Initial release providing robust browser automation capabilities:\n\n- Automate web browser tasks such as page navigation, clicking, typing, screenshots, PDF generation, and data extraction.\n- Supports both sandboxed and logged-in (user) browsers, with clear instructions for selecting browser targets and profiles.\n- Detailed action and locator references allow fine-grained control over web interactions (click, type, hover, select, wait, evaluate, etc.).\n- Includes practical recipes for scraping, form filling, login, multi-tab workflows, monitoring content, and file downloads.\n- Simple JSON-based API for consistent and scriptable automation flows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:575d49b62ccf6005f112294c8f0afb69108694f636b0f58b80f6509ae6398ae0"
+}

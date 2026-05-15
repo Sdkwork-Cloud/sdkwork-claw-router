@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tensorpool@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tensorpool",
+  "skill": {
+    "id": 43441,
+    "skillKey": "clawhub-tensorpool",
+    "name": "tensorpool"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tensorpool",
+    "url": "https://clawhub.ai/skills/tensorpool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tensorpool-ba7b1f87eb118c5e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill helps users migrate their local machine learning scripts to run on TensorPool GPU clusters using the interactive cluster workflow (tp ssh). Use th..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tycho-svoboda",
+      "userId": "s179e0trbn7hdw97wkgrw2v82h846kv4",
+      "displayName": "Tycho-Svoboda",
+      "image": "https://avatars.githubusercontent.com/u/28027012?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775341195044,
+      "changelog": "TensorPool Skill v1.0.0 — Initial Release\n\n- Enables seamless migration of local ML scripts to TensorPool GPU clusters using the interactive workflow.\n- Guides users through step-by-step GPU cluster setup, environment preparation, code syncing, and production runs.\n- Automatically diagnoses and fixes common errors during migration (dependency, path, CUDA, environment issues), iterating until the script runs.\n- Enforces in-scope fixes while flagging out-of-scope changes for user approval.\n- Mandates runtime CLI command discovery to ensure compatibility with evolving TensorPool CLI.\n- Provides best practices for preparing scripts, managing dependencies, and efficient code/data transfer for cloud GPU runs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5ba2314d418b1e094a604d107dc98fb10e348422e8e695a9c3678b4841847cf9"
+}

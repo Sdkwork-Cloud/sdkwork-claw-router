@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35008,
+  "uuid": "skill-clawhub-binance-skills",
+  "skillKey": "clawhub-binance-skills",
+  "name": "Binance Skills",
+  "summary": "Use binance-cli for Binance Spot, Futures (USD-S), and Convert. Requires auth.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.binance_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "binance-skills-hub",
+      "features": [
+        "Use binance-cli for Binance Spot, Futures (USD-S), and Convert",
+        "Requires auth."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/binance-skills@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265599625?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "binance-skills",
+      "url": "https://clawhub.ai/skills/binance-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "binance-skills",
+    "url": "https://clawhub.ai/skills/binance-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/binance-skills-0f0fd12f5feb120f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/binance-skills@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-binance-skills-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b63d79e7e6dabd46dba9f3ff07b6a73d2183a2a95927f0e61f7cf86af27b80fd",
+      "artifactSizeBytes": 2306
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T09:14:26.827Z"
+}

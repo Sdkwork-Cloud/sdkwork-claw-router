@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15317,
+  "uuid": "skill-clawhub-zoom-calendar",
+  "skillKey": "clawhub-zoom-calendar",
+  "name": "Zoom Calendar",
+  "summary": "Create Zoom meetings and add them to Google Calendar events with proper conferenceData (icon, video entry, notes). Use when creating calendar events with Zoo...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zoom_calendar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shaharsh",
+      "features": [
+        "Create Zoom meetings and add them to Google Calendar events with proper conferenceData (icon, v.",
+        "Use when creating calendar events with Zoo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zoom-calendar@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11346965?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zoom-calendar",
+      "url": "https://clawhub.ai/skills/zoom-calendar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zoom-calendar",
+    "url": "https://clawhub.ai/skills/zoom-calendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zoom-calendar-cfa1ab0ebf15ea09.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zoom-calendar@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zoom-calendar-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c1997456f747c34b715f6ab8d4cf463102bb122def07625c171ba5bc04ebcd3",
+      "artifactSizeBytes": 2266
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T18:59:09.712Z"
+}

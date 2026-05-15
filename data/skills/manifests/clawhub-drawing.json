@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20285,
+  "uuid": "skill-clawhub-drawing",
+  "skillKey": "clawhub-drawing",
+  "name": "Drawing",
+  "summary": "Generate children's drawings and coloring pages with modular prompts, style packs, and print-ready constraints across image models.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.drawing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Generate children's drawings and coloring pages with modular prompts, style packs, and print-re."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/drawing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "drawing",
+      "url": "https://clawhub.ai/skills/drawing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "drawing",
+    "url": "https://clawhub.ai/skills/drawing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/drawing-27f3282691613a41.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/drawing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-drawing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:714a0873bcbaea218137ca5710e515755a39e3f8d79a3025180f7b63270fdd3c",
+      "artifactSizeBytes": 1924
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T17:33:13.893Z"
+}

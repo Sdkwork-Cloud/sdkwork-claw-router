@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-curator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_curator",
+  "skill": {
+    "id": 11131,
+    "skillKey": "clawhub-memory-curator",
+    "name": "Memory Curator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-curator",
+    "url": "https://clawhub.ai/skills/memory-curator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-curator-d14a6fe913e799ae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Distill verbose daily logs into compact, indexed digests. Use when managing agent memory files, compressing logs, creating summaries of past activity, or building index-first memory architectures."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "77darius77",
+      "userId": "publishers:77darius77",
+      "displayName": "77Darius77",
+      "image": "https://avatars.githubusercontent.com/u/98291816?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1880,
+      "installsAllTime": 11,
+      "installsCurrent": 11,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770466237020,
+      "changelog": "Initial release of memory-curator.\n\n- Transforms verbose daily logs into concise, structured digests (~50–80 lines each).\n- Provides a clear digest template with sections for summary, stats, key events, learnings, connections, open questions, and tomorrow's priorities.\n- Supports index-first memory architectures for efficient retrieval and review.\n- Includes automation scripts for generating daily digest skeletons.\n- Offers best-practice tips for maximizing information value and continuity.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2af0ec5c9e1ad70f707524b5ee9daa8fd8d5f623c7f9ab72fe874c29c8723540"
+}

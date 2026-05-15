@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bookforge-commitment-verifier@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bookforge_commitment_verifier",
+  "skill": {
+    "id": 36771,
+    "skillKey": "clawhub-bookforge-commitment-verifier",
+    "name": "Commitment Verifier"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bookforge-commitment-verifier",
+    "url": "https://clawhub.ai/skills/bookforge-commitment-verifier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bookforge-commitment-verifier-b46fd70fae29ffb2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Verify whether a counterpart's agreement is a real commitment or a polite escape. Use when someone asks \"how do I know if they really mean yes?\", \"they agree..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quochungto",
+      "userId": "s176b6gfk8djgcz320d83ta4e184bx1v",
+      "displayName": "Hung Quoc To",
+      "image": "https://avatars.githubusercontent.com/u/88069966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776618518761,
+      "changelog": "Commitment Verifier v1.0.0 — initial release\n\n- Analyzes agreements to distinguish genuine commitments from polite or deceptive yeses.\n- Flags verbal deception signals and mismatches between words, tone, and body language.\n- Classifies each agreement as Counterfeit, Confirmation, or Commitment yes.\n- Generates Rule of Three follow-up questions to verify authentic commitment.\n- Identifies missing stakeholders that may undermine commitment reliability.\n- Designed for sales, negotiations, agreements, and any high-stakes decision process.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7fbe46056c32f92587b38dab12b09cb9ee6cf8149070ed5cb0fdf50444a5c2df"
+}

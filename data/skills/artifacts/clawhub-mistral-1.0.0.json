@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mistral@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mistral",
+  "skill": {
+    "id": 66681,
+    "skillKey": "clawhub-mistral",
+    "name": "Mistral"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mistral",
+    "url": "https://clawhub.ai/skills/mistral",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mistral-920510199770f4d6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "欧洲AI的希望：23岁信息学奥赛金牌得主创立的模型公司"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777244904129,
+      "changelog": "- 首个公开版本，介绍Mistral AI的创办故事、产品迭代、技术亮点与商业模式  \n- 重点解析MoE混合专家模型的技术优势及其商业价值  \n- 总结开源策略与企业API、云平台合作等变现路径  \n- 提供融资、估值、团队规模等关键数据  \n- 适合关注欧洲AI创业生态及大模型公司动态的用户",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e6194ef0ba3ebecc756905bf727d8e24a60f8e014b3f45a2b4335c4d0d531cb1"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68226,
+  "uuid": "skill-clawhub-auto-monitor-zhouli",
+  "skillKey": "clawhub-auto-monitor-zhouli",
+  "name": "Auto Monitor",
+  "summary": "主动监控系统状态。定期检查服务器健康，主动汇报，无需等待指令。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_monitor_zhouli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "onlyloveher",
+      "features": [
+        "主动监控系统状态。定期检查服务器健康，主动汇报，无需等待指令。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-monitor-zhouli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/972832?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-monitor-zhouli",
+      "url": "https://clawhub.ai/skills/auto-monitor-zhouli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-monitor-zhouli",
+    "url": "https://clawhub.ai/skills/auto-monitor-zhouli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-monitor-zhouli-ef0db6366502e95c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-monitor-zhouli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-monitor-zhouli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c7ed1d37046f0daeff5322a99ed43b9178295a27268ca008b78ec3ace594c12",
+      "artifactSizeBytes": 2226
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T04:03:45.201Z"
+}

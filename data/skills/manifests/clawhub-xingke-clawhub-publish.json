@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53200,
+  "uuid": "skill-clawhub-xingke-clawhub-publish",
+  "skillKey": "clawhub-xingke-clawhub-publish",
+  "name": "ClawhHub Skill Publisher",
+  "summary": "Publishes a skill to ClawhHub — the Claude skills marketplace. Use this skill whenever the user wants to publish, release, or push a new version of a skill t...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xingke_clawhub_publish",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xiaobing Mi",
+      "features": [
+        "Publishes a skill to ClawhHub — the Claude skills marketplace",
+        "Use this skill whenever the user wants to publish, release, or push a new version of a skill t.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xingke-clawhub-publish@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/120709911?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xingke-clawhub-publish",
+      "url": "https://clawhub.ai/skills/xingke-clawhub-publish"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xingke-clawhub-publish",
+    "url": "https://clawhub.ai/skills/xingke-clawhub-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xingke-clawhub-publish-983b90b0e166488e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xingke-clawhub-publish@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xingke-clawhub-publish-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4c14b89018a0e69287b41058ca9653f320da23bf23562e62626eb7da01cc7315",
+      "artifactSizeBytes": 2013
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T22:06:51.797Z"
+}

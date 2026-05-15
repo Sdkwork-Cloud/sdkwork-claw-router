@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/maple-video2txt@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maple_video2txt",
+  "skill": {
+    "id": 64693,
+    "skillKey": "clawhub-maple-video2txt",
+    "name": "video2txt-视频理解字幕提取"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maple-video2txt",
+    "url": "https://clawhub.ai/skills/maple-video2txt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maple-video2txt-2cc9589cd62581a3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将本地视频或音频文件转写为 SRT 字幕文件和 TXT 纯文本文件"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chentx1243",
+      "userId": "s177sj2zxhcspf13ch887h90ms83ggph",
+      "displayName": "Chentx1243",
+      "image": "https://avatars.githubusercontent.com/u/149167066?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 211,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774072098267,
+      "changelog": "- Changed skill emoji from 🎬 to video in the metadata.\n- Added ffprobe/ffmpeg and Whisper model files as dependencies in the documentation.\n- Updated script file location: removed video_to_text.py from root, added scripts/video_to_text.py.\n- No functional changes to user-visible features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b81bfd8a7f3d773e98d0c6375bfd7605f9b34a3f9838d7154e557809832baa69"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35420,
+  "uuid": "skill-clawhub-testmonitor",
+  "skillKey": "clawhub-testmonitor",
+  "name": "Testmonitor",
+  "summary": "TestMonitor integration. Manage data, records, and automate workflows. Use when the user wants to interact with TestMonitor data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.testmonitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "TestMonitor integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with TestMonitor data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/testmonitor@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "testmonitor",
+      "url": "https://clawhub.ai/skills/testmonitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "testmonitor",
+    "url": "https://clawhub.ai/skills/testmonitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/testmonitor-817437e8a9edd54a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/testmonitor@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-testmonitor-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:afdc16f8967a2b2fba69e98ba51328142a995e8a236e0081eddf74000c0b2aa0",
+      "artifactSizeBytes": 1857
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:52:03.895Z"
+}

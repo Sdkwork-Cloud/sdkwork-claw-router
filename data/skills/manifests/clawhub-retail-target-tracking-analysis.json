@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70394,
+  "uuid": "skill-clawhub-retail-target-tracking-analysis",
+  "skillKey": "clawhub-retail-target-tracking-analysis",
+  "name": "门店目标追踪分析",
+  "summary": "门店目标追踪分析工具。支持日/周/月三周期目标追踪，T-N数据延迟，黄绿黄灯状态预警。 核心能力： 1. 三周期追踪（日追踪-晨会/实时预警、周追踪-周会复盘、月追踪-月度考核） 2. T-N数据延迟支持（默认T-1） 3. 黄绿黄灯状态（🟢正常、🟡关注、🟠警告、🔴告警/紧急） 4. 批量告警检查（检查所...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.retail_target_tracking_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xtechmerge.AI",
+      "features": [
+        "门店目标追踪分析工具。支持日/周/月三周期目标追踪，T-N数据延迟，黄绿黄灯状态预警。 核心能力： 1",
+        "三周期追踪（日追踪-晨会/实时预警、周追踪-周会复盘、月追踪-月度考核） 2",
+        "T-N数据延迟支持（默认T-1） 3",
+        "黄绿黄灯状态（🟢正常、🟡关注、🟠警告、🔴告警/紧急） 4"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/retail-target-tracking-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/176652150?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "retail-target-tracking-analysis",
+      "url": "https://clawhub.ai/skills/retail-target-tracking-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "retail-target-tracking-analysis",
+    "url": "https://clawhub.ai/skills/retail-target-tracking-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/retail-target-tracking-analysis-c5ddad667e59acce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/retail-target-tracking-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-retail-target-tracking-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b67b87f93f67bc9e6a009914a2b0e5b7f3388188197fb103b834b5abc70be22",
+      "artifactSizeBytes": 2321
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T11:59:46.315Z"
+}

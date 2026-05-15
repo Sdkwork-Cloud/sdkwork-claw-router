@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71642,
+  "uuid": "skill-clawhub-sanofi",
+  "skillKey": "clawhub-sanofi",
+  "name": "Sanofi",
+  "summary": "赛诺菲制药信息助手。提供药品查询、疾病治疗、疫苗信息、研发管线等信息",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sanofi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "赛诺菲制药信息助手。提供药品查询、疾病治疗、疫苗信息、研发管线等信息"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sanofi@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sanofi",
+      "url": "https://clawhub.ai/skills/sanofi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sanofi",
+    "url": "https://clawhub.ai/skills/sanofi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sanofi-9d44b649c5e2d4f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sanofi@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sanofi-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b79296c796a943ecef04d8c360014f128bb62ed2c7a2a6a27a66cb1fc041c06c",
+      "artifactSizeBytes": 2158
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T23:26:25.961Z"
+}

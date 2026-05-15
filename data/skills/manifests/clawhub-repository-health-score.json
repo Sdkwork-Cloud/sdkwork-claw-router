@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53029,
+  "uuid": "skill-clawhub-repository-health-score",
+  "skillKey": "clawhub-repository-health-score",
+  "name": "Repository Health Score",
+  "summary": "Score a repository's health across 8 dimensions — code quality, testing, documentation, CI/CD, security, dependencies, community, and maintainability. Produc...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.repository_health_score",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Score a repository's health across 8 dimensions — code quality, testing, documentation, CI/CD,.",
+        "Produc..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/repository-health-score@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "repository-health-score",
+      "url": "https://clawhub.ai/skills/repository-health-score"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "repository-health-score",
+    "url": "https://clawhub.ai/skills/repository-health-score",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/repository-health-score-2e9eceea75451824.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/repository-health-score@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-repository-health-score-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e0ea72b10f096f56cc8acb36e05d2bd330a1371231d7014a11a2c25cd1242647",
+      "artifactSizeBytes": 2055
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:02:40.939Z"
+}

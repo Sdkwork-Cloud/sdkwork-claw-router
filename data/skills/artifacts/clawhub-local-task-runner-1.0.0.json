@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/local-task-runner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_task_runner",
+  "skill": {
+    "id": 17391,
+    "skillKey": "clawhub-local-task-runner",
+    "name": "Local Task Runner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-task-runner",
+    "url": "https://clawhub.ai/skills/local-task-runner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-task-runner-58b81538a7cae5a4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Executes Node.js code snippets or scripts locally with isolation, cleanup, and timeout, serving as a lightweight alternative to spawning subagents."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "d-wwei",
+      "userId": "publishers:d-wwei",
+      "displayName": "d-wwei",
+      "image": "https://avatars.githubusercontent.com/u/10348457?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 764,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771858024551,
+      "changelog": "Initial release of local-task-runner.\n\n- Enables execution of Node.js code snippets and scripts directly on the host machine.\n- Provides a safer, more efficient alternative to subagent spawning for local tasks.\n- Handles code isolation, resource cleanup, and configurable timeouts automatically.\n- Includes a command-line interface for running tasks with optional timeout controls.\n- Outputs clear, structured responses for both successful and failed executions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0d418930418913ad544ff912d73c49ceebcbaf8f8b4feb3987330d12f656c61e"
+}

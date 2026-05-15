@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/roadrunner@0.17.0",
+  "version": "0.17.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.roadrunner",
+  "skill": {
+    "id": 9042,
+    "skillKey": "clawhub-roadrunner",
+    "name": "Roadrunner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "roadrunner",
+    "url": "https://clawhub.ai/skills/roadrunner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/roadrunner-13aa6127ef7bdca2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Beeper Desktop CLI for chats, messages, contacts, connect info, websocket events, search, and reminders."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johntheyoung",
+      "userId": "publishers:johntheyoung",
+      "displayName": "johntheyoung",
+      "image": "https://avatars.githubusercontent.com/u/59088717?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4808,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 4,
+      "versions": 30
+    },
+    "latestVersion": {
+      "version": "0.17.0",
+      "createdAt": 1772686100156,
+      "changelog": "- Updated underlying CLI install version to v0.17.0.\n- Added command examples for `describe` (to show flag/command info) and new `--jsonl` (JSON Lines) output for chat and message lists/searches.\n- Added example of using `--dry-run` to validate mutating requests without actual API changes.\n- Minor clarifications and expanded examples for several commands and flags.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4adb7d27d33350aa01f3537ef3ec08b8c3bd5b95aa6642c5ced9bcf7f0d94d8e"
+}

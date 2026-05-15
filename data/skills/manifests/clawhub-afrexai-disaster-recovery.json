@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18106,
+  "uuid": "skill-clawhub-afrexai-disaster-recovery",
+  "skillKey": "clawhub-afrexai-disaster-recovery",
+  "name": "IT Disaster Recovery Plan Generator",
+  "summary": "Generates detailed IT disaster recovery plans with RTO/RPO targets, failover procedures, backup strategies, communication plans, testing schedules, and cost...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_disaster_recovery",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1kalin",
+      "features": [
+        "Generates detailed IT disaster recovery plans with RTO/RPO targets, failover procedures, backup."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/afrexai-disaster-recovery@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15705344?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "afrexai-disaster-recovery",
+      "url": "https://clawhub.ai/skills/afrexai-disaster-recovery"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-disaster-recovery",
+    "url": "https://clawhub.ai/skills/afrexai-disaster-recovery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-disaster-recovery-390ef30cefca575a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/afrexai-disaster-recovery@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-afrexai-disaster-recovery-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dd01912443173b64fc5f7b09b534faf43f98550ff7bb5bc434adb0c2c04671fc",
+      "artifactSizeBytes": 2555
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T12:43:35.439Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dynamic-temperature@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dynamic_temperature",
+  "skill": {
+    "id": 52227,
+    "skillKey": "clawhub-dynamic-temperature",
+    "name": "Dynamic Temperature"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dynamic-temperature",
+    "url": "https://clawhub.ai/skills/dynamic-temperature",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dynamic-temperature-4312f56b0fd71a6d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Dynamic LLM temperature selection based on task type. Use when deciding what temperature to apply for a given task — scheduling, communication, creative writ..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "netanel-abergel",
+      "userId": "s17ber573ejk857tr938jb5dqs8413hk",
+      "displayName": "Netanel Abergel",
+      "image": "https://avatars.githubusercontent.com/u/89765095?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775332273829,
+      "changelog": "- Added \"Communication Override Rules\" section clarifying that certain communication tasks (e.g., sending messages, deleting data, exact replies) must use temperature 0.0 absolutely.\n- Specified that reaction signals and set-phrase replies are always deterministic (temperature 0.0).\n- No changes to recommendations or decision rules; documentation expanded for stricter application in sensitive communication scenarios.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5fb3b12824d719884ac6fc8b36c8b2ea50e85f5233c8392dd44ee28f384b823d"
+}

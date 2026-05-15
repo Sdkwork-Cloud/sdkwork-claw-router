@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51038,
+  "uuid": "skill-clawhub-mikrotik-api",
+  "skillKey": "clawhub-mikrotik-api",
+  "name": "MikroTik API",
+  "summary": "Manages MikroTik routers via the RouterOS API (port 8728/8729). Use when the user wants to configure, monitor, or troubleshoot a MikroTik router — including...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mikrotik_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Affif Mukhlashin",
+      "features": [
+        "Manages MikroTik routers via the RouterOS API (port 8728/8729)",
+        "Use when the user wants to configure, monitor, or troubleshoot a MikroTik router — including..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mikrotik-api@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1296615?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mikrotik-api",
+      "url": "https://clawhub.ai/skills/mikrotik-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mikrotik-api",
+    "url": "https://clawhub.ai/skills/mikrotik-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mikrotik-api-60faec85288cf330.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mikrotik-api@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mikrotik-api-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8409c67524e1ef457a56c9b67209571fcf25951089a763217d2d404aa44afac1",
+      "artifactSizeBytes": 1983
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T23:10:03.251Z"
+}

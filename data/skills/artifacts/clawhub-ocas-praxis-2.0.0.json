@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ocas-praxis@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ocas_praxis",
+  "skill": {
+    "id": 28180,
+    "skillKey": "clawhub-ocas-praxis",
+    "name": "Ocas Praxis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ocas-praxis",
+    "url": "https://clawhub.ai/skills/ocas-praxis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ocas-praxis-2fadf8b25155150a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bounded behavioral refinement loop. Records outcomes, extracts micro-lessons from repeated patterns, consolidates them into capped active behavior shifts, ap..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "indigokarasu",
+      "userId": "s17bp0q5q5x87yfrmb4876eywh83rcts",
+      "displayName": "Indigo Karasu",
+      "image": "https://avatars.githubusercontent.com/u/265148029?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 331,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773811870036,
+      "changelog": "ocas-praxis 1.1.1\n\n- Added journal output capability: introduced `references/journal.md` and `praxis.journal` command for writing a run summary at the end of each run.\n- Clarified scope and inter-skill interfaces, specifying cooperation with Corvus and Dispatch, and improved documentation of responsibility boundaries.\n- Updated storage layout and config documentation for new journal directory and OCAS_ROOT override.\n- Added specific OKRs and clarified output/retention practices for better audit and quality tracking.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cdd8fa52218c3721e242dea18cb7143336cd5f2ab58336de7b6e774613576772"
+}

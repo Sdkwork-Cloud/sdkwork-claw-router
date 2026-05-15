@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54309,
+  "uuid": "skill-clawhub-notion-pages",
+  "skillKey": "clawhub-notion-pages",
+  "name": "Notion",
+  "summary": "Browse databases, search pages, create and update content, and manage workspace data — powered by ClawLink.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notion_pages",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hithesh Jay",
+      "features": [
+        "Browse databases, search pages, create and update content, and manage workspace data — powered."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/notion-pages@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83839061?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "notion-pages",
+      "url": "https://clawhub.ai/skills/notion-pages"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notion-pages",
+    "url": "https://clawhub.ai/skills/notion-pages",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notion-pages-1d1e4a0cc6d6051d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/notion-pages@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-notion-pages-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f5ba00065fedd6f475c2bfba67db264b237511ac1a697ace756af58c687145b6",
+      "artifactSizeBytes": 2317
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T15:18:22.952Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jav-lookup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jav_lookup",
+  "skill": {
+    "id": 56719,
+    "skillKey": "clawhub-jav-lookup",
+    "name": "jav-lookup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jav-lookup",
+    "url": "https://clawhub.ai/skills/jav-lookup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jav-lookup-2f9ddc6fbc827aa1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when the user provides a list of Japanese AV film codes (番号, e.g. ABF-328, START-510, MIDA-563) and wants to look up the cast (主演),..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "onebowl824",
+      "userId": "s178dj93emanf867rmynm8ernd83enr4",
+      "displayName": "onebowl824",
+      "image": "https://avatars.githubusercontent.com/u/190184974?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 224,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774309820687,
+      "changelog": "Initial release of jav-lookup skill:\n\n- Supports batch lookup of Japanese AV film codes for cast, one-sentence plot summaries (in Traditional Chinese), and magnet links.\n- Triggers on user requests for film information, cast, plot summaries, or magnet links using keywords like 查询番号, 番号主演剧情, 查影片信息, 找磁力链接, or magnet.\n- Presents results in a clear markdown table format, including fields for code, cast, studio, and plot; optional magnet links and notes.\n- Prioritizes data sources: JAVDB, FANZA/DMM, and official studios.\n- Allows special search for uncensored or subtitled versions; flags new or hard-to-find content and suggests alternative searches.\n- Adds output notes for clarification on data quality and suggestions for further verification.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:87956cb2f403a789d29d5fce4cb3846adb5f2020a82006a9e19d573b45fb29df"
+}

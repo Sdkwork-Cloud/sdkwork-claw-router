@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68927,
+  "uuid": "skill-clawhub-bilibili-sentiment-dashboard",
+  "skillKey": "clawhub-bilibili-sentiment-dashboard",
+  "name": "bilibili B站评论分析",
+  "summary": "B站/哔哩哔哩视频运营分析。当用户询问B站/B站视频/Bilibili的视频运营分析，评论情绪、评论区情感、弹幕情绪、口碑、正评负评、好评差评时触发。支持BV号、AV号或视频链接。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilibili_sentiment_dashboard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "allinherog-star",
+      "features": [
+        "B站/哔哩哔哩视频运营分析。当用户询问B站/B站视频/Bilibili的视频运营分析，评论情绪、评论区情感、弹幕情绪、口碑、正评负评、好评差评时触发。支持BV号、AV号或视频链接。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bilibili-sentiment-dashboard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/243965348?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bilibili-sentiment-dashboard",
+      "url": "https://clawhub.ai/skills/bilibili-sentiment-dashboard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilibili-sentiment-dashboard",
+    "url": "https://clawhub.ai/skills/bilibili-sentiment-dashboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilibili-sentiment-dashboard-5105013a0e643df0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bilibili-sentiment-dashboard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bilibili-sentiment-dashboard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ce3605e0f052bbce8bafba88030b5316925ac8263ed00f54c5c6795e8308af4d",
+      "artifactSizeBytes": 2288
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T06:11:27.830Z"
+}

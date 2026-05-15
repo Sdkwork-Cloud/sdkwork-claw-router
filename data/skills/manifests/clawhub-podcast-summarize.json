@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18209,
+  "uuid": "skill-clawhub-podcast-summarize",
+  "skillKey": "clawhub-podcast-summarize",
+  "name": "Podcast Summarize",
+  "summary": "Summarize podcast episodes into concise, actionable insights. Use when users want to get the key points from a podcast episode without listening to the entir...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.podcast_summarize",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hughtan93-dev",
+      "features": [
+        "Summarize podcast episodes into concise, actionable insights",
+        "Use when users want to get the key points from a podcast episode without listening to the entir."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/podcast-summarize@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254217053?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "podcast-summarize",
+      "url": "https://clawhub.ai/skills/podcast-summarize"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "podcast-summarize",
+    "url": "https://clawhub.ai/skills/podcast-summarize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/podcast-summarize-080ae7e0ea8fee8b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/podcast-summarize@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-podcast-summarize-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a5cc6c50f1dda6e2fb0f1525fb5b35cac5c72471c0a139bf6bdfe1ffd5325dc",
+      "artifactSizeBytes": 2410
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T13:54:54.983Z"
+}

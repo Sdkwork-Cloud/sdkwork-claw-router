@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9457,
+  "uuid": "skill-clawhub-gemini-yt-video-transcript",
+  "skillKey": "clawhub-gemini-yt-video-transcript",
+  "name": "Gemini Yt Video Transcript",
+  "summary": "Create a verbatim transcript for a YouTube URL using Google Gemini (speaker labels, paragraph breaks; no time codes). Use when the user asks to transcribe a YouTube video or wants a clean transcript (no timestamps).",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gemini_yt_video_transcript",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Oliver Drobnik",
+      "features": [
+        "Create a verbatim transcript for a YouTube URL using Google Gemini (speaker labels, paragraph b.",
+        "no time codes)",
+        "Use when the user asks to transcribe a YouTube video or wants a clean transcript (no timestamps."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gemini-yt-video-transcript@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/333270?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gemini-yt-video-transcript",
+      "url": "https://clawhub.ai/skills/gemini-yt-video-transcript"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gemini-yt-video-transcript",
+    "url": "https://clawhub.ai/skills/gemini-yt-video-transcript",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gemini-yt-video-transcript-6658060eb8e8ac18.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gemini-yt-video-transcript@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-gemini-yt-video-transcript-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3e21e2d91c50057aef0f5f68637c82bbece7db80d77e86a823c906363ce5e89b",
+      "artifactSizeBytes": 2105
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T07:54:44.693Z"
+}

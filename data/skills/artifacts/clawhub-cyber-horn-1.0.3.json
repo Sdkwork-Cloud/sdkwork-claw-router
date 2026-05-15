@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cyber-horn@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cyber_horn",
+  "skill": {
+    "id": 18541,
+    "skillKey": "clawhub-cyber-horn",
+    "name": "Cyber Horn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cyber-horn",
+    "url": "https://clawhub.ai/skills/cyber-horn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cyber-horn-1ed91e6d95a771d3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn text into spoken Feishu (Lark) voice messages. Use when the agent should speak in a Feishu group, send voice alerts or announcements, or reply with a pl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "richerlv",
+      "userId": "s170mx55k5pda3tsjkvr37880583vepv",
+      "displayName": "Richerlv",
+      "image": "https://avatars.githubusercontent.com/u/81056591?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 482,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773670458554,
+      "changelog": "- Added support for FEISHU_DEFAULT_CHAT_ID: you can now set a default chat ID in the environment and omit the chat ID argument when invoking the skill.\n- Invocation instructions updated: chat ID argument is now optional if FEISHU_DEFAULT_CHAT_ID is set.\n- Clarified setup and usage in documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:106c29196c29a64d6b3af3e669c2de84e6a7c8ff94818971bedeafbd6a4105db"
+}

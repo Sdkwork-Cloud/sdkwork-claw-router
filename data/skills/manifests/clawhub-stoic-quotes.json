@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17498,
+  "uuid": "skill-clawhub-stoic-quotes",
+  "skillKey": "clawhub-stoic-quotes",
+  "name": "Stoic Quotes",
+  "summary": "Provide Stoic philosophy quotes from Marcus Aurelius, Seneca, Epictetus, Cato, or others on request, always acknowledging prior quote sharing.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stoic_quotes",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bshandley",
+      "features": [
+        "Provide Stoic philosophy quotes from Marcus Aurelius, Seneca, Epictetus, Cato, or others on req."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stoic-quotes@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10778595?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stoic-quotes",
+      "url": "https://clawhub.ai/skills/stoic-quotes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stoic-quotes",
+    "url": "https://clawhub.ai/skills/stoic-quotes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stoic-quotes-3431695c4b72dd04.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stoic-quotes@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-stoic-quotes-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3e4fe6be4731d955582585d32bdb20a9db61029d4ce49bf497ab75deec91e251",
+      "artifactSizeBytes": 1877
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T01:27:56.496Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-skill-red-alert@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_skill_red_alert",
+  "skill": {
+    "id": 18927,
+    "skillKey": "clawhub-openclaw-skill-red-alert",
+    "name": "Red Alert (Israel)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-skill-red-alert",
+    "url": "https://clawhub.ai/skills/openclaw-skill-red-alert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-skill-red-alert-02fe780c1e80312d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Israeli Home Front Command alerts - fully OpenClaw native. No Home Assistant. No wacli. No Docker monitor. OpenClaw handles everything: WhatsApp + TTS."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shaike1",
+      "userId": "s17crfcb8n2p2xp8y2nmmny9xn83rm8t",
+      "displayName": "shaike1",
+      "image": "https://avatars.githubusercontent.com/u/72298764?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 550,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772432996586,
+      "changelog": "OpenClaw native Israeli red alert system - WhatsApp + TTS + area filter",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d6695b985c7c5f8ce65e3f5c79bb3f9712a0b7d06d3f6761eafa2e16f8bf83cf"
+}

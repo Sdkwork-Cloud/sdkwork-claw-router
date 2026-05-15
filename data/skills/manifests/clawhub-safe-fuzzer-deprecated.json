@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41993,
+  "uuid": "skill-clawhub-safe-fuzzer-deprecated",
+  "skillKey": "clawhub-safe-fuzzer-deprecated",
+  "name": "SAFE-Fuzzer",
+  "summary": "Sandbox-only behavior-led gray-box skill fuzzer. Spawns a worker subagent, probes an installed target skill, deploys honeypot fixtures, and returns a structu...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safe_fuzzer_deprecated",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "agentsey",
+      "features": [
+        "Sandbox-only behavior-led gray-box skill fuzzer",
+        "Spawns a worker subagent, probes an installed target skill, deploys honeypot fixtures, and retu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/safe-fuzzer-deprecated@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/157263272?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "safe-fuzzer-deprecated",
+      "url": "https://clawhub.ai/skills/safe-fuzzer-deprecated"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safe-fuzzer-deprecated",
+    "url": "https://clawhub.ai/skills/safe-fuzzer-deprecated",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safe-fuzzer-deprecated-de9a435a904d88c9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/safe-fuzzer-deprecated@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-safe-fuzzer-deprecated-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:28a851d805118ca3014673ba347763132bd624df66aebc3a9ffd17a50cc98448",
+      "artifactSizeBytes": 2572
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T22:34:24.099Z"
+}

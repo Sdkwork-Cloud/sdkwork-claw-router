@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/solidity-audit-precheck@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solidity_audit_precheck",
+  "skill": {
+    "id": 22815,
+    "skillKey": "clawhub-solidity-audit-precheck",
+    "name": "Solidity Audit Precheck"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solidity-audit-precheck",
+    "url": "https://clawhub.ai/skills/solidity-audit-precheck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solidity-audit-precheck-7d57a943a8ee92dc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated pre-audit checklist for Solidity smart contracts. Runs SWC registry scan, OpenZeppelin pattern validation, gas optimization suggestions, and common..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "samledger67-dotcom",
+      "userId": "s17e6161jqcyaq82bkvewk1rz583ndyf",
+      "displayName": "samledger67-dotcom",
+      "image": "https://avatars.githubusercontent.com/u/261800271?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 450,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773796592451,
+      "changelog": "Proper name and description (was published as TEST)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f3e638f995ec24cfc56dfb25a1abd1f52b447b4732493ce45fa0122ff64ac9af"
+}

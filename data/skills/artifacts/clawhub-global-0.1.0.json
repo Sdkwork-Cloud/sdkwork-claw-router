@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/global@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.global",
+  "skill": {
+    "id": 70976,
+    "skillKey": "clawhub-global",
+    "name": "Global"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "global",
+    "url": "https://clawhub.ai/skills/global",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/global-8001c27439650c5c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供跨境电商趋势、国际金融动态、海外置业及移民政策速递。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codenova58",
+      "userId": "s173fekm3yw84k7gp861dme7dd83gvyf",
+      "displayName": "codenova58",
+      "image": "https://avatars.githubusercontent.com/u/191358186?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 303,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773858480286,
+      "changelog": "- Initial release of the \"Global\" skill, providing updates on cross-border e-commerce trends, international finance, overseas real estate, and immigration policies.\n- Introduced filtering options by distance, popularity, and spending level.\n- Added support for live queue status, booking channels, business hours, parking, and navigation details.\n- Integrated community content: real photo galleries, shop reviews, and summary lists.\n- Flexible update frequency based on geographic changes and review trends.\n- Included usage examples and practical tips for users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:17afc142e73f4f17f742a5ce35df2a0f7791e3dbd348fefdb14b5dbf653dcf77"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ctct-security-patrol@1.0.9",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ctct_security_patrol",
+  "skill": {
+    "id": 65575,
+    "skillKey": "clawhub-ctct-security-patrol",
+    "name": "ctct-security-patrol"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ctct-security-patrol",
+    "url": "https://clawhub.ai/skills/ctct-security-patrol",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ctct-security-patrol-6b20e76b4faf37ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw 多模式安全巡检工具：默认本地离线扫描，可选联网威胁情报上报。 功能范围：读取系统敏感信息（MAC 地址、主机名、系统日志、完整 Skill 清单）执行本地安全检测；在本机持久化保存扫描报告与安全基线；可选通过 --push 模式将摘要数据上传至 auth.ctct.cn 获取威胁情报评分（需用户..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zsyjx0115",
+      "userId": "s173qeeyqx8cyc8w526kmmhwqs843qt3",
+      "displayName": "zsyjx0115",
+      "image": "https://avatars.githubusercontent.com/u/11780606?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 512,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 2,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.0.9",
+      "createdAt": 1773976567731,
+      "changelog": "ctct-security-patrol 1.0.9\n\n- 优化描述与隐私条款，强调所有检测模式（包括默认本地模式）均会读取敏感系统信息并在本机持久化保存相关文件\n- 明确说明 --push 模式会生成并永久保存 agent_id，并进行数据上报及设备指纹绑定\n- 说明定时任务设置为可选，并补充其绑定 openclaw 基础设施的说明\n- 精简和调整说明文档重点，删除冗余内容，突出检测模式及各自数据处理边界\n- 不涉及功能和接口变更，仅文档修订",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0ba1f07e9131073495c79d52e4656f202ddff5d38d4cf0311f0f0f7c0d854c4f"
+}

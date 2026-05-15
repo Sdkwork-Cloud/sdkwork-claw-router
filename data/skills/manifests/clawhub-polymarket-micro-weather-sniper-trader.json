@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38189,
+  "uuid": "skill-clawhub-polymarket-micro-weather-sniper-trader",
+  "skillKey": "clawhub-polymarket-micro-weather-sniper-trader",
+  "name": "Polymarket Micro Weather Sniper Trader",
+  "summary": "Trades Polymarket weather temperature markets using NOAA and Open-Meteo forecasts as an information edge. Buys YES on bins matching the forecast at discount...",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_micro_weather_sniper_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "diagnostikon",
+      "features": [
+        "Trades Polymarket weather temperature markets using NOAA and Open-Meteo forecasts as an informa.",
+        "Buys YES on bins matching the forecast at discount..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-micro-weather-sniper-trader@0.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17246180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-micro-weather-sniper-trader",
+      "url": "https://clawhub.ai/skills/polymarket-micro-weather-sniper-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-micro-weather-sniper-trader",
+    "url": "https://clawhub.ai/skills/polymarket-micro-weather-sniper-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-micro-weather-sniper-trader-fbe63800d42d0d9a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-micro-weather-sniper-trader@0.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-micro-weather-sniper-trader-0.0.2.json",
+      "version": "0.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0c4bee9f45ee5cf610b6ec67e26492492e5c5f4030482d5503bd226ff267997d",
+      "artifactSizeBytes": 2138
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T11:58:45.436Z"
+}

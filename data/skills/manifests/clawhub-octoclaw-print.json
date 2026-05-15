@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35221,
+  "uuid": "skill-clawhub-octoclaw-print",
+  "skillKey": "clawhub-octoclaw-print",
+  "name": "OctoClaw",
+  "summary": "Control OctoPrint 3D printer — monitor status, capture webcam snapshots, manage prints, analyze gcode, and detect errors. Use when the user asks about their...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.octoclaw_print",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "peterhanily",
+      "features": [
+        "Control OctoPrint 3D printer — monitor status, capture webcam snapshots, manage prints, analyze.",
+        "Use when the user asks about their..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/octoclaw-print@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4774894?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "octoclaw-print",
+      "url": "https://clawhub.ai/skills/octoclaw-print"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "octoclaw-print",
+    "url": "https://clawhub.ai/skills/octoclaw-print",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/octoclaw-print-79c29a0c2e897e5b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/octoclaw-print@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-octoclaw-print-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ef530340e88ba28b7a56cc0b13599b757fd914333c3d66bca6773730eb9881b8",
+      "artifactSizeBytes": 1962
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T01:26:49.091Z"
+}

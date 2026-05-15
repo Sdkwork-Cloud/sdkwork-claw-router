@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18957,
+  "uuid": "skill-clawhub-ascii-chord",
+  "skillKey": "clawhub-ascii-chord",
+  "name": "Guitar Chord",
+  "summary": "Show ASCII guitar chord diagrams using the ascii_chord CLI tool. Use when asked how to play a guitar chord, or to show chord charts/diagrams for any chord na...",
+  "version": "2.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ascii_chord",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yuchen",
+      "features": [
+        "Show ASCII guitar chord diagrams using the ascii_chord CLI tool",
+        "Use when asked how to play a guitar chord, or to show chord charts/diagrams for any chord na..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ascii-chord@2.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3712071?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ascii-chord",
+      "url": "https://clawhub.ai/skills/ascii-chord"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ascii-chord",
+    "url": "https://clawhub.ai/skills/ascii-chord",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ascii-chord-cac8db20a52abe0c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ascii-chord@2.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-ascii-chord-2.0.4.json",
+      "version": "2.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:53bee95b5783bbb255d2ef1493519e753c96aab52347c0b9f3e5b97758acaa42",
+      "artifactSizeBytes": 1906
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T18:03:59.146Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39256,
+  "uuid": "skill-clawhub-vcf-sustainability-mcp",
+  "skillKey": "clawhub-vcf-sustainability-mcp",
+  "name": "VCF Green IT & Carbon Footprint",
+  "summary": "An MCP server that interfaces with VMware Aria Operations to extract Green IT metrics, carbon footprint data, and the organizational Green Score for ESG repo...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vcf_sustainability_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rohit Kasture",
+      "features": [
+        "An MCP server that interfaces with VMware Aria Operations to extract Green IT metrics, carbon f."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vcf-sustainability-mcp@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/219512019?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vcf-sustainability-mcp",
+      "url": "https://clawhub.ai/skills/vcf-sustainability-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vcf-sustainability-mcp",
+    "url": "https://clawhub.ai/skills/vcf-sustainability-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vcf-sustainability-mcp-b1667ffd5b7eb0fe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vcf-sustainability-mcp@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-vcf-sustainability-mcp-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac802f79544064a3057d1e84a674c0092008f96ddb4cf41993ef51b1b1549890",
+      "artifactSizeBytes": 2072
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T20:07:07.978Z"
+}

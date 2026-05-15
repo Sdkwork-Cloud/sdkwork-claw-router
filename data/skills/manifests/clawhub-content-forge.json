@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41918,
+  "uuid": "skill-clawhub-content-forge",
+  "skillKey": "clawhub-content-forge",
+  "name": "Content Forge",
+  "summary": "Generate content ideas, blog outlines, social media posts, and headlines. Use when the user needs help creating content for blogs, Twitter/X threads, LinkedI...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_forge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "千年虫",
+      "features": [
+        "Generate content ideas, blog outlines, social media posts, and headlines",
+        "Use when the user needs help creating content for blogs, Twitter/X threads, LinkedI..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/content-forge@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/53294334?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "content-forge",
+      "url": "https://clawhub.ai/skills/content-forge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-forge",
+    "url": "https://clawhub.ai/skills/content-forge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-forge-8a11a040664115d5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/content-forge@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-content-forge-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2836a341163ff232c132358e6d7cfefe02893962c39ac83d087a24802c859c5f",
+      "artifactSizeBytes": 1936
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T04:42:00.168Z"
+}

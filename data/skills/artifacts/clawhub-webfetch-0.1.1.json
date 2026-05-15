@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/webfetch@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.webfetch",
+  "skill": {
+    "id": 64095,
+    "skillKey": "clawhub-webfetch",
+    "name": "webfetch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "webfetch",
+    "url": "https://clawhub.ai/skills/webfetch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/webfetch-32ed3a37e22652f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "网页内容抓取工具。使用 webfetch CLI 抓取网页内容并转换为 Markdown、文本或 HTML 格式。触发场景：用户要求抓取网页、获取网页内容、网页转 Markdown、网页转文本、下载网页。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lyhue1991",
+      "userId": "s174rgerkkbwhvn3qhh8574t75855y77",
+      "displayName": "一个有毅力的吃货",
+      "image": "https://avatars.githubusercontent.com/u/30676974?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 236,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1774106129968,
+      "changelog": "simplify the name",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:955a231d1005ac59d3e5cf527ecd7e72913fa2facd33476a9874d8cf7b300326"
+}

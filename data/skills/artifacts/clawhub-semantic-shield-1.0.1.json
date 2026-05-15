@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/semantic-shield@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.semantic_shield",
+  "skill": {
+    "id": 50332,
+    "skillKey": "clawhub-semantic-shield",
+    "name": "Semantic Shield"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "semantic-shield",
+    "url": "https://clawhub.ai/skills/semantic-shield",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/semantic-shield-2a049531f6fb8c77.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI skill safety validation — real human experts vet skills, plugins, and MCP tools for security risks. Query trust scores, submit evaluation inquiries, and g..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "simplysemantics",
+      "userId": "publishers:simplysemantics",
+      "displayName": "Simply Semantics",
+      "image": "https://avatars.githubusercontent.com/u/261688099?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 444,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772539225260,
+      "changelog": "- Initial public release under the MIT License.\n- Added LICENSE.txt file to clarify open source licensing.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c2a73addba3eab7daed5d7da79a1de15685c6efbad6defe285ff4df132e6851b"
+}

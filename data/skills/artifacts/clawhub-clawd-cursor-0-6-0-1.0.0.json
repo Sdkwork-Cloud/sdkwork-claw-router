@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawd-cursor-0-6-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawd_cursor_0_6_0",
+  "skill": {
+    "id": 50174,
+    "skillKey": "clawhub-clawd-cursor-0-6-0",
+    "name": "Clawd Cursor 0.6.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawd-cursor-0-6-0",
+    "url": "https://clawhub.ai/skills/clawd-cursor-0-6-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawd-cursor-0-6-0-5c7be0ca5d8286db.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI desktop agent — control any app on Windows/macOS from your OpenClaw agent. Send natural language tasks to the Clawd Cursor API and it handles everything:..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sieyer",
+      "userId": "s17ecg755jc4ww7frdpfdkdtbn83g8r9",
+      "displayName": "Sieyer",
+      "image": "https://avatars.githubusercontent.com/u/68283443?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 559,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772461451161,
+      "changelog": "- Initial public release of Clawd Cursor as an OpenClaw skill (version 0.6.0).\n- Enables natural language desktop automation via REST API on Windows and macOS.\n- Supports controlling any app: launching, clicking, typing, form filling, and more.\n- Fully local and privacy-respecting: user data processed on-device with Ollama, or sent only to the user's chosen cloud AI provider.\n- Includes safety features: requires user confirmation for sensitive actions; never network-accessible externally.\n- Provides detailed usage policy, REST API, and CDP (browser automation) references in documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8d8064626a018f5c45dd44d8a36ed5c57ec5c57014c84b863eb64566010cb557"
+}

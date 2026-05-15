@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/build-working-memory@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.build_working_memory",
+  "skill": {
+    "id": 35126,
+    "skillKey": "clawhub-build-working-memory",
+    "name": "Working Memory Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "build-working-memory",
+    "url": "https://clawhub.ai/skills/build-working-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/build-working-memory-35e8a5b34da35a4f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set up, migrate, or manage a file-based working memory system for an AI agent project. Use for agent memory, working memory, session continuity, persistent c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiyuan",
+      "userId": "s17anb5g75v0h7ptb1dw2szq6n83nq28",
+      "displayName": "jiyuan",
+      "image": "https://avatars.githubusercontent.com/u/1469910?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 217,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1774532993373,
+      "changelog": "build-working-memory 1.1.1\n\n- Refactored project structure: all scripts and reference docs moved into dedicated `scripts/` and `references/` directories\n- Added detailed reference documentation: MIGRATION.md, RETRIEVAL.md, SCHEMAS.md, TEMPORAL.md for in-depth usage and integration guidance\n- Introduced new scripts for advanced management: `rebuild_index.py` for log index rebuilding\n- Removed legacy files from project root to improve separation of code, docs, and memory data",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b19969c3c03e040fb96bf862cd0b058980475c54c8f2c31fa8065bbb18185db0"
+}

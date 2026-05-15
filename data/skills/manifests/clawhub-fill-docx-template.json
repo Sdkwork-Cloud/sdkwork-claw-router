@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66988,
+  "uuid": "skill-clawhub-fill-docx-template",
+  "skillKey": "clawhub-fill-docx-template",
+  "name": "Fill docx template",
+  "summary": "当用户需要基于模板填充 Word 文档（.docx）、从模板生成报告、创建包含动态数据的合同，或自动化文档生成时使用此技能。包括替换普通占位符 {name} 替换文本、使用 {name|r:x,c:y} 格式标记的智能表格填充（支持从标记行开始向下填充，保留上方内容）、插入图片、批量生成文档等。如果用户提及 .d...",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fill_docx_template",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huagc",
+      "features": [
+        "当用户需要基于模板填充 Word 文档（.docx）、从模板生成报告、创建包含动态数据的合同，或自动化文档生成时使用此技能。包括替换普通占位符 {name} 替换文本、使用 {name|r:."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fill-docx-template@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3349317?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fill-docx-template",
+      "url": "https://clawhub.ai/skills/fill-docx-template"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fill-docx-template",
+    "url": "https://clawhub.ai/skills/fill-docx-template",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fill-docx-template-13a0bb7759cbfedb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fill-docx-template@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-fill-docx-template-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b2a032fc198b6ff806972dfe8a01ca8bd46a4ed10129b58255b49bc6229771d6",
+      "artifactSizeBytes": 2212
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T07:02:49.957Z"
+}

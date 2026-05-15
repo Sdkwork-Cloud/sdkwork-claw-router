@@ -50,6 +50,24 @@ pub struct BillingRechargeHistoryItem {
     pub status: String,
 }
 
+#[derive(Debug, Clone, Default, Serialize, PartialEq, Eq)]
+#[serde(rename_all = "camelCase")]
+pub struct BillingPointsBalance {
+    pub available_points: i64,
+    pub frozen_points: i64,
+}
+
+#[derive(Debug, Clone, Default, Serialize, PartialEq, Eq)]
+#[serde(rename_all = "camelCase")]
+pub struct BillingPointsHistoryItem {
+    pub id: String,
+    pub amount: i64,
+    pub direction: String,
+    pub balance_after: i64,
+    pub business_type: String,
+    pub created_at: String,
+}
+
 #[derive(Debug, Clone, Default, Serialize, PartialEq)]
 #[serde(rename_all = "camelCase")]
 pub struct RedeemCodeOutcome {
@@ -69,6 +87,16 @@ pub trait BillingStore {
         &'a self,
         subject: Option<BillingSubject>,
     ) -> BillingReadFuture<'a, Vec<BillingRechargeHistoryItem>>;
+
+    fn load_points_balance<'a>(
+        &'a self,
+        subject: Option<BillingSubject>,
+    ) -> BillingReadFuture<'a, BillingPointsBalance>;
+
+    fn load_points_history<'a>(
+        &'a self,
+        subject: Option<BillingSubject>,
+    ) -> BillingReadFuture<'a, Vec<BillingPointsHistoryItem>>;
 
     fn redeem_code<'a>(&'a self, command: RedeemCodeCommand) -> BillingCommandFuture<'a>;
 }

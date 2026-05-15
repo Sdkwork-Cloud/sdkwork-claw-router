@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31326,
+  "uuid": "skill-clawhub-holiday",
+  "skillKey": "clawhub-holiday",
+  "name": "holiday",
+  "summary": "Research public holidays, bank holidays, observed days, school breaks, and make-up workdays for any country or region. Use when the user asks whether a speci...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.holiday",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jvy",
+      "features": [
+        "Research public holidays, bank holidays, observed days, school breaks, and make-up workdays for.",
+        "Use when the user asks whether a speci..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/holiday@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5337221?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "holiday",
+      "url": "https://clawhub.ai/skills/holiday"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "holiday",
+    "url": "https://clawhub.ai/skills/holiday",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/holiday-81c16d337a1b7314.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/holiday@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-holiday-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:00229869432b918bda8485a693602cf556f8bef44be951d15fa0f069f803efe2",
+      "artifactSizeBytes": 2518
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T13:24:26.726Z"
+}

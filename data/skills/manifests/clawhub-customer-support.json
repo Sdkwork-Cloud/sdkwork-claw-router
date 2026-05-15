@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10216,
+  "uuid": "skill-clawhub-customer-support",
+  "skillKey": "clawhub-customer-support",
+  "name": "Customer Support",
+  "summary": "Resolve issues, communicate with empathy, and turn frustrated customers into loyal advocates.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.customer_support",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Resolve issues, communicate with empathy, and turn frustrated customers into loyal advocates."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/customer-support@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "customer-support",
+      "url": "https://clawhub.ai/skills/customer-support"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "customer-support",
+    "url": "https://clawhub.ai/skills/customer-support",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/customer-support-0c694126114b7874.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/customer-support@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-customer-support-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7e0837f579f05ec7e2c0ad1297cbfc81ab9c2ed0b39766e391d7bf4d4b2b9d2f",
+      "artifactSizeBytes": 1832
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T22:04:27.600Z"
+}

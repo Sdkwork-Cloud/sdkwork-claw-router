@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37347,
+  "uuid": "skill-clawhub-refine-agent",
+  "skillKey": "clawhub-refine-agent",
+  "name": "REFINE: The Self-Evolving Agent",
+  "summary": "REFINE is an adaptive skill engine for structured session diagnostics. Use this skill when a user explicitly requests: logging error patterns across sessions...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.refine_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DTTNpole-commits",
+      "features": [
+        "REFINE is an adaptive skill engine for structured session diagnostics",
+        "Use this skill when a user explicitly requests: logging error patterns across sessions..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/refine-agent@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264905216?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "refine-agent",
+      "url": "https://clawhub.ai/skills/refine-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "refine-agent",
+    "url": "https://clawhub.ai/skills/refine-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/refine-agent-f7a5247606f30d52.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/refine-agent@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-refine-agent-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6fdfdba8606e3194179bb584db9ee5a39ca415ca1c661f3b557569ad5d62d069",
+      "artifactSizeBytes": 2562
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T09:36:24.816Z"
+}

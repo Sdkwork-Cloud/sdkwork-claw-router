@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-dance-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_dance_video",
+  "skill": {
+    "id": 45162,
+    "skillKey": "clawhub-ai-dance-video",
+    "name": "Ai Dance Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-dance-video",
+    "url": "https://clawhub.ai/skills/ai-dance-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-dance-video-2fdad7145c3c6d79.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a single portrait photo of a person into 1080p animated dance videos just by typing what you need. Whether it's animating a photo or clip to make a pers..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775958722372,
+      "changelog": "AI Dance Video skill — version 1.0.0\n\n- Initial public release.\n- Instantly animates a single portrait photo or video into 1080p AI-generated dance videos.\n- Easy workflow: upload your media and describe the dance or edit needed — export in 1-2 minutes.\n- Automatic backend connection and authentication with support for 100 free credits.\n- Supports quick edits, timeline previews, batch processing, and various export formats (MP4, MOV, etc.).\n- Clear error handling and user-friendly setup, no manual export settings or timeline editing required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:952f88d3a9d8746c248a24e98f4fb810c6e071a3df9956f76b99fcbe0a8acd8c"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/schedule@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.schedule",
+  "skill": {
+    "id": 9066,
+    "skillKey": "clawhub-schedule",
+    "name": "Schedule"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "schedule",
+    "url": "https://clawhub.ai/skills/schedule",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/schedule-5f72005e81c4ecbd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Program recurring or one-time tasks. User defines what to do, skill handles when."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4583,
+      "installsAllTime": 30,
+      "installsCurrent": 29,
+      "stars": 3,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771253896575,
+      "changelog": "Clarified user-driven execution model, removed assumed access patterns",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:82e4ca1c06f0bb6435fcd9b21e5a9d724fb6e69c71bd8d272e035a75fa6f5e8b"
+}

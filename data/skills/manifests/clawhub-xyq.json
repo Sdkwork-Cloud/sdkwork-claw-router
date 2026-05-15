@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67521,
+  "uuid": "skill-clawhub-xyq",
+  "skillKey": "clawhub-xyq",
+  "name": "xyq",
+  "summary": "AI 生图/视频创作工具，当用需要生成或者编辑图片、视频，或者查询相关创作的时候使用，触发关键词：pippit、小云雀、xiaoyunque、xyq、生图、生视频",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xyq",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "imaoda",
+      "features": [
+        "AI 生图/视频创作工具，当用需要生成或者编辑图片、视频，或者查询相关创作的时候使用，触发关键词：pippit、小云雀、xiaoyunque、xyq、生图、生视频"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xyq@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28912714?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xyq",
+      "url": "https://clawhub.ai/skills/xyq"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xyq",
+    "url": "https://clawhub.ai/skills/xyq",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xyq-e62bb0ba6f5cd0cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xyq@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-xyq-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:651e69e7e936605e43772ed20b140d47dceadb398ffbd141010f045c7675c20e",
+      "artifactSizeBytes": 1946
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T05:44:44.701Z"
+}

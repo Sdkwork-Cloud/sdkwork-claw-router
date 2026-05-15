@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66191,
+  "uuid": "skill-clawhub-new-akshare-stock-bak",
+  "skillKey": "clawhub-new-akshare-stock-bak",
+  "name": "New Akshare Stock.Bak",
+  "summary": "A股量化数据分析工具，基于AkShare库获取A股行情、财务数据、板块信息等。用于回答关于A股股票查询、行情数据、财务分析、选股等问题。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.new_akshare_stock_bak",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "make453",
+      "features": [
+        "A股量化数据分析工具，基于AkShare库获取A股行情、财务数据、板块信息等。用于回答关于A股股票查询、行情数据、财务分析、选股等问题。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/new-akshare-stock-bak@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/200362598?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "new-akshare-stock-bak",
+      "url": "https://clawhub.ai/skills/new-akshare-stock-bak"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "new-akshare-stock-bak",
+    "url": "https://clawhub.ai/skills/new-akshare-stock-bak",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/new-akshare-stock-bak-4935f4c90ef37d60.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/new-akshare-stock-bak@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-new-akshare-stock-bak-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dec02dc030ca4c019cab6cbed29d3f5679be4f4a2de5d93e80330d38b72b1e3e",
+      "artifactSizeBytes": 2286
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T11:55:05.490Z"
+}

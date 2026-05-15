@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33641,
+  "uuid": "skill-clawhub-system-controller",
+  "skillKey": "clawhub-system-controller",
+  "name": "System Controller",
+  "summary": "Control Windows desktop software, hardware, and IoT devices. This skill should be used when the user wants to open/close/resize windows, start/stop/monitor p...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.system_controller",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "波动几何",
+      "features": [
+        "Control Windows desktop software, hardware, and IoT devices",
+        "This skill should be used when the user wants to open/close/resize windows, start/stop/monitor."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/system-controller@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25478397?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "system-controller",
+      "url": "https://clawhub.ai/skills/system-controller"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "system-controller",
+    "url": "https://clawhub.ai/skills/system-controller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/system-controller-f9dd3f2d68c4ca41.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/system-controller@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-system-controller-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cad821d771c56025723e7beb8df3189977cdf3157f192f03c84971d51db1d127",
+      "artifactSizeBytes": 1938
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T13:59:03.945Z"
+}

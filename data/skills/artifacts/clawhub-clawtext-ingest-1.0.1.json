@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawtext-ingest@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawtext_ingest",
+  "skill": {
+    "id": 21175,
+    "skillKey": "clawhub-clawtext-ingest",
+    "name": "Clawtext Ingest"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawtext-ingest",
+    "url": "https://clawhub.ai/skills/clawtext-ingest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawtext-ingest-8d6555b45ee11ad9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-source memory ingestion with Discord support, automatic deduplication, and agent-ready patterns"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ragesaq",
+      "userId": "s17a03cntbkgqmcgnfy82jdwyh83pade",
+      "displayName": "ragesaq",
+      "image": "https://avatars.githubusercontent.com/u/11304287?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 509,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772685500376,
+      "changelog": "**v1.0.1 — Adds Discord ingestion, CLI, and agent-ready documentation patterns**\n\n- Major rewrite: Adds Discord forum/channel/thread ingestion with hierarchy preservation and real-time progress\n- New CLI tools: `clawtext-ingest` and `clawtext-ingest-discord` for one-command ingestion from files, URLs, JSON, and Discord\n- Expanded documentation: 11 new guides and references covering agent patterns, CLI use, enhancement workflows, and Discord setup\n- Improved agent integration: Six documented ingestion patterns for direct API, CLI, batch, Discord agent, cron/scheduled, and thread-specific use\n- Updated deduplication and error handling for robust, production-ready multi-source ingestion",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:af1442710c791f618198a157bb7446a4a9423b5142426ab6c3f5b9825ea65fb6"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10747,
+  "uuid": "skill-clawhub-youtube-transcript-yt-dlp",
+  "skillKey": "clawhub-youtube-transcript-yt-dlp",
+  "name": "YouTube Transcript (yt-dlp captions)",
+  "summary": "Extract YouTube video transcripts from existing captions (manual or auto-generated) using yt-dlp, with optional timestamps and local SQLite caching. Use when...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_transcript_yt_dlp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Subhadip Sarkar",
+      "features": [
+        "Extract YouTube video transcripts from existing captions (manual or auto-generated) using yt-dl.",
+        "Use when..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-transcript-yt-dlp@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81502164?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-transcript-yt-dlp",
+      "url": "https://clawhub.ai/skills/youtube-transcript-yt-dlp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-transcript-yt-dlp",
+    "url": "https://clawhub.ai/skills/youtube-transcript-yt-dlp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-transcript-yt-dlp-ce7097614d301847.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-transcript-yt-dlp@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-transcript-yt-dlp-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5f5aa20249154cf70a1abadae47f36a50365bb68778274993996f74a305b8918",
+      "artifactSizeBytes": 2067
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T09:54:09.244Z"
+}

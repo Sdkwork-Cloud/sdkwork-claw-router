@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47428,
+  "uuid": "skill-clawhub-missing-input-validation",
+  "skillKey": "clawhub-missing-input-validation",
+  "name": "Missing Input Validation",
+  "summary": "External input flows into sensitive operations without being checked for type, shape, range, or sanitization.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.missing_input_validation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mvogt99",
+      "features": [
+        "External input flows into sensitive operations without being checked for type, shape, range, or."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/missing-input-validation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/911083?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "missing-input-validation",
+      "url": "https://clawhub.ai/skills/missing-input-validation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "missing-input-validation",
+    "url": "https://clawhub.ai/skills/missing-input-validation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/missing-input-validation-791321b2bec063f2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/missing-input-validation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-missing-input-validation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:95b9b6daea0dc1efd5dcbe21a0bee7865bdc33f486570d079e65588982110016",
+      "artifactSizeBytes": 2306
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T17:16:23.124Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44161,
+  "uuid": "skill-clawhub-pipeworx-pubmed",
+  "skillKey": "clawhub-pipeworx-pubmed",
+  "name": "Pipeworx pubmed",
+  "summary": "Search PubMed for biomedical articles by keyword, author, or MeSH term; retrieve article metadata and full abstracts with structured section labels.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_pubmed",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Search PubMed for biomedical articles by keyword, author, or MeSH term",
+        "retrieve article metadata and full abstracts with structured section labels."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-pubmed@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138315805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-pubmed",
+      "url": "https://clawhub.ai/skills/pipeworx-pubmed"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-pubmed",
+    "url": "https://clawhub.ai/skills/pipeworx-pubmed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-pubmed-22a193cb69f85f94.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-pubmed@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-pubmed-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:00fd6d62f07d0d27e0797c9b21bc3350a3133cf67966fee617f680a217e81951",
+      "artifactSizeBytes": 1888
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T16:36:36.513Z"
+}

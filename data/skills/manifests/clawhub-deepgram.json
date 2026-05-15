@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11737,
+  "uuid": "skill-clawhub-deepgram",
+  "skillKey": "clawhub-deepgram",
+  "name": "DeepGram Speech platform",
+  "summary": "Command-line tool for fast, accurate speech-to-text transcription from local files, URLs, or live audio using Deepgram’s API with customizable options.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deepgram",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nerkn",
+      "features": [
+        "Command-line tool for fast, accurate speech-to-text transcription from local files, URLs, or li."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deepgram@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/725631?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deepgram",
+      "url": "https://clawhub.ai/skills/deepgram"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deepgram",
+    "url": "https://clawhub.ai/skills/deepgram",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deepgram-f8849d864257947c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deepgram@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-deepgram-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c128d21d06492fddff4e0948e47ae6cf76954d136f3e465e1c03148a6ea4a85a",
+      "artifactSizeBytes": 2237
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T21:41:17.391Z"
+}

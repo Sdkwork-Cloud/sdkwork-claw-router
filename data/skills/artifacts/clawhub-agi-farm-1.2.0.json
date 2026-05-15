@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agi-farm@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agi_farm",
+  "skill": {
+    "id": 20916,
+    "skillKey": "clawhub-agi-farm",
+    "name": "AGI Farm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agi-farm",
+    "url": "https://clawhub.ai/skills/agi-farm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agi-farm-ed33da4ceb35cefa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interactive setup wizard that creates a fully working multi-agent AI team on OpenClaw. One command bootstraps agents, SOUL.md personas, comms infrastructure..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oabdelmaksoud",
+      "userId": "publishers:oabdelmaksoud",
+      "displayName": "oabdelmaksoud",
+      "image": "https://avatars.githubusercontent.com/u/50699149?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 531,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1772269941305,
+      "changelog": "New README with 5 Mermaid architecture diagrams (system overview, setup wizard flow, auto-dispatcher logic, dashboard architecture, agent comms protocol); expanded SKILL.md description; model selection guide; troubleshooting table",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b73e52937db8e1bcb6fe204fe781a649408560f77c586c0150d848d38dcb2b7f"
+}

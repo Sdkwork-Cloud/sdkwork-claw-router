@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/easy-image@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.easy_image",
+  "skill": {
+    "id": 50884,
+    "skillKey": "clawhub-easy-image",
+    "name": "Easy Image"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "easy-image",
+    "url": "https://clawhub.ai/skills/easy-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/easy-image-6369468c0a1cb732.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Professional image generation assistant for workplace: PPT graphics, marketing posters, product photos, social media content. Simple description → Profession..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ximasadila",
+      "userId": "s17a1yve62qf41hcw7n8zs0w198425k8",
+      "displayName": "bbear",
+      "image": "https://avatars.githubusercontent.com/u/133744881?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 420,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773978813872,
+      "changelog": "3 ## v1.0.1 (2026-03-20)\n   4\n   5 ### Fixed\n   6 - Corrected Novita API endpoints: text-to-image now uses `/v3/gemini-3.1-flash-image-text-to-image` instead of non-existent `/v3/gemini-3.1-flash-imag\n     e`                                                                          \n   7 - Corrected PPIO API endpoints: same fix applied for both Flash and Pro models\n   8 - Fixed Pro model endpoints for both platforms: `/v3/gemini-3-pro-image-text-to-image`\n   9                                                                             \n  10 ### Improved\n  11 - Compressed SKILL.md from ~12k to ~3.7k characters (~70% reduction)\n  12 - Removed duplicated pseudocode, flowcharts, and examples that already exist in reference files\n  13 - Cleaner skill structure saves context window for actual image generation work",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c6767119d3b11ae7cb3ef39128d947f87faa0e5c3fe58db1be2c96718ba6bbc2"
+}

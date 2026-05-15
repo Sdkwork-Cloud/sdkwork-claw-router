@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/whisper-transcribe@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whisper_transcribe",
+  "skill": {
+    "id": 12116,
+    "skillKey": "clawhub-whisper-transcribe",
+    "name": "Whisper Transcribe"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whisper-transcribe",
+    "url": "https://clawhub.ai/skills/whisper-transcribe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whisper-transcribe-6ac29c790db3dee5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transcribe audio files to text using OpenAI Whisper. Supports speech-to-text with auto language detection, multiple output formats (txt, srt, vtt, json), batch processing, and model selection (tiny to large). Use when transcribing audio re."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "josunlp",
+      "userId": "s17epfp2mj1k4nhrvwwj5q4rfh84593k",
+      "displayName": "Jonas Pfalzgraf",
+      "image": "https://avatars.githubusercontent.com/u/20913954?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1489,
+      "installsAllTime": 12,
+      "installsCurrent": 9,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770651156120,
+      "changelog": "Initial release: batch processing, auto language detection, multiple formats, model selection",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3c500c52dd15b995f6f60e8097bd44d1d2b84df1e50b20d83dbe96e348404b4d"
+}

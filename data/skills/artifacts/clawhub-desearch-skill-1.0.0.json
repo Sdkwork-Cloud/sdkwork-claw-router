@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/desearch-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.desearch_skill",
+  "skill": {
+    "id": 68649,
+    "skillKey": "clawhub-desearch-skill",
+    "name": "desearch-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "desearch-skill",
+    "url": "https://clawhub.ai/skills/desearch-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/desearch-skill-b305b2401583fb21.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "调用Zeelin Deep Research API进行深度研究任务。完全异步处理：提交任务后立即返回，后台进程自动确认大纲并定时检查任务状态，任务完成后自动保存md文件。自动配置定时通知（每2分钟检查），任务完成后主动通知用户。使用前必须先询问用户思考模式和搜索范围。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "angelandpeiqi",
+      "userId": "s179vdd07p3h1e24bbjabm1nz583ggdb",
+      "displayName": "angelandpeiqi",
+      "image": "https://avatars.githubusercontent.com/u/50618387?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 498,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772769337992,
+      "changelog": "zeelin-deep-research skill v1.0.0 - Initial Release\n\n- Asynchronous deep research tasks using Zeelin Deep Research API.\n- Tasks are submitted and processed in the background; immediate response on submission.\n- Automatic outline confirmation and periodic (every 30–60 seconds) status checks.\n- Results automatically saved as markdown files; users receive proactive completion notifications.\n- Before starting any research, the skill prompts users for required thinking mode, search range, and research topic.\n- Easy API key setup via CLI or config file.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:17fd86b7ff1971cabc0cba421f894ac026ce0017de7402225df652a98a8821ba"
+}

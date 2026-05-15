@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58701,
+  "uuid": "skill-clawhub-diagram-generator",
+  "skillKey": "clawhub-diagram-generator",
+  "name": "diagram-generator",
+  "summary": "生成和编辑各种类型的图表（drawio、mermaid、excalidraw）。支持流程图、时序图、类图、ER图、思维导图、架构图、网络拓扑图等常见图表类型。能够根据自然语言描述创建新图表，也能读取并修改已有的 drawio/mermaid/excalidraw 文件。使用独立的 MCP server (mcp-diagram-generator) 生成图表文件，减少 token 消耗并保证输出一致性。支持自动配置管理，默认输出路径为项目目录下的 diagrams/{for.",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.diagram_generator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Matthewyin",
+      "features": [
+        "生成和编辑各种类型的图表（drawio、mermaid、excalidraw）。支持流程图、时序图、类图、ER图、思维导图、架构图、网络拓扑图等常见图表类型。能够根据自然语言描述创建新图表，."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/diagram-generator@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26054345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "diagram-generator",
+      "url": "https://clawhub.ai/skills/diagram-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "diagram-generator",
+    "url": "https://clawhub.ai/skills/diagram-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/diagram-generator-e9f39406a24e8f84.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/diagram-generator@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-diagram-generator-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1661116dd78e18abcf8a135c675da24e7f57d4589b50c6771ef6f148e932da84",
+      "artifactSizeBytes": 2521
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T09:28:41.321Z"
+}

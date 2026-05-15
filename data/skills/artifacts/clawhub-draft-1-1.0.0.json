@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/draft-1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.draft_1",
+  "skill": {
+    "id": 33209,
+    "skillKey": "clawhub-draft-1",
+    "name": "Draft 1"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "draft-1",
+    "url": "https://clawhub.ai/skills/draft-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/draft-1-af72250d489ae165.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Professional first-draft generator. Trigger whenever the user needs to write anything from scratch: emails, reports, articles, proposals, memos, cover letter..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tigertamvip",
+      "userId": "s171vwmtm81hafva67c196sr5n83hhtb",
+      "displayName": "tigertamvip",
+      "image": "https://avatars.githubusercontent.com/u/61303958?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 241,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774540987260,
+      "changelog": "Initial release of the draft skill — professional first-draft generator.\n\n- Generates complete first drafts for any document type (emails, reports, articles, proposals, memos, cover letters, blog posts, scripts, READMEs, pitch decks, social posts, and more) from any user input, including rough notes.\n- Automatically classifies request type and extracts key requirements (purpose, audience, tone, length, constraints).\n- Enforces structure, tone, and clarity rules tailored to each document type.\n- Delivers a full draft plus three targeted refinement options (tone, length, or content adjustments).\n- Includes built-in quality checklist to ensure drafts are complete, focused, and usable.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:676bc5570e40e808e5d14e61ea4472b339845fafa50c93fa294ba2d773554970"
+}

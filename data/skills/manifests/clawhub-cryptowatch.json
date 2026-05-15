@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60597,
+  "uuid": "skill-clawhub-cryptowatch",
+  "skillKey": "clawhub-cryptowatch",
+  "name": "Cryptowatch",
+  "summary": "₿ CryptoWatch - 实时监控加密货币价格，价格突破自动预警",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cryptowatch",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Haha Tan",
+      "features": [
+        "₿ CryptoWatch",
+        "实时监控加密货币价格，价格突破自动预警"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cryptowatch@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18513327?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cryptowatch",
+      "url": "https://clawhub.ai/skills/cryptowatch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cryptowatch",
+    "url": "https://clawhub.ai/skills/cryptowatch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cryptowatch-3519a09e4cdfe914.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cryptowatch@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-cryptowatch-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d44c68368858873c5ccdbb084caf8b94c83a3d42761b2ec8a56d7347ab8ac4ee",
+      "artifactSizeBytes": 1807
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T03:28:16.193Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62759,
+  "uuid": "skill-clawhub-ppt-skill",
+  "skillKey": "clawhub-ppt-skill",
+  "name": "ppt-skill2",
+  "summary": "触发关键词：演示、PPT、幻灯片、slides、presentation、keynote、deck、汇报、展示; 使用场景：用户需要生成演示文稿、汇报材料或教学幻灯片。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ppt_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cao-yuu",
+      "features": [
+        "触发关键词：演示、PPT、幻灯片、slides、presentation、keynote、deck、汇报、展示",
+        "使用场景：用户需要生成演示文稿、汇报材料或教学幻灯片。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ppt-skill@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/55349169?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ppt-skill",
+      "url": "https://clawhub.ai/skills/ppt-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ppt-skill",
+    "url": "https://clawhub.ai/skills/ppt-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ppt-skill-2850ca69d4d3e2af.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ppt-skill@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-ppt-skill-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1af0963f7eec63fd64c7d531c1a3a74574223b195d7cf8627ee704fc1f1ccbdf",
+      "artifactSizeBytes": 2037
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T09:29:54.651Z"
+}

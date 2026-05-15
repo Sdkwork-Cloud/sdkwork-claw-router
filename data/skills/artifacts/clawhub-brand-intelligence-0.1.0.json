@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brand-intelligence@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brand_intelligence",
+  "skill": {
+    "id": 32655,
+    "skillKey": "clawhub-brand-intelligence",
+    "name": "Brand Intelligence"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brand-intelligence",
+    "url": "https://clawhub.ai/skills/brand-intelligence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brand-intelligence-1f2e706c91df469b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search, compare, and analyze 5,600+ companies with AI visibility scores, knowledge graphs, and competitive intelligence across 30 industry verticals."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sigaihealth",
+      "userId": "s179hv9vy3n20dt0k5py6rky3h84xjg2",
+      "displayName": "sigai",
+      "image": "https://avatars.githubusercontent.com/u/49531722?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1776233387983,
+      "changelog": "- Initial release of the Brand Intelligence skill.\n- Search, compare, and analyze over 5,600 companies across 30 industry verticals.\n- Access AI-driven visibility scores, knowledge graphs, and competitive intelligence.\n- Includes tools for brand search, detailed and brief profiles, structured comparisons, alternative discovery, landscape overviews, and capability-based search.\n- Powered by geo.sig.ai.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ed2d7a75c49a33858d4e28ad99207ba4953cbbf49bd53f2a000e8f1a37f2230b"
+}

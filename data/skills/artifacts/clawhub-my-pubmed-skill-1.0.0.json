@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/my-pubmed-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_pubmed_skill",
+  "skill": {
+    "id": 62061,
+    "skillKey": "clawhub-my-pubmed-skill",
+    "name": "My PubMed Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-pubmed-skill",
+    "url": "https://clawhub.ai/skills/my-pubmed-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-pubmed-skill-74aa76d54f444ba2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "简易PubMed搜索技能。使用web搜索和API调用检索PubMed文献。当用户要求\"搜索PubMed文献\"、\"查找医学论文\"、\"医学文献检索\"时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hollyya",
+      "userId": "s179vqh375ttntbve3fcfvrxps845pbn",
+      "displayName": "HollyYa",
+      "image": "https://avatars.githubusercontent.com/u/108674565?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775548211931,
+      "changelog": "- Initial release of My PubMed Search Skill.\n- Enables PubMed literature search via web scraping and NCBI E-Utilities API.\n- Supports filtering by time range, article type, language, and full-text availability.\n- Allows export in multiple citation styles: APA, MLA, IEEE, GB/T 7714, BibTeX.\n- Provides formatted outputs and configurable search parameters.\n- Includes PowerShell scripts and template files for streamlined use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d6b0195f4dad600e85883ed3bc7a4f576a1602ba1403c27476096dad4971e0ab"
+}

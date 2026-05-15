@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57237,
+  "uuid": "skill-clawhub-request-random-jokes",
+  "skillKey": "clawhub-request-random-jokes",
+  "name": "请求随机笑话",
+  "summary": "Get random fun content (joke, funny story/duanzi, poisonous chicken soup/dujitang) from public APIs. Use when the user asks you to tell a joke, share a funny...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.request_random_jokes",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aolinlu",
+      "features": [
+        "Get random fun content (joke, funny story/duanzi, poisonous chicken soup/dujitang) from public.",
+        "Use when the user asks you to tell a joke, share a funny..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/request-random-jokes@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/53511336?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "request-random-jokes",
+      "url": "https://clawhub.ai/skills/request-random-jokes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "request-random-jokes",
+    "url": "https://clawhub.ai/skills/request-random-jokes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/request-random-jokes-bf84a0d5e769808a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/request-random-jokes@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-request-random-jokes-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:125b4dc3b3d076a02b81a2cd73f9c80b9b454fc0f327eeb65be8e8527636d1d1",
+      "artifactSizeBytes": 2211
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T06:56:19.875Z"
+}

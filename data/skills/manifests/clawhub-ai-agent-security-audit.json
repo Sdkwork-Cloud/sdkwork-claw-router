@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33119,
+  "uuid": "skill-clawhub-ai-agent-security-audit",
+  "skillKey": "clawhub-ai-agent-security-audit",
+  "name": "Ai Agent Security Audit",
+  "summary": "Performs a comprehensive security audit of AI agents, detecting vulnerabilities, assessing risks, and providing prioritized remediation and compliance reports.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_agent_security_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "engsathiago",
+      "features": [
+        "Performs a comprehensive security audit of AI agents, detecting vulnerabilities, assessing risk."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-agent-security-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40508117?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-agent-security-audit",
+      "url": "https://clawhub.ai/skills/ai-agent-security-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-agent-security-audit",
+    "url": "https://clawhub.ai/skills/ai-agent-security-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-agent-security-audit-1745fa0be0ed14ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-agent-security-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-agent-security-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:24dafa85754ae986eea4102b845c8b9ef7c599b2e5304cdb32abc1c869c5c4fd",
+      "artifactSizeBytes": 2571
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T16:33:28.344Z"
+}

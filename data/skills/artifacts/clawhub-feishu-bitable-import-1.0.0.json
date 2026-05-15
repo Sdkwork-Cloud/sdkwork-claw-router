@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-bitable-import@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_bitable_import",
+  "skill": {
+    "id": 62973,
+    "skillKey": "clawhub-feishu-bitable-import",
+    "name": "Feishu Bitable Import"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-bitable-import",
+    "url": "https://clawhub.ai/skills/feishu-bitable-import",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-bitable-import-62fac6590ba0b6b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "批量导入本地CSV/Excel/JSON数据至飞书多维表格，支持智能字段推断及增量、全量、仅新增三种同步模式。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guanlansss",
+      "userId": "s1795aheexd35x6jx84ffxrjcs83jan3",
+      "displayName": "guanlansss",
+      "image": "https://avatars.githubusercontent.com/u/173683696?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775051666874,
+      "changelog": "feishu-bitable-import 1.0.0 初始发布\n\n- 支持从本地 CSV、Excel、JSON 批量导入数据到飞书多维表格\n- 自动智能推断字段类型，准确率高于 95%\n- 三种同步模式：增量更新、全量覆盖、仅新增，可按需选择\n- 支持一键创建新表格及自动字段生成\n- 适配企业级需求，内置错误处理、限流重试与详细报告\n- 适用于数据中台同步、业务报表自动化、团队数据协作等场景",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bbf5fa41757cddc5add4b2853a61be5d759f1ec2e81f654e9a8db0446b59d4b5"
+}

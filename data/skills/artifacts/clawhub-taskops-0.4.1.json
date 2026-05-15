@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/taskops@0.4.1",
+  "version": "0.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taskops",
+  "skill": {
+    "id": 49124,
+    "skillKey": "clawhub-taskops",
+    "name": "TaskOps"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taskops",
+    "url": "https://clawhub.ai/skills/taskops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taskops-65c07cee2860fb85.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage TaskOps md-first projects built around versioned task groups, explicit snapshots, and a separate run graph. Use when you need to inspect or author the..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jimmylegendary",
+      "userId": "s175t2e2n8hr9v2jphatfs57ah83qsr1",
+      "displayName": "SEUNGHO LEE",
+      "image": "https://avatars.githubusercontent.com/u/11837072?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 86,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.4.1",
+      "createdAt": 1778186350743,
+      "changelog": "Patch release after v0.4.0: polish npm package README and metadata; TaskOps closure/delegation model unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:67873c29a806b4fed0ee2b61b0f68da553d703372470e6e66376cdb7426cbd9a"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31476,
+  "uuid": "skill-clawhub-hk-transit-eta",
+  "skillKey": "clawhub-hk-transit-eta",
+  "name": "HK Transit ETA",
+  "summary": "Query Hong Kong bus ETA/stop data and MTR heavy rail ETA from natural-language transport questions using official KMB/LWB, Citybus, and MTR open-data endpoin...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hk_transit_eta",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jimpang8",
+      "features": [
+        "Query Hong Kong bus ETA/stop data and MTR heavy rail ETA from natural-language transport questi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hk-transit-eta@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27860553?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hk-transit-eta",
+      "url": "https://clawhub.ai/skills/hk-transit-eta"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hk-transit-eta",
+    "url": "https://clawhub.ai/skills/hk-transit-eta",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hk-transit-eta-bc2cab333ba0c5de.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hk-transit-eta@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-hk-transit-eta-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:15b498dfb7fc63561d0c86767aea3e8c62ccbded8addc8874cddec70fde89fd2",
+      "artifactSizeBytes": 1932
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T03:34:15.980Z"
+}

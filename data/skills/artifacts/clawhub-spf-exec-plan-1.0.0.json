@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/spf-exec-plan@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spf_exec_plan",
+  "skill": {
+    "id": 25924,
+    "skillKey": "clawhub-spf-exec-plan",
+    "name": "SPF Exec Plan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spf-exec-plan",
+    "url": "https://clawhub.ai/skills/spf-exec-plan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spf-exec-plan-e279c65f536463d9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when you have a written implementation plan to execute in a separate session with review checkpoints"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mok888",
+      "userId": "publishers:mok888",
+      "displayName": "mok888",
+      "image": "https://avatars.githubusercontent.com/u/82868581?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 368,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772781102064,
+      "changelog": "Initial release - Batch execution with checkpoints, parallel protocol, context hygiene",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e6c4bebd68937680ae3b27f62b801a4cc5d4abd779e05628b789198625edf1bd"
+}

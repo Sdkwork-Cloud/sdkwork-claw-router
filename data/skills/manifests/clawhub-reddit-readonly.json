@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8377,
+  "uuid": "skill-clawhub-reddit-readonly",
+  "skillKey": "clawhub-reddit-readonly",
+  "name": "Reddit (read only - no auth)",
+  "summary": "Browse and search Reddit in read-only mode using public JSON endpoints. Use when the user asks to browse subreddits, search for posts by topic, inspect comment threads, or build a shortlist of links to review and reply to manually.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reddit_readonly",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "buksan1950",
+      "features": [
+        "Browse and search Reddit in read-only mode using public JSON endpoints",
+        "Use when the user asks to browse subreddits, search for posts by topic, inspect comment threads."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reddit-readonly@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48475739?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reddit-readonly",
+      "url": "https://clawhub.ai/skills/reddit-readonly"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reddit-readonly",
+    "url": "https://clawhub.ai/skills/reddit-readonly",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reddit-readonly-9096a4565aeaf7fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reddit-readonly@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-reddit-readonly-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b0e1af3acc97273cd85589763e406709e6f6519543b1b80889158156f66717cc",
+      "artifactSizeBytes": 2421
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T16:41:42.449Z"
+}

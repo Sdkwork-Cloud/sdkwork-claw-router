@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67989,
+  "uuid": "skill-clawhub-academic-paper-analysis",
+  "skillKey": "clawhub-academic-paper-analysis",
+  "name": "Academic Paper Analysis",
+  "summary": "对学术论文（流行病学、生物统计学方向）进行深度结构化解析。当用户说\"分析这篇论文\"、\"对这篇文献进行分析\"、\"论文分析\"或类似话语时，自动激活此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.academic_paper_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chircken891",
+      "features": [
+        "对学术论文（流行病学、生物统计学方向）进行深度结构化解析。当用户说\"分析这篇论文\"、\"对这篇文献进行分析\"、\"论文分析\"或类似话语时，自动激活此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/academic-paper-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/192669311?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "academic-paper-analysis",
+      "url": "https://clawhub.ai/skills/academic-paper-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "academic-paper-analysis",
+    "url": "https://clawhub.ai/skills/academic-paper-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/academic-paper-analysis-83b3b39087e23dbe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/academic-paper-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-academic-paper-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fda43f8645d2d8f68516ed198668323fb24748f6060657dffa9cb3f6bc597d49",
+      "artifactSizeBytes": 2520
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T14:26:46.651Z"
+}

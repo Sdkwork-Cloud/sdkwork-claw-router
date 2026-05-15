@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/swap-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swap_api",
+  "skill": {
+    "id": 29776,
+    "skillKey": "clawhub-swap-api",
+    "name": "KYC.RIP Swap API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swap-api",
+    "url": "https://clawhub.ai/skills/swap-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swap-api-89f42c6d915b5593.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Exchange cryptocurrencies via kyc.rip aggregator API. Use when swapping, converting, or exchanging crypto assets. Supports 700+ coins, no KYC, best rates acr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xbtoshi",
+      "userId": "publishers:xbtoshi",
+      "displayName": "XBToshi",
+      "image": "https://avatars.githubusercontent.com/u/256925101?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 295,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773733221095,
+      "changelog": "Initial release of kycrip-swap skill for cryptocurrency exchange via kyc.rip aggregator API.\n\n- Swap, convert, or exchange 700+ supported cryptocurrencies with no KYC required.\n- Aggregates best rates across 10+ providers, including privacy-focused options.\n- Provides endpoints to estimate swaps, create trades, check trade status, list supported coins, and validate wallet addresses.\n- Supports advanced features such as privacy bridges (Ghost Protocol) and detailed filtering by KYC and logging policy levels.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:48d650364bcc90301bd01ea08b9135d4176f975537a4e27ebba51f6c23a4ba07"
+}

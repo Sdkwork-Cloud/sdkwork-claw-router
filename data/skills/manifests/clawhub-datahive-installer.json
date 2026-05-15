@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24378,
+  "uuid": "skill-clawhub-datahive-installer",
+  "skillKey": "clawhub-datahive-installer",
+  "name": "DataHive Installer",
+  "summary": "Automates DataHive sign-in using a magic link workflow: requests the link, retrieves it from Gmail via gog, and opens it in a Chrome DevTools tab.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.datahive_installer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Maxim Tuleyko",
+      "features": [
+        "Automates DataHive sign-in using a magic link workflow: requests the link, retrieves it from Gm."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/datahive-installer@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15267170?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "datahive-installer",
+      "url": "https://clawhub.ai/skills/datahive-installer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "datahive-installer",
+    "url": "https://clawhub.ai/skills/datahive-installer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/datahive-installer-8076d9593e4708c8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/datahive-installer@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-datahive-installer-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:68c0df6c6f4acd93bc9a290f3d495c94f45eb88ad448af01f8baac2127f31e6e",
+      "artifactSizeBytes": 2345
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T08:29:13.693Z"
+}

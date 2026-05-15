@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-free-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_free_generator",
+  "skill": {
+    "id": 55503,
+    "skillKey": "clawhub-free-free-generator",
+    "name": "Free Free Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-free-generator",
+    "url": "https://clawhub.ai/skills/free-free-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-free-generator-000602c902720bd8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — generate a 30-second video from my product photos at no cost — and get rea..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776406213823,
+      "changelog": "- Initial release of Free Video Generator — generate 30-second videos from text or uploaded product photos for free.\n- Supports MP4, MOV, JPG, PNG uploads up to 200MB with cloud-based rendering and automatic session handling.\n- No registration required: generates a free token for 100 credits valid 7 days on first use.\n- Simple, prompt-based workflow — describe your video, upload files, and download the finished result in 1–2 minutes.\n- Includes built-in error handling for token, credits, file size/format, and export issues.\n- Designed for content creators who want ready-to-share videos without learning editing software or paying for tools.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1b22064e548d50fc092a36830803f5c6110ea343e6bbcd216f2d71a355e1bff7"
+}

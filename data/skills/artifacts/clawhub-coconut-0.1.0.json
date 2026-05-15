@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/coconut@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coconut",
+  "skill": {
+    "id": 56445,
+    "skillKey": "clawhub-coconut",
+    "name": "coconut"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coconut",
+    "url": "https://clawhub.ai/skills/coconut",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coconut-23ebce72c4424e81.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Information guide for Coconut 椰子. Learn about products, nutrition, tropical regions, and uses."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775286303096,
+      "changelog": "- Initial release of the coconut skill.\n- Provides a comprehensive guide on coconut products, nutrition, tropical regions, and uses.\n- Covers overview, varieties, where to find coconuts, expert tips, and the latest news.\n- Supports web search for up-to-date, expert-sourced information.\n- Includes example queries for easy getting started.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c406311422ba9c3a44fe1acfa918753586aeb1dc400478bfa56752384024cb6f"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46116,
+  "uuid": "skill-clawhub-tonight-hotel",
+  "skillKey": "clawhub-tonight-hotel",
+  "name": "Tonight Hotel",
+  "summary": "Need a room right now? Find available hotels tonight at the lowest prices. Optimized for immediate check-in with real-time availability. Also supports: fligh...",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tonight_hotel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dingtom336-gif",
+      "features": [
+        "Need a room right now? Find available hotels tonight at the lowest prices",
+        "Optimized for immediate check-in with real-time availability",
+        "Also supports: fligh..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tonight-hotel@3.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256118512?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tonight-hotel",
+      "url": "https://clawhub.ai/skills/tonight-hotel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tonight-hotel",
+    "url": "https://clawhub.ai/skills/tonight-hotel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tonight-hotel-9653f34b7a985c20.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tonight-hotel@3.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tonight-hotel-3.2.0.json",
+      "version": "3.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:67e8892714a46e9a59cad3eaf30952b6e44b357340b5ad750dbc98c67bf3e364",
+      "artifactSizeBytes": 2441
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T09:12:47.749Z"
+}

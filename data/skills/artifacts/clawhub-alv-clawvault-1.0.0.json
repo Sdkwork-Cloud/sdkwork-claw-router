@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alv-clawvault@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alv_clawvault",
+  "skill": {
+    "id": 41717,
+    "skillKey": "clawhub-alv-clawvault",
+    "name": "clawvault"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alv-clawvault",
+    "url": "https://clawhub.ai/skills/alv-clawvault",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alv-clawvault-7030298a7e5b328c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent memory system with graph-aware context profiles, checkpoint/recover, semantic search, and structured markdown storage for managing session knowledge lo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alvisdunlop",
+      "userId": "s17fq465rgqaeb4mjcdf3p9dkh84s6zy",
+      "displayName": "AlvisDunlop",
+      "image": "https://avatars.githubusercontent.com/u/255881479?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776824399660,
+      "changelog": "- Initial release of ClawVault skill for OpenClaw agents.\n- Provides structured agent memory with features like memory graph, context profiles, checkpoint/recover, semantic search, and observational memory.\n- Includes CLI tool and optional OpenClaw hook pack for session context management and graph-aware retrieval.\n- Ensures all data stays local by default, with optional cloud LLM API use for compression tasks.\n- Offers detailed installation, setup, and security guidance for safe and auditable use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:da022f6bc5a5c2c51fce74e4b685592d4ca1cd3c794651f2388f8a51621f53d2"
+}

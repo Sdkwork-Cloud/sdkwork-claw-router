@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/metadata-naming@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.metadata_naming",
+  "skill": {
+    "id": 29530,
+    "skillKey": "clawhub-metadata-naming",
+    "name": "Metadata Naming"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "metadata-naming",
+    "url": "https://clawhub.ai/skills/metadata-naming",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/metadata-naming-4821890084081c9c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Define, apply, or review a reusable metadata-based filename standard for files, folders, inventories, archives, and generated catalogs. Use when the user wan..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luw2007",
+      "userId": "s179d7fsn1et1b9mz7ef9cez8583zwf0",
+      "displayName": "luw2007",
+      "image": "https://avatars.githubusercontent.com/u/1415541?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 291,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773292800000,
+      "changelog": "Initial publish",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c100bb77af364823ac0722030aff1f142732c1a327172b33721ca5e889973d49"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentic-codex-dev@0.3.3",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentic_codex_dev",
+  "skill": {
+    "id": 25528,
+    "skillKey": "clawhub-agentic-codex-dev",
+    "name": "Agentic Codex Dev Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentic-codex-dev",
+    "url": "https://clawhub.ai/skills/agentic-codex-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentic-codex-dev-ade6c8af5b256c1c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when planning, implementing, reviewing, coordinating, or publishing agentic software development work with Codex, GitHub, and OpenClaw/ClawHub. Provides..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zack-dev-cm",
+      "userId": "s170hyv1nagjajq3y5c6kpzx3s84jp29",
+      "displayName": "Zakhar Pashkin",
+      "image": "https://avatars.githubusercontent.com/u/112114097?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 276,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "0.3.3",
+      "createdAt": 1777516543636,
+      "changelog": "Reviewed source and refreshed public ClawHub skill surface.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:68b0d0b53088697118ace339736bb411a440c1bbd868126f40b6a1239863ecaf"
+}

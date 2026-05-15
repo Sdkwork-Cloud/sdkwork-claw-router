@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bilibili-anime@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilibili_anime",
+  "skill": {
+    "id": 58882,
+    "skillKey": "clawhub-bilibili-anime",
+    "name": "B站热门新番推荐"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilibili-anime",
+    "url": "https://clawhub.ai/skills/bilibili-anime",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilibili-anime-bbf45c6d7a38106c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动抓取 Bilibili 最近一周最热门的当季新番，按类型分类，展示主要内容简介和更新时间。 Use when user wants to know trending seasonal anime on Bilibili, current hot anime, weekly anime rankings, or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "elijah-pi",
+      "userId": "s175k19v30amqr83me3cp70hfx83ndeg",
+      "displayName": "Elijah-Pi",
+      "image": "https://avatars.githubusercontent.com/u/77263364?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 276,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774235711998,
+      "changelog": "- Initial release of bili-anime skill.\n- Automatically fetches Bilibili's hottest current-season anime from the past week.\n- Groups recommendations by genre, with concise plot summaries and update schedules.\n- Designed for users seeking trending, new, or top-ranked seasonal anime on Bilibili.\n- Uses official Bilibili and trusted anime sources; highlights search strategy and output format.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:537d6f1155cae927ee9807505ba7f0d9fae5d3c001ea1fe7006b5e0e3cbf7c04"
+}

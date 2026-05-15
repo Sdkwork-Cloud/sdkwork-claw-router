@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29910,
+  "uuid": "skill-clawhub-peng-ai-humanizer",
+  "skillKey": "clawhub-peng-ai-humanizer",
+  "name": "ai-humanizer",
+  "summary": "Humanize AI-generated text by detecting and removing patterns typical of LLM output. Rewrites text to sound natural, specific, and human. Uses 24 pattern det...",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.peng_ai_humanizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "penglovemeng",
+      "features": [
+        "Humanize AI-generated text by detecting and removing patterns typical of LLM output",
+        "Rewrites text to sound natural, specific, and human",
+        "Uses 24 pattern det..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/peng-ai-humanizer@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10802924?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "peng-ai-humanizer",
+      "url": "https://clawhub.ai/skills/peng-ai-humanizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "peng-ai-humanizer",
+    "url": "https://clawhub.ai/skills/peng-ai-humanizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/peng-ai-humanizer-a2df4daf25f1e7c8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/peng-ai-humanizer@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-peng-ai-humanizer-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c509328797cfdb9f3169bd9cd06b71486a090d273cf2d114929c4a457f68d7d",
+      "artifactSizeBytes": 1891
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T02:08:51.326Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bot-roundtable@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bot_roundtable",
+  "skill": {
+    "id": 46146,
+    "skillKey": "clawhub-bot-roundtable",
+    "name": "Bot Roundtable"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bot-roundtable",
+    "url": "https://clawhub.ai/skills/bot-roundtable",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bot-roundtable-bc2a41fd134a37a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enables multiple Bots in a Feishu group to spawn expert personas and hold realistic multi-Bot discussions automatically or on demand."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linbo405",
+      "userId": "s17404ahym3v74cyh9f41zw9s183h5ga",
+      "displayName": "linbo405",
+      "image": "https://avatars.githubusercontent.com/u/259021343?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776071531929,
+      "changelog": "- Initial release of Bot Roundtable Discussion skill.\n- Enables multiple bots to simulate a group discussion in Feishu chats, appearing as different expert perspectives.\n- Supports automatic and manual discussion triggers with customizable bots for flexible analysis and debate.\n- Includes configuration file for managing multiple bot credentials.\n- Requires Python 3.8+ and Feishu Open Platform apps.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:61164fd1ab7b2c47c2c0067cfd8e2ac8b746100a87a0f2e76478a70c399fec3a"
+}

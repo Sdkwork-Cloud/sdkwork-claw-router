@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40253,
+  "uuid": "skill-clawhub-clankerhive",
+  "skillKey": "clawhub-clankerhive",
+  "name": "ClankerHive",
+  "summary": "Shared SQLite-backed context store for multi-session agent coordination. Use when: (1) checking if work was already done recently (email checked, briefing se...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clankerhive",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Paul Frederiksen",
+      "features": [
+        "Shared SQLite-backed context store for multi-session agent coordination",
+        "Use when: (1) checking if work was already done recently (email checked, briefing se..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clankerhive@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/908172?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clankerhive",
+      "url": "https://clawhub.ai/skills/clankerhive"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clankerhive",
+    "url": "https://clawhub.ai/skills/clankerhive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clankerhive-a8e1fe186c6c3a38.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clankerhive@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-clankerhive-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:24d54a547c1b452859181922b75ef0da7a2f934a64c67bd6e23d774414f261ff",
+      "artifactSizeBytes": 1899
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T23:47:49.554Z"
+}

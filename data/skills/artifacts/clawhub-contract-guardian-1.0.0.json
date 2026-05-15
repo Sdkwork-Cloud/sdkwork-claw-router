@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/contract-guardian@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.contract_guardian",
+  "skill": {
+    "id": 64297,
+    "skillKey": "clawhub-contract-guardian",
+    "name": "合同卫士 / Contract Guardian"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "contract-guardian",
+    "url": "https://clawhub.ai/skills/contract-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/contract-guardian-e75fc516297e8954.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "合同卫士 — AI合同审查助手，识别风险条款、提取关键信息、追踪到期日"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanjing5024064",
+      "userId": "s17c9xtrdqnyqr9gcp876pa9fh83k36z",
+      "displayName": "Jun Zhang",
+      "image": "https://avatars.githubusercontent.com/u/11209115?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 280,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773922503154,
+      "changelog": "Description (中文)\t\nAI 合同审查助手，自动识别风险条款、提取关键信息（金额、日期、主体）、追踪合同到期日，降低法律风险。\nDescription (EN)\t\nAI contract review assistant that automatically identifies risky clauses, extracts key information (amounts, dates, parties), and tracks contract expiration dates to reduce legal risk.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3e1d4a1a3e695a2fa9e2b93d3051097d03f971b0c45f801058eb66478bbf5a15"
+}

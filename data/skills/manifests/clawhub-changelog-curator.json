@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59653,
+  "uuid": "skill-clawhub-changelog-curator",
+  "skillKey": "clawhub-changelog-curator",
+  "name": "Changelog Curator",
+  "summary": "从变更记录、提交摘要或发布说明中整理对外 changelog，并区分用户价值与内部改动。；use for changelog, release-notes, docs workflows；do not use for 捏造未发布功能, 替代正式合规审批.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.changelog_curator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "从变更记录、提交摘要或发布说明中整理对外 changelog，并区分用户价值与内部改动。；use for changelog, release-notes, docs workflows；d."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/changelog-curator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "changelog-curator",
+      "url": "https://clawhub.ai/skills/changelog-curator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "changelog-curator",
+    "url": "https://clawhub.ai/skills/changelog-curator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/changelog-curator-cc9bc21465d558f2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/changelog-curator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-changelog-curator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f6956d4e5e9540a076cf37bef0f544c5d566043453a8366f6f9eb13c675a9f59",
+      "artifactSizeBytes": 2569
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T01:37:30.912Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64353,
+  "uuid": "skill-clawhub-openclaw-creator-setup",
+  "skillKey": "clawhub-openclaw-creator-setup",
+  "name": "Openclaw Creator Setup",
+  "summary": "OpenClaw 内容创作者快速配置工具。帮助内容创作者检测环境、配置平台、管理工作流。 **当以下情况时使用此 Skill**： (1) 用户想要配置内容创作者环境 (2) 检查飞书授权和 Skills 安装状态 (3) 配置发布平台（微信、微博、抖音等） (4) 创建或管理工作流模板 (5) 用户提到\"内容创...",
+  "version": "3.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_creator_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rfdiosuao",
+      "features": [
+        "OpenClaw 内容创作者快速配置工具。帮助内容创作者检测环境、配置平台、管理工作流。 **当以下情况时使用此 Skill**： (1) 用户想要配置内容创作者环境 (2) 检查飞书授权和."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-creator-setup@3.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/190207982?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-creator-setup",
+      "url": "https://clawhub.ai/skills/openclaw-creator-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-creator-setup",
+    "url": "https://clawhub.ai/skills/openclaw-creator-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-creator-setup-92ce54ecda626feb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-creator-setup@3.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-creator-setup-3.0.1.json",
+      "version": "3.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7160aaa86d267305f6766314bf3b1e871e2fc35c47b0817369d9ddc6bfcdee55",
+      "artifactSizeBytes": 2210
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T08:47:37.602Z"
+}

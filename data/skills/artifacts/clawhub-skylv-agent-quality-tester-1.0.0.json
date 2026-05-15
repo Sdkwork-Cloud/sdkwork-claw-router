@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skylv-agent-quality-tester@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_agent_quality_tester",
+  "skill": {
+    "id": 47579,
+    "skillKey": "clawhub-skylv-agent-quality-tester",
+    "name": "Skylv Agent Quality Tester"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-agent-quality-tester",
+    "url": "https://clawhub.ai/skills/skylv-agent-quality-tester",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-agent-quality-tester-6ad8dd4cfd9388f9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Evaluates AI agents on accuracy, efficiency, safety, coherence, and adaptability, providing scores and actionable improvement suggestions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 102,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777673081468,
+      "changelog": "- Initial release of skylv-agent-evaluator.\n- Scores AI agents across 5 key dimensions: Accuracy, Efficiency, Safety, Coherence, and Adaptability.\n- Provides a detailed evaluation report with actionable improvement suggestions.\n- Supports use cases such as pre-release validation, regression testing, A/B comparison, and user-driven feedback loops.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c6c44b7be3dc86d76686c8b1a66232768c9c8811b3c280b50e02d5c9219c2311"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cb-multi-currency-pricing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cb_multi_currency_pricing",
+  "skill": {
+    "id": 43806,
+    "skillKey": "clawhub-cb-multi-currency-pricing",
+    "name": "Cb Multi Currency Pricing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cb-multi-currency-pricing",
+    "url": "https://clawhub.ai/skills/cb-multi-currency-pricing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cb-multi-currency-pricing-ee55139f83dba65f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Dynamic pricing strategies across currencies and markets for cross-border e-commerce"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776861171322,
+      "changelog": "Initial release of Multi-currency Pricing Strategist\n\n- Provides descriptive frameworks for dynamic, cross-border product pricing using PPP adjustments and reference exchange rates.\n- Covers competitive positioning, currency risk assessment (volatility, review frequency), and strategy frameworks (premium/competitive/balanced) for up to 10 major markets.\n- Accepts natural language or structured JSON input with base price, target markets, product category, and pricing focus.\n- Returns structured JSON outputs: multi-currency pricing, strategy rationale, risk management, competitor analysis, safety disclaimer, and input summary.\n- No code execution, data fetching, or API/network access; guidance only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:25d6bbd3139d6fab78d2ac712d9da6182d7ee1481f022dfa7030b3e8eeba8c98"
+}

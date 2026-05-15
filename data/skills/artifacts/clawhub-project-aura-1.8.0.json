@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/project-aura@1.8.0",
+  "version": "1.8.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.project_aura",
+  "skill": {
+    "id": 41027,
+    "skillKey": "clawhub-project-aura",
+    "name": "Project Aura"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "project-aura",
+    "url": "https://clawhub.ai/skills/project-aura",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/project-aura-977ee54f131a17f1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adds seven emotional personality modules and an adaptive RLHF system to AI companions for dynamic, personalized emotional interactions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bryanchen3777",
+      "userId": "s171r25s421e4p6fqjjn8ts3a983vg4a",
+      "displayName": "Chung Cheng Chen",
+      "image": "https://avatars.githubusercontent.com/u/245289247?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.8.0",
+      "createdAt": 1774810125219,
+      "changelog": "Project Aura 1.0.0 released!\n\n- Introduces a lightweight emotional behavior plugin for AI companions with 7 distinct personality modules.\n- Features a dynamic weighted random algorithm and reinforcement learning from human feedback (RLHF).\n- All learning and emotional adaptations are persisted locally in JSON, ensuring user privacy.\n- Includes a combo system for creating impactful two-part emotional interactions.\n- Requires only Python 3.8+ and standard library, with no external dependencies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:692bb7a06c776c3e93d2e17bb1db526de452d846ccce10c2a66b6d8260ee4a85"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tiny-builder@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tiny_builder",
+  "skill": {
+    "id": 21929,
+    "skillKey": "clawhub-tiny-builder",
+    "name": "Tiny Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tiny-builder",
+    "url": "https://clawhub.ai/skills/tiny-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tiny-builder-c13fb0bd7e35752c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Help kids (ages 5-8) build fun games, drawings, animations, or stories with easy choices, fast results, and colorful, touch-friendly HTML projects."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dylanfeltus",
+      "userId": "publishers:dylanfeltus",
+      "displayName": "Dylan Feltus",
+      "image": "https://avatars.githubusercontent.com/u/12265899?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 382,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773003823935,
+      "changelog": "chore: simplify public-facing docs and resolve publish policy consistency for ClawHub scanner; clarify gui.new-only networking and safe sandbox language",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:460a442140f532f73e5ad746e24fb9818301a2a0e0a6eaf1c8eb7512807375d5"
+}

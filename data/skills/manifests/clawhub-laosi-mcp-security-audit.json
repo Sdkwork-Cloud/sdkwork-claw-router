@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46192,
+  "uuid": "skill-clawhub-laosi-mcp-security-audit",
+  "skillKey": "clawhub-laosi-mcp-security-audit",
+  "name": "Mcp Security Audit",
+  "summary": "Performs comprehensive security audits on MCP servers including vulnerability scans, malware detection, compliance checks, and detailed remediation reports.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.laosi_mcp_security_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "534422530",
+      "features": [
+        "Performs comprehensive security audits on MCP servers including vulnerability scans, malware de."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/laosi-mcp-security-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82763531?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "laosi-mcp-security-audit",
+      "url": "https://clawhub.ai/skills/laosi-mcp-security-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "laosi-mcp-security-audit",
+    "url": "https://clawhub.ai/skills/laosi-mcp-security-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/laosi-mcp-security-audit-fd0bea14533a89f8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/laosi-mcp-security-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-laosi-mcp-security-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5babae6b13119f91c0aa3c0ecc101a5cb905a9f397eac79a1ad4c66a1626015c",
+      "artifactSizeBytes": 2180
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T00:43:10.346Z"
+}

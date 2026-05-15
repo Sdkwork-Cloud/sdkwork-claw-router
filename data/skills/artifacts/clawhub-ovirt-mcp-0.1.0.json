@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ovirt-mcp@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ovirt_mcp",
+  "skill": {
+    "id": 43714,
+    "skillKey": "clawhub-ovirt-mcp",
+    "name": "oVirt MCP Server"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ovirt-mcp",
+    "url": "https://clawhub.ai/skills/ovirt-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ovirt-mcp-ce01330d8b9f7857.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage oVirt/RHV virtualization infrastructure via MCP. Provides 186 tools for VMs, hosts, clusters, networks, storage, templates, snapshots, disks, events,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imjoey",
+      "userId": "s1774z4j0783znkvdx7yy5pvg983k823",
+      "displayName": "Joey",
+      "image": "https://avatars.githubusercontent.com/u/2542401?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774836677087,
+      "changelog": "Initial release: 186 tools for oVirt/RHV virtualization management",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4977422be9214cdf699df59d096192b7ce6cd3d32778491e28695f8a17640e34"
+}

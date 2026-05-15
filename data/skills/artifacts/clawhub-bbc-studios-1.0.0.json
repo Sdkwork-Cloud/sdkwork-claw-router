@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bbc-studios@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bbc_studios",
+  "skill": {
+    "id": 62201,
+    "skillKey": "clawhub-bbc-studios",
+    "name": "Bbc Studios"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bbc-studios",
+    "url": "https://clawhub.ai/skills/bbc-studios",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bbc-studios-397dd4773c0e22f0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "英国最大内容制作和发行公司，拥有Doctor Who、Planet Earth等全球知名IP，专注于内容制作和全球发行。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 87,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778087088710,
+      "changelog": "- 首次发布 BBC Studios 技能，系统性梳理了其历史、商业模式与核心数据。\n- 增加历史时间线，涵盖BBC成立、Doctor Who首播、业务合并等关键节点。\n- 总结全球发行、频道运营、内容授权等主要商业模式。\n- 护城河分析突出品牌信誉、内容标准及核心IP影响力。\n- 提供2024年最新收入、频道数量和纪录片库数据。\n- 补充有趣事实，丰富BBC在纪录片和文化领域的影响。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f6a4765937ac9f5d01e734ef7abe737ce3c0283953c06cb459e3aef7a5c0daa6"
+}

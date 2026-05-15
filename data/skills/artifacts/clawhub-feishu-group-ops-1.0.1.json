@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-group-ops@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_group_ops",
+  "skill": {
+    "id": 22764,
+    "skillKey": "clawhub-feishu-group-ops",
+    "name": "Feishu Group Ops"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-group-ops",
+    "url": "https://clawhub.ai/skills/feishu-group-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-group-ops-4f6dcc6f1a148f69.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Feishu (Lark) group chats using natural language. Use when the user wants to: add or remove group members, list groups or members, send a message to a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vinzeny",
+      "userId": "s17bvfs3q5c6kq5wh4qjck9qcs83m6a3",
+      "displayName": "vinzeny",
+      "image": "https://avatars.githubusercontent.com/u/30860965?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 451,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773156065993,
+      "changelog": "feishu-group-ops 1.0.1\n\n- SKILL.md rewritten for brevity and clarity in English\n- Usage instructions and examples made more concise\n- Command and billing tables added for quick reference\n- Retains all previous features and logic; no functional changes\n- No code or functionality changes—documentation only",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:334fb7b057e63cd853168a9c09a6d67ceda28e0c4fab3f1545fa22b9b1a86b60"
+}

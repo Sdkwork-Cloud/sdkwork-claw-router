@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40152,
+  "uuid": "skill-clawhub-macros-code-review",
+  "skillKey": "clawhub-macros-code-review",
+  "name": "Macros Code Review",
+  "summary": "Reviews Rust macro code for hygiene issues, fragment misuse, compile-time impact, and procedural macro patterns. Use when reviewing macro_rules! definitions,...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.macros_code_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kevin Anderson",
+      "features": [
+        "Reviews Rust macro code for hygiene issues, fragment misuse, compile-time impact, and procedura.",
+        "Use when reviewing macro_rules! definitions,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/macros-code-review@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17010022?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "macros-code-review",
+      "url": "https://clawhub.ai/skills/macros-code-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "macros-code-review",
+    "url": "https://clawhub.ai/skills/macros-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/macros-code-review-92b8ee6831bbe801.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/macros-code-review@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-macros-code-review-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:61e2798af30fe53be2ee23b0819735d3a8295b7421b970bb16eaaeac9530886a",
+      "artifactSizeBytes": 2450
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T04:15:47.807Z"
+}

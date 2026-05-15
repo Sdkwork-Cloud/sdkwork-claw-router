@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40491,
+  "uuid": "skill-clawhub-android-dev-agent",
+  "skillKey": "clawhub-android-dev-agent",
+  "name": "Android Dev Agent",
+  "summary": "Assist with AOSP builds, HAL analysis, Framework edits, ROM customization, and SDK/NDK issues using isolated environments and detailed reports.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.android_dev_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "happysurfingeveryday-art",
+      "features": [
+        "Assist with AOSP builds, HAL analysis, Framework edits, ROM customization, and SDK/NDK issues u."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/android-dev-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/228150380?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "android-dev-agent",
+      "url": "https://clawhub.ai/skills/android-dev-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "android-dev-agent",
+    "url": "https://clawhub.ai/skills/android-dev-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/android-dev-agent-e326e5f6b0f394f4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/android-dev-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-android-dev-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b7f8ec499734ba963db44d00ad4ed941fc57de54458b37049e39275da19b9e1b",
+      "artifactSizeBytes": 2275
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T07:00:34.251Z"
+}

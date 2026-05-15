@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70705,
+  "uuid": "skill-clawhub-tmtpost-daily",
+  "skillKey": "clawhub-tmtpost-daily",
+  "name": "Tmtpost Daily",
+  "summary": "钛媒体每日资讯聚合技能。用于获取钛媒体当天的最新新闻、快报和热门榜单，支持关键词搜索。当用户说\"钛媒日报\"、\"今日资讯\"、\"钛媒体搜索\"或需要查看/搜索科技行业动态时触发。",
+  "version": "2.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tmtpost_daily",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vivian",
+      "features": [
+        "钛媒体每日资讯聚合技能。用于获取钛媒体当天的最新新闻、快报和热门榜单，支持关键词搜索。当用户说\"钛媒日报\"、\"今日资讯\"、\"钛媒体搜索\"或需要查看/搜索科技行业动态时触发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tmtpost-daily@2.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6382684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tmtpost-daily",
+      "url": "https://clawhub.ai/skills/tmtpost-daily"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tmtpost-daily",
+    "url": "https://clawhub.ai/skills/tmtpost-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tmtpost-daily-15013b021c84816a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tmtpost-daily@2.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tmtpost-daily-2.3.0.json",
+      "version": "2.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7ea577bdb85d88f9ad618ad06743e80f272f6bd43c7d4767f0af8f55ca23bfb3",
+      "artifactSizeBytes": 2111
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T07:58:27.301Z"
+}

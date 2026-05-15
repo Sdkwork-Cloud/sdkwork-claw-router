@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24424,
+  "uuid": "skill-clawhub-feishu-auto-reply",
+  "skillKey": "clawhub-feishu-auto-reply",
+  "name": "Feishu Auto Reply",
+  "summary": "Feishu Auto Reply Bot - Automatic reply to Feishu messages based on rules",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_auto_reply",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chaohua Xu",
+      "features": [
+        "Feishu Auto Reply Bot",
+        "Automatic reply to Feishu messages based on rules"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-auto-reply@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41110785?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-auto-reply",
+      "url": "https://clawhub.ai/skills/feishu-auto-reply"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-auto-reply",
+    "url": "https://clawhub.ai/skills/feishu-auto-reply",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-auto-reply-7edf1c774e0bfec5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-auto-reply@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-auto-reply-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a28c01c05557f76ffa67519005cd44fe8a63e7d634e32fe3e8a3cee8cd7f982b",
+      "artifactSizeBytes": 2112
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T10:58:43.155Z"
+}

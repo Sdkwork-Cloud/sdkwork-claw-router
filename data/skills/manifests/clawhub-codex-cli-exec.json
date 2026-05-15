@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39852,
+  "uuid": "skill-clawhub-codex-cli-exec",
+  "skillKey": "clawhub-codex-cli-exec",
+  "name": "codex-cli-exec",
+  "summary": "Explain how Openclaw should use Codex CLI as a non-interactive coding engine. Use when Codex needs to document or answer questions about installing Codex CLI...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codex_cli_exec",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "minchoCoin",
+      "features": [
+        "Explain how Openclaw should use Codex CLI as a non-interactive coding engine",
+        "Use when Codex needs to document or answer questions about installing Codex CLI..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/codex-cli-exec@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62372650?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "codex-cli-exec",
+      "url": "https://clawhub.ai/skills/codex-cli-exec"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codex-cli-exec",
+    "url": "https://clawhub.ai/skills/codex-cli-exec",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codex-cli-exec-341345f52cecae7e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/codex-cli-exec@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-codex-cli-exec-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ce83b0e0c631db5e9a4f56a5a299b4663a301b383f8906d2e598186bcc4ce686",
+      "artifactSizeBytes": 2392
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T06:21:21.769Z"
+}

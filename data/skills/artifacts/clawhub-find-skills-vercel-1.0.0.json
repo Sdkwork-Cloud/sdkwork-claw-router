@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/find-skills-vercel@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_skills_vercel",
+  "skill": {
+    "id": 38044,
+    "skillKey": "clawhub-find-skills-vercel",
+    "name": "Find Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-skills-vercel",
+    "url": "https://clawhub.ai/skills/find-skills-vercel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-skills-vercel-fb3bcfbee0569f8a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"find a skill for X\", \"is there a skill that can...\", or express..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zachary2024",
+      "userId": "s17c7sk3xpv8nrmd693h6jhacs84hf61",
+      "displayName": "Zachary2024",
+      "image": "https://avatars.githubusercontent.com/u/150130997?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775734534868,
+      "changelog": "- Initial release of the find-skills skill.\n- Helps users discover and install agent skills based on their queries or needs.\n- Guides users to search, verify, and select skills from the open skills ecosystem.\n- Provides quick tips for skill discovery and quality assessment.\n- Offers step-by-step instructions for installing or creating skills if none are found.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c2057b63eb5e65a534e1924e1cecc78aa7bd8f2345f1f7b26c8ffd8bb56081b8"
+}

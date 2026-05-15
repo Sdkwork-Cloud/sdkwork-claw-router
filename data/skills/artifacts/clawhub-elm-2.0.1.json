@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/elm@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.elm",
+  "skill": {
+    "id": 20253,
+    "skillKey": "clawhub-elm",
+    "name": "elm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "elm",
+    "url": "https://clawhub.ai/skills/elm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/elm-af9b6fe9bdaa154b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Help users make better Eleme ordering decisions from public merchant and promotion information. Use when the user wants to compare Eleme stores, judge whethe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 534,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1776905175930,
+      "changelog": "Tightened elm security boundaries so users authenticate themselves in the official Ele.me login flow before the skill resumes cart building.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d1909b62aac5f9f63313503f7dd1a62d3b541e063402311f29cb98aed2cc8820"
+}

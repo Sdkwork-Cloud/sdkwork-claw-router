@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35348,
+  "uuid": "skill-clawhub-conversion-waterfall",
+  "skillKey": "clawhub-conversion-waterfall",
+  "name": "Conversion Waterfall",
+  "summary": "Analyze customer conversion through funnel stages. Use for identifying drop-off points and optimization opportunities.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.conversion_waterfall",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linuszz",
+      "features": [
+        "Analyze customer conversion through funnel stages",
+        "Use for identifying drop-off points and optimization opportunities."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/conversion-waterfall@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46770204?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "conversion-waterfall",
+      "url": "https://clawhub.ai/skills/conversion-waterfall"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "conversion-waterfall",
+    "url": "https://clawhub.ai/skills/conversion-waterfall",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/conversion-waterfall-9ed09db27c9da3ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/conversion-waterfall@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-conversion-waterfall-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f9420a7a0c8c2d6e3edf18c5b23e781e4e61b35f528bea4f522a3e2b0c121c92",
+      "artifactSizeBytes": 2275
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T05:42:05.031Z"
+}

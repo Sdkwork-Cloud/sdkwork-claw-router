@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68389,
+  "uuid": "skill-clawhub-fendi",
+  "skillKey": "clawhub-fendi",
+  "name": "Fendi",
+  "summary": "提供关于意大利奢侈品牌芬迪的历史、产品及标志性手袋Baguette的信息和行业动态。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fendi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供关于意大利奢侈品牌芬迪的历史、产品及标志性手袋Baguette的信息和行业动态。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fendi@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fendi",
+      "url": "https://clawhub.ai/skills/fendi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fendi",
+    "url": "https://clawhub.ai/skills/fendi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fendi-bb45e55a4f040e05.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fendi@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fendi-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e30bfb96539b92adc65cb80658758f5f12d2ddc9092d1bbbaea458aa4e680345",
+      "artifactSizeBytes": 2061
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T18:00:55.823Z"
+}

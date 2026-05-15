@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24643,
+  "uuid": "skill-clawhub-firm-prompt-security-pack",
+  "skillKey": "clawhub-firm-prompt-security-pack",
+  "name": "Firm Prompt Security Pack",
+  "summary": "Prompt injection and jailbreak detection pack. 16 compiled regex patterns across 3 severity levels (CRITICAL, HIGH, MEDIUM). Supports single-prompt and batch...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.firm_prompt_security_pack",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "romainsantoli-web",
+      "features": [
+        "Prompt injection and jailbreak detection pack",
+        "16 compiled regex patterns across 3 severity levels (CRITICAL, HIGH, MEDIUM)",
+        "Supports single-prompt and batch..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/firm-prompt-security-pack@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/246739959?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "firm-prompt-security-pack",
+      "url": "https://clawhub.ai/skills/firm-prompt-security-pack"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "firm-prompt-security-pack",
+    "url": "https://clawhub.ai/skills/firm-prompt-security-pack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/firm-prompt-security-pack-a365d2bedaf9cf0c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/firm-prompt-security-pack@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-firm-prompt-security-pack-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:18da7e386a61ad893fa48650c130fff3988c4a8d8699035ca4ceef193f18b4e7",
+      "artifactSizeBytes": 2046
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T22:11:08.378Z"
+}

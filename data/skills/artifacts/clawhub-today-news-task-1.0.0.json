@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/today-news-task@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.today_news_task",
+  "skill": {
+    "id": 67043,
+    "skillKey": "clawhub-today-news-task",
+    "name": "Today News Task"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "today-news-task",
+    "url": "https://clawhub.ai/skills/today-news-task",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/today-news-task-4efbd110cce05d2b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "抓取国内门户页面并汇总热点资讯。Use When 需要国内外热点与科技数码的要闻摘录。且可选择是否将结果推送到负一屏。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lzh2607",
+      "userId": "s179jdtrbbx2d9cxhj6y4h4vrd85pgj5",
+      "displayName": "LZH2607",
+      "image": "https://avatars.githubusercontent.com/u/48599687?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 109,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777468978797,
+      "changelog": "- Initial release of today-news-task: fetches and aggregates top news from major Chinese portals.\n- Prioritizes use of the included fetch_url.py to extract headline and link data from specified URLs.\n- Provides a clear workflow: retrieval, filtering, organization, and output in structured Markdown.\n- Supports intelligent fallback to search engine result pages if primary news sources are inaccessible.\n- Optional integration: results can be pushed to the negative-one screen using the today-task skill.\n- Detailed instructions and sample output format included for consistent summary generation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4abdb851fb23bc2c524d76f08925f11c032d7a768ff205ddc35839c36591c720"
+}

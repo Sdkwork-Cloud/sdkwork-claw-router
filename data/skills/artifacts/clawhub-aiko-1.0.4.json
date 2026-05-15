@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aiko@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aiko",
+  "skill": {
+    "id": 34628,
+    "skillKey": "clawhub-aiko",
+    "name": "aiko"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aiko",
+    "url": "https://clawhub.ai/skills/aiko",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aiko-effdb4e5ce2a7e4f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A 23-year-old woman from Tokyo, Japan. A modern young Japanese woman with traditional values and refined manners."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luruibu",
+      "userId": "s179c3z5ejsee5xn5dyh5xs5md83gyp8",
+      "displayName": "luruibu",
+      "image": "https://avatars.githubusercontent.com/u/45596591?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 222,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1777434397115,
+      "changelog": "- Minor update: Clarified a behavioral guideline by removing specific instructions after \"Stay in Character.\"\n- No other functional or content changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1e14006c90f4329fca34fcab6ebe3db274cbc557e6bccdb889aa50e11b27772d"
+}

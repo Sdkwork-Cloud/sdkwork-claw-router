@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63712,
+  "uuid": "skill-clawhub-xhs-research",
+  "skillKey": "clawhub-xhs-research",
+  "name": "xhs-research",
+  "summary": "小红书调研工具 — 搜索小红书笔记，AI 合成调研报告。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhs_research",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kunhai",
+      "features": [
+        "小红书调研工具 — 搜索小红书笔记，AI 合成调研报告。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xhs-research@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20219762?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xhs-research",
+      "url": "https://clawhub.ai/skills/xhs-research"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhs-research",
+    "url": "https://clawhub.ai/skills/xhs-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhs-research-62f7be987d7e0571.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xhs-research@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xhs-research-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fff8afe5b90984257b5466bd399f2e0dcc3f7ca91d21f3982ce16a7ff51171f3",
+      "artifactSizeBytes": 2690
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T13:36:00.321Z"
+}

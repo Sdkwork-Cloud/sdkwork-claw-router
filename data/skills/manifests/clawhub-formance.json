@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37053,
+  "uuid": "skill-clawhub-formance",
+  "skillKey": "clawhub-formance",
+  "name": "Formance",
+  "summary": "Formance integration. Manage data, records, and automate workflows. Use when the user wants to interact with Formance data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.formance",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Formance integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Formance data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/formance@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "formance",
+      "url": "https://clawhub.ai/skills/formance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "formance",
+    "url": "https://clawhub.ai/skills/formance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/formance-98bd9fc2025ae070.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/formance@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-formance-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:653f1c600586bdac4601f73b584ee5e0d3a190611a1fc053b58d43cd8802d6a9",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:49:20.858Z"
+}

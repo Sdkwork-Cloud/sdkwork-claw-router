@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qunar@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qunar",
+  "skill": {
+    "id": 21044,
+    "skillKey": "clawhub-qunar",
+    "name": "Qunar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qunar",
+    "url": "https://clawhub.ai/skills/qunar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qunar-5c55c7609aa734ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Help users make better Qunar travel-booking decisions from public platform trade-offs. Use when the user wants to think through flight, hotel, or travel book..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 496,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1773579141242,
+      "changelog": "Security-aligned public release: low-sensitivity decision-support version without runtime or account-state behavior.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9eeea9d0d6fcae8d630366aff02686954bfcc47b3dc3a606fb5ff29d55f9c9df"
+}

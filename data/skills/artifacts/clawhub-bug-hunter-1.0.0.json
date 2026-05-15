@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bug-hunter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bug_hunter",
+  "skill": {
+    "id": 40248,
+    "skillKey": "clawhub-bug-hunter",
+    "name": "Bug Hunter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bug-hunter",
+    "url": "https://clawhub.ai/skills/bug-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bug-hunter-bc0cba2c2f7aa149.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bug analysis, reproduction, and reporting assistant. Analyze logs, stack traces, screenshots to identify root cause. Generate structured bug reports with sev..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhanghengyi1986-afk",
+      "userId": "s173knyfg55hja2f40zjr9egvs84wkbp",
+      "displayName": "zhanghengyi1986-afk",
+      "image": "https://avatars.githubusercontent.com/u/266693384?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776217528027,
+      "changelog": "Initial release: bug analysis, log parsing, root cause analysis, structured bug reports",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:53c9b291c7c78f6f129bbf95dcb6a8103d266353b1696e13ad2229284d2a7854"
+}

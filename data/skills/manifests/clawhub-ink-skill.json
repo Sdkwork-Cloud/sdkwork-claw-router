@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24273,
+  "uuid": "skill-clawhub-ink-skill",
+  "skillKey": "clawhub-ink-skill",
+  "name": "Ink",
+  "summary": "Deploy and manage cloud services on Ink (ml.ink): create projects, deploy services, provision databases, manage DNS and custom domains, configure workspaces,...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ink_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Augustinas Malinauskas",
+      "features": [
+        "Deploy and manage cloud services on Ink (ml.ink): create projects, deploy services, provision d."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ink-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5672094?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ink-skill",
+      "url": "https://clawhub.ai/skills/ink-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ink-skill",
+    "url": "https://clawhub.ai/skills/ink-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ink-skill-5b722e57b144b432.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ink-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ink-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac2fcc844511ca1586d4bf7ff6bd4f92b308bbc7abd0597e8f364fb9731b20e9",
+      "artifactSizeBytes": 2348
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T01:56:09.668Z"
+}

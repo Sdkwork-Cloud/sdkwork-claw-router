@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seo-product-auditor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seo_product_auditor",
+  "skill": {
+    "id": 44176,
+    "skillKey": "clawhub-seo-product-auditor",
+    "name": "SEO Product Auditor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seo-product-auditor",
+    "url": "https://clawhub.ai/skills/seo-product-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seo-product-auditor-20068463079d09a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scan Shopify or WooCommerce product listings to score SEO by 10 criteria, identify weak listings, generate fix priorities, and optionally rewrite UK English..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hussainpatan9",
+      "userId": "s1757bekk2g5wapexqn9ajsze184jxhq",
+      "displayName": "Hussain Khuzema",
+      "image": "https://avatars.githubusercontent.com/u/33164010?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776029188095,
+      "changelog": "Initial release. Full store audit, single product scoring, auto-fix with before/after preview, bulk fix, targeted scans, CSV export, re-audit. 10-criterion rubric. UK English. Shopify + WooCommerce.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:767598ba5556dae2d735d4da4231e11a724715012d956cc259a2f503a125dcb7"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28901,
+  "uuid": "skill-clawhub-release-preflight",
+  "skillKey": "clawhub-release-preflight",
+  "name": "Release Preflight",
+  "summary": "Pre-release safety and scope checker for skills, repos, and export bundles. Use before publishing or sharing a skill folder, repository, or release bundle wh...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.release_preflight",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lethehades",
+      "features": [
+        "Pre-release safety and scope checker for skills, repos, and export bundles",
+        "Use before publishing or sharing a skill folder, repository, or release bundle wh..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/release-preflight@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41109318?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "release-preflight",
+      "url": "https://clawhub.ai/skills/release-preflight"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "release-preflight",
+    "url": "https://clawhub.ai/skills/release-preflight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/release-preflight-7467e03fac669e71.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/release-preflight@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-release-preflight-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:deff0ece5c25d6b1e27b3cee45f19515e1918803434e3fa20a23f5f47f373928",
+      "artifactSizeBytes": 1928
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T17:09:35.569Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57832,
+  "uuid": "skill-clawhub-mcp-bazi-partner",
+  "skillKey": "clawhub-mcp-bazi-partner",
+  "name": "BaZi Partner 八字搭档匹配",
+  "summary": "Chinese BaZi (Four Pillars of Destiny) analysis and AI partner matching. Trigger when user asks about 八字, 命理, 四柱, birth chart analysis, BaZi partner, or want...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcp_bazi_partner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ZoezoeCookie",
+      "features": [
+        "Chinese BaZi (Four Pillars of Destiny) analysis and AI partner matching",
+        "Trigger when user asks about 八字, 命理, 四柱, birth chart analysis, BaZi partner, or want..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mcp-bazi-partner@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265758573?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mcp-bazi-partner",
+      "url": "https://clawhub.ai/skills/mcp-bazi-partner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcp-bazi-partner",
+    "url": "https://clawhub.ai/skills/mcp-bazi-partner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcp-bazi-partner-0686557029a3a71f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mcp-bazi-partner@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mcp-bazi-partner-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ee56a5f576e077ce4277cd2b3a2b764143036ec702d107bd03076d2890cc39f",
+      "artifactSizeBytes": 1959
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T05:21:48.151Z"
+}

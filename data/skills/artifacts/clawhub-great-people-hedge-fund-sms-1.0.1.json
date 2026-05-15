@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/great-people-hedge-fund-sms@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.great_people_hedge_fund_sms",
+  "skill": {
+    "id": 28762,
+    "skillKey": "clawhub-great-people-hedge-fund-sms",
+    "name": "Great People Hedge Fund"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "great-people-hedge-fund-sms",
+    "url": "https://clawhub.ai/skills/great-people-hedge-fund-sms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/great-people-hedge-fund-sms-fa7184ce5ebab3e6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Coordinate AI agents emulating legendary investors to analyze stocks, synthesize insights, and generate actionable investment signals with conviction levels."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "smseow001",
+      "userId": "s17a72fh5mgpvvs3dm2ax0yq8984pnqc",
+      "displayName": "SMS",
+      "image": "https://avatars.githubusercontent.com/u/33817483?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776246947110,
+      "changelog": "- Added comprehensive bilingual (English + Chinese) documentation throughout the skill.\n- Included side-by-side Chinese translations for all descriptions, roles, agents, commands, outputs, and signal system.\n- Expanded signal system section with a bilingual table for clarity.\n- Updated tags and requirements to include Chinese and international user considerations.\n- No functional logic or command changes; documentation/localization update only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5b3a3f1adeae81c033db63be8a59673db99ac0f33e7c7da857132ec8dcc73591"
+}

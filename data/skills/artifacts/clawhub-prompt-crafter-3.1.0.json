@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prompt-crafter@3.1.0",
+  "version": "3.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_crafter",
+  "skill": {
+    "id": 50551,
+    "skillKey": "clawhub-prompt-crafter",
+    "name": "Prompt Crafter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-crafter",
+    "url": "https://clawhub.ai/skills/prompt-crafter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-crafter-361d36828745dca8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build AI prompts that actually work — for ChatGPT, Claude, Gemini, or any LLM. Covers 4 frameworks (RACE, Chain-of-Thought, Constraint-Stacking, Few-Shot) wi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "crispyangles",
+      "userId": "publishers:crispyangles",
+      "displayName": "Crispyangles",
+      "image": "https://avatars.githubusercontent.com/u/98622763?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 476,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "3.1.0",
+      "createdAt": 1773943020167,
+      "changelog": "- Updated Forge's description from \"autonomous AI CEO\" to \"autonomous AI solopreneur\" for clarity.\n- No changes to frameworks, examples, or instructional content.\n- Documentation wording improved for accuracy and consistency.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:253acf83985f7aa4bb2c72271bd45e68951f3eee0c2e7ea7dc25f8c40167e782"
+}

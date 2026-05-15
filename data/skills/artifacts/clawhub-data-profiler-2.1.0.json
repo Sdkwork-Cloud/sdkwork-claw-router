@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/data-profiler@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_profiler",
+  "skill": {
+    "id": 14139,
+    "skillKey": "clawhub-data-profiler",
+    "name": "Data Profiler"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-profiler",
+    "url": "https://clawhub.ai/skills/data-profiler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-profiler-c6c1addb5f6d42da.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Profile construction data to understand characteristics, distributions, quality metrics, and patterns. Essential for data quality assessment and ETL planning."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "datadrivenconstruction",
+      "userId": "publishers:datadrivenconstruction",
+      "displayName": "datadrivenconstruction",
+      "image": "https://avatars.githubusercontent.com/u/94158709?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1248,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1771169454532,
+      "changelog": "**Summary: Enhanced profiling and construction-specific insights**\n\n- Improved profiling to capture characteristics, distributions, nulls, quality metrics, and patterns in construction data.\n- Added construction-specific pattern and column type detection (e.g., csi_code, project_id, cost fields).\n- Now includes quality issue flags and actionable recommendations.\n- Reports memory usage, duplicate rows, and overall quality score.\n- Documentation updated with clearer business case, technical overview, and usage examples.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c14a1679a4d9a5c747b8cce4fcfc2071c27d307e6687733aa10056b0ccbdd2a8"
+}

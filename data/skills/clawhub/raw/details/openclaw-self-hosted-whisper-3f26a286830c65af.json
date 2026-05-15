@@ -1,0 +1,48 @@
+{
+  "skill": {
+    "slug": "openclaw-self-hosted-whisper",
+    "displayName": "K8s Self Hosted Whisper Api",
+    "summary": "Transcribe audio via the self-hosted Whisper ASR instance running on Kubernetes. Use this skill whenever the user wants to transcribe audio files, convert sp...",
+    "tags": {
+      "latest": "0.1.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 526,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1772369257985,
+    "updatedAt": 1778302965362
+  },
+  "latestVersion": {
+    "version": "0.1.0",
+    "createdAt": 1772369257985,
+    "changelog": "Initial release of self-hosted Whisper ASR skill.\n\n- Transcribe audio files using a self-hosted Whisper API on Kubernetes.\n- Supports transcription, audio translation, subtitle generation (SRT, VTT), word timestamps, and voice activity detection.\n- Simple shell script interface with customizable output formats and language options.\n- No authentication required; works via internal Kubernetes HTTP endpoint.\n- Documentation and usage examples included in SKILL.md.",
+    "license": null
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "xavjer",
+    "userId": "s17b0gzkct8zszac3t9685pd6983kth8",
+    "displayName": "Xavjer",
+    "image": "https://avatars.githubusercontent.com/u/4498205?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778302965362
+  }
+}

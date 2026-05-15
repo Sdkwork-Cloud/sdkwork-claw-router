@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/docx-footnote-reader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docx_footnote_reader",
+  "skill": {
+    "id": 33207,
+    "skillKey": "clawhub-docx-footnote-reader",
+    "name": "docx-footnote-reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docx-footnote-reader",
+    "url": "https://clawhub.ai/skills/docx-footnote-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docx-footnote-reader-cab1d8dd852e23d7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract footnotes, endnotes, and body text from .docx files using Node.js. Use this skill when you need to read footnote/endnote content from Word documents,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "landylai0604",
+      "userId": "publishers:landylai0604",
+      "displayName": "landylai0604",
+      "image": "https://avatars.githubusercontent.com/u/52626751?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 241,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773880863941,
+      "changelog": "Initial release of docx-footnote-reader.\n\n- Extracts footnotes, endnotes, and body text from .docx files.\n- Supports both command line and Node.js API usage.\n- Handles different return formats from underlying word-extractor library.\n- Filters and trims empty or whitespace-only notes.\n- Designed for technical, legal, and academic documents where footnote content is important.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:988f4da3c75a2b991f340c200ce438f57c7a6d3a0e19e1bf4e5774e2beb80e6b"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/consumer-insights@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.consumer_insights",
+  "skill": {
+    "id": 32290,
+    "skillKey": "clawhub-consumer-insights",
+    "name": "Consumer Insights"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "consumer-insights",
+    "url": "https://clawhub.ai/skills/consumer-insights",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/consumer-insights-e627ebd93a20c38f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze user feedback text to extract sentiment trends and customer needs"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "findhappy7",
+      "userId": "s1701f5z695a3sxp0qr39avsjn83kdpg",
+      "displayName": "findhappy7",
+      "image": "https://avatars.githubusercontent.com/u/14501839?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 254,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774161825685,
+      "changelog": "Initial release of consumer-insights skill.\n\n- Provides sentiment analysis and extraction of customer needs from user feedback.\n- Delivers data-driven insights, actionable deliverables, and best practice recommendations.\n- Supports business optimization, strategic decision making, and process improvement.\n- Flexible applications for enterprises, SMBs, and cross-functional teams.\n- Requires contextual business input for tailored results.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f259f17a4710601f5f174c17393ef8187e0c00337c85ab9afb6cfb9e6e3c9b03"
+}

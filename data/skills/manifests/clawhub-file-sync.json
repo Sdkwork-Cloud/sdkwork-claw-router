@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43377,
+  "uuid": "skill-clawhub-file-sync",
+  "skillKey": "clawhub-file-sync",
+  "name": "File Sync",
+  "summary": "Sync two folders bidirectionally with conflict detection using MD5 hashes and version history, preserving deletions and storing conflicts for manual resolution.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_sync",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "67available",
+      "features": [
+        "Sync two folders bidirectionally with conflict detection using MD5 hashes and version history,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/file-sync@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/98302065?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "file-sync",
+      "url": "https://clawhub.ai/skills/file-sync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-sync",
+    "url": "https://clawhub.ai/skills/file-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-sync-637c7eaa711f8625.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/file-sync@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-file-sync-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e96947ddf4a2824f3ad8e92bc0ca9d58a8f140e11032f0c899d035b22c9ee5f6",
+      "artifactSizeBytes": 1968
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T07:05:18.095Z"
+}

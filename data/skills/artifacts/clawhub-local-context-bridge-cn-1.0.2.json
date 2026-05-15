@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/local-context-bridge-cn@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_context_bridge_cn",
+  "skill": {
+    "id": 67113,
+    "skillKey": "clawhub-local-context-bridge-cn",
+    "name": "Local ContextBridge 中文"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-context-bridge-cn",
+    "url": "https://clawhub.ai/skills/local-context-bridge-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-context-bridge-cn-34f6aea1b9d2bad7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用语义关键词搜索本地个人和内部文档(Word/Excel/PDF/Markdown)。当用户询问本地文件、私人数据或内部知识时使用此工具。它会返回高度相关的文本片段和文件路径。注意：始终使用提取的核心实体作为关键词，而不是完整句子。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whyischen",
+      "userId": "s174rqbye16fq8xdw8ntz8yd3983g4nh",
+      "displayName": "whyischen",
+      "image": "https://avatars.githubusercontent.com/u/25917825?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 261,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774316160152,
+      "changelog": "- 增加关于 cbridge-agent 完全开源和本地运行无数据泄露风险的说明\n- 修正和补全 GitHub 链接为可点击格式\n- 其他内容无变化，仅对部分描述排版与链接可读性进行优化",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:101e598b9fa59242a55526f3220c89ddbb0c8ebacda87f5bb38694184e7d8fd3"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lovtrip-video2article@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lovtrip_video2article",
+  "skill": {
+    "id": 59398,
+    "skillKey": "clawhub-lovtrip-video2article",
+    "name": "LovTrip Video to Article"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lovtrip-video2article",
+    "url": "https://clawhub.ai/skills/lovtrip-video2article",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lovtrip-video2article-1cb3659be3c169e4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "视频转文章 / YouTube Video to Article — 使用 Gemini AI 将视频转为结构化文章。当用户需要将 YouTube 视频转换为文章时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lizhijun",
+      "userId": "s172ve229xyk6c6nn1dmtgmz2n83g3t7",
+      "displayName": "KLeo",
+      "image": "https://avatars.githubusercontent.com/u/2713983?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 353,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772947785336,
+      "changelog": "Add lovtrip.app website links, online experience section",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e099827969495a7cf843a5693f6bea0bd11e5835f85fe871fc78ba51ed7b7d61"
+}

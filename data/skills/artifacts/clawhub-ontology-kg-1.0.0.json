@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ontology-kg@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ontology_kg",
+  "skill": {
+    "id": 37632,
+    "skillKey": "clawhub-ontology-kg",
+    "name": "Ontology KG"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ontology-kg",
+    "url": "https://clawhub.ai/skills/ontology-kg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ontology-kg-6739baf6784d9860.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Typed knowledge graph for AI agent memory. Create entities, link relations, enforce constraints. JSONL append-only storage, zero dependencies. Use when agent..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "2233admin",
+      "userId": "s17146zc2bhwqgxe6pp8t34acs83rnqt",
+      "displayName": "2233admin",
+      "image": "https://avatars.githubusercontent.com/u/57929895?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 195,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775076840412,
+      "changelog": "Typed knowledge graph for AI agent memory. Entities + relations + constraints. JSONL storage, zero deps. Inspired by oswalpalash/ontology.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:456f445d887ef637b6091160d23631f9bbfe833953dd03403fa377249e0ff398"
+}

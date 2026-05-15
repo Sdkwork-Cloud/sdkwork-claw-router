@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/whisper-voice-transcription@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whisper_voice_transcription",
+  "skill": {
+    "id": 38224,
+    "skillKey": "clawhub-whisper-voice-transcription",
+    "name": "Whisper Voice Transcription (whisper.cpp)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whisper-voice-transcription",
+    "url": "https://clawhub.ai/skills/whisper-voice-transcription",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whisper-voice-transcription-6f50a70a83e4c5ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build and use whisper.cpp for local speech-to-text workflows, with optional cloud fallback when local transcription is not practical."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xuxuclassmate",
+      "userId": "s17ev136gszam5rsp8hcgkksex83gbfy",
+      "displayName": "XuXu",
+      "image": "https://avatars.githubusercontent.com/u/76080484?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1776836645082,
+      "changelog": "Translate the guide to English and tighten the instructions around official downloads and scoped audio-file discovery.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:177d8a61a8ee93dbaad9a252762f8187ab392027cf84b45ebf356f0b4415664b"
+}

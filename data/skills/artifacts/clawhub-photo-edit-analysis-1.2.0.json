@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/photo-edit-analysis@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.photo_edit_analysis",
+  "skill": {
+    "id": 18313,
+    "skillKey": "clawhub-photo-edit-analysis",
+    "name": "Photo Edit Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "photo-edit-analysis",
+    "url": "https://clawhub.ai/skills/photo-edit-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/photo-edit-analysis-34878bc026bac27a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze the composition, editing, and post-processing quality of a photograph. Use when a user shares a photo and asks about the edit, exposure, tone, color..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pfrederiksen",
+      "userId": "s17fk3ter6h1bve6rnejmqxjfx83eymx",
+      "displayName": "Paul Frederiksen",
+      "image": "https://avatars.githubusercontent.com/u/908172?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 562,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1772921255300,
+      "changelog": "Remove auto-run coupling from skill — triggering behavior is caller's responsibility",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8eb315a3ddb42f126e5386f2a2d9588c5b98ff61054549fd05ff176c334193e5"
+}

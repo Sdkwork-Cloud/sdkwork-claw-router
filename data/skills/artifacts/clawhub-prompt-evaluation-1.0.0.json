@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prompt-evaluation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_evaluation",
+  "skill": {
+    "id": 48727,
+    "skillKey": "clawhub-prompt-evaluation",
+    "name": "Prompt Evaluation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-evaluation",
+    "url": "https://clawhub.ai/skills/prompt-evaluation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-evaluation-d356313e10c89385.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Evaluate and benchmark AI prompts for quality, consistency, and performance. Triggers: prompt evaluation, prompt testing, prompt quality, prompt benchmark, p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 85,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777510160975,
+      "changelog": "Initial release of prompt-evaluation skill.\n\n- Evaluate prompts for clarity, specificity, robustness, and cost-efficiency.\n- Score prompts and compare variants with A/B statistical analysis.\n- Check consistency across multiple prompt runs.\n- Detect regressions between prompt versions using golden test sets.\n- Analyze and estimate token usage and costs for prompts.\n- Includes configuration options for evaluation dimensions and thresholds.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d91ea5115722112feefe5f5e3eb926e4e36d4fc4d7740650dd45a89f649fed31"
+}

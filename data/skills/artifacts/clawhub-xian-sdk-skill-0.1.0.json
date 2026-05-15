@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xian-sdk-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xian_sdk_skill",
+  "skill": {
+    "id": 17646,
+    "skillKey": "clawhub-xian-sdk-skill",
+    "name": "Xian SDK"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xian-sdk-skill",
+    "url": "https://clawhub.ai/skills/xian-sdk-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xian-sdk-skill-10f27b2601b3895e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build applications on the Xian blockchain using the xian-py Python SDK. Use when developing apps that interact with Xian — wallets, transactions, smart contracts, state queries, token transfers. Covers sync and async patterns."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "endogen",
+      "userId": "publishers:endogen",
+      "displayName": "Endogen",
+      "image": "https://avatars.githubusercontent.com/u/226475?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770511631948,
+      "changelog": "xian-sdk-skill 0.1.0\n\n- Initial release.\n- Provides comprehensive reference for building applications on the Xian blockchain using xian-py (Python SDK).\n- Covers wallet management (basic and HD/BIP39 wallets), transaction signing and sending, contract deployment and validation, blockchain queries, and async/batch patterns.\n- Includes code examples for token transfers, contract interaction, DEX swap, encryption, error handling, and sync/async wrappers.\n- Links to SDK resources and Xian standard contract documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:82913e19a4b2647f908cf7397b75c9a022f456f2b0b0ebe5cc2f57ffe0bfbe26"
+}

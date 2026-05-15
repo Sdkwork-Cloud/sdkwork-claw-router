@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58931,
+  "uuid": "skill-clawhub-inspirai-deploy",
+  "skillKey": "clawhub-inspirai-deploy",
+  "name": "InspirAI Deploy",
+  "summary": "智能部署工具 - 自动检测部署策略，预检查、发布、监控一体化。支持 K8s/Helm、Docker Compose、Vercel、Fly.io。Triggers: '部署', 'deploy', '发布', '上线', '预检查', '部署监控', 'helm upgrade', 'docker compose...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inspirai_deploy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alexxiong",
+      "features": [
+        "自动检测部署策略，预检查、发布、监控一体化。支持 K8s/Helm、Docker Compose、Vercel、Fly.io。Triggers: '部署', 'deploy', '发布',."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/inspirai-deploy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45865830?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "inspirai-deploy",
+      "url": "https://clawhub.ai/skills/inspirai-deploy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inspirai-deploy",
+    "url": "https://clawhub.ai/skills/inspirai-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inspirai-deploy-db1ec91e8e53ec4e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/inspirai-deploy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-inspirai-deploy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ba0e45ac6a76e9b41c1bd55a267aa8ed00674d8f08237b46921a074a491b95c",
+      "artifactSizeBytes": 1998
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T14:07:08.144Z"
+}

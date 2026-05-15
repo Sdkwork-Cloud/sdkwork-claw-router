@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ntriq-x402-content-generate@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ntriq_x402_content_generate",
+  "skill": {
+    "id": 54535,
+    "skillKey": "clawhub-ntriq-x402-content-generate",
+    "name": "Ntriq X402 Content Generate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ntriq-x402-content-generate",
+    "url": "https://clawhub.ai/skills/ntriq-x402-content-generate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ntriq-x402-content-generate-4adbad7ba5b9b588.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI content generation for blogs, emails, social posts, product descriptions. $0.02 USDC via x402."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ntriq-gh",
+      "userId": "s170tfc8cnswm72pmy4aqs9yd5841wq0",
+      "displayName": "ntriq",
+      "image": "https://avatars.githubusercontent.com/u/215101248?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776340836541,
+      "changelog": "- Initial release of ntriq-x402-content-generate.\n- Provides AI-powered content generation for blogs, emails, social media, product descriptions, reports, and ad copy.\n- Supports customizable style, tone, language, and word count.\n- Fast, local inference on Mac Mini; $0.02 USDC per API call via x402 protocol on Base mainnet.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c08f2cb4d15956c10e9c8ef586e6271fb812f113ed3c3849d04d7a0be8af09ad"
+}

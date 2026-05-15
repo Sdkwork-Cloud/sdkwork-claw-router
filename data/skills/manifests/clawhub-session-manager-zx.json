@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64407,
+  "uuid": "skill-clawhub-session-manager-zx",
+  "skillKey": "clawhub-session-manager-zx",
+  "name": "Session Manager - 会话管理",
+  "summary": "自动清理和管理 OpenClaw 不活跃会话，支持白名单保护和定时任务，保持系统会话整洁有序。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_manager_zx",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Roxy18",
+      "features": [
+        "自动清理和管理 OpenClaw 不活跃会话，支持白名单保护和定时任务，保持系统会话整洁有序。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/session-manager-zx@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/56423790?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "session-manager-zx",
+      "url": "https://clawhub.ai/skills/session-manager-zx"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-manager-zx",
+    "url": "https://clawhub.ai/skills/session-manager-zx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-manager-zx-1ea040ab26f4d699.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/session-manager-zx@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-session-manager-zx-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b19de14c4456efe1011534d6c2ddf5fd9250cf70e3c569cbd947c2f44440c3e2",
+      "artifactSizeBytes": 1999
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T10:32:55.683Z"
+}

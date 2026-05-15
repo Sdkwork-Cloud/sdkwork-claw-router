@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14138,
+  "uuid": "skill-clawhub-gog-restricted",
+  "skillKey": "clawhub-gog-restricted",
+  "name": "gog-restricted",
+  "summary": "Google Workspace CLI for Gmail, Calendar, and Auth (restricted via security wrapper).",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gog_restricted",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cettoana",
+      "features": [
+        "Google Workspace CLI for Gmail, Calendar, and Auth (restricted via security wrapper)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gog-restricted@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2841286?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gog-restricted",
+      "url": "https://clawhub.ai/skills/gog-restricted"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gog-restricted",
+    "url": "https://clawhub.ai/skills/gog-restricted",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gog-restricted-a6445dbdcb0961d5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gog-restricted@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-gog-restricted-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ece47f2dc52caa7e91113325175fb3f4c3d78f9381f3681ecef190fe6f399d06",
+      "artifactSizeBytes": 2279
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T09:56:52.363Z"
+}

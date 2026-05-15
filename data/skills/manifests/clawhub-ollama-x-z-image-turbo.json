@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56093,
+  "uuid": "skill-clawhub-ollama-x-z-image-turbo",
+  "skillKey": "clawhub-ollama-x-z-image-turbo",
+  "name": "Image Generation (Ollama x/z-image-turbo · macOS only)",
+  "summary": "Génère une image en local via Ollama x/z-image-turbo sur macOS et l'envoie sur WhatsApp selon le prompt donné.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ollama_x_z_image_turbo",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Eric51",
+      "features": [
+        "Génère une image en local via Ollama x/z-image-turbo sur macOS et l'envoie sur WhatsApp selon l."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ollama-x-z-image-turbo@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/99652?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ollama-x-z-image-turbo",
+      "url": "https://clawhub.ai/skills/ollama-x-z-image-turbo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ollama-x-z-image-turbo",
+    "url": "https://clawhub.ai/skills/ollama-x-z-image-turbo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ollama-x-z-image-turbo-745b3edc44d3e5e3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ollama-x-z-image-turbo@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ollama-x-z-image-turbo-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bfd9d98502b52b27d964414a294806cea46267f15bc04f79e52f648381ba1b6d",
+      "artifactSizeBytes": 2252
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T20:15:00.681Z"
+}

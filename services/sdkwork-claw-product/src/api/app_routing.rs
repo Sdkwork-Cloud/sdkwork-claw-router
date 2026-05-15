@@ -67,18 +67,18 @@ fn app_routing_router_with_state(
 ) -> Router {
     Router::new()
         .route(
-            "/app/v3/api/router/routing/channels",
+            "/app/v3/api/ai/routing/channels",
             get(fetch_routing_channels),
         )
         .route(
-            "/app/v3/api/router/routing/api-keys",
+            "/app/v3/api/ai/routing/api_keys",
             get(fetch_routing_api_keys),
         )
         .route(
-            "/app/v3/api/router/routing/request-traces",
+            "/app/v3/api/ai/routing/request_traces",
             get(fetch_routing_request_traces),
         )
-        .route("/app/v3/api/router/routing/usage", get(fetch_routing_usage))
+        .route("/app/v3/api/ai/routing/usage", get(fetch_routing_usage))
         .with_state(AppRoutingState {
             read_store,
             require_subject,

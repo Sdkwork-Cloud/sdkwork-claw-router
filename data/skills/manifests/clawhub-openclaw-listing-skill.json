@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21843,
+  "uuid": "skill-clawhub-openclaw-listing-skill",
+  "skillKey": "clawhub-openclaw-listing-skill",
+  "name": "Openclaw Listing Skill",
+  "summary": "Generate production-ready Amazon and AliExpress listings from a product image or parameters. Outputs title, bullet points, description, and SEO keywords in o...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_listing_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zls12311",
+      "features": [
+        "Generate production-ready Amazon and AliExpress listings from a product image or parameters",
+        "Outputs title, bullet points, description, and SEO keywords in o..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-listing-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/90704279?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-listing-skill",
+      "url": "https://clawhub.ai/skills/openclaw-listing-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-listing-skill",
+    "url": "https://clawhub.ai/skills/openclaw-listing-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-listing-skill-3fcb2e80d56de7b4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-listing-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-listing-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2c587bd13d7ae7c83e8a30e37a29643a3eec6fb9bf29ec18d6280e8f3208d838",
+      "artifactSizeBytes": 2541
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T12:22:30.498Z"
+}

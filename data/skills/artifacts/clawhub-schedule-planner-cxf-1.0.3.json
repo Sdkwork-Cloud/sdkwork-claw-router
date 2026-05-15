@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/schedule-planner-cxf@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.schedule_planner_cxf",
+  "skill": {
+    "id": 73689,
+    "skillKey": "clawhub-schedule-planner-cxf",
+    "name": "出行规划对话助手。帮你规划行程、推荐酒店机票、提供出行建议。当用户提到旅游、出差、订票时触发。"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "schedule-planner-cxf",
+    "url": "https://clawhub.ai/skills/schedule-planner-cxf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/schedule-planner-cxf-65511353eee38f34.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "出行规划对话助手。帮你规划行程、推荐酒店机票、提供出行建议。当用户提到旅游、出差、订票时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cryptocxf",
+      "userId": "s17fe4ak55df89ybk0gtesn8n18574y3",
+      "displayName": "Cryptocxf",
+      "image": "https://avatars.githubusercontent.com/u/35908338?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 275,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776672559602,
+      "changelog": "- Removed dependency configuration file package.json.\n- The skill no longer includes package metadata or dependency management in this version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:14337cf0aeebac017949c6d63382b0b5885ddaec45450be68eb97988bec5a0c7"
+}

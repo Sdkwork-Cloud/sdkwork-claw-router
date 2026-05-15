@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/voice-huayan@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voice_huayan",
+  "skill": {
+    "id": 31956,
+    "skillKey": "clawhub-voice-huayan",
+    "name": "voice-huayan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voice-huayan",
+    "url": "https://clawhub.ai/skills/voice-huayan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voice-huayan-da4de0b78597728b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local Chinese TTS playback on Windows using Piper zh_CN-huayan-medium with automatic fallback to System.Speech. Use when user asks to read replies aloud loca..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mecyalika",
+      "userId": "s178fe11gegrxqx6j7rqchxxbx83s52g",
+      "displayName": "MecyAlika",
+      "image": "https://avatars.githubusercontent.com/u/141535631?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774684732900,
+      "changelog": "- Initial release of voice-huayan for local Chinese TTS playback on Windows.\n- Uses Piper zh_CN-huayan-medium as the preferred voice engine.\n- Automatically falls back to System.Speech Microsoft Huihui Desktop if Piper is unavailable.\n- Designed for direct speaker playback in the huayan voice style.\n- Confirms success with PLAYBACK_OK message.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c7bdfdc6e9b855c208808ece9e94c9b1ddfa914498079a64aa2e5a708553d38a"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62828,
+  "uuid": "skill-clawhub-memory-focal-system",
+  "skillKey": "clawhub-memory-focal-system",
+  "name": "Memory Focal System",
+  "summary": "焦距记忆系统 - 智能记忆管理，支持消息分类、按需加载、自动标签、遗忘曲线。Token 优化 40-60%。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_focal_system",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zcz-user",
+      "features": [
+        "智能记忆管理，支持消息分类、按需加载、自动标签、遗忘曲线。Token 优化 40-60%。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-focal-system@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/185903578?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-focal-system",
+      "url": "https://clawhub.ai/skills/memory-focal-system"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-focal-system",
+    "url": "https://clawhub.ai/skills/memory-focal-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-focal-system-31cb84b283183738.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-focal-system@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-focal-system-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b65c604158855e58e03f45a9bc3ec8b33d50977cf9db49dc7ed4c437dbfd183f",
+      "artifactSizeBytes": 2494
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T10:45:21.785Z"
+}

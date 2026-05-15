@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59650,
+  "uuid": "skill-clawhub-everything-search",
+  "skillKey": "clawhub-everything-search",
+  "name": "Everything Search",
+  "summary": "Everything Windows 文件搜索技能 — HTTP API 快速搜索、中英文模糊匹配、文件类型过滤",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.everything_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Steve-Shi-Web",
+      "features": [
+        "Everything Windows 文件搜索技能 — HTTP API 快速搜索、中英文模糊匹配、文件类型过滤"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/everything-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57715648?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "everything-search",
+      "url": "https://clawhub.ai/skills/everything-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "everything-search",
+    "url": "https://clawhub.ai/skills/everything-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/everything-search-d9a7b8373099a0ee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/everything-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-everything-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7dd83ed8e01cf80aa7243673b2aad15824d1b5a904ca78786000fd3253e998ee",
+      "artifactSizeBytes": 1958
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T03:19:15.589Z"
+}

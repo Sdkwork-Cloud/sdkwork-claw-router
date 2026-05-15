@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-interactive-card@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_interactive_card",
+  "skill": {
+    "id": 55471,
+    "skillKey": "clawhub-feishu-interactive-card",
+    "name": "Feishu Interactive Card"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-interactive-card",
+    "url": "https://clawhub.ai/skills/feishu-interactive-card",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-interactive-card-8d79a1e15feb77e2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "⚠️ DEPRECATED — Use feishu-msg-reader instead. This skill has been renamed and superseded by feishu-msg-reader (by deadblue22)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deadblue22",
+      "userId": "publishers:deadblue22",
+      "displayName": "deadblue",
+      "image": "https://avatars.githubusercontent.com/u/448649?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 840,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773115833657,
+      "changelog": "DEPRECATED: This skill has been renamed to feishu-msg-reader. Please use that instead.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f8ab2c5501e5bd3424f54e2d86f7f053669dbac615dc848dc77f7f8d676dbc41"
+}

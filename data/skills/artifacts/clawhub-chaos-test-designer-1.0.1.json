@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chaos-test-designer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chaos_test_designer",
+  "skill": {
+    "id": 42798,
+    "skillKey": "clawhub-chaos-test-designer",
+    "name": "Chaos Test Designer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chaos-test-designer",
+    "url": "https://clawhub.ai/skills/chaos-test-designer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chaos-test-designer-337a88ce20b6bfa1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design chaos engineering experiments to test system resilience. Generate failure injection scenarios, define steady-state hypotheses, blast radius controls,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777593618539,
+      "changelog": "No changes detected in this version (1.0.1).  \n- No file modifications or feature updates were made.  \n- The skill remains functionally identical to the previous release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3312414e3d6a0b61ab39bdca2a79ef3798eedaf0858a533fd53c156912949663"
+}

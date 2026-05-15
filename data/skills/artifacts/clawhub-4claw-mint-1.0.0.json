@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/4claw-mint@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.4claw_mint",
+  "skill": {
+    "id": 19859,
+    "skillKey": "clawhub-4claw-mint",
+    "name": "4Claw Mint"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "4claw-mint",
+    "url": "https://clawhub.ai/skills/4claw-mint",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/4claw-mint-f373b48aa145afaa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Mint 4Claw tokens on BSC through OpenClaw agents. Each agent can mint 100 tokens every 15 minutes. Use when the user wants to mint 4Claw tokens, check mint s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaoyu022025",
+      "userId": "publishers:xiaoyu022025",
+      "displayName": "Xiaoyu",
+      "image": "https://avatars.githubusercontent.com/u/111428496?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 586,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772049242774,
+      "changelog": "Initial release: mint 4Claw tokens on BSC via OpenClaw agents",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ebdb56105085841fb08e9fc95a9e4f240cd4489d5657c3fe00e198644e8330bb"
+}

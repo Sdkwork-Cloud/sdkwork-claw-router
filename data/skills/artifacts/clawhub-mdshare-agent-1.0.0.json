@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mdshare-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mdshare_agent",
+  "skill": {
+    "id": 29334,
+    "skillKey": "clawhub-mdshare-agent",
+    "name": "MDshare Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mdshare-agent",
+    "url": "https://clawhub.ai/skills/mdshare-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mdshare-agent-b5524e010fc379fe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create, read, unlock, update, and delete temporary Markdown shares through the MDShare service. Use when an agent needs to publish Markdown as a short-lived..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cced3000",
+      "userId": "s1744gh9w9p0je66b55t2b2p8s853hgz",
+      "displayName": "cced3000",
+      "image": "https://avatars.githubusercontent.com/u/300924?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 305,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773284197575,
+      "changelog": "Initial release of mdshare-agent.\n\n- Enables creating, reading, updating, unlocking, and deleting temporary Markdown shares via the MDShare service.\n- Supports generating public, edit, and manage links—public and token-bearing links handled separately for privacy.\n- Handles password-protected and burn-after-read shares, confirming before revealing sensitive content.\n- Provides workflows for collaborative Markdown sharing and editing with short-lived links.\n- Default base URL is https://share.yekyos.com, with support for custom deployments.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a731a2c1760e8c0ad2db28d14edd2dc3818952fd536dceb246b5dc99f9a65766"
+}

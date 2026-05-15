@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45365,
+  "uuid": "skill-clawhub-beatclaw",
+  "skillKey": "clawhub-beatclaw",
+  "name": "Beatclaw",
+  "summary": "Generate and sell exclusive instrumental beats on BeatClaw using Suno API keys with optional stem splitting for WAV + stems sales.",
+  "version": "1.42.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beatclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pietro Iossa",
+      "features": [
+        "Generate and sell exclusive instrumental beats on BeatClaw using Suno API keys with optional st."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/beatclaw@1.42.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/164428010?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "beatclaw",
+      "url": "https://clawhub.ai/skills/beatclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beatclaw",
+    "url": "https://clawhub.ai/skills/beatclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beatclaw-b1d4c352e29f3119.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/beatclaw@1.42.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-beatclaw-1.42.0.json",
+      "version": "1.42.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a1eed0ba0649d4eff44144e344b3ffafa6280e65dad8326b1db836fab8eeec9e",
+      "artifactSizeBytes": 2388
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T12:23:00.015Z"
+}

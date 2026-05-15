@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19092,
+  "uuid": "skill-clawhub-calendar-planner",
+  "skillKey": "clawhub-calendar-planner",
+  "name": "Calendar Planner",
+  "summary": "Plan work and life across Google Calendar, Outlook, Apple Calendar, and CalDAV with CLI adapters, conflict repair, and weekly reviews.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.calendar_planner",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Plan work and life across Google Calendar, Outlook, Apple Calendar, and CalDAV with CLI adapter."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/calendar-planner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "calendar-planner",
+      "url": "https://clawhub.ai/skills/calendar-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "calendar-planner",
+    "url": "https://clawhub.ai/skills/calendar-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/calendar-planner-43cfd19b3fc7193f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/calendar-planner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-calendar-planner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4da3fcb9d803ddeb3a7f906a68fe576697eef20b3a1deed47f12be60f5cd8584",
+      "artifactSizeBytes": 1996
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T16:29:30.532Z"
+}

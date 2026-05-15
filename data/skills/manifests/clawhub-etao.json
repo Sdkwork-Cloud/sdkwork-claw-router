@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73436,
+  "uuid": "skill-clawhub-etao",
+  "skillKey": "clawhub-etao",
+  "name": "一淘返利助手",
+  "summary": "一淘返利导购工具，阿里巴巴旗下官方返利平台，专注淘宝天猫购物返利和比价服务。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.etao",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fangshan101-coder",
+      "features": [
+        "一淘返利导购工具，阿里巴巴旗下官方返利平台，专注淘宝天猫购物返利和比价服务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/etao@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267524233?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "etao",
+      "url": "https://clawhub.ai/skills/etao"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "etao",
+    "url": "https://clawhub.ai/skills/etao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/etao-c0c096621750f0cb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/etao@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-etao-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d5a577dd4cbab648361d311f9a7bb31acdb30372e78b261aad32b36f087b6297",
+      "artifactSizeBytes": 1799
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T06:02:22.173Z"
+}

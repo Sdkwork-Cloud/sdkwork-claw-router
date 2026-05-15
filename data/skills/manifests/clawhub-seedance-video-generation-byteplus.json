@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14171,
+  "uuid": "skill-clawhub-seedance-video-generation-byteplus",
+  "skillKey": "clawhub-seedance-video-generation-byteplus",
+  "name": "Seedance Video Generation BytePlus",
+  "summary": "Generate AI videos using BytePlus Seedance API (International). Use when the user wants to: (1) generate videos from text prompts, (2) generate videos from images (first frame, first+last frame, reference images), or (3) query/manage video.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seedance_video_generation_byteplus",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JackyCSer",
+      "features": [
+        "Generate AI videos using BytePlus Seedance API (International)",
+        "Use when the user wants to: (1) generate videos from text prompts, (2) generate videos from ima.",
+        "Supports Seedance 1.5 Pro (with audio & draft mode), 1.0 Pro, 1.0 Pro Fast, and 1.0 Lite models."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/seedance-video-generation-byteplus@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10410898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "seedance-video-generation-byteplus",
+      "url": "https://clawhub.ai/skills/seedance-video-generation-byteplus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seedance-video-generation-byteplus",
+    "url": "https://clawhub.ai/skills/seedance-video-generation-byteplus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seedance-video-generation-byteplus-5da0d7ed68cf9627.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/seedance-video-generation-byteplus@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-seedance-video-generation-byteplus-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bedc0c980b0aaade500f5bfdc7365e549f1102dab73bed9b1dc927a5a8e98632",
+      "artifactSizeBytes": 2236
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T08:10:07.374Z"
+}

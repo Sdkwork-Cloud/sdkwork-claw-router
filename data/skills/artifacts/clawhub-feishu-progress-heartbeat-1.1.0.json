@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-progress-heartbeat@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_progress_heartbeat",
+  "skill": {
+    "id": 23702,
+    "skillKey": "clawhub-feishu-progress-heartbeat",
+    "name": "Feishu Progress Heartbeat"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-progress-heartbeat",
+    "url": "https://clawhub.ai/skills/feishu-progress-heartbeat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-progress-heartbeat-df39d19dee8e75df.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use in Feishu when long-running tasks should proactively report progress every 3 minutes. Pairs heartbeat-driven follow-ups with session status checks so act..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wd041216-bit",
+      "userId": "s17djcs4rd60zq6rxnpn9xv3d583g4ew",
+      "displayName": "Da Wei",
+      "image": "https://avatars.githubusercontent.com/u/258555668?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 433,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773476101427,
+      "changelog": "feishu-progress-heartbeat 1.1.0\n\n- Adds automated heartbeat-driven progress reporting for Feishu long-running tasks, sending user-friendly updates every 3 minutes.\n- Reports estimated progress percentages based on task stage, with clear, concise status lines.\n- Detects and surfaces stalled or blocked tasks after two unchanged heartbeat cycles, offering actionable blocker updates.\n- Avoids spamming: no unnecessary or fake updates if there is no meaningful progress or active work.\n- Refines reply formats for clarity and compactness in Feishu conversations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c23768fa0728493285f20d1aaf03f27c5e908077778838098ef4c3caa05ec551"
+}

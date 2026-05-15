@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/taxi-expense@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taxi_expense",
+  "skill": {
+    "id": 64814,
+    "skillKey": "clawhub-taxi-expense",
+    "name": "Taxi Expense"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taxi-expense",
+    "url": "https://clawhub.ai/skills/taxi-expense",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taxi-expense-13b5ae582045711b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "识别滴滴打车订单截图，OCR识别文字+坐标，马赛克脱敏目的地，按月生成报销Excel"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kathi-hash",
+      "userId": "s1796vg6nnfd2ewxk0h3q6c8xn83gq7z",
+      "displayName": "kathi-hash",
+      "image": "https://avatars.githubusercontent.com/u/188547268?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775021941031,
+      "changelog": "Fix: multi-image support, OCR amount tolerance (%¥, missing ¥, missing decimal), weekday 21:00+ filter, exclude closed orders, white block desensitization, Excel destination masking, weekday column",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:90d61e9a2bbe16eb5c0f2c317744395d364dfaa27f533cb787ace16e3ca27c9e"
+}

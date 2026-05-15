@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25018,
+  "uuid": "skill-clawhub-session-hygiene",
+  "skillKey": "clawhub-session-hygiene",
+  "name": "Session Hygiene",
+  "summary": "Prevent sessions.json bloat from accumulating isolated sessions (hooks, crons, subagents). Sets up a cron to archive stale sessions to daily JSONL files and...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_hygiene",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "halbotley",
+      "features": [
+        "Prevent sessions.json bloat from accumulating isolated sessions (hooks, crons, subagents)",
+        "Sets up a cron to archive stale sessions to daily JSONL files and..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/session-hygiene@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258555894?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "session-hygiene",
+      "url": "https://clawhub.ai/skills/session-hygiene"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-hygiene",
+    "url": "https://clawhub.ai/skills/session-hygiene",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-hygiene-65f7ee44ff12043e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/session-hygiene@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-session-hygiene-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:16765022f3c6766a85a77696de226af0ae97568382cbe79cf4175e9c43a0d036",
+      "artifactSizeBytes": 1957
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T21:19:21.290Z"
+}

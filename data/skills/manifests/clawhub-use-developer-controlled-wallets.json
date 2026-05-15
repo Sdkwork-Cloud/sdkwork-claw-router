@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29547,
+  "uuid": "skill-clawhub-use-developer-controlled-wallets",
+  "skillKey": "clawhub-use-developer-controlled-wallets",
+  "name": "Use Developer Controlled Wallets",
+  "summary": "Create and manage Circle developer-controlled wallets where the application retains full custody of wallet keys on behalf of end-users. Covers wallet sets, e...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.use_developer_controlled_wallets",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Madelyn",
+      "features": [
+        "Create and manage Circle developer-controlled wallets where the application retains full custod.",
+        "Covers wallet sets, e..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/use-developer-controlled-wallets@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43209384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "use-developer-controlled-wallets",
+      "url": "https://clawhub.ai/skills/use-developer-controlled-wallets"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "use-developer-controlled-wallets",
+    "url": "https://clawhub.ai/skills/use-developer-controlled-wallets",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/use-developer-controlled-wallets-2db58a875211539d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/use-developer-controlled-wallets@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-use-developer-controlled-wallets-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:988ae78b435ab6450827fcda0d64f60fff8d8e435af77d80e0290f75450601f2",
+      "artifactSizeBytes": 2604
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T18:17:43.110Z"
+}

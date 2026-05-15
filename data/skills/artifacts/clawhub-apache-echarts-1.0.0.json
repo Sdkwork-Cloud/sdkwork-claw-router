@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apache-echarts@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apache_echarts",
+  "skill": {
+    "id": 35987,
+    "skillKey": "clawhub-apache-echarts",
+    "name": "Apache Echarts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apache-echarts",
+    "url": "https://clawhub.ai/skills/apache-echarts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apache-echarts-360c53b9db866bbb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Apache ECharts charting skill."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openlark",
+      "userId": "s1727wv2g20pc729snzcm4nf8183hy72",
+      "displayName": "OpenLark",
+      "image": "https://avatars.githubusercontent.com/u/260858787?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775878775101,
+      "changelog": "Initial release of the Apache ECharts charting skill:\n\n- Generate interactive HTML charts from user-provided 2D or time series data using ECharts 5.x CDN.\n- Supports automatic chart type selection (20+ types: bar, line, pie, scatter, map, etc.).\n- Every chart includes a built-in PNG export tool with toast notification after export.\n- Output is a full HTML file with mobile-friendly layout and high-quality visuals.\n- Includes quick-start examples and standard ECharts configuration patterns for common scenarios.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ffab1aff48f7803d4d62ab6dc996ae62d997d581113f74b17e6ededa28d63305"
+}

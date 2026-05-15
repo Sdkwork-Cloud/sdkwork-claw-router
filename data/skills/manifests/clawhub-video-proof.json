@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19017,
+  "uuid": "skill-clawhub-video-proof",
+  "skillKey": "clawhub-video-proof",
+  "name": "Video Proof",
+  "summary": "Record video proof of implemented features after coding tasks complete. Use when a coding agent finishes work and needs to visually verify and demonstrate th...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_proof",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rikisann",
+      "features": [
+        "Record video proof of implemented features after coding tasks complete",
+        "Use when a coding agent finishes work and needs to visually verify and demonstrate th..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-proof@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52165646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-proof",
+      "url": "https://clawhub.ai/skills/video-proof"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-proof",
+    "url": "https://clawhub.ai/skills/video-proof",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-proof-0647716f833448e0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-proof@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-proof-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1150132163376fec789102bb151016b7cc09783ddc28c60d19219a68cada2d1c",
+      "artifactSizeBytes": 1877
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T19:45:01.483Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/metrika-analysis@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.metrika_analysis",
+  "skill": {
+    "id": 69646,
+    "skillKey": "clawhub-metrika-analysis",
+    "name": "Metrika Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "metrika-analysis",
+    "url": "https://clawhub.ai/skills/metrika-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/metrika-analysis-2cee5aeaf7149ea8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Используется для анализа данных из API Яндекс.Метрики, когда пользователь просит проанализировать трафик, конверсии, поведение посетителей или отчет по сайту."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nimblemarketingapex-netizen",
+      "userId": "publishers:nimblemarketingapex-netizen",
+      "displayName": "nimblemarketingapex-netizen",
+      "image": "https://avatars.githubusercontent.com/u/259936701?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 632,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771304606104,
+      "changelog": "- Улучшено описание навыка для более четкого указания случаев использования и запросов пользователей.\n- Добавлены примеры пользовательских запросов для повышения понятности.\n- Указан первый шаг: проверка наличия METRIKA_TOKEN и COUNTER_ID.\n- Удалены устаревшие требования к зависимостям (например, bins: [\"curl\"]).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c9af0f4c18e690a3c543910be93f04880da9f3c570e95758cd771535ae71ab29"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rapidapi@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rapidapi",
+  "skill": {
+    "id": 23137,
+    "skillKey": "clawhub-rapidapi",
+    "name": "rapidapi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rapidapi",
+    "url": "https://clawhub.ai/skills/rapidapi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rapidapi-a29842c746ccee6f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Template-driven RapidAPI client with auto-registered actions and a universal call entrypoint"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "web3aivc",
+      "userId": "s17beej6wn1e9syk7v82syazcd83q4q3",
+      "displayName": "web3aivc",
+      "image": "https://avatars.githubusercontent.com/u/122167631?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 450,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772848593468,
+      "changelog": "- Initial release of rapidapi-universal-skill: a minimal, template-driven RapidAPI client.\n- Auto-registers all RapidAPI action templates from the templates directory.\n- Provides consistent actions: listActions(), callAction(name, params), and callRapidApi(payload).\n- Includes helper script (import-endpoint.js) to convert RapidAPI endpoints to templates.\n- Designed for stable, repeatable calls to RapidAPI endpoints in local scripts or workflows.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2fce342a9fa4bc719fc8abae424a67b51df54c56e69a55ed14026c06a09bb97e"
+}

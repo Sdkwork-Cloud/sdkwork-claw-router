@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39613,
+  "uuid": "skill-clawhub-disk-guardian",
+  "skillKey": "clawhub-disk-guardian",
+  "name": "Disk Guardian",
+  "summary": "Run S.M.A.R.T. diagnostics on all drives, parse health indicators, maintain a history log, and flag drives showing early failure patterns. Generates health s...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.disk_guardian",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "New Age Investments",
+      "features": [
+        "Run S.M.A.R.T",
+        "diagnostics on all drives, parse health indicators, maintain a history log, and flag drives sho.",
+        "Generates health s..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/disk-guardian@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/243381911?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "disk-guardian",
+      "url": "https://clawhub.ai/skills/disk-guardian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "disk-guardian",
+    "url": "https://clawhub.ai/skills/disk-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/disk-guardian-9d5aa410d8e670a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/disk-guardian@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-disk-guardian-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8ada1894cc04bb1357a309199f9188808ea17a63ccf1cddc8a0240f4711d1518",
+      "artifactSizeBytes": 2049
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T10:55:36.275Z"
+}

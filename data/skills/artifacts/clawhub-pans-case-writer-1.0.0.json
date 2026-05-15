@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pans-case-writer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pans_case_writer",
+  "skill": {
+    "id": 62520,
+    "skillKey": "clawhub-pans-case-writer",
+    "name": "Pans Case Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pans-case-writer",
+    "url": "https://clawhub.ai/skills/pans-case-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pans-case-writer-6b1fd6994ddf17cc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动将客户成功案例包装为 Case Study（案例研究）。支持背景 / 挑战 / 方案 / 成果四段式结构化模板，支持 Markdown / PDF / HTML 多种格式导出， 提供交互式创建模式逐步引导输入关键信息。 触发词：案例研究, case study, 客户案例, 成功案例, 案例包装, 客户故事,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dashiming",
+      "userId": "s175tbqc6kczpya7xzy4rksefs83p4hp",
+      "displayName": "dashiming",
+      "image": "https://avatars.githubusercontent.com/u/28342384?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776404454484,
+      "changelog": "pans-case-writer 1.0.0\n\n- 首次发布：自动将客户信息结构化生成 Case Study（案例研究）\n- 支持背景/挑战/方案/成果四段式模板\n- 提供 Markdown、PDF、HTML 多格式导出\n- 交互式创建模式，逐步引导填写关键信息\n- 命令行工具，支持创建、导出和模板列表",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c6bbe966fef95a965ea863b874c90f9f609ddd25f27b13458c34fc6ddd42aee1"
+}

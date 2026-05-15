@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/best-video-downloader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.best_video_downloader",
+  "skill": {
+    "id": 52316,
+    "skillKey": "clawhub-best-video-downloader",
+    "name": "Best Video Downloader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "best-video-downloader",
+    "url": "https://clawhub.ai/skills/best-video-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/best-video-downloader-26dce5f545a0d210.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — download this YouTube video in MP4 format at the highest available resolut..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776597742321,
+      "changelog": "Initial release of Best Video Downloader.\n\n- Download and save online videos by simply providing URLs or upload video files up to 500MB (MP4, MOV, WebM, AVI supported).\n- Supports downloading YouTube videos in MP4 at the highest available resolution within 20–60 seconds.\n- Anonymous access enabled: get a free 7-day token or use your own `NEMO_TOKEN`.\n- Smooth connection handling and clear status updates before operations.\n- Multiple workflows supported: quick downloads, batch processing, or iterative timeline edits.\n- Handles credits, errors, and backend session management automatically for a seamless experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3fc08eb10a1b2dd910126376f720b490584a0c82dd17ab47181652896b17a16b"
+}

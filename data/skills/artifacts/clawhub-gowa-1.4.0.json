@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gowa@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gowa",
+  "skill": {
+    "id": 12604,
+    "skillKey": "clawhub-gowa",
+    "name": "GOWA - WhatsApp Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gowa",
+    "url": "https://clawhub.ai/skills/gowa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gowa-0e29257ecb513311.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with WhatsApp via GOWA (Go WhatsApp Web Multi-Device) REST API for personal automation. Supports sending messages with ghost mentions (@everyone), images, documents, group management, and more. Always use REST mode (http://localho."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aldinokemal",
+      "userId": "publishers:aldinokemal",
+      "displayName": "aldinokemal",
+      "image": "https://avatars.githubusercontent.com/u/14232125?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1506,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1770686613848,
+      "changelog": "Security: Remove gowa_helper.py script (file exfiltration risk), remove wget/systemd examples. Skill is now pure API documentation with curl examples only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fa020bbd8753b75488f2ce70e776092cc8a08c94308965ae2dbb2e529d19cea9"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49051,
+  "uuid": "skill-clawhub-claw-alarm",
+  "skillKey": "clawhub-claw-alarm",
+  "name": "Claw Alarm",
+  "summary": "Read, create, update, snooze, and delete alarms on a user's iPhone running ClawAlarm. Use when the user asks to set an alarm, change an existing alarm's time...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_alarm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Brian Anglin",
+      "features": [
+        "Read, create, update, snooze, and delete alarms on a user's iPhone running ClawAlarm",
+        "Use when the user asks to set an alarm, change an existing alarm's time..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-alarm@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2637602?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-alarm",
+      "url": "https://clawhub.ai/skills/claw-alarm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-alarm",
+    "url": "https://clawhub.ai/skills/claw-alarm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-alarm-b4dbb8f60029377d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-alarm@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-alarm-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:99c112376682de19f2239ad22efe383310bc26725bcfb70454bcc032982b1379",
+      "artifactSizeBytes": 2478
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T03:55:33.105Z"
+}

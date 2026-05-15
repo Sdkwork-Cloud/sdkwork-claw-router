@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alchemy-official@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alchemy_official",
+  "skill": {
+    "id": 22379,
+    "skillKey": "clawhub-alchemy-official",
+    "name": "Alchemy Official"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alchemy-official",
+    "url": "https://clawhub.ai/skills/alchemy-official",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alchemy-official-c7c85dc3d882370c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access Alchemy's multi-chain APIs for tokens, NFTs, transfers, prices, portfolios, simulations, webhooks, and Solana via API key or agentic gateway."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sahilaujla",
+      "userId": "s171m2az6mjz6k9vg7s6bcvb7183g8ss",
+      "displayName": "Alchemy",
+      "image": "https://avatars.githubusercontent.com/u/83442423?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 275,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1774908201718,
+      "changelog": "Re-publish with clean metadata to fix search indexing",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fb27a4f6d06d53b0fb366df727c8468d0c20434dadd498fc151232fda003c297"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36305,
+  "uuid": "skill-clawhub-when-clock-skill",
+  "skillKey": "clawhub-when-clock-skill",
+  "name": "when-clock-skill",
+  "summary": "Control WHEN/WHEN Voice LAN clock devices. Supports voice time announcement, weather broadcast (WHEN Voice only), alarm CRUD, and countdown timer. Use --devi...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.when_clock_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "master-gong",
+      "features": [
+        "Control WHEN/WHEN Voice LAN clock devices",
+        "Supports voice time announcement, weather broadcast (WHEN Voice only), alarm CRUD, and countdow.",
+        "Use --devi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/when-clock-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22888722?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "when-clock-skill",
+      "url": "https://clawhub.ai/skills/when-clock-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "when-clock-skill",
+    "url": "https://clawhub.ai/skills/when-clock-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/when-clock-skill-f769123ff591458f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/when-clock-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-when-clock-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ee82a7d79c94f1e423caf0a6ffb766792ab546c92b9968449f8a5966ac1bce91",
+      "artifactSizeBytes": 2578
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T08:10:25.784Z"
+}

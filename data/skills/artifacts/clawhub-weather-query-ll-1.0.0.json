@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weather-query-ll@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_query_ll",
+  "skill": {
+    "id": 73277,
+    "skillKey": "clawhub-weather-query-ll",
+    "name": "天气查询小技能"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-query-ll",
+    "url": "https://clawhub.ai/skills/weather-query-ll",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-query-ll-db7f8e8f37e046ad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "当需要查询某个城市的天气时，可以调用使用这个技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gyifei",
+      "userId": "publishers:gyifei",
+      "displayName": "Gyifei",
+      "image": "https://avatars.githubusercontent.com/u/215229398?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 548,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772282373340,
+      "changelog": "- Initial release of the weather skill for querying city weather.\n- Extracts city and query time from user input.\n- Uses web_fetch to gather real-time weather data.\n- Returns formatted results including temperature, weather condition, humidity, and wind.\n- Responds with user-friendly weather tips.\n- Prompts for city if not specified in the user request.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f5333132e8dbf376a16f9c8e6cef8ec8a9ca0b9ff7d20c42360b4c4d985a8b8a"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65978,
+  "uuid": "skill-clawhub-mic-recorder",
+  "skillKey": "clawhub-mic-recorder",
+  "name": "Mic Recorder",
+  "summary": "麦克风录音并发送音频到飞书。涵盖语音和背景音。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mic_recorder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tazio7",
+      "features": [
+        "麦克风录音并发送音频到飞书。涵盖语音和背景音。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mic-recorder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260568855?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mic-recorder",
+      "url": "https://clawhub.ai/skills/mic-recorder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mic-recorder",
+    "url": "https://clawhub.ai/skills/mic-recorder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mic-recorder-078750bfb4c04191.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mic-recorder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mic-recorder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1a32d708cbd04566e645bf9ceee76c2a5adcd11f12f2ec29bf2607c59869151f",
+      "artifactSizeBytes": 2338
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T02:26:08.679Z"
+}

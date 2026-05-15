@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66065,
+  "uuid": "skill-clawhub-seedance2-skill",
+  "skillKey": "clawhub-seedance2-skill",
+  "name": "seedance2-skill",
+  "summary": "即梦 Seedance 视频创意工作台。用户发图+文案时自主完成看图分析→文案扩写→运镜匹配→质量验证→API生成。触发词：即梦、Seedance、seedance、视频生成、视频提示词、AI视频、运镜、短剧、广告视频、视频延长、图生视频。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seedance2_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhanghaonan777",
+      "features": [
+        "即梦 Seedance 视频创意工作台。用户发图+文案时自主完成看图分析→文案扩写→运镜匹配→质量验证→API生成。触发词：即梦、Seedance、seedance、视频生成、视频提示词、A."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/seedance2-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41134077?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "seedance2-skill",
+      "url": "https://clawhub.ai/skills/seedance2-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seedance2-skill",
+    "url": "https://clawhub.ai/skills/seedance2-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seedance2-skill-8adf4f69ea49172d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/seedance2-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-seedance2-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:87688c8bf1e6dccfda0af9138d8c0c7b3f8c07fcc09bb34f325ecf342ce24650",
+      "artifactSizeBytes": 2558
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T12:42:06.972Z"
+}

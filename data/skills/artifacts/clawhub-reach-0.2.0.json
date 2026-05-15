@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reach@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reach",
+  "skill": {
+    "id": 29340,
+    "skillKey": "clawhub-reach",
+    "name": "Reach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reach",
+    "url": "https://clawhub.ai/skills/reach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reach-ed4561f685f13353.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent web interface. Browse websites, fill forms, login to services, sign transactions, send/receive email, solve CAPTCHAs, and interact with the web autonom..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "potdealer",
+      "userId": "s172y9vn3tdh7z86b9q2yyy4r983ebrg",
+      "displayName": "Potdealer",
+      "image": "https://avatars.githubusercontent.com/u/172426319?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 305,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1774300408895,
+      "changelog": "Add domains, email inbox, CAPTCHA solving, error recovery, accurate feature list",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:841389e15e37ac92e55a0091982a265732a1c4ba5cb6323320bb6feb56da439f"
+}

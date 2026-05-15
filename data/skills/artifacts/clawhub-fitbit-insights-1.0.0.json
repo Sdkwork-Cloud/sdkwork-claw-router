@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fitbit-insights@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fitbit_insights",
+  "skill": {
+    "id": 14743,
+    "skillKey": "clawhub-fitbit-insights",
+    "name": "Fitbit Insights"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fitbit-insights",
+    "url": "https://clawhub.ai/skills/fitbit-insights",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fitbit-insights-961e0d4198146275.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fitbit fitness data integration. Use when the user wants fitness insights, workout summaries, step counts, heart rate data, sleep analysis, or to ask questions about their Fitbit activity data. Provides AI-powered analysis of fitness metri."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "poisondminds",
+      "userId": "publishers:poisondminds",
+      "displayName": "poisondminds",
+      "image": "https://avatars.githubusercontent.com/u/17079569?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770616543360,
+      "changelog": "Fitbit 1.0.0 Changelog\n\n- Initial release with comprehensive integration for Fitbit fitness data.\n- Added features for querying and analyzing steps, heart rate, sleep, activity logs, and trends.\n- Provides AI-powered insights and answers about user fitness metrics.\n- Includes OAuth token setup instructions and automated token refresh.\n- Added sample commands and example response scenarios for user queries.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:924d6976fc440a365cb4daced94b39900181b28c0c897006a9db0f67af7b65aa"
+}

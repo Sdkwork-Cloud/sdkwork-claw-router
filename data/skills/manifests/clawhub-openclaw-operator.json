@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51907,
+  "uuid": "skill-clawhub-openclaw-operator",
+  "skillKey": "clawhub-openclaw-operator",
+  "name": "OpenClaw Operator",
+  "summary": "Diagnose and prevent OpenClaw agent failures — session bloat, lane deadlocks, bootstrap truncation, auth errors, compaction timeouts, and more. Use this skil...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_operator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Don Zurbrick",
+      "features": [
+        "Diagnose and prevent OpenClaw agent failures — session bloat, lane deadlocks, bootstrap truncat.",
+        "Use this skil..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-operator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24554955?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-operator",
+      "url": "https://clawhub.ai/skills/openclaw-operator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-operator",
+    "url": "https://clawhub.ai/skills/openclaw-operator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-operator-aa83e1fd7df15b0d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-operator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-operator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1994c5ad6f6e335b0e32e2c9e8f2702f736ede406d5f20b3484c679399800420",
+      "artifactSizeBytes": 2061
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T21:53:15.417Z"
+}

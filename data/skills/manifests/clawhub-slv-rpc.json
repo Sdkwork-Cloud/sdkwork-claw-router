@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14540,
+  "uuid": "skill-clawhub-slv-rpc",
+  "skillKey": "clawhub-slv-rpc",
+  "name": "Slv Rpc",
+  "summary": "Ansible playbooks and templates to deploy, manage, and update Solana RPC nodes on mainnet, testnet, and devnet with support for RPC, indexing, and gRPC.",
+  "version": "0.13.15",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slv_rpc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ELSOUL LABO B.V.",
+      "features": [
+        "Ansible playbooks and templates to deploy, manage, and update Solana RPC nodes on mainnet, test."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/slv-rpc@0.13.15",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23725836?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "slv-rpc",
+      "url": "https://clawhub.ai/skills/slv-rpc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slv-rpc",
+    "url": "https://clawhub.ai/skills/slv-rpc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slv-rpc-f74e450d84afd0a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/slv-rpc@0.13.15",
+      "artifactUrl": "data/skills/artifacts/clawhub-slv-rpc-0.13.15.json",
+      "version": "0.13.15",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c46802ab7fb366fc0fce294e8e88f9a22362e3334c0601505055e1909bd78ee7",
+      "artifactSizeBytes": 1940
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T17:42:33.249Z"
+}

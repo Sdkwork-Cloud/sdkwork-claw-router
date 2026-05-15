@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31148,
+  "uuid": "skill-clawhub-3gpp-scout",
+  "skillKey": "clawhub-3gpp-scout",
+  "name": "3GPP Scout",
+  "summary": "Semantic search over 3,200+ 3GPP technical specifications (TS/TR series, Rel-15 and Rel-19). Search text, diagrams, and figures across 904K+ vectors.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.3gpp_scout",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chriscarrotlabs",
+      "features": [
+        "Semantic search over 3,200+ 3GPP technical specifications (TS/TR series, Rel-15 and Rel-19)",
+        "Search text, diagrams, and figures across 904K+ vectors."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/3gpp-scout@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254829223?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "3gpp-scout",
+      "url": "https://clawhub.ai/skills/3gpp-scout"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "3gpp-scout",
+    "url": "https://clawhub.ai/skills/3gpp-scout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/3gpp-scout-55d78267e2e118cd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/3gpp-scout@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-3gpp-scout-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1b2fcf803816dbbe0b1c13387d35281382a7876d36c5dbd770f281bc65ffb2d7",
+      "artifactSizeBytes": 2224
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T22:58:46.069Z"
+}

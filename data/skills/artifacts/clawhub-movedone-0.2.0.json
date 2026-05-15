@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/movedone@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.movedone",
+  "skill": {
+    "id": 27922,
+    "skillKey": "clawhub-movedone",
+    "name": "Movedone"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "movedone",
+    "url": "https://clawhub.ai/skills/movedone",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/movedone-1a7bb12cdc5ccf78.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Movedone kanban projects, columns, tasks, comments, and task links via the local HTTP API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kaichaosun",
+      "userId": "s17cc17rs8aymrnzkztafb0a2583jk2z",
+      "displayName": "kaichaosun",
+      "image": "https://avatars.githubusercontent.com/u/10568673?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 238,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1773892939191,
+      "changelog": "- Updated to use the Movedone local HTTP API throughout, instead of the \"bridge API\"\n- The setup process and documentation now reference the new HTTP API port and \"OpenClaw\" settings location\n- Added requirement for an X-Agent-Name header when adding task comments\n- Updated example commands and environment variable instructions to match the latest Movedone app and API changes\n- Revised notes for new headers and API behavior",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0151f390c270ec779c79c77fb99f7e33d090fc48f16665d81196c0fef97c89ac"
+}

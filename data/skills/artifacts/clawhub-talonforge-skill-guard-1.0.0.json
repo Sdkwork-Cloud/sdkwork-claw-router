@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/talonforge-skill-guard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.talonforge_skill_guard",
+  "skill": {
+    "id": 52491,
+    "skillKey": "clawhub-talonforge-skill-guard",
+    "name": "Skill Guard — Pre-Install Security Scanner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "talonforge-skill-guard",
+    "url": "https://clawhub.ai/skills/talonforge-skill-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/talonforge-skill-guard-c8886c3d0e3f57ce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scan ClawHub skills for security vulnerabilities BEFORE installing. Use when installing new skills from ClawHub to detect prompt injections, malware payloads..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "casperzinou",
+      "userId": "s17e5vj6460jg316gzhmfj0n9584v73y",
+      "displayName": "zinou",
+      "image": "https://avatars.githubusercontent.com/u/4118976?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776356344079,
+      "changelog": "Initial release: pre-install security scanning for ClawHub skills, prompt injection detection, data exfiltration checks",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a02f9fd17a4e93a7f79b0ae49e5e73f05bc23572cc3a57b6c21f2d944adaf80b"
+}

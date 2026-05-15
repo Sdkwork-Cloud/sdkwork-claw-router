@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/file-converter@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_converter",
+  "skill": {
+    "id": 13037,
+    "skillKey": "clawhub-file-converter",
+    "name": "File Converter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-converter",
+    "url": "https://clawhub.ai/skills/file-converter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-converter-373c8f69b97f35d6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "File format converter. Detect formats, convert between JSON/YAML/XML/CSV/Markdown, minify and prettify code. Commands: detect, json2yaml, yaml2json, csv2md."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ckchzh",
+      "userId": "s1722v35hsq964bw64ecjw43z583fbex",
+      "displayName": "BytesAgain2",
+      "image": "https://avatars.githubusercontent.com/u/44366898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1399,
+      "installsAllTime": 9,
+      "installsCurrent": 9,
+      "stars": 1,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1773880217729,
+      "changelog": "v2.1.0: SKILL.md rewritten to match script.sh commands exactly.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2e32514a15adcfac0020b3a8809b5af84afde7ac266f5318da0d53916d35fefb"
+}

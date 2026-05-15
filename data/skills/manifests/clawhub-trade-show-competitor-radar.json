@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57596,
+  "uuid": "skill-clawhub-trade-show-competitor-radar",
+  "skillKey": "clawhub-trade-show-competitor-radar",
+  "name": "Trade Show Competitor Radar",
+  "summary": "Structure on-site competitor booth observations into tagged, actionable intelligence notes. \"Log competitor intel from the show floor\" / \"记录展会现场竞品情报\" / \"Konk...",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trade_show_competitor_radar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "weilun88313",
+      "features": [
+        "Structure on-site competitor booth observations into tagged, actionable intelligence notes",
+        "\"Log competitor intel from the show floor\" / \"记录展会现场竞品情报\" / \"Konk..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trade-show-competitor-radar@0.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33587196?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trade-show-competitor-radar",
+      "url": "https://clawhub.ai/skills/trade-show-competitor-radar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trade-show-competitor-radar",
+    "url": "https://clawhub.ai/skills/trade-show-competitor-radar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trade-show-competitor-radar-3c702129def250c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trade-show-competitor-radar@0.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trade-show-competitor-radar-0.4.0.json",
+      "version": "0.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:964a7f313e923aaea9beca001384911c0c27ba3f9d82c08f1c69c41be2a6de21",
+      "artifactSizeBytes": 2285
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T07:54:42.006Z"
+}

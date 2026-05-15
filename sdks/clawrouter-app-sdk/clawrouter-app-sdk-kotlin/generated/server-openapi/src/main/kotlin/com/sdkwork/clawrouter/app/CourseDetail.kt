@@ -1,0 +1,31 @@
+package com.sdkwork.clawrouter.app
+
+data class CourseDetail(
+    val category: String? = null,
+    val categoryLabel: String? = null,
+    val commentCount: Int? = null,
+    val content: String? = null,
+    val contentId: Int? = null,
+    val courseCode: String? = null,
+    val currency: String? = null,
+    val description: String? = null,
+    val durationText: String? = null,
+    val engagement: CourseEngagement? = null,
+    val externalBvid: String? = null,
+    val id: String? = null,
+    val instructor: CourseInstructor? = null,
+    val isCollection: Boolean? = null,
+    val lessonsCount: Int? = null,
+    val level: Int? = null,
+    val levelLabel: String? = null,
+    val priceAmount: String? = null,
+    val publishedAt: String? = null,
+    val ratingScore: Double? = null,
+    val relatedCourses: List<CourseItem>? = null,
+    val sections: List<CourseSectionItem>? = null,
+    val source: CourseOverviewSource? = null,
+    val studentsCount: Int? = null,
+    val tags: List<String>? = null,
+    val thumbnailUrl: String? = null,
+    val title: String? = null
+)

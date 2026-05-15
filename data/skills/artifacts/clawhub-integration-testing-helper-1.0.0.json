@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/integration-testing-helper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.integration_testing_helper",
+  "skill": {
+    "id": 45097,
+    "skillKey": "clawhub-integration-testing-helper",
+    "name": "Integration Testing Helper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "integration-testing-helper",
+    "url": "https://clawhub.ai/skills/integration-testing-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/integration-testing-helper-4a75b21e2544301b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Assist with creating, running, and managing integration tests for APIs, databases, and services, including orchestration, data setup, and reporting."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777068083136,
+      "changelog": "Initial release of integration-testing-helper.\n\n- Comprehensive assistant for creating, running, and managing integration tests across APIs, databases, and services.\n- Supports complex test scenario design, service orchestration, and automated data setup.\n- Includes built-in assertion library and generates detailed HTML/JSON test reports.\n- Integrates easily with CI platforms like GitHub Actions and GitLab CI.\n- Allows parallel execution of test scenarios.\n- Provides simple, natural-language commands for key testing workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6f9a9b39aaf0aef58fbf91873a1031b8d09f677faaf89beb31336c3289359a8a"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12606,
+  "uuid": "skill-clawhub-vscode",
+  "skillKey": "clawhub-vscode",
+  "name": "VSCode",
+  "summary": "Avoid common VSCode mistakes — settings conflicts, debugger setup, and extension clashes.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vscode",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Avoid common VSCode mistakes — settings conflicts, debugger setup, and extension clashes."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vscode@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vscode",
+      "url": "https://clawhub.ai/skills/vscode"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vscode",
+    "url": "https://clawhub.ai/skills/vscode",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vscode-c600edf6ce0739a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vscode@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vscode-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:53ad5dbcb3dc840f5062f746d2a9be0c70aef80612fd4e64fce9214da37b3cee",
+      "artifactSizeBytes": 1760
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T00:07:13.728Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/elevenlabsclaw@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.elevenlabsclaw",
+  "skill": {
+    "id": 25689,
+    "skillKey": "clawhub-elevenlabsclaw",
+    "name": "Elevenlabs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "elevenlabsclaw",
+    "url": "https://clawhub.ai/skills/elevenlabsclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/elevenlabsclaw-5e4a8d93cdc10953.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Converts text to natural speech using ElevenLabs for clinical and healthcare use cases. Use when generating patient instructions, discharge summaries, medica..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "arunnadarasa",
+      "userId": "s175spnx5m2qksm07wmc9jw9qh83hq8x",
+      "displayName": "Arun Nadarasa",
+      "image": "https://avatars.githubusercontent.com/u/186420617?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 373,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772546125266,
+      "changelog": "- Initial release of the ElevenLabs text-to-speech skill for clinical and healthcare use cases.\n- Converts written clinical content (instructions, summaries, reminders, multilingual messages) into natural speech.\n- Designed for OpenClaw Clinical Hackathon participants—requires an ELEVENLABS_API_KEY.\n- Includes API usage instructions, best practices for clinical voice output, and quick-reference table for model selection.\n- Supports accessibility and patient engagement by enabling spoken output for diverse clinical scenarios.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cb870f8869afe4edf1bc296f92bf75c726da1cf1a67fed34f41abe959a910150"
+}

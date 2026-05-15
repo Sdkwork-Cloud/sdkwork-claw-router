@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bupahua-store@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bupahua_store",
+  "skill": {
+    "id": 63748,
+    "skillKey": "clawhub-bupahua-store",
+    "name": "Bupahua Store"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bupahua-store",
+    "url": "https://clawhub.ai/skills/bupahua-store",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bupahua-store-aa9ab1bf01dcbf63.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "不怕花商城商品搜索。支持按关键词搜索商品、查看价格和库存。 Use when: 用户问\"有XXX吗\"、\"XXX多少钱\"、\"搜索XXX\"、\"不怕花有XXX吗\"、\"活力28\"等商品名称。 NOT for: 订单查询、售后咨询、跨平台比价、非商品类问题。 微信搜索 \"不怕花\" 小程序获取API KEY → 进入小程序后..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "285984303",
+      "userId": "s17fzwzy4e3tqvgx63z0kmmwth83gswt",
+      "displayName": "ricky he",
+      "image": "https://avatars.githubusercontent.com/u/3397070?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775309821009,
+      "changelog": "bupahua-store 1.0.1\n\n- 新增仓库地址说明\n- 增加QQ群联系方式\n- 更新版本和发布日期信息\n- 其他说明文档版面优化，无功能变更",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a4f2cdd06a096690fb7a06bf4b0c4e7b287c35400d3c2eb4ac0dc596faee708e"
+}

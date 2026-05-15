@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68552,
+  "uuid": "skill-clawhub-tapd-skill",
+  "skillKey": "clawhub-tapd-skill",
+  "name": "TAPD",
+  "summary": "当用户需要查询、修改 TAPD 项目中需求、缺陷、任务、迭代等信息时，如修改状态、添加评论等，通过调用 TAPD MCP 提供相应的服务。",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tapd_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "truesnow",
+      "features": [
+        "当用户需要查询、修改 TAPD 项目中需求、缺陷、任务、迭代等信息时，如修改状态、添加评论等，通过调用 TAPD MCP 提供相应的服务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tapd-skill@0.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37447603?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tapd-skill",
+      "url": "https://clawhub.ai/skills/tapd-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tapd-skill",
+    "url": "https://clawhub.ai/skills/tapd-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tapd-skill-bd8dcadeba196375.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tapd-skill@0.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-tapd-skill-0.0.2.json",
+      "version": "0.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:087871a6b94e683200cb2152b2f0e2313c4e2eddafca74eda155de7d173ee3e6",
+      "artifactSizeBytes": 2244
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T13:22:25.549Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-meeting-minutes@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_meeting_minutes",
+  "skill": {
+    "id": 65899,
+    "skillKey": "clawhub-feishu-meeting-minutes",
+    "name": "feishu-meeting-minutes"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-meeting-minutes",
+    "url": "https://clawhub.ai/skills/feishu-meeting-minutes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-meeting-minutes-0e4a77c997933fb5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "飞书会议纪要自动生成工具。从飞书妙记链接、minute token 或现成 transcript 文件生成结构化中文会议纪要，并可选导出 PDF、上传回飞书云空间。适用于用户提供飞书妙记链接要求整理会议纪要、要求将逐字稿转正式文档、或希望把会议录音对应 transcript 快速整理成可分发纪要的场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jfvincentyang",
+      "userId": "s1745g0r1fxdghd40y3dr98e4x83yj22",
+      "displayName": "jfvincentyang",
+      "image": "https://avatars.githubusercontent.com/u/264906315?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 230,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774965472599,
+      "changelog": "Safer 1.2.0 release: replaced bash flow with a Node CLI, added stricter token parsing, session-scoped transcript lookup, explicit dependency/scope declarations, Markdown generation, optional PDF export, and optional Feishu Drive upload.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6898b1f71c24dba5642aab57084f3dee127763da8a91120b5d76c0370e2bdc79"
+}

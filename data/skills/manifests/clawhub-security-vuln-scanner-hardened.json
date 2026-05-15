@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49202,
+  "uuid": "skill-clawhub-security-vuln-scanner-hardened",
+  "skillKey": "clawhub-security-vuln-scanner-hardened",
+  "name": "Security Vuln Scanner Hardened",
+  "summary": "Scan source code for security vulnerabilities and suggest fixes.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.security_vuln_scanner_hardened",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Faberlens",
+      "features": [
+        "Scan source code for security vulnerabilities and suggest fixes."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/security-vuln-scanner-hardened@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261834257?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "security-vuln-scanner-hardened",
+      "url": "https://clawhub.ai/skills/security-vuln-scanner-hardened"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "security-vuln-scanner-hardened",
+    "url": "https://clawhub.ai/skills/security-vuln-scanner-hardened",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/security-vuln-scanner-hardened-0b0a95b227cc0607.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/security-vuln-scanner-hardened@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-security-vuln-scanner-hardened-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c0885654e26695707318308132d521eeb05028f03ac3ee3afe1e975ef91c559",
+      "artifactSizeBytes": 2354
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T13:01:02.176Z"
+}

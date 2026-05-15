@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hippocampus-openclaw-onboarding@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hippocampus_openclaw_onboarding",
+  "skill": {
+    "id": 24271,
+    "skillKey": "clawhub-hippocampus-openclaw-onboarding",
+    "name": "Hippocampus Openclaw Onboarding"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hippocampus-openclaw-onboarding",
+    "url": "https://clawhub.ai/skills/hippocampus-openclaw-onboarding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hippocampus-openclaw-onboarding-b1a2f8f019bd392b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bootstrap OpenClaw with Hippocampus memory under a branded, repeatable setup: workspace, agent ID, API key or bootstrap token, and MCP wiring."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cezexpl",
+      "userId": "publishers:cezexpl",
+      "displayName": "cezexPL",
+      "image": "https://avatars.githubusercontent.com/u/103859161?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 416,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773056743280,
+      "changelog": "Initial release of hippocampus-openclaw-onboarding.\n\n- Provides step-by-step onboarding instructions for connecting OpenClaw to Hippocampus memory.\n- Details necessary setup actions: workspace naming, agent ID assignment, and authentication configuration.\n- Explains best practices for agent hierarchy and credential management.\n- Lists related packages for post-setup operations and integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:353d6d0fcbd046f4ec0cb67ed8c211ddbbc20df9210f08529c12ed29a5e96c07"
+}

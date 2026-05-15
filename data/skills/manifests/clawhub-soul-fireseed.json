@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69301,
+  "uuid": "skill-clawhub-soul-fireseed",
+  "skillKey": "clawhub-soul-fireseed",
+  "name": "soul-fireseed",
+  "summary": "火种·灵魂 v2.0 — 人格建模与记忆沉淀技能。激活后有两种模式：①对话提取 ②记忆分析。首次提取后自动进入后台模式，可设置每周/每日自动提取。",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.soul_fireseed",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "suttangle",
+      "features": [
+        "火种·灵魂 v2.0 — 人格建模与记忆沉淀技能。激活后有两种模式：①对话提取 ②记忆分析。首次提取后自动进入后台模式，可设置每周/每日自动提取。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/soul-fireseed@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/131636493?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "soul-fireseed",
+      "url": "https://clawhub.ai/skills/soul-fireseed"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "soul-fireseed",
+    "url": "https://clawhub.ai/skills/soul-fireseed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/soul-fireseed-78b6f50d233ba79b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/soul-fireseed@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-soul-fireseed-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:177ffdf650a69d8b24076c2b40efd8b74f75fcbcba0bb83d25d3b25dac0845bc",
+      "artifactSizeBytes": 2052
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T14:58:51.455Z"
+}

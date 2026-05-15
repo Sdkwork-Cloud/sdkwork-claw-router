@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "linkmind-kb",
+    "displayName": "Linkmind",
+    "summary": "LinkMind 知识连接引擎 Phase 2 - 本地化知识中枢 CLI 工具，支持 storage adapter 抽象层和 OpenAI-compatible embedding provider。",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1775377916537,
+    "updatedAt": 1777527188249
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1775377916537,
+    "changelog": "LinkMind 知识连接引擎 1.0.0 发布，新增抽象存储和嵌入适配器，支持关键词+向量召回检索。\n\n- 引入 Storage Adapter 抽象层，默认支持 JSON，新增高性能 Sqlite 存储\n- 引入 Embedding Provider 抽象层，支持 MockProvider（离线测试）/OpenAI 兼容 API\n- 检索器支持关键词+向量（余弦相似度）双路召回，合并去重\n- 完全兼容 Phase 1 JSON 数据，无需迁移\n- 自测脚本新增 38 项全覆盖测试\n- 文档与 CLI 使用说明同步更新",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "harrylabsj",
+    "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+    "displayName": "haidong",
+    "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.dangerous_exec"
+    ],
+    "summary": "Detected: suspicious.dangerous_exec",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527188249
+  }
+}

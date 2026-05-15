@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58999,
+  "uuid": "skill-clawhub-yuri-ad-skill",
+  "skillKey": "clawhub-yuri-ad-skill",
+  "name": "Yuri广告平台 MCP API - Facebook广告创建、投放管理、数据监控。支持创建Campaign/Ad Set/Ad、查询余额、受众定位、文案素材管理、预算调整等。",
+  "summary": "YRI AdX — Facebook ad automation via MCP API. Create campaigns, manage budgets, monitor performance, and scale ads. | 尤里改广告平台 MCP API — Facebook广告创建、投放管理、数据监...",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yuri_ad_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yuriskills",
+      "features": [
+        "YRI AdX — Facebook ad automation via MCP API",
+        "Create campaigns, manage budgets, monitor performance, and scale ads",
+        "| 尤里改广告平台 MCP API — Facebook广告创建、投放管理、数据监..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yuri-ad-skill@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/249741427?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yuri-ad-skill",
+      "url": "https://clawhub.ai/skills/yuri-ad-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yuri-ad-skill",
+    "url": "https://clawhub.ai/skills/yuri-ad-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yuri-ad-skill-205d0b4a97b8954a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yuri-ad-skill@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-yuri-ad-skill-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a59a740e0f34e526ad0c0d439ebe79a6ed51e6298b6cac784d9516d85e39a585",
+      "artifactSizeBytes": 2502
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T06:12:38.139Z"
+}

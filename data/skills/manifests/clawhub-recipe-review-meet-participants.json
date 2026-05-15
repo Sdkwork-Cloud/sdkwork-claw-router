@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21664,
+  "uuid": "skill-clawhub-recipe-review-meet-participants",
+  "skillKey": "clawhub-recipe-review-meet-participants",
+  "name": "Recipe Review Meet Participants",
+  "summary": "Review who attended a Google Meet conference and for how long.",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recipe_review_meet_participants",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Review who attended a Google Meet conference and for how long."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/recipe-review-meet-participants@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "recipe-review-meet-participants",
+      "url": "https://clawhub.ai/skills/recipe-review-meet-participants"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recipe-review-meet-participants",
+    "url": "https://clawhub.ai/skills/recipe-review-meet-participants",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recipe-review-meet-participants-8ac88ed8cef9898a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/recipe-review-meet-participants@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-recipe-review-meet-participants-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ea7524ed64c55b82f0be39ac17458e3cfebced72984711b44556223009c34fd8",
+      "artifactSizeBytes": 2008
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:36:51.920Z"
+}

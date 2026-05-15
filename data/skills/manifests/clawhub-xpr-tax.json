@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16982,
+  "uuid": "skill-clawhub-xpr-tax",
+  "skillKey": "clawhub-xpr-tax",
+  "name": "XPR Crypto Tax",
+  "summary": "Generate detailed crypto tax reports for XPR Network activity with support for New Zealand and United States regional tax rules and cost basis methods.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xpr_tax",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "paulgnz",
+      "features": [
+        "Generate detailed crypto tax reports for XPR Network activity with support for New Zealand and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xpr-tax@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12118160?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xpr-tax",
+      "url": "https://clawhub.ai/skills/xpr-tax"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xpr-tax",
+    "url": "https://clawhub.ai/skills/xpr-tax",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xpr-tax-ca50ce8829dc3a43.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xpr-tax@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xpr-tax-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4b225934ee942e369934fc46f8d16bec72899122f0bfb22dd11d8ba25d983b91",
+      "artifactSizeBytes": 1940
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T05:11:13.225Z"
+}

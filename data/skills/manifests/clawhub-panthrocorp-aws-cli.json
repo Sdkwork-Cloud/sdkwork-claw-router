@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45519,
+  "uuid": "skill-clawhub-panthrocorp-aws-cli",
+  "skillKey": "clawhub-panthrocorp-aws-cli",
+  "name": "Aws Cli",
+  "summary": "AWS CLI v2 for OpenClaw agents (repackaged official binary)",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.panthrocorp_aws_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PanthroCorp",
+      "features": [
+        "AWS CLI v2 for OpenClaw agents (repackaged official binary)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/panthrocorp-aws-cli@0.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264519014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "panthrocorp-aws-cli",
+      "url": "https://clawhub.ai/skills/panthrocorp-aws-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "panthrocorp-aws-cli",
+    "url": "https://clawhub.ai/skills/panthrocorp-aws-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/panthrocorp-aws-cli-9221bfba8d215dd2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/panthrocorp-aws-cli@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-panthrocorp-aws-cli-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:670203a5db40d47c3a2150cae2c45c65e26f63c955610326f52d3dd2877f8c2b",
+      "artifactSizeBytes": 2176
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T09:29:33.466Z"
+}

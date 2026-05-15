@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tiktok-motivation-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tiktok_motivation_video",
+  "skill": {
+    "id": 14982,
+    "skillKey": "clawhub-tiktok-motivation-video",
+    "name": "Full AI pipeline to create dark motivational TikTok/Reels videos using REAL video footage. Generates script (Claude), voiceover."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tiktok-motivation-video",
+    "url": "https://clawhub.ai/skills/tiktok-motivation-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tiktok-motivation-video-81b9eed0e10c3d78.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Full AI pipeline to create dark motivational TikTok/Reels videos using REAL video footage. Generates script (Claude), voiceover (ElevenLabs), searches real d..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thuongvh2-python",
+      "userId": "publishers:thuongvh2-python",
+      "displayName": "thuongvh2-python",
+      "image": "https://avatars.githubusercontent.com/u/257780179?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 850,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772552011097,
+      "changelog": "tiktok-motivation-video skill v1.0.0\n\n- Initial release: Full pipeline to generate dark motivational TikTok/Reels videos using real video footage (no AI visuals).\n- Creates script with precise timing and Pexels search keywords via Claude API.\n- Generates voiceover using ElevenLabs (supports custom voice, English/Vietnamese).\n- Fetches high-quality cinematic vertical videos from Pexels API.\n- Composes video with animated text overlays (MoviePy) and applies color grading (FFmpeg).\n- Outputs ready-to-post 1080x1920 MP4 with TikTok-compliant formatting and captions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:97e0c9b147c32e28f4dbdf87d91d8c535da195df7a46386c83a15bec01f08db6"
+}

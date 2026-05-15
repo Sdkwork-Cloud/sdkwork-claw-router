@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/arrive-guideline-architect@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arrive_guideline_architect",
+  "skill": {
+    "id": 29842,
+    "skillKey": "clawhub-arrive-guideline-architect",
+    "name": "Arrive Guideline Architect"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arrive-guideline-architect",
+    "url": "https://clawhub.ai/skills/arrive-guideline-architect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arrive-guideline-architect-c5b955e399cfcb85.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate ARRIVE 2.0 compliant animal research protocols with structured experimental design, sample size calculations, and reporting checklists. Ensures tran..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 294,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773393885745,
+      "changelog": "Initial release of ARRIVE Guideline Architect: AI-powered tool for creating ARRIVE 2.0 compliant animal research protocols.\n\n- Generates structured, publication-ready protocols covering all ARRIVE 2.0 essential items and recommended sets.\n- Provides sample size calculator with statistical power analysis and auto-justification.\n- Validates existing protocols for ARRIVE compliance and highlights missing elements.\n- Supports creation of randomization schemes and blinding documentation.\n- Includes templates and guidance for drug efficacy, toxicology, and behavioral studies.\n- Designed to enhance research transparency, reproducibility, and ethical compliance in in vivo studies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7dc35e87de23f7a05b2a8f18cfd918a3ba3cbef143aee40370f4260517299d76"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tech-home-search-filter@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tech_home_search_filter",
+  "skill": {
+    "id": 27607,
+    "skillKey": "clawhub-tech-home-search-filter",
+    "name": "Tech Home Search Filter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tech-home-search-filter",
+    "url": "https://clawhub.ai/skills/tech-home-search-filter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tech-home-search-filter-52cc3e962dca6590.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Designs search optimization and smart parameter navigation/filtering for technical home product stores (e.g. smart lighting, assembly furniture). Use when th..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rijoyai",
+      "userId": "s17968d4vetrx5cj2yx3105heh83hrb4",
+      "displayName": "RIJOY-AI",
+      "image": "https://avatars.githubusercontent.com/u/219251023?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 345,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773137486312,
+      "changelog": "Initial public release with evaluation and documentation files.\n\n- Added evaluation framework and examples in the `evals` directory.\n- Included supporting documentation in `assets`, `scripts`, and `references` directories.\n- No changes to the skill logic; core SKILL.md remains focused on technical home product search and filtering.\n- Lays groundwork for future testing, references, and guided evaluations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7f2b4791bdf0963689a7d5130121bf5bc332033298108809de2ca072ac44efc0"
+}

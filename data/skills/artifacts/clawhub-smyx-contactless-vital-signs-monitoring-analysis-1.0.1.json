@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smyx-contactless-vital-signs-monitoring-analysis@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smyx_contactless_vital_signs_monitoring_analysis",
+  "skill": {
+    "id": 57812,
+    "skillKey": "clawhub-smyx-contactless-vital-signs-monitoring-analysis",
+    "name": "无感生命体征监测分析工具"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smyx-contactless-vital-signs-monitoring-analysis",
+    "url": "https://clawhub.ai/skills/smyx-contactless-vital-signs-monitoring-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smyx-contactless-vital-signs-monitoring-analysis-09e4e62afe09e1a9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Non-contact detection of heart rate, respiration, blood oxygen, and heart rate variability. No wearable devices are required; monitoring is achieved solely t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "18072937735",
+      "userId": "s17f8q65zg3y98t86jdg1177g583whq8",
+      "displayName": "smyx-skills",
+      "image": "https://avatars.githubusercontent.com/u/272124705?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 4,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778250880919,
+      "changelog": "- Fixed version field in SKILL.md (was missing or incorrect).\n- Updated and synchronized documentation and configuration files.\n- General code and config refactoring for clarity and maintainability.\n- No changes to user-facing features or core functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f365550812984364d5aa88d1fa3f648714b83cbb2bc0174104fa529a556708d8"
+}

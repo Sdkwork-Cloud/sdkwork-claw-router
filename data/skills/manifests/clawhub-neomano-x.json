@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28721,
+  "uuid": "skill-clawhub-neomano-x",
+  "skillKey": "clawhub-neomano-x",
+  "name": "Neomano X (Tweet Publisher + Image)",
+  "summary": "Draft, revise, and publish X (Twitter) posts with an image using the X API. Use when the user asks for a tweet/post for X, wants to attach an image, and requ...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neomano_x",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "elandivar",
+      "features": [
+        "Draft, revise, and publish X (Twitter) posts with an image using the X API",
+        "Use when the user asks for a tweet/post for X, wants to attach an image, and requ..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/neomano-x@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4536961?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "neomano-x",
+      "url": "https://clawhub.ai/skills/neomano-x"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neomano-x",
+    "url": "https://clawhub.ai/skills/neomano-x",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neomano-x-428c27535b9884e4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/neomano-x@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-neomano-x-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1aa40331f22a4882a2d2eb8f1e5783262126c606107750f32e4cf8dab8561985",
+      "artifactSizeBytes": 2002
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T17:38:06.916Z"
+}

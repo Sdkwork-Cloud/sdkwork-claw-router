@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50255,
+  "uuid": "skill-clawhub-synology-surveillance-skill",
+  "skillKey": "clawhub-synology-surveillance-skill",
+  "name": "Synology Surveillance",
+  "summary": "Steuere Synology Surveillance Station Kameras über die Web API. Nutze diesen Skill für Snapshots, Live-Streams, Aufnahmen, PTZ-Steuerung und Ereignis-Überwachung. Erfordert Synology NAS mit Surveillance Station.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.synology_surveillance_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "photonixlaser-ux",
+      "features": [
+        "Steuere Synology Surveillance Station Kameras über die Web API",
+        "Nutze diesen Skill für Snapshots, Live-Streams, Aufnahmen, PTZ-Steuerung und Ereignis-Überwachu.",
+        "Erfordert Synology NAS mit Surveillance Station."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/synology-surveillance-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/240759976?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "synology-surveillance-skill",
+      "url": "https://clawhub.ai/skills/synology-surveillance-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "synology-surveillance-skill",
+    "url": "https://clawhub.ai/skills/synology-surveillance-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/synology-surveillance-skill-028eca5a8bdef8c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/synology-surveillance-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-synology-surveillance-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1125563489d6ead136e1cf0bbb3754bc2d8f0feff828127650248c0bb82edb99",
+      "artifactSizeBytes": 2425
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T01:30:46.827Z"
+}

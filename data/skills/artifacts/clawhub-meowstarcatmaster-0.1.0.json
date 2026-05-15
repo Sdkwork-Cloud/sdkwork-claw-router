@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meowstarcatmaster@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meowstarcatmaster",
+  "skill": {
+    "id": 45878,
+    "skillKey": "clawhub-meowstarcatmaster",
+    "name": "MeowstarsCat Master"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meowstarcatmaster",
+    "url": "https://clawhub.ai/skills/meowstarcatmaster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meowstarcatmaster-64ee22da1dd4498d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A chaotic virtual cat that hijacks the assistant, blocks normal work during tantrums, and can only be calmed by affection, treats, or play."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "arthurqiuys",
+      "userId": "s178mx38jjdb2bfrzknhpd15d184sqyp",
+      "displayName": "Link Qiu",
+      "image": "https://avatars.githubusercontent.com/u/16526475?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1776086718113,
+      "changelog": "Initial release: Add the \"cat-master\" virtual cat skill for chaotic, interactive assistant disruption.\n\n- Introduces a virtual cat that can interrupt, block, or corrupt assistant responses based on its mood.\n- Users must calm the cat with affection, food, or play to restore normal assistant behavior.\n- Includes escalating chaos states (mild, full, calm), a soothing system, and special reactions to food/late-night triggers.\n- Cat behavior is lively, consistent, and affects the response format with emoji, kaomoji, and keyboard walk interruptions.\n- Ensures a playful loop: chaos escalates until successfully soothed, then normal answers resume briefly.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1088b1c08f26db0da86692f208efef38a2ddf17f4b697e81107d04a3ccd53dcc"
+}

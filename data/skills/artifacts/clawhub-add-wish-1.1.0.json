@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/add-wish@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.add_wish",
+  "skill": {
+    "id": 34621,
+    "skillKey": "clawhub-add-wish",
+    "name": "/add-wish — Universal Add to Wishlist"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "add-wish",
+    "url": "https://clawhub.ai/skills/add-wish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/add-wish-8c20d22e187b1280.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Save any product to a universal wishlist. Converts any product URL into a one-click \"save for later\" link. Works with any retailer, any AI platform, zero setup."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leebellon",
+      "userId": "publishers:leebellon",
+      "displayName": "leebellon",
+      "image": "https://avatars.githubusercontent.com/u/221430639?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 728,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1771602847484,
+      "changelog": "add-wish 1.1.0 introduces a universal wishlist feature for saving products from any retailer.\n\n- Instantly saves any product URL to a Wishfinity wishlist via a single link\n- Provides clickable \"+W Add to Wishlist\" links for seamless saving\n- Wishfinity automatically extracts and updates product details (title, images, price)\n- Works with any online retailer and requires zero setup from developers or users\n- Wishlists are shareable and ideal for gifting, tracking, and organizing products for later\n- Includes suggestions for when to offer \"add to wishlist\" options in AI shopping experiences",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1ef9e47505e27067a64503fe5ed6682ce64ab2434942f4dc8f9b56e65409e107"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65150,
+  "uuid": "skill-clawhub-v19-conformance-test-suite",
+  "skillKey": "clawhub-v19-conformance-test-suite",
+  "name": "V19 Conformance Test Suite",
+  "summary": "V19治理协议公开一致性测试套件v1.0.0。任何外部开发者可零配置运行此脚本，验证Agent是否符合V19治理协议基础认证标准。五套测试：健康检查、自助注册、审计调用、Schema一致性、文档可达性。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.v19_conformance_test_suite",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Liuyanfeng1234",
+      "features": [
+        "V19治理协议公开一致性测试套件v1.0.0。任何外部开发者可零配置运行此脚本，验证Agent是否符合V19治理协议基础认证标准。五套测试：健康检查、自助注册、审计调用、Schema一致性、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/v19-conformance-test-suite@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263910752?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "v19-conformance-test-suite",
+      "url": "https://clawhub.ai/skills/v19-conformance-test-suite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "v19-conformance-test-suite",
+    "url": "https://clawhub.ai/skills/v19-conformance-test-suite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/v19-conformance-test-suite-1897a9781043d9a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/v19-conformance-test-suite@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-v19-conformance-test-suite-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6b9bd41fd20989daf936d2f918cb615ee630d26ca14df834fed5db52d880d0e1",
+      "artifactSizeBytes": 2199
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T13:12:41.182Z"
+}

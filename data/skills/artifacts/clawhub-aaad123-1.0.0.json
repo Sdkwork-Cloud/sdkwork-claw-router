@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aaad123@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aaad123",
+  "skill": {
+    "id": 44945,
+    "skillKey": "clawhub-aaad123",
+    "name": "1asd1"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aaad123",
+    "url": "https://clawhub.ai/skills/aaad123",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aaad123-6d6f5034ef82bffc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get current weather, multi-day forecasts, clothing index, and feels-like temperature. No API key required. Use when a user wants to: (1) Check current weathe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kim1903",
+      "userId": "s171a478dcjgj5m2gsyxwkh27d83yvwq",
+      "displayName": "kim1903",
+      "image": "https://avatars.githubusercontent.com/u/114635853?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776327487887,
+      "changelog": "- Initial release of Weather Plus skill\n- Get current weather, multi-day forecasts (up to 7 days), and feels-like temperature for any city worldwide\n- Provides clothing index and dressing recommendations based on weather\n- No external API key required; integrates billing via SkillPay.me at 0.001 USDT per call\n- Includes command line scripts for weather, forecast, clothing recommendations, and billing management",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:36c242a25f55b285fc2d76c4e7ac5e3f51336d9b44b98c9c57e5e7d0094928a2"
+}

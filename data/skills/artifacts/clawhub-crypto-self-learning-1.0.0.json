@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crypto-self-learning@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_self_learning",
+  "skill": {
+    "id": 8842,
+    "skillKey": "clawhub-crypto-self-learning",
+    "name": "Crypto Self-Learning"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-self-learning",
+    "url": "https://clawhub.ai/skills/crypto-self-learning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-self-learning-8f1bb984d1080597.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Self-learning system for crypto trading. Logs trades with full context (indicators, market conditions), analyzes patterns of wins/losses, and auto-updates trading rules. Use to log trades, analyze performance, identify what works/fails, an."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "totaleasy",
+      "userId": "publishers:totaleasy",
+      "displayName": "totaleasy",
+      "image": "https://avatars.githubusercontent.com/u/11333125?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 5237,
+      "installsAllTime": 18,
+      "installsCurrent": 13,
+      "stars": 12,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770049733063,
+      "changelog": "Self-learning system for crypto trading. Logs trades, analyzes patterns, generates rules, and auto-updates agent memory for continuous improvement.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e339084e3c04f2e8a619603666b38e3fac98d6e02fb56e85d1dea8e6235f04fd"
+}

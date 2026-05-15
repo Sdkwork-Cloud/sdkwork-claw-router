@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57995,
+  "uuid": "skill-clawhub-cook-like-hoc",
+  "skillKey": "clawhub-cook-like-hoc",
+  "name": "Cook Like Hoc",
+  "summary": "Search and display recipes from the open-source Gar-b-age/CookLikeHOC repository. Use when the user asks to \"cook like hoc\", \"像老乡鸡那样做饭\", \"老乡鸡菜谱\", \"做菜\", or wa...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cook_like_hoc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "就是祥子",
+      "features": [
+        "Search and display recipes from the open-source Gar-b-age/CookLikeHOC repository",
+        "Use when the user asks to \"cook like hoc\", \"像老乡鸡那样做饭\", \"老乡鸡菜谱\", \"做菜\", or wa..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cook-like-hoc@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13147703?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cook-like-hoc",
+      "url": "https://clawhub.ai/skills/cook-like-hoc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cook-like-hoc",
+    "url": "https://clawhub.ai/skills/cook-like-hoc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cook-like-hoc-617a55bc07821a51.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cook-like-hoc@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-cook-like-hoc-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:51e5570d208195f3c922b98214e547ca66a6191dd2eda275481b3aa4689a8e3c",
+      "artifactSizeBytes": 1922
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T07:12:59.304Z"
+}

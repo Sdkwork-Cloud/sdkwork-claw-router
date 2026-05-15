@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/email-sender-policy@2.0.2",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_sender_policy",
+  "skill": {
+    "id": 60398,
+    "skillKey": "clawhub-email-sender-policy",
+    "name": "Email Sender Policy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-sender-policy",
+    "url": "https://clawhub.ai/skills/email-sender-policy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-sender-policy-df5b92c7d339c770.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "郵件發送政策管理員，自動應用寄信規則： - 標題 UTF-8 Base64 編碼（RFC 2047） - Markdown 表格轉換為清單格式 - 使用當前登入的 Gmail 連接 - 支援多收件人"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sean810720",
+      "userId": "s17e9m05k6d4g3wg0rjcvq8gxs83ggyw",
+      "displayName": "https://github.com/account/ssh",
+      "image": "https://avatars.githubusercontent.com/u/888016?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 406,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.0.2",
+      "createdAt": 1774352576636,
+      "changelog": "v2.0.2: Fixed _meta.json version mismatch (was incorrectly 1.0.0, now correctly 2.0.1). No functional changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cd891d0323414adcc7f6266d4bd3226604b3181ec9eb11706ae758162ed44889"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wttr-weather@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wttr_weather",
+  "skill": {
+    "id": 32455,
+    "skillKey": "clawhub-wttr-weather",
+    "name": "wttr-weather"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wttr-weather",
+    "url": "https://clawhub.ai/skills/wttr-weather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wttr-weather-f5c811bdeb5e0a09.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "How to check weather forecasts using wttr.in service. Make sure to use this skill whenever the user mentions weather, forecast, temperature, or wants to chec..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fbbyqsyea",
+      "userId": "s178b473cg0b5zem4n6jwj6mk9843q1p",
+      "displayName": "fbbyqsyea",
+      "image": "https://avatars.githubusercontent.com/u/59274835?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 252,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773751275975,
+      "changelog": "wttr-weather 1.0.0 – Initial release\n\n- Provides an extensive guide on using the wttr.in weather service via a Python script.\n- Supports global location queries, 54+ languages, flexible output formats (terminal, JSON, PNG, Prometheus), and moon phases.\n- Documents advanced features: custom formatting, map views, detailed forecasts, and multi-location queries.\n- Includes integration tips for tmux, shell aliases, and Python applications.\n- Reference quick guide and troubleshooting included for convenience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c8f69980fddbbc4d677cac61c62ec6db4b9425d67d6b5563b64783b855227a48"
+}

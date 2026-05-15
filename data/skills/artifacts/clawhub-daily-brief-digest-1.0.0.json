@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-brief-digest@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_brief_digest",
+  "skill": {
+    "id": 14226,
+    "skillKey": "clawhub-daily-brief-digest",
+    "name": "Daily Brief Digest"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-brief-digest",
+    "url": "https://clawhub.ai/skills/daily-brief-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-brief-digest-6d2a07f6bbeaee06.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates a daily brief including urgent emails (himalaya), upcoming calendar events (gog), and relevant news. Use when the user asks for a morning summary, daily briefing, or a status update on their day."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rajtejani61",
+      "userId": "s177gcm6ngwpdnbcjfjc498pn984101q",
+      "displayName": "RajTejani",
+      "image": "https://avatars.githubusercontent.com/u/140295772?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1169,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770982946332,
+      "changelog": "Initial release of daily-digest with major updates to workflow and functionality:\n\n- Switched from a Python script to a Node.js-based system (`scripts/digest- Initial Release: Automated morning briefing workflow.\n- Cross-Platform Logic: Specifically optimized for Windows users—uses himalaya and gog CLIs so there is no need to install Homebrew or complex Linux dependencies to check Gmail/Calendar.\n- Premium Reporting: Generates a high-quality, stylized HTML report saved locally to .openclaw/cron/DailyDigest_logs/ for permanent record-keeping.\n- Smart Triage: Scans top 20 emails and syncs both calendar events and tasks.\n- Proactive Notifications: Automatically pings your registered channel (Telegram/Webchat) with a summary when the report is ready..js`).\n- Fully redesigned workflow: integrates urgent emails, calendar events, and news into a daily briefing.\n- Added reference documentation for cron setup and template usage.\n- Output is now saved automatically to `.openclaw/cron/DailyDigest_logs/` for historical tracking.\n- Deprecated the old README and Python script in favor of structured, tool-driven documentation and automation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:769c708798414659c50611beb65ff467b5ab87e8256d5e3449289d8d17ca84f6"
+}

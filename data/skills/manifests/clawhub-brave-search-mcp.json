@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14642,
+  "uuid": "skill-clawhub-brave-search-mcp",
+  "skillKey": "clawhub-brave-search-mcp",
+  "name": "Brave Search MCP Server",
+  "summary": "Privacy-first Brave Search MCP Server offers AI-powered web, image, video, news, and local POI search with summarization and no tracking for agent use.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brave_search_mcp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Siddharth Menon",
+      "features": [
+        "Privacy-first Brave Search MCP Server offers AI-powered web, image, video, news, and local POI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/brave-search-mcp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/609407?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "brave-search-mcp",
+      "url": "https://clawhub.ai/skills/brave-search-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brave-search-mcp",
+    "url": "https://clawhub.ai/skills/brave-search-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brave-search-mcp-6b66c0e9cbdf75d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/brave-search-mcp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-brave-search-mcp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:68e77cf6365580f2ff09317e87a0ffce87f58d483baca72cdbbc75aea2d9421b",
+      "artifactSizeBytes": 2049
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T16:02:29.653Z"
+}

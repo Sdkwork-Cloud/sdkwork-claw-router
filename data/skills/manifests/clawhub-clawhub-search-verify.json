@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13448,
+  "uuid": "skill-clawhub-clawhub-search-verify",
+  "skillKey": "clawhub-clawhub-search-verify",
+  "name": "Clawhub Search & Verify",
+  "summary": "Safely search and review Clawhub skills by keyword, showing details and risk before asking for explicit approval to install.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_search_verify",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ViktorBjorn",
+      "features": [
+        "Safely search and review Clawhub skills by keyword, showing details and risk before asking for."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawhub-search-verify@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58563489?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawhub-search-verify",
+      "url": "https://clawhub.ai/skills/clawhub-search-verify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-search-verify",
+    "url": "https://clawhub.ai/skills/clawhub-search-verify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-search-verify-21635f10ddf929e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawhub-search-verify@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawhub-search-verify-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:70736546ef436a304f16ca896fe5ea9aa980833874c5ecd5a98292bb092efb05",
+      "artifactSizeBytes": 1958
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T04:34:00.239Z"
+}

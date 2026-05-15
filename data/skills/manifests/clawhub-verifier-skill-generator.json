@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43173,
+  "uuid": "skill-clawhub-verifier-skill-generator",
+  "skillKey": "clawhub-verifier-skill-generator",
+  "name": "Verifier Skill Generator",
+  "summary": "Use when a project needs one or more verifier skills for web, CLI, or API runtime checks that the Verify agent can discover automatically.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.verifier_skill_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wimi321",
+      "features": [
+        "Use when a project needs one or more verifier skills for web, CLI, or API runtime checks that t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/verifier-skill-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34830250?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "verifier-skill-generator",
+      "url": "https://clawhub.ai/skills/verifier-skill-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "verifier-skill-generator",
+    "url": "https://clawhub.ai/skills/verifier-skill-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/verifier-skill-generator-a6f8e4fb98629741.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/verifier-skill-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-verifier-skill-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:063483debcffaceaea0cf87bbf3ee10f730d94303b9b630ae607be3272f1fa3c",
+      "artifactSizeBytes": 1964
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T18:19:26.956Z"
+}

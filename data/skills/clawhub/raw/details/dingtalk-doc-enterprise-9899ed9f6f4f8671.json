@@ -1,0 +1,37 @@
+{
+  "skill": {
+    "slug": "dingtalk-doc-enterprise",
+    "displayName": "dingtalk-doc-enterprise",
+    "summary": "钉钉文档操作技能。仅在消息明确包含 `alidocs.dingtalk.com`、`钉钉文档`、`钉钉知识库`、`alidocs`，或当前上下文已明确对象是钉钉文档时使用。支持 read/blocks/update/append-text/delete 命令，不支持 create。",
+    "tags": {
+      "latest": "1.0.6"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 270,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 7
+    },
+    "createdAt": 1775787202400,
+    "updatedAt": 1777527375697
+  },
+  "latestVersion": {
+    "version": "1.0.6",
+    "createdAt": 1775835241677,
+    "changelog": "- Clarified usage rules: skill now only triggers if the message or context clearly indicates a DingTalk document.\n- Updated trigger conditions: will not respond to generic document/edit requests unless context confirms DingTalk docs.\n- Expanded \"Do not trigger\" list to exclude other document platforms and generic links.\n- Added emphasis on prerequisite: confirm object is DingTalk document before running commands.\n- Small editorial and instruction clarifications throughout documentation.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "shyzhen",
+    "userId": "s176r4qctym5nvv0a83rs6nkex843rkg",
+    "displayName": "Ash",
+    "image": "https://avatars.githubusercontent.com/u/20349429?v=4"
+  },
+  "moderation": null
+}

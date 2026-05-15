@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27792,
+  "uuid": "skill-clawhub-faq-generator",
+  "skillKey": "clawhub-faq-generator",
+  "name": "Faq Generator",
+  "summary": "Generates FAQ lists from complex medical policies or protocols. Trigger when user provides medical documents, policies, or protocols and requests FAQ generat...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.faq_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Generates FAQ lists from complex medical policies or protocols",
+        "Trigger when user provides medical documents, policies, or protocols and requests FAQ generat..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/faq-generator@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "faq-generator",
+      "url": "https://clawhub.ai/skills/faq-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "faq-generator",
+    "url": "https://clawhub.ai/skills/faq-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/faq-generator-0950159f3273ff8b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/faq-generator@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-faq-generator-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:544ffa5784466e9124e615830ad2970a83a27d390eb255f9396453360feda1f1",
+      "artifactSizeBytes": 2289
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T05:33:07.648Z"
+}

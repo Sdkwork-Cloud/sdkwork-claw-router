@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29917,
+  "uuid": "skill-clawhub-slideshow-generator",
+  "skillKey": "clawhub-slideshow-generator",
+  "name": "Slideshow Generator",
+  "summary": "Create HTML slideshows from Markdown with live preview. Use when drafting slides, editing decks, optimizing layouts, scheduling talks, repurposing content.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slideshow_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "Create HTML slideshows from Markdown with live preview",
+        "Use when drafting slides, editing decks, optimizing layouts, scheduling talks, repurposing cont."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/slideshow-generator@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "slideshow-generator",
+      "url": "https://clawhub.ai/skills/slideshow-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slideshow-generator",
+    "url": "https://clawhub.ai/skills/slideshow-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slideshow-generator-3ad762961f1a0798.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/slideshow-generator@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-slideshow-generator-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:96c9d70ca19f24842967f4ce6063b8e1a7c9f788b6cafbbd8dd50ae02136ef55",
+      "artifactSizeBytes": 1921
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T05:19:12.619Z"
+}

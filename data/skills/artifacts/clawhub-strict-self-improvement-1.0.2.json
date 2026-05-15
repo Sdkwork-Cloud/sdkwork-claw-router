@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/strict-self-improvement@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.strict_self_improvement",
+  "skill": {
+    "id": 21669,
+    "skillKey": "clawhub-strict-self-improvement",
+    "name": "Strict Self-Improving Agent (Rule of 3)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "strict-self-improvement",
+    "url": "https://clawhub.ai/skills/strict-self-improvement",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/strict-self-improvement-7826ad4d0a2dd0e2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jayv29",
+      "userId": "publishers:jayv29",
+      "displayName": "jayv29",
+      "image": "https://avatars.githubusercontent.com/u/260694162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 501,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772390528487,
+      "changelog": "No code or documentation changes detected in this version.\n\n- Version bump with no user-facing or implementation changes.\n- No updates to SKILL.md or other files.\n- Safe to upgrade; existing workflows remain unchanged.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0a703a68e5ea1e516f11d93955933a3f0001db23d2fc1d9eac512a1b19fa1bd6"
+}

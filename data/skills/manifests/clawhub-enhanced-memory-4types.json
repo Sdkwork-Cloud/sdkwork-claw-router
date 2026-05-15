@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59105,
+  "uuid": "skill-clawhub-enhanced-memory-4types",
+  "skillKey": "clawhub-enhanced-memory-4types",
+  "name": "Enhanced Memory System with 4 Types",
+  "summary": "完整记忆系统 - 文件系统记忆 + 向量搜索 + 自动加载 + Memory Flush + 四类记忆分类",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.enhanced_memory_4types",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "minmengxhw-cpu",
+      "features": [
+        "文件系统记忆 + 向量搜索 + 自动加载 + Memory Flush + 四类记忆分类"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/enhanced-memory-4types@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265757721?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "enhanced-memory-4types",
+      "url": "https://clawhub.ai/skills/enhanced-memory-4types"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "enhanced-memory-4types",
+    "url": "https://clawhub.ai/skills/enhanced-memory-4types",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/enhanced-memory-4types-5740a4ecba39a08a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/enhanced-memory-4types@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-enhanced-memory-4types-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:94886a9bfa181d0a6ea4e85ecce09ccb5f1bff1d2a6cf11c797adfd7da6430bf",
+      "artifactSizeBytes": 1952
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T11:20:13.255Z"
+}

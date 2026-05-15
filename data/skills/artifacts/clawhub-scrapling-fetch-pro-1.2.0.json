@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/scrapling-fetch-pro@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scrapling_fetch_pro",
+  "skill": {
+    "id": 69602,
+    "skillKey": "clawhub-scrapling-fetch-pro",
+    "name": "Scrapling Fetch Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scrapling-fetch-pro",
+    "url": "https://clawhub.ai/skills/scrapling-fetch-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scrapling-fetch-pro-a9b9575c4226c6c3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专业网页抓取工具，完整支持微信公众号文章爬取、自动模式检测、噪音清理。适合抓取博客、新闻、公告及各类有反爬保护的网站。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shuxiangfanclaw",
+      "userId": "s17c4v4y0b4yetd35v96dtqrss83rgq8",
+      "displayName": "shuxiangfanclaw",
+      "image": "https://avatars.githubusercontent.com/u/268164859?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774835619705,
+      "changelog": "更改许可证从 MIT-0 到 MIT（需要署名）",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:19c149e2d51554e7fadd001f714649fbeca55afff32e9b764293c327acb2e7c0"
+}

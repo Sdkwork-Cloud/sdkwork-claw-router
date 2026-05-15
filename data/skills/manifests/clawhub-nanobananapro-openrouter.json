@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32002,
+  "uuid": "skill-clawhub-nanobananapro-openrouter",
+  "skillKey": "clawhub-nanobananapro-openrouter",
+  "name": "nano-banana-pro-openrouter",
+  "summary": "Generate/edit images with Nano Banana Pro (Gemini 3 Pro Image) via OpenRouter. Use for image create/modify requests incl. edits. Supports text-to-image + ima...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nanobananapro_openrouter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chang",
+      "features": [
+        "Generate/edit images with Nano Banana Pro (Gemini 3 Pro Image) via OpenRouter",
+        "Use for image create/modify requests incl",
+        "Supports text-to-image + ima..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nanobananapro-openrouter@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/79965108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nanobananapro-openrouter",
+      "url": "https://clawhub.ai/skills/nanobananapro-openrouter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nanobananapro-openrouter",
+    "url": "https://clawhub.ai/skills/nanobananapro-openrouter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nanobananapro-openrouter-6bdb5a4d62ca4fed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nanobananapro-openrouter@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-nanobananapro-openrouter-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:535c825a1013c0e85991fae65180efb882626576cb105caafb9c2d0e8e7d120e",
+      "artifactSizeBytes": 2367
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T07:52:42.257Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69143,
+  "uuid": "skill-clawhub-a-share-hypothesis-intake",
+  "skillKey": "clawhub-a-share-hypothesis-intake",
+  "name": "a-share-hypothesis-intake",
+  "summary": "把长材料、宏观观点、录音转写和新闻流拆成事实、推断、数据缺口、验证条件与 A 股传导卡。适用于用户贴长文、视频字幕、宏观框架、新闻摘要，想落到板块与选股逻辑的场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_share_hypothesis_intake",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "minguncle",
+      "features": [
+        "把长材料、宏观观点、录音转写和新闻流拆成事实、推断、数据缺口、验证条件与 A 股传导卡。适用于用户贴长文、视频字幕、宏观框架、新闻摘要，想落到板块与选股逻辑的场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/a-share-hypothesis-intake@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57527858?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "a-share-hypothesis-intake",
+      "url": "https://clawhub.ai/skills/a-share-hypothesis-intake"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-share-hypothesis-intake",
+    "url": "https://clawhub.ai/skills/a-share-hypothesis-intake",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-share-hypothesis-intake-4ab3c3ec849a9863.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/a-share-hypothesis-intake@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-a-share-hypothesis-intake-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:97c106ae622a3ac8c73a1cb5fa2b0562f922676a8de485c0ab675b30fdedebc2",
+      "artifactSizeBytes": 2648
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T04:15:16.072Z"
+}

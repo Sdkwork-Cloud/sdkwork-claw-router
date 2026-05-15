@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39165,
+  "uuid": "skill-clawhub-tinyfish-agent-run",
+  "skillKey": "clawhub-tinyfish-agent-run",
+  "name": "Tinyfish Agent Run",
+  "summary": "Run a TinyFish automation agent against a URL and stream live progress events (STARTED / PROGRESS / COMPLETE) as one-line JSON events. Use when you want to e...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tinyfish_agent_run",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Val Alexander",
+      "features": [
+        "Run a TinyFish automation agent against a URL and stream live progress events (STARTED / PROGRE.",
+        "Use when you want to e..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tinyfish-agent-run@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/68980965?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tinyfish-agent-run",
+      "url": "https://clawhub.ai/skills/tinyfish-agent-run"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tinyfish-agent-run",
+    "url": "https://clawhub.ai/skills/tinyfish-agent-run",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tinyfish-agent-run-bda1c37ab50b3781.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tinyfish-agent-run@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tinyfish-agent-run-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:819fe9b81d99c3dd50e3e35603a4c5cdc2ef87c0d3a1b9159d3e7dd114e98935",
+      "artifactSizeBytes": 2338
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T12:45:17.545Z"
+}

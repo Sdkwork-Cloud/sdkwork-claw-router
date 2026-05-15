@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lenovo@0.1.4",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lenovo",
+  "skill": {
+    "id": 57150,
+    "skillKey": "clawhub-lenovo",
+    "name": "Lenovo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lenovo",
+    "url": "https://clawhub.ai/skills/lenovo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lenovo-56018fe135c84cb3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Information assistant for 联想 Lenovo. Search products, news, financials, and official resources for 联想 Lenovo."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 298,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.1.4",
+      "createdAt": 1776533817306,
+      "changelog": "- 更新了 SKILL.md，内容更翔实，采用表格和要点式罗列\n- 增加了联想（Lenovo）主要发展历程与关键事件\n- 补充了核心产品线和业务优势\n- 加入关键业绩数据与全球市场地位\n- 删去冗余文档，结构更加清晰",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:089cba3a7df9411a556ce979b04886916965565c74b8ca76fd18f3750400455f"
+}

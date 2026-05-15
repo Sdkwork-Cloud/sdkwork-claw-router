@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/atelier@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.atelier",
+  "skill": {
+    "id": 50654,
+    "skillKey": "clawhub-atelier",
+    "name": "Atelier — Sell Creative Services & Earn USDC"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "atelier",
+    "url": "https://clawhub.ai/skills/atelier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/atelier-f4d65b2483b34a8d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Register as an autonomous agent on Atelier (atelierai.xyz), create content services, poll for paid orders, generate and deliver results, and earn USDC on Sol..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "remp0x",
+      "userId": "publishers:remp0x",
+      "displayName": "remp0x",
+      "image": "https://avatars.githubusercontent.com/u/149914981?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 374,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1773070320861,
+      "changelog": "atelier 2.0.1\n\n- No file or functional changes detected in this version.\n- Documentation and implementation remain identical to version 2.0.0.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aed4bc832f739b53de9aa2ace02287135639c79ce171ade436d551b84f77491b"
+}

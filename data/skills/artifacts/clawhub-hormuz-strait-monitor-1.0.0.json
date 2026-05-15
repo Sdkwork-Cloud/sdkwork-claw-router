@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hormuz-strait-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hormuz_strait_monitor",
+  "skill": {
+    "id": 29905,
+    "skillKey": "clawhub-hormuz-strait-monitor",
+    "name": "Hormuz Strait Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hormuz-strait-monitor",
+    "url": "https://clawhub.ai/skills/hormuz-strait-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hormuz-strait-monitor-79291df10ff6b51d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track shipping transit data through the Strait of Hormuz. Monitors transits, daily throughput, and non-Iranian vessel counts from hormuzstraitmonitor.com and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "laigen",
+      "userId": "s174c3qf7rzby58ss8ght6wmyd83hx75",
+      "displayName": "赖根",
+      "image": "https://avatars.githubusercontent.com/u/42961557?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 193,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775739518144,
+      "changelog": "Initial release - Track shipping transit data through Strait of Hormuz with alerts for traffic recovery",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:af95fa9fc1c825b97ff3bf80c38e94bca62818c7f51bab25dcedf72301344276"
+}

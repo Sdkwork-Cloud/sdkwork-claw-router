@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/split-drive-coach@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.split_drive_coach",
+  "skill": {
+    "id": 23807,
+    "skillKey": "clawhub-split-drive-coach",
+    "name": "Split Drive Coach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "split-drive-coach",
+    "url": "https://clawhub.ai/skills/split-drive-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/split-drive-coach-5594add02c753679.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Split Large Partitions Without Data Loss - Divide oversized partitions into cleaner layouts for system, data, and backup workflows."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hezhaoyun",
+      "userId": "s176qgg37jhs9egjsa33ge4mqd858e1z",
+      "displayName": "贺照云",
+      "image": "https://avatars.githubusercontent.com/u/28618229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 429,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773215837670,
+      "changelog": "Initial release of split-drive-coach skill.\n\n- Helps split large partitions into system, data, and backup layouts without data loss.\n- Focuses on preserving existing files while creating new partitions, ideal for new PCs with a single oversized partition.\n- Includes pre-flight checks, guided commands, and troubleshooting for safe partition editing.\n- Provides clear install and launch instructions with both script and manual options.\n- Designed for Windows 10+ using EaseUS Partition Master.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cde6df1301c11d21582425df07564a9e965f4fa70f7bded4b8baf2b6d9aa1783"
+}

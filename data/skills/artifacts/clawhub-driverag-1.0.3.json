@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/driverag@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.driverag",
+  "skill": {
+    "id": 39491,
+    "skillKey": "clawhub-driverag",
+    "name": "Rag based on Google drive"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "driverag",
+    "url": "https://clawhub.ai/skills/driverag",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/driverag-fcfafcdec9e9cd92.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the Google Drive RAG CLI to search your synced personal documents, add tracking folders, or check the service account status."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eladrave",
+      "userId": "s173v5nncrn4twk8aykszn2tr583et7r",
+      "displayName": "eladrave",
+      "image": "https://avatars.githubusercontent.com/u/86946294?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775441744714,
+      "changelog": "- Added instructions for the new renew-token CLI command to handle token renewal.\n- Included \"Renew my token\" as a supported user request and matching CLI operation.\n- Added guidance to automatically run renew-token if the CLI warns about token expiration.\n- Documented the --force argument for the sync command, allowing complete re-indexing.\n- Expanded examples and command instructions for improved clarity and coverage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a7a22f56ef103431e32927764921f10f42a82c47a189bc0bdaaee6dc59fa8694"
+}

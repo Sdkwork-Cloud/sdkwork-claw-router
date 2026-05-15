@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27824,
+  "uuid": "skill-clawhub-channel-ads-executor",
+  "skillKey": "clawhub-channel-ads-executor",
+  "name": "Multi-Platform Ads Executor",
+  "summary": "Translate strategy into channel-specific execution plans for Meta (Facebook/Instagram), Google Ads, TikTok Ads, YouTube Ads, Amazon Ads, Shopify Ads, and DSP...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.channel_ads_executor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "danyangliu",
+      "features": [
+        "Translate strategy into channel-specific execution plans for Meta (Facebook/Instagram), Google."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/channel-ads-executor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/184733968?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "channel-ads-executor",
+      "url": "https://clawhub.ai/skills/channel-ads-executor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "channel-ads-executor",
+    "url": "https://clawhub.ai/skills/channel-ads-executor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/channel-ads-executor-4b3fc91e29149ffd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/channel-ads-executor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-channel-ads-executor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4b321b9f177668e3e2241e351fecd9dfdbd0854d27b47d6e7c6a80bbb1b75e82",
+      "artifactSizeBytes": 2565
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T02:14:05.747Z"
+}

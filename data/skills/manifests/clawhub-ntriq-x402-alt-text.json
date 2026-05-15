@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54527,
+  "uuid": "skill-clawhub-ntriq-x402-alt-text",
+  "skillKey": "clawhub-ntriq-x402-alt-text",
+  "name": "Ntriq X402 Alt Text",
+  "summary": "Generate WCAG-compliant alt text and detailed image descriptions for accessibility. Pay $0.01 USDC via x402.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ntriq_x402_alt_text",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ntriq",
+      "features": [
+        "Generate WCAG-compliant alt text and detailed image descriptions for accessibility",
+        "Pay $0.01 USDC via x402."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ntriq-x402-alt-text@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/215101248?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ntriq-x402-alt-text",
+      "url": "https://clawhub.ai/skills/ntriq-x402-alt-text"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ntriq-x402-alt-text",
+    "url": "https://clawhub.ai/skills/ntriq-x402-alt-text",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ntriq-x402-alt-text-3ffc1d03b343672a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ntriq-x402-alt-text@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ntriq-x402-alt-text-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:00bc4ec091f1f4938353cd78014a4ffd0a406964f2fdb764d62312873048bf0b",
+      "artifactSizeBytes": 2159
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T00:00:21.320Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rundev-local-dev@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rundev_local_dev",
+  "skill": {
+    "id": 54558,
+    "skillKey": "clawhub-rundev-local-dev",
+    "name": "run.dev — Local Dev Environment Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rundev-local-dev",
+    "url": "https://clawhub.ai/skills/rundev-local-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rundev-local-dev-36327621239e4464.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local dev environment manager. Process management, automatic HTTPS domains, SSL certificates, reverse proxy, and AI crash diagnosis — single binary, zero con..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danieltamas",
+      "userId": "publishers:danieltamas",
+      "displayName": "Daniel Tamas",
+      "image": "https://avatars.githubusercontent.com/u/35365208?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 341,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773849101613,
+      "changelog": "Initial release of rundev-local-dev: a zero-config local dev environment manager.\n\n- Single Rust binary replaces terminal tabs, nginx/Caddy configs, and manual SSL for local dev.\n- Features automatic HTTPS local domains, SSL certificates, reverse proxy, and process management.\n- Built-in TUI dashboard for starting/stopping services, log inspection, and real-time resource stats.\n- Includes AI-powered crash diagnosis via Claude.\n- Transparent installation script—no containers or virtualization, native macOS and Linux support.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9e81643fa9168e77dce31377d7db5b4336744936c8f2763838f20ad591e16ee7"
+}

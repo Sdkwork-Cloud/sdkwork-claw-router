@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawspotify@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawspotify",
+  "skill": {
+    "id": 17564,
+    "skillKey": "clawhub-clawspotify",
+    "name": "ClawSpotify"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawspotify",
+    "url": "https://clawhub.ai/skills/clawspotify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawspotify-5298035263182e5f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control Spotify playback: play, pause, resume, skip, previous, restart, search, queue, set volume, shuffle, repeat, and view now-playing status."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ejatapibeda",
+      "userId": "s17cxzcyypmj0v4y94nn2fn25d83q8md",
+      "displayName": "Muhammad Fahreza",
+      "image": "https://avatars.githubusercontent.com/u/147236874?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 656,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1772358821496,
+      "changelog": "Expanded documentation and installation instructions\n\n- Added detailed installation and setup sections, including ClawHub and manual install guides.\n- Explained authentication and provided clearer multi-account setup steps.\n- Documented dependencies, troubleshooting tips, and typical file locations.\n- Included platform-specific notes and usage tips for improved user experience.\n- No code or command changes; SKILL.md documentation was substantially expanded.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9c53fb767a19b9d5fb8587993250bce70c196684f3c15abe94af99729049a04b"
+}

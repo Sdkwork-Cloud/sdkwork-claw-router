@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reminder@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reminder",
+  "skill": {
+    "id": 8567,
+    "skillKey": "clawhub-reminder",
+    "name": "Reminder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reminder",
+    "url": "https://clawhub.ai/skills/reminder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reminder-9ce7011ab48f26c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Capture natural-language events, save to your workspace, and schedule Telegram reminders with automatic cron notifications and upcoming event queries."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "reed1898",
+      "userId": "s17053w3a6c09bkqzkan106kp1843wcx",
+      "displayName": "Reed",
+      "image": "https://avatars.githubusercontent.com/u/129141816?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 9334,
+      "installsAllTime": 104,
+      "installsCurrent": 97,
+      "stars": 7,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1770399211200,
+      "changelog": "Add summary/tags and improve skill introduction.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:af4103ae2afcef1eb378f984d339910cccaad2dc45fe353e74b83e6e89ca336f"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48527,
+  "uuid": "skill-clawhub-polymarket-fee-aware-divergence",
+  "skillKey": "clawhub-polymarket-fee-aware-divergence",
+  "name": "Polymarket Fee Aware Divergence",
+  "summary": "Trades AI-vs-market divergence on Polymarket only when the gap clears fees, spread, and a configurable safety margin. Skips every trade where the math doesn'...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_fee_aware_divergence",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chase Webb",
+      "features": [
+        "Trades AI-vs-market divergence on Polymarket only when the gap clears fees, spread, and a confi.",
+        "Skips every trade where the math doesn'..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-fee-aware-divergence@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26909069?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-fee-aware-divergence",
+      "url": "https://clawhub.ai/skills/polymarket-fee-aware-divergence"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-fee-aware-divergence",
+    "url": "https://clawhub.ai/skills/polymarket-fee-aware-divergence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-fee-aware-divergence-7d873e72b03eeaf9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-fee-aware-divergence@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-fee-aware-divergence-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:06390df069ee7b738533a129de8aecdba4bb5b2b96d5f809a2338b94dfe0cabe",
+      "artifactSizeBytes": 2615
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T17:59:46.779Z"
+}

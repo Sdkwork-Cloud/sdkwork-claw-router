@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/thoth-cli@0.2.27",
+  "version": "0.2.27",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.thoth_cli",
+  "skill": {
+    "id": 26360,
+    "skillKey": "clawhub-thoth-cli",
+    "name": "thoth-cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "thoth-cli",
+    "url": "https://clawhub.ai/skills/thoth-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/thoth-cli-e9611c2e50f09ad9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Hermetic divination CLI: astrology (natal, transits, electional, returns, synastry), tarot (cryptographic random), gematria (Hebrew/Greek/English), numerolog..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aklo360",
+      "userId": "publishers:aklo360",
+      "displayName": "aklo360",
+      "image": "https://avatars.githubusercontent.com/u/39361388?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 370,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.2.27",
+      "createdAt": 1772599191694,
+      "changelog": "Added provenance metadata: author, homepage, repository, npm registry link, install spec",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f5f6894942e39dac3810ab82c0734fb9379cd3d44c2875e0287b295d52be02ec"
+}

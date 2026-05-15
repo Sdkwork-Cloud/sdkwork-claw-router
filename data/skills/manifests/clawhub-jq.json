@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9150,
+  "uuid": "skill-clawhub-jq",
+  "skillKey": "clawhub-jq",
+  "name": "jq",
+  "summary": "Command-line JSON processor. Extract, filter, transform JSON.",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jq",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gustavo Madeira Santana",
+      "features": [
+        "Command-line JSON processor",
+        "Extract, filter, transform JSON."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jq@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5599352?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jq",
+      "url": "https://clawhub.ai/skills/jq"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jq",
+    "url": "https://clawhub.ai/skills/jq",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jq-c84d384f2a25cca2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jq@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jq-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c62f305313da10f783e8e46f4a17af31ab0dcebe4727672dcfbda4aef97e7d3",
+      "artifactSizeBytes": 1751
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-17T19:49:48.324Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/doubao-tts-http@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doubao_tts_http",
+  "skill": {
+    "id": 61046,
+    "skillKey": "clawhub-doubao-tts-http",
+    "name": "doubao-tts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doubao-tts-http",
+    "url": "https://clawhub.ai/skills/doubao-tts-http",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doubao-tts-http-2d2931cdd5c4680d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "豆包 TTS 文字转语音（火山引擎）"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shandingdonren",
+      "userId": "s17fe9cgxywphdybzqtya1f5hd83maka",
+      "displayName": "shandingdonren",
+      "image": "https://avatars.githubusercontent.com/u/126112802?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 236,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774528843600,
+      "changelog": "Initial release of doubao-tts skill for text-to-speech using Volcengine.\n\n- Supports converting text to speech using Volcengine Doubao TTS API, with multiple voices, emotions, and speed/pitch/volume tuning.\n- Provides detailed usage guide, including how to configure credentials and customize voice/emotion.\n- Includes automatic emotion detection based on input text.\n- Describes error handling, audio playback, and command line examples.\n- Offers sample configuration and shell script for direct usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5058f86a3224e2e57ba02be184333238214ab4433673159cbf012cd2d9923a83"
+}

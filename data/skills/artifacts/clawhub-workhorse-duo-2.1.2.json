@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/workhorse-duo@2.1.2",
+  "version": "2.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workhorse_duo",
+  "skill": {
+    "id": 57482,
+    "skillKey": "clawhub-workhorse-duo",
+    "name": "Workhorse Duo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workhorse-duo",
+    "url": "https://clawhub.ai/skills/workhorse-duo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workhorse-duo-02f767fbaaef06ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run a practical two-worker orchestration workflow with Xiaoma (execution) and Xiaoniu (QA). Use when the user wants 小马执行 / 小牛验收, when a medium/large task sho..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangyangwjy",
+      "userId": "s174xy988ckdxn8b7ecsbxx0px83hts8",
+      "displayName": "wangyangwjy",
+      "image": "https://avatars.githubusercontent.com/u/165866953?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.1.2",
+      "createdAt": 1775201114493,
+      "changelog": "Packaging hardening: published an inspectable markdown bootstrap helper, updated bootstrap references to point at bundled package files, and removed reliance on script-file packaging for first-run verification.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e6cceb3d3792173a9406664b0a61e731289a0af53957870c09dfe914c115b938"
+}

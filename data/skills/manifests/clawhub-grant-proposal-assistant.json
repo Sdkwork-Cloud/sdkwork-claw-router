@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34216,
+  "uuid": "skill-clawhub-grant-proposal-assistant",
+  "skillKey": "clawhub-grant-proposal-assistant",
+  "name": "Grant Proposal Assistant",
+  "summary": "Grant proposal writing assistant for NIH (R01/R21), NSF and other mainstream funding applications. Triggers when user needs help writing specific aims, resea...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grant_proposal_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Grant proposal writing assistant for NIH (R01/R21), NSF and other mainstream funding applicatio.",
+        "Triggers when user needs help writing specific aims, resea..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/grant-proposal-assistant@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "grant-proposal-assistant",
+      "url": "https://clawhub.ai/skills/grant-proposal-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grant-proposal-assistant",
+    "url": "https://clawhub.ai/skills/grant-proposal-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grant-proposal-assistant-34b24f0a87e34813.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/grant-proposal-assistant@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-grant-proposal-assistant-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ebce05623c0d82e1fa6213a7187b708a9b2181289e74ec8a3e004107f8edd8da",
+      "artifactSizeBytes": 2414
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T03:29:26.920Z"
+}

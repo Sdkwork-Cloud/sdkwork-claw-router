@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60885,
+  "uuid": "skill-clawhub-smartness-eval-open-source",
+  "skillKey": "clawhub-smartness-eval-open-source",
+  "name": "Smartness Eval Open Source",
+  "summary": "OpenClaw 智能度综合评伌技能。围绕 14 个维度（含规划能力、幻觉控制）输出综合评分、证据、风险与趋势。对齐 CLEAR/T-Eval/Anthropic 行业标准。",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smartness_eval_open_source",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "圆规",
+      "features": [
+        "OpenClaw 智能度综合评伌技能。围绕 14 个维度（含规划能力、幻觉控制）输出综合评分、证据、风险与趋势。对齐 CLEAR/T-Eval/Anthropic 行业标准。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smartness-eval-open-source@0.3.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13883859?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smartness-eval-open-source",
+      "url": "https://clawhub.ai/skills/smartness-eval-open-source"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smartness-eval-open-source",
+    "url": "https://clawhub.ai/skills/smartness-eval-open-source",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smartness-eval-open-source-8a3db9e2aafdeeb2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smartness-eval-open-source@0.3.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-smartness-eval-open-source-0.3.3.json",
+      "version": "0.3.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6b2845a5befa832acfc63489f67f072350893254b7292f4ca7f3181f68fb157f",
+      "artifactSizeBytes": 2556
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T07:50:00.590Z"
+}

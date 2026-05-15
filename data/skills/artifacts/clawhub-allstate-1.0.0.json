@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/allstate@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.allstate",
+  "skill": {
+    "id": 47168,
+    "skillKey": "clawhub-allstate",
+    "name": "Allstate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "allstate",
+    "url": "https://clawhub.ai/skills/allstate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/allstate-0baf38f5da148c7a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Allstate offers auto, home, life, and business insurance through captive agents, independent agents, and direct digital channels with telematics-based pricing."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 117,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777298608386,
+      "changelog": "Allstate skill version 1.0.0 – Initial Release\n\n- Introduces a comprehensive overview of Allstate, including company background, business model, and key data.\n- Details Allstate’s historical timeline, major marketing campaigns, and telematics initiatives.\n- Explains Allstate’s distribution channels and competitive advantages.\n- Includes market statistics and notable facts for context and comparison.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6237688d3d84191b3c446cb1a7e020d82c3253bb65ef76e37a622060ffb602b4"
+}

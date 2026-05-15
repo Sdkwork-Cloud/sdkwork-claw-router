@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brainstorm-beagle@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brainstorm_beagle",
+  "skill": {
+    "id": 35012,
+    "skillKey": "clawhub-brainstorm-beagle",
+    "name": "Brainstorm Beagle"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brainstorm-beagle",
+    "url": "https://clawhub.ai/skills/brainstorm-beagle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brainstorm-beagle-69aca853f1255503.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user has a fuzzy idea and wants to shape it into a concrete project spec before planning or building. Triggers on: \"brainstorm this\", \"I have an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anderskev",
+      "userId": "s17b1fzefm8nj8j1sdkzrze7gn83pfrg",
+      "displayName": "Kevin Anderson",
+      "image": "https://avatars.githubusercontent.com/u/17010022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 208,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776831001591,
+      "changelog": "**brainstorm-beagle 1.0.2 Changelog**\n\n- Adds support for ingesting concept briefs (`.beagle/concepts/<slug>/brief.md`) to streamline and shorten the discovery process when present.\n- Updates workflow to conditionally skip context exploration and questioning if a brief is available, focusing only on unresolved questions.\n- Specifies new file locations for spec outputs (`.beagle/concepts/<slug>/spec.md`).\n- Introduces detailed instructions for handling handoffs from upstream systems (such as `prfaq-beagle`).\n- Leaves core questioning and spec-generation methodology unchanged for non-briefed ideas.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e43e189e6ff38cab77ccd90af9beabd204508a427f2d14a11360db56f6ad03b4"
+}

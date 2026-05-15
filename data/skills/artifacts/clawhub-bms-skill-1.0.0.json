@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bms-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bms_skill",
+  "skill": {
+    "id": 42057,
+    "skillKey": "clawhub-bms-skill",
+    "name": "BMS CAN Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bms-skill",
+    "url": "https://clawhub.ai/skills/bms-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bms-skill-e6f5486224a4bbd7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Parse automotive BMS BLF CAN logs with DBC files to extract time series data for specified signals in CSV, JSON, or text formats."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "muqiong",
+      "userId": "s17bgqx8acvxqpzjbte3rsyqns83hcd0",
+      "displayName": "Muqiong",
+      "image": "https://avatars.githubusercontent.com/u/88209502?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774247379844,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1c9d1d67fe84a72dc8044d0e4bf64f56ff917880df3bc5fce76fbfd8cc9e7d66"
+}

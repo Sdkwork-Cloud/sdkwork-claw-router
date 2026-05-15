@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37097,
+  "uuid": "skill-clawhub-paycor",
+  "skillKey": "clawhub-paycor",
+  "name": "Paycor",
+  "summary": "Paycor integration. Manage data, records, and automate workflows. Use when the user wants to interact with Paycor data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paycor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Paycor integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Paycor data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paycor@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paycor",
+      "url": "https://clawhub.ai/skills/paycor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paycor",
+    "url": "https://clawhub.ai/skills/paycor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paycor-d5a591096a950898.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paycor@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-paycor-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:32bf32d7e621894f6869567c5ff775cf0c519741ff062a9389a328c4eb333a67",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:22:33.957Z"
+}

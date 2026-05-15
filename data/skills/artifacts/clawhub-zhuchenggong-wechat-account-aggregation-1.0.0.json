@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zhuchenggong-wechat-account-aggregation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhuchenggong_wechat_account_aggregation",
+  "skill": {
+    "id": 73521,
+    "skillKey": "clawhub-zhuchenggong-wechat-account-aggregation",
+    "name": "公众号内容聚合"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhuchenggong-wechat-account-aggregation",
+    "url": "https://clawhub.ai/skills/zhuchenggong-wechat-account-aggregation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhuchenggong-wechat-account-aggregation-d337217f172c202b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据公众号名称或链接，归纳公众号定位和核心观点，帮用户选择关键词偏好并定时推送聚合内容。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhuchenggong19851114-design",
+      "userId": "s175hh7wvdt1z18hr1txy3da4h83haab",
+      "displayName": "zhuchenggong19851114-design",
+      "image": "https://avatars.githubusercontent.com/u/266258234?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 216,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774486017447,
+      "changelog": "Initial release of the 公众号内容聚合 Skill:\n\n- 根据公众号名称/链接自动归纳公众号类型、关键词，并整理成文案\n- 支持用户选择关键词偏好，并定时每天10点推送相关公众号内容\n- 推送内容涵盖公众号定位、核心观点与关注价值\n- 与飞书打通，可存储整理结果至公众号内容聚合库\n- 利用百度搜索获取信息，无需付费API，支持记忆用户偏好",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8434d42b41e3498479b9713de2c6f2c3f88b5e350eaf2d2a157d55db6cce5dfb"
+}

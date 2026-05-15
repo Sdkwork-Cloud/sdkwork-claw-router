@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/china-telecom-mail@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_telecom_mail",
+  "skill": {
+    "id": 37586,
+    "skillKey": "clawhub-china-telecom-mail",
+    "name": "China Telecom Mail"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-telecom-mail",
+    "url": "https://clawhub.ai/skills/china-telecom-mail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-telecom-mail-e596c3ba2a6baa5b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send and receive emails via China Telecom (POP3:995, SMTP:465). Lists today's emails, reads content, forwards emails, and sends new emails."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "williamwang-wh",
+      "userId": "s172rhar6d3wa14s0z6j1e0pbs83wt9z",
+      "displayName": "Williamwang-wh",
+      "image": "https://avatars.githubusercontent.com/u/75006654?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774852908211,
+      "changelog": "Initial release of China Telecom Mail skill.\n\n- Send and receive emails via China Telecom using POP3 and SMTP.\n- List today’s emails, read full email content, and output email summaries as JSON.\n- Send new emails with support for attachments and both text/HTML bodies.\n- Forward received emails to other recipients.\n- Interactive and command-line modes supported.\n- Automatic Chinese encoding detection included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:437f61a2dba8a8ac87f0426406bd293b06bdf64103a165eeafaf3b12e82593c1"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/basecamp-cli-mcp@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.basecamp_cli_mcp",
+  "skill": {
+    "id": 11195,
+    "skillKey": "clawhub-basecamp-cli-mcp",
+    "name": "Basecamp CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "basecamp-cli-mcp",
+    "url": "https://clawhub.ai/skills/basecamp-cli-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/basecamp-cli-mcp-075526d95f5eea08.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CLI and MCP server for Basecamp 4. Use when you need to interact with Basecamp projects, todos, messages, schedules, kanban cards, documents, or campfires. Provides 76 MCP tools for AI-driven project management workflows."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "drkraft",
+      "userId": "publishers:drkraft",
+      "displayName": "drkraft",
+      "image": "https://avatars.githubusercontent.com/u/17691993?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2215,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1770126605252,
+      "changelog": "Major 2.0.0 update: Full MCP server support and significant CLI enhancements.\n\n- Adds MCP server with 76 tools for AI-driven Basecamp project management workflows.\n- Documents 21 CLI command groups across all major Basecamp 4 domains.\n- Supports automatic pagination, retries with exponential backoff, and OAuth 2.0 PKCE authentication.\n- Provides detailed installation and configuration instructions, including for MCP integration.\n- Includes a full CLI quick reference and comprehensive tool listing.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e9a273c52bd62dabf5ec7be73386966c977a530e6e0ffc1a6dd13e0b2d2f6e39"
+}

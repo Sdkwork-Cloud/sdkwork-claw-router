@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/biography-life-lesson-extractor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.biography_life_lesson_extractor",
+  "skill": {
+    "id": 48885,
+    "skillKey": "clawhub-biography-life-lesson-extractor",
+    "name": "Biography Life Lesson Extractor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "biography-life-lesson-extractor",
+    "url": "https://clawhub.ai/skills/biography-life-lesson-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/biography-life-lesson-extractor-f0457798373cbed3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extracts practical lessons from a biography while avoiding hero worship, hindsight bias, and unsafe imitation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 90,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778088840160,
+      "changelog": "Biography Life Lesson Extractor v1.0.0\n\n- Initial release of the skill for extracting practical lessons from biographies.\n- Provides a framework to separate transferable lessons from context-specific details.\n- Includes steps to avoid hero worship, hindsight bias, and unsafe imitation.\n- Outputs structured insights: context, patterns, lessons, cautions, and experiment ideas.\n- Designed for personal knowledge growth, not academic or professional assessment.\n- Works exclusively with user-supplied biographies or excerpts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dbb971583fe61f0e7df7a584e1aec129bc00b9bc7ddb6ded397f8e10e505db2e"
+}

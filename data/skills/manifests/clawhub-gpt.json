@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19115,
+  "uuid": "skill-clawhub-gpt",
+  "skillKey": "clawhub-gpt",
+  "name": "Gpt",
+  "summary": "Generate GPT API request payloads. Use when building chat completions, embeddings, fine-tuning data, or estimating API costs.",
+  "version": "3.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gpt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "Generate GPT API request payloads",
+        "Use when building chat completions, embeddings, fine-tuning data, or estimating API costs."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gpt@3.4.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gpt",
+      "url": "https://clawhub.ai/skills/gpt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gpt",
+    "url": "https://clawhub.ai/skills/gpt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gpt-053ea4804ef1bb33.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gpt@3.4.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gpt-3.4.1.json",
+      "version": "3.4.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:388b8ead40715671ea6599b2f7966ec4b59066faab7307902cb1eb5b3d89833c",
+      "artifactSizeBytes": 1826
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T19:13:48.366Z"
+}

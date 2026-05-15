@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/satgate@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.satgate",
+  "skill": {
+    "id": 15696,
+    "skillKey": "clawhub-satgate",
+    "name": "SatGate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "satgate",
+    "url": "https://clawhub.ai/skills/satgate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/satgate-56f25d76c87bab26.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage your API's economic firewall from the terminal. Mint tokens, track spend, revoke agents, enforce budgets. The server-side counterpart to lnget."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "matt-dean-git",
+      "userId": "publishers:matt-dean-git",
+      "displayName": "matt-dean-git",
+      "image": "https://avatars.githubusercontent.com/u/258945365?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 974,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1770902626034,
+      "changelog": "- Added project homepage URL (https://satgate.io) to metadata.\n- Updated SatGate Cloud setup instructions: changed gateway endpoint, environment variable names, and included tenant slug.\n- Improved clarity in environment variable configuration for both self-hosted and cloud setups.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d03efe88fb571eb486c814111d11d0e21bda09a104196cfd58125057e1938c78"
+}

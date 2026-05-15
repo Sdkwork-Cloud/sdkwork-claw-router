@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polymarket-mert-sniper@1.2.2",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_mert_sniper",
+  "skill": {
+    "id": 11443,
+    "skillKey": "clawhub-polymarket-mert-sniper",
+    "name": "Polymarket Mert Sniper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-mert-sniper",
+    "url": "https://clawhub.ai/skills/polymarket-mert-sniper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-mert-sniper-a74bf63564da2c9f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Near-expiry conviction trading on Polymarket. Snipe markets about to resolve when the odds are heavily skewed. Filter by topic, cap your bets, and only trade..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adlai88",
+      "userId": "s172hbaws6qnfk9a4zffkzfags83j0df",
+      "displayName": "AD88",
+      "image": "https://avatars.githubusercontent.com/u/6263940?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2038,
+      "installsAllTime": 11,
+      "installsCurrent": 11,
+      "stars": 0,
+      "versions": 19
+    },
+    "latestVersion": {
+      "version": "1.2.2",
+      "createdAt": 1777025210149,
+      "changelog": "## polymarket-mert-sniper v1.2.2\n\n- Updated metadata version to 1.2.2 in SKILL.md.\n- Internal code changes in mert_sniper.py and clawhub.json (details not listed).\n- No changes to user-facing command usage or configuration options.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4272db20da0f70d50cb4077114ec3f3b39fecca62bf9e14f508168ac87abc2bf"
+}

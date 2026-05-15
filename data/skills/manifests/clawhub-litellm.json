@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11145,
+  "uuid": "skill-clawhub-litellm",
+  "skillKey": "clawhub-litellm",
+  "name": "LiteLLM",
+  "summary": "Call 100+ LLM providers through LiteLLM's unified API. Use when you need to call a different model than your primary (e.g., use GPT-4 for code review while running on Claude), compare outputs from multiple models, route to cheaper models f.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.litellm",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ishaan-jaff",
+      "features": [
+        "Call 100+ LLM providers through LiteLLM's unified API",
+        "Use when you need to call a different model than your primary (e.g., use GPT-4 for code review."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/litellm@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29436595?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "litellm",
+      "url": "https://clawhub.ai/skills/litellm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "litellm",
+    "url": "https://clawhub.ai/skills/litellm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/litellm-dcc8d7506b63db23.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/litellm@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-litellm-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:812808b938711aab922f1b2da4bfc3acaa7753c9cb6a8865b8dd722162704b91",
+      "artifactSizeBytes": 1945
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T18:20:29.166Z"
+}

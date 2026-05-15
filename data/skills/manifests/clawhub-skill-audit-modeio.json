@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23560,
+  "uuid": "skill-clawhub-skill-audit-modeio",
+  "skillKey": "clawhub-skill-audit-modeio",
+  "name": "Skill Audit",
+  "summary": "Runs a deterministic static safety audit for third-party AI skill or plugin repositories before install or execution. Use when asked to scan a skill repo, as...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_audit_modeio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "modeioai",
+      "features": [
+        "Runs a deterministic static safety audit for third-party AI skill or plugin repositories before.",
+        "Use when asked to scan a skill repo, as..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-audit-modeio@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/244495891?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-audit-modeio",
+      "url": "https://clawhub.ai/skills/skill-audit-modeio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-audit-modeio",
+    "url": "https://clawhub.ai/skills/skill-audit-modeio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-audit-modeio-f1e92c020c8d6097.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-audit-modeio@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-audit-modeio-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:85e60b29f54139972c56bfe61479acc598b7ecf32c6fddfac16843a52ec99541",
+      "artifactSizeBytes": 2454
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T06:13:27.826Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/salubrista-hah@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.salubrista_hah",
+  "skill": {
+    "id": 41496,
+    "skillKey": "clawhub-salubrista-hah",
+    "name": "Salubrista HaH"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "salubrista-hah",
+    "url": "https://clawhub.ai/skills/salubrista-hah",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/salubrista-hah-b2c60276ca1f6546.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when the user needs analysis, design, implementation, evaluation, dashboards, decision scenarios, or normative guidance for integrated hospita..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "felix-antonio-sl",
+      "userId": "s17301x2y8n5dbvbsbv42fvgxx83n922",
+      "displayName": "felix-antonio-sl",
+      "image": "https://avatars.githubusercontent.com/u/143637936?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774526455326,
+      "changelog": "- Bundled the complete original agent and knowledge files into the skill under `references/`, rather than requiring external directories.\n- Updated internal paths and instructions to use the packaged originals directly in `references/agent/` and `references/knowledge/hodom/`.\n- No changes to workflow, clinical scope, or output contract; all original logic and files included without distillation or summarizing.\n- Now supports fully portable operation by including all referenced domain and agent material within the skill package.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5d1374e4cf778b9c203a1046174809cf6ab1b3723e1713591834a0cafc5a98fc"
+}

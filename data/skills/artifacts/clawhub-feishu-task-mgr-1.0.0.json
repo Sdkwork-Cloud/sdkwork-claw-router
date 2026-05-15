@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-task-mgr@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_task_mgr",
+  "skill": {
+    "id": 45390,
+    "skillKey": "clawhub-feishu-task-mgr",
+    "name": "Feishu Task Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-task-mgr",
+    "url": "https://clawhub.ai/skills/feishu-task-mgr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-task-mgr-57ab9fd62c160463.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Feishu tasks by creating, listing, completing, commenting, and organizing to-dos with assignees, due dates, and checklists."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "a3152557994-ship-it",
+      "userId": "s173ar224xha1b0e8jxxvg0r2985aes9",
+      "displayName": "a3152557994-ship-it",
+      "image": "https://avatars.githubusercontent.com/u/248589521?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 134,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776862877764,
+      "changelog": "Initial release: Full task CRUD, assignee support, comments",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6d6085b8e25061b818edde1d36a9496b139f8a7d244e5e7387d9a7c46d26c780"
+}

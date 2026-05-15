@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34741,
+  "uuid": "skill-clawhub-freelattice-skill-builder",
+  "skillKey": "clawhub-freelattice-skill-builder",
+  "name": "FreeLattice Skill Builder",
+  "summary": "Drafts FreeLattice form fields and, when the runtime supports artifacts, packages the resulting skill as a zip for import-style workflows.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.freelattice_skill_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Christopher L Haynes",
+      "features": [
+        "Drafts FreeLattice form fields and, when the runtime supports artifacts, packages the resulting."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/freelattice-skill-builder@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130129909?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "freelattice-skill-builder",
+      "url": "https://clawhub.ai/skills/freelattice-skill-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "freelattice-skill-builder",
+    "url": "https://clawhub.ai/skills/freelattice-skill-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/freelattice-skill-builder-bb08821bd009ed5f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/freelattice-skill-builder@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-freelattice-skill-builder-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:91b53b18bed522d5f5d0cd31e7f4f4ebd864a005317dd81621395e805a10a2b2",
+      "artifactSizeBytes": 2465
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T17:07:42.851Z"
+}

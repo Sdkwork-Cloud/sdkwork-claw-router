@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-actions-cancel-waste-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_actions_cancel_waste_audit",
+  "skill": {
+    "id": 28002,
+    "skillKey": "clawhub-github-actions-cancel-waste-audit",
+    "name": "GitHub Actions Cancel Waste Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-actions-cancel-waste-audit",
+    "url": "https://clawhub.ai/skills/github-actions-cancel-waste-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-actions-cancel-waste-audit-9f75da7f0ec5b72d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit cancelled and timed-out GitHub Actions runs from JSON exports to surface wasted CI minutes and noisy workflows."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daniellummis",
+      "userId": "publishers:daniellummis",
+      "displayName": "Daniel Lummis",
+      "image": "https://avatars.githubusercontent.com/u/65238171?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 336,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772795671465,
+      "changelog": "Initial release.\n\n- Audits cancelled and timed-out GitHub Actions runs to identify wasted CI minutes from JSON exports.\n- Groups waste by repository, workflow, and conclusion for efficient triage.\n- Supports configurable warning and critical minute thresholds with optional workflow/repo/actor filters.\n- Outputs in either text (for report) or JSON (for integration), with exit code signaling for CI usage.\n- Requires bash and python3.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:951afd36264318d6d9966eabfd04b69da5c8380bf8c767b31b9e2ac9265e9454"
+}

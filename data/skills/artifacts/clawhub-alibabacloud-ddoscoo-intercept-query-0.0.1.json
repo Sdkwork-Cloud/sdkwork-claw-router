@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibabacloud-ddoscoo-intercept-query@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_ddoscoo_intercept_query",
+  "skill": {
+    "id": 49172,
+    "skillKey": "clawhub-alibabacloud-ddoscoo-intercept-query",
+    "name": "Alibabacloud Ddoscoo Intercept Query"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-ddoscoo-intercept-query",
+    "url": "https://clawhub.ai/skills/alibabacloud-ddoscoo-intercept-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-ddoscoo-intercept-query-8df4e44b1edad8ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Alibaba Cloud DDoS Pro (ddoscoo) block/intercept reasons via SLS full logs and ddoscoo CLI. Analyzes detailed information about intercepted requests in..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdk-team",
+      "userId": "s173swjet2yrebzqrp6hjkvmy583mxef",
+      "displayName": "alibabacloud-skills-team",
+      "image": "https://avatars.githubusercontent.com/u/49941014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 85,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1777514520804,
+      "changelog": "Initial release: Provides a workflow to analyze and report on Alibaba Cloud DDoS Pro (ddoscoo) intercepted requests using SLS logs and CLI tools.\n\n- Query DDoS Pro block/intercept reasons via SLS full logs and ddoscoo CLI, supporting investigation of CC protection rules, access controls, region blocks, and IP blacklists.\n- Contains detailed installation, environment, and pre-check instructions for required CLI tools and plugins.\n- Enforces strict security and parameter confirmation policies, including sensitive data masking.\n- Outlines a step-by-step workflow for instance discovery, log querying, and structured report generation with recommendations.\n- Lists all trigger phrases and user scenarios for when to invoke this skill.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:57abe3787d1b2f031ca0ff19240b2819c5416d8166e5efb520e062e07c62d7f5"
+}

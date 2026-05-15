@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/insurance-anti-fraud@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.insurance_anti_fraud",
+  "skill": {
+    "id": 65313,
+    "skillKey": "clawhub-insurance-anti-fraud",
+    "name": "Insurance Anti-Fraud Expert"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "insurance-anti-fraud",
+    "url": "https://clawhub.ai/skills/insurance-anti-fraud",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/insurance-anti-fraud-220c73b8c60187cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于国家监管办法，提供保险理赔和核保欺诈识别、风险评分、调查流程及防范建议，助力风控合规。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gechengling",
+      "userId": "s17ewqc4f2s6gpcbm88hy7fgvn85kg1g",
+      "displayName": "lingfeng-19",
+      "image": "https://avatars.githubusercontent.com/u/8140166?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777908190541,
+      "changelog": "v1.1.0 Bilingual optimization: English metadata + English summaries; Bilingual README.md; SEO title for anti-fraud analysis and CBIRC compliance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8d016048347b9d66add7314bdfcb02558cd02d956a1693491f3b324f0b0ee83a"
+}

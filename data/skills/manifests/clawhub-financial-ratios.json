@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28214,
+  "uuid": "skill-clawhub-financial-ratios",
+  "skillKey": "clawhub-financial-ratios",
+  "name": "Financial Ratio Analysis",
+  "summary": "Compute and report 25+ financial ratios (profitability, liquidity, leverage, efficiency, growth) from QBO data. Produces a 9-tab Excel workbook with traffic-...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.financial_ratios",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "samledger67-dotcom",
+      "features": [
+        "Compute and report 25+ financial ratios (profitability, liquidity, leverage, efficiency, growth.",
+        "Produces a 9-tab Excel workbook with traffic-..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/financial-ratios@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261800271?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "financial-ratios",
+      "url": "https://clawhub.ai/skills/financial-ratios"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "financial-ratios",
+    "url": "https://clawhub.ai/skills/financial-ratios",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/financial-ratios-85f2eef8d6ee95c5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/financial-ratios@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-financial-ratios-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4fd85d28ab51f5d7d74ee623d927ac4f465d491be5094ddc4ff66e9fa54e1ef6",
+      "artifactSizeBytes": 1929
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T08:02:13.506Z"
+}

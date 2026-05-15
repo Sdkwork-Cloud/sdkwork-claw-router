@@ -2,7 +2,7 @@ use axum::body::Body;
 use axum::http::{Request, StatusCode};
 use sdkwork_claw_config::{ApiKeySecurityConfig, DatabaseConfig};
 use sdkwork_claw_test_support::{
-    api_key_security_config, app_session_bearer_token, app_session_config,
+    api_key_security_config, app_session_config, app_session_dual_token_headers,
     default_trusted_request_subject, payment_webhook_config, trusted_subject_config,
 };
 use serde_json::Value;
@@ -78,7 +78,7 @@ async fn admin_api_manual_model_ranking_refresh_runs_worker_and_records_audit() 
     let response = router
         .oneshot(app_session_request(
             "POST",
-            "/backend/v3/api/router/model-rankings/refresh",
+            "/backend/v3/api/ai/model_rankings/refresh",
             Body::from(
                 r#"{"rankScope":"commercial-default","snapshotPeriod":"daily","limit":10,"lookbackDays":7,"refreshIntervalSeconds":3600,"cacheMaxAgeSeconds":60}"#,
             ),
@@ -140,7 +140,7 @@ async fn fresh_sqlite_install_refreshes_model_rankings_from_usage_and_serves_adm
         .clone()
         .oneshot(app_session_request(
             "POST",
-            "/backend/v3/api/router/model-rankings/refresh",
+            "/backend/v3/api/ai/model_rankings/refresh",
             Body::from(
                 r#"{"rankScope":"commercial-default","snapshotPeriod":"daily","limit":10,"lookbackDays":7,"refreshIntervalSeconds":3600,"cacheMaxAgeSeconds":60}"#,
             ),
@@ -233,7 +233,7 @@ async fn fresh_sqlite_install_refreshes_model_rankings_from_usage_and_serves_adm
     let backend_payload = request_json(
         admin_router,
         "GET",
-        "/backend/v3/api/router/model-rankings?limit=5",
+        "/backend/v3/api/ai/model_rankings?limit=5",
         Body::empty(),
     )
     .await;
@@ -252,7 +252,7 @@ async fn fresh_sqlite_install_refreshes_model_rankings_from_usage_and_serves_adm
     let app_payload = request_json(
         app_router,
         "GET",
-        "/app/v3/api/router/model-rankings?limit=5",
+        "/app/v3/api/ai/model_rankings?limit=5",
         Body::empty(),
     )
     .await;
@@ -372,13 +372,15 @@ fn assert_model_ranking_response_contains_catalog(
 fn app_session_request(method: &str, path: &str, body: Body) -> Request<Body> {
     let issued_at = current_unix_seconds();
     let expires_at = issued_at + 3600;
-    let authorization =
-        app_session_bearer_token(default_trusted_request_subject(), issued_at, expires_at).unwrap();
+    let (authorization, access_token) =
+        app_session_dual_token_headers(default_trusted_request_subject(), issued_at, expires_at)
+            .unwrap();
     Request::builder()
         .method(method)
         .uri(path)
         .header("content-type", "application/json")
         .header("authorization", authorization)
+        .header("Sdkwork-Access-Token", access_token)
         .body(body)
         .unwrap()
 }

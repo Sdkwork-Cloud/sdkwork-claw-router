@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25141,
+  "uuid": "skill-clawhub-nexus-doc-writer",
+  "skillKey": "clawhub-nexus-doc-writer",
+  "name": "NEXUS Doc Writer",
+  "summary": "Generate technical documentation from code or specs",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nexus_doc_writer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CyberForexBlockchain",
+      "features": [
+        "Generate technical documentation from code or specs"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nexus-doc-writer@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37193064?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nexus-doc-writer",
+      "url": "https://clawhub.ai/skills/nexus-doc-writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nexus-doc-writer",
+    "url": "https://clawhub.ai/skills/nexus-doc-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nexus-doc-writer-1d570d2c1d39f836.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nexus-doc-writer@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nexus-doc-writer-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b3370996f9de039656bbba688d94aa8e510755b13072fe0ba240c59cd3d3f860",
+      "artifactSizeBytes": 1903
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T17:09:42.391Z"
+}

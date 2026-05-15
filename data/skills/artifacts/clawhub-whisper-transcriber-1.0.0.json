@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/whisper-transcriber@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whisper_transcriber",
+  "skill": {
+    "id": 20442,
+    "skillKey": "clawhub-whisper-transcriber",
+    "name": "Whisper Transcriber"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whisper-transcriber",
+    "url": "https://clawhub.ai/skills/whisper-transcriber",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whisper-transcriber-43ecf57f41350235.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Offline speech-to-text (ASR) using whisper.cpp (whisper-cli) + ffmpeg. Supports batch transcription, timestamps, SRT/TXT/JSON outputs, and model download. Cr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vvusu",
+      "userId": "publishers:vvusu",
+      "displayName": "vvusu",
+      "image": "https://avatars.githubusercontent.com/u/8391123?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 436,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772964328281,
+      "changelog": "Initial public release v1.0.0: offline ASR via whisper.cpp (whisper-cli) + ffmpeg; cross-platform installer (macOS/Linux) with Windows WSL2 recommendation; auto-download models to assets/models; optional sha256 verification; safer temp dir (mktemp).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9e7fb159a5551e4afe5c5fedb04f4f0e2fc97fd0689bcebce271bdb03573f17d"
+}

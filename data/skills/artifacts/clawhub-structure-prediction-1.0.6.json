@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/structure-prediction@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.structure_prediction",
+  "skill": {
+    "id": 19197,
+    "skillKey": "clawhub-structure-prediction",
+    "name": "Biomolecular Structure Prediction"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "structure-prediction",
+    "url": "https://clawhub.ai/skills/structure-prediction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/structure-prediction-247126a9b828a821.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Biomolecular structure prediction tools for Chai-1, Boltz-2, and Alphafold3 via SciMiner APIs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiongzhp",
+      "userId": "s17avxx8hsvxv7jgvt81y48ck983t0y6",
+      "displayName": "SciMiner",
+      "image": "https://avatars.githubusercontent.com/u/3404885?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 331,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1777816078230,
+      "changelog": "**Credential storage is now persistent, improving workflow consistency and security.**\n\n- Changed SciMiner API credential handling from transient environment variable to a persistent user-level config file at `~/.config/sciminer/credentials.json`.\n- Added explicit instructions for agents to remember only the credential file path—not the API key value.\n- Updated prerequisites and agent guidance to require the API key file, and to instruct users how to create it if missing.\n- Adjusted invocation pattern, sample code, and result reporting to use the new persistent credential location.\n- Clarified in notes and result instructions that agents must reference the online `share_url` when presenting results to users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:84a465504a091401cf013083699d09507d86b885e8e5fb74f0b4a05a13835860"
+}

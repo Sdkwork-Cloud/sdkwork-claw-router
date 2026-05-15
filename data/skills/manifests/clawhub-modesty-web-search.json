@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46343,
+  "uuid": "skill-clawhub-modesty-web-search",
+  "skillKey": "clawhub-modesty-web-search",
+  "name": "web-search",
+  "summary": "Search the web using SkillBoss API for current info, news, images, or videos with filtering by type, time, region, and safe search settings.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.modesty_web_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ModestyRichards",
+      "features": [
+        "Search the web using SkillBoss API for current info, news, images, or videos with filtering by."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/modesty-web-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261238899?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "modesty-web-search",
+      "url": "https://clawhub.ai/skills/modesty-web-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "modesty-web-search",
+    "url": "https://clawhub.ai/skills/modesty-web-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/modesty-web-search-f5aed1be00ff08c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/modesty-web-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-modesty-web-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f4f313979062cff29be4107f6a954ec1a2d9e8c80a8c995f5f7bd2c5a79d3ed6",
+      "artifactSizeBytes": 2314
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T01:17:25.289Z"
+}

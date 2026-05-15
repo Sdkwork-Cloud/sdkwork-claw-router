@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49149,
+  "uuid": "skill-clawhub-freelance-rate-calculator",
+  "skillKey": "clawhub-freelance-rate-calculator",
+  "name": "Freelance Rate Calculator",
+  "summary": "Help freelancers and contractors set, justify, and raise their rates. Calculates minimum viable hourly rate from desired take-home, validates against market...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.freelance_rate_calculator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Help freelancers and contractors set, justify, and raise their rates",
+        "Calculates minimum viable hourly rate from desired take-home, validates against market..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/freelance-rate-calculator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "freelance-rate-calculator",
+      "url": "https://clawhub.ai/skills/freelance-rate-calculator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "freelance-rate-calculator",
+    "url": "https://clawhub.ai/skills/freelance-rate-calculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/freelance-rate-calculator-45788ecdd24122e9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/freelance-rate-calculator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-freelance-rate-calculator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dea1e1382f7d8f5378fd21e1b75b91eaec4098f9b47a3ef23669158a80822cbc",
+      "artifactSizeBytes": 2639
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T05:39:44.894Z"
+}

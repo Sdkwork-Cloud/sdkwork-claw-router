@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sudo-gold@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sudo_gold",
+  "skill": {
+    "id": 70412,
+    "skillKey": "clawhub-sudo-gold",
+    "name": "sudo-gold"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sudo-gold",
+    "url": "https://clawhub.ai/skills/sudo-gold",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sudo-gold-94355685595c582e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 Tavily 搜索获取黄金相关信息，覆盖上海黄金交易所、上海期货交易所、香港金银业贸易场、银行账户黄金、伦敦金银及金店金价等行情数据。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fmouseboy",
+      "userId": "s172cbtek476cw42nfxa6hxczx83pzaf",
+      "displayName": "FMouse",
+      "image": "https://avatars.githubusercontent.com/u/36061597?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 98,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1773241178465,
+      "changelog": "- 添加了新的脚本参数 --analyze，用于自动生成黄金投资综合分析。\n- 更新 search-gold.mjs 的调用方式，文档新增对 --type 取值 fundamental 的支持。\n- 优化 OpenClaw 推荐用法，建议通过 --analyze 提供中性、非投资建议性质的解读。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3d4043856e71aa31d2e24dd4db4433800dcd4ee99e940446d7416d2fbbfc24f6"
+}

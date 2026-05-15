@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pua@2.9.0",
+  "version": "2.9.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pua",
+  "skill": {
+    "id": 8777,
+    "skillKey": "clawhub-pua",
+    "name": "PUA"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pua",
+    "url": "https://clawhub.ai/skills/pua",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pua-332a2079d816fed8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Forces high-agency exhaustive problem-solving with corporate PUA pressure. Triggers on user frustration, repeated failures, passive behavior, or quality comp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tanweai",
+      "userId": "publishers:tanweai",
+      "displayName": "tanweai",
+      "image": "https://avatars.githubusercontent.com/u/256783335?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 5201,
+      "installsAllTime": 96,
+      "installsCurrent": 90,
+      "stars": 12,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.9.0",
+      "createdAt": 1774163842885,
+      "changelog": "v2.9: Leaderboard, Owner consciousness, 10 company methodologies, real user frustration triggers, security fix, blog",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c79618c6822ba851f85b59e1eee3c930a3701b44d2d9eda1984856246ff5f3ab"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-multi-publisher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_multi_publisher",
+  "skill": {
+    "id": 50773,
+    "skillKey": "clawhub-wechat-multi-publisher",
+    "name": "WeChat MP Multi-Publisher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-multi-publisher",
+    "url": "https://clawhub.ai/skills/wechat-multi-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-multi-publisher-bf456b5fd7eb94a1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Publish one or multiple Markdown articles to WeChat Official Account (公众号) draft box in a single API call. Supports multi-article combined drafts (main artic..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "x402spark-jpg",
+      "userId": "publishers:x402spark-jpg",
+      "displayName": "x402spark-jpg",
+      "image": "https://avatars.githubusercontent.com/u/258791342?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1092,
+      "installsAllTime": 8,
+      "installsCurrent": 7,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771403692643,
+      "changelog": "Multi-article combined draft push: main + sub-articles in one API call. Smart cover images (Unsplash auto-match + 12-image fallback rotation, each article gets a unique cover). Custom styling: gold quote highlights, && section dividers, accent headings. Inline image auto-upload to WeChat CDN.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:85afadcee4674fe7371944e380ae5ed2d40217d49d38aa258c2b1c40e49e2e67"
+}

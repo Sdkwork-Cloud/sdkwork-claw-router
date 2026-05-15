@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mac-use@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mac_use",
+  "skill": {
+    "id": 9602,
+    "skillKey": "clawhub-mac-use",
+    "name": "mac-use"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mac-use",
+    "url": "https://clawhub.ai/skills/mac-use",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mac-use-223010cc09f1fc00.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control macOS GUI apps visually — take screenshots, click, scroll, type. Use when the user asks to interact with any Mac desktop application's graphical interface."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kekejun",
+      "userId": "publishers:kekejun",
+      "displayName": "kekejun",
+      "image": "https://avatars.githubusercontent.com/u/111878737?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3314,
+      "installsAllTime": 17,
+      "installsCurrent": 17,
+      "stars": 8,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770544016407,
+      "changelog": "Initial release of mac-use skill for macOS desktop automation with vision-based OCR and GUI interaction.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cd196beeb939066e87ed30792e45959365e6fdfda4b55c7d975d0e3ccdf7e26f"
+}

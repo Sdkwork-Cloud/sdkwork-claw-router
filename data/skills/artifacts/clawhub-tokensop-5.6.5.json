@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tokensop@5.6.5",
+  "version": "5.6.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tokensop",
+  "skill": {
+    "id": 69093,
+    "skillKey": "clawhub-tokensop",
+    "name": "TOKEN SOP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tokensop",
+    "url": "https://clawhub.ai/skills/tokensop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tokensop-48f10afa286893c3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动保存并本地调用已执行任务，避免重复消耗Token，实现离线秒级响应，提升效率与节省费用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ainclaw",
+      "userId": "s17dmbmaenebbv89tz8zc0bfts83h405",
+      "displayName": "ainclaw",
+      "image": "https://avatars.githubusercontent.com/u/252712074?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 351,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "5.6.5",
+      "createdAt": 1773940564214,
+      "changelog": "Version 5.6.5 of tokensop\n\n- No code or documentation changes detected in this release.\n- Functionality and instructions remain the same as previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3909a7375b35277223d8d58fbe5ca6f07450ab121e1b04db1b58d18ece66ba2d"
+}

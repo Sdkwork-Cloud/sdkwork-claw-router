@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23833,
+  "uuid": "skill-clawhub-md-to-docx",
+  "skillKey": "clawhub-md-to-docx",
+  "name": "Markdown to Word (.docx) Converter",
+  "summary": "Convert Markdown files to formatted Word (.docx) documents with automatic template style detection. Use this skill whenever the user mentions converting Mark...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.md_to_docx",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KrabWW",
+      "features": [
+        "Convert Markdown files to formatted Word (.docx) documents with automatic template style detect.",
+        "Use this skill whenever the user mentions converting Mark..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/md-to-docx@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/212656286?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "md-to-docx",
+      "url": "https://clawhub.ai/skills/md-to-docx"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "md-to-docx",
+    "url": "https://clawhub.ai/skills/md-to-docx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/md-to-docx-08e06ebb791f583f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/md-to-docx@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-md-to-docx-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a11cc1b1141ba0c5b0c5ee1fe7d0446d9a7338718382549733f49e33d31050d1",
+      "artifactSizeBytes": 1958
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T02:52:43.298Z"
+}

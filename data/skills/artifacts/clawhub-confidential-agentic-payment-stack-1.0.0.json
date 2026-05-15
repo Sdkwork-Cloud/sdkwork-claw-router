@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/confidential-agentic-payment-stack@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.confidential_agentic_payment_stack",
+  "skill": {
+    "id": 28709,
+    "skillKey": "clawhub-confidential-agentic-payment-stack",
+    "name": "confidential-agentic-payment-stack"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "confidential-agentic-payment-stack",
+    "url": "https://clawhub.ai/skills/confidential-agentic-payment-stack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/confidential-agentic-payment-stack-5c03e302a0484c79.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "FHE-encrypted x402 payments for OpenClaw agents. Use when the agent needs to make private on-chain payments, wrap/unwrap encrypted tokens, manage escrow jobs..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "billynothack",
+      "userId": "s17ep93st8gsn4c6new2ycqnc584dwhd",
+      "displayName": "Bilal EL ALAMY",
+      "image": "https://avatars.githubusercontent.com/u/255905016?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 319,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776021709935,
+      "changelog": "This is the V1 of the confidential-agentic-payment-stack. \nIt allows agents to interact with Zama's Fully Homomorphic Encryption technology which permit confidentiality on top of existing blockchains. \nAgents can then manipulate \"Confidential\" tokens to make their crypto transaction with a) Website (x402 protocol); b) Agents (ERC-8183) & c) Humans fully confidential. Balances & transaction amounts remain fully confidential while offering compliance compatibility. \nThose skills also allow agents to create an identity and give feedbacks on other agents depeding on the commerce they do with other entities.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d005e08bfdf480907291789df0dd27d9185df238614c8e710b08b97e51e38bc0"
+}

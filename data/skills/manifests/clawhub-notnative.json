@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10993,
+  "uuid": "skill-clawhub-notnative",
+  "skillKey": "clawhub-notnative",
+  "name": "Notnative",
+  "summary": "Use Notnative MCP server for complete AI assistant integration with notes, calendar, tasks, Python, canvas, and permanent memory. This skill provides persist...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notnative",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "k4ditano",
+      "features": [
+        "Use Notnative MCP server for complete AI assistant integration with notes, calendar, tasks, Pyt.",
+        "This skill provides persist..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/notnative@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111686045?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "notnative",
+      "url": "https://clawhub.ai/skills/notnative"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notnative",
+    "url": "https://clawhub.ai/skills/notnative",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notnative-fb370b5f21166ecc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/notnative@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-notnative-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:91a21ba67cbc64b4aefe917e7f424b6dd426be3f28b2352b0a26211eb4bc49b0",
+      "artifactSizeBytes": 2384
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T17:34:52.128Z"
+}

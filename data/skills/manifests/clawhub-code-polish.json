@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37917,
+  "uuid": "skill-clawhub-code-polish",
+  "skillKey": "clawhub-code-polish",
+  "name": "code-polish",
+  "summary": "Pre-release code review - runs lint/type checks, then launches 3 parallel review agents (cleanliness, design, efficiency) to analyze the diff, synthesizes a...",
+  "version": "2.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_polish",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Misha Kolesnik",
+      "features": [
+        "Pre-release code review",
+        "runs lint/type checks, then launches 3 parallel review agents (cleanliness, design, efficiency)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/code-polish@2.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22403766?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "code-polish",
+      "url": "https://clawhub.ai/skills/code-polish"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-polish",
+    "url": "https://clawhub.ai/skills/code-polish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-polish-da607d6a51d37ebd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/code-polish@2.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-code-polish-2.2.1.json",
+      "version": "2.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b9f21df802b658cb23a4761a96d12c724a0564377fbe8b6a13b0aa7f3120c62",
+      "artifactSizeBytes": 1926
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:33:45.827Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28970,
+  "uuid": "skill-clawhub-inventory-forecast",
+  "skillKey": "clawhub-inventory-forecast",
+  "name": "Inventory Forecast",
+  "summary": "Project inventory needs based on historical order velocity, seasonality, and planned promotions so you reorder before stockouts hurt rankings.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inventory_forecast",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeroyCreates",
+      "features": [
+        "Project inventory needs based on historical order velocity, seasonality, and planned promotions."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/inventory-forecast@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130833525?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "inventory-forecast",
+      "url": "https://clawhub.ai/skills/inventory-forecast"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inventory-forecast",
+    "url": "https://clawhub.ai/skills/inventory-forecast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inventory-forecast-1ffc2f0398780d39.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/inventory-forecast@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-inventory-forecast-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e4ed25136e1937ec937b452b407b4732a1fd836dae69d3ab77366c74dc853070",
+      "artifactSizeBytes": 1903
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T05:13:50.962Z"
+}

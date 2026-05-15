@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/karakeep-save@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.karakeep_save",
+  "skill": {
+    "id": 12628,
+    "skillKey": "clawhub-karakeep-save",
+    "name": "Karakeep Save"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "karakeep-save",
+    "url": "https://clawhub.ai/skills/karakeep-save",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/karakeep-save-761778bdc33937fc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Save bookmarks to Karakeep (self-hosted bookmark manager). Use when the user wants to save a URL, bookmark a link, or add something to their reading list."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nickian",
+      "userId": "publishers:nickian",
+      "displayName": "nickian",
+      "image": "https://avatars.githubusercontent.com/u/590678?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1617,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769622418133,
+      "changelog": "Initial release - save bookmarks to self-hosted Karakeep instance",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5bbdd9607bb31bf790c291982caa61da51d670e993709e884ddb32e02c5f8905"
+}

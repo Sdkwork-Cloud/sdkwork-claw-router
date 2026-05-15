@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13710,
+  "uuid": "skill-clawhub-letterboxd-watchlist",
+  "skillKey": "clawhub-letterboxd-watchlist",
+  "name": "Letterboxd Watchlist",
+  "summary": "Scrape a public Letterboxd user's watchlist into a CSV/JSONL list of titles and film URLs without logging in. Use when a user asks to export, scrape, or mirror a Letterboxd watchlist, or to build watch-next queues.",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.letterboxd_watchlist",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "0xnuminous",
+      "features": [
+        "Scrape a public Letterboxd user's watchlist into a CSV/JSONL list of titles and film URLs witho.",
+        "Use when a user asks to export, scrape, or mirror a Letterboxd watchlist, or to build watch-nex."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/letterboxd-watchlist@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168457588?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "letterboxd-watchlist",
+      "url": "https://clawhub.ai/skills/letterboxd-watchlist"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "letterboxd-watchlist",
+    "url": "https://clawhub.ai/skills/letterboxd-watchlist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/letterboxd-watchlist-be5c7666c28e0f2a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/letterboxd-watchlist@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-letterboxd-watchlist-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c9c4005dfe3879de168251359fbdb2ecfb567060f5dec311bb79fe4a795d01f3",
+      "artifactSizeBytes": 2106
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T22:43:07.488Z"
+}

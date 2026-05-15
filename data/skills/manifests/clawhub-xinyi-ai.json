@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71105,
+  "uuid": "skill-clawhub-xinyi-ai",
+  "skillKey": "clawhub-xinyi-ai",
+  "name": "xinyi-ai",
+  "summary": "引导用户上传销售数据、预估样表及毛利表，完成门店未来7天销量预测和排产预估样表生成。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xinyi_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qq115566",
+      "features": [
+        "引导用户上传销售数据、预估样表及毛利表，完成门店未来7天销量预测和排产预估样表生成。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xinyi-ai@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38328303?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xinyi-ai",
+      "url": "https://clawhub.ai/skills/xinyi-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xinyi-ai",
+    "url": "https://clawhub.ai/skills/xinyi-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xinyi-ai-cd07caab336204c0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xinyi-ai@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-xinyi-ai-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a10a87d424a2e508c204299af4f53f20db466ea69381ba5ec5d24818277397f6",
+      "artifactSizeBytes": 1905
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T12:00:38.325Z"
+}

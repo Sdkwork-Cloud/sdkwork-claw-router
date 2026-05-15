@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/voicenotes@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voicenotes",
+  "skill": {
+    "id": 11158,
+    "skillKey": "clawhub-voicenotes",
+    "name": "Voicenotes"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voicenotes",
+    "url": "https://clawhub.ai/skills/voicenotes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voicenotes-14ca5ad5c648a049.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sync and access voice notes from Voicenotes.com. Use when the user wants to retrieve their voice recordings, transcripts, and AI summaries from Voicenotes. Supports fetching notes, syncing to markdown, and searching transcripts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shawnhansen",
+      "userId": "publishers:shawnhansen",
+      "displayName": "Shawn Hansen",
+      "image": "https://avatars.githubusercontent.com/u/2096717?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2168,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769301971201,
+      "changelog": "Initial release: Sync and search voice notes from Voicenotes.com",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fccc482178fce6980f0cbf680ca3730ce36e8e74b82546db5108056d06bd9d95"
+}

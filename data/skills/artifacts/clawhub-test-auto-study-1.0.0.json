@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/test-auto-study@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_auto_study",
+  "skill": {
+    "id": 48661,
+    "skillKey": "clawhub-test-auto-study",
+    "name": "test-auto-study"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-auto-study",
+    "url": "https://clawhub.ai/skills/test-auto-study",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-auto-study-1e30255d445f4f89.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when performing study tasks on browser-based platforms such as Yuketang, Xuexitong, Zhihuishu, and Pintia, including answering quizzes and page actions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "amiracleta",
+      "userId": "s174zn1cgxj0w6j276t8e6t57x83jnmc",
+      "displayName": "Song Kexin",
+      "image": "https://avatars.githubusercontent.com/u/177036012?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 97,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777439171923,
+      "changelog": "test",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:08176247637ccfe568e6d0c83e1ed7d513e68d6a05d751187cea5691f49dee53"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baoyu-image-gen-2@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baoyu_image_gen_2",
+  "skill": {
+    "id": 18192,
+    "skillKey": "clawhub-baoyu-image-gen-2",
+    "name": "Baoyu Image Gen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baoyu-image-gen-2",
+    "url": "https://clawhub.ai/skills/baoyu-image-gen-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baoyu-image-gen-2-e79dd8b74b01b801.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI image generation with OpenAI, Google, OpenRouter, DashScope, Jimeng, Seedream and Replicate APIs. Supports text-to-image, reference images, aspect ratios,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nengnengz",
+      "userId": "publishers:nengnengz",
+      "displayName": "nengnengZ",
+      "image": "https://avatars.githubusercontent.com/u/124799184?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 580,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1773886794296,
+      "changelog": "baoyu-image-gen-2 v0.1.2\n\n- No file changes detected in this release.\n- Functionality, options, and documentation remain unchanged from previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:36e0b32816c2b87524e45e3fcbb5832c235571a9921445d36e9f04d0737de83c"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57771,
+  "uuid": "skill-clawhub-nginx-reverse-proxy",
+  "skillKey": "clawhub-nginx-reverse-proxy",
+  "name": "Nginx Reverse Proxy",
+  "summary": "Configure nginx reverse proxy for domain binding. Trigger when user says \"绑定域名\" or \"配置nginx\" or \"反向代理\" to bind a domain to a specific IP:port.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nginx_reverse_proxy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EthanZhu",
+      "features": [
+        "Configure nginx reverse proxy for domain binding",
+        "Trigger when user says \"绑定域名\" or \"配置nginx\" or \"反向代理\" to bind a domain to a specific IP:port."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nginx-reverse-proxy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5915548?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nginx-reverse-proxy",
+      "url": "https://clawhub.ai/skills/nginx-reverse-proxy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nginx-reverse-proxy",
+    "url": "https://clawhub.ai/skills/nginx-reverse-proxy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nginx-reverse-proxy-03a9f4efc163093e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nginx-reverse-proxy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nginx-reverse-proxy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:86dfd96df0eb312e13d0a43dc283af5bc94ac0b2f84f997ea1d0a2ed022cce1c",
+      "artifactSizeBytes": 2367
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T13:57:50.373Z"
+}

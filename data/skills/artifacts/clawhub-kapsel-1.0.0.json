@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kapsel@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kapsel",
+  "skill": {
+    "id": 50765,
+    "skillKey": "clawhub-kapsel",
+    "name": "Project- & Time-Capsules"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kapsel",
+    "url": "https://clawhub.ai/skills/kapsel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kapsel-b58cf6e181778b7c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Project memory capsules — archive completed project knowledge to Google Drive and reload it on demand. Use this skill whenever the user mentions \"Kapsel\", \"c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nuwaiapp",
+      "userId": "publishers:nuwaiapp",
+      "displayName": "Djamel Saric",
+      "image": "https://avatars.githubusercontent.com/u/252505821?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 392,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773093811487,
+      "changelog": "- Initial release of kapsel: project memory capsule management for AI agents.\n- Archive completed project knowledge as structured folders on Google Drive or any rclone-supported cloud storage.\n- Triggered by keywords like \"Kapsel\", \"capsule\", \"project archive\", or requests to store, recall, or manage project knowledge.\n- Provides commands to create, load, list, summarize, archive, and add files to project capsules.\n- Enables clean agent memory by offloading inactive project details into retrievable capsules.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f89bee09b27813e5da626e745b61293e58e2288fa037dfe4210f3163c3a8c37b"
+}

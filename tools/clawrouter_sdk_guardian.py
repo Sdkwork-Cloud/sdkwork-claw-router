@@ -16,15 +16,61 @@ class ClawRouterSdkGuardianResult:
 
 @dataclass(frozen=True)
 class ExpectedSdk:
-    directory: str
+    family_directory: str
+    typescript_directory: str
     package_name: str
     sdk_type: str
     client_name: str
-    api_prefix: str
+
+    @property
+    def package_relative_dir(self) -> Path:
+        return Path(self.family_directory) / self.typescript_directory
 
 
 class ClawRouterSdkGuardian:
     """Check generated project SDK packages without modifying generator-owned files."""
+
+    OFFICIAL_SDK_LANGUAGES = (
+        "typescript",
+        "flutter",
+        "rust",
+        "java",
+        "csharp",
+        "swift",
+        "kotlin",
+        "go",
+        "python",
+    )
+
+    OPEN_EMPTY_RECORD_PATTERN = re.compile(
+        r"^\s*export\s+type\s+([A-Za-z_$][A-Za-z0-9_$]*)\s*=\s*Record<string,\s*unknown>\s*;",
+        flags=re.MULTILINE,
+    )
+    EMPTY_INTERFACE_PATTERN = re.compile(
+        r"^\s*export\s+interface\s+([A-Za-z_$][A-Za-z0-9_$]*)\s*\{\s*\}",
+        flags=re.MULTILINE,
+    )
+    FORBIDDEN_COMMON_TYPE_EXPORTS = ("PageResult",)
+    FORBIDDEN_PUBLIC_EMPTY_RECORD_PREFIXES = (
+        "Create",
+        "Delete",
+        "Disable",
+        "Enable",
+        "Fetch",
+        "Offline",
+        "Publish",
+        "Reject",
+        "Remove",
+        "Sync",
+        "Test",
+        "Trigger",
+        "Update",
+    )
+    FORBIDDEN_PUBLIC_EMPTY_RECORD_SUFFIXES = ("Request", "Result", "Response")
+    FORBIDDEN_NO_DATA_TYPE_PATTERN = re.compile(
+        r"\b(?:interface|type|class|enum)\s+NoData\b",
+        flags=re.MULTILINE,
+    )
 
     APP_MODEL_CATALOG_PRIVATE_ITEM_FIELDS = ("lowestUpstreamCostUnitPrice",)
     APP_MODEL_CATALOG_PRIVATE_AVAILABILITY_FIELDS = (
@@ -37,18 +83,25 @@ class ClawRouterSdkGuardian:
 
     EXPECTED = (
         ExpectedSdk(
-            directory="clawrouter-app-sdk",
+            family_directory="clawrouter-app-sdk",
+            typescript_directory="clawrouter-app-sdk-typescript",
             package_name="@sdkwork/clawrouter-app-sdk",
             sdk_type="app",
             client_name="SdkworkAppClient",
-            api_prefix="/app/v3/api",
         ),
         ExpectedSdk(
-            directory="clawrouter-backend-sdk",
+            family_directory="clawrouter-backend-sdk",
+            typescript_directory="clawrouter-backend-sdk-typescript",
             package_name="@sdkwork/clawrouter-backend-sdk",
             sdk_type="backend",
             client_name="SdkworkBackendClient",
-            api_prefix="/backend/v3/api",
+        ),
+        ExpectedSdk(
+            family_directory="clawrouter-open-sdk",
+            typescript_directory="clawrouter-open-sdk-typescript",
+            package_name="@sdkwork/clawrouter-open-sdk",
+            sdk_type="ai",
+            client_name="SdkworkAiClient",
         ),
     )
 
@@ -58,32 +111,46 @@ class ClawRouterSdkGuardian:
 
     def run(self) -> ClawRouterSdkGuardianResult:
         messages: list[str] = []
+        messages.extend(self._check_exact_sdk_systems())
         for expected in self.EXPECTED:
             messages.extend(self._check_sdk(expected))
         messages.extend(self._check_portal_boundary())
         return ClawRouterSdkGuardianResult(ok=not messages, messages=messages)
 
+    def _check_exact_sdk_systems(self) -> list[str]:
+        if not self.sdk_root.exists() or not self.sdk_root.is_dir():
+            return []
+
+        expected = {item.family_directory for item in self.EXPECTED}
+        actual = {item.name for item in self.sdk_root.iterdir() if item.is_dir()}
+        return [
+            f"unexpected generated SDK family is present: {self.sdk_root / family_directory}"
+            for family_directory in sorted(actual - expected)
+        ]
+
     def _check_sdk(self, expected: ExpectedSdk) -> list[str]:
-        base = self.sdk_root / expected.directory
         messages: list[str] = []
+        family = self.sdk_root / expected.family_directory
+        base = family / expected.typescript_directory
+        messages.extend(self._check_sdk_family(expected, family))
         if not base.exists():
-            return [f"generated SDK is missing: {base}"]
+            return [*messages, f"generated TypeScript SDK is missing: {base}"]
         if not base.is_dir():
-            return [f"generated SDK path must be a directory: {base}"]
+            return [*messages, f"generated TypeScript SDK path must be a directory: {base}"]
 
         package = self._read_json(base / "package.json", messages)
         if package is not None and package.get("name") != expected.package_name:
-            messages.append(f"{expected.directory} package.json name must be {expected.package_name}")
+            messages.append(f"{expected.typescript_directory} package.json name must be {expected.package_name}")
         if package is not None:
-            self._check_package_entry_files(expected.directory, base, package, messages)
-            self._check_package_build_standard(expected.directory, base, package, messages)
+            self._check_package_entry_files(expected.typescript_directory, base, package, messages)
+            self._check_package_build_standard(expected.typescript_directory, base, package, messages)
 
         metadata = self._read_json(base / "sdkwork-sdk.json", messages)
         if metadata is not None:
             if metadata.get("language") != "typescript":
-                messages.append(f"{expected.directory} sdkwork-sdk.json language must be typescript")
+                messages.append(f"{expected.typescript_directory} sdkwork-sdk.json language must be typescript")
             if metadata.get("sdkType") != expected.sdk_type:
-                messages.append(f"{expected.directory} sdkwork-sdk.json sdkType must be {expected.sdk_type}")
+                messages.append(f"{expected.typescript_directory} sdkwork-sdk.json sdkType must be {expected.sdk_type}")
 
         self._require_file(base / "README.md", messages)
         self._require_file(base / "custom" / "README.md", messages)
@@ -91,17 +158,124 @@ class ClawRouterSdkGuardian:
 
         sdk_source = self._read_text(base / "src" / "sdk.ts", messages)
         if sdk_source is not None and expected.client_name not in sdk_source:
-            messages.append(f"{expected.directory} src/sdk.ts must export {expected.client_name}")
+            messages.append(f"{expected.typescript_directory} src/sdk.ts must export {expected.client_name}")
 
-        paths_source = self._read_text(base / "src" / "api" / "paths.ts", messages)
-        if paths_source is not None and expected.api_prefix not in paths_source:
-            messages.append(f"{expected.directory} src/api/paths.ts must contain {expected.api_prefix}")
+        self._require_file(base / "src" / "api" / "paths.ts", messages)
 
-        self._check_unexported_api_artifacts(expected.directory, base, messages)
-        self._check_type_index_exports(expected.directory, base, messages)
+        self._check_unexported_api_artifacts(expected.typescript_directory, base, messages)
+        self._check_type_index_exports(expected.typescript_directory, base, messages)
+        self._check_strict_public_types(expected.typescript_directory, base, messages)
+        if expected.sdk_type in {"app", "backend"}:
+            self._check_standard_query_parameters(expected.typescript_directory, base, messages)
 
         if expected.sdk_type == "app":
-            self._check_public_app_model_catalog_types(expected.directory, base, messages)
+            self._check_public_app_model_catalog_types(expected.typescript_directory, base, messages)
+        if expected.sdk_type == "backend":
+            self._check_backend_ecosystem_skill_resource_tree(expected.typescript_directory, base, messages)
+        return messages
+
+    def _check_sdk_family(self, expected: ExpectedSdk, family: Path) -> list[str]:
+        messages: list[str] = []
+        if not family.exists():
+            return [f"generated SDK family is missing: {family}"]
+        if not family.is_dir():
+            return [f"generated SDK family path must be a directory: {family}"]
+
+        forbidden_root_artifacts = (
+            "package.json",
+            "sdkwork-sdk.json",
+            "tsconfig.json",
+            "src",
+            "custom",
+            ".sdkwork",
+        )
+        for artifact in forbidden_root_artifacts:
+            if (family / artifact).exists():
+                messages.append(
+                    f"{expected.family_directory} must be an SDK family directory; "
+                    f"{artifact} belongs under {expected.typescript_directory}"
+                )
+
+        self._require_file(family / "README.md", messages)
+        self._require_file(family / ".sdkwork-assembly.json", messages)
+        self._require_file(family / "openapi" / f"{expected.family_directory}.openapi.json", messages)
+        self._require_file(family / "openapi" / f"{expected.family_directory}.sdkgen.json", messages)
+        self._require_file(family / "bin" / "generate-sdk.mjs", messages)
+        self._require_file(family / "bin" / "verify-sdk.mjs", messages)
+        if not (family / "tests").is_dir():
+            messages.append(f"{expected.family_directory} tests directory is required")
+        generate_script = self._read_text(family / "bin" / "generate-sdk.mjs", [])
+        if generate_script is not None:
+            if "--language" not in generate_script or "OFFICIAL_LANGUAGES" not in generate_script:
+                messages.append(
+                    f"{expected.family_directory} bin/generate-sdk.mjs must support --language language selection"
+                )
+            if f"sdks/${{sdkFamily}}/${{sdkFamily}}-${{language}}/generated/server-openapi" not in generate_script:
+                messages.append(
+                    f"{expected.family_directory} bin/generate-sdk.mjs must generate non-TypeScript SDKs "
+                    "under <family>-<language>/generated/server-openapi"
+                )
+            if (
+                "sdkgenInputPath" not in generate_script
+                or "openapi/${sdkFamily}.sdkgen.json" not in generate_script
+                or "'-i', sdkgenInputPath" not in generate_script
+            ):
+                messages.append(
+                    f"{expected.family_directory} bin/generate-sdk.mjs must generate from "
+                    "openapi/${sdkFamily}.sdkgen.json"
+                )
+
+        assembly = self._read_json(family / ".sdkwork-assembly.json", messages)
+        if assembly is not None:
+            if assembly.get("workspace") != expected.family_directory:
+                messages.append(f"{expected.family_directory} .sdkwork-assembly.json workspace must match")
+            languages = assembly.get("languages")
+            if not isinstance(languages, list) or not any(
+                isinstance(item, dict)
+                and item.get("language") == "typescript"
+                and item.get("workspace") == expected.typescript_directory
+                for item in languages
+            ):
+                messages.append(
+                    f"{expected.family_directory} .sdkwork-assembly.json must list "
+                    f"{expected.typescript_directory} as the materialized TypeScript workspace"
+                )
+            if isinstance(languages, list):
+                languages_by_name = {
+                    item.get("language"): item
+                    for item in languages
+                    if isinstance(item, dict) and isinstance(item.get("language"), str)
+                }
+                for language in self.OFFICIAL_SDK_LANGUAGES:
+                    language_entry = languages_by_name.get(language)
+                    if not isinstance(language_entry, dict):
+                        messages.append(
+                            f"{expected.family_directory} .sdkwork-assembly.json must list official SDK language {language}"
+                        )
+                        continue
+                    if language == "typescript":
+                        continue
+                    expected_workspace = f"{expected.family_directory}-{language}"
+                    expected_generated_path = f"{expected_workspace}/generated/server-openapi"
+                    if language_entry.get("workspace") != expected_workspace:
+                        messages.append(
+                            f"{expected.family_directory} .sdkwork-assembly.json language {language} "
+                            f"workspace must be {expected_workspace}"
+                        )
+                    if language_entry.get("generatedPath") != expected_generated_path:
+                        messages.append(
+                            f"{expected.family_directory} .sdkwork-assembly.json language {language} "
+                            f"generatedPath must be {expected_generated_path}"
+                        )
+                    if language_entry.get("generationState") == "materialized":
+                        manifest_path = language_entry.get("manifestPath")
+                        if not isinstance(manifest_path, str) or not manifest_path:
+                            messages.append(
+                                f"{expected.family_directory} .sdkwork-assembly.json materialized language {language} "
+                                "must declare manifestPath"
+                            )
+                        else:
+                            self._require_file(family / manifest_path, messages)
         return messages
 
     def _read_json(self, path: Path, messages: list[str]) -> dict[str, Any] | None:
@@ -253,6 +427,99 @@ class ClawRouterSdkGuardian:
                     f"pricing field {field}"
                 )
 
+    def _check_backend_ecosystem_skill_resource_tree(self, sdk_dir: str, base: Path, messages: list[str]) -> None:
+        source = self._read_text(base / "src" / "api" / "ecosystem.ts", messages)
+        if source is None:
+            return
+
+        sdk_source = self._read_text(base / "src" / "sdk.ts", [])
+        if sdk_source is not None:
+            for snippet in (
+                "public readonly ecosystem: EcosystemApi;",
+                "this.ecosystem = createEcosystemApi(this.httpClient);",
+            ):
+                if snippet not in sdk_source:
+                    messages.append(f"{sdk_dir} src/sdk.ts must expose generated ecosystem SDK domain")
+
+        expected_resource_tree = {
+            "EcosystemApi": ("public readonly skills: EcosystemSkillsApi;",),
+            "EcosystemSkillsApi": (
+                "public readonly categories: EcosystemSkillsCategoriesApi;",
+                "public readonly package: EcosystemSkillsPackageApi;",
+                "public readonly artifacts: EcosystemSkillsArtifactsApi;",
+                "public readonly assets: EcosystemSkillsAssetsApi;",
+                "public readonly review: EcosystemSkillsReviewApi;",
+            ),
+        }
+        for class_name, snippets in expected_resource_tree.items():
+            if f"export class {class_name}" not in source:
+                messages.append(f"{sdk_dir} src/api/ecosystem.ts must expose resource class {class_name}")
+            for snippet in snippets:
+                if snippet not in source:
+                    messages.append(f"{sdk_dir} src/api/ecosystem.ts must expose resource member {snippet}")
+
+        expected_methods = {
+            "EcosystemSkillsApi": (
+                "create",
+                "list",
+                "delete",
+                "retrieve",
+                "update",
+                "disable",
+                "enable",
+                "publish",
+                "unpublish",
+            ),
+            "EcosystemSkillsPackageApi": (
+                "create",
+                "list",
+                "delete",
+                "retrieve",
+                "update",
+                "disable",
+                "enable",
+            ),
+            "EcosystemSkillsReviewApi": ("approve", "reject"),
+            "EcosystemSkillsCategoriesApi": ("list", "create"),
+            "EcosystemSkillsAssetsApi": ("list", "create", "delete", "retrieve", "update"),
+            "EcosystemSkillsArtifactsApi": ("list", "create", "delete", "retrieve", "update"),
+        }
+        for class_name, method_names in expected_methods.items():
+            if f"export class {class_name}" not in source:
+                messages.append(f"{sdk_dir} src/api/ecosystem.ts must expose resource class {class_name}")
+                continue
+            for method_name in method_names:
+                if not self._class_has_async_method(source, class_name, method_name):
+                    messages.append(f"{sdk_dir} src/api/ecosystem.ts {class_name} must expose async {method_name}(")
+
+        forbidden_flat_methods = (
+            "enableSkill",
+            "disableSkill",
+            "publishSkill",
+            "offlineSkill",
+            "approveSkill",
+            "rejectSkill",
+            "enableSkillPackage",
+            "disableSkillPackage",
+            "fetchSkills",
+            "fetchSkillPackages",
+        )
+        for flat_method in forbidden_flat_methods:
+            if re.search(rf"\basync\s+{re.escape(flat_method)}\s*\(", source) is not None:
+                messages.append(
+                    f"{sdk_dir} src/api/ecosystem.ts must use standard resource-tree methods, "
+                    f"not async {flat_method}("
+                )
+
+    def _class_has_async_method(self, source: str, class_name: str, method_name: str) -> bool:
+        class_match = re.search(rf"\bexport\s+class\s+{re.escape(class_name)}\s*\{{", source)
+        if class_match is None:
+            return False
+        class_start = class_match.end()
+        next_class = source.find("\nexport class ", class_start)
+        class_source = source[class_start:] if next_class < 0 else source[class_start:next_class]
+        return re.search(rf"\basync\s+{re.escape(method_name)}\s*\(", class_source) is not None
+
     def _check_unexported_api_artifacts(self, sdk_dir: str, base: Path, messages: list[str]) -> None:
         index_path = base / "src" / "api" / "index.ts"
         index_source = self._read_text(index_path, messages)
@@ -278,6 +545,8 @@ class ClawRouterSdkGuardian:
         for source_path in sorted(types_dir.glob("*.ts")):
             if source_path.name == "index.ts":
                 continue
+            if source_path.name == "no-data.ts":
+                continue
             source = self._read_text(source_path, messages)
             if source is None:
                 continue
@@ -292,6 +561,94 @@ class ClawRouterSdkGuardian:
                 messages.append(
                     f"{sdk_dir} src/types/index.ts must export {match.group(1)} from ./{source_path.stem}"
                 )
+        if "from './no-data'" in index_source or 'from "./no-data"' in index_source:
+            messages.append(f"{sdk_dir} src/types/index.ts must not export NoData from ./no-data")
+
+    def _check_strict_public_types(self, sdk_dir: str, base: Path, messages: list[str]) -> None:
+        types_dir = base / "src" / "types"
+        if not types_dir.is_dir():
+            messages.append(f"{sdk_dir} src/types directory is missing")
+            return
+
+        common_source = self._read_text(types_dir / "common.ts", messages)
+        if common_source is not None:
+            self._check_common_type_exports(sdk_dir, common_source, messages)
+
+        for source_path in sorted(types_dir.glob("*.ts")):
+            if source_path.name in {"index.ts", "common.ts"}:
+                continue
+            source = self._read_text(source_path, messages)
+            if source is None:
+                continue
+            if source_path.name == "no-data.ts":
+                messages.append(f"{sdk_dir} src/types/no-data.ts is forbidden; no-data operations use PlusApiResult")
+            if self.FORBIDDEN_NO_DATA_TYPE_PATTERN.search(source):
+                messages.append(
+                    f"{sdk_dir} {source_path.relative_to(base).as_posix()} must not declare NoData"
+                )
+            for type_name in self.OPEN_EMPTY_RECORD_PATTERN.findall(source):
+                if self._allows_closed_empty_type(type_name):
+                    continue
+                messages.append(
+                    f"{sdk_dir} {source_path.relative_to(base).as_posix()} must not expose "
+                    f"{type_name} as Record<string, unknown>; use Record<string, never>"
+                )
+            for type_name in self.EMPTY_INTERFACE_PATTERN.findall(source):
+                if self._allows_closed_empty_type(type_name):
+                    continue
+                messages.append(
+                    f"{sdk_dir} {source_path.relative_to(base).as_posix()} must not expose "
+                    f"{type_name} as an empty interface; use Record<string, never>"
+                )
+
+    def _check_common_type_exports(self, sdk_dir: str, source: str, messages: list[str]) -> None:
+        for type_name in self.FORBIDDEN_COMMON_TYPE_EXPORTS:
+            if re.search(rf"\b{re.escape(type_name)}\b", source):
+                messages.append(f"{sdk_dir} src/types/common.ts must not re-export {type_name}")
+        if re.search(r"^\s*(?:searchQuery|search_query|keyword|search)\??\s*:", source, flags=re.MULTILINE):
+            messages.append(
+                f"{sdk_dir} src/types/common.ts must expose common list search text as q, not searchQuery/search_query/keyword/search"
+            )
+
+    def _check_standard_query_parameters(self, sdk_dir: str, base: Path, messages: list[str]) -> None:
+        api_dir = base / "src" / "api"
+        if not api_dir.is_dir():
+            return
+        for source_path in sorted(api_dir.glob("*.ts")):
+            if source_path.name in {"base.ts", "index.ts", "paths.ts"}:
+                continue
+            source = self._read_text(source_path, messages)
+            if source is None:
+                continue
+            relative = source_path.relative_to(base).as_posix()
+            if re.search(r"^\s*(?:searchQuery|search_query|keyword|search)\??\s*:", source, flags=re.MULTILINE):
+                messages.append(
+                    f"{sdk_dir} {relative} must expose SDK search text as q, not searchQuery/search_query/keyword/search"
+                )
+            if re.search(r"\{\s*name:\s*['\"](?:search_query|searchQuery|keyword|search)['\"]", source):
+                messages.append(
+                    f"{sdk_dir} {relative} must send URL search text as q, not search_query/searchQuery/keyword/search"
+                )
+            if "vendor_codes" in source:
+                if re.search(r"^\s*vendorCodes\??\s*:\s*string\s*;", source, flags=re.MULTILINE):
+                    messages.append(
+                        f"{sdk_dir} {relative} must expose vendorCodes as string[] for multi-value query filters"
+                    )
+                if re.search(
+                    r"\{[^}]*name:\s*['\"]vendor_codes['\"][^}]*style:\s*['\"]form['\"][^}]*explode:\s*true[^}]*\}",
+                    source,
+                    flags=re.DOTALL,
+                ):
+                    messages.append(
+                        f"{sdk_dir} {relative} must serialize vendor_codes with style=form and explode=false"
+                    )
+
+    def _allows_closed_empty_type(self, type_name: str) -> bool:
+        if type_name.startswith(self.FORBIDDEN_PUBLIC_EMPTY_RECORD_PREFIXES):
+            return False
+        if type_name.endswith(self.FORBIDDEN_PUBLIC_EMPTY_RECORD_SUFFIXES):
+            return False
+        return True
 
     def _has_typescript_property(self, source: str, property_name: str) -> bool:
         return re.search(rf"^\s*{re.escape(property_name)}\??\s*:", source, flags=re.MULTILINE) is not None
@@ -309,13 +666,37 @@ class ClawRouterSdkGuardian:
 
         portal_package = self._read_json(portal_root / "package.json", messages)
         if portal_package is not None:
-            self._check_dependency(portal_package, "@sdkwork/clawrouter-app-sdk", "portal package.json", messages)
-            self._check_dependency(portal_package, "@sdkwork/clawrouter-backend-sdk", "portal package.json", messages)
+            self._check_dependency(
+                portal_package,
+                "@sdkwork/clawrouter-app-sdk",
+                "workspace:*",
+                "portal package.json",
+                messages,
+            )
+            self._check_dependency(
+                portal_package,
+                "@sdkwork/clawrouter-backend-sdk",
+                "workspace:*",
+                "portal package.json",
+                messages,
+            )
 
         commons_package = self._read_json(commons_root / "package.json", messages)
         if commons_package is not None:
-            self._check_dependency(commons_package, "@sdkwork/clawrouter-app-sdk", "portal commons package.json", messages)
-            self._check_dependency(commons_package, "@sdkwork/clawrouter-backend-sdk", "portal commons package.json", messages)
+            self._check_dependency(
+                commons_package,
+                "@sdkwork/clawrouter-app-sdk",
+                "workspace:*",
+                "portal commons package.json",
+                messages,
+            )
+            self._check_dependency(
+                commons_package,
+                "@sdkwork/clawrouter-backend-sdk",
+                "workspace:*",
+                "portal commons package.json",
+                messages,
+            )
 
         boundary_relative = "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/sdk-clients.ts"
         boundary_path = self.root / boundary_relative
@@ -347,15 +728,25 @@ class ClawRouterSdkGuardian:
 
         return messages
 
-    def _check_dependency(self, package_json: dict[str, Any], package_name: str, label: str, messages: list[str]) -> None:
+    def _check_dependency(
+        self,
+        package_json: dict[str, Any],
+        package_name: str,
+        expected_specifier: str,
+        label: str,
+        messages: list[str],
+    ) -> None:
         dependencies = package_json.get("dependencies", {})
         dev_dependencies = package_json.get("devDependencies", {})
         if not isinstance(dependencies, dict):
             dependencies = {}
         if not isinstance(dev_dependencies, dict):
             dev_dependencies = {}
-        if package_name not in dependencies and package_name not in dev_dependencies:
+        actual = dependencies.get(package_name, dev_dependencies.get(package_name))
+        if actual is None:
             messages.append(f"{label} must depend on {package_name}")
+        elif actual != expected_specifier:
+            messages.append(f"{label} {package_name} must use {expected_specifier}")
 
 
 def main() -> int:

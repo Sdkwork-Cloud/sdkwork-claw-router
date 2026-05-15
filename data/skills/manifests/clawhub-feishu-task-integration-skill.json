@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70756,
+  "uuid": "skill-clawhub-feishu-task-integration-skill",
+  "skillKey": "clawhub-feishu-task-integration-skill",
+  "name": "feishu-task-integration-skill",
+  "summary": "飞书任务对接集成技能，实现待办事项与飞书任务的双向同步。自动创建飞书任务、智能解析时间表达式、设置任务负责人，支持任务状态同步和完成管理。使用场景：需要将本地待办事项同步到飞书任务、设置任务截止时间、指派任务负责人、跟踪任务完成状态。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_task_integration_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "showdownagain",
+      "features": [
+        "飞书任务对接集成技能，实现待办事项与飞书任务的双向同步。自动创建飞书任务、智能解析时间表达式、设置任务负责人，支持任务状态同步和完成管理。使用场景：需要将本地待办事项同步到飞书任务、设置任务."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-task-integration-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36160999?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-task-integration-skill",
+      "url": "https://clawhub.ai/skills/feishu-task-integration-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-task-integration-skill",
+    "url": "https://clawhub.ai/skills/feishu-task-integration-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-task-integration-skill-2d0edf956b2aec33.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-task-integration-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-task-integration-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e3516070d26ccffb76e831fbb06a997be2bbe11aa1a008a2965e97021780755d",
+      "artifactSizeBytes": 2644
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T10:23:25.404Z"
+}

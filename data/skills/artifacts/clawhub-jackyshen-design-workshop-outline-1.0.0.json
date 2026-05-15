@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jackyshen-design-workshop-outline@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jackyshen_design_workshop_outline",
+  "skill": {
+    "id": 24048,
+    "skillKey": "clawhub-jackyshen-design-workshop-outline",
+    "name": "jackyshen-design-workshop-outline"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jackyshen-design-workshop-outline",
+    "url": "https://clawhub.ai/skills/jackyshen-design-workshop-outline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jackyshen-design-workshop-outline-7f5468b9ac80ee94.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when user asks to \"generate workshop outline\", \"create training agenda\", \"design course structure\", \"build workshop schedule\", or requests help planning..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mebusw",
+      "userId": "s17fqnnawywqwp37410y5w9r1h83pwab",
+      "displayName": "Jacky Shen",
+      "image": "https://avatars.githubusercontent.com/u/760587?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 322,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773331769733,
+      "changelog": "- Initial release of the jackyshen-design-workshop-outline skill.\n- Generates learner-centered workshop and training outlines using MECE structure, TfBR 4C model, and VAK learning styles.\n- Provides clear guidance for requirement gathering, modular structuring, outcome definition, and interactive agenda design.\n- Output format includes agenda overview, detailed module flows, and checklist for effective, actionable session planning.\n- Designed for requests about workshop outlines, training agendas, course structures, or session planning.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:36d9ad77d76c1dee91f6b2f6a5cb48ecf010da3eb57bfe326bd0f5574f69582a"
+}

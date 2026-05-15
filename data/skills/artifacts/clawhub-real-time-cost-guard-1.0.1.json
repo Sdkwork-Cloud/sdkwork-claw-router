@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/real-time-cost-guard@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.real_time_cost_guard",
+  "skill": {
+    "id": 44443,
+    "skillKey": "clawhub-real-time-cost-guard",
+    "name": "Real-Time Cost Guard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "real-time-cost-guard",
+    "url": "https://clawhub.ai/skills/real-time-cost-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/real-time-cost-guard-946c03ed6dad4f1f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides real-time enforcement of token and cost limits with loop detection to prevent overspending during OpenClaw agent execution."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "showmethemoney2023",
+      "userId": "s175re25be6brgqdsnz07yw38983ppnr",
+      "displayName": "ShowMeTheMoney2023",
+      "image": "https://avatars.githubusercontent.com/u/127740459?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774852496583,
+      "changelog": "Real-Time Cost Guard 1.0.1\n\n- Updated guidance to clarify this skill provides analysis and advice only; no built-in enforcement.\n- Added explicit recommendations for runtime protection using external tools (e.g., ClawFirewall).\n- Reorganized and simplified coverage of cost risks, loop detection, and prevention strategies.\n- Expanded token optimization and protection setup tips.\n- Improved clarity on when and how to use the skill.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:583ecabc4ab2403ff2869db50e5d9cd1b91f470d4320218ac1f45a94f39608f3"
+}

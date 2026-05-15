@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mao-thought@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mao_thought",
+  "skill": {
+    "id": 70819,
+    "skillKey": "clawhub-mao-thought",
+    "name": "mao-thought"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mao-thought",
+    "url": "https://clawhub.ai/skills/mao-thought",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mao-thought-5060303251e34962.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供毛泽东思想理论、著作核心观点及相关党史、新民主主义和社会主义革命中国问题的专业问答服务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jennyfun",
+      "userId": "s176tzdhz25qc4pt8cx2xtk0dn84h44y",
+      "displayName": "jennyfun",
+      "image": "https://avatars.githubusercontent.com/u/81336433?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 255,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775776385558,
+      "changelog": "- Initial release of the Mao Thought Q&A skill.\n- Answers questions on Mao Zedong's life, core ideas, major works, and related party history.\n- Covers key historical periods including the New Democratic and Socialist Revolutions.\n- Explains central concepts such as \"seeking truth from facts,\" the mass line, and self-reliance.\n- Designed for academic and historical knowledge inquiries with source citation requirements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b4707282033afb518f40e7f7f0b3b41a275714896f1a1b431ff42db6fa1f2af3"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20457,
+  "uuid": "skill-clawhub-firm-a2a-bridge",
+  "skillKey": "clawhub-firm-a2a-bridge",
+  "name": "Firm A2a Bridge",
+  "summary": "Agent-to-Agent (A2A) Protocol RC v1.0 bridge for OpenClaw agents. Enables agent discovery, identity cards, task lifecycle management, push notification confi...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.firm_a2a_bridge",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "romainsantoli-web",
+      "features": [
+        "Agent-to-Agent (A2A) Protocol RC v1.0 bridge for OpenClaw agents",
+        "Enables agent discovery, identity cards, task lifecycle management, push notification confi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/firm-a2a-bridge@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/246739959?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "firm-a2a-bridge",
+      "url": "https://clawhub.ai/skills/firm-a2a-bridge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "firm-a2a-bridge",
+    "url": "https://clawhub.ai/skills/firm-a2a-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/firm-a2a-bridge-757212de6ed1233c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/firm-a2a-bridge@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-firm-a2a-bridge-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:61b7b28e4030d94c473316928209e720ca3b6fee2b55d1c34a14b0b87c168c3d",
+      "artifactSizeBytes": 1964
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T22:10:15.057Z"
+}

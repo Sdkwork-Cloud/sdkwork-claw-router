@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17591,
+  "uuid": "skill-clawhub-video-download-archive",
+  "skillKey": "clawhub-video-download-archive",
+  "name": "Video Download Archive",
+  "summary": "Validate single video URLs, download highest-quality files with yt-dlp, and archive results into a Feishu Bitable using platform tools.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_download_archive",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "feiernk",
+      "features": [
+        "Validate single video URLs, download highest-quality files with yt-dlp, and archive results int."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-download-archive@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43094524?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-download-archive",
+      "url": "https://clawhub.ai/skills/video-download-archive"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-download-archive",
+    "url": "https://clawhub.ai/skills/video-download-archive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-download-archive-6f38fb60859e6603.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-download-archive@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-download-archive-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ce8f4d95818a5aab16a4759fcfcd219831be7012832e27ccdb71bc4012827e9f",
+      "artifactSizeBytes": 2403
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T01:33:56.054Z"
+}

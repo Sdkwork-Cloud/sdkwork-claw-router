@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26613,
+  "uuid": "skill-clawhub-sequenzy",
+  "skillKey": "clawhub-sequenzy",
+  "name": "Sequenzy",
+  "summary": "Agent guide for operating Sequenzy. Use when Codex needs to authenticate, inspect identity, manage subscribers, create or edit campaigns/sequences/templates,...",
+  "version": "1.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sequenzy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "polnikale",
+      "features": [
+        "Agent guide for operating Sequenzy",
+        "Use when Codex needs to authenticate, inspect identity, manage subscribers, create or edit camp."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sequenzy@1.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26389743?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sequenzy",
+      "url": "https://clawhub.ai/skills/sequenzy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sequenzy",
+    "url": "https://clawhub.ai/skills/sequenzy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sequenzy-b26a70a9ac6b1377.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sequenzy@1.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-sequenzy-1.1.4.json",
+      "version": "1.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:822eb53d27ab1584e6a2102bd44d603264b06e7ed622048b8f5bafdd7228c116",
+      "artifactSizeBytes": 1875
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T20:41:27.606Z"
+}

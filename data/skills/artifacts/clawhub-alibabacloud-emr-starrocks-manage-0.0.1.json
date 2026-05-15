@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibabacloud-emr-starrocks-manage@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_emr_starrocks_manage",
+  "skill": {
+    "id": 52596,
+    "skillKey": "clawhub-alibabacloud-emr-starrocks-manage",
+    "name": "Alibabacloud Emr Starrocks Manage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-emr-starrocks-manage",
+    "url": "https://clawhub.ai/skills/alibabacloud-emr-starrocks-manage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-emr-starrocks-manage-79fbb840bed3b42c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage the full lifecycle of Alibaba Cloud EMR Serverless StarRocks instances — create, scale, configure, maintain and diagnose. Use this Skill when operatio..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdk-team",
+      "userId": "s173swjet2yrebzqrp6hjkvmy583mxef",
+      "displayName": "alibabacloud-skills-team",
+      "image": "https://avatars.githubusercontent.com/u/49941014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1775023194183,
+      "changelog": "Initial release of Alibaba Cloud EMR Serverless StarRocks instance management.\n\n- Manage the full lifecycle of StarRocks instances: create, scale, configure, maintain, and diagnose.\n- Supports operations such as instance creation, status checks, scaling, config modifications, restarts, and diagnostics.\n- Designed for SREs, operations engineers, and architects managing EMR Serverless StarRocks.\n- Requires Alibaba Cloud CLI (aliyun >= 3.0) with appropriate permissions and configured credentials.\n- Not intended for SQL/DDL operations, data import/export, query tuning, or non-StarRocks products.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5bc311014cccf47535ecbd1f6eafaca858d815f741a5cd9addc5bd60c5007dbd"
+}

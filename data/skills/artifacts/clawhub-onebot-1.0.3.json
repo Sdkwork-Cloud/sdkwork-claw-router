@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/onebot@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.onebot",
+  "skill": {
+    "id": 59871,
+    "skillKey": "clawhub-onebot",
+    "name": "onebot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "onebot",
+    "url": "https://clawhub.ai/skills/onebot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/onebot-31a603f6867f2cf5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过 OneBot HTTP API 使用本地命令（curl）发送 QQ 私聊或群消息。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jqllxew",
+      "userId": "s17fvap6y48246ndt2f2dzcge984n6mb",
+      "displayName": "jqllxew",
+      "image": "https://avatars.githubusercontent.com/u/33121144?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 409,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775943502211,
+      "changelog": "No user-visible changes in this version.  \n- No file changes detected from previous version.\n- Version number remains as 1.0.2 in the skill description.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:60d2bf56c5f532f3074c4ab9e44e1325a6ccbdb5b507d3785170d1f30cc31754"
+}

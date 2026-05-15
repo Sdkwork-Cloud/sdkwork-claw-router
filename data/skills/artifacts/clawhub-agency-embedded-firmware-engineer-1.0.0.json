@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agency-embedded-firmware-engineer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agency_embedded_firmware_engineer",
+  "skill": {
+    "id": 36875,
+    "skillKey": "clawhub-agency-embedded-firmware-engineer",
+    "name": "test"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agency-embedded-firmware-engineer",
+    "url": "https://clawhub.ai/skills/agency-embedded-firmware-engineer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agency-embedded-firmware-engineer-b87a3f1d8a112ba1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Expert AI agent specializing in embedded firmware engineer. From The Agency (github.com/msitarzewski/agency-agents)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhouqkt",
+      "userId": "s1795qkq3w7kv2pjjkv7tn6wfs84j4jd",
+      "displayName": "zhouqkt",
+      "image": "https://avatars.githubusercontent.com/u/90135364?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775865779222,
+      "changelog": "Initial release of the agency-embedded-firmware-engineer skill.\n\n- Introduces an expert agent specializing in embedded firmware engineering.\n- Defines a methodical, hardware-aware personality focused on reliability and safety.\n- Outlines the agent's core mission: robust firmware design, proper RTOS task architecture, and error-resilient peripheral drivers.\n- Details supported protocols (UART, SPI, I2C, CAN, BLE, Wi-Fi) and key expectations for error handling.\n- Provides activation and usage guidance for integrating the agent's expertise.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:097262f6b8d467ae3f5646ff1dc2cd52408c6f86a0aa91878327ecf83e116545"
+}

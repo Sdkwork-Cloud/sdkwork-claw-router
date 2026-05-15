@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38067,
+  "uuid": "skill-clawhub-lunchbox-planner",
+  "skillKey": "clawhub-lunchbox-planner",
+  "name": "Lunchbox Planner",
+  "summary": "Helps plan practical lunch boxes for adults or children based on nutrition goals, ingredients, time, budget, storage, and reheating constraints.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lunchbox_planner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "know-hub",
+      "features": [
+        "Helps plan practical lunch boxes for adults or children based on nutrition goals, ingredients,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lunchbox-planner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/214209974?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lunchbox-planner",
+      "url": "https://clawhub.ai/skills/lunchbox-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lunchbox-planner",
+    "url": "https://clawhub.ai/skills/lunchbox-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lunchbox-planner-32ae52e51487bfa4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lunchbox-planner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lunchbox-planner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a4b8ecb830e7060a616e89c89f5bfdcc7330db1f70f9cd12b2f36eb3e3047ab3",
+      "artifactSizeBytes": 2470
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T10:50:47.492Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63709,
+  "uuid": "skill-clawhub-one-mail",
+  "skillKey": "clawhub-one-mail",
+  "name": "one-mail",
+  "summary": "统一邮箱管理 CLI，支持 Gmail、Outlook、网易邮箱（163.com、126.com）。适用于：(1) 收取/发送邮件，(2) 跨账户搜索邮件，(3) 管理多个邮箱账户，(4) 查看邮件统计。当用户提到邮件、邮箱、email、发邮件、收邮件、查邮件时触发。",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.one_mail",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Baixun.Huang",
+      "features": [
+        "统一邮箱管理 CLI，支持 Gmail、Outlook、网易邮箱（163.com、126.com）。适用于：(1) 收取/发送邮件，(2) 跨账户搜索邮件，(3) 管理多个邮箱账户，(4)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/one-mail@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1990312?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "one-mail",
+      "url": "https://clawhub.ai/skills/one-mail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "one-mail",
+    "url": "https://clawhub.ai/skills/one-mail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/one-mail-07ae065e3ebff0da.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/one-mail@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-one-mail-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2d26d6a3c03c6d99328266d07fe2716746d09cd0825fdc3f25889d0d9822cdbc",
+      "artifactSizeBytes": 2042
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T15:26:29.210Z"
+}

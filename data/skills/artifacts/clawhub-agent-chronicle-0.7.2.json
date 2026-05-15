@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-chronicle@0.7.2",
+  "version": "0.7.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_chronicle",
+  "skill": {
+    "id": 9006,
+    "skillKey": "clawhub-agent-chronicle",
+    "name": "Agent Chronicle"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-chronicle",
+    "url": "https://clawhub.ai/skills/agent-chronicle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-chronicle-f29ce392a44c4b0a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered diary generation for agents - creates rich, reflective journal entries (400-600 words) with Quote Hall of Fame, Curiosity Backlog, Decision Archae..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "robbyczgw-cla",
+      "userId": "s177f7tydbpq0gh2sctd8hqdjn83fnwv",
+      "displayName": "Robby",
+      "image": "https://avatars.githubusercontent.com/u/239660374?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4850,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 5,
+      "versions": 17
+    },
+    "latestVersion": {
+      "version": "0.7.2",
+      "createdAt": 1774640916383,
+      "changelog": "agent-chronicle v0.7.2\n\n- Updated documentation for clarity and current workflow, including changing examples and references from /tmp to $TMP_DIR.\n- Minor edits to SKILL.md for improved usability and onboarding.\n- Version bumps in metadata and package files.\n- No functional changes to core skill logic.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b347549c021ff1c7da4f2616466cefa190dd866322d240286abb3109fa09e5aa"
+}

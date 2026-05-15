@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ielts-reading-review@4.0.1",
+  "version": "4.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ielts_reading_review",
+  "skill": {
+    "id": 57345,
+    "skillKey": "clawhub-ielts-reading-review",
+    "name": "IELTS Reading Review 雅思阅读复盘助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ielts-reading-review",
+    "url": "https://clawhub.ai/skills/ielts-reading-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ielts-reading-review-850283d8fdd8e2da.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "IELTS Reading passage review, scoring, and progress tracking skill. Generates structured review data (JSON) and deploys to tuyaya.online via saveReview API...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dengjiawei1226",
+      "userId": "s171z5dmkr3hr6e5vrt1whgtt583m22s",
+      "displayName": "dengjiawei1226",
+      "image": "https://avatars.githubusercontent.com/u/61135759?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 463,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 17
+    },
+    "latestVersion": {
+      "version": "4.0.1",
+      "createdAt": 1778310502910,
+      "changelog": "v4.0.1: 修复 answer-key.json key 格式（P→R）+ 新增 key 格式防呆提醒。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ab577831a3ae7ebcc9fb993e2a6042147a59b006254c0a308cf3d67f63c6ae43"
+}

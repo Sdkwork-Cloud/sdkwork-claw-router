@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shop-review-generator@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shop_review_generator",
+  "skill": {
+    "id": 70227,
+    "skillKey": "clawhub-shop-review-generator",
+    "name": "shop-review-generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shop-review-generator",
+    "url": "https://clawhub.ai/skills/shop-review-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shop-review-generator-668749a21d406aee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "为大众点评、高德扫街榜等平台生成高质量店铺点评。用户提供店铺地址（高德/大众点评链接）和菜品照片，技能会分析照片中的菜品、搜索店铺信息和历史评价，然后按照标准点评模板生成结构化的点评内容。当用户提到\"写点评\"、\"店铺评价\"、\"餐厅点评\"、\"大众点评\"、\"高德扫街榜\"、\"帮我写个评价\"、\"生成点评\"、\"美食点评\"，..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ysredcity",
+      "userId": "s1784wef3gqqzrwckpq9bzyk3583wtp6",
+      "displayName": "Pixelyes",
+      "image": "https://avatars.githubusercontent.com/u/41365009?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774968868570,
+      "changelog": "**Enhanced shop-review-generator: introduces higher精准度菜品识别和更自然点评风格**\n\n- 新增脚本 scripts/amap_poi.py，支持调用高德API获取店铺真实名称、地址等信息，提升点评准确性。\n- 更新点评流程，要求先查API和菜单，再与图片分析结果交叉验证菜品名称，避免仅凭图片猜测出错。\n- 详细扩展点评生成标准，强调用自然口语表达，减少“AI味”与模板化书面语，要求点评要有细节、有优缺点。\n- 增加点评自检环节，包括风格、内容、真实性和星级分布检查。\n- 补充HEIC图片处理说明与降级机制不变。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:00fc86e9ff2ea39763ed1d21a5094bb0745a15bd9a21ff3fe0d6bc3c68c8f267"
+}

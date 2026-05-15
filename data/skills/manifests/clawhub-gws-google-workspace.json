@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20607,
+  "uuid": "skill-clawhub-gws-google-workspace",
+  "skillKey": "clawhub-gws-google-workspace",
+  "name": "Google Power Tools",
+  "summary": "Google Workspace CLI. Make sure to use this skill whenever the user mentions Gmail, email, inbox, send email, read email, check mail, draft email, send invit...",
+  "version": "2.1.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gws_google_workspace",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Siyuan Huang",
+      "features": [
+        "Google Workspace CLI",
+        "Make sure to use this skill whenever the user mentions Gmail, email, inbox, send email, read em."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gws-google-workspace@2.1.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/227780668?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gws-google-workspace",
+      "url": "https://clawhub.ai/skills/gws-google-workspace"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gws-google-workspace",
+    "url": "https://clawhub.ai/skills/gws-google-workspace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gws-google-workspace-a946821f6095ee57.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gws-google-workspace@2.1.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-gws-google-workspace-2.1.9.json",
+      "version": "2.1.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ad85cb61d426741420a525b9cad4ddc2b38c2d8144cd3bdd5c00254c3767fa6b",
+      "artifactSizeBytes": 2080
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T07:22:08.518Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/editor-baby-dance@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.editor_baby_dance",
+  "skill": {
+    "id": 49268,
+    "skillKey": "clawhub-editor-baby-dance",
+    "name": "Editor Baby Dance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "editor-baby-dance",
+    "url": "https://clawhub.ai/skills/editor-baby-dance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/editor-baby-dance-a38150e2eb862637.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get edited dance videos ready to post, without touching a single slider. Upload your baby video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 83,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777867899164,
+      "changelog": "Version 1.0.0 — Initial Release\n\n- Instantly edits baby dance videos via a cloud AI pipeline; just upload clips and describe your edit.\n- Supports popular formats (MP4, MOV, AVI, WebM; up to 500MB) and exports polished 1080p MP4s in 1–2 minutes.\n- Automatic authentication with free credits and session management—no manual setup required.\n- Handles uploads, editing commands, preview, export, and credit checks with clear error handling.\n- Designed for parents and creators to quickly create share-ready baby dance compilations, no manual editing needed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:52d5efbab0f0fc9158c365f8b5d2cf104af6719df8755b076831ffa906a4de48"
+}

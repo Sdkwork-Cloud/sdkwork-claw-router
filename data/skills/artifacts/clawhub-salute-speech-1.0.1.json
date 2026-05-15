@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/salute-speech@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.salute_speech",
+  "skill": {
+    "id": 17555,
+    "skillKey": "clawhub-salute-speech",
+    "name": "salute speech"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "salute-speech",
+    "url": "https://clawhub.ai/skills/salute-speech",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/salute-speech-2fdf25bd5ff4afaa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transcribe audio files using Sber Salute Speech async API. Russian-first STT with support for ru-RU, en-US, kk-KZ, ky-KG, uz-UZ."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chorus12",
+      "userId": "publishers:chorus12",
+      "displayName": "chorus12",
+      "image": "https://avatars.githubusercontent.com/u/10760182?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 767,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771510768890,
+      "changelog": "Update security issue",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:badf1e41d4cfa92218c4621cf8ed8a3d631a937069caf4b7070d7221a9a0b42b"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/word-docx-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.word_docx_cn",
+  "skill": {
+    "id": 54759,
+    "skillKey": "clawhub-word-docx-cn",
+    "name": "Word DOCX处理"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "word-docx-cn",
+    "url": "https://clawhub.ai/skills/word-docx-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/word-docx-cn-a8ad2866f3af6d14.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create, inspect, and edit Microsoft Word documents and DOCX files with reliable styles, numbering, tracked changes, tables, sections, and compatibility check..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linbo405",
+      "userId": "s17404ahym3v74cyh9f41zw9s183h5ga",
+      "displayName": "linbo405",
+      "image": "https://avatars.githubusercontent.com/u/259021343?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 406,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776071633202,
+      "changelog": "- Improved focus on fragile review workflows, reference stability, and minimizing layout drift after an external audit.\n- Added detailed guidance for handling tracked changes, comments, and compatibility-sensitive features in Word documents.\n- Expanded documentation on common pitfalls with styles, numbering, and round-trip editing across editors.\n- Clarified when and how to preserve existing structure, formatting, and review metadata for `.docx` files.\n- Updated usage recommendations for legal, academic, and business review documents.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eb31a761b99f302067285a97ff0650591f8311203abc6163c5101df57b9707a4"
+}

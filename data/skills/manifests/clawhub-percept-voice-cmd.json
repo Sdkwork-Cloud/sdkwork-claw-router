@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17281,
+  "uuid": "skill-clawhub-percept-voice-cmd",
+  "skillKey": "clawhub-percept-voice-cmd",
+  "name": "Percept Voice Commands",
+  "summary": "Detects wake words in speech and routes voice commands like email, text, reminders, search, and notes to OpenClaw agents for execution.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.percept_voice_cmd",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jarvis563",
+      "features": [
+        "Detects wake words in speech and routes voice commands like email, text, reminders, search, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/percept-voice-cmd@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258515214?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "percept-voice-cmd",
+      "url": "https://clawhub.ai/skills/percept-voice-cmd"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "percept-voice-cmd",
+    "url": "https://clawhub.ai/skills/percept-voice-cmd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/percept-voice-cmd-15a62bfbc9cb5525.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/percept-voice-cmd@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-percept-voice-cmd-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:55388cf8045dfccdd20e02ea943fe4d9662310ad031edc1d8e7ceb5820dd21a1",
+      "artifactSizeBytes": 2345
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T18:23:32.500Z"
+}

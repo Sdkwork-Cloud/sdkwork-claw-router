@@ -1,0 +1,50 @@
+{
+  "skill": {
+    "slug": "aira-smart-search",
+    "displayName": "smart-search",
+    "summary": "Intelligent web search routing across Gemini and Brave APIs with quota management, circuit breaker, and web_fetch fallback. Routes finance queries to Gemini,...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 337,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1773789082938,
+    "updatedAt": 1778311320423
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1773789082938,
+    "changelog": "smart-search 1.0.0 — Initial release with multi-provider web search, automatic routing logic, and robust quota management.\n\n- Added automatic search routing between Gemini and Brave APIs, with web scraping fallback if APIs are unavailable.\n- Introduced daily quota management per agent and shared pool, with persistent coordination across agents.\n- Developed two execution strategies: scheduled agents prioritize APIs; general agent prioritizes scraping to save quota.\n- Exposed three tools: `smart_search` for search, `search_quota_status` for quota checking, and `search_mark_agent_complete`.\n- All allocations, provider routing rules, and quota ceilings are config-driven and reloadable without restart.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": [
+      "darwin",
+      "linux"
+    ],
+    "systems": null
+  },
+  "owner": {
+    "handle": "airaalfredsf",
+    "userId": "publishers:airaalfredsf",
+    "displayName": "AiraAlfredSF",
+    "image": "https://avatars.githubusercontent.com/u/262962928?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.potential_exfiltration"
+    ],
+    "summary": "Detected: suspicious.potential_exfiltration",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778311320423
+  }
+}

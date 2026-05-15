@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/surreal-sync@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.surreal_sync",
+  "skill": {
+    "id": 15833,
+    "skillKey": "clawhub-surreal-sync",
+    "name": "surreal-sync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "surreal-sync",
+    "url": "https://clawhub.ai/skills/surreal-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/surreal-sync-3a094e19f5b45498.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Data migration and synchronization to SurrealDB from MongoDB, PostgreSQL, MySQL, Neo4j, Kafka, and JSONL. Full and incremental CDC sync. Part of the surreal-..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "24601",
+      "userId": "s178bj90ka9xeg44k6bt7q07k184jcr0",
+      "displayName": "Basit Mustafa",
+      "image": "https://avatars.githubusercontent.com/u/1157207?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 763,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1773432299032,
+      "changelog": "surreal-sync v1.2.1\n\n- No code or documentation changes detected in this release.\n- Version bump only; functionality remains the same as previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:03ada0805f6be1b226c6f414f747da2187066b5f7a311662195bebdadc640c49"
+}

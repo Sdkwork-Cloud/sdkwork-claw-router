@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62483,
+  "uuid": "skill-clawhub-stockclaw-yingyan3",
+  "skillKey": "clawhub-stockclaw-yingyan3",
+  "name": "股票量化助手，可以获取个股择时量化图，个股行情分析，监控股买卖点变化通知。",
+  "summary": "为该股票量化项目提供 OpenClaw 接入说明，支持股票量化图生成、股票行情问答、自然语言 AI 搜股与 WebSocket 实时监控信号推送。凭证须从与本 Skill 同目录的 config.json 中 openclawCredentials 读取：user_id 与 openClaw_api_key 为必...",
+  "version": "1.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stockclaw_yingyan3",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "woshixihongtu-cyber",
+      "features": [
+        "为该股票量化项目提供 OpenClaw 接入说明，支持股票量化图生成、股票行情问答、自然语言 AI 搜股与 WebSocket 实时监控信号推送。凭证须从与本 Skill 同目录的 conf."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stockclaw-yingyan3@1.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/244276180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stockclaw-yingyan3",
+      "url": "https://clawhub.ai/skills/stockclaw-yingyan3"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stockclaw-yingyan3",
+    "url": "https://clawhub.ai/skills/stockclaw-yingyan3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stockclaw-yingyan3-43dd0b2608e5c6c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stockclaw-yingyan3@1.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-stockclaw-yingyan3-1.1.4.json",
+      "version": "1.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eeadefbdfa87a4950253df4454a9e50311efa952ea8fd9a1e6692ca50d0cf05f",
+      "artifactSizeBytes": 2769
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T04:44:18.219Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30955,
+  "uuid": "skill-clawhub-stock-terminal",
+  "skillKey": "clawhub-stock-terminal",
+  "name": "Stock Terminal",
+  "summary": "Provides Bloomberg-style synthesized stock and market reports via typed commands like open, compare, daily brief, mood, screen smart-money, flow, and news, a...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_terminal",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Senti",
+      "features": [
+        "Provides Bloomberg-style synthesized stock and market reports via typed commands like open, com."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-terminal@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265723691?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-terminal",
+      "url": "https://clawhub.ai/skills/stock-terminal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-terminal",
+    "url": "https://clawhub.ai/skills/stock-terminal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-terminal-873b826d56cf242d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-terminal@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-terminal-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:29628a36ecd87c3acd1cd9fa79e88a28a64c7d995e07d5341ec9b0951751fdfb",
+      "artifactSizeBytes": 2340
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T08:12:41.030Z"
+}

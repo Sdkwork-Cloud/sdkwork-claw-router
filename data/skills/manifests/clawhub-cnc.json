@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30906,
+  "uuid": "skill-clawhub-cnc",
+  "skillKey": "clawhub-cnc",
+  "name": "Cnc",
+  "summary": "CNC machining program manager",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cnc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "CNC machining program manager"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cnc@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cnc",
+      "url": "https://clawhub.ai/skills/cnc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cnc",
+    "url": "https://clawhub.ai/skills/cnc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cnc-e2916a10b9a9c4a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cnc@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cnc-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b37d952b0fa8c1db7d3ff1173f77efba5ab2ef311ac6f6b97d358ec01dde364a",
+      "artifactSizeBytes": 1677
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T12:17:44.000Z"
+}

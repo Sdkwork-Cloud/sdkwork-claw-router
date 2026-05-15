@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66883,
+  "uuid": "skill-clawhub-macro-analysis",
+  "skillKey": "clawhub-macro-analysis",
+  "name": "macro-analysis",
+  "summary": "宏观分析框架 — 从GDP、CPI、PMI、流动性、政策导向判断大盘方向与资产配置。当用户说「大盘分析」「宏观经济」「流动性」「M2」「CPI/PPI」「政策面」「降息/加息」时激活。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.macro_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "danpian1",
+      "features": [
+        "宏观分析框架 — 从GDP、CPI、PMI、流动性、政策导向判断大盘方向与资产配置。当用户说「大盘分析」「宏观经济」「流动性」「M2」「CPI/PPI」「政策面」「降息/加息」时激活。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/macro-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/87922625?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "macro-analysis",
+      "url": "https://clawhub.ai/skills/macro-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "macro-analysis",
+    "url": "https://clawhub.ai/skills/macro-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/macro-analysis-2467090073336dd3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/macro-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-macro-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:506cb70b108353a132520290e6c79aaab73c2095176e3b70b45d89e926df1057",
+      "artifactSizeBytes": 2464
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T07:53:36.071Z"
+}

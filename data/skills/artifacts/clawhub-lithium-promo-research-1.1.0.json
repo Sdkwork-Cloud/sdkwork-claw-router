@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lithium-promo-research@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lithium_promo_research",
+  "skill": {
+    "id": 70263,
+    "skillKey": "clawhub-lithium-promo-research",
+    "name": "Lithium Promo Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lithium-promo-research",
+    "url": "https://clawhub.ai/skills/lithium-promo-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lithium-promo-research-4a3bae160552ba8a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "锂电设备国际推广平台调研系统。针对方形电池组装线、圆柱电池组装线、软包电池组装线、切叠一体机、注液机等锂电设备产品， 调研美国、日本、韩国、俄罗斯、欧洲等目标国家的展会推广平台、线上B2B平台、行业媒体资源。 生成Excel格式看板报告，支持按国家/平台类型/产品线筛选分析。 当用户需要\"调研推广平台\"、\"找展会..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "richardcoder849",
+      "userId": "s17fhsjq1mrn33pavj2jk0v3m583hjtz",
+      "displayName": "Richardcoder849",
+      "image": "https://avatars.githubusercontent.com/u/61551271?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777016023282,
+      "changelog": "移除sample数据引用，修正文件结构文档",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:57ec61ba6cf4efe8962c17f9cf6d8404f40519df4f1f6188d5869d7eb88054cd"
+}

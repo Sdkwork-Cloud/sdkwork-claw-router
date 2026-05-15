@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59269,
+  "uuid": "skill-clawhub-lobster-memory",
+  "skillKey": "clawhub-lobster-memory",
+  "name": "龙虾记忆大师",
+  "summary": "真正的长期记忆管理技能。自动维护记忆文件、定期归档、智能提醒。 包含 Working Buffer 协议、Memory Maintenance 清单、自动学习日志。 When to use: - User asks about prior work, decisions, dates, people, prefe...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobster_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "konzenkane",
+      "features": [
+        "真正的长期记忆管理技能。自动维护记忆文件、定期归档、智能提醒。 包含 Working Buffer 协议、Memory Maintenance 清单、自动学习日志。 When to use:",
+        "User asks about prior work, decisions, dates, people, prefe..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lobster-memory@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266412861?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lobster-memory",
+      "url": "https://clawhub.ai/skills/lobster-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobster-memory",
+    "url": "https://clawhub.ai/skills/lobster-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobster-memory-6caefcd75b00b308.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lobster-memory@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lobster-memory-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4c3863dd7c50f309d922999db9a48300607734a60bade51a6d5c69e1bece2d3a",
+      "artifactSizeBytes": 2258
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T09:05:31.516Z"
+}

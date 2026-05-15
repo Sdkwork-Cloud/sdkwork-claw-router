@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23413,
+  "uuid": "skill-clawhub-thegraph-token-mcp-skill",
+  "skillKey": "clawhub-thegraph-token-mcp-skill",
+  "name": "Thegraph Token Mcp Skill",
+  "summary": "Use The Graph Token API MCP through UXC for token metadata, wallet balances, transfers, holders, pools, and market data with help-first inspection and Token...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.thegraph_token_mcp_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jolestar",
+      "features": [
+        "Use The Graph Token API MCP through UXC for token metadata, wallet balances, transfers, holders."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/thegraph-token-mcp-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77268?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "thegraph-token-mcp-skill",
+      "url": "https://clawhub.ai/skills/thegraph-token-mcp-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "thegraph-token-mcp-skill",
+    "url": "https://clawhub.ai/skills/thegraph-token-mcp-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/thegraph-token-mcp-skill-36ea32aa94e719d9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/thegraph-token-mcp-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-thegraph-token-mcp-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:db4dbf504ac4f4e234380dd215ddfb1d54358e9566d2c5e99e8329c2707e515a",
+      "artifactSizeBytes": 2471
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T09:02:38.939Z"
+}

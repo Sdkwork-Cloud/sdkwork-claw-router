@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaowuzi-gene-financial@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaowuzi_gene_financial",
+  "skill": {
+    "id": 71197,
+    "skillKey": "clawhub-xiaowuzi-gene-financial",
+    "name": "小五子 - 理财分析"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaowuzi-gene-financial",
+    "url": "https://clawhub.ai/skills/xiaowuzi-gene-financial",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaowuzi-gene-financial-281088383ba760e0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "监测黄金、债券等资产，捕捉滞胀信号，自动分析宏观环境并推送预警至Feishu平台。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tonicpopo",
+      "userId": "s173c84hncfg44jbnw0zm96ad583scta",
+      "displayName": "tonicpopo",
+      "image": "https://avatars.githubusercontent.com/u/91814973?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774707724838,
+      "changelog": "Initial release focusing on macro market signals and automated trading logic analysis.\n\n- Monitors multiple core assets, including gold and bonds.\n- Detects stagflation signals through dedicated monitoring logic.\n- Provides automated alerts and pushes real-time analysis to platforms like Feishu.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:caa0276b7383ed9a760f7cf0999842db7d17de2ec6ae0055cf9b3407d6c03245"
+}

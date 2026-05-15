@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibabacloud-sysom-diagnosis@0.0.2",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_sysom_diagnosis",
+  "skill": {
+    "id": 62889,
+    "skillKey": "clawhub-alibabacloud-sysom-diagnosis",
+    "name": "Alibabacloud Sysom Diagnosis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-sysom-diagnosis",
+    "url": "https://clawhub.ai/skills/alibabacloud-sysom-diagnosis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-sysom-diagnosis-d6a2980a0ea597e9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "面向 Linux 对内存、网络、IO、负载等问题做深度分析与诊断。当出现如下问题时使用：内存含内存高/不足、OOM、oom-killer、Java 应用内存与内存全景大图（含 socket 队列与 TCP 内存视角）；网络含丢包与时延抖动（与 memgraph 互补）；IO 含磁盘统计与慢 IO；负载含调度延迟与..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdk-team",
+      "userId": "s173swjet2yrebzqrp6hjkvmy583mxef",
+      "displayName": "alibabacloud-skills-team",
+      "image": "https://avatars.githubusercontent.com/u/49941014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.2",
+      "createdAt": 1776332988778,
+      "changelog": "- Major CLI refactor: switched diagnosis entrypoint from shared/scripts/osops to scripts/osops.sh.\n- Added new scripts for CLI-based diagnosis: init.sh, osops.sh, and full CLI source under scripts/sysom_cli/.\n- Introduced new documentation: authentication, CLI development guide, metadata API, and OpenAPI permission guides.\n- Updated agent workflow: now requires Aliyun CLI (≥3.3.3), AI-Mode enable/disable steps, and explicit plugin setup before execution.\n- Enforced that remote/advanced diagnosis must be routed through SysOM InvokeDiagnosis API with osops.sh, disallowing fallback to ECS generic diagnosis.\n- Documentation and command examples revised to reflect CLI changes and new script locations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e176e70d82d249ab7c5c66f4d7268106dc8e4eab3111c9753586199a1bc4f599"
+}

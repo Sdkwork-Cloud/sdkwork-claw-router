@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/axelrod@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.axelrod",
+  "skill": {
+    "id": 16445,
+    "skillKey": "clawhub-axelrod",
+    "name": "Axelrod"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "axelrod",
+    "url": "https://clawhub.ai/skills/axelrod",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/axelrod-7c04d4fca7d609a4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered Base-chain trading and on-chain query agent via natural language. Use when the user wants to trade crypto (buy/sell/swap tokens), set up automated strategies (DCA, limit orders, RSI), check portfolio balances, view token prices,."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aixvcteam",
+      "userId": "publishers:aixvcteam",
+      "displayName": "aixvcteam",
+      "image": "https://avatars.githubusercontent.com/u/199195154?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 885,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770715222574,
+      "changelog": "Initial release of the Axelrod skill for AI-powered Base-chain crypto trading and on-chain queries.\n\n- Supports buy/sell/swap of Base-chain tokens, portfolio balance checks, token price queries, and order management via natural language.\n- Enables automated trading strategies such as DCA, limit orders, RSI-based trades, and take-profit/stop-loss management.\n- Requires real-time results by invoking scripts/axelrod_chat.py for each user request.\n- Built-in support for order confirmation flow and error handling, including credential checks and transaction status feedback.\n- Focuses on Base chain only; one trade per message; does not support leveraged products, lending, or cross-chain features.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0b618fde63ac02711ae3690991065671769619159891773762ca571ca55f658c"
+}

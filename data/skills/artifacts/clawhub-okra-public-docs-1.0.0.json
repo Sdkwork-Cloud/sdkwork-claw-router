@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/okra-public-docs@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.okra_public_docs",
+  "skill": {
+    "id": 52615,
+    "skillKey": "clawhub-okra-public-docs",
+    "name": "OkraPDF Public Documents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "okra-public-docs",
+    "url": "https://clawhub.ai/skills/okra-public-docs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/okra-public-docs-794d5c46d463abf2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query pre-extracted public documents via OkraPDF MCP — arxiv AI papers, SEC 10-K/10-Q filings, and more. Read, ask questions, extract structured data. No upl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "steventsao",
+      "userId": "s1723bgzfveke9s77b2yb2sbxs83xypj",
+      "displayName": "Steven Tsao",
+      "image": "https://avatars.githubusercontent.com/u/15185301?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774893205060,
+      "changelog": "Pre-extracted arxiv papers + SEC filings",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9438f7bab9644067dc8c0a4b689c2add3bc805ca7e45e6df9fe625df6874c44b"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/taizi-browsh@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taizi_browsh",
+  "skill": {
+    "id": 30315,
+    "skillKey": "clawhub-taizi-browsh",
+    "name": "Taizi Browsh"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taizi-browsh",
+    "url": "https://clawhub.ai/skills/taizi-browsh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taizi-browsh-7267c83b064bf8ed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A modern text-based browser. Renders web pages in the terminal using headless Firefox."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fresh3",
+      "userId": "publishers:fresh3",
+      "displayName": "fresh3",
+      "image": "https://avatars.githubusercontent.com/u/23310067?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 275,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773633764508,
+      "changelog": "- Initial release of taizi-browsh.\n- Provides a modern text-based browser using headless Firefox.\n- Renders web pages, filters ads, and supports video playback in the terminal.\n- Requires both browsh and firefox binaries in your PATH.\n- Includes usage instructions and setup tips for local installations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fe01f5d81019a4998447b955b9d83306ba6f7904f243af335c340c02a3125cc6"
+}

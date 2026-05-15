@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72378,
+  "uuid": "skill-clawhub-upenn",
+  "skillKey": "clawhub-upenn",
+  "name": "Upenn",
+  "summary": "提供宾夕法尼亚大学基本信息、学院设置、招生及学费政策、知名校友和学术优势查询服务。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.upenn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供宾夕法尼亚大学基本信息、学院设置、招生及学费政策、知名校友和学术优势查询服务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/upenn@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "upenn",
+      "url": "https://clawhub.ai/skills/upenn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "upenn",
+    "url": "https://clawhub.ai/skills/upenn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/upenn-997e128da42c153f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/upenn@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-upenn-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cae7380738a2215c260c9f70ca85a4d1e475296af0ba0892601332e197cb7b2a",
+      "artifactSizeBytes": 2184
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T23:28:13.398Z"
+}

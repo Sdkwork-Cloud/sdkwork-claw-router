@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hash-finder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hash_finder",
+  "skill": {
+    "id": 40979,
+    "skillKey": "clawhub-hash-finder",
+    "name": "Hash Finder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hash-finder",
+    "url": "https://clawhub.ai/skills/hash-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hash-finder-acf43712f758e7d1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Crack and identify hashes by attempting to match them against known hash databases and common plaintext values."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krishnakumarmahadevan-cmd",
+      "userId": "s177cvva4qaee9r80e44xt5cqx83ga38",
+      "displayName": "ToolWeb",
+      "image": "https://avatars.githubusercontent.com/u/245780162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774044973571,
+      "changelog": "Hash Finding Tool 1.0.0 – Initial Release\n\n- Introduces an API tool for cracking and identifying cryptographic hashes (MD5, SHA-1, SHA-256, and more).\n- Provides the /crack-hash endpoint to match input hashes against known hash databases.\n- Returns plaintext, hash type, match confidence, and found status in a structured JSON response.\n- Includes clear pricing tiers and usage limits for Free, Developer, Professional, and Enterprise plans.\n- Documentation links and reference endpoints provided for easy integration and further details.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3aa6078a4a6cdc8f45890f0c8ecbd5f4d4e8fe7c561040e0d683f45fc05fd93c"
+}

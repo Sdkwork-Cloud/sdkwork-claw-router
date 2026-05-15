@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61932,
+  "uuid": "skill-clawhub-chinese-search",
+  "skillKey": "clawhub-chinese-search",
+  "name": "Chinese Search",
+  "summary": "中文搜索增强，整合必应中国、搜狗微信等中文搜索引擎 (MVP v1.0)",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chinese_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kaising-openclaw1",
+      "features": [
+        "中文搜索增强，整合必应中国、搜狗微信等中文搜索引擎 (MVP v1.0)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chinese-search@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266910723?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chinese-search",
+      "url": "https://clawhub.ai/skills/chinese-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chinese-search",
+    "url": "https://clawhub.ai/skills/chinese-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chinese-search-f4f06fd4121c9e4a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chinese-search@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-chinese-search-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a753444eb58e57337a4dadc8eafeb24dccaa2b67d3a260b14fc17dbd2a7ff0c4",
+      "artifactSizeBytes": 1877
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T01:45:10.490Z"
+}

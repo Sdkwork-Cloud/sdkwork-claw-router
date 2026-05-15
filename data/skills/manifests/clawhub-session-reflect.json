@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30826,
+  "uuid": "skill-clawhub-session-reflect",
+  "skillKey": "clawhub-session-reflect",
+  "name": "Session Reflect",
+  "summary": "Analyze Claude Code session history to generate self-observation journals, detect goal drift, and surface hidden behavioral patterns. Outputs to Obsidian Vault.",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_reflect",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yuiooo1102-droid",
+      "features": [
+        "Analyze Claude Code session history to generate self-observation journals, detect goal drift, a.",
+        "Outputs to Obsidian Vault."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/session-reflect@0.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258358563?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "session-reflect",
+      "url": "https://clawhub.ai/skills/session-reflect"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-reflect",
+    "url": "https://clawhub.ai/skills/session-reflect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-reflect-00ae0b5c07f6097d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/session-reflect@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-session-reflect-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aec961fe06318d2d90be737ff8e13fa72b4efcf683537cbc80af50a2f17b7271",
+      "artifactSizeBytes": 2087
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T17:10:22.869Z"
+}

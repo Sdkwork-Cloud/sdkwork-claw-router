@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15784,
+  "uuid": "skill-clawhub-agentmesh-governance",
+  "skillKey": "clawhub-agentmesh-governance",
+  "name": "AgentMesh Governance",
+  "summary": "AI agent governance, trust scoring, and policy enforcement powered by AgentMesh. Activate when: (1) user wants to enforce token limits, tool restrictions, or...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentmesh_governance",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "imran-siddique",
+      "features": [
+        "AI agent governance, trust scoring, and policy enforcement powered by AgentMesh",
+        "Activate when: (1) user wants to enforce token limits, tool restrictions, or..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentmesh-governance@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45405841?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentmesh-governance",
+      "url": "https://clawhub.ai/skills/agentmesh-governance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentmesh-governance",
+    "url": "https://clawhub.ai/skills/agentmesh-governance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentmesh-governance-3d390d10d234e212.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentmesh-governance@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentmesh-governance-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:595c24c5e279783e311ccf83f3cde5b0b6cb49159a6aac9f02ff76f9683869d5",
+      "artifactSizeBytes": 2597
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T21:52:24.667Z"
+}

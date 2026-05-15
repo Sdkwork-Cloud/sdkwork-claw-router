@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/q-kdb-code-review@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.q_kdb_code_review",
+  "skill": {
+    "id": 50791,
+    "skillKey": "clawhub-q-kdb-code-review",
+    "name": "Q Kdb Code Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "q-kdb-code-review",
+    "url": "https://clawhub.ai/skills/q-kdb-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/q-kdb-code-review-e88dc4af8aec6165.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered code review for Q/kdb+ — catch bugs in the most terse language in finance"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "beee003",
+      "userId": "publishers:beee003",
+      "displayName": "beee003",
+      "image": "https://avatars.githubusercontent.com/u/135258985?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 837,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771218375336,
+      "changelog": "Initial release: AI-powered Q/kdb+ code review — catch type errors, rank errors, performance issues, and security vulnerabilities in the most terse language in finance",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5251cc141b1c9e17afc272e0f2d2c195f366d448e7f54b190e589835ebf0c2f9"
+}

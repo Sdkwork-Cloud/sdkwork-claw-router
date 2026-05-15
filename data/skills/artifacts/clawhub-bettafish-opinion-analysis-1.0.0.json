@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bettafish-opinion-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bettafish_opinion_analysis",
+  "skill": {
+    "id": 59540,
+    "skillKey": "clawhub-bettafish-opinion-analysis",
+    "name": "Bettafish Opinion Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bettafish-opinion-analysis",
+    "url": "https://clawhub.ai/skills/bettafish-opinion-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bettafish-opinion-analysis-6a8fb4afe76a795c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "BettaFish（微舆）多智能体舆情分析系统 - 基于 QueryAgent、MediaAgent、InsightAgent 三引擎并行架构，通过 ForumEngine 实现 Agent 间协作讨论，生成 Word/PDF + 高设计质量 HTML 双格式报告。 当用户需要以下分析时触发此 skill： -..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liyico",
+      "userId": "s17fyxxpe9v43npymfc8ywdcah83m93q",
+      "displayName": "liyico",
+      "image": "https://avatars.githubusercontent.com/u/52720709?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774550691240,
+      "changelog": "Initial registration of local skill",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:105d6217ef23c5cea491fc5a57c40020a572f71cde96cb7f9143f5924d3e02a0"
+}

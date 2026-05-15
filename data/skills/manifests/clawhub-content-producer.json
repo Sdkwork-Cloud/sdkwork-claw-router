@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72116,
+  "uuid": "skill-clawhub-content-producer",
+  "skillKey": "clawhub-content-producer",
+  "name": "多平台内容分发器",
+  "summary": "多平台内容分发器 v1.0。一次输入，自动适配小红书/知乎/公众号/抖音四种平台格式，直接输出可发布内容。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_producer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hyjaixiao",
+      "features": [
+        "多平台内容分发器 v1.0。一次输入，自动适配小红书/知乎/公众号/抖音四种平台格式，直接输出可发布内容。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/content-producer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/102917158?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "content-producer",
+      "url": "https://clawhub.ai/skills/content-producer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-producer",
+    "url": "https://clawhub.ai/skills/content-producer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-producer-4a948d6c40264804.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/content-producer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-content-producer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bb69d2357a2e8b83cc4b71c6a45bce603404cec917777b957f1f00ef247584f8",
+      "artifactSizeBytes": 1962
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T07:34:09.514Z"
+}

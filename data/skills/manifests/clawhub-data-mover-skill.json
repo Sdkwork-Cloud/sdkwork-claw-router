@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60757,
+  "uuid": "skill-clawhub-data-mover-skill",
+  "skillKey": "clawhub-data-mover-skill",
+  "name": "Data Mover Skill",
+  "summary": "跨系统数据自动搬运工 - OCR 识别 + 自动复制粘贴 + 多系统支持",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_mover_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SxLiuYu",
+      "features": [
+        "跨系统数据自动搬运工",
+        "OCR 识别 + 自动复制粘贴 + 多系统支持"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/data-mover-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95198625?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "data-mover-skill",
+      "url": "https://clawhub.ai/skills/data-mover-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-mover-skill",
+    "url": "https://clawhub.ai/skills/data-mover-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-mover-skill-21695a9f70a15020.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/data-mover-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-data-mover-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7de585bd52b884fcb4f3b7e061c965b46e1fbf9ee177c1e4361ef857652d6cb3",
+      "artifactSizeBytes": 1805
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T09:57:02.273Z"
+}

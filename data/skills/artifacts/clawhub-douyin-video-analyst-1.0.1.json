@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/douyin-video-analyst@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_video_analyst",
+  "skill": {
+    "id": 63899,
+    "skillKey": "clawhub-douyin-video-analyst",
+    "name": "Douyin Video Analyst"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-video-analyst",
+    "url": "https://clawhub.ai/skills/douyin-video-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-video-analyst-7c467c4f8da8f4a5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "抖音账号视频批量采集与文案分析工作流。当用户提供抖音账号主页链接、要求抓取最新 N 条视频链接、提取视频文案（语音转文字）、或对视频内容进行总结归纳时，激活此 skill。依赖 browser 工具（抓取视频列表）和 mcporter + douyin-mcp（文案提取）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fishisnow",
+      "userId": "s17d425g5yem92cbxyfn0tqydx83r1a2",
+      "displayName": "fishisnow",
+      "image": "https://avatars.githubusercontent.com/u/11990268?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3805,
+      "installsAllTime": 29,
+      "installsCurrent": 27,
+      "stars": 7,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773044591040,
+      "changelog": "支持 v1.1.0（硅基流动）和 v1.2.0+（阿里云百炼）双版本；说明 mcporter 加载 ~/.cursor/mcp.json 和 ~/.claude.json；输出改为去口语化的精简原始文案",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2fab49292aa707c455a7f2a03c524f5652516728be409d170b49e86b0692db98"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17279,
+  "uuid": "skill-clawhub-moltgate",
+  "skillKey": "clawhub-moltgate",
+  "name": "Moltgate",
+  "summary": "Fetch and process paid inbound messages from Moltgate using the REST API.",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltgate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Florian Bansac",
+      "features": [
+        "Fetch and process paid inbound messages from Moltgate using the REST API."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moltgate@0.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37219407?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moltgate",
+      "url": "https://clawhub.ai/skills/moltgate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltgate",
+    "url": "https://clawhub.ai/skills/moltgate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltgate-b9b288b04d14f27e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moltgate@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-moltgate-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:be527d5654fd4139c26c6f1fad8468b2f11c68317d9d7fc0471c7bf66e36823e",
+      "artifactSizeBytes": 2235
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T10:36:48.044Z"
+}

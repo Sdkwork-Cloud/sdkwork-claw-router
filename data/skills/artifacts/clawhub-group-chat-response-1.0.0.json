@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/group-chat-response@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.group_chat_response",
+  "skill": {
+    "id": 66736,
+    "skillKey": "clawhub-group-chat-response",
+    "name": "Group Chat Response"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "group-chat-response",
+    "url": "https://clawhub.ai/skills/group-chat-response",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/group-chat-response-ec315ccd68a7d462.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在群聊中仅在明确被叫到或用户公开询问相关能力时回应，避免无关干扰保持对话有序。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ebly",
+      "userId": "publishers:ebly",
+      "displayName": "ebly",
+      "image": "https://avatars.githubusercontent.com/u/5242545?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 368,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772997886607,
+      "changelog": "Initial release: 群聊智能响应规则",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:eb5731be5bbf644414d9a2c729ff104ce047e460b10745a86f3a2bbf4cdc938e"
+}

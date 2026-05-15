@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/arxiv-skill-learning@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arxiv_skill_learning",
+  "skill": {
+    "id": 12261,
+    "skillKey": "clawhub-arxiv-skill-learning",
+    "name": "Arxiv Skill Learning"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arxiv-skill-learning",
+    "url": "https://clawhub.ai/skills/arxiv-skill-learning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arxiv-skill-learning-363f73ff9e3ff5ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Orchestrates the continuous learning of new skills from arXiv papers. Use this to trigger a learning cycle, which fetches papers, extracts code/skills, and s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wanng-ide",
+      "userId": "s176gjsdvgc0ce9sr8b6s9yzmx84mv9j",
+      "displayName": "WANGJUNJIE",
+      "image": "https://avatars.githubusercontent.com/u/32323900?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1543,
+      "installsAllTime": 11,
+      "installsCurrent": 11,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771173053680,
+      "changelog": "Initial release of arxiv-skill-learning:\n\n- Automates continuous learning of new skills from arXiv papers.\n- Fetches new papers in categories cs.AI, cs.CL, cs.LG, cs.SE.\n- Extracts implementable code/skills using arxiv-skill-extractor.\n- Runs tests and commits validated skills automatically.\n- Designed for hourly operation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:67988f3c3526b09050f6ddf2bf9b54fce371ce2730e6df5b6666e001a53dfdc7"
+}

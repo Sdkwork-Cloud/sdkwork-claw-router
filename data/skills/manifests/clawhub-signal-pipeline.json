@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17300,
+  "uuid": "skill-clawhub-signal-pipeline",
+  "skillKey": "clawhub-signal-pipeline",
+  "name": "Signal Pipeline",
+  "summary": "Marketing intelligence pipeline - gather signals from RSS, X/Twitter, Telegram, and Gmail newsletters. Generate daily posts, weekly summaries, and monthly de...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.signal_pipeline",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KF",
+      "features": [
+        "Marketing intelligence pipeline",
+        "gather signals from RSS, X/Twitter, Telegram, and Gmail newsletters",
+        "Generate daily posts, weekly summaries, and monthly de..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/signal-pipeline@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37462922?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "signal-pipeline",
+      "url": "https://clawhub.ai/skills/signal-pipeline"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "signal-pipeline",
+    "url": "https://clawhub.ai/skills/signal-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/signal-pipeline-1639a23d26f2454d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/signal-pipeline@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-signal-pipeline-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dc7fbc02347179129eea158e13ceac4e55b867ec92f310589d957eb6691ffed9",
+      "artifactSizeBytes": 1934
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T08:28:08.744Z"
+}

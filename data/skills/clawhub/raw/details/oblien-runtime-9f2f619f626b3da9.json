@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "oblien-runtime",
+    "displayName": "Oblien workspace runtime",
+    "summary": "Complete Oblien workspace environment — what you are running inside (Firecracker microVM), how auth works (gateway JWT vs raw token), and the full Internal A...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 368,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1772653798722,
+    "updatedAt": 1778304153827
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1772653798722,
+    "changelog": "Initial release of oblien-runtime, providing a complete Oblien workspace environment:\n\n- Run in an isolated Firecracker microVM with persistent, writable filesystem, dedicated resources, and outbound internet by default.\n- Expose a full Internal API on port 9990: file operations, code search, command execution, terminal access, and real-time file watching.\n- Support two authentication methods: Gateway JWT for external access, and raw token for direct, workspace-to-workspace communication.\n- Detailed connection setup, token management, and step-by-step guides included.\n- Compatible with multiple platforms including claude-code, cursor, openclaw, goose, and jetbrains-ai.",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "hydralerne",
+    "userId": "publishers:hydralerne",
+    "displayName": "Hydra de lerne",
+    "image": "https://avatars.githubusercontent.com/u/162022179?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.exposed_secret_literal",
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.exposed_secret_literal, suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778304153827
+  }
+}

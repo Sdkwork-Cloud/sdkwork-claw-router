@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gstack-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gstack_pro",
+  "skill": {
+    "id": 50314,
+    "skillKey": "clawhub-gstack-pro",
+    "name": "Gstack Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gstack-pro",
+    "url": "https://clawhub.ai/skills/gstack-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gstack-pro-7717356fbddc7198.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transform your AI assistant into a structured virtual software engineering team with 10 specialist roles — inspired by Garry Tan's GStack (YC CEO, 16K GitHub..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zmy1006-sudo",
+      "userId": "s178943e0sqbs17b9qd9x38x7583wvdq",
+      "displayName": "mingyuan",
+      "image": "https://avatars.githubusercontent.com/u/267627552?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 366,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774870514927,
+      "changelog": "GStack Pro 1.0.0 initial release\n\n- Introduces a virtual 10-role AI software engineering team based on Garry Tan's GStack, adapted for OpenClaw subagents.\n- Covers the full development lifecycle: product planning, architecture, design review, code review, QA (including browser automation), shipping, retros, and documentation updates.\n- Uses a Generator-Evaluator pattern to separate creation and evaluation, improving quality and reducing bias.\n- Each sprint outputs a Health Score (0–100) to measure ship-readiness with structured criteria.\n- Role activation via chat command or subagent API; includes SOP references and quality bars for engineering and design.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:76c351b98dc6317fe7759c4cdf232260368349b68b708d83287326805a7e80cc"
+}

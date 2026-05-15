@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-converter-mov-to-mp4@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_converter_mov_to_mp4",
+  "skill": {
+    "id": 47151,
+    "skillKey": "clawhub-video-converter-mov-to-mp4",
+    "name": "Video Converter Mov To Mp4"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-converter-mov-to-mp4",
+    "url": "https://clawhub.ai/skills/video-converter-mov-to-mp4",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-converter-mov-to-mp4-5ef858c47239f001.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get converted MP4 files ready to post, without touching a single slider. Upload your MOV video files (MOV, MP4, AVI, WebM, up to 500MB), say something like \"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 118,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777169349934,
+      "changelog": "Initial release of Video Converter MOV to MP4 — fast, cloud-based MOV-to-MP4 conversion.\n\n- Upload MOV, MP4, AVI, or WebM files up to 500MB and convert them to 1080p MP4.\n- Designed for iPhone/Mac users and creators needing quick uploads to platforms like YouTube.\n- Guided workflow: connect, upload, describe your edit, and download the result.\n- Automatic backend session and token management for both registered and anonymous users.\n- Supports prompt-driven actions (convert/export/status) with clear error handling and helpful tips.\n- All processing and rendering handled server-side—no installation required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:08df23bf014e5856853c6556fb5fa26347d01acb37981b8c7a97070df1c66369"
+}

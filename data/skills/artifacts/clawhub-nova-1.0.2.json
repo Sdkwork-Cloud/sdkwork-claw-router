@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nova@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nova",
+  "skill": {
+    "id": 19208,
+    "skillKey": "clawhub-nova",
+    "name": "Nova"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nova",
+    "url": "https://clawhub.ai/skills/nova",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nova-19e05df6b2e5fb94.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Safely operate the nova CLI wallet for authentication, balance checks, sending funds, withdrawals, and key management across mainnet and testnet. Enforces de..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "synthluvr",
+      "userId": "publishers:synthluvr",
+      "displayName": "SynthLuvr",
+      "image": "https://avatars.githubusercontent.com/u/131367121?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 629,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772050526057,
+      "changelog": "- Added `--dry-run` (`-d`) option to both `nova send` and `nova withdraw` commands for validating and previewing transactions without submitting.\n- Updated command documentation to reflect new `--dry-run` usage and behavior.\n- Clarified that `send` is still non-idempotent, but now supports safe pre-checks with `--dry-run`.\n- No changes to code files; documentation only update.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bc85348a1a6435a51c5cfb5f37cf756d1aec99066c36db1586831bf5cdb49802"
+}

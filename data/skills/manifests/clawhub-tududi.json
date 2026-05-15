@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13407,
+  "uuid": "skill-clawhub-tududi",
+  "skillKey": "clawhub-tududi",
+  "name": "tududi",
+  "summary": "Manage tasks, projects, and notes in tududi (self-hosted task manager). Use for todo lists, task management, project organization.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tududi",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chrisvel",
+      "features": [
+        "Manage tasks, projects, and notes in tududi (self-hosted task manager)",
+        "Use for todo lists, task management, project organization."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tududi@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2040900?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tududi",
+      "url": "https://clawhub.ai/skills/tududi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tududi",
+    "url": "https://clawhub.ai/skills/tududi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tududi-cf0991f2b7ef058d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tududi@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-tududi-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc3d09154680eb7f86cd8b8e89c022a68b5351d6c3e3d4ab50bc613d690c93ab",
+      "artifactSizeBytes": 2245
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T14:37:01.594Z"
+}

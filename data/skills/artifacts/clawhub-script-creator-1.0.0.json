@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/script-creator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.script_creator",
+  "skill": {
+    "id": 31080,
+    "skillKey": "clawhub-script-creator",
+    "name": "script creator with github companion"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "script-creator",
+    "url": "https://clawhub.ai/skills/script-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/script-creator-394d5ae4d8316c12.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and modify scripts in ~/.nanobot/workspace/test with strict Git versioning. Each script lives in its own directory with an isolated git repository. Al..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cadot-eu",
+      "userId": "publishers:cadot-eu",
+      "displayName": "cadot-eu",
+      "image": "https://avatars.githubusercontent.com/u/97225403?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 778,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771427736986,
+      "changelog": "- Initial release of script-git-manager skill.\n- Enforces script creation and modification with strict Git versioning: one script per directory, each with an isolated Git repository.\n- Requires and manages all Python dependencies via a dedicated virtual environment at ~/.nanobot/workspace/venv.\n- Always presents a detailed plan for user confirmation before any action, and reports progress after every step.\n- Prevents unintended file creation, modifications, or state changes; only acts on explicit user instructions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fb4794ee5264433c98addcfbad4b4dbd0c8e05b64e7aec3de612003debf2a0e9"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47379,
+  "uuid": "skill-clawhub-twitter-autopilot-aisa",
+  "skillKey": "clawhub-twitter-autopilot-aisa",
+  "name": "twitter-autopilot-aisa",
+  "summary": "Search X Twitter data, monitor accounts, track trends, and publish posts through the AISA relay. Use when: the user needs Twitter search, social listening, i...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twitter_autopilot_aisa",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIsa",
+      "features": [
+        "Search X Twitter data, monitor accounts, track trends, and publish posts through the AISA relay",
+        "Use when: the user needs Twitter search, social listening, i..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/twitter-autopilot-aisa@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245991925?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "twitter-autopilot-aisa",
+      "url": "https://clawhub.ai/skills/twitter-autopilot-aisa"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twitter-autopilot-aisa",
+    "url": "https://clawhub.ai/skills/twitter-autopilot-aisa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twitter-autopilot-aisa-333c2a1eec2c45d4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/twitter-autopilot-aisa@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-twitter-autopilot-aisa-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ca8bb6e04fca63659a208c054e4133ec4d222c390d157db101fa95b820b01acc",
+      "artifactSizeBytes": 2494
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T09:13:18.600Z"
+}

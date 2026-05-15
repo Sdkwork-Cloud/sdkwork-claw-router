@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69226,
+  "uuid": "skill-clawhub-research-mate",
+  "skillKey": "clawhub-research-mate",
+  "name": "ResearchMate",
+  "summary": "深度写作素材采集 Skill。当用户需要为文章、报告、视频脚本采集素材，或说\"帮我找XX相关资料\"、\"我要写一篇关于XX的文章\"、\"帮我做选题调研\"、\"给我采集XX素材\"时触发。通过三步交互问询（选题→关键实体→目标字数）+ 多源自动采集 + 四重反幻觉验证（数值/主体/时间/来源）+ 结构化输出，为深度写作提供...",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.research_mate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yitao2027",
+      "features": [
+        "深度写作素材采集 Skill。当用户需要为文章、报告、视频脚本采集素材，或说\"帮我找XX相关资料\"、\"我要写一篇关于XX的文章\"、\"帮我做选题调研\"、\"给我采集XX素材\"时触发。通过三步交互."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/research-mate@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271525838?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "research-mate",
+      "url": "https://clawhub.ai/skills/research-mate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "research-mate",
+    "url": "https://clawhub.ai/skills/research-mate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/research-mate-24cceb7b68699ce7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/research-mate@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-research-mate-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a1b4e2a45944192f308a95030f4342e799392a7e949693f9c13cad6dbe8a4e5c",
+      "artifactSizeBytes": 2602
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T07:37:04.434Z"
+}

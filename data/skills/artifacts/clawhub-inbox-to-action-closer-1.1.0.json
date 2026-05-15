@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/inbox-to-action-closer@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inbox_to_action_closer",
+  "skill": {
+    "id": 51498,
+    "skillKey": "clawhub-inbox-to-action-closer",
+    "name": "Inbox to Action Closer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inbox-to-action-closer",
+    "url": "https://clawhub.ai/skills/inbox-to-action-closer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inbox-to-action-closer-2314a26c9de23b44.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Orchestration skill that processes raw work-item data from Slack, GitHub, calendar, Notion, Trello, and email — supplied by the caller or by other OpenClaw t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "honouralexwill",
+      "userId": "s17bg8312g40k6pwt5nx5kqjxn83eb20",
+      "displayName": "honouralexwill",
+      "image": "https://avatars.githubusercontent.com/u/213247219?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 284,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774482259117,
+      "changelog": "- Major change: Skill no longer connects to external APIs or manages credentials; now processes only raw data provided by the caller or other tools.\n- Updated documentation to clarify that raw work-item data must be supplied from upstream (e.g., other skills, CLI tools, or OpenClaw connectors).\n- Added detailed instructions and examples for supported source data formats and acquisition methods.\n- Ensured execution steps and safety rules reflect this data-handling model.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c6218b874ec2c2a8dd6dbb4a9c857ed699347279f307bb3253992fd4e97d144d"
+}

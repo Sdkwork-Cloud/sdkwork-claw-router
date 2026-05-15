@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59603,
+  "uuid": "skill-clawhub-openclaw-continuity-pack",
+  "skillKey": "clawhub-openclaw-continuity-pack",
+  "name": "OpenClaw Continuity Pack",
+  "summary": "用于给 OpenClaw 安装可复用的 continuity 模板与统一安装入口，支持 workspace-only、continuity-only 和 full continuity 三条路线；可选对匹配源码树应用 runtime patch，实现前台同一对话、后台自动续接、静默 continuity 准备的工作流。",
+  "version": "0.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_continuity_pack",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "XBTMMM",
+      "features": [
+        "用于给 OpenClaw 安装可复用的 continuity 模板与统一安装入口，支持 workspace-only、continuity-only 和 full continuity 三条."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-continuity-pack@0.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147966297?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-continuity-pack",
+      "url": "https://clawhub.ai/skills/openclaw-continuity-pack"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-continuity-pack",
+    "url": "https://clawhub.ai/skills/openclaw-continuity-pack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-continuity-pack-21a476d924b0b288.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-continuity-pack@0.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-continuity-pack-0.5.0.json",
+      "version": "0.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f4117a64bd642c0fe9f58f0ef51b861bb4379a2913f7434bb2a4acff645d99fe",
+      "artifactSizeBytes": 2228
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T04:22:31.579Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/publora-twitter@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.publora_twitter",
+  "skill": {
+    "id": 16162,
+    "skillKey": "clawhub-publora-twitter",
+    "name": "Publora Twitter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "publora-twitter",
+    "url": "https://clawhub.ai/skills/publora-twitter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/publora-twitter-36092b415020ae47.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Post or schedule content to X (Twitter) using the Publora API. Use this skill when the user wants to tweet, schedule a tweet, or post a thread to X/Twitter v..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sergebulaev",
+      "userId": "s177bqjwcnr0pvsgvpzgeayqrx84tk9r",
+      "displayName": "Sergey Bulaev",
+      "image": "https://avatars.githubusercontent.com/u/241980?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 912,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1774011621246,
+      "changelog": "Fix: Pro/Premium required (excluded from Starter). Images auto-converted to PNG (not JPEG). Emoji=2 chars, URLs use literal length. Threading: (1/N) auto-split, [n/m] explicit markers. Media on first tweet only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4dfe4d42f087ec8b4ca6647c58cabac2a0f9e6d5f78d2fe6a31ac5bf3b4898ed"
+}

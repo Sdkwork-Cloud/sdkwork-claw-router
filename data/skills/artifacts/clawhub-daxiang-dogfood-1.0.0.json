@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daxiang-dogfood@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daxiang_dogfood",
+  "skill": {
+    "id": 42953,
+    "skillKey": "clawhub-daxiang-dogfood",
+    "name": "Daxiang Dogfood"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daxiang-dogfood",
+    "url": "https://clawhub.ai/skills/daxiang-dogfood",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daxiang-dogfood-484a4d26e6707d86.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Systematically explore and test a web application to find bugs, UX issues, and other problems. Use when asked to \"dogfood\", \"QA\", \"exploratory test\", \"find i..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daxiangnaoyang",
+      "userId": "s170b044ecgtt1cej83h1mfz6h83maqg",
+      "displayName": "daxiangnaoyang",
+      "image": "https://avatars.githubusercontent.com/u/223295173?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774975002538,
+      "changelog": "Initial release of the dogfood skill to systematically QA web applications.\n\n- Automates exploratory testing and bug hunting for any web app via agent-browser.\n- Produces detailed, reproducible reports with step-by-step screenshots, videos, and full repro instructions for each issue.\n- Supports authentication workflows and saving authenticated state.\n- Includes systematic workflow: initialize, authenticate, explore, and document issues as they are found.\n- Prioritizes actionable evidence for every bug, tailored by issue type (interactive or static).\n- Designed for immediate use—requires only a target URL to start testing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:89b652b7ea5d0614c7a651e8291b9250879ab5195270edb29b23ae62458ce39c"
+}

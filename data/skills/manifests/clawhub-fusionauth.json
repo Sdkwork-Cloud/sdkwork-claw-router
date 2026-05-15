@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36919,
+  "uuid": "skill-clawhub-fusionauth",
+  "skillKey": "clawhub-fusionauth",
+  "name": "Fusionauth",
+  "summary": "FusionAuth integration. Manage data, records, and automate workflows. Use when the user wants to interact with FusionAuth data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fusionauth",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "FusionAuth integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with FusionAuth data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fusionauth@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fusionauth",
+      "url": "https://clawhub.ai/skills/fusionauth"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fusionauth",
+    "url": "https://clawhub.ai/skills/fusionauth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fusionauth-f0c84aa1e5ec8e38.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fusionauth@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-fusionauth-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2539191b492195bdad245eca26df57e6f6360ca409c4768664f82c9a78ec48d3",
+      "artifactSizeBytes": 1848
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:50:46.733Z"
+}

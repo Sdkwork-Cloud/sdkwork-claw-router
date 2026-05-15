@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/naver-news-briefing@2026.4.16",
+  "version": "2026.4.16",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.naver_news_briefing",
+  "skill": {
+    "id": 58135,
+    "skillKey": "clawhub-naver-news-briefing",
+    "name": "naver-news-briefing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "naver-news-briefing",
+    "url": "https://clawhub.ai/skills/naver-news-briefing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/naver-news-briefing-433240829911ede0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search, brief, and monitor 대한민국 Naver News via the Naver Search API using natural-language Korean queries. Use when the user wants 네이버 뉴스 브리핑, 최근 N일 뉴스 요약, 제..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twbeatles",
+      "userId": "s177m68c4t241waawxzycwefcd83jmk7",
+      "displayName": "twbeatles",
+      "image": "https://avatars.githubusercontent.com/u/243789332?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 273,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "2026.4.16",
+      "createdAt": 1776348019111,
+      "changelog": "Ignore local config/debug outputs and improve watch alert summaries for large new-item counts",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d096d1b102ff926777cf72c2ccd1cb27ec2e97dc6a7744376b6a10ecec6a46ab"
+}

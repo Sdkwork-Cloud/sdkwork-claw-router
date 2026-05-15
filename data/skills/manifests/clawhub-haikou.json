@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45190,
+  "uuid": "skill-clawhub-haikou",
+  "skillKey": "clawhub-haikou",
+  "name": "Haikou Skill",
+  "summary": "Your comprehensive guide to Haikou, capital of Hainan Island. Use when: user asks about Haikou attractions, food, hotels, weather, transportation, history, c...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.haikou",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "58",
+      "features": [
+        "Your comprehensive guide to Haikou, capital of Hainan Island",
+        "Use when: user asks about Haikou attractions, food, hotels, weather, transportation, history, c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/haikou@1.0.0",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/haikou/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "haikou",
+      "url": "https://clawhub.ai/skills/haikou"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "haikou",
+    "url": "https://clawhub.ai/skills/haikou",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/haikou-c86457c97110a83a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/haikou@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-haikou-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1a03b8d9d0453b00be1b25941d94c47bcdf90da0d0a0249bd17d56f73fe2a134",
+      "artifactSizeBytes": 2224
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T16:26:37.158Z"
+}

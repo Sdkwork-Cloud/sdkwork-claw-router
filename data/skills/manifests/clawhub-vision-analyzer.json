@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38961,
+  "uuid": "skill-clawhub-vision-analyzer",
+  "skillKey": "clawhub-vision-analyzer",
+  "name": "Vision Analyzer",
+  "summary": "Analyze images using Ollama Cloud's Kimi K2.5 vision capabilities. Use when user wants to describe, understand, or get information about an image. Works with...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vision_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kawummuwe-stack",
+      "features": [
+        "Analyze images using Ollama Cloud's Kimi K2.5 vision capabilities",
+        "Use when user wants to describe, understand, or get information about an image",
+        "Works with..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vision-analyzer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262252348?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vision-analyzer",
+      "url": "https://clawhub.ai/skills/vision-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vision-analyzer",
+    "url": "https://clawhub.ai/skills/vision-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vision-analyzer-518d5109124ab0dc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vision-analyzer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-vision-analyzer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e6a953b9db352f2e615578e21eab123b22fc82d603215df8af15d2ff218b8213",
+      "artifactSizeBytes": 2211
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T03:21:11.334Z"
+}

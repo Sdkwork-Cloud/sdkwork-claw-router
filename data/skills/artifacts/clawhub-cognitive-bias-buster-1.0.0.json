@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cognitive-bias-buster@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cognitive_bias_buster",
+  "skill": {
+    "id": 49695,
+    "skillKey": "clawhub-cognitive-bias-buster",
+    "name": "Cognitive Bias Buster"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cognitive-bias-buster",
+    "url": "https://clawhub.ai/skills/cognitive-bias-buster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cognitive-bias-buster-ab4b5e3b8026698e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Recognize and counter 50+ cognitive biases in real-time thinking, decisions, and judgments."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 70,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778244497589,
+      "changelog": "- Initial release of Cognitive Bias Buster.\n- Detect and address 50+ cognitive biases across 6 major bias families.\n- Includes real-time prompts for bias identification and practical debiasing techniques.\n- Supports decision reviews, awareness building, and learning in critical thinking and psychology.\n- Provides clear diagnostic questions and countermeasures for each bias.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9d60fcaeeadf3dc1e2c49345157600051428bf42cab8a783c96c8b796d6736ac"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/v@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.v",
+  "skill": {
+    "id": 31364,
+    "skillKey": "clawhub-v",
+    "name": "ASCII v"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "v",
+    "url": "https://clawhub.ai/skills/v",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/v-4c94485e0c21ae6c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Creates an ASCII art of a \"V\" by printing two diagonal lines converging to a single point, adjusting spaces for specified height."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "duanc-chao",
+      "userId": "publishers:duanc-chao",
+      "displayName": "wow",
+      "image": "https://avatars.githubusercontent.com/u/178591028?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 268,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774017452476,
+      "changelog": "- Initial release of the skill: Drawing an ASCII \"V\" graph.\n- Provides a clear, step-by-step explanation of how to construct a \"V\" shape using text characters.\n- Includes a detailed breakdown of space calculation for each line to form the correct \"V\" shape.\n- Offers a visual example (for height = 5) with tabled logic for easier understanding.\n- Supplies a ready-to-use Python code snippet for generating ASCII \"V\" graphs of customizable height.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0ae184370580aadabb1fc08ad831c9c7090775c0e5dfbb7509467e6c233e555a"
+}

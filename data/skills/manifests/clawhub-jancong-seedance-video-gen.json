@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61241,
+  "uuid": "skill-clawhub-jancong-seedance-video-gen",
+  "skillKey": "clawhub-jancong-seedance-video-gen",
+  "name": "Seedance AI Video Gen",
+  "summary": "使用火山引擎 Seedance 2.0 系列模型（doubao-seedance-2-0 / doubao-seedance-2-0-fast）通过方舟平台 API 生成高质量 AI 视频。支持文生视频、图生视频、视频参考、音频参考等多模态内容生成，适用于用户要求生成/制作/创建视频、文生视频、图生视频、AI 生...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jancong_seedance_video_gen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cong Pendy",
+      "features": [
+        "使用火山引擎 Seedance 2.0 系列模型（doubao-seedance-2-0 / doubao-seedance-2-0-fast）通过方舟平台 API 生成高质量 AI 视频。."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jancong-seedance-video-gen@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16347506?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jancong-seedance-video-gen",
+      "url": "https://clawhub.ai/skills/jancong-seedance-video-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jancong-seedance-video-gen",
+    "url": "https://clawhub.ai/skills/jancong-seedance-video-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jancong-seedance-video-gen-ea3489cd2f390c2c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jancong-seedance-video-gen@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jancong-seedance-video-gen-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:81c16841dd762cc0d64a3d8f440885461492cee166d0582a67861ef0f87e3489",
+      "artifactSizeBytes": 2628
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T10:34:41.626Z"
+}

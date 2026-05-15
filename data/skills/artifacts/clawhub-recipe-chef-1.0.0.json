@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/recipe-chef@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recipe_chef",
+  "skill": {
+    "id": 44169,
+    "skillKey": "clawhub-recipe-chef",
+    "name": "Recipe Chef"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recipe-chef",
+    "url": "https://clawhub.ai/skills/recipe-chef",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recipe-chef-bda3c4a48b766ddb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover, compare, and tailor recipes from available ingredients, kitchen gear, dietary goals, and taste preferences. Use when a user wants meal ideas from p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adamsellers",
+      "userId": "s173va555hk70h9ee2f990b8pd84vw45",
+      "displayName": "Adam Sellers",
+      "image": "https://avatars.githubusercontent.com/u/6313646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776156753680,
+      "changelog": "Initial release: ingredient and photo-based recipe discovery, surprise mode, meal-plan mode, preference memory, shopping-list optimization, and macro-aware planning.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5fe52e18665bb1a1526a611d33b7995dac552a83cd4fd96c4d4d7ec24c8decdb"
+}

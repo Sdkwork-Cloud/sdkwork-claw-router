@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/china-stock-toolkit@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_stock_toolkit",
+  "skill": {
+    "id": 67813,
+    "skillKey": "clawhub-china-stock-toolkit",
+    "name": "China Stock Toolkit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-stock-toolkit",
+    "url": "https://clawhub.ai/skills/china-stock-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-stock-toolkit-c7efae7b8a3187c5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供A股大盘指数、涨跌停、北向资金监控及交易税费计算，支持多源数据交叉验证和用户自定义接口扩展。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "darbling",
+      "userId": "s1735cfbwbr6ybnmzw58m9bhkx85my84",
+      "displayName": "darbling",
+      "image": "https://avatars.githubusercontent.com/u/105998927?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 193,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1777422608191,
+      "changelog": "china-stock-toolkit v3.0.0\n\n- Added news aggregation and sentiment analysis features for stocks, sectors, and policies.\n- News are automatically labeled as bullish, bearish, or neutral based on custom keyword scoring.\n- Individual stock details page now includes associated latest news and sentiment tags.\n- Added scripts for news fetching, aggregation, and sentiment analysis.\n- Updated documentation with new usage examples for news and sentiment analysis actions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8e0035057514f92e494aed5aacc6245b1f80bbf58c1510d79372d9351998825f"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/file-classification-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_classification_manager",
+  "skill": {
+    "id": 33742,
+    "skillKey": "clawhub-file-classification-manager",
+    "name": "file-classification-manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-classification-manager",
+    "url": "https://clawhub.ai/skills/file-classification-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-classification-manager-bbf1a4e8f63bb1f3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manages synchronized dual directories per project, automatically classifying and routing files into permanent outputs and temporary intermediates based on ty..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sun2001",
+      "userId": "s17674xdwhxb1n41zr2wth2sq5847nen",
+      "displayName": "Sun2001",
+      "image": "https://avatars.githubusercontent.com/u/47412015?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775304102744,
+      "changelog": "File Classification Manager Skill 1.0.0\n\n- Introduces an intelligent dual-directory file classification system, managing both permanent outputs (`projects/`) and temporary files (`temp/`) with synchronized project naming.\n- Automatically classifies, organizes, and routes files by type and project context, preventing workspace root clutter.\n- Provides APIs for file routing, project structure creation, project detection from content, and root workspace cleanup.\n- Supports legacy file migration to the new structured storage and cross-agent compatibility.\n- Enforces clear distinction between outputs and intermediate files with safety and error handling rules.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b873cca7850c0a4e24c71d4166e2b9af8466e704be09317b52d5132406871ae2"
+}

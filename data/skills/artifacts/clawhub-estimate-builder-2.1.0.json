@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/estimate-builder@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.estimate_builder",
+  "skill": {
+    "id": 12579,
+    "skillKey": "clawhub-estimate-builder",
+    "name": "Estimate Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "estimate-builder",
+    "url": "https://clawhub.ai/skills/estimate-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/estimate-builder-369560913b450f81.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build construction project estimates. Generate detailed cost breakdowns with labor, materials, equipment, and overhead."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "datadrivenconstruction",
+      "userId": "publishers:datadrivenconstruction",
+      "displayName": "datadrivenconstruction",
+      "image": "https://avatars.githubusercontent.com/u/94158709?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1705,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1771016192161,
+      "changelog": "- Added homepage and metadata fields to SKILL.md for improved documentation and integration.\n- Metadata specifies supported operating systems, required binaries, and includes an emoji representation.\n- No changes to estimate-building logic or user-facing features.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f2046bbd08a28a87ae2ccbfda6da160df77e8f0612fff6c3cd0bfd3e6217938d"
+}

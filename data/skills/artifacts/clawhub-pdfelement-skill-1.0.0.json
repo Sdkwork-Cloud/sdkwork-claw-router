@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pdfelement-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdfelement_skill",
+  "skill": {
+    "id": 37338,
+    "skillKey": "clawhub-pdfelement-skill",
+    "name": "pdfelement-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdfelement-skill",
+    "url": "https://clawhub.ai/skills/pdfelement-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdfelement-skill-e14b034a20df2f1b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Execute local PDF operations through PDFelement PDFToolbox on Windows or Linux. Support converting PDFs to Word, Excel, PowerPoint, images, text and other fo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wondershare-boop",
+      "userId": "s1707d6v06e1pv7bbn814sjdq583gtne",
+      "displayName": "wondershare-boop",
+      "image": "https://avatars.githubusercontent.com/u/208894930?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774317395802,
+      "changelog": "Initial release of the PDFelement Skill for local batch PDF operations.\n\n- Integrates with PDFelement PDFToolbox to process PDFs on Windows and Linux.\n- Supports conversion, OCR, translation, compression, watermarking, security, printing, data extraction, page deletion, signing, splitting, merging, cropping, and PDF creation.\n- Provides robust Windows verification and protocol handling for the `wspet://` launcher.\n- Includes detailed user guidance and fallback messaging if PDFelement is not correctly installed or registered.\n- Ensures compatibility with both Windows and Linux platforms, with clear prerequisites and operation matching.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a38e7dd0830ecb03f47b15fd47bbd34e6ea801d28b493808ac0634a37c177e26"
+}

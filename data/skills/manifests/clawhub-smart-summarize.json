@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23315,
+  "uuid": "skill-clawhub-smart-summarize",
+  "skillKey": "clawhub-smart-summarize",
+  "name": "Summarize",
+  "summary": "Summarize URLs or files with the summarize CLI (web, PDFs, images, audio, YouTube). And also 50+ models for image generation, video generation, text-to-speec...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_summarize",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "QuincyGunter",
+      "features": [
+        "Summarize URLs or files with the summarize CLI (web, PDFs, images, audio, YouTube)",
+        "And also 50+ models for image generation, video generation, text-to-speec..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-summarize@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260427166?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-summarize",
+      "url": "https://clawhub.ai/skills/smart-summarize"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-summarize",
+    "url": "https://clawhub.ai/skills/smart-summarize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-summarize-835ba5c209ea03ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-summarize@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-summarize-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1256931231975f5cd4ac6ee56dcbf62ff50345008b4d727c40773f69e3e9574e",
+      "artifactSizeBytes": 2524
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T05:50:28.728Z"
+}

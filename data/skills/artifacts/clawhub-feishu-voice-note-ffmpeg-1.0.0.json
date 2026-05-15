@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-voice-note-ffmpeg@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_voice_note_ffmpeg",
+  "skill": {
+    "id": 60369,
+    "skillKey": "clawhub-feishu-voice-note-ffmpeg",
+    "name": "Feishu Voice Note via FFmpeg"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-voice-note-ffmpeg",
+    "url": "https://clawhub.ai/skills/feishu-voice-note-ffmpeg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-voice-note-ffmpeg-c2d9ffd79a2478e3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "解决飞书 IM 语音气泡问题——通过 ffmpeg 将 TTS 输出的 mp3 转为飞书支持的 ogg-opus 格式。适用场景：(1) 在飞书机器人的 TTS 回复中需要显示语音气泡而非文件附件, (2) Edge TTS 或其他只支持 mp3/webm 输出的 TTS 引擎需要适配飞书, (3) 自定义 TT..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "17329971",
+      "userId": "s1782z1gjmjm0sw9zjmmpggwz98421q0",
+      "displayName": "17329971",
+      "image": "https://avatars.githubusercontent.com/u/83849762?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777077055289,
+      "changelog": "Initial publish: document Feishu voice-bubble format requirements and the ffmpeg conversion path from MP3 to Ogg/Opus.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8f34ab9818128d31c5669eb10decaefcb96f614d6fd2d1c9cb0d1cd74d862726"
+}

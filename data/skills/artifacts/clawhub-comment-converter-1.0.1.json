@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/comment-converter@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.comment_converter",
+  "skill": {
+    "id": 17052,
+    "skillKey": "clawhub-comment-converter",
+    "name": "comment-converter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "comment-converter",
+    "url": "https://clawhub.ai/skills/comment-converter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/comment-converter-5282bec640f94f9b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn Reddit thread context into genuinely helpful comments that build trust and can convert to profile/link clicks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xammarie",
+      "userId": "publishers:xammarie",
+      "displayName": "xammarie",
+      "image": "https://avatars.githubusercontent.com/u/219314498?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 792,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771343405324,
+      "changelog": "Expanded detailed docs and practical frameworks",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:eaf6ec33f8741b6c0d66664474499a327ef83d709fed772207b8558aa56bb856"
+}

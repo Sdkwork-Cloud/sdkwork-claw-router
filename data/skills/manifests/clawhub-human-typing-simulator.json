@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27196,
+  "uuid": "skill-clawhub-human-typing-simulator",
+  "skillKey": "clawhub-human-typing-simulator",
+  "name": "HumanTyping",
+  "summary": "Type text into a browser like a real human with adjacent-key typos, immediate and deferred corrections, French accent omissions fixed later, thinking pauses,...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.human_typing_simulator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "luke2day",
+      "features": [
+        "Type text into a browser like a real human with adjacent-key typos, immediate and deferred corr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/human-typing-simulator@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/175966679?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "human-typing-simulator",
+      "url": "https://clawhub.ai/skills/human-typing-simulator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "human-typing-simulator",
+    "url": "https://clawhub.ai/skills/human-typing-simulator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/human-typing-simulator-ccef82a1c93cbb18.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/human-typing-simulator@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-human-typing-simulator-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7ad4f11bc5bab5ee4675d982d1cdee561f0163df9227d65613dba04d45b17c93",
+      "artifactSizeBytes": 2331
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T20:10:47.573Z"
+}

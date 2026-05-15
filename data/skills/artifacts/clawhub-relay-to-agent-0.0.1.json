@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/relay-to-agent@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.relay_to_agent",
+  "skill": {
+    "id": 9640,
+    "skillKey": "clawhub-relay-to-agent",
+    "name": "Relay To Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "relay-to-agent",
+    "url": "https://clawhub.ai/skills/relay-to-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/relay-to-agent-9f3709e52881c3c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Relay messages to AI agents on any OpenAI-compatible API. Supports multi-turn conversations with session management. List agents, send messages, reset sessions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ericsantos",
+      "userId": "s172zebvz8fjz93gkgsdmt98w583jy65",
+      "displayName": "Eric Santos",
+      "image": "https://avatars.githubusercontent.com/u/180174?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2895,
+      "installsAllTime": 13,
+      "installsCurrent": 13,
+      "stars": 6,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1771616492291,
+      "changelog": "Initial release of relay-to-agent.\n\n- Added support for relaying messages to AI agents on any OpenAI-compatible API.\n- Supports multi-turn conversations with session management.\n- Includes script to list available agents, send messages, and reset sessions.\n- Configuration via agents.json and environment variables.\n- Compatible with Connect Chat, OpenRouter, LiteLLM, vLLM, Ollama, and other OpenAI-compatible services.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6b72f4e34ad65af6dc7625e815d8fa64580094abda7d5d9572c0bf6e6e6a079d"
+}

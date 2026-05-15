@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28210,
+  "uuid": "skill-clawhub-dependency-audit",
+  "skillKey": "clawhub-dependency-audit",
+  "name": "Dependency Audit",
+  "summary": "Smart dependency health check — security audit, outdated detection, unused deps, and prioritized update plan",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dependency_audit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Fratua",
+      "features": [
+        "Smart dependency health check — security audit, outdated detection, unused deps, and prioritize."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dependency-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130244023?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dependency-audit",
+      "url": "https://clawhub.ai/skills/dependency-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dependency-audit",
+    "url": "https://clawhub.ai/skills/dependency-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dependency-audit-713f07af0e26a471.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dependency-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dependency-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b51d51158e1afd181a2837e3d57e640fee2a2e6f063d2b14a6af9978fbb220b",
+      "artifactSizeBytes": 2373
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T18:48:44.658Z"
+}

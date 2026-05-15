@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gstack-qa@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gstack_qa",
+  "skill": {
+    "id": 25097,
+    "skillKey": "clawhub-gstack-qa",
+    "name": "Qa"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gstack-qa",
+    "url": "https://clawhub.ai/skills/gstack-qa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gstack-qa-2060d06244d6a334.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Systematically QA test a web application and fix bugs found. Runs QA testing, then iteratively fixes bugs in source code, committing each fix atomically and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "loocor",
+      "userId": "publishers:loocor",
+      "displayName": "Loocor",
+      "image": "https://avatars.githubusercontent.com/u/25772398?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 376,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774092517385,
+      "changelog": "Initial release of systematic QA testing and automated bug-fixing for web applications.\n\n- Runs interactive QA tests (Quick, Standard, Exhaustive) and iteratively fixes bugs, committing each fix atomically.\n- Outputs detailed reports with health scores, fix evidence (screenshots, repro steps), and ship-readiness summary.\n- Supports diff-aware mode for feature branches and integrates authentication flows.\n- Classifies and prioritizes bugs by severity; only fixes within configured tier.\n- Provides clear protocols for incomplete/blocked/warning states.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c0ad9edb4821d88d86056be10ba6059e5de9092a692276f81de9664b714244b3"
+}

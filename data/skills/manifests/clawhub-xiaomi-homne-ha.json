@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57079,
+  "uuid": "skill-clawhub-xiaomi-homne-ha",
+  "skillKey": "clawhub-xiaomi-homne-ha",
+  "name": "小米智能家居 (Xiao Mi Home for HA)",
+  "summary": "Control Xiaomi/Mi Home devices via Home Assistant REST API for lights, switches, sensors, AC, fans, media players, and scenes using natural language.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaomi_homne_ha",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DillonHuang",
+      "features": [
+        "Control Xiaomi/Mi Home devices via Home Assistant REST API for lights, switches, sensors, AC, f."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaomi-homne-ha@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/149062917?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaomi-homne-ha",
+      "url": "https://clawhub.ai/skills/xiaomi-homne-ha"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaomi-homne-ha",
+    "url": "https://clawhub.ai/skills/xiaomi-homne-ha",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaomi-homne-ha-c065357dd012fc75.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaomi-homne-ha@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaomi-homne-ha-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:99acfeea045758388977c1438dcf0701c1c043dd4295c4d7c28f54f49371cab3",
+      "artifactSizeBytes": 2358
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T03:09:25.220Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/guoshun-soso-project@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.guoshun_soso_project",
+  "skill": {
+    "id": 72406,
+    "skillKey": "clawhub-guoshun-soso-project",
+    "name": "国顺搜项目-招标监控"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "guoshun-soso-project",
+    "url": "https://clawhub.ai/skills/guoshun-soso-project",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/guoshun-soso-project-f0ecdd67983bc70e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "国顺搜项目 V2.0 — 智能化工程招标监控。自动抓取招投标网站，按关键词过滤新项目， 飞书/企业微信推送。支持智能化/EPC总承包/中标公告，可独立配置关键词、数据源、推送目标。 适用于弱电集成、安防监控、楼宇自控、智慧城市、无人机等行业从业者。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jimmygx",
+      "userId": "s17f83z4j2gxvarqndt8kfabts83nqd2",
+      "displayName": "jimmygx",
+      "image": "https://avatars.githubusercontent.com/u/27848299?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1775569447939,
+      "changelog": "国顺搜项目 V2.0 — 智能化工程招标监控全面升级\n\n- 新增企业微信推送，支持多人推送配置\n- 增加徐州本地及多家招投标数据源，数据更丰富\n- 优化关键词筛选与评分算法，提升匹配准确率\n- 配置项更灵活：关键词、推送对象、数据源可独立设置\n- 改进去重和定时推送机制，保证信息高效、无重复",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e9d9d861fa3fe22cdd2e52b6067af90ed504fe9a4af43ff278f94da306c0296c"
+}

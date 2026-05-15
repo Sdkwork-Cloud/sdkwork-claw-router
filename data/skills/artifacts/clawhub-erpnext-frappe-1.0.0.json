@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/erpnext-frappe@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.erpnext_frappe",
+  "skill": {
+    "id": 16258,
+    "skillKey": "clawhub-erpnext-frappe",
+    "name": "Frappe MCP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "erpnext-frappe",
+    "url": "https://clawhub.ai/skills/erpnext-frappe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/erpnext-frappe-0546c4fe994a8994.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Pre-defined business workflows combining multiple MCP tools for CRM, sales, purchase, inventory, project, payments, and utility tasks in ERPNext."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ravana-indus",
+      "userId": "publishers:ravana-indus",
+      "displayName": "Pathurjan Wijeyasekara",
+      "image": "https://avatars.githubusercontent.com/u/191453155?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 897,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771306338594,
+      "changelog": "Initial release of Business Claw Skills for ERPNext-Frappe:\n\n- Introduces a modular skill system for high-level ERP business workflows.\n- Provides pre-defined skills for CRM, Sales, Purchase, Inventory, Project, Financial, and Utility categories.\n- Skills defined as JSON files with triggers, tools, input schemas, workflows, guardrails, and output templates.\n- Supports natural language triggers for executing workflows.\n- Includes documentation on loading, executing, customizing, and defining skills.\n- Requires Frappe/ERPNext environment and the bc_mcp module.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9399d5c86ea3e7c5fb77f989cce91e5705d41b34b8eef27a71ba3151d05f2fc8"
+}

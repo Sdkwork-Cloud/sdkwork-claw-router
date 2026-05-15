@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vardoger-analyze@0.3.1",
+  "version": "0.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vardoger_analyze",
+  "skill": {
+    "id": 52482,
+    "skillKey": "clawhub-vardoger-analyze",
+    "name": "vardoger — Analyze History"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vardoger-analyze",
+    "url": "https://clawhub.ai/skills/vardoger-analyze",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vardoger-analyze-c9973c10d0d034b3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user asks to personalize their assistant, to use vardoger, or to analyze their OpenClaw conversation history. Runs the vardoger CLI to read past..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dstrupl",
+      "userId": "s170q73w5hdz7rfwgk64d9c4n985b7g5",
+      "displayName": "dstrupl",
+      "image": "https://avatars.githubusercontent.com/u/4134230?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.3.1",
+      "createdAt": 1777057320613,
+      "changelog": "Add explicit Apache-2.0 license",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2a85eed2c23f3bf22cb75539f9c317a37bd6180bd9c7ca0a956c8389fc1d6e42"
+}

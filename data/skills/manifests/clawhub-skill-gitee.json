@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42449,
+  "uuid": "skill-clawhub-skill-gitee",
+  "skillKey": "clawhub-skill-gitee",
+  "name": "Skill Gitee",
+  "summary": "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_gitee",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HuiHuilu",
+      "features": [
+        "Captures learnings, errors, and corrections to enable continuous improvement",
+        "Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-gitee@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/53823162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-gitee",
+      "url": "https://clawhub.ai/skills/skill-gitee"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-gitee",
+    "url": "https://clawhub.ai/skills/skill-gitee",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-gitee-f2da2e0ab7c0e9e0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-gitee@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-gitee-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ccb0c2d6908b3beaa4f45485fbd153aace9abb0d7c2e89172f5d9e0da83837d9",
+      "artifactSizeBytes": 1972
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T07:46:34.068Z"
+}

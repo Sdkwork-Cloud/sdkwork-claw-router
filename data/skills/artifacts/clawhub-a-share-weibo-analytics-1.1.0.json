@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/a-share-weibo-analytics@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_share_weibo_analytics",
+  "skill": {
+    "id": 58869,
+    "skillKey": "clawhub-a-share-weibo-analytics",
+    "name": "CNY RMB A股 China A shares Stock"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-share-weibo-analytics",
+    "url": "https://clawhub.ai/skills/a-share-weibo-analytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-share-weibo-analytics-793906bf77fc6cf4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CNY RMB A股热搜分析 - China A Shares Stock Skill 微博热搜 + A股行情 + 关联分析，一站式掌握市场热点。 关键词：A股, 大A, A-shares, China A, Onshore, 涨停, 跌停, 热搜"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aaroncxxx",
+      "userId": "s17509zamkdtrtbahz6xrwbmx585c88m",
+      "displayName": "aaroncxxx",
+      "image": "https://avatars.githubusercontent.com/u/255621878?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 114,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777579840011,
+      "changelog": "v1.1: 新增北向资金/5日趋势/关键词增强/本地快照缓存",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5c1ff1ca601456a3620447b75c32fceaa74801500f27a4014af0e32c775e82b6"
+}

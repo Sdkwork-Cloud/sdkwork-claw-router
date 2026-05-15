@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/codex-mcp-dev@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codex_mcp_dev",
+  "skill": {
+    "id": 23955,
+    "skillKey": "clawhub-codex-mcp-dev",
+    "name": "codex-mcp-dev"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codex-mcp-dev",
+    "url": "https://clawhub.ai/skills/codex-mcp-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codex-mcp-dev-9249efad7b8f78b3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the local Codex CLI through mcporter and codex-mcp-server for real coding work in the current project. Use when the user asks to build features, fix bugs..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hollywood3",
+      "userId": "publishers:hollywood3",
+      "displayName": "qiucen",
+      "image": "https://avatars.githubusercontent.com/u/74386260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 425,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773039018431,
+      "changelog": "Initial release of codex-mcp-dev skill.\n\n- Enables real coding work in the current project through the local Codex CLI, mcporter, and codex-mcp-server.\n- Supports building features, fixing bugs, refactoring, debugging, test writing/updating, and code review tasks.\n- Includes detailed workflow, setup instructions, and command patterns for various coding scenarios.\n- Provides prompting guidelines and guardrails to ensure safe, targeted use.\n- Designed to automate non-trivial development tasks with workspace-local Codex integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8d1f140673f4c3240c2d3ef3412819d74de6bbf90614421dbdf4d9018384199d"
+}

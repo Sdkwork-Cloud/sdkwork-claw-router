@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deep-coding-p@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deep_coding_p",
+  "skill": {
+    "id": 46925,
+    "skillKey": "clawhub-deep-coding-p",
+    "name": "deep-coding-p"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deep-coding-p",
+    "url": "https://clawhub.ai/skills/deep-coding-p",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deep-coding-p-c24272cf0c094429.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Advanced multi-agent development system for complex software projects. Leverages Orchestrator, Builder, and Reviewer agents to decompose modules, implement c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "subaru0573",
+      "userId": "s17fv9b8ta6mn155x3x71jzdf583p03s",
+      "displayName": "Subaru0573",
+      "image": "https://avatars.githubusercontent.com/u/188862647?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 120,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777048894683,
+      "changelog": "deep-coding-p 1.0.0 – Initial release\n\n- Introduces an advanced multi-agent system for complex software development, featuring Orchestrator, Builder, and Reviewer agents.\n- Provides detailed setup instructions covering dependencies, workspace creation, agent configuration, permissions, and LLM selection.\n- Emphasizes robust security practices for local execution and dashboard usage.\n- Lays out a clear user-facing workflow, with strong module lifecycle management and progress reporting.\n- Defines flexible agent runtimes and recommends a 3-tier agent fallback chain for coding tasks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8f82769b7a45a2cd428702ae0307c5e44d56914989ee677dae31903e081ef076"
+}

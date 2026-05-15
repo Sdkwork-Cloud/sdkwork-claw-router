@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/what-if-factory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.what_if_factory",
+  "skill": {
+    "id": 26967,
+    "skillKey": "clawhub-what-if-factory",
+    "name": "What If Factory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "what-if-factory",
+    "url": "https://clawhub.ai/skills/what-if-factory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/what-if-factory-32d52b5fc48a61ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When user says \"what if\", \"suppose\", \"imagine if\", \"alternate reality\", \"parallel universe\" or wants wild scenarios, generate hilarious multi-format parallel..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ideasflowai",
+      "userId": "publishers:ideasflowai",
+      "displayName": "ideasflowai",
+      "image": "https://avatars.githubusercontent.com/u/200638531?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 358,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772432920225,
+      "changelog": "Initial release of What If Factory – Ultimate Parallel Universe Generator.\n\n- Instantly transforms any “what if” scenario into a multi-format, wild parallel universe experience.\n- Outputs include a creative news headline/article, 3 absurd consequences, life advice, pro image prompts, and a meme quote pack.\n- Easter egg: Ends outputs with a playful “Probability in this universe: XX%” rating.\n- Special cultural touches for Japan-related prompts.\n- Enables advanced play modes for extended storytelling or tone changes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:da1c389c9a78851797ac9517b4361881cefbf7eefdc56376196b5f8350040a8b"
+}

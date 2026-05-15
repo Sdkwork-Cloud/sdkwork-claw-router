@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10118,
+  "uuid": "skill-clawhub-anyone-proxy",
+  "skillKey": "clawhub-anyone-proxy",
+  "name": "Anyone Procotol Proxy",
+  "summary": "This skill enables IP address masking and accessing hidden services on the Anyone Network. Route requests through the Anyone Protocol VPN network using a local SOCKS5 proxy.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anyone_proxy",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rA3ka",
+      "features": [
+        "This skill enables IP address masking and accessing hidden services on the Anyone Network",
+        "Route requests through the Anyone Protocol VPN network using a local SOCKS5 proxy."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/anyone-proxy@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/160638097?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "anyone-proxy",
+      "url": "https://clawhub.ai/skills/anyone-proxy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anyone-proxy",
+    "url": "https://clawhub.ai/skills/anyone-proxy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anyone-proxy-3183f11bd5e3db14.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/anyone-proxy@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-anyone-proxy-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:57bf0f1743a12d289df32fc38620ab0e76c7c107a27c34f558f81d833e23cf79",
+      "artifactSizeBytes": 1974
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-28T21:34:36.129Z"
+}

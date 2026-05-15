@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chatgpt-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chatgpt_skill",
+  "skill": {
+    "id": 21365,
+    "skillKey": "clawhub-chatgpt-skill",
+    "name": "ChatGPT Web Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chatgpt-skill",
+    "url": "https://clawhub.ai/skills/chatgpt-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chatgpt-skill-2824299fb3906730.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate ChatGPT Web conversations through a local browser session with persistent login state, one-shot prompts, reusable multi-turn sessions, and conversat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "placidusaxalarak",
+      "userId": "publishers:placidusaxalarak",
+      "displayName": "PlacidusaxAlarak",
+      "image": "https://avatars.githubusercontent.com/u/175779303?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 501,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772948587037,
+      "changelog": "Initial community release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:65bc06f259575da51520ccee8aa0dd090aa6cb58e39d1b4d73b59a20741a3563"
+}

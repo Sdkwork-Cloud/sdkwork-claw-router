@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chinese-culture@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chinese_culture",
+  "skill": {
+    "id": 68824,
+    "skillKey": "clawhub-chinese-culture",
+    "name": "Chinese Culture"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chinese-culture",
+    "url": "https://clawhub.ai/skills/chinese-culture",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chinese-culture-6c55e10a49637325.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供中国传统文化知识，涵盖诗词、名著、书画、戏曲、节日、建筑、饮食及传统美德等内容。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wenqin1688",
+      "userId": "s17f9yxzhwtytyw1bb2hxwc9v983n30j",
+      "displayName": "wenqin1688",
+      "image": "https://avatars.githubusercontent.com/u/46556755?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 367,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774537457444,
+      "changelog": "- 首次发布，提供中国传统诗词、文学、艺术、建筑、饮食及节日等文化知识大全\n- 包含诗词与代表作、四大名著、书法绘画、戏曲乐器、节日民俗、园林建筑、八大菜系、中华传统美德等板块\n- 适用于日常文化解读与艺术欣赏",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:783e0f3384d34c50eca3c6b5b5e66cdabe09e280d101de7df5faf5154c5514e0"
+}

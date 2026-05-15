@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66686,
+  "uuid": "skill-clawhub-ai-hustle-checker",
+  "skillKey": "clawhub-ai-hustle-checker",
+  "name": "AI副业真假鉴别器",
+  "summary": "AI副业真伪鉴别工具。帮你识别AI副业项目/课程/机会到底是真是假。 当用户说\"AI副业靠谱吗\"、\"这个课值不值\"、\"AI赚钱是不是骗人的\"、\"帮我看看这个副业\"时触发。 Keywords: AI副业, 副业, 赚钱, 割韭菜, 骗局, 识别骗术, 副业真伪, 副业避坑.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_hustle_checker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "freedompixels",
+      "features": [
+        "AI副业真伪鉴别工具。帮你识别AI副业项目/课程/机会到底是真是假。 当用户说\"AI副业靠谱吗\"、\"这个课值不值\"、\"AI赚钱是不是骗人的\"、\"帮我看看这个副业\"时触发。 Keywords:."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-hustle-checker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/220853702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-hustle-checker",
+      "url": "https://clawhub.ai/skills/ai-hustle-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-hustle-checker",
+    "url": "https://clawhub.ai/skills/ai-hustle-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-hustle-checker-2c30a2081fc353c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-hustle-checker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-hustle-checker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:473290eccaccee1ededf1d82ab6f22d2c1fda11caa91c991d7774d4f6e085ce1",
+      "artifactSizeBytes": 2122
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T22:44:32.665Z"
+}

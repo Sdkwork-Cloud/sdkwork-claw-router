@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aetna@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aetna",
+  "skill": {
+    "id": 54128,
+    "skillKey": "clawhub-aetna",
+    "name": "Aetna"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aetna",
+    "url": "https://clawhub.ai/skills/aetna",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aetna-20cd0cd5561b7df5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Aetna is a leading US health insurer offering group, individual, Medicare, and Medicaid plans, integrated with CVS Health’s pharmacy and care services."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 119,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777280712265,
+      "changelog": "- 首个版本发布，详细梳理了 Aetna 从建立到整合进 CVS Health 的发展历程。\n- 覆盖关键历史时间线、商业模式与最新市场挑战。\n- 分析 Aetna 的业务护城河和垂直整合优势。\n- 提供最新关键数据、行业地位以及有趣的品牌故事。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:97bc93d9fc6cb8e0b9774007ce9b1b82df1098c7f0d6af89e0b7b6cda9c24230"
+}

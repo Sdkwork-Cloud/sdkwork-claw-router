@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ccapi@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ccapi",
+  "skill": {
+    "id": 42325,
+    "skillKey": "clawhub-ccapi",
+    "name": "O n e A P I . A l w a y s o n . Aggregate multiple AI providers under the hood. Smart routing auto-switches on failure. You cal."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ccapi",
+    "url": "https://clawhub.ai/skills/ccapi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ccapi-09e613e5505bde71.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use CCAPI unified AI API gateway to access 60+ models (GPT-5.2, Claude, Gemini, DeepSeek, Sora 2, Kling 3.0, Seedance 2.0, Suno, etc.) across text, image, vi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "littleblackone",
+      "userId": "publishers:littleblackone",
+      "displayName": "Zane",
+      "image": "https://avatars.githubusercontent.com/u/81791778?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 463,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772630224193,
+      "changelog": "- Initial release of ccapi-api (v1.0.0) providing unified access to 60+ AI models (text, image, video, audio) through an OpenAI-compatible API gateway.\n- Supports major models including GPT-5.2, Claude, Gemini, DeepSeek, Sora 2, Kling 3.0, Seedance 2.0, Suno, and more, via a single endpoint.\n- Seamless integration with OpenAI Python/Node.js SDKs by simply changing the base_url.\n- Offers standardized endpoints for text, image, video, audio/music generation, model discovery, and streaming.\n- Transparent USD billing system with tiered pricing and pay-per-use.\n- Comprehensive error handling and robust documentation provided.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:05cdfb932a6a6ce3eb5f02c989ff059153b39e47bffbe3c0d44d52ad9268917a"
+}

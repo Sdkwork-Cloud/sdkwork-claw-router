@@ -1,5 +1,7 @@
 export type PlaygroundMedia = string | { url?: string; thumb?: string };
 
+export type PlaygroundModelBucket = 'llms' | 'images' | 'videos' | 'audios' | 'music' | 'sfx';
+
 export interface PlaygroundHistoryItem {
   id: string;
   date: string;
@@ -17,19 +19,52 @@ export interface PlaygroundHistoryItem {
 
 export type PlaygroundPreviewSetter = (item: PlaygroundHistoryItem) => void;
 
-export interface PlaygroundModelOption {
+export interface PlaygroundModelVendor {
+  code: string;
   name: string;
+}
+
+export interface PlaygroundModelOption {
+  id: string;
+  catalogKey: string;
+  model: string;
+  name: string;
+  displayName: string;
   desc: string;
+  description?: string;
   ver: string;
+  versionLabel: string;
+  vendorCode: string;
+  vendorName: string;
+  modalities: string[];
+  inputModalities: string[];
+  outputModalities: string[];
+  capabilities: string[];
+  apiFormat?: string;
+  contextTokens?: number;
+  maxOutputTokens?: number;
+  supportsStreaming: boolean;
+  supportsTools: boolean;
+  supportsJsonSchema: boolean;
+}
+
+export interface PlaygroundModelGroup {
+  id: string;
+  vendor: PlaygroundModelVendor;
+  llms: PlaygroundModelOption[];
+  images: PlaygroundModelOption[];
+  videos: PlaygroundModelOption[];
+  audios: PlaygroundModelOption[];
+  music: PlaygroundModelOption[];
+  sfx: PlaygroundModelOption[];
 }
 
 export interface PlaygroundAssetViewProps {
   agentHistory: PlaygroundHistoryItem[];
   setPreviewItem: PlaygroundPreviewSetter;
-  selectedModel: string;
-  setSelectedModel: (model: string) => void;
-  activeSelectedModel: PlaygroundModelOption;
-  activeModelOptions: PlaygroundModelOption[];
+  modelGroups: PlaygroundModelGroup[];
+  selectedModelId: string;
+  setSelectedModelId: (modelId: string) => void;
   showModelMenu: boolean;
   setShowModelMenu: (value: boolean) => void;
 }

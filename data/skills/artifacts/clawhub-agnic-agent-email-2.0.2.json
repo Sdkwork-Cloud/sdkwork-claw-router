@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agnic-agent-email@2.0.2",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agnic_agent_email",
+  "skill": {
+    "id": 45161,
+    "skillKey": "clawhub-agnic-agent-email",
+    "name": "Agnic Agent Email"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agnic-agent-email",
+    "url": "https://clawhub.ai/skills/agnic-agent-email",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agnic-agent-email-ae14fbffdd362331.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send and receive email as your AI agent. Use when the user wants to check inbox, send email, reply to messages, set up an email alias, or manage agent email...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agnicpay-prog",
+      "userId": "s1777853tw7s2n47974ggs0xad84d8pq",
+      "displayName": "Agnic.AI",
+      "image": "https://avatars.githubusercontent.com/u/240652244?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.2",
+      "createdAt": 1776954758308,
+      "changelog": "v2.0.2 — Initial publication from upstream agnic-wallet-skills:\n- Full production-quality skill with proper frontmatter and input validation\n- Send and receive email as your AI agent (agent-<id>@agnic.ai alias)\n- Supports inbox, send, reply, setup, address commands\n- Headless auth via AGNIC_TOKEN supported",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c3b65e3fb762e7a135e2f7ddde391a784f41ae85d4fcf149a8526d7e7087b2dc"
+}

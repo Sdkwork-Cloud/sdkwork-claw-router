@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60704,
+  "uuid": "skill-clawhub-image-to-code",
+  "skillKey": "clawhub-image-to-code",
+  "name": "Image To Code",
+  "summary": "将图片（含文字、公式、标题）转换为指定代码格式。自动识别标题级别（title1/title2/title3），文字行转为 $word->body(\"正文=\".$F);，公式转为 $word->formula(\"\");，图片标记为 ![image]",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_to_code",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nidhov01",
+      "features": [
+        "将图片（含文字、公式、标题）转换为指定代码格式。自动识别标题级别（title1/title2/title3），文字行转为 $word->body(\"正文=\".$F);，公式转为 $word-."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-to-code@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/235751867?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-to-code",
+      "url": "https://clawhub.ai/skills/image-to-code"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-to-code",
+    "url": "https://clawhub.ai/skills/image-to-code",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-to-code-ea69e4e2c879f04d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-to-code@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-to-code-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fced6c95366a7553b2834836b502f8e8eedd8bdf80711a0a26b6bf5e9fa5c80d",
+      "artifactSizeBytes": 1949
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T22:41:41.550Z"
+}

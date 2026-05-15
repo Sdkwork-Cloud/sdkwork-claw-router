@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/browser-setup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_setup",
+  "skill": {
+    "id": 19317,
+    "skillKey": "clawhub-browser-setup",
+    "name": "Browser Setup (No-Root Linux)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-setup",
+    "url": "https://clawhub.ai/skills/browser-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-setup-81bf13e0e2db6cf7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install and configure headless Chrome for OpenClaw browser tool in environments without root/sudo access (cloud containers, VPS, sandboxed hosts). Use when:..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huangdawei",
+      "userId": "publishers:huangdawei",
+      "displayName": "huangdawei",
+      "image": "https://avatars.githubusercontent.com/u/520542?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 412,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772724157298,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3730bea3afeefb631896322f378b082b9d3ec76d6ceb90aae64ec15649828c1f"
+}

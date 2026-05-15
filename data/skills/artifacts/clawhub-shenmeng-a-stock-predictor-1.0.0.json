@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shenmeng-a-stock-predictor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shenmeng_a_stock_predictor",
+  "skill": {
+    "id": 73106,
+    "skillKey": "clawhub-shenmeng-a-stock-predictor",
+    "name": "A股股票预测助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shenmeng-a-stock-predictor",
+    "url": "https://clawhub.ai/skills/shenmeng-a-stock-predictor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shenmeng-a-stock-predictor-1f9b9cb11efaf529.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于实时价格和技术指标，智能预测A股股票明日走势并生成详细分析报告与可视化图表供参考。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shenmeng",
+      "userId": "s176scxxt9cxw1s0gqyexga8hd83qc4r",
+      "displayName": "shenmeng",
+      "image": "https://avatars.githubusercontent.com/u/6897076?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774965723314,
+      "changelog": "A股股票预测助手 v1.0.0 – 初始发布\n\n- 支持A股实时行情查询与走势预测\n- 自动计算多项技术指标（KDJ、RSI、MACD、MA、BOLL、CCI等）\n- 基于技术分析，生成明日预测和概率提示\n- 输出可视化走势图及技术指标图表\n- 明确风险提示，预测仅供参考\n- 支持多种股票代码格式，覆盖沪深北三市",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:82b9834238eb2327c608f14027eccd5f0b898a7f78c8bf18d0c415bc62007e40"
+}

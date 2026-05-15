@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-finance-advisor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_finance_advisor",
+  "skill": {
+    "id": 43918,
+    "skillKey": "clawhub-ai-finance-advisor",
+    "name": "AI Finance Advisor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-finance-advisor",
+    "url": "https://clawhub.ai/skills/ai-finance-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-finance-advisor-5b0c79b3b5ba4f26.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provide your financial details to get a personalized wealth plan with best savings rates, hidden fee detection, optimized debt payoff, investing roadmap, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nicemaths123",
+      "userId": "s1712r4n6m9xg8vc5g0ta16m7x83mfjv",
+      "displayName": "nicemaths123",
+      "image": "https://avatars.githubusercontent.com/u/244252350?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775075253532,
+      "changelog": "v1.0.0 — Initial Release\n\n- Finds best savings rates, investment platforms, and credit card offers in real-time for maximum returns and lowest fees.\n- Scans for hidden subscription costs, unnecessary fees, and potential savings based on your financial data.\n- Generates a complete, personalized wealth plan: debt payoff strategy, emergency fund guidance, investing roadmap, and 10-year wealth projection.\n- Produces a shareable personal finance summary video via InVideo AI.\n- Integrates Apify for real-time financial product scraping and Claude AI for customized planning.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b95049c4e3687c28f5500e8750dc1de836caec292c76f6d0ebafe34e4c7906b1"
+}

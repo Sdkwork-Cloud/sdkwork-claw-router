@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16450,
+  "uuid": "skill-clawhub-wordpress-wp-cli-admin",
+  "skillKey": "clawhub-wordpress-wp-cli-admin",
+  "name": "WordPress WP-CLI Admin",
+  "summary": "Operate WordPress installs through WP-CLI for inspection, core maintenance, plugin and theme management, users, options, content, media, cron, database tasks...",
+  "version": "0.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wordpress_wp_cli_admin",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Matthew Murphy",
+      "features": [
+        "Operate WordPress installs through WP-CLI for inspection, core maintenance, plugin and theme ma."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wordpress-wp-cli-admin@0.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/110652790?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wordpress-wp-cli-admin",
+      "url": "https://clawhub.ai/skills/wordpress-wp-cli-admin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wordpress-wp-cli-admin",
+    "url": "https://clawhub.ai/skills/wordpress-wp-cli-admin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wordpress-wp-cli-admin-7a17c12a3cc7efe0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wordpress-wp-cli-admin@0.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wordpress-wp-cli-admin-0.5.0.json",
+      "version": "0.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cedfdb440f59a5f852f98e691b8b0c54195514f1d59efe0c87428f661f5b948b",
+      "artifactSizeBytes": 2123
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T20:52:34.617Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54821,
+  "uuid": "skill-clawhub-harness-factory",
+  "skillKey": "clawhub-harness-factory",
+  "name": "Harness Factory — AI Engineering Team",
+  "summary": "Use when building features, fixing complex bugs, or doing major refactoring. Transforms your agent into a structured engineering team: Plan → Build (via ACP)...",
+  "version": "0.7.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.harness_factory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "guixiang123124",
+      "features": [
+        "Use when building features, fixing complex bugs, or doing major refactoring",
+        "Transforms your agent into a structured engineering team: Plan → Build (via ACP)..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/harness-factory@0.7.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/230053968?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "harness-factory",
+      "url": "https://clawhub.ai/skills/harness-factory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "harness-factory",
+    "url": "https://clawhub.ai/skills/harness-factory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/harness-factory-91e42843f09bb22e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/harness-factory@0.7.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-harness-factory-0.7.0.json",
+      "version": "0.7.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4bf94674489ed7af94384e586d390ec8812ec87694e156ecaa5a5431921d62e7",
+      "artifactSizeBytes": 2052
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T00:25:33.883Z"
+}

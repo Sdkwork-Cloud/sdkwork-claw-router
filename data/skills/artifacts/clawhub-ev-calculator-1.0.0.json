@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ev-calculator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ev_calculator",
+  "skill": {
+    "id": 60503,
+    "skillKey": "clawhub-ev-calculator",
+    "name": "Ev Calculator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ev-calculator",
+    "url": "https://clawhub.ai/skills/ev-calculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ev-calculator-ff231f6cdd79fbdf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "🎯 EV 期望值计算器 - 交易决策必备工具"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jinboh68-prog",
+      "userId": "publishers:jinboh68-prog",
+      "displayName": "jinboh68-prog",
+      "image": "https://avatars.githubusercontent.com/u/264225243?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 252,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773955202984,
+      "changelog": "ev-calculator 1.0.0\n\n- 首发上线，提供EV（期望值）计算功能，支持基础交易和Polymarket场景\n- 覆盖基础EV、Polymarket概率、赔率转换、套利边界检测四大功能\n- 提供清晰的判断标准和实用案例，含快速查询表\n- 代码开源，支持命令行运行和JSON输出\n- x402 支付，USDC 付费能力集成",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:813b7ad7308174e08d3182dfd1ed4c1700242b1722683b1db7f90615aed8cd64"
+}

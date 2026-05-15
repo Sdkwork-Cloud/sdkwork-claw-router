@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-maker-linkedin@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_maker_linkedin",
+  "skill": {
+    "id": 48483,
+    "skillKey": "clawhub-video-maker-linkedin",
+    "name": "Video Maker Linkedin"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-maker-linkedin",
+    "url": "https://clawhub.ai/skills/video-maker-linkedin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-maker-linkedin-15e9d6bab289772f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 60-second screen recording or three headshot photos into 1080p LinkedIn-ready videos just by typing what you need. Whether it's creating professional..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vynbosserman65",
+      "userId": "s175xbynxxje7z8y8jbn28x5vx84dckp",
+      "displayName": "vynbosserman65",
+      "image": "https://avatars.githubusercontent.com/u/208823770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 100,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777828693660,
+      "changelog": "Initial release of Video Maker for LinkedIn.\n\n- Instantly turn a 60-second screen recording or three headshot photos into a LinkedIn-optimized 1080p MP4 video by describing your needs.\n- Simple workflow: upload files or images, enter instructions, and download the finished video in under a minute.\n- Fully cloud-rendered with no complex timeline editing or export settings required.\n- Automatic session and token management for anonymous and registered users.\n- Supports quick access to upload, export, credits, and status operations via smart intent detection.\n- Compatible with common video formats (mp4, mov, avi, webm) and includes robust error handling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aa2d62631bfb9cc65fd618d7f3a955781c063a88a1bedc676dd1041b529901d3"
+}

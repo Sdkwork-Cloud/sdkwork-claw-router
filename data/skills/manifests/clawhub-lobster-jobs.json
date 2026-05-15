@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10318,
+  "uuid": "skill-clawhub-lobster-jobs",
+  "skillKey": "clawhub-lobster-jobs",
+  "name": "Lobster Workflows",
+  "summary": "Transform OpenClaw cron jobs into Lobster workflows. Analyze, inspect, and validate job migrations. Use when converting automations to deterministic, approval-gated workflows with resume capabilities.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobster_jobs",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kesslerio",
+      "features": [
+        "Transform OpenClaw cron jobs into Lobster workflows",
+        "Analyze, inspect, and validate job migrations",
+        "Use when converting automations to deterministic, approval-gated workflows with resume capabili."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lobster-jobs@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2647990?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lobster-jobs",
+      "url": "https://clawhub.ai/skills/lobster-jobs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobster-jobs",
+    "url": "https://clawhub.ai/skills/lobster-jobs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobster-jobs-189aab58710a9aab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lobster-jobs@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lobster-jobs-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6687da837b4e406fdc038ee235520b5dec314f5d1c007b61ac3133a28c0c8152",
+      "artifactSizeBytes": 1911
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T05:43:10.437Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63052,
+  "uuid": "skill-clawhub-shenmeng-social-sentiment-monitor",
+  "skillKey": "clawhub-shenmeng-social-sentiment-monitor",
+  "name": "Social Sentiment Monitor 社媒舆情监控",
+  "summary": "社交媒体舆情监控助手 - 实时监控Twitter、Reddit等平台的加密货币讨论、情绪分析和热点追踪。 当用户需要以下功能时触发此skill： (1) 监控特定代币或项目的社交媒体讨论热度 (2) 分析社区情绪变化（看涨/看跌/恐慌/FOMO） (3) 追踪KOL和大V的发言动向 (4) 发现 viral 内容...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shenmeng_social_sentiment_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shenmeng",
+      "features": [
+        "社交媒体舆情监控助手",
+        "实时监控Twitter、Reddit等平台的加密货币讨论、情绪分析和热点追踪。 当用户需要以下功能时触发此skill： (1) 监控特定代币或项目的社交媒体讨论热度 (2) 分析社区情绪变化."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shenmeng-social-sentiment-monitor@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6897076?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shenmeng-social-sentiment-monitor",
+      "url": "https://clawhub.ai/skills/shenmeng-social-sentiment-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shenmeng-social-sentiment-monitor",
+    "url": "https://clawhub.ai/skills/shenmeng-social-sentiment-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shenmeng-social-sentiment-monitor-1efc3b2ac8ad9b22.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shenmeng-social-sentiment-monitor@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-shenmeng-social-sentiment-monitor-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6c935a2d1b8466fdd2468045f8815dc114291a8ca1e4dc77149df760f9ca36f4",
+      "artifactSizeBytes": 2463
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T10:26:42.451Z"
+}

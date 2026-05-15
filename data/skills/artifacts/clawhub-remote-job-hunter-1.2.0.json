@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/remote-job-hunter@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.remote_job_hunter",
+  "skill": {
+    "id": 19695,
+    "skillKey": "clawhub-remote-job-hunter",
+    "name": "Remote Job Hunter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "remote-job-hunter",
+    "url": "https://clawhub.ai/skills/remote-job-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/remote-job-hunter-347bcf2b83c272c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically find remote jobs every day and match them to your resume. Searches 5 platforms daily, scores each job against your resume using NLP, identifies..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rajkiranvs",
+      "userId": "publishers:rajkiranvs",
+      "displayName": "Rajkiran Veldur",
+      "image": "https://avatars.githubusercontent.com/u/110711314?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 587,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1772766873114,
+      "changelog": "feat: JD-aware resume tailoring, supports .docx and .pdf, no fabrication",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:40e1ac676bf7632015c21e47e67177aa6a61bdae28ab55448bdb36fb7e5b692e"
+}

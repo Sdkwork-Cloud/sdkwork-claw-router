@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72939,
+  "uuid": "skill-clawhub-grading-pro",
+  "skillKey": "clawhub-grading-pro",
+  "name": "主观题评分标准(初高中语英作文+语文阅读理解)",
+  "summary": "文科主观题智能批改评分系统 — 支持多学科、可进化评分标准。触发词：批改作业、打分、评分标准、作业批改报告。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grading_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MakiWinster72",
+      "features": [
+        "文科主观题智能批改评分系统 — 支持多学科、可进化评分标准。触发词：批改作业、打分、评分标准、作业批改报告。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/grading-pro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201584298?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "grading-pro",
+      "url": "https://clawhub.ai/skills/grading-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grading-pro",
+    "url": "https://clawhub.ai/skills/grading-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grading-pro-e5ee9e3571cfac75.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/grading-pro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-grading-pro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:26e43cab88d70a7e7607a116f47cd77aa14493b4c5eb2722c9f3d0f79d2d8ef3",
+      "artifactSizeBytes": 2044
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T09:00:56.028Z"
+}

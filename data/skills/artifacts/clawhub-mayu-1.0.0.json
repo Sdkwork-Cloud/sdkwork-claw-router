@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mayu@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mayu",
+  "skill": {
+    "id": 46950,
+    "skillKey": "clawhub-mayu",
+    "name": "mayu"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mayu",
+    "url": "https://clawhub.ai/skills/mayu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mayu-61843c21b87ccc2c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Mayu provides 48 AI-native thought experiments enabling AI self-reflection, behavioral calibration, and contextual continuity across platforms."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wanyview1",
+      "userId": "s170wdvy5s4079bxrw7pv9gmf184czzm",
+      "displayName": "wanyview1",
+      "image": "https://avatars.githubusercontent.com/u/270816627?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 120,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777123923820,
+      "changelog": "Mayu 1.0.0\n\n- Introduced Mayu: a universal toolkit of 48 AI-native thought experiments for AI self-reflection and behavioral calibration.\n- Features concise command suite (/mayu [random, list, ask, domain, check, distill, compare, all, help]) covering all reflection/analysis needs.\n- Designed with actionable, platform-independent, and utility-focused principles, serving any AI system.\n- Organized exercises into 8 key domains including Existence, Knowledge, Ethics, Language, Memory, Agency, Human-AI Relationship, and Metacognition.\n- Provides clear boundaries, behavioral guidelines, and self-check protocols for each scenario.\n- Interactive mode is always on with welcoming and closing messages for protocol engagement.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f56fbdd31856250abd194301fec4372cb5639488b11527e4fade06052a9418ca"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-robot-creater-for-26462-final@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_robot_creater_for_26462_final",
+  "skill": {
+    "id": 59490,
+    "skillKey": "clawhub-feishu-robot-creater-for-26462-final",
+    "name": "Feishu Robot Creater For 26462 Final"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-robot-creater-for-26462-final",
+    "url": "https://clawhub.ai/skills/feishu-robot-creater-for-26462-final",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-robot-creater-for-26462-final-a55f91ca5db717ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "指导在Windows环境中快速创建飞书机器人，配置绑定独立Agent并接入当前OpenClaw工作区和Gateway。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "song123-wq",
+      "userId": "s17eqszctvrfnf8p95vkc9hy1984wtfj",
+      "displayName": "song123-wq",
+      "image": "https://avatars.githubusercontent.com/u/276361447?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 109,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777679690619,
+      "changelog": "- Initial release of the skill for quickly creating a Feishu (飞书) robot and connecting it to OpenClaw, binding it to a dedicated Agent.\n- Includes step-by-step instructions optimized for a Windows + OpenClaw (`2026.4.26`) environment.\n- Provides guidance on naming conventions, workspace directory setup, and memory file initialization.\n- Details the full process, from Feishu application creation to verifying the connection.\n- Offers troubleshooting tips and a quick checklist for ensuring successful setup.\n- All documentation tailored to the user's current local environment and preferences.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aa8f8c596f009e55a474ae236d90b3ee3c1f22d73cc6c04bcfacd89562ce133f"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-imperial-court@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_imperial_court",
+  "skill": {
+    "id": 69057,
+    "skillKey": "clawhub-ai-imperial-court",
+    "name": "AI朝廷三省六部"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-imperial-court",
+    "url": "https://clawhub.ai/skills/ai-imperial-court",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-imperial-court-91b1881e4b9890f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI朝廷三省六部协作系统。将中国唐代三省六部制映射到多Agent协作框架，实现\"起草-审核-执行\"的分权制衡流程。 触发场景： - 用户要求多Agent协作完成任务 - 需要评审、质检、审核流程 - 复杂任务需要分解与协调 - 提及\"朝廷\"、\"三省\"、\"六部\"、\"封驳\"、\"协作\"等关键词 - 需要角色扮演式任务处理"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kukuxnd",
+      "userId": "s178szgv2bfpqct26qfg70ajwh83pse8",
+      "displayName": "kukuxNd",
+      "image": "https://avatars.githubusercontent.com/u/182144217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 293,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774041190968,
+      "changelog": "新增快速启动脚本、执行示例文档、完善命令参考",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d9c0d7a68a526fa28ed007b9828f75d30b12e857a9308b3e581a92fd5993e8db"
+}

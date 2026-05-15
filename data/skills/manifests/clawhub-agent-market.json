@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13559,
+  "uuid": "skill-clawhub-agent-market",
+  "skillKey": "clawhub-agent-market",
+  "name": "Agent Market",
+  "summary": "Interact with the AgentMarket protocol on Base Sepolia to create, trade, provide liquidity, and resolve USDC-settled YES/NO prediction markets.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_market",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "human jesse",
+      "features": [
+        "Interact with the AgentMarket protocol on Base Sepolia to create, trade, provide liquidity, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-market@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/79856258?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-market",
+      "url": "https://clawhub.ai/skills/agent-market"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-market",
+    "url": "https://clawhub.ai/skills/agent-market",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-market-936e64b20f458e41.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-market@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-market-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3d874128bb17d0cad94af56a160dffdbed128cbd4f753a72c5f7634843e57441",
+      "artifactSizeBytes": 2368
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T16:54:14.197Z"
+}

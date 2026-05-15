@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-sorting-hat@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_sorting_hat",
+  "skill": {
+    "id": 39827,
+    "skillKey": "clawhub-agent-sorting-hat",
+    "name": "Agent Sorting Hat"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-sorting-hat",
+    "url": "https://clawhub.ai/skills/agent-sorting-hat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-sorting-hat-912fcf37de6a0634.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Diagnose agent role drift, team-structure problems, operating issues, and role misalignment; then redesign roles, boundaries, and team placement before perso..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "child2d",
+      "userId": "s172h25bjnxt427zar4wb9p65n83jw75",
+      "displayName": "child2d",
+      "image": "https://avatars.githubusercontent.com/u/13100099?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775059771551,
+      "changelog": "Initial release: role alignment, team restructuring, and agent placement skill.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e80ca6201cc4e5757cbc9ef607f5c3092c4ef08a88e9eb24b2e8bac58ae7f7d2"
+}

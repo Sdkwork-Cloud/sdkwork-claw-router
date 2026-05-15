@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72476,
+  "uuid": "skill-clawhub-medical-qa",
+  "skillKey": "clawhub-medical-qa",
+  "name": "medical-qa",
+  "summary": "医疗健康知识问答技能。用于帮助用户理解症状含义、解读检查报告结果、了解用药常识、提供何时就医的专业建议。当用户询问健康症状、药品说明、检查报告解读、就医建议等问题时触发此技能。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.medical_qa",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yishuihan132",
+      "features": [
+        "医疗健康知识问答技能。用于帮助用户理解症状含义、解读检查报告结果、了解用药常识、提供何时就医的专业建议。当用户询问健康症状、药品说明、检查报告解读、就医建议等问题时触发此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/medical-qa@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59037227?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "medical-qa",
+      "url": "https://clawhub.ai/skills/medical-qa"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "medical-qa",
+    "url": "https://clawhub.ai/skills/medical-qa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/medical-qa-3779725b56e2f676.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/medical-qa@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-medical-qa-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0f4482b11dc9c3adf57a14de283c80c844b0f35a2d92869bdcdd0f5999414335",
+      "artifactSizeBytes": 2113
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T15:42:57.121Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32418,
+  "uuid": "skill-clawhub-gosquared",
+  "skillKey": "clawhub-gosquared",
+  "name": "Gosquared",
+  "summary": "GoSquared integration. Manage Persons, Organizations, Notes. Use when the user wants to interact with GoSquared data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gosquared",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "GoSquared integration",
+        "Manage Persons, Organizations, Notes",
+        "Use when the user wants to interact with GoSquared data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gosquared@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gosquared",
+      "url": "https://clawhub.ai/skills/gosquared"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gosquared",
+    "url": "https://clawhub.ai/skills/gosquared",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gosquared-236cc40ef5d6eb55.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gosquared@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-gosquared-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f46405273f1d980ea77333f3463c37e548208d5a69969acd62b803805e920420",
+      "artifactSizeBytes": 1831
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:53:53.279Z"
+}

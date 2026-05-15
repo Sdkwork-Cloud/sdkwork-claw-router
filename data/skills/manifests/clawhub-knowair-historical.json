@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57064,
+  "uuid": "skill-clawhub-knowair-historical",
+  "skillKey": "clawhub-knowair-historical",
+  "name": "KnowAir Historical 明气历史天气",
+  "summary": "Get historical weather data up to 72 hours back via the Caiyun Weather API. Returns past temperature, weather conditions, precipitation, wind, humidity, appa...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knowair_historical",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shuo Wang",
+      "features": [
+        "Get historical weather data up to 72 hours back via the Caiyun Weather API",
+        "Returns past temperature, weather conditions, precipitation, wind, humidity, appa..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/knowair-historical@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16516703?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "knowair-historical",
+      "url": "https://clawhub.ai/skills/knowair-historical"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knowair-historical",
+    "url": "https://clawhub.ai/skills/knowair-historical",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knowair-historical-78909b2abb8163eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/knowair-historical@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-knowair-historical-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6770b3938306dee1ccfa84d151d084074e39befece4d41e3da41f21853fd7567",
+      "artifactSizeBytes": 2388
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T13:58:49.122Z"
+}

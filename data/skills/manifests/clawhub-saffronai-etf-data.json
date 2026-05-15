@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35518,
+  "uuid": "skill-clawhub-saffronai-etf-data",
+  "skillKey": "clawhub-saffronai-etf-data",
+  "name": "SaffronAI ETF Data",
+  "summary": "Fetch Indian ETF tracker data (symbol, lastPrice, iNAV, timestamps) from SaffronAI (saffronai.in) and return it as JSON or filtered rows. Use when the user a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.saffronai_etf_data",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "subscriptionmanager26-png",
+      "features": [
+        "Fetch Indian ETF tracker data (symbol, lastPrice, iNAV, timestamps) from SaffronAI (saffronai.i.",
+        "Use when the user a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/saffronai-etf-data@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261791254?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "saffronai-etf-data",
+      "url": "https://clawhub.ai/skills/saffronai-etf-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "saffronai-etf-data",
+    "url": "https://clawhub.ai/skills/saffronai-etf-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/saffronai-etf-data-8cab4a99691a50d8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/saffronai-etf-data@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-saffronai-etf-data-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ece810ca58548414d2a7d74eed9afdb7b4b90fa3e9a5243e765edf65ec3dce00",
+      "artifactSizeBytes": 1948
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T17:23:11.876Z"
+}

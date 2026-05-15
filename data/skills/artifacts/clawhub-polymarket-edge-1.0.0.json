@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polymarket-edge@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_edge",
+  "skill": {
+    "id": 22589,
+    "skillKey": "clawhub-polymarket-edge",
+    "name": "Polymarket Edge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-edge",
+    "url": "https://clawhub.ai/skills/polymarket-edge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-edge-6ceb8bba4ad769f9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trade and analyse Polymarket prediction markets with a 5-minute BTC EMA crossover strategy. Browse markets, read order books, run signals, manage a live auto..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "icloud-git",
+      "userId": "publishers:icloud-git",
+      "displayName": "CatDev",
+      "image": "https://avatars.githubusercontent.com/u/182624228?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 467,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772564118018,
+      "changelog": "Initial release of Polymarket Edge — trade and analyze Polymarket prediction markets with automated EMA crossover strategy and SkillPay billing.\n\n- Browse and search Polymarket markets, including order books, prices, and OHLCV candles.\n- Run automated 5-min EMA(5/20) crossover trading signals and view strategy recommendations (BUY_YES / BUY_NO / HOLD).\n- Start, stop, and monitor a live BTC auto-trader (optional live trading with EVM wallet).\n- Manage and view portfolio positions and USD values for any wallet.\n- SkillPay.me billing: every API call billed per request (0.001 USDT / call), with on-demand top-ups and token management.\n- Simple FastAPI server with interactive docs at `/docs`.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9de411e9e5876d4ea83217fe0c509a7f12cd9f0d1e4a78f038bfd2bb27670726"
+}

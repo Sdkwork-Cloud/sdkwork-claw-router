@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14663,
+  "uuid": "skill-clawhub-expense-tracker",
+  "skillKey": "clawhub-expense-tracker",
+  "name": "Expense Tracker",
+  "summary": "Track daily expenses in structured markdown files organized by month. Use when the user wants to log spending, view expense summaries, analyze spending patte...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.expense_tracker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Loc Vo",
+      "features": [
+        "Track daily expenses in structured markdown files organized by month",
+        "Use when the user wants to log spending, view expense summaries, analyze spending patte..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/expense-tracker@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10195964?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "expense-tracker",
+      "url": "https://clawhub.ai/skills/expense-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "expense-tracker",
+    "url": "https://clawhub.ai/skills/expense-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/expense-tracker-0791a2bf71ede9b5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/expense-tracker@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-expense-tracker-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6a7ba266e915bffd8b4d9be29515cbc4c9981d92f30f18a56dc04b9303c3d099",
+      "artifactSizeBytes": 1943
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T15:08:29.254Z"
+}

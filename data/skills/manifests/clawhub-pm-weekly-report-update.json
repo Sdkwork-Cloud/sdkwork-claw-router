@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70645,
+  "uuid": "skill-clawhub-pm-weekly-report-update",
+  "skillKey": "clawhub-pm-weekly-report-update",
+  "name": "PM周报数据同步",
+  "summary": "将项目经理提交的原始 Excel 周报数据同步到乐荐飞书表格。当项目经理发送周报 Excel 文件、要求更新周收入数据、核对周报数据时激活。",
+  "version": "1.1.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pm_weekly_report_update",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "沈荣明",
+      "features": [
+        "将项目经理提交的原始 Excel 周报数据同步到乐荐飞书表格。当项目经理发送周报 Excel 文件、要求更新周收入数据、核对周报数据时激活。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pm-weekly-report-update@1.1.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2356195?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pm-weekly-report-update",
+      "url": "https://clawhub.ai/skills/pm-weekly-report-update"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pm-weekly-report-update",
+    "url": "https://clawhub.ai/skills/pm-weekly-report-update",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pm-weekly-report-update-4ea563bfc042de89.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pm-weekly-report-update@1.1.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-pm-weekly-report-update-1.1.9.json",
+      "version": "1.1.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c2a138aab60add98acf46f7cdb55bb73a615440da874cda7e67f3c6a20a94749",
+      "artifactSizeBytes": 2091
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T08:57:19.087Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57980,
+  "uuid": "skill-clawhub-future-window-access-param-convert",
+  "skillKey": "clawhub-future-window-access-param-convert",
+  "name": "未来之窗智能门禁参数转换",
+  "summary": "Convert template strings with @param@ placeholders into actual access control parameter values for future window door systems.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.future_window_access_param_convert",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "未来之窗软件服务中心",
+      "features": [
+        "Convert template strings with @param@ placeholders into actual access control parameter values."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/future-window-access-param-convert@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20854817?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "future-window-access-param-convert",
+      "url": "https://clawhub.ai/skills/future-window-access-param-convert"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "future-window-access-param-convert",
+    "url": "https://clawhub.ai/skills/future-window-access-param-convert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/future-window-access-param-convert-d4c23afc121b1939.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/future-window-access-param-convert@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-future-window-access-param-convert-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c30a402a3e32cb59d89e679a1cdd8564f4cdf48dae4b6e6f1ff30c85037ebcf0",
+      "artifactSizeBytes": 2008
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T17:51:24.056Z"
+}

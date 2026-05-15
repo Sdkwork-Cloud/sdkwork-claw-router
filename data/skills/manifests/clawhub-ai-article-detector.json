@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52065,
+  "uuid": "skill-clawhub-ai-article-detector",
+  "skillKey": "clawhub-ai-article-detector",
+  "name": "ai-article-detector",
+  "summary": "AI Article Detector - Analyze article links and score AI writing probability (0-100). 100 means 100% likely AI-generated.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_article_detector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Evan",
+      "features": [
+        "AI Article Detector",
+        "Analyze article links and score AI writing probability (0-100)",
+        "100 means 100% likely AI-generated."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-article-detector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/96123524?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-article-detector",
+      "url": "https://clawhub.ai/skills/ai-article-detector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-article-detector",
+    "url": "https://clawhub.ai/skills/ai-article-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-article-detector-f1478083563bf57a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-article-detector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-article-detector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dd2c3fbcb36b6cd4d3c29d5cd1c3b16dd87d8705c8fb9844930f50a6cc97db90",
+      "artifactSizeBytes": 2275
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T09:37:53.943Z"
+}

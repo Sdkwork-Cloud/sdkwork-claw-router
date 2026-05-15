@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68946,
+  "uuid": "skill-clawhub-bbduck",
+  "skillKey": "clawhub-bbduck",
+  "name": "BBDuck",
+  "summary": "优先做视觉无损压缩的本地图片压缩 skill：压缩单张图片、读取流式压缩日志，并在需要时打包下载结果 ZIP。",
+  "version": "0.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bbduck",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhaoolee",
+      "features": [
+        "优先做视觉无损压缩的本地图片压缩 skill：压缩单张图片、读取流式压缩日志，并在需要时打包下载结果 ZIP。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bbduck@0.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15868458?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bbduck",
+      "url": "https://clawhub.ai/skills/bbduck"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bbduck",
+    "url": "https://clawhub.ai/skills/bbduck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bbduck-b6b428b94b743f6d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bbduck@0.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-bbduck-0.2.2.json",
+      "version": "0.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ebdc39bc6f5299e4f8d2d22648597e7ec5c8d013782f49d9544377eb876d8f9e",
+      "artifactSizeBytes": 1883
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T13:06:51.614Z"
+}

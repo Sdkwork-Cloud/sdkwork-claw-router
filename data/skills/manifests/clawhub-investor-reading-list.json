@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73102,
+  "uuid": "skill-clawhub-investor-reading-list",
+  "skillKey": "clawhub-investor-reading-list",
+  "name": "投资者认知基石书单",
+  "summary": "整合10本投资经典，系统讲解不确定性与价值根源，助力构建全面且科学的投资认知体系。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.investor_reading_list",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SMS",
+      "features": [
+        "整合10本投资经典，系统讲解不确定性与价值根源，助力构建全面且科学的投资认知体系。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/investor-reading-list@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33817483?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "investor-reading-list",
+      "url": "https://clawhub.ai/skills/investor-reading-list"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "investor-reading-list",
+    "url": "https://clawhub.ai/skills/investor-reading-list",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/investor-reading-list-9811119d1ede0214.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/investor-reading-list@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-investor-reading-list-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:610f37552f52e8e1a4639978fc5362a3c44031bc6cde98338095fbdbba3629c7",
+      "artifactSizeBytes": 2334
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T07:22:59.491Z"
+}

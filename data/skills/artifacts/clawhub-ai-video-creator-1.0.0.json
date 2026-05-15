@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-creator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_creator",
+  "skill": {
+    "id": 67083,
+    "skillKey": "clawhub-ai-video-creator",
+    "name": "AI Video Creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-creator",
+    "url": "https://clawhub.ai/skills/ai-video-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-creator-d036d34cdbc871d2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI 治愈氛围视频自动生产流水线。选题 → 即梦AI生成多段视频 → 拼接配乐 → 发布小红书。每天一条命令，自动产出治愈系短视频内容。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jameswangchen",
+      "userId": "s17b1hnmpbvkk5skxb85z1jaad83hc23",
+      "displayName": "jameswang",
+      "image": "https://avatars.githubusercontent.com/u/21259595?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 350,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773936806068,
+      "changelog": "- Initial release of ai-video-creator: an automated pipeline for generating healing atmosphere videos with AI.\n- End-to-end workflow: topic selection → prompt creation → multi-clip video assembly with BGM → Xiaohongshu publishing.\n- Persona-based content generation including overlay text, video prompts (4 clips/scene), and publication metadata.\n- Supports automated publishing to Xiaohongshu with generated titles, captions, and hashtags.\n- Output is organized, with full metadata logging and summary display after each run.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:720470ad97f9721ee5eb4963739f7bb070db11a556d4bd3020c26f13baa7e4fa"
+}

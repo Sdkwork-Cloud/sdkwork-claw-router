@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/translate-book@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.translate_book",
+  "skill": {
+    "id": 56125,
+    "skillKey": "clawhub-translate-book",
+    "name": "Translate Book"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "translate-book",
+    "url": "https://clawhub.ai/skills/translate-book",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/translate-book-16cf31d47d48ff7d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Translate books (PDF/DOCX/EPUB) into any language using parallel sub-agents. Converts input -> Markdown chunks -> translated chunks -> HTML/DOCX/EPUB/PDF."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deusyu",
+      "userId": "s179bbz2mxt1jgta0f5jsdqnjs85qrsd",
+      "displayName": "Rainman",
+      "image": "https://avatars.githubusercontent.com/u/42929363?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 355,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777348039435,
+      "changelog": "Initial release with major new glossary and per-chunk meta support for consistency and collaboration:\n\n- Added glossary extraction (with chunk sampling and proper noun detection), v2 schema, and frequency counting for consistent term translation; terms are injected per chunk for sub-agents.\n- Sub-agents now emit detailed per-chunk `.meta.json` files (entities, alias hypotheses, conflicts, etc.) to support collaborative glossary growth and later human QA.\n- Glossary CLI supports term-table assembly (only injects relevant terms), v1-to-v2 upgrade, and enforces unique surface forms.\n- Added comprehensive tests for conversion, glossary, meta, and merger logic; improved script modularity.\n- Documentation expanded with detailed glossary, agent, and pipeline behavior; skill metadata updated with homepage link.\n- Legacy translation script removed; new modular scripts + tests added.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ee03d3db9c75a3b8e70e7102c1985fc723cf2ed0ccd03863c2cf194b11ace73e"
+}

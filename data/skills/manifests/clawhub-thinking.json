@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26007,
+  "uuid": "skill-clawhub-thinking",
+  "skillKey": "clawhub-thinking",
+  "name": "Thinking Protocol",
+  "summary": "Thinking-Claude inspired comprehensive thinking protocol with Verification Protocol and Confidence Scoring for OpenClaw agents",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.thinking",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "leezongdai",
+      "features": [
+        "Thinking-Claude inspired comprehensive thinking protocol with Verification Protocol and Confide."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/thinking@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/126442246?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "thinking",
+      "url": "https://clawhub.ai/skills/thinking"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "thinking",
+    "url": "https://clawhub.ai/skills/thinking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/thinking-6ee16429668c2d82.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/thinking@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-thinking-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6faf0c2ea8ec7e4c3bc21827258af27fabeef4db0c2056d1d624e7fd95dd4714",
+      "artifactSizeBytes": 1988
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T13:06:37.422Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24084,
+  "uuid": "skill-clawhub-lecture-notes-master",
+  "skillKey": "clawhub-lecture-notes-master",
+  "name": "lecture-notes-master",
+  "summary": "Obsidian lecture notes with recursive atomic decomposition. Generates main note (hub), atomic notes (3+ layers deep, rich structure each), and unlimited glos...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lecture_notes_master",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SchaeferAnjon",
+      "features": [
+        "Obsidian lecture notes with recursive atomic decomposition",
+        "Generates main note (hub), atomic notes (3+ layers deep, rich structure each), and unlimited gl."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lecture-notes-master@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168791945?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lecture-notes-master",
+      "url": "https://clawhub.ai/skills/lecture-notes-master"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lecture-notes-master",
+    "url": "https://clawhub.ai/skills/lecture-notes-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lecture-notes-master-188d3ed8cb3062fd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lecture-notes-master@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lecture-notes-master-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1df8d1b53a06aa11168e95dd6f11ecf387b0772d9f7f80f169c23a5578a43544",
+      "artifactSizeBytes": 2729
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T02:45:15.092Z"
+}

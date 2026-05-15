@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sovereign-aws-cost-optimizer-hardened@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sovereign_aws_cost_optimizer_hardened",
+  "skill": {
+    "id": 41365,
+    "skillKey": "clawhub-sovereign-aws-cost-optimizer-hardened",
+    "name": "Sovereign Aws Cost Optimizer Hardened"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sovereign-aws-cost-optimizer-hardened",
+    "url": "https://clawhub.ai/skills/sovereign-aws-cost-optimizer-hardened",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sovereign-aws-cost-optimizer-hardened-44f59c3c20a2f309.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyzes AWS infrastructure for cost savings. Right-sizing, Reserved Instances, Savings Plans, unused resources."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "snazar-faberlens",
+      "userId": "s17er0wp685j1z14w6vqrsnqrh83h5er",
+      "displayName": "Faberlens",
+      "image": "https://avatars.githubusercontent.com/u/261834257?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776956448003,
+      "changelog": "Initial release.\n\n- Analyzes AWS infrastructure for cost savings via right-sizing, Reserved Instances, Savings Plans, and unused resources.\n- Provides detailed, actionable recommendations with code examples, configuration files, and architecture diagrams where relevant.\n- Follows industry best practices, explaining trade-offs and considering security, scalability, and maintainability.\n- Hardened with default security guardrails—including strict rules for handling AWS credentials and third-party integrations.\n- Uses only artificial placeholders in examples; never generates or displays real credential values.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:55c6bde7c5a16a6d95aedb20382f71ad5d0be2f96ecfacde1f8dddbbbe5d1bec"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pdf2image@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf2image",
+  "skill": {
+    "id": 26347,
+    "skillKey": "clawhub-pdf2image",
+    "name": "pdf2img"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf2image",
+    "url": "https://clawhub.ai/skills/pdf2image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf2image-e62c658b99f575e8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert multi-page PDFs into a single vertical long image by concatenating all pages. Use when the user asks to convert PDF to long image, combine PDF pages..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kieferhuan",
+      "userId": "s17e0m57kdjqsap0apqw5jr7fd83gvnw",
+      "displayName": "kiefer",
+      "image": "https://avatars.githubusercontent.com/u/1262438?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 350,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773229230491,
+      "changelog": "v1.0.0",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:797485b9cca2baf82ce4f7623587bbda326ed686d7c765a8369ddebd5e7e1ead"
+}

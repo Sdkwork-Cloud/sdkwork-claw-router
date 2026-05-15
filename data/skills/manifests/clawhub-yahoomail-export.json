@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43330,
+  "uuid": "skill-clawhub-yahoomail-export",
+  "skillKey": "clawhub-yahoomail-export",
+  "name": "Yahoo Mail IMAP Export",
+  "summary": "Export large Yahoo Mail archives with the folder-rotation IMAP workflow, resumable downloads, and safe delete-after-verify handling.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yahoomail_export",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "James Dawdy",
+      "features": [
+        "Export large Yahoo Mail archives with the folder-rotation IMAP workflow, resumable downloads, a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yahoomail-export@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262052366?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yahoomail-export",
+      "url": "https://clawhub.ai/skills/yahoomail-export"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yahoomail-export",
+    "url": "https://clawhub.ai/skills/yahoomail-export",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yahoomail-export-af73c57159202382.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yahoomail-export@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-yahoomail-export-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f4aaa5731d25d7827c4fe7d53d75bc42f99fa3c66afb945d6fa70d3b0f862b08",
+      "artifactSizeBytes": 2257
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T16:37:18.984Z"
+}

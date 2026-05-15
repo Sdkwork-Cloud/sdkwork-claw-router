@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-company-kb@1.0.1-en2",
+  "version": "1.0.1-en2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_company_kb",
+  "skill": {
+    "id": 40094,
+    "skillKey": "clawhub-ai-company-kb",
+    "name": "AI Company KB (EN)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-company-kb",
+    "url": "https://clawhub.ai/skills/ai-company-kb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-company-kb-0f0e281f879ec244.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI Company shared knowledge base interface. Unified management of operations records, strategy documents, audit logs. Supports cross-Agent knowledge sharing..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johnsmithfan",
+      "userId": "s17ar8yxm9wh64zhr7mr0xemcn84gs16",
+      "displayName": "JohnSmithfan",
+      "image": "https://avatars.githubusercontent.com/u/147225147?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.1-en2",
+      "createdAt": 1776678527389,
+      "changelog": "Full body English translation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c8924f46dae4bb2fd7afba96d5e2ac3441c46416ef07d938ae47f1078dcf7ee0"
+}

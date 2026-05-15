@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/scenique-prevision@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scenique_prevision",
+  "skill": {
+    "id": 23459,
+    "skillKey": "clawhub-scenique-prevision",
+    "name": "scenique-prevision"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scenique-prevision",
+    "url": "https://clawhub.ai/skills/scenique-prevision",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scenique-prevision-f1402cb52f67ba03.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Simulates multi-agent swarms using Menos architecture to forecast decision outcomes and provide probabilistic scenario reports."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shewingong",
+      "userId": "publishers:shewingong",
+      "displayName": "shewingong",
+      "image": "https://avatars.githubusercontent.com/u/123315340?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 340,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773207459116,
+      "changelog": "- Initial release of the scenique-prevision skill.\n- Implements the \"Prevision\" layer for the Menos architecture.\n- Simulates multi-agent swarms (Skeptic, Optimist, Strategist) to forecast decision outcomes.\n- Integrates with Physical Ledger (L1) and Long-term Memory (L2) layers for context.\n- Outputs probabilistic reports to aid decision-making.\n- Requires OpenClaw gateway with subagent support.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e365b7b23a2caa9a3f50f5a75fa1ad2d7ced842c806c56189821a67b278cc0bd"
+}

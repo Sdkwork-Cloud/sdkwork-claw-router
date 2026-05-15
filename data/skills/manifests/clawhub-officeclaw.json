@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14396,
+  "uuid": "skill-clawhub-officeclaw",
+  "skillKey": "clawhub-officeclaw",
+  "name": "OfficeClaw",
+  "summary": "Connect to personal Microsoft accounts via Microsoft Graph API to manage email, calendar events, and tasks. Use this skill when the user needs to read/write...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.officeclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daniel Thomas",
+      "features": [
+        "Connect to personal Microsoft accounts via Microsoft Graph API to manage email, calendar events.",
+        "Use this skill when the user needs to read/write..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/officeclaw@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60994952?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "officeclaw",
+      "url": "https://clawhub.ai/skills/officeclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "officeclaw",
+    "url": "https://clawhub.ai/skills/officeclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/officeclaw-6cac7c3128a90d20.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/officeclaw@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-officeclaw-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:43f1dae1df70dedbf7fcaf7d9ec4d0016abc6f487ec2ed7767134dbbffd0deff",
+      "artifactSizeBytes": 2115
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T07:01:55.473Z"
+}

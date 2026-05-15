@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dexter-research@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dexter_research",
+  "skill": {
+    "id": 69654,
+    "skillKey": "clawhub-dexter-research",
+    "name": "Dexter Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dexter-research",
+    "url": "https://clawhub.ai/skills/dexter-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dexter-research-58f1a2e6ec681fd6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A股自主金融研究技能。触发条件：(1) 用户要求分析股票、研究公司财务、查询个股基本面 (2) 用户给出股票代码或名称让进行研究 (3) 用户说\"分析XXX股票\"、\"帮我研究这个公司\"、\"查一下这个股的财务\"等类似表达。当用户明确要求对A股上市公司进行财务分析、个股研究、股票评分时激活本技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qiushang555",
+      "userId": "s173pkfhkth48e2kjtmys6phe983wd4n",
+      "displayName": "qiushang555",
+      "image": "https://avatars.githubusercontent.com/u/268135707?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774863624336,
+      "changelog": "凭证改为环境变量读取；K线数据源改为Tencent财经API；新增requirements.txt；SKILL.md补充环境变量说明",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4c61946570255570ae4a464a4ea0c5af8a3a81310edd9bd3c560ee71cea95521"
+}

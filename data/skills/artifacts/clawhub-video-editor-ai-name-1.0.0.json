@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editor-ai-name@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editor_ai_name",
+  "skill": {
+    "id": 49036,
+    "skillKey": "clawhub-video-editor-ai-name",
+    "name": "Video Editor Ai Name"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editor-ai-name",
+    "url": "https://clawhub.ai/skills/video-editor-ai-name",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editor-ai-name-21a55033fa5f8a1a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "edit raw video footage into edited MP4 videos with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators and marketers use it for ed..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 89,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777590845966,
+      "changelog": "Initial release of Video Editor AI Name — AI Edits and Exports Named Videos.\n\n- Upload and edit raw video footage (MP4, MOV, AVI, WebM; max 500MB) using an AI-powered cloud pipeline.\n- Supports AI-driven tasks like trimming silences, adding transitions, and exporting 1080p MP4 files under a custom or branded editor name.\n- Automated setup flow with free credit token generation and quick cloud GPU processing (1–2 minutes per job).\n- Includes prompts for exporting, checking credits, session state, and uploading files.\n- Handles common video formats and provides error messages for unsupported files or quota issues.\n- Guides users through typical workflows like quick edits, batch processing, and iterative refinements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:556c3ae9e620ccf0c969b0759d6e8855d130fd4556913e227896ec87efee9635"
+}

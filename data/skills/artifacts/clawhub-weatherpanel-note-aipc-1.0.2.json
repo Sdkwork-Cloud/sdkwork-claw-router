@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weatherpanel-note-aipc@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weatherpanel_note_aipc",
+  "skill": {
+    "id": 26766,
+    "skillKey": "clawhub-weatherpanel-note-aipc",
+    "name": "WeatherPanel Note AI PC"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weatherpanel-note-aipc",
+    "url": "https://clawhub.ai/skills/weatherpanel-note-aipc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weatherpanel-note-aipc-68ad8394da6f53be.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "WeatherPanel Note AI PC for Shanghai weather. This skill fetches current weather from Open-Meteo, summarizes the overall conditions with a local LLM through..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yinquan251",
+      "userId": "publishers:yinquan251",
+      "displayName": "yinquan251",
+      "image": "https://avatars.githubusercontent.com/u/198013915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 361,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773992394817,
+      "changelog": "- Improved safety: now writes summaries directly to a verified Markdown note under a configured Obsidian vault directory, instead of using `obsidian-cli`.\n- Weather source and summary generation are now more controlled: uses fixed Shanghai coordinates and a safe subprocess call to `summarize`.\n- Clarified and tightened configuration options; only a limited set of keys are supported.\n- Documentation updated to reflect these safeguards and behavioral changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:43125ee4c61cff572fb4bee4fa6e735165888bfd61b6fdf1fa4acede0edfd0de"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ground-control@0.3.5",
+  "version": "0.3.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ground_control",
+  "skill": {
+    "id": 23069,
+    "skillKey": "clawhub-ground-control",
+    "name": "ground-control"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ground-control",
+    "url": "https://clawhub.ai/skills/ground-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ground-control-d1194a7379cbe8e9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Post-upgrade verification system for OpenClaw. Defines a model/cron/channel ground truth file and a 5-phase automated verification flow (config integrity, AP..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jonathanjing",
+      "userId": "s17aah0h06a3741dypyhe3a2xd85pgsx",
+      "displayName": "Jonathan Jing",
+      "image": "https://avatars.githubusercontent.com/u/17068507?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 452,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "0.3.5",
+      "createdAt": 1772584311143,
+      "changelog": "Updated version to v0.3.5 with full changelog integration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f0c67850ac62b23d1afc3a1e8a1f4eb51451702b6275d4b12c22b78c30b279e7"
+}

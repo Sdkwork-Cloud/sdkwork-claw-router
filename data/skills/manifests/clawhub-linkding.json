@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11137,
+  "uuid": "skill-clawhub-linkding",
+  "skillKey": "clawhub-linkding",
+  "name": "Linkding",
+  "summary": "Manage bookmarks with Linkding. Use when the user asks to \"save a bookmark\", \"add link\", \"search bookmarks\", \"list my bookmarks\", \"find saved links\", \"tag a bookmark\", \"archive bookmark\", \"check if URL is saved\", \"list tags\", \"create bundl.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkding",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jmagar",
+      "features": [
+        "Manage bookmarks with Linkding",
+        "Use when the user asks to \"save a bookmark\", \"add link\", \"search bookmarks\", \"list my bookmarks."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linkding@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38927646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linkding",
+      "url": "https://clawhub.ai/skills/linkding"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkding",
+    "url": "https://clawhub.ai/skills/linkding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkding-5143f03950b25f1b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linkding@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-linkding-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7fdb09b2111ec333f4b48c32f9931781eeca1dd4653d32207bcb991b902aa89e",
+      "artifactSizeBytes": 1982
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-23T21:19:59.974Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-article-export@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_article_export",
+  "skill": {
+    "id": 31014,
+    "skillKey": "clawhub-wechat-article-export",
+    "name": "Wechat Article Export"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-article-export",
+    "url": "https://clawhub.ai/skills/wechat-article-export",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-article-export-00b6d78b5fb838bd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Export WeChat public account articles as mobile long screenshots (PNG), PDFs, or high-quality Markdown with YAML frontmatter and code block support."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "benzking",
+      "userId": "s17eytpmak0fh78xhm4nyk35hh841jw4",
+      "displayName": "benzking",
+      "image": "https://avatars.githubusercontent.com/u/2979921?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 273,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775884434253,
+      "changelog": "Fix temp link support and banner removal",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:59c7a4df0128a2fbac71f2607f4435dadc0a8bb6f2a4bb5f88d1321ec48dfe93"
+}

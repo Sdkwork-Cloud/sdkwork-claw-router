@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/abm-site-architecture@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abm_site_architecture",
+  "skill": {
+    "id": 33112,
+    "skillKey": "clawhub-abm-site-architecture",
+    "name": "Site Architecture"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abm-site-architecture",
+    "url": "https://clawhub.ai/skills/abm-site-architecture",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abm-site-architecture-6002938271757f52.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When the user wants to plan, map, or restructure their website's page hierarchy, navigation, URL structure, or internal linking. Also use when the user menti..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mariokarras",
+      "userId": "s1714hxad423m02rtb4r6n2vmn83e4f5",
+      "displayName": "Mario Karras",
+      "image": "https://avatars.githubusercontent.com/u/199292356?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 242,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773907224679,
+      "changelog": "- Initial release of the \"site-architecture\" skill for website page hierarchy and navigation planning.\n- Supports mapping site structures, navigation types, URL patterns, and internal linking practices.\n- Provides templates and best practices for common site types (SaaS, e-commerce, content/blog, docs, etc.).\n- Includes clear instructions for gathering business context and assessing current/future site needs.\n- Explains ASCII and Mermaid formats for representing page hierarchies.\n- Not intended for technical SEO audits or XML sitemap generation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8b8f759ffb4b26fbf4c0709e623efdce9b17a897be3c66c5f6a907deca568998"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38695,
+  "uuid": "skill-clawhub-privyr",
+  "skillKey": "clawhub-privyr",
+  "name": "Privyr",
+  "summary": "Privyr integration. Manage Recordses. Use when the user wants to interact with Privyr data.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.privyr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Privyr integration",
+        "Manage Recordses",
+        "Use when the user wants to interact with Privyr data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/privyr@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "privyr",
+      "url": "https://clawhub.ai/skills/privyr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "privyr",
+    "url": "https://clawhub.ai/skills/privyr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/privyr-f56cea30ecd71dd0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/privyr@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-privyr-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:28f04ab57e985679a02426559ca9e81de17020d3d6a53efd3fda9a5646892ecb",
+      "artifactSizeBytes": 1784
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:27:45.307Z"
+}

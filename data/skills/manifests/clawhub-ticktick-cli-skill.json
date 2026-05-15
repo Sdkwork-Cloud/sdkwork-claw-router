@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23355,
+  "uuid": "skill-clawhub-ticktick-cli-skill",
+  "skillKey": "clawhub-ticktick-cli-skill",
+  "name": "TickTick",
+  "summary": "Manage tasks and projects in TickTick. Use when user asks for tasks, to-dos, reminders, or event.",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ticktick_cli_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Damon",
+      "features": [
+        "Manage tasks and projects in TickTick",
+        "Use when user asks for tasks, to-dos, reminders, or event."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ticktick-cli-skill@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/443404?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ticktick-cli-skill",
+      "url": "https://clawhub.ai/skills/ticktick-cli-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ticktick-cli-skill",
+    "url": "https://clawhub.ai/skills/ticktick-cli-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ticktick-cli-skill-e0fa6719b5d36782.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ticktick-cli-skill@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-ticktick-cli-skill-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:afd5b96fa4d0ac056a11d39d2e4b4cbfb711e2a6d132790ea02072b0ed36a4e6",
+      "artifactSizeBytes": 2124
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T05:11:26.243Z"
+}

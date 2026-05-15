@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63144,
+  "uuid": "skill-clawhub-ai-news-infographics",
+  "skillKey": "clawhub-ai-news-infographics",
+  "name": "AI News Infographics",
+  "summary": "生成AI新闻资讯的Infographics图片。使用场景：(1) 用户要求生成AI热门产品或新闻的图片 (2) 需要近期AI动态的可视化内容 (3) 制作OpenClaw相关的AI资讯图片 (4) 创建社交媒体分享的AI新闻卡片。功能：搜索近期热门AI产品和新闻，筛选与OpenClaw相关的内容，生成新闻杂志风格...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_news_infographics",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeahLiang",
+      "features": [
+        "生成AI新闻资讯的Infographics图片。使用场景：(1) 用户要求生成AI热门产品或新闻的图片 (2) 需要近期AI动态的可视化内容 (3) 制作OpenClaw相关的AI资讯图片."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-news-infographics@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40543830?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-news-infographics",
+      "url": "https://clawhub.ai/skills/ai-news-infographics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-news-infographics",
+    "url": "https://clawhub.ai/skills/ai-news-infographics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-news-infographics-3ada542c5d999867.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-news-infographics@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-news-infographics-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e813324df625116a03d9615a6ae9cd7e91de9f33e054570ba34314c7510a7306",
+      "artifactSizeBytes": 2490
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T10:35:26.024Z"
+}

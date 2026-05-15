@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13654,
+  "uuid": "skill-clawhub-clawd-throttle",
+  "skillKey": "clawhub-clawd-throttle",
+  "name": "Clawd Throttle",
+  "summary": "Routes LLM requests to the cheapest capable model across 8 providers (Anthropic, Google, OpenAI, DeepSeek, xAI, Moonshot, Mistral, Ollama) and 25+ models. Scores prompts on 8 dimensions in under 1ms, supports three routing modes (eco, stan.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawd_throttle",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liekzejaws",
+      "features": [
+        "Routes LLM requests to the cheapest capable model across 8 providers (Anthropic, Google, OpenAI.",
+        "Scores prompts on 8 dimensions in under 1ms, supports three routing modes (eco, standard, gigac."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawd-throttle@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/214710755?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawd-throttle",
+      "url": "https://clawhub.ai/skills/clawd-throttle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawd-throttle",
+    "url": "https://clawhub.ai/skills/clawd-throttle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawd-throttle-9287041b338db974.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawd-throttle@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawd-throttle-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:90b4caa917e032d589f5d6f5e4ad010f1c491e36090fc75251414dc61c7294fc",
+      "artifactSizeBytes": 2042
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T21:03:16.904Z"
+}

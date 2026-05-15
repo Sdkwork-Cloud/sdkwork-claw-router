@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60953,
+  "uuid": "skill-clawhub-test-test1",
+  "skillKey": "clawhub-test-test1",
+  "name": "test转储",
+  "summary": "从test页面获取数据导入到test01",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_test1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shandongwill",
+      "features": [
+        "从test页面获取数据导入到test01"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/test-test1@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9543048?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "test-test1",
+      "url": "https://clawhub.ai/skills/test-test1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-test1",
+    "url": "https://clawhub.ai/skills/test-test1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-test1-ff2656eaa25c0f84.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/test-test1@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-test-test1-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0f222969743916365972d17d17a8ccc8e35579a595925c79909bed338c43b2a3",
+      "artifactSizeBytes": 2027
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T05:41:55.346Z"
+}

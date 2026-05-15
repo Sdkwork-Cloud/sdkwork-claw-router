@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39757,
+  "uuid": "skill-clawhub-jira-task-manager",
+  "skillKey": "clawhub-jira-task-manager",
+  "name": "Jira Task Manager",
+  "summary": "Jira automation for JiraATX (project DS). Create, update, comment, transition issues, list To Do tasks, sync repo, execute tasks end-to-end. Triggers: DS-XXX...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jira_task_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clairproqc-star",
+      "features": [
+        "Jira automation for JiraATX (project DS)",
+        "Create, update, comment, transition issues, list To Do tasks, sync repo, execute tasks end-to-e.",
+        "Triggers: DS-XXX..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jira-task-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264058938?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jira-task-manager",
+      "url": "https://clawhub.ai/skills/jira-task-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jira-task-manager",
+    "url": "https://clawhub.ai/skills/jira-task-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jira-task-manager-dc2e85721bec89cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jira-task-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jira-task-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:78812c2091a900c81f1da4068d5cc65445eb8769619628744b2e4d66b5ed2020",
+      "artifactSizeBytes": 2521
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T00:07:50.921Z"
+}

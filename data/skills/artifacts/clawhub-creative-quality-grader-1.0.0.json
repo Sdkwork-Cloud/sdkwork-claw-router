@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/creative-quality-grader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.creative_quality_grader",
+  "skill": {
+    "id": 24681,
+    "skillKey": "clawhub-creative-quality-grader",
+    "name": "Ads Creative Scoring"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "creative-quality-grader",
+    "url": "https://clawhub.ai/skills/creative-quality-grader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/creative-quality-grader-119159dfcdbc641d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Score ad creatives before launch for Meta (Facebook/Instagram), TikTok Ads, YouTube Ads, Google Ads, and Amazon Ads policy and quality fit."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danyangliu-sandwichlab",
+      "userId": "publishers:danyangliu-sandwichlab",
+      "displayName": "danyangliu",
+      "image": "https://avatars.githubusercontent.com/u/184733968?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 406,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772509869367,
+      "changelog": "creative-quality-grader 1.0.0 – Initial release\n\n- Introduces a structured workflow for scoring ad creatives across Meta, TikTok, YouTube, Google, and Amazon Ads.\n- Delivers actionable output: Creative Objective, Angle/Hook, Asset Specs, Variant Plan, and QA Notes.\n- Platform-aware recommendations with explicit guidance for each ad channel.\n- Includes decision rules tailored to funnel stage, audience type, and placement constraints.\n- Built-in quality checklist and escalation protocols for missing data or policy risks.\n- Provides clear input/output contracts and several realistic workflow examples.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0a67abf2533b8049497b0544050fbc7d4c0e877f4f92bbccadfdbcaf8530ffa4"
+}

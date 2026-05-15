@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35062,
+  "uuid": "skill-clawhub-podcastfy-openclaw-skill",
+  "skillKey": "clawhub-podcastfy-openclaw-skill",
+  "name": "Podcastfy Openclaw Skill",
+  "summary": "Convert text, images, PDFs, websites, or YouTube videos into multilingual AI-generated podcast audio using Podcastfy's open-source Python toolkit.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.podcastfy_openclaw_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mr-11even",
+      "features": [
+        "Convert text, images, PDFs, websites, or YouTube videos into multilingual AI-generated podcast."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/podcastfy-openclaw-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/223068415?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "podcastfy-openclaw-skill",
+      "url": "https://clawhub.ai/skills/podcastfy-openclaw-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "podcastfy-openclaw-skill",
+    "url": "https://clawhub.ai/skills/podcastfy-openclaw-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/podcastfy-openclaw-skill-a2897af546c14c73.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/podcastfy-openclaw-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-podcastfy-openclaw-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4d10f8d914ceb6d936049816a52750ff69adfee96349b51cd4977b69ecc7eb18",
+      "artifactSizeBytes": 2500
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T03:25:48.865Z"
+}

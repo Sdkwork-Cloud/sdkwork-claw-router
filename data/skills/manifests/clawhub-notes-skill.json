@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62653,
+  "uuid": "skill-clawhub-notes-skill",
+  "skillKey": "clawhub-notes-skill",
+  "name": "Notes Skill / 笔记技能",
+  "summary": "SQLite 笔记管理系统。由 AI agent（霜糖）代为管理和操作笔记。 触发场景： - 用户说\"笔记...\"、\"记一下...\"、\"帮我记...\"、\"存一条笔记\" - 用户说\"找一下...\"、\"搜一下关于...的笔记\" - 用户说\"列出笔记\"、\"有哪些笔记\" - 用户说\"标记已整理\"、\"归档\" - 用户说\"备...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notes_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CocoonOvO",
+      "features": [
+        "SQLite 笔记管理系统。由 AI agent（霜糖）代为管理和操作笔记。 触发场景：",
+        "用户说\"笔记...\"、\"记一下...\"、\"帮我记...\"、\"存一条笔记\"",
+        "用户说\"找一下...\"、\"搜一下关于...的笔记\"",
+        "用户说\"列出笔记\"、\"有哪些笔记\""
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/notes-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35625808?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "notes-skill",
+      "url": "https://clawhub.ai/skills/notes-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notes-skill",
+    "url": "https://clawhub.ai/skills/notes-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notes-skill-562da38704ba09ea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/notes-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-notes-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:df85cc7eacabc55f37573fa7ad0ae49c05c1d8da07faac6b486933072f3f0e49",
+      "artifactSizeBytes": 2115
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T06:44:47.101Z"
+}

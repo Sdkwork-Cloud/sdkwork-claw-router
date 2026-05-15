@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/api-error-handling@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_error_handling",
+  "skill": {
+    "id": 14093,
+    "skillKey": "clawhub-api-error-handling",
+    "name": "API Error Handling"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-error-handling",
+    "url": "https://clawhub.ai/skills/api-error-handling",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-error-handling-c640342da3648c53.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Error handling patterns across languages and layers — operational vs programmer errors, retry strategies, circuit breakers, error boundaries, HTTP responses, graceful degradation, and structured logging. Use when designing error strategies."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wpank",
+      "userId": "publishers:wpank",
+      "displayName": "wpank",
+      "image": "https://avatars.githubusercontent.com/u/9498646?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 1536,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770725347152,
+      "changelog": "Initial release — comprehensive guide to error handling patterns across languages and system layers.\n\n- Details operational vs programmer errors and how to handle each.\n- Provides code examples for JavaScript, Python, Go, and Rust error handling best practices.\n- Includes error boundaries for Express (Node.js) and React.\n- Describes structured error responses for HTTP APIs and recommended status codes.\n- Outlines retry, backoff, circuit breaker, and graceful degradation strategies.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7f5e0eea0b52d3af307c143a22a6719184eeb34f0b07d64a362bb4a39d1b8611"
+}

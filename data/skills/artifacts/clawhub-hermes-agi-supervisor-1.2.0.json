@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hermes-agi-supervisor@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hermes_agi_supervisor",
+  "skill": {
+    "id": 69201,
+    "skillKey": "clawhub-hermes-agi-supervisor",
+    "name": "Hermes AGI指令迭代与执行监督"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hermes-agi-supervisor",
+    "url": "https://clawhub.ai/skills/hermes-agi-supervisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hermes-agi-supervisor-84a963d71a15b884.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AGI指令迭代与执行监督工具。解决AGI\"假大空、不落地\"问题。输入模糊指令 → 拆解为可执行任务 → 设定奖惩机制 → 执行校验 → 不合格指令重写，形成闭环。触发词：hermes指令、AGI监督、指令迭代、任务拆解、指令优化。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mengxiangshu666",
+      "userId": "s176gfd5m9ygtrb0p1v6w2b4sd84vdkz",
+      "displayName": "mengxiangshu666",
+      "image": "https://avatars.githubusercontent.com/u/174897021?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 135,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1776180963332,
+      "changelog": "v1.2: 核心引擎hermes_supervisor.py可执行,含分类自动识别/任务生成/积分计算,模板覆盖赚钱/职场/内容创作/学习四大场景",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:82d2b701b5a6cff78258e0cc01ff7cdfbc19abd61cc39cb2283467c32ad2bbe8"
+}

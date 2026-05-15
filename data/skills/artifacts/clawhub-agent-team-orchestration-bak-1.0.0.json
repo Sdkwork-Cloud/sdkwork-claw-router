@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-team-orchestration-bak@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_team_orchestration_bak",
+  "skill": {
+    "id": 32878,
+    "skillKey": "clawhub-agent-team-orchestration-bak",
+    "name": "Agent Team Orchestration.Bak"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-team-orchestration-bak",
+    "url": "https://clawhub.ai/skills/agent-team-orchestration-bak",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-team-orchestration-bak-007472ef3a9ddb74.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Orchestrate multi-agent teams with defined roles, task lifecycles, handoff protocols, and review workflows. Use when: (1) Setting up a team of 2+ agents with..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lean-zhouchao",
+      "userId": "s178rxdgn3z5d3avc5xwvvghx183kh7y",
+      "displayName": "lean-zhouchao",
+      "image": "https://avatars.githubusercontent.com/u/23061177?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 235,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774053551378,
+      "changelog": "Initial release for agent-team-orchestration skill.\n\n- Provides a structured playbook for orchestrating multi-agent teams with distinct roles.\n- Defines task lifecycles, handoff protocols, and review workflows for quality control.\n- Includes best practices, common pitfalls, and references for team setup, task flow, and communication.\n- Designed for workflows involving 2 or more specialized agents with ongoing collaboration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a8a987759d482bbac08074133e14efab31495d41db0ea9b648f254b4abe532d2"
+}

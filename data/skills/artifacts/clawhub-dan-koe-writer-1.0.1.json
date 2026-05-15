@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dan-koe-writer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dan_koe_writer",
+  "skill": {
+    "id": 63991,
+    "skillKey": "clawhub-dan-koe-writer",
+    "name": "Dan Koe Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dan-koe-writer",
+    "url": "https://clawhub.ai/skills/dan-koe-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dan-koe-writer-876a75c2dd514841.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Dan Koe 写作方法论工具箱。基于 OpenClaw Agent 模型，把爆款内容拆解成「创意积木」，再组装成新文章。触发场景：(1) 用户要拆解爆款文章并提取写作要素；(2) 用户需要写作方向或创意灵感；(3) 用户要生成完整的公众号/小红书/推特文章；(4) 用户想学习 Dan Koe 的 APAG 框架..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alleliu",
+      "userId": "s17ackh1j5wdjm90tr6ff1c8jh83n0nn",
+      "displayName": "alleliu",
+      "image": "https://avatars.githubusercontent.com/u/29890772?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774791543498,
+      "changelog": "修复 write.py 积木解析 bug，统一与 spark.py 的 load_knowledge 逻辑",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ebc69481ba1352eb21c44257f52610daa0ac963b649abca78c901d3b831f9cca"
+}

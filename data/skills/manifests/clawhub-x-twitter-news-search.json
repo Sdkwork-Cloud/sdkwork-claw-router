@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46387,
+  "uuid": "skill-clawhub-x-twitter-news-search",
+  "skillKey": "clawhub-x-twitter-news-search",
+  "name": "X-Twitter news search",
+  "summary": "Use this skill to search Twitter/X for recent tweets matching keywords and engagement filters. Returns raw tweet data (text, author, likes, retweets, views,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_twitter_news_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "berthelol",
+      "features": [
+        "Use this skill to search Twitter/X for recent tweets matching keywords and engagement filters",
+        "Returns raw tweet data (text, author, likes, retweets, views,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-twitter-news-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15127949?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-twitter-news-search",
+      "url": "https://clawhub.ai/skills/x-twitter-news-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-twitter-news-search",
+    "url": "https://clawhub.ai/skills/x-twitter-news-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-twitter-news-search-f5895adb62082f71.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-twitter-news-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-twitter-news-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:977fc0e4018d7dbc9951435eb4360621e9d36ea7b9492c22eb6ce1dec62ecbcc",
+      "artifactSizeBytes": 2434
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T13:48:33.197Z"
+}

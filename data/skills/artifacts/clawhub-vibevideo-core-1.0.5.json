@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vibevideo-core@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vibevideo_core",
+  "skill": {
+    "id": 37367,
+    "skillKey": "clawhub-vibevideo-core",
+    "name": "VibeVideoIO AI Script to Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vibevideo-core",
+    "url": "https://clawhub.ai/skills/vibevideo-core",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vibevideo-core-d607b2978f919926.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Log into bollo.video or vibevideo.io, list Studio projects, create Studio episodes from prompts or scripts, and log out. Use when users ask to make or genera..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vibevideo",
+      "userId": "s17dbd8sbqh9cx0762mweft4p584yz17",
+      "displayName": "VibeVideo IO",
+      "image": "https://vibevideo.io/icon-256x256.png"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1776677359714,
+      "changelog": "v1.0.5 introduces local Studio execution support.\n\n- Added scripts/vibevideo-studio-local.mjs for local Studio tooling.\n- Updated documentation to clarify manual skill registration is required (no auto-registration in postinstall).\n- No impact on core API behavior or error handling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b18691b4d440fa431676fe139ee27098acc4c4ce4a1cd78e4387f7a9804481a3"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65330,
+  "uuid": "skill-clawhub-ifind-excel-plugin",
+  "skillKey": "clawhub-ifind-excel-plugin",
+  "name": "iFinD Excel Plugin",
+  "summary": "iFinD 同花顺 Excel 插件函数参考手册，包含股票、港股、美股、债券、基金、期货等全部金融数据指标的函数表达式、参数代码和使用说明。生成 Excel 数据文件时可参考此 skill 的指标描述。",
+  "version": "10.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ifind_excel_plugin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "赖根",
+      "features": [
+        "iFinD 同花顺 Excel 插件函数参考手册，包含股票、港股、美股、债券、基金、期货等全部金融数据指标的函数表达式、参数代码和使用说明。生成 Excel 数据文件时可参考此 skill."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ifind-excel-plugin@10.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42961557?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ifind-excel-plugin",
+      "url": "https://clawhub.ai/skills/ifind-excel-plugin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ifind-excel-plugin",
+    "url": "https://clawhub.ai/skills/ifind-excel-plugin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ifind-excel-plugin-a154db894f62a2be.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ifind-excel-plugin@10.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ifind-excel-plugin-10.1.0.json",
+      "version": "10.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4aab4b7a8d39242560524d4ed2ca9a404868129477ab9d553c60d29d94a2c96e",
+      "artifactSizeBytes": 2055
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T02:37:34.526Z"
+}

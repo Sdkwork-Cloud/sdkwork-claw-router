@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33079,
+  "uuid": "skill-clawhub-openclaw-tool-audit",
+  "skillKey": "clawhub-openclaw-tool-audit",
+  "name": "OpenClaw Tool Audit",
+  "summary": "Audit OpenClaw agent tool exposure versus observed use. Use when reviewing allowed tools, spotting broad or unused tool allowances, or checking whether agent...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_tool_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Paul Frederiksen",
+      "features": [
+        "Audit OpenClaw agent tool exposure versus observed use",
+        "Use when reviewing allowed tools, spotting broad or unused tool allowances, or checking whether."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-tool-audit@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/908172?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-tool-audit",
+      "url": "https://clawhub.ai/skills/openclaw-tool-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-tool-audit",
+    "url": "https://clawhub.ai/skills/openclaw-tool-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-tool-audit-d6e0ba1d279ed7a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-tool-audit@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-tool-audit-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8faa5e63faa0427ca4c918b0a66e6a1b38e61c14c4722fb2155c974a7568b4e3",
+      "artifactSizeBytes": 2033
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T19:06:42.636Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/two-sample-mr-research-planner-2@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.two_sample_mr_research_planner_2",
+  "skill": {
+    "id": 29300,
+    "skillKey": "clawhub-two-sample-mr-research-planner-2",
+    "name": "Two Sample Mr Research Planner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "two-sample-mr-research-planner-2",
+    "url": "https://clawhub.ai/skills/two-sample-mr-research-planner-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/two-sample-mr-research-planner-2-a47d116c7e296f92.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates complete two-sample Mendelian randomization study designs with four workload plans and workflow steps based on user-specified exposures and outcomes."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "theresayao0614-sudo",
+      "userId": "s17ea40c1y75h06x45mjjxwg3583qhxm",
+      "displayName": "Theresa",
+      "image": "https://avatars.githubusercontent.com/u/259492064?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 296,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773395849627,
+      "changelog": "two-sample-mr-research-planner-2 v0.1.0\n\n- Initial release of a skill to generate comprehensive two-sample Mendelian randomization (MR) study designs from simple user input.\n- Supports a range of study types (single exposure, multi-exposure, bidirectional, behavior, biomarker, publication-focused).\n- Always outputs four workload configurations with a recommended plan and publication upgrade path.\n- Provides explicit step-by-step workflows, validation strategies, and risk reviews tailored to user context.\n- Includes R code framework recommendations and clear guidance for data sources, instrument selection, and sensitivity analysis.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1b61981482cb6a0a81cb78bba1f511e98b5de3d123a52e0347b0c15a37c83770"
+}

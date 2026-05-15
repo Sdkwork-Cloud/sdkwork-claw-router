@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18283,
+  "uuid": "skill-clawhub-clawzembic",
+  "skillKey": "clawhub-clawzembic",
+  "name": "Clawzempic",
+  "summary": "Lighthouse-style efficiency audit for OpenClaw. Scores your instance A+ to F across 6 categories (context injection, cron health, session bloat, config, skil...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawzembic",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "anna-claudette",
+      "features": [
+        "Lighthouse-style efficiency audit for OpenClaw",
+        "Scores your instance A+ to F across 6 categories (context injection, cron health, session bloat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawzembic@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260556186?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawzembic",
+      "url": "https://clawhub.ai/skills/clawzembic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawzembic",
+    "url": "https://clawhub.ai/skills/clawzembic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawzembic-1545994497b1b905.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawzembic@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawzembic-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:293694b2478e3ad70e311d9d6eec9f5770906b78998bf3ebf98bda73f7facd16",
+      "artifactSizeBytes": 1911
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T13:32:10.460Z"
+}

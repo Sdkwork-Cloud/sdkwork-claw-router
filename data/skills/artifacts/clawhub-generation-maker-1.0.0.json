@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/generation-maker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.generation_maker",
+  "skill": {
+    "id": 49324,
+    "skillKey": "clawhub-generation-maker",
+    "name": "Generation Maker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "generation-maker",
+    "url": "https://clawhub.ai/skills/generation-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/generation-maker-ecf28b38438f23a8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get generated video clips ready to post, without touching a single slider. Upload your text prompts or clips (MP4, MOV, WebM, JPG, up to 500MB), say somethin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 82,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777437543442,
+      "changelog": "Generation Maker 1.0.0 — Initial Release\n\n- Instantly generate 1080p MP4 video clips from text prompts or uploaded media, no manual editing needed.\n- Simple setup: automatic API connection, anonymous token handling, and seamless session management.\n- Supports quick uploads (MP4, MOV, WebM, JPG, up to 500MB) and AI-driven video generation for content creators and marketers.\n- Exports use a cloud GPU pipeline, with status updates, preview summaries, and easy downloading.\n- Includes robust error handling for expired tokens, credits, file limits, and cloud-side issues.\n- Optimized for fast workflows: upload, prompt, generate, and download — usually in 1–2 minutes per 30s video.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b6ea92a6e9955c2d4f8bc634102df38c440adab4e3c25b130456260f408c39a8"
+}

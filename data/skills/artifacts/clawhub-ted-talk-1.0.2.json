@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ted-talk@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ted_talk",
+  "skill": {
+    "id": 18989,
+    "skillKey": "clawhub-ted-talk",
+    "name": "TED Talk"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ted-talk",
+    "url": "https://clawhub.ai/skills/ted-talk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ted-talk-20496dcfb5dd1e9e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transform technical insights into full 40-50 minute TED-style talks with concrete examples and Q&A"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leegitw",
+      "userId": "s179srg0a58h1v79wy2w7g9ymh83jxhd",
+      "displayName": "Lee Brown",
+      "image": "https://avatars.githubusercontent.com/u/1395866?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 547,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771994890458,
+      "changelog": "- Clarified that concrete context and real examples must come from user input, not from files or assumptions.\n- Revised prerequisites and section examples to emphasize grounding talks in specific, user-provided details.\n- Updated Output Format and Talk Rules to specify use of real scenarios over hypothetical or file-based details.\n- Adjusted language in context checklists and core logic to reflect a tighter focus on actual user context.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1957b69dc25e0d464862ce92f984d6c2cc01988ccf2ead213acdc2a9b5a34766"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/intj-coach@2.0.2",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intj_coach",
+  "skill": {
+    "id": 65951,
+    "skillKey": "clawhub-intj-coach",
+    "name": "INTJ Coach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intj-coach",
+    "url": "https://clawhub.ai/skills/intj-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intj-coach-a9562d994aa50454.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "［何时使用］当用户是 INTJ 且需要成长/职业/战略指导时；当用户说\"我是 INTJ\"、\"INTJ 成长\"、\"迷茫\"、\"卡住了\"、\"完美主义\"、\"内耗\"、\"职业方向\"、\"创业方向\"时；当用户需要教练模式（提问题帮他想清楚）或顾问模式（给具体建议）时；当用户说\"给我建议\"、\"咋办\"、\"/intj-coach\"时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lj22503",
+      "userId": "s17dhbyrvq4rmpz7c0cg1y9yrs83nsxz",
+      "displayName": "lj22503",
+      "image": "https://avatars.githubusercontent.com/u/170225356?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.2",
+      "createdAt": 1776303893704,
+      "changelog": "初始发布：双模式设计（教练/顾问）+ Per-user 档案系统 + 心跳追踪机制",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d945037f9a2b887e3f6c455b55b83c325e3ca99470706bb73024d4dfcf3db14f"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73643,
+  "uuid": "skill-clawhub-laike-sales",
+  "skillKey": "clawhub-laike-sales",
+  "name": "来客推商城",
+  "summary": "来客推商城系统。用于回答商城源码相关咨询、产品介绍、功能解答。当用户咨询商城源码、电商系统、软件开发等问题时触发。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.laike_sales",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yo-onething",
+      "features": [
+        "来客推商城系统。用于回答商城源码相关咨询、产品介绍、功能解答。当用户咨询商城源码、电商系统、软件开发等问题时触发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/laike-sales@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/227922616?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "laike-sales",
+      "url": "https://clawhub.ai/skills/laike-sales"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "laike-sales",
+    "url": "https://clawhub.ai/skills/laike-sales",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/laike-sales-6de4354ce719b496.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/laike-sales@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-laike-sales-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cd5789cb137a95d9d1425b17e0069ec0c8f39f13e5db0d803398e0a3264a1b39",
+      "artifactSizeBytes": 1916
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T12:36:53.519Z"
+}

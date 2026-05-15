@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/afrexai-building-permits@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_building_permits",
+  "skill": {
+    "id": 20221,
+    "skillKey": "clawhub-afrexai-building-permits",
+    "name": "Building Permit & Construction Permitting"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-building-permits",
+    "url": "https://clawhub.ai/skills/afrexai-building-permits",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-building-permits-96023c51c399b011.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Assist with identifying required permits, preparing application checklists, addressing plan review issues, scheduling inspections, and estimating permit fees..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1kalin",
+      "userId": "s17e1q0nx23qnh4n429zzqc05x83hvsw",
+      "displayName": "1kalin",
+      "image": "https://avatars.githubusercontent.com/u/15705344?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 556,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771978456601,
+      "changelog": "Initial release — comprehensive building permit guidance for contractors, developers, and property owners:\n\n- Identifies permit requirements by project type with average processing times.\n- Provides detailed permit application checklists for residential and commercial projects.\n- Lists common plan review rejection reasons and suggested solutions.\n- Outlines typical inspection sequences for new construction.\n- Explains permit fee estimation using standard formulas and examples.\n- Summarizes permit expiration rules and owner-builder considerations.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:627f9eca90c50d82e1384ac6f8e2d9d1349a0337407485027f9778f4138e224c"
+}

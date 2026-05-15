@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/off-peak-compute@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.off_peak_compute",
+  "skill": {
+    "id": 23802,
+    "skillKey": "clawhub-off-peak-compute",
+    "name": "Compute during Off-Peak Hours for Complex Jobs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "off-peak-compute",
+    "url": "https://clawhub.ai/skills/off-peak-compute",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/off-peak-compute-3738b04960d00697.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run heavy compute tasks overnight when GPU/cloud capacity is cheapest (spot pricing). Use when you have non-time-sensitive tasks that would benefit from off-..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "willificent",
+      "userId": "s175vmge07jax9g56h30p8q4f984aats",
+      "displayName": "willificent",
+      "image": "https://avatars.githubusercontent.com/u/67238055?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 409,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773166947245,
+      "changelog": "**Security model clarification and guidance update**\n\n- Added detailed explanation of the security and credential model for off-peak queued tasks.\n- Clarified that each task runs with full user privileges and agent sessions, with no sandboxing or credential isolation.\n- Provided new task template and safety checklist emphasizing credential scope and network actions.\n- Updated setup instructions to recommend owner-only permissions (chmod 700) on the script.\n- Improved documentation on manual task testing before scheduling and post-run cleanup.\n- Removed mention of subagent isolation, focusing on explicit user responsibility for task review and safety.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:140b729de6941e9b1b06c8439e19906135e62faf51cbb3ca7964c629fcefb871"
+}

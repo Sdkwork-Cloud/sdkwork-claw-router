@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10105,
+  "uuid": "skill-clawhub-ffmpeg-master",
+  "skillKey": "clawhub-ffmpeg-master",
+  "name": "Donson Intelligent Editing",
+  "summary": "Use when performing video/audio processing tasks including transcoding, filtering, streaming, metadata manipulation, or complex filtergraph operations with FFmpeg.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ffmpeg_master",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DonsonAI",
+      "features": [
+        "Use when performing video/audio processing tasks including transcoding, filtering, streaming, m."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ffmpeg-master@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67256900?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ffmpeg-master",
+      "url": "https://clawhub.ai/skills/ffmpeg-master"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ffmpeg-master",
+    "url": "https://clawhub.ai/skills/ffmpeg-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ffmpeg-master-60feea75c2bb1d3c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ffmpeg-master@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ffmpeg-master-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fdfa3066c9008457694b39462da07cb505f36cc942f6ab754680d559d6e0321f",
+      "artifactSizeBytes": 2427
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T06:33:31.386Z"
+}

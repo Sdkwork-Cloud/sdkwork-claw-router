@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54636,
+  "uuid": "skill-clawhub-git-quick",
+  "skillKey": "clawhub-git-quick",
+  "name": "git-quick",
+  "summary": "Show a quick summary of the current git repo — branch, status, recent commits, and contributor stats.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_quick",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hackerYHT",
+      "features": [
+        "Show a quick summary of the current git repo — branch, status, recent commits, and contributor."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/git-quick@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/64080668?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "git-quick",
+      "url": "https://clawhub.ai/skills/git-quick"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-quick",
+    "url": "https://clawhub.ai/skills/git-quick",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-quick-ca622cddc4b67d91.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/git-quick@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-git-quick-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8e249e142ae3c8bdd212bd02c4358d6c5df6473cd7354d1d5139da0f9ea896ad",
+      "artifactSizeBytes": 2053
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T05:50:17.644Z"
+}

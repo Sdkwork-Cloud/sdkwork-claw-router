@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/futures-panda@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.futures_panda",
+  "skill": {
+    "id": 69989,
+    "skillKey": "clawhub-futures-panda",
+    "name": "futures-panda"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "futures-panda",
+    "url": "https://clawhub.ai/skills/futures-panda",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/futures-panda-e580bb26344cc6e1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过AKShare财经数据接口库封装，提供股期货、期权的实时数据、历史行情数据、仓单数据、席位数据、基差数据、期货合约基础数据和期货交易费用参照表数据。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mabtush13",
+      "userId": "s17ehrkz0f7dh6qhcmwnhyv73n85ncgx",
+      "displayName": "mabtush13",
+      "image": "https://avatars.githubusercontent.com/u/253283299?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 661,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773592511494,
+      "changelog": "Initial release with comprehensive futures data features:\n\n- Provides real-time and historical data for futures and options using AKShare and pandas.\n- Covers live quotes, daily/minute bar data, contract info, positions, basis, fees, and trading calendar.\n- Includes command-line scripts for easy data access.\n- Supports wide range of Chinese financial derivatives markets.\n- Dependency: Requires akshare≥1.12 and pandas≥1.5.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4b2e32d7c02c9c3cc1aad5e1906c3df11e9e30e7222873d5117a9a65cf6dfc0d"
+}

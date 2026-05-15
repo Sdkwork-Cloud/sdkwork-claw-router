@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30196,
+  "uuid": "skill-clawhub-file-splitter",
+  "skillKey": "clawhub-file-splitter",
+  "name": "File Splitter",
+  "summary": "Split large files into smaller chunks with semantic boundary detection. Supports JSON, Markdown, and TXT formats. Preserves data integrity by splitting at na...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_splitter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ExpeditionHub",
+      "features": [
+        "Split large files into smaller chunks with semantic boundary detection",
+        "Supports JSON, Markdown, and TXT formats",
+        "Preserves data integrity by splitting at na..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/file-splitter@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/129585026?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "file-splitter",
+      "url": "https://clawhub.ai/skills/file-splitter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-splitter",
+    "url": "https://clawhub.ai/skills/file-splitter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-splitter-47c0ac521e9f5eab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/file-splitter@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-file-splitter-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d94ad95e173c289e43be723a8ba4167a7d194a6b56a1a9afbd955ec9850ed1d3",
+      "artifactSizeBytes": 1965
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T04:11:30.155Z"
+}

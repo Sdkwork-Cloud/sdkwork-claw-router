@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13095,
+  "uuid": "skill-clawhub-binance-dca-test",
+  "skillKey": "clawhub-binance-dca-test",
+  "name": "Binance DCA Test",
+  "summary": "Binance Dollar-Cost Averaging (DCA) tool for automated and manual recurring crypto purchases. Use when the user wants to plan DCA strategies, execute recurring buys on Binance, check DCA projections, view trade history, or manage a systema.",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.binance_dca_test",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fpsjago",
+      "features": [
+        "Binance Dollar-Cost Averaging (DCA) tool for automated and manual recurring crypto purchases",
+        "Use when the user wants to plan DCA strategies, execute recurring buys on Binance, check DCA pr.",
+        "Triggers on requests about DCA, recurring buys, cost averaging, accumulation strategies, or Bin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/binance-dca-test@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/105124565?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "binance-dca-test",
+      "url": "https://clawhub.ai/skills/binance-dca-test"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "binance-dca-test",
+    "url": "https://clawhub.ai/skills/binance-dca-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/binance-dca-test-00f1f364c577642f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/binance-dca-test@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-binance-dca-test-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a8a771cb90f70b274012555a298d471447d04c729e509e4b6da8410d25addeb8",
+      "artifactSizeBytes": 1951
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T13:38:17.941Z"
+}

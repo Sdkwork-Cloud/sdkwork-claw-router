@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59982,
+  "uuid": "skill-clawhub-dex-quant-skill",
+  "skillKey": "clawhub-dex-quant-skill",
+  "name": "Dex Skill",
+  "summary": "加密货币量化交易 AI Skill。用自然语言描述交易规则 → 生成策略脚本 → 服务器回测 → 参数优化 → 实时监控。 支持 Binance/Hyperliquid 全币种，6 种优化算法（genetic/bayesian/grid/random/annealing/pso），异步进度推送。 Use when...",
+  "version": "3.47.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dex_quant_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "paddy",
+      "features": [
+        "加密货币量化交易 AI Skill。用自然语言描述交易规则 → 生成策略脚本 → 服务器回测 → 参数优化 → 实时监控。 支持 Binance/Hyperliquid 全币种，6 种优化算."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dex-quant-skill@3.47.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48668758?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dex-quant-skill",
+      "url": "https://clawhub.ai/skills/dex-quant-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dex-quant-skill",
+    "url": "https://clawhub.ai/skills/dex-quant-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dex-quant-skill-51a9f5f062160879.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dex-quant-skill@3.47.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-dex-quant-skill-3.47.1.json",
+      "version": "3.47.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c14df76fba9de0104c6c528d94ae9057240cd022adab161c1c1803487439f259",
+      "artifactSizeBytes": 2073
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T09:48:46.749Z"
+}

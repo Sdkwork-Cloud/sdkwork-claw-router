@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60235,
+  "uuid": "skill-clawhub-twitter-research",
+  "skillKey": "clawhub-twitter-research",
+  "name": "Twitter Research",
+  "summary": "搜索Twitter/X上特定话题的最新内容并汇总报告。当用户说\"搜Twitter\"、\"查看Twitter上关于XX的讨论\"、\"twitter research\"、\"X上最近在聊什么\"时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twitter_research",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sawzhang",
+      "features": [
+        "搜索Twitter/X上特定话题的最新内容并汇总报告。当用户说\"搜Twitter\"、\"查看Twitter上关于XX的讨论\"、\"twitter research\"、\"X上最近在聊什么\"时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/twitter-research@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/859624?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "twitter-research",
+      "url": "https://clawhub.ai/skills/twitter-research"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twitter-research",
+    "url": "https://clawhub.ai/skills/twitter-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twitter-research-af303d2b6e20b04c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/twitter-research@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-twitter-research-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:096cf3f6b13d48895805f4a7757094892bdf32474265645983d9ea5747f538cb",
+      "artifactSizeBytes": 2591
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T18:33:51.039Z"
+}

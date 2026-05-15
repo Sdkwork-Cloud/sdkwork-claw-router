@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/career-compass@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.career_compass",
+  "skill": {
+    "id": 63585,
+    "skillKey": "clawhub-career-compass",
+    "name": "职场罗盘-用于面试者提前面试和公司背调,以及模拟面试;Your Guide for Interview Prep, Company Research, and Mock Interviews"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "career-compass",
+    "url": "https://clawhub.ai/skills/career-compass",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/career-compass-21986ba0d41414b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "职场罗盘 by Barry — 一站式求职辅助 Skill。整合简历解析优化、公司调研（就业向）、同城职位搜索、模拟面试四大模块。输入个人信息/简历，自动生成简历优化方向、公司调研报告、招聘表单，并可进行模拟面试。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "barry0-0",
+      "userId": "s177p6xqw6fyxtp27jbabtncy583j12w",
+      "displayName": "barry0-0",
+      "image": "https://avatars.githubusercontent.com/u/119270454?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774707332676,
+      "changelog": "Career Compass 1.0.0 — 一站式求职辅助发布\n\n- 首发版本，集成简历诊断优化、公司调研、同城职位搜索、模拟面试四大模块，一站式覆盖求职全流程。\n- 支持自动解析与优化简历，生成个人化优化方向和自检清单。\n- 提供公司调研报告，重点关注就业风险、员工评价、行业前景与岗位匹配打分。\n- 集成 boss-cli 工具实现 BOSS直聘职位实时搜索，支持同城岗位推荐与简历定向推荐。\n- 内嵌多场景激活关键词，自动根据用户聊天上下文启动相应功能，无需显式指令。\n- 完善的依赖自动安装与环境检测说明，支持主流平台简便部署。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c8eeb0c6389541c5aa2f9a990a6fc47632af96a82404d01c5aaa06fc12c2635b"
+}

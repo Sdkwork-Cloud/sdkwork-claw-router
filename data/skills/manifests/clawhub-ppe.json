@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30047,
+  "uuid": "skill-clawhub-ppe",
+  "skillKey": "clawhub-ppe",
+  "name": "Ppe",
+  "summary": "Personal protective equipment tracker. Use when json ppe tasks, csv ppe tasks, checking ppe status.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ppe",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain3",
+      "features": [
+        "Personal protective equipment tracker",
+        "Use when json ppe tasks, csv ppe tasks, checking ppe status."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ppe@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218212813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ppe",
+      "url": "https://clawhub.ai/skills/ppe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ppe",
+    "url": "https://clawhub.ai/skills/ppe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ppe-79b296dde86122db.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ppe@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ppe-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:223e5310a4e18f8b8b7ae94013fc128d59c641bb8da72f2df10c704e433e3f60",
+      "artifactSizeBytes": 1753
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T19:19:08.344Z"
+}

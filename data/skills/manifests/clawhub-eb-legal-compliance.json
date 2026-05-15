@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36119,
+  "uuid": "skill-clawhub-eb-legal-compliance",
+  "skillKey": "clawhub-eb-legal-compliance",
+  "name": "Legal Compliance",
+  "summary": "Generate legal documents and ensure compliance for startups. Use this skill when the user mentions: terms of service, privacy policy, GDPR, LGPD, cookie cons...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eb_legal_compliance",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Emerson Braun",
+      "features": [
+        "Generate legal documents and ensure compliance for startups",
+        "Use this skill when the user mentions: terms of service, privacy policy, GDPR, LGPD, cookie con."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eb-legal-compliance@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25778027?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eb-legal-compliance",
+      "url": "https://clawhub.ai/skills/eb-legal-compliance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eb-legal-compliance",
+    "url": "https://clawhub.ai/skills/eb-legal-compliance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eb-legal-compliance-eecb319b1c086a5c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eb-legal-compliance@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-eb-legal-compliance-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d8caf9660214761e3caee7bbd6baa3e784a36e17ce4fcf4c8668b12fb7a0f62b",
+      "artifactSizeBytes": 2444
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T02:36:05.627Z"
+}

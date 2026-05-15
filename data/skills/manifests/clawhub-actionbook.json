@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11637,
+  "uuid": "skill-clawhub-actionbook",
+  "skillKey": "clawhub-actionbook",
+  "name": "Actionbook",
+  "summary": "Activate when the user needs to interact with any website — browser automation, web scraping, screenshots, form filling, UI testing, monitoring, or building AI agents. Provides pre-verified page actions with step-by-step instructions and t.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.actionbook",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "adcentury",
+      "features": [
+        "Activate when the user needs to interact with any website — browser automation, web scraping, s.",
+        "Provides pre-verified page actions with step-by-step instructions and tested selectors."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/actionbook@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1651946?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "actionbook",
+      "url": "https://clawhub.ai/skills/actionbook"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "actionbook",
+    "url": "https://clawhub.ai/skills/actionbook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/actionbook-733fc291dceb301e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/actionbook@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-actionbook-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1a6181e62925a410732f4054e94c10bb8b6b84b96c917b31486758a60c555215",
+      "artifactSizeBytes": 1957
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T15:09:30.792Z"
+}

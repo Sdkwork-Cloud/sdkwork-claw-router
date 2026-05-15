@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cutmv-video-tool@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cutmv_video_tool",
+  "skill": {
+    "id": 20125,
+    "skillKey": "clawhub-cutmv-video-tool",
+    "name": "cutmv Video Tool"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cutmv-video-tool",
+    "url": "https://clawhub.ai/skills/cutmv-video-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cutmv-video-tool-b7246bacd43c4529.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Perform video/audio cutting, format conversion, compression, frame/audio extraction, watermarking, and subtitle addition using FFmpeg."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qiaotucodes",
+      "userId": "publishers:qiaotucodes",
+      "displayName": "魏然",
+      "image": "https://avatars.githubusercontent.com/u/42764079?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 570,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772077374446,
+      "changelog": "Initial release of cutmv-video-tool for OpenClaw.\n\n- Provides video/audio cutting, format conversion, and compression using FFmpeg.\n- Supports frame extraction, audio extraction and replacement, text watermarks, and subtitle embedding.\n- Usable via Python API or command-line interface.\n- No external Python dependencies required beyond FFmpeg in PATH.\n- Suitable for preparing media files for messaging apps with size constraints.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1bdf68922b4e55a813f01bd384d7ab596a7735af48e1d09592ecfdc6e992d0d6"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/viam-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.viam_cli",
+  "skill": {
+    "id": 21053,
+    "skillKey": "clawhub-viam-cli",
+    "name": "This skill informs the agent how to use Viam CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "viam-cli",
+    "url": "https://clawhub.ai/skills/viam-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/viam-cli-13472aba7136133e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides comprehensive guidance and commands to install, authenticate, and manage Viam CLI for robotics fleets, modules, machine data, datasets, and ML workf..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hexbabe",
+      "userId": "publishers:hexbabe",
+      "displayName": "sean yu",
+      "image": "https://avatars.githubusercontent.com/u/55464069?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 525,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772151935328,
+      "changelog": "Initial release of viam-cli-manager: a comprehensive skill for managing all aspects of the Viam robotics platform via CLI.\n\n- Covers initial CLI installation, including Homebrew-based setup with user permission.\n- Supports full fleet, machine, module, data, dataset, and pipeline management via documented CLI commands.\n- Enforces best-practices: never request sensitive keys in chat, always list resources before mutating, confirm destructive actions.\n- Includes a fallback protocol: checks local CLI help on errors, advises upgrade if commands are missing, and refuses to guess unsupported flags or options.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f35504cfaa7199faee522f10b68401a4422e24c613af68d61ce4a6492a92775a"
+}

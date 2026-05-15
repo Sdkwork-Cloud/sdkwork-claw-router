@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mem0-memory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mem0_memory",
+  "skill": {
+    "id": 59647,
+    "skillKey": "clawhub-mem0-memory",
+    "name": "Mem0 Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mem0-memory",
+    "url": "https://clawhub.ai/skills/mem0-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mem0-memory-e68ea7316883e6b9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "mem0 本地记忆层完整实现（增强版）。语义记忆存储/检索/管理，WAL 协议，SESSION-STATE，多级记忆（User/Session/Agent）。参考 ZejunCao/bilibili_code Mem0框架解读优化。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chircken891",
+      "userId": "s1704fhczjrr9pw8gyz9w954ks83hswp",
+      "displayName": "chircken891",
+      "image": "https://avatars.githubusercontent.com/u/192669311?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1017,
+      "installsAllTime": 10,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774362415184,
+      "changelog": "mem0-memory 2.1.0 更新内容：\n\n- 实现本地全功能语义记忆层，支持添加、检索、更新、历史、批量与重置操作\n- 新增“chat_with_memories”对话模式：自动检索记忆并注入 system prompt，由 LLM 生成增强回复\n- 内置中文记忆自动提取与 FACT_RETRIEVAL_PROMPT，支持对话中快速生成记忆条目\n- 完善多级记忆体系（用户/会话/智能体），参数可灵活指定\n- 增强工作流与 WAL 支持，实现消息分流存储与 SESSION-STATE 优先机制\n- 离线向量化（Ollama + Chroma），适配本地完全运行环境",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ced1983c364f40d73db3c62b9c9923f334a3137f11e459316ffa66fdb01d1bb4"
+}

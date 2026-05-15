@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12187,
+  "uuid": "skill-clawhub-clawhub-skill-2",
+  "skillKey": "clawhub-clawhub-skill-2",
+  "name": "Clawhub Skill",
+  "summary": "Configure, run, and troubleshoot the OpenRouter hardware-aware classifier router (wizard setup, local model, routing, and dashboard).",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_skill_2",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pathemata-mathemata",
+      "features": [
+        "Configure, run, and troubleshoot the OpenRouter hardware-aware classifier router (wizard setup,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawhub-skill-2@0.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/177381183?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawhub-skill-2",
+      "url": "https://clawhub.ai/skills/clawhub-skill-2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-skill-2",
+    "url": "https://clawhub.ai/skills/clawhub-skill-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-skill-2-6324dd6e192f26b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawhub-skill-2@0.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawhub-skill-2-0.1.4.json",
+      "version": "0.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c7d1b74fb3376f3f28d03d1f4cee726c005edc053e43e90e731cbf35a01cc8c5",
+      "artifactSizeBytes": 2217
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T22:50:22.458Z"
+}

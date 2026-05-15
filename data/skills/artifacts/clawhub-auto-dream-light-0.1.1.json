@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-dream-light@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_dream_light",
+  "skill": {
+    "id": 53000,
+    "skillKey": "clawhub-auto-dream-light",
+    "name": "Auto Dream Light"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-dream-light",
+    "url": "https://clawhub.ai/skills/auto-dream-light",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-dream-light-e6cf97648b480923.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Lightweight, memory-safe Auto Dream workflow for OpenClaw that consolidates recent notes into existing memory files without replacing the user’s current memo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mrgyan",
+      "userId": "s179vh8f9pf0km5tdqrt706vax852pbw",
+      "displayName": "mrgyan",
+      "image": "https://avatars.githubusercontent.com/u/55069687?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1776924224267,
+      "changelog": "Streamlined the package for a cleaner ClawHub release. Removed non-essential README files, kept the skill focused on SKILL.md plus targeted references, refreshed the ClawHub-facing copy, and bumped the version to 0.1.1.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8c67e445c6f158f921a249cec087e1120903cfd034d97f77cecae461eb150fda"
+}

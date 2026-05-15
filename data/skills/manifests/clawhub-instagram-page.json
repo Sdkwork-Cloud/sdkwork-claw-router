@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31369,
+  "uuid": "skill-clawhub-instagram-page",
+  "skillKey": "clawhub-instagram-page",
+  "name": "Instagram Page",
+  "summary": "Instagram Business manager: post photos, reels, stories & get insights. Requires: powershell/pwsh. Reads ~/.config/instagram-page/credentials.json (IG_ACCESS...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.instagram_page",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "seph",
+      "features": [
+        "Instagram Business manager: post photos, reels, stories & get insights",
+        "Requires: powershell/pwsh",
+        "Reads ~/.config/instagram-page/credentials.json (IG_ACCESS..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/instagram-page@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65636039?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "instagram-page",
+      "url": "https://clawhub.ai/skills/instagram-page"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "instagram-page",
+    "url": "https://clawhub.ai/skills/instagram-page",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/instagram-page-df33c2d6a83b2e5e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/instagram-page@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-instagram-page-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cfa2307b2beea13231909c2ed1085e6a6731fbeeb6cc8d15e48479f0e724639e",
+      "artifactSizeBytes": 1903
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T08:51:41.476Z"
+}

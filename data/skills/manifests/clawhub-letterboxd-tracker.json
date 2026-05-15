@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16535,
+  "uuid": "skill-clawhub-letterboxd-tracker",
+  "skillKey": "clawhub-letterboxd-tracker",
+  "name": "letterboxd-companion",
+  "summary": "Your personal movie assistant. Track what you watch, check your lists, and get movie info from Letterboxd instantly.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.letterboxd_tracker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tamil-9421",
+      "features": [
+        "Your personal movie assistant",
+        "Track what you watch, check your lists, and get movie info from Letterboxd instantly."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/letterboxd-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260087125?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "letterboxd-tracker",
+      "url": "https://clawhub.ai/skills/letterboxd-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "letterboxd-tracker",
+    "url": "https://clawhub.ai/skills/letterboxd-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/letterboxd-tracker-55200e4d88936cd6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/letterboxd-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-letterboxd-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:574e465666cbfd76d6cfde56d140908e2ffbadee6f2a1780c1520c658e88dccf",
+      "artifactSizeBytes": 1963
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T14:34:14.568Z"
+}

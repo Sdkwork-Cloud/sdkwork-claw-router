@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawhub-publish-security@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_publish_security",
+  "skill": {
+    "id": 48055,
+    "skillKey": "clawhub-clawhub-publish-security",
+    "name": "Clawhub Publish Security"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-publish-security",
+    "url": "https://clawhub.ai/skills/clawhub-publish-security",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-publish-security-544dd324afe2bd49.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated pre-publish scanner that detects and blocks sensitive data like credentials, tokens, emails, and personal paths in ClawHub skills."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vilda007",
+      "userId": "s17eaqa03db82dzw9epzjbhv2583hc1v",
+      "displayName": "Vilém Kužel",
+      "image": "https://avatars.githubusercontent.com/u/39015391?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 104,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778156396734,
+      "changelog": "Added VETTING_REPORT.md explaining false positive Suspicious flag - this is a defensive security tool, not a threat.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:90fc953c69d13ef24c379923f21e5522ff37134774a3aebab4ba319775952903"
+}

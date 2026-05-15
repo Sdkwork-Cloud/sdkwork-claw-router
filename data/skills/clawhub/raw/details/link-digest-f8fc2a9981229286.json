@@ -1,0 +1,46 @@
+{
+  "skill": {
+    "slug": "link-digest",
+    "displayName": "Link Digest",
+    "summary": "Process links and content shared in a designated 'interesting findings' Discord channel. Use when: (1) a URL or article is shared and needs analysis, (2) som...",
+    "tags": {
+      "latest": "1.1.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 681,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1771989840706,
+    "updatedAt": 1778388049048
+  },
+  "latestVersion": {
+    "version": "1.1.0",
+    "createdAt": 1771994171044,
+    "changelog": "Security hardening: URL allowlist, SSRF block, prompt injection guard, restrict KB writes to synthesized content only",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "zerone0x",
+    "userId": "publishers:zerone0x",
+    "displayName": "zerone0x",
+    "image": "https://avatars.githubusercontent.com/u/39543393?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.prompt_injection_instructions",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.prompt_injection_instructions, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778388049048
+  }
+}

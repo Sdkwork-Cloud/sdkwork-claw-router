@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bitnow@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bitnow",
+  "skill": {
+    "id": 27822,
+    "skillKey": "clawhub-bitnow",
+    "name": "BitNow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bitnow",
+    "url": "https://clawhub.ai/skills/bitnow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bitnow-7d146af83cd020c7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "End-to-end OpenBytes network API workflows for AI agents. Covers wallet signature-based authentication, on-chain top-up monitoring, consumer API key lifecycl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "viyozc",
+      "userId": "s178f5e2z98x6kfk1xq8v3q6vh83gd5k",
+      "displayName": "Jerry",
+      "image": "https://avatars.githubusercontent.com/u/20371707?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 339,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1774317857897,
+      "changelog": "- Renamed skill from \"bitnow\" to \"openbytes\" throughout documentation.\n- Updated all branding, API endpoints, and sample messages to use OpenBytes (`https://gateway.openbytes.ai`) instead of BitNow.\n- Adjusted chain/network assumptions: clarified Base Sepolia use and specified chain ID as 84532.\n- Added explicit instructions and examples for creating an EVM wallet using ethers.js or viem.\n- Streamlined workflow steps and terminology to reflect OpenBytes network operations.\n- Updated parent/ownership signature message to reference OpenBytes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7b7853a3dfa5383b3781a137f230b72236736d68cbda7f9c5b151eac99657512"
+}

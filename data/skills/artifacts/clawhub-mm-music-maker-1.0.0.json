@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mm-music-maker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mm_music_maker",
+  "skill": {
+    "id": 15480,
+    "skillKey": "clawhub-mm-music-maker",
+    "name": "mmMusicMaker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mm-music-maker",
+    "url": "https://clawhub.ai/skills/mm-music-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mm-music-maker-54a63cef4574b70c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create music with MiniMax music models (e.g., music-2.5). Use when generating songs or instrumental tracks from lyrics and style prompts, or when integrating..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "blue-coconut",
+      "userId": "publishers:blue-coconut",
+      "displayName": "Haolan He",
+      "image": "https://avatars.githubusercontent.com/u/61172629?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 787,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772190621221,
+      "changelog": "Music generation skill powered by MiniMax Music API. | Support standard songs with lyrics, pure instrumental music, melodic chanting/humming, structured prompt crafting, multiple output formats (hex/url)\n\n基于 MiniMax Music API 的音乐生成技能， 支持带歌词的完整歌曲生成、纯音乐生成以及旋律哼唱生成。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4d03dba695292ce672d5cf7af16b59d430d7d693db99239d4854388fc407d3ce"
+}

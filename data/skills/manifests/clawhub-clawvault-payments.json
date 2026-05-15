@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25682,
+  "uuid": "skill-clawhub-clawvault-payments",
+  "skillKey": "clawhub-clawvault-payments",
+  "name": "ClawVault Payments",
+  "summary": "Security middleware for AI agents handling money. Non-custodial crypto wallets and virtual Visa cards with spending limits, whitelists, and human approval.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawvault_payments",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clawvault",
+      "features": [
+        "Security middleware for AI agents handling money",
+        "Non-custodial crypto wallets and virtual Visa cards with spending limits, whitelists, and human."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawvault-payments@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/172156552?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawvault-payments",
+      "url": "https://clawhub.ai/skills/clawvault-payments"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawvault-payments",
+    "url": "https://clawhub.ai/skills/clawvault-payments",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawvault-payments-c8ad94066756a4fd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawvault-payments@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawvault-payments-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fe7d89248500c04da4c692070cb5c86ce41ed457b63706500f0e9dbd82c6e451",
+      "artifactSizeBytes": 1975
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T13:59:29.229Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/move-planner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.move_planner",
+  "skill": {
+    "id": 40718,
+    "skillKey": "clawhub-move-planner",
+    "name": "Move Planner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "move-planner",
+    "url": "https://clawhub.ai/skills/move-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/move-planner-5ba10eb8934a8bcb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Plan and manage residential moves with timelines, tasks, vendors, address changes, school enrollment, and budget tracking using smart templates for all move..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chris-openclaw",
+      "userId": "s17f63svb641q2stekk1cmcdn183k4rq",
+      "displayName": "chris-openclaw",
+      "image": "https://avatars.githubusercontent.com/u/271059507?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775932712770,
+      "changelog": "Initial release of move-planner skill:\n\n- Plan and manage all aspects of a residential move, covering timelines, packing, vendors, utilities, and address changes.\n- Supports multiple move types: renting, buying, selling, relocating, or downsizing, with context-aware smart templates and checklists.\n- Tracks key milestones for buying and selling, tasks, budget, vendors, and household details.\n- Built-in, customizable timeline templates for various move scenarios.\n- Includes an address change tracker and light financial tracking to ensure no step is missed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d2ce3eea738d89993dd97645bf4f96fb9fd001a498ebdb794d3198739f51f54d"
+}

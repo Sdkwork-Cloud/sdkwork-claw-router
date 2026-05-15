@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62534,
+  "uuid": "skill-clawhub-github-smart-code-digest",
+  "skillKey": "clawhub-github-smart-code-digest",
+  "name": "GitHub Smart Code Digest",
+  "summary": "GitHub Smart Code Digest — 自动监控仓库 Commits/PRs，AI 智能代码审查， 生成可视化审查卡片，汇总发布到飞书 Wiki。适用于团队代码质量追踪和工程管理者日报/周报生成。 触发词：代码审查报告、GitHub 监控、PR 审查日报、代码质量汇总、工程师日报。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_smart_code_digest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zlszhonglongshen",
+      "features": [
+        "GitHub Smart Code Digest — 自动监控仓库 Commits/PRs，AI 智能代码审查， 生成可视化审查卡片，汇总发布到飞书 Wiki。适用于团队代码质量追踪和工程管."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-smart-code-digest@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9023908?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-smart-code-digest",
+      "url": "https://clawhub.ai/skills/github-smart-code-digest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-smart-code-digest",
+    "url": "https://clawhub.ai/skills/github-smart-code-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-smart-code-digest-cc8d218fae820598.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-smart-code-digest@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-smart-code-digest-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cd46160b46df00cae2d834516ab6a01c951cef69949f3abb68377ecb2278cc92",
+      "artifactSizeBytes": 2735
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T22:23:58.243Z"
+}

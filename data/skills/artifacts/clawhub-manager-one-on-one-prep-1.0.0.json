@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/manager-one-on-one-prep@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.manager_one_on_one_prep",
+  "skill": {
+    "id": 49068,
+    "skillKey": "clawhub-manager-one-on-one-prep",
+    "name": "Manager One On One Prep"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "manager-one-on-one-prep",
+    "url": "https://clawhub.ai/skills/manager-one-on-one-prep",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/manager-one-on-one-prep-b2536e6f998f032a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helps managers prepare structured 1:1 meeting agendas focusing on priorities, blockers, feedback, growth, and follow-up actions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 87,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778034384465,
+      "changelog": "Initial release – structures effective manager one-on-one prep\n\n- Guides 1:1 meeting prep around priorities, blockers, feedback, and growth\n- Delivers organized agenda, talking points, and follow-up actions\n- Includes safety boundaries against manipulation and legal/HR advice\n- Requires meeting goal, project updates, blockers, feedback topics, and relationship context as input\n- Suggests questions for alignment and professional growth",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e2c0cfe6bf539c5b21931ea4f0d596467fd5fc248906c5e986a8c5da56952e57"
+}

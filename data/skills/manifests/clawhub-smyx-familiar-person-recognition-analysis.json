@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57453,
+  "uuid": "skill-clawhub-smyx-familiar-person-recognition-analysis",
+  "skillKey": "clawhub-smyx-familiar-person-recognition-analysis",
+  "name": "熟人识别分析技能",
+  "summary": "Identifies acquaintances in videos or images through face photo comparison. Supports database enrollment, and the recognition results tell you who is at whic...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smyx_familiar_person_recognition_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smyx-skills",
+      "features": [
+        "Identifies acquaintances in videos or images through face photo comparison",
+        "Supports database enrollment, and the recognition results tell you who is at whic..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smyx-familiar-person-recognition-analysis@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/272124705?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smyx-familiar-person-recognition-analysis",
+      "url": "https://clawhub.ai/skills/smyx-familiar-person-recognition-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smyx-familiar-person-recognition-analysis",
+    "url": "https://clawhub.ai/skills/smyx-familiar-person-recognition-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smyx-familiar-person-recognition-analysis-1bc2aa852aef5192.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smyx-familiar-person-recognition-analysis@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-smyx-familiar-person-recognition-analysis-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8df85673d196d6097c685ad726a8f1dd5e8a87a247dc615df370f01df0b56f76",
+      "artifactSizeBytes": 2201
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T13:45:38.791Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gmail-lead-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gmail_lead_monitor",
+  "skill": {
+    "id": 36027,
+    "skillKey": "clawhub-gmail-lead-monitor",
+    "name": "Gmail Lead Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gmail-lead-monitor",
+    "url": "https://clawhub.ai/skills/gmail-lead-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gmail-lead-monitor-281fdcceacf37411.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor a Gmail inbox for new emails matching keywords and send real-time Telegram alerts while starring important messages in Gmail."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "themsquared",
+      "userId": "publishers:themsquared",
+      "displayName": "Mike",
+      "image": "https://avatars.githubusercontent.com/u/5358781?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774221686266,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2b64cad1699df7df6b8f498c9afa6766f30418921314c5716f6fc22e470218b0"
+}

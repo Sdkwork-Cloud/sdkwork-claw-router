@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-health-brief@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_health_brief",
+  "skill": {
+    "id": 13055,
+    "skillKey": "clawhub-openclaw-health-brief",
+    "name": "OpenClaw Health Brief"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-health-brief",
+    "url": "https://clawhub.ai/skills/openclaw-health-brief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-health-brief-19385e07ac77e842.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate a daily health brief from Oura, Whoop, and Withings. Unified re-auth script, local token persistence, Green/Yellow/Red morning summary."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nathanielweiner",
+      "userId": "publishers:nathanielweiner",
+      "displayName": "NathanielWeiner",
+      "image": "https://avatars.githubusercontent.com/u/1205440?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1373,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770492817990,
+      "changelog": "Initial release: WHOOP, Oura, Withings connectors with unified reauth, local token persistence, and OpenClaw cron integration",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:efed9a3487ea04c98ddac7da1ee514737f8fc894f8c69ba4f8ce5ada6f265f8b"
+}

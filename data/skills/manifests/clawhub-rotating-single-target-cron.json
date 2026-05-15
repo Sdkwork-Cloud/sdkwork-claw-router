@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31274,
+  "uuid": "skill-clawhub-rotating-single-target-cron",
+  "skillKey": "clawhub-rotating-single-target-cron",
+  "name": "Rotating Single Target Cron",
+  "summary": "Create or update recurring chat cron jobs that choose exactly one @ID from a configured list on each run, avoid repeating the previous target, persist the la...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rotating_single_target_cron",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sakullla",
+      "features": [
+        "Create or update recurring chat cron jobs that choose exactly one @ID from a configured list on."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rotating-single-target-cron@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39609236?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rotating-single-target-cron",
+      "url": "https://clawhub.ai/skills/rotating-single-target-cron"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rotating-single-target-cron",
+    "url": "https://clawhub.ai/skills/rotating-single-target-cron",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rotating-single-target-cron-6f458915c45bf25c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rotating-single-target-cron@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-rotating-single-target-cron-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:46c9e29ddbdaee2bf1e75a6ffedc0e7d5cf21a663ef7b416e188ecb024841150",
+      "artifactSizeBytes": 2034
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T14:55:56.253Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dmxapi-image-recognition@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dmxapi_image_recognition",
+  "skill": {
+    "id": 67368,
+    "skillKey": "clawhub-dmxapi-image-recognition",
+    "name": "dmxapi-image-recognition"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dmxapi-image-recognition",
+    "url": "https://clawhub.ai/skills/dmxapi-image-recognition",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dmxapi-image-recognition-c295d7259d30442a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 DMXAPI 平台进行图像识别和理解。支持 Gemini 等多模态视觉模型。可进行图片描述、OCR文字识别、图表数据分析、物体检测、场景理解等任务。当用户需要识别图片内容、提取图片文字、分析图表、理解图像时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "onee-io",
+      "userId": "s1727epbv38ehtntw9ksgqcw4983gxnw",
+      "displayName": "cryptonee.eth",
+      "image": "https://avatars.githubusercontent.com/u/9885484?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774622002183,
+      "changelog": "- 首次发布 dmxapi-image-recognition 技能，支持多种图像识别与理解任务。\n- 支持图片描述、OCR文字识别、图表分析、物体检测、场景理解等多种任务类型。\n- 兼容多种图片输入格式（PNG、JPEG、WebP、GIF），支持本地文件与远程 URL。\n- 命令行使用 dmxapi-cli，灵活选择模型与参数，提升视觉任务效果。\n- 提供丰富的使用示例，涵盖常见图片识别与数据提取场景。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c1f7558b54ffdaf78113c18c828a8fcb7868a3dc3cba2deb62ed891d852380d1"
+}

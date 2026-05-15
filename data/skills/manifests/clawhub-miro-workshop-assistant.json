@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20516,
+  "uuid": "skill-clawhub-miro-workshop-assistant",
+  "skillKey": "clawhub-miro-workshop-assistant",
+  "name": "Miro board",
+  "summary": "Workshop photos/notes -> an editable Miro diagram (real FRAMES as containers + stickies + connectors) with idempotent dedupe, rollback, undo and change commands, using the local script miro-push.mjs and env vars.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.miro_workshop_assistant",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Simone Ferrario",
+      "features": [
+        "Workshop photos/notes -> an editable Miro diagram (real FRAMES as containers + stickies + conne."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/miro-workshop-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/79698543?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "miro-workshop-assistant",
+      "url": "https://clawhub.ai/skills/miro-workshop-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "miro-workshop-assistant",
+    "url": "https://clawhub.ai/skills/miro-workshop-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/miro-workshop-assistant-ca4b19db1deaeb23.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/miro-workshop-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-miro-workshop-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:80ec62fba387297c1963e8135df0a25776a67f81532419dde6ca7f4ed3843627",
+      "artifactSizeBytes": 4200
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T08:46:32.671Z"
+}

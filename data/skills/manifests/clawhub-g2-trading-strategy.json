@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69427,
+  "uuid": "skill-clawhub-g2-trading-strategy",
+  "skillKey": "clawhub-g2-trading-strategy",
+  "name": "G2量化交易策略",
+  "summary": "基于21组策略回测，提供沪深300量化交易系统，年化收益21.2%，夏普率1.12，含智能选股和严格风控。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.g2_trading_strategy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Austin0208",
+      "features": [
+        "基于21组策略回测，提供沪深300量化交易系统，年化收益21.2%，夏普率1.12，含智能选股和严格风控。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/g2-trading-strategy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/89759734?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "g2-trading-strategy",
+      "url": "https://clawhub.ai/skills/g2-trading-strategy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "g2-trading-strategy",
+    "url": "https://clawhub.ai/skills/g2-trading-strategy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/g2-trading-strategy-ef26ac6ef0f73568.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/g2-trading-strategy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-g2-trading-strategy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e853be86979bf9a2c09667f150fc18b58686f877acc59d99d8a5526ad8b13624",
+      "artifactSizeBytes": 2233
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T09:06:41.864Z"
+}

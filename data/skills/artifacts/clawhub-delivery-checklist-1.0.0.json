@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/delivery-checklist@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.delivery_checklist",
+  "skill": {
+    "id": 34380,
+    "skillKey": "clawhub-delivery-checklist",
+    "name": "Delivery Checklist"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "delivery-checklist",
+    "url": "https://clawhub.ai/skills/delivery-checklist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/delivery-checklist-33b77532e16d0df7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Pre-delivery acceptance checklist and reusable mini-prompts for common tasks. Use when (1) Preparing to mark story as Delivered, (2) Final PR review before m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "urbantech",
+      "userId": "s1705vnaxvfmy5a3t55qeprr4d83hnbz",
+      "displayName": "Toby Morning",
+      "image": "https://avatars.githubusercontent.com/u/2746731?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 205,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774326943433,
+      "changelog": "Initial release of delivery-checklist skill.\n\n- Provides a structured pre-delivery acceptance checklist for software stories and PRs.\n- Includes a default process loop (Plan → Implement → Artifacts → PR → Verify → Deliver) with step-by-step outputs.\n- Offers reusable mini-prompts for classification, TDD, refactoring, and PR composition.\n- Supplies an acceptance criteria checklist covering tests, commits, security/UI concerns, PR format, and verification.\n- References detailed checklists and prompt templates in supplementary files.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9d22bea59439d2d41c041931ef775b9316aaa09326428bbfcce14909c746b333"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71478,
+  "uuid": "skill-clawhub-asia-arrival-card",
+  "skillKey": "clawhub-asia-arrival-card",
+  "name": "asia-arrival-card",
+  "summary": "亚洲入境卡填写助手。支持马来西亚、泰国、新加坡、印尼、越南、菲律宾、日本、韩国等亚洲国家的入境卡/签证申请填写指导。输入目的地国家、护照信息、行程信息，提供详细的入境卡填写操作指南，包含完整流程、字段说明、异常处理和自动化脚本建议。当用户提到\"入境卡\"、\"入境卡怎么办\"、\"签证申请\"、\"马来西亚/泰国/新加坡/印...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.asia_arrival_card",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ivy-ting",
+      "features": [
+        "亚洲入境卡填写助手。支持马来西亚、泰国、新加坡、印尼、越南、菲律宾、日本、韩国等亚洲国家的入境卡/签证申请填写指导。输入目的地国家、护照信息、行程信息，提供详细的入境卡填写操作指南，包含完整."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/asia-arrival-card@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/234137810?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "asia-arrival-card",
+      "url": "https://clawhub.ai/skills/asia-arrival-card"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "asia-arrival-card",
+    "url": "https://clawhub.ai/skills/asia-arrival-card",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/asia-arrival-card-bb080590d54679cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/asia-arrival-card@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-asia-arrival-card-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a9b60b11a55d018b9d5a0e34ab65e0a0e06d006e9dd74346e64aca87cc71e1d0",
+      "artifactSizeBytes": 2979
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T13:03:31.526Z"
+}

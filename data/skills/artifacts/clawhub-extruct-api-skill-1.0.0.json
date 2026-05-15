@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/extruct-api-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.extruct_api_skill",
+  "skill": {
+    "id": 46717,
+    "skillKey": "clawhub-extruct-api-skill",
+    "name": "Extruct API Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "extruct-api-skill",
+    "url": "https://clawhub.ai/skills/extruct-api-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/extruct-api-skill-9d81f158e5b5ba92.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run explicit Extruct API tasks through the bundled Extruct CLI. Covers Deep Search, semantic search, lookalike search, company and people tables, column oper..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zkid18",
+      "userId": "s171eahk9ykj57r5vwqtv69e1983gpmr",
+      "displayName": "zkid18",
+      "image": "https://avatars.githubusercontent.com/u/8243154?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 122,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775425401530,
+      "changelog": "extruct-api-skill version 1.0.0\n\n- Initial release supporting Extruct workflows via bundled CLI.\n- Enables Deep Search, semantic search, lookalike search, and existing table/task operations.\n- Supports company and people enrichment, scoring, and contact-finding within AI Tables.\n- Uses the CLI as the preferred execution path, with fallbacks to the Extruct API reference when necessary.\n- Provides clear rules for resolving Extruct table/task IDs from URLs or raw UUIDs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c41eeb11fee00f39c69eb28f9aa1e42c743798aaf5cc422f7367a49864a40ab7"
+}

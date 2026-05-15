@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32996,
+  "uuid": "skill-clawhub-justoneapi-youtube",
+  "skillKey": "clawhub-justoneapi-youtube",
+  "name": "YouTube API",
+  "summary": "Analyze YouTube workflows with JustOneAPI, including video Details and channel Videos.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_youtube",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Analyze YouTube workflows with JustOneAPI, including video Details and channel Videos."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-youtube@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-youtube",
+      "url": "https://clawhub.ai/skills/justoneapi-youtube"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-youtube",
+    "url": "https://clawhub.ai/skills/justoneapi-youtube",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-youtube-ac0b24d3857dfb8f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-youtube@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-youtube-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5fe124bdbc3a7d5d501ee19101efdb824ffa1da178f8d28406069c5e09473cfb",
+      "artifactSizeBytes": 2195
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T06:08:50.562Z"
+}

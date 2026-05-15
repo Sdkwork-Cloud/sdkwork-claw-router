@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-model-finder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_model_finder",
+  "skill": {
+    "id": 71905,
+    "skillKey": "clawhub-free-model-finder",
+    "name": "发现、对比和配置多平台免费/低价 AI 模型"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-model-finder",
+    "url": "https://clawhub.ai/skills/free-model-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-model-finder-94864508f24929f0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "发现、对比并自动配置多平台免费或低价 AI 模型，支持自动轮换以应对限流和优化成本。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sucriss",
+      "userId": "s17dwq70j1k7m3kj86ndkpzkvs83j6fg",
+      "displayName": "Criss_Su",
+      "image": "https://avatars.githubusercontent.com/u/37565038?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 485,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773128390620,
+      "changelog": "Free Model Finder - 初始版本上线\n\n- 支持扫描和列出多平台（OpenRouter、HuggingFace、Groq、Google AI Studio、Ollama）免费/低价 AI 模型\n- 可按价格、速度、质量、稳定性排序对比模型\n- 提供一键自动配置主模型与备用模型，并支持自动重启 Gateway 生效\n- 实现模型可用性监控与 rate limit 检测，自动切换备用模型\n- 支持通过命令行查询、切换、刷新模型，查看当前配置和切换历史\n- 提供详细平台接入说明及常见问题排查指南",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7cb6f5825fde24dfb5a40ec48ae7f5eb3f4d32cbd98d3183fd55290d8b1191fe"
+}

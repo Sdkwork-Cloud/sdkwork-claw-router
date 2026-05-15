@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18306,
+  "uuid": "skill-clawhub-tweet-processor",
+  "skillKey": "clawhub-tweet-processor",
+  "name": "Tweet Processor",
+  "summary": "Extract key insights from tweet URLs and categorize them into structured, formatted notes across tools, tech, design, people, and miscellaneous files.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tweet_processor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "caqlayan",
+      "features": [
+        "Extract key insights from tweet URLs and categorize them into structured, formatted notes acros."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tweet-processor@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/79770701?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tweet-processor",
+      "url": "https://clawhub.ai/skills/tweet-processor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tweet-processor",
+    "url": "https://clawhub.ai/skills/tweet-processor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tweet-processor-1167603145045c31.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tweet-processor@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-tweet-processor-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d58a6697e6fccc7d75bb5268f97999805f86ecbe54d8b268853124fe31ff659",
+      "artifactSizeBytes": 1955
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T15:06:57.936Z"
+}

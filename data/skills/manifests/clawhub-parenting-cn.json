@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72551,
+  "uuid": "skill-clawhub-parenting-cn",
+  "skillKey": "clawhub-parenting-cn",
+  "name": "ParentCN 全龄段育儿助手",
+  "summary": "0-18岁全年龄段育儿助手，覆盖分月龄发展里程碑、喂养睡眠指南、健康疫苗护理、早教启蒙、行为管教、亲子沟通、安全防护。当用户询问育儿、宝宝喂养、睡眠训练、辅食添加、疫苗、早教、管教、亲子关系，或需要生成公众号/小红书育儿内容时触发。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.parenting_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xbmchina",
+      "features": [
+        "0-18岁全年龄段育儿助手，覆盖分月龄发展里程碑、喂养睡眠指南、健康疫苗护理、早教启蒙、行为管教、亲子沟通、安全防护。当用户询问育儿、宝宝喂养、睡眠训练、辅食添加、疫苗、早教、管教、亲子关系."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/parenting-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14942293?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "parenting-cn",
+      "url": "https://clawhub.ai/skills/parenting-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "parenting-cn",
+    "url": "https://clawhub.ai/skills/parenting-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/parenting-cn-443064552691e0cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/parenting-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-parenting-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:371a2ba60900601a261f10641e1b2c101e2cce8fa7b2a4eac5d70c303c607c63",
+      "artifactSizeBytes": 2114
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T09:56:19.128Z"
+}

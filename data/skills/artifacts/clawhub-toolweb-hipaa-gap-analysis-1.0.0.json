@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toolweb-hipaa-gap-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toolweb_hipaa_gap_analysis",
+  "skill": {
+    "id": 26669,
+    "skillKey": "clawhub-toolweb-hipaa-gap-analysis",
+    "name": "HIPAA Gap Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toolweb-hipaa-gap-analysis",
+    "url": "https://clawhub.ai/skills/toolweb-hipaa-gap-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toolweb-hipaa-gap-analysis-1eaf058287e73dc6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Assess HIPAA compliance across all five rule areas, identify 32 control gaps, and generate a prioritized remediation plan with compliance scoring and audit r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krishnakumarmahadevan-cmd",
+      "userId": "s177cvva4qaee9r80e44xt5cqx83ga38",
+      "displayName": "ToolWeb",
+      "image": "https://avatars.githubusercontent.com/u/245780162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 363,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773907597791,
+      "changelog": "- Initial release of HIPAA Gap Analysis skill\n- Assess HIPAA compliance across all five rule areas with 32 mapped controls\n- Provides automated gap report: compliance score, deficiency list, prioritized remediation roadmap\n- Outputs regulatory exposure summary and audit readiness rating\n- Includes clear usage instructions, parameter details, example output, pricing tiers, and API documentation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4b4613615cbe5dad1004970b951beffd1bedbe39be3c64de161475144d51612e"
+}

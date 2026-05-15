@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16695,
+  "uuid": "skill-clawhub-quantumos",
+  "skillKey": "clawhub-quantumos",
+  "name": "QuantumOS",
+  "summary": "Install and manage QuantumOS, an AI command center dashboard for OpenClaw. Use when the user wants to set up QuantumOS, start/stop the dashboard, troubleshoo...",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quantumos",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "murtiurti4",
+      "features": [
+        "Install and manage QuantumOS, an AI command center dashboard for OpenClaw",
+        "Use when the user wants to set up QuantumOS, start/stop the dashboard, troubleshoo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quantumos@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/89798074?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quantumos",
+      "url": "https://clawhub.ai/skills/quantumos"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quantumos",
+    "url": "https://clawhub.ai/skills/quantumos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quantumos-b17bd2a2230e1ff5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quantumos@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-quantumos-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6bb194af66860a0c30ca618cf03494ab124c83cae85e5bb9f81e5a1204629240",
+      "artifactSizeBytes": 1906
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T18:04:12.334Z"
+}

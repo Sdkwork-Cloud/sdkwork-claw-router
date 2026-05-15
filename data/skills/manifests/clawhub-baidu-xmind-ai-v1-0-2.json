@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69417,
+  "uuid": "skill-clawhub-baidu-xmind-ai-v1-0-2",
+  "skillKey": "clawhub-baidu-xmind-ai-v1-0-2",
+  "name": "百度文档AI",
+  "summary": "百度智能文档分析平台API调用技能。支持文档抽取、文档解析、文档解析(PaddleOCR-VL)、文档比对、合同审查、文档格式转换等功能。当用户需要：(1) 从文档中提取特定字段信息，(2) 解析文档内容，(3) 比对两份文档差异，(4) 审查合同风险，(5) 转换文档格式时使用此技能。触发词：文档抽取、文档解析...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_xmind_ai_v1_0_2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wsxf",
+      "features": [
+        "百度智能文档分析平台API调用技能。支持文档抽取、文档解析、文档解析(PaddleOCR-VL)、文档比对、合同审查、文档格式转换等功能。当用户需要：(1) 从文档中提取特定字段信息，(2)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baidu-xmind-ai-v1-0-2@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40845723?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baidu-xmind-ai-v1-0-2",
+      "url": "https://clawhub.ai/skills/baidu-xmind-ai-v1-0-2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-xmind-ai-v1-0-2",
+    "url": "https://clawhub.ai/skills/baidu-xmind-ai-v1-0-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-xmind-ai-v1-0-2-86b47793e5e84e1d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baidu-xmind-ai-v1-0-2@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-baidu-xmind-ai-v1-0-2-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ca174011d0bc82aa3e6f2229d8845ac7c38705157d3abd85803dcaca6e2f33a8",
+      "artifactSizeBytes": 2356
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T05:30:39.395Z"
+}

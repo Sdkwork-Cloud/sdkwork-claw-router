@@ -1,32 +1,33 @@
-import type { PlusApiResult } from '@sdkwork/clawrouter-app-sdk';
-import { clearStoredAppSessionToken, storeAppSessionFromResult } from './app-session-token.ts';
+import {
+  clearStoredAppSessionToken,
+  storeAppSessionFromResult,
+  type StoredAppSessionToken,
+} from './app-session-token.ts';
+import { resetClawRouterIamRuntime } from './iam-runtime.ts';
 import {
   getClawRouterAppSdkClient,
   resetClawRouterSdkClients,
   type ClawRouterAppSdkClientOptions,
 } from './sdk-clients.ts';
-import { createRequestToken } from './request-id.ts';
+import { createRequestParams } from './request-id.ts';
 
 export async function createAppSession(
   options: ClawRouterAppSdkClientOptions = {},
-): Promise<PlusApiResult> {
-  const requestId = createRequestToken('app-session');
-  const result = await getClawRouterAppSdkClient(options).auth.createAppSession(undefined, requestId);
+): Promise<StoredAppSessionToken> {
+  const result = await getClawRouterAppSdkClient(options).auth.sessions.create(
+    {
+      grantType: 'session_bridge',
+    },
+    createRequestParams('app-session'),
+  );
   const stored = storeAppSessionFromResult(result);
   resetClawRouterSdkClients();
-  return {
-    code: '2000',
-    msg: 'success',
-    data: {
-      token: stored.token,
-      tokenType: stored.tokenType,
-      expiresAt: stored.expiresAt,
-      expiresInSeconds: stored.expiresInSeconds,
-    },
-  };
+  resetClawRouterIamRuntime();
+  return stored;
 }
 
 export function clearAppSession(): void {
   clearStoredAppSessionToken();
   resetClawRouterSdkClients();
+  resetClawRouterIamRuntime();
 }

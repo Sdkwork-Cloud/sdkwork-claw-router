@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pharmaceuticals-exploration@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pharmaceuticals_exploration",
+  "skill": {
+    "id": 47035,
+    "skillKey": "clawhub-pharmaceuticals-exploration",
+    "name": "Pharmaceuticals Exploration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pharmaceuticals-exploration",
+    "url": "https://clawhub.ai/skills/pharmaceuticals-exploration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pharmaceuticals-exploration-22198c417b547410.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Used for answering drug-related questions. For early-stage drugs, search and summarize related patents, academic literature, database records, clinical trial..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "patsnaplifescience",
+      "userId": "s178w3pk85rejw2tje9nd1jras85eg1c",
+      "displayName": "XK",
+      "image": "https://avatars.githubusercontent.com/u/275897758?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 108,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778145408058,
+      "changelog": "- Added a clear, step-by-step setup guide with instructions for obtaining and connecting PatSnap API keys.\n- Listed required MCP servers and clarified which are mandatory for full skill operation.\n- Improved guidance for tool integration and troubleshooting.\n- No changes were made to core drug investigation functionality or supported query types.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3294b0c31fe78b64e5af782ffbfb5097908dce4d2b084eabdf989263ffcd4e84"
+}

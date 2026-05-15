@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/terminal-executor@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.terminal_executor",
+  "skill": {
+    "id": 12618,
+    "skillKey": "clawhub-terminal-executor",
+    "name": "Terminal Executor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "terminal-executor",
+    "url": "https://clawhub.ai/skills/terminal-executor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/terminal-executor-4dc0487ba9a212a2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Execute terminal commands with optional sudo privileges and return the command output safely upon user request."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "choasx",
+      "userId": "publishers:choasx",
+      "displayName": "Choas",
+      "image": "https://avatars.githubusercontent.com/u/193335290?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1571,
+      "installsAllTime": 15,
+      "installsCurrent": 15,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772862202608,
+      "changelog": "- Added metadata file (_meta.json) for the skill.  \n- No changes to the skill's documentation or functionality.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:587b21f19a6ec1e14ec48a43395b677faed44c9059dcff16bf3176ae6bcd1a22"
+}

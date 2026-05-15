@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/language-tutor@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.language_tutor",
+  "skill": {
+    "id": 22004,
+    "skillKey": "clawhub-language-tutor",
+    "name": "Language Tutor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "language-tutor",
+    "url": "https://clawhub.ai/skills/language-tutor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/language-tutor-89d6da5b77fd00ee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create language learning audio with SenseAudio TTS, including pronunciation drills, bilingual lessons, slowed speech practice, and dialogue exercises. Use wh..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "scikkk",
+      "userId": "s171sgccp6wt09makas274ye9584ktsf",
+      "displayName": "scikkk",
+      "image": "https://avatars.githubusercontent.com/u/77485593?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 479,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773474751377,
+      "changelog": "No user-facing changes in this release.\n\n- Version bump with no detected file or documentation changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:15aec6de1b0eb9ca4759716b757e7a153a53b6680a1553e03a80c6d64fd7385e"
+}

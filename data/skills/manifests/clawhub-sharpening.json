@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39241,
+  "uuid": "skill-clawhub-sharpening",
+  "skillKey": "clawhub-sharpening",
+  "name": "Sharpening",
+  "summary": "Sharpening techniques for knives, tools, and bladed implements. Use when someone has dull kitchen knives, needs to maintain garden tools, axes, or shop tools...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sharpening",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HowToUseHumans",
+      "features": [
+        "Sharpening techniques for knives, tools, and bladed implements",
+        "Use when someone has dull kitchen knives, needs to maintain garden tools, axes, or shop tools..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sharpening@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/151727669?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sharpening",
+      "url": "https://clawhub.ai/skills/sharpening"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sharpening",
+    "url": "https://clawhub.ai/skills/sharpening",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sharpening-2017ced335f1f07e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sharpening@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sharpening-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:130d69fb94a4695ef1cfefdf0f6dab31a29aed4b8c5f48a880abff38879c2fe3",
+      "artifactSizeBytes": 2610
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T14:39:52.077Z"
+}

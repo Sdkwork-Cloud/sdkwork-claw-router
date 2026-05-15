@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aerobase-flight-awards@3.3.1",
+  "version": "3.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aerobase_flight_awards",
+  "skill": {
+    "id": 19476,
+    "skillKey": "clawhub-aerobase-flight-awards",
+    "name": "Aerobase Flight Awards"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aerobase-flight-awards",
+    "url": "https://clawhub.ai/skills/aerobase-flight-awards",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aerobase-flight-awards-f2d0a1013a2de2fb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search 24+ airline loyalty programs for award space with miles cost, seat availability, and canonical jetlag scores"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kurosh87",
+      "userId": "s172tbyj9m7964rvsde9cacb2s83yxjr",
+      "displayName": "Aerobase",
+      "image": "https://avatars.githubusercontent.com/u/95127236?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 591,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 20
+    },
+    "latestVersion": {
+      "version": "3.3.1",
+      "createdAt": 1775274361758,
+      "changelog": "Align canonical jetlagScore and accelerated recovery wording",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a332699ce72e0274e2719ba2dcd8826a5153c82d5c9537f80369344d15968efa"
+}

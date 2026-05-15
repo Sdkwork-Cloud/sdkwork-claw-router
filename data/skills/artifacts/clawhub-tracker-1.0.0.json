@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tracker",
+  "skill": {
+    "id": 21162,
+    "skillKey": "clawhub-tracker",
+    "name": "Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tracker",
+    "url": "https://clawhub.ai/skills/tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tracker-7ae4495c83dd7323.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design, organize, and improve tracking systems for work, goals, follow-ups, pipelines, projects, habits, issues, and ongoing operations. Use when someone nee..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "depinhq",
+      "userId": "publishers:depinhq",
+      "displayName": "depinHQ",
+      "image": "https://avatars.githubusercontent.com/u/216470578?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 511,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773142717662,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:28b074937181de121751f015fd7c62fef29f6b06196a70d9d0d914979170c459"
+}

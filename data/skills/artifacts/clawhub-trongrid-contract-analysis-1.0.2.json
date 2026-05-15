@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trongrid-contract-analysis@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trongrid_contract_analysis",
+  "skill": {
+    "id": 27172,
+    "skillKey": "clawhub-trongrid-contract-analysis",
+    "name": "trongrid-contract-analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trongrid-contract-analysis",
+    "url": "https://clawhub.ai/skills/trongrid-contract-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trongrid-contract-analysis-36013efc910c5516.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze TRON smart contracts including deployment info, ABI methods, transaction patterns, top callers, energy costs, and safety assessment. Use when a user..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "greason",
+      "userId": "s176mhh3c31n267h3brgrreh1x83jhx8",
+      "displayName": "greason",
+      "image": "https://avatars.githubusercontent.com/u/12513158?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 354,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773913715444,
+      "changelog": "Version 1.0.2\n\n- No file changes were detected in this version.\n- No functional, documentation, or metadata updates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4fcf9e3d2ee363bef15aff8739cebce300eaf41d1c7a455bcf6d41ec249477c4"
+}

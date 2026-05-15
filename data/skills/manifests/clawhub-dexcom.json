@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10529,
+  "uuid": "skill-clawhub-dexcom",
+  "skillKey": "clawhub-dexcom",
+  "name": "Dexcom CGM",
+  "summary": "Monitor blood glucose via Dexcom G7/G6 CGM",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dexcom",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chris-clem",
+      "features": [
+        "Monitor blood glucose via Dexcom G7/G6 CGM"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dexcom@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36116534?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dexcom",
+      "url": "https://clawhub.ai/skills/dexcom"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dexcom",
+    "url": "https://clawhub.ai/skills/dexcom",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dexcom-739bde84abd79db8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dexcom@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-dexcom-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:188e745e3f9916fbe5064fca90275ec20d1ed84e49121f0677326e4c4cf2a2a7",
+      "artifactSizeBytes": 1724
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-18T10:26:00.533Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26715,
+  "uuid": "skill-clawhub-snowsand-bitbucket",
+  "skillKey": "clawhub-snowsand-bitbucket",
+  "name": "Snowsand Bitbucket",
+  "summary": "Interact with Bitbucket Cloud via REST API. Use for repository management, pull request operations (list, view, create, comment, approve, merge), branch mana...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.snowsand_bitbucket",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "snowsand-enterprises",
+      "features": [
+        "Interact with Bitbucket Cloud via REST API",
+        "Use for repository management, pull request operations (list, view, create, comment, approve, m."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/snowsand-bitbucket@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74375198?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "snowsand-bitbucket",
+      "url": "https://clawhub.ai/skills/snowsand-bitbucket"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "snowsand-bitbucket",
+    "url": "https://clawhub.ai/skills/snowsand-bitbucket",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/snowsand-bitbucket-f40f12f1fa00142f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/snowsand-bitbucket@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-snowsand-bitbucket-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ccf3c5e1b11dd9498f5f65c7911b8c0a31761fbed1e82ff349ecf87ab861786e",
+      "artifactSizeBytes": 2583
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T22:33:29.717Z"
+}

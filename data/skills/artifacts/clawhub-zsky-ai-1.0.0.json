@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zsky-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zsky_ai",
+  "skill": {
+    "id": 39069,
+    "skillKey": "clawhub-zsky-ai",
+    "name": "Zsky Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zsky-ai",
+    "url": "https://clawhub.ai/skills/zsky-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zsky-ai-e810fa55342d9252.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get AI-edited clips ready to post, without touching a single slider. Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"enhance..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776163031880,
+      "changelog": "- Initial release of Zsky AI: fast, cloud-based AI video editing for creators.\n- Upload videos (up to 500MB, MP4/MOV/AVI/WebM supported) and auto-edit/enhance with AI by description.\n- Session and token management are automated; 100 free credits provided on first use.\n- Supports export to 1080p MP4 and batch or iterative editing workflows.\n- Handles common video edit actions (upload, export, credits, status) and robust error handling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac91bc2c8decad217a7f86d39084b4bf7b392954376403c1101699a4bf0df19b"
+}

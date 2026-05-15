@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62163,
+  "uuid": "skill-clawhub-obsidian-inbox-pipeline",
+  "skillKey": "clawhub-obsidian-inbox-pipeline",
+  "name": "Obsidian Inbox Pipeline",
+  "summary": "将任意来源（AI 资讯、经济雷达、旅游日报、RSS、文章）自动采集、 结构化写入 Obsidian inbox 的完整流水线。支持 Telegram / 飞书推送 和 cron 定时执行。一套配置，永久自动沉淀知识。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_inbox_pipeline",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "simo",
+      "features": [
+        "将任意来源（AI 资讯、经济雷达、旅游日报、RSS、文章）自动采集、 结构化写入 Obsidian inbox 的完整流水线。支持 Telegram / 飞书推送 和 cron 定时执行。一."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/obsidian-inbox-pipeline@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20699319?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "obsidian-inbox-pipeline",
+      "url": "https://clawhub.ai/skills/obsidian-inbox-pipeline"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-inbox-pipeline",
+    "url": "https://clawhub.ai/skills/obsidian-inbox-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-inbox-pipeline-4bfa0b7c8be24cb3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/obsidian-inbox-pipeline@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-obsidian-inbox-pipeline-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:62c46c8dd0dacf4f9b1656551d7fd61a5e8b9303b0dfe4c6e80c36acdb875611",
+      "artifactSizeBytes": 2108
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T10:10:27.135Z"
+}

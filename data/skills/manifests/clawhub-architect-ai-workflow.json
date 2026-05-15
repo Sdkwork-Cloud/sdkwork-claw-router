@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72230,
+  "uuid": "skill-clawhub-architect-ai-workflow",
+  "skillKey": "clawhub-architect-ai-workflow",
+  "name": "建筑学长AI工作流",
+  "summary": "基于建筑学长官网AI能力，搭建室内设计方案从无到有全流程自动化工作流，整合灵感搜集、AI出图、PPT生成、预算概算全环节。 当需要梳理设计方案AI工作流、测试全流程跑通、使用建筑学长AI能力时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.architect_ai_workflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "137984917-cyber",
+      "features": [
+        "基于建筑学长官网AI能力，搭建室内设计方案从无到有全流程自动化工作流，整合灵感搜集、AI出图、PPT生成、预算概算全环节。 当需要梳理设计方案AI工作流、测试全流程跑通、使用建筑学长AI能力."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/architect-ai-workflow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270913925?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "architect-ai-workflow",
+      "url": "https://clawhub.ai/skills/architect-ai-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "architect-ai-workflow",
+    "url": "https://clawhub.ai/skills/architect-ai-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/architect-ai-workflow-8ebcac7f2a696903.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/architect-ai-workflow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-architect-ai-workflow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:abd13db0f83d26e0c7669630a10e804c8740a2c2a7d96163b5783a32f252aaa8",
+      "artifactSizeBytes": 2114
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T08:30:43.229Z"
+}

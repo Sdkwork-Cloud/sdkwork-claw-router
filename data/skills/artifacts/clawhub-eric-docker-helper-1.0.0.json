@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eric-docker-helper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eric_docker_helper",
+  "skill": {
+    "id": 49145,
+    "skillKey": "clawhub-eric-docker-helper",
+    "name": "Docker Helper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eric-docker-helper",
+    "url": "https://clawhub.ai/skills/eric-docker-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eric-docker-helper-945bce324ffd8b42.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Docker containers, images, volumes, networks, and Docker Compose projects. Use when the user wants to: (1) List/start/stop/restart Docker containers,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ericlooi504",
+      "userId": "s1728b3jrtnnagbdxjy2rmpndh84mk8e",
+      "displayName": "ericlooi504",
+      "image": "https://avatars.githubusercontent.com/u/275256771?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 86,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777864438192,
+      "changelog": "Initial release: Docker container management, compose templates, debugging & cleanup",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7e35700d820f7e2d9fff08da0b6fca38bfb58e3bf9eb9e17b38f66055375b849"
+}

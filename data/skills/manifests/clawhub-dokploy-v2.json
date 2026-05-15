@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23926,
+  "uuid": "skill-clawhub-dokploy-v2",
+  "skillKey": "clawhub-dokploy-v2",
+  "name": "Dokploy",
+  "summary": "Manage Dokploy deployments, projects, applications, and domains via the Dokploy API.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dokploy_v2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "米空格",
+      "features": [
+        "Manage Dokploy deployments, projects, applications, and domains via the Dokploy API."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dokploy-v2@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1013615?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dokploy-v2",
+      "url": "https://clawhub.ai/skills/dokploy-v2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dokploy-v2",
+    "url": "https://clawhub.ai/skills/dokploy-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dokploy-v2-6efc0d6ea5f1f1bf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dokploy-v2@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-dokploy-v2-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:69fb600bea0b324f084d6f4224004faced22f94555ba1d2a2a24f63358c76bd7",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T14:13:35.619Z"
+}

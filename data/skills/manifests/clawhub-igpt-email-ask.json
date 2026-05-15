@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16972,
+  "uuid": "skill-clawhub-igpt-email-ask",
+  "skillKey": "clawhub-igpt-email-ask",
+  "name": "iGPT email ask",
+  "summary": "Secure, per-user-isolated email reasoning and analysis via the iGPT Context Engine API. Summarizes threads, extracts tasks and decisions, detects sentiment,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.igpt_email_ask",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sammy-spk",
+      "features": [
+        "Secure, per-user-isolated email reasoning and analysis via the iGPT Context Engine API",
+        "Summarizes threads, extracts tasks and decisions, detects sentiment,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/igpt-email-ask@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/221987197?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "igpt-email-ask",
+      "url": "https://clawhub.ai/skills/igpt-email-ask"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "igpt-email-ask",
+    "url": "https://clawhub.ai/skills/igpt-email-ask",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/igpt-email-ask-3356c7e6af9aa332.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/igpt-email-ask@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-igpt-email-ask-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c22214266f89d822efb0430fa74ebcf3f73a694098cd99d01831c4b88148d476",
+      "artifactSizeBytes": 2467
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T12:29:59.428Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12657,
+  "uuid": "skill-clawhub-aiml-image-video",
+  "skillKey": "clawhub-aiml-image-video",
+  "name": "AIML Generate images and videos",
+  "summary": "Generate images or videos via AIMLAPI from prompts. Use when Codex needs reliable AI/ML API media generation with retries, explicit User-Agent headers, and a...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aiml_image_video",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AI/ML API",
+      "features": [
+        "Generate images or videos via AIMLAPI from prompts",
+        "Use when Codex needs reliable AI/ML API media generation with retries, explicit User-Agent head."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aiml-image-video@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/187510884?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aiml-image-video",
+      "url": "https://clawhub.ai/skills/aiml-image-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aiml-image-video",
+    "url": "https://clawhub.ai/skills/aiml-image-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aiml-image-video-95615a6cfe948927.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aiml-image-video@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-aiml-image-video-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8e0d9c9081bd92130cba222acd1bbcc4403966aa3e787175cdeae88d3c5d7230",
+      "artifactSizeBytes": 2032
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T16:06:26.215Z"
+}

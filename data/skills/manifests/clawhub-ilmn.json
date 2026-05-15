@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66652,
+  "uuid": "skill-clawhub-ilmn",
+  "skillKey": "clawhub-ilmn",
+  "name": "Ilmn",
+  "summary": "全球领先的基因测序平台，Illumina凭借专利和消耗品实现80%以上NGS市场占有率，测序成本降至200美元。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ilmn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "全球领先的基因测序平台，Illumina凭借专利和消耗品实现80%以上NGS市场占有率，测序成本降至200美元。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ilmn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ilmn",
+      "url": "https://clawhub.ai/skills/ilmn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ilmn",
+    "url": "https://clawhub.ai/skills/ilmn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ilmn-9dfe0c511cd8b582.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ilmn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ilmn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4300a6d1fa23968fc4494c81efca75a8c7ea9d4a3d306a2d53407c1371371d1f",
+      "artifactSizeBytes": 2063
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T23:45:06.159Z"
+}

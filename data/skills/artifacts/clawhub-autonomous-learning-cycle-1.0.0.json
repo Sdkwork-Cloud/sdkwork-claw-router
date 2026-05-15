@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/autonomous-learning-cycle@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autonomous_learning_cycle",
+  "skill": {
+    "id": 65705,
+    "skillKey": "clawhub-autonomous-learning-cycle",
+    "name": "Autonomous Learning Cycle"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autonomous-learning-cycle",
+    "url": "https://clawhub.ai/skills/autonomous-learning-cycle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autonomous-learning-cycle-c209808302b1a667.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "实现每17分钟自主执行任务、提取模式、评估自信、自动创建技能并生成每日/每周反思与新学习方向的闭环系统。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pagoda111king",
+      "userId": "s1746mhemcg917609xsdwamt1183gyw3",
+      "displayName": "pagoda111king",
+      "image": "https://avatars.githubusercontent.com/u/177529007?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 214,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774810962337,
+      "changelog": "Initial release: complete 17-minute autonomous learning/evolution system.\n\n- Implements six core engines: evolution engine, learning extractor, confidence assessment, skill creator, reflection engine, and learning direction generator.\n- Supports four main scheduled tasks for autonomous cycles, daily/weekly reflection, and new learning direction generation.\n- Provides a self-evolving workflow: autonomous task selection, execution, pattern extraction, confidence evaluation, skill generation, and reflection.\n- Includes setup/usage instructions, configuration options, and troubleshooting guidance.\n- Designed for personal growth, skill acquisition, and advanced autonomous project management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:65d8c09a3dad355d9d8db825f5ec48defc4a495d64b85b505dc3c7f6e3a0333f"
+}

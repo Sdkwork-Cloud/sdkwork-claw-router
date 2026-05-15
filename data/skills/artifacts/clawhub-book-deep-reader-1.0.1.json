@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/book-deep-reader@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_deep_reader",
+  "skill": {
+    "id": 30280,
+    "skillKey": "clawhub-book-deep-reader",
+    "name": "Book Deep Reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-deep-reader",
+    "url": "https://clawhub.ai/skills/book-deep-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-deep-reader-190a18037e423902.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deep-read a book and produce teaching-quality notes with critical evaluation and action guidance. Use when: (1) user wants to quickly learn and understand a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kingluu",
+      "userId": "s177a0np8x9adgm40byqsya0ws84y0ee",
+      "displayName": "kingluu",
+      "image": "https://avatars.githubusercontent.com/u/49439091?v=4"
+    },
+    "stats": {
+      "comments": 4,
+      "downloads": 185,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776649462001,
+      "changelog": "Major update: 9 new critical assessment dimensions\n1. Identification of author's core problems\n2. Academic context positioning\n3. Evaluation of innovation contribution\n4. Comparison of similar books\n5. Critical review\n6. Future direction\n7. Cross border inspiration\n8. Most inspiring stories/cases\n9. Suggestions for action\nNow we can not only extract book knowledge, but also evaluate the value of books, provide cross-border inspiration, and formulate action plans.\n\n**Adds critical evaluation and action guidance to book notes.**\n\n- Introduced a new critical evaluation section covering academic context, challenges, limitations, comparative analysis, and future directions.\n- Added requirements for cross-disciplinary insights and immediately actionable takeaways.\n- Extended research workflow to include academic context, comparative analysis, and critical reviews.\n- Updated output and quality checklist to ensure critical evaluation and practical application are included.\n- Skill now produces teaching-quality notes that also help users assess value, limitations, and direct actions from a book.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6d9288f0b25d2006ec8fa9fc596ab5e0f98db2fe680c7f2d35f37d729938f53f"
+}

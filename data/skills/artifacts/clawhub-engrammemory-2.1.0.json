@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/engrammemory@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.engrammemory",
+  "skill": {
+    "id": 33212,
+    "skillKey": "clawhub-engrammemory",
+    "name": "Engram Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "engrammemory",
+    "url": "https://clawhub.ai/skills/engrammemory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/engrammemory-18ef83742beb15f1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Persistent semantic memory for AI agents. Store, search, recall, and forget memories across sessions using Qdrant + FastEmbed."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "escapethefate1991",
+      "userId": "s170w6wqmpm6fhscrf8mh47x8s83vef7",
+      "displayName": "engram",
+      "image": "https://avatars.githubusercontent.com/u/124651282?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 241,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1774908904648,
+      "changelog": "OpenClaw plugin now routes through three-tier recall engine",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ed3624a34863008ed5e4f1244776bc8478e9fa3d7b6fc8ce4f03a4cf0838af26"
+}

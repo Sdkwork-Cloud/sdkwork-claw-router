@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65785,
+  "uuid": "skill-clawhub-shenmeng-odds-movement-monitor",
+  "skillKey": "clawhub-shenmeng-odds-movement-monitor",
+  "name": "Odds Movement Monitor 赔率异动监控",
+  "summary": "专业级体育赛事赔率异动监控系统 - 实时追踪亚盘、欧赔、大小球变化。 智能识别机构操盘意图，捕捉变盘信号，辅助投注决策。 已接入 SkillPay 付费系统。",
+  "version": "2026.4.15-100",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shenmeng_odds_movement_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shenmeng",
+      "features": [
+        "专业级体育赛事赔率异动监控系统",
+        "实时追踪亚盘、欧赔、大小球变化。 智能识别机构操盘意图，捕捉变盘信号，辅助投注决策。 已接入 SkillPay 付费系统。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shenmeng-odds-movement-monitor@2026.4.15-100",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6897076?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shenmeng-odds-movement-monitor",
+      "url": "https://clawhub.ai/skills/shenmeng-odds-movement-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shenmeng-odds-movement-monitor",
+    "url": "https://clawhub.ai/skills/shenmeng-odds-movement-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shenmeng-odds-movement-monitor-d7be4cac4b70824d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shenmeng-odds-movement-monitor@2026.4.15-100",
+      "artifactUrl": "data/skills/artifacts/clawhub-shenmeng-odds-movement-monitor-2026.4.15-100.json",
+      "version": "2026.4.15-100",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4806dbde1b21fd032d009ef5a322ddf9a691df76ef7478472f6924b6eb08afa7",
+      "artifactSizeBytes": 2171
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T06:16:42.875Z"
+}

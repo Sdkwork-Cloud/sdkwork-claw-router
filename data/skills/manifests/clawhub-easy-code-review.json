@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65959,
+  "uuid": "skill-clawhub-easy-code-review",
+  "skillKey": "clawhub-easy-code-review",
+  "name": "easy-code-review",
+  "summary": "AI代码审核助手，自动审查AI修改的代码，检查是否符合原始需求、是否存在非必要修改",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.easy_code_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yanghao-smile",
+      "features": [
+        "AI代码审核助手，自动审查AI修改的代码，检查是否符合原始需求、是否存在非必要修改"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/easy-code-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257219801?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "easy-code-review",
+      "url": "https://clawhub.ai/skills/easy-code-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "easy-code-review",
+    "url": "https://clawhub.ai/skills/easy-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/easy-code-review-57eb8d1d282f7c72.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/easy-code-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-easy-code-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4673ad4df9bd4c680ad510477a9b313b7f2a15fd2e67e545a249548c4e70113b",
+      "artifactSizeBytes": 2235
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T09:08:56.757Z"
+}

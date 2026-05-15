@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29901,
+  "uuid": "skill-clawhub-feishu-agent-bind",
+  "skillKey": "clawhub-feishu-agent-bind",
+  "name": "Feishu Agent Bind",
+  "summary": "Bind a Feishu group chat to a specific OpenClaw agent. Use when user wants to route a Feishu group to a dedicated agent (e.g., devops, hr, pm). Covers agent...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_agent_bind",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Embracex1998",
+      "features": [
+        "Bind a Feishu group chat to a specific OpenClaw agent",
+        "Use when user wants to route a Feishu group to a dedicated agent (e.g., devops, hr, pm)",
+        "Covers agent..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-agent-bind@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/101925757?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-agent-bind",
+      "url": "https://clawhub.ai/skills/feishu-agent-bind"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-agent-bind",
+    "url": "https://clawhub.ai/skills/feishu-agent-bind",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-agent-bind-586f0eceee0bacfd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-agent-bind@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-agent-bind-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:265fa42496840eb7104ba205717ad72aa126b26aad1178c58d61db58e9afd946",
+      "artifactSizeBytes": 1926
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T04:51:49.412Z"
+}

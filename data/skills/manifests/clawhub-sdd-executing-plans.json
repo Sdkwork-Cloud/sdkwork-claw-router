@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60749,
+  "uuid": "skill-clawhub-sdd-executing-plans",
+  "skillKey": "clawhub-sdd-executing-plans",
+  "name": "SDD Executing Plans",
+  "summary": "执行 spec-plan.md 实现计划，自动完成任务、验证步骤并包含重试逻辑。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sdd_executing_plans",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mahingbun-dev",
+      "features": [
+        "执行 spec-plan.md 实现计划，自动完成任务、验证步骤并包含重试逻辑。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sdd-executing-plans@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/174362089?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sdd-executing-plans",
+      "url": "https://clawhub.ai/skills/sdd-executing-plans"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sdd-executing-plans",
+    "url": "https://clawhub.ai/skills/sdd-executing-plans",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sdd-executing-plans-7951e26445402483.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sdd-executing-plans@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sdd-executing-plans-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:763a54e3cef2b04c305c0120b24eb4719891d771c65c54b5c28992df61408133",
+      "artifactSizeBytes": 1860
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T01:07:11.780Z"
+}

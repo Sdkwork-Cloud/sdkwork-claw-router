@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bluebubbles@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bluebubbles",
+  "skill": {
+    "id": 8382,
+    "skillKey": "clawhub-bluebubbles",
+    "name": "Bluebubbles"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bluebubbles",
+    "url": "https://clawhub.ai/skills/bluebubbles",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bluebubbles-78831fc3eac647f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build or update the BlueBubbles external channel plugin for Clawdbot (extension package, REST send/probe, webhook inbound)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kevin19830331",
+      "userId": "publishers:kevin19830331",
+      "displayName": "kevin19830331",
+      "image": "https://avatars.githubusercontent.com/u/115806002?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 10517,
+      "installsAllTime": 1037,
+      "installsCurrent": 1009,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769405231570,
+      "changelog": "- Initial release.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:73dbfbb5f5956ee4d7b02bc30fddafe4abfd6af069e29f4d72748555b0d464a5"
+}

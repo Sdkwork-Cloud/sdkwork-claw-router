@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/outlit-mcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.outlit_mcp",
+  "skill": {
+    "id": 36532,
+    "skillKey": "clawhub-outlit-mcp",
+    "name": "Outlit MCP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "outlit-mcp",
+    "url": "https://clawhub.ai/skills/outlit-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/outlit-mcp-f963c558f792eece.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when querying Outlit customer data via MCP tools (outlit_*). Triggers on customer analytics, revenue metrics, activity timelines, cohort analysis, churn..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leo-paz",
+      "userId": "s1719ryyr8azsrbf1erk7aem7x84mmzf",
+      "displayName": "Leo",
+      "image": "https://avatars.githubusercontent.com/u/26093865?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 792,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771184467662,
+      "changelog": "Initial release of the Outlit MCP skill for querying customer intelligence data via MCP tools.\n\n- Supports six tools: customer and user browsing, deep dives, timelines, custom SQL analytics, and schema discovery.\n- Detailed parameter and usage guides for each tool (outlit_list_customers, outlit_list_users, outlit_get_customer, outlit_get_timeline, outlit_query, outlit_schema).\n- Comprehensive setup instructions for API key and MCP integration across multiple environments (Claude Code, Cursor, Claude Desktop).\n- Includes best practices, gotchas, data model overview, and known limitations.\n- Emphasizes always discovering schema before writing SQL and filtering at the source for performance.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:914b63e3c813219450d95e9c5377a5e9397000e3ed2099b2f6c4ae483b17b603"
+}

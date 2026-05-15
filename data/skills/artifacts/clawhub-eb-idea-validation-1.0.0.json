@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eb-idea-validation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eb_idea_validation",
+  "skill": {
+    "id": 44973,
+    "skillKey": "clawhub-eb-idea-validation",
+    "name": "Idea Validation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eb-idea-validation",
+    "url": "https://clawhub.ai/skills/eb-idea-validation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eb-idea-validation-8d61f8c24da26755.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Validate business ideas before building. Use this skill when the user mentions: validate my idea, is this viable, market analysis, competitor analysis, TAM S..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "emersonbraun",
+      "userId": "s17et1m19hdc751hkgrqtzjf6184b55r",
+      "displayName": "Emerson Braun",
+      "image": "https://avatars.githubusercontent.com/u/25778027?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775529322246,
+      "changelog": "Initial release: Concise, structured skill for brutally honest, evidence-based, step-by-step business idea validation.\n\n- Guides users to clarify customer pain, market size, and existing solutions first.\n- Uses clear TAM/SAM/SOM market sizing with both top-down and bottom-up methods.\n- Maps direct, indirect, and substitute competitors; analyzes strengths, weaknesses, and pricing.\n- Forces precise articulation of defensible differentiation (not just UX).\n- Assesses feasibility across technical, financial, regulatory, and team dimensions.\n- Suggests quick/cheap experiments before building to validate demand.\n- Delivers a clear GO/PIVOT/EXPLORE/KILL verdict with actionable next steps in a structured report.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:45edc309b1100ba3bca5c0a2d43457efcba088ad01623ed53ba062d600787c2b"
+}

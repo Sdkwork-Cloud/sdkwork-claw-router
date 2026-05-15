@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-security-scan@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_security_scan",
+  "skill": {
+    "id": 57165,
+    "skillKey": "clawhub-skill-security-scan",
+    "name": "Skill Scanner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-security-scan",
+    "url": "https://clawhub.ai/skills/skill-security-scan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-security-scan-b6c7c0611645ee93.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Security checks for installing skills, packages, or plugins. Use BEFORE any `npm install`, `openclaw plugins install`, `clawhub install`, or similar install..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sudhindrat",
+      "userId": "s174kxx0dw319dwywagpszag9x83ntbs",
+      "displayName": "sudhindrat",
+      "image": "https://avatars.githubusercontent.com/u/159858314?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 273,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773690891395,
+      "changelog": "- Major update: Migrated from an automated shell audit tool to a comprehensive pre-install security checklist and manual review workflow.\n- Removed all audit scripts and blocklist/allowlist files; the skill no longer performs automated scanning.\n- Added detailed, actionable checklists for vetting sources, popularity, dependencies, lifecycle scripts, and post-install risks.\n- Expanded instructions to cover npm and ClawHub skill/package/plugin installs, including dynamic content, core file protection, and reporting known attack campaigns.\n- Focus is now on practical user guidance for risk assessment at install-time, rather than automated post-hoc scanning.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ef86fa7039b21a2a5ebcb1b27573d7050dbf51bc654e507a570938c745d6ca0a"
+}

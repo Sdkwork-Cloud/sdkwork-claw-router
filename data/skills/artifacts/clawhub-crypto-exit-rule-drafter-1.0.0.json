@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crypto-exit-rule-drafter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_exit_rule_drafter",
+  "skill": {
+    "id": 45072,
+    "skillKey": "clawhub-crypto-exit-rule-drafter",
+    "name": "Crypto Exit Rule Drafter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-exit-rule-drafter",
+    "url": "https://clawhub.ai/skills/crypto-exit-rule-drafter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-exit-rule-drafter-a5b63e46a85ec70d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A rule-drafting skill that helps users define exit conditions in advance for their crypto positions. Use when the user wants to set pre-defined exit rules. P..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776303797623,
+      "changelog": "Initial release of crypto-exit-rule-drafter\n\n- Enables users to define specific, written exit rules for their crypto positions.\n- Guides users through clarifying position details, risk tolerance, and investment thesis.\n- Produces two concrete exit rules: price-based (stop-loss) and fundamental-change-based.\n- Includes a review trigger and commitment statement to encourage disciplined execution.\n- Designed for prompt-only usage, requiring no portfolio integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:412f558319ec0575537ee2989f294784a1941195e55feaf3170bea9a39481811"
+}

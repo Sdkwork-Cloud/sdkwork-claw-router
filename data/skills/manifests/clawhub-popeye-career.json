@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67409,
+  "uuid": "skill-clawhub-popeye-career",
+  "skillKey": "clawhub-popeye-career",
+  "name": "Popeye Career",
+  "summary": "职场助手 - 简历优化、面试准备、汇报撰写。触发词：优化简历、面试准备、写汇报",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.popeye_career",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiangtaoid",
+      "features": [
+        "简历优化、面试准备、汇报撰写。触发词：优化简历、面试准备、写汇报"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/popeye-career@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62326134?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "popeye-career",
+      "url": "https://clawhub.ai/skills/popeye-career"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "popeye-career",
+    "url": "https://clawhub.ai/skills/popeye-career",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/popeye-career-ec38edfec1e631fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/popeye-career@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-popeye-career-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7a3b5aa2c528b7624dce7e20a5d99bd852cd81329b39f659c217d07ca59bd15e",
+      "artifactSizeBytes": 1848
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T09:03:27.899Z"
+}

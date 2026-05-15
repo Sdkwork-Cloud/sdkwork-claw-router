@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43414,
+  "uuid": "skill-clawhub-nansen-alerts-webhook-listener",
+  "skillKey": "clawhub-nansen-alerts-webhook-listener",
+  "name": "Nansen Alerts Webhook Listener",
+  "summary": "Set up a local webhook server to receive Nansen smart alerts in real-time with HMAC signature verification and public tunneling. Use when a user wants to lis...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nansen_alerts_webhook_listener",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nansen AI",
+      "features": [
+        "Set up a local webhook server to receive Nansen smart alerts in real-time with HMAC signature v.",
+        "Use when a user wants to lis..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nansen-alerts-webhook-listener@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/93130718?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nansen-alerts-webhook-listener",
+      "url": "https://clawhub.ai/skills/nansen-alerts-webhook-listener"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nansen-alerts-webhook-listener",
+    "url": "https://clawhub.ai/skills/nansen-alerts-webhook-listener",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nansen-alerts-webhook-listener-bcca6462c6d45d20.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nansen-alerts-webhook-listener@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nansen-alerts-webhook-listener-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a23744e36a3d7218e0acb244b589e70a303d6cbb1da9249d162718f8b447a44f",
+      "artifactSizeBytes": 2664
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T13:40:04.544Z"
+}

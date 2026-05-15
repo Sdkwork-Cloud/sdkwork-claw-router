@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deep-debugging@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deep_debugging",
+  "skill": {
+    "id": 23425,
+    "skillKey": "clawhub-deep-debugging",
+    "name": "Deep Debugging"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deep-debugging",
+    "url": "https://clawhub.ai/skills/deep-debugging",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deep-debugging-5b0f35720587d6d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Systematic evidence-first debugging for unclear, recurring, or high-risk software bugs. Use when the user asks to debug/root-cause an issue, says a fix did n..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brasco05",
+      "userId": "s177sz08tyrpncx75y5y4em2rn83v35v",
+      "displayName": "brasco05",
+      "image": "https://avatars.githubusercontent.com/u/256532966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 431,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1778141487313,
+      "changelog": "Remove credential-like examples, redact JWT diagnostics, and make debugging snippets safer for moderation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5c07d1480794dbe5c494da6e3c6ca7c89f352893b1402c0b1bb71b8d8d62b1b5"
+}

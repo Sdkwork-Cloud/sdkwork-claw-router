@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67623,
+  "uuid": "skill-clawhub-skill-discoverer-pro",
+  "skillKey": "clawhub-skill-discoverer-pro",
+  "name": "Skill Discoverer",
+  "summary": "L0 入口层 - 技能发现与引导引擎。帮助用户发现合适的技能，基于任务类型推荐技能组合，提供技能使用引导和教程。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_discoverer_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pagoda111king",
+      "features": [
+        "技能发现与引导引擎。帮助用户发现合适的技能，基于任务类型推荐技能组合，提供技能使用引导和教程。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-discoverer-pro@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/177529007?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-discoverer-pro",
+      "url": "https://clawhub.ai/skills/skill-discoverer-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-discoverer-pro",
+    "url": "https://clawhub.ai/skills/skill-discoverer-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-discoverer-pro-f8282fb6de59f041.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-discoverer-pro@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-discoverer-pro-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d19e47870e35463a98a70a86ecce08f5d17307b8bbf4a49485bc937f29c871f8",
+      "artifactSizeBytes": 2003
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T17:15:13.274Z"
+}

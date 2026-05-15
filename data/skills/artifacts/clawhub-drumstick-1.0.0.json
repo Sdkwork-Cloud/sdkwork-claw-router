@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/drumstick@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.drumstick",
+  "skill": {
+    "id": 54433,
+    "skillKey": "clawhub-drumstick",
+    "name": "Drumstick"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "drumstick",
+    "url": "https://clawhub.ai/skills/drumstick",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/drumstick-b2e94cfafcaafef7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides detailed information on Nestlé's Drumstick ice cream brand, including history, flavors, market strategy, and seasonal trends."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 83,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778069103775,
+      "changelog": "- Initial release of the Drumstick skill, providing an overview of Nestlé’s iconic $1B+ ice cream cone brand.\n- Includes brand timeline, business model, moat analysis, and key data points.\n- Highlights product innovation, flavor expansion, and seasonal sales dynamics.\n- Designed as a resource for studying ice cream brands, cultural impact, and market trends.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c39ddda32312f0bbd441edd32be9cdf738606fc5621231ecef2d4a660b890386"
+}

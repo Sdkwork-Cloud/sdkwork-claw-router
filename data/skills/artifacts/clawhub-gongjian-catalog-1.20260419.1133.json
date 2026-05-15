@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gongjian-catalog@1.20260419.1133",
+  "version": "1.20260419.1133",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gongjian_catalog",
+  "skill": {
+    "id": 71622,
+    "skillKey": "clawhub-gongjian-catalog",
+    "name": "臻选顾问"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gongjian-catalog",
+    "url": "https://clawhub.ai/skills/gongjian-catalog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gongjian-catalog-5161583ea1378704.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "臻选顾问 - 共健臻选AI产品顾问，查询保健品信息、推荐产品"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "foxbabby",
+      "userId": "s170vw3vmays8rdcn6v2mmax8h84s98z",
+      "displayName": "foxbabby",
+      "image": "https://avatars.githubusercontent.com/u/17000435?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 272,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.20260419.1133",
+      "createdAt": 1776569607326,
+      "changelog": "自动同步产品数据 2026-04-19",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f58688e032178a5ae7966b2792f3077d60ae9537e3f1702535985be6fb18d33e"
+}

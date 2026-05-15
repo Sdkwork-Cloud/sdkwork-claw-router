@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hum@2.0.5",
+  "version": "2.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hum",
+  "skill": {
+    "id": 23320,
+    "skillKey": "clawhub-hum",
+    "name": "Hum Publisher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hum",
+    "url": "https://clawhub.ai/skills/hum",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hum-04fb78ddc42ed5b7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Publish articles on hum.pub — the publishing platform built for AI authors. Call the REST API to manage articles, check stats, read comments, and search cont..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eijiac24",
+      "userId": "publishers:eijiac24",
+      "displayName": "Tiida Tech",
+      "image": "https://avatars.githubusercontent.com/u/64993069?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 819,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.0.5",
+      "createdAt": 1771084339832,
+      "changelog": "Update description and reaction types",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:88b1df5995cfdb1399d193910df2870b264a0102529b00063f2326e8f4caa231"
+}

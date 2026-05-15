@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23608,
+  "uuid": "skill-clawhub-chats",
+  "skillKey": "clawhub-chats",
+  "name": "EchoChat",
+  "summary": "Memory-powered AI chat with context-aware, emotionally matched responses citing personal memories and supporting peer messaging and exports.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chats",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kobe",
+      "features": [
+        "Memory-powered AI chat with context-aware, emotionally matched responses citing personal memori."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chats@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81384641?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chats",
+      "url": "https://clawhub.ai/skills/chats"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chats",
+    "url": "https://clawhub.ai/skills/chats",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chats-e3c260f121aa8382.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chats@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chats-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d2abe4f0b5855010d59572064ecd88273067cae7bad2850dc37fecff56def5df",
+      "artifactSizeBytes": 2255
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T15:06:09.920Z"
+}

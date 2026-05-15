@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62057,
+  "uuid": "skill-clawhub-public-opinion-insights",
+  "skillKey": "clawhub-public-opinion-insights",
+  "name": "public-opinion-insights",
+  "summary": "调用 Midu 舆情分析接口，针对指定主体进行指定维度的舆情分析。分析维度包括：['事件概况', '事件进程', '信息总量', '传播速度', '热搜情况', '跨平台传播', '媒体报道情况', 'KOL参与情况', '传播层级', '热门信息', '情绪烈度', '媒体观点分析', 'KOL观点分析', '...",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.public_opinion_insights",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bitallin",
+      "features": [
+        "调用 Midu 舆情分析接口，针对指定主体进行指定维度的舆情分析。分析维度包括：['事件概况', '事件进程', '信息总量', '传播速度', '热搜情况', '跨平台传播', '媒体报道."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/public-opinion-insights@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35096126?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "public-opinion-insights",
+      "url": "https://clawhub.ai/skills/public-opinion-insights"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "public-opinion-insights",
+    "url": "https://clawhub.ai/skills/public-opinion-insights",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/public-opinion-insights-59d6b0c34e38a927.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/public-opinion-insights@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-public-opinion-insights-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:59d737c14a5b6ac2622e724728fab8d33a14bb138a2d055fdcc1437fc5e90387",
+      "artifactSizeBytes": 2649
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T12:07:20.537Z"
+}

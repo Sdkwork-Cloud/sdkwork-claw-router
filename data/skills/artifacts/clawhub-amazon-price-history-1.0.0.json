@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-price-history@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_price_history",
+  "skill": {
+    "id": 29400,
+    "skillKey": "clawhub-amazon-price-history",
+    "name": "Amazon Price History"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-price-history",
+    "url": "https://clawhub.ai/skills/amazon-price-history",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-price-history-bf89741e45da3029.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Amazon product price history tracker and drop alert agent. Track price trends over time, identify the best time to buy or sell, analyze competitor pricing pa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mguozhen",
+      "userId": "s170nk66cz4zpwnnsv8bxksrp983f82k",
+      "displayName": "mguozhen",
+      "image": "https://avatars.githubusercontent.com/u/1411875?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 293,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774310292132,
+      "changelog": "- Initial release of Amazon Price History Tracker skill.\n- Tracks Amazon product price history, detects trends, and analyzes competitor pricing.\n- Supports price alerts, volatility analysis, seasonality detection, and buy box monitoring.\n- Offers a full set of commands for adding price data, analyzing trends, generating reports, and setting alerts.\n- Provides a framework for identifying optimal repricing windows and calculating margin floors.\n- Organizes data in workspace directories for history, alerts, patterns, and reports.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:817d145865e24186025c455644bdfb192e33df04bde9812a7561f1ae0dce4c1c"
+}

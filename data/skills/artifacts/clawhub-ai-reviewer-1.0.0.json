@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-reviewer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_reviewer",
+  "skill": {
+    "id": 70662,
+    "skillKey": "clawhub-ai-reviewer",
+    "name": "Ai Reviewer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-reviewer",
+    "url": "https://clawhub.ai/skills/ai-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-reviewer-d7f527c2cd82eb72.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "负责电商图片质量评估与标准检查，诊断问题，提供优化建议，确保作品符合交付要求与品牌调性。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "duzhihai123",
+      "userId": "s17bwaydwheme6d4t0jvw18vbx83qkg8",
+      "displayName": "duzhihai123",
+      "image": "https://avatars.githubusercontent.com/u/12809643?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775008615009,
+      "changelog": "Initial release of AI 质检师 (ai-reviewer) skill:\n\n- Provides automated quality inspection for e-commerce images, including evaluation, standards checking, and improvement suggestions.\n- Outputs structured inspection reports with verdict, key issues, suggestions, and average score.\n- Implements configurable quality checklists and scoring thresholds.\n- Designed for integration with image generation and planning workflows.\n- Supports input/output in JSON format with detailed requirement fields.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3f713bccefa5cb73989726fd3095f6491a6c3f4a1ceda080e7009c2c0569264b"
+}

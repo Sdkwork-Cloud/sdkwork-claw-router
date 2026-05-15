@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/golang-uber-fx@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.golang_uber_fx",
+  "skill": {
+    "id": 53814,
+    "skillKey": "clawhub-golang-uber-fx",
+    "name": "Golang Uber Fx"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "golang-uber-fx",
+    "url": "https://clawhub.ai/skills/golang-uber-fx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/golang-uber-fx-cc9d436b95b3066f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Golang application framework using uber-go/fx — fx.New, fx.Provide, fx.Invoke, fx.Module, fx.Lifecycle hooks, fx.Annotate (name/group/As), fx.Decorate, fx.Su..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "samber",
+      "userId": "s173arkhs3131fq5jf769qq75583hdgt",
+      "displayName": "Samuel Berthe",
+      "image": "https://avatars.githubusercontent.com/u/2951285?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 111,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777678884234,
+      "changelog": "- Added comprehensive documentation to SKILL.md covering usage patterns, lifecycle hooks, and advanced features of uber-go/fx in Go.\n- Explains key differences between fx and dig, clarifying when to choose each.\n- Details usage of constructors, dependency groups, parameter/result objects, and module scoping.\n- Provides best practices for structuring services and managing application lifecycle with fx.\n- References official resources and related skills for further learning.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f1c38f9aa2eececd320e81e4bb458e5b4f569ead8c9e03df95b5b38383c81336"
+}

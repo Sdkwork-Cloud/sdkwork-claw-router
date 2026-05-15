@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55991,
+  "uuid": "skill-clawhub-pipeworx-animequotes",
+  "skillKey": "clawhub-pipeworx-animequotes",
+  "name": "Pipeworx animequotes",
+  "summary": "AnimeQuotes MCP — wraps animechan.io (free, no auth)",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_animequotes",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "AnimeQuotes MCP — wraps animechan.io (free, no auth)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-animequotes@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138315805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-animequotes",
+      "url": "https://clawhub.ai/skills/pipeworx-animequotes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-animequotes",
+    "url": "https://clawhub.ai/skills/pipeworx-animequotes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-animequotes-9ab06fe6a31db74a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-animequotes@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-animequotes-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:046f00f817224939cb2134184ead393478d037cdf1c90987105906b7d47e27a7",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T17:02:06.566Z"
+}

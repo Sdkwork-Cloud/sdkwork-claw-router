@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34476,
+  "uuid": "skill-clawhub-davinci-first-principles",
+  "skillKey": "clawhub-davinci-first-principles",
+  "name": "First Principles Analysis",
+  "summary": "Deep first-principles analysis of any topic, decision, strategy, or assumption. Strips inherited thinking, identifies what is provably true, and rebuilds fro...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.davinci_first_principles",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RunByDaVinci",
+      "features": [
+        "Deep first-principles analysis of any topic, decision, strategy, or assumption",
+        "Strips inherited thinking, identifies what is provably true, and rebuilds fro..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/davinci-first-principles@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266047309?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "davinci-first-principles",
+      "url": "https://clawhub.ai/skills/davinci-first-principles"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "davinci-first-principles",
+    "url": "https://clawhub.ai/skills/davinci-first-principles",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/davinci-first-principles-4139eaf963ba45e1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/davinci-first-principles@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-davinci-first-principles-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c0b8ea7408f669d1769d0c8066c382f2471feedb8b79935dc08a36913315e00f",
+      "artifactSizeBytes": 2003
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T18:00:40.969Z"
+}

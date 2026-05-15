@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69901,
+  "uuid": "skill-clawhub-nba-tracker",
+  "skillKey": "clawhub-nba-tracker",
+  "name": "NBA Tracker",
+  "summary": "提供NBA球队和球员赛程、实时比分及关键时刻提醒，支持追踪球员伤病和自动添加比赛到日历，适合观赛辅助。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nba_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "luoruikun0531",
+      "features": [
+        "提供NBA球队和球员赛程、实时比分及关键时刻提醒，支持追踪球员伤病和自动添加比赛到日历，适合观赛辅助。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nba-tracker@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263407854?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nba-tracker",
+      "url": "https://clawhub.ai/skills/nba-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nba-tracker",
+    "url": "https://clawhub.ai/skills/nba-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nba-tracker-ad488db8c7c882fd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nba-tracker@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-nba-tracker-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba865e5e119bde4e82aedcffcf74aa45d9e13fbe0a3090d3ad1e86e71a90645a",
+      "artifactSizeBytes": 1881
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T17:03:44.539Z"
+}

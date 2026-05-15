@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/truclaw-biometric@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.truclaw_biometric",
+  "skill": {
+    "id": 46677,
+    "skillKey": "clawhub-truclaw-biometric",
+    "name": "Truclaw Biometric"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "truclaw-biometric",
+    "url": "https://clawhub.ai/skills/truclaw-biometric",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/truclaw-biometric-b261f7013d32938d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Biometric guardrail for OpenClaw. Intercepts dangerous tool calls and requires Face ID verification via TruClaw iOS app before execution. Biometric processin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sanjaymk908",
+      "userId": "s17cwyw1dn8ezr9syrm8m22ken84sekx",
+      "displayName": "sanjaymk908",
+      "image": "https://avatars.githubusercontent.com/u/5855110?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 123,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776370327278,
+      "changelog": "Renamed truclaw skill to truclaw-biometric",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5cf8b5133e783dd24903e9e0748daa025b20150bad213446a3f29e624636adc4"
+}

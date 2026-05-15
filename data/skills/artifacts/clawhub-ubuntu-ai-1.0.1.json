@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ubuntu-ai@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ubuntu_ai",
+  "skill": {
+    "id": 52769,
+    "skillKey": "clawhub-ubuntu-ai",
+    "name": "Ubuntu Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ubuntu-ai",
+    "url": "https://clawhub.ai/skills/ubuntu-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ubuntu-ai-1d94cdb20c4d840a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Ubuntu AI — build a local AI platform on Ubuntu and Debian. Ubuntu AI across x86 desktops, ARM edge devices, Raspberry Pi, Jetson Orin, and cloud VMs. Hetero..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775256950408,
+      "changelog": "New ubuntu-ollama skill; differentiated ubuntu-ai for broader platform focus",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f9318605b3c3ee122247f1f8322493299990edf217a5f02f8b2970bac1e3a322"
+}

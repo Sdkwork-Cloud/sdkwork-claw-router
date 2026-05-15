@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69053,
+  "uuid": "skill-clawhub-juejin-article-trends",
+  "skillKey": "clawhub-juejin-article-trends",
+  "name": "Juejin Article Trends",
+  "summary": "获取掘金网站热门文章排行榜，支持查询文章分类列表和各分类的热门文章趋势。当用户需要了解掘金技术文章排行榜、获取前端/后端/AI等领域的热门文章时使用此技能。",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.juejin_article_trends",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "无处不在",
+      "features": [
+        "获取掘金网站热门文章排行榜，支持查询文章分类列表和各分类的热门文章趋势。当用户需要了解掘金技术文章排行榜、获取前端/后端/AI等领域的热门文章时使用此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/juejin-article-trends@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42382506?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "juejin-article-trends",
+      "url": "https://clawhub.ai/skills/juejin-article-trends"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "juejin-article-trends",
+    "url": "https://clawhub.ai/skills/juejin-article-trends",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/juejin-article-trends-4a6884ca9acb5aa4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/juejin-article-trends@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-juejin-article-trends-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d7353b9a4c3558fd97906ccc1dcde2d7de2f9ee3271bd0b35eb2294dbd58616",
+      "artifactSizeBytes": 2331
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T23:55:59.193Z"
+}

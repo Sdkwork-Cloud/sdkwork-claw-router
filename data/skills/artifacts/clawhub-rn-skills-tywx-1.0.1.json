@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rn-skills-tywx@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rn_skills_tywx",
+  "skill": {
+    "id": 68805,
+    "skillKey": "clawhub-rn-skills-tywx",
+    "name": "Rn Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rn-skills-tywx",
+    "url": "https://clawhub.ai/skills/rn-skills-tywx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rn-skills-tywx-59e61583e0746097.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小红书爆款内容全自动创作助手，专注「时尚穿搭与新中式美学」赛道。 自动完成素材收集、选题筛选、文案生成、AI配图（通义万相）、本地归档的完整流程。 Use when: 用户说\"创作小红书\"、\"收集素材\"、\"根据XXX创作\"，或需要批量生成小红书图文笔记。 NOT for: 其他平台（抖音/微博）的内容创作，也不用..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ykabps1314",
+      "userId": "s1743tfgw4xj9ahqs89rftrwv583m7yg",
+      "displayName": "yb",
+      "image": "https://avatars.githubusercontent.com/u/9278120?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 362,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774523923227,
+      "changelog": "- 新增 generate_images.py 文件，引入独立图片生成模块。\n- 功能结构未变，核心流程保持一致。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:43110f178743c48697b449d503dee85ba1840b522876d7962ab7b8680b4cfa9f"
+}

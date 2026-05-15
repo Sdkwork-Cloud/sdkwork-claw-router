@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65041,
+  "uuid": "skill-clawhub-course-prep-afp",
+  "skillKey": "clawhub-course-prep-afp",
+  "name": "备课AFP · Course-Prep-Auto-Flow",
+  "summary": "工程化备课系统（Course-Prep-Auto-Flow v1.0）。把\"靠灵感备课\"变成\"走流程出内容\"。用户提供课程主题、受众画像、参考素材，系统自动完成：P1信息采集→P2骨架设计→P3素材提炼→P4内容填充→P5结构审查→P6配图规划→P7终局产出。适用于公开课、直播课、工作坊的备课准备。触发关键词：备...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.course_prep_afp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yipng05-max",
+      "features": [
+        "工程化备课系统（Course-Prep-Auto-Flow v1.0）。把\"靠灵感备课\"变成\"走流程出内容\"。用户提供课程主题、受众画像、参考素材，系统自动完成：P1信息采集→P2骨架设计→."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/course-prep-afp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256726987?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "course-prep-afp",
+      "url": "https://clawhub.ai/skills/course-prep-afp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "course-prep-afp",
+    "url": "https://clawhub.ai/skills/course-prep-afp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/course-prep-afp-d94a6610f060b641.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/course-prep-afp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-course-prep-afp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:657f15f9227015c77db0d27ff8bb913a3b45407f1c4a26a13fd1ad1c11fca5eb",
+      "artifactSizeBytes": 2301
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T07:36:40.080Z"
+}

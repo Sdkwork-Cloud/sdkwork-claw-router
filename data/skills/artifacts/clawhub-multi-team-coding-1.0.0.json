@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/multi-team-coding@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_team_coding",
+  "skill": {
+    "id": 60217,
+    "skillKey": "clawhub-multi-team-coding",
+    "name": "Multi Team Coding"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-team-coding",
+    "url": "https://clawhub.ai/skills/multi-team-coding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-team-coding-f07c63599d7e493f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "完整的 AI 驱动编程工作流。包含：(1) 多团队并行开发（OpenClaw + Claude Code/Codex/OpenCode），(2) 一人公司模式（单日 90+ 提交），(3) Playwright 自动化测试（E2E/API/视觉/性能），(4) 自动 PR 管理和合并。适用于独立开发者、初创团队、..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "longfer",
+      "userId": "s1783m522c2zhwmxtv3kkxhvjs83xmzz",
+      "displayName": "LongFer",
+      "image": "https://avatars.githubusercontent.com/u/36223765?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 389,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773515093428,
+      "changelog": "multi-team-coding 1.0.0\n\n- Initial release of a complete AI-driven coding workflow.\n- Supports parallel multi-team development with OpenClaw and major coding agents (Claude Code, Codex, OpenCode).\n- Enables a \"one-person company\" mode for high-volume, rapid development and PR management.\n- Integrates Playwright for automated E2E, API, visual, and performance testing.\n- Features automated PR merging and team orchestration, including workspace creation, progress monitoring, conflict detection, and integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e2a7e4a85f2282e5c7d3df2945830a44ef0abe93925bd5602a144f4b9dd9fc9e"
+}

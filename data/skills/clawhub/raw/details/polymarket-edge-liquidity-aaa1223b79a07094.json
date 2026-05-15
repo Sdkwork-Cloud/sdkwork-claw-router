@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "polymarket-edge-liquidity",
+    "displayName": "Polymarket Edge Liquidity",
+    "summary": "Trades active Polymarket-imported markets on Simmer when estimated edge and liquidity filters pass.",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 477,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1772261826944,
+    "updatedAt": 1778302578762
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1772261826944,
+    "changelog": "Initial release of Polymarket Edge Liquidity skill.\n\n- Scans Polymarket-imported markets every 20 minutes and trades when both estimated edge and liquidity thresholds are met.\n- Supports environment variables to configure API key, trading venue, scan limits, edge/liquidity thresholds, and trade amount.\n- Runs in dry-run mode by default; can execute live trades with `--live`.\n- Each trade includes detailed reasoning and source tagging for traceability.",
+    "license": null
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "drserkandedeoglu",
+    "userId": "s171a9dapk9ntxpv93fx9x0e2983hhnp",
+    "displayName": "drserkandedeoglu",
+    "image": "https://avatars.githubusercontent.com/u/223647847?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778302578762
+  }
+}

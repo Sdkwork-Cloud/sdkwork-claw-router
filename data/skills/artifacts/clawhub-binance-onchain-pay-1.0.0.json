@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/binance-onchain-pay@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.binance_onchain_pay",
+  "skill": {
+    "id": 42788,
+    "skillKey": "clawhub-binance-onchain-pay",
+    "name": "Binance Onchain Pay"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "binance-onchain-pay",
+    "url": "https://clawhub.ai/skills/binance-onchain-pay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/binance-onchain-pay-aa178399944b4c69.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Binance Onchain Pay: buy crypto with fiat (EUR, USD) or send crypto to any on-chain wallet. Use when users want to buy crypto with fiat or make on-chain paym..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dexploarer",
+      "userId": "s17egvpamsdg48m9t22pe28nqd8402a8",
+      "displayName": "Dexploarer",
+      "image": "https://avatars.githubusercontent.com/u/211557447?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775054187875,
+      "changelog": "Initial release from milady-ai/skills",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:469e7d2bd84268116a6a790ede8926223aadf1122bab2d349fd70a89e6992b16"
+}

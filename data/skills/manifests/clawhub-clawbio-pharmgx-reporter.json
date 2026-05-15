@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20849,
+  "uuid": "skill-clawhub-clawbio-pharmgx-reporter",
+  "skillKey": "clawhub-clawbio-pharmgx-reporter",
+  "name": "Pharmgx Reporter",
+  "summary": "Pharmacogenomic report from DTC genetic data (23andMe/AncestryDNA)",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawbio_pharmgx_reporter",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "manuelcorpas",
+      "features": [
+        "Pharmacogenomic report from DTC genetic data (23andMe/AncestryDNA)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawbio-pharmgx-reporter@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/383303?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawbio-pharmgx-reporter",
+      "url": "https://clawhub.ai/skills/clawbio-pharmgx-reporter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawbio-pharmgx-reporter",
+    "url": "https://clawhub.ai/skills/clawbio-pharmgx-reporter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawbio-pharmgx-reporter-fa6d26f6217cc4ca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawbio-pharmgx-reporter@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawbio-pharmgx-reporter-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:06b74b65d1f38e17c74b0b13f6aa8134eaaa31a0449484f92f583ab691ae2bb6",
+      "artifactSizeBytes": 2345
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T19:53:32.167Z"
+}

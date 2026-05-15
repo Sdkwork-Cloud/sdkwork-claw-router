@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64636,
+  "uuid": "skill-clawhub-gromacs-protein-analysis",
+  "skillKey": "clawhub-gromacs-protein-analysis",
+  "name": "GROMACS Protein Analysis",
+  "summary": "蛋白质分子动力学模拟分析的流程知识指南。当 Agent 需要执行某个分析但不清楚具体流程时调用。涵盖九种核心分析的完整工作流：(1) PBC 修正 - 消除周期性边界伪影，居中蛋白质/配体；(2) RMSD 分析 - 测量结构稳定性和模拟收敛性；(3) RMSF 分析 - 评估每个残基的灵活性；(4) 回转半径分...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gromacs_protein_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CharlesHahn",
+      "features": [
+        "蛋白质分子动力学模拟分析的流程知识指南。当 Agent 需要执行某个分析但不清楚具体流程时调用。涵盖九种核心分析的完整工作流：(1) PBC 修正",
+        "消除周期性边界伪影，居中蛋白质/配体；(2) RMSD 分析",
+        "测量结构稳定性和模拟收敛性；(3) RMSF 分析",
+        "评估每个残基的灵活性；(4) 回转半径分..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gromacs-protein-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40332300?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gromacs-protein-analysis",
+      "url": "https://clawhub.ai/skills/gromacs-protein-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gromacs-protein-analysis",
+    "url": "https://clawhub.ai/skills/gromacs-protein-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gromacs-protein-analysis-997d0cada98fd9ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gromacs-protein-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gromacs-protein-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c7ef975cf9d30ba68d69c9dc15230f527783b2b5f858342e3ce0ffeb334f385c",
+      "artifactSizeBytes": 2723
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T16:01:06.912Z"
+}

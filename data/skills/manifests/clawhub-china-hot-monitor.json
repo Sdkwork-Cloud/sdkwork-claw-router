@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68431,
+  "uuid": "skill-clawhub-china-hot-monitor",
+  "skillKey": "clawhub-china-hot-monitor",
+  "name": "China Hot Monitor",
+  "summary": "中国热点一网打尽，聚合抖音/微博/百度/头条/小红书/知乎/快手7大平台热榜数据，支持趋势对比、热度预警、内容选题。触发词：'今日热点'、'热搜'、'爆款选题'、'热点监控'、'热度趋势'、'全网热点'。内容创作者/运营者必备。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_hot_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "windy-001-crypto",
+      "features": [
+        "中国热点一网打尽，聚合抖音/微博/百度/头条/小红书/知乎/快手7大平台热榜数据，支持趋势对比、热度预警、内容选题。触发词：'今日热点'、'热搜'、'爆款选题'、'热点监控'、'热度趋势'、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/china-hot-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258460660?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "china-hot-monitor",
+      "url": "https://clawhub.ai/skills/china-hot-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-hot-monitor",
+    "url": "https://clawhub.ai/skills/china-hot-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-hot-monitor-e10c9a9f218c4718.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/china-hot-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-china-hot-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:217a5cf569bc212d7a1f33545bf933eebf2abfd3355da919a1c259a7446a90b8",
+      "artifactSizeBytes": 2532
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T09:31:40.802Z"
+}

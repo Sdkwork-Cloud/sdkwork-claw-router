@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crawler@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crawler",
+  "skill": {
+    "id": 26049,
+    "skillKey": "clawhub-crawler",
+    "name": "Crawler"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crawler",
+    "url": "https://clawhub.ai/skills/crawler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crawler-71c6f2f5e422a76a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Web crawling and scraping reference — robots.txt protocol, Scrapy framework, anti-bot detection, headless browsers, and legal considerations"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bytesagain3",
+      "userId": "s17b0rz2zaqen3pqpq807a6q6983fgq5",
+      "displayName": "bytesagain3",
+      "image": "https://avatars.githubusercontent.com/u/218212813?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1021,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1774226786274,
+      "changelog": "Clean package with matching SKILL.md and script",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0d4bcead77f28c515243864c017d6509829e4a13bc17a5b91a709abf0bf31ebc"
+}

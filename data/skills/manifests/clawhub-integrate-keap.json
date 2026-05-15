@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33373,
+  "uuid": "skill-clawhub-integrate-keap",
+  "skillKey": "clawhub-integrate-keap",
+  "name": "Keap",
+  "summary": "Keap integration. Manage crm and marketing automation and sales data, records, and workflows. Use when the user wants to interact with Keap data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.integrate_keap",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Keap integration",
+        "Manage crm and marketing automation and sales data, records, and workflows",
+        "Use when the user wants to interact with Keap data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/integrate-keap@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "integrate-keap",
+      "url": "https://clawhub.ai/skills/integrate-keap"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "integrate-keap",
+    "url": "https://clawhub.ai/skills/integrate-keap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/integrate-keap-1b7d5cd629e0d064.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/integrate-keap@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-integrate-keap-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:350ceffd03818669328af1b7e27ccd803ad3b2d2b5425f8c5899d586129d097e",
+      "artifactSizeBytes": 1892
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:36:49.848Z"
+}

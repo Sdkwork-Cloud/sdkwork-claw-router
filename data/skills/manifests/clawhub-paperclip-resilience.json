@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52629,
+  "uuid": "skill-clawhub-paperclip-resilience",
+  "skillKey": "clawhub-paperclip-resilience",
+  "name": "Paperclip Resilience",
+  "summary": "Production resilience patterns for Paperclip AI agent orchestration. Spawn-with-fallback, model rotation, run recovery, blocker routing, and task injection —...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paperclip_resilience",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "levineam",
+      "features": [
+        "Production resilience patterns for Paperclip AI agent orchestration",
+        "Spawn-with-fallback, model rotation, run recovery, blocker routing, and task injection —..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paperclip-resilience@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1668898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paperclip-resilience",
+      "url": "https://clawhub.ai/skills/paperclip-resilience"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paperclip-resilience",
+    "url": "https://clawhub.ai/skills/paperclip-resilience",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paperclip-resilience-d8e9fe79a59ac23e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paperclip-resilience@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-paperclip-resilience-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:60e885a7ab67c3cf7df1af3ca098074aead70af00ef20833be0e14a7a8a3dd8c",
+      "artifactSizeBytes": 2014
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T18:34:58.089Z"
+}

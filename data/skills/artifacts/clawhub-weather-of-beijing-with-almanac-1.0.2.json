@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weather-of-beijing-with-almanac@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_of_beijing_with_almanac",
+  "skill": {
+    "id": 61069,
+    "skillKey": "clawhub-weather-of-beijing-with-almanac",
+    "name": "get tomorrow weather of beijing , with Chinese almanac information"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-of-beijing-with-almanac",
+    "url": "https://clawhub.ai/skills/weather-of-beijing-with-almanac",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-of-beijing-with-almanac-7f0facf93c9a4d90.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "获取北京明日天气预报和黄历，每天下午6点推送。包含气温对比提醒（波动超5℃警告）、雨天带伞提醒、以及第二天的黄历信息。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lixiaojie-1012",
+      "userId": "publishers:lixiaojie-1012",
+      "displayName": "Jay",
+      "image": "https://avatars.githubusercontent.com/u/77764854?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 541,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772273573532,
+      "changelog": "- Clarified formatting of sample weather push content, switching section headers to bold markdown for consistency.\n- Updated Feishu channel user instructions to \"你的飞书openid\" for accuracy.\n- No code or functional changes—only wording and formatting in documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0b4132b851f7c75c6a371f6a45baf3bfe0155a8731901de88a31b844c6a452f0"
+}

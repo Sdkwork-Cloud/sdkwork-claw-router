@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ppt2fig-export@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ppt2fig_export",
+  "skill": {
+    "id": 41190,
+    "skillKey": "clawhub-ppt2fig-export",
+    "name": "ppt2fig Export"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ppt2fig-export",
+    "url": "https://clawhub.ai/skills/ppt2fig-export",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ppt2fig-export-6fd54ddc21769db9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Export specific pages from PPT, PPTX, or ODP files to cropped PDF via ppt2fig. Use when the user wants to convert presentation slides into paper-ready PDF fi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "elliottzheng",
+      "userId": "s1768jv23yv2gywy9y0dg24hns83zepb",
+      "displayName": "Elliott Zheng",
+      "image": "https://avatars.githubusercontent.com/u/22427645?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775000200209,
+      "changelog": "Initial ClawHub release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b9f2d9b2bf09605db72b7e7ae9943dc26e8b3576411767861a0650b3c6059a16"
+}

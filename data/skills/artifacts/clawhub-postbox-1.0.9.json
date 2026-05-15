@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/postbox@1.0.9",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.postbox",
+  "skill": {
+    "id": 53728,
+    "skillKey": "clawhub-postbox",
+    "name": "Postbox"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "postbox",
+    "url": "https://clawhub.ai/skills/postbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/postbox-30cb2df4a767c8ce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when the user wants to collect structured data, build forms, or set up submission endpoints — contact forms, feedback, signups, waitlists, bug..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vipulbhj",
+      "userId": "s1714cj3z13w2gkvrhndg1b61x84cw7e",
+      "displayName": "Vipul",
+      "image": "https://avatars.githubusercontent.com/u/33618798?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.9",
+      "createdAt": 1775549274386,
+      "changelog": "- Added OpenClaw metadata specifying required environment variables and homepage.\n- No changes to skill logic, API usage, or workflows.\n- All prior usage guidance, best practices, and gotchas remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ea38b57f225205bf8e2d55885152e45010037bcd2757dc6b4dfe39e283fa1b65"
+}

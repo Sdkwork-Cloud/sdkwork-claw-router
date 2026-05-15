@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nsfc-grant-writer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nsfc_grant_writer",
+  "skill": {
+    "id": 67502,
+    "skillKey": "clawhub-nsfc-grant-writer",
+    "name": "NSFC Grant Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nsfc-grant-writer",
+    "url": "https://clawhub.ai/skills/nsfc-grant-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nsfc-grant-writer-4b501b334407cdcb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "国家自然科学基金申请书写作助手，提供青年/面上项目撰写指导、格式审查、代表作选择等。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wylcasia",
+      "userId": "s17bz74s65a6af4rfq04kkhva1858jyr",
+      "displayName": "wylcasia",
+      "image": "https://avatars.githubusercontent.com/u/60692273?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 382,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772539793729,
+      "changelog": "国家自然科学基金申请书写作助手，支持青年/面上项目撰写指导、格式审查、代表作选择策略等\n\nInitial release — Assistant for NSFC grant writing guidance and formatting checks.\n\n- Supports guidance on youth/general project applications (structure, content, formatting)\n- Offers abstracts optimization, scientific question extraction, and logic flow checks\n- Provides detailed formatting/math checks and representative paper selection strategies\n- Includes comprehensive step-by-step application and review checklists\n- Integrates special sections on 2026 application reforms and integrity requirements",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8d82160108ed30bdb0cdfdb2b1c9fbe9f0d6ae362d890d6311fac2b3044195ec"
+}

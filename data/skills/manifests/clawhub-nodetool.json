@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10169,
+  "uuid": "skill-clawhub-nodetool",
+  "skillKey": "clawhub-nodetool",
+  "name": "Nodetool",
+  "summary": "Visual AI workflow builder - ComfyUI meets n8n for LLM agents, RAG pipelines, and multimodal data flows. Local-first, open source (AGPL-3.0).",
+  "version": "0.6.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nodetool",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "georgi",
+      "features": [
+        "Visual AI workflow builder",
+        "ComfyUI meets n8n for LLM agents, RAG pipelines, and multimodal data flows",
+        "Local-first, open source (AGPL-3.0)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nodetool@0.6.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19498?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nodetool",
+      "url": "https://clawhub.ai/skills/nodetool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nodetool",
+    "url": "https://clawhub.ai/skills/nodetool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nodetool-8382735e782fdf3b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nodetool@0.6.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-nodetool-0.6.3.json",
+      "version": "0.6.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b6a1575fcb55f895c55e4134cbc02eaae507ffbc88d0bed831e16cd1889d0c5",
+      "artifactSizeBytes": 2362
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T15:58:21.015Z"
+}

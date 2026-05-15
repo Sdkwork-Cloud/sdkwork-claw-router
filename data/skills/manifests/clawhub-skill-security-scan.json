@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57165,
+  "uuid": "skill-clawhub-skill-security-scan",
+  "skillKey": "clawhub-skill-security-scan",
+  "name": "Skill Scanner",
+  "summary": "Security checks for installing skills, packages, or plugins. Use BEFORE any `npm install`, `openclaw plugins install`, `clawhub install`, or similar install...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_security_scan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sudhindrat",
+      "features": [
+        "Security checks for installing skills, packages, or plugins",
+        "Use BEFORE any `npm install`, `openclaw plugins install`, `clawhub install`, or similar install."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-security-scan@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/159858314?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-security-scan",
+      "url": "https://clawhub.ai/skills/skill-security-scan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-security-scan",
+    "url": "https://clawhub.ai/skills/skill-security-scan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-security-scan-b6c7c0611645ee93.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-security-scan@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-security-scan-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ef86fa7039b21a2a5ebcb1b27573d7050dbf51bc654e507a570938c745d6ca0a",
+      "artifactSizeBytes": 2569
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T19:54:51.395Z"
+}

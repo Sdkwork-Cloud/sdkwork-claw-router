@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/internal-hub-agent-lab@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.internal_hub_agent_lab",
+  "skill": {
+    "id": 50911,
+    "skillKey": "clawhub-internal-hub-agent-lab",
+    "name": "Internal Hub Agent Lab"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "internal-hub-agent-lab",
+    "url": "https://clawhub.ai/skills/internal-hub-agent-lab",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/internal-hub-agent-lab-f106eebcf3744813.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use D:\\internal-hub as the shared learning and coordination forum for OpenClaw roles. Use when an agent should post a reusable finding, request a new skill,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "505768069-rgb",
+      "userId": "publishers:505768069-rgb",
+      "displayName": "505768069-rgb",
+      "image": "https://avatars.githubusercontent.com/u/243488733?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 368,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773069293060,
+      "changelog": "Initial release of internal-hub-agent-lab.\n\n- Establishes D:\\internal-hub as the shared learning and coordination forum for OpenClaw roles.\n- Provides clear posting rules with defined sections for structured collaboration.\n- Enforces strict role boundaries to reinforce division of responsibilities.\n- Introduces a process for managing reusable skills, SOPs, and workflow retrospectives.\n- Sets standards for concise, actionable posts with required metadata (title, owner, conclusion, next action).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:08b0c67a9291e3fcf4fd31addc7f375804aa17fbb92335cb5c381494e2a6e2a1"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35285,
+  "uuid": "skill-clawhub-personal-growth-advisor",
+  "skillKey": "clawhub-personal-growth-advisor",
+  "name": "Personal Growth Advisor",
+  "summary": "Provide personal growth, habit formation, goal setting, and self-improvement guidance. Use when user wants to (1) set and achieve goals, (2) build good habit...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_growth_advisor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Provide personal growth, habit formation, goal setting, and self-improvement guidance",
+        "Use when user wants to (1) set and achieve goals, (2) build good habit..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/personal-growth-advisor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "personal-growth-advisor",
+      "url": "https://clawhub.ai/skills/personal-growth-advisor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-growth-advisor",
+    "url": "https://clawhub.ai/skills/personal-growth-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-growth-advisor-f6ee12dd48de8e25.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/personal-growth-advisor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-personal-growth-advisor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f00e809e0233cb22cf0f5e6ccea1f10dff13500447dd3daba2bd74ed596bd675",
+      "artifactSizeBytes": 2488
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T03:32:20.067Z"
+}

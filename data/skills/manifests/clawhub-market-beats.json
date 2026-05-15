@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69715,
+  "uuid": "skill-clawhub-market-beats",
+  "skillKey": "clawhub-market-beats",
+  "name": "market-beats",
+  "summary": "7x24小时财经新闻实时爬取与展示。支持金十数据等多个财经新闻源的实时爬取，通过WebSocket实现秒级推送，提供美观的前端界面展示最新财经资讯。适用于需要实时监控财经动态的场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.market_beats",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "luokeer52",
+      "features": [
+        "7x24小时财经新闻实时爬取与展示。支持金十数据等多个财经新闻源的实时爬取，通过WebSocket实现秒级推送，提供美观的前端界面展示最新财经资讯。适用于需要实时监控财经动态的场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/market-beats@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5510712?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "market-beats",
+      "url": "https://clawhub.ai/skills/market-beats"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "market-beats",
+    "url": "https://clawhub.ai/skills/market-beats",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/market-beats-982a2565e4c728f7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/market-beats@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-market-beats-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:08693d669928fc5f2af4b90016a268dac4740139b2603dd32b88519407f903c1",
+      "artifactSizeBytes": 2328
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T06:51:41.582Z"
+}

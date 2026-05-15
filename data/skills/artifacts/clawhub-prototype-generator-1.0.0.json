@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prototype-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prototype_generator",
+  "skill": {
+    "id": 16545,
+    "skillKey": "clawhub-prototype-generator",
+    "name": "Prototype Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prototype-generator",
+    "url": "https://clawhub.ai/skills/prototype-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prototype-generator-11712ef57348271d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates admin/list prototypes from requirements. Supports mountListPage-style frameworks (e.g. kfk-mock-ui), standalone HTML, or project-specific setups. U..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "limingfa",
+      "userId": "s177stxpga8dfs566yfjv23t5n83jr8v",
+      "displayName": "fzx",
+      "image": "https://avatars.githubusercontent.com/u/29349955?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 734,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772704369095,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9aa8d08caa015bf0e561ee08ee49b0c380ea8e119fd549f5e11b8ee5e0714415"
+}

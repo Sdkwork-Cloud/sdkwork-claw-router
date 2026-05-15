@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19481,
+  "uuid": "skill-clawhub-feishu-voice-clone-tts",
+  "skillKey": "clawhub-feishu-voice-clone-tts",
+  "name": "Feishu Voice Clone TTS Skill",
+  "summary": "Convert text to speech using Volcengine TTS with preset or cloned voices and send audio messages to Feishu chats or groups.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_voice_clone_tts",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "willsonchenservice-eng",
+      "features": [
+        "Convert text to speech using Volcengine TTS with preset or cloned voices and send audio message."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-voice-clone-tts@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/252581609?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-voice-clone-tts",
+      "url": "https://clawhub.ai/skills/feishu-voice-clone-tts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-voice-clone-tts",
+    "url": "https://clawhub.ai/skills/feishu-voice-clone-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-voice-clone-tts-7e8d91ad20959894.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-voice-clone-tts@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-voice-clone-tts-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8e2bb30d99a45e4b8eeac8b716d06e29295026cc57271b32efe3a3937a7c2cd8",
+      "artifactSizeBytes": 1928
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T03:21:48.901Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/intrusive-thoughts@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intrusive_thoughts",
+  "skill": {
+    "id": 15911,
+    "skillKey": "clawhub-intrusive-thoughts",
+    "name": "Intrusive Thoughts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intrusive-thoughts",
+    "url": "https://clawhub.ai/skills/intrusive-thoughts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intrusive-thoughts-abb8c0404a095532.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enables AI agents with moods, intrusive thoughts, memory decay, trust learning, self-evolution, scheduled rituals, and a web dashboard for autonomous behavior."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kittleik",
+      "userId": "publishers:kittleik",
+      "displayName": "kittleik",
+      "image": "https://avatars.githubusercontent.com/u/3852721?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 922,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1771099276327,
+      "changelog": "intrusive-thoughts v0.1.2\n\n- Improved security documentation: Clarified that thought prompts in `thoughts.json` are plain-text suggestions, never code or shell commands.\n- Updated scheduling instructions: Specified that all autonomous job scheduling (including daytime pop-ins) is handled exclusively by the OpenClaw API at runtime, not by shell scripts in the skill.\n- Expanded warnings and notes in documentation to emphasize agent behavior is conversational, not executable, and all prompts are user-editable and under user control.\n- No code or functional changes—documentation and security clarifications only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b39f5e5769f1986d2ffe8d5640e7d873fb5c671f4bfdc2c86b0b8183f58b8cc0"
+}

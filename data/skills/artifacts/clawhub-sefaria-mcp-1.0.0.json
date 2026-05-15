@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sefaria-mcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sefaria_mcp",
+  "skill": {
+    "id": 30408,
+    "skillKey": "clawhub-sefaria-mcp",
+    "name": "Sefaria MCP Server"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sefaria-mcp",
+    "url": "https://clawhub.ai/skills/sefaria-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sefaria-mcp-9aa60a250ab7e7ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access Jewish texts, commentaries, and daily study materials from Torah, Talmud, and more via the Sefaria MCP server."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abeperl",
+      "userId": "s179r66g7maj6y0rkwffexrhvs85mrx3",
+      "displayName": "Abraham Perl",
+      "image": "https://avatars.githubusercontent.com/u/6117184?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 283,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773698780746,
+      "changelog": "Initial release of Sefaria MCP Server.\n\n- Provides MCP-compatible access to Jewish texts from Sefaria, including Torah, Talmud, Mishnah, Midrash, and Commentaries.\n- Supports tools for retrieving texts, searching, cross-references, parsha, learning calendars, book info, and related topics.\n- Simple installation via npm or npx.\n- Includes setup instructions and usage examples.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a5839b7c4674e09be5096998e6f7c3f0b623f60c4fa0d16567ac1584399cbdef"
+}

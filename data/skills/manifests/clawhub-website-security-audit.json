@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69706,
+  "uuid": "skill-clawhub-website-security-audit",
+  "skillKey": "clawhub-website-security-audit",
+  "name": "Website Security Audit",
+  "summary": "网站安全鉴定技能。对任意 URL 进行安全风险评估，综合域名信息、SSL证书、网站内容、技术特征、备案信息等多维度分析，判断网站是否可信、安全、有风险。当用户询问\"查看某个网站是否有风险\"、\"帮我鉴定这个网站\"、\"检查这个链接安全吗\"、\"网站安全评估\"时使用此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.website_security_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "666-Moonlight",
+      "features": [
+        "网站安全鉴定技能。对任意 URL 进行安全风险评估，综合域名信息、SSL证书、网站内容、技术特征、备案信息等多维度分析，判断网站是否可信、安全、有风险。当用户询问\"查看某个网站是否有风险\"、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/website-security-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/134148837?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "website-security-audit",
+      "url": "https://clawhub.ai/skills/website-security-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "website-security-audit",
+    "url": "https://clawhub.ai/skills/website-security-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/website-security-audit-15bd98c4ad7eda1c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/website-security-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-website-security-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6c2bba1481f34ef9631d1728ca21b944029c73f92660c0a31dbdb1d3292be94a",
+      "artifactSizeBytes": 2318
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T14:20:09.666Z"
+}

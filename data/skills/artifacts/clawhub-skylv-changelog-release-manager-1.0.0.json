@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skylv-changelog-release-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_changelog_release_manager",
+  "skill": {
+    "id": 47580,
+    "skillKey": "clawhub-skylv-changelog-release-manager",
+    "name": "Skylv Changelog Release Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-changelog-release-manager",
+    "url": "https://clawhub.ai/skills/skylv-changelog-release-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-changelog-release-manager-45181b2bfdfd5492.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates changelogs from git commit history using conventional commits. Triggers: generate changelog, release notes, changelog."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 102,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777682956488,
+      "changelog": "Initial release of changelog-release-manager.\n\n- Generates professional changelogs from git commit history using conventional commits.\n- Supports triggers such as \"generate changelog,\" \"release notes,\" and \"changelog.\"\n- Summarizes features, bug fixes, and breaking changes based on commit types.\n- Provides guidance on using conventional commits for clear version history.\n- Useful for automating changelog and release note creation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:069e36533ebc1eace460612cf97ac9f0da436a3fb8fb11ef49b9a4c1ce43d32e"
+}

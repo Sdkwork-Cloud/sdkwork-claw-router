@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vergi-takvimi-tr@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vergi_takvimi_tr",
+  "skill": {
+    "id": 56932,
+    "skillKey": "clawhub-vergi-takvimi-tr",
+    "name": "Vergi Takvimi Tr"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vergi-takvimi-tr",
+    "url": "https://clawhub.ai/skills/vergi-takvimi-tr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vergi-takvimi-tr-8ec10fff369506bd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Türkiye'de aylık ve dönemsel vergi beyan tarihleri, SGK bildirimleri, KDV, muhtasar, damga vergisi, geçici vergi, kurumlar vergisi takvimi. Tahakkuk fişi, ge..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ayhanagirgol",
+      "userId": "s176f0epq2fdm7xyrq9n02szax83nx6j",
+      "displayName": "ayhanagirgol",
+      "image": "https://avatars.githubusercontent.com/u/86876320?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774728920289,
+      "changelog": "Initial release of vergi-takvimi-tr\n\n- Türkiye'deki tüm aylık ve dönemsel vergi ve SGK beyan tarihleri ile ilgili kapsamlı bilgi sunar.\n- KDV, muhtasar, SGK primleri, geçici vergi, kurumlar vergisi beyan ve ödeme takvimlerini içerir.\n- Tahakkuk fişi, gecikme cezaları ve aylık işletme sahibi görevlerini açıklar.\n- Hafta sonu ve resmi tatil günlerine denk gelen ödemeler için ilk iş günü kuralını belirtir.\n- Referans ve rehber dosyalarıyla pratik kullanım sağlar.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:605831176880bb82a76e32a34e9452138cb4f5ec3c668fce36f537d6e504f88c"
+}

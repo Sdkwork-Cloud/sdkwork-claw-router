@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cairo@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cairo",
+  "skill": {
+    "id": 30727,
+    "skillKey": "clawhub-cairo",
+    "name": "Cairo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cairo",
+    "url": "https://clawhub.ai/skills/cairo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cairo-6d2805b8ba496887.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when writing Cairo smart contracts for StarkNet, looking up syntax and types, defining storage and events, generating contract templates, or reviewing te..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bytesagain-lab",
+      "userId": "s174pq5f3gzez3838vt2642fmx848f1d",
+      "displayName": "bytesagain-lab",
+      "image": "https://avatars.githubusercontent.com/u/271735676?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 257,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1774536932466,
+      "changelog": "v2.0.0 full rewrite: name+description+script",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c21faf07926b2908dcc781cda191572b61f9528dce4471de8e56bd8d2b92fd20"
+}

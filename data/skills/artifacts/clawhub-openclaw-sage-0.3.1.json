@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-sage@0.3.1",
+  "version": "0.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_sage",
+  "skill": {
+    "id": 50186,
+    "skillKey": "clawhub-openclaw-sage",
+    "name": "Openclaw Sage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-sage",
+    "url": "https://clawhub.ai/skills/openclaw-sage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-sage-e9278a1c3170ef16.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw documentation expert — answers user questions about OpenClaw setup, configuration, providers, troubleshooting, and what's new using live doc fetchin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alfonso46674",
+      "userId": "s1765td07w82ct92bqbgkyw5598572rh",
+      "displayName": "alfonso46674",
+      "image": "https://avatars.githubusercontent.com/u/49523948?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 558,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.3.1",
+      "createdAt": 1777078305287,
+      "changelog": "openclaw-sage 0.3.1\n\n- Adds multi-version documentation support: Most fetch, info, and search scripts now accept `--version <tag>` to work with specific OpenClaw doc versions.\n- Improves search flexibility: `search.sh` and `build-index.sh search` commands accept `--max-results <n>` to control result limits.\n- Enhances caching and status scripts: `cache.sh status` shows all cached versions; new `cache.sh tags` lists available OpenClaw release tags.\n- Greatly expands documentation, including source notes, usage examples, and updated agent workflow recommendations.\n- Many scripts and workflows updated for more robust offline and multi-version operation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3d67feec45c52247f6bc564fdf6aeab623159480cd10462944f428e1e02c0eef"
+}

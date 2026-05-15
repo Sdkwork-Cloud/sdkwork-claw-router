@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63326,
+  "uuid": "skill-clawhub-tech-write-assist",
+  "skillKey": "clawhub-tech-write-assist",
+  "name": "技术宣发助手",
+  "summary": "AI技术报告社媒宣发一键生成器。输入PDF技术报告，一键生成X推文Thread、 小红书帖子(好物推荐+技术揭秘两种风格)、微信公众号文章(量子位风格)， 可选AI配图生成。用法: /宣传 <pdf路径> [--platform x|xhs|wechat|all] [--no-image]",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tech_write_assist",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Christiana",
+      "features": [
+        "AI技术报告社媒宣发一键生成器。输入PDF技术报告，一键生成X推文Thread、 小红书帖子(好物推荐+技术揭秘两种风格)、微信公众号文章(量子位风格)， 可选AI配图生成。用法: /宣传."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tech-write-assist@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29084119?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tech-write-assist",
+      "url": "https://clawhub.ai/skills/tech-write-assist"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tech-write-assist",
+    "url": "https://clawhub.ai/skills/tech-write-assist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tech-write-assist-ecebc4d77e599db7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tech-write-assist@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tech-write-assist-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2d0e1c5989cfd29f8f6e2aea82d6123f1d1171f37eb0cefa837af53b042d8477",
+      "artifactSizeBytes": 2760
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T10:11:48.328Z"
+}

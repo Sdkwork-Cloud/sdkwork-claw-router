@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13729,
+  "uuid": "skill-clawhub-fluora-setup",
+  "skillKey": "clawhub-fluora-setup",
+  "name": "Fluora Setup",
+  "summary": "Interactive setup wizard for Fluora marketplace integration. Clones fluora-mcp from GitHub, builds locally, generates wallet, and configures mcporter.",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fluora_setup",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chetan-guevara",
+      "features": [
+        "Interactive setup wizard for Fluora marketplace integration",
+        "Clones fluora-mcp from GitHub, builds locally, generates wallet, and configures mcporter."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fluora-setup@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3173623?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fluora-setup",
+      "url": "https://clawhub.ai/skills/fluora-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fluora-setup",
+    "url": "https://clawhub.ai/skills/fluora-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fluora-setup-a28e30e781e55bf5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fluora-setup@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-fluora-setup-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9da591d9b663a44cab3ff49938b9a096d747651faf83374d6acc9b03ba35363e",
+      "artifactSizeBytes": 2229
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T22:37:02.212Z"
+}

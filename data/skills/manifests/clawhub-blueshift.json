@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37152,
+  "uuid": "skill-clawhub-blueshift",
+  "skillKey": "clawhub-blueshift",
+  "name": "Blueshift",
+  "summary": "BlueShift integration. Manage data, records, and automate workflows. Use when the user wants to interact with BlueShift data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blueshift",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "BlueShift integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with BlueShift data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/blueshift@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "blueshift",
+      "url": "https://clawhub.ai/skills/blueshift"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blueshift",
+    "url": "https://clawhub.ai/skills/blueshift",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blueshift-9a08d9199295a596.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/blueshift@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-blueshift-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:63c9ad03b039013699b500d1358e8cec782d5878d0e853ae1091814a5136fb2f",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:24:33.035Z"
+}

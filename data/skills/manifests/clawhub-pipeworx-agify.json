@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55797,
+  "uuid": "skill-clawhub-pipeworx-agify",
+  "skillKey": "clawhub-pipeworx-agify",
+  "name": "Pipeworx agify",
+  "summary": "Agify MCP — age prediction from first name (agify.io, free, no auth)",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_agify",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Agify MCP — age prediction from first name (agify.io, free, no auth)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-agify@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138315805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-agify",
+      "url": "https://clawhub.ai/skills/pipeworx-agify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-agify",
+    "url": "https://clawhub.ai/skills/pipeworx-agify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-agify-540792be1861361a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-agify@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-agify-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b05f9edfb361ef924d6bba53750ad8757ef4890f3641ccc2720c9e10fb05cd4a",
+      "artifactSizeBytes": 1803
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T17:01:53.810Z"
+}

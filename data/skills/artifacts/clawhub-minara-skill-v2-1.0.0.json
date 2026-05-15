@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/minara-skill-v2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minara_skill_v2",
+  "skill": {
+    "id": 22067,
+    "skillKey": "clawhub-minara-skill-v2",
+    "name": "Minara Skill V2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minara-skill-v2",
+    "url": "https://clawhub.ai/skills/minara-skill-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minara-skill-v2-b074a08802da4be6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Crypto trading: swap, perps, transfer, pay, deposit (credit card / crypto), withdraw, AI chat, market discovery, x402 payment, autopilot. Built-in wallet via..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "larisgtu",
+      "userId": "publishers:larisgtu",
+      "displayName": "TamKingJK",
+      "image": "https://avatars.githubusercontent.com/u/59082892?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 386,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772717190385,
+      "changelog": "minara-skill-v2 1.0.0\n\n- Initial release introducing crypto trading and wallet functionality via the Minara CLI.\n- Supports actions such as swap, perps (perpetual futures), transfer, payment, deposit (credit card/crypto), withdrawal, market discovery, and autopilot trading.\n- Built-in wallet for EVM and Solana blockchains; requires Minara authentication (CLI or API key).\n- Implements strict transaction confirmation: all fund-moving actions require explicit user approval before proceeding.\n- Advanced intent routing to trigger the correct action only when both a finance/trading action and crypto context are present.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:57f79dce7e797ff8cb7a45e166ee0d90b8d0a4055d2f02dcc017584577872ba0"
+}

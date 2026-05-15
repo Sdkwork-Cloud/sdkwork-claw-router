@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/forklift@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.forklift",
+  "skill": {
+    "id": 67696,
+    "skillKey": "clawhub-forklift",
+    "name": "A search for forklift design ers"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "forklift",
+    "url": "https://clawhub.ai/skills/forklift",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/forklift-5d3d318a749ef73c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "叉车专业知识问答专家。用于回答叉车相关问题，包括： (1) 搜索叉车品牌官网/产品信息（杭叉、合力、柳工、林德、丰田等）； (2) 查询叉车技术问题（维修、选型、参数、能耗标准等）； (3) 参考\"叉车技术老炮\"公众号文章内容； (4) 综合叉车行业知识问答。 当用户询问叉车品牌、产品、技术、维修、选型、行业动态..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yangpf6698",
+      "userId": "s173fkpa05fkr28yr9kpyrk8e9840344",
+      "displayName": "yangpf6698",
+      "image": "https://avatars.githubusercontent.com/u/200377625?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 220,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773985319260,
+      "changelog": "Tell people how to know a forklift design",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b5277b2556dc3752977b4599d5f9d0100cfbbd0ffa1def50cee5b94538604509"
+}

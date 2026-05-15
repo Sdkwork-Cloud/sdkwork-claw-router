@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/protein-qc-strict@4.0.0",
+  "version": "4.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.protein_qc_strict",
+  "skill": {
+    "id": 53461,
+    "skillKey": "clawhub-protein-qc-strict",
+    "name": "Protein QC Strict"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "protein-qc-strict",
+    "url": "https://clawhub.ai/skills/protein-qc-strict",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/protein-qc-strict-b2138bdcc32b2bf0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Strictest protein sequence analysis quality control workflow (3365→456 sequences). Includes literature validation, CD-HIT redundancy removal, complexity chec..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "billwanttobetop",
+      "userId": "s17f0x7jsbj6mm6833qy4hrgks84c476",
+      "displayName": "Billwanttobetop",
+      "image": "https://avatars.githubusercontent.com/u/103113834?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "4.0.0",
+      "createdAt": 1777126956894,
+      "changelog": "Complete workflow: 3365→456 sequences with literature validation, CD-HIT, complexity check, motif verification, MSA quality assessment. Battle-tested on IRED enzyme family.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ddc7972a6c4f8f97503a9bb8b5e89daa9b67e87226d3f4600ba34cc666c56e23"
+}

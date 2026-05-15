@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9515,
+  "uuid": "skill-clawhub-polyedge",
+  "skillKey": "clawhub-polyedge",
+  "name": "PolyEdge - Polymarket Correlation Analyzer",
+  "summary": "Detect mispriced correlations between Polymarket prediction markets. Cross-market arbitrage finder for AI agents.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polyedge",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sbaker5",
+      "features": [
+        "Detect mispriced correlations between Polymarket prediction markets",
+        "Cross-market arbitrage finder for AI agents."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polyedge@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13823425?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polyedge",
+      "url": "https://clawhub.ai/skills/polyedge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polyedge",
+    "url": "https://clawhub.ai/skills/polyedge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polyedge-862caccdd4d1173d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polyedge@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-polyedge-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:62e2a88f0eaad8ac9b87f298bec2f8966fe6f34930280fb80de62081ed744beb",
+      "artifactSizeBytes": 1836
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T21:08:06.636Z"
+}

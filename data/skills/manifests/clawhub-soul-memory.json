@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58544,
+  "uuid": "skill-clawhub-soul-memory",
+  "skillKey": "clawhub-soul-memory",
+  "name": "Soul Memory",
+  "summary": "Intelligent memory management system v3.5.13 - 修復 heartbeat-trigger.py 改用上次 heartbeat 到現在的增量窗口抓取 important context，避免固定 3 小時窗口遺漏與重掃。",
+  "version": "3.5.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.soul_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kingofqin2026",
+      "features": [
+        "Intelligent memory management system v3.5.13",
+        "修復 heartbeat-trigger.py 改用上次 heartbeat 到現在的增量窗口抓取 important context，避免固定 3 小時窗口遺漏與重掃。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/soul-memory@3.5.13",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261905121?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "soul-memory",
+      "url": "https://clawhub.ai/skills/soul-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "soul-memory",
+    "url": "https://clawhub.ai/skills/soul-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/soul-memory-7cfa51afa6818d14.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/soul-memory@3.5.13",
+      "artifactUrl": "data/skills/artifacts/clawhub-soul-memory-3.5.13.json",
+      "version": "3.5.13",
+      "runtime": "metadata",
+      "checksumHash": "sha256:709fcbc8bd0b9ac7479301074f9b7905b5ff3232c33bf1b69e3393ea6c998819",
+      "artifactSizeBytes": 2054
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T10:13:19.266Z"
+}

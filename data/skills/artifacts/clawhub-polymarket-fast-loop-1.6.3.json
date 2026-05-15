@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polymarket-fast-loop@1.6.3",
+  "version": "1.6.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_fast_loop",
+  "skill": {
+    "id": 8544,
+    "skillKey": "clawhub-polymarket-fast-loop",
+    "name": "Polymarket Fast Loop"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-fast-loop",
+    "url": "https://clawhub.ai/skills/polymarket-fast-loop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-fast-loop-2a9fd56433a5ca36.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trade Polymarket BTC 5-minute and 15-minute fast markets using CEX price momentum signals via Simmer API. Default signal is Binance BTC/USDT klines. Use when..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adlai88",
+      "userId": "s172hbaws6qnfk9a4zffkzfags83j0df",
+      "displayName": "AD88",
+      "image": "https://avatars.githubusercontent.com/u/6263940?v=4"
+    },
+    "stats": {
+      "comments": 5,
+      "downloads": 6882,
+      "installsAllTime": 21,
+      "installsCurrent": 16,
+      "stars": 49,
+      "versions": 39
+    },
+    "latestVersion": {
+      "version": "1.6.3",
+      "createdAt": 1777108821749,
+      "changelog": "Migrate Gamma fallback path to /markets/keyset (Polymarket deprecation deadline May 1, 2026).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:41d35a811f4ea6d0f375cf8de81fe3cf3f27ef9cf045bff0095455d840b97c98"
+}

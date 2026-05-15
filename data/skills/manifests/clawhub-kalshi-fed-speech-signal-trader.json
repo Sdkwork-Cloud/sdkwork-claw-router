@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38790,
+  "uuid": "skill-clawhub-kalshi-fed-speech-signal-trader",
+  "skillKey": "clawhub-kalshi-fed-speech-signal-trader",
+  "name": "Kalshi Fed Speech Signal Trader",
+  "summary": "Trades Fed rate markets on Kalshi based on hawkish/dovish sentiment signals from market question text. Scores net sentiment from keyword dictionaries and adj...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kalshi_fed_speech_signal_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "diagnostikon",
+      "features": [
+        "Trades Fed rate markets on Kalshi based on hawkish/dovish sentiment signals from market questio.",
+        "Scores net sentiment from keyword dictionaries and adj..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kalshi-fed-speech-signal-trader@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17246180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kalshi-fed-speech-signal-trader",
+      "url": "https://clawhub.ai/skills/kalshi-fed-speech-signal-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kalshi-fed-speech-signal-trader",
+    "url": "https://clawhub.ai/skills/kalshi-fed-speech-signal-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kalshi-fed-speech-signal-trader-d2ef632d5e6fa3b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kalshi-fed-speech-signal-trader@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-kalshi-fed-speech-signal-trader-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:28eae67667a5cde74f5c2dfdd2ac23b73d239676a103b110e9f571e8cadcbd0e",
+      "artifactSizeBytes": 2003
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T12:29:57.354Z"
+}

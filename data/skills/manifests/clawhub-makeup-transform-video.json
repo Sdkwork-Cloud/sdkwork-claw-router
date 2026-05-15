@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73662,
+  "uuid": "skill-clawhub-makeup-transform-video",
+  "skillKey": "clawhub-makeup-transform-video",
+  "name": "拟人动物化妆变身视频",
+  "summary": "生成拟人动物化妆变身短视频。素颜到惊艳的快节奏卡点反差内容，支持日常妆、约会妆、舞台妆、角色仿妆等场景，一句话描述直接出片。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.makeup_transform_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "parallel world",
+      "features": [
+        "生成拟人动物化妆变身短视频。素颜到惊艳的快节奏卡点反差内容，支持日常妆、约会妆、舞台妆、角色仿妆等场景，一句话描述直接出片。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/makeup-transform-video@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16458879?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "makeup-transform-video",
+      "url": "https://clawhub.ai/skills/makeup-transform-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "makeup-transform-video",
+    "url": "https://clawhub.ai/skills/makeup-transform-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/makeup-transform-video-062f56402c32fa3b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/makeup-transform-video@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-makeup-transform-video-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:93b1cf0cb30ca98ddcd1bed101e332a5cadf6006b1c5e10e31e66a6f50d46042",
+      "artifactSizeBytes": 2104
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T15:29:26.516Z"
+}

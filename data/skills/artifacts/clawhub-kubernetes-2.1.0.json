@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kubernetes@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kubernetes",
+  "skill": {
+    "id": 8731,
+    "skillKey": "clawhub-kubernetes",
+    "name": "Kubernetes Agent Swarm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kubernetes",
+    "url": "https://clawhub.ai/skills/kubernetes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kubernetes-94abcb2d2773df65.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Kubernetes & OpenShift Platform Agent Swarm — A coordinated multi-agent system for cluster operations. Includes Orchestrator (Jarvis), Cluster Ops (Atlas), G..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kcns008",
+      "userId": "s179qpj0ks76sgmsqnpgx63rsx83g7ef",
+      "displayName": "Chin K",
+      "image": "https://avatars.githubusercontent.com/u/3204061?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 7291,
+      "installsAllTime": 59,
+      "installsCurrent": 55,
+      "stars": 6,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1776271478414,
+      "changelog": "v2.1.0: Declare all credentials/binaries in metadata, add human-approval warnings for destructive operations",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5e0031d0b7d40c38bbd783bf98b0941c7584a26eac9b490ffad06077cc041c58"
+}

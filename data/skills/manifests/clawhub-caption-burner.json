@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45461,
+  "uuid": "skill-clawhub-caption-burner",
+  "skillKey": "clawhub-caption-burner",
+  "name": "Caption Burner",
+  "summary": "Get hardcoded captioned videos ready to post, without touching a single slider. Upload your video files (MP4, MOV, AVI, WebM, up to 500MB), say something lik...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.caption_burner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "peandrover adam",
+      "features": [
+        "Get hardcoded captioned videos ready to post, without touching a single slider",
+        "Upload your video files (MP4, MOV, AVI, WebM, up to 500MB), say something lik..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/caption-burner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257755799?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "caption-burner",
+      "url": "https://clawhub.ai/skills/caption-burner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "caption-burner",
+    "url": "https://clawhub.ai/skills/caption-burner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/caption-burner-ec3b505eecbed9fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/caption-burner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-caption-burner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8a880f02e5de980258841a96a13938c6ecf4279e3b4e0fbb879f7769e3abc0bd",
+      "artifactSizeBytes": 2546
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T12:05:48.823Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jettyd@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jettyd",
+  "skill": {
+    "id": 54470,
+    "skillKey": "clawhub-jettyd",
+    "name": "Jettyd Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jettyd",
+    "url": "https://clawhub.ai/skills/jettyd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jettyd-7b268b77130be435.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with IoT devices via the jettyd platform — read sensors, send commands, manage rules, and list devices"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jettydiot",
+      "userId": "s17dg07a3v3nyvn3tnjgnzcse583r15b",
+      "displayName": "jettydiot",
+      "image": "https://avatars.githubusercontent.com/u/269737096?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1776847523353,
+      "changelog": "Remove MCP server reference — @jettyd/mcp not yet available",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:abd7085349fd0b499e79c7d81dd72ff0315a45835405844a733565d353ffa894"
+}

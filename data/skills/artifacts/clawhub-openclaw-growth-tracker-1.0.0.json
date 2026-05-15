@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-growth-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_growth_tracker",
+  "skill": {
+    "id": 66301,
+    "skillKey": "clawhub-openclaw-growth-tracker",
+    "name": "OpenClaw 成长追踪器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-growth-tracker",
+    "url": "https://clawhub.ai/skills/openclaw-growth-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-growth-tracker-57197088368f46dc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw 个人成长追踪器 — 记录你在使用 OpenClaw 过程中的成长轨迹。 触发场景： - 想了解今天/本周的成长情况：\"我的成长怎么样\"、\"今天做了什么\" - 想看数据化的进展报告：\"给我看数据\"、\"量化报告\" - 完成重要任务后：\"记录这个成就\"、\"完成任务\" - 想回顾一段时间的变化：\"周报\"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alexduming",
+      "userId": "s17685n9a08fevws3cp7a6ydr983q2eg",
+      "displayName": "alexduming",
+      "image": "https://avatars.githubusercontent.com/u/106471903?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777158433820,
+      "changelog": "首次发布。专注个人成长追踪，记录任务、能力、效率、成就，数据化呈现成长轨迹。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:35b2b926111e75134b9bafaeb0f466b3c4bd9914cc9d213a355ba846a02bb781"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12085,
+  "uuid": "skill-clawhub-binance",
+  "skillKey": "clawhub-binance",
+  "name": "Binance API",
+  "summary": "Operate Binance Spot APIs through safe REST, WebSocket, and SDK workflows with signed requests, rate-limit control, and testnet-first execution.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.binance",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Operate Binance Spot APIs through safe REST, WebSocket, and SDK workflows with signed requests,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/binance@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "binance",
+      "url": "https://clawhub.ai/skills/binance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "binance",
+    "url": "https://clawhub.ai/skills/binance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/binance-59bba357145ca539.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/binance@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-binance-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:033d023fa5c389bf9412471ed1419f79c2406b1dc9e7c6cd3a631258b716853c",
+      "artifactSizeBytes": 1926
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T22:33:57.603Z"
+}

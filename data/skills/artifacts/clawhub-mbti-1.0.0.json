@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mbti@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mbti",
+  "skill": {
+    "id": 62855,
+    "skillKey": "clawhub-mbti",
+    "name": "MBTI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mbti",
+    "url": "https://clawhub.ai/skills/mbti",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mbti-9cd1de305ba49cd1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent 人格诊断与配置优化系统。用于诊断 Agent 的 MBTI 人格类型，对比用户期望，自动生成配置修改建议。触发场景：\"测试 Agent 人格\"、\"诊断 Agent 配置\"、\"优化 Agent 行为\"。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "torchesfrms",
+      "userId": "s17b4z2mknzysd115pp2b62vsh84bhs3",
+      "displayName": "moer",
+      "image": "https://avatars.githubusercontent.com/u/42177272?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1470,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770302858758,
+      "changelog": "Agent MBTI diagnosis & optimization system initial release:\n\n- Provides a 5-stage framework to diagnose Agent MBTI type, compare with user expectations, and auto-generate configuration modification suggestions.\n- Introduces multi-stage process: self-survey, ability test, personality analysis, user needs survey, and config adjustment.\n- Defines 16 Agent personality types with core traits and mapping files.\n- Includes dedicated JSON files and tools for each stage: surveys, test data, diagnostic engine, and config generator.\n- Supports command-line execution for the full diagnosis and tuning pipeline.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:db233da7558df471ef24cf7174d137fd02340a1a252def1cb5ee2721c9a9283b"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/service-layer-architecture@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.service_layer_architecture",
+  "skill": {
+    "id": 15981,
+    "skillKey": "clawhub-service-layer-architecture",
+    "name": "Service Layer Architecture"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "service-layer-architecture",
+    "url": "https://clawhub.ai/skills/service-layer-architecture",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/service-layer-architecture-e641319237889483.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Controller-service-query layered API architecture with data enrichment and parallel fetching. Use when building REST APIs or GraphQL resolvers with clean separation of concerns. Triggers on API architecture, service layer, controller patte."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wpank",
+      "userId": "publishers:wpank",
+      "displayName": "wpank",
+      "image": "https://avatars.githubusercontent.com/u/9498646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 924,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770725924610,
+      "changelog": "- Initial release of service-layer-architecture skill.\n- Documents a three-layer API design: controllers (HTTP handling), services (business logic & data enrichment), and queries (database access).\n- Provides TypeScript examples for each layer, showing best practices including Promise.all for parallel data fetching.\n- Specifies clear responsibilities for each layer to ensure separation of concerns.\n- Includes a \"NEVER Do\" section outlining common pitfalls to avoid.\n- Adds related skills for job queue processing and real-time update patterns.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:042d0fe7f2a191105ca45eea8868f2a03a5ea89df5f41faeec62c44a43cdc9a2"
+}

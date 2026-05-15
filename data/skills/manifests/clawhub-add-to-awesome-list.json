@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25883,
+  "uuid": "skill-clawhub-add-to-awesome-list",
+  "skillKey": "clawhub-add-to-awesome-list",
+  "name": "Add to Awesome Agent-Native Services",
+  "summary": "Guide a contributor through the full process of adding a new service to the awesome-agent-native-services catalog: verifying criteria, checking for URL Onboa...",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.add_to_awesome_list",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "0x4C33",
+      "features": [
+        "Guide a contributor through the full process of adding a new service to the awesome-agent-nativ."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/add-to-awesome-list@1.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60883781?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "add-to-awesome-list",
+      "url": "https://clawhub.ai/skills/add-to-awesome-list"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "add-to-awesome-list",
+    "url": "https://clawhub.ai/skills/add-to-awesome-list",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/add-to-awesome-list-ba8bb357446294e4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/add-to-awesome-list@1.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-add-to-awesome-list-1.4.0.json",
+      "version": "1.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac4fbe79f7d4ed078b9cdf0493dc511edac47c58439505f4c2abbd7bd965888f",
+      "artifactSizeBytes": 2165
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T06:52:09.054Z"
+}

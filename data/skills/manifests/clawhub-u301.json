@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37463,
+  "uuid": "skill-clawhub-u301",
+  "skillKey": "clawhub-u301",
+  "name": "U301",
+  "summary": "U301 integration. Manage data, records, and automate workflows. Use when the user wants to interact with U301 data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.u301",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "U301 integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with U301 data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/u301@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "u301",
+      "url": "https://clawhub.ai/skills/u301"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "u301",
+    "url": "https://clawhub.ai/skills/u301",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/u301-6e4fdbb3d83dad69.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/u301@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-u301-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d07e13e2627b3ae5435479624f2f7e93de7803aa633b8c584a83f285286a88d",
+      "artifactSizeBytes": 1802
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:07:35.423Z"
+}

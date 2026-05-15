@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10384,
+  "uuid": "skill-clawhub-attio",
+  "skillKey": "clawhub-attio",
+  "name": "Attio",
+  "summary": "Attio CRM integration for managing companies, people, deals, notes, tasks, and custom objects. Use when working with Attio CRM data, searching contacts, managing sales pipelines, adding notes to records, creating tasks, or syncing prospect.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.attio",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "captmarbles",
+      "features": [
+        "Attio CRM integration for managing companies, people, deals, notes, tasks, and custom objects",
+        "Use when working with Attio CRM data, searching contacts, managing sales pipelines, adding note."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/attio@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5841195?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "attio",
+      "url": "https://clawhub.ai/skills/attio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "attio",
+    "url": "https://clawhub.ai/skills/attio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/attio-5b7f832dd957f6b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/attio@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-attio-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:60c4f07e9caedff344c476f00248b9207886e47ee405e888914e36548f30bd84",
+      "artifactSizeBytes": 1978
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-26T18:42:49.473Z"
+}

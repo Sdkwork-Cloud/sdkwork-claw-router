@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16465,
+  "uuid": "skill-clawhub-canonical-data-map",
+  "skillKey": "clawhub-canonical-data-map",
+  "name": "Canonical Data Map",
+  "summary": "Single source of truth for all paths, naming conventions, and data formats across the OpenClaw Greek Accounting system. Reference document.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.canonical_data_map",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Stems",
+      "features": [
+        "Single source of truth for all paths, naming conventions, and data formats across the OpenClaw.",
+        "Reference document."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/canonical-data-map@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/70470779?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "canonical-data-map",
+      "url": "https://clawhub.ai/skills/canonical-data-map"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "canonical-data-map",
+    "url": "https://clawhub.ai/skills/canonical-data-map",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/canonical-data-map-ca4098569aa4ff2f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/canonical-data-map@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-canonical-data-map-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:161f6c95b4d6e0db3cf7f69f251d33a99a80ab0c8245f64a477cccb0a6f05857",
+      "artifactSizeBytes": 2022
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T07:18:39.400Z"
+}

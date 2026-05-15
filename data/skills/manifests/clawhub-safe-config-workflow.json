@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67520,
+  "uuid": "skill-clawhub-safe-config-workflow",
+  "skillKey": "clawhub-safe-config-workflow",
+  "name": "安全配置流程",
+  "summary": "安全修改 OpenClaw 配置，先查文档和验证，确认后自动修复并反馈，记录教训，确保 Gateway 正常运行。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safe_config_workflow",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nicoxia",
+      "features": [
+        "安全修改 OpenClaw 配置，先查文档和验证，确认后自动修复并反馈，记录教训，确保 Gateway 正常运行。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/safe-config-workflow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7669766?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "safe-config-workflow",
+      "url": "https://clawhub.ai/skills/safe-config-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safe-config-workflow",
+    "url": "https://clawhub.ai/skills/safe-config-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safe-config-workflow-20a98374ddc7b99e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/safe-config-workflow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-safe-config-workflow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:82c69eb6736ff41ec1a97b41fc9f50a4b74439fb0a6041d454cbb6178cc35832",
+      "artifactSizeBytes": 1973
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T16:03:16.380Z"
+}

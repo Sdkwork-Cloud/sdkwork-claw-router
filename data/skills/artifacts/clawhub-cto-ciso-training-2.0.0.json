@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cto-ciso-training@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cto_ciso_training",
+  "skill": {
+    "id": 66341,
+    "skillKey": "clawhub-cto-ciso-training",
+    "name": "CTO×CISO Training"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cto-ciso-training",
+    "url": "https://clawhub.ai/skills/cto-ciso-training",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cto-ciso-training-df261dcaf21e2abf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "联合CTO与CISO制定培训计划，执行在线考核，颁发数字签名证书，实时追踪并报告培训进度与合规状态。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johnsmithfan",
+      "userId": "s17ar8yxm9wh64zhr7mr0xemcn84gs16",
+      "displayName": "JohnSmithfan",
+      "image": "https://avatars.githubusercontent.com/u/147225147?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1776021616632,
+      "changelog": "Security hardened v2.0: input validation, path traversal protection, audit hash, double-signature certificates",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:20e1c136da6251eb611fb3a871acba0876acfb830c9be78e9d92f72aa3aa8449"
+}

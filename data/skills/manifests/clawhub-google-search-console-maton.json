@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45737,
+  "uuid": "skill-clawhub-google-search-console-maton",
+  "skillKey": "clawhub-google-search-console-maton",
+  "name": "Google seach console",
+  "summary": "Access Google Search Console API via cURL with OAuth to manage sites, sitemaps, and query search analytics including clicks, impressions, and rankings.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_search_console_maton",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Otman Heddouch",
+      "features": [
+        "Access Google Search Console API via cURL with OAuth to manage sites, sitemaps, and query searc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-search-console-maton@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/85652350?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-search-console-maton",
+      "url": "https://clawhub.ai/skills/google-search-console-maton"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-search-console-maton",
+    "url": "https://clawhub.ai/skills/google-search-console-maton",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-search-console-maton-a4fc97316e77700e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-search-console-maton@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-search-console-maton-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:58325e6fc9565607ab142c8948afa83876aa9f00eb21a4cfa54bc8debbf87143",
+      "artifactSizeBytes": 2408
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T14:53:00.228Z"
+}

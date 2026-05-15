@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-team-pipeline@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_team_pipeline",
+  "skill": {
+    "id": 29701,
+    "skillKey": "clawhub-agent-team-pipeline",
+    "name": "Agent Team Pipeline"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-team-pipeline",
+    "url": "https://clawhub.ai/skills/agent-team-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-team-pipeline-ca154431a1606749.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when needing to coordinate multiple AI agents in parallel for code development, testing, and review"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liuchang8877",
+      "userId": "publishers:liuchang8877",
+      "displayName": "liuchang",
+      "image": "https://avatars.githubusercontent.com/u/1624553?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 297,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773727321111,
+      "changelog": "- Initial release of agent-team-pipeline skill.\n- Enables coordination of multiple AI agents (coder, tester, reviewer) in parallel for code development workflows.\n- Uses isolated git worktrees for each agent to avoid conflicts.\n- Includes task distribution pattern and example setup/scripts.\n- Designed for multi-phase features, not simple or open-ended tasks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2b7fa606a27f2b810e223bd2df59ac911622d1d3eb8f92df1b4a5deef439111b"
+}

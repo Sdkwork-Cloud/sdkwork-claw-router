@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-quick-setup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_quick_setup",
+  "skill": {
+    "id": 66976,
+    "skillKey": "clawhub-wechat-quick-setup",
+    "name": "Wechat Quick Setup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-quick-setup",
+    "url": "https://clawhub.ai/skills/wechat-quick-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-quick-setup-edaf8946665c4a01.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "微信小程序快速启动模板。一键创建云函数、配置后端、生成代码。10分钟搭建完整微信小程序。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yang1002378395-cmyk",
+      "userId": "s17627rpbb3atq3mbfabqbgtm983g9et",
+      "displayName": "yang1002378395-cmyk",
+      "image": "https://avatars.githubusercontent.com/u/261632147?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 219,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774327247620,
+      "changelog": "wechat-quick-setup 1.0.0\n\n- Initial release of a fast-start template for WeChat Mini Programs.\n- Quickly generate project structure, cloud functions, and frontend pages with simple commands.\n- Includes templates for user management, common pages, and basic backend CRUD operations using Tencent Cloud.\n- Provides easy setup instructions, code samples, and upgrade path to Pro version.\n- Supports both free and paid feature sets.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:22a3b771bb6502975dedbd3bea5c169df21aecb40d1990f61caa9ca9c0c142b5"
+}

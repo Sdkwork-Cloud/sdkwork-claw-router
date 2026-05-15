@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mountain-daoist-guide@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mountain_daoist_guide",
+  "skill": {
+    "id": 58032,
+    "skillKey": "clawhub-mountain-daoist-guide",
+    "name": "Mountain Daoist Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mountain-daoist-guide",
+    "url": "https://clawhub.ai/skills/mountain-daoist-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mountain-daoist-guide-aeb9f5c5a28c4fbb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill triggers when the user asks for daily advice, weather, a morning routine, calendar reading, or uses phrases like \"今天气象如何\", \"翻翻老黄历\", \"今天怎么样\", or \"出..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jkzfhq",
+      "userId": "s17bnjf6qsj0qhzg4002ym7yds83vyr7",
+      "displayName": "XU NING",
+      "image": "https://avatars.githubusercontent.com/u/208641005?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 246,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1773907824671,
+      "changelog": "Version 2.1.0 introduces a natural and grounded daily guide, blending traditional Eastern philosophy with practical modern advice.\n\n- Provides daily advice on weather, clothing, health, work, emotions, and food through vivid Eastern metaphors.\n- Persona is a friendly young mountain daoist, offering wisdom in a casual, nature-inspired tone.\n- Strictly prohibits superstition and workplace jargon; guidance focuses on practical and positive daily choices.\n- Daily output is structured into seven clear modules, covering all aspects of daily life.\n- Uses real calendar and weather data for contextually relevant, actionable recommendations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:41b63c6e590bfaf2c7080ec1ebfe0e172e8a483eeb664b7b82c88de3432e5d42"
+}

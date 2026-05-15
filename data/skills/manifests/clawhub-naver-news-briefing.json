@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58135,
+  "uuid": "skill-clawhub-naver-news-briefing",
+  "skillKey": "clawhub-naver-news-briefing",
+  "name": "naver-news-briefing",
+  "summary": "Search, brief, and monitor 대한민국 Naver News via the Naver Search API using natural-language Korean queries. Use when the user wants 네이버 뉴스 브리핑, 최근 N일 뉴스 요약, 제...",
+  "version": "2026.4.16",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.naver_news_briefing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "twbeatles",
+      "features": [
+        "Search, brief, and monitor 대한민국 Naver News via the Naver Search API using natural-language Kore.",
+        "Use when the user wants 네이버 뉴스 브리핑, 최근 N일 뉴스 요약, 제..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/naver-news-briefing@2026.4.16",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/243789332?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "naver-news-briefing",
+      "url": "https://clawhub.ai/skills/naver-news-briefing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "naver-news-briefing",
+    "url": "https://clawhub.ai/skills/naver-news-briefing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/naver-news-briefing-433240829911ede0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/naver-news-briefing@2026.4.16",
+      "artifactUrl": "data/skills/artifacts/clawhub-naver-news-briefing-2026.4.16.json",
+      "version": "2026.4.16",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d096d1b102ff926777cf72c2ccd1cb27ec2e97dc6a7744376b6a10ecec6a46ab",
+      "artifactSizeBytes": 2054
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T14:00:19.111Z"
+}

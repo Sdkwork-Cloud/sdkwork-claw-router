@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/compressor-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.compressor_ai",
+  "skill": {
+    "id": 42071,
+    "skillKey": "clawhub-compressor-ai",
+    "name": "Compressor Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "compressor-ai",
+    "url": "https://clawhub.ai/skills/compressor-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/compressor-ai-23de257f4376e0d1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get compressed MP4 files ready to post, without touching a single slider. Upload your video files (MP4, MOV, AVI, WebM, up to 500MB), say something like \"com..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susan4731-wilfordf",
+      "userId": "s1782w3wqej6a5gnp3w63eb80184cckp",
+      "displayName": "susan4731-wilfordf",
+      "image": "https://avatars.githubusercontent.com/u/208907675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775952248157,
+      "changelog": "Compressor AI — initial release!\n\n- Quickly compress and export videos (MP4, MOV, AVI, WebM, up to 500MB) with simple instructions.\n- Automatic backend connection and authentication on first use; free 7-day trial token included.\n- Supports uploading, editing, and exporting 1080p MP4s via cloud GPU processing (30–90 seconds typical for clips).\n- Credit usage, upload status, and export handled via clear text prompts; virtually no manual configuration required.\n- Robust error handling and guidance for common issues (token, credits, file size, etc.).\n- Designed for creators needing fast, high-quality, smaller video files.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:acf663ed1400aed8460c1a5213b9fe4a109381d478834a64bb50a5408d695dc2"
+}

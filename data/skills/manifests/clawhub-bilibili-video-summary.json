@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53900,
+  "uuid": "skill-clawhub-bilibili-video-summary",
+  "skillKey": "clawhub-bilibili-video-summary",
+  "name": "Bilibili Video Summary",
+  "summary": "Extract and summarize Bilibili videos. Fetches subtitles or GPU-transcribed audio, danmaku (scrolling comments), video comments, and description — outputs st...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilibili_video_summary",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gkd2323c",
+      "features": [
+        "Extract and summarize Bilibili videos",
+        "Fetches subtitles or GPU-transcribed audio, danmaku (scrolling comments), video comments, and d."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bilibili-video-summary@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/216696112?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bilibili-video-summary",
+      "url": "https://clawhub.ai/skills/bilibili-video-summary"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilibili-video-summary",
+    "url": "https://clawhub.ai/skills/bilibili-video-summary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilibili-video-summary-22a4ee0aa301441b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bilibili-video-summary@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bilibili-video-summary-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d63e33d6e08d26f5bff2e4256f2678adb177f984e5561431907772f5656c5a90",
+      "artifactSizeBytes": 2047
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T11:44:39.895Z"
+}

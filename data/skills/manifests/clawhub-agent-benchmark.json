@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66053,
+  "uuid": "skill-clawhub-agent-benchmark",
+  "skillKey": "clawhub-agent-benchmark",
+  "name": "Agent Benchmark",
+  "summary": "通过12个标准化任务自动评估AI Agent在文件操作、数据处理、系统操作、健壮性与代码质量五大维度的综合能力。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_benchmark",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yuyonghao-123",
+      "features": [
+        "通过12个标准化任务自动评估AI Agent在文件操作、数据处理、系统操作、健壮性与代码质量五大维度的综合能力。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-benchmark@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267580628?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-benchmark",
+      "url": "https://clawhub.ai/skills/agent-benchmark"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-benchmark",
+    "url": "https://clawhub.ai/skills/agent-benchmark",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-benchmark-b47776d5414bdc28.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-benchmark@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-benchmark-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f431f9dc5c9a8ef283b2fa8ec1538f438e0efabb6603966fc0dc49023f5f814f",
+      "artifactSizeBytes": 2199
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T08:47:46.002Z"
+}

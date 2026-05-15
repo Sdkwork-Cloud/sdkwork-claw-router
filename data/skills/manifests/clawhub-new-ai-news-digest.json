@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67777,
+  "uuid": "skill-clawhub-new-ai-news-digest",
+  "skillKey": "clawhub-new-ai-news-digest",
+  "name": "ai-news-digest",
+  "summary": "自动抓取并汇总 AI、科技行业的最新新闻，生成每日/每周新闻简报。支持多种来源，自动提取要点。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.new_ai_news_digest",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sunshine-del-ux",
+      "features": [
+        "自动抓取并汇总 AI、科技行业的最新新闻，生成每日/每周新闻简报。支持多种来源，自动提取要点。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/new-ai-news-digest@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83053073?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "new-ai-news-digest",
+      "url": "https://clawhub.ai/skills/new-ai-news-digest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "new-ai-news-digest",
+    "url": "https://clawhub.ai/skills/new-ai-news-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/new-ai-news-digest-9de7ea843d463f7e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/new-ai-news-digest@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-new-ai-news-digest-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:44479645bcf7dff93a4ea73d5536ae529f4bc819942fe3c3be181a2c5534a57c",
+      "artifactSizeBytes": 2296
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T14:53:39.311Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/competitor-monitor-cn@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.competitor_monitor_cn",
+  "skill": {
+    "id": 66075,
+    "skillKey": "clawhub-competitor-monitor-cn",
+    "name": "Competitor Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "competitor-monitor-cn",
+    "url": "https://clawhub.ai/skills/competitor-monitor-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/competitor-monitor-cn-0fce5f4c495f5b83.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "竞品价格监控助手，自动追踪竞品价格变动、上下架状态，支持淘宝/京东/拼多多/亚马逊。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zt6558609-cpu",
+      "userId": "s174shbrrbvdr2yxy4pc6k2tn583hmh7",
+      "displayName": "zt6558609-cpu",
+      "image": "https://avatars.githubusercontent.com/u/233548982?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1774344170925,
+      "changelog": "competitor-monitor-cn v2.0.0\n\n- 新增 demo 脚本和新版监控脚本：scripts/demo.py, scripts/monitor_v2.py\n- 新增监控输出示例：scripts/output/demo_alert_罗技 G102 鼠标_20260324_1716.md, scripts/output/demo_report_20260324_1716.md\n- 更新 config/products.json，适配新版脚本或产品配置调整\n- 更新 README.md，反映新增脚本和使用方法",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e45eb239f1959c9331751bac31ff3cc0ff5cb0279ab43d8a038ba5374412d57d"
+}

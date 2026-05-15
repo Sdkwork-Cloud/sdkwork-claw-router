@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flipkart-seller-dashboard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flipkart_seller_dashboard",
+  "skill": {
+    "id": 23516,
+    "skillKey": "clawhub-flipkart-seller-dashboard",
+    "name": "flipkart seller dashboard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flipkart-seller-dashboard",
+    "url": "https://clawhub.ai/skills/flipkart-seller-dashboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flipkart-seller-dashboard-66f976723317b99f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Daily e-commerce intelligence for Indian Flipkart and Amazon India sellers. Tracks orders, returns, inventory levels, competitor pricing, Buy Box status, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "utsavs",
+      "userId": "publishers:utsavs",
+      "displayName": "utsavs",
+      "image": "https://avatars.githubusercontent.com/u/7039441?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 438,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772220298205,
+      "changelog": "- Initial release of Flipkart Seller Dashboard for Indian e-commerce sellers.\n- Tracks orders, returns, inventory, competitor pricing, and Buy Box status on Flipkart (and optionally Amazon India).\n- Sends daily WhatsApp morning summaries with business insights, restock alerts, and performance metrics.\n- Includes real-time commands for order management, inventory checks, price updates, and shipment tracking.\n- Provides weekly performance reports and supports configurable inventory and pricing alert thresholds.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e33c2567943c3d84e8ad934dc7f3a09e18c26fc299efa3321455a69433cbfb0c"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42557,
+  "uuid": "skill-clawhub-langfuse-trace-logger",
+  "skillKey": "clawhub-langfuse-trace-logger",
+  "name": "Langfuse Trace Logger",
+  "summary": "Log subagent task completions as Langfuse traces for replay, evaluation, and cost analysis. Called during session-wrap Phase 4. Supports backfill, tag-based...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.langfuse_trace_logger",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nissan Dookeran",
+      "features": [
+        "Log subagent task completions as Langfuse traces for replay, evaluation, and cost analysis",
+        "Called during session-wrap Phase 4",
+        "Supports backfill, tag-based..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/langfuse-trace-logger@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12583?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "langfuse-trace-logger",
+      "url": "https://clawhub.ai/skills/langfuse-trace-logger"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "langfuse-trace-logger",
+    "url": "https://clawhub.ai/skills/langfuse-trace-logger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/langfuse-trace-logger-3854987c5c3c68f8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/langfuse-trace-logger@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-langfuse-trace-logger-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b709dea455336cc1127c5b175e214f4eb550c72f3a7764e726b2036e1ae4dc96",
+      "artifactSizeBytes": 1991
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T07:17:55.048Z"
+}

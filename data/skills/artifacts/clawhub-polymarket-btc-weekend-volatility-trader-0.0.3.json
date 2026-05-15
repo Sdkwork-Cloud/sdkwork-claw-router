@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polymarket-btc-weekend-volatility-trader@0.0.3",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_btc_weekend_volatility_trader",
+  "skill": {
+    "id": 21847,
+    "skillKey": "clawhub-polymarket-btc-weekend-volatility-trader",
+    "name": "Polymarket Btc Weekend Volatility Trader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-btc-weekend-volatility-trader",
+    "url": "https://clawhub.ai/skills/polymarket-btc-weekend-volatility-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-btc-weekend-volatility-trader-7212d0def3930d34.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trades BTC weekend price threshold markets on Polymarket by exploiting the systematic gap between first-passage probability (\"will BTC touch 150k at ANY POIN..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "diagnostikon",
+      "userId": "s17bf2qvfsqakddyh674vczxqs83fcwb",
+      "displayName": "diagnostikon",
+      "image": "https://avatars.githubusercontent.com/u/17246180?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 494,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.0.3",
+      "createdAt": 1777386095571,
+      "changelog": "SDK resilience: try/except runt apply_skill_config",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a08748cd71e4018a586a6fb4d3906c955efca058ffad620ee0589d8c33aafe58"
+}

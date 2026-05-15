@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mumo@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mumo",
+  "skill": {
+    "id": 49282,
+    "skillKey": "clawhub-mumo",
+    "name": "Mumo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mumo",
+    "url": "https://clawhub.ai/skills/mumo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mumo-cf3e403833171794.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-model deliberation via mumo's MCP server. Best for contested architecture/product decisions, design reviews, pressure-testing a pre-launch spec, resolv..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ericatmumo",
+      "userId": "s176tqm1gp26b6ghte9n8hr9k1867m3a",
+      "displayName": "Eric H",
+      "image": "https://avatars.githubusercontent.com/u/38675329?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 82,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1778084504712,
+      "changelog": "- Improved documentation with detailed setup instructions, usage guidance, recovery steps, and terminology clarifications for running multi-model deliberations via mumo’s MCP server.\n- Explained when to use or skip mumo, emphasizing its value for high-stakes, high-regret decisions.\n- Provided step-by-step instructions for verifying session creation and recovering lost session context.\n- Clarified the distinction between panel models and local subagents.\n- Expanded on workflow details, including prompt framing, snippet types, interpreting claim maps, and best practices for interacting with the deliberation panel.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a67a59b0848fe2c0096369682ebfa1a2b82fada9b17f7224f77422e975d9f509"
+}

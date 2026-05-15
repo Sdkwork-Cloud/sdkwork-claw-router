@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58747,
+  "uuid": "skill-clawhub-tavily-one-step-search",
+  "skillKey": "clawhub-tavily-one-step-search",
+  "name": "联网搜索一键配置 · Tavily One-Step",
+  "summary": "联网搜索, 网页搜索, 实时联网, 一键配置。让 OpenClaw 用 Tavily 实现实时搜索（含免费额度）。One-step install + guided key setup. Guide: github.com/plabzzxx/openclaw-tavily-search",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tavily_one_step_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "plabzzxx",
+      "features": [
+        "联网搜索, 网页搜索, 实时联网, 一键配置。让 OpenClaw 用 Tavily 实现实时搜索（含免费额度）。One-step install + guided key setup",
+        "Guide: github.com/plabzzxx/openclaw-tavily-search"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tavily-one-step-search@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/172346891?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tavily-one-step-search",
+      "url": "https://clawhub.ai/skills/tavily-one-step-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tavily-one-step-search",
+    "url": "https://clawhub.ai/skills/tavily-one-step-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tavily-one-step-search-257d48ed0f34bc3b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tavily-one-step-search@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-tavily-one-step-search-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b442c1e874d787303966e8c8147f01fa7028868722098834ed48f4333fdd0489",
+      "artifactSizeBytes": 2058
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T04:43:56.578Z"
+}

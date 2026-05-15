@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30051,
+  "uuid": "skill-clawhub-relay",
+  "skillKey": "clawhub-relay",
+  "name": "Relay",
+  "summary": "Relay logic and wiring diagram helper. Use when json relay tasks, csv relay tasks, checking relay status.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.relay",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "Relay logic and wiring diagram helper",
+        "Use when json relay tasks, csv relay tasks, checking relay status."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/relay@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "relay",
+      "url": "https://clawhub.ai/skills/relay"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "relay",
+    "url": "https://clawhub.ai/skills/relay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/relay-682fbae20f3428bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/relay@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-relay-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a56a65331b3a8a148d4112d2c0e7827dd3bf31c88e2fdb7b58f9f0e5d5766d4c",
+      "artifactSizeBytes": 1767
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T19:18:24.326Z"
+}

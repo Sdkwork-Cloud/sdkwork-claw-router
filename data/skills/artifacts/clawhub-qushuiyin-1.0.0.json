@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qushuiyin@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qushuiyin",
+  "skill": {
+    "id": 73360,
+    "skillKey": "clawhub-qushuiyin",
+    "name": "短视频去水印下载。检测到抖音、快手、小红书、B站、微博、西瓜视频等平台链接时，自动解析并下载无水印视频，直接发送文件给用户。"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qushuiyin",
+    "url": "https://clawhub.ai/skills/qushuiyin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qushuiyin-1e43f784165c0bd0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "短视频去水印下载。检测到抖音、快手、小红书、B站、微博、西瓜视频等平台链接时，自动解析并下载无水印视频，直接发送文件给用户。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sjzai",
+      "userId": "s174tmnaxqqky5bv1pjg4qt23h83r1t9",
+      "displayName": "douzi",
+      "image": "https://avatars.githubusercontent.com/u/199685423?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 258,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774750076221,
+      "changelog": "**Major update: Skill refocused to automatic watermark-free short video downloads for specific platforms.**\n\n- Automatically detects and downloads no-watermark videos from Douyin, Kuaishou, Xiaohongshu, Bilibili, Weibo, and Xigua links in messages.\n- Simplified implementation: extracts URL from message and processes via a single script (`scripts/download.py`).\n- Relies on third-party API, with no need for cookies or authentication.\n- On success, sends video file directly or provides a public download link; on failure, replies with error reason.\n- Removed general-purpose, multi-site, and subtitle/transcription functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1db8bead575bc4d4946d8cc76deff865764fd5336b4f33327b7712f3e8dbd95e"
+}

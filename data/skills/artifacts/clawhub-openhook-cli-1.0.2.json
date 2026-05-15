@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openhook-cli@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openhook_cli",
+  "skill": {
+    "id": 26748,
+    "skillKey": "clawhub-openhook-cli",
+    "name": "Openhook Cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openhook-cli",
+    "url": "https://clawhub.ai/skills/openhook-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openhook-cli-2a49c4169be61482.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Receive real-time webhook events from platforms like GitHub, Stripe, Linear, and coordinate multi-agent workflows via messaging channels."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "berkantay",
+      "userId": "publishers:berkantay",
+      "displayName": "Berkant Ay",
+      "image": "https://avatars.githubusercontent.com/u/27157448?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 361,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773930036813,
+      "changelog": "Added credential declaration in frontmatter to satisfy security scan",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e6409f3b32ab9830137c92d2bed50401bd093db534a5b2968192aca37044cc8c"
+}

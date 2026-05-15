@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9242,
+  "uuid": "skill-clawhub-learn-cog",
+  "skillKey": "clawhub-learn-cog",
+  "name": "Learn Cog",
+  "summary": "AI tutoring and education powered by CellCog. Study guides, exam prep, coding tutorials, language learning, math help, science explanations, practice problem...",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.learn_cog",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CellCog",
+      "features": [
+        "AI tutoring and education powered by CellCog",
+        "Study guides, exam prep, coding tutorials, language learning, math help, science explanations,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/learn-cog@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14193431?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "learn-cog",
+      "url": "https://clawhub.ai/skills/learn-cog"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "learn-cog",
+    "url": "https://clawhub.ai/skills/learn-cog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/learn-cog-908a0af203412a3c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/learn-cog@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-learn-cog-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:13152289f7b714430dedba83f56c1c4233ae1e4c5a4bade73b16f85b2efe38b7",
+      "artifactSizeBytes": 2028
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T06:19:03.820Z"
+}

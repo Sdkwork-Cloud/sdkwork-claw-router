@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/family-intent-recognition@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.family_intent_recognition",
+  "skill": {
+    "id": 71398,
+    "skillKey": "clawhub-family-intent-recognition",
+    "name": "家庭消费意图识别"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "family-intent-recognition",
+    "url": "https://clawhub.ai/skills/family-intent-recognition",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/family-intent-recognition-d49084e4bcb3cb18.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "家庭消费意图识别 - 从家庭聊天文本中识别消费意图，输出结构化JSON"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wuhaichao87",
+      "userId": "publishers:wuhaichao87",
+      "displayName": "wuhaichao87",
+      "image": "https://avatars.githubusercontent.com/u/13478972?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 305,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773045751412,
+      "changelog": "支持消费意图识别",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9155919555ee10778687b4f931b4162a4328278d4a89fe129adbcad2330ae2e9"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60362,
+  "uuid": "skill-clawhub-tushare-finance",
+  "skillKey": "clawhub-tushare-finance",
+  "name": "tushare-finance",
+  "summary": "获取中国金融市场数据（A股、港股、美股、基金、期货、债券）。支持220+个Tushare Pro接口：股票行情、财务报表、宏观经济指标。当用户请求股价数据、财务分析、指数行情、GDP/CPI等宏观数据时使用。",
+  "version": "2.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tushare_finance",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "StanleyChanH",
+      "features": [
+        "获取中国金融市场数据（A股、港股、美股、基金、期货、债券）。支持220+个Tushare Pro接口：股票行情、财务报表、宏观经济指标。当用户请求股价数据、财务分析、指数行情、GDP/CPI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tushare-finance@2.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34874348?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tushare-finance",
+      "url": "https://clawhub.ai/skills/tushare-finance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tushare-finance",
+    "url": "https://clawhub.ai/skills/tushare-finance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tushare-finance-e33ede6cb03f8a08.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tushare-finance@2.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-tushare-finance-2.0.6.json",
+      "version": "2.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5f2499c2ab9b773df9e0ff82d6f2a3a983ff250bb8dd2d5a99b8e25abb8c7ade",
+      "artifactSizeBytes": 2060
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T03:02:07.506Z"
+}

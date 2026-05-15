@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cloud-infra-automation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloud_infra_automation",
+  "skill": {
+    "id": 14916,
+    "skillKey": "clawhub-cloud-infra-automation",
+    "name": "Cloud Infra Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloud-infra-automation",
+    "url": "https://clawhub.ai/skills/cloud-infra-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloud-infra-automation-5a902eacff38117b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate provisioning and management of AWS, GCP, and Azure infrastructure using Terraform, Ansible, and CloudFormation templates."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sunshine-del-ux",
+      "userId": "publishers:sunshine-del-ux",
+      "displayName": "Sunshine-del-ux",
+      "image": "https://avatars.githubusercontent.com/u/83053073?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1032,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772652022543,
+      "changelog": "Cloud Infra Automation 1.0.0 — Initial Release\n\n- Automates cloud infrastructure setup using Infrastructure as Code (IaC).\n- Supports AWS, Google Cloud Platform, and Azure.\n- Includes Terraform templates, Ansible playbooks, and CloudFormation.\n- Automates server provisioning, configuration management, and deployment pipelines.\n- Provides templates for web apps, databases, Kubernetes, and serverless functions.\n- Quick start scripts for initializing, applying, and destroying infrastructure.\n- Requires Terraform, Ansible, and respective cloud CLIs.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:434728d585aef5a5d892c459d4bbe29852d425f9dcdffa526fb216912a183996"
+}

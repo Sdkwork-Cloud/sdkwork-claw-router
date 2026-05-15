@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fanglawerguidangzhushou@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fanglawerguidangzhushou",
+  "skill": {
+    "id": 63849,
+    "skillKey": "clawhub-fanglawerguidangzhushou",
+    "name": "Lawyer Case Archive Helper - 律师案件归档助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fanglawerguidangzhushou",
+    "url": "https://clawhub.ai/skills/fanglawerguidangzhushou",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fanglawerguidangzhushou-7ffcd1822b5f8594.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动识别律师案件图片或PDF，生成民事归档卷宗和办案小结文档，并支持PDF转换与备份功能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fong12368",
+      "userId": "s17f0vdzzm4e2w4w8dd2a3fnth83yjxf",
+      "displayName": "Fong12368",
+      "image": "https://avatars.githubusercontent.com/u/272555405?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776264041893,
+      "changelog": "v1.0.0: 首次公开发布，已脱敏",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:875476919660869c377e1d8b92a4d8241f0ba03627fc37ee43614ffb7b4fd05f"
+}

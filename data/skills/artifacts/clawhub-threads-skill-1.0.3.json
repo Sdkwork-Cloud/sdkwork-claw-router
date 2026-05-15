@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/threads-skill@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.threads_skill",
+  "skill": {
+    "id": 70339,
+    "skillKey": "clawhub-threads-skill",
+    "name": "threads-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "threads-skill",
+    "url": "https://clawhub.ai/skills/threads-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/threads-skill-7fe5395e54578732.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Threads 平台全自動化操作套件。觸發詞：登錄、登出、檢查登錄、是否已登錄、切換帳號、清除Cookie、多帳號管理、搜索、查找、瀏覽首頁、刷一下、抓帖子、獲取帖子、看帖子詳情、查看用戶、用戶主頁、歷史回復、發帖、發布、寫帖子、po文、發Thread、帶圖發帖、點讚、轉發、回覆、評論、關注、批量回覆、批量評論、..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gaojiongwenv587-beep",
+      "userId": "s175pvw7pzjk2ssef7erky7gdd8412ts",
+      "displayName": "gaojiongwenv587-beep",
+      "image": "https://avatars.githubusercontent.com/u/239295002?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 450,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776407013525,
+      "changelog": "**Major update: Removed all source scripts, documentation, and skill modules.**\n\n- All core scripts, CLI tools, and Threads automation modules have been removed.\n- Documentation files (e.g., README.md, CLAUDE.md) and skill description files have been deleted.\n- The skill no longer includes any operational Python files or command interface.\n- No usage, configuration, or automation functionality remains in this version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:296936b5fef7088572135882a14da9c99aef32fac4c49325240ef331649a9eb6"
+}

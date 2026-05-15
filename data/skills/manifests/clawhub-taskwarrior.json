@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15606,
+  "uuid": "skill-clawhub-taskwarrior",
+  "skillKey": "clawhub-taskwarrior",
+  "name": "taskwarrior",
+  "summary": "Workspace-local task management powered by Taskwarrior. Add, organize, and track tasks by project, tags, due dates, and priority with all data stored inside...",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taskwarrior",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ali Aghareza",
+      "features": [
+        "Workspace-local task management powered by Taskwarrior",
+        "Add, organize, and track tasks by project, tags, due dates, and priority with all data stored i."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/taskwarrior@0.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27026?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "taskwarrior",
+      "url": "https://clawhub.ai/skills/taskwarrior"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taskwarrior",
+    "url": "https://clawhub.ai/skills/taskwarrior",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taskwarrior-b42519909d080b2f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/taskwarrior@0.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-taskwarrior-0.1.3.json",
+      "version": "0.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4f957a5b50539704b59c19f57ffa9b0eb98ae8a40827ed238031e59afdfb9027",
+      "artifactSizeBytes": 1987
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T03:30:36.240Z"
+}

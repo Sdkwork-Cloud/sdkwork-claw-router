@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wendao-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wendao_skill",
+  "skill": {
+    "id": 67967,
+    "skillKey": "clawhub-wendao-skill",
+    "name": "携程问道 - AI Travel Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wendao-skill",
+    "url": "https://clawhub.ai/skills/wendao-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wendao-skill-f508a99febb22f72.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "您的全时 AI 旅伴，由携程官方倾力打造，已累计为超 5000 万用户提供解答。无论是预订机酒火车票、定制旅行攻略，还是寻找当地特色玩乐，只需一句话，问道为您轻松安排"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "trips-ai",
+      "userId": "s171aptn3r5qvzpd9hdezserz583m891",
+      "displayName": "trips-ai",
+      "image": "https://avatars.githubusercontent.com/u/266933695?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 383,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774523461478,
+      "changelog": "- 优化 API token 获取与管理说明，推荐使用环境变量 WENDAO_API_KEY，无需再操作配置文件。\n- 明确环境变量优先级及安全策略，强调不持久化、不回显用户提供的 token。\n- 为 metadata 增加了对 WENDAO_API_KEY 环境变量需求的声明。\n- 文档结构调整，更清晰展示 token 使用方法和调用流程。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b1160d064e9a759b82d3dcf802d7e9391352045aa63a99143f25de6a06958b63"
+}

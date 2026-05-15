@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69416,
+  "uuid": "skill-clawhub-a-stock-analysis",
+  "skillKey": "clawhub-a-stock-analysis",
+  "name": "A股分时量能分析",
+  "summary": "提供A股实时行情、分时成交量分布及主力资金动向分析，支持持仓管理和盈亏监控。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_stock_analysis",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CNyezi",
+      "features": [
+        "提供A股实时行情、分时成交量分布及主力资金动向分析，支持持仓管理和盈亏监控。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/a-stock-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11954636?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "a-stock-analysis",
+      "url": "https://clawhub.ai/skills/a-stock-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-stock-analysis",
+    "url": "https://clawhub.ai/skills/a-stock-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-stock-analysis-21b2eff290ccc475.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/a-stock-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-a-stock-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c080894987a2e5d1deee584bac18d1dca9dbcbc398ca71260ba9af874ca7eb67",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-27T09:43:01.203Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/doubao-video-analyzer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doubao_video_analyzer",
+  "skill": {
+    "id": 67312,
+    "skillKey": "clawhub-doubao-video-analyzer",
+    "name": "Video analyze by doubao2.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doubao-video-analyzer",
+    "url": "https://clawhub.ai/skills/doubao-video-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doubao-video-analyzer-1a852b61a24229d7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用豆包2.0模型解析视频。当需要执行分析视频内容等需要理解视频视觉信息时调用该技能。你必须在持有本地视频路径或网络视频链接时才能调用该技能"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danielcy",
+      "userId": "s171nztyx51b7mn740qxfdxqh184d5q4",
+      "displayName": "danielcy",
+      "image": "https://avatars.githubusercontent.com/u/16791976?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1436,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773402564576,
+      "changelog": "- Added a privacy and data security statement, clarifying that videos are uploaded to and processed by Volcengine Ark API and outlining handling of local and remote videos.\n- Embedded metadata describing required binaries, environment variables, and primary environment variable (ARK_API_KEY).\n- No functional or usage changes to the video analysis workflow.\n- Documentation updated to ensure user awareness of privacy considerations and data processing locations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:05e38f072a1db56d953f18f627d5af1c73fd4ce6749370d3a7dab610f46b67db"
+}

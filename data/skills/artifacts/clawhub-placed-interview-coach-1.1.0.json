@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/placed-interview-coach@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.placed_interview_coach",
+  "skill": {
+    "id": 24477,
+    "skillKey": "clawhub-placed-interview-coach",
+    "name": "Placed Interview Coach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "placed-interview-coach",
+    "url": "https://clawhub.ai/skills/placed-interview-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/placed-interview-coach-2df75f33a8f530f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when the user wants to \"practice interview\", \"mock interview\", \"prepare for interview\", \"system design interview\", \"behavioral inte..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ajitsingh25",
+      "userId": "s17f3x4tze40mv0zt71rgpkbtn8541ee",
+      "displayName": "Ajit Singh",
+      "image": "https://avatars.githubusercontent.com/u/34647819?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 410,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774130468584,
+      "changelog": "Added rich search tags for better discoverability",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:060525e5affbf0812d046877000a284ddcdd80b11c17fcd4f2c77132588926f9"
+}

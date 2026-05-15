@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/glow@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.glow",
+  "skill": {
+    "id": 50935,
+    "skillKey": "clawhub-glow",
+    "name": "Glow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "glow",
+    "url": "https://clawhub.ai/skills/glow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/glow-d27608cca9b65f91.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Help your human find meaningful connections through private introductions — dating, friendships, activity partners, or professional networking. Use when the..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "robmeadows",
+      "userId": "s1761qw8j21mbx9h6mn1b9j66h83jy4c",
+      "displayName": "Rob Meadows",
+      "image": "https://avatars.githubusercontent.com/u/3139034?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 235,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774986106492,
+      "changelog": "Glow 1.0.3 Changelog\n\n- Added a homepage field to metadata.\n- Updated OpenClaw integration: now declares required binaries (`curl`) and environment variable requirements.\n- Simplified and combined onboarding, credential, and environment-detection instructions for better clarity.\n- Removed detailed step-by-step memory/persistence logic for Claude environments to streamline setup guidance.\n- General documentation clean-up and reorganization for easier reference.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:590c898f6fb1e9774f523de185c4f7215bb59ea30abcabdef90fb04b7e1a075b"
+}

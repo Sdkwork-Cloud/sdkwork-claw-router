@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "lovefromio-voice-wake-say",
+    "displayName": "Lovefromio Voice Wake Say",
+    "summary": "Speak responses aloud on macOS using the built-in `say` command when user input indicates Voice Wake/voice recognition (for example, messages starting with \"...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 109,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1777255553171,
+    "updatedAt": 1777528008257
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1777255553171,
+    "changelog": "- Initial release: Adds skill to speak assistant’s responses aloud on macOS using the built-in say command when user input comes from voice recognition.\n- Triggers only if user message starts with \"User talked via voice recognition\".\n- Checks each message individually; context is not retained between messages.\n- Acknowledges requests before performing time-consuming actions, ensuring users know they were heard.\n- Uses on-device macOS TTS (`say`), never cloud TTS.\n- Falls back to text-only response and notifies user if `say` fails.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "lovefromio",
+    "userId": "s17bygff9ftqsew7hetgbztb7983mnpk",
+    "displayName": "AI",
+    "image": "https://avatars.githubusercontent.com/u/235840214?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777528008257
+  }
+}

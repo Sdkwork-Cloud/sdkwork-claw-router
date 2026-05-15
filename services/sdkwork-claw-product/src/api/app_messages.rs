@@ -45,7 +45,10 @@ fn app_messages_router_with_state(
     require_subject: bool,
 ) -> Router {
     Router::new()
-        .route("/app/v3/api/notification", get(fetch_messages))
+        .route(
+            "/app/v3/api/communication/notifications",
+            get(fetch_messages),
+        )
         .with_state(AppMessagesState {
             read_store,
             require_subject,

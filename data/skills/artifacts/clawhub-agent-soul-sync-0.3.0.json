@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-soul-sync@0.3.0",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_soul_sync",
+  "skill": {
+    "id": 35229,
+    "skillKey": "clawhub-agent-soul-sync",
+    "name": "Agent Soul Sync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-soul-sync",
+    "url": "https://clawhub.ai/skills/agent-soul-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-soul-sync-0c674289a1274ad6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sync local OpenClaw skills to a remote NanoClaw agent on Mysta. Use when the user says \"sync my skills\", \"upload skills to mysta\", \"push skills to my nanocla..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hongyegong",
+      "userId": "s172pnh9hnwry79mhk5j2tz5m983n6j4",
+      "displayName": "hongyegong",
+      "image": "https://avatars.githubusercontent.com/u/9115283?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 216,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.3.0",
+      "createdAt": 1774514750951,
+      "changelog": "- All API endpoints and web URLs updated from http to https for secure communication.\n- No temporary files are written; session IDs are now extracted in-memory for improved security and portability.\n- Security notes revised: emphasizes HTTPS-only communication, avoidance of temporary disk artifacts, and explicit user consent before potentially sensitive actions.\n- Minor documentation clarifications and modernized browser-opening examples.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:59d14ba542c252e2683a4697a28a2ea3d9334dfa28c96bb0ef7e4fd4044e213f"
+}

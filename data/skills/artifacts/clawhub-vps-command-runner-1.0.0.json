@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vps-command-runner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vps_command_runner",
+  "skill": {
+    "id": 23777,
+    "skillKey": "clawhub-vps-command-runner",
+    "name": "VPS Command Runner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vps-command-runner",
+    "url": "https://clawhub.ai/skills/vps-command-runner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vps-command-runner-e29f7b88eacbf91d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run commands across multiple VPS simultaneously. Execute SSH commands, deploy updates, check logs, and manage services across all your servers from one place..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chmikiro",
+      "userId": "s1724cmkf49bjge3v4nsagmq7183wzaa",
+      "displayName": "chmikiro",
+      "image": "https://avatars.githubusercontent.com/u/76179896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 430,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773176979783,
+      "changelog": "- Initial release of VPS Command Runner.\n- Run commands simultaneously across multiple VPS via SSH.\n- Scripts for running commands on all or specific servers, status checks, and update deployments.\n- Supports both password and SSH key authentication.\n- Easily manage and monitor distributed services from one place.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:43888e04084411719061dd3311fe74d0e8a7f533616c402ae4b5918d1a4fa7c5"
+}

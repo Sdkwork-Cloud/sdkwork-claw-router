@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nbs-data-collection@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nbs_data_collection",
+  "skill": {
+    "id": 69608,
+    "skillKey": "clawhub-nbs-data-collection",
+    "name": "国家统计局数据采集"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nbs-data-collection",
+    "url": "https://clawhub.ai/skills/nbs-data-collection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nbs-data-collection-f5f2167173b3760a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "国家统计局数据采集技能。当用户需要采集国家统计局（NBS）的宏观经济数据（如GDP、CPI、PPI、产出缺口等）时触发。适用场景包括：（1）采集GDP、CPI、PPI等指标；（2）从国家统计局官网/统计年鉴获取数据；（3）计算产出缺口（HP滤波）；（4）整理数据到Excel。本skill包含标准工作流程、数据源U..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yingjie-zhang-dev",
+      "userId": "s1795gc139ehyrjqseqxdvjsxh83jhbd",
+      "displayName": "Jackie Zhang",
+      "image": "https://avatars.githubusercontent.com/u/114508555?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774857278904,
+      "changelog": "nbs-data-collection v1.0.0\n\n- Initial release of the 国家统计局（NBS）数据采集技能。\n- Provides a standard workflow for collecting, processing, and verifying macroeconomic indicators (GDP, CPI, PPI, output gap, etc.) from the NBS.\n- Includes data source URLs, indicator explanations, and reusable scripts for key steps (data crawling, HP filtering, Excel charting, link verification).\n- Defines output structure: organized Excel files, checkpoints, and raw data folders.\n- Covers special handling for data before 2015, API migration, and updated NBS data access rules.\n- Detailed documentation and references included for workflow and data sources.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c3df78e8ec76299bdc125eaac0a9f4496f665acf1a594e58068d97644d2629c5"
+}

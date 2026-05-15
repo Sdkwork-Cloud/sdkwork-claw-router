@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71484,
+  "uuid": "skill-clawhub-app-maker",
+  "skillKey": "clawhub-app-maker",
+  "name": "app-maker",
+  "summary": "自动完成从需求分析、页面设计、数据库建模、代码生成到可视化调试和一键部署的全栈应用开发全流程。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.app_maker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chall2015",
+      "features": [
+        "自动完成从需求分析、页面设计、数据库建模、代码生成到可视化调试和一键部署的全栈应用开发全流程。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/app-maker@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12229815?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "app-maker",
+      "url": "https://clawhub.ai/skills/app-maker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "app-maker",
+    "url": "https://clawhub.ai/skills/app-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/app-maker-0a24d2d3af053854.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/app-maker@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-app-maker-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cb1f3885598619a95cf530d2dce1b14c70c37f9850010fa8cc1d5ab527b75ed9",
+      "artifactSizeBytes": 3537
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T16:05:08.363Z"
+}

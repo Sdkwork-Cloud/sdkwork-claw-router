@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70592,
+  "uuid": "skill-clawhub-download-organizer",
+  "skillKey": "clawhub-download-organizer",
+  "name": "Download Organizer",
+  "summary": "下载文件自动分类工具，自动识别文件类型并按类别整理到不同文件夹。适用于整理下载文件夹，自动分类文档、图片、视频、音频、安装包、压缩包等文件！",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.download_organizer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "utopiabenben",
+      "features": [
+        "下载文件自动分类工具，自动识别文件类型并按类别整理到不同文件夹。适用于整理下载文件夹，自动分类文档、图片、视频、音频、安装包、压缩包等文件！"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/download-organizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19267750?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "download-organizer",
+      "url": "https://clawhub.ai/skills/download-organizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "download-organizer",
+    "url": "https://clawhub.ai/skills/download-organizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/download-organizer-01fe34c2b4b25434.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/download-organizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-download-organizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b9b8749857359ec6d9f876877eb30bc2d314af2c1dbb49279f53f3f3f2f75e44",
+      "artifactSizeBytes": 2106
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T23:59:12.188Z"
+}

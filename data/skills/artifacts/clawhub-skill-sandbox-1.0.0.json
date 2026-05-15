@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-sandbox@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_sandbox",
+  "skill": {
+    "id": 21470,
+    "skillKey": "clawhub-skill-sandbox",
+    "name": "Skill Sandbox"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-sandbox",
+    "url": "https://clawhub.ai/skills/skill-sandbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-sandbox-533fcc51c540f85b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sandboxed ClawHub skill installation with automated security scanning. Use when: (1) Installing any new skill from ClawHub, (2) Auditing an already-installed..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zurbrick",
+      "userId": "s17644fr465554b2j12pdyaxrh83ekff",
+      "displayName": "Don Zurbrick",
+      "image": "https://avatars.githubusercontent.com/u/24554955?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 458,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772792633673,
+      "changelog": "Initial release: sandboxed skill installation with 5-layer security scanning. Auto-quarantine on critical findings, auto-promote on clean scan. Checks for eval/exec, network calls, secret access, symlinks, install scripts, obfuscation, and dangerous SKILL.md instructions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:85fa6f1c64193f36af27b3babd788a44ade652ab383e4c858e5d1cf53024014e"
+}

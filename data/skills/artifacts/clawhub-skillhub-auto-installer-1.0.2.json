@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skillhub-auto-installer@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skillhub_auto_installer",
+  "skill": {
+    "id": 61389,
+    "skillKey": "clawhub-skillhub-auto-installer",
+    "name": "skillhub-auto-installer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skillhub-auto-installer",
+    "url": "https://clawhub.ai/skills/skillhub-auto-installer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skillhub-auto-installer-973a69c74854a27a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "搜索 Skillhub 技能市场，发现可用技能。 此技能仅提供搜索功能，不执行任何安装或本地文件操作。 关键词: skillhub, 搜索技能, findskill, 技能发现, 技能市场"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiayao0810",
+      "userId": "s17a3n3d41mdrhjzq32bdx95vn843ezc",
+      "displayName": "Jiayao0810",
+      "image": "https://avatars.githubusercontent.com/u/135929123?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775122943149,
+      "changelog": "skillhub-auto-installer v1.0.2\n\n- 简化并精炼 SKILL.md，明确声明技能只用于搜索，不执行安装或本地操作\n- 新增 scripts/search.sh 脚本，支持仅搜索 Skillhub 技能市场\n- 移除安全审计和手动安装流程相关说明，聚焦只读搜索功能\n- 强化安全说明，强调不会访问本地文件或读取配置",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f2f112caea078fc4be2d4f8e34ac8e44cceca93dc96a0222e228b945d7ec9524"
+}

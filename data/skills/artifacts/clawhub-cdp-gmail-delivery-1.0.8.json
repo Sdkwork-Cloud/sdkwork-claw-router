@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cdp-gmail-delivery@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cdp_gmail_delivery",
+  "skill": {
+    "id": 34636,
+    "skillKey": "clawhub-cdp-gmail-delivery",
+    "name": "CDP Gmail Delivery"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cdp-gmail-delivery",
+    "url": "https://clawhub.ai/skills/cdp-gmail-delivery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cdp-gmail-delivery-4fc38145aab53cef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send Gmail messages from an operator-controlled Chrome debug session using Gmail CDP automation. Use when the user asks to send email from the local machine,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "joustonhuang",
+      "userId": "s17dc7gc29f75gpdchxkm752sh84kgt3",
+      "displayName": "Jouston Huang",
+      "image": "https://avatars.githubusercontent.com/u/115980414?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 222,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1776339250777,
+      "changelog": "Version 1.0.8\n\n- Documented a new explicit limitation: sending raw HTML email body is not reliably supported; only plain-text body plus attachments are supported.\n- Added guidance to treat HTML body requests as unsupported; suggest attaching .html files or using plain-text summaries instead.\n- Updated workflow and preflight sections to clarify behavior regarding HTML emails and editor capability.\n- No functional or code changes—documentation improvements only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cd48794d0e829e0a7ae3f65bcff4a62d435ffd8df5e452fd745006d90f0ca0aa"
+}

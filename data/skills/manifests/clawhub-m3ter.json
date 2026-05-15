@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34313,
+  "uuid": "skill-clawhub-m3ter",
+  "skillKey": "clawhub-m3ter",
+  "name": "M3Ter",
+  "summary": "M3ter integration. Manage data, records, and automate workflows. Use when the user wants to interact with M3ter data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.m3ter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "M3ter integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with M3ter data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/m3ter@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "m3ter",
+      "url": "https://clawhub.ai/skills/m3ter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "m3ter",
+    "url": "https://clawhub.ai/skills/m3ter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/m3ter-acefc835bea520d5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/m3ter@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-m3ter-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2eef118fc3ae8001f159bf919be7501bd3678ae46703dac2d9552a4996d33980",
+      "artifactSizeBytes": 1811
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:42:45.280Z"
+}

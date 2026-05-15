@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17946,
+  "uuid": "skill-clawhub-agent-meter",
+  "skillKey": "clawhub-agent-meter",
+  "name": "AgentMeter",
+  "summary": "Track API spend with intent-level attribution. Shows where your tokens go by project and purpose. Invoke with /meter for spend summary.",
+  "version": "0.6.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_meter",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "oztenbot",
+      "features": [
+        "Track API spend with intent-level attribution",
+        "Shows where your tokens go by project and purpose",
+        "Invoke with /meter for spend summary."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-meter@0.6.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261687435?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-meter",
+      "url": "https://clawhub.ai/skills/agent-meter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-meter",
+    "url": "https://clawhub.ai/skills/agent-meter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-meter-e71575667438e080.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-meter@0.6.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-meter-0.6.4.json",
+      "version": "0.6.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ab83b7360c1e975abf5f1ce327a2b8b58b7ced1db7306fc593696c39d9b57642",
+      "artifactSizeBytes": 1836
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T18:41:49.559Z"
+}

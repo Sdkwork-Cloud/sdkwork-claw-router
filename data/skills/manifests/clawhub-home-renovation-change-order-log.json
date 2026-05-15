@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49993,
+  "uuid": "skill-clawhub-home-renovation-change-order-log",
+  "skillKey": "clawhub-home-renovation-change-order-log",
+  "name": "Home Renovation Change Order Log",
+  "summary": "Helps homeowners document renovation changes: requested change, reason, quote delta, timeline impact, approvals, and unresolved questions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.home_renovation_change_order_log",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Helps homeowners document renovation changes: requested change, reason, quote delta, timeline i."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/home-renovation-change-order-log@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "home-renovation-change-order-log",
+      "url": "https://clawhub.ai/skills/home-renovation-change-order-log"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "home-renovation-change-order-log",
+    "url": "https://clawhub.ai/skills/home-renovation-change-order-log",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/home-renovation-change-order-log-75cf49c18384d4be.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/home-renovation-change-order-log@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-home-renovation-change-order-log-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:454d676a48d92906826f770af80d0b4a84018d935645a026ca33ca1cd60b1eed",
+      "artifactSizeBytes": 2602
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T13:57:51.458Z"
+}

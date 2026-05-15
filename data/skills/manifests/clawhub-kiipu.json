@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43396,
+  "uuid": "skill-clawhub-kiipu",
+  "skillKey": "clawhub-kiipu",
+  "name": "Kiipu",
+  "summary": "Use when the user wants to create, delete, restore, or purge Kiipu posts, manage authentication, or check local setup through the Kiipu CLI.",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kiipu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MyCreat",
+      "features": [
+        "Use when the user wants to create, delete, restore, or purge Kiipu posts, manage authentication."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kiipu@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4132805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kiipu",
+      "url": "https://clawhub.ai/skills/kiipu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kiipu",
+    "url": "https://clawhub.ai/skills/kiipu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kiipu-c4984b370cb9a531.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kiipu@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-kiipu-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b5c1d5c4544a4f1b16eef43f956fc37bef44eb896e692469892238de815f526",
+      "artifactSizeBytes": 2156
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T18:27:19.020Z"
+}

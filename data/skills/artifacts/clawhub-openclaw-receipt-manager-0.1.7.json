@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-receipt-manager@0.1.7",
+  "version": "0.1.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_receipt_manager",
+  "skill": {
+    "id": 21525,
+    "skillKey": "clawhub-openclaw-receipt-manager",
+    "name": "Openclaw Receipt Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-receipt-manager",
+    "url": "https://clawhub.ai/skills/openclaw-receipt-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-receipt-manager-948d08e498377237.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage personal receipts by extracting data from images, storing records, and providing expense searches and monthly financial summaries."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clinchcc",
+      "userId": "publishers:clinchcc",
+      "displayName": "clinchcc",
+      "image": "https://avatars.githubusercontent.com/u/130424325?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 507,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "0.1.7",
+      "createdAt": 1772329973465,
+      "changelog": "- Initial release with core receipt management functionality.\n- Added local CLI for initializing, listing, searching, and getting monthly summaries of receipts.\n- Added handler for saving recognized receipt data automatically.\n- All data stored locally for privacy; no cloud upload.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:aa75c9b54bb37657694c197268c44b5f6fef9b0497cccace8f8c9ff640499d88"
+}

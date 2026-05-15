@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/blue-ocean-sourcing@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blue_ocean_sourcing",
+  "skill": {
+    "id": 23893,
+    "skillKey": "clawhub-blue-ocean-sourcing",
+    "name": "Blue Ocean Sourcing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blue-ocean-sourcing",
+    "url": "https://clawhub.ai/skills/blue-ocean-sourcing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blue-ocean-sourcing-11d78d57f817afce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helps DTC and e-commerce merchants evaluate, source, and price technically differentiated \"blue-ocean\" products (ergonomic devices, smart home gadgets, innov..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rijoyai",
+      "userId": "s17968d4vetrx5cj2yx3105heh83hrb4",
+      "displayName": "RIJOY-AI",
+      "image": "https://avatars.githubusercontent.com/u/219251023?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 427,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1773198196057,
+      "changelog": "blue-ocean-sourcing v0.1.2\n\n- Major update: Comprehensive skill expansion with practical templates, scripts, and reference material.\n- Added structured viability, supplier vetting, and margin analysis frameworks to support DTC merchants sourcing differentiated, high-margin products.\n- Provides merchant-facing checklists and scripted supplier questions for effective vetting and negotiation.\n- Introduced configurable margin calculator script for instant P&L, pricing, and breakeven analysis.\n- Enhanced references and execution guidance for evaluating product \"moat,\" loyalty fit, and repeat-purchase potential.\n- All outputs now follow a clear, actionable 6-part report for faster decision-making.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f80f4b98cdd30e928861099dd05989c1e09149b3411e9fceebaf24e3fc8be7b4"
+}

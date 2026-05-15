@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14531,
+  "uuid": "skill-clawhub-oura-cli",
+  "skillKey": "clawhub-oura-cli",
+  "name": "Oura Cli",
+  "summary": "Retrieve health and biometric data from your Oura Ring via CLI commands for sleep, activity, readiness, heart rate, and more using specified dates.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oura_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Danielle",
+      "features": [
+        "Retrieve health and biometric data from your Oura Ring via CLI commands for sleep, activity, re."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oura-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143461316?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oura-cli",
+      "url": "https://clawhub.ai/skills/oura-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oura-cli",
+    "url": "https://clawhub.ai/skills/oura-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oura-cli-e27618b9dbd412f5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oura-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-oura-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc35de5de433ad449291d66d64aba05f58f3282628673c7c81582620ad3c00cc",
+      "artifactSizeBytes": 2421
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T07:48:19.934Z"
+}

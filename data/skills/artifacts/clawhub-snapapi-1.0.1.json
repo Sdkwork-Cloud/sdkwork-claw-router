@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/snapapi@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.snapapi",
+  "skill": {
+    "id": 54697,
+    "skillKey": "clawhub-snapapi",
+    "name": "SnapAPI — Web Intelligence for AI Agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "snapapi",
+    "url": "https://clawhub.ai/skills/snapapi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/snapapi-b0730f4e97fadea5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Give your agent web intelligence — screenshot any URL, extract structured page data, detect page changes, and analyze websites via the SnapAPI REST API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "boehner",
+      "userId": "s17797s6z2vvpzq6q240n18t5584dh9g",
+      "displayName": "Andrew Boehner",
+      "image": "https://avatars.githubusercontent.com/u/11069078?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 309,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773698662293,
+      "changelog": "Fix: correct API base URL to snapapi.tech",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:89b53470b7340e583994204d193a21a8e4ba8c78a8448bad8067639545d7cd6b"
+}

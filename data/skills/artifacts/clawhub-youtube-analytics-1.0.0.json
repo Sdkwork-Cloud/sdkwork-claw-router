@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-analytics@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_analytics",
+  "skill": {
+    "id": 9968,
+    "skillKey": "clawhub-youtube-analytics",
+    "name": "YouTube Analytics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-analytics",
+    "url": "https://clawhub.ai/skills/youtube-analytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-analytics-8c340b977850ac79.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "YouTube Data API v3 analytics toolkit. Analyze YouTube channels, videos, and search results. Use when the user asks to: check YouTube channel stats, analyze video performance, compare channels, search for videos, get subscriber counts, vie."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adamkristopher",
+      "userId": "publishers:adamkristopher",
+      "displayName": "adamkristopher",
+      "image": "https://avatars.githubusercontent.com/u/188609829?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2492,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 6,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769465352916,
+      "changelog": "Initial release — YouTube Data API v3 toolkit for channel analytics, video analysis, and search",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:65971e8ec60ddb13d65f6122cb57af7b26afc395d5c19bede464e5d314144bb4"
+}

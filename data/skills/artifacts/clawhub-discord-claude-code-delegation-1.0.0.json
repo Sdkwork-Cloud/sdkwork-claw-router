@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/discord-claude-code-delegation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.discord_claude_code_delegation",
+  "skill": {
+    "id": 30187,
+    "skillKey": "clawhub-discord-claude-code-delegation",
+    "name": "Discord Claude Code Delegation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "discord-claude-code-delegation",
+    "url": "https://clawhub.ai/skills/discord-claude-code-delegation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/discord-claude-code-delegation-11ef9936584d0b4a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Delegate work from an OpenClaw Discord controller bot to a Claude Code worker bot through a private Discord worker lane, then relay the final result back to..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jini92",
+      "userId": "publishers:jini92",
+      "displayName": "jini92",
+      "image": "https://avatars.githubusercontent.com/u/43900848?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 287,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774047688283,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:90dc555d0da9ae6f6117d8ea99874e7dc8ce260edbf77ffcf75f03786e9e0b4e"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-agent-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_agent_skills",
+  "skill": {
+    "id": 57675,
+    "skillKey": "clawhub-feishu-agent-skills",
+    "name": "Feishu Agent Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-agent-skills",
+    "url": "https://clawhub.ai/skills/feishu-agent-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-agent-skills-1f768cbb388d0615.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and wire a new OpenClaw agent with a fixed workflow. Use when the user asks to create/add a new OpenClaw agent or says “我要创建一个新的 Agent”, automate mult..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "meichuanyi",
+      "userId": "s17fs80z5n1s94me082qqqyg9985a58e",
+      "displayName": "meichuanyi",
+      "image": "https://avatars.githubusercontent.com/u/35057768?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776876678337,
+      "changelog": "OpenClaw Create Agent skill v1.0.0\n\n- Introduces a new skill to create and wire up OpenClaw agents for Feishu with a fixed workflow.\n- Supports two routing modes: new bot per agent (`account`), or multi-group/peer routing under one bot (`peer`).\n- Implements guided user flows for multi-group setups, including verification steps and log inspection.\n- Automates config file backup, runtime creation, config upsert, and gateway restart.\n- Ensures scenario alignment and collects only the required fields per routing mode.\n- Restricts usage to Feishu channels only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2d840c193ef4d18c9776c1da1d78eadfecc299f0b2846dcc69ccb0b3e4f3cf45"
+}

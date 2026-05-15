@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70828,
+  "uuid": "skill-clawhub-depth-memory",
+  "skillKey": "clawhub-depth-memory",
+  "name": "Depth Memory",
+  "summary": "深层记忆系统。处理知识积累、技能经验、长期档案类任务时触发。提供关键字检索、记忆存取、索引更新功能。",
+  "version": "0.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.depth_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qshfu",
+      "features": [
+        "深层记忆系统。处理知识积累、技能经验、长期档案类任务时触发。提供关键字检索、记忆存取、索引更新功能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/depth-memory@0.3.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15900749?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "depth-memory",
+      "url": "https://clawhub.ai/skills/depth-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "depth-memory",
+    "url": "https://clawhub.ai/skills/depth-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/depth-memory-2395cdd0d6cdc9b1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/depth-memory@0.3.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-depth-memory-0.3.1.json",
+      "version": "0.3.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d8dedc4a94b5f89ee772c6b6fd3cc8ea1492421abf6403d707a89c692219f74",
+      "artifactSizeBytes": 2023
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T00:58:11.861Z"
+}

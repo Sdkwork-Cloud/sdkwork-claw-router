@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/se-gmail-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.se_gmail_monitor",
+  "skill": {
+    "id": 37246,
+    "skillKey": "clawhub-se-gmail-monitor",
+    "name": "Se Gmail Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "se-gmail-monitor",
+    "url": "https://clawhub.ai/skills/se-gmail-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/se-gmail-monitor-ffc28cb260f35510.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor and manage Gmail accounts for Your Agency Name. Use when checking emails, sending emails, scanning for urgent messages, or performing email triage. S..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "boris148",
+      "userId": "s176zyak5ty7kk1qam4bdtftq183mvsa",
+      "displayName": "Boris148",
+      "image": "https://avatars.githubusercontent.com/u/262320351?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774504118979,
+      "changelog": "se-gmail-monitor v1.0.0\n\n- Initial release of Gmail monitoring and management skill for Your Agency Name.\n- Supports dual account handling (info@ and agent@) using IMAP/SMTP.\n- Provides scripts for listing, reading, sending, and searching emails.\n- Includes configurable periodic inbox checks for urgent messages and security alerts.\n- Enforces approval rules for sending emails and auto-replies to maintain security.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:68f8d09d14d9d89fed97b0dd03b7bae72f412540d35b2ac215277e85175f330b"
+}

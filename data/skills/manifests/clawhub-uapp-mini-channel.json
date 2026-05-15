@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65750,
+  "uuid": "skill-clawhub-uapp-mini-channel",
+  "skillKey": "clawhub-uapp-mini-channel",
+  "name": "小程序推广渠道查询",
+  "summary": "友盟小程序推广渠道/活动/场景效果分析技能，支持通过 umeng-cli call 调用友盟 OpenAPI（gateway.open.umeng.com）的 5 个只读接口，覆盖获客来源排行、渠道/活动/场景值明细统计与趋势分析。当用户需要了解小程序的获客来源、渠道/活动/场景效果、Top 排行、趋势分析时使用...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uapp_mini_channel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Umeng+",
+      "features": [
+        "友盟小程序推广渠道/活动/场景效果分析技能，支持通过 umeng-cli call 调用友盟 OpenAPI（gateway.open.umeng.com）的 5 个只读接口，覆盖获客来源排."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uapp-mini-channel@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/195273084?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uapp-mini-channel",
+      "url": "https://clawhub.ai/skills/uapp-mini-channel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uapp-mini-channel",
+    "url": "https://clawhub.ai/skills/uapp-mini-channel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uapp-mini-channel-58aeddc471225e43.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uapp-mini-channel@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-uapp-mini-channel-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0c0dcf41db5edec58112845db779d847024d592abf0449339ff0865216212ba9",
+      "artifactSizeBytes": 2721
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T11:46:18.011Z"
+}

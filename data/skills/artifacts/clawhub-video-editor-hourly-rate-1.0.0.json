@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editor-hourly-rate@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editor_hourly_rate",
+  "skill": {
+    "id": 47595,
+    "skillKey": "clawhub-video-editor-hourly-rate",
+    "name": "Video Editor Hourly Rate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editor-hourly-rate",
+    "url": "https://clawhub.ai/skills/video-editor-hourly-rate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editor-hourly-rate-6bf9f215ac6630e1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "edit raw footage into polished edited clips with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. freelancers and small business owners use it f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susan4731-wilfordf",
+      "userId": "s1782w3wqej6a5gnp3w63eb80184cckp",
+      "displayName": "susan4731-wilfordf",
+      "image": "https://avatars.githubusercontent.com/u/208907675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 112,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777174715714,
+      "changelog": "Initial release of Video Editor Hourly Rate\n\n- Instantly edit videos in the cloud without hourly fees or local installs.\n- Supports MP4, MOV, AVI, WebM files up to 500MB; outputs 1080p MP4.\n- Simple setup: auto-generates a free token for new users and manages sessions.\n- Workflow: upload, give editing instructions, and download pro-quality edits in 1–2 minutes.\n- Status, credit balance, and export actions mapped to clear user commands.\n- Handles cloud rendering, error codes, and attribution headers for reliable processing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bb165b51da406c165ab68d14221f44422d2004a823fa577ef705cdad391e81bc"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/instant-genius@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.instant_genius",
+  "skill": {
+    "id": 60716,
+    "skillKey": "clawhub-instant-genius",
+    "name": "instant-genius"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "instant-genius",
+    "url": "https://clawhub.ai/skills/instant-genius",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/instant-genius-5a36a9a8325c11f3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "一键让 OpenClaw 变聪明：自动配置自我学习记忆、主动行为规则、智能心跳、错误纠正系统。新装 OpenClaw 运行此 skill 后立即拥有自我改进、主动感知、结构化记忆、学习信号检测等核心能力。Use when: setting up a new OpenClaw, user wants agent t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenpengyu1016",
+      "userId": "s1793xnxysvrare849phjcsdm583k9xs",
+      "displayName": "chenpengyu1016",
+      "image": "https://avatars.githubusercontent.com/u/266092909?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775011166386,
+      "changelog": "Initial release: Instantly boosts OpenClaw’s intelligence and autonomy.\n\n- Adds automatic setup for core self-learning, proactive behavior, structured memory, and error-correction systems.\n- Introduces multi-layered (hot/warm/cold) memory management with auto-promotion/demotion.\n- Enables proactive task handling, regular self-diagnosis, and value discovery via “smart heartbeat.”\n- Detects and stores user corrections, preferences, and behavioral patterns for adaptive learning.\n- Includes easy setup script and optional voice activation (“make me smarter”/“一键变聪明”).\n- Integrates existing self-improving/proactive-agent features without conflict; complements other skills.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5e4aafb1683af52183995c8050bba7b962575be0c9e312eb46234f63147d2326"
+}

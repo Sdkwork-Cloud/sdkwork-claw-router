@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68901,
+  "uuid": "skill-clawhub-linkfox-keepa-product-search",
+  "skillKey": "clawhub-linkfox-keepa-product-search",
+  "name": "Keepa Product Search",
+  "summary": "基于Keepa数据的亚马逊高级商品搜索与筛选，支持品类、价格、月销量、关键词、BSR排名、评论数、评分、包装尺寸、重量、配送方式等多维度条件。当用户提到Keepa选品、亚马逊商品查找、高级选品、BSR筛选、按销售排名选品、月销量过滤、关键词选品、品类选品、竞品筛选、小众商品发掘、历史排名筛选、Keepa prod...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkfox_keepa_product_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linkfox-ai",
+      "features": [
+        "基于Keepa数据的亚马逊高级商品搜索与筛选，支持品类、价格、月销量、关键词、BSR排名、评论数、评分、包装尺寸、重量、配送方式等多维度条件。当用户提到Keepa选品、亚马逊商品查找、高级选."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linkfox-keepa-product-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267242260?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linkfox-keepa-product-search",
+      "url": "https://clawhub.ai/skills/linkfox-keepa-product-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkfox-keepa-product-search",
+    "url": "https://clawhub.ai/skills/linkfox-keepa-product-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkfox-keepa-product-search-cb033e8e241edd8f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linkfox-keepa-product-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-linkfox-keepa-product-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:10c9d3a2cdd6dd8f0d61162260fb85c335c716f7a72d3527ae62ee0f580cfccb",
+      "artifactSizeBytes": 2242
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T07:41:14.416Z"
+}

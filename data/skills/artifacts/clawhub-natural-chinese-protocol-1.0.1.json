@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/natural-chinese-protocol@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.natural_chinese_protocol",
+  "skill": {
+    "id": 64825,
+    "skillKey": "clawhub-natural-chinese-protocol",
+    "name": "自然中文协议 (Natural Chinese Protocol)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "natural-chinese-protocol",
+    "url": "https://clawhub.ai/skills/natural-chinese-protocol",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/natural-chinese-protocol-9957a96595d0faf4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专业处理通用中文文本，识别并消除AI生成痕迹，确保表达自然流畅且符合人类写作习惯。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "garden-cosmos",
+      "userId": "s1793eep678v372v4h94pcdt1d84ebgd",
+      "displayName": "garden.cosmos",
+      "image": "https://avatars.githubusercontent.com/u/173029383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775642287437,
+      "changelog": "更新了Skill.md 文档格式。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e405782f269becdb14abddf2178a82f56ec608cf1074474996e358690e3c6975"
+}

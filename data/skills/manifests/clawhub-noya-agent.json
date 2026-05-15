@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17095,
+  "uuid": "skill-clawhub-noya-agent",
+  "skillKey": "clawhub-noya-agent",
+  "name": "Noya Agent",
+  "summary": "Interact with the Noya AI agent for crypto trading, prediction markets, token analysis, and DCA strategies via curl. Use when the user wants to trade tokens,...",
+  "version": "1.0.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.noya_agent",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ali Hajeh",
+      "features": [
+        "Interact with the Noya AI agent for crypto trading, prediction markets, token analysis, and DCA.",
+        "Use when the user wants to trade tokens,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/noya-agent@1.0.13",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65499406?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "noya-agent",
+      "url": "https://clawhub.ai/skills/noya-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "noya-agent",
+    "url": "https://clawhub.ai/skills/noya-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/noya-agent-3bae5a63c02126ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/noya-agent@1.0.13",
+      "artifactUrl": "data/skills/artifacts/clawhub-noya-agent-1.0.13.json",
+      "version": "1.0.13",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b6331a2782adbf381fd7b46203f5885b4b90a26acb63b9cfb16338e308201261",
+      "artifactSizeBytes": 2030
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T19:21:10.871Z"
+}

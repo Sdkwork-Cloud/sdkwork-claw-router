@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43998,
+  "uuid": "skill-clawhub-openclaw-mention-skill",
+  "skillKey": "clawhub-openclaw-mention-skill",
+  "name": "Openclaw Mention Skill",
+  "summary": "Model-agnostic WhatsApp @mention skill for OpenClaw. Converts @Name, @Phone, @LID to blue clickable WhatsApp mentions with any AI model.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_mention_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TAN JUN WEI",
+      "features": [
+        "Model-agnostic WhatsApp @mention skill for OpenClaw",
+        "Converts @Name, @Phone, @LID to blue clickable WhatsApp mentions with any AI model."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-mention-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42743231?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-mention-skill",
+      "url": "https://clawhub.ai/skills/openclaw-mention-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-mention-skill",
+    "url": "https://clawhub.ai/skills/openclaw-mention-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-mention-skill-d88dc1124e7e4c61.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-mention-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-mention-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d62e10d5e9c676864b58f9867e56b5ea996a9ff517216ef8cc92d66684af45d",
+      "artifactSizeBytes": 2282
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T17:40:31.382Z"
+}

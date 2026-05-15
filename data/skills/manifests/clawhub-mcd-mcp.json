@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72816,
+  "uuid": "skill-clawhub-mcd-mcp",
+  "skillKey": "clawhub-mcd-mcp",
+  "name": "麦当劳MCP自动化工具",
+  "summary": "麦当劳MCP接口自动化工具，支持自动领券、查询门店库存、计算最优优惠组合、一键下单，解决麦当劳优惠券手动领取麻烦、库存查询不便的问题。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcd_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "winter1102",
+      "features": [
+        "麦当劳MCP接口自动化工具，支持自动领券、查询门店库存、计算最优优惠组合、一键下单，解决麦当劳优惠券手动领取麻烦、库存查询不便的问题。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mcd-mcp@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61531720?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mcd-mcp",
+      "url": "https://clawhub.ai/skills/mcd-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcd-mcp",
+    "url": "https://clawhub.ai/skills/mcd-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcd-mcp-1fbe4efce648f882.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mcd-mcp@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mcd-mcp-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:259d9f45466e884c2ca95f98a0cc1f115285e677354b57db9e1d048b093b0afb",
+      "artifactSizeBytes": 2043
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T12:59:25.452Z"
+}

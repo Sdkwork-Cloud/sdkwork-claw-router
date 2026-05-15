@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flomo-crud-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flomo_crud_skill",
+  "skill": {
+    "id": 20055,
+    "skillKey": "clawhub-flomo-crud-skill",
+    "name": "flomo-crud-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flomo-crud-skill",
+    "url": "https://clawhub.ai/skills/flomo-crud-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flomo-crud-skill-43d12bc2b81842a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query, insert, edit, and delete flomo memos through the flomo Web UI using Chrome MCP tools (no official API required). Use when a user wants CRUD operations..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "undertone0809",
+      "userId": "s17fage929r6re1jt54f24rqzd83ra69",
+      "displayName": "Zeeland",
+      "image": "https://avatars.githubusercontent.com/u/72488598?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 555,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772177490010,
+      "changelog": "Initial release: Enables CRUD operations on live flomo memos via Chrome browser automation—no official API required.\n\n- Supports querying, creating, editing (replace-only), and deleting memos in the flomo Web UI\n- Uses Chrome MCP tools to operate within an already logged-in browser session\n- Requires explicit confirmation for edits and deletions for safety\n- Automatically deep-scans up to 50 memos during search by default\n- Minimal logging and strict safety rules to prevent unintended actions",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:93c28231e8a5f4e84bcab54f9e54512c35f92fbe3de5773c04394ea1265c0b09"
+}

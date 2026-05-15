@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clude-memory@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clude_memory",
+  "skill": {
+    "id": 21285,
+    "skillKey": "clawhub-clude-memory",
+    "name": "Clude Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clude-memory",
+    "url": "https://clawhub.ai/skills/clude-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clude-memory-168c9946acc16291.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Persistent memory for AI agents. Semantic search, association graphs, dream cycles. Local-first, fully offline, free. Works with any MCP runtime."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sebbsssss",
+      "userId": "publishers:sebbsssss",
+      "displayName": "Sebastien Sim",
+      "image": "https://avatars.githubusercontent.com/u/9026086?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 514,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773742989620,
+      "changelog": "Persistent memory for AI agents. Semantic search, dream cycles, local-first.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fb0292a1ce496c54caa67686d59ea59fca4b43b5e1b20e07cf066895be38cec2"
+}

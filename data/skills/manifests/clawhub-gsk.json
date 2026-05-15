@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71008,
+  "uuid": "skill-clawhub-gsk",
+  "skillKey": "clawhub-gsk",
+  "name": "Gsk",
+  "summary": "提供葛兰素史克（GSK）药品、疫苗及行业发展信息，聚焦HIV、肿瘤及呼吸领域，疫苗供应领先。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gsk",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供葛兰素史克（GSK）药品、疫苗及行业发展信息，聚焦HIV、肿瘤及呼吸领域，疫苗供应领先。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gsk@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gsk",
+      "url": "https://clawhub.ai/skills/gsk"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gsk",
+    "url": "https://clawhub.ai/skills/gsk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gsk-e79afbc118f62c69.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gsk@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gsk-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:31515f57e1d4651c2574eb1365269077427e14ed46c014164b3a0a5b3a755e61",
+      "artifactSizeBytes": 2107
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T18:01:28.267Z"
+}

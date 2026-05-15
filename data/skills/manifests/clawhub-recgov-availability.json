@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13773,
+  "uuid": "skill-clawhub-recgov-availability",
+  "skillKey": "clawhub-recgov-availability",
+  "name": "recreation.gov availability search",
+  "summary": "Check campsite availability on recreation.gov for federal campgrounds (National Parks, USFS, BLM). Requires campground ID(s) — get from ridb-search or recreation.gov URLs.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recgov_availability",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "seanrea",
+      "features": [
+        "Check campsite availability on recreation.gov for federal campgrounds (National Parks, USFS, BL.",
+        "Requires campground ID(s) — get from ridb-search or recreation.gov URLs."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/recgov-availability@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4061929?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "recgov-availability",
+      "url": "https://clawhub.ai/skills/recgov-availability"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recgov-availability",
+    "url": "https://clawhub.ai/skills/recgov-availability",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recgov-availability-5b73c52d27e9dcdb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/recgov-availability@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-recgov-availability-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9a9d4bee442fe1f0ce7ee4e956640e9f6aed9e8d0ddf7aaa95823be78c939357",
+      "artifactSizeBytes": 2352
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-29T22:09:47.553Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cliproxy-openclaw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cliproxy_openclaw",
+  "skill": {
+    "id": 32469,
+    "skillKey": "clawhub-cliproxy-openclaw",
+    "name": "CLIProxy FREE API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cliproxy-openclaw",
+    "url": "https://clawhub.ai/skills/cliproxy-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cliproxy-openclaw-11b159a87ae8487d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deploy and configure CLIProxyAPI, expose its dashboard safely, connect OAuth providers like Claude Code, Gemini, Codex, Qwen, and iFlow, generate a reusable..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ayder21",
+      "userId": "s17dberydf6dcqw0rgb0tw9t4183htqb",
+      "displayName": "Ayder21",
+      "image": "https://avatars.githubusercontent.com/u/91679226?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 241,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774357520437,
+      "changelog": "cliproxy-openclaw 1.0.0 – Initial release with end-to-end setup and integration features.\n\n- Deploys and configures CLIProxyAPI with safe dashboard exposure.\n- Supports connecting OAuth providers including Claude Code, Gemini, Codex, Qwen, and iFlow.\n- Generates reusable API endpoints and API keys for integration.\n- Integrates with OpenClaw or any OpenAI-compatible tool for multi-account routing.\n- Includes clear, outcome-based workflow and operational guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:905f74acc7b69871e40f37bdc2924567219ca695c7f817c9ab1a936038d9aed3"
+}

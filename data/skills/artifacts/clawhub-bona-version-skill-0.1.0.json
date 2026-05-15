@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bona-version-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bona_version_skill",
+  "skill": {
+    "id": 33819,
+    "skillKey": "clawhub-bona-version-skill",
+    "name": "Bona Movie Production"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bona-version-skill",
+    "url": "https://clawhub.ai/skills/bona-version-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bona-version-skill-101840dbb93012a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bona Movie Production is Bona Group's film-grade production skill. It covers image generation, image editing, and video generation, using Nano Banana 2 and N..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chengzipidaily",
+      "userId": "publishers:chengzipidaily",
+      "displayName": "Genaro Kaba",
+      "image": "https://avatars.githubusercontent.com/u/131429250?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 232,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774234096437,
+      "changelog": "Bona Movie Production 0.1.0 – Initial Release\n\n- Introduces film-grade AI image generation, editing, and video generation skill for the Bona Group ecosystem.\n- Supports four models: Nano Banana 2, Nano Banana Pro (for images), Seedance, and Kling v3 (for videos).\n- Includes detailed documentation for workflows, environment variables, and recommended prompt engineering in both English and Chinese.\n- Tasks supported include text-to-image, image editing, reference-based image creation, multi-view/image outputs, and high-quality grid compositions.\n- Requires Python 3.9+ and the `requests` library. Environmental variable for API key is mandatory.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9496eb9e78ff768bfee6041df074ed076c7f2ed379592dfc0566a59c3926ce30"
+}

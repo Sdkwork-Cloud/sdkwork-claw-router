@@ -1,0 +1,52 @@
+{
+  "skill": {
+    "slug": "intelligence-ingestion",
+    "displayName": "Intelligence Ingestion",
+    "summary": "Analyze and evaluate URLs, links, articles, tweets, and external info sources for strategic value. NOT a summarizer — this skill classifies, scores importanc...",
+    "tags": {
+      "auto-synthesis": "2.0.2",
+      "intelligence": "2.0.2",
+      "knowledge-management": "2.0.2",
+      "latest": "2.0.2",
+      "mcp": "2.0.2",
+      "obsidian": "2.0.2",
+      "agents": "2.0.0",
+      "automation": "2.0.1",
+      "knowledge-base": "2.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 600,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 3
+    },
+    "createdAt": 1772098735558,
+    "updatedAt": 1778388361725
+  },
+  "latestVersion": {
+    "version": "2.0.2",
+    "createdAt": 1772100802832,
+    "changelog": "Security Update: v2.0.2 (Removing Browser Session Dependencies)\n\n- SECURITY FIX: Completely removed browser-based extraction fallbacks to resolve VirusTotal 'Suspicious' flag. The Skill no longer requests or interacts with the user's Chrome session state/cookies. \n- X/Twitter Extraction Degration Chain optimized: Now strictly relies on OpenClaw's native `xurl` tool (if authenticated) -> Web Search cache -> User manual paste. \n- 100% Sandbox Compliance: The Skill is now fully Benign, acting purely as a local intelligence pipeline leveraging only Obsidian write access and sanitized HTTP requests.\n\n\"Skills are the new Config. Build. For. Agents.\"",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "sarahmirrand001-oss",
+    "userId": "publishers:sarahmirrand001-oss",
+    "displayName": "KELIHAO",
+    "image": "https://avatars.githubusercontent.com/u/259751141?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778388361725
+  }
+}

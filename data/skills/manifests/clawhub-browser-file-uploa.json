@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42650,
+  "uuid": "skill-clawhub-browser-file-uploa",
+  "skillKey": "clawhub-browser-file-uploa",
+  "name": "browser-file-uploa",
+  "summary": "Automates file uploads on web pages via agent-browser CLI or Python script, supporting flexible file paths and optional file input selectors.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_file_uploa",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "weixizi",
+      "features": [
+        "Automates file uploads on web pages via agent-browser CLI or Python script, supporting flexible."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/browser-file-uploa@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62052773?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "browser-file-uploa",
+      "url": "https://clawhub.ai/skills/browser-file-uploa"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-file-uploa",
+    "url": "https://clawhub.ai/skills/browser-file-uploa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-file-uploa-dc1a29fff697d406.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/browser-file-uploa@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-browser-file-uploa-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:673a0db68347acb29928b90229e5bdcfa2f8b4070245a45a25254f68461ac321",
+      "artifactSizeBytes": 2330
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T14:04:42.626Z"
+}

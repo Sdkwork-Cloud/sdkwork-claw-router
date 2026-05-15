@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56486,
+  "uuid": "skill-clawhub-payment-funnel-monitor",
+  "skillKey": "clawhub-payment-funnel-monitor",
+  "name": "Payment Funnel Monitor",
+  "summary": "Monitor the payment last mile — initiate → success reconciliation → local method gaps — to recover conversion lost to failed checkouts. Use when payment succ...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.payment_funnel_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RIJOY-AI",
+      "features": [
+        "Monitor the payment last mile — initiate → success reconciliation → local method gaps — to reco.",
+        "Use when payment succ..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/payment-funnel-monitor@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/219251023?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "payment-funnel-monitor",
+      "url": "https://clawhub.ai/skills/payment-funnel-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "payment-funnel-monitor",
+    "url": "https://clawhub.ai/skills/payment-funnel-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/payment-funnel-monitor-d387934e03cb7883.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/payment-funnel-monitor@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-payment-funnel-monitor-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:db127b852df402d7f787fa6e99a3521e2e1a27e6e71dee71357ed91d4e7153bc",
+      "artifactSizeBytes": 2464
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T02:11:50.789Z"
+}

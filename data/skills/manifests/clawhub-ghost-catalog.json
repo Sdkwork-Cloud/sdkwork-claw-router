@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22526,
+  "uuid": "skill-clawhub-ghost-catalog",
+  "skillKey": "clawhub-ghost-catalog",
+  "name": "Ghost Catalog",
+  "summary": "Scan, tag, validate, and catalog files using the Ghost Catalog semantic file header system (SOM-XXX-NNNN-vX.X.X). Use when: discovering untagged files, onboa...",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ghost_catalog",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SoMaCo",
+      "features": [
+        "Scan, tag, validate, and catalog files using the Ghost Catalog semantic file header system (SOM.",
+        "Use when: discovering untagged files, onboa..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ghost-catalog@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/154762801?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ghost-catalog",
+      "url": "https://clawhub.ai/skills/ghost-catalog"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ghost-catalog",
+    "url": "https://clawhub.ai/skills/ghost-catalog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ghost-catalog-ef28e117e61dca77.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ghost-catalog@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ghost-catalog-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc0373c3a095cbcfca1e0e683bc9e7c951ea8aea79f9b78fdb0210032c3ad44c",
+      "artifactSizeBytes": 1980
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T06:32:19.564Z"
+}

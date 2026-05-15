@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57131,
+  "uuid": "skill-clawhub-email-sender-tw",
+  "skillKey": "clawhub-email-sender-tw",
+  "name": "Email Sender (繁體中文版)",
+  "summary": "Email sending and template management tool for OpenClaw agents. Supports SMTP sending, email templates, and attachments.",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_sender_tw",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sgb999520-hsu",
+      "features": [
+        "Email sending and template management tool for OpenClaw agents",
+        "Supports SMTP sending, email templates, and attachments."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/email-sender-tw@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259346316?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "email-sender-tw",
+      "url": "https://clawhub.ai/skills/email-sender-tw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-sender-tw",
+    "url": "https://clawhub.ai/skills/email-sender-tw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-sender-tw-a28f27d45d09c9ca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/email-sender-tw@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-email-sender-tw-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0a8632614b81f0cb0761e4d23adfab48ae12e0e5db504b2ed1b5ea26b6950452",
+      "artifactSizeBytes": 1968
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T02:32:36.770Z"
+}

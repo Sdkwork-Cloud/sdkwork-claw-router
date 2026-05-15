@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68183,
+  "uuid": "skill-clawhub-weekly-report-writer",
+  "skillKey": "clawhub-weekly-report-writer",
+  "name": "weekly-report-writer",
+  "summary": "用于撰写结构清晰的中文周报。只要用户提到“周报、weekly report、本周总结、工作复盘、下周计划、给老板汇报”，即使没有明确说“写周报”，也应主动使用此技能来生成可直接发送的周报内容。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weekly_report_writer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "epsilon-rhk",
+      "features": [
+        "用于撰写结构清晰的中文周报。只要用户提到“周报、weekly report、本周总结、工作复盘、下周计划、给老板汇报”，即使没有明确说“写周报”，也应主动使用此技能来生成可直接发送的周报内容。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weekly-report-writer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/80936572?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weekly-report-writer",
+      "url": "https://clawhub.ai/skills/weekly-report-writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weekly-report-writer",
+    "url": "https://clawhub.ai/skills/weekly-report-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weekly-report-writer-3cb013e935420242.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weekly-report-writer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weekly-report-writer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b137f08a5cc209df27aa612a40a2e58813a58c1ff2e197ddaceb1988b1c419a0",
+      "artifactSizeBytes": 2519
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T08:55:30.577Z"
+}

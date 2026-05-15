@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/progress-selfcheck@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.progress_selfcheck",
+  "skill": {
+    "id": 27066,
+    "skillKey": "clawhub-progress-selfcheck",
+    "name": "progress-selfcheck"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "progress-selfcheck",
+    "url": "https://clawhub.ai/skills/progress-selfcheck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/progress-selfcheck-9de8d48270406699.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides periodic progress self-checks with Feishu notifications, task ledger management, auto-reactivation of stale tasks, and summary reporting for OpenClaw."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ulquoirra",
+      "userId": "publishers:ulquoirra",
+      "displayName": "Ulquoirra",
+      "image": "https://avatars.githubusercontent.com/u/58836332?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 355,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773651700055,
+      "changelog": "- Initial release of progress-selfcheck-skill for OpenClaw.\n- Sends periodic progress self-checks to Feishu (configurable DM target).\n- Exports self-check artifacts to `output/` for Webchat access.\n- Maintains an append-only task ledger for conversational tasks.\n- Automatically reactivates stale tasks locally with support for repeatable tasks.\n- Provides summaries covering running cron jobs, recent completions, alerts, and unfinished tasks.\n- Includes configuration options and ready-to-use cron job templates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8d92efe41e0795e7fa5d83631954adf64b96d2e7e5a151fa45b8797179bb9b9b"
+}

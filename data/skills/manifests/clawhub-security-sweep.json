@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36722,
+  "uuid": "skill-clawhub-security-sweep",
+  "skillKey": "clawhub-security-sweep",
+  "name": "security-sweep",
+  "summary": "Security scanner for OpenClaw skills and plugins. Scans for hardcoded secrets, dangerous exec patterns, dependency vulnerabilities, and network egress. Use w...",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.security_sweep",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RhombusMaximus",
+      "features": [
+        "Security scanner for OpenClaw skills and plugins",
+        "Scans for hardcoded secrets, dangerous exec patterns, dependency vulnerabilities, and network e.",
+        "Use w..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/security-sweep@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31224721?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "security-sweep",
+      "url": "https://clawhub.ai/skills/security-sweep"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "security-sweep",
+    "url": "https://clawhub.ai/skills/security-sweep",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/security-sweep-41740b26f149d431.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/security-sweep@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-security-sweep-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4987f45f125c4bcd2b8d03a15e21c4e5def0b2c506de622b04cfcbc8804fc463",
+      "artifactSizeBytes": 2062
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T18:24:58.230Z"
+}

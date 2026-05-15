@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/task-development-workflow@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_development_workflow",
+  "skill": {
+    "id": 10658,
+    "skillKey": "clawhub-task-development-workflow",
+    "name": "Task Development Workflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-development-workflow",
+    "url": "https://clawhub.ai/skills/task-development-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-development-workflow-ce5a153491b2f93c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "TDD-first development workflow with structured planning, task tracking, and PR-based code review. Use when building software projects that require clarificat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anikgnr",
+      "userId": "publishers:anikgnr",
+      "displayName": "Md. Mushraful Hoque Anik",
+      "image": "https://avatars.githubusercontent.com/u/1005616?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2282,
+      "installsAllTime": 27,
+      "installsCurrent": 26,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771252593753,
+      "changelog": "Initial release: TDD-first development workflow with planning, Trello tracking, and PR-based code review",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7f026ad434e7e0d7542073151038c26a93b5c2beed58dac5d27c6271b0d08d08"
+}

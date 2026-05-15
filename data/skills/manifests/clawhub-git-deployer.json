@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40405,
+  "uuid": "skill-clawhub-git-deployer",
+  "skillKey": "clawhub-git-deployer",
+  "name": "Git Deployer",
+  "summary": "Push static site content to GitHub Pages repositories. Clone, copy files, commit with timestamp, force-push. Use when updating GitHub Pages sites, deploying...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_deployer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KRYZL19",
+      "features": [
+        "Push static site content to GitHub Pages repositories",
+        "Clone, copy files, commit with timestamp, force-push",
+        "Use when updating GitHub Pages sites, deploying..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/git-deployer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/220403544?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "git-deployer",
+      "url": "https://clawhub.ai/skills/git-deployer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-deployer",
+    "url": "https://clawhub.ai/skills/git-deployer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-deployer-4d9b5edd266ebb56.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/git-deployer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-git-deployer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:905ff0dfecf952932c68f647b1af9d7a330e59e925c5023130081de7e3b11bf3",
+      "artifactSizeBytes": 2373
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T15:19:31.476Z"
+}

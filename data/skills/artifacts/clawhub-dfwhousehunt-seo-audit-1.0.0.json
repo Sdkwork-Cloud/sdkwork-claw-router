@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dfwhousehunt-seo-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dfwhousehunt_seo_audit",
+  "skill": {
+    "id": 42078,
+    "skillKey": "clawhub-dfwhousehunt-seo-audit",
+    "name": "Sa Clean"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dfwhousehunt-seo-audit",
+    "url": "https://clawhub.ai/skills/dfwhousehunt-seo-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dfwhousehunt-seo-audit-cce394ad21f60a23.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Crawl any website and get a 0-100 SEO score with 50+ checks across Technical, On-Page, Schema, Social, and Compliance categories. Identifies quick wins, comp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "drivenautoplex1",
+      "userId": "s17amw9603tjt6jg530q93xzvx83syaf",
+      "displayName": "drivenautoplex1",
+      "image": "https://avatars.githubusercontent.com/u/186228539?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774667150083,
+      "changelog": "dfw-seo-audit 1.0.0 — Initial Release\n\n- Run a full SEO audit on any website, returning a weighted 0-100 score with 50+ checks across Technical, On-Page, Schema, Social, and Compliance categories.\n- Supports industry-specific compliance for mortgage, real estate, medical, and legal sites.\n- Highlights quick wins, competitor gaps via side-by-side analysis, and generates AI-written SEO articles (premium).\n- Offers both free and premium modes; free compliance-only scan included with no API key.\n- Outputs audit results in standard, gap analysis, or JSON format for integration and transparency.\n- Built for use via CLI or integration with workflows/agents; requires ANTHROPIC_API_KEY for premium features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac05d985ee23cc5134f317ab949abaf370cff085e728f946a6836a10dc84bda3"
+}

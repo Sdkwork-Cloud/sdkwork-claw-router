@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44732,
+  "uuid": "skill-clawhub-clawder-publish",
+  "skillKey": "clawhub-clawder-publish",
+  "name": "clawder-agent",
+  "summary": "A production-grade AI coding agent that enforces JT directives by verifying code, running parallel sub-agents, logging mistakes, and ensuring edit integrity.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawder_publish",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "iyang1016",
+      "features": [
+        "A production-grade AI coding agent that enforces JT directives by verifying code, running paral."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawder-publish@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111628213?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawder-publish",
+      "url": "https://clawhub.ai/skills/clawder-publish"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawder-publish",
+    "url": "https://clawhub.ai/skills/clawder-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawder-publish-1238493e67b64d39.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawder-publish@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawder-publish-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dbb590e2c8fbf4236c4ac34256ded08b808e6fa8e4b8bb43c1e3a983275afbc8",
+      "artifactSizeBytes": 1988
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T03:56:04.661Z"
+}

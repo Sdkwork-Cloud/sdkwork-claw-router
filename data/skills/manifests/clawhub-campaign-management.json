@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42651,
+  "uuid": "skill-clawhub-campaign-management",
+  "skillKey": "clawhub-campaign-management",
+  "name": "Campaign Management",
+  "summary": "Read campaign packages, manage campaign state, generate intelligence reports. Entry point for all campaign operations.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.campaign_management",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nadavnaveh",
+      "features": [
+        "Read campaign packages, manage campaign state, generate intelligence reports",
+        "Entry point for all campaign operations."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/campaign-management@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63460107?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "campaign-management",
+      "url": "https://clawhub.ai/skills/campaign-management"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "campaign-management",
+    "url": "https://clawhub.ai/skills/campaign-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/campaign-management-36b3b7d857a447aa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/campaign-management@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-campaign-management-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3f8d89000b5eb38b0d059d37b82769a99177e8e8eaf099b1ab633a04fd6653d6",
+      "artifactSizeBytes": 2275
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T12:19:36.604Z"
+}

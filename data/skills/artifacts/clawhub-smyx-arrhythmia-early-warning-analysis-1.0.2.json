@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smyx-arrhythmia-early-warning-analysis@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smyx_arrhythmia_early_warning_analysis",
+  "skill": {
+    "id": 57801,
+    "skillKey": "clawhub-smyx-arrhythmia-early-warning-analysis",
+    "name": "心律失常早期预警分析工具"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smyx-arrhythmia-early-warning-analysis",
+    "url": "https://clawhub.ai/skills/smyx-arrhythmia-early-warning-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smyx-arrhythmia-early-warning-analysis-8f9ec5c2398dc343.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Based on facial video, identifies abnormal rhythms such as premature beats, atrial fibrillation, tachycardia/bradycardia, assists in early detection of heart..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "18072937735",
+      "userId": "s17f8q65zg3y98t86jdg1177g583whq8",
+      "displayName": "smyx-skills",
+      "image": "https://avatars.githubusercontent.com/u/272124705?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 5,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1778261621735,
+      "changelog": "- Documentation fully restructured and enhanced for clarity, with a concise English and Chinese introduction.\n- Added a new version header (version: \"1.0.0\") to SKILL.md.\n- No new features or functionality changes; core instructions, rules, workflows, and usage examples remain intact.\n- No code or interface changes—this update focuses on improving user understanding through clearer documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:01287ea2eae643de3b8690aa62acbdb718a3b92c2e98df273eb3acfcf0c95a01"
+}

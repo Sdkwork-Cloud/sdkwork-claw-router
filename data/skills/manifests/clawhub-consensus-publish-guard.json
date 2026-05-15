@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21367,
+  "uuid": "skill-clawhub-consensus-publish-guard",
+  "skillKey": "clawhub-consensus-publish-guard",
+  "name": "Consensus Publish Guard",
+  "summary": "Persona-weighted governance for outbound publishing (blog, social, announcements). Prevents unsafe public claims via hard-block checks, weighted consensus, r...",
+  "version": "1.1.17",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.consensus_publish_guard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kai Cianflone",
+      "features": [
+        "Persona-weighted governance for outbound publishing (blog, social, announcements)",
+        "Prevents unsafe public claims via hard-block checks, weighted consensus, r..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/consensus-publish-guard@1.1.17",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30943151?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "consensus-publish-guard",
+      "url": "https://clawhub.ai/skills/consensus-publish-guard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "consensus-publish-guard",
+    "url": "https://clawhub.ai/skills/consensus-publish-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/consensus-publish-guard-35394cfe30f5986a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/consensus-publish-guard@1.1.17",
+      "artifactUrl": "data/skills/artifacts/clawhub-consensus-publish-guard-1.1.17.json",
+      "version": "1.1.17",
+      "runtime": "metadata",
+      "checksumHash": "sha256:56cee4d8f96771faa58e77934d3556bbe4d2ceb9b44a042491c1d7ab23f94c23",
+      "artifactSizeBytes": 2057
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T21:26:52.479Z"
+}

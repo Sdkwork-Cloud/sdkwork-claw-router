@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44177,
+  "uuid": "skill-clawhub-srxp-integration",
+  "skillKey": "clawhub-srxp-integration",
+  "name": "Srxp",
+  "summary": "SRXP integration. Manage data, records, and automate workflows. Use when the user wants to interact with SRXP data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.srxp_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "SRXP integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with SRXP data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/srxp-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "srxp-integration",
+      "url": "https://clawhub.ai/skills/srxp-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "srxp-integration",
+    "url": "https://clawhub.ai/skills/srxp-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/srxp-integration-66a3d6077ca65121.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/srxp-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-srxp-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4c5f4c72bb77c9af7e7f15c12178937a7e839b3f6421f982527a33b8f2bf0d1c",
+      "artifactSizeBytes": 1874
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:02:44.165Z"
+}

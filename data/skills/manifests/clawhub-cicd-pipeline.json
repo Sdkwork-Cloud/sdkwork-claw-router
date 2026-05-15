@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9072,
+  "uuid": "skill-clawhub-cicd-pipeline",
+  "skillKey": "clawhub-cicd-pipeline",
+  "name": "CI/CD Pipeline",
+  "summary": "Create, debug, and manage CI/CD pipelines with GitHub Actions. Use when the user needs to set up automated testing, deployment, releases, or workflows. Covers workflow syntax, common patterns, secrets management, caching, matrix builds, an.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cicd_pipeline",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gitgoodordietrying",
+      "features": [
+        "Create, debug, and manage CI/CD pipelines with GitHub Actions",
+        "Use when the user needs to set up automated testing, deployment, releases, or workflows",
+        "Covers workflow syntax, common patterns, secrets management, caching, matrix builds, and troubl."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cicd-pipeline@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/116975874?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cicd-pipeline",
+      "url": "https://clawhub.ai/skills/cicd-pipeline"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cicd-pipeline",
+    "url": "https://clawhub.ai/skills/cicd-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cicd-pipeline-768af222c7e4ea9a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cicd-pipeline@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cicd-pipeline-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:875d1f9c8edaffb49e2b2dd809de8e3b0f5f5cf21f52b91d52507b890e06e495",
+      "artifactSizeBytes": 2158
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T20:48:01.245Z"
+}

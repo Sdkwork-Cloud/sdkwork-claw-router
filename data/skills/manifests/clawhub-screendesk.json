@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31727,
+  "uuid": "skill-clawhub-screendesk",
+  "skillKey": "clawhub-screendesk",
+  "name": "Screendesk",
+  "summary": "Screendesk integration. Manage Organizations. Use when the user wants to interact with Screendesk data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.screendesk",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Screendesk integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Screendesk data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/screendesk@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "screendesk",
+      "url": "https://clawhub.ai/skills/screendesk"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "screendesk",
+    "url": "https://clawhub.ai/skills/screendesk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/screendesk-a882af347b470b54.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/screendesk@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-screendesk-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:296981718016f410102ba4d6b81838cd8f2bd97a26ffd6e63f7f868b95652fbd",
+      "artifactSizeBytes": 1824
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:38:33.171Z"
+}

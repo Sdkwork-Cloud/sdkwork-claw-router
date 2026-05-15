@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23012,
+  "uuid": "skill-clawhub-parser",
+  "skillKey": "clawhub-parser",
+  "name": "Parser",
+  "summary": "Parse JSON, CSV, XML, and logs into structured output. Use when converting formats, validating structure, extracting fields, analyzing nested data.",
+  "version": "3.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.parser",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "Parse JSON, CSV, XML, and logs into structured output",
+        "Use when converting formats, validating structure, extracting fields, analyzing nested data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/parser@3.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "parser",
+      "url": "https://clawhub.ai/skills/parser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "parser",
+    "url": "https://clawhub.ai/skills/parser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/parser-b17d45121150928f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/parser@3.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-parser-3.0.2.json",
+      "version": "3.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cb6d8c7a0c36059a9902e5aac5b2671396a0b3b7f10fc411cbca97c28a345766",
+      "artifactSizeBytes": 1896
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T09:59:42.362Z"
+}

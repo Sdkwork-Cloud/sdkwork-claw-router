@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/humanize@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.humanize",
+  "skill": {
+    "id": 8714,
+    "skillKey": "clawhub-humanize",
+    "name": "Humanize"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "humanize",
+    "url": "https://clawhub.ai/skills/humanize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/humanize-5d0297147237d6a6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Remove AI writing patterns from text. Use when editing, reviewing, or rewriting text to sound more natural and human-written. Detects patterns like inflated symbolism, promotional language, em dash overuse, AI vocabulary, and sycophantic t."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "artur-zhdan",
+      "userId": "publishers:artur-zhdan",
+      "displayName": "artur-zhdan",
+      "image": "https://avatars.githubusercontent.com/u/78844452?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 6433,
+      "installsAllTime": 81,
+      "installsCurrent": 78,
+      "stars": 9,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769985449793,
+      "changelog": "Initial release: Humanize skill removes AI writing patterns for more natural, human-sounding text.\n\n- Detects and rewrites inflated, promotional, or formulaic language.\n- Scans for specific patterns like AI vocabulary, em dash overuse, hedging, and sycophancy.\n- Guides on enhancing voice and personality in rewritten content.\n- Includes a quick-reference cheatsheet of words and patterns to avoid.\n- Output is cleaned, concise, and preserves intended meaning and tone.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dc5834bfe05eb0c3237d8ffd60f216ab528619300c7d396f452fd6d0f42d84da"
+}

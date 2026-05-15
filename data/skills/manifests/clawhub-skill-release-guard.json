@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29115,
+  "uuid": "skill-clawhub-skill-release-guard",
+  "skillKey": "clawhub-skill-release-guard",
+  "name": "Skill Release Guard",
+  "summary": "Validate a local skill folder before publishing or sharing it. Use when Codex is about to release a skill, publish to ClawHub, audit SKILL.md quality, check...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_release_guard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "neo1307",
+      "features": [
+        "Validate a local skill folder before publishing or sharing it",
+        "Use when Codex is about to release a skill, publish to ClawHub, audit SKILL.md quality, check..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-release-guard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/196853531?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-release-guard",
+      "url": "https://clawhub.ai/skills/skill-release-guard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-release-guard",
+    "url": "https://clawhub.ai/skills/skill-release-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-release-guard-9396d2178da3008b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-release-guard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-release-guard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:632abb060a48858ded16a3dda36948e99c8527585a0b1b6cdf152e168f59cb2d",
+      "artifactSizeBytes": 1918
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T06:34:50.330Z"
+}

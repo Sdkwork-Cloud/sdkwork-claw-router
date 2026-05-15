@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adapter-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adapter_audit",
+  "skill": {
+    "id": 45158,
+    "skillKey": "clawhub-adapter-audit",
+    "name": "Adapter Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adapter-audit",
+    "url": "https://clawhub.ai/skills/adapter-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adapter-audit-5ccdd2ed30e32075.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill to audit CLI adapter projects (like opencli) for missing output fields, then batch-generate fixes and submit PRs. Turns AI agents into adapter..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "allens0104",
+      "userId": "s1769z0kt5h24yyg393tdbzhes843nsc",
+      "displayName": "AllenS0104",
+      "image": "https://avatars.githubusercontent.com/u/213720862?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775197785206,
+      "changelog": "Initial release of adapter-audit skill. Key features:\n\n- Audits CLI adapter projects for missing standard output fields (url, title, author, timestamp).\n- Scans and classifies adapters, suggests and applies minimal batch fixes.\n- Prepares multi-file PRs with detailed before/after coverage and risk assessment.\n- Ensures only additive changes; never modifies existing output behavior.\n- Includes step-by-step workflow and usage instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:abd14fccaa178454464e031a64f3fa32e09182d8bc9c1ac250bda87ca8a62e3c"
+}

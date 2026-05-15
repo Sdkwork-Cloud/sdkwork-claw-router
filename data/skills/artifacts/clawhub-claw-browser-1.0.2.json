@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-browser@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_browser",
+  "skill": {
+    "id": 15060,
+    "skillKey": "clawhub-claw-browser",
+    "name": "Claw Browser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-browser",
+    "url": "https://clawhub.ai/skills/claw-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-browser-8467265647d11b15.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A visual, human-like web browser for OpenClaw agents.Supports reading,screenshots, and visible mode."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "canbirlik",
+      "userId": "s170kzj90bpsyv7tg0z7esdse983naa4",
+      "displayName": "Can Birlik",
+      "image": "https://avatars.githubusercontent.com/u/65647039?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1037,
+      "installsAllTime": 5,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771431978620,
+      "changelog": "- Added a new section for running in visible mode on WSL/Linux, including DISPLAY environment variable guidance.\n- No other changes; functionality and examples remain the same.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:179b2a79dab6670cd41707af7479469781ce6665e976208b38c4f2668599f6d7"
+}

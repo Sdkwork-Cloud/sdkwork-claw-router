@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47527,
+  "uuid": "skill-clawhub-401k-plan-health",
+  "skillKey": "clawhub-401k-plan-health",
+  "name": "401(k) Plan Health Skill",
+  "summary": "Retrieve and assess a company's 401(k) plan details from planprovider.pro, including providers, participation, assets, and compliance signals for benchmarkin...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.401k_plan_health",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chase Miller",
+      "features": [
+        "Retrieve and assess a company's 401(k) plan details from planprovider.pro, including providers,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/401k-plan-health@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/276461766?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "401k-plan-health",
+      "url": "https://clawhub.ai/skills/401k-plan-health"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "401k-plan-health",
+    "url": "https://clawhub.ai/skills/401k-plan-health",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/401k-plan-health-2bea74991ede49af.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/401k-plan-health@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-401k-plan-health-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:be093d555a35bfcbe669642635756415932e89883cf8df00cba3f9f9e010db4c",
+      "artifactSizeBytes": 2323
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T18:27:13.547Z"
+}

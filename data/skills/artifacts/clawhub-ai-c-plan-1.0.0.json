@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-c-plan@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_c_plan",
+  "skill": {
+    "id": 57543,
+    "skillKey": "clawhub-ai-c-plan",
+    "name": "Ai C Plan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-c-plan",
+    "url": "https://clawhub.ai/skills/ai-c-plan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-c-plan-bb476747080c2c10.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-C plan klasöründeki MD/CSV planı okuyup dependency sırasına göre tamamen otomatik ilerler; geliştirir, test eder, raporlar."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sercanmetalore",
+      "userId": "s17ewwnek7ycm6h49tz9pe1k3d83wz1j",
+      "displayName": "Sercan Boyraz",
+      "image": "https://avatars.githubusercontent.com/u/179240415?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 483,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772287852826,
+      "changelog": "Initial release – fully automated project plan execution based on MD/CSV with dependency management and environment config policies.\n\n- Reads and executes plan files step-by-step, auto-generates required folders/files, and applies changes according to dependency order.\n- Ensures compliance with referenced architecture and technology stack by reading AI_CONSULTANT_SYSTEM_PROMPT.md before each step.\n- Handles .env configuration for all services, auto-creating .env.example files and using placeholders for secrets.\n- Runs in autopilot mode, committing after every step, and reports or blocks only when required by missing info, destructive action, or plan file absence.\n- Logs all progress to a single progress.json, updating step status automatically.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:33727ec74cb8e2b4997fe270b7a3eaf9b161ae6b0e1c9588b07bb64f98cee457"
+}

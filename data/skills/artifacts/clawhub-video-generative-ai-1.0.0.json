@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-generative-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_generative_ai",
+  "skill": {
+    "id": 42612,
+    "skillKey": "clawhub-video-generative-ai",
+    "name": "Video Generative Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-generative-ai",
+    "url": "https://clawhub.ai/skills/video-generative-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-generative-ai-571c864d85e3a151.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get AI generated videos ready to post, without touching a single slider. Upload your text or images (MP4, MOV, PNG, JPG, up to 200MB), say something like \"ge..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776839126430,
+      "changelog": "Video Generative AI skill initial release:\n\n- Generate 1080p AI videos from text prompts or uploads (MP4, MOV, PNG, JPG, up to 200MB)\n- No editing experience needed; production-ready videos in 1-3 minutes\n- Cloud-based: supports quick setup with temporary or personal tokens (100 free credits for new users)\n- Export videos in multiple formats (MP4, MOV, AVI, JPG, PNG, and more)\n- Simple commands for upload, generation, export, balance, and status tracking\n- Session and error handling designed for seamless, iterative workflows",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:abc3efb317578961047fff6d49551398bddaf1c67e801b4c0f7f30c9ab3b3cf2"
+}

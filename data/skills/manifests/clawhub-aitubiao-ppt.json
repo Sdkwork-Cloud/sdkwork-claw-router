@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61185,
+  "uuid": "skill-clawhub-aitubiao-ppt",
+  "skillKey": "clawhub-aitubiao-ppt",
+  "name": "爱图表PPT",
+  "summary": "AI PPT/演示文稿生成。根据用户主题或内容自动生成PPT演示文稿项目。当用户想要创建PPT、演示文稿、幻灯片时使用，触发词包括\"创建PPT\"、\"做PPT\"、\"做个演示文稿\"、\"生成幻灯片\"、\"create PPT\"、\"make slides\"、\"generate presentation\"、\"make a P...",
+  "version": "1.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aitubiao_ppt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aitubiao",
+      "features": [
+        "AI PPT/演示文稿生成。根据用户主题或内容自动生成PPT演示文稿项目。当用户想要创建PPT、演示文稿、幻灯片时使用，触发词包括\"创建PPT\"、\"做PPT\"、\"做个演示文稿\"、\"生成幻灯片."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aitubiao-ppt@1.1.5",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/aitubiao-ppt/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aitubiao-ppt",
+      "url": "https://clawhub.ai/skills/aitubiao-ppt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aitubiao-ppt",
+    "url": "https://clawhub.ai/skills/aitubiao-ppt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aitubiao-ppt-559f2dee1184fa1d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aitubiao-ppt@1.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-aitubiao-ppt-1.1.5.json",
+      "version": "1.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:636fdbb4a3a31e1be16658214eb8e06e55eeadc20d293edf80a14ba5a7faa646",
+      "artifactSizeBytes": 2892
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T08:48:59.752Z"
+}

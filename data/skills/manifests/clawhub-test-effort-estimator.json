@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23107,
+  "uuid": "skill-clawhub-test-effort-estimator",
+  "skillKey": "clawhub-test-effort-estimator",
+  "name": "PowerfulHarp2041",
+  "summary": "This skill should be used when users need to estimate test effort based on product requirements. It analyzes requirements, breaks down tasks, estimates test...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_effort_estimator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xuping2012",
+      "features": [
+        "This skill should be used when users need to estimate test effort based on product requirements",
+        "It analyzes requirements, breaks down tasks, estimates test..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/test-effort-estimator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20850694?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "test-effort-estimator",
+      "url": "https://clawhub.ai/skills/test-effort-estimator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-effort-estimator",
+    "url": "https://clawhub.ai/skills/test-effort-estimator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-effort-estimator-6782e16300e8f678.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/test-effort-estimator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-test-effort-estimator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4d55c60ba28b96461d6e31ec7c5f4c590bf46e5bc4ba01a05fee52aa5b86e766",
+      "artifactSizeBytes": 2394
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T12:12:08.491Z"
+}

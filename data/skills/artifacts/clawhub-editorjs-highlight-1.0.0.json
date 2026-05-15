@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/editorjs-highlight@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.editorjs_highlight",
+  "skill": {
+    "id": 46625,
+    "skillKey": "clawhub-editorjs-highlight",
+    "name": "Editorjs Highlight"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "editorjs-highlight",
+    "url": "https://clawhub.ai/skills/editorjs-highlight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/editorjs-highlight-7dd12126022a8620.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get highlighted video clips ready to post, without touching a single slider. Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 123,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776373151646,
+      "changelog": "Initial public release of EditorJS Highlight — fast, AI-powered highlight detection and export for video clips.\n\n- Upload video files (MP4, MOV, AVI, WebM, up to 500MB) and request automatic key moment extraction via chat prompts.\n- Automatically authenticates using a free NEMO_TOKEN (100 credits, 7 days).\n- Cloud backend processes highlight detection and exports 1080p MP4 clips in about 1–2 minutes.\n- Supports direct keyword actions: upload, export, check credits/status.\n- No manual scrubbing or editing—just describe what you want and receive ready-to-post video highlights.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:af0d0419c75b50f09148ee964acbea58f1feff50c5103cb8b46ed1183e9328b2"
+}

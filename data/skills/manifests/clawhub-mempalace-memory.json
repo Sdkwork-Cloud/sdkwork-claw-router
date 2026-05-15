@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62028,
+  "uuid": "skill-clawhub-mempalace-memory",
+  "skillKey": "clawhub-mempalace-memory",
+  "name": "Mempalace Memory",
+  "summary": "基于MemPalace融合SuperMem增强层，提供自动hook注入、多样性重排、相似度去重和高效上下文记忆管理。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mempalace_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mars82311111",
+      "features": [
+        "基于MemPalace融合SuperMem增强层，提供自动hook注入、多样性重排、相似度去重和高效上下文记忆管理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mempalace-memory@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265482749?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mempalace-memory",
+      "url": "https://clawhub.ai/skills/mempalace-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mempalace-memory",
+    "url": "https://clawhub.ai/skills/mempalace-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mempalace-memory-14e191bf68791628.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mempalace-memory@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mempalace-memory-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5dc2f8fa0f65bfa2f22f6389b6acd875f318da1dd1a59b0cccf7b56f2ed54d66",
+      "artifactSizeBytes": 2115
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T14:41:47.530Z"
+}

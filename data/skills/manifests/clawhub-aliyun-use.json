@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55699,
+  "uuid": "skill-clawhub-aliyun-use",
+  "skillKey": "clawhub-aliyun-use",
+  "name": "Aliyun Use",
+  "summary": "Aliyun Bailian(百炼) for LLM chat, and language translation. Use when you need to generate code, generate text with LLMs, or translate between languages.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun_use",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cnlangzi",
+      "features": [
+        "Aliyun Bailian(百炼) for LLM chat, and language translation",
+        "Use when you need to generate code, generate text with LLMs, or translate between languages."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aliyun-use@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/347651?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aliyun-use",
+      "url": "https://clawhub.ai/skills/aliyun-use"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun-use",
+    "url": "https://clawhub.ai/skills/aliyun-use",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-use-fb203c97970d1001.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aliyun-use@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aliyun-use-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:83fb41f6cf4e7085d6c70e37b930686d6ae96055651b4e3507467c565ef21f48",
+      "artifactSizeBytes": 2269
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T15:07:07.205Z"
+}

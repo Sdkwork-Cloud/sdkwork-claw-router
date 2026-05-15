@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skrape@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skrape",
+  "skill": {
+    "id": 26812,
+    "skillKey": "clawhub-skrape",
+    "name": "Skrape"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skrape",
+    "url": "https://clawhub.ai/skills/skrape",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skrape-7dbd5f4d81cefb4b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Ethical web data extraction with robots exclusion protocol adherence, throttled scraping requests, and privacy-compliant handling (\"Scrape responsibly!\")."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "10oss",
+      "userId": "s1774rc120ef75h67qnxw731ps83g1kh",
+      "displayName": "X",
+      "image": "https://avatars.githubusercontent.com/u/2422383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 361,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1773577125143,
+      "changelog": "- Removed implementation and test files (`index.js`, `test.js`).\n- No changes to documentation or skill description.\n- Codebase now lacks executable or testable functionality; only guidance remains.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eb618050a3c71f00a9b934df0deaa2551af347510bc241b135fe1ea91d9eb07b"
+}

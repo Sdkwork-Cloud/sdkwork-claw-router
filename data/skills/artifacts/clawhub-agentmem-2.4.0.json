@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentmem@2.4.0",
+  "version": "2.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentmem",
+  "skill": {
+    "id": 9977,
+    "skillKey": "clawhub-agentmem",
+    "name": "AgentMem"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentmem",
+    "url": "https://clawhub.ai/skills/agentmem",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentmem-1df25e2d08b68d79.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cloud memory for AI agents. Writes are free, pay only for reads. First 25 calls free, 7-day persistence."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "natmota",
+      "userId": "publishers:natmota",
+      "displayName": "NatMota",
+      "image": "https://avatars.githubusercontent.com/u/11588610?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2633,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 5,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "2.4.0",
+      "createdAt": 1770340308900,
+      "changelog": "Retrieval-based pricing: writes free, pay for reads. Source tracking. Agent name capture.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d74ce0af0d6bfb099d2a2e334f00aab78876b97b14143d2f51a640e434bbf036"
+}

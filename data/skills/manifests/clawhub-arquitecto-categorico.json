@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51851,
+  "uuid": "skill-clawhub-arquitecto-categorico",
+  "skillKey": "clawhub-arquitecto-categorico",
+  "name": "Arquitecto Categórico",
+  "summary": "Disena y audita arquitecturas de datos y APIs con teoria de categorias. Usar cuando haga falta formalizar un dominio en PostgreSQL DDL, JSON Schema, OpenAPI,...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arquitecto_categorico",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "felix-antonio-sl",
+      "features": [
+        "Disena y audita arquitecturas de datos y APIs con teoria de categorias",
+        "Usar cuando haga falta formalizar un dominio en PostgreSQL DDL, JSON Schema, OpenAPI,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/arquitecto-categorico@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143637936?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "arquitecto-categorico",
+      "url": "https://clawhub.ai/skills/arquitecto-categorico"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arquitecto-categorico",
+    "url": "https://clawhub.ai/skills/arquitecto-categorico",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arquitecto-categorico-4f4b3b6c94aecedf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/arquitecto-categorico@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-arquitecto-categorico-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ae6a94608efef162af749836d5bc71ea005c028d33dd68c76e6ecdc05d140fb1",
+      "artifactSizeBytes": 2898
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T15:51:01.501Z"
+}

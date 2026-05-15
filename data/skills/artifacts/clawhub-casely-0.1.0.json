@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/casely@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.casely",
+  "skill": {
+    "id": 26320,
+    "skillKey": "clawhub-casely",
+    "name": "Casely"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "casely",
+    "url": "https://clawhub.ai/skills/casely",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/casely-4ec843b1016d4a96.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Intelligent QA assistant that automates writing test cases from project documentation. Use when the user wants to generate test cases from requirements, runs..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johnwayneeee",
+      "userId": "publishers:johnwayneeee",
+      "displayName": "JohnWayneeee",
+      "image": "https://avatars.githubusercontent.com/u/197433537?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 370,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772375738774,
+      "changelog": "Initial release of Casely – an intelligent QA assistant for automated test case generation.\n\n- Automates QA workflows: parses requirements (PDF/DOCX/XLSX), learns team-specific test style, generates atomic test cases, and exports to Excel for TestRail import.\n- Provides clear commands: `/init`, `/parse`, `/style`, `/plan`, `/generate`, `/export`.\n- Ensures exact adherence to your team’s test case structure and writing conventions.\n- Supports full workflow from environment setup and parsing to test planning and TMS-ready export.\n- Integrates tools like `docling` and `openpyxl` for seamless document handling and output.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9f34a3689d7ab5613a1e7081f09a9519fd9c5a66ca6097a5cea69b2b189b7488"
+}

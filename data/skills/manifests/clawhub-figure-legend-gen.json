@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20793,
+  "uuid": "skill-clawhub-figure-legend-gen",
+  "skillKey": "clawhub-figure-legend-gen",
+  "name": "Figure Legend Gen",
+  "summary": "Generate standardized figure legends for scientific charts and graphs. Trigger when user uploads/requesting legend for research figures, academic papers, or...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.figure_legend_gen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Generate standardized figure legends for scientific charts and graphs",
+        "Trigger when user uploads/requesting legend for research figures, academic papers, or..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/figure-legend-gen@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "figure-legend-gen",
+      "url": "https://clawhub.ai/skills/figure-legend-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "figure-legend-gen",
+    "url": "https://clawhub.ai/skills/figure-legend-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/figure-legend-gen-5d0e82a04c7fdc34.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/figure-legend-gen@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-figure-legend-gen-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3cfc7b551d2124b7c81ca8091b1677db44dbe9eeac6ed2e4525db28e093df117",
+      "artifactSizeBytes": 2025
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T03:35:32.496Z"
+}

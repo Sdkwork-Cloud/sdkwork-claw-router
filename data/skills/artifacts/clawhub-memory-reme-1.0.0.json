@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-reme@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_reme",
+  "skill": {
+    "id": 19727,
+    "skillKey": "clawhub-memory-reme",
+    "name": "A powerful memory management system powered by ReMe that provides persistent cross-session memory, automatic user preference ap."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-reme",
+    "url": "https://clawhub.ai/skills/memory-reme",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-reme-ed62844ab4445905.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Memory management system powered by ReMe. Enables cross-session memory persistence, automatic user preference application, and intelligent context compressio..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "minybear",
+      "userId": "s17328a85q88qrm4k1c8pz7qqx85qxmh",
+      "displayName": "minybear",
+      "image": "https://avatars.githubusercontent.com/u/54667053?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 565,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772874798198,
+      "changelog": "memory-reme 1.0.0\n\n- Initial release of memory-reme skill.\n- Provides cross-session memory persistence, retrieval, and application of user preferences.\n- Supports automatic learning from user feedback and correction to prevent repeated mistakes.\n- Implements a three-level memory system: long-term, daily session summaries, and active in-memory context.\n- Enables intelligent context compression to maintain conversation continuity during long sessions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b2be9906cc21f3964a80ebd7f1a04de2a4bdafe6b6e5ad8b7b2f7ab8c1a63501"
+}

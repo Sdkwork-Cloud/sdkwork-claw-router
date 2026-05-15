@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibabacloud-polardbx-sql@0.0.2",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_polardbx_sql",
+  "skill": {
+    "id": 37386,
+    "skillKey": "clawhub-alibabacloud-polardbx-sql",
+    "name": "Alibabacloud Polardbx Sql"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-polardbx-sql",
+    "url": "https://clawhub.ai/skills/alibabacloud-polardbx-sql",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-polardbx-sql-39e4f612807cf181.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design partition schemes, select partition keys, create GSI, and write SQL for PolarDB-X 2.0 Enterprise Edition AUTO mode databases, handling PolarDB-X vs My..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdk-team",
+      "userId": "s173swjet2yrebzqrp6hjkvmy583mxef",
+      "displayName": "alibabacloud-skills-team",
+      "image": "https://avatars.githubusercontent.com/u/49941014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 197,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.2",
+      "createdAt": 1776750659581,
+      "changelog": "alibabacloud-polardbx-sql 0.0.2 Changelog\n\n- Updated partition scheme and table type design guidance for PolarDB-X 2.0 Enterprise Edition AUTO mode, with stricter multi-dimensional analysis of partition key selection.\n- Clarified strict applicability: refuse all requests for DRDS 1.0 or Standard Edition with specific response and hard stop.\n- Expanded and refined table type selection logic, especially for broadcast vs single tables and join behavior.\n- Enhanced GSI best practices, clearly indicating the required syntax and write workload considerations.\n- Improved partition design workflow to emphasize SQL access pattern data gathering as a prerequisite.\n- Documentation and trigger phrase updates for greater accuracy and clarity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6c6820ab4d92a953628cb29b9236c9f38ec000626d646f77532345d98d34828b"
+}

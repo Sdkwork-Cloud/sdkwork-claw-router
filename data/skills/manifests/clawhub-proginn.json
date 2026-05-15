@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73576,
+  "uuid": "skill-clawhub-proginn",
+  "skillKey": "clawhub-proginn",
+  "name": "程序员客栈任务",
+  "summary": "程序员客栈任务提供远程外包接单服务，支持完善简历、投标报价、发布技能服务及实名认证提升接单率。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proginn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shenghoo123-png",
+      "features": [
+        "程序员客栈任务提供远程外包接单服务，支持完善简历、投标报价、发布技能服务及实名认证提升接单率。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/proginn@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265226019?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "proginn",
+      "url": "https://clawhub.ai/skills/proginn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proginn",
+    "url": "https://clawhub.ai/skills/proginn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proginn-b4c6d040a53d42a1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/proginn@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-proginn-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:320073c2e816e49eea0415a98b93dea4962f90e1fd3282233f064a19c12c2b67",
+      "artifactSizeBytes": 1846
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T13:03:48.079Z"
+}

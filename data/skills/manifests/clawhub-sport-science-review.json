@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51260,
+  "uuid": "skill-clawhub-sport-science-review",
+  "skillKey": "clawhub-sport-science-review",
+  "name": "Sports Science Daily",
+  "summary": "Automated sports science intelligence engine — fetches 55+ sources (PubMed, expert blogs, wearable tech), filters noise, translates to Chinese, and syncs to...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sport_science_review",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "王琛",
+      "features": [
+        "Automated sports science intelligence engine — fetches 55+ sources (PubMed, expert blogs, weara."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sport-science-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255297550?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sport-science-review",
+      "url": "https://clawhub.ai/skills/sport-science-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sport-science-review",
+    "url": "https://clawhub.ai/skills/sport-science-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sport-science-review-481c8d603cf86d6a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sport-science-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sport-science-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6813d1fe8a5d2cf96f16c03f89771ba1829a01d875552828f75ad3731747c754",
+      "artifactSizeBytes": 2438
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T09:58:46.615Z"
+}

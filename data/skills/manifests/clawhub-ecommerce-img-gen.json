@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62072,
+  "uuid": "skill-clawhub-ecommerce-img-gen",
+  "skillKey": "clawhub-ecommerce-img-gen",
+  "name": "跨境电商图片生成工具",
+  "summary": "跨境电商图片生成工具。根据产品图生成各平台（Amazon / Shopee / TikTok Shop / Lazada / AliExpress / Temu / SHEIN）主图、详情页长图、生活场景图。内置6种视觉风格路由、6层合规审查（意图/品牌/版权/文化/平台/授权）。支持模型切换：nano-bana...",
+  "version": "2.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecommerce_img_gen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "howtimeschange",
+      "features": [
+        "跨境电商图片生成工具。根据产品图生成各平台（Amazon / Shopee / TikTok Shop / Lazada / AliExpress / Temu / SHEIN）主图、详情页."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ecommerce-img-gen@2.6.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4083536?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ecommerce-img-gen",
+      "url": "https://clawhub.ai/skills/ecommerce-img-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecommerce-img-gen",
+    "url": "https://clawhub.ai/skills/ecommerce-img-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecommerce-img-gen-9064b51d393964c9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ecommerce-img-gen@2.6.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ecommerce-img-gen-2.6.0.json",
+      "version": "2.6.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf2ebd6c090fbe186ec5190a0315880bfdc25756ed42eff7a249f0cb73cf13f7",
+      "artifactSizeBytes": 2119
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T12:44:56.367Z"
+}

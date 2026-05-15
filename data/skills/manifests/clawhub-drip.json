@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24904,
+  "uuid": "skill-clawhub-drip",
+  "skillKey": "clawhub-drip",
+  "name": "Drip",
+  "summary": "Drip integration. Manage Persons, Organizations, Deals, Activities, Notes, Files and more. Use when the user wants to interact with Drip data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.drip",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Drip integration",
+        "Manage Persons, Organizations, Deals, Activities, Notes, Files and more",
+        "Use when the user wants to interact with Drip data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/drip@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "drip",
+      "url": "https://clawhub.ai/skills/drip"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "drip",
+    "url": "https://clawhub.ai/skills/drip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/drip-66780f1fb0171bd8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/drip@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-drip-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d28c6348465951a4899ff72571b1a5532866e0af1e2c8d1b22ab3b1e72d79442",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:41:09.591Z"
+}

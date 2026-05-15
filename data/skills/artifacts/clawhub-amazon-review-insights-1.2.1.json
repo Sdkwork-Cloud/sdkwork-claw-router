@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-review-insights@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_review_insights",
+  "skill": {
+    "id": 23445,
+    "skillKey": "clawhub-amazon-review-insights",
+    "name": "amazon-review-insights"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-review-insights",
+    "url": "https://clawhub.ai/skills/amazon-review-insights",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-review-insights-d703e05d30f6f095.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Amazon product review intelligence analysis tool for global e-commerce sellers. Core capabilities:fetch Amazon reviews, AI-powered negative review analysis,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkbayes",
+      "userId": "s17fwdq5cjht8h2c0gskz67x8183jfka",
+      "displayName": "SparkBayes",
+      "image": "https://avatars.githubusercontent.com/u/18264797?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 341,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 19
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1777299367543,
+      "changelog": "amazon-review-insights v1.2.1\n\n- Updated documentation to clarify: \"Manual trigger analysis\" now only requires an API Key and does not require the desktop client.\n- No functional or code changes; documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:30592df50b06c3d2ebfeb39ad831bd8aeef0fbbb5b751f59878bc2a6162625bb"
+}

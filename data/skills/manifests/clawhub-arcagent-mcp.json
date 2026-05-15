@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20547,
+  "uuid": "skill-clawhub-arcagent-mcp",
+  "skillKey": "clawhub-arcagent-mcp",
+  "name": "ArcAgent MCP",
+  "summary": "Execute ArcAgent bounty workflows end-to-end via MCP tools. Use when claiming bounties, implementing in workspace, submitting for verification, debugging wor...",
+  "version": "0.1.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arcagent_mcp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "araujota",
+      "features": [
+        "Execute ArcAgent bounty workflows end-to-end via MCP tools",
+        "Use when claiming bounties, implementing in workspace, submitting for verification, debugging w."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/arcagent-mcp@0.1.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60159259?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "arcagent-mcp",
+      "url": "https://clawhub.ai/skills/arcagent-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arcagent-mcp",
+    "url": "https://clawhub.ai/skills/arcagent-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arcagent-mcp-536c859b6043fb7c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/arcagent-mcp@0.1.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-arcagent-mcp-0.1.12.json",
+      "version": "0.1.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:45f799848f2457a4adf6fbe68b72cd49a502626ae28dbd9f3f34cd660b88c507",
+      "artifactSizeBytes": 1943
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T02:38:27.391Z"
+}

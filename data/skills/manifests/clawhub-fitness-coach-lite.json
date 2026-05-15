@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64892,
+  "uuid": "skill-clawhub-fitness-coach-lite",
+  "skillKey": "clawhub-fitness-coach-lite",
+  "name": "Fitness Coach Lite",
+  "summary": "个人运动追踪教练skill — 低摩擦Telegram输入，训练记录+状态追踪+动态训练建议+日报周报月报。触发：用户发送任何运动/状态/查询相关消息时加载。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fitness_coach_lite",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "youhan2021",
+      "features": [
+        "个人运动追踪教练skill — 低摩擦Telegram输入，训练记录+状态追踪+动态训练建议+日报周报月报。触发：用户发送任何运动/状态/查询相关消息时加载。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fitness-coach-lite@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/134278858?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fitness-coach-lite",
+      "url": "https://clawhub.ai/skills/fitness-coach-lite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fitness-coach-lite",
+    "url": "https://clawhub.ai/skills/fitness-coach-lite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fitness-coach-lite-5642dc091b3c97cd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fitness-coach-lite@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-fitness-coach-lite-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3305661b061127b90c46f4ea85bc3c880bc488c97cb355a5da753cf8d61ade2b",
+      "artifactSizeBytes": 2168
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T03:18:03.445Z"
+}

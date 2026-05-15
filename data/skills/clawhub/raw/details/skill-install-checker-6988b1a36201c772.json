@@ -1,0 +1,41 @@
+{
+  "skill": {
+    "slug": "skill-install-checker",
+    "displayName": "Skill Install Checker",
+    "summary": "安装前验证二进制、环境变量、配置、OS 与 sandbox 条件，解释为什么此机不适合装。；use for skills, install, preflight workflows；do not use for 假装依赖已经满足, 直接修改系统环境.",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 219,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1773974456566,
+    "updatedAt": 1777621546489
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1773974456566,
+    "changelog": "Initial release of skill-install-checker.\n\n- Adds pre-installation checks for binaries, environment variables, configuration, OS, and sandbox compatibility.\n- Explains why a skill may not be suitable for installation on the current machine.\n- Outputs include: environment overview, missing dependencies, OS and sandbox risks, configuration gaps, installation and rollback advice.\n- Designed for reviewable, read-only, and auditable operation—will not alter system environment or simulate satisfied dependencies.\n- Includes boundaries for safe usage, requiring clear explanation for any risky or system-modifying actions.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": [
+      "darwin",
+      "linux",
+      "win32"
+    ],
+    "systems": null
+  },
+  "owner": {
+    "handle": "52yuanchangxing",
+    "userId": "s178sqjkywrs4vbnfcrr7wx7f583gef5",
+    "displayName": "vx：17605205782",
+    "image": "https://avatars.githubusercontent.com/u/39086567?v=4"
+  },
+  "moderation": null
+}

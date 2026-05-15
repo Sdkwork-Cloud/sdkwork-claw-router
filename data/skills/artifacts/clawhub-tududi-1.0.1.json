@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tududi@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tududi",
+  "skill": {
+    "id": 13407,
+    "skillKey": "clawhub-tududi",
+    "name": "tududi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tududi",
+    "url": "https://clawhub.ai/skills/tududi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tududi-cf0991f2b7ef058d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage tasks, projects, and notes in tududi (self-hosted task manager). Use for todo lists, task management, project organization."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chrisvel",
+      "userId": "publishers:chrisvel",
+      "displayName": "chrisvel",
+      "image": "https://avatars.githubusercontent.com/u/2040900?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1466,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770561421594,
+      "changelog": "- Clarified API route conventions, specifying plural for GET (list) and singular for create/update/delete.\n- Updated all create, update, and delete examples to use singular endpoints (e.g., /task, /project).\n- Switched update task method from PUT to PATCH; delete operations now require task/inbox UID.\n- Added support and documentation for tags in task creation and update.\n- Added examples for deleting tasks and inbox items.\n- Included tag and inbox API usage examples.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fc3d09154680eb7f86cd8b8e89c022a68b5351d6c3e3d4ab50bc613d690c93ab"
+}

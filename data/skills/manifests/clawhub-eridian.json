@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16406,
+  "uuid": "skill-clawhub-eridian",
+  "skillKey": "clawhub-eridian",
+  "name": "Eridian",
+  "summary": "Runtime security hardening for OpenClaw agents. Protects against prompt injection, data exfiltration, credential leaks, and unauthorized operations. Use when setting up agent security, performing security audits, protecting credentials, pr.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eridian",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EridianCarapace",
+      "features": [
+        "Runtime security hardening for OpenClaw agents",
+        "Protects against prompt injection, data exfiltration, credential leaks, and unauthorized operat.",
+        "Use when setting up agent security, performing security audits, protecting credentials, prevent.",
+        "Complements pre-installation skill scanners by hardening the agent itself at runtime."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eridian@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/228373334?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eridian",
+      "url": "https://clawhub.ai/skills/eridian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eridian",
+    "url": "https://clawhub.ai/skills/eridian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eridian-ad5517908a34383f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eridian@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-eridian-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dbe826b842a82e8689ab0115445608236c1e49abf8a16c8a9813fa22d8198b03",
+      "artifactSizeBytes": 2515
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T15:32:24.406Z"
+}

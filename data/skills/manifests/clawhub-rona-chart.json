@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32262,
+  "uuid": "skill-clawhub-rona-chart",
+  "skillKey": "clawhub-rona-chart",
+  "name": "Rona Chart",
+  "summary": "Decompose Return on Net Assets into component ratios. Use for asset efficiency analysis, capital structure review, and business model comparison.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rona_chart",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linuszz",
+      "features": [
+        "Decompose Return on Net Assets into component ratios",
+        "Use for asset efficiency analysis, capital structure review, and business model comparison."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rona-chart@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46770204?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rona-chart",
+      "url": "https://clawhub.ai/skills/rona-chart"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rona-chart",
+    "url": "https://clawhub.ai/skills/rona-chart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rona-chart-2af4bea864568b6f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rona-chart@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rona-chart-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:82ab43fcd5df3e0ec0066695bb385703cdd7ee02ea8743a3ab6169af499b000b",
+      "artifactSizeBytes": 2289
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T07:05:07.902Z"
+}

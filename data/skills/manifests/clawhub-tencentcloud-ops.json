@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63407,
+  "uuid": "skill-clawhub-tencentcloud-ops",
+  "skillKey": "clawhub-tencentcloud-ops",
+  "name": "TencentCloud OPS",
+  "summary": "提供腾讯云 CVM 云服务器和 COS 对象存储的创建、管理、成本控制及安全配置功能。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencentcloud_ops",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "superStupidBear",
+      "features": [
+        "提供腾讯云 CVM 云服务器和 COS 对象存储的创建、管理、成本控制及安全配置功能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tencentcloud-ops@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6762468?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tencentcloud-ops",
+      "url": "https://clawhub.ai/skills/tencentcloud-ops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencentcloud-ops",
+    "url": "https://clawhub.ai/skills/tencentcloud-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencentcloud-ops-5ece2ffb713b8101.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tencentcloud-ops@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tencentcloud-ops-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:760b1b2505420a5d9b182851560a9917dc293e5c19fcf551f94445b9cab2f4b1",
+      "artifactSizeBytes": 1885
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T15:13:28.334Z"
+}

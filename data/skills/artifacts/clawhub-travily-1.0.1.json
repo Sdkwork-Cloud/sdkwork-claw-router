@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/travily@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.travily",
+  "skill": {
+    "id": 59546,
+    "skillKey": "clawhub-travily",
+    "name": "travily_search_pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "travily",
+    "url": "https://clawhub.ai/skills/travily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/travily-e5b081236f06b56d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 Tavily AI 进行网络搜索、深度研究、内容提取。支持 search、research、extract 三个功能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "devang668",
+      "userId": "publishers:devang668",
+      "displayName": "DevenChen",
+      "image": "https://avatars.githubusercontent.com/u/182656221?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 742,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773595366068,
+      "changelog": "Initial release of Tavily Search Skill:\n\n- 提供三大核心功能：网络搜索（search）、深度研究（research）、URL 内容提取（extract）。\n- API Key 配置简单，支持免费注册获取。\n- 支持多参数自定义，包括结果数量、搜索深度、时间范围、模型选择输出格式等。\n- 提供命令行工具与详细使用示例，便于快速上手。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7479d9f61571e4d5e2861c9829f4852a96028a7982f7bd6380158532771f3ee1"
+}

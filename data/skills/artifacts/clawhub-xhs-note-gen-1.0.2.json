@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xhs-note-gen@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhs_note_gen",
+  "skill": {
+    "id": 72528,
+    "skillKey": "clawhub-xhs-note-gen",
+    "name": "采用强大模型，一键生成小红书图文，助力品牌曝光和转化。适用于用户希望“生成小红书笔记/小红书文案/笔记”时，通过API自动生成结果而非手动撰写。"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhs-note-gen",
+    "url": "https://clawhub.ai/skills/xhs-note-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhs-note-gen-a99eb1977798709f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小红书笔记生成服务，当用户要求\"生成小红书笔记/小红书文案/笔记\"并希望通过 小念AI来 生成结果而不是手动编写时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yc556600",
+      "userId": "s173vfkbng8755npqhtpsadjxs83js81",
+      "displayName": "yc556600",
+      "image": "https://avatars.githubusercontent.com/u/12397350?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 466,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 8,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773834260350,
+      "changelog": "- Updated the skill description for improved clarity and accuracy in Chinese.\n- No changes to workflow or functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1cc631b0a2e4d935b938f3f786bccb7d0b057e0b3eb4a1fd346d0e27fbf18ceb"
+}

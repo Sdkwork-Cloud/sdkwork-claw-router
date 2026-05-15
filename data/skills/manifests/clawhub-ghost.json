@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11477,
+  "uuid": "skill-clawhub-ghost",
+  "skillKey": "clawhub-ghost",
+  "name": "ghost cms",
+  "summary": "Manage Ghost CMS blog posts via Admin API. Supports creating, updating, deleting, and listing posts. Use when the user needs to programmatically manage Ghost...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ghost",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "manifold",
+      "features": [
+        "Manage Ghost CMS blog posts via Admin API",
+        "Supports creating, updating, deleting, and listing posts",
+        "Use when the user needs to programmatically manage Ghost..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ghost@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62403180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ghost",
+      "url": "https://clawhub.ai/skills/ghost"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ghost",
+    "url": "https://clawhub.ai/skills/ghost",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ghost-ead6ef03d61ee60c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ghost@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-ghost-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:16b3def452320bf8d740fa29c300d48e75b1592d2b65a5c1383d5650a5a33c03",
+      "artifactSizeBytes": 2216
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T04:30:34.598Z"
+}

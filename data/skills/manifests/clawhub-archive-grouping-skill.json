@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73602,
+  "uuid": "skill-clawhub-archive-grouping-skill",
+  "skillKey": "clawhub-archive-grouping-skill",
+  "name": "档案整理归档组卷技能",
+  "summary": "辅助高校档案人员按事由原则分类归档文件，确定分类号、保管期限和档号，生成规范组卷方案供审阅。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.archive_grouping_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yangyunxiao-ai",
+      "features": [
+        "辅助高校档案人员按事由原则分类归档文件，确定分类号、保管期限和档号，生成规范组卷方案供审阅。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/archive-grouping-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261404537?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "archive-grouping-skill",
+      "url": "https://clawhub.ai/skills/archive-grouping-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "archive-grouping-skill",
+    "url": "https://clawhub.ai/skills/archive-grouping-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/archive-grouping-skill-f78a964341279833.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/archive-grouping-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-archive-grouping-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fff0f3e587843824e8c4856d9bf3e5ec94f324191b5b231ec0d8e88070309fa6",
+      "artifactSizeBytes": 2342
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T02:56:27.679Z"
+}

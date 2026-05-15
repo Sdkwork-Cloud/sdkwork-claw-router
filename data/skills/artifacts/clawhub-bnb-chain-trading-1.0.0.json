@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bnb-chain-trading@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bnb_chain_trading",
+  "skill": {
+    "id": 49646,
+    "skillKey": "clawhub-bnb-chain-trading",
+    "name": "BNB Chain trading"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bnb-chain-trading",
+    "url": "https://clawhub.ai/skills/bnb-chain-trading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bnb-chain-trading-f88b5a83d91cfb56.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent trading on BNB Chain. Limit, DCA, stop-loss & take-profit. Non-custodial, zero fees."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shawn-orbs",
+      "userId": "s17aywxhkxcjqdcrkff83e8f35869t1k",
+      "displayName": "Shawn-Orbs",
+      "image": "https://avatars.githubusercontent.com/u/111438333?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 72,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778145999201,
+      "changelog": "Initial release of Spot Advanced Swap Orders for gasless non-custodial EVM swaps.\n\n- Supports advanced order types: market, limit, TWAP, stop-loss, take-profit, and delayed-start swaps on EVM chains.\n- Covers param normalization, order-shape selection, typed-data generation, approval guidance, signing, submission, querying, and cancellation workflows.\n- Compatible with multiple chains: Ethereum, BNB Chain, Polygon, Sonic, Base, Arbitrum One, Avalanche, and Linea, each with their specific adapter.\n- Instruction-only design: assemble, sign, and submit order payloads locally, with reference documentation for each workflow step.\n- Provides authoritative chain and relay endpoint listings and clear guardrails on usage and parameter handling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:98db956aeb5dd69343fa3a8aad6d3c7d11032e254d3b304efbcf6a1a2ee18d07"
+}

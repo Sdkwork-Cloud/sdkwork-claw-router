@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72015,
+  "uuid": "skill-clawhub-fullask",
+  "skillKey": "clawhub-fullask",
+  "name": "fullask",
+  "summary": "当用户查询物流指数总分时，输出物流指数数据、行业排名、数据分析、定位异常指数、输出运营建议",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fullask",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "a-vb",
+      "features": [
+        "当用户查询物流指数总分时，输出物流指数数据、行业排名、数据分析、定位异常指数、输出运营建议"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fullask@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82512088?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fullask",
+      "url": "https://clawhub.ai/skills/fullask"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fullask",
+    "url": "https://clawhub.ai/skills/fullask",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fullask-4493929dbebf57e3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fullask@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fullask-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:44a7b4050056e38e5f9e96e559d43c3ebd38b3b715d7d97cbb497f8649f652a8",
+      "artifactSizeBytes": 2235
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T10:12:15.935Z"
+}

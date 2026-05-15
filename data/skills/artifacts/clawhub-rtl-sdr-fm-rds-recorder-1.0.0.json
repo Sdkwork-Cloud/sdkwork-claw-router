@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rtl-sdr-fm-rds-recorder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rtl_sdr_fm_rds_recorder",
+  "skill": {
+    "id": 37245,
+    "skillKey": "clawhub-rtl-sdr-fm-rds-recorder",
+    "name": "RTL-SDR WFM RDS Decoder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rtl-sdr-fm-rds-recorder",
+    "url": "https://clawhub.ai/skills/rtl-sdr-fm-rds-recorder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rtl-sdr-fm-rds-recorder-af0bd44a4e8345b5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Record broadcast FM stations from an RTL-SDR using a reliable IQ-capture workflow with offline WBFM demodulation, RDS station-name extraction, and automatic..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "igrikxd",
+      "userId": "s173asvy0yggnvncc9zpq5q33984bw70",
+      "displayName": "Ihar Yatsevich",
+      "image": "https://avatars.githubusercontent.com/u/23216594?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775764033918,
+      "changelog": "Initial release of rtl-sdr-fm-rds-recorder.\n\n- Record broadcast FM stations from RTL-SDR with a reliable workflow: IQ capture, RDS station-name extraction, offline WBFM demodulation, and MP3 export.\n- Supports scanning the FM band, decoding station names, and automatic MP3 file naming (station/frequency/time).\n- Provides staged workflow: scan, decode RDS, then record.\n- Linux-only, requires rtl_sdr, redsea, ffmpeg, python3, numpy, and scipy.\n- Detailed stdout outputs (JSON or plain text) for each mode; integrates file delivery for platforms like Telegram.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cd21559ec483a7dc182fbc8044fc7d85ea51a6ba960a5d440c3b7d8c37705000"
+}

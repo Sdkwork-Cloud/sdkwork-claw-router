@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68609,
+  "uuid": "skill-clawhub-autoclip-pro",
+  "skillKey": "clawhub-autoclip-pro",
+  "name": "AutoClip Pro",
+  "summary": "视频批量处理技能包 - 一键处理100个视频，自动剪辑、加字幕、配乐、调风格。适合自媒体从业者、短视频创作者。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autoclip_pro",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gdp6539",
+      "features": [
+        "视频批量处理技能包",
+        "一键处理100个视频，自动剪辑、加字幕、配乐、调风格。适合自媒体从业者、短视频创作者。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/autoclip-pro@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/198542148?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "autoclip-pro",
+      "url": "https://clawhub.ai/skills/autoclip-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autoclip-pro",
+    "url": "https://clawhub.ai/skills/autoclip-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autoclip-pro-7d95191b4b2d8d54.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/autoclip-pro@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-autoclip-pro-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2a27b55d8382ea138f44b1ddd35167cc24129c258ce9f0766a09aab4841822c1",
+      "artifactSizeBytes": 1872
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T04:26:13.503Z"
+}

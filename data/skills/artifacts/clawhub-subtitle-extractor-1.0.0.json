@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/subtitle-extractor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subtitle_extractor",
+  "skill": {
+    "id": 32386,
+    "skillKey": "clawhub-subtitle-extractor",
+    "name": "subtitle-extractor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subtitle-extractor",
+    "url": "https://clawhub.ai/skills/subtitle-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subtitle-extractor-eab99087dd45d3a5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Subtitle extractor for Bilibili, YouTube, Xiaohongshu, Douyin, and local files. Extracts native subtitles or Whisper transcription in original format. Agent..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "poltawa",
+      "userId": "s173t8hs4fv0q4a5tkwaz6wnb583jdea",
+      "displayName": "poltawa",
+      "image": "https://avatars.githubusercontent.com/u/48548539?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774435758860,
+      "changelog": "Subtitle Extractor 1.0.0 – Initial Release\n\n- Extracts subtitles from Bilibili, YouTube, Xiaohongshu, Douyin, and local files.\n- Supports both native subtitle extraction and Whisper transcription fallback.\n- Handles dependency checks (yt-dlp, ffmpeg, faster-whisper) and provides user guidance for missing components.\n- Manages Bilibili cookies securely via auto-discovery in the skill directory.\n- Outputs subtitle file path, video title, and author; agent saves and processes per user request.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ba4ec9dbffa1a9f2c006b8060fb8c9148008cb9fea3cce3676d4f53f991093bb"
+}

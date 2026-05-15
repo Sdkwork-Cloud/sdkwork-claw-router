@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/last30days@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.last30days",
+  "skill": {
+    "id": 8522,
+    "skillKey": "clawhub-last30days",
+    "name": "Last 30 Days"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "last30days",
+    "url": "https://clawhub.ai/skills/last30days",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/last30days-cd3d89d800ee2b34.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Research any topic from the last 30 days on Reddit + X + Web, synthesize findings, and write copy-paste-ready prompts. Use when the user wants recent social/web research on a topic, asks \"what are people saying about X\", or wants to learn."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zats",
+      "userId": "publishers:zats",
+      "displayName": "zats",
+      "image": "https://avatars.githubusercontent.com/u/2688806?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 8642,
+      "installsAllTime": 113,
+      "installsCurrent": 100,
+      "stars": 28,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769401190039,
+      "changelog": "Initial release: Research any topic from last 30 days via Reddit + X + Web",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c19d6cd4e84d014885334a1c469e4455f31e420386580c878dc4ad2e41fe0a8b"
+}

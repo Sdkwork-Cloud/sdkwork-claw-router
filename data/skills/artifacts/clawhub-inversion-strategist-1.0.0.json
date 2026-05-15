@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/inversion-strategist@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inversion_strategist",
+  "skill": {
+    "id": 11751,
+    "skillKey": "clawhub-inversion-strategist",
+    "name": "Inversion Strategist"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inversion-strategist",
+    "url": "https://clawhub.ai/skills/inversion-strategist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inversion-strategist-0cfd84dbf41ce0f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Flip problems upside down - instead of \"how to succeed\", ask \"how to definitely fail\" then avoid those paths. Use when user says \"invert\", \"inversion\", \"flip it\", \"opposite approach\", \"how would this fail\", \"avoid failure\", \"what NOT to do."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "artyomx33",
+      "userId": "publishers:artyomx33",
+      "displayName": "artyomx33",
+      "image": "https://avatars.githubusercontent.com/u/130623863?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1914,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769359795341,
+      "changelog": "Initial release - Munger method: guarantee failure then avoid. By Artem Tolmachev, Teddy Kids, TISA & Claude.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:14a6677d851412f9578cba345b7acdfbffb724929060548c08b8333e78f0df18"
+}

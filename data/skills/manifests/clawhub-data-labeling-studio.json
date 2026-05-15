@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46621,
+  "uuid": "skill-clawhub-data-labeling-studio",
+  "skillKey": "clawhub-data-labeling-studio",
+  "name": "Data Labeling Studio",
+  "summary": "Intelligent toolkit for annotating images, text, audio, and video with active learning, quality control, and exporting labeled datasets.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_labeling_studio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lv Lancer",
+      "features": [
+        "Intelligent toolkit for annotating images, text, audio, and video with active learning, quality."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/data-labeling-studio@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29176686?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "data-labeling-studio",
+      "url": "https://clawhub.ai/skills/data-labeling-studio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-labeling-studio",
+    "url": "https://clawhub.ai/skills/data-labeling-studio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-labeling-studio-cfffbe5ef58a208c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/data-labeling-studio@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-data-labeling-studio-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6069339cd5be87aa15c96a006f18a90b819bd898c48976bac9f5b0f5b2043e12",
+      "artifactSizeBytes": 2321
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T06:52:24.468Z"
+}

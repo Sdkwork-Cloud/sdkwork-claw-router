@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9599,
+  "uuid": "skill-clawhub-zhihu",
+  "skillKey": "clawhub-zhihu",
+  "name": "Zhihu",
+  "summary": "Manage Zhihu AI Bot to publish, like/unlike, comment, delete comments, and fetch ring or comment details using Zhihu API credentials.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhihu",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kiang",
+      "features": [
+        "Manage Zhihu AI Bot to publish, like/unlike, comment, delete comments, and fetch ring or commen."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zhihu@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6965141?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zhihu",
+      "url": "https://clawhub.ai/skills/zhihu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhihu",
+    "url": "https://clawhub.ai/skills/zhihu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhihu-938c2e85cbd73265.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zhihu@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-zhihu-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d732b6c4e5a22f9f03f7e127ebd8bcf986a33195f9e272c82510a87dd28990f3",
+      "artifactSizeBytes": 1933
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T12:53:37.151Z"
+}

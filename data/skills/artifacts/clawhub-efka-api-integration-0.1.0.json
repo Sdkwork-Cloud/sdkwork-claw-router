@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/efka-api-integration@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.efka_api_integration",
+  "skill": {
+    "id": 42328,
+    "skillKey": "clawhub-efka-api-integration",
+    "name": "Efka Api Integration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "efka-api-integration",
+    "url": "https://clawhub.ai/skills/efka-api-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/efka-api-integration-7947bc03a1960399.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Greek social security (EFKA) integration — employee records, contribution calculations, APD declarations. Human approval for submissions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "satoshistackalotto",
+      "userId": "publishers:satoshistackalotto",
+      "displayName": "Stems",
+      "image": "https://avatars.githubusercontent.com/u/70470779?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 789,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771661582570,
+      "changelog": "Initial release: Comprehensive integration with Greek social security (EFKA) for payroll and compliance workflows.\n\n- Automates employee records, contribution calculations, and APD declarations for Greek businesses.\n- All government submissions require human approval; supports four-eyes workflow.\n- Provides file-based processing, with robust error handling and disaster recovery.\n- Payroll operations work offline; EFKA credentials only needed for declaration submissions.\n- Optional Slack notifications and calendar deadline syncing supported.\n- Includes OpenClaw command references and detailed file system organization for production use.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:10eef0e5443cae78d44f63b5071b82156c64e890f1dbd7a6188997696ac8aa02"
+}

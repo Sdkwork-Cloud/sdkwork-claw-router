@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ubuntu-browser-session@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ubuntu_browser_session",
+  "skill": {
+    "id": 23146,
+    "skillKey": "clawhub-ubuntu-browser-session",
+    "name": "Ubuntu Browser Session"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ubuntu-browser-session",
+    "url": "https://clawhub.ai/skills/ubuntu-browser-session",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ubuntu-browser-session-ea19f7a8aed57213.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when a request needs a real Ubuntu Server browser session with durable site login reuse, bounded manual login recovery, or host-side page inspection for..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linsuisheng034",
+      "userId": "publishers:linsuisheng034",
+      "displayName": "GoGoLin",
+      "image": "https://avatars.githubusercontent.com/u/47466606?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 440,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773987089509,
+      "changelog": "Add forum/search-result enhancements (topic-links, click-link-text), safe profile lock cleanup, visibility filtering, version tracking in SKILL.md frontmatter.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:094125a18f3f2c6b0b125e143e2defabccf3c50768b6dd17aee5e194e5c1c6f0"
+}

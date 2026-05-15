@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33027,
+  "uuid": "skill-clawhub-structurizr",
+  "skillKey": "clawhub-structurizr",
+  "name": "Structurizr",
+  "summary": "Structurizr integration. Manage data, records, and automate workflows. Use when the user wants to interact with Structurizr data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.structurizr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Structurizr integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Structurizr data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/structurizr@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "structurizr",
+      "url": "https://clawhub.ai/skills/structurizr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "structurizr",
+    "url": "https://clawhub.ai/skills/structurizr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/structurizr-934460a2cf020231.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/structurizr@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-structurizr-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:50af66057d1c8d2756d9ff8f1462a0b6eda6cb3dac35d008f40a38bea74edd5c",
+      "artifactSizeBytes": 1857
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:48:01.744Z"
+}

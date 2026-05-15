@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49919,
+  "uuid": "skill-clawhub-skillboss-tiny",
+  "skillKey": "clawhub-skillboss-tiny",
+  "name": "Skillboss",
+  "summary": "Multi-AI gateway. 50+ models: chat, image, video, TTS, music, search.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skillboss_tiny",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MarjorieBroad",
+      "features": [
+        "Multi-AI gateway",
+        "50+ models: chat, image, video, TTS, music, search."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skillboss-tiny@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260425366?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skillboss-tiny",
+      "url": "https://clawhub.ai/skills/skillboss-tiny"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skillboss-tiny",
+    "url": "https://clawhub.ai/skills/skillboss-tiny",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skillboss-tiny-d1bf6d45940162c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skillboss-tiny@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skillboss-tiny-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2c5d155d2864a0a83510f3f4128a21fdd0105cf1de0b52768d5335fc675b3d30",
+      "artifactSizeBytes": 2196
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T08:16:09.166Z"
+}

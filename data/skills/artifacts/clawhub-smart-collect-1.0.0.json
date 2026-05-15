@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smart-collect@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_collect",
+  "skill": {
+    "id": 61880,
+    "skillKey": "clawhub-smart-collect",
+    "name": "smart-collect"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-collect",
+    "url": "https://clawhub.ai/skills/smart-collect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-collect-9178680c2a005e58.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "分析和总结URL链接内容，并保存到obsidian中，同时定期提醒复习"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nbutmickey",
+      "userId": "s171gbw9ra5wd34b08ajfkq4ah841s1q",
+      "displayName": "mickey",
+      "image": "https://avatars.githubusercontent.com/u/30484035?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 337,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773987186691,
+      "changelog": "Smart Collect 1.0.0 初始版本发布。\n\n- 支持自动抓取 GitHub、微信公众号、小红书及普通网页，并生成摘要、标签与分类\n- 集成艾宾浩斯遗忘曲线回顾引擎，定时发送复习提醒\n- 收藏内容以 Markdown 格式保存到 Obsidian 路径\n- 支持自然语言操作（如推迟、归档、标签管理）\n- 提供 OpenClaw cron 配置实现每日定时复习提醒",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c4ba5a8b6b50e1cd980a59239090bc29d8f3de6f64ef225c202ceb80f64345ba"
+}

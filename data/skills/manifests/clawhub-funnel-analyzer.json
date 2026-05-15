@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59009,
+  "uuid": "skill-clawhub-funnel-analyzer",
+  "skillKey": "clawhub-funnel-analyzer",
+  "name": "Funnel Analyzer",
+  "summary": "漏斗分析工具。创建转化漏斗、诊断流失环节、行业对标、优化建议、分析报告、漏斗对比。Funnel analyzer with conversion funnels, diagnostics, benchmarks, optimization, reports.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.funnel_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "漏斗分析工具。创建转化漏斗、诊断流失环节、行业对标、优化建议、分析报告、漏斗对比。Funnel analyzer with conversion funnels, diagnostics,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/funnel-analyzer@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "funnel-analyzer",
+      "url": "https://clawhub.ai/skills/funnel-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "funnel-analyzer",
+    "url": "https://clawhub.ai/skills/funnel-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/funnel-analyzer-51ee22d0885730c9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/funnel-analyzer@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-funnel-analyzer-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:390da90a2ea0637d47ff96ddab5d1ccaf045ee71d3f05275aa7ac426f8f49027",
+      "artifactSizeBytes": 1990
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T18:53:09.615Z"
+}

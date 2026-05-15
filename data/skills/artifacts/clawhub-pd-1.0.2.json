@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pd@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pd",
+  "skill": {
+    "id": 50711,
+    "skillKey": "clawhub-pd",
+    "name": "feel good productivity + atom habits"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pd",
+    "url": "https://clawhub.ai/skills/pd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pd-8d1a978e876ce557.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Personal Development System — the unified self-improvement and productivity operating system. Integrates productivity frameworks, energy management (Feel-Goo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "starsbottle",
+      "userId": "s17eknb0k2rygefjnxz81g3gn58439w7",
+      "displayName": "starsbottle",
+      "image": "https://avatars.githubusercontent.com/u/153338658?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 283,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776585145941,
+      "changelog": "- Integrates \"aim-breaker\" task breakdown system, enabling four-level project decomposition (Project → Module → Task chunk) with bidirectional linking.\n- Adds new triggers for task breakdown in both Chinese and English, supporting phrases like “拆解这个项目”, “分解任务”, “做计划”, and “plan this project”.\n- Expands system description and usage to cover explicit planning and breakdown scenarios.\n- No file changes detected in this release; documentation and configuration only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:48a3e39dd70948697f4f8062b4dcb770037c3f723eba7790f742a5dde7f522f0"
+}

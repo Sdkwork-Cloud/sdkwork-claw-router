@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nevermined-payments@0.3.3",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nevermined_payments",
+  "skill": {
+    "id": 14125,
+    "skillKey": "clawhub-nevermined-payments",
+    "name": "Nevermined Payments"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nevermined-payments",
+    "url": "https://clawhub.ai/skills/nevermined-payments",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nevermined-payments-51bf784a0a7241f9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Integrates Nevermined payment infrastructure into AI agents, MCP servers, Google A2A agents, and REST APIs. Handles x402 protocol, credit billing, payment pl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nevermined",
+      "userId": "s174z5ajcvvg9kkfjvwdva7y99867y0d",
+      "displayName": "Nevermined",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 971,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.3.3",
+      "createdAt": 1778073239455,
+      "changelog": "Unpin SDK install commands — keeping pinned versions in docs creates ongoing maintenance burden every SDK release. The 'Verified against' header still records the SDK versions the skill was authored against.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:100f90345e55cca14bddb74590d1af9b7d3772dff973a10588dbb802cf569c08"
+}

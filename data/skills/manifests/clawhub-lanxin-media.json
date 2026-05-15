@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64943,
+  "uuid": "skill-clawhub-lanxin-media",
+  "skillKey": "clawhub-lanxin-media",
+  "name": "Lanxin Media",
+  "summary": "蓝信官方媒体发送能力，支持发送图片、文件。使用 <lximg> <lxfile> 标签发送，系统自动解析上传。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lanxin_media",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iamdacai",
+      "features": [
+        "蓝信官方媒体发送能力，支持发送图片、文件。使用 <lximg> <lxfile> 标签发送，系统自动解析上传。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lanxin-media@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/197450145?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lanxin-media",
+      "url": "https://clawhub.ai/skills/lanxin-media"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lanxin-media",
+    "url": "https://clawhub.ai/skills/lanxin-media",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lanxin-media-3ab3f543f7ab8f46.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lanxin-media@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lanxin-media-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:607a0bd53d1a8bbff7a1eebdf3df078619aa1a32115e1d574ca663bdcbf6fd23",
+      "artifactSizeBytes": 2271
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T09:18:33.003Z"
+}

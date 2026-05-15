@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rf-circuit-design@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rf_circuit_design",
+  "skill": {
+    "id": 73047,
+    "skillKey": "clawhub-rf-circuit-design",
+    "name": "射频电路设计与调试"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rf-circuit-design",
+    "url": "https://clawhub.ai/skills/rf-circuit-design",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rf-circuit-design-5c7d03b057b2483d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供射频电路设计与调试的专业指导。当用户询问射频电路原理图设计、PCB布局、阻抗匹配、调试技巧等问题时调用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mssnzxm",
+      "userId": "s178qb8q1v89cx2p2gxgah65rn83mkxn",
+      "displayName": "mssnzxm",
+      "image": "https://avatars.githubusercontent.com/u/3816752?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 388,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774495818083,
+      "changelog": "**This version brings enhanced practical details and reference tables to key RF circuit design sections.**\n\n- Added typical frequency bands, materials, and parameter reference tables for quick design selection.\n- Expanded practical calculation cases and in-depth examples in impedance matching and bias circuit chapters.\n- Refined design process, Schematic, and PCB guidelines for real-world scenarios.\n- Included reference component values and dimension charts for microstrip and coplanar waveguides.\n- Improved formatting and step-by-step guidance, making the skill more actionable for circuit designers.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6cd21552a4b54119f9297f63c262093718b274bbe03b7ed4e46a7102e7886f7a"
+}

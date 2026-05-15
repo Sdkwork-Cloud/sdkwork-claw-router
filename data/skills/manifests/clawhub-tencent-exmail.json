@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66009,
+  "uuid": "skill-clawhub-tencent-exmail",
+  "skillKey": "clawhub-tencent-exmail",
+  "name": "tencent-exmail",
+  "summary": "腾讯企业邮箱（exmail.qq.com）收发邮件技能。当用户想要发送邮件、查看收件箱、搜索邮件、下载附件、实时监听新邮件、或对腾讯企业邮箱进行任何邮件操作时触发。支持 IMAP/SMTP 协议，SSL 加密，附件上传/下载，邮件搜索，IMAP IDLE 实时推送通知。关键词：企业邮箱、exmail、腾讯邮件、发...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencent_exmail",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nopassword2000",
+      "features": [
+        "腾讯企业邮箱（exmail.qq.com）收发邮件技能。当用户想要发送邮件、查看收件箱、搜索邮件、下载附件、实时监听新邮件、或对腾讯企业邮箱进行任何邮件操作时触发。支持 IMAP/SMTP."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tencent-exmail@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17892472?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tencent-exmail",
+      "url": "https://clawhub.ai/skills/tencent-exmail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencent-exmail",
+    "url": "https://clawhub.ai/skills/tencent-exmail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencent-exmail-cddfb0252438b94c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tencent-exmail@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tencent-exmail-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:caf579ac0ba3e76a3e3db017ab95d1cf56422d63945e3b8dc848b3c322ed022f",
+      "artifactSizeBytes": 2126
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T09:11:26.036Z"
+}

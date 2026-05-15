@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33441,
+  "uuid": "skill-clawhub-lsp-assist",
+  "skillKey": "clawhub-lsp-assist",
+  "name": "Lsp Assist",
+  "summary": "Language Server Protocol integration for OpenClaw agents. Enables precise code navigation: go-to-definition, find-references, hover type info, diagnostics, a...",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lsp_assist",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zgjq",
+      "features": [
+        "Language Server Protocol integration for OpenClaw agents",
+        "Enables precise code navigation: go-to-definition, find-references, hover type info, diagnostic."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lsp-assist@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32673211?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lsp-assist",
+      "url": "https://clawhub.ai/skills/lsp-assist"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lsp-assist",
+    "url": "https://clawhub.ai/skills/lsp-assist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lsp-assist-39dfb180ed1513c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lsp-assist@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-lsp-assist-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fa7165653861d4dbda35bcf6c31ac54aeb450fef8b8ccd1875ae1cbb905f7e0c",
+      "artifactSizeBytes": 1966
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T11:40:40.097Z"
+}

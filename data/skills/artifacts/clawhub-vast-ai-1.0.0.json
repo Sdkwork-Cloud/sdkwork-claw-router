@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vast-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vast_ai",
+  "skill": {
+    "id": 12909,
+    "skillKey": "clawhub-vast-ai",
+    "name": "Vast Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vast-ai",
+    "url": "https://clawhub.ai/skills/vast-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vast-ai-60b204769721b0fb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provision and manage on-demand GPUs on VAST.ai, including search by GPU and price, renting containers, retrieving SSH, and checking account balance."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sschepis",
+      "userId": "publishers:sschepis",
+      "displayName": "sschepis",
+      "image": "https://avatars.githubusercontent.com/u/1401279?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1492,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770277610869,
+      "changelog": "Initial release of the VAST.ai GPU Rental skill.\n\n- Provision on-demand GPU infrastructure via VAST.ai.\n- Search for machines by GPU type and price.\n- Rent containers on selected offers.\n- Retrieve SSH connection info for active containers.\n- Check account credit balance and hourly burn rate.\n- Implements step-by-step workflow, including pre-flight balance checks and user warnings for low credit.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c546e52b0753d51c8c3b18c22da32700a755f6224b4a450e3111cd26908da9cc"
+}

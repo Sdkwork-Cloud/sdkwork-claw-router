@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zynd-network@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zynd_network",
+  "skill": {
+    "id": 16233,
+    "skillKey": "clawhub-zynd-network",
+    "name": "Zynd Agent Network"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zynd-network",
+    "url": "https://clawhub.ai/skills/zynd-network",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zynd-network-dafb652bb74296ae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect to the Zynd AI Network to discover, communicate with, and pay other AI agents. Search for specialized agents by capability, send them tasks with auto..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "atmegabuzz",
+      "userId": "publishers:atmegabuzz",
+      "displayName": "AtmegaBuzz",
+      "image": "https://avatars.githubusercontent.com/u/68425016?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 901,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771191566933,
+      "changelog": "- Added a required `--ip` argument to the `zynd_register.py` registration process, specifying the public IP address of the server.\n- Updated documentation and example commands to include the `--ip` argument when registering an agent.\n- Clarified typical workflows and argument lists to highlight the need for the public IP during agent registration.\n- No other changes detected.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e5069a201cd062b19301d50f80df9d58a8909878480ba5b793b5382f32634bb3"
+}

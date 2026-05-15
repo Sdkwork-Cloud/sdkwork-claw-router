@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/latex-writer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.latex_writer",
+  "skill": {
+    "id": 19835,
+    "skillKey": "clawhub-latex-writer",
+    "name": "LaTeX Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "latex-writer",
+    "url": "https://clawhub.ai/skills/latex-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/latex-writer-fff92efb5a55023a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate professional LaTeX documents from templates. Supports academic papers (IEEE/ACM), Chinese thesis (CTeX), CVs (moderncv), and custom templates. Auto-..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alicepub",
+      "userId": "publishers:alicepub",
+      "displayName": "alicepub",
+      "image": "https://avatars.githubusercontent.com/u/9563330?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 488,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772941006946,
+      "changelog": "Initial release with IEEE/ACM/CTeX/ModernCV template support",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c47550eb01e50267495211ef811caad6aa70f31eea04825015f39ae1010366bb"
+}

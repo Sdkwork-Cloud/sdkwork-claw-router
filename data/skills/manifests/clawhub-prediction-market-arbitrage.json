@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15125,
+  "uuid": "skill-clawhub-prediction-market-arbitrage",
+  "skillKey": "clawhub-prediction-market-arbitrage",
+  "name": "Prediction Market Arbitrage",
+  "summary": "Orchestrates monitoring, market odds, and execution proxy tools to detect news-market price gaps and emit arbitrage alerts with optional trade plans.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prediction_market_arbitrage",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hagen Hoferichter",
+      "features": [
+        "Orchestrates monitoring, market odds, and execution proxy tools to detect news-market price gap."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prediction-market-arbitrage@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12556763?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prediction-market-arbitrage",
+      "url": "https://clawhub.ai/skills/prediction-market-arbitrage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prediction-market-arbitrage",
+    "url": "https://clawhub.ai/skills/prediction-market-arbitrage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prediction-market-arbitrage-49347edfd61d5c21.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prediction-market-arbitrage@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-prediction-market-arbitrage-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:70d2a17b8cd4ae86636625345d5ce3e1c0d55fad13f862c082e1d1d6a5619bd5",
+      "artifactSizeBytes": 2541
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T13:27:54.811Z"
+}

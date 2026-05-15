@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42789,
+  "uuid": "skill-clawhub-binance-p2p",
+  "skillKey": "clawhub-binance-p2p",
+  "name": "Binance P2p",
+  "summary": "Binance P2P trading assistant. Use when asked about P2P prices, ads, payment methods, or P2P order history. NOT for spot/futures prices or exchange trading.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.binance_p2p",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dexploarer",
+      "features": [
+        "Binance P2P trading assistant",
+        "Use when asked about P2P prices, ads, payment methods, or P2P order history",
+        "NOT for spot/futures prices or exchange trading."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/binance-p2p@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/211557447?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "binance-p2p",
+      "url": "https://clawhub.ai/skills/binance-p2p"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "binance-p2p",
+    "url": "https://clawhub.ai/skills/binance-p2p",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/binance-p2p-53a2209bec9c9e75.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/binance-p2p@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-binance-p2p-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e76d8427ab00be8d4f9c7a2f488fa44c326383de0ada1215cc8332976890a346",
+      "artifactSizeBytes": 1887
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T14:36:30.541Z"
+}

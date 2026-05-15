@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/arena-system@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arena_system",
+  "skill": {
+    "id": 18738,
+    "skillKey": "clawhub-arena-system",
+    "name": "Arena System"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arena-system",
+    "url": "https://clawhub.ai/skills/arena-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arena-system-454d51d28e6d9cd4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adversarial self-improvement for AI agents. Reduces hallucinations through Agent vs Anti-Agent debate loops."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zedit42",
+      "userId": "publishers:zedit42",
+      "displayName": "Zedit42",
+      "image": "https://avatars.githubusercontent.com/u/87221822?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 465,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771890955233,
+      "changelog": "Initial release: adversarial self-improvement for AI agents",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:592c581b1e5556ed7067c8d127c6a26591ff4f99084983163d4975b22c1d2b2d"
+}

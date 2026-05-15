@@ -64,8 +64,8 @@ test("console dashboard service reads overview data from generated app SDK", asy
   await withAppSdkFetch(
     (url) => {
       const requestUrl = new URL(url, "http://localhost");
-      assert.equal(requestUrl.pathname, "/app/v3/api/router/dashboard/overview");
-      assert.equal(requestUrl.searchParams.get("keyword"), "daily");
+      assert.equal(requestUrl.pathname, "/app/v3/api/ai/dashboard/overview");
+      assert.equal(requestUrl.searchParams.get("time_range"), "daily");
       return {
         summary: {
           availableCredits: "125.5",
@@ -110,7 +110,7 @@ test("console dashboard service reads overview data from generated app SDK", asy
       const result = await DashboardService.fetchDashboardOverview("daily");
 
       assert.equal(captured.length, 1);
-      assert.match(captured[0].url, /keyword=daily/);
+      assert.match(captured[0].url, /time_range=daily/);
       assert.equal(result.summary.availableCredits, 125.5);
       assert.equal(result.chartData[0].time, "2026-05-05");
       assert.equal(result.topModels[0].name, "gpt-4o-mini");
@@ -129,7 +129,7 @@ test("console dashboard service fails closed when app SDK returns malformed over
     await withAppSdkFetch(
       (url) => {
         const requestUrl = new URL(url, "http://localhost");
-        if (requestUrl.pathname === "/app/v3/api/router/dashboard/overview") {
+        if (requestUrl.pathname === "/app/v3/api/ai/dashboard/overview") {
           return {
             summary: {
               availableCredits: "125.5",
@@ -163,7 +163,7 @@ test("console dashboard service fails closed when app SDK omits required overvie
   await withAppSdkFetch(
     (url) => {
       const requestUrl = new URL(url, "http://localhost");
-      if (requestUrl.pathname === "/app/v3/api/router/dashboard/overview") {
+      if (requestUrl.pathname === "/app/v3/api/ai/dashboard/overview") {
         return {
           summary: {
             availableCredits: "125.5",
@@ -192,7 +192,7 @@ test("console dashboard service fails closed when app SDK omits required overvie
   await withAppSdkFetch(
     (url) => {
       const requestUrl = new URL(url, "http://localhost");
-      if (requestUrl.pathname === "/app/v3/api/router/dashboard/overview") {
+      if (requestUrl.pathname === "/app/v3/api/ai/dashboard/overview") {
         return {
           summary: {
             availableCredits: "125.5",
@@ -221,7 +221,7 @@ test("console dashboard service fails closed when app SDK omits required overvie
   await withAppSdkFetch(
     (url) => {
       const requestUrl = new URL(url, "http://localhost");
-      if (requestUrl.pathname === "/app/v3/api/router/dashboard/overview") {
+      if (requestUrl.pathname === "/app/v3/api/ai/dashboard/overview") {
         return {
           summary: {
             availableCredits: "125.5",
@@ -252,8 +252,9 @@ test("console usage service reads logs and total from generated app SDK data", a
   await withAppSdkFetch(
     (url) => {
       const requestUrl = new URL(url, "http://localhost");
-      assert.equal(requestUrl.pathname, "/app/v3/api/router/usage/logs");
-      assert.equal(requestUrl.searchParams.get("keyword"), "gpt-4o-mini");
+      assert.equal(requestUrl.pathname, "/app/v3/api/ai/usage/logs");
+      assert.equal(requestUrl.searchParams.get("q"), "gpt-4o-mini");
+      assert.equal(requestUrl.searchParams.has("search_query"), false);
       return {
         total: "1",
         logs: [
@@ -284,10 +285,11 @@ test("console usage service reads logs and total from generated app SDK data", a
       };
     },
     async (captured) => {
-      const result = await UsageService.fetchLogs({ keyword: "gpt-4o-mini" });
+      const result = await UsageService.fetchLogs({ searchQuery: "gpt-4o-mini" });
 
       assert.equal(captured.length, 1);
-      assert.match(captured[0].url, /keyword=gpt-4o-mini/);
+      assert.match(captured[0].url, /[?&]q=gpt-4o-mini/);
+      assert.doesNotMatch(captured[0].url, /search_query=/);
       assert.equal(result.total, 1);
       assert.equal(result.logs[0].inputTokens, 100);
       assert.equal(result.logs[0].cost, "0.012345");
@@ -299,13 +301,14 @@ test("console usage service normalizes log query params before generated app SDK
   await withAppSdkFetch(
     (url) => {
       const requestUrl = new URL(url, "http://localhost");
-      assert.equal(requestUrl.pathname, "/app/v3/api/router/usage/logs");
-      assert.equal(requestUrl.searchParams.get("pageNo"), "2");
-      assert.equal(requestUrl.searchParams.get("pageSize"), "100");
-      assert.equal(requestUrl.searchParams.get("keyword"), "gpt-4o");
+      assert.equal(requestUrl.pathname, "/app/v3/api/ai/usage/logs");
+      assert.equal(requestUrl.searchParams.get("page"), "2");
+      assert.equal(requestUrl.searchParams.get("page_size"), "100");
+      assert.equal(requestUrl.searchParams.get("q"), "gpt-4o");
+      assert.equal(requestUrl.searchParams.has("search_query"), false);
       assert.equal(requestUrl.searchParams.get("status"), "success");
-      assert.equal(requestUrl.searchParams.get("startTime"), "2026-05-05T00:00:00Z");
-      assert.equal(requestUrl.searchParams.get("endTime"), "2026-05-05T23:59:59Z");
+      assert.equal(requestUrl.searchParams.get("start_time"), "2026-05-05T00:00:00Z");
+      assert.equal(requestUrl.searchParams.get("end_time"), "2026-05-05T23:59:59Z");
       assert.equal(requestUrl.searchParams.has("model"), false);
       assert.equal(requestUrl.searchParams.has("ignored"), false);
       assert.equal(requestUrl.searchParams.has("empty"), false);
@@ -313,9 +316,9 @@ test("console usage service normalizes log query params before generated app SDK
     },
     async (captured) => {
       const result = await UsageService.fetchLogs({
-        pageNo: "2",
+        page: "2",
         pageSize: "100",
-        keyword: "  gpt-4o  ",
+        searchQuery: "  gpt-4o  ",
         status: " SUCCESS ",
         startTime: " 2026-05-05T00:00:00Z ",
         endTime: " 2026-05-05T23:59:59Z ",
@@ -337,14 +340,14 @@ test("console usage service rejects invalid log query params before generated ap
       throw new Error("app SDK must not be called for invalid usage log queries");
     },
     async (captured) => {
-      await assert.rejects(() => UsageService.fetchLogs({ pageNo: 0 }), /pageNo must be a positive integer/);
-      await assert.rejects(() => UsageService.fetchLogs({ pageNo: "abc" }), /pageNo must be a positive integer/);
+      await assert.rejects(() => UsageService.fetchLogs({ page: 0 }), /page must be a positive integer/);
+      await assert.rejects(() => UsageService.fetchLogs({ page: "abc" }), /page must be a positive integer/);
       await assert.rejects(() => UsageService.fetchLogs({ pageSize: 0 }), /pageSize must be between 1 and 100/);
       await assert.rejects(() => UsageService.fetchLogs({ pageSize: 101 }), /pageSize must be between 1 and 100/);
       await assert.rejects(() => UsageService.fetchLogs({ status: "pending" }), /status must be one of all, success, error/);
       await assert.rejects(
-        () => UsageService.fetchLogs({ keyword: "x".repeat(129) }),
-        /keyword must be at most 128 characters/,
+        () => UsageService.fetchLogs({ searchQuery: "x".repeat(129) }),
+        /searchQuery must be at most 128 characters/,
       );
       await assert.rejects(
         () => UsageService.fetchLogs({ startTime: { value: "2026-05-05T00:00:00Z" } }),
@@ -358,7 +361,7 @@ test("console usage service rejects invalid log query params before generated ap
 test("console settlements service reads dashboard decimals from generated app SDK data", async () => {
   await withAppSdkFetch(
     (url) => {
-      assert.equal(url, "/app/v3/api/router/settlements/dashboard?year=2026");
+      assert.equal(url, "/app/v3/api/billing/settlements/dashboard?year=2026");
       return {
         chartData: [{ day: "05-05", text: "1.234567", image: "2", video: "0", audio: "0", music: "0" }],
         bills: [
@@ -400,7 +403,7 @@ test("console settlements lists fail closed when app SDK returns malformed dashb
   ] as const) {
     await withAppSdkFetch(
       (url) => {
-        if (url === "/app/v3/api/router/settlements/dashboard") {
+        if (url === "/app/v3/api/billing/settlements/dashboard") {
           return {
             chartData: [],
             bills: [],
@@ -422,7 +425,7 @@ test("console settlements lists fail closed when app SDK returns malformed dashb
 test("console settlements chart fails closed when app SDK omits or corrupts decimal fields", async () => {
   await withAppSdkFetch(
     (url) => {
-      if (url === "/app/v3/api/router/settlements/dashboard") {
+      if (url === "/app/v3/api/billing/settlements/dashboard") {
         return {
           chartData: [{ text: "1.234567", image: "0", video: "0", audio: "0", music: "0" }],
           bills: [],
@@ -440,7 +443,7 @@ test("console settlements chart fails closed when app SDK omits or corrupts deci
 
   await withAppSdkFetch(
     (url) => {
-      if (url === "/app/v3/api/router/settlements/dashboard") {
+      if (url === "/app/v3/api/billing/settlements/dashboard") {
         return {
           chartData: [{ day: "05-05", image: "0", video: "0", audio: "0", music: "0" }],
           bills: [],
@@ -458,7 +461,7 @@ test("console settlements chart fails closed when app SDK omits or corrupts deci
 
   await withAppSdkFetch(
     (url) => {
-      if (url === "/app/v3/api/router/settlements/dashboard") {
+      if (url === "/app/v3/api/billing/settlements/dashboard") {
         return {
           chartData: [{ day: "05-05", text: "bad-decimal", image: "0", video: "0", audio: "0", music: "0" }],
           bills: [],
@@ -478,7 +481,7 @@ test("console settlements chart fails closed when app SDK omits or corrupts deci
 test("console settlements service normalizes year query before generated app SDK call", async () => {
   await withAppSdkFetch(
     (url) => {
-      assert.equal(url, "/app/v3/api/router/settlements/dashboard?year=2025");
+      assert.equal(url, "/app/v3/api/billing/settlements/dashboard?year=2025");
       return { chartData: [], bills: [] };
     },
     async (captured) => {
@@ -515,7 +518,7 @@ test("console settlements service rejects invalid year query before generated ap
 test("console settlement bills fail closed when app SDK omits required bill breakdowns", async () => {
   await withAppSdkFetch(
     (url) => {
-      if (url === "/app/v3/api/router/settlements/dashboard") {
+      if (url === "/app/v3/api/billing/settlements/dashboard") {
         return {
           chartData: [],
           bills: [
@@ -543,7 +546,7 @@ test("console settlement bills fail closed when app SDK omits required bill brea
 
   await withAppSdkFetch(
     (url) => {
-      if (url === "/app/v3/api/router/settlements/dashboard") {
+      if (url === "/app/v3/api/billing/settlements/dashboard") {
         return {
           chartData: [],
           bills: [
@@ -579,7 +582,7 @@ test("console settlement bills fail closed when app SDK omits required bill brea
 test("console settlement bills fail closed when app SDK returns invalid breakdown models", async () => {
   await withAppSdkFetch(
     (url) => {
-      if (url === "/app/v3/api/router/settlements/dashboard") {
+      if (url === "/app/v3/api/billing/settlements/dashboard") {
         return {
           chartData: [],
           bills: [
@@ -616,7 +619,7 @@ test("console settlement bills fail closed when app SDK returns invalid breakdow
 test("console account service reads account summary from generated app SDK", async () => {
   await withAppSdkFetch(
     (url) => {
-      assert.equal(url, "/app/v3/api/account/summary");
+      assert.equal(url, "/app/v3/api/billing/account/summary");
       return {
         id: "user-1",
         name: "Owner",
@@ -670,7 +673,7 @@ test("console account service fails closed when app SDK returns malformed accoun
   ] as const) {
     await withAppSdkFetch(
       (url) => {
-        if (url === "/app/v3/api/account/summary") {
+        if (url === "/app/v3/api/billing/account/summary") {
           return {
             id: "user-1",
             name: "Owner",
@@ -712,7 +715,7 @@ test("console account service fails closed when app SDK returns malformed accoun
 test("console account service fails closed when app SDK omits required account fields", async () => {
   await withAppSdkFetch(
     (url) => {
-      if (url === "/app/v3/api/account/summary") {
+      if (url === "/app/v3/api/billing/account/summary") {
         return {
           id: "user-1",
           name: "Owner",
@@ -749,7 +752,7 @@ test("console account service fails closed when app SDK omits required account f
 
   await withAppSdkFetch(
     (url) => {
-      if (url === "/app/v3/api/account/summary") {
+      if (url === "/app/v3/api/billing/account/summary") {
         return {
           id: "user-1",
           name: "Owner",
@@ -787,7 +790,7 @@ test("console account service fails closed when app SDK omits required account f
 
   await withAppSdkFetch(
     (url) => {
-      if (url === "/app/v3/api/account/summary") {
+      if (url === "/app/v3/api/billing/account/summary") {
         return {
           id: "user-1",
           name: "Owner",
@@ -835,10 +838,10 @@ test("console account service fails closed when app SDK omits required account f
 test("console recharge service reads packages and submits recharge through generated app SDK", async () => {
   await withAppSdkFetch(
     (url, init) => {
-      if (url === "/app/v3/api/vip/pack-groups/packs") {
-        return { items: [{ id: "pack-1", rmb: "99.9", bonus: "20" }] };
+      if (url === "/app/v3/api/billing/account/points/recharges/packages") {
+        return { items: [{ id: "pack-1", rmb: "99.9", bonus: "20", points: 1019 }] };
       }
-      if (url === "/app/v3/api/account/points/recharge") {
+      if (url === "/app/v3/api/billing/account/points/recharges") {
         assert.equal(init?.method ?? "GET", "POST");
         assert.match(typeof init?.body === "string" ? init.body : "", /"amount":"99.90"/);
         return {
@@ -857,11 +860,12 @@ test("console recharge service reads packages and submits recharge through gener
       const submitted = await RechargeService.submitRecharge("99.90", "wechat");
 
       assert.deepEqual(captured.map((request) => request.url), [
-        "/app/v3/api/vip/pack-groups/packs",
-        "/app/v3/api/account/points/recharge",
+        "/app/v3/api/billing/account/points/recharges/packages",
+        "/app/v3/api/billing/account/points/recharges",
       ]);
       assert.equal(packages[0].rmb, "99.90");
       assert.equal(packages[0].bonus, 20);
+      assert.equal(packages[0].points, 1019);
       assert.deepEqual(submitted, { success: true, orderNo: "order-1" });
     },
   );
@@ -891,7 +895,7 @@ test("console recharge service submits large exact decimal strings without binar
 
   await withAppSdkFetch(
     (url, init) => {
-      assert.equal(url, "/app/v3/api/account/points/recharge");
+      assert.equal(url, "/app/v3/api/billing/account/points/recharges");
       assert.equal(init?.method ?? "GET", "POST");
       assert.equal(
         typeof init?.body === "string" ? JSON.parse(init.body).amount : "",
@@ -918,7 +922,7 @@ test("console recharge service submits large exact decimal strings without binar
 test("console settings service reads and updates settings through generated app SDK", async () => {
   await withAppSdkFetch(
     (url, init) => {
-      if (url === "/app/v3/api/user/settings") {
+      if (url === "/app/v3/api/iam/users/settings") {
         if ((init?.method ?? "GET") === "GET") {
           return {
             language: "zh-CN",
@@ -951,8 +955,8 @@ test("console settings service reads and updates settings through generated app 
       });
 
       assert.deepEqual(captured.map((request) => `${request.method} ${request.url}`), [
-        "GET /app/v3/api/user/settings",
-        "PUT /app/v3/api/user/settings",
+        "GET /app/v3/api/iam/users/settings",
+        "PUT /app/v3/api/iam/users/settings",
       ]);
       assert.equal(settings.timezone, "Asia/Shanghai");
       assert.equal(settings.notifications.billReminder, true);
@@ -1017,7 +1021,7 @@ test("console settings service validates outbound settings before calling genera
 test("console provider service reads provider configs through generated app SDK", async () => {
   await withAppSdkFetch(
     (url) => {
-      assert.equal(url, "/app/v3/api/router/providers");
+      assert.equal(url, "/app/v3/api/ai/providers");
       return {
         items: [
           {
@@ -1047,7 +1051,7 @@ test("console usage logs fail closed when app SDK omits stable usage log ids", a
   await withAppSdkFetch(
     (url) => {
       const requestUrl = new URL(url, "http://localhost");
-      if (requestUrl.pathname === "/app/v3/api/router/usage/logs") {
+      if (requestUrl.pathname === "/app/v3/api/ai/usage/logs") {
         return {
           total: 1,
           logs: [
@@ -1091,7 +1095,7 @@ test("console usage logs fail closed when app SDK returns malformed usage rows",
   await withAppSdkFetch(
     (url) => {
       const requestUrl = new URL(url, "http://localhost");
-      if (requestUrl.pathname === "/app/v3/api/router/usage/logs") {
+      if (requestUrl.pathname === "/app/v3/api/ai/usage/logs") {
         return {
           total: 1,
           logs: ["not-a-usage-log-record"],
@@ -1117,7 +1121,7 @@ test("console usage logs fail closed when app SDK omits required audit fields", 
     await withAppSdkFetch(
       (url) => {
         const requestUrl = new URL(url, "http://localhost");
-        if (requestUrl.pathname === "/app/v3/api/router/usage/logs") {
+        if (requestUrl.pathname === "/app/v3/api/ai/usage/logs") {
           const log = {
             id: "usage-1",
             requestId: "req-1",
@@ -1163,7 +1167,7 @@ test("console usage logs fail closed when app SDK returns invalid decimal audit 
   await withAppSdkFetch(
     (url) => {
       const requestUrl = new URL(url, "http://localhost");
-      if (requestUrl.pathname === "/app/v3/api/router/usage/logs") {
+      if (requestUrl.pathname === "/app/v3/api/ai/usage/logs") {
         return {
           total: 1,
           logs: [
@@ -1209,7 +1213,7 @@ test("console usage logs fail closed when app SDK omits or corrupts pagination t
     await withAppSdkFetch(
       (url) => {
         const requestUrl = new URL(url, "http://localhost");
-        if (requestUrl.pathname === "/app/v3/api/router/usage/logs") {
+        if (requestUrl.pathname === "/app/v3/api/ai/usage/logs") {
           return {
             ...(total === undefined ? {} : { total }),
             logs: [
@@ -1254,7 +1258,7 @@ test("console usage logs fail closed when app SDK omits or corrupts pagination t
 test("console settlement bills fail closed when app SDK omits stable bill ids", async () => {
   await withAppSdkFetch(
     (url) => {
-      if (url === "/app/v3/api/router/settlements/dashboard") {
+      if (url === "/app/v3/api/billing/settlements/dashboard") {
         return {
           chartData: [],
           bills: [
@@ -1284,7 +1288,7 @@ test("console settlement bills fail closed when app SDK omits stable bill ids", 
 test("console recharge packages fail closed when app SDK omits stable package ids", async () => {
   await withAppSdkFetch(
     (url) => {
-      if (url === "/app/v3/api/vip/pack-groups/packs") {
+      if (url === "/app/v3/api/billing/account/points/recharges/packages") {
         return { items: [{ rmb: "99.9", bonus: "20" }] };
       }
       throw new Error(`unexpected SDK URL: ${url}`);
@@ -1301,8 +1305,8 @@ test("console recharge packages fail closed when app SDK omits stable package id
 test("console recharge packages fail closed when app SDK returns malformed package rows", async () => {
   await withAppSdkFetch(
     (url) => {
-      if (url === "/app/v3/api/vip/pack-groups/packs") {
-        return { items: [{ id: "pack-1", rmb: "99.9", bonus: "20" }, "malformed-row"] };
+      if (url === "/app/v3/api/billing/account/points/recharges/packages") {
+        return { items: [{ id: "pack-1", rmb: "99.9", bonus: "20", points: 1019 }, "malformed-row"] };
       }
       throw new Error(`unexpected SDK URL: ${url}`);
     },
@@ -1318,7 +1322,7 @@ test("console recharge packages fail closed when app SDK returns malformed packa
 test("console recharge packages fail closed when app SDK omits package money amounts", async () => {
   await withAppSdkFetch(
     (url) => {
-      if (url === "/app/v3/api/vip/pack-groups/packs") {
+      if (url === "/app/v3/api/billing/account/points/recharges/packages") {
         return { items: [{ id: "pack-1", bonus: "20" }] };
       }
       throw new Error(`unexpected SDK URL: ${url}`);
@@ -1335,7 +1339,7 @@ test("console recharge packages fail closed when app SDK omits package money amo
 test("console recharge packages fail closed when app SDK returns invalid package money amounts", async () => {
   await withAppSdkFetch(
     (url) => {
-      if (url === "/app/v3/api/vip/pack-groups/packs") {
+      if (url === "/app/v3/api/billing/account/points/recharges/packages") {
         return { items: [{ id: "pack-1", rmb: "free", bonus: "20" }] };
       }
       throw new Error(`unexpected SDK URL: ${url}`);
@@ -1352,8 +1356,8 @@ test("console recharge packages fail closed when app SDK returns invalid package
 test("console recharge packages fail closed when app SDK omits bonus points", async () => {
   await withAppSdkFetch(
     (url) => {
-      if (url === "/app/v3/api/vip/pack-groups/packs") {
-        return { items: [{ id: "pack-1", rmb: "99.90" }] };
+      if (url === "/app/v3/api/billing/account/points/recharges/packages") {
+        return { items: [{ id: "pack-1", rmb: "99.90", points: 999 }] };
       }
       throw new Error(`unexpected SDK URL: ${url}`);
     },
@@ -1366,10 +1370,27 @@ test("console recharge packages fail closed when app SDK omits bonus points", as
   );
 });
 
+test("console recharge packages fail closed when app SDK omits total credited points", async () => {
+  await withAppSdkFetch(
+    (url) => {
+      if (url === "/app/v3/api/billing/account/points/recharges/packages") {
+        return { items: [{ id: "pack-1", rmb: "99.90", bonus: 20 }] };
+      }
+      throw new Error(`unexpected SDK URL: ${url}`);
+    },
+    async () => {
+      await assert.rejects(
+        () => RechargeService.fetchPackages(),
+        /Recharge package points are required/,
+      );
+    },
+  );
+});
+
 test("console recharge submit fails closed when app SDK omits order numbers", async () => {
   await withAppSdkFetch(
     (url) => {
-      if (url === "/app/v3/api/account/points/recharge") {
+      if (url === "/app/v3/api/billing/account/points/recharges") {
         return {
           success: true,
           amount: "99.90",
@@ -1392,7 +1413,7 @@ test("console recharge submit fails closed when app SDK omits order numbers", as
 test("console recharge submit fails closed when app SDK reports unsuccessful orders", async () => {
   await withAppSdkFetch(
     (url) => {
-      if (url === "/app/v3/api/account/points/recharge") {
+      if (url === "/app/v3/api/billing/account/points/recharges") {
         return { success: false, orderNo: "order-1" };
       }
       throw new Error(`unexpected SDK URL: ${url}`);
@@ -1409,7 +1430,7 @@ test("console recharge submit fails closed when app SDK reports unsuccessful ord
 test("console recharge submit fails closed when app SDK omits confirmed amounts", async () => {
   await withAppSdkFetch(
     (url) => {
-      if (url === "/app/v3/api/account/points/recharge") {
+      if (url === "/app/v3/api/billing/account/points/recharges") {
         return { success: true, orderNo: "order-1", paymentMethod: "wechat", points: 999, status: "pending" };
       }
       throw new Error(`unexpected SDK URL: ${url}`);
@@ -1426,7 +1447,7 @@ test("console recharge submit fails closed when app SDK omits confirmed amounts"
 test("console recharge submit fails closed when app SDK returns invalid confirmed points", async () => {
   await withAppSdkFetch(
     (url) => {
-      if (url === "/app/v3/api/account/points/recharge") {
+      if (url === "/app/v3/api/billing/account/points/recharges") {
         return {
           success: true,
           orderNo: "order-1",
@@ -1450,7 +1471,7 @@ test("console recharge submit fails closed when app SDK returns invalid confirme
 test("console provider configs fail closed when app SDK omits stable provider ids", async () => {
   await withAppSdkFetch(
     (url) => {
-      if (url === "/app/v3/api/router/providers") {
+      if (url === "/app/v3/api/ai/providers") {
         return {
           items: [
             {
@@ -1478,7 +1499,7 @@ test("console provider configs fail closed when app SDK omits stable provider id
 test("console provider configs fail closed when app SDK returns malformed provider rows", async () => {
   await withAppSdkFetch(
     (url) => {
-      if (url === "/app/v3/api/router/providers") {
+      if (url === "/app/v3/api/ai/providers") {
         return {
           items: [
             {
@@ -1508,7 +1529,7 @@ test("console provider configs fail closed when app SDK returns malformed provid
 test("console provider configs fail closed when app SDK returns unsupported provider families", async () => {
   await withAppSdkFetch(
     (url) => {
-      if (url === "/app/v3/api/router/providers") {
+      if (url === "/app/v3/api/ai/providers") {
         return {
           items: [
             {

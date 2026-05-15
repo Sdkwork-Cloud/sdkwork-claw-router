@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67097,
+  "uuid": "skill-clawhub-generate-pptx",
+  "skillKey": "clawhub-generate-pptx",
+  "name": "generate-pptx",
+  "summary": "通过多轮沟通收集需求、确认逐页结构、生成每页 SVG 幻灯片并输出 PPTX 文件。适用于用户要求生成 PPT/PPTX、制作演示文稿、把文案或提纲转成幻灯片、先确认页纲再出稿，或需要把模型生成的 SVG 幻灯片打包成可下载 PPTX 的场景。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.generate_pptx",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LIKEGAKKI",
+      "features": [
+        "通过多轮沟通收集需求、确认逐页结构、生成每页 SVG 幻灯片并输出 PPTX 文件。适用于用户要求生成 PPT/PPTX、制作演示文稿、把文案或提纲转成幻灯片、先确认页纲再出稿，或需要把模型."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/generate-pptx@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35187654?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "generate-pptx",
+      "url": "https://clawhub.ai/skills/generate-pptx"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "generate-pptx",
+    "url": "https://clawhub.ai/skills/generate-pptx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/generate-pptx-7ff42761902c9940.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/generate-pptx@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-generate-pptx-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f70dda2a7a17354495d95722f5c7429d2275b5cc9d1f14fcc21409477c65db50",
+      "artifactSizeBytes": 2662
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T06:54:15.785Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30022,
+  "uuid": "skill-clawhub-beepack-registry",
+  "skillKey": "clawhub-beepack-registry",
+  "name": "Beepack API Registry",
+  "summary": "Search Beepack for reusable API packages before coding. Saves tokens and time by reusing production-tested code instead of writing from scratch.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beepack_registry",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Guillaume De Laroque",
+      "features": [
+        "Search Beepack for reusable API packages before coding",
+        "Saves tokens and time by reusing production-tested code instead of writing from scratch."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/beepack-registry@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4301546?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "beepack-registry",
+      "url": "https://clawhub.ai/skills/beepack-registry"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beepack-registry",
+    "url": "https://clawhub.ai/skills/beepack-registry",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beepack-registry-bbf76423a8233093.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/beepack-registry@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-beepack-registry-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:60b4b5a80942ac360b576516fbb09c12fcdcd06115cb87bc57e5867c9891d437",
+      "artifactSizeBytes": 2489
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T11:42:34.985Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/myclaw-guardian@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.myclaw_guardian",
+  "skill": {
+    "id": 15802,
+    "skillKey": "clawhub-myclaw-guardian",
+    "name": "OpenClaw Guardian by MyClaw.ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "myclaw-guardian",
+    "url": "https://clawhub.ai/skills/myclaw-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/myclaw-guardian-8081ea38fed03ff0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deploy and manage a Guardian watchdog for OpenClaw Gateway. Auto-monitor every 30s, self-repair via doctor --fix, git-based workspace rollback, daily snapsho..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leoyeai",
+      "userId": "s17173yy3nw4w4agfswx5k0wz583g31t",
+      "displayName": "Leo Ye",
+      "image": "https://avatars.githubusercontent.com/u/121472001?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 818,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772458728398,
+      "changelog": "Fix security scan: declare required binaries (git, pgrep, curl) and env vars in metadata. Remove global git config recommendation. Powered by https://myclaw.ai",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:905eef45f246ea0104ccdb66665919489ccc2f1a7d61013bbb4e8583680e4dfd"
+}

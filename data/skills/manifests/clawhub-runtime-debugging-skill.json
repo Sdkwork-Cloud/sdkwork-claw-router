@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23245,
+  "uuid": "skill-clawhub-runtime-debugging-skill",
+  "skillKey": "clawhub-runtime-debugging-skill",
+  "name": "Runtime Debugging Skill",
+  "summary": "Diagnose and fix bugs using runtime execution traces. Use when debugging errors, analyzing failures, or finding root causes in Python, Node.js, or Java appli...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.runtime_debugging_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dxsup",
+      "features": [
+        "Diagnose and fix bugs using runtime execution traces",
+        "Use when debugging errors, analyzing failures, or finding root causes in Python, Node.js, or Ja."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/runtime-debugging-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46807570?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "runtime-debugging-skill",
+      "url": "https://clawhub.ai/skills/runtime-debugging-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "runtime-debugging-skill",
+    "url": "https://clawhub.ai/skills/runtime-debugging-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/runtime-debugging-skill-0c37e299eb56a4e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/runtime-debugging-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-runtime-debugging-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6dd8156a6d6d67f4d1dd4e8063a3d9b8fa106e5e3af983208f13c8c50ff5b987",
+      "artifactSizeBytes": 2602
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T03:06:07.601Z"
+}

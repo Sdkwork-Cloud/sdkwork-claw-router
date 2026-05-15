@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58341,
+  "uuid": "skill-clawhub-nini-writing-inspiration",
+  "skillKey": "clawhub-nini-writing-inspiration",
+  "name": "Writing Inspiration",
+  "summary": "Use when user needs help starting or continuing writing (not diary). Triggers include「不知道写什么」「帮我构思」「写游记」「记录 TIL」「写点什么」. For diary writing, use diary-assistan...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nini_writing_inspiration",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Niracler",
+      "features": [
+        "Use when user needs help starting or continuing writing (not diary)",
+        "Triggers include「不知道写什么」「帮我构思」「写游记」「记录 TIL」「写点什么」",
+        "For diary writing, use diary-assistan..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nini-writing-inspiration@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24842631?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nini-writing-inspiration",
+      "url": "https://clawhub.ai/skills/nini-writing-inspiration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nini-writing-inspiration",
+    "url": "https://clawhub.ai/skills/nini-writing-inspiration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nini-writing-inspiration-c564d00d0c3fb2da.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nini-writing-inspiration@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-nini-writing-inspiration-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c948cae2700e6c02025621dd334f6b2d9bb02a05a81aa2538451e26bba5a0666",
+      "artifactSizeBytes": 2066
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T03:17:08.874Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9324,
+  "uuid": "skill-clawhub-tg",
+  "skillKey": "clawhub-tg",
+  "name": "Telegram CLI",
+  "summary": "Telegram CLI for reading, searching, and sending messages. Use when the user asks about Telegram messages, wants to check inbox, search chats, send messages, or look up contacts and groups.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tg",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "arein",
+      "features": [
+        "Telegram CLI for reading, searching, and sending messages",
+        "Use when the user asks about Telegram messages, wants to check inbox, search chats, send messag."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tg@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/966091?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tg",
+      "url": "https://clawhub.ai/skills/tg"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tg",
+    "url": "https://clawhub.ai/skills/tg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tg-e9ed69a6ea08507e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tg@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tg-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:453f761c44a8a5a0672a6b73433e59ff40f65ae2aff229e15dac1a56efebb59a",
+      "artifactSizeBytes": 1813
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-28T08:31:10.226Z"
+}

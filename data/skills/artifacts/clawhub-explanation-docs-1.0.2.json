@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/explanation-docs@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.explanation_docs",
+  "skill": {
+    "id": 28616,
+    "skillKey": "clawhub-explanation-docs",
+    "name": "Explanation Docs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "explanation-docs",
+    "url": "https://clawhub.ai/skills/explanation-docs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/explanation-docs-d00e057c262f2a70.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Explanation documentation patterns for understanding-oriented content - conceptual guides that explain why things work the way they do"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anderskev",
+      "userId": "s17b1fzefm8nj8j1sdkzrze7gn83pfrg",
+      "displayName": "Kevin Anderson",
+      "image": "https://avatars.githubusercontent.com/u/17010022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 311,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776831054539,
+      "changelog": "- No functional or content changes in this release.\n- Reformatted the SKILL.md file with no substantial edits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:779dbd3289815252a46d17f4e06406b3585316b34ceef34520b604b20e999bc5"
+}

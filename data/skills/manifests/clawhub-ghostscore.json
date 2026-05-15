@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51102,
+  "uuid": "skill-clawhub-ghostscore",
+  "skillKey": "clawhub-ghostscore",
+  "name": "GhostScore",
+  "summary": "Private reputation scoring for AI agents — query on-chain credit tiers earned via x402 micropayments through Unlink shielded transfers on Monad, and verify t...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ghostscore",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "drewM33",
+      "features": [
+        "Private reputation scoring for AI agents — query on-chain credit tiers earned via x402 micropay."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ghostscore@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/149414976?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ghostscore",
+      "url": "https://clawhub.ai/skills/ghostscore"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ghostscore",
+    "url": "https://clawhub.ai/skills/ghostscore",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ghostscore-a7f005ae312cde6b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ghostscore@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-ghostscore-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:922caf01ffa20a70ec3176fd3d8b996a525c0734165faa9b6694c866d15ff6ce",
+      "artifactSizeBytes": 2664
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T17:42:40.398Z"
+}

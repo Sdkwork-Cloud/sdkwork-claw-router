@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/idle-web-developer@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.idle_web_developer",
+  "skill": {
+    "id": 38267,
+    "skillKey": "clawhub-idle-web-developer",
+    "name": "Idle Web Developer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "idle-web-developer",
+    "url": "https://clawhub.ai/skills/idle-web-developer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/idle-web-developer-7c7bbb77f20610cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Make 100s of websites while you're idle. Builds, deploys lovable,v0, quality websites with built-in analytics to help you iterate toward breakout winner and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jaswir",
+      "userId": "s170qzsp4kvcgdsegm50sapmsx83g398",
+      "displayName": "Jaswir",
+      "image": "https://avatars.githubusercontent.com/u/15957528?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774164658665,
+      "changelog": "Version 1.0.2 introduces a guided onboarding wizard and enhanced customization for automatic site building.\n\n- Added interactive setup wizard for Vercel, Google Analytics, and Supabase configuration.\n- Configuration is now saved to a user-scoped `.skill-config` file and loaded automatically.\n- Introduced a dice-based system to determine app idea, palette, and background mode for each deployment.\n- Expanded workflow details with clearer research steps and stricter build standards.\n- Updated documentation, homepage, and metadata for improved clarity and discoverability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0113daa96113aba6e0f421edcef53a152864ed5273c00aa420f55f3f7a38e468"
+}

@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "feishu-minimax-t2a-voice",
+    "displayName": "feishu-minimax-t2a-voice",
+    "summary": "飞书语音消息收发：接收语音自动转文字（飞书原生 Transcript + Whisper 降级），回复语音由 MiniMax T2A 合成后发送。",
+    "tags": {
+      "latest": "1.0.1"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "createdAt": 1775241788656,
+    "updatedAt": 1777527142305
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1775469936845,
+    "changelog": "Version 1.0.1 - Changelog\n\n- Added scripts/reply.py to support generating voice message replies.\n- Updated documentation to reflect simplified usage: now reply generation is `python scripts/reply.py \"<文字内容>\"`.\n- Documented support for both MiniMax T2A (mp3 → opus) and Edge TTS (ogg) as audio generation backends, with automatic fallback.\n- Explained how to insert MiniMax prosody tags and fillers to make synthesized speech more natural.\n- Revised environment variable requirements: MINIMAX_API_KEY is now optional; will use Edge TTS if unavailable.\n- Clarified sending method: produced `.opus` or `.ogg` should be sent as `audio/opus` via Feishu.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "michelangelo-in-sistine",
+    "userId": "s174kt6n4txq2cf0ez7nvc92c1845szh",
+    "displayName": "habitum",
+    "image": "https://avatars.githubusercontent.com/u/19338350?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527142305
+  }
+}

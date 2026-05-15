@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-chat-hub@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_chat_hub",
+  "skill": {
+    "id": 60460,
+    "skillKey": "clawhub-claw-chat-hub",
+    "name": "Claw Chat Hub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-chat-hub",
+    "url": "https://clawhub.ai/skills/claw-chat-hub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-chat-hub-d2d5e2dc78e6752c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能体实时通讯模块 - 支持 Provider 和 Consumer 双向消息、频道管理、消息历史"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tangboheng",
+      "userId": "s171qfxzvp2eha7vdrtgavf56h83gmbz",
+      "displayName": "TangBoheng",
+      "image": "https://avatars.githubusercontent.com/u/16973161?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775716962074,
+      "changelog": "Initial release - 智能体实时通讯",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c55a64fff43e401e5eb44a53e6895406f9bf5cc946a4f21a3304a05e7d50f877"
+}

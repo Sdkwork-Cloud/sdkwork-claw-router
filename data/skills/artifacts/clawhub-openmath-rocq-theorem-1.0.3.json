@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openmath-rocq-theorem@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openmath_rocq_theorem",
+  "skill": {
+    "id": 34414,
+    "skillKey": "clawhub-openmath-rocq-theorem",
+    "name": "openmath-rocq-theorem"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openmath-rocq-theorem",
+    "url": "https://clawhub.ai/skills/openmath-rocq-theorem",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openmath-rocq-theorem-fee887832e8f997f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Configures Rocq environments, runs preflight checks, and guides the proving workflow for OpenMath Rocq theorems. Use when the user wants to set up Rocq tooli..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bennyzhe",
+      "userId": "s17bfnganc0p4qzdxxdd6kcma183hq1s",
+      "displayName": "shentu-org",
+      "image": "https://avatars.githubusercontent.com/u/18119716?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 215,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774420620945,
+      "changelog": "Clarify isolated Rocq theorem skill boundary",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8eff224746eba694cf6f99409749538fd787b6e1c595e4ba0bad78797ad95448"
+}

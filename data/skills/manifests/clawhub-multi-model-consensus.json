@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69895,
+  "uuid": "skill-clawhub-multi-model-consensus",
+  "skillKey": "clawhub-multi-model-consensus",
+  "name": "Multi Model Consensus",
+  "summary": "多模型决策委员会 — 消除单模型偏见，通过多轮分歧讨论产出客观决策参考。支持3-6个模型同时评审，提供量化投票矩阵和6段式共识报告。触发条件：包含「多模型决策」或「多模型委员会」时自动激活。",
+  "version": "1.9.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_model_consensus",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zeekr0808-hue",
+      "features": [
+        "多模型决策委员会 — 消除单模型偏见，通过多轮分歧讨论产出客观决策参考。支持3-6个模型同时评审，提供量化投票矩阵和6段式共识报告。触发条件：包含「多模型决策」或「多模型委员会」时自动激活。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/multi-model-consensus@1.9.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269162966?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "multi-model-consensus",
+      "url": "https://clawhub.ai/skills/multi-model-consensus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-model-consensus",
+    "url": "https://clawhub.ai/skills/multi-model-consensus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-model-consensus-716680c88db3fbe1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/multi-model-consensus@1.9.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-multi-model-consensus-1.9.1.json",
+      "version": "1.9.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b2906009d268c14c2e4b34e333e43f6faeb0bb2da58d773c26f270fbef02c1b8",
+      "artifactSizeBytes": 2134
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:56:04.986Z"
+}

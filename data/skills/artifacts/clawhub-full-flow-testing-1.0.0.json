@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/full-flow-testing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.full_flow_testing",
+  "skill": {
+    "id": 45085,
+    "skillKey": "clawhub-full-flow-testing",
+    "name": "full-flow-testing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "full-flow-testing",
+    "url": "https://clawhub.ai/skills/full-flow-testing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/full-flow-testing-a5375d38d7152913.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Current user: anonymous_20240612 End-to-End API testing assistant covering six modes including self-test, deep test, flow test, security audit, defect diagno..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhaosiming",
+      "userId": "s1760hgdjq6gnxwxh5ck7gwhhn84wqb5",
+      "displayName": "Simon",
+      "image": "https://avatars.githubusercontent.com/u/33311844?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776233751676,
+      "changelog": "# Interface Full-Process Testing Expert v1.0.0\n- Initial release: Provides a comprehensive enterprise-oriented interface testing assistant, supporting six major testing modes (self-testing, single interface, process, security, defect, and reporting).\n- Establishes a company-level global interface knowledge base, enabling automatic knowledge accumulation and multi-user query/update.\n- Features independent user workspaces and multi-user isolation mechanisms to ensure no interference among data, reports, and tokens.\n- Requires user confirmation for each step of operation; detailed reports are automatically generated for all tests.\n- Generates professional testing reports.\n- Rejects non-testing requests and focuses exclusively on the field of interface testing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b4d6c964f9ff636f977367ac855b76f3b6a1c1ef367484a4910470d9faf0665e"
+}

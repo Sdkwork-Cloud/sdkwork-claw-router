@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mdac-filler@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mdac_filler",
+  "skill": {
+    "id": 57592,
+    "skillKey": "clawhub-mdac-filler",
+    "name": "MDAC Auto-Filler"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mdac-filler",
+    "url": "https://clawhub.ai/skills/mdac-filler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mdac-filler-2ae84fa8adfc1c9b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Auto-fill and submit Malaysia Digital Arrival Card (MDAC) for travelers entering Malaysia. Use when a user wants to fill or submit MDAC (马来西亚数字入境卡) for Malay..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sidyangx",
+      "userId": "s17c274mc1ccyxyx5nw5ca810n83g566",
+      "displayName": "Sid Yang",
+      "image": "https://avatars.githubusercontent.com/u/4581174?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774366567691,
+      "changelog": "Code cleanup",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:078634e7bf783ad4d0c559fae336f59593ba4ad649ed503cd050f1a694a97bdc"
+}

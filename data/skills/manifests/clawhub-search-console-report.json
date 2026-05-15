@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34774,
+  "uuid": "skill-clawhub-search-console-report",
+  "skillKey": "clawhub-search-console-report",
+  "name": "Search Console Report",
+  "summary": "Generate comprehensive SEO analysis reports from Google Search Console data with PDF export. Use when the user wants to analyze search performance, get SEO i...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.search_console_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GuangxianLiu",
+      "features": [
+        "Generate comprehensive SEO analysis reports from Google Search Console data with PDF export",
+        "Use when the user wants to analyze search performance, get SEO i..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/search-console-report@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83075652?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "search-console-report",
+      "url": "https://clawhub.ai/skills/search-console-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "search-console-report",
+    "url": "https://clawhub.ai/skills/search-console-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/search-console-report-dc5231818ce4cead.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/search-console-report@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-search-console-report-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:794fcc73c0d9ead70f70ce00317e76b2f1dabc46ea919e7b8659d88a4e2688a0",
+      "artifactSizeBytes": 2074
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T12:01:44.347Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-to-video-gemini@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_to_video_gemini",
+  "skill": {
+    "id": 44988,
+    "skillKey": "clawhub-image-to-video-gemini",
+    "name": "Image To Video Gemini"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-to-video-gemini",
+    "url": "https://clawhub.ai/skills/image-to-video-gemini",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-to-video-gemini-3571c5ca51267460.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a single product photo or landscape image into 1080p animated video clips just by typing what you need. Whether it's converting static images into short..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776364539101,
+      "changelog": "Image to Video Gemini 1.0.0 — First release.\n\n- Instantly convert a single product photo or landscape image into a 1080p animated video clip via a cloud backend.\n- Setup is fully automated: anonymous, token-based sign-in with 100 free credits (7-day expiry).\n- Upload still images and describe your desired video; get a rendered MP4 in 30–90 seconds (no manual timeline editing needed).\n- All operations (upload, generate, export, check credits) handled by simple prompts or file uploads.\n- Supports various formats: mp4, mov, avi, webm, mkv, jpg, png, gif, webp, mp3, wav, m4a, aac.\n- Clean error handling and session state tracking keep you updated throughout the process.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:48e3532b5297e4582e7bc9d2b2d903b5a1c3f042fc5b36528fa071a20e21a0f1"
+}

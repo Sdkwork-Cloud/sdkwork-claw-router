@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59989,
+  "uuid": "skill-clawhub-feishu-cli-auth",
+  "skillKey": "clawhub-feishu-cli-auth",
+  "name": "Feishu Cli Auth",
+  "summary": "飞书 OAuth 认证和 User Access Token 管理。两步式非交互登录（AI Agent 专用）、 Token 状态检查、scope 配置、自动刷新机制、搜索功能的 Token 依赖关系。 当用户请求\"登录飞书\"、\"获取 Token\"、\"OAuth 授权\"、\"auth login\"、\"认证\"、 \"搜...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_cli_auth",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GISwilson",
+      "features": [
+        "飞书 OAuth 认证和 User Access Token 管理。两步式非交互登录（AI Agent 专用）、 Token 状态检查、scope 配置、自动刷新机制、搜索功能的 Token."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-cli-auth@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11484101?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-cli-auth",
+      "url": "https://clawhub.ai/skills/feishu-cli-auth"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-cli-auth",
+    "url": "https://clawhub.ai/skills/feishu-cli-auth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-cli-auth-91017394a5850f8e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-cli-auth@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-cli-auth-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e96bb34eb4a81f012baad5a626f331355cb52dc2ececea240e267f4d50bee74c",
+      "artifactSizeBytes": 2548
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T08:17:15.137Z"
+}

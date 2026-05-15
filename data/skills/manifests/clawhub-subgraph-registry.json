@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28271,
+  "uuid": "skill-clawhub-subgraph-registry",
+  "skillKey": "clawhub-subgraph-registry",
+  "name": "Subgraph Registry",
+  "summary": "Discover and filter 15,500+ The Graph subgraphs by domain, network, or protocol with reliability scores and query URLs for precise data access.",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subgraph_registry",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PaulieB14",
+      "features": [
+        "Discover and filter 15,500+ The Graph subgraphs by domain, network, or protocol with reliabilit."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/subgraph-registry@0.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94752445?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "subgraph-registry",
+      "url": "https://clawhub.ai/skills/subgraph-registry"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subgraph-registry",
+    "url": "https://clawhub.ai/skills/subgraph-registry",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subgraph-registry-de3210ec55c17146.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/subgraph-registry@0.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-subgraph-registry-0.3.0.json",
+      "version": "0.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bf718ce74c928c141041eb294196bdd725e4cc5168598e86a00b33d56f99ca70",
+      "artifactSizeBytes": 2311
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T21:19:32.493Z"
+}

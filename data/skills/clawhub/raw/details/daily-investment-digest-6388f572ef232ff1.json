@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "daily-investment-digest",
+    "displayName": "daily-investment-digest",
+    "summary": "Fetch financing event lists from the iYiou skill API and generate a daily financing report in Markdown to stdout. Use when the task asks to pull investment/f...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 451,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "createdAt": 1773275212829,
+    "updatedAt": 1778307113584
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1773275212829,
+    "changelog": "Daily Investment Digest 1.0.0\n\n- Initial release of the daily-investment-digest skill.\n- Fetches investment/financing event lists from the iYiou API, paginated and deduplicated.\n- Generates a daily Markdown financing report printed to stdout, following strict output order and data mapping.\n- Defaults to yesterday’s events unless explicitly requested otherwise.\n- Robust error handling: retries, backoff, and page-level error reporting.\n- Does not write any files; all outputs are to stdout only.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "ai-byte",
+    "userId": "s1744ghz9kh4r662gcd6anre0n83g896",
+    "displayName": "iyiou",
+    "image": "https://avatars.githubusercontent.com/u/66202593?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.dangerous_exec"
+    ],
+    "summary": "Detected: suspicious.dangerous_exec",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778307113584
+  }
+}

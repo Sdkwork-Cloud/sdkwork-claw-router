@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meross@1.0.27",
+  "version": "1.0.27",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meross",
+  "skill": {
+    "id": 20325,
+    "skillKey": "clawhub-meross",
+    "name": "Meross Smart"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meross",
+    "url": "https://clawhub.ai/skills/meross",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meross-43b7b4ca9e922e55.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control Meross cloud plugs via local CLI commands. Use for discovery, state checks, and switch on/off actions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "powtac",
+      "userId": "s1772wtc37s2bzvgb42n717bf583g1nd",
+      "displayName": "Simon Brüchner",
+      "image": "https://avatars.githubusercontent.com/u/36167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 440,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.27",
+      "createdAt": 1778243903871,
+      "changelog": "Add explicit confirmation gate for switch writes, document safe delayed actions, pin dependencies with shrinkwrap, and restrict registry file permissions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eec89f2864a5781685009a43d9126369a7029359c3db3c5b1b13adf43262a8e1"
+}

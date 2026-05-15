@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68844,
+  "uuid": "skill-clawhub-wechat-look",
+  "skillKey": "clawhub-wechat-look",
+  "name": "Wechat Look",
+  "summary": "读取微信公众号文章的专用工具，支持OCR文字识别。自动规范化URL并提取文章内容，识别图片中的中英文文字。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_look",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "2720480371",
+      "features": [
+        "读取微信公众号文章的专用工具，支持OCR文字识别。自动规范化URL并提取文章内容，识别图片中的中英文文字。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-look@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32962721?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-look",
+      "url": "https://clawhub.ai/skills/wechat-look"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-look",
+    "url": "https://clawhub.ai/skills/wechat-look",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-look-7c8edbbe8f59f2c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-look@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-look-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f09e0992ea343e27d8aa3bca574d5367909145324ccaaed326e7c5ccedb9dd1f",
+      "artifactSizeBytes": 2260
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T17:16:26.224Z"
+}

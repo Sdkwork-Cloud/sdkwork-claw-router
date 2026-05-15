@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27341,
+  "uuid": "skill-clawhub-learn-linux",
+  "skillKey": "clawhub-learn-linux",
+  "name": "Learn Linux",
+  "summary": "Learn Linux on LabEx through administration and command-line courses with sysadmin labs. Linux courses and labs from the MCP catalog; prioritize public labex...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.learn_linux",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huhuhang",
+      "features": [
+        "Learn Linux on LabEx through administration and command-line courses with sysadmin labs",
+        "Linux courses and labs from the MCP catalog",
+        "prioritize public labex..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/learn-linux@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5147530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "learn-linux",
+      "url": "https://clawhub.ai/skills/learn-linux"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "learn-linux",
+    "url": "https://clawhub.ai/skills/learn-linux",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/learn-linux-0e98c54a881d12b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/learn-linux@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-learn-linux-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e2b4cc695f594f835a1f47c3c1241aae2bb836906cf82acdb7803b2791f701bb",
+      "artifactSizeBytes": 2030
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T01:34:54.211Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-group-mention-responder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_group_mention_responder",
+  "skill": {
+    "id": 61613,
+    "skillKey": "clawhub-feishu-group-mention-responder",
+    "name": "Feishu Group Mention Responder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-group-mention-responder",
+    "url": "https://clawhub.ai/skills/feishu-group-mention-responder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-group-mention-responder-b2dcfad6fb612b75.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在飞书群中，当机器人被@提及或接收到直接消息时，自动进行回复。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lorpha",
+      "userId": "publishers:lorpha",
+      "displayName": "Lorpha",
+      "image": "https://avatars.githubusercontent.com/u/115758665?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1002,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770826428145,
+      "changelog": "Initial publish: Auto-respond to @mentions in Feishu groups.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a320b422f692e431b05df508ea4edc0cf04f55bb5e5f3807296ac11eda1e5211"
+}

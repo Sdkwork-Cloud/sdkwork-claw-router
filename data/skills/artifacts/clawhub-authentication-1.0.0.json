@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/authentication@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.authentication",
+  "skill": {
+    "id": 28703,
+    "skillKey": "clawhub-authentication",
+    "name": "Authentication"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "authentication",
+    "url": "https://clawhub.ai/skills/authentication",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/authentication-b9d90628453938c5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Proving identity: sessions, tokens, MFA, recovery. Use when implementing login, token refresh, or auth bugs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codenova58",
+      "userId": "s173fekm3yw84k7gp861dme7dd83gvyf",
+      "displayName": "codenova58",
+      "image": "https://avatars.githubusercontent.com/u/191358186?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 309,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774601446308,
+      "changelog": "authentication skill v1.0.0 – Initial release\n\n- Provides a structured, stage-based workflow for authentication tasks: context clarification, planning, implementation/validation, and operation.\n- Emphasizes actionable steps, verification, and risk/trade-off awareness throughout authentication work.\n- Offers procedural guidance covering sessions, tokens, MFA, and recovery scenarios.\n- Includes a checklist to ensure completeness, quality, and clear communication.\n- Flexibly adapts to users preferring either structured workflow or freeform help.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:36b4cb6e8113a7f013cb02c22ee29d78b5e81dc598c2cdbda3b0b6668dbba066"
+}

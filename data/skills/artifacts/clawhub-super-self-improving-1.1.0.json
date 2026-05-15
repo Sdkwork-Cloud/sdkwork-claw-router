@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/super-self-improving@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.super_self_improving",
+  "skill": {
+    "id": 58402,
+    "skillKey": "clawhub-super-self-improving",
+    "name": "Super Self Improving"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "super-self-improving",
+    "url": "https://clawhub.ai/skills/super-self-improving",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/super-self-improving-1a8868001bdf643b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "超级自我优化智能体 - 多模态记忆、反馈循环、元学习、置信度校准 / Super Self-Improving Agent - Multi-modal Memory, Feedback Loops, Meta-Learning, Confidence Calibration"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bombfuock",
+      "userId": "s17cqaxgmejfvdd2sz9zq8kd0s83j4gn",
+      "displayName": "BOMBFUOCK",
+      "image": "https://avatars.githubusercontent.com/u/94738020?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 743,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772681066765,
+      "changelog": "Version 1.1.0 introduces token monitoring and agent scheduling optimization.\n\n- Added \"Token Monitoring\" section with real-time token usage tracking, alerts, trends, and cost estimation.\n- Introduced \"Agent Scheduling Optimization\" with features like intelligent task allocation, load balancing, auto scaling, and performance optimization.\n- Expanded metrics and rules for both token monitoring and scheduling strategies.\n- No changes to core mechanisms or fundamental workflows.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:06479cd232a3d874506b19e4fdc3b8e5ca3e870e121a6d1f981757585da7d2c5"
+}

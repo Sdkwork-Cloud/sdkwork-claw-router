@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8796,
+  "uuid": "skill-clawhub-mmxagent-guardian",
+  "skillKey": "clawhub-mmxagent-guardian",
+  "name": "mmxagent-guardian",
+  "summary": "Provide file protection while users work with openclaw. All file operations are version-indexed and support delete recovery and modification rollback.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mmxagent_guardian",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OreoAndYuumi",
+      "features": [
+        "Provide file protection while users work with openclaw",
+        "All file operations are version-indexed and support delete recovery and modification rollback."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mmxagent-guardian@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/169647655?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mmxagent-guardian",
+      "url": "https://clawhub.ai/skills/mmxagent-guardian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mmxagent-guardian",
+    "url": "https://clawhub.ai/skills/mmxagent-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mmxagent-guardian-0256d1c69c07a45a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mmxagent-guardian@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-mmxagent-guardian-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:77aad9884c1d2496466978a3120c49b0acf6930e6d24df89c76817d858707711",
+      "artifactSizeBytes": 2480
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T13:00:59.280Z"
+}

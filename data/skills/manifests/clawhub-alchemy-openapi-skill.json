@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26097,
+  "uuid": "skill-clawhub-alchemy-openapi-skill",
+  "skillKey": "clawhub-alchemy-openapi-skill",
+  "name": "Alchemy OpenAPI Skill",
+  "summary": "Operate Alchemy Prices API reads through UXC with a curated OpenAPI schema, path-templated API-key auth, and read-first guardrails.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alchemy_openapi_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jolestar",
+      "features": [
+        "Operate Alchemy Prices API reads through UXC with a curated OpenAPI schema, path-templated API-."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alchemy-openapi-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77268?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alchemy-openapi-skill",
+      "url": "https://clawhub.ai/skills/alchemy-openapi-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alchemy-openapi-skill",
+    "url": "https://clawhub.ai/skills/alchemy-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alchemy-openapi-skill-cb92ebe14f549b5b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alchemy-openapi-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-alchemy-openapi-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e37398487053cd1dd3530726fe57e21fc40839c1af25d2f9559b906545c6efd",
+      "artifactSizeBytes": 2372
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T01:57:19.354Z"
+}

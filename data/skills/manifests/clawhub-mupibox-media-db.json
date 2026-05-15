@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16252,
+  "uuid": "skill-clawhub-mupibox-media-db",
+  "skillKey": "clawhub-mupibox-media-db",
+  "name": "MuPiBox Media DB",
+  "summary": "Manage the MuPiBox media database via backend API to list, add, remove, move, edit, and restore media entries stored in data.json.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mupibox_media_db",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tomquist",
+      "features": [
+        "Manage the MuPiBox media database via backend API to list, add, remove, move, edit, and restore."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mupibox-media-db@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/528585?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mupibox-media-db",
+      "url": "https://clawhub.ai/skills/mupibox-media-db"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mupibox-media-db",
+    "url": "https://clawhub.ai/skills/mupibox-media-db",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mupibox-media-db-6a8769c2535f0d1c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mupibox-media-db@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-mupibox-media-db-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:35592eb30836d9250b869b8e628bfdc10a2daf930bc2fea966b86a929fb6626d",
+      "artifactSizeBytes": 1946
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T11:42:33.444Z"
+}

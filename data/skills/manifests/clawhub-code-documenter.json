@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19556,
+  "uuid": "skill-clawhub-code-documenter",
+  "skillKey": "clawhub-code-documenter",
+  "name": "Code Documenter",
+  "summary": "Use when adding docstrings, creating API documentation, or building documentation sites. Invoke for OpenAPI/Swagger specs, JSDoc, doc portals, tutorials, use...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_documenter",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lhwa8685",
+      "features": [
+        "Use when adding docstrings, creating API documentation, or building documentation sites",
+        "Invoke for OpenAPI/Swagger specs, JSDoc, doc portals, tutorials, use..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/code-documenter@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/195074450?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "code-documenter",
+      "url": "https://clawhub.ai/skills/code-documenter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-documenter",
+    "url": "https://clawhub.ai/skills/code-documenter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-documenter-bcba75d378b9f2fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/code-documenter@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-code-documenter-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1bc943c9f380180cb00d5e3f6ae7cbf8adbed0ccfd23072d191133946060c471",
+      "artifactSizeBytes": 2563
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T14:16:52.687Z"
+}

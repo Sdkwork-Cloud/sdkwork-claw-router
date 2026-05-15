@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32256,
+  "uuid": "skill-clawhub-panthrocorp-zoho-mail",
+  "skillKey": "clawhub-panthrocorp-zoho-mail",
+  "name": "Zoho Mail",
+  "summary": "Full read/write Zoho Mail access for OpenClaw agents",
+  "version": "0.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.panthrocorp_zoho_mail",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PanthroCorp",
+      "features": [
+        "Full read/write Zoho Mail access for OpenClaw agents"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/panthrocorp-zoho-mail@0.3.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264519014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "panthrocorp-zoho-mail",
+      "url": "https://clawhub.ai/skills/panthrocorp-zoho-mail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "panthrocorp-zoho-mail",
+    "url": "https://clawhub.ai/skills/panthrocorp-zoho-mail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/panthrocorp-zoho-mail-6ced3f80109af41b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/panthrocorp-zoho-mail@0.3.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-panthrocorp-zoho-mail-0.3.1.json",
+      "version": "0.3.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:00e8aa813854d9d0709413f3290b65b8d5dcd3198427ba709a7ca433b0c70764",
+      "artifactSizeBytes": 2149
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T08:38:10.721Z"
+}

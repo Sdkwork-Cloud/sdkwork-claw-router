@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71437,
+  "uuid": "skill-clawhub-hot-it-news",
+  "skillKey": "clawhub-hot-it-news",
+  "name": "hot-it-news",
+  "summary": "获取量子位、人人都是产品经理、虎嗅的站内热门文章，并按友好格式输出。适用于用户想查看 IT、IT 行业资讯、科技新闻、互联网新闻、AI 资讯、产品动态、商业科技、热点文章、热文、今日资讯、行业热点等内容时触发。",
+  "version": "1.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hot_it_news",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lushi516",
+      "features": [
+        "获取量子位、人人都是产品经理、虎嗅的站内热门文章，并按友好格式输出。适用于用户想查看 IT、IT 行业资讯、科技新闻、互联网新闻、AI 资讯、产品动态、商业科技、热点文章、热文、今日资讯、行."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hot-it-news@1.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/76633368?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hot-it-news",
+      "url": "https://clawhub.ai/skills/hot-it-news"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hot-it-news",
+    "url": "https://clawhub.ai/skills/hot-it-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hot-it-news-d8d069d2d20a7f26.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hot-it-news@1.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-hot-it-news-1.1.3.json",
+      "version": "1.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:27e5c1beffa6ce495f595ac242a42b42ea6e55e9af418aed2981691dee02dfe4",
+      "artifactSizeBytes": 2048
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T04:36:43.332Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/table-1-generator-advanced@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.table_1_generator_advanced",
+  "skill": {
+    "id": 38317,
+    "skillKey": "clawhub-table-1-generator-advanced",
+    "name": "Table 1 Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "table-1-generator-advanced",
+    "url": "https://clawhub.ai/skills/table-1-generator-advanced",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/table-1-generator-advanced-b9437a799a78e41f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated generation of baseline characteristics tables (Table 1) for clinical research papers."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775030923118,
+      "changelog": "Initial release: automated, audit-ready Table 1 generation for clinical research.\n\n- Generates APA-formatted baseline characteristics tables with variable type detection and group comparisons.\n- Supports missing data reporting and export to CSV/Excel.\n- Command-line script interface with input validation, error handling, and reproducible results.\n- Includes a thorough workflow, security checklist, and usage examples for robust, safe deployment.\n- Python 3.10+; requires numpy, pandas, and scipy.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:16d5ea523c19a364a4c1d4ba2e003a44f032690fa7bc1fd755cbcb4525f3a00b"
+}

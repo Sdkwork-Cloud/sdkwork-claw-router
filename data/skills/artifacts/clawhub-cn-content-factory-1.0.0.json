@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cn-content-factory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_content_factory",
+  "skill": {
+    "id": 71193,
+    "skillKey": "clawhub-cn-content-factory",
+    "name": "中文自媒体内容工厂"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-content-factory",
+    "url": "https://clawhub.ai/skills/cn-content-factory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-content-factory-96c180302950b25b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "中文自媒体内容工厂：一键生成适配小红书/公众号/抖音/知乎的高质量内容。 支持热点选题、爆款标题、多平台风格适配、去AI味润色、SEO优化。 当用户提到\"写文案\"、\"内容创作\"、\"发小红书\"、\"公众号文章\"、\"抖音脚本\"、 \"知乎回答\"、\"批量内容\"、\"内容矩阵\"时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "l1379703917-del",
+      "userId": "s17e52xy2qh5fkq1jab6fzp6bn83pyap",
+      "displayName": "l1379703917-del",
+      "image": "https://avatars.githubusercontent.com/u/267249091?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 239,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775443019468,
+      "changelog": "Initial release of cn-content-factory:\n\n- Launches a one-stop Chinese content creation tool for platforms like 小红书, 公众号, 抖音, and 知乎\n- Enables hot topic ideation, viral title generation, and multi-platform content adaptation\n- Includes \"de-AI\" polishing, platform-specific SEO optimization, and content quality safeguards\n- Supports bulk topic generation and content batch production\n- Designed for self-media creators, e-commerce sellers, MCNs, and freelance writers",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f4812cc38f4820fc3aac5b5f7e336d9615f4ea01ec48f6cb844ed935338d1d1b"
+}

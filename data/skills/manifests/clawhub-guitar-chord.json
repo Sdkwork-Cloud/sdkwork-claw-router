@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21605,
+  "uuid": "skill-clawhub-guitar-chord",
+  "skillKey": "clawhub-guitar-chord",
+  "name": "Guitar Chord",
+  "summary": "Guitar chord toolkit with chord identification, chord diagrams, capo calculation, and more. Features: - Identify chord from notes (reverse lookup) - Look up...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.guitar_chord",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DeAnti-",
+      "features": [
+        "Guitar chord toolkit with chord identification, chord diagrams, capo calculation, and more",
+        "Features:",
+        "Identify chord from notes (reverse lookup)",
+        "Look up..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/guitar-chord@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21234945?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "guitar-chord",
+      "url": "https://clawhub.ai/skills/guitar-chord"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "guitar-chord",
+    "url": "https://clawhub.ai/skills/guitar-chord",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/guitar-chord-e6e7ba5d718ab4d5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/guitar-chord@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-guitar-chord-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:89b72eb365f66e3ed5cf87e11e5e08886b4671f812159f041501af5860b26334",
+      "artifactSizeBytes": 2119
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T15:35:09.200Z"
+}

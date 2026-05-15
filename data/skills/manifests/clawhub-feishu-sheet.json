@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63134,
+  "uuid": "skill-clawhub-feishu-sheet",
+  "skillKey": "clawhub-feishu-sheet",
+  "name": "Feishu Sheet",
+  "summary": "飞书电子表格（Sheets）完整操作。当需要创建、读取或编辑飞书电子表格时激活此 skill。 支持：创建表格、读写单元格、追加数据、图片插入、样式设置、合并单元格、行列操作、查找替换。 需要飞书应用凭证：channels.feishu.appId 和 channels.feishu.appSecret（配置在...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_sheet",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "siyiding",
+      "features": [
+        "飞书电子表格（Sheets）完整操作。当需要创建、读取或编辑飞书电子表格时激活此 skill。 支持：创建表格、读写单元格、追加数据、图片插入、样式设置、合并单元格、行列操作、查找替换。 需."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-sheet@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/222012579?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-sheet",
+      "url": "https://clawhub.ai/skills/feishu-sheet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-sheet",
+    "url": "https://clawhub.ai/skills/feishu-sheet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-sheet-fa418d9b6e075885.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-sheet@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-sheet-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a669827b5c41072b164bbb40d9338ca613b81cb33b55229515dfc9625a792bc3",
+      "artifactSizeBytes": 2364
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T10:40:47.975Z"
+}

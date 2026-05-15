@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36718,
+  "uuid": "skill-clawhub-re-blog-image",
+  "skillKey": "clawhub-re-blog-image",
+  "name": "Re Blog Image",
+  "summary": "Generate a 1600px-wide webp blog thumbnail image using the nano-img CLI. Use when the user provides a blog topic or blog name and wants a thumbnail image gen...",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.re_blog_image",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dishant Sharma",
+      "features": [
+        "Generate a 1600px-wide webp blog thumbnail image using the nano-img CLI",
+        "Use when the user provides a blog topic or blog name and wants a thumbnail image gen..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/re-blog-image@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/90952604?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "re-blog-image",
+      "url": "https://clawhub.ai/skills/re-blog-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "re-blog-image",
+    "url": "https://clawhub.ai/skills/re-blog-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/re-blog-image-66c9fa578c8bf17f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/re-blog-image@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-re-blog-image-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e6173be77c147974d753e96eba53e7e652ffa96db1f274ae8b83671dfb9d4c61",
+      "artifactSizeBytes": 1998
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T18:20:14.940Z"
+}

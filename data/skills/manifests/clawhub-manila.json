@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70167,
+  "uuid": "skill-clawhub-manila",
+  "skillKey": "clawhub-manila",
+  "name": "Manila",
+  "summary": "马尼拉是菲律宾首都，全球第二大BPO中心，拥有1400万人口和快速增长的中产阶级，经济以服务业和汇款为主。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.manila",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "马尼拉是菲律宾首都，全球第二大BPO中心，拥有1400万人口和快速增长的中产阶级，经济以服务业和汇款为主。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/manila@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "manila",
+      "url": "https://clawhub.ai/skills/manila"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "manila",
+    "url": "https://clawhub.ai/skills/manila",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/manila-7ee29bca117d5f53.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/manila@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-manila-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9abffbd0c840c319656d36aa956a7fd82811c30872324116a779b191a27d41a1",
+      "artifactSizeBytes": 2301
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T10:04:15.852Z"
+}

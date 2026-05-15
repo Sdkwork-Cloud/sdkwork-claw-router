@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47949,
+  "uuid": "skill-clawhub-doorstep-video",
+  "skillKey": "clawhub-doorstep-video",
+  "name": "Doorstep Video",
+  "summary": "Get polished MP4 clips ready to post, without touching a single slider. Upload your raw footage (MP4, MOV, AVI, WebM, up to 500MB), say something like \"trim...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doorstep_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mory128",
+      "features": [
+        "Get polished MP4 clips ready to post, without touching a single slider",
+        "Upload your raw footage (MP4, MOV, AVI, WebM, up to 500MB), say something like \"trim..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doorstep-video@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270709915?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doorstep-video",
+      "url": "https://clawhub.ai/skills/doorstep-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doorstep-video",
+    "url": "https://clawhub.ai/skills/doorstep-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doorstep-video-4aaefcc85474addc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doorstep-video@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-doorstep-video-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d21d32f10d90801b3cd91e74d4d52e779670a4887ea203927409aa810c952f87",
+      "artifactSizeBytes": 2689
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T16:24:48.241Z"
+}

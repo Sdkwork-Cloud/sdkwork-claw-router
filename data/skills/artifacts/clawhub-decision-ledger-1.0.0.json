@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/decision-ledger@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.decision_ledger",
+  "skill": {
+    "id": 60126,
+    "skillKey": "clawhub-decision-ledger",
+    "name": "Decision Ledger"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "decision-ledger",
+    "url": "https://clawhub.ai/skills/decision-ledger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/decision-ledger-cc75aea48d0cb770.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "从纪要、聊天或项目材料中提取决策、负责人、截止时间、前提假设与撤销条件。；use for decision, meeting, governance workflows；do not use for 编造不存在的决策, 替代法律审计."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "52yuanchangxing",
+      "userId": "s178sqjkywrs4vbnfcrr7wx7f583gef5",
+      "displayName": "vx：17605205782",
+      "image": "https://avatars.githubusercontent.com/u/39086567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 267,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773649287956,
+      "changelog": "decision-ledger 1.0.0 初始发布\n\n- 新增从会议纪要、聊天或项目材料中自动提取决策、负责人、截止时间、前提假设与撤销条件的能力。\n- 支持适用于决策记录、治理与会议追踪等场景，产生结构化的决策台账输出。\n- 明确区分适用与不适用范围，强调不可编造决策及法律审计用途限制。\n- 默认先生成可审阅草案，优先罗列待确认项，严格执行安全和合规边界。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:157e2b1dea2490757ff6149b416b124ba8c8a621065ca0e60a0ba4892f1921ff"
+}

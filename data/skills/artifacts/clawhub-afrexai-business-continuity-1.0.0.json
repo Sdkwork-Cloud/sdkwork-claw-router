@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/afrexai-business-continuity@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_business_continuity",
+  "skill": {
+    "id": 17049,
+    "skillKey": "clawhub-afrexai-business-continuity",
+    "name": "Business Continuity Planner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-business-continuity",
+    "url": "https://clawhub.ai/skills/afrexai-business-continuity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-business-continuity-ca5eb5546006aa77.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create detailed business continuity and disaster recovery plans by mapping critical functions, setting recovery objectives, assessing risks, and generating c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1kalin",
+      "userId": "s17e1q0nx23qnh4n429zzqc05x83hvsw",
+      "displayName": "1kalin",
+      "image": "https://avatars.githubusercontent.com/u/15705344?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 822,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770975825643,
+      "changelog": "Initial release of Business Continuity Planner.\n\n- Guides users through building a complete Business Continuity Plan (BCP) and Disaster Recovery (DR) strategy.\n- Maps critical business functions, assigns RTO/RPO, and identifies key dependencies.\n- Assesses risks, recovery strategies, and builds actionable communication plans.\n- Outputs a structured markdown BCP document, including business impact analysis and risk register tables.\n- Provides recommendations for testing and ongoing maintenance of the continuity plan.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5d0b79e23447f1cb1e83c4380bb20853b5cac9c48611cbc5caffcbe9a5ae8fa9"
+}

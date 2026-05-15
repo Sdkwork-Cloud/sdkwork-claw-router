@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apple@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apple",
+  "skill": {
+    "id": 21171,
+    "skillKey": "clawhub-apple",
+    "name": "Shop from Apple - With your creditcard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apple",
+    "url": "https://clawhub.ai/skills/apple",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apple-3a7bd3e2360a3d29.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Let your agent shop online with guardrailed wallets, multiple payment methods, and owner approval."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "triplehippo",
+      "userId": "s171q9wjnctwwjjn7rjgjkwy2h83fayr",
+      "displayName": "TripleHippo",
+      "image": "https://avatars.githubusercontent.com/u/261665182?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 439,
+      "installsAllTime": 8,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773174160739,
+      "changelog": "Initial release of CreditClaw skill for agent-enabled online shopping and payments.\n\n- Lets agents shop online with guardrailed wallets, spending controls, and owner approval.\n- Supports multiple payment methods: Pre-paid Wallet (Amazon, Shopify), Self-Hosted Card (SaaS, cloud, any store), and Stripe x402 Wallet (on-chain, agent-to-agent).\n- Clear setup instructions for registration, API use, and file management.\n- Per-method purchasing guides and security best practices included.\n- Strong security measures: server-side guardrails, spending enforcement, approval modes, and rate limits.\n- Real-time owner visibility and control over all agent purchases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:243416736f338222ba06bc624c3fd7d61bbda40313a99d723dd5443f62d3b994"
+}

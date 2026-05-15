@@ -1,0 +1,49 @@
+{
+  "skill": {
+    "slug": "ima-skills",
+    "displayName": "ima skills",
+    "summary": "统一的 IMA OpenAPI 技能，支持笔记管理和知识库操作。 当用户提到知识库、资料库、笔记、备忘录、记事，或者想要上传文件、添加网页到知识库、 搜索知识库内容、搜索/浏览/创建/编辑笔记时，使用此 skill。 即使用户没有明确说\"知识库\"或\"笔记\"，只要意图涉及文件上传到知识库、网页收藏、 知识搜索、个人...",
+    "tags": {
+      "latest": "1.1.7"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 12460,
+      "installsAllTime": 36,
+      "installsCurrent": 32,
+      "stars": 32,
+      "versions": 7
+    },
+    "createdAt": 1773665738363,
+    "updatedAt": 1778310227878
+  },
+  "latestVersion": {
+    "version": "1.1.7",
+    "createdAt": 1777025159209,
+    "changelog": "ima-skill 1.1.7 changelog\n\n- Initial release providing a unified IMA OpenAPI skill supporting note management and knowledge-base operations.\n- Automates intent routing between notes and knowledge-base modules based on user requests.\n- Enforces strict rules for credential usage, file uploads, encoding validation, and module decision logic.\n- Guides users through credential setup before allowing API operations.\n- Adds detailed error handling for process and backend errors.\n- Includes structured instructions and decision tables for handling ambiguous or cross-module user scenarios.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "iampennyli",
+    "userId": "s17b8zpkvjjj39qt4e1wx3r8a583gg9t",
+    "displayName": "pennyli",
+    "image": "https://avatars.githubusercontent.com/u/14218414?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.env_credential_access",
+      "suspicious.llm_suspicious",
+      "suspicious.potential_exfiltration"
+    ],
+    "summary": "Detected: suspicious.env_credential_access, suspicious.llm_suspicious, suspicious.potential_exfiltration",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778310227878
+  }
+}

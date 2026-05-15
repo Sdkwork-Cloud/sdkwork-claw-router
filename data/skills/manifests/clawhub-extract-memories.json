@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60314,
+  "uuid": "skill-clawhub-extract-memories",
+  "skillKey": "clawhub-extract-memories",
+  "name": "Extract Memories",
+  "summary": "对话结束时主动提炼关键记忆到 topic 文件 / 触发词：提炼记忆、提取记忆 / 命令：/extract-memories",
+  "version": "3.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.extract_memories",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mr.Zhenweisi",
+      "features": [
+        "对话结束时主动提炼关键记忆到 topic 文件 / 触发词：提炼记忆、提取记忆 / 命令：/extract-memories"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/extract-memories@3.0.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/253879682?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "extract-memories",
+      "url": "https://clawhub.ai/skills/extract-memories"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "extract-memories",
+    "url": "https://clawhub.ai/skills/extract-memories",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/extract-memories-d2a713b396c9dd96.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/extract-memories@3.0.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-extract-memories-3.0.10.json",
+      "version": "3.0.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a4535469ee5be0c53c50980bc5aba339b2d450f0226183a4d5b79b7d5c13b57b",
+      "artifactSizeBytes": 1921
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T17:34:24.753Z"
+}

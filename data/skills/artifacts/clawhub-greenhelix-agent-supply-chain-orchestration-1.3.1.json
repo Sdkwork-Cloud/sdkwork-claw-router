@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/greenhelix-agent-supply-chain-orchestration@1.3.1",
+  "version": "1.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.greenhelix_agent_supply_chain_orchestration",
+  "skill": {
+    "id": 31844,
+    "skillKey": "clawhub-greenhelix-agent-supply-chain-orchestration",
+    "name": "Agentic Supply Chain Orchestration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "greenhelix-agent-supply-chain-orchestration",
+    "url": "https://clawhub.ai/skills/greenhelix-agent-supply-chain-orchestration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/greenhelix-agent-supply-chain-orchestration-06930b4806381133.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agentic Supply Chain Orchestration. Build multi-agent supplier networks that self-heal: supplier discovery, real-time SLA monitoring, disruption detection wi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mirni",
+      "userId": "s1711srsc0t5e7tx4tkwpmygw584bfmq",
+      "displayName": "mirni",
+      "image": "https://avatars.githubusercontent.com/u/13551232?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 261,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.3.1",
+      "createdAt": 1776237114765,
+      "changelog": "- Added an OpenClaw metadata block specifying required environment variables, indicating GREENHELIX_API_KEY is needed for full API access.\n- No changes to guide content or functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e2ae01a1b8ea2683cd9a1f2529b2066d1e6d51b5e513f2d6a45caf9e6f0efb98"
+}

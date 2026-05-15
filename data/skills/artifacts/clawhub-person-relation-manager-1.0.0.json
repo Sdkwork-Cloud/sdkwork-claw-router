@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/person-relation-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.person_relation_manager",
+  "skill": {
+    "id": 73667,
+    "skillKey": "clawhub-person-relation-manager",
+    "name": "人物关系管理"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "person-relation-manager",
+    "url": "https://clawhub.ai/skills/person-relation-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/person-relation-manager-fc2294a245aa72f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "人物关系与平台昵称管理器。当需要给某人发消息、但不知道对方在某平台的昵称时触发。自动查询记忆，如果没有记录则询问用户并记忆。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "calvin-dean",
+      "userId": "s17d5efa4g40dv72ysapcjg20984c83e",
+      "displayName": "calvin-dean",
+      "image": "https://avatars.githubusercontent.com/u/121805072?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775565046021,
+      "changelog": "首发版本，支持多昵称多平台映射",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aae5324127c79394da4995472c7e7d0b09cd3dc1e98b4978136ae6d6acfbc4f5"
+}

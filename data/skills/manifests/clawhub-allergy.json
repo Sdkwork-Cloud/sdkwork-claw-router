@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26540,
+  "uuid": "skill-clawhub-allergy",
+  "skillKey": "clawhub-allergy",
+  "name": "Allergy",
+  "summary": "Log allergens, track reactions, and chart symptom patterns over time. Use when identifying triggers, preparing reports, or setting reminders.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.allergy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "Log allergens, track reactions, and chart symptom patterns over time",
+        "Use when identifying triggers, preparing reports, or setting reminders."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/allergy@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "allergy",
+      "url": "https://clawhub.ai/skills/allergy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "allergy",
+    "url": "https://clawhub.ai/skills/allergy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/allergy-d128b6760194ca99.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/allergy@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-allergy-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e1d78462e9520a732dfc04b109fc230fa56faf93b453e0b6281befbb0ac27366",
+      "artifactSizeBytes": 1844
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T01:45:38.242Z"
+}

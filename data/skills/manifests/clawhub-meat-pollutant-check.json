@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70517,
+  "uuid": "skill-clawhub-meat-pollutant-check",
+  "skillKey": "clawhub-meat-pollutant-check",
+  "name": "meatpollutant牛羊肉罐头污染物超标判定",
+  "summary": "依据GB 5009.5-2025第一法凯氏定氮法，指导畜禽肉蛋白质含量测定全流程，涵盖试剂配制、消解蒸馏、滴定操作及结果计算；当用户需要检测肉类蛋白质、执行凯氏定氮实验、计算蛋白质含量或验证精密度时使用",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meat_pollutant_check",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tinker",
+      "features": [
+        "依据GB 5009.5-2025第一法凯氏定氮法，指导畜禽肉蛋白质含量测定全流程，涵盖试剂配制、消解蒸馏、滴定操作及结果计算；当用户需要检测肉类蛋白质、执行凯氏定氮实验、计算蛋白质含量或验证."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meat-pollutant-check@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3884483?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meat-pollutant-check",
+      "url": "https://clawhub.ai/skills/meat-pollutant-check"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meat-pollutant-check",
+    "url": "https://clawhub.ai/skills/meat-pollutant-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meat-pollutant-check-bd1915166ef89202.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meat-pollutant-check@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-meat-pollutant-check-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1128b9f3554754d4c2f8cf136d6c46401882b3f85ae3e86ae85d731c29a450ad",
+      "artifactSizeBytes": 2817
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T10:42:06.687Z"
+}

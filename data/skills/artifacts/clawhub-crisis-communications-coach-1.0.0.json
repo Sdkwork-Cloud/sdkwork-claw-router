@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crisis-communications-coach@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crisis_communications_coach",
+  "skill": {
+    "id": 53672,
+    "skillKey": "clawhub-crisis-communications-coach",
+    "name": "Crisis Communications Coach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crisis-communications-coach",
+    "url": "https://clawhub.ai/skills/crisis-communications-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crisis-communications-coach-b695e13dbe82e743.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Coach a CEO, CMO, head-of-comms, or general counsel through a corporate crisis communications event — security breach, data leak, product outage, executive m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 84,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778201646077,
+      "changelog": "Initial release of Crisis Communications Coach skill.\n\n- Guides executives through real-time crisis communications for events like breaches, outages, misconduct, or regulatory actions.\n- Covers the critical first-hour response, including team assembly, fact gathering, and issuing a holding statement.\n- Outlines a clear priority stack (legal, customer safety, employees, press, investors, regulators, partners).\n- Provides detailed messaging strategies for customers, employees, press, regulators, and social media.\n- Advises on truth vs. positioning, legal/comms tensions, and post-crisis recovery.\n- Triggered by explicit crisis signals; not intended for routine PR or brand work.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:73a5a530144876ca2fa00a9ba05bbbb89e718a1b9118456e9e2ca40599714ccd"
+}

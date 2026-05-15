@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/osteo-gc@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.osteo_gc",
+  "skill": {
+    "id": 37544,
+    "skillKey": "clawhub-osteo-gc",
+    "name": "OSTEO-GC: Glucocorticoid-Induced Osteoporosis Modeling"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "osteo-gc",
+    "url": "https://clawhub.ai/skills/osteo-gc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/osteo-gc-448b4b747d5a3413.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Models BMD T-score trajectories and 10-year fracture risk in chronic glucocorticoid users with uncertainty and ACR 2022 osteoporosis treatment guidance."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cryptoreumd",
+      "userId": "publishers:cryptoreumd",
+      "displayName": "CryptoReuMD",
+      "image": "https://avatars.githubusercontent.com/u/106553699?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774190716324,
+      "changelog": "OSTEO-GC 1.0.0 Changelog\n\n- Initial release of OSTEO-GC skill for clinical modeling of glucocorticoid-induced osteoporosis.\n- Projects BMD T-score changes over time at multiple skeletal sites using dose-response modeling and Monte Carlo simulation.\n- Estimates 10-year fracture probability using a FRAX-inspired approach.\n- Provides ACR 2022-based risk stratification and individualized treatment recommendations.\n- Includes built-in support for multiple glucocorticoids and common osteoporosis therapies.\n- Requires only Python 3.8+ standard library; no external dependencies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f2dad7f035524ee57748db23016095dc44bec0d664f535bd473235d73cae2624"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68809,
+  "uuid": "skill-clawhub-loop-prevention",
+  "skillKey": "clawhub-loop-prevention",
+  "name": "Loop Prevention",
+  "summary": "操作循环防止规范。防止 Agent 对同一操作反复执行造成资源浪费。适用于 exec 命令、工具调用、文件读写等所有可重复操作。核心规则：同一操作最多 5 次、结果不理想换策略、检测到循环立即停止。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.loop_prevention",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wei dong",
+      "features": [
+        "操作循环防止规范。防止 Agent 对同一操作反复执行造成资源浪费。适用于 exec 命令、工具调用、文件读写等所有可重复操作。核心规则：同一操作最多 5 次、结果不理想换策略、检测到循环立."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/loop-prevention@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7512609?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "loop-prevention",
+      "url": "https://clawhub.ai/skills/loop-prevention"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "loop-prevention",
+    "url": "https://clawhub.ai/skills/loop-prevention",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/loop-prevention-9802c6f1d2b29beb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/loop-prevention@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-loop-prevention-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:074d2a154cd3c76400670c9e1c894f2eb514ef371489ed8fb09eccd5035c9cfc",
+      "artifactSizeBytes": 2075
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T02:07:11.302Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_search",
+  "skill": {
+    "id": 8296,
+    "skillKey": "clawhub-web-search",
+    "name": "Web Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-search",
+    "url": "https://clawhub.ai/skills/web-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-search-c324229582e9a116.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when users need to search the web for information, find current content, look up news articles, search for images, or find videos. It uses DuckDuckGo's search API to return results in clean, formatted output (text."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "billyutw",
+      "userId": "publishers:billyutw",
+      "displayName": "billyutw",
+      "image": "https://avatars.githubusercontent.com/u/26513936?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 30978,
+      "installsAllTime": 507,
+      "installsCurrent": 485,
+      "stars": 29,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769673454302,
+      "changelog": "web-search 1.0.0\n\n- Initial release of the skill.\n- Search the web using DuckDuckGo’s API for web pages, news, images, and videos.\n- Supports multiple result formats: plain text, markdown, and JSON.\n- Includes rich filtering (time range, region, safe search) and content-type options.\n- Image and video searches offer flexible filters (size, color, type, duration, resolution, layout).\n- Allows saving results to files for further use.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:49e19df9d56e6f3b0e08c5058c879bd5985a8f1ae7d67ffb91eec23fed0ca144"
+}

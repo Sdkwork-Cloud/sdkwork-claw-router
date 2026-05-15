@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60479,
+  "uuid": "skill-clawhub-vispatrol-picture",
+  "skillKey": "clawhub-vispatrol-picture",
+  "name": "vispatrol-picture",
+  "summary": "在 Windows 上抓取 VisPatrol 设备实时抓拍；仅允许在用户明确批准后读取本机 %TEMP%/vpup.json 以执行只读抓拍查询。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vispatrol_picture",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "baymax1957",
+      "features": [
+        "在 Windows 上抓取 VisPatrol 设备实时抓拍；仅允许在用户明确批准后读取本机 %TEMP%/vpup.json 以执行只读抓拍查询。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vispatrol-picture@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263845230?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vispatrol-picture",
+      "url": "https://clawhub.ai/skills/vispatrol-picture"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vispatrol-picture",
+    "url": "https://clawhub.ai/skills/vispatrol-picture",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vispatrol-picture-877088cef8ec003c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vispatrol-picture@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-vispatrol-picture-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ebf80d623a94260a0caf6cc01ddae181a416361c30dff8b8b66bf9da11b5699",
+      "artifactSizeBytes": 2459
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T08:46:39.290Z"
+}

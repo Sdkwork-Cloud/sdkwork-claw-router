@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-updater-bak2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_updater_bak2",
+  "skill": {
+    "id": 40107,
+    "skillKey": "clawhub-auto-updater-bak2",
+    "name": "Auto Updater.Bak2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-updater-bak2",
+    "url": "https://clawhub.ai/skills/auto-updater-bak2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-updater-bak2-e87fa422d6b5b288.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically update Clawdbot and all installed skills once daily. Runs via cron, checks for updates, applies them, and messages the user with a summary of w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "make453",
+      "userId": "s171bnm4ey1a62whjsxt9brj4d83qreq",
+      "displayName": "make453",
+      "image": "https://avatars.githubusercontent.com/u/200362598?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774109227652,
+      "changelog": "Initial release of the auto-updater skill.\n\n- Automatically checks for and applies updates to Clawdbot and all installed skills once daily.\n- Configures a cron job to run updates at a customizable time (default 4:00 AM).\n- Sends a detailed summary message after each update run, including what changed.\n- Provides manual commands and troubleshooting guidance for easy maintenance.\n- Supports both npm/package manager and source (git) installations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9cc0d139e21b1103b1eeadd09d59aa16be724f2bbd87d795f439e53dbbf47b97"
+}

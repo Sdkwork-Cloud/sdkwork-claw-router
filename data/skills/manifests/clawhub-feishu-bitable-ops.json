@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63330,
+  "uuid": "skill-clawhub-feishu-bitable-ops",
+  "skillKey": "clawhub-feishu-bitable-ops",
+  "name": "Feishu Bitable Ops",
+  "summary": "飞书多维表格（Bitable）操作技能。处理 wiki URL 与 base URL 的 token 区分、字段类型写入格式、批量操作。当需要读写飞书多维表格、创建记录、查询数据、管理字段时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_bitable_ops",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bbj375767338-arch",
+      "features": [
+        "飞书多维表格（Bitable）操作技能。处理 wiki URL 与 base URL 的 token 区分、字段类型写入格式、批量操作。当需要读写飞书多维表格、创建记录、查询数据、管理字段时."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-bitable-ops@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274388308?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-bitable-ops",
+      "url": "https://clawhub.ai/skills/feishu-bitable-ops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-bitable-ops",
+    "url": "https://clawhub.ai/skills/feishu-bitable-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-bitable-ops-d9e946f106486e99.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-bitable-ops@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-bitable-ops-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3fdcacaa8b19a041e40161eacfed1d6c51fed6485b226fc5878bc7b54b5c66b1",
+      "artifactSizeBytes": 2365
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T05:40:48.296Z"
+}

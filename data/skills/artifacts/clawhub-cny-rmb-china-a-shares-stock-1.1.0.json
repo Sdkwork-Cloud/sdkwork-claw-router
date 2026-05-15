@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cny-rmb-china-a-shares-stock@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cny_rmb_china_a_shares_stock",
+  "skill": {
+    "id": 58802,
+    "skillKey": "clawhub-cny-rmb-china-a-shares-stock",
+    "name": "V1.11 CNY RMB A股 China A shares Stock"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cny-rmb-china-a-shares-stock",
+    "url": "https://clawhub.ai/skills/cny-rmb-china-a-shares-stock",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cny-rmb-china-a-shares-stock-d66611ff56ca58e3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CNY RMB A股热搜分析 - China A Shares Stock Skill 微博热搜 + A股行情 + 关联分析，一站式掌握市场热点。 关键词：A股, 大A, A-shares, China A, Onshore, 涨停, 跌停, 热搜"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aaroncxxx",
+      "userId": "s17509zamkdtrtbahz6xrwbmx585c88m",
+      "displayName": "aaroncxxx",
+      "image": "https://avatars.githubusercontent.com/u/255621878?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777596881854,
+      "changelog": "v1.1: 新增北向资金/5日趋势/关键词增强/本地快照缓存",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:63391e6b200f920bc3b16e4ce32c8257997210ed007d1cce26270157b5b19aab"
+}

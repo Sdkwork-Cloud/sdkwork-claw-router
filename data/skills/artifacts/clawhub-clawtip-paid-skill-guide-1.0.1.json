@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawtip-paid-skill-guide@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawtip_paid_skill_guide",
+  "skill": {
+    "id": 59215,
+    "skillKey": "clawhub-clawtip-paid-skill-guide",
+    "name": "ClawTip付费技能开发指南"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawtip-paid-skill-guide",
+    "url": "https://clawhub.ai/skills/clawtip-paid-skill-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawtip-paid-skill-guide-d883df1d2b1144c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ClawTip付费技能创建完整指南 - 包含正确的订单创建、SM4加密、本地测试方法。 based on official developer guide at https://clawtip.jd.com/guide"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liulian822",
+      "userId": "s17a3w4bemy5rs8nhqvs0cbvt584zt98",
+      "displayName": "liulian822",
+      "image": "https://avatars.githubusercontent.com/u/19779573?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 122,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776338310608,
+      "changelog": "- Added a comprehensive ClawTip paid skill creation guide, including correct order creation, SM4 encryption, and local testing steps.\n- Clarified required file and directory structure for skills.\n- Provided detailed Python code for SM4-encrypted order creation and file handling.\n- Listed mandatory fields in the order files and explained payment parameter formats.\n- Included troubleshooting tips for common local testing and payment errors.\n- Summarized key best practices for secure and standard-compliant skill development.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:980232a753127c101d25f6c2abc3d36d9e51948cd81c2f52d024ad2ca5d4343b"
+}

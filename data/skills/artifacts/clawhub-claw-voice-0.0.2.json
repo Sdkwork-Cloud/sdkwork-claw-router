@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-voice@0.0.2",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_voice",
+  "skill": {
+    "id": 11091,
+    "skillKey": "clawhub-claw-voice",
+    "name": "ClawVoice"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-voice",
+    "url": "https://clawhub.ai/skills/claw-voice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-voice-2626f94ec7993e1b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connects to a live voice session, receiving and sending messages in real time via a WebSocket interface using the bundled client script."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "niczy",
+      "userId": "publishers:niczy",
+      "displayName": "niczy",
+      "image": "https://avatars.githubusercontent.com/u/825483?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2197,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.2",
+      "createdAt": 1770157498785,
+      "changelog": "- Added a new CLI Python client script (`client.py`) for real-time voice interaction over WebSocket.\n- The CLI supports sending messages, receiving messages, streaming/listening for multiple messages, and agent bridging.\n- Updated documentation to detail usage of the client script, including new command options and workflows.\n- Improved connection configuration options with a default and customizable WebSocket URL.\n- Clarified message type reference and behavior guidelines in the documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:78f9f081b797411e00f256b6ac2b8a8a1f72fcb40003c0eb4e8a0fdbc76367f4"
+}

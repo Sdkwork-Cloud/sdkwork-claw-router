@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kepano-obsidian-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kepano_obsidian_cli",
+  "skill": {
+    "id": 38170,
+    "skillKey": "clawhub-kepano-obsidian-cli",
+    "name": "Obsidian CLI (kepano)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kepano-obsidian-cli",
+    "url": "https://clawhub.ai/skills/kepano-obsidian-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kepano-obsidian-cli-00f08559f00cb201.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with Obsidian vaults using the Obsidian CLI to read, create, search, and manage notes, tasks, properties, and more. Also supports plugin and theme d..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hoyaryyj",
+      "userId": "s170g3dyxv97ccfpwszf9ygmnd83zsq1",
+      "displayName": "hoyaryyj",
+      "image": "https://avatars.githubusercontent.com/u/62821583?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775138918868,
+      "changelog": "Initial release of obsidian-cli skill:\n\n- Enables interaction with Obsidian vaults via the official Obsidian CLI.\n- Supports reading, creating, searching, and managing notes, tasks, and properties.\n- Includes commands for plugin and theme development: reload plugins, execute JavaScript, check errors, take screenshots, and inspect the DOM.\n- Allows targeting specific files and vaults from the command line.\n- Suitable for both everyday note operations and developer workflows within Obsidian.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c218b3bed1250a8fe59b09bcf9f1b756a9ff2840017b1b7005e76a9cb03038c9"
+}

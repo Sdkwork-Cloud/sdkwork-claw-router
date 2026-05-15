@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/test-asdasdasd@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_asdasdasd",
+  "skill": {
+    "id": 67412,
+    "skillKey": "clawhub-test-asdasdasd",
+    "name": "test-asdasdasd"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-asdasdasd",
+    "url": "https://clawhub.ai/skills/test-asdasdasd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-asdasdasd-96d8ec9327d13863.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "结构化字段抽取工具 - 基于用户定义的schema从文档中抽取结构化字段。schema定义要抽取的字段及其语义描述，支持文本、表格、段落三种类型的字段抽取。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cf990801-commits",
+      "userId": "s176zch9x3q85321t8atb7s8t585em27",
+      "displayName": "cf990801-commits",
+      "image": "https://avatars.githubusercontent.com/u/278967041?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 44,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778297169862,
+      "changelog": "Initial release of \"extract-structured-data-from-document\" (结构化字段抽取工具).\n\n- Provides structured field extraction from documents (PDF, Word, Excel, images) based on user-defined schema.\n- Supports extraction of text fields, tables, and paragraphs with precise semantic descriptions.\n- Requires schema construction before invocation if not explicitly provided.\n- Returns results with value, type, page number, and source coordinates for traceability.\n- Handles asynchronous extraction tasks, supporting both automatic result polling and manual result queries.\n- Includes detailed usage instructions, input schema format, and multiple practical examples.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d6d6b4aea76b80282e105cc96270955a75e2413369f839ac4cf6b54dbe2f4825"
+}

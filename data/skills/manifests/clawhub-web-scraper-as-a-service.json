@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9506,
+  "uuid": "skill-clawhub-web-scraper-as-a-service",
+  "skillKey": "clawhub-web-scraper-as-a-service",
+  "name": "Web Scraper as a Service",
+  "summary": "Build client-ready web scrapers with clean data output. Use when creating scrapers for clients, extracting data from websites, or delivering scraping projects.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_scraper_as_a_service",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sean Wyngaard",
+      "features": [
+        "Build client-ready web scrapers with clean data output",
+        "Use when creating scrapers for clients, extracting data from websites, or delivering scraping p."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-scraper-as-a-service@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/187758643?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-scraper-as-a-service",
+      "url": "https://clawhub.ai/skills/web-scraper-as-a-service"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-scraper-as-a-service",
+    "url": "https://clawhub.ai/skills/web-scraper-as-a-service",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-scraper-as-a-service-6495672e2564918f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-scraper-as-a-service@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-scraper-as-a-service-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c2c070b84b91d29afc56b423c4287704d332c4b90c18cca742e6d23ae811e1bf",
+      "artifactSizeBytes": 2632
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T12:31:08.491Z"
+}

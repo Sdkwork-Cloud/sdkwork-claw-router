@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24293,
+  "uuid": "skill-clawhub-api-void",
+  "skillKey": "clawhub-api-void",
+  "name": "Api Void",
+  "summary": "Api Void integration. Manage data, records, and automate workflows. Use when the user wants to interact with Api Void data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_void",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Api Void integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Api Void data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/api-void@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "api-void",
+      "url": "https://clawhub.ai/skills/api-void"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-void",
+    "url": "https://clawhub.ai/skills/api-void",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-void-1ce54ee6d85e796a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/api-void@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-api-void-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6f09cee1f617ba181e7bf531eb1f6788f50567533b5578418b21db651e27299c",
+      "artifactSizeBytes": 1838
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:10:52.400Z"
+}

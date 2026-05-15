@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25932,
+  "uuid": "skill-clawhub-blog-polisher",
+  "skillKey": "clawhub-blog-polisher",
+  "name": "Blog Polisher",
+  "summary": "Hey, this skill polishes your blog draft in markdown. Fixes spelling, grammar, adds clarity if needed, keeps it simple and original language. Asks before big...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blog_polisher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jeff Yang",
+      "features": [
+        "Hey, this skill polishes your blog draft in markdown",
+        "Fixes spelling, grammar, adds clarity if needed, keeps it simple and original language",
+        "Asks before big..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/blog-polisher@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245605?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "blog-polisher",
+      "url": "https://clawhub.ai/skills/blog-polisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blog-polisher",
+    "url": "https://clawhub.ai/skills/blog-polisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blog-polisher-8a6105235f297333.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/blog-polisher@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-blog-polisher-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5e1a98d468de537e45f2373adbc2fb8789c0a3c5c806c1f55b8d1bac5a676083",
+      "artifactSizeBytes": 2027
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T04:19:06.796Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawhub-skill-creator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_skill_creator",
+  "skill": {
+    "id": 15936,
+    "skillKey": "clawhub-clawhub-skill-creator",
+    "name": "Clawhub Skill Creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-skill-creator",
+    "url": "https://clawhub.ai/skills/clawhub-skill-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-skill-creator-9823f4b5bf133978.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and update skills for clawhub registry; optimize structure, validate metadata, and ensure compatibility for AI agent usage."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "erview",
+      "userId": "s175h0jdx5g1z9bpzgdxrfjban83t7pq",
+      "displayName": "erview",
+      "image": "https://avatars.githubusercontent.com/u/1901695?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 710,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771779323761,
+      "changelog": "Complete guide for creating clawhub-compatible skills with 13-phase workflow",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:eb63911dab2e406107b6d5580743ecd0f8849850aea974da76063862764f1e06"
+}

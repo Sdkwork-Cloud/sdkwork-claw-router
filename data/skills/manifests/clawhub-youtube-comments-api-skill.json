@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21167,
+  "uuid": "skill-clawhub-youtube-comments-api-skill",
+  "skillKey": "clawhub-youtube-comments-api-skill",
+  "name": "youtube-comments-api-skill",
+  "summary": "This skill helps users extract structured video list data and comment data from YouTube using the BrowserAct API. The Agent should proactively apply this ski...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_comments_api_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Maggia",
+      "features": [
+        "This skill helps users extract structured video list data and comment data from YouTube using t.",
+        "The Agent should proactively apply this ski..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-comments-api-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259630312?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-comments-api-skill",
+      "url": "https://clawhub.ai/skills/youtube-comments-api-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-comments-api-skill",
+    "url": "https://clawhub.ai/skills/youtube-comments-api-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-comments-api-skill-b81750de6c5d0b57.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-comments-api-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-comments-api-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1cf70b9aeac8c92f2467b74191a48d7d66bc62d40878502af2e255034b9528f1",
+      "artifactSizeBytes": 2118
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T12:06:32.025Z"
+}

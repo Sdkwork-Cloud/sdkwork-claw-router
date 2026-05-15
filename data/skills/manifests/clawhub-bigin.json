@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26317,
+  "uuid": "skill-clawhub-bigin",
+  "skillKey": "clawhub-bigin",
+  "name": "Zoho Bigin CRM",
+  "summary": "Zoho Bigin CRM CLI. Search deals, contacts, accounts. Add notes, move deal stages. Use when user asks about CRM, deals, pipeline status, or needs to update B...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bigin",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ingo",
+      "features": [
+        "Zoho Bigin CRM CLI",
+        "Search deals, contacts, accounts",
+        "Add notes, move deal stages",
+        "Use when user asks about CRM, deals, pipeline status, or needs to update B..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bigin@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32414159?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bigin",
+      "url": "https://clawhub.ai/skills/bigin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bigin",
+    "url": "https://clawhub.ai/skills/bigin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bigin-783fc422b320a747.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bigin@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bigin-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:95427ea1a49ecf93ff4103c4fc1bcbd7f3ebbcf43262dcec0929e34e8fc0d71a",
+      "artifactSizeBytes": 2336
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T13:56:47.652Z"
+}

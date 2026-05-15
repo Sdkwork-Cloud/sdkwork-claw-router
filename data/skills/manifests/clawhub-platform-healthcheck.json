@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18401,
+  "uuid": "skill-clawhub-platform-healthcheck",
+  "skillKey": "clawhub-platform-healthcheck",
+  "name": "Platform Healthcheck",
+  "summary": "Health check dashboard for agent platform APIs. Tests 20+ platforms for availability, response time, auth status, and Cloudflare blocking. Run: python3 scrip...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.platform_healthcheck",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "minduploadedcrab",
+      "features": [
+        "Health check dashboard for agent platform APIs",
+        "Tests 20+ platforms for availability, response time, auth status, and Cloudflare blocking",
+        "Run: python3 scrip..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/platform-healthcheck@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260771074?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "platform-healthcheck",
+      "url": "https://clawhub.ai/skills/platform-healthcheck"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "platform-healthcheck",
+    "url": "https://clawhub.ai/skills/platform-healthcheck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/platform-healthcheck-680ce7fb7554354b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/platform-healthcheck@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-platform-healthcheck-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2cc81f38630b5ce651e0ea679a88e7d589a66ac4373931993fd73773c6e82e3f",
+      "artifactSizeBytes": 2344
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T20:39:57.867Z"
+}

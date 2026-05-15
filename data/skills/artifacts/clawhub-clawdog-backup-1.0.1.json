@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawdog-backup@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdog_backup",
+  "skill": {
+    "id": 59443,
+    "skillKey": "clawhub-clawdog-backup",
+    "name": "Clawdog Backup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdog-backup",
+    "url": "https://clawhub.ai/skills/clawdog-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdog-backup-c4561481a985ac1d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "狗蛋备份恢复技能。备份 OpenClaw 核心文件（SOUL.md, AGENTS.md, IDENTITY.md, USER.md, TOOLS.md）和记忆层（memory/）到 OneDrive，支持实时监控备份和定时备份，可从云端恢复。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "michael-crazy",
+      "userId": "publishers:michael-crazy",
+      "displayName": "Michael-crazy",
+      "image": "https://avatars.githubusercontent.com/u/86336293?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 753,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771514129487,
+      "changelog": "新增本地恢复功能，支持从本地备份文件恢复，无需 rclone",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e5800c7a2378a8138ec8ebdb5a429971534411bab744a9e51b8b0ff10ece5b3b"
+}

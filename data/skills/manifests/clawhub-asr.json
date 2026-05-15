@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9731,
+  "uuid": "skill-clawhub-asr",
+  "skillKey": "clawhub-asr",
+  "name": "Speech is Cheap Transcribe",
+  "summary": "Fast, affordable automatic speech-to-text transcription supporting 100 languages, speaker diarization, word timestamps, and customizable output formats.",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.asr",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ilyakam",
+      "features": [
+        "Fast, affordable automatic speech-to-text transcription supporting 100 languages, speaker diari."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/asr@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/183227?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "asr",
+      "url": "https://clawhub.ai/skills/asr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "asr",
+    "url": "https://clawhub.ai/skills/asr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/asr-f2f6eba0f1d673c6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/asr@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-asr-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d98de71b3b6347c0d21824270b44e7cbed31e08dce7e4974e23c8f52d67bd787",
+      "artifactSizeBytes": 2027
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T23:14:43.772Z"
+}

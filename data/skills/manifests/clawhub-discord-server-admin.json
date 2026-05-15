@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32169,
+  "uuid": "skill-clawhub-discord-server-admin",
+  "skillKey": "clawhub-discord-server-admin",
+  "name": "Discord Server Admin",
+  "summary": "Manage Discord servers with a narrow, medium-risk scope using direct Bot API calls. Use when creating, renaming, moving, or deleting channels/categories; cre...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.discord_server_admin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DataRxdacted",
+      "features": [
+        "Manage Discord servers with a narrow, medium-risk scope using direct Bot API calls",
+        "Use when creating, renaming, moving, or deleting channels/categories"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/discord-server-admin@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/104392977?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "discord-server-admin",
+      "url": "https://clawhub.ai/skills/discord-server-admin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "discord-server-admin",
+    "url": "https://clawhub.ai/skills/discord-server-admin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/discord-server-admin-4305b4ea31cc8ae9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/discord-server-admin@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-discord-server-admin-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:946e436262d4ffb860b8f88072613b700509b45e69a8710ac2ea462cf02c84bf",
+      "artifactSizeBytes": 2233
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T12:03:15.068Z"
+}

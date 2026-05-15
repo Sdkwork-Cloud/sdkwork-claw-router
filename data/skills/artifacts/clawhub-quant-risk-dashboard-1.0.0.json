@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quant-risk-dashboard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quant_risk_dashboard",
+  "skill": {
+    "id": 31648,
+    "skillKey": "clawhub-quant-risk-dashboard",
+    "name": "Quant Risk Dashboard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quant-risk-dashboard",
+    "url": "https://clawhub.ai/skills/quant-risk-dashboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quant-risk-dashboard-74823fbe26aabcea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Professional quantitative trading risk management dashboard. Real-time VaR/CVaR calculation, stress testing, position limits, exposure monitoring, drawdown a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jason-aka-chen",
+      "userId": "publishers:jason-aka-chen",
+      "displayName": "jason-aka-chen",
+      "image": "https://avatars.githubusercontent.com/u/251550877?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 254,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774163194807,
+      "changelog": "Initial release of quant-risk-dashboard, a professional risk management dashboard for quantitative trading.\n\n- Real-time VaR/CVaR calculation and stress testing features\n- Position limits, exposure monitoring, and drawdown alerts\n- Comprehensive risk metrics: volatility, beta, Sharpe/Sortino ratios, and more\n- Interactive web dashboard with advanced visualization and reporting tools\n- Configurable alerts, custom reporting, and trading system integration",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8c2bda32f7afecc99651c0d1ff6d0ef6fa2a15b93442a659c70ab4d3138bf1c4"
+}

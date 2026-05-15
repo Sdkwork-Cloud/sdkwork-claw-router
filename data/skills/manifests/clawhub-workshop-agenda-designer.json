@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59610,
+  "uuid": "skill-clawhub-workshop-agenda-designer",
+  "skillKey": "clawhub-workshop-agenda-designer",
+  "name": "Workshop Agenda Designer",
+  "summary": "把会议目标、参会人、时间与约束拆成可执行议程、分段脚本、产出物与会后跟进。；use for meeting, agenda, facilitation workflows；do not use for 预订会议室, 转写音频.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workshop_agenda_designer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "把会议目标、参会人、时间与约束拆成可执行议程、分段脚本、产出物与会后跟进。；use for meeting, agenda, facilitation workflows；do not us."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/workshop-agenda-designer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "workshop-agenda-designer",
+      "url": "https://clawhub.ai/skills/workshop-agenda-designer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workshop-agenda-designer",
+    "url": "https://clawhub.ai/skills/workshop-agenda-designer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workshop-agenda-designer-504d42e656677b0e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/workshop-agenda-designer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-workshop-agenda-designer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3259fde10a47cbfe8874ecd8db687f850d259c610870cd551c0d080872ee21ce",
+      "artifactSizeBytes": 2615
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T04:14:45.425Z"
+}

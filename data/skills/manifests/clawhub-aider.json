@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62901,
+  "uuid": "skill-clawhub-aider",
+  "skillKey": "clawhub-aider",
+  "name": "Aider",
+  "summary": "Aider AI 编程助手，精通终端内 AI 编程、Git 集成、多模型支持、代码重构",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aider",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangifonly",
+      "features": [
+        "Aider AI 编程助手，精通终端内 AI 编程、Git 集成、多模型支持、代码重构"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aider@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121886591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aider",
+      "url": "https://clawhub.ai/skills/aider"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aider",
+    "url": "https://clawhub.ai/skills/aider",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aider-ebde709e306badca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aider@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aider-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8f61275cdf764f9650a2328c9fe0ff4c4f3632085643221879697aec20a6787d",
+      "artifactSizeBytes": 2173
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T05:56:49.125Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/screenshot-1-0-1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.screenshot_1_0_1",
+  "skill": {
+    "id": 32632,
+    "skillKey": "clawhub-screenshot-1-0-1",
+    "name": "Screenshot 1.0.1"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "screenshot-1-0-1",
+    "url": "https://clawhub.ai/skills/screenshot-1-0-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/screenshot-1-0-1-056d4e17d4725afd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Capture, inspect, and compare screenshots of screens, windows, regions, web pages, simulators, and CI runs with the right tool, wait strategy, viewport, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhouhuihui008",
+      "userId": "s177e795b02ss55pv9yf7z53bd83kqj5",
+      "displayName": "zhouhuihui008",
+      "image": "https://avatars.githubusercontent.com/u/122507302?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774412197224,
+      "changelog": "- Improved screenshot guidance with stronger recommendations for browser, simulator, and CI environments.\n- Enhanced rules for achieving visual stability in captured screenshots.\n- Maintained a concise and focused skill description.\n- Clarified when to use specific tools and formats for reliable, reproducible screenshots.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5646b166beb5cdc828a91f55bd3e7a5415351784e1d44377689b38ff09f94d2b"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23449,
+  "uuid": "skill-clawhub-flowdo",
+  "skillKey": "clawhub-flowdo",
+  "name": "Flowdo",
+  "summary": "Task and workflow manager with kanban-style status tracking. Use when you need flowdo.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flowdo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "Task and workflow manager with kanban-style status tracking",
+        "Use when you need flowdo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flowdo@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flowdo",
+      "url": "https://clawhub.ai/skills/flowdo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flowdo",
+    "url": "https://clawhub.ai/skills/flowdo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flowdo-278bf2562b9c66c5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flowdo@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-flowdo-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ef54ac1da0e5aa7cb4d527b8142d85bad8f706a9de436ff32decf066a840ea4",
+      "artifactSizeBytes": 1801
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T19:09:17.728Z"
+}

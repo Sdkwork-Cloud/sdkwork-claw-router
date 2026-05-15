@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12472,
+  "uuid": "skill-clawhub-raglite-library",
+  "skillKey": "clawhub-raglite-library",
+  "name": "RAGLite - Local Expandable Library AI Library",
+  "summary": "Local-first RAG cache: distill docs into structured Markdown, then index/query with Chroma + hybrid search (vector + keyword).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.raglite_library",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Viraj Sanghvi",
+      "features": [
+        "Local-first RAG cache: distill docs into structured Markdown, then index/query with Chroma + hy."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/raglite-library@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22336852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "raglite-library",
+      "url": "https://clawhub.ai/skills/raglite-library"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "raglite-library",
+    "url": "https://clawhub.ai/skills/raglite-library",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/raglite-library-e689857e93cbf6c8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/raglite-library@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-raglite-library-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5e16130bb8c4c068f1d2c40855c9bbd3439277e908322fe5c371864883971567",
+      "artifactSizeBytes": 2203
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T04:36:09.187Z"
+}

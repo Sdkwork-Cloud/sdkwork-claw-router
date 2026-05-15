@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33696,
+  "uuid": "skill-clawhub-nm-gauntlet-challenge",
+  "skillKey": "clawhub-nm-gauntlet-challenge",
+  "name": "Nm Gauntlet Challenge",
+  "summary": "Run a gauntlet challenge session with adaptive difficulty. Tests codebase understanding through multiple choice, code completion, trace exercises, and more",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nm_gauntlet_challenge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "athola",
+      "features": [
+        "Run a gauntlet challenge session with adaptive difficulty",
+        "Tests codebase understanding through multiple choice, code completion, trace exercises, and more"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nm-gauntlet-challenge@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9769290?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nm-gauntlet-challenge",
+      "url": "https://clawhub.ai/skills/nm-gauntlet-challenge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nm-gauntlet-challenge",
+    "url": "https://clawhub.ai/skills/nm-gauntlet-challenge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nm-gauntlet-challenge-5dd82d20ee20bc72.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nm-gauntlet-challenge@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-nm-gauntlet-challenge-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f713eafe1f28bbc4b7a1985f53abb605b41fe50f0bdc82df793fe1421323e08",
+      "artifactSizeBytes": 1923
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T02:16:58.817Z"
+}

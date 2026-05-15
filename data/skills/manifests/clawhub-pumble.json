@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32626,
+  "uuid": "skill-clawhub-pumble",
+  "skillKey": "clawhub-pumble",
+  "name": "Pumble",
+  "summary": "Pumble integration. Manage Workspaces. Use when the user wants to interact with Pumble data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pumble",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Pumble integration",
+        "Manage Workspaces",
+        "Use when the user wants to interact with Pumble data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pumble@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pumble",
+      "url": "https://clawhub.ai/skills/pumble"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pumble",
+    "url": "https://clawhub.ai/skills/pumble",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pumble-8ccb74e298fa7b38.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pumble@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-pumble-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e216bd611a22ebff27be684bed07123eb5955d4a685a011d7d9d3db04006da2e",
+      "artifactSizeBytes": 1793
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:53:43.676Z"
+}

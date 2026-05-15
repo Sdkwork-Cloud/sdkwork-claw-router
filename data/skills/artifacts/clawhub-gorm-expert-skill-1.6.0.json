@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gorm-expert-skill@1.6.0",
+  "version": "1.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gorm_expert_skill",
+  "skill": {
+    "id": 61483,
+    "skillKey": "clawhub-gorm-expert-skill",
+    "name": "Gorm Expert"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gorm-expert-skill",
+    "url": "https://clawhub.ai/skills/gorm-expert-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gorm-expert-skill-e3dc02c199986a01.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "GORM v2 最佳实践与性能优化。适用于：代码审查、慢查询优化、N+1、连接池、 事务管理、分库分表、Prometheus/OTel监控、Session安全、Clause/Upsert、 缓存集成、BaseModel脚手架、SQL→struct生成、多租户隔离。 触发词：GORM、数据库慢、加索引、写struc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lynnss-ai",
+      "userId": "s174jgkh52qpmj0ak8snn99vxx83g8z9",
+      "displayName": "xuebing",
+      "image": "https://avatars.githubusercontent.com/u/65780532?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 261,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.6.0",
+      "createdAt": 1773587523170,
+      "changelog": "gorm-expert-skill v1.6.0\n\n- 提供了丰富的最佳实践和性能优化指南，涵盖代码审查、慢查询、N+1 问题、连接池、事务管理、多租户隔离等常见场景\n- 内置各类脚本工具，支持 Python 一键辅助结构体生成、连接池计算、SQL 性能分析、批量数据处理等\n- 明确流程与配置：禁用物理外键、连接池推荐值、多租户启用与关闭方式、ID 生成策略\n- 丰富代码片段与脚本推荐，覆盖查询优化、批量写入、事务、读写分离及 Scope 复用等细节\n- 新增多租户两种隔离方式，脚手架初始化及常用场景自动脚本调用说明",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:32c9d56340973c1247fe48209cd8eff52213ceca78838c4e5a06a02db5d3c861"
+}

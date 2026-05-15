@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17883,
+  "uuid": "skill-clawhub-translate-cli",
+  "skillKey": "clawhub-translate-cli",
+  "name": "Translate CLI",
+  "summary": "End-user guide for running and configuring the `translate` CLI across text/stdin/file/glob inputs, provider selection, presets, custom prompt templates, and...",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.translate_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "atacan",
+      "features": [
+        "End-user guide for running and configuring the `translate` CLI across text/stdin/file/glob inpu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/translate-cli@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/765873?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "translate-cli",
+      "url": "https://clawhub.ai/skills/translate-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "translate-cli",
+    "url": "https://clawhub.ai/skills/translate-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/translate-cli-1e639234702857a1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/translate-cli@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-translate-cli-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fa90fc2c9e99810b12f140e01712b9b7d7ed98cca0b7ac111b09f8eee1992f6e",
+      "artifactSizeBytes": 2283
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T15:55:45.427Z"
+}

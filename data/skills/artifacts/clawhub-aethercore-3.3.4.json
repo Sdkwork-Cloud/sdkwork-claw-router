@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aethercore@3.3.4",
+  "version": "3.3.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aethercore",
+  "skill": {
+    "id": 20245,
+    "skillKey": "clawhub-aethercore",
+    "name": "AetherCore v3.3"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aethercore",
+    "url": "https://clawhub.ai/skills/aethercore",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aethercore-8edf31abc3b10356.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AetherCore v3.3.4 - Security-focused final release. High-performance JSON optimization with universal smart indexing for all file types. All security review..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aetherclawai",
+      "userId": "s17d88jqmfyek1p4gd2f1y772s83rvcy",
+      "displayName": "AetherClaw",
+      "image": "https://avatars.githubusercontent.com/u/262826793?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 464,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "3.3.4",
+      "createdAt": 1773241397473,
+      "changelog": "- Added comprehensive security and scope documentation: SECURITY_AND_SCOPE_DECLARATION.md, CORE_CODE_ANALYSIS.md, and VERIFY_SECURITY_CLAIMS.sh for transparency, code review, and verifiable scope.\n- Updated all references and links to use the new ClawHub repository and homepage URLs.\n- Enhanced SKILL.md with explicit references to new security declaration and code transparency documents.\n- No changes to core features or functional commands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:58ac7e31dd2c301282209a43ccac8601072963342d073a6c95b49ac6c0c276fe"
+}

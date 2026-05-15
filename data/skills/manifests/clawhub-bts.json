@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62822,
+  "uuid": "skill-clawhub-bts",
+  "skillKey": "clawhub-bts",
+  "name": "bts",
+  "summary": "防弹少年团 BTS - 韩国男子音乐组合，全球知名 K-pop 团体",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "防弹少年团 BTS",
+        "韩国男子音乐组合，全球知名 K-pop 团体"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bts@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bts",
+      "url": "https://clawhub.ai/skills/bts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bts",
+    "url": "https://clawhub.ai/skills/bts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bts-7fbb9405837478f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bts@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bts-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:47ad9e7e0b4b2950d9c288f8c45a6d33a20693be5d17652fdcd415f218e6e79b",
+      "artifactSizeBytes": 2065
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T15:00:19.744Z"
+}

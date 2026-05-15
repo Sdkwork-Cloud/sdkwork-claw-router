@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apktool@0.0.2",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apktool",
+  "skill": {
+    "id": 59740,
+    "skillKey": "clawhub-apktool",
+    "name": "Apktool"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apktool",
+    "url": "https://clawhub.ai/skills/apktool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apktool-2fb39b4b6937c6bf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "反向工程 Android APK 文件的命令行工具"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "killgfat",
+      "userId": "s17d0zyy31mmgnhxcs17jmbmk583na3e",
+      "displayName": "KGTAF",
+      "image": "https://avatars.githubusercontent.com/u/32797449?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 552,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.2",
+      "createdAt": 1772264359485,
+      "changelog": "- Introduced a new structured metadata block at the top of SKILL.md.\n- Added installation instructions for Apktool via apt and Homebrew, and for JADX via script.\n- Listed JADX as a recommended/required tool alongside apktool and java.\n- Updated version and last updated date in documentation.\n- Consolidated metadata and installation details for clarity.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b6182d77e8486810b7d026de8cc34aa762ed183f0b66dfeca1ca7778780b8b07"
+}

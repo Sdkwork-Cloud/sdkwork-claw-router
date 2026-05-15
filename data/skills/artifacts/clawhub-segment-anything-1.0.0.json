@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/segment-anything@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.segment_anything",
+  "skill": {
+    "id": 62247,
+    "skillKey": "clawhub-segment-anything",
+    "name": "Segment Anything"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "segment-anything",
+    "url": "https://clawhub.ai/skills/segment-anything",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/segment-anything-e984cc46b230df48.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 SAM（Segment Anything Model）去除图像背景，将前景主体提取为透明 PNG。适用于去除背景、抠图、提取前景主体或图像分割等需求。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "scikkk",
+      "userId": "s171sgccp6wt09makas274ye9584ktsf",
+      "displayName": "scikkk",
+      "image": "https://avatars.githubusercontent.com/u/77485593?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 366,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773493382035,
+      "changelog": "- Initial release of segment-anything skill (sam-segmentation-zh).\n- Provides image background removal using Meta’s Segment Anything Model (SAM), outputting transparent PNGs.\n- Supports customizable models, foreground point hints, and advanced options for extracting multiple elements.\n- Includes CLI usage instructions and detailed parameter explanations.\n- Automatic handling of model downloads and dependency installation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:85092703abfe7e4b4abc5111a438248fae65b60cb64839b5f0374d02f195a138"
+}

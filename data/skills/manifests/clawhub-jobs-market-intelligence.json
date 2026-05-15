@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46326,
+  "uuid": "skill-clawhub-jobs-market-intelligence",
+  "skillKey": "clawhub-jobs-market-intelligence",
+  "name": "Jobs Market Intelligence",
+  "summary": "Provides job market insights by tracking postings, skills demand, salary benchmarks, hiring trends, and competitor activity from public job boards via Apify.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jobs_market_intelligence",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nicemaths123",
+      "features": [
+        "Provides job market insights by tracking postings, skills demand, salary benchmarks, hiring tre."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jobs-market-intelligence@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/244252350?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jobs-market-intelligence",
+      "url": "https://clawhub.ai/skills/jobs-market-intelligence"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jobs-market-intelligence",
+    "url": "https://clawhub.ai/skills/jobs-market-intelligence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jobs-market-intelligence-756372f8c927f5b4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jobs-market-intelligence@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jobs-market-intelligence-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e32451ff6a1e61e8c08232c4b967dafbeef82359e1880d54cc59d23d2acdc8f2",
+      "artifactSizeBytes": 2685
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T21:40:53.817Z"
+}

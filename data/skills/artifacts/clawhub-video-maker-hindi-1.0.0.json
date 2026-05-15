@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-maker-hindi@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_maker_hindi",
+  "skill": {
+    "id": 47863,
+    "skillKey": "clawhub-video-maker-hindi",
+    "name": "Video Maker Hindi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-maker-hindi",
+    "url": "https://clawhub.ai/skills/video-maker-hindi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-maker-hindi-63e02b031eb9e2b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get Hindi narrated videos ready to post, without touching a single slider. Upload your video clips or images (MP4, MOV, AVI, WebM, up to 500MB), say somethin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 108,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777394553417,
+      "changelog": "Initial release of Video Maker Hindi — Create Hindi Videos with AI.\n\n- Create Hindi-narrated videos by uploading video clips or images and describing your desired outcome.\n- Supports MP4, MOV, AVI, WebM videos and common image/audio formats up to 500MB.\n- Automatic session setup and free credits for new users; seamless onboarding without technical steps.\n- 1080p MP4 exports processed in 1-2 minutes via a cloud rendering pipeline.\n- Quick edit workflows: Hindi voiceover creation, timeline preview, and simple download.\n- Error handling for token, credit, and file issues, with clear user guidance.\n- Designed for Hindi content creators who want fast, no-fuss video creation with AI narration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d5c207ff405980c49c6c05f633892bccd849e51722d11e72ac1a9d435a07d749"
+}

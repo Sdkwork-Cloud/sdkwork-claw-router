@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reading-retention-engineer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reading_retention_engineer",
+  "skill": {
+    "id": 64733,
+    "skillKey": "clawhub-reading-retention-engineer",
+    "name": "Reading Retention Engineer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reading-retention-engineer",
+    "url": "https://clawhub.ai/skills/reading-retention-engineer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reading-retention-engineer-161bc08bb7707e00.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "帮助设计个性化阅读笔记系统，提升阅读留存，将书籍内容转化为可长期记忆和实用知识。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kingofzhao",
+      "userId": "s170jhyhajh4wd5e20y7r5mw2n83yyy9",
+      "displayName": "KingOfZhao",
+      "image": "https://avatars.githubusercontent.com/u/46547091?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775077756107,
+      "changelog": "Initial release of Reading Retention Engineer.\n\n- Provides a complete system for boosting reading retention, combining active reading, spaced repetition, Feynman Technique, and Zettelkasten note-taking.\n- Guides users step-by-step in building a personal knowledge absorption pipeline.\n- Includes instructions and examples for practical application.\n- Emphasizes practical boundaries: retention is balanced with enjoyment and adaptive strategies for different book types.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6221f0fe32cfb80407706716af34047cc6e4d75f8a8e47ee96706fae77add950"
+}

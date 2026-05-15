@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15933,
+  "uuid": "skill-clawhub-telnyx-storage-backup",
+  "skillKey": "clawhub-telnyx-storage-backup",
+  "name": "Backup To Telnyx Storage",
+  "summary": "Backup and restore your OpenClaw workspace to Telnyx Storage. Simple CLI-based scripts with no external dependencies.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.telnyx_storage_backup",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "teamtelnyx",
+      "features": [
+        "Backup and restore your OpenClaw workspace to Telnyx Storage",
+        "Simple CLI-based scripts with no external dependencies."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/telnyx-storage-backup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/176328014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "telnyx-storage-backup",
+      "url": "https://clawhub.ai/skills/telnyx-storage-backup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "telnyx-storage-backup",
+    "url": "https://clawhub.ai/skills/telnyx-storage-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/telnyx-storage-backup-76374bea914e409e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/telnyx-storage-backup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-telnyx-storage-backup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2bddb49fbf90ec616b0873a8067fccad01a20db152c990c767c2deb87f77a1e2",
+      "artifactSizeBytes": 2291
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T16:10:49.412Z"
+}

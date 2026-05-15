@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/podcast-gen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.podcast_gen",
+  "skill": {
+    "id": 69348,
+    "skillKey": "clawhub-podcast-gen",
+    "name": "Podcast Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "podcast-gen",
+    "url": "https://clawhub.ai/skills/podcast-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/podcast-gen-c21f8f8f08eeb9ad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "播客生成器 — 根据用户描述，通过搜索引擎抓取最新资讯，生成口语化播客脚本，根据脚本语义自动匹配最合适的讯飞TTS声音，合成时长3分钟内的MP3音频并发送。触发词：生成播客、播客、podcast、帮我做一段音频、做一期节目。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jpengcheng523-netizen",
+      "userId": "s177n9nwg73ep3g6fp9z19025n83h4xr",
+      "displayName": "jpengcheng523-netizen",
+      "image": "https://avatars.githubusercontent.com/u/226868999?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774321826907,
+      "changelog": "Initial publish - Generate podcast audio from topics",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e21eb62d25893af117024b16cdd48f09f8e82460e9b99acf3a7c7ac0cd6a1e90"
+}

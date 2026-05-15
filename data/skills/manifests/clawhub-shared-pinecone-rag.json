@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21353,
+  "uuid": "skill-clawhub-shared-pinecone-rag",
+  "skillKey": "clawhub-shared-pinecone-rag",
+  "name": "Shared Pinecone RAG",
+  "summary": "Use the shared Pinecone RAG index for any agent in this workspace. Use when an agent needs to ingest markdown/text docs into pulse-rag or query semantic cont...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shared_pinecone_rag",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cryptobro-man",
+      "features": [
+        "Use the shared Pinecone RAG index for any agent in this workspace",
+        "Use when an agent needs to ingest markdown/text docs into pulse-rag or query semantic cont..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shared-pinecone-rag@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78248519?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shared-pinecone-rag",
+      "url": "https://clawhub.ai/skills/shared-pinecone-rag"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shared-pinecone-rag",
+    "url": "https://clawhub.ai/skills/shared-pinecone-rag",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shared-pinecone-rag-daa38e4ad3cf381d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shared-pinecone-rag@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-shared-pinecone-rag-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e2c48135c87811ffcc5647e1b2ad39a579b688a2b4c7e9d0e01117fce2211219",
+      "artifactSizeBytes": 1997
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T01:48:52.005Z"
+}

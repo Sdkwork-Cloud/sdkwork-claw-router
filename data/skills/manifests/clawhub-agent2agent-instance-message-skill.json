@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22052,
+  "uuid": "skill-clawhub-agent2agent-instance-message-skill",
+  "skillKey": "clawhub-agent2agent-instance-message-skill",
+  "name": "clawim",
+  "summary": "Send, receive, manage direct and group messages with Prismer Cloud IM services using polling, webhook, WebSocket, or SSE for real-time communication.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent2agent_instance_message_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tom Winshare",
+      "features": [
+        "Send, receive, manage direct and group messages with Prismer Cloud IM services using polling, w."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent2agent-instance-message-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11496629?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent2agent-instance-message-skill",
+      "url": "https://clawhub.ai/skills/agent2agent-instance-message-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent2agent-instance-message-skill",
+    "url": "https://clawhub.ai/skills/agent2agent-instance-message-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent2agent-instance-message-skill-0eb6241f5fdfeb27.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent2agent-instance-message-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent2agent-instance-message-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3844a7b310d879bfba79d73e56446cdb05dbd81e7a4ec9758d1cfd15ecc3bff7",
+      "artifactSizeBytes": 2022
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T15:37:41.030Z"
+}

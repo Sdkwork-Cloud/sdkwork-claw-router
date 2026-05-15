@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "current-akshare-list",
+    "displayName": "Current Akshare List",
+    "summary": "通过akshare下载所有A股、创业板、B股股票简况并用实时行情列表校对，获得当前正在交易的所有AB和创业板股票清单，以及不在交易的股票清单（代码、简称、上市时间），保存为csv。触发词：\"A股股票列表\"、\"更新股票列表\"、\"股票列表下载\"、\"akshare股票\"、\"获取全部A股\"、\"沪深京A股\"、\"不在交易股票...",
+    "tags": {
+      "latest": "1.0.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1777000944533,
+    "updatedAt": 1777527906967
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1777042363833,
+    "changelog": "- 新增 scripts/fetch_spot.py 脚本示例，用于抓取实时行情数据并分市场保存为 JSON。\n- SKILL.md 优化实时行情校验流程说明，细化“接口封禁”后的两种处理方案（用户手动或自动定时重试）。\n- 明确建议用户遇东财接口被封时优先开启 VPN，提高获取数据的可靠性。\n- 输出和对比步骤增加代码示例，说明如何合并/校验在交易和不在交易股票。\n- SKILL.md 文档优化，更突出实际操作流程与注意事项。",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "ugpoor",
+    "userId": "s177qqrp481qedfn5w9m5nmte183ge14",
+    "displayName": "superStupidBear",
+    "image": "https://avatars.githubusercontent.com/u/6762468?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.vt_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527906967
+  }
+}

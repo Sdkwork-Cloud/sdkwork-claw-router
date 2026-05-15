@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/leafengines@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.leafengines",
+  "skill": {
+    "id": 35043,
+    "skillKey": "clawhub-leafengines",
+    "name": "Leafengines"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "leafengines",
+    "url": "https://clawhub.ai/skills/leafengines",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/leafengines-62b13e00e05a0da4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "LeafEngines - Agricultural Intelligence with Free Tier & Founder Pricing. 1,092+ downloads. 3 tools for soil analysis, crop recommendations, and TurboQuant c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qwarranto",
+      "userId": "s174w9sr2javdwhmvkea7mg9fn83n1ep",
+      "displayName": "QWarranto",
+      "image": "https://avatars.githubusercontent.com/u/29408226?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 208,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1777489989045,
+      "changelog": "**LeafEngines v1.2.0 – Free Tier Launch & Simpler Tools**\n\n- Free tier introduced: immediate access with x-free-tier header, no API key or payment needed.\n- Toolset streamlined: now includes 3 core tools (analyze soil, recommend crop, check TurboQuant).\n- Founder pricing: lifetime discount for first 100 paid users ($10–$49/month lock).\n- Improved onboarding: easier setup for both free and paid tiers.\n- Usage stats now public: 1,092+ developer downloads.\n- Enhanced privacy & security documentation in SKILL and README.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:27b4a93c89319cd150b6b99bc8596dd6cacb079aaeb4dd9ccfd557d2dd6f4b2f"
+}

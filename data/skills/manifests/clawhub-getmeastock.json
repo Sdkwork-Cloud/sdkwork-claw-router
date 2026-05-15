@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71563,
+  "uuid": "skill-clawhub-getmeastock",
+  "skillKey": "clawhub-getmeastock",
+  "name": "getmeastock",
+  "summary": "全面的A股股票分析工具，提供7大核心模块（核心财务、技术指标、估值分析、股东持股、市场热度、券商盈利预测、K线图表）+ 财报、公告、新闻资讯和交易所互动问答的多维度分析。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.getmeastock",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "luokeer52",
+      "features": [
+        "全面的A股股票分析工具，提供7大核心模块（核心财务、技术指标、估值分析、股东持股、市场热度、券商盈利预测、K线图表）+ 财报、公告、新闻资讯和交易所互动问答的多维度分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/getmeastock@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5510712?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "getmeastock",
+      "url": "https://clawhub.ai/skills/getmeastock"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "getmeastock",
+    "url": "https://clawhub.ai/skills/getmeastock",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/getmeastock-f962ff05744b756c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/getmeastock@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-getmeastock-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9c7f5c4c968cd9a90a95a85b70bcfc1924704df78d3f196c7d04649bf3ed1f8b",
+      "artifactSizeBytes": 2400
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T03:05:17.033Z"
+}

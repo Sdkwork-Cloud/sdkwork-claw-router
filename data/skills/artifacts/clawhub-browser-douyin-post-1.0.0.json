@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/browser-douyin-post@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_douyin_post",
+  "skill": {
+    "id": 38542,
+    "skillKey": "clawhub-browser-douyin-post",
+    "name": "Browser Douyin Post"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-douyin-post",
+    "url": "https://clawhub.ai/skills/browser-douyin-post",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-douyin-post-a2b93a91c720d8c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate uploading local images or videos with a title to Douyin creator platform using Chrome with remote debugging and active login."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dream007007s",
+      "userId": "s17361fzzkrrhjqsbfg9yhawx583px2h",
+      "displayName": "dream007007s",
+      "image": "https://avatars.githubusercontent.com/u/205114065?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777045162878,
+      "changelog": "Initial release: Publish images to Douyin (抖音) creator platform via OpenClaw browser control. Uploads local image files, fills title, and clicks publish — all through Chrome MCP attach mode.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dc07b571c39b64e5eb96eac1b25b21615633bef374a7018eadab57083fb455e6"
+}

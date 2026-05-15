@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24769,
+  "uuid": "skill-clawhub-scaled-access",
+  "skillKey": "clawhub-scaled-access",
+  "name": "Scaled Access",
+  "summary": "Scaled Access integration. Manage data, records, and automate workflows. Use when the user wants to interact with Scaled Access data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scaled_access",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Scaled Access integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Scaled Access data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/scaled-access@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "scaled-access",
+      "url": "https://clawhub.ai/skills/scaled-access"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scaled-access",
+    "url": "https://clawhub.ai/skills/scaled-access",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scaled-access-4262037d23ce9b38.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/scaled-access@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-scaled-access-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5929df1e80fd134fc664cab7f3007f10f1346f6b19eb557df07696ce3f7f4cbc",
+      "artifactSizeBytes": 1875
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:37:38.656Z"
+}

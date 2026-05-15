@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dacker@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dacker",
+  "skill": {
+    "id": 17807,
+    "skillKey": "clawhub-dacker",
+    "name": "Docker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dacker",
+    "url": "https://clawhub.ai/skills/dacker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dacker-616ff167932edd4a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Installs and uses Docker reliably with official docs. Use when installing Docker (Desktop or Engine), building or running containers, writing Dockerfiles, us..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "austindixson",
+      "userId": "s17472vm40hmrgybr4rdjmet6h84bcs0",
+      "displayName": "austindixson",
+      "image": "https://avatars.githubusercontent.com/u/52183161?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 743,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771812628882,
+      "changelog": "- Added LEARNINGS.md documenting guidance for Docker integration and test environments.\n- Clarified behavior when running inside Docker Test: use `docker` directly, avoid install/sudo.\n- Added advice on quoting COPY paths with spaces in Dockerfiles.\n- Expanded usage examples for running, stopping, removing containers, and compose workflows.\n- Added Colima-specific note for macOS under daemon section.\n- Added best practices for volume mount paths and referenced LEARNINGS.md for more detail.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b9711ebb2c03e357c23a2c2569ff3657a7b1d8f17e2ce44886f0a51b283ae057"
+}

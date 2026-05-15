@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11307,
+  "uuid": "skill-clawhub-salesforce",
+  "skillKey": "clawhub-salesforce",
+  "name": "Salesforce Skill",
+  "summary": "Query and manage Salesforce CRM data via the Salesforce CLI (`sf`). Run SOQL/SOSL queries, inspect object schemas, create/update/delete records, bulk import/export, execute Apex, deploy metadata, and make raw REST API calls.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.salesforce",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ArvorCo",
+      "features": [
+        "Query and manage Salesforce CRM data via the Salesforce CLI (`sf`)",
+        "Run SOQL/SOSL queries, inspect object schemas, create/update/delete records, bulk import/export."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/salesforce@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/133270316?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "salesforce",
+      "url": "https://clawhub.ai/skills/salesforce"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "salesforce",
+    "url": "https://clawhub.ai/skills/salesforce",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/salesforce-3ccbd9105a45d8fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/salesforce@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-salesforce-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fce54a18d251cdcb2054206f83c094cd5a4312a184012b9a87ea9b43ccf0592c",
+      "artifactSizeBytes": 2080
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-27T03:21:15.138Z"
+}

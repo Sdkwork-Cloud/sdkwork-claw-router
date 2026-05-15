@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10345,
+  "uuid": "skill-clawhub-agentmail-cli",
+  "skillKey": "clawhub-agentmail-cli",
+  "name": "agentmail-cli",
+  "summary": "Manage email inboxes and messages via AgentMail API. Create disposable inboxes, send/receive emails, and list messages. Use when the agent needs to send or receive email, create temporary inboxes, or check for incoming messages.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentmail_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Stepan Arsentjev",
+      "features": [
+        "Manage email inboxes and messages via AgentMail API",
+        "Create disposable inboxes, send/receive emails, and list messages",
+        "Use when the agent needs to send or receive email, create temporary inboxes, or check for incom."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentmail-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20438019?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentmail-cli",
+      "url": "https://clawhub.ai/skills/agentmail-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentmail-cli",
+    "url": "https://clawhub.ai/skills/agentmail-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentmail-cli-3bd27e5b4a05887a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentmail-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentmail-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b674c9a56554859d640c8fb6e72c3aa465cd3bd8d062acae2096dafc9d0eba74",
+      "artifactSizeBytes": 1953
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T23:12:19.143Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70343,
+  "uuid": "skill-clawhub-tencent-channel-community",
+  "skillKey": "clawhub-tencent-channel-community",
+  "name": "腾讯频道Skill",
+  "summary": "腾讯频道(QQ频道)社区管理 skill（CLI 版）。频道创建/设置/搜索/加入/退出，成员管理/禁言/踢人，帖子发布/编辑/删除/移动/搜索，评论/回复/点赞，版块管理，分享链接解析，频道私信，加入设置管理，内容巡检，问答自动回复。涉及腾讯频道、频道帖子、频道成员相关任务时应优先使用。",
+  "version": "1.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencent_channel_community",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "腾讯开源",
+      "features": [
+        "腾讯频道(QQ频道)社区管理 skill（CLI 版）。频道创建/设置/搜索/加入/退出，成员管理/禁言/踢人，帖子发布/编辑/删除/移动/搜索，评论/回复/点赞，版块管理，分享链接解析，频."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tencent-channel-community@1.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19383298?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tencent-channel-community",
+      "url": "https://clawhub.ai/skills/tencent-channel-community"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencent-channel-community",
+    "url": "https://clawhub.ai/skills/tencent-channel-community",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencent-channel-community-74a385f3d46c3501.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tencent-channel-community@1.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-tencent-channel-community-1.1.5.json",
+      "version": "1.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a960dfe501e4789784c969ec886b07fe18f32eee89b332b7fec4dbd0674a490e",
+      "artifactSizeBytes": 2840
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T10:25:58.032Z"
+}

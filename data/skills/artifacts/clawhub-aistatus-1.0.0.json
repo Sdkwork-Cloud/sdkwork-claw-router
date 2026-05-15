@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aistatus@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aistatus",
+  "skill": {
+    "id": 28087,
+    "skillKey": "clawhub-aistatus",
+    "name": "AI Status - Real-time AI Provider Status"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aistatus",
+    "url": "https://clawhub.ai/skills/aistatus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aistatus-a4ce80dec9754b76.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Check real-time AI provider status, search model availability, get trending models, LLM benchmark leaderboard, and recent outage incidents. Use when the user..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fangxm233",
+      "userId": "publishers:fangxm233",
+      "displayName": "fangxm233",
+      "image": "https://avatars.githubusercontent.com/u/30077393?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 314,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773245968580,
+      "changelog": "Initial release of aistatus skill:\n\n- Check real-time status of major AI providers (e.g., Anthropic, OpenAI, Google).\n- Search and view availability, context length, and pricing for AI models.\n- View trending AI models based on usage data.\n- Access LLM benchmark leaderboard and compare model rankings.\n- Get recent incident and outage reports across AI providers.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d2261adee4c52a1ec28b2228f2df6a4e806347df7faec759bf4ab2738ec434ca"
+}

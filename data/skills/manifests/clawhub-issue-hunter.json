@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37618,
+  "uuid": "skill-clawhub-issue-hunter",
+  "skillKey": "clawhub-issue-hunter",
+  "name": "issue-hunter",
+  "summary": "Analyze, triage, and select the best issues to work on from GitHub repositories. Scores issues by reproducibility, scope, complexity, and community signal. P...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.issue_hunter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bijin",
+      "features": [
+        "Analyze, triage, and select the best issues to work on from GitHub repositories",
+        "Scores issues by reproducibility, scope, complexity, and community signal"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/issue-hunter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38134380?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "issue-hunter",
+      "url": "https://clawhub.ai/skills/issue-hunter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "issue-hunter",
+    "url": "https://clawhub.ai/skills/issue-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/issue-hunter-35b874fb9d2e7d39.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/issue-hunter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-issue-hunter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ca92b348b670ac3f5b53cd1c24c6835754ca6a578981bf2c6a4023b6cb2a2638",
+      "artifactSizeBytes": 2393
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T13:22:55.114Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20672,
+  "uuid": "skill-clawhub-local-file",
+  "skillKey": "clawhub-local-file",
+  "name": "Local File",
+  "summary": "Read, summarize, and search contents of local text, markdown, JSON, DOCX, and PDF files within authorized paths under 10MB.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_file",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhouhouqing",
+      "features": [
+        "Read, summarize, and search contents of local text, markdown, JSON, DOCX, and PDF files within."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/local-file@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13637808?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "local-file",
+      "url": "https://clawhub.ai/skills/local-file"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-file",
+    "url": "https://clawhub.ai/skills/local-file",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-file-2b0cd3514e15f0e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/local-file@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-local-file-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6adaf8571e60120af0544fb9ce769a224f54562089842262e8744413444290ce",
+      "artifactSizeBytes": 2102
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T14:30:37.695Z"
+}

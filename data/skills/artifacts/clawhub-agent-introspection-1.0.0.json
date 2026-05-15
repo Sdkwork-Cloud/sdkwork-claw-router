@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-introspection@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_introspection",
+  "skill": {
+    "id": 62515,
+    "skillKey": "clawhub-agent-introspection",
+    "name": "Agent Introspection"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-introspection",
+    "url": "https://clawhub.ai/skills/agent-introspection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-introspection-bfd7cdcbc3a33937.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent自省机制。在执行任务的关键节点触发结构化自省，防止盲目执行、惯性偏离、过度自信。Use when: 任务开始前、方案选择时、执行受阻时、完成交付前。Triggers on: 自省, 反思, 审视, 回顾, introspect, reflect, 我做得对吗, 检查思路, 方向对吗。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "demo112",
+      "userId": "s17fe775c9d5twmmpfa5wen3q983gcfx",
+      "displayName": "demo112",
+      "image": "https://avatars.githubusercontent.com/u/33809432?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 228,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774402733076,
+      "changelog": "Initial release introducing structured agent introspection.\n\n- Implements a four-layer introspection model: 觉 (Awareness), 照 (Examination), 归 (Return), 验 (Verify).\n- Defines clear trigger points: before task start, during decision-making, on execution blockages, and before delivery.\n- Provides actionable checklists and anti-pattern signals for each introspection stage.\n- Emphasizes immediate action over documentation; self-reflection must result in changed behavior.\n- Outlines integration points with related skills for holistic agent reasoning.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e15d1c1f6b1b1fb275c6c4e4002742a4fdc9f37f505220d2b7708e1d837f82a3"
+}

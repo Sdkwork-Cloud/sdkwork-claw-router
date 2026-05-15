@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reddit-reddgrow@0.1.6",
+  "version": "0.1.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reddit_reddgrow",
+  "skill": {
+    "id": 26567,
+    "skillKey": "clawhub-reddit-reddgrow",
+    "name": "Reddit (Agent-First)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reddit-reddgrow",
+    "url": "https://clawhub.ai/skills/reddit-reddgrow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reddit-reddgrow-f918d23ebd803ea6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reddit intelligence CLI for AI agents. Use when working with reddit posts, subreddit research, comments, user profiles, wiki pages, domain mentions, marketin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yahavf6",
+      "userId": "publishers:yahavf6",
+      "displayName": "Yahav Fuchs",
+      "image": "https://avatars.githubusercontent.com/u/33985517?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 366,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.6",
+      "createdAt": 1772636547080,
+      "changelog": "- Improved documentation and usage guidelines in SKILL.md for better usability.\n- Added detailed setup, command references, workflows, and best practices for typical Reddit research and posting tasks.\n- Clarified environment variable configuration and authentication steps.\n- Included explicit rules and workflow checklists to help avoid subreddit bans and maximize compliance.\n- Expanded command descriptions, parameters, and credit costs for greater transparency.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5858e273d12e744acb7b3e9c7ae8d976fe4d058ffc5dac276d630ec1861acf03"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meetbot@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meetbot",
+  "skill": {
+    "id": 28383,
+    "skillKey": "clawhub-meetbot",
+    "name": "Meet.bot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meetbot",
+    "url": "https://clawhub.ai/skills/meetbot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meetbot-e8b7e0ca5a1e4568.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Schedule and book meetings using the Meet.bot MCP server (mcp.meet.bot). Use when the user wants to check calendar availability, find open time slots, book a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "poolside-ventures",
+      "userId": "s17629zc8me63h7pv8s19e9hs983ms08",
+      "displayName": "Poolside Ventures",
+      "image": "https://avatars.githubusercontent.com/u/215486291?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 317,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772726938758,
+      "changelog": "Initial release: scheduling, availability, booking, and sharing workflows for Meet.bot MCP server",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:db3f0d359c404f5ed5f8bb8f4f78f48ca51fe41c626f0c816b9c6b61d7e93802"
+}

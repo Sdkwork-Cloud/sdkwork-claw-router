@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x-reader-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_reader_skill",
+  "skill": {
+    "id": 16384,
+    "skillKey": "clawhub-x-reader-skill",
+    "name": "X Reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-reader-skill",
+    "url": "https://clawhub.ai/skills/x-reader-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-reader-skill-608177faf87f5d09.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read X (Twitter) posts without official API. Supports both Nitter (free) and RapidAPI (detailed) methods."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dkimiscoding",
+      "userId": "publishers:dkimiscoding",
+      "displayName": "dkimiscoding",
+      "image": "https://avatars.githubusercontent.com/u/68261026?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 733,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772796602539,
+      "changelog": "x-reader-skill 0.1.0 Changelog:\n\n- Initial release.\n- Enables reading X (Twitter) posts without the official API.\n- Supports two methods: free Nitter mode and detailed RapidAPI mode.\n- Offers simple CLI interface and JSON output for integration.\n- Documentation added for installation, usage, and configuration options.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:149425160ae24abac14b49b1526fb98f0765cc71223bdd61e5ccf00abdd62d55"
+}

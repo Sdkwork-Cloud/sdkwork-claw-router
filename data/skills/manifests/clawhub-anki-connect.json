@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11360,
+  "uuid": "skill-clawhub-anki-connect",
+  "skillKey": "clawhub-anki-connect",
+  "name": "Anki Connect",
+  "summary": "Interact with Anki flashcard decks via the AnkiConnect REST API. Use when the user wants to create, update, search, or manage Anki cards, decks, notes, or models.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anki_connect",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gyroninja",
+      "features": [
+        "Interact with Anki flashcard decks via the AnkiConnect REST API",
+        "Use when the user wants to create, update, search, or manage Anki cards, decks, notes, or model."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/anki-connect@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1111757?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "anki-connect",
+      "url": "https://clawhub.ai/skills/anki-connect"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anki-connect",
+    "url": "https://clawhub.ai/skills/anki-connect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anki-connect-0c3609ca3974fab4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/anki-connect@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-anki-connect-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:21fdf27b5e5a5d1928663fa76a316d70dff504c8c296244e2f90ba40d90a1d5f",
+      "artifactSizeBytes": 2122
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T22:47:49.185Z"
+}

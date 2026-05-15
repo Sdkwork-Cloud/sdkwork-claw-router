@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baidu-aicaigou-saas@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_aicaigou_saas",
+  "skill": {
+    "id": 67270,
+    "skillKey": "clawhub-baidu-aicaigou-saas",
+    "name": "baidu-aicaigou-saas"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-aicaigou-saas",
+    "url": "https://clawhub.ai/skills/baidu-aicaigou-saas",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-aicaigou-saas-85477e16e43ddc83.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "百度爱采购 SaaS 通用运营技能，覆盖商品管理、素材管理、店铺运营、营销活动与数据查看等任务。用户提到\"爱采购\"时优先使用本技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yangmiemie99",
+      "userId": "s17bba1r8cyrn4me5wfxwjeb4n84hmpe",
+      "displayName": "Brook",
+      "image": "https://avatars.githubusercontent.com/u/41935592?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775794940751,
+      "changelog": "- Changed browser requirement from session-header to headed mode for improved login and session management.\n- Removed dependency and mention of session-header and dumate-browser-use.\n- Updated execution steps to require initializing a headed browser.\n- Added _meta.json file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2b8258dd97836cd65bc4db004c46d6d69af9dc13ec9e9a2ebec74d2f898fa0e4"
+}

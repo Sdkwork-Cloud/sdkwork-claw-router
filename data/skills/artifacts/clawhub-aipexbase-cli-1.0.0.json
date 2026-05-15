@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aipexbase-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aipexbase_cli",
+  "skill": {
+    "id": 32652,
+    "skillKey": "clawhub-aipexbase-cli",
+    "name": "aipexbase-cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aipexbase-cli",
+    "url": "https://clawhub.ai/skills/aipexbase-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aipexbase-cli-3b492994ebb29359.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use aipexbase-cli to operate AiPexBase BaaS service, supporting database operations, application management, user authentication, etc."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kuafuai",
+      "userId": "s1717k7tnh8kb4mhv7f7paptks83n8jm",
+      "displayName": "KuaFuAI",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 248,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774521609250,
+      "changelog": "aipexbase-cli 1.0.0\n\n- Initial release providing CLI integration with AiPexBase BaaS service.\n- Supports database CRUD operations, application and table management, user authentication, and file uploads.\n- Includes detailed command reference and configuration guidance.\n- Provides JSON parameter formatting rules and common usage examples.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eab15b20a3933f24345424d6ff3e0a5db0bc4fc59b2bcd7b9928d398a53dc4d7"
+}

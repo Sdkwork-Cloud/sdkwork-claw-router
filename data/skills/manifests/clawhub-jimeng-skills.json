@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67470,
+  "uuid": "skill-clawhub-jimeng-skills",
+  "skillKey": "clawhub-jimeng-skills",
+  "name": "Jimeng Skills",
+  "summary": "基于火山引擎即梦 AI 生成图片和视频，并将结果整理为适合 OpenClaw 在飞书、企微、钉钉中发送和查看的纯文本结果、远程直链和可公开分享链接。用于“生成图片”“生成视频”“让飞书/企微/钉钉可查看”“输出适合企业 IM 的分享结果”“调用 jimeng-skills”等场景。",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jimeng_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "klaus1534",
+      "features": [
+        "基于火山引擎即梦 AI 生成图片和视频，并将结果整理为适合 OpenClaw 在飞书、企微、钉钉中发送和查看的纯文本结果、远程直链和可公开分享链接。用于“生成图片”“生成视频”“让飞书/企微."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jimeng-skills@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40418770?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jimeng-skills",
+      "url": "https://clawhub.ai/skills/jimeng-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jimeng-skills",
+    "url": "https://clawhub.ai/skills/jimeng-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jimeng-skills-e89de12c121a6a2f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jimeng-skills@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-jimeng-skills-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5d061b8b755f5b6e2e34fbc4548bd00aae02c5b65d07ebbf19fd01c634558fae",
+      "artifactSizeBytes": 2192
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T03:42:05.430Z"
+}

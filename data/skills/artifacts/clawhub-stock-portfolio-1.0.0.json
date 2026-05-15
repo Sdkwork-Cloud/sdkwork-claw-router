@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-portfolio@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_portfolio",
+  "skill": {
+    "id": 68489,
+    "skillKey": "clawhub-stock-portfolio",
+    "name": "Stock Portfolio"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-portfolio",
+    "url": "https://clawhub.ai/skills/stock-portfolio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-portfolio-98e81d520dd0dc6f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "股票组合管理与预警技能。支持 A 股/港股/美股行情查询、持仓跟踪、收益计算、价格预警、每日推荐。使用免费 API（腾讯财经），数据本地存储。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yinshengf",
+      "userId": "publishers:yinshengf",
+      "displayName": "yinshengf",
+      "image": "https://avatars.githubusercontent.com/u/13606856?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 300,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774260012045,
+      "changelog": "股票组合管理与预警技能 - 支持 A 股/港股/美股行情查询、持仓跟踪、收益计算、价格预警、每日推荐",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fcfa922c98142234d9e6994a9fc99dabb3126f1aac8a5a06781b6cdf87a27bf8"
+}

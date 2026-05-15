@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63562,
+  "uuid": "skill-clawhub-biaoshu-writer",
+  "skillKey": "clawhub-biaoshu-writer",
+  "name": "Biaoshu Writer",
+  "summary": "标书撰写器 v5.4.0 - 投标技术标文档自动生成工具。支持解析 txt/pdf/docx/xlsx 招标文件，生成符合评分标准的技术标 Word 文档。适用：技术标编写、交通工程（高速/航道）投标。",
+  "version": "5.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.biaoshu_writer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wuliwenjing",
+      "features": [
+        "标书撰写器 v5.4.0",
+        "投标技术标文档自动生成工具。支持解析 txt/pdf/docx/xlsx 招标文件，生成符合评分标准的技术标 Word 文档。适用：技术标编写、交通工程（高速/航道）投标。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/biaoshu-writer@5.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23123229?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "biaoshu-writer",
+      "url": "https://clawhub.ai/skills/biaoshu-writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "biaoshu-writer",
+    "url": "https://clawhub.ai/skills/biaoshu-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/biaoshu-writer-f0e46373dfe09565.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/biaoshu-writer@5.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-biaoshu-writer-5.4.0.json",
+      "version": "5.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7360ecf260777c00c69219577435d4e0a294ba338b2396b0fdaa6b7e6b977eed",
+      "artifactSizeBytes": 1991
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T06:07:13.023Z"
+}

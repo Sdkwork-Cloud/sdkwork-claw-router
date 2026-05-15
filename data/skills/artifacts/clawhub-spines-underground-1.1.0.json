@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/spines-underground@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spines_underground",
+  "skill": {
+    "id": 40194,
+    "skillKey": "clawhub-spines-underground",
+    "name": "Spine's Underground"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spines-underground",
+    "url": "https://clawhub.ai/skills/spines-underground",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spines-underground-60a83af7cbd4a1a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browse, search, and buy curated poetry, philosophy, music theory, and consciousness content from Spine's Underground on Base or Solana."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lisamaraventano-spine",
+      "userId": "s175xrq6x3cqftxqsebzpa0vbx83k7h3",
+      "displayName": "Lisa Maraventano",
+      "image": "https://avatars.githubusercontent.com/u/261433524?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776710160182,
+      "changelog": "Version 1.1.0\n\n- Added new tools for free content access, purchases, and payment verification.\n- Expanded catalog: 23 curated products (13 free, 10 paid).\n- Integrated search and browsing capabilities for the full catalog.\n- Supports USDC payments on Base or Solana via x402.\n- Now wraps the spine.substratesymposium.com API for agent-to-agent commerce.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e8386e2b2f27537b43edc244ec900801f9a77f7a2b7fb604e3d2e8354f93ff2a"
+}

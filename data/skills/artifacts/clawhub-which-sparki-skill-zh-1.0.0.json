@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/which-sparki-skill-zh@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.which_sparki_skill_zh",
+  "skill": {
+    "id": 57321,
+    "skillKey": "clawhub-which-sparki-skill-zh",
+    "name": "哪个 Sparki Skill 适合我？"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "which-sparki-skill-zh",
+    "url": "https://clawhub.ai/skills/which-sparki-skill-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/which-sparki-skill-zh-91e1e60af89d2815.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered video editing — turn raw footage into polished vlogs, highlight reels, TikTok/Shorts/Reels, montages, and more. Control the editing flow through T..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fischerlam",
+      "userId": "s175gts36jrk6k1qvqehh2d0v583fwg7",
+      "displayName": "fischerlam",
+      "image": "https://avatars.githubusercontent.com/u/168167263?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 195,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774309216531,
+      "changelog": "发布了一个中文导航型 skill，用来帮助用户根据工作流选择最适合的 Sparki skill。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:66b112469570345ee162ed5897d67218f927c5ba1ae19f6f0470f7091218508f"
+}

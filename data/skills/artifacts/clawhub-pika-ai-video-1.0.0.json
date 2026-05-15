@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pika-ai-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pika_ai_video",
+  "skill": {
+    "id": 47571,
+    "skillKey": "clawhub-pika-ai-video",
+    "name": "Pika Ai Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pika-ai-video",
+    "url": "https://clawhub.ai/skills/pika-ai-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pika-ai-video-5fbfe95e6f5f7a4d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate text or images into AI-generated video clips with this skill. Works with MP4, PNG, JPG, WebM files up to 200MB. TikTok creators, marketers, content..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 112,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777480441875,
+      "changelog": "- Initial release of Pika AI Video skill.\n- Generate short AI video clips (up to 1080p MP4) from text prompts or images (PNG, JPG, MP4, WebM up to 200MB).\n- Cloud-based processing delivers results in 30-90 seconds.\n- Supports TikTok creators, marketers, and content creators with simple workflows.\n- Automated session and free token setup; clear user feedback and status handling.\n- Includes upload, credits, status, export, and advanced timeline editing features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2cc21008e62cc0f7f55201d6b5701ce5fd6fe1e66a4ac8de8a6e672a4d6f4a21"
+}

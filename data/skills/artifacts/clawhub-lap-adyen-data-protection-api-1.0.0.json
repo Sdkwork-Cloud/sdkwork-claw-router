@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lap-adyen-data-protection-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lap_adyen_data_protection_api",
+  "skill": {
+    "id": 42697,
+    "skillKey": "clawhub-lap-adyen-data-protection-api",
+    "name": "Lap Adyen Data Protection Api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lap-adyen-data-protection-api",
+    "url": "https://clawhub.ai/skills/lap-adyen-data-protection-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lap-adyen-data-protection-api-7079f5aa2d05dc3b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adyen Data Protection API skill. Use when working with Adyen Data Protection for requestSubjectErasure. Covers 1 endpoint."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mickmicksh",
+      "userId": "s173hdss607zbfxv4jxwj0ae0583wwjt",
+      "displayName": "mickmicksh",
+      "image": "https://avatars.githubusercontent.com/u/214470470?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775466747929,
+      "changelog": "lap-adyen-data-protection-api v1.0.0\n\n- Initial release of Adyen Data Protection API skill.\n- Supports the requestSubjectErasure endpoint for submitting Subject Erasure Requests.\n- Includes setup instructions, authentication details, and usage tips.\n- Requires the environment variable: ADYEN_DATA_PROTECTION_API_KEY.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:71a5642111eff17fe68cd48dc7da5f009cd3812ccc7dbbfad8234913b7fbfa48"
+}

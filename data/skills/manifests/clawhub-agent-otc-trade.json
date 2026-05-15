@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15647,
+  "uuid": "skill-clawhub-agent-otc-trade",
+  "skillKey": "clawhub-agent-otc-trade",
+  "name": "Uniswap Agent Otc Trade",
+  "summary": "Facilitate over-the-counter trades between agents using Uniswap as the settlement layer. Use when user wants to trade tokens directly with another agent, settle an agent-to-agent trade through Uniswap, or execute an OTC swap with a specifi.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_otc_trade",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wpank",
+      "features": [
+        "Facilitate over-the-counter trades between agents using Uniswap as the settlement layer",
+        "Use when user wants to trade tokens directly with another agent, settle an agent-to-agent trade.",
+        "Verifies counterparty identity via ERC-8004, negotiates terms, and settles through Uniswap pool."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-otc-trade@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9498646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-otc-trade",
+      "url": "https://clawhub.ai/skills/agent-otc-trade"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-otc-trade",
+    "url": "https://clawhub.ai/skills/agent-otc-trade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-otc-trade-b47d82a9eb4786ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-otc-trade@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-otc-trade-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9797e5637b29af93608e8b252653a813a622151de38928ad5cc1704ca1c7cd23",
+      "artifactSizeBytes": 2446
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T17:31:45.873Z"
+}

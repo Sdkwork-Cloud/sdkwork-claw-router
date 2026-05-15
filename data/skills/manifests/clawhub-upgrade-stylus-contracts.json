@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27466,
+  "uuid": "skill-clawhub-upgrade-stylus-contracts",
+  "skillKey": "clawhub-upgrade-stylus-contracts",
+  "name": "Upgrade Stylus Contracts",
+  "summary": "Upgrade Stylus smart contracts using OpenZeppelin proxy patterns on Arbitrum. Use when users need to: (1) make Stylus Rust contracts upgradeable with UUPS or...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.upgrade_stylus_contracts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "samledger67-dotcom",
+      "features": [
+        "Upgrade Stylus smart contracts using OpenZeppelin proxy patterns on Arbitrum",
+        "Use when users need to: (1) make Stylus Rust contracts upgradeable with UUPS or..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/upgrade-stylus-contracts@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261800271?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "upgrade-stylus-contracts",
+      "url": "https://clawhub.ai/skills/upgrade-stylus-contracts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "upgrade-stylus-contracts",
+    "url": "https://clawhub.ai/skills/upgrade-stylus-contracts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/upgrade-stylus-contracts-3f1c110bb9fcaf53.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/upgrade-stylus-contracts@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-upgrade-stylus-contracts-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f449d3cd6df49d1c7c03481f3e139bb2465874a609b12eb7e7a0df0d0acee14a",
+      "artifactSizeBytes": 2004
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T15:17:57.482Z"
+}

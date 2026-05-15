@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-docs-documents@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_docs_documents",
+  "skill": {
+    "id": 54254,
+    "skillKey": "clawhub-google-docs-documents",
+    "name": "Google Docs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-docs-documents",
+    "url": "https://clawhub.ai/skills/google-docs-documents",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-docs-documents-86123b2eab20771c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search documents, read document text, create docs from text or Markdown, and update document content and structure — powered by ClawLink."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hith3sh",
+      "userId": "s173vws87a7ss71xf9rq53k5gd8568kv",
+      "displayName": "Hithesh Jay",
+      "image": "https://avatars.githubusercontent.com/u/83839061?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 106,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1777815211442,
+      "changelog": "Initial release enabling Google Docs access via ClawLink integration:\n\n- Search, read, export, and create Google Docs through a chat interface\n- Update document content and structure with confirmation\n- Guided setup using ClawLink for easy connection—no manual API configuration needed\n- Dynamic discovery and execution of Google Docs tools based on user account and permissions\n- Built-in confirmation steps for actions that modify or create documents",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:70218126987dce0e440c4e3bbcc92b124d96ffd3309d9427f0cbbc2ad54008e3"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66635,
+  "uuid": "skill-clawhub-social-media-monitor",
+  "skillKey": "clawhub-social-media-monitor",
+  "name": "Social Media Monitor",
+  "summary": "社交媒体舆情分析工具 - 品牌方/电商卖家/运营人员的平价舆情监控助手，支持关键词监测、负面预警、声量趋势分析",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_media_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Crystaria",
+      "features": [
+        "社交媒体舆情分析工具",
+        "品牌方/电商卖家/运营人员的平价舆情监控助手，支持关键词监测、负面预警、声量趋势分析"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/social-media-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/105076136?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "social-media-monitor",
+      "url": "https://clawhub.ai/skills/social-media-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-media-monitor",
+    "url": "https://clawhub.ai/skills/social-media-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-media-monitor-788ee5f9e8869b91.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/social-media-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-social-media-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6c3c2ba95fd547a49cc826f48313e7b659c370e01b5e55250866c04a3eccccce",
+      "artifactSizeBytes": 2316
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T13:37:43.566Z"
+}

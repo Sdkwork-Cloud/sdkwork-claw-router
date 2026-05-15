@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fund-report-extractor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fund_report_extractor",
+  "skill": {
+    "id": 66411,
+    "skillKey": "clawhub-fund-report-extractor",
+    "name": "Fund Report Extractor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fund-report-extractor",
+    "url": "https://clawhub.ai/skills/fund-report-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fund-report-extractor-894aa753cba6b1fa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动提取公募基金定期报告中“投资策略和运作分析”部分全文，支持文本型和扫描版PDF的精准定位与汇总。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "suncxw-creator",
+      "userId": "publishers:suncxw-creator",
+      "displayName": "suncxw-creator",
+      "image": "https://avatars.githubusercontent.com/u/247308666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 478,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772984034005,
+      "changelog": "- Initial release of 基金定期报告投资策略提取Skill.\n- Automatically extracts the full text of \"投资策略和运作分析\" from public fund regular reports.\n- Supports both text-based and scanned PDFs, with extraction using PyMuPDF or pdfplumber.\n- Summarizes and organizes extracted content in chronological order.\n- Provides instructions for fund code lookup, report downloading, and troubleshooting common issues.\n- Output includes original report files and a consolidated .txt summary.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5f24c6883d8f916d43459e0b113d9fbd955c1c75341538a653218a1ff3213995"
+}

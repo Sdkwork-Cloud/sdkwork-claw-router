@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16519,
+  "uuid": "skill-clawhub-astra-docker",
+  "skillKey": "clawhub-astra-docker",
+  "name": "Astra Docker",
+  "summary": "Interact with Astra's Docker container workspace by executing commands and reading or writing files at /workspace inside the astra-env container.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.astra_docker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "walniek",
+      "features": [
+        "Interact with Astra's Docker container workspace by executing commands and reading or writing f."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/astra-docker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/219038366?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "astra-docker",
+      "url": "https://clawhub.ai/skills/astra-docker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "astra-docker",
+    "url": "https://clawhub.ai/skills/astra-docker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/astra-docker-fe0d30d52a5ed584.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/astra-docker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-astra-docker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ee3d50344dcee7c84dda18b63489bf3d1141d9520c1234a99745c9fbb424a33b",
+      "artifactSizeBytes": 2068
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T19:03:11.586Z"
+}

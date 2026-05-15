@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vmware-policy@1.5.17",
+  "version": "1.5.17",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vmware_policy",
+  "skill": {
+    "id": 29074,
+    "skillKey": "clawhub-vmware-policy",
+    "name": "Vmware Policy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vmware-policy",
+    "url": "https://clawhub.ai/skills/vmware-policy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vmware-policy-4d1ec13cc1dd5e24.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Unified audit logging, policy enforcement, and input sanitization for the entire VMware MCP skill family. Use when querying audit logs, managing policy rules..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zw008",
+      "userId": "s171xgnmqse0nqvgqvqnaq5f9183kyre",
+      "displayName": "zw008",
+      "image": "https://avatars.githubusercontent.com/u/10613299?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 311,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.5.17",
+      "createdAt": 1777636043642,
+      "changelog": "v1.5.17 - L5 auto-remediation pattern matcher integrated into @vmware_tool: signed-YAML loading with hot-reload, action matching, per-target rate limiting (hourly+daily windows), circuit breaker, audit row annotation with _pattern_id.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3bf41646694115dccbfe7f37a8b6a4753fd50398c8792a9f0c7b057874c80979"
+}

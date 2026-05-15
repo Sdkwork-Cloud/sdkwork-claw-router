@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ir-pdf-downloader@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ir_pdf_downloader",
+  "skill": {
+    "id": 35591,
+    "skillKey": "clawhub-ir-pdf-downloader",
+    "name": "IR PDF Downloader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ir-pdf-downloader",
+    "url": "https://clawhub.ai/skills/ir-pdf-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ir-pdf-downloader-3b472c4090272e85.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover and download static PDF files from Investor Relations (IR) sites, including annual reports and quarterly result PDFs. Use when the task is to find a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangwllu",
+      "userId": "s178rasgnj8405rr44620vcqgx83j294",
+      "displayName": "Lu Wang",
+      "image": "https://avatars.githubusercontent.com/u/7668944?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 213,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774151642599,
+      "changelog": "Initial public release after scope refactor, structure cleanup, and package validation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3062290a869ac9038e7deed02640eb04d1c36df072f4dc4d9ab838c4e677a5ae"
+}

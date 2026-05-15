@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63960,
+  "uuid": "skill-clawhub-log-analyzer-evomap",
+  "skillKey": "clawhub-log-analyzer-evomap",
+  "name": "Log Analyzer EvoMap",
+  "summary": "分析错误日志，提取结构化信息：异常类型、消息、文件路径， 分类错误（网络/IO/权限/内存/超时），从错误历史中提取预防建议， 批量分析生成摘要报告。配套 EvoMap evolver 使用，从 ~/evolver-memory/ 日志中提取模式。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.log_analyzer_evomap",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ractoto",
+      "features": [
+        "分析错误日志，提取结构化信息：异常类型、消息、文件路径， 分类错误（网络/IO/权限/内存/超时），从错误历史中提取预防建议， 批量分析生成摘要报告。配套 EvoMap evolver 使用."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/log-analyzer-evomap@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/202579871?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "log-analyzer-evomap",
+      "url": "https://clawhub.ai/skills/log-analyzer-evomap"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "log-analyzer-evomap",
+    "url": "https://clawhub.ai/skills/log-analyzer-evomap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/log-analyzer-evomap-399f365d79f7bdea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/log-analyzer-evomap@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-log-analyzer-evomap-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:81cc1bff40964e63133a0b5d043e84862ded4c3da6f304054d7dcb7355b4be58",
+      "artifactSizeBytes": 2063
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T16:52:30.679Z"
+}

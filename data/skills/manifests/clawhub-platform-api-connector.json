@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18338,
+  "uuid": "skill-clawhub-platform-api-connector",
+  "skillKey": "clawhub-platform-api-connector",
+  "name": "Platform API Connector",
+  "summary": "Connect to social media and content platform APIs by navigating developer portals, creating apps, obtaining OAuth tokens, and storing credentials. Covers Fac...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.platform_api_connector",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "brandonwadepackard-cell",
+      "features": [
+        "Connect to social media and content platform APIs by navigating developer portals, creating app.",
+        "Covers Fac..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/platform-api-connector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/227546078?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "platform-api-connector",
+      "url": "https://clawhub.ai/skills/platform-api-connector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "platform-api-connector",
+    "url": "https://clawhub.ai/skills/platform-api-connector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/platform-api-connector-6188de61d9c8911b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/platform-api-connector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-platform-api-connector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c478d6e8b5fde8137de3eec512d438718a47af0449f20cbeb2896bbc6750e3ed",
+      "artifactSizeBytes": 2060
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T07:18:05.952Z"
+}

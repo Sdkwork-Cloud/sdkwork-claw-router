@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skylv-mermaid-diagram@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_mermaid_diagram",
+  "skill": {
+    "id": 36837,
+    "skillKey": "clawhub-skylv-mermaid-diagram",
+    "name": "Skylv Mermaid Diagram"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-mermaid-diagram",
+    "url": "https://clawhub.ai/skills/skylv-mermaid-diagram",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-mermaid-diagram-8b3853d62fef74f8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates Mermaid diagrams from descriptions. Creates flowcharts, sequence diagrams, and architecture diagrams. Triggers: mermaid diagram, architecture diagr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776733403624,
+      "changelog": "Initial release of Mermaid Diagram Generator:\n\n- Generates Mermaid diagrams from textual descriptions, including flowcharts, sequence diagrams, and architecture diagrams.\n- Provides ready-to-use templates for flowcharts, sequence diagrams, and architecture diagrams.\n- Activated by triggers such as \"mermaid diagram\" or \"architecture diagram\".\n- Offers tips for customizing diagrams and grouping components.\n- Created for automation and documentation workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bfdf3884b4e5500f8e08122464848fa824be060b0c95f64056e5b2cd59fbc94c"
+}

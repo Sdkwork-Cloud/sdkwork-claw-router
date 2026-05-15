@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52241,
+  "uuid": "skill-clawhub-marketpulse",
+  "skillKey": "clawhub-marketpulse",
+  "name": "Marketpulse",
+  "summary": "Query real-time and historical financial data for equities—prices, news, financial statements, metrics, analyst estimates, insider and institutional activity...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.marketpulse",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIsa",
+      "features": [
+        "Query real-time and historical financial data for equities—prices, news, financial statements,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/marketpulse@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245991925?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "marketpulse",
+      "url": "https://clawhub.ai/skills/marketpulse"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "marketpulse",
+    "url": "https://clawhub.ai/skills/marketpulse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/marketpulse-3a8a5e648bbdc8d4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/marketpulse@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-marketpulse-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5a9ac937baa6e072d55a426e80c989bf4e210d537dc56c3a17dd2607888d2edf",
+      "artifactSizeBytes": 2573
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T20:10:33.324Z"
+}

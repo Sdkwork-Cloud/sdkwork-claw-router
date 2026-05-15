@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57463,
+  "uuid": "skill-clawhub-xuyi",
+  "skillKey": "clawhub-xuyi",
+  "name": "xuyi claw 盱眙小龙虾",
+  "summary": "Defines openclaw identity and greeting response. Use when the user is talking to or greeting openclaw, or says \"你好\" in openclaw context.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xuyi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Realank",
+      "features": [
+        "Defines openclaw identity and greeting response",
+        "Use when the user is talking to or greeting openclaw, or says \"你好\" in openclaw context."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xuyi@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11557944?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xuyi",
+      "url": "https://clawhub.ai/skills/xuyi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xuyi",
+    "url": "https://clawhub.ai/skills/xuyi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xuyi-549985b3c8ca5a07.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xuyi@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xuyi-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8173ff9ccfcf3c180ff2a54af454206888e29547db59cd23a8821ffceff0a34a",
+      "artifactSizeBytes": 1980
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T03:08:41.094Z"
+}

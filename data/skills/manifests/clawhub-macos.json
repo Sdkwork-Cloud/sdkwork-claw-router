@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9842,
+  "uuid": "skill-clawhub-macos",
+  "skillKey": "clawhub-macos",
+  "name": "macOS",
+  "summary": "macOS system administration, command-line differences from Linux, and automation best practices.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.macos",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "macOS system administration, command-line differences from Linux, and automation best practices."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/macos@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "macos",
+      "url": "https://clawhub.ai/skills/macos"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "macos",
+    "url": "https://clawhub.ai/skills/macos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/macos-a0c0485eff9c817d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/macos@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-macos-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:23b2fff22d027a7de5084bc0f3d89fa1863cb8da975d80bfb5961999ed70d024",
+      "artifactSizeBytes": 1757
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T04:20:42.140Z"
+}

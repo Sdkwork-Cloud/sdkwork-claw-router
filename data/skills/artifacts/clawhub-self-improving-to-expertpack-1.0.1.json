@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/self-improving-to-expertpack@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_improving_to_expertpack",
+  "skill": {
+    "id": 23380,
+    "skillKey": "clawhub-self-improving-to-expertpack",
+    "name": "Self Improving To Expertpack"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-improving-to-expertpack",
+    "url": "https://clawhub.ai/skills/self-improving-to-expertpack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-improving-to-expertpack-17bcd972697964ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert Self-Improving Agent learnings into a structured ExpertPack. Migrates the .learnings/ directory (LEARNINGS.md, ERRORS.md, FEATURE_REQUESTS.md) and an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brianhearn",
+      "userId": "s17edk00zzwdjx7cfx3e4xh0ys83kd03",
+      "displayName": "Brian Hearn",
+      "image": "https://avatars.githubusercontent.com/u/1640595?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 344,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775504448850,
+      "changelog": "Core 2.8: Obsidian compatibility — output packs include YAML frontmatter and can be opened as Obsidian vaults.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6999ac6a3bd4e44f4e04ac4a9936681763b1db05c61b56023f41a187bb73894a"
+}

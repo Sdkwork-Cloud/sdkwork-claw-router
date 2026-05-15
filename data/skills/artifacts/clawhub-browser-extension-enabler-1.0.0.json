@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/browser-extension-enabler@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_extension_enabler",
+  "skill": {
+    "id": 19692,
+    "skillKey": "clawhub-browser-extension-enabler",
+    "name": "Browser Extension Enabler"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-extension-enabler",
+    "url": "https://clawhub.ai/skills/browser-extension-enabler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-extension-enabler-a893657d4e6e8970.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Auto-detect and enable OpenClaw Browser Relay Chrome extension when disconnected. Uses native mouse control to click the extension icon."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kevinzhj",
+      "userId": "publishers:kevinzhj",
+      "displayName": "kevinZhj",
+      "image": "https://avatars.githubusercontent.com/u/193040475?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 587,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772384956764,
+      "changelog": "Initial release: Auto-enable OpenClaw Browser Relay extension",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2a1388b8db77f5794e9ee7c9bf0c9035f5ea1a12fce791c967c45824bc4a8b9d"
+}

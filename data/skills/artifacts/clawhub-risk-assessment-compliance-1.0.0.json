@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/risk-assessment-compliance@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.risk_assessment_compliance",
+  "skill": {
+    "id": 35617,
+    "skillKey": "clawhub-risk-assessment-compliance",
+    "name": "Risk Assessment Compliance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "risk-assessment-compliance",
+    "url": "https://clawhub.ai/skills/risk-assessment-compliance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/risk-assessment-compliance-17dc7e73b0a39794.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Performs comprehensive security checks and compliance risk assessments on websites and applications."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krishnakumarmahadevan-cmd",
+      "userId": "s177cvva4qaee9r80e44xt5cqx83ga38",
+      "displayName": "ToolWeb",
+      "image": "https://avatars.githubusercontent.com/u/245780162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 213,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774076766319,
+      "changelog": "- Initial release of the Risk Assessment & Compliance skill.\n- Provides comprehensive security checks and compliance risk assessments for websites and applications.\n- Returns detailed reports including security score, compliance status, vulnerabilities, framework assessments (PCI-DSS, OWASP, GDPR), and risk level.\n- Offers a `/security-check` endpoint for automated analysis with remediation guidance.\n- Includes tiered pricing plans (Free, Developer, Professional, Enterprise) for API usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0d0e1e66ff2ea6d04387efb0c1566af6164450aef16ea0eac67f62eabf0df9b4"
+}

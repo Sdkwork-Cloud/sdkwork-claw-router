@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/faster-whisper-transcribe@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.faster_whisper_transcribe",
+  "skill": {
+    "id": 14021,
+    "skillKey": "clawhub-faster-whisper-transcribe",
+    "name": "Faster Whisper Transcription"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "faster-whisper-transcribe",
+    "url": "https://clawhub.ai/skills/faster-whisper-transcribe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/faster-whisper-transcribe-0b902662dd82e731.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transcribes local voice messages to text using Faster Whisper models for fast, privacy-focused speech recognition on audio files."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kalmuraee",
+      "userId": "publishers:kalmuraee",
+      "displayName": "Khalid Almuraee",
+      "image": "https://avatars.githubusercontent.com/u/7072748?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1244,
+      "installsAllTime": 5,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771708412043,
+      "changelog": "- Initial release of the Voice Transcription Skill.\n- Transcribes audio files locally using Faster Whisper for privacy.\n- Supports multiple model sizes: tiny, base, small, medium.\n- Simple command-line usage for voice file transcription.\n- Outputs transcribed text from voice messages.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8056cbd8b9b5283536cc8e9fd841b69f7140768c6be890846db9fe2914361bdb"
+}

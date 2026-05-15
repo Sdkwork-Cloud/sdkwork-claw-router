@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dingtalk-mailbox@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dingtalk_mailbox",
+  "skill": {
+    "id": 68059,
+    "skillKey": "clawhub-dingtalk-mailbox",
+    "name": "dingtalk mailbox"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dingtalk-mailbox",
+    "url": "https://clawhub.ai/skills/dingtalk-mailbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dingtalk-mailbox-594d19d62ac89df8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "钉钉邮箱访问skill，使用mcporter调用钉钉邮箱MCP服务。支持查询可用邮箱列表、搜索邮件（类KQL表达式）、获取邮件详情、发送邮件。适用于需要通过AI助手管理钉钉邮箱的场景，如查询邮件、自动回复、邮件归档等。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jackeylee007",
+      "userId": "s179njm44z05tz77ywxdmvyn7s83hejr",
+      "displayName": "JackeyLee007",
+      "image": "https://avatars.githubusercontent.com/u/1195708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774600267824,
+      "changelog": "First commit",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cf5bd40a7a1191264501887b1d80f45690744300a103118883d0a7d2e506c3a1"
+}

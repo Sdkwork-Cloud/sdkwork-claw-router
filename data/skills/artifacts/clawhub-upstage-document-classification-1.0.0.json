@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/upstage-document-classification@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.upstage_document_classification",
+  "skill": {
+    "id": 48478,
+    "skillKey": "clawhub-upstage-document-classification",
+    "name": "Upstage Document Classification"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "upstage-document-classification",
+    "url": "https://clawhub.ai/skills/upstage-document-classification",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/upstage-document-classification-a7cce9ba8226e1fb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Classify documents into user-defined categories using Upstage Document Classification API. Also supports document splitting for multi-document PDFs. Use when..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "upstage-deployment",
+      "userId": "s176wgta5t9fny3cxc4x84867x863zhs",
+      "displayName": "Upstage Deployment",
+      "image": "https://avatars.githubusercontent.com/u/124652596?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 89,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778085479954,
+      "changelog": "- Initial release of upstage-document-classification.\n- Classifies documents into user-defined categories using the Upstage Document Classification API.\n- Supports splitting multi-document PDFs into individual documents.\n- Provides category confidence scores and outputs classified files or split documents.\n- Compatible with OpenAI SDK via base_url configuration.\n- Includes support for category definition via JSON Schema (must use \"string\" type with \"oneOf\" and \"const\" pairs).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:13dd40fb76a60251d9bb51811d2f9d3bae0eeb4f50b8b9b6227f51a5b0fc0c77"
+}

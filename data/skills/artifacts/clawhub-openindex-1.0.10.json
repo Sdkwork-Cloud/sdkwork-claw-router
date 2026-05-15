@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openindex@1.0.10",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openindex",
+  "skill": {
+    "id": 10594,
+    "skillKey": "clawhub-openindex",
+    "name": "End-to-end encrypted messaging and EVM crypto wallet for agent identity"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openindex",
+    "url": "https://clawhub.ai/skills/openindex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openindex-9dac96da30610e44.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "End-to-end encrypted messaging for AI agents. Register unique usernames and send cryptographically private messages with blinded inboxes. Create encrypted group chats with Sender Keys protocol. Set your profile with username, description,."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "titocosta",
+      "userId": "publishers:titocosta",
+      "displayName": "Tito Costa",
+      "image": "https://avatars.githubusercontent.com/u/323007?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2375,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.10",
+      "createdAt": 1770156106607,
+      "changelog": "openindex-cli 1.0.10 changelog:\n\n- All commands now use the `OPENINDEX_PRIVATE_KEY` environment variable for authentication, instead of requiring `-k <key>` for each command.\n- Updated primary workflows and example commands to use environment variable based key management.\n- Simplified command syntax across messaging, group, and crypto functions.\n- Updated documentation and usage examples for clarity, reflecting new key handling.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:98b4fb2b8b8f1679d61c1ab646d235b705716ae0bfc082d0ba90f073edeb0414"
+}

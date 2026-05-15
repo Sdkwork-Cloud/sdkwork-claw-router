@@ -1,0 +1,50 @@
+{
+  "skill": {
+    "slug": "experience-summary-sys",
+    "displayName": "Experience Summary Sys",
+    "summary": "管理经验总结系统：定时生成每日/每周/每月/每季度/每年经验总结，以及按需调用历史经验的功能",
+    "tags": {
+      "latest": "1.4.0",
+      "automation": "1.2.1",
+      "cron": "1.2.1",
+      "memory": "1.2.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 6
+    },
+    "createdAt": 1775005216600,
+    "updatedAt": 1777526986008
+  },
+  "latestVersion": {
+    "version": "1.4.0",
+    "createdAt": 1775174776591,
+    "changelog": "**经验总结系统 v1.4.0 主要变更：**\n\n- 优化所有定时任务的时间配置，避免周期任务时间重合。\n- 日志目录增加 memory/manual，支持手动记录，内容不会被自动任务覆盖。\n- 定期总结（周、月、季度、年）支持空数据占位输出，增强容错。\n- 详细补充每个周期任务的处理逻辑、容错说明和输出格式统一规则。\n- 新增会话历史文件自动清理建议，提升空间可维护性。\n- 部分 bash 操作命令的 cron 时间与输出路径说明同步修正。",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "17oko",
+    "userId": "s1765dd57bdf3n48yg4fqagt6n841cw7",
+    "displayName": "thiswin",
+    "image": "https://avatars.githubusercontent.com/u/62000536?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777526986008
+  }
+}

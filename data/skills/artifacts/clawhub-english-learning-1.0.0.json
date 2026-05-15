@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/english-learning@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.english_learning",
+  "skill": {
+    "id": 66273,
+    "skillKey": "clawhub-english-learning",
+    "name": "English-Learning"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "english-learning",
+    "url": "https://clawhub.ai/skills/english-learning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/english-learning-524a83d49be98759.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供小学、专四、专八英语听力材料，支持获取材料列表和详细段落。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leiwonginchaozhou-netizen",
+      "userId": "publishers:leiwonginchaozhou-netizen",
+      "displayName": "leiwonginchaozhou-netizen",
+      "image": "https://avatars.githubusercontent.com/u/258553273?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774191657362,
+      "changelog": "This is the first version, a test",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6d765905dec4999243c0e53e69638b0178b6518c85228eaaddba93a1486ed010"
+}

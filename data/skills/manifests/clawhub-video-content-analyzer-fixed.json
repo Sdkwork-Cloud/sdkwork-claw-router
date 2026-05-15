@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44937,
+  "uuid": "skill-clawhub-video-content-analyzer-fixed",
+  "skillKey": "clawhub-video-content-analyzer-fixed",
+  "name": "Video Content Analyzer (Fixed)",
+  "summary": "Analyze videos by extracting frames every 10s, searching web references, storing metadata in Supabase, and generating Feishu Wiki reports.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_content_analyzer_fixed",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "terrycarter1985",
+      "features": [
+        "Analyze videos by extracting frames every 10s, searching web references, storing metadata in Su."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-content-analyzer-fixed@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1542987?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-content-analyzer-fixed",
+      "url": "https://clawhub.ai/skills/video-content-analyzer-fixed"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-content-analyzer-fixed",
+    "url": "https://clawhub.ai/skills/video-content-analyzer-fixed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-content-analyzer-fixed-91bbfcf1c998eda7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-content-analyzer-fixed@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-content-analyzer-fixed-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:28976aa214471c6877ab0912ec59de3de8c14f2c40aae8a7f53e62164c5be9ab",
+      "artifactSizeBytes": 2203
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T22:26:48.113Z"
+}

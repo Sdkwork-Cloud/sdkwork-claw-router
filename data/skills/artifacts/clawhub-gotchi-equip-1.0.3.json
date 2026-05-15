@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gotchi-equip@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gotchi_equip",
+  "skill": {
+    "id": 17485,
+    "skillKey": "clawhub-gotchi-equip",
+    "name": "Gotchi Equip"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gotchi-equip",
+    "url": "https://clawhub.ai/skills/gotchi-equip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gotchi-equip-a8421218c4152671.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Equip, unequip, and inspect Aavegotchi wearables on Base via Bankr submissions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aaigotchi",
+      "userId": "s17274ydba008dctsvmwydrqk183rfhq",
+      "displayName": "aaigotchi",
+      "image": "https://avatars.githubusercontent.com/u/258886199?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 746,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1772826848767,
+      "changelog": "Minor improvements and bug fixes",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7a5781af0009cf33566971f476085bbf17f9ddabd3c18c5e761abf5fdd8fae18"
+}

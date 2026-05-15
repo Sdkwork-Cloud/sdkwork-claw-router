@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tech-brief@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tech_brief",
+  "skill": {
+    "id": 73068,
+    "skillKey": "clawhub-tech-brief",
+    "name": "科技资讯简报"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tech-brief",
+    "url": "https://clawhub.ai/skills/tech-brief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tech-brief-74cba3925c22877a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供内存、AI、算力领域的最新新闻、政策、活动与热点话题，每日生成结构化科技简报。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "17oko",
+      "userId": "s1765dd57bdf3n48yg4fqagt6n841cw7",
+      "displayName": "thiswin",
+      "image": "https://avatars.githubusercontent.com/u/62000536?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775214687152,
+      "changelog": "首次发布：自动采集内存、AI、算力相关资讯",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3544a535f50b724b6f822bd0ab0c9ddf0ac2c8ab43cc42e095e4430747daa370"
+}

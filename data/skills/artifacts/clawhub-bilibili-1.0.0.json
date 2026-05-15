@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bilibili@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilibili",
+  "skill": {
+    "id": 16931,
+    "skillKey": "clawhub-bilibili",
+    "name": "Bilibili"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilibili",
+    "url": "https://clawhub.ai/skills/bilibili",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilibili-5acb7efa8ac5b65d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design videos for cultural resonance on Bilibili. Analyze danmu psychology, meme triggers, collective reaction points, and community-native emotional beats t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agimodel",
+      "userId": "publishers:agimodel",
+      "displayName": "AGImodel",
+      "image": "https://avatars.githubusercontent.com/u/216470445?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 736,
+      "installsAllTime": 10,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773170640244,
+      "changelog": "Bilibili Skill 1.0.0\n\n- First release for Bilibili-native video resonance design.\n- Provides analysis for danmu psychology, meme triggers, and community-specific engagement points.\n- Offers a structured output format to identify danmu moments, reaction triggers, and resonance risks.\n- Guides creators in designing videos that spark collective response, not just views.\n- Includes best-use cases, input guidelines, and step-by-step execution protocol for Bilibili-focused content strategy.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:004143bd4dbf3d87dbd3df85b87e89af11bca81230649658dae233f2619a9417"
+}

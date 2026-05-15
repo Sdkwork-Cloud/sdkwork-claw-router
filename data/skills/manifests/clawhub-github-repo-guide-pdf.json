@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35806,
+  "uuid": "skill-clawhub-github-repo-guide-pdf",
+  "skillKey": "clawhub-github-repo-guide-pdf",
+  "name": "GitHub Repo Guide PDF",
+  "summary": "Analyze a GitHub repository URL or OWNER/REPO and produce a Chinese user guide focused on how to use the project, not how it is implemented. Build a Markdown...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_repo_guide_pdf",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smile618",
+      "features": [
+        "Analyze a GitHub repository URL or OWNER/REPO and produce a Chinese user guide focused on how t.",
+        "Build a Markdown..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-repo-guide-pdf@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/119727144?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-repo-guide-pdf",
+      "url": "https://clawhub.ai/skills/github-repo-guide-pdf"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-repo-guide-pdf",
+    "url": "https://clawhub.ai/skills/github-repo-guide-pdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-repo-guide-pdf-f86175254685f3e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-repo-guide-pdf@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-repo-guide-pdf-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:49feafb7af0c04a14f5d07c094808b78201c8e34e81bb719c3d8a294aef21221",
+      "artifactSizeBytes": 1967
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T09:00:47.272Z"
+}

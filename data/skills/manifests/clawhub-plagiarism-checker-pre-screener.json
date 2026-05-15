@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32068,
+  "uuid": "skill-clawhub-plagiarism-checker-pre-screener",
+  "skillKey": "clawhub-plagiarism-checker-pre-screener",
+  "name": "Plagiarism Checker",
+  "summary": "Use when: User provides text/document and asks to check originality, detect plagiarism, assess similarity, or rewrite high-duplicate content. Triggers: \"chec...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plagiarism_checker_pre_screener",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Use when: User provides text/document and asks to check originality, detect plagiarism, assess.",
+        "Triggers: \"chec..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/plagiarism-checker-pre-screener@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "plagiarism-checker-pre-screener",
+      "url": "https://clawhub.ai/skills/plagiarism-checker-pre-screener"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plagiarism-checker-pre-screener",
+    "url": "https://clawhub.ai/skills/plagiarism-checker-pre-screener",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plagiarism-checker-pre-screener-de2aaeff0e75982b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/plagiarism-checker-pre-screener@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-plagiarism-checker-pre-screener-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c735d0f2b9445e5d5f5998f347c849a4ea7f6b398c3b55811999dd9aa229d1a",
+      "artifactSizeBytes": 2438
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T08:51:30.415Z"
+}

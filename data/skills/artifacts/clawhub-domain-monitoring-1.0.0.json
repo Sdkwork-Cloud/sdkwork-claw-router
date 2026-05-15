@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/domain-monitoring@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.domain_monitoring",
+  "skill": {
+    "id": 35143,
+    "skillKey": "clawhub-domain-monitoring",
+    "name": "Domain Monitoring"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "domain-monitoring",
+    "url": "https://clawhub.ai/skills/domain-monitoring",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/domain-monitoring-94e33f84362b81de.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-driven domain and SSL monitoring strategy tailored for e-commerce, providing health checks, SSL expiry alerts, DNS anomaly detection, and security assessm..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nexscope",
+      "userId": "s17dwyzs7t74hqkesy6xh9wszx83hgt0",
+      "displayName": "nexscope-ai",
+      "image": "https://avatars.githubusercontent.com/u/265748176?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 217,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774587922927,
+      "changelog": "Beta release — functional skill for e-commerce AI agents. Built by Nexscope.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0c3eff951fab0fd34fc9e20beaa399410f2241ed3b6308394878cfc1c8194e1f"
+}

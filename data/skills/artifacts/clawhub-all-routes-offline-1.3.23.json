@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/all-routes-offline@1.3.23",
+  "version": "1.3.23",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.all_routes_offline",
+  "skill": {
+    "id": 29176,
+    "skillKey": "clawhub-all-routes-offline",
+    "name": "Global Flight Route Map - Airport Connections"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "all-routes-offline",
+    "url": "https://clawhub.ai/skills/all-routes-offline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/all-routes-offline-3a6002e49449983a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use local All Routes APIs, repo-backed handlers, and optional local MCP for airport, airline, route-map, timetable-context, and dataset-health lookups withou..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "skylinehk",
+      "userId": "s172w5phb33spv0zh9b324d7g583egdn",
+      "displayName": "Gerald He",
+      "image": "https://avatars.githubusercontent.com/u/26716208?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 308,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.3.23",
+      "createdAt": 1777833731645,
+      "changelog": "Safety alignment: clarified no OAuth/secret dependency and no purchase execution; strengthened offline guardrails wording.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0247ef33ebdd7b1a252fc3ced0683eee0a117fbf01c4ffe90ec8d08c054b4b7d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shenmeng-lottery-predictor@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shenmeng_lottery_predictor",
+  "skill": {
+    "id": 68988,
+    "skillKey": "clawhub-shenmeng-lottery-predictor",
+    "name": "Lottery Predictor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shenmeng-lottery-predictor",
+    "url": "https://clawhub.ai/skills/shenmeng-lottery-predictor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shenmeng-lottery-predictor-985c24e40e1ac3d9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "中国体育彩票/福利彩票预测分析工具 - 支持排列三、排列五、大乐透、双色球、七星彩、足彩14场的历史数据分析、号码统计、遗漏值分析及智能推荐"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shenmeng",
+      "userId": "s176scxxt9cxw1s0gqyexga8hd83qc4r",
+      "displayName": "shenmeng",
+      "image": "https://avatars.githubusercontent.com/u/6897076?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775123138552,
+      "changelog": "Lottery Predictor v1.1.0\n\n- Added an automatic evolution system (`lottery_evolution.py`) to optimize prediction model weights based on real results.\n- Model now records prediction history and updates strategy parameters dynamically.\n- Supports generating detailed evolution reports for performance tracking.\n- New data files introduced: `data/evolution_config.json` and `data/prediction_history.json`.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3fd9535e733d6c436656a8ab0c0f5383fdca61fc17629897121436a22d8b78ee"
+}

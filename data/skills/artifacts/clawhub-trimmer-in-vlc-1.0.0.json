@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trimmer-in-vlc@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trimmer_in_vlc",
+  "skill": {
+    "id": 47235,
+    "skillKey": "clawhub-trimmer-in-vlc",
+    "name": "Trimmer In Vlc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trimmer-in-vlc",
+    "url": "https://clawhub.ai/skills/trimmer-in-vlc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trimmer-in-vlc-d5b23a52d3eef352.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 10-minute MP4 recording with unwanted sections into 1080p trimmed video clips just by typing what you need. Whether it's cutting and trimming video cl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 117,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776515565892,
+      "changelog": "Initial release: Trimmer in VLC — AI-powered video trimming and export.\n\n- Upload MP4 or other common video formats (up to 500MB), describe edits, and get back a ready-to-download clip in 1080p.\n- Handles trimming, cutting, text overlays, audio tracks, and batch processing via simple text commands—no timeline, no manual export settings.\n- Streamlined cloud pipeline: automatic token/session handling, job status updates, export URLs, and credit management included.\n- Clear instructions and example prompts to get started quickly.\n- Built-in error handling for file type, size, token/session, and credits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a2e5d360ba527b3a96ff0d9e509a2bec82e1ca4dde91a251450372a6dac21772"
+}

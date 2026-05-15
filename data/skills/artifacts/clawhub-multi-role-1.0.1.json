@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/multi-role@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_role",
+  "skill": {
+    "id": 69786,
+    "skillKey": "clawhub-multi-role",
+    "name": "multi-role"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-role",
+    "url": "https://clawhub.ai/skills/multi-role",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-role-99c33677cd245665.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将 AI 角色拆分为管理与技术层，分别负责协调、需求、编码与测试，实现任务路由、质量关卡和记忆管理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wzm232803119-arch",
+      "userId": "s173s5qect1v28306gfqxpqye183x5se",
+      "displayName": "wzm232803119-arch",
+      "image": "https://avatars.githubusercontent.com/u/264390308?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 303,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773991813406,
+      "changelog": "Version 1.0.1 of \"multi-role-governance\"\n\n- No functional or structural changes detected; content remains unchanged from previous version.\n- All core mechanisms, processes, and documentation are identical to the prior release.\n- This version maintains stability with no additions, removals, or updates to files.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:905931c198e27fc1fc6afac63dbf39862d7208d5266042ee8fed4f27bc7427fe"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54884,
+  "uuid": "skill-clawhub-reefbeat",
+  "skillKey": "clawhub-reefbeat",
+  "name": "ReefBeat",
+  "summary": "Control and monitor Red Sea ReefBeat aquarium equipment directly over the local HTTP API — no cloud required. Supports ALL actions on ALL devices — ReefLED G...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reefbeat",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "piwi3910",
+      "features": [
+        "Control and monitor Red Sea ReefBeat aquarium equipment directly over the local HTTP API — no c.",
+        "Supports ALL actions on ALL devices — ReefLED G..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reefbeat@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12539757?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reefbeat",
+      "url": "https://clawhub.ai/skills/reefbeat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reefbeat",
+    "url": "https://clawhub.ai/skills/reefbeat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reefbeat-601bb527c69664b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reefbeat@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-reefbeat-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba94c4afd5c4c5b03fa6e595355f7f2d875b9fa04f00399e13266a6bb251c063",
+      "artifactSizeBytes": 2039
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T19:14:36.964Z"
+}

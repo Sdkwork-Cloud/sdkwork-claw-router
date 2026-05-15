@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hi-light-openclaw@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hi_light_openclaw",
+  "skill": {
+    "id": 58941,
+    "skillKey": "clawhub-hi-light-openclaw",
+    "name": "hi-light Ear Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hi-light-openclaw",
+    "url": "https://clawhub.ai/skills/hi-light-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hi-light-openclaw-e5ee396136ecfc59.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "以用户可执行的工作流方式安装、配置和排查 HiLight OpenClaw 插件。用户想把 OpenClaw 连接到 HiLight、安装 `@art_style666/hi-light` 插件、把 `channels[\"hi-light\"]` 写入 OpenClaw 配置、更新 HiLight API Key..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gongcong",
+      "userId": "s1756ym50rth1bq0n32eesvt4x840b26",
+      "displayName": "valo",
+      "image": "https://avatars.githubusercontent.com/u/3215104?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 401,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773055804502,
+      "changelog": "- Switched the setup workflow from `scripts/install_hi_light.sh` to a new unified script: `scripts/setup_hi_light.sh`\n- Added a dedicated user flow guide: `references/user-flow.md`\n- Removed older troubleshooting/config references and installation scripts\n- Skill documentation now emphasizes user-facing step-by-step configuration, secure API Key handling, default websocket usage, and provides sample usage prompts in both Chinese and English\n- Clarifies that actual plugin install/config happens only on first use, not upon skill installation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7d6e895f03036115a2a8b693ada3203eb9658f89f293becd922af7ecc675773c"
+}

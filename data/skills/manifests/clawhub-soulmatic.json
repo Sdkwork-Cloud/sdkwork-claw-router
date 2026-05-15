@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49343,
+  "uuid": "skill-clawhub-soulmatic",
+  "skillKey": "clawhub-soulmatic",
+  "name": "Soulmatic",
+  "summary": "Binds, audits, and evolves agent persona files (SOUL.md + IDENTITY.md). Use when: (1) session starts, (2) agent notices drift or sounds corporate/generic, (3...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.soulmatic",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lux Sp4rk",
+      "features": [
+        "Binds, audits, and evolves agent persona files (SOUL.md + IDENTITY.md)",
+        "Use when: (1) session starts, (2) agent notices drift or sounds corporate/generic, (3..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/soulmatic@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109386966?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "soulmatic",
+      "url": "https://clawhub.ai/skills/soulmatic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "soulmatic",
+    "url": "https://clawhub.ai/skills/soulmatic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/soulmatic-e40e0f8bb1d8fd49.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/soulmatic@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-soulmatic-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ef833fb82d2423294e707eed89e8679071f4e234109565548c8aa9b05998e14a",
+      "artifactSizeBytes": 1925
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T08:16:32.860Z"
+}

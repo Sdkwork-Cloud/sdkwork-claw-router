@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33208,
+  "uuid": "skill-clawhub-domain-name-checker",
+  "skillKey": "clawhub-domain-name-checker",
+  "name": "Domain Name Checker",
+  "summary": "Check domain availability and brainstorm names. Checks .com/.net/.org/.io/.ai/.co/.app/.dev and more. Suggests alternatives when taken. No API key required.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.domain_name_checker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Joseph Fluckiger",
+      "features": [
+        "Check domain availability and brainstorm names",
+        "Checks .com/.net/.org/.io/.ai/.co/.app/.dev and more",
+        "Suggests alternatives when taken",
+        "No API key required."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/domain-name-checker@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/899230?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "domain-name-checker",
+      "url": "https://clawhub.ai/skills/domain-name-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "domain-name-checker",
+    "url": "https://clawhub.ai/skills/domain-name-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/domain-name-checker-959911bbc5b0796a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/domain-name-checker@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-domain-name-checker-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f5b8c9728f564af84d5314c57c4cf54e21a00445fbd153c9dffc4eb0b61c728",
+      "artifactSizeBytes": 1922
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T14:01:00.776Z"
+}

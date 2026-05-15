@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30456,
+  "uuid": "skill-clawhub-long-context-shell",
+  "skillKey": "clawhub-long-context-shell",
+  "name": "long-context-shell",
+  "summary": "Runs long or continuous shell commands with file-backed logs, truncated previews, and fast log scanning. Invoke when shell output may be large, ongoing, or h...",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.long_context_shell",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "QipengGuo",
+      "features": [
+        "Runs long or continuous shell commands with file-backed logs, truncated previews, and fast log.",
+        "Invoke when shell output may be large, ongoing, or h..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/long-context-shell@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8382210?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "long-context-shell",
+      "url": "https://clawhub.ai/skills/long-context-shell"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "long-context-shell",
+    "url": "https://clawhub.ai/skills/long-context-shell",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/long-context-shell-19c2eea65ead35c7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/long-context-shell@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-long-context-shell-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4063d1bbf059b4fe6cf58b4da0f25bbdc68ec5eff6b901ab5c67e1c086f021b6",
+      "artifactSizeBytes": 2471
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T17:44:43.809Z"
+}

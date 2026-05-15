@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23215,
+  "uuid": "skill-clawhub-agent-control",
+  "skillKey": "clawhub-agent-control",
+  "name": "Agent Control",
+  "summary": "Manage OpenClaw isolated agents from chat with short commands. Use when the user asks to create/list/switch/bind/delete agents, route channels to a specific...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_control",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alin Catalin",
+      "features": [
+        "Manage OpenClaw isolated agents from chat with short commands",
+        "Use when the user asks to create/list/switch/bind/delete agents, route channels to a specific..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-control@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/816385?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-control",
+      "url": "https://clawhub.ai/skills/agent-control"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-control",
+    "url": "https://clawhub.ai/skills/agent-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-control-7a915eb3babc7f28.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-control@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-control-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e5e2665e7ef6b9e772b363d88f70bb5da0da0117698f32daa5484e4a1f45e6c",
+      "artifactSizeBytes": 1872
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T18:07:34.388Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/easy-openclaw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.easy_openclaw",
+  "skill": {
+    "id": 63982,
+    "skillKey": "clawhub-easy-openclaw",
+    "name": "easy-openclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "easy-openclaw",
+    "url": "https://clawhub.ai/skills/easy-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/easy-openclaw-0454eb4e2c12bfc6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw 配置优化向导。采用“第 0 层测试观测（可选）+ 前 3 轮优化 + 第 4 轮接入扩展”流程：基础推荐层（含联网搜索与权限模式）、渠道增强层（Discord/Feishu/Telegram 分支优化）、Skills 推荐层（可执行可跳过）、新增渠道接入引导（可跳过）。用于帮助用户快速完成 Op..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daheiai",
+      "userId": "s179rcnraf9zq5tbkvfh03b1bs83h049",
+      "displayName": "人工大黑",
+      "image": "https://avatars.githubusercontent.com/u/19701090?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 571,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773234392479,
+      "changelog": "第一次发布",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9cb26bb5801d87618aba8320ec0301882d44775acdbed601e9a247497ad94810"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58472,
+  "uuid": "skill-clawhub-openclaw-friends-skills",
+  "skillKey": "clawhub-openclaw-friends-skills",
+  "name": "Claw Friends",
+  "summary": "为龙虾创建角色（世界知名人物或虚拟人物），并让角色支持自拍和拍照。Create a character for OpenClaw (either a world-famous figure or a fictional character), and enable the character to take se...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_friends_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Austin Zhou",
+      "features": [
+        "为龙虾创建角色（世界知名人物或虚拟人物），并让角色支持自拍和拍照。Create a character for OpenClaw (either a world-famous figure."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-friends-skills@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11924957?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-friends-skills",
+      "url": "https://clawhub.ai/skills/openclaw-friends-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-friends-skills",
+    "url": "https://clawhub.ai/skills/openclaw-friends-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-friends-skills-a81964abee74914e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-friends-skills@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-friends-skills-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e599aff1f9a79ab72fe4c99fe8814bbde4700f62aaf511c916fbbd23c0560e45",
+      "artifactSizeBytes": 2327
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T06:11:33.797Z"
+}

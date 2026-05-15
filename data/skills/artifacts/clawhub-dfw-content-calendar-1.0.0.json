@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dfw-content-calendar@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dfw_content_calendar",
+  "skill": {
+    "id": 41749,
+    "skillKey": "clawhub-dfw-content-calendar",
+    "name": "Dfw Content Calendar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dfw-content-calendar",
+    "url": "https://clawhub.ai/skills/dfw-content-calendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dfw-content-calendar-b593b41fde67a4f9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate 7- or 30-day social media calendars with hooks, body copy, CTAs, and hashtags tailored by niche, audience, and platform in JSON or CSV formats."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "drivenautoplex1",
+      "userId": "s17amw9603tjt6jg530q93xzvx83syaf",
+      "displayName": "drivenautoplex1",
+      "image": "https://avatars.githubusercontent.com/u/186228539?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774667098976,
+      "changelog": "Initial release of dfw-content-calendar: generate structured, ready-to-schedule social media content calendars for any niche.\n\n- Instantly creates 7-day (free) or 30-day (premium) content calendars with varied hooks, body text, CTAs, and hashtags per post\n- Supports single or multi-platform scheduling (LinkedIn, X/Twitter, Facebook, Instagram)\n- Outputs in human-readable, structured JSON, or CSV formats for direct scheduler import\n- Premium features: full 30-day calendars, A/B hook variants, CSV export, weekly theme override, multi-platform runs\n- Ensures topic variety, platform-specific formatting, and five-pillar content mix for maximum engagement",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5fc1a592f1cadd29d9cafdb4d47fc16a8eb75f3a57d22f087bc907ce14567a9b"
+}

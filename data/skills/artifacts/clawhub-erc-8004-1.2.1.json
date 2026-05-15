@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/erc-8004@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.erc_8004",
+  "skill": {
+    "id": 10288,
+    "skillKey": "clawhub-erc-8004",
+    "name": "ERC-8004 Trustless Agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "erc-8004",
+    "url": "https://clawhub.ai/skills/erc-8004",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/erc-8004-dc1f56704cedbfc0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ERC-8004 Trustless Agents - Register, discover, and build reputation for AI agents on Ethereum. Use when registering agents on-chain, querying agent registries, giving/receiving reputation feedback, or interacting with the AI agent trust l."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sp0oby",
+      "userId": "publishers:sp0oby",
+      "displayName": "sp0oby",
+      "image": "https://avatars.githubusercontent.com/u/39270883?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2604,
+      "installsAllTime": 21,
+      "installsCurrent": 21,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1769702136262,
+      "changelog": "Fix: use generic placeholder data in registration template",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b1da6f0e3c9f34d282050454df45917657a84e7c60d288094d9a5118fa1909d6"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw2tencentcloud@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw2tencentcloud",
+  "skill": {
+    "id": 52891,
+    "skillKey": "clawhub-claw2tencentcloud",
+    "name": "claw2tencentcloud"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw2tencentcloud",
+    "url": "https://clawhub.ai/skills/claw2tencentcloud",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw2tencentcloud-56ebf56cb56b9e4b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill helps users migrate OpenClaw data to Tencent Cloud instances. It supports three scenarios — single instance migration to the current machine, batc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hoikin-yiu",
+      "userId": "s177j8sbfj6nq85kx4rbjc81z583g69v",
+      "displayName": "hoikin-yiu",
+      "image": "https://avatars.githubusercontent.com/u/7302155?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774532067818,
+      "changelog": "No functional changes; only minor documentation adjustment.\n\n- Clarified that for 批量迁移 (Batch Migration), a summary output should be collected from the script-generated results file.\n- No changes to features, interface, or supported scenarios.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6b678a1f26496f5d28d7caedafa8f1d081b8a33be6c2bb43cc72ef802739d599"
+}

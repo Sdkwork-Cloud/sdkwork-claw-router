@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/distributor-product-selection@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.distributor_product_selection",
+  "skill": {
+    "id": 25745,
+    "skillKey": "clawhub-distributor-product-selection",
+    "name": "Drop Pick"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "distributor-product-selection",
+    "url": "https://clawhub.ai/skills/distributor-product-selection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/distributor-product-selection-e6b5adb26dca1da8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cross-platform product selection and sourcing analysis for distributors and dropshippers. Uses opencli plugins (aliexpress, alibaba-api buyer API, amazon) to..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lcturing0",
+      "userId": "s177h4sypsnqrfyzwn75exn83h84ryh4",
+      "displayName": "lcturing0",
+      "image": "https://avatars.githubusercontent.com/u/131360926?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776133008160,
+      "changelog": "distributor-product-selection 1.0.2\n\n- Updated project homepage URL to point to the new repository location.\n- No other functional or content changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:770e0fc1c5d76396b400e3c3e04860b35a9e654682d1e0e08905990486175f9c"
+}

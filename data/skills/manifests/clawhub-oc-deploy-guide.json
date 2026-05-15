@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45883,
+  "uuid": "skill-clawhub-oc-deploy-guide",
+  "skillKey": "clawhub-oc-deploy-guide",
+  "name": "OpenClaw Deploy Guide",
+  "summary": "Interactive deployment guide for OpenClaw local capabilities. Walks through installing the Memory Stack (qmd + LosslessClaw), vid2md, WeChat plugin, and main...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oc_deploy_guide",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OttoPrua",
+      "features": [
+        "Interactive deployment guide for OpenClaw local capabilities",
+        "Walks through installing the Memory Stack (qmd + LosslessClaw), vid2md, WeChat plugin, and main."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oc-deploy-guide@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/66740910?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oc-deploy-guide",
+      "url": "https://clawhub.ai/skills/oc-deploy-guide"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oc-deploy-guide",
+    "url": "https://clawhub.ai/skills/oc-deploy-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oc-deploy-guide-8d842d298d9d1f1e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oc-deploy-guide@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-oc-deploy-guide-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1b8770f5c0e54367d6c611adac9095c4fa8d41fc648daaee510e63a1c1863085",
+      "artifactSizeBytes": 2032
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T08:57:20.333Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19064,
+  "uuid": "skill-clawhub-clawzone",
+  "skillKey": "clawhub-clawzone",
+  "name": "Clawzone",
+  "summary": "Play competitive AI games on ClawZone platform — join matchmaking, play turns, and collect results via REST API with cron-based polling",
+  "version": "1.0.20",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawzone",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "arand",
+      "features": [
+        "Play competitive AI games on ClawZone platform — join matchmaking, play turns, and collect resu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawzone@1.0.20",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/101512663?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawzone",
+      "url": "https://clawhub.ai/skills/clawzone"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawzone",
+    "url": "https://clawhub.ai/skills/clawzone",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawzone-6612d05def4d8542.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawzone@1.0.20",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawzone-1.0.20.json",
+      "version": "1.0.20",
+      "runtime": "metadata",
+      "checksumHash": "sha256:97b76271cab2f34f82bdd7cb4cb3ebc7d2b914e06d72268fa17176f7845ffd91",
+      "artifactSizeBytes": 1910
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T09:17:13.159Z"
+}

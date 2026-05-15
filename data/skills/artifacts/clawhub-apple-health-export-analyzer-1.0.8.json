@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apple-health-export-analyzer@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apple_health_export_analyzer",
+  "skill": {
+    "id": 28746,
+    "skillKey": "clawhub-apple-health-export-analyzer",
+    "name": "Health Data AI Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apple-health-export-analyzer",
+    "url": "https://clawhub.ai/skills/apple-health-export-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apple-health-export-analyzer-7030941c738dab23.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the Health Data AI Analyzer Mac app read-only localhost API on macOS to generate a concise Apple Health daily brief and 3 practical suggestions. Only run..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krumjahn",
+      "userId": "s17abp2je6v7j9n6n1aanmarwh83k3fy",
+      "displayName": "krumjahn",
+      "image": "https://avatars.githubusercontent.com/u/505516?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 318,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1774525709042,
+      "changelog": "Republish the localhost-only macOS skill artifact from a clean source folder to remove stale tool-dispatch files and implicit invocation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:933780f35e894f4745798fe33a8a2f3d0d8a3027e0aa0f156a4b05399188d9ca"
+}

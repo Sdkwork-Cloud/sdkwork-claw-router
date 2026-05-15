@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69345,
+  "uuid": "skill-clawhub-error-recovery-xiaobai",
+  "skillKey": "clawhub-error-recovery-xiaobai",
+  "name": "Error Recovery",
+  "summary": "系统化错误恢复 — 当工具失败时提供结构化的诊断、重试和汇报流程。防止静默失败、无限重试、错误升级。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.error_recovery_xiaobai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Erwin",
+      "features": [
+        "系统化错误恢复 — 当工具失败时提供结构化的诊断、重试和汇报流程。防止静默失败、无限重试、错误升级。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/error-recovery-xiaobai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268770574?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "error-recovery-xiaobai",
+      "url": "https://clawhub.ai/skills/error-recovery-xiaobai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "error-recovery-xiaobai",
+    "url": "https://clawhub.ai/skills/error-recovery-xiaobai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/error-recovery-xiaobai-72d0544d77eace60.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/error-recovery-xiaobai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-error-recovery-xiaobai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e6975a7c3e92b6bfc595e66e58e8198a32a7433102a36d5758eb8360b8053332",
+      "artifactSizeBytes": 1928
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T23:40:31.970Z"
+}

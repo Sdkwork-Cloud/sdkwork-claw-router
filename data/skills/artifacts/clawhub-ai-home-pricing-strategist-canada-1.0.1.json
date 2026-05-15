@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-home-pricing-strategist-canada@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_home_pricing_strategist_canada",
+  "skill": {
+    "id": 34278,
+    "skillKey": "clawhub-ai-home-pricing-strategist-canada",
+    "name": "AI Home Pricing Strategist Canada"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-home-pricing-strategist-canada",
+    "url": "https://clawhub.ai/skills/ai-home-pricing-strategist-canada",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-home-pricing-strategist-canada-cf711ff628c6a5be.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze and price Canadian residential properties using comps, price-per-square-foot reasoning, market context, and pricing strategy. Use when estimating hom..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "allenweisongzhou-cpu",
+      "userId": "s171c93y56nwv75xmnqvq3k4xh83fz67",
+      "displayName": "allenweisongzhou-cpu",
+      "image": "https://avatars.githubusercontent.com/u/238797156?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 226,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774394347360,
+      "changelog": "Clean up SKILL.md format and convert to valid AgentSkill structure",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d82bce426ba9c281e6364dbc48aa671ad120e8d591714f0b8138811ca05dcc5b"
+}

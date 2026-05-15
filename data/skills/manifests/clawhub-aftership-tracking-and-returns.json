@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44202,
+  "uuid": "skill-clawhub-aftership-tracking-and-returns",
+  "skillKey": "clawhub-aftership-tracking-and-returns",
+  "name": "AfterShip Tracking & Returns",
+  "summary": "Provides real-time tracking for 1,300+ carriers and merchant returns center demos with no API key required, using AfterShip's MCP server. Powered by AfterShip.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aftership_tracking_and_returns",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AfterShip",
+      "features": [
+        "Provides real-time tracking for 1,300+ carriers and merchant returns center demos with no API k.",
+        "Powered by AfterShip."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aftership-tracking-and-returns@1.0.1",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/aftership-tracking-and-returns/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aftership-tracking-and-returns",
+      "url": "https://clawhub.ai/skills/aftership-tracking-and-returns"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aftership-tracking-and-returns",
+    "url": "https://clawhub.ai/skills/aftership-tracking-and-returns",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aftership-tracking-and-returns-114a672fa7e4eef8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aftership-tracking-and-returns@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-aftership-tracking-and-returns-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a72780eb3a9383e9beba43b6d06c88af7af60f19b78500e280212e20990eef8",
+      "artifactSizeBytes": 1952
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T09:22:28.137Z"
+}

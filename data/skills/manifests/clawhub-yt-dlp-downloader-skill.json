@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8989,
+  "uuid": "skill-clawhub-yt-dlp-downloader-skill",
+  "skillKey": "clawhub-yt-dlp-downloader-skill",
+  "name": "Yt Dlp Downloader",
+  "summary": "Download videos from YouTube, Bilibili, Twitter, and thousands of other sites using yt-dlp. Use when the user provides a video URL and wants to download it, extract audio (MP3), download subtitles, or select video quality. Triggers on phra.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yt_dlp_downloader_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "apollo1234",
+      "features": [
+        "Download videos from YouTube, Bilibili, Twitter, and thousands of other sites using yt-dlp",
+        "Use when the user provides a video URL and wants to download it, extract audio (MP3), download.",
+        "Triggers on phrases like \"下载视频\", \"download video\", \"yt-dlp\", \"YouTube\", \"B站\", \"抖音\", \"提取音频\", \"ex."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yt-dlp-downloader-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1303542?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yt-dlp-downloader-skill",
+      "url": "https://clawhub.ai/skills/yt-dlp-downloader-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yt-dlp-downloader-skill",
+    "url": "https://clawhub.ai/skills/yt-dlp-downloader-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yt-dlp-downloader-skill-0d99361f516b5a4a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yt-dlp-downloader-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yt-dlp-downloader-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9579a04f7229c92b2647904d08b5af92e132a8a63f8bf39d50c68753d2bbabaa",
+      "artifactSizeBytes": 2659
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-27T11:58:55.889Z"
+}

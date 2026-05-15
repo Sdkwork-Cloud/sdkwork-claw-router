@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53856,
+  "uuid": "skill-clawhub-code-documentation",
+  "skillKey": "clawhub-code-documentation",
+  "name": "Code Documentation",
+  "summary": "Comprehensive code documentation skill — use this any time documentation is requested, after any significant code change, when onboarding a new subsystem, au...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_documentation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EncryptShawn",
+      "features": [
+        "Comprehensive code documentation skill — use this any time documentation is requested, after an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/code-documentation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/56897824?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "code-documentation",
+      "url": "https://clawhub.ai/skills/code-documentation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-documentation",
+    "url": "https://clawhub.ai/skills/code-documentation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-documentation-ba143cf9cf84d91a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/code-documentation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-code-documentation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5beb9c5284a88a3d20aa64a9e20db2be2f4f1358e95041d461247c3357cf6e59",
+      "artifactSizeBytes": 2749
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T18:07:44.309Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/beckmann-knowledge-graph@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beckmann_knowledge_graph",
+  "skill": {
+    "id": 24677,
+    "skillKey": "clawhub-beckmann-knowledge-graph",
+    "name": "Beckmann Knowledge Graph"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beckmann-knowledge-graph",
+    "url": "https://clawhub.ai/skills/beckmann-knowledge-graph",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beckmann-knowledge-graph-156da9ea293564c7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A structured knowledge graph (392 entities and 599 Relations in version 1.0., 569 entities and 963 Relations in version 1.4.) that acts as a cognitive 'lens'..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "matthiasbeckmann987-spec",
+      "userId": "s179bp2xpf781386369je7rkjn8498m4",
+      "displayName": "matthiasbeckmann987-spec",
+      "image": "https://avatars.githubusercontent.com/u/265743791?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 405,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1778308786198,
+      "changelog": "**v1.4.0 adds major new knowledge graph content and enhances the Beckmann Logic explanation.**\n\n- Expanded the knowledge graph to 569 entities and 963 relations (up from 522 and 849).\n- Revised the core concept section to clarify the relationship of Beckmann Logic with Predictive Brain Theory and Two-State Vector Formalism.\n- Updated code examples to reflect new entity and relation counts.\n- Improved documentation for the three solution levels and four mechanisms in Beckmann Logic.\n- No code file changes; this update is content and documentation-focused.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7c8a835e0d14ea765b24d02090057f901149a21810e0b0bc20d2a4e3519024b7"
+}

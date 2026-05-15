@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/montreal@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.montreal",
+  "skill": {
+    "id": 70533,
+    "skillKey": "clawhub-montreal",
+    "name": "Montreal"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "montreal",
+    "url": "https://clawhub.ai/skills/montreal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/montreal-94a2d00996233e39.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "蒙特利尔是北美最大的法语城市，全球AI研究中心，拥有丰富节庆和发达的视频游戏产业。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777046676796,
+      "changelog": "- 首发版本，介绍蒙特利尔的核心特色。\n- 概述城市历史、语言政策、AI 产业、文化节庆与经济数据。\n- 突出法语宪章影响，以及蒙特利尔在全球 AI 研究中的地位。\n- 补充生活成本与地下城等趣味信息。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9d25eee32e65023d54f6920e3410a35fd6bca4e47c69e6895e878cbb87637327"
+}

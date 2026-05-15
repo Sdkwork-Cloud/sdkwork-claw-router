@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14462,
+  "uuid": "skill-clawhub-lnget",
+  "skillKey": "clawhub-lnget",
+  "name": "lnget: like wget but for L402 on the web",
+  "summary": "Install and use lnget, a Lightning-native HTTP client with automatic L402 payment support. Use when downloading files behind Lightning paywalls, managing L402 tokens, checking Lightning backend status, or making HTTP requests that may requ.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lnget",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Roasbeef",
+      "features": [
+        "Install and use lnget, a Lightning-native HTTP client with automatic L402 payment support",
+        "Use when downloading files behind Lightning paywalls, managing L402 tokens, checking Lightning."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lnget@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/998190?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lnget",
+      "url": "https://clawhub.ai/skills/lnget"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lnget",
+    "url": "https://clawhub.ai/skills/lnget",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lnget-ec45c2879be9a0b0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lnget@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lnget-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aeae7b9976734199504390c0fb19bcb9b8a5376a6ef6b2c79f3c927649742f63",
+      "artifactSizeBytes": 2893
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T02:40:14.140Z"
+}

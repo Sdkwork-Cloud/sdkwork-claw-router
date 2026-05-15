@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20834,
+  "uuid": "skill-clawhub-geo-site-audit",
+  "skillKey": "clawhub-geo-site-audit",
+  "name": "GEO Site Readiness Audit",
+  "summary": "Run a structured 29-point GEO (Generative Engine Optimization) readiness audit on any website. Checks AI accessibility, structured data, content citability,...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geo_site_audit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GEOLY AI",
+      "features": [
+        "Run a structured 29-point GEO (Generative Engine Optimization) readiness audit on any website",
+        "Checks AI accessibility, structured data, content citability,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/geo-site-audit@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/70360114?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "geo-site-audit",
+      "url": "https://clawhub.ai/skills/geo-site-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geo-site-audit",
+    "url": "https://clawhub.ai/skills/geo-site-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geo-site-audit-f777f6929e95e75a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/geo-site-audit@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-geo-site-audit-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc81893641ed77d99b4c9e346e0389d7ec00ae7e3a0a30f7915ef477b8ac0057",
+      "artifactSizeBytes": 2326
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T12:16:48.153Z"
+}

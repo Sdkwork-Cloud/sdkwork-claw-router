@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28551,
+  "uuid": "skill-clawhub-steam-lowest-price-skill",
+  "skillKey": "clawhub-steam-lowest-price-skill",
+  "name": "Steam Lowest Price Skill",
+  "summary": "Monitor Steam game prices and alert when a game hits historical low or a user target price. Use when users ask to track Steam discounts, watch specific games...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.steam_lowest_price_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "G-zoe",
+      "features": [
+        "Monitor Steam game prices and alert when a game hits historical low or a user target price",
+        "Use when users ask to track Steam discounts, watch specific games..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/steam-lowest-price-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/110187375?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "steam-lowest-price-skill",
+      "url": "https://clawhub.ai/skills/steam-lowest-price-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "steam-lowest-price-skill",
+    "url": "https://clawhub.ai/skills/steam-lowest-price-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/steam-lowest-price-skill-477b70aa452ad04a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/steam-lowest-price-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-steam-lowest-price-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2a7df18cda9e59af1d43167371d2929f7723997ee86f8bd9b3e3baeb5bf40fe0",
+      "artifactSizeBytes": 2335
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T10:30:03.177Z"
+}

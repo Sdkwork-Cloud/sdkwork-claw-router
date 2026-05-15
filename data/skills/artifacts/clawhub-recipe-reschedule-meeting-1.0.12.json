@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/recipe-reschedule-meeting@1.0.12",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recipe_reschedule_meeting",
+  "skill": {
+    "id": 20215,
+    "skillKey": "clawhub-recipe-reschedule-meeting",
+    "name": "Recipe Reschedule Meeting"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recipe-reschedule-meeting",
+    "url": "https://clawhub.ai/skills/recipe-reschedule-meeting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recipe-reschedule-meeting-e7446f6e67b6c1fc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Move a Google Calendar event to a new time and automatically notify all attendees."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "googleworkspace-bot",
+      "userId": "s17d07d7j6wvs7e49gkh2nncms83fh1m",
+      "displayName": "googleworkspace-bot",
+      "image": "https://avatars.githubusercontent.com/u/109114539?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 486,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.0.12",
+      "createdAt": 1774982209815,
+      "changelog": "- Updated metadata version from 0.22.4 to 0.22.5 in SKILL.md.  \n- No changes to functionality or recipe steps.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d5cfec9f84f5e8c322c457147497cc3fde44cb5518fdc799a44b605e857b954c"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13008,
+  "uuid": "skill-clawhub-chat-ui",
+  "skillKey": "clawhub-chat-ui",
+  "name": "Chat Ui",
+  "summary": "Chat UI building blocks for React/Next.js from ui.inference.sh. Components: container, messages, input, typing indicators, avatars. Capabilities: chat interf...",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chat_ui",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ömer Karışman",
+      "features": [
+        "Chat UI building blocks for React/Next.js from ui.inference.sh",
+        "Components: container, messages, input, typing indicators, avatars",
+        "Capabilities: chat interf..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chat-ui@0.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1448702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chat-ui",
+      "url": "https://clawhub.ai/skills/chat-ui"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chat-ui",
+    "url": "https://clawhub.ai/skills/chat-ui",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chat-ui-c44c5634553fa0fd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chat-ui@0.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-chat-ui-0.1.5.json",
+      "version": "0.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2d5e3312dadac1a554901f854520b1d1b2ccd0f7d052018000722fd1f9bddbb8",
+      "artifactSizeBytes": 2268
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T08:25:08.366Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49998,
+  "uuid": "skill-clawhub-moonpay",
+  "skillKey": "clawhub-moonpay",
+  "name": "MoonPay",
+  "summary": "Your agent needs money. MoonPay is the crypto onramp for AI agents — wallets, swaps, bridges, transfers, DCA, limit orders, deposits, market data, and fiat o...",
+  "version": "0.6.24",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moonpay",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kevin Arifin",
+      "features": [
+        "Your agent needs money",
+        "MoonPay is the crypto onramp for AI agents — wallets, swaps, bridges, transfers, DCA, limit ord."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moonpay@0.6.24",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9817738?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moonpay",
+      "url": "https://clawhub.ai/skills/moonpay"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moonpay",
+    "url": "https://clawhub.ai/skills/moonpay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moonpay-6f0103fe0135294e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moonpay@0.6.24",
+      "artifactUrl": "data/skills/artifacts/clawhub-moonpay-0.6.24.json",
+      "version": "0.6.24",
+      "runtime": "metadata",
+      "checksumHash": "sha256:466e65b5749ce4dc74725e89968a046472d7162d95506c0347ff68cf848c51fb",
+      "artifactSizeBytes": 1851
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T14:48:47.167Z"
+}

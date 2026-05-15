@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13500,
+  "uuid": "skill-clawhub-academic-writing-assistant",
+  "skillKey": "clawhub-academic-writing-assistant",
+  "name": "Academic Writing Assistant",
+  "summary": "Academic writing assistance skill for paragraph writing, language polishing, grammar checking, academic style optimization, and citation format checking.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.academic_writing_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Roma",
+      "features": [
+        "Academic writing assistance skill for paragraph writing, language polishing, grammar checking,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/academic-writing-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/105550312?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "academic-writing-assistant",
+      "url": "https://clawhub.ai/skills/academic-writing-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "academic-writing-assistant",
+    "url": "https://clawhub.ai/skills/academic-writing-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/academic-writing-assistant-4e9ebec20b2dfb5f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/academic-writing-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-academic-writing-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:35e54c881ea60757444228e809f8ca153a960024dacac0ef972ef83c39d58186",
+      "artifactSizeBytes": 2110
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T05:56:01.121Z"
+}

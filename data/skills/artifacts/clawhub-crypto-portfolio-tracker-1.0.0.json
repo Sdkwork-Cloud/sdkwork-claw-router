@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crypto-portfolio-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_portfolio_tracker",
+  "skill": {
+    "id": 58768,
+    "skillKey": "clawhub-crypto-portfolio-tracker",
+    "name": "Crypto Portfolio Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-portfolio-tracker",
+    "url": "https://clawhub.ai/skills/crypto-portfolio-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-portfolio-tracker-cedc532a66f4c6fd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "加密貨幣Portfolio追蹤 - 支援TRON/ETH/BSC，分析持倉、收益、Gas費用"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "katrina-jpg",
+      "userId": "publishers:katrina-jpg",
+      "displayName": "Katrina-jpg",
+      "image": "https://avatars.githubusercontent.com/u/259838385?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2433,
+      "installsAllTime": 18,
+      "installsCurrent": 18,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771511723673,
+      "changelog": "Track TRON/ETH/BSC portfolios",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e4b82e780813ea22bb0ac46f5e9e541e4104e4f5210c385b7f134c765fc3429f"
+}

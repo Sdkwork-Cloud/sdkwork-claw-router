@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/children-picture@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.children_picture",
+  "skill": {
+    "id": 67850,
+    "skillKey": "clawhub-children-picture",
+    "name": "儿童绘本生成器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "children-picture",
+    "url": "https://clawhub.ai/skills/children-picture",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/children-picture-f6a46286ee09c29a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于百度ERNIE-Image-Turbo模型，将儿童故事核心画面文本转为指定分辨率的高质量绘本图像并保存为PNG文件。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "livingbody",
+      "userId": "s1781dje47veqkjgfayhadj9gd85dbm0",
+      "displayName": "livingbody",
+      "image": "https://avatars.githubusercontent.com/u/8059137?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 93,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777474102331,
+      "changelog": "Initial release of the Children’s Picture Book Generator skill.\n\n- Generates illustrated images for children’s stories using Baidu ERNIE-Image-Turbo via an OpenAI-compatible API.\n- Supports 7 preset resolutions and explicit command-line parameters for image customization.\n- Allows API key configuration via both environment variables and command-line arguments.\n- Utilizes the OpenAI Python SDK for seamless integration with Baidu’s image generation service.\n- Designed for cross-platform compatibility (Windows/macOS/Linux) and easy, single-command operation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9e2440c09e97ca2b35fbf852a5c9647928bfe83d76bfed7eb0c18b1ceac5f9ea"
+}

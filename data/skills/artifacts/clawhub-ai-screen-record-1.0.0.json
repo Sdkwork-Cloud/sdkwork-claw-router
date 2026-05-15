@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-screen-record@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_screen_record",
+  "skill": {
+    "id": 41078,
+    "skillKey": "clawhub-ai-screen-record",
+    "name": "Ai Screen Record"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-screen-record",
+    "url": "https://clawhub.ai/skills/ai-screen-record",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-screen-record-1d0c83bc968d75a8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "educators, developers, and content creators edit screen recordings into polished screen recordings using this skill. Accepts MP4, MOV, AVI, WebM up to 500MB,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775894287928,
+      "changelog": "ai-screen-record 1.0.0 — Initial release\n\n- Launches AI-powered screen recording editor for educators, developers, and content creators.\n- Supports MP4, MOV, AVI, and WebM uploads up to 500MB; renders on cloud GPUs at 1080p.\n- Offers quick workflows: remove filler pauses, add zoom-ins, captions, and more, with exports in 1–2 minutes.\n- Handles authentication, session management, credits, and export flow automatically.\n- Designed for simple, polished tutorial and demo video creation from raw screen recordings.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7f651be425eeed113dbd19bbe6a4ff76bba9d1136f04b84c2d6031d2e75719e1"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/personality-match@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personality_match",
+  "skill": {
+    "id": 20677,
+    "skillKey": "clawhub-personality-match",
+    "name": "Personality Match"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personality-match",
+    "url": "https://clawhub.ai/skills/personality-match",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personality-match-b8b8b166f362538e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Take a personality test and get your bot badge, then invite your human to see how well you match!"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tiansiyu0210",
+      "userId": "publishers:tiansiyu0210",
+      "displayName": "Siyu Tian",
+      "image": "https://avatars.githubusercontent.com/u/10829166?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 534,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771974606032,
+      "changelog": "🎉 Initial Release v1.0.0                                                                                                                                                                  \n                                                                                                                                                                                             \n  Features:                                                                                                                                                                                  \n  - Hundreds of personality questions (15 randomly selected per test)                                                                                                                        \n  - AI-generated badge with emoji, title, and description                                                                                                                                    \n  - Multi-language support (en/zh/ko/ja)                                                                                                                                                     \n  - Shareable link for human-bot matching",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ea7fca466460dfb020065194b3766d049e5a4f940603361151b25312bbbfab63"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60001,
+  "uuid": "skill-clawhub-tavily-search-simple",
+  "skillKey": "clawhub-tavily-search-simple",
+  "name": "Tavily Search 极简版",
+  "summary": "【极简版省token】使用 Tavily API 执行网络搜索。专为 LLM 与 AI Agent 优化的搜索引擎。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tavily_search_simple",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jhc888007",
+      "features": [
+        "【极简版省token】使用 Tavily API 执行网络搜索。专为 LLM 与 AI Agent 优化的搜索引擎。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tavily-search-simple@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4169185?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tavily-search-simple",
+      "url": "https://clawhub.ai/skills/tavily-search-simple"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tavily-search-simple",
+    "url": "https://clawhub.ai/skills/tavily-search-simple",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tavily-search-simple-e165fce2950e5b56.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tavily-search-simple@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-tavily-search-simple-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dcfca878f18dcbdb04722ef925d015868e005124df17671e2656c49da607fe85",
+      "artifactSizeBytes": 2139
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T01:58:48.010Z"
+}

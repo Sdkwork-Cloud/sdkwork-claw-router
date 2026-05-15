@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10651,
+  "uuid": "skill-clawhub-k8-autoscaling",
+  "skillKey": "clawhub-k8-autoscaling",
+  "name": "Kubernetes Skills",
+  "summary": "Configure Kubernetes autoscaling with HPA, VPA, and KEDA. Use for horizontal/vertical pod autoscaling, event-driven scaling, and capacity management.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.k8_autoscaling",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rohit Ghumare",
+      "features": [
+        "Configure Kubernetes autoscaling with HPA, VPA, and KEDA",
+        "Use for horizontal/vertical pod autoscaling, event-driven scaling, and capacity management."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/k8-autoscaling@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48523873?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "k8-autoscaling",
+      "url": "https://clawhub.ai/skills/k8-autoscaling"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "k8-autoscaling",
+    "url": "https://clawhub.ai/skills/k8-autoscaling",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/k8-autoscaling-7358a84720affa0e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/k8-autoscaling@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-k8-autoscaling-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:78a1b32bdb806fa15da9d694a773dba84b311885ab9a798f51f5a39a38021545",
+      "artifactSizeBytes": 1881
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-26T13:16:04.488Z"
+}

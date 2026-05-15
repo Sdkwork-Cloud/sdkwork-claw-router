@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73094,
+  "uuid": "skill-clawhub-music-discovery-app",
+  "skillKey": "clawhub-music-discovery-app",
+  "name": "音乐发现应用",
+  "summary": "一个完全免费的音乐发现应用，集成多个免费音乐API，无需任何认证。提供音乐搜索、歌词显示、网络电台、演唱会信息等功能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.music_discovery_app",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fish1981bimmer",
+      "features": [
+        "一个完全免费的音乐发现应用，集成多个免费音乐API，无需任何认证。提供音乐搜索、歌词显示、网络电台、演唱会信息等功能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/music-discovery-app@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271533977?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "music-discovery-app",
+      "url": "https://clawhub.ai/skills/music-discovery-app"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "music-discovery-app",
+    "url": "https://clawhub.ai/skills/music-discovery-app",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/music-discovery-app-1a5900b31d90ddc1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/music-discovery-app@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-music-discovery-app-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:82a2d61291e14723ecacf3e1fd76a8078a8041c6911ca4420d27c58232162bc9",
+      "artifactSizeBytes": 2097
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T13:21:01.964Z"
+}

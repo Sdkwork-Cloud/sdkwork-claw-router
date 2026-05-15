@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/opencli-yuzengbao@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opencli_yuzengbao",
+  "skill": {
+    "id": 59258,
+    "skillKey": "clawhub-opencli-yuzengbao",
+    "name": "OpenCLI Universal CLI Hub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opencli-yuzengbao",
+    "url": "https://clawhub.ai/skills/opencli-yuzengbao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opencli-yuzengbao-9a18bc8bf1c370c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenCLI — 通用 CLI Hub，将任何网站、Electron 应用或本地工具转化为命令行接口。66+ 内置命令，支持 Bilibili/Twitter/Reddit/Xiaohongshu/GitHub 等。复用 Chrome 登录态，零 LLM 成本，确定性输出。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuzengbaao",
+      "userId": "s17fbyh205m23rmgtzh66z24q583pgr6",
+      "displayName": "zengbao yu",
+      "image": "https://avatars.githubusercontent.com/u/43713212?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 217,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775128553677,
+      "changelog": "- Initial release of opencli-yuzengbao (version 1.0.0)\n- Provides a universal CLI hub to turn any website, Electron app, or local tool into a CLI command\n- Includes 66+ built-in commands with support for popular sites like Bilibili, Twitter, Reddit, Xiaohongshu, and GitHub\n- Utilizes Chrome login session for authenticated actions; zero LLM cost and deterministic output\n- Supports multiple output formats (JSON, CSV, YAML, Markdown) and command-line integration for AI agents and CLI registration\n- Offers quickstart guides, troubleshooting steps, and adapter creation instructions for developers",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:98c9cb1b79ec8c3cc9e45a8f72fc630e0bc50ec7a77c9cc941ac1439e4bdf5e2"
+}

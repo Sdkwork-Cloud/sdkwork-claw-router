@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13222,
+  "uuid": "skill-clawhub-book-eyebrows",
+  "skillKey": "clawhub-book-eyebrows",
+  "name": "Book Eyebrows",
+  "summary": "Book eyebrows services through Lokuli MCP. Use when user needs to find and book eyebrows. Triggers on requests like \"book a eyebrows\", \"find eyebrows near me\", or any eyebrows service request.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_eyebrows",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lokuli",
+      "features": [
+        "Book eyebrows services through Lokuli MCP",
+        "Use when user needs to find and book eyebrows",
+        "Triggers on requests like \"book a eyebrows\", \"find eyebrows near me\", or any eyebrows service r."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-eyebrows@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224194606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-eyebrows",
+      "url": "https://clawhub.ai/skills/book-eyebrows"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-eyebrows",
+    "url": "https://clawhub.ai/skills/book-eyebrows",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-eyebrows-b79d84cefcb7d90a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-eyebrows@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-eyebrows-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f66215db740733023b2b239773f193d194fa1565bed7296f68b1eee4a01948f6",
+      "artifactSizeBytes": 1935
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T01:04:56.267Z"
+}

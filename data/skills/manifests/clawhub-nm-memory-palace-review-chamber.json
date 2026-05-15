@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35178,
+  "uuid": "skill-clawhub-nm-memory-palace-review-chamber",
+  "skillKey": "clawhub-nm-memory-palace-review-chamber",
+  "name": "Nm Memory Palace Review Chamber",
+  "summary": "Capture and retrieve PR review knowledge in project memory palaces",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nm_memory_palace_review_chamber",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "athola",
+      "features": [
+        "Capture and retrieve PR review knowledge in project memory palaces"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nm-memory-palace-review-chamber@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9769290?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nm-memory-palace-review-chamber",
+      "url": "https://clawhub.ai/skills/nm-memory-palace-review-chamber"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nm-memory-palace-review-chamber",
+    "url": "https://clawhub.ai/skills/nm-memory-palace-review-chamber",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nm-memory-palace-review-chamber-411091dfeb61f1fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nm-memory-palace-review-chamber@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-nm-memory-palace-review-chamber-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eba5d9e5c0ca3e324228d41be405b5a79eff4ecfae97572102a65625a6acae7d",
+      "artifactSizeBytes": 1904
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T02:18:42.396Z"
+}

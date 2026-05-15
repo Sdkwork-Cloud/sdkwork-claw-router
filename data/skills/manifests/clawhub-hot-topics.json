@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18961,
+  "uuid": "skill-clawhub-hot-topics",
+  "skillKey": "clawhub-hot-topics",
+  "name": "Hot Topics",
+  "summary": "Get real-time trending topics and hot searches from major Chinese social media platforms including Weibo, Zhihu, Baidu, Douyin, Toutiao, and Bilibili. Use wh...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hot_topics",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Never",
+      "features": [
+        "Get real-time trending topics and hot searches from major Chinese social media platforms includ.",
+        "Use wh..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hot-topics@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/142883982?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hot-topics",
+      "url": "https://clawhub.ai/skills/hot-topics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hot-topics",
+    "url": "https://clawhub.ai/skills/hot-topics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hot-topics-ed9303bd99366f4b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hot-topics@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hot-topics-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5b468a8482d3e121012897fe83be85e802ccb10fe9dd2d88f8a468670a365161",
+      "artifactSizeBytes": 1863
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T10:42:17.032Z"
+}

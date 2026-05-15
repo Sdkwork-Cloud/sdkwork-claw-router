@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57076,
+  "uuid": "skill-clawhub-bill-gates",
+  "skillKey": "clawhub-bill-gates",
+  "name": "Bill Gates",
+  "summary": "Information assistant for Bill Gates 比尔盖茨. Get biography, latest news, career highlights, and social media updates.",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bill_gates",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Information assistant for Bill Gates 比尔盖茨",
+        "Get biography, latest news, career highlights, and social media updates."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bill-gates@0.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bill-gates",
+      "url": "https://clawhub.ai/skills/bill-gates"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bill-gates",
+    "url": "https://clawhub.ai/skills/bill-gates",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bill-gates-a46762b204704688.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bill-gates@0.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-bill-gates-0.1.4.json",
+      "version": "0.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d789c311de4bbffdcd622914941cde3047c88ec6e70adf9ad0c347f0f5e105e",
+      "artifactSizeBytes": 1905
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T06:02:14.670Z"
+}

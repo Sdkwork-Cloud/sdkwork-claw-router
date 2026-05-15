@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13256,
+  "uuid": "skill-clawhub-lb-vercel-skill",
+  "skillKey": "clawhub-lb-vercel-skill",
+  "name": "Vercel",
+  "summary": "Deploy applications and manage projects with complete CLI reference. Commands for deployments, projects, domains, environment variables, and live documentation access.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lb_vercel_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "leonaaardob",
+      "features": [
+        "Deploy applications and manage projects with complete CLI reference",
+        "Commands for deployments, projects, domains, environment variables, and live documentation acce."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lb-vercel-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/207195840?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lb-vercel-skill",
+      "url": "https://clawhub.ai/skills/lb-vercel-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lb-vercel-skill",
+    "url": "https://clawhub.ai/skills/lb-vercel-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lb-vercel-skill-fd16582099a5efe5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lb-vercel-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lb-vercel-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7806403b9ca63091d8d0e74b70d3f30c5625443db08ef16d646c2efd31e32ed9",
+      "artifactSizeBytes": 2284
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T14:52:22.882Z"
+}

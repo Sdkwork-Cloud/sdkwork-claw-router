@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/coder-workspaces@1.5.5",
+  "version": "1.5.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coder_workspaces",
+  "skill": {
+    "id": 9064,
+    "skillKey": "clawhub-coder-workspaces",
+    "name": "Coder Workspaces"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coder-workspaces",
+    "url": "https://clawhub.ai/skills/coder-workspaces",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coder-workspaces-4c54350eb397a78a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Coder workspaces and AI coding agent tasks via CLI. List, create, start, stop, and delete workspaces. SSH into workspaces to run commands. Create and monitor AI coding tasks with Claude Code, Aider, or other agents."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "developmentcats",
+      "userId": "s179d1rp8zyj3wwg8fsch3b91d83hdzf",
+      "displayName": "DevCats",
+      "image": "https://avatars.githubusercontent.com/u/176868952?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4772,
+      "installsAllTime": 11,
+      "installsCurrent": 9,
+      "stars": 3,
+      "versions": 17
+    },
+    "latestVersion": {
+      "version": "1.5.5",
+      "createdAt": 1770415402526,
+      "changelog": "### Changed\n- Restructured skill to follow standard CLI documentation patterns\n- Setup section now shows environment configuration (matches hass-cli style)\n- Commands no longer reference environment variables directly",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5a845ecf6e395d816c1d08ee436195091c01497ed1063230822586e43dff5998"
+}

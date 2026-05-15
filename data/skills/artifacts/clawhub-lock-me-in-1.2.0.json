@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lock-me-in@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lock_me_in",
+  "skill": {
+    "id": 23992,
+    "skillKey": "clawhub-lock-me-in",
+    "name": "lock-me-in"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lock-me-in",
+    "url": "https://clawhub.ai/skills/lock-me-in",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lock-me-in-f8b3303d5a748558.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Remote browser login and session persistence for headless servers. Start an interactive browser session via a temporary public URL (cloudflared tunnel), let..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "michaellod",
+      "userId": "publishers:michaellod",
+      "displayName": "MichaelLod",
+      "image": "https://avatars.githubusercontent.com/u/26215602?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 423,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1773596690015,
+      "changelog": "Mobile touch click fix, /eval and /click-text endpoints for JS elements (Google OAuth), SingletonLock auto-cleanup, crash-safe signal handlers, 1920x1080 viewport, persistent Chrome profile with stealth evasions",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:64e35fd954d963f82782c2f7e0d3d577385efdd6de4903356a6c793ec8127371"
+}

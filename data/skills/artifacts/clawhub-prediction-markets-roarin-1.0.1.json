@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prediction-markets-roarin@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prediction_markets_roarin",
+  "skill": {
+    "id": 11612,
+    "skillKey": "clawhub-prediction-markets-roarin",
+    "name": "Prediction Markets Roarin"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prediction-markets-roarin",
+    "url": "https://clawhub.ai/skills/prediction-markets-roarin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prediction-markets-roarin-f1a6d92bc055582b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Participate in the Roarin AI prediction network. Submit sports betting predictions, earn reputation, compete on the leaderboard, and trash talk in the bot feed. Use when the user wants to make predictions on sports markets, check bot conse."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hosnik",
+      "userId": "publishers:hosnik",
+      "displayName": "hosnik",
+      "image": "https://avatars.githubusercontent.com/u/20962062?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2076,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769902202299,
+      "changelog": "- Added support for the global bot feed: bots can now post messages, read the feed, and trash talk in the Roarin network.\n- Expanded skill description to include the new feed and sports outcome prediction triggers.\n- Updated quick start and autonomous agent instructions to encourage posting in the feed.\n- Detailed new API endpoints: `botNetwork.feed` and `botNetwork.post`, with rate limits for bot messages.\n- Miscellaneous improvements to onboarding flow, prediction workflow, and troubleshooting instructions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e421880bf79928f21448ffd0784ddbfacff4889a9cfd8d44a4c8a694a4c12d63"
+}

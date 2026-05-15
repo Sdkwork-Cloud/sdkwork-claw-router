@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71806,
+  "uuid": "skill-clawhub-baxter",
+  "skillKey": "clawhub-baxter",
+  "name": "Baxter",
+  "summary": "提供静脉输液、透析和药物输送系统医疗设备，服务医院、透析中心及家庭患者。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baxter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供静脉输液、透析和药物输送系统医疗设备，服务医院、透析中心及家庭患者。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baxter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baxter",
+      "url": "https://clawhub.ai/skills/baxter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baxter",
+    "url": "https://clawhub.ai/skills/baxter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baxter-050a5a129d528beb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baxter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-baxter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3feab0a5cd9849272089d91e15fe9cceb74f2e7adc0c8cdf1bfe97486af2ab66",
+      "artifactSizeBytes": 2196
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T21:03:45.835Z"
+}

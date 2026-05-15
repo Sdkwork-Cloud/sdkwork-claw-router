@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70522,
+  "uuid": "skill-clawhub-cogview-image-gen",
+  "skillKey": "clawhub-cogview-image-gen",
+  "name": "智谱CogView模型图片生成",
+  "summary": "使用智谱AI的CogView模型生成图片。当用户想要AI生成图片时使用此技能，支持中文提示词自动翻译为英文，支持自定义图片尺寸。在首次使用时需要用户配置智谱API密钥。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cogview_image_gen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "代码工坊实验室",
+      "features": [
+        "使用智谱AI的CogView模型生成图片。当用户想要AI生成图片时使用此技能，支持中文提示词自动翻译为英文，支持自定义图片尺寸。在首次使用时需要用户配置智谱API密钥。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cogview-image-gen@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/213201704?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cogview-image-gen",
+      "url": "https://clawhub.ai/skills/cogview-image-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cogview-image-gen",
+    "url": "https://clawhub.ai/skills/cogview-image-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cogview-image-gen-1f1d112831694084.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cogview-image-gen@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-cogview-image-gen-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9200672fddff4d521946e2137dfe97fba8f4f523efb9ee823f3d26b34ee03c47",
+      "artifactSizeBytes": 1998
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T03:20:20.433Z"
+}

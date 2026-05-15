@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/task-batching-blueprint@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_batching_blueprint",
+  "skill": {
+    "id": 49634,
+    "skillKey": "clawhub-task-batching-blueprint",
+    "name": "Task Batching Blueprint"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-batching-blueprint",
+    "url": "https://clawhub.ai/skills/task-batching-blueprint",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-batching-blueprint-4621161cde51bba9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Group similar tasks to reduce cognitive switching costs and reclaim focus. Specific batch patterns aligned to your energy and context."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 73,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778194293151,
+      "changelog": "Task Batching Blueprint 1.0.0 – Initial Release\n\n- Introduces a structured framework for batching similar tasks to minimize cognitive switching costs and improve focus.\n- Provides detailed batch types (admin, communication, creative, decision, errand, learning, maintenance) matched to energy levels and time slots.\n- Includes step-by-step workflow: understanding context-switching costs, identifying task types, mapping batches to your week, execution rules, and handling exceptions.\n- Offers a sample output template for building personal batch schedules and inventory.\n- Emphasizes practical advice over generic tips and adapts to various work/life contexts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5a7a0ab58b4d0a2b675c66162332e30c27ab70221b577372c1ed218b9403d5a6"
+}

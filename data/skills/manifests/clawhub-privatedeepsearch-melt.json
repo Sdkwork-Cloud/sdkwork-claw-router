@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12039,
+  "uuid": "skill-clawhub-privatedeepsearch-melt",
+  "skillKey": "clawhub-privatedeepsearch-melt",
+  "name": "Private Deep Search",
+  "summary": "Performs private, multi-round deep web searches excluding Google/Bing, synthesizes results with citations, and does not retain user data or logs.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.privatedeepsearch_melt",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "romancircus",
+      "features": [
+        "Performs private, multi-round deep web searches excluding Google/Bing, synthesizes results with."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/privatedeepsearch-melt@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/253068059?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "privatedeepsearch-melt",
+      "url": "https://clawhub.ai/skills/privatedeepsearch-melt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "privatedeepsearch-melt",
+    "url": "https://clawhub.ai/skills/privatedeepsearch-melt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/privatedeepsearch-melt-3e7312899cfc7dcc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/privatedeepsearch-melt@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-privatedeepsearch-melt-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8908af864e4c4a440aae40bcfea33d54aa1595a83d894f255c3058e8c4489a9b",
+      "artifactSizeBytes": 1979
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T12:41:09.492Z"
+}

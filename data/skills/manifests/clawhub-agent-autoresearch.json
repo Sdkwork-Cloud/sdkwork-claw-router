@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37381,
+  "uuid": "skill-clawhub-agent-autoresearch",
+  "skillKey": "clawhub-agent-autoresearch",
+  "name": "Agent Autoresearch",
+  "summary": "Karpathy-style autonomous self-research loop for AI agents. The agent proposes a change to its own SOUL.md, scripts, or behavior, tests it, evaluates the res...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_autoresearch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Duola",
+      "features": [
+        "Karpathy-style autonomous self-research loop for AI agents",
+        "The agent proposes a change to its own SOUL.md, scripts, or behavior, tests it, evaluates the r."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-autoresearch@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/108492647?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-autoresearch",
+      "url": "https://clawhub.ai/skills/agent-autoresearch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-autoresearch",
+    "url": "https://clawhub.ai/skills/agent-autoresearch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-autoresearch-e3466ffe66261411.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-autoresearch@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-autoresearch-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dac508024fb7743b2b92dffefb73db81d68630903a692d2535522343c138fa23",
+      "artifactSizeBytes": 2101
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T02:24:17.713Z"
+}

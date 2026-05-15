@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/firm-medtech-pack@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.firm_medtech_pack",
+  "skill": {
+    "id": 20409,
+    "skillKey": "clawhub-firm-medtech-pack",
+    "name": "Firm Medtech Pack"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "firm-medtech-pack",
+    "url": "https://clawhub.ai/skills/firm-medtech-pack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/firm-medtech-pack-e03fbf73c3a90635.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Curated skill bundle for medical device companies, digital health startups and pharma R&D teams. Activates the firm pyramid with RA (Regulatory Affairs), Cli..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "romainsantoli-web",
+      "userId": "publishers:romainsantoli-web",
+      "displayName": "romainsantoli-web",
+      "image": "https://avatars.githubusercontent.com/u/246739959?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 546,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772323892994,
+      "changelog": "Initial release: Curated skill bundle for medical device, digital health, and pharma sectors.\n\n- Activates firm pyramid with pre-configured agents for RA, Clinical, R&D, and Quality.\n- Focused on FDA/CE compliance, clinical documentation, and pharmacovigilance workflows.\n- Provides example firm configuration overlays and prompt templates for common regulatory tasks.\n- Summarizes relevant regulatory standards and security best practices.\n- Lists recommended complementary skills for research, ADMET analysis, PDF parsing, and compliance.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d84658758ac9dfe3dd00295497b4b8aad8a515c683fed7d45bc0cda2cb41ea51"
+}

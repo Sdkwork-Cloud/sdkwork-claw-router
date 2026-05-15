@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21723,
+  "uuid": "skill-clawhub-skills-builder",
+  "skillKey": "clawhub-skills-builder",
+  "name": "Skills Builder",
+  "summary": "Helps non-technical users create their own Skills through natural conversation. Triggers when users say \"I want to create a Skill\", \"turn this workflow into...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skills_builder",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shuita666",
+      "features": [
+        "Helps non-technical users create their own Skills through natural conversation",
+        "Triggers when users say \"I want to create a Skill\", \"turn this workflow into..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skills-builder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/184085282?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skills-builder",
+      "url": "https://clawhub.ai/skills/skills-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skills-builder",
+    "url": "https://clawhub.ai/skills/skills-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skills-builder-f720bf7ae59eac96.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skills-builder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skills-builder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:19830bfa3feebbd698fe1fbb54db47a34cc36381e24f844a68c5d0d4f200cb38",
+      "artifactSizeBytes": 2402
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T03:18:58.160Z"
+}

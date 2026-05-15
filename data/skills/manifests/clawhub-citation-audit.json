@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37400,
+  "uuid": "skill-clawhub-citation-audit",
+  "skillKey": "clawhub-citation-audit",
+  "name": "Citation Audit",
+  "summary": "Analyzes how often a brand appears in AI search results (ChatGPT, Perplexity, Claude). Identifies citation gaps and content opportunities for GEO (Generative...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.citation_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1477009639zw-blip",
+      "features": [
+        "Analyzes how often a brand appears in AI search results (ChatGPT, Perplexity, Claude)",
+        "Identifies citation gaps and content opportunities for GEO (Generative..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/citation-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266505725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "citation-audit",
+      "url": "https://clawhub.ai/skills/citation-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "citation-audit",
+    "url": "https://clawhub.ai/skills/citation-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/citation-audit-5f520d728cb79288.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/citation-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-citation-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:08bde1718aa649172af698cc62963218586c2a4fb418b2a09e446b1afed734a6",
+      "artifactSizeBytes": 2293
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T22:14:29.825Z"
+}

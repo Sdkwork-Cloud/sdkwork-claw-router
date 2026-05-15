@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15171,
+  "uuid": "skill-clawhub-nvidia-kimi-vision",
+  "skillKey": "clawhub-nvidia-kimi-vision",
+  "name": "NVIDIA Kimi Vision",
+  "summary": "Analyze images using NVIDIA Kimi K2.5 vision model via NVIDIA NIM API. Perfect for adding vision to non-vision models like MiniMax M2.5, GLM-5, or any model...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nvidia_kimi_vision",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Quiz Due",
+      "features": [
+        "Analyze images using NVIDIA Kimi K2.5 vision model via NVIDIA NIM API",
+        "Perfect for adding vision to non-vision models like MiniMax M2.5, GLM-5, or any model..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nvidia-kimi-vision@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/134808180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nvidia-kimi-vision",
+      "url": "https://clawhub.ai/skills/nvidia-kimi-vision"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nvidia-kimi-vision",
+    "url": "https://clawhub.ai/skills/nvidia-kimi-vision",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nvidia-kimi-vision-df56390105ee8d42.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nvidia-kimi-vision@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-nvidia-kimi-vision-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3dea111a6405febb578519e39bc1f621d645fb71e5c78320091582f78c9998c7",
+      "artifactSizeBytes": 1894
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T02:25:05.989Z"
+}

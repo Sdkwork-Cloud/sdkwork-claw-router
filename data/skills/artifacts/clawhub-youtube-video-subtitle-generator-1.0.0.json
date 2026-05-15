@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-video-subtitle-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_video_subtitle_generator",
+  "skill": {
+    "id": 47457,
+    "skillKey": "clawhub-youtube-video-subtitle-generator",
+    "name": "Youtube Video Subtitle Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-video-subtitle-generator",
+    "url": "https://clawhub.ai/skills/youtube-video-subtitle-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-video-subtitle-generator-d2ea379fc15d56b7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate YouTube video files into captioned video files with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. YouTubers use it for adding subtit..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 114,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777225373932,
+      "changelog": "Initial release of YouTube Video Subtitle Generator.\n\n- Allows users to upload video files (MP4, MOV, AVI, WebM) up to 500MB for AI-powered subtitle generation and burned-in captions.\n- Processes requests on cloud GPUs, delivering 1080p MP4 files in 1–2 minutes.\n- Automatically handles authentication and session creation with free credits for new users.\n- Supports essential commands: upload, generate/edit subtitles, check credits, view status, and export/download.\n- Provides clear user feedback, robust error handling, and tips for optimal results.\n- Compatible with a variety of video and audio formats for export.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9008163b54ed14ff2514d85a6aa5f4b53ebe14338491a3b0eaad3c3171c8ad7e"
+}

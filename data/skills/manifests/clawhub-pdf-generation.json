@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14054,
+  "uuid": "skill-clawhub-pdf-generation",
+  "skillKey": "clawhub-pdf-generation",
+  "name": "PDF Generation",
+  "summary": "Generate professional PDFs from HTML/CSS using flow layouts and selective break controls to avoid whitespace gaps and layout issues in printed pages.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_generation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bartok9",
+      "features": [
+        "Generate professional PDFs from HTML/CSS using flow layouts and selective break controls to avo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf-generation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259807879?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf-generation",
+      "url": "https://clawhub.ai/skills/pdf-generation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-generation",
+    "url": "https://clawhub.ai/skills/pdf-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-generation-6c9b8f68c3e1eed4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf-generation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf-generation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:11736bff498c580d63f9bea55a153035b316826b29ed9dd786f0077f5b102e84",
+      "artifactSizeBytes": 1963
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T07:48:26.641Z"
+}

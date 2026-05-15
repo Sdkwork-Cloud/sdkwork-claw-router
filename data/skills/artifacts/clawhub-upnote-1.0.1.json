@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/upnote@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.upnote",
+  "skill": {
+    "id": 15956,
+    "skillKey": "clawhub-upnote",
+    "name": "UpNote"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "upnote",
+    "url": "https://clawhub.ai/skills/upnote",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/upnote-ebca492d453938ed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage UpNote notes and notebooks via x-callback-url automation. Use when a user asks to create notes, open notes, create notebooks, view tags, or manage content in UpNote."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wemcdonald",
+      "userId": "publishers:wemcdonald",
+      "displayName": "wemcdonald",
+      "image": "https://avatars.githubusercontent.com/u/547500?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 948,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770748193136,
+      "changelog": "Add dependency metadata and security documentation",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7771515b6a20a861573654d1118591d1e3bd9bcf7fd5d71907695e12c11e84cb"
+}

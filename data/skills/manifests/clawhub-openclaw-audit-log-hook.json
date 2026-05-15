@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43138,
+  "uuid": "skill-clawhub-openclaw-audit-log-hook",
+  "skillKey": "clawhub-openclaw-audit-log-hook",
+  "name": "OpenClaw Audit Log Hook",
+  "summary": "Records and logs all tool calls before and after execution for auditing, debugging, usage stats, and error tracking with sensitive data redaction.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_audit_log_hook",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxiao-bot",
+      "features": [
+        "Records and logs all tool calls before and after execution for auditing, debugging, usage stats."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-audit-log-hook@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262316041?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-audit-log-hook",
+      "url": "https://clawhub.ai/skills/openclaw-audit-log-hook"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-audit-log-hook",
+    "url": "https://clawhub.ai/skills/openclaw-audit-log-hook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-audit-log-hook-c5816a45f7a0fb40.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-audit-log-hook@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-audit-log-hook-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:701f06660bff78b4d88ed1e3be5f59a456eca2bc60374257208ee8d25456e2a0",
+      "artifactSizeBytes": 1941
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T16:06:39.286Z"
+}

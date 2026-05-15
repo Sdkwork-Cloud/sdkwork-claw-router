@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentshield-scanner@0.5.1",
+  "version": "0.5.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentshield_scanner",
+  "skill": {
+    "id": 25079,
+    "skillKey": "clawhub-agentshield-scanner",
+    "name": "AgentShield Scanner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentshield-scanner",
+    "url": "https://clawhub.ai/skills/agentshield-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentshield-scanner-2a0c2ea493fac287.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scan AI agent skills, MCP servers, and plugins for security vulnerabilities. Use when: user asks to check a skill/plugin for safety, audit security, scan for..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "elliotllliu",
+      "userId": "publishers:elliotllliu",
+      "displayName": "Elliot Liu",
+      "image": "https://avatars.githubusercontent.com/u/55885132?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 396,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.5.1",
+      "createdAt": 1773399329397,
+      "changelog": "30 security rules, Python AST taint tracking, cross-file analysis, 8-language prompt injection detection, platform integration guide",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b58bd6b4c933dc77d298d1276359d3b3b021d33af26781085f194ebc7e5daf35"
+}

@@ -46,7 +46,7 @@ fn app_store_sql_reads_existing_market_tables_and_filters_active_apps() {
         "const LOAD_APPS_BASE",
         "const LOAD_APPS_PAGED_SUFFIX",
         "const LOAD_APPS_UNPAGED_SUFFIX",
-        "LIMIT $9 OFFSET $10",
+        "LIMIT $10 OFFSET $11",
     ] {
         assert_sql_contains(POSTGRES_APP_STORE, expected);
     }

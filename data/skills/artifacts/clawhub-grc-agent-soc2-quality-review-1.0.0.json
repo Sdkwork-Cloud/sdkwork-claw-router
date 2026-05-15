@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/grc-agent-soc2-quality-review@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grc_agent_soc2_quality_review",
+  "skill": {
+    "id": 42184,
+    "skillKey": "clawhub-grc-agent-soc2-quality-review",
+    "name": "GRC-Agent | SOC 2 Quality Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grc-agent-soc2-quality-review",
+    "url": "https://clawhub.ai/skills/grc-agent-soc2-quality-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grc-agent-soc2-quality-review-150335e2e664fea6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Evaluate SOC 2 report quality using the SOC 2 Quality Guild rubric (Structure, Substance, Source). Use when reviewing a vendor SOC 2 Type 1/Type 2 report, tr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mangopudding",
+      "userId": "publishers:mangopudding",
+      "displayName": "Simon Tin-Yul Kok",
+      "image": "https://avatars.githubusercontent.com/u/5124548?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 667,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771568963480,
+      "changelog": "Initial release: SOC 2 quality review skill using the SOC 2 Quality Guild rubric.\n\n- Evaluates SOC 2 Type 1/Type 2 reports based on Structure, Substance, and Source.\n- Includes detailed workflow: review profile, scope confirmation, multi-signal scoring, advanced diligence, gap summary, and vendor follow-up.\n- Supports user profile customization (risk posture, evidence strictness, output style, etc).\n- Returns structured outputs: executive verdict, scorecard, advanced findings, risk summary, follow-up list, and compensating controls.\n- Aligns risk and escalation guidance with data sensitivity and evidence strictness settings.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:11aa58a1e70955cd5d5d9ee3038e8607719a78305d094e336779cba70bf3ce2f"
+}

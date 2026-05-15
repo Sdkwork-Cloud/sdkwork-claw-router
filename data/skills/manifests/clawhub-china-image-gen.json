@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58140,
+  "uuid": "skill-clawhub-china-image-gen",
+  "skillKey": "clawhub-china-image-gen",
+  "name": "China Image Gen",
+  "summary": "国内可用的文生图技能，基于硅基流动（SiliconFlow）API。Use when the user wants to generate images from text in China without VPN. Supports FLUX.1-schnell (free/fast), FLUX.1-dev...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_image_gen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToBeWin",
+      "features": [
+        "国内可用的文生图技能，基于硅基流动（SiliconFlow）API。Use when the user wants to generate images from text in China.",
+        "Supports FLUX.1-schnell (free/fast), FLUX.1-dev..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/china-image-gen@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/145168989?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "china-image-gen",
+      "url": "https://clawhub.ai/skills/china-image-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-image-gen",
+    "url": "https://clawhub.ai/skills/china-image-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-image-gen-82e9acefd6db83a3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/china-image-gen@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-china-image-gen-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:97574539fa888351644082a70dca4ac324aaa20ae148b1d8a0f8c9c71b1a6834",
+      "artifactSizeBytes": 2024
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T00:32:30.915Z"
+}

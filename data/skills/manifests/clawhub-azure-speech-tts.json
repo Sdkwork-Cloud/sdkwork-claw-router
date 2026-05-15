@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31452,
+  "uuid": "skill-clawhub-azure-speech-tts",
+  "skillKey": "clawhub-azure-speech-tts",
+  "name": "Azure Speech Tts",
+  "summary": "Azure Speech TTS skill for generating local audio files from text or SSML with Azure Speech. Use when the user asks to use Azure Speech / Azure TTS / Microso...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.azure_speech_tts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "conanwhf",
+      "features": [
+        "Azure Speech TTS skill for generating local audio files from text or SSML with Azure Speech",
+        "Use when the user asks to use Azure Speech / Azure TTS / Microso..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/azure-speech-tts@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14151735?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "azure-speech-tts",
+      "url": "https://clawhub.ai/skills/azure-speech-tts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "azure-speech-tts",
+    "url": "https://clawhub.ai/skills/azure-speech-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/azure-speech-tts-5be0da90829f07bf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/azure-speech-tts@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-azure-speech-tts-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4b19fb772ea4003322a06eea7bf8a441085d6b6ee9ea9ec31afa9743150eda33",
+      "artifactSizeBytes": 2003
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T17:20:49.703Z"
+}

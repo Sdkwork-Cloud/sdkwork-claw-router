@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/safe-exec-0-3-2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safe_exec_0_3_2",
+  "skill": {
+    "id": 9882,
+    "skillKey": "clawhub-safe-exec-0-3-2",
+    "name": "Safe Exec 0.3.2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safe-exec-0-3-2",
+    "url": "https://clawhub.ai/skills/safe-exec-0-3-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safe-exec-0-3-2-ac92bb871cf9fb69.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Safe command execution for OpenClaw Agents with automatic danger pattern detection, risk assessment, user approval workflow, and audit logging. Use when agents need to execute shell commands that may be dangerous (rm -rf, dd, fork bombs, s."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lucky-2968",
+      "userId": "publishers:lucky-2968",
+      "displayName": "Lucky-2968",
+      "image": "https://avatars.githubusercontent.com/u/208146076?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2637,
+      "installsAllTime": 22,
+      "installsCurrent": 20,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770211919894,
+      "changelog": "- Initial release of SafeExec skill for OpenClaw agents.\n- Adds automatic detection of dangerous command patterns with multi-level risk assessment (CRITICAL/HIGH/MEDIUM/LOW).\n- Implements in-session terminal notifications and user approval workflow before executing risky operations.\n- Provides full audit logging for traceability and a pending request management system.\n- Supports non-interactive environments and works independently of communication platforms.\n- Includes easy installation, enable/disable commands, and comprehensive documentation in SKILL.md.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a70760028870a80fecfba32b19cf08ec17ba8eaf8fdef13d3b81f4e8f914e1b7"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66550,
+  "uuid": "skill-clawhub-ditiansui",
+  "skillKey": "clawhub-ditiansui",
+  "name": "Ditiansui Publish",
+  "summary": "提供基于刘伯温注滴天髓的八字排盘、命理分析、命格解读及运势预测服务。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ditiansui",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alisa-xh",
+      "features": [
+        "提供基于刘伯温注滴天髓的八字排盘、命理分析、命格解读及运势预测服务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ditiansui@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271692361?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ditiansui",
+      "url": "https://clawhub.ai/skills/ditiansui"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ditiansui",
+    "url": "https://clawhub.ai/skills/ditiansui",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ditiansui-f483d21b6efe833a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ditiansui@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ditiansui-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a593cbc626c036c1144dcd8694a33e0f5c71c0a9f872518da4f65d20cbac551e",
+      "artifactSizeBytes": 1909
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T09:22:21.607Z"
+}

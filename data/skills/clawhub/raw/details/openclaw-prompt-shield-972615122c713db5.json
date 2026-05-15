@@ -1,0 +1,54 @@
+{
+  "skill": {
+    "slug": "openclaw-prompt-shield",
+    "displayName": "Openclaw Prompt Shield",
+    "summary": "Local input-hardening scanner for OpenClaw agents. Pattern-based detection across 9 categories of LLM input risks, with combined-signal scoring and caller-su...",
+    "tags": {
+      "agent-safety": "0.4.4",
+      "guardrail": "0.4.4",
+      "indirect-injection": "0.4.4",
+      "input-hardening": "0.4.4",
+      "jailbreak": "0.4.4",
+      "latest": "0.4.4",
+      "prompt-injection": "0.4.4",
+      "security": "0.4.4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 221,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 9
+    },
+    "createdAt": 1777797740254,
+    "updatedAt": 1778322706713
+  },
+  "latestVersion": {
+    "version": "0.4.4",
+    "createdAt": 1778319151438,
+    "changelog": "v0.4.4 — removes the last literal attack-template phrase from references/categories.txt comments. The LLM scanner was citing the phrase verbatim in its summary, so removing it from documentation should clear the llm_suspicious flag. No code, detection, or behaviour changes vs v0.4.3.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "gopendrasharma89-tech",
+    "userId": "s17cp87fy279ggwne1mqcb6675843tdy",
+    "displayName": "gopendrasharma89-tech",
+    "image": "https://avatars.githubusercontent.com/u/226691732?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.potential_exfiltration"
+    ],
+    "summary": "Detected: suspicious.potential_exfiltration",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778322706713
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44605,
+  "uuid": "skill-clawhub-bio-ontology-mapper-1",
+  "skillKey": "clawhub-bio-ontology-mapper-1",
+  "name": "Bio-Ontology Mapper",
+  "summary": "Map unstructured biomedical text to standardized ontologies (SNOMED CT.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bio_ontology_mapper_1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Map unstructured biomedical text to standardized ontologies (SNOMED CT."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bio-ontology-mapper-1@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bio-ontology-mapper-1",
+      "url": "https://clawhub.ai/skills/bio-ontology-mapper-1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bio-ontology-mapper-1",
+    "url": "https://clawhub.ai/skills/bio-ontology-mapper-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bio-ontology-mapper-1-755946f703ed02b0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bio-ontology-mapper-1@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bio-ontology-mapper-1-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ab7af5cdd71d948d7e823ad766f785e782e650f990e9ab8388f862ae74f99211",
+      "artifactSizeBytes": 2512
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T05:32:31.052Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/spec-miner@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spec_miner",
+  "skill": {
+    "id": 11950,
+    "skillKey": "clawhub-spec-miner",
+    "name": "Spec Miner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spec-miner",
+    "url": "https://clawhub.ai/skills/spec-miner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spec-miner-ed550510dce1be64.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when understanding legacy or undocumented systems, creating documentation for existing code, or extracting specifications from implementations. Invoke for legacy analysis, code archaeology, undocumented features."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "veeramanikandanr48",
+      "userId": "publishers:veeramanikandanr48",
+      "displayName": "Veera",
+      "image": "https://avatars.githubusercontent.com/u/119089869?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1927,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769838998614,
+      "changelog": "Initial release of spec-miner skill.\n\n- Enables reverse-engineering and documentation of legacy or undocumented systems.\n- Utilizes Read, Grep, and Glob tools for in-depth code analysis.\n- Provides a structured workflow for scoping, exploring, tracing, documenting, and flagging uncertainties.\n- Outputs specifications in EARS format, including technology stack, architecture, and key observations.\n- Includes reference guides and output templates for consistent, thorough documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3d40228101fbb5241e5bd201f896d5eaf2ff2907e51146dea195f1ffa53edc29"
+}

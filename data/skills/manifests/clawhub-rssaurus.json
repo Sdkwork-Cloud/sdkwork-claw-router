@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10325,
+  "uuid": "skill-clawhub-rssaurus",
+  "skillKey": "clawhub-rssaurus",
+  "name": "RSSaurus - Agent-Friendly RSS Feed Reader",
+  "summary": "Use the RSSaurus command-line client (Go binary `rssaurus`) to interact with https://rssaurus.com from the terminal: authenticate (`rssaurus auth login/whoami`), list feeds/items, print item URLs for piping, open URLs, and perform triage a.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rssaurus",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justinburdett",
+      "features": [
+        "Use the RSSaurus command-line client (Go binary `rssaurus`) to interact with https://rssaurus.c.",
+        "Use when asked to automate RSSaurus tasks from CLI, debug token/config issues, or demonstrate c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rssaurus@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/227566?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rssaurus",
+      "url": "https://clawhub.ai/skills/rssaurus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rssaurus",
+    "url": "https://clawhub.ai/skills/rssaurus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rssaurus-2b5ba9aa1a79e088.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rssaurus@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-rssaurus-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f1866179d2f7ab18266e53221784a8eaf3bc738d11d4c2922ae5217dd269bc05",
+      "artifactSizeBytes": 2305
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T20:33:37.238Z"
+}

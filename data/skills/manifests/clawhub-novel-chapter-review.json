@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69946,
+  "uuid": "skill-clawhub-novel-chapter-review",
+  "skillKey": "clawhub-novel-chapter-review",
+  "name": "Novel Chapter Review",
+  "summary": "已完结小说逐章质量评估体系。按章节逐章审计爽点密度、叙事质量、设定一致性、角色合理性，输出评分+问题清单+修改建议。触发场景：审稿、改稿、质量复盘。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.novel_chapter_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wenlong Zhao",
+      "features": [
+        "已完结小说逐章质量评估体系。按章节逐章审计爽点密度、叙事质量、设定一致性、角色合理性，输出评分+问题清单+修改建议。触发场景：审稿、改稿、质量复盘。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/novel-chapter-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6871414?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "novel-chapter-review",
+      "url": "https://clawhub.ai/skills/novel-chapter-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "novel-chapter-review",
+    "url": "https://clawhub.ai/skills/novel-chapter-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/novel-chapter-review-7e24efa7ea5ce7db.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/novel-chapter-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-novel-chapter-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0fe65576109048f3fb70015547375c97d1a3d0078587242ca0b088abd2970094",
+      "artifactSizeBytes": 2183
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T15:30:42.738Z"
+}

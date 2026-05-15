@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28318,
+  "uuid": "skill-clawhub-proofeditor",
+  "skillKey": "clawhub-proofeditor",
+  "name": "Proof",
+  "summary": "Web-first skill for working with Proof documents via proofeditor.ai. Use when a Proof URL is shared, when creating collaborative docs in Proof, or when the u...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proofeditor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dan Shipper",
+      "features": [
+        "Web-first skill for working with Proof documents via proofeditor.ai",
+        "Use when a Proof URL is shared, when creating collaborative docs in Proof, or when the u..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/proofeditor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263564?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "proofeditor",
+      "url": "https://clawhub.ai/skills/proofeditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proofeditor",
+    "url": "https://clawhub.ai/skills/proofeditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proofeditor-98214f8a0dfbefbe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/proofeditor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-proofeditor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:48943d8e90a48632d1891cecaabbd4558dc1286dcc1e6bbdf4624a8d68ebfb6f",
+      "artifactSizeBytes": 2449
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T19:47:23.984Z"
+}

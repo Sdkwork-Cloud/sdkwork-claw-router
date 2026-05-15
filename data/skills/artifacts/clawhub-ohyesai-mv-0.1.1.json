@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ohyesai-mv@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ohyesai_mv",
+  "skill": {
+    "id": 56058,
+    "skillKey": "clawhub-ohyesai-mv",
+    "name": "music video mv 制作"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ohyesai-mv",
+    "url": "https://clawhub.ai/skills/ohyesai-mv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ohyesai-mv-1264188b5f18a4cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate MV (Music Video) with AI-driven storyboarding, image generation, and video synthesis."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bajie-git",
+      "userId": "s1762pgbxdhgnt0wsrp3ps663583jebh",
+      "displayName": "bajie-git",
+      "image": "https://avatars.githubusercontent.com/u/63085735?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 345,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1777443933281,
+      "changelog": "- Updated the API key acquisition link to include a referral parameter (?from=https://clawhub.ai).\n- No functional or workflow changes; documentation remains consistent.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:224d46c52cfd83dda7bc80bdd1e5e5efc74e7b01c9c79e56c7c32ea643ed8627"
+}

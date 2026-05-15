@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "clawguard1",
+    "displayName": "Mithilesh",
+    "summary": "ClawGuard governance layer that must run before any SQL, file-system, or API write. Use evaluate_action(action_type, justification, risk_level) to log/author...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1774478230203,
+    "updatedAt": 1777623721653
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1774478230203,
+    "changelog": "ClawGuard Skill v1.0.0\n\n- Introduces a governance layer that logs and authorizes all high-impact or potentially destructive actions before execution.\n- Provides `evaluate_action(action_type, justification, risk_level)` to log actions and automatically block any with risk level 4 or higher.\n- Includes `get_audit_report(limit)` to review recent entries in the persistent SQLite-based audit ledger.\n- Clearly outlines risk levels and mandates justification for each action to ensure a robust audit trail.\n- Designed to be invoked before any SQL, file-system, or API write operation.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "mithileshgau",
+    "userId": "s177tktwz703s8hreajr6kxhts83j1gb",
+    "displayName": "mithileshgau",
+    "image": "https://avatars.githubusercontent.com/u/55141824?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777623721653
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57282,
+  "uuid": "skill-clawhub-daf-intent-guard",
+  "skillKey": "clawhub-daf-intent-guard",
+  "name": "DAF Intent Guard — 意图漂移检测",
+  "summary": "Tracks intent drift across multi-turn tasks. Before executing any multi-step task, call this to detect if the user's new instruction is a small patch, requir...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daf_intent_guard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "deepseek609609-collab",
+      "features": [
+        "Tracks intent drift across multi-turn tasks",
+        "Before executing any multi-step task, call this to detect if the user's new instruction is a sm."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daf-intent-guard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264004242?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daf-intent-guard",
+      "url": "https://clawhub.ai/skills/daf-intent-guard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daf-intent-guard",
+    "url": "https://clawhub.ai/skills/daf-intent-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daf-intent-guard-3081f17e87786190.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daf-intent-guard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daf-intent-guard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3fa5a5cb9268327317fd27373baeea122e4a0dcd344907cc6da67711956d3ad4",
+      "artifactSizeBytes": 2024
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T09:57:08.457Z"
+}

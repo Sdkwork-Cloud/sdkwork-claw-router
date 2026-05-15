@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55337,
+  "uuid": "skill-clawhub-cloudflare-mail-reader",
+  "skillKey": "clawhub-cloudflare-mail-reader",
+  "name": "cloudflare-mail-reader",
+  "summary": "Read one mailbox's messages or a paginated mail list from a Cloudflare temporary mail system through the `/admin/mails` admin API and return structured resul...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloudflare_mail_reader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jcwang502",
+      "features": [
+        "Read one mailbox's messages or a paginated mail list from a Cloudflare temporary mail system th."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cloudflare-mail-reader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256703513?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cloudflare-mail-reader",
+      "url": "https://clawhub.ai/skills/cloudflare-mail-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloudflare-mail-reader",
+    "url": "https://clawhub.ai/skills/cloudflare-mail-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloudflare-mail-reader-d39fd06da7bbdde4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cloudflare-mail-reader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cloudflare-mail-reader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6ca34ce2729177c7ab96033e7690aa94b0cfa324f0bf1c4b77a5e6c6b436c4c5",
+      "artifactSizeBytes": 2400
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T07:59:33.772Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-subtitle-adder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_subtitle_adder",
+  "skill": {
+    "id": 43064,
+    "skillKey": "clawhub-ai-subtitle-adder",
+    "name": "Ai Subtitle Adder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-subtitle-adder",
+    "url": "https://clawhub.ai/skills/ai-subtitle-adder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-subtitle-adder-7aa03caa5c162068.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "add video files into captioned video files with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. YouTubers and content creators use it for addin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susan4731-wilfordf",
+      "userId": "s1782w3wqej6a5gnp3w63eb80184cckp",
+      "displayName": "susan4731-wilfordf",
+      "image": "https://avatars.githubusercontent.com/u/208907675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776044554272,
+      "changelog": "Initial release of AI Subtitle Adder — Auto-Generate and Burn In Subtitles.\n\n- Convert videos (MP4, MOV, AVI, WebM up to 500MB) into 1080p MP4 files with auto-generated subtitles.\n- Supports adding subtitles in multiple languages, auto-sync, and batch editing for YouTube and social media content.\n- Cloud-based processing using GPUs completes subtitle addition in 30–90 seconds per job.\n- Simple setup: automatic token authentication and session management.\n- Provides clear feedback for uploads, exports, credits/balance, and error handling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cbfad3fc212edd733265356bf03c6aa19e0ee67545730ea2dd32ce37605f9a7e"
+}

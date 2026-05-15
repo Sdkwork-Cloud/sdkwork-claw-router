@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17996,
+  "uuid": "skill-clawhub-britebooth-procurement",
+  "skillKey": "clawhub-britebooth-procurement",
+  "name": "BriteBooth Procurement",
+  "summary": "Read-only assistant for BriteBooth.com. Collects product IDs, templates, and lead times. Requires human execution for cart creation.",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.britebooth_procurement",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vismonkey19",
+      "features": [
+        "Read-only assistant for BriteBooth.com",
+        "Collects product IDs, templates, and lead times",
+        "Requires human execution for cart creation."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/britebooth-procurement@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/193344109?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "britebooth-procurement",
+      "url": "https://clawhub.ai/skills/britebooth-procurement"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "britebooth-procurement",
+    "url": "https://clawhub.ai/skills/britebooth-procurement",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/britebooth-procurement-8054cb3046b6e9d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/britebooth-procurement@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-britebooth-procurement-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:803bf35ff6c4985dd87baba26a69a309a7b85910965068d928ae1b53008ec497",
+      "artifactSizeBytes": 2622
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T19:21:09.575Z"
+}

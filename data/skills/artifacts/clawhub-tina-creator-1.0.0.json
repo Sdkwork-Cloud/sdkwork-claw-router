@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tina-creator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tina_creator",
+  "skill": {
+    "id": 58829,
+    "skillKey": "clawhub-tina-creator",
+    "name": "Tina Creator - 小红书笔记创作"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tina-creator",
+    "url": "https://clawhub.ai/skills/tina-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tina-creator-094f90d45126f2a9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "生成小红书爆款笔记（标题、正文、标签、AI封面图），采用 Research-Create-Grow 三阶段工作流。Use when the user wants to create Xiaohongshu/小红书 posts, RED notes, social media content for 小红书, or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tina-zhang-coder",
+      "userId": "s179n97fqf6z85fhe78qrx32pn83x72y",
+      "displayName": "Tina-Zhang-coder",
+      "image": "https://avatars.githubusercontent.com/u/248510980?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 236,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774880562736,
+      "changelog": "Initial release: R-C-G workflow for Xiaohongshu content creation with 6 templates, examples, AI cover generation, and strategy library",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2052bfb1f188406fa827314e2dd8c9d08c8511553bedd558e9d81346d6abd2b4"
+}

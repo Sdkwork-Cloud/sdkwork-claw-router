@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53192,
+  "uuid": "skill-clawhub-jimmy-crypto-alert",
+  "skillKey": "clawhub-jimmy-crypto-alert",
+  "name": "Crypto Alert",
+  "summary": "Monitor cryptocurrency prices and send alerts when thresholds are crossed. No API key required — uses Binance public API. Supports BTC, ETH, SOL, and 10+ tok...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jimmy_crypto_alert",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JimmyClanker",
+      "features": [
+        "Monitor cryptocurrency prices and send alerts when thresholds are crossed",
+        "No API key required — uses Binance public API",
+        "Supports BTC, ETH, SOL, and 10+ tok..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jimmy-crypto-alert@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258324489?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jimmy-crypto-alert",
+      "url": "https://clawhub.ai/skills/jimmy-crypto-alert"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jimmy-crypto-alert",
+    "url": "https://clawhub.ai/skills/jimmy-crypto-alert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jimmy-crypto-alert-7f7f4ca7f290e79b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jimmy-crypto-alert@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jimmy-crypto-alert-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1531721f9ae7d1888d7eee9ace321108875711c4759e30bb32bc8942350e1f0d",
+      "artifactSizeBytes": 2295
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T01:17:08.382Z"
+}

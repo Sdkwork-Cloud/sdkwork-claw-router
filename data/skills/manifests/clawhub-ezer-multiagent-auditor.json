@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36670,
+  "uuid": "skill-clawhub-ezer-multiagent-auditor",
+  "skillKey": "clawhub-ezer-multiagent-auditor",
+  "name": "Ezer Multi-Agent Report Auditor",
+  "summary": "Wrapper skill for the Ezer audit backend API. Use this skill when the user asks to run a financial audit task by code/period/year/lang and return structured...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ezer_multiagent_auditor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MX-222",
+      "features": [
+        "Wrapper skill for the Ezer audit backend API",
+        "Use this skill when the user asks to run a financial audit task by code/period/year/lang and re."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ezer-multiagent-auditor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/220563157?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ezer-multiagent-auditor",
+      "url": "https://clawhub.ai/skills/ezer-multiagent-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ezer-multiagent-auditor",
+    "url": "https://clawhub.ai/skills/ezer-multiagent-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ezer-multiagent-auditor-1db167c5d9132b1e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ezer-multiagent-auditor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ezer-multiagent-auditor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6bd9e4a133446c66414583f7fb13ae02830409b81ba37b54e1419c9513166949",
+      "artifactSizeBytes": 2358
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T08:37:24.977Z"
+}

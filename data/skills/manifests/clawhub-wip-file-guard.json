@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13854,
+  "uuid": "skill-clawhub-wip-file-guard",
+  "skillKey": "clawhub-wip-file-guard",
+  "name": "Wip File Guard",
+  "summary": "Hook that blocks destructive edits to protected identity files. For Claude Code CLI and OpenClaw.",
+  "version": "1.9.72",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wip_file_guard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Parker Todd Brooks",
+      "features": [
+        "Hook that blocks destructive edits to protected identity files",
+        "For Claude Code CLI and OpenClaw."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wip-file-guard@1.9.72",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/585456?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wip-file-guard",
+      "url": "https://clawhub.ai/skills/wip-file-guard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wip-file-guard",
+    "url": "https://clawhub.ai/skills/wip-file-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wip-file-guard-ec8dd7a8206e16ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wip-file-guard@1.9.72",
+      "artifactUrl": "data/skills/artifacts/clawhub-wip-file-guard-1.9.72.json",
+      "version": "1.9.72",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d3dce95df8c6025b4cb48c10317cf220423d038ba08093738297d4a8bca68740",
+      "artifactSizeBytes": 3483
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T21:24:57.219Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/propertyguru-sg-sale-browser-crawl@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.propertyguru_sg_sale_browser_crawl",
+  "skill": {
+    "id": 31191,
+    "skillKey": "clawhub-propertyguru-sg-sale-browser-crawl",
+    "name": "PropertyGuru SG Sale Browser Crawl"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "propertyguru-sg-sale-browser-crawl",
+    "url": "https://clawhub.ai/skills/propertyguru-sg-sale-browser-crawl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/propertyguru-sg-sale-browser-crawl-2b84433b38440724.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "extract around 50 Singapore for-sale listings from a PropertyGuru search results URL using a real browser session after Cloudflare verification. use when the..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "snailb1007",
+      "userId": "s17fj940hnx4ze0htg1zmnn965840rtf",
+      "displayName": "snailb1007",
+      "image": "https://avatars.githubusercontent.com/u/69341804?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 270,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773846742316,
+      "changelog": "Initial browser-backed PropertyGuru SG sale listing crawl skill",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:33668ae18f78e3363b317dd3a02b9c5d1a33cdc07090b5669f0b809ffb1cc0b7"
+}

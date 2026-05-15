@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-gemini-media@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_gemini_media",
+  "skill": {
+    "id": 9223,
+    "skillKey": "clawhub-google-gemini-media",
+    "name": "Google Gemini Media"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-gemini-media",
+    "url": "https://clawhub.ai/skills/google-gemini-media",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-gemini-media-cd269749b7ca634f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the Gemini API (Nano Banana image generation, Veo video, Gemini TTS speech and audio understanding) to deliver end-to-end multimodal media workflows and code templates for \"generation + understanding\"."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xsir0",
+      "userId": "publishers:xsir0",
+      "displayName": "Xsir0",
+      "image": "https://avatars.githubusercontent.com/u/48853107?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3761,
+      "installsAllTime": 22,
+      "installsCurrent": 22,
+      "stars": 6,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769571336219,
+      "changelog": "- Major simplification: all standalone example scripts and extra documentation files were removed.\n- The main SKILL.md documentation was retained and is now the single point of reference.\n- Examples for Node.js, Python, and REST are no longer included as separate files.\n- Usage guidance, capabilities, and technical details are still available in SKILL.md.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:54d2e63f56f3b75114dd8c2b42dcf7e09701bb0178449a45c56c75d17fa15ac1"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31071,
+  "uuid": "skill-clawhub-signaturely",
+  "skillKey": "clawhub-signaturely",
+  "name": "Signaturely",
+  "summary": "Signaturely integration. Manage Documents, Users, Teams. Use when the user wants to interact with Signaturely data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.signaturely",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Signaturely integration",
+        "Manage Documents, Users, Teams",
+        "Use when the user wants to interact with Signaturely data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/signaturely@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "signaturely",
+      "url": "https://clawhub.ai/skills/signaturely"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "signaturely",
+    "url": "https://clawhub.ai/skills/signaturely",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/signaturely-aac58ca17f4b8dd8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/signaturely@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-signaturely-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3bbbfe59896f65fbd06d22eaf3201bb62788ac35b3538b830a696f887a9a58ac",
+      "artifactSizeBytes": 1843
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:41:39.231Z"
+}

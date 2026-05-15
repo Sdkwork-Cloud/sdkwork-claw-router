@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linux-journey@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linux_journey",
+  "skill": {
+    "id": 34750,
+    "skillKey": "clawhub-linux-journey",
+    "name": "Linux Journey"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linux-journey",
+    "url": "https://clawhub.ai/skills/linux-journey",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linux-journey-a37b7cae20688210.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find and recommend free Linux Journey lessons on LabEx when the user wants to learn Linux fundamentals, Linux basics, command line concepts, filesystems, per..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huhuhang",
+      "userId": "s1726ykzye3y2rzgd7tzkjg0t183wqsv",
+      "displayName": "huhuhang",
+      "image": "https://avatars.githubusercontent.com/u/5147530?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 221,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774079520218,
+      "changelog": "No functional or content changes; documentation updated only.\n\n- Minor update to SKILL.md: added explicit hyperlinks to Linux Journey and LabEx for clarity.\n- No changes to code or behavior.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:26a4a75b259a6a0746d202a7dacf250e29cf1254af44247455f204cf430b88f1"
+}

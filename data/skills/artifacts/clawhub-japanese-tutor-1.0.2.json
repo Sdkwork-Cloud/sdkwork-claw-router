@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/japanese-tutor@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.japanese_tutor",
+  "skill": {
+    "id": 10230,
+    "skillKey": "clawhub-japanese-tutor",
+    "name": "Japanese Tutor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "japanese-tutor",
+    "url": "https://clawhub.ai/skills/japanese-tutor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/japanese-tutor-6feb368ceb51ddbd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interactive Japanese learning assistant. Supports vocabulary, grammar, quizzes, roleplay, PDF/DOCX material parsing for study/homework help, and OCR translation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chndranndr",
+      "userId": "publishers:chndranndr",
+      "displayName": "chndranndr",
+      "image": "https://avatars.githubusercontent.com/u/9008007?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2723,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1769678230282,
+      "changelog": "- Switched PDF parsing from scripts/parse_pdf.py to the new scripts/parse_pdf_gemini.py, enabling Gemini Vision OCR and layout analysis.\n- Removed the old parse_pdf.py script and added the new parse_pdf_gemini.py script.\n- Updated documentation to reflect the new PDF parsing approach using Gemini for study material and homework assistance.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:89996758e4ef3db5847ed1c69cef4a447d6b723afda936fc2dc0423a2a4ada77"
+}

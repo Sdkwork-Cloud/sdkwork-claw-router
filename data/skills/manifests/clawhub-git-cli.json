@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11795,
+  "uuid": "skill-clawhub-git-cli",
+  "skillKey": "clawhub-git-cli",
+  "name": "Git cli",
+  "summary": "Helper for using the Git CLI to inspect, stage, commit, branch, and synchronize code changes. Use when the user wants to understand or perform Git operations...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "openlang",
+      "features": [
+        "Helper for using the Git CLI to inspect, stage, commit, branch, and synchronize code changes",
+        "Use when the user wants to understand or perform Git operations..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/git-cli@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45782174?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "git-cli",
+      "url": "https://clawhub.ai/skills/git-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-cli",
+    "url": "https://clawhub.ai/skills/git-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-cli-d38e231f52223229.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/git-cli@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-git-cli-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:46a0c8709efba49370e11850aa554473645f1ba135e0108ad69393eea95dff21",
+      "artifactSizeBytes": 2370
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T02:54:39.251Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68599,
+  "uuid": "skill-clawhub-system-memory-inspector",
+  "skillKey": "clawhub-system-memory-inspector",
+  "name": "system memory inspector",
+  "summary": "Linux 系统级内存泄漏巡检：定时扫描所有进程内存，记录系统内存全景， 通过增长趋势分析识别异常进程，输出排查思路和可疑进程列表。 当用户提到\"系统内存巡检\"、\"全进程内存扫描\"、\"内存泄漏排查\"、\"环境内存分析\"、 \"定时统计所有进程\"、\"系统内存记录\"、\"找出泄漏进程\"时触发。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.system_memory_inspector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rong Zhu",
+      "features": [
+        "Linux 系统级内存泄漏巡检：定时扫描所有进程内存，记录系统内存全景， 通过增长趋势分析识别异常进程，输出排查思路和可疑进程列表。 当用户提到\"系统内存巡检\"、\"全进程内存扫描\"、\"内存泄."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/system-memory-inspector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22869048?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "system-memory-inspector",
+      "url": "https://clawhub.ai/skills/system-memory-inspector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "system-memory-inspector",
+    "url": "https://clawhub.ai/skills/system-memory-inspector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/system-memory-inspector-adeca91a8d56b596.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/system-memory-inspector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-system-memory-inspector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:937577ed6dac89bafb2153aa267157f9bfd29018d3e7ca94e92bc778898c077c",
+      "artifactSizeBytes": 2579
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T06:55:54.019Z"
+}

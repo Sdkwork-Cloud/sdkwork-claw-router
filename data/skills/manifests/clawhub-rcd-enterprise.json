@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72878,
+  "uuid": "skill-clawhub-rcd-enterprise",
+  "skillKey": "clawhub-rcd-enterprise",
+  "name": "睿查得-企业信息查询",
+  "summary": "通过关键词和分类查询企业信息；包含企业基本信息、股东、高管等34个分类。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rcd_enterprise",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xinxin970620-prog",
+      "features": [
+        "通过关键词和分类查询企业信息；包含企业基本信息、股东、高管等34个分类。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rcd-enterprise@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/227516991?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rcd-enterprise",
+      "url": "https://clawhub.ai/skills/rcd-enterprise"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rcd-enterprise",
+    "url": "https://clawhub.ai/skills/rcd-enterprise",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rcd-enterprise-3938a143dff56d96.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rcd-enterprise@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-rcd-enterprise-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:937f826eb850a25376a695f8df3d026f2576a2191a07628fc079a9f0d21dc3ff",
+      "artifactSizeBytes": 1960
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T06:51:07.520Z"
+}

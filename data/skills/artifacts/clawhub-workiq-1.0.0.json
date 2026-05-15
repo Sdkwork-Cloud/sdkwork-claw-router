@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/workiq@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workiq",
+  "skill": {
+    "id": 25159,
+    "skillKey": "clawhub-workiq",
+    "name": "WorkIQ"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workiq",
+    "url": "https://clawhub.ai/skills/workiq",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workiq-52d589b576d7347a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Microsoft 365 data (emails, meetings, documents, Teams messages, people) using WorkIQ CLI"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "likudo95",
+      "userId": "publishers:likudo95",
+      "displayName": "likudo95",
+      "image": "https://avatars.githubusercontent.com/u/15061055?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 384,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772596192946,
+      "changelog": "- Initial release of the WorkIQ skill.\n- Query Microsoft 365 data—including emails, meetings, documents, Teams messages, and people/org information—using the WorkIQ CLI.\n- Supports both global CLI (`workiq`) and fallback to `npx` if needed.\n- Includes detailed usage guidelines, example queries, setup, and error handling instructions.\n- Only data the signed-in user is authorized to access will be returned; no extra permissions are requested.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4d302b4aa678ca9c429cfcf34b1accaabebf96dc285936abc75f121ce6c0a225"
+}

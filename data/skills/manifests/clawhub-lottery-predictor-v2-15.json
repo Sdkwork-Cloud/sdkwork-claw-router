@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66274,
+  "uuid": "skill-clawhub-lottery-predictor-v2-15",
+  "skillKey": "clawhub-lottery-predictor-v2-15",
+  "name": "彩票预测 V2.15",
+  "summary": "基于 V2.15 数学模型的双色球预测工具，包含均值回归、正态分布、大数定律、卡方检验等 7 种算法，提供红球 TOP10 和蓝球 TOP4 推荐。",
+  "version": "2.15.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lottery_predictor_v2_15",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mumuli2021",
+      "features": [
+        "基于 V2.15 数学模型的双色球预测工具，包含均值回归、正态分布、大数定律、卡方检验等 7 种算法，提供红球 TOP10 和蓝球 TOP4 推荐。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lottery-predictor-v2-15@2.15.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/91624118?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lottery-predictor-v2-15",
+      "url": "https://clawhub.ai/skills/lottery-predictor-v2-15"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lottery-predictor-v2-15",
+    "url": "https://clawhub.ai/skills/lottery-predictor-v2-15",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lottery-predictor-v2-15-679d3721adaf1148.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lottery-predictor-v2-15@2.15.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lottery-predictor-v2-15-2.15.0.json",
+      "version": "2.15.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:caa0050b037fd96cf559a66d2a3ce22083a6d4309c8f52aca3b07ca3001844e9",
+      "artifactSizeBytes": 2338
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T08:51:53.409Z"
+}

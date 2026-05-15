@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53341,
+  "uuid": "skill-clawhub-katbot-trading",
+  "skillKey": "clawhub-katbot-trading",
+  "name": "Katbot Trading",
+  "summary": "Live crypto trading on Hyperliquid via Katbot.ai. Signal-triggered research → recommendation → execution workflow with Market Intelligence, research, and con...",
+  "version": "0.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.katbot_trading",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Clay Graham",
+      "features": [
+        "Live crypto trading on Hyperliquid via Katbot.ai",
+        "Signal-triggered research → recommendation → execution workflow with Market Intelligence, resea."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/katbot-trading@0.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/407854?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "katbot-trading",
+      "url": "https://clawhub.ai/skills/katbot-trading"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "katbot-trading",
+    "url": "https://clawhub.ai/skills/katbot-trading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/katbot-trading-82377e40d6608a15.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/katbot-trading@0.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-katbot-trading-0.5.0.json",
+      "version": "0.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a204c273e1c927d1e8478780b91c80c0f773d4225ab07ea155bd3b15faac4ad4",
+      "artifactSizeBytes": 2821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T23:57:08.395Z"
+}

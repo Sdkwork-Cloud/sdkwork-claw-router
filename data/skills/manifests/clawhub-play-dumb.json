@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67106,
+  "uuid": "skill-clawhub-play-dumb",
+  "skillKey": "clawhub-play-dumb",
+  "name": "Play Dumb",
+  "summary": "让 Agent 可控地\"装笨\"——根据场景调整智能表现水平。 支持多种笨法人格（金毛犬、苏格拉底、迷糊实习生等）和10级笨度调节。 触发条件：用户说\"装笨\"、\"别那么聪明\"、\"笨一点\"、\"play dumb\"、\"dumb mode\"。 安全底线：涉及人身安全、医疗、法律、金融的问题自动解除装笨。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.play_dumb",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dox012",
+      "features": [
+        "让 Agent 可控地\"装笨\"——根据场景调整智能表现水平。 支持多种笨法人格（金毛犬、苏格拉底、迷糊实习生等）和10级笨度调节。 触发条件：用户说\"装笨\"、\"别那么聪明\"、\"笨一点\"、\"p."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/play-dumb@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109445745?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "play-dumb",
+      "url": "https://clawhub.ai/skills/play-dumb"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "play-dumb",
+    "url": "https://clawhub.ai/skills/play-dumb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/play-dumb-7498c4f8c010699f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/play-dumb@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-play-dumb-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4d3aadcbeca84cd38c80597c396142735d2e21ac359ac57c9f3033a7370b31c5",
+      "artifactSizeBytes": 2634
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T05:09:53.669Z"
+}

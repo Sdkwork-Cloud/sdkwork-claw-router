@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37204,
+  "uuid": "skill-clawhub-kibibot-skill",
+  "skillKey": "clawhub-kibibot-skill",
+  "name": "KibiBot Skill",
+  "summary": "Create tokens on-chain, check fee earnings, check Kibi Credit balance, trigger agent credit reload, and interact with KibiBot's Agent API and Kibi LLM Gatewa...",
+  "version": "1.5.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kibibot_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KibiAgent",
+      "features": [
+        "Create tokens on-chain, check fee earnings, check Kibi Credit balance, trigger agent credit rel."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kibibot-skill@1.5.2",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/kibibot-skill/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kibibot-skill",
+      "url": "https://clawhub.ai/skills/kibibot-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kibibot-skill",
+    "url": "https://clawhub.ai/skills/kibibot-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kibibot-skill-5d5ec473370e60d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kibibot-skill@1.5.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-kibibot-skill-1.5.2.json",
+      "version": "1.5.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7956feedc263711eb0eea6e016f61b0ae1a415005fc4491446fdfb48e84bcaa6",
+      "artifactSizeBytes": 2104
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T03:15:01.080Z"
+}

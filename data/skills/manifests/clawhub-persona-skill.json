@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30351,
+  "uuid": "skill-clawhub-persona-skill",
+  "skillKey": "clawhub-persona-skill",
+  "name": "Persona Skill",
+  "summary": "Handles persona lifecycle management. Use it to (1) Initialize or reinitialize an OpenClaw persona after human-MTBI interview, or (2) Perform incremental pro...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.persona_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "🦄9527",
+      "features": [
+        "Handles persona lifecycle management",
+        "Use it to (1) Initialize or reinitialize an OpenClaw persona after human-MTBI interview, or (2)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/persona-skill@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4016839?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "persona-skill",
+      "url": "https://clawhub.ai/skills/persona-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "persona-skill",
+    "url": "https://clawhub.ai/skills/persona-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/persona-skill-9be37c70e7b65dc0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/persona-skill@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-persona-skill-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4c4ba2773c4651af205af334b1f66e9da4cb99b717cb26cc9477f186c2b54a46",
+      "artifactSizeBytes": 1877
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T10:59:52.263Z"
+}

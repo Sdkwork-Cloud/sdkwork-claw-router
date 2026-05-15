@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27081,
+  "uuid": "skill-clawhub-a2a-delegation-setup",
+  "skillKey": "clawhub-a2a-delegation-setup",
+  "name": "A2A Delegation Setup",
+  "summary": "Guided setup and troubleshooting for installing, enabling, configuring, verifying, and updating @aramisfa/openclaw-a2a-outbound in OpenClaw.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a2a_delegation_setup",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aramis Facchinetti",
+      "features": [
+        "Guided setup and troubleshooting for installing, enabling, configuring, verifying, and updating."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/a2a-delegation-setup@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78740887?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "a2a-delegation-setup",
+      "url": "https://clawhub.ai/skills/a2a-delegation-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a2a-delegation-setup",
+    "url": "https://clawhub.ai/skills/a2a-delegation-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a2a-delegation-setup-e4c01bc085d982dd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/a2a-delegation-setup@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-a2a-delegation-setup-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:35b3666d9010996ef048bf7e2d2c108715b8458a6c27e672dbd81c4616313d98",
+      "artifactSizeBytes": 2401
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T18:12:49.396Z"
+}

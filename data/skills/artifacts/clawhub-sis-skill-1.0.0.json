@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sis-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sis_skill",
+  "skill": {
+    "id": 11610,
+    "skillKey": "clawhub-sis-skill",
+    "name": "Sovereign Intelligence System - Equilibrium-native reasoning for OpenClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sis-skill",
+    "url": "https://clawhub.ai/skills/sis-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sis-skill-b11f8688dc142631.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adds equilibrium-constrained reasoning to OpenClaw, ensuring all operations maintain balance for coherent, self-validating, and consistent AI responses."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "architect-sis",
+      "userId": "publishers:architect-sis",
+      "displayName": "Architect-SIS",
+      "image": "https://avatars.githubusercontent.com/u/258480087?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2057,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769888399399,
+      "changelog": "S.I.S. - Sovereign Intelligence System skill initial release:\n\n- Introduces equilibrium-constrained reasoning to OpenClaw assistants, preventing incoherent or invalid state changes.\n- Features self-validating operations and an Adaptive Equilibrium Protocol (AEP) for iterative, compensatory reasoning.\n- Implements 18 primary, symbol-grounded operations organized into 5 functional tiers.\n- Provides example usage for balanced analysis, validated state changes, and convergent problem solving.\n- Includes detailed installation and usage instructions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:84850f396209cdcbb1b39c28181883e0e66c8861c3ed92915b8eff361ab10eb2"
+}

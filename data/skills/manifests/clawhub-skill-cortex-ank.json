@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18685,
+  "uuid": "skill-clawhub-skill-cortex-ank",
+  "skillKey": "clawhub-skill-cortex-ank",
+  "name": "Skill Cortex Pub",
+  "summary": "Skill Cortex is the system's capability cortex. When lacking ability, it autonomously acquires Skills from ClawHub or GitHub, then releases them after use. E...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_cortex_ank",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ank Wu",
+      "features": [
+        "Skill Cortex is the system's capability cortex",
+        "When lacking ability, it autonomously acquires Skills from ClawHub or GitHub, then releases the."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-cortex-ank@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/221829228?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-cortex-ank",
+      "url": "https://clawhub.ai/skills/skill-cortex-ank"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-cortex-ank",
+    "url": "https://clawhub.ai/skills/skill-cortex-ank",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-cortex-ank-4c6c547545202820.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-cortex-ank@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-cortex-ank-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba016bed7f7f96f51ccc4854e8e1640be6a5a250a5b17a7f9369ffe98d39280b",
+      "artifactSizeBytes": 2023
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T17:59:58.814Z"
+}

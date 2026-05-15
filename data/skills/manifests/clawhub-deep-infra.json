@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35793,
+  "uuid": "skill-clawhub-deep-infra",
+  "skillKey": "clawhub-deep-infra",
+  "name": "Deep Infra",
+  "summary": "Configure DeepInfra model routing with provider auth, model selection, fallback chains, and cost-aware defaults for stable open-source and frontier model wor...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deep_infra",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Georgi Atsev",
+      "features": [
+        "Configure DeepInfra model routing with provider auth, model selection, fallback chains, and cos."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deep-infra@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1550392?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deep-infra",
+      "url": "https://clawhub.ai/skills/deep-infra"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deep-infra",
+    "url": "https://clawhub.ai/skills/deep-infra",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deep-infra-f2ddcf58ab3d6497.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deep-infra@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-deep-infra-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:39f34d10cde116ce2eff0959e673dae5f2a208054f69aec1962ff554d2d9cd4f",
+      "artifactSizeBytes": 2404
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T11:00:43.956Z"
+}

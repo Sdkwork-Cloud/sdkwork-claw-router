@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61999,
+  "uuid": "skill-clawhub-cosprompt",
+  "skillKey": "clawhub-cosprompt",
+  "name": "Cosprompt",
+  "summary": "结构化 AI 绘图提示词生成器。输入角色/主题名称，AI 自动搜索信息、分析特征、决定风格，输出 15 维度结构化提示词（JSON + Markdown 双格式），适用于 Midjourney、Stable Diffusion 等绘图工具。",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cosprompt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fslong",
+      "features": [
+        "结构化 AI 绘图提示词生成器。输入角色/主题名称，AI 自动搜索信息、分析特征、决定风格，输出 15 维度结构化提示词（JSON + Markdown 双格式），适用于 Midjourne."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cosprompt@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25819806?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cosprompt",
+      "url": "https://clawhub.ai/skills/cosprompt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cosprompt",
+    "url": "https://clawhub.ai/skills/cosprompt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cosprompt-34a00e37ee023144.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cosprompt@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cosprompt-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a8fd2e2800be30014e7b45ff8e6e7eb0fcd2a24f5a6fde593a9e2b8744854064",
+      "artifactSizeBytes": 1974
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T15:58:29.770Z"
+}

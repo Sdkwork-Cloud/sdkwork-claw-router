@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/writing-pipeline@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.writing_pipeline",
+  "skill": {
+    "id": 68794,
+    "skillKey": "clawhub-writing-pipeline",
+    "name": "Writing Pipeline"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "writing-pipeline",
+    "url": "https://clawhub.ai/skills/writing-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/writing-pipeline-f29a615b1355e7a9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "内容再创作管线：输入参考资料 → AI 生成中文初稿 → 人工改稿 → 系统对比学习写作偏好 → 多平台格式输出。 支持自动路由——根据输入材料特征自动匹配最合适的写作风格。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shing19",
+      "userId": "s172kjnp9yebtfrzzjamwm07wn83yvwr",
+      "displayName": "shing19",
+      "image": "https://avatars.githubusercontent.com/u/38907754?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774928760276,
+      "changelog": "initial publish",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ff997059ae0e83df7d1eedf0dd9ac72fdc8d93ab9f92894712c8293e2e128d86"
+}

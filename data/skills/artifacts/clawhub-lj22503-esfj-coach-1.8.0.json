@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lj22503-esfj-coach@1.8.0",
+  "version": "1.8.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lj22503_esfj_coach",
+  "skill": {
+    "id": 66623,
+    "skillKey": "clawhub-lj22503-esfj-coach",
+    "name": "Esfj Coach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lj22503-esfj-coach",
+    "url": "https://clawhub.ai/skills/lj22503-esfj-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lj22503-esfj-coach-400147644ef2912f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "［何时使用］当 ESFJ 用户需要成长指导时，特别是处理过度付出、寻求认可、变化抵触等 ESFJ 专属卡点。触发场景：\"我是 ESFJ，很在意别人怎么看我\"、\"ESFJ 如何减少认可依赖\"、\"ESFJ 学会拒绝\"。ESFJ 是\"执政官\"类型，热心助人但可能过度依赖他人认可。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lj22503",
+      "userId": "s17dhbyrvq4rmpz7c0cg1y9yrs83nsxz",
+      "displayName": "lj22503",
+      "image": "https://avatars.githubusercontent.com/u/170225356?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 114,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.8.0",
+      "createdAt": 1776422480957,
+      "changelog": "**Summary:**  \nExpanded ESFJ Coach with detailed dual-mode coaching logic, scenario handling, and execution best practices.\n\n- 增加了教练模式与顾问模式的详细切换机制，明确响应不同用户需求的流程与话术。\n- 提供了常见用户场景（情绪模糊、非 ESFJ 用户、测试型用户）及标准化应对流程。\n- 丰富了 ESFJ 专属成长策略、行动步骤和用户行动记录体系。\n- 明确输出长度控制、常见错误类型及解决方法，提高用户体验。\n- 新增对话结束存档流程及退出信号说明，加强成长记录追踪。\n- 优化了系统自查与故障排查清单，确保实用与高效。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2137f2b3235dc1d5859178cc5201623f8a51fbc1989082aa81583a0eaf4585e8"
+}

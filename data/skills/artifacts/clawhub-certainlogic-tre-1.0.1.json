@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/certainlogic-tre@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.certainlogic_tre",
+  "skill": {
+    "id": 53929,
+    "skillKey": "clawhub-certainlogic-tre",
+    "name": "Token Reduction Engine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "certainlogic-tre",
+    "url": "https://clawhub.ai/skills/certainlogic-tre",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/certainlogic-tre-69cf5988e8166ead.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cut AI token costs by 60-85% with deterministic query validation and intelligent caching. Standalone or integrates with Company Brain Core OS. Free, open-sou..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "certainlogicai",
+      "userId": "s177n1vqbbxjdapw2fqneax5qd8461jb",
+      "displayName": "CertainLogicAI",
+      "image": "https://avatars.githubusercontent.com/u/270056974?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 70,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778348903811,
+      "changelog": "Fixed all known issues: bundled real Python modules (tre.py, hallucination_detector.py), install.sh now does real installation with example.py, health validation test.py, SKILL.md claims separated Brain metrics vs TRE-specific, removed speculative 9/mo pricing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dc44161cb8a4b9b3a1c1a45a147709b4d25f74afd7c4f12b9ddcfb2e04f93cd5"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72317,
+  "uuid": "skill-clawhub-ticket-stats",
+  "skillKey": "clawhub-ticket-stats",
+  "name": "Ticket Stats",
+  "summary": "企业内部咨询工单统计分析。用于处理Excel格式的工单数据，统计每日接收工单数量、处理完成数量、未及时回复数量，并根据关键词自动归类到功能模块（订单交易、经营数据、门店设置、账号管理、商品管理、营销活动、顾客评价），生成带可视化图表的每日摘要报告。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ticket_stats",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FlankCat",
+      "features": [
+        "企业内部咨询工单统计分析。用于处理Excel格式的工单数据，统计每日接收工单数量、处理完成数量、未及时回复数量，并根据关键词自动归类到功能模块（订单交易、经营数据、门店设置、账号管理、商品管."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ticket-stats@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259279057?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ticket-stats",
+      "url": "https://clawhub.ai/skills/ticket-stats"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ticket-stats",
+    "url": "https://clawhub.ai/skills/ticket-stats",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ticket-stats-e6e02ab349001e2c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ticket-stats@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ticket-stats-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:903af658f319e0f69afdd60f126c0da706a0bf9114480fc17f524b88861d05e0",
+      "artifactSizeBytes": 2499
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T09:25:17.737Z"
+}

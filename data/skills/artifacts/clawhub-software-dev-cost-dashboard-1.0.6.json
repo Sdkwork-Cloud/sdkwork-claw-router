@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/software-dev-cost-dashboard@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.software_dev_cost_dashboard",
+  "skill": {
+    "id": 73641,
+    "skillKey": "clawhub-software-dev-cost-dashboard",
+    "name": "软件成本评估办法"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "software-dev-cost-dashboard",
+    "url": "https://clawhub.ai/skills/software-dev-cost-dashboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/software-dev-cost-dashboard-265e231d8f714254.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "软件成本评估看板。当用户提到软件开发成本评估、项目报价、工时估算、成本分析、立项评估、软件预算时，务必使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "allinherog-star",
+      "userId": "s170csjxstq1phf1asrb2pb1kh83zy7a",
+      "displayName": "allinherog-star",
+      "image": "https://avatars.githubusercontent.com/u/243965348?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 259,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1777359310734,
+      "changelog": "software-dev-cost-dashboard v1.0.6\n\n- Simplified documentation, focusing on when and how to use the skill.\n- Clarified usage instructions and main scenarios.\n- Updated security note: emphasizes direct browser access and external data policy.\n- Removed outdated agent scripts, references, and local invocation instructions.\n- Added minimal metadata file (_meta.json) for streamlined integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6d619309f3c5f34a95bbf111270fc62851f31d4cfef8555c757df3a258b7606b"
+}

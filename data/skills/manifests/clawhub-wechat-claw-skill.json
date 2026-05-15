@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70254,
+  "uuid": "skill-clawhub-wechat-claw-skill",
+  "skillKey": "clawhub-wechat-claw-skill",
+  "name": "wechat-claw-skill",
+  "summary": "微信公众号文章全自动写作与发布。从信息搜集、AI配图规划、报刊级 HTML 排版、到草稿创建和发布的完整流程。适用于 AI 日报、财经周报、深度分析、新闻资讯类文章。内置多种模板，并提供本地渲染、校验、图片规划和发布流水线脚本。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_claw_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "th3ee9ine",
+      "features": [
+        "微信公众号文章全自动写作与发布。从信息搜集、AI配图规划、报刊级 HTML 排版、到草稿创建和发布的完整流程。适用于 AI 日报、财经周报、深度分析、新闻资讯类文章。内置多种模板，并提供本地."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-claw-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59878042?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-claw-skill",
+      "url": "https://clawhub.ai/skills/wechat-claw-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-claw-skill",
+    "url": "https://clawhub.ai/skills/wechat-claw-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-claw-skill-82789e2c895fc277.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-claw-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-claw-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0d98302adeb6dd36c00c246549794b2d49639320885694767b86091ec8bc303d",
+      "artifactSizeBytes": 3059
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T15:01:35.215Z"
+}

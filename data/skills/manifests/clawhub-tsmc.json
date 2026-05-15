@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31434,
+  "uuid": "skill-clawhub-tsmc",
+  "skillKey": "clawhub-tsmc",
+  "name": "Tsmc",
+  "summary": "Information assistant for TSMC. Search products, news, financials, and official resources for TSMC.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tsmc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Information assistant for TSMC",
+        "Search products, news, financials, and official resources for TSMC."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tsmc@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tsmc",
+      "url": "https://clawhub.ai/skills/tsmc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tsmc",
+    "url": "https://clawhub.ai/skills/tsmc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tsmc-17b7a45dc3a95bfd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tsmc@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-tsmc-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d76b346ca393bfbbd80000e07354dc50abffd54d3e1490ff516d180c5cd553cc",
+      "artifactSizeBytes": 2171
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T23:27:41.300Z"
+}

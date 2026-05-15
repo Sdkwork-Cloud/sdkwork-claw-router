@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66200,
+  "uuid": "skill-clawhub-roadbook-csv-1-0-0",
+  "skillKey": "clawhub-roadbook-csv-1-0-0",
+  "name": "Roadbook Csv 1.0.0",
+  "summary": "通过 CSV 格式提交旅行线路数据，自动生成路书分享链接。数据存储在 Redis，支持多日行程、酒店住宿跨天衔接、高德地图可视化。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.roadbook_csv_1_0_0",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bryce",
+      "features": [
+        "通过 CSV 格式提交旅行线路数据，自动生成路书分享链接。数据存储在 Redis，支持多日行程、酒店住宿跨天衔接、高德地图可视化。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/roadbook-csv-1-0-0@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3108493?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "roadbook-csv-1-0-0",
+      "url": "https://clawhub.ai/skills/roadbook-csv-1-0-0"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "roadbook-csv-1-0-0",
+    "url": "https://clawhub.ai/skills/roadbook-csv-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/roadbook-csv-1-0-0-6ec20a8eb2ca26cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/roadbook-csv-1-0-0@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-roadbook-csv-1-0-0-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a99b2e50813ba1ecdd6d25acb85c05558fc7842a889043a56b579b2df8f2773c",
+      "artifactSizeBytes": 2187
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T14:27:57.053Z"
+}

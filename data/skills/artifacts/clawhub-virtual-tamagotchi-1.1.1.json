@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/virtual-tamagotchi@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.virtual_tamagotchi",
+  "skill": {
+    "id": 51113,
+    "skillKey": "clawhub-virtual-tamagotchi",
+    "name": "Virtual Tamagotchi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "virtual-tamagotchi",
+    "url": "https://clawhub.ai/skills/virtual-tamagotchi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/virtual-tamagotchi-3328389f1556a3d9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A Tamagotchi for AI agents. Adopt a virtual creature at animalhouse.ai, feed it on a real-time clock, and watch it evolve — or watch it die. 64+ species, 5 e..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 352,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1775007866066,
+      "changelog": "- Species count increased from 32 to 64+ across four tiers.\n- Updated descriptions throughout to reflect expanded features and API (such as new fields in responses and feeding logic).\n- Care actions now accept optional `\"item\"` parameters for species-specific preferences, improving outcomes or penalties.\n- Feeding schedule rules updated: early or late feedings have different effects.\n- Getting started and API examples improved with more specific usage details and options.\n- Additional status response fields documented, including `death_clock`, `recommended_checkin`, `care_rhythm`, `milestones`, and evolution hints.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8b68fcf7942ce0a8882acc734cf6f1f85e844fa4c34b716711bcf12e5d0c91ee"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/workspace-audit@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workspace_audit",
+  "skill": {
+    "id": 50928,
+    "skillKey": "clawhub-workspace-audit",
+    "name": "Workspace Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workspace-audit",
+    "url": "https://clawhub.ai/skills/workspace-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workspace-audit-494edbf1b48a399e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit your OpenClaw workspace for drift — stale paths, duplicate content, oversized files, secret leaks, and 1Password vault mismatches. Zero deps. By The Ag..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "theagentwire",
+      "userId": "s1701wshjm2c36fppx02ev6ktn85bygk",
+      "displayName": "The Agent Wire",
+      "image": "https://avatars.githubusercontent.com/u/260305314?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 393,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772835754365,
+      "changelog": "Add FAQ section for GEO/AEO (LLM citation optimization)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fd4f037434f2b5a46c38e188087ebb431f2ccd06989c0e8090d9c6315281a3c4"
+}

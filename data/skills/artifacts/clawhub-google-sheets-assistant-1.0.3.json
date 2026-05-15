@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-sheets-assistant@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_sheets_assistant",
+  "skill": {
+    "id": 40284,
+    "skillKey": "clawhub-google-sheets-assistant",
+    "name": "Google Sheets Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-sheets-assistant",
+    "url": "https://clawhub.ai/skills/google-sheets-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-sheets-assistant-5ee35df62832ca3e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read, write, and analyze Google Sheets with AI-powered insights, formula generation, and data summarization. Powered by evolink.ai"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "evolinkai",
+      "userId": "s176k82x7tm60j2kx309p7evxs83j3z7",
+      "displayName": "EvolinkAI",
+      "image": "https://avatars.githubusercontent.com/u/253253881?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775546921535,
+      "changelog": "Clean publish: remove npm installer from package to resolve instruction-only audit flag",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1eda24c0af8fd4524cc8d2bc5136e5ec7e8565d991f852b095632c5195dd9524"
+}

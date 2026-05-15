@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25852,
+  "uuid": "skill-clawhub-ltpm",
+  "skillKey": "clawhub-ltpm",
+  "name": "Long-term Task Progress Manager",
+  "summary": "Manages multi-session, multi-stage projects by maintaining and syncing MISSION.md, PROGRESS.md, and NEXT_STEPS.md for seamless long-term progress tracking.",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ltpm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bono5137",
+      "features": [
+        "Manages multi-session, multi-stage projects by maintaining and syncing MISSION.md, PROGRESS.md,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ltpm@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7820612?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ltpm",
+      "url": "https://clawhub.ai/skills/ltpm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ltpm",
+    "url": "https://clawhub.ai/skills/ltpm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ltpm-89683649d8552b14.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ltpm@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ltpm-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0c313fea681e58f9f45cedc897c543ade26a37b696b4a36e459ba8b7c970b537",
+      "artifactSizeBytes": 2446
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T15:33:08.210Z"
+}

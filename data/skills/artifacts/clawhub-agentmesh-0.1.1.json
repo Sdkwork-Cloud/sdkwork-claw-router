@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentmesh@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentmesh",
+  "skill": {
+    "id": 15410,
+    "skillKey": "clawhub-agentmesh",
+    "name": "AgentMesh"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentmesh",
+    "url": "https://clawhub.ai/skills/agentmesh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentmesh-3f584baa09d4137b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides end-to-end encrypted, authenticated, and forward-secret messaging between AI agents with cryptographic identities and tamper-proof delivery."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cerbug45",
+      "userId": "s170r0ajc2x7b9pyqmvrajgtxx85hz4r",
+      "displayName": "cerbug45",
+      "image": "https://avatars.githubusercontent.com/u/43820349?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 991,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1772131138950,
+      "changelog": "- Major internal restructuring: migrated all core source files from the top level to src/agentmesh/.\n- All example scripts moved from project root to examples/ directory.\n- Test files relocated to tests/ directory.\n- Updated packaging and references to support the new source layout.\n- Deprecated legacy top-level Python files; all code organization now follows standard Python packaging conventions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9b26becb1df38216b2cefdf36af5608aafe2e67f6c7b0a4ae83df6de56ad5f50"
+}

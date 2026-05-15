@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72328,
+  "uuid": "skill-clawhub-jike-cookbook-query",
+  "skillKey": "clawhub-jike-cookbook-query",
+  "name": "菜谱查询 - 即刻数据",
+  "summary": "菜谱查询。支持食材列表查询、菜谱搜索、菜谱详情和随机菜谱，返回菜名、分类、耗时、口味、烹饪方式、主料辅料和做法步骤。适用场景：用户说“搜一下西红柿炒鸡蛋菜谱”“随机推荐几个菜”“查菜谱 ID 6 的做法”“鸡蛋相关食材信息”等。数据由即刻数据（jikeapi.cn）开放接口提供。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jike_cookbook_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jikeapi",
+      "features": [
+        "菜谱查询。支持食材列表查询、菜谱搜索、菜谱详情和随机菜谱，返回菜名、分类、耗时、口味、烹饪方式、主料辅料和做法步骤。适用场景：用户说“搜一下西红柿炒鸡蛋菜谱”“随机推荐几个菜”“查菜谱 ID."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jike-cookbook-query@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26078515?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jike-cookbook-query",
+      "url": "https://clawhub.ai/skills/jike-cookbook-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jike-cookbook-query",
+    "url": "https://clawhub.ai/skills/jike-cookbook-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jike-cookbook-query-24c2aab1c7052f4c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jike-cookbook-query@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jike-cookbook-query-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2eb85bec9269dabb612f5ed47e5a0ec9a202155c41fddc5c63016c18133cc027",
+      "artifactSizeBytes": 2186
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T06:51:09.415Z"
+}

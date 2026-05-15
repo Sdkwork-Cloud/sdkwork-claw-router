@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/god-mode-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.god_mode_skill",
+  "skill": {
+    "id": 19624,
+    "skillKey": "clawhub-god-mode-skill",
+    "name": "God Mode Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "god-mode-skill",
+    "url": "https://clawhub.ai/skills/god-mode-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/god-mode-skill-95600b579a65b89a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "God's eye view of your dev repos. Multi-project tracking across GitHub/Azure DevOps. AI learns from your commits to upgrade your agents.md."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wetzja04-dot",
+      "userId": "s17dt1aj82amhm7d5cn3647bns83vrhh",
+      "displayName": "wetzja04@gmail.com",
+      "image": "https://avatars.githubusercontent.com/u/228270231?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 581,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772126718821,
+      "changelog": "Initial release of god-mode: conversational, multi-repo project oversight and AGENTS.md analysis for developers and teams.\n\n- Conversational interface for multi-project tracking across GitHub and Azure DevOps.\n- Summarizes commit activity, pull requests, and issues in plain English.\n- LLM-powered analysis and recommendations for improving AGENTS.md based on commit history.\n- CLI and OpenClaw conversational modes supported; no direct token storage—uses existing authenticated CLIs.\n- Includes commands for syncing, reviewing, logging, and managing projects.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b449283aedeb41f3a36ff3f9d0fd15139ff0c384e8b3c6b01005d3e05b949162"
+}

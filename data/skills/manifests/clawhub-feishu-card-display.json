@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56675,
+  "uuid": "skill-clawhub-feishu-card-display",
+  "skillKey": "clawhub-feishu-card-display",
+  "name": "Feishu Card Display",
+  "summary": "Use when another skill returns Feishu display payloads or `messageToolCalls`. This skill teaches the agent to use OpenClaw `message` tool to send Feishu card...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_card_display",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yqxu",
+      "features": [
+        "Use when another skill returns Feishu display payloads or `messageToolCalls`",
+        "This skill teaches the agent to use OpenClaw `message` tool to send Feishu card..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-card-display@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26142185?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-card-display",
+      "url": "https://clawhub.ai/skills/feishu-card-display"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-card-display",
+    "url": "https://clawhub.ai/skills/feishu-card-display",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-card-display-0825e5b914d20a07.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-card-display@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-card-display-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a53a3d3b05b198b271d0ed43dd3af3e6c2eb5c5dec6e201a31cee46aacf0069e",
+      "artifactSizeBytes": 2029
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T16:12:37.023Z"
+}

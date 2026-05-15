@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51286,
+  "uuid": "skill-clawhub-openclaw-usage-manager",
+  "skillKey": "clawhub-openclaw-usage-manager",
+  "name": "OpenClaw Usage Manager",
+  "summary": "Monitors dual Claude Max accounts' 5h/7d usage, shows real-time dashboard, and auto-switches when utilization exceeds 80%.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_usage_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Takao-Mochizuki",
+      "features": [
+        "Monitors dual Claude Max accounts' 5h/7d usage, shows real-time dashboard, and auto-switches wh."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-usage-manager@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/241741609?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-usage-manager",
+      "url": "https://clawhub.ai/skills/openclaw-usage-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-usage-manager",
+    "url": "https://clawhub.ai/skills/openclaw-usage-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-usage-manager-831971e3fd2b703b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-usage-manager@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-usage-manager-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:62ae6ec112edc4885d41eb69984f04910e4d2aa6c5b4440c3ed5becbf4033222",
+      "artifactSizeBytes": 1975
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T14:53:50.287Z"
+}

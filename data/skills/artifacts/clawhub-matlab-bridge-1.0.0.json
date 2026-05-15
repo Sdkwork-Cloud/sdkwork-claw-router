@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/matlab-bridge@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.matlab_bridge",
+  "skill": {
+    "id": 67236,
+    "skillKey": "clawhub-matlab-bridge",
+    "name": "Matlab Bridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "matlab-bridge",
+    "url": "https://clawhub.ai/skills/matlab-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/matlab-bridge-c761d7eb5d560263.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MATLAB桥接技能，用于调用MATLAB进行仿真计算、数据分析和绘图。支持直接执行MATLAB代码、运行.m脚本、数据交互。适用于结构试验数据处理、振动分析、有限元后处理等场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jirboy",
+      "userId": "s172kehers3wd9ajz7fymawqnn843cz8",
+      "displayName": "JIRBOY",
+      "image": "https://avatars.githubusercontent.com/u/49422297?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776337554379,
+      "changelog": "matlab-bridge v1.0.0\n\n- 首次发布，支持从 SuperMike 中直接调用 MATLAB 进行仿真、数据分析和科学绘图\n- 支持直接执行 MATLAB 代码、运行 .m 脚本、Python 与 MATLAB 数据交互\n- 实现自动生成高质量图表并批量处理数据文件\n- 适用于结构试验、振动分析、数值和信号处理等多种科研场景\n- 提供详细配置指导、全面功能介绍及测试工具",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a9450c6f6b2b327a19334a092c7ddcfa25c0a346a4cc9b48c1b6cc012a6cf04f"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ironprose@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ironprose",
+  "skill": {
+    "id": 55994,
+    "skillKey": "clawhub-ironprose",
+    "name": "Ironprose"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ironprose",
+    "url": "https://clawhub.ai/skills/ironprose",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ironprose-d7503f024c79aefa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fiction prose analysis — catch weak verbs, repetition, clichés, passive voice, and other craft issues in manuscripts"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jpoehnelt",
+      "userId": "publishers:jpoehnelt",
+      "displayName": "Justin Poehnelt",
+      "image": "https://avatars.githubusercontent.com/u/3392975?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 333,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772912563428,
+      "changelog": "- CLI reference updated: agents are now advised to use `--help` for argument and flag introspection instead of relying solely on the documentation.\n- Redundant detailed command sections were removed from the documentation for conciseness.\n- No changes to tool functionality.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3f95df8fa42dc517c8e49f50fe04e87e6e0f2291009bae422daade1e07c0bb85"
+}

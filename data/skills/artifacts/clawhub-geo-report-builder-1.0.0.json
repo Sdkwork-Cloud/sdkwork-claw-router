@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/geo-report-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geo_report_builder",
+  "skill": {
+    "id": 20304,
+    "skillKey": "clawhub-geo-report-builder",
+    "name": "GEO Performance Report Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geo-report-builder",
+    "url": "https://clawhub.ai/skills/geo-report-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geo-report-builder-26b8ce4b0dddf717.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build comprehensive GEO performance reports with executive summaries, platform breakdowns, competitive analysis, and strategic action plans. Use whenever the..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "geoly-geo",
+      "userId": "publishers:geoly-geo",
+      "displayName": "GEOLY AI",
+      "image": "https://avatars.githubusercontent.com/u/70360114?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 561,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772280599076,
+      "changelog": "Initial release: Build structured GEO performance reports from raw metrics, GEOly AI report template",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e7c3811a5ba7700f38b5af069dadfac3273fbcf0f2a0de9a5e2ed9a8015a5b65"
+}

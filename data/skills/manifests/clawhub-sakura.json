@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61043,
+  "uuid": "skill-clawhub-sakura",
+  "skillKey": "clawhub-sakura",
+  "name": "Sakura python draw",
+  "summary": "使用Python的turtle和random库，递归绘制分形樱花树，并动画模拟花瓣自然飘落效果。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sakura",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wow",
+      "features": [
+        "使用Python的turtle和random库，递归绘制分形樱花树，并动画模拟花瓣自然飘落效果。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sakura@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/178591028?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sakura",
+      "url": "https://clawhub.ai/skills/sakura"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sakura",
+    "url": "https://clawhub.ai/skills/sakura",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sakura-d41dc6385e804fd6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sakura@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sakura-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:05896a2b9b833a0aa1b40664ec4c17bbc6dcabf5ba8f86741b2ab34a2c8c64de",
+      "artifactSizeBytes": 2172
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T10:35:53.517Z"
+}

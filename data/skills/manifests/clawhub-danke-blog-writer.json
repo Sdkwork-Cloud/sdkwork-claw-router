@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69857,
+  "uuid": "skill-clawhub-danke-blog-writer",
+  "skillKey": "clawhub-danke-blog-writer",
+  "name": "Danke Blog Writer",
+  "summary": "晨玙（老板）的专属博客写作助手。整合选题→标题→起草→去 AI 味→发布的完整工作流，输出自然、直接、有判断力的个人风格内容，适用于技术、AI、生活观察类博客。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.danke_blog_writer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AlexShen",
+      "features": [
+        "晨玙（老板）的专属博客写作助手。整合选题→标题→起草→去 AI 味→发布的完整工作流，输出自然、直接、有判断力的个人风格内容，适用于技术、AI、生活观察类博客。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/danke-blog-writer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/73343630?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "danke-blog-writer",
+      "url": "https://clawhub.ai/skills/danke-blog-writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "danke-blog-writer",
+    "url": "https://clawhub.ai/skills/danke-blog-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/danke-blog-writer-2c0ad18b8ccce3c5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/danke-blog-writer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-danke-blog-writer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e1c9ad0afba2b66fde4020b17711d27dd9f7e7323f51aafb0c9a15ba5b5dfee",
+      "artifactSizeBytes": 2566
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T13:28:54.065Z"
+}

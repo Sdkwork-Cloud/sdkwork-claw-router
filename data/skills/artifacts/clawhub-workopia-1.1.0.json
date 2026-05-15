@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/workopia@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workopia",
+  "skill": {
+    "id": 51686,
+    "skillKey": "clawhub-workopia",
+    "name": "Workopia — Jobs, Resumes & Career Advice"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workopia",
+    "url": "https://clawhub.ai/skills/workopia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workopia-4beab27ad2fbfc06.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search jobs, build professional resumes, and get career advice using Workopia's MCP server. Use when users ask about job searching, finding jobs, resume buil..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shuangshuang007",
+      "userId": "s17cjf2w5g00rpamk8zm2agve984dgrh",
+      "displayName": "Shuangshuang007",
+      "image": "https://avatars.githubusercontent.com/u/56859365?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 208,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776304814391,
+      "changelog": "Fix: GET endpoint now returns 200 (was 401). Privacy page updated with explicit MCP stateless guarantees. No auth required for any tool.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:50b9bd29c6fb31dc1cfe592106a53e6fb9d2a2cf1430f277b54bfc20c410b794"
+}

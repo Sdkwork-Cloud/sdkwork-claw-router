@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18944,
+  "uuid": "skill-clawhub-slack-socket",
+  "skillKey": "clawhub-slack-socket",
+  "name": "Slack (Socket Mode)",
+  "summary": "Use when you need to control Slack from OpenClaw via the message tool, including reacting to messages or pinning/unpinning items in Slack channels or DMs.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slack_socket",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yamini Chua",
+      "features": [
+        "Use when you need to control Slack from OpenClaw via the message tool, including reacting to me."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/slack-socket@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19670160?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "slack-socket",
+      "url": "https://clawhub.ai/skills/slack-socket"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slack-socket",
+    "url": "https://clawhub.ai/skills/slack-socket",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slack-socket-6a495a32718df036.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/slack-socket@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-slack-socket-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d1220a9c29e3307c306dc0ca8a1dc5751a19f4746b81b706edec2885c4ee6999",
+      "artifactSizeBytes": 2007
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T13:51:52.768Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-art@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_art",
+  "skill": {
+    "id": 17919,
+    "skillKey": "clawhub-claw-art",
+    "name": "Claw Art"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-art",
+    "url": "https://clawhub.ai/skills/claw-art",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-art-680f9756e726d213.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when generating AI art or need to craft high-quality image prompts. Elite AI artist specializing in hyper-detailed, stunning visuals across any style."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "asimons81",
+      "userId": "s17cyvwqx8jp9cdsp14hbw4wgs83gw6d",
+      "displayName": "Tony Simons",
+      "image": "https://avatars.githubusercontent.com/u/214744153?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 624,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772171479998,
+      "changelog": "Initial publish: elite AI art prompting skill",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e65406076275170b312e5a4d38bd83bbae9a352f9139db82b29304643ee795b5"
+}

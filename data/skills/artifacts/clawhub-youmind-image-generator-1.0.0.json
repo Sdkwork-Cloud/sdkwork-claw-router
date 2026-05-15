@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youmind-image-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youmind_image_generator",
+  "skill": {
+    "id": 50993,
+    "skillKey": "clawhub-youmind-image-generator",
+    "name": "AI Image Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youmind-image-generator",
+    "url": "https://clawhub.ai/skills/youmind-image-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youmind-image-generator-5a244df5da82deca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate AI images from text prompts — one API key for GPT Image, Gemini, Seedream, and 10+ models. No juggling subscriptions. Images saved to your YouMind k..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dophinl",
+      "userId": "s171amf9q4jyjb07zrx3cynvnd83gd8q",
+      "displayName": "Jared.Liu",
+      "image": "https://avatars.githubusercontent.com/u/8707316?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 373,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773735168552,
+      "changelog": "Initial release: generate AI images via YouMind — one API key for GPT Image, Gemini, Seedream",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c83b56e77249d82ba79644a077d3c934246133c136708dbda24ea56e90386e9b"
+}

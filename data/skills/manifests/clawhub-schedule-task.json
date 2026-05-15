@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44918,
+  "uuid": "skill-clawhub-schedule-task",
+  "skillKey": "clawhub-schedule-task",
+  "name": "Schedule Task",
+  "summary": "Schedule and run recurring tasks on Linux/Unix systems. Use when user wants to set up cron jobs, scheduled backups, periodic data sync, automated reports, or...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.schedule_task",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BIN",
+      "features": [
+        "Schedule and run recurring tasks on Linux/Unix systems",
+        "Use when user wants to set up cron jobs, scheduled backups, periodic data sync, automated repor."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/schedule-task@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9191597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "schedule-task",
+      "url": "https://clawhub.ai/skills/schedule-task"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "schedule-task",
+    "url": "https://clawhub.ai/skills/schedule-task",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/schedule-task-223e64e7215e8157.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/schedule-task@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-schedule-task-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:46b3dd2af7a03f077548eebd567a19130a61da3351c572d03910af56a896f939",
+      "artifactSizeBytes": 1874
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T16:30:06.011Z"
+}

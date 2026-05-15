@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11097,
+  "uuid": "skill-clawhub-yt-dlp",
+  "skillKey": "clawhub-yt-dlp",
+  "name": "Yt Dlp",
+  "summary": "A robust CLI wrapper for yt-dlp to download videos, playlists, and audio from YouTube and thousands of other sites. Supports format selection, quality control, metadata embedding, and cookie authentication.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yt_dlp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "azzar budiyanto",
+      "features": [
+        "A robust CLI wrapper for yt-dlp to download videos, playlists, and audio from YouTube and thous.",
+        "Supports format selection, quality control, metadata embedding, and cookie authentication."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yt-dlp@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48999412?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yt-dlp",
+      "url": "https://clawhub.ai/skills/yt-dlp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yt-dlp",
+    "url": "https://clawhub.ai/skills/yt-dlp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yt-dlp-5a9c6448223eb49c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yt-dlp@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-yt-dlp-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a646b8043d960bf0b41c5c8e2f54565dbab8cb817519c54d7837d670372067db",
+      "artifactSizeBytes": 2218
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T23:53:15.975Z"
+}

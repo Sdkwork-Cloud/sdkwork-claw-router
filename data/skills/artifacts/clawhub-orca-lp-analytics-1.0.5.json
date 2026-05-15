@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/orca-lp-analytics@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.orca_lp_analytics",
+  "skill": {
+    "id": 49297,
+    "skillKey": "clawhub-orca-lp-analytics",
+    "name": "orca-lp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "orca-lp-analytics",
+    "url": "https://clawhub.ai/skills/orca-lp-analytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/orca-lp-analytics-43720ed10cf97dfc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Full-stack Orca Whirlpool agent — read-only pool analytics (discovery, ranking, 6-month stability, range sizing, Monte Carlo projection, retrospective yield,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kaizen-orca",
+      "userId": "s176vpzaqvkkbsj0g78sgkjbxs85aqkc",
+      "displayName": "orca",
+      "image": "https://avatars.githubusercontent.com/u/211738087?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 278,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 4,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1777790210937,
+      "changelog": "orca-lp-analytics v1.0.5\n\n- No functional changes to analytics or on-chain operations.\n- Documentation and core files remain unchanged in this version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0af2b8dba540469c327ad434919aa1f0c4812824284a729490af3bed35e842ea"
+}

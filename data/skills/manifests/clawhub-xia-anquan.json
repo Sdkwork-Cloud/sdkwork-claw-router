@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61570,
+  "uuid": "skill-clawhub-xia-anquan",
+  "skillKey": "clawhub-xia-anquan",
+  "name": "虾安全",
+  "summary": "虾安全 — 基于腾讯/字节研究报告的 OpenClaw Agent 安全监控 skill。监控 CIK（Capability/Identity/Knowledge）三个维度，检测持久状态污染攻击、凭证外传、可疑脚本。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xia_anquan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "luis1213899",
+      "features": [
+        "虾安全 — 基于腾讯/字节研究报告的 OpenClaw Agent 安全监控 skill。监控 CIK（Capability/Identity/Knowledge）三个维度，检测持久状态污染."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xia-anquan@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266679161?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xia-anquan",
+      "url": "https://clawhub.ai/skills/xia-anquan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xia-anquan",
+    "url": "https://clawhub.ai/skills/xia-anquan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xia-anquan-c94a46935d23fa74.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xia-anquan@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xia-anquan-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:127c221651173a0f8993a232e578f5ce58030bba0b51cccb667f616c13ede75c",
+      "artifactSizeBytes": 1976
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T08:07:32.638Z"
+}

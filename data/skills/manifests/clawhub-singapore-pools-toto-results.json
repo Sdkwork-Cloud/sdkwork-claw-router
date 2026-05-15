@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28860,
+  "uuid": "skill-clawhub-singapore-pools-toto-results",
+  "skillKey": "clawhub-singapore-pools-toto-results",
+  "name": "Singapore Pools TOTO Results",
+  "summary": "Fetch and summarize latest Singapore Pools TOTO results from official Singapore Pools data files (normal, cascade, hongbao, special). Use when users ask for...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.singapore_pools_toto_results",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bluesneed",
+      "features": [
+        "Fetch and summarize latest Singapore Pools TOTO results from official Singapore Pools data file.",
+        "Use when users ask for..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/singapore-pools-toto-results@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8289994?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "singapore-pools-toto-results",
+      "url": "https://clawhub.ai/skills/singapore-pools-toto-results"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "singapore-pools-toto-results",
+    "url": "https://clawhub.ai/skills/singapore-pools-toto-results",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/singapore-pools-toto-results-b116057a0e2db5f9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/singapore-pools-toto-results@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-singapore-pools-toto-results-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:96290e30c8133d5240fdecc1eaa4d2a83d64c81e2815826c8864445007a962bd",
+      "artifactSizeBytes": 2435
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T05:58:14.534Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32434,
+  "uuid": "skill-clawhub-qwencloud-vision",
+  "skillKey": "clawhub-qwencloud-vision",
+  "name": "qwencloud-vision",
+  "summary": "[QwenCloud] Understand images and videos with Qwen vision models. TRIGGER when: user wants to analyze, describe, or extract information from images or videos...",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qwencloud_vision",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cuixiaoyang123",
+      "features": [
+        "[QwenCloud] Understand images and videos with Qwen vision models",
+        "TRIGGER when: user wants to analyze, describe, or extract information from images or videos..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qwencloud-vision@0.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42457946?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qwencloud-vision",
+      "url": "https://clawhub.ai/skills/qwencloud-vision"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qwencloud-vision",
+    "url": "https://clawhub.ai/skills/qwencloud-vision",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qwencloud-vision-92e8d3fad0cedd95.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qwencloud-vision@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-qwencloud-vision-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9b00c977e0b53803b76d35031c520e8e34d52f9873ad86391399842c687573a9",
+      "artifactSizeBytes": 2088
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T14:14:50.907Z"
+}

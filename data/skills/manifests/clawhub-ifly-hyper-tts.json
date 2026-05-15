@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66669,
+  "uuid": "skill-clawhub-ifly-hyper-tts",
+  "skillKey": "clawhub-ifly-hyper-tts",
+  "name": "ifly-hyper-tts",
+  "summary": "讯飞超拟人语音合成 - 支持文本转语音、语音合成（发音人/语速/语调/音量/输出格式）。大模型语音合成技能。语音合成, 文字转语音, 超拟人, TTS. 用户指令如\"把这段文案读出来\"时使用此Skill。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ifly_hyper_tts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iflytek AIcloud",
+      "features": [
+        "讯飞超拟人语音合成",
+        "支持文本转语音、语音合成（发音人/语速/语调/音量/输出格式）。大模型语音合成技能。语音合成, 文字转语音, 超拟人, TTS",
+        "用户指令如\"把这段文案读出来\"时使用此Skill。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ifly-hyper-tts@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/162573515?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ifly-hyper-tts",
+      "url": "https://clawhub.ai/skills/ifly-hyper-tts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ifly-hyper-tts",
+    "url": "https://clawhub.ai/skills/ifly-hyper-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ifly-hyper-tts-c6ba6002a19694b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ifly-hyper-tts@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ifly-hyper-tts-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:690d2efb88d8baafc0ff0475df1649c0bbc2c0880801bb8d8245498bbfbf7bac",
+      "artifactSizeBytes": 2520
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T15:32:24.920Z"
+}

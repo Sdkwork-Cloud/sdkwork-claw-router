@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sellersprite-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sellersprite_api",
+  "skill": {
+    "id": 52510,
+    "skillKey": "clawhub-sellersprite-api",
+    "name": "Sellersprite Api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sellersprite-api",
+    "url": "https://clawhub.ai/skills/sellersprite-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sellersprite-api-b75c4c6414c49260.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "SellerSprite Product Research — Fetch Amazon market data via SellerSprite API: product research, keyword analysis, competitor lookup, ASIN details, Blue Ocea..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "boyd4y",
+      "userId": "s1757rnrfs9d1em0chtwvhk16x83mtxg",
+      "displayName": "Yang Jun",
+      "image": "https://avatars.githubusercontent.com/u/815438?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774513578456,
+      "changelog": "Initial release of SellerSprite Product Research skill.\n\n- Fetch Amazon data using SellerSprite API for product, keyword, ASIN, and market analysis.\n- Supports commands for product research, competitor lookup, keyword analysis, and Blue Ocean Index scoring.\n- Requires SellerSprite Open API secret key; can be set via environment variable or CLI config.\n- Includes detailed CLI usage and command descriptions.\n- Offers options for marketplace, time period, page size, format, and more.\n- Reference documentation provided for API endpoints, supported marketplaces, and error handling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:171f8b54c564866255cf08bfbb549bf963661b39c6a89d7ca92d101e3fe3a236"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12997,
+  "uuid": "skill-clawhub-convert-to-pdf",
+  "skillKey": "clawhub-convert-to-pdf",
+  "name": "Convert to PDF",
+  "summary": "Convert one or multiple documents to PDF by uploading them to Cross-Service-Solutions, polling until completion, then returning download URL(s) for the converted PDF(s) (or a ZIP if multiple).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.convert_to_pdf",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CrossServiceSolutions",
+      "features": [
+        "Convert one or multiple documents to PDF by uploading them to Cross-Service-Solutions, polling."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/convert-to-pdf@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201191521?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "convert-to-pdf",
+      "url": "https://clawhub.ai/skills/convert-to-pdf"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "convert-to-pdf",
+    "url": "https://clawhub.ai/skills/convert-to-pdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/convert-to-pdf-40c70297e2f6c5ea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/convert-to-pdf@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-convert-to-pdf-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:51201bb44caae47e63e89b8741a656d5adcea6feccf7091d7d4815cc2bc690a6",
+      "artifactSizeBytes": 2196
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T02:24:52.154Z"
+}

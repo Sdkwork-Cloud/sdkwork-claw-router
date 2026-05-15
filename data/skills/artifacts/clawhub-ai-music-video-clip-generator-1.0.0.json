@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-music-video-clip-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_music_video_clip_generator",
+  "skill": {
+    "id": 42197,
+    "skillKey": "clawhub-ai-music-video-clip-generator",
+    "name": "Ai Music Video Clip Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-music-video-clip-generator",
+    "url": "https://clawhub.ai/skills/ai-music-video-clip-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-music-video-clip-generator-39605cb9d195bd20.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate audio files into synced music videos with this skill. Works with MP3, WAV, MP4, MOV files up to 500MB. musicians and content creators use it for gen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776761313689,
+      "changelog": "AI Music Video Clip Generator — Initial Release\n\n- Generate synced music videos from audio files (MP3, WAV, MP4, MOV up to 500MB)\n- Fast cloud-based processing: create 1080p MP4 clips in 1–2 minutes (shorter clips recommended for best results)\n- Simple session setup with free token and 100 credits for new users\n- Clear command structure for uploading, generating, editing, checking credits, and exports\n- Supports credit management, status queries, and robust error handling\n- Works entirely online—no installation required; ideal for musicians and content creators",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2c16a305be0be0be36f7a9520afd642d17d9b12888bc6dc43cdfb242b7082672"
+}

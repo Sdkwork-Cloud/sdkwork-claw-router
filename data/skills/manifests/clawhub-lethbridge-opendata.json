@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37074,
+  "uuid": "skill-clawhub-lethbridge-opendata",
+  "skillKey": "clawhub-lethbridge-opendata",
+  "name": "City of Lethbridge Open Data",
+  "summary": "Access 123+ datasets from the City of Lethbridge open data portal. Search, fetch, and analyze city data on transit, infrastructure, elections, environment, a...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lethbridge_opendata",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ray Chan, PMP",
+      "features": [
+        "Access 123+ datasets from the City of Lethbridge open data portal",
+        "Search, fetch, and analyze city data on transit, infrastructure, elections, environment, a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lethbridge-opendata@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63657868?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lethbridge-opendata",
+      "url": "https://clawhub.ai/skills/lethbridge-opendata"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lethbridge-opendata",
+    "url": "https://clawhub.ai/skills/lethbridge-opendata",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lethbridge-opendata-e84c610243362876.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lethbridge-opendata@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-lethbridge-opendata-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0d71857f5bc97ec5d8dbdbf5172260403a6601648cc50b0257430ca52602e437",
+      "artifactSizeBytes": 1972
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T02:30:41.286Z"
+}

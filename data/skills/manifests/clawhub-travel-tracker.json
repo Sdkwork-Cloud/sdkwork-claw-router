@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60919,
+  "uuid": "skill-clawhub-travel-tracker",
+  "skillKey": "clawhub-travel-tracker",
+  "name": "Travel Tracker",
+  "summary": "管理和统计工作/生活外出记录，生成 Excel 报表，同步到 Obsidian。 Use when: 查询外出记录、统计外出次数、生成外出 Excel 报表、同步外出数据到 Obsidian、自动从日历提取外出、设置外出提醒。Triggers: \"外出统计\", \"外出记录\", \"travel report\", \"...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.travel_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "m646pxhjf4-dot",
+      "features": [
+        "管理和统计工作/生活外出记录，生成 Excel 报表，同步到 Obsidian。 Use when: 查询外出记录、统计外出次数、生成外出 Excel 报表、同步外出数据到 Obsidian."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/travel-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267261318?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "travel-tracker",
+      "url": "https://clawhub.ai/skills/travel-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "travel-tracker",
+    "url": "https://clawhub.ai/skills/travel-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/travel-tracker-b50e1f774d9bf0e9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/travel-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-travel-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5640bb3d8efb3e02ee794284283ed27b9587caac3c081437bf30a79dabaac530",
+      "artifactSizeBytes": 2423
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T23:57:12.994Z"
+}

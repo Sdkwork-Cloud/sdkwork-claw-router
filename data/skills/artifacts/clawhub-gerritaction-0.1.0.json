@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gerritaction@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gerritaction",
+  "skill": {
+    "id": 27796,
+    "skillKey": "clawhub-gerritaction",
+    "name": "gerritaction"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gerritaction",
+    "url": "https://clawhub.ai/skills/gerritaction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gerritaction-edab5d04b607ecc1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Gerrit accounts, changes, groups, or projects and perform actions like adding reviewers, approving, submitting, or deleting changes via the Gerrit API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "craftslab",
+      "userId": "s175w99ap6xk0j3tw2ppjd4vpx842bh7",
+      "displayName": "Jia",
+      "image": "https://avatars.githubusercontent.com/u/49358172?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 340,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773825558804,
+      "changelog": "Initial release of Gerrit Action Skill.\n\n- Query Gerrit accounts, changes, groups, and projects via CLI with flexible selectors.\n- Perform actions on change queries: add/remove reviewers or attention, approve, delete, or submit changes.\n- Outputs results as JSON to file or standard output.\n- Strict invocation: only one query selector per command; actions require a change query.\n- Built-in safety guidelines to prevent accidental destructive actions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9c7753ef8fb36c94a6c7f05e7cd1f60754a5600f16ce2f466437487f2f76ba8f"
+}

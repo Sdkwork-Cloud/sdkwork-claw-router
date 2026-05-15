@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cloudflare-r2-s3@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloudflare_r2_s3",
+  "skill": {
+    "id": 61624,
+    "skillKey": "clawhub-cloudflare-r2-s3",
+    "name": "Cloudflare R2 S3 存储工具"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloudflare-r2-s3",
+    "url": "https://clawhub.ai/skills/cloudflare-r2-s3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloudflare-r2-s3-7806ba3e207a1973.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cloudflare R2 S3 兼容存储工具，支持配置 API 密钥、上传文件并获取公开访问地址。使用当需要上传文件到 Cloudflare R2 获取公开链接时。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chao-eng",
+      "userId": "s1749sn9sdmxnfey1y4h3ja1sn8418pm",
+      "displayName": "chao-eng",
+      "image": "https://avatars.githubusercontent.com/u/62085978?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775034220591,
+      "changelog": "初始版本：支持配置API密钥、上传文件并获取公开访问链接",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ea0b54ad32f35279f73e48c9d52917d71f2d4ca5e0247ab331c0a5b589c8475b"
+}

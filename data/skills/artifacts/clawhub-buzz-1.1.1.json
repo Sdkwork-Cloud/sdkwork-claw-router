@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/buzz@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.buzz",
+  "skill": {
+    "id": 21914,
+    "skillKey": "clawhub-buzz",
+    "name": "Buzz"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "buzz",
+    "url": "https://clawhub.ai/skills/buzz",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/buzz-9fff3bcb10ca5e87.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real-time news aggregator with Discord & Telegram push. Manage Jin10, BlockBeats, RSS, X KOLs, Polymarket, OpenNews via REST API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zxcnny930",
+      "userId": "publishers:zxcnny930",
+      "displayName": "zxcnny930",
+      "image": "https://avatars.githubusercontent.com/u/19372076?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 491,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1772443216688,
+      "changelog": "Add git to required bins, add security notice for config.json secrets and unauthenticated dashboard, add priceSpikeEnabled/volumeSpikeEnabled config docs",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2a17989be2b6054d33ddf8dcbfd98f8435da56df4811d747c2b7face2b2a15e0"
+}

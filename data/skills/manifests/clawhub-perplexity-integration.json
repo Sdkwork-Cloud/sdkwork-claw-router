@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36489,
+  "uuid": "skill-clawhub-perplexity-integration",
+  "skillKey": "clawhub-perplexity-integration",
+  "name": "Perplexity",
+  "summary": "Perplexity integration. Manage data, records, and automate workflows. Use when the user wants to interact with Perplexity data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.perplexity_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Perplexity integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Perplexity data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/perplexity-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "perplexity-integration",
+      "url": "https://clawhub.ai/skills/perplexity-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "perplexity-integration",
+    "url": "https://clawhub.ai/skills/perplexity-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/perplexity-integration-0c21417553c71879.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/perplexity-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-perplexity-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e0b3d8ce9921c0bf069ba088d9e9a8dd439c26b39fdd4c0bfc8e0e79d98ef8c",
+      "artifactSizeBytes": 1920
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:23:40.288Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ima-image-ai@1.0.14",
+  "version": "1.0.14",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ima_image_ai",
+  "skill": {
+    "id": 16635,
+    "skillKey": "clawhub-ima-image-ai",
+    "name": "IMA AI Image Generator & Photo Generator — Poster, Thumbnail, Logo, Art, Illustration, Product & Social Media Graphic Design"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ima-image-ai",
+    "url": "https://clawhub.ai/skills/ima-image-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ima-image-ai-33a35e90a3cb33fc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user needs image generation or image transformation through the IMA Open API, including text-to-image, image-to-image, style transfer, or refere..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "allenfancy-gan",
+      "userId": "s17etzvvhp65ybcxjyj408z1nx83hx8t",
+      "displayName": "allenfancy-gan",
+      "image": "https://avatars.githubusercontent.com/u/224295706?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1204,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 15
+    },
+    "latestVersion": {
+      "version": "1.0.14",
+      "createdAt": 1776915153672,
+      "changelog": "- Added compiled Python bytecode files (`.pyc`) for core runtime, adapters, capabilities, and shared modules.\n- Bundled prebuilt cache for CLI, setup, doctor, image capability execution, and shared utilities.\n- No changes to documentation or configuration files.\n- No functional code updates; this version introduces only precompiled assets for runtime modules.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c4be35e9dccc2dea4fdcbf405a8cd19bb2e9f700c3488c53b01601ce922f8793"
+}

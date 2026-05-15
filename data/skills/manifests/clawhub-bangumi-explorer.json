@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37908,
+  "uuid": "skill-clawhub-bangumi-explorer",
+  "skillKey": "clawhub-bangumi-explorer",
+  "name": "bangumi-explorer",
+  "summary": "Query Bangumi (bgm.tv) for anime, manga, light novels, games, and music. Search subjects, view details and episode lists, browse seasonal anime charts, ratin...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bangumi_explorer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MountLynx",
+      "features": [
+        "Query Bangumi (bgm.tv) for anime, manga, light novels, games, and music",
+        "Search subjects, view details and episode lists, browse seasonal anime charts, ratin..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bangumi-explorer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/165305764?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bangumi-explorer",
+      "url": "https://clawhub.ai/skills/bangumi-explorer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bangumi-explorer",
+    "url": "https://clawhub.ai/skills/bangumi-explorer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bangumi-explorer-ccb395e590a3e96b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bangumi-explorer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-bangumi-explorer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1b08721cc3e46c95d663202669ced7360442a003e84254299d53ec6518dd5cbe",
+      "artifactSizeBytes": 2133
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T13:28:57.518Z"
+}

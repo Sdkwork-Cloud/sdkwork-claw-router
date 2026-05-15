@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/currency-forecast-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.currency_forecast_pro",
+  "skill": {
+    "id": 30026,
+    "skillKey": "clawhub-currency-forecast-pro",
+    "name": "Currency Forecast Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "currency-forecast-pro",
+    "url": "https://clawhub.ai/skills/currency-forecast-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/currency-forecast-pro-c99d37b9af6f854f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Professional currency exchange rate analysis and forecasting for any currency pair. Provides technical analysis, trend prediction, and market insights using..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nicowu07",
+      "userId": "s17647gczyfp3q5kgy700yncm184n99k",
+      "displayName": "Nico Wu",
+      "image": "https://avatars.githubusercontent.com/u/20920436?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 280,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773895849046,
+      "changelog": "currency-forecast-pro 1.0.0\n\n- Initial release of a professional currency exchange rate analysis and forecasting tool.\n- Supports all major currency pairs with real-time data via Frankfurter API.\n- Provides technical analysis: moving averages, trend, support/resistance, volatility.\n- Forecasts with confidence intervals for 7-day and 30-day outlooks.\n- Real-time market context from web research and economic news.\n- No external dependencies required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4a090c922c2c6b7c27070ea1ca2b13598057ed48b362d0f5289fc9a3897c22fe"
+}

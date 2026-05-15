@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-lse-trading-agent@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_lse_trading_agent",
+  "skill": {
+    "id": 26215,
+    "skillKey": "clawhub-openclaw-lse-trading-agent",
+    "name": "Lse Trading Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-lse-trading-agent",
+    "url": "https://clawhub.ai/skills/openclaw-lse-trading-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-lse-trading-agent-b03aaf0402ec86c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "FTSE 350 trading analysis agent. Screens LSE stocks using technical indicators (Bollinger Bands, RSI, MACD, EMA crossovers, ATR, VWAP, OBV), fetches news for..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ankit-aglawe",
+      "userId": "publishers:ankit-aglawe",
+      "displayName": "Ankit Aglawe",
+      "image": "https://avatars.githubusercontent.com/u/36354348?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 372,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1772628880082,
+      "changelog": "Version 0.1.1 — Major update with full script implementation and core logic improvements.\n\n- Added core scripts for backtesting, config, FTSE 350 ticker sourcing, technical indicators, portfolio tracking, risk management, screener, and sentiment headline fetching.\n- Separated logic into modular Python scripts for each pipeline stage (screening, indicators, sentiment, backtest, risk, portfolio).\n- Revised agent workflow: sentiment is now assessed from raw headlines (not from pre-labeled FinBERT output).\n- Expanded and restructured documentation for all new scripts, command usage, and output expectations.\n- Updated and clarified risk management, portfolio tracking, and decision-making procedures.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:14a7fbb1e50a34e4e6c311f101f25e30f7909f2fbea33158d375d54ae7020b94"
+}

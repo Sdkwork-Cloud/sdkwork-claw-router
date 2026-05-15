@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32362,
+  "uuid": "skill-clawhub-liveview-code-review",
+  "skillKey": "clawhub-liveview-code-review",
+  "name": "Liveview Code Review",
+  "summary": "Reviews Phoenix LiveView code for lifecycle patterns, assigns/streams usage, components, and security. Use when reviewing LiveView modules, .heex templates,...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.liveview_code_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kevin Anderson",
+      "features": [
+        "Reviews Phoenix LiveView code for lifecycle patterns, assigns/streams usage, components, and se.",
+        "Use when reviewing LiveView modules, .heex templates,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/liveview-code-review@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17010022?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "liveview-code-review",
+      "url": "https://clawhub.ai/skills/liveview-code-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "liveview-code-review",
+    "url": "https://clawhub.ai/skills/liveview-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/liveview-code-review-a4addaba18c9b215.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/liveview-code-review@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-liveview-code-review-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b543810c94e97f02a3e9669ba7fa4f0ba3f366f2fca4b79ab0f033bb7244d9ea",
+      "artifactSizeBytes": 2237
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T04:11:48.602Z"
+}

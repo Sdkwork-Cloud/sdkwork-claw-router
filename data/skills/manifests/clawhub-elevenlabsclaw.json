@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25689,
+  "uuid": "skill-clawhub-elevenlabsclaw",
+  "skillKey": "clawhub-elevenlabsclaw",
+  "name": "Elevenlabs",
+  "summary": "Converts text to natural speech using ElevenLabs for clinical and healthcare use cases. Use when generating patient instructions, discharge summaries, medica...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.elevenlabsclaw",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Arun Nadarasa",
+      "features": [
+        "Converts text to natural speech using ElevenLabs for clinical and healthcare use cases",
+        "Use when generating patient instructions, discharge summaries, medica..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/elevenlabsclaw@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/186420617?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "elevenlabsclaw",
+      "url": "https://clawhub.ai/skills/elevenlabsclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "elevenlabsclaw",
+    "url": "https://clawhub.ai/skills/elevenlabsclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/elevenlabsclaw-5e4a8d93cdc10953.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/elevenlabsclaw@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-elevenlabsclaw-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cb870f8869afe4edf1bc296f92bf75c726da1cf1a67fed34f41abe959a910150",
+      "artifactSizeBytes": 2409
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T13:55:25.266Z"
+}

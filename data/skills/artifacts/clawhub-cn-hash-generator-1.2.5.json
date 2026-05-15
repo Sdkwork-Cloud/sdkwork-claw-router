@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cn-hash-generator@1.2.5",
+  "version": "1.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_hash_generator",
+  "skill": {
+    "id": 59320,
+    "skillKey": "clawhub-cn-hash-generator",
+    "name": "Hash生成器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-hash-generator",
+    "url": "https://clawhub.ai/skills/cn-hash-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-hash-generator-a37707b337153935.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Hash生成器工具。支持MD5/SHA-1/SHA-256/SHA-512/BLAKE2b哈希、Base64编解码、UUID生成、HMAC签名。纯Python标准库，无需API Key。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "freedompixels",
+      "userId": "s17cmvaw2cy01v6y6fpq1h7yts84k0r0",
+      "displayName": "freedompixels",
+      "image": "https://avatars.githubusercontent.com/u/220853702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 205,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.5",
+      "createdAt": 1777697336705,
+      "changelog": "Version 1.2.5\n\n- No changes detected in this version; content and functionality remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:52df4a5902244b23c52b11b4d9f9a2a13f2d18a6c759ec5a9044fbf4cb4cb924"
+}

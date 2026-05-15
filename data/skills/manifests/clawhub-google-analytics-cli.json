@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38261,
+  "uuid": "skill-clawhub-google-analytics-cli",
+  "skillKey": "clawhub-google-analytics-cli",
+  "name": "Google Analytics CLI",
+  "summary": "Google Analytics 4 data analysis and reporting via google-analytics-cli. Use when the user wants to check GA4 traffic, run reports with dimensions and metric...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_analytics_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bin-Huang",
+      "features": [
+        "Google Analytics 4 data analysis and reporting via google-analytics-cli",
+        "Use when the user wants to check GA4 traffic, run reports with dimensions and metric..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-analytics-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20723142?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-analytics-cli",
+      "url": "https://clawhub.ai/skills/google-analytics-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-analytics-cli",
+    "url": "https://clawhub.ai/skills/google-analytics-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-analytics-cli-e4f1d7cc77afe454.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-analytics-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-analytics-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2d4982c0186eca04f24dec49bea19b791a8df219d7ecd8d35b5c3dbffce83f3f",
+      "artifactSizeBytes": 2419
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T07:35:09.216Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/temporal-kg-synthesizer@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.temporal_kg_synthesizer",
+  "skill": {
+    "id": 41369,
+    "skillKey": "clawhub-temporal-kg-synthesizer",
+    "name": "Temporal Knowledge Graph Synthesizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "temporal-kg-synthesizer",
+    "url": "https://clawhub.ai/skills/temporal-kg-synthesizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/temporal-kg-synthesizer-94f7cf00ec5942eb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Actively parses daily session logs and unstructured memory files to extract entities, temporal data, and relationships into a structured Knowledge Graph."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "elmoorish",
+      "userId": "s17619gksayqehk3v7z1g0ccp183f2et",
+      "displayName": "The Mooorish",
+      "image": "https://avatars.githubusercontent.com/u/213910000?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774223408931,
+      "changelog": "Initial release of the Temporal Knowledge Graph Synthesizer.\n\n- Parses daily session logs and unstructured memory files.\n- Extracts entities, temporal data, and relationships.\n- Builds and updates a structured knowledge graph.\n- Designed for ongoing entity and timeline queries using structured Markdown data.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7468d821b63cc01f1dfb6b381ae3a808656897b4b6ab2752b917ca3365fa8d69"
+}

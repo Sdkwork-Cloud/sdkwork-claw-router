@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/swift-code-review@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swift_code_review",
+  "skill": {
+    "id": 30171,
+    "skillKey": "clawhub-swift-code-review",
+    "name": "Swift Code Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swift-code-review",
+    "url": "https://clawhub.ai/skills/swift-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swift-code-review-5f822acbe1ad956a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reviews Swift code for concurrency safety, error handling, memory management, and common mistakes. Use when reviewing .swift files for async/await patterns,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anderskev",
+      "userId": "s17b1fzefm8nj8j1sdkzrze7gn83pfrg",
+      "displayName": "Kevin Anderson",
+      "image": "https://avatars.githubusercontent.com/u/17010022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 278,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1776831221092,
+      "changelog": "**Major update: Review workflow and hard verification protocol introduced.**\n\n- Added a sequential review workflow ensuring Swift version context, full-symbol reading, scoped checklist, and verification protocol compliance before reporting findings.\n- Introduced \"Hard gates\" table summarizing mandatory review steps.\n- Clarified output format for reporting issues.\n- Checklist and reference sections retained; organization improved for easier, more reliable code reviews.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:21d6dbc3ad4c121b33dd50d0f52a4ad817313146f3757769352aadf97eb30d5b"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54336,
+  "uuid": "skill-clawhub-docusign",
+  "skillKey": "clawhub-docusign",
+  "name": "Docusign",
+  "summary": "DocuSign e-signatures — manage envelopes, templates, recipients, and signing via REST API",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docusign",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aiwithabidi",
+      "features": [
+        "DocuSign e-signatures — manage envelopes, templates, recipients, and signing via REST API"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/docusign@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208891229?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "docusign",
+      "url": "https://clawhub.ai/skills/docusign"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docusign",
+    "url": "https://clawhub.ai/skills/docusign",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docusign-24415532349ddf70.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/docusign@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-docusign-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:37f9997f85ca6ca9ec3f63c7b73bc1a16ce97588680abe486b249d32a9442533",
+      "artifactSizeBytes": 2180
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T22:52:53.849Z"
+}

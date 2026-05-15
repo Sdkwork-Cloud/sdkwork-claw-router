@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mermaid-visualizer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mermaid_visualizer",
+  "skill": {
+    "id": 21040,
+    "skillKey": "clawhub-mermaid-visualizer",
+    "name": "Mermaid Visualizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mermaid-visualizer",
+    "url": "https://clawhub.ai/skills/mermaid-visualizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mermaid-visualizer-2bca5b59848f8074.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transform text content into professional Mermaid diagrams for presentations and documentation. Use when users ask to visualize concepts, create flowcharts, o..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "axtonliu",
+      "userId": "publishers:axtonliu",
+      "displayName": "Axton",
+      "image": "https://avatars.githubusercontent.com/u/34881731?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 446,
+      "installsAllTime": 8,
+      "installsCurrent": 7,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773100495405,
+      "changelog": "- Added comprehensive English documentation (README.md) for setup and usage instructions.\n- Added Chinese-language documentation (README_CN.md) for broader accessibility.\n- No changes to core logic or configuration—this update is documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7879798eefb5541b98a5f1d88d26b4ba23c580dc5172896ac3722808f8251317"
+}

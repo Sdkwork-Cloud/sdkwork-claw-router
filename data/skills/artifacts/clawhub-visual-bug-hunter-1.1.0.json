@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/visual-bug-hunter@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.visual_bug_hunter",
+  "skill": {
+    "id": 63590,
+    "skillKey": "clawhub-visual-bug-hunter",
+    "name": "Visual Bug Hunter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "visual-bug-hunter",
+    "url": "https://clawhub.ai/skills/visual-bug-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/visual-bug-hunter-e6b44232f0143759.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "视觉 Bug 定位与修复 Skill。当用户描述 GUI App 或 Web App 存在视觉 Bug（按钮点不了、元素重叠、布局错位、样式异常），或 AI 反复修 Bug 但无法自检验证效果，或需要对应用进行 UI 自动化测试时触发。通过截图感知 + UI 交互测试 + 控制台捕获 + 代码精准定位的闭环流程，..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yitao2027",
+      "userId": "s1742qz1zf86mejyfxdr15fh5185032p",
+      "displayName": "yitao2027",
+      "image": "https://avatars.githubusercontent.com/u/271525838?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776419850010,
+      "changelog": "**Changelog for visual-bug-hunter v1.1.0**\n\n- Added explicit security and permission disclosures, clarifying no external credentials or sensitive file access are required.\n- Documented the install type as \"skill\" and limited the scope to the project directory only.\n- Updated technical descriptions to highlight the use of built-in AI platform capabilities without external APIs.\n- Clarified boundaries of file and process access for greater safety transparency.\n- Added a dedicated section comparing this skill with similar tools for clearer positioning.\n- Improved formatting, bug reporting, and verification examples for stronger usability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c8ad37967450f054dd5f0b689a94bd723f9ff40c64354cf3289b9ee09a981535"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/super-powers@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.super_powers",
+  "skill": {
+    "id": 35306,
+    "skillKey": "clawhub-super-powers",
+    "name": "Super Powers AI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "super-powers",
+    "url": "https://clawhub.ai/skills/super-powers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/super-powers-dc80df95b01b73da.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install and run the published SuperPowers desktop streamer npm package. Use when a user needs a portable ClawHub skill that installs the third-party npm pack..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rohanarun",
+      "userId": "s178v9ftj5rrrw3aajcnz5qxgs84b94e",
+      "displayName": "rohanarun",
+      "image": "https://avatars.githubusercontent.com/u/11659839?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1775539007961,
+      "changelog": "super-powers 1.0.4\n\n- Now installs the `superpowers-ai` npm package into a local `.superpowers/npm` directory instead of using global npm install.\n- All CLI commands run using the locally installed package from the isolated state directory.\n- Added explicit support and examples for `--stop`, `--whoami`, and `--logout` command options.\n- Updated documentation to clarify install location and usage patterns.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:96b1434150b8ee24a6b30074a16f25ecd3c7cf931f9fd5e1b4e69d6de039c66f"
+}

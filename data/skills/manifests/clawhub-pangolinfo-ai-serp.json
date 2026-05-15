@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16239,
+  "uuid": "skill-clawhub-pangolinfo-ai-serp",
+  "skillKey": "clawhub-pangolinfo-ai-serp",
+  "name": "Pangolinfo AI SERP: AI Mode Output + AI Overviews",
+  "summary": "Search Google programmatically and extract structured SERP data, Google AI Overviews (SGE), citations, screenshots, and AI Mode follow-up results. Use when y...",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pangolinfo_ai_serp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pangolinfo",
+      "features": [
+        "Search Google programmatically and extract structured SERP data, Google AI Overviews (SGE), cit.",
+        "Use when y..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pangolinfo-ai-serp@2.0.2",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/pangolinfo-ai-serp/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pangolinfo-ai-serp",
+      "url": "https://clawhub.ai/skills/pangolinfo-ai-serp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pangolinfo-ai-serp",
+    "url": "https://clawhub.ai/skills/pangolinfo-ai-serp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pangolinfo-ai-serp-0e126ef163284868.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pangolinfo-ai-serp@2.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-pangolinfo-ai-serp-2.0.2.json",
+      "version": "2.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:483badcfbece00c5fa2a93430bbe4de9584f2ac465483f8a70db074081f1474b",
+      "artifactSizeBytes": 2562
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T08:01:38.980Z"
+}

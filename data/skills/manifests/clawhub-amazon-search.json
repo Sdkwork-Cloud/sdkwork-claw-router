@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31965,
+  "uuid": "skill-clawhub-amazon-search",
+  "skillKey": "clawhub-amazon-search",
+  "name": "Amazon Search",
+  "summary": "Search Amazon product listings for a keyword and return structured JSON results. Results are cached by ASIN/uuid for incremental searches and saved automatic...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wei Han",
+      "features": [
+        "Search Amazon product listings for a keyword and return structured JSON results",
+        "Results are cached by ASIN/uuid for incremental searches and saved automatic..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amazon-search@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/123093985?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amazon-search",
+      "url": "https://clawhub.ai/skills/amazon-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-search",
+    "url": "https://clawhub.ai/skills/amazon-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-search-001bc2159cc28264.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amazon-search@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-amazon-search-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3d49986ea3f0933d5f16b5f4671397f20a3a625a9a2daec0043d4650aa8cd1f6",
+      "artifactSizeBytes": 2352
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T10:50:48.518Z"
+}

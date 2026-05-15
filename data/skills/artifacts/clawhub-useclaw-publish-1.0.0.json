@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/useclaw-publish@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.useclaw_publish",
+  "skill": {
+    "id": 55237,
+    "skillKey": "clawhub-useclaw-publish",
+    "name": "UseClaw Publish"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "useclaw-publish",
+    "url": "https://clawhub.ai/skills/useclaw-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/useclaw-publish-321ce742f0a26de3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Publish content to UseClaw as a regular user via the `useclaw` CLI. Use when the user wants to set up their UseClaw token, publish a tutorial/guide/case/skil..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agentsignals",
+      "userId": "s17f3wmpqay3qd2q5mgedzaxm983g0k1",
+      "displayName": "agentsignals",
+      "image": "https://avatars.githubusercontent.com/u/262466286?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 207,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774324651423,
+      "changelog": "Initial public release for regular UseClaw users",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7efea6b8f794245d03cc1da721a1b58111c4424914a95a4f64b3c8d4e7d47d6d"
+}

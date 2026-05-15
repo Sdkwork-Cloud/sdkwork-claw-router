@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42137,
+  "uuid": "skill-clawhub-pilot-document-processing-setup",
+  "skillKey": "clawhub-pilot-document-processing-setup",
+  "name": "Pilot Document Processing Setup",
+  "summary": "Deploy a document processing pipeline with 3 agents that automate ingestion, data extraction, and search indexing. Use this skill when: 1. User wants to set...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_document_processing_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "Deploy a document processing pipeline with 3 agents that automate ingestion, data extraction, a.",
+        "Use this skill when: 1",
+        "User wants to set..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-document-processing-setup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-document-processing-setup",
+      "url": "https://clawhub.ai/skills/pilot-document-processing-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-document-processing-setup",
+    "url": "https://clawhub.ai/skills/pilot-document-processing-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-document-processing-setup-ad585e700ea6de1e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-document-processing-setup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-document-processing-setup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0e85b08195c27654941e79208fca8c0d827961ee578784103d8b5e7419726891",
+      "artifactSizeBytes": 2008
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T23:32:50.087Z"
+}

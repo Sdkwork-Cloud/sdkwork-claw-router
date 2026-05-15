@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67501,
+  "uuid": "skill-clawhub-marvel",
+  "skillKey": "clawhub-marvel",
+  "name": "Marvel",
+  "summary": "漫威娱乐公司介绍和超级英雄指南",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.marvel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "漫威娱乐公司介绍和超级英雄指南"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/marvel@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "marvel",
+      "url": "https://clawhub.ai/skills/marvel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "marvel",
+    "url": "https://clawhub.ai/skills/marvel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/marvel-38868dc905f4d6d6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/marvel@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-marvel-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cfeaef73da03887e96a97014592daf86e559f94dac75ac820331b506535924ac",
+      "artifactSizeBytes": 2041
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T23:23:47.717Z"
+}

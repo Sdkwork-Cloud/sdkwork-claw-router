@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/contract-renewal-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.contract_renewal_agent",
+  "skill": {
+    "id": 50084,
+    "skillKey": "clawhub-contract-renewal-agent",
+    "name": "Contract Renewal Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "contract-renewal-agent",
+    "url": "https://clawhub.ai/skills/contract-renewal-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/contract-renewal-agent-99ffdeb904c27b60.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage and track contract renewals. Track expiration dates, monitor renewal windows, and manage contract lifecycle. Stores all contract data locally in JSON..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cunningham050503-ops",
+      "userId": "s170zyr40jf6rx0p4jpnw8sefn86cvww",
+      "displayName": "cunningham050503-ops",
+      "image": "https://avatars.githubusercontent.com/u/225751039?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 42,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778366101160,
+      "changelog": "Contract Renewal Agent v1.0.0\n\n- Initial release of the contract-renewal-agent skill\n- Manage and track contract renewals with local JSON storage (no API keys required)\n- Features include expiration date tracking, renewal reminders, and contract status management\n- Analyzes uploaded contracts to extract relevant renewal clauses\n- Generates tailored renewal proposals and tracks negotiation progress\n- Provides CLI and skill-based interaction for ease of use",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:40d2330e74639c81343e42c36503ba11e072ed384d84c9e93fd596fea5d15c39"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fund-daily@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fund_daily",
+  "skill": {
+    "id": 67908,
+    "skillKey": "clawhub-fund-daily",
+    "name": "fund-daily"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fund-daily",
+    "url": "https://clawhub.ai/skills/fund-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fund-daily-96464dec2a1ba81e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动生成基金日报，包含持仓基金数据、估值涨跌、单位净值和财经要闻。支持定时任务（每天下午 4 点自动发送），可配置基金代码列表。输出格式：Telegram 消息 + Word 文档。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiashuoji838-afk",
+      "userId": "s170fcs48me90yg8nny7kqq9v983gchj",
+      "displayName": "jiashuoji838-afk",
+      "image": "https://avatars.githubusercontent.com/u/245092367?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 393,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773735970382,
+      "changelog": "Initial release of fund-daily.\n\n- Automatically generates daily fund reports with holdings data, valuation, net value, and financial news.\n- Supports scheduled tasks (runs every day at 4 pm by default), with configurable fund codes and send time.\n- Outputs reports as Telegram messages (with formatting and emojis) and Word documents (with tables and analysis).\n- Aggregates financial news from popular sources.\n- Handles trading/non-trading days and fund net value update timings.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:022ca22b1cbfd576810ecb14885d711c01873ffb5b61dab1bb5507b84ad67fe5"
+}

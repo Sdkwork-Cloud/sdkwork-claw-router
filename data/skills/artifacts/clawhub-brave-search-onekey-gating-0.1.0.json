@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brave-search-onekey-gating@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brave_search_onekey_gating",
+  "skill": {
+    "id": 34719,
+    "skillKey": "clawhub-brave-search-onekey-gating",
+    "name": "Brave Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brave-search-onekey-gating",
+    "url": "https://clawhub.ai/skills/brave-search-onekey-gating",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brave-search-onekey-gating-17e0d55e7bb2095f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Auto-generated skill for brave-search tools via OneKey Gateway."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ai-hub-admin",
+      "userId": "s17d1vfn6f6qk27s9f66nbe8ed83hcrr",
+      "displayName": "AI-Hub-Admin",
+      "image": "https://avatars.githubusercontent.com/u/184629057?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 221,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774175259200,
+      "changelog": "- Initial release of the brave-search skill powered by OneKey Gateway.\n- Supports two tools: `brave_web_search` for general web searches and `brave_local_search` for local business/place search.\n- Provides detailed usage instructions for both CLI and Python scripts.\n- Flexible authentication using OneKey access key, with fallback to demo key.\n- Includes installation steps for npm and Python dependencies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1862f515688b5f56548320c7dfdbf9b1648561343f56d677f96f66ab4ac276d7"
+}

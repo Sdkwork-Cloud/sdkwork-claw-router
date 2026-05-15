@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26741,
+  "uuid": "skill-clawhub-fact-cross-check",
+  "skillKey": "clawhub-fact-cross-check",
+  "name": "Fact Cross Check",
+  "summary": "Multi-source verification with confidence ratings. Use for verifying factual claims, finding examples and verifying they match criteria, statistics, or resea...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fact_cross_check",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "marianachow0321",
+      "features": [
+        "Multi-source verification with confidence ratings",
+        "Use for verifying factual claims, finding examples and verifying they match criteria, statistic."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fact-cross-check@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49161756?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fact-cross-check",
+      "url": "https://clawhub.ai/skills/fact-cross-check"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fact-cross-check",
+    "url": "https://clawhub.ai/skills/fact-cross-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fact-cross-check-1ba191d412de98a1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fact-cross-check@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-fact-cross-check-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c675eea5cc2fca548ae0ebc4c53d197485b6cb94c3e8ba9fbc33f67c3108831",
+      "artifactSizeBytes": 1954
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T02:51:13.274Z"
+}

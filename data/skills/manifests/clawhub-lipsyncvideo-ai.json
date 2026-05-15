@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42414,
+  "uuid": "skill-clawhub-lipsyncvideo-ai",
+  "skillKey": "clawhub-lipsyncvideo-ai",
+  "name": "Lipsyncvideo Ai",
+  "summary": "Match audio tracks to lip movements in your videos. lipsyncvideo-ai uploads your clip to a cloud GPU, syncs the audio you provide to the speaker's mouth, and...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lipsyncvideo_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mory128",
+      "features": [
+        "Match audio tracks to lip movements in your videos",
+        "lipsyncvideo-ai uploads your clip to a cloud GPU, syncs the audio you provide to the speaker's."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lipsyncvideo-ai@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270709915?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lipsyncvideo-ai",
+      "url": "https://clawhub.ai/skills/lipsyncvideo-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lipsyncvideo-ai",
+    "url": "https://clawhub.ai/skills/lipsyncvideo-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lipsyncvideo-ai-dfcaa8d0b152a4c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lipsyncvideo-ai@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-lipsyncvideo-ai-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:743660099b44b2712b8d1809274fde2def18937438df87ebced7e9446ebd142d",
+      "artifactSizeBytes": 2321
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T18:43:31.520Z"
+}

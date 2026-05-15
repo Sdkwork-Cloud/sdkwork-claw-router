@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69819,
+  "uuid": "skill-clawhub-wallstreetcn-news",
+  "skillKey": "clawhub-wallstreetcn-news",
+  "name": "华尔街见闻新闻",
+  "summary": "获取华尔街见闻财经新闻。当用户询问华尔街见闻、wallstreetcn、财经新闻、市场动态、金融资讯、股市行情、热文、头条、搜索文章时使用。使用 web_fetch 直接调用 API 获取最新文章、头条文章、热文和搜索结果。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wallstreetcn_news",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wallstreetcn",
+      "features": [
+        "获取华尔街见闻财经新闻。当用户询问华尔街见闻、wallstreetcn、财经新闻、市场动态、金融资讯、股市行情、热文、头条、搜索文章时使用。使用 web_fetch 直接调用 API 获取最."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wallstreetcn-news@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/195725389?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wallstreetcn-news",
+      "url": "https://clawhub.ai/skills/wallstreetcn-news"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wallstreetcn-news",
+    "url": "https://clawhub.ai/skills/wallstreetcn-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wallstreetcn-news-c15400bacabd984b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wallstreetcn-news@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wallstreetcn-news-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:42135dc062086c4667178f3e7be6117c5675ed5ee3b0828aeaa45f0eb197fb61",
+      "artifactSizeBytes": 2382
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T04:31:42.203Z"
+}

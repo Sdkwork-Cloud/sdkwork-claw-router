@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weekly-ops-review@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weekly_ops_review",
+  "skill": {
+    "id": 29075,
+    "skillKey": "clawhub-weekly-ops-review",
+    "name": "weekly-ops-review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weekly-ops-review",
+    "url": "https://clawhub.ai/skills/weekly-ops-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weekly-ops-review-a084e441f04ddfa2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn scattered notes, metrics, and unfinished tasks into a weekly operating review with wins, misses, blockers, and next-week priorities."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "52yuanchangxing",
+      "userId": "s178sqjkywrs4vbnfcrr7wx7f583gef5",
+      "displayName": "vx：17605205782",
+      "image": "https://avatars.githubusercontent.com/u/39086567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 311,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773395832917,
+      "changelog": "weekly-ops-review 1.1.0\n\n- Improved to generate a concise weekly operating review including wins, misses, blockers, and next-week priorities.\n- Now requests key inputs: notes, metrics, tasks, calendar highlights, and goals.\n- Produces a review memo, metrics snapshot, priority list, and carry-over board.\n- Added robust workflow for summarizing outcomes, comparing with goals, and surfacing carry-over work.\n- Sets clear boundaries and operating rules for honest, action-oriented reviews.\n- Bundles a helper script and resource template for structured outputs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8eca10f06bd5701e09df9ab41139bed444d1d29eecf4f27093fc32dca743c520"
+}

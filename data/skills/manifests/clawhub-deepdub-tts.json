@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10220,
+  "uuid": "skill-clawhub-deepdub-tts",
+  "skillKey": "clawhub-deepdub-tts",
+  "name": "Deepdub TTS",
+  "summary": "Generate speech audio using Deepdub and attach it as a MEDIA file (Telegram-compatible).",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deepdub_tts",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yuval-deepdub",
+      "features": [
+        "Generate speech audio using Deepdub and attach it as a MEDIA file (Telegram-compatible)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deepdub-tts@0.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199460701?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deepdub-tts",
+      "url": "https://clawhub.ai/skills/deepdub-tts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deepdub-tts",
+    "url": "https://clawhub.ai/skills/deepdub-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deepdub-tts-afb077b69e64f68b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deepdub-tts@0.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-deepdub-tts-0.1.5.json",
+      "version": "0.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dd883d65dcd57701ff695635a1bb71b2722a1b66a3bf732a1fa0c939878a1758",
+      "artifactSizeBytes": 2064
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T08:51:32.645Z"
+}

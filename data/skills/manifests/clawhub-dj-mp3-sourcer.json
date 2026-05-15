@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15965,
+  "uuid": "skill-clawhub-dj-mp3-sourcer",
+  "skillKey": "clawhub-dj-mp3-sourcer",
+  "name": "DJ mp3 sourcer",
+  "summary": "Download music from links (YouTube, Spotify, etc.) by finding the best available source. Searches across platforms in priority order: Bandcamp, Beatport, Ama...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dj_mp3_sourcer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "robin",
+      "features": [
+        "Download music from links (YouTube, Spotify, etc.) by finding the best available source",
+        "Searches across platforms in priority order: Bandcamp, Beatport, Ama..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dj-mp3-sourcer@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12162433?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dj-mp3-sourcer",
+      "url": "https://clawhub.ai/skills/dj-mp3-sourcer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dj-mp3-sourcer",
+    "url": "https://clawhub.ai/skills/dj-mp3-sourcer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dj-mp3-sourcer-06bdf41ff8198d48.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dj-mp3-sourcer@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-dj-mp3-sourcer-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:672f8003d1e0059cccdf06db842621afac12b443bca394439ffb21d2ce192dae",
+      "artifactSizeBytes": 1876
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T05:43:14.332Z"
+}

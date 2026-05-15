@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pua-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pua_skill",
+  "skill": {
+    "id": 69950,
+    "skillKey": "clawhub-pua-skill",
+    "name": "pua-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pua-skill",
+    "url": "https://clawhub.ai/skills/pua-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pua-skill-af8a4e62434e6210.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "让 AI 不敢摆烂的高压推进 skill。适用于任务反复失败、同一路径微调、想放弃、建议用户手动处理、没验证就下结论等场景。要求主动排查、换路径、拿证据闭环。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "knifehzh",
+      "userId": "publishers:knifehzh",
+      "displayName": "knifehzh",
+      "image": "https://avatars.githubusercontent.com/u/233935713?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1363,
+      "installsAllTime": 11,
+      "installsCurrent": 8,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773640711633,
+      "changelog": "Initial public release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a212beb4c35c3a9ae33dc9fcbcef31d557a3fc247d301725e145c7cd41ef9d5d"
+}

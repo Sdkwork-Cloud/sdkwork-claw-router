@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/undercover-is-who@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.undercover_is_who",
+  "skill": {
+    "id": 69251,
+    "skillKey": "clawhub-undercover-is-who",
+    "name": "undercover-is-who"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "undercover-is-who",
+    "url": "https://clawhub.ai/skills/undercover-is-who",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/undercover-is-who-c97a1bb4f1eaff99.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "担任谁是卧底游戏法官，负责分词、流程主持、描述记录、投票统计、淘汰判定及游戏结束回顾，全程保密身份。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "loongfay",
+      "userId": "s17ecc8bjh9xqe28wcpca8h5ph83yp63",
+      "displayName": "loongfay",
+      "image": "https://avatars.githubusercontent.com/u/16909883?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775140271484,
+      "changelog": "Initial Python-based version with a strong emphasis on \"judge principle\" and full CLI/scripted workflow:\n\n- Fully rewritten skill, removing all previous JavaScript and Node dependencies.\n- All game logic and state now handled via Python scripts located in the `scripts/` directory.\n- Provides command-line utilities for starting games, assigning roles, managing description and voting phases, validating user identity, and exporting game logs.\n- Extensive documentation outlining judge duties, strict confidentiality, and process protocols.\n- Skill now operates entirely as the game judge, enforcing constitutional \"core principles\" above all else.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4dabdb0a48bebd55adc6a07dde024bf03f743fcc6a0ac3a7b62f674700511f7a"
+}

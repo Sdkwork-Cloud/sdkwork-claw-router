@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40768,
+  "uuid": "skill-clawhub-workflow-memory-skills",
+  "skillKey": "clawhub-workflow-memory-skills",
+  "name": "WorkflowHub",
+  "summary": "Use when the user wants OpenClaw or Codex to remember their way of working as reusable SOPs, workflows, queues, or \"how I do things\". Best for repeated multi...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workflow_memory_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangyuqi98",
+      "features": [
+        "Use when the user wants OpenClaw or Codex to remember their way of working as reusable SOPs, wo.",
+        "Best for repeated multi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/workflow-memory-skills@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74645439?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "workflow-memory-skills",
+      "url": "https://clawhub.ai/skills/workflow-memory-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workflow-memory-skills",
+    "url": "https://clawhub.ai/skills/workflow-memory-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workflow-memory-skills-134b400e31e2c428.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/workflow-memory-skills@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-workflow-memory-skills-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:30ca12a11aa90af7795bc484fa7378c199ec0a22e5635a37a6f9c0fa6c905d5a",
+      "artifactSizeBytes": 2556
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T03:56:07.409Z"
+}

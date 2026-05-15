@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73352,
+  "uuid": "skill-clawhub-alive-check-monitor",
+  "skillKey": "clawhub-alive-check-monitor",
+  "name": "还活着么监测服务",
+  "summary": "提供独居用户每日签到及状态监测，自动告警并通知紧急联系人保障安全。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alive_check_monitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhdryanchang",
+      "features": [
+        "提供独居用户每日签到及状态监测，自动告警并通知紧急联系人保障安全。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alive-check-monitor@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/252296405?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alive-check-monitor",
+      "url": "https://clawhub.ai/skills/alive-check-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alive-check-monitor",
+    "url": "https://clawhub.ai/skills/alive-check-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alive-check-monitor-0702e91654c03b90.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alive-check-monitor@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-alive-check-monitor-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:53dc8398c7504aed46840074f682f1f3bbfd2e2f987c415846c4483b02b57723",
+      "artifactSizeBytes": 1934
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T07:31:08.798Z"
+}

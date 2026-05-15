@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58723,
+  "uuid": "skill-clawhub-uapi-get-game-steam-summary",
+  "skillKey": "clawhub-uapi-get-game-steam-summary",
+  "name": "UAPI 查询 Steam 用户 接口",
+  "summary": "使用 UAPI 的“查询 Steam 用户”单接口 skill，处理 查询 Steam 用户、Steam资料、Steam主页、Steam玩家、Steam用户信息 等请求。 Use when the user wants get game steam summary, game steam summary, sum...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uapi_get_game_steam_summary",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "速冻饺子",
+      "features": [
+        "使用 UAPI 的“查询 Steam 用户”单接口 skill，处理 查询 Steam 用户、Steam资料、Steam主页、Steam玩家、Steam用户信息 等请求。 Use when."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uapi-get-game-steam-summary@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/149454909?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uapi-get-game-steam-summary",
+      "url": "https://clawhub.ai/skills/uapi-get-game-steam-summary"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uapi-get-game-steam-summary",
+    "url": "https://clawhub.ai/skills/uapi-get-game-steam-summary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uapi-get-game-steam-summary-f96699e0ae40a064.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uapi-get-game-steam-summary@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-uapi-get-game-steam-summary-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5fcdb19e1eede2d0b288b9ca28a6933c7b21762826700a157cda5884673baad2",
+      "artifactSizeBytes": 2047
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T18:29:19.516Z"
+}

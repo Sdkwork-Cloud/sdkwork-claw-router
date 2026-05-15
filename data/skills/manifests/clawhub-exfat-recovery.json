@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32238,
+  "uuid": "skill-clawhub-exfat-recovery",
+  "skillKey": "clawhub-exfat-recovery",
+  "name": "Exfat Recovery",
+  "summary": "Recover corrupted exFAT USB drives on Windows without formatting. Diagnose boot region corruption, repair with chkdsk or TestDisk, and prevent future corrupt...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.exfat_recovery",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Solomon Neas",
+      "features": [
+        "Recover corrupted exFAT USB drives on Windows without formatting",
+        "Diagnose boot region corruption, repair with chkdsk or TestDisk, and prevent future corrupt..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/exfat-recovery@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41877493?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "exfat-recovery",
+      "url": "https://clawhub.ai/skills/exfat-recovery"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "exfat-recovery",
+    "url": "https://clawhub.ai/skills/exfat-recovery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/exfat-recovery-1fa1b1ca77738540.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/exfat-recovery@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-exfat-recovery-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:108ff27ca300f5fdfd7fa14dd1424bdd61508f8b9c8ec88621656660e1737ca9",
+      "artifactSizeBytes": 2385
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T19:41:18.016Z"
+}

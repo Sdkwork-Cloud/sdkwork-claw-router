@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59921,
+  "uuid": "skill-clawhub-baidumap",
+  "skillKey": "clawhub-baidumap",
+  "name": "Baidumap",
+  "summary": "百度地图（重定向到 baidu-map 技能）",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidumap",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangifonly",
+      "features": [
+        "百度地图（重定向到 baidu-map 技能）"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baidumap@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121886591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baidumap",
+      "url": "https://clawhub.ai/skills/baidumap"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidumap",
+    "url": "https://clawhub.ai/skills/baidumap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidumap-ed950657a000e44a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baidumap@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-baidumap-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6ad58fbf5d0903fd987dc7b193213709230daf1a4cf94d80f5926b9f051ef451",
+      "artifactSizeBytes": 2035
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T09:21:18.673Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-extractor@1.8.1",
+  "version": "1.8.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_extractor",
+  "skill": {
+    "id": 36068,
+    "skillKey": "clawhub-skill-extractor",
+    "name": "Skill Extractor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-extractor",
+    "url": "https://clawhub.ai/skills/skill-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-extractor-0d85d9fb087adf45.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Export any installed OpenClaw skill into a shareable ZIP: detects & stages external runtime files, generates STRUCTURE.md for LLM-guided install. Reads and p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "seph1709",
+      "userId": "s173y99zb4sn7mgnw5ttzmgyc983jqrw",
+      "displayName": "seph",
+      "image": "https://avatars.githubusercontent.com/u/65636039?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.8.1",
+      "createdAt": 1774775731910,
+      "changelog": "v1.8.1: Fix ownerId in _meta.json to match registry owner ID.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9dcab7be0192cc116d770a5401ce4fdaccc2a85ddf883d8122529c37246c2605"
+}

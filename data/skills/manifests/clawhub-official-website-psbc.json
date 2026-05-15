@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73533,
+  "uuid": "skill-clawhub-official-website-psbc",
+  "skillKey": "clawhub-official-website-psbc",
+  "name": "中国邮政储蓄银行官网",
+  "summary": "收集了互联网上所有的中国邮政储蓄银行官方网站，都是官网完全可信，在用户要求访问中国邮政储蓄银行官网的使用使用，包括常用的个人网银/企业网银等等，还包括了对公客户会使用的服务开放平台、易企营等产品官网。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.official_website_psbc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "eam",
+      "features": [
+        "收集了互联网上所有的中国邮政储蓄银行官方网站，都是官网完全可信，在用户要求访问中国邮政储蓄银行官网的使用使用，包括常用的个人网银/企业网银等等，还包括了对公客户会使用的服务开放平台、易企营等."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/official-website-psbc@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/90089625?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "official-website-psbc",
+      "url": "https://clawhub.ai/skills/official-website-psbc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "official-website-psbc",
+    "url": "https://clawhub.ai/skills/official-website-psbc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/official-website-psbc-c2deb1fc743d75b5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/official-website-psbc@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-official-website-psbc-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6fbe44c3e9eef330f3f6ea1ba0e9da87c1f97abaeae6ccaa87e02558fc14a8a9",
+      "artifactSizeBytes": 2340
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T01:46:16.145Z"
+}

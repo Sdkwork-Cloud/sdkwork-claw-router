@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sx-agent-passport@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sx_agent_passport",
+  "skill": {
+    "id": 54344,
+    "skillKey": "clawhub-sx-agent-passport",
+    "name": "Agent Passport"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sx-agent-passport",
+    "url": "https://clawhub.ai/skills/sx-agent-passport",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sx-agent-passport-1860f12f2fea7384.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Issue and verify SX# agent passports — cryptographic identity with hash-chain integrity, Merkle anchoring on Base"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "drivenbymyai-max",
+      "userId": "publishers:drivenbymyai-max",
+      "displayName": "Orion",
+      "image": "https://avatars.githubusercontent.com/u/261614253?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774139039968,
+      "changelog": "- Initial release of the agent-passport skill.\n- Issue cryptographic passports for AI agents with hash-chain integrity.\n- Merkle roots for passports are anchored and verifiable on the Base blockchain.\n- Free passport issuing for the first 1,000,000 agents.\n- Endpoints for agent registration, passport retrieval, profile lookup, event proof, and Merkle root verification.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:94e6b13292c2009c5d26a334be95e697c0907167099e0e72189c64d1c0bdc9fb"
+}

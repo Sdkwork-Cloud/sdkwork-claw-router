@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jhu@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jhu",
+  "skill": {
+    "id": 48103,
+    "skillKey": "clawhub-jhu",
+    "name": "Jhu"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jhu",
+    "url": "https://clawhub.ai/skills/jhu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jhu-d260551d407e7aa9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Johns Hopkins University pioneered the modern American research university model, excelling in medical, public health, and federal research funding for over..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 103,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778018715744,
+      "changelog": "- Initial release introducing the Johns Hopkins University (JHU) skill.\n- Includes key historical milestones (founding, pioneering research and medical education, major research centers).\n- Provides academic structure (nine schools, unique research integration).\n- Highlights research dominance (NIH funding, endowment, industry impact).\n- Shares essential facts and notable achievements (student body, Nobel laureates, influential model).\n- Offers interesting cultural and naming insights about JHU.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1ef79be5e9136dd7c1e2a557fb206a9ef6441c5d4b2b4133e91a0e9faf8113b8"
+}

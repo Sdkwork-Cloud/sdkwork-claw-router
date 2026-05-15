@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19359,
+  "uuid": "skill-clawhub-namecom-registrar",
+  "skillKey": "clawhub-namecom-registrar",
+  "name": "name.com registrar",
+  "summary": "Domain registrar and DNS manager using the Name.com CORE API. Use when the user asks to search for, buy, or register domains, manage DNS records (A, AAAA, CN...",
+  "version": "0.0.14",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.namecom_registrar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pat Ramsey",
+      "features": [
+        "Domain registrar and DNS manager using the Name.com CORE API",
+        "Use when the user asks to search for, buy, or register domains, manage DNS records (A, AAAA, CN."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/namecom-registrar@0.0.14",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/502550?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "namecom-registrar",
+      "url": "https://clawhub.ai/skills/namecom-registrar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "namecom-registrar",
+    "url": "https://clawhub.ai/skills/namecom-registrar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/namecom-registrar-c598d016bd36fc70.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/namecom-registrar@0.0.14",
+      "artifactUrl": "data/skills/artifacts/clawhub-namecom-registrar-0.0.14.json",
+      "version": "0.0.14",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e788ae7f54badba3675a0c7283388c7a5f2baac3f84ad34d4adcf09bb302edbb",
+      "artifactSizeBytes": 2007
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T05:40:06.764Z"
+}

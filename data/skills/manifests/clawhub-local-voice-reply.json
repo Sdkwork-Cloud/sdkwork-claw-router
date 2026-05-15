@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54220,
+  "uuid": "skill-clawhub-local-voice-reply",
+  "skillKey": "clawhub-local-voice-reply",
+  "name": "local-voice-reply",
+  "summary": "Local OPUS/Ogg voice-reply pipeline for Feishu/Discord with structured voice customization. Default voice is Juno (`voice/juno_ref.wav`), with support for re...",
+  "version": "3.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_voice_reply",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tenured-master-chef-607",
+      "features": [
+        "Local OPUS/Ogg voice-reply pipeline for Feishu/Discord with structured voice customization",
+        "Default voice is Juno (`voice/juno_ref.wav`), with support for re..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/local-voice-reply@3.3.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/188792673?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "local-voice-reply",
+      "url": "https://clawhub.ai/skills/local-voice-reply"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-voice-reply",
+    "url": "https://clawhub.ai/skills/local-voice-reply",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-voice-reply-cb57b18ae237850a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/local-voice-reply@3.3.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-local-voice-reply-3.3.3.json",
+      "version": "3.3.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:28fdabde50b3519c6467a9f3618dd5eedbd4529454c738135cd88330cead43a1",
+      "artifactSizeBytes": 2040
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T20:10:42.016Z"
+}

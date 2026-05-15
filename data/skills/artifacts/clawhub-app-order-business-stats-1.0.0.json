@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/app-order-business-stats@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.app_order_business_stats",
+  "skill": {
+    "id": 68906,
+    "skillKey": "clawhub-app-order-business-stats",
+    "name": "App Order Business Stats"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "app-order-business-stats",
+    "url": "https://clawhub.ai/skills/app-order-business-stats",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/app-order-business-stats-8587d9aae4f98839.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "按时间段和业务版块统计久事体育APP订单关键指标（业务版块、用户数、订单量、支付金额、退款金额、净销售金额）。适用于查询“某段时间内业务版块的订单”相关统计。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jaggerliu",
+      "userId": "publishers:jaggerliu",
+      "displayName": "jaggerliu",
+      "image": "https://avatars.githubusercontent.com/u/10110630?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 805,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772855181605,
+      "changelog": "app-order-business-stats v1.0.0\n\n- Initial release: Provides business metrics for app orders by time period and business segment.\n- Strictly uses a fixed SQL template for data queries with enforced placeholders for time range.\n- Supports queries for user count, order count, payment, refund, and net sales by segment.\n- Replies only in daily aggregation; does not support hourly breakdowns.\n- Ensures only secure, read-only operations using restricted database access.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7d888c9750f58d1ba72ad7825876a940eca8292681a0056ceebbd7226e2bd2b4"
+}

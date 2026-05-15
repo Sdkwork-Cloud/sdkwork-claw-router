@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weibo-login@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weibo_login",
+  "skill": {
+    "id": 68571,
+    "skillKey": "clawhub-weibo-login",
+    "name": "Weibo Login"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weibo-login",
+    "url": "https://clawhub.ai/skills/weibo-login",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weibo-login-86ced96b34cae88c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "登录微博账号的技能。使用浏览器扫码登录微博(weibo.com)，用于保持会话状态以便后续抓取内容或发帖。当用户需要登录微博时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bombfuock",
+      "userId": "s17cqaxgmejfvdd2sz9zq8kd0s83j4gn",
+      "displayName": "BOMBFUOCK",
+      "image": "https://avatars.githubusercontent.com/u/94738020?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 347,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774406403659,
+      "changelog": "- Updated documentation to focus exclusively on browser QR code (扫码) login.\n- Removed instructions and code samples for username/password login.\n- Clarified session validation steps after QR code login.\n- Retained important usage notes regarding anti-scraping, cookies, and mobile UA.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f28615441e6cd40a08cdaae551026c24b9001e20b297f580453e524c29eec640"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24860,
+  "uuid": "skill-clawhub-clarity-submit",
+  "skillKey": "clawhub-clarity-submit",
+  "name": "Clarity Submit",
+  "summary": "Submit a protein variant hypothesis to Clarity Protocol for validation and folding. Use when the user asks to submit a hypothesis, propose a protein variant,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clarity_submit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clarityprotocol",
+      "features": [
+        "Submit a protein variant hypothesis to Clarity Protocol for validation and folding",
+        "Use when the user asks to submit a hypothesis, propose a protein variant,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clarity-submit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255743260?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clarity-submit",
+      "url": "https://clawhub.ai/skills/clarity-submit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clarity-submit",
+    "url": "https://clawhub.ai/skills/clarity-submit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clarity-submit-27a1fcc8ed3c877b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clarity-submit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clarity-submit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ccf3875abcc6db2d915d7f329f45d30e4c731fc99c6ddab1c4a0971cd2c4868",
+      "artifactSizeBytes": 2412
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T21:41:27.724Z"
+}

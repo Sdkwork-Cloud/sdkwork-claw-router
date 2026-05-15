@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x-comment@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_comment",
+  "skill": {
+    "id": 64017,
+    "skillKey": "clawhub-x-comment",
+    "name": "X Comment Bot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-comment",
+    "url": "https://clawhub.ai/skills/x-comment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-comment-48d82d21ad3829d9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在 X（Twitter/X.com）的推荐时间线（Home timeline）上自动浏览并评论技术类和 BTC 相关推文。 用户说「去 X 时间线上找几条技术帖子评论」「在 X 首页互动几条 BTC 相关内容」 「帮我在 X 推荐页发几条技术评论」时触发本 skill。不进行点赞，只发布评论。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mars82311111",
+      "userId": "s17ft7r4x02ndyd3z98hhdv6zn83w86s",
+      "displayName": "mars82311111",
+      "image": "https://avatars.githubusercontent.com/u/265482749?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774958904063,
+      "changelog": "x-comment 1.0.0\n\n- 首次发布：自动在 X (Twitter/X.com) 推荐时间线筛选技术和 BTC 相关推文并发表评论。\n- 支持根据推文内容和互动数据智能筛选优质目标，自动化浏览与评论，无需用户确认。\n- 评论内容严格按字符数和专业性规范生成，自动匹配推文语言（中文/英文）。\n- 仅发表评论，不进行点赞，不使用图片识别，兼容中文和英文技术话题。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2e66e6362d365d7a03548191af70de67373497ec639ef5bf90b9a5f4f617cc89"
+}

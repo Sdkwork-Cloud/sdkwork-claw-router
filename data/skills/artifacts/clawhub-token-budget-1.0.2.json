@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/token-budget@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.token_budget",
+  "skill": {
+    "id": 21161,
+    "skillKey": "clawhub-token-budget",
+    "name": "Token Budget"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "token-budget",
+    "url": "https://clawhub.ai/skills/token-budget",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/token-budget-9a80452df78fd760.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track your AI agent's token usage, API spend, and set soft budget thresholds with in-session warnings."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openauthority",
+      "userId": "s1702bpbyv1tt88m95fjpvrahn83p3z1",
+      "displayName": "OpenAuthority",
+      "image": "http://avatars.githubusercontent.com/u/272483392?s=200&v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 221,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775054534334,
+      "changelog": "token-budget 1.0.2 is a maintenance release with no code or documentation changes.\n\n- Internal version bump from 1.0.1 to 1.0.2\n- No file changes detected; functionality and documentation remain the same",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:deb3e71a4120f58bdbf9ab1124b92316056326092984f7bb8a1679ba8ddb016d"
+}

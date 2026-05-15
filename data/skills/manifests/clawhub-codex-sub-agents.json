@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8997,
+  "uuid": "skill-clawhub-codex-sub-agents",
+  "skillKey": "clawhub-codex-sub-agents",
+  "name": "OpenAI Codex Sub Agents",
+  "summary": "Use OpenAI Codex CLI for coding tasks. Triggers: codex, code review, fix CI, refactor code, implement feature, coding agent, gpt-5-codex. Enables Clawdbot to delegate coding work to Codex CLI as a subagent or direct tool.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codex_sub_agents",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "adamsardo",
+      "features": [
+        "Use OpenAI Codex CLI for coding tasks",
+        "Triggers: codex, code review, fix CI, refactor code, implement feature, coding agent, gpt-5-cod.",
+        "Enables Clawdbot to delegate coding work to Codex CLI as a subagent or direct tool."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/codex-sub-agents@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/184644067?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "codex-sub-agents",
+      "url": "https://clawhub.ai/skills/codex-sub-agents"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codex-sub-agents",
+    "url": "https://clawhub.ai/skills/codex-sub-agents",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codex-sub-agents-083c294bb1846a83.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/codex-sub-agents@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-codex-sub-agents-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:df729e5647c06f290a3807a60a9846a7ef4b7d6d2cfea202ec799e0261281d3a",
+      "artifactSizeBytes": 1958
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-27T03:20:36.381Z"
+}

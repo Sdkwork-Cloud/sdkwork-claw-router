@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11594,
+  "uuid": "skill-clawhub-warren-nft",
+  "skillKey": "clawhub-warren-nft",
+  "name": "Warren - On-Chain NFT Deploy",
+  "summary": "Deploy NFT collections permanently on MegaETH blockchain. Images stored on-chain via SSTORE2. Create and launch NFT collections with royalties, minting, and management pages.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.warren_nft",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "planetai87",
+      "features": [
+        "Deploy NFT collections permanently on MegaETH blockchain",
+        "Images stored on-chain via SSTORE2",
+        "Create and launch NFT collections with royalties, minting, and management pages."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/warren-nft@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62147646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "warren-nft",
+      "url": "https://clawhub.ai/skills/warren-nft"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "warren-nft",
+    "url": "https://clawhub.ai/skills/warren-nft",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/warren-nft-d263149181f8ee7d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/warren-nft@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-warren-nft-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a7a109a6d0ba569d0e19f81a15cf9a27ff4321bbc61d17b69a3e9987d702a123",
+      "artifactSizeBytes": 2681
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T07:38:35.362Z"
+}

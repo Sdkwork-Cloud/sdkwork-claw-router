@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tiktok-trend@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tiktok_trend",
+  "skill": {
+    "id": 40200,
+    "skillKey": "clawhub-tiktok-trend",
+    "name": "Tiktok Trend Radar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tiktok-trend",
+    "url": "https://clawhub.ai/skills/tiktok-trend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tiktok-trend-5297ba4c41e83cd7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically monitors TikTok and Instagram trends, detects hashtag spikes, generates AI-driven content ideas and scripts, and produces short videos via InVi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nicemaths123",
+      "userId": "s1712r4n6m9xg8vc5g0ta16m7x83mfjv",
+      "displayName": "nicemaths123",
+      "image": "https://avatars.githubusercontent.com/u/244252350?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774910452564,
+      "changelog": "tiktok-trend-radar 1.0.0\n\n- Initial release of a fully automated TikTok and Instagram trend monitoring and content creation pipeline.\n- Real-time scraping of trending hashtags and posts from TikTok and Instagram using Apify.\n- Automatic detection of viral \"hashtag explosions\" and rapid trend surges.\n- AI-driven trend analysis, content idea generation, and video script writing via Claude (OpenClaw).\n- Auto-generation of ready-to-publish short videos through InVideo AI.\n- Instant alerts via webhook, Slack, or email when new trends break.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8835fadf2a927abb0c662c9a55439f2e9caa85147f93c6e1dacf173e3c8ed325"
+}

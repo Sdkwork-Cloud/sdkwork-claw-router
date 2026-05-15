@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16967,
+  "uuid": "skill-clawhub-youtube-transcription-generator",
+  "skillKey": "clawhub-youtube-transcription-generator",
+  "name": "Youtube Transcription Generator",
+  "summary": "Use VLM Run (vlmrun) to generate transcriptions from YouTube videos. Download a video with yt-dlp, then run vlmrun to transcribe with optional timestamps. VLMRUN_API_KEY must be in .env; follow vlmrun-cli-skill for CLI setup and options.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_transcription_generator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MehediAhamed",
+      "features": [
+        "Use VLM Run (vlmrun) to generate transcriptions from YouTube videos",
+        "Download a video with yt-dlp, then run vlmrun to transcribe with optional timestamps",
+        "VLMRUN_API_KEY must be in .env",
+        "follow vlmrun-cli-skill for CLI setup and options."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-transcription-generator@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/104995038?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-transcription-generator",
+      "url": "https://clawhub.ai/skills/youtube-transcription-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-transcription-generator",
+    "url": "https://clawhub.ai/skills/youtube-transcription-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-transcription-generator-c7faa5eb1e0e7c98.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-transcription-generator@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-transcription-generator-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:54fa724066737d40a91469085d38e8a0aaf103df312b36fb0484d0ba9f30498a",
+      "artifactSizeBytes": 2506
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T14:59:51.626Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48960,
+  "uuid": "skill-clawhub-gif-compressor",
+  "skillKey": "clawhub-gif-compressor",
+  "name": "Gif Compressor",
+  "summary": "Get compressed GIF files ready to post, without touching a single slider. Upload your GIF files (GIF, MP4, WebM, APNG, up to 200MB), say something like \"comp...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gif_compressor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "whitejohnk-26",
+      "features": [
+        "Get compressed GIF files ready to post, without touching a single slider",
+        "Upload your GIF files (GIF, MP4, WebM, APNG, up to 200MB), say something like \"comp..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gif-compressor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210889495?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gif-compressor",
+      "url": "https://clawhub.ai/skills/gif-compressor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gif-compressor",
+    "url": "https://clawhub.ai/skills/gif-compressor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gif-compressor-df600b434e20c8ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gif-compressor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gif-compressor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4789a463d25673f2c13a40f3a43eeb82807c63bf176bf3f999f60ecd7ffd3a0b",
+      "artifactSizeBytes": 2486
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T02:59:48.887Z"
+}

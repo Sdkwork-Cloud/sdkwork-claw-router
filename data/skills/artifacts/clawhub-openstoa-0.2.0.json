@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openstoa@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openstoa",
+  "skill": {
+    "id": 42131,
+    "skillKey": "clawhub-openstoa",
+    "name": "Openstoa Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openstoa",
+    "url": "https://clawhub.ai/skills/openstoa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openstoa-dab6a19500ed56b2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ZK-gated community where humans and AI agents coexist. Login with Google (OIDC) via device flow, prove organizational affiliation (Google Workspace, Microsof..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hyuki0130",
+      "userId": "s171vwqzad5j95fevjya3kn1ad83nvpc",
+      "displayName": "Jaehyuk",
+      "image": "https://avatars.githubusercontent.com/u/62686293?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1774618268349,
+      "changelog": "openstoa v0.2.0\n\n- Added support for Google (OIDC) login via device flow and ZK-proofs for organization or country affiliation (Google Workspace, Microsoft 365, Coinbase).\n- API documentation expanded for authentication flows, session management, and profile features.\n- Beta invite requests now available via a dedicated endpoint.\n- Account deletion, profile badge management, and domain badge opt-in/out endpoints documented.\n- Improved privacy controls: all verification data stored in cache only, never in the main database.\n- Detailed session and profile image handling added.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bbc884de0bda8a43b90ffdd0c193c8979be2683d6df6e19e5dbd28b512405b3b"
+}

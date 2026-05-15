@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52587,
+  "uuid": "skill-clawhub-podcastfy-clawdbot-skill",
+  "skillKey": "clawhub-podcastfy-clawdbot-skill",
+  "name": "Podcastfy Clawdbot Skill",
+  "summary": "Generate an AI podcast (MP3) from one or more URLs using the open-source Podcastfy project. Use when the user says “make a podcast from this URL/article/vide...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.podcastfy_clawdbot_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nacy",
+      "features": [
+        "Generate an AI podcast (MP3) from one or more URLs using the open-source Podcastfy project",
+        "Use when the user says “make a podcast from this URL/article/vide..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/podcastfy-clawdbot-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28687015?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "podcastfy-clawdbot-skill",
+      "url": "https://clawhub.ai/skills/podcastfy-clawdbot-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "podcastfy-clawdbot-skill",
+    "url": "https://clawhub.ai/skills/podcastfy-clawdbot-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/podcastfy-clawdbot-skill-29267de7da93c2b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/podcastfy-clawdbot-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-podcastfy-clawdbot-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5d462e8ebc93668709611868b82fcc537536447c473825952901676b5ace5d38",
+      "artifactSizeBytes": 2467
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T06:08:12.152Z"
+}

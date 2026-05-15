@@ -1,0 +1,49 @@
+{
+  "skill": {
+    "slug": "cyber-jianghu-openclaw",
+    "displayName": "赛博江湖 OpenClaw",
+    "summary": "赛博江湖向导 - 实时掌握角色动态,随时托梦干预",
+    "tags": {
+      "latest": "0.3.6"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 431,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "createdAt": 1773914608940,
+    "updatedAt": 1778312767091
+  },
+  "latestVersion": {
+    "version": "0.3.6",
+    "createdAt": 1775626281690,
+    "changelog": "## Version 0.3.6 Changelog\n\n- Major refactor: replaced legacy hooks, tools, and templates with a new plugin-based core and tooling.\n- Added new documentation: AGENTS.md, DEPLOYMENT.md, and CHANGELOG.md for improved clarity and onboarding.\n- Introduced a declarative plugin system (see plugins/reporter) and supporting TypeScript infrastructure.\n- Updated configuration files (e.g., tsconfig.json, vitest.config.ts) to support TypeScript development and testing.\n- Simplified environment and binary requirements; now tracks essential bins (docker, curl).\n- Removed old agent act/review logic and moved to a more modular, plug-and-play architecture.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "kumarajiava",
+    "userId": "s170k0dv5zz2csdkn7b35cpabn84fsxf",
+    "displayName": "Kumarajiava",
+    "image": "https://avatars.githubusercontent.com/u/659221?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.dangerous_exec",
+      "suspicious.env_credential_access",
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.dangerous_exec, suspicious.env_credential_access, suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778312767091
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10140,
+  "uuid": "skill-clawhub-google-sheet",
+  "skillKey": "clawhub-google-sheet",
+  "name": "Skill to manage and update google sheet",
+  "summary": "Read, write, append, and manage Google Sheets via the Google Sheets API (Node.js SDK). Use when you need to interact with spreadsheets — reading data, writing/updating cells, appending rows, clearing ranges, formatting cells, managing shee.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_sheet",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "longmaba",
+      "features": [
+        "Read, write, append, and manage Google Sheets via the Google Sheets API (Node.js SDK)",
+        "Use when you need to interact with spreadsheets — reading data, writing/updating cells, appendi.",
+        "Requires a Google Cloud service account with Sheets API enabled."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-sheet@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9361500?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-sheet",
+      "url": "https://clawhub.ai/skills/google-sheet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-sheet",
+    "url": "https://clawhub.ai/skills/google-sheet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-sheet-af56ef453101d206.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-sheet@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-sheet-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:71b21bacd922c894eafc87a4e454f3a17e650f88339128ece975a39ff29bcf5e",
+      "artifactSizeBytes": 2521
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T13:21:38.353Z"
+}

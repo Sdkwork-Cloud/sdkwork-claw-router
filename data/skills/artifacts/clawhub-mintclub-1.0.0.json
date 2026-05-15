@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mintclub@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mintclub",
+  "skill": {
+    "id": 16180,
+    "skillKey": "clawhub-mintclub",
+    "name": "Mint Club V2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mintclub",
+    "url": "https://clawhub.ai/skills/mintclub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mintclub-0e920db833408cbe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Command-line interface for creating, trading, and managing Mint Club bonding curve tokens on Base blockchain with wallet support and Uniswap integration."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sebayaki",
+      "userId": "publishers:sebayaki",
+      "displayName": "sebayaki",
+      "image": "https://avatars.githubusercontent.com/u/1332279?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 898,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770981477971,
+      "changelog": "Initial release: AI agent skill for Mint Club V2 bonding curve tokens on Base",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:142c28924c71ddf323e1e883ef95993d35e5117db00634a0650dd50a63edbe82"
+}

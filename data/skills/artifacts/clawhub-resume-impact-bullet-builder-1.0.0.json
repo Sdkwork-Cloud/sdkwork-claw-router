@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/resume-impact-bullet-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resume_impact_bullet_builder",
+  "skill": {
+    "id": 48694,
+    "skillKey": "clawhub-resume-impact-bullet-builder",
+    "name": "Resume Impact Bullet Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resume-impact-bullet-builder",
+    "url": "https://clawhub.ai/skills/resume-impact-bullet-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resume-impact-bullet-builder-00ce1e87d5a8db29.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transforms raw job responsibilities into clear, quantified, outcome-focused resume bullets while respecting accuracy and confidentiality."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 95,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778029993516,
+      "changelog": "Initial release: Transform raw job responsibilities into strong, accurate, outcome-focused resume bullets.\n\n- Converts basic inputs into achievement-oriented resume statements.\n- Groups bullet options by impact strength; provides metric prompts and honesty checks.\n- Enforces strict non-fabrication and confidentiality boundaries.\n- Offers output calibrated to target role, seniority, and audience.\n- Does not provide guarantees of hiring or fabricate any history, metrics, or details.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:96375ecaf5a5edb78d46b124e86da8d73dd87673d1d90784792f2646f08fef3e"
+}

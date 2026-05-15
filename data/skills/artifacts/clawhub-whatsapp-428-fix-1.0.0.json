@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/whatsapp-428-fix@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whatsapp_428_fix",
+  "skill": {
+    "id": 60132,
+    "skillKey": "clawhub-whatsapp-428-fix",
+    "name": "WhatsApp 428 修复"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whatsapp-428-fix",
+    "url": "https://clawhub.ai/skills/whatsapp-428-fix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whatsapp-428-fix-d35a9ca03f2faa6f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "修复 WhatsApp Web 连接 428 错误和代理配置问题。当用户遇到 WhatsApp 连接断开 (status 428)、需要配置代理、或在新机器上部署 OpenClaw 后遇到 WhatsApp 连接问题时使用此 Skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jeffreycheungrt",
+      "userId": "publishers:jeffreycheungrt",
+      "displayName": "jeffreyCheungRT",
+      "image": "https://avatars.githubusercontent.com/u/29254013?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 368,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773572438278,
+      "changelog": "- Initial release of the whatsapp-428-fix skill.\n- Provides automated and manual steps to fix WhatsApp Web connection error 428 and related proxy configuration issues.\n- Includes detailed systemd service and OpenClaw configuration instructions.\n- Offers necessary code modifications for OpenClaw to support proxy settings at both the schema and session level.\n- Supports multi-account proxy configuration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:50c5089b0342af25d9bd385b7ca8a1ec7fcb3e248ac722254a36191533b69cf0"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skylv-multi-persona-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_multi_persona_ai",
+  "skill": {
+    "id": 47911,
+    "skillKey": "clawhub-skylv-multi-persona-ai",
+    "name": "Skylv Multi Persona Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-multi-persona-ai",
+    "url": "https://clawhub.ai/skills/skylv-multi-persona-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-multi-persona-ai-4256fda8305459f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Builds consensus-driven AI personas from multiple perspectives"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 97,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777776558921,
+      "changelog": "- Initial release of skylv-consensus-persona-engine.\n- Enables multiple AI agents to align behavior through voting and consensus-building across six personality dimensions.\n- Supports commands to cast votes, calculate consensus, and list personality dimensions.\n- Generates a consensus personality profile, decision rules, and JSON configuration for agent initialization.\n- Designed for low-competition, blue-ocean use cases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:91a4ab6d0b47e3fdd87461da421b0fd18e1eee0873886e1877aeefc6ec4b16e3"
+}

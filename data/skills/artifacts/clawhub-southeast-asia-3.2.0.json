@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/southeast-asia@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.southeast_asia",
+  "skill": {
+    "id": 53643,
+    "skillKey": "clawhub-southeast-asia",
+    "name": "Southeast Asia"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "southeast-asia",
+    "url": "https://clawhub.ai/skills/southeast-asia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/southeast-asia-040da46683d2eecf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Explore the diversity of Southeast Asia — Vietnam's street food, Cambodia's Angkor Wat, Indonesia's Bali, Philippines' islands, and Malaysia's culture. Also..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dingtom336-gif",
+      "userId": "s17aepsh6v86z2ajsq3ng9tgm983g9pt",
+      "displayName": "dingtom336-gif",
+      "image": "https://avatars.githubusercontent.com/u/256118512?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1775898726260,
+      "changelog": "- Major update: Strictly enforces real-time travel data via CLI; disables answering travel queries from static knowledge.\n- Requires flyai CLI for all flight, hotel, and attraction searches—never uses training data for results.\n- Introduces comprehensive, step-by-step workflow including environment checks and multi-command orchestration.\n- Adds clear output validation rules: every result must include a live booking link.\n- Expands support for trip planning (including visa and car rental), with scenario playbooks and Markdown output templates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ba07fe3c2567c615af26eafe59e0188220d656fc19376438c43296d03e9d1c33"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/project-deep-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.project_deep_analyzer",
+  "skill": {
+    "id": 69177,
+    "skillKey": "clawhub-project-deep-analyzer",
+    "name": "project-deep-analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "project-deep-analyzer",
+    "url": "https://clawhub.ai/skills/project-deep-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/project-deep-analyzer-7e0eaebc4775ddf5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "深度分析项目的系统边界、核心概念、模块架构、关键算法、技术选型以及错误排查。当用户需要深入理解代码库或定位疑难问题时调用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aznikline",
+      "userId": "s17b7qvsrcfz751mqr4j9tgs2183jhcb",
+      "displayName": "Mason",
+      "image": "https://avatars.githubusercontent.com/u/27564626?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 382,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773127199829,
+      "changelog": "- Initial release of the \"project\" skill as version 1.0.0.\n- Adds comprehensive documentation files: README.md and SKILL.md.\n- Introduces \"Project Deep Analyzer,\" a methodology for deeply analyzing software projects across six key dimensions: system boundaries, core concepts, module architecture, core algorithms, technical choices, and error analysis.\n- Removes legacy skill.md in favor of new detailed documentation and structure.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b1cbf54137981e2e2d47ea00eb5a51389eb72dce16dc4f630103809fd6e37dac"
+}

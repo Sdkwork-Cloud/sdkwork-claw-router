@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15085,
+  "uuid": "skill-clawhub-aister-vector-memory",
+  "skillKey": "clawhub-aister-vector-memory",
+  "name": "Aister vector-memory",
+  "summary": "Provides semantic vector search over Aister's memory using PostgreSQL and e5-large-v2 embeddings to find related content by meaning in Russian and English.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aister_vector_memory",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alekhm",
+      "features": [
+        "Provides semantic vector search over Aister's memory using PostgreSQL and e5-large-v2 embedding."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aister-vector-memory@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8550365?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aister-vector-memory",
+      "url": "https://clawhub.ai/skills/aister-vector-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aister-vector-memory",
+    "url": "https://clawhub.ai/skills/aister-vector-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aister-vector-memory-7d7f66a26b96955f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aister-vector-memory@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-aister-vector-memory-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ae80eca45627960287644c3b68a86b11107c365f8abc0d46001631e4410c0ced",
+      "artifactSizeBytes": 2098
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T22:01:11.077Z"
+}

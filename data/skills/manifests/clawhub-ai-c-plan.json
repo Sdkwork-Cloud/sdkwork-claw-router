@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57543,
+  "uuid": "skill-clawhub-ai-c-plan",
+  "skillKey": "clawhub-ai-c-plan",
+  "name": "Ai C Plan",
+  "summary": "AI-C plan klasöründeki MD/CSV planı okuyup dependency sırasına göre tamamen otomatik ilerler; geliştirir, test eder, raporlar.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_c_plan",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sercan Boyraz",
+      "features": [
+        "AI-C plan klasöründeki MD/CSV planı okuyup dependency sırasına göre tamamen otomatik ilerler",
+        "geliştirir, test eder, raporlar."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-c-plan@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/179240415?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-c-plan",
+      "url": "https://clawhub.ai/skills/ai-c-plan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-c-plan",
+    "url": "https://clawhub.ai/skills/ai-c-plan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-c-plan-bb476747080c2c10.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-c-plan@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-c-plan-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:33727ec74cb8e2b4997fe270b7a3eaf9b161ae6b0e1c9588b07bb64f98cee457",
+      "artifactSizeBytes": 2579
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T14:10:52.826Z"
+}

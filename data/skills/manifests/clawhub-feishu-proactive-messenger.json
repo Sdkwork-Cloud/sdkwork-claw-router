@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59041,
+  "uuid": "skill-clawhub-feishu-proactive-messenger",
+  "skillKey": "clawhub-feishu-proactive-messenger",
+  "name": "Feishu Proactive Messenger",
+  "summary": "飞书主动消息发送器 — 飞书渠道只支持被动回复，agent 无法主动发起对话。本 skill 调用飞书 OpenAPI 发送文本消息，补齐主动投递能力。| Feishu Proactive Messenger — Send text messages proactively via Feishu OpenAPI,...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_proactive_messenger",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ziwen Wang",
+      "features": [
+        "飞书主动消息发送器 — 飞书渠道只支持被动回复，agent 无法主动发起对话。本 skill 调用飞书 OpenAPI 发送文本消息，补齐主动投递能力。| Feishu Proactive."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-proactive-messenger@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/84793687?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-proactive-messenger",
+      "url": "https://clawhub.ai/skills/feishu-proactive-messenger"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-proactive-messenger",
+    "url": "https://clawhub.ai/skills/feishu-proactive-messenger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-proactive-messenger-2c51bce6b7b614c0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-proactive-messenger@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-proactive-messenger-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e60c90d8f4e689224a5fb26b842e71e06c287c21d26291ea847d57e5b95d98e7",
+      "artifactSizeBytes": 2212
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T08:56:39.787Z"
+}

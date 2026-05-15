@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zenn@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zenn",
+  "skill": {
+    "id": 52220,
+    "skillKey": "clawhub-zenn",
+    "name": "zenn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zenn",
+    "url": "https://clawhub.ai/skills/zenn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zenn-8959d202a3106b1f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Publish Zenn articles by managing Markdown in a GitHub-connected repository (push/PR -> merge) and previewing with Zenn CLI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tachi-koma-x",
+      "userId": "publishers:tachi-koma-x",
+      "displayName": "tachi-koma-x",
+      "image": "https://avatars.githubusercontent.com/u/261880547?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 431,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1771884151635,
+      "changelog": "- Initial release of Zenn GitHub publishing workflow documentation and best practices.\n- Step-by-step guide for drafting, reviewing, and publishing articles/books via PRs and metadata flags.\n- Detailed repo structure, file placement rules, and recommended asset management included.\n- Zenn CLI usage instructions for local preview, content creation, and troubleshooting.\n- Included an article front matter template and a publication checklist to ensure quality and safety.\n- Outlined limitations and failure scenarios to guide proper use.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a98ca338dfdff6273591cdf38c1a719596f5a76c396bfa68ffaad641d80da384"
+}

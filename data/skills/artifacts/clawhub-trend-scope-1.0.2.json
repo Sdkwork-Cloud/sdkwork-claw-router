@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trend-scope@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trend_scope",
+  "skill": {
+    "id": 72725,
+    "skillKey": "clawhub-trend-scope",
+    "name": "Trend Scope"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trend-scope",
+    "url": "https://clawhub.ai/skills/trend-scope",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trend-scope-4512a2f92af5d801.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "舆情趋势洞察技能。根据用户需求自动生成专业的舆情分析报告，包含情感分布、地域分布、关键词分析、媒体分布、时间趋势等多维度分析。触发词：舆情、报告、生成报告、舆情报告、分析报告、品牌分析、市场分析、竞品分析、趋势分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "longgggggg",
+      "userId": "s17cry3f92e03vxw9k9c7s1tth843fbp",
+      "displayName": "longGGGGGG",
+      "image": "https://avatars.githubusercontent.com/u/40319383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775529541164,
+      "changelog": "No changes detected in this version.\n\n- No file changes were made between this and the previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:382545106f1e89e5c0561b0ae9d1079c202ee1c992a4c60ef67ec4229c8bf9a6"
+}

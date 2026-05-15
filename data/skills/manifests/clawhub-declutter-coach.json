@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43515,
+  "uuid": "skill-clawhub-declutter-coach",
+  "skillKey": "clawhub-declutter-coach",
+  "name": "Declutter Coach",
+  "summary": "Provides step-by-step decluttering plans with sorting rules and resale options for specific spaces like wardrobes, bookshelves, or drawers.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.declutter_coach",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Provides step-by-step decluttering plans with sorting rules and resale options for specific spa."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/declutter-coach@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "declutter-coach",
+      "url": "https://clawhub.ai/skills/declutter-coach"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "declutter-coach",
+    "url": "https://clawhub.ai/skills/declutter-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/declutter-coach-41bbfead1e2838fd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/declutter-coach@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-declutter-coach-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1fb96d82bdd0dc539a78e46ac68cd3cfca4a4bdea160b7a196708a6a00969d04",
+      "artifactSizeBytes": 2206
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T02:33:37.201Z"
+}

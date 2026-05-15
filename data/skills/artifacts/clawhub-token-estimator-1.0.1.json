@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/token-estimator@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.token_estimator",
+  "skill": {
+    "id": 61329,
+    "skillKey": "clawhub-token-estimator",
+    "name": "Token Estimator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "token-estimator",
+    "url": "https://clawhub.ai/skills/token-estimator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/token-estimator-eb310c85fff45531.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "预估本次请求的 Token 消耗量，支持多模型精确计算"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "largetool",
+      "userId": "s174h1rvndzxpg052914dvpjjs83xj3a",
+      "displayName": "largetool",
+      "image": "https://avatars.githubusercontent.com/u/128457415?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 495,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772070343180,
+      "changelog": "精简产品文化声明，明确误差说明",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6d1b49e6ae7be177992f64854f29fbb30022bc37a4c981580e7f756e2edaf119"
+}

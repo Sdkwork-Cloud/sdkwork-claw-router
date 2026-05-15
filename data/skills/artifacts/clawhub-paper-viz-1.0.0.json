@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paper-viz@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_viz",
+  "skill": {
+    "id": 67523,
+    "skillKey": "clawhub-paper-viz",
+    "name": "Paper Viz"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-viz",
+    "url": "https://clawhub.ai/skills/paper-viz",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-viz-c7fb8d76c8fb9c1e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "从论文 PDF、实验截图或表格图片中提取实验结果，自动匹配图表类型，调用 Python 生成确定性图表，并导出 PNG、PDF 和 LaTeX；默认在用户指定输出根目录下自动创建与论文同名的文件夹保存结果。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ghxianzhi",
+      "userId": "s17ct9vdthjzb0xc8z2prh4pwn84q9q7",
+      "displayName": "ghxianzhi",
+      "image": "https://avatars.githubusercontent.com/u/243262824?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 117,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775976328319,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2909aa64b98615acc173df8ae7c81e8a744337dc8ce3aa27f01e78cc9ef3b8d8"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/retail-performance-evaluation-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.retail_performance_evaluation_analysis",
+  "skill": {
+    "id": 67537,
+    "skillKey": "clawhub-retail-performance-evaluation-analysis",
+    "name": "业绩评价分析"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "retail-performance-evaluation-analysis",
+    "url": "https://clawhub.ai/skills/retail-performance-evaluation-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/retail-performance-evaluation-analysis-4341587fa58fed35.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "业绩评价分析工具。整合目标达成、环比、基线、Benchmark四个维度，量化\"业绩不达预期\"分析。 核心能力： 1. 四维度综合评价（目标达成、环比、历史基线、同行Benchmark） 2. 预期类型识别（目标、环比、基线、Benchmark） 3. 达成率计算与状态判定（正常/关注/告警/紧急） 4. 综合评价..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gwyang7",
+      "userId": "s174smknxqd6qs6q88gjradc7x83ngrp",
+      "displayName": "Xtechmerge.AI",
+      "image": "https://avatars.githubusercontent.com/u/176652150?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774532456791,
+      "changelog": "Initial release: 支持四维度综合评价、量化不达预期",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b47290a48ecc7adbc6e0169aafe102507437f9d8f7b09ce35fa7b200f8857a75"
+}

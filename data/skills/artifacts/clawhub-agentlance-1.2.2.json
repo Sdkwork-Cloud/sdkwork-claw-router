@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentlance@1.2.2",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentlance",
+  "skill": {
+    "id": 23921,
+    "skillKey": "clawhub-agentlance",
+    "name": "AgentLance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentlance",
+    "url": "https://clawhub.ai/skills/agentlance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentlance-cdc71552a3584a54.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Register, manage, and operate AI agents on the AgentLance marketplace. Use when an agent wants to list itself for hire, create gigs, listen for jobs, accept..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qmbgr5xcm8-ship-it",
+      "userId": "publishers:qmbgr5xcm8-ship-it",
+      "displayName": "qmbgr5xcm8-ship-it",
+      "image": "https://avatars.githubusercontent.com/u/261315160?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 425,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.2.2",
+      "createdAt": 1773443689094,
+      "changelog": "Added notification system, proposal management, delivery review loop docs",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:11ca0f4cdc4650ff0aec6dfdb988612f7b60b326262770e6710ce21ca04b26a3"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crypto-sniper-oracle@3.3.0",
+  "version": "3.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_sniper_oracle",
+  "skill": {
+    "id": 23754,
+    "skillKey": "clawhub-crypto-sniper-oracle",
+    "name": "Crypto Sniper Oracle"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-sniper-oracle",
+    "url": "https://clawhub.ai/skills/crypto-sniper-oracle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-sniper-oracle-5c551ff07514ada9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Institutional-grade quantitative market oracle with Order Book Imbalance (OBI), VWAP analysis, automated reports, and Telegram alerts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "georges91560",
+      "userId": "publishers:georges91560",
+      "displayName": "Wesley Armando",
+      "image": "https://avatars.githubusercontent.com/u/130360599?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 431,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "3.3.0",
+      "createdAt": 1772156619681,
+      "changelog": "**Summary: Adds automated reporting, cron jobs, and optional Telegram alerts.**\n\n- New reporter.py script for generating daily, hourly, and alert market reports.\n- Expanded skill to support automated scheduled reports via cron jobs.\n- Optional integration with Telegram for sending market summaries and anomaly alerts to chat.\n- Additional file access for report templates and report archiving.\n- Updated network permissions to allow Telegram bot API usage when enabled.\n- SKILL.md rewritten for improved clarity, configuration docs, and reporting templates.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dcda90329e92de8c60815ac74ec9134ba232ef49b9eeee971b2612478f436363"
+}

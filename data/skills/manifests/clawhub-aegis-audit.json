@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14005,
+  "uuid": "skill-clawhub-aegis-audit",
+  "skillKey": "clawhub-aegis-audit",
+  "name": "Aegis Audit",
+  "summary": "Deep behavioral security audit for AI agent skills and MCP tools. Performs deterministic static analysis (AST + Semgrep + 15 specialized scanners), cryptographic lockfile generation, and optional LLM-powered intent analysis. Use when insta.",
+  "version": "0.1.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aegis_audit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sanguineseal",
+      "features": [
+        "Deep behavioral security audit for AI agent skills and MCP tools",
+        "Performs deterministic static analysis (AST + Semgrep + 15 specialized scanners), cryptographic.",
+        "Use when installing, reviewing, or approving any skill, tool, plugin, or MCP server — especiall.",
+        "Replaces basic safety summaries with full CWE-mapped, OWASP-tagged, line-referenced security re."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aegis-audit@0.1.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/80772081?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aegis-audit",
+      "url": "https://clawhub.ai/skills/aegis-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aegis-audit",
+    "url": "https://clawhub.ai/skills/aegis-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aegis-audit-2368bddd2b7fb8e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aegis-audit@0.1.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-aegis-audit-0.1.10.json",
+      "version": "0.1.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a02af837d2499e33fb49681c4d04ca83390b11ef1d47eeb8642e64ddd7fdb862",
+      "artifactSizeBytes": 2093
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T00:58:58.253Z"
+}

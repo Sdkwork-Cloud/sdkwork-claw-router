@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cloud-storage-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloud_storage_manager",
+  "skill": {
+    "id": 40120,
+    "skillKey": "clawhub-cloud-storage-manager",
+    "name": "Cloud Storage Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloud-storage-manager",
+    "url": "https://clawhub.ai/skills/cloud-storage-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloud-storage-manager-70c82c8e94a0e397.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage multiple cloud storage providers with features for file upload/download, bucket management, sync, multipart uploads, and CDN integration."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kaiyuelv",
+      "userId": "s171c2g5qpr0rdyra8xbm4srbh84mjjm",
+      "displayName": "Lv Lancer",
+      "image": "https://avatars.githubusercontent.com/u/29176686?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775896874260,
+      "changelog": "cloud-storage-manager 1.0.0 initial release:\n\n- Universal cloud storage manager supports AWS S3, Aliyun OSS, Tencent COS, and Azure Blob.\n- Features: file upload/download, bucket management, sync, multipart uploads, and CDN integration.\n- Cross-provider copy supported without local download.\n- Includes Python API for StorageManager and SyncManager, with example usage and comprehensive configuration instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:585df02e1669b5f443c6b3489f6540ff3342645cfa6a32b5ae9505e1f095033b"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49061,
+  "uuid": "skill-clawhub-justoneapi-kuaishou-get-user-detail",
+  "skillKey": "clawhub-justoneapi-kuaishou-get-user-detail",
+  "name": "Kuaishou User Profile API",
+  "summary": "Call GET /api/kuaishou/get-user-detail/v1 for Kuaishou User Profile through JustOneAPI with userId.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_kuaishou_get_user_detail",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Call GET /api/kuaishou/get-user-detail/v1 for Kuaishou User Profile through JustOneAPI with use."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-kuaishou-get-user-detail@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-kuaishou-get-user-detail",
+      "url": "https://clawhub.ai/skills/justoneapi-kuaishou-get-user-detail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-kuaishou-get-user-detail",
+    "url": "https://clawhub.ai/skills/justoneapi-kuaishou-get-user-detail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-kuaishou-get-user-detail-7cd2809f33b9fca0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-kuaishou-get-user-detail@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-kuaishou-get-user-detail-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:180ce1cb05a770833f20085f2c3ad3a93f2fe8372e276edf7f3cd6594def62d0",
+      "artifactSizeBytes": 1965
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T04:07:21.244Z"
+}

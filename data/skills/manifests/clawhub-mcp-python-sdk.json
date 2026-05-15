@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58158,
+  "uuid": "skill-clawhub-mcp-python-sdk",
+  "skillKey": "clawhub-mcp-python-sdk",
+  "name": "Mcp Python Sdk",
+  "summary": "MCP Python SDK：Anthropic 主导的 Model Context Protocol 参考实现。2 server 层 + 3 transport + 3 原语 + 4 协议版本 + 50 条约束。 MCP Python SDK: reference Python implementation o...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcp_python_sdk",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tang Weigang",
+      "features": [
+        "MCP Python SDK：Anthropic 主导的 Model Context Protocol 参考实现。2 server 层 + 3 transport + 3 原语 + 4 协议."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mcp-python-sdk@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259277235?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mcp-python-sdk",
+      "url": "https://clawhub.ai/skills/mcp-python-sdk"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcp-python-sdk",
+    "url": "https://clawhub.ai/skills/mcp-python-sdk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcp-python-sdk-7482650c6a5e96dc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mcp-python-sdk@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mcp-python-sdk-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c25d63c0422664a43fe46a3350c6a49f396a18e1c8699651f4b7fb2de4e05bd8",
+      "artifactSizeBytes": 2021
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T10:51:11.497Z"
+}

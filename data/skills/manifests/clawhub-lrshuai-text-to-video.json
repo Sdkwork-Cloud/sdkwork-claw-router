@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64621,
+  "uuid": "skill-clawhub-lrshuai-text-to-video",
+  "skillKey": "clawhub-lrshuai-text-to-video",
+  "name": "LrshuAI Text To Video",
+  "summary": "文生视频技能。当你需要仅提供一段文本描述来生成视频时调用此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lrshuai_text_to_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dlazyAI",
+      "features": [
+        "文生视频技能。当你需要仅提供一段文本描述来生成视频时调用此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lrshuai-text-to-video@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/153581534?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lrshuai-text-to-video",
+      "url": "https://clawhub.ai/skills/lrshuai-text-to-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lrshuai-text-to-video",
+    "url": "https://clawhub.ai/skills/lrshuai-text-to-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lrshuai-text-to-video-f6b9736a7599ca97.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lrshuai-text-to-video@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lrshuai-text-to-video-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7b01ca34e7ff8d3dfda5d1214cac1ecd47eed3b6e3101a414dbfdc3508e64841",
+      "artifactSizeBytes": 2164
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T07:16:24.479Z"
+}

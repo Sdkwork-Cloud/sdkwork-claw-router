@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52410,
+  "uuid": "skill-clawhub-skill-sift",
+  "skillKey": "clawhub-skill-sift",
+  "name": "Sift",
+  "summary": "Sift execution governance for AI agents. Use this skill to authorize actions before executing them. Call sift_authorize before any consequential tool call —...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_sift",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "walkojas-boop",
+      "features": [
+        "Sift execution governance for AI agents",
+        "Use this skill to authorize actions before executing them",
+        "Call sift_authorize before any consequential tool call —..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-sift@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261247722?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-sift",
+      "url": "https://clawhub.ai/skills/skill-sift"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-sift",
+    "url": "https://clawhub.ai/skills/skill-sift",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-sift-17cd68647cd05339.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-sift@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-sift-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:df44a74952218838ce0ec8da0f0f77ba5ee8e92648f03e7436515e96e8df4876",
+      "artifactSizeBytes": 2540
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T22:57:49.395Z"
+}

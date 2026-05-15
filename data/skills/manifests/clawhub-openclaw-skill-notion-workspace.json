@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50115,
+  "uuid": "skill-clawhub-openclaw-skill-notion-workspace",
+  "skillKey": "clawhub-openclaw-skill-notion-workspace",
+  "name": "Notion Workspace",
+  "summary": "Manage Notion workspace — search pages, read content, create pages in databases, append blocks, and list databases. Uses Notion REST API directly via urllib/...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_skill_notion_workspace",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Marouane",
+      "features": [
+        "Manage Notion workspace — search pages, read content, create pages in databases, append blocks,.",
+        "Uses Notion REST API directly via urllib/..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-skill-notion-workspace@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25495967?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-skill-notion-workspace",
+      "url": "https://clawhub.ai/skills/openclaw-skill-notion-workspace"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-skill-notion-workspace",
+    "url": "https://clawhub.ai/skills/openclaw-skill-notion-workspace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-skill-notion-workspace-48d292f408ebfbc0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-skill-notion-workspace@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-skill-notion-workspace-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6a860d44dcf7b6088f1a329931d3e3ddb77af11461bb05cfd1a22e30689ddc19",
+      "artifactSizeBytes": 2457
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T01:39:45.035Z"
+}

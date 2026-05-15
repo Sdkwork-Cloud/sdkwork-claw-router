@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35255,
+  "uuid": "skill-clawhub-encore",
+  "skillKey": "clawhub-encore",
+  "name": "Encore",
+  "summary": "Encore integration. Manage data, records, and automate workflows. Use when the user wants to interact with Encore data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.encore",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Encore integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Encore data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/encore@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "encore",
+      "url": "https://clawhub.ai/skills/encore"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "encore",
+    "url": "https://clawhub.ai/skills/encore",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/encore-f7b4ccaa2c70afd3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/encore@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-encore-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:028dcbf186f7dbefa24cb4b750a755e3c73eb1b844e9d0d0c6447729ad67bd9b",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:43:58.138Z"
+}

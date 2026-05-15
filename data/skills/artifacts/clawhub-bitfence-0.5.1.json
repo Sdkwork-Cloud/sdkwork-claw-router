@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bitfence@0.5.1",
+  "version": "0.5.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bitfence",
+  "skill": {
+    "id": 30784,
+    "skillKey": "clawhub-bitfence",
+    "name": "Bitfence - pre-transaction risk infrastructure for AI agents operating on-chain"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bitfence",
+    "url": "https://clawhub.ai/skills/bitfence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bitfence-a683d9092c9d46b7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides pre-transaction risk assessments for token trades on Solana and Base, returning safety recommendations via rapid, paid oracle queries."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bilsbys",
+      "userId": "s177rpj7ehfna2wgefr3jpjwhh84mvq1",
+      "displayName": "bilsbys",
+      "image": "https://avatars.githubusercontent.com/u/265898507?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.5.1",
+      "createdAt": 1776028594422,
+      "changelog": "**Major update — agents now treat Bitfence as an optional, user-driven safety advisory instead of an enforced pre-condition.**\n\n- New skill instructions clarify that Bitfence is user-controlled and purely advisory; users always have the final say on transactions.\n- Privacy and data-sharing guidance added: explicit user consent now required before running paid, contextual risk checks.\n- Agents must inform users that risk assessments incur small USDC fees on Base mainnet before calling Bitfence for the first time in a session.\n- Error and circuit breaker handling updated: surface all warnings, but respect explicit user overrides.\n- Batched or repeated risk checks discouraged; call Bitfence only once per decision.\n- Response and endpoint documentation streamlined for user transparency.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac884c4fb17477e65f4569a401758332dde6f0f29e0b154f4877e0401f40f063"
+}

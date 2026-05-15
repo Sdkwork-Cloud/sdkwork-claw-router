@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69975,
+  "uuid": "skill-clawhub-volc-vision",
+  "skillKey": "clawhub-volc-vision",
+  "name": "volc-vision",
+  "summary": "使用火山引擎 ARK API 做图片理解、图片描述、视觉问答与图像分析。适用于用户发来图片并询问“这是什么”“图里有什么”“帮我看下这张图”“描述一下图片内容”“识别图片中的信息”等场景，也适用于需要对本地图片、图片 URL 或 base64 图片做理解和问答时。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.volc_vision",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "big-dust",
+      "features": [
+        "使用火山引擎 ARK API 做图片理解、图片描述、视觉问答与图像分析。适用于用户发来图片并询问“这是什么”“图里有什么”“帮我看下这张图”“描述一下图片内容”“识别图片中的信息”等场景，也."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/volc-vision@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/115332044?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "volc-vision",
+      "url": "https://clawhub.ai/skills/volc-vision"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "volc-vision",
+    "url": "https://clawhub.ai/skills/volc-vision",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/volc-vision-70bcb77d5439cbc2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/volc-vision@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-volc-vision-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dc44e5602a0c3796a0939c9e942f6cd960d6d0d8e78e5ed8bcc957da2bbf734c",
+      "artifactSizeBytes": 2141
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T21:38:40.737Z"
+}

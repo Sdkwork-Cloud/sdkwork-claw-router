@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28789,
+  "uuid": "skill-clawhub-global-holidays",
+  "skillKey": "clawhub-global-holidays",
+  "name": "Global Holidays",
+  "summary": "Use this skill whenever a task involves checking, generating, or working with public holidays — for any country or subdivision (state, province, region). Tri...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.global_holidays",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yen Ting",
+      "features": [
+        "Use this skill whenever a task involves checking, generating, or working with public holidays —."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/global-holidays@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33386396?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "global-holidays",
+      "url": "https://clawhub.ai/skills/global-holidays"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "global-holidays",
+    "url": "https://clawhub.ai/skills/global-holidays",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/global-holidays-1d95df0cdae853cd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/global-holidays@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-global-holidays-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6712b62b42ef2f5791b2271cdf3737905a0e2fbca0918b781a0d92539ae7930e",
+      "artifactSizeBytes": 2330
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T04:58:06.403Z"
+}

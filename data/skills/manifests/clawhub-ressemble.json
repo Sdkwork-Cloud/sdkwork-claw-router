@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18077,
+  "uuid": "skill-clawhub-ressemble",
+  "skillKey": "clawhub-ressemble",
+  "name": "Ressemble TTS e STT",
+  "summary": "Text-to-Speech and Speech-to-Text integration using Resemble AI HTTP API.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ressemble",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Adriano-VR",
+      "features": [
+        "Text-to-Speech and Speech-to-Text integration using Resemble AI HTTP API."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ressemble@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/110434219?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ressemble",
+      "url": "https://clawhub.ai/skills/ressemble"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ressemble",
+    "url": "https://clawhub.ai/skills/ressemble",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ressemble-fb112fa5d30ecd3e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ressemble@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ressemble-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:def8456877fe617cc8d5c3dfae6dde42261abbea70e3d8a8488345cfacbdc8e6",
+      "artifactSizeBytes": 1979
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T17:27:22.125Z"
+}

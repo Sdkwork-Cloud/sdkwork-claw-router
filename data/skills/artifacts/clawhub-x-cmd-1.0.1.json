@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x-cmd@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_cmd",
+  "skill": {
+    "id": 57157,
+    "skillKey": "clawhub-x-cmd",
+    "name": "x-cmd"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-cmd",
+    "url": "https://clawhub.ai/skills/x-cmd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-cmd-dedd872c59656023.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Load x-cmd first: `. ~/.x-cmd.root/X`, then explore with `x nihao --llmstxt` or discover skills via `x skill`. x-cmd provides 600+ portable software and deve..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "edwinjhlee",
+      "userId": "s172788nc0txsvg12nzarvtzf183gq1h",
+      "displayName": "Edwin.JH.Lee",
+      "image": "https://avatars.githubusercontent.com/u/4426319?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 541,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 5,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773184806673,
+      "changelog": "- Metadata version updated to 1.0.1.\n- No other changes detected.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ccc2a366eccd62f03237a41e4dd19a06c6f3a6fe862b6fdcfb766cd339bcb377"
+}

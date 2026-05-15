@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61701,
+  "uuid": "skill-clawhub-linkfox-mpstats-ozon-product-detail",
+  "skillKey": "clawhub-linkfox-mpstats-ozon-product-detail",
+  "name": "Mpstats Ozon Product Detail",
+  "summary": "MPSTATS Ozon 俄罗斯站 SKU 全量详情批量查询。一次最多传 100 个 Ozon 商品 ID，返回每个 SKU 的价格、折扣、Ozon Card 价、评分、评论数、库存、销量、销售额、潜在销售额/损失销售额、上架日期、图片等完整商品卡。当用户提到 Ozon 商品详情、Ozon SKU 详情、Ozon...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkfox_mpstats_ozon_product_detail",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linkfox-ai",
+      "features": [
+        "MPSTATS Ozon 俄罗斯站 SKU 全量详情批量查询。一次最多传 100 个 Ozon 商品 ID，返回每个 SKU 的价格、折扣、Ozon Card 价、评分、评论数、库存、销量、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linkfox-mpstats-ozon-product-detail@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267242260?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linkfox-mpstats-ozon-product-detail",
+      "url": "https://clawhub.ai/skills/linkfox-mpstats-ozon-product-detail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkfox-mpstats-ozon-product-detail",
+    "url": "https://clawhub.ai/skills/linkfox-mpstats-ozon-product-detail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkfox-mpstats-ozon-product-detail-47dd7dae6bb73bd6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linkfox-mpstats-ozon-product-detail@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-linkfox-mpstats-ozon-product-detail-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c7391e7ff5fde591c0fd3afe7f16ac5a94c0022fa5a48239f65c9175548cbf3c",
+      "artifactSizeBytes": 2208
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T05:40:01.953Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24997,
+  "uuid": "skill-clawhub-email-otp",
+  "skillKey": "clawhub-email-otp",
+  "name": "Email OTP",
+  "summary": "Create temporary email addresses and monitor for registration OTP codes or validation links",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_otp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "etopro",
+      "features": [
+        "Create temporary email addresses and monitor for registration OTP codes or validation links"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/email-otp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39183555?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "email-otp",
+      "url": "https://clawhub.ai/skills/email-otp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-otp",
+    "url": "https://clawhub.ai/skills/email-otp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-otp-17bd3b2b6521b7cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/email-otp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-email-otp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:587640587024f847eb026197d0c0b747fa66b1f858e68df0a5e133e939a0f4b5",
+      "artifactSizeBytes": 2306
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T18:57:25.126Z"
+}

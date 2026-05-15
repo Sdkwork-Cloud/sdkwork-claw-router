@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-ref@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_ref",
+  "skill": {
+    "id": 60579,
+    "skillKey": "clawhub-openclaw-ref",
+    "name": "Openclaw Ref"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-ref",
+    "url": "https://clawhub.ai/skills/openclaw-ref",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-ref-3a862a04b67e93f1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw 配置、CLI、排错、模型管理完整参考手册。修改 openclaw.json、执行 CLI 命令、排查问题时必须查阅此 Skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "astralwaveorg",
+      "userId": "s179arcrjvb5857vss7sshwqdx83s18k",
+      "displayName": "AstralWave",
+      "image": "https://avatars.githubusercontent.com/u/58116035?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 506,
+      "installsAllTime": 5,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772644364021,
+      "changelog": "OpenClaw 参考手册首发版本：\n\n- 提供 openclaw.json 配置、CLI、排错、模型管理全流程使用手册\n- 按主题分区索引核心、渠道、自动化、模型、工具、安装、排错、参考文档\n- 明确配置修改、故障排查的操作指引与关键原则\n- 覆盖源仓库 docs/zh-CN/ 全部 14 个目录的主要参考内容",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:84d4ff6446a755ed16a37a75682fb331bdebd22636184cddb574316f309917a5"
+}

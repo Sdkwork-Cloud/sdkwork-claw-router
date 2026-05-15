@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25054,
+  "uuid": "skill-clawhub-line",
+  "skillKey": "clawhub-line",
+  "name": "Line",
+  "summary": "Provides organized summaries of LINE's public platform features, content formats, operational rules, and help resources without accessing private data.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.line",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codenova58",
+      "features": [
+        "Provides organized summaries of LINE's public platform features, content formats, operational r."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/line@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191358186?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "line",
+      "url": "https://clawhub.ai/skills/line"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "line",
+    "url": "https://clawhub.ai/skills/line",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/line-38a9c1e721584da2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/line@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-line-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d88a81992dde38947789615560cb53c31e55841bc518547fe2e4fb013bdf919c",
+      "artifactSizeBytes": 2341
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T17:58:58.087Z"
+}

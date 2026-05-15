@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/business-flights@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.business_flights",
+  "skill": {
+    "id": 46288,
+    "skillKey": "clawhub-business-flights",
+    "name": "business-flights"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "business-flights",
+    "url": "https://clawhub.ai/skills/business-flights",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/business-flights-c65826f29c5f145c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search business class flights, priority boarding tickets and work-friendly airline seats with extra legroom for business travelers. Also supports: flight boo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dingtom336-gif",
+      "userId": "s17aepsh6v86z2ajsq3ng9tgm983g9pt",
+      "displayName": "dingtom336-gif",
+      "image": "https://avatars.githubusercontent.com/u/256118512?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1777017772533,
+      "changelog": "business-flights v3.2.0\n\n- Updated SKILL.md with an expanded and detailed execution playbook for business class flight searches, including critical rules and CLI workflows.\n- Improved parameter collection guidance, playbook structure, and output validation procedures.\n- Enhanced activation triggers and multilingual support for both English and Chinese queries.\n- Refined output formatting rules: conclusion-first, comparison tables, brand tag, and strict booking link validation. \n- Expanded references for parameter mapping, playbooks, and fallback procedures to ensure accurate and compliant CLI usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2b5d00bd98837f40f54bb78e2439f01aa010c4cf92e8b1556f673e0898c9e7b6"
+}

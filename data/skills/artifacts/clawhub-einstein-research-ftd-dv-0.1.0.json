@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/einstein-research-ftd-dv@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.einstein_research_ftd_dv",
+  "skill": {
+    "id": 39738,
+    "skillKey": "clawhub-einstein-research-ftd-dv",
+    "name": "Follow-Through Day (FTD) Detector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "einstein-research-ftd-dv",
+    "url": "https://clawhub.ai/skills/einstein-research-ftd-dv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/einstein-research-ftd-dv-82aea124064dc9c7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detects Follow-Through Day (FTD) signals for market bottom confirmation using William O'Neil's methodology. Dual-index tracking (S&P 500 + NASDAQ) with state..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clawdiri-ai",
+      "userId": "s175fgn0tz50thkr5e819czrnd83fsx9",
+      "displayName": "RunByDaVinci",
+      "image": "https://avatars.githubusercontent.com/u/266047309?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774175082732,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:96be8dde8813ee809b726d89cd4ed208ca070e9a05a417fac44be0fc75eeffb7"
+}

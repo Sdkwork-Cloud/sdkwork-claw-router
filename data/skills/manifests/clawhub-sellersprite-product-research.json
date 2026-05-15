@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50208,
+  "uuid": "skill-clawhub-sellersprite-product-research",
+  "skillKey": "clawhub-sellersprite-product-research",
+  "name": "SellerSprite Product Research",
+  "summary": "SellerSprite Product Research Skill — Input a keyword or category, automatically fetch market data via SellerSprite API and run AI analysis, output a structu...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sellersprite_product_research",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mguozhen",
+      "features": [
+        "SellerSprite Product Research Skill — Input a keyword or category, automatically fetch market d."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sellersprite-product-research@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1411875?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sellersprite-product-research",
+      "url": "https://clawhub.ai/skills/sellersprite-product-research"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sellersprite-product-research",
+    "url": "https://clawhub.ai/skills/sellersprite-product-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sellersprite-product-research-384e28405280c618.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sellersprite-product-research@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-sellersprite-product-research-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e71a0ee8bad41193b126c2eccdfc481efac43afd7567eded97a3e0c926f05eb4",
+      "artifactSizeBytes": 2057
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T15:36:00.938Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dream-memory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dream_memory",
+  "skill": {
+    "id": 61237,
+    "skillKey": "clawhub-dream-memory",
+    "name": "dream-memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dream-memory",
+    "url": "https://clawhub.ai/skills/dream-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dream-memory-d43bbb14de2b0700.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "完整的工作区记忆管理系统。四层架构：文件存储 + OpenViking 向量引擎 + Ollama bge-m3 + Agent 规则。 Use when: 用户询问记忆系统如何工作、如何安装记忆系统到新 Agent、记忆文件结构、向量检索原理、 Session Flush 机制、长期记忆晋升规则、OpenVik..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shoukuan",
+      "userId": "s176jz6gawd4w6yd4e8exvk35583r6eq",
+      "displayName": "Shoukuan",
+      "image": "https://avatars.githubusercontent.com/u/42137264?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 213,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775305284649,
+      "changelog": "name: dream-memory\ndescription: >\n  完整的工作区记忆管理系统。四层架构：文件存储 + OpenViking 向量引擎 + Ollama bge-m3 + Agent 规则。\n  Use when: 用户询问记忆系统如何工作、如何安装记忆系统到新 Agent、记忆文件结构、向量检索原理、\n  Session Flush 机制、长期记忆晋升规则、OpenViking 配置、bge-m3 参数调优、跨会话记忆丢失排查。\n  也适用于为新 OpenClaw 实例部署完整记忆管理方案。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:91b80d194c57e00047faa75bb9b5a3faa8db5a2aa67a9229bc2c79edecb03340"
+}

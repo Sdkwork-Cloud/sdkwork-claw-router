@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-video-generator-from-script@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_video_generator_from_script",
+  "skill": {
+    "id": 43534,
+    "skillKey": "clawhub-free-video-generator-from-script",
+    "name": "Free Video Generator From Script"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-video-generator-from-script",
+    "url": "https://clawhub.ai/skills/free-video-generator-from-script",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-video-generator-from-script-fadbe8413bf89306.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get script-based videos ready to post, without touching a single slider. Upload your written script (TXT, DOCX, PDF, plain text, up to 500MB), say something..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776316744868,
+      "changelog": "Initial release of Free Video Generator from Script.\n\n- Instantly generate 1080p MP4 videos from TXT, DOCX, PDF, or plain text scripts (up to 500MB).\n- Automatic voiceover and matching visuals; no manual editing or filming needed.\n- Easy workflow: upload your script, give instructions (e.g., \"turn my script into a video\"), and download when ready.\n- Designed for marketers, content creators, and educators seeking fast, shareable videos.\n- Includes free anonymous access with 100 credits (7-day token), session management, and robust error handling.\n- Supports export, credits check, timeline previews, and iterative editing within a cloud-powered environment.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c0ff7d15f97cdf335f1d333628bafd6af9ad173095c7e7e19cfc7644e0a10ac6"
+}

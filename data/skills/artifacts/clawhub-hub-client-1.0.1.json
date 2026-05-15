@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hub-client@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hub_client",
+  "skill": {
+    "id": 46539,
+    "skillKey": "clawhub-hub-client",
+    "name": "Hub Client"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hub-client",
+    "url": "https://clawhub.ai/skills/hub-client",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hub-client-8e82a4e09bef274e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Service marketplace: publish data as services, consume hub services"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tangboheng",
+      "userId": "s171qfxzvp2eha7vdrtgavf56h83gmbz",
+      "displayName": "TangBoheng",
+      "image": "https://avatars.githubusercontent.com/u/16973161?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 124,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776047497910,
+      "changelog": "- Initial release of claw-service-hub skill (service marketplace for publishing and consuming hub services).\n- Added provider and consumer code templates with step-by-step guides.\n- Included example data services (file, API, weather).\n- Documented workflow for combining multiple services.\n- Provided environment setup, troubleshooting tips, and dependency installation instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f6de8da62c6e0789559100eb3973a415aa79ba3f1265088d3ff9e34e20667493"
+}

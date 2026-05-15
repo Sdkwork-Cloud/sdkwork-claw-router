@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29157,
+  "uuid": "skill-clawhub-netlify-integration",
+  "skillKey": "clawhub-netlify-integration",
+  "name": "Netlify",
+  "summary": "Netlify integration. Manage data, records, and automate workflows. Use when the user wants to interact with Netlify data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.netlify_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Netlify integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Netlify data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/netlify-integration@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "netlify-integration",
+      "url": "https://clawhub.ai/skills/netlify-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "netlify-integration",
+    "url": "https://clawhub.ai/skills/netlify-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/netlify-integration-faf7d60a518e10f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/netlify-integration@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-netlify-integration-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fa04c51a6880ab0845d6b8c2c06744c058e9fbb74365cd1e3f3d0d0e79bd2e8e",
+      "artifactSizeBytes": 1893
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:17:07.870Z"
+}

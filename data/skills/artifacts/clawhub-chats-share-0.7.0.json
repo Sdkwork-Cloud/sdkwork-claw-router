@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chats-share@0.7.0",
+  "version": "0.7.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chats_share",
+  "skill": {
+    "id": 16639,
+    "skillKey": "clawhub-chats-share",
+    "name": "Chat share"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chats-share",
+    "url": "https://clawhub.ai/skills/chats-share",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chats-share-e3a26b1dbc8ed009.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Legacy alias for /clawpage. Redirects users to the new canonical command."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imyelo",
+      "userId": "s17347x0yahsjzj8cwsxs284rd83gjc7",
+      "displayName": "yelo",
+      "image": "https://avatars.githubusercontent.com/u/2399123?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 764,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "0.7.0",
+      "createdAt": 1773586898002,
+      "changelog": "- Sunset of old functionality: This version deprecates previous skill features.\n- SKILL.md updated to indicate \"chats-share\" is now a legacy alias for \"/clawpage\".\n- Users are clearly redirected to use /clawpage as the new, canonical command.\n- Old documentation, guides, and platform references have been removed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:edc0e60835d63cce12b5b181522a27e7864502a71d54b3c98d0d3db1ee405454"
+}

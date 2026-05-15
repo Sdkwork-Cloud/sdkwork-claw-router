@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dior-couture@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dior_couture",
+  "skill": {
+    "id": 47948,
+    "skillKey": "clawhub-dior-couture",
+    "name": "Dior Couture"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dior-couture",
+    "url": "https://clawhub.ai/skills/dior-couture",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dior-couture-13b3140055e80a53.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides detailed insights into Dior's haute couture history, brand positioning, business model, product expansion, and LVMH management strategy."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 106,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777388715518,
+      "changelog": "- Initial release introducing a concise overview of Christian Dior's history and brand evolution.\n- Includes a detailed timeline from brand founding (1946) to present, highlighting key creative directors and milestones.\n- Outlines Dior’s business model, product diversification, and position within LVMH.\n- Presents brand strategy analysis, including unique strengths (“护城河”) and LVMH family management.\n- Features notable revenue data and interesting historical facts about Dior’s iconic collections and perfumes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:27b7ecc6998cee7107837c1813c487277a22a80ff28e912f2516815b4d023224"
+}

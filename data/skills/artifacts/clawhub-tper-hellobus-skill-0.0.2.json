@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tper-hellobus-skill@0.0.2",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tper_hellobus_skill",
+  "skill": {
+    "id": 21909,
+    "skillKey": "clawhub-tper-hellobus-skill",
+    "name": "tper-hellobus"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tper-hellobus-skill",
+    "url": "https://clawhub.ai/skills/tper-hellobus-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tper-hellobus-skill-6215206eb3708d6b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get real-time and scheduled bus arrival times for TPER buses in Bologna and Ferrara, Italy. Use this skill whenever the user mentions TPER, bus stop codes (n..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lore2601",
+      "userId": "publishers:lore2601",
+      "displayName": "rolench",
+      "image": "https://avatars.githubusercontent.com/u/46943202?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 492,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.2",
+      "createdAt": 1772309836242,
+      "changelog": "- Initial release of tper-hellobus-skill.\n- Provides real-time and scheduled TPER bus arrival times for Bologna and Ferrara via the official Hellobus API.\n- Supports parsing user queries for stop codes, line numbers, and optional times, with flexible natural language time input.\n- Distinguishes between real-time tracking and scheduled arrivals based on provided time.\n- Handles API error responses clearly for user debugging.\n- Formats bus arrival information as easy-to-read bullet lists.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d9272fff5c62665f3734f238c64200ca0eed249354cb47590e06191d3f8f8152"
+}

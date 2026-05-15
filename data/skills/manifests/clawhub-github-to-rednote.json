@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56049,
+  "uuid": "skill-clawhub-github-to-rednote",
+  "skillKey": "clawhub-github-to-rednote",
+  "name": "GitHub to RedNote",
+  "summary": "Convert GitHub repositories into RedNote (小红书) style technical articles. Use when user wants to generate tech promotion content from GitHub repos - including...",
+  "version": "1.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_to_rednote",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "caoyachao",
+      "features": [
+        "Convert GitHub repositories into RedNote (小红书) style technical articles",
+        "Use when user wants to generate tech promotion content from GitHub repos",
+        "including..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-to-rednote@1.6.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13848791?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-to-rednote",
+      "url": "https://clawhub.ai/skills/github-to-rednote"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-to-rednote",
+    "url": "https://clawhub.ai/skills/github-to-rednote",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-to-rednote-c97c2c0746d3ef01.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-to-rednote@1.6.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-to-rednote-1.6.0.json",
+      "version": "1.6.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ed2dcd161ac0a7d7ee6c65475d9adc0751d7a0c49dba1664e630bb68092d05f4",
+      "artifactSizeBytes": 1975
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T03:55:29.177Z"
+}

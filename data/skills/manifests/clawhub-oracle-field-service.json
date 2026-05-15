@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34241,
+  "uuid": "skill-clawhub-oracle-field-service",
+  "skillKey": "clawhub-oracle-field-service",
+  "name": "Oracle Field Service",
+  "summary": "Oracle Field Service integration. Manage data, records, and automate workflows. Use when the user wants to interact with Oracle Field Service data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oracle_field_service",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Oracle Field Service integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Oracle Field Service data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oracle-field-service@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oracle-field-service",
+      "url": "https://clawhub.ai/skills/oracle-field-service"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oracle-field-service",
+    "url": "https://clawhub.ai/skills/oracle-field-service",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oracle-field-service-5f4390dfdf520ef4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oracle-field-service@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-oracle-field-service-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3516617baac9eee64f3fdf8df9224866ca3e3b51bddb1d60bb4819c96e4268b0",
+      "artifactSizeBytes": 1938
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:20:19.357Z"
+}

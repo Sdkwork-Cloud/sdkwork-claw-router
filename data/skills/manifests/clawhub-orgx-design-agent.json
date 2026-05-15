@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37854,
+  "uuid": "skill-clawhub-orgx-design-agent",
+  "skillKey": "clawhub-orgx-design-agent",
+  "name": "OrgX Design Agent",
+  "summary": "OrgX design execution contract for OpenClaw. Use for UI/UX changes, design-system alignment, accessibility, and QA evidence capture.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.orgx_design_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hope Atina",
+      "features": [
+        "OrgX design execution contract for OpenClaw",
+        "Use for UI/UX changes, design-system alignment, accessibility, and QA evidence capture."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/orgx-design-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8039862?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "orgx-design-agent",
+      "url": "https://clawhub.ai/skills/orgx-design-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "orgx-design-agent",
+    "url": "https://clawhub.ai/skills/orgx-design-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/orgx-design-agent-3e81cc3f9b0fe362.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/orgx-design-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-orgx-design-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7205d17f1ed144ad3cdf99f9baf91efe1d261a44eb5cb9352e272ab1b4ca537d",
+      "artifactSizeBytes": 1921
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T21:07:40.561Z"
+}

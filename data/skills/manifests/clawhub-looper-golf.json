@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30501,
+  "uuid": "skill-clawhub-looper-golf",
+  "skillKey": "clawhub-looper-golf",
+  "name": "Looper Golf",
+  "summary": "Play a round of golf using CLI tools — autonomously or with a human caddy.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.looper_golf",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sbauch",
+      "features": [
+        "Play a round of golf using CLI tools — autonomously or with a human caddy."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/looper-golf@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/923033?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "looper-golf",
+      "url": "https://clawhub.ai/skills/looper-golf"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "looper-golf",
+    "url": "https://clawhub.ai/skills/looper-golf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/looper-golf-4bdff484029d1cc9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/looper-golf@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-looper-golf-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1da561631f404980433e7337286794e77bcb31366a8431d3a0be443826602989",
+      "artifactSizeBytes": 2299
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T14:40:11.995Z"
+}

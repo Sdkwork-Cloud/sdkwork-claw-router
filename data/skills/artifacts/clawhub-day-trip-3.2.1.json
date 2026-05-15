@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/day-trip@3.2.1",
+  "version": "3.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.day_trip",
+  "skill": {
+    "id": 50114,
+    "skillKey": "clawhub-day-trip",
+    "name": "Day Trip"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "day-trip",
+    "url": "https://clawhub.ai/skills/day-trip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/day-trip-838ad52f3efc9bbb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Plan perfect day trips — no overnight stay needed. Optimizes a full day of activities within a city or to nearby attractions, returning by evening. Also supp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dingtom336-gif",
+      "userId": "s17aepsh6v86z2ajsq3ng9tgm983g9pt",
+      "displayName": "dingtom336-gif",
+      "image": "https://avatars.githubusercontent.com/u/256118512?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 628,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "3.2.1",
+      "createdAt": 1775653348789,
+      "changelog": "day-trip v3.2.1\n\n- Updated documentation in README.md, SKILL.md, and reference files for clarity and accuracy.\n- Improved playbooks, failure handling, and output templates in reference materials.\n- No functional changes to skill logic; changes are documentation and workflow guidance only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:89817cad684c0e0e7aa2553f5c65669d3fa37720889256619bc44aeaac20e43c"
+}

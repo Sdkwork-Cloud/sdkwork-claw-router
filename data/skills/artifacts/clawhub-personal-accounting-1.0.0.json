@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/personal-accounting@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_accounting",
+  "skill": {
+    "id": 73043,
+    "skillKey": "clawhub-personal-accounting",
+    "name": "个人记账"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-accounting",
+    "url": "https://clawhub.ai/skills/personal-accounting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-accounting-2e26e221fec01f4c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "个人记账技能，支持文字输入和图片账单识别。当用户提到记账、记录花费、添加支出/收入、上传账单图片、查看账单、统计消费时必须使用此技能。用户单独发送图片（无任何文字）时也必须触发此技能，直接看图判断金额并记账，不要等待用户补充说明。所有账单按天存储在 bills/ 文件夹中，同一天的账单累加到同一文件。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jzw6",
+      "userId": "s179c3p3bwxxchjzy9957b2r0h83netr",
+      "displayName": "Jzw6",
+      "image": "https://avatars.githubusercontent.com/u/152200874?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 281,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774847258649,
+      "changelog": "personal-accounting 1.0.0\n\n- 初始版本发布，支持中文个人记账，自动处理文字与图片账单输入。\n- 文字和图片混合输入时，优先使用图片获取金额，文字作为备注或分类提示。\n- 所有账单按天存储并追加在 bills/ 文件夹中。\n- 提供账单查询、日/月统计、以及分类参考支持。\n- 支持用户仅发送图片时自动识别和记账，无需补充说明。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:31108f566fa215ab1b15266ddf14cfe90449dcb348a336751612a6b104ddd399"
+}

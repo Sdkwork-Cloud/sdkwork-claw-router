@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/phoenix-loop@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.phoenix_loop",
+  "skill": {
+    "id": 20614,
+    "skillKey": "clawhub-phoenix-loop",
+    "name": "Phoenix Loop"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "phoenix-loop",
+    "url": "https://clawhub.ai/skills/phoenix-loop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/phoenix-loop-2a7402c2f84fdfca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Auto-diagnose agent failures, extract reusable recovery patterns, and create local skills to fix recurring blockers while keeping all data private and local."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dalomeve",
+      "userId": "s170jb8y518cbtqkxpgjgcz0yn843mr1",
+      "displayName": "Dalomeve",
+      "image": "https://avatars.githubusercontent.com/u/115125037?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 547,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772306200060,
+      "changelog": "Initial release of phoenix-loop.\n\n- Introduces a self-healing workflow to turn agent failures into permanent, reusable skills.\n- Automatically diagnoses blocked tasks, extracts failure patterns, and crystallizes solutions into local skill files.\n- All processing and data storage is privacy-first: no data leaves the local environment.\n- Adds automated privacy filtering to ensure no sensitive information is stored.\n- Integrates with HEARTBEAT.md for daily self-checks and long-term blocker handling.\n- Provides clear rollback instructions for disabling or removing generated skills.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9ef00c7ed08a316945c9a666bb81a9952a38db0d161b32739ce8e5bc6bb4d236"
+}

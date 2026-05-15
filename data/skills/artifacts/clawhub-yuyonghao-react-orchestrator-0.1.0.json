@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yuyonghao-react-orchestrator@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yuyonghao_react_orchestrator",
+  "skill": {
+    "id": 65002,
+    "skillKey": "clawhub-yuyonghao-react-orchestrator",
+    "name": "React Orchestrator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yuyonghao-react-orchestrator",
+    "url": "https://clawhub.ai/skills/yuyonghao-react-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yuyonghao-react-orchestrator-ac533c91f0835e6a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于 ReAct 框架的双系统 AI 协调器，自动评估任务复杂度，智能切换快速执行和深度推理模式，支持多工具协作。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuyonghao-123",
+      "userId": "s173qtadqbwthef9dwg283f54n83np6t",
+      "displayName": "yuyonghao-123",
+      "image": "https://avatars.githubusercontent.com/u/267580628?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 195,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774919607289,
+      "changelog": "Initial release with dual-system ReAct agent framework and Reflexion mechanism.\n\n- Introduces System 1 (fast execution) and System 2 (deep reasoning) with automatic mode switching based on task complexity.\n- Implements ReAct reasoning loop and periodic Reflexion for self-correction.\n- Includes centralized tool registry with automatic tool matching and timeout controls.\n- Provides full task execution history for auditing and debugging.\n- Offers configuration options, extensive API documentation, and basic test coverage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5ff5755220d14466259084f59f7e8c29cd4831bb68de3fb0716d5169b99a6792"
+}

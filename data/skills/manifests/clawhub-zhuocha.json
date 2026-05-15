@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61147,
+  "uuid": "skill-clawhub-zhuocha",
+  "skillKey": "clawhub-zhuocha",
+  "name": "zhuocha",
+  "summary": "招投标重复项目核实助手。当需要分析同一 reid 下的多条 jy_id 是否为真正重复时激活。数据源：dify_ns_re_readsource（reid分组） + dwd_bid_it_all（明细字段，5200端口） + ods_bid_content（原始正文，5100端口）。典型触发语：「找茬大师」「分析...",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhuocha",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cybluesky",
+      "features": [
+        "招投标重复项目核实助手。当需要分析同一 reid 下的多条 jy_id 是否为真正重复时激活。数据源：dify_ns_re_readsource（reid分组） + dwd_bid_it_a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zhuocha@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10718681?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zhuocha",
+      "url": "https://clawhub.ai/skills/zhuocha"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhuocha",
+    "url": "https://clawhub.ai/skills/zhuocha",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhuocha-1b3a1c0485c6866d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zhuocha@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zhuocha-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:24623b7741ebb42c668fcdb5c1c8227bf3e50b62307b4f94d1631bfc8b518ea9",
+      "artifactSizeBytes": 2513
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T12:38:04.126Z"
+}

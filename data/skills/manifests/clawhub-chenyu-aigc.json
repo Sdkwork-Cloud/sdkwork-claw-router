@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34467,
+  "uuid": "skill-clawhub-chenyu-aigc",
+  "skillKey": "clawhub-chenyu-aigc",
+  "name": "Chenyu Aigc",
+  "summary": "Generate AI videos and images via Chenyu Studio AIGC API. Supports text-to-video, image-to-video, video extension, style transfer, and AI image generation. T...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chenyu_aigc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "任嘉",
+      "features": [
+        "Generate AI videos and images via Chenyu Studio AIGC API",
+        "Supports text-to-video, image-to-video, video extension, style transfer, and AI image generation"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chenyu-aigc@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5842910?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chenyu-aigc",
+      "url": "https://clawhub.ai/skills/chenyu-aigc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chenyu-aigc",
+    "url": "https://clawhub.ai/skills/chenyu-aigc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chenyu-aigc-3ee8d641de700a54.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chenyu-aigc@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-chenyu-aigc-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a31fe30ada27baa1ca9a0f37928817fc5fa58b96a8b6a2cad7b80ed6e9d8aad0",
+      "artifactSizeBytes": 1943
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T12:18:58.780Z"
+}

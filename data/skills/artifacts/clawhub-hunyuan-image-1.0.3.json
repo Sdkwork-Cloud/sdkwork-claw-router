@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hunyuan-image@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hunyuan_image",
+  "skill": {
+    "id": 68850,
+    "skillKey": "clawhub-hunyuan-image",
+    "name": "腾讯混元生图能力"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hunyuan-image",
+    "url": "https://clawhub.ai/skills/hunyuan-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hunyuan-image-3b10bd23ceca9322.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "腾讯混元生图API - 根据文本描述生成AI图像"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wszhhx",
+      "userId": "publishers:wszhhx",
+      "displayName": "Tony",
+      "image": "https://avatars.githubusercontent.com/u/38256402?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 480,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1772810783924,
+      "changelog": "- Updated skill metadata for compatibility with Clawdbot, adding an emoji and specifying the primary required environment variable.\n- No other user-facing functionality or documentation changes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:04704e3774a164f034b1317ccf7683444ef44d6e4114a07872cd549626390e38"
+}

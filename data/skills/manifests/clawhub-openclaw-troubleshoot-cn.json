@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60650,
+  "uuid": "skill-clawhub-openclaw-troubleshoot-cn",
+  "skillKey": "clawhub-openclaw-troubleshoot-cn",
+  "name": "Openclaw Troubleshoot Cn",
+  "summary": "OpenClaw 故障排查 - 常见问题解决方案。适合：遇到问题的用户、运维人员。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_troubleshoot_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yang1002378395-cmyk",
+      "features": [
+        "OpenClaw 故障排查",
+        "常见问题解决方案。适合：遇到问题的用户、运维人员。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-troubleshoot-cn@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261632147?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-troubleshoot-cn",
+      "url": "https://clawhub.ai/skills/openclaw-troubleshoot-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-troubleshoot-cn",
+    "url": "https://clawhub.ai/skills/openclaw-troubleshoot-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-troubleshoot-cn-0448a2399ecb0685.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-troubleshoot-cn@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-troubleshoot-cn-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fb295dbaa4456f1613f9becacb1a56287cd51032868e336724e25a9a57581352",
+      "artifactSizeBytes": 2081
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T21:32:01.422Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24867,
+  "uuid": "skill-clawhub-gws-reseller",
+  "skillKey": "clawhub-gws-reseller",
+  "name": "Gws Reseller",
+  "summary": "Google Workspace Reseller: Manage Workspace subscriptions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gws_reseller",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Google Workspace Reseller: Manage Workspace subscriptions."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gws-reseller@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gws-reseller",
+      "url": "https://clawhub.ai/skills/gws-reseller"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gws-reseller",
+    "url": "https://clawhub.ai/skills/gws-reseller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gws-reseller-7beaa0fac084a26d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gws-reseller@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gws-reseller-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2435c2abf068a63fb628513c093cfdad7393220ba4381f31eeb87c1106cdda68",
+      "artifactSizeBytes": 2195
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T23:26:10.983Z"
+}

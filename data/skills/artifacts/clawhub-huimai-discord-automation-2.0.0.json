@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/huimai-discord-automation@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huimai_discord_automation",
+  "skill": {
+    "id": 63839,
+    "skillKey": "clawhub-huimai-discord-automation",
+    "name": "Huimai Discord Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huimai-discord-automation",
+    "url": "https://clawhub.ai/skills/huimai-discord-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huimai-discord-automation-4b2bd9fd67fd35ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动回复、权限管理、频道清理、日志记录——Discord服务器日常运维交给它。省一个社区管理的坑位。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yezhaowang888-stack",
+      "userId": "s17ffxprqs0jtaf8w6n5gtnprd84cx12",
+      "displayName": "yezhaowang888-stack",
+      "image": "https://avatars.githubusercontent.com/u/274244352?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 239,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1777767618460,
+      "changelog": "v2.0.0 大改版：自动禁言/解禁+关键词检测+周报+多语言欢迎",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:02e14397b035826dc20af3adb293680579d7401f53edda07bb0ee136e57dcea7"
+}

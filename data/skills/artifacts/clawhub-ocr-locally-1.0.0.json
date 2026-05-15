@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ocr-locally@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ocr_locally",
+  "skill": {
+    "id": 43994,
+    "skillKey": "clawhub-ocr-locally",
+    "name": "OCR Locally"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ocr-locally",
+    "url": "https://clawhub.ai/skills/ocr-locally",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ocr-locally-be0f6bc49aef8cda.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "[macOS only] Use this skill when the user requests OCR (Optical Character Recognition), image/PDF text extraction. Uses macOS native Vision/PDFKit frameworks..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ltryee",
+      "userId": "s17f15dn3gc74a13v3v4g132vs856fkf",
+      "displayName": "ltryee",
+      "image": "https://avatars.githubusercontent.com/u/854047?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777896845706,
+      "changelog": "Initial release of local-ocr, providing offline OCR capabilities on macOS.\n\n- Supports image and PDF text extraction using macOS native Vision and PDFKit frameworks (macOS 10.15+ required)\n- Recognizes multiple languages (Chinese, English, Japanese, Korean, and more)\n- Two output modes: pure text or detailed JSON with confidence and bounding boxes\n- Handles a variety of image formats (PNG, JPEG, TIFF, BMP) and PDFs, with support for specific page selection\n- Command-line interface with flexible options for language, output mode, and file paths",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e352dfad23447f17690884ec8dfcc812c856ba98a8fc510f0abf601474841c23"
+}

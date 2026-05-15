@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/soul-archive@2.2.8",
+  "version": "2.2.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.soul_archive",
+  "skill": {
+    "id": 21613,
+    "skillKey": "clawhub-soul-archive",
+    "name": "Soul Archive"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "soul-archive",
+    "url": "https://clawhub.ai/skills/soul-archive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/soul-archive-e7382b779f4e2aed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Soul Archive -- A digital personality persistence system that builds your digital soul clone through everyday AI conversations (with user consent, auto-extra..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dqsjqian",
+      "userId": "s171bam7r1t26623myew3k4qrn83xjbg",
+      "displayName": "dqsjqian",
+      "image": "https://avatars.githubusercontent.com/u/44996681?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 293,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 28
+    },
+    "latestVersion": {
+      "version": "2.2.8",
+      "createdAt": 1775205634893,
+      "changelog": "soul-archive 2.2.8\n\n- Updated documentation: README.md, README_CN.md, and SKILL.md for improved clarity and detail.\n- Scripts updated: soul_chat.py, soul_crypto.py, soul_extract.py, soul_init.py, soul_reflect.py, and soul_report.py received changes (details not specified in diff).\n- No breaking changes indicated; existing functionality and structure remain consistent.\n- General improvements to usability and documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5129c0385fc0d137393d7a9076945d54eca24bc6621d2239c9b70b7bda8d8293"
+}

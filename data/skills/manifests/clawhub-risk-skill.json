@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24093,
+  "uuid": "skill-clawhub-risk-skill",
+  "skillKey": "clawhub-risk-skill",
+  "name": "risk-skill",
+  "summary": "Assesses market, credit, and operational risks; evaluates financial, reputational, and operational impacts; and provides targeted risk management recommendat...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.risk_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wen-Si",
+      "features": [
+        "Assesses market, credit, and operational risks",
+        "evaluates financial, reputational, and operational impacts",
+        "and provides targeted risk management recommendat..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/risk-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/102722251?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "risk-skill",
+      "url": "https://clawhub.ai/skills/risk-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "risk-skill",
+    "url": "https://clawhub.ai/skills/risk-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/risk-skill-0085b9dd04b3cbf1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/risk-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-risk-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf2e96cd13fd36397a39e157af5c677603a85b954785ad6dc0d531a8d6a6e792",
+      "artifactSizeBytes": 2213
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T09:20:03.660Z"
+}

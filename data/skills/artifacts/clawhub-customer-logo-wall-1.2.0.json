@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/customer-logo-wall@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.customer_logo_wall",
+  "skill": {
+    "id": 62353,
+    "skillKey": "clawhub-customer-logo-wall",
+    "name": "Customer Logo Wall Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "customer-logo-wall",
+    "url": "https://clawhub.ai/skills/customer-logo-wall",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/customer-logo-wall-4e2627372768e68a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "处理客户表格并生成Logo墙PPT的自动化工具。当用户提到\"客户表格\"、\"公司中文名\"、\"Logo墙\"、\"客户logo\"或需要处理Excel中的客户数据并生成PPT时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "heavenchenggong",
+      "userId": "s17amramj5c2r6twkcwycahxr183gtks",
+      "displayName": "heavenchenggong",
+      "image": "https://avatars.githubusercontent.com/u/259799383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 249,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1776433294578,
+      "changelog": "v1.2.0: 新增 Logo 格式标准化(normalize_logos.py)，build_ppt.py 内置格式修复，download_logos.js 新增 Bing 图片搜索备选，新增 logo-format-issues.md 参考文档",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d83b1de5348fd4a0d902932d8eb9723329d3e9caa1c40cf61463cdbe0b9f130b"
+}

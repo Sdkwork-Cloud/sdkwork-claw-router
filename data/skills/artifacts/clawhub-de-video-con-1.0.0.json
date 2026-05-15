@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/de-video-con@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.de_video_con",
+  "skill": {
+    "id": 46816,
+    "skillKey": "clawhub-de-video-con",
+    "name": "De Video Con"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "de-video-con",
+    "url": "https://clawhub.ai/skills/de-video-con",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/de-video-con-5e717d877ddc9d68.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute interview recording into 1080p compiled video files just by typing what you need. Whether it's creating edited videos from raw footage or qui..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susan4731-wilfordf",
+      "userId": "s1782w3wqej6a5gnp3w63eb80184cckp",
+      "displayName": "susan4731-wilfordf",
+      "image": "https://avatars.githubusercontent.com/u/208907675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776444679662,
+      "changelog": "- Initial release of De Video Con: fast, AI-driven video compilation and export from raw clips via text instructions.\n- Effortless setup: automatic handling of backend connection and authentication; free token with 100 credits for new users.\n- Supports quick creation of 1080p MP4s, highlight edits, and multi-track exports — no timeline required.\n- Intelligent prompt routing connects user instructions to upload, export, status, or credits actions.\n- All rendering handled securely on cloud GPU nodes; popular video and audio formats supported.\n- Includes clear error handling, session persistence, and automatic export workflows for a smooth editing experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3800bb00a00a856836896ea1d02a860b1c35217e919f2d34964727397cae67a2"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/keyapi-reddit-user-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.keyapi_reddit_user_analysis",
+  "skill": {
+    "id": 52714,
+    "skillKey": "clawhub-keyapi-reddit-user-analysis",
+    "name": "Keyapi Reddit User Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "keyapi-reddit-user-analysis",
+    "url": "https://clawhub.ai/skills/keyapi-reddit-user-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/keyapi-reddit-user-analysis-a072940c9b3170d7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover and analyze Reddit users and subreddits — retrieve user profiles, active communities, public trophies, subreddit rules, settings, post channels, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lycici",
+      "userId": "s17bzc9482bw65ggtax2tfmx4583h9sz",
+      "displayName": "lycici",
+      "image": "https://avatars.githubusercontent.com/u/38585775?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775183127419,
+      "changelog": "keyapi-reddit-user-analysis 1.0.0\n\n- Initial release of Reddit user and community intelligence skill via KeyAPI MCP.\n- Supports discovery and analysis of Reddit users and subreddits, including profiles, memberships, trophies, subreddit rules, settings, channels, and more.\n- Integrates dynamic search with typeahead suggestions and trending search intelligence.\n- Provides clear workflow guidance and example commands for each API node.\n- Requires a KEYAPI_TOKEN (get free at keyapi.ai) and Node.js v18+.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fe020484bc8db7206060acbc60d33527faa4be08bd82f3f86712fe9ff128442a"
+}

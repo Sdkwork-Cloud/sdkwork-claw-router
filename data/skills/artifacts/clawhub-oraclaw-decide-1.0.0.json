@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oraclaw-decide@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oraclaw_decide",
+  "skill": {
+    "id": 40583,
+    "skillKey": "clawhub-oraclaw-decide",
+    "name": "Oraclaw Decide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oraclaw-decide",
+    "url": "https://clawhub.ai/skills/oraclaw-decide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oraclaw-decide-698596009bf5c722.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Decision intelligence for AI agents. Analyze options, map decision dependencies with PageRank, detect when information sources conflict, and find the choices..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whatsonyourmind",
+      "userId": "s1742adj1ngn7vhc26tve4753183j86s",
+      "displayName": "Whatsonyourmind",
+      "image": "https://avatars.githubusercontent.com/u/248369826?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774609251608,
+      "changelog": "- Initial release of OraClaw Decide: strategic decision intelligence for AI agents.\n- Analyze options, map dependencies with PageRank, and find bottlenecks and critical paths in decision graphs.\n- Detect agreement/conflict between multiple information sources with convergence scoring.\n- Includes tools for bandit optimization, contextual choices, and decision dependency analysis.\n- Supports decision networks with nodes (decisions/goals) and weighted edges (relationships).\n- Pricing: $0.05 per analysis call, with a free tier for up to 100 decisions/month.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c017cd3481faa8f9382790832a75dd8c360d3615145ed40306ffbd41c4c48561"
+}

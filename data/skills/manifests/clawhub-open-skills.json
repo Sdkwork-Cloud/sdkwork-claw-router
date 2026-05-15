@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62857,
+  "uuid": "skill-clawhub-open-skills",
+  "skillKey": "clawhub-open-skills",
+  "name": "open-skills",
+  "summary": "一个交互式 CLI 工具，帮助开发者按分类浏览、空格多选、一键批量安装/同步 AI Agent skills 到多个编辑器。",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.open_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jonny Looma",
+      "features": [
+        "一个交互式 CLI 工具，帮助开发者按分类浏览、空格多选、一键批量安装/同步 AI Agent skills 到多个编辑器。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/open-skills@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/179694088?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "open-skills",
+      "url": "https://clawhub.ai/skills/open-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "open-skills",
+    "url": "https://clawhub.ai/skills/open-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/open-skills-36e8b215a8dff75a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/open-skills@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-open-skills-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f0586186b25afc1a8b041b5b1f864a46c601dde1f53fcd4eb22361162407617a",
+      "artifactSizeBytes": 1838
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T10:17:40.923Z"
+}

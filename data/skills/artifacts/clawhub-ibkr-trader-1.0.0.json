@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ibkr-trader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ibkr_trader",
+  "skill": {
+    "id": 9225,
+    "skillKey": "clawhub-ibkr-trader",
+    "name": "IBKR Trading"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ibkr-trader",
+    "url": "https://clawhub.ai/skills/ibkr-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ibkr-trader-3a89ea33dc651296.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interactive Brokers (IBKR) trading automation via Client Portal API. Use when setting up IBKR account access, authenticating sessions, checking portfolio/positions, or building trading bots. Handles IBeam automated login with IBKR Key 2FA."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flokiew",
+      "userId": "publishers:flokiew",
+      "displayName": "FlokieW",
+      "image": "https://avatars.githubusercontent.com/u/61638280?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3319,
+      "installsAllTime": 16,
+      "installsCurrent": 16,
+      "stars": 11,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769329731798,
+      "changelog": "Initial release: Automate Interactive Brokers (IBKR) trading and authentication via the Client Portal API.\n\n- Supports IBeam automated login using IBKR Key mobile 2FA.\n- Enables monitoring of portfolio, positions, and account summaries.\n- Allows order placement and position management through API endpoints.\n- Provides setup instructions for Linux environments, including dependency installation and session keepalive.\n- Includes troubleshooting tips and reference to extended documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:60de3bd4fa501173f6cf382ef67411ce00b55a8168590b8b3b6c1c33234439cb"
+}

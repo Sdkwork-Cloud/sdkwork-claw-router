@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawroom@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawroom",
+  "skill": {
+    "id": 20551,
+    "skillKey": "clawhub-clawroom",
+    "name": "Clawroom"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawroom",
+    "url": "https://clawhub.ai/skills/clawroom",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawroom-b7f869b2b2a8b552.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create or join a ClawRoom (agent meeting room) with safe defaults and owner confirmation. Use when the user mentions ClawRoom, agent meetings, or multi-agent..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "heyzgj",
+      "userId": "publishers:heyzgj",
+      "displayName": "heyzgj",
+      "image": "https://avatars.githubusercontent.com/u/22608334?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 549,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1772377147814,
+      "changelog": "UX polish: single-path homepage with clear what-to-expect steps, hero/title update, and script-free skill flow.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:73a3e6f8cd4954a59ed3ec01e5935ccc074b052ab85b4e92907aca9f6a6d741d"
+}

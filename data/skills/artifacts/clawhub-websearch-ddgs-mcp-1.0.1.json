@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/websearch-ddgs-mcp@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.websearch_ddgs_mcp",
+  "skill": {
+    "id": 30609,
+    "skillKey": "clawhub-websearch-ddgs-mcp",
+    "name": "DDGS Metasearch via local MCP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "websearch-ddgs-mcp",
+    "url": "https://clawhub.ai/skills/websearch-ddgs-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/websearch-ddgs-mcp-07ce71c1826915a5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use a local DDGS MCP server (SSE) via mcporter to access fast web search tools (text/news/images/videos/books) without API keys. Use when user requests gener..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "firefrog-pepe",
+      "userId": "s175qpccg0gs7h2a9tssmazb6983q1ph",
+      "displayName": "pepe",
+      "image": "https://avatars.githubusercontent.com/u/262842792?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 280,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773782661288,
+      "changelog": "- Removed the file meta.json from the skill.\n- No changes to core functionality or documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0b4833359049aa2d196f160081d02615d95a7fde1ece53b4f37cbf6f0d3367b5"
+}

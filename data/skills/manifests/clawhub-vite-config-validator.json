@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38107,
+  "uuid": "skill-clawhub-vite-config-validator",
+  "skillKey": "clawhub-vite-config-validator",
+  "name": "Vite Config Validator",
+  "summary": "Validate Vite configuration files (JSON-exported) for structural correctness, build settings, server security, resolve/CSS hygiene, plugin deprecations, and...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vite_config_validator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Validate Vite configuration files (JSON-exported) for structural correctness, build settings, s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vite-config-validator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vite-config-validator",
+      "url": "https://clawhub.ai/skills/vite-config-validator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vite-config-validator",
+    "url": "https://clawhub.ai/skills/vite-config-validator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vite-config-validator-68a66ac48db256e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vite-config-validator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-vite-config-validator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5eb4b455cfb0cdd48b9ea73dcdcc452eeaf0b52d18469986161d2ce846699ffa",
+      "artifactSizeBytes": 2049
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:03:18.844Z"
+}

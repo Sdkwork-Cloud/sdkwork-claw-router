@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/afrexai-observability-engine@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_observability_engine",
+  "skill": {
+    "id": 18156,
+    "skillKey": "clawhub-afrexai-observability-engine",
+    "name": "Observability & Reliability Engineering"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-observability-engine",
+    "url": "https://clawhub.ai/skills/afrexai-observability-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-observability-engine-b022eb29bd2ed88d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete observability & reliability engineering system. Use when designing monitoring, implementing structured logging, setting up distributed tracing, buil..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1kalin",
+      "userId": "s17e1q0nx23qnh4n429zzqc05x83hvsw",
+      "displayName": "1kalin",
+      "image": "https://avatars.githubusercontent.com/u/15705344?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 614,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771785005782,
+      "changelog": "Initial release: complete observability and reliability engineering framework.\n\n- Helps design and implement monitoring, structured logging, distributed tracing, alerting, SLO/SLI frameworks, incident response, post-mortems, and system reliability audits.\n- Includes a quick health check for assessing observability maturity.\n- Provides practical guidance on structured logging—architecture, fields, log levels, scrubbing, language-specific setup, and storage options.\n- Lists best practices and anti-patterns to improve log quality and operational visibility.\n- Covers topics such as alert design, dashboard architecture, on-call operations, chaos engineering, and cost optimization.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2fc7762ada1dff54799ad5c4b57058a98f4b5f069e5e4dd36c16a92b0d965104"
+}

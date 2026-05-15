@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/geo-metrics-tracker-2@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geo_metrics_tracker_2",
+  "skill": {
+    "id": 27877,
+    "skillKey": "clawhub-geo-metrics-tracker-2",
+    "name": "Geo Metrics Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geo-metrics-tracker-2",
+    "url": "https://clawhub.ai/skills/geo-metrics-tracker-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geo-metrics-tracker-2-482ffd139447576e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real-time GEO metrics monitoring and alerting orchestrator. Use this skill whenever the user wants to track, visualize, and react to AI GEO performance metri..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "geoly-geo",
+      "userId": "publishers:geoly-geo",
+      "displayName": "GEOLY AI",
+      "image": "https://avatars.githubusercontent.com/u/70360114?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 339,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773038679493,
+      "changelog": "Initial release of geo-metrics-tracker: a skill for real-time GEO performance metrics monitoring and alerting.\n\n- Provides a framework to track, visualize, and react to key metrics like AIGVR, SoM, AI citation volume, and coverage across major generative AI engines.\n- Focuses on designing system schemas, tracking plans, dashboards, and alert rules (not direct data extraction).\n- Supports anomaly detection, ongoing dashboards, and operational routines for continuous observability.\n- Intended to complement `geo-report-builder` by turning static reports into live, actionable monitoring systems.\n- Includes detailed guidance on metric definitions, system integration, and workflow steps for teams setting up GEO metric tracking and alerting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:07affc5277c9449035fc1f76f242b647ca8a3b8769f21b026506c79fdcdf6709"
+}

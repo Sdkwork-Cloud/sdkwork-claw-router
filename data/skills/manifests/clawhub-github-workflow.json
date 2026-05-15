@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58509,
+  "uuid": "skill-clawhub-github-workflow",
+  "skillKey": "clawhub-github-workflow",
+  "name": "Github Workflow",
+  "summary": "GitHub 集成。管理仓库、Issue、Pull Request 和 GitHub Actions 工作流。通过 MorphixAI 代理安全访问 GitHub API。",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_workflow",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Paul Leo",
+      "features": [
+        "GitHub 集成。管理仓库、Issue、Pull Request 和 GitHub Actions 工作流。通过 MorphixAI 代理安全访问 GitHub API。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-workflow@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/55380315?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-workflow",
+      "url": "https://clawhub.ai/skills/github-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-workflow",
+    "url": "https://clawhub.ai/skills/github-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-workflow-022d35fe309336e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-workflow@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-workflow-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:202e949af1a59f6b51b3547a0a222ede6991fd5f1e2a430ef6c465d4c0e5dcf7",
+      "artifactSizeBytes": 2097
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T08:42:27.563Z"
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8258,
+  "uuid": "skill-clawhub-playwright-mcp",
+  "skillKey": "clawhub-playwright-mcp",
+  "name": "Playwright MCP",
+  "summary": "Browser automation via Playwright MCP server. Navigate websites, click elements, fill forms, extract data, take screenshots, and perform full browser automation workflows.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.playwright_mcp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Spiceman161",
+      "features": [
+        "Browser automation via Playwright MCP server",
+        "Navigate websites, click elements, fill forms, extract data, take screenshots, and perform full."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/playwright-mcp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45951852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "playwright-mcp",
+      "url": "https://clawhub.ai/skills/playwright-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "playwright-mcp",
+    "url": "https://clawhub.ai/skills/playwright-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/playwright-mcp-645b26c3f376f049.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/playwright-mcp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-playwright-mcp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:358082ab092695d82b6eddc7673aab6682408205525fb9846e20cf5eaaa381a4",
+      "artifactSizeBytes": 1896
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T15:36:44.575Z"
+}

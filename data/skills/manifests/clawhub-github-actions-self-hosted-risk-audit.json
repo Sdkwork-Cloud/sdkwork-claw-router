@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28341,
+  "uuid": "skill-clawhub-github-actions-self-hosted-risk-audit",
+  "skillKey": "clawhub-github-actions-self-hosted-risk-audit",
+  "name": "GitHub Actions Self-Hosted Risk Audit",
+  "summary": "Audit GitHub Actions workflows that use self-hosted runners for untrusted trigger and credential-hardening risks.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_actions_self_hosted_risk_audit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daniel Lummis",
+      "features": [
+        "Audit GitHub Actions workflows that use self-hosted runners for untrusted trigger and credentia."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-actions-self-hosted-risk-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65238171?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-actions-self-hosted-risk-audit",
+      "url": "https://clawhub.ai/skills/github-actions-self-hosted-risk-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-actions-self-hosted-risk-audit",
+    "url": "https://clawhub.ai/skills/github-actions-self-hosted-risk-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-actions-self-hosted-risk-audit-12a7f8af018e20d9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-actions-self-hosted-risk-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-actions-self-hosted-risk-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c52a90c30209746445da417f116fb41b88c42a87bedbef130b1064e901c613d8",
+      "artifactSizeBytes": 2480
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T01:07:47.317Z"
+}

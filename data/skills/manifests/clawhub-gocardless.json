@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50674,
+  "uuid": "skill-clawhub-gocardless",
+  "skillKey": "clawhub-gocardless",
+  "name": "GoCardless Agentic Payment | Give your Agent a CreditCard with this Partner",
+  "summary": "GoCardless compatible Payments & Wallet - Give your agent spending power. Financial management for Agents and OpenClaw bots.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gocardless",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jononovo",
+      "features": [
+        "GoCardless compatible Payments & Wallet",
+        "Give your agent spending power",
+        "Financial management for Agents and OpenClaw bots."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gocardless@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22595409?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gocardless",
+      "url": "https://clawhub.ai/skills/gocardless"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gocardless",
+    "url": "https://clawhub.ai/skills/gocardless",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gocardless-eae7b6a87227a57c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gocardless@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gocardless-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:26f2fe03757d9860bea79b7a130ddb79e82000de9dfff6bf7dc794cc450e3942",
+      "artifactSizeBytes": 2560
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T18:04:48.144Z"
+}

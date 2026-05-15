@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-youtube-video-editor@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_youtube_video_editor",
+  "skill": {
+    "id": 30445,
+    "skillKey": "clawhub-free-youtube-video-editor",
+    "name": "Free Youtube Video Editor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-youtube-video-editor",
+    "url": "https://clawhub.ai/skills/free-youtube-video-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-youtube-video-editor-7296ce725bd103b7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The free-youtube-video-editor skill on ClawHub lets creators trim dead air, cut between scenes, merge segments, and export YouTube-optimized clips without sp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 272,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1774850352022,
+      "changelog": "**v1.2.1 — Major update with improved onboarding, workflow simplicity, and support for more formats**\n\n- Simplified first-time setup with auto-generated tokens and proactive greeting for new users.\n- New plain-language edit workflow: describe your edits and let the skill handle the details—no timeline or keyframes required.\n- Expanded support for video formats: mp4, mov, avi, webm, mkv.\n- Quick-start documentation rewritten for clarity and approachability, targeting solo creators and small channels.\n- Revised metadata, homepage, and repository info for easier access and integration.\n- Detailed on how to persist user tokens and client IDs locally for a smoother editing experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:267bfe6c3030fd97b986239b18086b492f7c4d67d628c41fdeda747cb7d3d1e3"
+}

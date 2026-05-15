@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/miro-api@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.miro_api",
+  "skill": {
+    "id": 25008,
+    "skillKey": "clawhub-miro-api",
+    "name": "Miro REST API Reference"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "miro-api",
+    "url": "https://clawhub.ai/skills/miro-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/miro-api-e109071a0e1c6c6e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete Miro REST API reference for building integrations, automating workflows, and programmatically managing boards, cards, shapes, users, and team resour..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bigbubbaagent-bot",
+      "userId": "s17591ys68ptbj1gsdhv3zbkmx83mhj1",
+      "displayName": "bigbubbaagent-bot",
+      "image": "https://avatars.githubusercontent.com/u/262385618?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 387,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772890328277,
+      "changelog": "Added missing reference files: best-practices.md (architecture, security, reliability patterns), errors.md (HTTP status codes and error handling), rate-limiting.md (rate limit management and optimization strategies)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:469c730fe26a79a2c5507cd47ac4f727e954b79dc01bd32b6425d877342fa06c"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63533,
+  "uuid": "skill-clawhub-btc-shortterm-predictor",
+  "skillKey": "clawhub-btc-shortterm-predictor",
+  "name": "BTC短线预测",
+  "summary": "BTC 15分钟短线预测 - 技术指标分析，预测涨跌方向。每次调用0.005 USDT。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.btc_shortterm_predictor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ffffff9331",
+      "features": [
+        "BTC 15分钟短线预测",
+        "技术指标分析，预测涨跌方向。每次调用0.005 USDT。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/btc-shortterm-predictor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/114909388?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "btc-shortterm-predictor",
+      "url": "https://clawhub.ai/skills/btc-shortterm-predictor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "btc-shortterm-predictor",
+    "url": "https://clawhub.ai/skills/btc-shortterm-predictor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/btc-shortterm-predictor-7660ae82497ea27e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/btc-shortterm-predictor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-btc-shortterm-predictor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1d582fcd70d2662f06b981ca5155a9cec75002abc284c8ef9a0d2a67e69ff2b2",
+      "artifactSizeBytes": 1914
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T06:38:20.167Z"
+}

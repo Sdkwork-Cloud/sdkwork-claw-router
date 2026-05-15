@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28940,
+  "uuid": "skill-clawhub-policy-application-checker",
+  "skillKey": "clawhub-policy-application-checker",
+  "name": "policy-application-checker",
+  "summary": "Read policies, application requirements, and forms, then turn them into a completeness checklist, risk list, and submission plan.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.policy_application_checker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "Read policies, application requirements, and forms, then turn them into a completeness checklis."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/policy-application-checker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "policy-application-checker",
+      "url": "https://clawhub.ai/skills/policy-application-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "policy-application-checker",
+    "url": "https://clawhub.ai/skills/policy-application-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/policy-application-checker-b8bacc8ad3e4c2d6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/policy-application-checker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-policy-application-checker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4f962dd803b5ff64285c7e5cf6bfb92e5ad0ce7b939f74c6a2aad3354c8a2e4f",
+      "artifactSizeBytes": 2508
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T06:02:22.871Z"
+}

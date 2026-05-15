@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/structs-guild-stack@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.structs_guild_stack",
+  "skill": {
+    "id": 20889,
+    "skillKey": "clawhub-structs-guild-stack",
+    "name": "Structs Guild Stack"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "structs-guild-stack",
+    "url": "https://clawhub.ai/skills/structs-guild-stack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/structs-guild-stack-e35c321a9df753b7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deploys the Guild Stack (Docker Compose) for local PostgreSQL access to game state. Use when you need faster queries for combat automation, real-time threat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abstrct",
+      "userId": "s17cc5kakaxpzqm7102vd7gsax83srkw",
+      "displayName": "Josh McDougall",
+      "image": "https://avatars.githubusercontent.com/u/196776?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 523,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774840354414,
+      "changelog": "structstestnet-111 compatible, synced with upstream",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:764b00e90194c0a60821915530add22e750c08fe3006b71cebd3c3ae8f2a85ba"
+}

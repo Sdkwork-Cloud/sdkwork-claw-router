@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65417,
+  "uuid": "skill-clawhub-openclaw-config-manager-skill",
+  "skillKey": "clawhub-openclaw-config-manager-skill",
+  "name": "OpenClaw配置管理Skill",
+  "summary": "提供智能备份、恢复、迁移及Git版本控制，支持加密存储与权限管理的OpenClaw配置管理工具。",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_config_manager_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wisdom-wozoy",
+      "features": [
+        "提供智能备份、恢复、迁移及Git版本控制，支持加密存储与权限管理的OpenClaw配置管理工具。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-config-manager-skill@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128917510?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-config-manager-skill",
+      "url": "https://clawhub.ai/skills/openclaw-config-manager-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-config-manager-skill",
+    "url": "https://clawhub.ai/skills/openclaw-config-manager-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-config-manager-skill-c81fc2902edd47ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-config-manager-skill@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-config-manager-skill-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:342761f530d32dc8c7f125605f556fa8d27e6c3da1de65130aa31ad49056d586",
+      "artifactSizeBytes": 2290
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T07:52:28.668Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21603,
+  "uuid": "skill-clawhub-general-ocr-struct",
+  "skillKey": "clawhub-general-ocr-struct",
+  "name": "General OCR Struct",
+  "summary": "Offline OCR extracting and structuring Chinese/English screenshot text into raw or cleaned rows and fields for receipts, tables, and statements.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.general_ocr_struct",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JY",
+      "features": [
+        "Offline OCR extracting and structuring Chinese/English screenshot text into raw or cleaned rows."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/general-ocr-struct@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52766923?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "general-ocr-struct",
+      "url": "https://clawhub.ai/skills/general-ocr-struct"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "general-ocr-struct",
+    "url": "https://clawhub.ai/skills/general-ocr-struct",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/general-ocr-struct-61fc76e46e0e0cad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/general-ocr-struct@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-general-ocr-struct-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:30785bda5e728f7a4751e461aaf1e836114431fd3e4220a23103eb4b604410f1",
+      "artifactSizeBytes": 1979
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T01:43:12.540Z"
+}

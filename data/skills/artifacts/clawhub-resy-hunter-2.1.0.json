@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/resy-hunter@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resy_hunter",
+  "skill": {
+    "id": 23558,
+    "skillKey": "clawhub-resy-hunter",
+    "name": "Resy Hunter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resy-hunter",
+    "url": "https://clawhub.ai/skills/resy-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resy-hunter-d4f9b4b7288f0d73.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor hard-to-get restaurant reservations on Resy, OpenTable, and Tock. Check availability, manage a watchlist, and get Telegram alerts when tables open up."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shahedkhan30",
+      "userId": "publishers:shahedkhan30",
+      "displayName": "shahedkhan30",
+      "image": "https://avatars.githubusercontent.com/u/1299634?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 437,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1772866606033,
+      "changelog": "Add --platform flag to monitor.sh for running specific platforms on demand (bypasses interval timer). Supports --platform resy, --platform tock, --platform opentable, and combinations.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3493483720fb1c35ba52e04033798ae329f942b5aa85f8ec08b5d79ffbd6f4e5"
+}

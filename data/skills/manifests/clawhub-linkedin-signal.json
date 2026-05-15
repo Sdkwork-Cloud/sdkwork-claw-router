@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46332,
+  "uuid": "skill-clawhub-linkedin-signal",
+  "skillKey": "clawhub-linkedin-signal",
+  "name": "Linkedin Signal",
+  "summary": "Detect and score B2B buying signals from LinkedIn job posts and company data, then generate personalized outreach messages for hot leads.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkedin_signal",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nicemaths123",
+      "features": [
+        "Detect and score B2B buying signals from LinkedIn job posts and company data, then generate per."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linkedin-signal@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/244252350?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linkedin-signal",
+      "url": "https://clawhub.ai/skills/linkedin-signal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkedin-signal",
+    "url": "https://clawhub.ai/skills/linkedin-signal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkedin-signal-7913b4ff50f89844.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linkedin-signal@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-linkedin-signal-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4f3b66107265a8f8da5a054b8180a71d108dfc3f23185073879efb984fcaa0f3",
+      "artifactSizeBytes": 2491
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T18:26:46.603Z"
+}

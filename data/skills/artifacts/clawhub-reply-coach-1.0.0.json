@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reply-coach@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reply_coach",
+  "skill": {
+    "id": 69876,
+    "skillKey": "clawhub-reply-coach",
+    "name": "reply-coach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reply-coach",
+    "url": "https://clawhub.ai/skills/reply-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reply-coach-d03788541c995baf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "从剪贴板读取聊天内容，生成尊重边界、自然不油腻的高情商回复建议，适用于微信、QQ等聊天场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "52yuanchangxing",
+      "userId": "s178sqjkywrs4vbnfcrr7wx7f583gef5",
+      "displayName": "vx：17605205782",
+      "image": "https://avatars.githubusercontent.com/u/39086567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 425,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773216262443,
+      "changelog": "- 首发版本，提供高情商聊天回复建议工具\n- 支持从剪贴板读取微信、QQ等社交聊天内容\n- 生成尊重边界、自然流畅的多种回复建议\n- 适用于恋爱、日常互动、破冰等多种聊天场景",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8382831269881ffe222073f8a04cca485011694a1057e806050266886bfd7910"
+}

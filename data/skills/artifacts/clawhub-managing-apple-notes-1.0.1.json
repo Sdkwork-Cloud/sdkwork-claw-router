@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/managing-apple-notes@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.managing_apple_notes",
+  "skill": {
+    "id": 13871,
+    "skillKey": "clawhub-managing-apple-notes",
+    "name": "Manage Apple Notes"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "managing-apple-notes",
+    "url": "https://clawhub.ai/skills/managing-apple-notes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/managing-apple-notes-71f6f158865f7186.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Apple Notes from the terminal using the inotes CLI. Use when asked to list, read, create, edit, delete, or search notes in Notes.app on macOS."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangwalk",
+      "userId": "publishers:wangwalk",
+      "displayName": "Walker Wang",
+      "image": "https://avatars.githubusercontent.com/u/106217376?v=4"
+    },
+    "stats": {
+      "comments": 4,
+      "downloads": 1323,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770796287375,
+      "changelog": "- No changes detected in this version.\n- All features and documentation remain as in the previous release.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d5b529549171e34ac71abe27e0b6e341228c862238b9b1c6db74cda49a839b18"
+}

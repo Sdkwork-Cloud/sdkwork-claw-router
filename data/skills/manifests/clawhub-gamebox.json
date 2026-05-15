@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66362,
+  "uuid": "skill-clawhub-gamebox",
+  "skillKey": "clawhub-gamebox",
+  "name": "Gamebox",
+  "summary": "多人游戏引擎框架 — 5 款游戏共用一套回合/状态/消息系统。 支持文字冒险、狼人杀、小说接龙、夺旗战、文明模拟。 LLM 负责叙事和动态内容生成，脚本负责状态管理和规则执行。 纯 Python 标准库，零外部依赖，跨 Windows/macOS/Linux。 通信基于共享目录，多 Agent 可同时参与。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gamebox",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "波动几何",
+      "features": [
+        "多人游戏引擎框架 — 5 款游戏共用一套回合/状态/消息系统。 支持文字冒险、狼人杀、小说接龙、夺旗战、文明模拟。 LLM 负责叙事和动态内容生成，脚本负责状态管理和规则执行。 纯 Pyth."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gamebox@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25478397?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gamebox",
+      "url": "https://clawhub.ai/skills/gamebox"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gamebox",
+    "url": "https://clawhub.ai/skills/gamebox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gamebox-df53d0d2f8d6e866.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gamebox@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gamebox-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f04978dcd266026d1e3ba2092720022e707f7a0ec82b29dd6bd39a5ea1c0c7d8",
+      "artifactSizeBytes": 2190
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T15:53:59.535Z"
+}

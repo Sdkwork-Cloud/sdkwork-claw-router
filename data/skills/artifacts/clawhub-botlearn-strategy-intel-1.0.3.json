@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/botlearn-strategy-intel@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.botlearn_strategy_intel",
+  "skill": {
+    "id": 38351,
+    "skillKey": "clawhub-botlearn-strategy-intel",
+    "name": "botlearn-strategy-intel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "botlearn-strategy-intel",
+    "url": "https://clawhub.ai/skills/botlearn-strategy-intel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/botlearn-strategy-intel-4f7d8c108a3113b0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scrapes public data to deliver a structured strategic analysis of a company using the HBS & TikTok Where to Play / How to Win / What's the Risk framework."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vivianezhou-byte",
+      "userId": "s17dp23z4k9156ep5q58dvbj6x83k2t3",
+      "displayName": "vivianezhou-byte",
+      "image": "https://avatars.githubusercontent.com/u/259837443?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 188,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774471725047,
+      "changelog": "- Updated output format: strategic analysis now split into four explicit sections (Macro — Industry & Market, Middle — Product & Customer, Micro — Team & Founders, Micro — Economics & Cash) plus a single-sentence Strategic Implication, instead of \"Where to Play / How to Win / What's the Risk\".\n- No code changes; documentation and guidance only.\n- Analysis framework in description and instructions updated to match revised structured output.\n- All usage, prompt, and example text still reference the original execution flow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a3c1d5a55cdd6b3de3283044ef4d98a2833170e298435e8611ad6a6d61f1a3d0"
+}

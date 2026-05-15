@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64760,
+  "uuid": "skill-clawhub-china-weather",
+  "skillKey": "clawhub-china-weather",
+  "name": "中国天气",
+  "summary": "获取中国城市天气信息，支持当前天气、未来预报、生活指数。当用户问中国城市的天气、温度、下雨、穿衣建议时使用。支持城市名或城市代码查询。Use when user asks about weather in Chinese cities like '北京天气'、'上海明天会下雨吗'、'广州这周天气怎么样'。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_weather",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "libaoming",
+      "features": [
+        "获取中国城市天气信息，支持当前天气、未来预报、生活指数。当用户问中国城市的天气、温度、下雨、穿衣建议时使用。支持城市名或城市代码查询。Use when user asks about wea."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/china-weather@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20967916?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "china-weather",
+      "url": "https://clawhub.ai/skills/china-weather"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-weather",
+    "url": "https://clawhub.ai/skills/china-weather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-weather-ec84a3d3dbdffa8a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/china-weather@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-china-weather-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0f1935c39185265945e3b6dbf0c5684588f1bf170c59a87f98b6624c8ce03a2b",
+      "artifactSizeBytes": 2057
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T07:31:31.423Z"
+}

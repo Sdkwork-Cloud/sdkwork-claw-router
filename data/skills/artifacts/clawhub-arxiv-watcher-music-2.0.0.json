@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/arxiv-watcher-music@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arxiv_watcher_music",
+  "skill": {
+    "id": 21416,
+    "skillKey": "clawhub-arxiv-watcher-music",
+    "name": "ArXiv Watcher for Music Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arxiv-watcher-music",
+    "url": "https://clawhub.ai/skills/arxiv-watcher-music",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arxiv-watcher-music-f84364bb99a1b4ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search and summarize papers from ArXiv. Use when the user asks for the latest research, specific topics on ArXiv, or a daily summary of AI papers."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nomorecoding",
+      "userId": "publishers:nomorecoding",
+      "displayName": "nomorecoding",
+      "image": "https://avatars.githubusercontent.com/u/39555764?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 509,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1772285526590,
+      "changelog": "Enhanced music generation research support with structured search strategies",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:590feb415e8b14dbdc45e2d477af9e01106bae424d8ca117b3fd0d5de7d791d2"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29014,
+  "uuid": "skill-clawhub-env-alias-audit",
+  "skillKey": "clawhub-env-alias-audit",
+  "name": "Env Alias Audit",
+  "summary": "Audit .env alias groups for missing required config, conflicting values, and canonical-key drift before deploy.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.env_alias_audit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daniel Lummis",
+      "features": [
+        "Audit .env alias groups for missing required config, conflicting values, and canonical-key drif."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/env-alias-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65238171?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "env-alias-audit",
+      "url": "https://clawhub.ai/skills/env-alias-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "env-alias-audit",
+    "url": "https://clawhub.ai/skills/env-alias-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/env-alias-audit-7164619e3760d43a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/env-alias-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-env-alias-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a2a66e2fe6bdc6e0f5ff765534ee5df01d5c96a9e54d78f963c99eae6d9f6a9",
+      "artifactSizeBytes": 2314
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T21:07:28.148Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62635,
+  "uuid": "skill-clawhub-lu-nas-monitor",
+  "skillKey": "clawhub-lu-nas-monitor",
+  "name": "Lu Nas Monitor",
+  "summary": "监控 NAS 上 Docker 容器状态、系统资源（CPU/内存/磁盘）及服务健康，支持告警通知和日志查看。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lu_nas_monitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jesson1222-ship-it",
+      "features": [
+        "监控 NAS 上 Docker 容器状态、系统资源（CPU/内存/磁盘）及服务健康，支持告警通知和日志查看。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lu-nas-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/250683018?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lu-nas-monitor",
+      "url": "https://clawhub.ai/skills/lu-nas-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lu-nas-monitor",
+    "url": "https://clawhub.ai/skills/lu-nas-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lu-nas-monitor-4fe52640334096e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lu-nas-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lu-nas-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4dd101f684f9ec97b11dbbe282224c08c23a0544b799c7d9d26a93812af0c7e9",
+      "artifactSizeBytes": 2075
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T17:09:44.169Z"
+}

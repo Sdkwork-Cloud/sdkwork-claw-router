@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45947,
+  "uuid": "skill-clawhub-crypto-chart",
+  "skillKey": "clawhub-crypto-chart",
+  "name": "Crypto Chart",
+  "summary": "Get cryptocurrency token price and generate candlestick charts via CoinGecko API or Hyperliquid API. Use when user asks for token price, crypto price, price...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_chart",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "redf426",
+      "features": [
+        "Get cryptocurrency token price and generate candlestick charts via CoinGecko API or Hyperliquid.",
+        "Use when user asks for token price, crypto price, price..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crypto-chart@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63651057?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crypto-chart",
+      "url": "https://clawhub.ai/skills/crypto-chart"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-chart",
+    "url": "https://clawhub.ai/skills/crypto-chart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-chart-0de06e0eaf73826f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crypto-chart@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crypto-chart-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8269e0805849e463102f3505b862c18d878dfbe5c070a7da9b7ff56113db82c8",
+      "artifactSizeBytes": 1875
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T09:57:21.420Z"
+}

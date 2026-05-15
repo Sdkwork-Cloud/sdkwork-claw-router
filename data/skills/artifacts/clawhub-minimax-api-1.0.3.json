@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/minimax-api@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_api",
+  "skill": {
+    "id": 25856,
+    "skillKey": "clawhub-minimax-api",
+    "name": "Minimax API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-api",
+    "url": "https://clawhub.ai/skills/minimax-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-api-c1724adaf92bbebd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides image analysis and description from URLs or local files plus real-time web search using MiniMax's Token Plan API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "matthew77",
+      "userId": "publishers:matthew77",
+      "displayName": "Liang",
+      "image": "https://avatars.githubusercontent.com/u/156555?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 379,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773972565274,
+      "changelog": "Revert scripts to original; users follow SKILL.md setup instructions",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c54139262d161d14a29b31122f2ff81782bf43e625fc8f93f581051d641b0e98"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mar-fundamental-stock-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mar_fundamental_stock_analysis",
+  "skill": {
+    "id": 42702,
+    "skillKey": "clawhub-mar-fundamental-stock-analysis",
+    "name": "mar-fundamental-stock-analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mar-fundamental-stock-analysis",
+    "url": "https://clawhub.ai/skills/mar-fundamental-stock-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mar-fundamental-stock-analysis-c3301c26a1930650.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fundamental equity analysis and peer ranking using a structured scoring playbook (quality, balance-sheet safety, cash flow, valuation, sector adjustments, co..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "marjoriebroad",
+      "userId": "s17evr8hna69xbf4mv5z0nppgx84m26f",
+      "displayName": "MarjorieBroad",
+      "image": "https://avatars.githubusercontent.com/u/260425366?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777009700565,
+      "changelog": "Initial release: Launch of structured, playbook-driven fundamental stock analysis with peer ranking and explicit output discipline.\n\n- Provides fundamental equity analysis using a step-by-step scoring playbook.\n- Supports multi-ticker peer review with confidence ratings and best-pick selection.\n- Clearly separates quality, balance-sheet safety, cash flow, and valuation in outputs.\n- Flags stale/conflicting data; avoids guesswork by marking unavailable metrics as NA.\n- Restricts scope to ticker-relevant, educational content only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:862dfe236fbcc817b5ac1c84770a4804bdb0f2fded5d0e35699f5d45ef1a79ef"
+}

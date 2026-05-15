@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42387,
+  "uuid": "skill-clawhub-gate-exchange-dual-staging",
+  "skillKey": "clawhub-gate-exchange-dual-staging",
+  "name": "Gate Exchange Dual Investment",
+  "summary": "Gate dual investment skill. Use when the user asks about dual currency products, target price settlement, or placing dual orders. Triggers on 'dual investmen...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_exchange_dual_staging",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gaixg",
+      "features": [
+        "Gate dual investment skill",
+        "Use when the user asks about dual currency products, target price settlement, or placing dual o.",
+        "Triggers on 'dual investmen..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gate-exchange-dual-staging@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12163126?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gate-exchange-dual-staging",
+      "url": "https://clawhub.ai/skills/gate-exchange-dual-staging"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-exchange-dual-staging",
+    "url": "https://clawhub.ai/skills/gate-exchange-dual-staging",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-exchange-dual-staging-782246f77aef533f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gate-exchange-dual-staging@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gate-exchange-dual-staging-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:459b2478d1e687a4fc21ab9479e111621c9a753ff02eb279b07016d598b8e045",
+      "artifactSizeBytes": 2507
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T10:58:33.107Z"
+}

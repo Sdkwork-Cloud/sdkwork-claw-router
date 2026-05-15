@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/artifacts-builder-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.artifacts_builder_pro",
+  "skill": {
+    "id": 24223,
+    "skillKey": "clawhub-artifacts-builder-pro",
+    "name": "Artifacts Builder Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "artifacts-builder-pro",
+    "url": "https://clawhub.ai/skills/artifacts-builder-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/artifacts-builder-pro-db679c52872136f9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hsuyungfeng",
+      "userId": "s176mg6jsk6y2za6pgwznfhbas83gzaw",
+      "displayName": "hsuyungfeng",
+      "image": "https://avatars.githubusercontent.com/u/140491126?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 406,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773449985137,
+      "changelog": "Initial release of artifacts-builder-pro: a toolkit for building advanced claude.ai HTML artifacts with modern frontend technologies.\n\n- Provides scripts to initialize, develop, and bundle React + Tailwind + shadcn/ui projects into single HTML artifacts\n- Includes 40+ shadcn/ui components and full Radix UI support\n- Uses Vite (React 18 + TypeScript) for development and Parcel for bundling\n- Ensures projects follow design guidelines to avoid common layout/style issues\n- Instructions for artifact creation, bundling, and optional testing provided in SKILL.md",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:492dcbe387aaa1b2747059d603debe21a0f9c5cf3217240871ae1981aaa876f4"
+}

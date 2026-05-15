@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70529,
+  "uuid": "skill-clawhub-wechat-tool",
+  "skillKey": "clawhub-wechat-tool",
+  "name": "wechat-tool",
+  "summary": "通过微信查询好友、群聊及成员，确认目标后发送文本、图片或文件消息，实现社交管理与消息发送。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aw11100",
+      "features": [
+        "通过微信查询好友、群聊及成员，确认目标后发送文本、图片或文件消息，实现社交管理与消息发送。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39297195?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-tool",
+      "url": "https://clawhub.ai/skills/wechat-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-tool",
+    "url": "https://clawhub.ai/skills/wechat-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-tool-dd903c8d42c5e07e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:133126478a0c5794b0bd2680200d5d664ee72e1a30fab2e7a78fa24e68c4d629",
+      "artifactSizeBytes": 2194
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T13:51:50.559Z"
+}

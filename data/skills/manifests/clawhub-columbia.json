@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71462,
+  "uuid": "skill-clawhub-columbia",
+  "skillKey": "clawhub-columbia",
+  "name": "Columbia",
+  "summary": "提供哥伦比亚大学历史、学院设置、招生、学费资助、知名校友及学术实力等相关查询服务。",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.columbia",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供哥伦比亚大学历史、学院设置、招生、学费资助、知名校友及学术实力等相关查询服务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/columbia@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "columbia",
+      "url": "https://clawhub.ai/skills/columbia"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "columbia",
+    "url": "https://clawhub.ai/skills/columbia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/columbia-1e103fdeb16ccc3e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/columbia@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-columbia-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3f5d817809900acb33f611934da026da26379958c2fdc186ef4ff29264b1d9f3",
+      "artifactSizeBytes": 2038
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T07:32:14.017Z"
+}

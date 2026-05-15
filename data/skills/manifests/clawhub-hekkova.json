@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43112,
+  "uuid": "skill-clawhub-hekkova",
+  "skillKey": "clawhub-hekkova",
+  "name": "Hekkova",
+  "summary": "Permanent memory layer for AI agents. Mint moments to the blockchain via MCP.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hekkova",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hekkova",
+      "features": [
+        "Permanent memory layer for AI agents",
+        "Mint moments to the blockchain via MCP."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hekkova@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269852808?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hekkova",
+      "url": "https://clawhub.ai/skills/hekkova"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hekkova",
+    "url": "https://clawhub.ai/skills/hekkova",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hekkova-a2e22949eeaebb90.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hekkova@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hekkova-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fb93c5a07e167178496e016bb8060c4591c034f641a9b4f2537b213dc0303154",
+      "artifactSizeBytes": 1863
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T22:58:41.387Z"
+}

@@ -14,8 +14,9 @@ use crate::application::EntityUuidGenerator;
 use crate::domain::DomainError;
 use crate::infrastructure::OsApiKeySecretGenerator;
 use crate::ports::{
-    BillingCommandFuture, BillingReadFuture, BillingRechargeHistoryItem, BillingRedeemHistoryItem,
-    BillingStore, BillingSubject, RedeemCodeCommand,
+    BillingCommandFuture, BillingPointsBalance, BillingPointsHistoryItem, BillingReadFuture,
+    BillingRechargeHistoryItem, BillingRedeemHistoryItem, BillingStore, BillingSubject,
+    RedeemCodeCommand,
 };
 
 const MAX_REDEEM_CODE_LEN: usize = 128;
@@ -59,6 +60,20 @@ impl BillingStore for EmptyBillingStore {
         Box::pin(async { Ok(Vec::new()) })
     }
 
+    fn load_points_balance<'a>(
+        &'a self,
+        _subject: Option<BillingSubject>,
+    ) -> BillingReadFuture<'a, BillingPointsBalance> {
+        Box::pin(async { Ok(BillingPointsBalance::default()) })
+    }
+
+    fn load_points_history<'a>(
+        &'a self,
+        _subject: Option<BillingSubject>,
+    ) -> BillingReadFuture<'a, Vec<BillingPointsHistoryItem>> {
+        Box::pin(async { Ok(Vec::new()) })
+    }
+
     fn redeem_code<'a>(&'a self, _command: RedeemCodeCommand) -> BillingCommandFuture<'a> {
         Box::pin(async {
             Err(DomainError::new(
@@ -89,9 +104,23 @@ fn app_billing_router_with_state(
     require_subject: bool,
 ) -> Router {
     Router::new()
-        .route("/app/v3/api/coupons/my", get(fetch_redeem_history))
-        .route("/app/v3/api/payments/records", get(fetch_recharge_history))
-        .route("/app/v3/api/coupons/redeem", post(redeem_code))
+        .route(
+            "/app/v3/api/billing/users/current/coupons",
+            get(fetch_redeem_history),
+        )
+        .route(
+            "/app/v3/api/billing/payments/records",
+            get(fetch_recharge_history),
+        )
+        .route(
+            "/app/v3/api/billing/account/points",
+            get(fetch_points_balance),
+        )
+        .route(
+            "/app/v3/api/billing/account/points/history",
+            get(fetch_points_history),
+        )
+        .route("/app/v3/api/billing/coupons/redeem", post(redeem_code))
         .with_state(AppBillingState {
             store,
             entity_uuid_generator,
@@ -129,6 +158,40 @@ async fn fetch_recharge_history(
         Ok(items) => Json(PlusApiResult::success(items)).into_response(),
         Err(error) => {
             billing_system_response("billing recharge history read model is unavailable", error)
+        }
+    }
+}
+
+async fn fetch_points_balance(
+    State(state): State<AppBillingState>,
+    headers: HeaderMap,
+) -> Response {
+    let subject = match resolve_billing_subject(&state, &headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+
+    match state.store.load_points_balance(subject).await {
+        Ok(balance) => Json(PlusApiResult::success(balance)).into_response(),
+        Err(error) => {
+            billing_system_response("billing points balance read model is unavailable", error)
+        }
+    }
+}
+
+async fn fetch_points_history(
+    State(state): State<AppBillingState>,
+    headers: HeaderMap,
+) -> Response {
+    let subject = match resolve_billing_subject(&state, &headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+
+    match state.store.load_points_history(subject).await {
+        Ok(items) => Json(PlusApiResult::success(items)).into_response(),
+        Err(error) => {
+            billing_system_response("billing points history read model is unavailable", error)
         }
     }
 }

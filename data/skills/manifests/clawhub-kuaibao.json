@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31626,
+  "uuid": "skill-clawhub-kuaibao",
+  "skillKey": "clawhub-kuaibao",
+  "name": "Kuaibao",
+  "summary": "Provides summaries and analysis of public short videos and topics from Kuaibao/QQ Kankan for keyword, account, and trending list data.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kuaibao",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawKK",
+      "features": [
+        "Provides summaries and analysis of public short videos and topics from Kuaibao/QQ Kankan for ke."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kuaibao@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111570001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kuaibao",
+      "url": "https://clawhub.ai/skills/kuaibao"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kuaibao",
+    "url": "https://clawhub.ai/skills/kuaibao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kuaibao-d6750ec144c5b0ba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kuaibao@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kuaibao-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e2d3a864fe2f0056d2bc89bba3a5c3a02788bf915694e30d2762d61ea789a9d5",
+      "artifactSizeBytes": 2314
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T02:10:04.704Z"
+}

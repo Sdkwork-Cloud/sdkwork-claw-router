@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58069,
+  "uuid": "skill-clawhub-magyar-nyelvtan",
+  "skillKey": "clawhub-magyar-nyelvtan",
+  "name": "Magyar Nyelvtan",
+  "summary": "Magyar helyesírási és nyelvtani ellenőrzés, igeragozás, névszóragozás, nyelvtani szabálymagyarázat és mondatrészek elemzése.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.magyar_nyelvtan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Izsook",
+      "features": [
+        "Magyar helyesírási és nyelvtani ellenőrzés, igeragozás, névszóragozás, nyelvtani szabálymagyará."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/magyar-nyelvtan@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/96597727?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "magyar-nyelvtan",
+      "url": "https://clawhub.ai/skills/magyar-nyelvtan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "magyar-nyelvtan",
+    "url": "https://clawhub.ai/skills/magyar-nyelvtan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/magyar-nyelvtan-eb21abb7b0ff1f7b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/magyar-nyelvtan@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-magyar-nyelvtan-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c559a72c484badc0e5e09748a7ff0be73fc61a2d616eba560f3f380a10be60fe",
+      "artifactSizeBytes": 1879
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T11:02:18.350Z"
+}

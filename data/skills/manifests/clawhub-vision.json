@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9443,
+  "uuid": "skill-clawhub-vision",
+  "skillKey": "clawhub-vision",
+  "name": "Vision",
+  "summary": "Resize, crop, convert, and optimize images using ImageMagick. Use when processing photos, converting formats (PNG/WebP), compressing size, or adding watermarks.",
+  "version": "3.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vision",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "Resize, crop, convert, and optimize images using ImageMagick",
+        "Use when processing photos, converting formats (PNG/WebP), compressing size, or adding watermar."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vision@3.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vision",
+      "url": "https://clawhub.ai/skills/vision"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vision",
+    "url": "https://clawhub.ai/skills/vision",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vision-5944ae849448011c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vision@3.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vision-3.5.0.json",
+      "version": "3.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d6e87fa692298c1ad5efc7a9b47f84193731b66dcfa7dbb6fcbefe0f1df6773c",
+      "artifactSizeBytes": 1873
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T12:23:36.943Z"
+}

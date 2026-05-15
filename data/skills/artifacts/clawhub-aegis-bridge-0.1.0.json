@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aegis-bridge@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aegis_bridge",
+  "skill": {
+    "id": 21332,
+    "skillKey": "clawhub-aegis-bridge",
+    "name": "Aegis Bridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aegis-bridge",
+    "url": "https://clawhub.ai/skills/aegis-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aegis-bridge-32e50e696ae39e69.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Orchestrate Claude Code sessions via Aegis HTTP/MCP bridge. Use when spawning CC sessions for coding tasks, implementing issues, reviewing PRs, fixing CI, ba..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "onestepat4time",
+      "userId": "s176d97t50sjwzbzg0p6xm0end83xm4m",
+      "displayName": "Emanuele",
+      "image": "https://avatars.githubusercontent.com/u/106186915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 513,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 45
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775411191028,
+      "changelog": "Release v0.1.0 - HTTP/MCP Claude Code orchestration",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8b03e6cc65a3e269c480b3dc5cdf06eb41ace0b75cd1a18e9dd3eeadde5e4e73"
+}

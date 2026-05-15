@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/inventory-health-auditor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inventory_health_auditor",
+  "skill": {
+    "id": 41785,
+    "skillKey": "clawhub-inventory-health-auditor",
+    "name": "Inventory Health Auditor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inventory-health-auditor",
+    "url": "https://clawhub.ai/skills/inventory-health-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inventory-health-auditor-ad5da8ca6439922d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit ecommerce inventory notes or SKU exports, flag stockout, aging, overstock, capital lock-up, and promo-readiness risks, then turn partial inventory data..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776131128306,
+      "changelog": "Initial release of Inventory Health Auditor skill.\n\n- Audits ecommerce inventory notes or SKU exports to flag stockout, aging, overstock, capital lock-up, and promo-readiness risks.\n- Transforms partial inventory data into a prioritized replenish-hold-clear action brief.\n- Designed for weekly/monthly inventory reviews and pre-promo checks without live ERP or BI integrations.\n- Returns a markdown report summarizing risks, prioritized actions, and a 30-day inventory plan.\n- Explicitly avoids automated purchasing or certainties when data is incomplete.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:42950c0e7f5fcdf4c00fe9ed1c43cf06dcf4a2f5371360aef94edb525f026007"
+}

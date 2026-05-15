@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/content-brainstorm@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_brainstorm",
+  "skill": {
+    "id": 55869,
+    "skillKey": "clawhub-content-brainstorm",
+    "name": "Content Brainstorm 自媒体选题策划"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-brainstorm",
+    "url": "https://clawhub.ai/skills/content-brainstorm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-brainstorm-0d6641912c1bef14.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Social media content ideation engine. Generates a 7-day topic plan with titles, angles, SEO keywords, and trend scores for any niche and platform."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alexandrali1989-cell",
+      "userId": "publishers:alexandrali1989-cell",
+      "displayName": "alexandrali1989-cell",
+      "image": "https://avatars.githubusercontent.com/u/239550352?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2618,
+      "installsAllTime": 35,
+      "installsCurrent": 33,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772694831005,
+      "changelog": "Initial release — social media content ideation engine for Chinese platforms.\n\n- Generates a 7-day content plan with trend, evergreen, and opinion topics\n- Customizes output by niche, platform, and account positioning\n- Includes titles, angles, SEO keywords, virality estimate, references, and estimated creation time per topic\n- Researches current trends, competitor examples, and platform-specific topic styles\n- Outputs in a clear, structured weekly calendar format",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4d68533a955c066a07a6cef220c2f581c29daf0edd9fd9d0b54e272391f3c4c5"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ppq-private-mode@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ppq_private_mode",
+  "skill": {
+    "id": 24209,
+    "skillKey": "clawhub-ppq-private-mode",
+    "name": "PPQ.AI Private Mode"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ppq-private-mode",
+    "url": "https://clawhub.ai/skills/ppq-private-mode",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ppq-private-mode-60c9f4ebe81ddc60.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install PPQ.AI Private Mode for end-to-end encrypted AI inference in OpenClaw"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mattius459",
+      "userId": "publishers:mattius459",
+      "displayName": "mattius459",
+      "image": "https://avatars.githubusercontent.com/u/39392504?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 417,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773330323111,
+      "changelog": "PPQ Private Mode v1.0.1 Changelog\n\n- Simplified API key setup instruction: always prompt user for their PPQ API key instead of auto-detecting existing keys.\n- Revised plugin and provider configuration steps for clarity and conciseness.\n- Streamlined model availability listing and switching instructions.\n- Improved formatting and merged duplicate information in setup documentation.\n- Troubleshooting section and some explanatory text removed for brevity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3dc9cf27b3d5fd25c34b10c69566b0bbd85b5d53677b9577ae9f31c6400224cf"
+}

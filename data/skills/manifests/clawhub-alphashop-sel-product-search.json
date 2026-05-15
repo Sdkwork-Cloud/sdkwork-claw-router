@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61066,
+  "uuid": "skill-clawhub-alphashop-sel-product-search",
+  "skillKey": "clawhub-alphashop-sel-product-search",
+  "name": "alphashop-sel-product-search",
+  "summary": "商品搜索API SKILL：通过关键词搜索发现Amazon/TikTok平台商品。 支持价格、销量、评分、上架时间等多维度筛选条件。 通过 AlphaShop REST API 调用遨虾AI选品系统的商品搜索服务。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alphashop_sel_product_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1688AiInfra",
+      "features": [
+        "商品搜索API SKILL：通过关键词搜索发现Amazon/TikTok平台商品。 支持价格、销量、评分、上架时间等多维度筛选条件。 通过 AlphaShop REST API 调用遨虾AI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alphashop-sel-product-search@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266033968?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alphashop-sel-product-search",
+      "url": "https://clawhub.ai/skills/alphashop-sel-product-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alphashop-sel-product-search",
+    "url": "https://clawhub.ai/skills/alphashop-sel-product-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alphashop-sel-product-search-6d5acd70085d9c69.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alphashop-sel-product-search@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-alphashop-sel-product-search-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6a84b95800474c8f243d19490f85b5b0f21ea47326f8db33928bdea60992df93",
+      "artifactSizeBytes": 2650
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T09:56:13.654Z"
+}

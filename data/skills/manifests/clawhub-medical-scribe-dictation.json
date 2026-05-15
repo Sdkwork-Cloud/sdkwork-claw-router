@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40998,
+  "uuid": "skill-clawhub-medical-scribe-dictation",
+  "skillKey": "clawhub-medical-scribe-dictation",
+  "name": "Medical Scribe (Dictation)",
+  "summary": "Convert physician verbal dictation into structured SOAP notes. Trigger.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.medical_scribe_dictation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Convert physician verbal dictation into structured SOAP notes",
+        "Trigger."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/medical-scribe-dictation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "medical-scribe-dictation",
+      "url": "https://clawhub.ai/skills/medical-scribe-dictation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "medical-scribe-dictation",
+    "url": "https://clawhub.ai/skills/medical-scribe-dictation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/medical-scribe-dictation-e59926fb454bd423.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/medical-scribe-dictation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-medical-scribe-dictation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b8c0da0d39a17cfed002414afdc5f4c34a454ef0aa6ba446b300cca329b0d451",
+      "artifactSizeBytes": 2327
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T08:23:27.715Z"
+}

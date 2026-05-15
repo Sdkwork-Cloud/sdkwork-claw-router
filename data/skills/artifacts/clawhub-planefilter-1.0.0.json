@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/planefilter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.planefilter",
+  "skill": {
+    "id": 52488,
+    "skillKey": "clawhub-planefilter",
+    "name": "Planefilter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "planefilter",
+    "url": "https://clawhub.ai/skills/planefilter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/planefilter-80872c3c65050138.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Aviation flight lookup — query aircraft type, equipment changes, and confidence scoring for any flight number. Use when: looking up flight aircraft, checking..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "iml1s",
+      "userId": "publishers:iml1s",
+      "displayName": "ImL1s",
+      "image": "https://avatars.githubusercontent.com/u/16792527?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774183120171,
+      "changelog": "Initial release: multi-source flight lookup with confidence scoring and equipment change detection",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1b9074340787966f3e657bf5dffa8a35783458a4e2714cc29cc173a1ec73d49e"
+}

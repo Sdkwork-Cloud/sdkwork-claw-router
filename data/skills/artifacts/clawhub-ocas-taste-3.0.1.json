@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ocas-taste@3.0.1",
+  "version": "3.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ocas_taste",
+  "skill": {
+    "id": 40867,
+    "skillKey": "clawhub-ocas-taste",
+    "name": "Taste"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ocas-taste",
+    "url": "https://clawhub.ai/skills/ocas-taste",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ocas-taste-8674db221edec967.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates personalized recommendations from real consumption data by scanning email/calendar, enriching venues, and explaining suggestions with prior behavior."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "indigokarasu",
+      "userId": "s17bp0q5q5x87yfrmb4876eywh83rcts",
+      "displayName": "Indigo Karasu",
+      "image": "https://avatars.githubusercontent.com/u/265148029?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.0.1",
+      "createdAt": 1774683451842,
+      "changelog": "ocas-taste v3.0.1 Changelog\n\n- Improved skill documentation with comprehensive workflows for scanning, enrichment, ingestion, and recommendations.\n- Added clearer responsibility boundaries and when-to-use/do-not-use scenarios.\n- Outlined operating invariants to ensure recommendations are evidence-based, safe, and privacy-preserving.\n- Described default configuration and persistent storage layout.\n- Included specific command references for all primary features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:05a49c2fa67eec642a7171d77e0340469f3deb3223d134ae8727ac0cb20fdafd"
+}

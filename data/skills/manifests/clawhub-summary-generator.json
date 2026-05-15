@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16547,
+  "uuid": "skill-clawhub-summary-generator",
+  "skillKey": "clawhub-summary-generator",
+  "name": "Summary Generator",
+  "summary": "Generate daily or range-based lead summaries from read-only lead data. Use when users ask for todays lead summary, broker inventory counts, locality trends,...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.summary_generator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vishal",
+      "features": [
+        "Generate daily or range-based lead summaries from read-only lead data",
+        "Use when users ask for todays lead summary, broker inventory counts, locality trends,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/summary-generator@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254436161?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "summary-generator",
+      "url": "https://clawhub.ai/skills/summary-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "summary-generator",
+    "url": "https://clawhub.ai/skills/summary-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/summary-generator-14128e7a965080c0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/summary-generator@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-summary-generator-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:853de871150df79e0a56852f2d67d41e06195e5a2c88035d738c0ec8848f23ee",
+      "artifactSizeBytes": 1990
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T02:47:01.531Z"
+}

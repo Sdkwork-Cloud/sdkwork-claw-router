@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawdy-selfie@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdy_selfie",
+  "skill": {
+    "id": 38026,
+    "skillKey": "clawhub-clawdy-selfie",
+    "name": "Clawdy Selfie"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdy-selfie",
+    "url": "https://clawhub.ai/skills/clawdy-selfie",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdy-selfie-76f4954eb68029fa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate a Clawdy selfie with the installed local helper script and the configured FAL_KEY."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "x-rayluan",
+      "userId": "s17c0n0ce78mre7mrytgzehcwn83hkp1",
+      "displayName": "X-RayLuan",
+      "image": "https://avatars.githubusercontent.com/u/150766707?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 181,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777022613231,
+      "changelog": "Clawdy-selfie v1.0.1\n\n- Updated documentation to strictly enforce the use of a single male reference image and clarify prompt handling rules.\n- Simplified skill description and instructions for accuracy.\n- Stronger requirements for error reporting and reference-based image generation.\n- Added new script: scripts/clawdy-video.sh.\n- Improved script logic and reference image handling in core scripts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ce4ebd8a9d40a41f3ea826e04f8a29006bcced70bd8a4f9d93730847dd0ce6bb"
+}

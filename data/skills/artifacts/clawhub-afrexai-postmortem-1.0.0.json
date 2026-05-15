@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/afrexai-postmortem@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_postmortem",
+  "skill": {
+    "id": 20096,
+    "skillKey": "clawhub-afrexai-postmortem",
+    "name": "Incident Postmortem Framework"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-postmortem",
+    "url": "https://clawhub.ai/skills/afrexai-postmortem",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-postmortem-08e20037fd18a027.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates structured blameless incident postmortems from raw notes, producing summaries, timelines, root cause analyses, impacts, action items, and preventio..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1kalin",
+      "userId": "s17e1q0nx23qnh4n429zzqc05x83hvsw",
+      "displayName": "1kalin",
+      "image": "https://avatars.githubusercontent.com/u/15705344?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 563,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771767775809,
+      "changelog": "Initial release: Generate structured, blameless incident postmortems from raw notes.\n\n- Accepts unstructured incident details and outputs Google/Atlassian-style postmortems in markdown.\n- Covers executive summary, detailed timeline, root cause (5 Whys), impact, action items, lessons learned, and prevention measures.\n- Automatically asks for only critical missing info (severity, duration, or resolution).\n- Follows strict formatting: ISO timestamps, bolded severity, actionable/assigned/priority-tagged action items.\n- Blameless language enforced; highlights any info gaps for the team to fill before publishing.\n- Ranks prevention measures by effort/impact.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c3b335f059580a12cd99801d70af1668f27612281451982e6de8c98059937da5"
+}

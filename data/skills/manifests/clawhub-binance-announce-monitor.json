@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61657,
+  "uuid": "skill-clawhub-binance-announce-monitor",
+  "skillKey": "clawhub-binance-announce-monitor",
+  "name": "Binance Monitor",
+  "summary": "实时监控币安官方公告和 @binance、@binancezh 两个 X 账号动态，检测新内容后即时通过飞书通知用户。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.binance_announce_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xuhaoting",
+      "features": [
+        "实时监控币安官方公告和 @binance、@binancezh 两个 X 账号动态，检测新内容后即时通过飞书通知用户。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/binance-announce-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/54517623?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "binance-announce-monitor",
+      "url": "https://clawhub.ai/skills/binance-announce-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "binance-announce-monitor",
+    "url": "https://clawhub.ai/skills/binance-announce-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/binance-announce-monitor-95a5d880155756fe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/binance-announce-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-binance-announce-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c794e1ed9518728a373d0b6402c8d6cf69c2e4203fdd996105763d6b689e2405",
+      "artifactSizeBytes": 2230
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T16:48:13.712Z"
+}

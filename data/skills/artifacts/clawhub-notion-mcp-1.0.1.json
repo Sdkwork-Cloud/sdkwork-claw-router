@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/notion-mcp@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notion_mcp",
+  "skill": {
+    "id": 19740,
+    "skillKey": "clawhub-notion-mcp",
+    "name": "Notion MCP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notion-mcp",
+    "url": "https://clawhub.ai/skills/notion-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notion-mcp-e4272a702e9d4e8c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Notion MCP integration with managed authentication. Query databases, create and update pages, manage blocks. Use this skill when users want to interact with..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 555,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777587765549,
+      "changelog": "notion-mcp 1.0.1 changelog\n\n- Updated all endpoint URLs from `gateway.maton.ai` and `ctrl.maton.ai` to `api.maton.ai`.\n- Clarified connection management and endpoint instructions to match the new base URL.\n- Added a new \"Security & Permissions\" section emphasizing explicit user approval for write operations.\n- Refined connection header usage guidance for accounts with multiple connections.\n- No changes to API schemas or functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0391f331a149870b48541158e28f10f305f0ae3ba345adc0daead3cdcad1965b"
+}

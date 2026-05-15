@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26463,
+  "uuid": "skill-clawhub-github-collab",
+  "skillKey": "clawhub-github-collab",
+  "name": "Github Collab",
+  "summary": "GitHub Collab enables multi-Agent collaboration for automated project creation, task splitting, assignment, tracking, and progress reporting using GitHub int...",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_collab",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wljmmx",
+      "features": [
+        "GitHub Collab enables multi-Agent collaboration for automated project creation, task splitting,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-collab@0.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32810822?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-collab",
+      "url": "https://clawhub.ai/skills/github-collab"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-collab",
+    "url": "https://clawhub.ai/skills/github-collab",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-collab-b7313e757b8a754e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-collab@0.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-collab-0.1.5.json",
+      "version": "0.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5fd204ab233a784d3b002ab02a44ecdc5c7f6823549552646bbacc6818280d85",
+      "artifactSizeBytes": 2519
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T10:28:34.529Z"
+}

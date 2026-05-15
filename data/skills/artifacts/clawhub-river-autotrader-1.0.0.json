@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/river-autotrader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.river_autotrader",
+  "skill": {
+    "id": 50502,
+    "skillKey": "clawhub-river-autotrader",
+    "name": "River Autotrader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "river-autotrader",
+    "url": "https://clawhub.ai/skills/river-autotrader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/river-autotrader-de01ca241ea46960.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides real-time River ($RIVER) crypto data including price, 24h change, 7-day trends, volatility, Staking rewards, TVL, with a 0.001 USDT fee per query."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mrchillhigh",
+      "userId": "publishers:mrchillhigh",
+      "displayName": "mrchillhigh",
+      "image": "https://avatars.githubusercontent.com/u/195327430?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 509,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772721968904,
+      "changelog": "Initial release of river-autotrader skill.\n\n- Provides real-time River ($RIVER) cryptocurrency data: price trends, volatility, Staking rewards, TVL, and more.\n- Auto-triggers on user queries about River price, trends, volatility, Staking, unlocks, airdrops, and related topics.\n- Each use costs 0.001 USDT, with automated payment and validation via skillpay.me.\n- Integrates data from River official site, CoinGecko, and DefiLlama.\n- Includes support for both Chinese and English queries.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d69bfed5cd909ac872350648d918db27ee89edd31200187f1eb4c6abfdf8268f"
+}

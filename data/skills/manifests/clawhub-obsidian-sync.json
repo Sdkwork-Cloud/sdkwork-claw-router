@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9209,
+  "uuid": "skill-clawhub-obsidian-sync",
+  "skillKey": "clawhub-obsidian-sync",
+  "name": "Obsidian Sync",
+  "summary": "Sync files between Clawdbot workspace and Obsidian. Run the sync server to enable two-way file synchronization with the OpenClaw Obsidian plugin.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_sync",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AndyBold",
+      "features": [
+        "Sync files between Clawdbot workspace and Obsidian",
+        "Run the sync server to enable two-way file synchronization with the OpenClaw Obsidian plugin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/obsidian-sync@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1006021?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "obsidian-sync",
+      "url": "https://clawhub.ai/skills/obsidian-sync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-sync",
+    "url": "https://clawhub.ai/skills/obsidian-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-sync-72e1aceaae57da39.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/obsidian-sync@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-obsidian-sync-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a8b9af388c1d4275fe5a5662a9f0aa1bfd97b45f6cd10bdffa7f130e0d7712b0",
+      "artifactSizeBytes": 1910
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T16:08:38.168Z"
+}

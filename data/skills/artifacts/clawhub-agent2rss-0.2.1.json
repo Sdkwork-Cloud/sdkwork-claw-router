@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent2rss@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent2rss",
+  "skill": {
+    "id": 60035,
+    "skillKey": "clawhub-agent2rss",
+    "name": "Agent2RSS - AI Content to RSS Feed"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent2rss",
+    "url": "https://clawhub.ai/skills/agent2rss",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent2rss-331a7976240fa738.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent2RSS 客户端，管理 RSS 频道并推送内容。触发：用户提到 Agent2RSS/RSS 频道/推送文章/上传文章/创建频道/设置默认频道/幂等性。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yaotutu",
+      "userId": "s179aa665zfqw4vqvkh1y42tg583hzy3",
+      "displayName": "Yao Tutu",
+      "image": "https://avatars.githubusercontent.com/u/21394924?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 888,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1772086692506,
+      "changelog": "**Changelog for agent2rss 0.2.1**\n\n- Added three new files: `.clawhub/origin.json`, `_meta.json`, `references/.DS_Store`.\n- Clarified security instructions in documentation: explicit warnings about serverUrl trust and token file location.\n- Changed default behavior: `init` no longer auto-creates a default channel; users must explicitly create channels.\n- Updated documentation for clearer usage, safety recommendations, and path conventions.\n- Separated network access details and common error handling for better transparency.\n- Revised trigger word list in the description (now omits “上传文章/幂等性” and reorders triggers).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9760316a1cde7f1d5569a4b14eb8d64bf06f4f3ae68d35d80e11b586431c2567"
+}

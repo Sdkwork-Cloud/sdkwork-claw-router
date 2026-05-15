@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jimeng-image@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jimeng_image",
+  "skill": {
+    "id": 54966,
+    "skillKey": "clawhub-jimeng-image",
+    "name": "Jimeng Image"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jimeng-image",
+    "url": "https://clawhub.ai/skills/jimeng-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jimeng-image-28597927920ed7b7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images on Jimeng (即梦 / jimeng.jianying.com) using OpenClaw-managed browser. Supports prompt entry, ratio selection, quick result inspection, and loc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "haohao-ui",
+      "userId": "s17e9wmgb93jxp7expj57560sh83h79g",
+      "displayName": "haohao-ui",
+      "image": "https://avatars.githubusercontent.com/u/183124879?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 301,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774761841304,
+      "changelog": "Initial release of jimeng-image skill for automated Jimeng image generation.\n\n- Supports full Jimeng image creation flow via OpenClaw-managed browser.\n- Allows prompt entry, aspect ratio selection, and generation option adjustments.\n- Handles login gates, approvals, payment requirements, and credit exhaustion.\n- Downloads generated images locally and reports file paths to the user.\n- Provides clear guidance and failure reporting for common scenarios.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6ce99e2aedb82f2aad967dcd80d502a77976eebb3f984197e7cc20f4cdd71001"
+}

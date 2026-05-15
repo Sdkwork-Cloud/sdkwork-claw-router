@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/unifi-os@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unifi_os",
+  "skill": {
+    "id": 36991,
+    "skillKey": "clawhub-unifi-os",
+    "name": "UniFi Network"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unifi-os",
+    "url": "https://clawhub.ai/skills/unifi-os",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unifi-os-14909a4c34fc9776.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read-only access to UniFi Network data for device inventory, network config, client info, alerts, health status, and topology export."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mbojer",
+      "userId": "s17dy3k1dp0atdq0m33h4hrhkd83p2vj",
+      "displayName": "Morten Bojer",
+      "image": "https://avatars.githubusercontent.com/u/8454000?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775249735663,
+      "changelog": "Initial release: read-only UniFi OS API tooling. Device, network, client, alert, and health queries via shell scripts. Supports UniFi OS v2 device API (network_devices array) and legacy v1 endpoints.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a41d1fd5b7d542182125d215408a7836f16a4e23931c030f2f76c3551be83e68"
+}

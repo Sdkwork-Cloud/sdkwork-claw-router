@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/grid@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grid",
+  "skill": {
+    "id": 29904,
+    "skillKey": "clawhub-grid",
+    "name": "grid"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grid",
+    "url": "https://clawhub.ai/skills/grid",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grid-0f2a693e93e2ed70.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When the user wants to design, optimize, or audit grid layouts for content display. Also use when the user mentions \"grid layout,\" \"grid design,\" \"multi-colu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kostja94",
+      "userId": "s172p99xpjz6dy9bjqbs8x8d0x83hc45",
+      "displayName": "Kostja Zhang",
+      "image": "https://avatars.githubusercontent.com/u/168074885?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 283,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774786714599,
+      "changelog": "Batch: trust-badges through grid",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fd790fb92d989e2388bf1349e409a68726d6abe4918eafb65d7dbc94817b3636"
+}

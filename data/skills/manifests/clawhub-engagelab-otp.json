@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24502,
+  "uuid": "skill-clawhub-engagelab-otp",
+  "skillKey": "clawhub-engagelab-otp",
+  "name": "EngageLab OTP",
+  "summary": "Call EngageLab OTP REST APIs to send one-time passwords (OTP), verify codes, send custom messages, and manage OTP templates across SMS, WhatsApp, Email, and...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.engagelab_otp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DevEngageLab",
+      "features": [
+        "Call EngageLab OTP REST APIs to send one-time passwords (OTP), verify codes, send custom messag."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/engagelab-otp@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/113164142?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "engagelab-otp",
+      "url": "https://clawhub.ai/skills/engagelab-otp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "engagelab-otp",
+    "url": "https://clawhub.ai/skills/engagelab-otp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/engagelab-otp-f712b8c969b34ecd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/engagelab-otp@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-engagelab-otp-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cc40fb31d4cd2be8d283867e7aacd194e9fe8c11430592d72fb07b4a41770696",
+      "artifactSizeBytes": 2033
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T06:21:47.395Z"
+}

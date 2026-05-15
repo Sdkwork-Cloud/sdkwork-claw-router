@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/webclaw@2.1.3",
+  "version": "2.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.webclaw",
+  "skill": {
+    "id": 15017,
+    "skillKey": "clawhub-webclaw",
+    "name": "WebClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "webclaw",
+    "url": "https://clawhub.ai/skills/webclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/webclaw-22cc593dfbe39f5a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Web dashboard for OpenClaw. Browser-based UI for any installed skill. Schema-driven rendering, JWT auth, RBAC, AI chat, real-time updates. Install web dashbo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mailnike",
+      "userId": "s17ee5y8kxe1zfx1t7te9wcgzx83j215",
+      "displayName": "Nikhil Jathar",
+      "image": "https://avatars.githubusercontent.com/u/22786232?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1055,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 21
+    },
+    "latestVersion": {
+      "version": "2.1.3",
+      "createdAt": 1773146915086,
+      "changelog": "- Added support for setting a specific password during the \"reset-password\" action (`--password` argument).\n- Documentation updated to show that \"reset-password\" can now accept a custom password in addition to generating a random one.\n- Updated installation instructions to clone the application code from GitHub at release tag `v2.1.0` (was `v1.0.10` previously).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8d3cbb81ddb8b91494a4acd3adc442faeff9147278258ad2ab5f523d9f260b0a"
+}

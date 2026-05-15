@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46243,
+  "uuid": "skill-clawhub-video-generation-4k",
+  "skillKey": "clawhub-video-generation-4k",
+  "name": "Video Generation 4k",
+  "summary": "Get 4K AI videos ready to post, without touching a single slider. Upload your text prompts (MP4, MOV, WebM, AVI, up to 500MB), say something like \"generate a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_generation_4k",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "whitejohnk-26",
+      "features": [
+        "Get 4K AI videos ready to post, without touching a single slider",
+        "Upload your text prompts (MP4, MOV, WebM, AVI, up to 500MB), say something like \"generate a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-generation-4k@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210889495?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-generation-4k",
+      "url": "https://clawhub.ai/skills/video-generation-4k"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-generation-4k",
+    "url": "https://clawhub.ai/skills/video-generation-4k",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-generation-4k-ca2ec60eddedaa4a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-generation-4k@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-generation-4k-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bdb9008ea683af9ce5e9bb1ccebd44bcf9860dbef445050e3f2eaa10869497b7",
+      "artifactSizeBytes": 2411
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T01:39:45.780Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/find-ihg@2.2.1",
+  "version": "2.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_ihg",
+  "skill": {
+    "id": 71925,
+    "skillKey": "clawhub-find-ihg",
+    "name": "🏨 IHG积分房查找"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-ihg",
+    "url": "https://clawhub.ai/skills/find-ihg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-ihg-d22b318ddd5bf1eb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能查找江浙沪地区45家IHG精选酒店积分房，支持品牌、距离、积分段和行政酒廊筛选，优先推荐高性价比选项。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eddylhb",
+      "userId": "s178v4tnymjttdhcj1806yd8jd83vp7a",
+      "displayName": "Eddy",
+      "image": "https://avatars.githubusercontent.com/u/71869975?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.2.1",
+      "createdAt": 1776005242587,
+      "changelog": "- Added _meta.json file for improved metadata management.\n- Updated skills.json with latest metadata and definitions.\n- No changes to core functionality or user features.\n- Structural update to enhance maintainability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:80b6c552aa38009e8f007b43b78d33fc52361e6c3be4204908d314d02a5e1cc0"
+}

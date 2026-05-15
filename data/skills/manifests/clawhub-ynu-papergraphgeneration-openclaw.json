@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63039,
+  "uuid": "skill-clawhub-ynu-papergraphgeneration-openclaw",
+  "skillKey": "clawhub-ynu-papergraphgeneration-openclaw",
+  "name": "ynu-papergraphgeneration-openclaw",
+  "summary": "多模态论文可视化引擎 — 从 PDF 或纯文本论文自动生成学术插图。 支持：全篇扫描识别可图化内容、双编码器架构图/算法流程图/动机图生成、 自校核机制、LaTeX/Word 图注输出、Matplotlib 结果图精确绘图。 也包含独立的 PDF → Text 提取工具。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ynu_papergraphgeneration_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ljk00000",
+      "features": [
+        "多模态论文可视化引擎 — 从 PDF 或纯文本论文自动生成学术插图。 支持：全篇扫描识别可图化内容、双编码器架构图/算法流程图/动机图生成、 自校核机制、LaTeX/Word 图注输出、Ma."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ynu-papergraphgeneration-openclaw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/113766996?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ynu-papergraphgeneration-openclaw",
+      "url": "https://clawhub.ai/skills/ynu-papergraphgeneration-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ynu-papergraphgeneration-openclaw",
+    "url": "https://clawhub.ai/skills/ynu-papergraphgeneration-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ynu-papergraphgeneration-openclaw-75b1377aedd64d1e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ynu-papergraphgeneration-openclaw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ynu-papergraphgeneration-openclaw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5a5102198268546ffc893271d56da83f0f0462e3d46ff51f0a94edeb9fbef8cb",
+      "artifactSizeBytes": 2729
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T08:05:25.912Z"
+}

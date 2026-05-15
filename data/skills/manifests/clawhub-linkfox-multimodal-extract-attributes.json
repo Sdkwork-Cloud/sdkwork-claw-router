@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64365,
+  "uuid": "skill-clawhub-linkfox-multimodal-extract-attributes",
+  "skillKey": "clawhub-linkfox-multimodal-extract-attributes",
+  "name": "Multimodal Extract Attributes",
+  "summary": "利用多模态AI分析商品主图，提取视觉特征和提示词。当用户提到分析产品图片、从商品图中提取视觉属性、识别产品Listing中的颜色/形状/材质/风格、反推图片提示词、批量视觉特征提取、将产品图信息转化为结构化数据、视觉属性统计、基于图片的商品分类、main image analysis, image feature...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkfox_multimodal_extract_attributes",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linkfox-ai",
+      "features": [
+        "利用多模态AI分析商品主图，提取视觉特征和提示词。当用户提到分析产品图片、从商品图中提取视觉属性、识别产品Listing中的颜色/形状/材质/风格、反推图片提示词、批量视觉特征提取、将产品图."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linkfox-multimodal-extract-attributes@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267242260?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linkfox-multimodal-extract-attributes",
+      "url": "https://clawhub.ai/skills/linkfox-multimodal-extract-attributes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkfox-multimodal-extract-attributes",
+    "url": "https://clawhub.ai/skills/linkfox-multimodal-extract-attributes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkfox-multimodal-extract-attributes-20966d14cb54a92a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linkfox-multimodal-extract-attributes@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-linkfox-multimodal-extract-attributes-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a84531d22168363af12e2c71f30dbcddac5a45e5d9e03f8400ea8755a8d98aeb",
+      "artifactSizeBytes": 2265
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T07:41:18.666Z"
+}

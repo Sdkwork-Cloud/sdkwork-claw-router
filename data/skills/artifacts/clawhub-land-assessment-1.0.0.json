@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/land-assessment@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.land_assessment",
+  "skill": {
+    "id": 37071,
+    "skillKey": "clawhub-land-assessment",
+    "name": "Land Assessment"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "land-assessment",
+    "url": "https://clawhub.ai/skills/land-assessment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/land-assessment-e04e61ecb7f5143e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Evaluating and purchasing rural or semi-rural property. Use when someone is considering buying land, wants to homestead, is evaluating a property for food pr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "howtousehumans",
+      "userId": "s17ftae1txxqa39a87v3p6ta1583js3w",
+      "displayName": "HowToUseHumans",
+      "image": "https://avatars.githubusercontent.com/u/151727669?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774513423395,
+      "changelog": "Initial release — provides a comprehensive framework for evaluating and purchasing rural or semi-rural property.\n\n- Guides users through critical steps: water, soil/septic, access, zoning, flood risk, and hidden costs.\n- Includes jurisdiction-specific guidance for US, UK, Australia, Canada, and EU.\n- Recommends authoritative sources such as USDA Web Soil Survey and FEMA flood maps.\n- Highlights essential actions like water testing, soil surveys, and legal access verification.\n- Offers detailed checklists for homesteaders, small farmers, and rural land buyers.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3568a774af846c7e0c472bdd7268e5b4147b70f74a77bfa4b339ced97a3b57cf"
+}

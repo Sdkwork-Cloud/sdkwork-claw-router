@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11618,
+  "uuid": "skill-clawhub-aibtc-bitcoin-wallet",
+  "skillKey": "clawhub-aibtc-bitcoin-wallet",
+  "name": "AIBTC Bitcoin Wallet",
+  "summary": "Bitcoin L1 wallet for agents - check balances, send BTC, manage UTXOs. Extends to Stacks L2 (STX, DeFi) and Pillar smart wallets (sBTC yield).",
+  "version": "1.26.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aibtc_bitcoin_wallet",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "whoabuddy",
+      "features": [
+        "Bitcoin L1 wallet for agents",
+        "check balances, send BTC, manage UTXOs",
+        "Extends to Stacks L2 (STX, DeFi) and Pillar smart wallets (sBTC yield)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aibtc-bitcoin-wallet@1.26.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9038904?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aibtc-bitcoin-wallet",
+      "url": "https://clawhub.ai/skills/aibtc-bitcoin-wallet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aibtc-bitcoin-wallet",
+    "url": "https://clawhub.ai/skills/aibtc-bitcoin-wallet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aibtc-bitcoin-wallet-fbf1bc918803b29b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aibtc-bitcoin-wallet@1.26.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aibtc-bitcoin-wallet-1.26.0.json",
+      "version": "1.26.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fba096a227464e741f84600a352c9805aed2371e7603d318a35c7abd65865e23",
+      "artifactSizeBytes": 2158
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T21:15:03.254Z"
+}

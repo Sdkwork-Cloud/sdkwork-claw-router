@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lobster-debugging@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobster_debugging",
+  "skill": {
+    "id": 32112,
+    "skillKey": "clawhub-lobster-debugging",
+    "name": "Lobster Debugging"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobster-debugging",
+    "url": "https://clawhub.ai/skills/lobster-debugging",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobster-debugging-2b53e51e8716d39d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Systematic debugging framework. 4-phase root-cause analysis with defense-in-depth. Never guess, never patch symptoms. From Claude Code + Superpowers."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangxiaofei860208-source",
+      "userId": "s17937syhc72vf48t0a5914v8d847evs",
+      "displayName": "wangxiaofei860208-source",
+      "image": "https://avatars.githubusercontent.com/u/260913269?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 257,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775291575221,
+      "changelog": "Initial release of lobster-debugging.\n\n- Introduces a systematic 4-phase debugging framework with a focus on root-cause analysis and defense-in-depth.\n- Emphasizes a strict \"no fixes without root cause investigation\" rule to prevent symptom patching.\n- Provides detailed step-by-step guidelines for each debugging phase, including investigation, condition-based waiting, layered prevention, and verification.\n- Lists common red flags to avoid guesswork and improper fixes.\n- Outlines a clear escalation process after failed fix attempts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:87b99c8bfba8b868df8087860b1335df7d0e6a0fd47dc1028a07ce61c2bd6a91"
+}

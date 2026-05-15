@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zhua-evolver@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhua_evolver",
+  "skill": {
+    "id": 69584,
+    "skillKey": "clawhub-zhua-evolver",
+    "name": "Zhua Evolver"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhua-evolver",
+    "url": "https://clawhub.ai/skills/zhua-evolver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhua-evolver-5610fdc86d2a37ff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "爪爪专属自我进化系统 —— 自动分析能力差距、搜索补强技能、执行进化循环、记录进化日志。Use when 爪爪需要自我进化、能力提升、技能补强、或达到更高智能水平。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "beipian261",
+      "userId": "publishers:beipian261",
+      "displayName": "beipian261",
+      "image": "https://avatars.githubusercontent.com/u/210724771?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 318,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773768860075,
+      "changelog": "Initial release of zhua-evolver, an automated self-evolution system for 爪爪.\n\n- Analyzes capability gaps to identify improvement areas.\n- Searches and installs relevant skills from skillhub automatically.\n- Records each evolution cycle, including process and results.\n- Orchestrates six specialized minions for collaborative evolution tasks.\n- Provides command-line workflows for the entire evolution process.\n- Tracks evolution metrics such as skill count, coverage, and success rate.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a0e91ad5f1305867e7912c7122a6cec01d960a1d240065542bad8bee295a55d4"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/motor-quality-inspection@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.motor_quality_inspection",
+  "skill": {
+    "id": 65001,
+    "skillKey": "clawhub-motor-quality-inspection",
+    "name": "Motor Quality Inspection"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "motor-quality-inspection",
+    "url": "https://clawhub.ai/skills/motor-quality-inspection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/motor-quality-inspection-25795209493b75a7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "军用电机质量检验助手 | 根据GJB标准生成检验规程，覆盖来料检验、过程检验、成品检验、出厂检验全流程"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yongjie666888",
+      "userId": "s17drc5xysxp2mbjvg182tkj5183gqyv",
+      "displayName": "yongjie666888",
+      "image": "https://avatars.githubusercontent.com/u/177016990?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 195,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774373133242,
+      "changelog": "v1.2: 新增检验报告生成脚本、IQC/PQC/FQC/OQC全流程模板、GJB179A抽样方案",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:141aae253d42842ed59577b43469fb2a185dedab80355522ba9ac2d4ffd393c0"
+}

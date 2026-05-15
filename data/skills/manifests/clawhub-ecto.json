@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11474,
+  "uuid": "skill-clawhub-ecto",
+  "skillKey": "clawhub-ecto",
+  "name": "Ecto",
+  "summary": "Ghost.io Admin API CLI for managing blog posts, pages, tags, and content.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecto",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "visionik",
+      "features": [
+        "Ghost.io Admin API CLI for managing blog posts, pages, tags, and content."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ecto@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52174?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ecto",
+      "url": "https://clawhub.ai/skills/ecto"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecto",
+    "url": "https://clawhub.ai/skills/ecto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecto-34531594cf2ead01.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ecto@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ecto-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:10d979ce8d3b8903b22f6ce8937469b52b0da2a34021f9306dd3bca08d81a367",
+      "artifactSizeBytes": 2223
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-26T09:27:28.757Z"
+}

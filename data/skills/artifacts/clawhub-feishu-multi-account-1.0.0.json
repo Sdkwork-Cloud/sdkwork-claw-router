@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-multi-account@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_multi_account",
+  "skill": {
+    "id": 73417,
+    "skillKey": "clawhub-feishu-multi-account",
+    "name": "多子代理配置飞书"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-multi-account",
+    "url": "https://clawhub.ai/skills/feishu-multi-account",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-multi-account-95d026c8f77050f1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "支持为多个子代理配置独立飞书机器人账号，确保飞书消息按账号绑定正确路由。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhili007",
+      "userId": "publishers:zhili007",
+      "displayName": "zhili007",
+      "image": "https://avatars.githubusercontent.com/u/178701974?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 269,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773567671791,
+      "changelog": "Initial release of feishu-multi-account\n\n- Enables configuration of multiple independent Feishu bot accounts in OpenClaw.\n- Provides step-by-step setup instructions for linking specific Feishu accounts to sub-agents.\n- Introduces configuration via openclaw.json: accounts, agents, and top-level bindings.\n- Includes troubleshooting for common routing and binding issues.\n- Offers a complete example configuration file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2dfe463851faf4eac148878c348e7cfe2df0471076e9d888dbf8c0e47eb274fa"
+}

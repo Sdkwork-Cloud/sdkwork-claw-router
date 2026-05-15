@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gitlab-commit-report@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gitlab_commit_report",
+  "skill": {
+    "id": 33366,
+    "skillKey": "clawhub-gitlab-commit-report",
+    "name": "gitlab-commit-report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gitlab-commit-report",
+    "url": "https://clawhub.ai/skills/gitlab-commit-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gitlab-commit-report-8cbd947db8570c5b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "GitLab group push events collector and daily commit report generator"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bondli",
+      "userId": "s177p2wmp8es5mem55h55wyq7183h7bj",
+      "displayName": "bondli",
+      "image": "https://avatars.githubusercontent.com/u/6427929?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 239,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774356104001,
+      "changelog": "Initial release of gitlab-commit-report skill.\n\n- Collects GitLab group push events by paginating the Group Activity API in a logged-in Chrome session.\n- Extracts key push event details: author, repository, commit id, message, and timestamp.\n- Saves daily raw event data with commit deduplication to JSON files.\n- Aggregates and generates daily Markdown reports with commit stats, top authors, and top repositories.\n- Supports cron scheduling and on-demand reports for any date.\n- Configurable via a JSON file for GitLab URL, group path, and team name.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d791a31093c40f1c5d413fee95d39cc1836dea4a2eba3dc4e3dcdb73a6674893"
+}

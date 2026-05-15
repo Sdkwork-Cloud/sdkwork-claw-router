@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19879,
+  "uuid": "skill-clawhub-gov-contracts",
+  "skillKey": "clawhub-gov-contracts",
+  "name": "Gov Contracts",
+  "summary": "SAM.gov contract opportunities, USAspending awards, and entity lookup. 3 tools for government contracting.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gov_contracts",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Martin",
+      "features": [
+        "SAM.gov contract opportunities, USAspending awards, and entity lookup",
+        "3 tools for government contracting."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gov-contracts@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138740843?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gov-contracts",
+      "url": "https://clawhub.ai/skills/gov-contracts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gov-contracts",
+    "url": "https://clawhub.ai/skills/gov-contracts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gov-contracts-bab6384be7019590.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gov-contracts@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gov-contracts-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c01804e21aaca05fd6cd1b5428a86f7c101656d83b0ccccd03ee47024a34e122",
+      "artifactSizeBytes": 2171
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T16:55:02.655Z"
+}

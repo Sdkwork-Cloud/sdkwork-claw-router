@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawwallet@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawwallet",
+  "skill": {
+    "id": 38465,
+    "skillKey": "clawhub-clawwallet",
+    "name": "Clawwallet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawwallet",
+    "url": "https://clawhub.ai/skills/clawwallet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawwallet-c959f07d14d8e635.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage multi-chain wallets, perform DeFi operations, multi-sig transactions, ENS registration, policy enforcement, agent identity, and real-time wallet event..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vibes-me",
+      "userId": "s17f61zkp7ea056tk3mx42pgm983py7y",
+      "displayName": "Kunal Sharma",
+      "image": "https://avatars.githubusercontent.com/u/250737555?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 187,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774650920468,
+      "changelog": "Latest",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fa19d5fd030f70f03a6136648b18d1f0c3c0b1f1390ff70bb5ccbeaf328bc15e"
+}

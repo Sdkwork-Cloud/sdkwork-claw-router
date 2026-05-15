@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-pivot-table@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_pivot_table",
+  "skill": {
+    "id": 41415,
+    "skillKey": "clawhub-auto-pivot-table",
+    "name": "Auto Pivot Table"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-pivot-table",
+    "url": "https://clawhub.ai/skills/auto-pivot-table",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-pivot-table-cbabf1ea8cde0eb5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build ORBCAFE advanced analytics and voice navigation with CPivotTable/usePivotTable and CAINavProvider/useVoiceInput using official examples patterns. Use f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shenruiyang",
+      "userId": "s17e6bmx11wm3tn9bxz60qc4fh83gew1",
+      "displayName": "SHENRUIYANG",
+      "image": "https://avatars.githubusercontent.com/u/47732614?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775148098500,
+      "changelog": "Initial release of the ORBCAFE Pivot + AINav integration skill.\n- Guides integration of advanced pivot analytics and voice navigation, matching official module and domain patterns.\n- Provides step-by-step install, bootstrap, and minimal implementation instructions.\n- Outlines three-zone layout, aggregation/chart controls, persistence, and usage guardrails for pivot tables.\n- Details output contract, including controlled state, presets, ASR requirements, and troubleshooting guidance.\n- References included: usage domain patterns, guardrails, and recipes for consistent implementation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b653772db1d4f482c47f6a812f9a17cfd0a90e08e37b66aa0278d8f10d4949a2"
+}

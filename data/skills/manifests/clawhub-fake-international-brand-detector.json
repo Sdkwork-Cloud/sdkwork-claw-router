@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63013,
+  "uuid": "skill-clawhub-fake-international-brand-detector",
+  "skillKey": "clawhub-fake-international-brand-detector",
+  "name": "Fake International Brand Detector",
+  "summary": "通过七项国际化维度综合验证品牌真实性，判断是否为真国际品牌、存疑或假国际品牌。",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fake_international_brand_detector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tom Chen",
+      "features": [
+        "通过七项国际化维度综合验证品牌真实性，判断是否为真国际品牌、存疑或假国际品牌。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fake-international-brand-detector@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/207491982?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fake-international-brand-detector",
+      "url": "https://clawhub.ai/skills/fake-international-brand-detector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fake-international-brand-detector",
+    "url": "https://clawhub.ai/skills/fake-international-brand-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fake-international-brand-detector-c02ea2154845c249.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fake-international-brand-detector@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fake-international-brand-detector-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:890ae6e604fe3eebc12bfb87dcc3cb831efef0ed8a07b7e314beed0e1e6fc832",
+      "artifactSizeBytes": 2396
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T02:10:05.589Z"
+}

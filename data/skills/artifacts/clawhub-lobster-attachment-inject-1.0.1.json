@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lobster-attachment-inject@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobster_attachment_inject",
+  "skill": {
+    "id": 59410,
+    "skillKey": "clawhub-lobster-attachment-inject",
+    "name": "Lobster Attachment Inject"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobster-attachment-inject",
+    "url": "https://clawhub.ai/skills/lobster-attachment-inject",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobster-attachment-inject-63c4ea10a38ba8ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "动态附件注入 — 在不修改system prompt的情况下注入动态内容。参考Claude Code的Attachment消息机制。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangxiaofei860208-source",
+      "userId": "s17937syhc72vf48t0a5914v8d847evs",
+      "displayName": "wangxiaofei860208-source",
+      "image": "https://avatars.githubusercontent.com/u/260913269?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775301791554,
+      "changelog": "- Renamed the skill from \"attachment-inject\" to \"lobster-attachment-inject\"\n- Updated all references in SKILL.md to reflect the new skill name\n- No changes to implementation or functionality; documentation only",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:869dd7fd0888e7b28eae0ade54c90c29a8ce5c43b01c9d11d52e983659f1346b"
+}

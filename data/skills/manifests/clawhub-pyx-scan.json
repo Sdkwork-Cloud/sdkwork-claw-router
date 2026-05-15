@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13795,
+  "uuid": "skill-clawhub-pyx-scan",
+  "skillKey": "clawhub-pyx-scan",
+  "name": "Pyx Scan",
+  "summary": "Check whether an AI agent skill is safe before installing or using it. Calls the PYX Scanner API to retrieve trust status, risk score, and safety recommendat...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pyx_scan",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Openclaw enthusiast",
+      "features": [
+        "Check whether an AI agent skill is safe before installing or using it",
+        "Calls the PYX Scanner API to retrieve trust status, risk score, and safety recommendat..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pyx-scan@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7436491?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pyx-scan",
+      "url": "https://clawhub.ai/skills/pyx-scan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pyx-scan",
+    "url": "https://clawhub.ai/skills/pyx-scan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pyx-scan-fef3359d11838d2e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pyx-scan@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pyx-scan-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4b38c133dcb718e2736deb6bf50281161b4acad582d74794d8bfd1f330ae574f",
+      "artifactSizeBytes": 1873
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T13:40:03.950Z"
+}

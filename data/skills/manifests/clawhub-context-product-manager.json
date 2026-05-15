@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25536,
+  "uuid": "skill-clawhub-context-product-manager",
+  "skillKey": "clawhub-context-product-manager",
+  "name": "Context Product Manager",
+  "summary": "Turn rough product, feature, or repo-change requests into a PM-grade plan plus agent-ready execution context. Use whenever the user has a vague idea, wants a...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_product_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "openclawzhu-AI",
+      "features": [
+        "Turn rough product, feature, or repo-change requests into a PM-grade plan plus agent-ready exec.",
+        "Use whenever the user has a vague idea, wants a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/context-product-manager@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268080187?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "context-product-manager",
+      "url": "https://clawhub.ai/skills/context-product-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-product-manager",
+    "url": "https://clawhub.ai/skills/context-product-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-product-manager-a1bf5c44aba944ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/context-product-manager@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-context-product-manager-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6360529404f37c3e51bede28500315f9caf87e49771f0cf81149bcae8e8d9526",
+      "artifactSizeBytes": 2074
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T06:10:30.386Z"
+}

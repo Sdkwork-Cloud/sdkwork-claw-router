@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36353,
+  "uuid": "skill-clawhub-gopay",
+  "skillKey": "clawhub-gopay",
+  "name": "Gopay",
+  "summary": "GoPay integration. Manage data, records, and automate workflows. Use when the user wants to interact with GoPay data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gopay",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "GoPay integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with GoPay data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gopay@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gopay",
+      "url": "https://clawhub.ai/skills/gopay"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gopay",
+    "url": "https://clawhub.ai/skills/gopay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gopay-7c620baa773530eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gopay@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-gopay-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2e4f50922a43b39a9017503ea5e0a2ba81029d1095ade36551edab1e2e4feaea",
+      "artifactSizeBytes": 1803
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:53:47.067Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dior-brand@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dior_brand",
+  "skill": {
+    "id": 47187,
+    "skillKey": "clawhub-dior-brand",
+    "name": "Dior Brand"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dior-brand",
+    "url": "https://clawhub.ai/skills/dior-brand",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dior-brand-7c12c7a66c879b06.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "French luxury fashion brand Dior, founded in 1946, known for its 'New Look', haute couture, leather goods, and as a core LVMH asset."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 107,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777313041212,
+      "changelog": "Dior brand skill initial release:\n\n- Provides a concise historical timeline of the Dior brand from its 1946 founding to present day.\n- Summarizes Dior’s business model across haute couture, ready-to-wear, accessories, jewelry, and beauty.\n- Includes LVMH acquisition, major creative director changes, and recent market dynamics.\n- Highlights Dior’s commercial importance, with key financial data and market insights.\n- Offers unique facts and iconic elements from Dior’s legacy, such as the “New Look” and Bar Jacket.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b38bd419c33f6678df74855ac58af69fa082d7e35a456ce13c0224bd7094b2a4"
+}

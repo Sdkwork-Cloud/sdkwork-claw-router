@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45098,
+  "uuid": "skill-clawhub-justoneapi-douyin-get-user-video-list",
+  "skillKey": "clawhub-justoneapi-douyin-get-user-video-list",
+  "name": "Douyin (TikTok China) User Published Videos API",
+  "summary": "Call GET /api/douyin/get-user-video-list/v3 for Douyin (TikTok China) User Published Videos through JustOneAPI with secUid.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_douyin_get_user_video_list",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Call GET /api/douyin/get-user-video-list/v3 for Douyin (TikTok China) User Published Videos thr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-douyin-get-user-video-list@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-douyin-get-user-video-list",
+      "url": "https://clawhub.ai/skills/justoneapi-douyin-get-user-video-list"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-douyin-get-user-video-list",
+    "url": "https://clawhub.ai/skills/justoneapi-douyin-get-user-video-list",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-douyin-get-user-video-list-5c6411d077dd02a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-douyin-get-user-video-list@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-douyin-get-user-video-list-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:df6136a52eff320d93a52672ac60357dcc5f571340974b2aa9a62c29cc53fe3b",
+      "artifactSizeBytes": 2024
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T17:17:44.429Z"
+}

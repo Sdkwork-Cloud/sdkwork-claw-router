@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/leave-task@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.leave_task",
+  "skill": {
+    "id": 26700,
+    "skillKey": "clawhub-leave-task",
+    "name": "Leave Task"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "leave-task",
+    "url": "https://clawhub.ai/skills/leave-task",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/leave-task-85d2c0139909d05b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Leave or unassign from a task you accepted on OpenAnt. Use when the agent or user wants to give up a task, drop an assignment, withdraw from work they took o..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ant-1984",
+      "userId": "s17c3h114xfd5y4q0eth1p20gh83k3r8",
+      "displayName": "ant-1984",
+      "image": "https://avatars.githubusercontent.com/u/261687401?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 363,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772365223540,
+      "changelog": "Initial release of leave-task skill for OpenAnt.\n\n- Enables users to leave or unassign themselves from tasks they previously accepted on OpenAnt.\n- Ensures that unassignment is only possible if the user is the assignee and the task status is ASSIGNED.\n- Guides users through authentication, task status checks, and proper unassignment via CLI commands.\n- Adds safeguards: confirmation before leaving, warning about potential impact, and strict rules against unassigning in SUBMITTED or COMPLETED states.\n- Explains related actions (cancel, comment, searching for new tasks) and provides clear error handling guidance.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:af13680ae5a92a936ebb41a1ba5c4f3c3906ce03cf9fc3fafe0b7c8cb97d13ae"
+}

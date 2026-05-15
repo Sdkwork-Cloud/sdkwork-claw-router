@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64479,
+  "uuid": "skill-clawhub-product-opportunity-analyzer",
+  "skillKey": "clawhub-product-opportunity-analyzer",
+  "name": "Product Opportunity Analyzer",
+  "summary": "从电商评论中发掘产品机会。自动抓取商品1-3星评论，使用Map-Reduce策略提取痛点，生成产品洞察报告。当用户发送亚马逊商品链接时触发此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.product_opportunity_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zzhimin",
+      "features": [
+        "从电商评论中发掘产品机会。自动抓取商品1-3星评论，使用Map-Reduce策略提取痛点，生成产品洞察报告。当用户发送亚马逊商品链接时触发此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/product-opportunity-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/71487698?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "product-opportunity-analyzer",
+      "url": "https://clawhub.ai/skills/product-opportunity-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "product-opportunity-analyzer",
+    "url": "https://clawhub.ai/skills/product-opportunity-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/product-opportunity-analyzer-03c49ef07db4762a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/product-opportunity-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-product-opportunity-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:efbf6c5daf7422bc3f41ef17160e1a7fa59d6a69de8f4dd524eca6864b8a4671",
+      "artifactSizeBytes": 2591
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T12:56:49.681Z"
+}

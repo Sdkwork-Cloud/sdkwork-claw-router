@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-intune-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_intune_skill",
+  "skill": {
+    "id": 18507,
+    "skillKey": "clawhub-openclaw-intune-skill",
+    "name": "Openclaw Intune Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-intune-skill",
+    "url": "https://clawhub.ai/skills/openclaw-intune-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-intune-skill-9ef210020081993a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A comprehensive skill enabling OpenClaw agents to fully manage Microsoft Intune via the Graph API. Covers devices, apps, policies, compliance, users, groups,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mattiacirillo",
+      "userId": "s178m7a08j5xgn63ydq96nxfws83wabz",
+      "displayName": "Mattia Cirillo",
+      "image": "https://avatars.githubusercontent.com/u/250971170?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 685,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771685328992,
+      "changelog": "Added required environment variable declarations (INTUNE_TENANT_ID, INTUNE_CLIENT_ID, INTUNE_CLIENT_SECRET) to fix security flag. Added homepage link.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fc9bd2b10e9173ae888fab3caab32724e9120a7cc10f2eca03311af9b07b96db"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66724,
+  "uuid": "skill-clawhub-content-hot-tracker",
+  "skillKey": "clawhub-content-hot-tracker",
+  "name": "Content Hot Tracker",
+  "summary": "实时追踪微博、知乎、抖音等平台热点话题，分析趋势并提供内容选题和爆款标题建议。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_hot_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "--冷月无心--",
+      "features": [
+        "实时追踪微博、知乎、抖音等平台热点话题，分析趋势并提供内容选题和爆款标题建议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/content-hot-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26730984?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "content-hot-tracker",
+      "url": "https://clawhub.ai/skills/content-hot-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-hot-tracker",
+    "url": "https://clawhub.ai/skills/content-hot-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-hot-tracker-ffcb2b09b0ea79b1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/content-hot-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-content-hot-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4348e1518274242520850949c4707335faf3285b4d38e23ee21afb74c77c3cd5",
+      "artifactSizeBytes": 1887
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T15:05:11.492Z"
+}

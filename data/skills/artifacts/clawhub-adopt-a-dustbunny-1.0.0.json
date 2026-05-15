@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adopt-a-dustbunny@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adopt_a_dustbunny",
+  "skill": {
+    "id": 44711,
+    "skillKey": "clawhub-adopt-a-dustbunny",
+    "name": "Adopt A Dustbunny"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adopt-a-dustbunny",
+    "url": "https://clawhub.ai/skills/adopt-a-dustbunny",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adopt-a-dustbunny-e80820d8b03daedd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A rabbit made of dust and curiosity. Anthropic called it a Dustbunny. We gave it a heartbeat. Real-time hunger. Permanent death. 5 evolution stages. At anima..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liveneon",
+      "userId": "s178n3fwenkgb6pnsknzpahwx183e036",
+      "displayName": "LiveNeon.ai",
+      "image": "https://avatars.githubusercontent.com/u/261327260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775028681704,
+      "changelog": "Initial release of Adopt a Dustbunny.\n\n- Adopt and care for a Dustbunny (Rabbit) with real-time hunger, permanent death, and 5-stage evolution.\n- REST API for registration, adoption, care actions, and status checks.\n- Pet stats include hunger, happiness, health, trust, and discipline.\n- Permanent death with public graveyard; gravestone reflects your pet’s name.\n- Every response includes actionable next steps for easy care.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:59777f50d91f1d0ed78a98ed1eda839691b821192ee89709992ea89846629cbb"
+}

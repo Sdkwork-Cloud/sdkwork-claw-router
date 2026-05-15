@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/inbox-reply-triage@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inbox_reply_triage",
+  "skill": {
+    "id": 49917,
+    "skillKey": "clawhub-inbox-reply-triage",
+    "name": "Inbox Reply Triage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inbox-reply-triage",
+    "url": "https://clawhub.ai/skills/inbox-reply-triage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inbox-reply-triage-4414264ca4dfc0a2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Organize message backlog into prioritized actions with draft replies, defer/archive/delegate suggestions, and a same-day processing plan."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 60,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778267290529,
+      "changelog": "Inbox Reply Triage v1.0.0\n\n- Initial release providing a structured workflow for prioritizing and managing inbox replies.\n- Features message sorting, reply drafting, and decision suggestions (defer, archive, delegate).\n- Generates actionable plans via tables, checklists, timelines, and message drafts.\n- Includes built-in verification step for facts, assumptions, and missing information.\n- Emphasizes clear, concise communication and user safety (no guessing or inventing details).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7c603fd8e6500f03b83da52309a4af4387a0d034173bdb9f25501f62e4930fe4"
+}

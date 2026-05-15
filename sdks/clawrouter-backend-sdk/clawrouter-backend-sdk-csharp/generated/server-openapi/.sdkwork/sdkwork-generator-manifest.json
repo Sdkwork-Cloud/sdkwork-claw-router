@@ -1,0 +1,1711 @@
+{
+  "schemaVersion": 1,
+  "generator": "@sdkwork/sdk-generator",
+  "sdk": {
+    "name": "clawrouter-backend-sdk",
+    "version": "0.1.0",
+    "language": "csharp",
+    "sdkType": "backend",
+    "packageName": "Sdkwork.ClawRouter.Backend.Sdk"
+  },
+  "generatedFiles": [
+    {
+      "path": "Api/AiApi.cs",
+      "sha256": "1881fd0f212d73bf89627c771955e8e67b52ff55bee7f109aaa0242b241bb976"
+    },
+    {
+      "path": "Api/Api.cs",
+      "sha256": "91defa5847eb71221004659c6470a1b3ecdcfaa7b4a5ae74c1610293d20d2b18"
+    },
+    {
+      "path": "Api/ApiPaths.cs",
+      "sha256": "0b5fd892ac5917d452ad5b8b2b6e132b28a9b7ac709c115c8fa5a70c1463e716"
+    },
+    {
+      "path": "Api/BillingApi.cs",
+      "sha256": "2336c1ce44d4227a9a985f06605f2666fabf43c49e567aa5eae2a40af07c4804"
+    },
+    {
+      "path": "Api/ContentApi.cs",
+      "sha256": "d86007df595df187a573a4362d81575b2cde064224ac7e913b369905f9d1b2b2"
+    },
+    {
+      "path": "Api/EcosystemApi.cs",
+      "sha256": "bfe0da5db868c98729dd4c9057e3976058ccfc22bd02cc9d9a88dbb846c38f90"
+    },
+    {
+      "path": "Api/IamApi.cs",
+      "sha256": "0d7fcf77fe165b1598b1910fe699db4d848ad03ee9270be210d971f10c09b641"
+    },
+    {
+      "path": "Api/IntegrationApi.cs",
+      "sha256": "e928f55b676bb63dcc263172e070babaabe9ecc33ebcd711036ac65c4a59d30e"
+    },
+    {
+      "path": "Api/PlatformApi.cs",
+      "sha256": "ee8652324825fd7121078155a24742274d7c11a0e7e7f3cba5116da7837bf116"
+    },
+    {
+      "path": "Api/SystemApi.cs",
+      "sha256": "6979bcb7cd29abf5c3cba1e2e701c8385bb0afc1ebe15b212c56c901ab70011f"
+    },
+    {
+      "path": "bin/publish-core.mjs",
+      "sha256": "6f2419187ee61e34210de8949ec968f5ab9d8bd0c0543e7caba6883198c36185"
+    },
+    {
+      "path": "bin/publish.ps1",
+      "sha256": "64a1727613d4b6b088129400427b90dd4b37047f48beacade665a76418398740"
+    },
+    {
+      "path": "bin/publish.sh",
+      "sha256": "9f2030a8a491d26598cbd3a1b858d55e4f8e7bb70c9bf4b6024cd8c425a84e0b"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "fb941a0806986a54fc192f98a98f6d9c282b8d350b2b19a3e71dda404e92d545"
+    },
+    {
+      "path": "Http/HttpClient.cs",
+      "sha256": "4048161c3b84ab9f33d13eafd0e8a0f406d3afdcb1dfc953fd8d0dc30a47a634"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "7840cc7d2b36ff364ac16c2fc5ec15b861bfe96854eecf81fb59b00edb8b1447"
+    },
+    {
+      "path": "Models/AccessGroupsCreateResult.cs",
+      "sha256": "563c225a984be4a6a81f8a5fd3e2ce1fb7807f6ed9fa814125127122b150e21c"
+    },
+    {
+      "path": "Models/AccessGroupsDeleteResult.cs",
+      "sha256": "a7af80772682ef4b006cf55f647b65d94637a0a4de3aa8ea0612016de566f2bf"
+    },
+    {
+      "path": "Models/AccessGroupsListResult.cs",
+      "sha256": "490b756b772d68f41e04683484862a00bec567d911e9c0779b497ee5feae14cb"
+    },
+    {
+      "path": "Models/AccessGroupsUpdateResult.cs",
+      "sha256": "ce1ff16706eaa40f7b6a1cd6b1e4677d74efc820f8f103319b2364015e0d31fa"
+    },
+    {
+      "path": "Models/AdminAccessGroupCreateRequest.cs",
+      "sha256": "589f1df8a6282254496aa37877bbee73ce16a5a920d944471860dc06630283ac"
+    },
+    {
+      "path": "Models/AdminAccessGroupItem.cs",
+      "sha256": "a45fad1451dbcca8353709e6ada49de2e745e68ae8a0f0d88317ab79101c7940"
+    },
+    {
+      "path": "Models/AdminAccessGroupMutationResponse.cs",
+      "sha256": "f66e8d8d8d05cebdac027d64ba4d1b2967696bd4818c07b2294f208a87245427"
+    },
+    {
+      "path": "Models/AdminAccessGroupsResponse.cs",
+      "sha256": "7de55ec4bf566da81013d30cc11f9965f633d57ccc05a5e4136828eb95479c8b"
+    },
+    {
+      "path": "Models/AdminAccessGroupUpdateRequest.cs",
+      "sha256": "fc31c80abfffbf2a804f2b8048e875934c2b03ee8f72d4584c423fdd3b3cd2b3"
+    },
+    {
+      "path": "Models/AdminAiModelCreateRequest.cs",
+      "sha256": "561c3b50a66fc82947da11fb5809d95f1f8df28bfe9d2f1ff93a802662789a24"
+    },
+    {
+      "path": "Models/AdminAiModelItem.cs",
+      "sha256": "22ca1a69dd942a075072a82a00a74744903f2e24dc7284f9715a33e4c8ce6e89"
+    },
+    {
+      "path": "Models/AdminAiModelMutationResponse.cs",
+      "sha256": "cc2d886e425c6e457f24ea68cf49b876de650ff09912b19240a98d5212299649"
+    },
+    {
+      "path": "Models/AdminAiModelsResponse.cs",
+      "sha256": "5fd16fcd424b3829127066f8bcdfff91f3cc961a495ca2fa18a1a5bfdadb4cba"
+    },
+    {
+      "path": "Models/AdminAiModelUpdateRequest.cs",
+      "sha256": "dd8d80c5c7085ad353d997901c7dcf3bc9d24fc671a4a9748191ae1db64fd168"
+    },
+    {
+      "path": "Models/AdminAnnouncementCreateRequest.cs",
+      "sha256": "8b26b83560956648bff43067c5167b6a09fc6d6c8a332547be90ba2549b75ba3"
+    },
+    {
+      "path": "Models/AdminAnnouncementItem.cs",
+      "sha256": "76a1ad9435a25bae3888a4bf468e8d5b42385918b31d48f540aff1c9dbe2fc1f"
+    },
+    {
+      "path": "Models/AdminAnnouncementMutationResponse.cs",
+      "sha256": "9dabd753ea7af962c566fff4cc7b6970e0ac5d8e56fd09c85800d7b82a4b2c81"
+    },
+    {
+      "path": "Models/AdminAnnouncementsResponse.cs",
+      "sha256": "a3abea5b8107eb76943ecaf75517c071fe57bd3f9c6a5167e32ce2ec69c96a04"
+    },
+    {
+      "path": "Models/AdminAnnouncementUpdateRequest.cs",
+      "sha256": "c9bce820e30e36a241fcd4a38e122f59a9a91bfbf56c058e4dea0c54399f8b9d"
+    },
+    {
+      "path": "Models/AdminApiKeyCreateRequest.cs",
+      "sha256": "1827630c69db5944ad6c42b12a21e1a4ff37b0106336aa5e2302d4bb512c12d5"
+    },
+    {
+      "path": "Models/AdminApiKeyCreateResponse.cs",
+      "sha256": "8ba4452c590c6d0021eb793b17f9f550d93dbf76aa5a97dee6abc6862cbedf9b"
+    },
+    {
+      "path": "Models/AdminApiKeyItem.cs",
+      "sha256": "776ca0bf74e65e80e5977a06e0074276dea467b6aff262eb93c88880c86c0701"
+    },
+    {
+      "path": "Models/AdminApiKeysMapResponse.cs",
+      "sha256": "1b8253044b4f895a49b22ccda844d85cd2e9778afd79ee5975c3e1d3ae49d7c5"
+    },
+    {
+      "path": "Models/AdminAppConfig.cs",
+      "sha256": "84f1e54e4f7c1035da93c13d9660d87a592cfd0f169249f06b3f1226aaf08793"
+    },
+    {
+      "path": "Models/AdminAppConfigStandard.cs",
+      "sha256": "1f6c39856bdebd97e960c908e5eed52cbbface5cf3d29164387fd4b73a6e9b10"
+    },
+    {
+      "path": "Models/AdminAppCreateRequest.cs",
+      "sha256": "eaa37b99170d36820ead0ec3f17aa1f455028e6da188e547bbddedca98e956f4"
+    },
+    {
+      "path": "Models/AdminAppDeleteResponse.cs",
+      "sha256": "02839e2a0cb21159ef2cf3a9dc3cddf74d5457fd174d63b570150221a5f12f46"
+    },
+    {
+      "path": "Models/AdminAppItemResponse.cs",
+      "sha256": "6b57e2a579b167c610ecae920a4bd4514f1956d640e3113d0f96c1ba619ba7cd"
+    },
+    {
+      "path": "Models/AdminAppListResponse.cs",
+      "sha256": "000d67c92ab68a39cff86e5b622c5d174b16b6ce9830f6b8e313d1707f2e96ed"
+    },
+    {
+      "path": "Models/AdminAppMutationResponse.cs",
+      "sha256": "64d492a1396230059422856c304e6da3665e447e7110f27eefebe3525f9869c2"
+    },
+    {
+      "path": "Models/AdminAppPortalConfig.cs",
+      "sha256": "48e0444929a006347d0bf3ee60af1bf66c1f219069ea2263d72384294dace591"
+    },
+    {
+      "path": "Models/AdminAppUpdateRequest.cs",
+      "sha256": "296dfc0ad9e130faae7f5d14597f1ecb6e28a20fcfebdb88642cb453923e2fcd"
+    },
+    {
+      "path": "Models/AdminBillingRecordItem.cs",
+      "sha256": "ffa09d4ecc4b4eb79c9d478b760b12e4b0fc7a5103ff8d9dd05a8b52c83f56a7"
+    },
+    {
+      "path": "Models/AdminBillingRecordsResponse.cs",
+      "sha256": "f88ccc340129043603aeeb2ee06eaeb4dcea860c139c97e7314dd6fc1cc49285"
+    },
+    {
+      "path": "Models/AdminCapacityPair.cs",
+      "sha256": "f282be9ba9de3a5cb3a6d425b2fa93c4aaca8fa042f45aa4451adfc9ccd06721"
+    },
+    {
+      "path": "Models/AdminChannelCreateRequest.cs",
+      "sha256": "23a881164cea30e90244e98fc8901e0d242d40f2bbdf3d76f2c35c7b5039e144"
+    },
+    {
+      "path": "Models/AdminChannelItem.cs",
+      "sha256": "7390cb5e208ddf6f67dcd3d753589788415a457226dd763354049026eed7a8a7"
+    },
+    {
+      "path": "Models/AdminChannelMutationResponse.cs",
+      "sha256": "f52cc406322011898d6ed627fb5e05cfe0c592a9a56d051668d85419102232fb"
+    },
+    {
+      "path": "Models/AdminChannelsResponse.cs",
+      "sha256": "eb9ea9de6aa1f0427eace92b52475379b8edfeef1af6c2ad147d4fe50902d522"
+    },
+    {
+      "path": "Models/AdminChannelTestResponse.cs",
+      "sha256": "3734145b8a71175e9c8c34eaef6ab47a89bfa9cdc087acfd15f8ec1b4d1dd511"
+    },
+    {
+      "path": "Models/AdminChannelUpdateRequest.cs",
+      "sha256": "54651b41c9d8fea5b7c997a6e34cab44da350f4b2558b424568edf8615d9de9a"
+    },
+    {
+      "path": "Models/AdminCountPair.cs",
+      "sha256": "fddd43693010a9a6b65ce36d6c023f83947781f3d8762e922fcd17591d95fe9b"
+    },
+    {
+      "path": "Models/AdminCouponBatchesResponse.cs",
+      "sha256": "d29c59e436775b5238a38893906760b515fcf5bb85df1e5020ee86da3763a564"
+    },
+    {
+      "path": "Models/AdminCouponBatchGenerateRequest.cs",
+      "sha256": "6f43fccc0e317794b7d94e985b721adb3f3ba10ab2c14956ff357221e7b38716"
+    },
+    {
+      "path": "Models/AdminCouponBatchGenerateResponse.cs",
+      "sha256": "21961b7baddc63ff30b16b295c1b31dab051d3a6de9ace24bca6a08d0c76cb45"
+    },
+    {
+      "path": "Models/AdminCouponBatchItem.cs",
+      "sha256": "a8fa534b20b2cea51801c99f2d77abe9a583f0fba9952f81ef99b68822ed361f"
+    },
+    {
+      "path": "Models/AdminCouponCreateRequest.cs",
+      "sha256": "aca64990933b3c04e3e08c8cb1dbd09603d0e824c3a28dcd912192b61a2103cd"
+    },
+    {
+      "path": "Models/AdminCouponItem.cs",
+      "sha256": "d0c846c7560c0ea69a83a702ec918093fddaf068086ab45944c52848e7a55cd3"
+    },
+    {
+      "path": "Models/AdminCouponMutationResponse.cs",
+      "sha256": "a4734c4cf61adf8d3689e2fbe82dc74dc6c5f011dc113d6bab0676d4011a980b"
+    },
+    {
+      "path": "Models/AdminCouponsResponse.cs",
+      "sha256": "eede677f5938c4c30c45091a52a9fab99702a80c3d5152c319cd17a782c6c2b2"
+    },
+    {
+      "path": "Models/AdminDashboardDataResponse.cs",
+      "sha256": "7830fd1bb352164165a61bfefa9454aa0f7ac08780876829c30cecd5fec12f9e"
+    },
+    {
+      "path": "Models/AdminDashboardRecentUsageItem.cs",
+      "sha256": "3405e50aa501d798ad09e4c88c14b9093e5b573731f88e88f916348c5946622b"
+    },
+    {
+      "path": "Models/AdminDashboardTrafficItem.cs",
+      "sha256": "f92b8487076559e70777431d82de30512091887f0fd0c8a6200de5e27065651c"
+    },
+    {
+      "path": "Models/AdminDeleteResponse.cs",
+      "sha256": "c1ba853b40f4c2c7fc44a4a0d50302247faabe1a22bd597bd61c64ecc1d3999c"
+    },
+    {
+      "path": "Models/AdminFirewallItem.cs",
+      "sha256": "3ff643fc25666df17b6e6f78ef7793899bffc5f0873c4ee55412b30a1dce34ee"
+    },
+    {
+      "path": "Models/AdminFirewallMutationResponse.cs",
+      "sha256": "f7ad00bdd106e8152a99d319738dfeca301ecb977c955981e5d8ce96425b2cbc"
+    },
+    {
+      "path": "Models/AdminFirewallRuleCreateRequest.cs",
+      "sha256": "fdf57970a9b55fa5feda07f91dd74606a762dcbe00e23fb1fe7b4d4a0ce1581b"
+    },
+    {
+      "path": "Models/AdminFirewallRulesResponse.cs",
+      "sha256": "b8492e6f0756bf6072c20ef2d3777b04ee891b57ac7641998be1a085478d44f7"
+    },
+    {
+      "path": "Models/AdminIpLimitCreateRequest.cs",
+      "sha256": "bcc7e1699c91b6eeb055596b47d7e5ac1d52625d09caa45735f3bb55673abf7c"
+    },
+    {
+      "path": "Models/AdminIpLimitsResponse.cs",
+      "sha256": "0f6b68955e278b3949744c16cb335e6c25f52adabca8849427a858591414b9e3"
+    },
+    {
+      "path": "Models/AdminModelCatalogSyncRequest.cs",
+      "sha256": "39136841695d43aed2a766f064de2bb72c281d706b48fa0bf0909ef7e919934f"
+    },
+    {
+      "path": "Models/AdminModelCatalogSyncResponse.cs",
+      "sha256": "b851388f78fc91a82fd128e2b3392e852dc65bf5b856a3d422376448f525ae59"
+    },
+    {
+      "path": "Models/AdminModelLimitCreateRequest.cs",
+      "sha256": "3c4209ad4ea49b658f8f332321d734b4b84707e6bea3cce390794e9aaaebafd6"
+    },
+    {
+      "path": "Models/AdminModelLimitsResponse.cs",
+      "sha256": "e9d69e595df5d9da1a11538c4e9f2c4f7617bfb04699ec0f904ba08c66dddde8"
+    },
+    {
+      "path": "Models/AdminModelVendorCreateRequest.cs",
+      "sha256": "d902bf61bdb394140c4567d73e347851f628b6c48c3f3a42cd333e16bca99728"
+    },
+    {
+      "path": "Models/AdminModelVendorItem.cs",
+      "sha256": "e63c120fe0a1f41c0b174d8f5921268a99f0a1aeb1c674d32d78dd48f6f8143f"
+    },
+    {
+      "path": "Models/AdminModelVendorMutationResponse.cs",
+      "sha256": "1197ae07b5ebe78712bd41962b599c04845e17b9e410db70bbf39d101ef633dc"
+    },
+    {
+      "path": "Models/AdminModelVendorsResponse.cs",
+      "sha256": "0e07ff435f8215c4849758134ae54950d17d82bd5af28d6290f9fd1643cc1794"
+    },
+    {
+      "path": "Models/AdminMonitorAlertItem.cs",
+      "sha256": "0af4b7eb130dd7d7f69486751624edbd080fc132416b61a3f891fd02d4e99f7a"
+    },
+    {
+      "path": "Models/AdminMonitorAlertsResponse.cs",
+      "sha256": "530d277757efda88d89fc810b713e9d23f413411f7c88bf5538474034e06dfad"
+    },
+    {
+      "path": "Models/AdminMonitorNodeItem.cs",
+      "sha256": "0edbdc7181eb3490ae46b40699749de86f3f11a9d31495806d92044ac3cb82a6"
+    },
+    {
+      "path": "Models/AdminMonitorNodesResponse.cs",
+      "sha256": "2bd8924f2152df2ab06a188c9625ea150edcadbb4c8c1fec2322a58d6caed831"
+    },
+    {
+      "path": "Models/AdminMonitorPerformanceItem.cs",
+      "sha256": "cb378c1bececc38901034c5a2c342b14dcdd6a317b6e93913ced6f0a59e8c568"
+    },
+    {
+      "path": "Models/AdminMonitorPerformanceResponse.cs",
+      "sha256": "170a3e723dd74a385d0c990624bbccc79a42a2bc4bf86545fd9225409e2844c6"
+    },
+    {
+      "path": "Models/AdminPieChartItem.cs",
+      "sha256": "4c54cb5abf28dec2e590767482bebc8651d7ab075b827e3289933a79cbf8e0a2"
+    },
+    {
+      "path": "Models/AdminPromoCodeItem.cs",
+      "sha256": "02fff1e6f3e146605f8220ccfa4b4cfe21cd7d92dee11b10e71f9cc5a3c2bd24"
+    },
+    {
+      "path": "Models/AdminPromoCodesResponse.cs",
+      "sha256": "867925a1c51561cf1c1b38ff3be1a411967b164550a3cc9cec1dfb1d87b64cbd"
+    },
+    {
+      "path": "Models/AdminPromoCodeStatusUpdateRequest.cs",
+      "sha256": "29565599a957120cfba74d81fcf907014012eb04ba17961fb3a33183920df148"
+    },
+    {
+      "path": "Models/AdminPromoCodeStatusUpdateResponse.cs",
+      "sha256": "9a8ad46185d766fc69de32a9827f5cfaca4060c23d483974762d2881b59afa56"
+    },
+    {
+      "path": "Models/AdminProviderSecretCreateRequest.cs",
+      "sha256": "2785e14498158ce560881a7e74fbee65dc2d52c4d7778decd3ae7a1847b59457"
+    },
+    {
+      "path": "Models/AdminProviderSecretItem.cs",
+      "sha256": "b3b250c19865d17806af3a863238f850716188b6bfe9add6625cf4c40f712671"
+    },
+    {
+      "path": "Models/AdminProviderSecretMutationResponse.cs",
+      "sha256": "78251c7d94b5d85f3b755282e433962dcb41e046e424ad0abdabc47116a8ba79"
+    },
+    {
+      "path": "Models/AdminProviderSecretsResponse.cs",
+      "sha256": "1a4a045d29f4b94b8f6e3a8d23acb0943767d74d12dc5e4535e79fcc647b10f4"
+    },
+    {
+      "path": "Models/AdminProviderSecretUpdateRequest.cs",
+      "sha256": "0f906066e121f594e1e177b961a767adb18d7408ad844308ca4cf1b46703a1cb"
+    },
+    {
+      "path": "Models/AdminRateLimitItem.cs",
+      "sha256": "467c136aebcf5e6afc602c2cff2c9248c0d0687aae1a0c4918c4d956feb837d8"
+    },
+    {
+      "path": "Models/AdminRateLimitMutationResponse.cs",
+      "sha256": "6a4deb0bae0e199a19448c2b42ed4ccb4ed6c801ebee6b6499892041c0bebf38"
+    },
+    {
+      "path": "Models/AdminRechargeRecordItem.cs",
+      "sha256": "4444349d8da82eee2967f106dc97f925f4a965dd9ac18afe181bc6cfe372a3f6"
+    },
+    {
+      "path": "Models/AdminRechargeRecordsResponse.cs",
+      "sha256": "b5f61f04be1447499ad144d8aac667298d8c32d59df3ac901d42dc1fe611de6d"
+    },
+    {
+      "path": "Models/AdminRecordLogItem.cs",
+      "sha256": "f61110ed86ac1602131d86e9405ebcc67fb531964f51c07cdeb543d71afa1b8d"
+    },
+    {
+      "path": "Models/AdminRecordLogsResponse.cs",
+      "sha256": "40e80ee5b971a317375a27d056f0704aa7a6dc9359b32dc608399240cd9b999d"
+    },
+    {
+      "path": "Models/AdminRedemptionRecordItem.cs",
+      "sha256": "5d87566f666321ee4435588999c9ac85b1e0397042cf763eb8607aa134cff3d9"
+    },
+    {
+      "path": "Models/AdminRedemptionRecordsResponse.cs",
+      "sha256": "b56a909967dc9bb6e838dd1090ddd3097dbddb837998bd3962f9ffca7c53ce1f"
+    },
+    {
+      "path": "Models/AdminReferralStatItem.cs",
+      "sha256": "180798f78437efbb068421ef6a8629cd5e73bc425a593a09abf7610e7d5c63dd"
+    },
+    {
+      "path": "Models/AdminReferralStatsResponse.cs",
+      "sha256": "f878c9d8e70ea6b072e6a856615bc61ed2a5376a81c5cab0dfe11b26d895b544"
+    },
+    {
+      "path": "Models/AdminSkillArtifactCreateRequest.cs",
+      "sha256": "6f7d7572b2d3433d0ecc55644fc14d3f37018d8218f3e48db20ab1ca266bb3a9"
+    },
+    {
+      "path": "Models/AdminSkillArtifactDeleteResponse.cs",
+      "sha256": "cc1986489bf73b3adb4261ad41de33ba620c6f41aae33fd3f30b14b5207e2bb3"
+    },
+    {
+      "path": "Models/AdminSkillArtifactItem.cs",
+      "sha256": "f3720a0daae29110b565d123120faa7ddaeaffede21c3cc8808baa0be7b0d6c9"
+    },
+    {
+      "path": "Models/AdminSkillArtifactListResponse.cs",
+      "sha256": "b29b3180505f3327a1686bc13b613f5792e9910a4593398a042698b5528334cd"
+    },
+    {
+      "path": "Models/AdminSkillArtifactMutationResponse.cs",
+      "sha256": "1d96b42697f3aab500926a5ff5dbc3eeebfe494c149f8ce17b0ff371fc2f8ae1"
+    },
+    {
+      "path": "Models/AdminSkillArtifactUpdateRequest.cs",
+      "sha256": "0e6b58bdcfbfc8b4ecc523dc78eb15cccc20a16e4089e2505b65a23a09ad7ee9"
+    },
+    {
+      "path": "Models/AdminSkillAssetCreateRequest.cs",
+      "sha256": "dbf0e8f3d60f1a984e52390e45e1e04d43da6fba65d05cb0326952f5e81ac762"
+    },
+    {
+      "path": "Models/AdminSkillAssetDeleteResponse.cs",
+      "sha256": "4564296a63a4d211e608d6bd35e77455b4b0877cdcd6495249c0a3044832a2b6"
+    },
+    {
+      "path": "Models/AdminSkillAssetItem.cs",
+      "sha256": "9981144c33de3a295a8bd19fe8f3ad263a01d74c8c6d70252d47f09d9b5ecb3d"
+    },
+    {
+      "path": "Models/AdminSkillAssetListResponse.cs",
+      "sha256": "c235e26f727c99ec19d6e74f3a05b540c43cb3ebb9028f9767633723a5912ffc"
+    },
+    {
+      "path": "Models/AdminSkillAssetMutationResponse.cs",
+      "sha256": "946556660f10d32f83212f5a124e0005e4f0677ba51faa07e334a574b3ffd87d"
+    },
+    {
+      "path": "Models/AdminSkillAssetUpdateRequest.cs",
+      "sha256": "052cb817f92f547906f9b5723c37efeb7a5986bcc4ddc4e021dfe021885fcb1b"
+    },
+    {
+      "path": "Models/AdminSkillCategoryCreateRequest.cs",
+      "sha256": "b237435fe40e98444723885972d78f66be56b89daf92705be990d82d7e4fb654"
+    },
+    {
+      "path": "Models/AdminSkillCategoryItem.cs",
+      "sha256": "26c1d8e6abcd884f16cd687aabac4c56c31dea9f7fd5d96df07059ea45477d58"
+    },
+    {
+      "path": "Models/AdminSkillCategoryListResponse.cs",
+      "sha256": "18341d78b0eaf4a731e5b3da9a7eb5a7aa87cf5980ca0dc71c2ea8c50a974c77"
+    },
+    {
+      "path": "Models/AdminSkillCategoryMutationResponse.cs",
+      "sha256": "5e3bd3ca13a1a74b0a069230868d78db22c45b1b149d905a47d2ef2af4598946"
+    },
+    {
+      "path": "Models/AdminSkillCreateRequest.cs",
+      "sha256": "9fb9478bc8ad06aadd0b18e0510ce72f2c5aefabfbedb768e5a4bfac2c1703aa"
+    },
+    {
+      "path": "Models/AdminSkillDeleteResponse.cs",
+      "sha256": "8491d0714e4ce03e415042be6beb165df3094e53b4156ecccd2b24d043aa99ae"
+    },
+    {
+      "path": "Models/AdminSkillItem.cs",
+      "sha256": "94c95ec0c32f5af1a9b8dbf8e770207e555e80fc4cb7b60169e3878e90b9d9cd"
+    },
+    {
+      "path": "Models/AdminSkillListResponse.cs",
+      "sha256": "daaaab7a44897f9fb1ec06aebd0bb820843901d7a775e735d16e42110e87411f"
+    },
+    {
+      "path": "Models/AdminSkillMutationResponse.cs",
+      "sha256": "cf331134170bc39087f51cf494142eda579b25414a66c9a4af1b5981d71c36fd"
+    },
+    {
+      "path": "Models/AdminSkillPackageCreateRequest.cs",
+      "sha256": "23c639daca2d93ea93b100141e7a6cb8009b7e9ed5f288f3b3ab97909b47bbb2"
+    },
+    {
+      "path": "Models/AdminSkillPackageDeleteResponse.cs",
+      "sha256": "9176dc77582bf4e06633967c08a3e6f118cc48c3c7b32dd157f5efa5bcf91f4c"
+    },
+    {
+      "path": "Models/AdminSkillPackageItem.cs",
+      "sha256": "656aad4e0f7cd3d948cd5e95803b5e5f65f8e9289ecf3cc869443b0e94c22cc0"
+    },
+    {
+      "path": "Models/AdminSkillPackageListResponse.cs",
+      "sha256": "3bc19590fa8f093b8fb30197a3a82fc046fccb56392913f4f6abef08f7f2b675"
+    },
+    {
+      "path": "Models/AdminSkillPackageMutationResponse.cs",
+      "sha256": "9d1b12c1661e80d8c8559051dcbff02f2d6bdc91cdb55d881bdccb52083e0c22"
+    },
+    {
+      "path": "Models/AdminSkillPackageUpdateRequest.cs",
+      "sha256": "9159ac49ecee63595181fb7fadc61ceb54df4e63059558cbdf39dea43c75a2bb"
+    },
+    {
+      "path": "Models/AdminSkillReviewRequest.cs",
+      "sha256": "e73c439f875da3cbe47add5efa955700098fd0b491a1e4261e3f4d09cec1fadf"
+    },
+    {
+      "path": "Models/AdminSkillUpdateRequest.cs",
+      "sha256": "104afe4732b8295b5bea00b78e35b311f6b360aa5a18471b9cb9b45aec71e911"
+    },
+    {
+      "path": "Models/AdminTokenLimitCreateRequest.cs",
+      "sha256": "8ac383ef91e56efa674df7f0167e0fe10eb48612ae664e6abddd4c27f98ade22"
+    },
+    {
+      "path": "Models/AdminTokenLimitsResponse.cs",
+      "sha256": "98458671500a568cb01c04e679729b71f4942ab69a439e4cf799496d02027a02"
+    },
+    {
+      "path": "Models/AdminTransactionRecordItem.cs",
+      "sha256": "7f0f6435fed700993940f747ea8f56bc407b19b442bf75fb1c33600478a9f1cc"
+    },
+    {
+      "path": "Models/AdminTransactionsResponse.cs",
+      "sha256": "0831e062d8ecc6f26aa9ec51c973c82adc25ca568a0b1fdacd0a5a90ecd445df"
+    },
+    {
+      "path": "Models/AdminUsagePair.cs",
+      "sha256": "70f98e20b42679368a429bc12f5a66c57125099b0f824da420d2ef45ae18730c"
+    },
+    {
+      "path": "Models/AdminUserBalanceAdjustmentRequest.cs",
+      "sha256": "fc9c5760ad488ff225d8873b27eafdec9242ecbabc8a12fc7e9b176fb5d0a645"
+    },
+    {
+      "path": "Models/AdminUserCreateRequest.cs",
+      "sha256": "e745d1c79d0ff68876fcaf4180a14c44dc74c6082e2c089b6d85c0cab86feaeb"
+    },
+    {
+      "path": "Models/AdminUserItem.cs",
+      "sha256": "f92aeaa91573beb425444f8cf4ae42a19ed090a6792ecdc1615df3edb9280532"
+    },
+    {
+      "path": "Models/AdminUserMutationResponse.cs",
+      "sha256": "fe3fe93310e846c799551b3cd730e39b9b1a0d817a9844adb8c64addde88e502"
+    },
+    {
+      "path": "Models/AdminUsersResponse.cs",
+      "sha256": "ad2bcc943c1dbdca7570d847dbe0f47e8269d364ef6d19b496a8b2bd773173ed"
+    },
+    {
+      "path": "Models/AdminUserUpdateRequest.cs",
+      "sha256": "56f95652d27cb1a2353bf367dd226c139fab77082c4ff971c71c017a2bf3e643"
+    },
+    {
+      "path": "Models/AiBillingMeterRecord.cs",
+      "sha256": "26606d68c83c8e5720fd4f8aa8382297f1d447699f382faff44ea1e5fd9790f3"
+    },
+    {
+      "path": "Models/AiGenerationAssetActionRecord.cs",
+      "sha256": "14dc220914fa1978a0e6794462025a4347d42756fc46b3a550f9f5f9b7b07a90"
+    },
+    {
+      "path": "Models/AiGenerationAssetRecord.cs",
+      "sha256": "7f410597faeac66165bfe5dbe7f2fdfe5afee339a9b18d93e85208d42ee9d876"
+    },
+    {
+      "path": "Models/AiGenerationJobRecord.cs",
+      "sha256": "b7f9da3d5e5d444a3094ba534526cd7785a86ea46c0d935b166d75a2362bc8f4"
+    },
+    {
+      "path": "Models/AiGenerationSessionRecord.cs",
+      "sha256": "adf6b19df5296de29200c48298bd67ba96e58a2e97a7e6b9ba320a9adf2b73a0"
+    },
+    {
+      "path": "Models/AiModelCapabilityRecord.cs",
+      "sha256": "8a2bad62c3ea5dad1ec26960e4eb7a86d613941576ab66cc88ccc3dd27e30d57"
+    },
+    {
+      "path": "Models/AiModelCatalogSourceRecord.cs",
+      "sha256": "b40f2f48ef91f2c0302b5998d055af911ed5c980bd2326603e277edd879ea82c"
+    },
+    {
+      "path": "Models/AiModelCatalogSyncRunRecord.cs",
+      "sha256": "071cd9dd751da5a1cd1c19807dea7e8fbb7132321d2f81f305bb8021b18295d8"
+    },
+    {
+      "path": "Models/AiModelFamilyRecord.cs",
+      "sha256": "b80ed008612366a2a9ca1f47629c49498a7198dd1c300da78107f6033107a3e5"
+    },
+    {
+      "path": "Models/AiModelPricingRecord.cs",
+      "sha256": "9b23430a71cf58adae6ba6ba9fd9335e68007580f4b0a923f649f9fb8282b1ed"
+    },
+    {
+      "path": "Models/AiModelRankSnapshotRecord.cs",
+      "sha256": "0b3cfe3b6102855476fa80b2b649346d16a6188784549f5eab545e04404eebe6"
+    },
+    {
+      "path": "Models/AiModelRecord.cs",
+      "sha256": "c9ce498307eb7fe5b1bad8e666c9975fb1ffd7263548f2057102ea2a3a1cac29"
+    },
+    {
+      "path": "Models/AiModelVendorRecord.cs",
+      "sha256": "22dfb264b2ffc522bb09117cdbe83ded70d9b705a63043b3cdb1416f0c863071"
+    },
+    {
+      "path": "Models/AiModelVendorRegionRecord.cs",
+      "sha256": "4f5ac5f15ab9b4cd9485eb4b7517c8728e50a6d89c98e56e2139b9b9f45c99e1"
+    },
+    {
+      "path": "Models/AiPricingImportSnapshotRecord.cs",
+      "sha256": "2b609f0f582a91ad5ae75eed2063501ba7663d72869fe31e7f5fcb8a67964dd3"
+    },
+    {
+      "path": "Models/AiPricingPlanBindingRecord.cs",
+      "sha256": "a166daaa8063f676cc0c8ffb868d10adcb489a353be5e0270f959199cd4e6fd9"
+    },
+    {
+      "path": "Models/AiPricingPlanRecord.cs",
+      "sha256": "ad2fcc94bb82a4d37ee03b3f5a42ca729240c45fa5368516ef47c6a9faf2efd3"
+    },
+    {
+      "path": "Models/AiPricingRuleRecord.cs",
+      "sha256": "b97d4d6c10ab8e54ed2788a31c0b40edff12965755100fb9ce47f77201776d11"
+    },
+    {
+      "path": "Models/AiPricingTierRecord.cs",
+      "sha256": "2862a325a5aa917d7ad001696a9aa72aa4a93b0781fdeeb0ab59ba685c39d991"
+    },
+    {
+      "path": "Models/AiQuotaPolicyRecord.cs",
+      "sha256": "c83ea2df7f89c44a38b316f91a6d97967e14248f51d10e6d6ab68997c693be57"
+    },
+    {
+      "path": "Models/AiRateLimitBucketRecord.cs",
+      "sha256": "855ffae8000372ea9a1b33ef83e54eca2b43643fdb1c2d9fff4ccec82908729e"
+    },
+    {
+      "path": "Models/AiRequestTraceRecord.cs",
+      "sha256": "b2bf21d49da4f34f45a8004158b2f73090eec23346ee2421e5dd877550133324"
+    },
+    {
+      "path": "Models/AiRoutingDecisionLogRecord.cs",
+      "sha256": "97d2fd83da4edbf24c680f51299fd3d118cf090b5424a5ee0fc8909ebc8e2ab9"
+    },
+    {
+      "path": "Models/AiRoutingPolicyRecord.cs",
+      "sha256": "ed60e52f177125ff6224d6d2b5a8e186b941851870952fccb70540279c7f76b8"
+    },
+    {
+      "path": "Models/AiRoutingProfileRecord.cs",
+      "sha256": "794579b310b41ab0288ea9a9cf7bf2816fc47085ef2c76c3fc0b6d118ab20150"
+    },
+    {
+      "path": "Models/AiRoutingRuleRecord.cs",
+      "sha256": "92293d83fca63db3fdccff9fab1cd14da59f4f0386a82985ccfc7f4f41818b2e"
+    },
+    {
+      "path": "Models/AiUsageFactRecord.cs",
+      "sha256": "c2a81203649d6aaa51bafbe2a90935156e42572b5c05be59c2fc81a0785c1ae9"
+    },
+    {
+      "path": "Models/AnnouncementsCreateResult.cs",
+      "sha256": "cbf2e29e8fb67c846b21a73f43119e21c1d43e17ff842c0b79669b495f67000f"
+    },
+    {
+      "path": "Models/AnnouncementsDeleteResult.cs",
+      "sha256": "05afe78aa1202ee76281edfc4e4bc40d921e824c5bdb3514cecb157c326bf6f4"
+    },
+    {
+      "path": "Models/AnnouncementsListResult.cs",
+      "sha256": "abb1a998f5bb041823c1380697bd7ca36b84de97520fa5717e5a771773995860"
+    },
+    {
+      "path": "Models/AnnouncementsUpdateResult.cs",
+      "sha256": "a13bafc5fb5d029085484e0d2ecb94bc8582fab2390de7b290a4a71c8b0f475b"
+    },
+    {
+      "path": "Models/ApiKeysCreateResult.cs",
+      "sha256": "048e3cc047a4d9b99f9df6b43fbf232f593172840b640f87a22191c947f814f1"
+    },
+    {
+      "path": "Models/ApiKeysDeleteResult.cs",
+      "sha256": "2c788fcd95b52c12ca4a1495169ec97cdc9006bda64223e4b0a3df5b069e6a65"
+    },
+    {
+      "path": "Models/ApiKeysListResult.cs",
+      "sha256": "961400dca217347f93128f4f5482f1ce1057dce2816659ad81a4f8e72afa35c6"
+    },
+    {
+      "path": "Models/AppsCreateResult.cs",
+      "sha256": "eca4b4574b9e864ef4bb4a3d056e8f961ef58800220df5c5a9b8baa206c75e4b"
+    },
+    {
+      "path": "Models/AppsDeleteResult.cs",
+      "sha256": "c5392fcc50922b0e5057a17fc7d29a2ec854a4874d07dde83bc2f081e26dabe0"
+    },
+    {
+      "path": "Models/AppsDisableResult.cs",
+      "sha256": "4ca814b6c23aa03ab0a5af0b991ee51b2f210856bdc90476a4833b8108af78a6"
+    },
+    {
+      "path": "Models/AppsEnableResult.cs",
+      "sha256": "f0405f0ac75565347d9644a187920a32ced83663843fe628c8274545f2054ed6"
+    },
+    {
+      "path": "Models/AppsListResult.cs",
+      "sha256": "bc05a944540e1f6d6eee3574b083cba697493e3c5fb22f951c04c1ce4fde1e1d"
+    },
+    {
+      "path": "Models/AppsPublishResult.cs",
+      "sha256": "5d3921cebb1ceb3f45238300646de79b869c172866e5f3e11cffb4721529af5a"
+    },
+    {
+      "path": "Models/AppsRetrieveResult.cs",
+      "sha256": "04a53b6f712e6de03de7bf90a95bd7e4169b712e567dc51224b84f1a4518509b"
+    },
+    {
+      "path": "Models/AppsUnpublishResult.cs",
+      "sha256": "59fc84b480e07ff785970d459f054d872095d232b29d1fd7185197745e4095d2"
+    },
+    {
+      "path": "Models/AppsUpdateResult.cs",
+      "sha256": "f255d302994f5a16f3d6a4353516725d84395371e5d49f3a7f1f5066d5b46401"
+    },
+    {
+      "path": "Models/ChannelsCreateResult.cs",
+      "sha256": "78d5de096bb814ff65a4071ba16360defddb8c98ec4cb57efb50bb0ea1029a83"
+    },
+    {
+      "path": "Models/ChannelsDeleteResult.cs",
+      "sha256": "ee1c640e5e570a2b350133a36d1cb89a09a2966c6f18a691644fdcd6992c0ccc"
+    },
+    {
+      "path": "Models/ChannelsListResult.cs",
+      "sha256": "082a6a02b15d43a1848c42991d6bcada31bcc846f1184dc536ebb926a8f36ebd"
+    },
+    {
+      "path": "Models/ChannelsUpdateResult.cs",
+      "sha256": "fb8fa1dd5dba1f4dfa1e4af555204c221adc0e87a0027848e756a1d279130981"
+    },
+    {
+      "path": "Models/ChannelsVerifyResult.cs",
+      "sha256": "6e2d3c16df552825bceed52543b6b7e685a0585b4bd53c4f0192b31e715decf9"
+    },
+    {
+      "path": "Models/CommerceBillingExportRecord.cs",
+      "sha256": "938c1c653583ca5cd1600d5e92c9c7665b536fade5bc632364127595ea702230"
+    },
+    {
+      "path": "Models/CommerceUsagePricingPlanRecord.cs",
+      "sha256": "86a7bb0d89c856b301978f41505b25fae4858c4e0624118df70d616c27a9d716"
+    },
+    {
+      "path": "Models/CommerceUsageSettlementRecord.cs",
+      "sha256": "2aaa3b6205777719448666b790ee533d2d84b77e69f6b192dffa29ae9fdfd033"
+    },
+    {
+      "path": "Models/CommerceUsageStatementItemRecord.cs",
+      "sha256": "01d6bdedb2aabb11eaf462102f5ee259f38fc8fbe009913c4d1a60f15ece093f"
+    },
+    {
+      "path": "Models/CommerceUsageStatementRecord.cs",
+      "sha256": "f74e1f9f47eac5033e39420e333e7f29785ca851d9bdcd1b9e9cc6e00138543a"
+    },
+    {
+      "path": "Models/ContentAnnouncementRecord.cs",
+      "sha256": "cba74d8439673293ed4bd17aab4698283a0e84e9eb7abed457fad28b182969b1"
+    },
+    {
+      "path": "Models/ContentCourseApplicationRecord.cs",
+      "sha256": "200cf36c7f1959939f0c027da7ef9e43394934e2027bafd1b99e8d96031be295"
+    },
+    {
+      "path": "Models/ContentCourseLessonRecord.cs",
+      "sha256": "ff4e41f68e2ee496a2ce7e06545beb07387fc18861e63f346128532bb1add17a"
+    },
+    {
+      "path": "Models/ContentCourseRecord.cs",
+      "sha256": "07266b69b0e2a2e95c550a41afbc04959a0970a45264e96968b23552a5deefa0"
+    },
+    {
+      "path": "Models/ContentCourseRelationRecord.cs",
+      "sha256": "6711ca0cc821e106c0cbc82b0c0a6397a8d25498e9170df78cbbfa771ab71c40"
+    },
+    {
+      "path": "Models/ContentCourseSectionRecord.cs",
+      "sha256": "570aad32b642e49b783dcd63fb3a94b4e9e3efb0427f110a7f8d1e5db03ac2db"
+    },
+    {
+      "path": "Models/ContentDocPageRecord.cs",
+      "sha256": "66094bc2423246c69b6babc184461b9660b3975b805e2fd498063ce2b23ee1af"
+    },
+    {
+      "path": "Models/ContentForumCommentRecord.cs",
+      "sha256": "f806fdb708834e140f726e445e5dcdfc3890f35f09e124ba81b9f6aa7fa6d4a7"
+    },
+    {
+      "path": "Models/ContentForumPostRecord.cs",
+      "sha256": "00f4e9649bfeba2d198342551cb804015274c712b986f3b66ccf2f4c460b6d76"
+    },
+    {
+      "path": "Models/ContentOpenapiSnapshotRecord.cs",
+      "sha256": "cf654475ea4b5bf834f22d8ca0c71471ac273290e58de1fc65a9d000d50f0795"
+    },
+    {
+      "path": "Models/ContentReactionRecord.cs",
+      "sha256": "8a574e51aa83b935c9fe8d78a0ece72c5ca06765b2db83028dcfd9fdf2b7bcbb"
+    },
+    {
+      "path": "Models/ContentSdkReleaseRecord.cs",
+      "sha256": "5b611c3c1a91000954744bfbc10f0c179456d985aae5b7571ada12dd77febaf1"
+    },
+    {
+      "path": "Models/CouponBatchesCreateResult.cs",
+      "sha256": "3bc355a8fd503b303b20f0c92f0fc7c0a83ee55f26415363e21b99a38c85ec69"
+    },
+    {
+      "path": "Models/CouponBatchesListResult.cs",
+      "sha256": "6ddbeaccbf662775d0efaf68790aa25ab9885a9c4fc8d209cee89be99b4d0d5e"
+    },
+    {
+      "path": "Models/CouponCodesListResult.cs",
+      "sha256": "269b200935f0f4702845819c0553ade478b5b8f6cfa2e1d3a61e509687274a83"
+    },
+    {
+      "path": "Models/CouponCodesStatusUpdateResult.cs",
+      "sha256": "061d76074a7dc062ba6987db07bc25d764ff8aa315d298b55b5780d9324d4c98"
+    },
+    {
+      "path": "Models/CouponsCreateResult.cs",
+      "sha256": "1c64944aa41c739077c3d01e278d1518691e1cad488dfde5a03739d6bb7748f0"
+    },
+    {
+      "path": "Models/CouponsDeleteResult.cs",
+      "sha256": "474afc9f5ee6b9c3a80b2b3b4813a0cc1d8e910f8c8eee5caacbeeb2665e9247"
+    },
+    {
+      "path": "Models/CouponsListResult.cs",
+      "sha256": "7f30f70e2e854414d9ceed6fa3aee4b11a6db1b4748219bedab77ed196192307"
+    },
+    {
+      "path": "Models/DashboardAdminOverviewRetrieveResult.cs",
+      "sha256": "6216d0f8445188ae63a44eb78b4b65316a820ceda1fa5214e228158cef79e506"
+    },
+    {
+      "path": "Models/FieldError.cs",
+      "sha256": "f3172d2e95a7b3899e0307e4266bf39b123339495312972b013b049bb000d7f0"
+    },
+    {
+      "path": "Models/FinanceAdminLedgerListResult.cs",
+      "sha256": "4936a5328000966c9241ddcdfe2423ae73991e1f541650c2644c2a00301d4869"
+    },
+    {
+      "path": "Models/FinanceUsageStatementsListResult.cs",
+      "sha256": "fb6922404b7ddac83c53e96e7f03b45ea8837b1945f0c24e9fdeae36b224681d"
+    },
+    {
+      "path": "Models/FirewallsRulesCreateResult.cs",
+      "sha256": "0b96ad23342e648eb111622773c21156f2158db701f303329eb93d9def61ee1d"
+    },
+    {
+      "path": "Models/FirewallsRulesDeleteResult.cs",
+      "sha256": "f5eb03bdf3b547ee94e9946b827c54c00f02f92c25ccc1e01fce99e89faa31e0"
+    },
+    {
+      "path": "Models/FirewallsRulesListResult.cs",
+      "sha256": "1d6d3e1b33169a74f36603462186853ed0bd93e52d4ae60f63db94849843528e"
+    },
+    {
+      "path": "Models/IamAuditEventRecord.cs",
+      "sha256": "d6b664dc33da38636af6db91de7465a8d0b7ac67b2e0c2bd9697ad5a9d4635a0"
+    },
+    {
+      "path": "Models/IamCredentialRecord.cs",
+      "sha256": "0271167e832c8a724a8655a323d1653c60855636ddb64f44dd651608fbc30f18"
+    },
+    {
+      "path": "Models/IamGatewayAccessPolicyRecord.cs",
+      "sha256": "c86f5184101626776dd9729c546c4113ad02b05668a9b83725b9fc7d235aae7f"
+    },
+    {
+      "path": "Models/IamGatewayApiKeyGroupMetricSnapshotRecord.cs",
+      "sha256": "cffe0338ee73612c46008db9bef03ca0fd6d56cf532949dbb4085e56d4e848ed"
+    },
+    {
+      "path": "Models/IamGatewayApiKeyGroupRecord.cs",
+      "sha256": "1f1abb01ed5b68de9964e61fff148fa62b51e25967cdb772e8f390e8f5d235fe"
+    },
+    {
+      "path": "Models/IamGatewayApiKeyRecord.cs",
+      "sha256": "8f85d87de979bda934831297ec0d5a896911cb4c68126a782e9f961019cd3e81"
+    },
+    {
+      "path": "Models/IamGatewayRiskRuleRecord.cs",
+      "sha256": "7cce321f2a4bd0e158d8a080063f2129709347ff341d9ae191ea0d4ecdc7f5ee"
+    },
+    {
+      "path": "Models/IamOrganizationMemberRecord.cs",
+      "sha256": "b449e04d62dfe4f30cde0bf5551132c4ff0e76364c37722c9545f6f4e47ff06d"
+    },
+    {
+      "path": "Models/IamOrganizationRecord.cs",
+      "sha256": "0a7e1fc53e19f42962d8fd115f98cdf1af40c6995a3d11e6fe302e1d5957c8ea"
+    },
+    {
+      "path": "Models/IamSecurityEventRecord.cs",
+      "sha256": "1a5380c9d1f86057c4a5b6c1eb7d15aebbe283b3990778552e3809f5ad9d971b"
+    },
+    {
+      "path": "Models/IamSessionRecord.cs",
+      "sha256": "6d1d6c19f55340df40b968b5464fbbe0df5944809f5439471ab08ef7484e9fbb"
+    },
+    {
+      "path": "Models/IamTenantRecord.cs",
+      "sha256": "7e78527c51a6f1250c0e0a9277f4c724ce0fe5c32d51074794fe5000cd0d68e5"
+    },
+    {
+      "path": "Models/IamUserIdentityRecord.cs",
+      "sha256": "e24cd512b331d0017e51c0c9f0185007755b2ea485c32be1ae78444cf11a9e37"
+    },
+    {
+      "path": "Models/IamUserLoginEventRecord.cs",
+      "sha256": "0ab01dcbfa8bf16dcc4ab377ca75ff31226a48ff0463d6da35b63a4cc2277ccc"
+    },
+    {
+      "path": "Models/IamUserPreferenceRecord.cs",
+      "sha256": "ffef31300f33b98400d2c15fbed9388ab3c69d489efc885ce3dc7c2462519c3b"
+    },
+    {
+      "path": "Models/IamUserRecord.cs",
+      "sha256": "0034a6777f2f495ae90dd2aecce340b96831b914e3c4294f040d0e53c7cec45a"
+    },
+    {
+      "path": "Models/IamUserSecuritySettingRecord.cs",
+      "sha256": "4d8851a8897437a27bb8af59819aa4bf4a2b0d708c497843e871ba0c172d3498"
+    },
+    {
+      "path": "Models/InstallationStatusResponse.cs",
+      "sha256": "be05a26460f0c5ba9270fb0e81dbe742b56235659b94b223be7e53f7a029936f"
+    },
+    {
+      "path": "Models/InstallationStatusRetrieveResult.cs",
+      "sha256": "587741c6b93972fe7c06bc9cde748227229224ae3d3a465951a9a49cf26072a0"
+    },
+    {
+      "path": "Models/IntegrationChannelModelRecord.cs",
+      "sha256": "a441649d3c7cb6dec465ea3960c86d132cdf320b41f1919b00711bec92f36806"
+    },
+    {
+      "path": "Models/IntegrationChannelRecord.cs",
+      "sha256": "f23ae9282e8b3b524b028ad5d30640083b569689e5dfcc29c00d73c404085bfd"
+    },
+    {
+      "path": "Models/IntegrationProviderAccountRecord.cs",
+      "sha256": "2df76a6ee3d3041af3572f8263699fc3931b8ff25af6655b2a7973247ae2341e"
+    },
+    {
+      "path": "Models/IntegrationProviderHealthSnapshotRecord.cs",
+      "sha256": "21d1800ba4646af63b806facfd5f4bb6ab3025ef15fe862cb84fb93ec7228bdf"
+    },
+    {
+      "path": "Models/IntegrationProviderRecord.cs",
+      "sha256": "5ea66f17c5624616c62aedeb18c5f525d737457af20253904cecaf4c1f2be8fd"
+    },
+    {
+      "path": "Models/IntegrationProxyRecord.cs",
+      "sha256": "7f3a2da23664e51534d2367310240e40463d3e5e518db587c8cb10db40d7180d"
+    },
+    {
+      "path": "Models/IntegrationWebhookEndpointRecord.cs",
+      "sha256": "f9a3f7c56a8a11752f64d5991c6c02c8ee0900e3d2d68d190641c603f9dd7a5b"
+    },
+    {
+      "path": "Models/ModelRankingHistoryEntry.cs",
+      "sha256": "9f9941a9041e6c14d28b2c17d9c93c6ab9c04de3ef6839f02246dd1c776aac76"
+    },
+    {
+      "path": "Models/ModelRankingHistoryPoint.cs",
+      "sha256": "e720aedaba58bbbe4f3bcb1961e5d077997fd63766321f1d8d24706e402a9af9"
+    },
+    {
+      "path": "Models/ModelRankingItem.cs",
+      "sha256": "98b8d3094ae8ae2b2e5ff54dfeb527d7bc7a929862b6206a5eb9bcffa038e2d7"
+    },
+    {
+      "path": "Models/ModelRankingRefreshJobHistoryPage.cs",
+      "sha256": "29e24ebed0925a84dbb45c458cee1eca8e17b21d84087d97abb67302878a4bea"
+    },
+    {
+      "path": "Models/ModelRankingRefreshJobItem.cs",
+      "sha256": "2edd687047dbf047a4fd4b2e4f382ba0f85536157644a897839c00d1299097a8"
+    },
+    {
+      "path": "Models/ModelRankingRefreshLatestJob.cs",
+      "sha256": "1f2fdeaa63afac721b715022272fccd38871503acfbd7b051dd232e0a1b13562"
+    },
+    {
+      "path": "Models/ModelRankingRefreshStatus.cs",
+      "sha256": "ccb538a57a178f56d74481f6dec2b9d4002d45de8dbb48271303a694419f05de"
+    },
+    {
+      "path": "Models/ModelRankingRefreshTriggerRequest.cs",
+      "sha256": "b522129e30c2e9232dabb2a37a0c8d9d232f3f9f9360306c119c0e73a94b0dd2"
+    },
+    {
+      "path": "Models/ModelRankingRefreshTriggerResponse.cs",
+      "sha256": "aff876b930150079be8b35f6751104e1cf5605a7c239ce04268b34ee43a09c66"
+    },
+    {
+      "path": "Models/ModelRankingsJobsListResult.cs",
+      "sha256": "41f8c08585acc769df77dc6915a37804bc9e755fafe59b37cb9df843c27e1cff"
+    },
+    {
+      "path": "Models/ModelRankingsListResult.cs",
+      "sha256": "1ca5a75ef8394c0a54902eed4c26080c83ba30c5532981086e37534be8ec41e8"
+    },
+    {
+      "path": "Models/ModelRankingsRefreshResult.cs",
+      "sha256": "18eccd11baa608faa040141c66ec85322d0c479cd3428d391ea8db1d46f382c8"
+    },
+    {
+      "path": "Models/ModelRankingsSnapshot.cs",
+      "sha256": "5ebbb876f3f0b865e0e652d584ac7ee2f1340ec5d811b8aeeb0b5b271d2f22a3"
+    },
+    {
+      "path": "Models/ModelRankingsSource.cs",
+      "sha256": "e4973534a9b3018529a0430aae55f47657df650ec78f2b3374ed8607fe03bfd1"
+    },
+    {
+      "path": "Models/ModelRankingsStatusRetrieveResult.cs",
+      "sha256": "1d6cf3232919104d05b208a5fb5ed20a87bdf6469e8402167a6fa33b283da6bb"
+    },
+    {
+      "path": "Models/ModelsCreateResult.cs",
+      "sha256": "058c26c598dce4ba4423d8be2975bde4d2a15d9b422352e3931c2fd89e5da1ed"
+    },
+    {
+      "path": "Models/ModelsDeleteResult.cs",
+      "sha256": "39fa97687c7afc48359a899389308d7db75a6a5f09c8e09b5130efd27d2ebc95"
+    },
+    {
+      "path": "Models/ModelsListResult.cs",
+      "sha256": "7bf3ba26dcecf3c4f12b5092cd19a4e9953753ec0c8bcfaf4f7336372c678324"
+    },
+    {
+      "path": "Models/ModelsRefreshResult.cs",
+      "sha256": "3aca7274b2e820e52ceae3f054cef3716e8100cc21ddf8d40e37940cb1fabfac"
+    },
+    {
+      "path": "Models/ModelsUpdateResult.cs",
+      "sha256": "c13cf7ad62ca0e0aa1ddbc7ec02be8e13af8af1c79b3246fef61c7ff83e3a0e7"
+    },
+    {
+      "path": "Models/ModelVendorsCreateResult.cs",
+      "sha256": "b756ebc22b795c54872deed9384424b861c8920cd31b6f70ea9c5917abd43e9b"
+    },
+    {
+      "path": "Models/ModelVendorsListResult.cs",
+      "sha256": "adddde47aee5acf18e5d878ea25844804f4d732c0bed00a43d62257f50bfee87"
+    },
+    {
+      "path": "Models/MonitorAlertsListResult.cs",
+      "sha256": "e0644fcb30ee3f7e7fc2e78c8aa37f0f75ac1197abac3dc90e5bebded8584f3b"
+    },
+    {
+      "path": "Models/MonitorNodesListResult.cs",
+      "sha256": "c800dfa525a35adaccd483e4f52159ba0e699dbac3a1a1450fbebdeb58561d76"
+    },
+    {
+      "path": "Models/MonitorPerformanceListResult.cs",
+      "sha256": "ae66aae56215886d8bce463f3c31ca3052e2e4400b0896d6fe39bad4587eae83"
+    },
+    {
+      "path": "Models/NoData.cs",
+      "sha256": "502cbb3da54a16b7f12a22c260fad32be0d529a80f413844bf1a6f71fb15e309"
+    },
+    {
+      "path": "Models/OpsAlertEventRecord.cs",
+      "sha256": "f7d76bd026f2489985d1997b6876a97ca381da2752b24f20a053413044d431a4"
+    },
+    {
+      "path": "Models/OpsAuditLogRecord.cs",
+      "sha256": "1a24c574f27bc926f0f5484dbcd846cb7ddc9194cb99a449e54f875a8d1ef12b"
+    },
+    {
+      "path": "Models/OpsConfigSnapshotRecord.cs",
+      "sha256": "0855ded706e831e2e42b2063c27c78bb57d2bd07ec4c205cc926a716d83553a0"
+    },
+    {
+      "path": "Models/OpsCouponIssueBatchRecord.cs",
+      "sha256": "a99ac33a6a3c1eccb33d63987b0cb8bf4568508a612a92cbc12a1cf675007b6c"
+    },
+    {
+      "path": "Models/OpsGatewayHeartbeatRecord.cs",
+      "sha256": "bdad24e9a6e7c84d6020fe360e5d1c44d694e9e009ea70b67b8990ae22e70dbb"
+    },
+    {
+      "path": "Models/OpsGatewayInstanceRecord.cs",
+      "sha256": "8969ccfc16692cd8f4783f7a1309dead16d39de5574e21edf54c94b9bc9961f9"
+    },
+    {
+      "path": "Models/OpsInboxEventRecord.cs",
+      "sha256": "ffbcfaee9e36172c65d4846b588631efe26f0aa4ae7213be215aa518e0300c4a"
+    },
+    {
+      "path": "Models/OpsJobExecutionRecord.cs",
+      "sha256": "dc7e34971b0ea38a1d3f2236a28cecb3b28ba9378b44c724ff2dcc1807b000e8"
+    },
+    {
+      "path": "Models/OpsMetricSnapshotRecord.cs",
+      "sha256": "b1ad00c6d90599481799cfb0ff9bf461b04667276606405588d060ec92c4e890"
+    },
+    {
+      "path": "Models/OpsNotificationDeliveryRecord.cs",
+      "sha256": "316e3405807ca3c63160b5531260c9fdc6b21c7fa07914f110f81068f0f190db"
+    },
+    {
+      "path": "Models/OpsNotificationMessageRecord.cs",
+      "sha256": "2972cb488b354ceb28d95ba535bb66b3bfd3ddab156329fc22855b2a0e5eb2a4"
+    },
+    {
+      "path": "Models/OpsOutboxEventRecord.cs",
+      "sha256": "3a645c4712a3c55a0e7ec04bb12638621e5eb047510d131bf543c2ddbe603e9b"
+    },
+    {
+      "path": "Models/OpsReferralStatSnapshotRecord.cs",
+      "sha256": "ecfd16939250cbce9e192504b07412e6563607855d99baa014ea2972635d1496"
+    },
+    {
+      "path": "Models/PlusAccountExchangeConfigRecord.cs",
+      "sha256": "45cfa15b19d16f25e35b45eee142426ad714b7c8d95ad994f257d3c17afe627b"
+    },
+    {
+      "path": "Models/PlusAccountHistoryRecord.cs",
+      "sha256": "09a25bf95e6bcc7f6b4e9954e9671bec71620599f8694115dc30515500c0a729"
+    },
+    {
+      "path": "Models/PlusAccountRecord.cs",
+      "sha256": "7fee541d0e3d735fa905c6f2496b25c5bae8d4e91d4281277baca8bf29a8a662"
+    },
+    {
+      "path": "Models/PlusAgentSkillPackageRecord.cs",
+      "sha256": "8f1c3555f12526ec5ee9ad9d9f114932ed5b436927342b20b42a961be08a6931"
+    },
+    {
+      "path": "Models/PlusAgentSkillRecord.cs",
+      "sha256": "f041e3c2a9d81843d798deb07c6fe4d3f97f24e418c56ce75610f56c4336e10f"
+    },
+    {
+      "path": "Models/PlusApiKeyRecord.cs",
+      "sha256": "30ed6c4dda73ec6e6fc5b958e7ffd83eaf5306f1ad97dc7e73adda20102c68a7"
+    },
+    {
+      "path": "Models/PlusApiResult.cs",
+      "sha256": "d00114d8f50369aecd56ff65497c7fadbf6d5387edc8bb745abe95511be9cae8"
+    },
+    {
+      "path": "Models/PlusAppRecord.cs",
+      "sha256": "b0808f4b68f187abde80d3e3a696fc4343b0706bd7f36904d20ea2804bbc7c1b"
+    },
+    {
+      "path": "Models/PlusCardRecord.cs",
+      "sha256": "c6b54864e8aa4138b0f645384d6325644d755890354be87e4789387eab59124a"
+    },
+    {
+      "path": "Models/PlusCardTemplateRecord.cs",
+      "sha256": "430240c486b720278cc5a7f1e75e0da50c5e8105d2f2a6746fdb9d6cdbcbea6b"
+    },
+    {
+      "path": "Models/PlusCategoryRecord.cs",
+      "sha256": "75e8ccd4c3c29b2b1d03fb183b86d93fef7d40db92bfc2327670a04388c31c07"
+    },
+    {
+      "path": "Models/PlusChannelAccountRecord.cs",
+      "sha256": "b126a9234232dab8dd1e3648e7752192be6b0b199d443a0ed01b637063f66e72"
+    },
+    {
+      "path": "Models/PlusChannelProxyRecord.cs",
+      "sha256": "18ebab31e1ee8b6b56432536aea4e903b2da52055355cc8bf166dc2b0c5c11d4"
+    },
+    {
+      "path": "Models/PlusChannelRecord.cs",
+      "sha256": "3d5d60fb7ab6b9258a50037dc3099be0e7685ed62e09196212fb43731c552488"
+    },
+    {
+      "path": "Models/PlusCommentsRecord.cs",
+      "sha256": "f7c352e054f842483dc68958b84756f2884b31442a0839a414d729cf8f39da38"
+    },
+    {
+      "path": "Models/PlusContentVoteRecord.cs",
+      "sha256": "3f7b149148ca3f55f61cb7e6ef1479e411b24083431c4e63071865c5a4c37559"
+    },
+    {
+      "path": "Models/PlusCouponRecord.cs",
+      "sha256": "a1a20eaf2a137efa7d733b1086faeed1892b6e1049ea511ce4b271fe2355565c"
+    },
+    {
+      "path": "Models/PlusCouponTemplateRecord.cs",
+      "sha256": "e9f4b0b1e17c985c45c212adfb126911fc5e393c74b1f563e3289b72def37c77"
+    },
+    {
+      "path": "Models/PlusCurrencyRecord.cs",
+      "sha256": "3236258d4e4939628d4cf653ce80c63e45e27cd5edb7660f7b1846e79ae11d6c"
+    },
+    {
+      "path": "Models/PlusDepartmentRecord.cs",
+      "sha256": "6cd21507f794c7e8946466901cb6529d592c6a4bc8ec681c51a67fc7120832c4"
+    },
+    {
+      "path": "Models/PlusExchangeRateRecord.cs",
+      "sha256": "52bf5c2b8b23c68fb42a02b7e913e14bce3a3bac343220703f5761edc8635821"
+    },
+    {
+      "path": "Models/PlusFavoriteRecord.cs",
+      "sha256": "223d4c30d140e93aa806eaf0a468361fd96c93a2347ec59414e3a75e0de059d9"
+    },
+    {
+      "path": "Models/PlusFeedsRecord.cs",
+      "sha256": "bd5854c17dcd56cf76040d29f5e2469a60f2e8d0c886b41322a1902ac15ddaca"
+    },
+    {
+      "path": "Models/PlusInvitationCodeRecord.cs",
+      "sha256": "dfcc4e09a29b31abb64bd9a35a63ef02efbc843d7438855e910f11e046764e72"
+    },
+    {
+      "path": "Models/PlusInvitationRelationRecord.cs",
+      "sha256": "c7c6dd4db76f222c11192e2591d6df038f8af0d2783e2ef120e299e3075fee99"
+    },
+    {
+      "path": "Models/PlusInvoiceItemRecord.cs",
+      "sha256": "08f1c15f5c47d11a22f0ddc6ce89249d52b55d90b83a978165892e7955585abf"
+    },
+    {
+      "path": "Models/PlusInvoiceRecord.cs",
+      "sha256": "02cf216a4cf362086d3a71b5e7ea4e99c36be77c55bedc06b8be33f92088d3ae"
+    },
+    {
+      "path": "Models/PlusInvoiceRecordRecord.cs",
+      "sha256": "72b603bcee3e26fa370b9626ecf80fd6b72114ca65b4f915f1ef19f0351adb6f"
+    },
+    {
+      "path": "Models/PlusLedgerBridgeRecord.cs",
+      "sha256": "88041a76425f58eccd57ff83a6fada72648e133399e300defda8c0ddec645f78"
+    },
+    {
+      "path": "Models/PlusMemberCardRecord.cs",
+      "sha256": "c907aaa48263aea3ae85101e61797df325e498256062cdf7988323268b918a33"
+    },
+    {
+      "path": "Models/PlusMemberLevelRecord.cs",
+      "sha256": "da3b192b6cfcac289781db4ce1c8c8630b5ac5ae3977e68be3012a58d7597991"
+    },
+    {
+      "path": "Models/PlusOauthAccountRecord.cs",
+      "sha256": "032d67ea137234eaab89c11f8a158dd74b55229e03f571008a53f489a7d472cf"
+    },
+    {
+      "path": "Models/PlusOrderDispatchRuleRecord.cs",
+      "sha256": "d45039f5c1bdcdc560f8eac934b344c740c6050c017c01efbdff913a22808d27"
+    },
+    {
+      "path": "Models/PlusOrderItemRecord.cs",
+      "sha256": "7a9dccf43589a45dfeec1eddcb77b476915dc8c2f875bfdf15e52a90742c7c73"
+    },
+    {
+      "path": "Models/PlusOrderRecord.cs",
+      "sha256": "739d4b6ae5d95d96ecd4be6767e7a24177fe4ea150246943fe767c5a29a5eb78"
+    },
+    {
+      "path": "Models/PlusOrderWorkerDispatchProfileRecord.cs",
+      "sha256": "09637ee9bac10f314d553ba6307833d27ef26eba31dad51506f982e472981bdc"
+    },
+    {
+      "path": "Models/PlusOrganizationMemberRecord.cs",
+      "sha256": "89997d2fd8ce84447520d547e603d59dde88e342d3a7fadc39e0938d4458a3bf"
+    },
+    {
+      "path": "Models/PlusOrganizationRecord.cs",
+      "sha256": "da6ae466fe75b2bbfdfb3f90ec5697e4cdf47d0e59d0e5bcc84ee53e502155bf"
+    },
+    {
+      "path": "Models/PlusPartnerRecord.cs",
+      "sha256": "55d3a6a99035112e938118d9ae5e67a155ad018cf1c7ee1cee0690bca2c09920"
+    },
+    {
+      "path": "Models/PlusPaymentRecord.cs",
+      "sha256": "8c48d01576a6ed53e0399d9128bdf61114e14538c60d652dc463f4e73cf7baec"
+    },
+    {
+      "path": "Models/PlusPaymentWebhookEventRecord.cs",
+      "sha256": "54a6ef855c8b557c918dd361b78137dcdb1ed9c1bcf0914cd9054fdc0b614bf3"
+    },
+    {
+      "path": "Models/PlusPermissionRecord.cs",
+      "sha256": "59347d2811bdb00692658bde041a699661a90ef216754f7eae391e08fbae26d6"
+    },
+    {
+      "path": "Models/PlusPositionRecord.cs",
+      "sha256": "620717c6b42b7b258517face7893b91124e389da012d08fb0eb038fd94007439"
+    },
+    {
+      "path": "Models/PlusProductRecord.cs",
+      "sha256": "df75e28125723d0d1b986aa71a8ce4c441e367260055f036d27424a6318bdb75"
+    },
+    {
+      "path": "Models/PlusRefundRecord.cs",
+      "sha256": "37c9c2af6e0beb98040a992aeb9cf5b02fce1eb91ffedecf3c59891f33b215bd"
+    },
+    {
+      "path": "Models/PlusRolePermissionRecord.cs",
+      "sha256": "fb4f6d9b8ec57d3713316c738e33da32087db1e6a64b04564ad19f70912647ba"
+    },
+    {
+      "path": "Models/PlusRoleRecord.cs",
+      "sha256": "31fa5f266f74dddad3405f3639ff02d0b24215126183cdc0abb2b3c96856eefb"
+    },
+    {
+      "path": "Models/PlusShoppingCartItemRecord.cs",
+      "sha256": "a81ac155d4f4b823dea1c56552bd1eb7db7954a97c4b65232d2d33c5e6f0a88f"
+    },
+    {
+      "path": "Models/PlusShoppingCartRecord.cs",
+      "sha256": "c4404bea15121a581b93b0902f413e77fb30a40083eba11e65e08c21637c47af"
+    },
+    {
+      "path": "Models/PlusShopRecord.cs",
+      "sha256": "d74effe0d8d9714cb033b5b81b32c0dc6ef390c4df617102448bf601bac461c7"
+    },
+    {
+      "path": "Models/PlusSkuRecord.cs",
+      "sha256": "d1d389292adfd42b8a44116c6b50578e7563aadee1b0752300c5098ae31b7ade"
+    },
+    {
+      "path": "Models/PlusTenantRecord.cs",
+      "sha256": "6f46fdcff36d024f6899e117eff9b3e16ef45a4b00d5fe0d347d598b4bbf9e7e"
+    },
+    {
+      "path": "Models/PlusUsageRecordRecord.cs",
+      "sha256": "38f8655719c2a0d77ab0d9296c51584c13e4eaf99a4f81335468693f533297b9"
+    },
+    {
+      "path": "Models/PlusUserAddressRecord.cs",
+      "sha256": "38929419e2190bda65e1f66041c23cb8bf7788a75ee918b69907babd52f4a713"
+    },
+    {
+      "path": "Models/PlusUserAgentSkillRecord.cs",
+      "sha256": "74cd16ddb8325cd0d9a5ce7727d2ac7b4a4dc6cebfebd8476b11fb0b48742093"
+    },
+    {
+      "path": "Models/PlusUserCardRecord.cs",
+      "sha256": "c8a2cd3437bf7c7a73e99f156c841fea08f4c6f0afa5ebd101e9cc5f929d27d4"
+    },
+    {
+      "path": "Models/PlusUserCouponRecord.cs",
+      "sha256": "4efcbe101a420e91258dc71f006cc55ea4aaba1627ed3e23bb78eb3896f94c4c"
+    },
+    {
+      "path": "Models/PlusUserRecord.cs",
+      "sha256": "2d03c94b989b95dc3fb9fdf40e2f92c0e71ab07aa03e143aa930c90f9c0dd9d3"
+    },
+    {
+      "path": "Models/PlusUserRoleRecord.cs",
+      "sha256": "1ca79882cd83e0bfc0e3ebe2df4400df3ba2b719494cdd59bc992ce0507a576d"
+    },
+    {
+      "path": "Models/PlusVipBenefitRecord.cs",
+      "sha256": "caa2997f185b0070ee2fc23daa495e0ecdc6f2d3229173ede0e6335505b7cc34"
+    },
+    {
+      "path": "Models/PlusVipBenefitUsageRecord.cs",
+      "sha256": "7e160276f3e1fa14512086ef45d26ee5446769c388bf8b4c2a1b200de68750e6"
+    },
+    {
+      "path": "Models/PlusVipLevelBenefitRecord.cs",
+      "sha256": "23a8783bc9f8579fb7eaf121a1527fac155f864add1aa47433d36cb1138e6a98"
+    },
+    {
+      "path": "Models/PlusVipLevelRecord.cs",
+      "sha256": "b12e1ac575d7cb24acc62fb0c043b1c637c9e40cd4282e0b0036a6b1fc68d9c2"
+    },
+    {
+      "path": "Models/PlusVipPackGroupRecord.cs",
+      "sha256": "a81025b01cd6e83d4753d39c2f5932fedc7844bf0df06b6982f2887af989f6a6"
+    },
+    {
+      "path": "Models/PlusVipPackRecord.cs",
+      "sha256": "b5fe7fb7e4fc6b7b3ee23f7528493a70f9bf1c68cb40b36af86f00d006421191"
+    },
+    {
+      "path": "Models/PlusVipPointChangeRecord.cs",
+      "sha256": "c3318b3723a52bb5b9aa059f24c7ce5cf57f58e2881b1dfe41c12ac60487f102"
+    },
+    {
+      "path": "Models/PlusVipRechargeMethodRecord.cs",
+      "sha256": "a69a512361f5b54df12bf305352e089efee32316b639bdc922e3dacd9b49f3b4"
+    },
+    {
+      "path": "Models/PlusVipRechargePackRecord.cs",
+      "sha256": "a2511bcc28acb7d869f40a5161accd8016e197558c73fe4e6f9d1bf98ce0c26f"
+    },
+    {
+      "path": "Models/PlusVipRechargeRecord.cs",
+      "sha256": "e1863b934e681609e0a11ca897e39d3c68d2fd2e8e8d783fa30fc58015a45d4f"
+    },
+    {
+      "path": "Models/PlusVipUserRecord.cs",
+      "sha256": "fcd8753f7fd3f811f128829cd76ecb9cec177d5d411dc7f240b4c87c6dc1dec8"
+    },
+    {
+      "path": "Models/ProblemDetail.cs",
+      "sha256": "a2aa9f33a0a19142490b0550e249f2c18aa9879a2eb0ff2d045949d88144b7af"
+    },
+    {
+      "path": "Models/ProviderRetryPolicy.cs",
+      "sha256": "5c0a5f3f3aba8a4b746bc28e69aef356ab8f2d87ac0d291088dc48934b20d40f"
+    },
+    {
+      "path": "Models/ProviderSecretsCreateResult.cs",
+      "sha256": "741bc5087e227d3be4133549fab367ef33565a6128d18f98f10bf7b4f4568e4f"
+    },
+    {
+      "path": "Models/ProviderSecretsDeleteResult.cs",
+      "sha256": "d85dc3e17b90a4d0b41f63a086230205241b6f50f0b7436a7fe0ab94e2f56665"
+    },
+    {
+      "path": "Models/ProviderSecretsListResult.cs",
+      "sha256": "8607e2ef1a40872f196f835a40edc7dd23d75b4591f31833e2a01864ec267882"
+    },
+    {
+      "path": "Models/ProviderSecretsUpdateResult.cs",
+      "sha256": "b24ecf02ce37c127282cd9d83ce0f20277f73b2bc3082a78dedeb674a39089be"
+    },
+    {
+      "path": "Models/RateLimitsApiKeysCreateResult.cs",
+      "sha256": "aadf6066e5e292910d44e76a303cda5fe89c165b1324ee691663b52a4121c7a1"
+    },
+    {
+      "path": "Models/RateLimitsApiKeysListResult.cs",
+      "sha256": "97325391127a4a9b3fe4a2dedb25ae058baba9fbe2c37ec17c815e1fa453f6ba"
+    },
+    {
+      "path": "Models/RateLimitsIpCreateResult.cs",
+      "sha256": "732bd32090e04c0026b2ac01c6174907cae2b2749fab094f5d503d8914be3a7b"
+    },
+    {
+      "path": "Models/RateLimitsIpListResult.cs",
+      "sha256": "a42c4fb48c858c50ff3767c791f235b556bedd4052db84607420a1fb44692abb"
+    },
+    {
+      "path": "Models/RateLimitsModelsCreateResult.cs",
+      "sha256": "9b911c051c7fc8335f665dfdbb82280ee0d28955b8ce9c5b799a9dcf13d585b2"
+    },
+    {
+      "path": "Models/RateLimitsModelsListResult.cs",
+      "sha256": "6c04b0a4b5778198946fbf7db8073ba998e7af6690793b7539d9d15f19abc957"
+    },
+    {
+      "path": "Models/RecordsListResult.cs",
+      "sha256": "f42d1676fb6669120bf53a833443f1b133869aa4d6a21da6d1256ed1b417cc1e"
+    },
+    {
+      "path": "Models/ReferralsStatsListResult.cs",
+      "sha256": "74e372980bfe2c25f249c8d0655a04b561ae27b40959ddc743e6def4bcdfd45f"
+    },
+    {
+      "path": "Models/SkillsArtifactsCreateResult.cs",
+      "sha256": "db539c1fc9aaa7ea09df730b013d94c2485c3fef2e8bd75e8a95d139140648b2"
+    },
+    {
+      "path": "Models/SkillsArtifactsDeleteResult.cs",
+      "sha256": "11bae0e6c90c788c4b03e1541335c2c460f6c2999d201cb3b24d24aaf080bace"
+    },
+    {
+      "path": "Models/SkillsArtifactsListResult.cs",
+      "sha256": "ac12acdc04eb066a88b435868ae9c32f5edfa9891823d888dcfd8e52af2c811f"
+    },
+    {
+      "path": "Models/SkillsArtifactsRetrieveResult.cs",
+      "sha256": "76d6bdf00deeee5e320db569175183bedbbeab7eeafa692d5fbd33280062e2da"
+    },
+    {
+      "path": "Models/SkillsArtifactsUpdateResult.cs",
+      "sha256": "224ebd7d85a320b10c95c494195bdad5a01e8fd28c92ebbfbbedca534cbbbb72"
+    },
+    {
+      "path": "Models/SkillsAssetsCreateResult.cs",
+      "sha256": "39dbf3aa630718d37aa77e9d712cb7b88c56d34e6ba667aef56f9b09713818d2"
+    },
+    {
+      "path": "Models/SkillsAssetsDeleteResult.cs",
+      "sha256": "78d288f1070f772b4f8b39d86b7f542c55be1f8d4c47866a915d4f428f3f92a1"
+    },
+    {
+      "path": "Models/SkillsAssetsListResult.cs",
+      "sha256": "661515cd6d36bfabb4ade9d3d383858aa74548427276a1c0e1b833ef1e1ff50c"
+    },
+    {
+      "path": "Models/SkillsAssetsRetrieveResult.cs",
+      "sha256": "a5c0262b826d56ccb4595f702773a39f52445c19935401d5c2a06848ae7e19ed"
+    },
+    {
+      "path": "Models/SkillsAssetsUpdateResult.cs",
+      "sha256": "aee7c855bca9524c2896b4edeedb4a91739c0b046e9ddd7b6362b1ac6c89e61e"
+    },
+    {
+      "path": "Models/SkillsCategoriesCreateResult.cs",
+      "sha256": "35bda72c18de82fe94039fb91c5a9295b95e446209d23273eb5e7a4ba954d953"
+    },
+    {
+      "path": "Models/SkillsCategoriesListResult.cs",
+      "sha256": "e4f7859b5e18e06a5bde6cc7884b65a2ce098ff04536bd77d05d96297d7a2665"
+    },
+    {
+      "path": "Models/SkillsCreateResult.cs",
+      "sha256": "c5b7c0220143140eb17ce6c8dd07d94d7ed3ea97ed8112b9d386cc2c3e8c06fc"
+    },
+    {
+      "path": "Models/SkillsDeleteResult.cs",
+      "sha256": "8bfb4a501d2f73faa5d98afa6377fcdbab25f272c8b83338cfd60a161b3dbd29"
+    },
+    {
+      "path": "Models/SkillsDisableResult.cs",
+      "sha256": "9ba06f1e54a3c57cb5b959b0dcb03a92e462d3e2a5b1151e38dbd5df74c4a1a1"
+    },
+    {
+      "path": "Models/SkillsEnableResult.cs",
+      "sha256": "84a3620de0b1a2712dae782f69e634069a380fae395cad3c507f9b9bd6722872"
+    },
+    {
+      "path": "Models/SkillsListResult.cs",
+      "sha256": "37b70130a70b396510c14523f047d440f8ac6b6d445c2ce160f7690ef31f6e87"
+    },
+    {
+      "path": "Models/SkillsPackageCreateResult.cs",
+      "sha256": "8c0b056a93823a731936ca8391996269bde7ebd877bde5603c01ddc27f9fd0c5"
+    },
+    {
+      "path": "Models/SkillsPackageDeleteResult.cs",
+      "sha256": "d29a8cde3d3b426c35d320032b052d34e9097683d43c30d33e919e08a2d365f7"
+    },
+    {
+      "path": "Models/SkillsPackageDisableResult.cs",
+      "sha256": "d325d9dabd7780c209b7447a3a0db058e5d21459ad685d36a8d64775e6baa297"
+    },
+    {
+      "path": "Models/SkillsPackageEnableResult.cs",
+      "sha256": "4a288214585781944a266f8c4a3dbdec3b830172ad61df246c5e9326ab4a5d3a"
+    },
+    {
+      "path": "Models/SkillsPackageListResult.cs",
+      "sha256": "64482ae862a13fd49a2e63687e55f51963eb95b425cc5fdf1925240f1737efb5"
+    },
+    {
+      "path": "Models/SkillsPackageRetrieveResult.cs",
+      "sha256": "2cb18ceb2520682e0757dc0ef8d50745959346b142f394628e99c3041102ce59"
+    },
+    {
+      "path": "Models/SkillsPackageUpdateResult.cs",
+      "sha256": "a0aff944c5b119d5b2344de7e9ddb550c2171b89603fcf9f7f3fafc1c2880224"
+    },
+    {
+      "path": "Models/SkillsPublishResult.cs",
+      "sha256": "2089ea955c38795d0c01a5e45af9231c026848ea78acffb120b5202befd159fe"
+    },
+    {
+      "path": "Models/SkillsRetrieveResult.cs",
+      "sha256": "6966f43dfc98c318499cb133038193af29443f6b624af2db1134cfd2f6895397"
+    },
+    {
+      "path": "Models/SkillsReviewApproveResult.cs",
+      "sha256": "a296ea1740a9affe9f6a523ac3df1f834ef92b002ced8df432cff966341d0428"
+    },
+    {
+      "path": "Models/SkillsReviewRejectResult.cs",
+      "sha256": "8f839a50e722c47b7989c98d25ebf5800898c72af1e7d88184f952518ba5c2be"
+    },
+    {
+      "path": "Models/SkillsUnpublishResult.cs",
+      "sha256": "9ab85ba578570b212f8570b6a13b11240f1f144f537db4512736c3e1dadfd44d"
+    },
+    {
+      "path": "Models/SkillsUpdateResult.cs",
+      "sha256": "c3f4f416c6f6486e4c145975eefe4837c12be3b35cb6dbc0a9d53a90fccfe003"
+    },
+    {
+      "path": "Models/StudioCatalogActionRecord.cs",
+      "sha256": "c2f20f8584781ed4be0337b7ab271072c8d8d292afaea779201f4a1ac6c53751"
+    },
+    {
+      "path": "Models/StudioCatalogArtifactRecord.cs",
+      "sha256": "946fe53d0505b4cf6dfa9533b47b8c3ddc0c0b4d2a05eb7e5c29c69702800738"
+    },
+    {
+      "path": "Models/StudioCatalogAssetRecord.cs",
+      "sha256": "b429764869bb159f9b8ac1baa1d7cb55801042e0f567f42d89fc6a672387ee6e"
+    },
+    {
+      "path": "Models/SystemInstallationStateRecord.cs",
+      "sha256": "e38b5ea280a7301638d1162076646f27f9b84b33edcb8be08b0e8c14de444f92"
+    },
+    {
+      "path": "Models/SystemSchemaMigrationRecord.cs",
+      "sha256": "d94d0ca3cf34f922b65a9ece8ef3a6937c8bf6c101155ed1178421a36e198728"
+    },
+    {
+      "path": "Models/UsersBalanceAdjustmentsCreateResult.cs",
+      "sha256": "187a13b18a0ce55bc6e3185ae45d41f4624c70f7e46e4e3853fdd447e248605b"
+    },
+    {
+      "path": "Models/UsersCouponsListResult.cs",
+      "sha256": "c8325e799db4458839cb657eb26d04dcbe35f502738826a4467ebdf88bb9dffb"
+    },
+    {
+      "path": "Models/UsersCreateResult.cs",
+      "sha256": "06bbdf70bc70022bee8f608b51fc3bf0c7dc49a8ad664a8710d5f4f117175bfb"
+    },
+    {
+      "path": "Models/UsersListResult.cs",
+      "sha256": "27d69666ede7adbedd3a76795e2b16bf5cf31da10754747cc4234b05acf97e75"
+    },
+    {
+      "path": "Models/UsersUpdateResult.cs",
+      "sha256": "0b1dc5ac1855497b1c64c565b6d37ec048650948a29c1bc8de020fd97171f25d"
+    },
+    {
+      "path": "Models/VipRechargeListResult.cs",
+      "sha256": "b2f7c84268708b0b6f6c97e8eb0c6265c2d8bc1520d68f32b6c1a7088842043a"
+    },
+    {
+      "path": "README.md",
+      "sha256": "21654d3990ec7d76ade84b650ff63d08e90ec725898f126f026c84968a4a919b"
+    },
+    {
+      "path": "sdkwork-sdk.json",
+      "sha256": "82d8438722499b58d03c8a63ee415822409907420aa5068c63dc1030c0ea7504"
+    },
+    {
+      "path": "Sdkwork.ClawRouter.Backend.Sdk.csproj",
+      "sha256": "88b60f3ea4783e1cda3ebefb50cc1df194c169e0d7c62b6c61884fc00c89f5c1"
+    },
+    {
+      "path": "SdkworkBackendClient.cs",
+      "sha256": "4000d54cac8cb647b7b0c10e2a5dd36c0cbda693028d36475a80a04246b531ff"
+    }
+  ],
+  "scaffoldFiles": [
+    "custom/README.md"
+  ],
+  "customRoots": [
+    "custom/"
+  ]
+}

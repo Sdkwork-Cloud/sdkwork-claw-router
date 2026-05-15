@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27855,
+  "uuid": "skill-clawhub-windows-tts",
+  "skillKey": "clawhub-windows-tts",
+  "name": "Windows TTS Notification",
+  "summary": "Push text notifications to Windows Azure TTS service for audio broadcast via Bluetooth speakers. Perfect for family reminders, alarms, and announcements.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.windows_tts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cmosakg",
+      "features": [
+        "Push text notifications to Windows Azure TTS service for audio broadcast via Bluetooth speakers",
+        "Perfect for family reminders, alarms, and announcements."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/windows-tts@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/216364767?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "windows-tts",
+      "url": "https://clawhub.ai/skills/windows-tts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "windows-tts",
+    "url": "https://clawhub.ai/skills/windows-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/windows-tts-04560755e87714c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/windows-tts@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-windows-tts-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c6a0bc2ee1739eda6a97522a93aade8b73b9079f65d191ca5c5c54765de1f42d",
+      "artifactSizeBytes": 1904
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T12:08:50.881Z"
+}

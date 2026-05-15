@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-cortex@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_cortex",
+  "skill": {
+    "id": 20196,
+    "skillKey": "clawhub-skill-cortex",
+    "name": "Skill Cortex"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-cortex",
+    "url": "https://clawhub.ai/skills/skill-cortex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-cortex-e4d7239a0e8ab939.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skill Cortex is the system's capability cortex. When lacking ability, it autonomously acquires Skills from ClawHub or GitHub, then releases them after use. E..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ankwu001",
+      "userId": "publishers:ankwu001",
+      "displayName": "Ank Wu",
+      "image": "https://avatars.githubusercontent.com/u/221829228?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 547,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772260347160,
+      "changelog": "No user-facing changes in this version.\n\n- No file changes detected between versions 1.0.0 and 1.0.1.\n- Documentation and functionality remain the same.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cb83bc1b55eafc720eb68d7e0e00c130621abc5d5d6ad3a096967fac53e55604"
+}

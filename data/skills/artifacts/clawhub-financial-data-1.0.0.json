@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/financial-data@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.financial_data",
+  "skill": {
+    "id": 14960,
+    "skillKey": "clawhub-financial-data",
+    "name": "Financial Data"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "financial-data",
+    "url": "https://clawhub.ai/skills/financial-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/financial-data-0d3a724fa3ad4810.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query real-time and historical financial data across equities and crypto—prices, market moves, metrics, and trends for analysis, alerts, and reporting."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aisapay",
+      "userId": "s17fk6ed1hxsakf921v2wh4g8n842987",
+      "displayName": "AIsaPay",
+      "image": "https://avatars.githubusercontent.com/u/239797396?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1648,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770272131977,
+      "changelog": "Initial release — unified access to real-time and historical financial data for market analytics and reporting:\n\n- Added detailed README with full API and Python client examples for stocks and crypto\n- Introduced scripts/market_client.py for querying prices, fundamentals, news, and more\n- Supports equity and crypto data: prices, metrics, financials, earnings, insider trades, SEC filings, and analysis\n- Explains all endpoints, parameters, and usage for robust market research and portfolio tracking",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d9ab610944d8b8648c4712bea5d2abebb202782ac7503a4ff1c8761fdbb99fa2"
+}

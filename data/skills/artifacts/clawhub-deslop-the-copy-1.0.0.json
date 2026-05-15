@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deslop-the-copy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deslop_the_copy",
+  "skill": {
+    "id": 37924,
+    "skillKey": "clawhub-deslop-the-copy",
+    "name": "Deslop the Copy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deslop-the-copy",
+    "url": "https://clawhub.ai/skills/deslop-the-copy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deslop-the-copy-3fe04d937fbadacb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Strip AI-generated writing patterns and make text sound like a real person wrote it. Use this skill whenever the user asks to deslop, de-slop, clean up, huma..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "skyzer",
+      "userId": "s171maza289wzy3m0yz5mzh0gs83txch",
+      "displayName": "Artur Schaback",
+      "image": "https://avatars.githubusercontent.com/u/1395042?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774817993706,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:329d5019f363773ecca7f841c000d9f0d6252031506ed2cb6c104ad9ae89070b"
+}

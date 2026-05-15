@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/01-complaint-classification@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.01_complaint_classification",
+  "skill": {
+    "id": 60563,
+    "skillKey": "clawhub-01-complaint-classification",
+    "name": "01 Complaint Classification"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "01-complaint-classification",
+    "url": "https://clawhub.ai/skills/01-complaint-classification",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/01-complaint-classification-3522fb33fc6d8bae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于 GB/T 42499-2023 国家标准和阿里巴巴平台规则， 对用户投诉进行智能分类、优先级评定、责任方判断和派发建议。 适用于菜鸟物流、菜鸟驿站、淘宝闪购三条业务线。 v1.7 新增：统一引用 GLOSSARY.md、INSUFFICIENCY-HANDLING.md、RULE-UPDATE-SOP.md。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nic-yuan",
+      "userId": "s17601s6pc41mkraa1bkeshfx983kdsw",
+      "displayName": "nic-yuan",
+      "image": "https://avatars.githubusercontent.com/u/195308903?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 82,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777623667592,
+      "changelog": "投诉智能分类 v1.7.0 主要更新：\n\n- 新增并统一引用 GLOSSARY.md（术语表）、INSUFFICIENCY-HANDLING.md（信息不足处理）、RULE-UPDATE-SOP.md（规则更新流程），提升 Skill 管理和规则透明度。\n- 优化规范：所有结构化结果输出字段、分类流程和优先级判定逻辑根据阿里巴巴2024业务场景复核。\n- 明确数据源及依据，补充了业务扩展分类和派发建议表细节。\n- 丰富批量分析模式输出规范和去重逻辑说明。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ce3dc76ad80ff7d5a42db6a40d198b7fcfa7da340671e07e8d100790eabe3441"
+}

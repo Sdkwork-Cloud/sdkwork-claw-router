@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21406,
+  "uuid": "skill-clawhub-outline",
+  "skillKey": "clawhub-outline",
+  "name": "Outline",
+  "summary": "Generate document outlines with TOC, chapter planning, and hierarchy management. Use when structuring documents, planning chapters, creating outlines.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.outline",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "Generate document outlines with TOC, chapter planning, and hierarchy management",
+        "Use when structuring documents, planning chapters, creating outlines."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/outline@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "outline",
+      "url": "https://clawhub.ai/skills/outline"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "outline",
+    "url": "https://clawhub.ai/skills/outline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/outline-318678825324247b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/outline@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-outline-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2a73042525d19df2edaabf3af59e86259e5df64c05dbde75512c26b0c709bd99",
+      "artifactSizeBytes": 1818
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T10:47:57.357Z"
+}

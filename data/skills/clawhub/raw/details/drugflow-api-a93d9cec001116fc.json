@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "drugflow-api",
+    "displayName": "DrugFlow",
+    "summary": "Multi-flow API workflow skill for this DrugFlow Django repository. Use when an agent needs executable end-to-end API procedures such as login/register, works...",
+    "tags": {
+      "latest": "1.0.2"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 323,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "createdAt": 1773804601035,
+    "updatedAt": 1778311502593
+  },
+  "latestVersion": {
+    "version": "1.0.2",
+    "createdAt": 1773824239954,
+    "changelog": "- Added default behavior for molecular factory: runs non-docking jobs unless docking is explicitly requested (`args.need_docking=false`, `args.pdb_use.*=false`).\n- Set default generation models for molecular factory: `args.molgen_algos=[\"Frag-GPT\",\"REINVENT\"]`.\n- No code changes; documentation updates only.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "ashipiling",
+    "userId": "publishers:ashipiling",
+    "displayName": "ashipiling",
+    "image": "https://avatars.githubusercontent.com/u/44961008?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778311502593
+  }
+}

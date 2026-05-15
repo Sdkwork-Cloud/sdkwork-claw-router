@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/patent-claim-mapper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.patent_claim_mapper",
+  "skill": {
+    "id": 43008,
+    "skillKey": "clawhub-patent-claim-mapper",
+    "name": "Patent Claim Mapper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "patent-claim-mapper",
+    "url": "https://clawhub.ai/skills/patent-claim-mapper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/patent-claim-mapper-20ad77ffe836a2cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when mapping patent claims to products, analyzing patent infringement, or preparing freedom-to-operate analyses. Compares patent claims against product f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774849951969,
+      "changelog": "Initial release of patent-claim-mapper.\n\n- Maps patent claims to biotech/pharma product features for infringement and freedom-to-operate analysis.\n- Provides reproducible, audit-ready outputs with explicit input validation, fallback paths, and structured result formatting.\n- Includes command line and Python API usage for claim parsing, feature mapping, and gap analysis.\n- Handles missing or incomplete inputs with clear error reporting and manual fallback recommendations.\n- Bundled with reference materials and example workflows for consistent, reviewable outputs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c8cb52687f0cb67c202882c471ab66981bbc825e8863e28d0801a5ff00123ac7"
+}

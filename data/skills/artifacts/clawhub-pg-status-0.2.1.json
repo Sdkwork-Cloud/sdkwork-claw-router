@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pg-status@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pg_status",
+  "skill": {
+    "id": 50839,
+    "skillKey": "clawhub-pg-status",
+    "name": "Pg Status"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pg-status",
+    "url": "https://clawhub.ai/skills/pg-status",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pg-status-798f253a5d8a772b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when checking ProxyGate status — balance, usage, listings, tunnel health, earnings, seller profile, or job status. Make sure to use this skill whenever s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jwelten",
+      "userId": "s17ea14p7afnh5qnk5d9zdacq183g92p",
+      "displayName": "jwelten",
+      "image": "https://avatars.githubusercontent.com/u/194850832?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 434,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1774132420173,
+      "changelog": "Sync with CLI v0.2.1 — updated commands, descriptions, and examples",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f578c15293bce9ae3fbbe13994f43a014914975a547622df6cecde157320bb05"
+}

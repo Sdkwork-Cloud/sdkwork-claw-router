@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68807,
+  "uuid": "skill-clawhub-alimail",
+  "skillKey": "clawhub-alimail",
+  "name": "alimail",
+  "summary": "快速查询企业内部员工邮箱、工号及部门信息。",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alimail",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Colin-megan",
+      "features": [
+        "快速查询企业内部员工邮箱、工号及部门信息。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alimail@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40010851?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alimail",
+      "url": "https://clawhub.ai/skills/alimail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alimail",
+    "url": "https://clawhub.ai/skills/alimail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alimail-bfb7aaa1d3cd2b4a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alimail@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-alimail-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e1dead45897b23b9b49c9a0b367d25a8f4b70af0c337faacb2cf419cd3cfa21",
+      "artifactSizeBytes": 1900
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T01:55:20.022Z"
+}

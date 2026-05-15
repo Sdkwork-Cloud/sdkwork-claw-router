@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33785,
+  "uuid": "skill-clawhub-sedna",
+  "skillKey": "clawhub-sedna",
+  "name": "Sedna",
+  "summary": "SEDNA integration. Manage data, records, and automate workflows. Use when the user wants to interact with SEDNA data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sedna",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "SEDNA integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with SEDNA data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sedna@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sedna",
+      "url": "https://clawhub.ai/skills/sedna"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sedna",
+    "url": "https://clawhub.ai/skills/sedna",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sedna-386ffd7941cf93a1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sedna@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-sedna-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ed5182dac87f2678761c55dfb7e59ca6127247afcaa190e42f19674ce6b1628",
+      "artifactSizeBytes": 1803
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:38:55.468Z"
+}

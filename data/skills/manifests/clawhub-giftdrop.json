@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24715,
+  "uuid": "skill-clawhub-giftdrop",
+  "skillKey": "clawhub-giftdrop",
+  "name": "GiftDrop",
+  "summary": "Send, manage, and claim Solana crypto red packets via the GiftDrop API using wallet-authenticated requests and customizable gift parameters.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.giftdrop",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tiancookie",
+      "features": [
+        "Send, manage, and claim Solana crypto red packets via the GiftDrop API using wallet-authenticat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/giftdrop@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36727113?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "giftdrop",
+      "url": "https://clawhub.ai/skills/giftdrop"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "giftdrop",
+    "url": "https://clawhub.ai/skills/giftdrop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/giftdrop-b03f1697dc5c1fb9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/giftdrop@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-giftdrop-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8cea15f28455b97e62418edacc69ec0e9ac527dadbf04a729e774ac7f8c776c7",
+      "artifactSizeBytes": 1932
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T12:35:52.731Z"
+}

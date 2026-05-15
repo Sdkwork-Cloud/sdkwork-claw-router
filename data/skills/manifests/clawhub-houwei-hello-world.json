@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63681,
+  "uuid": "skill-clawhub-houwei-hello-world",
+  "skillKey": "clawhub-houwei-hello-world",
+  "name": "Houwei Hello World",
+  "summary": "验证ClawHub跨设备同步功能并提供自定义技能开发入门模板的个人专属测试技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.houwei_hello_world",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "houwei302-code",
+      "features": [
+        "验证ClawHub跨设备同步功能并提供自定义技能开发入门模板的个人专属测试技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/houwei-hello-world@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/252835890?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "houwei-hello-world",
+      "url": "https://clawhub.ai/skills/houwei-hello-world"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "houwei-hello-world",
+    "url": "https://clawhub.ai/skills/houwei-hello-world",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/houwei-hello-world-22fc7d4a4f5f7b35.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/houwei-hello-world@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-houwei-hello-world-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bfa8364dac76c33873ea062704a4dddb708f52ade6ed325943f2a2799c3882b5",
+      "artifactSizeBytes": 2132
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T02:13:30.718Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/onedrive-photo-batch@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.onedrive_photo_batch",
+  "skill": {
+    "id": 64867,
+    "skillKey": "clawhub-onedrive-photo-batch",
+    "name": "onedrive-photo-batch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "onedrive-photo-batch",
+    "url": "https://clawhub.ai/skills/onedrive-photo-batch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/onedrive-photo-batch-eb59099ab2649be8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OneDrive 照片批处理与索引技能。用于对 OneDrive 照片做按名称/日期/大小/格式/相册筛选、批量 OCR/多模态识别、full 全量索引、哈希增量跳过、语义检索、移动/上传/删除/恢复与回收站治理。用户提到 OneDrive 批量识别、照片索引、相册级模型策略、限速并发、删除恢复、15天回收站清理..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lanqeur",
+      "userId": "s17319jkzqqx2403dt6dxyyj9h83h258",
+      "displayName": "Lanqeur",
+      "image": "https://avatars.githubusercontent.com/u/117884131?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1774440366624,
+      "changelog": "- 增加 OneDrive 照片按名称、日期、大小、格式、相册的多条件筛选与批量处理能力。\n- 支持批量 OCR、多模态识别、全量索引、哈希增量跳过及语义检索。\n- 实现云端为主、临时落地、索引持久化原则，处理时仅临时下载照片，删除时进入本地回收站。\n- 全新回收站治理：软删除本地保留副本、逻辑删除索引、自动清理超期回收文件。\n- 加入灵活批处理命令，包括批量移动、上传、导出等操作并支持限速并发。\n- 配置细节更完善，支持运行前依赖/配置检查与稳态性能参数。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7b3581bf70fae6faa2a38d8cf59d2c01337e5dd271f9319a40b0feef0a805243"
+}

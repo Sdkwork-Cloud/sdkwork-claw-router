@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9182,
+  "uuid": "skill-clawhub-quick-reminders",
+  "skillKey": "clawhub-quick-reminders",
+  "name": "Quick Reminders",
+  "summary": "Zero-LLM one-shot reminders (<48h) via nohup sleep + openclaw message send, operated via {baseDir}/scripts/nohup-reminder.sh.",
+  "version": "1.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quick_reminders",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nikita Shkoda",
+      "features": [
+        "Zero-LLM one-shot reminders (<48h) via nohup sleep + openclaw message send, operated via {baseD."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quick-reminders@1.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40822400?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quick-reminders",
+      "url": "https://clawhub.ai/skills/quick-reminders"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quick-reminders",
+    "url": "https://clawhub.ai/skills/quick-reminders",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quick-reminders-046dcd9cc0d8f723.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quick-reminders@1.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-quick-reminders-1.1.4.json",
+      "version": "1.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c16a8b0c6562e8f27f74b2791f053bd0b7ffe8c4dcb25f87a8146e59f1029d1a",
+      "artifactSizeBytes": 1891
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T00:34:57.624Z"
+}

@@ -1,29 +1,114 @@
-import React, { useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { motion } from 'motion/react';
-import { Award, BarChart, BookOpen, CheckCircle, ChevronRight, LayoutGrid, Layers, PlayCircle, Search, Shield, Star } from 'lucide-react';
+import { AlertCircle, Award, BarChart, BookOpen, CheckCircle, ChevronRight, LayoutGrid, Layers, Loader2, PlayCircle, Search, Shield, Star, Upload } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import {
-  COURSE_CATALOG,
+  buildPortalAuthLoginRedirect,
+  hasStoredPortalSession,
+} from 'sdkwork-claw-router-commons/runtime';
+import * as courseService from '../courseService';
+import {
+  COURSE_CONTENT_SNAPSHOT_SOURCE,
   deriveCourseCatalogViewModel,
+  type Course,
   type CourseLevelFilter,
+  type CourseOverviewSource,
 } from '../data';
+import { CourseApplicationDialog } from './CourseApplicationDialog';
+
+void deriveCourseCatalogViewModel;
 
 export function CoursesView() {
   const { t } = useTranslation();
+  const location = useLocation();
   const navigate = useNavigate();
   const [activeLevel, setActiveLevel] = useState<CourseLevelFilter>('All');
   const [activeCategory, setActiveCategory] = useState<string>('All');
   const [searchQuery, setSearchQuery] = useState('');
+  const [courses, setCourses] = useState<Course[]>([]);
+  const [categories, setCategories] = useState<courseService.CourseCategory[]>([]);
+  const [totalElements, setTotalElements] = useState(0);
+  const [source, setSource] = useState<CourseOverviewSource>(COURSE_CONTENT_SNAPSHOT_SOURCE);
+  const [isLoading, setIsLoading] = useState(true);
+  const [loadError, setLoadError] = useState<string | null>(null);
+  const [isApplicationDialogOpen, setIsApplicationDialogOpen] = useState(false);
 
-  const view = deriveCourseCatalogViewModel({
-    catalog: COURSE_CATALOG,
-    filters: {
-      level: activeLevel,
-      category: activeCategory,
-      searchQuery,
-    },
-  });
+  useEffect(() => {
+    let cancelled = false;
+
+    async function loadCourses() {
+      setIsLoading(true);
+      setLoadError(null);
+      try {
+        const [catalogResult, categoryResult, overview] = await Promise.all([
+          courseService.fetchCourses({
+            level: activeLevel,
+            category: activeCategory,
+            searchQuery,
+            page: 1,
+            size: 240,
+          }),
+          courseService.fetchCourseCategories(),
+          courseService.fetchCourseOverview(),
+        ]);
+        if (cancelled) {
+          return;
+        }
+        setCourses(catalogResult.courses);
+        setCategories(categoryResult.length > 0 ? categoryResult : catalogResult.categories);
+        setTotalElements(catalogResult.totalElements);
+        setSource(overview.source);
+      } catch (error) {
+        if (!cancelled) {
+          setCourses([]);
+          setCategories([]);
+          setTotalElements(0);
+          setSource(COURSE_CONTENT_SNAPSHOT_SOURCE);
+          setLoadError(error instanceof Error ? error.message : 'Failed to load courses');
+        }
+      } finally {
+        if (!cancelled) {
+          setIsLoading(false);
+        }
+      }
+    }
+
+    void loadCourses();
+    return () => {
+      cancelled = true;
+    };
+  }, [activeLevel, activeCategory, searchQuery]);
+
+  const view = useMemo(() => courseService.buildCourseCatalogView({
+    courses,
+    categories,
+    page: 1,
+    size: 240,
+    totalElements,
+    source,
+  }, {
+    level: activeLevel,
+    category: activeCategory,
+    searchQuery,
+  }), [activeCategory, activeLevel, categories, courses, searchQuery, source, totalElements]);
+  const heroCourse = courses[0];
+
+  const openCourseApplicationDialog = () => {
+    if (!hasStoredPortalSession()) {
+      navigate(buildPortalAuthLoginRedirect(location));
+      return;
+    }
+    setIsApplicationDialogOpen(true);
+  };
+
+  const requireLoginForCourseApplicationAction = () => {
+    if (hasStoredPortalSession()) {
+      return true;
+    }
+    navigate(buildPortalAuthLoginRedirect(location));
+    return false;
+  };
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-[#010409] pt-24 pb-16">
@@ -50,16 +135,23 @@ export function CoursesView() {
                 <button className="bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-lg font-medium transition-colors flex items-center gap-2">
                   <BookOpen className="w-5 h-5" /> {t('courses.browseCourses')}
                 </button>
+                <button
+                  type="button"
+                  onClick={openCourseApplicationDialog}
+                  className="bg-emerald-500 hover:bg-emerald-400 text-white px-6 py-3 rounded-lg font-medium transition-colors flex items-center gap-2"
+                >
+                  <Upload className="w-5 h-5" /> 申请上传课程
+                </button>
               </div>
             </div>
 
             <div className="hidden lg:flex flex-1 justify-center relative">
               <div className="w-80 h-80 relative">
                 <div className="absolute inset-0 border-4 border-blue-500/30 rounded-2xl rotate-3" />
-                <div className="absolute inset-0 bg-gradient-to-tr from-[#161b22] to-slate-800 rounded-2xl shadow-2xl -rotate-3 border border-white/10 flex flex-col overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-tr from-slate-100 to-white dark:from-[#161b22] dark:to-slate-800 rounded-2xl shadow-2xl -rotate-3 border border-slate-200 dark:border-white/10 flex flex-col overflow-hidden">
                   <div className="h-40 bg-slate-800 relative overflow-hidden">
                     <img
-                      src={COURSE_CATALOG[0].thumbnail}
+                      src={heroCourse?.thumbnail ?? '/assets/courses/covers/ai-coding.svg'}
                       className="w-full h-full object-cover opacity-80 mix-blend-overlay"
                       alt=""
                     />
@@ -189,6 +281,20 @@ export function CoursesView() {
               </span>
             </div>
 
+            {isLoading && (
+              <div className="flex items-center gap-2 mb-6 text-sm text-slate-500 dark:text-slate-400">
+                <Loader2 className="w-4 h-4 animate-spin" />
+                <span>{t('courses.loading', 'Loading courses...')}</span>
+              </div>
+            )}
+
+            {loadError && !isLoading && (
+              <div className="flex items-center gap-2 mb-6 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700 dark:border-red-900/60 dark:bg-red-950/30 dark:text-red-300">
+                <AlertCircle className="w-4 h-4" />
+                <span>{loadError}</span>
+              </div>
+            )}
+
             <div className="relative mb-6 max-w-xl">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
               <input
@@ -200,6 +306,12 @@ export function CoursesView() {
                 className="w-full bg-white dark:bg-[#0d1117] border border-slate-200 dark:border-white/10 rounded-xl pl-10 pr-4 py-2.5 text-sm text-slate-900 dark:text-white placeholder:text-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all shadow-sm"
               />
             </div>
+
+            {!isLoading && !loadError && view.filteredCourses.length === 0 && (
+              <div className="rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#0d1117] px-5 py-10 text-center text-sm text-slate-500 dark:text-slate-400">
+                {t('courses.empty', 'No matching courses found.')}
+              </div>
+            )}
 
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
               {view.filteredCourses.map((course) => (
@@ -274,6 +386,13 @@ export function CoursesView() {
           </main>
         </div>
       </div>
+      <CourseApplicationDialog
+        open={isApplicationDialogOpen}
+        onClose={() => setIsApplicationDialogOpen(false)}
+        requireLoginForAction={requireLoginForCourseApplicationAction}
+        onSubmit={courseService.submitCourseApplication}
+        onUploadVideo={courseService.uploadCourseApplicationVideo}
+      />
     </div>
   );
 }

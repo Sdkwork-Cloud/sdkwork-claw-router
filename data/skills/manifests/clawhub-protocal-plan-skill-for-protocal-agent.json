@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30599,
+  "uuid": "skill-clawhub-protocal-plan-skill-for-protocal-agent",
+  "skillKey": "clawhub-protocal-plan-skill-for-protocal-agent",
+  "name": "protocal-agent",
+  "summary": "Generate structured execution plans for medical and molecular biology protocols such as RNA extraction, reverse transcription, qPCR, cell culture, CRISPR, or...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.protocal_plan_skill_for_protocal_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mengbing Wang",
+      "features": [
+        "Generate structured execution plans for medical and molecular biology protocols such as RNA ext."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/protocal-plan-skill-for-protocal-agent@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19246573?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "protocal-plan-skill-for-protocal-agent",
+      "url": "https://clawhub.ai/skills/protocal-plan-skill-for-protocal-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "protocal-plan-skill-for-protocal-agent",
+    "url": "https://clawhub.ai/skills/protocal-plan-skill-for-protocal-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/protocal-plan-skill-for-protocal-agent-e1fcd673f37c396a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/protocal-plan-skill-for-protocal-agent@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-protocal-plan-skill-for-protocal-agent-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d7b77f42301c22f5ca39867d84761e8abf0683b0e244449f881a2a836f6607b2",
+      "artifactSizeBytes": 2152
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T21:34:36.668Z"
+}

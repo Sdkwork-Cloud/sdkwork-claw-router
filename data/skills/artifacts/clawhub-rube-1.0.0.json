@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rube@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rube",
+  "skill": {
+    "id": 45226,
+    "skillKey": "clawhub-rube",
+    "name": "Rube"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rube",
+    "url": "https://clawhub.ai/skills/rube",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rube-4e6f9cb85987a804.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use Rube tools. Triggers on: RUBE_FIND_RECIPE, RUBE_MANAGE_RECIPE_SCHEDULE, RUBE_MANAGE_CONNECTIONS, RUBE_MULTI_EXECUTE_TOOL, RUBE_REMOTE_BASH_TOOL, RUBE_REM..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "robertstarry-gif",
+      "userId": "s17a8f4am5nrjy4rg8qzv4ydhh83ghw0",
+      "displayName": "robertstarry-gif",
+      "image": "https://avatars.githubusercontent.com/u/269227689?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776206533784,
+      "changelog": "rube 1.0.0 – Initial Release\n\n- Introduces support for using Rube tools by triggering actions including recipe search, execution, scheduling, and connection management.\n- Provides structured documentation for key triggers: RUBE_FIND_RECIPE, RUBE_MANAGE_RECIPE_SCHEDULE, RUBE_MANAGE_CONNECTIONS, RUBE_MULTI_EXECUTE_TOOL, RUBE_REMOTE_BASH_TOOL, RUBE_REMOTE_WORKBENCH, RUBE_SEARCH_TOOLS, RUBE_GET_TOOL_SCHEMAS, RUBE_CREATE_UPDATE_RECIPE, RUBE_EXECUTE_RECIPE, RUBE_GET_RECIPE_DETAILS.\n- Details input parameters, expected outputs, and workflow examples for each tool.\n- Includes quick start instructions and usage policies to ensure correct and secure execution.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d57aad5eb63f9393b8639b69cd7df1fd97f234b99524188f4ee9dc54ae48c82e"
+}

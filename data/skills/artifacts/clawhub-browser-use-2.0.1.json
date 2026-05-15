@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/browser-use@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_use",
+  "skill": {
+    "id": 8202,
+    "skillKey": "clawhub-browser-use",
+    "name": "Browser Use"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-use",
+    "url": "https://clawhub.ai/skills/browser-use",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-use-035549a413ab3257.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automates browser interactions for web testing, form filling, screenshots, and data extraction. Use when the user needs to navigate websites, interact with w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shawnpana",
+      "userId": "s172739e82v8chv804xns8k9j183sqjm",
+      "displayName": "shawn pana",
+      "image": "https://avatars.githubusercontent.com/u/129362299?v=4"
+    },
+    "stats": {
+      "comments": 4,
+      "downloads": 40439,
+      "installsAllTime": 452,
+      "installsCurrent": 428,
+      "stars": 98,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1775709064353,
+      "changelog": "- Added two new reference documents: CDP Python usage and multi-session workflows.\n- Clarified the distinction between headless mode, connecting to Chrome, and cloud browser usage.\n- Made tab management commands (`tab list`, `tab new`, `tab switch`, `tab close`) explicit in documentation.\n- Improved explanations for cloud connection, API key registration, and agent self-registration.\n- Added instructions for multi-session (parallel browser) usage.\n- Updated troubleshooting guidance for failed commands and session cleanup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:770f00ab77298f4399510908472452c75f1068527c7535f662e854277c4c8b18"
+}

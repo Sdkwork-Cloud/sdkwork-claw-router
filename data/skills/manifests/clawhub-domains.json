@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15169,
+  "uuid": "skill-clawhub-domains",
+  "skillKey": "clawhub-domains",
+  "name": "Domains",
+  "summary": "Register, manage, and protect domain names with practical DNS and security guidance.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.domains",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Register, manage, and protect domain names with practical DNS and security guidance."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/domains@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "domains",
+      "url": "https://clawhub.ai/skills/domains"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "domains",
+    "url": "https://clawhub.ai/skills/domains",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/domains-1b0ec1954eec51e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/domains@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-domains-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aea5399389623224b0e309aac44e6ce6b012ee848b889bc94cfcae2276ec2cf1",
+      "artifactSizeBytes": 1757
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T16:17:48.977Z"
+}

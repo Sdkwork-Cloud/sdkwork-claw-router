@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-enhancer-openapi-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_enhancer_openapi_skill",
+  "skill": {
+    "id": 56714,
+    "skillKey": "clawhub-ai-video-enhancer-openapi-skill",
+    "name": "AI Video Enhancer – Enhance Video Quality Online with AI – API-powered"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-enhancer-openapi-skill",
+    "url": "https://clawhub.ai/skills/ai-video-enhancer-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-enhancer-openapi-skill-19d0fe14fb145fc0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI video enhancer — upscale and enhance video quality using AI"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkleming",
+      "userId": "s173eywkn9gkx5va9p2tb6kh5h843s3s",
+      "displayName": "sparkleMing",
+      "image": "https://avatars.githubusercontent.com/u/38350996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776134187343,
+      "changelog": "ai-video-enhancer-openapi-skill 1.0.0 — Initial Release\n\n- Adds an AI-powered tool to upscale and enhance video quality via WeShop OpenAPI.\n- Requires HTTPS access and a WESHOP_API_KEY environment variable.\n- Supports video upload, enhancement, and progress polling with clear API endpoints.\n- Includes security best practices for API key handling.\n- Provides detailed agent info, input fields, and usage instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1ad65ff7e2401ec824d33bb4263742975c4a71b965dc523e73af76293d890da2"
+}

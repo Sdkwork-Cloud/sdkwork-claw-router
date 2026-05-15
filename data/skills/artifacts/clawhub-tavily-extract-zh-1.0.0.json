@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tavily-extract-zh@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tavily_extract_zh",
+  "skill": {
+    "id": 63447,
+    "skillKey": "clawhub-tavily-extract-zh",
+    "name": "tavily-extract-zh"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tavily-extract-zh",
+    "url": "https://clawhub.ai/skills/tavily-extract-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tavily-extract-zh-dfd74071264b2ca3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过 AISA Tavily 抽取接口从 URL 获取干净正文。触发条件：当用户已经有 URL，需要读取页面正文做总结、对比或证据审查时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aisadocs",
+      "userId": "s172yz541n4361fw0sapygg0r583eghk",
+      "displayName": "AIsa",
+      "image": "https://avatars.githubusercontent.com/u/245991925?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776504736718,
+      "changelog": "Initial release of tavily-extract-zh:\n\n- 提供通过 AISA Tavily 接口从 URL 获取页面干净正文的能力。\n- 适用于需要根据网页正文进行总结、对比与证据审查的场景。\n- 不处理本地敏感凭据（如 Cookie、密码等）。\n- 需配置 AISA_API_KEY，在本地用 Python 客户端运行。\n- 适合配合搜索或后续分析任务使用。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e5822e36b55921b57ad9681b8c7e2e9c468b10d3bb5de0c485a4afeb5fc12c4e"
+}

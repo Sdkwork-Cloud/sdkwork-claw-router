@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bambu@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bambu",
+  "skill": {
+    "id": 16609,
+    "skillKey": "clawhub-bambu",
+    "name": "Bambu Lab 3D Printer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bambu",
+    "url": "https://clawhub.ai/skills/bambu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bambu-4bff358ac1b68f22.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control Bambu Lab 3D printers (H2D, X1C, P1S, A1) via CLI. Print management, AMS filament control, temperature, fans, lights, calibration, file management, a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "g9pedro",
+      "userId": "s170qw9ry89qte3815nzjvz1sh83mzvt",
+      "displayName": "G9Pedro",
+      "image": "https://avatars.githubusercontent.com/u/78662829?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 666,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772337965839,
+      "changelog": "Full MQTT+FTP control of Bambu Lab printers. Agent-first CLI with progressive loading.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:64e9edbf02fd8725cedbee726fc69e647b7af190174f77981b545805666c1364"
+}

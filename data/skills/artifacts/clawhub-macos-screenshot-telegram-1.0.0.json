@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/macos-screenshot-telegram@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.macos_screenshot_telegram",
+  "skill": {
+    "id": 15629,
+    "skillKey": "clawhub-macos-screenshot-telegram",
+    "name": "MAC OS screenshot to telegram"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "macos-screenshot-telegram",
+    "url": "https://clawhub.ai/skills/macos-screenshot-telegram",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/macos-screenshot-telegram-8e5dc506e2499bd6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Take a screenshot on macOS and send it to Telegram. Use when the user asks to capture their screen, take a screenshot, or send a screen capture to Telegram...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hoyin258",
+      "userId": "publishers:hoyin258",
+      "displayName": "hoyin258",
+      "image": "https://avatars.githubusercontent.com/u/2917198?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 986,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771210891339,
+      "changelog": "- Initial release: take a screenshot on macOS and send it to Telegram via the Telegram Bot API.\n- Designed to work around the OpenClaw message tool bug (#15541) that fails to send media.\n- Requires Telegram bot token, target chat ID, and OpenClaw profile name as setup/prerequisites.\n- Handles screenshot capture, workspace file management, and direct API upload.\n- Supports any OpenClaw profile by specifying the profile name in use.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:78824ca82b8a4ed78325166607e45ae4c9e7ce1c8c04370de5a9507753682edc"
+}

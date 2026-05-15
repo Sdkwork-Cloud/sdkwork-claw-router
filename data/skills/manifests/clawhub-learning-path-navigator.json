@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67719,
+  "uuid": "skill-clawhub-learning-path-navigator",
+  "skillKey": "clawhub-learning-path-navigator",
+  "name": "Learning Path Navigator",
+  "summary": "个性化学习路径导航仪 - 根据学习目标、当前水平和可用资源生成定制化学习计划。 支持技能评估、路径规划、资源推荐、里程碑跟踪等功能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.learning_path_navigator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "个性化学习路径导航仪",
+        "根据学习目标、当前水平和可用资源生成定制化学习计划。 支持技能评估、路径规划、资源推荐、里程碑跟踪等功能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/learning-path-navigator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "learning-path-navigator",
+      "url": "https://clawhub.ai/skills/learning-path-navigator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "learning-path-navigator",
+    "url": "https://clawhub.ai/skills/learning-path-navigator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/learning-path-navigator-7231d79cbe639c60.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/learning-path-navigator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-learning-path-navigator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d809472684348ea2232e6fcf37d6e30da07dcd051d3a027ed2d0e7e9e8381a68",
+      "artifactSizeBytes": 2103
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T23:39:07.971Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zhihu-topic-finder@1.2.5",
+  "version": "1.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhihu_topic_finder",
+  "skill": {
+    "id": 67651,
+    "skillKey": "clawhub-zhihu-topic-finder",
+    "name": "知乎热榜选题"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhihu-topic-finder",
+    "url": "https://clawhub.ai/skills/zhihu-topic-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhihu-topic-finder-800b4169e3d2ecc4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "知乎内容搜索与分析工具。搜索知乎热榜话题、分析高价值问题。 当用户说\"搜一下知乎\"、\"知乎有什么\"、\"知乎选题\"、\"搜知乎热榜\"时触发。 Keywords: 知乎, zhihu, 选题, 知乎热榜, 知乎搜索."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "freedompixels",
+      "userId": "s17cmvaw2cy01v6y6fpq1h7yts84k0r0",
+      "displayName": "freedompixels",
+      "image": "https://avatars.githubusercontent.com/u/220853702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 287,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.5",
+      "createdAt": 1777697383731,
+      "changelog": "- Standardized and simplified SKILL.md metadata fields (slug, version, author).\n- Updated skill name and author information.\n- Removed keyword triggers and detailed internal description from documentation.\n- No functional code changes noted.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7b8f80c70727c7b343aacac012157f3f4adb3df648a0eb2df0668e30b50bc8f3"
+}

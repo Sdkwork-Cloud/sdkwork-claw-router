@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42614,
+  "uuid": "skill-clawhub-weekly-report-generator-feishu-chinese",
+  "skillKey": "clawhub-weekly-report-generator-feishu-chinese",
+  "name": "weekly-report-generator-feishu-chinese",
+  "summary": "Use this skill to generate weekly reports from git commit logs. Automatically analyzes git history, categorizes work, and formats a professional weekly report.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weekly_report_generator_feishu_chinese",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "memorial",
+      "features": [
+        "Use this skill to generate weekly reports from git commit logs",
+        "Automatically analyzes git history, categorizes work, and formats a professional weekly report."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weekly-report-generator-feishu-chinese@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13378206?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weekly-report-generator-feishu-chinese",
+      "url": "https://clawhub.ai/skills/weekly-report-generator-feishu-chinese"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weekly-report-generator-feishu-chinese",
+    "url": "https://clawhub.ai/skills/weekly-report-generator-feishu-chinese",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weekly-report-generator-feishu-chinese-0b5650ef3f679090.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weekly-report-generator-feishu-chinese@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weekly-report-generator-feishu-chinese-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4b0b0c9094c41db1121afea776986d0929c58fa1589b8ba7c8c00b31a47702d3",
+      "artifactSizeBytes": 2643
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T02:25:40.711Z"
+}

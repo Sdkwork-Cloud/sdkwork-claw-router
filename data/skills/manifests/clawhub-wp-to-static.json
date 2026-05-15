@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14408,
+  "uuid": "skill-clawhub-wp-to-static",
+  "skillKey": "clawhub-wp-to-static",
+  "name": "WordPress to Static Site",
+  "summary": "Convert a WordPress website to a static site and deploy to Cloudflare Pages. Mirrors the rendered HTML via SSH, extracts only referenced assets (shrinks 1.5GB+ to ~25MB), fixes URLs, self-hosts fonts, strips WordPress cruft, and deploys. U.",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wp_to_static",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "abhibavishi",
+      "features": [
+        "Convert a WordPress website to a static site and deploy to Cloudflare Pages",
+        "Mirrors the rendered HTML via SSH, extracts only referenced assets (shrinks 1.5GB+ to ~25MB), f.",
+        "Use when migrating a WordPress site to static hosting."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wp-to-static@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7823146?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wp-to-static",
+      "url": "https://clawhub.ai/skills/wp-to-static"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wp-to-static",
+    "url": "https://clawhub.ai/skills/wp-to-static",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wp-to-static-4eb18ae73ef23535.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wp-to-static@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wp-to-static-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9f87357b1b861b0c3d19d417a9155864ad52105210cb4d3c9fb3daa9c3023ec4",
+      "artifactSizeBytes": 2097
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T12:48:30.796Z"
+}

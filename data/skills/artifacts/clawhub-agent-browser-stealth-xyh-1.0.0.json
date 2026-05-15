@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-browser-stealth-xyh@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_browser_stealth_xyh",
+  "skill": {
+    "id": 33886,
+    "skillKey": "clawhub-agent-browser-stealth-xyh",
+    "name": "Agent Browser Stealth"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-browser-stealth-xyh",
+    "url": "https://clawhub.ai/skills/agent-browser-stealth-xyh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-browser-stealth-xyh-9fed045e0b483c93.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Stealth browser automation with anti-detection. Launches Chromium with fingerprint randomization, webdriver flag removal, Canvas/WebGL spoofing, and permissi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bfchain2-hub",
+      "userId": "s17cdb8j4g1rzbcxbqepvgs6s183pzhw",
+      "displayName": "bfchain2-hub",
+      "image": "https://avatars.githubusercontent.com/u/257955050?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 231,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774626285198,
+      "changelog": "agent-browser-stealth 1.0.0\n\n- Initial release of a stealth browser automation tool for evading detection on bot-protected sites.\n- Launches Chromium with multiple anti-detection techniques: fingerprint randomization, webdriver flag removal, Canvas/WebGL spoofing, and permissions API masking.\n- Provides CLI commands for opening pages, interacting with elements via refs, inspecting page data, and session management.\n- Supports Playwright session persistence for repeatable logins.\n- Designed for use cases like web scraping, login automation, and accessing protected content.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:62dea6a6092a852fc3cc60a4611cd49aeb7acf8ef6ae01f586c1cfb5dec9272f"
+}

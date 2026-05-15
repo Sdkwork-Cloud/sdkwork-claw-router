@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71192,
+  "uuid": "skill-clawhub-kuaishou",
+  "skillKey": "clawhub-kuaishou",
+  "name": "Kuaishou",
+  "summary": "提供公开快手视频和作者主页的内容检索与表现数据摘要，支持话题、作者和榜单分析。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kuaishou",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawKK",
+      "features": [
+        "提供公开快手视频和作者主页的内容检索与表现数据摘要，支持话题、作者和榜单分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kuaishou@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111570001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kuaishou",
+      "url": "https://clawhub.ai/skills/kuaishou"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kuaishou",
+    "url": "https://clawhub.ai/skills/kuaishou",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kuaishou-8abe43a7f9a7bd94.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kuaishou@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kuaishou-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6059b953d4214918a8982084ee6568c8fb33cf1826a4df4f61343574e15994da",
+      "artifactSizeBytes": 2307
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T07:26:21.961Z"
+}

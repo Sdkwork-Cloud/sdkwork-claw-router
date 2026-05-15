@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30400,
+  "uuid": "skill-clawhub-persona-builder",
+  "skillKey": "clawhub-persona-builder",
+  "name": "Persona Builder",
+  "summary": "Guided interview to generate a complete agent workspace: SOUL.md, IDENTITY.md, MEMORY.md, AGENTS.md, USER.md with hierarchical memory structure and atomic fa...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.persona_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Corbin Breton",
+      "features": [
+        "Guided interview to generate a complete agent workspace: SOUL.md, IDENTITY.md, MEMORY.md, AGENT."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/persona-builder@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4294018?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "persona-builder",
+      "url": "https://clawhub.ai/skills/persona-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "persona-builder",
+    "url": "https://clawhub.ai/skills/persona-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/persona-builder-fc09607b29fb999b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/persona-builder@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-persona-builder-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:583d46a5dbc10a96b32962c531a2d912a901aabab235af31d2e08dd05d532309",
+      "artifactSizeBytes": 2180
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T19:08:08.019Z"
+}

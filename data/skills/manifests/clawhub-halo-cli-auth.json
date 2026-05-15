@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30087,
+  "uuid": "skill-clawhub-halo-cli-auth",
+  "skillKey": "clawhub-halo-cli-auth",
+  "name": "Halo Cli Auth",
+  "summary": "Use when working with Halo CLI login, bearer token or basic auth, profile setup, profile switching, current profile inspection, or fixing missing keyring cre...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.halo_cli_auth",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ryan Wang",
+      "features": [
+        "Use when working with Halo CLI login, bearer token or basic auth, profile setup, profile switch."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/halo-cli-auth@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21301288?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "halo-cli-auth",
+      "url": "https://clawhub.ai/skills/halo-cli-auth"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "halo-cli-auth",
+    "url": "https://clawhub.ai/skills/halo-cli-auth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/halo-cli-auth-4e1df14df5f79405.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/halo-cli-auth@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-halo-cli-auth-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ccdbe857ed2491af637751cbd04da1bc047828b7332bb94f0f66a0eb05c2c89e",
+      "artifactSizeBytes": 1979
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T14:28:06.404Z"
+}

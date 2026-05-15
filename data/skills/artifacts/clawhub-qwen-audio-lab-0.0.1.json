@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qwen-audio-lab@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qwen_audio_lab",
+  "skill": {
+    "id": 27649,
+    "skillKey": "clawhub-qwen-audio-lab",
+    "name": "qwen-audio-lab"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qwen-audio-lab",
+    "url": "https://clawhub.ai/skills/qwen-audio-lab",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qwen-audio-lab-943ab0de52699d8d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Hybrid text-to-speech, reusable voice cloning, and narrated audio generation for macOS plus Aliyun Qwen. Use when the user wants to convert text into speech,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aliyx",
+      "userId": "publishers:aliyx",
+      "displayName": "aliyx",
+      "image": "https://avatars.githubusercontent.com/u/19488256?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 343,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1773891974449,
+      "changelog": "Initial release: Hybrid text-to-speech skill for macOS and Aliyun Qwen, with support for voice cloning and narrated file generation.\n\n- Provides text-to-speech via both local macOS and Aliyun Qwen backends.\n- Supports cloning and reusing voices from user-supplied audio samples.\n- Generates narration audio from plain text, text files, or PPT speaker notes.\n- Offers easy high-level commands for narration, as well as legacy commands for backward compatibility.\n- Adds environment variables for API keys, output directories, and state management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d3e875e6df8bb78b84790d0bdea4749c547e0df229d9e99a52a3737e5b2957a7"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66608,
+  "uuid": "skill-clawhub-cn-news-brief",
+  "skillKey": "clawhub-cn-news-brief",
+  "name": "每日新闻简报",
+  "summary": "中文新闻简报。每日热点新闻摘要，分类呈现，3分钟了解天下事。 当用户说\"新闻\"、\"今天有什么新闻\"、\"热点\"、\"今日要闻\"时触发。 Keywords: 新闻, 热点, 要闻, news, 简报, 日报.",
+  "version": "1.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_news_brief",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "freedompixels",
+      "features": [
+        "中文新闻简报。每日热点新闻摘要，分类呈现，3分钟了解天下事。 当用户说\"新闻\"、\"今天有什么新闻\"、\"热点\"、\"今日要闻\"时触发。 Keywords: 新闻, 热点, 要闻, news, 简."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cn-news-brief@1.2.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/220853702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cn-news-brief",
+      "url": "https://clawhub.ai/skills/cn-news-brief"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-news-brief",
+    "url": "https://clawhub.ai/skills/cn-news-brief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-news-brief-e914c9e04c0d5d74.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cn-news-brief@1.2.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-cn-news-brief-1.2.5.json",
+      "version": "1.2.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7be4b4abfe76b251523de29aa316829e8c97b8862448782fe51cd4b689cfce75",
+      "artifactSizeBytes": 2079
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T04:45:41.709Z"
+}

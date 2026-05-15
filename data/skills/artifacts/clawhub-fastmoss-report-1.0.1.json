@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fastmoss-report@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fastmoss_report",
+  "skill": {
+    "id": 63317,
+    "skillKey": "clawhub-fastmoss-report",
+    "name": "Fastmoss Report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fastmoss-report",
+    "url": "https://clawhub.ai/skills/fastmoss-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fastmoss-report-bbaca1e3fb0a3681.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动生成美国时尚配件品类TikTok热推日榜与周榜Top10数据报告，含分析与选品建议。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "islcy1208",
+      "userId": "publishers:islcy1208",
+      "displayName": "islcy",
+      "image": "https://avatars.githubusercontent.com/u/112626295?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 478,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772774730868,
+      "changelog": "- Added support for category and region configuration via new environment variables (FASTMOSS_CATEGORY and FASTMOSS_REGION).\n- SKILL.md now documents available category IDs and region configuration.\n- Data retrieval now uses the specified category and region, instead of fixed values.\n- No changes to workflow or output format.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:61155f25e45a6c9523c829a4b924e590fce11b4a3d381b98a569c330b2317512"
+}

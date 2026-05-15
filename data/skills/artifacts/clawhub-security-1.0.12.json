@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/security@1.0.12",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.security",
+  "skill": {
+    "id": 10851,
+    "skillKey": "clawhub-security",
+    "name": "AgentGuard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "security",
+    "url": "https://clawhub.ai/skills/security",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/security-5d2d3ceb7abe5523.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "GoPlus AgentGuard — AI agent security guard. Run /agentguard checkup for a full security health check, scans all installed skills, checks credentials, permis..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xbeekeeper",
+      "userId": "s179bmeda1q70gbgj74cdam0mx83k8a9",
+      "displayName": "GoPlus",
+      "image": "https://avatars.githubusercontent.com/u/24714804?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2391,
+      "installsAllTime": 22,
+      "installsCurrent": 21,
+      "stars": 4,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.12",
+      "createdAt": 1776836784325,
+      "changelog": "- Added scripts directory with required files for registry and trust management.\n- Improved documentation for safer script execution: always resolve the absolute path for scripts/ and cd into the skill directory before running commands.\n- Updated allowed-tools to include Write and Bash(node *) for improved compatibility.\n- Enhanced filesystem-access section to document required read/write permissions for audit and configuration.\n- Removed scripts/package.json; split lockfiles for better node_modules management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:23d98c572c5619cd9366c325de5ba395984cb882adc7b0e3ac621cd2db3bc2cc"
+}

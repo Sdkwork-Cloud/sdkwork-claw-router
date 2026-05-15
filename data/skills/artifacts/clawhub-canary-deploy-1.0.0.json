@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/canary-deploy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.canary_deploy",
+  "skill": {
+    "id": 22992,
+    "skillKey": "clawhub-canary-deploy",
+    "name": "Canary Deploy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "canary-deploy",
+    "url": "https://clawhub.ai/skills/canary-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/canary-deploy-d9f4420baabe34d6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Safe system changes with automatic baseline capture, canary testing, and rollback for critical infrastructure modifications. Use when making changes to SSH c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lolaopenclaw",
+      "userId": "publishers:lolaopenclaw",
+      "displayName": "lolaopenclaw",
+      "image": "https://avatars.githubusercontent.com/u/259362584?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 454,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772550229672,
+      "changelog": "Initial release: canary-test.sh + critical-update.sh for safe system changes with baseline capture, validation, and automatic rollback",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6a66c750ca29f4b651d769f8c0fe83733a1d2530a21815cffb640aca74f6c801"
+}

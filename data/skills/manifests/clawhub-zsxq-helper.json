@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72718,
+  "uuid": "skill-clawhub-zsxq-helper",
+  "skillKey": "clawhub-zsxq-helper",
+  "name": "知识星球助手",
+  "summary": "知识星球助手 - 登录、发帖、管理知识星球。当用户需要操作知识星球（登录、发帖、查看内容）时使用此技能。触发词：知识星球、zsxq、发帖、星球登录。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zsxq_helper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jiang Shuaijie",
+      "features": [
+        "登录、发帖、管理知识星球。当用户需要操作知识星球（登录、发帖、查看内容）时使用此技能。触发词：知识星球、zsxq、发帖、星球登录。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zsxq-helper@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7362489?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zsxq-helper",
+      "url": "https://clawhub.ai/skills/zsxq-helper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zsxq-helper",
+    "url": "https://clawhub.ai/skills/zsxq-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zsxq-helper-ccb4719874b14d55.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zsxq-helper@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zsxq-helper-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:429f4469cd51abff1814780b3f9eedde2d4ba1f6ad80b424de9964a36480b410",
+      "artifactSizeBytes": 2000
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T09:51:19.956Z"
+}

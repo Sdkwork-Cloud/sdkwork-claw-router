@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/judgment-enhancement-engine@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.judgment_enhancement_engine",
+  "skill": {
+    "id": 47491,
+    "skillKey": "clawhub-judgment-enhancement-engine",
+    "name": "Judgment_Enhancement_Engine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "judgment-enhancement-engine",
+    "url": "https://clawhub.ai/skills/judgment-enhancement-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/judgment-enhancement-engine-3bfe0da7788a7da4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI Agent judgment enhancement via Monte Carlo lookahead, risk-adjusted utility, and historical reflection. Use when an agent needs to evaluate multi-step act..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chen-feng123",
+      "userId": "s173bjpr98qcngds2npjsk01ah85y9vx",
+      "displayName": "CHEN-feng123",
+      "image": "https://avatars.githubusercontent.com/u/257892428?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 113,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777896721749,
+      "changelog": "- Initial release of the judgment-enhancement-engine.\n- Enables AI agent decision-making under uncertainty using recursive Monte Carlo lookahead, risk-adjusted utility, and historical reflection.\n- Provides configurable parameters for risk tolerance, lookahead depth, and simulation breadth.\n- Includes a built-in GridWorld demo and easy setup scripts for all major platforms.\n- Supplies detailed API documentation and usage examples for quick integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1ed278e0180a666595130c09ca65b97726aecaba6f358e63e190849008904fd5"
+}

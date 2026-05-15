@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawl-register@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawl_register",
+  "skill": {
+    "id": 18065,
+    "skillKey": "clawhub-clawl-register",
+    "name": "Clawl Register"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawl-register",
+    "url": "https://clawhub.ai/skills/clawl-register",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawl-register-04468e2994dcae4a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Register this AI agent on Clawl — the agent search engine. Generates a clawl.json discovery file and pings clawl.co.uk for indexing. Use when an agent wants to be discoverable, get ranked on the Clawl leaderboard, compete for King of the C."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wlshlad85",
+      "userId": "publishers:wlshlad85",
+      "displayName": "wlshlad85",
+      "image": "https://avatars.githubusercontent.com/u/146856731?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 963,
+      "installsAllTime": 2,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1770714599902,
+      "changelog": "Fix: All URLs corrected to clawl.co.uk (was incorrectly clawl.io)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:60325235fab865d2a205af93a20a2de8889960a2d1fcb3b791a1f6ae866950ec"
+}

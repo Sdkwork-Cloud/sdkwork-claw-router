@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29949,
+  "uuid": "skill-clawhub-gstack-workflow",
+  "skillKey": "clawhub-gstack-workflow",
+  "name": "GStack Dev Workflow",
+  "summary": "Structured development workflow inspired by Garry Tan's gstack. Use when the user wants to build a feature, start a project, do a code review, or ship code w...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gstack_workflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jahonn Ding",
+      "features": [
+        "Structured development workflow inspired by Garry Tan's gstack",
+        "Use when the user wants to build a feature, start a project, do a code review, or ship code w..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gstack-workflow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1058051?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gstack-workflow",
+      "url": "https://clawhub.ai/skills/gstack-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gstack-workflow",
+    "url": "https://clawhub.ai/skills/gstack-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gstack-workflow-db155914e97f899c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gstack-workflow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gstack-workflow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c66fa01cc33ac7c4d0f03cbecbb928b984fb1b5d066f2e1d013391d46f152dc5",
+      "artifactSizeBytes": 1966
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T23:17:35.494Z"
+}

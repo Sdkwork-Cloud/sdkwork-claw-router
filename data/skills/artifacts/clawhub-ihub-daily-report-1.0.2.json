@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ihub-daily-report@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ihub_daily_report",
+  "skill": {
+    "id": 67565,
+    "skillKey": "clawhub-ihub-daily-report",
+    "name": "iHub日报自动填写"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ihub-daily-report",
+    "url": "https://clawhub.ai/skills/ihub-daily-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ihub-daily-report-c02c73b6e2557d73.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动填写 iHub 测试农场平台指定日期的日报，支持自定义账号密码和Markdown格式内容输入。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shaqima2024",
+      "userId": "s178qtzmcs6qt7jag93rk5mpfn83k767",
+      "displayName": "shaqima2024",
+      "image": "https://avatars.githubusercontent.com/u/191233562?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774398734110,
+      "changelog": "更新文档，移除默认账号密码说明",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:31caf090347f2e81334335e44d35944c03b765cc64ff5bafb4d5cc949bf82674"
+}

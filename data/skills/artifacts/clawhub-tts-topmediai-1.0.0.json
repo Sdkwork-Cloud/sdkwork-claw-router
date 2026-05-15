@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tts-topmediai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tts_topmediai",
+  "skill": {
+    "id": 22849,
+    "skillKey": "clawhub-tts-topmediai",
+    "name": "TopMediai TTS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tts-topmediai",
+    "url": "https://clawhub.ai/skills/tts-topmediai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tts-topmediai-dda0505aae0751fb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "TopMediai text-to-speech skill. Supports key entitlement info, voices listing (official + cloned), and text-to-speech generation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "topmediai",
+      "userId": "s17b24nnj4p0fgyssjfe8nwhxd83n6eq",
+      "displayName": "Topmediai",
+      "image": "https://avatars.githubusercontent.com/u/204978011?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 260,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773664198078,
+      "changelog": "Initial release of tts-topmediai.\n\n- Provides text-to-speech conversion with official and cloned voices.\n- Includes commands to check API key entitlement and list available voices.\n- Requires API key configuration before use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:17115f74b506f3f0509e7ad8a9785a991bdb52306ae869e3c401b418a28a2676"
+}

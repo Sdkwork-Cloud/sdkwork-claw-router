@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43513,
+  "uuid": "skill-clawhub-crowdin-integration",
+  "skillKey": "clawhub-crowdin-integration",
+  "name": "Crowdin",
+  "summary": "Crowdin integration. Manage data, records, and automate workflows. Use when the user wants to interact with Crowdin data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crowdin_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Crowdin integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Crowdin data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crowdin-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crowdin-integration",
+      "url": "https://clawhub.ai/skills/crowdin-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crowdin-integration",
+    "url": "https://clawhub.ai/skills/crowdin-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crowdin-integration-1753478f3941ece6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crowdin-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-crowdin-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9cd44d9db275d72f0a9daea29afdcaf382233f07afcf019fc3a8dc2feb962d43",
+      "artifactSizeBytes": 1901
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:21:49.582Z"
+}

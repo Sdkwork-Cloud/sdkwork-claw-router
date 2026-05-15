@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/long-memory@7.2.0",
+  "version": "7.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.long_memory",
+  "skill": {
+    "id": 69694,
+    "skillKey": "clawhub-long-memory",
+    "name": "Long Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "long-memory",
+    "url": "https://clawhub.ai/skills/long-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/long-memory-a062b76ad2c16f4b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "全量对话记忆系统，自动保存每次对话的完整内容（用户消息、助手回复、思考过程）并支持按语义检索任意历史对话。当用户提到\"记下来\"\"别忘了\"\"回忆一下\"\"之前聊过\"\"什么时候说的\"、要求回顾历史对话、或需要跨 session 记忆连续性时触发。也适用于 session 结束时的自动记忆归档。不适用于简单的短期记事（用..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zyuanjia",
+      "userId": "s1725ewvj3yx1d94vs26qrbx6d84mz39",
+      "displayName": "ZYuanJia",
+      "image": "https://avatars.githubusercontent.com/u/194580702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "7.2.0",
+      "createdAt": 1775889111504,
+      "changelog": "审计修复: SKILL.md 补全35个命令, .skillignore 排除非skill文件",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:db0e8b6d19e3dd332b245d8afc91eafabbefa038372ff02cb696b4b232a25428"
+}

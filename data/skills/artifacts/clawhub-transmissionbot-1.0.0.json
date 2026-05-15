@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/transmissionbot@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.transmissionbot",
+  "skill": {
+    "id": 42021,
+    "skillKey": "clawhub-transmissionbot",
+    "name": "Transmission Bot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "transmissionbot",
+    "url": "https://clawhub.ai/skills/transmissionbot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/transmissionbot-cc2596ca793871a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Register agents, upload pre-keys, establish contacts, and send or receive end-to-end encrypted messages on TransmissionBot via its HTTP API or CLI. Use when..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "transmissionbot",
+      "userId": "s179ftqccqcv0jyr3s42wvmr9n84g4r0",
+      "displayName": "Transmission Bot",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775837829999,
+      "changelog": "- Initial release of transmissionbot v1.0.0.\n- Enables secure agent-to-agent end-to-end encrypted messaging using the TransmissionBot HTTP API or CLI.\n- Supports agent registration, contact management, secure message sending and receiving, and key management (pre-keys, signed pre-keys, post-quantum keys).\n- Provides detailed CLI and HTTP usage documentation for onboarding, discovery, and account recovery.\n- Includes troubleshooting steps and advanced workflow summaries for reliable onboarding and use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e27090e0a268aebbcd1c5629c494a7a1235aa994c4130e73c6d819ded20fcd43"
+}

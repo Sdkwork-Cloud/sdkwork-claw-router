@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54840,
+  "uuid": "skill-clawhub-swap",
+  "skillKey": "clawhub-swap",
+  "name": "swap",
+  "summary": "Configure Linux swap — create swap file, set swappiness, persist via fstab, resize swap.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swap",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zjxylc",
+      "features": [
+        "Configure Linux swap — create swap file, set swappiness, persist via fstab, resize swap."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/swap@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3221085?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "swap",
+      "url": "https://clawhub.ai/skills/swap"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swap",
+    "url": "https://clawhub.ai/skills/swap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swap-da47c2f450a4f9d5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/swap@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-swap-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:822a9d0c72b04e1c38a9a02bfa41950f6e49dc7c713b78960eb1c7f8e381fb8a",
+      "artifactSizeBytes": 1998
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T09:40:13.517Z"
+}

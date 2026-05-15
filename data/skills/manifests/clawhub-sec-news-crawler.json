@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70423,
+  "uuid": "skill-clawhub-sec-news-crawler",
+  "skillKey": "clawhub-sec-news-crawler",
+  "name": "网络安全情报爬虫",
+  "summary": "网络安全新闻爬虫，每小时自动从多个安全社区 RSS 抓取文章，存入 IMA 笔记。 触发场景：用户说\"抓取安全新闻\"、\"网络安全日报\"、\"定时爬取安全资讯\"、\"安全新闻源管理\" 或需要查看/管理安全新闻爬虫任务时使用此 skill。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sec_news_crawler",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FallenQu",
+      "features": [
+        "网络安全新闻爬虫，每小时自动从多个安全社区 RSS 抓取文章，存入 IMA 笔记。 触发场景：用户说\"抓取安全新闻\"、\"网络安全日报\"、\"定时爬取安全资讯\"、\"安全新闻源管理\" 或需要查看/."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sec-news-crawler@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62645537?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sec-news-crawler",
+      "url": "https://clawhub.ai/skills/sec-news-crawler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sec-news-crawler",
+    "url": "https://clawhub.ai/skills/sec-news-crawler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sec-news-crawler-41c480ccdab59131.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sec-news-crawler@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sec-news-crawler-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d97b883d47e3e8d6213181176dcaa7f626a7f1d1106c46f3f28600a32570e28",
+      "artifactSizeBytes": 2127
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T03:27:22.002Z"
+}

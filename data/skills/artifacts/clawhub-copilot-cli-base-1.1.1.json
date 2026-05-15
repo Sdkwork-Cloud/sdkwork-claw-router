@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/copilot-cli-base@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.copilot_cli_base",
+  "skill": {
+    "id": 28611,
+    "skillKey": "clawhub-copilot-cli-base",
+    "name": "Copilot CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "copilot-cli-base",
+    "url": "https://clawhub.ai/skills/copilot-cli-base",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/copilot-cli-base-37432b09a40c6536.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reference knowledge base for GitHub Copilot CLI. Use when answering questions about Copilot CLI features, commands, configuration, plugins, hooks, skills, MC..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "awalesagar",
+      "userId": "s17581mechpdyzj8d8dnx8zpkh8467p8",
+      "displayName": "Sagar Awale",
+      "image": "https://avatars.githubusercontent.com/u/33474772?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 221,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1775847624459,
+      "changelog": "- Removed the `_meta.json` file from the skill package.\n- No user-facing feature or documentation changes.\n- Package contents are now simplified by removing redundant metadata.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4d91ae097248b884f1a0f3b36f69493f7c72a10ceaaa33a461d8821fc7fd74e2"
+}

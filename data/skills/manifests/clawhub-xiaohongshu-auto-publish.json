@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59606,
+  "uuid": "skill-clawhub-xiaohongshu-auto-publish",
+  "skillKey": "clawhub-xiaohongshu-auto-publish",
+  "name": "Xiaohongshu Auto Publish",
+  "summary": "小红书自动发布技能 - AI 文案 + 中国风封面 + 一键发布",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_auto_publish",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "记得绿萝裙",
+      "features": [
+        "小红书自动发布技能",
+        "AI 文案 + 中国风封面 + 一键发布"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaohongshu-auto-publish@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27294963?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaohongshu-auto-publish",
+      "url": "https://clawhub.ai/skills/xiaohongshu-auto-publish"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-auto-publish",
+    "url": "https://clawhub.ai/skills/xiaohongshu-auto-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-auto-publish-43ba3c4fbeec9d86.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaohongshu-auto-publish@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaohongshu-auto-publish-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:039779d5d58a55838c28ddc9821db3da609f604d1846eb4e649bd47c7ce00ba1",
+      "artifactSizeBytes": 2291
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T15:00:22.640Z"
+}

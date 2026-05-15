@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33752,
+  "uuid": "skill-clawhub-helpcrunch",
+  "skillKey": "clawhub-helpcrunch",
+  "name": "Helpcrunch",
+  "summary": "HelpCrunch integration. Manage Organizations, Users, Articles, Reports, Automations. Use when the user wants to interact with HelpCrunch data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.helpcrunch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "HelpCrunch integration",
+        "Manage Organizations, Users, Articles, Reports, Automations",
+        "Use when the user wants to interact with HelpCrunch data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/helpcrunch@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "helpcrunch",
+      "url": "https://clawhub.ai/skills/helpcrunch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "helpcrunch",
+    "url": "https://clawhub.ai/skills/helpcrunch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/helpcrunch-7e4fd70a5115d481.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/helpcrunch@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-helpcrunch-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:998be539d1ba079148a42793e85f5c93afb1736bdbb5118d7ae6ac72e8725186",
+      "artifactSizeBytes": 1863
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:55:49.359Z"
+}

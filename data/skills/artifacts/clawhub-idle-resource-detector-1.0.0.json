@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/idle-resource-detector@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.idle_resource_detector",
+  "skill": {
+    "id": 27043,
+    "skillKey": "clawhub-idle-resource-detector",
+    "name": "Idle Resource Detector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "idle-resource-detector",
+    "url": "https://clawhub.ai/skills/idle-resource-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/idle-resource-detector-599cf88222a4647c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detect AWS idle and zombie resources consuming cost with zero meaningful utilization"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anmolnagpal",
+      "userId": "publishers:anmolnagpal",
+      "displayName": "Anmol Nagpal",
+      "image": "https://avatars.githubusercontent.com/u/4303310?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 356,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772341741558,
+      "changelog": "Initial release of AWS Idle & Zombie Resource Detector.\n\n- Detects various idle AWS resources, including stopped EC2s with attached EBS, unattached EBS volumes, unused Elastic IPs, idle load balancers, nearly empty S3 buckets, idle RDS, old orphaned snapshots, and unused NAT Gateways.\n- Provides a clear waste summary and estimated monthly waste.\n- Outputs a detailed resource table (ID, type, region, cost, last active).\n- Ranks resources by cleanup priority (High/Medium/Low) based on cost impact.\n- Supplies step-by-step runbooks and AWS CLI cleanup commands.\n- Flags critical resources and enforces confirmation requirements for safe deletions.\n- Calculates and displays estimated annual savings for identified idle resources.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:73cb94486b5cd83d0e81d2228c515f854ad4e6832adbb0473475da689a42729b"
+}

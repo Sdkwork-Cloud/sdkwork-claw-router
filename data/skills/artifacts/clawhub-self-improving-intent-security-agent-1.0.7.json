@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/self-improving-intent-security-agent@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_improving_intent_security_agent",
+  "skill": {
+    "id": 30478,
+    "skillKey": "clawhub-self-improving-intent-security-agent",
+    "name": "Self Improving Intent Security Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-improving-intent-security-agent",
+    "url": "https://clawhub.ai/skills/self-improving-intent-security-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-improving-intent-security-agent-b6cb30a0c1d93a1c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Documentation-first skill and workflow toolkit for intent-based security. Provides templates, examples, and local helper scripts for capturing intent, review..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nishantapatil3",
+      "userId": "s179e5rz3c760gcbp3n0dg9p9983k8nb",
+      "displayName": "Nishant Patil",
+      "image": "https://avatars.githubusercontent.com/u/15225432?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 272,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1774636288050,
+      "changelog": "- Clarified that this skill is documentation-first and does not include a production runtime enforcement engine.\n- Updated description and docs to emphasize templates, examples, and shell scripts for intent validation and audit workflows.\n- Added prominent warnings that automation, enforcement, and anomaly detection must be implemented by the host agent or user.\n- README and documentation restructured for clearer guidance on using templates and the provided workflow.\n- Shell scripts and templates operated locally only; review scripts before use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:929c40ac68102f7414b0a71e62694b936c829984cad3c0df196268c7836dad45"
+}

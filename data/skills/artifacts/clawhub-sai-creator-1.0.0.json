@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sai-creator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sai_creator",
+  "skill": {
+    "id": 54124,
+    "skillKey": "clawhub-sai-creator",
+    "name": "sai creator ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sai-creator",
+    "url": "https://clawhub.ai/skills/sai-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sai-creator-6385eb40ae902ca9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "SAI — frontend builder untuk pipeline intel OJS/PKP. Render candidate yang sudah PASS dari SENKU menjadi tiga deliverable. Pertama, halaman artikel HTML sema..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nijam727",
+      "userId": "s1741awkb2brhjsc3xg65tr7wd86avbg",
+      "displayName": "Nijam",
+      "image": "https://avatars.githubusercontent.com/u/219399800?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 53,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778210717398,
+      "changelog": "Initial release of the SAI frontend builder skill for OJS/PKP journal pipelines.\n\n- Renders validated article briefs into three deliverables: semantic HTML article, 7-slide carousel (two dimensions), and optional social captions.\n- Enforces strict content and accessibility standards, including WCAG AA, alt text requirements, and maximum CSS budget.\n- Emits a unified handoff JSON with validation metrics for each output.\n- Integrates CTA rotation, hallucination guard, and explicit input contract from SENKU.\n- Supports only HTML5 with Tailwind CDN or plain CSS, prioritizing fast, accessible, and SEO-ready output.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ff87c28833e307017418d0d47424575551ec484e475187e1dbe32140b2c02997"
+}

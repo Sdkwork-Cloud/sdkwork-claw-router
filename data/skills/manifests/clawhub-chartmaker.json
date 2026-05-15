@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26059,
+  "uuid": "skill-clawhub-chartmaker",
+  "skillKey": "clawhub-chartmaker",
+  "name": "Chartmaker",
+  "summary": "Visualize data with bar charts, sparklines, and progress bars in terminal. Use when plotting metrics, rendering inline charts, or transforming data.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chartmaker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain1",
+      "features": [
+        "Visualize data with bar charts, sparklines, and progress bars in terminal",
+        "Use when plotting metrics, rendering inline charts, or transforming data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chartmaker@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261107384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chartmaker",
+      "url": "https://clawhub.ai/skills/chartmaker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chartmaker",
+    "url": "https://clawhub.ai/skills/chartmaker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chartmaker-939b977334c04331.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chartmaker@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chartmaker-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:20d21d9577dfaf525aaa77cb5ed9e588af622ecad7696ddc0a6088f6ea336209",
+      "artifactSizeBytes": 1860
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T13:34:12.148Z"
+}

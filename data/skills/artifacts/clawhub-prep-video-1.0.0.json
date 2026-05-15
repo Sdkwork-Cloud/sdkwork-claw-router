@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prep-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prep_video",
+  "skill": {
+    "id": 22809,
+    "skillKey": "clawhub-prep-video",
+    "name": "Prep Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prep-video",
+    "url": "https://clawhub.ai/skills/prep-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prep-video-d0d46a4b64857e8a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Prepares a video by verifying all required assets from a script on Google Drive and triggers generation or reports missing files."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "scotteverduim",
+      "userId": "publishers:scotteverduim",
+      "displayName": "ScottEverduim",
+      "image": "https://avatars.githubusercontent.com/u/196445480?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 450,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772638962710,
+      "changelog": "Initial release of prep-video skill:\n\n- Adds /prep-video <script_id> command to prepare videos.\n- Downloads and parses the video script JSON from Google Drive.\n- Checks for existence of required assets (voiceover and A-roll clips).\n- Confirms readiness or reports missing assets with file locations.\n- Triggers video generation if all assets are present.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f6370d1ab46e5e9b3b0eb61f806b7a89c6aa212288cdcf8fb4eac231113bfa6a"
+}

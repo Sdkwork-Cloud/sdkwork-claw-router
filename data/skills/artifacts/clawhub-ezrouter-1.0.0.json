@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ezrouter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ezrouter",
+  "skill": {
+    "id": 51051,
+    "skillKey": "clawhub-ezrouter",
+    "name": "https://openrouter.ezsite.ai - Unified LLM API — one key for Claude, GPT, Gemini. 2x credits, auto-failover, OpenAI-compatible."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ezrouter",
+    "url": "https://clawhub.ai/skills/ezrouter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ezrouter-b6436fc516ec1cad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set up and use EZRouter — unified LLM API with one key for Claude, GPT, and Gemini. 2x credits on every purchase. Native API compatibility for each provider."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luntanwang",
+      "userId": "publishers:luntanwang",
+      "displayName": "luntanwang",
+      "image": "https://avatars.githubusercontent.com/u/8469467?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 506,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772421837003,
+      "changelog": "- Initial release of ezrouter skill.\n- One API key enables unified access to Claude, GPT, and Gemini through provider-compatible endpoints.\n- Instantly receive 2x credits on every payment (e.g. pay $5, get $10 in credits).\n- Supports seamless failover between providers; no subscription required.\n- Fully compatible with Anthropic, OpenAI, and Gemini SDKs and tools.\n- Dynamic model listing and clear integration examples provided for bash, Python, and TypeScript.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3d9de861e88a63e490b502c0758cb58bb36349da897931f369c8c7194f5165e4"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-downloader-tool@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_downloader_tool",
+  "skill": {
+    "id": 18389,
+    "skillKey": "clawhub-video-downloader-tool",
+    "name": "Universal Video Downloader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-downloader-tool",
+    "url": "https://clawhub.ai/skills/video-downloader-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-downloader-tool-54dd5cf863538208.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Universal video downloader supporting multiple platforms (Douyin, Bilibili, YouTube, TikTok, etc.). Can download videos by URL or search by keyword (Douyin s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wwkgit",
+      "userId": "publishers:wwkgit",
+      "displayName": "wwkGit",
+      "image": "https://avatars.githubusercontent.com/u/45025686?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 485,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773374655760,
+      "changelog": "Initial release - Support for Douyin, Bilibili, YouTube, TikTok and more",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:51228cd6ffe242e6b3f962b345d43bf6eeb99a71de7ba38e385c73515562015e"
+}

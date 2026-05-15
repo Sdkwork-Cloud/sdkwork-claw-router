@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32211,
+  "uuid": "skill-clawhub-vendor-payment-optimizer",
+  "skillKey": "clawhub-vendor-payment-optimizer",
+  "name": "Vendor Payment Optimizer",
+  "summary": "Optimize vendor payment timing to maximize cash flow and capture early payment discounts. Analyzes open AP, scores discount opportunities (2/10 net 30, etc.)...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vendor_payment_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "samledger67-dotcom",
+      "features": [
+        "Optimize vendor payment timing to maximize cash flow and capture early payment discounts",
+        "Analyzes open AP, scores discount opportunities (2/10 net 30, etc.)..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vendor-payment-optimizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261800271?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vendor-payment-optimizer",
+      "url": "https://clawhub.ai/skills/vendor-payment-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vendor-payment-optimizer",
+    "url": "https://clawhub.ai/skills/vendor-payment-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vendor-payment-optimizer-cbe02918dad50e3a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vendor-payment-optimizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vendor-payment-optimizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a1c86da190d5c3b414419fec9aff6d0864a52b8d87a11843d58decf82fec8ee",
+      "artifactSizeBytes": 2100
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T19:22:28.211Z"
+}

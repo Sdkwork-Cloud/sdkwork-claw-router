@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71841,
+  "uuid": "skill-clawhub-momondo",
+  "skillKey": "clawhub-momondo",
+  "name": "Momondo",
+  "summary": "全球旅行搜索引擎，提供航班、酒店和租车比价，支持价格提醒和灵活日期查找最优旅行方案。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.momondo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "全球旅行搜索引擎，提供航班、酒店和租车比价，支持价格提醒和灵活日期查找最优旅行方案。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/momondo@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "momondo",
+      "url": "https://clawhub.ai/skills/momondo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "momondo",
+    "url": "https://clawhub.ai/skills/momondo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/momondo-8f487b3ae7e259d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/momondo@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-momondo-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9f8d0acf15caa3d122a8d6c680b4bb576cff9c80464c3c37784a42d815fc93a4",
+      "artifactSizeBytes": 2138
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T23:24:16.259Z"
+}

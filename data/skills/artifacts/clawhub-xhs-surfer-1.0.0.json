@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xhs-surfer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhs_surfer",
+  "skill": {
+    "id": 71518,
+    "skillKey": "clawhub-xhs-surfer",
+    "name": "Xhs Surfer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhs-surfer",
+    "url": "https://clawhub.ai/skills/xhs-surfer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhs-surfer-85434eab782803ee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小红书智能浏览器自动化工具，AI驱动的社区冲浪和互动。 支持自动搜索、浏览、点赞、评论、关注等操作。 当用户要求浏览小红书、搜索内容、自动互动时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xjlgod",
+      "userId": "publishers:xjlgod",
+      "displayName": "Jingliu",
+      "image": "https://avatars.githubusercontent.com/u/42763775?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 366,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773479314513,
+      "changelog": "xhs-surfer v1.0.0 — 小红书智能自动冲浪和互动工具首发\n\n- 首次发布：支持在小红书上自动搜索、浏览、点赞、评论、关注等一系列互动操作\n- 提供自然语言控制（run）及结构化命令（execute）两种接口\n- 灵活行为配置，包括浏览速度、互动概率、安全限制\n- 支持登录、动态冲浪、实时指令和高级营销冲浪\n- 完整API文档及多种使用示例\n- 适配 Windows、macOS、Linux，兼容 OpenClaw Agent 和独立使用",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:79613e9bf1e00cb1cb735023177f5085aa1360d371525fbdbcf8e3b3f627f556"
+}

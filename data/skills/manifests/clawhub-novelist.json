@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73125,
+  "uuid": "skill-clawhub-novelist",
+  "skillKey": "clawhub-novelist",
+  "name": "小说家 — 网文写作全流程技能",
+  "summary": "精通网文小说的世界观构筑、剧情设计、场景渲染与文字润色，助力完成高质量网文创作全流程。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.novelist",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GraysonLi-Cat",
+      "features": [
+        "精通网文小说的世界观构筑、剧情设计、场景渲染与文字润色，助力完成高质量网文创作全流程。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/novelist@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271472251?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "novelist",
+      "url": "https://clawhub.ai/skills/novelist"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "novelist",
+    "url": "https://clawhub.ai/skills/novelist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/novelist-b905d20cdaf223f8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/novelist@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-novelist-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2386119c82fed3a57bf3596ee3a21862f86c3019dd5651b4d229f47c1046a71c",
+      "artifactSizeBytes": 2158
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T03:12:06.659Z"
+}

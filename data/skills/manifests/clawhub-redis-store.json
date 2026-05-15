@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9961,
+  "uuid": "skill-clawhub-redis-store",
+  "skillKey": "clawhub-redis-store",
+  "name": "Redis",
+  "summary": "Use Redis effectively for caching, queues, and data structures with proper expiration and persistence.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.redis_store",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Use Redis effectively for caching, queues, and data structures with proper expiration and persi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/redis-store@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "redis-store",
+      "url": "https://clawhub.ai/skills/redis-store"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "redis-store",
+    "url": "https://clawhub.ai/skills/redis-store",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/redis-store-8745a8cf87233d73.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/redis-store@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-redis-store-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:abdbd4f44ab30ae906d46c70472b2560ad18224cd188d39f96a2c676bf37d1d9",
+      "artifactSizeBytes": 1799
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T02:41:40.218Z"
+}

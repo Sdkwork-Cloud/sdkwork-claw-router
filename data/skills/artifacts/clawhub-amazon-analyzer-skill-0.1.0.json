@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-analyzer-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_analyzer_skill",
+  "skill": {
+    "id": 23154,
+    "skillKey": "clawhub-amazon-analyzer-skill",
+    "name": "APIClaw Amazon Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-analyzer-skill",
+    "url": "https://clawhub.ai/skills/amazon-analyzer-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-analyzer-skill-8558365a785e5f32.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find winning Amazon products with 14 battle-tested selection strategies & 6-dimension risk assessment. Backed by 200M+ product database. Use when user asks a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kyle-srp",
+      "userId": "s17dncwa7aendp1pmsg0wsjq3h83nqz9",
+      "displayName": "kyle-srp",
+      "image": "https://avatars.githubusercontent.com/u/177705073?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 250,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773732450959,
+      "changelog": "Version 0.1.0 — Initial Release\n\n- Introduces the amazon-analyzer-skill, enabling comprehensive Amazon product research powered by the APIClaw API.\n- Supports 14 product selection strategies and a 6-dimensional risk assessment using a 200M+ product database.\n- Handles a wide range of seller queries, including ASIN lookup, BSR analysis, competitor and market research, pricing, review analysis, and listing optimization.\n- Requires an APICLAW_API_KEY, with secure handling via environment variable or local config file.\n- Standardizes API calls and provides detailed usage guidance and field references for accurate data retrieval.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:53d96b0243e88fbb2728560fd9140c57865c4565b4046a8a58f123549b9c7fa9"
+}

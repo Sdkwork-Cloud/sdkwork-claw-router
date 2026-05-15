@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawhub-quarantine-installer@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_quarantine_installer",
+  "skill": {
+    "id": 56098,
+    "skillKey": "clawhub-clawhub-quarantine-installer",
+    "name": "ClawHub Quarantine Installer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-quarantine-installer",
+    "url": "https://clawhub.ai/skills/clawhub-quarantine-installer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-quarantine-installer-608abb10b447a389.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Instala e audita skills do ClawHub em um ambiente de quarentena isolado para análise de segurança, permitindo revisar riscos antes de promover para produção...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alessandropcostabr",
+      "userId": "s17cd88cpsbdk489mxfazhmg5h84xq5x",
+      "displayName": "alessandropcostabr",
+      "image": "https://avatars.githubusercontent.com/u/191734104?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 723,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1771669491053,
+      "changelog": "Correção de paths, adição do script de auditoria e melhorias na documentação.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c522758d82d746a0cfbe22fd8a603bed5e458d96f4e8f62c5179c874123cac25"
+}

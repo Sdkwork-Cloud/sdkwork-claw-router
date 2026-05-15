@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/classcharts@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.classcharts",
+  "skill": {
+    "id": 28881,
+    "skillKey": "clawhub-classcharts",
+    "name": "ClassCharts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "classcharts",
+    "url": "https://clawhub.ai/skills/classcharts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/classcharts-339fe5da0458c524.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query and interact with ClassCharts (UK education classroom management) via the classcharts-api JS library. Use when the user mentions ClassCharts, school be..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "m0nkmaster",
+      "userId": "s177rkwg2hry4pdmperpeqa76x83r5wt",
+      "displayName": "Rob MacDonald",
+      "image": "https://avatars.githubusercontent.com/u/1137937?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 315,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775328644118,
+      "changelog": "- Added environment variable requirements (CLASSCHARTS_EMAIL, CLASSCHARTS_PASSWORD, CLASSCHARTS_CODE) and install instructions to metadata.\n- Specified Node.js and npm as requirements.\n- No changes to functionality or API usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a9f37287413949803fdf6a25e1bba9adef8f550e11fbdd7e6253f8d1e1f917b6"
+}

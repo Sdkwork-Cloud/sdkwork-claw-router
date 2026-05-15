@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hermes-learning-loop@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hermes_learning_loop",
+  "skill": {
+    "id": 32300,
+    "skillKey": "clawhub-hermes-learning-loop",
+    "name": "Hermes Learning Loop"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hermes-learning-loop",
+    "url": "https://clawhub.ai/skills/hermes-learning-loop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hermes-learning-loop-5ae12694f79141aa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Self-improving learning loop inspired by Hermes Agent. Automatically extracts successful workflows, creates skills, and persists knowledge across sessions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mystour",
+      "userId": "s175vh2pbd6c63hadkzvzxff11843nh5",
+      "displayName": "陈子昂",
+      "image": "https://avatars.githubusercontent.com/u/122095082?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 254,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775231587012,
+      "changelog": "Initial release: Implements Hermes Agent's self-improving learning loop for OpenClaw. Features periodic nudge, skill extraction, 4-layer memory, curated memory, and progressive disclosure. Inspired by NousResearch/hermes-agent.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0e857c58e763c202561eefaba882cb6bf3da5c3c9cf507057adfcda30785df96"
+}

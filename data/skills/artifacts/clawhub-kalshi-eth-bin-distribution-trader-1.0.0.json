@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kalshi-eth-bin-distribution-trader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kalshi_eth_bin_distribution_trader",
+  "skill": {
+    "id": 52431,
+    "skillKey": "clawhub-kalshi-eth-bin-distribution-trader",
+    "name": "Kalshi ETH Bin Distribution Trader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kalshi-eth-bin-distribution-trader",
+    "url": "https://clawhub.ai/skills/kalshi-eth-bin-distribution-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kalshi-eth-bin-distribution-trader-7d8a949b4e59bfd1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trades ETH price bin markets on Kalshi by exploiting the constraint that all bins must sum to 100%. When the sum deviates, identifies mispriced bins and trad..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "diagnostikon",
+      "userId": "s17bf2qvfsqakddyh674vczxqs83fcwb",
+      "displayName": "diagnostikon",
+      "image": "https://avatars.githubusercontent.com/u/17246180?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775151010014,
+      "changelog": "Kalshi ETH Bin Distribution Trader v1.0.0\n\n- Initial release of the skill for trading ETH price bin markets on Kalshi.\n- Implements a trading strategy exploiting deviations from the 100% sum constraint on price bins.\n- Includes built-in risk controls and configurable parameters via the Simmer UI.\n- Defaults to safe paper trading mode; real trades only enabled with `--live`.\n- No external pricing data needed; uses internal market consistency for trade signals.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5869a96d8c59900a73e1b11b8b12ef31edf39cd45405647ac7f7d2c8efc5b9e7"
+}

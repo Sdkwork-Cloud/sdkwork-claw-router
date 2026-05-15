@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gateway-service@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gateway_service",
+  "skill": {
+    "id": 22735,
+    "skillKey": "clawhub-gateway-service",
+    "name": "Gateway Service"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gateway-service",
+    "url": "https://clawhub.ai/skills/gateway-service",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gateway-service-b228d355a22ab8f0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Installs OpenClaw Gateway as a Windows scheduled task to auto-restart on crash and enable automatic startup with admin rights."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "suncxw-creator",
+      "userId": "publishers:suncxw-creator",
+      "displayName": "suncxw-creator",
+      "image": "https://avatars.githubusercontent.com/u/247308666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 452,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772573053212,
+      "changelog": "- Added Windows Scheduled Task support for OpenClaw Gateway to enable automatic restart after crashes.\n- Introduced gateway service management commands: install, start, stop, restart, and status.\n- Service starts automatically on system boot and restarts if the process exits unexpectedly.\n- Provided troubleshooting steps and common use cases for always-on gateway operation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7e10936b57d916fdce61021a7d064701d88169ef881d06c850941aaf4086d3c3"
+}

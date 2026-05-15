@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61956,
+  "uuid": "skill-clawhub-chuyao-aa",
+  "skillKey": "clawhub-chuyao-aa",
+  "name": "Chuyao Aa",
+  "summary": "摩天轮开放接口二次封装技能。当用户需要对接摩天轮(MTL)开放平台接口、创建MTL HTTP接口、封装摩天轮API时触发。支持自动检测并添加mtl-open-sdk-consumer依赖、初始化ApiClient Bean、创建MtlRestController、根据原生接口定义生成HTTP接口代码。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chuyao_aa",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1688AiInfra",
+      "features": [
+        "摩天轮开放接口二次封装技能。当用户需要对接摩天轮(MTL)开放平台接口、创建MTL HTTP接口、封装摩天轮API时触发。支持自动检测并添加mtl-open-sdk-consumer依赖、初."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chuyao-aa@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266033968?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chuyao-aa",
+      "url": "https://clawhub.ai/skills/chuyao-aa"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chuyao-aa",
+    "url": "https://clawhub.ai/skills/chuyao-aa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chuyao-aa-a190d8a06d970ccc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chuyao-aa@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chuyao-aa-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8631caf919a2a51d762af93912b2e74e8d1103f419e98f66a14ace0846469aa2",
+      "artifactSizeBytes": 2484
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T11:37:01.982Z"
+}

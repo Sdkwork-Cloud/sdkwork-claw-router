@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60922,
+  "uuid": "skill-clawhub-skill-list",
+  "skillKey": "clawhub-skill-list",
+  "name": "skill-list",
+  "summary": "列出 OpenClaw Skills：以表格形式展示所有 skills、显示功能介绍、找出功能重复的 skills。Use when: 用户想知道安装了哪些 skills、某个 skill 是做什么的、或者想找出重复功能的 skills。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_list",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "damienCronw",
+      "features": [
+        "列出 OpenClaw Skills：以表格形式展示所有 skills、显示功能介绍、找出功能重复的 skills。Use when: 用户想知道安装了哪些 skills、某个 skill."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-list@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128512183?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-list",
+      "url": "https://clawhub.ai/skills/skill-list"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-list",
+    "url": "https://clawhub.ai/skills/skill-list",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-list-522c730ea239e7eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-list@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-list-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fd4dd538ce36aa32a543c038b95a2fcdf6afb598c139afea327116936c146c87",
+      "artifactSizeBytes": 2304
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T04:03:24.842Z"
+}

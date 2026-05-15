@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15451,
+  "uuid": "skill-clawhub-a2a-protocol",
+  "skillKey": "clawhub-a2a-protocol",
+  "name": "A2a Protocol",
+  "summary": "Agent2Agent (A2A) Protocol implementation - communicate with other AI agents",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a2a_protocol",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ivan Cetta",
+      "features": [
+        "Agent2Agent (A2A) Protocol implementation",
+        "communicate with other AI agents"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/a2a-protocol@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2672456?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "a2a-protocol",
+      "url": "https://clawhub.ai/skills/a2a-protocol"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a2a-protocol",
+    "url": "https://clawhub.ai/skills/a2a-protocol",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a2a-protocol-d8cc84e1e6dd504d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/a2a-protocol@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-a2a-protocol-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4ad52972e1d87684b9acf6d528d0a5626a67d115f769fb268835eb4379950567",
+      "artifactSizeBytes": 1799
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T18:12:36.230Z"
+}

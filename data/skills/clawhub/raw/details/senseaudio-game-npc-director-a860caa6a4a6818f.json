@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "senseaudio-game-npc-director",
+    "displayName": "senseaudio-game-npc-director",
+    "summary": "Use when a game, interactive story, or virtual world needs reusable NPC voice behavior, including fixed voice identity, catchphrases, relationship-aware dial...",
+    "tags": {
+      "latest": "1.0.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 359,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1773734858440,
+    "updatedAt": 1778310829960
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1774168637360,
+    "changelog": "- Major terminology update: \"SenseAudio\" renamed to \"AudioClaw\" throughout all user-facing documentation and skill descriptions.\n- `scripts/run_player_voice_npc_pipeline.py` now supports both `--input-audio` and `--input-text`, enabling seamless NPC reply generation from either player speech or text.\n- NPC voice reply mode now defaults to voice/audio unless the user explicitly requests text-only output.\n- Detailed session management and reply mode logic clarified, ensuring NPC dialogue mode stays \"sticky\" for ongoing turns.\n- API key lookup and injection updated: TTS scripts now default to using `SENSEAUDIO_API_KEY`, with improved logic for real API key substitution during voice synthesis. ASR script behavior remains unchanged.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "kikidouloveme79",
+    "userId": "s1799r8kj1jk2d6bjcn61ycmx583hqp7",
+    "displayName": "Wu Ruixiao",
+    "image": "https://avatars.githubusercontent.com/u/62665119?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778310829960
+  }
+}

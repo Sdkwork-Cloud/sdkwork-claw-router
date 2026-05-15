@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-anything@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_anything",
+  "skill": {
+    "id": 8556,
+    "skillKey": "clawhub-openclaw-anything",
+    "name": "Comprehensive skill for installing, configuring, and managing the OpenClaw ecosystem (Gateway, Channels, Models, Automation, No."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-anything",
+    "url": "https://clawhub.ai/skills/openclaw-anything",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-anything-3ebbd12c871ecb48.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw CLI wrapper — gateway, channels, models, agents, nodes, browser, memory, security, automation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "doanbactam",
+      "userId": "s17an2rtbadytrzfa1ky4hz4s1843dm2",
+      "displayName": "doanbactam",
+      "image": "https://avatars.githubusercontent.com/u/24356000?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 8139,
+      "installsAllTime": 96,
+      "installsCurrent": 89,
+      "stars": 29,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1772162300037,
+      "changelog": "openclaw-anything 2.0.0\n\n- Expanded and streamlined documentation with improved quick references and global flags list.\n- Clarified security model, distinguishing low-risk and high-risk commands with specific environmental gates.\n- Updated and detailed command routing, clearly separating low-risk and high-risk operations.\n- Simplified prerequisites and non-goals for clearer onboarding and maintenance.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:97f115164a8998152fadd9a300e94d7c78479b1683149458e98ddfb9683517cd"
+}

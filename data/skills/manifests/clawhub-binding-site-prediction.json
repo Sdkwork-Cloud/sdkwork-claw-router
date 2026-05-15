@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33595,
+  "uuid": "skill-clawhub-binding-site-prediction",
+  "skillKey": "clawhub-binding-site-prediction",
+  "name": "Binding site prediction",
+  "summary": "Binding-site and pocket prediction workflows using P2Rank, AF2BIND, and fpocket through SciMiner.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.binding_site_prediction",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SciMiner",
+      "features": [
+        "Binding-site and pocket prediction workflows using P2Rank, AF2BIND, and fpocket through SciMine."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/binding-site-prediction@1.0.2",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/binding-site-prediction/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "binding-site-prediction",
+      "url": "https://clawhub.ai/skills/binding-site-prediction"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "binding-site-prediction",
+    "url": "https://clawhub.ai/skills/binding-site-prediction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/binding-site-prediction-8396fe1177273a8c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/binding-site-prediction@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-binding-site-prediction-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e1c9e2c6c8a1a39e3cc20a4309402f07043a1a9935428da7717dcc0187c74430",
+      "artifactSizeBytes": 2621
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T16:08:03.004Z"
+}

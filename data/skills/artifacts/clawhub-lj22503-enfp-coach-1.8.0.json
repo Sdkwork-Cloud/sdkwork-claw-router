@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lj22503-enfp-coach@1.8.0",
+  "version": "1.8.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lj22503_enfp_coach",
+  "skill": {
+    "id": 64575,
+    "skillKey": "clawhub-lj22503-enfp-coach",
+    "name": "Enfp Coach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lj22503-enfp-coach",
+    "url": "https://clawhub.ai/skills/lj22503-enfp-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lj22503-enfp-coach-2a4a22fab044a8dc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "［何时使用］当用户明确说\"我是 ENFP\"且需要成长/职业/学习指导时触发。触发关键词：\"我是 ENFP\"、\"ENFP 成长\"、\"ENFP 职业\"、\"ENFP 迷茫\"、\"分析瘫痪\"、\"想太多做太少\"。不触发：纯技术任务（如写代码）、非 ENFP 用户主动说明（如\"我是 ENFP\"）、模糊情绪表达（如\"心情不好\"）..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lj22503",
+      "userId": "s17dhbyrvq4rmpz7c0cg1y9yrs83nsxz",
+      "displayName": "lj22503",
+      "image": "https://avatars.githubusercontent.com/u/170225356?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.8.0",
+      "createdAt": 1776422412134,
+      "changelog": "ENFP Coach v1.8.0 - Change Summary\n\n- Added new \"ENFP 专属进阶策略\"专属行动建议板块，包括承诺过滤器、项目收尾仪式、情绪天气预报三条实操微习惯，每条包含启动方法、步骤、预期效果与适用时机。\n- 原有结构、主要功能、双模式逻辑、触发条件和使用边界保持不变。\n- 未调整触发关键词和适用范围，现有话术与自动检测机制保持一致。\n- 此更新强化了ENFP用户的实操性成长支持，助力每日小进步。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4efe0e5f60bff05d7e589e2b4c1fae00b0964c6fca7ad34b00c299c002f3a2c8"
+}

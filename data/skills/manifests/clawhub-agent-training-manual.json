@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68553,
+  "uuid": "skill-clawhub-agent-training-manual",
+  "skillKey": "clawhub-agent-training-manual",
+  "name": "AI Agent Training Manual",
+  "summary": "AI 代理新员工培训手册。包含心态原则、工作区规范、沟通规范、工具使用、定时任务、血泪教训、推荐技能清单、入职检查清单。适用于新 OpenClaw 代理快速上手，避免常见错误。当新代理加入团队、需要培训指导、或想了解 AI 代理最佳实践时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_training_manual",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "harrot90-code",
+      "features": [
+        "AI 代理新员工培训手册。包含心态原则、工作区规范、沟通规范、工具使用、定时任务、血泪教训、推荐技能清单、入职检查清单。适用于新 OpenClaw 代理快速上手，避免常见错误。当新代理加入团."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-training-manual@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266251749?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-training-manual",
+      "url": "https://clawhub.ai/skills/agent-training-manual"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-training-manual",
+    "url": "https://clawhub.ai/skills/agent-training-manual",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-training-manual-c70ab959e5055d5d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-training-manual@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-training-manual-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:57d74cca910f1a26849f6261bc38a772fea7419dead302fc5e6846609e61a604",
+      "artifactSizeBytes": 2208
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T09:36:23.473Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55099,
+  "uuid": "skill-clawhub-deeplegal",
+  "skillKey": "clawhub-deeplegal",
+  "name": "DeepLegal Chinese Contract",
+  "summary": "[user] Business Legal Counsel / CLO level contract drafting, review, and legal risk assessment. Handles domestic Chinese contracts (中文), cross-border contrac...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deeplegal",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hekuangviolet-ai",
+      "features": [
+        "[user] Business Legal Counsel / CLO level contract drafting, review, and legal risk assessment",
+        "Handles domestic Chinese contracts (中文), cross-border contrac..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deeplegal@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274382101?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deeplegal",
+      "url": "https://clawhub.ai/skills/deeplegal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deeplegal",
+    "url": "https://clawhub.ai/skills/deeplegal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deeplegal-c1ffa9428593dead.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deeplegal@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-deeplegal-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b40cbc7754966511ab4eecb269f35e454a6aae99a8b78d2896df76e9e2a8f3d2",
+      "artifactSizeBytes": 2561
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T06:42:20.593Z"
+}

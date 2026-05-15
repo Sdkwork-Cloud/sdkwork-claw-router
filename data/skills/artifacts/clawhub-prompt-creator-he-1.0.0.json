@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prompt-creator-he@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_creator_he",
+  "skill": {
+    "id": 67089,
+    "skillKey": "clawhub-prompt-creator-he",
+    "name": "Prompt Creator Hebrew"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-creator-he",
+    "url": "https://clawhub.ai/skills/prompt-creator-he",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-creator-he-a6326356f672728b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "עוזר ליצירת פרומפטים מקצועיים בעברית, עם דגש על תוכן יהודי, ריאליסטי וקולנועי לשימוש בכלי AI לתמונות ווידאו."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jojobok",
+      "userId": "publishers:jojobok",
+      "displayName": "jojobok",
+      "image": "https://avatars.githubusercontent.com/u/161514634?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 221,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773820688390,
+      "changelog": "- Initial release of \"Prompt Creator HE\" for professional prompt creation in Hebrew and English.\n- Focus on realistic, cinematic, and visually detailed prompts, with specialties in Jewish and Torah-related content.\n- Default responses are in Hebrew, unless English is specifically requested.\n- Provides clear explanations, copy-ready prompts, and variations for images and video when relevant.\n- Includes guidelines for respectful, authentic descriptions, especially for biblical or historical content.\n- Adapts output for social media formats (e.g., 9:16 aspect ratio) and offers both short and enhanced prompt versions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f1b35ee8dab9977284f230453d3b50983f80719918ab36e794ea0c0a07158a75"
+}

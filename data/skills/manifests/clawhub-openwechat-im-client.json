@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18061,
+  "uuid": "skill-clawhub-openwechat-im-client",
+  "skillKey": "clawhub-openwechat-im-client",
+  "name": "Openwechat Im Client",
+  "summary": "Guide OpenClaw to use openwechat-claw with server-authoritative chat flow, fixed local data persistence under ../openwechat_im_client, mandatory SSE-first tr...",
+  "version": "1.0.29",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openwechat_im_client",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zhaobudaoyuema",
+      "features": [
+        "Guide OpenClaw to use openwechat-claw with server-authoritative chat flow, fixed local data per."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openwechat-im-client@1.0.29",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/66905526?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openwechat-im-client",
+      "url": "https://clawhub.ai/skills/openwechat-im-client"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openwechat-im-client",
+    "url": "https://clawhub.ai/skills/openwechat-im-client",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openwechat-im-client-a6e3afad35473673.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openwechat-im-client@1.0.29",
+      "artifactUrl": "data/skills/artifacts/clawhub-openwechat-im-client-1.0.29.json",
+      "version": "1.0.29",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2fea0c3b8a4c89cd4e1395ffd95c8f85f257664632cd09c01a4be097031bf6fa",
+      "artifactSizeBytes": 2530
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T10:34:40.164Z"
+}

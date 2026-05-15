@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cpbox-local-descriptions@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cpbox_local_descriptions",
+  "skill": {
+    "id": 50341,
+    "skillKey": "clawhub-cpbox-local-descriptions",
+    "name": "cpbox-local-descriptions"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cpbox-local-descriptions",
+    "url": "https://clawhub.ai/skills/cpbox-local-descriptions",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cpbox-local-descriptions-b3a5b78e3017a9f6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "USE FOR getting AI-generated POI text descriptions. Requires POI IDs obtained from web-search (with result_filter=locations). Returns markdown descriptions g..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sprintmint",
+      "userId": "publishers:sprintmint",
+      "displayName": "springmint",
+      "image": "https://avatars.githubusercontent.com/u/166361573?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 313,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773991901353,
+      "changelog": "Initial\n  publish",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:36605118bf68d042bbabc1b28ca9c26ca845a3a1c6116cd899fe8dd7b2f6b41e"
+}

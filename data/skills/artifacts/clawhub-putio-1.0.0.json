@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/putio@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.putio",
+  "skill": {
+    "id": 13485,
+    "skillKey": "clawhub-putio",
+    "name": "put.io (kaput CLI)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "putio",
+    "url": "https://clawhub.ai/skills/putio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/putio-832c6dcc80dafdbe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage a put.io account via the kaput CLI (transfers, files, search) — hoist the mainsail, add magnets/URLs, and check transfer status; best paired with the chill-institute skill."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "baanish",
+      "userId": "s17eb791g1b5jezjemtd6ghd5985qn9q",
+      "displayName": "Aanish Bhirud",
+      "image": "https://avatars.githubusercontent.com/u/47579874?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1846,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769239159526,
+      "changelog": "Initial release. Hoist the mainsail: add magnets/URLs and track your cargo.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e88e43ef8c67f904b82845f5dfdeb4e045240beb824c80557307b47e853bde12"
+}

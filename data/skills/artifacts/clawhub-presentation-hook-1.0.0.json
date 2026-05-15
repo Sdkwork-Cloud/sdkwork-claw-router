@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/presentation-hook@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.presentation_hook",
+  "skill": {
+    "id": 42435,
+    "skillKey": "clawhub-presentation-hook",
+    "name": "Presentation Hook"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "presentation-hook",
+    "url": "https://clawhub.ai/skills/presentation-hook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/presentation-hook-41aa3d0a5827a4ad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Creates engaging opening statements and powerful closings for medical."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774861005518,
+      "changelog": "Initial release of presentation-hook.\n\n- Generates engaging opening statements and memorable closings for medical presentations.\n- Provides clear input parameters for topic, audience, and type (opening or closing).\n- Outputs hooks in a structured JSON format, including alternatives.\n- Includes reproducible workflow, risk assessment, and security checklist.\n- No external dependencies beyond Python 3.10+.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:078a0f002ab69c26b95dd9d3a799fad423fb467ccddf1bdc6f3bc4bd57c3310c"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cli-vercel@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cli_vercel",
+  "skill": {
+    "id": 24787,
+    "skillKey": "clawhub-cli-vercel",
+    "name": "Vercel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cli-vercel",
+    "url": "https://clawhub.ai/skills/cli-vercel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cli-vercel-c3e702e29361b6c7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deploy and manage Vercel projects via CLI - deploy, env, domains, logs, teams. Use when user mentions 'vercel', 'deploy', 'vercel project', or wants to inter..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "melvynx",
+      "userId": "s171qar4x43k9fxmt5aar5mn0x83n177",
+      "displayName": "Melvyn",
+      "image": "https://avatars.githubusercontent.com/u/56388157?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 403,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773160695808,
+      "changelog": "Initial release of the vercel CLI skill:\n\n- Deploy and manage Vercel projects via CLI, including deployment, environments, domains, logs, and teams.\n- Comprehensive command reference covering deploy, environment variables, domains, projects, logs, teams, and local development.\n- Usage guidance for installation, authentication, and recommended flags for programmatic usage.\n- Helpful tables summarizing available commands and their descriptions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4c36ecd4e2d8eb63be34fdff3b17d747c30a01a99eda377f8766ae1f76d980c9"
+}

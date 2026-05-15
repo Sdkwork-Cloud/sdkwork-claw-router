@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45990,
+  "uuid": "skill-clawhub-opendexter",
+  "skillKey": "clawhub-opendexter",
+  "name": "OpenDexter",
+  "summary": "Use OpenDexter to search, price-check, and pay for any x402 API. Trigger whenever the user wants to find paid APIs, call an x402 endpoint, check pricing, see...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opendexter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BranchM",
+      "features": [
+        "Use OpenDexter to search, price-check, and pay for any x402 API",
+        "Trigger whenever the user wants to find paid APIs, call an x402 endpoint, check pricing, see..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/opendexter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121578862?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "opendexter",
+      "url": "https://clawhub.ai/skills/opendexter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opendexter",
+    "url": "https://clawhub.ai/skills/opendexter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opendexter-9fd371f7bfa58dfa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/opendexter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-opendexter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:afa3c312aaf8aa67092fdf82e6da784b51019661b4d6f0960086f54afddaa9f1",
+      "artifactSizeBytes": 1931
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T01:18:04.859Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/target-intelligence-zhcn@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.target_intelligence_zhcn",
+  "skill": {
+    "id": 70195,
+    "skillKey": "clawhub-target-intelligence-zhcn",
+    "name": "Target Intelligence Zhcn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "target-intelligence-zhcn",
+    "url": "https://clawhub.ai/skills/target-intelligence-zhcn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/target-intelligence-zhcn-f8e060748110572f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "用户通常查询特定的生物医学靶点，可能包括相关的生物学和药学详情。 可能强调与靶点密切相关的实体、标签和信息。 返回的靶点情报报告应根据用户查询，在靶点本身详情之外，涵盖针对该靶点的药物信息。 当查询涉及以下内容时加载本技能： - 靶点结构与生物学功能 - 靶点管线的竞争情报 - 靶向药物的研发进展 - 靶点的成药..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "patsnaplifescience",
+      "userId": "s178w3pk85rejw2tje9nd1jras85eg1c",
+      "displayName": "XK",
+      "image": "https://avatars.githubusercontent.com/u/275897758?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 87,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1778145433650,
+      "changelog": "target-intelligence-zhcn v1.0.3\n\n- 更新 SKILL.md，新增详细的 MCP 服务接入与配置说明，优化为“Setup Guide”模块，包含 API Key 获取、服务命令和常见帮助资源。\n- 明确当前依赖与推荐的 MCP 服务，指明必要服务与扩展服务区分，提高部署指引的清晰度。\n- 保持原有“靶点情报技能指南”与分析流程不变，功能无变动，仅文档优化与元数据 version 调整。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1c012ae4d4dd588592198e6108af6f1bc42625e4486cfe8d79fc5c2e3401e7ea"
+}

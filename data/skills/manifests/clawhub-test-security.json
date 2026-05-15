@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53336,
+  "uuid": "skill-clawhub-test-security",
+  "skillKey": "clawhub-test-security",
+  "name": "Don't download",
+  "summary": "AI image generation, editing, and background removal API via Bria.ai — remove backgrounds to get transparent PNGs and cutouts, generate images from text prom...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_security",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Levdavid1",
+      "features": [
+        "AI image generation, editing, and background removal API via Bria.ai — remove backgrounds to ge."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/test-security@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/125185764?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "test-security",
+      "url": "https://clawhub.ai/skills/test-security"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-security",
+    "url": "https://clawhub.ai/skills/test-security",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-security-5b7b4c9fd815bff8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/test-security@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-test-security-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:63cf3a5933d5bf8773ade3b29520b1e7cb51ef353b3cc03b62d6dc90c82b34fa",
+      "artifactSizeBytes": 2468
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T09:06:06.426Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38672,
+  "uuid": "skill-clawhub-kalshi-fed-futures-arb-trader",
+  "skillKey": "clawhub-kalshi-fed-futures-arb-trader",
+  "name": "Kalshi Fed Futures Arb Trader",
+  "summary": "Compares CME FedWatch implied rate probabilities to Kalshi Fed rate decision market prices and trades when divergence exceeds threshold. Requires SIMMER_API_...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kalshi_fed_futures_arb_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "diagnostikon",
+      "features": [
+        "Compares CME FedWatch implied rate probabilities to Kalshi Fed rate decision market prices and.",
+        "Requires SIMMER_API_..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kalshi-fed-futures-arb-trader@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17246180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kalshi-fed-futures-arb-trader",
+      "url": "https://clawhub.ai/skills/kalshi-fed-futures-arb-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kalshi-fed-futures-arb-trader",
+    "url": "https://clawhub.ai/skills/kalshi-fed-futures-arb-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kalshi-fed-futures-arb-trader-a1f7636d9222b340.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kalshi-fed-futures-arb-trader@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-kalshi-fed-futures-arb-trader-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:59a30a015f53474633cf435889e0dc60ce1fea4c286046ef3e9934d70a5fe2bf",
+      "artifactSizeBytes": 1989
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T12:25:44.687Z"
+}

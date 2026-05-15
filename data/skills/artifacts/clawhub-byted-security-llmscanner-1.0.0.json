@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/byted-security-llmscanner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.byted_security_llmscanner",
+  "skill": {
+    "id": 68810,
+    "skillKey": "clawhub-byted-security-llmscanner",
+    "name": "Byted Security Llmscanner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "byted-security-llmscanner",
+    "url": "https://clawhub.ai/skills/byted-security-llmscanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/byted-security-llmscanner-a52a4069a8df2a1b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "大模型安全测评全流程管理工具。支持创建/更新模型和智能体测评资产、查询可用资源、发起合规测评任务、发起安全测评任务、分析测评结果等全流程操作。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "volcengine-skills",
+      "userId": "s17bcxs73bckd3eercvtn6cmsx83g5kg",
+      "displayName": "volcengine-skills",
+      "image": "https://avatars.githubusercontent.com/u/260939792?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774597635007,
+      "changelog": "Initial release of byted-security-llmscanner – a comprehensive management tool for large model security evaluation workflows.\n\n- Supports creation and updating of model and agent evaluation assets.\n- Enables querying of available resources, including models, agents, and agent platforms.\n- Facilitates launching both compliance and security evaluation tasks.\n- Provides commands for analyzing and reporting on task results.\n- Includes detailed instructions, command usage examples, and troubleshooting tips.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c7e0a8f59c3ea45fe726ce6a736c52bb9c865295cadf9e4e1c582d49ac4954d6"
+}

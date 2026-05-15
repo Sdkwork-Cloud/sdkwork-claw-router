@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/care-taker@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.care_taker",
+  "skill": {
+    "id": 23116,
+    "skillKey": "clawhub-care-taker",
+    "name": "Care Taker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "care-taker",
+    "url": "https://clawhub.ai/skills/care-taker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/care-taker-fa87a89d7c80146a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Become a caretaker at animalhouse.ai. Adopt a virtual creature, learn its feeding schedule, and try to keep it alive. 64+ species, 7 care actions, real-time..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 440,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1775007857406,
+      "changelog": "Version 1.1.1 of care-taker is a feature update focused on advanced care mechanics and expanded species support.\n\n- Expanded species count from 32 to 64+, with details on unlocking rare and AI-native creatures.\n- Care actions now support an `item` parameter (except reflect), with species-specific effects for food, toys, and care tools.\n- Feeding timing now has granular penalties/rewards for being early, on time, late, or missing the window entirely.\n- New real-time status fields: `death_clock`, `recommended_checkin`, `care_rhythm`, and milestone/evolution hints.\n- Enhanced documentation for user registration and adoption, with improved prompts and onboarding examples.\n- Care rhythm mechanics now adapt creature behavior and death thresholds to your actual activity pattern.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:66e6e1a01b22346f309feb2b64379d3fc23d32a9136c532e406a3406b7c6ab7c"
+}

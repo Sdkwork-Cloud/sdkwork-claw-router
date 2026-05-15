@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8505,
+  "uuid": "skill-clawhub-cctv-news-fetcher",
+  "skillKey": "clawhub-cctv-news-fetcher",
+  "name": "CCTV News Fetcher",
+  "summary": "Fetch and parse news highlights from CCTV News Broadcast (Xinwen Lianbo) for a given date.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cctv_news_fetcher",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yuhangch",
+      "features": [
+        "Fetch and parse news highlights from CCTV News Broadcast (Xinwen Lianbo) for a given date."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cctv-news-fetcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20501203?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cctv-news-fetcher",
+      "url": "https://clawhub.ai/skills/cctv-news-fetcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cctv-news-fetcher",
+    "url": "https://clawhub.ai/skills/cctv-news-fetcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cctv-news-fetcher-adceb64068a44518.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cctv-news-fetcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cctv-news-fetcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:942d923e8103a08888f8b473e2212abdac35db0e2be47366bb5efb699a49413b",
+      "artifactSizeBytes": 2278
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T06:02:02.426Z"
+}

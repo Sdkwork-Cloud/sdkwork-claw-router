@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baidu-netdisk-storage@1.4.3",
+  "version": "1.4.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_netdisk_storage",
+  "skill": {
+    "id": 61189,
+    "skillKey": "clawhub-baidu-netdisk-storage",
+    "name": "Baidu Drive"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-netdisk-storage",
+    "url": "https://clawhub.ai/skills/baidu-netdisk-storage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-netdisk-storage-73ead996c1f68d75.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "百度网盘(Baidu Drive)文件管理 — 上传、下载、转存、分享、搜索、移动、复制、重命名、创建文件夹。 TRIGGER: 用户提及\"百度网盘/bdpan/网盘/云盘/baidu drive/Baidu Drive\"并涉及文件操作。 DO NOT TRIGGER: 非文件存储操作，或使用其他云盘服务时。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "may-yaha",
+      "userId": "s17f4ba5w8e33tn7eqqvnxt76183gkmk",
+      "displayName": "baidu-netdisk",
+      "image": "https://avatars.githubusercontent.com/u/17535606?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1773,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 3,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.4.3",
+      "createdAt": 1776334500365,
+      "changelog": "refactor(skill): 统一英文名 baidu netdisk → baidu drive，移除公测标识",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:630f09c4a2820531a16722630f51a2586ad769f991f6f65a2ef312667bea10f5"
+}

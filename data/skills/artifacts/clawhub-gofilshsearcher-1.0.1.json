@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gofilshsearcher@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gofilshsearcher",
+  "skill": {
+    "id": 71582,
+    "skillKey": "clawhub-gofilshsearcher",
+    "name": "闲鱼商品精选助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gofilshsearcher",
+    "url": "https://clawhub.ai/skills/gofilshsearcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gofilshsearcher-ca949e4ab5e88c8a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "闲鱼商品自动搜索技能，支持严格筛选（个人闲置/单一价格/排除商家），输出 TOP10 价格升序列表"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xxxzhuo",
+      "userId": "publishers:xxxzhuo",
+      "displayName": "xxxzhuo",
+      "image": "https://avatars.githubusercontent.com/u/191365078?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 378,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773139508675,
+      "changelog": "更强壮的搜索，支持社交媒体（如企业微信）端使用",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fa6c3602297e12c3b35ac92caf7b5b1ffc2fc717b459bb22ff45354ff74a21f1"
+}

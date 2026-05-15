@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8719,
+  "uuid": "skill-clawhub-second-brain",
+  "skillKey": "clawhub-second-brain",
+  "name": "Second Brain: Turn conversations into lasting knowledge",
+  "summary": "Personal knowledge base powered by Ensue for capturing and retrieving understanding. Use when user wants to save knowledge, recall what they know, manage their toolbox, or build on past learnings. Triggers on \"save this\", \"remember\", \"what.",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.second_brain",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "christinetyip",
+      "features": [
+        "Personal knowledge base powered by Ensue for capturing and retrieving understanding",
+        "Use when user wants to save knowledge, recall what they know, manage their toolbox, or build on.",
+        "Triggers on \"save this\", \"remember\", \"what do I know about\", \"add to toolbox\", \"my notes on\", \"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/second-brain@0.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40064228?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "second-brain",
+      "url": "https://clawhub.ai/skills/second-brain"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "second-brain",
+    "url": "https://clawhub.ai/skills/second-brain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/second-brain-318a3e1d61301c25.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/second-brain@0.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-second-brain-0.1.4.json",
+      "version": "0.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3417b266dd3d9bb632c87b41a7448339ec59e674466bcb6215157a6798d391fb",
+      "artifactSizeBytes": 2153
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-28T18:28:17.135Z"
+}

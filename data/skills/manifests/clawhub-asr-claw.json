@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25779,
+  "uuid": "skill-clawhub-asr-claw",
+  "skillKey": "clawhub-asr-claw",
+  "name": "Asr Claw",
+  "summary": "Speech recognition CLI for AI agent automation. Transcribe audio from stdin, files, or URLs.",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.asr_claw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "任嘉",
+      "features": [
+        "Speech recognition CLI for AI agent automation",
+        "Transcribe audio from stdin, files, or URLs."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/asr-claw@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5842910?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "asr-claw",
+      "url": "https://clawhub.ai/skills/asr-claw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "asr-claw",
+    "url": "https://clawhub.ai/skills/asr-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/asr-claw-06abfd4876a7548f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/asr-claw@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-asr-claw-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ab4dae97b9ea7e3b43d5e7433e6629d608bbda5728c2aa2609cdbb8ed683fb6c",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T16:20:51.609Z"
+}

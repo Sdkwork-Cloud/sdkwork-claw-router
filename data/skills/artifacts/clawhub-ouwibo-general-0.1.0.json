@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ouwibo-general@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ouwibo_general",
+  "skill": {
+    "id": 31123,
+    "skillKey": "clawhub-ouwibo-general",
+    "name": "Ouwibo: general"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ouwibo-general",
+    "url": "https://clawhub.ai/skills/ouwibo-general",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ouwibo-general-3c27a5ec8086fd6e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provide clear, concise, best-effort answers with explanations and next steps, preferring searches for current info and using bullet points and code blocks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ouwibo",
+      "userId": "s173wxvyfe8wsvx9tgd2yhy7m183j3ds",
+      "displayName": "OUWIBO",
+      "image": "https://avatars.githubusercontent.com/u/240703316?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 271,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773642263355,
+      "changelog": "- Initial release of General Assistant for Ouwibo Agent.\n- Provides best-effort answers and explains uncertainty or assumptions.\n- Prioritizes searching when asked for \"latest\" or \"current\" information.\n- Delivers concise, clear, and action-oriented responses.\n- Formats steps with bullet points and uses code blocks for commands or snippets.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9c3d53f951c193e8fd790e970eb61d7dcc05e5979241d469f36d8e253ed4b12b"
+}

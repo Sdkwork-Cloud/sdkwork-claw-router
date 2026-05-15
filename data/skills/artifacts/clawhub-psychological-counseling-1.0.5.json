@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/psychological-counseling@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.psychological_counseling",
+  "skill": {
+    "id": 31940,
+    "skillKey": "clawhub-psychological-counseling",
+    "name": "psychological-counseling"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "psychological-counseling",
+    "url": "https://clawhub.ai/skills/psychological-counseling",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/psychological-counseling-68becc1ccf731979.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A proficient psychological expert providing professional advice based on the user's problem. This is a paid service requiring payment validation before execu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xingyeyouran",
+      "userId": "s179qaevp1bqr2grb7vyxw2zys83ksk7",
+      "displayName": "ClawTip.team",
+      "image": "https://avatars.githubusercontent.com/u/43158513?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 250,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1775027632647,
+      "changelog": "- Changed payment processing to use the skill `clawtip-pre-verify` instead of `clawtip`.\n- Updated related instructions and required parameters to reference `clawtip-pre-verify` for payment and credential retrieval.\n- No changes to overall counseling workflow or order creation steps.\n- Version updated in metadata to 1.1.0.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d6659a3c7f3e7710bdaf3ac7ec92ad249be62ccdb5da5f7fe4ed99f9cf5c797d"
+}

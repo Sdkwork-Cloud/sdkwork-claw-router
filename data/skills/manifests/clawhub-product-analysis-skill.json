@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44015,
+  "uuid": "skill-clawhub-product-analysis-skill",
+  "skillKey": "clawhub-product-analysis-skill",
+  "name": "Product Analysis Skill",
+  "summary": "Analyzes market trends and competitor products to provide data-driven recommendations for product selection and optimization.",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.product_analysis_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "534422530",
+      "features": [
+        "Analyzes market trends and competitor products to provide data-driven recommendations for produ."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/product-analysis-skill@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82763531?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "product-analysis-skill",
+      "url": "https://clawhub.ai/skills/product-analysis-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "product-analysis-skill",
+    "url": "https://clawhub.ai/skills/product-analysis-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/product-analysis-skill-ce2b00cdad879298.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/product-analysis-skill@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-product-analysis-skill-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c55339ff7b35811054d92494b978bb28d9a4c7e6a54b55af74011bdf5fb4376e",
+      "artifactSizeBytes": 2021
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T11:46:25.429Z"
+}

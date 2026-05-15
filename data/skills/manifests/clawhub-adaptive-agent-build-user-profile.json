@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33039,
+  "uuid": "skill-clawhub-adaptive-agent-build-user-profile",
+  "skillKey": "clawhub-adaptive-agent-build-user-profile",
+  "name": "Adaptive Agent: Build User Profile",
+  "summary": "Build or update the user profile memory by observing workspace context, git history, and conversation patterns. Run on first interaction or when profile feel...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adaptive_agent_build_user_profile",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LJ Li",
+      "features": [
+        "Build or update the user profile memory by observing workspace context, git history, and conver.",
+        "Run on first interaction or when profile feel..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/adaptive-agent-build-user-profile@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47474232?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "adaptive-agent-build-user-profile",
+      "url": "https://clawhub.ai/skills/adaptive-agent-build-user-profile"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adaptive-agent-build-user-profile",
+    "url": "https://clawhub.ai/skills/adaptive-agent-build-user-profile",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adaptive-agent-build-user-profile-d2d6555a9d56bf1e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/adaptive-agent-build-user-profile@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-adaptive-agent-build-user-profile-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7126860f0d7dfec26c28ea710dbd532454a205fbc4e4fceb0f239a496cfc8797",
+      "artifactSizeBytes": 2519
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T06:31:45.764Z"
+}

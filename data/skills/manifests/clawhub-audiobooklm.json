@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63012,
+  "uuid": "skill-clawhub-audiobooklm",
+  "skillKey": "clawhub-audiobooklm",
+  "name": "audiobooklm",
+  "summary": "提供有声书创作与音频能力（ABS 读写、音效/音频检索、二创、音色推荐、章节角色分析等），通过 HTTP Streamable MCP 调用。",
+  "version": "0.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audiobooklm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "audiobooklm",
+      "features": [
+        "提供有声书创作与音频能力（ABS 读写、音效/音频检索、二创、音色推荐、章节角色分析等），通过 HTTP Streamable MCP 调用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/audiobooklm@0.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/179807546?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "audiobooklm",
+      "url": "https://clawhub.ai/skills/audiobooklm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audiobooklm",
+    "url": "https://clawhub.ai/skills/audiobooklm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audiobooklm-ee49688d05d8450a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/audiobooklm@0.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-audiobooklm-0.0.7.json",
+      "version": "0.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ee86f01e580db71bc62700beef7051e41df386904a927684441b0f6c32fdb21",
+      "artifactSizeBytes": 2315
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T03:22:28.126Z"
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55751,
+  "uuid": "skill-clawhub-zero-trading",
+  "skillKey": "clawhub-zero-trading",
+  "name": "ZERO Trading",
+  "summary": "trading agent for hyperliquid via zero. evaluates markets through 9 intelligence layers. rejects 97% of setups. the 3% that pass become trades.",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zero_trading",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "squaeragent",
+      "features": [
+        "trading agent for hyperliquid via zero",
+        "evaluates markets through 9 intelligence layers",
+        "rejects 97% of setups",
+        "the 3% that pass become trades."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zero-trading@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260071014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zero-trading",
+      "url": "https://clawhub.ai/skills/zero-trading"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zero-trading",
+    "url": "https://clawhub.ai/skills/zero-trading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zero-trading-01cad389fd920bf7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zero-trading@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zero-trading-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4f570d7ad06b42877bd1cb2b530a8336a26a3fe6d591d3621e7bcddeacccf82c",
+      "artifactSizeBytes": 1982
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T13:37:25.372Z"
+}

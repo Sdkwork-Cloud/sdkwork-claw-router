@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26405,
+  "uuid": "skill-clawhub-market-news-brief",
+  "skillKey": "clawhub-market-news-brief",
+  "name": "Market News Brief",
+  "summary": "Run a local script to fetch broad market news and tone. Use when: user asks about market conditions, macro news, what's happening in markets, or market senti...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.market_news_brief",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "youpele52",
+      "features": [
+        "Run a local script to fetch broad market news and tone",
+        "Use when: user asks about market conditions, macro news, what's happening in markets, or market."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/market-news-brief@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43122220?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "market-news-brief",
+      "url": "https://clawhub.ai/skills/market-news-brief"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "market-news-brief",
+    "url": "https://clawhub.ai/skills/market-news-brief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/market-news-brief-e29d85a63e8e84ab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/market-news-brief@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-market-news-brief-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4ad05408483cd266fbbce6b23768bafaee76428d3e7a700e16ef94899368c6f2",
+      "artifactSizeBytes": 2476
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T03:55:52.746Z"
+}

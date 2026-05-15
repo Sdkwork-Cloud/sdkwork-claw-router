@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/obsidian-guide@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_guide",
+  "skill": {
+    "id": 21298,
+    "skillKey": "clawhub-obsidian-guide",
+    "name": "obsidian-user-guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-guide",
+    "url": "https://clawhub.ai/skills/obsidian-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-guide-a98553b89e29d1b9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides command-line instructions for managing Obsidian vaults, notes, tasks, tags, links, and searches via Obsidian's official CLI tool."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shaunleecn",
+      "userId": "publishers:shaunleecn",
+      "displayName": "ShaunLeeCN",
+      "image": "https://avatars.githubusercontent.com/u/195417774?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 504,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772901806288,
+      "changelog": "Initial release of obsidian-guide skill\n\n- Provides a comprehensive Chinese quickstart for using Obsidian CLI (v1.12+) via command line.\n- Covers installation, basic commands, daily note operations, file management, search, tasks, tags, properties, links, and troubleshooting.\n- Includes OpenClaw skill installation and integration instructions.\n- Offers search and syntax tips for efficient command usage.\n- Lists related available skills and key notes for smooth CLI integration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:56b8218830b0f5850283b0c572d6e40f40b843502cf1064a74119ec23e4c1e82"
+}

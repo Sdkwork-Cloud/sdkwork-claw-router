@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fifa-world@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fifa_world",
+  "skill": {
+    "id": 48797,
+    "skillKey": "clawhub-fifa-world",
+    "name": "Fifa World"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fifa-world",
+    "url": "https://clawhub.ai/skills/fifa-world",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fifa-world-36b65bf19bead9e6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides detailed information on FIFA's global football governance, World Cup organization, member associations, and related economic and political influence."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 93,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777785041532,
+      "changelog": "- Initial release with comprehensive overview of FIFA as the global football governing body.\n- Includes detailed history timeline, organizational structure, and influence analysis.\n- Presents key data such as membership, revenue, and milestone events.\n- Explains the significance of the World Cup, governance reforms, and notable controversies.\n- Highlights FIFA’s expansive reach, commercial power, and upcoming changes for the 2026 tournament.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dead701ea12282df9a3a5bfe938ac3bcd7dbf58abe0daa27af3429c323eca08e"
+}

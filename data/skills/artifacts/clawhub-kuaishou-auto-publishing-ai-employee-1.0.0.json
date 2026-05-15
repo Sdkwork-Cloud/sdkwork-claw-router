@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kuaishou-auto-publishing-ai-employee@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kuaishou_auto_publishing_ai_employee",
+  "skill": {
+    "id": 66260,
+    "skillKey": "clawhub-kuaishou-auto-publishing-ai-employee",
+    "name": "快手自动发布AI数字员工"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kuaishou-auto-publishing-ai-employee",
+    "url": "https://clawhub.ai/skills/kuaishou-auto-publishing-ai-employee",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kuaishou-auto-publishing-ai-employee-602e3db5718dea55.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "快手视频/图文自动上传 skill。当用户需要登录快手、校验账号或上传内容时使用。基于 social-auto-upload 项目，OPclaw 自动准备运行环境，无需用户手动安装。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kukuoai",
+      "userId": "s1712m8vcb80w6w0b38d1tr5eh84tsxd",
+      "displayName": "kukuoAI",
+      "image": "https://avatars.githubusercontent.com/u/275868190?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 91,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778057212413,
+      "changelog": "kuaishou-auto-publishing-ai-employee 1.0.0\n\n- Initial release of kuaishou-upload skill for automated video/image post uploading to Kuaishou.\n- Automates environment setup with OPclaw and uv, requiring no manual dependency installation.\n- Supports login, account cookie checking, video upload, and image/text post upload commands.\n- Enforces strict pre-execution checks for environment readiness and command format.\n- Implements robust git cloning logic with fallback mirrors to ensure reliable setup.\n- Clear guidelines for agent actions, login flow, and multi-account usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1933192b76ce4c54c622d11b40a0036755542881e6d2c3463a4b928e69e65e95"
+}

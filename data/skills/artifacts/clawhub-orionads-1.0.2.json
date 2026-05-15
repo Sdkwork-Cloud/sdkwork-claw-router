@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/orionads@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.orionads",
+  "skill": {
+    "id": 11931,
+    "skillKey": "clawhub-orionads",
+    "name": "Orion Ads"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "orionads",
+    "url": "https://clawhub.ai/skills/orionads",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/orionads-7ba9f8370a823f52.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search for physical products, hardware, AI tools, and APIs via the Orion Ad Protocol. Returns structured data (JSON) optimized for agents."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "celsojr2013",
+      "userId": "publishers:celsojr2013",
+      "displayName": "celsojr2013",
+      "image": "https://avatars.githubusercontent.com/u/11331184?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1864,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771179702360,
+      "changelog": "**Security-focused update for safer shell command construction:**\n\n- Added new \"Security & Sanitization\" section with explicit guidelines to prevent shell injection vulnerabilities.\n- Updated all product, tool, and general search examples to use safe query parameter encoding (`curl --data-urlencode`) instead of raw URL interpolation.\n- Emphasized input sanitization for registration and posting ads, with related code comments and examples.\n- Improved documentation clarity with explicit security warnings for shell usage.\n- No changes to core functionality or API; documentation and usage patterns have been enhanced for user safety.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e6ebb7f5d51d01151b6f25a93e6b9b080f090e04f084bced96bbaeab0be6d985"
+}

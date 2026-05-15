@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71828,
+  "uuid": "skill-clawhub-shi-gou",
+  "skillKey": "clawhub-shi-gou",
+  "name": "Shi Gou",
+  "summary": "监控权限拒绝事件，检测提示词注入、路径遍历及危险命令，生成安全报告并识别潜在威胁告警。",
+  "version": "2.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shi_gou",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "无为上人",
+      "features": [
+        "监控权限拒绝事件，检测提示词注入、路径遍历及危险命令，生成安全报告并识别潜在威胁告警。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shi-gou@2.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269488520?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shi-gou",
+      "url": "https://clawhub.ai/skills/shi-gou"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shi-gou",
+    "url": "https://clawhub.ai/skills/shi-gou",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shi-gou-49ddfa45587c72db.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shi-gou@2.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-shi-gou-2.0.12.json",
+      "version": "2.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cc7014cb005425be15faefb3a873d54d3e531e490c074d297442cf44de2dc2f7",
+      "artifactSizeBytes": 1896
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T19:59:53.120Z"
+}

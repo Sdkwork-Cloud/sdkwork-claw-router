@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pptxgenjs-compat@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pptxgenjs_compat",
+  "skill": {
+    "id": 57396,
+    "skillKey": "clawhub-pptxgenjs-compat",
+    "name": "PPT生成兼容性修复"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pptxgenjs-compat",
+    "url": "https://clawhub.ai/skills/pptxgenjs-compat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pptxgenjs-compat-051bc65e61659535.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when generating PPT files with pptxgenjs (Node.js library). It provides a complete workflow for creating PowerPoint-compatible PPTX..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yaodongcheng",
+      "userId": "s17a8k9jd6px9tb72dsv8seas984gfjz",
+      "displayName": "Yao Dongcheng",
+      "image": "https://avatars.githubusercontent.com/u/37006216?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775693943938,
+      "changelog": "pptxgenjs-compat 1.0.0\n\n- Initial release of the pptxgenjs compatibility workflow skill.\n- Documents 6 known pptxgenjs defects that trigger PowerPoint repair dialogs and how to fix them.\n- Provides API usage guidelines to minimize compatibility issues when generating PPTX with pptxgenjs.\n- Introduces a mandatory post-processing Python script (`fix_pptx_compatibility.py`) to repair generated PPTX files.\n- Includes verification and troubleshooting steps to ensure true PowerPoint compatibility.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:be6d5b6eb3bd2e64b8657896307e8d791c3aacb98810d76b3ce837fe68d60eab"
+}

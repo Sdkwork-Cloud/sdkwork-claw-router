@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54545,
+  "uuid": "skill-clawhub-dnsrobot",
+  "skillKey": "clawhub-dnsrobot",
+  "name": "DNS Robot",
+  "summary": "Run DNS, email security, SSL, WHOIS, and network tools via dnsrobot.net API — no API key required",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dnsrobot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dnsrobot.net",
+      "features": [
+        "Run DNS, email security, SSL, WHOIS, and network tools via dnsrobot.net API — no API key requir."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dnsrobot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263815505?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dnsrobot",
+      "url": "https://clawhub.ai/skills/dnsrobot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dnsrobot",
+    "url": "https://clawhub.ai/skills/dnsrobot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dnsrobot-2c2604bba2d4eb46.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dnsrobot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dnsrobot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ff56d304b29efc769da63582e42a4d8fabc6d812395ebf7cd8c6b6f451fbf059",
+      "artifactSizeBytes": 1853
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T09:20:14.127Z"
+}

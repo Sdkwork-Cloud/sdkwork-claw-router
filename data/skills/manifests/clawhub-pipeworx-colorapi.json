@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54613,
+  "uuid": "skill-clawhub-pipeworx-colorapi",
+  "skillKey": "clawhub-pipeworx-colorapi",
+  "name": "Pipeworx colorapi",
+  "summary": "Color identification, scheme generation, and format conversion via TheColorAPI — hex, RGB, HSL, and CMYK",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_colorapi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Color identification, scheme generation, and format conversion via TheColorAPI — hex, RGB, HSL,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-colorapi@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138315805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-colorapi",
+      "url": "https://clawhub.ai/skills/pipeworx-colorapi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-colorapi",
+    "url": "https://clawhub.ai/skills/pipeworx-colorapi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-colorapi-5e11583cd33daa5e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-colorapi@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-colorapi-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e43cf69eecd41ee04722614bbeb5d0c16a0b6c4baa413396d2778dce9c2b3c8f",
+      "artifactSizeBytes": 1860
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T20:03:24.899Z"
+}

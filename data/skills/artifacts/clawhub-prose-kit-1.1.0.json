@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prose-kit@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prose_kit",
+  "skill": {
+    "id": 65853,
+    "skillKey": "clawhub-prose-kit",
+    "name": "Openclaw Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prose-kit",
+    "url": "https://clawhub.ai/skills/prose-kit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prose-kit-2680525e90f62bae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI写作流水线：给一个主题，出9篇风格迥异的中文散文，自动评分排名。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dthinkr",
+      "userId": "publishers:dthinkr",
+      "displayName": "venvox",
+      "image": "https://avatars.githubusercontent.com/u/4549761?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 188,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774202235335,
+      "changelog": "Save essays to local files, only show summary table in context",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3b8729a138b1903faf3d743e11fee704775bc17b1d809a187456e1704fd6ecf9"
+}

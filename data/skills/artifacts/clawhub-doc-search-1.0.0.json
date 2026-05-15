@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/doc-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doc_search",
+  "skill": {
+    "id": 28575,
+    "skillKey": "clawhub-doc-search",
+    "name": "doc-search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doc-search",
+    "url": "https://clawhub.ai/skills/doc-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doc-search-65f21ee62cd91309.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search a local document library (Obsidian vault, wiki, notes, etc.) using BM25 inverted index + LLM query expansion + grep for precise location. Use when the..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fantasyrl",
+      "userId": "s17cmsggjtaahb2aka8vf7s2qd83r24h",
+      "displayName": "FantasyRL",
+      "image": "https://avatars.githubusercontent.com/u/103872180?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 321,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773986231338,
+      "changelog": "- Initial release of doc-search: search local document libraries using BM25, LLM query expansion, and grep.\n- Supports Chinese and English queries, synonyms, and custom query expansions.\n- Zero external dependencies; uses simple bash and Python scripts.\n- Step-by-step workflow includes index building, query expansion, and line-precise grep results.\n- Flexible options for file extensions, result count, and index location.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d807d24422644941d78395aaab3d58bcd0614216a3bcbed85f8094aead3b68f1"
+}

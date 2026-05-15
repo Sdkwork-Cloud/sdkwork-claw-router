@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-seo@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_seo",
+  "skill": {
+    "id": 15065,
+    "skillKey": "clawhub-ai-seo",
+    "name": "Ai Seo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-seo",
+    "url": "https://clawhub.ai/skills/ai-seo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-seo-8618fa003d5c5610.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When the user wants to optimize content for AI search engines, get cited by LLMs, or appear in AI-generated answers. Also use when the user mentions 'AI SEO,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mrhuang09",
+      "userId": "s17a05gnebhc550j5yxsrmhs7983mwgk",
+      "displayName": "Victor Huang",
+      "image": "https://avatars.githubusercontent.com/u/137679815?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 867,
+      "installsAllTime": 12,
+      "installsCurrent": 12,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772687144128,
+      "changelog": "Initial release of ai-seo skill — optimization for AI search engine citation and AI-generated answers:\n\n- Introduces expert guidance on getting content cited by AI search engines and assistants (Google AI Overviews, ChatGPT, Perplexity, Claude, Gemini, Copilot).\n- Defines a user interview process to assess current AI visibility, content types, goals, and competitive landscape.\n- Details how AI search works, key differences from traditional SEO, and citation patterns across platforms.\n- Provides an AI Visibility Audit framework: how to check citation status, audit content extractability, and ensure AI bot access.\n- Outlines an optimization strategy focused on structure (extractability), authority (citation-worthiness), and presence (being where AI looks).\n- Includes checklists, practical tips, and references for deeper technical details.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:288ac8884d8feb5d34bdc894dfc5208852be1f3f730b0281d888a64ca788edd8"
+}

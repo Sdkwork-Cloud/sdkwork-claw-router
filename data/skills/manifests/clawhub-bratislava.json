@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70952,
+  "uuid": "skill-clawhub-bratislava",
+  "skillKey": "clawhub-bratislava",
+  "name": "Bratislava",
+  "summary": "斯洛伐克首都城市指南 — 三国交汇、汽车制造中心、多瑙河明珠。当用户询问斯洛伐克旅行、中欧汽车产业时触发。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bratislava",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "斯洛伐克首都城市指南 — 三国交汇、汽车制造中心、多瑙河明珠。当用户询问斯洛伐克旅行、中欧汽车产业时触发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bratislava@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bratislava",
+      "url": "https://clawhub.ai/skills/bratislava"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bratislava",
+    "url": "https://clawhub.ai/skills/bratislava",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bratislava-97bc0db333ef8314.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bratislava@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bratislava-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d8ee4d2196d7cad1e82d4ca974db2c0676cac574dc45138684ee6772a954713d",
+      "artifactSizeBytes": 2321
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T06:03:42.057Z"
+}

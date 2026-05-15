@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pyfolio-performance@0.3.2",
+  "version": "0.3.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pyfolio_performance",
+  "skill": {
+    "id": 62763,
+    "skillKey": "clawhub-pyfolio-performance",
+    "name": "Pyfolio Performance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pyfolio-performance",
+    "url": "https://clawhub.ai/skills/pyfolio-performance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pyfolio-performance-f5547489c1f0a6a1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于 pyfolio-reloaded 的投资组合绩效分析：一键生成 tear sheet（夏普、回撤、 年化、换手、个股往返交易、行业归因）。适用于回测后的标准化报告。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tangweigang-jpg",
+      "userId": "s17ewpx5vannmrm5gje4p746kd83hyk1",
+      "displayName": "Tang Weigang",
+      "image": "https://avatars.githubusercontent.com/u/259277235?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.3.2",
+      "createdAt": 1776953237734,
+      "changelog": "v0.3.2: inject bilingual metadata per naming spec. H1 now shows Pyfolio 业绩分析 + slug; tagline and description replaced with CTO-authored copy (fixes tagline pollution for non-ZVT skills).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a9a02e11450c55e6ec10b98227b6f53d646f0ae99bb116d4d0499f67182dcb2e"
+}

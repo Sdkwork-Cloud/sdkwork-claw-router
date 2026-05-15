@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11837,
+  "uuid": "skill-clawhub-snapmaker-2",
+  "skillKey": "clawhub-snapmaker-2",
+  "name": "Snapmaker",
+  "summary": "Control and monitor Snapmaker 2.0 3D printers via their HTTP API. Status, job management, progress watching, and event monitoring.",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.snapmaker_2",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Oliver Drobnik",
+      "features": [
+        "Control and monitor Snapmaker 2.0 3D printers via their HTTP API",
+        "Status, job management, progress watching, and event monitoring."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/snapmaker-2@1.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/333270?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "snapmaker-2",
+      "url": "https://clawhub.ai/skills/snapmaker-2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "snapmaker-2",
+    "url": "https://clawhub.ai/skills/snapmaker-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/snapmaker-2-e142d6fd24a2d11f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/snapmaker-2@1.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-snapmaker-2-1.2.2.json",
+      "version": "1.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:79d2aea15d1da987c6895372c0a6774a4968d3aa58e620ee46e7b37ddbe955ec",
+      "artifactSizeBytes": 1851
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T20:41:01.228Z"
+}

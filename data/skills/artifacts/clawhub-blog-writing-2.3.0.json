@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/blog-writing@2.3.0",
+  "version": "2.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blog_writing",
+  "skill": {
+    "id": 38541,
+    "skillKey": "clawhub-blog-writing",
+    "name": "Blog Writing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blog-writing",
+    "url": "https://clawhub.ai/skills/blog-writing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blog-writing-59edba08a2b60883.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Step-by-step SEO blog writing workflow for teams who want full control over every phase. Covers keyword strategy, competitive research, content structure, in..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "justinbao19",
+      "userId": "s17ebpn7t4t159b4p4hdpajeah83n85q",
+      "displayName": "justinbao19",
+      "image": "https://avatars.githubusercontent.com/u/97433668?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.3.0",
+      "createdAt": 1775539564677,
+      "changelog": "- Expanded skill to support any website or blog, not just filomail.com.\n- Generalized references to file paths and directories to be user-configurable (e.g., product context, brand guidelines, internal links map, content plan).\n- Clarified instructions for pre-flight and research phases to remove brand-specific requirements.\n- No changes to workflow, process, or QA guardrails.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1932899fc7a9e077ba5372ad7b2abcea3dfb08dfad9a3361f25b10c9f81a859a"
+}

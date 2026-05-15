@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lu-music-player@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lu_music_player",
+  "skill": {
+    "id": 23551,
+    "skillKey": "clawhub-lu-music-player",
+    "name": "Lu Music Player"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lu-music-player",
+    "url": "https://clawhub.ai/skills/lu-music-player",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lu-music-player-39eba2028bdd6670.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage and control Mopidy music service on NAS including playback, volume, playlist viewing, and local music scanning."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jesson1222-ship-it",
+      "userId": "publishers:jesson1222-ship-it",
+      "displayName": "jesson1222-ship-it",
+      "image": "https://avatars.githubusercontent.com/u/250683018?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 427,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772989775552,
+      "changelog": "lu-music-player v1.0.0\n\n- 初始发布\n- 支持 Mopidy 音乐播放器状态查看\n- 支持播放/暂停/跳过等控制操作\n- 支持音量调节功能\n- 支持本地音乐库扫描与播放列表查看",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:650212477cb7a82c6fd8b0d051646b3c84e5db6113a5392f03105ee6cf6774f3"
+}

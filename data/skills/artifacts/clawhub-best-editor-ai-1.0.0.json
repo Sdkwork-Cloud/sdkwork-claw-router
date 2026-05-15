@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/best-editor-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.best_editor_ai",
+  "skill": {
+    "id": 44835,
+    "skillKey": "clawhub-best-editor-ai",
+    "name": "Best Editor Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "best-editor-ai",
+    "url": "https://clawhub.ai/skills/best-editor-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/best-editor-ai-525b6b3823b5fe16.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "edit raw video footage into polished edited clips with this best-editor-ai skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators and YouT..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vynbosserman65",
+      "userId": "s175xbynxxje7z8y8jbn28x5vx84dckp",
+      "displayName": "vynbosserman65",
+      "image": "https://avatars.githubusercontent.com/u/208823770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775859218543,
+      "changelog": "Initial release of Best Editor AI: edit and export polished videos from raw footage.\n\n- Automatically edits raw video (MP4, MOV, AVI, WebM up to 500MB) into clean, shareable 1080p MP4s in 1–2 minutes using cloud GPUs.\n- Simple setup: connect, authenticate with a free, auto-generated token, and start editing.\n- Supports features like cutting boring parts, adding transitions, syncing background music, overlays, and more via easy user prompts.\n- Handles upload, editing, export, credits/balance, and video status through clear API-based actions.\n- Designed for creators and YouTubers—no installation or local processing required.\n- Provides robust error handling and session management for smooth user experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e3fb5511e46de1037b46158bf51e02b0f3beb8df806ca7ebb68d36332a5f9dcf"
+}

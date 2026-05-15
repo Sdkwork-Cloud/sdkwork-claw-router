@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29007,
+  "uuid": "skill-clawhub-cxj-ip-2026",
+  "skillKey": "clawhub-cxj-ip-2026",
+  "name": "Myip",
+  "summary": "Get both public (external) and local (internal) IP addresses using simple shell commands. Use when the user asks for their IP, public IP, or local network ad...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cxj_ip_2026",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Donnie Burgs",
+      "features": [
+        "Get both public (external) and local (internal) IP addresses using simple shell commands",
+        "Use when the user asks for their IP, public IP, or local network ad..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cxj-ip-2026@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/70335090?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cxj-ip-2026",
+      "url": "https://clawhub.ai/skills/cxj-ip-2026"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cxj-ip-2026",
+    "url": "https://clawhub.ai/skills/cxj-ip-2026",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cxj-ip-2026-aa33e4eaf083d58b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cxj-ip-2026@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cxj-ip-2026-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f5bfe41ecc656eb38c01920b52a92d1e3de701e16342ac999a2d0772722e4c09",
+      "artifactSizeBytes": 2223
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T13:21:20.312Z"
+}

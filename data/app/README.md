@@ -9,23 +9,16 @@ Generate this file from the app standard exporter instead of editing individual 
 hand:
 
 ```powershell
-@'
-import fs from 'node:fs/promises';
-import path from 'node:path';
-import { buildSdkworkAppPlusAppRegistrationBundle } from '../scripts/lib/sdkwork-app-standard-init-all.mjs';
-
-const result = await buildSdkworkAppPlusAppRegistrationBundle(path.resolve('..'), {
-  environment: 'production',
-  channel: 'STABLE',
-});
-if (!result.ok) {
-  console.error(JSON.stringify(result.errors, null, 2));
-  process.exit(1);
-}
-await fs.writeFile('data/app/sdkwork-apps.json', `${JSON.stringify(result, null, 2)}\n`, 'utf8');
-'@ | node --input-type=module
-python -B -m tools.app_seed_category_manifest
+pnpm app-store:seed:update
+pnpm app-store:seed:check
 ```
+
+The update script scans all registerable apps under `spring-ai-plus-business/apps`, initializes
+missing `sdkwork.app.config.json` manifests, exports `sdkwork-apps.json`, and regenerates the
+matching category manifest with `python -B -m tools.app_seed_category_manifest`. Use
+`pnpm app-store:seed:update -- --sync-db` only when the refreshed seed should be imported into the
+database referenced by `SDKWORK_CLAW_DATABASE_URL`; the script delegates database writes to
+`sdkwork-claw-installer ensure` so the Rust installer remains the only database seed writer.
 
 The installer imports the app bundle into the Java-compatible `plus_app` table, imports the category
 manifest into `plus_category`, and writes the app catalog projection tables during first install.

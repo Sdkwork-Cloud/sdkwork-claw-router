@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27961,
+  "uuid": "skill-clawhub-neomano-places",
+  "skillKey": "clawhub-neomano-places",
+  "name": "Neomano Places (Google Places)",
+  "summary": "Search Google Places (Places API New) for real-world places, businesses, restaurants, and nearby recommendations. Use when the user asks to find specific pla...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neomano_places",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "elandivar",
+      "features": [
+        "Search Google Places (Places API New) for real-world places, businesses, restaurants, and nearb.",
+        "Use when the user asks to find specific pla..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/neomano-places@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4536961?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "neomano-places",
+      "url": "https://clawhub.ai/skills/neomano-places"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neomano-places",
+    "url": "https://clawhub.ai/skills/neomano-places",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neomano-places-92d2a015999dd710.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/neomano-places@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-neomano-places-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a8c22e45e6c11007441b5d7960872f09213b8458d48c8d3b088eff0306412c77",
+      "artifactSizeBytes": 1960
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T02:59:40.694Z"
+}

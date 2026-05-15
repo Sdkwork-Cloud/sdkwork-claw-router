@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-daily-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_daily_analysis",
+  "skill": {
+    "id": 65984,
+    "skillKey": "clawhub-stock-daily-analysis",
+    "name": "Stock Daily Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-daily-analysis",
+    "url": "https://clawhub.ai/skills/stock-daily-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-daily-analysis-723c5f6c7a51b2ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "LLM驱动的每日股票分析系统。支持A股/港股/美股自选股智能分析，生成决策仪表盘和大盘复盘报告。提供技术面分析（均线、MACD、RSI、乖离率）、趋势判断、买入信号评分。可与market-data skill集成获取更稳定的ETF数据。触发词：股票分析、分析股票、每日分析、技术面分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "robottk",
+      "userId": "publishers:robottk",
+      "displayName": "robottk",
+      "image": "https://avatars.githubusercontent.com/u/35590835?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3113,
+      "installsAllTime": 27,
+      "installsCurrent": 25,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773548819386,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dee9a94fdc34bac7c57e689960d5a467fe79a7925ce709a2f3abc395e4d24280"
+}

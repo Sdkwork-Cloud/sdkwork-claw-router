@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sm-saver@0.0.0-pr-check",
+  "version": "0.0.0-pr-check",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sm_saver",
+  "skill": {
+    "id": 22507,
+    "skillKey": "clawhub-sm-saver",
+    "name": "Sm Saver"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sm-saver",
+    "url": "https://clawhub.ai/skills/sm-saver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sm-saver-4c4de8d10efe2a38.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Save and digest resources from social media posts (X/Twitter, LinkedIn) or any URL. Use when the user shares a tweet URL, a LinkedIn post, or any link they w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "spideystreet",
+      "userId": "publishers:spideystreet",
+      "displayName": "𝑠𝑝𝑖𝑑𝑒𝑦",
+      "image": "https://avatars.githubusercontent.com/u/146075220?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 470,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.0-pr-check",
+      "createdAt": 1772633872133,
+      "changelog": "Slug availability check",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:045c08cb7da71084804e1656f6a9295069d5a173c22c40722a2d2ef617f3bb49"
+}

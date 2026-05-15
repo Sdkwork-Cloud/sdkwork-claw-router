@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31085,
+  "uuid": "skill-clawhub-agentic-atlas-mcp-builder",
+  "skillKey": "clawhub-agentic-atlas-mcp-builder",
+  "name": "Mcp Builder",
+  "summary": "Bootstraps new Model Context Protocol (MCP) servers from a natural language description. Use when the user asks to build an MCP server, create an MCP tool, s...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentic_atlas_mcp_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tony Simons",
+      "features": [
+        "Bootstraps new Model Context Protocol (MCP) servers from a natural language description",
+        "Use when the user asks to build an MCP server, create an MCP tool, s..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentic-atlas-mcp-builder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/214744153?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentic-atlas-mcp-builder",
+      "url": "https://clawhub.ai/skills/agentic-atlas-mcp-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentic-atlas-mcp-builder",
+    "url": "https://clawhub.ai/skills/agentic-atlas-mcp-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentic-atlas-mcp-builder-fa3822509887a421.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentic-atlas-mcp-builder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentic-atlas-mcp-builder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b1c0d65f72be189234db077c42975c0432cc74ed34818004df909f3b95bf6694",
+      "artifactSizeBytes": 2427
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T22:01:07.841Z"
+}

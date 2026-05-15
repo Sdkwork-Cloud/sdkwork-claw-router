@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55363,
+  "uuid": "skill-clawhub-picwish-skills",
+  "skillKey": "clawhub-picwish-skills",
+  "name": "Picwish Skills",
+  "summary": "Root routing skill for PicWish (佐糖) image processing capabilities. Routes to: picwish-segmentation, picwish-face-cutout, picwish-upscale, picwish-object-remo...",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.picwish_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "px94",
+      "features": [
+        "Root routing skill for PicWish (佐糖) image processing capabilities",
+        "Routes to: picwish-segmentation, picwish-face-cutout, picwish-upscale, picwish-object-remo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/picwish-skills@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/153472146?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "picwish-skills",
+      "url": "https://clawhub.ai/skills/picwish-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "picwish-skills",
+    "url": "https://clawhub.ai/skills/picwish-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/picwish-skills-5533a31ff8d2925b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/picwish-skills@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-picwish-skills-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:007e5db162d46b88044a5113fc3aa6c4b9754fe8d8bbf933818cc24dfc5960f3",
+      "artifactSizeBytes": 1876
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T09:13:22.864Z"
+}

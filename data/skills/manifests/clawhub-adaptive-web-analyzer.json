@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66003,
+  "uuid": "skill-clawhub-adaptive-web-analyzer",
+  "skillKey": "clawhub-adaptive-web-analyzer",
+  "name": "adaptive-web-analyzer",
+  "summary": "通过指定接口获取网页内容，自适应抓取解析关键文本，并使用大模型进行智能梳理总结",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adaptive_web_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "maplee",
+      "features": [
+        "通过指定接口获取网页内容，自适应抓取解析关键文本，并使用大模型进行智能梳理总结"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/adaptive-web-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6022126?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "adaptive-web-analyzer",
+      "url": "https://clawhub.ai/skills/adaptive-web-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adaptive-web-analyzer",
+    "url": "https://clawhub.ai/skills/adaptive-web-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adaptive-web-analyzer-dda74ef43b291585.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/adaptive-web-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-adaptive-web-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:be0a4c5d6ce8fe376d8d1cfc08c21658a84ad3349e683056ceba64d5aab70adc",
+      "artifactSizeBytes": 2358
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T02:57:12.914Z"
+}

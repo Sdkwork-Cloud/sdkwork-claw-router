@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66222,
+  "uuid": "skill-clawhub-contract-review-pro",
+  "skillKey": "clawhub-contract-review-pro",
+  "name": "contract-review-pro",
+  "summary": "合同风险识别与条款分析 - 智能合同审查工具，自动识别风险条款、补充缺失条款、对比差异条款",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.contract_review_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wensen2024",
+      "features": [
+        "合同风险识别与条款分析",
+        "智能合同审查工具，自动识别风险条款、补充缺失条款、对比差异条款"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/contract-review-pro@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/160041531?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "contract-review-pro",
+      "url": "https://clawhub.ai/skills/contract-review-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "contract-review-pro",
+    "url": "https://clawhub.ai/skills/contract-review-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/contract-review-pro-7180498f58679641.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/contract-review-pro@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-contract-review-pro-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0988f82ec1fd86039f9551657b5ece7573a6781af6b24695d4ac573b8955c838",
+      "artifactSizeBytes": 1892
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T06:41:48.561Z"
+}

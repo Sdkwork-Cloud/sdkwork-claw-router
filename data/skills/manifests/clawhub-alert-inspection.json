@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61826,
+  "uuid": "skill-clawhub-alert-inspection",
+  "skillKey": "clawhub-alert-inspection",
+  "name": "Lerwee Alert Inspection",
+  "summary": "当用户要求进行设备健康巡检、告警审查、巡检报告生成或导出监控告警到 Excel 时使用。通过 Python 获取监控数据，生成 Markdown 巡检报告，并导出包含 4 个 Sheet 的 Excel 工作簿。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alert_inspection",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lerwee",
+      "features": [
+        "当用户要求进行设备健康巡检、告警审查、巡检报告生成或导出监控告警到 Excel 时使用。通过 Python 获取监控数据，生成 Markdown 巡检报告，并导出包含 4 个 Sheet 的."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alert-inspection@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/162661167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alert-inspection",
+      "url": "https://clawhub.ai/skills/alert-inspection"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alert-inspection",
+    "url": "https://clawhub.ai/skills/alert-inspection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alert-inspection-2e9467d866563026.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alert-inspection@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-alert-inspection-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a335af72c1adc0095f4814aed0ec8af477f2a3dc42885505763ccd0ed72472a8",
+      "artifactSizeBytes": 2539
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T10:51:50.777Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29400,
+  "uuid": "skill-clawhub-amazon-price-history",
+  "skillKey": "clawhub-amazon-price-history",
+  "name": "Amazon Price History",
+  "summary": "Amazon product price history tracker and drop alert agent. Track price trends over time, identify the best time to buy or sell, analyze competitor pricing pa...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_price_history",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mguozhen",
+      "features": [
+        "Amazon product price history tracker and drop alert agent",
+        "Track price trends over time, identify the best time to buy or sell, analyze competitor pricing."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amazon-price-history@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1411875?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amazon-price-history",
+      "url": "https://clawhub.ai/skills/amazon-price-history"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-price-history",
+    "url": "https://clawhub.ai/skills/amazon-price-history",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-price-history-bf89741e45da3029.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amazon-price-history@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-amazon-price-history-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:817d145865e24186025c455644bdfb192e33df04bde9812a7561f1ae0dce4c1c",
+      "artifactSizeBytes": 2448
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T23:58:12.132Z"
+}

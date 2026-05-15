@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-action@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_action",
+  "skill": {
+    "id": 16207,
+    "skillKey": "clawhub-openclaw-action",
+    "name": "Openclaw Action"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-action",
+    "url": "https://clawhub.ai/skills/openclaw-action",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-action-32649bed4150eb71.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "GitHub Action for automated security scanning of agent workspaces. Detects exposed secrets, prompt/shell injection, and data exfiltration patterns in PRs and commits."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "atlaspa",
+      "userId": "publishers:atlaspa",
+      "displayName": "AtlasPA",
+      "image": "https://avatars.githubusercontent.com/u/231540010?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 894,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770891968038,
+      "changelog": "Initial release of openclaw-action: automated security scanning GitHub Action.\n\n- Scans agent workspaces for exposed secrets, injection, and data exfiltration patterns on PRs and commits.\n- Detects API keys, tokens, credentials, prompt/shell injections, and suspicious network calls using sentry, bastion, and egress scanners.\n- Provides configurable inputs for scan scope and failure conditions (`fail-on-findings`).\n- Outputs finding counts and critical issue flags for CI integration.\n- Action is alert-only—does not modify code or files.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d61ff9d7e3321b98aa9aaeecaddc8a9f8f15efa3bfb5322963e9f6b0b5108db7"
+}

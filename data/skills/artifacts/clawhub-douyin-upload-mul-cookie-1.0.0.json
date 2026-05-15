@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/douyin-upload-mul-cookie@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_upload_mul_cookie",
+  "skill": {
+    "id": 73288,
+    "skillKey": "clawhub-douyin-upload-mul-cookie",
+    "name": "抖音自动发布"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-upload-mul-cookie",
+    "url": "https://clawhub.ai/skills/douyin-upload-mul-cookie",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-upload-mul-cookie-ab3f0b5396ac3782.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动化发布抖音视频。上传到抖音平台。全自动操作。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xuhongfeii2",
+      "userId": "s17ewe2mzrav865pdydja4cjg183hzvt",
+      "displayName": "XuHongFeii2",
+      "image": "https://avatars.githubusercontent.com/u/113486864?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774344286879,
+      "changelog": "抖音自动发布 1.0.0\n\n- Initial release: Automates publishing videos to Douyin using Playwright and cookie profiles.\n- Supports management, validation, and selection of multiple Douyin cookie profiles.\n- Adds guarded and direct publishing scripts for point deduction and authorization.\n- Allows scheduled publishing and custom video metadata (title, tags, cover).\n- Provides clear setup steps and environment variable requirements for platform integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:46a9218bc42dd455a10d5ef787986af55dc057ea41f088ad09bcfc9989757c2e"
+}

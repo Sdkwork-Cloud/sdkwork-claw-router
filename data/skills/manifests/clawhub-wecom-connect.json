@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70178,
+  "uuid": "skill-clawhub-wecom-connect",
+  "skillKey": "clawhub-wecom-connect",
+  "name": "WeCom Connect",
+  "summary": "连接企业微信。调用 generate 接口获取授权链接，用户把链接发到企业微信聊天里点开完成授权。用户提到连接企业微信、接入企微、绑定企微机器人、创建企微机器人、扫码绑定企微时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wecom_connect",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EaseLearnAI",
+      "features": [
+        "连接企业微信。调用 generate 接口获取授权链接，用户把链接发到企业微信聊天里点开完成授权。用户提到连接企业微信、接入企微、绑定企微机器人、创建企微机器人、扫码绑定企微时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wecom-connect@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/187486653?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wecom-connect",
+      "url": "https://clawhub.ai/skills/wecom-connect"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wecom-connect",
+    "url": "https://clawhub.ai/skills/wecom-connect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wecom-connect-5bba0cba6eefeef7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wecom-connect@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wecom-connect-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:60d637df186a57ac34574e9708a58829a2f409f0eb8343b7c5a2f6054e69d436",
+      "artifactSizeBytes": 1978
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T12:15:25.676Z"
+}

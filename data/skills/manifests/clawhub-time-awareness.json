@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28027,
+  "uuid": "skill-clawhub-time-awareness",
+  "skillKey": "clawhub-time-awareness",
+  "name": "Time Awareness",
+  "summary": "Provides accurate current time, market hours, timezone conversions, and prevents stale data by verifying time before responses.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.time_awareness",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "geoffguides",
+      "features": [
+        "Provides accurate current time, market hours, timezone conversions, and prevents stale data by."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/time-awareness@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/165811177?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "time-awareness",
+      "url": "https://clawhub.ai/skills/time-awareness"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "time-awareness",
+    "url": "https://clawhub.ai/skills/time-awareness",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/time-awareness-d33478ee29431a0a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/time-awareness@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-time-awareness-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f59eba15b9e6cc605cca4ba9564037bb064655bac935166640db8358badfc02",
+      "artifactSizeBytes": 2337
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T20:57:30.151Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ecommerce-product-description-generator@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecommerce_product_description_generator",
+  "skill": {
+    "id": 34054,
+    "skillKey": "clawhub-ecommerce-product-description-generator",
+    "name": "Product Description Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecommerce-product-description-generator",
+    "url": "https://clawhub.ai/skills/ecommerce-product-description-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecommerce-product-description-generator-85d67092b4924a7d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "E-commerce product description generator for any platform. Generates optimized titles, bullet points, descriptions, and backend keywords using competitor res..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "phheng",
+      "userId": "s17cnrtda4fqzdjza3g2hx20bs83f18z",
+      "displayName": "Henk Nie",
+      "image": "https://avatars.githubusercontent.com/u/44972754?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 229,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774069343277,
+      "changelog": "Initial release of the E-commerce Product Description Generator skill.\n\n- Generate optimized titles, bullet points, descriptions, and backend keywords for all major e-commerce platforms.\n- Two modes: (A) Create new listing from product specs with optional competitor analysis, (B) Optimize existing listing via keyword gap analysis.\n- Supports Amazon, eBay, Walmart, Shopify, Etsy, TikTok Shop, Lazada, and Shopee.\n- Performs keyword extraction and scoring using competitor research and web search, based on the FABE copywriting method.\n- No API key required; prompts user for missing product/platform details if input is incomplete.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a757eb5c5af0239a072486bf89e45ff5ab4c5029b4605e98dedead9f73a91f61"
+}

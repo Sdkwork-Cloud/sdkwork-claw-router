@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49936,
+  "uuid": "skill-clawhub-wardrobe-curator",
+  "skillKey": "clawhub-wardrobe-curator",
+  "name": "Wardrobe Curator",
+  "summary": "Build a personalized capsule wardrobe with style discovery, outfit planning, and smart shopping guidance.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wardrobe_curator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Build a personalized capsule wardrobe with style discovery, outfit planning, and smart shopping."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wardrobe-curator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wardrobe-curator",
+      "url": "https://clawhub.ai/skills/wardrobe-curator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wardrobe-curator",
+    "url": "https://clawhub.ai/skills/wardrobe-curator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wardrobe-curator-26633a9147f3d94d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wardrobe-curator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wardrobe-curator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d1868339584c1f1963fcf99e699bda3831c537d7eac9de5fba95aeb606eed0fa",
+      "artifactSizeBytes": 2361
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T05:44:08.463Z"
+}

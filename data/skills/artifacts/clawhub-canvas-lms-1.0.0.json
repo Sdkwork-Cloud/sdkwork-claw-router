@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/canvas-lms@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.canvas_lms",
+  "skill": {
+    "id": 10070,
+    "skillKey": "clawhub-canvas-lms",
+    "name": "Canvas LMS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "canvas-lms",
+    "url": "https://clawhub.ai/skills/canvas-lms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/canvas-lms-570b7d9f15b3e65d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access Canvas LMS (Instructure) for course data, assignments, grades, and submissions. Use when checking due dates, viewing grades, listing courses, or fetching course materials from Canvas."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pranavkarthik10",
+      "userId": "s17e507x83w5pc5601ev1vzj5183mzn3",
+      "displayName": "Pranav Karthik",
+      "image": "https://avatars.githubusercontent.com/u/44630385?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2503,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 5,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1768949033795,
+      "changelog": "Initial release: Canvas LMS data access skill.\n\n- Allows secure access to Canvas course data, assignments, grades, and submissions using the Canvas REST API.\n- Includes setup steps for generating an API token and configuring environment variables.\n- Provides example curl commands for common Canvas endpoints: user profile, courses, assignments, grades, files, and modules.\n- Offers tips for authentication, pagination, and response handling in both jq and Python.\n- Enables easy access to due dates, grades, course content, announcements, discussions, and inbox messages.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:587c8ecd89f53f5c6bf38e48c47c7c41f67a20ff8cadd2900459f974b886a0c8"
+}

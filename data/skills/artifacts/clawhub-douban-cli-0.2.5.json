@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/douban-cli@0.2.5",
+  "version": "0.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douban_cli",
+  "skill": {
+    "id": 70673,
+    "skillKey": "clawhub-douban-cli",
+    "name": "Douban CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douban-cli",
+    "url": "https://clawhub.ai/skills/douban-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douban-cli-60e34d8122925710.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "豆瓣电影/书籍/影人/用户收藏查询与标记 CLI。触发词：豆瓣、电影推荐、热门电影、想看什么、top250、美剧日剧韩剧、影评短评、标记看过、评分、好书推荐、书籍、豆列、关注、导出观影记录、影人、演员导演。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "marvae",
+      "userId": "s177y6s3pmntp6a8cywc789yqn847m66",
+      "displayName": "m3",
+      "image": "https://avatars.githubusercontent.com/u/11957602?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 470,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "0.2.5",
+      "createdAt": 1773827372411,
+      "changelog": "完善文档：场景指引、命令参考、故障排除；声明 browser-cookies 权限和配置文件",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:091dceaf05937ba17df42bb0d0bb75f8b4f95a2a657f020f1343867c05a7eeda"
+}

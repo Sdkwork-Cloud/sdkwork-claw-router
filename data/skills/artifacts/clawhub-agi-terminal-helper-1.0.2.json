@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agi-terminal-helper@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agi_terminal_helper",
+  "skill": {
+    "id": 15560,
+    "skillKey": "clawhub-agi-terminal-helper",
+    "name": "Agi Terminal Helper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agi-terminal-helper",
+    "url": "https://clawhub.ai/skills/agi-terminal-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agi-terminal-helper-269997af1f18bd6a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A practical runbook for using OpenClaw exec safely (sandbox-first, explicit confirmations, and debugging playbooks)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liuwujijay",
+      "userId": "publishers:liuwujijay",
+      "displayName": "liuwujijay",
+      "image": "https://avatars.githubusercontent.com/u/16355831?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 967,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771182702285,
+      "changelog": "- Added _meta.json file to the skill package.\n- No changes to skill behavior or documentation content.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1eade02062c4a0ebaaad06e82c23d21f8e8595e131923161bd7654238ba02507"
+}

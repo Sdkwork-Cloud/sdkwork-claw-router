@@ -1,0 +1,37 @@
+{
+  "skill": {
+    "slug": "scrapefun",
+    "displayName": "ScrapeFun",
+    "summary": "Use this skill when OpenClaw needs to operate a scrapefun server through the dedicated OpenClaw-facing APIs. Prefer /api/openclaw/* query and download endpoi...",
+    "tags": {
+      "latest": "0.0.2"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 325,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1773465228552,
+    "updatedAt": 1777619382025
+  },
+  "latestVersion": {
+    "version": "0.0.2",
+    "createdAt": 1773645502016,
+    "changelog": "**Summary: Major authentication and endpoint policy update. Now strictly favors OpenClaw-facing APIs; legacy fallbacks tightly restricted.**\n\n- Prefers dedicated `/api/openclaw/*` endpoints for all main operations (listing, download, scan, media state).\n- Only uses generic scrapefun APIs in rare, clearly listed fallback cases—never as silent replacements.\n- Explicitly details required OpenClaw permissions for each endpoint; halts if a permission or endpoint is missing.\n- Strictly prohibits previously allowed legacy endpoints for media browsing, download, and status checks.\n- Response style and examples rewritten to highlight new API order, fallback restrictions, and blockers.\n- Updates overview, workflow, and examples for clarity on allowed/disallowed behaviors.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "haoweili97",
+    "userId": "s1792c3vg6zvg9xzfwrk03j5v183fgn6",
+    "displayName": "Haowei Li",
+    "image": "https://avatars.githubusercontent.com/u/160501785?v=4"
+  },
+  "moderation": null
+}

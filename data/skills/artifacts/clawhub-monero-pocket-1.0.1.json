@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/monero-pocket@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.monero_pocket",
+  "skill": {
+    "id": 51124,
+    "skillKey": "clawhub-monero-pocket",
+    "name": "Ripley Pocket For Monero"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "monero-pocket",
+    "url": "https://clawhub.ai/skills/monero-pocket",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/monero-pocket-336b777160c32b8d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "API client skill for Ripley Pocket — the M2M micro-payment gateway for AI agents. Use this skill whenever you need to: send or receive payments between AI ag..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xbtoshi",
+      "userId": "publishers:xbtoshi",
+      "displayName": "XBToshi",
+      "image": "https://avatars.githubusercontent.com/u/256925101?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 331,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773769327512,
+      "changelog": "- Skill renamed from \"ripley-pocket\" to \"monero-pocket\"\n- Added required environment variable: API_KEY\n- Set default environment variable: RIPLEY_URL (\"https://pocket.ripley.run\")\n- Declared API_KEY as primary environment variable\n- No code or endpoint changes detected; documentation and configuration metadata only",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b705542b92784d0e1fb61d2a32842ea790a8bd33098739ed52c4cc84f8c97041"
+}

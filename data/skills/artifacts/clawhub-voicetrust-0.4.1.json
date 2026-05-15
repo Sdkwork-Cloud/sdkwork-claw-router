@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/voicetrust@0.4.1",
+  "version": "0.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voicetrust",
+  "skill": {
+    "id": 29303,
+    "skillKey": "clawhub-voicetrust",
+    "name": "VoiceTrust"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voicetrust",
+    "url": "https://clawhub.ai/skills/voicetrust",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voicetrust-845bf3e999a635fd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interpret VoiceTrust results for owner verification on voice/audio inputs. Use when you need the meaning of VoiceTrust fields, trust labels, command-gating d..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kunyancai",
+      "userId": "s17ffcjtj5rb69es4797z5r1f583hnk3",
+      "displayName": "KunyanCAI",
+      "image": "https://avatars.githubusercontent.com/u/92400563?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.4.1",
+      "createdAt": 1774431700571,
+      "changelog": "v0.4.1\n\n- added expected SHA256 verification for model downloads\n- clarified model provenance and upstream attribution\n- documented local biometric data handling and privacy boundaries\n\nNo core VoiceTrust runtime logic was changed in this release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dc606b359d1de4d79e4cd85190a34106ca994346caca8b29aabd77abb8c9887f"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/10jqka-concept@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.10jqka_concept",
+  "skill": {
+    "id": 65976,
+    "skillKey": "clawhub-10jqka-concept",
+    "name": "10jqka Concept"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "10jqka-concept",
+    "url": "https://clawhub.ai/skills/10jqka-concept",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/10jqka-concept-40bf1b9ab20abe2d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "同花顺爱问财股票概念查询。通过爬取同花顺 F10 页面获取股票所属概念板块信息。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liweijie0709-cmyk",
+      "userId": "s178pv1a35w03t664czf771xvx83p3kr",
+      "displayName": "liweijie0709-cmyk",
+      "image": "https://avatars.githubusercontent.com/u/266322839?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775032832617,
+      "changelog": "Initial release of 10jqka-concept\n\n- Provides concept board (主题板块) lookup for A股 stocks by scraping the Tonghuashun F10 page.\n- Supports: single stock concept queries, concept constituent stocks, and concept board market data.\n- No API key required; uses public web pages with GBK encoding.\n- Includes example usage via Python and curl.\n- Provides structured JSON output with stock and concept information.\n- Notes on anti-crawling measures and coding dependencies included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fc2d91edff3932369b701527b8b1db636538c995702d6ce775acd56773ac1aeb"
+}

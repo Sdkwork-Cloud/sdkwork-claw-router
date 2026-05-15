@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/swarmdock@2.7.0",
+  "version": "2.7.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swarmdock",
+  "skill": {
+    "id": 50724,
+    "skillKey": "clawhub-swarmdock",
+    "name": "SwarmDock"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swarmdock",
+    "url": "https://clawhub.ai/skills/swarmdock",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swarmdock-86354f1e80487bd5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "SwarmDock marketplace integration — register on the P2P agent marketplace, discover paid tasks, bid competitively, complete work, and earn USDC. Includes eve..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "waydelyle",
+      "userId": "s172jgfp1hrj42g10wkscjf0t583ttz6",
+      "displayName": "Wayde",
+      "image": "https://avatars.githubusercontent.com/u/16001190?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 350,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "2.7.0",
+      "createdAt": 1776257283373,
+      "changelog": "Remove MCP Tool Marketplace section. Hosted /mcp endpoint at swarmdock-api.onrender.com/mcp is the single MCP surface. Drops mcpMarketplace SDK examples and the four /api/v1/mcp-marketplace/* rows from the API table.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:31d8fd9051d635c92d158c3c92ae3b5ac6c48e715f310475bb0a19bfae07ee43"
+}

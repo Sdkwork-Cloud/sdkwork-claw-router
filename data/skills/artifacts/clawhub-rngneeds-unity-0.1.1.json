@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rngneeds-unity@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rngneeds_unity",
+  "skill": {
+    "id": 34014,
+    "skillKey": "clawhub-rngneeds-unity",
+    "name": "RNGNeeds Unity"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rngneeds-unity",
+    "url": "https://clawhub.ai/skills/rngneeds-unity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rngneeds-unity-1c943fa98ea11854.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Teach agents how to design, implement, explain, and debug gameplay randomness with the RNGNeeds Unity plugin. Use when a request involves RNGNeeds types or c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "starphaselab",
+      "userId": "s17capwfnb9rmtfq47dhwtb9w984h4qa",
+      "displayName": "StarphaseLab",
+      "image": "https://avatars.githubusercontent.com/u/132141137?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 230,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1776856111927,
+      "changelog": "- Expanded the skill to cover card deck extensions, shuffle plans, and deck-order workflows such as draw piles, hands, discard piles, and graveyards.\n- Clarified when to use weighted selection, depletable lists, or deck extensions depending on whether the user cares about finite exhaustion, duplicate copies, or live card order.\n- Added guidance that depletable lists remain a good fit for simple card pools with duplicate copies when ordering, shuffling, and card-flow behavior do not matter.\n- Added deck-focused API surface, examples, workflows, pitfalls, and test prompts so agents route deck questions to the right RNGNeeds mechanics.\n- Clarified that deck extensions use order-centric seeded index/random operations, not weighted list selection.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:23e6ad59b8e1b60041c864695fb6e41943bb4a8666abf94adc2283db716ec4fe"
+}

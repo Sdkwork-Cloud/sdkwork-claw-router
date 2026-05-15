@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-diary@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_diary",
+  "skill": {
+    "id": 16177,
+    "skillKey": "clawhub-claw-diary",
+    "name": "Claw Diary"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-diary",
+    "url": "https://clawhub.ai/skills/claw-diary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-diary-0e8aa35376f296f1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Personal AI agent visual diary. Auto-records all agent activity, generates daily narrative summaries, visual timeline replay, and AI first-person journal. Us..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xbeekeeper",
+      "userId": "s179bmeda1q70gbgj74cdam0mx83k8a9",
+      "displayName": "GoPlus",
+      "image": "https://avatars.githubusercontent.com/u/24714804?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 888,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1771464126471,
+      "changelog": "Security: fix shell injection in search, add prompt injection guard for journal",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9e8b08599410592e65f14cd006c118bb36b703cc52148ec685df0b05de83fb40"
+}

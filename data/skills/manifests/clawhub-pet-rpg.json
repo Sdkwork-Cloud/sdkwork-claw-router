@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19513,
+  "uuid": "skill-clawhub-pet-rpg",
+  "skillKey": "clawhub-pet-rpg",
+  "name": "PetRPG",
+  "summary": "A Tamagotchi-style digital pet for AI agents. Raise your pet, battle others, evolve through stages. Includes A2A multiplayer for agent challenges.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pet_rpg",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "NoizceEra",
+      "features": [
+        "A Tamagotchi-style digital pet for AI agents",
+        "Raise your pet, battle others, evolve through stages",
+        "Includes A2A multiplayer for agent challenges."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pet-rpg@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/141389471?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pet-rpg",
+      "url": "https://clawhub.ai/skills/pet-rpg"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pet-rpg",
+    "url": "https://clawhub.ai/skills/pet-rpg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pet-rpg-11420d42a3cf4502.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pet-rpg@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pet-rpg-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:496a7e1d8911f7cfbff16ee3a11098bb13568883467fccd65dcd63df572636df",
+      "artifactSizeBytes": 2196
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T20:53:08.421Z"
+}

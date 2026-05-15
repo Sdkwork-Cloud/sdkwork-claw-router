@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jimeng-t2i-i2i-image-generator@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jimeng_t2i_i2i_image_generator",
+  "skill": {
+    "id": 15218,
+    "skillKey": "clawhub-jimeng-t2i-i2i-image-generator",
+    "name": "Jimeng-Image-Generater"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jimeng-t2i-i2i-image-generator",
+    "url": "https://clawhub.ai/skills/jimeng-t2i-i2i-image-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jimeng-t2i-i2i-image-generator-20710e776a143936.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use Jimeng AI 4.0 (Volcengine) to generate images from text or image references, and optionally send results to Feishu."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tangc",
+      "userId": "s17bbh1k6bpcvf1h9bn47a710583g8sx",
+      "displayName": "tangzhan_aicoding",
+      "image": "https://avatars.githubusercontent.com/u/1482347?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 923,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772591971733,
+      "changelog": "Initial release of the jimeng skill using Jimeng AI 4.0 (Volcengine) for text-to-image and image-to-image generation.\n\n- Supports generating images from text (t2i) or image references (i2i).\n- Optional integration to send generated images directly to Feishu users.\n- Includes default image reference for i2i mode.\n- Simple command-line usage with customizable options and comprehensive examples.\n- PNG image output; URLs provided for easy sharing and downloading.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9d217d05f03957b0b7c3b870f7d79fabcbbce2e65ca63200039bb639443ed663"
+}

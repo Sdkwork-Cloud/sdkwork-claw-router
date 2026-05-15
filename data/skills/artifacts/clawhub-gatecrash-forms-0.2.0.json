@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gatecrash-forms@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gatecrash_forms",
+  "skill": {
+    "id": 16358,
+    "skillKey": "clawhub-gatecrash-forms",
+    "name": "GateCrash Forms"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gatecrash-forms",
+    "url": "https://clawhub.ai/skills/gatecrash-forms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gatecrash-forms-20d49037a85fa379.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CLI-first form builder with BYOK philosophy. Generate beautiful HTML forms from JSON schemas, handle submissions via your own SMTP server, store responses lo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "phoenix2479",
+      "userId": "publishers:phoenix2479",
+      "displayName": "Phoenix2479",
+      "image": "https://avatars.githubusercontent.com/u/205182516?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 893,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1771164759951,
+      "changelog": "Kimi Claw support: Native integration, enhanced features, agent-ready documentation",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6724469960e0ee82cec7c65422abee2dec063b660da8d032bb1cc28b1486f416"
+}

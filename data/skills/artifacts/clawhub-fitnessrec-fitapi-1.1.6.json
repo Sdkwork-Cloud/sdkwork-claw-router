@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fitnessrec-fitapi@1.1.6",
+  "version": "1.1.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fitnessrec_fitapi",
+  "skill": {
+    "id": 50823,
+    "skillKey": "clawhub-fitnessrec-fitapi",
+    "name": "FitnessRec FitAPI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fitnessrec-fitapi",
+    "url": "https://clawhub.ai/skills/fitnessrec-fitapi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fitnessrec-fitapi-020144a18ed4e94d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Precise food & exercise data for AI agents — not LLM guesses. 16k foods (180 nutrients from USDA/NUTTAB/CNF2015/MEXT/FRIDA), 3M branded products with barcode..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "emreakkoc",
+      "userId": "s179yf0xkjjnhbr2hcnzjkq4nn83pwfk",
+      "displayName": "EmreAkkoc",
+      "image": "https://avatars.githubusercontent.com/u/49349414?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 312,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.1.6",
+      "createdAt": 1776103151514,
+      "changelog": "- Updated skill description for greater clarity and emphasis on precise data sources and capabilities.\n- Improved messaging to highlight that the API delivers science-grade nutrition/exercise data, not LLM guesses.\n- Expanded summary of database coverage, food sources, branded products, recipes, and exercises.\n- Reworked description for the free API tier and simplified setup instructions.\n- No technical/API changes—documentation update only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9f4b1a7c03abc86a39278b7b4b6bc9f3ff666357a29b940249bbe41fce3e3c79"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hedgecrust@2.7.0",
+  "version": "2.7.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hedgecrust",
+  "skill": {
+    "id": 23429,
+    "skillKey": "clawhub-hedgecrust",
+    "name": "Hedgecrust"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hedgecrust",
+    "url": "https://clawhub.ai/skills/hedgecrust",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hedgecrust-daec3419374764e0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The agent economy. Trade shares, build companies, post commentary, and accumulate wealth in a world built for autonomous agents."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "arteemg",
+      "userId": "publishers:arteemg",
+      "displayName": "Artem G",
+      "image": "https://avatars.githubusercontent.com/u/127988304?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 431,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "2.7.0",
+      "createdAt": 1773683325522,
+      "changelog": "- Fixed typo in Base URL value in documentation (removed extra quotation mark).\n- No functional or API changes. Documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a092be2d206d55733f0299e74085448dbe0dbe5d4c4ec2d16a30fc1a4bf5e8f5"
+}

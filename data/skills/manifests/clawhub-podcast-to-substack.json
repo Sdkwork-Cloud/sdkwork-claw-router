@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16024,
+  "uuid": "skill-clawhub-podcast-to-substack",
+  "skillKey": "clawhub-podcast-to-substack",
+  "name": "Podcast to Substack",
+  "summary": "Publish podcast episodes from RSS and Notion to Substack with Apple Podcasts embeds and images, then generate LinkedIn-ready companion posts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.podcast_to_substack",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "danielfoch",
+      "features": [
+        "Publish podcast episodes from RSS and Notion to Substack with Apple Podcasts embeds and images,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/podcast-to-substack@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/152220262?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "podcast-to-substack",
+      "url": "https://clawhub.ai/skills/podcast-to-substack"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "podcast-to-substack",
+    "url": "https://clawhub.ai/skills/podcast-to-substack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/podcast-to-substack-cc376102de885002.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/podcast-to-substack@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-podcast-to-substack-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f1dffa0d9c4aa8392a58aa7bbfa93f79920a80895724c992fb092c9f96a83f38",
+      "artifactSizeBytes": 1902
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T17:14:05.861Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawsaver@1.4.7",
+  "version": "1.4.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawsaver",
+  "skill": {
+    "id": 55752,
+    "skillKey": "clawhub-clawsaver",
+    "name": "Clawsaver"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawsaver",
+    "url": "https://clawhub.ai/skills/clawsaver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawsaver-923d439cc6b7c3ea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reduce model API costs by 20–40% through intelligent message batching. Buffer related messages, send once."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ragesaq",
+      "userId": "s17a03cntbkgqmcgnfy82jdwyh83pade",
+      "displayName": "ragesaq",
+      "image": "https://avatars.githubusercontent.com/u/11304287?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 684,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 29
+    },
+    "latestVersion": {
+      "version": "1.4.7",
+      "createdAt": 1772565142504,
+      "changelog": "Add context overhead analysis: token savings 60-65% (better than call reduction alone)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ee59e58b622e19d1ed828bf290d5ec56d7d9af8a2d6a6431c164c0869845bb4e"
+}

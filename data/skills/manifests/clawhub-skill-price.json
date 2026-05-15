@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44925,
+  "uuid": "skill-clawhub-skill-price",
+  "skillKey": "clawhub-skill-price",
+  "name": "Skill Price",
+  "summary": "Use when user needs to monitor competitor pricing, track market price trends, or analyze price changes. Use when setting up price alerts for specific product...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_price",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WangM-A3",
+      "features": [
+        "Use when user needs to monitor competitor pricing, track market price trends, or analyze price.",
+        "Use when setting up price alerts for specific product..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-price@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274818589?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-price",
+      "url": "https://clawhub.ai/skills/skill-price"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-price",
+    "url": "https://clawhub.ai/skills/skill-price",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-price-b439e8d089303903.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-price@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-price-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:51e6c0ede731e4e8a4f50e18271c901aabdd2919b39a1a3ab8d1590166d1b3f9",
+      "artifactSizeBytes": 2195
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T07:58:19.172Z"
+}

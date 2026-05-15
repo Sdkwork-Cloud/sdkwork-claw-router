@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29711,
+  "uuid": "skill-clawhub-context-hawk",
+  "skillKey": "clawhub-context-hawk",
+  "name": "Context Hawk",
+  "summary": "Pure Python memory manager for preserving and retrieving multi-layered AI memories across sessions, topics, and time without external dependencies.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_hawk",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gao.QiLin",
+      "features": [
+        "Pure Python memory manager for preserving and retrieving multi-layered AI memories across sessi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/context-hawk@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1791740?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "context-hawk",
+      "url": "https://clawhub.ai/skills/context-hawk"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-hawk",
+    "url": "https://clawhub.ai/skills/context-hawk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-hawk-71475fb4fdc4e6d6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/context-hawk@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-context-hawk-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5b291f56e8df264594096c078b435934f825a615a3ce93cef2a515d9f4c988a7",
+      "artifactSizeBytes": 2251
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T06:56:35.696Z"
+}

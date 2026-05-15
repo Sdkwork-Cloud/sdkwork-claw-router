@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61771,
+  "uuid": "skill-clawhub-pans-poc-tracker",
+  "skillKey": "clawhub-pans-poc-tracker",
+  "name": "Pans Poc Tracker",
+  "summary": "AI算力销售POC追踪器。管理POC全生命周期，记录技术卡点，提醒跟进，生成转化报告。 支持阶段跟踪、团队协作、风险预警。 触发词：POC跟踪, 测试管理, 技术验证, POC进度, proof of concept, trial tracking",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pans_poc_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dashiming",
+      "features": [
+        "AI算力销售POC追踪器。管理POC全生命周期，记录技术卡点，提醒跟进，生成转化报告。 支持阶段跟踪、团队协作、风险预警。 触发词：POC跟踪, 测试管理, 技术验证, POC进度, pro."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pans-poc-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28342384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pans-poc-tracker",
+      "url": "https://clawhub.ai/skills/pans-poc-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pans-poc-tracker",
+    "url": "https://clawhub.ai/skills/pans-poc-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pans-poc-tracker-3c77271cca1ca3be.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pans-poc-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pans-poc-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1a577253a0895e76ce8b7f0636528969e9acd381fed3bceadb8675d3d1fb3540",
+      "artifactSizeBytes": 2455
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T05:40:22.260Z"
+}

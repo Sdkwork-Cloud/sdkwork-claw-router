@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/organise-photos@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.organise_photos",
+  "skill": {
+    "id": 24837,
+    "skillKey": "clawhub-organise-photos",
+    "name": "Organise photos"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "organise-photos",
+    "url": "https://clawhub.ai/skills/organise-photos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/organise-photos-66f1e27bb91117dc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Organize a photo folder by cleaning non-photo files, removing bad exposures, detecting blur and burst shots, and classifying photos into numbered subfolders..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lemondepat",
+      "userId": "publishers:lemondepat",
+      "displayName": "Pat",
+      "image": "https://avatars.githubusercontent.com/u/6176945?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 401,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773156478219,
+      "changelog": "Photo Folder Organizer initial public release.\n\n- Organizes photo folders by removing non-photo files, cleaning up bad exposures (near-black or near-white), and sorting images using AI analysis.\n- Detects and offers to remove or move non-photo files.\n- Identifies photos with poor exposure and allows user review before deletion.\n- Runs local Python scripts to detect blurry images and burst shot groups for organization.\n- Classifies and sorts photos into numbered, descriptive subfolders, with all interactions and folder names in the user’s language.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:470741bc9b6923fc0809dd46424fad5f4e13759a847e527fbeb0fc6ff5a78753"
+}

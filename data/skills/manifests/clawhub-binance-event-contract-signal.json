@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26685,
+  "uuid": "skill-clawhub-binance-event-contract-signal",
+  "skillKey": "clawhub-binance-event-contract-signal",
+  "name": "Binance Event Contract Signal Calculator",
+  "summary": "Calculates multi-timeframe Binance Event Contract signals for BTCUSDT/ETHUSDT with detailed entries, targets, stop loss, confidence, and position sizing.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.binance_event_contract_signal",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "acwxpunh",
+      "features": [
+        "Calculates multi-timeframe Binance Event Contract signals for BTCUSDT/ETHUSDT with detailed ent."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/binance-event-contract-signal@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218176710?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "binance-event-contract-signal",
+      "url": "https://clawhub.ai/skills/binance-event-contract-signal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "binance-event-contract-signal",
+    "url": "https://clawhub.ai/skills/binance-event-contract-signal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/binance-event-contract-signal-d6529f6dafc6057f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/binance-event-contract-signal@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-binance-event-contract-signal-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:20d6662ed56062c0b7f13ddb0f26d42cb20c23b45601ded0dabf0cbc585a819d",
+      "artifactSizeBytes": 2641
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T12:21:12.368Z"
+}

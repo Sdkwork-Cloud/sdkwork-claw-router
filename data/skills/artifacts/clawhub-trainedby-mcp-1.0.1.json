@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trainedby-mcp@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trainedby_mcp",
+  "skill": {
+    "id": 25725,
+    "skillKey": "clawhub-trainedby-mcp",
+    "name": "trainedby.ai MCP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trainedby-mcp",
+    "url": "https://clawhub.ai/skills/trainedby-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trainedby-mcp-8a3cee436dcf2be3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the trainedby.ai MCP server for personal coaching, health tracking, and goal management. Trigger when the user asks about their health data, fitness goal..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "joostrothweiler",
+      "userId": "s173hjhgwtmq0fhwway24ds79583ncma",
+      "displayName": "Joost Rothweiler",
+      "image": "https://avatars.githubusercontent.com/u/7423624?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 383,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772523095763,
+      "changelog": "- Updated MCP server URL from `https://mcp.trainedby.ai/mcp` to `https://trainedby.fastmcp.app/mcp`.  \n- No other changes to features, tools, or guidelines.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:37d1bc0b1723881bb5165acc3a0f2ad550bbb2a508fe45f67e76389a7700079f"
+}

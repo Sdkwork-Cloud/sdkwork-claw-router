@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agents-mail@0.4.4",
+  "version": "0.4.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agents_mail",
+  "skill": {
+    "id": 50807,
+    "skillKey": "clawhub-agents-mail",
+    "name": "Agents Mail — Free Email for AI Agents, with No sign-up, No API key needed"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agents-mail",
+    "url": "https://clawhub.ai/skills/agents-mail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agents-mail-1e5a7df0a7b673e3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Free email for AI agents. No sign-up needed. One call to get a mailbox and send."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agents-mail",
+      "userId": "s174cw5e4kn7yrpn640y9nq4fx83m5t0",
+      "displayName": "Agents Mail",
+      "image": null
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 498,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.4.4",
+      "createdAt": 1774549476878,
+      "changelog": "- Simplified setup instructions to focus on key API calls.\n- The environment variable requirement for AGENTSMAIL_API_KEY is no longer described as required in the metadata.\n- Usage guidance is now clearer about saving credentials directly from the API response.\n- HEARTBEAT.md automation instructions are condensed and clarified.\n- Metadata fields streamlined; some technical configuration info removed for a cleaner presentation.\n- No functional API changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5117faf6fd87a535072a156da6bfd2196f5bf436cdd0a5fef8b4235da3c67975"
+}

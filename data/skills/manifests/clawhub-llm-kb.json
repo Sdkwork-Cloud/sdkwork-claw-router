@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27635,
+  "uuid": "skill-clawhub-llm-kb",
+  "skillKey": "clawhub-llm-kb",
+  "name": "LLM Knowledge Base",
+  "summary": "Create and manage LLM-powered personal knowledge bases using Karpathy's wiki method. Use when users want to build a knowledge base, ingest sources, query the...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llm_kb",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gavin C.",
+      "features": [
+        "Create and manage LLM-powered personal knowledge bases using Karpathy's wiki method",
+        "Use when users want to build a knowledge base, ingest sources, query the..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/llm-kb@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201307310?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "llm-kb",
+      "url": "https://clawhub.ai/skills/llm-kb"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llm-kb",
+    "url": "https://clawhub.ai/skills/llm-kb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llm-kb-72d0a8b52e9bd0b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/llm-kb@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-llm-kb-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:982b24e6cd5847ab536fc42a850fb824824bf99d49cd94f8c32f3cedd5f11fd2",
+      "artifactSizeBytes": 2004
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T03:38:02.810Z"
+}

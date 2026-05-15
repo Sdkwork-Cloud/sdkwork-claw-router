@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/diagnose-openclaw-model-routing-and-fallback-usage@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.diagnose_openclaw_model_routing_and_fallback_usage",
+  "skill": {
+    "id": 60659,
+    "skillKey": "clawhub-diagnose-openclaw-model-routing-and-fallback-usage",
+    "name": "Diagnose Openclaw Model Routing And Fallback Usage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "diagnose-openclaw-model-routing-and-fallback-usage",
+    "url": "https://clawhub.ai/skills/diagnose-openclaw-model-routing-and-fallback-usage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/diagnose-openclaw-model-routing-and-fallback-usage-640bb025b5899d3d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "用于分析 OpenClaw 中“某个 provider/模型为什么看起来没被用上”、主模型与 fallback 实际是否生效、以及 ClaudeCodeCLI 协作任务为何中断。遇到这些情况就应触发：用户提到“没请求打到 local-router”“明明注册了模型却没流量”“Agent 到底在用哪个模型”“fal..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "can4hou6joeng4",
+      "userId": "s17fzhes75mvxfh1xm1q519egh83y6gc",
+      "displayName": "can4hou6joeng4",
+      "image": "https://avatars.githubusercontent.com/u/66450588?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774195481060,
+      "changelog": "Initial release: Comprehensive OpenClaw provider/model routing and fallback diagnostic tool.\n\n- Analyzes why a specific provider/model isn’t used, including main and fallback chains, by correlating configuration with runtime logs.\n- Distinguishes between “provider registered” and “model bound to execution route,” preventing common misunderstandings.\n- Diagnoses root causes for issues like “no local-router traffic,” untriggered fallbacks, ambiguous provider/model hits, and failed CLI collaborations.\n- Interprets fails, log absence, SIGTERM/143 exit codes, and recommends robust task exec practices (e.g., result-file output, agent health probes).\n- Summarizes common pitfalls and offers actionable, evidence-based solutions for configuration, fallback, and CLI exec issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c18cda2ff46175a57c5605cbe7cd2aa567270239ab28ff42276cb0fc83f91d68"
+}

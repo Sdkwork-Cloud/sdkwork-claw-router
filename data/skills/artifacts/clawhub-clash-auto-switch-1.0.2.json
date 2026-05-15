@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clash-auto-switch@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clash_auto_switch",
+  "skill": {
+    "id": 65712,
+    "skillKey": "clawhub-clash-auto-switch",
+    "name": "clash-auto-switch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clash-auto-switch",
+    "url": "https://clawhub.ai/skills/clash-auto-switch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clash-auto-switch-69645fc6a0c1ff33.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动检测 Clash 代理健康状态，优先区域节点优选，故障时切换到最佳节点，支持手动和区域快速切换。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adminlove520",
+      "userId": "s179x72c6jesddn1707vxetp1d83j11q",
+      "displayName": "Anonymous",
+      "image": "https://avatars.githubusercontent.com/u/32920883?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 501,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772863224260,
+      "changelog": "- Added new documentation file: docs/openclaw.md\n- Updated README.md with additional or improved content",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:baa279ecf102710481d29bd896bc8a48959a2ffbbfbdc00ef5e3b1758aa8bbc5"
+}

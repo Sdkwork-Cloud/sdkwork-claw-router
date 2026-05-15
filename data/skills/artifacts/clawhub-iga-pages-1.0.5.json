@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/iga-pages@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iga_pages",
+  "skill": {
+    "id": 29196,
+    "skillKey": "clawhub-iga-pages",
+    "name": "IGA Pages"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iga-pages",
+    "url": "https://clawhub.ai/skills/iga-pages",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iga-pages-e71d3fa6c424afd5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deploy frontend and full-stack projects to IGA Pages. Use when the user mentions IGA Pages or requests deployment (\"deploy my app\", \"publish this site\", \"pus..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "seasonrui",
+      "userId": "s17atpqrxe7cbntet1dw7y6rp183gvp5",
+      "displayName": "seasonrui",
+      "image": "https://avatars.githubusercontent.com/u/13701848?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 308,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1776831004026,
+      "changelog": "- Minimum required CLI version updated to @iga-pages/cli >= 1.0.3.\n- Browser login instructions clarified: wait for the CLI's success message after auth.\n- Added note: always share the **full** preview URL (including query params) after deployment for proper access.\n- Minor descriptions and wording improvements for login workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6731cbcc181945995a294cc8c9713581770b9d01bc212b60e28b55a7d105afb0"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53333,
+  "uuid": "skill-clawhub-accesslint",
+  "skillKey": "clawhub-accesslint",
+  "name": "accesslint",
+  "summary": "Web accessibility & WCAG compliance scanner — detects WCAG 2.1 violations, missing ARIA attributes, color contrast issues, keyboard navigation problems, and...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.accesslint",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "suhteevah",
+      "features": [
+        "Web accessibility & WCAG compliance scanner — detects WCAG 2.1 violations, missing ARIA attribu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/accesslint@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2342183?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "accesslint",
+      "url": "https://clawhub.ai/skills/accesslint"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "accesslint",
+    "url": "https://clawhub.ai/skills/accesslint",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/accesslint-74c7aedcc91d698a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/accesslint@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-accesslint-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:94cba20bea1a9ee4bde6c457eb027e00d63c43cddf329ac59921bac405a9fac4",
+      "artifactSizeBytes": 1911
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T15:18:35.874Z"
+}

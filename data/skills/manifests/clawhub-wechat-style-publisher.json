@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68828,
+  "uuid": "skill-clawhub-wechat-style-publisher",
+  "skillKey": "clawhub-wechat-style-publisher",
+  "name": "wechat-style-publisher",
+  "summary": "支持多账号微信公众号发布，提供自定义文章主题、文章开头/结尾模板。当用户需要将带样式的文章发布到一个或多个微信公众号时使用此工具。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_style_publisher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "web3aivc",
+      "features": [
+        "支持多账号微信公众号发布，提供自定义文章主题、文章开头/结尾模板。当用户需要将带样式的文章发布到一个或多个微信公众号时使用此工具。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-style-publisher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/122167631?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-style-publisher",
+      "url": "https://clawhub.ai/skills/wechat-style-publisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-style-publisher",
+    "url": "https://clawhub.ai/skills/wechat-style-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-style-publisher-ab39b6b73428dcd3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-style-publisher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-style-publisher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6ce5e62afa9a97e04b372f78b384ea227177b7d9f01edbaafc8fe5dae8dbcea7",
+      "artifactSizeBytes": 2516
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T07:52:23.206Z"
+}

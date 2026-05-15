@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deep-research-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deep_research_agent",
+  "skill": {
+    "id": 14955,
+    "skillKey": "clawhub-deep-research-agent",
+    "name": "Deep Research Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deep-research-agent",
+    "url": "https://clawhub.ai/skills/deep-research-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deep-research-agent-2fa4471ea187428f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deep research and analysis agent for any topic. Use when the user wants to research a topic, analyze competitors, evaluate technologies, compare tools, inves..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jahonn",
+      "userId": "s173n6hbyvzhtwkf8cxh3b3v3983gr6k",
+      "displayName": "Jahonn Ding",
+      "image": "https://avatars.githubusercontent.com/u/1058051?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 966,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774051510496,
+      "changelog": "Initial release: 5-mode research agent with source evaluation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:87645acee61f5a7c90d79d129b763bb66daf2cb26c5ef691b05b7fc7a862b396"
+}

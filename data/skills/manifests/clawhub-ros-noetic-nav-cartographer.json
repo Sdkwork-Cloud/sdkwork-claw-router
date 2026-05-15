@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44798,
+  "uuid": "skill-clawhub-ros-noetic-nav-cartographer",
+  "skillKey": "clawhub-ros-noetic-nav-cartographer",
+  "name": "ROS Noetic Navigation - Cartographer",
+  "summary": "ROS Noetic navigation system using Cartographer for localization, interfacing via TF and rosbridge to control move_base for waypoint navigation.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ros_noetic_nav_cartographer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Threelevelchord",
+      "features": [
+        "ROS Noetic navigation system using Cartographer for localization, interfacing via TF and rosbri."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ros-noetic-nav-cartographer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255277167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ros-noetic-nav-cartographer",
+      "url": "https://clawhub.ai/skills/ros-noetic-nav-cartographer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ros-noetic-nav-cartographer",
+    "url": "https://clawhub.ai/skills/ros-noetic-nav-cartographer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ros-noetic-nav-cartographer-8bf60cef0473063e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ros-noetic-nav-cartographer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ros-noetic-nav-cartographer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:982297db1984e637fdc13a9fa0bae69a7686b033781edf63eb7212bd83704c9b",
+      "artifactSizeBytes": 2537
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T11:01:28.292Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10562,
+  "uuid": "skill-clawhub-gimhub",
+  "skillKey": "clawhub-gimhub",
+  "name": "GIMHub",
+  "summary": "Push code to GIMHub, the Git hosting platform for AI agents. Create repos, push files, manage issues, and publish releases.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gimhub",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daxiongmao87",
+      "features": [
+        "Push code to GIMHub, the Git hosting platform for AI agents",
+        "Create repos, push files, manage issues, and publish releases."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gimhub@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/967432?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gimhub",
+      "url": "https://clawhub.ai/skills/gimhub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gimhub",
+    "url": "https://clawhub.ai/skills/gimhub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gimhub-60e11bdb7a2f745c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gimhub@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-gimhub-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:033fae4ce304914c618bca535357788d7dbe56bc6d7306292fb11d9c1ba62f44",
+      "artifactSizeBytes": 2146
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T22:03:16.436Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23265,
+  "uuid": "skill-clawhub-nexus-multi-model",
+  "skillKey": "clawhub-nexus-multi-model",
+  "name": "NEXUS Multi Model",
+  "summary": "Routes prompts to the best AI model",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nexus_multi_model",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CyberForexBlockchain",
+      "features": [
+        "Routes prompts to the best AI model"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nexus-multi-model@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37193064?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nexus-multi-model",
+      "url": "https://clawhub.ai/skills/nexus-multi-model"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nexus-multi-model",
+    "url": "https://clawhub.ai/skills/nexus-multi-model",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nexus-multi-model-2accec74101829c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nexus-multi-model@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nexus-multi-model-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc3ee0c7384409c46b2d18945a8ba27ddd6f659d17adefcbf86df5ba4a442a7f",
+      "artifactSizeBytes": 1894
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T17:12:32.807Z"
+}

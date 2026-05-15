@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26085,
+  "uuid": "skill-clawhub-ripe-scanner",
+  "skillKey": "clawhub-ripe-scanner",
+  "name": "Ripe Scanner",
+  "summary": "Free stock and crypto momentum scanner with social sentiment analysis. Scans S&P 500, Nasdaq 100, and crypto for momentum signals using RSI, EMA, Bollinger S...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ripe_scanner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "NomadRex",
+      "features": [
+        "Free stock and crypto momentum scanner with social sentiment analysis",
+        "Scans S&P 500, Nasdaq 100, and crypto for momentum signals using RSI, EMA, Bollinger S..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ripe-scanner@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57141717?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ripe-scanner",
+      "url": "https://clawhub.ai/skills/ripe-scanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ripe-scanner",
+    "url": "https://clawhub.ai/skills/ripe-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ripe-scanner-96d8e2935c95010e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ripe-scanner@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ripe-scanner-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c57979c690960087484aa090184d2ebc72c2cafaae88b34a696ffda22786ba8",
+      "artifactSizeBytes": 1953
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T18:44:14.238Z"
+}

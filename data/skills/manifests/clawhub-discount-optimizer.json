@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36459,
+  "uuid": "skill-clawhub-discount-optimizer",
+  "skillKey": "clawhub-discount-optimizer",
+  "name": "Discount Optimizer",
+  "summary": "Calculate optimal discount levels based on unit cost, conversion targets, and inventory velocity so promos move product without destroying margin.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.discount_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeroyCreates",
+      "features": [
+        "Calculate optimal discount levels based on unit cost, conversion targets, and inventory velocit."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/discount-optimizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130833525?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "discount-optimizer",
+      "url": "https://clawhub.ai/skills/discount-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "discount-optimizer",
+    "url": "https://clawhub.ai/skills/discount-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/discount-optimizer-09ba1e67e0c4bb83.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/discount-optimizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-discount-optimizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:93f079f2c92b437bff44b8f8f2f503c810b09c33398e5a31a2f0345750f6d45d",
+      "artifactSizeBytes": 1907
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T10:08:34.092Z"
+}

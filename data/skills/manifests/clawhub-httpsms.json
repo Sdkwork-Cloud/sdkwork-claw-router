@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25324,
+  "uuid": "skill-clawhub-httpsms",
+  "skillKey": "clawhub-httpsms",
+  "name": "Httpsms",
+  "summary": "HttpSMS integration. Manage data, records, and automate workflows. Use when the user wants to interact with HttpSMS data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.httpsms",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "HttpSMS integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with HttpSMS data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/httpsms@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "httpsms",
+      "url": "https://clawhub.ai/skills/httpsms"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "httpsms",
+    "url": "https://clawhub.ai/skills/httpsms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/httpsms-ddcf909fef98080f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/httpsms@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-httpsms-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac1668810dd89365886225e8d3984213f06bafae4c2b218e83abe0ce7bf84558",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:34:04.971Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44845,
+  "uuid": "skill-clawhub-compact-test-a",
+  "skillKey": "clawhub-compact-test-a",
+  "name": "Compact Test A",
+  "summary": "Smart context compaction for OpenClaw agents. 4-phase progressive strategy: Scan, Extract, Check, Compact. Before running /compact, this skill scans tool out...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.compact_test_a",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wavmson",
+      "features": [
+        "Smart context compaction for OpenClaw agents",
+        "4-phase progressive strategy: Scan, Extract, Check, Compact",
+        "Before running /compact, this skill scans tool out..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/compact-test-a@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/127436552?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "compact-test-a",
+      "url": "https://clawhub.ai/skills/compact-test-a"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "compact-test-a",
+    "url": "https://clawhub.ai/skills/compact-test-a",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/compact-test-a-b625ff72a48fee45.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/compact-test-a@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-compact-test-a-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb3f171c3b4fdcb5f09d909682f311db875fa80850df8f01c69e61263ecbf856",
+      "artifactSizeBytes": 2481
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T17:58:15.303Z"
+}

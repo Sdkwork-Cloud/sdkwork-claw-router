@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73677,
+  "uuid": "skill-clawhub-paper-finder",
+  "skillKey": "clawhub-paper-finder",
+  "name": "学术文献检索（期刊信息、影响因子、下载链接）",
+  "summary": "根据主题、篇名、关键词等检索学术文献，返回真实的期刊信息、影响因子和下载链接，找不到就是找不到，绝不编造",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_finder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangjinhongmy-pixel",
+      "features": [
+        "根据主题、篇名、关键词等检索学术文献，返回真实的期刊信息、影响因子和下载链接，找不到就是找不到，绝不编造"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paper-finder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/247364929?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paper-finder",
+      "url": "https://clawhub.ai/skills/paper-finder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-finder",
+    "url": "https://clawhub.ai/skills/paper-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-finder-e6865992f098c140.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paper-finder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-paper-finder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:23173817c7c24c5608add78ab68e37678d0ca5c3aeed8a60454de4bfce0d9539",
+      "artifactSizeBytes": 2409
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T02:05:49.686Z"
+}

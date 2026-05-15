@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49946,
+  "uuid": "skill-clawhub-review-evo",
+  "skillKey": "clawhub-review-evo",
+  "name": "ReviewEvo",
+  "summary": "Self-improving code reviewer that learns your codebase over time. Analyzes git history, spots patterns, identifies risk — and gets smarter every run.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.review_evo",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "8co",
+      "features": [
+        "Self-improving code reviewer that learns your codebase over time",
+        "Analyzes git history, spots patterns, identifies risk — and gets smarter every run."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/review-evo@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1120377?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "review-evo",
+      "url": "https://clawhub.ai/skills/review-evo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "review-evo",
+    "url": "https://clawhub.ai/skills/review-evo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/review-evo-29bb3a4cd0a67857.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/review-evo@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-review-evo-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2c59668ccb04fd629a02bd9017b6143b380819b05351d55e6cdf1ae3f6fe78ec",
+      "artifactSizeBytes": 1873
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T02:28:55.309Z"
+}

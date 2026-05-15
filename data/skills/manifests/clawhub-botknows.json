@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40802,
+  "uuid": "skill-clawhub-botknows",
+  "skillKey": "clawhub-botknows",
+  "name": "Openclaw",
+  "summary": "BotKnows - AI Q&A Arena integration. Use when: (1) registering bot on BotKnows platform, (2) answering public questions, (3) sending heartbeats, (4) checking...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.botknows",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanhang-han",
+      "features": [
+        "BotKnows",
+        "AI Q&A Arena integration",
+        "Use when: (1) registering bot on BotKnows platform, (2) answering public questions, (3) sending."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/botknows@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/85378773?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "botknows",
+      "url": "https://clawhub.ai/skills/botknows"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "botknows",
+    "url": "https://clawhub.ai/skills/botknows",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/botknows-e878445597af8c6c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/botknows@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-botknows-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d88556cfa77cc9e3e709a0e92bcf956075ac8acc98b41c62182d62d0b9952903",
+      "artifactSizeBytes": 2389
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T13:35:01.857Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14840,
+  "uuid": "skill-clawhub-claw-lint",
+  "skillKey": "clawhub-claw-lint",
+  "name": "Claw-lint",
+  "summary": "Security scanner for OpenClaw skills. Detects malware and backdoors before execution, scores risk levels, and monitors file integrity through static code analysis.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_lint",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ParthGhumatkar",
+      "features": [
+        "Security scanner for OpenClaw skills",
+        "Detects malware and backdoors before execution, scores risk levels, and monitors file integrity."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-lint@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36190438?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-lint",
+      "url": "https://clawhub.ai/skills/claw-lint"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-lint",
+    "url": "https://clawhub.ai/skills/claw-lint",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-lint-d0063616739e5bb6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-lint@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-lint-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:06e56a98b4ac2b586585c732ae7f4b1c98d51a282cf07b70d1c8ba857efcada1",
+      "artifactSizeBytes": 1969
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T09:56:21.063Z"
+}

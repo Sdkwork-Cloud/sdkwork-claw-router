@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31951,
+  "uuid": "skill-clawhub-the-media-trust",
+  "skillKey": "clawhub-the-media-trust",
+  "name": "The Media Trust",
+  "summary": "The Media Trust integration. Manage data, records, and automate workflows. Use when the user wants to interact with The Media Trust data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.the_media_trust",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "The Media Trust integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with The Media Trust data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/the-media-trust@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "the-media-trust",
+      "url": "https://clawhub.ai/skills/the-media-trust"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "the-media-trust",
+    "url": "https://clawhub.ai/skills/the-media-trust",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/the-media-trust-b80858f97216f452.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/the-media-trust@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-the-media-trust-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dc5bebfe00396495a8ba4eefcd4371156a141369e5f945437665f78a07c2f4c2",
+      "artifactSizeBytes": 1893
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:52:39.411Z"
+}

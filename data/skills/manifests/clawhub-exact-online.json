@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22451,
+  "uuid": "skill-clawhub-exact-online",
+  "skillKey": "clawhub-exact-online",
+  "name": "Exact Online",
+  "summary": "Exact Online integration. Manage Organizations. Use when the user wants to interact with Exact Online data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.exact_online",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Exact Online integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Exact Online data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/exact-online@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "exact-online",
+      "url": "https://clawhub.ai/skills/exact-online"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "exact-online",
+    "url": "https://clawhub.ai/skills/exact-online",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/exact-online-a785d5f492e13e1f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/exact-online@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-exact-online-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d651f476d2e533ca5bde54d02f59a3f885ae16fc53f08646be09b16c3d342b11",
+      "artifactSizeBytes": 1850
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:26:30.289Z"
+}

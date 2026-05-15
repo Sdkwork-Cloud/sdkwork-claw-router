@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22433,
+  "uuid": "skill-clawhub-idea-check",
+  "skillKey": "clawhub-idea-check",
+  "name": "Idea Check",
+  "summary": "Pre-build reality check before starting any new project or tool. Use when the user discusses a new idea, asks about competition, wants to know if something a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.idea_check",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "𝑠𝑝𝑖𝑑𝑒𝑦",
+      "features": [
+        "Pre-build reality check before starting any new project or tool",
+        "Use when the user discusses a new idea, asks about competition, wants to know if something a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/idea-check@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/146075220?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "idea-check",
+      "url": "https://clawhub.ai/skills/idea-check"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "idea-check",
+    "url": "https://clawhub.ai/skills/idea-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/idea-check-b00b8c233745078d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/idea-check@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-idea-check-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5fa32165920de1e2c25c3df3f14b899ed579ec86cb2586201306a6a100221bde",
+      "artifactSizeBytes": 1867
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T14:46:33.762Z"
+}

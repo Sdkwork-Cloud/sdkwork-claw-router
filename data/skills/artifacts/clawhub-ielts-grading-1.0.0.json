@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ielts-grading@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ielts_grading",
+  "skill": {
+    "id": 65588,
+    "skillKey": "clawhub-ielts-grading",
+    "name": "IELTS Grading Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ielts-grading",
+    "url": "https://clawhub.ai/skills/ielts-grading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ielts-grading-36c465f32d655ec9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据用户提供的雅思写作或口语回答进行官方标准评分。使用前先联网检索并确认原始题目，再按本项目内评分标准逐维度打分、给出总分与可执行改进建议。适用于用户提到 IELTS/雅思、作文批改、口语评分、band 分数、Task 1/Task 2、speaking mock 等场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yezaijun",
+      "userId": "s1705adayqm2gnebr2jz05x88h851201",
+      "displayName": "Zaijun Ye",
+      "image": "https://avatars.githubusercontent.com/u/79397195?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776440771129,
+      "changelog": "v1.0.0\n- Added an IELTS grading skill for Writing and Speaking based on local official-style band descriptors.\n- Enforced workflow: identify task type, collect prompt info (writing required), verify prompt online (writing mandatory), then score.\n- Added robust handling for prompt/version conflicts (use prompt text and data points as source of truth).\n- Improved evidence-based scoring: each criterion requires supporting text evidence and confidence calibration.\n- Added concise Chinese output template with score breakdown, loss points, and actionable improvement suggestions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:23700b61d6bec3e9c22cc90da3dcd5c0c5141e3977e92ecc575c90d0eed5ea7d"
+}

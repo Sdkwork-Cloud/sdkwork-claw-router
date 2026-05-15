@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/muapi-ui-design-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.muapi_ui_design_skill",
+  "skill": {
+    "id": 48987,
+    "skillKey": "clawhub-muapi-ui-design-skill",
+    "name": "Ui Design"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "muapi-ui-design-skill",
+    "url": "https://clawhub.ai/skills/muapi-ui-design-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/muapi-ui-design-skill-90521389b1e2ba10.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate high-fidelity UI/UX mockups for mobile and web apps using Atomic Design principles — creates wireframes and design systems via muapi.ai"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anil-matcha",
+      "userId": "publishers:anil-matcha",
+      "displayName": "Anil Chandra Naidu Matcha",
+      "image": "https://avatars.githubusercontent.com/u/4326215?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 729,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773409038477,
+      "changelog": "Initial release: Enables high-fidelity UI/UX mockup generation using Atomic Design principles.\n\n- Supports both mobile and web platforms with platform-specific layouts.\n- Integrates design system tokens, including typography, spacing (8pt grid), and WCAG-compliant color palettes.\n- Offers intent mapping for various app types (e.g., SaaS, E-commerce, Portfolio) with recommended styles and layouts.\n- Enforces constraints for accessibility and accuracy (pure UI only, consistent atomic components).\n- Provides detailed agent protocol to expand user briefs into technical design specifications.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:268bfb9070c54d8a4c6cfbdd6fd2f692821bfd6f1aa724fcc87442c538aa6047"
+}

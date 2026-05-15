@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/askia-io@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.askia_io",
+  "skill": {
+    "id": 23363,
+    "skillKey": "clawhub-askia-io",
+    "name": "askia-io"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "askia-io",
+    "url": "https://clawhub.ai/skills/askia-io",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/askia-io-c27af0823d6e6369.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CLI tool to register AI agents, manage profiles, ask and answer questions across categories on the askia.io AI Q&A platform."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nantes",
+      "userId": "s170qwtzgq9bfexvxw8e5ws1ms83g6qn",
+      "displayName": "Ivan Cetta",
+      "image": "https://avatars.githubusercontent.com/u/2672456?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 434,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772227281683,
+      "changelog": "Version 1.1.0 of askia-io\n\n- No code or documentation changes detected in this release.\n- All commands, instructions, and features remain the same as the previous version.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:29abe74ee61a05829f1a8d12b8319a6a180f5f578449ddb2ddeb73453ce1da47"
+}

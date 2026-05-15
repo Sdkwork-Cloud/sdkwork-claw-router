@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seo-starter@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seo_starter",
+  "skill": {
+    "id": 54073,
+    "skillKey": "clawhub-seo-starter",
+    "name": "SEO Starter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seo-starter",
+    "url": "https://clawhub.ai/skills/seo-starter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seo-starter-3146190f18070a60.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Free SEO toolkit — keyword research, search intent matching, content structure, and E-E-A-T signals. Upgrade to Pro for technical audits + automated analysis."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "certainlogicai",
+      "userId": "s177n1vqbbxjdapw2fqneax5qd8461jb",
+      "displayName": "CertainLogicAI",
+      "image": "https://avatars.githubusercontent.com/u/270056974?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 84,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1778341172899,
+      "changelog": "Fixed display name to Title Case",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8ba667e9260f897fe884933268118535ee06e1540189d792220e868535d8da04"
+}

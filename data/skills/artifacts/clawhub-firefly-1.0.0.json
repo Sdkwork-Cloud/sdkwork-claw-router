@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/firefly@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.firefly",
+  "skill": {
+    "id": 17594,
+    "skillKey": "clawhub-firefly",
+    "name": "Firefly AI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "firefly",
+    "url": "https://clawhub.ai/skills/firefly",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/firefly-afac327e73694e68.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch meeting transcripts, summaries, and action items from Firefly AI (fireflies.ai). Use when the user asks about meetings, transcripts, meeting notes, act..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codes71",
+      "userId": "publishers:codes71",
+      "displayName": "codes71",
+      "image": "https://avatars.githubusercontent.com/u/89853411?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 764,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771277764375,
+      "changelog": "Initial release: list meetings, full transcripts, summaries with action items, keyword search via Firefly AI GraphQL API",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a0e172c344b32c05ff26ba8fd4c4f88ceb2c13fcd2ef4f3344dd367d7be1f1f5"
+}

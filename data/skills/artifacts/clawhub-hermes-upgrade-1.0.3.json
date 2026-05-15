@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hermes-upgrade@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hermes_upgrade",
+  "skill": {
+    "id": 61780,
+    "skillKey": "clawhub-hermes-upgrade",
+    "name": "Hermes Upgrade"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hermes-upgrade",
+    "url": "https://clawhub.ai/skills/hermes-upgrade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hermes-upgrade-64e5e5f06c10bafb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Hermes Agent 完整手册 - 包含安装、配置、部署、运维和常见问题排查的完整指南"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775924100026,
+      "changelog": "Add Feishu pairing troubleshooting guide - explains why re-pairing is needed after upgrade",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9bbbe5a141617630fc20739d61653641f29d98e3794916aafa314738ec4072df"
+}

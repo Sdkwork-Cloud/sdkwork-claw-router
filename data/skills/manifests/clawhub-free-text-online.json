@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50217,
+  "uuid": "skill-clawhub-free-text-online",
+  "skillKey": "clawhub-free-text-online",
+  "name": "Free Text Online",
+  "summary": "Turn a 150-word product description paragraph into 1080p text-based videos just by typing what you need. Whether it's converting written content into shareab...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_text_online",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "peandrover adam",
+      "features": [
+        "Turn a 150-word product description paragraph into 1080p text-based videos just by typing what.",
+        "Whether it's converting written content into shareab..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/free-text-online@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257755799?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "free-text-online",
+      "url": "https://clawhub.ai/skills/free-text-online"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-text-online",
+    "url": "https://clawhub.ai/skills/free-text-online",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-text-online-4f256956c53eb259.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/free-text-online@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-free-text-online-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c3de77c2a1a0ea4261d5ace164454df02e0a1d4ec443016a09871e39f2ff3928",
+      "artifactSizeBytes": 2520
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-10T03:13:16.260Z"
+}

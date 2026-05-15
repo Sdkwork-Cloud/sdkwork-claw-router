@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65062,
+  "uuid": "skill-clawhub-prompt-master",
+  "skillKey": "clawhub-prompt-master",
+  "name": "Prompt Master - 提示词工程精华版",
+  "summary": "基于Claude Code的9条核心规则，提供极简提示词速查和即用模板，助你快速写出高质量提示词。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_master",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jjx",
+      "features": [
+        "基于Claude Code的9条核心规则，提供极简提示词速查和即用模板，助你快速写出高质量提示词。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prompt-master@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/152524220?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prompt-master",
+      "url": "https://clawhub.ai/skills/prompt-master"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-master",
+    "url": "https://clawhub.ai/skills/prompt-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-master-d05614afaa82325d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prompt-master@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-prompt-master-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:29548efe5c94becf8619aeab99555a89fa0a9e679a6662feb0325e086c2ff4d8",
+      "artifactSizeBytes": 1931
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T03:05:05.725Z"
+}

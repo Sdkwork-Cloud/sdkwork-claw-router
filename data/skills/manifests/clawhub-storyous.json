@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39675,
+  "uuid": "skill-clawhub-storyous",
+  "skillKey": "clawhub-storyous",
+  "name": "Storyous",
+  "summary": "Storyous integration. Manage data, records, and automate workflows. Use when the user wants to interact with Storyous data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.storyous",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Storyous integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Storyous data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/storyous@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "storyous",
+      "url": "https://clawhub.ai/skills/storyous"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "storyous",
+    "url": "https://clawhub.ai/skills/storyous",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/storyous-b08677f6685c196d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/storyous@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-storyous-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e9d10cc047e344e0629ffc17a1ffa16ba0e95ab9ac9ebf255fb2e01e7cddead2",
+      "artifactSizeBytes": 1838
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:03:31.017Z"
+}

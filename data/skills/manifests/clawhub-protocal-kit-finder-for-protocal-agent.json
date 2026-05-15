@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34078,
+  "uuid": "skill-clawhub-protocal-kit-finder-for-protocal-agent",
+  "skillKey": "clawhub-protocal-kit-finder-for-protocal-agent",
+  "name": "protocal-kit-finder-for-protocal-agent",
+  "summary": "Find specific reagent kit part numbers and catalog numbers for laboratory protocol steps. Searches vendor websites for options with catalog numbers and direc...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.protocal_kit_finder_for_protocal_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mengbing Wang",
+      "features": [
+        "Find specific reagent kit part numbers and catalog numbers for laboratory protocol steps",
+        "Searches vendor websites for options with catalog numbers and direc..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/protocal-kit-finder-for-protocal-agent@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19246573?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "protocal-kit-finder-for-protocal-agent",
+      "url": "https://clawhub.ai/skills/protocal-kit-finder-for-protocal-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "protocal-kit-finder-for-protocal-agent",
+    "url": "https://clawhub.ai/skills/protocal-kit-finder-for-protocal-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/protocal-kit-finder-for-protocal-agent-66b92205cd46b563.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/protocal-kit-finder-for-protocal-agent@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-protocal-kit-finder-for-protocal-agent-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ae99c61dac40c0367eec8115cb1b4bba077836e8ae3747c5cf1c0fac60063227",
+      "artifactSizeBytes": 2631
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T21:34:14.598Z"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14014,
+  "uuid": "skill-clawhub-x-apify",
+  "skillKey": "clawhub-x-apify",
+  "name": "X Apify",
+  "summary": "Fetch X/Twitter data via Apify actors. Search tweets, get user profiles, retrieve specific tweets with replies. Features local caching to save API costs. Wor...",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_apify",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Robby",
+      "features": [
+        "Fetch X/Twitter data via Apify actors",
+        "Search tweets, get user profiles, retrieve specific tweets with replies",
+        "Features local caching to save API costs"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-apify@1.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/239660374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-apify",
+      "url": "https://clawhub.ai/skills/x-apify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-apify",
+    "url": "https://clawhub.ai/skills/x-apify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-apify-a1fd48a8f0ad8c71.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-apify@1.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-apify-1.0.8.json",
+      "version": "1.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:74095b762c2e307ae63f3222167f9f64e628d249754c890a21e0ac7966ea7a83",
+      "artifactSizeBytes": 1935
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T13:26:07.777Z"
+}

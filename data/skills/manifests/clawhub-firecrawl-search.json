@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8343,
+  "uuid": "skill-clawhub-firecrawl-search",
+  "skillKey": "clawhub-firecrawl-search",
+  "name": "Firecrawl Search",
+  "summary": "Web search and scraping via Firecrawl API. Use when you need to search the web, scrape websites (including JS-heavy pages), crawl entire sites, or extract structured data from web pages. Requires FIRECRAWL_API_KEY environment variable.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.firecrawl_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ashwingupy",
+      "features": [
+        "Web search and scraping via Firecrawl API",
+        "Use when you need to search the web, scrape websites (including JS-heavy pages), crawl entire s.",
+        "Requires FIRECRAWL_API_KEY environment variable."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/firecrawl-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59295700?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "firecrawl-search",
+      "url": "https://clawhub.ai/skills/firecrawl-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "firecrawl-search",
+    "url": "https://clawhub.ai/skills/firecrawl-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/firecrawl-search-503c0cd4dec12a66.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/firecrawl-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-firecrawl-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d609b3b363008c8d29818d6ca93dba542b490142e3891ebbeea77fcac08644ee",
+      "artifactSizeBytes": 1996
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-27T20:08:41.483Z"
+}

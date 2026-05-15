@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/i2v@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.i2v",
+  "skill": {
+    "id": 37195,
+    "skillKey": "clawhub-i2v",
+    "name": "I2V"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "i2v",
+    "url": "https://clawhub.ai/skills/i2v",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/i2v-9f28bfadaa74ab6e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Placeholder skill for image-to-video workflows on skills.video. Use when the user is asking about i2v generation and the concrete API contract has not been i..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "skills-video",
+      "userId": "s1794jxnsph7h4dfc4rt0wtmbn83hba0",
+      "displayName": "skills-video",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774335253768,
+      "changelog": "Initial placeholder skill for image-to-video workflows.\n\n- Introduced a placeholder for i2v (image-to-video) generation on skills.video, clearly marked as incomplete.\n- No live API contract, endpoint, or request template is implemented yet.\n- The skill informs users of its placeholder status and avoids guessing request fields or behavior.\n- Implementation checklist and related skills are documented for future development.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5d33bf8d13a5782eb950fef85aa07f57ba7b96e060f14dad0c1b30666e09adc1"
+}

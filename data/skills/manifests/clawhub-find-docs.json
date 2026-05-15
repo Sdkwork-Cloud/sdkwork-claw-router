@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33972,
+  "uuid": "skill-clawhub-find-docs",
+  "skillKey": "clawhub-find-docs",
+  "name": "Find Docs",
+  "summary": "Retrieves authoritative, up-to-date technical documentation, API references, configuration details, and code examples for any developer technology. Use this...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_docs",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cakekritsanan",
+      "features": [
+        "Retrieves authoritative, up-to-date technical documentation, API references, configuration deta.",
+        "Use this..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/find-docs@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/126095553?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "find-docs",
+      "url": "https://clawhub.ai/skills/find-docs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-docs",
+    "url": "https://clawhub.ai/skills/find-docs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-docs-20d5b97a87e653b4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/find-docs@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-find-docs-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fda1dbf3d53df9cc4b73c54f8ce42dfc236df4f3d45adb0b06996bebbbb16b84",
+      "artifactSizeBytes": 2502
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T17:35:41.647Z"
+}

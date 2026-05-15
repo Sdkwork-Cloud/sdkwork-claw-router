@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-news-free@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_news_free",
+  "skill": {
+    "id": 54211,
+    "skillKey": "clawhub-agent-news-free",
+    "name": "Agent News API Free Tier"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-news-free",
+    "url": "https://clawhub.ai/skills/agent-news-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-news-free-02e504b99b3ae46f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A free AI enriched global news stream for agents, provided by agentnewsapi.com. Powered by $ANA on Solana."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agentnewsdev",
+      "userId": "s176vkagg9h5zd5hpn5hb68b5h841fds",
+      "displayName": "agentnewsdev",
+      "image": "https://avatars.githubusercontent.com/u/197141258?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 222,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775091971122,
+      "changelog": "- Updated the description to mention that the news stream is powered by $ANA on Solana.\n- Improved clarity in the skill description for broader user understanding.\n- No functional or API changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:88ca79741c12ddec6a9993071a375ace846d4b05f7f12a1e44d9136bf2305796"
+}

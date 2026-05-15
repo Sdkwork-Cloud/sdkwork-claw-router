@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dbt-model-auditor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dbt_model_auditor",
+  "skill": {
+    "id": 48567,
+    "skillKey": "clawhub-dbt-model-auditor",
+    "name": "Dbt Model Auditor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dbt-model-auditor",
+    "url": "https://clawhub.ai/skills/dbt-model-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dbt-model-auditor-a3a1690f34511d71.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit dbt (data build tool) projects for model quality, test coverage, documentation completeness, performance, and adherence to best practices. Checks namin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 88,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777592934996,
+      "changelog": "Initial release of dbt-model-auditor: comprehensive auditing for dbt projects.\n\n- Audits dbt projects for model quality, test coverage, documentation, performance, and best practices.\n- Checks naming conventions, ref/source usage, materialization strategy, DAG structure, and model contracts.\n- Produces coverage statistics and highlights missing or poor quality tests and documentation.\n- Triggers on common dbt audit/review requests.\n- Supports detailed reporting on naming, testing, and documentation completeness.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:14c55eaa76d16deef598dd814210760fbfb70b0d88250e1d1c4d399887a63499"
+}

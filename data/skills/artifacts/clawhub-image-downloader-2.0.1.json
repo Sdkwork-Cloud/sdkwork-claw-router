@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-downloader@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_downloader",
+  "skill": {
+    "id": 71713,
+    "skillKey": "clawhub-image-downloader",
+    "name": "bing图片批量下载skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-downloader",
+    "url": "https://clawhub.ai/skills/image-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-downloader-86923b20fdbf68a6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "当用户需要按关键词批量下载图片、从 Bing 或多个图片来源收集候选、保存图片到本地目录、避免重复下载，或希望复用当前仓库里的现成图片下载流程时使用。遇到类似“帮我按关键词下载 10 张图片”“批量抓取 Bing 图片并保存到本地”“从多个来源收集图片候选再下载”“需要下载摘要和保存目录”这类请求时，应主动使用这..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "16miku",
+      "userId": "s17afqafc9cxg79k2at04c4ydd83gnaq",
+      "displayName": "16Miku",
+      "image": "https://avatars.githubusercontent.com/u/196724264?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 324,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1776049098449,
+      "changelog": "同步最新仓库代码，补充 OpenClaw Agent 定时任务说明，统一项目名为 image-downloader，并更新 ClawHub 链接。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ea4deb832d2e842fa0bac4468148e17ef0b4321826107f87abf52cc00c2bfbca"
+}

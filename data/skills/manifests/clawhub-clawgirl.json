@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60180,
+  "uuid": "skill-clawhub-clawgirl",
+  "skillKey": "clawhub-clawgirl",
+  "name": "Ai Companion Setup",
+  "summary": "在 OpenClaw 上搭建有记忆、能发语音/自拍/文字的 AI 陪伴 agent（完整踩坑指南）",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawgirl",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "evan966890",
+      "features": [
+        "在 OpenClaw 上搭建有记忆、能发语音/自拍/文字的 AI 陪伴 agent（完整踩坑指南）"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawgirl@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/236738035?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawgirl",
+      "url": "https://clawhub.ai/skills/clawgirl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawgirl",
+    "url": "https://clawhub.ai/skills/clawgirl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawgirl-7941d8eb6e58c4c4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawgirl@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawgirl-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f9036508aad66eaee7c534f58f313794112f91bac926a98c693f9128196dd775",
+      "artifactSizeBytes": 2217
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T08:53:04.499Z"
+}

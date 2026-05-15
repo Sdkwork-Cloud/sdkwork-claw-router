@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66341,
+  "uuid": "skill-clawhub-cto-ciso-training",
+  "skillKey": "clawhub-cto-ciso-training",
+  "name": "CTO×CISO Training",
+  "summary": "联合CTO与CISO制定培训计划，执行在线考核，颁发数字签名证书，实时追踪并报告培训进度与合规状态。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cto_ciso_training",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JohnSmithfan",
+      "features": [
+        "联合CTO与CISO制定培训计划，执行在线考核，颁发数字签名证书，实时追踪并报告培训进度与合规状态。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cto-ciso-training@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147225147?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cto-ciso-training",
+      "url": "https://clawhub.ai/skills/cto-ciso-training"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cto-ciso-training",
+    "url": "https://clawhub.ai/skills/cto-ciso-training",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cto-ciso-training-df261dcaf21e2abf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cto-ciso-training@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cto-ciso-training-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:20e1c136da6251eb611fb3a871acba0876acfb830c9be78e9d92f72aa3aa8449",
+      "artifactSizeBytes": 1987
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T19:20:16.632Z"
+}

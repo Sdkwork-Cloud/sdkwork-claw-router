@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/content-system-humanizer-zh@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_system_humanizer_zh",
+  "skill": {
+    "id": 28415,
+    "skillKey": "clawhub-content-system-humanizer-zh",
+    "name": "Content System Humanizer Zh"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-system-humanizer-zh",
+    "url": "https://clawhub.ai/skills/content-system-humanizer-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-system-humanizer-zh-82f39c7ab566e318.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Remove obvious AI-writing traces from Chinese text in a constrained way. Use when Codex needs to reduce AI smell without changing facts, data, or the article..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abigale-cyber",
+      "userId": "s177gvvwbgtc3ew8annt8ph3gx84c2xt",
+      "displayName": "Abigale-cyber",
+      "image": "https://avatars.githubusercontent.com/u/237663252?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 316,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775571276287,
+      "changelog": "Initial release of humanizer-zh, a skill for de-AI-ifying Chinese text with strong content constraints:\n\n- Detects and removes obvious AI-writing traces from Chinese prose.\n- Surgically rewrites body paragraphs while preserving facts, structure, and author intent.\n- Outputs a humanized article copy and a JSON report summarizing changes.\n- Strictly avoids inventing facts, altering core arguments, or changing headings.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:201d49b771f9d1f8132f24d89b4120590f11e839041a225db9d303a32d279129"
+}

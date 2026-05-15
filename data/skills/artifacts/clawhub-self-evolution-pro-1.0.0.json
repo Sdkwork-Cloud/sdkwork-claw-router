@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/self-evolution-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_evolution_pro",
+  "skill": {
+    "id": 67025,
+    "skillKey": "clawhub-self-evolution-pro",
+    "name": "Self Evolution Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-evolution-pro",
+    "url": "https://clawhub.ai/skills/self-evolution-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-evolution-pro-cac08213b1bc4248.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "增强型自我进化技能，集成自动技能提取、根因分析、知识图谱、跨会话同步、自动晋级机制。触发词：'总结这个经验'、'保存为技能'、'自我进化'、'学习这个'、'记录教训'。相比原版self-improving-agent，新增自动提取、多维度分析、进化追踪功能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "windy-001-crypto",
+      "userId": "s1736ky0sjf4n07k892nb8555n83gn8g",
+      "displayName": "windy-001-crypto",
+      "image": "https://avatars.githubusercontent.com/u/258460660?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 376,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774514481471,
+      "changelog": "Self Evolution Pro 1.0.0 introduces an advanced AI self-improvement skill with major upgrades over the original self-improving-agent.\n\n- Adds automatic skill extraction, multi-dimensional root cause analysis (RCA), and evolution tracking.\n- Integrates a knowledge graph to link learnings, errors, and skills.\n- Enables automatic skill promotion based on recurrence, with effect metrics and version history.\n- Supports cross-session synchronization, making learnings and skills available to all agents.\n- Provides cron-based automated review and promotion workflows.\n- Enhances logging formats, time tracking, and best practice guidelines for continuous AI improvement.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:accc7b41321c93e5908f36da804bdca8c9e7ee37be9bcf1a176825d43aa8566b"
+}

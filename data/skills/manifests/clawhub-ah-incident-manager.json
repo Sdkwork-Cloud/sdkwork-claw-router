@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47246,
+  "uuid": "skill-clawhub-ah-incident-manager",
+  "skillKey": "clawhub-ah-incident-manager",
+  "name": "incident-manager",
+  "summary": "You are an incident management specialist implementing best practices from SRE (Google SRE Book), PagerDuty, and enterprise incident. Use when: incident resp...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ah_incident_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Michael Tsatryan",
+      "features": [
+        "You are an incident management specialist implementing best practices from SRE (Google SRE Book.",
+        "Use when: incident resp..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ah-incident-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9057374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ah-incident-manager",
+      "url": "https://clawhub.ai/skills/ah-incident-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ah-incident-manager",
+    "url": "https://clawhub.ai/skills/ah-incident-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ah-incident-manager-0db28209132f8b91.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ah-incident-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ah-incident-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1bdb258b3b0aab73f36004742d0553f489c730fe1e4e1801bd2f81667b842cfa",
+      "artifactSizeBytes": 1986
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T13:45:17.354Z"
+}

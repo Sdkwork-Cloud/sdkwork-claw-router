@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51984,
+  "uuid": "skill-clawhub-monet-works-content-qa-dv",
+  "skillKey": "clawhub-monet-works-content-qa-dv",
+  "name": "Monet Works — Content QA Remediation",
+  "summary": "QA remediation auto-fix pipeline for Monet Works content. Detects and repairs common content issues: banned phrases, missing disclaimers, missing CTAs, and e...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.monet_works_content_qa_dv",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RunByDaVinci",
+      "features": [
+        "QA remediation auto-fix pipeline for Monet Works content",
+        "Detects and repairs common content issues: banned phrases, missing disclaimers, missing CTAs, a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/monet-works-content-qa-dv@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266047309?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "monet-works-content-qa-dv",
+      "url": "https://clawhub.ai/skills/monet-works-content-qa-dv"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "monet-works-content-qa-dv",
+    "url": "https://clawhub.ai/skills/monet-works-content-qa-dv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/monet-works-content-qa-dv-c1d6d112a4b9e679.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/monet-works-content-qa-dv@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-monet-works-content-qa-dv-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ca4fadfbce39bb92c7d4995d53558e9bf5a46168c71bcdaa83aee020fd151f93",
+      "artifactSizeBytes": 1983
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T12:36:17.362Z"
+}

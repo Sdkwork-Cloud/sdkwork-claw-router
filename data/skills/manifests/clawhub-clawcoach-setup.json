@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21193,
+  "uuid": "skill-clawhub-clawcoach-setup",
+  "skillKey": "clawhub-clawcoach-setup",
+  "name": "ClawCoach Setup",
+  "summary": "One-time setup for ClawCoach AI health coaching. Configures your profile, goals, macro targets, dietary preferences, and coach personality.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawcoach_setup",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Niko Vijayaratnam",
+      "features": [
+        "One-time setup for ClawCoach AI health coaching",
+        "Configures your profile, goals, macro targets, dietary preferences, and coach personality."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawcoach-setup@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19196163?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawcoach-setup",
+      "url": "https://clawhub.ai/skills/clawcoach-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawcoach-setup",
+    "url": "https://clawhub.ai/skills/clawcoach-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawcoach-setup-137f84a8f04226a6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawcoach-setup@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawcoach-setup-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a6343a1e1f7e2a3816822abb93fc39954c9a4583e93186d618f00310394e90e9",
+      "artifactSizeBytes": 1969
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T15:28:29.340Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39069,
+  "uuid": "skill-clawhub-zsky-ai",
+  "skillKey": "clawhub-zsky-ai",
+  "name": "Zsky Ai",
+  "summary": "Get AI-edited clips ready to post, without touching a single slider. Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"enhance...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zsky_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vcarolxhberger",
+      "features": [
+        "Get AI-edited clips ready to post, without touching a single slider",
+        "Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"enhance..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zsky-ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210890217?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zsky-ai",
+      "url": "https://clawhub.ai/skills/zsky-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zsky-ai",
+    "url": "https://clawhub.ai/skills/zsky-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zsky-ai-e810fa55342d9252.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zsky-ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zsky-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac91bc2c8decad217a7f86d39084b4bf7b392954376403c1101699a4bf0df19b",
+      "artifactSizeBytes": 2276
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T10:37:11.880Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18837,
+  "uuid": "skill-clawhub-stocktoday-skill",
+  "skillKey": "clawhub-stocktoday-skill",
+  "name": "Stocktoday Skill",
+  "summary": "Provides 200+ interfaces for A-share market data including stock basics, real-time quotes, financials, funds, futures, indexes, funds, bonds, macro, HK/US st...",
+  "version": "1.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stocktoday_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wglink",
+      "features": [
+        "Provides 200+ interfaces for A-share market data including stock basics, real-time quotes, fina."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stocktoday-skill@1.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35352424?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stocktoday-skill",
+      "url": "https://clawhub.ai/skills/stocktoday-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stocktoday-skill",
+    "url": "https://clawhub.ai/skills/stocktoday-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stocktoday-skill-6474a1d799a5b162.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stocktoday-skill@1.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-stocktoday-skill-1.1.4.json",
+      "version": "1.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:59a09792e4583419cc03036de02ef4eef3aeddf5e96449f816519c2e4ad5aa9a",
+      "artifactSizeBytes": 2062
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T03:24:07.016Z"
+}

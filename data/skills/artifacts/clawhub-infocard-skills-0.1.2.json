@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/infocard-skills@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.infocard_skills",
+  "skill": {
+    "id": 32989,
+    "skillKey": "clawhub-infocard-skills",
+    "name": "Infocard Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "infocard-skills",
+    "url": "https://clawhub.ai/skills/infocard-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/infocard-skills-8cb931eaa4478177.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate high-density editorial HTML info cards in a modern magazine and Swiss-international style, then capture them as ratio-specific screenshots. Use when..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shaom",
+      "userId": "s17bqdmk3q2ac76f1qe2qhrjjn83f5fv",
+      "displayName": "Shao Meng",
+      "image": "https://avatars.githubusercontent.com/u/2596224?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 234,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1774310136794,
+      "changelog": "Version 0.1.2\n\n- Improved guidance for ratio-specific layouts: layout skeleton and reading path are now always adapted to the chosen aspect ratio before compressing or summarizing content.\n- HTML output for screenshots now uses fixed pixel dimensions (width/height) per ratio preset, rather than fluid responsive sizes like 100vw/100vh.\n- New detailed composition guidelines for each supported ratio, ensuring proportions, hierarchy, and module arrangements are ratio-appropriate.\n- Emphasized stronger internal structure (subheads, bullets, labels) in dense cards and discouraged equal-weight box layouts.\n- Updated instructions to match screenshot canvas pixel size to the selected ratio and clarified responsive output policy.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c56a45ad9bd776ec67679af4cded016d06c7779e3acd69400843d726d291056d"
+}

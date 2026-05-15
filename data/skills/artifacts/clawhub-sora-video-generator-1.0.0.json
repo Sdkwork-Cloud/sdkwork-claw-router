@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sora-video-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sora_video_generator",
+  "skill": {
+    "id": 45423,
+    "skillKey": "clawhub-sora-video-generator",
+    "name": "Sora Video Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sora-video-generator",
+    "url": "https://clawhub.ai/skills/sora-video-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sora-video-generator-2562a112e896f468.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate text prompts into AI generated videos with this skill. Works with TXT, PNG, JPG, MP4 files up to 200MB. content creators use it for generating short..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 134,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777055388279,
+      "changelog": "Sora Video Generator 1.0.0 — Initial release.\n\n- Generate AI videos from text prompts; supports TXT, PNG, JPG, MP4 uploads up to 200MB.\n- Automated cloud setup: handles authentication, session, and credits seamlessly.\n- 1080p MP4 exports; typical processing time is 1–3 minutes per short video.\n- Simple chat-based workflow for quick edits, batch processing, and timeline previews.\n- Built-in error handling for authentication, credits, file size, and more.\n- Designed for content creators seeking fast, high-quality video generation from text.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:25f3ec9e6a90d2f0280f8f137f8e371b73ead63d4da45905e09e526ce1ad229c"
+}

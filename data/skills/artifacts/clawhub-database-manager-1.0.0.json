@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/database-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.database_manager",
+  "skill": {
+    "id": 13576,
+    "skillKey": "clawhub-database-manager",
+    "name": "Database Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "database-manager",
+    "url": "https://clawhub.ai/skills/database-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/database-manager-2999e5f13ecac120.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Plan, operate, and recover relational databases with schema governance, safe migrations, backup drills, and incident response playbooks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1277,
+      "installsAllTime": 14,
+      "installsCurrent": 14,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772451923056,
+      "changelog": "Initial release with schema governance rules, migration safety checks, backup recovery workflows, and on-call response templates.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:81b934f9b8a727d97c525428e4e19aa16e96307745038acaef1866f948021b4b"
+}

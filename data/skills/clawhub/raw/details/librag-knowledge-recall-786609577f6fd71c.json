@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "librag-knowledge-recall",
+    "displayName": "librag-recall",
+    "summary": "使用 LibRAG 本地 `/api/v1/librag/knowbase/recall` 接口做知识库数据召回。适用于中文场景下的知识库检索、资料召回、证据段落提取、出处定位、基于知识库的问答取证，以及用户用“知识库查询”“数据召回”“从文档里找答案”等表达发起的任务。",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 441,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1773128876709,
+    "updatedAt": 1778306279890
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1773128876709,
+    "changelog": "- Initial release of librag-knowledge-recall skill for Chinese knowledge base recall using local LibRAG API.\n- Supports knowledge base retrieval, evidence extraction, and source location based on specified trigger phrases.\n- Uses Python script with settings from config.json; allows command-line overrides for key parameters.\n- Returns structured JSON with key results and request details.\n- Built-in error handling for missing config, authentication, and missing knowledge base cases.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "7010g",
+    "userId": "publishers:7010g",
+    "displayName": "7010G",
+    "image": "https://avatars.githubusercontent.com/u/37602564?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.install_untrusted_source"
+    ],
+    "summary": "Detected: suspicious.install_untrusted_source",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778306279890
+  }
+}

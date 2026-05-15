@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31962,
+  "uuid": "skill-clawhub-tms",
+  "skillKey": "clawhub-tms",
+  "name": "TMS (Telegram Media Server)",
+  "summary": "Manage downloads via Telegram Media Server (TMS) REST API — add by URL (video/magnet/torrent URL) or torrent_base64 (.torrent bytes), list, delete, search to...",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tms",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nikita Dmitryuk",
+      "features": [
+        "Manage downloads via Telegram Media Server (TMS) REST API — add by URL (video/magnet/torrent UR."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tms@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/50713261?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tms",
+      "url": "https://clawhub.ai/skills/tms"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tms",
+    "url": "https://clawhub.ai/skills/tms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tms-4e9b733de89b23db.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tms@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-tms-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ca4c11957b230f327e583a900f6c75852ff05898c8f415bcb50e9abe63803ce",
+      "artifactSizeBytes": 1888
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T23:35:05.141Z"
+}

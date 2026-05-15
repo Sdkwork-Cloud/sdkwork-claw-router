@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61472,
+  "uuid": "skill-clawhub-github-stars-tracker",
+  "skillKey": "clawhub-github-stars-tracker",
+  "name": "Github Stars Tracker",
+  "summary": "GitHub 仓库 Stars 变化监控与通知。追踪指定仓库的 star 增长、fork 变化，发现新趋势。适合开发者关注项目动态。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_stars_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SxLiuYu",
+      "features": [
+        "GitHub 仓库 Stars 变化监控与通知。追踪指定仓库的 star 增长、fork 变化，发现新趋势。适合开发者关注项目动态。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-stars-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95198625?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-stars-tracker",
+      "url": "https://clawhub.ai/skills/github-stars-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-stars-tracker",
+    "url": "https://clawhub.ai/skills/github-stars-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-stars-tracker-41201104f064dac7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-stars-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-stars-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4cd484dad3aa818e2c19f786223a847718d136b9debe90a719f21efb9afbe82c",
+      "artifactSizeBytes": 2339
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T07:50:26.529Z"
+}

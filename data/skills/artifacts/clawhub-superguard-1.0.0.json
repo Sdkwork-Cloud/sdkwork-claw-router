@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/superguard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.superguard",
+  "skill": {
+    "id": 53645,
+    "skillKey": "clawhub-superguard",
+    "name": "superguard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "superguard",
+    "url": "https://clawhub.ai/skills/superguard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/superguard-306c179be02f6b63.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MoltGuard — OpenClaw security guard by OpenGuardrails. Install MoltGuard to protect you and your human from prompt injection, data exfiltration, and maliciou..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "subaru0573",
+      "userId": "s17fv9b8ta6mn155x3x71jzdf583p03s",
+      "displayName": "Subaru0573",
+      "image": "https://avatars.githubusercontent.com/u/188862647?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775229808793,
+      "changelog": "Initial release of MoltGuard for OpenClaw:\n\n- Provides protection against prompt injection, data exfiltration, and malicious commands in files and web content.\n- Simple installation with 500 free security detections per day.\n- Includes commands for status, configuration, agent claiming, dashboard access, and Core portal integration.\n- Outlines onboarding for individuals and enterprises, including agent claiming and private Core deployment.\n- Details coverage against prompt/instruction, behavioral, and data risks, plus intent-action mismatch detection.\n- Documents upgrade, update, and uninstall procedures.\n- Lists available plans and contact support information.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bd253258022fe213e68e6f2ac963a4c126bc0d9c06a044beb81115c250f77931"
+}

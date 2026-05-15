@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57554,
+  "uuid": "skill-clawhub-gcoord",
+  "skillKey": "clawhub-gcoord",
+  "name": "gcoord - 中国地图坐标系转换",
+  "summary": "Use when converting coordinates between WGS84, GCJ02, BD09, BD09MC, or WebMercator coordinate systems for Chinese map services (Baidu, Amap, Google China, etc.)",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gcoord",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhyt1985",
+      "features": [
+        "Use when converting coordinates between WGS84, GCJ02, BD09, BD09MC, or WebMercator coordinate s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gcoord@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/496465?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gcoord",
+      "url": "https://clawhub.ai/skills/gcoord"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gcoord",
+    "url": "https://clawhub.ai/skills/gcoord",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gcoord-72f333ee740ac88a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gcoord@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gcoord-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b647473faac6e37d628480a0f14419f9bcd86fe0c7ce3b4c2965c2271b94009",
+      "artifactSizeBytes": 1927
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T03:58:24.157Z"
+}

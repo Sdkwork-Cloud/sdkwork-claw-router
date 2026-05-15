@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wallet-twin-court@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wallet_twin_court",
+  "skill": {
+    "id": 41389,
+    "skillKey": "clawhub-wallet-twin-court",
+    "name": "Wallet Twin Court"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wallet-twin-court",
+    "url": "https://clawhub.ai/skills/wallet-twin-court",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wallet-twin-court-7666888970d5a83a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when the user wants to put a Solana wallet on trial, identify the action most likely to cause regret tomorrow, return a verdict, and only then..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "richard7463",
+      "userId": "s171aabnhwf1azz5asdd7pk8sn83g299",
+      "displayName": "richard7463",
+      "image": "https://avatars.githubusercontent.com/u/13402558?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774437934099,
+      "changelog": "Bind Wallet Twin Court to the court API and block wallet-roast fallback.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a3c402836ae4f916648d9ab375b457ac5d7814a67ef934e00197d52e18d2cc92"
+}

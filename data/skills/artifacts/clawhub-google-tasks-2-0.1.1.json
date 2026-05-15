@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-tasks-2@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_tasks_2",
+  "skill": {
+    "id": 60514,
+    "skillKey": "clawhub-google-tasks-2",
+    "name": "Google Tasks"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-tasks-2",
+    "url": "https://clawhub.ai/skills/google-tasks-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-tasks-2-b3eb9cd2e35f3ba0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "[暂不可用] Google Tasks 任务管理集成。管理任务列表和任务，创建、完成、删除任务。通过 MorphixAI 代理安全访问 Google Tasks API。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "paul-leo",
+      "userId": "s1752kcbgt0ajgbfqwd4y5vb3n83kvp4",
+      "displayName": "Paul Leo",
+      "image": "https://avatars.githubusercontent.com/u/55380315?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 357,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1772786484650,
+      "changelog": "- Improved setup instructions: added steps for plugin installation, API key generation, and account linking.\n- Clarified environment variable configuration and provided direct links for key and account management.\n- All core features and usage samples remain unchanged.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c57dabf565c5ec3fcb8101985d1c538d07e3bb174f72ec0468c773d96636aeea"
+}

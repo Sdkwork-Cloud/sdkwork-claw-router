@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60967,
+  "uuid": "skill-clawhub-moss-transcribe-diarize",
+  "skillKey": "clawhub-moss-transcribe-diarize",
+  "name": "moss-transcribe-diarize",
+  "summary": "MOSS 多说话人转写技能。支持 URL / 本地文件 / Base64 音频输入，输出带时间戳与 speaker 的结构化转写结果（JSON、逐段文本、按说话人汇总）。用于会议纪要、访谈录音、多人对话整理。需要 API 凭证（环境变量：MOSS_API_KEY，兼容 MOSI_TTS_API_KEY / MOS...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moss_transcribe_diarize",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "helloeveryworlds",
+      "features": [
+        "MOSS 多说话人转写技能。支持 URL / 本地文件 / Base64 音频输入，输出带时间戳与 speaker 的结构化转写结果（JSON、逐段文本、按说话人汇总）。用于会议纪要、访谈录."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moss-transcribe-diarize@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58319337?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moss-transcribe-diarize",
+      "url": "https://clawhub.ai/skills/moss-transcribe-diarize"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moss-transcribe-diarize",
+    "url": "https://clawhub.ai/skills/moss-transcribe-diarize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moss-transcribe-diarize-1f1a29bacca18260.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moss-transcribe-diarize@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-moss-transcribe-diarize-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9f29113c2cae87c2ad4897a8fbd996026efb7484f397a37a3f805ff1fabac6ee",
+      "artifactSizeBytes": 2250
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T03:24:14.773Z"
+}

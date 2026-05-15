@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45719,
+  "uuid": "skill-clawhub-dingtalk-bridge",
+  "skillKey": "clawhub-dingtalk-bridge",
+  "name": "DingTalk Bridge",
+  "summary": "DingTalk group chat bridge for Claude Code. Send markdown/text messages to DingTalk groups, receive @mentions and auto-execute via Claude CLI, run a 24/7 Str...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dingtalk_bridge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mguozhen",
+      "features": [
+        "DingTalk group chat bridge for Claude Code",
+        "Send markdown/text messages to DingTalk groups, receive @mentions and auto-execute via Claude C."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dingtalk-bridge@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1411875?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dingtalk-bridge",
+      "url": "https://clawhub.ai/skills/dingtalk-bridge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dingtalk-bridge",
+    "url": "https://clawhub.ai/skills/dingtalk-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dingtalk-bridge-2712940a5c8e02ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dingtalk-bridge@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dingtalk-bridge-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d41f517fe2350fc21ed9ffe73df250b92ca878c8bdef8d1b903d13d805df440f",
+      "artifactSizeBytes": 1991
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T04:49:25.924Z"
+}

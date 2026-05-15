@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/comfyui-skill-openclaw@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.comfyui_skill_openclaw",
+  "skill": {
+    "id": 27232,
+    "skillKey": "clawhub-comfyui-skill-openclaw",
+    "name": "ComfyUI Skill for OpenClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "comfyui-skill-openclaw",
+    "url": "https://clawhub.ai/skills/comfyui-skill-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/comfyui-skill-openclaw-ec504883f92c4f57.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run ComfyUI workflows from any AI agent (Claude Code, OpenClaw, Codex) via a single CLI. Import workflows, manage dependencies, execute across multiple serve..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huangyuchuh",
+      "userId": "s179bvjd7v2pwnqht381eqdp3s8425t5",
+      "displayName": "科林 KELIN",
+      "image": "https://avatars.githubusercontent.com/u/167663109?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 242,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775115637982,
+      "changelog": "Optimize description for better discoverability on ClawHub search",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d2ba1fede1d5713d690677bd15a62342435a41cccefd8c4052231e5171004639"
+}

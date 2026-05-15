@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15505,
+  "uuid": "skill-clawhub-proxy-auto",
+  "skillKey": "clawhub-proxy-auto",
+  "name": "Proxy Auto",
+  "summary": "Automatically enables SOCKS5 proxy for accessing overseas sites and APIs like GitHub, OpenAI, and npm with VMess over WebSocket configuration.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proxy_auto",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tedtalk",
+      "features": [
+        "Automatically enables SOCKS5 proxy for accessing overseas sites and APIs like GitHub, OpenAI, a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/proxy-auto@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/249558148?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "proxy-auto",
+      "url": "https://clawhub.ai/skills/proxy-auto"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proxy-auto",
+    "url": "https://clawhub.ai/skills/proxy-auto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proxy-auto-9e523879413c03d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/proxy-auto@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-proxy-auto-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e144c1448144fb7d2b751fd1941a39a071529e71630c8c744f0d2dafc276711c",
+      "artifactSizeBytes": 2294
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T07:26:09.543Z"
+}

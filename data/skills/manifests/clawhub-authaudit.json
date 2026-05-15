@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53456,
+  "uuid": "skill-clawhub-authaudit",
+  "skillKey": "clawhub-authaudit",
+  "name": "authaudit",
+  "summary": "Authentication & authorization pattern analyzer — finds missing auth checks, insecure sessions, broken access control, CSRF gaps, and token handling vulnerab...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.authaudit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "suhteevah",
+      "features": [
+        "Authentication & authorization pattern analyzer — finds missing auth checks, insecure sessions,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/authaudit@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2342183?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "authaudit",
+      "url": "https://clawhub.ai/skills/authaudit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "authaudit",
+    "url": "https://clawhub.ai/skills/authaudit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/authaudit-c6ba46380db63873.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/authaudit@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-authaudit-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dd9f49495be77e55eb7ed70a5d87f602bbd5f9c8f9e5a539092a2a0d87031c4d",
+      "artifactSizeBytes": 1900
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T15:04:24.112Z"
+}

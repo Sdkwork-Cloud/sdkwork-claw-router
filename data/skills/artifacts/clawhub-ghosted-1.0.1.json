@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ghosted@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ghosted",
+  "skill": {
+    "id": 37308,
+    "skillKey": "clawhub-ghosted",
+    "name": "Ghosted Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ghosted",
+    "url": "https://clawhub.ai/skills/ghosted",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ghosted-b453de83a4888249.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Ghosted is an AI coach for people dealing with ghosting, being left on read, or watching a once-warm chat suddenly go cold. It helps you judge whether to fol..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imwyvern",
+      "userId": "s17as2pe33fqm26ag8dqnwe0gx83gd3q",
+      "displayName": "wes",
+      "image": "https://avatars.githubusercontent.com/u/1765672?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774896337495,
+      "changelog": "- Improved skill description for clarity on how the ghosted skill helps users analyze and respond to silence.\n- Added focus on judging silence patterns, last-message tone, and self-respect tradeoffs.\n- Chinese tagline refined for better context: “被冷落、已读不回、断联判断、追不追的策略.”\n- No changes to logic, structure, or safety guidance—core functionality remains unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:53ccb253d460b28163d31db0d5ffb6e96c33f65be9490e9a2e949d17eaa13b8d"
+}

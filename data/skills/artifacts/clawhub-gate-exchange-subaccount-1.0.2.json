@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gate-exchange-subaccount@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_exchange_subaccount",
+  "skill": {
+    "id": 26160,
+    "skillKey": "clawhub-gate-exchange-subaccount",
+    "name": "Gate Exchange Sub-Account"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-exchange-subaccount",
+    "url": "https://clawhub.ai/skills/gate-exchange-subaccount",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-exchange-subaccount-6b475ef9870d1896.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Gate Exchange sub-account management skill. Use when the user asks to manage, create, lock, unlock, or list their sub-accounts. Triggers on 'sub-account stat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gate-exchange",
+      "userId": "s172g4d1dcv6ccs6desbb2xw1583qza9",
+      "displayName": "Gate",
+      "image": "https://avatars.githubusercontent.com/u/33109813?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 372,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775115359531,
+      "changelog": "- Introduced `references/mcp.md` for centralized and authoritative execution logic governing confirmation and status checks.\n- Clarified that `SKILL.md` handles only intent routing and permissions; delegates execution and validation to `references/mcp.md`.\n- Updated skill description for greater clarity and improved trigger phrasing.\n- Streamlined documentation and separated logic boundaries for maintainability.\n- No changes to available features or MCP tool coverage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:25cf44b8ca2a7dfc26d5907a743a9465291f2792068d8890a2a1c7aa545a5ccb"
+}

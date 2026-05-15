@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/craft-cli@1.6.2",
+  "version": "1.6.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.craft_cli",
+  "skill": {
+    "id": 11025,
+    "skillKey": "clawhub-craft-cli",
+    "name": "Craft CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "craft-cli",
+    "url": "https://clawhub.ai/skills/craft-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/craft-cli-0757db906c3e5858.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Craft documents via the craft CLI tool, supporting listing, searching, creating, updating, deleting, and exporting in JSON, table, or markdown formats."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nerveband",
+      "userId": "publishers:nerveband",
+      "displayName": "nerveband",
+      "image": "https://avatars.githubusercontent.com/u/1530727?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2320,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.6.2",
+      "createdAt": 1769484773655,
+      "changelog": "v1.6.2: Skill docs update",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6eec53512a6c61d3866fbaca02d26cc9479e09bc41f5141870639515738ba6c2"
+}

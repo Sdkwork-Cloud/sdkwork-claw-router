@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50120,
+  "uuid": "skill-clawhub-wedding-guest-rsvp-command-center",
+  "skillKey": "clawhub-wedding-guest-rsvp-command-center",
+  "name": "Wedding Guest Rsvp Command Center",
+  "summary": "Track and manage wedding guest RSVPs, meal preferences, plus-ones, accessibility needs, seating, reminders, and final headcount exports.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wedding_guest_rsvp_command_center",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Track and manage wedding guest RSVPs, meal preferences, plus-ones, accessibility needs, seating."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wedding-guest-rsvp-command-center@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wedding-guest-rsvp-command-center",
+      "url": "https://clawhub.ai/skills/wedding-guest-rsvp-command-center"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wedding-guest-rsvp-command-center",
+    "url": "https://clawhub.ai/skills/wedding-guest-rsvp-command-center",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wedding-guest-rsvp-command-center-a407f27ec82893a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wedding-guest-rsvp-command-center@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wedding-guest-rsvp-command-center-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eeb8c7c2e3ac38c6a5bae47ca1d10b0b0cc42dbeef531510f66583bf21f03197",
+      "artifactSizeBytes": 2425
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T23:45:43.640Z"
+}

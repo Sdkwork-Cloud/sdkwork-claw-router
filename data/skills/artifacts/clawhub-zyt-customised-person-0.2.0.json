@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zyt-customised-person@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zyt_customised_person",
+  "skill": {
+    "id": 33523,
+    "skillKey": "clawhub-zyt-customised-person",
+    "name": "Zyt customised person"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zyt-customised-person",
+    "url": "https://clawhub.ai/skills/zyt-customised-person",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zyt-customised-person-ed2066bf83fe800a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use Chanjing customised person APIs to create, inspect, list, poll, and delete custom digital humans from uploaded source videos."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zuoyuting214",
+      "userId": "s173jvgnwrdkdq98kh17nyzq5183j2aj",
+      "displayName": "zuoyuting214",
+      "image": "https://avatars.githubusercontent.com/u/226682936?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 237,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1774546950931,
+      "changelog": "Initial publish.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:435ade7b76192dfdd4f804f7732ef40e49643a29a5ee781c213dc135e4d89eca"
+}

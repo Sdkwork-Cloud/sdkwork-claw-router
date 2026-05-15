@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61306,
+  "uuid": "skill-clawhub-shit-journal",
+  "skillKey": "clawhub-shit-journal",
+  "name": "S.H.I.T Journal 论文推荐",
+  "summary": "Randomly推荐 S.H.I.T Journal (构石期刊) 的恶搞学术论文。触发词包括：来篇构石、推送shitjournal、随机论文、学术粪便、搞笑论文等。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shit_journal",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FasenChen",
+      "features": [
+        "Randomly推荐 S.H.I.T Journal (构石期刊) 的恶搞学术论文。触发词包括：来篇构石、推送shitjournal、随机论文、学术粪便、搞笑论文等。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shit-journal@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/93169232?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shit-journal",
+      "url": "https://clawhub.ai/skills/shit-journal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shit-journal",
+    "url": "https://clawhub.ai/skills/shit-journal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shit-journal-3dc44d521b735cc9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shit-journal@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shit-journal-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc54fe7ae142d06c3d8e0137294d56ef749f67ba7102094d4dd0aeafd82533c0",
+      "artifactSizeBytes": 1962
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T03:35:59.537Z"
+}

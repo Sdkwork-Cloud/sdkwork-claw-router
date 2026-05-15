@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-workflow-architect@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_workflow_architect",
+  "skill": {
+    "id": 58145,
+    "skillKey": "clawhub-openclaw-workflow-architect",
+    "name": "OpenClaw Workflow Architect"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-workflow-architect",
+    "url": "https://clawhub.ai/skills/openclaw-workflow-architect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-workflow-architect-3192a69703618dc6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Dùng skill này bất cứ khi nào người dùng muốn thiết kế, phân tích, hoặc sinh code quy trình cho OpenClaw — bao gồm: hỏi nên dùng Lobster hay OpenProse, có wo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thanh01pmt",
+      "userId": "s176791ebt7vh96ahsd9bq1rb983qn7b",
+      "displayName": "Tony Pham",
+      "image": "https://avatars.githubusercontent.com/u/29451228?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 212,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774762864502,
+      "changelog": "OpenClaw Workflow Architect 1.0.0 — Initial Release\n\n- Introduces a comprehensive skill for designing, analyzing, and generating workflow code for OpenClaw, supporting both Lobster and OpenProse architectures.\n- Automatically guides users through layered workflow decisions via structured interviews or file analysis, even from verbal descriptions.\n- Provides clear separation and design principles for Lobster (deterministic execution) vs. OpenProse (AI reasoning, orchestration).\n- Includes detailed anti-pattern checklists and recommended fixes for existing files.\n- Supports three code generation modes: Lobster only, OpenProse only, or Mixed, with model compatibility checks.\n- Outputs complete, ready-to-use workflow folder structures with safety checklists and compatibility notes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4bc69725f75aa8b93c48d9ad25f72374860a5759bd8dd45e3a6abea50510237b"
+}

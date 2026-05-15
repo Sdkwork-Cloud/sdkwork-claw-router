@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73371,
+  "uuid": "skill-clawhub-parcel-pickup",
+  "skillKey": "clawhub-parcel-pickup",
+  "name": "快递代取",
+  "summary": "该技能介绍如何通过快递代取实现变现；当你计划从事或优化快递代取时调用。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.parcel_pickup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codenova58",
+      "features": [
+        "该技能介绍如何通过快递代取实现变现；当你计划从事或优化快递代取时调用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/parcel-pickup@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191358186?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "parcel-pickup",
+      "url": "https://clawhub.ai/skills/parcel-pickup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "parcel-pickup",
+    "url": "https://clawhub.ai/skills/parcel-pickup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/parcel-pickup-42280519fea7c115.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/parcel-pickup@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-parcel-pickup-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73205a51f441d17afa9abd55f5e839868c47c0ec21608b9e4c9ba70720c1f682",
+      "artifactSizeBytes": 2113
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T01:27:30.880Z"
+}

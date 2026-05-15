@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-failure-loop@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_failure_loop",
+  "skill": {
+    "id": 36757,
+    "skillKey": "clawhub-agent-failure-loop",
+    "name": "Agent Failure Loop"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-failure-loop",
+    "url": "https://clawhub.ai/skills/agent-failure-loop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-failure-loop-9f0f8b3085756f71.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "An end-to-end self-improvement loop that automatically detects agent failures, classifies them, tracks recurrence, auto-generates rules, and promotes them to..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "reikys",
+      "userId": "s17a6q5kcdvvjnd62wwn1mqvph83m0bn",
+      "displayName": "reikys",
+      "image": "https://avatars.githubusercontent.com/u/83810275?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774508178955,
+      "changelog": "Translated all content to English",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:20a171030ea0477636e31fff3a49b36f3869f4a48fb63533b700027ce5b10666"
+}

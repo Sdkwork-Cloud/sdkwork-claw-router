@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68567,
+  "uuid": "skill-clawhub-wan-video-gen",
+  "skillKey": "clawhub-wan-video-gen",
+  "name": "wan-video-gen",
+  "summary": "基于阿里云百炼 Wan 文生视频模型的视频生成 skill。支持提交视频生成任务、轮询任务状态、下载生成视频到本地。 当用户需要根据提示词生成视频、继续查询已有视频生成任务，或用 Wan 系列模型生成带声/无声视频时，使用此 skill。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wan_video_gen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wei Zhou",
+      "features": [
+        "基于阿里云百炼 Wan 文生视频模型的视频生成 skill。支持提交视频生成任务、轮询任务状态、下载生成视频到本地。 当用户需要根据提示词生成视频、继续查询已有视频生成任务，或用 Wan 系."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wan-video-gen@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4317360?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wan-video-gen",
+      "url": "https://clawhub.ai/skills/wan-video-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wan-video-gen",
+    "url": "https://clawhub.ai/skills/wan-video-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wan-video-gen-40023daa32f4d283.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wan-video-gen@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wan-video-gen-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:13a6cc332480539a7a9e34b01040d1ceb3ebb171a03a31f1e40c678b698ea218",
+      "artifactSizeBytes": 2799
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T07:03:57.187Z"
+}

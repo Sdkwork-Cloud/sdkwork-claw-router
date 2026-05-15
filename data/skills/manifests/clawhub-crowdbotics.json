@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36563,
+  "uuid": "skill-clawhub-crowdbotics",
+  "skillKey": "clawhub-crowdbotics",
+  "name": "Crowdbotics",
+  "summary": "Crowdbotics integration. Manage data, records, and automate workflows. Use when the user wants to interact with Crowdbotics data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crowdbotics",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Crowdbotics integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Crowdbotics data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crowdbotics@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crowdbotics",
+      "url": "https://clawhub.ai/skills/crowdbotics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crowdbotics",
+    "url": "https://clawhub.ai/skills/crowdbotics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crowdbotics-9dc098b8720ec95d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crowdbotics@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-crowdbotics-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e4906ddc980d61cf01516cc1edac1bf86566ca116cd328183448cdf47652d4f1",
+      "artifactSizeBytes": 1865
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:21:40.487Z"
+}

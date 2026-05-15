@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68284,
+  "uuid": "skill-clawhub-deepseek-ai",
+  "skillKey": "clawhub-deepseek-ai",
+  "name": "Deepseek",
+  "summary": "整理DeepSeek公开页面信息，摘要模型能力、定价政策及文档目录，助力轻量级公开内容检索和汇总。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deepseek_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codenova58",
+      "features": [
+        "整理DeepSeek公开页面信息，摘要模型能力、定价政策及文档目录，助力轻量级公开内容检索和汇总。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deepseek-ai@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191358186?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deepseek-ai",
+      "url": "https://clawhub.ai/skills/deepseek-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deepseek-ai",
+    "url": "https://clawhub.ai/skills/deepseek-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deepseek-ai-37da8069862f0bd7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deepseek-ai@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-deepseek-ai-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:11884e374aa8f86109b360762d6564f0eaf90a1a23720eabce1db59d7ed700c5",
+      "artifactSizeBytes": 2254
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T23:51:14.522Z"
+}

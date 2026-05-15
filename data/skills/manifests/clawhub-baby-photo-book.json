@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44349,
+  "uuid": "skill-clawhub-baby-photo-book",
+  "skillKey": "clawhub-baby-photo-book",
+  "name": "Baby Photo Book",
+  "summary": "Generate professional baby photo books from photos with intelligent layout. Automatically organizes photos by baby's age stages, applies smart layouts to min...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baby_photo_book",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "atmosphere16happy",
+      "features": [
+        "Generate professional baby photo books from photos with intelligent layout",
+        "Automatically organizes photos by baby's age stages, applies smart layouts to min..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baby-photo-book@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/214950689?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baby-photo-book",
+      "url": "https://clawhub.ai/skills/baby-photo-book"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baby-photo-book",
+    "url": "https://clawhub.ai/skills/baby-photo-book",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baby-photo-book-79f975d482b83e48.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baby-photo-book@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-baby-photo-book-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7da926a0ca2520592e322c468ceb4b754301e301e39512ddbae9ee7f9df5c7cb",
+      "artifactSizeBytes": 2277
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T06:46:11.233Z"
+}

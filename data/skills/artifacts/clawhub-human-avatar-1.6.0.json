@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/human-avatar@1.6.0",
+  "version": "1.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.human_avatar",
+  "skill": {
+    "id": 60633,
+    "skillKey": "clawhub-human-avatar",
+    "name": "Human Avatar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "human-avatar",
+    "url": "https://clawhub.ai/skills/human-avatar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/human-avatar-5237803f7d479fb9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用阿里云 DashScope API 与阿里云 LingMou/灵眸生成多种 AI 视频与语音内容。七种能力：① LivePortrait 人像口播（图+音频→说话视频，两步流程）② EMO 人像口播 ③ AA/AnimateAnyone 全身动画（三步流程）④ T2I 文生图（万相2.x，默认 wan2.2-..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "davideuler",
+      "userId": "s17frrgnbz7sfpvg8mq6g51w1983mp4a",
+      "displayName": "david l euler",
+      "image": "https://avatars.githubusercontent.com/u/377983?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 469,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.6.0",
+      "createdAt": 1774581384932,
+      "changelog": "Clean release: add explicit registry metadata for required env vars and ffmpeg/ffprobe, align security scan expectations, restore clean description, and include the latest LingMou template workflow improvements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:74e443544226ba06dba65e50da738325cfc7521dc3accfe5c4f7160fc6c4ac93"
+}

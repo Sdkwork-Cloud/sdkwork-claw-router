@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-design-clawhub@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_design_clawhub",
+  "skill": {
+    "id": 45360,
+    "skillKey": "clawhub-auto-design-clawhub",
+    "name": "Auto Design Clawhub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-design-clawhub",
+    "url": "https://clawhub.ai/skills/auto-design-clawhub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-design-clawhub-d5e48c0b50d1c0d3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Auto-select and apply design systems from awesome-design-md based on project type and task context"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "html1602",
+      "userId": "s17999bcgqwa4x7geaek6w0vph84engc",
+      "displayName": "yuandezuohua",
+      "image": "https://avatars.githubusercontent.com/u/22317962?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 134,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775659106131,
+      "changelog": "Initial release of auto-design—an intelligent skill for auto-selecting and applying design systems based on context.\n\n- Automatically detects project type, tech stack, and user intent to recommend appropriate design systems.\n- Supports override via user requests or environment variables.\n- Downloads design blueprints from the awesome-design-md library and generates local DESIGN.md references.\n- Handles a wide range of project types like developer tools, AI/ML products, documentation, marketing sites, and dashboards.\n- Includes detailed trigger conditions and a robust selection algorithm with fallback options.\n- Provides cross-platform compatibility instructions, especially for Claude Code users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8aac109004ec4108b5ff4094173e6d77994f1186db4dd698e0cdf5ce81d49ff9"
+}

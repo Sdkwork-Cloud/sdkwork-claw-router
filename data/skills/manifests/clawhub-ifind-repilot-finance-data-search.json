@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72883,
+  "uuid": "skill-clawhub-ifind-repilot-finance-data-search",
+  "skillKey": "clawhub-ifind-repilot-finance-data-search",
+  "name": "iFinD投研-自然语言查询金融数据",
+  "summary": "使用自然语言查询金融数据，支持A股股票、基金、期货等上市品种，覆盖基本资料、财务数据、日频行情信息、持仓信息及各类分析指标等数据。也支持宏观经济数据，包括世界经济数据、全球经济数据、中国经济数据、区域经济数据、行业经济数据、利率走势数据、商品数据和特色数据等。当需要查询上述金融相关数据查询时使用此 skill。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ifind_repilot_finance_data_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wenzi",
+      "features": [
+        "使用自然语言查询金融数据，支持A股股票、基金、期货等上市品种，覆盖基本资料、财务数据、日频行情信息、持仓信息及各类分析指标等数据。也支持宏观经济数据，包括世界经济数据、全球经济数据、中国经济."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ifind-repilot-finance-data-search@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43460226?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ifind-repilot-finance-data-search",
+      "url": "https://clawhub.ai/skills/ifind-repilot-finance-data-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ifind-repilot-finance-data-search",
+    "url": "https://clawhub.ai/skills/ifind-repilot-finance-data-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ifind-repilot-finance-data-search-42144058aef73733.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ifind-repilot-finance-data-search@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ifind-repilot-finance-data-search-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5eae72e8976c7973ebd33437dadfb728273bb9e2707a908cc34708784ab43f80",
+      "artifactSizeBytes": 2497
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T09:23:13.727Z"
+}

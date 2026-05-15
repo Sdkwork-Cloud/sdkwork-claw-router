@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cli-obsidian@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cli_obsidian",
+  "skill": {
+    "id": 29754,
+    "skillKey": "clawhub-cli-obsidian",
+    "name": "Cli Obsidian"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cli-obsidian",
+    "url": "https://clawhub.ai/skills/cli-obsidian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cli-obsidian-d65d4cf2448a9a0b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Command-line tool to create, read, search, and export Obsidian notes locally with JSON output support for agent integration."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kaising-openclaw1",
+      "userId": "s17epxftgh3h1zzcr8g36j2dax83xh8g",
+      "displayName": "kaising-openclaw1",
+      "image": "https://avatars.githubusercontent.com/u/266910723?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776822421225,
+      "changelog": "添加付费版本：¥68 一次性购买",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1ede59c3137236069b0d115859c02ce875a376ab3c6038da19de9072369989a0"
+}

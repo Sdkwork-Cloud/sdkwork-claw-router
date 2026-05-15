@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vibetrading@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vibetrading",
+  "skill": {
+    "id": 15213,
+    "skillKey": "clawhub-vibetrading",
+    "name": "Vibetrading"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vibetrading",
+    "url": "https://clawhub.ai/skills/vibetrading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vibetrading-64c3871536b054c8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build, backtest, and deploy cryptocurrency trading strategies using the vibetrading Python framework. Use when: (1) generating trading strategies from natura..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "crabbytt",
+      "userId": "s17bqb1jegqkh9ac33yh8mkpbd84eqq9",
+      "displayName": "crabbytt",
+      "image": "https://avatars.githubusercontent.com/u/195406715?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 944,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772819769349,
+      "changelog": "Version 1.0.1\n\n- Major project cleanup: removed legacy example scripts, templates, and outdated validation/backtest files.\n- Updated SKILL.md to document the new vibetrading Python framework with a focus on function-based strategy design, backtesting, and live trading.\n- Added a concise API reference file (references/api-details.md) for easier strategy and function lookup.\n- Skill is now agent-first and supports multi-exchange deployment (Hyperliquid, Paradex, Lighter, Aster).\n- Skill is strictly limited to crypto trading strategy generation, backtesting, and deployment within the vibetrading framework.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:05915f983c86212578a78c988ba86ddaaeb4e970e920d24ae0bf6a7773e5ec9c"
+}

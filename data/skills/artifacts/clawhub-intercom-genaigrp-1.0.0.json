@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/intercom-genaigrp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intercom_genaigrp",
+  "skill": {
+    "id": 28095,
+    "skillKey": "clawhub-intercom-genaigrp",
+    "name": "Intercom GenAIgrp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intercom-genaigrp",
+    "url": "https://clawhub.ai/skills/intercom-genaigrp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intercom-genaigrp-b618cc55861c119a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Route opt-in inter-agent messages through OpenClaw sessions_send for internal bot-to-bot coordination. Use when a user asks to send a message to another Open..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ravikadam",
+      "userId": "publishers:ravikadam",
+      "displayName": "Ravindra Kadam",
+      "image": "https://avatars.githubusercontent.com/u/466919?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 334,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772618060721,
+      "changelog": "Initial opt-in inter-agent routing skill",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0b13c6ddb27bdedb77b16abd236490aa3de343426f1b09c6f2979b38c4014691"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10278,
+  "uuid": "skill-clawhub-asana-pat",
+  "skillKey": "clawhub-asana-pat",
+  "name": "Asana (PAT)",
+  "summary": "Manage Asana tasks, projects, briefs, status updates, custom fields, dependencies, attachments, events, and timelines via Personal Access Token (PAT).",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.asana_pat",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "L-U-C-K-Y",
+      "features": [
+        "Manage Asana tasks, projects, briefs, status updates, custom fields, dependencies, attachments,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/asana-pat@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14868134?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "asana-pat",
+      "url": "https://clawhub.ai/skills/asana-pat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "asana-pat",
+    "url": "https://clawhub.ai/skills/asana-pat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/asana-pat-f82668da5de4f158.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/asana-pat@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-asana-pat-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7bed883498b927a9296d8a269e0821c4c25b07d42e25c209763509678a95d63b",
+      "artifactSizeBytes": 2426
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T15:10:12.310Z"
+}

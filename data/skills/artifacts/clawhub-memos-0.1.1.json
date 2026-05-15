@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memos@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memos",
+  "skill": {
+    "id": 9069,
+    "skillKey": "clawhub-memos",
+    "name": "Memos"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memos",
+    "url": "https://clawhub.ai/skills/memos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memos-2b8d8df819e0a3ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage memos via the Memos API: create, retrieve, delete, and list memos with visibility and pagination support, requiring MEMOS_URL and MEMOS_TOKEN."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fty4",
+      "userId": "publishers:fty4",
+      "displayName": "Marco Lecheler",
+      "image": "https://avatars.githubusercontent.com/u/16336640?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4224,
+      "installsAllTime": 44,
+      "installsCurrent": 41,
+      "stars": 5,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1771792388319,
+      "changelog": "- Clarified configuration requirements: both `MEMOS_URL` and `MEMOS_TOKEN` are now explicitly marked as **REQUIRED** environment variables.\n- Improved documentation to state that the skill will abort if either variable is missing.\n- Minor wording and formatting adjustments for clearer instruction and emphasis on required setup.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cd6103ed1a7ac7fdaf339b187c6938f134e0cda82cf7404e828008ea59fe842c"
+}

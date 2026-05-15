@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/em-a2a@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.em_a2a",
+  "skill": {
+    "id": 48894,
+    "skillKey": "clawhub-em-a2a",
+    "name": "EM-A2A"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "em-a2a",
+    "url": "https://clawhub.ai/skills/em-a2a",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/em-a2a-db584d1c568927ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent-to-Agent payments on TRON. Use when an agent needs to pay another agent, escrow funds, check credit scores, or verify on-chain identity."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ypeng1620-beep",
+      "userId": "s176r87c7e5qtwpkepa2z8qhhx84006g",
+      "displayName": "ypeng1620-beep",
+      "image": "https://avatars.githubusercontent.com/u/267246883?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 91,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1777358165976,
+      "changelog": "Initial release: A2A payments, escrow, credit scoring on TRON.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:35974046f66f4d0762ee9d17a403a7a3c8cbf03ff36676b5e0a320801e038109"
+}

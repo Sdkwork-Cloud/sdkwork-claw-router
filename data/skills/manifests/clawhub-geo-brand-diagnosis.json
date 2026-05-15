@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59732,
+  "uuid": "skill-clawhub-geo-brand-diagnosis",
+  "skillKey": "clawhub-geo-brand-diagnosis",
+  "name": "geo_skill",
+  "summary": "GEO 品牌优化全流程工具：AI 生态诊断、评测文章生成、文章审核、发稿状态查询。Use when user asks about 品牌诊断, AI 现状分析, GEO 分析, 品牌评测, 生成评测文章, 写评测, 对比评测, brand diagnosis, article generation, review...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geo_brand_diagnosis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chameleon-nexus",
+      "features": [
+        "GEO 品牌优化全流程工具：AI 生态诊断、评测文章生成、文章审核、发稿状态查询。Use when user asks about 品牌诊断, AI 现状分析, GEO 分析, 品牌评测,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/geo-brand-diagnosis@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/232709637?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "geo-brand-diagnosis",
+      "url": "https://clawhub.ai/skills/geo-brand-diagnosis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geo-brand-diagnosis",
+    "url": "https://clawhub.ai/skills/geo-brand-diagnosis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geo-brand-diagnosis-dbfb591ca00cf95d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/geo-brand-diagnosis@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-geo-brand-diagnosis-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c7bd1248b2d38fa6140d1badc4c8e39e59636f68f06fc0c6addf7ddd172323d9",
+      "artifactSizeBytes": 2287
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T12:48:28.141Z"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22740,
+  "uuid": "skill-clawhub-nanobanana2-apiyi",
+  "skillKey": "clawhub-nanobanana2-apiyi",
+  "name": "nanobanana2-apiyi",
+  "summary": "Generate images via APIYI (Gemini 3.1 Flash Image Preview). Use when user wants to generate images from text descriptions. Supports keyword extraction, promp...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nanobanana2_apiyi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Heaven",
+      "features": [
+        "Generate images via APIYI (Gemini 3.1 Flash Image Preview)",
+        "Use when user wants to generate images from text descriptions",
+        "Supports keyword extraction, promp..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nanobanana2-apiyi@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23333359?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nanobanana2-apiyi",
+      "url": "https://clawhub.ai/skills/nanobanana2-apiyi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nanobanana2-apiyi",
+    "url": "https://clawhub.ai/skills/nanobanana2-apiyi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nanobanana2-apiyi-0a301d48473f9367.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nanobanana2-apiyi@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-nanobanana2-apiyi-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a8eb38b2cbd53e40e77f06e697416a2745c21cc4c35aeac90bef071fd1e22f15",
+      "artifactSizeBytes": 2559
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T08:50:00.941Z"
+}

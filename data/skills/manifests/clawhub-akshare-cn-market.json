@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62836,
+  "uuid": "skill-clawhub-akshare-cn-market",
+  "skillKey": "clawhub-akshare-cn-market",
+  "name": "AKShare CN Market",
+  "summary": "中国A股行情与宏观经济数据工具，基于 AKShare 库。支持个股K线、大盘指数、财务摘要、GDP/CPI/PMI/M2货币供应、中美国债收益率等。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.akshare_cn_market",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Eski Yin",
+      "features": [
+        "中国A股行情与宏观经济数据工具，基于 AKShare 库。支持个股K线、大盘指数、财务摘要、GDP/CPI/PMI/M2货币供应、中美国债收益率等。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/akshare-cn-market@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2740467?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "akshare-cn-market",
+      "url": "https://clawhub.ai/skills/akshare-cn-market"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "akshare-cn-market",
+    "url": "https://clawhub.ai/skills/akshare-cn-market",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/akshare-cn-market-09745093bfbc19ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/akshare-cn-market@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-akshare-cn-market-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b0fdeae9041cba78963fa29d4332fa2a58b8f4a79cc5f74c62c7f15b6d73b9a4",
+      "artifactSizeBytes": 2088
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T16:45:12.688Z"
+}

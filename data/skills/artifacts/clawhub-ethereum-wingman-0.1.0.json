@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ethereum-wingman@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ethereum_wingman",
+  "skill": {
+    "id": 11178,
+    "skillKey": "clawhub-ethereum-wingman",
+    "name": "Ethereum Wingman"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ethereum-wingman",
+    "url": "https://clawhub.ai/skills/ethereum-wingman",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ethereum-wingman-f016b389e94252af.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Ethereum development tutor and builder for Scaffold-ETH 2 projects. Triggers on \"build\", \"create\", \"dApp\", \"smart contract\", \"Solidity\", \"DeFi\", \"Ethereum\", \"web3\", or any blockchain development task. ALWAYS uses fork mode to test against."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jp4g",
+      "userId": "publishers:jp4g",
+      "displayName": "jp4g",
+      "image": "https://avatars.githubusercontent.com/u/31053787?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2015,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769555101527,
+      "changelog": "Initial release: Ethereum development tutor and builder for Scaffold-ETH 2 projects.  \nKey features:\n\n- Comprehensive step-by-step guide for building and testing Ethereum dApps using Scaffold-ETH 2, always in fork mode for real protocol state.\n- Covers smart contract development, DeFi protocols, security best practices, and common Solidity gotchas.\n- Provides detailed instructions for auto block mining, frontend testing, and leveraging real token and protocol addresses.\n- Emphasizes critical blockchain concepts like incentive design, contract limitations, and security checks.\n- Includes SpeedRun Ethereum challenge references for hands-on learning.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8a0fcaf512b4ccaba2b2faddc05bad08bf719c9243124f46e88b0a656666c985"
+}

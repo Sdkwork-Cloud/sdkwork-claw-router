@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17407,
+  "uuid": "skill-clawhub-golf-tee-times",
+  "skillKey": "clawhub-golf-tee-times",
+  "name": "Golf Tee Times",
+  "summary": "Search for golf tee times and deals near any location. Find cheapest rounds, compare prices across platforms, and get discount tips. Use when asked about gol...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.golf_tee_times",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tag",
+      "features": [
+        "Search for golf tee times and deals near any location",
+        "Find cheapest rounds, compare prices across platforms, and get discount tips",
+        "Use when asked about gol..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/golf-tee-times@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260167501?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "golf-tee-times",
+      "url": "https://clawhub.ai/skills/golf-tee-times"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "golf-tee-times",
+    "url": "https://clawhub.ai/skills/golf-tee-times",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/golf-tee-times-00bff2dfae6676fd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/golf-tee-times@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-golf-tee-times-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c1f1341e0e09617c92f24775fa657fa7ac465b642c4d2380f0dec3f8ad4c251b",
+      "artifactSizeBytes": 1875
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T15:13:18.258Z"
+}

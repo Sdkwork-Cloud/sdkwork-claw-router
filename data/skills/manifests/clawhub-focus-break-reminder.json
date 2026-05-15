@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17494,
+  "uuid": "skill-clawhub-focus-break-reminder",
+  "skillKey": "clawhub-focus-break-reminder",
+  "name": "Focus Break Reminder",
+  "summary": "Workspace wellness break reminder with configurable work interval, cooldown, idle reset, quiet hours, and per-day caps. Use when users want OpenClaw to remin...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.focus_break_reminder",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lxj0276",
+      "features": [
+        "Workspace wellness break reminder with configurable work interval, cooldown, idle reset, quiet.",
+        "Use when users want OpenClaw to remin..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/focus-break-reminder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3369091?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "focus-break-reminder",
+      "url": "https://clawhub.ai/skills/focus-break-reminder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "focus-break-reminder",
+    "url": "https://clawhub.ai/skills/focus-break-reminder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/focus-break-reminder-e0aea93800b68f4e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/focus-break-reminder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-focus-break-reminder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9770896b9283b700afc926c75dcf92a8fd32dc9c6bacc418f74867f6165d579b",
+      "artifactSizeBytes": 1918
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T01:18:54.767Z"
+}

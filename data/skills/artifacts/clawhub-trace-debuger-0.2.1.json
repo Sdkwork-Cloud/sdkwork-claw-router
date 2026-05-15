@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trace-debuger@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trace_debuger",
+  "skill": {
+    "id": 18969,
+    "skillKey": "clawhub-trace-debuger",
+    "name": "Trace Debuger"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trace-debuger",
+    "url": "https://clawhub.ai/skills/trace-debuger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trace-debuger-46fbc8fc5ea44a2c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "End-to-end trace debugging from trace_id. Fetch Jaeger trace and Elasticsearch logs, analyze possible bugs (optionally with local repository context), and ge..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gakkiismywife",
+      "userId": "s173h25mbz062j85kh5f6cs13n83gapx",
+      "displayName": "gakkiismywife",
+      "image": "https://avatars.githubusercontent.com/u/40749544?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 547,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1772710947603,
+      "changelog": "Enforce single-message delivery: markdown report as file attachment + strict summary format with real filename.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0d42aae394692a430e987f9fc4b9f7302e4f6a0aa1a31837b9834d445be50113"
+}

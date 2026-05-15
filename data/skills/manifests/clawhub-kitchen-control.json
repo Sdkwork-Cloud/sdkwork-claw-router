@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28423,
+  "uuid": "skill-clawhub-kitchen-control",
+  "skillKey": "clawhub-kitchen-control",
+  "name": "kitchen-control",
+  "summary": "Manage freezer inventory via WhatsApp commands, track stock and expiration, log sales, generate schedules, adjust prices dynamically, and forecast demand usi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kitchen_control",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "M3D3L",
+      "features": [
+        "Manage freezer inventory via WhatsApp commands, track stock and expiration, log sales, generate."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kitchen-control@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/72050286?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kitchen-control",
+      "url": "https://clawhub.ai/skills/kitchen-control"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kitchen-control",
+    "url": "https://clawhub.ai/skills/kitchen-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kitchen-control-45b8beec2d6feeb0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kitchen-control@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kitchen-control-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:09bbc5e914061a09bc188a1aff1cafa2f0692754bfed86fbe52b66c99e7c6c92",
+      "artifactSizeBytes": 2389
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T03:23:16.502Z"
+}

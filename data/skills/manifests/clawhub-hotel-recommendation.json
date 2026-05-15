@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65696,
+  "uuid": "skill-clawhub-hotel-recommendation",
+  "skillKey": "clawhub-hotel-recommendation",
+  "name": "hotel-recommendation",
+  "summary": "使用 RollingGo CLI 查询酒店信息、筛选结果、读取酒店标签和获取房型价格。当用户需要按目的地 / 日期 / 星级 / 预算 / 标签 / 距离搜索酒店、查看酒店详情与房型报价，或读取酒店标签库时触发本技能。触发短语——\"搜索酒店\"、\"查酒店\"、\"酒店详情\"、\"房型价格\"、\"酒店标签\"、\"附近酒店\"、\"...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hotel_recommendation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zlon",
+      "features": [
+        "使用 RollingGo CLI 查询酒店信息、筛选结果、读取酒店标签和获取房型价格。当用户需要按目的地 / 日期 / 星级 / 预算 / 标签 / 距离搜索酒店、查看酒店详情与房型报价，或."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hotel-recommendation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/68158872?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hotel-recommendation",
+      "url": "https://clawhub.ai/skills/hotel-recommendation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hotel-recommendation",
+    "url": "https://clawhub.ai/skills/hotel-recommendation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hotel-recommendation-fa9b6401e7ae17ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hotel-recommendation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hotel-recommendation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7aea0f24ad79cb565b3016bc388a08fc1bd2b08687ef22138d0930fb7f57d476",
+      "artifactSizeBytes": 2708
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T08:41:42.394Z"
+}

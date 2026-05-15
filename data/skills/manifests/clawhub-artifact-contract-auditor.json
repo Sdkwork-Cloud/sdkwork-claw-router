@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57072,
+  "uuid": "skill-clawhub-artifact-contract-auditor",
+  "skillKey": "clawhub-artifact-contract-auditor",
+  "name": "Artifact Contract Auditor",
+  "summary": "Audit the workspace against the pipeline artifact contract (DONE outputs + pipeline target_artifacts). Writes `output/CONTRACT_REPORT.md`. **Trigger**: contr...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.artifact_contract_auditor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WILLOSCAR",
+      "features": [
+        "Audit the workspace against the pipeline artifact contract (DONE outputs + pipeline target_arti.",
+        "Writes `output/CONTRACT_REPORT.md`",
+        "**Trigger**: contr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/artifact-contract-auditor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63443351?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "artifact-contract-auditor",
+      "url": "https://clawhub.ai/skills/artifact-contract-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "artifact-contract-auditor",
+    "url": "https://clawhub.ai/skills/artifact-contract-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/artifact-contract-auditor-d2249ddeeca2b19d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/artifact-contract-auditor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-artifact-contract-auditor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4280cf4377671094f3c4024909007eaff00a37f9da73d19b5275a70bcb0bf3bc",
+      "artifactSizeBytes": 2399
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T09:15:04.520Z"
+}

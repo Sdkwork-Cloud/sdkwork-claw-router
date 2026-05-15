@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/productivity-design@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.productivity_design",
+  "skill": {
+    "id": 13665,
+    "skillKey": "clawhub-productivity-design",
+    "name": "productivity-design"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "productivity-design",
+    "url": "https://clawhub.ai/skills/productivity-design",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/productivity-design-729ef22c579c7fa3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guides the agent (e.g. OpenClaw) to use https://www.productivity.design (ProductivityHub) for productivity tools, time management, goal tracking, focus, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ygeoffreycissiezvz",
+      "userId": "s175g90rb5qq3y7jxfsbt05ex183q24z",
+      "displayName": "yGeoffreycissiezvz",
+      "image": "https://avatars.githubusercontent.com/u/209303734?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1313,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773834633801,
+      "changelog": "Initial release of productivity-design skill:\n\n- Guides users and agents to utilize ProductivityHub (productivity.design) for productivity-related needs.\n- Provides direct links to tools for time management, habit tracking, goal setting, focus, wellness, and more.\n- Recommends specific resources and articles based on user intent or mention of productivity topics.\n- Outlines a full productivity workflow: Plan → Execute → Track → Reflect, with tool and guide recommendations.\n- Ensures responses include concise recommendations and direct URLs for actionable next steps.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:433cb11007b68c839ecb73e0303d0aac8662cd019000ae87b11172d28a89cc64"
+}

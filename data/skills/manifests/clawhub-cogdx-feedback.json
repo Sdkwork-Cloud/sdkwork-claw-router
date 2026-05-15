@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27733,
+  "uuid": "skill-clawhub-cogdx-feedback",
+  "skillKey": "clawhub-cogdx-feedback",
+  "name": "CogDx Feedback (Free)",
+  "summary": "FREE cognitive feedback verification for AI agents via Cerebratech CogDx API. Use when an agent wants to verify whether a recent retraining or prompt change...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cogdx_feedback",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dr Amanda Kavner",
+      "features": [
+        "FREE cognitive feedback verification for AI agents via Cerebratech CogDx API",
+        "Use when an agent wants to verify whether a recent retraining or prompt change..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cogdx-feedback@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78941808?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cogdx-feedback",
+      "url": "https://clawhub.ai/skills/cogdx-feedback"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cogdx-feedback",
+    "url": "https://clawhub.ai/skills/cogdx-feedback",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cogdx-feedback-ad2fa8f7e12fa88b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cogdx-feedback@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-cogdx-feedback-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3a31844a315d0b578f6d5e113e85c1aaeddd257049c70727cb6c35eaffc7dfb7",
+      "artifactSizeBytes": 1926
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T16:04:09.991Z"
+}

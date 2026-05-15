@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linguistic-landscape-analyzer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linguistic_landscape_analyzer",
+  "skill": {
+    "id": 61072,
+    "skillKey": "clawhub-linguistic-landscape-analyzer",
+    "name": "Linguistic Landscape Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linguistic-landscape-analyzer",
+    "url": "https://clawhub.ai/skills/linguistic-landscape-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linguistic-landscape-analyzer-a3cd0667104755c6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "语言景观分析 MCP 工具 - 小红书情感分析与关键词提取，支持语言学/社会学研究"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "crystaria",
+      "userId": "s1779dwc43xytz35nf3c74zgm583h5m5",
+      "displayName": "Crystaria",
+      "image": "https://avatars.githubusercontent.com/u/105076136?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 369,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773727467434,
+      "changelog": "- 报告输出路径调整为技能目录内，提高数据安全性\n- 补充文档注意事项，明确说明无网络爬虫，仅处理本地 CSV 数据\n- 修正文档中无效或未创建的 GitHub 链接\n- 技能标签优化与明确\n- 新增交付报告文件",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e7fc40cc94e80e033cba7a23b9a2293db010db2548bfd8eccf6650f500f4b21b"
+}

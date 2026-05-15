@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24609,
+  "uuid": "skill-clawhub-placed-resume-builder",
+  "skillKey": "clawhub-placed-resume-builder",
+  "name": "Placed Resume Builder",
+  "summary": "This skill should be used when the user wants to \"build a resume\", \"create a resume\", \"update my resume\", \"export resume as PDF\", \"change resume template\", \"...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.placed_resume_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ajit Singh",
+      "features": [
+        "This skill should be used when the user wants to \"build a resume\", \"create a resume\", \"update m."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/placed-resume-builder@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34647819?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "placed-resume-builder",
+      "url": "https://clawhub.ai/skills/placed-resume-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "placed-resume-builder",
+    "url": "https://clawhub.ai/skills/placed-resume-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/placed-resume-builder-947ea662ba58c341.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/placed-resume-builder@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-placed-resume-builder-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:30f2213cdddbc7761c1856bffd9ebdd416b92e313a2ac61a74bb859cd9179902",
+      "artifactSizeBytes": 1984
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T22:00:57.072Z"
+}

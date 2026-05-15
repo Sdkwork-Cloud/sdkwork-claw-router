@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-pro@2.5.0",
+  "version": "2.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_pro",
+  "skill": {
+    "id": 16649,
+    "skillKey": "clawhub-memory-pro",
+    "name": "memory-pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-pro",
+    "url": "https://clawhub.ai/skills/memory-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-pro-a89d0d2cac943101.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill provides semantic search over your memory files using a local vector database."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "royhk920",
+      "userId": "s179273w43zh8y75zyzst8wa2h83gwxh",
+      "displayName": "royhk920",
+      "image": "https://avatars.githubusercontent.com/u/129730053?v=4"
+    },
+    "stats": {
+      "comments": 4,
+      "downloads": 823,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.5.0",
+      "createdAt": 1773592300669,
+      "changelog": "**Major update: Overhauled structure with new v2 engine and improved configuration.**\n\n- updated to support openclaw 2026.3.11 or later \n\n- Migrated core logic to a new `v2` directory with updated engine scripts and benchmarks.\n- Replaced old `engine/` files and installation scripts with new modular scripts for building, searching, and benchmarking.\n- Updated and expanded environment variable and configuration file support for detailed customization.\n- SKILL.md and documentation revised for v2 architecture, service setup, and usage.\n- Adds scripts for semantic search, hybrid retrieval, reranking, and evaluation.\n- Removes deprecated files and legacy install process.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:57688455e9b77505de6a2358edf076a11d44b10037aead86c796ea4829d7a258"
+}

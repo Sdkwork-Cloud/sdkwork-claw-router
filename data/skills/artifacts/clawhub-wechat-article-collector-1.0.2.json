@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-article-collector@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_article_collector",
+  "skill": {
+    "id": 67109,
+    "skillKey": "clawhub-wechat-article-collector",
+    "name": "WeChat Article Collector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-article-collector",
+    "url": "https://clawhub.ai/skills/wechat-article-collector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-article-collector-89fd1dd6798da0a7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "微信公众号文章批量采集工具。通过 Browser Harness 连接用户已登录的微信公众号后台，自动提取文章列表、去重、下载全文并保存到本地知识库。适用于个人公众号内容备份、知识库构建、文章管理等场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adchina2025",
+      "userId": "s178zr3agqc91dpj9mr6we2xn983g5jq",
+      "displayName": "adchina2025",
+      "image": "https://avatars.githubusercontent.com/u/265822641?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776825279031,
+      "changelog": "- 增加 Browser Harness 必需依赖的详细安装说明与项目地址，方便新用户快速配置环境。\n- 明确标注 Browser Harness 作为本工具关键依赖，并补充安装方法命令行示例。\n- 其他功能和用法无变化。\nSecurity fixes: Use subprocess without shell=True, tempfile for scripts, declare browser-harness dependency explicitly",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:66426a6670039e189b39c79be3dc3d6082ac93eb92ea0e8f80aab73925d55beb"
+}

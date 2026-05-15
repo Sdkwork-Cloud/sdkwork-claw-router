@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-prompt-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_prompt_builder",
+  "skill": {
+    "id": 54212,
+    "skillKey": "clawhub-agent-prompt-builder",
+    "name": "Agent Prompt Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-prompt-builder",
+    "url": "https://clawhub.ai/skills/agent-prompt-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-prompt-builder-573d7f3b2d0bcdb6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Stop writing system prompts by hand — let structured identity generate them automatically from beliefs and responsibilities"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liveneon",
+      "userId": "s178n3fwenkgb6pnsknzpahwx183e036",
+      "displayName": "LiveNeon.ai",
+      "image": "https://avatars.githubusercontent.com/u/261327260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774692554315,
+      "changelog": "- Initial release of agent-prompt-builder skill.\n- Automatically generates structured system prompts for AI agents based on defined beliefs and responsibilities.\n- Integrates with the Live Neon Agent platform for seamless identity and prompt management.\n- Supports dynamic prompt generation, hierarchical inheritance, and compatibility with any LLM.\n- Includes command-line tools for registration, discovery, review, build, syncing content, and organizational management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a8cae156b1220b20c7b58987c0dcc9edf980cdf7958a570f17de05527472dea8"
+}

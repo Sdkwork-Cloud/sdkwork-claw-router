@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiao-chuang-you-pet@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiao_chuang_you_pet",
+  "skill": {
+    "id": 70481,
+    "skillKey": "clawhub-xiao-chuang-you-pet",
+    "name": "Xiao Chuang You Pet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiao-chuang-you-pet",
+    "url": "https://clawhub.ai/skills/xiao-chuang-you-pet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiao-chuang-you-pet-56760c83fbf73b19.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小窗幽宠物子技能。当用户询问宠物养护、猫狗饮食、护理、行为等问题时激活。涵盖猫狗日常养护知识，包括饮食搭配、日常护理、行为交流、季节养护等。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zcr3344",
+      "userId": "s17bm5v1kff332wsk2jw96mxgs83yrvr",
+      "displayName": "张城瑞",
+      "image": "https://avatars.githubusercontent.com/u/48597146?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 87,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778061268371,
+      "changelog": "xiao-chuang-you-pet v1.0.0\n\n- 首发版本，支持宠物养护、猫狗饮食、护理、行为等问题解答\n- 覆盖猫狗日常知识：饮食搭配、日常护理、行为交流、季节养护\n- 增强互动体验：主动作出提问，分享小知识，语气温暖有趣\n- 特别优化缅因猫等大型猫品种相关内容\n- 明确禁忌：不作医疗诊断、不建议繁殖、不以强硬语气沟通",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7e1c4c590c227189e7a7f14c8b4412706cc49a72487c45e3672fa564ce8fc2ae"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/medical-qa@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.medical_qa",
+  "skill": {
+    "id": 72476,
+    "skillKey": "clawhub-medical-qa",
+    "name": "medical-qa"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "medical-qa",
+    "url": "https://clawhub.ai/skills/medical-qa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/medical-qa-3779725b56e2f676.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "医疗健康知识问答技能。用于帮助用户理解症状含义、解读检查报告结果、了解用药常识、提供何时就医的专业建议。当用户询问健康症状、药品说明、检查报告解读、就医建议等问题时触发此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yishuihan132",
+      "userId": "s17bh6eppneg3f5a8a6zjay3qn83ze0d",
+      "displayName": "yishuihan132",
+      "image": "https://avatars.githubusercontent.com/u/59037227?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 838,
+      "installsAllTime": 5,
+      "installsCurrent": 4,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773934977121,
+      "changelog": "No changes detected in this version.\n\n- No updates or file changes were made in version 1.0.2.\n- All skill functions, usage, and guidelines remain the same.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0f4482b11dc9c3adf57a14de283c80c844b0f35a2d92869bdcdd0f5999414335"
+}

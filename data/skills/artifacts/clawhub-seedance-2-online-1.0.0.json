@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seedance-2-online@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seedance_2_online",
+  "skill": {
+    "id": 43436,
+    "skillKey": "clawhub-seedance-2-online",
+    "name": "Seedance 2 Online"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seedance-2-online",
+    "url": "https://clawhub.ai/skills/seedance-2-online",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seedance-2-online-128a5ca061139b24.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Tired of juggling complex video tools just to bring a simple idea to life? seedance-2-online gives you instant access to Seedance 2's powerful AI video gener..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775665624434,
+      "changelog": "Seedance 2 Online 1.0.0 — Instantly generate cinematic AI videos from text or images, no installation required.\n\n- Seamlessly converts text prompts or still images into high-quality, realistic video clips.\n- Handles backend setup, authentication (automatic free token retrieval), and session management with minimal user interaction.\n- Supports exporting, uploading, balance checking, and session status queries via natural commands.\n- Full error handling for authentication, credits, export, file support, and rate limits.\n- Provides usage guidance, prompt suggestions, and troubleshooting directly in the skill.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ad1cf7e4fb1b5e54569b5b6567e2fd6ce069c7f20083605b5b20b1d3ebf20f7d"
+}

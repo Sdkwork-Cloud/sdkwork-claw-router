@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15044,
+  "uuid": "skill-clawhub-ziptax",
+  "skillKey": "clawhub-ziptax",
+  "name": "Ziptax Sales Tax",
+  "summary": "Look up U.S. sales tax rates using the ZipTax API. Use when the user asks about sales tax rates, tax calculations for a U.S. address/ZIP code/coordinates, freight or service taxability, jurisdiction-level tax breakdowns, use tax vs sales t.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ziptax",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ericlakich",
+      "features": [
+        "Look up U.S",
+        "sales tax rates using the ZipTax API",
+        "Use when the user asks about sales tax rates, tax calculations for a U.S",
+        "address/ZIP code/coordinates, freight or service taxability, jurisdiction-level tax breakdowns,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ziptax@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/957693?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ziptax",
+      "url": "https://clawhub.ai/skills/ziptax"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ziptax",
+    "url": "https://clawhub.ai/skills/ziptax",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ziptax-41dcc26b7eab8ccb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ziptax@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ziptax-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7fdcaa5de5b27cb532e8d5df34676e4a9550684f3c693c86b616cc20a2899659",
+      "artifactSizeBytes": 2292
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T18:36:40.688Z"
+}

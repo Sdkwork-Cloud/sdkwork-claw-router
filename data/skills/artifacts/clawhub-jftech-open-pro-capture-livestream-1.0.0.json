@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jftech-open-pro-capture-livestream@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jftech_open_pro_capture_livestream",
+  "skill": {
+    "id": 67631,
+    "skillKey": "clawhub-jftech-open-pro-capture-livestream",
+    "name": "jftech-open-pro-capture-livestream"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jftech-open-pro-capture-livestream",
+    "url": "https://clawhub.ai/skills/jftech-open-pro-capture-livestream",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jftech-open-pro-capture-livestream-b71008684f8ead78.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "面向开发者杰峰设备 API 工具，支持批量获取杰峰设备实时画面，可多设备多通道抓图和直播地址获取。触发词：检查设备状态、查询设备、设备登录、设备抓图、直播地址、获取播放地址、批量抓图。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jftech",
+      "userId": "s174gzt1b9vjabkvgdmp64k4t985nzhw",
+      "displayName": "jftech",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 99,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777271171447,
+      "changelog": "Initial release of jftech-open-pro-capture-livestream.\n\n- Provides API tools for developers to interact with JF devices.\n- Supports batch capture of real-time device images and retrieval of livestream URLs for multiple devices and channels.\n- Allows device status checks, device login, token acquisition, image capture, and livestream link retrieval.\n- Credentials are managed exclusively via environment variables for security.\n- Python-only support; compatible with official JF API endpoints both internationally and in mainland China.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5b1bc8daf5a71bdea0e6f962cda35daa1479b7e1430f700bfddda5e98f03a714"
+}

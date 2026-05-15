@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15221,
+  "uuid": "skill-clawhub-volcengine-database-rds",
+  "skillKey": "clawhub-volcengine-database-rds",
+  "name": "Volcengine Database Rds",
+  "summary": "Operate Volcengine RDS instances and database workflows. Use when users need provisioning guidance, connectivity checks, performance troubleshooting, or backup/restore procedures.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.volcengine_database_rds",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cinience",
+      "features": [
+        "Operate Volcengine RDS instances and database workflows",
+        "Use when users need provisioning guidance, connectivity checks, performance troubleshooting, or."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/volcengine-database-rds@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/557426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "volcengine-database-rds",
+      "url": "https://clawhub.ai/skills/volcengine-database-rds"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "volcengine-database-rds",
+    "url": "https://clawhub.ai/skills/volcengine-database-rds",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/volcengine-database-rds-e25d23baa75a898a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/volcengine-database-rds@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-volcengine-database-rds-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f5cbcddcc0e4f57027dae74954b440afe051a760694c4f9531cc02795415ee1",
+      "artifactSizeBytes": 2015
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T00:24:29.034Z"
+}

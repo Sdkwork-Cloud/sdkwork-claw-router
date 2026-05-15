@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43202,
+  "uuid": "skill-clawhub-agent-memory-protocol",
+  "skillKey": "clawhub-agent-memory-protocol",
+  "name": "Agent Memory Protocol",
+  "summary": "Agent memory management protocol. Activate for any memory read, write, or update operation. Defines six-category write spec, L0 sync rules, and dedup strategy.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_memory_protocol",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OttoPrua",
+      "features": [
+        "Agent memory management protocol",
+        "Activate for any memory read, write, or update operation",
+        "Defines six-category write spec, L0 sync rules, and dedup strategy."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-memory-protocol@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/66740910?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-memory-protocol",
+      "url": "https://clawhub.ai/skills/agent-memory-protocol"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-memory-protocol",
+    "url": "https://clawhub.ai/skills/agent-memory-protocol",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-memory-protocol-9ecf5b069bfbaec3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-memory-protocol@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-memory-protocol-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:23f277858c634d3e24be4e1ee929fc1a9a17e61fc263ca2453859d1e7ece6738",
+      "artifactSizeBytes": 1940
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T10:38:39.312Z"
+}

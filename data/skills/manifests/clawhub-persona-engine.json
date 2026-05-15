@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35284,
+  "uuid": "skill-clawhub-persona-engine",
+  "skillKey": "clawhub-persona-engine",
+  "name": "AI Persona Engine",
+  "summary": "Create and customize AI personas with voice, face, personality, memory, and cross-platform behavior using an interactive wizard and safe update tools.",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.persona_engine",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SPFAdvisors",
+      "features": [
+        "Create and customize AI personas with voice, face, personality, memory, and cross-platform beha."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/persona-engine@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/133194757?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "persona-engine",
+      "url": "https://clawhub.ai/skills/persona-engine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "persona-engine",
+    "url": "https://clawhub.ai/skills/persona-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/persona-engine-2e369498a187e744.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/persona-engine@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-persona-engine-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:13497d223a00cc78f0da23bbb8fff3cbf989c6d18daae7e5454de247dd5abf28",
+      "artifactSizeBytes": 2062
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T21:38:46.108Z"
+}

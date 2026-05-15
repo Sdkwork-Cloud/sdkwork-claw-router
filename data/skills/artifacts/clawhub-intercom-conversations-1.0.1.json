@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/intercom-conversations@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intercom_conversations",
+  "skill": {
+    "id": 18171,
+    "skillKey": "clawhub-intercom-conversations",
+    "name": "intercom-conversations"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intercom-conversations",
+    "url": "https://clawhub.ai/skills/intercom-conversations",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intercom-conversations-0a80425aaf0dcbe6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read Intercom conversations by listing, finding, or searching them using the ConversationsClient with JSON input and output."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "duyeng",
+      "userId": "publishers:duyeng",
+      "displayName": "duyeng",
+      "image": "https://avatars.githubusercontent.com/u/140710227?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 713,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771373475494,
+      "changelog": "Initial release.\n\n- Introduced Intercom Conversations (Read) skill for Clawhub.\n- Supports reading Intercom conversations using actions: list, find, and search.\n- Inputs and outputs follow a clear JSON contract.\n- Added env var requirement: INTERCOM_ACCESS_TOKEN.\n- Source metadata provided in clawhub.skill.json; removed package-lock.json.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b54abaa2233a925c5d396e83ace581ac474b89c2c5d0a413400cc5565a613ad4"
+}

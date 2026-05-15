@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37466,
+  "uuid": "skill-clawhub-voice-output",
+  "skillKey": "clawhub-voice-output",
+  "name": "voice-output",
+  "summary": "Use when Tony says voice reply or asks to speak. Speaks the response aloud via Doubao TTS to MOMAX BS6.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voice_output",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OlddirtybikerTony",
+      "features": [
+        "Use when Tony says voice reply or asks to speak",
+        "Speaks the response aloud via Doubao TTS to MOMAX BS6."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/voice-output@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267307847?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "voice-output",
+      "url": "https://clawhub.ai/skills/voice-output"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voice-output",
+    "url": "https://clawhub.ai/skills/voice-output",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voice-output-5ed9f4ba1d1f56ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/voice-output@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-voice-output-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d5482b7882cf45179882164dfe8f24ebd7485e7b40c2998b48941d30fe08eed",
+      "artifactSizeBytes": 1879
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T11:21:11.828Z"
+}

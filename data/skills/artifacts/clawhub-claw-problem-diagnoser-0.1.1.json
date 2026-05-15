@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-problem-diagnoser@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_problem_diagnoser",
+  "skill": {
+    "id": 62677,
+    "skillKey": "clawhub-claw-problem-diagnoser",
+    "name": "Claw Problem Diagnoser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-problem-diagnoser",
+    "url": "https://clawhub.ai/skills/claw-problem-diagnoser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-problem-diagnoser-2db66b1b67fe0501.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动诊断并修复OpenClaw的配置、依赖、服务和权限问题，提升系统稳定性和运行效率。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "betsymalthus",
+      "userId": "publishers:betsymalthus",
+      "displayName": "SkilledClaw",
+      "image": "https://avatars.githubusercontent.com/u/250800479?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1770809984805,
+      "changelog": "- Updated dependency versions and metadata in package.json.\n- No changes to core features or documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5e12693bea56cec95e266e5a8ee3eb73278a7e940543e5ec7f62eb2151ce6f58"
+}

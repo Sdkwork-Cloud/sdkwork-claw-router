@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31197,
+  "uuid": "skill-clawhub-shoprocket",
+  "skillKey": "clawhub-shoprocket",
+  "name": "Shoprocket",
+  "summary": "Shoprocket integration. Manage Organizations. Use when the user wants to interact with Shoprocket data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shoprocket",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Shoprocket integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Shoprocket data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shoprocket@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shoprocket",
+      "url": "https://clawhub.ai/skills/shoprocket"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shoprocket",
+    "url": "https://clawhub.ai/skills/shoprocket",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shoprocket-a1bc6afd9897a52e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shoprocket@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-shoprocket-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:be3a52ff6ff18ee72c646225cdbdba8ea2201ee2bfe123789a275885cf4131fd",
+      "artifactSizeBytes": 1832
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:59:51.490Z"
+}

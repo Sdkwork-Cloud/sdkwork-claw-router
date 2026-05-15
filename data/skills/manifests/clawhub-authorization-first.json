@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67342,
+  "uuid": "skill-clawhub-authorization-first",
+  "skillKey": "clawhub-authorization-first",
+  "name": "Authorization First",
+  "summary": "确保任何系统修改、文件操作或外部调用前，详细说明方案、风险并获得用户明确授权才执行。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.authorization_first",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pikaqiuyaya",
+      "features": [
+        "确保任何系统修改、文件操作或外部调用前，详细说明方案、风险并获得用户明确授权才执行。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/authorization-first@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/146065672?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "authorization-first",
+      "url": "https://clawhub.ai/skills/authorization-first"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "authorization-first",
+    "url": "https://clawhub.ai/skills/authorization-first",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/authorization-first-6880c90bc227f71c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/authorization-first@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-authorization-first-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:50495430fcf341f3bc8a6559ac06f5036c8da8742091c1f4dc1ccbcfa2a7cbe4",
+      "artifactSizeBytes": 2554
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T08:50:24.971Z"
+}

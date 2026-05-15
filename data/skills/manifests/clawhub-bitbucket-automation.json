@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11381,
+  "uuid": "skill-clawhub-bitbucket-automation",
+  "skillKey": "clawhub-bitbucket-automation",
+  "name": "Bitbucket Automation",
+  "summary": "Automate Bitbucket repositories, pull requests, branches, issues, and workspace management via Rube MCP (Composio). Always search tools first for current schemas.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bitbucket_automation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sohamganatra",
+      "features": [
+        "Automate Bitbucket repositories, pull requests, branches, issues, and workspace management via.",
+        "Always search tools first for current schemas."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bitbucket-automation@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7982102?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bitbucket-automation",
+      "url": "https://clawhub.ai/skills/bitbucket-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bitbucket-automation",
+    "url": "https://clawhub.ai/skills/bitbucket-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bitbucket-automation-36d594c17a2da65b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bitbucket-automation@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bitbucket-automation-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fe111fb064ccaa08a59532902251ede4c66e85d3aaeb4ca0636692dd2f945a9c",
+      "artifactSizeBytes": 2420
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T08:42:49.634Z"
+}

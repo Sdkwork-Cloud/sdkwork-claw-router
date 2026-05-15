@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawguard@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawguard",
+  "skill": {
+    "id": 10599,
+    "skillKey": "clawhub-clawguard",
+    "name": "ClawGuard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawguard",
+    "url": "https://clawhub.ai/skills/clawguard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawguard-825a31614ea118ce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install and configure the ClawGuard security plugin - an LLM-as-a-Judge guardrail that detects and blocks risky tool calls"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lidan-capsule",
+      "userId": "publishers:lidan-capsule",
+      "displayName": "lidan-capsule",
+      "image": "https://avatars.githubusercontent.com/u/188199428?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2473,
+      "installsAllTime": 11,
+      "installsCurrent": 10,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1770216573685,
+      "changelog": "- Added detailed installation and configuration instructions for the ClawGuard plugin, including Docker support.\n- Provided troubleshooting guidance for common issues (401/405 errors, plugin loading).\n- Documented all available configuration options with descriptions and examples.\n- Explained the plugin’s security evaluation workflow and how it integrates with OpenClaw.\n- Included links to the ClawGuard GitHub and npm package for further reference.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:af077475374cc8a245eb26b7b3dc97ca37da7bc06509b4dd18f1e09446d0c860"
+}

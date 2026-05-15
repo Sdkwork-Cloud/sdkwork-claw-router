@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10106,
+  "uuid": "skill-clawhub-graphiti",
+  "skillKey": "clawhub-graphiti",
+  "name": "Graphiti",
+  "summary": "Knowledge graph operations via Graphiti API. Search facts, add episodes, and extract entities/relationships.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.graphiti",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "emasoudy",
+      "features": [
+        "Knowledge graph operations via Graphiti API",
+        "Search facts, add episodes, and extract entities/relationships."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/graphiti@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/69653641?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "graphiti",
+      "url": "https://clawhub.ai/skills/graphiti"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "graphiti",
+    "url": "https://clawhub.ai/skills/graphiti",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/graphiti-bd3dd14c754f3e16.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/graphiti@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-graphiti-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f6e058ddaeadfccd1d3e7e030b5d82c988514fb37efdf88140251fba2570228f",
+      "artifactSizeBytes": 2050
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-19T07:42:50.301Z"
+}

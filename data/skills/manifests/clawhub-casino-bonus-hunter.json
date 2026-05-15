@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33472,
+  "uuid": "skill-clawhub-casino-bonus-hunter",
+  "skillKey": "clawhub-casino-bonus-hunter",
+  "name": "Casino Bonus Hunter",
+  "summary": "Scans 30+ online casinos, calculates the Expected Value of each welcome/reload/cashback bonus using optimal blackjack strategy, adjusts EV by casino reputati...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.casino_bonus_hunter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mibayy",
+      "features": [
+        "Scans 30+ online casinos, calculates the Expected Value of each welcome/reload/cashback bonus u."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/casino-bonus-hunter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/97958526?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "casino-bonus-hunter",
+      "url": "https://clawhub.ai/skills/casino-bonus-hunter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "casino-bonus-hunter",
+    "url": "https://clawhub.ai/skills/casino-bonus-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/casino-bonus-hunter-be09cadd6527b14a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/casino-bonus-hunter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-casino-bonus-hunter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9315a504d65040269ff540e3ae3dae3cb19c0cc0e5c029d4272362e97385f2a3",
+      "artifactSizeBytes": 1984
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T03:40:38.411Z"
+}

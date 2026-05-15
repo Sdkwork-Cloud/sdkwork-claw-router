@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32135,
+  "uuid": "skill-clawhub-slite",
+  "skillKey": "clawhub-slite",
+  "name": "Slite",
+  "summary": "Slite integration. Manage Documents. Use when the user wants to interact with Slite data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slite",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Slite integration",
+        "Manage Documents",
+        "Use when the user wants to interact with Slite data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/slite@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "slite",
+      "url": "https://clawhub.ai/skills/slite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slite",
+    "url": "https://clawhub.ai/skills/slite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slite-fcf08f17d76943b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/slite@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-slite-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b7a6844a207ba63963e327c85137a91ae4ece15e7536efac53bba9ce39f94f58",
+      "artifactSizeBytes": 1775
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:43:10.067Z"
+}

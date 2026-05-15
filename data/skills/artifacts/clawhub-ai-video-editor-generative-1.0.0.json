@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-editor-generative@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_editor_generative",
+  "skill": {
+    "id": 53035,
+    "skillKey": "clawhub-ai-video-editor-generative",
+    "name": "Ai Video Editor Generative"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-editor-generative",
+    "url": "https://clawhub.ai/skills/ai-video-editor-generative",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-editor-generative-7bb49f03e3859399.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — auto-cut the pauses, add B-roll transitions, and generate a cinematic intr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 135,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776847177372,
+      "changelog": "Initial release of AI Video Editor Generative — generate and edit videos automatically with AI.\n\n- Upload video or audio files up to 500MB (MP4, MOV, AVI, WebM, etc.) for generative AI video editing.\n- Describe your desired edits (auto-cut pauses, add B-roll, generate intros) and receive an AI-edited video in 1–2 minutes.\n- Automatic setup with free token generation for anonymous users.\n- Handles credits, session management, and error cases (e.g., expired tokens, file limits).\n- Supports quick edits, batch processing, and iterative workflows; status updates guide users throughout processing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8a1b5c483a5a0e22f3930c7546e7b31c8663c795c4d23baaeb741253144c7ba6"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hautv-flutter-senior-getx-review@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hautv_flutter_senior_getx_review",
+  "skill": {
+    "id": 33487,
+    "skillKey": "clawhub-hautv-flutter-senior-getx-review",
+    "name": "Flutter Senior Review (HauTV)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hautv-flutter-senior-getx-review",
+    "url": "https://clawhub.ai/skills/hautv-flutter-senior-getx-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hautv-flutter-senior-getx-review-e524381bce905026.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Review Flutter GetX code for strict architecture, memory safety, clean UI code, async error handling, naming conventions, and enforce team's coding standards."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hautvfami",
+      "userId": "publishers:hautvfami",
+      "displayName": "hautvfami",
+      "image": "https://avatars.githubusercontent.com/u/21011312?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 237,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773833616681,
+      "changelog": "Initial release enforcing strict Flutter & GetX senior code review standards.\n\n- Comprehensive SKILL.md outlining mandatory code review directives for Flutter with GetX, covering architecture, state management, UI practices, null safety, memory leak prevention, error handling, and security.\n- Emphasis on clean separation between UI and business logic, proper use of GetX Bindings, and elimination of common anti-patterns.\n- Strict enforcement of memory management for controllers and subscriptions.\n- Guidelines for performance, code cleanliness, file naming, and constant usage.\n- Clear criteria for failing pull requests or merge requests based on critical violations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:68db215e24074aa00b71b0a3a9c31daf53e38427657917c89f6ea82465377912"
+}

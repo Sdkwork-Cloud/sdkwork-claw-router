@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51834,
+  "uuid": "skill-clawhub-sam-faces",
+  "skillKey": "clawhub-sam-faces",
+  "name": "sam-faces",
+  "summary": "Face recognition and identity memory for AI assistants. Enroll known people with reference photos, then automatically identify faces in inbound images — with...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sam_faces",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sam Cox",
+      "features": [
+        "Face recognition and identity memory for AI assistants",
+        "Enroll known people with reference photos, then automatically identify faces in inbound images."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sam-faces@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266535547?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sam-faces",
+      "url": "https://clawhub.ai/skills/sam-faces"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sam-faces",
+    "url": "https://clawhub.ai/skills/sam-faces",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sam-faces-5c1c8ba6617b707c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sam-faces@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sam-faces-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6985c47d4184763d03397adfb54bf3968ce2c9e83898f84baec40e42efe8de71",
+      "artifactSizeBytes": 1924
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T06:43:26.044Z"
+}

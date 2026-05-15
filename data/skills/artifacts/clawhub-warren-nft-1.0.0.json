@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/warren-nft@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.warren_nft",
+  "skill": {
+    "id": 11594,
+    "skillKey": "clawhub-warren-nft",
+    "name": "Warren - On-Chain NFT Deploy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "warren-nft",
+    "url": "https://clawhub.ai/skills/warren-nft",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/warren-nft-d263149181f8ee7d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deploy NFT collections permanently on MegaETH blockchain. Images stored on-chain via SSTORE2. Create and launch NFT collections with royalties, minting, and management pages."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "planetai87",
+      "userId": "publishers:planetai87",
+      "displayName": "planetai87",
+      "image": "https://avatars.githubusercontent.com/u/62147646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1982,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769931515362,
+      "changelog": "Description: Deploy NFT collections permanently on MegaETH blockchain. Images stored on-chain via SSTORE2 in WarrenContainer. Supports image folder upload and programmatic SVG generation. Each collection gets its own NFT contract with minting, royalties, and management pages.\n\nChangelog / What's new:\n\nInitial release of Warren NFT collection deployment skill\nOn-chain image storage via WarrenContainer (/images/1.png, 2.png, ...)\nWarrenLaunchedNFT contract deployment with public minting\nSVG auto-generation (--generate-svg) for quick testing\nImage folder upload (--images-folder) for custom art\nConfigurable mint price, max supply, per-wallet limits, royalties\nAuto DB registration for megawarren.xyz management/mint pages\nMegaETH multidimensional gas estimation algorithm\nGenesis Key NFT auto-minting",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a7a109a6d0ba569d0e19f81a15cf9a27ff4321bbc61d17b69a3e9987d702a123"
+}

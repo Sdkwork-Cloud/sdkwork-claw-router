@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/elixir-security-review@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.elixir_security_review",
+  "skill": {
+    "id": 30441,
+    "skillKey": "clawhub-elixir-security-review",
+    "name": "Elixir Security Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "elixir-security-review",
+    "url": "https://clawhub.ai/skills/elixir-security-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/elixir-security-review-2499d4413dc15eaf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reviews Elixir code for security vulnerabilities including code injection, atom exhaustion, and secret handling. Use when reviewing code handling user input,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anderskev",
+      "userId": "s17b1fzefm8nj8j1sdkzrze7gn83pfrg",
+      "displayName": "Kevin Anderson",
+      "image": "https://avatars.githubusercontent.com/u/17010022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 272,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1776831093266,
+      "changelog": "elixir-security-review v1.2.1\n\n- Clarified “Before Submitting Findings” section with hard gate requirements and protocol references.\n- Added explicit “Hard gates” checklist to be completed before reporting findings, enforcing stricter verification.\n- Updated instructions to require use of the beagle-elixir:review-verification-protocol for pre-report procedures.\n- No changes to issue list, review checklist, or valid pattern guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fe3352bc083f25ed4c08c60d55b1db57688c9cdae9ff59011bbc16b2f9cf229c"
+}

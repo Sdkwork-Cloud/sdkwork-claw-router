@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-lancedb-setup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_lancedb_setup",
+  "skill": {
+    "id": 26119,
+    "skillKey": "clawhub-memory-lancedb-setup",
+    "name": "Memory LanceDB Setup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-lancedb-setup",
+    "url": "https://clawhub.ai/skills/memory-lancedb-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-lancedb-setup-2e55afb9ade5aa24.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Configure OpenClaw's memory-lancedb plugin to enable local semantic vector memory using LanceDB and an OpenAI-compatible embedding provider."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ssyvonne",
+      "userId": "s171b27yewwv1455np1e49d1v583v0r5",
+      "displayName": "ssYvonne",
+      "image": "https://avatars.githubusercontent.com/u/51490476?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 374,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774800275164,
+      "changelog": "Initial release: OpenClaw vector memory setup with LanceDB + Gemini embedding, arm64 patch script, troubleshooting guide",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:746ed45827f99b155876bea6ef9d65a2c277065f484390f6c79c72fdc743e064"
+}

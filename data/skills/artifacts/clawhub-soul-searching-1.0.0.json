@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/soul-searching@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.soul_searching",
+  "skill": {
+    "id": 25875,
+    "skillKey": "clawhub-soul-searching",
+    "name": "Soul Searching"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "soul-searching",
+    "url": "https://clawhub.ai/skills/soul-searching",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/soul-searching-5f31479d34e7deb4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browse, install, switch, and manage SOUL.md personality files for OpenClaw agents from the soulsearching.ai directory. Use when a user asks to: install a sou..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stirman",
+      "userId": "s178a6g5fqdgscdvvsx3dhjx8x83w447",
+      "displayName": "stirman",
+      "image": "https://avatars.githubusercontent.com/u/9399?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 379,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773604151725,
+      "changelog": "Initial release — browse, install, switch, and manage SOUL.md personality files from soulsearching.ai",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f2ef736aff3bb4e819934b913e77e7b5b617d71540bcbd028e435c2c5bc78c5f"
+}

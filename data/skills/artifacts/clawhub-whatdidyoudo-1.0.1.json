@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/whatdidyoudo@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whatdidyoudo",
+  "skill": {
+    "id": 25158,
+    "skillKey": "clawhub-whatdidyoudo",
+    "name": "What Did You Do"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whatdidyoudo",
+    "url": "https://clawhub.ai/skills/whatdidyoudo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whatdidyoudo-4de8561a29620f83.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reconstruct and display a plain-language log of recent agent tool calls, actions taken, and decisions made."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openauthority",
+      "userId": "s1702bpbyv1tt88m95fjpvrahn83p3z1",
+      "displayName": "OpenAuthority",
+      "image": "http://avatars.githubusercontent.com/u/272483392?s=200&v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 195,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775053975417,
+      "changelog": "Version 1.0.1 introduces a clear redaction policy to enhance user privacy and security:\n\n- Added a dedicated \"Redaction Policy\" section outlining how sensitive data (API keys, passwords, secrets, file contents) is handled and redacted in logs.\n- Clarified that secrets and credential-like values are replaced with [REDACTED] in the output.\n- No changes to commands or core functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6019c55c723dff63c72ae90d021eefec275ff536324d0202036231c41441607d"
+}

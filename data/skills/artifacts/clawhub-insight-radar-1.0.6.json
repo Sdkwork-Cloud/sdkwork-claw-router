@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/insight-radar@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.insight_radar",
+  "skill": {
+    "id": 56668,
+    "skillKey": "clawhub-insight-radar",
+    "name": "Insight Radar (洞察雷达)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "insight-radar",
+    "url": "https://clawhub.ai/skills/insight-radar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/insight-radar-fabf4590420a227e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides AI-driven strategic extraction of news concepts and patterns to evolve AI thinking, plus CORE-analyzed personalized news briefings by category."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kedoupi",
+      "userId": "s179gkrsgxgfzehrjabbrqk9rx83ht02",
+      "displayName": "KeDouPi(珂抖屁)",
+      "image": "https://avatars.githubusercontent.com/u/11420318?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 263,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1774629693094,
+      "changelog": "**insight-radar 1.0.6 changelog**\n\n- Added explicit network permissions for WebSearch and WebFetch, enabling direct news searching and article content validation.\n- Specified that no external API keys/credentials are needed; all search functions use agent's built-in tools.\n- Clarified that external_outputs are not used—news briefings are generated locally, with delivery handled externally (e.g., by HEARTBEAT-news.md).\n- Updated documentation to reflect stricter permissions structure, enhancing transparency and security.\n- No changes to workflow, user experience, or core functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2fe5acee97c713372974cea37b3c20892618f0d7aaa6b80b3046a45a8ca55658"
+}

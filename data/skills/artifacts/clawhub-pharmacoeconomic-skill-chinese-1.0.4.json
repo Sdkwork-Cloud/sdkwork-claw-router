@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pharmacoeconomic-skill-chinese@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pharmacoeconomic_skill_chinese",
+  "skill": {
+    "id": 72927,
+    "skillKey": "clawhub-pharmacoeconomic-skill-chinese",
+    "name": "药物经济学评价技能包"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pharmacoeconomic-skill-chinese",
+    "url": "https://clawhub.ai/skills/pharmacoeconomic-skill-chinese",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pharmacoeconomic-skill-chinese-a19619f73794e19b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "该技能包提供进行药物经济学评价的综合指导与工具，涵盖成本 - 效果分析、成本 - 效用分析、成本 - 效益分析、敏感性分析及模型构建。当您需要进行以下工作时，请使用此技能：对医疗保健干预措施进行经济学评价；分析治疗成本与产出结果；构建决策分析模型（如马尔可夫模型、决策树模型、离散事件模拟模型）；依据中国指南撰写药..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tlb1201",
+      "userId": "s179ct7eccxw8fv23vn4gh9jyh83tkds",
+      "displayName": "tlb1201",
+      "image": "https://avatars.githubusercontent.com/u/201767390?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 279,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1777164789189,
+      "changelog": "pharmacoeconomic-skill-chinese 1.0.4 Changelog\n\n- 优化和精简说明文档，突出最新版中国药物经济学评价指南相关内容。\n- 移除对预算影响分析（BIA）工具和场景的描述，仅保留核心成本-效果与敏感性分析流程。\n- 更新决策分析模型适用场景与步骤细节，更贴合中国学术政策主线。\n- 增加参数分组与来源标注的规范性，方便研究过程溯源。\n- 明确要求遵循最新版CHEERS和中国指南，保障研究规范性。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:130360d2524dda84f4828b3d9e7c69e9944d81eb47c17e2cfbed9ea4143b7d3c"
+}

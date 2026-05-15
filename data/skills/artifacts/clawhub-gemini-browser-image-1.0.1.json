@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gemini-browser-image@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gemini_browser_image",
+  "skill": {
+    "id": 45396,
+    "skillKey": "clawhub-gemini-browser-image",
+    "name": "Gemini Browser Image"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gemini-browser-image",
+    "url": "https://clawhub.ai/skills/gemini-browser-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gemini-browser-image-6cd1e1bed0a694c6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images with the user's own Chrome session and Gemini web UI. Use for article covers, illustrations, and social media visuals when the user explicitl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiao1yin2he3",
+      "userId": "s174bc5t59k3c082yg2s243ben85sd72",
+      "displayName": "jiao1yin2he3",
+      "image": "https://avatars.githubusercontent.com/u/61444244?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 134,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777427732020,
+      "changelog": "Clarify browser automation safety boundaries",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f07faae35345b51a976b34919074625e17ae296d9a20161807cda5350b3cd572"
+}

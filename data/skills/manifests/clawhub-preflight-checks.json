@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12507,
+  "uuid": "skill-clawhub-preflight-checks",
+  "skillKey": "clawhub-preflight-checks",
+  "name": "Preflight Checks",
+  "summary": "Test-driven behavioral verification for AI agents. Catches silent degradation when agent loads memory but doesn't apply learned behaviors. Use when building agent with persistent memory, testing after updates, or ensuring behavioral consis.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.preflight_checks",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "IvanMMM",
+      "features": [
+        "Test-driven behavioral verification for AI agents",
+        "Catches silent degradation when agent loads memory but doesn't apply learned behaviors",
+        "Use when building agent with persistent memory, testing after updates, or ensuring behavioral c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/preflight-checks@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3692403?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "preflight-checks",
+      "url": "https://clawhub.ai/skills/preflight-checks"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "preflight-checks",
+    "url": "https://clawhub.ai/skills/preflight-checks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/preflight-checks-7bdc8494f0613ba8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/preflight-checks@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-preflight-checks-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:328dfef51c7c7912bc40648bc6f69fd823b0c6750933b401199e534a639dabd2",
+      "artifactSizeBytes": 2009
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T14:30:15.038Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/neckr0ik-api-wrapper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neckr0ik_api_wrapper",
+  "skill": {
+    "id": 22530,
+    "skillKey": "clawhub-neckr0ik-api-wrapper",
+    "name": "Neckr0ik Api Wrapper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neckr0ik-api-wrapper",
+    "url": "https://clawhub.ai/skills/neckr0ik-api-wrapper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neckr0ik-api-wrapper-fd348a0865d12c4b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert any REST API into an OpenClaw skill automatically. Generates SKILL.md, scripts, and claw.json from OpenAPI spec or URL. Use when you want to quickly..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "neckr0ik",
+      "userId": "s1743ver4v9fjtabxtnwrxe1ms83n31n",
+      "displayName": "Neckr0ik",
+      "image": "https://avatars.githubusercontent.com/u/96146149?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 439,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772834318282,
+      "changelog": "Initial release of neckr0ik-api-wrapper.\n\n- Automatically generates OpenClaw skills from any REST API's OpenAPI spec or URL.\n- Creates SKILL.md, scripts (type-safe API client), and claw.json.\n- Supports multiple authentication types: API key, Bearer, Basic Auth, and OAuth2.\n- Includes commands to generate, validate, and test skills.\n- Outputs well-structured, documented, and ready-to-use OpenClaw skills.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2ed20d1309ec516db91a6c5d9b39f72b04398943423eee314f40d8311927ee6b"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/travel-china-flggy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.travel_china_flggy",
+  "skill": {
+    "id": 71196,
+    "skillKey": "clawhub-travel-china-flggy",
+    "name": "travel-manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "travel-china-flggy",
+    "url": "https://clawhub.ai/skills/travel-china-flggy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/travel-china-flggy-b1c1a6e3f71648d8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "综合旅行规划、预订和管理技能。当需要规划国际旅行、管理多目的地行程、处理家庭旅行事务、优化旅行成本以及协调复杂旅行安排时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fan-renjun",
+      "userId": "s17cdkbts4v92rtrgkbkdc6k9n83yqg2",
+      "displayName": "Fan Renjun",
+      "image": "https://avatars.githubusercontent.com/u/200215163?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775046972253,
+      "changelog": "- Major update: Content, language, and structure refactored for Chinese audience with detailed workflow and tool plans.\n- Switched documentation from English to Chinese, focusing on international travel for Chinese citizens.\n- Expanded workflow steps, including visa checks, cost breakdowns, document preparation, and in-trip management.\n- Added detailed family travel considerations and localized requirements for minors.\n- Outlined future tool integrations (flight, visa, hotel, weather, exchange rates, attractions).\n- Added references: International Travel Documents and Airline Comparison Matrix.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:64e2ac692d7ad5180e6b0018dc61c5e7a09118f246feffdc15b181c00eed2430"
+}

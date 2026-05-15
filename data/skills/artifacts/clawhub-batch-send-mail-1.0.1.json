@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/batch-send-mail@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.batch_send_mail",
+  "skill": {
+    "id": 69662,
+    "skillKey": "clawhub-batch-send-mail",
+    "name": "batch-send-mail"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "batch-send-mail",
+    "url": "https://clawhub.ai/skills/batch-send-mail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/batch-send-mail-0836137469390f75.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "批量发送个性化邮件技能。读取表格（CSV/Excel）中的邮箱列表和变量，替换邮件模板中的占位符后批量发送邮件。支持 HTML 格式、通用附件、SMTP 配置和干运行预览模式。当用户需要批量发送个性化邮件、邮件营销、通知邮件时触发，即使他们说\"批量发邮件\"、\"群发邮件\"、\"批量发送邮件\"也要使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangyifeng6",
+      "userId": "s178hh9sy61gcd6h8kw1n53enn84nekw",
+      "displayName": "wangyifeng6",
+      "image": "https://avatars.githubusercontent.com/u/128782308?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776700290808,
+      "changelog": "**Version 1.0.1 adds CC (抄送) address support:**\n\n- 新增第二列表格字段为“抄送邮箱”，支持多个抄送邮箱以 `|` 分隔，留空为不抄送\n- 文档示例及说明同步更新，强调抄送邮箱的使用方式\n- 变量替换和输入格式说明根据新规则调整，保证兼容性和使用直观性",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:becd9ac5cae41b3a9343a9634645772b74b49304e2f946811c71d1b35864b630"
+}

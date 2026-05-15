@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/twinify@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twinify",
+  "skill": {
+    "id": 15149,
+    "skillKey": "clawhub-twinify",
+    "name": "Twinify"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twinify",
+    "url": "https://clawhub.ai/skills/twinify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twinify-9c2616a7f9a425ed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create AI digital twins of real people from WhatsApp chat history exports. Clone your friends, colleagues, or contacts into AI agents that talk, think, and react like them. Use when the user wants to: create a digital twin, clone a WhatsAp."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "neobotjan2026",
+      "userId": "publishers:neobotjan2026",
+      "displayName": "neobotjan2026",
+      "image": "https://avatars.githubusercontent.com/u/257988555?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1354,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770478940457,
+      "changelog": "Initial release: Create AI digital twins from WhatsApp chat history exports. Includes chat parser script, personality analysis guides, consent requirements, and complete agent creation workflow.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ad485ff996274c2f3d9572184d31112e90220cf36ad3b689598535f170d12c97"
+}

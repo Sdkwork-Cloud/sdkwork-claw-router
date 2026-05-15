@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eden-digital-web3-weekly-digest-yang@8.0.0",
+  "version": "8.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eden_digital_web3_weekly_digest_yang",
+  "skill": {
+    "id": 64470,
+    "skillKey": "clawhub-eden-digital-web3-weekly-digest-yang",
+    "name": "eden-digital-web3-weekly-digest-yang"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eden-digital-web3-weekly-digest-yang",
+    "url": "https://clawhub.ai/skills/eden-digital-web3-weekly-digest-yang",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eden-digital-web3-weekly-digest-yang-803c8cf932db9bca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动抓取数据并生成 Web3 行业资本运作周报，涵盖融资事件、监管动态、上市公司 DAT 动态、并购交易与 RWA 项目追踪。当用户提到\"写周报\"、\"生成周报\"、\"整理本周融资\"、\"Web3 周报\"、\"资本运作周报\"、\"采编周报\"，或请求整理加密行业本周动态时，立即激活此 skill。即使用户只说\"帮我写本周的\"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "baoyangispoor",
+      "userId": "s172z0x233c0q8db66m98k9pps83hqy0",
+      "displayName": "baoyangispoor",
+      "image": "https://avatars.githubusercontent.com/u/89283297?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 237,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "8.0.0",
+      "createdAt": 1774587040167,
+      "changelog": "**v8.0.0 Changelog**\n\n- Improved DAT (上市公司持仓) 数据抓取脚本（scripts/part5_fetch.py）。\n- 增强 CoinGecko API 数据处理，支持最新持仓快照与变动作业逻辑。\n- 持续优化对比与数据整合体验，提高周报数据准确性和时效性。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:353962fff1d4bbfcc63e0a53adbecdf6d810c118eb19325313207419fc8631f0"
+}

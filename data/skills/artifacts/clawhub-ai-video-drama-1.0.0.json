@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-drama@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_drama",
+  "skill": {
+    "id": 46049,
+    "skillKey": "clawhub-ai-video-drama",
+    "name": "Ai Video Drama"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-drama",
+    "url": "https://clawhub.ai/skills/ai-video-drama",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-drama-124bc99d9216e284.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "create video clips into cinematic drama videos with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. filmmakers, content creators, social media..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 128,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776492660330,
+      "changelog": "Initial release of AI Video Drama, a cinematic video enhancement tool.\n\n- Upload MP4, MOV, AVI, or WebM videos (up to 500MB) and apply AI-driven dramatic enhancements.\n- Processes raw video clips into cinematic drama content in about 1–2 minutes using cloud GPUs.\n- Supports adding dramatic music, color grading, text overlays, and rendering to 1080p MP4 for easy sharing.\n- Seamlessly handles authentication and session management, including automatic token retrieval for new users.\n- Provides clear error handling, session state feedback, and status updates during processing and exports.\n- Designed for filmmakers, content creators, and social media storytellers seeking fast, professional-quality drama video edits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0b2c912f8ef7a42976261e8b9333a6b5fd10cdcc7be419eaf27d47a0fb7f66f4"
+}

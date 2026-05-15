@@ -1,0 +1,41 @@
+{
+  "skill": {
+    "slug": "ksef-accountant-pl",
+    "displayName": "KSeF Accountant (Polish)",
+    "summary": "Asystent ksiegowy Krajowego Systemu e-Faktur (KSeF) w jezyku polskim. Uzyj przy pracy z KSeF 2.0 API, fakturami FA(3), zgodnoscia z polskim VAT, przetwarzaniem e-faktur, dopasowywaniem platnosci, rejestrami VAT (JPK_V7), fakturami korygujacymi, mechanizmem podzielonej platnosci (MPP) lub polskimi przeplywami ksiegowymi. Dostarcza wiedze domenowa do wystawiania faktur, przetwarzania zakupow, klasyfikacji kosztow, wykrywania fraudu i prognozowania cash flow w ekosystemie KSeF.",
+    "tags": {
+      "accounting": "2.2.6",
+      "einvoicing": "2.2.6",
+      "ksef": "2.2.6",
+      "latest": "2.2.6",
+      "poland": "2.2.6",
+      "polish": "2.2.6",
+      "einvocing": "2.2.5",
+      "invoicing": "2.2.5"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1952,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 12
+    },
+    "createdAt": 1770596096897,
+    "updatedAt": 1777613364686
+  },
+  "latestVersion": {
+    "version": "2.2.6",
+    "createdAt": 1770778373766,
+    "changelog": "**Wersja 2.2.6 – Rozszerzone deklaracje bezpieczeństwa i nowy manifest skill.json**\n\n- Dodano plik manifestu `skill.json` z maszynowo czytelnymi deklaracjami bezpieczeństwa i zmiennych środowiskowych.\n- Rozbudowano sekcję frontmatter w SKILL.md: wprowadzono równoległe flagi disableModelInvocation (camelCase, kebab-case) i dodatkowe pola bezpieczeństwa (`allowModelInvocation: false`, `instruction_only: true`, `has_executable_code: false`, `credential_scope: \"optional-user-provided\"`).\n- Zmiennym środowiskowym KSEF_TOKEN oraz KSEF_ENCRYPTION_KEY nadano atrybut `secret: true` (w SKILL.md oraz skill.json).\n- Zaktualizowano i doprecyzowano instrukcje oraz checklistę wymuszając jawne sprawdzenie obsługi flag bezpieczeństwa przez platformę, zarówno z frontmatter jak i skill.json.\n- Aktual",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "alexwoo-awso",
+    "userId": "s1754xbymsgp9ns0znw62h5jed83v2dh",
+    "displayName": "alexwoo-awso",
+    "image": "https://avatars.githubusercontent.com/u/47779810?v=4"
+  },
+  "moderation": null
+}

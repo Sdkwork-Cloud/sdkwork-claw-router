@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67862,
+  "uuid": "skill-clawhub-pollen-monitor",
+  "skillKey": "clawhub-pollen-monitor",
+  "name": "Pollen Monitor",
+  "summary": "中国天气网花粉浓度监测技能。查询中国大陆城市花粉浓度等级和防护建议。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pollen_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "NoviaRick",
+      "features": [
+        "中国天气网花粉浓度监测技能。查询中国大陆城市花粉浓度等级和防护建议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pollen-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13520905?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pollen-monitor",
+      "url": "https://clawhub.ai/skills/pollen-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pollen-monitor",
+    "url": "https://clawhub.ai/skills/pollen-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pollen-monitor-ea05bb434891a03c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pollen-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pollen-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fab63753c44a3a0d1fff8a7d686d08fd94e744a85fc3200c7f85294f36b4a4f2",
+      "artifactSizeBytes": 2729
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T09:26:15.045Z"
+}

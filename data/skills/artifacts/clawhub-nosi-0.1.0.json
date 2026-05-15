@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nosi@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nosi",
+  "skill": {
+    "id": 11550,
+    "skillKey": "clawhub-nosi",
+    "name": "Nosi (Publish contents from AI agents)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nosi",
+    "url": "https://clawhub.ai/skills/nosi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nosi-ea4028b4d893465f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Publish content to Nosi and get a shareable URL. Use when the user wants to publish text, markdown, or files to nosi.pub for sharing."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "billhao",
+      "userId": "publishers:billhao",
+      "displayName": "billhao",
+      "image": "https://avatars.githubusercontent.com/u/1455332?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1996,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769869171537,
+      "changelog": "nosi-publish 0.1.0 initial release:\n\n- Publish human- or AI-written text to Nosi (nosi.pub) and return shareable URLs.\n- Supports user API key management and registration flow via email.\n- Handles optional title and license settings for published content.\n- Returns both a human-friendly and raw machine-readable URL with each publish.\n- Provides clear output with URLs, excerpt, and license info.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ebb9388e66157a632c5e1d2b3fd03a37141ca937c0c6d3591d632b287b64c0ce"
+}

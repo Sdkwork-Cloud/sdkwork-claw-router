@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9773,
+  "uuid": "skill-clawhub-pubmed",
+  "skillKey": "clawhub-pubmed",
+  "name": "PubMed",
+  "summary": "Search and evaluate biomedical literature with effective queries, filters, and critical appraisal.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pubmed",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Search and evaluate biomedical literature with effective queries, filters, and critical apprais."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pubmed@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pubmed",
+      "url": "https://clawhub.ai/skills/pubmed"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pubmed",
+    "url": "https://clawhub.ai/skills/pubmed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pubmed-0408e4e185d65e59.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pubmed@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pubmed-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba857943cae53dd7d3a7ccce6ac3564ccee99eb77deb7db69fa8f7ae040c382b",
+      "artifactSizeBytes": 1766
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T17:41:38.761Z"
+}

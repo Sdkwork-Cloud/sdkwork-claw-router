@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55986,
+  "uuid": "skill-clawhub-telegram-footer-patch",
+  "skillKey": "clawhub-telegram-footer-patch",
+  "name": "Telegram Footer Patch",
+  "summary": "Add a Telegram private-chat footer (`🧠 Model + 💭 Think + 📊 Context`) to OpenClaw replies, with dry-run preview, backup, syntax validation, rollback, and r...",
+  "version": "1.0.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.telegram_footer_patch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Joey-Chen",
+      "features": [
+        "Add a Telegram private-chat footer (`🧠 Model + 💭 Think + 📊 Context`) to OpenClaw replies, wi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/telegram-footer-patch@1.0.11",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48274987?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "telegram-footer-patch",
+      "url": "https://clawhub.ai/skills/telegram-footer-patch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "telegram-footer-patch",
+    "url": "https://clawhub.ai/skills/telegram-footer-patch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/telegram-footer-patch-9ef83d4fbc517679.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/telegram-footer-patch@1.0.11",
+      "artifactUrl": "data/skills/artifacts/clawhub-telegram-footer-patch-1.0.11.json",
+      "version": "1.0.11",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6e68f082535bf50f3e6f0c6103398291051b15ef83e2d3e839e45471c4da97bd",
+      "artifactSizeBytes": 2032
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T12:42:40.931Z"
+}

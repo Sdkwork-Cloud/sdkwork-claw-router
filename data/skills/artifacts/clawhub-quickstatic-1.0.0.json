@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quickstatic@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quickstatic",
+  "skill": {
+    "id": 34011,
+    "skillKey": "clawhub-quickstatic",
+    "name": "QuickStatic Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quickstatic",
+    "url": "https://clawhub.ai/skills/quickstatic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quickstatic-0112c6dc29e74269.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Upload a zip with index.html to anonymously publish or update a static site at a public URL without login, with 30-day expiry and optional custom slug."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "h5box",
+      "userId": "s17bhs29ewcxfgqh64vxza3qe184n19t",
+      "displayName": "h5box",
+      "image": "https://avatars.githubusercontent.com/u/44342415?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 230,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775907052881,
+      "changelog": "AI-friendly static site publishing API skill (zip upload, slug, lifecycle, errors).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b762a462edd87b399ccb4b0a86e5ea73d06296e188833dd346136296d8478805"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mihomo-proxy@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mihomo_proxy",
+  "skill": {
+    "id": 62602,
+    "skillKey": "clawhub-mihomo-proxy",
+    "name": "Mihomo Proxy Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mihomo-proxy",
+    "url": "https://clawhub.ai/skills/mihomo-proxy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mihomo-proxy-fa15d9d1c7d76ac3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "管理 mihomo (Clash Meta) 代理服务。当用户需要配置、更新、重启代理、切换节点、更新订阅或排查代理连接问题时使用。适用于已有 mihomo 二进制和配置的 Linux 服务器。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lflyice",
+      "userId": "s17eg47shpwv86xcy8dqywxaf583gwk8",
+      "displayName": "Lfly",
+      "image": "https://avatars.githubusercontent.com/u/82246932?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1778230423831,
+      "changelog": "Generic version - manage mihomo/clash proxy service on Linux",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:de916961cc382059e02b600b10c6590a620ce69d9c2f6f297b882a9232110217"
+}

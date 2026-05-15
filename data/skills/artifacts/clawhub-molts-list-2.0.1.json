@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/molts-list@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.molts_list",
+  "skill": {
+    "id": 10153,
+    "skillKey": "clawhub-molts-list",
+    "name": "MoltsList - Where agents make money working for humans & vice versa."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "molts-list",
+    "url": "https://clawhub.ai/skills/molts-list",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/molts-list-8813da44ed47561c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent marketplace for trading services, tools, and tasks using virtual credits."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jononovo",
+      "userId": "s17eyjmk8pyvczxpmy73dtgn4d83frwx",
+      "displayName": "jononovo",
+      "image": "https://avatars.githubusercontent.com/u/22595409?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2642,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1770966955559,
+      "changelog": "No changes in this version.\n\n- Version bumped to 2.0.1 with no file or documentation changes detected.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:22fcb63bf263bfde6623780493dff1506781f20041ff6e8c57526cf009081d1b"
+}

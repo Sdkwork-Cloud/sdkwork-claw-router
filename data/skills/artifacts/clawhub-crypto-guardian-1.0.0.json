@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crypto-guardian@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_guardian",
+  "skill": {
+    "id": 48794,
+    "skillKey": "clawhub-crypto-guardian",
+    "name": "Crypto Guardian"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-guardian",
+    "url": "https://clawhub.ai/skills/crypto-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-guardian-c3e1addfbc7d2a97.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides security guidance and checks for safely managing crypto wallets, keys, seed phrases, approvals, multisig, and incident response for AI agents."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ayh-25",
+      "userId": "s17ek3nxtzr8tbemx1emnh81wn85x1zq",
+      "displayName": "AYH-25",
+      "image": "https://avatars.githubusercontent.com/u/234706582?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 93,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777598377446,
+      "changelog": "Initial release of Crypto Guardian: a comprehensive security checklist and incident response guide for AI agents managing cryptocurrency wallets and keys.\n\n- Outlines attack vectors and real-world theft incidents targeting AI agents.\n- Defines strict operational and storage rules for private keys and seed phrases.\n- Provides layered wallet security architecture (hot/warm/cold), including multisig recommendations.\n- Includes practical, step-by-step checklists for handling assets, creating wallets, signing transactions, and managing wallet integration with AI agents.\n- Delivers actionable incident response procedures for suspected key exposure or theft.\n- Adds specialized triggers for AI skill invocation related to wallet and crypto security.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b825a590a0aa3c57ce75f5bd73da11d70f6eac726db9559b5b201b95ec3569a1"
+}

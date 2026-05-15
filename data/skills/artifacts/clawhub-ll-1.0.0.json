@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ll@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ll",
+  "skill": {
+    "id": 72176,
+    "skillKey": "clawhub-ll",
+    "name": "oo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ll",
+    "url": "https://clawhub.ai/skills/ll",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ll-f9e012396be65db0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "高德地图综合服务，支持POI搜索、路径规划、旅游规划、周边搜索和热力图数据可视化"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangyanfe",
+      "userId": "publishers:zhangyanfe",
+      "displayName": "yan zhang",
+      "image": "https://avatars.githubusercontent.com/u/9676720?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 363,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773463219699,
+      "changelog": "amap-lbs-skill 2.0.0 introduces comprehensive Amap (高德地图) location-based service support, including POI search, route planning, travel planning, nearby search, and heatmap visualization.\n\n- Added POI搜索、关键词&城市筛选、类型筛选等多种查询功能\n- 支持周边地点搜索和路径规划（步行/驾车/骑行/公交）\n- 新增智能旅游规划助手与地理数据热力图可视化能力\n- 丰富了与用户交互的提示、场景判断与返回模板\n- 提供配置持久化、API Key 管理及本地化安装说明\n- 大幅扩充了文档与示例，提升易用性",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d4efa89634fffe5801917359ddb92db00651798de497946877bd3a894fd7d9f5"
+}

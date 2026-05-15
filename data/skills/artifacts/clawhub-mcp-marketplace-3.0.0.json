@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mcp-marketplace@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcp_marketplace",
+  "skill": {
+    "id": 26287,
+    "skillKey": "clawhub-mcp-marketplace",
+    "name": "Mcp Marketplace"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcp-marketplace",
+    "url": "https://clawhub.ai/skills/mcp-marketplace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcp-marketplace-44258b45c3faa34c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install, configure, and manage MCP servers. Search 50+ verified servers plus npm and Smithery registries. Auto-generate configs for OpenClaw, Claude Desktop,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "iiizzzyyy",
+      "userId": "s177gf2szpg2jbg14nqv4vfvd183qece",
+      "displayName": "iiizzzyyy",
+      "image": "https://avatars.githubusercontent.com/u/44321190?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 261,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1774779553658,
+      "changelog": "Phase 3 & 4: Docker support, bulk operations, compatibility matrix, auto-detect servers, version management, OAuth guidance, project templates, smart recommendations, live popularity data, secrets manager integration, user contributions",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:13735dfa56ce57673f788d6b053ecd7ea144a52171ec503daae3336aade1f8dd"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45890,
+  "uuid": "skill-clawhub-pilot-dropbox",
+  "skillKey": "clawhub-pilot-dropbox",
+  "name": "Pilot Dropbox",
+  "summary": "Shared folder that automatically synchronizes between peers using Pilot Protocol pub/sub. Use this skill when: 1. You need a persistent shared folder that st...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_dropbox",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "Shared folder that automatically synchronizes between peers using Pilot Protocol pub/sub",
+        "Use this skill when: 1",
+        "You need a persistent shared folder that st..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-dropbox@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-dropbox",
+      "url": "https://clawhub.ai/skills/pilot-dropbox"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-dropbox",
+    "url": "https://clawhub.ai/skills/pilot-dropbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-dropbox-397f434858d8608f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-dropbox@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-dropbox-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5e0d7a70061775fb0cbff6b8263bba47f7f889d595335e38fe31699e28892a23",
+      "artifactSizeBytes": 1883
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T02:18:58.736Z"
+}

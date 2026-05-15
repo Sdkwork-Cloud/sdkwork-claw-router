@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14350,
+  "uuid": "skill-clawhub-customer-feedback",
+  "skillKey": "clawhub-customer-feedback",
+  "name": "Customer Feedback",
+  "summary": "Collect, analyze, and act on customer feedback to improve your product and business. Use when building feedback systems, running customer interviews, analyzing feature requests, measuring satisfaction (NPS, CSAT), or closing the feedback l.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.customer_feedback",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jatin Khatri",
+      "features": [
+        "Collect, analyze, and act on customer feedback to improve your product and business",
+        "Use when building feedback systems, running customer interviews, analyzing feature requests, me.",
+        "Covers feedback collection methods, interview techniques, analysis frameworks, and how to decid.",
+        "Trigger on \"customer feedback\", \"collect feedback\", \"user research\", \"customer interviews\", \"NP."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/customer-feedback@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/103896999?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "customer-feedback",
+      "url": "https://clawhub.ai/skills/customer-feedback"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "customer-feedback",
+    "url": "https://clawhub.ai/skills/customer-feedback",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/customer-feedback-e371e9cac6347679.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/customer-feedback@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-customer-feedback-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4cbcdad3ff76fb9f895de65e4635872b80310f976ecd1047abd3cdec6eeeb6f",
+      "artifactSizeBytes": 2429
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T20:51:25.977Z"
+}

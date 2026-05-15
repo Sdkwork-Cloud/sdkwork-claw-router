@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/text-to-video-ollama@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_video_ollama",
+  "skill": {
+    "id": 53757,
+    "skillKey": "clawhub-text-to-video-ollama",
+    "name": "Text To Video Ollama"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-video-ollama",
+    "url": "https://clawhub.ai/skills/text-to-video-ollama",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-video-ollama-b79b597a51f77d74.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — generate a 30-second video of a futuristic city at night from this text de..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 98,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777942259528,
+      "changelog": "Initial release of Text to Video Ollama skill.\n\n- Generate 30-second AI videos from text prompts or uploaded TXT, DOCX, and PDF files.\n- Local-first workflow using cloud GPU rendering without cloud API costs or data privacy concerns.\n- Automatic setup for new users: handles token acquisition and session management in the background.\n- Supports batch processing, timeline editing, and a variety of export formats (MP4, MOV, AVI, GIF, etc.).\n- Real-time status updates; robust error handling for authentication, session, and export errors.\n- Ideal for developers, creators, and AI enthusiasts seeking simple text-to-video workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:93367ab51ac7778fd494ee2c10703a7142359d994dbfc1cee98357b853924f90"
+}

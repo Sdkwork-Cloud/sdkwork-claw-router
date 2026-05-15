@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "config-guard-v1",
+    "displayName": "Config Guard",
+    "summary": "安全修改 OpenClaw 配置文件。用于任何需要修改 ~/.openclaw/openclaw.json 的场景，包括：模型切换、channel 配置、tools 配置、skill 安装等。确保修改前备份、预览（脱敏 key）、并获得用户确认。",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 392,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1772900293837,
+    "updatedAt": 1778305345058
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1772900293837,
+    "changelog": "safe-config v1.0.0\n\n- Initial release of the safe-config skill for secure modification of OpenClaw configuration files.\n- Provides standardized workflow: backup, desensitized preview, JSON validation, and explicit user confirmation before any changes.\n- Includes shell scripts for previewing, sanitizing, and validating configs.\n- Enforces confirmation phrase (\"ojbk可以改了\") for high operational safety.\n- Comprehensive documentation and example configurations for common scenarios included.",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "justaboyhai-wq",
+    "userId": "s17e15ngsnnxr4dexemcr4eazn83nm2q",
+    "displayName": "justaboyhai-wq",
+    "image": "https://avatars.githubusercontent.com/u/254623848?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778305345058
+  }
+}

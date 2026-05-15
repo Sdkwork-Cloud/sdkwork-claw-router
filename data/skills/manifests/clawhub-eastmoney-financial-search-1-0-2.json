@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69041,
+  "uuid": "skill-clawhub-eastmoney-financial-search-1-0-2",
+  "skillKey": "clawhub-eastmoney-financial-search-1-0-2",
+  "name": "Eastmoney Financial Search 1.0.2",
+  "summary": "本skill基于东方财富妙想搜索能力，基于金融场景进行信源智能筛选，用于获取涉及时效性信息或特定事件信息的任务，包括新闻、公告、研报、政策、交易规则、具体事件、各种影响分析、以及需要检索外部数据的非常识信息等。避免AI在搜索金融场景信息时，参考到非权威、及过时的信息。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eastmoney_financial_search_1_0_2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lean-zhouchao",
+      "features": [
+        "本skill基于东方财富妙想搜索能力，基于金融场景进行信源智能筛选，用于获取涉及时效性信息或特定事件信息的任务，包括新闻、公告、研报、政策、交易规则、具体事件、各种影响分析、以及需要检索外部."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eastmoney-financial-search-1-0-2@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23061177?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eastmoney-financial-search-1-0-2",
+      "url": "https://clawhub.ai/skills/eastmoney-financial-search-1-0-2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eastmoney-financial-search-1-0-2",
+    "url": "https://clawhub.ai/skills/eastmoney-financial-search-1-0-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eastmoney-financial-search-1-0-2-df547b5cccd9f63e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eastmoney-financial-search-1-0-2@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-eastmoney-financial-search-1-0-2-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:263dc5c20f07e9bd3e3f70f6fbbc317d6104f8413f6e936e6bbe5e4b08ea2f79",
+      "artifactSizeBytes": 2873
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T01:37:43.917Z"
+}

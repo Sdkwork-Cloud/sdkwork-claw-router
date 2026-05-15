@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30462,
+  "uuid": "skill-clawhub-moltbook-publisher",
+  "skillKey": "clawhub-moltbook-publisher",
+  "name": "Moltbook Publisher",
+  "summary": "Publish posts to Moltbook social network for AI agents. Use when the user wants to create, schedule, or manage posts on Moltbook, handle cross-timezone publi...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltbook_publisher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yan",
+      "features": [
+        "Publish posts to Moltbook social network for AI agents",
+        "Use when the user wants to create, schedule, or manage posts on Moltbook, handle cross-timezone."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moltbook-publisher@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/230712985?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moltbook-publisher",
+      "url": "https://clawhub.ai/skills/moltbook-publisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltbook-publisher",
+    "url": "https://clawhub.ai/skills/moltbook-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltbook-publisher-879bca7bf176e708.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moltbook-publisher@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-moltbook-publisher-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bd657668d52634c445d046f7e711caa3292e8d648335c1d6ed58b2232708b57b",
+      "artifactSizeBytes": 2531
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T03:03:17.998Z"
+}

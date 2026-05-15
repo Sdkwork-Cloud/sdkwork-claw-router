@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wash-trade-detector@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wash_trade_detector",
+  "skill": {
+    "id": 24217,
+    "skillKey": "clawhub-wash-trade-detector",
+    "name": "Wash-Trade-Detector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wash-trade-detector",
+    "url": "https://clawhub.ai/skills/wash-trade-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wash-trade-detector-246dc895a5a098eb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detects and flags wash trades in NFT transaction data using 7 confidence-weighted patterns, protecting all downstream scoring and signals from artificial inf..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "paperbuddha",
+      "userId": "publishers:paperbuddha",
+      "displayName": "PaperBuddha",
+      "image": "https://avatars.githubusercontent.com/u/173473843?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 418,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1772175250153,
+      "changelog": "Refined Pattern Combination Rules and standardized detection patterns to use Multipliers only (v1.0.4).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7400903e45bb677eb7ef2f04378941b3e4d4918e5001cdd6dd82b656e0d9d706"
+}

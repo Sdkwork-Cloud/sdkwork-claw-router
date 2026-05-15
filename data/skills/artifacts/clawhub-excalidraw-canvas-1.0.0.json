@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/excalidraw-canvas@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.excalidraw_canvas",
+  "skill": {
+    "id": 15319,
+    "skillKey": "clawhub-excalidraw-canvas",
+    "name": "Excalidraw Canvas"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "excalidraw-canvas",
+    "url": "https://clawhub.ai/skills/excalidraw-canvas",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/excalidraw-canvas-655cc650bb8c88ad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create Excalidraw diagrams and render them as PNG images. Use whenever you need to draw, explain complex workflows, visualize UIs/wireframes, or diagram anyt..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xartex",
+      "userId": "s17ac9rr9rxwdz696r2aeqrn05841x94",
+      "displayName": "0xArtex",
+      "image": "https://avatars.githubusercontent.com/u/108491869?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 995,
+      "installsAllTime": 5,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772492616057,
+      "changelog": "Initial release of excalidraw-canvas:\n\n- Create and render Excalidraw diagrams as PNG images via API.\n- Supports basic shapes (rectangle, ellipse, diamond), text, arrows, lines, and freehand drawing.\n- Returns both PNG image and an editable Excalidraw link with each render.\n- Detailed documentation and usage examples included.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:aef2b8dca18e2dafb57bb9fdf21083739e19ca15572aeeeb0c13aca5e0987f35"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72012,
+  "uuid": "skill-clawhub-jisu-recipe",
+  "skillKey": "clawhub-jisu-recipe",
+  "name": "Recipe - 菜谱大全",
+  "summary": "按关键词或分类检索菜谱，可查分类与菜谱详情。当用户说：糖醋排骨怎么做？来个家常豆腐菜谱，或类似做菜问题时，使用本技能。",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jisu_recipe",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "极速数据",
+      "features": [
+        "按关键词或分类检索菜谱，可查分类与菜谱详情。当用户说：糖醋排骨怎么做？来个家常豆腐菜谱，或类似做菜问题时，使用本技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jisu-recipe@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30516426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jisu-recipe",
+      "url": "https://clawhub.ai/skills/jisu-recipe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jisu-recipe",
+    "url": "https://clawhub.ai/skills/jisu-recipe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jisu-recipe-b68d80bb3c7b2a2d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jisu-recipe@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-jisu-recipe-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:21ea9da4530e64677f7a8651ddddb732723a644ef5cb79e91a42f3a0f6130f30",
+      "artifactSizeBytes": 2247
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T09:35:12.447Z"
+}

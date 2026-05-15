@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-key@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_key",
+  "skill": {
+    "id": 61227,
+    "skillKey": "clawhub-memory-key",
+    "name": "Memory Key"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-key",
+    "url": "https://clawhub.ai/skills/memory-key",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-key-ad813f35149df495.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过读取默认路径下 memory-treasure 保存的记忆文件，一键唤醒并引导你的数字分身，需与 memory-treasure 配合使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "markma84",
+      "userId": "s1781mqr2e06xdvhk7gbfzd2vs83kfra",
+      "displayName": "MarkMa84",
+      "image": "https://avatars.githubusercontent.com/u/19796416?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 349,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1774866882857,
+      "changelog": "添加英文翻译版本（中英双语篇幅）",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:abc1c778e48517f9bf05e0df4af0e114f1d04c9a26adb37fb844e42c4c1ba38e"
+}

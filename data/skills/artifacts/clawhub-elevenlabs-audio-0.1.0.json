@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/elevenlabs-audio@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.elevenlabs_audio",
+  "skill": {
+    "id": 54691,
+    "skillKey": "clawhub-elevenlabs-audio",
+    "name": "ElevenLabs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "elevenlabs-audio",
+    "url": "https://clawhub.ai/skills/elevenlabs-audio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/elevenlabs-audio-94c21fa21716f55d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and manage voices, speech, audio projects, and voice workflow assets in ElevenLabs — powered by ClawLink."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hith3sh",
+      "userId": "s173vws87a7ss71xf9rq53k5gd8568kv",
+      "displayName": "Hithesh Jay",
+      "image": "https://avatars.githubusercontent.com/u/83839061?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 87,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1778093196826,
+      "changelog": "Initial release of ElevenLabs integration via ClawLink\n\n- Adds support for managing voices, speech assets, audio projects, and voice workflow tasks in ElevenLabs from chat.\n- Uses ClawLink as a secure, hosted integration hub—no manual ElevenLabs API configuration required.\n- Provides step-by-step setup guidance for installing ClawLink, pairing devices, and connecting ElevenLabs accounts.\n- Dynamically discovers and uses available ElevenLabs tools based on connected account and live tool catalog.\n- Enforces safety rules; confirmation required for destructive or external write actions.\n- Comprehensive instructions and resource links included for easy onboarding.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9e651184fd6940f0ede27761a5b03a831a469b5ce712fe3e13266b302fd6d80f"
+}

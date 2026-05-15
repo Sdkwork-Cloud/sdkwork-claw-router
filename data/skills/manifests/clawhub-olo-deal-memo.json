@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52138,
+  "uuid": "skill-clawhub-olo-deal-memo",
+  "skillKey": "clawhub-olo-deal-memo",
+  "name": "Olo Deal Memo",
+  "summary": "Investment memorandum generation for M&A — structured deal write-ups from the acquirer's perspective with data-backed analysis",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.olo_deal_memo",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aleksander Niebylski",
+      "features": [
+        "Investment memorandum generation for M&A — structured deal write-ups from the acquirer's perspe."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/olo-deal-memo@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3195144?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "olo-deal-memo",
+      "url": "https://clawhub.ai/skills/olo-deal-memo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "olo-deal-memo",
+    "url": "https://clawhub.ai/skills/olo-deal-memo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/olo-deal-memo-254004e418443596.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/olo-deal-memo@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-olo-deal-memo-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5020d6fda4ce0b8cb5481b7b708d4b6ce54251fdb6a1327792b9489389e80747",
+      "artifactSizeBytes": 2355
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T02:52:42.221Z"
+}

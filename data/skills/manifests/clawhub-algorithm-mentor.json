@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72481,
+  "uuid": "skill-clawhub-algorithm-mentor",
+  "skillKey": "clawhub-algorithm-mentor",
+  "name": "算法带教模式 - 一步步引导用户学习算法，而不是直接给答案",
+  "summary": "一步步引导学习算法，不直接给答案。适用于学习 LeetCode 算法题，采用苏格拉底式提问教学法，先引导思考暴力解法，再优化到最优解，每道题完成后自动生成题解文档和代码文件。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.algorithm_mentor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaodingyang",
+      "features": [
+        "一步步引导学习算法，不直接给答案。适用于学习 LeetCode 算法题，采用苏格拉底式提问教学法，先引导思考暴力解法，再优化到最优解，每道题完成后自动生成题解文档和代码文件。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/algorithm-mentor@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43924839?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "algorithm-mentor",
+      "url": "https://clawhub.ai/skills/algorithm-mentor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "algorithm-mentor",
+    "url": "https://clawhub.ai/skills/algorithm-mentor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/algorithm-mentor-048c34a80acf9fc7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/algorithm-mentor@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-algorithm-mentor-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e50090a53ce59d7dc28e9439aa5f77a977a873a955514e16f4ced4e6b2528094",
+      "artifactSizeBytes": 2307
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T13:30:25.842Z"
+}

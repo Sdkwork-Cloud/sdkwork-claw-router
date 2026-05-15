@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aliyun-oss@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun_oss",
+  "skill": {
+    "id": 64679,
+    "skillKey": "clawhub-aliyun-oss",
+    "name": "Aliyun Oss"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun-oss",
+    "url": "https://clawhub.ai/skills/aliyun-oss",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-oss-96643cef0ca5073e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "阿里云OSS文件上传工具 - 安全、高效的文件上传和临时链接生成"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jixsonwang",
+      "userId": "s177fgbvr8jzz3wng4sra8gvws83hdt0",
+      "displayName": "Jixson",
+      "image": "https://avatars.githubusercontent.com/u/20365468?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1058,
+      "installsAllTime": 6,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770720995820,
+      "changelog": "阿里云OSS文件上传工具首发版本：\n\n- 支持单文件、批量及分片上传，自动处理大文件（超100MB）与重命名冲突\n- 最大单文件2GB限制，超限自动拒绝上传\n- 预签名URL临时链接生成，默认及自定义有效期选项\n- 文件名搜索、OSS指定目录上传功能\n- AK/SK身份认证，凭据外部分离，安全性强化\n- 详细配置样例及命令行用法说明\n- 完善异常处理与故障排查提示\n- 仅依赖oss2与requests，生产就绪发布",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8c3143938cbfe460c8674465143ae69bc1cfd28290f09fded79e7ea336eef15f"
+}

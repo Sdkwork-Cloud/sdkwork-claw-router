@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prompt-inject-removal@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_inject_removal",
+  "skill": {
+    "id": 18614,
+    "skillKey": "clawhub-prompt-inject-removal",
+    "name": "Prompt Injection Removal"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-inject-removal",
+    "url": "https://clawhub.ai/skills/prompt-inject-removal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-inject-removal-c6176e6770af5d49.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A secure sanitization system to strip instructions from external content."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quarantiine",
+      "userId": "s179d9zmekbqw8hap64y2bs43583gtrt",
+      "displayName": "Daniel Ward",
+      "image": "https://avatars.githubusercontent.com/u/50274655?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 665,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772316950479,
+      "changelog": "- Homepage link, emoji, and tags metadata added for better discoverability.\n- Description clarified: emphasizes stripping instructions from external content.\n- Setup instructions simplified—no external API or complex configuration required.\n- Workflow and headings streamlined for clarity and conciseness.\n- Language modernized and \"Zero-Trust\" approach highlighted.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e09c0ab20348e6349d5ff68166d2043894ad2e79c42566856ae272e7e0610361"
+}

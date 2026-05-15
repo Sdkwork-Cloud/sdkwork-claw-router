@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/roblox-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.roblox_cli",
+  "skill": {
+    "id": 21231,
+    "skillKey": "clawhub-roblox-cli",
+    "name": "Roblox"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "roblox-cli",
+    "url": "https://clawhub.ai/skills/roblox-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/roblox-cli-7ed2f972e12b65f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Roblox game passes and developer products via Open Cloud API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "teddyengel",
+      "userId": "publishers:teddyengel",
+      "displayName": "TeddyEngel",
+      "image": "https://avatars.githubusercontent.com/u/5671969?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 407,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773323996527,
+      "changelog": "Initial release of roblox-cli.\n\n- Manage Roblox game passes and developer products via the Open Cloud API.\n- Supports listing universes.\n- Supports listing, creating, updating, and retrieving game passes and developer products.\n- Automatic pagination, JSON output, and built-in rate limit handling.\n- Requires a Roblox Open Cloud API key with appropriate permissions.\n- CLI accessible using Bun; includes detailed usage instructions and error reporting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cdcdeba35063e5b7c184beba3f370a1daae11c54662fcc2109e377acb5aecd1e"
+}

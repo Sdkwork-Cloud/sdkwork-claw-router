@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32837,
+  "uuid": "skill-clawhub-lettria",
+  "skillKey": "clawhub-lettria",
+  "name": "Lettria",
+  "summary": "Lettria integration. Manage data, records, and automate workflows. Use when the user wants to interact with Lettria data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lettria",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Lettria integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Lettria data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lettria@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lettria",
+      "url": "https://clawhub.ai/skills/lettria"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lettria",
+    "url": "https://clawhub.ai/skills/lettria",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lettria-e2fdc7fa084137d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lettria@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-lettria-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bdd807664b56808fd395fff1c28e7ba3bcdb2dbaa2506ca587876f86a45e3628",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:07:01.192Z"
+}

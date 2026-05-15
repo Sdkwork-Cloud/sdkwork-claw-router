@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-video-editor@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_video_editor",
+  "skill": {
+    "id": 34196,
+    "skillKey": "clawhub-auto-video-editor",
+    "name": "Auto Video Editor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-video-editor",
+    "url": "https://clawhub.ai/skills/auto-video-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-video-editor-b88063c0270fe6ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated video editing skill for talk/vlog/standup videos. Use when: cutting video, splitting video into sentences, merging video clips, extracting audio, t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maxazure",
+      "userId": "s173gefhay1425bs9jgg6nwdt983gknj",
+      "displayName": "Liu Jie",
+      "image": "https://avatars.githubusercontent.com/u/405711?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 227,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1774740997382,
+      "changelog": "V2 update",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b19ba6031a38e755865ad32de2b45ed85781d38d72614bf8fb3c184c0c2768cd"
+}

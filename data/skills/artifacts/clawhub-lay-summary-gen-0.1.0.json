@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lay-summary-gen@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lay_summary_gen",
+  "skill": {
+    "id": 29627,
+    "skillKey": "clawhub-lay-summary-gen",
+    "name": "Lay Summary Gen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lay-summary-gen",
+    "url": "https://clawhub.ai/skills/lay-summary-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lay-summary-gen-6cbb1c687d34a0d4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Converts complex medical abstracts into plain language summaries for patients, caregivers, and the general public. Ensures readability while maintaining scie..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ewankeynes",
+      "userId": "s17007tpbkd82mxz1myqfx545183jqn9",
+      "displayName": "ewankeynes",
+      "image": "https://avatars.githubusercontent.com/u/68137408?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 299,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773395029570,
+      "changelog": "Initial release of Lay Summary Gen – converts medical research abstracts to plain-language summaries.\n\n- Converts complex medical language into easy-to-understand summaries for patients and the public\n- Removes jargon and optimizes summaries for grade 6–8 reading level\n- Extracts key takeaways and supports EU CTR compliance\n- Offers customization for target audience and word count\n- Provides a structured JSON output with lay summary, reading level, and replaced jargon",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:41823929976ef6aa8694300102407ee846a3fcbf39e404500a3dc09c25fc2d4b"
+}

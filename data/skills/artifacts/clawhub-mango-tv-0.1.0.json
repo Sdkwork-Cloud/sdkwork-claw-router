@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mango-tv@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mango_tv",
+  "skill": {
+    "id": 68083,
+    "skillKey": "clawhub-mango-tv",
+    "name": "Mango TV"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mango-tv",
+    "url": "https://clawhub.ai/skills/mango-tv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mango-tv-bc67029e40bc5e5c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供芒果热门综艺、青春剧集及粉丝互动指引。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codekungfu",
+      "userId": "s174hbct7jzfnq4tb6w04gnans83gh5h",
+      "displayName": "ClawKK",
+      "image": "https://avatars.githubusercontent.com/u/111570001?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 228,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773847598797,
+      "changelog": "- 首发版本，支持芒果TV综艺、剧集与互动指引。\n- 提供内容分级、清晰度、题材等筛选项。\n- 返回播放进度、离线存量、弹幕控制等多项字段信息。\n- 示例请求涵盖功能使用、最新玩法与优惠查询。\n- 依托版权及流行趋势每日更新数据。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f83c1fb88c64bea4fdb0852c74debf52f378006595d75e849cc7aacd02326684"
+}

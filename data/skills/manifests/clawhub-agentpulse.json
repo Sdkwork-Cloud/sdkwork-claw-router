@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15983,
+  "uuid": "skill-clawhub-agentpulse",
+  "skillKey": "clawhub-agentpulse",
+  "name": "AgentPulse",
+  "summary": "Track LLM API costs, tokens, latency, and errors for your AI agent. Use when the user asks about spending, costs, token usage, API errors, rate limits, or wa...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentpulse",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sru4ka",
+      "features": [
+        "Track LLM API costs, tokens, latency, and errors for your AI agent",
+        "Use when the user asks about spending, costs, token usage, API errors, rate limits, or wa..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentpulse@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/215319798?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentpulse",
+      "url": "https://clawhub.ai/skills/agentpulse"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentpulse",
+    "url": "https://clawhub.ai/skills/agentpulse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentpulse-d1ef51ebe648d36a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentpulse@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentpulse-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:35cf97a783a998249a3bf6f42f65e9323587f2e0aafc8293841009b900ca80d7",
+      "artifactSizeBytes": 2298
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T09:31:30.565Z"
+}

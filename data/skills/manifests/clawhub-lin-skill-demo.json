@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61719,
+  "uuid": "skill-clawhub-lin-skill-demo",
+  "skillKey": "clawhub-lin-skill-demo",
+  "name": "lin-skill-demo",
+  "summary": "收费技能示例模板 - 带授权验证，演示如何在 ClawHub 发布付费技能",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lin_skill_demo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lintqiu",
+      "features": [
+        "收费技能示例模板",
+        "带授权验证，演示如何在 ClawHub 发布付费技能"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lin-skill-demo@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18586721?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lin-skill-demo",
+      "url": "https://clawhub.ai/skills/lin-skill-demo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lin-skill-demo",
+    "url": "https://clawhub.ai/skills/lin-skill-demo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lin-skill-demo-af2b7a258b818117.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lin-skill-demo@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-lin-skill-demo-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:23b8eee28b39f3e4f997a8203ddf29974a38cdaeb28cd132d4390ae1f74674b0",
+      "artifactSizeBytes": 1890
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T07:48:31.711Z"
+}

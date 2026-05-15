@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/novel-assistant@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.novel_assistant",
+  "skill": {
+    "id": 67891,
+    "skillKey": "clawhub-novel-assistant",
+    "name": "Novel Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "novel-assistant",
+    "url": "https://clawhub.ai/skills/novel-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/novel-assistant-d765903065a1d79f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小说创作助手，维护小说连贯性和一致性。核心功能：(1) 创建/续写小说章节 (2) 管理人物设定和世界观 (3) 追踪伏笔和时间线 (4) 压缩记忆文件控制上下文 (5) 本地章节备份 (6) 多作品并行管理 (7) 人物对话风格样本库。触发词：小说、章节、续写、人物设定、创建小说、世界观、伏笔、时间线、剧情概要..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cnskycn",
+      "userId": "s17c5mym70kjjjppp4byfvthcd83j0ng",
+      "displayName": "cnskycn",
+      "image": "https://avatars.githubusercontent.com/u/4388567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775619637168,
+      "changelog": "novel-assistant v1.0.3\n\n- Enhanced documentation: SKILL.md now features detailed usage scenarios, workflow guides, and examples for all core functions.\n- Expanded description of capabilities, including chapter creation, character/world management, timeline/foreshadowing tracking, memory file compression, backups, multi-project support, and character dialogue style library.\n- Added trigger keywords and applicable use cases for easier discovery and application.\n- Provides structured best practices for long-form and collaborative novel writing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3a7b8f032943b638b5f927e26afe320a01653ec16424fc1c330ccff693092415"
+}

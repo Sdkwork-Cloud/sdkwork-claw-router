@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/test-skill-xyz999@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_skill_xyz999",
+  "skill": {
+    "id": 27219,
+    "skillKey": "clawhub-test-skill-xyz999",
+    "name": "Test Skill Xyz999"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-skill-xyz999",
+    "url": "https://clawhub.ai/skills/test-skill-xyz999",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-skill-xyz999-6dbf5ddd3b6abfe5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect your iPhone/Apple Watch Apple Health data to OpenClaw via a local webhook to analyze recovery, detect anomalies, and get health alerts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "crxiaobailiu-gif",
+      "userId": "publishers:crxiaobailiu-gif",
+      "displayName": "crxiaobailiu-gif",
+      "image": "https://avatars.githubusercontent.com/u/264762413?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 352,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773615867156,
+      "changelog": "HealthClaw Skill 1.0.0 – Initial Release\n\n- Stream and analyze Apple Health data (heart rate, HRV, sleep, steps, workouts) from iPhone/Apple Watch to OpenClaw via a local webhook server.\n- Supports secure pairing between iOS app and server, including permanent API tokens and deep linking.\n- Automatic background HealthKit sync and deduplication of incoming data.\n- Data stored in a local append-only log (`health-data.jsonl`), with multi-user isolation and single-user (legacy) mode.\n- Guide for server setup, public HTTPS exposure (Tailscale, Cloudflare, ngrok), and pairing process.\n- Admin API for multi-user management; per-user data paths supported.\n- Includes sample use cases (recovery score, health alerts) and links to full API reference.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:68be777a991a2eec2c487aea89e1c0e23d759c12c5ce0a9dea2ed1e37973e36d"
+}

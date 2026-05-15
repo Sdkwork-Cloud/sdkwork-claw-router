@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57244,
+  "uuid": "skill-clawhub-briefing-diario",
+  "skillKey": "clawhub-briefing-diario",
+  "name": "Briefing Diario",
+  "summary": "Fornece um dashboard visual para informações do dia a dia como localização, clima, economia, previsão do tempo. Use sempre que o usuário pedir \"briefing diár...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.briefing_diario",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alisson",
+      "features": [
+        "Fornece um dashboard visual para informações do dia a dia como localização, clima, economia, pr.",
+        "Use sempre que o usuário pedir \"briefing diár..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/briefing-diario@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/113205328?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "briefing-diario",
+      "url": "https://clawhub.ai/skills/briefing-diario"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "briefing-diario",
+    "url": "https://clawhub.ai/skills/briefing-diario",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/briefing-diario-51fd02323a613280.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/briefing-diario@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-briefing-diario-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ffcfd50bc82877a6cd331cbdad137692808eda9c72553fd4024e825abb0e4706",
+      "artifactSizeBytes": 2400
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T19:42:32.061Z"
+}

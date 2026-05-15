@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14078,
+  "uuid": "skill-clawhub-lark-toolkit",
+  "skillKey": "clawhub-lark-toolkit",
+  "name": "Lark Toolkit",
+  "summary": "Comprehensive Lark/Feishu API skill for OpenClaw agents. Covers all Lark operations via three access paths: claw-lark plugin (message tool), MCP tools (mcpor...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lark_toolkit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pengxiao-Wang",
+      "features": [
+        "Comprehensive Lark/Feishu API skill for OpenClaw agents",
+        "Covers all Lark operations via three access paths: claw-lark plugin (message tool), MCP tools (."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lark-toolkit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38279174?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lark-toolkit",
+      "url": "https://clawhub.ai/skills/lark-toolkit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lark-toolkit",
+    "url": "https://clawhub.ai/skills/lark-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lark-toolkit-071c87dfb66ceadc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lark-toolkit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lark-toolkit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a77f058323fe6f717cb4a5306a2236cc3e918f6e4eaa9a4d056c50e35d4c25de",
+      "artifactSizeBytes": 1972
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T20:42:56.085Z"
+}

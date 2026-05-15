@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72020,
+  "uuid": "skill-clawhub-yixiaozhi-pro",
+  "skillKey": "clawhub-yixiaozhi-pro",
+  "name": "医小智Pro诊断助手",
+  "summary": "基于普睿科公司蚩尤智核CFC的智能医疗诊断助手。通过2+4+病史收集和三轮问诊生成结构化诊断报告，诊断报告标题加大加粗显示。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yixiaozhi_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lantian888",
+      "features": [
+        "基于普睿科公司蚩尤智核CFC的智能医疗诊断助手。通过2+4+病史收集和三轮问诊生成结构化诊断报告，诊断报告标题加大加粗显示。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yixiaozhi-pro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30491114?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yixiaozhi-pro",
+      "url": "https://clawhub.ai/skills/yixiaozhi-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yixiaozhi-pro",
+    "url": "https://clawhub.ai/skills/yixiaozhi-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yixiaozhi-pro-764aedb76afb5557.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yixiaozhi-pro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yixiaozhi-pro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5be6d01d8e7ffa8f5c5288a22f4a9ed6aee7cccaeda430d4854e1bd0e9300084",
+      "artifactSizeBytes": 2366
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T09:39:38.439Z"
+}

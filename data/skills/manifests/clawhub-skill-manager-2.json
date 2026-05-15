@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15605,
+  "uuid": "skill-clawhub-skill-manager-2",
+  "skillKey": "clawhub-skill-manager-2",
+  "name": "Skill Manager",
+  "summary": "Install and manage OpenClaw agent skills. Learn how to find, install, and configure new capabilities from ClawHub and GitHub.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_manager_2",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xu-FengXie",
+      "features": [
+        "Install and manage OpenClaw agent skills",
+        "Learn how to find, install, and configure new capabilities from ClawHub and GitHub."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-manager-2@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/146201095?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-manager-2",
+      "url": "https://clawhub.ai/skills/skill-manager-2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-manager-2",
+    "url": "https://clawhub.ai/skills/skill-manager-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-manager-2-8c63458110f33a00.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-manager-2@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-manager-2-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc0454e2b7a798a39ff9609880b60904e6456a7b1bb91475c66eb44c19ac60de",
+      "artifactSizeBytes": 2240
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T14:21:50.153Z"
+}

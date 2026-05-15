@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/online-free-export@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.online_free_export",
+  "skill": {
+    "id": 55765,
+    "skillKey": "clawhub-online-free-export",
+    "name": "Online Free Export"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "online-free-export",
+    "url": "https://clawhub.ai/skills/online-free-export",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/online-free-export-4c15d5189b970b72.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — export my finished video as MP4 for free without a watermark — and get dow..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 84,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777864264168,
+      "changelog": "- Initial release of the Online Free Export tool for fast, watermark-free video exports.\n- Upload MP4, MOV, AVI, or WebM files up to 500MB for free export to high-quality MP4.\n- No subscription required; get a free token automatically and receive downloadable files in 30–60 seconds.\n- Cloud render pipeline handles export, text overlays, aspect ratio changes, and more.\n- Supports simple credit management, error handling, and status updates during processing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5e87ea8b3c15695d830a01e86c60c23fa4d072422443a870a402f913075db0bd"
+}

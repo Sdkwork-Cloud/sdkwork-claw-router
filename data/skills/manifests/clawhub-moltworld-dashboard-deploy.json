@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18300,
+  "uuid": "skill-clawhub-moltworld-dashboard-deploy",
+  "skillKey": "clawhub-moltworld-dashboard-deploy",
+  "name": "Moltworld Dashboard Deploy",
+  "summary": "Install, harden, and run the MoltWorld Dashboard reliably for real users. Use when asked to set up local runtime scaffolding (README/package.json/.env/.gitig...",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltworld_dashboard_deploy",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "guillaumetch",
+      "features": [
+        "Install, harden, and run the MoltWorld Dashboard reliably for real users",
+        "Use when asked to set up local runtime scaffolding (README/package.json/.env/.gitig..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moltworld-dashboard-deploy@0.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12429162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moltworld-dashboard-deploy",
+      "url": "https://clawhub.ai/skills/moltworld-dashboard-deploy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltworld-dashboard-deploy",
+    "url": "https://clawhub.ai/skills/moltworld-dashboard-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltworld-dashboard-deploy-f4783739303a6e51.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moltworld-dashboard-deploy@0.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-moltworld-dashboard-deploy-0.1.3.json",
+      "version": "0.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4847f3b13cda1c362fc815181fb2ec62c5a71f9728fec5b5ea8e0ada7b79993f",
+      "artifactSizeBytes": 2095
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T16:42:29.538Z"
+}

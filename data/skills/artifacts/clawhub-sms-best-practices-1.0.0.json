@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sms-best-practices@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sms_best_practices",
+  "skill": {
+    "id": 41659,
+    "skillKey": "clawhub-sms-best-practices",
+    "name": "SMS Best Practices"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sms-best-practices",
+    "url": "https://clawhub.ai/skills/sms-best-practices",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sms-best-practices-f2ef7d67abd6549c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides SMS compliance, formatting, and delivery best practices for the Sendly API. Covers TCPA compliance, quiet hours, opt-out handling, E.164 phone forma..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sendly-live",
+      "userId": "s179s5j1e4v6jr0fvs95mp2z758404ke",
+      "displayName": "sendly-live",
+      "image": "https://avatars.githubusercontent.com/u/234204352?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775252577488,
+      "changelog": "- Initial release providing comprehensive SMS best practices for Sendly API integration.\n- Covers requirements for TCPA compliance, opt-out handling, E.164 phone formatting, and quiet hours enforcement.\n- Details message segmentation limits, SHAFT content filtering, credit costs, and error handling.\n- Includes guidelines for carrier verification and links to in-depth compliance documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aacdf293b2380fb032adc31f41f419fc262eea832e761aa98d7756c712f01dbf"
+}

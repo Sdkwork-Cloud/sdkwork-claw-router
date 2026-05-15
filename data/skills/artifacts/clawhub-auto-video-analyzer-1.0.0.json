@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-video-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_video_analyzer",
+  "skill": {
+    "id": 61726,
+    "skillKey": "clawhub-auto-video-analyzer",
+    "name": "Auto Video Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-video-analyzer",
+    "url": "https://clawhub.ai/skills/auto-video-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-video-analyzer-2cab7f91b6f0d0cc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动分析视频内容，提取关键帧进行AI视觉分析。支持 Windows、macOS 和 Linux。首次使用自动从GitHub下载对应平台的工具脚本。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shishenbaiye",
+      "userId": "publishers:shishenbaiye",
+      "displayName": "shishenbaiye",
+      "image": "https://avatars.githubusercontent.com/u/53844415?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 398,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773382531776,
+      "changelog": "auto-video-analyzer v1.0.0\n\n- 首发版本，支持自动分析视频内容并提取关键帧进行AI视觉分析\n- 覆盖 Windows、macOS 和 Linux 平台\n- 首次使用自动下载并部署适配平台的分析脚本\n- 依赖 FFmpeg 进行视频关键帧提取\n- 支持多种触发关键词与自动工作流\n- 生成结构化视频内容分析报告",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d33ee46a5da11a8775217f22da01a042595934a814215d892270d0415bf8b69c"
+}

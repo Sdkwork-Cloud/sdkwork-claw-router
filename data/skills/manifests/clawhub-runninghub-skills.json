@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50290,
+  "uuid": "skill-clawhub-runninghub-skills",
+  "skillKey": "clawhub-runninghub-skills",
+  "name": "An OpenClaw skill for AI-powered multimedia generation (image, video, audio, 3D) via 170+ RunningHub API endpoints — zero depen.",
+  "summary": "Generate images, videos, audio, and 3D models via RunningHub API (170+ endpoints) and run any RunningHub AI Application (custom ComfyUI workflow) by webappId...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.runninghub_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HM-RunningHub",
+      "features": [
+        "Generate images, videos, audio, and 3D models via RunningHub API (170+ endpoints) and run any R."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/runninghub-skills@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191476741?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "runninghub-skills",
+      "url": "https://clawhub.ai/skills/runninghub-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "runninghub-skills",
+    "url": "https://clawhub.ai/skills/runninghub-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/runninghub-skills-eca5bae33669d2e1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/runninghub-skills@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-runninghub-skills-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:140237d168f33fb37a81d69b94294d3670a660486398f16eeb14d72e6120e73d",
+      "artifactSizeBytes": 2157
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T23:07:50.272Z"
+}

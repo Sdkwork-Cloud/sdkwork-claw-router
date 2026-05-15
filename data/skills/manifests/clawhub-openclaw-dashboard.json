@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9090,
+  "uuid": "skill-clawhub-openclaw-dashboard",
+  "skillKey": "clawhub-openclaw-dashboard",
+  "name": "openclaw-dashboard",
+  "summary": "Real-time operations dashboard for OpenClaw. Monitors sessions, costs, cron jobs, and gateway health. Use when installing the dashboard, starting the server,...",
+  "version": "1.7.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_dashboard",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jonathan Jing",
+      "features": [
+        "Real-time operations dashboard for OpenClaw",
+        "Monitors sessions, costs, cron jobs, and gateway health",
+        "Use when installing the dashboard, starting the server,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-dashboard@1.7.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17068507?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-dashboard",
+      "url": "https://clawhub.ai/skills/openclaw-dashboard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-dashboard",
+    "url": "https://clawhub.ai/skills/openclaw-dashboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-dashboard-4f44b94430798a5a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-dashboard@1.7.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-dashboard-1.7.3.json",
+      "version": "1.7.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:257c4056a5f17c255b1b9f660a57867e5c8b993372a1373cf4dd473bd7b24558",
+      "artifactSizeBytes": 1976
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T01:01:23.792Z"
+}

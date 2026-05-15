@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23318,
+  "uuid": "skill-clawhub-vt-hash-intel",
+  "skillKey": "clawhub-vt-hash-intel",
+  "name": "VirusTotal Hash Analyzer",
+  "summary": "Instantly check if a file, URL, domain, or IP is malicious using VirusTotal. Paste any MD5/SHA1/SHA256 hash, URL, domain name, or IP address into the chat an...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vt_hash_intel",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bryan-Project",
+      "features": [
+        "Instantly check if a file, URL, domain, or IP is malicious using VirusTotal",
+        "Paste any MD5/SHA1/SHA256 hash, URL, domain name, or IP address into the chat an..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vt-hash-intel@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/79469762?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vt-hash-intel",
+      "url": "https://clawhub.ai/skills/vt-hash-intel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vt-hash-intel",
+    "url": "https://clawhub.ai/skills/vt-hash-intel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vt-hash-intel-c7b36c4d6fbd5c76.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vt-hash-intel@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-vt-hash-intel-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f54bfab52d666382e67617ac85703f981bd067184086092e22ecb4c7de6bc5b",
+      "artifactSizeBytes": 2656
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T06:25:42.185Z"
+}

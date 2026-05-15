@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/douyin-hot-trend-1@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_hot_trend_1",
+  "skill": {
+    "id": 58713,
+    "skillKey": "clawhub-douyin-hot-trend-1",
+    "name": "Douyin Hot Trend 1"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-hot-trend-1",
+    "url": "https://clawhub.ai/skills/douyin-hot-trend-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-hot-trend-1-6d5380ae9ce29936.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "抖音热榜获取技能 | Douyin Hot List Fetcher 获取抖音热榜/热搜榜数据 | Get Douyin hot list/trending data 包含热门视频、挑战赛、音乐等多领域热门内容 | Includes popular videos, challenges, music and mo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "noah-1106",
+      "userId": "s1786dbb8r9dh5a5r5xxmjqs2s83gej1",
+      "displayName": "noah",
+      "image": "https://avatars.githubusercontent.com/u/242364666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 593,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773662122044,
+      "changelog": "- Enhanced documentation with detailed usage instructions and feature descriptions\n- Added output format explanation and usage examples\n- Included notes on rate limits and potential interface structure changes\n- Listed use cases and credited original project and author\n- Updated metadata tags and categorization for better discoverability",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0698a3a7cda8b4402cf0db5438a3c5e384e0f8349275c9457eeb599f472de2b7"
+}

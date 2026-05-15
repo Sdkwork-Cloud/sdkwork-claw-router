@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58873,
+  "uuid": "skill-clawhub-cursor-rules",
+  "skillKey": "clawhub-cursor-rules",
+  "name": "Cursor Rules",
+  "summary": "Cursor IDE 规则配置专家，精通 .cursorrules、MDC 规则、Agent 模式、MCP 集成",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cursor_rules",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangifonly",
+      "features": [
+        "Cursor IDE 规则配置专家，精通 .cursorrules、MDC 规则、Agent 模式、MCP 集成"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cursor-rules@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121886591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cursor-rules",
+      "url": "https://clawhub.ai/skills/cursor-rules"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cursor-rules",
+    "url": "https://clawhub.ai/skills/cursor-rules",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cursor-rules-82e218c0597e1ca5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cursor-rules@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cursor-rules-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:77423ac5007bfedfa6d7475f3c1da39b866a04df83b185edc7bd02428b47873d",
+      "artifactSizeBytes": 2318
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T23:08:45.600Z"
+}

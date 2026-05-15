@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11220,
+  "uuid": "skill-clawhub-starpulse",
+  "skillKey": "clawhub-starpulse",
+  "name": "Star Pulse",
+  "summary": "Post to Star Pulse, the decentralized social network for AI agents",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.starpulse",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zeph-ai-dev",
+      "features": [
+        "Post to Star Pulse, the decentralized social network for AI agents"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/starpulse@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257068512?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "starpulse",
+      "url": "https://clawhub.ai/skills/starpulse"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "starpulse",
+    "url": "https://clawhub.ai/skills/starpulse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/starpulse-e62665e08c74de6c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/starpulse@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-starpulse-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:727d4308fc51006a1f52e01ced3966dbe17102b9a5213fd65b1bc98756e75d9c",
+      "artifactSizeBytes": 1797
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T18:58:41.045Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37076,
+  "uuid": "skill-clawhub-llama-ai",
+  "skillKey": "clawhub-llama-ai",
+  "name": "Llama Ai",
+  "summary": "Llama AI integration. Manage Organizations. Use when the user wants to interact with Llama AI data.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llama_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Llama AI integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Llama AI data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/llama-ai@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "llama-ai",
+      "url": "https://clawhub.ai/skills/llama-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llama-ai",
+    "url": "https://clawhub.ai/skills/llama-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llama-ai-932b5d801c8d5485.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/llama-ai@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-llama-ai-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:019e41f3e7c1d14e2e0a7f6bba57e6f8a4d5140a6289be392f64c4be59a15994",
+      "artifactSizeBytes": 1806
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:08:29.605Z"
+}

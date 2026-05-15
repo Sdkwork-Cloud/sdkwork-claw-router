@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67213,
+  "uuid": "skill-clawhub-7-eleven",
+  "skillKey": "clawhub-7-eleven",
+  "name": "7 Eleven",
+  "summary": "提供7-eleven品牌历史、产品服务、市场数据、全球布局及最新动态的详细信息和分析。",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.7_eleven",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供7-eleven品牌历史、产品服务、市场数据、全球布局及最新动态的详细信息和分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/7-eleven@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "7-eleven",
+      "url": "https://clawhub.ai/skills/7-eleven"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "7-eleven",
+    "url": "https://clawhub.ai/skills/7-eleven",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/7-eleven-a756f7da297c5cae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/7-eleven@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-7-eleven-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d1ac9bcaf3817b2e4df62017e8ca9e86a0cd1f8533a2c1ac92d0a173b0e015dd",
+      "artifactSizeBytes": 2021
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T07:24:04.175Z"
+}

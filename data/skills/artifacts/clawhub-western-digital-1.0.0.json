@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/western-digital@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.western_digital",
+  "skill": {
+    "id": 62189,
+    "skillKey": "clawhub-western-digital",
+    "name": "Western Digital"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "western-digital",
+    "url": "https://clawhub.ai/skills/western-digital",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/western-digital-cba36a6364fa31f1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供 western-digital 的行业地位、核心业务及市场覆盖等基础信息，助你快速了解其概况。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776496021627,
+      "changelog": "- 新增 “western-digital” 知识卡片，便于快速了解其基本信息。\n- 提供关键事实表格，包括行业、业务、覆盖范围及行业地位等维度。\n- 给出实际应用场景，如商业决策、学术研究等。\n- 建议查阅官方内容和行业报告以获取更深入信息。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:82380e55f595143fce9734675898267ae50e9a76d1198017a9947450f5a6664f"
+}

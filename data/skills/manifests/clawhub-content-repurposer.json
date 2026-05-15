@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12000,
+  "uuid": "skill-clawhub-content-repurposer",
+  "skillKey": "clawhub-content-repurposer",
+  "name": "Content Repurposer",
+  "summary": "Transform long-form content into platform-optimized snippets. Your agent takes one blog post, video transcript, or podcast notes and generates ready-to-publish Twitter threads, LinkedIn posts, email newsletters, and Instagram captions. Mai.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_repurposer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "audsmith28",
+      "features": [
+        "Transform long-form content into platform-optimized snippets",
+        "Your agent takes one blog post, video transcript, or podcast notes and generates ready-to-publi.",
+        "Maintains voice consistency while adapting to each platform's format, length, and engagement pa.",
+        "Configure tone preferences, platform priorities, and output formats"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/content-repurposer@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/223534942?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "content-repurposer",
+      "url": "https://clawhub.ai/skills/content-repurposer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-repurposer",
+    "url": "https://clawhub.ai/skills/content-repurposer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-repurposer-248feb0484cb79ca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/content-repurposer@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-content-repurposer-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ecf606fd64bd997488b60a62c070b98a9367bc64a91c8de9730cd57a28e55320",
+      "artifactSizeBytes": 2045
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T20:42:03.385Z"
+}

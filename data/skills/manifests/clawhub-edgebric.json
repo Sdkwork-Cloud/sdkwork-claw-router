@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36571,
+  "uuid": "skill-clawhub-edgebric",
+  "skillKey": "clawhub-edgebric",
+  "name": "Edgebric",
+  "summary": "Search and manage your private knowledge base. Find documents, query knowledge, upload files, and manage data sources in Edgebric.",
+  "version": "0.9.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edgebric",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jeremy Venegas",
+      "features": [
+        "Search and manage your private knowledge base",
+        "Find documents, query knowledge, upload files, and manage data sources in Edgebric."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/edgebric@0.9.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4227052?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "edgebric",
+      "url": "https://clawhub.ai/skills/edgebric"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edgebric",
+    "url": "https://clawhub.ai/skills/edgebric",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edgebric-72a64f60370af25c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/edgebric@0.9.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-edgebric-0.9.6.json",
+      "version": "0.9.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4b8894b68f3fb62f1a652b5b960479f97682341ae97eb7117143f37217175a5c",
+      "artifactSizeBytes": 2066
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T07:37:31.740Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30025,
+  "uuid": "skill-clawhub-ctoai",
+  "skillKey": "clawhub-ctoai",
+  "name": "Ctoai",
+  "summary": "CTO.ai integration. Manage data, records, and automate workflows. Use when the user wants to interact with CTO.ai data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ctoai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "CTO.ai integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with CTO.ai data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ctoai@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ctoai",
+      "url": "https://clawhub.ai/skills/ctoai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ctoai",
+    "url": "https://clawhub.ai/skills/ctoai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ctoai-e9a1a968ca35005a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ctoai@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-ctoai-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c402ca8724ab8cd4be4a4eb7833e0b0eaef457f206d403ef292b62d0ab48389",
+      "artifactSizeBytes": 1805
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:36:12.850Z"
+}

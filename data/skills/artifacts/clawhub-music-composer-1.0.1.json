@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/music-composer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.music_composer",
+  "skill": {
+    "id": 61696,
+    "skillKey": "clawhub-music-composer",
+    "name": "music-composer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "music-composer",
+    "url": "https://clawhub.ai/skills/music-composer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/music-composer-71866aad2f62c5bd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专业音乐创作规划 Skill。基于 mmx-cli（MiniMax AI）生成高质量音乐和歌曲。自动规划曲风（Genre）、节奏（Tempo）、乐器编配（Instrumentation）、人声特色（Vocal），将用户的模糊需求转化为精准的生成 Prompt。支持：纯器乐（instrumental）、中文歌词歌曲..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuhouxinliang",
+      "userId": "s17593fwpaq3d8ceygjhsfcx3h84y0g8",
+      "displayName": "朱一新",
+      "image": "https://avatars.githubusercontent.com/u/189759409?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776332335461,
+      "changelog": "- 新增依赖检查与安全声明：要求在生成音乐前，先验证 mmx CLI 是否已正确安装且来源可信。\n- 提供 mmx 安装指引，并加入官方渠道提示，避免从未知来源获取。\n- 明确规定必须执行 mmx 存在性与版本检查，若检查未通过，禁止执行生成命令并提醒用户。\n- 调整生成命令前置说明，强调执行前需完成依赖校验。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4deb89650340c53cd74403fe1cdbdf5b1466e76d645f85c377e605136de0b160"
+}

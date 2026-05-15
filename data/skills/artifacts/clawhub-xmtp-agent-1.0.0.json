@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xmtp-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xmtp_agent",
+  "skill": {
+    "id": 11631,
+    "skillKey": "clawhub-xmtp-agent",
+    "name": "XMTP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xmtp-agent",
+    "url": "https://clawhub.ai/skills/xmtp-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xmtp-agent-7c0a5db7ae4d1c12.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Building and extending XMTP agents with the Agent SDK. Use when: (1) creating or configuring an XMTP agent, (2) implementing agent features (commands, attachments, reactions, groups, transactions, inline actions, or domain resolution)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "humanagent",
+      "userId": "publishers:humanagent",
+      "displayName": "humanagent",
+      "image": "https://avatars.githubusercontent.com/u/1447073?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1868,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769987983585,
+      "changelog": "Skills to create agents that communicate over xmtp.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:116fa82fc606a99dff0ed447357998bdcb5d2e173fd79c7e8c8350f3f85437c0"
+}

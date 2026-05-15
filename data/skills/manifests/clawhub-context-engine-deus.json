@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24680,
+  "uuid": "skill-clawhub-context-engine-deus",
+  "skillKey": "clawhub-context-engine-deus",
+  "name": "Context Engine",
+  "summary": "Maintains and restores project context across sessions, tracks active projects, manages tasks, switches projects, and summarizes current progress.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_engine_deus",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "deus-pandora",
+      "features": [
+        "Maintains and restores project context across sessions, tracks active projects, manages tasks,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/context-engine-deus@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262764471?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "context-engine-deus",
+      "url": "https://clawhub.ai/skills/context-engine-deus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-engine-deus",
+    "url": "https://clawhub.ai/skills/context-engine-deus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-engine-deus-166194431968a60e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/context-engine-deus@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-context-engine-deus-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b9b343a4c9afb646df2d28aa229366ef2e6217d1bd94cf785e1b58a7ab520d0",
+      "artifactSizeBytes": 2307
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T09:46:14.618Z"
+}

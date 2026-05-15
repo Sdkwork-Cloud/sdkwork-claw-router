@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27049,
+  "uuid": "skill-clawhub-late-brake",
+  "skillKey": "clawhub-late-brake",
+  "name": "Late Brake",
+  "summary": "Pure CLI racing lap data analysis tool. Supports NMEA/VBO import, auto lap splitting, lap comparison, outputs structured comparison results for AI coaching....",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.late_brake",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Han Kai",
+      "features": [
+        "Pure CLI racing lap data analysis tool",
+        "Supports NMEA/VBO import, auto lap splitting, lap comparison, outputs structured comparison res."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/late-brake@0.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/726505?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "late-brake",
+      "url": "https://clawhub.ai/skills/late-brake"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "late-brake",
+    "url": "https://clawhub.ai/skills/late-brake",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/late-brake-00bb0742eec9d7e3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/late-brake@0.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-late-brake-0.0.3.json",
+      "version": "0.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb08dab017357c20972120bca6534ffa82390185803d53c5c6f1f6a8d90b0f26",
+      "artifactSizeBytes": 1946
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T15:11:33.040Z"
+}

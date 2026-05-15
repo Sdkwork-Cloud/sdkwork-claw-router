@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mood-color-mapper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mood_color_mapper",
+  "skill": {
+    "id": 43560,
+    "skillKey": "clawhub-mood-color-mapper",
+    "name": "Mood Color Mapper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mood-color-mapper",
+    "url": "https://clawhub.ai/skills/mood-color-mapper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mood-color-mapper-c5bca007c3de7152.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Translate a user's felt state into a color-based mood map with body cues, possible emotion words, likely needs, and one gentle next step under 10 minutes. Us..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776211257739,
+      "changelog": "Version 1.0.0\n\n- Initial release of the mood-color-mapper skill.\n- Enables users to describe emotional states using colors, textures, and body sensations.\n- Generates a color-based mood map with emotion words, needs, and one gentle next step under 10 minutes.\n- Designed for those who prefer color or visual metaphors over naming strict feeling labels.\n- Returns results as a markdown mood map for clarity and ease of use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:11a5eee033eda42d327301da83a4eb3be1ea3223c3036bad314c07e91b0c9b3e"
+}

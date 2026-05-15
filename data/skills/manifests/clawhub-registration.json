@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26809,
+  "uuid": "skill-clawhub-registration",
+  "skillKey": "clawhub-registration",
+  "name": "Registration",
+  "summary": "Manage registration records and attendee data. Use when logging sign-ups, checking capacity, converting export formats, generating confirmation reports.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.registration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "Manage registration records and attendee data",
+        "Use when logging sign-ups, checking capacity, converting export formats, generating confirmatio."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/registration@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "registration",
+      "url": "https://clawhub.ai/skills/registration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "registration",
+    "url": "https://clawhub.ai/skills/registration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/registration-29c9c30e0604515c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/registration@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-registration-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:60db002e71c1dc71b8a7c7eed84b836554f0703cffbe7a17fc6a6c4a717693fc",
+      "artifactSizeBytes": 1890
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T01:47:13.621Z"
+}

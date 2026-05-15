@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24518,
+  "uuid": "skill-clawhub-paper-deep-reader",
+  "skillKey": "clawhub-paper-deep-reader",
+  "name": "Paper Deep Reader",
+  "summary": "Very helpful in deep-reading one selected research paper, journal article, arXiv paper, working paper, technical report, benchmark paper, dataset paper, repl...",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_deep_reader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SoymilkWinsAgain",
+      "features": [
+        "Very helpful in deep-reading one selected research paper, journal article, arXiv paper, working."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paper-deep-reader@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/126401208?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paper-deep-reader",
+      "url": "https://clawhub.ai/skills/paper-deep-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-deep-reader",
+    "url": "https://clawhub.ai/skills/paper-deep-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-deep-reader-c163bccaf4878340.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paper-deep-reader@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-paper-deep-reader-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c70a77c93a9d8b4319329da831237b18217cc9bae999d5139240cef3ff012d6",
+      "artifactSizeBytes": 2740
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T08:49:50.481Z"
+}

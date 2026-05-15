@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/home-music-tc@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.home_music_tc",
+  "skill": {
+    "id": 49549,
+    "skillKey": "clawhub-home-music-tc",
+    "name": "Home Music"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "home-music-tc",
+    "url": "https://clawhub.ai/skills/home-music-tc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/home-music-tc-b875c261d7e46919.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control whole-house music scenes combining Spotify playback with Airfoil speaker routing. Quick presets for morning, party, chill, focus, dinner, sleep modes."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "terrycarter1985",
+      "userId": "s17brwfrqyjhbjgadkvar20h8x8492g8",
+      "displayName": "terrycarter1985",
+      "image": "https://avatars.githubusercontent.com/u/1542987?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 75,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1778146276145,
+      "changelog": "Add 3 new scenes: focus (WFH), dinner (jazz), sleep (ambient). Fork of asteinberger/home-music with extended scenes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:727b01da627bd557ef6cd4ab0d79a394258f73971df1afa7786e357eb6a821c2"
+}

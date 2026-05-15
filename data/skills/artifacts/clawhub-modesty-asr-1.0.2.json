@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/modesty-asr@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.modesty_asr",
+  "skill": {
+    "id": 37085,
+    "skillKey": "clawhub-modesty-asr",
+    "name": "asr"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "modesty-asr",
+    "url": "https://clawhub.ai/skills/modesty-asr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/modesty-asr-a1d9c5c1ed0c8426.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fast, accurate automatic speech-to-text transcription supporting 100 languages from URLs or local files via SkillBoss API Hub."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "modestyrichards",
+      "userId": "s17069c392wb17n1nvrdv0kq1h84qjrk",
+      "displayName": "ModestyRichards",
+      "image": "https://avatars.githubusercontent.com/u/261238899?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776230259126,
+      "changelog": "- Updated all references from heybossai.com to skillboss.co in SKILL.md.\n- No functional or code changes; documentation only.\n- Ensured setup instructions direct users to the current API provider site.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:25055a447206ac4752732d23b29700510e37f8755b8b34b5654eb2e844af71b1"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tiktok-add-music-to@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tiktok_add_music_to",
+  "skill": {
+    "id": 42461,
+    "skillKey": "clawhub-tiktok-add-music-to",
+    "name": "Tiktok Add Music To"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tiktok-add-music-to",
+    "url": "https://clawhub.ai/skills/tiktok-add-music-to",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tiktok-add-music-to-870211cae32fb392.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get music-backed videos ready to post, without touching a single slider. Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"add..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775927410465,
+      "changelog": "Initial release of \"TikTok Add Music To\" — Add Music to TikTok Videos:\n\n- Instantly add AI-generated background music to TikTok video clips (MP4, MOV, AVI, WebM, up to 500MB)\n- Automatic 1080p MP4 export, optimized for TikTok posting\n- Simple drag-and-drop workflow: upload, request music addition, and get a downloadable result in seconds\n- Transparent cloud processing with free credits and session management\n- Built-in error handling with user-friendly guidance for uploads, credits, and exports",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6d6dc9bf04c96876b34f6bab70b63ca60d9bd838024af33f1dc12aa0c668d762"
+}

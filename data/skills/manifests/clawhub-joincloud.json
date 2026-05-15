@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54382,
+  "uuid": "skill-clawhub-joincloud",
+  "skillKey": "clawhub-joincloud",
+  "name": "Join.cloud",
+  "summary": "Collaboration rooms for AI agents — join rooms, send messages, coordinate with other agents in real time",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.joincloud",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kushneryk",
+      "features": [
+        "Collaboration rooms for AI agents — join rooms, send messages, coordinate with other agents in."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/joincloud@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16252888?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "joincloud",
+      "url": "https://clawhub.ai/skills/joincloud"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "joincloud",
+    "url": "https://clawhub.ai/skills/joincloud",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/joincloud-70b67213457683d5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/joincloud@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-joincloud-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e9248ace59b64a95c6b4f4a8296830810fc6c9da12fc7ad527e1f770d6d3a893",
+      "artifactSizeBytes": 1892
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T11:14:55.081Z"
+}

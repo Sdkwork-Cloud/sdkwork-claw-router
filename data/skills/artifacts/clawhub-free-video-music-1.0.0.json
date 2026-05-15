@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-video-music@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_video_music",
+  "skill": {
+    "id": 48751,
+    "skillKey": "clawhub-free-video-music",
+    "name": "Free Video Music"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-video-music",
+    "url": "https://clawhub.ai/skills/free-video-music",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-video-music-a18de63dbba05fb8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "add video clips into music-backed videos with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators use it for adding royalty-free b..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vynbosserman65",
+      "userId": "s175xbynxxje7z8y8jbn28x5vx84dckp",
+      "displayName": "vynbosserman65",
+      "image": "https://avatars.githubusercontent.com/u/208823770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 94,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777338985823,
+      "changelog": "- Initial release of \"Free Video Music — Add Music to Videos Free\".\n- Upload video clips (MP4, MOV, AVI, WebM up to 500MB) and add royalty-free background music.\n- Cloud GPU processing delivers 1080p MP4 output in 30–60 seconds.\n- Handles session creation, credits checking, state management, and export automatically.\n- Supports common workflows: quick edit, batch processing, and iterative refinements.\n- Seamless error handling and progress updates throughout the process.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:86de31826c585e08276ba09288d1b4b627ab832d541a05434ad39f06255b0d2d"
+}

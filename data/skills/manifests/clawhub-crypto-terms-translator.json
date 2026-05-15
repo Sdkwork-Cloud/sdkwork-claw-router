@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47085,
+  "uuid": "skill-clawhub-crypto-terms-translator",
+  "skillKey": "clawhub-crypto-terms-translator",
+  "name": "Crypto Terms Translator",
+  "summary": "A plain-language crypto glossary that translates technical terms into everyday meaning, context, and examples. Use when the user encounters confusing crypto...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_terms_translator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "A plain-language crypto glossary that translates technical terms into everyday meaning, context.",
+        "Use when the user encounters confusing crypto..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crypto-terms-translator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crypto-terms-translator",
+      "url": "https://clawhub.ai/skills/crypto-terms-translator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-terms-translator",
+    "url": "https://clawhub.ai/skills/crypto-terms-translator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-terms-translator-929eb8adbf22ca61.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crypto-terms-translator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crypto-terms-translator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:02f747febd76f0fda5ce4eb938078f47195b605a041644469cfbb84d0af373f3",
+      "artifactSizeBytes": 2372
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T23:36:01.445Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wisediag-medocr@1.0.26",
+  "version": "1.0.26",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wisediag_medocr",
+  "skill": {
+    "id": 30496,
+    "skillKey": "clawhub-wisediag-medocr",
+    "name": "WiseDiag MedOCR"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wisediag-medocr",
+    "url": "https://clawhub.ai/skills/wisediag-medocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wisediag-medocr-ed1b76c1b6dfc751.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "PDF & Image OCR — Convert a single PDF or image to Markdown via WiseDiag cloud API, with high-accuracy text extraction, table recognition, and multi-column l..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wisediag",
+      "userId": "s17e3nf6rprdvjhvx51sn4dmp583gkax",
+      "displayName": "wisediag",
+      "image": "https://avatars.githubusercontent.com/u/102396016?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 749,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 27
+    },
+    "latestVersion": {
+      "version": "1.0.26",
+      "createdAt": 1774942097963,
+      "changelog": "- Skill renamed from wisediag-medocr to wiseocr.\n- Expanded and clarified privacy and sensitive data warnings, including a detailed table and lists of prohibited data types.\n- Updated API key acquisition link for clarity.\n- Description updated for improved accuracy and readability; no functional changes to usage or features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0160d12c20acd87b31c0668244238973d1ba28afd64c835b4fd85c75efda4cfc"
+}

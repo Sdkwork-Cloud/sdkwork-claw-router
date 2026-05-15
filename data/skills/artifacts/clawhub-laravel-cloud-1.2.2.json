@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/laravel-cloud@1.2.2",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.laravel_cloud",
+  "skill": {
+    "id": 16552,
+    "skillKey": "clawhub-laravel-cloud",
+    "name": "Laravel Cloud"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "laravel-cloud",
+    "url": "https://clawhub.ai/skills/laravel-cloud",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/laravel-cloud-8f80c5839b8aacd2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Laravel Cloud infrastructure via API — apps, environments, deployments, databases, caches, domains, scaling, commands, storage, and WebSockets."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "florianbeer",
+      "userId": "s178qb3qnn3qkjvv09p3dn4v4583we9e",
+      "displayName": "Florian Beer",
+      "image": "https://avatars.githubusercontent.com/u/800047?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1072,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 4,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.2.2",
+      "createdAt": 1772292338357,
+      "changelog": "Fix DB defaults (scheduled snapshots, retention), bucket key permissions, deployment staleness check (diffInMinutes > 75)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e5b542a9a79a978b4d0723f0cb89a69a610eae243f1d3bce44c25d7a734f0ba0"
+}

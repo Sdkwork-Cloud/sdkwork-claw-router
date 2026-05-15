@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38718,
+  "uuid": "skill-clawhub-venn-nino",
+  "skillKey": "clawhub-venn-nino",
+  "name": "Venn Nino",
+  "summary": "Safely connects Gmail, Calendar, Drive, Atlassian (Jira/Confluence), Notion, GitHub, Salesforce, and dozens of other enterprise tools via a single MCP endpoi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.venn_nino",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ninonano64",
+      "features": [
+        "Safely connects Gmail, Calendar, Drive, Atlassian (Jira/Confluence), Notion, GitHub, Salesforce."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/venn-nino@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/80112518?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "venn-nino",
+      "url": "https://clawhub.ai/skills/venn-nino"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "venn-nino",
+    "url": "https://clawhub.ai/skills/venn-nino",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/venn-nino-b7600126979702df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/venn-nino@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-venn-nino-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9013ba9c50fa1a588002053a8097ef6da5fda9a7d74863ba470c26cd43bc080b",
+      "artifactSizeBytes": 2387
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T20:06:49.187Z"
+}

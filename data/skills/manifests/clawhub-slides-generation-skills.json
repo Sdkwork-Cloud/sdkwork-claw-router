@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10982,
+  "uuid": "skill-clawhub-slides-generation-skills",
+  "skillKey": "clawhub-slides-generation-skills",
+  "name": "slides-generation-skills",
+  "summary": "AI-powered presentation generation using 2slides API. Create slides from text content, match reference image styles, or summarize documents into presentations. Use when users request to \"create a presentation\", \"make slides\", \"generate a d.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slides_generation_skills",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "javainthinking",
+      "features": [
+        "AI-powered presentation generation using 2slides API",
+        "Create slides from text content, match reference image styles, or summarize documents into pres.",
+        "Use when users request to \"create a presentation\", \"make slides\", \"generate a deck\", \"create sl.",
+        "Supports theme selection, multiple languages, and both synchronous and asynchronous generation."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/slides-generation-skills@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2844583?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "slides-generation-skills",
+      "url": "https://clawhub.ai/skills/slides-generation-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slides-generation-skills",
+    "url": "https://clawhub.ai/skills/slides-generation-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slides-generation-skills-16c1cade1b86a946.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/slides-generation-skills@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-slides-generation-skills-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:717223f2b66432ebc4d5193f81f055c427f7b19dcd8592614c923f8b91b65dad",
+      "artifactSizeBytes": 2547
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T14:13:35.408Z"
+}

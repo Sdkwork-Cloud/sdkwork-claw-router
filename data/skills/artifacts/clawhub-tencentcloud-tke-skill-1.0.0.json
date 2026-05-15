@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tencentcloud-tke-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencentcloud_tke_skill",
+  "skill": {
+    "id": 61273,
+    "skillKey": "clawhub-tencentcloud-tke-skill",
+    "name": "tencentcloud-tke-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencentcloud-tke-skill",
+    "url": "https://clawhub.ai/skills/tencentcloud-tke-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencentcloud-tke-skill-f16ed80ca88b9aba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "腾讯云 TKE 容器服务全栈运维专家，支持集群管理、K8s 资源操作、Pod 排障、Helm 部署、TCR 镜像仓库管理"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tencent-adm",
+      "userId": "s171cxjdnjyqjxa91pj2bfmr6x83gyg1",
+      "displayName": "腾讯开源",
+      "image": "https://avatars.githubusercontent.com/u/19383298?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775813530195,
+      "changelog": "tencentcloud-tke-skill 1.0.0\n\n- Initial release of the TKE StackOps skill for Tencent Cloud container service (TKE)\n- Supports full-stack TKE operations via two CLI tools: tke_cli.py (Tencent Cloud API for cluster/TCR management) and k8s_cli.py (Kubernetes cluster resource operations)\n- Provides commands for managing clusters, endpoints, node pools, and TCR (container registry) resources\n- Allows Kubernetes resource viewing, troubleshooting, and Helm deployments, with flexible kubeconfig and credential handling\n- Includes detailed usage examples and dependency requirements for quick onboarding",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:045dfca23f343c9bb9868d71beabc1d126dc9dccabedf9bd4dfb7cd1f602c131"
+}

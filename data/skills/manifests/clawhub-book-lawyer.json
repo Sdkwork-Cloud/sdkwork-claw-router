@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12865,
+  "uuid": "skill-clawhub-book-lawyer",
+  "skillKey": "clawhub-book-lawyer",
+  "name": "Book Lawyer",
+  "summary": "Book lawyer services through Lokuli MCP. Use when user needs to find and book lawyer. Triggers on requests like \"book a lawyer\", \"find lawyer near me\", or any lawyer service request.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_lawyer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lokuli",
+      "features": [
+        "Book lawyer services through Lokuli MCP",
+        "Use when user needs to find and book lawyer",
+        "Triggers on requests like \"book a lawyer\", \"find lawyer near me\", or any lawyer service request."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-lawyer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224194606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-lawyer",
+      "url": "https://clawhub.ai/skills/book-lawyer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-lawyer",
+    "url": "https://clawhub.ai/skills/book-lawyer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-lawyer-816c723a76e4659e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-lawyer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-lawyer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:64735836a604c5f3369fe041a2d07bd987abdb4417c20302262e790af7d10829",
+      "artifactSizeBytes": 1911
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T01:07:07.744Z"
+}

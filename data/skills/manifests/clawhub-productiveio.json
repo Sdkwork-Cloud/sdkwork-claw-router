@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29432,
+  "uuid": "skill-clawhub-productiveio",
+  "skillKey": "clawhub-productiveio",
+  "name": "Productiveio",
+  "summary": "Productive.io integration. Manage Organizations. Use when the user wants to interact with Productive.io data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.productiveio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Productive.io integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Productive.io data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/productiveio@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "productiveio",
+      "url": "https://clawhub.ai/skills/productiveio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "productiveio",
+    "url": "https://clawhub.ai/skills/productiveio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/productiveio-6433e73c408f1f05.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/productiveio@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-productiveio-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:764077834f1cf6d66842ec2144a32c8a4291859db96bb2558ae775a69476e9c4",
+      "artifactSizeBytes": 1844
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:28:16.043Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27498,
+  "uuid": "skill-clawhub-output-forge",
+  "skillKey": "clawhub-output-forge",
+  "name": "Output Forge",
+  "summary": "Transform raw AI output into platform-ready content with proper formatting, metadata, and cleanup. Markdown, HTML, plain text, and structured data output.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.output_forge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shadow Rose",
+      "features": [
+        "Transform raw AI output into platform-ready content with proper formatting, metadata, and clean.",
+        "Markdown, HTML, plain text, and structured data output."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/output-forge@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262919821?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "output-forge",
+      "url": "https://clawhub.ai/skills/output-forge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "output-forge",
+    "url": "https://clawhub.ai/skills/output-forge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/output-forge-3d66f845e0e78b9a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/output-forge@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-output-forge-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:49ccf0c93c6958d2c7b7fc35d5145158e22a560e37d8345f01d526bc977141b9",
+      "artifactSizeBytes": 2509
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T14:14:05.218Z"
+}

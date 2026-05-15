@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/storyclaw-x-manager@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.storyclaw_x_manager",
+  "skill": {
+    "id": 52542,
+    "skillKey": "clawhub-storyclaw-x-manager",
+    "name": "Storyclaw X Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "storyclaw-x-manager",
+    "url": "https://clawhub.ai/skills/storyclaw-x-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/storyclaw-x-manager-33eeda4ba305546a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage X (Twitter) accounts — post tweets, like, reply, retweet, view timeline, search, auto-interact, analyze data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "patches429",
+      "userId": "publishers:patches429",
+      "displayName": "Parker",
+      "image": "https://avatars.githubusercontent.com/u/169116739?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 367,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773460173196,
+      "changelog": "Initial release of storyclaw-x-manager.\n\n- Manage X (Twitter) accounts: post tweets (with optional media), like, reply, retweet, view timelines, search tweets, and analyze data.\n- Supports multi-user credential management, prompting users to connect their X account if not configured.\n- Auto-interaction feature: automatically reply to tweets matching keywords with customizable templates.\n- Handles errors for rate limits, authentication failures, and tweet length.\n- Compatible with Free, Premium, and Enterprise API tiers, with features adapted to each tier’s capabilities.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a177ba5df8634139ce84fb41efc174f73c5d7911a0691d4b3c709a1c9793924f"
+}

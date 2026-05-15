@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/spool@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spool",
+  "skill": {
+    "id": 10657,
+    "skillKey": "clawhub-spool",
+    "name": "spool"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spool",
+    "url": "https://clawhub.ai/skills/spool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spool-627c012b20c46af5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Threads CLI - Read, post, reply, and search on Meta's Threads using OpenClaw browser tool. Use when the user wants to interact with Threads: posting, reading timeline, viewing profiles, replying to threads, or searching."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zizi-cat",
+      "userId": "publishers:zizi-cat",
+      "displayName": "zizi-cat",
+      "image": "https://avatars.githubusercontent.com/u/258424652?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2472,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769923014094,
+      "changelog": "Added detailed step-by-step examples",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:72f50c7382ec6bd16d573d43e51f0eade584ab9e4700c679f778e6e26127f5c2"
+}

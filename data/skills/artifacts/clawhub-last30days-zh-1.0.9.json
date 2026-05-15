@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/last30days-zh@1.0.9",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.last30days_zh",
+  "skill": {
+    "id": 57990,
+    "skillKey": "clawhub-last30days-zh",
+    "name": "Last30days Zh"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "last30days-zh",
+    "url": "https://clawhub.ai/skills/last30days-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/last30days-zh-d9331912c6fab230.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "聚合最近 30 天的 Reddit、X/Twitter、YouTube、TikTok、Instagram、Hacker News、Polymarket 和 web search 结果. Use when: the user needs recent multi-source research across the..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bibaofeng",
+      "userId": "s1740zrgcnwxsxgzt9bfj5a1jn842mag",
+      "displayName": "bibaofeng",
+      "image": "https://avatars.githubusercontent.com/u/86095131?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.9",
+      "createdAt": 1778245095357,
+      "changelog": "- Expanded support for recent data aggregation across Reddit, X/Twitter, YouTube, TikTok, Instagram, Hacker News, Polymarket, and web search.\n- Improved skill description and documentation for clearer triggers, capabilities, and usage scenarios.\n- Enhanced configuration options with new optional environment variables for backend settings and data inclusion.\n- Updated and unified command-line usage with new sample commands.\n- Minor internal script and dependency updates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b38f1156618a76380d72e76ccabaa13a96b0a91af6e5d3397b9d6fe5267be1ab"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69705,
+  "uuid": "skill-clawhub-easytrader-cn-broker",
+  "skillKey": "clawhub-easytrader-cn-broker",
+  "name": "Easytrader Cn Broker",
+  "summary": "提供A股券商客户端自动化交易能力，支持雪球、芸享等多券商登录与交易操作封装，涵盖账户余额查询、持仓管理、委托下单及组合跟随等核心功能。",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.easytrader_cn_broker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tang Weigang",
+      "features": [
+        "提供A股券商客户端自动化交易能力，支持雪球、芸享等多券商登录与交易操作封装，涵盖账户余额查询、持仓管理、委托下单及组合跟随等核心功能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/easytrader-cn-broker@0.3.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259277235?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "easytrader-cn-broker",
+      "url": "https://clawhub.ai/skills/easytrader-cn-broker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "easytrader-cn-broker",
+    "url": "https://clawhub.ai/skills/easytrader-cn-broker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/easytrader-cn-broker-379ce4f5e1a58064.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/easytrader-cn-broker@0.3.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-easytrader-cn-broker-0.3.3.json",
+      "version": "0.3.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b4b3d763103f5b14ef0f24b3360c621e7d8bc04d32ec5c0bba3af9df2c21b890",
+      "artifactSizeBytes": 2112
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T14:25:26.350Z"
+}

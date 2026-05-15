@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/usage-report@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.usage_report",
+  "skill": {
+    "id": 35540,
+    "skillKey": "clawhub-usage-report",
+    "name": "Usage Report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "usage-report",
+    "url": "https://clawhub.ai/skills/usage-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/usage-report-5e5a0627b931a442.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate cost and token usage reports from OpenClaw session logs. Use when asked about API costs, token usage, billing, spending, how much something cost, or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "directorvector",
+      "userId": "s17ex6txjkfrjbn9me7q2e4z5n84g3mb",
+      "displayName": "Brice Thrower",
+      "image": "https://avatars.githubusercontent.com/u/6549973?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 214,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775849958845,
+      "changelog": "Added declared dependencies (jq, bc) and optional OPENCLAW_SESSIONS_DIR env var to metadata for VirusTotal/ClawHub compliance",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2cca998245b55457add742a008b5aaa2728d4f427da64e1b2e750e697ba7286a"
+}

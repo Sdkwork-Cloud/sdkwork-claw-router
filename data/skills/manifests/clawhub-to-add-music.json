@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44692,
+  "uuid": "skill-clawhub-to-add-music",
+  "skillKey": "clawhub-to-add-music",
+  "name": "To Add Music",
+  "summary": "Get music-backed videos ready to post, without touching a single slider. Upload your video files (MP4, MOV, AVI, WebM, up to 500MB), say something like \"add...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.to_add_music",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tk8544-b",
+      "features": [
+        "Get music-backed videos ready to post, without touching a single slider",
+        "Upload your video files (MP4, MOV, AVI, WebM, up to 500MB), say something like \"add..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/to-add-music@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210889262?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "to-add-music",
+      "url": "https://clawhub.ai/skills/to-add-music"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "to-add-music",
+    "url": "https://clawhub.ai/skills/to-add-music",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/to-add-music-a4d93b183b9a0085.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/to-add-music@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-to-add-music-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1718f62393036b9dc18d485b2a95545f92b388962373066d88f851158cac8cbd",
+      "artifactSizeBytes": 2470
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T02:57:59.289Z"
+}

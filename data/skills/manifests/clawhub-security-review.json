@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19947,
+  "uuid": "skill-clawhub-security-review",
+  "skillKey": "clawhub-security-review",
+  "name": "Security Review",
+  "summary": "Run a world-class security assessment before installing any external package, CLI, npm module, Python library, or third-party integration. Produces a GO/NO-G...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.security_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mpbshhx",
+      "features": [
+        "Run a world-class security assessment before installing any external package, CLI, npm module,.",
+        "Produces a GO/NO-G..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/security-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/235782436?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "security-review",
+      "url": "https://clawhub.ai/skills/security-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "security-review",
+    "url": "https://clawhub.ai/skills/security-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/security-review-078bdee851eebf7a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/security-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-security-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2af136b61f198b725eed1244d5b007e4c711e8d979934109e09189fe63933361",
+      "artifactSizeBytes": 1995
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T22:27:01.527Z"
+}

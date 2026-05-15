@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48898,
+  "uuid": "skill-clawhub-free-ocr-zc",
+  "skillKey": "clawhub-free-ocr-zc",
+  "name": "free-ocr-zc",
+  "summary": "Extract text from images via OpenRouter API using Baidu Qianfan OCR model, supporting URLs and local files with customizable prompts.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_ocr_zc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "张翀",
+      "features": [
+        "Extract text from images via OpenRouter API using Baidu Qianfan OCR model, supporting URLs and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/free-ocr-zc@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270544860?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "free-ocr-zc",
+      "url": "https://clawhub.ai/skills/free-ocr-zc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-ocr-zc",
+    "url": "https://clawhub.ai/skills/free-ocr-zc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-ocr-zc-5cc2142e37ef842d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/free-ocr-zc@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-free-ocr-zc-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b8cf8de8188d470239203e0b36e9dcc282fed6bcf7eb422e6832a7962bb0a0a2",
+      "artifactSizeBytes": 3579
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T04:36:30.856Z"
+}

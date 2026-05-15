@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57804,
+  "uuid": "skill-clawhub-unbeatable-condor-strategy",
+  "skillKey": "clawhub-unbeatable-condor-strategy",
+  "name": "Unbeatable Condor Strategy",
+  "summary": "Check daily if given stocks hit the 4% volatility threshold condor signal. 无敌鹰式策略",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unbeatable_condor_strategy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jinntrance",
+      "features": [
+        "Check daily if given stocks hit the 4% volatility threshold condor signal"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/unbeatable-condor-strategy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2414660?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "unbeatable-condor-strategy",
+      "url": "https://clawhub.ai/skills/unbeatable-condor-strategy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unbeatable-condor-strategy",
+    "url": "https://clawhub.ai/skills/unbeatable-condor-strategy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unbeatable-condor-strategy-77f8f9c88bdc4917.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/unbeatable-condor-strategy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-unbeatable-condor-strategy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c3e561c029acf2242afb6e7b8d69928e2a079348c6958ce354f24efa39dcc346",
+      "artifactSizeBytes": 2431
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T15:48:05.162Z"
+}

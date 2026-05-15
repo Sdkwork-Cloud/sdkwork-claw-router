@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yaoyaoya-memory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yaoyaoya_memory",
+  "skill": {
+    "id": 72953,
+    "skillKey": "clawhub-yaoyaoya-memory",
+    "name": "摇摇记忆系统"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yaoyaoya-memory",
+    "url": "https://clawhub.ai/skills/yaoyaoya-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yaoyaoya-memory-0f8445bb7c44b6ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "支持多层次记忆管理和标签分类，实现跨会话检索、持久化存储、定期整理及与IMA知识库双向同步。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "taobaoaz",
+      "userId": "s1722r4y63245f5qzbjyqyerwh843vhe",
+      "displayName": "taobaoaz",
+      "image": "https://avatars.githubusercontent.com/u/118969539?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775221825964,
+      "changelog": "yaoyaoya-memory 1.0.0 — Initial release\n\n- Provides a universal, layered memory system for AI assistants, with IMA platform sync enabled by default.\n- Features hierarchical memory storage (long-term, daily, learnings), comprehensive tagging, and reliability grading.\n- Offers semantic memory search, structured knowledge syncing, and fully configurable via config.json.\n- Supports multiple languages (Chinese, English) and tailored triggers for memory actions (writing, retrieval, cleanup).\n- Includes scripts for memory search and IMA knowledge sync out-of-the-box.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:836cdc0effd5ad4d66b0f45d519d2c97ce081836db82a8e1b83b7341fc42a307"
+}

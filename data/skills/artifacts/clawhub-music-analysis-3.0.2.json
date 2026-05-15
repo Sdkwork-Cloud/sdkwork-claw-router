@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/music-analysis@3.0.2",
+  "version": "3.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.music_analysis",
+  "skill": {
+    "id": 18110,
+    "skillKey": "clawhub-music-analysis",
+    "name": "Music Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "music-analysis",
+    "url": "https://clawhub.ai/skills/music-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/music-analysis-e099d8be76b5ea26.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze music/audio files locally without external APIs. Extract tempo, pocket/groove feel, pulse stability, swing proxy, section/repetition structure, key c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adam-researchh",
+      "userId": "s178790aanz5115cv8bznz53gd840dx1",
+      "displayName": "Adam-Researchh",
+      "image": "https://avatars.githubusercontent.com/u/261827313?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 668,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "3.0.2",
+      "createdAt": 1773601538323,
+      "changelog": "Public docs cleanup: replace internal sandbox/trading references with generic workspace hygiene guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aaacdfa905557d06e1faad3a311d66987ae2817700945c830d471c43ce482208"
+}

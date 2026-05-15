@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45331,
+  "uuid": "skill-clawhub-web-fetch-fallback",
+  "skillKey": "clawhub-web-fetch-fallback",
+  "name": "Web Fetch Fallback",
+  "summary": "Fetch web content using curl as a fallback when web_fetch is blocked due to private, internal, or special-use IP address restrictions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_fetch_fallback",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TianTian-DouBa",
+      "features": [
+        "Fetch web content using curl as a fallback when web_fetch is blocked due to private, internal,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-fetch-fallback@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2969009?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-fetch-fallback",
+      "url": "https://clawhub.ai/skills/web-fetch-fallback"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-fetch-fallback",
+    "url": "https://clawhub.ai/skills/web-fetch-fallback",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-fetch-fallback-7e7d08de3e478510.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-fetch-fallback@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-fetch-fallback-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:263774ca3b722402eb355c867992774b01391d4a87f7513751a20e163f65b5ce",
+      "artifactSizeBytes": 2373
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T06:22:39.288Z"
+}

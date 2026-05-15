@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ppt-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ppt_generator",
+  "skill": {
+    "id": 59609,
+    "skillKey": "clawhub-ppt-generator",
+    "name": "description: 将用户讲稿一键生成乔布斯风极简科技感竖屏HTML演示稿。当用户需要生成PPT、演示文稿、Slides、幻灯片，或要求科技风/极简风/乔布斯风格的演示时触发此技能。输出为单个可直接运行的HTML文件。"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ppt-generator",
+    "url": "https://clawhub.ai/skills/ppt-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ppt-generator-e912f97a3900e421.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将用户讲稿一键生成乔布斯风极简科技感竖屏HTML演示稿。当用户需要生成PPT、演示文稿、Slides、幻灯片，或要求科技风/极简风/乔布斯风格的演示时触发此技能。输出为单个可直接运行的HTML文件。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wwlyzzyorg",
+      "userId": "publishers:wwlyzzyorg",
+      "displayName": "wwlyzzyorg",
+      "image": "https://avatars.githubusercontent.com/u/18164685?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 30179,
+      "installsAllTime": 287,
+      "installsCurrent": 265,
+      "stars": 80,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770200473886,
+      "changelog": "ppt-generator 1.0.0 初始版本发布\n\n- 将用户讲稿一键转换为乔布斯风极简科技感9:16竖屏HTML演示稿。\n- 输出包含：提炼后的讲稿（Markdown）、幻灯片结构大纲、完整HTML代码。\n- 严格遵循极简、一屏一事、强视觉对比与留白等设计原则。\n- 由TailwindCSS与Vue3（CDN）驱动，输出单个HTML文件，开箱即用。\n- 支持键盘翻页、底部进度条和平滑动画等重点交互。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:69966a4bf58eeb31e75a64c7d4c3eec3d9714045ff0144d9c34391649adab2fb"
+}

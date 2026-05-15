@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68833,
+  "uuid": "skill-clawhub-interactive-arch-diagram-creator",
+  "skillKey": "clawhub-interactive-arch-diagram-creator",
+  "name": "arch-diagram",
+  "summary": "生成代码仓架构可视化图，输出为独立静态 HTML 网页。 仅支持在代码仓根目录下运行，自动扫描当前目录。 Claude 扫描代码文件、理解架构、生成层次思维导图和各模块子流程图， 最终输出可在浏览器直接打开的 HTML 文件。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.interactive_arch_diagram_creator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "panrusheng",
+      "features": [
+        "生成代码仓架构可视化图，输出为独立静态 HTML 网页。 仅支持在代码仓根目录下运行，自动扫描当前目录。 Claude 扫描代码文件、理解架构、生成层次思维导图和各模块子流程图， 最终输出可."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/interactive-arch-diagram-creator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18457619?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "interactive-arch-diagram-creator",
+      "url": "https://clawhub.ai/skills/interactive-arch-diagram-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "interactive-arch-diagram-creator",
+    "url": "https://clawhub.ai/skills/interactive-arch-diagram-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/interactive-arch-diagram-creator-660bb130965f322b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/interactive-arch-diagram-creator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-interactive-arch-diagram-creator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f74713bf2d16fb19486e39190f099db3f3bcc22adf4adab39fd5e36677e4a18d",
+      "artifactSizeBytes": 2474
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T12:14:04.385Z"
+}

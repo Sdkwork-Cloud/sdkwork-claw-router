@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38516,
+  "uuid": "skill-clawhub-secure-code-warrior",
+  "skillKey": "clawhub-secure-code-warrior",
+  "name": "Secure Code Warrior",
+  "summary": "Secure Code Warrior integration. Manage data, records, and automate workflows. Use when the user wants to interact with Secure Code Warrior data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.secure_code_warrior",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Secure Code Warrior integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Secure Code Warrior data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/secure-code-warrior@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "secure-code-warrior",
+      "url": "https://clawhub.ai/skills/secure-code-warrior"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "secure-code-warrior",
+    "url": "https://clawhub.ai/skills/secure-code-warrior",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/secure-code-warrior-12793fe80f738ba2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/secure-code-warrior@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-secure-code-warrior-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:46f84463930d153c749ad2c04e07b22c689ebc90bdb27b3adeca8dd9a6ad7b64",
+      "artifactSizeBytes": 1937
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:58:01.811Z"
+}

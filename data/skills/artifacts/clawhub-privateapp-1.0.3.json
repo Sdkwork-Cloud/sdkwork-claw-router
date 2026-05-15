@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/privateapp@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.privateapp",
+  "skill": {
+    "id": 17292,
+    "skillKey": "clawhub-privateapp",
+    "name": "Private Web App (PWA)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "privateapp",
+    "url": "https://clawhub.ai/skills/privateapp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/privateapp-e27496cec566bda9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Personal PWA dashboard server with plugin apps. Use when: (1) installing or setting up PrivateApp, (2) starting/stopping/restarting the service, (3) building..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "camopel",
+      "userId": "publishers:camopel",
+      "displayName": "camopel",
+      "image": "https://avatars.githubusercontent.com/u/18227220?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 784,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1771809459798,
+      "changelog": "Move screenshots to assets/ for ClawHub rendering",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9909d0c75c60ec9c7cb12b2a8d73b5137d4f0f77c5d6d6ec3558dc6809b0e777"
+}

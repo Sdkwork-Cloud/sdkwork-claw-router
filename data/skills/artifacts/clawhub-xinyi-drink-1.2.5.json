@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xinyi-drink@1.2.5",
+  "version": "1.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xinyi_drink",
+  "skill": {
+    "id": 60917,
+    "skillKey": "clawhub-xinyi-drink",
+    "name": "xinyi-drink"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xinyi-drink",
+    "url": "https://clawhub.ai/skills/xinyi-drink",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xinyi-drink-adf7bfb05b931083.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when users ask to 领取Skill用户大礼包, 查询及分析个人历史订单, 查询菜单及饮品热量, or 查询门店及等候时长 for 新一好喝/新一咖啡."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "domilin",
+      "userId": "s174j1rz3a9ggfhwgncj7gsta983k3fe",
+      "displayName": "xinyi-drink",
+      "image": "https://avatars.githubusercontent.com/u/13144769?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 584,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 44
+    },
+    "latestVersion": {
+      "version": "1.2.5",
+      "createdAt": 1778136728522,
+      "changelog": "xinyi-drink 1.2.5\n\n- Added compiled Python bytecode files (*.pyc) for both scripts and unit tests, improving runtime efficiency and test coverage.\n- No changes to logic or user-facing features; this is an internal packaging and distribution update.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:55faac53f963e85e3593705eab71de40c382bdb2d2e4eb02eab14abf6873d58a"
+}

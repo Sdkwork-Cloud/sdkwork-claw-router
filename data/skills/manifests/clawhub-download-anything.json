@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20502,
+  "uuid": "skill-clawhub-download-anything",
+  "skillKey": "clawhub-download-anything",
+  "name": "Download Anything",
+  "summary": "Find and download virtually any digital resource from the internet — ebooks, academic papers, movies, TV shows, music, software, images, fonts, courses, and...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.download_anything",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EthanL",
+      "features": [
+        "Find and download virtually any digital resource from the internet — ebooks, academic papers, m."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/download-anything@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25078994?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "download-anything",
+      "url": "https://clawhub.ai/skills/download-anything"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "download-anything",
+    "url": "https://clawhub.ai/skills/download-anything",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/download-anything-b5487b575f04e584.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/download-anything@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-download-anything-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5f8b5dcb9f4fd400e30f02350c8d0c0a537e05c833853cfb7b3de690634bf624",
+      "artifactSizeBytes": 2389
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T18:21:01.109Z"
+}

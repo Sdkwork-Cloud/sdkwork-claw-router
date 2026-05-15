@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15798,
+  "uuid": "skill-clawhub-zulip",
+  "skillKey": "clawhub-zulip",
+  "name": "Zulip",
+  "summary": "Interact with Zulip chat platform via REST API and Python client. Use when you need to read messages from streams/topics, send messages to channels or users,...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zulip",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "suky57",
+      "features": [
+        "Interact with Zulip chat platform via REST API and Python client",
+        "Use when you need to read messages from streams/topics, send messages to channels or users,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zulip@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8288385?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zulip",
+      "url": "https://clawhub.ai/skills/zulip"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zulip",
+    "url": "https://clawhub.ai/skills/zulip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zulip-01677e8adede64bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zulip@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-zulip-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d5e902fe30c8debd3c90776f40dcfcc06fcfb7e2cb6695d557bf13e37eb7d6c",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T09:05:28.314Z"
+}

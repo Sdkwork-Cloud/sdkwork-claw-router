@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/arxiv-source@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arxiv_source",
+  "skill": {
+    "id": 17968,
+    "skillKey": "clawhub-arxiv-source",
+    "name": "arXiv Source Reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arxiv-source",
+    "url": "https://clawhub.ai/skills/arxiv-source",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arxiv-source-24d13ff6dc698031.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read and analyze arXiv papers by fetching LaTeX source, listing sections, or extracting abstracts"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "willamhou",
+      "userId": "s17a68d3sp1pca7zzhqgmzn60h83s0yr",
+      "displayName": "Will.hou",
+      "image": "https://avatars.githubusercontent.com/u/8574759?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 679,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1773655324967,
+      "changelog": "Declare runtime and network access, clarify read-only public API access, in-memory cache only",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:16b03ef3204db86c92576ced4054325311c57d8eac865820e54a82a28020f058"
+}

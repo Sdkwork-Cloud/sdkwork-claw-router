@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68041,
+  "uuid": "skill-clawhub-study-buddy-niu",
+  "skillKey": "clawhub-study-buddy-niu",
+  "name": "Study Buddy - 牛宝华版",
+  "summary": "AI助手帮助备考日语N2和软考架构师，支持智能出题、自动判分、错题记录和个性化学习计划。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.study_buddy_niu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "it-worker-club",
+      "features": [
+        "AI助手帮助备考日语N2和软考架构师，支持智能出题、自动判分、错题记录和个性化学习计划。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/study-buddy-niu@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/134124414?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "study-buddy-niu",
+      "url": "https://clawhub.ai/skills/study-buddy-niu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "study-buddy-niu",
+    "url": "https://clawhub.ai/skills/study-buddy-niu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/study-buddy-niu-539e1d0808d6cc95.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/study-buddy-niu@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-study-buddy-niu-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c2da59b1258730bcf45d9f9c0a5a9441fa50658951cefd31c9ac99d72b42bca",
+      "artifactSizeBytes": 2210
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T02:59:58.835Z"
+}

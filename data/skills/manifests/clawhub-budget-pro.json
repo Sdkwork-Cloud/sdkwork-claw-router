@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21732,
+  "uuid": "skill-clawhub-budget-pro",
+  "skillKey": "clawhub-budget-pro",
+  "name": "Budget",
+  "summary": "Personal budget management with privacy-first local storage. Use when user mentions setting a budget, tracking spending, logging expenses, checking budget st...",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.budget_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AGIstack",
+      "features": [
+        "Personal budget management with privacy-first local storage",
+        "Use when user mentions setting a budget, tracking spending, logging expenses, checking budget s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/budget-pro@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258523997?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "budget-pro",
+      "url": "https://clawhub.ai/skills/budget-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "budget-pro",
+    "url": "https://clawhub.ai/skills/budget-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/budget-pro-a7468da04629396c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/budget-pro@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-budget-pro-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:828a803d5321a58a4b5dd77176b52c8f5fd0cf0f605050076b5df62dbdc4e8ff",
+      "artifactSizeBytes": 2109
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T13:40:33.078Z"
+}

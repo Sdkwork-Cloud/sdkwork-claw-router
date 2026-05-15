@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33958,
+  "uuid": "skill-clawhub-yummy-gen-voice",
+  "skillKey": "clawhub-yummy-gen-voice",
+  "name": "Yummy Gen Voice",
+  "summary": "Use when the user wants to synthesise speech or text-to-speech (TTS) audio with Gemini through yummycli, including single-speaker narration, multi-speaker di...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yummy_gen_voice",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yummysource",
+      "features": [
+        "Use when the user wants to synthesise speech or text-to-speech (TTS) audio with Gemini through."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yummy-gen-voice@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260192779?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yummy-gen-voice",
+      "url": "https://clawhub.ai/skills/yummy-gen-voice"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yummy-gen-voice",
+    "url": "https://clawhub.ai/skills/yummy-gen-voice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yummy-gen-voice-e4ea6b20fb389ed7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yummy-gen-voice@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yummy-gen-voice-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:377b9e98a406b4bd30cf0a6bd844f8c62a12276779974b809a8e7a4f9f80fe25",
+      "artifactSizeBytes": 2419
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T07:26:54.952Z"
+}

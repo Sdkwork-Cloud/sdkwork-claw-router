@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60819,
+  "uuid": "skill-clawhub-bizyair-video",
+  "skillKey": "clawhub-bizyair-video",
+  "name": "bizyair-video",
+  "summary": "基于 BizyAir 异步 API 的视频生成助手，支持 5 种视频生成模式：图生视频(KJ高速版)、图生视频(Wan2.2_NSFW)、图生视频(Wan2.2_Remix_NSFW)、首尾帧视频(三分钟)、首尾帧视频(Wan2.2_Remix_NSFW)。当用户提到\"生成视频\"、\"图生视频\"、\"首尾帧视频\"、\"...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bizyair_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bozoyan",
+      "features": [
+        "基于 BizyAir 异步 API 的视频生成助手，支持 5 种视频生成模式：图生视频(KJ高速版)、图生视频(Wan2.2_NSFW)、图生视频(Wan2.2_Remix_NSFW)、首尾."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bizyair-video@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4261158?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bizyair-video",
+      "url": "https://clawhub.ai/skills/bizyair-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bizyair-video",
+    "url": "https://clawhub.ai/skills/bizyair-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bizyair-video-703224135f9b271d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bizyair-video@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bizyair-video-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:729a8318f3bdc87969086e151898998cdbc4a1e56169f505468867e9314d19e4",
+      "artifactSizeBytes": 2523
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T13:45:05.181Z"
+}

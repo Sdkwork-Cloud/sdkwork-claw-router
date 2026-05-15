@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62232,
+  "uuid": "skill-clawhub-quiverai-quickstart",
+  "skillKey": "clawhub-quiverai-quickstart",
+  "name": "QuiverAI Quickstart",
+  "summary": "QuiverAI API快速入门指南。当用户想要学习如何使用QuiverAI的SVG生成API时使用此技能。包括API密钥创建、环境配置、SDK安装和发送请求的完整流程。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quiverai_quickstart",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charmmm718",
+      "features": [
+        "QuiverAI API快速入门指南。当用户想要学习如何使用QuiverAI的SVG生成API时使用此技能。包括API密钥创建、环境配置、SDK安装和发送请求的完整流程。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quiverai-quickstart@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/221862276?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quiverai-quickstart",
+      "url": "https://clawhub.ai/skills/quiverai-quickstart"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quiverai-quickstart",
+    "url": "https://clawhub.ai/skills/quiverai-quickstart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quiverai-quickstart-4d031d13327aebe8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quiverai-quickstart@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-quiverai-quickstart-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:74ff12447efc5fd9e78efc60722c10f27fb95b88b2df75a83917c9806abfcfcc",
+      "artifactSizeBytes": 1975
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T16:27:12.548Z"
+}

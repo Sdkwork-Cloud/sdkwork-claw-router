@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27039,
+  "uuid": "skill-clawhub-fp-dcf",
+  "skillKey": "clawhub-fp-dcf",
+  "name": "FP-DCF",
+  "summary": "Estimate intrinsic value with a first-principles DCF from structured JSON or provider-backed ticker input, and return auditable FCFF, WACC, and per-share val...",
+  "version": "0.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fp_dcf",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tiejiang",
+      "features": [
+        "Estimate intrinsic value with a first-principles DCF from structured JSON or provider-backed ti."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fp-dcf@0.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32443751?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fp-dcf",
+      "url": "https://clawhub.ai/skills/fp-dcf"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fp-dcf",
+    "url": "https://clawhub.ai/skills/fp-dcf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fp-dcf-029c3cdfd976c517.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fp-dcf@0.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fp-dcf-0.5.0.json",
+      "version": "0.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b00d2b83b6b588e888fc36a32d98ce5e4a1abf8f6d9885032ad8fd35a69fc05f",
+      "artifactSizeBytes": 1914
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T10:14:20.301Z"
+}

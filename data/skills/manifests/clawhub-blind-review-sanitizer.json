@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28367,
+  "uuid": "skill-clawhub-blind-review-sanitizer",
+  "skillKey": "clawhub-blind-review-sanitizer",
+  "name": "Blind Review Sanitizer",
+  "summary": "One-click removal of author names, affiliations, acknowledgments, and excessive self-citations from manuscripts to meet double-blind peer review requirements...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blind_review_sanitizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googolme",
+      "features": [
+        "One-click removal of author names, affiliations, acknowledgments, and excessive self-citations."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/blind-review-sanitizer@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/162564912?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "blind-review-sanitizer",
+      "url": "https://clawhub.ai/skills/blind-review-sanitizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blind-review-sanitizer",
+    "url": "https://clawhub.ai/skills/blind-review-sanitizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blind-review-sanitizer-8cd9dd58842137ee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/blind-review-sanitizer@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-blind-review-sanitizer-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b18c186e4ac94cd472bc1cf4182cd293461dd84399c63cbb36fcac9703cb689",
+      "artifactSizeBytes": 2561
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T09:23:53.111Z"
+}

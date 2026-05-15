@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59053,
+  "uuid": "skill-clawhub-test-publish-check",
+  "skillKey": "clawhub-test-publish-check",
+  "name": "Test Publish Check",
+  "summary": "项目发布前检查工具。代码质量检查、API测试、部署检查清单、版本管理、上线前审查、回归测试。Pre-publish quality checker for code, API, deployment, versioning, launch review, regression testing. 发布检查、上线审查...",
+  "version": "2.3.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_publish_check",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "项目发布前检查工具。代码质量检查、API测试、部署检查清单、版本管理、上线前审查、回归测试。Pre-publish quality checker for code, API, deploy.",
+        "发布检查、上线审查..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/test-publish-check@2.3.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "test-publish-check",
+      "url": "https://clawhub.ai/skills/test-publish-check"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-publish-check",
+    "url": "https://clawhub.ai/skills/test-publish-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-publish-check-501dfd09b958c68c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/test-publish-check@2.3.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-test-publish-check-2.3.6.json",
+      "version": "2.3.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f68723e341580c105519e3640eae181fc01389f6ca1e845334073aecbb861360",
+      "artifactSizeBytes": 2064
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T18:57:32.486Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17022,
+  "uuid": "skill-clawhub-bring-shopping-list",
+  "skillKey": "clawhub-bring-shopping-list",
+  "name": "Bring! Shopping Lists",
+  "summary": "Manage your Bring! shopping list by adding, removing, completing items, or checking the current groceries via your Bring! account.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bring_shopping_list",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Johann Zahlmann",
+      "features": [
+        "Manage your Bring! shopping list by adding, removing, completing items, or checking the current."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bring-shopping-list@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26060388?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bring-shopping-list",
+      "url": "https://clawhub.ai/skills/bring-shopping-list"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bring-shopping-list",
+    "url": "https://clawhub.ai/skills/bring-shopping-list",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bring-shopping-list-a0b35c3682fa85c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bring-shopping-list@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bring-shopping-list-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:957242e9f193032fe2b44c44bf3a871d316ddfaf4e5b6f78976a7a67d037bae0",
+      "artifactSizeBytes": 2364
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T16:20:00.490Z"
+}

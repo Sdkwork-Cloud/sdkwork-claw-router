@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-8@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_8",
+  "skill": {
+    "id": 27215,
+    "skillKey": "clawhub-skill-8",
+    "name": "Ganglion Synth City"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-8",
+    "url": "https://clawhub.ai/skills/skill-8",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-8-419e067771bcae11.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Mine Bittensor Subnet 50 (Synth) with Ganglion. Covers price-path simulation, CRPS scoring, volatility estimation, backtesting, and multi-asset forecasting."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tensorlink-dev",
+      "userId": "publishers:tensorlink-dev",
+      "displayName": "tensorlink-dev",
+      "image": "https://avatars.githubusercontent.com/u/193437181?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 353,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1772693337160,
+      "changelog": "- Skill renamed to \"ganglion-synth-city\" with updated description, reflecting integration with Ganglion.\n- Documentation overhauled for clarity: covers SN50 mining, price-path simulation, CRPS scoring, volatility estimation, backtesting, and multi-asset forecasting on Bittensor Subnet 50.\n- Details on validator-miner workflow, submission formats, competition structure, scoring pipeline, and asset-specific parameters added.\n- New tables summarize competition parameters, per-asset coefficients, reference sigma values, and available tools.\n- Includes step-by-step example workflows for both local and remote (API) use cases.\n- Provides search strategies, known pitfalls, and bootstrap/project setup commands.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c73bb424e97ec580b87a1a7ee9b1b20de32ee3a59922a44b7f89db3ebec1df81"
+}

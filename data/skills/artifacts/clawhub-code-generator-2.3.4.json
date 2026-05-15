@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/code-generator@2.3.4",
+  "version": "2.3.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_generator",
+  "skill": {
+    "id": 9621,
+    "skillKey": "clawhub-code-generator",
+    "name": "Code Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-generator",
+    "url": "https://clawhub.ai/skills/code-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-generator-c0c75a5c12816224.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-language code generator. Generate functions, classes, API endpoints, CRUD operations, test code, refactoring suggestions, language conversion guides."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xueyetianya",
+      "userId": "s1716dgb4pf37kmebjdxfdexmh83ehwx",
+      "displayName": "bytesagain4",
+      "image": "https://avatars.githubusercontent.com/u/218210530?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3136,
+      "installsAllTime": 33,
+      "installsCurrent": 31,
+      "stars": 2,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "2.3.4",
+      "createdAt": 1773774185949,
+      "changelog": "v2.5 standard: Use-when desc, homepage, source, security fix",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2143a206a23d41bb9c5a785453d4ea4bb47b3b38f9152ccec13bc11832827584"
+}

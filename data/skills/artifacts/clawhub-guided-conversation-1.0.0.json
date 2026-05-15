@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/guided-conversation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.guided_conversation",
+  "skill": {
+    "id": 31324,
+    "skillKey": "clawhub-guided-conversation",
+    "name": "Guided Conversation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "guided-conversation",
+    "url": "https://clawhub.ai/skills/guided-conversation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/guided-conversation-5ba47d388f55a2c8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Minimize user friction by asking up to 4 clarifying questions before executing actions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "szpili",
+      "userId": "s175zstpfke2xx66nr9w76mwwx83m787",
+      "displayName": "Szpili",
+      "image": "https://avatars.githubusercontent.com/u/87379393?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 258,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774920064443,
+      "changelog": "- Initial release of the guided-conversation skill.\n- Automatically asks up to 4 clarifying questions to resolve ambiguous user requests.\n- Summarizes the understood task and lists assumptions before executing actions.\n- Integrates with risk assessment: always requires confirmation for high-risk actions; proceeds automatically for low-risk tasks after clarification.\n- Configurable parameters: max questions, auto-proceed after clarity, and mandatory confirmation for high-risk actions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c2e886fe26c5df882413db862e04501ecf07f5f1ca40ad4e543c5074d4adc3a8"
+}

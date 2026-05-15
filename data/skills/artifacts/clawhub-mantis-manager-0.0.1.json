@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mantis-manager@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mantis_manager",
+  "skill": {
+    "id": 11674,
+    "skillKey": "clawhub-mantis-manager",
+    "name": "MantisBT Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mantis-manager",
+    "url": "https://clawhub.ai/skills/mantis-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mantis-manager-fc48bbffbca2ff6c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Mantis Bug Tracker (issues, projects, users, filters, configs) via the official Mantis REST API. Supports full CRUD operations on issues, projects, users, attachments, notes, tags, relationships, and configuration management. Featur."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "willykinfoussia",
+      "userId": "publishers:willykinfoussia",
+      "displayName": "willykinfoussia",
+      "image": "https://avatars.githubusercontent.com/u/41423122?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1761,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1770245553839,
+      "changelog": "Initial release of mantis_manager: Manage MantisBT via official REST API with dynamic context & multi-instance support.\n\n- Supports full CRUD operations on issues, projects, users, attachments, notes, tags, relationships, and configurations.\n- Dynamic instance switching: use different Mantis base URLs and tokens per operation or session, resolved by runtime context.\n- Environment variables MANTIS_BASE_URL and MANTIS_API_TOKEN required; can override via temporary/session context variables.\n- Includes context management commands for switching, viewing, and resetting current API connection or auth token.\n- Extensive documentation and usage examples for all major operations and context management patterns.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:42c80044efcf28e47ba92198f8b84832374ee9515c9a4dbf1a2a7bcacb5d0a76"
+}

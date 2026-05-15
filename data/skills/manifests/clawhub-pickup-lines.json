@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20947,
+  "uuid": "skill-clawhub-pickup-lines",
+  "skillKey": "clawhub-pickup-lines",
+  "name": "Pickup Lines",
+  "summary": "Generate witty romantic lines for any occasion. Use when drafting confessions, writing humorous openers, composing anniversary notes, crafting farewells.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pickup_lines",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain3",
+      "features": [
+        "Generate witty romantic lines for any occasion",
+        "Use when drafting confessions, writing humorous openers, composing anniversary notes, crafting."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pickup-lines@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218212813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pickup-lines",
+      "url": "https://clawhub.ai/skills/pickup-lines"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pickup-lines",
+    "url": "https://clawhub.ai/skills/pickup-lines",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pickup-lines-872ce0112607b93e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pickup-lines@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pickup-lines-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c7b0017253b8d404db50a21864ef118d8735d3b0842a48bcebff45f07fed662e",
+      "artifactSizeBytes": 1863
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T10:48:41.338Z"
+}

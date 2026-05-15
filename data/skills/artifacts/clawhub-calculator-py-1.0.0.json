@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/calculator-py@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.calculator_py",
+  "skill": {
+    "id": 67543,
+    "skillKey": "clawhub-calculator-py",
+    "name": "calculator-py"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "calculator-py",
+    "url": "https://clawhub.ai/skills/calculator-py",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/calculator-py-80bc224c72140e27.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "高性能本地计算器技能，通过 Python 脚本提供数值计算能力。触发场景：(1) Agent 需要进行数学运算（四则、幂、三角、对数等）(2) 需要矩阵运算（乘法、求逆、行列式、特征值、SVD 等）(3) 需要统计分析（均值、标准差、回归、概率分布等）(4) 需要高精度/任意精度计算（大数运算、超越函数等）(5)..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leonardo-lb",
+      "userId": "s173fecesqz6npp546249nqprd83jtfx",
+      "displayName": "LeoNardo-LB",
+      "image": "https://avatars.githubusercontent.com/u/58056860?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 277,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774611771053,
+      "changelog": "Initial release — combines comprehensive local mathematical, matrix, statistical, precision, and signal processing computation in one skill.  \n\n- Introduced unified calc.py script with modular subcommands: eval, precision, matrix, stats, optimize, integrate, transform\n- Supports symbolic/math expressions, arbitrary precision, matrix operations, statistical analysis, numerical optimization, integration, and signal processing (FFT)\n- Uses numpy, scipy, and mpmath for fast and accurate computation\n- Includes detailed usage guide, CLI examples, and a complete test suite (`test_calc.py`) with 97 test cases\n- Structured output format, support for math constants, and clear error handling",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c479580d89cd4c1de961ecb457e50bf8d1a88e29e97f9d6ac39e36073ea61e0b"
+}

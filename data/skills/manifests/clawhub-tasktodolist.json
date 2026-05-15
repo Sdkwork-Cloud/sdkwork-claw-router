@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43314,
+  "uuid": "skill-clawhub-tasktodolist",
+  "skillKey": "clawhub-tasktodolist",
+  "name": "tasktodolist",
+  "summary": "Manage multiple independent to-do lists with commands to add, list, complete, remove, clear tasks, and manage task lists by name.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tasktodolist",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "guiguihao",
+      "features": [
+        "Manage multiple independent to-do lists with commands to add, list, complete, remove, clear tas."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tasktodolist@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18206933?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tasktodolist",
+      "url": "https://clawhub.ai/skills/tasktodolist"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tasktodolist",
+    "url": "https://clawhub.ai/skills/tasktodolist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tasktodolist-67026caed3190f4d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tasktodolist@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-tasktodolist-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bd3c3cac89faac9246c833977c088c0c8143c1df83c08e7965e70f28a0837583",
+      "artifactSizeBytes": 2041
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T12:28:21.194Z"
+}

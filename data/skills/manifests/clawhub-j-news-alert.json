@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67241,
+  "uuid": "skill-clawhub-j-news-alert",
+  "skillKey": "clawhub-j-news-alert",
+  "name": "News Alert | 新闻监控",
+  "summary": "监控持仓公司的最新新闻，发现重要信息立即提醒",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.j_news_alert",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jearrylee",
+      "features": [
+        "监控持仓公司的最新新闻，发现重要信息立即提醒"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/j-news-alert@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/198688240?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "j-news-alert",
+      "url": "https://clawhub.ai/skills/j-news-alert"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "j-news-alert",
+    "url": "https://clawhub.ai/skills/j-news-alert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/j-news-alert-12c9b9e83cf25882.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/j-news-alert@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-j-news-alert-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5aedb70cc7ba38cb521ea0c6fb770059ce29693d857fa810664030c313d6257a",
+      "artifactSizeBytes": 1823
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T16:07:34.354Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/anime-finder@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anime_finder",
+  "skill": {
+    "id": 59130,
+    "skillKey": "clawhub-anime-finder",
+    "name": "Anime Finder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anime-finder",
+    "url": "https://clawhub.ai/skills/anime-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anime-finder-a79120966b1f21f8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find anime releases and handle the whole request end to end. Use when the user asks to 找番、 追更、看最新一集、拿最新一季第一集、帮我下载、只要磁力、先找资源别下载、或者查看刚才下载怎么样； also use it for m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tiggy-chan",
+      "userId": "s1729d09wtrt0yak40hjahp79184mm8p",
+      "displayName": "TiggyChan",
+      "image": "https://avatars.githubusercontent.com/u/79960316?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1775989428023,
+      "changelog": "v1.4.0 - 意图识别层、决策合约、用户偏好持久化",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3238dddfb0cf3747b0047d984f861853fb1154417aa60056a335c1d1978954e3"
+}

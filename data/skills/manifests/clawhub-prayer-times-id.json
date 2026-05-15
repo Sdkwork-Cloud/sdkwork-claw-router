@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19851,
+  "uuid": "skill-clawhub-prayer-times-id",
+  "skillKey": "clawhub-prayer-times-id",
+  "name": "Prayer Times Id",
+  "summary": "Menjadwalkan reminder waktu shalat (Indonesia) ke OpenClaw System Event berdasarkan lokasi, lengkap dengan quote harian Islami dan status Ramadan otomatis.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prayer_times_id",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zacky Achmad",
+      "features": [
+        "Menjadwalkan reminder waktu shalat (Indonesia) ke OpenClaw System Event berdasarkan lokasi, len."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prayer-times-id@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31559432?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prayer-times-id",
+      "url": "https://clawhub.ai/skills/prayer-times-id"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prayer-times-id",
+    "url": "https://clawhub.ai/skills/prayer-times-id",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prayer-times-id-c717b27269b25f53.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prayer-times-id@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-prayer-times-id-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ab7c6b14991f7ebd2635057c7723c04a14055317cb0c37fd4c58d99f51df05d5",
+      "artifactSizeBytes": 1948
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T11:23:33.649Z"
+}

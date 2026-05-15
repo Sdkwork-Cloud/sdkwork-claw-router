@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-actions-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_actions_generator",
+  "skill": {
+    "id": 58991,
+    "skillKey": "clawhub-github-actions-generator",
+    "name": "GitHub Actions Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-actions-generator",
+    "url": "https://clawhub.ai/skills/github-actions-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-actions-generator-b75d2e317dff946c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "生成 GitHub Actions 工作流，支持 CI/CD、测试、部署等多种场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sunshine-del-ux",
+      "userId": "publishers:sunshine-del-ux",
+      "displayName": "Sunshine-del-ux",
+      "image": "https://avatars.githubusercontent.com/u/83053073?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2066,
+      "installsAllTime": 25,
+      "installsCurrent": 23,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772443820251,
+      "changelog": "Initial release of github-actions-generator.\n\n- Generate GitHub Actions workflow files automatically.\n- Supports Node.js, Python, and Go CI/CD pipelines.\n- Includes Docker build & push, automated release publishing, Dependabot updates, and scheduled tasks.\n- Simple CLI for generating workflows by scenario and deployment target.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ead655b1463f34534f7c77237e1830968fe66cb6e8bdd86551eab92cf65f2fcb"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23663,
+  "uuid": "skill-clawhub-ares-business-registry",
+  "skillKey": "clawhub-ares-business-registry",
+  "name": "ARES Business Registry (CZ)",
+  "summary": "Query Czech ARES business registry by ICO or name with human/JSON/raw outputs, retries, and legal-form decoding.",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ares_business_registry",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PGhostek",
+      "features": [
+        "Query Czech ARES business registry by ICO or name with human/JSON/raw outputs, retries, and leg."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ares-business-registry@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23233359?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ares-business-registry",
+      "url": "https://clawhub.ai/skills/ares-business-registry"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ares-business-registry",
+    "url": "https://clawhub.ai/skills/ares-business-registry",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ares-business-registry-18fe985cedfeae06.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ares-business-registry@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ares-business-registry-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d50cc89271d60239fb1154724618fd2f74c9488c3005d81ffe35adc6216e487",
+      "artifactSizeBytes": 1983
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T19:43:20.134Z"
+}

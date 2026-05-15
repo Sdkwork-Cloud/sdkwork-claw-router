@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30221,
+  "uuid": "skill-clawhub-research-summarizer",
+  "skillKey": "clawhub-research-summarizer",
+  "name": "Research Summarizer",
+  "summary": "Structured research summarization agent skill for non-dev users. Handles academic papers, web articles, reports, and documentation. Extracts key findings, ge...",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.research_summarizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alireza Rezvani",
+      "features": [
+        "Structured research summarization agent skill for non-dev users",
+        "Handles academic papers, web articles, reports, and documentation",
+        "Extracts key findings, ge..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/research-summarizer@2.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5697919?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "research-summarizer",
+      "url": "https://clawhub.ai/skills/research-summarizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "research-summarizer",
+    "url": "https://clawhub.ai/skills/research-summarizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/research-summarizer-99265daeddd3369e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/research-summarizer@2.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-research-summarizer-2.1.1.json",
+      "version": "2.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b39e6ea7a197645552c66488cc039ace74222929bf8a47934702f7d5a08087e2",
+      "artifactSizeBytes": 1955
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T08:56:39.510Z"
+}

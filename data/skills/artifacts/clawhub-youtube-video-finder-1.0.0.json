@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-video-finder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_video_finder",
+  "skill": {
+    "id": 14879,
+    "skillKey": "clawhub-youtube-video-finder",
+    "name": "Recover deleted YouTube videos"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-video-finder",
+    "url": "https://clawhub.ai/skills/youtube-video-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-video-finder-55411816209702b0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Searches multiple online archives to find and recover deleted YouTube videos, metadata, and comments using a video ID."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "upintheairsheep",
+      "userId": "s179a4nhxggd8mtgx9w74t49ax86bgka",
+      "displayName": "upintheairsheep",
+      "image": "https://avatars.githubusercontent.com/u/43690204?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 822,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771720365429,
+      "changelog": "- Initial release of \"Recover deleted YouTube videos\" skill (v1.0.0).\n- Allows users to find and recover deleted YouTube videos, metadata, and comments using a video ID.\n- Searches multiple online archives (such as GhostArchive and Wayback Machine) for available resources.\n- Supports optional parameters for advanced debugging and JSONL streaming.\n- Provides clear instructions for extracting video IDs and interpreting search results.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9cb439507a548665b2d42f27a9c6dec5d83131b9122f4f698e18b915969c6998"
+}

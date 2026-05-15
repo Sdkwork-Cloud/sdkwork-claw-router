@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/obsidian-github-sync@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_github_sync",
+  "skill": {
+    "id": 30214,
+    "skillKey": "clawhub-obsidian-github-sync",
+    "name": "Obsidian GitHub Sync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-github-sync",
+    "url": "https://clawhub.ai/skills/obsidian-github-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-github-sync-7c2b0c522802bffd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated GitHub synchronization for Obsidian vault with conflict detection and notification. Use when the user wants to: - Sync their Obsidian vault to a Gi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leo-zzl",
+      "userId": "s1716ctfvsgdpyf6s5gm3wxcd583p8dp",
+      "displayName": "Leo-zzl",
+      "image": "https://avatars.githubusercontent.com/u/262100144?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 287,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773910806875,
+      "changelog": "Initial release: Automated GitHub sync for Obsidian vault with conflict detection",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f879cecd5eaeb7669db0ea6fbd382d05c621e95892d5d4aa2761269d1aab1cc8"
+}

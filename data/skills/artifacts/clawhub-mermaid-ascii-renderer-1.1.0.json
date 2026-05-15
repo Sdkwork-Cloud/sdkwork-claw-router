@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mermaid-ascii-renderer@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mermaid_ascii_renderer",
+  "skill": {
+    "id": 61964,
+    "skillKey": "clawhub-mermaid-ascii-renderer",
+    "name": "Mermaid Ascii Renderer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mermaid-ascii-renderer",
+    "url": "https://clawhub.ai/skills/mermaid-ascii-renderer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mermaid-ascii-renderer-0ef88e6269256767.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 beautiful-mermaid 项目将 Mermaid 图表渲染为 ASCII 艺术。提供解析、布局算法和渲染操作的完整实现指南，支持流程图、状态图、序列图、类图和 ER 图表。当用户请求涉及以下场景时使用：（1）beautiful-mermaid 的 ASCII 渲染系统实现；（2）在终端/控制台输出..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "joe-rq",
+      "userId": "s178z6k03aymxgpfbzb4cnv7gx83x8rf",
+      "displayName": "Joe-rq",
+      "image": "https://avatars.githubusercontent.com/u/77777313?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 231,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773838409258,
+      "changelog": "- 新增完整实现指南，详细介绍 Mermaid 图表 ASCII 渲染在 beautiful-mermaid 项目中的使用与拓展场景\n- 明确支持流程图、状态图、序列图、类图、ER 图的ASCII/Unicode渲染，不支持甘特图等类型\n- 说明边界条件（如长标签、密集节点、复杂路由、终端兼容性等）及性能建议\n- 提供快速安装与基础用例（renderMermaidAscii 函数）、核心 API 说明和参数表\n- 划分核心模块结构，详细列举 ascii 渲染相关的源码文件\n- 丰富参考文档索引，便于深入理解渲染逻辑、主题系统和排障流程",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b165cf4be58bf521101092bb632029a96a330f3d825f4e42fca2903acbf65d7b"
+}

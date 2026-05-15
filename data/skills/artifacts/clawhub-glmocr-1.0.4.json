@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/glmocr@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.glmocr",
+  "skill": {
+    "id": 15821,
+    "skillKey": "clawhub-glmocr",
+    "name": "GLM-OCR"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "glmocr",
+    "url": "https://clawhub.ai/skills/glmocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/glmocr-ab681c67e86dc5bf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract text from images using GLM-OCR API. Supports images and PDFs with high accuracy OCR, table recognition, formula extraction, and handwriting recogniti..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jaredforreal",
+      "userId": "s175c2hb1p5qwxh8z279000h0s83j2tt",
+      "displayName": "Jared Wen",
+      "image": "https://avatars.githubusercontent.com/u/142211841?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 725,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 2,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1776256018799,
+      "changelog": "Version 1.0.4 of the GLM-OCR skill\n\n- Fixed metadata: removed the unused \"bins: python\" requirement.\n- No functional changes to the code or CLI usage.\n- All documented features, security restrictions, and usage guidelines remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:724a94fe2a56095220f93625af6a515c638996cefb8da10b69eb8153ee50b9a4"
+}

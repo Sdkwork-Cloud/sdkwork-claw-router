@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sshexec@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sshexec",
+  "skill": {
+    "id": 20240,
+    "skillKey": "clawhub-sshexec",
+    "name": "sshexec"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sshexec",
+    "url": "https://clawhub.ai/skills/sshexec",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sshexec-90ee77a619ca40c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A skill to execute SSH commands on remote servers, supporting both password and key-based authentication. It includes error handling and logging for command..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xlbbb-cn",
+      "userId": "s175ztwtww31epg06959zj9jhn83x2bd",
+      "displayName": "leonard.w",
+      "image": "https://avatars.githubusercontent.com/u/12523600?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 555,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772507307222,
+      "changelog": "- Updated documentation to correct the usage command paths from \"skills/ssh-exec\" to \"skills/sshexec\".\n- No code changes were made; this is a documentation update only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6ec8da26e3463471888b0983909ec9f744dd3393abdab205e0d08dc75927ad35"
+}

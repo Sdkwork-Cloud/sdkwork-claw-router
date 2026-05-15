@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31117,
+  "uuid": "skill-clawhub-miraix-binance-agent-firewall",
+  "skillKey": "clawhub-miraix-binance-agent-firewall",
+  "name": "Miraix Binance Agent Firewall",
+  "summary": "Use this skill when the user wants to audit a Binance trading prompt, decide whether an AI trader should get Binance account permissions, return Pass/Warn/Bl...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.miraix_binance_agent_firewall",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "richard7463",
+      "features": [
+        "Use this skill when the user wants to audit a Binance trading prompt, decide whether an AI trad."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/miraix-binance-agent-firewall@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13402558?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "miraix-binance-agent-firewall",
+      "url": "https://clawhub.ai/skills/miraix-binance-agent-firewall"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "miraix-binance-agent-firewall",
+    "url": "https://clawhub.ai/skills/miraix-binance-agent-firewall",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/miraix-binance-agent-firewall-11b9f3bf1f8656aa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/miraix-binance-agent-firewall@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-miraix-binance-agent-firewall-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d1c4a86d7ab58d9809c4fa7790192cbb0b6ba12122a6d1ecd7d88d62b91a643a",
+      "artifactSizeBytes": 2089
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T10:02:58.888Z"
+}

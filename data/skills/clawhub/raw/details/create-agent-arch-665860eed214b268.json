@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "create-agent-arch",
+    "displayName": "create-agent",
+    "summary": "完整创建一个 OpenClaw Agent，包括：一次性问卷收集配置信息、自动生成 workspace 文件（SOUL.md/AGENTS.md/IDENTITY.md/USER.md/MEMORY.md/HEARTBEAT.md）、 执行 `openclaw agents add` CLI 注册、内置 capa...",
+    "tags": {
+      "latest": "1.0.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 437,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "createdAt": 1773034665295,
+    "updatedAt": 1778305766538
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1773039739785,
+    "changelog": "- 支持多种频道类型的参数确认，新增 Phase 1.8「频道参数确认」阶段，智能读取 references/channel-params.md 动态生成问卷。\n- 根据用户填写或跳过的频道，自动分支处理绑定参数、插件预装、扫码等操作，并记忆参数供后续注册流程使用。\n- Phase 3 注册逻辑细化，支持多通道与多步骤自动化（如需 plugin、channels add、扫码等）。\n- 用户问卷/频道信息收集流程更流畅，减少手动干预。\n- 新增 references/channel-params.md 作为渠道参数模板参考依据。",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "dao24dao",
+    "userId": "publishers:dao24dao",
+    "displayName": "dao24dao",
+    "image": "https://avatars.githubusercontent.com/u/5414720?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778305766538
+  }
+}

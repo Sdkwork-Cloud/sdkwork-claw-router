@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wallet-pnl@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wallet_pnl",
+  "skill": {
+    "id": 26011,
+    "skillKey": "clawhub-wallet-pnl",
+    "name": "wallet-pnl"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wallet-pnl",
+    "url": "https://clawhub.ai/skills/wallet-pnl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wallet-pnl-fa9771a9f3dd0f36.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze any Solana wallet's trading history: win rate, realized PnL, trader type, and copy-trade rating. Use when the user wants to check if a wallet is wort..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ultranumblol",
+      "userId": "s173bc4c25bxkf7g35mssfrt6n85ahcr",
+      "displayName": "Lougseus",
+      "image": "https://avatars.githubusercontent.com/u/15081029?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 377,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772701552083,
+      "changelog": "Solana Wallet PnL Analyzer skill initial release:\n\n- Analyze any Solana wallet’s swap history for copy-trade evaluation.\n- Outputs win rate, realized PnL in SOL, trader classification, copy-trade rating, and top traded tokens.\n- Includes copy-trade rating guide and trader type definitions for clarity.\n- Supports both API-based (paid per request) and self-hosted analysis workflows.\n- Requires a Helius API key for transaction data access.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:744efdccee828f37f2894d63ed0d7bb8f99dc3f9fa19655c1d8789b288640655"
+}

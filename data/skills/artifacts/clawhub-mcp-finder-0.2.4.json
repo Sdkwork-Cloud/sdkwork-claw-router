@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mcp-finder@0.2.4",
+  "version": "0.2.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcp_finder",
+  "skill": {
+    "id": 17166,
+    "skillKey": "clawhub-mcp-finder",
+    "name": "Mcp Finder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcp-finder",
+    "url": "https://clawhub.ai/skills/mcp-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcp-finder-f752fd9b99618512.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find the right MCP server for your task. 6,700+ MCP servers indexed and ranked by community trust. No API key. For MCP + OpenClaw combined, see meyhem-capabi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "c5huracan",
+      "userId": "s173vpr4map3x4yc4hdhbbhj1d83ra1z",
+      "displayName": "c5huracan",
+      "image": "https://avatars.githubusercontent.com/u/93015898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 759,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.2.4",
+      "createdAt": 1773199506600,
+      "changelog": "Include finder.py in publish",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3e7474cd7312a6c36affe6cc14f99ed64438a6ffb822dd4711ecbe70d47b7b4a"
+}

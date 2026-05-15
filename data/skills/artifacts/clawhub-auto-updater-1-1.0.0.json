@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-updater-1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_updater_1",
+  "skill": {
+    "id": 35557,
+    "skillKey": "clawhub-auto-updater-1",
+    "name": "Auto Updater 1"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-updater-1",
+    "url": "https://clawhub.ai/skills/auto-updater-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-updater-1-b133ea211b141a9d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically update Clawdbot and all installed skills once daily. Runs via cron, checks for updates, applies them, and messages the user with a summary of w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tigertamvip",
+      "userId": "s171vwmtm81hafva67c196sr5n83hhtb",
+      "displayName": "tigertamvip",
+      "image": "https://avatars.githubusercontent.com/u/61303958?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774148787497,
+      "changelog": "Initial release—automatically keeps Clawdbot and all installed skills up to date.\n\n- Sets up a daily cron job to check and apply updates for Clawdbot and skills.\n- Sends a summary message detailing what was updated each day.\n- Supports easy setup, manual controls, and troubleshooting guidance.\n- Compatible with macOS and Linux.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:096c94074f1928369c45d86acf4db23f4e9dcf0a6523b9814baad8dd13f2914d"
+}

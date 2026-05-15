@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66172,
+  "uuid": "skill-clawhub-feishu-voice-sender",
+  "skillKey": "clawhub-feishu-voice-sender",
+  "name": "feishu-voice-sender - 飞书语音消息发送",
+  "summary": "飞书语音消息发送器。基于 Edge TTS，一键将文字转为语音发送到飞书。 使用场景： - 发送语音通知/提醒到飞书 - 文字转语音自动播报 触发词：飞书语音、语音发送、tts、文字转语音",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_voice_sender",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wwek",
+      "features": [
+        "飞书语音消息发送器。基于 Edge TTS，一键将文字转为语音发送到飞书。 使用场景：",
+        "发送语音通知/提醒到飞书",
+        "文字转语音自动播报 触发词：飞书语音、语音发送、tts、文字转语音"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-voice-sender@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1239403?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-voice-sender",
+      "url": "https://clawhub.ai/skills/feishu-voice-sender"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-voice-sender",
+    "url": "https://clawhub.ai/skills/feishu-voice-sender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-voice-sender-6949fc91849017d2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-voice-sender@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-voice-sender-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1bba6d74e7f44705a19088ffeac9d78568e7fc4d6b857c2285a8867c274d9eb3",
+      "artifactSizeBytes": 2439
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T03:39:08.738Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15715,
+  "uuid": "skill-clawhub-biver-builder",
+  "skillKey": "clawhub-biver-builder",
+  "name": "Biver Builder",
+  "summary": "Integration skill for Biver Landing Page Builder API. Use when: (1) Creating, updating, or deleting landing pages (2) Managing subdomains (.lp.biver.id) or c...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.biver_builder",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rama Aditya",
+      "features": [
+        "Integration skill for Biver Landing Page Builder API",
+        "Use when: (1) Creating, updating, or deleting landing pages (2) Managing subdomains (.lp.biver.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/biver-builder@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/213913142?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "biver-builder",
+      "url": "https://clawhub.ai/skills/biver-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "biver-builder",
+    "url": "https://clawhub.ai/skills/biver-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/biver-builder-37bfcfc4ba93573f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/biver-builder@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-biver-builder-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eea171711ec7ee48df720c7df2dbbd9d3c9073f043443ea6e69436c8d7ad051c",
+      "artifactSizeBytes": 2449
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T00:36:24.454Z"
+}

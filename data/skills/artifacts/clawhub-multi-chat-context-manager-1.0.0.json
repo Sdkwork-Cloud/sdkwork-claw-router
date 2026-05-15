@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/multi-chat-context-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_chat_context_manager",
+  "skill": {
+    "id": 19738,
+    "skillKey": "clawhub-multi-chat-context-manager",
+    "name": "Multi-Chat Context Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-chat-context-manager",
+    "url": "https://clawhub.ai/skills/multi-chat-context-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-chat-context-manager-0c69dedce8ebe99f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CLI tool to store and retrieve conversation contexts per channel/user."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "derick001",
+      "userId": "s17cgtq72c704n9jrtdh3v2eq983fhgb",
+      "displayName": "Derick",
+      "image": "https://avatars.githubusercontent.com/u/114499711?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 585,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772028252325,
+      "changelog": "- No changes detected in this version.\n- The skill remains at version 1.0.2 with no updates to functionality or documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f0af07b4cc85510f0be7e4028cfa91146365030e865a6ea90958ca01b4d36d45"
+}

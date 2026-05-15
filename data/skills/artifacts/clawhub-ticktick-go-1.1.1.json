@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ticktick-go@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ticktick_go",
+  "skill": {
+    "id": 54449,
+    "skillKey": "clawhub-ticktick-go",
+    "name": "TickTick CLI (ttg)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ticktick-go",
+    "url": "https://clawhub.ai/skills/ticktick-go",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ticktick-go-063d2e39e7109fd3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage TickTick tasks and projects via the `ttg` CLI (github.com/dhruvkelawala/ticktick-go). Full CRUD, checklists/subtasks with progress display, reminders,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dhruvkelawala",
+      "userId": "s179xdf510v7v000h9d7qs1w8583zp1w",
+      "displayName": "Dhruv Kelawala",
+      "image": "https://avatars.githubusercontent.com/u/50968441?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 501,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1773049410832,
+      "changelog": "Add progress display feature to docs",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:be8ec10a4ea953d38af4ba14ce33c679775210db0185dd01b8daff1c6bcc19b8"
+}

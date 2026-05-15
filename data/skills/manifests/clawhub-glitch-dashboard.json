@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15202,
+  "uuid": "skill-clawhub-glitch-dashboard",
+  "skillKey": "clawhub-glitch-dashboard",
+  "name": "Dashboard",
+  "summary": "Unified web dashboard for managing task queues, monitoring system metrics, viewing ZeroTier status, and streaming recent logs in real time.",
+  "version": "2026.2.18",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.glitch_dashboard",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Glitch",
+      "features": [
+        "Unified web dashboard for managing task queues, monitoring system metrics, viewing ZeroTier sta."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/glitch-dashboard@2026.2.18",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258746291?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "glitch-dashboard",
+      "url": "https://clawhub.ai/skills/glitch-dashboard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "glitch-dashboard",
+    "url": "https://clawhub.ai/skills/glitch-dashboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/glitch-dashboard-1fe1eb74abde8602.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/glitch-dashboard@2026.2.18",
+      "artifactUrl": "data/skills/artifacts/clawhub-glitch-dashboard-2026.2.18.json",
+      "version": "2026.2.18",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d028acf49c38327152f51033d250ee5dbc0ff90bf379f469f92723281c2c1fcf",
+      "artifactSizeBytes": 2369
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T19:55:23.301Z"
+}

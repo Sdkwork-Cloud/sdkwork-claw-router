@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-auto-publishing@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_auto_publishing",
+  "skill": {
+    "id": 57815,
+    "skillKey": "clawhub-wechat-auto-publishing",
+    "name": "全流程微信公众号自动发文 skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-auto-publishing",
+    "url": "https://clawhub.ai/skills/wechat-auto-publishing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-auto-publishing-5d0af281cc48cd35.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate a full local WeChat Official Account publishing workflow: environment setup, content drafting, image prep, publishing, archiving, and optional sched..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "16miku",
+      "userId": "s17afqafc9cxg79k2at04c4ydd83gnaq",
+      "displayName": "16Miku",
+      "image": "https://avatars.githubusercontent.com/u/196724264?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1775495101486,
+      "changelog": "- Added production-ready orchestrator template: `templates/run.production-example.sh`\n- Updated documentation with key real-world guidance:\n  - Noted that `freepublish` via API does not always match manual backend publishing for homepage visibility\n  - Recommended using draft-only mode in production; full publish mainly for testing\n  - Emphasized validating image files by real format, not just extension\n  - Stressed that multi-account setups should use isolated directories for safety\n- Expanded section on operational boundaries and recommended production practices",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:50c46d3cf06b86c93c9cb39f048c7cc02f883100d58d3884ae6cce5511e5678a"
+}

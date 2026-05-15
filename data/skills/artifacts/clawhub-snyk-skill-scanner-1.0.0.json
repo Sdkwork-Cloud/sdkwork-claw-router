@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/snyk-skill-scanner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.snyk_skill_scanner",
+  "skill": {
+    "id": 25522,
+    "skillKey": "clawhub-snyk-skill-scanner",
+    "name": "Snyk Skill Scanner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "snyk-skill-scanner",
+    "url": "https://clawhub.ai/skills/snyk-skill-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/snyk-skill-scanner-f7a20383ce5dbf1f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scan installed agent components (MCP servers, skills, agent tools) for security vulnerabilities using snyk-agent-scan. Use only when running uvx snyk-agent-s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "swiftking100",
+      "userId": "s179kwg47gaxk97e6cedk1a37d83m5qq",
+      "displayName": "SwiftKing100",
+      "image": "https://avatars.githubusercontent.com/u/16414610?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 377,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772595499355,
+      "changelog": "snyk-skill-scanner 1.0.0\n\n- Initial release of skill-scanner.\n- Provides documentation for scanning agent components (skills, MCP servers, tools) for security vulnerabilities using snyk-agent-scan.\n- Details quick scan commands, detected risk types (prompt injection, malware, credential leaks, etc.), and result interpretation.\n- Lists troubleshooting steps, skill locations, custom path scanning, and example output.\n- Includes link to official issue code reference.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e9e061ecb3b17197740bd2dba6a28ba141c16dc8fe54b24f21a3b213bed2b342"
+}

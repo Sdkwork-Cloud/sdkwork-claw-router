@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47494,
+  "uuid": "skill-clawhub-justoneapi-youku-search-video",
+  "skillKey": "clawhub-justoneapi-youku-search-video",
+  "name": "YOUKU Video Search API",
+  "summary": "Call GET /api/youku/search-video/v1 for YOUKU Video Search through JustOneAPI with keyword.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_youku_search_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Call GET /api/youku/search-video/v1 for YOUKU Video Search through JustOneAPI with keyword."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-youku-search-video@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-youku-search-video",
+      "url": "https://clawhub.ai/skills/justoneapi-youku-search-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-youku-search-video",
+    "url": "https://clawhub.ai/skills/justoneapi-youku-search-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-youku-search-video-b74aeb9355bc513e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-youku-search-video@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-youku-search-video-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a58f45f9b53e1d8abd036a2ec13886d62e6b33e626dfbe346e2305ad5e3ce19c",
+      "artifactSizeBytes": 1919
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T12:01:48.641Z"
+}

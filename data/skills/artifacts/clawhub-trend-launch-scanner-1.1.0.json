@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trend-launch-scanner@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trend_launch_scanner",
+  "skill": {
+    "id": 73114,
+    "skillKey": "clawhub-trend-launch-scanner",
+    "name": "趋势启动扫描器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trend-launch-scanner",
+    "url": "https://clawhub.ai/skills/trend-launch-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trend-launch-scanner-57578831fe0745eb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于历史技术指标验证，实时扫描筛选处于上升趋势初期的潜力股票，评分≥60分为重点关注标的。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jayden-zhong",
+      "userId": "s176spm6d59vka8srp6r8yznrh83xc9z",
+      "displayName": "Jayden-zhong",
+      "image": "https://avatars.githubusercontent.com/u/74336289?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 210,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776853631614,
+      "changelog": "v1.1.0: 统一评分v3.2(RSI重构+超跌加成)，扫描池扩至620只，支持行业分散输出，添加退市股二次过滤",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f604aa4fe15ab4fba69ee949740c5494a2fd3bfe46348d804f1c828de501c2bd"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moss-trade-bot-factory-en@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moss_trade_bot_factory_en",
+  "skill": {
+    "id": 18810,
+    "skillKey": "clawhub-moss-trade-bot-factory-en",
+    "name": "moss-trade-bot-factory-en"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moss-trade-bot-factory-en",
+    "url": "https://clawhub.ai/skills/moss-trade-bot-factory-en",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moss-trade-bot-factory-en-994aa364756cd3cc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Users describe a trading style in natural language, and the skill creates a crypto trading bot, runs local backtests, supports periodic reflection-driven evo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fei-moss",
+      "userId": "s1756w641jh09pbnr8r88wbh1h83n2rw",
+      "displayName": "fei-moss",
+      "image": "https://avatars.githubusercontent.com/u/221919131?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 359,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773893625616,
+      "changelog": "Summary: Adds an explicit, safe local Python environment setup for all bot scripts.\n\n- Added `scripts/setup_env.py` for managing a dedicated local Python virtual environment and dependencies.\n- Skill now asks for user confirmation before installing Python packages into `{baseDir}/.venv`.\n- All bot and data scripts prefer the `.venv` Python interpreter to ensure isolation from the system environment.\n- Updated documentation with a new \"One-Time Local Setup\" section and revised backtest command samples to use the new Python environment.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c280502571cc4bbd3e5e066d6d2e5670433d3deab7fc3987e6532fe49c9c5064"
+}

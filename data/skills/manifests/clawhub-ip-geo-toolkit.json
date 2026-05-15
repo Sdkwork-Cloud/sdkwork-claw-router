@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33755,
+  "uuid": "skill-clawhub-ip-geo-toolkit",
+  "skillKey": "clawhub-ip-geo-toolkit",
+  "name": "Ip Geo Toolkit",
+  "summary": "Look up IP geolocation, find your public IP, perform reverse DNS, and run bulk IP lookups. Uses free APIs (ip-api.com, ipify) with no API key required. No ex...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ip_geo_toolkit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "John Wang",
+      "features": [
+        "Look up IP geolocation, find your public IP, perform reverse DNS, and run bulk IP lookups",
+        "Uses free APIs (ip-api.com, ipify) with no API key required",
+        "No ex..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ip-geo-toolkit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20619402?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ip-geo-toolkit",
+      "url": "https://clawhub.ai/skills/ip-geo-toolkit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ip-geo-toolkit",
+    "url": "https://clawhub.ai/skills/ip-geo-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ip-geo-toolkit-e973a33ee6978a76.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ip-geo-toolkit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ip-geo-toolkit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c777e50a5fb3200cae1181ddd57c08833b20577f7645fb92853ac84e88c03e3e",
+      "artifactSizeBytes": 2367
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T13:07:33.089Z"
+}

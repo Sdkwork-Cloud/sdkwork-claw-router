@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-prompting-guide@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_prompting_guide",
+  "skill": {
+    "id": 12634,
+    "skillKey": "clawhub-video-prompting-guide",
+    "name": "Video Prompting Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-prompting-guide",
+    "url": "https://clawhub.ai/skills/video-prompting-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-prompting-guide-df58dc85de9295c6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Best practices and techniques for writing effective AI video generation prompts. Covers: Veo, Seedance, Wan, Grok, Kling, Runway, Pika, Sora prompting strate..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "okaris",
+      "userId": "s1737xapsjy8k5qnagtfyf5nrx85t72x",
+      "displayName": "Ömer Karışman",
+      "image": "https://avatars.githubusercontent.com/u/1448702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1475,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1771403485816,
+      "changelog": "- Adds a comprehensive guide to effective AI video prompt writing for multiple models (Veo, Seedance, Wan, Grok, Kling, Runway, Pika, Sora)\n- Introduces a clear prompt structure formula, with categorized examples for shot types, lighting, camera movement, and style\n- Provides prompt templates and breakdowns for common use cases (product demos, documentaries, urban, food, tech)\n- Shares model-specific tips to optimize prompt results per platform\n- Includes detailed tables for cinematic language, common mistakes, and iterative prompting best practices\n- Offers install instructions and links to related skills and documentation for easy reference",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3bc12a9bbb0fbf096e07201a469e34c1d59c198943cde6b39389a540f87aaf29"
+}

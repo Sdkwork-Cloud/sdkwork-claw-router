@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19824,
+  "uuid": "skill-clawhub-sonarr-fixed",
+  "skillKey": "clawhub-sonarr-fixed",
+  "name": "Sonarr Fixed",
+  "summary": "Search and add TV shows to Sonarr. Supports monitor options, search-on-add. FORK of jordyvandomselaar/sonarr with fixed metadata.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sonarr_fixed",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "frannunpal",
+      "features": [
+        "Search and add TV shows to Sonarr",
+        "Supports monitor options, search-on-add",
+        "FORK of jordyvandomselaar/sonarr with fixed metadata."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sonarr-fixed@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168190082?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sonarr-fixed",
+      "url": "https://clawhub.ai/skills/sonarr-fixed"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sonarr-fixed",
+    "url": "https://clawhub.ai/skills/sonarr-fixed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sonarr-fixed-c6577dd6568f83dd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sonarr-fixed@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-sonarr-fixed-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8e708168fb1596f6c8b40421e7f26fc4bb02ffc364331ad8a9fb12f8254e25a1",
+      "artifactSizeBytes": 2123
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T11:48:21.406Z"
+}

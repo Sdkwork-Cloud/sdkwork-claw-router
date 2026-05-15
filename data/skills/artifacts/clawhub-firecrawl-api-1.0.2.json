@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/firecrawl-api@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.firecrawl_api",
+  "skill": {
+    "id": 12402,
+    "skillKey": "clawhub-firecrawl-api",
+    "name": "Firecrawl"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "firecrawl-api",
+    "url": "https://clawhub.ai/skills/firecrawl-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/firecrawl-api-f5c3703d9f36971d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Firecrawl API integration with managed authentication. Scrape, crawl, map, and search web content. Use this skill when users want to extract content from web..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1614,
+      "installsAllTime": 9,
+      "installsCurrent": 8,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1777587951988,
+      "changelog": "Version 1.0.2 of the firecrawl-api skill\n\n- Updated security & permissions section: All API operations (scrape, crawl, map, search, extract, agent) now require explicit user approval.\n- Added detailed cautions for using browser actions and custom headers, emphasizing user confirmation before execution.\n- Clarified the scope of access to include site mapping, structured extraction, and browser sessions.\n- Highlighted the potential high credit consumption for large crawls and advised setting reasonable limits.\n- No changes to code or functional API endpoints. Documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a0f423e578d1abd4dc13e279b2ab1a33437fe23efd174cf113a9a778993fb6fa"
+}

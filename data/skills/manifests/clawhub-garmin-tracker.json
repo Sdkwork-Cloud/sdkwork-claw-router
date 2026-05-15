@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16687,
+  "uuid": "skill-clawhub-garmin-tracker",
+  "skillKey": "clawhub-garmin-tracker",
+  "name": "Garmin Tracker",
+  "summary": "Rebuild and maintain garmin_tracking.json from Garmin web data (activities + training plan) with a fixed schema from 2026-02-01.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.garmin_tracker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ricardo Trevisan",
+      "features": [
+        "Rebuild and maintain garmin_tracking.json from Garmin web data (activities + training plan) wit."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/garmin-tracker@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1165694?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "garmin-tracker",
+      "url": "https://clawhub.ai/skills/garmin-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "garmin-tracker",
+    "url": "https://clawhub.ai/skills/garmin-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/garmin-tracker-d577a53f6f32422c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/garmin-tracker@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-garmin-tracker-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:69b2388d899f8c78b08f3bf259bcb92ae67227d7b1a28f395eab9885448f01c5",
+      "artifactSizeBytes": 2036
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T21:16:53.468Z"
+}

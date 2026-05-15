@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hy-3d-generation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hy_3d_generation",
+  "skill": {
+    "id": 65584,
+    "skillKey": "clawhub-hy-3d-generation",
+    "name": "HY 3D Generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hy-3d-generation",
+    "url": "https://clawhub.ai/skills/hy-3d-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hy-3d-generation-88e4153aa768b33d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "输入文字或图片，通过混元生3D 3.0、3.1 模型，生成更高精度以及更高质量的3D 模型，支持文生3D，图生3D，多视图生3D，单几何生成（白模），草图生3D，智能拓扑生3D功能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "neck-cn",
+      "userId": "s172ywgxmjx97dsa2kkf2ckbps83mvn1",
+      "displayName": "败毒",
+      "image": "https://avatars.githubusercontent.com/u/37149246?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 717,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772804291190,
+      "changelog": "Initial release of hy-3d-generation v1.0.0\n\n- Enables text or image input to generate high-quality 3D models using Tencent Cloud Hunyuan 3D models (versions 3.0 & 3.1).\n- Supports multiple modes: text-to-3D, image-to-3D, multi-view images, sketch-to-3D, geometry-only (white model), and smart topology.\n- Offers multiple script workflows (one-step, submit/query by job ID) and output formats (OBJ, GLB, STL, USDZ, FBX).\n- Includes automatic dependency installation and credential detection.\n- Provides detailed configuration and execution instructions for end users and agents.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b53998304d70b82d96ae36ce098da82cebaa97614d3865595a7bb1959639a653"
+}

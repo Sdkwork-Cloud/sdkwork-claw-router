@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27678,
+  "uuid": "skill-clawhub-binance-alert",
+  "skillKey": "clawhub-binance-alert",
+  "name": "BinanceAlert",
+  "summary": "Binance smart alert system. Monitors price/change alerts, new listings, Alpha airdrop opportunities, and HODLer announcements via Telegram. No Binance API Ke...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.binance_alert",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cnwpdb",
+      "features": [
+        "Binance smart alert system",
+        "Monitors price/change alerts, new listings, Alpha airdrop opportunities, and HODLer announcemen.",
+        "No Binance API Ke..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/binance-alert@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20767942?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "binance-alert",
+      "url": "https://clawhub.ai/skills/binance-alert"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "binance-alert",
+    "url": "https://clawhub.ai/skills/binance-alert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/binance-alert-f91685f4f26ce000.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/binance-alert@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-binance-alert-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:22f04737533c737a746435533bbe48d94a2546f9c6ef0e95da38a43a64c3bd18",
+      "artifactSizeBytes": 1954
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T16:28:31.077Z"
+}

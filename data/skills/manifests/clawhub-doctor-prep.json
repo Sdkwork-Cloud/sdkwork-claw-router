@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27235,
+  "uuid": "skill-clawhub-doctor-prep",
+  "skillKey": "clawhub-doctor-prep",
+  "name": "Doctor Prep",
+  "summary": "Help users prepare for doctor appointments by organizing symptoms, questions, medication lists, and medical history. Use when users have an upcoming medical...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doctor_prep",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wenbing Ji",
+      "features": [
+        "Help users prepare for doctor appointments by organizing symptoms, questions, medication lists,.",
+        "Use when users have an upcoming medical..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doctor-prep@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8498518?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doctor-prep",
+      "url": "https://clawhub.ai/skills/doctor-prep"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doctor-prep",
+    "url": "https://clawhub.ai/skills/doctor-prep",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doctor-prep-b2f4de6598a61e97.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doctor-prep@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-doctor-prep-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:87e5d2642dcfbba2a7ef81fc609c1436c1ee4012e41c31d8d40cb6c568ab44f7",
+      "artifactSizeBytes": 1865
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T04:23:51.666Z"
+}

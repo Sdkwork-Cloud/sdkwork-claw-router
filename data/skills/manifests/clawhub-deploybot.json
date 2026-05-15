@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35356,
+  "uuid": "skill-clawhub-deploybot",
+  "skillKey": "clawhub-deploybot",
+  "name": "Deploybot",
+  "summary": "DeployBot integration. Manage data, records, and automate workflows. Use when the user wants to interact with DeployBot data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deploybot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "DeployBot integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with DeployBot data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deploybot@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deploybot",
+      "url": "https://clawhub.ai/skills/deploybot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deploybot",
+    "url": "https://clawhub.ai/skills/deploybot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deploybot-0fafdd77909045ad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deploybot@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-deploybot-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ca45cf70c5f1340b41d6c63344c7b2b4ebe1d0b62897db655bdb3dfbb87562e9",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:23:37.319Z"
+}

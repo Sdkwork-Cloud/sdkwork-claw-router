@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67316,
+  "uuid": "skill-clawhub-ftp-sync",
+  "skillKey": "clawhub-ftp-sync",
+  "name": "Ftp Sync",
+  "summary": "FTP/SFTP 同步工具。本地与远程服务器文件同步，支持增量备份。适合网站维护和服务器管理。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ftp_sync",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SxLiuYu",
+      "features": [
+        "FTP/SFTP 同步工具。本地与远程服务器文件同步，支持增量备份。适合网站维护和服务器管理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ftp-sync@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95198625?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ftp-sync",
+      "url": "https://clawhub.ai/skills/ftp-sync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ftp-sync",
+    "url": "https://clawhub.ai/skills/ftp-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ftp-sync-e0c1e84a317c5061.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ftp-sync@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ftp-sync-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0806ecf81b83b48ea657ef4c42d839f6479ca92afb49061c6a6e161d4a83228f",
+      "artifactSizeBytes": 2016
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T09:50:48.679Z"
+}

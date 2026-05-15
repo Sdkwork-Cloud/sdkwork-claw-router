@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/last30days-official@3.1.0-open",
+  "version": "3.1.0-open",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.last30days_official",
+  "skill": {
+    "id": 8804,
+    "skillKey": "clawhub-last30days-official",
+    "name": "Last30days Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "last30days-official",
+    "url": "https://clawhub.ai/skills/last30days-official",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/last30days-official-cbcd56f94b8ea09a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Research what people actually say about any topic in the last 30 days. Pulls posts and engagement from Reddit, X, YouTube, TikTok, Hacker News, Polymarket, G..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mvanhorn",
+      "userId": "s17ea85t738dtyvg6gkwt7zt5h84596q",
+      "displayName": "Matt Van Horn",
+      "image": "https://avatars.githubusercontent.com/u/455140?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 5510,
+      "installsAllTime": 31,
+      "installsCurrent": 30,
+      "stars": 12,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "3.1.0-open",
+      "createdAt": 1776920255921,
+      "changelog": "Republish after 2-week ClawHub gap. Ships env.py get_config() fix (closes #307/#195), current v3 SKILL.md (closes #236), and all 3.0.10-3.0.14 work. See CHANGELOG 3.1.0 entry.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b98d71c92d0f9188d8d94ad006f9c8b09a0f98932cd68731d9f18c0fac378364"
+}

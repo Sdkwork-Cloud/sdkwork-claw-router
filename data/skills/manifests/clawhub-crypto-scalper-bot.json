@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45383,
+  "uuid": "skill-clawhub-crypto-scalper-bot",
+  "skillKey": "clawhub-crypto-scalper-bot",
+  "name": "Crypto Scalper Bot",
+  "summary": "Automated Binance Futures USDT-M scalping bot using RSI, EMA, Volume, Bollinger Bands, with auto SL/TP, Telegram alerts, and health monitoring.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_scalper_bot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mail-eth",
+      "features": [
+        "Automated Binance Futures USDT-M scalping bot using RSI, EMA, Volume, Bollinger Bands, with aut."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crypto-scalper-bot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/137410745?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crypto-scalper-bot",
+      "url": "https://clawhub.ai/skills/crypto-scalper-bot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-scalper-bot",
+    "url": "https://clawhub.ai/skills/crypto-scalper-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-scalper-bot-9241b8a191f7ac7f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crypto-scalper-bot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crypto-scalper-bot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:102e08da3cdd21eef2ebb6135a18cc8719d9844d63d7489fbd1d1a17a3005504",
+      "artifactSizeBytes": 2283
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T07:28:01.179Z"
+}

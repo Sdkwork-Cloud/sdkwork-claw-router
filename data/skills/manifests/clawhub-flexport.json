@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35259,
+  "uuid": "skill-clawhub-flexport",
+  "skillKey": "clawhub-flexport",
+  "name": "Flexport",
+  "summary": "Flexport integration. Manage data, records, and automate workflows. Use when the user wants to interact with Flexport data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flexport",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Flexport integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Flexport data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flexport@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flexport",
+      "url": "https://clawhub.ai/skills/flexport"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flexport",
+    "url": "https://clawhub.ai/skills/flexport",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flexport-249304410f7e7628.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flexport@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-flexport-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:74257e07d790148026a0bf8ece2a03ecd05592ef64a88576655f9201c86331b4",
+      "artifactSizeBytes": 1838
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:28:16.004Z"
+}

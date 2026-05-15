@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lb-neon-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lb_neon_skill",
+  "skill": {
+    "id": 9942,
+    "skillKey": "clawhub-lb-neon-skill",
+    "name": "Neon Database Complete Documentation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lb-neon-skill",
+    "url": "https://clawhub.ai/skills/lb-neon-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lb-neon-skill-21f14ba4784cb091.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete Neon Serverless Postgres documentation. Covers serverless setup, branching, autoscaling, integrations (Vercel, Drizzle, Prisma), connection pooling, extensions, and best practices."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leonaaardob",
+      "userId": "publishers:leonaaardob",
+      "displayName": "leonaaardob",
+      "image": "https://avatars.githubusercontent.com/u/207195840?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2993,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770475827172,
+      "changelog": "- Initial release of Neon Database skill, providing complete serverless Postgres documentation.\n- Includes 546 markdown files (6.8MB) covering setup, branching, autoscaling, integrations (Vercel, Drizzle, Prisma, Next.js), connection pooling, data import, extensions, and security.\n- Features step-by-step guides, API/CLI reference, and best practices.\n- Integrates documentation for authentication providers and AI/ML features (pgvector).\n- Security notice: command examples require explicit user approval before execution.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ceea996bbcb434424d97bcb2b3809fa6ecd8c3205d52f9df6cfedeab8734b301"
+}

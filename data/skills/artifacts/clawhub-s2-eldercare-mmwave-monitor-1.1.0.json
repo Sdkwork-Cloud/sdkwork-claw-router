@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/s2-eldercare-mmwave-monitor@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.s2_eldercare_mmwave_monitor",
+  "skill": {
+    "id": 38199,
+    "skillKey": "clawhub-s2-eldercare-mmwave-monitor",
+    "name": "Micro-Doppler Life-Safety Engine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "s2-eldercare-mmwave-monitor",
+    "url": "https://clawhub.ai/skills/s2-eldercare-mmwave-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/s2-eldercare-mmwave-monitor-bdabec8244d35859.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detects elder falls and apnea using privacy-safe 60/77 GHz mmWave radar with real-time micro-Doppler STFT analysis for emergency alerts and response."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "spacesq",
+      "userId": "s17c8pmv1e8tb2mcc5aset88e183hq1t",
+      "displayName": "MilesXiang",
+      "image": "https://avatars.githubusercontent.com/u/259359437?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774086657507,
+      "changelog": "**Skill version 1.1.0 introduces enhanced safety controls and secure actuation defaults.**\n\n- Adds a security-focused dry-run (safe mode) that intercepts all outbound REST requests by default; physical actuation only occurs if explicitly enabled via environment variables.\n- Environment variable `S2_ENABLE_REAL_ACTUATION` must be set to \"True\" and Home Assistant credentials provided for real-world hardware control.\n- All DSP algorithms (fall detection, spectrogram generation) remain fully operational in dry-run mode.\n- Installation and configuration steps clarified for both simulation and real hardware deployment.\n- Strong warnings and best practices emphasized for user safety and secure operation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:02458824aae037b7921395a28afc13243019881e053c4a8d94d60acbc1287cad"
+}

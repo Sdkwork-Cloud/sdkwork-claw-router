@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/better-memory@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.better_memory",
+  "skill": {
+    "id": 55070,
+    "skillKey": "clawhub-better-memory",
+    "name": "Better Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "better-memory",
+    "url": "https://clawhub.ai/skills/better-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/better-memory-5642ccf71c79fc66.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "One-shot smart installation and ongoing maintenance for a native OpenClaw memory stack with L1 daily logs (`memory/YYYY-MM-DD.md`), L2 sidecar summaries, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fuuuuujichaos",
+      "userId": "s17evsvse8hdv5eeq1m2sppkad83g2s5",
+      "displayName": "fuuuuujichaos",
+      "image": "https://avatars.githubusercontent.com/u/266231952?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 266,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1775233718649,
+      "changelog": "Major upgrade: Switch to a native Python-based memory management system with smart install, typed multi-layer memory, and improved review/cleanup workflows.\n\n- Added scripts for smart installation, daily/weekly/monthly memory review, legacy migration, and cron template generation.\n- Introduced structured memory layers (L1 daily logs, L2 sidecar summaries, L3 rollups) and typed taxonomy (`experience`, `value`, `standard`).\n- Moved configuration and operations from JavaScript to Python; removed legacy JS files and configs.\n- Improved migration safety: preserves existing user data, generates reviews and editable plans instead of automatic changes.\n- Monthly review now produces non-destructive reports and actions for user-approved cleanup.\n- Updated documentation to detail new commands, installation options, and compatibility guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ba01b795999f2b6966f90a67083ba1725b2ff4398728805fa7cea2c58b032ecd"
+}

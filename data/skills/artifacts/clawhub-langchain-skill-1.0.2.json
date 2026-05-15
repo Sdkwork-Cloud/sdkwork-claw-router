@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/langchain-skill@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.langchain_skill",
+  "skill": {
+    "id": 24558,
+    "skillKey": "clawhub-langchain-skill",
+    "name": "Langchain Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "langchain-skill",
+    "url": "https://clawhub.ai/skills/langchain-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/langchain-skill-04c19d3051307c67.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Python skill using LangChain to manage conversation memory and chains, enabling context-aware, concise Vietnamese replies with customizable prompts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "s0nocean",
+      "userId": "s17bbxn2dv87rbx2fxk9s7k16h83gaky",
+      "displayName": "S0nOcean",
+      "image": "https://avatars.githubusercontent.com/u/125983916?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 398,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773759688176,
+      "changelog": "- Updated Gemini backend support from Gemini 1.5 Flash to Gemini 2.0 Flash.\n- Documentation (SKILL.md) revised to reflect the new supported Gemini model.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c1b6b11a935091333e07d38e755375bb63149671e31ab9ef9ca5f956e7ae5fb2"
+}

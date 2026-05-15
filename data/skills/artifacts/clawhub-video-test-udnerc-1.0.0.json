@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-test-udnerc@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_test_udnerc",
+  "skill": {
+    "id": 43184,
+    "skillKey": "clawhub-video-test-udnerc",
+    "name": "Video Test Udnerc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-test-udnerc",
+    "url": "https://clawhub.ai/skills/video-test-udnerc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-test-udnerc-a666d547250a0519.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get processed test video ready to post, without touching a single slider. Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say something lik..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775949280937,
+      "changelog": "Initial release of Video Test Render — Test and Export Video Files\n\n- Upload raw video and request test renders to quickly verify quality and playback settings.\n- Automatic connection and authentication with cloud video processing backend; 100 free credits issued to new users.\n- Handles common video formats (MP4, MOV, AVI, WebM; max 500MB) and outputs 1080p MP4 files.\n- Easy command workflows for exporting videos, checking credits, viewing status, and batch or iterative editing.\n- Clear guidance on supported actions, error codes, and troubleshooting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dbf15c706972b23ab65a95b2cffaf8d5dbe810d26b80e685bbf45ada12f14df8"
+}

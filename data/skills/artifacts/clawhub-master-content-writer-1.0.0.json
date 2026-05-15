@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/master-content-writer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.master_content_writer",
+  "skill": {
+    "id": 57655,
+    "skillKey": "clawhub-master-content-writer",
+    "name": "Master Content Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "master-content-writer",
+    "url": "https://clawhub.ai/skills/master-content-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/master-content-writer-cb4f8f9994d15568.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-platform content generator for Chinese social media. Produces publish-ready posts for 小红书, 知乎, 公众号, and 抖音 with platform-native formatting, hooks, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "davidunderwood7970",
+      "userId": "s17ebtjn444pny4scrdhxrshzx84qb2y",
+      "displayName": "davidunderwood7970",
+      "image": "https://avatars.githubusercontent.com/u/266227975?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776003432411,
+      "changelog": "Version 1.0.1\n\n- Added support for generating publish-ready content for major Chinese social media platforms: 小红书, 知乎, 公众号, and 抖音.\n- Introduced platform-native formatting templates with hooks, CTAs, and recommended word counts.\n- Includes an input confirmation workflow for topic, platform, style, and more.\n- Built-in content quality checklist and editorial guidelines to ensure originality and compliance.\n- Supports image suggestion requests and platform-specific SEO tagging.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bbbaade712ab2d74f787e4144ebb74aa4a90d3efe02a8dd7f071efc2cc7062fd"
+}

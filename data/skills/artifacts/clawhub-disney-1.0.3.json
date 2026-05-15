@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/disney@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.disney",
+  "skill": {
+    "id": 30188,
+    "skillKey": "clawhub-disney",
+    "name": "Just a regular mouse"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "disney",
+    "url": "https://clawhub.ai/skills/disney",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/disney-34a533dfd7273a9b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Render an ASCII art of Mickey Mouse using geometric circles for ears and head, placing eyes, nose, and mouth correctly for a recognizable silhouette."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "duanc-chao",
+      "userId": "publishers:duanc-chao",
+      "displayName": "wow",
+      "image": "https://avatars.githubusercontent.com/u/178591028?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 276,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774021724386,
+      "changelog": "- Updated visual examples in the guide to use new Unicode/emoji art styles for the \"sitting\" and \"line art\" mouse illustrations.\n- Swapped the classic ASCII and Unicode examples between the guide visuals and Python code snippets for clarity.\n- No code or logic changes were made; instructions and art samples were reorganized for consistency.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c7d4f17471b5efca0fcd781ce537d603c06f035de8aee3c1881b1a4d8b424c3b"
+}

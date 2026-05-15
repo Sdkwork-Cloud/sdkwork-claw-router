@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40601,
+  "uuid": "skill-clawhub-singapore-sme-compliance",
+  "skillKey": "clawhub-singapore-sme-compliance",
+  "name": "Singapore SME Compliance",
+  "summary": "Help Singapore SMEs automate compliance tasks: GST calculation, PEPPOL invoice validation, tax report generation, and IRAS filing deadlines. Use when: calcul...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.singapore_sme_compliance",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "redwoo",
+      "features": [
+        "Help Singapore SMEs automate compliance tasks: GST calculation, PEPPOL invoice validation, tax.",
+        "Use when: calcul..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/singapore-sme-compliance@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5707433?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "singapore-sme-compliance",
+      "url": "https://clawhub.ai/skills/singapore-sme-compliance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "singapore-sme-compliance",
+    "url": "https://clawhub.ai/skills/singapore-sme-compliance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/singapore-sme-compliance-b9f6b631285e6594.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/singapore-sme-compliance@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-singapore-sme-compliance-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ea2a6a579041478229e3a69fb3e87f4ae5fac1035655a54276ab1bac2e3f679b",
+      "artifactSizeBytes": 1986
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T01:15:25.658Z"
+}

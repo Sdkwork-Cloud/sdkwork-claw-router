@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17077,
+  "uuid": "skill-clawhub-video-sourcing",
+  "skillKey": "clawhub-video-sourcing",
+  "name": "Video Sourcing",
+  "summary": "Run the Video Sourcing Agent with deterministic, concise chat UX for /video_sourcing using a pinned self-bootstrap runtime.",
+  "version": "0.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_sourcing",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Samuel Zhang",
+      "features": [
+        "Run the Video Sourcing Agent with deterministic, concise chat UX for /video_sourcing using a pi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-sourcing@0.2.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/68740129?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-sourcing",
+      "url": "https://clawhub.ai/skills/video-sourcing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-sourcing",
+    "url": "https://clawhub.ai/skills/video-sourcing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-sourcing-0ac10ba70311e9ee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-sourcing@0.2.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-sourcing-0.2.5.json",
+      "version": "0.2.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8b9b9d665aeaff4ff095cb672e2cd9b782ea44acc167037ef74b17ab9a813626",
+      "artifactSizeBytes": 1999
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T19:55:47.128Z"
+}

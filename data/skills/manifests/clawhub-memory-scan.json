@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12002,
+  "uuid": "skill-clawhub-memory-scan",
+  "skillKey": "clawhub-memory-scan",
+  "name": "Memory Scan",
+  "summary": "Scans OpenClaw agent memory files and workspace configs for malicious content, credential leaks, prompt injections, and security threats.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_scan",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dgriffin831",
+      "features": [
+        "Scans OpenClaw agent memory files and workspace configs for malicious content, credential leaks."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-scan@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16494003?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-scan",
+      "url": "https://clawhub.ai/skills/memory-scan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-scan",
+    "url": "https://clawhub.ai/skills/memory-scan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-scan-268733ade13bee67.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-scan@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-scan-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2bf40c405cb3e83b30532339f86c7fe3406c30216305839e798a57cd729653cb",
+      "artifactSizeBytes": 2625
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T20:19:01.966Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34330,
+  "uuid": "skill-clawhub-shareholder-value",
+  "skillKey": "clawhub-shareholder-value",
+  "name": "Shareholder Value",
+  "summary": "Calculate economic value added and shareholder return. Use for investment analysis, valuation, and capital allocation decisions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shareholder_value",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linuszz",
+      "features": [
+        "Calculate economic value added and shareholder return",
+        "Use for investment analysis, valuation, and capital allocation decisions."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shareholder-value@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46770204?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shareholder-value",
+      "url": "https://clawhub.ai/skills/shareholder-value"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shareholder-value",
+    "url": "https://clawhub.ai/skills/shareholder-value",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shareholder-value-a787e70c83f0ef69.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shareholder-value@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shareholder-value-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:276de3033442f3dbdd5f63e0ffd7c1b56e6f22b281c62b3fe067e2df1403150a",
+      "artifactSizeBytes": 2373
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T12:05:08.809Z"
+}

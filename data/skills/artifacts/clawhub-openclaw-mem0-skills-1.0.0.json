@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-mem0-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_mem0_skills",
+  "skill": {
+    "id": 52335,
+    "skillKey": "clawhub-openclaw-mem0-skills",
+    "name": "Mem0 Memory Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-mem0-skills",
+    "url": "https://clawhub.ai/skills/openclaw-mem0-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-mem0-skills-0d1af355d4a25b08.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Persistent long-term memory across sessions — remembers your identity, preferences, rules, tech stack, and projects so every new conversation starts with ful..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kartik-mem0",
+      "userId": "s174wzr5wer4q2yggghsp7n5p1840sk4",
+      "displayName": "Kartik",
+      "image": "https://avatars.githubusercontent.com/u/266917184?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775742707975,
+      "changelog": "- Initial release of mem0-memory skill enabling persistent, cross-session memory management powered by Mem0.\n- Supports onboarding with guided questions to build user profile (identity, preferences, rules, tech stack, projects).\n- Provides review functionality for users to audit, edit, and update stored memories interactively.\n- Allows exporting all stored memories to structured markdown.\n- Includes handoff/briefing workflow for sharing user context with new agents.\n- Displays clear guidance if the Mem0 plugin or API key is missing; setup required for operation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e0a252c4740daf4f26e70598c510999e8298785d22a29abe9e83d86820f6e570"
+}

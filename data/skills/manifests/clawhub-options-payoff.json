@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29023,
+  "uuid": "skill-clawhub-options-payoff",
+  "skillKey": "clawhub-options-payoff",
+  "name": "Options Payoff",
+  "summary": "Generate an interactive options payoff curve chart with dynamic parameter controls. Use this skill whenever the user shares an options position screenshot, d...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.options_payoff",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "himself65",
+      "features": [
+        "Generate an interactive options payoff curve chart with dynamic parameter controls",
+        "Use this skill whenever the user shares an options position screenshot, d..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/options-payoff@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14026360?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "options-payoff",
+      "url": "https://clawhub.ai/skills/options-payoff"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "options-payoff",
+    "url": "https://clawhub.ai/skills/options-payoff",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/options-payoff-46225412f48dcc06.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/options-payoff@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-options-payoff-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d1d97e4f02c7b4964fc34b2e93e8d49c9fe1bf97e6e353163df4e3c0c1e6d27a",
+      "artifactSizeBytes": 2497
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T06:42:20.052Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20608,
+  "uuid": "skill-clawhub-harness-engineering",
+  "skillKey": "clawhub-harness-engineering",
+  "name": "harness-engineering",
+  "summary": "Evolve an existing repository toward Harness Engineering by making it more legible to agents, moving critical knowledge into repo-local artifacts, adding pre...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.harness_engineering",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "doanbactam",
+      "features": [
+        "Evolve an existing repository toward Harness Engineering by making it more legible to agents, m."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/harness-engineering@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24356000?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "harness-engineering",
+      "url": "https://clawhub.ai/skills/harness-engineering"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "harness-engineering",
+    "url": "https://clawhub.ai/skills/harness-engineering",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/harness-engineering-43f588eb0663c619.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/harness-engineering@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-harness-engineering-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9384b425cc5fe523d05d432f6503db0081b362bd6efb8589f7f63fc36b0be3d5",
+      "artifactSizeBytes": 2492
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T08:22:21.799Z"
+}

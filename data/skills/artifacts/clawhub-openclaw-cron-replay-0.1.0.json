@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-cron-replay@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_cron_replay",
+  "skill": {
+    "id": 41012,
+    "skillKey": "clawhub-openclaw-cron-replay",
+    "name": "OpenClaw Cron Replay"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-cron-replay",
+    "url": "https://clawhub.ai/skills/openclaw-cron-replay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-cron-replay-0146d86bde3c7947.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Replay and debug OpenClaw cron job message formatting and delivery locally using saved configs and results with a trusted openclaw-cron-replay installation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pfrederiksen",
+      "userId": "s17fk3ter6h1bve6rnejmqxjfx83eymx",
+      "displayName": "Paul Frederiksen",
+      "image": "https://avatars.githubusercontent.com/u/908172?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1776799883480,
+      "changelog": "Initial release: safe OpenClaw skill for replaying cron formatting and delivery decisions using a trusted local openclaw-cron-replay install.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:06ebf32a9c1a48328a7c883765bc3afee400400421dbc35adfdb32d357a8b11f"
+}

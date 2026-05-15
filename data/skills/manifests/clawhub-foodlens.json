@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39623,
+  "uuid": "skill-clawhub-foodlens",
+  "skillKey": "clawhub-foodlens",
+  "name": "FoodLens",
+  "summary": "AI-powered meal photo recognition and nutrition tracking. Use when a user sends a food/meal photo with keywords like breakfast, lunch, dinner, snack, or \"wha...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.foodlens",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Karl Yang",
+      "features": [
+        "AI-powered meal photo recognition and nutrition tracking",
+        "Use when a user sends a food/meal photo with keywords like breakfast, lunch, dinner, snack, or."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/foodlens@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34668252?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "foodlens",
+      "url": "https://clawhub.ai/skills/foodlens"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "foodlens",
+    "url": "https://clawhub.ai/skills/foodlens",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/foodlens-37a57b9f5108e1c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/foodlens@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-foodlens-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4965c990adedcc436adb3e77da74641a8377306988f4b5b98dafe5a69ea48c9d",
+      "artifactSizeBytes": 1950
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T21:40:16.187Z"
+}

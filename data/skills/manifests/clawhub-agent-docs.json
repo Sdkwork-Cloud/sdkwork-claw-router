@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9781,
+  "uuid": "skill-clawhub-agent-docs",
+  "skillKey": "clawhub-agent-docs",
+  "name": "Agent Docs",
+  "summary": "Create documentation optimized for AI agent consumption. Use when writing SKILL.md files, README files, API docs, or any documentation that will be read by LLMs in context windows. Helps structure content for RAG retrieval, token efficienc.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_docs",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tylervovan",
+      "features": [
+        "Create documentation optimized for AI agent consumption",
+        "Use when writing SKILL.md files, README files, API docs, or any documentation that will be read.",
+        "Helps structure content for RAG retrieval, token efficiency, and the Hybrid Context Hierarchy."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-docs@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/225073022?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-docs",
+      "url": "https://clawhub.ai/skills/agent-docs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-docs",
+    "url": "https://clawhub.ai/skills/agent-docs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-docs-f037d142a06b5d27.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-docs@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-docs-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:47c94985e52e2a23f5aea745ff70f6c510bf529a5ad37657c4eef9e59a8e9069",
+      "artifactSizeBytes": 1984
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T04:59:42.939Z"
+}

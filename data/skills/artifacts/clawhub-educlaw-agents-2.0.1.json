@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/educlaw-agents@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.educlaw_agents",
+  "skill": {
+    "id": 29899,
+    "skillKey": "clawhub-educlaw-agents",
+    "name": "Educlaw Multi-Subject Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "educlaw-agents",
+    "url": "https://clawhub.ai/skills/educlaw-agents",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/educlaw-agents-2e87bfd3b5e4546b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-agent learning system supporting English, Math, and Chinese with isolated contexts and automatic routing by subject."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaohuiing",
+      "userId": "s1783js3hs4v9nj6h2yej76qan83gaf6",
+      "displayName": "huiing",
+      "image": "https://avatars.githubusercontent.com/u/17474842?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 293,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1773560049204,
+      "changelog": "- Added multi-agent support for English (free), Math, and Chinese Language subjects.\n- Each subject managed by a fully isolated agent with separate memory and instructions.\n- Intelligent intent recognition and automatic routing to the appropriate subject agent.\n- Introduced a points reward system to incentivize continuous learning.\n- Users can select subjects directly via simple commands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:84683dbc32a9572c8b8afa62a3323962744605477bff7dd957871912d30f3637"
+}

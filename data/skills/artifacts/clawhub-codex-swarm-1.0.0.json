@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/codex-swarm@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codex_swarm",
+  "skill": {
+    "id": 44368,
+    "skillKey": "clawhub-codex-swarm",
+    "name": "Codex Swarm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codex-swarm",
+    "url": "https://clawhub.ai/skills/codex-swarm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codex-swarm-21bba34e0192889b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenAI Codex-native multi-agent swarm orchestration for parallel coding. Use when spawning multiple Codex CLI agents to work in parallel with git worktrees,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linkbag",
+      "userId": "s17a122hqxcf57e9gczk0db71s83g8n8",
+      "displayName": "linkbag",
+      "image": "https://avatars.githubusercontent.com/u/208331216?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775317636234,
+      "changelog": "- Initial release of codex-swarm.\n- Enables multi-agent orchestration for parallel coding using OpenAI Codex models.\n- Supports spawning and coordinating multiple Codex CLI agents (architect, builder, reviewer, integrator) via batch scripts.\n- Integrates with git worktrees, tmux sessions, endorsement gates, native code review, and automated merging.\n- Includes scripts for agent management, status checking, notifications, and automated review/integration.\n- Simple setup with modular scripts and configuration files.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e311bd649d3a546e3bc4113117eadf5ccf85cf8419869c59ee38a60e38457e7f"
+}

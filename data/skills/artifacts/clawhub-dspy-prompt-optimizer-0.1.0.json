@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dspy-prompt-optimizer@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dspy_prompt_optimizer",
+  "skill": {
+    "id": 58342,
+    "skillKey": "clawhub-dspy-prompt-optimizer",
+    "name": "Dspy Prompt Optimizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dspy-prompt-optimizer",
+    "url": "https://clawhub.ai/skills/dspy-prompt-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dspy-prompt-optimizer-35f043457ba5fa0f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "DSPy：把 LLM 程序写成可组合 Module + 声明式 Signature 的 Python 框架。通过 14 个 teleprompter（optimizer）从 train + dev 集自动编译 prompt 与 few-shot demo。 DSPy: a Python framework for..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tangweigang-jpg",
+      "userId": "s17ewpx5vannmrm5gje4p746kd83hyk1",
+      "displayName": "Tang Weigang",
+      "image": "https://avatars.githubusercontent.com/u/259277235?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1777109946413,
+      "changelog": "DSPy programmatic prompt engineering skill — 44 constraints / 8 fatal. MIPROv2 cost + cache RCE pitfalls.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e333ec8c3155dc3b0eef6467287de72883e5de4bad33974d1caf5949f1589721"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29799,
+  "uuid": "skill-clawhub-forecasting",
+  "skillKey": "clawhub-forecasting",
+  "name": "Forecasting",
+  "summary": "Apply quantitative and qualitative forecasting techniques. Use for demand planning, revenue projections, and trend analysis.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.forecasting",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linuszz",
+      "features": [
+        "Apply quantitative and qualitative forecasting techniques",
+        "Use for demand planning, revenue projections, and trend analysis."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/forecasting@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46770204?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "forecasting",
+      "url": "https://clawhub.ai/skills/forecasting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "forecasting",
+    "url": "https://clawhub.ai/skills/forecasting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/forecasting-abb2a39d68dd5ed4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/forecasting@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-forecasting-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b2340e9ffc799f8eb0a397eeb2a213da1f43a3d7da1194f2ac3a47ab83055fb",
+      "artifactSizeBytes": 2258
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T01:05:08.306Z"
+}

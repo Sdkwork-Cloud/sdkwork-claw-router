@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42112,
+  "uuid": "skill-clawhub-jimmy-web-summarizer",
+  "skillKey": "clawhub-jimmy-web-summarizer",
+  "name": "Web Summarizer",
+  "summary": "Fetch and summarize web pages for AI agents. Extract key information from URLs and return structured markdown summaries. No API key required.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jimmy_web_summarizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JimmyClanker",
+      "features": [
+        "Fetch and summarize web pages for AI agents",
+        "Extract key information from URLs and return structured markdown summaries",
+        "No API key required."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jimmy-web-summarizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258324489?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jimmy-web-summarizer",
+      "url": "https://clawhub.ai/skills/jimmy-web-summarizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jimmy-web-summarizer",
+    "url": "https://clawhub.ai/skills/jimmy-web-summarizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jimmy-web-summarizer-89993b73727fba6f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jimmy-web-summarizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jimmy-web-summarizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:758e45b85dd749faf4a174a7a329b1aad52ec1a71483a9c6d2ee820e5e67f14b",
+      "artifactSizeBytes": 2192
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T01:17:28.676Z"
+}

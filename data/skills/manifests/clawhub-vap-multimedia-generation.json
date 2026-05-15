@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9266,
+  "uuid": "skill-clawhub-vap-multimedia-generation",
+  "skillKey": "clawhub-vap-multimedia-generation",
+  "name": "AI media generation- Flux2pro,Google Veo3.1, Suno Ai..",
+  "summary": "AI image, video, and music generation + editing via VAP API. Flux, Veo 3.1, Suno V5.",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vap_multimedia_generation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "VAP Media automation flow",
+      "features": [
+        "AI image, video, and music generation + editing via VAP API",
+        "Flux, Veo 3.1, Suno V5."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vap-multimedia-generation@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/228533731?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vap-multimedia-generation",
+      "url": "https://clawhub.ai/skills/vap-multimedia-generation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vap-multimedia-generation",
+    "url": "https://clawhub.ai/skills/vap-multimedia-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vap-multimedia-generation-2c537926d61c20af.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vap-multimedia-generation@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-vap-multimedia-generation-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f452565ab4026e5eed732a794d56b4999bc2f0b0d69db574f4e5c552f42a190",
+      "artifactSizeBytes": 2090
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T11:18:51.598Z"
+}

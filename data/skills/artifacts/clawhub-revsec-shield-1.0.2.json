@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/revsec-shield@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.revsec_shield",
+  "skill": {
+    "id": 41196,
+    "skillKey": "clawhub-revsec-shield",
+    "name": "RevSec Shield"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "revsec-shield",
+    "url": "https://clawhub.ai/skills/revsec-shield",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/revsec-shield-8d87e2c9b095cf6a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "24/7 security monitoring for your OpenClaw agent. Detects prompt injection attacks, malicious skills, and data exfiltration attempts. Delivers plain-English..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "revupai",
+      "userId": "s17236bpamht4ajwvx622j65yn83vgce",
+      "displayName": "Nipun",
+      "image": "https://avatars.githubusercontent.com/u/147726720?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774752317067,
+      "changelog": "Improved data transparency: explicit table of data transmitted, API key check without echo, WhatsApp credential clarification, privacy policy link, company identity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:73d84aeac53052990776e89fef9dc5ec2278a90a34e4a83b4b7b9ddf953903b0"
+}

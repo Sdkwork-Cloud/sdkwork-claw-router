@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11694,
+  "uuid": "skill-clawhub-elite-longterm-memory-local",
+  "skillKey": "clawhub-elite-longterm-memory-local",
+  "name": "Elite Longterm Memory",
+  "summary": "Local vector memory system with LanceDB + Pure JS embedding. No native modules or external APIs required.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.elite_longterm_memory_local",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LHMiles",
+      "features": [
+        "Local vector memory system with LanceDB + Pure JS embedding",
+        "No native modules or external APIs required."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/elite-longterm-memory-local@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168441721?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "elite-longterm-memory-local",
+      "url": "https://clawhub.ai/skills/elite-longterm-memory-local"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "elite-longterm-memory-local",
+    "url": "https://clawhub.ai/skills/elite-longterm-memory-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/elite-longterm-memory-local-f00c5379f0a4d60a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/elite-longterm-memory-local@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-elite-longterm-memory-local-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e9e8d22079788e3c9734c2585bbdb28001d86560c85a648a8dfb17681a2b7311",
+      "artifactSizeBytes": 2382
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T18:07:48.947Z"
+}

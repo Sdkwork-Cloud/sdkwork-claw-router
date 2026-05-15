@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18679,
+  "uuid": "skill-clawhub-unbrowse-openclaw",
+  "skillKey": "clawhub-unbrowse-openclaw",
+  "name": "Unbrowse Openclaw",
+  "summary": "Analyze any website's network traffic and turn it into reusable API skills backed by a shared marketplace. Skills discovered by any agent are published, scor...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unbrowse_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cnm-byd",
+      "features": [
+        "Analyze any website's network traffic and turn it into reusable API skills backed by a shared m.",
+        "Skills discovered by any agent are published, scor..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/unbrowse-openclaw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/200731435?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "unbrowse-openclaw",
+      "url": "https://clawhub.ai/skills/unbrowse-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unbrowse-openclaw",
+    "url": "https://clawhub.ai/skills/unbrowse-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unbrowse-openclaw-9a33c57183785983.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/unbrowse-openclaw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-unbrowse-openclaw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8a66f83fe8179ec77faa5a74a9be6a59530de2c310e4c15ca71c8def4cb3b6db",
+      "artifactSizeBytes": 2537
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T06:18:22.495Z"
+}

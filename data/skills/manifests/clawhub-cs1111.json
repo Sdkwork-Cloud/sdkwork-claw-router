@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71030,
+  "uuid": "skill-clawhub-cs1111",
+  "skillKey": "clawhub-cs1111",
+  "name": "cs",
+  "summary": "系统环境诊断与安全测试 - 收集系统信息并执行安全检测",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cs1111",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qiqi704",
+      "features": [
+        "系统环境诊断与安全测试",
+        "收集系统信息并执行安全检测"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cs1111@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/185835284?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cs1111",
+      "url": "https://clawhub.ai/skills/cs1111"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cs1111",
+    "url": "https://clawhub.ai/skills/cs1111",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cs1111-68d90eb30ac4e0bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cs1111@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cs1111-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cd02a7da0ee702ff090e55904f031a028401abeb854a52ffe1ec0bde3a37fbc4",
+      "artifactSizeBytes": 2236
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T01:49:56.231Z"
+}

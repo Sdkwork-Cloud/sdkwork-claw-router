@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/terabox-storage@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.terabox_storage",
+  "skill": {
+    "id": 23443,
+    "skillKey": "clawhub-terabox-storage",
+    "name": "Terabox Storage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "terabox-storage",
+    "url": "https://clawhub.ai/skills/terabox-storage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/terabox-storage-d5d4bfb5c82da753.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage TeraBox cloud storage operations including login, upload, download, share, and transfer. Use the terabox CLI tool for file management tasks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "arthurpatten",
+      "userId": "s17fhmx486fe7cy4s77nmx99a983ja9m",
+      "displayName": "ArthurPatten",
+      "image": "https://avatars.githubusercontent.com/u/9796628?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 242,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774167420628,
+      "changelog": "Initial release, adds TeraBox cloud storage management via CLI with strict sandboxing.\n\n- Supports login, upload, download, share, transfer, and file operations using the terabox CLI.\n- All file actions restricted to the application sandbox directory for security.\n- Built-in user confirmation prompts before potentially destructive actions.\n- Pre-execution checks include auto-update, login status, and path validation.\n- Comprehensive usage rules, detailed command examples, and references included.\n- Compatible with OpenClaw, Claude Code, DuClaw, Ducc, and more.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ad231e2da66a27ba4a15a3b3f878f3548fcee6c78362e1223480dce408873e7e"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/medical-billing-coder@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.medical_billing_coder",
+  "skill": {
+    "id": 27638,
+    "skillKey": "clawhub-medical-billing-coder",
+    "name": "Medical Billing Coder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "medical-billing-coder",
+    "url": "https://clawhub.ai/skills/medical-billing-coder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/medical-billing-coder-f5daf79ad534c95e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when a clinician, biller, or practice manager needs to look up ICD-10 diagnosis codes, CPT procedure codes, or E&M visit level codes. Takes a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "optimusprime19",
+      "userId": "s1701rtpn3c1z5nppqjqt8tkm583vx8j",
+      "displayName": "optimusprime19",
+      "image": "https://avatars.githubusercontent.com/u/11436472?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 234,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774827170401,
+      "changelog": "Fixed CPT licensing claim, added PHI warning, clarified CMS API endpoint and data scope",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d8d5198f36391e99a127c4d5ebaa4f1dc1e4efb2d276deec6dbe052a57828bd7"
+}

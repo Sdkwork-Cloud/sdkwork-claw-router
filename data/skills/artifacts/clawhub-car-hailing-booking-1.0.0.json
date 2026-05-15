@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/car-hailing-booking@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.car_hailing_booking",
+  "skill": {
+    "id": 59851,
+    "skillKey": "clawhub-car-hailing-booking",
+    "name": "网约车预订"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "car-hailing-booking",
+    "url": "https://clawhub.ai/skills/car-hailing-booking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/car-hailing-booking-2c2fa9d2d25ef886.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "企业用车服务助手，支持即时用车、预约用车、接送机、包车等多种用车场景，提供车型选择、费用预估、订单管理等功能。Invoke when user needs to book a car, schedule a ride, airport transfer, or manage car service orders."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cs200809",
+      "userId": "s172rh39b43wvhw5j70bct90pd83jd2y",
+      "displayName": "cs200809",
+      "image": "https://avatars.githubusercontent.com/u/185908023?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774925731209,
+      "changelog": "fb-car-service-skill 1.0.0 初始版本发布\n\n- 提供企业用车一站式解决方案，支持即时用车、预约、接送机、包车等多场景\n- 支持车型选择、费用预估、实时调度、司机/车辆信息和订单管理\n- 集成费用明细、取消规则、企业费用/审批/API集成功能\n- 展示详细示例，包括叫车、接送机、订单操作提示等\n- 定义标准化输入参数和API接口，保障功能拓展性",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ef5b365ae103df4561e1d89ae794b19ce4365f35abb0da07da5a0937cce60e3b"
+}

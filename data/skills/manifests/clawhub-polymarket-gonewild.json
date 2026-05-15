@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35737,
+  "uuid": "skill-clawhub-polymarket-gonewild",
+  "skillKey": "clawhub-polymarket-gonewild",
+  "name": "Polymarketskill",
+  "summary": "Query Polymarket prediction markets - check odds, trending markets, search events, track prices and momentum. Includes watchlist alerts, resolution calendar,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_gonewild",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ShrimpDaddie",
+      "features": [
+        "Query Polymarket prediction markets",
+        "check odds, trending markets, search events, track prices and momentum",
+        "Includes watchlist alerts, resolution calendar,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-gonewild@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/203170024?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-gonewild",
+      "url": "https://clawhub.ai/skills/polymarket-gonewild"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-gonewild",
+    "url": "https://clawhub.ai/skills/polymarket-gonewild",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-gonewild-a80f6353d48523e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-gonewild@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-gonewild-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac1f89ab5792a0abff55f69abbd9ac1efcb950c6369bb9ef71742f4c565746d5",
+      "artifactSizeBytes": 2500
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T18:10:08.797Z"
+}

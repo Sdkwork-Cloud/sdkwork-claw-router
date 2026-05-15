@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62897,
+  "uuid": "skill-clawhub-douyin-hot-rise",
+  "skillKey": "clawhub-douyin-hot-rise",
+  "name": "抖音实时上升热点榜",
+  "summary": "调用抖音上升热点榜接口，获取实时热点上升趋势数据。使用此技能当用户需要：获取抖音热榜/上升热点/热点趋势数据、调用 /douyin/billboard/fetch_hot_rise_list 接口、使用 azt_api_key 调用热榜接口、用 Python 脚本拉取抖音热点上升榜单。Use this skill...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_hot_rise",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kyris wu",
+      "features": [
+        "调用抖音上升热点榜接口，获取实时热点上升趋势数据。使用此技能当用户需要：获取抖音热榜/上升热点/热点趋势数据、调用 /douyin/billboard/fetch_hot_rise_list."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/douyin-hot-rise@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5120703?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "douyin-hot-rise",
+      "url": "https://clawhub.ai/skills/douyin-hot-rise"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-hot-rise",
+    "url": "https://clawhub.ai/skills/douyin-hot-rise",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-hot-rise-d18d04e6a16396ba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/douyin-hot-rise@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-douyin-hot-rise-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:123a1af5c40d138d68884c9c768662622cc6f52163db4f7950d3d3c7c4a1752b",
+      "artifactSizeBytes": 2379
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T12:43:23.495Z"
+}

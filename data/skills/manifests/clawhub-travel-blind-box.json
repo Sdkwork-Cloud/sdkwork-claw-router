@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69435,
+  "uuid": "skill-clawhub-travel-blind-box",
+  "skillKey": "clawhub-travel-blind-box",
+  "name": "travel-blind-box",
+  "summary": "真正的盲盒旅行规划器！用户只需提供当前位置、出发日期、天数和预算，自动推荐未去过的目的地并生成轻松行程。使用 flyai skill 查询实时信息，支持历史记录管理避免重复。主打新奇体验和随意放松。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.travel_blind_box",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haoxuanljj",
+      "features": [
+        "真正的盲盒旅行规划器！用户只需提供当前位置、出发日期、天数和预算，自动推荐未去过的目的地并生成轻松行程。使用 flyai skill 查询实时信息，支持历史记录管理避免重复。主打新奇体验和随."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/travel-blind-box@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26591994?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "travel-blind-box",
+      "url": "https://clawhub.ai/skills/travel-blind-box"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "travel-blind-box",
+    "url": "https://clawhub.ai/skills/travel-blind-box",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/travel-blind-box-c50eed52799bce32.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/travel-blind-box@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-travel-blind-box-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b0de221a93ceb7e899fa2ec558403d943b0bdbedc032a7b0589938d5b4bc83f2",
+      "artifactSizeBytes": 2847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T11:44:39.933Z"
+}

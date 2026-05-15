@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/post-purchase-flow@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.post_purchase_flow",
+  "skill": {
+    "id": 41983,
+    "skillKey": "clawhub-post-purchase-flow",
+    "name": "Post-Purchase Flow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "post-purchase-flow",
+    "url": "https://clawhub.ai/skills/post-purchase-flow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/post-purchase-flow-caa6f44576bda1df.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design the complete post-purchase customer experience from order confirmation through delivery and beyond, including transactional emails, shipping updates,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leooooooow",
+      "userId": "s17974h9acjg4h7h5djv1hg51d83hcca",
+      "displayName": "LeroyCreates",
+      "image": "https://avatars.githubusercontent.com/u/130833525?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777386337966,
+      "changelog": "**Version 1.1.0 Changelog**\n\n- Added four supporting guides: email-timing-guide.md, output-template.md, quality-checklist.md, and unboxing-design-guide.md to provide actionable resources for implementing the post-purchase flow.\n- Expanded documentation to include a Quick Reference decision table, common problem-solving scenarios (“Solves”), and a detailed step-by-step workflow for auditing and designing every stage of the post-purchase experience.\n- Enhanced guidance on confirmation, shipping, unboxing, review collection, and cross-sell flows, offering clear actions and output expectations for each stage.\n- Improved structure for easier access and practical implementation by ecommerce and CRM teams.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:45573bbcb0800c493ad0c10301eb82b9ed4fe626d6c4806ff8738616a649f445"
+}

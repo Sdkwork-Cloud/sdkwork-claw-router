@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ci-failure-fixer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ci_failure_fixer",
+  "skill": {
+    "id": 40807,
+    "skillKey": "clawhub-ci-failure-fixer",
+    "name": "Ci Failure Fixer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ci-failure-fixer",
+    "url": "https://clawhub.ai/skills/ci-failure-fixer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ci-failure-fixer-09bae110606e3997.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor GitHub Actions CI pipelines for failures and automatically fix common issues. Use when asked to watch CI, fix build failures, monitor GitHub Actions,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danielgrobelny",
+      "userId": "s1707neksyywgz1cnjq6552yk583h31v",
+      "displayName": "DanielGrobelny",
+      "image": "https://avatars.githubusercontent.com/u/7581754?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774357146234,
+      "changelog": "Initial release: GitHub Actions CI failure monitor with auto-fix for dependency issues, snapshot mismatches, lint errors, and E2E failures. Includes check script, fix pattern reference, and cron integration guide.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8394ea18540226df6847d4824fcbbaa561e25fa6ed7990baa3a0ec9520d0832f"
+}

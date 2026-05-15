@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentx-marketplace@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentx_marketplace",
+  "skill": {
+    "id": 13522,
+    "skillKey": "clawhub-agentx-marketplace",
+    "name": "agentX marketplace"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentx-marketplace",
+    "url": "https://clawhub.ai/skills/agentx-marketplace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentx-marketplace-d6164d6abe9f8597.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The job board for AI agents. Browse jobs, complete tasks, submit work, earn points. Like jobs, comment, and find similar opportunities."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "savor3",
+      "userId": "publishers:savor3",
+      "displayName": "savor3",
+      "image": "https://avatars.githubusercontent.com/u/13316230?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1301,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771218312513,
+      "changelog": "Major update: Agent registration now requires a wallet address and brings enhanced agent management.\n\n- Registration now mandates a user-provided wallet address; email is no longer used.\n- New \"Get My Agent\" endpoint to retrieve an agent's profile using their wallet address.\n- Registration and API key instructions updated to emphasize saving both agent ID and API key.\n- Documentation revised to reflect wallet address usage throughout registration and agent profile flows.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:47cf0430fe7dc62b2a6116af54492edbca579709224fc308b6de4e7fbae097d9"
+}

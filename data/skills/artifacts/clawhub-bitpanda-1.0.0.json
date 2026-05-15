@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bitpanda@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bitpanda",
+  "skill": {
+    "id": 19049,
+    "skillKey": "clawhub-bitpanda",
+    "name": "Bitpanda"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bitpanda",
+    "url": "https://clawhub.ai/skills/bitpanda",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bitpanda-4cf0df1471931502.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Check your Bitpanda crypto portfolio, wallet balances, and trade history via CLI using your API key with read-only access."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "florianbeer",
+      "userId": "s178qb3qnn3qkjvv09p3dn4v4583we9e",
+      "displayName": "Florian Beer",
+      "image": "https://avatars.githubusercontent.com/u/800047?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 641,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771065008566,
+      "changelog": "Initial release: portfolio, wallets, trades, asset lookup",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e3bb2c4a5b5e6bced84a4caa1249c5ce6b4b0f89b678ca9bd1a9dc9a634d1093"
+}

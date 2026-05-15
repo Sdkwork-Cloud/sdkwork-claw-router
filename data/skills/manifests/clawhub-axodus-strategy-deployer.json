@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45456,
+  "uuid": "skill-clawhub-axodus-strategy-deployer",
+  "skillKey": "clawhub-axodus-strategy-deployer",
+  "name": "Strategy Deployer",
+  "summary": "Deploy trading strategies with risk gating, monitoring, and guarded live promotion.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.axodus_strategy_deployer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mauricio Z.",
+      "features": [
+        "Deploy trading strategies with risk gating, monitoring, and guarded live promotion."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/axodus-strategy-deployer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26634695?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "axodus-strategy-deployer",
+      "url": "https://clawhub.ai/skills/axodus-strategy-deployer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "axodus-strategy-deployer",
+    "url": "https://clawhub.ai/skills/axodus-strategy-deployer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/axodus-strategy-deployer-e5c9b1b415a84e7b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/axodus-strategy-deployer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-axodus-strategy-deployer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:45be020a510523e8acc67f85ab926099284160cf6608e6eaa0acff1df7a19868",
+      "artifactSizeBytes": 2307
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T14:57:40.383Z"
+}

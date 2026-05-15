@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12028,
+  "uuid": "skill-clawhub-auto-updater-gateway",
+  "skillKey": "clawhub-auto-updater-gateway",
+  "name": "Auto-Updater (Gateway)",
+  "summary": "Schedule and run safe daily/weekly updates for Clawdbot + installed skills using the Gateway cron scheduler. Use when setting up \"run updates at 04:00\" jobs, rotating update reports, running `clawdhub update --all`, and (optionally) applyi.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_updater_gateway",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xabo1986",
+      "features": [
+        "Schedule and run safe daily/weekly updates for Clawdbot + installed skills using the Gateway cr.",
+        "Use when setting up \"run updates at 04:00\" jobs, rotating update reports, running `clawdhub upd."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-updater-gateway@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/120599358?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-updater-gateway",
+      "url": "https://clawhub.ai/skills/auto-updater-gateway"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-updater-gateway",
+    "url": "https://clawhub.ai/skills/auto-updater-gateway",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-updater-gateway-00e3c462f234df55.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-updater-gateway@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-updater-gateway-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bbde36d0af894ed9153192ba98493caddfa1fc2e8b6b54a32c8a31e4158f57d4",
+      "artifactSizeBytes": 2067
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T12:41:29.373Z"
+}

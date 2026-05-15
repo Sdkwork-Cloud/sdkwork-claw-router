@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17348,
+  "uuid": "skill-clawhub-v2rayn",
+  "skillKey": "clawhub-v2rayn",
+  "name": "V2rayn",
+  "summary": "Manage V2RayN on macOS to list nodes, test proxy connections, check current node status, view logs, and support auto-failover via scripted health checks.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.v2rayn",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qiangwang375-wq",
+      "features": [
+        "Manage V2RayN on macOS to list nodes, test proxy connections, check current node status, view l."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/v2rayn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/227562646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "v2rayn",
+      "url": "https://clawhub.ai/skills/v2rayn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "v2rayn",
+    "url": "https://clawhub.ai/skills/v2rayn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/v2rayn-91cb8b3d36d4b805.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/v2rayn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-v2rayn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:20d6520e6f0c37e3328f68f7986c929f0140496bb5772e951fe8a255ad61738b",
+      "artifactSizeBytes": 2203
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T05:22:06.480Z"
+}

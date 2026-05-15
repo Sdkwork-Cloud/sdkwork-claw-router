@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/evolink-nano-banana-2-1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.evolink_nano_banana_2_1",
+  "skill": {
+    "id": 50380,
+    "skillKey": "clawhub-evolink-nano-banana-2-1",
+    "name": "Evolink Nano Banana 2 1"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "evolink-nano-banana-2-1",
+    "url": "https://clawhub.ai/skills/evolink-nano-banana-2-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/evolink-nano-banana-2-1-ac67a5fe2bb37746.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Nano Banana 2 — AI image generation powered by Google Gemini 3.1 Flash. Fast, versatile text-to-image and image editing via Evolink API. One API key."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bethune89",
+      "userId": "publishers:bethune89",
+      "displayName": "Bethune89",
+      "image": "https://avatars.githubusercontent.com/u/130127756?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 540,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772357132554,
+      "changelog": "- Initial release of Nano Banana 2 skill, powered by Google's Gemini 3.1 Flash for fast, versatile AI image generation and editing via the Evolink API.\n- Supports both text-to-image and image editing flows with clear guided prompts, intent-first interactions, and smart session context.\n- Out-of-the-box integration with MCP tools for image generation, file management, and task polling; works across macOS, Linux, and Windows.\n- Automatic greeting and setup guidance based on connection and API key status.\n- Detailed, user-friendly error handling and clear workflow steps for successful image creation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a36a51b3c4c03d7cf948f9079d2c46c73ccc12cde54f251e7abae4b30fb4e54e"
+}

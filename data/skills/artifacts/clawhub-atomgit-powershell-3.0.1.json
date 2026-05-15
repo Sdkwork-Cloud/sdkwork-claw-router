@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/atomgit-powershell@3.0.1",
+  "version": "3.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.atomgit_powershell",
+  "skill": {
+    "id": 60638,
+    "skillKey": "clawhub-atomgit-powershell",
+    "name": "Atomgit Powershell"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "atomgit-powershell",
+    "url": "https://clawhub.ai/skills/atomgit-powershell",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/atomgit-powershell-6e9cfa2616b721d6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AtomGit (GitCode) 代码托管平台集成 - PowerShell 版本。完整支持 PR 审查、批准、合并、仓库管理、Issues 管理。特色功能：批量并行处理 (性能提升 80%)、CI 流水线检查、仓库协作管理。跨平台：Windows/Linux/macOS。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "panchenbo",
+      "userId": "s17fzcsk1r5hcyfjmsa4g7x63d83gfv5",
+      "displayName": "panchenbo",
+      "image": "https://avatars.githubusercontent.com/u/75836904?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 247,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "3.0.1",
+      "createdAt": 1774577126675,
+      "changelog": "v3.0.1 - 安全增强：完善输入验证、错误处理、Token 保护，达到 ClawHub High Confidence 级别",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3c5a23c437727537bb78d1a1b0e9fafa4f0792b663af057c3615a3e702913090"
+}

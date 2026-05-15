@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/atlantic@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.atlantic",
+  "skill": {
+    "id": 49760,
+    "skillKey": "clawhub-atlantic",
+    "name": "Atlantic"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "atlantic",
+    "url": "https://clawhub.ai/skills/atlantic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/atlantic-707ff1c8a83dad59.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The Atlantic is a historic American magazine founded in 1857, known for in-depth political and cultural analysis with a leading digital subscription model."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 67,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778231314028,
+      "changelog": "The Atlantic skill version 1.0.0 released.\n\n- Provides a detailed overview of The Atlantic’s history, business model, and digital transformation.\n- Highlights key milestones from its 1857 founding through major editorial and business shifts.\n- Explains current business operations, digital subscription growth, and core advantages.\n- Includes audience-use scenarios for researching US media evolution, digital subscription models, and magazine content strategies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:31c8c35bca9652861e93c8471543eec315424df33120794761bc7b91697312e5"
+}

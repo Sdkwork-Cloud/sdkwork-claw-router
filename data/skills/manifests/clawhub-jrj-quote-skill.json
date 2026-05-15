@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62598,
+  "uuid": "skill-clawhub-jrj-quote-skill",
+  "skillKey": "clawhub-jrj-quote-skill",
+  "name": "jrj-quote-skill金融界A股行情数据",
+  "summary": "A股实时行情和历史K线数据查询，支持技术指标计算。用于获取股票、场内基金、指数的实时价格、历史K线，以及计算MA、MACD、KDJ、BOLL、RSI等技术指标。 <example>User: \"获取招商银行最近30天的历史K线和MACD指标\" Assistant: 使用 kline.js 脚本获取数据</exam...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jrj_quote_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haomanjia",
+      "features": [
+        "A股实时行情和历史K线数据查询，支持技术指标计算。用于获取股票、场内基金、指数的实时价格、历史K线，以及计算MA、MACD、KDJ、BOLL、RSI等技术指标。 <example>User:."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jrj-quote-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/204284133?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jrj-quote-skill",
+      "url": "https://clawhub.ai/skills/jrj-quote-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jrj-quote-skill",
+    "url": "https://clawhub.ai/skills/jrj-quote-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jrj-quote-skill-3e817a3d39884e95.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jrj-quote-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-jrj-quote-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c0176af707687121ed3a4eb4b32e45df7e98bed5080d7ea2449e902cd3a8b385",
+      "artifactSizeBytes": 2230
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T08:04:39.960Z"
+}

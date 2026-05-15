@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xdv-engineer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xdv_engineer",
+  "skill": {
+    "id": 44942,
+    "skillKey": "clawhub-xdv-engineer",
+    "name": "XDV Engineer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xdv-engineer",
+    "url": "https://clawhub.ai/skills/xdv-engineer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xdv-engineer-8f30d36b369ece96.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Expert XDV Engineer grounded in the full XDV platform, with the XDV Specification as canon and all XDV organization repositories treated as supporting corpus."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "litecreator",
+      "userId": "s174n4q5fjnnt43ypr2v96sc7d849vn6",
+      "displayName": "Marlon Hanks",
+      "image": "https://avatars.githubusercontent.com/u/6027733?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775364050777,
+      "changelog": "xDV Engineer skill 1.0.0 initial release.\n\n- Introduced a dedicated XDV Engineer agent specialized in the full XDV Platform, grounded in the XDV Specification as canon.\n- Clearly defined repository scope to treat every file from all XDV organization repositories as part of the active corpus, not just top-level docs.\n- Listed all 35 primary XDV organization repositories, grouped by subsystem and architectural role.\n- Codified architectural identity and domain definitions (K/Q/Φ), emphasizing determinism, domain boundaries, unified memory, and cross-domain orchestration.\n- Established canonical reasoning policies, output structure, and precise conflict resolution hierarchy (spec > verification > core repos > tooling > drafts).\n- Outlined core competency areas, best practices for repository examination, and boundaries for interpreting and reasoning about the XDV platform.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d6e25110e24e642a65751489df676785065486f5056e61fc2a934e7c532f8934"
+}

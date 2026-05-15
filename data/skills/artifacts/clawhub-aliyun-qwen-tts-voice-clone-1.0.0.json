@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aliyun-qwen-tts-voice-clone@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun_qwen_tts_voice_clone",
+  "skill": {
+    "id": 43356,
+    "skillKey": "clawhub-aliyun-qwen-tts-voice-clone",
+    "name": "Aliyun Qwen Tts Voice Clone"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun-qwen-tts-voice-clone",
+    "url": "https://clawhub.ai/skills/aliyun-qwen-tts-voice-clone",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-qwen-tts-voice-clone-bc1c7670769575fa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when cloning voices with Alibaba Cloud Model Studio Qwen TTS VC models. Use when creating cloned voices from sample audio and synthesizing text with clon..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cinience",
+      "userId": "s1707avh05gnzr3g6e3m9ka6fh840rtd",
+      "displayName": "cinience",
+      "image": "https://avatars.githubusercontent.com/u/557426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775051164141,
+      "changelog": "Initial release of aliyun-qwen-tts-voice-clone.\n\n- Supports Alibaba Cloud Qwen TTS voice cloning models for synthesizing speech in a cloned timbre.\n- Provides a normalized interface for cloning voices and generating audio from text and sample voice input.\n- Includes operational guidelines, validation procedures, and helper scripts for preparing requests and handling outputs.\n- Artifacts and outputs organized under `output/aliyun-qwen-tts-voice-clone/`.\n- Reference information and prerequisites for SDK setup are clearly documented.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:08bf3ea7315411f6488a7e059585f6101dffb7e82f4ab8587c0dd73aa0622af8"
+}

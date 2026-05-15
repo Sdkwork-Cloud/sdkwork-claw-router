@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54880,
+  "uuid": "skill-clawhub-macos-say",
+  "skillKey": "clawhub-macos-say",
+  "name": "Text to speech using the default macOS \"say\" command. No need for 3rd party APIs or models. Supports many languages. Also, Trin.",
+  "summary": "Local text-to-speech using macOS `say` + ffmpeg for Telegram/Matrix voice messages",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.macos_say",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zviratko",
+      "features": [
+        "Local text-to-speech using macOS `say` + ffmpeg for Telegram/Matrix voice messages"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/macos-say@0.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3704384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "macos-say",
+      "url": "https://clawhub.ai/skills/macos-say"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "macos-say",
+    "url": "https://clawhub.ai/skills/macos-say",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/macos-say-bb518fb4a06fedac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/macos-say@0.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-macos-say-0.0.2.json",
+      "version": "0.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:41ab0ca96b1393031a6131582c2965dee94217704602cc233329bdf2d942382d",
+      "artifactSizeBytes": 2378
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T22:55:06.225Z"
+}

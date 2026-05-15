@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mobile-commerce-ux-auditor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mobile_commerce_ux_auditor",
+  "skill": {
+    "id": 42123,
+    "skillKey": "clawhub-mobile-commerce-ux-auditor",
+    "name": "Mobile Commerce Ux Auditor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mobile-commerce-ux-auditor",
+    "url": "https://clawhub.ai/skills/mobile-commerce-ux-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mobile-commerce-ux-auditor-85ea08d24a13fbac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit mobile shopping flows, identify conversion friction, prioritize UX issues, and suggest experiment backlogs for product teams, CRO specialists, and e-co..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776078318446,
+      "changelog": "Initial release of mobile-commerce-ux-auditor.\n\n- Launches a mobile commerce UX audit skill focused on shopping flows from screenshots or textual notes, without live analytics integration.\n- Audits key mobile commerce stages (homepage, search, PDP, cart, checkout, reorder) for common conversion blockers.\n- Produces prioritized markdown audits with actionable recommendations, quick wins, and experiment backlogs.\n- Designed for product teams, CRO specialists, and e-commerce operators seeking heuristic, stage-specific UX evaluations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c067d309d59a09330b4015a18e0cf58ded5d7dff0159f25cd9473c01a1d3871a"
+}

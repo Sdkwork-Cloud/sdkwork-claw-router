@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67863,
+  "uuid": "skill-clawhub-auto-subtitle",
+  "skillKey": "clawhub-auto-subtitle",
+  "name": "Auto Subtitle",
+  "summary": "视频自动字幕生成器，批量为视频生成字幕文件（SRT/VTT），结合视频帧提取和语音转文字，预览模式和撤销功能！",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_subtitle",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "utopiabenben",
+      "features": [
+        "视频自动字幕生成器，批量为视频生成字幕文件（SRT/VTT），结合视频帧提取和语音转文字，预览模式和撤销功能！"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-subtitle@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19267750?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-subtitle",
+      "url": "https://clawhub.ai/skills/auto-subtitle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-subtitle",
+    "url": "https://clawhub.ai/skills/auto-subtitle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-subtitle-1df499710ff2c81d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-subtitle@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-subtitle-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:799789bda6ccd81d582f10f3530b4001b664c973de8715c76ca4b532b58bda4b",
+      "artifactSizeBytes": 2259
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T02:47:26.248Z"
+}

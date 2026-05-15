@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37080,
+  "uuid": "skill-clawhub-medeo-video",
+  "skillKey": "clawhub-medeo-video",
+  "name": "Medeo Video",
+  "summary": "AI-powered video generation skill. Use when the user wants to generate videos from text descriptions, browse video recipes, upload assets, or manage video cr...",
+  "version": "1.5.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.medeo_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sunnykui",
+      "features": [
+        "AI-powered video generation skill",
+        "Use when the user wants to generate videos from text descriptions, browse video recipes, upload."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/medeo-video@1.5.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/204963909?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "medeo-video",
+      "url": "https://clawhub.ai/skills/medeo-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "medeo-video",
+    "url": "https://clawhub.ai/skills/medeo-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/medeo-video-b111165d1d74dce3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/medeo-video@1.5.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-medeo-video-1.5.2.json",
+      "version": "1.5.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f5aad4315257b223855a6ce87cdfee866f2a2330c1b9055500ee1b8f8080dc7b",
+      "artifactSizeBytes": 1991
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T07:09:06.012Z"
+}

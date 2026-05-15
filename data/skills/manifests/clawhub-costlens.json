@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19643,
+  "uuid": "skill-clawhub-costlens",
+  "skillKey": "clawhub-costlens",
+  "name": "CostLens",
+  "summary": "Calculate OpenClaw usage cost from offline event logs, apply budget thresholds, and export operator-facing reports.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.costlens",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mike007jd",
+      "features": [
+        "Calculate OpenClaw usage cost from offline event logs, apply budget thresholds, and export oper."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/costlens@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31256541?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "costlens",
+      "url": "https://clawhub.ai/skills/costlens"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "costlens",
+    "url": "https://clawhub.ai/skills/costlens",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/costlens-db812a161e216456.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/costlens@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-costlens-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6fc0ded58dfce6d305a6ebda247fd737a20cd75b0a6e5579007efe1bc69d0f84",
+      "artifactSizeBytes": 1856
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T04:27:51.654Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12133,
+  "uuid": "skill-clawhub-strava-cycling-coach",
+  "skillKey": "clawhub-strava-cycling-coach",
+  "name": "Strava Cycling Coach",
+  "summary": "Track and analyze cycling performance from Strava. Use when analyzing ride data, reviewing fitness trends, understanding workout performance, or providing insights on cycling training. Automatically monitors new rides and provides performa.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.strava_cycling_coach",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EricRosenberg",
+      "features": [
+        "Track and analyze cycling performance from Strava",
+        "Use when analyzing ride data, reviewing fitness trends, understanding workout performance, or p.",
+        "Automatically monitors new rides and provides performance analysis."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/strava-cycling-coach@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1305877?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "strava-cycling-coach",
+      "url": "https://clawhub.ai/skills/strava-cycling-coach"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "strava-cycling-coach",
+    "url": "https://clawhub.ai/skills/strava-cycling-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/strava-cycling-coach-61d989bff6e166fe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/strava-cycling-coach@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-strava-cycling-coach-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e025f29f20aa573f497960b8c139b2139e36a53a39f8188906ab887ae1194320",
+      "artifactSizeBytes": 2159
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-25T21:19:34.972Z"
+}

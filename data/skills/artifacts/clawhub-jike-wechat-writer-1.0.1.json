@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jike-wechat-writer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jike_wechat_writer",
+  "skill": {
+    "id": 68353,
+    "skillKey": "clawhub-jike-wechat-writer",
+    "name": "jike-wechat-writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jike-wechat-writer",
+    "url": "https://clawhub.ai/skills/jike-wechat-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jike-wechat-writer-6e30d534a29157be.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供微信公众号文章创作全流程指导，支持选题挖掘、风格拆解、正文写作、配图策略及排版样式应用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mzoob",
+      "userId": "s172s1km0rk8w53q877abtx9yh83ghee",
+      "displayName": "mzoob",
+      "image": "https://avatars.githubusercontent.com/u/83409616?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774868368135,
+      "changelog": "- Added emoji metadata for enhanced visual identification in supported platforms.\n- Version bumped to 1.0.1; no functional changes to code or skill behavior.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1d95fb680d58fac69f1e0e3c102e63454b8e588b6e7363566073660f11b67f7d"
+}

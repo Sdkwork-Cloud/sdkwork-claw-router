@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25655,
+  "uuid": "skill-clawhub-reson8-activator",
+  "skillKey": "clawhub-reson8-activator",
+  "name": "Meta-Skill Orchestration Surface",
+  "summary": "The meta-skill that knows its own activation surface. Use this skill whenever the user wants to \"activate\" a capability, asks \"what can you do\", wants to cha...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reson8_activator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "toolated",
+      "features": [
+        "The meta-skill that knows its own activation surface",
+        "Use this skill whenever the user wants to \"activate\" a capability, asks \"what can you do\", want."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reson8-activator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/105518313?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reson8-activator",
+      "url": "https://clawhub.ai/skills/reson8-activator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reson8-activator",
+    "url": "https://clawhub.ai/skills/reson8-activator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reson8-activator-b5671e51d37d5e3c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reson8-activator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-reson8-activator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:67b6537c5ed015832c009abdb2ba39975c883402b40ddbb10ef580c25055f97e",
+      "artifactSizeBytes": 2572
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T14:43:30.992Z"
+}

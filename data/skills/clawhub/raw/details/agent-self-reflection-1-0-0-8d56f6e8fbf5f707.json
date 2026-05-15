@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "agent-self-reflection-1-0-0",
+    "displayName": "Agent Self Reflection 1.0.0",
+    "summary": "Periodic self-reflection on recent sessions. Analyzes what went well, what went wrong, and writes concise, actionable insights to the appropriate workspace f...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 452,
+      "installsAllTime": 14,
+      "installsCurrent": 14,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1773475553652,
+    "updatedAt": 1778308604382
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1773475553652,
+    "changelog": "- Initial release of the self-reflection skill—enables periodic analysis of recent sessions to extract actionable insights.\n- Gathers recent Telegram, direct, and cron-triggered sessions, ignoring subagent and self-reflection sessions.\n- Reviews only the latest portion of session transcripts (with strict token and size limits) to identify what went well, what went wrong, and lessons learned.\n- Routes insights to appropriate files such as AGENTS.md, TOOLS.md, daily memory, about-user.md, skill docs, and memory index.\n- Emphasizes concise, specific, and non-redundant insights, avoiding vague, obvious, or duplicate notes.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "mrhenghu",
+    "userId": "publishers:mrhenghu",
+    "displayName": "mrhenghu",
+    "image": "https://avatars.githubusercontent.com/u/193038063?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778308604382
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50390,
+  "uuid": "skill-clawhub-ezcto-smart-web-reader",
+  "skillKey": "clawhub-ezcto-smart-web-reader",
+  "name": "EZCTO Smart Web Reader",
+  "summary": "Agent web access acceleration layer — reads any URL as structured JSON. Cache-first (public library hit = 0 tokens). The smart alternative to raw web_fetch.",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ezcto_smart_web_reader",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "䷍䷢䷺䷜䷩",
+      "features": [
+        "Agent web access acceleration layer — reads any URL as structured JSON",
+        "Cache-first (public library hit = 0 tokens)",
+        "The smart alternative to raw web_fetch."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ezcto-smart-web-reader@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/107280870?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ezcto-smart-web-reader",
+      "url": "https://clawhub.ai/skills/ezcto-smart-web-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ezcto-smart-web-reader",
+    "url": "https://clawhub.ai/skills/ezcto-smart-web-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ezcto-smart-web-reader-903acc4b802dddf2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ezcto-smart-web-reader@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ezcto-smart-web-reader-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fcf0ba21d5f0a6971b485ee8e093ef3b137f4ae78a452b6fd12004ef99a73e8b",
+      "artifactSizeBytes": 2085
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T08:29:08.669Z"
+}

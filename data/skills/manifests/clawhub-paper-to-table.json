@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48860,
+  "uuid": "skill-clawhub-paper-to-table",
+  "skillKey": "clawhub-paper-to-table",
+  "name": "Paper To Table",
+  "summary": "Extract structured data from academic papers (PDF/DOCX/TXT) into literature review tables (XLSX/CSV) with fidelity, batch support, and multi-domain handling.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_to_table",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "2025biophilia-coder",
+      "features": [
+        "Extract structured data from academic papers (PDF/DOCX/TXT) into literature review tables (XLSX."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paper-to-table@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/276216312?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paper-to-table",
+      "url": "https://clawhub.ai/skills/paper-to-table"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-to-table",
+    "url": "https://clawhub.ai/skills/paper-to-table",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-to-table-14362abaf37d604f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paper-to-table@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-paper-to-table-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a0cc5ad2b0fac86ca2b08fe55fc6ffc1dd6672d4620808f36fcbc953d1b19bf9",
+      "artifactSizeBytes": 2605
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T01:56:20.185Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/banker-memo-md@0.9.7",
+  "version": "0.9.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.banker_memo_md",
+  "skill": {
+    "id": 56217,
+    "skillKey": "clawhub-banker-memo-md",
+    "name": "Banker Memo Md"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "banker-memo-md",
+    "url": "https://clawhub.ai/skills/banker-memo-md",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/banker-memo-md-8251a7842636736f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Produce an investment-banker-grade research memo (analysis.md + data-provenance.md) from CN raw-data/ JSON snapshots. Use when the user asks for \"投行 md\" / \"银..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jackdark425",
+      "userId": "s176mxzq3jzjv11d44t7jjr33x83rvkb",
+      "displayName": "jackdark",
+      "image": "https://avatars.githubusercontent.com/u/201514154?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.9.7",
+      "createdAt": 1776738005448,
+      "changelog": "- Separated banker memo (MD) generation into its own skill, distinct from slide outline creation.\n- Enforces a strict 8-section banker-grade memo structure with explicit data provenance and peer benchmarking rules.\n- Mandates two outputs only: analysis.md (full research memo) and data-provenance.md (hard-number sourcing table).\n- Incorporates rigorous hard constraints to ensure data transparency, source authenticity, and flagging of estimate-based or inconsistent figures.\n- Provides a step-by-step pipeline and detailed quality checklist for outputs, enabling reliable handoff to slide generation in the next pipeline step.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6e9f20623945bdf5af12dfca467129a8b33410875b1a5b0eaf4088251f8a3f59"
+}

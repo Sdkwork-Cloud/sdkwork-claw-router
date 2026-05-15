@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34207,
+  "uuid": "skill-clawhub-dcl-policy-enforcer",
+  "skillKey": "clawhub-dcl-policy-enforcer",
+  "name": "DCL Policy Enforcer",
+  "summary": "Instruction-only compliance checker for AI outputs. Detects jailbreaks, prompt injection, EU AI Act violations, GDPR breaches, unsafe financial and medical a...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dcl_policy_enforcer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dari Rinch",
+      "features": [
+        "Instruction-only compliance checker for AI outputs",
+        "Detects jailbreaks, prompt injection, EU AI Act violations, GDPR breaches, unsafe financial and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dcl-policy-enforcer@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/161933416?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dcl-policy-enforcer",
+      "url": "https://clawhub.ai/skills/dcl-policy-enforcer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dcl-policy-enforcer",
+    "url": "https://clawhub.ai/skills/dcl-policy-enforcer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dcl-policy-enforcer-33fdd85b32f82d70.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dcl-policy-enforcer@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-dcl-policy-enforcer-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b66e829864e2e644037c8bd51fcccee6c5a6c821dd0bf557b63543f90f491e7d",
+      "artifactSizeBytes": 2650
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T12:40:55.263Z"
+}

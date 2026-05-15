@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-alerts@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_alerts",
+  "skill": {
+    "id": 42541,
+    "skillKey": "clawhub-google-alerts",
+    "name": "Google Alerts Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-alerts",
+    "url": "https://clawhub.ai/skills/google-alerts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-alerts-c7f475ed564e950a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor keywords via free web search. Use when: (1) Tracking brand or product mentions, (2) Monitoring industry keywords, (3) Researching competitors and mar..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bgoodwinstudio",
+      "userId": "s17dh2a8cmkt2ge0f5ywjgakj984ywfy",
+      "displayName": "bgoodwinstudio",
+      "image": "https://avatars.githubusercontent.com/u/205076654?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776487523837,
+      "changelog": "- Added required binaries (bash, curl, python3) to metadata for improved environment checks.\n- No changes to core functionality or setup instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7e8dca8f1ba839245d4544fc5df16cdee59e07dcab02e1b5f7e71da7b72caeb9"
+}

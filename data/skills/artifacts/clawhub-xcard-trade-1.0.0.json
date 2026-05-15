@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xcard-trade@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xcard_trade",
+  "skill": {
+    "id": 54559,
+    "skillKey": "clawhub-xcard-trade",
+    "name": "xcard trade"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xcard-trade",
+    "url": "https://clawhub.ai/skills/xcard-trade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xcard-trade-384bcc9d0a100a69.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trade crypto perpetual futures on XCard — view positions, place orders, monitor funding rates, and manage margin."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "seineruo",
+      "userId": "s1723w2x0nsqqd6enh210qb9dx83kdyz",
+      "displayName": "sss3000",
+      "image": "https://avatars.githubusercontent.com/u/11779945?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774435313074,
+      "changelog": "xcard-trade version 1.0.0\n\n- Initial release enabling crypto perpetual futures trading on XCard via API.\n- Supports position management, order execution, funding rate monitoring, and margin management.\n- Organized into modules: account/margin, market data, orders, and trade history.\n- Provides detailed error messages for common API responses.\n- Includes user guidance for leverage, liquidation, and funding concepts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:324683b2e1522437d4847c19c1704fd989f9aba8a7f88cd8fe543afebaa5d08a"
+}

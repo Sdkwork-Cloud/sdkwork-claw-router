@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10685,
+  "uuid": "skill-clawhub-ms-outlook-teams-assistant",
+  "skillKey": "clawhub-ms-outlook-teams-assistant",
+  "name": "MS Outlook + Teams Assistant",
+  "summary": "Track and nag about Microsoft Outlook email and (optionally) Microsoft Teams messages on a Windows machine, without relying on web versions. Use when the user asks to: (1) monitor inbox/mentions and remind them on Telegram/Teams until dism.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ms_outlook_teams_assistant",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "abhinavjp",
+      "features": [
+        "Track and nag about Microsoft Outlook email and (optionally) Microsoft Teams messages on a Wind.",
+        "Use when the user asks to: (1) monitor inbox/mentions and remind them on Telegram/Teams until d.",
+        "Works via Outlook Desktop automation (COM) and optionally Microsoft Graph for Teams if configur."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ms-outlook-teams-assistant@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18159170?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ms-outlook-teams-assistant",
+      "url": "https://clawhub.ai/skills/ms-outlook-teams-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ms-outlook-teams-assistant",
+    "url": "https://clawhub.ai/skills/ms-outlook-teams-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ms-outlook-teams-assistant-beb4044fd5178f4c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ms-outlook-teams-assistant@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ms-outlook-teams-assistant-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d668084d79b2ef6602138fa9b7e63140c22bf476f482e38d8b031abaf7941f98",
+      "artifactSizeBytes": 2426
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T18:33:11.692Z"
+}

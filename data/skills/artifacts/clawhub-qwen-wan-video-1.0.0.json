@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qwen-wan-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qwen_wan_video",
+  "skill": {
+    "id": 63371,
+    "skillKey": "clawhub-qwen-wan-video",
+    "name": "Qwen Wan 2.6 Video Generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qwen-wan-video",
+    "url": "https://clawhub.ai/skills/qwen-wan-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qwen-wan-video-e21079322dfc08ae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "直接调用通义万相2.6视频生成模型（Qwen Wan 2.6），支持文生视频和图生视频，无需中间API代理。适用于需要直接对接阿里云大模型的视频创作场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wuchhao",
+      "userId": "publishers:wuchhao",
+      "displayName": "wuchhao",
+      "image": "https://avatars.githubusercontent.com/u/53897023?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 464,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773408454450,
+      "changelog": "- Initial release of qwen-wan-video skill.\n- Supports direct use of Alibaba Cloud Qwen Wan 2.6 text-to-video and image-to-video generation, without a proxy API.\n- Enables creation of short, high-quality videos from text prompts or images, with professional controls for parameters like depth of field and camera movement.\n- Handles long-running tasks asynchronously, including automatic polling and result retrieval.\n- Includes clear environment configuration steps and usage examples in Python.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e4f2408df78f904e4218d5ac2857481de4302866dd39071c275c54c75755893b"
+}

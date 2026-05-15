@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trailsnap-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trailsnap_cli",
+  "skill": {
+    "id": 65994,
+    "skillKey": "clawhub-trailsnap-cli",
+    "name": "trailsnap-cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trailsnap-cli",
+    "url": "https://clawhub.ai/skills/trailsnap-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trailsnap-cli-846294003049fefc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "TrailSnap CLI 命令行工具，用于查询照片、相册、标签、位置和人物等信息。当用户需要查看照片、相册数据时调用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lc044",
+      "userId": "s175kf6y3rf5ajfnznmdjse3v585hfv0",
+      "displayName": "LC044",
+      "image": "https://avatars.githubusercontent.com/u/95485601?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 128,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777124898031,
+      "changelog": "- Initial release of trailsnap-cli.\n- Provides command-line access to query photos, albums, tags, locations, and people.\n- Supports listing mounted storage directories.\n- Requires one-time configuration of API URL and token.\n- Offers built-in command help and usage examples.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e9bc18a34a4f65e01f6b51d54d7a3e50831069056512c8a9e4dde138cfacbb57"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/benchmark-lobster-forge@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.benchmark_lobster_forge",
+  "skill": {
+    "id": 69312,
+    "skillKey": "clawhub-benchmark-lobster-forge",
+    "name": "MomClaw 元认知造虾师"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "benchmark-lobster-forge",
+    "url": "https://clawhub.ai/skills/benchmark-lobster-forge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/benchmark-lobster-forge-91e2f2cba0aa4f7a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "用元认知引导发现值得被做成小龙虾的机会点，并将其收敛为可开箱即用的基准 Agent 小龙虾。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "beachanger",
+      "userId": "publishers:beachanger",
+      "displayName": "BeAChanger",
+      "image": "https://avatars.githubusercontent.com/u/133616562?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 233,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773905649548,
+      "changelog": "Linked MomClaw to two companion skills: collab-to-skill and blueprint-to-deployment. Clarified relationship between metacognitive planning, collaborative skill extraction, and deployment handoff.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a883e9ac10e9412bd03a60928755c2fe8f889635c1445b35963900342e471b2f"
+}

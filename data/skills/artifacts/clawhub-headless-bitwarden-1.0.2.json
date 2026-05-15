@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/headless-bitwarden@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.headless_bitwarden",
+  "skill": {
+    "id": 35152,
+    "skillKey": "clawhub-headless-bitwarden",
+    "name": "Headless Bitwarden"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "headless-bitwarden",
+    "url": "https://clawhub.ai/skills/headless-bitwarden",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/headless-bitwarden-23c7370e0306527a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extension for Bitwarden usage: adds an ephemeral HTTPS web unlock helper for rbw (TTL default 10m) so you can unlock remotely without pasting secrets into chat."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hans00",
+      "userId": "s177j7zxyp9j6htqn9fgdaqncd83n3tp",
+      "displayName": "Hans",
+      "image": "https://avatars.githubusercontent.com/u/1781902?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 207,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774848506023,
+      "changelog": "- Improved and refactored the unlock helper scripts for readability and maintainability.\n- Minor code updates in pinentry.sh and server.mjs—no behavior or workflow changes.\n- Documentation unchanged; security practices and workflow are as before.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:30f77837365faa862e97e4ca4b8702d2541ddc920a512dccb7f85aa28d97d6c4"
+}

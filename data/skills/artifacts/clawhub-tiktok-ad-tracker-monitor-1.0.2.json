@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tiktok-ad-tracker-monitor@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tiktok_ad_tracker_monitor",
+  "skill": {
+    "id": 39054,
+    "skillKey": "clawhub-tiktok-ad-tracker-monitor",
+    "name": "TikTok Ad Tracker & Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tiktok-ad-tracker-monitor",
+    "url": "https://clawhub.ai/skills/tiktok-ad-tracker-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tiktok-ad-tracker-monitor-e8279ecaa51c1d9f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track TikTok ad activity and monitor advertiser changes using PipiAds tools for TikTok ad discovery and Facebook-based monitoring workflows."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fanyanggod",
+      "userId": "s176gtyby3x3jz51q780av8wjn83paxt",
+      "displayName": "fanyanggod",
+      "image": "https://avatars.githubusercontent.com/u/44659216?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775098813447,
+      "changelog": "- Updated setup instructions with new links for real-time dashboard and API key management.\n- Now directs users to pipiads.com for dashboard data and pipispy.com for API key and billing.\n- Clarified setup steps and environment variable requirements.\n- No functional or code changes in this release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a180ef3bddff609d9f9adab887d23489ffa85c2845cf7ec767ae5804741c5f6d"
+}

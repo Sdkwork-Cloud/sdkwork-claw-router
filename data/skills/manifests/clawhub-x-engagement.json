@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59183,
+  "uuid": "skill-clawhub-x-engagement",
+  "skillKey": "clawhub-x-engagement",
+  "name": "X Engagement",
+  "summary": "X/Twitter 运营辅助。完整 onboarding → Persona 学习 → Browser Relay 浏览器控制 → 记忆系统 → 手动提醒模板 → For You 关注建议 → Following 互动建议",
+  "version": "4.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_engagement",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jason",
+      "features": [
+        "X/Twitter 运营辅助。完整 onboarding → Persona 学习 → Browser Relay 浏览器控制 → 记忆系统 → 手动提醒模板 → For You 关注建议."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-engagement@4.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47563854?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-engagement",
+      "url": "https://clawhub.ai/skills/x-engagement"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-engagement",
+    "url": "https://clawhub.ai/skills/x-engagement",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-engagement-f6d46a2fda40ca28.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-engagement@4.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-engagement-4.1.3.json",
+      "version": "4.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:293e5d3e7f06541beb2883cc1030ba1fbfe545ca95c221f4f06e734f6bedcc10",
+      "artifactSizeBytes": 2141
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T10:31:48.013Z"
+}

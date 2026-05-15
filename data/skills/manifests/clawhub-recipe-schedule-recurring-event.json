@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20617,
+  "uuid": "skill-clawhub-recipe-schedule-recurring-event",
+  "skillKey": "clawhub-recipe-schedule-recurring-event",
+  "name": "Recipe Schedule Recurring Event",
+  "summary": "Create a recurring Google Calendar event with attendees.",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recipe_schedule_recurring_event",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Create a recurring Google Calendar event with attendees."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/recipe-schedule-recurring-event@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "recipe-schedule-recurring-event",
+      "url": "https://clawhub.ai/skills/recipe-schedule-recurring-event"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recipe-schedule-recurring-event",
+    "url": "https://clawhub.ai/skills/recipe-schedule-recurring-event",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recipe-schedule-recurring-event-055841fdf4bdcfb9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/recipe-schedule-recurring-event@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-recipe-schedule-recurring-event-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:80120f7b34b0e23d7e83c4902879f3f08907e32102da9cdd1c6f859d8062e630",
+      "artifactSizeBytes": 1979
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:37:00.737Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8694,
+  "uuid": "skill-clawhub-omnicogg",
+  "skillKey": "clawhub-omnicogg",
+  "name": "OmniCog",
+  "summary": "Universal service integration for OpenClaw — connect Reddit, Steam, Spotify, GitHub, Discord, and more with a single API.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.omnicogg",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DeXiaong",
+      "features": [
+        "Universal service integration for OpenClaw — connect Reddit, Steam, Spotify, GitHub, Discord, a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/omnicogg@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/170174258?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "omnicogg",
+      "url": "https://clawhub.ai/skills/omnicogg"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "omnicogg",
+    "url": "https://clawhub.ai/skills/omnicogg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/omnicogg-ef5861a1716f0513.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/omnicogg@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-omnicogg-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e3cd19c499e479ee1930c0a097951bc18abcfe4715e4c8fb3dc0b79eebec55dd",
+      "artifactSizeBytes": 2271
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T13:48:13.854Z"
+}

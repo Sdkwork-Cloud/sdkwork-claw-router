@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67005,
+  "uuid": "skill-clawhub-minimax-mcp-tools",
+  "skillKey": "clawhub-minimax-mcp-tools",
+  "name": "MiniMax MCP Tools",
+  "summary": "提供联网搜索和图片内容理解服务，支持关键词搜索和基于描述请求的图片分析。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_mcp_tools",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hongjiahao371-pixel",
+      "features": [
+        "提供联网搜索和图片内容理解服务，支持关键词搜索和基于描述请求的图片分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/minimax-mcp-tools@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/249543018?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "minimax-mcp-tools",
+      "url": "https://clawhub.ai/skills/minimax-mcp-tools"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-mcp-tools",
+    "url": "https://clawhub.ai/skills/minimax-mcp-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-mcp-tools-f80b71e4d94e0720.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/minimax-mcp-tools@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-minimax-mcp-tools-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ed61df635b462d24995180c7b0f7ef8bf0cf272436cbb9d387d90b55afd57221",
+      "artifactSizeBytes": 1874
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T10:11:54.704Z"
+}

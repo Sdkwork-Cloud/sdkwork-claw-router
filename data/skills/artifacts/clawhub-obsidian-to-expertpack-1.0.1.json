@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/obsidian-to-expertpack@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_to_expertpack",
+  "skill": {
+    "id": 38576,
+    "skillKey": "clawhub-obsidian-to-expertpack",
+    "name": "Obsidian To Expertpack"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-to-expertpack",
+    "url": "https://clawhub.ai/skills/obsidian-to-expertpack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-to-expertpack-cdaaf78c203f26ed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert an existing Obsidian Vault into an agent-ready ExpertPack. Restructures vault content for EK optimization, RAG retrieval, and OpenClaw integration. C..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brianhearn",
+      "userId": "s17edk00zzwdjx7cfx3e4xh0ys83kd03",
+      "displayName": "Brian Hearn",
+      "image": "https://avatars.githubusercontent.com/u/1640595?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775680175277,
+      "changelog": "obsidian-to-expertpack 1.0.1\n\n- Documentation in SKILL.md reorganized and streamlined for clarity.\n- No behavioral or code-level changes; primary update is improved user guidance.\n- Usage steps and post-conversion recommendations now easier to follow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5af4a528ce60852490646c2f709eeccdef12f8de077c98d9f1abf07724e27a15"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46558,
+  "uuid": "skill-clawhub-ntriq-world-bank-development-goals",
+  "skillKey": "clawhub-ntriq-world-bank-development-goals",
+  "name": "Ntriq World Bank Development Goals",
+  "summary": "Free API for UN Sustainable Development Goals (SDG) tracking. No subscription. Track progress by country for poverty, health, education, development metrics....",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ntriq_world_bank_development_goals",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ntriq",
+      "features": [
+        "Free API for UN Sustainable Development Goals (SDG) tracking",
+        "No subscription",
+        "Track progress by country for poverty, health, education, development metrics...."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ntriq-world-bank-development-goals@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/215101248?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ntriq-world-bank-development-goals",
+      "url": "https://clawhub.ai/skills/ntriq-world-bank-development-goals"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ntriq-world-bank-development-goals",
+    "url": "https://clawhub.ai/skills/ntriq-world-bank-development-goals",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ntriq-world-bank-development-goals-a4b50a88ceb2a430.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ntriq-world-bank-development-goals@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ntriq-world-bank-development-goals-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:70e11eb0567abe20d7240cdf877bd854069a5d553cf177fee4b4c489cea3c626",
+      "artifactSizeBytes": 2444
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T19:00:29.984Z"
+}

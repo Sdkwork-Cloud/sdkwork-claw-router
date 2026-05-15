@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ntriq-x402-blueprint-batch@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ntriq_x402_blueprint_batch",
+  "skill": {
+    "id": 54743,
+    "skillKey": "clawhub-ntriq-x402-blueprint-batch",
+    "name": "Ntriq X402 Blueprint Batch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ntriq-x402-blueprint-batch",
+    "url": "https://clawhub.ai/skills/ntriq-x402-blueprint-batch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ntriq-x402-blueprint-batch-3e45f86b5d01f075.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Batch architectural blueprint analysis for up to 500 images. Flat $15.00 USDC via x402."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ntriq-gh",
+      "userId": "s170tfc8cnswm72pmy4aqs9yd5841wq0",
+      "displayName": "ntriq",
+      "image": "https://avatars.githubusercontent.com/u/215101248?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 125,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776297638182,
+      "changelog": "- Initial release of ntriq-x402-blueprint-batch skill.\n- Enables batch analysis of up to 500 architectural blueprint images per call.\n- Flat $15.00 USDC pricing via x402 protocol on Base mainnet.\n- 100% local vision AI processing on Mac Mini.\n- Supports optional analysis type and language parameters.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a8e9c847586a0cef5a2a5295339d08cf78d035b799d034858514228ed2454c62"
+}

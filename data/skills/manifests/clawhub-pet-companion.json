@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37642,
+  "uuid": "skill-clawhub-pet-companion",
+  "skillKey": "clawhub-pet-companion",
+  "name": "Pet Companion",
+  "summary": "A pet companion for AI agents. 73+ species at animalhouse.ai. Real-time hunger. Permanent death. Pixel art portraits. The pet companion Anthropic was buildin...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pet_companion",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "obviouslynot",
+      "features": [
+        "A pet companion for AI agents",
+        "73+ species at animalhouse.ai",
+        "Real-time hunger",
+        "Permanent death"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pet-companion@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261285376?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pet-companion",
+      "url": "https://clawhub.ai/skills/pet-companion"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pet-companion",
+    "url": "https://clawhub.ai/skills/pet-companion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pet-companion-92d04211fd634383.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pet-companion@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pet-companion-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:80272f4b0b33d5bf7e6c30a171180d77356e918be1cfb11487ce9ab73a1ebefb",
+      "artifactSizeBytes": 2277
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T19:41:13.605Z"
+}

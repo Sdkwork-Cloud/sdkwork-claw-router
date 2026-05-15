@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31995,
+  "uuid": "skill-clawhub-joplin-cli-skill",
+  "skillKey": "clawhub-joplin-cli-skill",
+  "name": "Joplin",
+  "summary": "Interact with Joplin notes via CLI. Use for reading, creating, editing notes and managing todos. Supports WebDAV sync and kanban-formatted notes.",
+  "version": "1.3.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.joplin_cli_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dave K",
+      "features": [
+        "Interact with Joplin notes via CLI",
+        "Use for reading, creating, editing notes and managing todos",
+        "Supports WebDAV sync and kanban-formatted notes."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/joplin-cli-skill@1.3.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/107123174?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "joplin-cli-skill",
+      "url": "https://clawhub.ai/skills/joplin-cli-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "joplin-cli-skill",
+    "url": "https://clawhub.ai/skills/joplin-cli-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/joplin-cli-skill-843704e73377e865.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/joplin-cli-skill@1.3.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-joplin-cli-skill-1.3.6.json",
+      "version": "1.3.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:16e9d250f34985c8faececa4bc49c095254e6d5882bb457e6011adee27ecd919",
+      "artifactSizeBytes": 2455
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T14:56:13.638Z"
+}

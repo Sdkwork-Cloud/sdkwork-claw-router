@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68840,
+  "uuid": "skill-clawhub-expression-coach",
+  "skillKey": "clawhub-expression-coach",
+  "name": "Expression Coach 表达力训练教练",
+  "summary": "个人表达能力训练教练。支持即兴话题练习（AI评分+反馈）、职场/社交场景角色扮演模拟、表达框架速查、 自定义话题管理、进步追踪与数据分析、每日表达力Tips推送。 语音优先，通过 Whisper 转写分析口语特征（填充词、停顿、流畅度）。 支持飞书 Bitable 自动记录练习数据（可选）。 触发关键词：练口才、...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.expression_coach",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Andre",
+      "features": [
+        "个人表达能力训练教练。支持即兴话题练习（AI评分+反馈）、职场/社交场景角色扮演模拟、表达框架速查、 自定义话题管理、进步追踪与数据分析、每日表达力Tips推送。 语音优先，通过 Whisp."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/expression-coach@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24884291?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "expression-coach",
+      "url": "https://clawhub.ai/skills/expression-coach"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "expression-coach",
+    "url": "https://clawhub.ai/skills/expression-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/expression-coach-7a04435b9f934c48.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/expression-coach@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-expression-coach-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6ccbfda4587fce68eb359e70dabb41c76e5ff662bef9e7996ad5c2d6aac9ffeb",
+      "artifactSizeBytes": 2272
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T08:57:04.250Z"
+}

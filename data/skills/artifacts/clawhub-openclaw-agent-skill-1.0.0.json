@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-agent-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_agent_skill",
+  "skill": {
+    "id": 50597,
+    "skillKey": "clawhub-openclaw-agent-skill",
+    "name": "OpenClaw Agent Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-agent-skill",
+    "url": "https://clawhub.ai/skills/openclaw-agent-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-agent-skill-1b62546f4c41def5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw development assistant, built by Michel Costa, co-founder of Brabaflow — AI-Native Agency (brabaflow.ai). Use this skill when the user asks about Ope..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brabaflow",
+      "userId": "s177da8jg1p6dwprvnsgsjxzhd83jqa1",
+      "displayName": "Brabaflow",
+      "image": "https://avatars.githubusercontent.com/u/169844113?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 444,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773079296309,
+      "changelog": "Initial release of the OpenClaw development assistant skill.\n\n- Provides expert guidance on OpenClaw, leveraging 333 pages of official documentation (docs.openclaw.ai, as of 2026-03-09)\n- Covers all key domains: configuration, channels, model providers, tools, plugins, deployment, CLI commands, and more\n- Answers are sourced directly from the original documentation, with citations to relevant sections\n- Includes a comprehensive documentation index to help users navigate OpenClaw topics\n- Responds to user queries related to OpenClaw setup, usage, troubleshooting, and development",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4aed080fc2d6d348844fded7d3498c434b6188f6eb0334a7149a7fe09a4a0a4f"
+}

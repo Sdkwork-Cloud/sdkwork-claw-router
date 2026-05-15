@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/swift-xctest@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swift_xctest",
+  "skill": {
+    "id": 34880,
+    "skillKey": "clawhub-swift-xctest",
+    "name": "Swift Xctest"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swift-xctest",
+    "url": "https://clawhub.ai/skills/swift-xctest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swift-xctest-532b74de800691b4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Swift 6 + XCTest testing patterns for macOS/iOS apps using SwiftData, EventKit, and SwiftUI"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "soponcd",
+      "userId": "s17028c8y9t26ss5fgt6rycpw183jt9x",
+      "displayName": "soponcd",
+      "image": "https://avatars.githubusercontent.com/u/31302208?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774440637448,
+      "changelog": "Initial release of swift-xctest skill.\n\n- Provides expert-level testing patterns for Swift 6 macOS/iOS apps using XCTest.\n- Includes guidance for testing SwiftData, EventKit integrations, SwiftUI views, and actor-based concurrency.\n- Offers core testing patterns, best practices, and code snippets for setup, isolation, and performance benchmarking.\n- Documents recommended test organization and usage of in-memory models, mocking, and the Given-When-Then approach.\n- Contains sample commands for running and measuring tests with xcodebuild.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a47b61c151c54ca52731620b81d1b9443683421c5ca6d9f3ecb309724a8c4a6f"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16376,
+  "uuid": "skill-clawhub-plausible-analytics",
+  "skillKey": "clawhub-plausible-analytics",
+  "name": "Plausible Analytics",
+  "summary": "Query and analyze website analytics from Plausible Analytics. Use when you need to check real-time visitors, get page views and visitor statistics for a time...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plausible_analytics",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chloe Park",
+      "features": [
+        "Query and analyze website analytics from Plausible Analytics",
+        "Use when you need to check real-time visitors, get page views and visitor statistics for a time."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/plausible-analytics@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15118976?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "plausible-analytics",
+      "url": "https://clawhub.ai/skills/plausible-analytics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plausible-analytics",
+    "url": "https://clawhub.ai/skills/plausible-analytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plausible-analytics-afee2e5699b4e9f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/plausible-analytics@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-plausible-analytics-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0276e96e265209f220fb7226c1969fb489c5b4026ed255c6b0a651ae794df004",
+      "artifactSizeBytes": 2098
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T04:06:38.729Z"
+}

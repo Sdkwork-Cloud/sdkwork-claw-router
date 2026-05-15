@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21083,
+  "uuid": "skill-clawhub-whitebit",
+  "skillKey": "clawhub-whitebit",
+  "name": "whitebit",
+  "summary": "Build, install, update, and use a WhiteBIT trading guidance and training skill through ClawHub (clawhub.ai) for OpenClaw. Use when asked to manage WhiteBIT t...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whitebit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alex M",
+      "features": [
+        "Build, install, update, and use a WhiteBIT trading guidance and training skill through ClawHub.",
+        "Use when asked to manage WhiteBIT t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/whitebit@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2242841?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "whitebit",
+      "url": "https://clawhub.ai/skills/whitebit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whitebit",
+    "url": "https://clawhub.ai/skills/whitebit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whitebit-a5847b472f6f6a07.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/whitebit@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-whitebit-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:74e66def5b9a08cd2aab5c2237583ce8cc7205ac75b4f262cc6a305c5bb95e0a",
+      "artifactSizeBytes": 2344
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T00:28:46.934Z"
+}

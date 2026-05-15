@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baidu-netdisk-skills@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_netdisk_skills",
+  "skill": {
+    "id": 59724,
+    "skillKey": "clawhub-baidu-netdisk-skills",
+    "name": "百度网盘"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-netdisk-skills",
+    "url": "https://clawhub.ai/skills/baidu-netdisk-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-netdisk-skills-fab5a2d656cf9808.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "百度网盘文件管理。支持上传、下载、转存、分享、搜索、移动、复制、重命名、创建文件夹。当用户提及\"百度网盘\"\"百度云\"\"百度云盘\"\"bdpan\"\"网盘\"\"云盘\"\"baidu netdisk\"\"baidu pan\"\"baidu cloud\"并涉及文件操作时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wscats",
+      "userId": "s17bw1sf2hsjw09jmyh7nhzshn83h2gf",
+      "displayName": "enoyao",
+      "image": "https://avatars.githubusercontent.com/u/17243165?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 20597,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 13,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1777701599173,
+      "changelog": "修复ClawScan安全审查: 1) update.sh下载白名单收紧为issuecdn.baidupcs.com 2) update.sh直接阻断Agent环境自更新 3) SKILL.md新增能力与风险披露章节",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c1bb50416454e4a93199af5f1868c50ee983db9d33838ca51b5f79d6006e4ae6"
+}

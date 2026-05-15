@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nini-schedule-manager@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nini_schedule_manager",
+  "skill": {
+    "id": 58217,
+    "skillKey": "clawhub-nini-schedule-manager",
+    "name": "Schedule Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nini-schedule-manager",
+    "url": "https://clawhub.ai/skills/nini-schedule-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nini-schedule-manager-79a7dce1a52cdda9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "(macOS only) 通过 osascript 和 reminders-cli 管理 Apple Calendar 和 Reminders，遵循 GTD 方法论。Triggers on \"schedule\", \"calendar\", \"reminders\", \"GTD\", \"todo\". 触发场景：用户说「安..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "niracler",
+      "userId": "s17ektxxtp4a689vnpykc5sxys85n5wj",
+      "displayName": "Niracler",
+      "image": "https://avatars.githubusercontent.com/u/24842631?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 484,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772771754843,
+      "changelog": "Add openclaw metadata",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fa64a0a85ca9cf9c5e022b12dd2775fec23ae154471f1ca31f9db5ac94f60a5d"
+}

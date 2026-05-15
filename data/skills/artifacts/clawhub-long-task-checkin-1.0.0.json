@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/long-task-checkin@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.long_task_checkin",
+  "skill": {
+    "id": 72821,
+    "skillKey": "clawhub-long-task-checkin",
+    "name": "强制进度检查点。当龙虾助手在执行任务时超过60秒没有完成，必须立即向用户发送进度反馈，说明：任务是否正常运行、当前执行到哪个步骤、预计还要多久。用于防止用户对长时间运行任务的不确定感。 触发场景：搜索/爬虫、文件批量处理、多步骤写作、调用外部API 核心."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "long-task-checkin",
+    "url": "https://clawhub.ai/skills/long-task-checkin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/long-task-checkin-470215e61d0b574f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "强制进度检查点。当龙虾助手在执行任务时超过60秒没有完成，必须立即向用户发送进度反馈，说明：任务是否正常运行、当前执行到哪个步骤、预计还要多久。用于防止用户对长时间运行任务的不确定感。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chrislawyeryounger-spec",
+      "userId": "s171y9nng0ccz8bxqcdtv2n6s184b9dc",
+      "displayName": "chrislawyeryounger-spec",
+      "image": "https://avatars.githubusercontent.com/u/274015848?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 123,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777896327167,
+      "changelog": "Initial release of long-task-checkin skill.\n\n- Enforces mandatory progress updates for tasks running over 60 seconds.\n- Requires clear, user-friendly status, quantified progress, and time estimates in specified message format.\n- Applies to search, crawling, file batch processing, multi-step writing, and tasks with uncertain runtime.\n- Excludes simple Q&A and instant operations.\n- Includes clear examples and strict message formatting rules.\n- Emphasizes proactive communication, transparency on issues, and conservative time estimates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e7d27eec409a0f79b74faec0712ae8226326e3b1b1cf38aa2481f97be98e8a52"
+}

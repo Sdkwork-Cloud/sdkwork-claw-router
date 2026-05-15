@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/programming@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.programming",
+  "skill": {
+    "id": 15913,
+    "skillKey": "clawhub-programming",
+    "name": "Programming"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "programming",
+    "url": "https://clawhub.ai/skills/programming",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/programming-ab2620f9b7154d9f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides programming guidance, including coding workflow, code review, optimization, and technical decision support based on task description and context."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leowing",
+      "userId": "s17ctwgztrdexnk8t7mk23wks583jvwt",
+      "displayName": "Leo Wing",
+      "image": "https://avatars.githubusercontent.com/u/6308474?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 873,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772518587234,
+      "changelog": "- 首个版本，发布“编程技能”。\n- 支持 Claude CLI 编程指南、标准编程工作流程指导、代码审查与优化建议。\n- 适用于开发、调试、结构设计和技术选型等编程场景。\n- 支持任务描述、上下文与技术要求等多种输入参数。\n- 明确执行分析、方法选择、实施与反馈流程。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:40e10c3b4555942326626481793d876747c9983ba8fbb801f0ec8bd04582b144"
+}

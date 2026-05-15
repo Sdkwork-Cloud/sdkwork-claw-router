@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17453,
+  "uuid": "skill-clawhub-quick-note-tool",
+  "skillKey": "clawhub-quick-note-tool",
+  "name": "quick-note-tool",
+  "summary": "Fast note-taking and snippet storage. Use when user says \"note:\", \"remember this\", \"save snippet\", \"quick note\", or wants to save/read short text snippets.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quick_note_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yushimohuang",
+      "features": [
+        "Fast note-taking and snippet storage",
+        "Use when user says \"note:\", \"remember this\", \"save snippet\", \"quick note\", or wants to save/rea."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quick-note-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/197757967?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quick-note-tool",
+      "url": "https://clawhub.ai/skills/quick-note-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quick-note-tool",
+    "url": "https://clawhub.ai/skills/quick-note-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quick-note-tool-62e87fd4c8277d39.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quick-note-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-quick-note-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:00d170e3dd2c20d793260df532453745c7af331c553639ecd8e37e91cbf4d6d8",
+      "artifactSizeBytes": 2243
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T04:54:01.226Z"
+}

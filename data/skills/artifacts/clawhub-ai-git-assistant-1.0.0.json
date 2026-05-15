@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-git-assistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_git_assistant",
+  "skill": {
+    "id": 43063,
+    "skillKey": "clawhub-ai-git-assistant",
+    "name": "Git Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-git-assistant",
+    "url": "https://clawhub.ai/skills/ai-git-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-git-assistant-156acd3bc280f888.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered git commit messages, changelogs, release notes, PR descriptions, and commit review. Analyzes staged changes and git history to generate profession..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "evolinkai",
+      "userId": "s176k82x7tm60j2kx309p7evxs83j3z7",
+      "displayName": "EvolinkAI",
+      "image": "https://avatars.githubusercontent.com/u/253253881?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776173017629,
+      "changelog": "Initial release of Git Assistant, an AI-powered tool for improving git workflow.\n\n- Generates Conventional Commits-compliant commit messages from staged changes.\n- Reviews commit messages for quality and adherence to conventions.\n- Creates changelogs and detailed release notes from git history.\n- Produces PR descriptions from branch diffs.\n- Supports local and AI-assisted commands; requires EvoLink API key for AI features.\n- No destructive git operations; all analysis is read-only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8366771f274e7414ad9481dcba0e5e36012a39fc180eb94cfd0346de5219f485"
+}

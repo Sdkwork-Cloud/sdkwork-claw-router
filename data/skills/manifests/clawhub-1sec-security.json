@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20063,
+  "uuid": "skill-clawhub-1sec-security",
+  "skillKey": "clawhub-1sec-security",
+  "name": "1-SEC: All-in-One Cybersecurity for AI Agent Hosts",
+  "summary": "Install, configure, and manage 1-SEC — an open-source, all-in-one cybersecurity platform (16 modules, single binary) on Linux servers and VPS instances. Use...",
+  "version": "0.4.15",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.1sec_security",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cutmob",
+      "features": [
+        "Install, configure, and manage 1-SEC — an open-source, all-in-one cybersecurity platform (16 mo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/1sec-security@0.4.15",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208364815?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "1sec-security",
+      "url": "https://clawhub.ai/skills/1sec-security"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "1sec-security",
+    "url": "https://clawhub.ai/skills/1sec-security",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/1sec-security-596aa62122b34130.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/1sec-security@0.4.15",
+      "artifactUrl": "data/skills/artifacts/clawhub-1sec-security-0.4.15.json",
+      "version": "0.4.15",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f8ef2787cd3e8c98091c762fb3f852285f9bd8ba260d12f34497e8e8cc7e1b2f",
+      "artifactSizeBytes": 1898
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T09:36:15.668Z"
+}

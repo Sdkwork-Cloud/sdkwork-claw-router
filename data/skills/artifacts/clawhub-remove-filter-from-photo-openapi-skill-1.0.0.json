@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/remove-filter-from-photo-openapi-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.remove_filter_from_photo_openapi_skill",
+  "skill": {
+    "id": 56271,
+    "skillKey": "clawhub-remove-filter-from-photo-openapi-skill",
+    "name": "Remove Filter from Photo Online – AI Filter Remover for Natural Image Restoration – API-powered"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "remove-filter-from-photo-openapi-skill",
+    "url": "https://clawhub.ai/skills/remove-filter-from-photo-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/remove-filter-from-photo-openapi-skill-1956d2ca8ed8a4a1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI filter remover — remove photo filters and restore natural image colors"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkleming",
+      "userId": "s173eywkn9gkx5va9p2tb6kh5h843s3s",
+      "displayName": "sparkleMing",
+      "image": "https://avatars.githubusercontent.com/u/38350996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776697536891,
+      "changelog": "- Initial release of remove-filter-from-photo-openapi-skill.\n- Removes filters from photos and restores natural image colors via WeShop OpenAPI.\n- Secure API key management with strong warnings: only send your API key to openapi.weshop.ai.\n- Supports uploading images, describing filters to remove, and batch processing (up to 16 images).\n- Provides clear endpoint documentation and usage instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:81c7cc94ed2ffa930b90277304ec62082ace540f6eb57d453776f2c71f102f0a"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64644,
+  "uuid": "skill-clawhub-folder-cleanup-assistant",
+  "skillKey": "clawhub-folder-cleanup-assistant",
+  "name": "Folder Cleanup Assistant",
+  "summary": "专业的文件夹整理助手，帮助用户安全地整理和清理文件夹。在清理前自动创建压缩备份，使用移动命令代替删除命令确保数据安全。支持Mac/Linux和Windows系统，需在桌面端使用。触发关键词：文件整理、文件夹清理、清理文件、整理目录、folder cleanup、organize files",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.folder_cleanup_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tianheihei002",
+      "features": [
+        "专业的文件夹整理助手，帮助用户安全地整理和清理文件夹。在清理前自动创建压缩备份，使用移动命令代替删除命令确保数据安全。支持Mac/Linux和Windows系统，需在桌面端使用。触发关键词：."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/folder-cleanup-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/193375545?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "folder-cleanup-assistant",
+      "url": "https://clawhub.ai/skills/folder-cleanup-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "folder-cleanup-assistant",
+    "url": "https://clawhub.ai/skills/folder-cleanup-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/folder-cleanup-assistant-c6612549d5cc24ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/folder-cleanup-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-folder-cleanup-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d3b8ec9b141529c0d47398e68bc56b1b32ca9ca13263224486202cdfe9132006",
+      "artifactSizeBytes": 2724
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T01:06:58.598Z"
+}

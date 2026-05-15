@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57215,
+  "uuid": "skill-clawhub-zeekr",
+  "skillKey": "clawhub-zeekr",
+  "name": "zeekr",
+  "summary": "Information assistant for 极氪 Zeekr. Search products, news, financials, and official resources for 极氪 Zeekr.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zeekr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Information assistant for 极氪 Zeekr",
+        "Search products, news, financials, and official resources for 极氪 Zeekr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zeekr@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zeekr",
+      "url": "https://clawhub.ai/skills/zeekr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zeekr",
+    "url": "https://clawhub.ai/skills/zeekr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zeekr-febe7a793603317f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zeekr@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zeekr-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a625f915b95d503afd9977315239fb9e3773f795b7d83dda5a24812bd85a3cea",
+      "artifactSizeBytes": 2166
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T11:32:10.420Z"
+}

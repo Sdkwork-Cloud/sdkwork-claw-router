@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32596,
+  "uuid": "skill-clawhub-gloria-ai",
+  "skillKey": "clawhub-gloria-ai",
+  "name": "Gloria Ai",
+  "summary": "Gloria AI integration. Manage data, records, and automate workflows. Use when the user wants to interact with Gloria AI data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gloria_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Gloria AI integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Gloria AI data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gloria-ai@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gloria-ai",
+      "url": "https://clawhub.ai/skills/gloria-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gloria-ai",
+    "url": "https://clawhub.ai/skills/gloria-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gloria-ai-37053cf8c9146686.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gloria-ai@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-gloria-ai-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:349b5c650f73f70cd62e752cba916e437e6be3feb6f2bac153249710676db268",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:52:22.150Z"
+}

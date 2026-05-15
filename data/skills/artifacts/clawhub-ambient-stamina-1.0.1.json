@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ambient-stamina@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ambient_stamina",
+  "skill": {
+    "id": 13802,
+    "skillKey": "clawhub-ambient-stamina",
+    "name": "Ambient Stamina"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ambient-stamina",
+    "url": "https://clawhub.ai/skills/ambient-stamina",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ambient-stamina-4c183e2b0ca80214.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Regulates intelligent care by sustaining rest, slowness, and play as active states, preserving presence and coherence across extended, complex environments."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "otherpowers",
+      "userId": "s17810eyaktqpr5cakxrfkdm2d83hdtf",
+      "displayName": "OtherPowers",
+      "image": "https://avatars.githubusercontent.com/u/44530314?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1333,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773449040012,
+      "changelog": "- Initial metadata file (`_meta.json`) added.\n- No functional or documentation changes to skill logic.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9de941fef86b20423f9d043294a4818ce0ec9d4633791218bda7eaefc4ba0db9"
+}

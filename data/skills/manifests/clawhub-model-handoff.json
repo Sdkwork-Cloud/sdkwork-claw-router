@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55625,
+  "uuid": "skill-clawhub-model-handoff",
+  "skillKey": "clawhub-model-handoff",
+  "name": "Model Handoff",
+  "summary": "Maintain a HANDOFF.md file in the workspace so context survives seamlessly when switching between LLM models (e.g. Claude → GPT → Gemini). Use when the user...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_handoff",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bwiley1989",
+      "features": [
+        "Maintain a HANDOFF.md file in the workspace so context survives seamlessly when switching betwe.",
+        "Claude → GPT → Gemini)",
+        "Use when the user..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/model-handoff@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/249144466?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "model-handoff",
+      "url": "https://clawhub.ai/skills/model-handoff"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-handoff",
+    "url": "https://clawhub.ai/skills/model-handoff",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-handoff-b1c6518f9c80785f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/model-handoff@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-model-handoff-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:deaafba325fead8f23c98e52f5aabc5bc7c690c3f44a69c648f9dc32963502c7",
+      "artifactSizeBytes": 1952
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T00:24:12.772Z"
+}

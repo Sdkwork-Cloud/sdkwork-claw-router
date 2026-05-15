@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54365,
+  "uuid": "skill-clawhub-uninstaller",
+  "skillKey": "clawhub-uninstaller",
+  "name": "Uninstaller",
+  "summary": "Guides users through safely uninstalling OpenClaw (龙虾). Use when user asks how to remove/uninstall OpenClaw, wants to clean up completely, or mentions paid c...",
+  "version": "1.0.0-4e6ce7f",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uninstaller",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ERerGB",
+      "features": [
+        "Guides users through safely uninstalling OpenClaw (龙虾)",
+        "Use when user asks how to remove/uninstall OpenClaw, wants to clean up completely, or mentions."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uninstaller@1.0.0-4e6ce7f",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/98926814?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uninstaller",
+      "url": "https://clawhub.ai/skills/uninstaller"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uninstaller",
+    "url": "https://clawhub.ai/skills/uninstaller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uninstaller-b6f64912ce531003.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uninstaller@1.0.0-4e6ce7f",
+      "artifactUrl": "data/skills/artifacts/clawhub-uninstaller-1.0.0-4e6ce7f.json",
+      "version": "1.0.0-4e6ce7f",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d610a1b9c1817207abd128f7ccb3d37feb499532e552f9f9df9359cc0e73ab7",
+      "artifactSizeBytes": 1918
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T12:11:45.531Z"
+}

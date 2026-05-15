@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weiqi-fetcher@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weiqi_fetcher",
+  "skill": {
+    "id": 71119,
+    "skillKey": "clawhub-weiqi-fetcher",
+    "name": "围棋分享棋谱下载器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weiqi-fetcher",
+    "url": "https://clawhub.ai/skills/weiqi-fetcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weiqi-fetcher-36ce12fd461a7012.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "围棋分享棋谱下载器 - 从分享链接自动下载SGF棋谱"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangbin2025",
+      "userId": "s172smqj3myyxf7bjeyvyvse5183em11",
+      "displayName": "tokener",
+      "image": "https://avatars.githubusercontent.com/u/39153812?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 280,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1775965510465,
+      "changelog": "refactor: 使用 fox_adapter 复用 weiqi-foxwq 完整功能; fix: 修复新博对弈 WebSocket 数据抓取",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1b2bcfa61def70fb5c755e502ab0375f75412f9867ba9965a566e87cf72020f1"
+}

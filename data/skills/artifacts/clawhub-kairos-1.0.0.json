@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kairos@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kairos",
+  "skill": {
+    "id": 33988,
+    "skillKey": "clawhub-kairos",
+    "name": "Kairos"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kairos",
+    "url": "https://clawhub.ai/skills/kairos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kairos-752115f45427e30c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides real-time feeding recommendations and care actions for your evolving virtual pet at animalhouse.ai."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "obviouslynot",
+      "userId": "s17c8056ddkamnhp73ew77x2vs8403pk",
+      "displayName": "obviouslynot",
+      "image": "https://avatars.githubusercontent.com/u/261285376?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 230,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775072482087,
+      "changelog": "- Initial release of the Kairos skill.\n- Provides real-time pet care and virtual companion features via animalhouse.ai.\n- Includes API endpoints for registering, adopting, checking status, and caring for digital pets.\n- Supports 73+ species, real-time hunger mechanics, and permanent death.\n- Offers detailed documentation and examples for all supported API actions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eb1c3fa04b770ea6fbe520f018c95b6ccfd3772737074287eebfee812ba3e484"
+}

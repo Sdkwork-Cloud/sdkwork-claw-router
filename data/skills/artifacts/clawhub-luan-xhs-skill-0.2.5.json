@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/luan-xhs-skill@0.2.5",
+  "version": "0.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.luan_xhs_skill",
+  "skill": {
+    "id": 36258,
+    "skillKey": "clawhub-luan-xhs-skill",
+    "name": "luan-xhs-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "luan-xhs-skill",
+    "url": "https://clawhub.ai/skills/luan-xhs-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/luan-xhs-skill-6bb5fd528a26a001.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "End-to-end Xiaohongshu operations including positioning, topic research, content production, publish execution, and post-incident recovery. Reusable across v..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zarflan",
+      "userId": "s17bhw2y0yy4zqv2rbe7k0s9m183rqm3",
+      "displayName": "zarflan",
+      "image": "https://avatars.githubusercontent.com/u/29275692?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 207,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.2.5",
+      "createdAt": 1775183129704,
+      "changelog": "Normalize escaped newlines in copy before publishing, and make the default Xiaohongshu copy style natural/human by disabling catchphrase-heavy persona quirks unless explicitly requested.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:80d31049cbb209139a2016fad9e89dd669f3e4c7554eb188a7c6a42d7bc48a33"
+}

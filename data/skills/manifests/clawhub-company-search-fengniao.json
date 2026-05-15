@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68137,
+  "uuid": "skill-clawhub-company-search-fengniao",
+  "skillKey": "clawhub-company-search-fengniao",
+  "name": "China company search fengniao",
+  "summary": "企业查询、工商查询、公司查询、企业信息查询与企业风险查询 Skill。风鸟 Fengniao（Riskbird）支持查公司基本信息、法人、股东、主要人员、对外投资、工商变更、企业信用，以及被执行、失信、限高、经营异常、严重违法、行政处罚等风险数据，适用于企业尽调、合作方背景调查、供应商准入、客户风险识别、签约前核...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.company_search_fengniao",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xinshu001",
+      "features": [
+        "企业查询、工商查询、公司查询、企业信息查询与企业风险查询 Skill。风鸟 Fengniao（Riskbird）支持查公司基本信息、法人、股东、主要人员、对外投资、工商变更、企业信用，以及被."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/company-search-fengniao@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270278415?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "company-search-fengniao",
+      "url": "https://clawhub.ai/skills/company-search-fengniao"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "company-search-fengniao",
+    "url": "https://clawhub.ai/skills/company-search-fengniao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/company-search-fengniao-e9e3d39b48dc009b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/company-search-fengniao@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-company-search-fengniao-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:172e1b55e1275d17c7e8e4e81dcd5663a0454c281f772a084584449bc20317d3",
+      "artifactSizeBytes": 2398
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T09:35:50.484Z"
+}

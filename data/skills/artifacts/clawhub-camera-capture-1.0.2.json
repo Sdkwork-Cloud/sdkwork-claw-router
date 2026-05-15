@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/camera-capture@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.camera_capture",
+  "skill": {
+    "id": 27622,
+    "skillKey": "clawhub-camera-capture",
+    "name": "Camera Capture"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "camera-capture",
+    "url": "https://clawhub.ai/skills/camera-capture",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/camera-capture-ae4abe8306207eb5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control the local computer's built-in camera for capturing photos and basic operations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dddjj0",
+      "userId": "s179z2vm12rkt9v4mwvpw2wy0d843fqe",
+      "displayName": "dddjj0",
+      "image": "https://avatars.githubusercontent.com/u/191193943?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 244,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775102544257,
+      "changelog": "Updated version in SKILL.md and added MIT license",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d8d396a7b9140bd1fc7cf3dad3b72d4888dc0f7566e23ec6952ce87c1e9176e6"
+}

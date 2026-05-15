@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gmail-skill@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gmail_skill",
+  "skill": {
+    "id": 14587,
+    "skillKey": "clawhub-gmail-skill",
+    "name": "Gmail Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gmail-skill",
+    "url": "https://clawhub.ai/skills/gmail-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gmail-skill-c34c8e13b5805900.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Gmail automation: summarize, labels, spam purge, filing, deletion, permanent delete"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "r39132",
+      "userId": "publishers:r39132",
+      "displayName": "r39132",
+      "image": "https://avatars.githubusercontent.com/u/581734?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1120,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1770969034616,
+      "changelog": "Rename from gmail-agent to gmail-skill; update all references, paths, and docs",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ab66d4115c1fe88ec5cd322af8fae53ef46eb54511028e75d833b9491347537b"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-voice-chat@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_voice_chat",
+  "skill": {
+    "id": 67059,
+    "skillKey": "clawhub-feishu-voice-chat",
+    "name": "Feishu Voice Chat"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-voice-chat",
+    "url": "https://clawhub.ai/skills/feishu-voice-chat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-voice-chat-923f949e88358e35.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "飞书语音对话能力，提供语音识别（ASR）和语音合成（TTS）功能， 所有的飞书语音消息都通过该技能处理。 完整语音交互链路：接收用户语音 → ASR 转文字 → LLM 处理 → TTS 转语音 → 通过飞书插件发送语音消息。 当用户要求\"语音回复/说给我听\"时，只回复飞书语音消息（audio 气泡），不回复文本..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "li-neo",
+      "userId": "s17as1tc2k5d2v37jrhw9yqetn83kpmc",
+      "displayName": "neo",
+      "image": "https://avatars.githubusercontent.com/u/178150393?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 251,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1774154080515,
+      "changelog": "- Added explicit environment variable metadata to SKILL.md, documenting all relevant environment variables and their purpose.\n- No core functionality changes; all updates are documentation improvements to clarify setup and configuration.\n- Updated SKILL.md to include an `env` section for better clarity and integration guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f5887e8a73dee147bc08dafb848702ed3c042fbd3535cce1c5ec0246e8052bad"
+}

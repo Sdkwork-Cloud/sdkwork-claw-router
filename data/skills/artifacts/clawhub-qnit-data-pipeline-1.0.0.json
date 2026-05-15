@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qnit-data-pipeline@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qnit_data_pipeline",
+  "skill": {
+    "id": 71270,
+    "skillKey": "clawhub-qnit-data-pipeline",
+    "name": "数据管道工具箱"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qnit-data-pipeline",
+    "url": "https://clawhub.ai/skills/qnit-data-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qnit-data-pipeline-2ed47ae23e1c574c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "构建和调度ETL数据管道，支持Cron定时任务管理与自动化数据处理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yesong-hue",
+      "userId": "s17865seb2fyk8mpkmjge2xwmd857k7c",
+      "displayName": "yesong-Hue",
+      "image": "https://avatars.githubusercontent.com/u/277589485?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 45,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778306662167,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0f39b2165c01fef905adedb4fdd2c28143279b577c3c8b08be5252fc5ab55cfc"
+}

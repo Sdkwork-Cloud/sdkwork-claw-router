@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kyc-vault@0.2.2",
+  "version": "0.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kyc_vault",
+  "skill": {
+    "id": 23202,
+    "skillKey": "clawhub-kyc-vault",
+    "name": "KYC Vault"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kyc-vault",
+    "url": "https://clawhub.ai/skills/kyc-vault",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kyc-vault-f5f169f4fec11ddb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automates KYC identity verification by securely managing and submitting identity documents. Always asks user permission before accessing or uploading any fil..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "seamao",
+      "userId": "publishers:seamao",
+      "displayName": "seamao",
+      "image": "https://avatars.githubusercontent.com/u/34310148?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 448,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.2.2",
+      "createdAt": 1772958261767,
+      "changelog": "- Documentation update only: README.md and SKILL.md content updated, no code changes.\n- All security rules, KYC workflow steps, and user permission protocols remain unchanged.\n- No functional changes; all logic and available commands are as in previous versions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:166a633142968765bd720a0ee390e5266932908334fc76339099ee8eee1acdea"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amphp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amphp",
+  "skill": {
+    "id": 56184,
+    "skillKey": "clawhub-amphp",
+    "name": "amphp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amphp",
+    "url": "https://clawhub.ai/skills/amphp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amphp-7db19b059d15baa8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Writing non-blocking, async PHP code using the AMPHP framework — revolt/event-loop, amphp/amp ^3, and the full amphp/* ecosystem (http-server, http-client, w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rekryt",
+      "userId": "publishers:rekryt",
+      "displayName": "Sergey Krupkin",
+      "image": "https://avatars.githubusercontent.com/u/181338?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 307,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773250274421,
+      "changelog": "Initial public release of the amphp skill for async PHP development.\n\n- Adds comprehensive skill for non-blocking, async PHP using AMPHP v3 (amphp/amp ^3, revolt/event-loop ^1).\n- Covers usage across the amphp/* ecosystem: HTTP/WS servers and clients, file, cache, pipeline, parallel, databases, and more.\n- Enforces best practices, including strict types, async I/O, and critical AMPHP safety rules.\n- Includes detailed reference for docs, examples, workflows, templates, and migration guides from v2.\n- Designed to match real-world async PHP needs, even when \"amphp\" is implied but not stated.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e17c2bff3811a5517eb4777653ad4fd24a18d097e780e85ec2a7b2b1f7f7f7b1"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34391,
+  "uuid": "skill-clawhub-freelance-job-scraper",
+  "skillKey": "clawhub-freelance-job-scraper",
+  "name": "Freelance Job Scraper",
+  "summary": "Autonomous freelance job monitoring agent. Scans Hacker News Who is Hiring, YC jobs board, and remote job aggregators for high-value automation and AI gigs,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.freelance_job_scraper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lanxevo3",
+      "features": [
+        "Autonomous freelance job monitoring agent",
+        "Scans Hacker News Who is Hiring, YC jobs board, and remote job aggregators for high-value autom."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/freelance-job-scraper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77862787?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "freelance-job-scraper",
+      "url": "https://clawhub.ai/skills/freelance-job-scraper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "freelance-job-scraper",
+    "url": "https://clawhub.ai/skills/freelance-job-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/freelance-job-scraper-1faba366008f2608.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/freelance-job-scraper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-freelance-job-scraper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ed3367e55b13e58184134b3f3f35e387e48adbee55ff5cca874ddc365412ac0f",
+      "artifactSizeBytes": 2345
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T21:32:14.842Z"
+}

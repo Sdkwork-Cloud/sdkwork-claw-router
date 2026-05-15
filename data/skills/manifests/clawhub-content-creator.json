@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8782,
+  "uuid": "skill-clawhub-content-creator",
+  "skillKey": "clawhub-content-creator",
+  "name": "Content Creator",
+  "summary": "Deprecated redirect skill that routes legacy 'content creator' requests to the correct specialist. Use when a user invokes 'content creator', asks to write a...",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_creator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alireza Rezvani",
+      "features": [
+        "Deprecated redirect skill that routes legacy 'content creator' requests to the correct speciali.",
+        "Use when a user invokes 'content creator', asks to write a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/content-creator@2.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5697919?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "content-creator",
+      "url": "https://clawhub.ai/skills/content-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-creator",
+    "url": "https://clawhub.ai/skills/content-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-creator-838d9780ae62126a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/content-creator@2.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-content-creator-2.1.1.json",
+      "version": "2.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0e04256ea2d8011dcd9198119ee50d9bb8a866226b4571876a122217e2190710",
+      "artifactSizeBytes": 1930
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T15:30:53.580Z"
+}

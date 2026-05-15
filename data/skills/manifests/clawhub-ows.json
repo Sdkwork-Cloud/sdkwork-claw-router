@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33388,
+  "uuid": "skill-clawhub-ows",
+  "skillKey": "clawhub-ows",
+  "name": "OWS - Open Wallet Standard",
+  "summary": "Perform multi-chain wallet management, balance checks, transaction signing, x402 payments, funding, and policy control with encrypted local key storage using...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ows",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rahul Sethuram",
+      "features": [
+        "Perform multi-chain wallet management, balance checks, transaction signing, x402 payments, fund."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ows@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11512787?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ows",
+      "url": "https://clawhub.ai/skills/ows"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ows",
+    "url": "https://clawhub.ai/skills/ows",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ows-40e5514f2c75a2a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ows@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-ows-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e3cb690d0367644ae9adabed74bd085c6579a2e91c0fe1223b9b85be81a2138b",
+      "artifactSizeBytes": 1963
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T09:56:27.410Z"
+}

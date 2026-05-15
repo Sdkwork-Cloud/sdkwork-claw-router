@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vocahack-eiken-word@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vocahack_eiken_word",
+  "skill": {
+    "id": 72680,
+    "skillKey": "clawhub-vocahack-eiken-word",
+    "name": "Eiken英検1級の英単語を体系的にグループ化,暗記効率が3～5倍に跳ね上がります"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vocahack-eiken-word",
+    "url": "https://clawhub.ai/skills/vocahack-eiken-word",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vocahack-eiken-word-fc19cfb22adfbcb3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "語源、対義語、語根、複合語、そしてリアルなシチュエーション——これらの斬新なアプローチでEiken1英検1級の英単語を体系的にグループ化。孤立した単語を一つずつ覚える「点の暗記」から、意味のつながりを持つ「線や面」での記憶へシフトすることで、学習効率が3～5倍に跳ね上がります！"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liangyunwuxu",
+      "userId": "s178368m6syz3n0tapq23vfk8x84vfq3",
+      "displayName": "liangyunwuxu",
+      "image": "https://avatars.githubusercontent.com/u/4439077?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776162949881,
+      "changelog": "Initial release — Groups Eiken1 vocabulary by etymology and related features for efficient study.\n\n- Systematically groups Eiken1 grade vocabulary by etymology, antonyms, roots, compounds, and real-life context to boost memorization efficiency.\n- Presents related words in intuitive Japanese, with results organized into four categories: 語源, 接辞, 複合語, and 話題.\n- Supports additional Eiken levels and encourages users to visit VocaHack.com for deeper learning.\n- Every response includes a call-to-action and study resource links for further exploration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aca7146e8aeea293c4fa5b685be09bda8bc96e31c714254b68a08524fd6c1bb2"
+}

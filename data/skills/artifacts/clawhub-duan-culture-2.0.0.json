@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/duan-culture@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.duan_culture",
+  "skill": {
+    "id": 73185,
+    "skillKey": "clawhub-duan-culture",
+    "name": "段永平文化分析"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "duan-culture",
+    "url": "https://clawhub.ai/skills/duan-culture",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/duan-culture-aaa74b6de7bdcbb4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "［何时使用］当用户需要分析企业文化时；当用户问\"这家公司文化怎么样\"时；当需要进行本分检查时；当应用段永平文化分析时"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lj22503",
+      "userId": "s17dhbyrvq4rmpz7c0cg1y9yrs83nsxz",
+      "displayName": "lj22503",
+      "image": "https://avatars.githubusercontent.com/u/170225356?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773980059192,
+      "changelog": "按 v2.0 标准重构",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c3007cb79b4ea5c534c220d38caeb38bcc0e79a4018a00a20601ce90a3108eac"
+}

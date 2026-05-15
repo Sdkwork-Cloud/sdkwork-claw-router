@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibabacloud-cli-guidance@0.0.2",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_cli_guidance",
+  "skill": {
+    "id": 28601,
+    "skillKey": "clawhub-alibabacloud-cli-guidance",
+    "name": "Alibabacloud Cli Guidance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-cli-guidance",
+    "url": "https://clawhub.ai/skills/alibabacloud-cli-guidance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-cli-guidance-653580573de6b66d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guide users to manage Alibaba Cloud resources using the Aliyun CLI command-line tool. Covers CLI installation, credential configuration, plugin management, c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdk-team",
+      "userId": "s173swjet2yrebzqrp6hjkvmy583mxef",
+      "displayName": "alibabacloud-skills-team",
+      "image": "https://avatars.githubusercontent.com/u/49941014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 221,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.2",
+      "createdAt": 1777269353900,
+      "changelog": "alibabacloud-cli-guidance 0.0.2\n\n- Added guidance for using Aliyun CLI \"ai-mode\" for agent sessions; clarified not to mix ai-mode and ALIBABA_CLOUD_USER_AGENT for the same skill token.\n- Updated User-Agent attribution instructions, providing distinct paths for agent (ai-mode) and human/script usage.\n- Documented minimum required CLI version (>= 3.3.3) and new commands available in 3.3.5+ (`aliyun upgrade`) and 3.3.8+ (`aliyun plugin show`).\n- Improved installation and plugin update guidance to ensure compatibility with product plugins.\n- Enhanced explanations to prevent duplicated User-Agent attribution, improving telemetry and troubleshooting fidelity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:22b9fa556d128a8cac06c54812883a1d0e227820fb0d9aebedbcba387b98d599"
+}

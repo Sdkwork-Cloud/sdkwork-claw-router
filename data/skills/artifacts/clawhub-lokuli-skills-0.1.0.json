@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lokuli-skills@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lokuli_skills",
+  "skill": {
+    "id": 13732,
+    "skillKey": "clawhub-lokuli-skills",
+    "name": "Lokuli Booking"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lokuli-skills",
+    "url": "https://clawhub.ai/skills/lokuli-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lokuli-skills-93c8928ed5215ad1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Book real-world services through Lokuli MCP. Use when user needs to find, check availability, or book local services like plumbers, electricians, cleaners, mechanics, barbers, personal trainers, etc. Triggers on requests like \"book me a ha."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "edwardrodriguez703-design",
+      "userId": "publishers:edwardrodriguez703-design",
+      "displayName": "Lokuli",
+      "image": "https://avatars.githubusercontent.com/u/224194606?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1372,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770279292013,
+      "changelog": "Initial release of Lokuli Booking skill for real-world service appointments.\n\n- Enables searching, viewing, and booking 75+ local service types (e.g., plumbers, haircuts, mechanics)\n- Supports availability checks, provider info, pricing estimates, and location validation\n- Enforces explicit user confirmation before booking; collects required customer info\n- Generates Stripe checkout URLs for secure payments\n- Details full API with example JSON requests for all booking actions",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8490d150434e32a4c41a3a8550a10e8eb14da04009c86b3844dbba617fd165dd"
+}

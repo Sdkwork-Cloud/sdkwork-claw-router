@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40107,
+  "uuid": "skill-clawhub-auto-updater-bak2",
+  "skillKey": "clawhub-auto-updater-bak2",
+  "name": "Auto Updater.Bak2",
+  "summary": "Automatically update Clawdbot and all installed skills once daily. Runs via cron, checks for updates, applies them, and messages the user with a summary of w...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_updater_bak2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "make453",
+      "features": [
+        "Automatically update Clawdbot and all installed skills once daily",
+        "Runs via cron, checks for updates, applies them, and messages the user with a summary of w..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-updater-bak2@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/200362598?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-updater-bak2",
+      "url": "https://clawhub.ai/skills/auto-updater-bak2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-updater-bak2",
+    "url": "https://clawhub.ai/skills/auto-updater-bak2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-updater-bak2-e87fa422d6b5b288.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-updater-bak2@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-updater-bak2-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9cc0d139e21b1103b1eeadd09d59aa16be724f2bbd87d795f439e53dbbf47b97",
+      "artifactSizeBytes": 2344
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T16:07:07.652Z"
+}

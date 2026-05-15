@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16873,
+  "uuid": "skill-clawhub-mfa-word",
+  "skillKey": "clawhub-mfa-word",
+  "name": "MFA WORD",
+  "summary": "Enforces MFA by requiring a secret word to access protected sensitive data and allows emergency reset with a super secret word.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mfa_word",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cenralsolution",
+      "features": [
+        "Enforces MFA by requiring a secret word to access protected sensitive data and allows emergency."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mfa-word@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/242977556?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mfa-word",
+      "url": "https://clawhub.ai/skills/mfa-word"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mfa-word",
+    "url": "https://clawhub.ai/skills/mfa-word",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mfa-word-c3f5da34609c8a49.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mfa-word@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mfa-word-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:59edc386e3927bf40bd9dd3728f5499cd75ade3bbbfb51986687344ebef8a4f2",
+      "artifactSizeBytes": 2296
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T15:58:01.938Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68930,
+  "uuid": "skill-clawhub-wechat-tietu-draft",
+  "skillKey": "clawhub-wechat-tietu-draft",
+  "name": "WeChat Tietu Draft",
+  "summary": "创建微信公众号贴图类型草稿的自动化工具。专门用于创建简化界面的贴图草稿（只有标题和正文），适合图片为主的内容。使用触发词\"发布贴图草稿\"、\"创建贴图草稿\"、\"贴图草稿\"、\"微信公众号贴图\"或\"贴图类型草稿\"激活。提供统一入口脚本(skill_main.py)进行状态感知的全流程管理。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_tietu_draft",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "punkin6",
+      "features": [
+        "创建微信公众号贴图类型草稿的自动化工具。专门用于创建简化界面的贴图草稿（只有标题和正文），适合图片为主的内容。使用触发词\"发布贴图草稿\"、\"创建贴图草稿\"、\"贴图草稿\"、\"微信公众号贴图\"或."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-tietu-draft@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/118983190?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-tietu-draft",
+      "url": "https://clawhub.ai/skills/wechat-tietu-draft"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-tietu-draft",
+    "url": "https://clawhub.ai/skills/wechat-tietu-draft",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-tietu-draft-3cf6f824d1701144.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-tietu-draft@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-tietu-draft-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c371de4973af5689e4e498fe9393feb5749b28d2b976f0d9ac439e9a014be437",
+      "artifactSizeBytes": 2627
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T16:43:03.008Z"
+}

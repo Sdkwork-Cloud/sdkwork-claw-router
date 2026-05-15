@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10802,
+  "uuid": "skill-clawhub-sfsymbol-generator",
+  "skillKey": "clawhub-sfsymbol-generator",
+  "name": "SF Symbol generator",
+  "summary": "Generate an Xcode SF Symbol asset catalog .symbolset from an SVG. Use when you need to add a custom SF Symbol (build-time) by creating the symbolset folder, Contents.json, and SVG file.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sfsymbol_generator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "svkozak",
+      "features": [
+        "Generate an Xcode SF Symbol asset catalog .symbolset from an SVG",
+        "Use when you need to add a custom SF Symbol (build-time) by creating the symbolset folder, Cont."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sfsymbol-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31941359?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sfsymbol-generator",
+      "url": "https://clawhub.ai/skills/sfsymbol-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sfsymbol-generator",
+    "url": "https://clawhub.ai/skills/sfsymbol-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sfsymbol-generator-4baf0ffb56a5c98f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sfsymbol-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sfsymbol-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da09550ca4f7c8d73a513aa0521dd39dd5fbfc65dbd8cfbb2a0cbb236f0d67df",
+      "artifactSizeBytes": 2406
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-19T02:44:03.047Z"
+}

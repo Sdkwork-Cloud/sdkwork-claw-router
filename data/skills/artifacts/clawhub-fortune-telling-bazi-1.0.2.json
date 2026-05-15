@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fortune-telling-bazi@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fortune_telling_bazi",
+  "skill": {
+    "id": 64485,
+    "skillKey": "clawhub-fortune-telling-bazi",
+    "name": "Fortune Telling Bazi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fortune-telling-bazi",
+    "url": "https://clawhub.ai/skills/fortune-telling-bazi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fortune-telling-bazi-e49f577c72eebe88.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "八字算命 skill — 支持多人八字存储+联合分析，首次询问生日，后续对话自动附带八字信息。说\"停止算命\"退出。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "youhan2021",
+      "userId": "s17b59gkcpt9ne2ndxzww9nbxh84gmjs",
+      "displayName": "youhan2021",
+      "image": "https://avatars.githubusercontent.com/u/134278858?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1777222995580,
+      "changelog": "- 完全重构，八字农历与四柱计算迁移为本地自包含核心，无需远程API。\n- 增加 lunar_core.py：本地农历换算、四柱干支、生肖等算法覆盖1899-2060年。\n- 修正干支推算、命格与喜用算法，所有常量及十神表已覆核并纠正。\n- 拆分原脚本，新增主入口、报告输出、存储模块和单元测试，提高可维护性和复用性。\n- 更新命令行交互、关键词触发和格式注入，支持多人八字联合分析与数据持久化。\n- 丰富输出摘要内容，明确神煞、大运、旺衰等字段，并统一格式。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7ffb830f5b650997920455990c7c81b9d7b29915611afb164bf587eaca8ce058"
+}

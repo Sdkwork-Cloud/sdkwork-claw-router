@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35147,
+  "uuid": "skill-clawhub-freedompay",
+  "skillKey": "clawhub-freedompay",
+  "name": "Freedompay",
+  "summary": "FreedomPay integration. Manage data, records, and automate workflows. Use when the user wants to interact with FreedomPay data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.freedompay",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "FreedomPay integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with FreedomPay data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/freedompay@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "freedompay",
+      "url": "https://clawhub.ai/skills/freedompay"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "freedompay",
+    "url": "https://clawhub.ai/skills/freedompay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/freedompay-22cecd01f83cc155.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/freedompay@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-freedompay-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:75d963cd79b1c7842ea448b9cc30934e4b1ac2b660d4f838e2857292f89bcfa7",
+      "artifactSizeBytes": 1848
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:50:11.461Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61744,
+  "uuid": "skill-clawhub-daily-every",
+  "skillKey": "clawhub-daily-every",
+  "name": "daily-every",
+  "summary": "每天早上生成简报：上海天气 + V2EX 热帖前 5 条。 Use when: 用户说\"生成今日简报\"，或 cron 在早上 8 点触发。 NOT for: 详细的天气预报或深度新闻分析。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_every",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alibaba4184hub",
+      "features": [
+        "每天早上生成简报：上海天气 + V2EX 热帖前 5 条。 Use when: 用户说\"生成今日简报\"，或 cron 在早上 8 点触发。 NOT for: 详细的天气预报或深度新闻分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-every@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/205654164?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-every",
+      "url": "https://clawhub.ai/skills/daily-every"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-every",
+    "url": "https://clawhub.ai/skills/daily-every",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-every-f4226979af2a5b5d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-every@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-every-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bb9eaf617d98b0c99d27a9257008ee1f9686ff306484bab5a64e9fade78355af",
+      "artifactSizeBytes": 2024
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T03:28:40.221Z"
+}

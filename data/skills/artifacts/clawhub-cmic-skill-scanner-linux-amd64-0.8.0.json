@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cmic-skill-scanner-linux-amd64@0.8.0",
+  "version": "0.8.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cmic_skill_scanner_linux_amd64",
+  "skill": {
+    "id": 59383,
+    "skillKey": "clawhub-cmic-skill-scanner-linux-amd64",
+    "name": "CMIC Skill Scanner (Linux x64)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cmic-skill-scanner-linux-amd64",
+    "url": "https://clawhub.ai/skills/cmic-skill-scanner-linux-amd64",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cmic-skill-scanner-linux-amd64-c6bd552408c242f6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用内置 Rust 引擎审计待安装的 skill 包或归档，并可选桥接外部 scanner。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cyzlmh",
+      "userId": "s171nn815hk3s0ht69bn9d96hn858ye2",
+      "displayName": "cyzlmh",
+      "image": "https://avatars.githubusercontent.com/u/24603258?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 214,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "0.8.0",
+      "createdAt": 1776792730938,
+      "changelog": "- Rebranded from \"cmic-skill-scanner\" to \"skillscan-wrapper\" with updated descriptions and metadata.\n- Documentation overhaul: clearer instructions, detailed trust and security warnings, multilingual content.\n- Emphasized that upload/reporting and external engine integrations are disabled by default and require explicit user configuration.\n- Updated references to binary version (`v0.8.0`), with consistent SHA-256 and security verification steps.\n- Clarified tool permissions, trust model, and provided more explicit build-from-source guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ba7634507d6c93ebe90d5ff7b711c51b0e668701c2ff9194ceb0b53887ee2a4c"
+}

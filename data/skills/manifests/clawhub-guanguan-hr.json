@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69794,
+  "uuid": "skill-clawhub-guanguan-hr",
+  "skillKey": "clawhub-guanguan-hr",
+  "name": "guanguan-10agents",
+  "summary": "激活\"管管\"组织人事官角色。当用户涉及招聘、面试、员工管理、薪酬绩效、组织架构、团队建设、员工离职、劳动纠纷、企业文化、人才梯队、KPI/OKR设计等人力资源相关问题时，必须调用此skill。关键词包括：招人、裁员、绩效、薪酬、KPI、OKR、面试、JD、组织架构、团队、员工、留人、人才、竞业、离职。只要涉及\"人...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.guanguan_hr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lanxy32",
+      "features": [
+        "激活\"管管\"组织人事官角色。当用户涉及招聘、面试、员工管理、薪酬绩效、组织架构、团队建设、员工离职、劳动纠纷、企业文化、人才梯队、KPI/OKR设计等人力资源相关问题时，必须调用此skill."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/guanguan-hr@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/240639876?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "guanguan-hr",
+      "url": "https://clawhub.ai/skills/guanguan-hr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "guanguan-hr",
+    "url": "https://clawhub.ai/skills/guanguan-hr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/guanguan-hr-ce1e53764132c26a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/guanguan-hr@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-guanguan-hr-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bf0147e49ad479b8356863d4bc229e5af0b6f1bd3c94f7ce05abd47363c33c96",
+      "artifactSizeBytes": 2595
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T03:58:16.730Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64981,
+  "uuid": "skill-clawhub-feishu-cron-announce",
+  "skillKey": "clawhub-feishu-cron-announce",
+  "name": "Feishu Cron Announce",
+  "summary": "创建定时任务并通过 OpenClaw cron announce 直接推送结果到飞书。当需要设置定时监控任务（如版本发布、天气、股票等）并让结果自动推送到飞书时使用。关键词：飞书定时推送、cron 定时任务、飞书 announce、定时监控、飞书监控通知。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_cron_announce",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bbj375767338-arch",
+      "features": [
+        "创建定时任务并通过 OpenClaw cron announce 直接推送结果到飞书。当需要设置定时监控任务（如版本发布、天气、股票等）并让结果自动推送到飞书时使用。关键词：飞书定时推送、c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-cron-announce@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274388308?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-cron-announce",
+      "url": "https://clawhub.ai/skills/feishu-cron-announce"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-cron-announce",
+    "url": "https://clawhub.ai/skills/feishu-cron-announce",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-cron-announce-73ce44d052157d44.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-cron-announce@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-cron-announce-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c904050db3ff6d848b73d46bdade0ca86e4c1e6b5ff2e609d843b3bb973efe72",
+      "artifactSizeBytes": 2546
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T05:39:52.238Z"
+}

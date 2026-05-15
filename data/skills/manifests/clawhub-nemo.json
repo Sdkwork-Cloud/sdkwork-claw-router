@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13656,
+  "uuid": "skill-clawhub-nemo",
+  "skillKey": "clawhub-nemo",
+  "name": "Nemo",
+  "summary": "Search and invoke over 1500 MCP tools and agent skills across remote servers, with access to full skill instructions and usage details.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nemo",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mootbing",
+      "features": [
+        "Search and invoke over 1500 MCP tools and agent skills across remote servers, with access to fu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nemo@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/50122069?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nemo",
+      "url": "https://clawhub.ai/skills/nemo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nemo",
+    "url": "https://clawhub.ai/skills/nemo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nemo-0075870f97c892ba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nemo@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-nemo-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1666d3d71f97ba5cbab7f420d3e946b33260b41d0715ad492fc4f0784186004c",
+      "artifactSizeBytes": 2219
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T02:47:39.626Z"
+}

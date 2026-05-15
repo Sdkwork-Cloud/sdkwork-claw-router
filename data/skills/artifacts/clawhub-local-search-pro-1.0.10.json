@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/local-search-pro@1.0.10",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_search_pro",
+  "skill": {
+    "id": 22295,
+    "skillKey": "clawhub-local-search-pro",
+    "name": "local-search-pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-search-pro",
+    "url": "https://clawhub.ai/skills/local-search-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-search-pro-9cb8d18e5fc3f7c3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Free Brave API alternative for OpenClaw. Completely FREE web search. No API key required. Secure localhost-only deployment. Supports hidden --dev flag for lo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pipepi",
+      "userId": "s170yrhjyy4hv7h3sa7m3zfs3x83pm8h",
+      "displayName": "pipe",
+      "image": "https://avatars.githubusercontent.com/u/16253126?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 478,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.0.10",
+      "createdAt": 1773654480899,
+      "changelog": "Mark SEARXNG_BASE_URL as optional (remove required env). Declare Python dependency: requests.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3766c54ab1fae8f64074c00621888dcf113302317d338d9350a8ca537205050c"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vectorbt-vectorized@0.3.3",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vectorbt_vectorized",
+  "skill": {
+    "id": 64660,
+    "skillKey": "clawhub-vectorbt-vectorized",
+    "name": "Vectorbt Vectorized"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vectorbt-vectorized",
+    "url": "https://clawhub.ai/skills/vectorbt-vectorized",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vectorbt-vectorized-9c86b5178f0324f8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于 VectorBT 框架的向量化回测与因子研究工具，支持多市场数据批量回测、策略参数优化和统计套利分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tangweigang-jpg",
+      "userId": "s17ewpx5vannmrm5gje4p746kd83hyk1",
+      "displayName": "Tang Weigang",
+      "image": "https://avatars.githubusercontent.com/u/259277235?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.3.3",
+      "createdAt": 1776954646731,
+      "changelog": "v0.3.3: bilingual metadata injected. H1 shows VectorBT 向量回测; tagline replaced with skill-specific Chinese hook; tags upgraded to Level 1-4.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:457602274d9c04f09d6ed36bdc6ae1d1f79deed7a5612fc14f47d94ba666fcdf"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/editor-freelance@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.editor_freelance",
+  "skill": {
+    "id": 55793,
+    "skillKey": "clawhub-editor-freelance",
+    "name": "Editor Freelance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "editor-freelance",
+    "url": "https://clawhub.ai/skills/editor-freelance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/editor-freelance-59674dba64b10e52.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — trim the pauses, add lower thirds, and export a clean final cut — and get..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 95,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777398320952,
+      "changelog": "Editor Freelance — First release:\n\n- Instantly edit and process client videos with AI-assisted cloud rendering; no pro editing software needed.\n- Upload MP4, MOV, AVI, or WebM files up to 500MB; describe edits and get polished clips in 1–2 minutes.\n- Automated token/session setup with anonymous-mode for new users; 100 free credits with 7-day tokens.\n- Simple commands for uploading, editing, checking credits/status, and exporting 1080p MP4.\n- Session-based workflow supports batch processing, iterative edits, and quick previews.\n- Built-in error handling for tokens, file size, unsupported formats, plan limits, and rate limits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5170fe1178751fa38448ab53a9baa046ff7114f6826dc7d70fa96179d38c5c02"
+}

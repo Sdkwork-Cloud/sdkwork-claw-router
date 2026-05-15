@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48453,
+  "uuid": "skill-clawhub-nansen-mpp-payment",
+  "skillKey": "clawhub-nansen-mpp-payment",
+  "name": "Nansen Mpp Payment",
+  "summary": "Pay-per-call access to the Nansen API via MPP (Tempo). Use when a user wants anonymous Nansen access without an API key and without managing their own Base/S...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nansen_mpp_payment",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nansen AI",
+      "features": [
+        "Pay-per-call access to the Nansen API via MPP (Tempo)",
+        "Use when a user wants anonymous Nansen access without an API key and without managing their own."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nansen-mpp-payment@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/93130718?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nansen-mpp-payment",
+      "url": "https://clawhub.ai/skills/nansen-mpp-payment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nansen-mpp-payment",
+    "url": "https://clawhub.ai/skills/nansen-mpp-payment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nansen-mpp-payment-347dce34cfb40f6e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nansen-mpp-payment@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nansen-mpp-payment-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ac0033e1589fbf34b3c56a056eed4eaad542606cfc2ca32cdea2f1e90bc5b97",
+      "artifactSizeBytes": 2444
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T13:40:17.032Z"
+}

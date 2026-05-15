@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12161,
+  "uuid": "skill-clawhub-image-to-data",
+  "skillKey": "clawhub-image-to-data",
+  "name": "Image To Data",
+  "summary": "Extract data from construction images using AI Vision. Analyze site photos, scanned documents, drawings.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_to_data",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "datadrivenconstruction",
+      "features": [
+        "Extract data from construction images using AI Vision",
+        "Analyze site photos, scanned documents, drawings."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-to-data@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94158709?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-to-data",
+      "url": "https://clawhub.ai/skills/image-to-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-to-data",
+    "url": "https://clawhub.ai/skills/image-to-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-to-data-e924d679630e1261.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-to-data@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-to-data-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fb60b27e7b734ea547de9bf06434ac6c29d464ec81c895c605a2688ea7b93cd9",
+      "artifactSizeBytes": 2455
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T17:05:39.049Z"
+}

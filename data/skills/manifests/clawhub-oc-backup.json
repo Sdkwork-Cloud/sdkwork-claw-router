@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67688,
+  "uuid": "skill-clawhub-oc-backup",
+  "skillKey": "clawhub-oc-backup",
+  "name": "OC Backup",
+  "summary": "备份 OpenClaw 关键配置文件、核心数据和自定义技能，支持全量及分类备份，自动管理备份文件保留和清理。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oc_backup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FrankMei",
+      "features": [
+        "备份 OpenClaw 关键配置文件、核心数据和自定义技能，支持全量及分类备份，自动管理备份文件保留和清理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oc-backup@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4946322?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oc-backup",
+      "url": "https://clawhub.ai/skills/oc-backup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oc-backup",
+    "url": "https://clawhub.ai/skills/oc-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oc-backup-c086c9013735de1c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oc-backup@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-oc-backup-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d7658f9de08eed7bdc26e6bc4002cbfe8b57c0f6a7c5ed3985d7e77132a48505",
+      "artifactSizeBytes": 1897
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T16:37:08.052Z"
+}

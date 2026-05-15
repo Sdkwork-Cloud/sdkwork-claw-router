@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-manager-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_manager_skill",
+  "skill": {
+    "id": 38606,
+    "skillKey": "clawhub-agent-manager-skill",
+    "name": "agent- manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-manager-skill",
+    "url": "https://clawhub.ai/skills/agent-manager-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-manager-skill-1929c441ca0c3a6c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage OpenClaw Agents by creating new agents, configuring workspaces, setting up Feishu bot integrations, and verifying multi-bot routing."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zouxuyang",
+      "userId": "s174jhtv4r7m1zeedakwp6141183sv8j",
+      "displayName": "zouxuyang",
+      "image": "https://avatars.githubusercontent.com/u/57665992?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774707762823,
+      "changelog": "初始化",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:411c540bf253daa0da7610ac82cb59f3b0e8ab8899d8e7d95f7a565c71ff492d"
+}

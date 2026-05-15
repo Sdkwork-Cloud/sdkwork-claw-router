@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44304,
+  "uuid": "skill-clawhub-spotify-player-hardened",
+  "skillKey": "clawhub-spotify-player-hardened",
+  "name": "Spotify Player Hardened",
+  "summary": "Terminal Spotify playback/search via spogo (preferred) or spotify_player.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spotify_player_hardened",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Faberlens",
+      "features": [
+        "Terminal Spotify playback/search via spogo (preferred) or spotify_player."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/spotify-player-hardened@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261834257?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "spotify-player-hardened",
+      "url": "https://clawhub.ai/skills/spotify-player-hardened"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spotify-player-hardened",
+    "url": "https://clawhub.ai/skills/spotify-player-hardened",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spotify-player-hardened-34bce3f000781fb1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/spotify-player-hardened@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-spotify-player-hardened-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9f34a92ad2570ddd955a7147230cf74635c0e381d5438273152fc3c56fcb1a0c",
+      "artifactSizeBytes": 2511
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T15:01:03.713Z"
+}

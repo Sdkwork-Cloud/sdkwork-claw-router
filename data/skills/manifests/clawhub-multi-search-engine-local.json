@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38076,
+  "uuid": "skill-clawhub-multi-search-engine-local",
+  "skillKey": "clawhub-multi-search-engine-local",
+  "name": "Multi Search Engine Local",
+  "summary": "Multi search engine integration with 17 engines (8 CN + 9 Global). Supports advanced search operators, time filters, site search, privacy engines, and Wolfra...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_search_engine_local",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "reknottycat",
+      "features": [
+        "Multi search engine integration with 17 engines (8 CN + 9 Global)",
+        "Supports advanced search operators, time filters, site search, privacy engines, and Wolfra..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/multi-search-engine-local@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/53971979?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "multi-search-engine-local",
+      "url": "https://clawhub.ai/skills/multi-search-engine-local"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-search-engine-local",
+    "url": "https://clawhub.ai/skills/multi-search-engine-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-search-engine-local-4955572ee91e2b5c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/multi-search-engine-local@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-multi-search-engine-local-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4d2d78e98a80048d52bad15b42c9f99289cd93327eba3b30b3f4591b7f5f9677",
+      "artifactSizeBytes": 2329
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T20:04:41.270Z"
+}

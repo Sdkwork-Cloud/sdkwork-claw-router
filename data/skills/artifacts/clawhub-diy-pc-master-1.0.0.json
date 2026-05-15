@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/diy-pc-master@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.diy_pc_master",
+  "skill": {
+    "id": 71418,
+    "skillKey": "clawhub-diy-pc-master",
+    "name": "diy-pc-master"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "diy-pc-master",
+    "url": "https://clawhub.ai/skills/diy-pc-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/diy-pc-master-043cf930631586d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "电脑DIY装机大师技能。用于帮助用户进行电脑配置推荐、装机方案分析、配件兼容性判断。当用户询问装机配置、电脑推荐、预算配置、配件分析、配置测评等问题时触发此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huangzbin90-source",
+      "userId": "s17b13jjv79z84s164ah13deds83m0vg",
+      "displayName": "huangzbin90-source",
+      "image": "https://avatars.githubusercontent.com/u/257249300?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 372,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773818946571,
+      "changelog": "Initial release of diy-pc-master: a skill for generating custom PC build recommendations and compatibility analysis.\n\n- Provides guided process: user intent analysis, SQL build config generation, API part selection, and compatibility checking.\n- Supports scenario detection for DIY配置推荐/分析 and 配置测评.\n- Generates SQL queries for PC parts based on user budget and application, ensuring prices match budget allocation rules.\n- Fetches real-time parts info and purchase links from DIYZP.cn via API.\n- Assembles a full, compatible build sheet with 京东购买链接 for each component.\n- Outputs compatibility notes and summary suggestions; adds a data source disclaimer.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:16c376e206ab2ae82cfeeda2f25e6f1bb15c80a63226019cdb6d11d28100f02b"
+}

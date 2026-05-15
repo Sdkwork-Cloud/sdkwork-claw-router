@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weibo-publisher@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weibo_publisher",
+  "skill": {
+    "id": 17219,
+    "skillKey": "clawhub-weibo-publisher",
+    "name": "Weibo Publisher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weibo-publisher",
+    "url": "https://clawhub.ai/skills/weibo-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weibo-publisher-5028789fc2af0e81.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Publish posts to Weibo (Sina Weibo) using browser automation. Use when the user wants to post content to Weibo, share updates on Weibo, publish microblogs, o..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "azfliao",
+      "userId": "s173ex3vwahz2gexfrtfj726k98566mk",
+      "displayName": "azfliao",
+      "image": "https://avatars.githubusercontent.com/u/4294766?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 723,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1772435820780,
+      "changelog": "**Major update to Unicode handling and documentation for stability with Chinese content**\n\n- Unicode escape (`\\uXXXX`) is now recommended for all Chinese content to avoid JSON parsing errors.\n- Updated quick start guide with correct Unicode handling and new browser action names (`navigate` instead of `open`).\n- Clarified element reference instructions to note recent changes and the necessity of fresh snapshots.\n- Added critical troubleshooting notes for common issues, especially JSON validation errors and quoting problems.\n- Included and documented a new `UNICODE_ESCAPE.md` reference with guidance on proper content formatting.\n- Refined best practices, technical details, and request examples to emphasize stability and success for Weibo publishing.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fe3ad8791c25b03196acce08bbbbc52e13cc8605c241fa1bb705489a517316cd"
+}

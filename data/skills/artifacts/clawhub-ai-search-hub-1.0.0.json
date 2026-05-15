@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-search-hub@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_search_hub",
+  "skill": {
+    "id": 22539,
+    "skillKey": "clawhub-ai-search-hub",
+    "name": "AI-Search-Hub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-search-hub",
+    "url": "https://clawhub.ai/skills/ai-search-hub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-search-hub-aa4100da7f08c637.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run the AI Search Hub browser automation scripts for Yuanbao, LongCat, Doubao, Qwen, Gemini, and Grok. Use this skill when the user wants to ask one of those..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peanuts62",
+      "userId": "s17d2s54fkgr1d76tqtyk754qd83q7rh",
+      "displayName": "peanuts62",
+      "image": "https://avatars.githubusercontent.com/u/50697983?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 448,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773581382730,
+      "changelog": "One Query. All Search. 聚合 Gemini、Grok、豆包、元宝等平台原生 AI 搜索能力，打造统一搜索中枢。 Search multiple AI platforms in parallel without rebuilding crawlers, fighting anti-bot systems, or tuning keywords by hand.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:075cf41d463eeaf66ec967f78e37f37d09594b828490f2e00a05d286e206b9f2"
+}

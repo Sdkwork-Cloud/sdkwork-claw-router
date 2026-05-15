@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63810,
+  "uuid": "skill-clawhub-v19-early-causal-graph-debugger",
+  "skillKey": "clawhub-v19-early-causal-graph-debugger",
+  "name": "V19 Early Causal Graph Debugger",
+  "summary": "接收因果关系图谱，自动检测循环依赖和悬空节点，给出修正建议。源自V19早期迭代版本V30，经过重新封装后发布。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.v19_early_causal_graph_debugger",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Liuyanfeng1234",
+      "features": [
+        "接收因果关系图谱，自动检测循环依赖和悬空节点，给出修正建议。源自V19早期迭代版本V30，经过重新封装后发布。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/v19-early-causal-graph-debugger@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263910752?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "v19-early-causal-graph-debugger",
+      "url": "https://clawhub.ai/skills/v19-early-causal-graph-debugger"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "v19-early-causal-graph-debugger",
+    "url": "https://clawhub.ai/skills/v19-early-causal-graph-debugger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/v19-early-causal-graph-debugger-3fd5d01562acb2eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/v19-early-causal-graph-debugger@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-v19-early-causal-graph-debugger-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8427c4f400df9bd3d2111dc5be9dbeee5059e50132088acf2db2159a8b3a9bed",
+      "artifactSizeBytes": 2132
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T10:39:05.423Z"
+}

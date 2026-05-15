@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ddg-web-search-local-bak-20260415-020609@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ddg_web_search_local_bak_20260415_020609",
+  "skill": {
+    "id": 38361,
+    "skillKey": "clawhub-ddg-web-search-local-bak-20260415-020609",
+    "name": "Ddg Web Search.Local.Bak 20260415 020609"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ddg-web-search-local-bak-20260415-020609",
+    "url": "https://clawhub.ai/skills/ddg-web-search-local-bak-20260415-020609",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ddg-web-search-local-bak-20260415-020609-86a6ba0d297463ae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search the web with DuckDuckGo instant answer API and return concise results. Use when the user asks to look something up online, fetch quick facts, or do li..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "graafdefolkert-byte",
+      "userId": "s1736m885fpemcaq1xbp0ezpcs84w9gv",
+      "displayName": "graafdefolkert-byte",
+      "image": "https://avatars.githubusercontent.com/u/261836816?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 188,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776211575493,
+      "changelog": "- Initial release of ddg-web-search skill.\n- Provides concise web search results using the DuckDuckGo instant answer API.\n- Designed for quick fact lookups and lightweight searching without browser automation.\n- Returns short summaries and source URLs when available.\n- Clearly notifies when no relevant results are found.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2804895e14958a426f54e761d0c4856ed9558072198ae0d1c771d4ef975cb4f3"
+}

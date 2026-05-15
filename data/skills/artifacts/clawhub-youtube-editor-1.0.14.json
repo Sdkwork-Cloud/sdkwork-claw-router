@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-editor@1.0.14",
+  "version": "1.0.14",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_editor",
+  "skill": {
+    "id": 10453,
+    "skillKey": "clawhub-youtube-editor",
+    "name": "Youtube Editor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-editor",
+    "url": "https://clawhub.ai/skills/youtube-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-editor-fc168252b53c99d7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate YouTube video editing: download videos, transcribe with Whisper, analyze content using GPT-4, and create Korean SEO-optimized metadata plus consiste..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jeong-wooseok",
+      "userId": "publishers:jeong-wooseok",
+      "displayName": "jeong-wooseok",
+      "image": "https://avatars.githubusercontent.com/u/64723774?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2685,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "1.0.14",
+      "createdAt": 1770815342011,
+      "changelog": "Security: Added requiredEnvVars metadata, comprehensive Security Notice explaining all capabilities (API keys, subprocess, cross-skill integration, file I/O), and code comments for legitimate automation features",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b647c36f3084a615d8c582596e64aa2c1cda628e5f0d093ab338fc218b425d99"
+}

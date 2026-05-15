@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10373,
+  "uuid": "skill-clawhub-openclaw-security-auditor",
+  "skillKey": "clawhub-openclaw-security-auditor",
+  "name": "OpenClaw Security Auditor",
+  "summary": "Audit OpenClaw configuration for security risks and generate a remediation report using the user's configured LLM.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_security_auditor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Muhammad Waleed",
+      "features": [
+        "Audit OpenClaw configuration for security risks and generate a remediation report using the use."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-security-auditor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/76522443?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-security-auditor",
+      "url": "https://clawhub.ai/skills/openclaw-security-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-security-auditor",
+    "url": "https://clawhub.ai/skills/openclaw-security-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-security-auditor-3a7f5930e1fd912b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-security-auditor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-security-auditor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ab058a84c539f309e3a25e29d4b5a319a6c99e94ec26d795d92ed13c536be8f3",
+      "artifactSizeBytes": 2523
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T09:09:31.348Z"
+}

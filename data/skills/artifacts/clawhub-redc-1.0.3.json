@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/redc@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.redc",
+  "skill": {
+    "id": 21468,
+    "skillKey": "clawhub-redc",
+    "name": "redc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "redc",
+    "url": "https://clawhub.ai/skills/redc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/redc-3f2cecbe9615f9a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Red team infrastructure multi-cloud automated deployment tool. Deploy, manage, and monitor cloud instances across Alibaba Cloud, AWS, Tencent Cloud, Volcengi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "no-github",
+      "userId": "publishers:no-github",
+      "displayName": "r0fus0d",
+      "image": "https://avatars.githubusercontent.com/u/18167071?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 408,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773218607589,
+      "changelog": "Version 1.0.3\n\n- Clarified credential usage: metadata now declares Alibaba Cloud env vars as an example, with guidance to only configure credentials for the single provider in use.\n- Updated SKILL.md with a strong security notice: always inspect templates and use `plan_case` before deployment.\n- Added step-by-step instructions for template safety and auditing.\n- Expanded documentation on binary verification and MCP server exposure.\n- Minor improvements to provider/env var documentation for clarity and security best practices.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ec12a72356474813b82bff64da195ba0e064d124903dca7a5938227f98edef8a"
+}

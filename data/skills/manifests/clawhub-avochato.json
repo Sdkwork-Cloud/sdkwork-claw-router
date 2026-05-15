@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29656,
+  "uuid": "skill-clawhub-avochato",
+  "skillKey": "clawhub-avochato",
+  "name": "Avochato",
+  "summary": "Avochato integration. Manage data, records, and automate workflows. Use when the user wants to interact with Avochato data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.avochato",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Avochato integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Avochato data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/avochato@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "avochato",
+      "url": "https://clawhub.ai/skills/avochato"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "avochato",
+    "url": "https://clawhub.ai/skills/avochato",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/avochato-ab3e104046a60f8b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/avochato@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-avochato-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ed46e66f0b8efbe8f96bd24da121d89deda9cc316991a3a692b925851b8fe92f",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:21:50.554Z"
+}

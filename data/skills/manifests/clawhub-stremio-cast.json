@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16945,
+  "uuid": "skill-clawhub-stremio-cast",
+  "skillKey": "clawhub-stremio-cast",
+  "name": "Stremio Casting",
+  "summary": "Busca conteúdo no Stremio Web e transmite para dispositivos Chromecast usando CATT e Playwright. Use para reproduzir filmes e séries diretamente do Stremio em TVs.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stremio_cast",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pedro-valentim",
+      "features": [
+        "Busca conteúdo no Stremio Web e transmite para dispositivos Chromecast usando CATT e Playwright",
+        "Use para reproduzir filmes e séries diretamente do Stremio em TVs."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stremio-cast@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18179935?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stremio-cast",
+      "url": "https://clawhub.ai/skills/stremio-cast"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stremio-cast",
+    "url": "https://clawhub.ai/skills/stremio-cast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stremio-cast-947793133c6ac708.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stremio-cast@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stremio-cast-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4de40e771485d33d53b98efca2f836ab8be86af1d4cc6de07992a0dec1f7beed",
+      "artifactSizeBytes": 2319
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-29T21:31:33.034Z"
+}

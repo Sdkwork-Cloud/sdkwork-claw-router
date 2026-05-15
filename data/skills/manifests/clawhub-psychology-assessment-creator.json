@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67227,
+  "uuid": "skill-clawhub-psychology-assessment-creator",
+  "skillKey": "clawhub-psychology-assessment-creator",
+  "name": "Psychology Assessment Creator",
+  "summary": "心理测评内容制作技能，帮助从选题策划、题目设计、评分规则编写到结果内容创作的全流程管理。适用于需要创建心理测评类内容的场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.psychology_assessment_creator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhujianlong",
+      "features": [
+        "心理测评内容制作技能，帮助从选题策划、题目设计、评分规则编写到结果内容创作的全流程管理。适用于需要创建心理测评类内容的场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/psychology-assessment-creator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/96516292?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "psychology-assessment-creator",
+      "url": "https://clawhub.ai/skills/psychology-assessment-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "psychology-assessment-creator",
+    "url": "https://clawhub.ai/skills/psychology-assessment-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/psychology-assessment-creator-0c76667346f40fa6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/psychology-assessment-creator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-psychology-assessment-creator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5571ecedc90f3bf865c80d05289c17033cc429c5d0894734f587174e69838668",
+      "artifactSizeBytes": 2585
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T05:14:13.187Z"
+}

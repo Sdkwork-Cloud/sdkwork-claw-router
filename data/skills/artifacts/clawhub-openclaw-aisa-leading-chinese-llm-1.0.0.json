@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-aisa-leading-chinese-llm@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_aisa_leading_chinese_llm",
+  "skill": {
+    "id": 17987,
+    "skillKey": "clawhub-openclaw-aisa-leading-chinese-llm",
+    "name": "Chines LLM Models (MiniMax 2.5,Kimi 2.5, Qwen, Doubao, DeepSeek) with one key"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-aisa-leading-chinese-llm",
+    "url": "https://clawhub.ai/skills/openclaw-aisa-leading-chinese-llm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-aisa-leading-chinese-llm-eb609930d408d62d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Configure AIsa as a first-class model provider for OpenClaw, enabling production access to major Chinese AI models (Qwen, DeepSeek, Kimi K2.5, Doubao) throug..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aisadocs",
+      "userId": "s172yz541n4361fw0sapygg0r583eghk",
+      "displayName": "AIsa",
+      "image": "https://avatars.githubusercontent.com/u/245991925?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 728,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771137270950,
+      "changelog": "Initial release: Enables seamless setup and management of top Chinese AI models via AIsa in OpenClaw.\n\n- Adds AIsa as a first-class model provider, supporting MiniMax, Qwen, DeepSeek, Kimi K2.5, and Doubao through official partnerships.\n- Provides step-by-step setup instructions, including environment variable and configuration file options.\n- Pre-configures popular models (Qwen3 Max, DeepSeek V3.1, Kimi K2.5) with up-to-date pricing, context window, and usage details.\n- Introduces enterprise-grade Zero Data Retention (ZDR) for Kimi K2.5, ensuring privacy when accessed via AIsa.\n- Documents pricing comparisons, temperature limitations, and expanded catalog access for all supported Chinese LLMs.\n- Includes troubleshooting tips for AIsa integration and guidance on comparing providers.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a38864c86769500e99cf8b98b1401afbd351bebab45a64b45c25c968f0332b22"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cmd-helper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cmd_helper",
+  "skill": {
+    "id": 67508,
+    "skillKey": "clawhub-cmd-helper",
+    "name": "Cmd Helper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cmd-helper",
+    "url": "https://clawhub.ai/skills/cmd-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cmd-helper-4614418ec6b00950.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "命令快捷助手 - 通过 /c 触发命令菜单，快速执行常用操作（新建会话、切换模型、查看状态等）。当用户输入 /c、/cmd 或类似命令时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "coolercat",
+      "userId": "publishers:coolercat",
+      "displayName": "coolercat",
+      "image": "https://avatars.githubusercontent.com/u/5738398?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 311,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774231157725,
+      "changelog": "- 首发版本，推出命令快捷助手，通过 /c 或 /cmd 触发命令菜单。\n- 支持新建会话、重置会话、切换AI模型、查看状态、帮助等常用操作。\n- 提供详细命令菜单与模型切换子菜单，涵盖多种主流模型选择。\n- 菜单交互方式为输入数字执行对应操作，输入 0 退出命令模式。\n- 仅当用户明确输入触发词时激活，执行需用户确认。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d1a06159c7818651b8f8c4e2b0a9b4e0f5a4cb256005a7165b9011b7a11f3949"
+}

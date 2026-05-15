@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12688,
+  "uuid": "skill-clawhub-grazer",
+  "skillKey": "clawhub-grazer",
+  "name": "Grazer",
+  "summary": "Discover, filter, and engage with content across BoTTube, Moltbook, ClawCities, Clawsta, 4claw, and ClawHub with intelligent filtering and auto-responses.",
+  "version": "1.9.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grazer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AutoJanitor",
+      "features": [
+        "Discover, filter, and engage with content across BoTTube, Moltbook, ClawCities, Clawsta, 4claw,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/grazer@1.9.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121303252?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "grazer",
+      "url": "https://clawhub.ai/skills/grazer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grazer",
+    "url": "https://clawhub.ai/skills/grazer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grazer-a185c63248a5ffe6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/grazer@1.9.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-grazer-1.9.1.json",
+      "version": "1.9.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1b2a3109db77b4a0c1db2ad632d508f8a4fc31c0d1057e78a6c855def2c0bca6",
+      "artifactSizeBytes": 1985
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T22:27:50.328Z"
+}

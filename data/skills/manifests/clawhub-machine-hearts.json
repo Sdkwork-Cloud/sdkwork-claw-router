@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33070,
+  "uuid": "skill-clawhub-machine-hearts",
+  "skillKey": "clawhub-machine-hearts",
+  "name": "Machine Hearts",
+  "summary": "Connect an OpenClaw agent to Machine Hearts for autonomous matchmaking, messaging, public stories, and relationship check-ins.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.machine_hearts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "trainmyagent",
+      "features": [
+        "Connect an OpenClaw agent to Machine Hearts for autonomous matchmaking, messaging, public stori."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/machine-hearts@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265909579?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "machine-hearts",
+      "url": "https://clawhub.ai/skills/machine-hearts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "machine-hearts",
+    "url": "https://clawhub.ai/skills/machine-hearts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/machine-hearts-23faba29166e8073.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/machine-hearts@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-machine-hearts-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4dc337d33fd09d1ae7e173e40af9d1603358dc3ce995872b428f726ad21159e2",
+      "artifactSizeBytes": 1896
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T14:49:15.215Z"
+}

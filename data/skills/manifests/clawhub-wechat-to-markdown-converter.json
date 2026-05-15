@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56875,
+  "uuid": "skill-clawhub-wechat-to-markdown-converter",
+  "skillKey": "clawhub-wechat-to-markdown-converter",
+  "name": "WeChat Article to Markdown",
+  "summary": "This skill converts WeChat Official Account (微信公众号) article pages into high-quality, clean Markdown format. It should be used when the user provides a WeChat...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_to_markdown_converter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "benzking",
+      "features": [
+        "This skill converts WeChat Official Account (微信公众号) article pages into high-quality, clean Mark.",
+        "It should be used when the user provides a WeChat..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-to-markdown-converter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2979921?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-to-markdown-converter",
+      "url": "https://clawhub.ai/skills/wechat-to-markdown-converter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-to-markdown-converter",
+    "url": "https://clawhub.ai/skills/wechat-to-markdown-converter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-to-markdown-converter-cb8572b6043d62e1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-to-markdown-converter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-to-markdown-converter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c5698aca9ca70eab88ca3522116783c2fed5423f646bd1244d023ac5a5a946d",
+      "artifactSizeBytes": 2627
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T06:45:12.174Z"
+}

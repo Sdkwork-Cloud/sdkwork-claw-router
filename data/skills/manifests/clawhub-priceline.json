@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60907,
+  "uuid": "skill-clawhub-priceline",
+  "skillKey": "clawhub-priceline",
+  "name": "Priceline",
+  "summary": "提供美国及全球酒店、航班、租车和度假套餐预订，支持特价Express Deals和Name Your Own Price竞价服务。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.priceline",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供美国及全球酒店、航班、租车和度假套餐预订，支持特价Express Deals和Name Your Own Price竞价服务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/priceline@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "priceline",
+      "url": "https://clawhub.ai/skills/priceline"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "priceline",
+    "url": "https://clawhub.ai/skills/priceline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/priceline-45ec1166e2a65802.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/priceline@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-priceline-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e4b8423bdd56aeef6793d7f430d84ad988640460708a01db8c3c9d84e8be76d7",
+      "artifactSizeBytes": 2095
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T03:07:10.468Z"
+}

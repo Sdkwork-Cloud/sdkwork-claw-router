@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64846,
+  "uuid": "skill-clawhub-wechat-article-conversion",
+  "skillKey": "clawhub-wechat-article-conversion",
+  "name": "微信文章格式转换",
+  "summary": "微信公众号文章抓取与转换，支持 Markdown/HTML/Text/JSON/Excel 五种格式。 触发条件：用户发送微信文章链接（https://mp.weixin.qq.com/s/xxx）、 多链接（换行分隔）、或「帮我转这篇文章」「保存微信文章」等表达。 格式选择前必须询问用户，支持单选或多选。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_article_conversion",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LuoJiangYong",
+      "features": [
+        "微信公众号文章抓取与转换，支持 Markdown/HTML/Text/JSON/Excel 五种格式。 触发条件：用户发送微信文章链接（https://mp.weixin.qq.com/s/."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-article-conversion@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34528708?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-article-conversion",
+      "url": "https://clawhub.ai/skills/wechat-article-conversion"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-article-conversion",
+    "url": "https://clawhub.ai/skills/wechat-article-conversion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-article-conversion-766cb526248afbf1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-article-conversion@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-article-conversion-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aa6c82d9bfc7ae26f9e5dc8a7c3b10ebd5c71b7651654b20c4c734cae7f1eec5",
+      "artifactSizeBytes": 2260
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T16:11:13.477Z"
+}

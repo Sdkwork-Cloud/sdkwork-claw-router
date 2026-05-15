@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-paraphraser@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_paraphraser",
+  "skill": {
+    "id": 45344,
+    "skillKey": "clawhub-ai-paraphraser",
+    "name": "AI Paraphraser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-paraphraser",
+    "url": "https://clawhub.ai/skills/ai-paraphraser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-paraphraser-216173607ef9b0ea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI paraphrasing and de-AI tool."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openlark",
+      "userId": "s1727wv2g20pc729snzcm4nf8183hy72",
+      "displayName": "OpenLark",
+      "image": "https://avatars.githubusercontent.com/u/260858787?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 134,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776131393476,
+      "changelog": "- Initial release of ai-paraphraser: AI-powered tool for transforming AI-generated content into natural, human-like writing.\n- Supports three paraphrasing modes: Light, Medium, and Aggressive, tailored to user needs and AI detection risks.\n- Focuses on eliminating statistical patterns targeted by AI detectors while preserving original meaning.\n- Delivers unique, non-duplicative rewrites with adjustable structural and stylistic changes.\n- Built-in workflow for analyzing source text, executing paraphrasing, and ensuring quality against AI-associated traits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:661cdbf98bf9671b78ef8775a273dc886c0546c87946945102c89291595fc09a"
+}

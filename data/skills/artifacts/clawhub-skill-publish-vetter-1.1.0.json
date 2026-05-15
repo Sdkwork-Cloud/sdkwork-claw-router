@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-publish-vetter@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_publish_vetter",
+  "skill": {
+    "id": 41040,
+    "skillKey": "clawhub-skill-publish-vetter",
+    "name": "Skill Publish Vetter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-publish-vetter",
+    "url": "https://clawhub.ai/skills/skill-publish-vetter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-publish-vetter-362f1ce0b8f74bb8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Pre-publish privacy scan for ClawHub skills. Detects tokens, keys, credentials, .env secrets, personal info, and internal IPs before publishing."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weidongkl",
+      "userId": "s170sqmtx96w7vj0g1ee234b5583hhtw",
+      "displayName": "wei dong",
+      "image": "https://avatars.githubusercontent.com/u/7512609?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777255220612,
+      "changelog": "Pre-publish privacy scan for ClawHub skills - detect tokens, keys, credentials, personal info before publishing",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:81f13a2f38227bb86e73430f26924cdc46c61eea315f50838a46afcd58971be4"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-product-search-api-skill@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_product_search_api_skill",
+  "skill": {
+    "id": 9563,
+    "skillKey": "clawhub-amazon-product-search-api-skill",
+    "name": "Amazon Product Search Api Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-product-search-api-skill",
+    "url": "https://clawhub.ai/skills/amazon-product-search-api-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-product-search-api-skill-cbb6cbf1edaedf14.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill is designed to help users automatically extract product data from Amazon search results. The Agent should proactively apply this skill when users..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "phheng",
+      "userId": "s17cnrtda4fqzdjza3g2hx20bs83f18z",
+      "displayName": "Henk Nie",
+      "image": "https://avatars.githubusercontent.com/u/44972754?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3079,
+      "installsAllTime": 10,
+      "installsCurrent": 9,
+      "stars": 6,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1773745107636,
+      "changelog": "- Added initial implementation of the Amazon Product Search API skill script at `scripts/amazon_product_search_api.py`.\n- Enables automated product data extraction from Amazon search results using BrowserAct's API.\n- Supports product searching by keywords, brand, result count, and language.\n- Guides user to configure `BROWSERACT_API_KEY` if missing.\n- Monitors execution with status logs and includes robust error handling with a single automatic retry.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4ba82ab1c6bba2d994ea5f8d7c44f1ad6ed22bfdc3083b2d6d9250942b818a0f"
+}

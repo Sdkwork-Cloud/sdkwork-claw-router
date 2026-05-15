@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/contributor-guide-writer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.contributor_guide_writer",
+  "skill": {
+    "id": 40518,
+    "skillKey": "clawhub-contributor-guide-writer",
+    "name": "Contributor Guide Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "contributor-guide-writer",
+    "url": "https://clawhub.ai/skills/contributor-guide-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/contributor-guide-writer-92ae833b17f878ea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze the current project structure, package manager, and build tools to generate a comprehensive, standardized CONTRIBUTING.md file. Trigger when the user..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sunny0826",
+      "userId": "s1771ge6btfxw88pj48v2asgbs83zeqa",
+      "displayName": "Xudong Guo",
+      "image": "https://avatars.githubusercontent.com/u/24563928?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775120738985,
+      "changelog": "No changes in functionality or content in this version.\n\n- Version updated to 1.0.1 with no file changes detected.\n- No modifications made to the skill’s source files or documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5ce9db3d987895adca7b0f540090e40380d75c5e0660f0adf76e8da0d02d97cc"
+}

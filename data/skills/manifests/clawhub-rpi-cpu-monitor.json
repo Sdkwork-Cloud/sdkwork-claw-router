@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61650,
+  "uuid": "skill-clawhub-rpi-cpu-monitor",
+  "skillKey": "clawhub-rpi-cpu-monitor",
+  "name": "Rpi Cpu Monitor",
+  "summary": "树莓派 CPU 温度监控。当需要监控树莓派 CPU 温度时使用此 skill。功能：(1) 读取当前 CPU 温度，(2) 设置定时监控任务，(3) 温度超标时自动告警。支持 crontab 方案（零消耗，推荐）和 OpenClaw cron 方案。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rpi_cpu_monitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "archerwei",
+      "features": [
+        "树莓派 CPU 温度监控。当需要监控树莓派 CPU 温度时使用此 skill。功能：(1) 读取当前 CPU 温度，(2) 设置定时监控任务，(3) 温度超标时自动告警。支持 crontab."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rpi-cpu-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17900262?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rpi-cpu-monitor",
+      "url": "https://clawhub.ai/skills/rpi-cpu-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rpi-cpu-monitor",
+    "url": "https://clawhub.ai/skills/rpi-cpu-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rpi-cpu-monitor-f73c5c24e7d022ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rpi-cpu-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rpi-cpu-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0f0f4112d7ea0327bb111e9924c36da13a6128af18e61d15604fb8f73bac18ac",
+      "artifactSizeBytes": 2297
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T02:54:29.854Z"
+}

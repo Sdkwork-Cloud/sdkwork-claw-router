@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-dx@1.9.0",
+  "version": "1.9.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_dx",
+  "skill": {
+    "id": 18278,
+    "skillKey": "clawhub-openclaw-dx",
+    "name": "OpenClaw DX"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-dx",
+    "url": "https://clawhub.ai/skills/openclaw-dx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-dx-cdc68dec959d265f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Diagnose and fix openclaw gateway issues. Use when the gateway is stuck, not starting, crash-looping, or rejecting connections. Covers main and --profile ves..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "siraustin",
+      "userId": "s178p6dwx6tzgfvmg2fh711t05850m3a",
+      "displayName": "Austin S. Lin",
+      "image": "https://avatars.githubusercontent.com/u/3533969?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 664,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.9.0",
+      "createdAt": 1773505644649,
+      "changelog": "Failure mode #19: auto-update kills all gateways simultaneously. Updated triage protocol with session bloat checks. Post-upgrade checklist now includes plist regeneration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9a07682f2cdfe2eeae6cf78eedf975976c27b8af97e62c95fddf4f2a302a6b4f"
+}

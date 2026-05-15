@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47914,
+  "uuid": "skill-clawhub-thetanuts",
+  "skillKey": "clawhub-thetanuts",
+  "name": "Thetanuts Options Trading",
+  "summary": "Trade crypto options on Thetanuts Finance - orderbook fills, RFQ lifecycle, multi-strike structures, real-time WebSocket, wallet management, early settlement...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.thetanuts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Goh Ee Sheng",
+      "features": [
+        "Trade crypto options on Thetanuts Finance",
+        "orderbook fills, RFQ lifecycle, multi-strike structures, real-time WebSocket, wallet management."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/thetanuts@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77826239?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "thetanuts",
+      "url": "https://clawhub.ai/skills/thetanuts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "thetanuts",
+    "url": "https://clawhub.ai/skills/thetanuts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/thetanuts-263277703940987e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/thetanuts@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-thetanuts-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:643269f34eaadcb45c68e36091735878567ce8768febfab492f69ae07966f2e8",
+      "artifactSizeBytes": 1880
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T10:45:51.934Z"
+}

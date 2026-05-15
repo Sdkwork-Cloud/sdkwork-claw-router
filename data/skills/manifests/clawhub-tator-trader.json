@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17510,
+  "uuid": "skill-clawhub-tator-trader",
+  "skillKey": "clawhub-tator-trader",
+  "name": "Tator Trader - AI Trading",
+  "summary": "Execute crypto trades using natural language via Tator's AI trading API. Use when: buying tokens, selling tokens, swapping, bridging cross-chain, sending tok...",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tator_trader",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ninja Dev (QI)",
+      "features": [
+        "Execute crypto trades using natural language via Tator's AI trading API",
+        "Use when: buying tokens, selling tokens, swapping, bridging cross-chain, sending tok..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tator-trader@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/142059473?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tator-trader",
+      "url": "https://clawhub.ai/skills/tator-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tator-trader",
+    "url": "https://clawhub.ai/skills/tator-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tator-trader-b7d12d3dfad91896.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tator-trader@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-tator-trader-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:588376528cecbacdad0a99710d66c48643bc83c6d611924b8ebaf1b645c1fa24",
+      "artifactSizeBytes": 2043
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T01:07:25.031Z"
+}

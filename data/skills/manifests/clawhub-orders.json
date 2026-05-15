@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23878,
+  "uuid": "skill-clawhub-orders",
+  "skillKey": "clawhub-orders",
+  "name": "Orders",
+  "summary": "Track orders locally. Use when creating orders, checking status, updating quantities, canceling, or generating sales reports.",
+  "version": "3.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.orders",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "Track orders locally",
+        "Use when creating orders, checking status, updating quantities, canceling, or generating sales."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/orders@3.4.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "orders",
+      "url": "https://clawhub.ai/skills/orders"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "orders",
+    "url": "https://clawhub.ai/skills/orders",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/orders-1c168adb00d208e4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/orders@3.4.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-orders-3.4.1.json",
+      "version": "3.4.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4727413d86815921519177401b99b2785e512745149cd667d59b7dda5b6c8eb9",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T19:12:59.232Z"
+}

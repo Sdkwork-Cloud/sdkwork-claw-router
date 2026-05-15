@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/design-doc-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.design_doc_generator",
+  "skill": {
+    "id": 66055,
+    "skillKey": "clawhub-design-doc-generator",
+    "name": "design-doc-generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "design-doc-generator",
+    "url": "https://clawhub.ai/skills/design-doc-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/design-doc-generator-2f15fdc60bedd009.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据前后端项目代码 + 前端页面，生成标准模块设计文档（Word .docx）。激活时机：(1) 用户要求整理/生成某个模块的设计文档，(2) 用户要求输出功能设计、表结构、流程说明等技术文档，(3) 用户提到\"设计文档\"、\"模块文档\"、\"技术文档\"。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "superchao9",
+      "userId": "s17cw3t0v9sxw5pkn6fya81t7983k4em",
+      "displayName": "superchao9",
+      "image": "https://avatars.githubusercontent.com/u/121180915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 233,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774600560939,
+      "changelog": "- Initial release of design-doc-generator skill.\n- Generates standardized module design documents (.docx) based on front-end and back-end code, plus front-end pages.\n- Automates code analysis (front-end & back-end), UI screenshot capture, and document formatting.\n- Supports interactive information collection (paths, credentials) when needed.\n- Produces detailed structure: module intro, business flows, screenshots, data schema (7-column format), and implementation class listings.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3332ec44c4b00de47315f59d87893f32cca280c4640b1f3e9c3b984026322fb1"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45550,
+  "uuid": "skill-clawhub-video-editor-kaise",
+  "skillKey": "clawhub-video-editor-kaise",
+  "name": "Video Editor Kaise",
+  "summary": "Get edited MP4 videos ready to post, without touching a single slider. Upload your raw video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"tr...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editor_kaise",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linmillsd7",
+      "features": [
+        "Get edited MP4 videos ready to post, without touching a single slider",
+        "Upload your raw video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"tr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-editor-kaise@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208832666?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-editor-kaise",
+      "url": "https://clawhub.ai/skills/video-editor-kaise"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editor-kaise",
+    "url": "https://clawhub.ai/skills/video-editor-kaise",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editor-kaise-2a8a6876363250ca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-editor-kaise@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-editor-kaise-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5482674dc2fc8b391b580dceb55baf5f18ae3b5e5eb1dcd9505949679347a52b",
+      "artifactSizeBytes": 2323
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T04:52:07.494Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/olcli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.olcli",
+  "skill": {
+    "id": 26480,
+    "skillKey": "clawhub-olcli",
+    "name": "Overleaf CLI (olcli)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "olcli",
+    "url": "https://clawhub.ai/skills/olcli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/olcli-3a6d7d42ff7cb220.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sync and manage Overleaf LaTeX projects from the command line. Pull projects locally, push changes back, compile PDFs, and download compile outputs like .bbl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aloth",
+      "userId": "publishers:aloth",
+      "displayName": "aloth",
+      "image": "https://avatars.githubusercontent.com/u/12732979?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 367,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772881936966,
+      "changelog": "Initial release - Sync, push, pull, compile Overleaf LaTeX projects via olcli",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:228c097ca971e588737c5127c2631bd5e890a74e18c3e5675197ce27ca2a7b15"
+}

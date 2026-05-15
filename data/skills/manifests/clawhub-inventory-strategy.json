@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65046,
+  "uuid": "skill-clawhub-inventory-strategy",
+  "skillKey": "clawhub-inventory-strategy",
+  "name": "Aloudata CAN SKILLS - inventory-strategy",
+  "summary": "零售库存健康诊断与行动策略生成。基于语义层指标，完成品类四象限分类、问题商品定位、行动方案输出。 触发场景：用户提到\"库存诊断\"\"库存健康\"\"库存分析\"\"滞销\"\"售罄率\"\"库销比\"\"补货建议\"\"促销建议\"\"清仓\"\"库存策略\"\"库存优化\"\"库存预警\"\"积压\"\"断货\"\"缺货\"\"动销\"\"周转\"，或用户希望基于库存数据生...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inventory_strategy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jackyujun",
+      "features": [
+        "零售库存健康诊断与行动策略生成。基于语义层指标，完成品类四象限分类、问题商品定位、行动方案输出。 触发场景：用户提到\"库存诊断\"\"库存健康\"\"库存分析\"\"滞销\"\"售罄率\"\"库销比\"\"补货建议."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/inventory-strategy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4506268?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "inventory-strategy",
+      "url": "https://clawhub.ai/skills/inventory-strategy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inventory-strategy",
+    "url": "https://clawhub.ai/skills/inventory-strategy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inventory-strategy-a62177c8fdb214c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/inventory-strategy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-inventory-strategy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e8716946eef36ef8082befc66fce115c07c5275838c243c47eeb5aaf4d472b73",
+      "artifactSizeBytes": 2935
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T02:46:39.711Z"
+}

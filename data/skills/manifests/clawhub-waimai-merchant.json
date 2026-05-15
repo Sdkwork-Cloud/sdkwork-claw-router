@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58373,
+  "uuid": "skill-clawhub-waimai-merchant",
+  "skillKey": "clawhub-waimai-merchant",
+  "name": "Waimai Merchant",
+  "summary": "外卖商家管理 Skill - 支持商家注册、商品管理、价格修改和配送时间设置。Use when user mentions merchant registration, product management, price updates, delivery time settings for food deliv...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.waimai_merchant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "外卖商家管理 Skill",
+        "支持商家注册、商品管理、价格修改和配送时间设置。Use when user mentions merchant registration, product management, price."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/waimai-merchant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "waimai-merchant",
+      "url": "https://clawhub.ai/skills/waimai-merchant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "waimai-merchant",
+    "url": "https://clawhub.ai/skills/waimai-merchant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/waimai-merchant-a1edc93ce8d52909.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/waimai-merchant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-waimai-merchant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:20776f9a04e9f2437126452bd0a584fb58d42bee357c2bd5489dc13f363c042e",
+      "artifactSizeBytes": 2366
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T10:16:20.504Z"
+}

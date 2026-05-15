@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69092,
+  "uuid": "skill-clawhub-amap-dinner-planner",
+  "skillKey": "clawhub-amap-dinner-planner",
+  "name": "Amap Dinner Planner",
+  "summary": "多人聚餐选址神器。输入每个人的位置，自动计算最佳中间点，搜索附近餐厅，生成可在高德地图 App 扫码打开的聚餐地图，一键分享给朋友。再也不用为\"在哪吃\"纠结了。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amap_dinner_planner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SmartVicky",
+      "features": [
+        "多人聚餐选址神器。输入每个人的位置，自动计算最佳中间点，搜索附近餐厅，生成可在高德地图 App 扫码打开的聚餐地图，一键分享给朋友。再也不用为\"在哪吃\"纠结了。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amap-dinner-planner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270828245?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amap-dinner-planner",
+      "url": "https://clawhub.ai/skills/amap-dinner-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amap-dinner-planner",
+    "url": "https://clawhub.ai/skills/amap-dinner-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amap-dinner-planner-3fa51e763ee01b1b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amap-dinner-planner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-amap-dinner-planner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c78b79c480ada865ffd41f22cd1914660011f5eac9af221a5fbe5f822bc5affc",
+      "artifactSizeBytes": 2464
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T13:29:40.069Z"
+}

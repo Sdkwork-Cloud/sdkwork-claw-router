@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43118,
+  "uuid": "skill-clawhub-justoneapi-douban-get-movie-review-detail",
+  "skillKey": "clawhub-justoneapi-douban-get-movie-review-detail",
+  "name": "Douban Movie Review Details API",
+  "summary": "Call GET /api/douban/get-movie-review-detail/v1 for Douban Movie Review Details through JustOneAPI with reviewId.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_douban_get_movie_review_detail",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Call GET /api/douban/get-movie-review-detail/v1 for Douban Movie Review Details through JustOne."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-douban-get-movie-review-detail@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-douban-get-movie-review-detail",
+      "url": "https://clawhub.ai/skills/justoneapi-douban-get-movie-review-detail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-douban-get-movie-review-detail",
+    "url": "https://clawhub.ai/skills/justoneapi-douban-get-movie-review-detail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-douban-get-movie-review-detail-ded78c7295f36ea0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-douban-get-movie-review-detail@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-douban-get-movie-review-detail-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:97ab493e29559b5157a4d3d0e233cfd00f08203bc62671e03b1c178a1366b43d",
+      "artifactSizeBytes": 2022
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T17:51:32.388Z"
+}

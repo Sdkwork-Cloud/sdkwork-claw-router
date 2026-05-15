@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/schema-markup@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.schema_markup",
+  "skill": {
+    "id": 12555,
+    "skillKey": "clawhub-schema-markup",
+    "name": "Schema Markup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "schema-markup",
+    "url": "https://clawhub.ai/skills/schema-markup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/schema-markup-e1e6e4945daacc65.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Add, fix, or optimize schema markup and structured data. Use when the user mentions schema markup, structured data, JSON-LD, rich snippets, schema.org, FAQ schema, product schema, review schema, or breadcrumb schema."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wpank",
+      "userId": "publishers:wpank",
+      "displayName": "wpank",
+      "image": "https://avatars.githubusercontent.com/u/9498646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1547,
+      "installsAllTime": 20,
+      "installsCurrent": 20,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770730883089,
+      "changelog": "Initial release providing schema markup guidance and best practices.\n\n- Covers adding, fixing, and optimizing schema.org structured data for SEO and rich results.\n- Details common schema types (Product, Article, FAQ, Breadcrumb, etc.) with required properties.\n- Includes guidance for static sites, dynamic frameworks, and CMS/WordPress platforms.\n- Provides validation tools, error explanations, and a testing checklist.\n- Emphasizes best practices, Google’s guidelines, and critical “never do” rules.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b986bdeb3605e484b0cad1857069781ba381ca54e66ae07385b1b72b496a40c8"
+}

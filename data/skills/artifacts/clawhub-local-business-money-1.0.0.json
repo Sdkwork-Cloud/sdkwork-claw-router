@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/local-business-money@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_business_money",
+  "skill": {
+    "id": 44415,
+    "skillKey": "clawhub-local-business-money",
+    "name": "Local Business Money"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-business-money",
+    "url": "https://clawhub.ai/skills/local-business-money",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-business-money-ed45ce5362f9c81c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scrapes local businesses by category and location, runs health diagnostics, calculates revenue lost, ranks leads by opportunity, and generates tailored outre..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nicemaths123",
+      "userId": "s1712r4n6m9xg8vc5g0ta16m7x83mfjv",
+      "displayName": "nicemaths123",
+      "image": "https://avatars.githubusercontent.com/u/244252350?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774989819001,
+      "changelog": "v1.0.0 — Initial release with comprehensive local business intelligence and lead prioritization:\n\n- Scrapes all local businesses in any location and category, filtering by criteria like chain status and review count.\n- Runs a full health diagnostic per business (website, SEO, reviews, social, Google listing, more).\n- Calculates estimated monthly revenue at risk and assigns an opportunity score to each business.\n- Ranks leads by urgency and opportunity, highlighting those most in need of your service.\n- Generates tailored outreach messages for each lead, including exact gaps and potential revenue impact.\n- Produces a local market opportunity video using InVideo AI.\n- Powered by Apify, InVideo AI, and Claude AI for data gathering, analysis, and content production.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c8320244e5b5305904e4e00ae3257de94eca5052aeed13865c96fe214809de72"
+}

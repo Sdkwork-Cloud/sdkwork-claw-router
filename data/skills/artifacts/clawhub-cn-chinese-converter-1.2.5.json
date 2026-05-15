@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cn-chinese-converter@1.2.5",
+  "version": "1.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_chinese_converter",
+  "skill": {
+    "id": 73392,
+    "skillKey": "clawhub-cn-chinese-converter",
+    "name": "中文繁简转换"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-chinese-converter",
+    "url": "https://clawhub.ai/skills/cn-chinese-converter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-chinese-converter-1e69bc244d72e964.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "支持简体与繁体中文互转，允许自定义词汇表，全部本地处理无需网络连接。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "freedompixels",
+      "userId": "s17cmvaw2cy01v6y6fpq1h7yts84k0r0",
+      "displayName": "freedompixels",
+      "image": "https://avatars.githubusercontent.com/u/220853702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.5",
+      "createdAt": 1777697052324,
+      "changelog": "Version 1.2.5\n\n- No file changes detected; functionality and documentation remain the same.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:87f351cbfbec2e79be477bb6e843a8c236c7fc4645878b99e005b1c61458eed2"
+}

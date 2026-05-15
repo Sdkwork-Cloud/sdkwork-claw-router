@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54426,
+  "uuid": "skill-clawhub-customs-analytics",
+  "skillKey": "clawhub-customs-analytics",
+  "name": "Customs Analytics",
+  "summary": "Latvia customs declarations analytics — 3.8GB, KN8 codes, trends, seasonal patterns, top declarants",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.customs_analytics",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Orion",
+      "features": [
+        "Latvia customs declarations analytics — 3.8GB, KN8 codes, trends, seasonal patterns, top declar."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/customs-analytics@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261614253?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "customs-analytics",
+      "url": "https://clawhub.ai/skills/customs-analytics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "customs-analytics",
+    "url": "https://clawhub.ai/skills/customs-analytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/customs-analytics-31ea2b4f7db425fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/customs-analytics@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-customs-analytics-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d90cf5416ba5b94525bbfd4b16e048ce8eb9e20dbc8d86137868b74a63424bca",
+      "artifactSizeBytes": 2213
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T22:04:42.018Z"
+}

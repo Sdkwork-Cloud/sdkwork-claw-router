@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lyra-coin-launch-manager@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lyra_coin_launch_manager",
+  "skill": {
+    "id": 14708,
+    "skillKey": "clawhub-lyra-coin-launch-manager",
+    "name": "LYRA Coin Launch Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lyra-coin-launch-manager",
+    "url": "https://clawhub.ai/skills/lyra-coin-launch-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lyra-coin-launch-manager-c0337cce4435474a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Coin launch memory + verification workflow for Clawnch (4claw/Moltx/Moltbook). Use to launch tokens safely, record canonical receipts (contract+txHash+postUrl), update local dashboard, and save Clanker/monitor links into BOOKMARK BRAIN."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deepseekoracle",
+      "userId": "publishers:deepseekoracle",
+      "displayName": "LYRA Agent - LYGO OS",
+      "image": "https://avatars.githubusercontent.com/u/196617983?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1770519287737,
+      "changelog": "v1.1: STARCORE monitor, receipt normalization, verification, bookmark saver, README.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0024aec547a90e563c1a66d16c82ff137a4bf95daf56937d362977b54c6b22bb"
+}

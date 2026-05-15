@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69171,
+  "uuid": "skill-clawhub-feishu-bitable-builder",
+  "skillKey": "clawhub-feishu-bitable-builder",
+  "name": "feishu-bitable-builder",
+  "summary": "飞书多维表格（Bitable）系统搭建专家。根据业务需求从0到1搭建完整的多维表格系统，包括需求分析、架构设计、数据表创建、字段配置、视图设计、工作流自动化、仪表盘配置等。触发场景：(1) 用户需要搭建数据管理系统（客户管理、项目管理、库存管理等）(2) 需要设计业务数据结构和工作流 (3) 需要配置自动化规则和...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_bitable_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "641",
+      "features": [
+        "飞书多维表格（Bitable）系统搭建专家。根据业务需求从0到1搭建完整的多维表格系统，包括需求分析、架构设计、数据表创建、字段配置、视图设计、工作流自动化、仪表盘配置等。触发场景：(1)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-bitable-builder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49388494?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-bitable-builder",
+      "url": "https://clawhub.ai/skills/feishu-bitable-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-bitable-builder",
+    "url": "https://clawhub.ai/skills/feishu-bitable-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-bitable-builder-3909559406361d83.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-bitable-builder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-bitable-builder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:15004bb085a4f69ece28c42ab39238c5cf66dbe7a17ce187c9502d192aac32fe",
+      "artifactSizeBytes": 2718
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T03:13:56.202Z"
+}

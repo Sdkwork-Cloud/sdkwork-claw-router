@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64789,
+  "uuid": "skill-clawhub-futu-flash",
+  "skillKey": "clawhub-futu-flash",
+  "name": "Futu Flash",
+  "summary": "抓取富途官网资讯「快讯」频道最新消息。用于用户要求“去富途快讯找最新N条（最多10条）”、“更新快讯”、“滚动刷新快讯”等场景；通过富途接口 /news-site-api/main/get-flash-list 获取并格式化返回。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.futu_flash",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "loveni",
+      "features": [
+        "抓取富途官网资讯「快讯」频道最新消息。用于用户要求“去富途快讯找最新N条（最多10条）”、“更新快讯”、“滚动刷新快讯”等场景；通过富途接口 /news-site-api/main/get-."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/futu-flash@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3531099?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "futu-flash",
+      "url": "https://clawhub.ai/skills/futu-flash"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "futu-flash",
+    "url": "https://clawhub.ai/skills/futu-flash",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/futu-flash-ffdd1b8ccea59a45.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/futu-flash@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-futu-flash-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6b152fefccd66d8c3eaa54f07a26b808baec1c235b20bf339ffd6cf1533a46d9",
+      "artifactSizeBytes": 1996
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T12:17:17.370Z"
+}

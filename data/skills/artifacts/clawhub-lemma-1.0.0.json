@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lemma@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lemma",
+  "skill": {
+    "id": 38913,
+    "skillKey": "clawhub-lemma",
+    "name": "Lemma"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lemma",
+    "url": "https://clawhub.ai/skills/lemma",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lemma-249fdefbb63fa7b3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Lemma is an AI operating system platform for business teams. Use this as the single entrypoint when designing, provisioning, testing, or improving Lemma pods..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deepak-jha-kgp",
+      "userId": "s171bha0ah4ykm07vkf621q2gn84hb80",
+      "displayName": "deepak-jha-kgp",
+      "image": "https://avatars.githubusercontent.com/u/40298030?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775756332100,
+      "changelog": "Initial release of the lemma skill—an AI operating system platform for business teams.\n\n- Provides a single entrypoint for designing, provisioning, testing, and improving Lemma pods, integrations, functions, workflows, and more.\n- Introduces a modular structure with specific guides for each domain (e.g., integrations, datastores, agents, desks).\n- Establishes a required routing step: pick the relevant module guide before implementation.\n- Documents conventions for cross-module work and references shared CLI behavior notes.\n- Outlines a recommended build sequence for complex workflows to ensure upstream verification before progressing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4f989c64047917efab55bdec423e94304f59c44be8cc2d24e7f938d6c3bab202"
+}

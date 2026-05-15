@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18173,
+  "uuid": "skill-clawhub-martok9803-ci-whisperer",
+  "skillKey": "clawhub-martok9803-ci-whisperer",
+  "name": "CI Whisperer",
+  "summary": "Analyze GitHub Actions failures and propose fixes. Use when a user shares a failing GitHub Actions run URL/id, says 'CI is failing', asks 'why did this workf...",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.martok9803_ci_whisperer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MartinKirov",
+      "features": [
+        "Analyze GitHub Actions failures and propose fixes",
+        "Use when a user shares a failing GitHub Actions run URL/id, says 'CI is failing', asks 'why did."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/martok9803-ci-whisperer@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/100728345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "martok9803-ci-whisperer",
+      "url": "https://clawhub.ai/skills/martok9803-ci-whisperer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "martok9803-ci-whisperer",
+    "url": "https://clawhub.ai/skills/martok9803-ci-whisperer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/martok9803-ci-whisperer-01f9547ed98d848d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/martok9803-ci-whisperer@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-martok9803-ci-whisperer-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:80e0646e4331964901324d26fbafd64c0c192e88f94f32e8b95a93155ce1cda1",
+      "artifactSizeBytes": 1960
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T16:41:10.799Z"
+}

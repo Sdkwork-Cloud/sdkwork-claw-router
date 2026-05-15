@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/real-estate-lead-qualifier@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.real_estate_lead_qualifier",
+  "skill": {
+    "id": 49559,
+    "skillKey": "clawhub-real-estate-lead-qualifier",
+    "name": "Real Estate Lead Qualifier"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "real-estate-lead-qualifier",
+    "url": "https://clawhub.ai/skills/real-estate-lead-qualifier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/real-estate-lead-qualifier-7ab9450eb88c490a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "High-ticket lead qualification agent for realtors and property managers. Handles inbound inquiries from Zillow/Realtor.com, qualifies for budget and timeline..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "igorganapolsky",
+      "userId": "s17ctc1kz9jv9e75srs05tb2dn84wkhk",
+      "displayName": "IgorGanapolsky",
+      "image": "https://avatars.githubusercontent.com/u/201209?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 75,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778186791651,
+      "changelog": "Initial release of Real Estate Lead Qualifier with ThumbGate Fair-Housing Safety\n\n- Provides instant 24/7 lead responses for realtors and property managers from Zillow/Realtor.com inquiries.\n- Qualifies leads based on budget (with a minimum floor), pre-approval status, and move-in timeline.\n- Schedules viewings directly into the agent's calendar, pending qualification.\n- Incorporates ThumbGate to ensure strict compliance with Fair Housing laws by blocking and redirecting disallowed questions.\n- Requires pre-approval letter upload and budget compliance before booking viewings.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f7ab182418fbd914a0500d25226438a5f561b0858a67f70362f4163bcb029d58"
+}

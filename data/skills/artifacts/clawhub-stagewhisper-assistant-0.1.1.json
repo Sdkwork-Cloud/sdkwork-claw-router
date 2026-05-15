@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stagewhisper-assistant@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stagewhisper_assistant",
+  "skill": {
+    "id": 37251,
+    "skillKey": "clawhub-stagewhisper-assistant",
+    "name": "StageWhisper Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stagewhisper-assistant",
+    "url": "https://clawhub.ai/skills/stagewhisper-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stagewhisper-assistant-6a0d2582218b9af2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Handle tasks that arrive from StageWhisper live calls"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "piotraleksander",
+      "userId": "s17crncgnv3rt0489x5wrv5wkd83j0yx",
+      "displayName": "PiotrAleksander",
+      "image": "https://avatars.githubusercontent.com/u/6314591?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1774429906304,
+      "changelog": "- Added SKILL.md with a clear description of how to handle StageWhisper live-call tasks.\n- Outlined expected task types (research, draft, schedule, lookup, notify).\n- Provided concise guidelines for responding and flagging blockers.\n- Specified what not to do when handling tasks from this channel.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:051ab0d72b18b056f4c89134bcc75f6382909063834c9617ad9cca38e7663599"
+}

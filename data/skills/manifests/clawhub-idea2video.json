@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23432,
+  "uuid": "skill-clawhub-idea2video",
+  "skillKey": "clawhub-idea2video",
+  "name": "Idea2video",
+  "summary": "Turn a user's idea into a detailed video pipeline by generating story, characters, portraits, scenes, shots, keyframes, and concatenated shot videos via a pl...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.idea2video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dlazy",
+      "features": [
+        "Turn a user's idea into a detailed video pipeline by generating story, characters, portraits, s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/idea2video@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274158181?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "idea2video",
+      "url": "https://clawhub.ai/skills/idea2video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "idea2video",
+    "url": "https://clawhub.ai/skills/idea2video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/idea2video-68b00cb345603078.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/idea2video@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-idea2video-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:af1416e52e009153043dd361e80aa0bae0bf7b56b44c17b3da495fce23470d3f",
+      "artifactSizeBytes": 2076
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T14:13:06.606Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73638,
+  "uuid": "skill-clawhub-douyin-hotlist-overall",
+  "skillKey": "clawhub-douyin-hotlist-overall",
+  "name": "抖音热点总榜",
+  "summary": "查询抖音热搜榜单。当用户想了解抖音当前有哪些热门内容、实时热搜词、上升热点或热榜排名时，使用此技能获取最新数据。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_hotlist_overall",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "allinherog-star",
+      "features": [
+        "查询抖音热搜榜单。当用户想了解抖音当前有哪些热门内容、实时热搜词、上升热点或热榜排名时，使用此技能获取最新数据。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/douyin-hotlist-overall@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/243965348?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "douyin-hotlist-overall",
+      "url": "https://clawhub.ai/skills/douyin-hotlist-overall"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-hotlist-overall",
+    "url": "https://clawhub.ai/skills/douyin-hotlist-overall",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-hotlist-overall-c1137b5154c19831.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/douyin-hotlist-overall@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-douyin-hotlist-overall-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:65a5002a8363331dac672c72b123e3257e94037957403a958682397a549ffbd2",
+      "artifactSizeBytes": 2100
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T06:05:19.084Z"
+}

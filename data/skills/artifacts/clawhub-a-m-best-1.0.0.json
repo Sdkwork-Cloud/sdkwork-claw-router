@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/a-m-best@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_m_best",
+  "skill": {
+    "id": 48232,
+    "skillKey": "clawhub-a-m-best",
+    "name": "A M Best"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-m-best",
+    "url": "https://clawhub.ai/skills/a-m-best",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-m-best-a96ad83427960488.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides specialized credit and financial strength ratings exclusively for insurance companies worldwide, using proprietary methodologies like BCAR."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 101,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778014964702,
+      "changelog": "AM Best skill v1.0.0 changelog:\n\n- Initial release introducing the AM Best skill for insurance industry credit rating research.\n- Summarizes AM Best’s history, business model, competitive advantages, and rating methodologies.\n- Includes key facts such as industry coverage, global presence, and unique rating scale.\n- Designed to support users analyzing insurance solvency, market dynamics, and specialty rating agencies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2539081af0260295920bb82a1c32a8c221d167e041279c867056d0ff9fd3b289"
+}

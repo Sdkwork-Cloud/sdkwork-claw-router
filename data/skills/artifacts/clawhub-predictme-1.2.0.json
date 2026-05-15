@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/predictme@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.predictme",
+  "skill": {
+    "id": 9123,
+    "skillKey": "clawhub-predictme",
+    "name": "PredictMe - AI Trading Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "predictme",
+    "url": "https://clawhub.ai/skills/predictme",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/predictme-cdceef24a32cad96.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trade 10-second crypto prediction markets on PredictMe"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "howardpen9",
+      "userId": "publishers:howardpen9",
+      "displayName": "howardpen9",
+      "image": "https://avatars.githubusercontent.com/u/36764495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4144,
+      "installsAllTime": 25,
+      "installsCurrent": 25,
+      "stars": 6,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1770355830935,
+      "changelog": "10-second crypto prediction markets. Free $10 TEST balance. BTC/ETH/SOL. REST API.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:652671360949772d3e145a25d2f124caca09f67cec97a86d21d33876ec8b42ac"
+}

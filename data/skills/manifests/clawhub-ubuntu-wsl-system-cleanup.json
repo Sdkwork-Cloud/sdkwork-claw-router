@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38834,
+  "uuid": "skill-clawhub-ubuntu-wsl-system-cleanup",
+  "skillKey": "clawhub-ubuntu-wsl-system-cleanup",
+  "name": "Ubuntu WSL System Cleanup",
+  "summary": "Audit and safely clean Ubuntu 24.04 system junk, caches, logs, temp files, and unused local tool artifacts outside /mnt. Use when the user asks to clean the...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ubuntu_wsl_system_cleanup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shenzheke",
+      "features": [
+        "Audit and safely clean Ubuntu 24.04 system junk, caches, logs, temp files, and unused local too.",
+        "Use when the user asks to clean the..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ubuntu-wsl-system-cleanup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3626262?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ubuntu-wsl-system-cleanup",
+      "url": "https://clawhub.ai/skills/ubuntu-wsl-system-cleanup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ubuntu-wsl-system-cleanup",
+    "url": "https://clawhub.ai/skills/ubuntu-wsl-system-cleanup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ubuntu-wsl-system-cleanup-6529205fc9f4e5af.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ubuntu-wsl-system-cleanup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ubuntu-wsl-system-cleanup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7a1329da61972468925b32be38ba624bb272c03a95deb077bb926d673c7a80d0",
+      "artifactSizeBytes": 2066
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T10:36:10.112Z"
+}

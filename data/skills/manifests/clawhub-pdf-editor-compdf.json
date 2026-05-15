@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8575,
+  "uuid": "skill-clawhub-pdf-editor-compdf",
+  "skillKey": "clawhub-pdf-editor-compdf",
+  "name": "PDF Editor",
+  "summary": "PDF Editor edits and organizes PDF pages with merge, insert, reorder, exchange, and crop operations, built on ComPDF page management capabilities for fast PD...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_editor_compdf",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ComPDF",
+      "features": [
+        "PDF Editor edits and organizes PDF pages with merge, insert, reorder, exchange, and crop operat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf-editor-compdf@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/108785628?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf-editor-compdf",
+      "url": "https://clawhub.ai/skills/pdf-editor-compdf"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-editor-compdf",
+    "url": "https://clawhub.ai/skills/pdf-editor-compdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-editor-compdf-e7704c8e57b57e30.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf-editor-compdf@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf-editor-compdf-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ebff6dd56d493f4ab62e11b4c731c9fad249f747bd76870899a10a7e21664623",
+      "artifactSizeBytes": 2320
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T11:30:08.047Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41994,
+  "uuid": "skill-clawhub-safety-net",
+  "skillKey": "clawhub-safety-net",
+  "name": "safety-net",
+  "summary": "Performs safety checks before high-risk operations to ensure compliance with Access, Sustainability, and Non-Aggression principles.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safety_net",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MarkMa84",
+      "features": [
+        "Performs safety checks before high-risk operations to ensure compliance with Access, Sustainabi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/safety-net@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19796416?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "safety-net",
+      "url": "https://clawhub.ai/skills/safety-net"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safety-net",
+    "url": "https://clawhub.ai/skills/safety-net",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safety-net-671213e9e95f7ee7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/safety-net@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-safety-net-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:919b6c56aeab60201745cb107bdc698a66d260af1a42f14b4150f56ca67bb224",
+      "artifactSizeBytes": 1828
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T04:04:25.726Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69373,
+  "uuid": "skill-clawhub-ai-news-tracker",
+  "skillKey": "clawhub-ai-news-tracker",
+  "name": "AI News Tracker",
+  "summary": "AI 与科技行业实时追踪 Skill。监控技术趋势、应用落地、公司动态、人物观点四大模块，支持多语言多平台来源，每日定时发送结构化摘要，重大事件即时发现并推送。触发条件：（1）Cron 定时任务触发；（2）用户说\"帮我查一下今天 AI 有什么新闻\"或类似表达。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_news_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "billxfan",
+      "features": [
+        "AI 与科技行业实时追踪 Skill。监控技术趋势、应用落地、公司动态、人物观点四大模块，支持多语言多平台来源，每日定时发送结构化摘要，重大事件即时发现并推送。触发条件：（1）Cron 定时."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-news-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/202207838?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-news-tracker",
+      "url": "https://clawhub.ai/skills/ai-news-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-news-tracker",
+    "url": "https://clawhub.ai/skills/ai-news-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-news-tracker-2c657b63091c6f92.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-news-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-news-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2a6ca3d6d3fe815ae311a204d7845de024bb82295dacdd4aa27b8a5d8a01f91f",
+      "artifactSizeBytes": 2640
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T04:03:51.458Z"
+}

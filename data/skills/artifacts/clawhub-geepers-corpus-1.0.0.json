@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/geepers-corpus@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geepers_corpus",
+  "skill": {
+    "id": 18821,
+    "skillKey": "clawhub-geepers-corpus",
+    "name": "Geepers Corpus"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geepers-corpus",
+    "url": "https://clawhub.ai/skills/geepers-corpus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geepers-corpus-1a1edd6961782a0f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query the COCA (Corpus of Contemporary American English) linguistics API for word frequency, collocations, concordances, and historical usage trends. Use for..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lukeslp",
+      "userId": "publishers:lukeslp",
+      "displayName": "Lucas Steuber",
+      "image": "https://avatars.githubusercontent.com/u/78874798?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 659,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771398915399,
+      "changelog": "- Initial release of geepers-corpus skill.\n- Enables querying the COCA API for word frequency, collocations, concordances, and historical usage trends in American English.\n- Provides detailed API usage instructions, including authentication and sample endpoints.\n- Clarifies recommended and discouraged use cases for the skill.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fb6f348af406464a88ebdcd7c4617a4f1caec938cdab71a45d005e4d133bf2d6"
+}

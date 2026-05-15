@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gal-test@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gal_test",
+  "skill": {
+    "id": 51910,
+    "skillKey": "clawhub-gal-test",
+    "name": "Don't download"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gal-test",
+    "url": "https://clawhub.ai/skills/gal-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gal-test-69d87a0215fe0ddf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI image generation, editing, and background removal API via Bria.ai — remove backgrounds to get transparent PNGs and cutouts, generate images from text prom..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "levdavid1",
+      "userId": "s17110h71xhtc0nb9rftsvwq5183nsa8",
+      "displayName": "Levdavid1",
+      "image": "https://avatars.githubusercontent.com/u/125185764?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774520847892,
+      "changelog": "Bria-AI skill v1.0.0 introduces AI-powered image generation, editing, and background removal through Bria.ai:\n\n- Enables removing backgrounds, generating images from text prompts, editing photos with natural language, and creating transparent PNG cutouts.\n- Supports product photography/lifestyle shots, background replacement/blurring, image upscaling, restyling, and batch visual asset generation.\n- Commercially safe, royalty-free outputs using 20+ specialized endpoints for e-commerce, web design, and content pipelines.\n- Provides full setup instructions for API authentication and billing verification.\n- Triggers on a wide array of visual content requests, including cutouts, inpainting, object removal or addition, restoration, enhancement, and content creation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8a3ad6326e064b8a1d7b5eb24f0f4034de175c31e57717108493f10e7954b928"
+}

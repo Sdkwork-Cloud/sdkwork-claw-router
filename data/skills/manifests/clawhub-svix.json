@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24136,
+  "uuid": "skill-clawhub-svix",
+  "skillKey": "clawhub-svix",
+  "name": "Svix",
+  "summary": "Svix integration. Manage Organizations. Use when the user wants to interact with Svix data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.svix",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Svix integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Svix data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/svix@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "svix",
+      "url": "https://clawhub.ai/skills/svix"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "svix",
+    "url": "https://clawhub.ai/skills/svix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/svix-90f71016af8e9229.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/svix@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-svix-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b5d2dab5c0200cfa2658a95263af8937ab429a2a6951af5873a4bea1353cf96b",
+      "artifactSizeBytes": 1770
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:49:19.862Z"
+}

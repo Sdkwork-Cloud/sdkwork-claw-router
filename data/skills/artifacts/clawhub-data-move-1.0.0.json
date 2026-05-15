@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/data-move@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_move",
+  "skill": {
+    "id": 52920,
+    "skillKey": "clawhub-data-move",
+    "name": "Data Move"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-move",
+    "url": "https://clawhub.ai/skills/data-move",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-move-ecb5cc198e1628aa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deep data migration workflow—scope, mapping, validation, batching and ordering, dual-write and cutover, rollback, and reconciliation. Use when moving tenants..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clawkk",
+      "userId": "s170g5yz1q3ksjnn4gz6v24af983h1mh",
+      "displayName": "clawkk",
+      "image": "https://avatars.githubusercontent.com/u/265748372?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774601250845,
+      "changelog": "- Initial release of the skill for deep data migration workflows.\n- Introduces a seven-stage process: scope, mapping, batching, validation, execution strategy, cutover/rollback, and reconciliation.\n- Includes guidelines for invariants, field mapping, idempotent batching, validation rules, and execution patterns.\n- Provides a comprehensive checklist and practical tips to ensure data correctness and minimize downtime.\n- Designed for complex migrations, large backfills, and high-trust data moves with minimal operational risk.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5077273a88f0660ad8441279cbe0a49c40d6de8018720e5426a76069deb918c4"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tester-workflow@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tester_workflow",
+  "skill": {
+    "id": 58185,
+    "skillKey": "clawhub-tester-workflow",
+    "name": "Tester Workflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tester-workflow",
+    "url": "https://clawhub.ai/skills/tester-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tester-workflow-bbd6c46a4a403af8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete testing workflow from requirements analysis to test case generation and review - triggers on \"完整测试流程\", \"testing workflow\", \"测试工作流\", \"端到端测试\", \"全流程测试\"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "garkinchu",
+      "userId": "s171qtw53xc453t9ywwk1d5azd84q1gr",
+      "displayName": "GarkinChu",
+      "image": "https://avatars.githubusercontent.com/u/31737946?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776092005089,
+      "changelog": "- Renamed from \"testing-workflow\" to \"tester-workflow\" throughout the documentation and file structure.\n- Renamed main metadata file from \"skill.md\" to \"SKILL.md\".\n- Updated all file paths, examples, and documentation to reflect the new naming.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e56980c85e4a7da7e5f687f584603613ae749c7b274cd84ffda7b1f162c6ef22"
+}

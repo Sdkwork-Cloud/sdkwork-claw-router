@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zjtj-sar-strategy-v2@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zjtj_sar_strategy_v2",
+  "skill": {
+    "id": 65638,
+    "skillKey": "clawhub-zjtj-sar-strategy-v2",
+    "name": "Zjtj Sar Strategy V2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zjtj-sar-strategy-v2",
+    "url": "https://clawhub.ai/skills/zjtj-sar-strategy-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zjtj-sar-strategy-v2-19ae125691735b54.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "结合主力资金、SAR趋势、成交量和市场情绪四维度，评估A股短线波段买入和持仓时机及风险控制。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "haohanyang92",
+      "userId": "s176etfsvd0m1zsmf70wyypkyx83ggvw",
+      "displayName": "haohanyang92",
+      "image": "https://avatars.githubusercontent.com/u/61062925?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 251,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773678601280,
+      "changelog": "ZJTJ+SAR四维选股策略V2是一次完全重新设计：\n\n- 全新引入四大维度（主力动向、趋势判断、资金验证、市场情绪）进行交叉选股，多重过滤更少假信号。\n- 明确量化了四维评分体系，满分100分，并以总分决定买卖建议。\n- 细化买入、止盈止损与仓位控制等具体操作流程，更适合纪律性短线和波段交易者。\n- 新增市场情绪分级与仓位建议，宏观风险识别及心理风险应对详尽。\n- 明确列出适用与不适用场景，给出每日复盘流程和持仓管理建议。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bfb9eeaccf9e5acaf05f6e674148920cf50a8d6c23a0993c50fe7d0c484cc8ae"
+}

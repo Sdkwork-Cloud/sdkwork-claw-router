@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39913,
+  "uuid": "skill-clawhub-sonos-music-search-skill",
+  "skillKey": "clawhub-sonos-music-search-skill",
+  "name": "Sonos Music Search Skill",
+  "summary": "Search and play music on Sonos speakers using Brave Search to find Spotify tracks",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sonos_music_search_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "terrycarter1985",
+      "features": [
+        "Search and play music on Sonos speakers using Brave Search to find Spotify tracks"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sonos-music-search-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1542987?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sonos-music-search-skill",
+      "url": "https://clawhub.ai/skills/sonos-music-search-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sonos-music-search-skill",
+    "url": "https://clawhub.ai/skills/sonos-music-search-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sonos-music-search-skill-dea87f7ef82440dd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sonos-music-search-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sonos-music-search-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c34088abc65f916c3977befbc560cf16404088d1372ee751df8074b927759f82",
+      "artifactSizeBytes": 2110
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T20:53:45.401Z"
+}

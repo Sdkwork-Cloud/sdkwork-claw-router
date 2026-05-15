@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47456,
+  "uuid": "skill-clawhub-yihui-node-connect",
+  "skillKey": "clawhub-yihui-node-connect",
+  "name": "node-connect",
+  "summary": "Diagnose OpenClaw node connection and pairing failures for Android, iOS, and macOS companion apps. Use when QR/setup code/manual connect fails, local Wi-Fi w...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yihui_node_connect",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "辉哥",
+      "features": [
+        "Diagnose OpenClaw node connection and pairing failures for Android, iOS, and macOS companion ap.",
+        "Use when QR/setup code/manual connect fails, local Wi-Fi w..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yihui-node-connect@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/197358991?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yihui-node-connect",
+      "url": "https://clawhub.ai/skills/yihui-node-connect"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yihui-node-connect",
+    "url": "https://clawhub.ai/skills/yihui-node-connect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yihui-node-connect-886829a2928e1437.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yihui-node-connect@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yihui-node-connect-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:452d94a8288865cbe62b3a7b9712c84e402bcaee6f078e0cc7145612caff5ff9",
+      "artifactSizeBytes": 1904
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T07:29:09.873Z"
+}

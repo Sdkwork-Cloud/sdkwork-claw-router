@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58298,
+  "uuid": "skill-clawhub-weixin-runtime-fix",
+  "skillKey": "clawhub-weixin-runtime-fix",
+  "name": "Weixin Runtime Fix",
+  "summary": "修复 @tencent-weixin/openclaw-weixin@2.4.1 在 OpenClaw 2026.5.4+ 上的两个关键 bug： 1. Runtime 模块隔离导致 waitForWeixinRuntime 超时 2. undici 8.2.0 拒绝手动设置的 Content-Length 头...",
+  "version": "2.4.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weixin_runtime_fix",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "johnsonxuan",
+      "features": [
+        "修复 @tencent-weixin/openclaw-weixin@2.4.1 在 OpenClaw 2026.5.4+ 上的两个关键 bug： 1",
+        "Runtime 模块隔离导致 waitForWeixinRuntime 超时 2",
+        "undici 8.2.0 拒绝手动设置的 Content-Length 头..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weixin-runtime-fix@2.4.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/129847416?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weixin-runtime-fix",
+      "url": "https://clawhub.ai/skills/weixin-runtime-fix"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weixin-runtime-fix",
+    "url": "https://clawhub.ai/skills/weixin-runtime-fix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weixin-runtime-fix-d01a9c31de679c89.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weixin-runtime-fix@2.4.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-weixin-runtime-fix-2.4.2.json",
+      "version": "2.4.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2a4964343d162ce81b5f3e422bdf6ab52e5c455b651371e3128bd511fc7f6190",
+      "artifactSizeBytes": 2399
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T03:47:00.564Z"
+}

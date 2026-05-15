@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58870,
+  "uuid": "skill-clawhub-freestocklineskill",
+  "skillKey": "clawhub-freestocklineskill",
+  "name": "freeStockLIneskill",
+  "summary": "Free no-API-key A-share ecosystem data query skill for OpenClaw and Hermes. Use when users ask for A股、沪深京股票、指数、ETF/LOF、可转债、行业/概念板块、实时行情、K线、涨跌排行、涨停/跌停/炸板、资金流、...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.freestocklineskill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wu Bo Yu",
+      "features": [
+        "Free no-API-key A-share ecosystem data query skill for OpenClaw and Hermes",
+        "Use when users ask for A股、沪深京股票、指数、ETF/LOF、可转债、行业/概念板块、实时行情、K线、涨跌排行、涨停/跌停/炸板、资金流、..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/freestocklineskill@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95729350?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "freestocklineskill",
+      "url": "https://clawhub.ai/skills/freestocklineskill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "freestocklineskill",
+    "url": "https://clawhub.ai/skills/freestocklineskill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/freestocklineskill-a06827a95c64d8db.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/freestocklineskill@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-freestocklineskill-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:227ab31a9ec07abe07d33a203128ac5ddbcfc0c9b55e495958d5a658c0d2868c",
+      "artifactSizeBytes": 2070
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T08:42:03.315Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openlang@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openlang",
+  "skill": {
+    "id": 23641,
+    "skillKey": "clawhub-openlang",
+    "name": "OpenLang"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openlang",
+    "url": "https://clawhub.ai/skills/openlang",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openlang-99d0fc9ba10536ce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Compact AI-to-AI communication protocol. Use when spawning sub-agents, sending inter-agent messages via sessions_send/sessions_spawn, or when instructed to s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andreanjos",
+      "userId": "publishers:andreanjos",
+      "displayName": "andreanjos",
+      "image": "https://avatars.githubusercontent.com/u/4633681?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 434,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1772772964450,
+      "changelog": "Initial release: compact AI-to-AI communication protocol with three compression tiers (L1 Pidgin, L2 Glyph, L3 Bytecode). Reviewed by Claude, Gemini, and Codex.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:002af2a0a2e3817d491cfac50d6ec71166422fe1624d8907a2e64b67bc3ca721"
+}

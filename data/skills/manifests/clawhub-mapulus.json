@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30534,
+  "uuid": "skill-clawhub-mapulus",
+  "skillKey": "clawhub-mapulus",
+  "name": "Mapulus",
+  "summary": "Mapulus integration. Manage Organizations. Use when the user wants to interact with Mapulus data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mapulus",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Mapulus integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Mapulus data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mapulus@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mapulus",
+      "url": "https://clawhub.ai/skills/mapulus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mapulus",
+    "url": "https://clawhub.ai/skills/mapulus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mapulus-6fa9dc8f57f4fe23.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mapulus@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-mapulus-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:493020083824e6a709e5547c263d2a7f08bba3bbdf4d9c8ee4518daab8cf81df",
+      "artifactSizeBytes": 1797
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:11:07.155Z"
+}

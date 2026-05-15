@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/errorlens@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.errorlens",
+  "skill": {
+    "id": 41583,
+    "skillKey": "clawhub-errorlens",
+    "name": "errorlens"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "errorlens",
+    "url": "https://clawhub.ai/skills/errorlens",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/errorlens-8251931a2a3ddcfe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Error handling & exception safety analyzer -- scans codebases for empty catches, swallowed exceptions, missing error boundaries, unhandled rejections, generi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "suhteevah",
+      "userId": "s17b8q91y0grcxtcbcmvck351n84tdze",
+      "displayName": "suhteevah",
+      "image": "https://avatars.githubusercontent.com/u/2342183?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776187418532,
+      "changelog": "Fix: declare all deps, JWT verification, configPaths",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a7e4005444a447c3f67538378bb57c97d2c1faeea3eb91f7dd311b4c843ea722"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-short-creator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_short_creator",
+  "skill": {
+    "id": 57514,
+    "skillKey": "clawhub-video-short-creator",
+    "name": "AI视频短视频创作器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-short-creator",
+    "url": "https://clawhub.ai/skills/video-short-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-short-creator-b8114ab42153ec49.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Two-phase AI-narrated video short creator with human review checkpoints. Phase 1 analyzes source materials, generates TTS narration via edge-tts, and exports..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jessy-huang",
+      "userId": "s17305rtbzmgmx4xggvnjq913583j3kd",
+      "displayName": "Jessy-Huang",
+      "image": "https://avatars.githubusercontent.com/u/66520966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775805719191,
+      "changelog": "Initial release of Video Short Creator – a two-phase AI-narrated video creation workflow with human review checkpoints.\n\n- Automates short-form video creation using existing video clips and AI-generated voiceover.\n- Phase 1: Analyzes clips, drafts or loads scripts, generates TTS narration, and exports a synchronized subtitle review sheet for user approval.\n- Phase 2: Builds final video using FFmpeg with automated clipping, scaling, transitions, hardcoded subtitles, and merged narration audio.\n- Includes robust user review steps enabling corrections of script, subtitles, and clip mapping before final rendering.\n- Optimized for tech/AI explanation videos targeting social media, with best-practices guidance and Windows compatibility tips.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d517c7942643ce3a9e87ad1d129ebcf451bc5efdaedc76434013ae4f3076b783"
+}

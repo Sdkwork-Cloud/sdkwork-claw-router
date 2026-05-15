@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62096,
+  "uuid": "skill-clawhub-jy-chenhui-summary",
+  "skillKey": "clawhub-jy-chenhui-summary",
+  "name": "jy-chenhui-summary",
+  "summary": "基于恒生聚源 MCP 金融数据库生成专业级晨会精华纪要。触发场景：用户要求\"晨会总结\"、\"研报汇总\"、\"市场观点\"、\"每日/周度纪要\"、\"券商观点\"、\"聚源研报\"等。数据源限定为恒生聚源合作券商研报，严禁编造内容。Generate professional morning briefing summaries b...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jy_chenhui_summary",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiayinian",
+      "features": [
+        "基于恒生聚源 MCP 金融数据库生成专业级晨会精华纪要。触发场景：用户要求\"晨会总结\"、\"研报汇总\"、\"市场观点\"、\"每日/周度纪要\"、\"券商观点\"、\"聚源研报\"等。数据源限定为恒生聚源合作."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jy-chenhui-summary@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22932351?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jy-chenhui-summary",
+      "url": "https://clawhub.ai/skills/jy-chenhui-summary"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jy-chenhui-summary",
+    "url": "https://clawhub.ai/skills/jy-chenhui-summary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jy-chenhui-summary-f675261db5e95e0e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jy-chenhui-summary@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jy-chenhui-summary-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:38e4d79495ef50f2f71ea6e3ca510728fc5c6ebb41e0cae62f7ad8a2d78a2016",
+      "artifactSizeBytes": 2771
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T09:56:14.901Z"
+}

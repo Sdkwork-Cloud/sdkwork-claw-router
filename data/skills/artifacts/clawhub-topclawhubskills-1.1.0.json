@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/topclawhubskills@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.topclawhubskills",
+  "skill": {
+    "id": 12054,
+    "skillKey": "clawhub-topclawhubskills",
+    "name": "Top ClawHub Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "topclawhubskills",
+    "url": "https://clawhub.ai/skills/topclawhubskills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/topclawhubskills-6de4a6de121c9808.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover the most popular, newest, and security-certified ClawHub skills via live API data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdrabent",
+      "userId": "publishers:sdrabent",
+      "displayName": "sdrabent",
+      "image": "https://avatars.githubusercontent.com/u/5302548?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1642,
+      "installsAllTime": 9,
+      "installsCurrent": 9,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1771528273566,
+      "changelog": "**Support for deleted ClawHub skills and related statistics.**\n\n- Added `/api/deleted` endpoint to list previously removed skills, including deletion info.\n- All skill responses now include `is_deleted` and `deleted_at` fields.\n- Aggregate stats now report deleted skill count.\n- Example queries and documentation updated to cover deleted skills.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e38c5bbd2f5a08b3cc947977d4f5c8764a3d555c935fc05244f4c32f6895e6e5"
+}

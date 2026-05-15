@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-shield-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_shield_audit",
+  "skill": {
+    "id": 21883,
+    "skillKey": "clawhub-ai-shield-audit",
+    "name": "AI Shield — OpenClaw Security Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-shield-audit",
+    "url": "https://clawhub.ai/skills/ai-shield-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-shield-audit-3f90de73e5465488.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Security audit engine for OpenClaw configurations. Detects vulnerabilities, misconfigurations, secret leaks, and over-privileged agents. Use when the user as..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "laurentaia",
+      "userId": "publishers:laurentaia",
+      "displayName": "Laurent | AI",
+      "image": "https://avatars.githubusercontent.com/u/113306968?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 983,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771884479257,
+      "changelog": "Initial release: 11 vulnerability categories, CLI + library, auto-fix suggestions. Detects secret leakage, gateway misconfig, subagent permission escalation, channel security gaps.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:95c48af99d428afb64d728ec9a8633321e4abd50855db5ef701659aded4dc446"
+}

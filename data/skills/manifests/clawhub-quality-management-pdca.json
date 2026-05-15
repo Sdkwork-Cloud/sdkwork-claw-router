@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64048,
+  "uuid": "skill-clawhub-quality-management-pdca",
+  "skillKey": "clawhub-quality-management-pdca",
+  "name": "PDCA+ISO9001质量管理",
+  "summary": "PDCA+ISO9001质量管理决策系统技能 - 基于PDCA循环和ISO9001质量体系的AI决策质量管控技能，实现任务全生命周期管理、标准化流程、持续改进",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quality_management_pdca",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yongjie666888",
+      "features": [
+        "PDCA+ISO9001质量管理决策系统技能",
+        "基于PDCA循环和ISO9001质量体系的AI决策质量管控技能，实现任务全生命周期管理、标准化流程、持续改进"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quality-management-pdca@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/177016990?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quality-management-pdca",
+      "url": "https://clawhub.ai/skills/quality-management-pdca"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quality-management-pdca",
+    "url": "https://clawhub.ai/skills/quality-management-pdca",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quality-management-pdca-6cde424613abb9eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quality-management-pdca@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-quality-management-pdca-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5cf0e2b51c2d75fe5c07b0b46d71dbb6ef286ecc57521b77df312d198dc599d3",
+      "artifactSizeBytes": 2640
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T11:31:19.836Z"
+}

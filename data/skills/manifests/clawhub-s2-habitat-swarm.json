@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39043,
+  "uuid": "skill-clawhub-s2-habitat-swarm",
+  "skillKey": "clawhub-s2-habitat-swarm",
+  "name": "The Grid Topology & Swarm Engine",
+  "summary": "Defines a 2x2m spatial grid for multi-agent control, enforcing legal command chains and enabling swarm intelligence to manage human-centric spaces efficiently.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.s2_habitat_swarm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MilesXiang",
+      "features": [
+        "Defines a 2x2m spatial grid for multi-agent control, enforcing legal command chains and enablin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/s2-habitat-swarm@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259359437?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "s2-habitat-swarm",
+      "url": "https://clawhub.ai/skills/s2-habitat-swarm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "s2-habitat-swarm",
+    "url": "https://clawhub.ai/skills/s2-habitat-swarm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/s2-habitat-swarm-4f68c6cf98510821.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/s2-habitat-swarm@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-s2-habitat-swarm-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:538fb25d541a2a19a9f4e8c27fbd576288ecc2a947135a9255c417d91913f8bc",
+      "artifactSizeBytes": 2484
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T17:52:45.071Z"
+}

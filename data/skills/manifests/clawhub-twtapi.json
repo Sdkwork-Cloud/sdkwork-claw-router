@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36412,
+  "uuid": "skill-clawhub-twtapi",
+  "skillKey": "clawhub-twtapi",
+  "name": "TwtAPI",
+  "summary": "Access live Twitter/X data through TwtAPI's hosted public skill gateway. Search tweets, look up users, read timelines, inspect followers and following, fetch...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twtapi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TonyGJJ",
+      "features": [
+        "Access live Twitter/X data through TwtAPI's hosted public skill gateway",
+        "Search tweets, look up users, read timelines, inspect followers and following, fetch..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/twtapi@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4088735?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "twtapi",
+      "url": "https://clawhub.ai/skills/twtapi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twtapi",
+    "url": "https://clawhub.ai/skills/twtapi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twtapi-99d72731467889b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/twtapi@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-twtapi-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a707fcadbc802a620c57dda26d3a7cc960024f321f46607cd9e30a36f648e2df",
+      "artifactSizeBytes": 2303
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T07:36:34.157Z"
+}

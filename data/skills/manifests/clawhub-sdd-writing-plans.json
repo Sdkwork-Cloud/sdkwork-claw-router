@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61026,
+  "uuid": "skill-clawhub-sdd-writing-plans",
+  "skillKey": "clawhub-sdd-writing-plans",
+  "name": "SDD Writing Plans",
+  "summary": "当有规格说明或需要多步骤任务的需求时，在编写代码之前使用。根据 spec-design.md 生成可执行的 spec-plan.md。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sdd_writing_plans",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mahingbun-dev",
+      "features": [
+        "当有规格说明或需要多步骤任务的需求时，在编写代码之前使用。根据 spec-design.md 生成可执行的 spec-plan.md。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sdd-writing-plans@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/174362089?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sdd-writing-plans",
+      "url": "https://clawhub.ai/skills/sdd-writing-plans"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sdd-writing-plans",
+    "url": "https://clawhub.ai/skills/sdd-writing-plans",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sdd-writing-plans-4e3ee3189a6dd969.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sdd-writing-plans@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sdd-writing-plans-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc2ddf63d0698a2ad639007f976ecef493d5e537cbc4897aef9a1bbde69914dd",
+      "artifactSizeBytes": 1897
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T01:07:07.453Z"
+}

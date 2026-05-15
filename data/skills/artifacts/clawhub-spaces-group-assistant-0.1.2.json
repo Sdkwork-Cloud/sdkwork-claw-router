@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/spaces-group-assistant@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spaces_group_assistant",
+  "skill": {
+    "id": 67290,
+    "skillKey": "clawhub-spaces-group-assistant",
+    "name": "Spaces Group Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spaces-group-assistant",
+    "url": "https://clawhub.ai/skills/spaces-group-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spaces-group-assistant-196b2a7027b64314.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Предоставляет расширенный доступ к внутренним данным, аналитике и логам в доверенной группе Telegram с ограничением доступа к календарю."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "helladventurer",
+      "userId": "publishers:helladventurer",
+      "displayName": "HellAdventurer",
+      "image": "https://avatars.githubusercontent.com/u/61600223?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1173,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1771355181779,
+      "changelog": "Spaces Group Assistant v0.1.2\n\n- Обновлён идентификатор доверенной группы Telegram в документации (chat_id теперь -4842304105 вместо ____).\n- Исправлен пункт “Разработано”: теперь указан автор Roman Plakhov.\n- Актуализирована документация (SKILL.md) для точного отражения настроек группы и авторства.\n- Внутренние изменения в package.json и основной логике для поддержки обновлённых данных группы.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:df4b235ffec6a6a577d46d67adf2ecb214e8be756331014107e451714d6592c4"
+}

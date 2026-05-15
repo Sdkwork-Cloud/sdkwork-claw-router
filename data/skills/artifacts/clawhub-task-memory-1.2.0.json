@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/task-memory@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_memory",
+  "skill": {
+    "id": 65530,
+    "skillKey": "clawhub-task-memory",
+    "name": "Task Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-memory",
+    "url": "https://clawhub.ai/skills/task-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-memory-839733b784fa85d3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "任务遗忘防护系统 — 解决 AI Agent 任务发出但未执行的记忆漏洞问题。 当需要创建、追踪、管理长期任务时使用，特别是：提出或承诺了某项计划后、设置 cron/自动化任务时、任务状态变更后、晨间/心跳检查时。 核心功能：通过 todo.json 持久化任务状态，todo_manager.py 管理增/查/改..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huyaohuahk",
+      "userId": "s171j6dr091n2d1wm0y3jq3ass840fza",
+      "displayName": "huyaohuahk",
+      "image": "https://avatars.githubusercontent.com/u/200384999?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1775005874806,
+      "changelog": "v1.2.0: --add强制校验deadline格式，--done自动归档30天，新增--archive/--purge",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b82c94e095bb629f1718659d7c517375ba4d951696c499cfcc7513a1bfdde4d1"
+}

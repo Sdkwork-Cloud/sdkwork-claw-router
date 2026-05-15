@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23743,
+  "uuid": "skill-clawhub-virtual-desktop-browser",
+  "skillKey": "clawhub-virtual-desktop-browser",
+  "name": "Virtual Desktop Browser",
+  "summary": "Launch Chromium in non-headless mode inside Xvfb virtual display (fixed 1200x720x24) and automate with human-like mouse/keyboard/screenshot operations. Use f...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.virtual_desktop_browser",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Allen Niu",
+      "features": [
+        "Launch Chromium in non-headless mode inside Xvfb virtual display (fixed 1200x720x24) and automa.",
+        "Use f..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/virtual-desktop-browser@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130979060?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "virtual-desktop-browser",
+      "url": "https://clawhub.ai/skills/virtual-desktop-browser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "virtual-desktop-browser",
+    "url": "https://clawhub.ai/skills/virtual-desktop-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/virtual-desktop-browser-e6c3e2adcbbc5e79.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/virtual-desktop-browser@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-virtual-desktop-browser-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3cb358e53a31e49839293e3c7e8fa8539710040541f7b822ee85d03b5ad50c47",
+      "artifactSizeBytes": 2362
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T03:56:04.545Z"
+}

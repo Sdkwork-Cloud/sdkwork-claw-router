@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cloudcreate-tools@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloudcreate_tools",
+  "skill": {
+    "id": 48084,
+    "skillKey": "clawhub-cloudcreate-tools",
+    "name": "CloudCreate Tools"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloudcreate-tools",
+    "url": "https://clawhub.ai/skills/cloudcreate-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloudcreate-tools-07c9be08d21e9c66.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enumerates CloudCreate.ai (https://cloudcreate.ai) in-browser tool capabilities and builds shareable links with locale (en/zh) for production or self-hosted..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangzhibin",
+      "userId": "s179e9tb8wb7pjxycqs9zvmv8s85rwfs",
+      "displayName": "Zhang Zhibin",
+      "image": "https://avatars.githubusercontent.com/u/4209695?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 104,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1777442102636,
+      "changelog": "1.0.4 - rename to cloudcreate-tools, add capability matrix, and add ClawHub listing guide.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7739be4f33f0aca78d00275572d047a953d87b61343a5b5f31c72ae20f735c6e"
+}

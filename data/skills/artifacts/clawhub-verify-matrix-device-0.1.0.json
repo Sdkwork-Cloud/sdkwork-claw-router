@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/verify-matrix-device@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.verify_matrix_device",
+  "skill": {
+    "id": 22134,
+    "skillKey": "clawhub-verify-matrix-device",
+    "name": "Verify Matrix device"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "verify-matrix-device",
+    "url": "https://clawhub.ai/skills/verify-matrix-device",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/verify-matrix-device-37c6feeb948befe9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Verify and cross-sign the active Matrix device for one OpenClaw-managed account. Use when a user needs to repair trust for an OpenClaw Matrix device, confirm..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mlumeau",
+      "userId": "s179jz8asgkdwtgs1n2va396eh83hfzp",
+      "displayName": "Maxime Lumeau",
+      "image": "https://avatars.githubusercontent.com/u/1519317?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 484,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772464049802,
+      "changelog": "Initial release of verify-matrix-device:\n\n- Verifies and cross-signs the active Matrix device for a specified OpenClaw-managed account.\n- Prompts user for missing inputs, manages dependencies, and uses secure recovery key entry.\n- Utilizes existing `openclaw.json` access token; does not generate or use temporary devices for OpenClaw.\n- Reports on device verification status, confirming if already cross-signed or newly signed.\n- Supports advanced options for local testing, including direct access token and password-based flows.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:278805de10cc5054bdfd57855c9cbe04a9d31a3d5e62cc1ce68bfdae545fcfca"
+}

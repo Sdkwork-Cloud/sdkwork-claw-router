@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18509,
+  "uuid": "skill-clawhub-whisnap",
+  "skillKey": "clawhub-whisnap",
+  "name": "Whisnap",
+  "summary": "macOS CLI for transcribing audio and video files using local Whisper models or Whisnap Cloud.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whisnap",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Neolio42",
+      "features": [
+        "macOS CLI for transcribing audio and video files using local Whisper models or Whisnap Cloud."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/whisnap@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82404810?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "whisnap",
+      "url": "https://clawhub.ai/skills/whisnap"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whisnap",
+    "url": "https://clawhub.ai/skills/whisnap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whisnap-c01a636c92ffbe62.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/whisnap@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-whisnap-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:86b8cc3b364000c9edce610bd7b9f589892d8f2462c000a60673a711b6b95e79",
+      "artifactSizeBytes": 1754
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T16:26:20.460Z"
+}

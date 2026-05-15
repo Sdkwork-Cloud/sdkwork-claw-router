@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/onboarding-activator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.onboarding_activator",
+  "skill": {
+    "id": 51107,
+    "skillKey": "clawhub-onboarding-activator",
+    "name": "Onboarding Activator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "onboarding-activator",
+    "url": "https://clawhub.ai/skills/onboarding-activator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/onboarding-activator-7a91c929beab7724.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guides an AI assistant to redesign SaaS onboarding flows using the Activation Path Method — helping users define their aha moment, map time-to-value, elimina..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flynndavid",
+      "userId": "publishers:flynndavid",
+      "displayName": "flynndavid",
+      "image": "https://avatars.githubusercontent.com/u/11565009?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 347,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772522550645,
+      "changelog": "- Initial release of onboarding-activator skill.\n- Guides AI assistants to redesign SaaS onboarding using the Activation Path Method.\n- Helps teams identify their aha moment, map time-to-value, and eliminate onboarding friction.\n- Produces a step-by-step intake process, friction audit, and actionable redesign plan.\n- Suitable for any SaaS team aiming to improve user activation and reduce time-to-value.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:512662199a78cbfd3a41c3eb1004def56e44ac46a411ed6f44142340a30b3133"
+}

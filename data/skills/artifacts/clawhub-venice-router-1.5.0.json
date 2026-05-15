@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/venice-router@1.5.0",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.venice_router",
+  "skill": {
+    "id": 22477,
+    "skillKey": "clawhub-venice-router",
+    "name": "Venice.Ai Router Openclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "venice-router",
+    "url": "https://clawhub.ai/skills/venice-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/venice-router-59e9f81ef5a1c6a9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Supreme model router for Venice.ai — the privacy-first, uncensored AI platform. Automatically classifies query complexity and routes to the cheapest adequate..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "plusone",
+      "userId": "publishers:plusone",
+      "displayName": "Badmuff",
+      "image": "https://avatars.githubusercontent.com/u/621860?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 799,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.5.0",
+      "createdAt": 1771650856804,
+      "changelog": "v1.5.0: thinking/reasoning mode (--thinking flag, Qwen3 235B Thinking + Kimi K2 Thinking/K2.5), 5 new models (GPT-5.2 Codex, Gemini 3.1 Pro 1M ctx, Hermes 3 405B), fix budget-medium classifier gap, SKILL.md spec polish (YAML metadata, cliHelp, os field)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3ec08a6b55108604c8f42a59f20d3b5c7354869d35c3e7ba8cddff2090263653"
+}

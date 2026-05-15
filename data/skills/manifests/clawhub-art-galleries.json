@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73486,
+  "uuid": "skill-clawhub-art-galleries",
+  "skillKey": "clawhub-art-galleries",
+  "name": "网红美术馆",
+  "summary": "提供关于网红美术馆的推荐清单、打卡路线与指南。用户搜索网红美术馆或规划相关出行时调用。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.art_galleries",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codenova58",
+      "features": [
+        "提供关于网红美术馆的推荐清单、打卡路线与指南。用户搜索网红美术馆或规划相关出行时调用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/art-galleries@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191358186?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "art-galleries",
+      "url": "https://clawhub.ai/skills/art-galleries"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "art-galleries",
+    "url": "https://clawhub.ai/skills/art-galleries",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/art-galleries-45fda64a3e05cdad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/art-galleries@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-art-galleries-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dd5dc853122dbb5016551121fcad03f910961a7dfc455f62ba654406f089a80d",
+      "artifactSizeBytes": 2230
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T06:39:05.489Z"
+}

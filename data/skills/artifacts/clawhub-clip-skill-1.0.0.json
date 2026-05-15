@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clip-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clip_skill",
+  "skill": {
+    "id": 47543,
+    "skillKey": "clawhub-clip-skill",
+    "name": "Clip Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clip-skill",
+    "url": "https://clawhub.ai/skills/clip-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clip-skill-34a934d511f4703d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute raw video recording into 1080p edited video clips just by typing what you need. Whether it's trimming and refining short video clips for soci..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 112,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777401325207,
+      "changelog": "clip-skill 1.0.0\n\n- Initial release: edit and export video clips with natural language commands.\n- Supports direct video upload, AI-powered editing, and 1080p export to multiple formats.\n- Automatic environment token setup and session management for seamless first-time use.\n- Live status, credits, and export workflows managed via cloud backend.\n- Responsive error handling and workflow tips for smooth user experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:52ac22f6a30680944f22ca3511537758aa773c7de84a474a6d998edcffe0fd34"
+}

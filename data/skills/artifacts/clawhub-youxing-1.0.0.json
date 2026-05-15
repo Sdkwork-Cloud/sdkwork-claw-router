@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youxing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youxing",
+  "skill": {
+    "id": 71923,
+    "skillKey": "clawhub-youxing",
+    "name": "友行"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youxing",
+    "url": "https://clawhub.ai/skills/youxing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youxing-216259e7549416da.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询友行青年社群的活动信息。当用户询问友行的活动、近期活动、活动安排、某个活动详情时使用。支持列出所有活动和根据活动ID获取详情。默认输出JSON，用户要求时可输出Markdown格式。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "longbai",
+      "userId": "s178cn95jtcgfvfwj8kb5vyt4n84pa07",
+      "displayName": "Bai Loong",
+      "image": "https://avatars.githubusercontent.com/u/1204301?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775979321519,
+      "changelog": "Initial publication",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:95cbcec438c349b81eea2056f3f39f0e3ff7d0486352ac20cefc18283e15865a"
+}

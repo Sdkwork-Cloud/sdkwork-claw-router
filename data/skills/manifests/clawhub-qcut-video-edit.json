@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21099,
+  "uuid": "skill-clawhub-qcut-video-edit",
+  "skillKey": "clawhub-qcut-video-edit",
+  "name": "Qcut Video Edit",
+  "summary": "Run QCut's native TypeScript pipeline CLI for AI content generation, video analysis, transcription, YAML pipelines, ViMax agentic video production, and proje...",
+  "version": "2026.3.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qcut_video_edit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "donghaozhang",
+      "features": [
+        "Run QCut's native TypeScript pipeline CLI for AI content generation, video analysis, transcript."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qcut-video-edit@2026.3.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12164239?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qcut-video-edit",
+      "url": "https://clawhub.ai/skills/qcut-video-edit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qcut-video-edit",
+    "url": "https://clawhub.ai/skills/qcut-video-edit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qcut-video-edit-1b26ffafa3377688.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qcut-video-edit@2026.3.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-qcut-video-edit-2026.3.5.json",
+      "version": "2026.3.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d049f7652d6ff153f93f62608cd926394ef8e83546cccf67529278dcac5b1a56",
+      "artifactSizeBytes": 2181
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T05:51:57.143Z"
+}

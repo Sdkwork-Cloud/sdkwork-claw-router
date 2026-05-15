@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44477,
+  "uuid": "skill-clawhub-abe-exchange-rates",
+  "skillKey": "clawhub-abe-exchange-rates",
+  "name": "abe-exchange-rates",
+  "summary": "Fetch live exchange rates between any currency pairs from XE.com. Use when: user asks about currency conversion, exchange rates, forex rates, or converting a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abe_exchange_rates",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AbelTennyson",
+      "features": [
+        "Fetch live exchange rates between any currency pairs from XE.com",
+        "Use when: user asks about currency conversion, exchange rates, forex rates, or converting a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/abe-exchange-rates@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261241122?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "abe-exchange-rates",
+      "url": "https://clawhub.ai/skills/abe-exchange-rates"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abe-exchange-rates",
+    "url": "https://clawhub.ai/skills/abe-exchange-rates",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abe-exchange-rates-49090bf7c7df728a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/abe-exchange-rates@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-abe-exchange-rates-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:429dd2f99417e3e1fa9a768f3cf9645eb932b524f62674ad675f61d89e632d32",
+      "artifactSizeBytes": 2375
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T04:08:32.687Z"
+}

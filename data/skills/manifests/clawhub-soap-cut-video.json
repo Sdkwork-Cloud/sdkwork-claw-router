@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68492,
+  "uuid": "skill-clawhub-soap-cut-video",
+  "skillKey": "clawhub-soap-cut-video",
+  "name": "soap-cut-video",
+  "summary": "生成肥皂/蜡块切割 ASMR 解压短视频。支持文字描述直接出片，或将实物图片转为切割动效。聚焦整齐切片、截面颜色暴露、粉末掉落的瞬间爽感，配合切割 ASMR 声效。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.soap_cut_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "parallel world",
+      "features": [
+        "生成肥皂/蜡块切割 ASMR 解压短视频。支持文字描述直接出片，或将实物图片转为切割动效。聚焦整齐切片、截面颜色暴露、粉末掉落的瞬间爽感，配合切割 ASMR 声效。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/soap-cut-video@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16458879?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "soap-cut-video",
+      "url": "https://clawhub.ai/skills/soap-cut-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "soap-cut-video",
+    "url": "https://clawhub.ai/skills/soap-cut-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/soap-cut-video-f8311cb9214a7166.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/soap-cut-video@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-soap-cut-video-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d5f798cf9b476ecb5d1dd61d69af43282ad7997993cbcf65e1fc837c99e815c4",
+      "artifactSizeBytes": 1949
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T05:08:35.968Z"
+}

@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "autonomous-cascade",
+    "displayName": "Autonomous Cascade",
+    "summary": "Führt mehrstufige Tasks autonom durch Planen, Ausführen und Bewerten in Schleifen, bis Ziel erreicht oder Budget erschöpft ist.",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1775458528540,
+    "updatedAt": 1777527225375
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1775458528540,
+    "changelog": "Initial release of autonomous-cascade: a structured Plan→Act→Evaluate loop for multi-step, unattended tasks.\n\n- Enables autonomous multi-step task handling, inspired by MCP-God-Mode, tailored for OpenClaw.\n- Defines a clear loop structure: PLAN, repeated ROUNDS with THINK, ACT, EVALUATE, and CONTINUE/HALT.\n- Explicit stop conditions (`HALT:SOFT`, `HALT:HARD`, `HALT:BLOCKED`) for safe operation.\n- Includes example workflow for diagnosing a gateway issue.\n- Context-aware safeguards: round, budget, and risk controls, plus \"Octopaminergic Override\" for high-stress situations.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "hupmann86-cell",
+    "userId": "s174beq5jvk51cswb4xhsy9fy983y3j5",
+    "displayName": "hupmann86-cell",
+    "image": "https://avatars.githubusercontent.com/u/242008639?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527225375
+  }
+}

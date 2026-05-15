@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18527,
+  "uuid": "skill-clawhub-zfs",
+  "skillKey": "clawhub-zfs",
+  "name": "ZFS",
+  "summary": "ZFS filesystem administration, pool management, dataset configuration, snapshots, replication, encryption, performance tuning, and troubleshooting on OpenZFS...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zfs",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mightybyte",
+      "features": [
+        "ZFS filesystem administration, pool management, dataset configuration, snapshots, replication,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zfs@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9451?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zfs",
+      "url": "https://clawhub.ai/skills/zfs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zfs",
+    "url": "https://clawhub.ai/skills/zfs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zfs-357bb33d8c8e3c41.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zfs@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zfs-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e7da14101e1aa20ea4a4269c65cea86e4fb8099d1d079b8eee70287e1ac246ff",
+      "artifactSizeBytes": 2385
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T16:39:32.724Z"
+}

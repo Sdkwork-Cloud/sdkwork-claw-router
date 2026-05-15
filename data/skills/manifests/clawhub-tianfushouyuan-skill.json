@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72131,
+  "uuid": "skill-clawhub-tianfushouyuan-skill",
+  "skillKey": "clawhub-tianfushouyuan-skill",
+  "name": "tianfushouyuan-skill",
+  "summary": "天福寿园门店信息查询。当用户询问天福寿园相关问题时触发，包括门店地址、营业时间、联系方式、服务项目、价格范围、预约方式、寿衣礼服定制、丧葬用品采购、品牌理念、全国门店分布。触发词：天福寿园、福寿园、寿衣、礼服、殡葬、门店、地址、营业时间、预约、服务",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tianfushouyuan_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mhszkcmjs",
+      "features": [
+        "天福寿园门店信息查询。当用户询问天福寿园相关问题时触发，包括门店地址、营业时间、联系方式、服务项目、价格范围、预约方式、寿衣礼服定制、丧葬用品采购、品牌理念、全国门店分布。触发词：天福寿园、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tianfushouyuan-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/127261582?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tianfushouyuan-skill",
+      "url": "https://clawhub.ai/skills/tianfushouyuan-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tianfushouyuan-skill",
+    "url": "https://clawhub.ai/skills/tianfushouyuan-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tianfushouyuan-skill-117527f3c6db9a0e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tianfushouyuan-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tianfushouyuan-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0bebee9c4976ab77fb11be7f23ecb537a22c4edec18d8d94d0774ddf661ca5be",
+      "artifactSizeBytes": 2498
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T06:19:37.074Z"
+}

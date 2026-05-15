@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/douyin-auto-hnc@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_auto_hnc",
+  "skill": {
+    "id": 63724,
+    "skillKey": "clawhub-douyin-auto-hnc",
+    "name": "Douyin Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-auto-hnc",
+    "url": "https://clawhub.ai/skills/douyin-auto-hnc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-auto-hnc-db5d1f21091f395b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "抖音内容自动化运营技能。跨平台（Windows/macOS/Linux），一键安装，自动 clone 后端代码并配置，流水线执行：抓取AI量化视频→AI改写→发布长图文→自动回复评论。支持 Cron 定时任务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hnc87",
+      "userId": "s1765pyw20d55cef4g20wy6gv984c6cp",
+      "displayName": "HNC87",
+      "image": "https://avatars.githubusercontent.com/u/195069137?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777126601354,
+      "changelog": "v1.1: setup.py全自动引导(auto-clone后端+启动服务)+start-backend.py一键启动+SKILL.md简化",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:74ae94d79c03d890aaad805cbf3806f754230c0b6559df208df9db24ce8850ca"
+}

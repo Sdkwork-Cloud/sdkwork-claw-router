@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62459,
+  "uuid": "skill-clawhub-humanizer-academic-zh",
+  "skillKey": "clawhub-humanizer-academic-zh",
+  "name": "Humanizer Academic ZH",
+  "summary": "Humanizer 中文学术版——当用户要求润色论文、去除AI味、降低AIGC检测率，或说\"帮我改改这段\"\"这段读起来像AI写的\"时触发。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.humanizer_academic_zh",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "苍天荒",
+      "features": [
+        "Humanizer 中文学术版——当用户要求润色论文、去除AI味、降低AIGC检测率，或说\"帮我改改这段\"\"这段读起来像AI写的\"时触发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/humanizer-academic-zh@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78577017?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "humanizer-academic-zh",
+      "url": "https://clawhub.ai/skills/humanizer-academic-zh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "humanizer-academic-zh",
+    "url": "https://clawhub.ai/skills/humanizer-academic-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/humanizer-academic-zh-9f43146945e807d2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/humanizer-academic-zh@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-humanizer-academic-zh-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b7163a4eb72036f34003e139c0aab1ac2d75f07d485c709d30694e593fb0f674",
+      "artifactSizeBytes": 2450
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T04:04:10.835Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawtime-setup@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawtime_setup",
+  "skill": {
+    "id": 45438,
+    "skillKey": "clawhub-clawtime-setup",
+    "name": "ClawTime Setup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawtime-setup",
+    "url": "https://clawhub.ai/skills/clawtime-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawtime-setup-9a92e7a6e77f01d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install, configure, start, and troubleshoot ClawTime — a private self-hosted webchat UI for OpenClaw with passkey (Face ID) auth, Piper TTS voice, and 3D ava..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bewareofddog",
+      "userId": "publishers:bewareofddog",
+      "displayName": "bewareofddog",
+      "image": "https://avatars.githubusercontent.com/u/261640819?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 704,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1771782904127,
+      "changelog": "Fixed metadata: declares all required/optional binaries (node, git, cloudflared, python3, ffmpeg, piper), env vars, files, and permissions (network, keychain, filesystem). Resolves OpenClaw suspicious flag caused by under-documented installer scope.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3d4d3f325486a4cfb8803228331177106f54c6cf27c72f1dfbfca9eae58621d3"
+}

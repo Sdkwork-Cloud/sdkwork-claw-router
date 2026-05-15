@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/copey-flight-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.copey_flight_tracker",
+  "skill": {
+    "id": 11383,
+    "skillKey": "clawhub-copey-flight-tracker",
+    "name": "Flight Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "copey-flight-tracker",
+    "url": "https://clawhub.ai/skills/copey-flight-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/copey-flight-tracker-a9125ac6d53df893.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track flights in real-time with detailed status, gate info, delays, and live position. Use when user asks to track a flight, check flight status, look up flight information by flight number (e.g., \"track AA100\", \"what's the status of Unite."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "copey02",
+      "userId": "publishers:copey02",
+      "displayName": "copey02",
+      "image": "https://avatars.githubusercontent.com/u/28310613?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2153,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769364129068,
+      "changelog": "Real-time flight tracking with AviationStack API. Displays Flighty-style formatted output with departure/arrival times, gates, delays, and live position.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a4be366b698db608896a477b91ea7853d2d296f3116f5270a78848c32c0032e0"
+}

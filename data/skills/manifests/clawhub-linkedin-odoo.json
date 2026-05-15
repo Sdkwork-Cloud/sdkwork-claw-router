@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48448,
+  "uuid": "skill-clawhub-linkedin-odoo",
+  "skillKey": "clawhub-linkedin-odoo",
+  "name": "Linkedin Odoo",
+  "summary": "Finds a LinkedIn profile URL for an Odoo contact using their name and company, then saves it to the x_linkedin_url field in Odoo. Trigger when a user asks to...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkedin_odoo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bernhard Müller",
+      "features": [
+        "Finds a LinkedIn profile URL for an Odoo contact using their name and company, then saves it to.",
+        "Trigger when a user asks to..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linkedin-odoo@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37840953?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linkedin-odoo",
+      "url": "https://clawhub.ai/skills/linkedin-odoo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkedin-odoo",
+    "url": "https://clawhub.ai/skills/linkedin-odoo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkedin-odoo-1ed1e8ee0bd03c3d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linkedin-odoo@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-linkedin-odoo-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e6655722df230591d2dfefa7d287ec70a70729da1038ffea3fcbee0a0635332b",
+      "artifactSizeBytes": 2301
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T17:51:49.747Z"
+}

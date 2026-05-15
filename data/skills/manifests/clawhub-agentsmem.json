@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27371,
+  "uuid": "skill-clawhub-agentsmem",
+  "skillKey": "clawhub-agentsmem",
+  "name": "AgentsMem",
+  "summary": "AI agent memory backup. Register at agentsmem.com, get an API key, then encrypt and upload memory via the API; owner manages backups on the web.",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentsmem",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ocmuuu",
+      "features": [
+        "AI agent memory backup",
+        "Register at agentsmem.com, get an API key, then encrypt and upload memory via the API",
+        "owner manages backups on the web."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentsmem@1.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/209431340?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentsmem",
+      "url": "https://clawhub.ai/skills/agentsmem"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentsmem",
+    "url": "https://clawhub.ai/skills/agentsmem",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentsmem-e22ec7f893d11c76.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentsmem@1.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentsmem-1.4.0.json",
+      "version": "1.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4ed5079ded0162f4439f4052d0b9fb61b325dbfa50902618ba4af2b6646aafc0",
+      "artifactSizeBytes": 2488
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T23:22:23.110Z"
+}

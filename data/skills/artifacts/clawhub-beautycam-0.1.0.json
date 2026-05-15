@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/beautycam@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beautycam",
+  "skill": {
+    "id": 66403,
+    "skillKey": "clawhub-beautycam",
+    "name": "BeautyCam"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beautycam",
+    "url": "https://clawhub.ai/skills/beautycam",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beautycam-52a4506f02fbf05b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "适用于用户希望围绕 BeautyCam 进行自拍优化、人像修饰、滤镜选择、内容出图与移动创作时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mikeclaw007",
+      "userId": "s173n2mnssqbs3ebpdz3b52ssh83gshx",
+      "displayName": "mikeclaw007",
+      "image": "https://avatars.githubusercontent.com/u/265502950?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 239,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773899205482,
+      "changelog": "- 初始版本发布，提供 BeautyCam 自拍优化、人像修饰与滤镜选择建议。\n- 支持根据图片类型、场景和目标，输出适合 BeautyCam 的修图和创作方案。\n- 明确流程和步骤，帮助用户高效完成自拍优化与内容出图。\n- 针对政策、价格、版权等敏感信息，提醒用户以 BeautyCam 官方为准。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fb35e2edfc0b8712a4b539524ba8f66c8840e61b70fe87157daac195e3fecc16"
+}

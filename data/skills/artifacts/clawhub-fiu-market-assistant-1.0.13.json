@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fiu-market-assistant@1.0.13",
+  "version": "1.0.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fiu_market_assistant",
+  "skill": {
+    "id": 25785,
+    "skillKey": "clawhub-fiu-market-assistant",
+    "name": "SZFIU Market Data Bot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fiu-market-assistant",
+    "url": "https://clawhub.ai/skills/fiu-market-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fiu-market-assistant-9f1086c6e3ff1153.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "FIU MCP Market Data and Trading Assistant. Use when user wants to query stock quotes, K-line, trade stocks, check positions, or analyze market data for HK/US..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ulnit",
+      "userId": "s1700a28z4btsvk2pc84kn7keh83mrt5",
+      "displayName": "ULNIT",
+      "image": "https://avatars.githubusercontent.com/u/27670784?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 281,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "1.0.13",
+      "createdAt": 1776069742734,
+      "changelog": "Version 1.0.13\n\n- Major update: Added quick setup, argument-based dispatching, and extensive documentation in English.\n- Introduced new CLI scripts and install methods for easier deployment (install.sh, scripts/cli.sh, scripts/mcp_router.sh).\n- Added detailed user guidance for market data/trading commands across HK, US, and CN markets.\n- Included Chinese and English interface documentation and usage references.\n- Skill metadata and security instructions updated for token and config management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:282bf0416f015cbaf7daee09a6aaa6000f9045c88b80e6aa1084b11115b8be74"
+}

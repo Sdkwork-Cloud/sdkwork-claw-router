@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23240,
+  "uuid": "skill-clawhub-pi-speaker",
+  "skillKey": "clawhub-pi-speaker",
+  "name": "Pi Speaker",
+  "summary": "Play TTS or audio on the Raspberry Pi (or gateway host) default speaker. Use when the user asks for an announcement, alarm, news summary, or \"say X on the Pi...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pi_speaker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Panda",
+      "features": [
+        "Play TTS or audio on the Raspberry Pi (or gateway host) default speaker",
+        "Use when the user asks for an announcement, alarm, news summary, or \"say X on the Pi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pi-speaker@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58074809?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pi-speaker",
+      "url": "https://clawhub.ai/skills/pi-speaker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pi-speaker",
+    "url": "https://clawhub.ai/skills/pi-speaker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pi-speaker-0478327f3a30f346.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pi-speaker@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pi-speaker-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:586946fd2948600f7edb2c5ad63ab924d16290d00e76fc58aa74101a956d9e64",
+      "artifactSizeBytes": 1861
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T12:27:18.597Z"
+}

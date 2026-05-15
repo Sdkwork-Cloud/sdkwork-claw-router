@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/afterpay@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afterpay",
+  "skill": {
+    "id": 68539,
+    "skillKey": "clawhub-afterpay",
+    "name": "Afterpay"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afterpay",
+    "url": "https://clawhub.ai/skills/afterpay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afterpay-a98eb20cf4977b07.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供澳大利亚创立的先买后付服务，消费者分4期无息付款，商家支付交易费用，隶属于Block，支持全球1600万用户。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 105,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777971736140,
+      "changelog": "Afterpay skill version 1.0.0 – initial release:\n\n- 提供Afterpay（先买后付）的详细历史、商业模式和关键数据介绍\n- 描述Square（Block）收购Afterpay的重要节点和战略意义\n- 涵盖BNPL模式、护城河分析及全球市场数据\n- 补充有趣事实，便于理解其金融科技创新",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6ea7e75c5e1d83ac46f4abe5a2b287a4acacdce78a07c0095af78c26b2679204"
+}

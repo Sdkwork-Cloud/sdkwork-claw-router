@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29905,
+  "uuid": "skill-clawhub-hormuz-strait-monitor",
+  "skillKey": "clawhub-hormuz-strait-monitor",
+  "name": "Hormuz Strait Monitor",
+  "summary": "Track shipping transit data through the Strait of Hormuz. Monitors transits, daily throughput, and non-Iranian vessel counts from hormuzstraitmonitor.com and...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hormuz_strait_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "赖根",
+      "features": [
+        "Track shipping transit data through the Strait of Hormuz",
+        "Monitors transits, daily throughput, and non-Iranian vessel counts from hormuzstraitmonitor.com."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hormuz-strait-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42961557?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hormuz-strait-monitor",
+      "url": "https://clawhub.ai/skills/hormuz-strait-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hormuz-strait-monitor",
+    "url": "https://clawhub.ai/skills/hormuz-strait-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hormuz-strait-monitor-79291df10ff6b51d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hormuz-strait-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hormuz-strait-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:af95fa9fc1c825b97ff3bf80c38e94bca62818c7f51bab25dcedf72301344276",
+      "artifactSizeBytes": 2018
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T12:58:38.144Z"
+}

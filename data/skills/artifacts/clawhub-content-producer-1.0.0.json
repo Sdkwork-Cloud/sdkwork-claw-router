@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/content-producer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_producer",
+  "skill": {
+    "id": 72116,
+    "skillKey": "clawhub-content-producer",
+    "name": "多平台内容分发器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-producer",
+    "url": "https://clawhub.ai/skills/content-producer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-producer-4a948d6c40264804.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "多平台内容分发器 v1.0。一次输入，自动适配小红书/知乎/公众号/抖音四种平台格式，直接输出可发布内容。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hyjaixiao",
+      "userId": "s178vfnjzek9axaw33xdacxmjd85g8xw",
+      "displayName": "Hyjaixiao",
+      "image": "https://avatars.githubusercontent.com/u/102917158?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777102449514,
+      "changelog": "初版发布：一次输入自动适配小红书/知乎/公众号/抖音四种平台",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bb69d2357a2e8b83cc4b71c6a45bce603404cec917777b957f1f00ef247584f8"
+}

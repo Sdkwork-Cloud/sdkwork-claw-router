@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35290,
+  "uuid": "skill-clawhub-pm2-remote-manager",
+  "skillKey": "clawhub-pm2-remote-manager",
+  "name": "PM2 Remote Manager",
+  "summary": "SSH-based PM2 service management for remote servers. List processes, restart/stop services, view logs, monitor CPU/memory usage, and perform common PM2 opera...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pm2_remote_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Qoohsuan",
+      "features": [
+        "SSH-based PM2 service management for remote servers",
+        "List processes, restart/stop services, view logs, monitor CPU/memory usage, and perform common."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pm2-remote-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81729903?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pm2-remote-manager",
+      "url": "https://clawhub.ai/skills/pm2-remote-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pm2-remote-manager",
+    "url": "https://clawhub.ai/skills/pm2-remote-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pm2-remote-manager-35ff3108cd883a17.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pm2-remote-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pm2-remote-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dcec8c1fbdb03b86210dec12ed19cb09df67a639a3bb7a3b5ccfa6218f685364",
+      "artifactSizeBytes": 1944
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T03:25:12.145Z"
+}

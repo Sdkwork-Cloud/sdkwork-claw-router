@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dutch-translator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dutch_translator",
+  "skill": {
+    "id": 19318,
+    "skillKey": "clawhub-dutch-translator",
+    "name": "Dutch Translator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dutch-translator",
+    "url": "https://clawhub.ai/skills/dutch-translator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dutch-translator-6b2d7e7eef511c2a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Translates Dutch news text into English with interlinear formatting for language learning and detailed analysis."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rogerscristo",
+      "userId": "publishers:rogerscristo",
+      "displayName": "Rogers de Cristo",
+      "image": "https://avatars.githubusercontent.com/u/7704590?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 522,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771946194786,
+      "changelog": "Dutch News Interlinear Translator initial release.\n\n- Translates Dutch news text into English in an interlinear, line-by-line format.\n- Designed for language learners and text analysis.\n- Simply input Dutch text; outputs display both original and translated sentences for easy comparison.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:16f7b1ec5d6ce1a8c6f8e76d04890b20bd3709dd33530ca669b7070705835326"
+}

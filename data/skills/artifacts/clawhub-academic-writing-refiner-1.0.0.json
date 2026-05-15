@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/academic-writing-refiner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.academic_writing_refiner",
+  "skill": {
+    "id": 9105,
+    "skillKey": "clawhub-academic-writing-refiner",
+    "name": "academic-writing-refiner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "academic-writing-refiner",
+    "url": "https://clawhub.ai/skills/academic-writing-refiner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/academic-writing-refiner-e46b461985afb253.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Refine academic writing for computer science research papers targeting top-tier venues (NeurIPS, ICLR, ICML, AAAI, IJCAI, ACL, EMNLP, NAACL, CVPR, WWW, KDD, SIGIR, CIKM, and similar). Use this skill whenever a user asks to improve, polish,."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zihan-zhu",
+      "userId": "publishers:zihan-zhu",
+      "displayName": "Zihan-Zhu",
+      "image": "https://avatars.githubusercontent.com/u/110231815?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3909,
+      "installsAllTime": 29,
+      "installsCurrent": 29,
+      "stars": 10,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770716988479,
+      "changelog": "- Initial release of \"academic-writing-refiner\" skill for polishing computer science research papers targeting top-tier venues.\n- Refines abstracts, introductions, related work, methodology, experiments, conclusions, and supports both section and full-paper editing.\n- Handles LaTeX content with careful preservation of formatting, citations, and mathematical environments.\n- Applies section-specific conventions and systematic sentence-level improvements for clarity, precision, and conciseness.\n- Provides clear output: refined text, marginal change notes, and flags unfixable issues.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6c1bfe9b86a47868f4623499ab138597278aa7aae8c4689b3a3370b80611f260"
+}

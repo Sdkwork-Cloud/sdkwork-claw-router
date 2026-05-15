@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53639,
+  "uuid": "skill-clawhub-upstage-schema-generation",
+  "skillKey": "clawhub-upstage-schema-generation",
+  "name": "Upstage Schema Generation",
+  "summary": "Generate a JSON schema for structured document information extraction. Use this skill whenever the user asks to generate or create a schema for a document —...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.upstage_schema_generation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Upstage Deployment",
+      "features": [
+        "Generate a JSON schema for structured document information extraction",
+        "Use this skill whenever the user asks to generate or create a schema for a document —..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/upstage-schema-generation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/124652596?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "upstage-schema-generation",
+      "url": "https://clawhub.ai/skills/upstage-schema-generation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "upstage-schema-generation",
+    "url": "https://clawhub.ai/skills/upstage-schema-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/upstage-schema-generation-7ec39fc5090de150.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/upstage-schema-generation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-upstage-schema-generation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:01ecd549c8b2f395e621fb630cdae1fd8c9c2eb31fdb0678adf1b3c4e7a748ad",
+      "artifactSizeBytes": 2626
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T16:38:15.754Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72670,
+  "uuid": "skill-clawhub-weibo-hot-daily-skill",
+  "skillKey": "clawhub-weibo-hot-daily-skill",
+  "name": "获取微博热搜榜单，智能分类热点话题，生成分段式结构化日报。",
+  "summary": "微博热点日报生成技能。获取微博热搜榜单，智能分类热点，生成分段式日报。触发词：微博热点日报、微博热搜、微博热榜、weibo hot。",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weibo_hot_daily_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RenYuZhuo",
+      "features": [
+        "微博热点日报生成技能。获取微博热搜榜单，智能分类热点，生成分段式日报。触发词：微博热点日报、微博热搜、微博热榜、weibo hot。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weibo-hot-daily-skill@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7275046?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weibo-hot-daily-skill",
+      "url": "https://clawhub.ai/skills/weibo-hot-daily-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weibo-hot-daily-skill",
+    "url": "https://clawhub.ai/skills/weibo-hot-daily-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weibo-hot-daily-skill-04513a3c54b53974.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weibo-hot-daily-skill@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-weibo-hot-daily-skill-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e444824ebd71cee59f9541ff6561057c82a50fc691601282b07ef906c90cb2ea",
+      "artifactSizeBytes": 2054
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T09:02:13.889Z"
+}

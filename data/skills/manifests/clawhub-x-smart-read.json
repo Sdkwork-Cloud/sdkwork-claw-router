@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47672,
+  "uuid": "skill-clawhub-x-smart-read",
+  "skillKey": "clawhub-x-smart-read",
+  "name": "X Smart Read",
+  "summary": "Personal X (Twitter) analytics — timeline engagement, mentions, follower tracking, read any tweet/thread, bookmarks, and combined briefings via X API v2. Cos...",
+  "version": "2.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_smart_read",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aaron McLachlan",
+      "features": [
+        "Personal X (Twitter) analytics — timeline engagement, mentions, follower tracking, read any twe."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-smart-read@2.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/169105369?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-smart-read",
+      "url": "https://clawhub.ai/skills/x-smart-read"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-smart-read",
+    "url": "https://clawhub.ai/skills/x-smart-read",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-smart-read-c2ff267677aa0fd0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-smart-read@2.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-smart-read-2.0.4.json",
+      "version": "2.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:de01db172f47f534e9c076f0aac4df6d3b2eb66d7776bf24682999608cb043a0",
+      "artifactSizeBytes": 2285
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T12:53:38.607Z"
+}

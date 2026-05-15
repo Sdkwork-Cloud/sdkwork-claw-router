@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/naruto-multi-agent-cn@1.5.0",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.naruto_multi_agent_cn",
+  "skill": {
+    "id": 12828,
+    "skillKey": "clawhub-naruto-multi-agent-cn",
+    "name": "Naruto Multi-Agent CN"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "naruto-multi-agent-cn",
+    "url": "https://clawhub.ai/skills/naruto-multi-agent-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/naruto-multi-agent-cn-7ec4057b9c335221.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-agent dispatcher: main agent becomes a pure coordinator that delegates ALL real work to 5 persistent sub-agents via sessions_spawn with fixed sessionKeys. Round-robin scheduling, speak-before-spawn protocol, session reuse. Themed as."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "be1human",
+      "userId": "s1798dprk0qksrtzsejrwbq541841fgp",
+      "displayName": "CLOUD BOY",
+      "image": "https://avatars.githubusercontent.com/u/40425943?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1537,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.5.0",
+      "createdAt": 1770918519312,
+      "changelog": "Fix: 强化 sessionKey 必传说明，加正确/错误示例对比，解决 session 不复用一直新增的问题",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:53c2763e2c85b4442577fc1b3d882257e2f039ef2802bb92a7b9551eae18602e"
+}

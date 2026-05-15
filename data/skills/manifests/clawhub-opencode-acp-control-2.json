@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12458,
+  "uuid": "skill-clawhub-opencode-acp-control-2",
+  "skillKey": "clawhub-opencode-acp-control-2",
+  "name": "Opencode Acp Control",
+  "summary": "Control OpenCode directly via the Agent Client Protocol (ACP). Start sessions, send prompts, resume conversations, and manage OpenCode updates.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opencode_acp_control_2",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bastian Berrios Alarcon",
+      "features": [
+        "Control OpenCode directly via the Agent Client Protocol (ACP)",
+        "Start sessions, send prompts, resume conversations, and manage OpenCode updates."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/opencode-acp-control-2@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/253074697?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "opencode-acp-control-2",
+      "url": "https://clawhub.ai/skills/opencode-acp-control-2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opencode-acp-control-2",
+    "url": "https://clawhub.ai/skills/opencode-acp-control-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opencode-acp-control-2-7b5febe8e330000d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/opencode-acp-control-2@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-opencode-acp-control-2-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:46884cff59fadb50634f40fcfad88204e6ceada721dae090dce0a01ba7b427f2",
+      "artifactSizeBytes": 11287
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T19:53:34.706Z"
+}

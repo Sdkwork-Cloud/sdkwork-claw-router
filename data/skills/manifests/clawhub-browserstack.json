@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30330,
+  "uuid": "skill-clawhub-browserstack",
+  "skillKey": "clawhub-browserstack",
+  "name": "Browserstack",
+  "summary": "BrowserStack integration. Manage data, records, and automate workflows. Use when the user wants to interact with BrowserStack data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browserstack",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "BrowserStack integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with BrowserStack data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/browserstack@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "browserstack",
+      "url": "https://clawhub.ai/skills/browserstack"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browserstack",
+    "url": "https://clawhub.ai/skills/browserstack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browserstack-bf0986df1687b4ca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/browserstack@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-browserstack-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d36263c8185d15e44e7858e2e949593bef37e149171c7a9fd78f3459a7270d0",
+      "artifactSizeBytes": 1866
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:26:08.764Z"
+}

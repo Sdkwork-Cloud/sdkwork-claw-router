@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tianshu-image@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tianshu_image",
+  "skill": {
+    "id": 64496,
+    "skillKey": "clawhub-tianshu-image",
+    "name": "Tianshu Image"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tianshu-image",
+    "url": "https://clawhub.ai/skills/tianshu-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tianshu-image-63adf4dbd24d3366.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用阿里云通义万相 (DashScope) 生成图片。Use when: 用户需要根据文字描述生成图片；用户说「画一张」「生成图片」「文生图」。 NOT for: 图片编辑、风格迁移、其他非文生图场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangshengli0421",
+      "userId": "s173hn02a3sr3war78x7qzxnhn83nttz",
+      "displayName": "tianshu",
+      "image": "https://avatars.githubusercontent.com/u/100948785?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 407,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773892733432,
+      "changelog": "Node.js 实现，替代 qwen-image，无需 Python/uv",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:621453c72d19430d7785d901056079481b3f2fe4f1e8664bb3db4ef1994434ea"
+}

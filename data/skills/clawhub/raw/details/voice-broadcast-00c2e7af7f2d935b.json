@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "voice-broadcast",
+    "displayName": "Voice Broadcast",
+    "summary": "语音播报控制技能。将AI回复内容转换为语音朗读。触发方式：（1）用户说\"朗读\"时，自动将AI最后一条文字回复转为语音；（2）用户说\"开启语音播报\"时，之后所有回复自动朗读；（3）用户说\"静音\"时，暂停语音播报。用于：用户（尤其是iOS用户）希望通过语音方式接收信息，或双手不便时通过TTS播放回复内容。",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1774097863820,
+    "updatedAt": 1777622125240
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1774097863820,
+    "changelog": "voice-broadcast 1.0.0\n\n- 新增语音播报技能：支持将AI回复内容转换为飞书语音消息朗读。\n- 用户可通过“朗读”、“开启/关闭语音播报”、“静音/取消静音”等命令灵活控制朗读行为。\n- 支持自动和手动播报，静音和回复恢复功能。\n- 状态（auto、muted）按需存储在 JSON 文件，实现记忆切换。\n- 文本自动分段或截取精华，避免超长朗读。\n- 仅支持飞书频道，其他渠道不触发播报。",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "gabriel-zz",
+    "userId": "s17019g8mz1qpa6f4rdr9gzwh184jhbc",
+    "displayName": "Gabriel-ZZ",
+    "image": "https://avatars.githubusercontent.com/u/62314854?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777622125240
+  }
+}

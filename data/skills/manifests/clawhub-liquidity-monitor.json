@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50165,
+  "uuid": "skill-clawhub-liquidity-monitor",
+  "skillKey": "clawhub-liquidity-monitor",
+  "name": "Liquidity Monitor",
+  "summary": "DeFi liquidity analysis reference — AMM mechanics, Uniswap V2/V3 math, Curve StableSwap, impermanent loss calculation, and MEV protection strategies",
+  "version": "4.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.liquidity_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain1",
+      "features": [
+        "DeFi liquidity analysis reference — AMM mechanics, Uniswap V2/V3 math, Curve StableSwap, imperm."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/liquidity-monitor@4.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261107384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "liquidity-monitor",
+      "url": "https://clawhub.ai/skills/liquidity-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "liquidity-monitor",
+    "url": "https://clawhub.ai/skills/liquidity-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/liquidity-monitor-ee67b64f0aff957e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/liquidity-monitor@4.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-liquidity-monitor-4.0.0.json",
+      "version": "4.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:55bb6832b01ec544aa2cd3982714c10bb21f17256b2f97af46e6833eeaa26df0",
+      "artifactSizeBytes": 1902
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T00:46:41.160Z"
+}

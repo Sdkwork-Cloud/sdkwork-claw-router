@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17965,
+  "uuid": "skill-clawhub-workflow-migrate",
+  "skillKey": "clawhub-workflow-migrate",
+  "name": "workflow-migrate",
+  "summary": "Migrate N8N/Zapier/Make workflows to production-grade Python or Node.js scripts. Given a workflow description or paste, rewrites automation logic with retry,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workflow_migrate",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kevdogg102396-afk",
+      "features": [
+        "Migrate N8N/Zapier/Make workflows to production-grade Python or Node.js scripts",
+        "Given a workflow description or paste, rewrites automation logic with retry,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/workflow-migrate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257070288?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "workflow-migrate",
+      "url": "https://clawhub.ai/skills/workflow-migrate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workflow-migrate",
+    "url": "https://clawhub.ai/skills/workflow-migrate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workflow-migrate-a482acbc67d958db.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/workflow-migrate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-workflow-migrate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4756011b138756d278fd61a0547f332eed307ef0568f34fc39841e47267f6de7",
+      "artifactSizeBytes": 2324
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T19:50:45.484Z"
+}

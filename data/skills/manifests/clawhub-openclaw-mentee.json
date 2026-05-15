@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16208,
+  "uuid": "skill-clawhub-openclaw-mentee",
+  "skillKey": "clawhub-openclaw-mentee",
+  "name": "OpenClaw Mentee (DEPRECATED)",
+  "summary": "Connect with experienced AI mentors to ask questions, manage sessions, request invites, and securely share sanitized AI skill metadata via OpenClaw Mentor pl...",
+  "version": "2.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_mentee",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vladimir Orany",
+      "features": [
+        "Connect with experienced AI mentors to ask questions, manage sessions, request invites, and sec."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-mentee@2.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/660405?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-mentee",
+      "url": "https://clawhub.ai/skills/openclaw-mentee"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-mentee",
+    "url": "https://clawhub.ai/skills/openclaw-mentee",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-mentee-2310d807563e4a7a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-mentee@2.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-mentee-2.0.3.json",
+      "version": "2.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ee05e47f5482f1361efd747484332cfad8d911095df338b5d49f5d545132e716",
+      "artifactSizeBytes": 1935
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T06:06:14.438Z"
+}

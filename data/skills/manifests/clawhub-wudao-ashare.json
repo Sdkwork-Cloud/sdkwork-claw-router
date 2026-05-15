@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68750,
+  "uuid": "skill-clawhub-wudao-ashare",
+  "skillKey": "clawhub-wudao-ashare",
+  "name": "A Share Data · 悟道A股数据套件",
+  "summary": "A股全能数据套件，26个实时API接口：K线分时、涨停板梯队、资金流向、龙虎榜、竞价数据、板块轮动、研报热榜等。包含4个子技能包，一个Key通用。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wudao_ashare",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wudao",
+      "features": [
+        "A股全能数据套件，26个实时API接口：K线分时、涨停板梯队、资金流向、龙虎榜、竞价数据、板块轮动、研报热榜等。包含4个子技能包，一个Key通用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wudao-ashare@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4266157?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wudao-ashare",
+      "url": "https://clawhub.ai/skills/wudao-ashare"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wudao-ashare",
+    "url": "https://clawhub.ai/skills/wudao-ashare",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wudao-ashare-b22e4839eaab41eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wudao-ashare@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wudao-ashare-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d6adf6bdc8267cd5a39d191c242f40fa8575ac63a01f7b7cb5db4a8be812d51a",
+      "artifactSizeBytes": 2370
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T06:02:23.243Z"
+}

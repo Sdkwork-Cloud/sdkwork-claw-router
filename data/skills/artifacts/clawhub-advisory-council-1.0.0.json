@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/advisory-council@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.advisory_council",
+  "skill": {
+    "id": 15886,
+    "skillKey": "clawhub-advisory-council",
+    "name": "Advisory Council"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "advisory-council",
+    "url": "https://clawhub.ai/skills/advisory-council",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/advisory-council-b17a006970fa6c68.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Runs a real-time multi-advisor market analysis using live prices to deliver a consensus trading report with actionable insights."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ryandeangraves",
+      "userId": "publishers:ryandeangraves",
+      "displayName": "ryandeangraves",
+      "image": "https://avatars.githubusercontent.com/u/209055942?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 825,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771532457383,
+      "changelog": "- Initial release of advisory-council skill.\n- Runs a 5-advisor, multi-perspective market analysis for crypto assets using live data.\n- Advisors include Skeptic, Macro Bull, Risk Manager, Technical Analyst, and Contrarian, each with distinct bias and focus.\n- Synthesizes individual advisor views into a single actionable report (consensus, dissent, verdict, action items).\n- Strict rule: must execute the Python script for real output—never simulate or fabricate council responses.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6d4932846f321bec6a766c38c6e078f4c6d7c4a0d239c14a31c1e1c8af19e3bb"
+}

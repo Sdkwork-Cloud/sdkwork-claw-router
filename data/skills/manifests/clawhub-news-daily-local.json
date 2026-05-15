@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65583,
+  "uuid": "skill-clawhub-news-daily-local",
+  "skillKey": "clawhub-news-daily-local",
+  "name": "News Daily Local",
+  "summary": "获取新闻热榜（国内、国际、科技、AI）并发送到飞书。不依赖本地工程，直接从 RSS 获取数据。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_daily_local",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "morrison230",
+      "features": [
+        "获取新闻热榜（国内、国际、科技、AI）并发送到飞书。不依赖本地工程，直接从 RSS 获取数据。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/news-daily-local@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/120681849?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "news-daily-local",
+      "url": "https://clawhub.ai/skills/news-daily-local"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-daily-local",
+    "url": "https://clawhub.ai/skills/news-daily-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-daily-local-539f8bf29f5da562.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/news-daily-local@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-news-daily-local-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3298db32510809ed61618263fc939721385729659b013c057484f289801a38f5",
+      "artifactSizeBytes": 2221
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T18:12:43.397Z"
+}

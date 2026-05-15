@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yijuhuachufangan-skill@2.0.4",
+  "version": "2.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yijuhuachufangan_skill",
+  "skill": {
+    "id": 71093,
+    "skillKey": "clawhub-yijuhuachufangan-skill",
+    "name": "Yijuhua Chufangan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yijuhuachufangan-skill",
+    "url": "https://clawhub.ai/skills/yijuhuachufangan-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yijuhuachufangan-skill-d9be045d37d618f6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "一句话生成完整方案文档，支持政务/商业/技术多场景自动识别。 触发关键词：一句话出方案、方案生成、政务方案、技术方案、商业方案、快速出方案、写方案、出框架、帮我出个、给我一个方案"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leslietong2046-ship-it",
+      "userId": "s172gnmy46r3x0p0mbwb7wjcy1861bmv",
+      "displayName": "leslietong2046-ship-it",
+      "image": "https://avatars.githubusercontent.com/u/248800123?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "2.0.4",
+      "createdAt": 1777998333667,
+      "changelog": "Added 30s quick-start guide",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8429684382470d629859cdfdd222ec50502c210a23976de19f1a1afa7f7f1f29"
+}

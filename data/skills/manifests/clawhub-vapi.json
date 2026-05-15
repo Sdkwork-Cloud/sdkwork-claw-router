@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13065,
+  "uuid": "skill-clawhub-vapi",
+  "skillKey": "clawhub-vapi",
+  "name": "Vapi AI",
+  "summary": "Manage Vapi voice assistants, calls, phone numbers, tools, and webhooks via the Vapi REST API or CLI for voice agent operations and integrations.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vapi",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Colin Lowenburg",
+      "features": [
+        "Manage Vapi voice assistants, calls, phone numbers, tools, and webhooks via the Vapi REST API o."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vapi@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2701548?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vapi",
+      "url": "https://clawhub.ai/skills/vapi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vapi",
+    "url": "https://clawhub.ai/skills/vapi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vapi-29e1a488361f12d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vapi@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vapi-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7459824e1aade99be9f9935b07ffbb7d60b4cf65a66f31f1ff4164e36098d43a",
+      "artifactSizeBytes": 1806
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T02:38:17.451Z"
+}

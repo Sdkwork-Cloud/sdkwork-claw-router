@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiao-chuang-you-objects@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiao_chuang_you_objects",
+  "skill": {
+    "id": 69018,
+    "skillKey": "clawhub-xiao-chuang-you-objects",
+    "name": "Xiao Chuang You Objects"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiao-chuang-you-objects",
+    "url": "https://clawhub.ai/skills/xiao-chuang-you-objects",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiao-chuang-you-objects-70d458ece774eb0b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小窗幽器物子技能。当用户询问器物、选物、民艺、收纳、香薰、香、线香等话题时激活。提供选物指南、品香艺术、民艺美学、日常器物推荐。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zcr3344",
+      "userId": "s17bm5v1kff332wsk2jw96mxgs83yrvr",
+      "displayName": "张城瑞",
+      "image": "https://avatars.githubusercontent.com/u/48597146?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 77,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778065449909,
+      "changelog": "- Initial release of xiao-chuang-you-objects skill.\n- Activated on topics like 器物, 选物, 民艺, 收纳, 香薰, 香, 线香, 盘香, 精油, 香道, 摆件, 瓷器, 陶具, 漆器, 竹木, 购, 买.\n- Provides selection guides, incense appreciation, folk craft aesthetics, and daily object recommendations.\n- Replies include item name, features, suitable scenarios, and purchase tips.\n- Emphasizes tactile, emotional descriptions and personal selection advice.\n- Includes interactive prompts to encourage sharing of favorite objects.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7c9c8ac18b5d7ddc4b28726920c8d6131bfa9b0a8e9659d476adb3dc1c9cd967"
+}

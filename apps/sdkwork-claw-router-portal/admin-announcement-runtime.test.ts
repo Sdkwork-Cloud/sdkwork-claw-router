@@ -123,7 +123,7 @@ test("admin announcement service uses generated backend SDK paths and normalized
   await withBackendSdkFetch(
     (url, init) => {
       const method = init?.method ?? "GET";
-      if (url === "/backend/v3/api/router/announcements" && method === "GET") {
+      if (url === "/backend/v3/api/content/announcements" && method === "GET") {
         return {
           items: [
             {
@@ -137,7 +137,7 @@ test("admin announcement service uses generated backend SDK paths and normalized
           ],
         };
       }
-      if (url === "/backend/v3/api/router/announcements" && method === "POST") {
+      if (url === "/backend/v3/api/content/announcements" && method === "POST") {
         return {
           item: {
             id: "ann-2",
@@ -149,7 +149,7 @@ test("admin announcement service uses generated backend SDK paths and normalized
           },
         };
       }
-      if (url === "/backend/v3/api/router/announcements/ann-1" && method === "PATCH") {
+      if (url === "/backend/v3/api/content/announcements/ann-1" && method === "PATCH") {
         return {
           item: {
             id: "ann-1",
@@ -161,7 +161,7 @@ test("admin announcement service uses generated backend SDK paths and normalized
           },
         };
       }
-      if (url === "/backend/v3/api/router/announcements/ann-1" && method === "DELETE") {
+      if (url === "/backend/v3/api/content/announcements/ann-1" && method === "DELETE") {
         return { deleted: true };
       }
       throw new Error(`unexpected SDK URL: ${url}`);
@@ -182,10 +182,10 @@ test("admin announcement service uses generated backend SDK paths and normalized
       const deleted = await AnnouncementService.deleteAnnouncement("ann-1");
 
       assert.deepEqual(captured.map((request) => `${request.method} ${request.url}`), [
-        "GET /backend/v3/api/router/announcements",
-        "POST /backend/v3/api/router/announcements",
-        "PATCH /backend/v3/api/router/announcements/ann-1",
-        "DELETE /backend/v3/api/router/announcements/ann-1",
+        "GET /backend/v3/api/content/announcements",
+        "POST /backend/v3/api/content/announcements",
+        "PATCH /backend/v3/api/content/announcements/ann-1",
+        "DELETE /backend/v3/api/content/announcements/ann-1",
       ]);
       assert.match(captured[1].headers["x-request-id"], /^admin-announcement-create-/);
       assert.match(captured[1].body, /"target":"vip"/);
@@ -221,7 +221,7 @@ test("admin announcement service rejects unsafe SDK path ids before calling gene
 test("admin announcement list fails closed when backend omits stable announcement ids", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      if (url === "/backend/v3/api/router/announcements" && (init?.method ?? "GET") === "GET") {
+      if (url === "/backend/v3/api/content/announcements" && (init?.method ?? "GET") === "GET") {
         return {
           items: [
             {
@@ -248,7 +248,7 @@ test("admin announcement list fails closed when backend omits stable announcemen
 test("admin announcement list fails closed when backend returns malformed announcement rows", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      if (url === "/backend/v3/api/router/announcements" && (init?.method ?? "GET") === "GET") {
+      if (url === "/backend/v3/api/content/announcements" && (init?.method ?? "GET") === "GET") {
         return { items: ["not-an-announcement-record"] };
       }
       throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
@@ -269,7 +269,7 @@ test("admin announcement list fails closed when backend omits required announcem
   ] as const) {
     await withBackendSdkFetch(
       (url, init) => {
-        if (url === "/backend/v3/api/router/announcements" && (init?.method ?? "GET") === "GET") {
+        if (url === "/backend/v3/api/content/announcements" && (init?.method ?? "GET") === "GET") {
           const announcement = {
             id: "ann-1",
             title: "Migration",
@@ -296,7 +296,7 @@ test("admin announcement list fails closed when backend omits required announcem
 test("admin announcement list fails closed when backend returns unsupported announcement status", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      if (url === "/backend/v3/api/router/announcements" && (init?.method ?? "GET") === "GET") {
+      if (url === "/backend/v3/api/content/announcements" && (init?.method ?? "GET") === "GET") {
         return {
           items: [
             {

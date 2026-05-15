@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/get-tweet-metrics@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.get_tweet_metrics",
+  "skill": {
+    "id": 52818,
+    "skillKey": "clawhub-get-tweet-metrics",
+    "name": "Get Tweet Metrics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "get-tweet-metrics",
+    "url": "https://clawhub.ai/skills/get-tweet-metrics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/get-tweet-metrics-51e48e498f395b1a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user needs to interact with X (Twitter) — searching tweets, looking up users/followers, posting tweets/replies, liking, retweeting, following/un..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xquik",
+      "userId": "s170jwjc10myqbr6rstn6gwcwn849144",
+      "displayName": "Xquik",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776903326790,
+      "changelog": "- Reduced number of supported REST API endpoints from 122 to 111.\n- Updated skill metadata to version 2.4.2 (was 2.2.1).\n- Endpoint category count decreased from 12 to 10.\n- Enhanced security and privacy documentation, including new details on credential handling and endpoints with sensitive data.\n- Expanded quick reference and documentation links to include framework integration guides.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c7ff94d9377b37e34c6abc56d841a4fbc2b553d1c46b895a279d6062f8b8b7db"
+}

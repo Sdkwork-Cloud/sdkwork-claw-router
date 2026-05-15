@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63538,
+  "uuid": "skill-clawhub-openclaw-cleaner",
+  "skillKey": "clawhub-openclaw-cleaner",
+  "name": "openclaw-cleaner",
+  "summary": "OpenClaw清理大师 - 项目目录清理与优化工具。提供快照、Diff、检查点、任务进度等能力，AI 可直接调用自动执行。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_cleaner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "computersniper",
+      "features": [
+        "OpenClaw清理大师",
+        "项目目录清理与优化工具。提供快照、Diff、检查点、任务进度等能力，AI 可直接调用自动执行。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-cleaner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139130525?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-cleaner",
+      "url": "https://clawhub.ai/skills/openclaw-cleaner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-cleaner",
+    "url": "https://clawhub.ai/skills/openclaw-cleaner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-cleaner-528739ee45e52b20.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-cleaner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-cleaner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:41a01bafdc312c1badd72d8bfbaf07bd53b387f1af28d7ad82bc1ba7f9675e37",
+      "artifactSizeBytes": 1920
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T07:46:39.264Z"
+}

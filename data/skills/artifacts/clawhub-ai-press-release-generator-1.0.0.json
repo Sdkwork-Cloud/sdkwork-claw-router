@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-press-release-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_press_release_generator",
+  "skill": {
+    "id": 39269,
+    "skillKey": "clawhub-ai-press-release-generator",
+    "name": "AI Press Release Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-press-release-generator",
+    "url": "https://clawhub.ai/skills/ai-press-release-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-press-release-generator-5bfc5f614668c0d2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate 10 journalist-optimized press releases from your announcement, with headlines, quotes, scores, and distribution strategies tailored for maximum medi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nicemaths123",
+      "userId": "s1712r4n6m9xg8vc5g0ta16m7x83mfjv",
+      "displayName": "nicemaths123",
+      "image": "https://avatars.githubusercontent.com/u/244252350?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 179,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776685506972,
+      "changelog": "Initial release — AI-powered tool for generating and optimizing press releases for media coverage.\n\n- Instantly creates 10 professional press releases per news/announcement.\n- Scores each release by media pickup potential and optimizes headlines and quotes for journalists.\n- Recommends distribution strategies, media contacts, and predicts coverage potential by industry.\n- Analyzes media coverage trends using Apify scrapers for Google News, Twitter, and Reddit.\n- Serves startups, brands, PR agencies, and communications pros seeking more effective media outreach.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:69b272644f8f7a293ca750f78f8fae4380000ee8a832df8c91b68944b5a8b6ad"
+}

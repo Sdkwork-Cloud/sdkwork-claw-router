@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/base64-encode@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.base64_encode",
+  "skill": {
+    "id": 33817,
+    "skillKey": "clawhub-base64-encode",
+    "name": "Base64 Encode"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "base64-encode",
+    "url": "https://clawhub.ai/skills/base64-encode",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/base64-encode-517cfad79765195c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Encode or decode text using Base64, URL percent-encoding, or HTML entities. Use when the user asks to encode, decode, base64 encode, base64 decode, URL encod..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ohernandez-dev-blossom",
+      "userId": "publishers:ohernandez-dev-blossom",
+      "displayName": "Omar Hernandez",
+      "image": "https://avatars.githubusercontent.com/u/86250007?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 212,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774221092725,
+      "changelog": "- Initial release of the base64-encode skill.\n- Supports encoding and decoding of text using Base64, URL percent-encoding, or HTML entities.\n- Handles Unicode and non-ASCII characters correctly in Base64 and URL modes.\n- Provides clear error messages for invalid input and empty input scenarios.\n- Offers options to choose encoding type (`base64`, `url`, `html`) and direction (`encode`, `decode`).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:57679be20a26854f642c1e1a82bfdd5509195eb331eda0f900b723260f059d48"
+}

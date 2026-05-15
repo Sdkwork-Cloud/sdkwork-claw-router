@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/runesleo-content-pipeline@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.runesleo_content_pipeline",
+  "skill": {
+    "id": 56062,
+    "skillKey": "clawhub-runesleo-content-pipeline",
+    "name": "Content Pipeline"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "runesleo-content-pipeline",
+    "url": "https://clawhub.ai/skills/runesleo-content-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/runesleo-content-pipeline-014c447feab6d0de.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "4-stage content pipeline orchestrator: Research -> Ideate -> Write -> Queue. Give it a topic, it researches existing discussions, generates hook angles, writ..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "runesleo",
+      "userId": "publishers:runesleo",
+      "displayName": "runesleo",
+      "image": "https://avatars.githubusercontent.com/u/245669230?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 350,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772890935823,
+      "changelog": "Content Pipeline v1.0.0 – First release\n\n- Introduces a 4-stage orchestrator to automate content creation: Research → Ideate → Write → Queue.\n- Supports commands to initiate full pipeline, queue seeds, check status, review drafts, and manage content lifecycle.\n- Stores queue data in `content-queue.json` and research in dated markdown files.\n- Enables platform-specific adaptation, approval, publishing, and cleanup of old items.\n- Designed for creators needing systematic, research-driven content production.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6ee1fb5a131ebe82e569178e3d058f08545205d6c5666d0a998078ee15b1105a"
+}

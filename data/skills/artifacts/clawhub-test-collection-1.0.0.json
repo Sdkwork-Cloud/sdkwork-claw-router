@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/test-collection@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_collection",
+  "skill": {
+    "id": 61362,
+    "skillKey": "clawhub-test-collection",
+    "name": "Test Collection"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-collection",
+    "url": "https://clawhub.ai/skills/test-collection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-collection-feb2f3afda3388d4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "用于测试采集功能的简单 skill，无实际业务逻辑"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thascc1024",
+      "userId": "s17fztcdygt0q97s02bez3aemd83xv3n",
+      "displayName": "thascc1024",
+      "image": "https://avatars.githubusercontent.com/u/267271122?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774867940328,
+      "changelog": "test-collection v1.0.0\n\n- 初始发布版本\n- 提供一个用于测试采集功能的简单 skill，无实际业务逻辑\n- 支持 skill 发现、优先级覆盖和配置注入的验证",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:afe69f13afee32c30e4a355c08add03e6d77983f132846f11b2f688d9d39aa8c"
+}

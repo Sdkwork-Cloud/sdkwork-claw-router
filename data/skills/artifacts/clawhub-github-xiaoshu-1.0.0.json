@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-xiaoshu@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_xiaoshu",
+  "skill": {
+    "id": 57821,
+    "skillKey": "clawhub-github-xiaoshu",
+    "name": "Github Xiaoshu"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-xiaoshu",
+    "url": "https://clawhub.ai/skills/github-xiaoshu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-xiaoshu-6036a5f170845ad8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with GitHub using the `gh` CLI. Use `gh issue`, `gh pr`, `gh run`, and `gh api` for issues, PRs, CI runs, and advanced queries."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaomaju-888",
+      "userId": "s170yv0m5gz6jparmgp94178xx849yqr",
+      "displayName": "xiaomaju-888",
+      "image": "https://avatars.githubusercontent.com/u/267942803?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775375730933,
+      "changelog": "Initial release of the github skill.\n\n- Enables GitHub interaction via the `gh` CLI for issues, pull requests, and workflows.\n- Provides usage examples for common `gh` commands and advanced queries with `gh api`.\n- Documents best practices, including use of `--repo` and JSON/output filtering options.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1d195d1e732bfc21628704210623e6992af58e86477c4b301676e5de291ec63e"
+}

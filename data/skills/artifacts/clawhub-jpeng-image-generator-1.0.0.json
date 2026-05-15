@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jpeng-image-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jpeng_image_generator",
+  "skill": {
+    "id": 37420,
+    "skillKey": "clawhub-jpeng-image-generator",
+    "name": "Image Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jpeng-image-generator",
+    "url": "https://clawhub.ai/skills/jpeng-image-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jpeng-image-generator-2412d118fe160274.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI image generation skill using DALL-E, Stable Diffusion, or Midjourney API. Generate, edit, and vary images from text prompts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jpengcheng523-netizen",
+      "userId": "s177n9nwg73ep3g6fp9z19025n83h4xr",
+      "displayName": "jpengcheng523-netizen",
+      "image": "https://avatars.githubusercontent.com/u/226868999?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 197,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774355279635,
+      "changelog": "- Initial release of jpeng-image-generator.\n- Generate AI images using DALL-E, Stable Diffusion, or Midjourney via API.\n- Supports image creation from text prompts, image variations, and inpainting edits.\n- Includes options for thumbnail/illustration generation and style presets.\n- Simple command-line usage and environment variable configuration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:04e9def0883c23ba68dcfe68e56f5939a8d962d7482dbba7c958742e1deeaf29"
+}

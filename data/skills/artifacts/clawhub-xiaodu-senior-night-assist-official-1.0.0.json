@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaodu-senior-night-assist-official@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaodu_senior_night_assist_official",
+  "skill": {
+    "id": 61384,
+    "skillKey": "clawhub-xiaodu-senior-night-assist-official",
+    "name": "xiaodu-senior-night-assist-official"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaodu-senior-night-assist-official",
+    "url": "https://clawhub.ai/skills/xiaodu-senior-night-assist-official",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaodu-senior-night-assist-official-0b0a5c3091fe0d34.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于已安装的 xiaodu-control-official 编排老人夜间短时起身的安全辅助场景。当用户说“夜里起夜”“我要去卫生间”“帮我开一下夜灯”“夜间辅助模式”这类请求时使用。这个 skill 会复用 xiaodu-control-official 的现有脚本，对小度智能屏和小度 IoT 设备执行 sce..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dueros-mcp",
+      "userId": "s17c8gt7wvmhgfp7aqs9hcwrvd83qr3v",
+      "displayName": "dueros-mcp",
+      "image": "https://avatars.githubusercontent.com/u/218767264?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775205753594,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:be653d971700cd68f9914e5f87c88049878475c296f485bdce4656c436be2c5f"
+}

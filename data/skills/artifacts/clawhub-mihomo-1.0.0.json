@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mihomo@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mihomo",
+  "skill": {
+    "id": 38392,
+    "skillKey": "clawhub-mihomo",
+    "name": "Mihomo Proxy Management"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mihomo",
+    "url": "https://clawhub.ai/skills/mihomo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mihomo-a2214bd3c40f319c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage mihomo (Clash Meta) proxy instances via REST API. Use when user mentions mihomo, clash, proxy switching, or needs to: (1) Check proxy status/version,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jonasgao",
+      "userId": "s1750kyxngca0hmh2r3c4ac1ns83n3d1",
+      "displayName": "JonasGao",
+      "image": "https://avatars.githubusercontent.com/u/4549584?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 188,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774537967829,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:35313ce7bea3492f3e1c6f083ef2931f07ad22e274eeeb12be78bb6c0573d66f"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-memory-augment@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_memory_augment",
+  "skill": {
+    "id": 44841,
+    "skillKey": "clawhub-claw-memory-augment",
+    "name": "Memory Augment"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-memory-augment",
+    "url": "https://clawhub.ai/skills/claw-memory-augment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-memory-augment-f5edba19cb139701.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Long-term memory system for OpenClaw agents. Store, retrieve, and query conversation history and learned information across sessions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "indigas",
+      "userId": "s17bxmdv11wtsw9rmzpgbdgzy5851d8f",
+      "displayName": "Indigas",
+      "image": "https://avatars.githubusercontent.com/u/69516204?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776425623005,
+      "changelog": "Initial release of the memory-augment skill for OpenClaw:\n\n- Adds long-term memory system to store, retrieve, and query conversation history and learned information across sessions.\n- Supports storing user preferences, decisions, learnings, and context with temporary or permanent retention.\n- Implements hybrid (semantic + keyword) search and automatic injection of relevant memories into agent context.\n- Provides commands for storing, searching, listing, deleting, exporting, and importing memories.\n- Includes configurable settings for storage format, scoring, expiry, and injection behavior.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:88ba8ea33de5698c862c2382f1f72294e54969bcefd87798e088e648f55d25c9"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68083,
+  "uuid": "skill-clawhub-mango-tv",
+  "skillKey": "clawhub-mango-tv",
+  "name": "Mango TV",
+  "summary": "提供芒果热门综艺、青春剧集及粉丝互动指引。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mango_tv",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawKK",
+      "features": [
+        "提供芒果热门综艺、青春剧集及粉丝互动指引。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mango-tv@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111570001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mango-tv",
+      "url": "https://clawhub.ai/skills/mango-tv"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mango-tv",
+    "url": "https://clawhub.ai/skills/mango-tv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mango-tv-bc67029e40bc5e5c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mango-tv@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mango-tv-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f83c1fb88c64bea4fdb0852c74debf52f378006595d75e849cc7aacd02326684",
+      "artifactSizeBytes": 2049
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T15:26:38.797Z"
+}

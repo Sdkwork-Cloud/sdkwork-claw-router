@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50439,
+  "uuid": "skill-clawhub-memory-compress",
+  "skillKey": "clawhub-memory-compress",
+  "name": "Memory Compress",
+  "summary": "Never let your agent forget what matters. Compress verbose daily logs into structured summaries — 4-8x compression, zero information loss. Inspired by classi...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_compress",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "翎麟",
+      "features": [
+        "Never let your agent forget what matters",
+        "Compress verbose daily logs into structured summaries — 4-8x compression, zero information loss",
+        "Inspired by classi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-compress@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47617666?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-compress",
+      "url": "https://clawhub.ai/skills/memory-compress"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-compress",
+    "url": "https://clawhub.ai/skills/memory-compress",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-compress-1e16e70920d19fa9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-compress@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-compress-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:84337e3affbf745f92e4ef11f1b9183e3dfe609b9b7218931f2c2c21f39ab670",
+      "artifactSizeBytes": 1962
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T02:12:22.210Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71786,
+  "uuid": "skill-clawhub-education-search",
+  "skillKey": "clawhub-education-search",
+  "name": "Education Search 教育学习搜索助手",
+  "summary": "学历教育与职业培训找资料工具。学历教育包括考研（公共课/专业课真题）、专升本、自考等；职业培训包括考公（行测/申论）、教师资格证、经济师、建造师、会计师、法律职业资格等。支持三种类型：找试题试卷、找教辅资料、找备考课程。当用户需要查找考试相关资料时使用此 skill。",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.education_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xiaoya Liu",
+      "features": [
+        "学历教育与职业培训找资料工具。学历教育包括考研（公共课/专业课真题）、专升本、自考等；职业培训包括考公（行测/申论）、教师资格证、经济师、建造师、会计师、法律职业资格等。支持三种类型：找试题."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/education-search@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59907326?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "education-search",
+      "url": "https://clawhub.ai/skills/education-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "education-search",
+    "url": "https://clawhub.ai/skills/education-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/education-search-6f4f7b91a92440b5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/education-search@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-education-search-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c510b62c25d14c49b2f33eeb418c78a56355ac9fac063dab8364402e3589391",
+      "artifactSizeBytes": 2705
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T20:59:23.743Z"
+}

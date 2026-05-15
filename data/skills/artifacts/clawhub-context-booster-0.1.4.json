@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/context-booster@0.1.4",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_booster",
+  "skill": {
+    "id": 27992,
+    "skillKey": "clawhub-context-booster",
+    "name": "Context Booster"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-booster",
+    "url": "https://clawhub.ai/skills/context-booster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-booster-c58811a0c2500225.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when managing long-context conversations and tasks. Provides intelligent compression, key extraction, context enhancement, memory retrieval, a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pagoda111king",
+      "userId": "s1746mhemcg917609xsdwamt1183gyw3",
+      "displayName": "pagoda111king",
+      "image": "https://avatars.githubusercontent.com/u/177529007?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 326,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.1.4",
+      "createdAt": 1777184054010,
+      "changelog": "Update to v0.1.4: improved context capture and retrieval",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c415008f55588a7f396c6f75baf7b4db573e055cfa06402166ddd203b6968b32"
+}

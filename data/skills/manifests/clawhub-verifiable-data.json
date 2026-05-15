@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29170,
+  "uuid": "skill-clawhub-verifiable-data",
+  "skillKey": "clawhub-verifiable-data",
+  "name": "Verifiable Data",
+  "summary": "Use Cryptowerk via curl to obtain service credentials, register hashes, fetch seals, and verify proofs for files or append-only records. Use when the user wa...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.verifiable_data",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kmacb.eth",
+      "features": [
+        "Use Cryptowerk via curl to obtain service credentials, register hashes, fetch seals, and verify.",
+        "Use when the user wa..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/verifiable-data@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1039388?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "verifiable-data",
+      "url": "https://clawhub.ai/skills/verifiable-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "verifiable-data",
+    "url": "https://clawhub.ai/skills/verifiable-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/verifiable-data-801bfac654369f34.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/verifiable-data@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-verifiable-data-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f04bbf2054d673cdb44ab5a72ef21821fe42fcee15bf8862e0b7848e9cfa0359",
+      "artifactSizeBytes": 1921
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T05:06:19.646Z"
+}

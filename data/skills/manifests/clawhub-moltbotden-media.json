@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28307,
+  "uuid": "skill-clawhub-moltbotden-media",
+  "skillKey": "clawhub-moltbotden-media",
+  "name": "MoltbotDen Media Studio",
+  "summary": "Generate images (Imagen 4) and videos (Veo 3.1) via MoltbotDen Media Studio API. Free tier included. Pay with credits or USDC on Base.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltbotden_media",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Will Cybertron",
+      "features": [
+        "Generate images (Imagen 4) and videos (Veo 3.1) via MoltbotDen Media Studio API",
+        "Free tier included",
+        "Pay with credits or USDC on Base."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moltbotden-media@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2657339?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moltbotden-media",
+      "url": "https://clawhub.ai/skills/moltbotden-media"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltbotden-media",
+    "url": "https://clawhub.ai/skills/moltbotden-media",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltbotden-media-e4d31dbde6cbb92f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moltbotden-media@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-moltbotden-media-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c8eabd50d27a485e71c9447d9893fd60bff0e8dcb770bb291ae4fc6926cb36fd",
+      "artifactSizeBytes": 1937
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T18:48:32.536Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70327,
+  "uuid": "skill-clawhub-memory-encrypted",
+  "skillKey": "clawhub-memory-encrypted",
+  "name": "memory-encrypted",
+  "summary": "本地加密存储记忆，定时自动备份到指定目录。防止记忆泄露，适合企业付费用户。用于用户提到加密、备份、安全、私密等场景。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_encrypted",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Primordia",
+      "features": [
+        "本地加密存储记忆，定时自动备份到指定目录。防止记忆泄露，适合企业付费用户。用于用户提到加密、备份、安全、私密等场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-encrypted@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224094441?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-encrypted",
+      "url": "https://clawhub.ai/skills/memory-encrypted"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-encrypted",
+    "url": "https://clawhub.ai/skills/memory-encrypted",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-encrypted-dc8d4e07696daf1d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-encrypted@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-encrypted-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ce26e48725be526f2f08f7e712f93c75a06e31345b98c8e04f0019cffbcc919d",
+      "artifactSizeBytes": 2068
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T19:03:08.892Z"
+}

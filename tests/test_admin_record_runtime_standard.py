@@ -1,4 +1,4 @@
-import unittest
+﻿import unittest
 from pathlib import Path
 
 
@@ -11,7 +11,7 @@ class AdminRecordRuntimeStandardTest(unittest.TestCase):
             ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "mod.rs"
         ).read_text(encoding="utf-8")
         backend_sdk = (
-            ROOT / "sdks" / "clawrouter-backend-sdk" / "src" / "api" / "record.ts"
+            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "api" / "system.ts"
         ).read_text(encoding="utf-8")
         record_service = (
             ROOT
@@ -28,13 +28,13 @@ class AdminRecordRuntimeStandardTest(unittest.TestCase):
 
         self.assertIn("mod admin_record;", product_api_mod)
         self.assertIn("admin_record_router_with_store", product_api_mod)
-        self.assertIn("/backend/v3/api/record/list", admin_record_api)
+        self.assertIn("/backend/v3/api/system/records", admin_record_api)
         self.assertIn("TrustedRequestSubject", admin_record_api)
         self.assertIn("AdminRecordStore", admin_record_api)
-        self.assertIn("async fetchLogs", backend_sdk)
-        self.assertIn("backendApiPath(`/record/list`)", backend_sdk)
+        self.assertIn("class SystemRecordsApi", backend_sdk)
+        self.assertIn("backendApiPath(`/system/records`)", backend_sdk)
         self.assertIn(
-            "getClawRouterBackendSdkClient().record.fetchLogs(toRecordLogQueryBody(filters))",
+            "getClawRouterBackendSdkClient().system.records.list(toRecordLogQueryBody(filters))",
             record_service,
         )
 
@@ -60,14 +60,18 @@ class AdminRecordRuntimeStandardTest(unittest.TestCase):
                 self.assertIn("invalid admin record latency_ms from database row", store)
 
     def test_admin_record_log_modality_preserves_unknown_values(self) -> None:
+        modality_source = (
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "model_modality.rs"
+        ).read_text(encoding="utf-8")
+        self.assertIn('_ => "unknown"', modality_source)
+        self.assertNotIn('_ => "text"', modality_source)
         for relative in [
             "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/admin_record_store.rs",
             "services/sdkwork-claw-product/src/infrastructure/sql/postgres/admin_record_store.rs",
         ]:
             store = (ROOT / relative).read_text(encoding="utf-8")
             with self.subTest(store=relative):
-                self.assertIn("None => \"unknown\"", store)
-                self.assertIn("Some(_) => \"unknown\"", store)
+                self.assertIn("model_modality::label(value).to_owned()", store)
                 self.assertNotIn("_ => \"text\"", store)
 
 

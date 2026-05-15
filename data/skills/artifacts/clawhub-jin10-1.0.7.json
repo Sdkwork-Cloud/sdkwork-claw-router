@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jin10@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jin10",
+  "skill": {
+    "id": 65716,
+    "skillKey": "clawhub-jin10",
+    "name": "金十数据"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jin10",
+    "url": "https://clawhub.ai/skills/jin10",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jin10-7a1ee4f51d031d64.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "金十数据财经信息查询 skill。查询黄金/白银/原油等行情报价、K线、最新财经快讯、资讯新闻、财经日历数据时使用。 触发场景：问\"黄金价格\"、\"XAUUSD报价\"、\"黄金1小时K线\"、\"原油快讯\"、\"财经日历\"、\"非农什么时候\"、\"资讯详情\"等。 本 skill 包含 Python 代码（jin10/ 模块 +..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "robinspt",
+      "userId": "s17atg0pr1tqjykmbhb1m5d2a583g4ev",
+      "displayName": "loong",
+      "image": "https://avatars.githubusercontent.com/u/46096863?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 398,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1776345130086,
+      "changelog": "- Added K线（K-line/candlestick chart）行情查询说明与命令示例，支持如“黄金1小时K线”场景\n- 触发场景与描述补充了K线相关问法\n- 规则部分增加了K线查询相关流程指引\n- 命令接口中新增了kline指令的格式与用法示例\n- 其它说明与结构保持不变",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9af5294e82d751e9d438d6e9768e6117e4c3db27f7f84b753e571bcff8559715"
+}

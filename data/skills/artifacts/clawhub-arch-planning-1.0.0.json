@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/arch-planning@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arch_planning",
+  "skill": {
+    "id": 72357,
+    "skillKey": "clawhub-arch-planning",
+    "name": "System Architect"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arch-planning",
+    "url": "https://clawhub.ai/skills/arch-planning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arch-planning-26f8ffc9f0db7731.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "系统架构、规划、设计理解技能。用于：当用户讨论系统架构、技术选型、方案设计、需求分析、技术规划时使用。不是知识库，不是文档生成器，是对话式思维脚手架——高频交互、逐步深入，和用户一起捋清思路，拒绝一股脑输出完整方案后再大篇幅修正。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yangkai258",
+      "userId": "s175ydv0741tkdwwf081rq5z5183hcw5",
+      "displayName": "yangkai258",
+      "image": "https://avatars.githubusercontent.com/u/78720784?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774938850017,
+      "changelog": "arch-planning 1.0.0\n\n- Added more detailed guidance for system decomposition in stage 3, including prompts for observability (埋点/链路追踪) and data consistency.\n- Expanded the technical decision matrix in stage 4 to include \"退出成本\" (exit cost) and related evaluation questions.\n- Clarified evaluation dimensions and prompts throughout the workflow for deeper analysis.\n- No breaking changes to core interaction flow; overall process and principles remain the same.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e8ddafdf92d1a59007146a3b3ca993fa4bc4f692f463fbf7c05eda8f9fc9bbfc"
+}

@@ -14,6 +14,7 @@ use serde::Serialize;
 use sha2::Sha256;
 
 const AUTHORIZATION: &str = "authorization";
+const SDKWORK_ACCESS_TOKEN: &str = "sdkwork-access-token";
 const X_API_KEY: &str = "x-api-key";
 const X_GOOG_API_KEY: &str = "x-goog-api-key";
 const X_SDKWORK_API_KEY_ID: &str = "x-sdkwork-api-key-id";
@@ -86,13 +87,16 @@ pub enum TrustedSubjectBoundaryError {
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub enum AppSessionTokenError {
     MissingBearerToken,
+    MissingAccessToken,
     InvalidAuthorizationScheme,
+    InvalidHeaderValue(&'static str),
     InvalidTokenFormat,
     InvalidPositiveInteger(&'static str),
     InvalidTimestamp(&'static str),
     IssuedAtOutsideClockSkew,
     Expired,
     InvalidSignature,
+    SubjectMismatch,
 }
 
 #[derive(Clone)]
@@ -252,6 +256,27 @@ pub async fn app_request_subject_boundary(
     }
 }
 
+pub async fn optional_app_request_subject_boundary(
+    State(config): State<AppSubjectBoundaryConfig>,
+    mut request: Request<Body>,
+    next: Next,
+) -> Response {
+    let method = request.method().as_str().to_owned();
+    let path_and_query = request
+        .uri()
+        .path_and_query()
+        .map(|value| value.as_str().to_owned())
+        .unwrap_or_else(|| request.uri().path().to_owned());
+    inject_optional_app_request_subject(
+        request.headers_mut(),
+        &method,
+        &path_and_query,
+        &config,
+        current_unix_seconds(),
+    );
+    next.run(request).await
+}
+
 pub fn inject_verified_app_request_subject(
     headers: &mut HeaderMap,
     method: &str,
@@ -270,19 +295,56 @@ pub fn inject_verified_app_request_subject(
     if TrustedRequestSubject::from_headers(headers).is_ok() {
         return Ok(());
     }
-    let subject = {
-        let Some(value) = headers.get(AUTHORIZATION) else {
-            return Ok(());
+    if !has_any_app_session_token_header(headers) {
+        return Ok(());
+    }
+    let subject =
+        match verify_dual_app_session_headers(headers, config.app_session(), now_unix_seconds) {
+            Ok(subject) => subject,
+            Err(error) => {
+                remove_app_session_token_headers(headers);
+                return Err(error.to_string());
+            }
         };
-        let value = value
-            .to_str()
-            .map_err(|_| "authorization header value is invalid".to_owned())?;
-        verify_app_session_authorization_header(config.app_session(), value, now_unix_seconds)
-            .map_err(|error| error.to_string())?
-    };
-    headers.remove(AUTHORIZATION);
+    remove_app_session_token_headers(headers);
     insert_internal_trusted_subject_headers(headers, subject);
     Ok(())
+}
+
+pub fn inject_optional_app_request_subject(
+    headers: &mut HeaderMap,
+    method: &str,
+    path_and_query: &str,
+    config: &AppSubjectBoundaryConfig,
+    now_unix_seconds: i64,
+) {
+    match inject_verified_trusted_request_subject(
+        headers,
+        method,
+        path_and_query,
+        config.trusted_subject(),
+        now_unix_seconds,
+    ) {
+        Ok(()) if TrustedRequestSubject::from_headers(headers).is_ok() => return,
+        Ok(()) => {}
+        Err(_) => {
+            remove_internal_trusted_subject_headers(headers);
+            remove_signed_subject_headers(headers);
+        }
+    }
+
+    if !has_any_app_session_token_header(headers) {
+        return;
+    };
+    match verify_dual_app_session_headers(headers, config.app_session(), now_unix_seconds) {
+        Ok(subject) => {
+            remove_app_session_token_headers(headers);
+            insert_internal_trusted_subject_headers(headers, subject);
+        }
+        Err(_) => {
+            remove_app_session_token_headers(headers);
+        }
+    }
 }
 
 pub async fn trusted_request_subject_boundary(
@@ -386,6 +448,35 @@ pub fn verify_app_session_authorization_header(
     verify_app_session_token(config, token, now_unix_seconds)
 }
 
+pub fn verify_dual_app_session_headers(
+    headers: &HeaderMap,
+    config: &AppSessionConfig,
+    now_unix_seconds: i64,
+) -> Result<TrustedRequestSubject, AppSessionTokenError> {
+    let authorization = headers
+        .get(AUTHORIZATION)
+        .ok_or(AppSessionTokenError::MissingBearerToken)?
+        .to_str()
+        .map_err(|_| AppSessionTokenError::InvalidHeaderValue(AUTHORIZATION))?;
+    let auth_subject =
+        verify_app_session_authorization_header(config, authorization, now_unix_seconds)?;
+
+    let access_token = headers
+        .get(SDKWORK_ACCESS_TOKEN)
+        .ok_or(AppSessionTokenError::MissingAccessToken)?
+        .to_str()
+        .map(str::trim)
+        .map_err(|_| AppSessionTokenError::InvalidHeaderValue(SDKWORK_ACCESS_TOKEN))?;
+    if access_token.is_empty() {
+        return Err(AppSessionTokenError::MissingAccessToken);
+    }
+    let access_subject = verify_app_session_token(config, access_token, now_unix_seconds)?;
+    if auth_subject != access_subject {
+        return Err(AppSessionTokenError::SubjectMismatch);
+    }
+    Ok(auth_subject)
+}
+
 pub fn verify_app_session_token(
     config: &AppSessionConfig,
     token: &str,
@@ -448,12 +539,16 @@ impl fmt::Display for AppSessionTokenError {
     fn fmt(&self, formatter: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
             Self::MissingBearerToken => write!(formatter, "app session bearer token is required"),
+            Self::MissingAccessToken => {
+                write!(formatter, "{SDKWORK_ACCESS_TOKEN} header is required")
+            }
             Self::InvalidAuthorizationScheme => {
                 write!(
                     formatter,
                     "authorization header must use Bearer app session scheme"
                 )
             }
+            Self::InvalidHeaderValue(name) => write!(formatter, "{name} header value is invalid"),
             Self::InvalidTokenFormat => write!(formatter, "app session token format is invalid"),
             Self::InvalidPositiveInteger(field) => {
                 write!(formatter, "app session {field} must be a positive integer")
@@ -472,6 +567,10 @@ impl fmt::Display for AppSessionTokenError {
             }
             Self::Expired => write!(formatter, "app session token has expired"),
             Self::InvalidSignature => write!(formatter, "app session token signature is invalid"),
+            Self::SubjectMismatch => write!(
+                formatter,
+                "app session auth token and access token subjects do not match"
+            ),
         }
     }
 }
@@ -502,6 +601,15 @@ fn remove_internal_trusted_subject_headers(headers: &mut HeaderMap) {
     headers.remove(X_SDKWORK_TENANT_ID);
     headers.remove(X_SDKWORK_ORGANIZATION_ID);
     headers.remove(X_SDKWORK_USER_ID);
+}
+
+fn has_any_app_session_token_header(headers: &HeaderMap) -> bool {
+    headers.contains_key(AUTHORIZATION) || headers.contains_key(SDKWORK_ACCESS_TOKEN)
+}
+
+fn remove_app_session_token_headers(headers: &mut HeaderMap) {
+    headers.remove(AUTHORIZATION);
+    headers.remove(SDKWORK_ACCESS_TOKEN);
 }
 
 fn has_any_signed_subject_header(headers: &HeaderMap) -> bool {

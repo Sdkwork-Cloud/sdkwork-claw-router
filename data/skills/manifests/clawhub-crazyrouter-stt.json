@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46708,
+  "uuid": "skill-clawhub-crazyrouter-stt",
+  "skillKey": "clawhub-crazyrouter-stt",
+  "name": "Crazyrouter Stt",
+  "summary": "Speech-to-text transcription via Crazyrouter API (OpenAI Whisper). Transcribe audio/video files to text. Supports mp3, mp4, wav, m4a, webm. Use when user ask...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crazyrouter_stt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xujfcn",
+      "features": [
+        "Speech-to-text transcription via Crazyrouter API (OpenAI Whisper)",
+        "Transcribe audio/video files to text",
+        "Supports mp3, mp4, wav, m4a, webm",
+        "Use when user ask..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crazyrouter-stt@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7953794?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crazyrouter-stt",
+      "url": "https://clawhub.ai/skills/crazyrouter-stt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crazyrouter-stt",
+    "url": "https://clawhub.ai/skills/crazyrouter-stt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crazyrouter-stt-676b9b9515da832f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crazyrouter-stt@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crazyrouter-stt-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:461d86040b484568c9536389d29fa24b703307ad0be0b8932e283dbf4c1a94c5",
+      "artifactSizeBytes": 1974
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T13:07:05.573Z"
+}

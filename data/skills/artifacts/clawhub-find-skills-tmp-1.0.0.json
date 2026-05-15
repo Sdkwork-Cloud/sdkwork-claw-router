@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/find-skills-tmp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_skills_tmp",
+  "skill": {
+    "id": 26641,
+    "skillKey": "clawhub-find-skills-tmp",
+    "name": "Find Skills.Tmp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-skills-tmp",
+    "url": "https://clawhub.ai/skills/find-skills-tmp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-skills-tmp-71cac3622925838f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"find a skill for X\", \"is there a skill that can...\", or express..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhichengsong",
+      "userId": "publishers:zhichengsong",
+      "displayName": "zhichengsong",
+      "image": "https://avatars.githubusercontent.com/u/23352904?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 343,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773454804157,
+      "changelog": "- Initial release of the find-skills skill.\n- Enables users to discover and install agent skills by searching the open skills ecosystem.\n- Provides guidance for identifying suitable skills based on user questions and needs.\n- Offers CLI commands for searching, installing, and managing skills.\n- Includes practical examples and tips for effective skill discovery.\n- Recommends next steps if no relevant skills are found.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c063cca02aa9ed139dad9a9db7106782aa8e6871ef18f190c1e0b4d41322d546"
+}

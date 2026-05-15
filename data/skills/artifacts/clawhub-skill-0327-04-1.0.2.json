@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-0327-04@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_0327_04",
+  "skill": {
+    "id": 31731,
+    "skillKey": "clawhub-skill-0327-04",
+    "name": "skill-0327-04"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-0327-04",
+    "url": "https://clawhub.ai/skills/skill-0327-04",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-0327-04-ebd852261e9af736.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Summarize URLs or files with the summarize CLI (web, PDFs, images, audio, YouTube)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yinwuzhe",
+      "userId": "s17bebxc1t0w5frqp4rnmt85nx83hc1n",
+      "displayName": "yuangui",
+      "image": "https://avatars.githubusercontent.com/u/5061317?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 263,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775718804458,
+      "changelog": "重新发",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f1e3a44861a5b186ac2b15c72c9917d54b2e8b63750318a85b76f3a2a13ec583"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xianyu-search@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xianyu_search",
+  "skill": {
+    "id": 69081,
+    "skillKey": "clawhub-xianyu-search",
+    "name": "xianyu-search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xianyu-search",
+    "url": "https://clawhub.ai/skills/xianyu-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xianyu-search-c3fa7c4f9ba5a4f7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供基于预算、成色和信用筛选的闲鱼二手商品搜索，并支持多平台价格比对和推荐。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lg2021888",
+      "userId": "s179ytsgmn6ds3v6kta2qyz82s83hw23",
+      "displayName": "LG2021888",
+      "image": "https://avatars.githubusercontent.com/u/46318359?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 256,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774413675923,
+      "changelog": "- 新增 RELEASE_GUIDE.md 和 RELEASE_SUMMARY.md 两个发布相关文件。\n- 在 SKILL.md 文档开头添加了“重要边界说明”部分，明确本技能的功能边界和技术边界。\n- 明确声明技能不会直接抓取闲鱼商品信息、不进行外部请求、不上传用户数据。\n- 强化各模块独立性说明，便于开发者理解和调试。\n- 其余功能和参数使用方式保持不变，增强了文档的清晰度和合规性。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:230c59809165000ce58f6821d00af54799a510e162aa52949b068b01cf320a82"
+}

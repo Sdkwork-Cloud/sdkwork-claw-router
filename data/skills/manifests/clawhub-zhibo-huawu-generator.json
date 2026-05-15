@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73630,
+  "uuid": "skill-clawhub-zhibo-huawu-generator",
+  "skillKey": "clawhub-zhibo-huawu-generator",
+  "name": "直播话术生成器",
+  "summary": "根据产品信息自动生成适用于抖音、快手、淘宝直播的完整直播带货话术脚本，包含开场、介绍、促单、互动及下播话术。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhibo_huawu_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jessabuivolova-sketch",
+      "features": [
+        "根据产品信息自动生成适用于抖音、快手、淘宝直播的完整直播带货话术脚本，包含开场、介绍、促单、互动及下播话术。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zhibo-huawu-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260901069?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zhibo-huawu-generator",
+      "url": "https://clawhub.ai/skills/zhibo-huawu-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhibo-huawu-generator",
+    "url": "https://clawhub.ai/skills/zhibo-huawu-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhibo-huawu-generator-0f0d67d42eb4d658.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zhibo-huawu-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zhibo-huawu-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c143bdc14bc7ea2a2618767d45968380ffe1884b9a2cb91d835801d5a60a7466",
+      "artifactSizeBytes": 1963
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T05:50:29.577Z"
+}

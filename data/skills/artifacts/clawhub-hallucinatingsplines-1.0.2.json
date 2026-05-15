@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hallucinatingsplines@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hallucinatingsplines",
+  "skill": {
+    "id": 51011,
+    "skillKey": "clawhub-hallucinatingsplines",
+    "name": "Hallucinating Splines"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hallucinatingsplines",
+    "url": "https://clawhub.ai/skills/hallucinatingsplines",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hallucinatingsplines-4518934131975ac1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build and manage cities autonomously on Hallucinating Splines — the headless Micropolis simulator with a REST API and MCP server for AI agents."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andrewedunn",
+      "userId": "publishers:andrewedunn",
+      "displayName": "Andrew Dunn",
+      "image": "https://avatars.githubusercontent.com/u/938764?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 418,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772230034477,
+      "changelog": "- Added explicit notice clarifying the skill only communicates with api.hallucinatingsplines.com and mcp.hallucinatingsplines.com and requires just an HS_API_KEY.\n- Updated metadata to reflect required environment variables for use.\n- Emphasized that no local files are accessed or third-party software installed.\n- Improved onboarding and security explanations for environment variable setup.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b3f1eb887aa621351494b6731cba4df2e6f27709d85dfedfabafcd2a3cab565f"
+}

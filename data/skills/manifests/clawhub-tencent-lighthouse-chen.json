@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57426,
+  "uuid": "skill-clawhub-tencent-lighthouse-chen",
+  "skillKey": "clawhub-tencent-lighthouse-chen",
+  "name": "Tencent Cloud Lighthouse",
+  "summary": "Manage Tencent Cloud Lighthouse (轻量应用服务器) — auto-setup mcporter + MCP, query instances, monitoring & alerting, self-diagnostics, firewall, snapshots, remote...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencent_lighthouse_chen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jason-aka-chen",
+      "features": [
+        "Manage Tencent Cloud Lighthouse (轻量应用服务器) — auto-setup mcporter + MCP, query instances, monitor."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tencent-lighthouse-chen@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/251550877?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tencent-lighthouse-chen",
+      "url": "https://clawhub.ai/skills/tencent-lighthouse-chen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencent-lighthouse-chen",
+    "url": "https://clawhub.ai/skills/tencent-lighthouse-chen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencent-lighthouse-chen-503203c4a9cd4019.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tencent-lighthouse-chen@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tencent-lighthouse-chen-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c1340110ee949cae4df4aa7c11063c1b9269bcc8c7c105cd6fa02eed39e5dbef",
+      "artifactSizeBytes": 1970
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T05:02:09.741Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xhs-writer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhs_writer",
+  "skill": {
+    "id": 68014,
+    "skillKey": "clawhub-xhs-writer",
+    "name": "Xhs Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhs-writer",
+    "url": "https://clawhub.ai/skills/xhs-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhs-writer-983b2b3e35cbe491.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小红书内容创作套件，离线生成爆款标题、正文、话题、评论和多卡图片Markdown，全方位支持多类型主题。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tobewin",
+      "userId": "s174rz3f0862tcfw7pzfh5w8kn83hv2z",
+      "displayName": "ToBeWin",
+      "image": "https://avatars.githubusercontent.com/u/145168989?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 278,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774014191458,
+      "changelog": "xhs-writer 1.0.0\n\n- Initial release of an all-in-one Xiaohongshu (小红书/REDnote) content creation tool.\n- Generates a complete publishing kit in one step: viral title, body copy, hashtags, first-comment hook, multi-image Markdown, and visual style parameters.\n- Covers tech/AI, knowledge, lifestyle, travel, and general topics.\n- Fully offline; no external tools, API, cookies, or browser required.\n- Includes internal templates and style/theme libraries for dynamic, high-quality outputs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:80e1a9c76785460b25332f5ab513e56893b8086728f73cf246e6f8800ccb4ca9"
+}

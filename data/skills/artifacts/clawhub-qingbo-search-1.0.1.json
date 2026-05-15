@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qingbo-search@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qingbo_search",
+  "skill": {
+    "id": 70099,
+    "skillKey": "clawhub-qingbo-search",
+    "name": "Qingbo Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qingbo-search",
+    "url": "https://clawhub.ai/skills/qingbo-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qingbo-search-1fa8c9d89be768d9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过清博开放平台，根据关键词、时间和媒体类型检索并返回相关网络文章标题、链接及发布时间等信息。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangqiang327",
+      "userId": "s1701abppza4k121r0s2bpzm5s83yw94",
+      "displayName": "zhangqiang327",
+      "image": "https://avatars.githubusercontent.com/u/201034195?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 414,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772617461379,
+      "changelog": "- Added metadata file (_meta.json) to the project.\n- No changes to skill features or usage; documentation and functionality remain the same.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:00f776ed9679bbd41f6370c4b26cbcd621ab53b21429a97bd4e25f79a9b108a1"
+}

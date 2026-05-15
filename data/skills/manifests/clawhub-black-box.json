@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17570,
+  "uuid": "skill-clawhub-black-box",
+  "skillKey": "clawhub-black-box",
+  "name": "black-box",
+  "summary": "Indestructible audit logs for agent actions, stored in TiDB Zero.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.black_box",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lux",
+      "features": [
+        "Indestructible audit logs for agent actions, stored in TiDB Zero."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/black-box@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20071273?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "black-box",
+      "url": "https://clawhub.ai/skills/black-box"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "black-box",
+    "url": "https://clawhub.ai/skills/black-box",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/black-box-4a56680142ef4a2f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/black-box@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-black-box-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:873ae5dcce00032387ba978f41c6841e31893af380045b96926dd041e13cf6fc",
+      "artifactSizeBytes": 1756
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T18:55:12.889Z"
+}

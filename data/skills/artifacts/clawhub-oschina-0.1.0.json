@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oschina@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oschina",
+  "skill": {
+    "id": 71578,
+    "skillKey": "clawhub-oschina",
+    "name": "Oschina"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oschina",
+    "url": "https://clawhub.ai/skills/oschina",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oschina-94b377d9c64df9fc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供开源中国公开项目和技术文章的关键词检索、项目摘要及技术文章要点提取服务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codekungfu",
+      "userId": "s174hbct7jzfnq4tb6w04gnans83gh5h",
+      "displayName": "ClawKK",
+      "image": "https://avatars.githubusercontent.com/u/111570001?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 241,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773740991481,
+      "changelog": "- Initial release of oschina-hot-trend skill.\n- Enables search and summarization of open source projects and tech articles from 开源中国 (oschina.net).\n- Provides project and article metadata extraction, trend statistics, and lightweight information aggregation.\n- Designed for manual, individual page processing; avoids automated bulk scraping or reverse engineering.\n- Includes clear guidance on task types, supported fields, and compliance boundaries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b33f37529f8152c8d5d4f3998bb6d0116bf34cb4d14dd3884f9aed46e528f20c"
+}

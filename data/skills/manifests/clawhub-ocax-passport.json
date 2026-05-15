@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30761,
+  "uuid": "skill-clawhub-ocax-passport",
+  "skillKey": "clawhub-ocax-passport",
+  "name": "OCAX Passport",
+  "summary": "Generate and manage node passports showing hardware info, reputation score, supported task types, and auto-update node data.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ocax_passport",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "catcherintheroad-hub",
+      "features": [
+        "Generate and manage node passports showing hardware info, reputation score, supported task type."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ocax-passport@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264535810?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ocax-passport",
+      "url": "https://clawhub.ai/skills/ocax-passport"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ocax-passport",
+    "url": "https://clawhub.ai/skills/ocax-passport",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ocax-passport-d997cc674a88f25f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ocax-passport@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ocax-passport-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:011246e0abbdca0dfdc07012238dca44c57d53a7ac4d12c40b556d05b1dd4b7e",
+      "artifactSizeBytes": 2263
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T03:32:12.858Z"
+}

@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "iam-policy-auditor",
+    "displayName": "Iam Policy Auditor",
+    "summary": "Audit AWS IAM policies and roles for over-privilege, wildcard permissions, and least-privilege violations",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 528,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1772341539961,
+    "updatedAt": 1777616003384
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1772341539961,
+    "changelog": "Initial release of aws-iam-policy-auditor skill.\n\n- Audits AWS IAM policies for over-privilege, wildcard permissions, and least-privilege violations.\n- Flags high-risk patterns such as `\"Action\": \"*\"` and sensitive actions without conditions.\n- Maps identified risks to MITRE ATT&CK Cloud techniques.\n- Generates least-privilege replacement policy JSON with inline comments.\n- Assigns a risk score (Critical/High/Medium/Low) with justification and summary of findings.\n- Outputs a detailed findings table, attack scenarios, and remediation recommendations.\n- Recommends enabling IAM Access Analyzer if not already active.",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "anmolnagpal",
+    "userId": "publishers:anmolnagpal",
+    "displayName": "Anmol Nagpal",
+    "image": "https://avatars.githubusercontent.com/u/4303310?v=4"
+  },
+  "moderation": null
+}

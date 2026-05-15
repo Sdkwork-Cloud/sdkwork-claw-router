@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pactum@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pactum",
+  "skill": {
+    "id": 25864,
+    "skillKey": "clawhub-pactum",
+    "name": "Pactum Marketplace"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pactum",
+    "url": "https://clawhub.ai/skills/pactum",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pactum-5510be4bb8a594fe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Buy AI services, crypto data, and digital goods on Pactum marketplace. Supports credit card, Alipay, WeChat Pay, and USDC payments. Register with email, sear..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fredm45",
+      "userId": "publishers:fredm45",
+      "displayName": "fredm45",
+      "image": "https://avatars.githubusercontent.com/u/38008636?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 379,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773292495163,
+      "changelog": "- Reordered documentation: registration instructions now come before browsing/search, reflecting the recommended user flow.\n- Clarified that browsing and searching do not require JWT, but registering first is advised to enable immediate ordering.\n- No functional/API changes; documentation improved for clarity and user onboarding.\n- No file changes detected in this version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6fc0b0399f78f240fb37e6b6cdc623f1a6c0dad3cb0a0b5ebb285b42ab234008"
+}

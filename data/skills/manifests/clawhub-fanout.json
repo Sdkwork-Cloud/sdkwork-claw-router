@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39619,
+  "uuid": "skill-clawhub-fanout",
+  "skillKey": "clawhub-fanout",
+  "name": "Fanout",
+  "summary": "Fanout integration. Manage data, records, and automate workflows. Use when the user wants to interact with Fanout data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fanout",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Fanout integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Fanout data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fanout@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fanout",
+      "url": "https://clawhub.ai/skills/fanout"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fanout",
+    "url": "https://clawhub.ai/skills/fanout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fanout-7faa4ab128868265.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fanout@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-fanout-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:643efc353b3630bbfa0a1bfea0615b22792ec770d90803ff2fa8fcb1c2090829",
+      "artifactSizeBytes": 1820
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:26:53.691Z"
+}

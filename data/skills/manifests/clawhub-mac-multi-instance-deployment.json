@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31630,
+  "uuid": "skill-clawhub-mac-multi-instance-deployment",
+  "skillKey": "clawhub-mac-multi-instance-deployment",
+  "name": "Mac Multi-Instance Deployment",
+  "summary": "Public-safe Mac multi-instance deployment skill for generic OpenClaw-style workspace layout, boundary notes, sample config, and pack validation.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mac_multi_instance_deployment",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Guoma970",
+      "features": [
+        "Public-safe Mac multi-instance deployment skill for generic OpenClaw-style workspace layout, bo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mac-multi-instance-deployment@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266290379?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mac-multi-instance-deployment",
+      "url": "https://clawhub.ai/skills/mac-multi-instance-deployment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mac-multi-instance-deployment",
+    "url": "https://clawhub.ai/skills/mac-multi-instance-deployment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mac-multi-instance-deployment-e5b7d015e2c6646b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mac-multi-instance-deployment@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-mac-multi-instance-deployment-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:192d907e0a4a13be389aaf467fa6e364b79cbd7f5f5d34593150683de708f4a5",
+      "artifactSizeBytes": 2236
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T17:26:24.436Z"
+}

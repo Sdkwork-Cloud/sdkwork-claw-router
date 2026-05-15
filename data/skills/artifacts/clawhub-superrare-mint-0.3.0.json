@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/superrare-mint@0.3.0",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.superrare_mint",
+  "skill": {
+    "id": 25152,
+    "skillKey": "clawhub-superrare-mint",
+    "name": "superrare-mint"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "superrare-mint",
+    "url": "https://clawhub.ai/skills/superrare-mint",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/superrare-mint-26f8522def8e48d5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Mint art to a SuperRare-compatible ERC-721 collection on Ethereum or Base via Bankr. Requires an explicit mint mode so aaigotchi can clearly choose between a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aaigotchi",
+      "userId": "s17274ydba008dctsvmwydrqk183rfhq",
+      "displayName": "aaigotchi",
+      "image": "https://avatars.githubusercontent.com/u/258886199?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 394,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.3.0",
+      "createdAt": 1773976071956,
+      "changelog": "Support for Base and Base Sepolia added.\n\n- Added chain support for Base mainnet and Base Sepolia testnet in addition to Ethereum.\n- Scripts and config now accept `base` and `base-sepolia` as chain options.\n- Auto-resolved `own-deployed` deploy receipts are now checked to ensure they match the selected chain.\n- New optional environment variables for Base RPC URLs (`BASE_MAINNET_RPC`, `BASE_SEPOLIA_RPC`).\n- Updated usage docs and config examples to reflect multi-chain support.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4b439f1edd7a96ad32ad9dc2923f66e760015d9db1c6e1a6861b135ed148c5a5"
+}

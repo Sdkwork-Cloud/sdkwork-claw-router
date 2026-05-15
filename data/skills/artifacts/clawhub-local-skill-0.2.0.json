@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/local-skill@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_skill",
+  "skill": {
+    "id": 38271,
+    "skillKey": "clawhub-local-skill",
+    "name": "local-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-skill",
+    "url": "https://clawhub.ai/skills/local-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-skill-2142937ed12ff282.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local skill repository for publish and pre-publish inspection. Provides inspectSkill and summarizeSkill utilities."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "li-chi",
+      "userId": "s17c2cf7j0t6s1wvbkabgk5eys83n8yr",
+      "displayName": "Chi Li",
+      "image": "https://avatars.githubusercontent.com/u/10106088?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1775800920170,
+      "changelog": "Initial publish: scaffold, inspection utilities, release-check workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:434a7ac09ff961a5c67d06d0968ae79bb738aff2f1606b4172e7b95137a9229d"
+}

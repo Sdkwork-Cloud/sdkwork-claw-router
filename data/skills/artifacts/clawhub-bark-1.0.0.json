@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bark@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bark",
+  "skill": {
+    "id": 36320,
+    "skillKey": "clawhub-bark",
+    "name": "Bark Notifications"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bark",
+    "url": "https://clawhub.ai/skills/bark",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bark-14ea6507645c2ba7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send push notifications to iOS devices via Bark app (https://github.com/Finb/Bark). Use when user asks to push a notification to their iPhone, send a Bark no..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yanbo92",
+      "userId": "s175hnpk5ndkg9kjymx2spqd6d83gk7j",
+      "displayName": "yanbo92",
+      "image": "https://avatars.githubusercontent.com/u/70509993?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775215704511,
+      "changelog": "- Initial release of the Bark skill for sending push notifications to iOS devices via the Bark app.\n- Supports setup and storage of Bark key in `~/.bark/key`, prompting users if not found.\n- Provides concise instructions for both quick GET-based notifications and more robust POST-based notifications (for special characters and multiline content).\n- Allows customization with parameters such as title, subtitle, URL, sound, group, level, and critical alert.\n- Includes user guidance for first-time setup and handling of missing Bark key.\n- Designed to be triggered by phrases like \"push to iPhone\", \"send a Bark notification\", or \"bark一下\".",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4ff6a10b6fe3497e30ce21a2a340be955f96e59cd8d1d39655ba7b6dbede7cfa"
+}

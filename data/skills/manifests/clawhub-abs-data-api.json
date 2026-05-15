@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26095,
+  "uuid": "skill-clawhub-abs-data-api",
+  "skillKey": "clawhub-abs-data-api",
+  "name": "Abs Data Api",
+  "summary": "Query Australian Bureau of Statistics (ABS) datasets via natural language and return data with citations. Use when: (1) the user asks about Australian econom...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abs_data_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BillyBodean",
+      "features": [
+        "Query Australian Bureau of Statistics (ABS) datasets via natural language and return data with.",
+        "Use when: (1) the user asks about Australian econom..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/abs-data-api@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226299259?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "abs-data-api",
+      "url": "https://clawhub.ai/skills/abs-data-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abs-data-api",
+    "url": "https://clawhub.ai/skills/abs-data-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abs-data-api-6bb3175bde23d705.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/abs-data-api@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-abs-data-api-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5039131784f8b4fe40eaa9bd0ca0669432e65de329c8a62ca2665d717dd9dcb8",
+      "artifactSizeBytes": 1978
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T06:26:07.476Z"
+}

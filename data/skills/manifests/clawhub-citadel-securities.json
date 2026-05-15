@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54288,
+  "uuid": "skill-clawhub-citadel-securities",
+  "skillKey": "clawhub-citadel-securities",
+  "name": "Citadel Securities",
+  "summary": "Market maker handling 25-30% of US equity trades, providing liquidity via trading profits and payment for order flow from retail brokers.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.citadel_securities",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Market maker handling 25-30% of US equity trades, providing liquidity via trading profits and p."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/citadel-securities@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "citadel-securities",
+      "url": "https://clawhub.ai/skills/citadel-securities"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "citadel-securities",
+    "url": "https://clawhub.ai/skills/citadel-securities",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/citadel-securities-bf52801823d4b934.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/citadel-securities@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-citadel-securities-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc37d792532049e6a183b9d6922b69dd7e492471fa1fea7584556ac9efc088ce",
+      "artifactSizeBytes": 2462
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T12:04:38.875Z"
+}

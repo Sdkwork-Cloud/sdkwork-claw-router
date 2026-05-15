@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/junyi-client-followup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.junyi_client_followup",
+  "skill": {
+    "id": 70309,
+    "skillKey": "clawhub-junyi-client-followup",
+    "name": "Junyi Client Follow-up"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "junyi-client-followup",
+    "url": "https://clawhub.ai/skills/junyi-client-followup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/junyi-client-followup-41962e12b2b91237.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "儿童成长规划月度跟进工具（客户版）。定时发送复盘问卷、收集家长反馈、格式化整理后转发给规划师。不做评估、不做策略调整、不改报告。覆盖 0-8 岁。触发词：月度跟进、成长复盘、followup、跟进一下孩子、复盘一下、发问卷。不处理：出规划、评估进展、修改报告、医学诊断。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xuanranc",
+      "userId": "s17af5873bwadys51t8kxprvwh8572s7",
+      "displayName": "XuanranC",
+      "image": "https://avatars.githubusercontent.com/u/263349330?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774082717608,
+      "changelog": "Initial release: 儿童成长规划月度跟进问卷收集器",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a3988add4225d702ccfbae5f15e153e7c7358b659a24cb17cc4cdb86dcf48977"
+}

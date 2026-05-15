@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/model-advisor@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_advisor",
+  "skill": {
+    "id": 63706,
+    "skillKey": "clawhub-model-advisor",
+    "name": "Model Advisor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-advisor",
+    "url": "https://clawhub.ai/skills/model-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-advisor-1e7cd331769ffbe0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "模型推荐 + OpenClaw 安全系数分析工具。当用户询问\"用哪个模型\"、\"推荐模型\"、\"适合什么模型\"、\"安全系数\"、\"openclaw 安全\"、\"根据历史\"时触发。功能：(1) 根据历史会话自动分析任务类型并推荐最优的 Claude 模型（auto 模式），(2) 根据用户描述的任务推荐最优模型（recom..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mrkangzubin",
+      "userId": "publishers:mrkangzubin",
+      "displayName": "MrKangZuBin",
+      "image": "https://avatars.githubusercontent.com/u/21353325?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 406,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773129674744,
+      "changelog": "Initial release of model-advisor skill.\n\n- Automatically recommends the best Claude model based on recent user task history or specified task description.\n- Analyzes OpenClaw security settings from local configuration and outputs a security score (0-100) with improvement suggestions.\n- Supports four modes: history-based recommendation, description-based recommendation, security score, and full report.\n- Provides reference tables for model selection and security evaluation dimensions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c8d1cef5a693f5432d43ec5de4c0608d7264e752b2c402a8f05f397fad1269bf"
+}

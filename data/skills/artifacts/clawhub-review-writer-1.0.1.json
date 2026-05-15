@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/review-writer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.review_writer",
+  "skill": {
+    "id": 58056,
+    "skillKey": "clawhub-review-writer",
+    "name": "review-writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "review-writer",
+    "url": "https://clawhub.ai/skills/review-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/review-writer-9ca8c6ca73f80c01.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Data-driven writing and polishing for professional workplace documents. Use when the user asks to write or refine: (1) 述职/复盘/年终总结, (2) 简历/项目经历/STAR 改写, (3) 周..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ykitty",
+      "userId": "s176zs05b98499pa9m6fqgybrx84r4by",
+      "displayName": "strive",
+      "image": "https://avatars.githubusercontent.com/u/39054087?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 188,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776061735338,
+      "changelog": "- No user-facing changes.  \n- No file or documentation updates in this version.  \n- Version bump only; functionality and features remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1104d3aa232bb2dcc093d47645890e186f637195a2b678ad2940dc82dea63d3e"
+}

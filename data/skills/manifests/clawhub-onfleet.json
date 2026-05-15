@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30643,
+  "uuid": "skill-clawhub-onfleet",
+  "skillKey": "clawhub-onfleet",
+  "name": "Onfleet",
+  "summary": "Onfleet integration. Manage Organizations. Use when the user wants to interact with Onfleet data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.onfleet",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Onfleet integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Onfleet data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/onfleet@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "onfleet",
+      "url": "https://clawhub.ai/skills/onfleet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "onfleet",
+    "url": "https://clawhub.ai/skills/onfleet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/onfleet-1d222df1f19fad71.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/onfleet@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-onfleet-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b393c1c0eaeb803ba19b317181c21c69413123bfd10572a16ad184c4164d95a9",
+      "artifactSizeBytes": 1797
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:19:24.528Z"
+}

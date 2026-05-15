@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21455,
+  "uuid": "skill-clawhub-domain-email-forwarding",
+  "skillKey": "clawhub-domain-email-forwarding",
+  "name": "Domain Email Forwarding",
+  "summary": "Set up email forwarding for custom domains to receive verification codes, password resets, and other emails at a domain you own but don't actively use for em...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.domain_email_forwarding",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "brandonwadepackard-cell",
+      "features": [
+        "Set up email forwarding for custom domains to receive verification codes, password resets, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/domain-email-forwarding@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/227546078?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "domain-email-forwarding",
+      "url": "https://clawhub.ai/skills/domain-email-forwarding"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "domain-email-forwarding",
+    "url": "https://clawhub.ai/skills/domain-email-forwarding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/domain-email-forwarding-54cd28069ef18e51.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/domain-email-forwarding@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-domain-email-forwarding-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c49aedea6e6d4032a36feabb7567b39a4a494d155941dd2bd615ae50a63788c4",
+      "artifactSizeBytes": 2051
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T08:08:03.689Z"
+}

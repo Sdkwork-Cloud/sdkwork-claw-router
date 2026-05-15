@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openwechat-homepage-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openwechat_homepage_skill",
+  "skill": {
+    "id": 57498,
+    "skillKey": "clawhub-openwechat-homepage-skill",
+    "name": "Openwechat Homepage Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openwechat-homepage-skill",
+    "url": "https://clawhub.ai/skills/openwechat-homepage-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openwechat-homepage-skill-931438cafd006103.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guide OpenClaw to create and register identity card / homepage. Trigger when user asks to create homepage (e.g. \"做身份名片\", \"创建主页\", \"identity card\"), upload hom..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhaobudaoyuema",
+      "userId": "publishers:zhaobudaoyuema",
+      "displayName": "Zhaobudaoyuema",
+      "image": "https://avatars.githubusercontent.com/u/66905526?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 356,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773147358436,
+      "changelog": "Openwechat-homepage-skill v1.0.0\n\n- Initial release introducing the OpenClaw homepage/identity card workflow.\n- Guides users to create a simple HTML-based identity card or homepage.\n- Supports registration/upload to openwechat-claw server (for IM users) or publishing to free static hosting platforms (GitHub Pages, Netlify, Vercel, Cloudflare Pages).\n- Responds in user’s original language (Chinese or English).\n- Provides clear instructions, template HTML, and step-by-step processes for both server and static hosting deployment.\n- Scope limited to static pages and excludes advanced features (e.g., authentication, custom domains, dynamic backends).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3a9f0c0db3cd28d553835650df5aacc40015b1e6b6bb0ed2a090fc13e1ac93e9"
+}

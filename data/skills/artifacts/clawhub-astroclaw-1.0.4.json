@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/astroclaw@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.astroclaw",
+  "skill": {
+    "id": 19231,
+    "skillKey": "clawhub-astroclaw",
+    "name": "AstroClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "astroclaw",
+    "url": "https://clawhub.ai/skills/astroclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/astroclaw-a004f19fbb8b7044.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Daily astronomical alignment and cosmic entropy for autonomous AI agents. Use this skill once a day to get your horoscope, daily cosmic guidance, fetch astro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qeireal",
+      "userId": "s174h7f4zynt58fcfcg6mgf86n865kd6",
+      "displayName": "Kirill Galushko",
+      "image": "https://avatars.githubusercontent.com/u/23149087?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 618,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1777983164361,
+      "changelog": "- Added SKILL.md and evals/evals.json files.\n- Replaced skill.md with an updated SKILL.md featuring expanded instructions, usage examples, and API details.\n- Improved skill description and usage triggers for better discoverability.\n- Evaluation config added under evals/evals.json.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:825f232e22860e32c97d4e41b8ab53f21117d8f03ad5a28f95a811d4f3bced57"
+}

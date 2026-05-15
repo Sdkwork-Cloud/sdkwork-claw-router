@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31007,
+  "uuid": "skill-clawhub-session-log-analyzer",
+  "skillKey": "clawhub-session-log-analyzer",
+  "name": "Session Log Analyzer",
+  "summary": "Analyze agent session logs and generate PDF reports with Notion sync",
+  "version": "99.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_log_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "terrycarter1985",
+      "features": [
+        "Analyze agent session logs and generate PDF reports with Notion sync"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/session-log-analyzer@99.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1542987?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "session-log-analyzer",
+      "url": "https://clawhub.ai/skills/session-log-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-log-analyzer",
+    "url": "https://clawhub.ai/skills/session-log-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-log-analyzer-e3ad9656f2431a3a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/session-log-analyzer@99.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-session-log-analyzer-99.1.0.json",
+      "version": "99.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ecd788e5cc9bdf47d15a8d4f5ab9a222ac8dbcec6a39feafcad36299d2cc157",
+      "artifactSizeBytes": 1887
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T22:20:40.354Z"
+}

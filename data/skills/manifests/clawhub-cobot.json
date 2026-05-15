@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32470,
+  "uuid": "skill-clawhub-cobot",
+  "skillKey": "clawhub-cobot",
+  "name": "Cobot",
+  "summary": "Collaborative robot task planner. Use when json cobot tasks, csv cobot tasks, checking cobot status.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cobot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "Collaborative robot task planner",
+        "Use when json cobot tasks, csv cobot tasks, checking cobot status."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cobot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cobot",
+      "url": "https://clawhub.ai/skills/cobot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cobot",
+    "url": "https://clawhub.ai/skills/cobot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cobot-0a2edc94f360c701.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cobot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cobot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b1de3f44f8696b94b6d6721366229b126970bce8da3819d68ef61458875cc5ae",
+      "artifactSizeBytes": 1762
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T19:19:20.072Z"
+}

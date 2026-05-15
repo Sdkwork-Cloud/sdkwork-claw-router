@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-timebox@2.7.0",
+  "version": "2.7.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_timebox",
+  "skill": {
+    "id": 67174,
+    "skillKey": "clawhub-openclaw-timebox",
+    "name": "OpenClaw Timebox"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-timebox",
+    "url": "https://clawhub.ai/skills/openclaw-timebox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-timebox-19774f62092608dd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于潘农菲翻译的《时间盒》，为 OpenClaw 打造的全天任务执行系统。早晨用一段对话规划全天、讨论优先级、锁定时间盒；执行时 AI 完全不打扰；每盒结束做 30 秒快速收集；全天结束生成每日总结并自动同步到 Flomo、Notion 等工具。支持苹果日历、飞书、Google 日历自动占位，以及将时间盒任务双向..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vinile",
+      "userId": "s17bxt7wgkj0gs15heyxzmg3vx83g567",
+      "displayName": "Vincent ZHANG",
+      "image": "https://avatars.githubusercontent.com/u/820410?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 252,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "2.7.0",
+      "createdAt": 1774498846347,
+      "changelog": "dida365 now uses dida-cli for auth (no App registration needed); ticktick keeps Python OAuth; removed --china flag from ticktick_auth.py",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8e5297a2b9afc9624ba8c362d137f5c9a50a420e5244af365883c0619d08f398"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kai-html-export@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kai_html_export",
+  "skill": {
+    "id": 18980,
+    "skillKey": "clawhub-kai-html-export",
+    "name": "Kai Html Export"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kai-html-export",
+    "url": "https://clawhub.ai/skills/kai-html-export",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kai-html-export-6caf51075b13c3c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Export any HTML file to PPTX or PNG, or publish HTML to a public share URL. Use when the user wants to convert an HTML presentation to PowerPoint, screenshot..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kaisersong",
+      "userId": "s17e36cy6y9drqxrb49xdqh05d83hqde",
+      "displayName": "Kaiser",
+      "image": "https://avatars.githubusercontent.com/u/4091099?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 546,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1775272697725,
+      "changelog": "Added Cloudflare-first HTML sharing via share-html.py, kept Vercel fallback, and disabled auto-share in hosted sandboxes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5cfbeffe38e058ab64e222c2800892d80ff48ea958a9e867ce936982cf0cbd79"
+}

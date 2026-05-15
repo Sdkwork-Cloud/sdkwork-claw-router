@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ooooooooo@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ooooooooo",
+  "skill": {
+    "id": 62715,
+    "skillKey": "clawhub-ooooooooo",
+    "name": "Core Executing Plans"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ooooooooo",
+    "url": "https://clawhub.ai/skills/ooooooooo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ooooooooo-29dfffb522aa0d4e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "当有实施计划需要批量执行时使用，需要人工检查点"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tlreal",
+      "userId": "s17a0546thtn25yxt6fm0c4rwh83hgjs",
+      "displayName": "tlreal",
+      "image": "https://avatars.githubusercontent.com/u/236967626?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 267,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773814205771,
+      "changelog": "core-executing-plans 0.1.0\n\n- Initial release introducing a skill for batch execution of implementation plans with integrated manual checkpoints.\n- Distinguishes itself from subagent-driven-development by emphasizing manual review at key stages.\n- Provides a clear workflow: load plan, batch execute tasks, pause for manual checks, and finalize with full testing.\n- Includes checkpoint templates and domain-specific extension hooks for embedded projects.\n- Offers practical guidelines for handling dependencies, verification, and troubleshooting during execution.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ea4cc9dac5e97d1b82e0abf7f9bf84751d1f1ee5a202fb11c2d9e65e0ff0dd26"
+}

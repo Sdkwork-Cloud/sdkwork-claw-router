@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11031,
+  "uuid": "skill-clawhub-summarize-file",
+  "skillKey": "clawhub-summarize-file",
+  "name": "Summarize File",
+  "summary": "Reads text files from workspace/paths and generates concise summaries. Handles logs, reports, CSVs, multi-line content.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.summarize_file",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Muhammad Muazzain",
+      "features": [
+        "Reads text files from workspace/paths and generates concise summaries",
+        "Handles logs, reports, CSVs, multi-line content."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/summarize-file@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/90068510?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "summarize-file",
+      "url": "https://clawhub.ai/skills/summarize-file"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "summarize-file",
+    "url": "https://clawhub.ai/skills/summarize-file",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/summarize-file-27ffb1b60434409c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/summarize-file@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-summarize-file-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d6d90b1b12267b324eb2f8491b5ef6373ad165d099317dd74b96f06b132bb4e8",
+      "artifactSizeBytes": 2248
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T22:42:59.632Z"
+}

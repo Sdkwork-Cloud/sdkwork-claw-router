@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-content-publisher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_content_publisher",
+  "skill": {
+    "id": 40783,
+    "skillKey": "clawhub-ai-content-publisher",
+    "name": "AI Content Publisher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-content-publisher",
+    "url": "https://clawhub.ai/skills/ai-content-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-content-publisher-35c376dfbcb0ed8d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Publish content to Medium, Dev.to, and Hashnode from markdown files. Handles formatting, SEO optimization, scheduling, and cross-posting with canonical URLs...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qoohsuan",
+      "userId": "s17716vf8bh77s3vpavep1kzfn83msft",
+      "displayName": "Qoohsuan",
+      "image": "https://avatars.githubusercontent.com/u/81729903?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774494729635,
+      "changelog": "Initial release: Multi-platform content publishing with SEO optimization and scheduling",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1cf9114d62d791f1f8d1c5e5f45b9557dcbe25565ebc046433eb8a82be7af5a1"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smyx-plant-growth-stage-recognition-analysis@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smyx_plant_growth_stage_recognition_analysis",
+  "skill": {
+    "id": 57666,
+    "skillKey": "clawhub-smyx-plant-growth-stage-recognition-analysis",
+    "name": "植物生长阶段识别技能"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smyx-plant-growth-stage-recognition-analysis",
+    "url": "https://clawhub.ai/skills/smyx-plant-growth-stage-recognition-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smyx-plant-growth-stage-recognition-analysis-c4db98675fb8b713.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Accurately identifies key growth stages of plants from germination to fruiting based on computer vision and deep learning, provides structured data for preci..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "smyx-sunjinhui",
+      "userId": "s17cfv2h26b7hq5w47tgfy23xx83z9x6",
+      "displayName": "smyx-sunjinhui",
+      "image": "https://avatars.githubusercontent.com/u/272464691?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 179,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777929520029,
+      "changelog": "- Updated configuration and utility scripts under `skills/smyx_common/scripts` to improve consistency and maintainability.\n- Made changes to config files (`config.yaml`, `config-dev.yaml`, `config-test.yaml`) and code to enhance settings management and environment support.\n- Refactored or improved portions of `skills/face_analysis/scripts/config.py` and `skills/face_analysis/scripts/skill.py` for better integration.\n- No user-facing behavioral changes; these updates are focused on internal structure and reliability improvements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:703d893cce45693ede1f3efac9bf9028c008a158852a1724aeed995395632525"
+}

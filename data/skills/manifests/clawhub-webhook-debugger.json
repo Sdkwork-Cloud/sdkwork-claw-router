@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21357,
+  "uuid": "skill-clawhub-webhook-debugger",
+  "skillKey": "clawhub-webhook-debugger",
+  "name": "Webhook Debugger",
+  "summary": "Test, debug, and inspect webhooks locally. Receive webhooks, inspect payloads, debug integrations, and replay requests. Essential for API development and thi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.webhook_debugger",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "沭河见闻",
+      "features": [
+        "Test, debug, and inspect webhooks locally",
+        "Receive webhooks, inspect payloads, debug integrations, and replay requests",
+        "Essential for API development and thi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/webhook-debugger@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38125955?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "webhook-debugger",
+      "url": "https://clawhub.ai/skills/webhook-debugger"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "webhook-debugger",
+    "url": "https://clawhub.ai/skills/webhook-debugger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/webhook-debugger-294fd8fe17b423b0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/webhook-debugger@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-webhook-debugger-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:99fd931b485d7e465dbe548355047e8085779f801abf48c38c0825aa2cd7fb80",
+      "artifactSizeBytes": 2238
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T02:47:28.870Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hsyhp-skill-vetter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hsyhp_skill_vetter",
+  "skill": {
+    "id": 18666,
+    "skillKey": "clawhub-hsyhp-skill-vetter",
+    "name": "Skill Vetter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hsyhp-skill-vetter",
+    "url": "https://clawhub.ai/skills/hsyhp-skill-vetter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hsyhp-skill-vetter-a30ea12da276a049.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Security-first skill vetting for AI agents. Use before installing any skill from ClawdHub, GitHub, or other sources. Checks for red flags, permission scope,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hsyhph",
+      "userId": "s177fkfb3339cez7neb1kaj1f183g848",
+      "displayName": "hsyhph",
+      "image": "https://avatars.githubusercontent.com/u/73018559?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 651,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774780314369,
+      "changelog": "Skill Vetter v1.0.0 – Initial Release\n\n- Introduces a security-first protocol for vetting AI agent skills before installation.\n- Provides a structured, step-by-step vetting process: source check, code review, permission scope evaluation, and risk classification.\n- Defines clear red flags and suspicious patterns to look for during code review.\n- Includes a standardized output format for vetting reports.\n- Offers quick vetting commands and a trust hierarchy for assessing skill sources.\n- Emphasizes strict caution and documentation when handling untrusted or sensitive skills.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ed5a01dbd43855476b1d6ee7ac27d5f81bd71fa9fca231ea96332e0685bc713d"
+}

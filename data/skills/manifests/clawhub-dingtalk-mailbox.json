@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68059,
+  "uuid": "skill-clawhub-dingtalk-mailbox",
+  "skillKey": "clawhub-dingtalk-mailbox",
+  "name": "dingtalk mailbox",
+  "summary": "钉钉邮箱访问skill，使用mcporter调用钉钉邮箱MCP服务。支持查询可用邮箱列表、搜索邮件（类KQL表达式）、获取邮件详情、发送邮件。适用于需要通过AI助手管理钉钉邮箱的场景，如查询邮件、自动回复、邮件归档等。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dingtalk_mailbox",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JackeyLee007",
+      "features": [
+        "钉钉邮箱访问skill，使用mcporter调用钉钉邮箱MCP服务。支持查询可用邮箱列表、搜索邮件（类KQL表达式）、获取邮件详情、发送邮件。适用于需要通过AI助手管理钉钉邮箱的场景，如查询."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dingtalk-mailbox@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1195708?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dingtalk-mailbox",
+      "url": "https://clawhub.ai/skills/dingtalk-mailbox"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dingtalk-mailbox",
+    "url": "https://clawhub.ai/skills/dingtalk-mailbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dingtalk-mailbox-594d19d62ac89df8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dingtalk-mailbox@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dingtalk-mailbox-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf5bd40a7a1191264501887b1d80f45690744300a103118883d0a7d2e506c3a1",
+      "artifactSizeBytes": 2028
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T08:31:07.824Z"
+}

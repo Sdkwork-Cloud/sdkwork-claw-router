@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meta-ads-analytics@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meta_ads_analytics",
+  "skill": {
+    "id": 14963,
+    "skillKey": "clawhub-meta-ads-analytics",
+    "name": "Meta Ads Analytics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meta-ads-analytics",
+    "url": "https://clawhub.ai/skills/meta-ads-analytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meta-ads-analytics-c003564fd75cf283.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Le campanhas, conjuntos, anuncios e criativos no Meta Ads para diagnostico, relatorios e recomendacoes operacionais usando somente o MCP brijr/meta-mcp."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "moskoweb",
+      "userId": "s173c87jrhz6e80efw6wddv4tx84e427",
+      "displayName": "Alan Mosko",
+      "image": "https://avatars.githubusercontent.com/u/6052272?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1095,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773497005168,
+      "changelog": "Initial release of meta-ads-analytics:\n\n- Enables reading and diagnostic analysis of Meta Ads campaigns, ad sets, ads, and creatives using only the MCP brijr/meta-mcp.\n- Provides structured operational intelligence: produces diagnostics, reports, and actionable recommendations.\n- Distinguishes clearly between observation, hypothesis, and recommended action.\n- Designed exclusively for analytics, not for campaign structure creation or editing.\n- Workflow emphasizes identifying business objectives, funnel bottlenecks, probable causes, and delivering next steps.\n- Includes references and tool list for comprehensive Meta Ads performance analysis.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3a077c68f40e03048a65a14388ae5bb34f2c3d991032caba105b1be8e758d1a5"
+}

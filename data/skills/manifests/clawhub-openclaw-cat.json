@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22974,
+  "uuid": "skill-clawhub-openclaw-cat",
+  "skillKey": "clawhub-openclaw-cat",
+  "name": "Openclaw Cat",
+  "summary": "Cat Life Status Query Skill. Triggers when you send /cat command or ask about your cat. The skill calls the underlying LLM model to interact with you as a sa...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_cat",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tony888880lang",
+      "features": [
+        "Cat Life Status Query Skill",
+        "Triggers when you send /cat command or ask about your cat",
+        "The skill calls the underlying LLM model to interact with you as a sa..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-cat@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/207044259?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-cat",
+      "url": "https://clawhub.ai/skills/openclaw-cat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-cat",
+    "url": "https://clawhub.ai/skills/openclaw-cat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-cat-a91d587794620af3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-cat@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-cat-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:14c2e0d11f1a73857096106f266d2a0479ddae9fa5ac497d9391edd55825a9a0",
+      "artifactSizeBytes": 2125
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T03:28:06.890Z"
+}

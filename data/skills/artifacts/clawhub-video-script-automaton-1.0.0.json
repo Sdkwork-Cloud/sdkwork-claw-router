@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-script-automaton@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_script_automaton",
+  "skill": {
+    "id": 43610,
+    "skillKey": "clawhub-video-script-automaton",
+    "name": "Video Script Automaton"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-script-automaton",
+    "url": "https://clawhub.ai/skills/video-script-automaton",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-script-automaton-02fdb2c0dd46df04.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate text or topic into scripted video ready with this skill. Works with MP4, MOV, TXT, DOCX files up to 200MB. YouTubers, marketers, content creators us..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vynbosserman65",
+      "userId": "s175xbynxxje7z8y8jbn28x5vx84dckp",
+      "displayName": "vynbosserman65",
+      "image": "https://avatars.githubusercontent.com/u/208823770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776442600184,
+      "changelog": "Initial release of Video Script Automaton — quickly generate scripts and produce video files from your text or topic.\n\n- Automates AI-generated video scripts and exports 1080p MP4, MOV, TXT, or DOCX up to 200MB.\n- Supports uploading files, batch processing, and iterative editing—users can refine scripts and preview timeline changes.\n- Integrates with a cloud render pipeline for fast processing (20–40 seconds for typical jobs).\n- Simple onboarding: auto-generates credentials if no token is found and handles session setup seamlessly.\n- Exposes export, credits, status, and upload actions through guided prompts in multiple languages.\n- Robust error handling for sessions, tokens, credits, and file uploads with clear, actionable messages.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1a3273512f92420bc896f11d17885e2b078774a5acd5b8d470c34cc8a6c1846b"
+}

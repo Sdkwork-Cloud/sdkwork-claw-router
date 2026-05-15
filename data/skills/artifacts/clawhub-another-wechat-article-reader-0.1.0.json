@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/another-wechat-article-reader@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.another_wechat_article_reader",
+  "skill": {
+    "id": 62265,
+    "skillKey": "clawhub-another-wechat-article-reader",
+    "name": "wechat-article-reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "another-wechat-article-reader",
+    "url": "https://clawhub.ai/skills/another-wechat-article-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/another-wechat-article-reader-d9ccf5964c5e08aa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "当用户提供微信公众号文章链接（URL 包含 mp.weixin.qq.com）时，必须使用此 skill 读取文章内容，禁止使用 web_fetch、web_search 或其他方式替代。本 skill 通过专用脚本稳定抓取并返回结构化结果，包括标题、发布时间、作者和正文。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pangahn",
+      "userId": "s17b66b8p971qwmxh99wh6c67h83jzag",
+      "displayName": "pangahn",
+      "image": "https://avatars.githubusercontent.com/u/16132124?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 471,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774107183632,
+      "changelog": "Initial release of WeChat Article Reader skill.\n\n- Reads and parses WeChat public article links (mp.weixin.qq.com) with a specialized script.\n- Returns structured results: title, author, publication time, full text, and metadata.\n- Mandatory usage for WeChat articles; prohibits circumvention via web_fetch, web_search, or other methods.\n- Handles WeChat anti-crawling mechanisms with request header spoofing and retry logic.\n- Command-line operation requires the uv environment and supports custom timeout and retry parameters.\n- Returns detailed logs and error information for troubleshooting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9ae467c97c4fc2ae84f13d287895f5a77fb51cc3815d47751154582889d418d1"
+}

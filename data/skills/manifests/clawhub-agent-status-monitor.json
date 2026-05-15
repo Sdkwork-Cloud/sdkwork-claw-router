@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64210,
+  "uuid": "skill-clawhub-agent-status-monitor",
+  "skillKey": "clawhub-agent-status-monitor",
+  "name": "Agent Status Monitor",
+  "summary": "检查本地开发 Agent 的运行和活动状态，显示工作中、等待中、闲置或未运行及会话数量详情。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_status_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Willin",
+      "features": [
+        "检查本地开发 Agent 的运行和活动状态，显示工作中、等待中、闲置或未运行及会话数量详情。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-status-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1890238?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-status-monitor",
+      "url": "https://clawhub.ai/skills/agent-status-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-status-monitor",
+    "url": "https://clawhub.ai/skills/agent-status-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-status-monitor-24db25bea219093a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-status-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-status-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b1945226fe99365f020b5369cde4007d5209132f07acf1c2b17f04546059604e",
+      "artifactSizeBytes": 2121
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T13:13:30.966Z"
+}

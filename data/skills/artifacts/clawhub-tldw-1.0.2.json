@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tldw@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tldw",
+  "skill": {
+    "id": 12588,
+    "skillKey": "clawhub-tldw",
+    "name": "tl;dw - YouTube Video Summarizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tldw",
+    "url": "https://clawhub.ai/skills/tldw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tldw-3e1d6c660e3567ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extracts YouTube video transcripts and provides concise summaries highlighting main points, arguments, and conclusions without watching the full video."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vovavvk",
+      "userId": "publishers:vovavvk",
+      "displayName": "vovavvk",
+      "image": "https://avatars.githubusercontent.com/u/33007437?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1712,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770277104446,
+      "changelog": "Initial release of tl-dw (tldw) YouTube video summarizer.\n\n- Extracts and summarizes YouTube video transcripts using yt-dlp and Python.\n- Supports caching, deduplication, and multi-format (VTT/SRT/JSON) transcript handling.\n- Allows access to age-restricted content with browser cookies.\n- Provides structured summaries including main points, key arguments, and conclusions.\n- Includes error handling for missing captions, age restrictions, network issues, and large transcripts.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ca0dddb8e47df29b6ae05989d899a1f450eeff5690f38fd5ea838a8cfb970e2f"
+}

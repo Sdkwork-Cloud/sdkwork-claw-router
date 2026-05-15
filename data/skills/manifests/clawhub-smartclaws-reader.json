@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37250,
+  "uuid": "skill-clawhub-smartclaws-reader",
+  "skillKey": "clawhub-smartclaws-reader",
+  "name": "Smartclaws Reader",
+  "summary": "Read and analyze IoT sensor data from SKALE blockchain via SmartClaws. Use when: querying sensor readings, asking about temperature or other measurements, an...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smartclaws_reader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dmytro",
+      "features": [
+        "Read and analyze IoT sensor data from SKALE blockchain via SmartClaws",
+        "Use when: querying sensor readings, asking about temperature or other measurements, an..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smartclaws-reader@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15244591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smartclaws-reader",
+      "url": "https://clawhub.ai/skills/smartclaws-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smartclaws-reader",
+    "url": "https://clawhub.ai/skills/smartclaws-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smartclaws-reader-563265f0aa288470.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smartclaws-reader@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-smartclaws-reader-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c3c8297456657c1caeb96ea4e1697412797aac5bc636c19165785ba99a72067",
+      "artifactSizeBytes": 2228
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T10:45:25.324Z"
+}

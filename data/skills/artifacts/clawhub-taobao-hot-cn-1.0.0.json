@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/taobao-hot-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taobao_hot_cn",
+  "skill": {
+    "id": 12251,
+    "skillKey": "clawhub-taobao-hot-cn",
+    "name": "Taobao Hot Cn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taobao-hot-cn",
+    "url": "https://clawhub.ai/skills/taobao-hot-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taobao-hot-cn-d68569fa4e978508.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Taobao Hot Products Discovery - Find trending products, hot categories, and best deals"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guohongbin-git",
+      "userId": "s171qwkar0v16rk324ta5jz7wd83ts19",
+      "displayName": "Guohongbin",
+      "image": "https://avatars.githubusercontent.com/u/202475309?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1438,
+      "installsAllTime": 12,
+      "installsCurrent": 12,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771378068314,
+      "changelog": "Taobao Hot Products Discovery v1.0.0\n\n- Initial release with core features:\n  - Browse hot products by category\n  - View trending categories\n  - Analyze price trends for products\n  - Track seasonal trending products",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b6b5a8caa7659fc4edd731a097578a9d4608b6e78cf51da4a7c87b51ed1206f9"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15836,
+  "uuid": "skill-clawhub-bookkeeper",
+  "skillKey": "clawhub-bookkeeper",
+  "name": "Bookkeeper",
+  "summary": "Automates invoice intake from Gmail, extracts data via OCR, verifies payment in Stripe, and creates reconciliation-ready accounting entries in Xero.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bookkeeper",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hagen Hoferichter",
+      "features": [
+        "Automates invoice intake from Gmail, extracts data via OCR, verifies payment in Stripe, and cre."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bookkeeper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12556763?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bookkeeper",
+      "url": "https://clawhub.ai/skills/bookkeeper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bookkeeper",
+    "url": "https://clawhub.ai/skills/bookkeeper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bookkeeper-5687fc0c84b1cbb0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bookkeeper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bookkeeper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:13af840d31475dcadcc9209869cb7958d2b486865139aba1f39bbef18ce6e785",
+      "artifactSizeBytes": 2438
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T15:18:07.258Z"
+}

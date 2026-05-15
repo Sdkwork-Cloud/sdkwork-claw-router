@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23003,
+  "uuid": "skill-clawhub-isolved",
+  "skillKey": "clawhub-isolved",
+  "name": "Isolved",
+  "summary": "Isolved integration. Manage hris data, records, and workflows. Use when the user wants to interact with Isolved data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.isolved",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Isolved integration",
+        "Manage hris data, records, and workflows",
+        "Use when the user wants to interact with Isolved data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/isolved@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "isolved",
+      "url": "https://clawhub.ai/skills/isolved"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "isolved",
+    "url": "https://clawhub.ai/skills/isolved",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/isolved-df1192b8f1f0da24.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/isolved@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-isolved-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d52a662343d08daf2c1eaa30b4d58799bbb2174c85509c8d36e68219fb189a9",
+      "artifactSizeBytes": 1825
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:38:34.263Z"
+}

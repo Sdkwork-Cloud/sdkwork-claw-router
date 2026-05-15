@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8600,
+  "uuid": "skill-clawhub-supabase",
+  "skillKey": "clawhub-supabase",
+  "name": "Supabase",
+  "summary": "Connect to Supabase for database operations, vector search, and storage. Use for storing data, running SQL queries, similarity search with pgvector, and managing tables. Triggers on requests involving databases, vector stores, embeddings,.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.supabase",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lucas Synnott",
+      "features": [
+        "Connect to Supabase for database operations, vector search, and storage",
+        "Use for storing data, running SQL queries, similarity search with pgvector, and managing tables",
+        "Triggers on requests involving databases, vector stores, embeddings, or Supabase specifically."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/supabase@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3947311?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "supabase",
+      "url": "https://clawhub.ai/skills/supabase"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "supabase",
+    "url": "https://clawhub.ai/skills/supabase",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/supabase-4d7594e57f7d03f3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/supabase@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-supabase-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e1e3e33c8aa874b4d19a5f10c43447a9a5513cc2daed7e90f86d65c552f402c",
+      "artifactSizeBytes": 2006
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-13T22:20:53.358Z"
+}

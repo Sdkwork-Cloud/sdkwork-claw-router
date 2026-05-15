@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57651,
+  "uuid": "skill-clawhub-marswave-image-gen",
+  "skillKey": "clawhub-marswave-image-gen",
+  "name": "Image Gen",
+  "summary": "Generate AI images from text prompts. Triggers on: \"生成图片\", \"画一张\", \"AI图\", \"generate image\", \"配图\", \"create picture\", \"draw\", \"visualize\", \"generate an image\".",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.marswave_image_gen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "0xFango",
+      "features": [
+        "Generate AI images from text prompts",
+        "Triggers on: \"生成图片\", \"画一张\", \"AI图\", \"generate image\", \"配图\", \"create picture\", \"draw\", \"visualize."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/marswave-image-gen@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42994114?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "marswave-image-gen",
+      "url": "https://clawhub.ai/skills/marswave-image-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "marswave-image-gen",
+    "url": "https://clawhub.ai/skills/marswave-image-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/marswave-image-gen-f25d5f3f6b5d318b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/marswave-image-gen@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-marswave-image-gen-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9f04a9e374ffc1c8846d4d93732b6ac0b1bd5c0e4c6cd4185da9218e1af87f00",
+      "artifactSizeBytes": 2413
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T15:04:50.811Z"
+}

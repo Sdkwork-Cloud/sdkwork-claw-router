@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/instagram-photo-find@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.instagram_photo_find",
+  "skill": {
+    "id": 14546,
+    "skillKey": "clawhub-instagram-photo-find",
+    "name": "Instagram Photo Find"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "instagram-photo-find",
+    "url": "https://clawhub.ai/skills/instagram-photo-find",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/instagram-photo-find-0c66672df3bf9481.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find high-quality Instagram photos for any destination or place. Searches for Instagram posts via web search, downloads candidate images, vision-scores them..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "psyduckler",
+      "userId": "publishers:psyduckler",
+      "displayName": "psyduckler",
+      "image": "https://avatars.githubusercontent.com/u/260153069?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 882,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771202916061,
+      "changelog": "Initial release: find high-quality Instagram destination photos via web search + vision scoring",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:371d1d0e48c2cd44fb6bc2865ec7f0221656a44529f33e078ab5b3493ad167fb"
+}

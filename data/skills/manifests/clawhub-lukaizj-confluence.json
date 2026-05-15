@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45406,
+  "uuid": "skill-clawhub-lukaizj-confluence",
+  "skillKey": "clawhub-lukaizj-confluence",
+  "name": "Confluence Integration",
+  "summary": "Confluence REST API integration via curl - lightweight solution without Python dependencies. Supports search, page operations, and file attachments.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lukaizj_confluence",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lukaizj",
+      "features": [
+        "Confluence REST API integration via curl",
+        "lightweight solution without Python dependencies",
+        "Supports search, page operations, and file attachments."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lukaizj-confluence@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/92360203?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lukaizj-confluence",
+      "url": "https://clawhub.ai/skills/lukaizj-confluence"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lukaizj-confluence",
+    "url": "https://clawhub.ai/skills/lukaizj-confluence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lukaizj-confluence-e4bdc28e01590212.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lukaizj-confluence@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lukaizj-confluence-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7741e7edca6d65c719e5fee813008948238b1374309109df2d35a001b8daf5fa",
+      "artifactSizeBytes": 2342
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T09:09:24.773Z"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9458,
+  "uuid": "skill-clawhub-quo",
+  "skillKey": "clawhub-quo",
+  "name": "Quo",
+  "summary": "Quo API integration with managed OAuth. Manage calls, messages, contacts, and conversations for your business phone system. Use this skill when users want to...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byungkyu",
+      "features": [
+        "Quo API integration with managed OAuth",
+        "Manage calls, messages, contacts, and conversations for your business phone system",
+        "Use this skill when users want to..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quo@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16563684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quo",
+      "url": "https://clawhub.ai/skills/quo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quo",
+    "url": "https://clawhub.ai/skills/quo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quo-2901529c22b10096.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quo@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-quo-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4ca92d0a6d7b4a3ba82651994c65139a0e62f0d760a21d2dddb9515cd5a4af0",
+      "artifactSizeBytes": 2325
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T22:45:29.980Z"
+}

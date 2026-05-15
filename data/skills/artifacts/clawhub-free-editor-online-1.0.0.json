@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-editor-online@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_editor_online",
+  "skill": {
+    "id": 41294,
+    "skillKey": "clawhub-free-editor-online",
+    "name": "Free Editor Online"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-editor-online",
+    "url": "https://clawhub.ai/skills/free-editor-online",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-editor-online-bf8f0b5e60eb8d64.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "edit video clips into edited video clips with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. students and casual creators use it for editing r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775992083046,
+      "changelog": "Initial release of Free Editor Online — Edit and Export Videos Free:\n\n- Allows editing and exporting video clips (MP4, MOV, AVI, WebM, up to 500MB) to polished 1080p MP4 content on cloud GPUs, with 1-2 minute processing.\n- No account required: supports free anonymous setup with 100 credits and 7-day expiry.\n- Easy workflow: upload clips, describe your desired edits, and receive a ready-to-download MP4.\n- Handles common tasks like trimming silence, adding transitions, and overlaying text or audio.\n- Supports multiple file types for upload and export, and provides session-based editing for iterative workflows.\n- Clear feedback and error handling for file issues, credits, export restrictions, and session management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:43e02b37c219441cb7cfdd52c269e3b4a220a50fac6c9425b12b9f9e19d28dc8"
+}

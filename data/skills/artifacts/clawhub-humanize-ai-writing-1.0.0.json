@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/humanize-ai-writing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.humanize_ai_writing",
+  "skill": {
+    "id": 52663,
+    "skillKey": "clawhub-humanize-ai-writing",
+    "name": "Humanize Ai Writing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "humanize-ai-writing",
+    "url": "https://clawhub.ai/skills/humanize-ai-writing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/humanize-ai-writing-112091197beac389.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Rewrite AI-generated developer text to sound human — fix inflated language, filler, tautological docs, and robotic tone. Use after review-ai-writing identifi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anderskev",
+      "userId": "s17b1fzefm8nj8j1sdkzrze7gn83pfrg",
+      "displayName": "Kevin Anderson",
+      "image": "https://avatars.githubusercontent.com/u/17010022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775858051689,
+      "changelog": "Initial release of the \"humanize-ai-writing\" skill.\n\n- Automatically rewrites AI-generated developer docs to remove robotic tone, inflated language, filler, and tautologies.\n- Integrates with output from \"review-ai-writing\" to identify and correct problematic writing patterns.\n- Offers safe/risky fix classification with auto-apply for safe fixes and interactive prompts for riskier changes.\n- Supports filtering fixes by category and dry run mode for previewing changes.\n- Performs safety checks, validation, and reports a concise summary of applied and skipped changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3a28a97931aceef8642682765d72f0f775a843a83df5dcf9395f6261e46d1558"
+}

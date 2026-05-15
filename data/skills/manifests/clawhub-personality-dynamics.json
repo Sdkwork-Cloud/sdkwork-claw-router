@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14781,
+  "uuid": "skill-clawhub-personality-dynamics",
+  "skillKey": "clawhub-personality-dynamics",
+  "name": "Personality Dynamics",
+  "summary": "Adapts OpenClaw agents by learning user interaction patterns, switching personas by context, and evolving personality weekly.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personality_dynamics",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Neal Meyer",
+      "features": [
+        "Adapts OpenClaw agents by learning user interaction patterns, switching personas by context, an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/personality-dynamics@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3868701?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "personality-dynamics",
+      "url": "https://clawhub.ai/skills/personality-dynamics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personality-dynamics",
+    "url": "https://clawhub.ai/skills/personality-dynamics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personality-dynamics-0095b5e393b5c939.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/personality-dynamics@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-personality-dynamics-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:41725d944cc526721d6f81a4eeb39ab525a6bf8f8db4c3835b7073ca1fa7d18e",
+      "artifactSizeBytes": 2290
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T05:18:06.884Z"
+}

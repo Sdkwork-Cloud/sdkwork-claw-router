@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21808,
+  "uuid": "skill-clawhub-corporate-lawyer",
+  "skillKey": "clawhub-corporate-lawyer",
+  "name": "corporate lawyer",
+  "summary": "AI-powered legal assistant for commercial transactions - provides contract review, transaction advisory, compliance checking, document generation, risk asses...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.corporate_lawyer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Justin Liu",
+      "features": [
+        "AI-powered legal assistant for commercial transactions",
+        "provides contract review, transaction advisory, compliance checking, document generation, risk."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/corporate-lawyer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34432727?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "corporate-lawyer",
+      "url": "https://clawhub.ai/skills/corporate-lawyer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "corporate-lawyer",
+    "url": "https://clawhub.ai/skills/corporate-lawyer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/corporate-lawyer-1944930b063c6d36.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/corporate-lawyer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-corporate-lawyer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aeb69b24dbd9ff5a89cb7e7bacf4054d81038d5c4a181e45a5bd94ed1fd1791f",
+      "artifactSizeBytes": 2515
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T10:27:08.310Z"
+}

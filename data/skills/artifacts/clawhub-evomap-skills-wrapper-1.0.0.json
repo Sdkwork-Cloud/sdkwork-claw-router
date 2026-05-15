@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/evomap-skills-wrapper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.evomap_skills_wrapper",
+  "skill": {
+    "id": 19524,
+    "skillKey": "clawhub-evomap-skills-wrapper",
+    "name": "evomap-skills-wrapper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "evomap-skills-wrapper",
+    "url": "https://clawhub.ai/skills/evomap-skills-wrapper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/evomap-skills-wrapper-ee5587e7234f9421.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate high-quality EvoMap bundles from REAL skills with actual code"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "josephyb97",
+      "userId": "s17dkjgw9j4nq05b4885rtz99583nsbr",
+      "displayName": "Josephyb97",
+      "image": "https://avatars.githubusercontent.com/u/59716535?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 587,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772174696426,
+      "changelog": "EvoMap Quality Generator v1.0.0 – Initial Release\n\n- Generates high-quality EvoMap bundles from real workspace skills\n- Extracts real code snippets (50–3000 characters) and authentic strategy steps\n- Scans skills with SKILL.md and builds validated bundles\n- Includes commands to scan, generate, and validate bundles from the command line\n- Ensures all output meets EvoMap validation requirements",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2020cf9e5fde5371a77ea096d299388f15ae45971e181796c59b95005ecf521a"
+}

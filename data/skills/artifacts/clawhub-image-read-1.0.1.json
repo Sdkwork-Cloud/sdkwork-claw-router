@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-read@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_read",
+  "skill": {
+    "id": 63105,
+    "skillKey": "clawhub-image-read",
+    "name": "explain image"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-read",
+    "url": "https://clawhub.ai/skills/image-read",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-read-c76a7bcd22f7d7d2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用智谱AI的GLM-4V-Flash免费多模态API理解图片内容。当用户需要理解图片内容、描述图片、识别图中物体时使用此skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andyzwp",
+      "userId": "s17cc9q9dnayhjqa2cyt22fv2h843rvg",
+      "displayName": "andyzwp",
+      "image": "https://avatars.githubusercontent.com/u/35085062?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1789,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773213033446,
+      "changelog": "No changes detected in this version.\n\n- No file changes were made.\n- Functionality and documentation remain the same as the previous release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7faa20d3b28073e20d03c88f6ebed13f1ea9b381fec37034f18f88c6388900d0"
+}

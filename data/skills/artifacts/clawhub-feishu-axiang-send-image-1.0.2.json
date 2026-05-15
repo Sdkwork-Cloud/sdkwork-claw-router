@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-axiang-send-image@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_axiang_send_image",
+  "skill": {
+    "id": 68797,
+    "skillKey": "clawhub-feishu-axiang-send-image",
+    "name": "飞书图片发送技能"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-axiang-send-image",
+    "url": "https://clawhub.ai/skills/feishu-axiang-send-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-axiang-send-image-faab4830a24833fa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用自有飞书应用配置，上传并发送本地图片到指定飞书用户或群聊，支持PNG/JPG/GIF/WEBP格式。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "icesumer-lgtm",
+      "userId": "s177qrnn1tw4tydz6g6neevw0d83tmha",
+      "displayName": "icesumer-lgtm",
+      "image": "https://avatars.githubusercontent.com/u/262824601?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774769906724,
+      "changelog": "修复 v1.0.2 - 输出示例中的 Xiabi 改为用户名，axiang 改为 accountId，避免泄露具体用户信息",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:de24b57143cca18e9ad004ea1754503e7c958786e1a0b328a46a198fb66133bd"
+}

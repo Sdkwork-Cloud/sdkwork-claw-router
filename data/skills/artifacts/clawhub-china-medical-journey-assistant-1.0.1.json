@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/china-medical-journey-assistant@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_medical_journey_assistant",
+  "skill": {
+    "id": 25118,
+    "skillKey": "clawhub-china-medical-journey-assistant",
+    "name": "China Medical Journey Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-medical-journey-assistant",
+    "url": "https://clawhub.ai/skills/china-medical-journey-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-medical-journey-assistant-36fe7fad5fe1f344.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when foreign patients ask about treatment in China, need an initial China hospital shortlist, want help routing a condition to the right Chinese specialt..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "helenalhq",
+      "userId": "s17dzq3nm6d77cs658c55rwfns83j2mm",
+      "displayName": "helenalhq",
+      "image": "https://avatars.githubusercontent.com/u/258706524?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 295,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775207508640,
+      "changelog": "**Summary:** Initial release with major upgrade—introduces structured resources, stricter boundaries, and a standardized consultation workflow for China medical journey planning.\n\n- Added dedicated references for Fudan rankings, specialty mapping, search and visa policy, output contract, risk boundaries, CTA, and quality standards.\n- Defined new, layered answer structure: separates static rankings, confirmed official facts, and recommendations.\n- Introduced strict rules for visa answers and live info sourcing; avoids unverified or overpromised claims.\n- Enhanced targeting: distinguishes scenarios suitable for shortlist and pathway guidance versus formal or paid advice.\n- Improved clarity in when to provide ChinaMed CTA and how to handle under-specified or unsupported requests.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:42fc10cf0e6c4635ab47d4ede300de1b2ea8a51f6f61d0730c4c538bb40393cf"
+}

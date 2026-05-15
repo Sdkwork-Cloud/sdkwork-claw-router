@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72480,
+  "uuid": "skill-clawhub-gaokao-advisor",
+  "skillKey": "clawhub-gaokao-advisor",
+  "name": "gaokao-advisor中国高考志愿规划建议",
+  "summary": "高考志愿规划顾问。根据考生省份、科类、成绩/位次、意向专业和区域，联网检索招生计划和录取数据，生成个性化志愿填报推荐（含保研率、就业去向、薪资待遇、专业前景批判分析）。当用户询问高考志愿填报、院校选择、专业推荐时调用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gaokao_advisor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "edmandcui",
+      "features": [
+        "高考志愿规划顾问。根据考生省份、科类、成绩/位次、意向专业和区域，联网检索招生计划和录取数据，生成个性化志愿填报推荐（含保研率、就业去向、薪资待遇、专业前景批判分析）。当用户询问高考志愿填报."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gaokao-advisor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15006963?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gaokao-advisor",
+      "url": "https://clawhub.ai/skills/gaokao-advisor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gaokao-advisor",
+    "url": "https://clawhub.ai/skills/gaokao-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gaokao-advisor-ef5b426c05c118c4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gaokao-advisor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gaokao-advisor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:62a39761da8af489e3f5eb570fa367b33152883b2ca65c86894065046e42157e",
+      "artifactSizeBytes": 2996
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T02:18:33.821Z"
+}

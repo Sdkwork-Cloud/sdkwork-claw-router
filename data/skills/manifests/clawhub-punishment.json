@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56503,
+  "uuid": "skill-clawhub-punishment",
+  "skillKey": "clawhub-punishment",
+  "name": "Reward & Punishment System - Skill 奖惩技能",
+  "summary": "Tracks user praise (+10), criticism (-5), and insults (-10) to adjust a persistent score between 0 and 200 reflecting feedback and guide behavior improvement.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.punishment",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "XIAOke8698",
+      "features": [
+        "Tracks user praise (+10), criticism (-5), and insults (-10) to adjust a persistent score betwee."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/punishment@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/151462689?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "punishment",
+      "url": "https://clawhub.ai/skills/punishment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "punishment",
+    "url": "https://clawhub.ai/skills/punishment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/punishment-6fb778f0a581be75.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/punishment@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-punishment-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d41b69ad58754e3ab39c2abbffd17ff015366fe864080489a1f216114a22febb",
+      "artifactSizeBytes": 5225
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T12:07:12.687Z"
+}

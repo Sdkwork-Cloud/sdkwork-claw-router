@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72643,
+  "uuid": "skill-clawhub-maomao-weather",
+  "skillKey": "clawhub-maomao-weather",
+  "name": "weather",
+  "summary": "查询全球任何城市的当前天气情况。当用户询问天气、查询城市温度、了解气象状况时使用此技能。支持中文、英文、拼音输入，自动匹配最佳位置。默认查询北京。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maomao_weather",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SPrinG",
+      "features": [
+        "查询全球任何城市的当前天气情况。当用户询问天气、查询城市温度、了解气象状况时使用此技能。支持中文、英文、拼音输入，自动匹配最佳位置。默认查询北京。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/maomao-weather@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1070641?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "maomao-weather",
+      "url": "https://clawhub.ai/skills/maomao-weather"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maomao-weather",
+    "url": "https://clawhub.ai/skills/maomao-weather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maomao-weather-54ea86e39fc4e3b0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/maomao-weather@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-maomao-weather-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ffe8fde862d8160167b289f11c63a4bf9abaa82acf7db5441ba1ab13953530e8",
+      "artifactSizeBytes": 2402
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T11:19:07.233Z"
+}

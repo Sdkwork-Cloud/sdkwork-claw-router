@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29840,
+  "uuid": "skill-clawhub-alttextai",
+  "skillKey": "clawhub-alttextai",
+  "name": "Alttextai",
+  "summary": "AltText.ai integration. Manage data, records, and automate workflows. Use when the user wants to interact with AltText.ai data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alttextai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "AltText.ai integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with AltText.ai data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alttextai@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alttextai",
+      "url": "https://clawhub.ai/skills/alttextai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alttextai",
+    "url": "https://clawhub.ai/skills/alttextai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alttextai-145cf77f800f2bbb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alttextai@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-alttextai-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bffbd1fe21a76220db85c6d0abd698a2bb8547636cfb76efa61ab88d29fa8837",
+      "artifactSizeBytes": 1841
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:18:32.216Z"
+}

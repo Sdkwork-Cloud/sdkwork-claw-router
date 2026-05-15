@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65249,
+  "uuid": "skill-clawhub-wol-wakeup",
+  "skillKey": "clawhub-wol-wakeup",
+  "name": "WoL Wakeup",
+  "summary": "局域网唤醒 (WoL) 自动化技能。支持工作流模式和单行命令模式，多轮对话添加设备，无需大模型。使用方式：1) \"帮我开机\"→列表 2) \"开机 - 设备名\"→唤醒 3) \"添加网络唤醒\"→工作流 4) \"列表\"→查看 5) \"删除 - 设备名\"→删除",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wol_wakeup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sharecode",
+      "features": [
+        "局域网唤醒 (WoL) 自动化技能。支持工作流模式和单行命令模式，多轮对话添加设备，无需大模型。使用方式：1) \"帮我开机\"→列表 2) \"开机",
+        "设备名\"→唤醒 3) \"添加网络唤醒\"→工作流 4) \"列表\"→查看 5) \"删除"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wol-wakeup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67742893?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wol-wakeup",
+      "url": "https://clawhub.ai/skills/wol-wakeup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wol-wakeup",
+    "url": "https://clawhub.ai/skills/wol-wakeup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wol-wakeup-605b689088814705.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wol-wakeup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wol-wakeup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eed8a6b9d27c7b120d4c54d26ee7cbfa3f7e017fd31006391224e8542e26990b",
+      "artifactSizeBytes": 2063
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T05:40:59.226Z"
+}

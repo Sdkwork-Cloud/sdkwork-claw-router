@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nextjs-project-standard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nextjs_project_standard",
+  "skill": {
+    "id": 61290,
+    "skillKey": "clawhub-nextjs-project-standard",
+    "name": "Nextjs Project Standard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nextjs-project-standard",
+    "url": "https://clawhub.ai/skills/nextjs-project-standard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nextjs-project-standard-216ee6134970c8ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Next.js 14+ 项目规范，涵盖 App Router、SSR/SSG、流式渲染、路由与布局、数据获取、中间件、元数据与 SEO。当用户在 Next.js 项目中创建、修改页面或模块时自动激活。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bovinphang",
+      "userId": "s175m64gr8tsfc06cj22czzfys83mp52",
+      "displayName": "Bovin Phang",
+      "image": "https://avatars.githubusercontent.com/u/17447895?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 232,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774577118350,
+      "changelog": "Initial release of the Next.js 14+ project standard.\n\n- Provides conventions for using App Router, SSR/SSG/ISR, streaming, routing, middleware, metadata, and SEO\n- Includes recommended project structure and rendering mode best practices\n- Details data fetching strategies for server and client components\n- Specifies usage of layouts, route groups, and dynamic routes\n- Covers middleware setup, security best practices, and SEO metadata conventions\n- Emphasizes strong constraints for server/client component separation and data access",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fe4cdeefccd415e97795ee2dcbe23230f514b858a6768a7ae038dd425b1382f1"
+}

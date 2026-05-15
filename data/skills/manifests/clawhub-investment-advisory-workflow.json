@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65580,
+  "uuid": "skill-clawhub-investment-advisory-workflow",
+  "skillKey": "clawhub-investment-advisory-workflow",
+  "name": "Investment Advisory Workflow",
+  "summary": "［何时使用］当用户需要投顾服务时；当用户说'最近 XX 怎么看'、'这个事件有什么用'、'帮我看看持仓'、'100 万怎么配置'、'大跌了怎么办'时触发。场景驱动的投顾全流程，融合四专家思维。",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.investment_advisory_workflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lj22503",
+      "features": [
+        "［何时使用］当用户需要投顾服务时；当用户说'最近 XX 怎么看'、'这个事件有什么用'、'帮我看看持仓'、'100 万怎么配置'、'大跌了怎么办'时触发。场景驱动的投顾全流程，融合四专家思维。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/investment-advisory-workflow@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/170225356?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "investment-advisory-workflow",
+      "url": "https://clawhub.ai/skills/investment-advisory-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "investment-advisory-workflow",
+    "url": "https://clawhub.ai/skills/investment-advisory-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/investment-advisory-workflow-867a08dfb9238ca6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/investment-advisory-workflow@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-investment-advisory-workflow-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:12a02801d81b7cfccdd61c55ded6da9617a216830d77040767404017e570ff23",
+      "artifactSizeBytes": 2143
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T09:18:49.030Z"
+}

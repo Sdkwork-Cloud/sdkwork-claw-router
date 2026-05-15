@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editing-with-kinemaster@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editing_with_kinemaster",
+  "skill": {
+    "id": 41680,
+    "skillKey": "clawhub-video-editing-with-kinemaster",
+    "name": "Video Editing With Kinemaster"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editing-with-kinemaster",
+    "url": "https://clawhub.ai/skills/video-editing-with-kinemaster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editing-with-kinemaster-dc205708382c5919.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute phone-recorded vlog clip into 1080p edited MP4 videos just by typing what you need. Whether it's editing mobile-shot videos with cuts, transi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776757412719,
+      "changelog": "Initial release of Video Editing with KineMaster — mobile video editing via text commands.\n\n- Instantly edit and export mobile-shot videos by typing instructions (e.g., \"trim the pauses, add transitions, and overlay background music\").\n- Automatic setup with one-click anonymous token and session management.\n- Upload raw video clips and receive a 1080p edited MP4 file within minutes, processed remotely on GPU nodes.\n- Supports simple project state management, credit balance queries, and error handling.\n- No need for timeline dragging or export settings — streamlined for quick social or vlog content.\n- Accepts major video, image, and audio formats up to 500MB per file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:16b8ac56e6ea3cf46ff3912b29176a2dc1a4c95a54b4bc1b99163aebd98a1ec8"
+}

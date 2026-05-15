@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25292,
+  "uuid": "skill-clawhub-cost-tracker",
+  "skillKey": "clawhub-cost-tracker",
+  "name": "Cost Tracker",
+  "summary": "AI spending monitor — track costs across OpenRouter models with daily, weekly, and monthly reports. Budget limits with alerts, per-model analysis, savings re...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cost_tracker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aiwithabidi",
+      "features": [
+        "AI spending monitor — track costs across OpenRouter models with daily, weekly, and monthly repo.",
+        "Budget limits with alerts, per-model analysis, savings re..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cost-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208891229?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cost-tracker",
+      "url": "https://clawhub.ai/skills/cost-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cost-tracker",
+    "url": "https://clawhub.ai/skills/cost-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cost-tracker-44fcc6eed812693c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cost-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cost-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:266e60874de2561ab0c4bda219e9421dbd62e3814a62f68c17e852f920c6dd21",
+      "artifactSizeBytes": 2242
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T16:01:11.672Z"
+}

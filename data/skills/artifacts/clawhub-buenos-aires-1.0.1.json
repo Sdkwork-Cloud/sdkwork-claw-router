@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/buenos-aires@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.buenos_aires",
+  "skill": {
+    "id": 20573,
+    "skillKey": "clawhub-buenos-aires",
+    "name": "Buenos Aires"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "buenos-aires",
+    "url": "https://clawhub.ai/skills/buenos-aires",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/buenos-aires-cedca801111a3cc8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Navigate Buenos Aires as visitor, resident, tech worker, student, or entrepreneur with neighborhoods, transport, costs, visas, and local insights."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 539,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771468641616,
+      "changelog": "Unicode cleanup for ClawHub compatibility, added Scope section",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a09ec35ea1935010e04aa8b5492a7a60cfba54c1fe9f433a0f8fbad8e9855b2d"
+}

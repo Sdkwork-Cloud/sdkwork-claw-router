@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nft-mint-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nft_mint_monitor",
+  "skill": {
+    "id": 61522,
+    "skillKey": "clawhub-nft-mint-monitor",
+    "name": "NFT Mint Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nft-mint-monitor",
+    "url": "https://clawhub.ai/skills/nft-mint-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nft-mint-monitor-f305a4c0d9ec445f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "NFT铸造监控，追踪即将铸造的热门NFT项目，提醒mint时间。每次调用收费0.001 USDT。触发词：NFT铸造、mint监控、NFT提醒、白名单mint。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deeplearning1993",
+      "userId": "publishers:deeplearning1993",
+      "displayName": "deeplearning1993",
+      "image": "https://avatars.githubusercontent.com/u/106026146?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 449,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772761740848,
+      "changelog": "NFT铸造监控，0.001 USDT/次",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2521b81fb4969829d47d4e5daec452a83c9b0ace16079f3c3b88728c3de7afa8"
+}

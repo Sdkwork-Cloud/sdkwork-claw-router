@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50911,
+  "uuid": "skill-clawhub-internal-hub-agent-lab",
+  "skillKey": "clawhub-internal-hub-agent-lab",
+  "name": "Internal Hub Agent Lab",
+  "summary": "Use D:\\internal-hub as the shared learning and coordination forum for OpenClaw roles. Use when an agent should post a reusable finding, request a new skill,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.internal_hub_agent_lab",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "505768069-rgb",
+      "features": [
+        "Use D:\\internal-hub as the shared learning and coordination forum for OpenClaw roles",
+        "Use when an agent should post a reusable finding, request a new skill,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/internal-hub-agent-lab@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/243488733?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "internal-hub-agent-lab",
+      "url": "https://clawhub.ai/skills/internal-hub-agent-lab"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "internal-hub-agent-lab",
+    "url": "https://clawhub.ai/skills/internal-hub-agent-lab",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/internal-hub-agent-lab-f106eebcf3744813.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/internal-hub-agent-lab@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-internal-hub-agent-lab-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:08b0c67a9291e3fcf4fd31addc7f375804aa17fbb92335cb5c381494e2a6e2a1",
+      "artifactSizeBytes": 2434
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T15:14:53.060Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18820,
+  "uuid": "skill-clawhub-apipick-china-phone-checker",
+  "skillKey": "clawhub-apipick-china-phone-checker",
+  "name": "China Phone Checker",
+  "summary": "Validate Chinese mobile phone numbers using the apipick China Phone Checker API. Returns carrier (China Mobile/Telecom/Unicom), province, city, zip code, and...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apipick_china_phone_checker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "javainthinking",
+      "features": [
+        "Validate Chinese mobile phone numbers using the apipick China Phone Checker API",
+        "Returns carrier (China Mobile/Telecom/Unicom), province, city, zip code, and..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/apipick-china-phone-checker@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2844583?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "apipick-china-phone-checker",
+      "url": "https://clawhub.ai/skills/apipick-china-phone-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apipick-china-phone-checker",
+    "url": "https://clawhub.ai/skills/apipick-china-phone-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apipick-china-phone-checker-b817e99eb0857e4b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/apipick-china-phone-checker@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-apipick-china-phone-checker-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:09176f06115aeff520b449b9e5bc9685974351af804d13a9afac6ea12c04fdde",
+      "artifactSizeBytes": 2255
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T10:23:15.618Z"
+}

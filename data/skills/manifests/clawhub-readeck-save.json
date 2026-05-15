@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12646,
+  "uuid": "skill-clawhub-readeck-save",
+  "skillKey": "clawhub-readeck-save",
+  "name": "Readeck Save",
+  "summary": "Save articles to Readeck (self-hosted read-it-later app). Use when the user wants to save an article for later reading, add something to their reading list, or send a page to Readeck.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.readeck_save",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nickian",
+      "features": [
+        "Save articles to Readeck (self-hosted read-it-later app)",
+        "Use when the user wants to save an article for later reading, add something to their reading li."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/readeck-save@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/590678?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "readeck-save",
+      "url": "https://clawhub.ai/skills/readeck-save"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "readeck-save",
+    "url": "https://clawhub.ai/skills/readeck-save",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/readeck-save-e8854585291cd539.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/readeck-save@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-readeck-save-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9190baacfec07d15de8885f93bfc256fd8200b579270e868c0c472053d6e3e32",
+      "artifactSizeBytes": 1922
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-28T17:45:51.012Z"
+}

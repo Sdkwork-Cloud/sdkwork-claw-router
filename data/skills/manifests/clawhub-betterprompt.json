@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26379,
+  "uuid": "skill-clawhub-betterprompt",
+  "skillKey": "clawhub-betterprompt",
+  "name": "BetterPrompt",
+  "summary": "Discover, install, and run reusable AI prompt skills from the BetterPrompt registry via the CLI (betterprompt / bp). Use when a user needs to find a prompt s...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.betterprompt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mike Le",
+      "features": [
+        "Discover, install, and run reusable AI prompt skills from the BetterPrompt registry via the CLI.",
+        "Use when a user needs to find a prompt s..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/betterprompt@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17660236?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "betterprompt",
+      "url": "https://clawhub.ai/skills/betterprompt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "betterprompt",
+    "url": "https://clawhub.ai/skills/betterprompt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/betterprompt-1b3d78184de15a5e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/betterprompt@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-betterprompt-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e312652cd789eed37306ea1fc7b7effd002a88c4faf6fd6abd973b26df71e64f",
+      "artifactSizeBytes": 2012
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T03:23:22.417Z"
+}

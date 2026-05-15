@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35399,
+  "uuid": "skill-clawhub-raygun",
+  "skillKey": "clawhub-raygun",
+  "name": "Raygun",
+  "summary": "Raygun integration. Manage data, records, and automate workflows. Use when the user wants to interact with Raygun data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.raygun",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Raygun integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Raygun data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/raygun@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "raygun",
+      "url": "https://clawhub.ai/skills/raygun"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "raygun",
+    "url": "https://clawhub.ai/skills/raygun",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/raygun-c5ae698dad6d2586.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/raygun@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-raygun-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1de1a5a76b1770904976e0a50fcf8962f849b9db3c1906d61b3adb2c69ca2672",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:31:44.778Z"
+}

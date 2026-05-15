@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pocket-money@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pocket_money",
+  "skill": {
+    "id": 18564,
+    "skillKey": "clawhub-pocket-money",
+    "name": "pocket-money"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pocket-money",
+    "url": "https://clawhub.ai/skills/pocket-money",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pocket-money-6cf0e4573542ac7c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Give your AI agent crypto wallets on Base. Create purpose-specific wallets, ask your human to fund each one, check balances, and manage budgets. No accounts,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "operator-auteng-ai",
+      "userId": "publishers:operator-auteng-ai",
+      "displayName": "Operator @ AutEng AI",
+      "image": "https://avatars.githubusercontent.com/u/191052735?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 680,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1771900346172,
+      "changelog": "Version 2.0.0\n\n- Migrated package to @auteng/pocket-money (from @auteng/agent-utils) with updated install instructions and repository links.\n- Refocused documentation to core wallet creation, funding, management, and security.\n- Removed x402 protocol/payment, API call, and discovery features, including fetch integration and compute/convenience modules.\n- Added network selection (Base mainnet and Base Sepolia testnet) at wallet creation.\n- Updated examples and instructions for funding workflows and balance checks.\n- Clarified security and usage recommendations.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0701cc936153953f180f52408658785a46f73e8100819bbf5100833f9f90fef1"
+}

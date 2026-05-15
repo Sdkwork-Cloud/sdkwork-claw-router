@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61818,
+  "uuid": "skill-clawhub-openclaw-clash-forwindows-controller",
+  "skillKey": "clawhub-openclaw-clash-forwindows-controller",
+  "name": "Clash Controller",
+  "summary": "控制 Clash for Windows 代理：启动、关闭、查看状态、切换节点。触发词：Clash、代理、代理开关、开启代理、关闭代理、代理状态、切换节点、Clash for Windows。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_clash_forwindows_controller",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LostOmato",
+      "features": [
+        "控制 Clash for Windows 代理：启动、关闭、查看状态、切换节点。触发词：Clash、代理、代理开关、开启代理、关闭代理、代理状态、切换节点、Clash for Windows。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-clash-forwindows-controller@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18007752?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-clash-forwindows-controller",
+      "url": "https://clawhub.ai/skills/openclaw-clash-forwindows-controller"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-clash-forwindows-controller",
+    "url": "https://clawhub.ai/skills/openclaw-clash-forwindows-controller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-clash-forwindows-controller-a1d1b1dde1acef0e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-clash-forwindows-controller@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-clash-forwindows-controller-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e90207e9c622410b4663894a497fa9d1f301809bb06e6dec791f590575a758d7",
+      "artifactSizeBytes": 2441
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T18:26:16.704Z"
+}

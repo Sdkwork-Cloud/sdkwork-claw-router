@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/email-tool-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_tool_skill",
+  "skill": {
+    "id": 29272,
+    "skillKey": "clawhub-email-tool-skill",
+    "name": "email-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-tool-skill",
+    "url": "https://clawhub.ai/skills/email-tool-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-tool-skill-2672ab3679f100ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send mail with Python stdlib smtplib (SMTP_SSL to smtp.yeah.net:465). Documented account validates@yeah.net with embedded client auth code; standalone script..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wgy2e",
+      "userId": "s174kg6j46p6yf9m30egqp9k4d83z730",
+      "displayName": "WGY2e",
+      "image": "https://avatars.githubusercontent.com/u/45496880?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774189576731,
+      "changelog": "- Major update: Replaced previous multi-provider, feature-rich email skill with documentation for a minimal, Python stdlib-based standalone mail script targeting smtp.yeah.net.\n- All code and config files removed; skill is now \"documentation only\" and instructs the agent to write/run a standalone `/tmp/send_email.py` per invocation.\n- SMTP account fixed to validates@yeah.net with embedded client authorization code.\n- No dependency on local bash wrappers, external mail tools, or pip packages.\n- Emphasized non-interactive, stdlib-only approach to avoid TTY and automation issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4195ef05f4c9d821ff7e5763955cb4fe1ad98d4b187823041e4e0332ee34aa11"
+}

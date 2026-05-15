@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11958,
+  "uuid": "skill-clawhub-echodecks",
+  "skillKey": "clawhub-echodecks",
+  "name": "EchoDecks",
+  "summary": "AI-powered flashcards and audio podcasts for active recall.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.echodecks",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "drgeld",
+      "features": [
+        "AI-powered flashcards and audio podcasts for active recall."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/echodecks@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/98776673?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "echodecks",
+      "url": "https://clawhub.ai/skills/echodecks"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "echodecks",
+    "url": "https://clawhub.ai/skills/echodecks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/echodecks-ba4d44f82043134a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/echodecks@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-echodecks-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8bdbd19f4b57510308266174526c54295a451b52e0dc4b7afff1a3a9669e3789",
+      "artifactSizeBytes": 1728
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T08:07:29.151Z"
+}

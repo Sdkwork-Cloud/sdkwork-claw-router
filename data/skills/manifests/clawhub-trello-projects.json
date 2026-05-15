@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54809,
+  "uuid": "skill-clawhub-trello-projects",
+  "skillKey": "clawhub-trello-projects",
+  "name": "Trello",
+  "summary": "Manage Trello boards, lists, cards, comments, labels, checklists, and project workflows — powered by ClawLink.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trello_projects",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hithesh Jay",
+      "features": [
+        "Manage Trello boards, lists, cards, comments, labels, checklists, and project workflows — power."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trello-projects@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83839061?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trello-projects",
+      "url": "https://clawhub.ai/skills/trello-projects"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trello-projects",
+    "url": "https://clawhub.ai/skills/trello-projects",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trello-projects-64e408926bf63894.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trello-projects@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trello-projects-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:27171f4f3b79624f2f5c19894cbd4d5a61bea2f96e14d2cc5d326be59b471b6a",
+      "artifactSizeBytes": 2236
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T14:00:57.747Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/patent-value-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.patent_value_analysis",
+  "skill": {
+    "id": 70103,
+    "skillKey": "clawhub-patent-value-analysis",
+    "name": "TG 专利价值分析评估"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "patent-value-analysis",
+    "url": "https://clawhub.ai/skills/patent-value-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/patent-value-analysis-7b4a01650d65e0eb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专利价值分析评价工具 (V1.0)。用于评估专利资产的多维价值，包括： (1) 用户输入专利名称后，进行专利价值评估 (2) 生成五维价值雷达图（技术、法律、市场、经济、战略） (3) 法律稳固性评分与技术成熟度评估 (4) 剩余经济寿命预测与市场价值区间测算 (5) 转化路径诊断与金融适配度匹配建议 触发条件：..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chase-zhouchang",
+      "userId": "s17bmh5pa75h8aee4b20q72xwn84cnq6",
+      "displayName": "Chase-Zhouchang",
+      "image": "https://avatars.githubusercontent.com/u/204638014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 393,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773307514127,
+      "changelog": "- Initial release of the patent-value-analysis skill (V1.0).\n- Provides automated multi-dimensional patent value assessment based on user-supplied patent name.\n- Generates a comprehensive report including patent basic information, five-dimension radar chart (technical, legal, market, economic, strategic), and overall value score.\n- Offers legal stability scoring, technical maturity evaluation, remaining economic life prediction, and market value estimation.\n- Includes actionable conversion and financial matching suggestions based on evaluation results.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7c16b105d4dbc534019f2fb65b1546ccf90d10f2562857a11c89a4655823babf"
+}

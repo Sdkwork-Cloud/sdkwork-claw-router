@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-industry-collector@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_industry_collector",
+  "skill": {
+    "id": 71756,
+    "skillKey": "clawhub-stock-industry-collector",
+    "name": "螃蟹投研-股票行业Collector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-industry-collector",
+    "url": "https://clawhub.ai/skills/stock-industry-collector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-industry-collector-a07041b97e67d364.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "收集A股某行业全部上市公司资料，包括代码、名称、交易所、行业、财务数据（ROE、毛利率、净利率、资产负债率、现金流、增长率）、控股股东及持股比例"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wtjjacobj",
+      "userId": "s175dvgnv8vprzy08jb6ph4pxn83sgy1",
+      "displayName": "wtjjacobj",
+      "image": "https://avatars.githubusercontent.com/u/68179406?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774773637648,
+      "changelog": "首发：A股行业财务数据收集器，支持申万行业分类、财务数据、控股股东分析",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:916518af614b891df3a1913901ac3a25d721b9df0ec8cca721ba8f77980691a7"
+}

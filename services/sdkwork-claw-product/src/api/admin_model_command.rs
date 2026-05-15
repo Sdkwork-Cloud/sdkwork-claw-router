@@ -312,16 +312,18 @@ pub fn admin_model_management_router_with_store(
 ) -> Router {
     Router::new()
         .route(
-            "/backend/v3/api/router/model-vendors",
+            "/backend/v3/api/ai/model_vendors",
             get(fetch_vendors).post(create_vendor),
         )
-        .route("/backend/v3/api/model/list", post(fetch_models))
-        .route("/backend/v3/api/model", post(create_model))
         .route(
-            "/backend/v3/api/model/{model_id}",
+            "/backend/v3/api/ai/models",
+            get(fetch_models).post(create_model),
+        )
+        .route("/backend/v3/api/ai/models/refresh", post(sync_catalog))
+        .route(
+            "/backend/v3/api/ai/models/{model_id}",
             patch(update_model).delete(delete_model),
         )
-        .route("/backend/v3/api/router/models/sync", post(sync_catalog))
         .with_state(AdminModelCommandState {
             store,
             entity_uuid_generator,

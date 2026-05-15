@@ -146,11 +146,11 @@ export function SdkEndpointView({ endpoint, sdkData, language }: SdkEndpointView
           />
         </div>
 
-        <div className="rounded-xl border border-slate-200 dark:border-white/10 overflow-hidden bg-[#1e1e1e]">
-          <div className="px-4 py-2 border-b border-white/5 flex">
-            <span className="text-[10px] font-mono text-slate-400 bg-white/5 px-2 py-1 rounded uppercase">{documentation.languageLabel}</span>
+        <div className="rounded-xl border border-slate-200 dark:border-white/10 overflow-hidden bg-slate-50 dark:bg-[#1e1e1e]">
+          <div className="px-4 py-2 border-b border-slate-200 dark:border-white/5 flex">
+            <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 bg-white dark:bg-white/5 px-2 py-1 rounded uppercase">{documentation.languageLabel}</span>
           </div>
-          <pre className="p-6 overflow-x-auto text-sm font-mono leading-relaxed text-slate-300">
+          <pre className="p-6 overflow-x-auto text-sm font-mono leading-relaxed text-slate-700 dark:text-slate-300">
             {codeDefinition}
           </pre>
         </div>
@@ -172,8 +172,8 @@ export function SdkEndpointView({ endpoint, sdkData, language }: SdkEndpointView
           />
         </div>
 
-        <div className="rounded-xl border border-slate-200 dark:border-white/10 overflow-hidden bg-[#1e1e1e]">
-          <pre className="p-6 overflow-x-auto text-sm font-mono leading-relaxed text-slate-300">
+        <div className="rounded-xl border border-slate-200 dark:border-white/10 overflow-hidden bg-slate-50 dark:bg-[#1e1e1e]">
+          <pre className="p-6 overflow-x-auto text-sm font-mono leading-relaxed text-slate-700 dark:text-slate-300">
             {exampleUsage}
           </pre>
         </div>

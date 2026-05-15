@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64834,
+  "uuid": "skill-clawhub-openclaw-history-viewer",
+  "skillKey": "clawhub-openclaw-history-viewer",
+  "name": "Openclaw History Viewer",
+  "summary": "启动一个 web 服务来浏览和查看 OpenClaw 的历史聊天记录。支持会话列表、消息详情查看、JSON API 导出、自动会话备份、刷新功能。使用场景：当用户想要查看、浏览、搜索或导出 OpenClaw 的聊天历史记录时触发此技能。触发词包括：\"启动历史记录\"、\"打开聊天记录\"、\"查看历史\"、\"启动 hist...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_history_viewer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lengyhua",
+      "features": [
+        "启动一个 web 服务来浏览和查看 OpenClaw 的历史聊天记录。支持会话列表、消息详情查看、JSON API 导出、自动会话备份、刷新功能。使用场景：当用户想要查看、浏览、搜索或导出."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-history-viewer@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25021079?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-history-viewer",
+      "url": "https://clawhub.ai/skills/openclaw-history-viewer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-history-viewer",
+    "url": "https://clawhub.ai/skills/openclaw-history-viewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-history-viewer-f26221c1e5e11a9b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-history-viewer@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-history-viewer-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ce89a7d62e901fcf6811d2a16a80f256e546bcc636bc94ca8cb42a441d2fd803",
+      "artifactSizeBytes": 2510
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T13:20:29.592Z"
+}

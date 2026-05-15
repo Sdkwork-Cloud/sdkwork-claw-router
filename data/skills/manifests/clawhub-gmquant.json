@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61505,
+  "uuid": "skill-clawhub-gmquant",
+  "skillKey": "clawhub-gmquant",
+  "name": "掘金量化skill",
+  "summary": "掘金量化 Python SDK 专家技能。 当用户提到掘金、gm、gm.api、掘金量化、掘金策略、掘金SDK、掘金终端、 量化策略开发、回测、实时行情、订阅行情、历史行情、下单、委托、持仓、 order_volume、subscribe、history、set_token、get_symbols、get_sym...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gmquant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Turkeydick",
+      "features": [
+        "掘金量化 Python SDK 专家技能。 当用户提到掘金、gm、gm.api、掘金量化、掘金策略、掘金SDK、掘金终端、 量化策略开发、回测、实时行情、订阅行情、历史行情、下单、委托、持仓."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gmquant@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/134494150?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gmquant",
+      "url": "https://clawhub.ai/skills/gmquant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gmquant",
+    "url": "https://clawhub.ai/skills/gmquant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gmquant-7065dc6d3b20239d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gmquant@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-gmquant-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e1701ad80795a7f689a13725232a77c9f0f87c00a975461b4772e478f06869ea",
+      "artifactSizeBytes": 2099
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T10:13:30.666Z"
+}

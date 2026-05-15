@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41439,
+  "uuid": "skill-clawhub-conversation-saver",
+  "skillKey": "clawhub-conversation-saver",
+  "name": "Conversation Saver",
+  "summary": "Automatically extract key facts from conversation history and persist to local memory files. Silent background operation with rule+LLM hybrid extraction.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.conversation_saver",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaobu2020",
+      "features": [
+        "Automatically extract key facts from conversation history and persist to local memory files",
+        "Silent background operation with rule+LLM hybrid extraction."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/conversation-saver@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/71875436?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "conversation-saver",
+      "url": "https://clawhub.ai/skills/conversation-saver"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "conversation-saver",
+    "url": "https://clawhub.ai/skills/conversation-saver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/conversation-saver-5451b09fc49d49f2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/conversation-saver@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-conversation-saver-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:589381fcee48c6ba66c971c357caa36d64e41f44538fe87935fd203a87f21599",
+      "artifactSizeBytes": 1914
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T03:20:46.234Z"
+}

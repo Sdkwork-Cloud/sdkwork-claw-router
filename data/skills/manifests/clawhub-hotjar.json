@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29194,
+  "uuid": "skill-clawhub-hotjar",
+  "skillKey": "clawhub-hotjar",
+  "name": "Hotjar",
+  "summary": "Hotjar integration. Manage data, records, and automate workflows. Use when the user wants to interact with Hotjar data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hotjar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Hotjar integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Hotjar data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hotjar@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hotjar",
+      "url": "https://clawhub.ai/skills/hotjar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hotjar",
+    "url": "https://clawhub.ai/skills/hotjar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hotjar-b8636af4459a4047.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hotjar@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-hotjar-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c63dc97cabfc690761b7a0089cc4f9f6169897fcdc6aca60986af726204b21b",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:56:48.158Z"
+}

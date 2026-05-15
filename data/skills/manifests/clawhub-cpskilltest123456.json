@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67576,
+  "uuid": "skill-clawhub-cpskilltest123456",
+  "skillKey": "clawhub-cpskilltest123456",
+  "name": "CP skill test 123456",
+  "summary": "小红书长文发布。用于在网页版小红书创作服务平台发布长文笔记。当用户说\"发小红书\"、\"发小红书长文\"、\"写一篇小红书\"时使用此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cpskilltest123456",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "blockcloud",
+      "features": [
+        "小红书长文发布。用于在网页版小红书创作服务平台发布长文笔记。当用户说\"发小红书\"、\"发小红书长文\"、\"写一篇小红书\"时使用此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cpskilltest123456@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19220974?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cpskilltest123456",
+      "url": "https://clawhub.ai/skills/cpskilltest123456"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cpskilltest123456",
+    "url": "https://clawhub.ai/skills/cpskilltest123456",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cpskilltest123456-d9e075b6153f2559.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cpskilltest123456@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cpskilltest123456-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a19c92ec7981f9fd6b54648780f3bccf0cb766d3a482ef25f2e3e184776ef15f",
+      "artifactSizeBytes": 1928
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T17:50:11.188Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/whcli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whcli",
+  "skill": {
+    "id": 12045,
+    "skillKey": "clawhub-whcli",
+    "name": "Willhaben CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whcli",
+    "url": "https://clawhub.ai/skills/whcli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whcli-55fc20dee5d0b311.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Willhaben CLI for searching Austria's largest classifieds marketplace. Search listings, view details, check seller profiles."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pasogott",
+      "userId": "s17bmybdzwfeddh6jg4sh5apjs84xtft",
+      "displayName": "pasogott",
+      "image": "https://avatars.githubusercontent.com/u/23458152?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1835,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1768146508731,
+      "changelog": "Initial release: search, show, seller commands",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:103cadeb6fc8801212b4a94b49eac8602e9086dda9a91607d37c30b66e410bb1"
+}

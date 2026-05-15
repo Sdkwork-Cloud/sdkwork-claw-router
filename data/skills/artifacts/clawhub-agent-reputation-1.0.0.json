@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-reputation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_reputation",
+  "skill": {
+    "id": 17796,
+    "skillKey": "clawhub-agent-reputation",
+    "name": "Agent Reputation Checker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-reputation",
+    "url": "https://clawhub.ai/skills/agent-reputation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-reputation-adf237531b5668a5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Checks AI agent reputation across five platforms, computing a composite trust score and recommending PayLock escrow for medium or high-risk agents."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kgnvsk",
+      "userId": "s17d9ywe7f1k59kbf6t1za5res83praj",
+      "displayName": "Oleksii Kaganovsky",
+      "image": "https://avatars.githubusercontent.com/u/100070892?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 724,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771723887618,
+      "changelog": "Initial release: cross-platform trust score (ugig, Moltbook, Ridgeline, Colony, Clawk). PayLock recommendation for low scores.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:79fd7cf506bc03517eb73e80a07919d22b2cdaa1fd4efbe7e05d56b9147f38f8"
+}

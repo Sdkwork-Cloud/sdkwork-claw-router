@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57933,
+  "uuid": "skill-clawhub-mcdonald-order",
+  "skillKey": "clawhub-mcdonald-order",
+  "name": "麦当劳智能点餐助手",
+  "summary": "McDonald's China assistant (麦当劳助手) for coupon management, delivery ordering, and nutrition planning. Use this skill when users explicitly mention McDonald's...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcdonald_order",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lililiSir",
+      "features": [
+        "McDonald's China assistant (麦当劳助手) for coupon management, delivery ordering, and nutrition plan.",
+        "Use this skill when users explicitly mention McDonald's..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mcdonald-order@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19545874?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mcdonald-order",
+      "url": "https://clawhub.ai/skills/mcdonald-order"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcdonald-order",
+    "url": "https://clawhub.ai/skills/mcdonald-order",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcdonald-order-cc17238d98c15005.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mcdonald-order@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-mcdonald-order-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ddfcc8609bd72ddde1577858b0b175e169beacc4559e3168cde53588c1ebc994",
+      "artifactSizeBytes": 2077
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T05:51:20.550Z"
+}

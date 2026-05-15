@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8733,
+  "uuid": "skill-clawhub-bailian-web-search",
+  "skillKey": "clawhub-bailian-web-search",
+  "name": "Bailian Web Search",
+  "summary": "AI-optimized web search via Bailian(Alibaba ModelStdio) API. Returns multisourced, concise web search results for LLMs.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bailian_web_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "krisyejh",
+      "features": [
+        "AI-optimized web search via Bailian(Alibaba ModelStdio) API",
+        "Returns multisourced, concise web search results for LLMs."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bailian-web-search@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40165079?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bailian-web-search",
+      "url": "https://clawhub.ai/skills/bailian-web-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bailian-web-search",
+    "url": "https://clawhub.ai/skills/bailian-web-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bailian-web-search-6ec12e657c7d36ad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bailian-web-search@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-bailian-web-search-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2f3f923b3173ab8a31300866241c807987744501a6d9c33cc53fc407ef2a93b6",
+      "artifactSizeBytes": 1939
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T08:10:17.721Z"
+}

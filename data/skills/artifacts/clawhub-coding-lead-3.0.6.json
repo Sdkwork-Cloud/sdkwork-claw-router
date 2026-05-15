@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/coding-lead@3.0.6",
+  "version": "3.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coding_lead",
+  "skill": {
+    "id": 11391,
+    "skillKey": "clawhub-coding-lead",
+    "name": "Coding Lead"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coding-lead",
+    "url": "https://clawhub.ai/skills/coding-lead",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coding-lead-296e7a6c09608f52.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Coding execution skill for any implementation-focused agent. Current production path is claude-only with simple tasks direct, medium tasks preferring ACP run..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "beyound87",
+      "userId": "s17dg3qthhjbatdnrgq35n8jrh83j4ba",
+      "displayName": "beyound87",
+      "image": "https://avatars.githubusercontent.com/u/3038772?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2030,
+      "installsAllTime": 14,
+      "installsCurrent": 14,
+      "stars": 0,
+      "versions": 31
+    },
+    "latestVersion": {
+      "version": "3.0.6",
+      "createdAt": 1774831566153,
+      "changelog": "No code or skill changes in this version.\n\n- No file or documentation changes detected.\n- Behavior and configuration remain unchanged from previous release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:61f6c482193bdc401aa2cbfddea31da6ba219b7d8df947117cecc9f6f4821a8d"
+}

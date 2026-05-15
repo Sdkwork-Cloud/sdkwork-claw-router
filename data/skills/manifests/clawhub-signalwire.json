@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27652,
+  "uuid": "skill-clawhub-signalwire",
+  "skillKey": "clawhub-signalwire",
+  "name": "Signalwire",
+  "summary": "SignalWire integration. Manage Persons, Organizations, Leads, Deals, Projects, Activities and more. Use when the user wants to interact with SignalWire data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.signalwire",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "SignalWire integration",
+        "Manage Persons, Organizations, Leads, Deals, Projects, Activities and more",
+        "Use when the user wants to interact with SignalWire data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/signalwire@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "signalwire",
+      "url": "https://clawhub.ai/skills/signalwire"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "signalwire",
+    "url": "https://clawhub.ai/skills/signalwire",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/signalwire-1f33c48fca8a7637.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/signalwire@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-signalwire-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3bcc524eb9f7f76255be52bd2593f0012aa64a57f4b47123999ae36a965df6e3",
+      "artifactSizeBytes": 1886
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:00:21.152Z"
+}

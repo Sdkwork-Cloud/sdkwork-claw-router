@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adaptive-agent-skill-review@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adaptive_agent_skill_review",
+  "skill": {
+    "id": 33114,
+    "skillKey": "clawhub-adaptive-agent-skill-review",
+    "name": "Adaptive Agent: Skill Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adaptive-agent-skill-review",
+    "url": "https://clawhub.ai/skills/adaptive-agent-skill-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adaptive-agent-skill-review-e13f48fec751546c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Review all skills for staleness, missing gotchas, and improvement opportunities. Run periodically or after a series of tasks to keep procedural memory accura..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "truenorth-lj",
+      "userId": "s17c91gb0krt2j8ssz9xwv119s848mqq",
+      "displayName": "LJ Li",
+      "image": "https://avatars.githubusercontent.com/u/47474232?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776234697272,
+      "changelog": "- Initial release of the skill-review tool for periodic auditing and improvement of all skills.\n- Provides step-by-step instructions for reviewing skills, checking for staleness, and integrating lessons learned.\n- Includes guidance for identifying missing gotchas, outdated references, and opportunities to consolidate or create new skills.\n- Adds procedures to cross-reference skill documentation with procedural memory and recent git history.\n- Establishes a standardized summary reporting format and key rules for responsible editing.\n- Trigger words make it easy to invoke the review process.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2c22a4140e0225123b6750f920ec355ec4e7cd644870b1e5a4040c3e143af232"
+}

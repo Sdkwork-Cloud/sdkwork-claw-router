@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52184,
+  "uuid": "skill-clawhub-coc-node",
+  "skillKey": "clawhub-coc-node",
+  "name": "Node of COC testnet",
+  "summary": "Operate COC (ChainOfClaw) blockchain nodes — install, start, stop, monitor, and remove validator, fullnode, archive, gateway, and dev nodes. Use when the use...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coc_node",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Meshes & Parallels",
+      "features": [
+        "Operate COC (ChainOfClaw) blockchain nodes — install, start, stop, monitor, and remove validato.",
+        "Use when the use..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coc-node@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/93938011?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coc-node",
+      "url": "https://clawhub.ai/skills/coc-node"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coc-node",
+    "url": "https://clawhub.ai/skills/coc-node",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coc-node-e142a97e500c8840.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coc-node@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-coc-node-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:43e2fb0f7568d175fdf04c6c1df3e74c67734274f7c42fae90b990ddbe0cd121",
+      "artifactSizeBytes": 2893
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T02:01:48.047Z"
+}

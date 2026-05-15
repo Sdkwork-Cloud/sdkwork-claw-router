@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70427,
+  "uuid": "skill-clawhub-inventory-anomaly",
+  "skillKey": "clawhub-inventory-anomaly",
+  "name": "inventory-anomaly",
+  "summary": "库存异常检测和需求预测系统生成工具。当用户需要搭建库存管理系统、实现异常检测算法、开发需求预测功能（如ARIMA模型）、创建库存预警系统时使用此skill。特别适用于制造业、零售业、备件管理等场景，需要处理Excel数据、检测库存异常、预测未来需求并生成报告的情况。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inventory_anomaly",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vincent_Openclaw",
+      "features": [
+        "库存异常检测和需求预测系统生成工具。当用户需要搭建库存管理系统、实现异常检测算法、开发需求预测功能（如ARIMA模型）、创建库存预警系统时使用此skill。特别适用于制造业、零售业、备件管理."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/inventory-anomaly@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45728689?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "inventory-anomaly",
+      "url": "https://clawhub.ai/skills/inventory-anomaly"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inventory-anomaly",
+    "url": "https://clawhub.ai/skills/inventory-anomaly",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inventory-anomaly-548512aba1229747.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/inventory-anomaly@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-inventory-anomaly-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e9382701895868d7aaa726a18901ab4012588c1cb996a9ceb8fe6140a9cf5b47",
+      "artifactSizeBytes": 3051
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T14:51:12.292Z"
+}

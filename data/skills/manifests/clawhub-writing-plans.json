@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8667,
+  "uuid": "skill-clawhub-writing-plans",
+  "skillKey": "clawhub-writing-plans",
+  "name": "Writing Plans",
+  "summary": "Use when you have a spec or requirements for a multi-step task, before touching code",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.writing_plans",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zlc000190",
+      "features": [
+        "Use when you have a spec or requirements for a multi-step task, before touching code"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/writing-plans@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8969941?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "writing-plans",
+      "url": "https://clawhub.ai/skills/writing-plans"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "writing-plans",
+    "url": "https://clawhub.ai/skills/writing-plans",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/writing-plans-20c5bfd7d69af9d5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/writing-plans@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-writing-plans-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ab91137bd69a412a68d0fe79891660c130d0920dfa72ca0f73baf2b6097cac11",
+      "artifactSizeBytes": 1818
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T02:52:33.645Z"
+}

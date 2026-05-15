@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/red-alert@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.red_alert",
+  "skill": {
+    "id": 50521,
+    "skillKey": "clawhub-red-alert",
+    "name": "Red Alert"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "red-alert",
+    "url": "https://clawhub.ai/skills/red-alert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/red-alert-d65e38b43991239a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Israel Red Alert API — real-time and historical rocket/missile alert data. Query alerts by city, time range, generate shelter time stats. Uses redalert.oriel..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dannyshmueli",
+      "userId": "s1785jgb7evz92f88z9psd4m7583gmsv",
+      "displayName": "Danny Shmueli",
+      "image": "https://avatars.githubusercontent.com/u/4062328?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 502,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1772653764204,
+      "changelog": "Add full endpoint inventory reference (REST + Socket.IO), clarify auth and event map, improve skill docs for no-docs workflow",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:151ce66ed38e1cb56315e507b68507ec73a1b8dd0178f86a9d7916a5c17c88c9"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39160,
+  "uuid": "skill-clawhub-security-test-suite",
+  "skillKey": "clawhub-security-test-suite",
+  "name": "security-test-suite",
+  "summary": "Performs automated security assessments including vulnerability scans, OWASP Top 10 checks, CVE detection, pen-testing, SSL audits, and API security testing...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.security_test_suite",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "guo5404",
+      "features": [
+        "Performs automated security assessments including vulnerability scans, OWASP Top 10 checks, CVE."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/security-test-suite@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/219777164?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "security-test-suite",
+      "url": "https://clawhub.ai/skills/security-test-suite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "security-test-suite",
+    "url": "https://clawhub.ai/skills/security-test-suite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/security-test-suite-a8a7e4b6180eebdd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/security-test-suite@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-security-test-suite-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a8f10adb3d3284a8c8426e1443f5f2d6044cdbdbfcc2826a33b60a584f28d4d8",
+      "artifactSizeBytes": 2525
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T06:07:11.933Z"
+}

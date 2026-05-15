@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/promotion-calendar-planner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.promotion_calendar_planner",
+  "skill": {
+    "id": 41492,
+    "skillKey": "clawhub-promotion-calendar-planner",
+    "name": "Promotion Calendar Planner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "promotion-calendar-planner",
+    "url": "https://clawhub.ai/skills/promotion-calendar-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/promotion-calendar-planner-46e75b8c34276050.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design monthly, quarterly, or annual ecommerce promotion calendars using business goals, platform mega-sale windows, inventory posture, and team capacity, th..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776131159171,
+      "changelog": "**Initial MVP release of Promotion Calendar Planner.**\n\n- Generate structured monthly, quarterly, or annual promotion calendars based on business goals, platform sale dates, inventory, and team capacity.\n- Returns a markdown plan with a calendar table, cadence/execution principles, team preparation checklist, and risk notes.\n- Heuristic-only: does not connect to live calendars, ad platforms, or project management tools.\n- Highlights key promotion nodes, explains their business roles, and surfaces at least two potential planning conflicts.\n- Designed for ecommerce operators needing a strategic, explainable promotion cadence.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9d468c88c727a6d9140ddd1dfaeb6f52cb8b63cf8dd6c47a1754aedae98bf0e5"
+}

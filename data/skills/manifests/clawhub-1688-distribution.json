@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70951,
+  "uuid": "skill-clawhub-1688-distribution",
+  "skillKey": "clawhub-1688-distribution",
+  "name": "1688 Distribution",
+  "summary": "1688 分销唯一主入口。选品铺货、订单管理、知识库查询、店铺绑定，涵盖分销全链路。当用户提到铺货、选品、分销、上架、查订单、催发、旺旺、发货流程、绑店时触发。不要在用户仅询问非1688业务（如闲聊、天气、翻译等无关话题）时触发。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.1688_distribution",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1688AiInfra",
+      "features": [
+        "1688 分销唯一主入口。选品铺货、订单管理、知识库查询、店铺绑定，涵盖分销全链路。当用户提到铺货、选品、分销、上架、查订单、催发、旺旺、发货流程、绑店时触发。不要在用户仅询问非1688业务."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/1688-distribution@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266033968?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "1688-distribution",
+      "url": "https://clawhub.ai/skills/1688-distribution"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "1688-distribution",
+    "url": "https://clawhub.ai/skills/1688-distribution",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/1688-distribution-5d29c0825b6fc66a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/1688-distribution@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-1688-distribution-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ea4542a2409c56044f8210dc8b1b0ee8c11ec49a9673992e31a1d57d32046da5",
+      "artifactSizeBytes": 3000
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T02:41:54.490Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kam-qianlu-doc-standards@6.1.2",
+  "version": "6.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kam_qianlu_doc_standards",
+  "skill": {
+    "id": 64293,
+    "skillKey": "clawhub-kam-qianlu-doc-standards",
+    "name": "KAM 千路文档标准"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kam-qianlu-doc-standards",
+    "url": "https://clawhub.ai/skills/kam-qianlu-doc-standards",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kam-qianlu-doc-standards-606adba82dd804c8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "千路=询价管理+出入库/WMS(开发中)。本包权威=询价侧 Excel 表头/文件名(REFERENCE §1–10)、报价对比§12；问价单导出与报价单导入列对齐（含 MOQ/MPQ，无「状态」列）。术语/流程=naming+process。触发：表头命名、单据核验、报价对比矩阵、两子系统边界、filebrow..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kami1983",
+      "userId": "s170ghmz68bx9x4zwe9szejwq583j82g",
+      "displayName": "linhai",
+      "image": "https://avatars.githubusercontent.com/u/8407663?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 416,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "6.1.2",
+      "createdAt": 1774831805297,
+      "changelog": "- 更新版本号至 v6.1.2，与仓库 Git tag 保持同步  \n对回询单的表头字段进行了更新",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:13c402f85a7136253a74f53e6c99f79f477b5159ee97ef3ac9ad5a6c686b9ac1"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43542,
+  "uuid": "skill-clawhub-information-services",
+  "skillKey": "clawhub-information-services",
+  "name": "Information Services",
+  "summary": "Unified information services hub combining location, weather, and time capabilities. Multi-source geolocation (GPS/IP/WiFi), fixed-point weather forecasts, a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.information_services",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JohnSmithfan",
+      "features": [
+        "Unified information services hub combining location, weather, and time capabilities",
+        "Multi-source geolocation (GPS/IP/WiFi), fixed-point weather forecasts, a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/information-services@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147225147?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "information-services",
+      "url": "https://clawhub.ai/skills/information-services"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "information-services",
+    "url": "https://clawhub.ai/skills/information-services",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/information-services-9c47d3b997b1aacb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/information-services@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-information-services-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0a61a29c0fb2926b7bf8e2766d5920eddbf57aee9567159df3b6d9c4f579d1b6",
+      "artifactSizeBytes": 2040
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T17:27:17.176Z"
+}

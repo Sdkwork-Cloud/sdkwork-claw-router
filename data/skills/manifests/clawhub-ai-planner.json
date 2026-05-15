@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68800,
+  "uuid": "skill-clawhub-ai-planner",
+  "skillKey": "clawhub-ai-planner",
+  "name": "Ai Planner",
+  "summary": "负责电商图片需求分析、创意构思与Prompt优化，提供精准创意简报和工具推荐，支持多平台和场景识别。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_planner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "duzhihai123",
+      "features": [
+        "负责电商图片需求分析、创意构思与Prompt优化，提供精准创意简报和工具推荐，支持多平台和场景识别。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-planner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12809643?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-planner",
+      "url": "https://clawhub.ai/skills/ai-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-planner",
+    "url": "https://clawhub.ai/skills/ai-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-planner-70903d1ccfc68f5b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-planner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-planner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:26ede550be270b81e8aef003dc48f165967deb3d99da3319735f4fa6445f56cb",
+      "artifactSizeBytes": 2200
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T01:56:47.607Z"
+}

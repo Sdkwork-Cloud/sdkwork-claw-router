@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70972,
+  "uuid": "skill-clawhub-newmedia-operations",
+  "skillKey": "clawhub-newmedia-operations",
+  "name": "运营工具skill",
+  "summary": "全链路新媒体运营技能，覆盖从行业分析→竞品分析→账号养号→爆款内容创作→互动钩子设计的完整运营闭环。结合 opencli（浏览器直操控）、ima知识库、联网搜索、违禁词检测等能力，适用于抖音、视频号、小红书三大平台的品牌账号运营。 触发场景： - 用户说\"帮我做新媒体运营方案\" - 用户说\"分析竞品账号\" - 用...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.newmedia_operations",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "swcxy12315",
+      "features": [
+        "全链路新媒体运营技能，覆盖从行业分析→竞品分析→账号养号→爆款内容创作→互动钩子设计的完整运营闭环。结合 opencli（浏览器直操控）、ima知识库、联网搜索、违禁词检测等能力，适用于抖音.",
+        "用户说\"帮我做新媒体运营方案\"",
+        "用户说\"分析竞品账号\""
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/newmedia-operations@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/50139758?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "newmedia-operations",
+      "url": "https://clawhub.ai/skills/newmedia-operations"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "newmedia-operations",
+    "url": "https://clawhub.ai/skills/newmedia-operations",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/newmedia-operations-ec9e97453c0218fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/newmedia-operations@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-newmedia-operations-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b679f4656e0e89dc82d8a0c8e0c4f3bcd149991545114187e8fa048881c2d24d",
+      "artifactSizeBytes": 2771
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T07:47:55.310Z"
+}

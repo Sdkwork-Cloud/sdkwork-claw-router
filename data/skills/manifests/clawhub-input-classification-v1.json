@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20056,
+  "uuid": "skill-clawhub-input-classification-v1",
+  "skillKey": "clawhub-input-classification-v1",
+  "name": "input classification",
+  "summary": "Deterministic rule-based system for classifying clarified input into a single primary task category and assigning execution complexity. Use when the Main Age...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.input_classification_v1",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "omprasad122007-rgb",
+      "features": [
+        "Deterministic rule-based system for classifying clarified input into a single primary task cate.",
+        "Use when the Main Age..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/input-classification-v1@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260436802?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "input-classification-v1",
+      "url": "https://clawhub.ai/skills/input-classification-v1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "input-classification-v1",
+    "url": "https://clawhub.ai/skills/input-classification-v1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/input-classification-v1-42a3f44fb40168fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/input-classification-v1@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-input-classification-v1-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5b241fd22d33aa92fc62313b2dab20c86e743399b07f3817796067629a0c9b32",
+      "artifactSizeBytes": 2531
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T05:10:21.241Z"
+}

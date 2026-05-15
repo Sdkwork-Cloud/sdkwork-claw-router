@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44513,
+  "uuid": "skill-clawhub-exoplanet-detection-period-transit-least-squares",
+  "skillKey": "clawhub-exoplanet-detection-period-transit-least-squares",
+  "name": "transit-least-squares",
+  "summary": "Transit Least Squares (TLS) algorithm for detecting exoplanet transits in light curves. Use when searching for transiting exoplanets specifically, as TLS is...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.exoplanet_detection_period_transit_least_squares",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wu-uk",
+      "features": [
+        "Transit Least Squares (TLS) algorithm for detecting exoplanet transits in light curves",
+        "Use when searching for transiting exoplanets specifically, as TLS is..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/exoplanet-detection-period-transit-least-squares@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199610473?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "exoplanet-detection-period-transit-least-squares",
+      "url": "https://clawhub.ai/skills/exoplanet-detection-period-transit-least-squares"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "exoplanet-detection-period-transit-least-squares",
+    "url": "https://clawhub.ai/skills/exoplanet-detection-period-transit-least-squares",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/exoplanet-detection-period-transit-least-squares-aa8b1bce583ead6e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/exoplanet-detection-period-transit-least-squares@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-exoplanet-detection-period-transit-least-squares-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ec05eb8e32a453d6af7836193930fdfce9ada647bb7a517cdf19e2811a5d15f",
+      "artifactSizeBytes": 2114
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T05:08:09.965Z"
+}

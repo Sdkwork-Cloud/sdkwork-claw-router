@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/echomindr-founder-retrieval@1.3.0",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.echomindr_founder_retrieval",
+  "skill": {
+    "id": 50692,
+    "skillKey": "clawhub-echomindr-founder-retrieval",
+    "name": "Echomindr Founder Retrieval"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "echomindr-founder-retrieval",
+    "url": "https://clawhub.ai/skills/echomindr-founder-retrieval",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/echomindr-founder-retrieval-6f54892a1ccc3fe7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Retrieve real founder experiences, decisions, and outcomes from Echomindr — 1,150+ moments from top startup podcasts. Use whenever a founder describes any te..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "voxbase",
+      "userId": "publishers:voxbase",
+      "displayName": "voxbase",
+      "image": "https://avatars.githubusercontent.com/u/235371476?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 411,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.3.0",
+      "createdAt": 1773389538345,
+      "changelog": "- Updated founder moments dataset (now 1,150+ moments, previously 2,700+).\n- Removed secondary endpoint for concrete facts & metrics from documentation.\n- Updated details in the About Echomindr section (canonical situations, thematic families).\n- Documentation and example cases revised for clarity and accuracy.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d6713e868eb6219aac25227c014b698f35537fbf6cd72fb1572f19861bd62bdd"
+}

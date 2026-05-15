@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20915,
+  "uuid": "skill-clawhub-agent-scorecard",
+  "skillKey": "clawhub-agent-scorecard",
+  "name": "Agent Scorecard",
+  "summary": "Configurable quality evaluation for AI agent outputs. Define criteria, run evaluations, track quality over time. No LLM-as-judge, no API calls, pattern-based...",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_scorecard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shadow Rose",
+      "features": [
+        "Configurable quality evaluation for AI agent outputs",
+        "Define criteria, run evaluations, track quality over time",
+        "No LLM-as-judge, no API calls, pattern-based..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-scorecard@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262919821?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-scorecard",
+      "url": "https://clawhub.ai/skills/agent-scorecard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-scorecard",
+    "url": "https://clawhub.ai/skills/agent-scorecard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-scorecard-7880bcf2f464fbc6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-scorecard@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-scorecard-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5e3e796bebd954b159743d0c34ea0e64366a85437aec73a78a2bf96e58ed67f4",
+      "artifactSizeBytes": 1991
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T12:48:50.810Z"
+}

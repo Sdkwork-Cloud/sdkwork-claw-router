@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60134,
+  "uuid": "skill-clawhub-neo4j-cypher-query-analyze",
+  "skillKey": "clawhub-neo4j-cypher-query-analyze",
+  "name": "neo4j-cypher-query-analyze",
+  "summary": "智能图数据库查询助手 - 自动感知 Schema 结构，根据自然语言生成精准的 Cypher 查询",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neo4j_cypher_query_analyze",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jeffRao",
+      "features": [
+        "智能图数据库查询助手",
+        "自动感知 Schema 结构，根据自然语言生成精准的 Cypher 查询"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/neo4j-cypher-query-analyze@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33320518?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "neo4j-cypher-query-analyze",
+      "url": "https://clawhub.ai/skills/neo4j-cypher-query-analyze"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neo4j-cypher-query-analyze",
+    "url": "https://clawhub.ai/skills/neo4j-cypher-query-analyze",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neo4j-cypher-query-analyze-4132198374419050.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/neo4j-cypher-query-analyze@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-neo4j-cypher-query-analyze-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:efb512c24389e05231bd37f60fc2a8a184764bf462411714952f773dc27b6223",
+      "artifactSizeBytes": 2638
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T03:34:33.436Z"
+}

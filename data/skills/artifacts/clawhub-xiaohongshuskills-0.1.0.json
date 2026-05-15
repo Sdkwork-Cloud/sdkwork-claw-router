@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaohongshuskills@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshuskills",
+  "skill": {
+    "id": 67112,
+    "skillKey": "clawhub-xiaohongshuskills",
+    "name": "xiaohongshuskills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshuskills",
+    "url": "https://clawhub.ai/skills/xiaohongshuskills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshuskills-dc04a972d989feb2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将图文/视频内容自动发布到小红书（XHS）。 支持三类任务：发布图文、发布视频、仅启动测试浏览器（不发布）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "white0dew",
+      "userId": "s17bn8vxjtm8914hp7k9gr722d83nnc9",
+      "displayName": "青玉白露",
+      "image": "https://avatars.githubusercontent.com/u/49017390?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 956,
+      "installsAllTime": 22,
+      "installsCurrent": 21,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772261351053,
+      "changelog": "RedBookSkills v0.1.0 — Initial Release\n\n- Automates publishing of text-image and video content to Xiaohongshu (XHS), plus testing browser control.\n- Supports three tasks: publish text-image, publish video, or start/test browser without publishing.\n- Includes interactive input validation, requiring user confirmation before posting.\n- Handles content search, detail retrieval, commenting, notification mentions, and content metrics.\n- Provides command examples and strict publishing constraints (e.g., title length, image/video exclusivity, headless mode default).\n- Adds multi-account switching and robust error handling with user-friendly prompts.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dfdec56a804334a790946b52d11e205d1a47557c2503c6b863bfbc84b2495d68"
+}

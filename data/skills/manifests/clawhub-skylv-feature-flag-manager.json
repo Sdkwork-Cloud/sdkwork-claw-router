@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55841,
+  "uuid": "skill-clawhub-skylv-feature-flag-manager",
+  "skillKey": "clawhub-skylv-feature-flag-manager",
+  "name": "Skylv Feature Flag Manager",
+  "summary": "Toggle features instantly without deploying code. A/B test variants, gradual rollouts from 1% to 100%, and emergency kill switches for AI agents.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_feature_flag_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "Toggle features instantly without deploying code",
+        "A/B test variants, gradual rollouts from 1% to 100%, and emergency kill switches for AI agents."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skylv-feature-flag-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skylv-feature-flag-manager",
+      "url": "https://clawhub.ai/skills/skylv-feature-flag-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-feature-flag-manager",
+    "url": "https://clawhub.ai/skills/skylv-feature-flag-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-feature-flag-manager-5e84145ce101c759.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skylv-feature-flag-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skylv-feature-flag-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f4c8a8f97ce8a55e20042822f3d9b5cedaf37207298be78718d7a2f53f74000b",
+      "artifactSizeBytes": 2342
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T02:49:21.351Z"
+}

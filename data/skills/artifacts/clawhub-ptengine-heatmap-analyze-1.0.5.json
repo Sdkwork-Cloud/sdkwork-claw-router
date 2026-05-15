@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ptengine-heatmap-analyze@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ptengine_heatmap_analyze",
+  "skill": {
+    "id": 54961,
+    "skillKey": "clawhub-ptengine-heatmap-analyze",
+    "name": "Ptengine Heatmap Analyze"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ptengine-heatmap-analyze",
+    "url": "https://clawhub.ai/skills/ptengine-heatmap-analyze",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ptengine-heatmap-analyze-9f92aba67346baa6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Ptengine Heatmap end-to-end analysis skill. Fetches real heatmap data via the user-installed `ptengine-cli` tool and runs AI-powered CRO behavior analysis us..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhaichen",
+      "userId": "s17fbbmq0ehwn1k29ttnxea5fh8508yn",
+      "displayName": "zhaichen",
+      "image": "https://avatars.githubusercontent.com/u/5540196?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 238,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1776664230884,
+      "changelog": "ptengine-heatmap-analyze v1.0.5 — Minor update with enhanced transparency on dependencies and boundaries.\n\n- Clarified external requirements: user must install and configure `ptengine-cli` themselves.\n- Added explicit documentation of all resources accessed (executables, config files, environment variables), including who reads/writes each.\n- Strengthened statements about data source boundaries and never scraping target URLs or handling credentials directly.\n- No core analysis pipeline or workflow logic is changed in this version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5c120d4a433e0655580de325773ee9d77104e893421c0b592b6b0979b0b82367"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/awesome-closet-stylist@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.awesome_closet_stylist",
+  "skill": {
+    "id": 34804,
+    "skillKey": "clawhub-awesome-closet-stylist",
+    "name": "awesome-closet-stylist"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "awesome-closet-stylist",
+    "url": "https://clawhub.ai/skills/awesome-closet-stylist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/awesome-closet-stylist-8a93fd5a0dad1348.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Maintain a persistent personal wardrobe, answer wardrobe questions, and recommend outfits from existing clothes with natural-language responses."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "investigator13th",
+      "userId": "s171ghjpqcmgm5sc4r1wxfh3a5847dr8",
+      "displayName": "Investigator13th",
+      "image": "https://avatars.githubusercontent.com/u/119908978?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775913354173,
+      "changelog": "在skill中规范用户配置信息的存储位置，以后会存放在工作区而非skill目录下，这样就可以一直持久化存储而不会因为更新丢失了。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4b96376a8c2b32721f01cb7835d28639b7207e42db1fee93129999889861cc75"
+}

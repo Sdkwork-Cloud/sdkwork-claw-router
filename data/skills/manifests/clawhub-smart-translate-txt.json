@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43305,
+  "uuid": "skill-clawhub-smart-translate-txt",
+  "skillKey": "clawhub-smart-translate-txt",
+  "name": "Translate TXT",
+  "summary": "Translate text files using OpenAI-compatible APIs (e.g. SiliconFlow, DeepSeek, OpenAI). Use when the user wants to: translate a txt file, translate text to C...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_translate_txt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "litousteven",
+      "features": [
+        "Translate text files using OpenAI-compatible APIs (e.g",
+        "SiliconFlow, DeepSeek, OpenAI)",
+        "Use when the user wants to: translate a txt file, translate text to C..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-translate-txt@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26245339?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-translate-txt",
+      "url": "https://clawhub.ai/skills/smart-translate-txt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-translate-txt",
+    "url": "https://clawhub.ai/skills/smart-translate-txt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-translate-txt-faaef20e7f999423.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-translate-txt@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-translate-txt-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:14a36d729d43476a9da4e407659d384630261b9996f41dfcbcfdec5aa598d711",
+      "artifactSizeBytes": 2001
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T07:39:58.442Z"
+}

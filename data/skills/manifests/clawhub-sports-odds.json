@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13073,
+  "uuid": "skill-clawhub-sports-odds",
+  "skillKey": "clawhub-sports-odds",
+  "name": "Sports Odds",
+  "summary": "Retrieve live betting odds and compare moneyline, spreads, and totals across sportsbooks for NFL, NBA, MLB, NHL, and other sports using The Odds API.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sports_odds",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ianalloway",
+      "features": [
+        "Retrieve live betting odds and compare moneyline, spreads, and totals across sportsbooks for NF."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sports-odds@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/200005377?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sports-odds",
+      "url": "https://clawhub.ai/skills/sports-odds"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sports-odds",
+    "url": "https://clawhub.ai/skills/sports-odds",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sports-odds-cbc86b1319ce1fda.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sports-odds@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sports-odds-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d0b9316ad59a7de1f31ef34041dacdbbe978882543192f8c846a6ee564668aa4",
+      "artifactSizeBytes": 2352
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T00:47:46.434Z"
+}

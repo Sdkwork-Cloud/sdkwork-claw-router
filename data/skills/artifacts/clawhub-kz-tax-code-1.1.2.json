@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kz-tax-code@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kz_tax_code",
+  "skill": {
+    "id": 63818,
+    "skillKey": "clawhub-kz-tax-code",
+    "name": "Kazakhstan tax assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kz-tax-code",
+    "url": "https://clawhub.ai/skills/kz-tax-code",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kz-tax-code-426d509da1f44974.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Kazakhstan tax assistant — НК РК / ҚР Салық кодексі (актуальная редакция). Отвечает на вопросы о налогах на русском и казахском языках. Ищет статьи, объясняе..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "k0zibek",
+      "userId": "publishers:k0zibek",
+      "displayName": "Kazybek",
+      "image": "https://avatars.githubusercontent.com/u/73112630?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 519,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1772779836397,
+      "changelog": "**New: поддержка поиска официальных ставок и лимитов (МРП/АЕК, МЗП/ЕАМ, ОПВ, МӘМС) из отдельных законов.**\n\n- Добавлены файлы: laws.json (метаданные бюджетных и смежных законов), scripts/_shared.mjs, scripts/fetch.js (загрузка и парсинг текстов законов).\n- Для расчётов и ответов используются только значения, найденные в указанных источниках (бюджет, пенсионный закон и т.д.), никаких \"старых\" ставок из памяти.\n- Поддержка персонализированных расчётов с учётом возраста, если запрос касается конкретных выплат (ОПВ, пенсионные, т.п.).\n- Изменена логика определения языка: автоопределение по тексту; ручной режим по флагу.\n- В документации отражены инструкции по загрузке и поиску лимитов/ставок в сторонних законах.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f5ec6635eddda7131fd5642618db6ea0603c91974a260ae4906acc63b6a9936b"
+}

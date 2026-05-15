@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/effective-git@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.effective_git",
+  "skill": {
+    "id": 32592,
+    "skillKey": "clawhub-effective-git",
+    "name": "Effective Git"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "effective-git",
+    "url": "https://clawhub.ai/skills/effective-git",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/effective-git-ebd6964342f717ed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Intelligent Git workflow assistant following best practices. Use when user needs help with git commits, analyzing changes, writing commit messages, pushing c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guguoyi",
+      "userId": "s173z9v716amvgptffp12ym39n83gd3p",
+      "displayName": "将军王谷",
+      "image": "https://avatars.githubusercontent.com/u/20290298?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 249,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774361931472,
+      "changelog": "Initial release of effective-git: an intelligent Git workflow assistant.\n\n- Provides quick command support via 'gq' prefix for rapid Git operations (e.g., list branches, check status).\n- Analyzes changes and recommends best commit strategies (amend vs new commit) while following project conventions.\n- Ensures safety and requires confirmation for dangerous operations like force push, hard reset, and history rewrites.\n- Guides users through merges and conflict resolution with structured analysis and code preservation.\n- Offers detailed best practices and reference guides for common Git workflows and safe code management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b3f0fe6441ce2404b68608a3190c0bb37e084498a748ba4ba0d68c78bd081a8e"
+}

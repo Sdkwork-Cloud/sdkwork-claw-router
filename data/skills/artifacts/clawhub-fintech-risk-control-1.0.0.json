@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fintech-risk-control@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fintech_risk_control",
+  "skill": {
+    "id": 68825,
+    "skillKey": "clawhub-fintech-risk-control",
+    "name": "FinTech Risk Control Expert"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fintech-risk-control",
+    "url": "https://clawhub.ai/skills/fintech-risk-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fintech-risk-control-754179037aa147b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "数字金融科技与风控策略专家。当用户要求进行数据分析、使用Python处理金融数据、构建风控模型（决策树、分箱）、进行特征工程与分箱、分析信用风险、生成风控规则、构建评分卡等场景时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jhinking",
+      "userId": "s17aevrs3ezs4ajygfq2e1c9k183k03t",
+      "displayName": "JhinKing",
+      "image": "https://avatars.githubusercontent.com/u/55840005?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 317,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774423514139,
+      "changelog": "Initial release of fintech-risk-control.\n\n- Provides digital finance technology and risk control strategy expertise.\n- Supports Python data analysis, financial data processing, and machine learning modeling (e.g., decision trees, random forests).\n- Includes feature engineering techniques like WOE encoding, IV calculation, and feature binning/selection.\n- Enables generation of risk control rules and construction of credit scoring cards.\n- Offers best-practice thresholds for key risk metrics (KS, AUC, IV, PSI).\n- Activates on keywords such as 风控, 信用评分, 决策树, WOE, IV, 评分卡, etc.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7c2219d52a00beee1c6aae595f5f549209d1c56285d90a49543980e15004a376"
+}

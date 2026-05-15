@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10534,
+  "uuid": "skill-clawhub-longevity-assistant",
+  "skillKey": "clawhub-longevity-assistant",
+  "name": "Longevity Assistant",
+  "summary": "Evaluates longevity interventions using evidence tiers. Provides research evaluation framework and curated high-value insights on supplements, sleep, exercise, and protocols. Activate for anti-aging, healthspan, supplement evaluation, or r.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.longevity_assistant",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lofimichael",
+      "features": [
+        "Evaluates longevity interventions using evidence tiers",
+        "Provides research evaluation framework and curated high-value insights on supplements, sleep, e.",
+        "Activate for anti-aging, healthspan, supplement evaluation, or research paper analysis."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/longevity-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94795502?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "longevity-assistant",
+      "url": "https://clawhub.ai/skills/longevity-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "longevity-assistant",
+    "url": "https://clawhub.ai/skills/longevity-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/longevity-assistant-970a07d344f11405.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/longevity-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-longevity-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2c5a09e301300ca0b07a67dc5a37e399db9870b30673fe9ebb9e1ce38ba79e31",
+      "artifactSizeBytes": 2752
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T00:28:38.722Z"
+}

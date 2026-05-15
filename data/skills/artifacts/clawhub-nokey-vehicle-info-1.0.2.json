@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nokey-vehicle-info@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nokey_vehicle_info",
+  "skill": {
+    "id": 70947,
+    "skillKey": "clawhub-nokey-vehicle-info",
+    "name": "nokey-vehicle-info"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nokey-vehicle-info",
+    "url": "https://clawhub.ai/skills/nokey-vehicle-info",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nokey-vehicle-info-5f2ea59988cfc66d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "车辆信息查询技能，支持查询车辆位置、车况信息（车锁、车门、车窗、空调、引擎状态等）。当用户查询车辆位置、询问车辆在哪里、查询车况信息时自动调用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhouzidan",
+      "userId": "s174wbcxffa6wm4zmm8sesztqs83hkgx",
+      "displayName": "zhou_guobao",
+      "image": "https://avatars.githubusercontent.com/u/3213909?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774343048461,
+      "changelog": "**Changelog for nokey-vehicle-info v1.0.2**\n\n- 更新接口响应示例与字段说明，细化车辆状态字段（power、trunk、gear、window 等）。\n- 明确 gear 档位、window 车窗等字段的编码说明。\n- 删除响应示例中未必返回的车辆物理量字段（如温度、电压、电量等）。\n- 无功能完善或接口变更，仅文档描述更正与结构精简。\n- 保留所有使用方式和环境切换相关指引不变。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e571e360d279b2b799c443f18e60f9c424c79daece30b0479da5cb6a3e7da25b"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/solo-cli-guide@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solo_cli_guide",
+  "skill": {
+    "id": 51750,
+    "skillKey": "clawhub-solo-cli-guide",
+    "name": "Solo CLI Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solo-cli-guide",
+    "url": "https://clawhub.ai/skills/solo-cli-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solo-cli-guide-8831bb3fdd58cd12.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interactive step-by-step tutor for Solo CLI — guides a human through environment setup, robot arm calibration, teleoperation, dataset recording, and policy t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "samarthshukla6",
+      "userId": "s17f3fz2xw05gcq7wbk5zv500s84ep42",
+      "displayName": "Samarth Shukla",
+      "image": "https://avatars.githubusercontent.com/u/141849001?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775678458961,
+      "changelog": "Clarify security section: agent reads only bundled files; validation steps ask the user to inspect their own env, not the agent",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:845f99a2d737051cadc09232cc9b9bf75920ae1ac1c384a49efdae4b8f33575a"
+}

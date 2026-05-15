@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-defibrillator@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_defibrillator",
+  "skill": {
+    "id": 15210,
+    "skillKey": "clawhub-agent-defibrillator",
+    "name": "Agent Defibrillator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-defibrillator",
+    "url": "https://clawhub.ai/skills/agent-defibrillator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-defibrillator-717868971e9b86bd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Watchdog that monitors your AI agent gateway and restarts it when it crashes. Triggers on \"install defibrillator\", \"agent watchdog\", \"gateway monitor\", \"auto..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hazy2go",
+      "userId": "publishers:hazy2go",
+      "displayName": "Hazy",
+      "image": "https://avatars.githubusercontent.com/u/126595453?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1034,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771241724894,
+      "changelog": "Security fixes: removed hardcoded Discord channel, recommend git clone over curl|bash",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ffa9065686d143e58baa4358459fc904f8aa9bb1ab8ccf121e0c947b86ea5c2e"
+}

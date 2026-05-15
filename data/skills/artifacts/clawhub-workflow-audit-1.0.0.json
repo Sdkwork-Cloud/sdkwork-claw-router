@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/workflow-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workflow_audit",
+  "skill": {
+    "id": 52658,
+    "skillKey": "clawhub-workflow-audit",
+    "name": "Workflow Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workflow-audit",
+    "url": "https://clawhub.ai/skills/workflow-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workflow-audit-fdf5bae84a5b5f32.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Conduct a structured operational audit — identify friction points, map workflows, quantify waste, and produce a priority-ranked automation blueprint with ROI..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adawodu",
+      "userId": "s174kq1j00tsxtrpdype88mcpn84eegc",
+      "displayName": "Adebayo Dawodu",
+      "image": "https://avatars.githubusercontent.com/u/4356024?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 195,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776662520506,
+      "changelog": "Initial release — operational friction audit with ROI-driven automation blueprints",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:293ffb3a3770d4a0cd90df2a86d1a4ecf955ffff52db8f2829fc9565d4a2958c"
+}

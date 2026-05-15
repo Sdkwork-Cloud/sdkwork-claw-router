@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70547,
+  "uuid": "skill-clawhub-flight-requirement-review",
+  "skillKey": "clawhub-flight-requirement-review",
+  "name": "机票产品需求评审",
+  "summary": "机票产品需求评审 Agent。对前端、后端、运营类机票需求文档进行结构化评审打分，含独立的流程图治理评审（去If化、卫语句、决策表、FSM、泳道图、分层建模）。输入需求文档（markdown/图片/HTML），输出分项评分、评语和改进建议。使用场景：用户说\"评审需求\"、\"审需求文档\"、\"给需求打分\"、\"需求评审\"...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flight_requirement_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AriseFX",
+      "features": [
+        "机票产品需求评审 Agent。对前端、后端、运营类机票需求文档进行结构化评审打分，含独立的流程图治理评审（去If化、卫语句、决策表、FSM、泳道图、分层建模）。输入需求文档（markdown."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flight-requirement-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41415014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flight-requirement-review",
+      "url": "https://clawhub.ai/skills/flight-requirement-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flight-requirement-review",
+    "url": "https://clawhub.ai/skills/flight-requirement-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flight-requirement-review-68709d89c27e6211.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flight-requirement-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-flight-requirement-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:69fa67677b4b838f8c971ea5cb0d55e5fcdd54ced44e7cde6af61bf5fa7e616e",
+      "artifactSizeBytes": 2818
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T05:23:10.279Z"
+}

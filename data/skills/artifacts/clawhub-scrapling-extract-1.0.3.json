@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/scrapling-extract@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scrapling_extract",
+  "skill": {
+    "id": 16865,
+    "skillKey": "clawhub-scrapling-extract",
+    "name": "Scrapling"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scrapling-extract",
+    "url": "https://clawhub.ai/skills/scrapling-extract",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scrapling-extract-61ad8923b78ae4ee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Web scraping and data extraction using the Python Scrapling library. Use to scrape static HTML pages, JavaScript-rendered pages (Playwright), and anti-bot or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "piyushzinc",
+      "userId": "publishers:piyushzinc",
+      "displayName": "PiyushZinc",
+      "image": "https://avatars.githubusercontent.com/u/178137150?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 732,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1772764532081,
+      "changelog": "Improve search visibility with keyword-rich description and tags",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4dbe7c2d5abbb0fb03131bdbbc96e8a5c6efa1c4c26ec4aef127f83ae9179135"
+}

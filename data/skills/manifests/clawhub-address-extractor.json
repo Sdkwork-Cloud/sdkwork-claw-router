@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71063,
+  "uuid": "skill-clawhub-address-extractor",
+  "skillKey": "clawhub-address-extractor",
+  "name": "address-extractor",
+  "summary": "此技能应用于从任意文本中提取、清洗、标准化地址信息，并将其转换为结构化的省-市-区/县-乡镇/街道-村庄/社区-道路号POI格式。技能能够智能过滤特殊字符和无效备注文本，尽可能提取楼栋号和门牌号以实现精确定位，并通过高德地图API将标准化地址转换为精确的经纬度坐标。适用于文档处理、客户信息管理、物流配送、地理信息...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.address_extractor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhouyouwen",
+      "features": [
+        "此技能应用于从任意文本中提取、清洗、标准化地址信息，并将其转换为结构化的省-市-区/县-乡镇/街道-村庄/社区-道路号POI格式。技能能够智能过滤特殊字符和无效备注文本，尽可能提取楼栋号和门."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/address-extractor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37657496?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "address-extractor",
+      "url": "https://clawhub.ai/skills/address-extractor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "address-extractor",
+    "url": "https://clawhub.ai/skills/address-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/address-extractor-5778a2f27a6f4872.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/address-extractor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-address-extractor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f55227185f1cef49b1057d7f87430b721eef01f21f0190388cfe0b3d09627cc0",
+      "artifactSizeBytes": 2711
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T09:34:30.237Z"
+}

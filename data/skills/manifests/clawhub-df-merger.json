@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14574,
+  "uuid": "skill-clawhub-df-merger",
+  "skillKey": "clawhub-df-merger",
+  "name": "Df Merger",
+  "summary": "Merge pandas DataFrames from multiple construction sources. Handle different schemas, keys, and data quality issues.",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.df_merger",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "datadrivenconstruction",
+      "features": [
+        "Merge pandas DataFrames from multiple construction sources",
+        "Handle different schemas, keys, and data quality issues."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/df-merger@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94158709?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "df-merger",
+      "url": "https://clawhub.ai/skills/df-merger"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "df-merger",
+    "url": "https://clawhub.ai/skills/df-merger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/df-merger-54fe0f8d72837430.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/df-merger@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-df-merger-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4d71ead07000c1a4bb5811b877100c72c24dd9965ebecf73c7b1005c5fe2861",
+      "artifactSizeBytes": 2371
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T16:18:46.949Z"
+}

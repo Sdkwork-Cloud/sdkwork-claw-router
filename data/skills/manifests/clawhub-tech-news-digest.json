@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8520,
+  "uuid": "skill-clawhub-tech-news-digest",
+  "skillKey": "clawhub-tech-news-digest",
+  "name": "tech-news-digest",
+  "summary": "Generate tech news digests with unified source model, quality scoring, and multi-format output. Six-source data collection from RSS feeds, Twitter/X KOLs, Gi...",
+  "version": "3.16.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tech_news_digest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Linfeng Liang",
+      "features": [
+        "Generate tech news digests with unified source model, quality scoring, and multi-format output",
+        "Six-source data collection from RSS feeds, Twitter/X KOLs, Gi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tech-news-digest@3.16.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/815533?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tech-news-digest",
+      "url": "https://clawhub.ai/skills/tech-news-digest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tech-news-digest",
+    "url": "https://clawhub.ai/skills/tech-news-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tech-news-digest-0391aee39c9d6cde.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tech-news-digest@3.16.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tech-news-digest-3.16.0.json",
+      "version": "3.16.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dbed1c0dbfe20669b6252eb5b8d78efa20c52a20ca598781c56fdf6980fbb1ac",
+      "artifactSizeBytes": 1987
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T08:15:12.548Z"
+}

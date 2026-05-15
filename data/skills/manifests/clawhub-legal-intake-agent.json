@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49804,
+  "uuid": "skill-clawhub-legal-intake-agent",
+  "skillKey": "clawhub-legal-intake-agent",
+  "name": "Legal Intake Agent",
+  "summary": "Ultra-high-ticket intake agent for Law Firms. Qualifies leads, performs preliminary conflict-of-interest checks, and books consultations. Hardened with Thumb...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.legal_intake_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "IgorGanapolsky",
+      "features": [
+        "Ultra-high-ticket intake agent for Law Firms",
+        "Qualifies leads, performs preliminary conflict-of-interest checks, and books consultations",
+        "Hardened with Thumb..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/legal-intake-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201209?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "legal-intake-agent",
+      "url": "https://clawhub.ai/skills/legal-intake-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "legal-intake-agent",
+    "url": "https://clawhub.ai/skills/legal-intake-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/legal-intake-agent-db25c7f832d4fd76.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/legal-intake-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-legal-intake-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5edbe3559c74d86167641d441b602ec5d50b3de1ed130183df5acac2e31ed6cb",
+      "artifactSizeBytes": 2398
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T17:24:41.653Z"
+}

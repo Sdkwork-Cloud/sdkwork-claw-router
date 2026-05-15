@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70207,
+  "uuid": "skill-clawhub-7-up",
+  "skillKey": "clawhub-7-up",
+  "name": "7 Up",
+  "summary": "提供7-up品牌的历史、产品、市场表现及最新动态等详尽信息查询服务。",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.7_up",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供7-up品牌的历史、产品、市场表现及最新动态等详尽信息查询服务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/7-up@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "7-up",
+      "url": "https://clawhub.ai/skills/7-up"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "7-up",
+    "url": "https://clawhub.ai/skills/7-up",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/7-up-784f52d29698ee5f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/7-up@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-7-up-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:75e698138a374d9bb68d9a1764d280d50fa2e5cff1390a9e5a88d063179282a0",
+      "artifactSizeBytes": 2022
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T07:24:07.582Z"
+}

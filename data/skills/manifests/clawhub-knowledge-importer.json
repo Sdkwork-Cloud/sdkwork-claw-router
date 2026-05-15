@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61783,
+  "uuid": "skill-clawhub-knowledge-importer",
+  "skillKey": "clawhub-knowledge-importer",
+  "name": "Knowledge Importer",
+  "summary": "将 Word/Excel/PPT/PDF/MD 等格式的文档转换为 Markdown 格式，并保存到 Obsidian 知识库。图片可上传到图床，生成外部 URL 链接。当用户需要：1) 导入文档到知识库 2) 将文件转换为 MD 格式 3) 提取文档内容并保留图片时使用此技能。",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knowledge_importer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sunshinegw",
+      "features": [
+        "将 Word/Excel/PPT/PDF/MD 等格式的文档转换为 Markdown 格式，并保存到 Obsidian 知识库。图片可上传到图床，生成外部 URL 链接。当用户需要：1) 导."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/knowledge-importer@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22192397?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "knowledge-importer",
+      "url": "https://clawhub.ai/skills/knowledge-importer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knowledge-importer",
+    "url": "https://clawhub.ai/skills/knowledge-importer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knowledge-importer-1e65e6ffdb514902.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/knowledge-importer@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-knowledge-importer-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:54d42639af1384f5c45536bfd257dc07a20725f83367de8d5c422577bb91d391",
+      "artifactSizeBytes": 2150
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T02:24:09.824Z"
+}

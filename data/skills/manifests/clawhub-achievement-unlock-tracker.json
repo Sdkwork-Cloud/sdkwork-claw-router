@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43775,
+  "uuid": "skill-clawhub-achievement-unlock-tracker",
+  "skillKey": "clawhub-achievement-unlock-tracker",
+  "name": "Achievement Unlock Tracker",
+  "summary": "Convert recent progress into a game-style achievement board with evidence, rarity, near-unlock targets, and hidden growth signals. Use for weekly or monthly...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.achievement_unlock_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Convert recent progress into a game-style achievement board with evidence, rarity, near-unlock.",
+        "Use for weekly or monthly..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/achievement-unlock-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "achievement-unlock-tracker",
+      "url": "https://clawhub.ai/skills/achievement-unlock-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "achievement-unlock-tracker",
+    "url": "https://clawhub.ai/skills/achievement-unlock-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/achievement-unlock-tracker-c2a1cf1df9c2dc78.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/achievement-unlock-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-achievement-unlock-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2c73ab94c66f02a406b4c45a2314be59f7c18a5bbd3182d677cefca6c7ca9c0e",
+      "artifactSizeBytes": 2468
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T09:46:04.834Z"
+}

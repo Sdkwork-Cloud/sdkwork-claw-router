@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38903,
+  "uuid": "skill-clawhub-investment-browser-sec",
+  "skillKey": "clawhub-investment-browser-sec",
+  "name": "Investment Browser SEC Scraper",
+  "summary": "Professional SEC EDGAR 10-Q/10-K parser for institutional investors. Extracts 47 financial metrics from HTML tables including Revenue, Net Income, EPS, Free...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.investment_browser_sec",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lettywyse",
+      "features": [
+        "Professional SEC EDGAR 10-Q/10-K parser for institutional investors",
+        "Extracts 47 financial metrics from HTML tables including Revenue, Net Income, EPS, Free..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/investment-browser-sec@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83311813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "investment-browser-sec",
+      "url": "https://clawhub.ai/skills/investment-browser-sec"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "investment-browser-sec",
+    "url": "https://clawhub.ai/skills/investment-browser-sec",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/investment-browser-sec-12938d8ee70d4f9e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/investment-browser-sec@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-investment-browser-sec-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bf2507140c0de4f336ffc0016a8c4bc57bbe215706562b8ba7f961102baae8f4",
+      "artifactSizeBytes": 2351
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T09:31:09.510Z"
+}

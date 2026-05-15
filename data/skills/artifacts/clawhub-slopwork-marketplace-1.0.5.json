@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/slopwork-marketplace@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slopwork_marketplace",
+  "skill": {
+    "id": 13533,
+    "skillKey": "clawhub-slopwork-marketplace",
+    "name": "Slopwork Marketplace"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slopwork-marketplace",
+    "url": "https://clawhub.ai/skills/slopwork-marketplace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slopwork-marketplace-e3e198d4c05daa58.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Solana-powered task marketplace with multisig escrow payments - post tasks, bid on work, escrow funds, and release payments via 2/3 multisig"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "heyhal9000",
+      "userId": "publishers:heyhal9000",
+      "displayName": "heyhal9000",
+      "image": "https://avatars.githubusercontent.com/u/258543861?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1430,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1770642702571,
+      "changelog": "Complete documentation sync: Added Quick Decision Tree, SOL vs Lamports section, competition workflows, submit deliverables, list submissions, complete task lifecycle for both modes, multisig design for both modes, updated scripts table, updated CLI usage, updated API endpoints, and example interactions for both Quote and Competition modes",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8a672b54aabf5306060612ab8cb8e860e300fd64fbac0301235a579f4725579f"
+}

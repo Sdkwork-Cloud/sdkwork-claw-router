@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/android-gui-automation@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.android_gui_automation",
+  "skill": {
+    "id": 45580,
+    "skillKey": "clawhub-android-gui-automation",
+    "name": "Android GUI Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "android-gui-automation",
+    "url": "https://clawhub.ai/skills/android-gui-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/android-gui-automation-43a813b162943292.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate Android apps via Termux using uiautomator2 or Tasker for clicks, swipes, screenshots, text extraction, price tracking, and scheduled tasks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "smseow001",
+      "userId": "s17a72fh5mgpvvs3dm2ax0yq8984pnqc",
+      "displayName": "SMS",
+      "image": "https://avatars.githubusercontent.com/u/33817483?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1777460365451,
+      "changelog": "v3.0: 集成 MiniMax MCP + uiautomator2-mcp，45个现成MCP Tools，tap_sequence复合操作，base64截图，直连MiniMax控制手机屏幕",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d4f274be932bbfe4cbac4ff963de7e881d4da4e62c1744a8cafa9a9623011a42"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47026,
+  "uuid": "skill-clawhub-key-rotation-planner",
+  "skillKey": "clawhub-key-rotation-planner",
+  "name": "Key Rotation Planner",
+  "summary": "Plan and track cryptographic key rotations for API keys, encryption keys, signing keys, and service credentials. Inventory all keys, assess rotation urgency,...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.key_rotation_planner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Plan and track cryptographic key rotations for API keys, encryption keys, signing keys, and ser.",
+        "Inventory all keys, assess rotation urgency,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/key-rotation-planner@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "key-rotation-planner",
+      "url": "https://clawhub.ai/skills/key-rotation-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "key-rotation-planner",
+    "url": "https://clawhub.ai/skills/key-rotation-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/key-rotation-planner-b802dc8beceb2732.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/key-rotation-planner@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-key-rotation-planner-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5d974ba147c3d2e84ed081fa352dce352c427ac6f556e91244fc5367f13f10f3",
+      "artifactSizeBytes": 1993
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:01:57.625Z"
+}

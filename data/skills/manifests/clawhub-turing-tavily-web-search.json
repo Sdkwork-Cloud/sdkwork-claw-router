@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22274,
+  "uuid": "skill-clawhub-turing-tavily-web-search",
+  "skillKey": "clawhub-turing-tavily-web-search",
+  "name": "Turing Tavily Web Search",
+  "summary": "Search the web via the Turing Tavily proxy. Use when the user asks to search the web, look up real-time information, research current events, or needs up-to-...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.turing_tavily_web_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CAPREaaa",
+      "features": [
+        "Search the web via the Turing Tavily proxy",
+        "Use when the user asks to search the web, look up real-time information, research current event."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/turing-tavily-web-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/96684416?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "turing-tavily-web-search",
+      "url": "https://clawhub.ai/skills/turing-tavily-web-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "turing-tavily-web-search",
+    "url": "https://clawhub.ai/skills/turing-tavily-web-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/turing-tavily-web-search-08fe7aa17d3470ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/turing-tavily-web-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-turing-tavily-web-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2cd61dba29cc882b54c61916e2d222760eab80929d3a9c6f73fb7b21418537b",
+      "artifactSizeBytes": 2456
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T03:42:40.971Z"
+}

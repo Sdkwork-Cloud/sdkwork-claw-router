@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editor-app@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editor_app",
+  "skill": {
+    "id": 47861,
+    "skillKey": "clawhub-video-editor-app",
+    "name": "Video Editor App"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editor-app",
+    "url": "https://clawhub.ai/skills/video-editor-app",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editor-app-5f8524cd4f177040.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get edited MP4 clips ready to post, without touching a single slider. Upload your raw video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"tri..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 108,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777310367195,
+      "changelog": "Initial release of Video Editor App — fast AI-powered video editing and export.\n\n- Upload raw video clips (MP4, MOV, AVI, WebM, up to 500MB) and describe desired edits (e.g., \"trim pauses, add background music, export as highlight reel\").\n- Cloud-based editing and rendering: no software installation required; 1080p MP4 download in 1–2 minutes for typical clips.\n- Automatic setup with anonymous token generation and cloud session management.\n- Quick commands: check credits, export videos, view timeline, and more via simple text prompts.\n- Robust error handling for file size, format, session, and subscription issues.\n- Supports multiple video/audio/text track types and batch editing workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:63badadfd56c8dbe5fdf5b8d9d4889e974f303c88f7ce85b887ca0c91d85940d"
+}

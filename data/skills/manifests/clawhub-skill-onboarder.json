@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43438,
+  "uuid": "skill-clawhub-skill-onboarder",
+  "skillKey": "clawhub-skill-onboarder",
+  "name": "Skill Onboarder",
+  "summary": "Auto-wires new skills into core system. On skill install detected, reads SKILL.md/AGENT.md/SOUL.md/hooks and injects into soul/memory/agent files.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_onboarder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cyber-bye",
+      "features": [
+        "Auto-wires new skills into core system",
+        "On skill install detected, reads SKILL.md/AGENT.md/SOUL.md/hooks and injects into soul/memory/a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-onboarder@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42940952?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-onboarder",
+      "url": "https://clawhub.ai/skills/skill-onboarder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-onboarder",
+    "url": "https://clawhub.ai/skills/skill-onboarder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-onboarder-8271129b5c60a2c0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-onboarder@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-onboarder-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:42831d2f63e9ae32ae80be9119f4fec5e7b8e79d1e0f08381ae959625abc1cb2",
+      "artifactSizeBytes": 1879
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T00:50:12.147Z"
+}

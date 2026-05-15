@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34463,
+  "uuid": "skill-clawhub-builderall-mailingboss",
+  "skillKey": "clawhub-builderall-mailingboss",
+  "name": "Builderall Mailingboss",
+  "summary": "Builderall Mailingboss integration. Manage data, records, and automate workflows. Use when the user wants to interact with Builderall Mailingboss data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.builderall_mailingboss",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Builderall Mailingboss integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Builderall Mailingboss data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/builderall-mailingboss@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "builderall-mailingboss",
+      "url": "https://clawhub.ai/skills/builderall-mailingboss"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "builderall-mailingboss",
+    "url": "https://clawhub.ai/skills/builderall-mailingboss",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/builderall-mailingboss-36a3891922a4a6fd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/builderall-mailingboss@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-builderall-mailingboss-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d4089df908293a97bdaafdb9ed8516512ff2bc3679b34eb6ff052d5554b91a53",
+      "artifactSizeBytes": 1956
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:26:25.078Z"
+}

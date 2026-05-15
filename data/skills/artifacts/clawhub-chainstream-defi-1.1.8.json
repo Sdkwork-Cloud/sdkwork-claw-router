@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chainstream-defi@1.1.8",
+  "version": "1.1.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chainstream_defi",
+  "skill": {
+    "id": 20185,
+    "skillKey": "clawhub-chainstream-defi",
+    "name": "Chainstream Defi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chainstream-defi",
+    "url": "https://clawhub.ai/skills/chainstream-defi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chainstream-defi-dfb080e0ed3ad032.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "[FINANCIAL EXECUTION] Execute irreversible on-chain DeFi operations via CLI and MCP tools. Use when user wants to swap tokens, create tokens on launchpad, si..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harry5556",
+      "userId": "s1763qs0j2b2kgwgxyz797x2qh83kfzt",
+      "displayName": "ChainStream",
+      "image": "https://avatars.githubusercontent.com/u/199374592?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 557,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 18
+    },
+    "latestVersion": {
+      "version": "1.1.8",
+      "createdAt": 1776437541213,
+      "changelog": "**Authentication flow and onboarding improvements:**\n- Added explicit authentication check instructions: use `npx @chainstream-io/cli config auth` to verify login status before DeFi actions.\n- Clarified that first-time CLI login automatically grants a free trial plan (50K CU, 30 days).\n- Pointed to upgraded documentation for trial plans and agent bootstrap checklist.\n- Emphasized the need to verify active subscription with `plan status` before operations.\n- No changes to core DeFi or transaction command flows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bbf62e25414ffdb0a019be1fe52b3ad344afecb2776934520897dd39a3d238ab"
+}

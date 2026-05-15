@@ -1,4 +1,5 @@
 import {
+  createRequestParams,
   ensurePlusApiSuccess,
   getClawRouterAppSdkClient,
   isRecord,
@@ -50,14 +51,14 @@ type RedeemCodeServiceResult = {
 
 export class BillingService {
   static async fetchRedeemHistory(): Promise<RedeemHistoryItem[]> {
-    const result = await getClawRouterAppSdkClient().coupon.fetchRedeemHistory();
+    const result = await getClawRouterAppSdkClient().billing.users.current.coupons.list();
     ensurePlusApiSuccess(result, 'Failed to fetch redeem history');
     return readRequiredApiItems(result, 'Failed to fetch redeem history')
       .map(normalizeRedeemHistoryItem);
   }
 
   static async fetchRechargeHistory(): Promise<RechargeHistoryItem[]> {
-    const result = await getClawRouterAppSdkClient().payment.fetchRechargeHistory();
+    const result = await getClawRouterAppSdkClient().billing.payments.records.list();
     ensurePlusApiSuccess(result, 'Failed to fetch recharge history');
     return readRequiredApiItems(result, 'Failed to fetch recharge history')
       .map(normalizeRechargeHistoryItem);
@@ -66,7 +67,10 @@ export class BillingService {
   static async redeemCode(code: string): Promise<RedeemCodeServiceResult> {
     try {
       const request: RedeemCodeRequest = { code: requiredText(code, 'code') };
-      const result = await getClawRouterAppSdkClient().coupon.redeemCode(request);
+      const result = await getClawRouterAppSdkClient().billing.coupons.redeem.create(
+        request,
+        createRequestParams('commerce-coupon-redeem'),
+      );
       ensurePlusApiSuccess(result, 'Failed to redeem code');
       const response = isRecord(result) ? result : {};
       const data = readApiRecord(result);

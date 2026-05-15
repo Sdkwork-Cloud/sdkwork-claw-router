@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62797,
+  "uuid": "skill-clawhub-super-product",
+  "skillKey": "clawhub-super-product",
+  "name": "super-product",
+  "summary": "任务管理 CLI 工具，用于 Super Productivity 数据的命令行管理。支持任务管理、计数器管理、项目管理、今日状态查看等功能。当用户提到 super-productivity、sp 任务管理、命令行任务管理时触发。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.super_product",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jay",
+      "features": [
+        "任务管理 CLI 工具，用于 Super Productivity 数据的命令行管理。支持任务管理、计数器管理、项目管理、今日状态查看等功能。当用户提到 super-productivity."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/super-product@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1488374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "super-product",
+      "url": "https://clawhub.ai/skills/super-product"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "super-product",
+    "url": "https://clawhub.ai/skills/super-product",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/super-product-e555db7e70c7b9f6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/super-product@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-super-product-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:33110252d01ad4e292e05bd97bdb4dbfc38ff18accdeab9b7dbd0c1a7e92bb48",
+      "artifactSizeBytes": 2342
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T10:39:06.708Z"
+}

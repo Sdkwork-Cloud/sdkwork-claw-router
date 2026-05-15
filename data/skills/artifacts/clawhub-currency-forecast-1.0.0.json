@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/currency-forecast@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.currency_forecast",
+  "skill": {
+    "id": 29666,
+    "skillKey": "clawhub-currency-forecast",
+    "name": "Currency Forecast"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "currency-forecast",
+    "url": "https://clawhub.ai/skills/currency-forecast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/currency-forecast-f0c0644ee1a18206.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Professional currency exchange rate analysis and forecasting tool. Provides technical analysis, market research, and predictive insights for currency pairs l..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nicowu07",
+      "userId": "s17647gczyfp3q5kgy700yncm184n99k",
+      "displayName": "Nico Wu",
+      "image": "https://avatars.githubusercontent.com/u/20920436?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 298,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773895845620,
+      "changelog": "Initial release of currency-forecast:\n\n- Provides professional exchange rate analysis using technical analysis, market research, and predictive forecasting.\n- Supports any currency pair available via the Frankfurter API.\n- Delivers comprehensive reports with technical and fundamental analysis, forecasts, and trading recommendations.\n- Includes example usage and output to guide users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c109ccb2cf735638edf6837aa54f26d9d51f3c7ace344163437c994a843ec5d3"
+}

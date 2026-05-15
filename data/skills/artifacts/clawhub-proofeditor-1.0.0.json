@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/proofeditor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proofeditor",
+  "skill": {
+    "id": 28318,
+    "skillKey": "clawhub-proofeditor",
+    "name": "Proof"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proofeditor",
+    "url": "https://clawhub.ai/skills/proofeditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proofeditor-98214f8a0dfbefbe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Web-first skill for working with Proof documents via proofeditor.ai. Use when a Proof URL is shared, when creating collaborative docs in Proof, or when the u..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dshipper",
+      "userId": "publishers:dshipper",
+      "displayName": "Dan Shipper",
+      "image": "https://avatars.githubusercontent.com/u/263564?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 319,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773258443984,
+      "changelog": "- Major update: Proof skill now deeply integrates with proofeditor.ai for collaborative Markdown editing and shared document workflows.\n- SKILL.md rewritten with new instructions for joining, editing, presence, and error handling in web-based Proof docs.\n- Adds detailed API usage examples, including joining docs via URL, creating shared documents, editing strategies, and managing comments/suggestions.\n- Clarifies boundary rules: local markdown remains local unless user requests Proof; do not replace local docs silently.\n- Removes old formal verification/zero-knowledge proof-focused design and documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:48943d8e90a48632d1891cecaabbd4558dc1286dcc1e6bbdf4624a8d68ebfb6f"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30198,
+  "uuid": "skill-clawhub-fofamap",
+  "skillKey": "clawhub-fofamap",
+  "name": "fofamap",
+  "summary": "Use this skill when the user wants FOFA-based asset discovery, host profiling, distribution statistics, icon_hash generation, query refinement after zero-res...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fofamap",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "asaotomo",
+      "features": [
+        "Use this skill when the user wants FOFA-based asset discovery, host profiling, distribution sta."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fofamap@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67818638?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fofamap",
+      "url": "https://clawhub.ai/skills/fofamap"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fofamap",
+    "url": "https://clawhub.ai/skills/fofamap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fofamap-a40d0a2c7cab9457.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fofamap@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-fofamap-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d8d6c2e06e7a4cd7897f498a4f6c5a0d52b4e5542a1228cb9497f023f993d357",
+      "artifactSizeBytes": 2653
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T13:18:24.597Z"
+}

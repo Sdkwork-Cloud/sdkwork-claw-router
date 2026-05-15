@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15785,
+  "uuid": "skill-clawhub-claude-sonnet-4-lite-agent",
+  "skillKey": "clawhub-claude-sonnet-4-lite-agent",
+  "name": "Claude Sonnet 4 Lite Agent",
+  "summary": "Efficiently create content by rapidly advancing tasks, handling failures by stopping after two retries, and strictly following provided research and templates.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_sonnet_4_lite_agent",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "teamolab",
+      "features": [
+        "Efficiently create content by rapidly advancing tasks, handling failures by stopping after two."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claude-sonnet-4-lite-agent@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/183573095?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claude-sonnet-4-lite-agent",
+      "url": "https://clawhub.ai/skills/claude-sonnet-4-lite-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-sonnet-4-lite-agent",
+    "url": "https://clawhub.ai/skills/claude-sonnet-4-lite-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-sonnet-4-lite-agent-308aefc0cc7b5bc6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claude-sonnet-4-lite-agent@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claude-sonnet-4-lite-agent-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6b94775a9ea89c8b3676b37a814d923443027af8534af1e4f47cadc85d70056e",
+      "artifactSizeBytes": 2514
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T08:33:52.682Z"
+}

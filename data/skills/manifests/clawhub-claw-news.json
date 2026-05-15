@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63099,
+  "uuid": "skill-clawhub-claw-news",
+  "skillKey": "clawhub-claw-news",
+  "name": "Claw News",
+  "summary": "智能每日新闻简报 Skill。支持两种新闻获取模式：(1) 主动搜索 - 基于用户关注的话题/关键词/人名，通过多 AI API 检索全网信息；(2) RSS 订阅 - 从配置的 RSS/Atom 源自动抓取新闻。 支持智能去重、兴趣管理、AI 摘要、定时推送。 触发关键词: \"newsman\", \"新闻简报\",...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_news",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "russellfei",
+      "features": [
+        "智能每日新闻简报 Skill。支持两种新闻获取模式：(1) 主动搜索",
+        "基于用户关注的话题/关键词/人名，通过多 AI API 检索全网信息；(2) RSS 订阅",
+        "从配置的 RSS/Atom 源自动抓取新闻。 支持智能去重、兴趣管理、AI 摘要、定时推送。 触发关键词: \"newsman\", \"新闻简报\",..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-news@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3415940?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-news",
+      "url": "https://clawhub.ai/skills/claw-news"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-news",
+    "url": "https://clawhub.ai/skills/claw-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-news-6c05125ee65a2310.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-news@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-news-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f7e96940ba01b09181c48edfad3d518be1755e4680c9db0fd3d716a028be114c",
+      "artifactSizeBytes": 2507
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T09:27:31.967Z"
+}

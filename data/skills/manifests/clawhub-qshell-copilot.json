@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24246,
+  "uuid": "skill-clawhub-qshell-copilot",
+  "skillKey": "clawhub-qshell-copilot",
+  "name": "qshell-copilot",
+  "summary": "Manage files on Qiniu Cloud Storage (Kodo) via the qshell CLI tool: upload, download, list, delete, copy, move files, CDN refresh/prefetch, and bucket manage...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qshell_copilot",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lijianfei",
+      "features": [
+        "Manage files on Qiniu Cloud Storage (Kodo) via the qshell CLI tool: upload, download, list, del."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qshell-copilot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2420679?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qshell-copilot",
+      "url": "https://clawhub.ai/skills/qshell-copilot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qshell-copilot",
+    "url": "https://clawhub.ai/skills/qshell-copilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qshell-copilot-cb9efeb165b21b99.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qshell-copilot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qshell-copilot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3fc17090dd1bd0636eb2ebcbff5ae5a3b6df3ed1262a191b7c01cc781b4154a6",
+      "artifactSizeBytes": 1955
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T07:37:24.407Z"
+}

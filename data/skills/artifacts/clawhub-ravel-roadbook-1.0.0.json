@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ravel-roadbook@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ravel_roadbook",
+  "skill": {
+    "id": 61911,
+    "skillKey": "clawhub-ravel-roadbook",
+    "name": "Self-drive Travel Roadbook"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ravel-roadbook",
+    "url": "https://clawhub.ai/skills/ravel-roadbook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ravel-roadbook-f9c5db29c8fb6454.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自驾旅游路书完整工具箱 — 路书创建/更新、照片归档、路线图生成（静态PNG + 交互HTML）、OSRM实际道路数据"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ffsszzll",
+      "userId": "s17755jgsxp52gpp6efa30gj69869zpc",
+      "displayName": "ffsszzll",
+      "image": "https://avatars.githubusercontent.com/u/137285367?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 77,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778166727720,
+      "changelog": "First release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a716444b4d8bd0b8d9e9652f3316f2a52583efc28e1f6f2874eabc37595c3006"
+}

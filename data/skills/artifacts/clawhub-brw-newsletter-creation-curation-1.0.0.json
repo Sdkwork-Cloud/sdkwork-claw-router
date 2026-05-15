@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brw-newsletter-creation-curation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brw_newsletter_creation_curation",
+  "skill": {
+    "id": 18107,
+    "skillKey": "clawhub-brw-newsletter-creation-curation",
+    "name": "Newsletter Creation Curation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brw-newsletter-creation-curation",
+    "url": "https://clawhub.ai/skills/brw-newsletter-creation-curation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brw-newsletter-creation-curation-21ed06861c48d750.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Industry-adaptive B2B newsletter creation with stage, role, and geography-aware workflows"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brianrwagner",
+      "userId": "publishers:brianrwagner",
+      "displayName": "Brian Wagner",
+      "image": "https://avatars.githubusercontent.com/u/3800703?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 718,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771450459858,
+      "changelog": "- Initial release of the newsletter-creation-curation skill for B2B newsletters.\n- Provides a decision tree covering goal, industry, company stage, role, and geography to guide newsletter creation.\n- Industry-specific templates for Sales Tech, HR Tech, Fintech, and Operations Tech.\n- Step-by-step workflow: context assessment, template adaptation, content drafting, refinement, and approval.\n- Built-in role-based approval logic and KPI guidance for various newsletter goals.\n- Includes quick-start checklist, realistic case study, and usage prompt examples for different business scenarios.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:baba3091db83f6935681e9af81d65592baab5e733e44b158d00b7ba4f8a2044f"
+}

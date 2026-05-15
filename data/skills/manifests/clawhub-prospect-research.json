@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23312,
+  "uuid": "skill-clawhub-prospect-research",
+  "skillKey": "clawhub-prospect-research",
+  "name": "Prospect Research Repo",
+  "summary": "Builds a comprehensive pre-meeting intelligence brief on any company or prospect. Surfaces business context, decision-maker background, industry signals, and...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prospect_research",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Steve",
+      "features": [
+        "Builds a comprehensive pre-meeting intelligence brief on any company or prospect",
+        "Surfaces business context, decision-maker background, industry signals, and..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prospect-research@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210807441?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prospect-research",
+      "url": "https://clawhub.ai/skills/prospect-research"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prospect-research",
+    "url": "https://clawhub.ai/skills/prospect-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prospect-research-bb2c0c83e2e2d1e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prospect-research@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-prospect-research-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b2a8baa0b8c1ba547af048647c3bf0d2ca2045b490ac30609b0be3e99512923d",
+      "artifactSizeBytes": 2350
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T23:46:03.916Z"
+}

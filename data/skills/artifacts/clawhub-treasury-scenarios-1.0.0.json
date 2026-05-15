@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/treasury-scenarios@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.treasury_scenarios",
+  "skill": {
+    "id": 66633,
+    "skillKey": "clawhub-treasury-scenarios",
+    "name": "Treasury Scenarios"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "treasury-scenarios",
+    "url": "https://clawhub.ai/skills/treasury-scenarios",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/treasury-scenarios-7f6c50a58783809b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供邮储银行司库系统核心业务场景查询，返回业务流程、接口组合及对应ASCII流程图支持模糊关键词匹配。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lbj-bnu",
+      "userId": "publishers:lbj-bnu",
+      "displayName": "lbj",
+      "image": "https://avatars.githubusercontent.com/u/32859550?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 272,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773838468284,
+      "changelog": "- Initial release of Treasury Scenarios Skill (v1.0.0)\n- Enables scenario-based queries for 10 core treasury business processes\n- Provides detailed business flows, interface combinations, and ASCII flow diagrams\n- Supports keyword and fuzzy matching for scenario lookup\n- Lists available scenarios when no direct match is found",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:609b21d70e4a6a2ce1fe74840a7402ac7098f459c8c46e7c944fa1d7dd23d6db"
+}

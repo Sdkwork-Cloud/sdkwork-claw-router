@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57799,
+  "uuid": "skill-clawhub-yuqing-sync-skill",
+  "skillKey": "clawhub-yuqing-sync-skill",
+  "name": "慧科小爱舆情数据同步",
+  "summary": "Incrementally fetch data from Huike/Xiaoai API and write to Feishu Bitable, supporting automatic partitioning for tables over 10,000 records.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yuqing_sync_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FrankieWay",
+      "features": [
+        "Incrementally fetch data from Huike/Xiaoai API and write to Feishu Bitable, supporting automati."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yuqing-sync-skill@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25837859?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yuqing-sync-skill",
+      "url": "https://clawhub.ai/skills/yuqing-sync-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yuqing-sync-skill",
+    "url": "https://clawhub.ai/skills/yuqing-sync-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yuqing-sync-skill-d6f878a5b218778b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yuqing-sync-skill@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yuqing-sync-skill-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba04ac64962a4d06fe2ded0ad21ef596e3728fef5a3cea3cdff32b3aec110566",
+      "artifactSizeBytes": 1947
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T06:36:50.860Z"
+}

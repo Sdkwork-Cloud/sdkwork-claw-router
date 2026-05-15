@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40454,
+  "uuid": "skill-clawhub-telegram-telethon",
+  "skillKey": "clawhub-telegram-telethon",
+  "name": "Telegram Telethon CLI",
+  "summary": "Manage Telegram via tgctl-telethon CLI (Python/Telethon) - send/forward/edit/delete/pin messages, search, list chats/members, join/leave groups, kick/invite...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.telegram_telethon",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "阿沁",
+      "features": [
+        "Manage Telegram via tgctl-telethon CLI (Python/Telethon)",
+        "send/forward/edit/delete/pin messages, search, list chats/members, join/leave groups, kick/invi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/telegram-telethon@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48539892?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "telegram-telethon",
+      "url": "https://clawhub.ai/skills/telegram-telethon"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "telegram-telethon",
+    "url": "https://clawhub.ai/skills/telegram-telethon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/telegram-telethon-075f787135a71ee9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/telegram-telethon@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-telegram-telethon-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c8aa690946f3a612e9147a59a7b6d322e181b58a19faeaf0a2a794a8b88a1d52",
+      "artifactSizeBytes": 1965
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T07:04:59.173Z"
+}

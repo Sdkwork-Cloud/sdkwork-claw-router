@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jrj-quote-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jrj_quote_skill",
+  "skill": {
+    "id": 62598,
+    "skillKey": "clawhub-jrj-quote-skill",
+    "name": "jrj-quote-skill金融界A股行情数据"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jrj-quote-skill",
+    "url": "https://clawhub.ai/skills/jrj-quote-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jrj-quote-skill-3e817a3d39884e95.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A股实时行情和历史K线数据查询，支持技术指标计算。用于获取股票、场内基金、指数的实时价格、历史K线，以及计算MA、MACD、KDJ、BOLL、RSI等技术指标。 <example>User: \"获取招商银行最近30天的历史K线和MACD指标\" Assistant: 使用 kline.js 脚本获取数据</exam..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "haomanjia",
+      "userId": "s17fr3m1e18eaqs2a5b3n9y98983krth",
+      "displayName": "haomanjia",
+      "image": "https://avatars.githubusercontent.com/u/204284133?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 245,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775203479960,
+      "changelog": "- 增加了 metadata 字段，声明环境变量需求与 homepage。\n- skill 功能和接口无变化。\n- 兼容性与行为与 1.0.0 完全一致。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c0176af707687121ed3a4eb4b32e45df7e98bed5080d7ea2449e902cd3a8b385"
+}

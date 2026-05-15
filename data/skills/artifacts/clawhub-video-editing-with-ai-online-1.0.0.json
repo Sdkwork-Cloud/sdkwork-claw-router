@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editing-with-ai-online@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editing_with_ai_online",
+  "skill": {
+    "id": 47154,
+    "skillKey": "clawhub-video-editing-with-ai-online",
+    "name": "Video Editing With Ai Online"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editing-with-ai-online",
+    "url": "https://clawhub.ai/skills/video-editing-with-ai-online",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editing-with-ai-online-ec27f045bae5f7eb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "edit raw video footage into edited MP4 videos with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators and marketers use it for ed..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 118,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777168444300,
+      "changelog": "- Initial release of \"Video Editing with AI Online\" skill.\n- Enables fast, AI-powered editing of raw video footage (MP4, MOV, AVI, WebM, up to 500MB) with cloud-based processing.\n- Supports file upload, text-based editing instructions, automatic captioning, transitions, BGM, and export to 1080p MP4.\n- Session-based workflow; automatic handling of authentication and credits.\n- Includes user-friendly error handling and status updates.\n- Suitable for content creators and marketers to edit and export professional videos without desktop software.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e1675ff20bab7b49fd8c5f6ebe1188b121e4d076b9cf0ad269c6343f9a2d0c63"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35319,
+  "uuid": "skill-clawhub-weryai-account",
+  "skillKey": "clawhub-weryai-account",
+  "name": "WeryAI Account",
+  "summary": "Check WeryAI account credits and API balance through the official WeryAI account endpoint. Use when the user wants to query remaining credits, inspect WeryAI...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weryai_account",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WeryAI-Developer",
+      "features": [
+        "Check WeryAI account credits and API balance through the official WeryAI account endpoint",
+        "Use when the user wants to query remaining credits, inspect WeryAI..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weryai-account@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254698481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weryai-account",
+      "url": "https://clawhub.ai/skills/weryai-account"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weryai-account",
+    "url": "https://clawhub.ai/skills/weryai-account",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weryai-account-52403d93ef7c8931.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weryai-account@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weryai-account-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:14b89f20513329fca6c68ec7fe02b3000b81f6fba28a78360462f5458a2cc99b",
+      "artifactSizeBytes": 2346
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T13:57:51.622Z"
+}

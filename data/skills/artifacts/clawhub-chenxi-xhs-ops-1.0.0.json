@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chenxi-xhs-ops@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chenxi_xhs_ops",
+  "skill": {
+    "id": 53995,
+    "skillKey": "clawhub-chenxi-xhs-ops",
+    "name": "XHS-Ops: Xiaohongshu Operations Toolkit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chenxi-xhs-ops",
+    "url": "https://clawhub.ai/skills/chenxi-xhs-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chenxi-xhs-ops-5c92b300680803cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Xiaohongshu (小红书) end-to-end operations skill: hot topic research, post writing with built-in audit, automated commenting with rate limiting, and cover image..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cmhoennexy",
+      "userId": "publishers:cmhoennexy",
+      "displayName": "CMhOeNnExY",
+      "image": "https://avatars.githubusercontent.com/u/168616964?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 771,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773659880020,
+      "changelog": "Initial release: search-hot, write-post, comment, cover — powered by xiaohongshu-mcp",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5eb7528032e7ebebfc98226c8f42a39f6c6bf8fe8c845f60ccfaf9a248234c05"
+}

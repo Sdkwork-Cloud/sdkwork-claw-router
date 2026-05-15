@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/book-auto@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_auto",
+  "skill": {
+    "id": 13180,
+    "skillKey": "clawhub-book-auto",
+    "name": "Book Auto"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-auto",
+    "url": "https://clawhub.ai/skills/book-auto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-auto-be8e0b8cc3266e17.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Book auto services through Lokuli MCP. Use when user needs smog checks, oil changes, car detailing, mechanics, tire services, or any automotive service. Triggers on requests like \"I need a smog check\", \"book an oil change\", \"find a mechani."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "edwardrodriguez703-design",
+      "userId": "publishers:edwardrodriguez703-design",
+      "displayName": "Lokuli",
+      "image": "https://avatars.githubusercontent.com/u/224194606?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1441,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770339378014,
+      "changelog": "Book auto services",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fb196abbfb3889c4de5c7ea719b9358d246e3799a55c38ec3e0b12721d9481b5"
+}

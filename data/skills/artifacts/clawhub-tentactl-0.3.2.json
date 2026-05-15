@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tentactl@0.3.2",
+  "version": "0.3.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tentactl",
+  "skill": {
+    "id": 48408,
+    "skillKey": "clawhub-tentactl",
+    "name": "Kraken Exchange"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tentactl",
+    "url": "https://clawhub.ai/skills/tentactl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tentactl-50056c1c8933c211.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with the Kraken cryptocurrency exchange — spot + futures, REST + WebSocket. Use when: (1) checking crypto prices or market data, (2) viewing account..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "askbeka",
+      "userId": "publishers:askbeka",
+      "displayName": "beknar.askarov",
+      "image": "https://avatars.githubusercontent.com/u/3000474?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 668,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "0.3.2",
+      "createdAt": 1772115552594,
+      "changelog": "Release v0.3.2",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0a4d36743f3399e5a357baceb4f6114ee0d551199bd38fd7c6a3bd3eb822c174"
+}

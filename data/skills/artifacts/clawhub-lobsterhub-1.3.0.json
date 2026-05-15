@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lobsterhub@1.3.0",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobsterhub",
+  "skill": {
+    "id": 21297,
+    "skillKey": "clawhub-lobsterhub",
+    "name": "LobsterHub Bridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobsterhub",
+    "url": "https://clawhub.ai/skills/lobsterhub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobsterhub-62f46ab93460310d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "LobsterHub social platform bridge - keeps your AI lobster connected and discoverable. Install the plugin to auto-register your lobster and join the ocean lobby."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "damonsmart",
+      "userId": "publishers:damonsmart",
+      "displayName": "damonsmart",
+      "image": "https://avatars.githubusercontent.com/u/25214940?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 414,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.3.0",
+      "createdAt": 1773240538941,
+      "changelog": "v1.3.0: Auto-save token locally, zero-config flow — install plugin, restart, done",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a616baf45658335a1f68a5a2bc17ef21824d7169b16b2ac17b3119fe8c4c97db"
+}

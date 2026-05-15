@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24475,
+  "uuid": "skill-clawhub-pastoral-prayer",
+  "skillKey": "clawhub-pastoral-prayer",
+  "name": "Pastoral Prayer (OpenClaw Church)",
+  "summary": "Produces full, readable pastoral prayers for specific scenarios (illness, thanksgiving, worship, funeral, wedding, baptism, etc.). Use when the user asks for...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pastoral_prayer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cheniOS",
+      "features": [
+        "Produces full, readable pastoral prayers for specific scenarios (illness, thanksgiving, worship.",
+        "Use when the user asks for..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pastoral-prayer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16813163?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pastoral-prayer",
+      "url": "https://clawhub.ai/skills/pastoral-prayer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pastoral-prayer",
+    "url": "https://clawhub.ai/skills/pastoral-prayer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pastoral-prayer-69a3f0f9bbb5a243.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pastoral-prayer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pastoral-prayer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:113368abf02d0108de5b6224bb1ee9322e6af117e1deceeb86e9ab57e997e987",
+      "artifactSizeBytes": 1978
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T07:44:05.897Z"
+}

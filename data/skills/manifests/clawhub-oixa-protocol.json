@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38288,
+  "uuid": "skill-clawhub-oixa-protocol",
+  "skillKey": "clawhub-oixa-protocol",
+  "name": "OIXA Protocol",
+  "summary": "Connect OpenClaw agents to OIXA Protocol for posting tasks, bidding, delivering work, and earning or paying USDC on Base Mainnet's AI agent marketplace.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oixa_protocol",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ivoshemi-sys",
+      "features": [
+        "Connect OpenClaw agents to OIXA Protocol for posting tasks, bidding, delivering work, and earni."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oixa-protocol@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265858627?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oixa-protocol",
+      "url": "https://clawhub.ai/skills/oixa-protocol"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oixa-protocol",
+    "url": "https://clawhub.ai/skills/oixa-protocol",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oixa-protocol-ace10fd1f012a1ab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oixa-protocol@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-oixa-protocol-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:97244593a618416c5abd2b120922efa9ba795b1259e0c98fef3da69971f1f6af",
+      "artifactSizeBytes": 2008
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T03:19:21.716Z"
+}

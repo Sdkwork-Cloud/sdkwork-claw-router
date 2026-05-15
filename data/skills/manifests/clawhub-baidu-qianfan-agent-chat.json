@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63984,
+  "uuid": "skill-clawhub-baidu-qianfan-agent-chat",
+  "skillKey": "clawhub-baidu-qianfan-agent-chat",
+  "name": "baidu qianfan agent chat",
+  "summary": "千帆AI应用对话接口调用技能。用于调用百度千帆平台的对话API进行AI对话交互。支持流式和非流式响应、Function Call工具调用、文件上传等功能。触发场景：(1) 用户需要调用千帆对话API；(2) 用户提到\"千帆\"、\"qianfan\"、\"百度AI对话\"；(3) 需要与千帆应用进行对话交互。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_qianfan_agent_chat",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "David Li",
+      "features": [
+        "千帆AI应用对话接口调用技能。用于调用百度千帆平台的对话API进行AI对话交互。支持流式和非流式响应、Function Call工具调用、文件上传等功能。触发场景：(1) 用户需要调用千帆对."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baidu-qianfan-agent-chat@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74520453?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baidu-qianfan-agent-chat",
+      "url": "https://clawhub.ai/skills/baidu-qianfan-agent-chat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-qianfan-agent-chat",
+    "url": "https://clawhub.ai/skills/baidu-qianfan-agent-chat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-qianfan-agent-chat-3ca71a34bb7aac8e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baidu-qianfan-agent-chat@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-baidu-qianfan-agent-chat-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:588399b0968edc8db9dc46c86662103a1562138c1be66ffd1976a0f0442ea7fb",
+      "artifactSizeBytes": 2615
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T03:05:05.614Z"
+}

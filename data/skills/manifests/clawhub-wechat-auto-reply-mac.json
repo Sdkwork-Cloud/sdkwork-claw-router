@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64024,
+  "uuid": "skill-clawhub-wechat-auto-reply-mac",
+  "skillKey": "clawhub-wechat-auto-reply-mac",
+  "name": "WeChat Auto Reply",
+  "summary": "微信消息自动发送/半自动回复。主动发送时，按“搜索联系人→单聊直接 Enter 进入聊天；群聊先识别群聊分组再定位目标项→粘贴消息→发送”的逻辑执行。适用于 macOS + 微信桌面版环境，需本机完成权限和依赖配置。使用方式：wechat-auto-reply \"联系人名称\" 或 wechat-auto-repl...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_auto_reply_mac",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chenjunlei1989-glitch",
+      "features": [
+        "微信消息自动发送/半自动回复。主动发送时，按“搜索联系人→单聊直接 Enter 进入聊天；群聊先识别群聊分组再定位目标项→粘贴消息→发送”的逻辑执行。适用于 macOS + 微信桌面版环境，."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-auto-reply-mac@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270932161?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-auto-reply-mac",
+      "url": "https://clawhub.ai/skills/wechat-auto-reply-mac"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-auto-reply-mac",
+    "url": "https://clawhub.ai/skills/wechat-auto-reply-mac",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-auto-reply-mac-c06505dcb67f7c15.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-auto-reply-mac@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-auto-reply-mac-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4ea385c73d4632ceea06d831048f580194c791d13a4a5578366465853ba9841",
+      "artifactSizeBytes": 2186
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T12:41:00.547Z"
+}

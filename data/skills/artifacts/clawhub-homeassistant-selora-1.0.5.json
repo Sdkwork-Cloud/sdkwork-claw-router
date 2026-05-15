@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/homeassistant-selora@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.homeassistant_selora",
+  "skill": {
+    "id": 22367,
+    "skillKey": "clawhub-homeassistant-selora",
+    "name": "Home Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "homeassistant-selora",
+    "url": "https://clawhub.ai/skills/homeassistant-selora",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/homeassistant-selora-301ad9995de12a8d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect Home Assistant to OpenClaw via OAuth 2.0 through Selora Connect. Authenticate and use Selora AI tools to inspect your home, create automations, and a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lafoush",
+      "userId": "s173eexr68rvarmke2bx5xa93d83j23k",
+      "displayName": "Philippe Lafoucrière",
+      "image": "https://avatars.githubusercontent.com/u/226386800?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 276,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1776376930177,
+      "changelog": "- Fix HA skill MCP config format",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:347fda97e815a77dd800863a25744d38b3954b85fa10cd891a36259370001c5e"
+}

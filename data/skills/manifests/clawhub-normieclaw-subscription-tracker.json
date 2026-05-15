@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40022,
+  "uuid": "skill-clawhub-normieclaw-subscription-tracker",
+  "skillKey": "clawhub-normieclaw-subscription-tracker",
+  "name": "Subscription Tracker",
+  "summary": "Tracks and analyzes recurring charges from uploaded bank statements without bank linking, alerts upcoming renewals, duplicates, price hikes, and aids cancell...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.normieclaw_subscription_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nollio",
+      "features": [
+        "Tracks and analyzes recurring charges from uploaded bank statements without bank linking, alert."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/normieclaw-subscription-tracker@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259667367?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "normieclaw-subscription-tracker",
+      "url": "https://clawhub.ai/skills/normieclaw-subscription-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "normieclaw-subscription-tracker",
+    "url": "https://clawhub.ai/skills/normieclaw-subscription-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/normieclaw-subscription-tracker-533da2058cd0b5a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/normieclaw-subscription-tracker@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-normieclaw-subscription-tracker-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aa399aeab2240e4414bb5dd34c9529fdc8363e87a2e4b3cf875c86c0ada6d8b8",
+      "artifactSizeBytes": 2075
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T21:41:33.719Z"
+}

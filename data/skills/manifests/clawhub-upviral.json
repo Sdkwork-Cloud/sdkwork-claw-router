@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37364,
+  "uuid": "skill-clawhub-upviral",
+  "skillKey": "clawhub-upviral",
+  "name": "Upviral",
+  "summary": "UpViral integration. Manage data, records, and automate workflows. Use when the user wants to interact with UpViral data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.upviral",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "UpViral integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with UpViral data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/upviral@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "upviral",
+      "url": "https://clawhub.ai/skills/upviral"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "upviral",
+    "url": "https://clawhub.ai/skills/upviral",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/upviral-1edf37a3dba1f7ab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/upviral@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-upviral-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2c8c55575e48a79ed20577463cd2ac7cb6ca969d844ffa19a10453ca0bcfc246",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:08:38.129Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baidu-disk-manager@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_disk_manager",
+  "skill": {
+    "id": 66257,
+    "skillKey": "clawhub-baidu-disk-manager",
+    "name": "Baidu Disk Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-disk-manager",
+    "url": "https://clawhub.ai/skills/baidu-disk-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-disk-manager-01fcdb55558eaeea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "管理百度网盘文件，支持登录、列出文件、上传/下载/复制/移动/删除/重命名/创建文件夹、查看配额等操作。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "power-hayden",
+      "userId": "s177tqks22kmfw7w0v8jk561eh83h98m",
+      "displayName": "hayden.wang",
+      "image": "https://avatars.githubusercontent.com/u/12755906?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 278,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1774342947923,
+      "changelog": "Version 2.0.0\n\n- 更新了 skill 元数据格式，精简 metadata 字段，并移除 primaryEnv 配置。\n- 其他 skill 功能与说明文档保持不变。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c9b77e22fc19e1987a47a19a7da9d01ed4a232521b747f5130053dab8e05c28f"
+}

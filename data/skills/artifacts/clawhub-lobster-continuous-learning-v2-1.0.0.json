@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lobster-continuous-learning-v2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobster_continuous_learning_v2",
+  "skill": {
+    "id": 44532,
+    "skillKey": "clawhub-lobster-continuous-learning-v2",
+    "name": "Lobster Continuous Learning V2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobster-continuous-learning-v2",
+    "url": "https://clawhub.ai/skills/lobster-continuous-learning-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobster-continuous-learning-v2-a8c82579f80e2c57.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Instinct-based learning system that observes sessions via hooks, creates atomic instincts with confidence scoring, and evolves them into skills/commands/agen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangxiaofei860208-source",
+      "userId": "s17937syhc72vf48t0a5914v8d847evs",
+      "displayName": "wangxiaofei860208-source",
+      "image": "https://avatars.githubusercontent.com/u/260913269?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775315198464,
+      "changelog": "lobster-continuous-learning-v2 2.1.0 introduces project-scoped instincts for better context isolation and control.\n\n- Adds project-scoped instinct storage and processing, isolating learning by project and reducing cross-project contamination.\n- Implements automatic project detection via git remote URL or repository path, with a fallback to global if no project is found.\n- Allows promotion of instincts from project scope to global scope when shared across projects.\n- Expands command set: now includes /promote and /projects in addition to existing instinct management commands.\n- Retains atomic, confidence-weighted learning of small behaviors (\"instincts\") and clustered skill/command/agent evolution.\n- Supports exporting and importing instincts for sharing and collaboration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:baf9020a74270a3d2918d9ea27badcf1560094027b0e433e7b013ed79def05ff"
+}

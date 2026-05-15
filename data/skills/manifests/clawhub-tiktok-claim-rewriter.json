@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27311,
+  "uuid": "skill-clawhub-tiktok-claim-rewriter",
+  "skillKey": "clawhub-tiktok-claim-rewriter",
+  "name": "Tiktok Claim Rewriter",
+  "summary": "Rewrite risky TikTok product claims into safer and clearer language without losing persuasion. Use when scripts may trigger policy risk or overpromise concerns.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tiktok_claim_rewriter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeroyCreates",
+      "features": [
+        "Rewrite risky TikTok product claims into safer and clearer language without losing persuasion",
+        "Use when scripts may trigger policy risk or overpromise concerns."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tiktok-claim-rewriter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130833525?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tiktok-claim-rewriter",
+      "url": "https://clawhub.ai/skills/tiktok-claim-rewriter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tiktok-claim-rewriter",
+    "url": "https://clawhub.ai/skills/tiktok-claim-rewriter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tiktok-claim-rewriter-888fc4bea3841dd1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tiktok-claim-rewriter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tiktok-claim-rewriter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:672890e68da18bca8febac837403add4c19ec4d11f0e97935540f35136b5f748",
+      "artifactSizeBytes": 1941
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T12:23:10.572Z"
+}

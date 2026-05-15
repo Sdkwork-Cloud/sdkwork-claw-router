@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19100,
+  "uuid": "skill-clawhub-nopua",
+  "skillKey": "clawhub-nopua",
+  "name": "NoPUA",
+  "summary": "The anti-PUA. Drives AI with wisdom, trust, and inner motivation instead of fear and threats. Activates on: task failed 2+ times, about to give up, suggestin...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nopua",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "无极WUJI",
+      "features": [
+        "The anti-PUA",
+        "Drives AI with wisdom, trust, and inner motivation instead of fear and threats",
+        "Activates on: task failed 2+ times, about to give up, suggestin..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nopua@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/119551672?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nopua",
+      "url": "https://clawhub.ai/skills/nopua"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nopua",
+    "url": "https://clawhub.ai/skills/nopua",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nopua-250a9e7bce6f3129.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nopua@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nopua-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:329251f0a935ae8968a168b773737bbe65841c839668f5ad79c753b884b743ae",
+      "artifactSizeBytes": 2513
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T09:28:33.698Z"
+}

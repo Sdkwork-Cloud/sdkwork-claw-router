@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/multi-source-news-digest@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_source_news_digest",
+  "skill": {
+    "id": 19694,
+    "skillKey": "clawhub-multi-source-news-digest",
+    "name": "Multi Source Tech News Digest"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-source-news-digest",
+    "url": "https://clawhub.ai/skills/multi-source-news-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-source-news-digest-33bd15d4180b01d5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Aggregates and scores technology news daily from 100+ RSS feeds, GitHub releases, and web sources, providing customizable, filtered tech news digests."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pyh-pan",
+      "userId": "publishers:pyh-pan",
+      "displayName": "Haloha",
+      "image": "https://avatars.githubusercontent.com/u/62683337?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 587,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772492005040,
+      "changelog": "Initial release of Multi Source Tech News Digest.\n\n- Aggregates technology news from 109+ sources, including RSS feeds, GitHub releases, and web pages.\n- Automatically scores and filters news based on tech relevance and source credibility.\n- Provides configurable source lists, scoring thresholds, and daily formatted news digests.\n- Includes commands to generate digests, list news, and refresh data.\n- Customizable via config.json for sources and filtering preferences.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:84ceff29f421dcd17e02197595ade58d29d6746865a7e680f09e06ed9c300d6f"
+}

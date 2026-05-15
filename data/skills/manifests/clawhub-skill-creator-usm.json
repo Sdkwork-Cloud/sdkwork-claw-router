@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42152,
+  "uuid": "skill-clawhub-skill-creator-usm",
+  "skillKey": "clawhub-skill-creator-usm",
+  "name": "Skill Creator",
+  "summary": "Create, update, evaluate, and manage skills across agents by defining intent, drafting, testing, benchmarking, iterating, and distributing them within a 2-la...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_creator_usm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hulk",
+      "features": [
+        "Create, update, evaluate, and manage skills across agents by defining intent, drafting, testing."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-creator-usm@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1487095?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-creator-usm",
+      "url": "https://clawhub.ai/skills/skill-creator-usm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-creator-usm",
+    "url": "https://clawhub.ai/skills/skill-creator-usm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-creator-usm-6d684ce31cda0e0d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-creator-usm@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-creator-usm-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f5de56ced05ffefa249258fdab5d2e1bde17634e0958f060b7fc12b0c20822f2",
+      "artifactSizeBytes": 1940
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T10:28:40.944Z"
+}

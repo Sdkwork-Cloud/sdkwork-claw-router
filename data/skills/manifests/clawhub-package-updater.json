@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47223,
+  "uuid": "skill-clawhub-package-updater",
+  "skillKey": "clawhub-package-updater",
+  "name": "Package Updater",
+  "summary": "Auto-checks and updates outdated dependencies. Shows changelogs and breaking changes before updating. Triggers: update dependencies, upgrade packages, check...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.package_updater",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "Auto-checks and updates outdated dependencies",
+        "Shows changelogs and breaking changes before updating",
+        "Triggers: update dependencies, upgrade packages, check..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/package-updater@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "package-updater",
+      "url": "https://clawhub.ai/skills/package-updater"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "package-updater",
+    "url": "https://clawhub.ai/skills/package-updater",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/package-updater-3770b5932d30e5f7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/package-updater@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-package-updater-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73791d980389eec952c00020f76e9f5926a305582af3baa507ff6f1fe6e36c23",
+      "artifactSizeBytes": 2391
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T22:01:03.718Z"
+}

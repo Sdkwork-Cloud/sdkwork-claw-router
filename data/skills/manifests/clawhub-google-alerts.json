@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42541,
+  "uuid": "skill-clawhub-google-alerts",
+  "skillKey": "clawhub-google-alerts",
+  "name": "Google Alerts Monitor",
+  "summary": "Monitor keywords via free web search. Use when: (1) Tracking brand or product mentions, (2) Monitoring industry keywords, (3) Researching competitors and mar...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_alerts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bgoodwinstudio",
+      "features": [
+        "Monitor keywords via free web search",
+        "Use when: (1) Tracking brand or product mentions, (2) Monitoring industry keywords, (3) Researc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-alerts@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/205076654?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-alerts",
+      "url": "https://clawhub.ai/skills/google-alerts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-alerts",
+    "url": "https://clawhub.ai/skills/google-alerts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-alerts-c7f475ed564e950a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-alerts@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-alerts-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7e8dca8f1ba839245d4544fc5df16cdee59e07dcab02e1b5f7e71da7b72caeb9",
+      "artifactSizeBytes": 2035
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T04:45:23.837Z"
+}

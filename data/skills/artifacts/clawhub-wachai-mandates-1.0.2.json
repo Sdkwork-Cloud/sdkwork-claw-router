@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wachai-mandates@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wachai_mandates",
+  "skill": {
+    "id": 11556,
+    "skillKey": "clawhub-wachai-mandates",
+    "name": "wachaimandates"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wachai-mandates",
+    "url": "https://clawhub.ai/skills/wachai-mandates",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wachai-mandates-a372d83bff17833f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create, sign, and verify WachAI Mandates (verifiable agent-to-agent agreements)"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "akshat-mishra101",
+      "userId": "publishers:akshat-mishra101",
+      "displayName": "Akshat-Mishra101",
+      "image": "https://avatars.githubusercontent.com/u/84511650?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1984,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770199997465,
+      "changelog": "- Added a new command to inspect raw mandate JSON before signing: `wachai print <mandate-id>`.\n- Added a sample mandate inspection command: `wachai print sample`.\n- No other changes; usage and functionality remain the same.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:048a354ad02a94939858ea9178089303053d6775660a928918c1514cf67a4ef3"
+}

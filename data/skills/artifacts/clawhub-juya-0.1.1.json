@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/juya@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.juya",
+  "skill": {
+    "id": 25953,
+    "skillKey": "clawhub-juya",
+    "name": "Juya AI Daily"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "juya",
+    "url": "https://clawhub.ai/skills/juya",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/juya-61acd52521d8dbe8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch Juya AI Daily (juya-ai-daily) newsletter content. Use when the user asks to view AI daily news, AI morning briefing, or Juya daily. Supports fetching a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cheerwhy",
+      "userId": "s17443fm471eqtjycp97rcx09183h186",
+      "displayName": "Cheer",
+      "image": "https://avatars.githubusercontent.com/u/73086438?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 268,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773810556282,
+      "changelog": "Translate SKILL.md to English",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:75bc4c3daadbbc55b4743099b722098946d1c501f5432a17d9443ebeeeee7361"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23897,
+  "uuid": "skill-clawhub-dev-progress-governor",
+  "skillKey": "clawhub-dev-progress-governor",
+  "name": "Dev Progress Governor",
+  "summary": "govern execution hygiene for software projects. use when the user wants help enforcing git commit discipline, deciding whether work is ready to commit, gener...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dev_progress_governor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Majmunu",
+      "features": [
+        "govern execution hygiene for software projects",
+        "use when the user wants help enforcing git commit discipline, deciding whether work is ready to."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dev-progress-governor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/85326299?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dev-progress-governor",
+      "url": "https://clawhub.ai/skills/dev-progress-governor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dev-progress-governor",
+    "url": "https://clawhub.ai/skills/dev-progress-governor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dev-progress-governor-33518c8e124a0fdd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dev-progress-governor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dev-progress-governor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c52a1cbe3b38ce07f870df73127b2edf5debf743a9669b30f37c4dffcbe7afa8",
+      "artifactSizeBytes": 2216
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T09:58:26.448Z"
+}

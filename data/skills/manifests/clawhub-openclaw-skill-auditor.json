@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12691,
+  "uuid": "skill-clawhub-openclaw-skill-auditor",
+  "skillKey": "clawhub-openclaw-skill-auditor",
+  "name": "OpenClaw Skill Auditor",
+  "summary": "Scans ClawHub skills to detect malicious code, obfuscated payloads, and social engineering via pattern matching, deobfuscation, and LLM analysis before insta...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_skill_auditor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sypsyp97",
+      "features": [
+        "Scans ClawHub skills to detect malicious code, obfuscated payloads, and social engineering via."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-skill-auditor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17694291?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-skill-auditor",
+      "url": "https://clawhub.ai/skills/openclaw-skill-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-skill-auditor",
+    "url": "https://clawhub.ai/skills/openclaw-skill-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-skill-auditor-04c8878c2e217a9c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-skill-auditor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-skill-auditor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:71452abe249a2396420d9a411c2f5e283f80d57624f7920daf72ae781eaf4729",
+      "artifactSizeBytes": 2048
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T23:18:04.824Z"
+}

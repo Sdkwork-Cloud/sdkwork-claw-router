@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/andy-lau@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.andy_lau",
+  "skill": {
+    "id": 70775,
+    "skillKey": "clawhub-andy-lau",
+    "name": "andy-lau"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "andy-lau",
+    "url": "https://clawhub.ai/skills/andy-lau",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/andy-lau-5b2dd33e712f9486.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "刘德华信息助手。查询电影作品、音乐专辑、演唱会、个人经历、最新动态。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774755036404,
+      "changelog": "Andy Lau (刘德华) – Information Assistant skill initial release.\n\n- Provides detailed information on Andy Lau’s movies, music, concerts, biography, business ventures, philanthropy, and latest news.\n- Includes quick access sections for classic filmography, music albums, concert schedules, and personal achievements.\n- Offers charity involvement details, awards records, and social media updates.\n- Features frequent queries, official links, and comprehensive statistics.\n- Content in Chinese, tailored for fans and the general public.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cbffaf36c66884804e1a5cc9626b51fab739d46956e27338a3f3c3090b606f3d"
+}

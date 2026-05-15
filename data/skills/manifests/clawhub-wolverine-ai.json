@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54956,
+  "uuid": "skill-clawhub-wolverine-ai",
+  "skillKey": "clawhub-wolverine-ai",
+  "name": "Wolverine — Self-Healing Process Manager",
+  "summary": "Supervised self-healing process manager for OpenClaw. Wraps your gateway in a crash recovery loop — catches errors, diagnoses with AI, proposes fixes for rev...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wolverine_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bobbyswhip",
+      "features": [
+        "Supervised self-healing process manager for OpenClaw",
+        "Wraps your gateway in a crash recovery loop — catches errors, diagnoses with AI, proposes fixes."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wolverine-ai@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/150885846?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wolverine-ai",
+      "url": "https://clawhub.ai/skills/wolverine-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wolverine-ai",
+    "url": "https://clawhub.ai/skills/wolverine-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wolverine-ai-24210655d72ee6cb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wolverine-ai@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-wolverine-ai-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a4e666c464429e9141347d97e38bac68844233198be14d67c32628218f3cb130",
+      "artifactSizeBytes": 2618
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T14:31:38.487Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ecomseer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecomseer",
+  "skill": {
+    "id": 8344,
+    "skillKey": "clawhub-ecomseer",
+    "name": "EcomSeer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecomseer",
+    "url": "https://clawhub.ai/skills/ecomseer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecomseer-1a6da1dee3ac8dc9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "TikTok Shop e-commerce data assistant. Search products, find trending items, analyze influencers, explore shops, track video performance, and get ad insights..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fly0pants",
+      "userId": "s17485bhjxmrt6atmnk22z55ex83gb56",
+      "displayName": "fly0pants",
+      "image": "https://avatars.githubusercontent.com/u/110800087?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 8623,
+      "installsAllTime": 163,
+      "installsCurrent": 163,
+      "stars": 158,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774344933269,
+      "changelog": "Version 1.0.1\n\n- Switched the Deep Research endpoint from `deepresearch.admapix.com` to `deepresearch.ecomseer.com` for all research task submissions and polling.\n- No changes to API, user prompts, or skill logic. All interaction and language handling workflows remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:876571f3beb9cd9ac45c62f1dec66d1b77a8b5fc0fc0724c2428027bbc95d62f"
+}

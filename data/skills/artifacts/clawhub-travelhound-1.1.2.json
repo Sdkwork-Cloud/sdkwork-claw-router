@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/travelhound@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.travelhound",
+  "skill": {
+    "id": 31888,
+    "skillKey": "clawhub-travelhound",
+    "name": "TravelHound"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "travelhound",
+    "url": "https://clawhub.ai/skills/travelhound",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/travelhound-4150ffc033c4b725.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Compare real-time flights and hotels with price forecasts, coupon stacking, and destination news to find the best time and deal for your trip."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiajiaoy",
+      "userId": "s17cev4f59prejmqpq8qft2ffn83g42e",
+      "displayName": "jiajiaoy",
+      "image": "https://avatars.githubusercontent.com/u/254620896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 261,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1777286682895,
+      "changelog": "- Updated package dependencies in package.json.\n- No user-facing feature changes. \n- Maintenance release for compatibility and stability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:574a648fe8ecfcc9d41ad1ca826ac7545cf6d814d42f44a23c0120872877bf7c"
+}

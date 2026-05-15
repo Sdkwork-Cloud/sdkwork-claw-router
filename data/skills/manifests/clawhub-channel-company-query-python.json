@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70170,
+  "uuid": "skill-clawhub-channel-company-query-python",
+  "skillKey": "clawhub-channel-company-query-python",
+  "name": "渠道单位查询",
+  "summary": "查询渠道单位信息（Python3实现）。通过名称模糊搜索获取列表，或通过ID查询详情。包括CRM账号、站点标识和环境URL。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.channel_company_query_python",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "沈荣明",
+      "features": [
+        "查询渠道单位信息（Python3实现）。通过名称模糊搜索获取列表，或通过ID查询详情。包括CRM账号、站点标识和环境URL。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/channel-company-query-python@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2356195?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "channel-company-query-python",
+      "url": "https://clawhub.ai/skills/channel-company-query-python"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "channel-company-query-python",
+    "url": "https://clawhub.ai/skills/channel-company-query-python",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/channel-company-query-python-f96b84e64f04e294.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/channel-company-query-python@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-channel-company-query-python-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:19a27cf1121110a50a0c2f378b70efc9ba83839d2efe5e7fbafd5373c8ec3673",
+      "artifactSizeBytes": 2043
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T05:33:31.172Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/blx-lobster-sticker@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blx_lobster_sticker",
+  "skill": {
+    "id": 68611,
+    "skillKey": "clawhub-blx-lobster-sticker",
+    "name": "BLX Lobster Sticker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blx-lobster-sticker",
+    "url": "https://clawhub.ai/skills/blx-lobster-sticker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blx-lobster-sticker-42cc8d41f86a8eda.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw专属小龙虾🦞（crayfish）主题表情包技能。由白灵汐（BLX）创作。生成统一风格的卡通小龙虾LINE贴纸表情包，共38种情绪表情和2种物品表情，适用于对话机器人、客服AI、聊天助手等场景。当用户表达各种情绪（开心、难过、生气、惊讶、感动、尴尬、爱意、酷帅、困倦、害羞、得意、疑惑、惊恐、无语、..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gui-gitai",
+      "userId": "s17egrv8zgm7f5e6ymbdhdeajx840j3m",
+      "displayName": "Gui-GitAi",
+      "image": "https://avatars.githubusercontent.com/u/271803230?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776039914267,
+      "changelog": "修复微信表情包灰色方块问题：微信环境使用 assets_wx 目录的 JPG 图片",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:733a21f5aeccddbbac22d8d8dccdb2676c6a8a19567e7022392f5924149d651e"
+}

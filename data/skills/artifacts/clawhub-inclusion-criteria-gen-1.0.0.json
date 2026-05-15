@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/inclusion-criteria-gen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inclusion_criteria_gen",
+  "skill": {
+    "id": 33985,
+    "skillKey": "clawhub-inclusion-criteria-gen",
+    "name": "Inclusion Criteria Gen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inclusion-criteria-gen",
+    "url": "https://clawhub.ai/skills/inclusion-criteria-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inclusion-criteria-gen-12f9b74531eaf5d7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate and optimize clinical trial subject inclusion/exclusion criteria to balance scientific rigor with recruitment feasibility. Trigger when users need t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 230,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774425125201,
+      "changelog": "- Initial release of the inclusion-criteria-gen skill.\n- Generates and optimizes clinical trial subject inclusion/exclusion criteria to balance scientific rigor with recruitment feasibility.\n- Supports protocol design, eligibility optimization, recruitment strategy, competitive analysis, and feasibility assessment.\n- Provides both command-line and Python API interfaces.\n- Includes templates, structured input/output formats, and practical optimization strategies.\n- Comprehensive documentation on categories, examples, technical standards, risks, and security checks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:245f79d8515bdec14debb2f0f85c08dda1737111b34ce19f293a097ca43e6964"
+}

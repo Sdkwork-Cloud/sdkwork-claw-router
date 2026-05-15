@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/option-calculator@2.4.0",
+  "version": "2.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.option_calculator",
+  "skill": {
+    "id": 16144,
+    "skillKey": "clawhub-option-calculator",
+    "name": "Option Calculator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "option-calculator",
+    "url": "https://clawhub.ai/skills/option-calculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/option-calculator-bfb7b2e91edf22b1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Price options, compute Greeks, and plot P&L diagrams with exercise analysis. Use when pricing options, calculating Greeks, visualizing profit-loss curves."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xueyetianya",
+      "userId": "s1716dgb4pf37kmebjdxfdexmh83ehwx",
+      "displayName": "bytesagain4",
+      "image": "https://avatars.githubusercontent.com/u/218210530?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 763,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 1,
+      "versions": 17
+    },
+    "latestVersion": {
+      "version": "2.4.0",
+      "createdAt": 1773879264924,
+      "changelog": "v2.4.0: Real Black-Scholes pricing with greeks, implied volatility, payoff tables, option chains.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:60560ae40249d370079ecf5b8a2b875d82e7a614feca3a1997c0da05752ccfc4"
+}

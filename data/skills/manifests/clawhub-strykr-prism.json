@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10952,
+  "uuid": "skill-clawhub-strykr-prism",
+  "skillKey": "clawhub-strykr-prism",
+  "name": "Strykr Prism",
+  "summary": "Real-time financial data API for AI agents. Stocks, crypto, forex, ETFs. 120+ endpoints. Alternative to Alpha Vantage, CoinGecko. Works with Claude, Cursor.",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.strykr_prism",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Next Frontier AI",
+      "features": [
+        "Real-time financial data API for AI agents",
+        "Stocks, crypto, forex, ETFs",
+        "120+ endpoints",
+        "Alternative to Alpha Vantage, CoinGecko"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/strykr-prism@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257253317?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "strykr-prism",
+      "url": "https://clawhub.ai/skills/strykr-prism"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "strykr-prism",
+    "url": "https://clawhub.ai/skills/strykr-prism",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/strykr-prism-e8878088113c69cb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/strykr-prism@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-strykr-prism-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:741990142a2a009513e12f9df5f830e944bdeb58ad9ce3cb19e13045c58bb157",
+      "artifactSizeBytes": 1890
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T15:59:22.033Z"
+}

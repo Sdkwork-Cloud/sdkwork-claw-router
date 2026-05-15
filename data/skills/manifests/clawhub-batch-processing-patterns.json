@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67878,
+  "uuid": "skill-clawhub-batch-processing-patterns",
+  "skillKey": "clawhub-batch-processing-patterns",
+  "name": "Batch Processing Patterns",
+  "summary": "批量处理与长时任务编排模式。涵盖队列管理、并发调度、中断恢复、熔断器、远程任务轮询、进度报告和反风控策略。适用于批量文件处理、AI API 调用、爬虫和后台任务场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.batch_processing_patterns",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BingFoon",
+      "features": [
+        "批量处理与长时任务编排模式。涵盖队列管理、并发调度、中断恢复、熔断器、远程任务轮询、进度报告和反风控策略。适用于批量文件处理、AI API 调用、爬虫和后台任务场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/batch-processing-patterns@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1288102?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "batch-processing-patterns",
+      "url": "https://clawhub.ai/skills/batch-processing-patterns"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "batch-processing-patterns",
+    "url": "https://clawhub.ai/skills/batch-processing-patterns",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/batch-processing-patterns-612faabf89b7a243.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/batch-processing-patterns@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-batch-processing-patterns-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da8cddc99fedc55d24f6b12141bf089a1ee060965d0376fede4e48968c2231fc",
+      "artifactSizeBytes": 2149
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T21:58:57.482Z"
+}

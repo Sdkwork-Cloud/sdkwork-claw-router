@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58814,
+  "uuid": "skill-clawhub-openclaw-contract-review",
+  "skillKey": "clawhub-openclaw-contract-review",
+  "name": "OpenClaw Contract Review",
+  "summary": "公开发布的合同审核 Skill，通过统一工具入口触发 OpenClaw Contract Review Plugin。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_contract_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "renzhiping",
+      "features": [
+        "公开发布的合同审核 Skill，通过统一工具入口触发 OpenClaw Contract Review Plugin。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-contract-review@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4640832?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-contract-review",
+      "url": "https://clawhub.ai/skills/openclaw-contract-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-contract-review",
+    "url": "https://clawhub.ai/skills/openclaw-contract-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-contract-review-534206d2e7f40003.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-contract-review@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-contract-review-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:359df1d3b13e638b0fe7ce8bbdb5aa88c1d51d1c4bb2ce8e62cfadb1c6502f61",
+      "artifactSizeBytes": 2628
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T05:37:06.679Z"
+}

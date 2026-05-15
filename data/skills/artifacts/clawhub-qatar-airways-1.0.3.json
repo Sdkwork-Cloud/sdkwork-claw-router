@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qatar-airways@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qatar_airways",
+  "skill": {
+    "id": 69402,
+    "skillKey": "clawhub-qatar-airways",
+    "name": "Qatar Airways"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qatar-airways",
+    "url": "https://clawhub.ai/skills/qatar-airways",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qatar-airways-8dc744cf95a49285.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供卡塔尔航空公司介绍、航班服务指南及中转、舱位、常旅客计划和订票行李信息查询。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 216,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776295555930,
+      "changelog": "- 内容简化与精炼，突出关键信息与导航目录。\n- 更新适用场景，更加注重产品对比、市场分析与演示需求。\n- 删减详细服务、舱位与会员计划，聚焦品牌/业务概览及市场分布。\n- 增加“何时使用”与官网提示，提升实际查阅效率。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5fdcd285f4c4dd57f18ac78679bdcad5a1c87e0b569eac96ed24f9beb4cd03d7"
+}

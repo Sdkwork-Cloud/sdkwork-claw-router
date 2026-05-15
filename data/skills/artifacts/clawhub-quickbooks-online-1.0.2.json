@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quickbooks-online@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quickbooks_online",
+  "skill": {
+    "id": 15597,
+    "skillKey": "clawhub-quickbooks-online",
+    "name": "Quickbooks-Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quickbooks-online",
+    "url": "https://clawhub.ai/skills/quickbooks-online",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quickbooks-online-466180a73234dca0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "QuickBooks Online CLI tool. Manage customers, invoices, payments, bills, vendors, accounts, items, expenses, journal entries, deposits, transfers, estimates,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "paulbudveit",
+      "userId": "publishers:paulbudveit",
+      "displayName": "paulbudveit",
+      "image": "https://avatars.githubusercontent.com/u/137723007?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 962,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771826547455,
+      "changelog": "- No file changes detected; no functional updates in this version.\n- Version bumped from 1.0.0 to 1.0.2 without content or code modification.\n- All existing features, commands, and documentation remain unchanged.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7256a130751fb0cd161bc3c48bebbb861c0893dc20df44e396b88b8c920f81ab"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57858,
+  "uuid": "skill-clawhub-find-api",
+  "skillKey": "clawhub-find-api",
+  "name": "Find API",
+  "summary": "🔍 Find API | 寻找可靠数据源 TRIGGERS: Use when agent needs to fetch external data, user mentions \"reliable data source\", \"数据源\", \"API\", or when web scraping is inef...",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yesilsin-netizen",
+      "features": [
+        "🔍 Find API | 寻找可靠数据源 TRIGGERS: Use when agent needs to fetch external data, user mentions \"rel."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/find-api@0.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262531207?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "find-api",
+      "url": "https://clawhub.ai/skills/find-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-api",
+    "url": "https://clawhub.ai/skills/find-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-api-27ee69692f40d3d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/find-api@0.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-find-api-0.0.2.json",
+      "version": "0.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:940956769dab79d299b1852767aed5b2f0eab0e67f2b4a7f8066bd78293a214c",
+      "artifactSizeBytes": 2009
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T09:08:53.383Z"
+}

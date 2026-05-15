@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29347,
+  "uuid": "skill-clawhub-twenty",
+  "skillKey": "clawhub-twenty",
+  "name": "Twenty CRM",
+  "summary": "Twenty CRM API integration with managed authentication. Manage companies, people, opportunities, notes, and tasks. Use this skill when users want to interact...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twenty",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byungkyu",
+      "features": [
+        "Twenty CRM API integration with managed authentication",
+        "Manage companies, people, opportunities, notes, and tasks",
+        "Use this skill when users want to interact..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/twenty@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16563684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "twenty",
+      "url": "https://clawhub.ai/skills/twenty"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twenty",
+    "url": "https://clawhub.ai/skills/twenty",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twenty-7c2c4df740f720b0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/twenty@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-twenty-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6c9330578a592670d83a7a83a91bb79cbbe7620223185f2a040e388a6a614cdc",
+      "artifactSizeBytes": 2311
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T21:17:02.218Z"
+}

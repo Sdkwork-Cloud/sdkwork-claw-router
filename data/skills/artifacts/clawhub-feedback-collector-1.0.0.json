@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feedback-collector@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feedback_collector",
+  "skill": {
+    "id": 35470,
+    "skillKey": "clawhub-feedback-collector",
+    "name": "Feedback Collector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feedback-collector",
+    "url": "https://clawhub.ai/skills/feedback-collector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feedback-collector-51d62db5240f4710.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Collects and processes user feedback on task completion. Use after important tasks to ask if the result was satisfactory."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wqz666",
+      "userId": "s179p5835tjxay9ymdh9b6g7jx8432vw",
+      "displayName": "wqz666",
+      "image": "https://avatars.githubusercontent.com/u/56181584?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 214,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775139680066,
+      "changelog": "feedback-collector 1.0.0 — initial release\n\n- Introduces a feedback collection and processing system for task completion.\n- Automatically requests user satisfaction after important tasks.\n- Supports both quick and detailed feedback options.\n- Logs feedback to memory for continuous learning and improvement.\n- Provides weekly feedback analysis and actionable suggestions.\n- Chinese and Markdown-based user prompts and response handling included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:71d7b73acf9f0c8f41c45f3243217122cf9908e35c6fc993c327369684cac172"
+}

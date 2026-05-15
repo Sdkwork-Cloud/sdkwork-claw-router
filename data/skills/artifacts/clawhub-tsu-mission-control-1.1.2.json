@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tsu-mission-control@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tsu_mission_control",
+  "skill": {
+    "id": 37259,
+    "skillKey": "clawhub-tsu-mission-control",
+    "name": "Mission Control"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tsu-mission-control",
+    "url": "https://clawhub.ai/skills/tsu-mission-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tsu-mission-control-27ad894c3402d947.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Integrate with Mission Control dashboard to report task progress, publish documents to the Library, request approvals, and submit project requests. Use this..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "louisval1",
+      "userId": "s17ad1c6s039bfa9trrjtx1q9s83nsw0",
+      "displayName": "louisval1",
+      "image": "https://avatars.githubusercontent.com/u/219651000?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1774135632189,
+      "changelog": "- Added database migration script: 005_pending_dispatches.sql.\n- Introduced new dispatch route handler at app/backend/src/routes/dispatch.js.\n- Foundation laid for polling or handling \"pending dispatches\" (see final section in documentation).\n- No changes to existing API contract or endpoints.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:340efaa1520efd90ea05b983a7dab990d86104a17976fceb9dd7969c60df0cf7"
+}

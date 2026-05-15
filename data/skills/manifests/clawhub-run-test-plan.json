@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41355,
+  "uuid": "skill-clawhub-run-test-plan",
+  "skillKey": "clawhub-run-test-plan",
+  "name": "Run Test Plan",
+  "summary": "Execute YAML test plan, stop on first failure, output rich debug prompt",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.run_test_plan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kevin Anderson",
+      "features": [
+        "Execute YAML test plan, stop on first failure, output rich debug prompt"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/run-test-plan@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17010022?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "run-test-plan",
+      "url": "https://clawhub.ai/skills/run-test-plan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "run-test-plan",
+    "url": "https://clawhub.ai/skills/run-test-plan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/run-test-plan-305722fc732395a4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/run-test-plan@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-run-test-plan-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:afc9983961a812de6fbea2c850c549b5e97c357a52e45b4d9b6912930cbbaa99",
+      "artifactSizeBytes": 2401
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T04:16:38.269Z"
+}

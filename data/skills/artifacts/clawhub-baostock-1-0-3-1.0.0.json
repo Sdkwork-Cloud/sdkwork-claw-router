@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baostock-1-0-3@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baostock_1_0_3",
+  "skill": {
+    "id": 62717,
+    "skillKey": "clawhub-baostock-1-0-3",
+    "name": "Baostock 1.0.3"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baostock-1-0-3",
+    "url": "https://clawhub.ai/skills/baostock-1-0-3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baostock-1-0-3-0851f139f5b25344.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "BaoStock 免费A股数据平台 - 支持K线、财务数据、行业分类查询，无需注册即可使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kernelh",
+      "userId": "s17aax1bpz8v3wmqbwmtgzqajd83smz3",
+      "displayName": "kernelh",
+      "image": "https://avatars.githubusercontent.com/u/25876589?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 337,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774758575230,
+      "changelog": "BaoStock v1.2.0 introduces a comprehensive and user-friendly guide for accessing free A-share market data.\n\n- Added a detailed SKILL.md explaining all core APIs, usage instructions, code samples, and advanced features.\n- Clarified how to query K-lines, financials, indices, industry classification, trading calendar, dividends, and basic stock info.\n- Provided tips for batch downloads, handling stock codes, calculating indicators, and filtering securities.\n- Emphasized ease of use: no registration or API key required; simple login/logout process.\n- Added troubleshooting, data coverage, and best practice guidance for both beginners and advanced users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:38c8905a0785771f57631ec7e965bed00fd42172b7d791f6a684f6932006644b"
+}

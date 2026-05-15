@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/design-researh@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.design_researh",
+  "skill": {
+    "id": 29411,
+    "skillKey": "clawhub-design-researh",
+    "name": "design-researh"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "design-researh",
+    "url": "https://clawhub.ai/skills/design-researh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/design-researh-2cbfa9727c833d97.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn fuzzy briefs into a stable pre-design workflow for requirement validation, brief clarification, early-stage research, inspiration direction setting, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhusunlangzi668",
+      "userId": "s1780h8dmrj83q6zjff691epv183gzka",
+      "displayName": "yxl",
+      "image": "https://avatars.githubusercontent.com/u/249465217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 293,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773717541249,
+      "changelog": "Initial release of “design-research-scout”—a stable, workflow-driven agent for design teams evaluating early-stage project briefs.\n\n- Automatically checks if a design brief is clear and actionable; asks a few focused questions if clarification is needed.\n- Delivers a structured pre-design research process, including requirement analysis, early research, direction-setting, and reference collection.\n- Returns moodboard and inspiration references by default, sourcing from Behance, Zcool, Huaban, and Xiaohongshu with quality filtering.\n- Ensures all outputs are ready-to-use for design teams: clearly structured, actionable, and covering both research conclusions and visual inspiration.\n- Adapts to both online and offline environments, providing executable alternatives if direct linking is unavailable.\n- All communication defaults to Chinese unless the user requests another language.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:56528c692cfbb75ad1436c3261c06534004008190acdb8272504d9c85de05541"
+}

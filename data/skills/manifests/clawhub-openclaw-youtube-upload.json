@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21498,
+  "uuid": "skill-clawhub-openclaw-youtube-upload",
+  "skillKey": "clawhub-openclaw-youtube-upload",
+  "name": "OpenClaw YouTube Upload",
+  "summary": "Uploads a video to YouTube using the official YouTube Data API v3 and OAuth 2.0. Use this skill when the user asks to upload a video to YouTube. It supports...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_youtube_upload",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BrOrlandi",
+      "features": [
+        "Uploads a video to YouTube using the official YouTube Data API v3 and OAuth 2.0",
+        "Use this skill when the user asks to upload a video to YouTube",
+        "It supports..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-youtube-upload@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1594658?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-youtube-upload",
+      "url": "https://clawhub.ai/skills/openclaw-youtube-upload"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-youtube-upload",
+    "url": "https://clawhub.ai/skills/openclaw-youtube-upload",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-youtube-upload-696afc2840e29182.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-youtube-upload@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-youtube-upload-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:13f149ea88dd0cff5d5985e996ac0e62449531a392fd40758c6fb78479d827ea",
+      "artifactSizeBytes": 1933
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T18:48:54.577Z"
+}

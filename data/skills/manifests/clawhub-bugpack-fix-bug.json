@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30974,
+  "uuid": "skill-clawhub-bugpack-fix-bug",
+  "skillKey": "clawhub-bugpack-fix-bug",
+  "name": "BugPack Fix Bug",
+  "summary": "Fix a bug from BugPack by reading its context, locating code, applying fixes, and updating status. Use when: user asks to fix, repair, or resolve a bug. NOT...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bugpack_fix_bug",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "duhuazhu",
+      "features": [
+        "Fix a bug from BugPack by reading its context, locating code, applying fixes, and updating stat.",
+        "Use when: user asks to fix, repair, or resolve a bug"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bugpack-fix-bug@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45280664?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bugpack-fix-bug",
+      "url": "https://clawhub.ai/skills/bugpack-fix-bug"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bugpack-fix-bug",
+    "url": "https://clawhub.ai/skills/bugpack-fix-bug",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bugpack-fix-bug-e420d58cfc15f2ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bugpack-fix-bug@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-bugpack-fix-bug-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:773e8c7983685c2868f42af2cabe63ada99a88ac5453e4d6efbb4b1044c257d7",
+      "artifactSizeBytes": 2258
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T09:28:20.532Z"
+}

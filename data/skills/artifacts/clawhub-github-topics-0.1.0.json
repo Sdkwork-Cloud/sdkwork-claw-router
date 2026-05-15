@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-topics@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_topics",
+  "skill": {
+    "id": 18450,
+    "skillKey": "clawhub-github-topics",
+    "name": "Github Topics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-topics",
+    "url": "https://clawhub.ai/skills/github-topics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-topics-d3814a2946d45045.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetches GitHub topic trending repositories. Use when asking about GitHub trending repos or open source projects."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hjw21century",
+      "userId": "publishers:hjw21century",
+      "displayName": "hjw21century",
+      "image": "https://avatars.githubusercontent.com/u/7070409?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 691,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770998142045,
+      "changelog": "Initial release: Quickly fetch and display trending GitHub repositories by topic or show repository details.\n\n- Added support for fetching trending repositories by topic from GitHub.\n- Can display top repositories, show repository README summaries, and search by custom topic.\n- Provides markdown-formatted outputs for both rankings and repository details.\n- Includes usage instructions, API rate limit handling, and troubleshooting tips.\n- Optional configuration for GitHub token and tracked topic.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:23b16f3cc7983435f55b3bc1132a9819a9395289881b2e14f8abf445d284ce68"
+}

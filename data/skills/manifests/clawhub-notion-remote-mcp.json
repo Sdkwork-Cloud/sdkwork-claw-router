@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39318,
+  "uuid": "skill-clawhub-notion-remote-mcp",
+  "skillKey": "clawhub-notion-remote-mcp",
+  "name": "Notion Remote Mcp",
+  "summary": "Use Notion through mcporter-backed MCP tools. Use when working with Notion pages, databases, search, content updates, or workspace lookups via an MCP-integra...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notion_remote_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Damian Bostan",
+      "features": [
+        "Use Notion through mcporter-backed MCP tools",
+        "Use when working with Notion pages, databases, search, content updates, or workspace lookups vi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/notion-remote-mcp@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62200289?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "notion-remote-mcp",
+      "url": "https://clawhub.ai/skills/notion-remote-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notion-remote-mcp",
+    "url": "https://clawhub.ai/skills/notion-remote-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notion-remote-mcp-397fd5e42f7ca412.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/notion-remote-mcp@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-notion-remote-mcp-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d5ded038c83ac6365b1d22223aa895d47ac2a9314f33a56942ccfaea33f0c33c",
+      "artifactSizeBytes": 2266
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T16:08:12.325Z"
+}

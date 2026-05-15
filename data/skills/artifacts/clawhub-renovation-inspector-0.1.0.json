@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/renovation-inspector@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.renovation_inspector",
+  "skill": {
+    "id": 69526,
+    "skillKey": "clawhub-renovation-inspector",
+    "name": "Renovation Inspector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "renovation-inspector",
+    "url": "https://clawhub.ai/skills/renovation-inspector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/renovation-inspector-74b5331eb16e7ce5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "装修避坑与监理助手。当用户上传装修报价单/合同进行审核、需要施工节点验收标准、闭水试验指导、瓷砖铺贴诊断、谈判话术反击或生成补充协议时触发本 Skill。覆盖全装修周期：报价审计 → 施工验收 → 谈判博弈。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dreammer2408",
+      "userId": "s1790x2p5b5sktd087zygfjrk185q23v",
+      "displayName": "DreamMer2408",
+      "image": "https://avatars.githubusercontent.com/u/24226928?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1777365452737,
+      "changelog": "Initial release of renovation-inspector\n\n- Provide audit and risk detection for renovation quotes and contracts, including detailed risk maps and negotiation tips.\n- Offer construction stage checklists and expert guidance for key acceptance points, such as water/electricity inspection, waterproofing (with photo/PDF/image analysis), and tile-laying diagnostics.\n- Enable automated generation of negotiation counter-talks and supplementary agreement clauses in response to specific user cases.\n- Enforce clear evidence-keeping advice, local regulation alerts, and strict anti-misleading principles.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:12763ecdaf3efd094c0147cbe770564527f9b0fea1efe69bf262d1c9c7792d0c"
+}

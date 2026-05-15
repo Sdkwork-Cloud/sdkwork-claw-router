@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chanjing-video-compose@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chanjing_video_compose",
+  "skill": {
+    "id": 28456,
+    "skillKey": "clawhub-chanjing-video-compose",
+    "name": "Chanjing Video Compose"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chanjing-video-compose",
+    "url": "https://clawhub.ai/skills/chanjing-video-compose",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chanjing-video-compose-b4a335d049bdf63a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use Chanjing video synthesis APIs to create digital human videos from text or audio, with optional background upload, task polling, and explicit download whe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "iamzn1018",
+      "userId": "s174j65y6gke3t6ev7f9w23nax83qpk9",
+      "displayName": "IAMZn",
+      "image": "https://avatars.githubusercontent.com/u/24623176?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 295,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774599916836,
+      "changelog": "**Chanjing Video Compose v1.0.3**\n\n- Clarified credential usage: added explicit `credential_hint` and machine-readable `metadata.openclaw.credentialModel`, detailing the file path, optional env variables, and sensitive fields to never commit.\n- Documented new behavior: usage of `open_login_page.py` when credentials are missing.\n- Noted new optional `--callback` argument for `create_task.py` to enable API-side payload POSTs to user endpoints (trust boundary clarified).\n- Expanded/clarified credential sharing and persistence policies, including how access tokens persist to disk and are shared with `chanjing-credentials-guard` and sibling skills.\n- Updated English and Chinese credential/policy descriptions for audit clarity and precise OpenClaw/ClawHub registration.\n- No script or runtime behavior changes; changelog applies to documentation and manifest/metadata only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7f6d0ed12650582fea864d10c42aabecd0cc9c657bbc3de856e2ada451f39814"
+}

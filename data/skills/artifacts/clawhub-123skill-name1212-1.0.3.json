@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/123skill-name1212@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.123skill_name1212",
+  "skill": {
+    "id": 39349,
+    "skillKey": "clawhub-123skill-name1212",
+    "name": "123skill-display-name1"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "123skill-name1212",
+    "url": "https://clawhub.ai/skills/123skill-name1212",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/123skill-name1212-a6d9314d9450b3c3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "suncrespo",
+      "userId": "s174jjhgq8zzj493ffgcyq3g5d83vbby",
+      "displayName": "suncrespo",
+      "image": "https://avatars.githubusercontent.com/u/209358250?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776950246746,
+      "changelog": "Version 1.0.3 — No functional/file changes.\n\n- No updates or modifications detected in code or documentation.\n- Behavior, setup, and logging guidelines remain unchanged from the previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d299951cca8bd452bac40720dae16f689ccdfc6787821e977ca4031358424d18"
+}

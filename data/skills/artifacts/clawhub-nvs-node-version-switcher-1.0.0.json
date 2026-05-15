@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nvs-node-version-switcher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nvs_node_version_switcher",
+  "skill": {
+    "id": 37091,
+    "skillKey": "clawhub-nvs-node-version-switcher",
+    "name": "NVS Node.js Version Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nvs-node-version-switcher",
+    "url": "https://clawhub.ai/skills/nvs-node-version-switcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nvs-node-version-switcher-fdeb723b8ec6f0cd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Node.js versions using NVS (Node Version Switcher). Use when switching Node.js versions, installing new versions, managing version aliases, or when th..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhuzeyu22",
+      "userId": "s17dg3qtkesrxyv10ndmt9hyr585qasq",
+      "displayName": "15",
+      "image": "https://avatars.githubusercontent.com/u/13432873?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 100,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777345530233,
+      "changelog": "nvs-node-version-switcher 1.0.0\n\n- Initial release of skill for managing Node.js versions with NVS (Node Version Switcher)\n- Provides instructions for installation on Windows, Mac, and Linux\n- Details core commands for installing, switching, and listing Node.js versions\n- Documents advanced features: automatic version switching, version aliases, migrating global packages, and remote configuration\n- Includes troubleshooting tips, environment variable info, and VS Code integration guidance",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:94d51e2d1346c9e9e030b3afb5c466b17f3361f89ccec9a77b70d6563bc3af94"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/docker-diag@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docker_diag",
+  "skill": {
+    "id": 9775,
+    "skillKey": "clawhub-docker-diag",
+    "name": "Docker Diag"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docker-diag",
+    "url": "https://clawhub.ai/skills/docker-diag",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docker-diag-f53a1fb0cf38f6a5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Advanced log analysis for Docker containers using signal extraction."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mkrdiop",
+      "userId": "publishers:mkrdiop",
+      "displayName": "mkrdiop",
+      "image": "https://avatars.githubusercontent.com/u/67843975?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3285,
+      "installsAllTime": 13,
+      "installsCurrent": 12,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769626284425,
+      "changelog": "Initial release of Docker Pro Diagnostic:\n\n- Provides advanced log analysis for Docker containers using signal extraction.\n- Guides users to extract and analyze logs via a provided Python script.\n- Summarizes probable root causes and suggests relevant fixes for code or resource errors.\n- Offers clear instructions and example usage for troubleshooting failing containers.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2c097cbeff99f0542771f393373a8ffbaabd30dab44a3b21b92f09aa7592bbf7"
+}

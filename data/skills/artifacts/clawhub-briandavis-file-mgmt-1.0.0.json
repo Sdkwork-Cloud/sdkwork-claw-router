@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/briandavis-file-mgmt@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.briandavis_file_mgmt",
+  "skill": {
+    "id": 47753,
+    "skillKey": "clawhub-briandavis-file-mgmt",
+    "name": "File Management (Brian)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "briandavis-file-mgmt",
+    "url": "https://clawhub.ai/skills/briandavis-file-mgmt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/briandavis-file-mgmt-4cc880ac517ddd6e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Organize and maintain AI agent workspaces using structured directories, clear naming, regular audits, and safe cleanup of unused or dead files."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "briandavisbikes-code",
+      "userId": "s177h6qk57f2p86kxdpap99p6983enjv",
+      "displayName": "bgdavisX",
+      "image": "https://avatars.githubusercontent.com/u/266795814?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 109,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777313980371,
+      "changelog": "Initial release with workspace audit and management best practices",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6df7e15b5a8ca6b7654c9decb305575741e4ff2defac085d21cc5abd0ed79529"
+}

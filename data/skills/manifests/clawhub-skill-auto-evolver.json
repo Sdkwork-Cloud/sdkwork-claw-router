@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22011,
+  "uuid": "skill-clawhub-skill-auto-evolver",
+  "skillKey": "clawhub-skill-auto-evolver",
+  "name": "Skill Auto Evolver",
+  "summary": "Analyze and improve OpenClaw agent skills by tracking usage, checking skill health, scanning code quality, and generating actionable improvement suggestions....",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_auto_evolver",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Analyze and improve OpenClaw agent skills by tracking usage, checking skill health, scanning co."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-auto-evolver@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-auto-evolver",
+      "url": "https://clawhub.ai/skills/skill-auto-evolver"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-auto-evolver",
+    "url": "https://clawhub.ai/skills/skill-auto-evolver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-auto-evolver-04bc2a7c60f70f0f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-auto-evolver@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-auto-evolver-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:09ef45b09fefa3d9f73d728be97f145ba4c9a56b1bd4cacc24c0d9d391f3e41f",
+      "artifactSizeBytes": 2042
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T05:03:26.393Z"
+}

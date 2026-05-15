@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38422,
+  "uuid": "skill-clawhub-ssl-certificate-manager",
+  "skillKey": "clawhub-ssl-certificate-manager",
+  "name": "SSL Certificate Manager",
+  "summary": "Automate SSL certificate generation and management with DNS challenge validation and certificate provisioning.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ssl_certificate_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToolWeb",
+      "features": [
+        "Automate SSL certificate generation and management with DNS challenge validation and certificat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ssl-certificate-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245780162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ssl-certificate-manager",
+      "url": "https://clawhub.ai/skills/ssl-certificate-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ssl-certificate-manager",
+    "url": "https://clawhub.ai/skills/ssl-certificate-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ssl-certificate-manager-66b3a129ba374ba2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ssl-certificate-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ssl-certificate-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3a26ff60b84f4a4dd301ac9b7f5408474970ea497fdeab93c24d2d642656c12c",
+      "artifactSizeBytes": 2449
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T06:25:22.605Z"
+}

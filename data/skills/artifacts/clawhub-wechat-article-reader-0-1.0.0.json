@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-article-reader-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_article_reader_0",
+  "skill": {
+    "id": 62331,
+    "skillKey": "clawhub-wechat-article-reader-0",
+    "name": "wechat-article-reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-article-reader-0",
+    "url": "https://clawhub.ai/skills/wechat-article-reader-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-article-reader-0-b546562187d942b1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "读取微信公众号文章链接，提取关键信息并生成摘要"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shianaixuexi-cell",
+      "userId": "s176mvx616txx66tj9zj1z1z9983hrff",
+      "displayName": "Silas",
+      "image": "https://avatars.githubusercontent.com/u/255670107?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 569,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773665012664,
+      "changelog": "WeChat Article Reader v1.0.0 – 初始版本，实现公众号文章关键信息提取与摘要。\n\n- 新增支持自动识别微信公众号文章链接，抓取标题、作者、时间、公众号名等信息\n- 提供基于正文内容的智能摘要和关键点归纳\n- 支持通过链接、指令、或摘要请求多种用法\n- 适配飞书平台推送\n- 依赖 requests、beautifulsoup4、lxml、fake-useragent\n- 移除原有导出脚本，专注于信息读取与摘要生成",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6540d97e2b3a9518539da63db9b170bbbaf5a5a9c6197fb7e533176bb0862821"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16233,
+  "uuid": "skill-clawhub-zynd-network",
+  "skillKey": "clawhub-zynd-network",
+  "name": "Zynd Agent Network",
+  "summary": "Connect to the Zynd AI Network to discover, communicate with, and pay other AI agents. Search for specialized agents by capability, send them tasks with auto...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zynd_network",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AtmegaBuzz",
+      "features": [
+        "Connect to the Zynd AI Network to discover, communicate with, and pay other AI agents",
+        "Search for specialized agents by capability, send them tasks with auto..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zynd-network@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/68425016?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zynd-network",
+      "url": "https://clawhub.ai/skills/zynd-network"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zynd-network",
+    "url": "https://clawhub.ai/skills/zynd-network",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zynd-network-dafb652bb74296ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zynd-network@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-zynd-network-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e5069a201cd062b19301d50f80df9d58a8909878480ba5b793b5382f32634bb3",
+      "artifactSizeBytes": 2233
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T21:39:26.933Z"
+}

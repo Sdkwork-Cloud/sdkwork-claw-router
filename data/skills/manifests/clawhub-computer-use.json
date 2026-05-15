@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8409,
+  "uuid": "skill-clawhub-computer-use",
+  "skillKey": "clawhub-computer-use",
+  "name": "Computer Use",
+  "summary": "Full desktop computer use for headless Linux servers. Xvfb + XFCE virtual desktop with xdotool automation. 17 actions (click, type, scroll, screenshot, drag,...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.computer_use",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ram-Raghav-S",
+      "features": [
+        "Full desktop computer use for headless Linux servers",
+        "Xvfb + XFCE virtual desktop with xdotool automation",
+        "17 actions (click, type, scroll, screenshot, drag,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/computer-use@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/92739966?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "computer-use",
+      "url": "https://clawhub.ai/skills/computer-use"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "computer-use",
+    "url": "https://clawhub.ai/skills/computer-use",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/computer-use-10be6beef496b89d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/computer-use@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-computer-use-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8801c06761fa776318fa39ccffae251900b7f74496cd36df8409955998375115",
+      "artifactSizeBytes": 2276
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T22:40:22.594Z"
+}

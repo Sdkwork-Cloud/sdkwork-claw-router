@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73521,
+  "uuid": "skill-clawhub-zhuchenggong-wechat-account-aggregation",
+  "skillKey": "clawhub-zhuchenggong-wechat-account-aggregation",
+  "name": "公众号内容聚合",
+  "summary": "根据公众号名称或链接，归纳公众号定位和核心观点，帮用户选择关键词偏好并定时推送聚合内容。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhuchenggong_wechat_account_aggregation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhuchenggong19851114-design",
+      "features": [
+        "根据公众号名称或链接，归纳公众号定位和核心观点，帮用户选择关键词偏好并定时推送聚合内容。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zhuchenggong-wechat-account-aggregation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266258234?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zhuchenggong-wechat-account-aggregation",
+      "url": "https://clawhub.ai/skills/zhuchenggong-wechat-account-aggregation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhuchenggong-wechat-account-aggregation",
+    "url": "https://clawhub.ai/skills/zhuchenggong-wechat-account-aggregation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhuchenggong-wechat-account-aggregation-d337217f172c202b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zhuchenggong-wechat-account-aggregation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zhuchenggong-wechat-account-aggregation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8434d42b41e3498479b9713de2c6f2c3f88b5e350eaf2d2a157d55db6cce5dfb",
+      "artifactSizeBytes": 2486
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T00:46:57.447Z"
+}

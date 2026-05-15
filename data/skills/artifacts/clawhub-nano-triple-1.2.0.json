@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nano-triple@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nano_triple",
+  "skill": {
+    "id": 22911,
+    "skillKey": "clawhub-nano-triple",
+    "name": "Nano Triple"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nano-triple",
+    "url": "https://clawhub.ai/skills/nano-triple",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nano-triple-82676577433bf564.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "3 images, one prompt, instant A/B/C. Nano Banana Pro's natural randomness gives you three distinct takes on any image idea — generated in parallel. Pick the..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mvanhorn",
+      "userId": "s17ea85t738dtyvg6gkwt7zt5h84596q",
+      "displayName": "Matt Van Horn",
+      "image": "https://avatars.githubusercontent.com/u/455140?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1041,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1772850434110,
+      "changelog": "Rebrand: clawdbot → openclaw in metadata key and prose references.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:998d252a625aa779512a560daea4ee4a4441efd3f7701272e2dfffe0353b9786"
+}

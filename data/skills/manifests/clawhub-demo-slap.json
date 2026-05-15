@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19538,
+  "uuid": "skill-clawhub-demo-slap",
+  "skillKey": "clawhub-demo-slap",
+  "name": "Demo Slap",
+  "summary": "Generate CS2 highlights and fragmovies from demos using the Demo-Slap API, with optional Leetify integration and Demo-Slap match history fallback to select r...",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.demo_slap",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Damir Armanov",
+      "features": [
+        "Generate CS2 highlights and fragmovies from demos using the Demo-Slap API, with optional Leetif."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/demo-slap@0.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18160651?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "demo-slap",
+      "url": "https://clawhub.ai/skills/demo-slap"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "demo-slap",
+    "url": "https://clawhub.ai/skills/demo-slap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/demo-slap-ee2bf28c39ad21e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/demo-slap@0.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-demo-slap-0.1.4.json",
+      "version": "0.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:21c9c9c78257cc7b97934cc249233f04805cff20992dd4b9d7430e0e8ef922d3",
+      "artifactSizeBytes": 2014
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T05:27:13.100Z"
+}

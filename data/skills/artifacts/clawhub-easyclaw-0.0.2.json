@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/easyclaw@0.0.2",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.easyclaw",
+  "skill": {
+    "id": 19025,
+    "skillKey": "clawhub-easyclaw",
+    "name": "easyclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "easyclaw",
+    "url": "https://clawhub.ai/skills/easyclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/easyclaw-7d349e67ab69f3d5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run user-facing EasyClaw DEX actions from a self-contained skill folder. Use when an agent needs to submit user orders or check wallet/margin/order balances..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ice-coldbell",
+      "userId": "s17e83wq3as21pxyg9tcnweqkd83hm4s",
+      "displayName": "ColdBell",
+      "image": "https://avatars.githubusercontent.com/u/60144158?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 622,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.2",
+      "createdAt": 1772079524440,
+      "changelog": "Version 0.1.0 of easyclaw-skill\n\n- Added `.env.example` file providing sample environment variable keys for required configuration.\n- Updated skill metadata with version, homepage, and detailed environment/bin/config requirements.\n- Expanded documentation to clarify wallet, RPC, and backend credential sources, as well as local file-write behavior.\n- No changes to command interface or user workflows.\n- Setup and safety instructions remain unchanged.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:41cc90a5704c485133af55840b5e6dfb98a7f7738bd07fd555d2a3e82ce992a7"
+}

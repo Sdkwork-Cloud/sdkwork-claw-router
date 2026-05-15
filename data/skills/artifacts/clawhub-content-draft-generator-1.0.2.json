@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/content-draft-generator@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_draft_generator",
+  "skill": {
+    "id": 10031,
+    "skillKey": "clawhub-content-draft-generator",
+    "name": "Content Draft Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-draft-generator",
+    "url": "https://clawhub.ai/skills/content-draft-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-draft-generator-3aab403bb379ecac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates new content drafts based on reference content analysis. Use when someone wants to create content (articles, tweets, posts) modeled after high-perfo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vincentchan",
+      "userId": "publishers:vincentchan",
+      "displayName": "vincentchan",
+      "image": "https://avatars.githubusercontent.com/u/229261?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2928,
+      "installsAllTime": 6,
+      "installsCurrent": 5,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771054508961,
+      "changelog": "v1.0.2: Added security disclaimer clarifying that credential/secret mentions are content writing terms, not actual credentials",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a25de62317390babf89047c672d8b61ed7c70cb251e71e079b94d8faa627b575"
+}

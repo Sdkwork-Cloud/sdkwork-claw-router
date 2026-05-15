@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/provincial-education-project@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.provincial_education_project",
+  "skill": {
+    "id": 72709,
+    "skillKey": "clawhub-provincial-education-project",
+    "name": "省级教育课题申报Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "provincial-education-project",
+    "url": "https://clawhub.ai/skills/provincial-education-project",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/provincial-education-project-c0ae05189700a3e7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "辅助教师撰写符合省级要求的教育课题申报书，涵盖理论框架、研究设计、创新亮点及省级政策对接。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daigxok",
+      "userId": "s1780ks0559aj0a6r3aabws5e983sfvy",
+      "displayName": "math",
+      "image": "https://avatars.githubusercontent.com/u/48268142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776314409206,
+      "changelog": "初始版本：专门针对省级教育课题申报，帮助教师撰写高质量、有竞争力的省级课题申报书",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3278159f02b7e631ff00d851e2874b3a0f50440367d417eed853f43b68a413cb"
+}

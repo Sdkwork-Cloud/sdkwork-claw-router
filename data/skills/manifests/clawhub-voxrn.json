@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48549,
+  "uuid": "skill-clawhub-voxrn",
+  "skillKey": "clawhub-voxrn",
+  "name": "Voxrn",
+  "summary": "Place phone calls, send SMS, search contacts, and run agent dispatches via Voxrn. Bridges any OpenClaw-bridged chat (Slack, Telegram, iMessage, WhatsApp, Dis...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voxrn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "robit-man",
+      "features": [
+        "Place phone calls, send SMS, search contacts, and run agent dispatches via Voxrn",
+        "Bridges any OpenClaw-bridged chat (Slack, Telegram, iMessage, WhatsApp, Dis..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/voxrn@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36677806?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "voxrn",
+      "url": "https://clawhub.ai/skills/voxrn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voxrn",
+    "url": "https://clawhub.ai/skills/voxrn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voxrn-441d39040b8dabb8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/voxrn@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-voxrn-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5f313f23ce2ac597e475b70d19577fca7314e40babdf7ef0b3603a1b08f82f4f",
+      "artifactSizeBytes": 1937
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T04:24:05.015Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sre-engineer@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sre_engineer",
+  "skill": {
+    "id": 11643,
+    "skillKey": "clawhub-sre-engineer",
+    "name": "Sre Engineer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sre-engineer",
+    "url": "https://clawhub.ai/skills/sre-engineer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sre-engineer-3ff30ae55ab89271.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when defining SLIs/SLOs, managing error budgets, or building reliable systems at scale. Invoke for incident management, chaos engineering, toil reduction, capacity planning."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "veeramanikandanr48",
+      "userId": "publishers:veeramanikandanr48",
+      "displayName": "Veera",
+      "image": "https://avatars.githubusercontent.com/u/119089869?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2022,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769838986818,
+      "changelog": "Initial release of the sre-engineer skill, focused on Site Reliability Engineering practices.\n\n- Provides guidance and templates for defining SLIs/SLOs, managing error budgets, and implementing reliable systems at scale\n- Covers incident management, chaos engineering, toil reduction, and capacity planning\n- Specifies core SRE workflows, constraints, and output templates\n- Includes detailed references for SLO/SLI management, monitoring, automation, and incident response\n- Designed for implementation use cases with code-focused output",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ca6a5de6e6ffb3b0606e1f808cc97e172d1115a2ab934379d34156a0682d5105"
+}

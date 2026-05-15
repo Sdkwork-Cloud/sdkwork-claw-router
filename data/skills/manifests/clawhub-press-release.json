@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58783,
+  "uuid": "skill-clawhub-press-release",
+  "skillKey": "clawhub-press-release",
+  "name": "Press Release",
+  "summary": "新闻稿生成器。企业新闻稿、产品发布、融资公告、活动报道。Press release generator for product launches, funding announcements, events. 新闻稿、公关稿、媒体发布。Use when writing press releases.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.press_release",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "新闻稿生成器。企业新闻稿、产品发布、融资公告、活动报道。Press release generator for product launches, funding announcements.",
+        "新闻稿、公关稿、媒体发布。Use when writing press releases."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/press-release@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "press-release",
+      "url": "https://clawhub.ai/skills/press-release"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "press-release",
+    "url": "https://clawhub.ai/skills/press-release",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/press-release-35ac26ab9bd62aab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/press-release@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-press-release-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5bd36ca1dd2ceca16778f6a4f90609b0c83d4c9b5298d5502d748d88441c0578",
+      "artifactSizeBytes": 2003
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T18:59:50.662Z"
+}

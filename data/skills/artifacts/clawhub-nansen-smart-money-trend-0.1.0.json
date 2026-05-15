@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nansen-smart-money-trend@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nansen_smart_money_trend",
+  "skill": {
+    "id": 30538,
+    "skillKey": "clawhub-nansen-smart-money-trend",
+    "name": "Nansen Smart Money Trend"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nansen-smart-money-trend",
+    "url": "https://clawhub.ai/skills/nansen-smart-money-trend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nansen-smart-money-trend-d7da9fb01c45e90e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Has SM been in this token for weeks, or did they just enter? Are they still buying?"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nansen-devops",
+      "userId": "s174hnr0xtfypzan2x804p4me183nkqz",
+      "displayName": "Nansen AI",
+      "image": "https://avatars.githubusercontent.com/u/93130718?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 271,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773761263459,
+      "changelog": "Initial release of nansen-smart-money-trend.\n\n- Analyze smart money (SM) participation trends for specific tokens on Ethereum.\n- Fetch net flow data over multiple timeframes (1h, 24h, 7d, 30d).\n- Track SM token holders and their balance changes.\n- Assess trading flow across smart traders, whales, funds, and fresh wallets.\n- Identify earliest smart money buy actions via DEX trade history.\n- Simple heuristics for interpreting accumulation and distribution behavior.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2cda72fe1c7c460a780fa61972bb259f92f13bd54b8fe19f6226a82305dac4fc"
+}

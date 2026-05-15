@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22394,
+  "uuid": "skill-clawhub-sql-dataviz",
+  "skillKey": "clawhub-sql-dataviz",
+  "name": "SQL Dataviz",
+  "summary": "Convert SQL query results into production-grade visual charts including bar, line, pie, map, KPI, AI insights, and interactive HTML dashboards with base64 PN...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sql_dataviz",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SQLSkills",
+      "features": [
+        "Convert SQL query results into production-grade visual charts including bar, line, pie, map, KP."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sql-dataviz@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199218417?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sql-dataviz",
+      "url": "https://clawhub.ai/skills/sql-dataviz"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sql-dataviz",
+    "url": "https://clawhub.ai/skills/sql-dataviz",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sql-dataviz-92bbed8d8da98f57.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sql-dataviz@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sql-dataviz-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:efd23314d3c6a48b55b0249bdb4ca5627bafde25edcb7cc289cf18b145e3edc9",
+      "artifactSizeBytes": 2125
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T10:33:33.832Z"
+}

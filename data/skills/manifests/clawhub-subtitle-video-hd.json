@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44928,
+  "uuid": "skill-clawhub-subtitle-video-hd",
+  "skillKey": "clawhub-subtitle-video-hd",
+  "name": "Subtitle Video Hd",
+  "summary": "Get captioned HD videos ready to post, without touching a single slider. Upload your video files (MP4, MOV, AVI, WebM, up to 500MB), say something like \"add...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subtitle_video_hd",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mhogan2013-9",
+      "features": [
+        "Get captioned HD videos ready to post, without touching a single slider",
+        "Upload your video files (MP4, MOV, AVI, WebM, up to 500MB), say something like \"add..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/subtitle-video-hd@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208827708?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "subtitle-video-hd",
+      "url": "https://clawhub.ai/skills/subtitle-video-hd"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subtitle-video-hd",
+    "url": "https://clawhub.ai/skills/subtitle-video-hd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subtitle-video-hd-a9df5dd9a4d0eea0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/subtitle-video-hd@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-subtitle-video-hd-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6a01e497940f13f3be1480239240f1b1939dae6183efd73386137e2a916704a4",
+      "artifactSizeBytes": 2380
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T20:55:25.377Z"
+}

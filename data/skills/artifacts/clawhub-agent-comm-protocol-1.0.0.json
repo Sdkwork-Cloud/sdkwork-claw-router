@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-comm-protocol@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_comm_protocol",
+  "skill": {
+    "id": 38968,
+    "skillKey": "clawhub-agent-comm-protocol",
+    "name": "Agent Comm Protocol"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-comm-protocol",
+    "url": "https://clawhub.ai/skills/agent-comm-protocol",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-comm-protocol-588d49268c36789f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Standard protocol for reliable task dispatch, status reporting, and result feedback with confirmation, retry, and logging between agents."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nancliu",
+      "userId": "s17faz2dem1qm5y5tgy0z84e4583h62z",
+      "displayName": "nancliu",
+      "image": "https://avatars.githubusercontent.com/u/13430227?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774200472885,
+      "changelog": "- Initial release of Agent 通信协议 Skill.\n- Defines a standard protocol for reliable communication between agents, covering task dispatch, status reporting, and result feedback.\n- Specifies confirmation and retry mechanisms for important messages with configurable timeouts.\n- Provides standardized message templates for common communication scenarios.\n- Outlines detailed process flows for standard and exception handling.\n- Logs all communications for traceability and accountability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:00f66ce639965b91d5895ac4d1c3cfab0c2c2db844b5549e47fd4f58d6db33b5"
+}

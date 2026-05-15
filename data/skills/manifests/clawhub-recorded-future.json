@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34423,
+  "uuid": "skill-clawhub-recorded-future",
+  "skillKey": "clawhub-recorded-future",
+  "name": "Recorded Future",
+  "summary": "Recorded Future integration. Manage data, records, and automate workflows. Use when the user wants to interact with Recorded Future data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recorded_future",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Recorded Future integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Recorded Future data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/recorded-future@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "recorded-future",
+      "url": "https://clawhub.ai/skills/recorded-future"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recorded-future",
+    "url": "https://clawhub.ai/skills/recorded-future",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recorded-future-193a134c1073ccec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/recorded-future@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-recorded-future-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8276cbb9e57ebc601ce92331105ce19d013740b84c1f3886182c7c2e212fd831",
+      "artifactSizeBytes": 1893
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:32:17.366Z"
+}

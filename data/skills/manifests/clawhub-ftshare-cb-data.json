@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62682,
+  "uuid": "skill-clawhub-ftshare-cb-data",
+  "skillKey": "clawhub-ftshare-cb-data",
+  "name": "Skills of convertible bond data released by ft.tech.",
+  "summary": "A 股可转债数据技能集（market.ft.tech）。覆盖可转债全量列表、单只可转债基础信息（转股价、转股价值、到期日、发行规模等）、单标的历史 K 线（支持可转债）。用户询问可转债列表、某只转债详情、转股价/转股价值、转债 K 线/历史行情时使用。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ftshare_cb_data",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shawn92",
+      "features": [
+        "A 股可转债数据技能集（market.ft.tech）。覆盖可转债全量列表、单只可转债基础信息（转股价、转股价值、到期日、发行规模等）、单标的历史 K 线（支持可转债）。用户询问可转债列表、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ftshare-cb-data@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17521361?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ftshare-cb-data",
+      "url": "https://clawhub.ai/skills/ftshare-cb-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ftshare-cb-data",
+    "url": "https://clawhub.ai/skills/ftshare-cb-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ftshare-cb-data-b17c0faf36a913f5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ftshare-cb-data@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ftshare-cb-data-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:36dbc1c6f8a681e210cc813f5b9259ebe96b35f2b5472dae54d979539cd04bdb",
+      "artifactSizeBytes": 2475
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T02:12:56.351Z"
+}

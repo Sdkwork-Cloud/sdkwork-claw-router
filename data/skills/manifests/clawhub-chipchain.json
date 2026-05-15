@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20475,
+  "uuid": "skill-clawhub-chipchain",
+  "skillKey": "clawhub-chipchain",
+  "name": "ChipChain",
+  "summary": "Semiconductor supply chain intelligence.",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chipchain",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lboquillon",
+      "features": [
+        "Semiconductor supply chain intelligence."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chipchain@1.0.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1012040?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chipchain",
+      "url": "https://clawhub.ai/skills/chipchain"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chipchain",
+    "url": "https://clawhub.ai/skills/chipchain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chipchain-f4b21510d195bde8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chipchain@1.0.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-chipchain-1.0.9.json",
+      "version": "1.0.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:41c5082fc88ec954bbef444b35b2893d3589eadb8d84e7f228eae8adebc7a35a",
+      "artifactSizeBytes": 2383
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T19:23:53.906Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44171,
+  "uuid": "skill-clawhub-sage-payroll-integration",
+  "skillKey": "clawhub-sage-payroll-integration",
+  "name": "Sage Payroll",
+  "summary": "Sage Payroll integration. Manage data, records, and automate workflows. Use when the user wants to interact with Sage Payroll data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sage_payroll_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Sage Payroll integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Sage Payroll data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sage-payroll-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sage-payroll-integration",
+      "url": "https://clawhub.ai/skills/sage-payroll-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sage-payroll-integration",
+    "url": "https://clawhub.ai/skills/sage-payroll-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sage-payroll-integration-0c995e48b796900a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sage-payroll-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-sage-payroll-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9a5ee6dbd9f63d7ca70d68fefd6c87b97194f081baf2bf8ab10b0d3810f58f6f",
+      "artifactSizeBytes": 1946
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:56:53.742Z"
+}

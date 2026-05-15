@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61164,
+  "uuid": "skill-clawhub-paper-author-profiler-redoc",
+  "skillKey": "clawhub-paper-author-profiler-redoc",
+  "name": "论文作者档案生成器",
+  "summary": "根据论文链接（arXiv / Google Scholar / Nature 等）自动抓取全部作者列表，并行搜集每位作者的公开信息（所在机构、研究方向、教育背景、Google Scholar / GitHub / LinkedIn / 个人主页），生成双 Sheet Redoc 在线文档：Sheet1 为作者个人...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_author_profiler_redoc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MC6680000",
+      "features": [
+        "根据论文链接（arXiv / Google Scholar / Nature 等）自动抓取全部作者列表，并行搜集每位作者的公开信息（所在机构、研究方向、教育背景、Google Scholar."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paper-author-profiler-redoc@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/220144879?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paper-author-profiler-redoc",
+      "url": "https://clawhub.ai/skills/paper-author-profiler-redoc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-author-profiler-redoc",
+    "url": "https://clawhub.ai/skills/paper-author-profiler-redoc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-author-profiler-redoc-c69b0456c1e92b37.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paper-author-profiler-redoc@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-paper-author-profiler-redoc-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c992d0924c34bb00edcb78bcb6afd3fbba24e4ef6554bb259d1de94463a50b30",
+      "artifactSizeBytes": 2174
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T13:25:22.894Z"
+}

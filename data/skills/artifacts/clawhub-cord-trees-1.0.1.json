@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cord-trees@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cord_trees",
+  "skill": {
+    "id": 41065,
+    "skillKey": "clawhub-cord-trees",
+    "name": "Cord Trees"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cord-trees",
+    "url": "https://clawhub.ai/skills/cord-trees",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cord-trees-0ef6075bbec3b309.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Dynamic task tree orchestration inspired by Cord protocol. Agent builds its own coordination tree at runtime — deciding decomposition, parallelism, and depen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "moltenbot000",
+      "userId": "s17f11azj37wbyd16gcab6gks583q6p3",
+      "displayName": "Molten Bot 000",
+      "image": "https://avatars.githubusercontent.com/u/260473928?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 549,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772121935978,
+      "changelog": "No user-visible changes; version bump only.\n\n- Version updated to 1.0.1 with no file changes detected.\n- All features, documentation, and functionality remain unchanged.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1ab206e111fe0c99f5258edea9551f048860c91389bdd15199665a061131bee3"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/water-intake-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.water_intake_tracker",
+  "skill": {
+    "id": 43910,
+    "skillKey": "clawhub-water-intake-tracker",
+    "name": "Water Intake Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "water-intake-tracker",
+    "url": "https://clawhub.ai/skills/water-intake-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/water-intake-tracker-cb12b3982e832f50.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helps create a realistic daily hydration plan with personalized intake ranges, simple tracking anchors, and alerts for under- and overhydration risks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776214869201,
+      "changelog": "Initial release of Water Intake Tracker.\n\n- Guides users to build a flexible hydration routine based on daily anchors (e.g., meals, workouts) instead of rigid targets.\n- Considers each user’s context: intake pattern, activity, caffeine, weather, and schedule.\n- Provides a personalized hydration range instead of a universal recommendation.\n- Suggests simple, low-effort tracking methods (cups, bottles, tally marks).\n- Includes clear \"catch-up\" rules to avoid late-night overhydration.\n- Emphasizes recognizing cues for both underhydration and overdrinking.\n- Chinese alias: 饮水追踪师.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:082b6af426c4bef871ff843f20788d38030e422c876ad1deb8567fca4c0ef5ad"
+}

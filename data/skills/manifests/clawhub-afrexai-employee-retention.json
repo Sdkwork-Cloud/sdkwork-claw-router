@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20095,
+  "uuid": "skill-clawhub-afrexai-employee-retention",
+  "skillKey": "clawhub-afrexai-employee-retention",
+  "name": "Employee Retention & Turnover Risk Analyzer",
+  "summary": "Analyzes employee retention risk across 8 dimensions, identifies flight risks, estimates turnover costs, and provides a 90-day retention action plan with pri...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_employee_retention",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1kalin",
+      "features": [
+        "Analyzes employee retention risk across 8 dimensions, identifies flight risks, estimates turnov."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/afrexai-employee-retention@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15705344?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "afrexai-employee-retention",
+      "url": "https://clawhub.ai/skills/afrexai-employee-retention"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-employee-retention",
+    "url": "https://clawhub.ai/skills/afrexai-employee-retention",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-employee-retention-ce465ea44796f101.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/afrexai-employee-retention@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-afrexai-employee-retention-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fa825de04637acaeada6264c5ec9b3fd726c1b9a64c3fb8e04425a7be97def18",
+      "artifactSizeBytes": 2488
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T19:14:17.352Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57163,
+  "uuid": "skill-clawhub-mental-model-forge",
+  "skillKey": "clawhub-mental-model-forge",
+  "name": "F.A.C.E.T. Framework (心智模型：F.A.C.E.T. 框架)",
+  "summary": "F.A.C.E.T. cognitive framework for extracting mental models from classic books and theories. Use when (1) user asks for \"reading notes\", \"extract models\", or...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mental_model_forge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KeDouPi(珂抖屁)",
+      "features": [
+        "F.A.C.E.T",
+        "cognitive framework for extracting mental models from classic books and theories",
+        "Use when (1) user asks for \"reading notes\", \"extract models\", or..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mental-model-forge@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11420318?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mental-model-forge",
+      "url": "https://clawhub.ai/skills/mental-model-forge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mental-model-forge",
+    "url": "https://clawhub.ai/skills/mental-model-forge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mental-model-forge-f75eff8571d0a26b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mental-model-forge@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-mental-model-forge-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:be32dc91980acb8e2b58ad4283afea30dd55a40874e8571765226a02a9354b57",
+      "artifactSizeBytes": 2578
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T16:46:09.821Z"
+}

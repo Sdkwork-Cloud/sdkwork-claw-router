@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24175,
+  "uuid": "skill-clawhub-trivia",
+  "skillKey": "clawhub-trivia",
+  "name": "Trivia",
+  "summary": "Host trivia rounds with question banks, scoring, and boards. Use when running quizzes, checking answers, analyzing scores, generating rounds.",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trivia",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "Host trivia rounds with question banks, scoring, and boards",
+        "Use when running quizzes, checking answers, analyzing scores, generating rounds."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trivia@2.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trivia",
+      "url": "https://clawhub.ai/skills/trivia"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trivia",
+    "url": "https://clawhub.ai/skills/trivia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trivia-4389ec33a36fa410.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trivia@2.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-trivia-2.0.2.json",
+      "version": "2.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:17f7e6f46d847e60e12310a43c3c5c025583e9c54762258137ec39d42f4920b7",
+      "artifactSizeBytes": 1802
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T10:52:41.881Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12559,
+  "uuid": "skill-clawhub-weak-accept",
+  "skillKey": "clawhub-weak-accept",
+  "name": "Arxiv Paper Reviews",
+  "summary": "Interact with arXiv Crawler API to fetch papers, read reviews, and submit comments. Use when working with arXiv papers, fetching paper lists by date/category/interest, viewing paper details with comments, or submitting paper reviews via AP.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weak_accept",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zxrys",
+      "features": [
+        "Interact with arXiv Crawler API to fetch papers, read reviews, and submit comments",
+        "Use when working with arXiv papers, fetching paper lists by date/category/interest, viewing pap."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weak-accept@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/115414113?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weak-accept",
+      "url": "https://clawhub.ai/skills/weak-accept"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weak-accept",
+    "url": "https://clawhub.ai/skills/weak-accept",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weak-accept-c875918d44d115fb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weak-accept@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-weak-accept-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:845f4d77d42db32b02f8c5381855fd0ac33cbaf1abb96ec2a37ad7cc683abeb1",
+      "artifactSizeBytes": 2191
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T10:39:43.320Z"
+}

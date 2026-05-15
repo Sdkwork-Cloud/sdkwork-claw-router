@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45950,
+  "uuid": "skill-clawhub-daily-workflow-en",
+  "skillKey": "clawhub-daily-workflow-en",
+  "name": "Daily Workflow Manager",
+  "summary": "Daily work start, mid-day check-in, and end workflow manager for English-speaking developers. Triggered by customizable phrases (default: 'starting work', 'l...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_workflow_en",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EnglandTong",
+      "features": [
+        "Daily work start, mid-day check-in, and end workflow manager for English-speaking developers",
+        "Triggered by customizable phrases (default: 'starting work', 'l..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-workflow-en@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/221670156?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-workflow-en",
+      "url": "https://clawhub.ai/skills/daily-workflow-en"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-workflow-en",
+    "url": "https://clawhub.ai/skills/daily-workflow-en",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-workflow-en-234ed7e475ba05f7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-workflow-en@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-workflow-en-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c02e755050d242a72c3ed5e06e4dc701f36f5c0f6c23189dd19074d96daeb033",
+      "artifactSizeBytes": 2406
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T15:57:33.951Z"
+}

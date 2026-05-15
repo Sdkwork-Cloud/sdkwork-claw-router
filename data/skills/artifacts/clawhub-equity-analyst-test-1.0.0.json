@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/equity-analyst-test@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.equity_analyst_test",
+  "skill": {
+    "id": 14466,
+    "skillKey": "clawhub-equity-analyst-test",
+    "name": "Equity Analyst Test"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "equity-analyst-test",
+    "url": "https://clawhub.ai/skills/equity-analyst-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/equity-analyst-test-2e5102355fcaca8e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze Korean stock fundamentals, news, and technicals using a strict weighted framework to score investment attractiveness and give BUY/HOLD/AVOID recommen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "saebyeok-im",
+      "userId": "publishers:saebyeok-im",
+      "displayName": "Saebyeok-Im",
+      "image": "https://avatars.githubusercontent.com/u/55320507?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1207,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770462014447,
+      "changelog": "Initial release of Equity Analyst Skill for Korean stocks, with a strict, conservative scoring and recommendation framework.\n\n- Analyzes KRX-listed stocks using data from Naver Finance, focusing on Financials (50%), News (25%), and Technical Charts (25%) in a prescribed order.\n- Outputs detailed subscores, final Investment Attractiveness Score (0–100), and a BUY/HOLD/AVOID verdict with a structured summary.\n- Incorporates explicit rules for scoring and mandatory capping when profitability and growth are both weak.\n- Designed only for Korean equities—does not support non-Korean stocks or cryptocurrencies.\n- Includes scripts for automated data extraction and analysis.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2a8fb88d1ad570c64c54b4ee0cccf375c3d42f8957db52e0483ea7baa0dd7e2a"
+}

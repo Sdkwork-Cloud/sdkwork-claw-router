@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-pm-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_pm_agent",
+  "skill": {
+    "id": 34041,
+    "skillKey": "clawhub-ai-pm-agent",
+    "name": "AI PM Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-pm-agent",
+    "url": "https://clawhub.ai/skills/ai-pm-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-pm-agent-2d382f7f3dfe9f1a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered product management workflow agent. Use when the user wants to do product discovery, write PRDs, prioritize features, design experiments, plan laun..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jahonn",
+      "userId": "s173n6hbyvzhtwkf8cxh3b3v3983gr6k",
+      "displayName": "Jahonn Ding",
+      "image": "https://avatars.githubusercontent.com/u/1058051?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 219,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774049296276,
+      "changelog": "Initial release: 4-agent PM lifecycle workflow using JTBD, Opportunity Solution Tree, Amazon PRD, Design Sprint, Lean BML",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:40c55141e47d2c1fedd1454387fce24ac5eb443a799735124c7cf05f698029b4"
+}

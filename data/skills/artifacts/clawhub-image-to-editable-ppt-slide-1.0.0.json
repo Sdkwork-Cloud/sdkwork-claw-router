@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-to-editable-ppt-slide@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_to_editable_ppt_slide",
+  "skill": {
+    "id": 27751,
+    "skillKey": "clawhub-image-to-editable-ppt-slide",
+    "name": "Image to Editable PPT Slide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-to-editable-ppt-slide",
+    "url": "https://clawhub.ai/skills/image-to-editable-ppt-slide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-to-editable-ppt-slide-ca90a5118ecab8c8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Rebuild one or more reference images as visually matching editable PowerPoint slides using native shapes, text, fills, and layout instead of a flat screensho..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "benjaminlee",
+      "userId": "s170et9z1bf1ze5yrtthnv929183ne7y",
+      "displayName": "benjaminlee",
+      "image": "https://avatars.githubusercontent.com/u/368048?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 242,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774528446846,
+      "changelog": "Initial public release with editable single-slide and multi-slide reconstruction workflows, a reusable JSON-to-PPTX builder, and a starter spec generator for turning reference images into matching editable PowerPoint decks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2db781ca1e98a952628a61ede6ce53b396f4a85a301b180e54280bd6d494a9ce"
+}

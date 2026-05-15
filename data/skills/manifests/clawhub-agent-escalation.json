@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56596,
+  "uuid": "skill-clawhub-agent-escalation",
+  "skillKey": "clawhub-agent-escalation",
+  "name": "Agent Escalation (Webhook)",
+  "summary": "Escalader un problème vers l'agent superviseur (David) via webhook gateway. Utiliser quand l'agent client est bloqué sur un problème qu'il ne peut pas résoud...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_escalation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Erwan Lee Pesle",
+      "features": [
+        "Escalader un problème vers l'agent superviseur (David) via webhook gateway",
+        "Utiliser quand l'agent client est bloqué sur un problème qu'il ne peut pas résoud..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-escalation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20945750?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-escalation",
+      "url": "https://clawhub.ai/skills/agent-escalation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-escalation",
+    "url": "https://clawhub.ai/skills/agent-escalation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-escalation-2bf69c661c2f9a92.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-escalation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-escalation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:843af6475a06f2299d45d52c6ab47eef3a0468add0c9d555434ba1eaea28e5fd",
+      "artifactSizeBytes": 2017
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T13:04:03.833Z"
+}

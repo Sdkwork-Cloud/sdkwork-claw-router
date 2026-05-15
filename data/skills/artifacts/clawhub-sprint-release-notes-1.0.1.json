@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sprint-release-notes@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sprint_release_notes",
+  "skill": {
+    "id": 44032,
+    "skillKey": "clawhub-sprint-release-notes",
+    "name": "sprint-release-notes"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sprint-release-notes",
+    "url": "https://clawhub.ai/skills/sprint-release-notes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sprint-release-notes-ca360d57b4c25e07.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically generate sprint release notes from a GitHub Project Board and publish to their respective repositories. Groups completed items by repository, g..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tenkus47",
+      "userId": "s17d18hq9nprqmbxzw9rzgzdsn83nyq6",
+      "displayName": "tenkus47",
+      "image": "https://avatars.githubusercontent.com/u/42644738?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775731247647,
+      "changelog": "Version 1.0.1\n\n- Added _meta.json to provide package metadata.\n- Updated scripts/generate_release_notes.py with improvements or fixes.\n- No user-facing workflow changes; update is primarily internal/structural.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dee4965e574882abec5231316dad06c58d35fc017bad52cc4cabb9dc7e11cd3f"
+}

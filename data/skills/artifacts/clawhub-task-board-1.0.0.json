@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/task-board@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_board",
+  "skill": {
+    "id": 68854,
+    "skillKey": "clawhub-task-board",
+    "name": "进度任务管理"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-board",
+    "url": "https://clawhub.ai/skills/task-board",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-board-d55fd612493c212b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "进度任务管理。记录、追踪、汇报任务进度。触发条件：(1) 用户派任务，(2) 用户说'查看任务'/'任务进度'，(3) 用户说'添加任务：xxx'，(4) 任务状态变更时自动更新。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tanklive",
+      "userId": "s172m52hcs8twjk01mjd5f1mbx83q4fm",
+      "displayName": "Tanklive",
+      "image": "https://avatars.githubusercontent.com/u/139125121?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 48,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778312487379,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3d3fefd1dad3b7ef8f75e9f3fd3ff76ad12ff0134db09c64d578bae9116c1af0"
+}

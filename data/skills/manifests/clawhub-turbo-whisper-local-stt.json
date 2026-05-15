@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66630,
+  "uuid": "skill-clawhub-turbo-whisper-local-stt",
+  "skillKey": "clawhub-turbo-whisper-local-stt",
+  "name": "turbo-whisper-local-stt",
+  "summary": "当用户想要**音频转文字**、**语音转文本**、**转录录音**、**生成字幕**、**会议录音转文字**、**语音笔记转文本**、**本地转录音频**时自动触发。 使用本地 Faster-Whisper（large-v3-ct2 等模型）进行高性能、中文优先的音频转文字，完全离线、隐私安全，支持 wav/mp...",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.turbo_whisper_local_stt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "顶尖王牌程序员",
+      "features": [
+        "当用户想要**音频转文字**、**语音转文本**、**转录录音**、**生成字幕**、**会议录音转文字**、**语音笔记转文本**、**本地转录音频**时自动触发。 使用本地 Faster."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/turbo-whisper-local-stt@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11627332?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "turbo-whisper-local-stt",
+      "url": "https://clawhub.ai/skills/turbo-whisper-local-stt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "turbo-whisper-local-stt",
+    "url": "https://clawhub.ai/skills/turbo-whisper-local-stt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/turbo-whisper-local-stt-09273746181cf6ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/turbo-whisper-local-stt@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-turbo-whisper-local-stt-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:88cba18f93d72ea65f89b055d30cf9112d0a70b24e9fbed28ee0f4c1776d3ba5",
+      "artifactSizeBytes": 2174
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T14:55:15.948Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31486,
+  "uuid": "skill-clawhub-maestra",
+  "skillKey": "clawhub-maestra",
+  "name": "Maestra",
+  "summary": "Maestra integration. Manage Organizations, Users. Use when the user wants to interact with Maestra data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maestra",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Maestra integration",
+        "Manage Organizations, Users",
+        "Use when the user wants to interact with Maestra data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/maestra@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "maestra",
+      "url": "https://clawhub.ai/skills/maestra"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maestra",
+    "url": "https://clawhub.ai/skills/maestra",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maestra-51bb2cc5e87423d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/maestra@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-maestra-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0c7df2bdb9381b5d74007adf3afcc138db8a94c89604613e3c3f0db373997d40",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:42:58.365Z"
+}

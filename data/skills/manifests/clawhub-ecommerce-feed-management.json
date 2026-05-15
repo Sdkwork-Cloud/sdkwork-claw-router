@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28615,
+  "uuid": "skill-clawhub-ecommerce-feed-management",
+  "skillKey": "clawhub-ecommerce-feed-management",
+  "name": "E-Commerce Feed Management",
+  "summary": "Designs and monitors product feed health, detects sync errors, missing SKUs, and validates attribute completeness for e-commerce catalogs across major platfo...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecommerce_feed_management",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nexscope-ai",
+      "features": [
+        "Designs and monitors product feed health, detects sync errors, missing SKUs, and validates attr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ecommerce-feed-management@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265748176?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ecommerce-feed-management",
+      "url": "https://clawhub.ai/skills/ecommerce-feed-management"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecommerce-feed-management",
+    "url": "https://clawhub.ai/skills/ecommerce-feed-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecommerce-feed-management-36dd4f449f9d7f64.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ecommerce-feed-management@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ecommerce-feed-management-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:50ffe524ce94c575a550c51c9daba1b1cb5c5c439f5e9384ac11ac930a002734",
+      "artifactSizeBytes": 2030
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T03:05:20.538Z"
+}

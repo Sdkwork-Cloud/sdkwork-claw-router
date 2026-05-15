@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bom-sop-check@2.1.2",
+  "version": "2.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bom_sop_check",
+  "skill": {
+    "id": 69327,
+    "skillKey": "clawhub-bom-sop-check",
+    "name": "BOM与SOP校对"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bom-sop-check",
+    "url": "https://clawhub.ai/skills/bom-sop-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bom-sop-check-47ca48b48d827e18.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "BOM与SOP对比校对技能。支持多个BOM文件合并后与SOP对比，检测名称规格、位号、数量差异，在SOP文件中标注差异、追加BOM数据并生成报告。校对报告包含：SOP独有物料、BOM独有物料、数量差异明细三个表格。触发场景：用户发送BOM和SOP文件要求对比校对。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "2656255594",
+      "userId": "s172jn4ywc4gbzekdhfser46dx83gcbn",
+      "displayName": "2656255594",
+      "image": "https://avatars.githubusercontent.com/u/199182326?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 233,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "2.1.2",
+      "createdAt": 1775694107269,
+      "changelog": "版本更新",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d2a53bbd2f53d4cca150edd40381a4e435180301bb81657d66b5254a496b488d"
+}

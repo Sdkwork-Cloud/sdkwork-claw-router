@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36860,
+  "uuid": "skill-clawhub-wealthbox",
+  "skillKey": "clawhub-wealthbox",
+  "name": "Wealthbox",
+  "summary": "Wealthbox integration. Manage data, records, and automate workflows. Use when the user wants to interact with Wealthbox data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wealthbox",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Wealthbox integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Wealthbox data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wealthbox@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wealthbox",
+      "url": "https://clawhub.ai/skills/wealthbox"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wealthbox",
+    "url": "https://clawhub.ai/skills/wealthbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wealthbox-246fe46a7e2ea7f4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wealthbox@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-wealthbox-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2980cba8342fe8783cbf7c9b4b95181cbb74456cbf36c391923811cb28c43baf",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:00:33.787Z"
+}

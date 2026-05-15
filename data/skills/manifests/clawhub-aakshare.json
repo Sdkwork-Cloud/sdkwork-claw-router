@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64736,
+  "uuid": "skill-clawhub-aakshare",
+  "skillKey": "clawhub-aakshare",
+  "name": "AKShare",
+  "summary": "AKShare 开源金融数据接口库 - 支持A股、港股、美股、期货、期权、基金、债券、外汇、宏观数据，免费无需API Key。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aakshare",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "coderwpf",
+      "features": [
+        "AKShare 开源金融数据接口库",
+        "支持A股、港股、美股、期货、期权、基金、债券、外汇、宏观数据，免费无需API Key。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aakshare@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/134041140?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aakshare",
+      "url": "https://clawhub.ai/skills/aakshare"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aakshare",
+    "url": "https://clawhub.ai/skills/aakshare",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aakshare-03d2e568396528b5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aakshare@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-aakshare-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c6a1ee80c4f777f0e20bebe663a456316ac0467232a9cff818afcaa20721aee",
+      "artifactSizeBytes": 2065
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T10:06:41.740Z"
+}

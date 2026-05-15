@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13300,
+  "uuid": "skill-clawhub-sui-coverage",
+  "skillKey": "clawhub-sui-coverage",
+  "name": "Sui Coverage",
+  "summary": "Analyze Sui Move test coverage, identify untested code, write missing tests, and perform security audits. Includes Python tools for parsing coverage output and generating reports.",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sui_coverage",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Eason Chen",
+      "features": [
+        "Analyze Sui Move test coverage, identify untested code, write missing tests, and perform securi.",
+        "Includes Python tools for parsing coverage output and generating reports."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sui-coverage@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43432631?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sui-coverage",
+      "url": "https://clawhub.ai/skills/sui-coverage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sui-coverage",
+    "url": "https://clawhub.ai/skills/sui-coverage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sui-coverage-6ccb6cc1d4439bc8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sui-coverage@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sui-coverage-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b0b92889b66d3c6bd5f5ce2ed0c316abc623c919986bed926238b88cf70f694",
+      "artifactSizeBytes": 1904
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T00:20:52.782Z"
+}

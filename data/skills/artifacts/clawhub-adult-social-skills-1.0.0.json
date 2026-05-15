@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adult-social-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adult_social_skills",
+  "skill": {
+    "id": 32520,
+    "skillKey": "clawhub-adult-social-skills",
+    "name": "Adult Social Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adult-social-skills",
+    "url": "https://clawhub.ai/skills/adult-social-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adult-social-skills-8b4d7012d810e8c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Building and maintaining social connections as an adult. Use when someone is lonely, has moved to a new city, wants to make friends, struggles in group setti..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "howtousehumans",
+      "userId": "s17ftae1txxqa39a87v3p6ta1583js3w",
+      "displayName": "HowToUseHumans",
+      "image": "https://avatars.githubusercontent.com/u/151727669?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 250,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774450309175,
+      "changelog": "Adult Social Skills 1.0.0 – Initial release\n\n- Provides step-by-step guidance on building and maintaining social connections as an adult.\n- Covers finding activity-based groups, joining conversations, and moving acquaintances to real friendships.\n- Helps normalize adult friendship challenges as a structural/life stage issue, not a personal failing.\n- Includes cultural localization notes for global relevance.\n- References and extends related skills: loneliness-first-aid and difficult-conversations.\n- Cites leading research and expert frameworks for adult friendship and social connection.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:95328a808c17ded13f2c66142f6be01d1d329280df303673b19c1d5be55e28b7"
+}

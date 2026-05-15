@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60667,
+  "uuid": "skill-clawhub-investlog-ai",
+  "skillKey": "clawhub-investlog-ai",
+  "name": "InvestLog AI",
+  "summary": "美股实时数据研究工具：股价行情、估值分析、财报数据、分析师评级、目标价、内部人交易、国会议员交易、机构持仓、ETF持仓、技术指标、分红拆股、财务健康评分。Real-time US stock research: quotes, valuation, financials, analyst ratings, ins...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.investlog_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nblicb",
+      "features": [
+        "美股实时数据研究工具：股价行情、估值分析、财报数据、分析师评级、目标价、内部人交易、国会议员交易、机构持仓、ETF持仓、技术指标、分红拆股、财务健康评分。Real-time US stock."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/investlog-ai@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261251184?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "investlog-ai",
+      "url": "https://clawhub.ai/skills/investlog-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "investlog-ai",
+    "url": "https://clawhub.ai/skills/investlog-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/investlog-ai-42fbb29e941e0649.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/investlog-ai@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-investlog-ai-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da01e46173361843d4895e03e060ca96488bab32efebeb988581fef6aa8e7ccb",
+      "artifactSizeBytes": 2361
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T00:41:35.667Z"
+}

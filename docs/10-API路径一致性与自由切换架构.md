@@ -44,7 +44,7 @@ App API:
   base_url=http://127.0.0.1:18080
   java_api_prefix=/app/v3/api
   resource_path=/auth/login
-  effective_url=http://127.0.0.1:18080/app/v3/api/auth/login
+  effective_url=http://127.0.0.1:18080/app/v3/api/auth/sessions
 
 Backend API:
   base_url=https://admin.example.com

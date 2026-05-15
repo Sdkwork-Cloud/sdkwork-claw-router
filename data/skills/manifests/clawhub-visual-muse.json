@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65807,
+  "uuid": "skill-clawhub-visual-muse",
+  "skillKey": "clawhub-visual-muse",
+  "name": "Visual Muse",
+  "summary": "ComfyUI 图像生成工坊 — 用自然语言描述需求，自动生成高质量 AI 图片。支持 SDXL/Flux 多模型、风格模板自动匹配、批量生成、质量评分。说「画一张图」即可触发。",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.visual_muse",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "baobaodawang-creater",
+      "features": [
+        "ComfyUI 图像生成工坊 — 用自然语言描述需求，自动生成高质量 AI 图片。支持 SDXL/Flux 多模型、风格模板自动匹配、批量生成、质量评分。说「画一张图」即可触发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/visual-muse@1.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/200203393?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "visual-muse",
+      "url": "https://clawhub.ai/skills/visual-muse"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "visual-muse",
+    "url": "https://clawhub.ai/skills/visual-muse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/visual-muse-88240bfd5b3b4a3d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/visual-muse@1.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-visual-muse-1.4.0.json",
+      "version": "1.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e19a4a5e30b11fd4d78df65ca7a08d09193d288d8fa9c4f1a8070f6fc3bb2754",
+      "artifactSizeBytes": 2244
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T16:47:38.639Z"
+}

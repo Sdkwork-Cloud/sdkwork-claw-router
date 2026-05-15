@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/appdeploy@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.appdeploy",
+  "skill": {
+    "id": 9303,
+    "skillKey": "clawhub-appdeploy",
+    "name": "AppDeploy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "appdeploy",
+    "url": "https://clawhub.ai/skills/appdeploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/appdeploy-4f437b8f33269104.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deploy web apps with backend APIs, database, file storage, AI operations, authentication, realtime, and cron jobs. Use when the user asks to deploy or publis..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "avimak",
+      "userId": "publishers:avimak",
+      "displayName": "avimak",
+      "image": "https://avatars.githubusercontent.com/u/2437994?v=4"
+    },
+    "stats": {
+      "comments": 3,
+      "downloads": 3521,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 8,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1772612471888,
+      "changelog": "- Added LICENSE.txt file to the repository.\n- Updated skill description to include AI operations, authentication, realtime, and cron jobs.\n- Enhanced the deploy_app tool with required model and intent parameters.\n- Improved get_app_status tool: added an optional 'limit' parameter for log retrieval.\n- Bumped skill version to 1.0.7.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1f0266f458f4696c1eba20c72af96deae731c3c77152a60e68daea0c76f1d879"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55346,
+  "uuid": "skill-clawhub-jjy-agentguard",
+  "skillKey": "clawhub-jjy-agentguard",
+  "name": "Agentguard",
+  "summary": "AgentGuard security engine — intercept dangerous operations, audit all actions, protect sensitive data. All commands/file/network operations go through ag_*...",
+  "version": "1.8.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jjy_agentguard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zxz333zxz",
+      "features": [
+        "AgentGuard security engine — intercept dangerous operations, audit all actions, protect sensiti.",
+        "All commands/file/network operations go through ag_*..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jjy-agentguard@1.8.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5364795?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jjy-agentguard",
+      "url": "https://clawhub.ai/skills/jjy-agentguard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jjy-agentguard",
+    "url": "https://clawhub.ai/skills/jjy-agentguard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jjy-agentguard-b01ba590f3fb885e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jjy-agentguard@1.8.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-jjy-agentguard-1.8.2.json",
+      "version": "1.8.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a337eccf5d312c3377a40c4eac3b0a38cc58b1c7285599da30c3b4a77c31f638",
+      "artifactSizeBytes": 1985
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T04:10:33.850Z"
+}

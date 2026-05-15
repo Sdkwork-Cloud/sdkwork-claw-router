@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/artefact-144794445@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.artefact_144794445",
+  "skill": {
+    "id": 27819,
+    "skillKey": "clawhub-artefact-144794445",
+    "name": "SELF IMPROVING"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "artefact-144794445",
+    "url": "https://clawhub.ai/skills/artefact-144794445",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/artefact-144794445-d3b3a374c00e6b14.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kondifun",
+      "userId": "s1782ssaznxegrm320eh2jx0vh85r7ek",
+      "displayName": "Kondifun",
+      "image": "https://avatars.githubusercontent.com/u/141822689?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 339,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773808931381,
+      "changelog": "**Major skill switch: from decentralized agent identity to self-improvement logging.**\n\n- Old identity management scripts and documentation removed.\n- New focus: logs learnings, errors, and feature requests for continuous improvement.\n- Added `.learnings/` markdown log templates and usage guidance.\n- Added integration hooks, setup scripts, and OpenClaw workspace documentation.\n- All code/scripts now related to capturing, promoting, and referencing learnings/errors instead of identity management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ef52bcf4f37af7c3e2d7bc57b5f1f2ecd761aee8edd3945e637bc140c4bb02da"
+}

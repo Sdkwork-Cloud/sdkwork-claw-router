@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/olo-deal-screening@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.olo_deal_screening",
+  "skill": {
+    "id": 27802,
+    "skillKey": "clawhub-olo-deal-screening",
+    "name": "Olo Deal Screening"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "olo-deal-screening",
+    "url": "https://clawhub.ai/skills/olo-deal-screening",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/olo-deal-screening-02752e57a1cee4d8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Target company evaluation and deal qualification for PE and strategic buyers"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aniebyl",
+      "userId": "publishers:aniebyl",
+      "displayName": "Aleksander Niebylski",
+      "image": "https://avatars.githubusercontent.com/u/3195144?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 341,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772419964964,
+      "changelog": "Initial release\n\n- Introduces a comprehensive M&A deal screening framework for private equity and strategic buyers.\n- Scores acquisition targets across five key dimensions: Strategic Fit, Financial Profile, Valuation Attractiveness, Risk Profile, and Execution Feasibility.\n- Includes deal-breaker checks (auto-fail conditions) before detailed scoring.\n- Provides tailored criteria for PE investors, such as LBO feasibility and fund fit.\n- Outputs clear recommendations, key strengths/concerns, and prioritized next steps in a structured format.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d728f5808944af9f31e0b556475e2fe146c926e126c887ea21486dfdfca4471f"
+}

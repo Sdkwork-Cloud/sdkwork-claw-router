@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24245,
+  "uuid": "skill-clawhub-prospect",
+  "skillKey": "clawhub-prospect",
+  "name": "Prospect",
+  "summary": "Filter raw target lists into prioritized prospects worth pursuing. Score fit, timing, value, and access. Route each target to pursue, research, watch, or drop.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prospect",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "depinHQ",
+      "features": [
+        "Filter raw target lists into prioritized prospects worth pursuing",
+        "Score fit, timing, value, and access",
+        "Route each target to pursue, research, watch, or drop."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prospect@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/216470578?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prospect",
+      "url": "https://clawhub.ai/skills/prospect"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prospect",
+    "url": "https://clawhub.ai/skills/prospect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prospect-40542f7e6b9ec165.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prospect@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-prospect-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:51ab431cf9c9ef91f20424bb0d218c426708324cb75867e85a3779d2328de9a8",
+      "artifactSizeBytes": 2134
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T16:50:46.594Z"
+}

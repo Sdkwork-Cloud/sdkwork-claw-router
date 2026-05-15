@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/milvus@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.milvus",
+  "skill": {
+    "id": 52530,
+    "skillKey": "clawhub-milvus",
+    "name": "Milvus"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "milvus",
+    "url": "https://clawhub.ai/skills/milvus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/milvus-57fc6fe52563f941.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Operate Milvus vector database with pymilvus — collections, vector search, hybrid search, indexes, RBAC, partitions, and more via Python code."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lumina2025",
+      "userId": "s17dczew53b0fsfkq6bm0b5vdd83h30x",
+      "displayName": "Lumina Wang",
+      "image": "https://avatars.githubusercontent.com/u/201706568?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 295,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773820793589,
+      "changelog": "Initial release of the Milvus skill — operate Milvus vector databases via Python and pymilvus.\n\n- Connect to Milvus (Lite, Standalone, Cluster, or Zilliz Cloud) with flexible authentication.\n- Create collections with auto or custom schemas, including a full range of data types.\n- Perform vector insert, upsert, search, query, get, and delete operations.\n- Manage indexes, partitions, databases, and control access with RBAC.\n- Includes guides for connection, collection management, operation parameters, and code examples.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9ee6c5db65cc4a8ff437325c54a3b21fe597e90dbe2aabf90725fdc29b0a5eaf"
+}

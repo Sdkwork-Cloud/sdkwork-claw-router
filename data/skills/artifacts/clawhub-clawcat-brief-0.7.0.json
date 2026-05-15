@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawcat-brief@0.7.0",
+  "version": "0.7.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawcat_brief",
+  "skill": {
+    "id": 65765,
+    "skillKey": "clawhub-clawcat-brief",
+    "name": "clawCat-BRIEF"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawcat-brief",
+    "url": "https://clawhub.ai/skills/clawcat-brief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawcat-brief-9d2fa0c20b0b4991.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "生成结构化行业简报，自动抓取多源数据，涵盖科技新闻、财经行情、技术周报与竞品分析，支持HTML/PDF/JSON输出。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "llx9826",
+      "userId": "s171m7atgzwr4n3fvcttx1f7wn83r1z8",
+      "displayName": "llx9826",
+      "image": "https://avatars.githubusercontent.com/u/99398581?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.7.0",
+      "createdAt": 1774784103976,
+      "changelog": "v7: pytest测试套件, NumericGrounder修复, llm_validator数值校验, README重写",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:054727ef4f95c9388d41c34304b37079a20ccb8a5f8037c21e3e8d8b6435e697"
+}

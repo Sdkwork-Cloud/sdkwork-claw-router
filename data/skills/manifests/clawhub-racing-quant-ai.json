@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69554,
+  "uuid": "skill-clawhub-racing-quant-ai",
+  "skillKey": "clawhub-racing-quant-ai",
+  "name": "Racing Quant AI",
+  "summary": "赛马量化AI选股系统，集成量化策略选股+个股智能推荐分析。从量化策略数据库筛选符合需求的策略，获取持仓个股，再进行深度分析，最终给出投资参考。触发词：量化选股，racing quant，策略选股，数据库选股，量化分析，AI选股。",
+  "version": "1.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.racing_quant_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chenxyzcyxpp",
+      "features": [
+        "赛马量化AI选股系统，集成量化策略选股+个股智能推荐分析。从量化策略数据库筛选符合需求的策略，获取持仓个股，再进行深度分析，最终给出投资参考。触发词：量化选股，racing quant，策略."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/racing-quant-ai@1.6.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/80017356?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "racing-quant-ai",
+      "url": "https://clawhub.ai/skills/racing-quant-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "racing-quant-ai",
+    "url": "https://clawhub.ai/skills/racing-quant-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/racing-quant-ai-4aa8e46390543297.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/racing-quant-ai@1.6.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-racing-quant-ai-1.6.0.json",
+      "version": "1.6.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8bb2dc3f4e336fb6a8af5e8c7ed952bd4ebb6285d12d9be27849fffb6007ca2e",
+      "artifactSizeBytes": 2677
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T11:19:48.348Z"
+}

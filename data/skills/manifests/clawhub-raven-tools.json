@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30308,
+  "uuid": "skill-clawhub-raven-tools",
+  "skillKey": "clawhub-raven-tools",
+  "name": "Raven Tools",
+  "summary": "Raven Tools integration. Manage Organizations. Use when the user wants to interact with Raven Tools data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.raven_tools",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Raven Tools integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Raven Tools data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/raven-tools@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "raven-tools",
+      "url": "https://clawhub.ai/skills/raven-tools"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "raven-tools",
+    "url": "https://clawhub.ai/skills/raven-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/raven-tools-5836785edf8f0751.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/raven-tools@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-raven-tools-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1cb01e3af360cc41f4f74c57768a456a360e016595cee6ffdcea6c8a9628f828",
+      "artifactSizeBytes": 1841
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:55:05.361Z"
+}

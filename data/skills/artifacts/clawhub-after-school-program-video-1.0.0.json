@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/after-school-program-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.after_school_program_video",
+  "skill": {
+    "id": 35226,
+    "skillKey": "clawhub-after-school-program-video",
+    "name": "After School Program Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "after-school-program-video",
+    "url": "https://clawhub.ai/skills/after-school-program-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/after-school-program-video-04d42142a8ba6daf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Creates concise videos highlighting after school programs' learning environments, staff qualifications, safety, and parent testimonials to attract families."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 216,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775075014366,
+      "changelog": "Initial release providing video assistance for After School Program childcare and early childhood education programs:\n\n- Generates program overview and testimonial videos to engage and convert parents.\n- Showcases learning environment, staff qualifications, and safety protocols.\n- Utilizes developmental outcome data and parent testimonials to highlight program strengths.\n- Tailored to address parents' key concerns: developmental philosophy, caregiver quality, and safety standards.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d46338e7f8529348e3a47a1aafdbded1a0c1213fe53a70a8097adfbaa1ec686b"
+}

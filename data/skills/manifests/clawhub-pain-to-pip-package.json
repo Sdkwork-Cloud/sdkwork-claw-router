@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56238,
+  "uuid": "skill-clawhub-pain-to-pip-package",
+  "skillKey": "clawhub-pain-to-pip-package",
+  "name": "Pain To Pip Package",
+  "summary": "Complete pipeline: Reddit pain scan → cluster → build pip-installable CLI tool → push to GitHub. 5 tools shipped using this pattern. Proven with 343 pain sig...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pain_to_pip_package",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Maya Tao",
+      "features": [
+        "Complete pipeline: Reddit pain scan → cluster → build pip-installable CLI tool → push to GitHub",
+        "5 tools shipped using this pattern",
+        "Proven with 343 pain sig..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pain-to-pip-package@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226037090?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pain-to-pip-package",
+      "url": "https://clawhub.ai/skills/pain-to-pip-package"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pain-to-pip-package",
+    "url": "https://clawhub.ai/skills/pain-to-pip-package",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pain-to-pip-package-ae9c900cd87be8f8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pain-to-pip-package@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pain-to-pip-package-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7a149785f44bbb3d9ab54f3639484e2d92f21589b7bc84027b90c1f61722b006",
+      "artifactSizeBytes": 2402
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T07:47:20.306Z"
+}

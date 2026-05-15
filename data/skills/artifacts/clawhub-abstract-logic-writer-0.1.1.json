@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/abstract-logic-writer@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abstract_logic_writer",
+  "skill": {
+    "id": 32579,
+    "skillKey": "clawhub-abstract-logic-writer",
+    "name": "Abstract Logic Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abstract-logic-writer",
+    "url": "https://clawhub.ai/skills/abstract-logic-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abstract-logic-writer-9c521c1831b4582f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "write, critique, score, compare, and revise english academic abstracts for ai, systems, and computer science papers using computable symbolic rules, lightwei..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhiweiwei-nami",
+      "userId": "s172z5y6vmzc8e9jn98nxsw1eh83qb6x",
+      "displayName": "ZhiweiWei-NAMI",
+      "image": "https://avatars.githubusercontent.com/u/153070550?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 249,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1774623543554,
+      "changelog": "Initial public release with core logic-driven abstract drafting, critique, and scoring tools:\n\n- Provides rule-based workflows for drafting, scoring, and revising academic abstracts in AI, systems, and computer science.\n- Introduces formal resources and scripts for discourse roles, lexeme typing, and domain ontology bootstrapping.\n- Supports automated linting and scoring using symbolic constraints.\n- Includes example fragments, negative examples, and sample evaluation outputs for quick testing.\n- Emphasizes logical sentence fit, role assignment, and precise verb-noun matching.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8a96d3ed800ce8c274da2b37c8e40c50412575f8320a4211543a5f2ef84a15f1"
+}

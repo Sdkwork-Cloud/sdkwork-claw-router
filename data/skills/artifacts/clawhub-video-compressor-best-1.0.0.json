@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-compressor-best@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_compressor_best",
+  "skill": {
+    "id": 46886,
+    "skillKey": "clawhub-video-compressor-best",
+    "name": "Video Compressor Best"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-compressor-best",
+    "url": "https://clawhub.ai/skills/video-compressor-best",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-compressor-best-b27471c98235e676.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get compressed MP4 files ready to post, without touching a single slider. Upload your large video files (MP4, MOV, AVI, WebM, up to 500MB), say something lik..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776424281107,
+      "changelog": "- Initial release of Video Compressor Best.\n- Upload large video files (MP4, MOV, AVI, WebM up to 500MB), compress and export as smaller 1080p MP4 videos.\n- Automatic backend connection and free 7-day anonymous token on first use (100 credits).\n- Simple, instruction-based workflow—just upload and describe your compression needs (e.g., \"compress to under 50MB without losing quality\").\n- Fast, cloud-based processing—download ready-to-share MP4s within 30–90 seconds.\n- Supports export, credits check, editing, and multiple file formats.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e4ab37bd4ce983f460848d26d5032ebd7025c95ba060023e15eae3e87c0aa6ba"
+}

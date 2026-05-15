@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21266,
+  "uuid": "skill-clawhub-pr-review-expert",
+  "skillKey": "clawhub-pr-review-expert",
+  "name": "pr-review-expert",
+  "summary": "PR Review Expert",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pr_review_expert",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alireza Rezvani",
+      "features": [
+        "PR Review Expert"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pr-review-expert@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5697919?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pr-review-expert",
+      "url": "https://clawhub.ai/skills/pr-review-expert"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pr-review-expert",
+    "url": "https://clawhub.ai/skills/pr-review-expert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pr-review-expert-676911a49467b668.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pr-review-expert@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pr-review-expert-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:53c38c0ba9a67f584a4750f1e9307442d4241aca81788636df99564ba641b810",
+      "artifactSizeBytes": 1767
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T15:18:57.921Z"
+}

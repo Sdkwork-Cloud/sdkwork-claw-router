@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/text-to-video-create@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_video_create",
+  "skill": {
+    "id": 43163,
+    "skillKey": "clawhub-text-to-video-create",
+    "name": "Text To Video Create"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-video-create",
+    "url": "https://clawhub.ai/skills/text-to-video-create",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-video-create-8f3867fbce749cc1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get AI-generated videos ready to post, without touching a single slider. Upload your text prompt (TXT, DOCX, PDF, SRT, up to 500MB), say something like \"turn..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776800805731,
+      "changelog": "Initial release — AI-powered text-to-video creation for scripts and prompts.\n\n- Generate 1080p MP4 videos from TXT, DOCX, PDF, or SRT files up to 500MB.\n- Supports natural instructions: e.g. \"turn this script into a 30-second video with visuals and background music.\"\n- Handles session management, file upload, editing, preview, credits check, and export through a cloud API.\n- Automatically manages tokens and sessions to streamline first-time setup.\n- Exposes credits and status queries, and summarizes timeline/video composition in plain language.\n- Error handling for uploads, token issues, missing headers, and rate limits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e3027b525aa73022f81060debc6d19c66cc1a5e5f7a5618c0040c746435ec303"
+}

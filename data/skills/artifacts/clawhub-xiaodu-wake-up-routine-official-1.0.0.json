@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaodu-wake-up-routine-official@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaodu_wake_up_routine_official",
+  "skill": {
+    "id": 60878,
+    "skillKey": "clawhub-xiaodu-wake-up-routine-official",
+    "name": "xiaodu-wake-up-routine-official"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaodu-wake-up-routine-official",
+    "url": "https://clawhub.ai/skills/xiaodu-wake-up-routine-official",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaodu-wake-up-routine-official-e337e136fcaf2469.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于已安装的 xiaodu-control-official 编排儿童起床场景。当用户说“叫孩子起床”“开始早安模式”“帮我把孩子叫醒”，或要求让房间进入起床状态时使用。这个 skill 会复用 xiaodu-control-official 的现有脚本，对小度智能屏和小度 IoT 设备执行 scene-firs..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dueros-mcp",
+      "userId": "s17c8gt7wvmhgfp7aqs9hcwrvd83qr3v",
+      "displayName": "dueros-mcp",
+      "image": "https://avatars.githubusercontent.com/u/218767264?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775205746242,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3706cdccc1e2b9685a4e050916c6e7b6e38d384de6821a00b39c31b1a3875c25"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lessac-offline-voice-system@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lessac_offline_voice_system",
+  "skill": {
+    "id": 40991,
+    "skillKey": "clawhub-lessac-offline-voice-system",
+    "name": "Telegram Voice Messaging Recovery"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lessac-offline-voice-system",
+    "url": "https://clawhub.ai/skills/lessac-offline-voice-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lessac-offline-voice-system-d3a422701cb18594.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete offline voice system with high-quality Lessac TTS and faster-whisper speech recognition. Provides natural voice conversations without internet. Use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stephenredmond-straiteis",
+      "userId": "s17adchj2n59zakmb3raqy22hd8421cj",
+      "displayName": "Stephen Redmond - Straitéis AI",
+      "image": "https://avatars.githubusercontent.com/u/244375177?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775403758644,
+      "changelog": "Rewrite skill around the proven OpenClaw native Telegram voice-messaging recovery path: restore local transcription helper, set microsoft TTS config, explicitly enable bundled Microsoft plugin, and require a real restart.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:42c0ef33b53a6d846fe64c77fc737fcb14107dbc1ccd17a3a95ee67760752ca1"
+}

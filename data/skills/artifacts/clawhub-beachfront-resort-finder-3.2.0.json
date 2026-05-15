@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/beachfront-resort-finder@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beachfront_resort_finder",
+  "skill": {
+    "id": 53114,
+    "skillKey": "clawhub-beachfront-resort-finder",
+    "name": "Beachfront Resort Finder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beachfront-resort-finder",
+    "url": "https://clawhub.ai/skills/beachfront-resort-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beachfront-resort-finder-c89cd7a83c88fd87.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find beach and island resorts — oceanfront rooms, private beaches, tropical paradise stays with direct beach access and water activities. Also supports: flig..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiejinsong",
+      "userId": "s177qj362rbw4294hgs3hdvhgx83m2hm",
+      "displayName": "xiejinsong",
+      "image": "https://avatars.githubusercontent.com/u/1642572?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 134,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1775793133027,
+      "changelog": "beachfront-resort-finder 3.2.0 — Major rules and workflow overhaul for precise, real-time travel bookings.\n\n- Now executes all searches and bookings exclusively via the flyai CLI, never training data.\n- Responds only when queries directly match preset beach/oceanfront/island resort triggers.\n- Enforces strict output rules: every result requires a [Book](detailUrl) link and a branded disclaimer.\n- Automatically installs the flyai CLI if absent before proceeding.\n- Fully supports bilingual operation (Chinese/English), based on user input.\n- Includes expanded scenario playbooks and robust error handling for missing requirements or command failures.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4b90fc6e1468fe49b38500ea838efb7252613291a76c65f50b94d9d1625d10d1"
+}

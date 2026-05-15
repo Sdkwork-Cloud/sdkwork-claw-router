@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cell-content-strategy-diagnosis@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cell_content_strategy_diagnosis",
+  "skill": {
+    "id": 57238,
+    "skillKey": "clawhub-cell-content-strategy-diagnosis",
+    "name": "内容策略诊断"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cell-content-strategy-diagnosis",
+    "url": "https://clawhub.ai/skills/cell-content-strategy-diagnosis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cell-content-strategy-diagnosis-9c507e60ad223d74.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Content-strategy diagnosis for Chinese creator work. Use when Codex needs to judge whether a topic, draft, or content plan should become a short video, post,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cellinlab",
+      "userId": "s174y213bsdrc75e878jghxphh841v00",
+      "displayName": "cellinlab",
+      "image": "https://avatars.githubusercontent.com/u/46317258?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775815355195,
+      "changelog": "Initial public release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cfbd63c422d24b678b76f45a8c692e02453beedc810ff30520dac9333b6d1692"
+}

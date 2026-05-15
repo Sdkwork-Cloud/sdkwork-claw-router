@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/use-cases-page-generator@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.use_cases_page_generator",
+  "skill": {
+    "id": 32864,
+    "skillKey": "clawhub-use-cases-page-generator",
+    "name": "use-cases-page-generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "use-cases-page-generator",
+    "url": "https://clawhub.ai/skills/use-cases-page-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/use-cases-page-generator-2e433da5dae69920.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When the user wants to create, optimize, or audit use case pages. Also use when the user mentions \"use cases,\" \"use case page,\" \"for [role],\" \"by persona,\" \"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kostja94",
+      "userId": "s172p99xpjz6dy9bjqbs8x8d0x83hc45",
+      "displayName": "Kostja Zhang",
+      "image": "https://avatars.githubusercontent.com/u/168074885?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 246,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1775036124058,
+      "changelog": "Batch: startups through app-ads",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:36cb34db6bf5a9881adeb814f755d9889c001ee83ca15c8c9dd5f08a5fe9d715"
+}

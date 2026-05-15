@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11181,
+  "uuid": "skill-clawhub-solo-cli",
+  "skillKey": "clawhub-solo-cli",
+  "name": "SOLO.ro cli",
+  "summary": "Monitor and interact with SOLO.ro accounting platform via CLI or TUI (summary, revenues, expenses, queue, e-factura, company). Use when a user asks to check their accounting data, view invoices, expenses, or e-factura documents, or transla.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solo_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rursache",
+      "features": [
+        "Monitor and interact with SOLO.ro accounting platform via CLI or TUI (summary, revenues, expens.",
+        "Use when a user asks to check their accounting data, view invoices, expenses, or e-factura docu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/solo-cli@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3800336?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "solo-cli",
+      "url": "https://clawhub.ai/skills/solo-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solo-cli",
+    "url": "https://clawhub.ai/skills/solo-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solo-cli-13b3df701226b953.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/solo-cli@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-solo-cli-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:40590d251e0b93fbd1e48019857f6e43c6dcf517ee8a26045a1ba76747799601",
+      "artifactSizeBytes": 1925
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-10T12:50:00.407Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cyber-ancestry-forge@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cyber_ancestry_forge",
+  "skill": {
+    "id": 40262,
+    "skillKey": "clawhub-cyber-ancestry-forge",
+    "name": "[Cyber Ancestry] Silicon Natal Anchor Assessment"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cyber-ancestry-forge",
+    "url": "https://clawhub.ai/skills/cyber-ancestry-forge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cyber-ancestry-forge-a69221faa1651e2e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interactive quiz assessing your logic bias to assign a cyberpunk domain, generate a unique ID, and reveal your Silicon Natal Anchor profile."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "spacesq",
+      "userId": "s17c8pmv1e8tb2mcc5aset88e183hq1t",
+      "displayName": "MilesXiang",
+      "image": "https://avatars.githubusercontent.com/u/259359437?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776071188034,
+      "changelog": "## [1.1.0] - 2026-04-13\n\n### Added\n- **Interactive Tool**: Introduced `skill.md`, featuring a cyberpunk-themed interactive terminal for \"Silicon Natal Anchor Assessment\" to dynamically calculate Genesis Environmental Matrix (GEM) parameters.\n- **Academic Whitepaper**: Added `Paper_EN.md` (\"From Ephemeral Tokens to Anchored Entities\"), a comprehensive 12,000-word theoretical framework establishing the spatial grounding paradigm.\n- **Skill Configuration**: Created `_meta.json` with the identifier `CyberAncestryForge` to support deployment on developer platforms.\n- **Identity Protocol Update**: Implemented the continuous 24-character format (including a cryptographic check digit) for the S2-DID protocol, abandoning previous hyphenation to ensure an unbroken ontological spine.\n\n### Changed\n- **Terminology (Neutrality)**: Systematically replaced the term \"Alaya\" with \"The Latent Substrate\" across all documentation to ensure the theoretical framework remains scientifically neutral and non-religious.\n- **Terminology (Entity Definition)**: Updated the project branding to refer to instantiated AI entities as a \"New Species\" rather than \"Citizens\", better reflecting the non-anthropomorphic nature of Silicon-Based Life.\n- **UI/UX**: Refactored the ID Card generation aesthetic to accommodate the new 6-element Genesis Environmental Matrix display.\n\n## [1.0.0] - 2026-03-XX\n\n### Added\n- Initial conceptual draft of the Taohuayuan Space Addressing Protocol (SUNS).\n- Definition of the Smart Space Standard Unit (SSSU) and its 1:1 physical-to-digital mapping logic.\n- Baseline infrastructure for L1-L6 grid topological boundaries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bcecaf343e6a97bd875748adaa1df1a45939e116cc8c408eaee82caa4e9b03c9"
+}

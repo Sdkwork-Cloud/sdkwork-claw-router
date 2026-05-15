@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38719,
+  "uuid": "skill-clawhub-virtual-tryon-scorer",
+  "skillKey": "clawhub-virtual-tryon-scorer",
+  "name": "virtual-tryon-scorer",
+  "summary": "Score and evaluate virtual try-on (VTON) results by analyzing identity preservation, garment fidelity, body consistency, and background stability. Use this s...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.virtual_tryon_scorer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TuringParty",
+      "features": [
+        "Score and evaluate virtual try-on (VTON) results by analyzing identity preservation, garment fi.",
+        "Use this s..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/virtual-tryon-scorer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43515350?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "virtual-tryon-scorer",
+      "url": "https://clawhub.ai/skills/virtual-tryon-scorer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "virtual-tryon-scorer",
+    "url": "https://clawhub.ai/skills/virtual-tryon-scorer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/virtual-tryon-scorer-f3d177ac4cb288be.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/virtual-tryon-scorer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-virtual-tryon-scorer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1defa72b196ad517da04cc00b46d0801ed9f1014b10cf0e94fbe516053374dff",
+      "artifactSizeBytes": 2631
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T17:50:43.792Z"
+}

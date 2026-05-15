@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32350,
+  "uuid": "skill-clawhub-flow-panel-designer",
+  "skillKey": "clawhub-flow-panel-designer",
+  "name": "Flow Panel Designer",
+  "summary": "Design multicolor flow cytometry panels minimizing spectral overlap",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flow_panel_designer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Design multicolor flow cytometry panels minimizing spectral overlap"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flow-panel-designer@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flow-panel-designer",
+      "url": "https://clawhub.ai/skills/flow-panel-designer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flow-panel-designer",
+    "url": "https://clawhub.ai/skills/flow-panel-designer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flow-panel-designer-d3f2c04e4ac38886.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flow-panel-designer@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-flow-panel-designer-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ca42ec4cf6f55b3a37212ab8d2521413c78bc9c6fd9df44486b91cf627a618f2",
+      "artifactSizeBytes": 2257
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T07:46:39.173Z"
+}

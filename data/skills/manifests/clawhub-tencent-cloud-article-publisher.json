@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59744,
+  "uuid": "skill-clawhub-tencent-cloud-article-publisher",
+  "skillKey": "clawhub-tencent-cloud-article-publisher",
+  "name": "tencent-cloud-article-publisher",
+  "summary": "将文章自动发布到腾讯云开发者社区 (https://cloud.tencent.com/developer)。需要提供：标题、正文（Markdown 或纯文本）、Cookie 认证信息。支持直接发布（addArticle API），无需打开浏览器。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencent_cloud_article_publisher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Seanminjie",
+      "features": [
+        "将文章自动发布到腾讯云开发者社区 (https://cloud.tencent.com/developer)。需要提供：标题、正文（Markdown 或纯文本）、Cookie 认证信息。支持."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tencent-cloud-article-publisher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/132774835?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tencent-cloud-article-publisher",
+      "url": "https://clawhub.ai/skills/tencent-cloud-article-publisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencent-cloud-article-publisher",
+    "url": "https://clawhub.ai/skills/tencent-cloud-article-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencent-cloud-article-publisher-4f9eda582f305b43.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tencent-cloud-article-publisher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tencent-cloud-article-publisher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:53a6936656f422920112fcfdb7b8e3285845f63a1bb65dbd81c8dcf3f839b45f",
+      "artifactSizeBytes": 2673
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T05:55:33.064Z"
+}

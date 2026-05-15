@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57797,
+  "uuid": "skill-clawhub-xiaohongshu-publish-kit",
+  "skillKey": "clawhub-xiaohongshu-publish-kit",
+  "name": "小红书自动发布工具包 (Xiaohongshu Publish Kit)",
+  "summary": "Complete toolkit for publishing content to Xiaohongshu (小红书). Includes automated browser control, image generation, content formatting, and full publishing p...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_publish_kit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "siaslfs",
+      "features": [
+        "Complete toolkit for publishing content to Xiaohongshu (小红书)",
+        "Includes automated browser control, image generation, content formatting, and full publishing p."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaohongshu-publish-kit@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12790393?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaohongshu-publish-kit",
+      "url": "https://clawhub.ai/skills/xiaohongshu-publish-kit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-publish-kit",
+    "url": "https://clawhub.ai/skills/xiaohongshu-publish-kit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-publish-kit-b353b3eaaeed6308.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaohongshu-publish-kit@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaohongshu-publish-kit-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3d45e058de1dec0d6f251182a33e55dcb046dc6c0dbd8d9befd04a42269048ed",
+      "artifactSizeBytes": 2175
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T11:06:44.036Z"
+}

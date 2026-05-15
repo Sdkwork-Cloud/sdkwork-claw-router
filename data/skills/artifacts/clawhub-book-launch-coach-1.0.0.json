@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/book-launch-coach@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_launch_coach",
+  "skill": {
+    "id": 53735,
+    "skillKey": "clawhub-book-launch-coach",
+    "name": "Book Launch Coach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-launch-coach",
+    "url": "https://clawhub.ai/skills/book-launch-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-launch-coach-88ef20a082a45ddf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Coach an author through writing, launching, and selling a book — fiction or non-fiction, self-published or trad-pubbed, debut or backlist relaunch. Covers co..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 110,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777679321079,
+      "changelog": "Initial release — comprehensive book launch coaching skill for authors.\n\n- Guides authors through every stage: concept validation, outlining, writing schedules, editing, cover/blurb creation, KDP setup, ads, newsletter, and launch/relaunch tactics.\n- Covers both self-publishing and traditional/hybrid publishing paths, with updated advice for the 2026 landscape (including KU, wide, audiobook, and IngramSpark).\n- Offers tailored strategies for fiction and non-fiction, debut and experienced authors.\n- Includes actionable checklists, cost guidelines, red flags, and specific platform tips (Amazon KDP, ACX, Findaway, BookBub, more).\n- Designed to trigger on a wide range of publishing and book launch queries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e324e2c0e6043f106d08d2982745af80a6e7165ce3774dff5051ab341f25679b"
+}

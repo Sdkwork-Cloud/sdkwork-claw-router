@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/context-scope-tags@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_scope_tags",
+  "skill": {
+    "id": 13338,
+    "skillKey": "clawhub-context-scope-tags",
+    "name": "Context Scope Tags"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-scope-tags",
+    "url": "https://clawhub.ai/skills/context-scope-tags",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-scope-tags-4adc3d45b3607d0e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when: you chat across topics and want explicit boundaries to prevent topic bleed. Tags: [ISO], [SCOPE], [GLOBAL], [NOMEM], [REM]. (Memory tags are signal..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "phenomenoner",
+      "userId": "s17f9m8t6mza1fag5yvx1y2njn83gdfg",
+      "displayName": "phenomenoner",
+      "image": "https://avatars.githubusercontent.com/u/80816280?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1429,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1772363132658,
+      "changelog": "Add conflict-handling + clarify memory-tag dependency; improve quick-start + portability notes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3e565b19b49586ff3b3ac80018dfabe148c71c53cb9a0090a86868d607359134"
+}

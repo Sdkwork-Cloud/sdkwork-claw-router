@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71440,
+  "uuid": "skill-clawhub-wechat-mp-publish-skill",
+  "skillKey": "clawhub-wechat-mp-publish-skill",
+  "name": "微信公众号发布工具",
+  "summary": "微信公众号文章发布工具 v1.0。基于官方 API，支持智能配图、模板渲染、草稿/发布双模式。当用户说\"发公众号\"、\"发布微信公众号\"时使用此技能。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_mp_publish_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "brucesongs",
+      "features": [
+        "微信公众号文章发布工具 v1.0。基于官方 API，支持智能配图、模板渲染、草稿/发布双模式。当用户说\"发公众号\"、\"发布微信公众号\"时使用此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-mp-publish-skill@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/96672106?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-mp-publish-skill",
+      "url": "https://clawhub.ai/skills/wechat-mp-publish-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-mp-publish-skill",
+    "url": "https://clawhub.ai/skills/wechat-mp-publish-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-mp-publish-skill-213c6d7150022c6c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-mp-publish-skill@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-mp-publish-skill-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a76da3b2cd5fdaaf5a243c64343cf363425b3ca81e7a2f8ffd2c7ef244c35a57",
+      "artifactSizeBytes": 2013
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T12:33:48.383Z"
+}

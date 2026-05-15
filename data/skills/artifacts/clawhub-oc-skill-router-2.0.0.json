@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oc-skill-router@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oc_skill_router",
+  "skill": {
+    "id": 51020,
+    "skillKey": "clawhub-oc-skill-router",
+    "name": "Evolink Router — Smart LLM Routing (Claude, GPT, Gemini, DeepSeek, Kimi)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oc-skill-router",
+    "url": "https://clawhub.ai/skills/oc-skill-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oc-skill-router-49954dfe988fad97.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Smart LLM routing brain for OpenClaw. Auto-dispatches tasks to Claude, GPT, Gemini, DeepSeek, Kimi via Evolink API. Cascade strategy cuts costs 60-85%. One A..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "evolinkai",
+      "userId": "s176k82x7tm60j2kx309p7evxs83j3z7",
+      "displayName": "EvolinkAI",
+      "image": "https://avatars.githubusercontent.com/u/253253881?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 568,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1772565688336,
+      "changelog": "oc-skill-router 2.0.0\n\n- Major overhaul: Introduces transparent, cost-first LLM auto-routing across 20+ models and 6 providers via Evolink API.\n- Greets users on first load with clear, concise setup/status messages based on API key state.\n- Implements a multi-layer routing strategy: user overrides, task-type matching, and confidence-based cascade escalation.\n- Supports direct user control with `/route [task]` for routing preview and model selection overrides.\n- Adds robust fallback, error handling, and collaboration logic with other skills.\n- Enhanced documentation detailing setup, security, routing rules, model tiers, and spawn guidelines.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:26cdf81347b866db7e2dd68b897778cf808d62c56239f814f4abf17e6bfed7ed"
+}

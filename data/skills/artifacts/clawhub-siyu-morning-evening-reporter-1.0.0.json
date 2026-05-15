@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/siyu-morning-evening-reporter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.siyu_morning_evening_reporter",
+  "skill": {
+    "id": 72161,
+    "skillKey": "clawhub-siyu-morning-evening-reporter",
+    "name": "私域早晚安Reporter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "siyu-morning-evening-reporter",
+    "url": "https://clawhub.ai/skills/siyu-morning-evening-reporter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/siyu-morning-evening-reporter-72d50285fdf2c68e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动为私域社群生成每日早晚报，包含天气、热点资讯、福利预告及风格化问候，提升社群活跃度与用户粘性。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jessabuivolova-sketch",
+      "userId": "s17dn61gfmse8re058np93xbcs844nyd",
+      "displayName": "jessabuivolova-sketch",
+      "image": "https://avatars.githubusercontent.com/u/260901069?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775541039736,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:286a9534b0b27580fd17d57335fd81a06717be0e5be7d2976a662b8c6f06c5c5"
+}

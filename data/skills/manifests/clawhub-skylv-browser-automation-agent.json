@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59879,
+  "uuid": "skill-clawhub-skylv-browser-automation-agent",
+  "skillKey": "clawhub-skylv-browser-automation-agent",
+  "name": "Skylv Browser Automation Agent",
+  "summary": "浏览器自动化Agent。使用Playwright/Puppeteer进行网页自动化、数据采集、表单填写。触发词：browser、浏览器自动化、爬虫、playwright、puppeteer、网页抓取。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_browser_automation_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "浏览器自动化Agent。使用Playwright/Puppeteer进行网页自动化、数据采集、表单填写。触发词：browser、浏览器自动化、爬虫、playwright、puppeteer、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skylv-browser-automation-agent@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skylv-browser-automation-agent",
+      "url": "https://clawhub.ai/skills/skylv-browser-automation-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-browser-automation-agent",
+    "url": "https://clawhub.ai/skills/skylv-browser-automation-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-browser-automation-agent-cfc185d49dbe9c25.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skylv-browser-automation-agent@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-skylv-browser-automation-agent-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:694b7f59d9b6e3cb3ca949be3f644032e5a092b9a3d343433e989e4f4bb1e154",
+      "artifactSizeBytes": 2281
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T01:25:10.977Z"
+}

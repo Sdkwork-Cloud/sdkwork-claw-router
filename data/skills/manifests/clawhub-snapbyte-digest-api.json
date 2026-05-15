@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15975,
+  "uuid": "skill-clawhub-snapbyte-digest-api",
+  "skillKey": "clawhub-snapbyte-digest-api",
+  "name": "Snapbyte Digest API",
+  "summary": "Fetch personalized developer news digests from Snapbyte External API with API-key auth. Use for Hacker News digest, Reddit digest, Lobsters digest, and DEV.t...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.snapbyte_digest_api",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Onat Yiğit Mercan",
+      "features": [
+        "Fetch personalized developer news digests from Snapbyte External API with API-key auth",
+        "Use for Hacker News digest, Reddit digest, Lobsters digest, and DEV.t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/snapbyte-digest-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/802299?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "snapbyte-digest-api",
+      "url": "https://clawhub.ai/skills/snapbyte-digest-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "snapbyte-digest-api",
+    "url": "https://clawhub.ai/skills/snapbyte-digest-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/snapbyte-digest-api-45c3d1288e30f615.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/snapbyte-digest-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-snapbyte-digest-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:20790f821997b2e3d6b379f9f3b81261d19da02ca20356abd6cbe0e9ce09f486",
+      "artifactSizeBytes": 2349
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T14:36:02.424Z"
+}

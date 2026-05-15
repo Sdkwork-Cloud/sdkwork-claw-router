@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skillinstall@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skillinstall",
+  "skill": {
+    "id": 20697,
+    "skillKey": "clawhub-skillinstall",
+    "name": "skill_install"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skillinstall",
+    "url": "https://clawhub.ai/skills/skillinstall",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skillinstall-a0f38d00e33d533d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install OpenClaw skills from clawhub.ai ZIP files with automatic detection, validation, and Gateway updates. Supports file search, duplicate checking, and in..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "otho2966-ai",
+      "userId": "publishers:otho2966-ai",
+      "displayName": "otho2966-ai",
+      "image": "https://avatars.githubusercontent.com/u/260169808?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 542,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772067345672,
+      "changelog": "Version 1.0.0 (2025-02-26)\n\n  新增功能：\n   - ✨ 一键安装 OpenClaw skills\n   - 🔍 智能文件搜索和选择（支持多个文件时让用户选择）\n   - ✅ 自动检测 OpenClaw 安装位置\n   - ✅ 重复检查，避免覆盖已安装的 skill\n   - 🔄 自动重启 Gateway，使新 skill 生效\n   - 📋 列出所有已安装的 skills\n   - 📝 详细的进度反馈和状态消息\n\n  技术特性：\n   - 🛠️ 自动验证 skill 结构（SKILL.md, _meta.json）\n   - 🔧 支持多种 Node.js 安装路径（nvm, npm 全局等）\n   - 💻 跨平台兼容（Linux, macOS, Windows）\n   - ⚠️ 详细的错误处理和提示\n   - 📦 ZIP 文件解压和安装\n\n  改进：\n   - 📖 完整的使用文档和示例\n   - 🐛 修复了路径解析问题\n   - 🎯 改进了 ZIP 提取处理\n   - 🔐 更好的错误恢复机制\n\n  已知问题：\n   - 某些系统可能需要手动重启 Gateway\n   - 每次运行只能安装一个 skill",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:47226ae2d39d5e2f9d5c0239cd888ac06489f86f929f48773960fa812ff22265"
+}

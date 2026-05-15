@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62230,
+  "uuid": "skill-clawhub-atrosnow-file-management",
+  "skillKey": "clawhub-atrosnow-file-management",
+  "name": "AtroSnow File Management",
+  "summary": "elephant-guide 后端文件（图片/附件）上传、下载、管理完整开发指南。 当用户提到 elephant-guide 项目的文件上传、头像、图片显示、附件管理、filemedia、FileMedia、文件缓存、文件正式入库等场景时触发本技能。 不适用于 AtroSnow 老项目（.c 后缀接口的项目）。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.atrosnow_file_management",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gerald Luo",
+      "features": [
+        "elephant-guide 后端文件（图片/附件）上传、下载、管理完整开发指南。 当用户提到 elephant-guide 项目的文件上传、头像、图片显示、附件管理、filemedia、F."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/atrosnow-file-management@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24424407?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "atrosnow-file-management",
+      "url": "https://clawhub.ai/skills/atrosnow-file-management"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "atrosnow-file-management",
+    "url": "https://clawhub.ai/skills/atrosnow-file-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/atrosnow-file-management-5a66fdfafb9a8ef7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/atrosnow-file-management@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-atrosnow-file-management-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9562054075dac0eee877dd412bce35dff9ae5b0212fda2f3d030e9fb569de709",
+      "artifactSizeBytes": 2137
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T06:45:44.109Z"
+}

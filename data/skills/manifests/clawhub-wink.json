@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71453,
+  "uuid": "skill-clawhub-wink",
+  "skillKey": "clawhub-wink",
+  "name": "Wink",
+  "summary": "整理Wink官网公开模板、编辑能力、导出规格、版权说明及套餐信息，提供功能及帮助文档摘要。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wink",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codenova58",
+      "features": [
+        "整理Wink官网公开模板、编辑能力、导出规格、版权说明及套餐信息，提供功能及帮助文档摘要。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wink@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191358186?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wink",
+      "url": "https://clawhub.ai/skills/wink"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wink",
+    "url": "https://clawhub.ai/skills/wink",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wink-43e26a97aa61e86d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wink@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wink-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:957f23c9a0989d4e76e6673ea64ad732ad47858ce05f2dc6b2f7ea92c38cf4f5",
+      "artifactSizeBytes": 2403
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T10:17:04.492Z"
+}

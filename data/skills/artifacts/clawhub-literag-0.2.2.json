@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/literag@0.2.2",
+  "version": "0.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.literag",
+  "skill": {
+    "id": 41607,
+    "skillKey": "clawhub-literag",
+    "name": "LiteRAG"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "literag",
+    "url": "https://clawhub.ai/skills/literag",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/literag-f232216f7432fbc7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local retrieval skill for large documentation corpora using independent SQLite knowledge libraries with keyword plus vector hybrid search. Use when searching..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mozi1924",
+      "userId": "s174c63w5njkpvrfq9a8zxbj5983hwcp",
+      "displayName": "Mozi Arasaka",
+      "image": "https://avatars.githubusercontent.com/u/70095417?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.2",
+      "createdAt": 1775661212630,
+      "changelog": "Clarify workspace-relative .literag paths and document environment overrides used for workspace and Python resolution.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ff054038e02e3bf4bf8cb87fada6ef696524a3418973d36a27943e436e06d60b"
+}

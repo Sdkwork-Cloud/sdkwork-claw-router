@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62788,
+  "uuid": "skill-clawhub-ai-court",
+  "skillKey": "clawhub-ai-court",
+  "name": "AI 朝廷 · 多 Agent 协作系统",
+  "summary": "以明朝内阁制为蓝本的多 Agent 协作系统 - 一键部署你的 AI 朝廷",
+  "version": "2.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_court",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "boluobobo",
+      "features": [
+        "以明朝内阁制为蓝本的多 Agent 协作系统",
+        "一键部署你的 AI 朝廷"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-court@2.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40750918?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-court",
+      "url": "https://clawhub.ai/skills/ai-court"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-court",
+    "url": "https://clawhub.ai/skills/ai-court",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-court-530346cf9c2d775a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-court@2.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-court-2.3.0.json",
+      "version": "2.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ac4c72c35bfe3fb1f4e7f70805017fac7655b31e6c14b4dea51276fbe2426f8",
+      "artifactSizeBytes": 1833
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T11:16:01.418Z"
+}

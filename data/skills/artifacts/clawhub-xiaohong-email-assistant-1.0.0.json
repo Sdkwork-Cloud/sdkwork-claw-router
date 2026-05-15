@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaohong-email-assistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohong_email_assistant",
+  "skill": {
+    "id": 69531,
+    "skillKey": "clawhub-xiaohong-email-assistant",
+    "name": "Email Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohong-email-assistant",
+    "url": "https://clawhub.ai/skills/xiaohong-email-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohong-email-assistant-92c2be73f5cab98d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能邮件助手，自动分类邮件，起草专业回复，提取待办事项，生成摘要并按优先级排序，提高办公效率。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "crazypatient0",
+      "userId": "s171qjqp5e2gwvwgdtmf6jcfsd84vxtm",
+      "displayName": "--冷月无心--",
+      "image": "https://avatars.githubusercontent.com/u/26730984?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 305,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773457691830,
+      "changelog": "Email Assistant v1.0.0\n\n- 初始版本发布\n- 支持自动归类邮件（重要/常规/推广/垃圾）\n- 可根据邮件内容生成多种风格的专业回复草稿\n- 能从邮件中提取待办事项及截止时间\n- 提供长邮件的摘要生成功能\n- 实现邮件优先级排序，辅助工作管理",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c8b0f05d57971945cd00b450d9ed6343a080856e26267ab67a7752842d74d6db"
+}

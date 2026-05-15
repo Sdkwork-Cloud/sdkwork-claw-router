@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15278,
+  "uuid": "skill-clawhub-outlook-plus",
+  "skillKey": "clawhub-outlook-plus",
+  "name": "Outlook Plus",
+  "summary": "Read, search, and manage Outlook emails and calendar via Microsoft Graph API. Use when the user asks about emails, inbox, Outlook, Microsoft mail, calendar e...",
+  "version": "1.9.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.outlook_plus",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cristian Dan",
+      "features": [
+        "Read, search, and manage Outlook emails and calendar via Microsoft Graph API",
+        "Use when the user asks about emails, inbox, Outlook, Microsoft mail, calendar e..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/outlook-plus@1.9.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7952216?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "outlook-plus",
+      "url": "https://clawhub.ai/skills/outlook-plus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "outlook-plus",
+    "url": "https://clawhub.ai/skills/outlook-plus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/outlook-plus-81ee9ac8531a2eaf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/outlook-plus@1.9.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-outlook-plus-1.9.0.json",
+      "version": "1.9.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:84c65eaf467b9f53335c6d2034453c76dbd5c4db66934447e2f0809b0bc4e997",
+      "artifactSizeBytes": 1918
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T14:13:50.814Z"
+}

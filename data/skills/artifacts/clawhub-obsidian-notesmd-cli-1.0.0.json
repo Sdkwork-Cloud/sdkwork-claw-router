@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/obsidian-notesmd-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_notesmd_cli",
+  "skill": {
+    "id": 10017,
+    "skillKey": "clawhub-obsidian-notesmd-cli",
+    "name": "Obsidian via notesmd-cli (obsidian-cli)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-notesmd-cli",
+    "url": "https://clawhub.ai/skills/obsidian-notesmd-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-notesmd-cli-eaa52d28f78b0650.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Work with Obsidian vaults (plain Markdown notes) and automate via notesmd-cli."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bassshang",
+      "userId": "publishers:bassshang",
+      "displayName": "BassShang",
+      "image": "https://avatars.githubusercontent.com/u/29911582?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2562,
+      "installsAllTime": 24,
+      "installsCurrent": 20,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773384144241,
+      "changelog": "The original Obsidian skill was built on obsidian-cli. However, following the release of the official Obsidian CLI, the author rebranded obsidian-cli as notesmd-cli. Since the legacy skill had become outdated, this overhauled version provides full compatibility with the latest notesmd-cli features and naming conventions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:427d9cc099c116c888fc552e0c8c371eff48c1363a43cbeed01eb094df274745"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27679,
+  "uuid": "skill-clawhub-bingo",
+  "skillKey": "clawhub-bingo",
+  "name": "Bingo",
+  "summary": "Generate and play bingo cards with number calling and verification. Use when running bingo games.",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bingo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "Generate and play bingo cards with number calling and verification",
+        "Use when running bingo games."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bingo@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bingo",
+      "url": "https://clawhub.ai/skills/bingo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bingo",
+    "url": "https://clawhub.ai/skills/bingo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bingo-a45e2df6b898e7c4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bingo@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bingo-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a324c2a76e5e0eda4616360420c41be3a06f2d37ef1003986ac034be664b309b",
+      "artifactSizeBytes": 1800
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T12:08:34.576Z"
+}

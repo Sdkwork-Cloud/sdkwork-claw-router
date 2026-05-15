@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-config-backup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_config_backup",
+  "skill": {
+    "id": 36007,
+    "skillKey": "clawhub-claw-config-backup",
+    "name": "openclaw configure backup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-config-backup",
+    "url": "https://clawhub.ai/skills/claw-config-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-config-backup-a76bdb620ff467c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Backup OpenClaw configuration file with hash-based change detection. Use when user asks to backup, create backup of, or save OpenClaw config (openclaw.json)...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "goog",
+      "userId": "s17em2bafnnpytnkgk2apn7p6h83fqsf",
+      "displayName": "Jay",
+      "image": "https://avatars.githubusercontent.com/u/1488374?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773927562318,
+      "changelog": "Initial version—adds OpenClaw config backup capability with hash-based change detection.\n\n- Added Python script (config_backup.py) to backup OpenClaw JSON config file.\n- Automatically validates JSON5 before backup.\n- Backs up only if file content has changed (SHA256 hash check).\n- Creates timestamped backups in a specified or default directory.\n- Removed legacy token.sh script.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6443d5b7a08f25665ddcb301ee87d7a4bd96084d2d61c47a6913b6e604275f19"
+}

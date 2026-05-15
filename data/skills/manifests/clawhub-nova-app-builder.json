@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14939,
+  "uuid": "skill-clawhub-nova-app-builder",
+  "skillKey": "clawhub-nova-app-builder",
+  "name": "Nova App Builder",
+  "summary": "Build and deploy Nova Platform apps (TEE apps on Sparsity Nova / sparsity.cloud). Use when a user wants to create a Nova app, write enclave application code,...",
+  "version": "2.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nova_app_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zhengfa Dang",
+      "features": [
+        "Build and deploy Nova Platform apps (TEE apps on Sparsity Nova / sparsity.cloud)",
+        "Use when a user wants to create a Nova app, write enclave application code,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nova-app-builder@2.3.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1241196?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nova-app-builder",
+      "url": "https://clawhub.ai/skills/nova-app-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nova-app-builder",
+    "url": "https://clawhub.ai/skills/nova-app-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nova-app-builder-803c9908c5393b20.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nova-app-builder@2.3.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-nova-app-builder-2.3.1.json",
+      "version": "2.3.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:91fbed682ecf80912f45ce7a7fcde38e708b68a0b3f86bc05f9452abf1319f08",
+      "artifactSizeBytes": 2119
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T00:06:15.066Z"
+}

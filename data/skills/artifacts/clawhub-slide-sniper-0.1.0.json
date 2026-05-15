@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/slide-sniper@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slide_sniper",
+  "skill": {
+    "id": 68639,
+    "skillKey": "clawhub-slide-sniper",
+    "name": "视觉系幻灯片捕手 (The Slide Sniper)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slide-sniper",
+    "url": "https://clawhub.ai/skills/slide-sniper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slide-sniper-127a7745ec583c21.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "后台监控全屏视频或直播，利用视觉模型检测幻灯片翻页，自动截图提取文字并排版到笔记软件中。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anotherj1",
+      "userId": "publishers:anotherj1",
+      "displayName": "AnotherJ1",
+      "image": "https://avatars.githubusercontent.com/u/20277331?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 569,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772017269160,
+      "changelog": "Initial release. Implemented slide transition detection and automated OCR note generation. (实现了幻灯片翻页检测与全自动 OCR 笔记生成。)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7e477d4168d0027474c2c8640dbdaefeba60cb55a70b4dec31fe3b9e6995608d"
+}

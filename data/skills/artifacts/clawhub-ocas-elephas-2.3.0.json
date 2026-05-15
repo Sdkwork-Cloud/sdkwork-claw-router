@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ocas-elephas@2.3.0",
+  "version": "2.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ocas_elephas",
+  "skill": {
+    "id": 24515,
+    "skillKey": "clawhub-ocas-elephas",
+    "name": "Elephas"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ocas-elephas",
+    "url": "https://clawhub.ai/skills/ocas-elephas",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ocas-elephas-86b35f5db707138a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Long-term knowledge graph (Chronicle) maintenance. Ingests structured signals from system journals, resolves entity identity, promotes confirmed facts, and g..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "indigokarasu",
+      "userId": "s17bp0q5q5x87yfrmb4876eywh83rcts",
+      "displayName": "Indigo Karasu",
+      "image": "https://avatars.githubusercontent.com/u/265148029?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 409,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.3.0",
+      "createdAt": 1774683731619,
+      "changelog": "Version 2.3.0 (ocas-elephas)\n\n- Added comprehensive README.md with usage and install instructions.\n- Introduced references/init_pattern.md documenting the DB initialization pattern.\n- Updated SKILL.md: clarified use cases, added install/source info, detailed new commands and run completion steps, described 'elephas.update' for GitHub source pulls.\n- Updated config schema to reflect version 2.3.0.\n- Reference documentation improved for journal and schema formats.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:42d9120173a8d19f4d932a5a4cb1f85789bf9020bf780722b43da24c543d1f15"
+}

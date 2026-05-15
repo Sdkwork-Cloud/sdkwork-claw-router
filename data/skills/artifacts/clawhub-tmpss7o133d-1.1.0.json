@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tmpss7o133d@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tmpss7o133d",
+  "skill": {
+    "id": 43042,
+    "skillKey": "clawhub-tmpss7o133d",
+    "name": "ensp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tmpss7o133d",
+    "url": "https://clawhub.ai/skills/tmpss7o133d",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tmpss7o133d-90a68b04de277a6c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Always use when user asks to create, generate, or design a network topology diagram for eNSP (Enterprise Network Simulation Platform), or mentions creating e..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "forealmy",
+      "userId": "s17d4esfzgz8wrg6e6y93yfsm1842ryh",
+      "displayName": "forealmy",
+      "image": "https://avatars.githubusercontent.com/u/34614792?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775635693188,
+      "changelog": "- Added comprehensive documentation for generating, naming, and laying out eNSP topology files.\n- Included detailed lists of supported devices (routers, switches, firewalls, wireless, endpoints) and their interface configurations.\n- Specified file output format, naming conventions, and user instructions for opening the generated `.topo` file in eNSP.\n- Described grid-based auto-layout algorithm for arranging devices on the topology canvas.\n- Provided guidelines for adding text labels, area boxes, and choosing connection types in the topology.\n- Linked XML format details to `references/topo-reference.md` for advanced use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b95a6ae9b77c19651f3758165ee90b82e180946a538ba1118c4d9b485d2d34ed"
+}

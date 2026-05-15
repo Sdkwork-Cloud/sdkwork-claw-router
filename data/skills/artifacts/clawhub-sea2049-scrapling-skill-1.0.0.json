@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sea2049-scrapling-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sea2049_scrapling_skill",
+  "skill": {
+    "id": 21029,
+    "skillKey": "clawhub-sea2049-scrapling-skill",
+    "name": "scrapling-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sea2049-scrapling-skill",
+    "url": "https://clawhub.ai/skills/sea2049-scrapling-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sea2049-scrapling-skill-d61fc3659be3753f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill whenever the user asks to scrape a website, extract structured data from web pages, handle anti-bot/Cloudflare pages, crawl multiple pages, or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sea2049",
+      "userId": "publishers:sea2049",
+      "displayName": "Sea2049",
+      "image": "https://avatars.githubusercontent.com/u/158456380?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 427,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772871335978,
+      "changelog": "Initial public release of Scrapling skill.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1ef4de3d7b0a04f1f95e65fb1faf84d43ec109db2e67eb87175aecc0b1cd1fe9"
+}

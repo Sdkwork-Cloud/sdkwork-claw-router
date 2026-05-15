@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19355,
+  "uuid": "skill-clawhub-defuddle-obsidian",
+  "skillKey": "clawhub-defuddle-obsidian",
+  "name": "Defuddle Obsidian",
+  "summary": "Extract clean markdown content from web pages using Defuddle CLI, removing clutter and navigation to save tokens. Use instead of WebFetch when the user provi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.defuddle_obsidian",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Li Yaping",
+      "features": [
+        "Extract clean markdown content from web pages using Defuddle CLI, removing clutter and navigati.",
+        "Use instead of WebFetch when the user provi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/defuddle-obsidian@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38170721?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "defuddle-obsidian",
+      "url": "https://clawhub.ai/skills/defuddle-obsidian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "defuddle-obsidian",
+    "url": "https://clawhub.ai/skills/defuddle-obsidian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/defuddle-obsidian-df1ac768932151b9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/defuddle-obsidian@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-defuddle-obsidian-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:807516588083d64cb6fff75ca95b6c2e47fa6550a94e9a0e63fda4a91bb04fa2",
+      "artifactSizeBytes": 2290
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T18:23:48.381Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deprecatedboom@0.0.7",
+  "version": "0.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deprecatedboom",
+  "skill": {
+    "id": 36245,
+    "skillKey": "clawhub-deprecatedboom",
+    "name": "DEPRECATED"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deprecatedboom",
+    "url": "https://clawhub.ai/skills/deprecatedboom",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deprecatedboom-28fb465b864ee5ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "deprecated"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "monid",
+      "userId": "s17enzdj5bkk60cmapk2s02rnh84hjyr",
+      "displayName": "Monid",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 207,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.7",
+      "createdAt": 1775896769049,
+      "changelog": "- Skill has been deprecated; all previous instructions and details have been removed.\n- Updated name to \"deprecated\" and version to 0.0.9.\n- Description changed to \"deprecated\".",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c34e82b6017829679e069e76e33eb8db54cd0af4428cd18c0771efd6afd694f3"
+}

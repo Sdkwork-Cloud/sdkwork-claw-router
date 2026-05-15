@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49299,
+  "uuid": "skill-clawhub-clawhub-skill-guide",
+  "skillKey": "clawhub-clawhub-skill-guide",
+  "name": "ClawHub Skill Guide — Scanner Compliance",
+  "summary": "Create, structure, and publish OpenClaw skills to ClawHub that pass the security scanner with clean ratings. Covers frontmatter schema, env var declarations,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_skill_guide",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tdavis009",
+      "features": [
+        "Create, structure, and publish OpenClaw skills to ClawHub that pass the security scanner with c.",
+        "Covers frontmatter schema, env var declarations,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawhub-skill-guide@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/223409012?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawhub-skill-guide",
+      "url": "https://clawhub.ai/skills/clawhub-skill-guide"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-skill-guide",
+    "url": "https://clawhub.ai/skills/clawhub-skill-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-skill-guide-46bd9ccf0d5f18e1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawhub-skill-guide@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawhub-skill-guide-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aff2e5e378aff533180445a851a483d042f7339e7d294cd149e4d6f799bff580",
+      "artifactSizeBytes": 2268
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T01:52:02.233Z"
+}

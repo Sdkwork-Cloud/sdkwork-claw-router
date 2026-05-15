@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23383,
+  "uuid": "skill-clawhub-windows-print",
+  "skillKey": "clawhub-windows-print",
+  "name": "Windows Print",
+  "summary": "Print files (often inbound attachments from chat apps like Feishu/Lark, or any local file path) on Windows. Use ONLY when the user explicitly asks to print (...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.windows_print",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sqfcyily",
+      "features": [
+        "Print files (often inbound attachments from chat apps like Feishu/Lark, or any local file path).",
+        "Use ONLY when the user explicitly asks to print (..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/windows-print@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38500955?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "windows-print",
+      "url": "https://clawhub.ai/skills/windows-print"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "windows-print",
+    "url": "https://clawhub.ai/skills/windows-print",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/windows-print-230365b938b53a5f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/windows-print@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-windows-print-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:59dd8b41948517354c5f1bbfafd22c7666d26f5cede29b2d1714e86105186c11",
+      "artifactSizeBytes": 2336
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T13:06:28.403Z"
+}

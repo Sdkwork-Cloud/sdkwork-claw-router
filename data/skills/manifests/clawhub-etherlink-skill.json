@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11418,
+  "uuid": "skill-clawhub-etherlink-skill",
+  "skillKey": "clawhub-etherlink-skill",
+  "name": "Etherlink Skill",
+  "summary": "Etherlink blockchain interaction - EVM-compatible L2 on Tezos. Supports mainnet and shadownet testnet via MCP server. Use for balance checks, transactions, smart contracts, and token operations on Etherlink.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.etherlink_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "efekucuk",
+      "features": [
+        "Etherlink blockchain interaction",
+        "EVM-compatible L2 on Tezos",
+        "Supports mainnet and shadownet testnet via MCP server",
+        "Use for balance checks, transactions, smart contracts, and token operations on Etherlink."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/etherlink-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48200289?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "etherlink-skill",
+      "url": "https://clawhub.ai/skills/etherlink-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "etherlink-skill",
+    "url": "https://clawhub.ai/skills/etherlink-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/etherlink-skill-1dcbbd63c80a65df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/etherlink-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-etherlink-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:97e32ad2ed29eefe66b3df4c31acc69e23c39f0acc1204d2ce98cc7d40aae13f",
+      "artifactSizeBytes": 2394
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T14:43:26.158Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dfcf-stock-intraday@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dfcf_stock_intraday",
+  "skill": {
+    "id": 67894,
+    "skillKey": "clawhub-dfcf-stock-intraday",
+    "name": "东方财富日内行情 dfcf-stock-intraday"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dfcf-stock-intraday",
+    "url": "https://clawhub.ai/skills/dfcf-stock-intraday",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dfcf-stock-intraday-08e55be06a066f72.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用东方财富 API 获取 A 股（沪市/深市）及指数的日内分时数据。当用户询问某只 A 股或指数的日内走势、分时数据、当日行情、实时价格、分时图数据时，必须使用此 skill。触发关键词包括：分时数据、日内数据、今日行情、分时走势、intraday、当日走势、东方财富获取数据。支持沪市（market=1）和深市..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bensema",
+      "userId": "s17fgxs84s6019km9vfye0mjf583hrkx",
+      "displayName": "bensema",
+      "image": "https://avatars.githubusercontent.com/u/5534112?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 630,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774394701032,
+      "changelog": "- 移除了港股支持，仅保留沪市（1）和深市（0）A股及主流指数分时数据查询。\n- 使用 secid（市场.代码）统一接口格式，需根据股票/指数代码确定 market 值。\n- 精简数据获取方式，仅通过东方财富 trends2 API 获取与解析数据，移除脚本与外部文档依赖。\n- 详列标准 curl 调用及 JSON 解析方法，明确 trends 字段结构。\n- 优化用户输出格式说明，并补充查询注意事项。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e80e3378b4ac4629b5f31ae5d3d157ad9290b97834953cb62b8621bea79e046f"
+}

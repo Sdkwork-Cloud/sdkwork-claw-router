@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72016,
+  "uuid": "skill-clawhub-tencent-news",
+  "skillKey": "clawhub-tencent-news",
+  "name": "tencent-news",
+  "summary": "7×24 新闻资讯搜索工具，聚焦中国国内信息和国际热点。支持新闻搜索，包括热点新闻、早报晚报、实时资讯、领域新闻和天气信息查询。当用户需要搜索新闻、新闻热榜、新闻早晚报、订阅新闻推送、获取相关新闻资讯和查询天气信息时使用。",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencent_news",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TencentNewsTeam",
+      "features": [
+        "7×24 新闻资讯搜索工具，聚焦中国国内信息和国际热点。支持新闻搜索，包括热点新闻、早报晚报、实时资讯、领域新闻和天气信息查询。当用户需要搜索新闻、新闻热榜、新闻早晚报、订阅新闻推送、获取相."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tencent-news@1.0.9",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/tencent-news/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tencent-news",
+      "url": "https://clawhub.ai/skills/tencent-news"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencent-news",
+    "url": "https://clawhub.ai/skills/tencent-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencent-news-835f18e9ed7a9279.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tencent-news@1.0.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-tencent-news-1.0.9.json",
+      "version": "1.0.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:14d5538196062033cb89019c97022366c47a5f10b784a3685345b0c9ebebca9c",
+      "artifactSizeBytes": 2518
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T03:09:55.098Z"
+}

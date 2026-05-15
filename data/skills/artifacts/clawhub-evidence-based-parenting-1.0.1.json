@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/evidence-based-parenting@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.evidence_based_parenting",
+  "skill": {
+    "id": 70341,
+    "skillKey": "clawhub-evidence-based-parenting",
+    "name": "摸摸头（PatPat）-你的科学育儿教练"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "evidence-based-parenting",
+    "url": "https://clawhub.ai/skills/evidence-based-parenting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/evidence-based-parenting-51cb5817a86fbeb6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "evidence-based-parenting — 0-15岁全场景育儿教练。帮助家长在真实育儿场景中获得科学、实用的支持和指导，覆盖情绪管理、行为引导、学习支持、社交问题、数字素养、青春期沟通等全方位育儿挑战。当用户提到以下任何话题时应触发：孩子哭闹、发脾气、打人、不听话、亲子冲突、情绪崩溃、育儿焦虑、如何安..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gglinux",
+      "userId": "s175rm2qdwe0jnz0bz8mp25dxd84s6r6",
+      "displayName": "gglinux",
+      "image": "https://avatars.githubusercontent.com/u/7273957?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776337408649,
+      "changelog": "- 技能英文名由「科学育儿」更名为 evidence-based-parenting，内容不变。\n- 其余功能、规则和逻辑维持原有结构与说明。\n- 依然涵盖 0-15 岁全场景育儿问题的科学指导，触发范围未变。\n- 默认回复语言为中文不变，所有核心逻辑一致。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1776a2b5f02a753b339329411ae0d21db0a789bf356979aac3769a0ba2174f65"
+}

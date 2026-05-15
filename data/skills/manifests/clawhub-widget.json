@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50844,
+  "uuid": "skill-clawhub-widget",
+  "skillKey": "clawhub-widget",
+  "name": "Widget",
+  "summary": "Create, update, hide, show, list, and delete Übersicht desktop widgets on macOS. Use this skill whenever the user asks for desktop widgets, desktop gadgets,...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.widget",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "paranoidearth",
+      "features": [
+        "Create, update, hide, show, list, and delete Übersicht desktop widgets on macOS",
+        "Use this skill whenever the user asks for desktop widgets, desktop gadgets,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/widget@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/131941819?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "widget",
+      "url": "https://clawhub.ai/skills/widget"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "widget",
+    "url": "https://clawhub.ai/skills/widget",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/widget-8ac140ceb6ca8d6e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/widget@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-widget-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:954aad7059edae9107332d5d53664ceb2926bace2a1b822b342b67991543ba0c",
+      "artifactSizeBytes": 2419
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T00:39:49.003Z"
+}

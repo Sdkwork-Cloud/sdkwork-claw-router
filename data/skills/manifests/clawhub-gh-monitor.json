@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26850,
+  "uuid": "skill-clawhub-gh-monitor",
+  "skillKey": "clawhub-gh-monitor",
+  "name": "GH Monitor",
+  "summary": "Monitor GitHub repos for issues, PRs, and CI activity with label filters and scheduled notifications via cron or messages.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gh_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "deliverydriver",
+      "features": [
+        "Monitor GitHub repos for issues, PRs, and CI activity with label filters and scheduled notifica."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gh-monitor@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26074034?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gh-monitor",
+      "url": "https://clawhub.ai/skills/gh-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gh-monitor",
+    "url": "https://clawhub.ai/skills/gh-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gh-monitor-fdf46d3a19f9b426.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gh-monitor@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gh-monitor-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a4d0fb7bfb181706fa425de51ba712f85a9b9e56944058a3115ec752dbd2ccdc",
+      "artifactSizeBytes": 1841
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T03:18:51.800Z"
+}

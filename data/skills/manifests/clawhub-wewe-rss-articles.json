@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66646,
+  "uuid": "skill-clawhub-wewe-rss-articles",
+  "skillKey": "clawhub-wewe-rss-articles",
+  "name": "WeWe RSS 文章读取",
+  "summary": "读取指定微信公众号文章列表或正文，需本地WeWe RSS服务运行并支持文章内容HTML解析为纯文本。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wewe_rss_articles",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kai",
+      "features": [
+        "读取指定微信公众号文章列表或正文，需本地WeWe RSS服务运行并支持文章内容HTML解析为纯文本。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wewe-rss-articles@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14113685?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wewe-rss-articles",
+      "url": "https://clawhub.ai/skills/wewe-rss-articles"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wewe-rss-articles",
+    "url": "https://clawhub.ai/skills/wewe-rss-articles",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wewe-rss-articles-e790d8880f6a8977.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wewe-rss-articles@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wewe-rss-articles-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:feff9eae0bcda8b6b906371659407ee08ebb2dedd795e01705aa63540b004405",
+      "artifactSizeBytes": 1904
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T03:56:25.461Z"
+}

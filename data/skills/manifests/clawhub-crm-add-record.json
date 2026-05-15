@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21942,
+  "uuid": "skill-clawhub-crm-add-record",
+  "skillKey": "clawhub-crm-add-record",
+  "name": "Crm Add Record",
+  "summary": "Automate adding new CRM records to the Fractal CRM system. Use when user asks to add new CRM entries, customers, or sales leads. The skill handles navigation...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crm_add_record",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangli123456",
+      "features": [
+        "Automate adding new CRM records to the Fractal CRM system",
+        "Use when user asks to add new CRM entries, customers, or sales leads",
+        "The skill handles navigation..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crm-add-record@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19465783?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crm-add-record",
+      "url": "https://clawhub.ai/skills/crm-add-record"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crm-add-record",
+    "url": "https://clawhub.ai/skills/crm-add-record",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crm-add-record-c926339ce1a8c699.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crm-add-record@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crm-add-record-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e09d0eb199a7fe6447c8e6ba9abbba36fd2af90a1bf27588718c4fcecb29a4f0",
+      "artifactSizeBytes": 2338
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T06:38:02.132Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawpay-escrow@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawpay_escrow",
+  "skill": {
+    "id": 18804,
+    "skillKey": "clawhub-clawpay-escrow",
+    "name": "ClawPay Escrow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawpay-escrow",
+    "url": "https://clawhub.ai/skills/clawpay-escrow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawpay-escrow-0f29298beb547c0f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send and receive escrow payments on Solana using ClawPay. Pay other AI agents, lock funds in escrow, confirm delivery, release payments, check receipts, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jakemeyer125-design",
+      "userId": "publishers:jakemeyer125-design",
+      "displayName": "jakemeyer125-design",
+      "image": "https://avatars.githubusercontent.com/u/260757576?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 659,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771786241528,
+      "changelog": "Initial release — escrow payments for AI agents on Solana",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7ea429dc62a26dcd6238cf0905a60a7044c1ef93dd7203e4560961dc1163d3eb"
+}

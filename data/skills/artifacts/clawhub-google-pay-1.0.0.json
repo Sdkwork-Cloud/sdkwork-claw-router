@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-pay@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_pay",
+  "skill": {
+    "id": 28050,
+    "skillKey": "clawhub-google-pay",
+    "name": "Google Pay"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-pay",
+    "url": "https://clawhub.ai/skills/google-pay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-pay-7a0a1cea26f52815.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Implement Google Pay for web and Android with tokenization safety, gateway alignment, and production-ready checkout operations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 335,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772576708676,
+      "changelog": "Initial release with implementation, validation, launch, and incident response playbooks for Google Pay.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7cb36adc36b09313c34d028108df62747f6ac013dd664a689d2dd16765b71c47"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47031,
+  "uuid": "skill-clawhub-maverick-trello-mcp",
+  "skillKey": "clawhub-maverick-trello-mcp",
+  "name": "Trello mcp",
+  "summary": "Use Trello integration context for boards, lists, cards, checklists, members, comments, and task workflows. Use after Maverick connects Trello and provisions...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maverick_trello_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Maverick",
+      "features": [
+        "Use Trello integration context for boards, lists, cards, checklists, members, comments, and tas.",
+        "Use after Maverick connects Trello and provisions..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/maverick-trello-mcp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261420589"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "maverick-trello-mcp",
+      "url": "https://clawhub.ai/skills/maverick-trello-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maverick-trello-mcp",
+    "url": "https://clawhub.ai/skills/maverick-trello-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maverick-trello-mcp-e1b3c7b6102abfbd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/maverick-trello-mcp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-maverick-trello-mcp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4c4558e324b736559b613006c1b78364bdcd00a8cfda91a30556c42826e62819",
+      "artifactSizeBytes": 2516
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T18:51:31.315Z"
+}

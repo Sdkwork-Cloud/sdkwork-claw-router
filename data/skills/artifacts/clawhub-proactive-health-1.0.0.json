@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/proactive-health@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proactive_health",
+  "skill": {
+    "id": 13677,
+    "skillKey": "clawhub-proactive-health",
+    "name": "Health Guardian"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proactive-health",
+    "url": "https://clawhub.ai/skills/proactive-health",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proactive-health-18cd6c6d80703446.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Proactive health monitoring for AI agents. Apple Health integration, pattern detection, anomaly alerts. Built for agents caring for humans with chronic conditions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ctsolutionsdev",
+      "userId": "s1773j1bwnavntgntz8tb3v7mh83hq2m",
+      "displayName": "CTsolutionsdev",
+      "image": "https://avatars.githubusercontent.com/u/143364806?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1388,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770301968414,
+      "changelog": "Initial release. Proactive health monitoring with Apple Health integration, pattern detection, and anomaly alerts. Built for agents caring for humans with chronic conditions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:274080ea662d536b1f1ab1fa97e4e5f97401e4414eb9c3cbb651ee615b40c2fb"
+}

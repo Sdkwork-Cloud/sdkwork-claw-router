@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cold-chain-risk-calculator-1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cold_chain_risk_calculator_1",
+  "skill": {
+    "id": 46083,
+    "skillKey": "clawhub-cold-chain-risk-calculator-1",
+    "name": "Cold Chain Risk Calculator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cold-chain-risk-calculator-1",
+    "url": "https://clawhub.ai/skills/cold-chain-risk-calculator-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cold-chain-risk-calculator-1-c0c23d5fefc9d8e3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Calculate temperature excursion risks for cold chain transport. Assesses route risk, packaging suitability, and monitoring requirements for biological sample..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 128,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775112501810,
+      "changelog": "Initial public release of cold-chain-risk-calculator.\n\n- Provides risk assessment for cold chain transport scenarios based on route, duration, and packaging type.\n- Returns structured JSON output with risk score, level, and mitigation recommendations.\n- Validates inputs, including required route and duration, and accepted packaging options.\n- Documents all assumptions, limitations, and the workflow used for assessment.\n- Includes clear error handling and fallback instructions for incomplete or invalid inputs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:00687a597babcc9a37264cad717ae32c80cd50226acd612f2942b4572c32b50b"
+}

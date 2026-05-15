@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69976,
+  "uuid": "skill-clawhub-buffett-analysis",
+  "skillKey": "clawhub-buffett-analysis",
+  "name": "Buffett Analysis",
+  "summary": "巴菲特视角的上市公司基本面深度分析。当用户提到\"分析一家公司\"、\"看看XX值不值得投资\"、\"XX的基本面怎么样\"、\"帮我研究一下XX\"、个股分析、价值投资分析、公司估值、高管研究、管理层分析、公司战略、新闻采集、PR分析、业务出海、创新药等需求时使用。也支持行业分析——当用户提到\"XX行业怎么样\"、\"帮我梳理一下...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.buffett_analysis",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zacbai",
+      "features": [
+        "巴菲特视角的上市公司基本面深度分析。当用户提到\"分析一家公司\"、\"看看XX值不值得投资\"、\"XX的基本面怎么样\"、\"帮我研究一下XX\"、个股分析、价值投资分析、公司估值、高管研究、管理层分析."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/buffett-analysis@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/202914396?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "buffett-analysis",
+      "url": "https://clawhub.ai/skills/buffett-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "buffett-analysis",
+    "url": "https://clawhub.ai/skills/buffett-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/buffett-analysis-f605285dbd4a41c7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/buffett-analysis@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-buffett-analysis-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:114aea3640de727d2e64ced4974184edb46141dc1f0ab392ef8a4e8cc35fbb38",
+      "artifactSizeBytes": 2850
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T09:27:38.622Z"
+}

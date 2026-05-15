@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiucheng-self-improving-agent-fixed@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiucheng_self_improving_agent_fixed",
+  "skill": {
+    "id": 27661,
+    "skillKey": "clawhub-xiucheng-self-improving-agent-fixed",
+    "name": "Self Improving Agent (Fixed)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiucheng-self-improving-agent-fixed",
+    "url": "https://clawhub.ai/skills/xiucheng-self-improving-agent-fixed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiucheng-self-improving-agent-fixed-f3db4bc1acde6b58.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Self-improving agent system that analyzes conversation quality, identifies improvement opportunities, and continuously optimizes response strategies."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pp-chicken",
+      "userId": "s17e0v28tq5fedheyy67hbhh8s83rm2p",
+      "displayName": "pp-chicken",
+      "image": "https://avatars.githubusercontent.com/u/35548398?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 334,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774711294399,
+      "changelog": "Fix workspace path to use OPENCLAW_WORKDIR env var",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b9bf5561cf7652df51e0a047328801913eed8545c1dfdb2074c228b5e788d676"
+}

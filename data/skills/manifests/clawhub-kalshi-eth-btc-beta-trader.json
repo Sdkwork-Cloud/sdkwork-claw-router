@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39013,
+  "uuid": "skill-clawhub-kalshi-eth-btc-beta-trader",
+  "skillKey": "clawhub-kalshi-eth-btc-beta-trader",
+  "name": "Kalshi Eth Btc Beta Trader",
+  "summary": "Trades ETH price markets on Kalshi by exploiting the 1.3x beta relationship between ETH and BTC. When BTC odds shift, ETH markets lag behind -- this skill ca...",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kalshi_eth_btc_beta_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "diagnostikon",
+      "features": [
+        "Trades ETH price markets on Kalshi by exploiting the 1.3x beta relationship between ETH and BTC",
+        "When BTC odds shift, ETH markets lag behind -",
+        "this skill ca..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kalshi-eth-btc-beta-trader@1.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17246180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kalshi-eth-btc-beta-trader",
+      "url": "https://clawhub.ai/skills/kalshi-eth-btc-beta-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kalshi-eth-btc-beta-trader",
+    "url": "https://clawhub.ai/skills/kalshi-eth-btc-beta-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kalshi-eth-btc-beta-trader-8d030e066bcb51fd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kalshi-eth-btc-beta-trader@1.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-kalshi-eth-btc-beta-trader-1.0.8.json",
+      "version": "1.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:45b2e63ede79c9e0d56d5c0727565fed06bc8b82988d766e44ac208c5e5e8748",
+      "artifactSizeBytes": 1976
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T19:02:21.670Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64037,
+  "uuid": "skill-clawhub-hermes-memory",
+  "skillKey": "clawhub-hermes-memory",
+  "name": "Hermes Memory",
+  "summary": "Hermes风格自驱记忆系统。模仿Hermes Agent的记忆机制，定期自检记忆健康度、自动提醒整理、保持记忆精简高效。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hermes_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jdvrommel",
+      "features": [
+        "Hermes风格自驱记忆系统。模仿Hermes Agent的记忆机制，定期自检记忆健康度、自动提醒整理、保持记忆精简高效。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hermes-memory@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271390099?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hermes-memory",
+      "url": "https://clawhub.ai/skills/hermes-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hermes-memory",
+    "url": "https://clawhub.ai/skills/hermes-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hermes-memory-248688bdcad2cc5a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hermes-memory@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hermes-memory-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf59c226bc48a51aa8b4292c5ec46c42ca2d304bd1897956d5baacb4568745a4",
+      "artifactSizeBytes": 2310
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T06:57:47.909Z"
+}

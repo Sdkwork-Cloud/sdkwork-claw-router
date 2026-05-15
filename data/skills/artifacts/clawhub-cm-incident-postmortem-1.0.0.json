@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cm-incident-postmortem@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cm_incident_postmortem",
+  "skill": {
+    "id": 49539,
+    "skillKey": "clawhub-cm-incident-postmortem",
+    "name": "Incident Postmortem"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cm-incident-postmortem",
+    "url": "https://clawhub.ai/skills/cm-incident-postmortem",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cm-incident-postmortem-d6485d27c7d25f28.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate structured, blame-free incident postmortem reports from logs, timeline data, and incident metadata. Produces root cause analysis, impact assessment,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 76,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777617673956,
+      "changelog": "Initial release of the incident-postmortem skill.\n\n- Generates structured, blame-free postmortem reports with root cause analysis, impact assessment, timeline reconstruction, and action items.\n- Parses various log formats (syslog, JSON, Apache/Nginx, Python tracebacks) and merges events with manual timeline data.\n- Includes built-in checker for blameful language with suggestions for improvement.\n- Supports multiple output formats: markdown, HTML, and JSON.\n- Provides CLI options for composing reports, importing incident details, and automating post-incident workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:95aa981f1bac5b6299770b497be4d4e2c24c8dff9969cde50b16d924994764c3"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22972,
+  "uuid": "skill-clawhub-nstbrowser-ai-agent",
+  "skillKey": "clawhub-nstbrowser-ai-agent",
+  "name": "Nstbrowser AI Agent",
+  "summary": "Browser automation CLI with Nstbrowser integration for AI agents. Use when the user needs advanced browser fingerprinting, profile management, proxy configur...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nstbrowser_ai_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "NstbrowserIO",
+      "features": [
+        "Browser automation CLI with Nstbrowser integration for AI agents",
+        "Use when the user needs advanced browser fingerprinting, profile management, proxy configur..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nstbrowser-ai-agent@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143068803?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nstbrowser-ai-agent",
+      "url": "https://clawhub.ai/skills/nstbrowser-ai-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nstbrowser-ai-agent",
+    "url": "https://clawhub.ai/skills/nstbrowser-ai-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nstbrowser-ai-agent-ab67c18f10bc9f82.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nstbrowser-ai-agent@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-nstbrowser-ai-agent-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a5273476bc2673fac0083771d391cb9ac0a4b709138ce5aa22a6696e4a81a863",
+      "artifactSizeBytes": 2085
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T09:02:08.271Z"
+}

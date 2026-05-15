@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/get-biji@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.get_biji",
+  "skill": {
+    "id": 59576,
+    "skillKey": "clawhub-get-biji",
+    "name": "Get笔记同步"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "get-biji",
+    "url": "https://clawhub.ai/skills/get-biji",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/get-biji-74b387b7842a3709.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "从 Get 笔记 (biji.com) 同步语音笔记到本地 Markdown"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "skychentian",
+      "userId": "publishers:skychentian",
+      "displayName": "skychentian",
+      "image": "https://avatars.githubusercontent.com/u/193896720?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 553,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1772775688359,
+      "changelog": "v3: JWT缓存认证、模块化格式、章节标题注入、增量同步",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b37adfc7155458e7f92f01d26db341f48e64b93187661c32d372e7b1a36b8cd1"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/viral-video-replicator@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.viral_video_replicator",
+  "skill": {
+    "id": 59370,
+    "skillKey": "clawhub-viral-video-replicator",
+    "name": "Viral Video Replicator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "viral-video-replicator",
+    "url": "https://clawhub.ai/skills/viral-video-replicator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/viral-video-replicator-53fc1454231c8422.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "视频逆向复刻 — 分析参考视频(FFmpeg帧提取+Vision LLM) + 生成复刻Seedance 2.0 Prompt + 4种素材替换模式。支持单个和批量。Use when: '复刻这个视频', '分析爆款视频', 'replicate this video', '视频逆向', '反编译视频', '批量..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dingtom336-gif",
+      "userId": "s17aepsh6v86z2ajsq3ng9tgm983g9pt",
+      "displayName": "dingtom336-gif",
+      "image": "https://avatars.githubusercontent.com/u/256118512?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775067138367,
+      "changelog": "v1.1.0 — 94分优化版",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4ad28874661b024146e6bb0277854c6e15565f01f1e1044aabdb166a8bda8deb"
+}

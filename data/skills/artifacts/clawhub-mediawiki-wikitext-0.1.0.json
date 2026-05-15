@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mediawiki-wikitext@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mediawiki_wikitext",
+  "skill": {
+    "id": 23797,
+    "skillKey": "clawhub-mediawiki-wikitext",
+    "name": "Mediawiki Wikitext"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mediawiki-wikitext",
+    "url": "https://clawhub.ai/skills/mediawiki-wikitext",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mediawiki-wikitext-991b20cbe01abc54.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MediaWiki Wikitext markup language for Wikipedia and wiki-based sites. Use when creating or editing wiki articles, generating wikitext content, working with..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kongyo2",
+      "userId": "s175n9q6hjkfya06rmzh66q4vd84br56",
+      "displayName": "kongyo2",
+      "image": "https://avatars.githubusercontent.com/u/81297811?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 420,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772341575707,
+      "changelog": "Initial release: Provides a comprehensive quick reference and best practices for writing and editing MediaWiki Wikitext.\n\n- Covers text formatting, headings, lists, links, images, tables, templates, references, and special tags.\n- Includes common article and template structure patterns.\n- Lists key syntax rules for reliability and compatibility with Wikipedia and wiki-based sites.\n- Provides resource links for detailed syntax, templates, and editor snippets.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ac4322e7e74b508e66d13ae484af9e2982b8b997e3ac938f78bf68f4e73395f7"
+}

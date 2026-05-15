@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33263,
+  "uuid": "skill-clawhub-windcat-skill-atlas",
+  "skillKey": "clawhub-windcat-skill-atlas",
+  "name": "Skill Atlas",
+  "summary": "Skill Atlas manages skill loading rules for OpenClaw, enabling classification, cross-platform search, automatic security vetting, version checks, and daily s...",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.windcat_skill_atlas",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "windcat",
+      "features": [
+        "Skill Atlas manages skill loading rules for OpenClaw, enabling classification, cross-platform s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/windcat-skill-atlas@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28590729?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "windcat-skill-atlas",
+      "url": "https://clawhub.ai/skills/windcat-skill-atlas"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "windcat-skill-atlas",
+    "url": "https://clawhub.ai/skills/windcat-skill-atlas",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/windcat-skill-atlas-33f0ceeac8b2d003.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/windcat-skill-atlas@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-windcat-skill-atlas-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:64a7dae92cd4f7095fb853b72f9a2f9e88901c1f415c69df8e9ddf071b10c2ae",
+      "artifactSizeBytes": 2820
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T07:13:16.839Z"
+}

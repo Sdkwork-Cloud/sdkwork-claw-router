@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68049,
+  "uuid": "skill-clawhub-economic-dashboard",
+  "skillKey": "clawhub-economic-dashboard",
+  "name": "Economic Dashboard",
+  "summary": "提供全球宏观经济数据仪表板视图，支持多源数据本地存储、冷热数据分离存储与自动化刷新调度。",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.economic_dashboard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tang Weigang",
+      "features": [
+        "提供全球宏观经济数据仪表板视图，支持多源数据本地存储、冷热数据分离存储与自动化刷新调度。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/economic-dashboard@0.3.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259277235?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "economic-dashboard",
+      "url": "https://clawhub.ai/skills/economic-dashboard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "economic-dashboard",
+    "url": "https://clawhub.ai/skills/economic-dashboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/economic-dashboard-9a35b1f966dc4686.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/economic-dashboard@0.3.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-economic-dashboard-0.3.3.json",
+      "version": "0.3.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c70f7d0d22562b226e8c826c0c5b19ee597faa458c5e44668bae1514e09a4fb2",
+      "artifactSizeBytes": 2029
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T14:25:34.491Z"
+}

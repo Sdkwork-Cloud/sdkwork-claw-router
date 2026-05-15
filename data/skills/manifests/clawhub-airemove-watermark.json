@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23282,
+  "uuid": "skill-clawhub-airemove-watermark",
+  "skillKey": "clawhub-airemove-watermark",
+  "name": "AI Remove Watermark",
+  "summary": "Remove watermarks from images through the Airemovewatermark API. Use when an agent needs to remove a watermark from a local image file or remote image URL, p...",
+  "version": "0.1.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.airemove_watermark",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "isees",
+      "features": [
+        "Remove watermarks from images through the Airemovewatermark API",
+        "Use when an agent needs to remove a watermark from a local image file or remote image URL, p..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/airemove-watermark@0.1.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19368794?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "airemove-watermark",
+      "url": "https://clawhub.ai/skills/airemove-watermark"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "airemove-watermark",
+    "url": "https://clawhub.ai/skills/airemove-watermark",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/airemove-watermark-98f765f63d45765b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/airemove-watermark@0.1.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-airemove-watermark-0.1.7.json",
+      "version": "0.1.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c184b9f688a31ac129456318ef4391dbbf3144ecb21869db865f497d635eac9",
+      "artifactSizeBytes": 2388
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T11:31:50.892Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66454,
+  "uuid": "skill-clawhub-guild-knowledge",
+  "skillKey": "clawhub-guild-knowledge",
+  "name": "guild-knowledge",
+  "summary": "自动读取 Guild 文档，搜索最新信息，比较评估经验建议与新方案，提供应用方案并提醒是否更新文档。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.guild_knowledge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pipiy416",
+      "features": [
+        "自动读取 Guild 文档，搜索最新信息，比较评估经验建议与新方案，提供应用方案并提醒是否更新文档。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/guild-knowledge@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/187491710?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "guild-knowledge",
+      "url": "https://clawhub.ai/skills/guild-knowledge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "guild-knowledge",
+    "url": "https://clawhub.ai/skills/guild-knowledge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/guild-knowledge-518b46e10ace3e8b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/guild-knowledge@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-guild-knowledge-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f7a3c64fdb6a61249855452c2ca270dec29e65379c652199b6eabde4c0b6aa9",
+      "artifactSizeBytes": 2180
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T05:40:58.378Z"
+}

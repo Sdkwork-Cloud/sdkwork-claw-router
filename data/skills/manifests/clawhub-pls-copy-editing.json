@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15940,
+  "uuid": "skill-clawhub-pls-copy-editing",
+  "skillKey": "clawhub-pls-copy-editing",
+  "name": "PLS Copy Editing",
+  "summary": "Enhances text clarity, grammar, punctuation, and style in documents, ideal for polishing drafts before publication or submission.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pls_copy_editing",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Matt Valenta",
+      "features": [
+        "Enhances text clarity, grammar, punctuation, and style in documents, ideal for polishing drafts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pls-copy-editing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/153394211?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pls-copy-editing",
+      "url": "https://clawhub.ai/skills/pls-copy-editing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pls-copy-editing",
+    "url": "https://clawhub.ai/skills/pls-copy-editing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pls-copy-editing-3bd143d9e6e59a1e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pls-copy-editing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pls-copy-editing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:25fa5839cd75052abc2d4c49e502683ab45c50a42831d29c710a577d90b223ec",
+      "artifactSizeBytes": 2151
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T23:54:07.909Z"
+}

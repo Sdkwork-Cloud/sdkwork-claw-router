@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apow-mining@0.4.1",
+  "version": "0.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apow_mining",
+  "skill": {
+    "id": 26187,
+    "skillKey": "clawhub-apow-mining",
+    "name": "Apow Mining"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apow-mining",
+    "url": "https://clawhub.ai/skills/apow-mining",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apow-mining-cfe352c2417dbc6b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set up and start mining AGENT tokens on Base L2 using apow-cli. Easy Mode uses x402 for RPC, LLM, and GPU grinding with no config beyond wallet funding."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agentoshi",
+      "userId": "s170vbvwccfd2w7ceypve7w93x83g9py",
+      "displayName": "Agentoshi",
+      "image": "https://avatars.githubusercontent.com/u/190115468?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 371,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "0.4.1",
+      "createdAt": 1776661541013,
+      "changelog": "Sync canonical APoW skill with Easy Mode/x402 flow, safer RPC guidance, and 5s stale-check docs; no breaking behavior changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fa5a269f270f6c7dbd5ee69afb8f8506e7dcf021cd9f6e797503a684801f46fc"
+}

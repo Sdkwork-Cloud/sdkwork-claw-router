@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polymarket-politics-random-1u@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_politics_random_1u",
+  "skill": {
+    "id": 46753,
+    "skillKey": "clawhub-polymarket-politics-random-1u",
+    "name": "Polymarket Politics Random 1U"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-politics-random-1u",
+    "url": "https://clawhub.ai/skills/polymarket-politics-random-1u",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-politics-random-1u-26465d6b24c109f8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build and run a Polymarket politics-market trading skill with the AION SDK. Use when the user wants to search active political markets on Polymarket, randoml..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fivegive249-ship-it",
+      "userId": "s172jk7etnpkb41q5etc69xb0585hn29",
+      "displayName": "fivegive249-ship-it",
+      "image": "https://avatars.githubusercontent.com/u/273296578?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778034930206,
+      "changelog": "Initial release: AION SDK skill that searches active Polymarket politics markets, randomly selects one, and defaults to a 1 USD dry-run/live trade template.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7a7e879a59d608b350ed043844858caf0dfd59c05fbf87ca6abae46a00593fb4"
+}

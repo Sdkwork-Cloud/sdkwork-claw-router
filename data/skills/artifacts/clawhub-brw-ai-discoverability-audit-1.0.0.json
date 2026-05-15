@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brw-ai-discoverability-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brw_ai_discoverability_audit",
+  "skill": {
+    "id": 16849,
+    "skillKey": "clawhub-brw-ai-discoverability-audit",
+    "name": "Ai Discoverability Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brw-ai-discoverability-audit",
+    "url": "https://clawhub.ai/skills/brw-ai-discoverability-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brw-ai-discoverability-audit-518fde1ca06c6469.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit how a brand appears in AI-powered search (ChatGPT, Perplexity, Claude, Gemini). Use when user mentions \"AI search,\" \"how do I show up in ChatGPT,\" \"AI..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brianrwagner",
+      "userId": "publishers:brianrwagner",
+      "displayName": "Brian Wagner",
+      "image": "https://avatars.githubusercontent.com/u/3800703?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 843,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771359020350,
+      "changelog": "Initial release – provides a comprehensive framework for auditing brand visibility in AI-powered search.\n\n- Step-by-step audit process for analyzing direct brand queries, category presence, authority citations, and competitive comparison across major AI platforms.\n- Scoring and documentation system to benchmark recognition, accuracy, sentiment, category and authority presence, and competitive position.\n- Clear gap analysis to categorize findings into critical issues and priority opportunities.\n- Actionable recommendations for improving AI discoverability, covering technical, content, and authority-building strategies.\n- Structured audit output including executive summary, detailed results, and prioritized action plan.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6e1c13767751f51961e630140894012ef80b486307a61b66d11cbb90bf425071"
+}

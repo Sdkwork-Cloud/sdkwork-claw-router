@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62121,
+  "uuid": "skill-clawhub-youdaonote",
+  "skillKey": "clawhub-youdaonote",
+  "name": "YoudaoNote",
+  "summary": "有道云笔记官方 skill，支持笔记 CRUD（创建/读取/更新/删除）、待办管理、网页剪藏、笔记搜索、文件夹管理等基础操作。如需构建知识库或 Wiki，请使用 youdaonote-llm-wiki skill 而非本 skill。",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youdaonote",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lephix",
+      "features": [
+        "有道云笔记官方 skill，支持笔记 CRUD（创建/读取/更新/删除）、待办管理、网页剪藏、笔记搜索、文件夹管理等基础操作。如需构建知识库或 Wiki，请使用 youdaonote-llm."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youdaonote@1.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/308410?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youdaonote",
+      "url": "https://clawhub.ai/skills/youdaonote"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youdaonote",
+    "url": "https://clawhub.ai/skills/youdaonote",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youdaonote-1d58211d2d6bc719.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youdaonote@1.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-youdaonote-1.0.8.json",
+      "version": "1.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aaa38940627597f7dc0d3f7c73737d279c4f9c217bd2255b5bf90da6fddb1fef",
+      "artifactSizeBytes": 2485
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T00:29:59.447Z"
+}

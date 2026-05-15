@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18019,
+  "uuid": "skill-clawhub-market-global-snapshot",
+  "skillKey": "clawhub-market-global-snapshot",
+  "name": "Global Market Snapshot",
+  "summary": "Generate a structured global market snapshot report including major stock indices and commodities. Use when user asks for market data, stock market report, d...",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.market_global_snapshot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jimmy Botman",
+      "features": [
+        "Generate a structured global market snapshot report including major stock indices and commoditi.",
+        "Use when user asks for market data, stock market report, d..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/market-global-snapshot@0.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39128100?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "market-global-snapshot",
+      "url": "https://clawhub.ai/skills/market-global-snapshot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "market-global-snapshot",
+    "url": "https://clawhub.ai/skills/market-global-snapshot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/market-global-snapshot-9b816126d52b6826.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/market-global-snapshot@0.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-market-global-snapshot-0.1.5.json",
+      "version": "0.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:930825e0fdf40e70afaa56d7f0fb4ed3c42c5dc035f381fb132f145bb677a4d6",
+      "artifactSizeBytes": 2000
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T14:06:23.608Z"
+}

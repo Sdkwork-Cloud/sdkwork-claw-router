@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28303,
+  "uuid": "skill-clawhub-idx-market-data",
+  "skillKey": "clawhub-idx-market-data",
+  "name": "Idx Market Data",
+  "summary": "Memberikan data pasar saham Bursa Efek Indonesia (IDX) secara real-time dan historis melalui API GoAPI. Gunakan skill ini saat pengguna bertanya tentang harg...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.idx_market_data",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "angween",
+      "features": [
+        "Memberikan data pasar saham Bursa Efek Indonesia (IDX) secara real-time dan historis melalui AP.",
+        "Gunakan skill ini saat pengguna bertanya tentang harg..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/idx-market-data@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109887288?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "idx-market-data",
+      "url": "https://clawhub.ai/skills/idx-market-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "idx-market-data",
+    "url": "https://clawhub.ai/skills/idx-market-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/idx-market-data-a3bf74875ec7bfe4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/idx-market-data@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-idx-market-data-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d3c07b814f1a07361a31840970cd545c0d17d86e643e643f47e9f9c97b423e21",
+      "artifactSizeBytes": 2293
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T03:19:59.182Z"
+}

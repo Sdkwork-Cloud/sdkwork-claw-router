@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-style-publisher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_style_publisher",
+  "skill": {
+    "id": 68828,
+    "skillKey": "clawhub-wechat-style-publisher",
+    "name": "wechat-style-publisher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-style-publisher",
+    "url": "https://clawhub.ai/skills/wechat-style-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-style-publisher-ab39b6b73428dcd3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "支持多账号微信公众号发布，提供自定义文章主题、文章开头/结尾模板。当用户需要将带样式的文章发布到一个或多个微信公众号时使用此工具。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "web3aivc",
+      "userId": "s17beej6wn1e9syk7v82syazcd83q4q3",
+      "displayName": "web3aivc",
+      "image": "https://avatars.githubusercontent.com/u/122167631?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 551,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773301943206,
+      "changelog": "wechat-style-publisher v1.0.0 – Initial release\n\n- Enables publishing styled articles to one or more WeChat Official Accounts with independent account credentials.\n- Supports topic-based HTML themes, custom CSS overrides, and intro/outro HTML templates per article.\n- Allows importing templates and layouts from existing WeChat articles (via URL or HTML file).\n- Provides both Node.js and Python scripts for publishing and template importing.\n- Automates local image and cover uploads, CSS inlining (Node.js), and flexible configuration management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6ce5e62afa9a97e04b372f78b384ea227177b7d9f01edbaafc8fe5dae8dbcea7"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23678,
+  "uuid": "skill-clawhub-hootsuite",
+  "skillKey": "clawhub-hootsuite",
+  "name": "Hootsuite",
+  "summary": "Hootsuite integration. Manage Users, Teams. Use when the user wants to interact with Hootsuite data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hootsuite",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Hootsuite integration",
+        "Manage Users, Teams",
+        "Use when the user wants to interact with Hootsuite data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hootsuite@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hootsuite",
+      "url": "https://clawhub.ai/skills/hootsuite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hootsuite",
+    "url": "https://clawhub.ai/skills/hootsuite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hootsuite-bb56ce64d6ccc4a6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hootsuite@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-hootsuite-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aa4b71813c5788030198b8a38d83d069b4b9f23f1a46c8306cfa6d7249245506",
+      "artifactSizeBytes": 1796
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T20:51:28.836Z"
+}

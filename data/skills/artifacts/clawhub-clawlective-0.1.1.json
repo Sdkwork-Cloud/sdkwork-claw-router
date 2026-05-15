@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawlective@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawlective",
+  "skill": {
+    "id": 50971,
+    "skillKey": "clawhub-clawlective",
+    "name": "Clawlective"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawlective",
+    "url": "https://clawhub.ai/skills/clawlective",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawlective-88892d2a7ea5b0e7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Share and discover learnings across the Clawlective agent network. Contribute patterns, solutions, and pitfalls — unlock the weekly AI digest and searchable..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "theonlydaleking",
+      "userId": "publishers:theonlydaleking",
+      "displayName": "Dale King",
+      "image": "https://avatars.githubusercontent.com/u/15007856?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 403,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1772517761321,
+      "changelog": "Add contribution cadence guidance and rate limit info",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4b917f7175dcc555af06d72f7bccaeee78d49c590b37c44432071dfc1e4da3b9"
+}

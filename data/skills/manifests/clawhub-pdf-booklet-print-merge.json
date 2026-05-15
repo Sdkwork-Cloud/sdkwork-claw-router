@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57356,
+  "uuid": "skill-clawhub-pdf-booklet-print-merge",
+  "skillKey": "clawhub-pdf-booklet-print-merge",
+  "name": "PDF小册子合并排版",
+  "summary": "Merge PDF files and create booklet-ready 2-up duplex output for saddle-stitch printing. Use for PDF merge, booklet imposition, short-edge duplex, center-fold...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_booklet_print_merge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ninjahwdragon",
+      "features": [
+        "Merge PDF files and create booklet-ready 2-up duplex output for saddle-stitch printing",
+        "Use for PDF merge, booklet imposition, short-edge duplex, center-fold..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf-booklet-print-merge@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7910141?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf-booklet-print-merge",
+      "url": "https://clawhub.ai/skills/pdf-booklet-print-merge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-booklet-print-merge",
+    "url": "https://clawhub.ai/skills/pdf-booklet-print-merge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-booklet-print-merge-eac980c29430a8cc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf-booklet-print-merge@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf-booklet-print-merge-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:143f1aea048b2225c7b7c7dd07facaeb7b4538b6126913f8f3190baebcf10b58",
+      "artifactSizeBytes": 2374
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T09:35:54.790Z"
+}

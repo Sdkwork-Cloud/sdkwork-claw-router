@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72659,
+  "uuid": "skill-clawhub-ge",
+  "skillKey": "clawhub-ge",
+  "name": "Ge",
+  "summary": "提供通用电气（GE）历史、业务拆分、市场地位及核心竞争力的全面信息，助力投资与行业分析。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供通用电气（GE）历史、业务拆分、市场地位及核心竞争力的全面信息，助力投资与行业分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ge@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ge",
+      "url": "https://clawhub.ai/skills/ge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ge",
+    "url": "https://clawhub.ai/skills/ge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ge-309d20864f274b09.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ge@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ge-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6041c57b04c5cc23af0355e7822345411e08cca6d50b61c7d50c837cdc1e40d4",
+      "artifactSizeBytes": 2125
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T02:21:20.361Z"
+}

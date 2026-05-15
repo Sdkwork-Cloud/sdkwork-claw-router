@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68456,
+  "uuid": "skill-clawhub-regex-assistant",
+  "skillKey": "clawhub-regex-assistant",
+  "name": "RegexAssistant",
+  "summary": "帮助测试、调试和生成正则表达式，支持匹配测试、分组捕获、全文提取和替换操作。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.regex_assistant",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "crossallen",
+      "features": [
+        "帮助测试、调试和生成正则表达式，支持匹配测试、分组捕获、全文提取和替换操作。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/regex-assistant@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16713236?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "regex-assistant",
+      "url": "https://clawhub.ai/skills/regex-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "regex-assistant",
+    "url": "https://clawhub.ai/skills/regex-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/regex-assistant-6a0d43d59235bbf5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/regex-assistant@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-regex-assistant-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2247f6ac6a17d19abef8a34346256447806f7014a45b9bff17d1c4a46448f945",
+      "artifactSizeBytes": 2008
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T02:22:21.368Z"
+}

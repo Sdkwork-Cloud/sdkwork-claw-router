@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meituan@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meituan",
+  "skill": {
+    "id": 15426,
+    "skillKey": "clawhub-meituan",
+    "name": "Meituan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meituan",
+    "url": "https://clawhub.ai/skills/meituan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meituan-db36e7bd45191ce4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Help users make better Meituan ordering decisions from public merchant and delivery information. Use when the user wants to compare Meituan restaurants, judg..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 960,
+      "installsAllTime": 7,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774952522239,
+      "changelog": "Upgraded Meituan into an action-first ordering decision skill focused on whether an order is truly worth placing now.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4501048df532d4849d00b028f1b0b562e88f7729df748fac925039e7565d1305"
+}

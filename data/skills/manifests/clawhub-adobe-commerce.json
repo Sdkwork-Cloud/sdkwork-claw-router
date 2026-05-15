@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34710,
+  "uuid": "skill-clawhub-adobe-commerce",
+  "skillKey": "clawhub-adobe-commerce",
+  "name": "Adobe Commerce",
+  "summary": "Adobe Commerce integration. Manage data, records, and automate workflows. Use when the user wants to interact with Adobe Commerce data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adobe_commerce",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Adobe Commerce integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Adobe Commerce data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/adobe-commerce@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "adobe-commerce",
+      "url": "https://clawhub.ai/skills/adobe-commerce"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adobe-commerce",
+    "url": "https://clawhub.ai/skills/adobe-commerce",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adobe-commerce-b4d152f0964bdfc7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/adobe-commerce@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-adobe-commerce-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7e4fc8c7694327ea8edc66e1023a8a6ee402ddb08cd4c2f11fb8a7d74040e334",
+      "artifactSizeBytes": 1884
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:15:58.882Z"
+}

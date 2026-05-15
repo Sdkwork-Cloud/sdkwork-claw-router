@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9183,
+  "uuid": "skill-clawhub-clawbrowser",
+  "skillKey": "clawhub-clawbrowser",
+  "name": "Clawbrowser",
+  "summary": "Use when the agent needs to drive a browser through the Microsoft Playwright CLI (`playwright-cli`) for navigation, form interactions, screenshots, recordings, data extraction, session management, or debugging without loading a full MCP br.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawbrowser",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "te_za",
+      "features": [
+        "Use when the agent needs to drive a browser through the Microsoft Playwright CLI (`playwright-c.",
+        "It trains the agent on the CLI commands, snapshots, and session/config habits that make Playwri."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawbrowser@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/112280042?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawbrowser",
+      "url": "https://clawhub.ai/skills/clawbrowser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawbrowser",
+    "url": "https://clawhub.ai/skills/clawbrowser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawbrowser-ea0db72fa108bf72.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawbrowser@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawbrowser-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a8445a77e89133c84852d477dd9fe948e06620004fa1511047a728c6336f4667",
+      "artifactSizeBytes": 2094
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T17:53:55.498Z"
+}

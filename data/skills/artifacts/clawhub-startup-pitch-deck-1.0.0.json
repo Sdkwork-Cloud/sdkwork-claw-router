@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/startup-pitch-deck@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.startup_pitch_deck",
+  "skill": {
+    "id": 42007,
+    "skillKey": "clawhub-startup-pitch-deck",
+    "name": "Startup Pitch Deck"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "startup-pitch-deck",
+    "url": "https://clawhub.ai/skills/startup-pitch-deck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/startup-pitch-deck-8d37ff82f47f6628.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates structured startup pitch decks to outline business ideas, market fit, financials, and growth strategies for presentations or funding proposals."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jochoonhwan",
+      "userId": "s1759xggfr7af71g842gdc4dg183y1rx",
+      "displayName": "jochoonhwan",
+      "image": "https://avatars.githubusercontent.com/u/258758600?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774974246628,
+      "changelog": "- Initial release of the \"startup-pitch-deck\" skill.\n- Drafted SKILL.md with placeholders for description and key sections.\n- Included guidance on structuring the document for future completion.\n- Outlined resource directories: scripts, references, and assets, with instructions for appropriate use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d334cf9ff6508ad903b1ad77bee6cc28bf35f3f4d08db1bf3ee8f63f3259a925"
+}

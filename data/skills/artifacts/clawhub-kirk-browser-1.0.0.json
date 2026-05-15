@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kirk-browser@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kirk_browser",
+  "skill": {
+    "id": 38791,
+    "skillKey": "clawhub-kirk-browser",
+    "name": "Browser Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kirk-browser",
+    "url": "https://clawhub.ai/skills/kirk-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kirk-browser-caba7b88e95102ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browser automation using SkillBoss API Hub's web scraping capability to render web pages and extract clean, readable content."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kirkraman",
+      "userId": "s171c4e2zwz2yy69j6tp9xcfc184vnxz",
+      "displayName": "KirkRaman",
+      "image": "https://avatars.githubusercontent.com/u/255880392?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776853362848,
+      "changelog": "Initial release of kirk-browser skill.\n\n- Provides browser automation using SkillBoss API Hub for web scraping.\n- Supports rendering web pages and extracting clean, readable content.\n- Integrates with SkillBoss API's `/v1/pilot` endpoint.\n- CLI command: `skillboss browser read <url>` to fetch page text.\n- Requires SkillBoss API access and a valid API key.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:65354637d1f89106a2d6b5b90f07ed74f54dd6bbecd6dacf7eb6151590e13566"
+}

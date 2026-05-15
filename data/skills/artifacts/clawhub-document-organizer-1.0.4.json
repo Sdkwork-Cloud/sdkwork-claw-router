@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/document-organizer@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.document_organizer",
+  "skill": {
+    "id": 60529,
+    "skillKey": "clawhub-document-organizer",
+    "name": "文档整理技能 (document-organizer)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "document-organizer",
+    "url": "https://clawhub.ai/skills/document-organizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/document-organizer-943edd6faae637ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "支持批量将旧版 Office 文档（.doc/.xls）高质量转换为 Markdown 并保持目录结构与格式完整。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byteuser1977",
+      "userId": "publishers:byteuser1977",
+      "displayName": "byteuser1977",
+      "image": "https://avatars.githubusercontent.com/u/182427717?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 651,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1773328498960,
+      "changelog": "- 修复：移除对不存在的外部 convert-markdown 目录和脚本的依赖  \n- 修复：移除对特定路径虚拟环境的依赖  \n- 优化：直接使用 markitdown 命令行工具进行转换  \n- 优化：增加 markitdown 命令的自动检测逻辑",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2121a0ad1d6a9397f275c9b13e4268a8e056a38c7c62f2aa258b3190430b43a1"
+}

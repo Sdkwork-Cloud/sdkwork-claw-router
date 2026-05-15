@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lynkr@0.6.0",
+  "version": "0.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lynkr",
+  "skill": {
+    "id": 42700,
+    "skillKey": "clawhub-lynkr",
+    "name": "Lynkr AI Routing Proxy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lynkr",
+    "url": "https://clawhub.ai/skills/lynkr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lynkr-54f75800584c8a85.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Intelligent LLM routing proxy with complexity-based tier routing, agentic workflow detection, and multi-provider failover. Drop-in replacement for direct pro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vishalveerareddy123",
+      "userId": "publishers:vishalveerareddy123",
+      "displayName": "Vishal Veera Reddy",
+      "image": "https://avatars.githubusercontent.com/u/164256536?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.6.0",
+      "createdAt": 1774156283175,
+      "changelog": "Initial release - intelligent LLM routing with 12+ providers",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cd490817ce2439c11f2bef776b6b60b845e5d1b062fd55622a5d34f6716c1c34"
+}

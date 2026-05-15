@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37485,
+  "uuid": "skill-clawhub-binomial",
+  "skillKey": "clawhub-binomial",
+  "name": "Binomial",
+  "summary": "Binomial reference tool. Use when working with binomial in finance contexts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.binomial",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain1",
+      "features": [
+        "Binomial reference tool",
+        "Use when working with binomial in finance contexts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/binomial@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261107384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "binomial",
+      "url": "https://clawhub.ai/skills/binomial"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "binomial",
+    "url": "https://clawhub.ai/skills/binomial",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/binomial-3db0548b7d9c9641.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/binomial@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-binomial-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:54f251671fa68ce2186239a4e49b8ec13af1f5e362522555ced3a2cfe92be707",
+      "artifactSizeBytes": 1765
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T20:19:05.711Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/text-to-video-long-duration@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_video_long_duration",
+  "skill": {
+    "id": 46486,
+    "skillKey": "clawhub-text-to-video-long-duration",
+    "name": "Text To Video Long Duration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-video-long-duration",
+    "url": "https://clawhub.ai/skills/text-to-video-long-duration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-video-long-duration-a948317b6c587799.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate text prompts into long-form videos with this skill. Works with TXT, DOCX, PDF, SRT files up to 50MB. educators, marketers, content creators use it f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 125,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776446843934,
+      "changelog": "- Initial release of \"Text to Video Long Duration\" skill.\n- Generate long-form 1080p MP4 videos from text prompts or scripts (TXT, DOCX, PDF, SRT, up to 50MB).\n- Cloud-based workflow with automatic session/token setup; no local install needed.\n- Accepts video, audio, and image uploads for richer video compositions.\n- Includes error handling for file types, size limits, credits, and authentication.\n- Supports iterative editing, preview, and streamlined export with credit management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:700993d6e975351a7118f8d385b3c87290536b310f6c9c54929bcab700a6a35a"
+}

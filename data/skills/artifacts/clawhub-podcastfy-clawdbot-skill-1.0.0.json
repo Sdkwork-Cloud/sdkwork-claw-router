@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/podcastfy-clawdbot-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.podcastfy_clawdbot_skill",
+  "skill": {
+    "id": 52587,
+    "skillKey": "clawhub-podcastfy-clawdbot-skill",
+    "name": "Podcastfy Clawdbot Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "podcastfy-clawdbot-skill",
+    "url": "https://clawhub.ai/skills/podcastfy-clawdbot-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/podcastfy-clawdbot-skill-29267de7da93c2b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate an AI podcast (MP3) from one or more URLs using the open-source Podcastfy project. Use when the user says “make a podcast from this URL/article/vide..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "watermelon11",
+      "userId": "s17df19wxjdtv8p1000n1vgbv983kwnd",
+      "displayName": "nacy",
+      "image": "https://avatars.githubusercontent.com/u/28687015?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774246092152,
+      "changelog": "- Initial release of podcastfy-clawdbot skill.\n- Instantly generate a podcast-style MP3 audio summary from one or more URLs, articles, videos, or PDFs.\n- Uses Gemini for transcript generation and Edge TTS for human-like voices—no paid TTS required.\n- Built-in checks for valid MP3 output; falls back to Edge TTS if output is empty.\n- Output files are organized in local directories for audio and transcripts.\n- Provides setup and reliability tips, including best practices for automation and environment configuration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5d462e8ebc93668709611868b82fcc537536447c473825952901676b5ace5d38"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/critical-article-writer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.critical_article_writer",
+  "skill": {
+    "id": 9964,
+    "skillKey": "clawhub-critical-article-writer",
+    "name": "Critical Article Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "critical-article-writer",
+    "url": "https://clawhub.ai/skills/critical-article-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/critical-article-writer-db8ff15c1fddae71.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate draft articles, outlines, and editorial content matching a distinctive analytical, skeptical voice with sharp critical commentary, conversational tone, and strategic humor."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tomstools11",
+      "userId": "s17bm3wtrz765e4ey40n6zq4qx867krs",
+      "displayName": "TomsTools",
+      "image": "https://avatars.githubusercontent.com/u/167941621?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2722,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769386648043,
+      "changelog": "- Updated skill.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a6fa22e458c0d5960ad5036405ce752ddbeb42ca93d947d1b764f7382a21a3ee"
+}

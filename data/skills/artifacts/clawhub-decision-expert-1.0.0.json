@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/decision-expert@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.decision_expert",
+  "skill": {
+    "id": 28417,
+    "skillKey": "clawhub-decision-expert",
+    "name": "Decision Expert"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "decision-expert",
+    "url": "https://clawhub.ai/skills/decision-expert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/decision-expert-145dc55aae2e1a21.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A decision support skill that helps users analyze options, weigh trade-offs, and apply decision frameworks (SWOT, decision matrix, pros/cons, etc.) across va..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 316,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773237695551,
+      "changelog": "Initial release of Decision Expert — a comprehensive decision support skill.\n\n- Provides a CLI tool to analyze options and apply common decision frameworks (SWOT, decision matrix, pros/cons, etc.).\n- Supports structured decision-making for scenarios like shopping, career, investment, and daily life.\n- Includes interactive mode for guided workflows and scenario-specific commands.\n- Offers multiple output formats (Markdown, JSON, Table) for decision documentation.\n- Implements a modular architecture for extensibility and future enhancements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5750d64924020c190f167df77b19fc83deaf1e691118126958960fc6396bca10"
+}

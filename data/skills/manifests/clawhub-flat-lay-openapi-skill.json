@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56096,
+  "uuid": "skill-clawhub-flat-lay-openapi-skill",
+  "skillKey": "clawhub-flat-lay-openapi-skill",
+  "name": "AI Clothing Piece Generator – API-powered",
+  "summary": "AI flat-lay clothing generator — create professional flat-lay product images from a photo",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flat_lay_openapi_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sparkleMing",
+      "features": [
+        "AI flat-lay clothing generator — create professional flat-lay product images from a photo"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flat-lay-openapi-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38350996?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flat-lay-openapi-skill",
+      "url": "https://clawhub.ai/skills/flat-lay-openapi-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flat-lay-openapi-skill",
+    "url": "https://clawhub.ai/skills/flat-lay-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flat-lay-openapi-skill-09470a5b5361bdda.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flat-lay-openapi-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-flat-lay-openapi-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0fca8395501fa1e3f94fb37b38c1fbe38811755bb206977802303433b6725494",
+      "artifactSizeBytes": 2285
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T06:34:48.941Z"
+}

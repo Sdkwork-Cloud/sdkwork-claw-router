@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-dropshipping-sourcing@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_dropshipping_sourcing",
+  "skill": {
+    "id": 19328,
+    "skillKey": "clawhub-skill-dropshipping-sourcing",
+    "name": "Skill Dropshipping Sourcing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-dropshipping-sourcing",
+    "url": "https://clawhub.ai/skills/skill-dropshipping-sourcing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-dropshipping-sourcing-fd18cb447ff7ef32.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query CJ Dropshipping API v2.0 to source products and fetch details for catalog building. Use for CJ keyword search, pulling product records (SPU/SKU, images..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zero2ai-hub",
+      "userId": "s17a1b8dv4hc6x68q9m057m67n83ryrt",
+      "displayName": "Zero2Ai",
+      "image": "https://avatars.githubusercontent.com/u/244362887?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 601,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772305539822,
+      "changelog": "- No changes detected in this version.\n- Documentation and functionality remain the same as the previous release.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4ff898be92c06f578a35edf4972ce0a6b0a6f719f2e15c55e8d30ad723e8acdc"
+}

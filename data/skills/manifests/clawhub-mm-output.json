@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24240,
+  "uuid": "skill-clawhub-mm-output",
+  "skillKey": "clawhub-mm-output",
+  "name": "mm-output",
+  "summary": "Parse PDF/Markdown files into structured HTML posters with multi-modal output (PDF, PNG, DOCX, PPTX), or generate poster/slides images via Gemini image gener...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mm_output",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yuriYanZeXuan",
+      "features": [
+        "Parse PDF/Markdown files into structured HTML posters with multi-modal output (PDF, PNG, DOCX,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mm-output@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25718979?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mm-output",
+      "url": "https://clawhub.ai/skills/mm-output"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mm-output",
+    "url": "https://clawhub.ai/skills/mm-output",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mm-output-4dcc6177797ca9be.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mm-output@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mm-output-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3356234c0e2b8775fbdf4b281828acf8b2fe6f01c5315ab1aa58b74292c00b83",
+      "artifactSizeBytes": 2487
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T09:16:31.459Z"
+}

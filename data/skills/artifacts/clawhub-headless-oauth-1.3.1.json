@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/headless-oauth@1.3.1",
+  "version": "1.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.headless_oauth",
+  "skill": {
+    "id": 29721,
+    "skillKey": "clawhub-headless-oauth",
+    "name": "Headless OAuth"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "headless-oauth",
+    "url": "https://clawhub.ai/skills/headless-oauth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/headless-oauth-53bd333a6a6e64b1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Authorize any OAuth CLI on a headless server where the agent and the user are on separate machines. Use when a CLI tool requires OAuth login on a VPS or serv..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "igorivanter",
+      "userId": "s178kveqvwc6n4vwcg3c39wwbn846c8b",
+      "displayName": "Igor Ivanter",
+      "image": "https://avatars.githubusercontent.com/u/39959578?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 197,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.3.1",
+      "createdAt": 1775312902884,
+      "changelog": "Fix README: remove stale env var examples and bashrc persistence suggestion.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b7f7861c5c6667070028c0356f61b93905b78b41d2ebd5cad8c4143cf71ec5d7"
+}

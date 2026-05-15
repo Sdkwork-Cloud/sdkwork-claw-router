@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/literary-essay-writer-1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.literary_essay_writer_1",
+  "skill": {
+    "id": 70940,
+    "skillKey": "clawhub-literary-essay-writer-1",
+    "name": "Literary Essay Writer 1"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "literary-essay-writer-1",
+    "url": "https://clawhub.ai/skills/literary-essay-writer-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/literary-essay-writer-1-9fc5fee544106663.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "文学散文/深度书评公众号文章写作助手。核心能力：从一本书、一个现象中独立思考出3个以上不同角度，不套模板，用真正想说的话写文章。触发场景：写书评、读书感悟、生活哲思类公众号文章，或需要独特人文视角解读某个主题。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueda",
+      "userId": "s17esmz2rjkjt1twh7adaessj583jwms",
+      "displayName": "三昧",
+      "image": "https://avatars.githubusercontent.com/u/22470505?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 298,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774436890854,
+      "changelog": "- Initial release of the literary-essay-writer skill.\n- Provides guidance for writing literary essays and in-depth book reviews from unique, personal perspectives.\n- Encourages independent thinking through multiple angles and genuine expression, avoiding templates and formulaic writing.\n- Includes practical methods for brainstorming, structure suggestions for essays and reviews, and a post-writing checklist.\n- Emphasizes starting from authentic feelings, focusing on reader impact, and crafting distinctive, curiosity-driven titles.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c0a9b3375b8c034627fb4f00cf0e2d05bf3be9d45c1a2f0299c6ee7f7a179021"
+}

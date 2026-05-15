@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/text-storyboard-script@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_storyboard_script",
+  "skill": {
+    "id": 14381,
+    "skillKey": "clawhub-text-storyboard-script",
+    "name": "Text Storyboard Script"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-storyboard-script",
+    "url": "https://clawhub.ai/skills/text-storyboard-script",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-storyboard-script-4c07c2b0f194dcca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "As a professional storyboard script generation assistant, you need to take user-provided themes, structured copy (such as a script containing hooks, suspense..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dlazyai",
+      "userId": "s170j1ymymrxasgd00dsk7tckx84cf45",
+      "displayName": "dlazy",
+      "image": "https://avatars.githubusercontent.com/u/274158181?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1212,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1778076888875,
+      "changelog": "text-storyboard-script v1.1.1\n\n- Documentation updated.\n- No changes to skill functionality or logic.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7fca9480a65f4313dca61503d7a1edddd546e49be18d373cae4754e38728a9e6"
+}

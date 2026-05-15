@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15655,
+  "uuid": "skill-clawhub-telnyx-cli",
+  "skillKey": "clawhub-telnyx-cli",
+  "name": "Telnyx Cli",
+  "summary": "Telnyx API integration for Clawdbot. Send SMS/email/WhatsApp messages, manage phone numbers, query call logs, debug webhooks, and access your Telnyx account....",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.telnyx_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "teamtelnyx",
+      "features": [
+        "Telnyx API integration for Clawdbot",
+        "Send SMS/email/WhatsApp messages, manage phone numbers, query call logs, debug webhooks, and ac."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/telnyx-cli@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/176328014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "telnyx-cli",
+      "url": "https://clawhub.ai/skills/telnyx-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "telnyx-cli",
+    "url": "https://clawhub.ai/skills/telnyx-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/telnyx-cli-9eeed6249bed3a38.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/telnyx-cli@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-telnyx-cli-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9c7c3b64af5500855cec88931314c72006680c76d38d0d9bf43bf8669a96331e",
+      "artifactSizeBytes": 2190
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T19:37:46.780Z"
+}

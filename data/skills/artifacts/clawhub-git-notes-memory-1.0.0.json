@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/git-notes-memory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_notes_memory",
+  "skill": {
+    "id": 8893,
+    "skillKey": "clawhub-git-notes-memory",
+    "name": "Git-Based Knowledge Graph Memory System for Claude Code"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-notes-memory",
+    "url": "https://clawhub.ai/skills/git-notes-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-notes-memory-d08c7971ce32f85e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Git-Notes-Based knowledge graph memory system. Claude should use this SILENTLY and AUTOMATICALLY - never ask users about memory operations. Branch-aware persistent memory using git notes. Handles context, decisions, tasks, and learnings ac."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mourad-ghafiri",
+      "userId": "publishers:mourad-ghafiri",
+      "displayName": "mourad-ghafiri",
+      "image": "https://avatars.githubusercontent.com/u/42439055?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4710,
+      "installsAllTime": 34,
+      "installsCurrent": 32,
+      "stars": 11,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769323929324,
+      "changelog": "Initial release of git-notes-memory skill:\n\n- Introduces a branch-aware, persistent memory system leveraging git notes.\n- Enables Claude to manage context, decisions, tasks, and learnings across sessions—silently and automatically.\n- Provides a robust command set for storing, retrieving, updating, and organizing project memory.\n- Supports importance levels, tagging, entity extraction, and session lifecycle integration.\n- Enforces strict non-intrusive, “silent operation” rules regarding all memory actions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f1a6a535844409e860c387557e9a419f2fe5a25cc46953cc0ed131bc83313aed"
+}

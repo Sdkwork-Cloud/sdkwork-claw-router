@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26397,
+  "uuid": "skill-clawhub-grok-swarm",
+  "skillKey": "clawhub-grok-swarm",
+  "name": "Grok Swarm",
+  "summary": "Refactors code using Grok 4.20 multi-agent swarm to improve readability, maintain behavior, add modern patterns, and explain changes.",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grok_swarm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Billy Brenner",
+      "features": [
+        "Refactors code using Grok 4.20 multi-agent swarm to improve readability, maintain behavior, add."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/grok-swarm@1.0.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43256680?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "grok-swarm",
+      "url": "https://clawhub.ai/skills/grok-swarm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grok-swarm",
+    "url": "https://clawhub.ai/skills/grok-swarm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grok-swarm-013695ca5caf979b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/grok-swarm@1.0.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-grok-swarm-1.0.9.json",
+      "version": "1.0.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2189d6e9b7d8665c5ff3fe3a2f9579b3cf6240d4db442e68c22073b27470d35e",
+      "artifactSizeBytes": 1863
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T23:58:03.036Z"
+}

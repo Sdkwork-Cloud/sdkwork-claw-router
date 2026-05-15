@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64565,
+  "uuid": "skill-clawhub-customer-onboarding-guider",
+  "skillKey": "clawhub-customer-onboarding-guider",
+  "name": "customer-onboarding-guider",
+  "summary": "引导客户了解财资管理系统的对接开发测试流程。使用当客户询问：(1) 如何对接系统，(2) 开发测试流程是什么，(3) 上线步骤，(4) 需要做什么准备，(5) 对接周期多长时。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.customer_onboarding_guider",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JiangSong",
+      "features": [
+        "引导客户了解财资管理系统的对接开发测试流程。使用当客户询问：(1) 如何对接系统，(2) 开发测试流程是什么，(3) 上线步骤，(4) 需要做什么准备，(5) 对接周期多长时。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/customer-onboarding-guider@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36331854?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "customer-onboarding-guider",
+      "url": "https://clawhub.ai/skills/customer-onboarding-guider"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "customer-onboarding-guider",
+    "url": "https://clawhub.ai/skills/customer-onboarding-guider",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/customer-onboarding-guider-4312d85dd267b984.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/customer-onboarding-guider@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-customer-onboarding-guider-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:28a0ee9930edcc659e7e2f3efed21ba2887f394fc41095ce08f6f05d3681b5b5",
+      "artifactSizeBytes": 2536
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T12:15:58.374Z"
+}

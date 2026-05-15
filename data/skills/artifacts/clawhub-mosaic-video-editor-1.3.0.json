@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mosaic-video-editor@1.3.0",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mosaic_video_editor",
+  "skill": {
+    "id": 33075,
+    "skillKey": "clawhub-mosaic-video-editor",
+    "name": "Mosaic Video Editor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mosaic-video-editor",
+    "url": "https://clawhub.ai/skills/mosaic-video-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mosaic-video-editor-7acc168521723f46.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered video editing via the Mosaic API. Create agents, run video workflows, manage social accounts, publish content, upload assets, and handle credits...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kyle1373",
+      "userId": "s17e01symhrktwc68mf57ngckx83jh3a",
+      "displayName": "Kyle Wade",
+      "image": "https://avatars.githubusercontent.com/u/59634395?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 243,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.3.0",
+      "createdAt": 1774543977086,
+      "changelog": "Fix credits/billing flow docs, correct node_type endpoint path, add credit-blocked run handling workflow",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c076ee81b7cef34a1863882b3d1466d4d8f34d0081d8a776fd5b57041b583384"
+}

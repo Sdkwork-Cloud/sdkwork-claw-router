@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prediction-market-aggregator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prediction_market_aggregator",
+  "skill": {
+    "id": 15295,
+    "skillKey": "clawhub-prediction-market-aggregator",
+    "name": "Prediction Market Aggregator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prediction-market-aggregator",
+    "url": "https://clawhub.ai/skills/prediction-market-aggregator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prediction-market-aggregator-71ff2f0625414bf0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cross-market prediction market data aggregator. Covers Polymarket, Manifold, Metaculus, and Kalshi. Finds arbitrage between markets, tracks consensus drift,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jamierossouw",
+      "userId": "publishers:jamierossouw",
+      "displayName": "JamieRossouw",
+      "image": "https://avatars.githubusercontent.com/u/219507116?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1000,
+      "installsAllTime": 5,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771705259695,
+      "changelog": "Initial release: Unified, open-source prediction market data aggregator and arbitrage detection tool.\n\n- Aggregates and compares data across Polymarket, Manifold, Metaculus, and Kalshi.\n- Detects arbitrage opportunities and consensus drift between markets in real time.\n- Supports Polymarket CLOB integration with edge and counter-consensus detection.\n- Provides unified API response for cross-market analysis and alerts.\n- Open-source alternative to DomeAPI with migration guidance included.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0b46020b1e75a7f1aab3d932ba91b004ec2d779c3bc82a49cc35979375ac5460"
+}

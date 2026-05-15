@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18280,
+  "uuid": "skill-clawhub-weave",
+  "skillKey": "clawhub-weave",
+  "name": "Weave",
+  "summary": "Create crypto invoices and stablecoin invoices (USDC/USDT), generate payment quotes, and monitor invoice payment status with the Weave CLI.",
+  "version": "0.1.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weave",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aryan J",
+      "features": [
+        "Create crypto invoices and stablecoin invoices (USDC/USDT), generate payment quotes, and monito."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weave@0.1.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8263430?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weave",
+      "url": "https://clawhub.ai/skills/weave"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weave",
+    "url": "https://clawhub.ai/skills/weave",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weave-775e432bb7ff3e08.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weave@0.1.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-weave-0.1.6.json",
+      "version": "0.1.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8abab0d1c2d3dda9cb3f40dc13dd17f6404f926d818084582c8ce97d55e02c81",
+      "artifactSizeBytes": 1848
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T16:28:30.713Z"
+}

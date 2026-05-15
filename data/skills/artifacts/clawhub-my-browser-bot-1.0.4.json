@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/my-browser-bot@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_browser_bot",
+  "skill": {
+    "id": 29060,
+    "skillKey": "clawhub-my-browser-bot",
+    "name": "my-browser-bot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-browser-bot",
+    "url": "https://clawhub.ai/skills/my-browser-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-browser-bot-59f608038de15055.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browser automation CLI for AI agents. Use when the user needs to interact with websites, including navigating pages, filling forms, clicking buttons, taking..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "handongpu16",
+      "userId": "s17bb5v33a4f7pgyr4d3yb998983h371",
+      "displayName": "handongpu16",
+      "image": "https://avatars.githubusercontent.com/u/4207162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 310,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1773826264870,
+      "changelog": "- Updated installation instructions to use `pipx install mybrowser-skill` and added a step to download Chromium (`mybrowser-skill install`).\n- Added `browser_scroll_to_text --text \"Section 3\"` command to the Scroll section of essential commands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3e120f779f96f860975231b3b491169db6120d83c67fea2ac03f5438f9d9879d"
+}

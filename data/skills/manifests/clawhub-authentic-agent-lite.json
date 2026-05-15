@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60987,
+  "uuid": "skill-clawhub-authentic-agent-lite",
+  "skillKey": "clawhub-authentic-agent-lite",
+  "name": "Authentic Agent Lite",
+  "summary": "真实性增强技能（极简版），让 AI 少表演多执行",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.authentic_agent_lite",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "largetool",
+      "features": [
+        "真实性增强技能（极简版），让 AI 少表演多执行"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/authentic-agent-lite@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128457415?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "authentic-agent-lite",
+      "url": "https://clawhub.ai/skills/authentic-agent-lite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "authentic-agent-lite",
+    "url": "https://clawhub.ai/skills/authentic-agent-lite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/authentic-agent-lite-6e158df8dacefb81.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/authentic-agent-lite@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-authentic-agent-lite-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b93c6c25456182157b84d55b132bb9b3baa9f512733017b8ca75bdf23cdbc11a",
+      "artifactSizeBytes": 2263
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T04:36:50.483Z"
+}

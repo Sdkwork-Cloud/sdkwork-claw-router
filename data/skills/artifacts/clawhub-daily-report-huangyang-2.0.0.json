@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-report-huangyang@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_report_huangyang",
+  "skill": {
+    "id": 45842,
+    "skillKey": "clawhub-daily-report-huangyang",
+    "name": "Daily Report (HuangYang)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-report-huangyang",
+    "url": "https://clawhub.ai/skills/daily-report-huangyang",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-report-huangyang-80190406a796a3b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate structured daily reports for the user, summarizing completed tasks, ongoing work, pending items, and notable notes. Use when user asks for daily rep..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nopedijah",
+      "userId": "s17ah5dcehjfwwysxvagptw6wn840ne1",
+      "displayName": "nopedijah",
+      "image": "https://avatars.githubusercontent.com/u/269079192?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1775064490736,
+      "changelog": "Initial release v2.0.0 - Daily report generation with structured format and Chinese support",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d4f0f63646b3fd52736701775917da72f91c8293f54582ccd73a7bc10063576c"
+}

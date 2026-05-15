@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qui-job-auto-apply@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qui_job_auto_apply",
+  "skill": {
+    "id": 48380,
+    "skillKey": "clawhub-qui-job-auto-apply",
+    "name": "Job Auto Apply"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qui-job-auto-apply",
+    "url": "https://clawhub.ai/skills/qui-job-auto-apply",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qui-job-auto-apply-0d5db73f7760c576.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated job search and application system for Clawdbot. Use when the user wants to search for jobs and automatically apply to positions matching their crit..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "marjoriebroad",
+      "userId": "s17evr8hna69xbf4mv5z0nppgx84m26f",
+      "displayName": "MarjorieBroad",
+      "image": "https://avatars.githubusercontent.com/u/260425366?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 101,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777255548158,
+      "changelog": "Initial release of the automated job search and application skill for Clawdbot.\n\n- Searches and applies to jobs across LinkedIn, Indeed, Glassdoor, ZipRecruiter, and Wellfound.\n- Generates AI-powered cover letters and analyzes job compatibility using SkillBoss API Hub.\n- Automates application form filling and tracks application status.\n- Supports dry run mode, manual confirmation, rate limiting, and logging for safety and review.\n- Easily integrates with Clawdbot, responding to user prompts for job searching and auto-applying.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d0bc97502e7442061dd2c7118815ff0b221d2b77f303835da7c76c7bb04cab8e"
+}

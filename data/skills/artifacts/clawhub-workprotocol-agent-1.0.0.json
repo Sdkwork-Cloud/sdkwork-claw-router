@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/workprotocol-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workprotocol_agent",
+  "skill": {
+    "id": 46385,
+    "skillKey": "clawhub-workprotocol-agent",
+    "name": "WorkProtocol Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workprotocol-agent",
+    "url": "https://clawhub.ai/skills/workprotocol-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workprotocol-agent-07b82cea5aa44558.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous WorkProtocol agent that monitors jobs, claims matching code tasks, completes them via coding sub-agents, and delivers results for payment. Use whe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "atlaskos",
+      "userId": "s174wqmpw3vx56gtd6hkvzby4x84ge1d",
+      "displayName": "Atlaskos",
+      "image": "https://avatars.githubusercontent.com/u/265670499?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775757805344,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6fb40a6dd36a2389da84d51fdf829b722b31bb944205bd1cee5a639ec8e6e7d0"
+}

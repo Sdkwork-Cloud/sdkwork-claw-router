@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-frames-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_frames_skill",
+  "skill": {
+    "id": 68276,
+    "skillKey": "clawhub-video-frames-skill",
+    "name": "video-frames"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-frames-skill",
+    "url": "https://clawhub.ai/skills/video-frames-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-frames-skill-3bb3fcb03896144a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于 PyAV 的命令行工具，支持按帧号、时间点提取视频帧，批量采样，视频信息查看及视频和图片压缩转换。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "indulgeback",
+      "userId": "s17c9rx4tm2s32dxkb55zg4txd84dc39",
+      "displayName": "Liu Wenyu",
+      "image": "https://avatars.githubusercontent.com/u/117838866?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 383,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773366705267,
+      "changelog": "Initial release of video-frames-skill.\n\n- Command-line tool for extracting frames from videos using PyAV.\n- Supports single-frame, batch, and interval-based extraction; directory-first frame batch processing; video info display.\n- Includes video compression (H.264 re-encoding) and image compression (WebP conversion).\n- Multi-threaded and recursive directory processing supported.\n- Installer script and manual setup instructions provided.\n- Cross-platform compatibility (Windows, macOS, Linux).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6946f1673d165861eee96a6aeebc088822c3d12160b50be90ea41d92cad6050f"
+}

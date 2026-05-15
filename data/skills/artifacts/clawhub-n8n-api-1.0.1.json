@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/n8n-api@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.n8n_api",
+  "skill": {
+    "id": 9361,
+    "skillKey": "clawhub-n8n-api",
+    "name": "n8n API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "n8n-api",
+    "url": "https://clawhub.ai/skills/n8n-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/n8n-api-5ac9335ac50d0edb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Operate n8n via its public REST API from OpenClaw. Use for workflow management, executions, and automation tasks such as listing, creating, publishing, triggering, or troubleshooting. Works with both self-hosted n8n and n8n Cloud."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codedao12",
+      "userId": "s17ax1y7n44r8sjagk48sw25bx84nzpq",
+      "displayName": "codedao12",
+      "image": "https://avatars.githubusercontent.com/u/249323427?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3789,
+      "installsAllTime": 13,
+      "installsCurrent": 13,
+      "stars": 3,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769963165807,
+      "changelog": "- Added new documentation file: assets/n8n-api-endpoints.md.\n- SKILL.md now references the full endpoint list available in the new file.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:76972bb31fcf83a22402ed1aecb015347918baa06e9092e8d231fb667857645c"
+}

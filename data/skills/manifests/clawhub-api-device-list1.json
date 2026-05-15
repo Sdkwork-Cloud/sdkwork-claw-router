@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31295,
+  "uuid": "skill-clawhub-api-device-list1",
+  "skillKey": "clawhub-api-device-list1",
+  "name": "Closeli Open Device List Query",
+  "summary": "Closeli Device List Query API. Used to retrieve the device list under the current account and return basic information such as device name, MAC, and IMEI. Us...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_device_list1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CloseliOpenTeam",
+      "features": [
+        "Closeli Device List Query API",
+        "Used to retrieve the device list under the current account and return basic information such as."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/api-device-list1@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269688672?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "api-device-list1",
+      "url": "https://clawhub.ai/skills/api-device-list1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-device-list1",
+    "url": "https://clawhub.ai/skills/api-device-list1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-device-list1-542285672135a8ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/api-device-list1@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-api-device-list1-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7e83b696f9814314a28d0b825e511d30211b7d65f4cc6034d1bf55824432db53",
+      "artifactSizeBytes": 2564
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T06:25:04.786Z"
+}

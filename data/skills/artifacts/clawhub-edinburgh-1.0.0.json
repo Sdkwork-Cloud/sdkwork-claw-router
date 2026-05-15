@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/edinburgh@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edinburgh",
+  "skill": {
+    "id": 70903,
+    "skillKey": "clawhub-edinburgh",
+    "name": "Edinburgh"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edinburgh",
+    "url": "https://clawhub.ai/skills/edinburgh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edinburgh-a449d7560d2869d3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供爱丁堡的历史、产品服务、行业地位、全球布局和最新动态等详细信息与官方链接。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776224288349,
+      "changelog": "Initial release of the edinburgh skill.\n\n- 提供爱丁堡（Edinburgh）详细介绍，包括历史、核心业务和愿景\n- 展示主要产品线与服务范围\n- 分析行业地位与竞争力\n- 显示全球业务覆盖情况及分支机构\n- 提供新闻、产品发布及战略动态\n- 收录官方网站链接",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2b91fc5f464c78cbb9c2cf37b73c26d77ee9ebc75791ba1a1aabc06393c54987"
+}

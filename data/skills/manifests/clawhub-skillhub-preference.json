@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10974,
+  "uuid": "skill-clawhub-skillhub-preference",
+  "skillKey": "clawhub-skillhub-preference",
+  "name": "Skillhub Preference",
+  "summary": "Prefer `skillhub` for skill discovery/install/update, then fallback to `clawhub` when unavailable or no match. Use when users ask about skills, 插件, or capabi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skillhub_preference",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pcicq",
+      "features": [
+        "Prefer `skillhub` for skill discovery/install/update, then fallback to `clawhub` when unavailab.",
+        "Use when users ask about skills, 插件, or capabi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skillhub-preference@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12868654?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skillhub-preference",
+      "url": "https://clawhub.ai/skills/skillhub-preference"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skillhub-preference",
+    "url": "https://clawhub.ai/skills/skillhub-preference",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skillhub-preference-77ed82fcdee02092.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skillhub-preference@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skillhub-preference-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ee4d3e5e320dffb23a5fd1b7bd79c95304b5f233c05f988ec7eca640119aaf17",
+      "artifactSizeBytes": 2321
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T09:57:43.616Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/digital-product-advisor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.digital_product_advisor",
+  "skill": {
+    "id": 49835,
+    "skillKey": "clawhub-digital-product-advisor",
+    "name": "Digital Product Advisor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "digital-product-advisor",
+    "url": "https://clawhub.ai/skills/digital-product-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/digital-product-advisor-5e9d75baf9b5b612.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when helping a user choose consumer electronics products through source-aware market research, comparison, and recommendation. MVP focuses on Bluetooth e..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fina1ee",
+      "userId": "s171xwwjz71yph0tn49zw0v6y186b1g8",
+      "displayName": "Yuchen.Z",
+      "image": "https://avatars.githubusercontent.com/u/39509457?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 64,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778217305151,
+      "changelog": "Initial MVP release focused on Bluetooth earbuds advisory:\n\n- Provides region-, budget-, and use-case-specific buying recommendations for Bluetooth earbuds.\n- Collects, compares, and scores products using source-aware research in the user’s market.\n- Clarifies requirements (budget, region, use case) via minimal, high-impact questions.\n- Outputs clear Markdown reports with shortlist tables, scenario picks, tradeoffs, and direct product links.\n- Avoids generic or stale lists; always considers product availability, local price, and user context.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fcb4d0c1a1330e086073dfd1142715bc497abd91ad212979dae6b727adb78b7f"
+}

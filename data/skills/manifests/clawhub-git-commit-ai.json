@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60445,
+  "uuid": "skill-clawhub-git-commit-ai",
+  "skillKey": "clawhub-git-commit-ai",
+  "name": "git-commit-ai",
+  "summary": "根据暂存区 git diff 自动生成符合 Angular 规范的详细中英文 commit message，支持语言自动检测和参数指定。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_commit_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ZenoLeee",
+      "features": [
+        "根据暂存区 git diff 自动生成符合 Angular 规范的详细中英文 commit message，支持语言自动检测和参数指定。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/git-commit-ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65273396?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "git-commit-ai",
+      "url": "https://clawhub.ai/skills/git-commit-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-commit-ai",
+    "url": "https://clawhub.ai/skills/git-commit-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-commit-ai-4bec9dd91c3a6137.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/git-commit-ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-git-commit-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e04deebbe80276d6de0a859b29c1a44f373a9b7033a1ad29a5bc6df14f473b69",
+      "artifactSizeBytes": 2264
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T05:17:05.315Z"
+}

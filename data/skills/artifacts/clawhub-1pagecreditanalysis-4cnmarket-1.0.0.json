@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/1pagecreditanalysis-4cnmarket@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.1pagecreditanalysis_4cnmarket",
+  "skill": {
+    "id": 69264,
+    "skillKey": "clawhub-1pagecreditanalysis-4cnmarket",
+    "name": "1pagecreditanalysis-cn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "1pagecreditanalysis-4cnmarket",
+    "url": "https://clawhub.ai/skills/1pagecreditanalysis-4cnmarket",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/1pagecreditanalysis-4cnmarket-980c676e28d4dea6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供结构化、标准化的信用评估一页纸撰写框架，适用于金融分析师快速产出结论驱动、证据闭环的信用观点摘要，服务于投资决策与风险管理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xujuen",
+      "userId": "s179v8vzsyc16ascmd4px584fs84sct5",
+      "displayName": "BondClaw.AI",
+      "image": "https://avatars.githubusercontent.com/u/206630801?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776089238852,
+      "changelog": "信用分析一页纸 1.0.0 – 首次发布\n\n- 提供标准化、结构化的信用评估一页纸撰写框架\n- 包含核心理念、模板大纲及撰写流程，适用于金融分析师信用观点总结\n- 支持对城投及非城投主体的要点分析与量化风险提示\n- 强调数据权威性、结论驱动与证据闭环\n- 帮助用户输出结论明确、逻辑清晰的信用评估摘要",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ad03adb3fd4a777fad82cb0a8761fd12cf2be684d8a5e590c3d5b35c083bfa05"
+}

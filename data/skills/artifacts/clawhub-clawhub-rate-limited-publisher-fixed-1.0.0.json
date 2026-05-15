@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawhub-rate-limited-publisher-fixed@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_rate_limited_publisher_fixed",
+  "skill": {
+    "id": 26584,
+    "skillKey": "clawhub-clawhub-rate-limited-publisher-fixed",
+    "name": "Clawhub Rate Limited Publisher Fixed"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-rate-limited-publisher-fixed",
+    "url": "https://clawhub.ai/skills/clawhub-rate-limited-publisher-fixed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-rate-limited-publisher-fixed-5c3f883070e8dd0c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Queue and publish local skills to ClawHub with a strict 5-per-hour cap using the local clawhub CLI and host scheduler."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "52yuanchangxing",
+      "userId": "s178sqjkywrs4vbnfcrr7wx7f583gef5",
+      "displayName": "vx：17605205782",
+      "image": "https://avatars.githubusercontent.com/u/39086567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 364,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773461501864,
+      "changelog": "- Initial release of clawhub-rate-limited-publisher.\n- Queue and publish local skills to ClawHub with a strict limit of 5 publishes per hour.\n- Integrates with the local clawhub CLI and host scheduler (e.g., cron or systemd).\n- Provides a safe queue/runner and logs all publish attempts, marking them as published or failed.\n- Enforces safety rules for command execution and counts failed attempts toward the hourly limit.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ed79daa5d156773695417aa8187e7f01761f0afa4a802472a72b98dfaa3f4c08"
+}

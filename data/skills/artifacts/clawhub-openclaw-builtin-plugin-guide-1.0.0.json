@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-builtin-plugin-guide@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_builtin_plugin_guide",
+  "skill": {
+    "id": 72380,
+    "skillKey": "clawhub-openclaw-builtin-plugin-guide",
+    "name": "内置插件使用说明/手册"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-builtin-plugin-guide",
+    "url": "https://clawhub.ai/skills/openclaw-builtin-plugin-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-builtin-plugin-guide-ef52f43774e90d81.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询 OpenClaw 的内置插件清单、当前启用或禁用的插件列表，以及单个插件的详细说明。适用于用户想看全部内置插件、启用状态、禁用状态、插件详情、插件说明文档时。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "henryczq",
+      "userId": "s17e8ps3zhwtzvkkyrkv0x5rs983gj2c",
+      "displayName": "henryczq",
+      "image": "https://avatars.githubusercontent.com/u/5507181?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774613788159,
+      "changelog": "Initial release of openclaw-builtin-plugin-guide.\n\n- Provides commands to list all built-in OpenClaw plugins.\n- Supports querying currently enabled or disabled plugins.\n- Allows inspection of detailed information about individual plugins.\n- Prioritizes reference documentation, CLI inspection, and repository docs for plugin details.\n- Includes example usage for quick start.\n- Requires the openclaw and python binaries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1ff86cb612b1084ee24caeeff8a90730f10bdd3f6b782369d7f565245ed7a54a"
+}

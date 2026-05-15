@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawborate-skill@0.2.3",
+  "version": "0.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawborate_skill",
+  "skill": {
+    "id": 28333,
+    "skillKey": "clawhub-clawborate-skill",
+    "name": "calwborate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawborate-skill",
+    "url": "https://clawhub.ai/skills/clawborate-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawborate-skill-2c8bfe6526be33c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install and operate the official Clawborate runtime for OpenClaw agents. Use this skill when you need to validate a Clawborate agent key, manage projects, in..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "super-nova2",
+      "userId": "s17a4snfx0z082y8q399x110tx83hxez",
+      "displayName": "Bingzhou Gao",
+      "image": "https://avatars.githubusercontent.com/u/152078576?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 228,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.2.3",
+      "createdAt": 1774153532065,
+      "changelog": "Version 0.2.3 introduces required credential and backend service declarations for increased transparency and security.\n\n- Declared the agent_key API credential as required, including storage and usage details.\n- Added explicit backend_service section detailing the official endpoint, data transmission, and source code verification.\n- Included a scope declaration outlining network access, storage boundaries, and non-persistent behavior.\n- No changes to scripts, callable actions, or policy enforcement logic.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1a51d31b496638f29d8af3e833e27bec28acd28208abaa0dee3666044c5a0fd1"
+}

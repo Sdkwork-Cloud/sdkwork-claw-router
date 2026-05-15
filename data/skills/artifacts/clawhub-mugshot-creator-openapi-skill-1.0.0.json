@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mugshot-creator-openapi-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mugshot_creator_openapi_skill",
+  "skill": {
+    "id": 56342,
+    "skillKey": "clawhub-mugshot-creator-openapi-skill",
+    "name": "Mugshot Generator – Create Realistic Mugshots from Your Photo Instantly – API-powered"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mugshot-creator-openapi-skill",
+    "url": "https://clawhub.ai/skills/mugshot-creator-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mugshot-creator-openapi-skill-993df073538991e4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI mugshot creator — generate a police-style mugshot photo from a portrait"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkleming",
+      "userId": "s173eywkn9gkx5va9p2tb6kh5h843s3s",
+      "displayName": "sparkleMing",
+      "image": "https://avatars.githubusercontent.com/u/38350996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 205,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776691608741,
+      "changelog": "- Initial release of mugshot-creator-openapi-skill.\n- Generate police-style mugshot photos from portrait images using WeShop OpenAPI.\n- Includes secure API key handling (WESHOP_API_KEY) and HTTPS access requirements.\n- Supports single image input, custom mugshot instructions, and batch image generation.\n- Endpoints for run management and image upload are documented.\n- Results are available via polling run status until completion.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4333c754fcd5dc7bdfc5019e3f8693c9c7d99be07db30917b15695da5e01ca5c"
+}

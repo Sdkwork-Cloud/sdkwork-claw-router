@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27906,
+  "uuid": "skill-clawhub-flowfi",
+  "skillKey": "clawhub-flowfi",
+  "name": "FlowFi",
+  "summary": "REST API instructions for FlowFi—authorization, smart accounts, workflows (AI generate, edit, deploy, undeploy, delete, pause, resume, stop), execution (list...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flowfi",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "devarogundade",
+      "features": [
+        "REST API instructions for FlowFi—authorization, smart accounts, workflows (AI generate, edit, d."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flowfi@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81397790?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flowfi",
+      "url": "https://clawhub.ai/skills/flowfi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flowfi",
+    "url": "https://clawhub.ai/skills/flowfi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flowfi-7975edd14767317e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flowfi@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-flowfi-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d36c8a92802f52031767c22edceef386f8f229cbca0372272f7a288b34625574",
+      "artifactSizeBytes": 2381
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T11:43:41.313Z"
+}

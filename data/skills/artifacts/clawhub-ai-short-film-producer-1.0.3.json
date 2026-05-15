@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-short-film-producer@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_short_film_producer",
+  "skill": {
+    "id": 62699,
+    "skillKey": "clawhub-ai-short-film-producer",
+    "name": "AI短剧制作助手 | AI Short Film Producer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-short-film-producer",
+    "url": "https://clawhub.ai/skills/ai-short-film-producer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-short-film-producer-2fde9dac7fe89ed1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI短剧制作助手 | AI Short Film Producer — 低成本AI短剧/短片全流程制作技能。使用Grok Imagine生成视频镜头、TTS生成配音，配合FFmpeg+Python本地合成。适用于从零制作AI短片、短视频、短剧EP、预告片等场景。包含完整的分镜脚本创作、视频生成、配音生成、音频驱动..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hitjcl",
+      "userId": "s17fcraf4fka3zh3rs6gjkpky983gfj1",
+      "displayName": "寒武纪智能Cambrian Intelligence",
+      "image": "https://avatars.githubusercontent.com/u/17725003?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 125,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1777548197316,
+      "changelog": "标题改为中英文；移除外部链接和具体定价避免安全误报",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fb322cdbb12bdfc2b2d2564ab1fc9b78288a5918d1ed9c431ac14a0f74bdb6ed"
+}

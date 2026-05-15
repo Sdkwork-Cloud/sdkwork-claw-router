@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/media-processor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.media_processor",
+  "skill": {
+    "id": 58485,
+    "skillKey": "clawhub-media-processor",
+    "name": "Media Processor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "media-processor",
+    "url": "https://clawhub.ai/skills/media-processor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/media-processor-a21d7e7d54156360.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "音视频处理器 - 企业级多媒体内容处理工具 | Media Processor - Enterprise multimedia content processing"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kaiyuelv",
+      "userId": "s171c2g5qpr0rdyra8xbm4srbh84mjjm",
+      "displayName": "Lv Lancer",
+      "image": "https://avatars.githubusercontent.com/u/29176686?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 278,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773841605497,
+      "changelog": "Initial release: Enterprise multimedia processing with FFmpeg",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c8e0ec0425c330c89ca5dbefce4c3ece874342f0342fe6d90e65ec3af08e2937"
+}

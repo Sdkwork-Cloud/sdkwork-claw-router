@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35189,
+  "uuid": "skill-clawhub-reference-docs",
+  "skillKey": "clawhub-reference-docs",
+  "name": "Reference Docs",
+  "summary": "Reference documentation patterns for API and symbol documentation. Use when writing reference docs, API docs, parameter tables, or technical specifications....",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reference_docs",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kevin Anderson",
+      "features": [
+        "Reference documentation patterns for API and symbol documentation",
+        "Use when writing reference docs, API docs, parameter tables, or technical specifications...."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reference-docs@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17010022?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reference-docs",
+      "url": "https://clawhub.ai/skills/reference-docs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reference-docs",
+    "url": "https://clawhub.ai/skills/reference-docs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reference-docs-c7d5f178470792e9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reference-docs@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-reference-docs-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:24759dc4891fac2e0f7da7e01752db1baa1549b4235bc0dabc848eb48ffc7c33",
+      "artifactSizeBytes": 2210
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T04:11:07.520Z"
+}

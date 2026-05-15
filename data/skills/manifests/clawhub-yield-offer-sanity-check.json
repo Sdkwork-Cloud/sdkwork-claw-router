@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46388,
+  "uuid": "skill-clawhub-yield-offer-sanity-check",
+  "skillKey": "clawhub-yield-offer-sanity-check",
+  "name": "Yield Offer Sanity Check",
+  "summary": "A checklist skill that evaluates whether a yield, staking, or earn offer is reasonable or suspicious. Use when the user encounters a yield promotion. Prompt-...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yield_offer_sanity_check",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "A checklist skill that evaluates whether a yield, staking, or earn offer is reasonable or suspi.",
+        "Use when the user encounters a yield promotion",
+        "Prompt-..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yield-offer-sanity-check@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yield-offer-sanity-check",
+      "url": "https://clawhub.ai/skills/yield-offer-sanity-check"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yield-offer-sanity-check",
+    "url": "https://clawhub.ai/skills/yield-offer-sanity-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yield-offer-sanity-check-f53596938bad784c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yield-offer-sanity-check@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yield-offer-sanity-check-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ec5981fc77ae14dbbd4fca352ea00e7743429bcbb5174b43ff14bc3d1784672e",
+      "artifactSizeBytes": 2467
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T00:40:54.151Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63801,
+  "uuid": "skill-clawhub-smart-report-gen",
+  "skillKey": "clawhub-smart-report-gen",
+  "name": "Daily Report Generator",
+  "summary": "AI全自动生成日报、周报、月报——30秒搞定你30分钟的工作。零输入，自动从工作记忆和日志中提炼成果，支持日报→周报→月报逐级汇总。输出飞书卡片、Markdown、纯文本，7种报告模板覆盖全部场景。触发词：日报、周报、月报、daily report、weekly report、monthly report、今天做...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_report_gen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wskflf",
+      "features": [
+        "AI全自动生成日报、周报、月报——30秒搞定你30分钟的工作。零输入，自动从工作记忆和日志中提炼成果，支持日报→周报→月报逐级汇总。输出飞书卡片、Markdown、纯文本，7种报告模板覆盖全."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-report-gen@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/277415768?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-report-gen",
+      "url": "https://clawhub.ai/skills/smart-report-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-report-gen",
+    "url": "https://clawhub.ai/skills/smart-report-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-report-gen-6caafe9d5e119666.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-report-gen@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-report-gen-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:790561ccdd5117cd25c8ef7879dc4a9bbdf505cb298df133142192a3873568e2",
+      "artifactSizeBytes": 2759
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T00:08:42.420Z"
+}

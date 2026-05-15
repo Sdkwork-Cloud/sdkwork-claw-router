@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35344,
+  "uuid": "skill-clawhub-bootstrap-review",
+  "skillKey": "clawhub-bootstrap-review",
+  "name": "Bootstrap Review",
+  "summary": "Review an agent workspace's boot files (AGENTS.md, USER.md, SOUL.md, MEMORY.md, IDENTITY.md, TOOLS.md, and optional HEARTBEAT.md) against registry-backed con...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bootstrap_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Greg Tysick",
+      "features": [
+        "Review an agent workspace's boot files (AGENTS.md, USER.md, SOUL.md, MEMORY.md, IDENTITY.md, TO."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bootstrap-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31392616?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bootstrap-review",
+      "url": "https://clawhub.ai/skills/bootstrap-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bootstrap-review",
+    "url": "https://clawhub.ai/skills/bootstrap-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bootstrap-review-1fa21ee334a9dd77.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bootstrap-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bootstrap-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:21cfeb6e857ff1d1fa16d851a979ab5b22b93bfbd889ad412ae215dd7b997993",
+      "artifactSizeBytes": 2598
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T03:49:55.792Z"
+}

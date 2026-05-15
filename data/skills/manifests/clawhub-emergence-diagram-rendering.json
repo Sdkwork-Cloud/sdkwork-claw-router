@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45606,
+  "uuid": "skill-clawhub-emergence-diagram-rendering",
+  "skillKey": "clawhub-emergence-diagram-rendering",
+  "name": "Render Academic Diagram Images from Code",
+  "summary": "High-fidelity diagram generation (Mermaid, D2, Graphviz) for autonomous agents. Supports local-first rendering and persistent run history.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.emergence_diagram_rendering",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "emergencescience",
+      "features": [
+        "High-fidelity diagram generation (Mermaid, D2, Graphviz) for autonomous agents",
+        "Supports local-first rendering and persistent run history."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/emergence-diagram-rendering@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264674637?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "emergence-diagram-rendering",
+      "url": "https://clawhub.ai/skills/emergence-diagram-rendering"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "emergence-diagram-rendering",
+    "url": "https://clawhub.ai/skills/emergence-diagram-rendering",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/emergence-diagram-rendering-2f3c352bada91c95.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/emergence-diagram-rendering@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-emergence-diagram-rendering-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f857095f7d47ed5179d20cb02ce2f97fd5816a245a80cbe257133774d4c7d43d",
+      "artifactSizeBytes": 2549
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T05:31:29.038Z"
+}

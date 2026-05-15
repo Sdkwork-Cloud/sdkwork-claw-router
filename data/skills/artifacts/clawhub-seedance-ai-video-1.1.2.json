@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seedance-ai-video@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seedance_ai_video",
+  "skill": {
+    "id": 31960,
+    "skillKey": "clawhub-seedance-ai-video",
+    "name": "Seedance 2.0 — AI Video by ByteDance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seedance-ai-video",
+    "url": "https://clawhub.ai/skills/seedance-ai-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seedance-ai-video-4eb1bcaefb4e0256.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate AI videos using ByteDance's Seedance 1.5 Pro — a native audio-visual joint generation model with cinematic camera control, multi-language lip-sync,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xixihhhh",
+      "userId": "s178tcr2rphfrfg0hgzrtz7bs183h25f",
+      "displayName": "MikeWang",
+      "image": "https://avatars.githubusercontent.com/u/60566571?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 930,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 3,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1773808054060,
+      "changelog": "## seedance-ai-video v1.1.2\n\n- Added a Python script (`scripts/generate_video.py`) to support video generation from the command line, with no external dependencies required.\n- Updated documentation to include setup and usage instructions for the new script, including model listing, text-to-video, and image-to-video examples.\n- Introduced a `metadata.openclaw.requires.env` field in the manifest for clear API key requirements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5bf0121a1cd40e39627f1ef8845bc50dd950ca60d2cdee511c6997f5afd9ad49"
+}

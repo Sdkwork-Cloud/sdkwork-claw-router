@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/r-ggplot-quickplot@3.1.0",
+  "version": "3.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.r_ggplot_quickplot",
+  "skill": {
+    "id": 62354,
+    "skillKey": "clawhub-r-ggplot-quickplot",
+    "name": "R ggplot Quickplot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "r-ggplot-quickplot",
+    "url": "https://clawhub.ai/skills/r-ggplot-quickplot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/r-ggplot-quickplot-96540dd1fe8e620c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "上传 CSV 数据文件，自动生成 9 种常用 ggplot2 图表（散点图、柱状图、箱线图、折线图、直方图、分面图等）。零代码可视化，支持 Docker/Singularity 免安装运行。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kenthompson2088",
+      "userId": "s172hjym9vrw2gnv5yxwgzxec183q932",
+      "displayName": "kenthompson2088",
+      "image": "https://avatars.githubusercontent.com/u/189254864?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 247,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "3.1.0",
+      "createdAt": 1774146241802,
+      "changelog": "优化图表检测逻辑，支持任意列名的CSV数据；改进通用数据兼容性",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d1931b6acf038f2e2e83666c9c7390e13ccf36eca2de8efc18ea5fe04ebf1f2d"
+}

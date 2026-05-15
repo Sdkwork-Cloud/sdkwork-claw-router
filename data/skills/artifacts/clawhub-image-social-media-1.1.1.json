@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-social-media@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_social_media",
+  "skill": {
+    "id": 14289,
+    "skillKey": "clawhub-image-social-media",
+    "name": "Image Social Media"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-social-media",
+    "url": "https://clawhub.ai/skills/image-social-media",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-social-media-508c54aca4bdfc93.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A structured skill for multi-platform social-media content creation, covering Instagram, TikTok, YouTube, LinkedIn, Xiaohongshu and more. Outputs satisfy eac..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dlazyai",
+      "userId": "s170j1ymymrxasgd00dsk7tckx84cf45",
+      "displayName": "dlazy",
+      "image": "https://avatars.githubusercontent.com/u/274158181?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1228,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1778076831100,
+      "changelog": "- Documentation updated; no code or functional changes.\n- Minor version bump to 1.1.1 for clarity.\n- No user-facing changes in workflow or features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6298efe860cafac5e1c932c71827c38140c84be6de2e75032f1061bea15b4ade"
+}

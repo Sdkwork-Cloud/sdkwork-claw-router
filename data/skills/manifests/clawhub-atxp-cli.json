@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11518,
+  "uuid": "skill-clawhub-atxp-cli",
+  "skillKey": "clawhub-atxp-cli",
+  "name": "Atxp",
+  "summary": "Agent wallet, identity, and paid tools in one package. Register an agent, fund it via Stripe or USDC, then use the balance for web search, AI image generatio...",
+  "version": "1.21.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.atxp_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "R-M-Naveen",
+      "features": [
+        "Agent wallet, identity, and paid tools in one package",
+        "Register an agent, fund it via Stripe or USDC, then use the balance for web search, AI image ge."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/atxp-cli@1.21.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/243160589?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "atxp-cli",
+      "url": "https://clawhub.ai/skills/atxp-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "atxp-cli",
+    "url": "https://clawhub.ai/skills/atxp-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/atxp-cli-7cb3b0075bacaf22.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/atxp-cli@1.21.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-atxp-cli-1.21.1.json",
+      "version": "1.21.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:02440c30ef0613987c003acd89952e95c1963d0522b17abde2819bf5b1c4f19b",
+      "artifactSizeBytes": 2217
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T16:35:36.430Z"
+}

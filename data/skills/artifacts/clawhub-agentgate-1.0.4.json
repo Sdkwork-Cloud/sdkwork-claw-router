@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentgate@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentgate",
+  "skill": {
+    "id": 14356,
+    "skillKey": "clawhub-agentgate",
+    "name": "Agentgate Clawhub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentgate",
+    "url": "https://clawhub.ai/skills/agentgate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentgate-f65a36938ea9327f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "API gateway for personal data with human-in-the-loop write approval. Connects agents to GitHub, Bluesky, Google Calendar, Home Assistant, and more — all thro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "monteslu",
+      "userId": "publishers:monteslu",
+      "displayName": "Luis Montes",
+      "image": "https://avatars.githubusercontent.com/u/423800?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1510,
+      "installsAllTime": 8,
+      "installsCurrent": 7,
+      "stars": 2,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1771550356958,
+      "changelog": "Remove fetch-and-write skill install instructions; point to docs instead",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a59a260faf5203ef0d2fbb7189fb467e6c507d72d54f32511be784d829359310"
+}

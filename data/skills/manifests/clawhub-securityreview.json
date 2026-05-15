@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10949,
+  "uuid": "skill-clawhub-securityreview",
+  "skillKey": "clawhub-securityreview",
+  "name": "Security code review",
+  "summary": "Conduct thorough security audits of source code by identifying vulnerabilities such as hardcoded secrets, access control flaws, injection risks, insecure dat...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.securityreview",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kylehuan",
+      "features": [
+        "Conduct thorough security audits of source code by identifying vulnerabilities such as hardcode."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/securityreview@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11254438?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "securityreview",
+      "url": "https://clawhub.ai/skills/securityreview"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "securityreview",
+    "url": "https://clawhub.ai/skills/securityreview",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/securityreview-4233016f32e85475.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/securityreview@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-securityreview-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9c3d7dd030606a25164abc998b8d4ded822728663ae9fae25bd20530dcc3201f",
+      "artifactSizeBytes": 2573
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T08:21:55.480Z"
+}

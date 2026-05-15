@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19370,
+  "uuid": "skill-clawhub-openclaw-diagnostics",
+  "skillKey": "clawhub-openclaw-diagnostics",
+  "name": "OpenClaw Diagnostics",
+  "summary": "Diagnoses and troubleshoots OpenClaw config, channel, group message, cron job, and authentication issues using logs and built-in knowledge base.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_diagnostics",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cooperun",
+      "features": [
+        "Diagnoses and troubleshoots OpenClaw config, channel, group message, cron job, and authenticati."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-diagnostics@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37776768?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-diagnostics",
+      "url": "https://clawhub.ai/skills/openclaw-diagnostics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-diagnostics",
+    "url": "https://clawhub.ai/skills/openclaw-diagnostics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-diagnostics-041e89fbe0053923.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-diagnostics@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-diagnostics-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:03408772f03778bbcd11360d44966b75e407bb929a1571cc8a8b4ebfad8f1eea",
+      "artifactSizeBytes": 2025
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T01:57:14.551Z"
+}

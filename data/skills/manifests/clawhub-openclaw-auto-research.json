@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60100,
+  "uuid": "skill-clawhub-openclaw-auto-research",
+  "skillKey": "clawhub-openclaw-auto-research",
+  "name": "Auto Research Pipeline",
+  "summary": "OpenClaw 原生的自动化研究 pipeline。从一个研究 topic 出发，经过 23 个 stage 产出完整论文。 每个 Phase 由独立 sub-agent 执行（context 隔离），Phase 间通过文件系统传递产出。 触发词：Research X、跑研究、文献调研、写论文、研究 pipel...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_auto_research",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lixiang1076",
+      "features": [
+        "OpenClaw 原生的自动化研究 pipeline。从一个研究 topic 出发，经过 23 个 stage 产出完整论文。 每个 Phase 由独立 sub-agent 执行（conte."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-auto-research@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34058366?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-auto-research",
+      "url": "https://clawhub.ai/skills/openclaw-auto-research"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-auto-research",
+    "url": "https://clawhub.ai/skills/openclaw-auto-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-auto-research-3048445a2a9ffd74.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-auto-research@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-auto-research-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7a0702b5039916d28a952c878d3c34a365ff7b5012f616b76fd1c09016e6a427",
+      "artifactSizeBytes": 2347
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T11:03:36.276Z"
+}

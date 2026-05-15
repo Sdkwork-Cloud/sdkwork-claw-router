@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/astra-docker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.astra_docker",
+  "skill": {
+    "id": 16519,
+    "skillKey": "clawhub-astra-docker",
+    "name": "Astra Docker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "astra-docker",
+    "url": "https://clawhub.ai/skills/astra-docker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/astra-docker-fe0d30d52a5ed584.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with Astra's Docker container workspace by executing commands and reading or writing files at /workspace inside the astra-env container."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "walniek",
+      "userId": "publishers:walniek",
+      "displayName": "walniek",
+      "image": "https://avatars.githubusercontent.com/u/219038366?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 855,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771441391586,
+      "changelog": "- Initial release of astra-docker skill.\n- Enables executing commands, reading, and writing files inside Astra's Docker container workspace at /workspace.\n- Provides usage instructions for accessing the virtual environment using the bash tool.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ee3d50344dcee7c84dda18b63489bf3d1141d9520c1234a99745c9fbb424a33b"
+}

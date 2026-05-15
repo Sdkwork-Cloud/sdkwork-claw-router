@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paper-architecture-diagram@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_architecture_diagram",
+  "skill": {
+    "id": 65622,
+    "skillKey": "clawhub-paper-architecture-diagram",
+    "name": "paper-architecture-diagram"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-architecture-diagram",
+    "url": "https://clawhub.ai/skills/paper-architecture-diagram",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-architecture-diagram-b69fcfb1f2fe4668.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动化处理本地医学图像分割论文，提取结构解析与绘图提示，严格按步骤保存结果至指定文本文件。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "m1ss-cell",
+      "userId": "s178cp9zkbqrctdhhywqem60p584awhv",
+      "displayName": "m1ss-cell",
+      "image": "https://avatars.githubusercontent.com/u/245515589?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775993708580,
+      "changelog": "- Initial release of the paper-architecture-diagram skill.\n- Strict step-by-step workflow for parsing medical image segmentation papers and generating diagram prompts.\n- Enforces file upload, prompt input, and result extraction strictly via MCP browser automation.\n- Adds critical rules to ensure only successful file writing marks task completion; prohibits skipping or ending at intermediate steps.\n- Clearly defines local file paths for input and output; all processing is performed locally and tracked stepwise.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5daf90ab44278b0c53d6c4922697254595378f6e39a906e4244ad689baf5ef4e"
+}

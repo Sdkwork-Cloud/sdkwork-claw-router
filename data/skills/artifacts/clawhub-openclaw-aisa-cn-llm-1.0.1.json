@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-aisa-cn-llm@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_aisa_cn_llm",
+  "skill": {
+    "id": 14749,
+    "skillKey": "clawhub-openclaw-aisa-cn-llm",
+    "name": "One API key for Chinese AI models. Route to Qwen, Deepseek"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-aisa-cn-llm",
+    "url": "https://clawhub.ai/skills/openclaw-aisa-cn-llm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-aisa-cn-llm-f3bc0893678c9b49.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "China LLM Gateway - Unified interface for Chinese LLMs including Qwen, DeepSeek, GLM, Baichuan. OpenAI compatible, one API Key for all models."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chaimengphp",
+      "userId": "s176gjzd7rb2en9j7fcxwyp5qs83gbwb",
+      "displayName": "chaimengphp",
+      "image": "https://avatars.githubusercontent.com/u/18716845?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1128,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773813948750,
+      "changelog": "Version 1.0.1 of openclaw-aisa-cn-llm\n\n- No file changes detected; all functionality and documentation remain the same.\n- No updates, fixes, or new features introduced in this version.\n- The changelog reflects that this release is functionally identical to the previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ba4ef85ac7a96faa71413a9015a5970ff9279d9b155b35588d4d265568f8cf36"
+}

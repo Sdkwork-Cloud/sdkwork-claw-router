@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71343,
+  "uuid": "skill-clawhub-volc-image",
+  "skillKey": "clawhub-volc-image",
+  "name": "火山引擎图片生成",
+  "summary": "火山引擎图像生成 - 使用火山引擎方舟API生成图片并下载",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.volc_image",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "magieSky",
+      "features": [
+        "火山引擎图像生成",
+        "使用火山引擎方舟API生成图片并下载"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/volc-image@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4121450?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "volc-image",
+      "url": "https://clawhub.ai/skills/volc-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "volc-image",
+    "url": "https://clawhub.ai/skills/volc-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/volc-image-f5bd33ac309a758c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/volc-image@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-volc-image-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:749e2a5b0dc3682523ced273a85b365f6792c1e2a8e21aa2b299203382f8d251",
+      "artifactSizeBytes": 2167
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T04:20:12.475Z"
+}

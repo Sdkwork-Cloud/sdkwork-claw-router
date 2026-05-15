@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/docx-tables@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docx_tables",
+  "skill": {
+    "id": 22888,
+    "skillKey": "clawhub-docx-tables",
+    "name": "DOCX Tables"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docx-tables",
+    "url": "https://clawhub.ai/skills/docx-tables",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docx-tables-66c35dbaa6516266.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create Word documents with properly formatted tables using docx npm library. Tables work consistently across Word and Google Docs. Use when creating DOCX fil..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "happytreees",
+      "userId": "publishers:happytreees",
+      "displayName": "happytreees",
+      "image": "https://avatars.githubusercontent.com/u/110687499?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 458,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773751027098,
+      "changelog": "**Major update: Now uses the docx npm library instead of python-docx, with focus on consistent table rendering across Word and Google Docs.**\n\n- Switched from python-docx to docx (npm) for DOCX table generation.\n- Added clear rules for full-width tables that work in both Word and Google Docs: always set widths on both tables and cells, use DXA units only, sum column widths exactly, and use ShadingType.CLEAR.\n- Provided concise code examples and a complete usage demo in JavaScript.\n- Included troubleshooting advice and width cheat sheet for common layouts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f55939ca05c1b44db2b2e49b7ae0f22c0c6d84da68b637cadacbc9741a738e46"
+}

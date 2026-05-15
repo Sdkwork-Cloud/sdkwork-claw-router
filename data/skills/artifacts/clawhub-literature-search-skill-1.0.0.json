@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/literature-search-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.literature_search_skill",
+  "skill": {
+    "id": 61714,
+    "skillKey": "clawhub-literature-search-skill",
+    "name": "Literature Search Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "literature-search-skill",
+    "url": "https://clawhub.ai/skills/literature-search-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/literature-search-skill-3c0f4551707d035e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "学术文献搜索技能 - 支持多平台文献搜索、内容提取和分析"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jonjiang96",
+      "userId": "s17fq15k7sdb88g363jaeev86h84br7b",
+      "displayName": "Jiang Junwei",
+      "image": "https://avatars.githubusercontent.com/u/45134245?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 241,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775465823011,
+      "changelog": "- Initial release of literature-search-skill.\n- Supports multi-platform academic literature search and analysis (arXiv, Google Scholar, PubMed, IEEE Xplore, ACM Digital Library).\n- Provides search, full-text extraction, and advanced analysis workflows.\n- Includes sample workflows and best practice guidelines.\n- Output formats for summaries and classified reports are specified.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6ffd03771664f2051bb52d2b02af45d16ae4afa51e6ce03ef54e082c56e9057a"
+}

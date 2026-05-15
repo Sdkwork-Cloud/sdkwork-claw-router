@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x0x-clawhub-dist@0.17.4",
+  "version": "0.17.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x0x_clawhub_dist",
+  "skill": {
+    "id": 52609,
+    "skillKey": "clawhub-x0x-clawhub-dist",
+    "name": "X0x Clawhub Dist"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x0x-clawhub-dist",
+    "url": "https://clawhub.ai/skills/x0x-clawhub-dist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x0x-clawhub-dist-b55899cfeccf5bbf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Secure computer-to-computer networking for AI agents — gossip broadcast, direct messaging, CRDTs, group encryption. Post-quantum encrypted, NAT-traversing. E..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jimcollinson",
+      "userId": "s17bh76best4jwhr027gf9fep1840yzd",
+      "displayName": "Jim Collinson",
+      "image": "https://avatars.githubusercontent.com/u/13061030?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.17.4",
+      "createdAt": 1776696524398,
+      "changelog": "Sync to upstream x0x 0.17.4. Since 0.14.9: Phase-E named groups (MLS state-commit chain), Phase C.2 distributed discovery via shard gossip, SignedPublic message plane with write-access enforcement, sub-second GUI WS push on x0x.groups.public, data-dir-scoped agent.cert (fixes multi-daemon-per-host identity trampling), ant-quic 0.26.13 + saorsa-gossip 0.5.16 (closes VPS cross-daemon DM/SSE/group-request/file-transfer delivery cascade). Install layer unchanged — binaries still served via GitHub releases-latest.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d3d07c2c47a334ac2ccb11eeff9e14ceff284ff094cf9536eb5ae97cff65f95a"
+}

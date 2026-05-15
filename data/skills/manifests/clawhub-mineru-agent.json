@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59176,
+  "uuid": "skill-clawhub-mineru-agent",
+  "skillKey": "clawhub-mineru-agent",
+  "name": "mineru-agent-free",
+  "summary": "用 MinerU Agent 轻量解析 API 将 PDF/Word/PPT/Excel/图片解析为 Markdown，无需 Token，IP 限频。适用于文档解析、表格提取、OCR 识别。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mineru_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haxck",
+      "features": [
+        "用 MinerU Agent 轻量解析 API 将 PDF/Word/PPT/Excel/图片解析为 Markdown，无需 Token，IP 限频。适用于文档解析、表格提取、OCR 识别。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mineru-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4578037?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mineru-agent",
+      "url": "https://clawhub.ai/skills/mineru-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mineru-agent",
+    "url": "https://clawhub.ai/skills/mineru-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mineru-agent-f3dea05eebba622f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mineru-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mineru-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9140407b6830daa0940ccbaa05cdd032e216cf13fcf2def089562353b609e78d",
+      "artifactSizeBytes": 2355
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T08:51:00.069Z"
+}

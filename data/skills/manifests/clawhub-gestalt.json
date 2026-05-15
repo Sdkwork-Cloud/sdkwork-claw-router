@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36924,
+  "uuid": "skill-clawhub-gestalt",
+  "skillKey": "clawhub-gestalt",
+  "name": "Gestalt",
+  "summary": "Use when the user asks for Gestalt mode or wants terse, substantive, low-filler collaboration. After loading, apply these rules for the rest of the session u...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gestalt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dwgoldie",
+      "features": [
+        "Use when the user asks for Gestalt mode or wants terse, substantive, low-filler collaboration",
+        "After loading, apply these rules for the rest of the session u..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gestalt@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/114653555?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gestalt",
+      "url": "https://clawhub.ai/skills/gestalt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gestalt",
+    "url": "https://clawhub.ai/skills/gestalt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gestalt-438a062ac613329e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gestalt@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gestalt-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7b21ffa66fefc7c0274d655f86b82d05da40abddad48059788f0a330f5c9d955",
+      "artifactSizeBytes": 2354
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T02:39:18.009Z"
+}

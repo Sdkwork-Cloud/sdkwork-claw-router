@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27938,
+  "uuid": "skill-clawhub-12",
+  "skillKey": "clawhub-12",
+  "name": "321",
+  "summary": "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.12",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mr.Zhang",
+      "features": [
+        "Captures learnings, errors, and corrections to enable continuous improvement",
+        "Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/12@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10908640?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "12",
+      "url": "https://clawhub.ai/skills/12"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "12",
+    "url": "https://clawhub.ai/skills/12",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/12-6b51d431df5d7f14.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/12@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-12-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e72234029f6ee924d83d7b6b9157c583ffa27202bdaf0f0d6bb92135daf047b9",
+      "artifactSizeBytes": 2359
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T04:11:30.362Z"
+}

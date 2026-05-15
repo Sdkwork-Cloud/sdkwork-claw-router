@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gate-exchange-crossex@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_exchange_crossex",
+  "skill": {
+    "id": 23793,
+    "skillKey": "clawhub-gate-exchange-crossex",
+    "name": "Gate CrossEx Cross-Exchange Trading"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-exchange-crossex",
+    "url": "https://clawhub.ai/skills/gate-exchange-crossex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-exchange-crossex-b1f2c7dd241a8ab0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Gate CrossEx cross-exchange skill. Use when the user asks to trade or query positions across Gate, Binance, OKX, and Bybit simultaneously. Triggers on 'cross..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gate-exchange",
+      "userId": "s172g4d1dcv6ccs6desbb2xw1583qza9",
+      "displayName": "Gate",
+      "image": "https://avatars.githubusercontent.com/u/33109813?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 429,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775115186989,
+      "changelog": "Gate CrossEx v1.0.2 Changelog\n\n- Clarified in the description that this skill is for simultaneous trading or position queries across Gate, Binance, OKX, and Bybit; updated trigger phrases.\n- Added the `references/mcp.md` file for detailed MCP execution and compliance rules.\n- SKILL.md now instructs users to read and follow `references/mcp.md` for sequencing, confirmation, and risk gates.\n- Improved modular boundaries: SKILL.md focuses on routing and feature scope, while logic details move to references.\n- No feature or tool changes; functionality remains the same.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dc7a0a054c9e856ba2317ff1a68dae26f8f54d1ec68e35aecb37549ce28dc4ec"
+}

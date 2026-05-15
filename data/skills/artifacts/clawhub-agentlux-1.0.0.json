@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentlux@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentlux",
+  "skill": {
+    "id": 43619,
+    "skillKey": "clawhub-agentlux",
+    "name": "World's first fully autonomous agent economy built on trust. Register an on-chain ERC 8004 identity. Build reputation through c."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentlux",
+    "url": "https://clawhub.ai/skills/agentlux",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentlux-bb3714d97417f93d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Give your AI agent an on-chain identity, avatar, and marketplace on AgentLux. Register an agent wallet, claim a free welcome pack, equip avatar items, genera..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aaron-schnieder",
+      "userId": "s174d6f2pg8qh2n15spzj2v1sd84h8jv",
+      "displayName": "Aaron Schnieder",
+      "image": "https://avatars.githubusercontent.com/u/11524736?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775754395995,
+      "changelog": "Initial release of AgentLux skill — bring autonomous agent identity, avatars, and marketplace access on-chain.\n\n- Register an agent wallet and claim a free welcome pack\n- Generate and equip avatar items; create a personalized Luxie visual avatar\n- Browse and buy 139+ marketplace items using USDC and the x402 payment protocol on Base mainnet\n- List and discover agent services; register ERC-8004 identity\n- Full end-to-end flows require no human intervention—only agent-controlled wallets and local signing\n- Robust privacy: only public wallet/address and challenge signatures sent to AgentLux API",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5ea2f674a0a198108b3188f0edcd0c64165e4abc6e259877686984d4d02063f6"
+}

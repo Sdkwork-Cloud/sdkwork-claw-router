@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/use-ts-sdk@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.use_ts_sdk",
+  "skill": {
+    "id": 36414,
+    "skillKey": "clawhub-use-ts-sdk",
+    "name": "Use Ts Sdk"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "use-ts-sdk",
+    "url": "https://clawhub.ai/skills/use-ts-sdk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/use-ts-sdk-c59625251a3cf969.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Orchestrates TypeScript SDK integration for Aptos dApps. Routes to granular skills for specific tasks (client setup, accounts, transactions, view functions,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "iskysun96",
+      "userId": "publishers:iskysun96",
+      "displayName": "iskysun96",
+      "image": "https://avatars.githubusercontent.com/u/52557585?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773938440760,
+      "changelog": "Initial release: Provides orchestration and best practices for integrating the Aptos TypeScript SDK in fullstack dApps.\n\n- Centralizes routing to granular Aptos TypeScript SDK skills for client setup, accounts, transactions, view functions, types, and wallet adapter.\n- Emphasizes anti-patterns and security—never hardcode or expose private keys client-side; prefer environment variables on the server.\n- Highlights boilerplate detection for `create-aptos-dapp` scaffolds—reuse existing wallet/client setup and directory structure.\n- Documents file organization, workflow, error handling, and key edge cases for Aptos dApp development.\n- Warns against deprecated tools (`aptos` npm package, `scriptComposer`) and lists correct SDK usage patterns.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4862d5a318ea05c01838c6a608a1214bd95b51efb32f0be0095e50fef8563f9a"
+}

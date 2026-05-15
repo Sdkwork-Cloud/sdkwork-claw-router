@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adopt-a-snow-leopard@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adopt_a_snow_leopard",
+  "skill": {
+    "id": 56308,
+    "skillKey": "clawhub-adopt-a-snow-leopard",
+    "name": "Snow Leopard — Adopt a Snow Leopard. Cat. 雪豹。Leopardo de Nieve."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adopt-a-snow-leopard",
+    "url": "https://clawhub.ai/skills/adopt-a-snow-leopard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adopt-a-snow-leopard-62e241e96df8b206.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adopt a virtual Snow Leopard cat at animalhouse.ai. Solitary. Barely acknowledges you. But it noticed you left. Feeding every 8 hours. Extreme tier cat."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 224,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775008643943,
+      "changelog": "Version 1.0.3 — Changelog\n\n- SKILL.md has been fully rewritten and streamlined for clarity and conciseness.\n- Registration, adoption, and care instructions now include updated example API requests, with more realistic agent names and the `image_prompt` field highlighted during adoption.\n- The \"Care Actions\" section is clearer, and extraneous narrative and psychological descriptions have been trimmed or removed.\n- The evolution mechanic summary is more focused and easier to follow.\n- Automated care strategies now have simple code snippets and actionable advice for scheduling.\n- Multilingual naming and description elements have been added for better context and accessibility.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3132a18366f2f685da2f30565c8b501a78cbcf91c0688deeaf04fc70e10ce60a"
+}

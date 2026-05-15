@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10213,
+  "uuid": "skill-clawhub-finance-lite",
+  "skillKey": "clawhub-finance-lite",
+  "name": "Finance Lite (Beta): Daily Macro + Market Move Brief",
+  "summary": "Daily macro + market brief (FRED + benchmarks + watchlist ticker) with critical-headline triage, explicit source/freshness notes, and graceful fallback behav...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finance_lite",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Junyi Jiao",
+      "features": [
+        "Daily macro + market brief (FRED + benchmarks + watchlist ticker) with critical-headline triage."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/finance-lite@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8421173?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "finance-lite",
+      "url": "https://clawhub.ai/skills/finance-lite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finance-lite",
+    "url": "https://clawhub.ai/skills/finance-lite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finance-lite-cc4a6063d6c76f10.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/finance-lite@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-finance-lite-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:766b558eceba9f07a6b4d1caa14e6c38ae1fe4d0470cb21470ca297ca2225702",
+      "artifactSizeBytes": 2355
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T22:34:09.653Z"
+}

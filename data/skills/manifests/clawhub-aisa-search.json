@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42199,
+  "uuid": "skill-clawhub-aisa-search",
+  "skillKey": "clawhub-aisa-search",
+  "name": "AIsa Search",
+  "summary": "Run web, multi-source, or last-30-days research through AIsa. Use when: the user needs search, synthesis, competitor scans, or trend discovery. Supports rese...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aisa_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "baofeng-tech",
+      "features": [
+        "Run web, multi-source, or last-30-days research through AIsa",
+        "Use when: the user needs search, synthesis, competitor scans, or trend discovery",
+        "Supports rese..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aisa-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/273012742?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aisa-search",
+      "url": "https://clawhub.ai/skills/aisa-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aisa-search",
+    "url": "https://clawhub.ai/skills/aisa-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aisa-search-22356d492f70a374.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aisa-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aisa-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a5d98a2835a2dbfb7a68ce0672254b5cde35eeb498c11be6f363da48413b7980",
+      "artifactSizeBytes": 2269
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T19:38:08.514Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62436,
+  "uuid": "skill-clawhub-tiger-trading",
+  "skillKey": "clawhub-tiger-trading",
+  "name": "Tiger Trading",
+  "summary": "老虎证券美股交易能力。支持账户余额查询、持仓查询、买卖下单、订单管理。用户只需提供 tiger_id、account、license 和 private_key 即可使用。触发场景：(1) 查询老虎账户状态 (2) 买卖美股 (3) 查看持仓 (4) 取消订单",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tiger_trading",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wjpwc",
+      "features": [
+        "老虎证券美股交易能力。支持账户余额查询、持仓查询、买卖下单、订单管理。用户只需提供 tiger_id、account、license 和 private_key 即可使用。触发场景：(1)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tiger-trading@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4392862?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tiger-trading",
+      "url": "https://clawhub.ai/skills/tiger-trading"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tiger-trading",
+    "url": "https://clawhub.ai/skills/tiger-trading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tiger-trading-5b45bc45b2f371b4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tiger-trading@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tiger-trading-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6196da3e06cbafeceebf3059126a4cf65becc40beb9a6410150a8b428ae75baa",
+      "artifactSizeBytes": 2404
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T09:59:50.726Z"
+}

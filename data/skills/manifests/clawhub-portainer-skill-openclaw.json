@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13382,
+  "uuid": "skill-clawhub-portainer-skill-openclaw",
+  "skillKey": "clawhub-portainer-skill-openclaw",
+  "name": "Portainer",
+  "summary": "Comprehensive management for Portainer CE environments and stacks. Supports listing environments, managing Docker Compose/Swarm stacks, and executing raw Docker commands via proxy. Use when the user needs to deploy apps, check container st.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.portainer_skill_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Leventsoft",
+      "features": [
+        "Comprehensive management for Portainer CE environments and stacks",
+        "Supports listing environments, managing Docker Compose/Swarm stacks, and executing raw Docker c.",
+        "Use when the user needs to deploy apps, check container status, or manage networks within Porta.",
+        "Requires a Portainer API Key configured in OpenClaw."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/portainer-skill-openclaw@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86719953?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "portainer-skill-openclaw",
+      "url": "https://clawhub.ai/skills/portainer-skill-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "portainer-skill-openclaw",
+    "url": "https://clawhub.ai/skills/portainer-skill-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/portainer-skill-openclaw-de93cf81f933f2b9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/portainer-skill-openclaw@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-portainer-skill-openclaw-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f9890a99f98f35f36f95968b768b388af2519c5d81ac47a3df27886f589a7083",
+      "artifactSizeBytes": 2303
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T23:53:53.346Z"
+}

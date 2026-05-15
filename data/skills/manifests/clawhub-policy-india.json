@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71386,
+  "uuid": "skill-clawhub-policy-india",
+  "skillKey": "clawhub-policy-india",
+  "name": "🇮🇳 印度市场政策查询Skill",
+  "summary": "提供印度市场政策、法规及投资环境的多语言智能查询与分析，支持多源数据灵活配置和实时更新。无需API Key，安装即用。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.policy_india",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yezhaowang888-stack",
+      "features": [
+        "提供印度市场政策、法规及投资环境的多语言智能查询与分析，支持多源数据灵活配置和实时更新。无需API Key，安装即用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/policy-india@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274244352?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "policy-india",
+      "url": "https://clawhub.ai/skills/policy-india"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "policy-india",
+    "url": "https://clawhub.ai/skills/policy-india",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/policy-india-a03379763496b4c5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/policy-india@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-policy-india-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f4e3372420d83b57921365dd2957edf6b801026176ba7dd66954b456d257c6ea",
+      "artifactSizeBytes": 2014
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T06:34:48.372Z"
+}

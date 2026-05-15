@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wps-macos-helper@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wps_macos_helper",
+  "skill": {
+    "id": 17190,
+    "skillKey": "clawhub-wps-macos-helper",
+    "name": "WPS macOS Helper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wps-macos-helper",
+    "url": "https://clawhub.ai/skills/wps-macos-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wps-macos-helper-487cafda3bf9b0c3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Assist macOS users in preparing, converting, exporting, and troubleshooting Word, PDF, Markdown, PowerPoint, and Excel files for reliable WPS Office workflow."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lethehades",
+      "userId": "publishers:lethehades",
+      "displayName": "lethehades",
+      "image": "https://avatars.githubusercontent.com/u/41109318?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 677,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773145624194,
+      "changelog": "First public release. This skill focuses on safer WPS workflows on macOS, including document preparation, compatibility guidance, export checks, and low-risk preprocessing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2a214b3b767975d7253ed8a4431f2bdfb78ce2770da2c233eabe6a8fbf61acf7"
+}

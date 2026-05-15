@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12146,
+  "uuid": "skill-clawhub-lnbits",
+  "skillKey": "clawhub-lnbits",
+  "name": "LNbits Wallet",
+  "summary": "Manage LNbits Lightning Wallet (Balance, Pay, Invoice)",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lnbits",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "talvasconcelos",
+      "features": [
+        "Manage LNbits Lightning Wallet (Balance, Pay, Invoice)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lnbits@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12083186?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lnbits",
+      "url": "https://clawhub.ai/skills/lnbits"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lnbits",
+    "url": "https://clawhub.ai/skills/lnbits",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lnbits-bfe3bc6b4ff94800.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lnbits@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lnbits-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:043f4cee22f8dc9dfd04b0b1432f9b4ee21308a93c1faca8c49a25c2423f6072",
+      "artifactSizeBytes": 2273
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-28T16:01:09.179Z"
+}

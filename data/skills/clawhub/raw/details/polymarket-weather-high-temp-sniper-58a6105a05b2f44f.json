@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "polymarket-weather-high-temp-sniper",
+    "displayName": "Weather High-Temp Sniper",
+    "summary": "Automated trader for Polymarket weather highest temperature markets. Uses Simmer SDK's importable endpoint for market discovery and trades only during local...",
+    "tags": {
+      "latest": "1.0.4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 490,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "createdAt": 1773306164862,
+    "updatedAt": 1778307389724
+  },
+  "latestVersion": {
+    "version": "1.0.4",
+    "createdAt": 1773904163340,
+    "changelog": "**Weather High-Temp Sniper v1.0.4**\n\n- Complete refactor to use Simmer SDK’s new `/markets/importable` endpoint and modern import workflow.\n- Implements robust input validation and duplicate prevention for market imports.\n- New configuration system via `.env` and command-line `--set`; all trading and notification parameters now externally tunable.\n- Adds Telegram notification support for real-time trade alerts and errors.\n- Persists trading and state in `sniper.state.json` for recovery and daily reset.\n- Revised documentation with detailed setup, configuration, and usage instructions.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "stefantaylor5",
+    "userId": "s17387h6ny65zkqj6xs0x0m89983jz7n",
+    "displayName": "stefantaylor5",
+    "image": "https://avatars.githubusercontent.com/u/60460592?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778307389724
+  }
+}

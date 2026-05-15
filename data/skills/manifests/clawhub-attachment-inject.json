@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59731,
+  "uuid": "skill-clawhub-attachment-inject",
+  "skillKey": "clawhub-attachment-inject",
+  "name": "Attachment Inject",
+  "summary": "动态附件注入 — 在不修改system prompt的情况下注入动态内容。参考Claude Code的Attachment消息机制。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.attachment_inject",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangxiaofei860208-source",
+      "features": [
+        "动态附件注入 — 在不修改system prompt的情况下注入动态内容。参考Claude Code的Attachment消息机制。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/attachment-inject@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260913269?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "attachment-inject",
+      "url": "https://clawhub.ai/skills/attachment-inject"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "attachment-inject",
+    "url": "https://clawhub.ai/skills/attachment-inject",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/attachment-inject-d0c2d6f423b18489.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/attachment-inject@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-attachment-inject-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:665f314be291d0fbbe9198d1914f6864adb9844e4a2c2bba6342538d09f9510f",
+      "artifactSizeBytes": 2483
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T11:21:57.232Z"
+}

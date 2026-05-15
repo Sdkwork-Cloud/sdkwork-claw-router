@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60774,
+  "uuid": "skill-clawhub-esr-openclaw-checklist",
+  "skillKey": "clawhub-esr-openclaw-checklist",
+  "name": "Eskills",
+  "summary": "运行 ESR OpenClaw 主机安全检查脚本并完整展示结果。用于用户要求“运行ESR安全检查”、“执行 ESR 安全审计”、“检查 OpenClaw 主机安全配置”、“查看 ESR 安全检查结果”或需要调用该 skill 的脚本 `/home/may/.openclaw/skills/ESR_openclaw...",
+  "version": "3.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.esr_openclaw_checklist",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xpany37-max",
+      "features": [
+        "运行 ESR OpenClaw 主机安全检查脚本并完整展示结果。用于用户要求“运行ESR安全检查”、“执行 ESR 安全审计”、“检查 OpenClaw 主机安全配置”、“查看 ESR 安全."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/esr-openclaw-checklist@3.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/232769467?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "esr-openclaw-checklist",
+      "url": "https://clawhub.ai/skills/esr-openclaw-checklist"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "esr-openclaw-checklist",
+    "url": "https://clawhub.ai/skills/esr-openclaw-checklist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/esr-openclaw-checklist-fea7d82f4120e7bf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/esr-openclaw-checklist@3.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-esr-openclaw-checklist-3.2.1.json",
+      "version": "3.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fd678f850ed2ff4fe0ad71e420649aa93ca4ed36abff4e54a79472c97d373184",
+      "artifactSizeBytes": 2551
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T03:09:52.935Z"
+}

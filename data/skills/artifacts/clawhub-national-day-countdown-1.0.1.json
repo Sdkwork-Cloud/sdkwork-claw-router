@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/national-day-countdown@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.national_day_countdown",
+  "skill": {
+    "id": 39403,
+    "skillKey": "clawhub-national-day-countdown",
+    "name": "National Day countdown"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "national-day-countdown",
+    "url": "https://clawhub.ai/skills/national-day-countdown",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/national-day-countdown-945bced0c3f4e772.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Calculate and display the number of days remaining until China's National Day on October 1st, returning today's date and a readable message."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gysmax",
+      "userId": "s17azjhtpqebpw8fqnn20exg9983s7et",
+      "displayName": "SHUO",
+      "image": "https://avatars.githubusercontent.com/u/74885232?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774678629197,
+      "changelog": "1",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b31f0c7a7d71f50262f39302091a76a568af3d53f138d7521aec9449d956013c"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/diagram-tools@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.diagram_tools",
+  "skill": {
+    "id": 61445,
+    "skillKey": "clawhub-diagram-tools",
+    "name": "Diagram Tools 图表工具技能"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "diagram-tools",
+    "url": "https://clawhub.ai/skills/diagram-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/diagram-tools-dd9936f3b2dc0043.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "图表工具技能 - 支持 Mermaid、Graphviz、流程图、思维导图等多种图表生成"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zsdadad",
+      "userId": "publishers:zsdadad",
+      "displayName": "Zsdadad",
+      "image": "https://avatars.githubusercontent.com/u/198384494?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 959,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773589813736,
+      "changelog": "整合 Mermaid 和 Graphviz 功能",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:57f461b7b8172b0e7d077ba898811cce09a3907e7412d6867b97068582bf85d7"
+}

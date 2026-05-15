@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17402,
+  "uuid": "skill-clawhub-tw-stock-info",
+  "skillKey": "clawhub-tw-stock-info",
+  "name": "Taiwan Stock Info",
+  "summary": "Taiwan stock info using Fugle or FinMind APIs. Provides real-time quotes, historical data, financial statements, and technical indicators for Taiwan stocks.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tw_stock_info",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hans",
+      "features": [
+        "Taiwan stock info using Fugle or FinMind APIs",
+        "Provides real-time quotes, historical data, financial statements, and technical indicators for."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tw-stock-info@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1781902?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tw-stock-info",
+      "url": "https://clawhub.ai/skills/tw-stock-info"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tw-stock-info",
+    "url": "https://clawhub.ai/skills/tw-stock-info",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tw-stock-info-8c3a4747dd0d6f13.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tw-stock-info@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tw-stock-info-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aaf706568c30fb7bb33d9b1e09d1ddafd45f4c4d295eea28c1b9096a2e4a33ea",
+      "artifactSizeBytes": 2199
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T09:34:12.102Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gamified-habits@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gamified_habits",
+  "skill": {
+    "id": 65025,
+    "skillKey": "clawhub-gamified-habits",
+    "name": "Gamified Habits"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gamified-habits",
+    "url": "https://clawhub.ai/skills/gamified-habits",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gamified-habits-37031164decf7cd6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "游戏化习惯养成助手 - 用游戏化的方式培养好习惯，支持打卡、XP 升级、属性面板"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wanwan2qq",
+      "userId": "s17f4y8w2zqt029zxpda828d7583h397",
+      "displayName": "wanwan2qq",
+      "image": "https://avatars.githubusercontent.com/u/10196216?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 263,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774500544655,
+      "changelog": "- 新增 data 目录及多项默认配置和示例数据文件，丰富本地数据结构\n- 项目数据存储路径由用户隔离文件更新为统一 user-data.json\n- 文档补充和结构微调，部分描述更加简明清晰\n- 修复部分命令帮助和触发词重复\n- 包管理相关文件同步更新，保证依赖一致性",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3123534171415e1e62ffe79c718179ad382a7ef9768eaba280944f058461a6f7"
+}

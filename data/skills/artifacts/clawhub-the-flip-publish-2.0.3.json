@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/the-flip-publish@2.0.3",
+  "version": "2.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.the_flip_publish",
+  "skill": {
+    "id": 17395,
+    "skillKey": "clawhub-the-flip-publish",
+    "name": "The Flip Publish"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "the-flip-publish",
+    "url": "https://clawhub.ai/skills/the-flip-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/the-flip-publish-a83b9fdec86bdee0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "$1 USDC entry. 14 coin flips. Get all 14 right, take the entire jackpot. Live on Solana devnet — continuous game, enter anytime."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maurodelazeri",
+      "userId": "publishers:maurodelazeri",
+      "displayName": "maurodelazeri",
+      "image": "https://avatars.githubusercontent.com/u/1005120?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2123,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.0.3",
+      "createdAt": 1770247634048,
+      "changelog": "Update IDL for continuous game model",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4480e5c3650b1c1046cf21d5293f73813fe3cc164e8808bdc4a13a8a97ad05d3"
+}

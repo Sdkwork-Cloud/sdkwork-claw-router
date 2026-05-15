@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32010,
+  "uuid": "skill-clawhub-payhere",
+  "skillKey": "clawhub-payhere",
+  "name": "Payhere",
+  "summary": "Payhere integration. Manage Organizations, Users. Use when the user wants to interact with Payhere data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.payhere",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Payhere integration",
+        "Manage Organizations, Users",
+        "Use when the user wants to interact with Payhere data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/payhere@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "payhere",
+      "url": "https://clawhub.ai/skills/payhere"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "payhere",
+    "url": "https://clawhub.ai/skills/payhere",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/payhere-b1ecb7494755a534.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/payhere@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-payhere-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6b467f264936a855983a4458a51483f4cf91fff9e2f3bb1c15bf59e427042633",
+      "artifactSizeBytes": 1804
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:22:44.148Z"
+}

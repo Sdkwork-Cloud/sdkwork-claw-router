@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66347,
+  "uuid": "skill-clawhub-meihua-yijing",
+  "skillKey": "clawhub-meihua-yijing",
+  "name": "Meihua Yijing",
+  "summary": "梅花易数占卜，基于时间、数字、方位起卦，解读吉凶祸福",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meihua_yijing",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mingo_318",
+      "features": [
+        "梅花易数占卜，基于时间、数字、方位起卦，解读吉凶祸福"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meihua-yijing@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62329898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meihua-yijing",
+      "url": "https://clawhub.ai/skills/meihua-yijing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meihua-yijing",
+    "url": "https://clawhub.ai/skills/meihua-yijing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meihua-yijing-7106cad57ce00858.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meihua-yijing@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meihua-yijing-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7b70d174d4c4cf356199e067d364c5fc6c939c93880c2cd21bedc48a41295c90",
+      "artifactSizeBytes": 2150
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T09:07:45.529Z"
+}

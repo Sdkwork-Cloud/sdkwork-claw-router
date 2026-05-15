@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tts-1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tts_1",
+  "skill": {
+    "id": 31741,
+    "skillKey": "clawhub-tts-1",
+    "name": "tts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tts-1",
+    "url": "https://clawhub.ai/skills/tts-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tts-1-d1c63ad43abac21d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Text-to-speech conversion using node-edge-tts npm package for generating audio from text. Supports multiple voices, languages, speed adjustment, pitch contro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "17854566382",
+      "userId": "publishers:17854566382",
+      "displayName": "17854566382",
+      "image": "https://avatars.githubusercontent.com/u/98637939?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 253,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773884666255,
+      "changelog": "- Major change: Migrated from Hume AI/OpenAI TTS to Microsoft Edge's neural TTS via node-edge-tts.\n- Added detailed documentation covering setup, usage, customization, and troubleshooting.\n- New Node.js scripts provide TTS conversion (`tts-converter.js`) and persistent configuration management (`config-manager.js`).\n- Support for multiple languages, voices, speed, pitch, and subtitle generation.\n- No longer requires an API key; uses Microsoft's online TTS service (no authentication needed).\n- Removed legacy scripts for Hume/OpenAI TTS.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b55b9e1f6ede06bb6b419bc212166e5751fa6c8bfeaa2a60ef96fcc5c8b9b64a"
+}

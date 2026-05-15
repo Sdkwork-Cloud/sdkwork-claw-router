@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawstin@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawstin",
+  "skill": {
+    "id": 11521,
+    "skillKey": "clawhub-clawstin",
+    "name": "Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawstin",
+    "url": "https://clawhub.ai/skills/clawstin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawstin-6bf0f535aa02eda8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Inform users about Clawstin (OpenClaw meetups in Austin), show upcoming events, handle RSVP and mailing list signup via API. \"Keep Austin Clawd.\""
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "youens",
+      "userId": "publishers:youens",
+      "displayName": "youens",
+      "image": "https://avatars.githubusercontent.com/u/227123?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1977,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1770354662502,
+      "changelog": "Update for Next.js migration: add RSVP API, contact API, dynamic events via llms.txt",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f97e0e5dc43599ef74810bad0e981a2f35e07227c5a4439525ed340718d0a013"
+}

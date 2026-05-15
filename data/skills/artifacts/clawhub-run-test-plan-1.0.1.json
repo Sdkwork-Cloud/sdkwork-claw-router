@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/run-test-plan@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.run_test_plan",
+  "skill": {
+    "id": 41355,
+    "skillKey": "clawhub-run-test-plan",
+    "name": "Run Test Plan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "run-test-plan",
+    "url": "https://clawhub.ai/skills/run-test-plan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/run-test-plan-305722fc732395a4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Execute YAML test plan, stop on first failure, output rich debug prompt"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anderskev",
+      "userId": "s17b1fzefm8nj8j1sdkzrze7gn83pfrg",
+      "displayName": "Kevin Anderson",
+      "image": "https://avatars.githubusercontent.com/u/17010022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776831398269,
+      "changelog": "**Added strict execution gates before running tests and evaluating results.**\n\n- Verifies plan path, YAML validity, and evidence directory existence before starting tests.\n- After setup (or with `--skip-setup`), checks that all required health checks/services are alive before any test runs.\n- Adds validation that all artifacts from test steps (output, status, snapshots, evidence files) exist before pass/fail logic.\n- Clarifies gate criteria for both legacy and modern setup formats.\n- No functional changes to test execution, but reduces chances of tests running with missing prerequisites or incomplete state.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:afc9983961a812de6fbea2c850c549b5e97c357a52e45b4d9b6912930cbbaa99"
+}

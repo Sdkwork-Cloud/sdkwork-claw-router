@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33950,
+  "uuid": "skill-clawhub-telegram-send-file",
+  "skillKey": "clawhub-telegram-send-file",
+  "name": "Telegram Send File",
+  "summary": "Send local files, URLs, or reusable Telegram file_ids into a Telegram chat via Bot API. Use when the task is to deliver a file to Telegram, especially from i...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.telegram_send_file",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lu Wang",
+      "features": [
+        "Send local files, URLs, or reusable Telegram file_ids into a Telegram chat via Bot API",
+        "Use when the task is to deliver a file to Telegram, especially from i..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/telegram-send-file@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7668944?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "telegram-send-file",
+      "url": "https://clawhub.ai/skills/telegram-send-file"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "telegram-send-file",
+    "url": "https://clawhub.ai/skills/telegram-send-file",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/telegram-send-file-732cbf21199f4d26.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/telegram-send-file@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-telegram-send-file-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0e27863ae6f77d00f3422ed4d0ab329992e8fe309faade4ec8b166cdcdd7125a",
+      "artifactSizeBytes": 1986
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T03:54:06.903Z"
+}

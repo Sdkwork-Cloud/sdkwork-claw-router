@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/barcode2@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.barcode2",
+  "skill": {
+    "id": 63559,
+    "skillKey": "clawhub-barcode2",
+    "name": "Barcode Generation And Recognition - 条码生成识别"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "barcode2",
+    "url": "https://clawhub.ai/skills/barcode2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/barcode2-3694a20264eaabb0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "按类型与参数生成条形码图（base64），或识别条码图内容。当用户说：生成一个 Code128 条码图、识别这张条码里的数字，或类似条码生成/识别时，使用本技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jisuapi",
+      "userId": "s174fh1b14sn7vkvbqwsdn0xtd83gz5h",
+      "displayName": "极速数据",
+      "image": "https://avatars.githubusercontent.com/u/30516426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 441,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 10,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775207966465,
+      "changelog": "Version 1.0.3\n\n- Updated the skill name and description for clarity and improved user guidance.\n- Enhanced service provider information and instructions for obtaining and configuring the API Key.\n- Expanded and restructured documentation, including a new section introducing JisuAPI and its API offerings.\n- Polished recommended usage and setup steps for consistency and ease of use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6e5bfa7f6ce5a994e14ca5ff9a172721cfbd79526a4765f86bf10a2045aa1359"
+}

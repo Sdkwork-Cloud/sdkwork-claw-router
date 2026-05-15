@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ui-ux-dev@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ui_ux_dev",
+  "skill": {
+    "id": 11094,
+    "skillKey": "clawhub-ui-ux-dev",
+    "name": "UI/UX Design and Development"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ui-ux-dev",
+    "url": "https://clawhub.ai/skills/ui-ux-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ui-ux-dev-3fdaca84262d7479.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate and serve live HTML/CSS/JS UI designs from natural language prompts. Use when the user asks to design, create, build, or prototype a website, landing page, UI, dashboard, web page, or frontend mockup. Also triggers on requests to."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wing8169",
+      "userId": "publishers:wing8169",
+      "displayName": "wing8169",
+      "image": "https://avatars.githubusercontent.com/u/33794617?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2117,
+      "installsAllTime": 9,
+      "installsCurrent": 9,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770791295034,
+      "changelog": "Initial release of UI/UX design and development skill.\n\n- Generate live, production-quality React pages from natural language prompts, served instantly.\n- Full workflow support: project creation, preferences, page slugs, visual reviews (with screenshots), iteration, and media handling.\n- Enforces strict design system and accessibility principles (spacing, color, contrast, responsiveness, semantics).\n- Handles user-supplied images: auto-converts to .webp, optimizes quality, reports file savings.\n- Continuous user feedback at every action: live build log style.\n- One-command export: package all project files as a zip for easy download.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:eb3b695897f9371872d697ee7c439f614fd2a8393f3942c7079bc5311a8dab8c"
+}

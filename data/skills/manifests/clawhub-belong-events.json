@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15079,
+  "uuid": "skill-clawhub-belong-events",
+  "skillKey": "clawhub-belong-events",
+  "name": "Belong Events - Discover and Organize",
+  "summary": "Discover events and hubs, manage branding, CheckIn venues, bracelets, wallets, and NFT tickets on the Belong platform",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.belong_events",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Belong",
+      "features": [
+        "Discover events and hubs, manage branding, CheckIn venues, bracelets, wallets, and NFT tickets."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/belong-events@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/55143005?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "belong-events",
+      "url": "https://clawhub.ai/skills/belong-events"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "belong-events",
+    "url": "https://clawhub.ai/skills/belong-events",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/belong-events-431a9d09bc80b8e4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/belong-events@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-belong-events-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a00d28f4fa092369ed5bd189857dd325ca2d5e42cac34726b0e81cf3d2b3d7db",
+      "artifactSizeBytes": 2386
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T10:01:15.695Z"
+}

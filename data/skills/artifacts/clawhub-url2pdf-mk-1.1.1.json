@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/url2pdf-mk@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.url2pdf_mk",
+  "skill": {
+    "id": 34344,
+    "skillKey": "clawhub-url2pdf-mk",
+    "name": "url2pdf-mk"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "url2pdf-mk",
+    "url": "https://clawhub.ai/skills/url2pdf-mk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/url2pdf-mk-b361e72ee7b9a9f0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "EN: Webpage to PDF + Markdown converter. Converts any URL (especially WeChat articles) into offline-readable PDF and Markdown files with complete images, pre..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qinkaizhou",
+      "userId": "s17d6kenkarmrte1mavytty9pd84q55t",
+      "displayName": "QKZ",
+      "image": "https://avatars.githubusercontent.com/u/72389756?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 226,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1776133456851,
+      "changelog": "- Adds a prominent security note in the description about browser mode reusing your Chrome profile, which can access cookies and sessions.\n- Warns that the tool may open a local CDP proxy and store temporary state files (cdp-proxy-<user>) in your temp directory.\n- Recommends using `--isolated` mode for public content or running in a VM/sandbox to protect sensitive data.\n- No code or feature changes; this update improves user security awareness.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:823192dad945a28ae4642a67f1808a7e24328721f5cf2f3ecbe139806d80332b"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rust-dev@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rust_dev",
+  "skill": {
+    "id": 38198,
+    "skillKey": "clawhub-rust-dev",
+    "name": "rust-dev"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rust-dev",
+    "url": "https://clawhub.ai/skills/rust-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rust-dev-7ec78e3a9f28cbc1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Practical day-1 guide to building applications in Rust well. Covers the mental model (ownership, errors as values, traits-not-interfaces), day-1 decisions (S..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tenequm",
+      "userId": "s17bp3v1hm1dnkzey0c9tfh02183j0y5",
+      "displayName": "Misha Kolesnik",
+      "image": "https://avatars.githubusercontent.com/u/22403766?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1778148799982,
+      "changelog": "Updated rust-dev from 0.1.1 to 0.2.0.\nChanges:\n- modified `CHANGELOG.md`\n- modified `SKILL.md`\n- modified `references/crate-shortlist.md`",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2f7527ae93890931c94a756653172cbd886ff4c1e35a87bc454851503afbb8f0"
+}

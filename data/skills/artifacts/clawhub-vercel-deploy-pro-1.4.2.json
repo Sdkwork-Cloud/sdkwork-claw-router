@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vercel-deploy-pro@1.4.2",
+  "version": "1.4.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vercel_deploy_pro",
+  "skill": {
+    "id": 52407,
+    "skillKey": "clawhub-vercel-deploy-pro",
+    "name": "Clawhub Publish"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vercel-deploy-pro",
+    "url": "https://clawhub.ai/skills/vercel-deploy-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vercel-deploy-pro-bafa163e427c0752.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deploy to Vercel. Auto-activates for any Vercel task — editing a landing page, deploying, aliasing, updating a site."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ranlywood",
+      "userId": "s176337cy38nmdt34h5kpt773n83wa1d",
+      "displayName": "ranlywood",
+      "image": "https://avatars.githubusercontent.com/u/94750945?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 398,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.4.2",
+      "createdAt": 1773839148277,
+      "changelog": "- Added a critical guideline: never output HTML in response text; always write HTML directly to files using the Write/Edit tool to avoid hitting token limits.\n- Updated anti-patterns table to include the new HTML handling rule.\n- Clarified instructions on editing large HTML files in logical sections.\n- No changes to deployment, authentication, or post-deploy steps.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e175fd27d42b9eb610646737a11d7bfd0bf941246887f54e0632e8a8f962fdcb"
+}

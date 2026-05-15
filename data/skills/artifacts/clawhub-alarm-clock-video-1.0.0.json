@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alarm-clock-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alarm_clock_video",
+  "skill": {
+    "id": 52910,
+    "skillKey": "clawhub-alarm-clock-video",
+    "name": "Alarm Clock Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alarm-clock-video",
+    "url": "https://clawhub.ai/skills/alarm-clock-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alarm-clock-video-ea27f8fa7fce75d9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — create a short alarm clock promo video with wake-up sound effects and text..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775943473009,
+      "changelog": "Initial release: Create and export custom alarm clock videos with minimal setup or editing experience required.\n\n- Upload video clips or images (MP4, MOV, JPG, PNG; up to 500MB) for instant alarm clock video creation.\n- Simple cloud-based workflow: auto-connects, manages session, and notifies users of progress.\n- Supports adding alarm clock sound effects and text overlays for polished promotional content.\n- Efficient export workflow: outputs 1080p MP4 video in 30–60 seconds, with quick download link.\n- Friendly error handling for file, credit, or connection issues, and easy step-by-step guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0e15c07c620879d1f9114596a8230c5feca6b72938b3cb10169e64f88e013712"
+}

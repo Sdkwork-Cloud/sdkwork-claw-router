@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57401,
+  "uuid": "skill-clawhub-ad-account-manager",
+  "skillKey": "clawhub-ad-account-manager",
+  "name": "Setv.Wang",
+  "summary": "Manage ad accounts (广点通, 巨量引擎) via browser automation with cookie login. Invoke when user asks to manage ad accounts, login to ad platforms, or view account...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ad_account_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wang259797",
+      "features": [
+        "Manage ad accounts (广点通, 巨量引擎) via browser automation with cookie login",
+        "Invoke when user asks to manage ad accounts, login to ad platforms, or view account..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ad-account-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20319112?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ad-account-manager",
+      "url": "https://clawhub.ai/skills/ad-account-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ad-account-manager",
+    "url": "https://clawhub.ai/skills/ad-account-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ad-account-manager-e1ddddb9f990e5e1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ad-account-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ad-account-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:88c1a34c307642e410c1fb83f9b224a712df81e76156c4a2eedb376be0e32e35",
+      "artifactSizeBytes": 2310
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T07:56:31.470Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51631,
+  "uuid": "skill-clawhub-sync-obsidian",
+  "skillKey": "clawhub-sync-obsidian",
+  "name": "Sync Obsidian",
+  "summary": "Turn every Claude Code session into a beautiful Obsidian note — automatically. Generates dual output: structured Markdown reports + interactive Canvas visual...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sync_obsidian",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Karden",
+      "features": [
+        "Turn every Claude Code session into a beautiful Obsidian note — automatically",
+        "Generates dual output: structured Markdown reports + interactive Canvas visual..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sync-obsidian@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128889268?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sync-obsidian",
+      "url": "https://clawhub.ai/skills/sync-obsidian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sync-obsidian",
+    "url": "https://clawhub.ai/skills/sync-obsidian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sync-obsidian-52de5cc0e0a311fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sync-obsidian@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sync-obsidian-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ccf7a3b7fc724ed67f4345354fee881f230b5041f3f33f209d25be7abb92d36e",
+      "artifactSizeBytes": 1977
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T07:59:13.914Z"
+}

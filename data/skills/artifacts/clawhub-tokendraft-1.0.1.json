@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tokendraft@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tokendraft",
+  "skill": {
+    "id": 39177,
+    "skillKey": "clawhub-tokendraft",
+    "name": "TokenDraft"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tokendraft",
+    "url": "https://clawhub.ai/skills/tokendraft",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tokendraft-5be110414f5e037c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Full suite for TokenDraft fantasy crypto tournaments — authenticate with a Solana wallet, query/join/auto-join tournaments, and manage auto-draft asset prior..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nikzt",
+      "userId": "publishers:nikzt",
+      "displayName": "Nikzt",
+      "image": "https://avatars.githubusercontent.com/u/12303718?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 564,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771879819782,
+      "changelog": "- Added structured env var documentation for SOLANA_PRIVATE_KEY, including its encoding, purpose, and sensitivity.\n- No functional changes; usage and API flow remain the same.\n- The environment variable requirement is now explicitly declared and described for easier configuration and clarity.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e6248e82c2c9cfe8c9cb59589f21357340dde0d85e9252b0f7a93aff506d9e10"
+}

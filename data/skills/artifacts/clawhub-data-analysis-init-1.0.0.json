@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/data-analysis-init@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_analysis_init",
+  "skill": {
+    "id": 65930,
+    "skillKey": "clawhub-data-analysis-init",
+    "name": "data-analysis-init"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-analysis-init",
+    "url": "https://clawhub.ai/skills/data-analysis-init",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-analysis-init-1bd29861c3c3f319.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专为 PMO Agent 设计的数据分析计划流程初始化。支持飞书表格/本地文件数据源，结合网络搜索补充外部信息，生成标准化分析报告。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "winsaney",
+      "userId": "s170khqjrawekexhyqjwg2k85s83mwks",
+      "displayName": "Nick Wong",
+      "image": "https://avatars.githubusercontent.com/u/55632678?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 232,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775207565486,
+      "changelog": "Initial release of data-analysis-init: a long-term data insights planning skill for PMO Agents.\n\n- Supports data source integration from Feishu Sheets and local CSV/Excel files with automated schema parsing.\n- Guides through target alignment, data pipeline setup, and analysis template design for business monitoring.\n- Combines internal data analysis with external information enrichment via configurable search strategies.\n- Automates report generation and periodic monitoring, including anomaly detection and attribution.\n- Example workflows include e-commerce KPI tracking, competitor price surveillance, and traffic attribution analysis.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ebc934874eadd78a8e5a04c006c95260ea2f3f229a5c98688e966ff06ea9659b"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12607,
+  "uuid": "skill-clawhub-blacksnow",
+  "skillKey": "clawhub-blacksnow",
+  "name": "Blacksnow",
+  "summary": "Detects pre-news ambient risk signals across human, legal, and operational systems and converts them into machine-readable, tradable risk primitives.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blacksnow",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sieer Shafi Lone",
+      "features": [
+        "Detects pre-news ambient risk signals across human, legal, and operational systems and converts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/blacksnow@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/88551954?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "blacksnow",
+      "url": "https://clawhub.ai/skills/blacksnow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blacksnow",
+    "url": "https://clawhub.ai/skills/blacksnow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blacksnow-201ce9317de85c3d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/blacksnow@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-blacksnow-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8adaaea9b6ac6fe11d8ea69a1414712717504eca349912cac1aa88103fb855e2",
+      "artifactSizeBytes": 2456
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T08:07:33.208Z"
+}

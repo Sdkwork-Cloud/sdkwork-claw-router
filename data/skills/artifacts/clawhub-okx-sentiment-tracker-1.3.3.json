@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/okx-sentiment-tracker@1.3.3",
+  "version": "1.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.okx_sentiment_tracker",
+  "skill": {
+    "id": 31497,
+    "skillKey": "clawhub-okx-sentiment-tracker",
+    "name": "okx-sentiment-tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "okx-sentiment-tracker",
+    "url": "https://clawhub.ai/skills/okx-sentiment-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/okx-sentiment-tracker-7ce0734b3bc25287.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when the user asks about: 'any crypto news', 'latest news', 'market update', 'daily briefing', 'BTC news', 'ETH news', 'news on SOL', 'search..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "numpy0001",
+      "userId": "s178zmefrdp1qc0dd9ya8n367183pmvz",
+      "displayName": "numpy0001",
+      "image": "https://avatars.githubusercontent.com/u/140434355?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 265,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.3.3",
+      "createdAt": 1778248226443,
+      "changelog": "- Bumped CLI dependency to @okx_ai/okx-trade-cli@1.3.3.\n- Updated metadata version to 1.3.3.\n- No functional or documentation changes detected in this release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:622687bb40744c07a1154a6d3e5786c78471e715595f34fee323e85313f782e3"
+}

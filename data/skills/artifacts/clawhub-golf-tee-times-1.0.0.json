@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/golf-tee-times@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.golf_tee_times",
+  "skill": {
+    "id": 17407,
+    "skillKey": "clawhub-golf-tee-times",
+    "name": "Golf Tee Times"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "golf-tee-times",
+    "url": "https://clawhub.ai/skills/golf-tee-times",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/golf-tee-times-00bff2dfae6676fd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search for golf tee times and deals near any location. Find cheapest rounds, compare prices across platforms, and get discount tips. Use when asked about gol..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tag-assistant",
+      "userId": "publishers:tag-assistant",
+      "displayName": "Tag",
+      "image": "https://avatars.githubusercontent.com/u/260167501?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 782,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771341198258,
+      "changelog": "Initial publish",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c1f1341e0e09617c92f24775fa657fa7ac465b642c4d2380f0dec3f8ad4c251b"
+}

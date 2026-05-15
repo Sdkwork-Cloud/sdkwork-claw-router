@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39504,
+  "uuid": "skill-clawhub-health-training-frontdoor",
+  "skillKey": "clawhub-health-training-frontdoor",
+  "name": "Health Training Frontdoor",
+  "summary": "Narrow first-class front door for live Fitbit/training retrieval via stable JSON actions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.health_training_frontdoor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Joao Driessen",
+      "features": [
+        "Narrow first-class front door for live Fitbit/training retrieval via stable JSON actions."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/health-training-frontdoor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3994246?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "health-training-frontdoor",
+      "url": "https://clawhub.ai/skills/health-training-frontdoor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "health-training-frontdoor",
+    "url": "https://clawhub.ai/skills/health-training-frontdoor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/health-training-frontdoor-7f7395ad638d1ddd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/health-training-frontdoor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-health-training-frontdoor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7926693a18789b522a3c611f74963aac8d75a88fcd9dfa26f10f3347db81e333",
+      "artifactSizeBytes": 2633
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T09:04:50.547Z"
+}

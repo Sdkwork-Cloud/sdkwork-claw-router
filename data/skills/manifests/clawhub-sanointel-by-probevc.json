@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61802,
+  "uuid": "skill-clawhub-sanointel-by-probevc",
+  "skillKey": "clawhub-sanointel-by-probevc",
+  "name": "Sano Intel — 中国医疗产业情报引擎（探针资本出品）",
+  "summary": "探针资本出品。中国医疗产业情报引擎，覆盖10万+医疗公司、50万+融资事件、109万条专利、全市场临床试验、A/港/美三地行情。查公司/融资/临床试验/专利/赛道热度/二级市场行情。By Probe Capital. Use when user asks about Chinese healthcare/biot...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sanointel_by_probevc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yanjj-cmd",
+      "features": [
+        "探针资本出品。中国医疗产业情报引擎，覆盖10万+医疗公司、50万+融资事件、109万条专利、全市场临床试验、A/港/美三地行情。查公司/融资/临床试验/专利/赛道热度/二级市场行情。By P.",
+        "Use when user asks about Chinese healthcare/biot..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sanointel-by-probevc@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261740287?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sanointel-by-probevc",
+      "url": "https://clawhub.ai/skills/sanointel-by-probevc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sanointel-by-probevc",
+    "url": "https://clawhub.ai/skills/sanointel-by-probevc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sanointel-by-probevc-ffe909dd30dbb84c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sanointel-by-probevc@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sanointel-by-probevc-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b06ba8cf4a10d796b1ffc89b2ab0c6569432701220503a0b30ff042ab1484c9a",
+      "artifactSizeBytes": 2766
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T02:56:51.498Z"
+}

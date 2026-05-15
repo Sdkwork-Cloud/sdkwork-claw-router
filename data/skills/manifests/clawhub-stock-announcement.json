@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33575,
+  "uuid": "skill-clawhub-stock-announcement",
+  "skillKey": "clawhub-stock-announcement",
+  "name": "Stock Announcement",
+  "summary": "Daily stock portfolio analysis with Gmail report delivery and Sonos TTS announcement",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_announcement",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "terrycarter1985",
+      "features": [
+        "Daily stock portfolio analysis with Gmail report delivery and Sonos TTS announcement"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-announcement@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1542987?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-announcement",
+      "url": "https://clawhub.ai/skills/stock-announcement"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-announcement",
+    "url": "https://clawhub.ai/skills/stock-announcement",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-announcement-4ab045f0085e5058.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-announcement@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-announcement-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:651c5435b6b736ebb3aaf1d2167d2fbcfaa5bfa450e45f2df4ba51fa29b52ed8",
+      "artifactSizeBytes": 1982
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T19:49:09.348Z"
+}

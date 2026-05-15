@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linkedin-analyzer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkedin_analyzer",
+  "skill": {
+    "id": 51612,
+    "skillKey": "clawhub-linkedin-analyzer",
+    "name": "LinkedIn Content Strategy Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkedin-analyzer",
+    "url": "https://clawhub.ai/skills/linkedin-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkedin-analyzer-40239c4f4533328e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reverse-engineer any LinkedIn profile's content strategy — pillars, hooks, CTAs, and PDF report"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "behruamm",
+      "userId": "s1758ymmnqz6zfynsqdk2jrbnn8434sv",
+      "displayName": "Behruamm",
+      "image": "https://avatars.githubusercontent.com/u/90729321?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 489,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772848906445,
+      "changelog": "- Updated the skill description to emphasize reverse-engineering LinkedIn profiles for content strategy, including pillars, hooks, CTAs, and PDF reporting.\n- No changes to commands, usage, or toolkit workflow.\n- Documentation is now more concise and focused on key value points.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6da4973fcadd436844567eceab4af512fb3119857b0e98e2586084cfcde7ccdd"
+}

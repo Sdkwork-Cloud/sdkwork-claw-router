@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61526,
+  "uuid": "skill-clawhub-daily-report-recorder",
+  "skillKey": "clawhub-daily-report-recorder",
+  "name": "Daily Report Recorder",
+  "summary": "记录、润色、归档用户每天的工作内容，生成或更新当日日报 Markdown。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_report_recorder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "皮皮熊",
+      "features": [
+        "记录、润色、归档用户每天的工作内容，生成或更新当日日报 Markdown。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-report-recorder@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245088438?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-report-recorder",
+      "url": "https://clawhub.ai/skills/daily-report-recorder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-report-recorder",
+    "url": "https://clawhub.ai/skills/daily-report-recorder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-report-recorder-1bd6cdfa85f58f42.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-report-recorder@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-report-recorder-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ee22be3760cd70fe0ce2b31e4a5af27b5a482479e134f09a9ba3d6fda52e999",
+      "artifactSizeBytes": 1917
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T02:28:25.848Z"
+}

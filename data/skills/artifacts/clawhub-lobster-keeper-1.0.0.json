@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lobster-keeper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobster_keeper",
+  "skill": {
+    "id": 72640,
+    "skillKey": "clawhub-lobster-keeper",
+    "name": "Moyu"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobster-keeper",
+    "url": "https://clawhub.ai/skills/lobster-keeper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobster-keeper-16da146916a83160.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动执行日常维护：状态检查、自我复盘、记忆流动、任务记录。基于龙虾饲养员的六条经验。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ayadododo",
+      "userId": "s17a1hv9pbaz4yv943zajx6szd83kpza",
+      "displayName": "Ayadododo",
+      "image": "https://avatars.githubusercontent.com/u/52719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 301,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773822212308,
+      "changelog": "lobster-keeper 1.0.0 – Initial release\n\n- 自动执行日常维护，包括状态检查、自我复盘、记忆整理、任务记录  \n- 基于龙虾饲养员的六条经验设计流程  \n- 支持定时运行（建议凌晨2点）与手动触发  \n- 检查核心设定、日志、技能可用性并生成状态报告  \n- 方便智能体自我进化与持续工作",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a3ca4d41b5240ba58e00eb175ffda07a8ecf14ef79647703ae79cfe5f9122085"
+}

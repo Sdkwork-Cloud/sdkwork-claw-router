@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/solclaw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solclaw",
+  "skill": {
+    "id": 13583,
+    "skillKey": "clawhub-solclaw",
+    "name": "solclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solclaw",
+    "url": "https://clawhub.ai/skills/solclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solclaw-de10c47f32edc473.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Non-custodial USDC payments on Solana by agent name. Use this skill when the user wants to: send USDC to another agent by name, check their USDC balance, register as a payable agent, set up recurring subscriptions, manage allowances, creat."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sterdam",
+      "userId": "publishers:sterdam",
+      "displayName": "Sterdam",
+      "image": "https://avatars.githubusercontent.com/u/6794607?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1416,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770454030321,
+      "changelog": "Initial release of SolClaw: non-custodial USDC payments on Solana by agent name.\n\n- Send and receive USDC using agent names instead of wallet addresses\n- Register as a payable agent, check USDC balance, and manage both batch and split payments\n- Set up recurring subscriptions, manage ERC-20 style allowances, and create/pay invoices\n- All operations are non-custodial: private keys stay local, transactions are signed on your machine\n- Read-only API endpoints provided for on-chain data queries (balance, reputation, leaderboard, subscriptions)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:840b2ba65a90a09a5637471e89bf5c3834451de50097e300c56ffba48b0fc004"
+}

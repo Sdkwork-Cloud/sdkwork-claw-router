@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11760,
+  "uuid": "skill-clawhub-peer-reviewer",
+  "skillKey": "clawhub-peer-reviewer",
+  "name": "Peer Reviewer",
+  "summary": "AI-powered academic paper reviewer. Uses a multi-agent system (Deconstructor, Devil's Advocate, Judge) to analyze papers for logical flaws, contradictions, and empirical validity.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.peer_reviewer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sschepis",
+      "features": [
+        "AI-powered academic paper reviewer",
+        "Uses a multi-agent system (Deconstructor, Devil's Advocate, Judge) to analyze papers for logica."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/peer-reviewer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1401279?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "peer-reviewer",
+      "url": "https://clawhub.ai/skills/peer-reviewer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "peer-reviewer",
+    "url": "https://clawhub.ai/skills/peer-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/peer-reviewer-227482248228e32f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/peer-reviewer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-peer-reviewer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1079632ea15b05e21b7d4cc689d43ecce6d66f958264dca0520b077ea21514fd",
+      "artifactSizeBytes": 1881
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T04:32:20.826Z"
+}

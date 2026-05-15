@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26181,
+  "uuid": "skill-clawhub-youtube-comment",
+  "skillKey": "clawhub-youtube-comment",
+  "name": "YouTube Comment",
+  "summary": "Manage YouTube comments. Use this skill to list, create, update, delete, mark as spam, or set moderation status for comments. Useful when working with YouTub...",
+  "version": "0.10.7-dev",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_comment",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OpenWaygate",
+      "features": [
+        "Manage YouTube comments",
+        "Use this skill to list, create, update, delete, mark as spam, or set moderation status for comm.",
+        "Useful when working with YouTub..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-comment@0.10.7-dev",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27287694?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-comment",
+      "url": "https://clawhub.ai/skills/youtube-comment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-comment",
+    "url": "https://clawhub.ai/skills/youtube-comment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-comment-5b8fbcf24a961fdf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-comment@0.10.7-dev",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-comment-0.10.7-dev.json",
+      "version": "0.10.7-dev",
+      "runtime": "metadata",
+      "checksumHash": "sha256:697f9dfd0a5b80838cfa3f1dc0bce7cb41a4832d1a1b2bccb8d9468a8232ab8f",
+      "artifactSizeBytes": 2145
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T14:00:32.798Z"
+}

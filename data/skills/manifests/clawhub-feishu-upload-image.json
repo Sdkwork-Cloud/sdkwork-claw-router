@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33138,
+  "uuid": "skill-clawhub-feishu-upload-image",
+  "skillKey": "clawhub-feishu-upload-image",
+  "name": "Feishu Upload Image",
+  "summary": "Upload a local image to Feishu and get its image_key. Use when you need to send an image via Feishu IM but first need the image_key returned by the upload AP...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_upload_image",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jkzleond",
+      "features": [
+        "Upload a local image to Feishu and get its image_key",
+        "Use when you need to send an image via Feishu IM but first need the image_key returned by the u."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-upload-image@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6227443?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-upload-image",
+      "url": "https://clawhub.ai/skills/feishu-upload-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-upload-image",
+    "url": "https://clawhub.ai/skills/feishu-upload-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-upload-image-fcaac9e5ead0d2aa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-upload-image@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-upload-image-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ada496454d04c81bb484b4ab477b71af51537e49d92471b2bc1bf0019ca4dab9",
+      "artifactSizeBytes": 1960
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T11:21:26.024Z"
+}

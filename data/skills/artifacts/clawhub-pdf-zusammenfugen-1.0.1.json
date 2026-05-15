@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pdf-zusammenfugen@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_zusammenfugen",
+  "skill": {
+    "id": 56015,
+    "skillKey": "clawhub-pdf-zusammenfugen",
+    "name": "PDF Zusammenfügen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-zusammenfugen",
+    "url": "https://clawhub.ai/skills/pdf-zusammenfugen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-zusammenfugen-87f6797fce63c7d7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Datenschutzorientierter Workflow zum pdf zusammenfügen, pdf verbinden und Erstellen einer bewerbung pdf für deutschsprachige Nutzer. Verwende diesen Skill be..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wsgtcyx",
+      "userId": "s17aajmggarm43qjm682cc84h5841bza",
+      "displayName": "wsgtcyx",
+      "image": "https://avatars.githubusercontent.com/u/26543766?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 399,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772518859954,
+      "changelog": "- PDF-Zusammenführung jetzt mit lokalem Python-Skript (`scripts/merge_pdfs.py`) statt reinem Workflow-Manual.\n- Neu: Schritt-für-Schritt-Anleitung zur Ausführung des Skripts (inkl. Python/Paket-Voraussetzungen).\n- Fehlerbehandlung spezifisch auf Skriptnutzung erweitert.\n- Referenzdatei für Metadaten entfernt.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8ca29c27ba6a83ea119dfda8d01c262023d9213b7e60d778971772ecc38b7e23"
+}

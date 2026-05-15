@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/planka@0.1.12",
+  "version": "0.1.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.planka",
+  "skill": {
+    "id": 10827,
+    "skillKey": "clawhub-planka",
+    "name": "Planka"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "planka",
+    "url": "https://clawhub.ai/skills/planka",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/planka-2341295f26db521c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Planka (Kanban) projects, boards, lists, cards, and notifications via a custom Python CLI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "voydz",
+      "userId": "publishers:voydz",
+      "displayName": "Voydz",
+      "image": "https://avatars.githubusercontent.com/u/373533?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2297,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.12",
+      "createdAt": 1770199283208,
+      "changelog": "No changes were detected in this version.\n\n- Updated according to binary 0.1.12",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:850e0195b04c533ac7e4506de3539b226e349c99f666ac581a9bd7580d2023bb"
+}

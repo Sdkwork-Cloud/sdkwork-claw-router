@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18929,
+  "uuid": "skill-clawhub-recipe-compare-sheet-tabs",
+  "skillKey": "clawhub-recipe-compare-sheet-tabs",
+  "name": "Recipe Compare Sheet Tabs",
+  "summary": "Read data from two tabs in a Google Sheet to compare and identify differences.",
+  "version": "1.0.14",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recipe_compare_sheet_tabs",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Read data from two tabs in a Google Sheet to compare and identify differences."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/recipe-compare-sheet-tabs@1.0.14",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "recipe-compare-sheet-tabs",
+      "url": "https://clawhub.ai/skills/recipe-compare-sheet-tabs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recipe-compare-sheet-tabs",
+    "url": "https://clawhub.ai/skills/recipe-compare-sheet-tabs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recipe-compare-sheet-tabs-ca4c0862c1005286.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/recipe-compare-sheet-tabs@1.0.14",
+      "artifactUrl": "data/skills/artifacts/clawhub-recipe-compare-sheet-tabs-1.0.14.json",
+      "version": "1.0.14",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c2b6ec89c561a6db4de6943b24bfce04db32c8e868ecc30000a06b4592058631",
+      "artifactSizeBytes": 1966
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:35:50.844Z"
+}

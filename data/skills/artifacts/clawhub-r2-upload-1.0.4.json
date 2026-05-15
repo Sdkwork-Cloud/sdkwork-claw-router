@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/r2-upload@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.r2_upload",
+  "skill": {
+    "id": 9870,
+    "skillKey": "clawhub-r2-upload",
+    "name": "Send Me My Files - R2 upload with short lived signed urls"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "r2-upload",
+    "url": "https://clawhub.ai/skills/r2-upload",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/r2-upload-67082c4bb00c0cab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Upload files to Cloudflare R2, AWS S3, or any S3-compatible storage and generate secure presigned download links with configurable expiration."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "julianengel",
+      "userId": "publishers:julianengel",
+      "displayName": "julianengel",
+      "image": "https://avatars.githubusercontent.com/u/10634231?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3064,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1767998221473,
+      "changelog": "Updated skill name to 'Send Me My Files - R2 upload with short lived signed urls'",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d1b05f30f2b4e078d5ae42239f702e692bfe606b4e4b0d40651ce66244c9d831"
+}

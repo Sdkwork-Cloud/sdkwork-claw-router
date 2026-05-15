@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30646,
+  "uuid": "skill-clawhub-payload-cms",
+  "skillKey": "clawhub-payload-cms",
+  "name": "Payload Cms",
+  "summary": "Payload CMS integration. Manage data, records, and automate workflows. Use when the user wants to interact with Payload CMS data.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.payload_cms",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Payload CMS integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Payload CMS data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/payload-cms@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "payload-cms",
+      "url": "https://clawhub.ai/skills/payload-cms"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "payload-cms",
+    "url": "https://clawhub.ai/skills/payload-cms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/payload-cms-c7c85bec3f3db48a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/payload-cms@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-payload-cms-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f0927a0974968fbe2107df10c5d45b2d0d6063f2bd4d7a86ff26ab7bb7192850",
+      "artifactSizeBytes": 1857
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:22:47.426Z"
+}

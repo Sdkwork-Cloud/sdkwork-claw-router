@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73215,
+  "uuid": "skill-clawhub-insurance-analyzer",
+  "skillKey": "clawhub-insurance-analyzer",
+  "name": "保险保单分析助手",
+  "summary": "保险保单分析助手 — 帮助用户梳理、分析和优化保险保障方案。用户发送保单或提供信息后，帮你分析保障是否全面、保额是否充足、费用是否合理。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.insurance_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "waylonchiao0215",
+      "features": [
+        "保险保单分析助手 — 帮助用户梳理、分析和优化保险保障方案。用户发送保单或提供信息后，帮你分析保障是否全面、保额是否充足、费用是否合理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/insurance-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/79442116?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "insurance-analyzer",
+      "url": "https://clawhub.ai/skills/insurance-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "insurance-analyzer",
+    "url": "https://clawhub.ai/skills/insurance-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/insurance-analyzer-a1f96610ca165402.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/insurance-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-insurance-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:232300ed6e630573ce985cb1bb6c2f5493682e6241f9974e2728dc7b38a0c49f",
+      "artifactSizeBytes": 2528
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T16:26:28.486Z"
+}

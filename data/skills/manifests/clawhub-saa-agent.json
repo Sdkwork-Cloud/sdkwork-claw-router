@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14524,
+  "uuid": "skill-clawhub-saa-agent",
+  "skillKey": "clawhub-saa-agent",
+  "name": "SAA Agent",
+  "summary": "Enables AI agents to generate images using the Character Select Stand Alone App (SAA) image generation backend via command-line interface.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.saa_agent",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mirabarukaso",
+      "features": [
+        "Enables AI agents to generate images using the Character Select Stand Alone App (SAA) image gen."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/saa-agent@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/79326992?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "saa-agent",
+      "url": "https://clawhub.ai/skills/saa-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "saa-agent",
+    "url": "https://clawhub.ai/skills/saa-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/saa-agent-f1946dc530e4dae9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/saa-agent@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-saa-agent-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e379d780e2969341d258b91db8a7a1f6cb9b7b42ff1aa42ad5257ca3c1b1f251",
+      "artifactSizeBytes": 2000
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T11:16:25.067Z"
+}

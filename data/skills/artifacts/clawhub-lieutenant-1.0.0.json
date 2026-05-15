@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lieutenant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lieutenant",
+  "skill": {
+    "id": 13605,
+    "skillKey": "clawhub-lieutenant",
+    "name": "Lieutenant - AI Agent Security"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lieutenant",
+    "url": "https://clawhub.ai/skills/lieutenant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lieutenant-8349e1b76f7f0b4f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI agent security and trust verification. Scan messages, agent cards, and A2A communications for prompt injection, jailbreaks, and malicious patterns. Use when protecting agents from attacks, verifying external agents, or scanning untruste."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jd-delatorre",
+      "userId": "publishers:jd-delatorre",
+      "displayName": "jd-delatorre",
+      "image": "https://avatars.githubusercontent.com/u/1874259?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1400,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770418801744,
+      "changelog": "- Initial release of Lieutenant, an AI agent security and trust verification tool.\n- Scans messages, agent cards, and A2A communications for prompt injection, jailbreaks, and malicious patterns.\n- Detects 65+ threat patterns across 10 categories, including prompt injection, jailbreak, data exfiltration, and more.\n- Supports semantic analysis for paraphrased threat detection (requires OpenAI API key).\n- Integrates with TrustAgents API to enhance detection with reputation and crowdsourced threat intelligence.\n- Provides command-line tools, Python API, and A2A SDK middleware for flexible use and integration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:406304045a643565cd7dd0c3fa1e249520f10594c181bd52d03a649564f7101f"
+}

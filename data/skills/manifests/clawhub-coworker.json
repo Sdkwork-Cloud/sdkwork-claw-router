@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17056,
+  "uuid": "skill-clawhub-coworker",
+  "skillKey": "clawhub-coworker",
+  "name": "Hannah & Elena client skill for coworker integration by Sokosumi",
+  "summary": "Connect to Hannah and Elena agents from Serviceplan - specialized AI coworkers for marketing research and operations planning. Access via email or OpenAI-compatible API.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coworker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sarthib7",
+      "features": [
+        "Connect to Hannah and Elena agents from Serviceplan",
+        "specialized AI coworkers for marketing research and operations planning",
+        "Access via email or OpenAI-compatible API."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coworker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/112841873?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coworker",
+      "url": "https://clawhub.ai/skills/coworker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coworker",
+    "url": "https://clawhub.ai/skills/coworker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coworker-06c2de313d1dfede.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coworker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-coworker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dfe27caf95816c0acaa4b5c8e1f82773dd9483f80653f0ed3a12810206528828",
+      "artifactSizeBytes": 2423
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T13:57:59.411Z"
+}

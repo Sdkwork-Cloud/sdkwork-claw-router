@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25309,
+  "uuid": "skill-clawhub-copilot-studio-agent",
+  "skillKey": "clawhub-copilot-studio-agent",
+  "name": "Copilot Studio Agent Creator",
+  "summary": "Create and configure custom agents in Microsoft Copilot Studio via a guided web app process, including triggers, knowledge, tools, topics, and publishing.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.copilot_studio_agent",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SaikiranParamkusham09",
+      "features": [
+        "Create and configure custom agents in Microsoft Copilot Studio via a guided web app process, in."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/copilot-studio-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/131857172?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "copilot-studio-agent",
+      "url": "https://clawhub.ai/skills/copilot-studio-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "copilot-studio-agent",
+    "url": "https://clawhub.ai/skills/copilot-studio-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/copilot-studio-agent-9a9e61d1526747ba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/copilot-studio-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-copilot-studio-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8775d46f490af7cd3bf6a54a68e388c8babc86fc2f94e57c195f34485e3b7ddd",
+      "artifactSizeBytes": 2456
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T21:04:58.635Z"
+}

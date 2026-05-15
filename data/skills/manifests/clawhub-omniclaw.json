@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31055,
+  "uuid": "skill-clawhub-omniclaw",
+  "skillKey": "clawhub-omniclaw",
+  "name": "Omniclaw Cli Skill",
+  "summary": "Use this skill whenever an agent needs to pay for an x402 URL, transfer USDC to an address, inspect OmniClaw balances or ledger entries, or explicitly expose...",
+  "version": "0.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.omniclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Abiola Adeshina",
+      "features": [
+        "Use this skill whenever an agent needs to pay for an x402 URL, transfer USDC to an address, ins."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/omniclaw@0.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111014145?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "omniclaw",
+      "url": "https://clawhub.ai/skills/omniclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "omniclaw",
+    "url": "https://clawhub.ai/skills/omniclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/omniclaw-39726bc41b0897c0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/omniclaw@0.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-omniclaw-0.0.8.json",
+      "version": "0.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e7f160af61902fe21ae93d2623bbefca0b423ac5be896f301dd1b3e24d01cd3",
+      "artifactSizeBytes": 1999
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T15:52:39.768Z"
+}

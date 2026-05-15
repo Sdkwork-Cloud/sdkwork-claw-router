@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/code-review-sr@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_review_sr",
+  "skill": {
+    "id": 17287,
+    "skillKey": "clawhub-code-review-sr",
+    "name": "Code Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-review-sr",
+    "url": "https://clawhub.ai/skills/code-review-sr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-review-sr-a571d7f61203e54a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered code review that combines fast local static analysis with deep AI reasoning. Catches bugs, security vulnerabilities, performance issues, and style..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "theshadowrose",
+      "userId": "s1736mx5m1zt9qzh6fvzvffnhh83hgf8",
+      "displayName": "Shadow Rose",
+      "image": "https://avatars.githubusercontent.com/u/262919821?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 774,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1773083963225,
+      "changelog": "**Added environment variable documentation and improved data use disclaimer.**\n\n- Declared required and optional environment variables for Anthropic, OpenAI, and Ollama integration in SKILL.md.\n- Clarified which environment variables are used for each provider (e.g., ANTHROPIC_API_KEY, OPENAI_API_KEY, OLLAMA_HOST, OLLAMA_PORT).\n- Updated the data disclaimer to warn users not to analyze sensitive code with external AI, and clarified data handling behavior.\n- Version bumped to 1.0.4.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bf037b9d6216bbd6a1bb177a58c198aeddae9a549884dac63e4f46d2a5c6f169"
+}

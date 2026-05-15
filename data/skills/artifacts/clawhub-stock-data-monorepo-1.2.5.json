@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-data-monorepo@1.2.5",
+  "version": "1.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_data_monorepo",
+  "skill": {
+    "id": 59512,
+    "skillKey": "clawhub-stock-data-monorepo",
+    "name": "Stock Data Monorepo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-data-monorepo",
+    "url": "https://clawhub.ai/skills/stock-data-monorepo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-data-monorepo-88796eb7ed9c05d8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A 股数据查询技能集合，包含 4 个子技能：cn-stock-volume（成交量）、stock-top-gainers（涨幅排名）、ths-stock-themes（题材概念）、stock-theme-events（题材事件）。 **触发场景**: - 作为 stock-daily-report 的数据源依赖..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shinelp100",
+      "userId": "s174vcd2c0xaf1qk5pb5wjbc7583r2sf",
+      "displayName": "shinelp100",
+      "image": "https://avatars.githubusercontent.com/u/19980132?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 114,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.5",
+      "createdAt": 1776699049520,
+      "changelog": "更新 stock-top-gainers 和 ths-stock-themes 元数据，新增 browser 脚本",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9548514c3c5e32957140cc7f854a8098ec73a211760af6a0572cd2099b1250d0"
+}

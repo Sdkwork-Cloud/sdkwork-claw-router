@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paprika-recipe-importer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paprika_recipe_importer",
+  "skill": {
+    "id": 21074,
+    "skillKey": "clawhub-paprika-recipe-importer",
+    "name": "Paprika Recipe Importer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paprika-recipe-importer",
+    "url": "https://clawhub.ai/skills/paprika-recipe-importer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paprika-recipe-importer-da93a91230b206df.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert recipe text (pasted text, video transcript, image description, or any raw content) into a .paprikarecipes file that can be imported directly into the..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nogara",
+      "userId": "publishers:nogara",
+      "displayName": "Luiz Gustavo Nogara",
+      "image": "https://avatars.githubusercontent.com/u/61724?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 524,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772207151164,
+      "changelog": "Initial release of paprika-recipe-importer.\n\n- Converts recipe text, transcripts, or image descriptions into a .paprikarecipes file for import into Paprika Recipe Manager (https://www.paprikaapp.com/)\n- Extracts only recipe details actually present in the source; never fabricates information.\n- Supports a range of fields: title, ingredients, directions, description, notes, servings, times, source, categories, difficulty, rating, nutritional info.\n- Delivers the import file and explains how to use it in Paprika.\n- Lists which fields were filled and which were not found for transparency.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:caf2955b8f1af86660930cc04c7a8508210e945e9fd5b6d6bd7d5042abf98aa1"
+}

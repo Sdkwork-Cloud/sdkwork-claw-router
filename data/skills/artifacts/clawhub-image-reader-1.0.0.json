@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-reader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_reader",
+  "skill": {
+    "id": 20458,
+    "skillKey": "clawhub-image-reader",
+    "name": "image-reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-reader",
+    "url": "https://clawhub.ai/skills/image-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-reader-748d3e47cfae72c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Image recognition and understanding tool. Uses a multimodal model (e.g. doubao-seed-2.0-pro, kimi-k2.5) to analyze image content and supports OCR text extrac..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "simonjoe246",
+      "userId": "s1796e1xvcgy3racvya44nt0s183nhjd",
+      "displayName": "simonjoe246",
+      "image": "https://avatars.githubusercontent.com/u/30720895?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 425,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773559655077,
+      "changelog": "- Initial release of the Image Reader Skill.\n- Supports OCR text extraction from images.\n- Generates detailed image descriptions for various image types.\n- Automatically selects the best analysis strategy based on image content.\n- Compatible with multimodal models(e.g. doubao-seed-2.0-pro, kimi-k2.5) via OpenAI-compatible API.\n- Offers both command-line usage and natural language skill invocation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:89fb3a2225c05ecfe08319bda86438a40ff572d2d57979881cf9d8390b22e47d"
+}

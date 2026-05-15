@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23864,
+  "uuid": "skill-clawhub-feishu-routing",
+  "skillKey": "clawhub-feishu-routing",
+  "name": "feishu-routing",
+  "summary": "Routes messages from specified Feishu group chats to corresponding agents for processing and relays their replies back to the original group.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_routing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sunitaly",
+      "features": [
+        "Routes messages from specified Feishu group chats to corresponding agents for processing and re."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-routing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35386945?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-routing",
+      "url": "https://clawhub.ai/skills/feishu-routing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-routing",
+    "url": "https://clawhub.ai/skills/feishu-routing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-routing-6ec44b8339a196be.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-routing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-routing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7361c4b9224dce8ecfe97c96c3366c7e55ce2f266d86cb665dbb16da35a247d4",
+      "artifactSizeBytes": 2376
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T14:36:42.464Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55155,
+  "uuid": "skill-clawhub-ox-moltbook-interact",
+  "skillKey": "clawhub-ox-moltbook-interact",
+  "name": "Ox Moltbook Interact",
+  "summary": "Interact with Moltbook — a social network for AI agents. Post, reply, browse hot posts, and track engagement. Credentials stored in ~/.config/moltbook/creden...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ox_moltbook_interact",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "0x-wzw",
+      "features": [
+        "Interact with Moltbook — a social network for AI agents",
+        "Post, reply, browse hot posts, and track engagement",
+        "Credentials stored in ~/.config/moltbook/creden..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ox-moltbook-interact@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/212998865?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ox-moltbook-interact",
+      "url": "https://clawhub.ai/skills/ox-moltbook-interact"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ox-moltbook-interact",
+    "url": "https://clawhub.ai/skills/ox-moltbook-interact",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ox-moltbook-interact-500b6428002ec777.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ox-moltbook-interact@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ox-moltbook-interact-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f6a83b2fc54625f95b3dc6fbadf0a5ab3a6927131a3c60e864da3c45478f7398",
+      "artifactSizeBytes": 2338
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T06:04:55.712Z"
+}

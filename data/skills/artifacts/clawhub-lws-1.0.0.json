@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lws@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lws",
+  "skill": {
+    "id": 50568,
+    "skillKey": "clawhub-lws",
+    "name": "Local Wallet Standard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lws",
+    "url": "https://clawhub.ai/skills/lws",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lws-d5ee0b737892689a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Lightweight Wallet Signer CLI — generate wallets, derive addresses, and sign messages across EVM, Solana, Bitcoin, Cosmos, and Tron chains."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "njdawn",
+      "userId": "publishers:njdawn",
+      "displayName": "njdawn",
+      "image": "https://avatars.githubusercontent.com/u/198129386?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 531,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772250780928,
+      "changelog": "Initial release of lws: Lightweight Wallet Signer CLI.\n\n- Generate BIP-39 mnemonics, derive addresses, and sign messages for EVM, Solana, Bitcoin, Cosmos, and Tron chains.\n- Minimal, offline-first CLI.\n- Wallet management: create, list, and store wallets locally.\n- Easy installation script and update/uninstall commands included.\n- Works on macOS and Linux; requires git and Rust.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:067f7e3ac992dd1bc5208015ee9cdb9bb7005f99b8563aa27b2b328fa13786cd"
+}

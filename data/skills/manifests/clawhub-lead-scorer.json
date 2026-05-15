@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12240,
+  "uuid": "skill-clawhub-lead-scorer",
+  "skillKey": "clawhub-lead-scorer",
+  "name": "Lead Scorer",
+  "summary": "Score and qualify leads using customizable criteria. Prioritize your pipeline by fit, intent, and engagement to focus on deals most likely to close.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lead_scorer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1kalin",
+      "features": [
+        "Score and qualify leads using customizable criteria",
+        "Prioritize your pipeline by fit, intent, and engagement to focus on deals most likely to close."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lead-scorer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15705344?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lead-scorer",
+      "url": "https://clawhub.ai/skills/lead-scorer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lead-scorer",
+    "url": "https://clawhub.ai/skills/lead-scorer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lead-scorer-92eb4135da6c6d6e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lead-scorer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lead-scorer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e3a7f47e0029a485f636f6baf33f16e0042822abdd455e4c029d9b4c0858f307",
+      "artifactSizeBytes": 2247
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T02:52:30.010Z"
+}

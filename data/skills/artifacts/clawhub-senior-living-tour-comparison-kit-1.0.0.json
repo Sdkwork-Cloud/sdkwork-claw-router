@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/senior-living-tour-comparison-kit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.senior_living_tour_comparison_kit",
+  "skill": {
+    "id": 50030,
+    "skillKey": "clawhub-senior-living-tour-comparison-kit",
+    "name": "Senior Living Tour Comparison Kit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "senior-living-tour-comparison-kit",
+    "url": "https://clawhub.ai/skills/senior-living-tour-comparison-kit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/senior-living-tour-comparison-kit-2f67495ddd40bbb9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert senior living facility tours into a structured comparison matrix covering care levels, costs, staffing, safety, activities, meals, location, and foll..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 49,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778335097637,
+      "changelog": "Senior Living Tour Comparison Kit v1.0.0\n\n- Initial release providing a structured framework to compare senior living facilities.\n- Helps users organize and evaluate tours based on care levels, costs, staffing, safety, activities, meals, and location.\n- Offers guided prompts for assessing both resident needs and detailed facility features.\n- Supports note-taking, follow-up questions, and creating a side-by-side comparison matrix for informed decision-making.\n- Includes clear disclaimers regarding medical, legal, and financial advice.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5b26c0ed4172eec0d9922163b464f204ba1e7d44f4a97b5aeb2f1189de271f51"
+}

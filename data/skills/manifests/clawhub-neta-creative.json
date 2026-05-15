@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51373,
+  "uuid": "skill-clawhub-neta-creative",
+  "skillKey": "clawhub-neta-creative",
+  "name": "Neta Creative",
+  "summary": "Neta API creative skill — generate images, videos, songs, and MVs, and deconstruct creative ideas from existing works. Use this skill when the user wants to...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neta_creative",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hu Xiuhan",
+      "features": [
+        "Neta API creative skill — generate images, videos, songs, and MVs, and deconstruct creative ide.",
+        "Use this skill when the user wants to..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/neta-creative@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1184998?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "neta-creative",
+      "url": "https://clawhub.ai/skills/neta-creative"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neta-creative",
+    "url": "https://clawhub.ai/skills/neta-creative",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neta-creative-6785baeaed5bf348.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/neta-creative@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-neta-creative-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ed0a16dc61ac3cd9512be8f747a1c30c373687f7a309d493194718c7fe3f33b6",
+      "artifactSizeBytes": 2352
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T10:17:27.968Z"
+}

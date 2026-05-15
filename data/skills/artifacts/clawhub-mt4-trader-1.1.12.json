@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mt4-trader@1.1.12",
+  "version": "1.1.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mt4_trader",
+  "skill": {
+    "id": 24655,
+    "skillKey": "clawhub-mt4-trader",
+    "name": "Mt4 Trader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mt4-trader",
+    "url": "https://clawhub.ai/skills/mt4-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mt4-trader-77fb384d950f02d9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MT4 Trader Bridge enables Python to MT4 EA communication via files for trading, order management, risk control, and grid strategies without extra dependencies."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "apuba",
+      "userId": "s170awvgg1xj09qps70x185k9h863qvh",
+      "displayName": "apuba",
+      "image": "https://avatars.githubusercontent.com/u/18375066?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 306,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 24
+    },
+    "latestVersion": {
+      "version": "1.1.12",
+      "createdAt": 1778250913453,
+      "changelog": "英文 Communication & Feedback 同步更新：添加老码农备注、Gitee 主页链接",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d46c62e936cc7d4d52c108ab94a50042d12bb9f681cc00cee97734e36ad9550f"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70171,
+  "uuid": "skill-clawhub-m-valuation",
+  "skillKey": "clawhub-m-valuation",
+  "name": "M估值法",
+  "summary": "基于ROIC和CAPM的5步股票估值方法，提供资格筛选、内在价值计算及风险与情景分析。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.m_valuation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "oldhouse-g",
+      "features": [
+        "基于ROIC和CAPM的5步股票估值方法，提供资格筛选、内在价值计算及风险与情景分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/m-valuation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258770815?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "m-valuation",
+      "url": "https://clawhub.ai/skills/m-valuation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "m-valuation",
+    "url": "https://clawhub.ai/skills/m-valuation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/m-valuation-c80923b4c43dafd9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/m-valuation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-m-valuation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4d6dfdbb60c7813dd3c8df2b747955969fffa6e85092ef871048250d7acf0375",
+      "artifactSizeBytes": 2379
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T10:02:58.166Z"
+}

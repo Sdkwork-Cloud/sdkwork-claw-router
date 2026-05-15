@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63083,
+  "uuid": "skill-clawhub-nio-enhanced-analysis",
+  "skillKey": "clawhub-nio-enhanced-analysis",
+  "name": "Nio Enhanced Analysis",
+  "summary": "增强版NIO股票分析，包括实时价格、技术分析、新闻情绪、操作建议",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nio_enhanced_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Patrick",
+      "features": [
+        "增强版NIO股票分析，包括实时价格、技术分析、新闻情绪、操作建议"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nio-enhanced-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6848035?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nio-enhanced-analysis",
+      "url": "https://clawhub.ai/skills/nio-enhanced-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nio-enhanced-analysis",
+    "url": "https://clawhub.ai/skills/nio-enhanced-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nio-enhanced-analysis-10747afc1f501d48.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nio-enhanced-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nio-enhanced-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:315dba2ce00ff25222843c3237f4d75370886cdb92a94152ad95b78fd4e53672",
+      "artifactSizeBytes": 2256
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T01:33:52.431Z"
+}

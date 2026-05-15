@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nyskill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nyskill",
+  "skill": {
+    "id": 70544,
+    "skillKey": "clawhub-nyskill",
+    "name": "nyskill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nyskill",
+    "url": "https://clawhub.ai/skills/nyskill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nyskill-fc466f658eab60cd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "成人内衣、情趣内衣、内裤、贴身服饰、私密服饰与商业写真 AI 图片提示词技能。用于生成高保真、实拍感、电商可交付的 女士内衣、男士内裤、文胸、内裤、连体内衣、束身衣、吊袜带、塑身衣、睡裙、家居内衣、丝袜/长筒袜、ghost mannequin、 模特上身图、主图、四视图、详情页、九宫格、参考图融合、1:1 还原、..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "loveaoui",
+      "userId": "s177pkcs0rybtxrk08acwtx7ex84y36m",
+      "displayName": "AOYC--依纯",
+      "image": "https://avatars.githubusercontent.com/u/252851864?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 65,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778131872588,
+      "changelog": "Initial release of lingerie-image-prompt skill:\n\n- Provides high-fidelity, compliance-focused AI image prompt generation for adult lingerie, intimate apparel, and product/model photography.\n- Ensures clear adult/commercial boundaries with explicit safety and non-explicit language requirements.\n- Supports detailed reference extraction (model, product, style, scene), product taxonomy, and scenario-specific output formatting.\n- Adapts prompt structure and language for various image models (Nonbana Pro, Nano Banana Pro, GPT Image-family).\n- Includes robust compliance recovery process for generation failures, focusing on safe, product-driven outputs.\n- Output always includes mandatory product/model/scene details, matching use case such as e-commerce, catalog, or editorial.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:331122ed0febc1161683390957da330f2284238d6bd3d0e51a5e02bc8c1a7f4f"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/minimax-understand-image@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_understand_image",
+  "skill": {
+    "id": 59657,
+    "skillKey": "clawhub-minimax-understand-image",
+    "name": "minimax-understand-image"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-understand-image",
+    "url": "https://clawhub.ai/skills/minimax-understand-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-understand-image-a635dab29b9ed650.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 MiniMax MCP 进行图像理解和分析。触发条件：(1) 用户要求分析图片、理解图像、描述图片内容 (2) 需要识别图片中的物体、文字、场景 (3) 使用 MiniMax 的 understand_image 功能"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thincher",
+      "userId": "s170vv9kmhtyc5hywwmkq5cf51845fxf",
+      "displayName": "要啥自行车",
+      "image": "https://avatars.githubusercontent.com/u/54308220?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 6272,
+      "installsAllTime": 57,
+      "installsCurrent": 52,
+      "stars": 6,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1771917444094,
+      "changelog": "minimax-understand-image 1.0.3\n\n- 流程优化：首次配置流程更为简洁，后续可直接调用图像分析功能。\n- API Key 自动获取逻辑修改：默认从 ~/.openclaw/agents/main/agent/auth-profiles.json 查找，而非此前的路径。\n- 清理文档内容，去除冗余完整流程示例，提升可读性。\n- 步骤描述更明确，帮助用户更快完成配置和调用。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1fd28b20b574316d4b71a915d6d2fc02cad98b02c232609bd3215b17c69e4450"
+}

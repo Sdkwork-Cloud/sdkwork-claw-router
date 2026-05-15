@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58165,
+  "uuid": "skill-clawhub-code-review-checklist",
+  "skillKey": "clawhub-code-review-checklist",
+  "name": "Code Review Checklist",
+  "summary": "代码审查清单 - A comprehensive code review checklist and guidance tool. Use when user asks about 代码审查、代码检查、PR review、代码质量, or wants to conduct or prepare for a cod...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_review_checklist",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "A comprehensive code review checklist and guidance tool",
+        "Use when user asks about 代码审查、代码检查、PR review、代码质量, or wants to conduct or prepare for a cod..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/code-review-checklist@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "code-review-checklist",
+      "url": "https://clawhub.ai/skills/code-review-checklist"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-review-checklist",
+    "url": "https://clawhub.ai/skills/code-review-checklist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-review-checklist-9d8740b8d4b931ea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/code-review-checklist@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-code-review-checklist-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1314534077a26399cdfb905fb73175cd2b71fb0f29c2aac7fc8cd209d8c93828",
+      "artifactSizeBytes": 2568
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T13:36:10.164Z"
+}

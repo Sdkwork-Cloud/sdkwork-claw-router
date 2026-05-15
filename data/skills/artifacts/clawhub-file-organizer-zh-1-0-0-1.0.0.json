@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/file-organizer-zh-1-0-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_organizer_zh_1_0_0",
+  "skill": {
+    "id": 60697,
+    "skillKey": "clawhub-file-organizer-zh-1-0-0",
+    "name": "File Organizer Zh 1.0.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-organizer-zh-1-0-0",
+    "url": "https://clawhub.ai/skills/file-organizer-zh-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-organizer-zh-1-0-0-bc0eab4842416b20.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "文件整理器，按类型自动分类（中文版）"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangyingzhuangk",
+      "userId": "s1745jre4s1dpyqce9y646s8gh84v3k6",
+      "displayName": "zhangyingzhuangk",
+      "image": "https://avatars.githubusercontent.com/u/16957705?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776131989755,
+      "changelog": "Initial release of file-organizer-zh – 自动按类型分类整理文件（中文版）:\n\n- 支持按类型自动分类（图片、文档、代码、视频、音频、压缩包）\n- 智能根据文件内容归类\n- 自动识别并清理重复文件\n- 通过中文关键词（如“整理”、“分类文件”）触发操作",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:117796e2dac6ac80d015b098623c2693f89b5842e672b22b39f47d331965c67f"
+}

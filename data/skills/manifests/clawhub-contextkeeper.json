@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25251,
+  "uuid": "skill-clawhub-contextkeeper",
+  "skillKey": "clawhub-contextkeeper",
+  "name": "ContextKeeper",
+  "summary": "ContextKeeper — Safe project state tracking for AI agents. Manual checkpoint creation with validated inputs. No background processes, no PID manipulation, no...",
+  "version": "0.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.contextkeeper",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gopinath Nelluri",
+      "features": [
+        "ContextKeeper — Safe project state tracking for AI agents",
+        "Manual checkpoint creation with validated inputs",
+        "No background processes, no PID manipulation, no..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/contextkeeper@0.2.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9353385?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "contextkeeper",
+      "url": "https://clawhub.ai/skills/contextkeeper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "contextkeeper",
+    "url": "https://clawhub.ai/skills/contextkeeper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/contextkeeper-ce4b7f7ef69a9a2e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/contextkeeper@0.2.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-contextkeeper-0.2.3.json",
+      "version": "0.2.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73de78acdbb27e1ff09e323058aa646a26ee0ae632d3b95bfe528ed29fc09e5a",
+      "artifactSizeBytes": 1979
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T03:59:20.784Z"
+}

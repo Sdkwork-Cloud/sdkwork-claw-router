@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65947,
+  "uuid": "skill-clawhub-tech-event-intelligence-engine",
+  "skillKey": "clawhub-tech-event-intelligence-engine",
+  "name": "tech-event-intelligence-engine",
+  "summary": "技术活动情报解析与过滤引擎，支持从原始搜索结果中精准抽取字段、去重、时效校验与相关性打分，输出标准化推送清单",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tech_event_intelligence_engine",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "boboy-j",
+      "features": [
+        "技术活动情报解析与过滤引擎，支持从原始搜索结果中精准抽取字段、去重、时效校验与相关性打分，输出标准化推送清单"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tech-event-intelligence-engine@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257822985?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tech-event-intelligence-engine",
+      "url": "https://clawhub.ai/skills/tech-event-intelligence-engine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tech-event-intelligence-engine",
+    "url": "https://clawhub.ai/skills/tech-event-intelligence-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tech-event-intelligence-engine-e0484c83b6b45d02.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tech-event-intelligence-engine@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tech-event-intelligence-engine-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da2b08b30cf35b28a2d2469a4df76cd2ff1516903d78d26eebbfacb0a6a22075",
+      "artifactSizeBytes": 2420
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T13:58:52.424Z"
+}

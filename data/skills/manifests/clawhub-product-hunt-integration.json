@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35954,
+  "uuid": "skill-clawhub-product-hunt-integration",
+  "skillKey": "clawhub-product-hunt-integration",
+  "name": "Product Hunt",
+  "summary": "Product Hunt integration. Manage data, records, and automate workflows. Use when the user wants to interact with Product Hunt data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.product_hunt_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Product Hunt integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Product Hunt data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/product-hunt-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "product-hunt-integration",
+      "url": "https://clawhub.ai/skills/product-hunt-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "product-hunt-integration",
+    "url": "https://clawhub.ai/skills/product-hunt-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/product-hunt-integration-7661721c0685f640.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/product-hunt-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-product-hunt-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:29026de802c8383f90b734bdf4655090ed30469a3294911d9d25f56a381afd3d",
+      "artifactSizeBytes": 1946
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:53:16.586Z"
+}

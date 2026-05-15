@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57033,
+  "uuid": "skill-clawhub-feishu-merged-msg",
+  "skillKey": "clawhub-feishu-merged-msg",
+  "name": "Feishu Merged Msg",
+  "summary": "Fetch and parse Feishu merged/forwarded messages (合并转发消息). Activate when a Feishu message shows \"Merged and Forwarded Message\" with no readable content, or w...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_merged_msg",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "deadblue",
+      "features": [
+        "Fetch and parse Feishu merged/forwarded messages (合并转发消息)",
+        "Activate when a Feishu message shows \"Merged and Forwarded Message\" with no readable content, o."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-merged-msg@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/448649?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-merged-msg",
+      "url": "https://clawhub.ai/skills/feishu-merged-msg"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-merged-msg",
+    "url": "https://clawhub.ai/skills/feishu-merged-msg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-merged-msg-06a688bc5a71c67d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-merged-msg@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-merged-msg-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:efa424583fe9a4ea38ebaf9cfba22a35529c4914d397f8c166701563fbaf87a3",
+      "artifactSizeBytes": 2383
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T06:26:23.248Z"
+}

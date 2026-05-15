@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23595,
+  "uuid": "skill-clawhub-social-skill",
+  "skillKey": "clawhub-social-skill",
+  "name": "Social Skill",
+  "summary": "Manage Farcaster social interactions, casting, and feed monitoring. Trigger this when users want to post casts, check their feed, or interact with other agents.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MRxLOLCAT",
+      "features": [
+        "Manage Farcaster social interactions, casting, and feed monitoring",
+        "Trigger this when users want to post casts, check their feed, or interact with other agents."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/social-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/115064188?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "social-skill",
+      "url": "https://clawhub.ai/skills/social-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-skill",
+    "url": "https://clawhub.ai/skills/social-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-skill-98d1db44b8b58c0c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/social-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-social-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cd6346181077a02bc193af25e71196ac49e17ffff74c2353c033338f39b8388e",
+      "artifactSizeBytes": 2362
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T06:44:15.471Z"
+}

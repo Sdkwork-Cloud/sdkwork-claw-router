@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34034,
+  "uuid": "skill-clawhub-pr-code-reviewer",
+  "skillKey": "clawhub-pr-code-reviewer",
+  "name": "PR Code Reviewer",
+  "summary": "Revisa automáticamente PRs en Bitbucket con análisis de errores, seguridad y estilo en JS, TS, Node.js, PHP y Python, generando comentarios detallados y vere...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pr_code_reviewer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nesquitmx",
+      "features": [
+        "Revisa automáticamente PRs en Bitbucket con análisis de errores, seguridad y estilo en JS, TS,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pr-code-reviewer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/155778245?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pr-code-reviewer",
+      "url": "https://clawhub.ai/skills/pr-code-reviewer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pr-code-reviewer",
+    "url": "https://clawhub.ai/skills/pr-code-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pr-code-reviewer-367ec70e359acb00.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pr-code-reviewer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pr-code-reviewer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5f9c72402083887614ab02ad937241033e116fe750d22676074279475016d961",
+      "artifactSizeBytes": 2121
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T18:27:07.483Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pr-commit-workflow@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pr_commit_workflow",
+  "skill": {
+    "id": 9733,
+    "skillKey": "clawhub-pr-commit-workflow",
+    "name": "PR + Commit Workflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pr-commit-workflow",
+    "url": "https://clawhub.ai/skills/pr-commit-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pr-commit-workflow-79079d0f10d7946d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when creating commits or pull requests, enforcing a human-written PR structure, intent capture, and evidence in agentic workflows."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "joshp123",
+      "userId": "publishers:joshp123",
+      "displayName": "joshp123",
+      "image": "https://avatars.githubusercontent.com/u/1497361?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3333,
+      "installsAllTime": 13,
+      "installsCurrent": 13,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1768088504194,
+      "changelog": "Initial release: High-signal PR and commit workflows for agentic AI coding",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ee5d756969f4b0103a343d6b5a39259e8f6e62d0b3c76d0e5684c61dbcde1322"
+}

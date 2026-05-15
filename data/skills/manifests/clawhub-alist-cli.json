@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27374,
+  "uuid": "skill-clawhub-alist-cli",
+  "skillKey": "clawhub-alist-cli",
+  "name": "AList CLI (Cloud Storage CLI for AList)",
+  "summary": "AList file management CLI for OpenClaw. Supports upload, download, list, mkdir, rm, mv, search, url. Auth via environment variables with auto-refresh. Trigge...",
+  "version": "1.6.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alist_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kinema.",
+      "features": [
+        "AList file management CLI for OpenClaw",
+        "Supports upload, download, list, mkdir, rm, mv, search, url",
+        "Auth via environment variables with auto-refresh",
+        "Trigge..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alist-cli@1.6.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/54445332?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alist-cli",
+      "url": "https://clawhub.ai/skills/alist-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alist-cli",
+    "url": "https://clawhub.ai/skills/alist-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alist-cli-9aa45b405591796c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alist-cli@1.6.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-alist-cli-1.6.2.json",
+      "version": "1.6.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4b836af28febc1a1ef4633cae9fefbb2c96c9958841262876ac889458bf39d60",
+      "artifactSizeBytes": 1934
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T01:51:20.135Z"
+}

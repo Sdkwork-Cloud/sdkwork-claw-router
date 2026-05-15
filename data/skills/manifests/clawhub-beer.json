@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29265,
+  "uuid": "skill-clawhub-beer",
+  "skillKey": "clawhub-beer",
+  "name": "Beer",
+  "summary": "Use when exploring beer styles, pairing beer with food, calculating ABV for homebrew, finding craft beer recommendations, or learning tasting techniques.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "Use when exploring beer styles, pairing beer with food, calculating ABV for homebrew, finding c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/beer@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "beer",
+      "url": "https://clawhub.ai/skills/beer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beer",
+    "url": "https://clawhub.ai/skills/beer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beer-1d8b4cf854cd42f4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/beer@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-beer-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f23e0d19cd2d0825f545e1c1f7da5f38ffa033712daebf95d4040cca44700974",
+      "artifactSizeBytes": 1910
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T07:50:22.468Z"
+}

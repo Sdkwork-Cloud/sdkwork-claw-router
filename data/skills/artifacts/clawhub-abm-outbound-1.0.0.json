@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/abm-outbound@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abm_outbound",
+  "skill": {
+    "id": 9573,
+    "skillKey": "clawhub-abm-outbound",
+    "name": "ABM Outbound"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abm-outbound",
+    "url": "https://clawhub.ai/skills/abm-outbound",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abm-outbound-227b50a024345c7a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-channel ABM automation that turns LinkedIn URLs into coordinated outbound campaigns. Scrapes profiles, enriches with Apollo (email + phone), gets mailing addresses via Skip Trace, then orchestrates email sequences, LinkedIn touches,."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dru-ca",
+      "userId": "s17fbsf0jwska41s434g9bxa018623yv",
+      "displayName": "Dru Carpenter",
+      "image": "https://avatars.githubusercontent.com/u/117193827?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3491,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769522990232,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1c7d191bb4e3fe9023fbaf8ccb05cd581b315fe7aedbf0fedac3f57f66e914d4"
+}

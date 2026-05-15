@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53187,
+  "uuid": "skill-clawhub-claudify",
+  "skillKey": "clawhub-claudify",
+  "name": "Claudify",
+  "summary": "Convert functionality into Claude Code automation. Includes interactive supervisor agent pattern (see resources/agent-templates.md §7). Use when the user say...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claudify",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "es6kr",
+      "features": [
+        "Convert functionality into Claude Code automation",
+        "Includes interactive supervisor agent pattern (see resources/agent-templates.md §7)",
+        "Use when the user say..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claudify@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/819969?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claudify",
+      "url": "https://clawhub.ai/skills/claudify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claudify",
+    "url": "https://clawhub.ai/skills/claudify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claudify-d4210c692c6fb4cc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claudify@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-claudify-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:797a1a54d8bc5893d4bcb9a6a4083d2027209ea3cb4fe08217f026ea3fa0b787",
+      "artifactSizeBytes": 1931
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T08:23:35.999Z"
+}

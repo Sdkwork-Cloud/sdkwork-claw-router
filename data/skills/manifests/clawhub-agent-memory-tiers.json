@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32720,
+  "uuid": "skill-clawhub-agent-memory-tiers",
+  "skillKey": "clawhub-agent-memory-tiers",
+  "name": "Agent Memory Tiers",
+  "summary": "Tiered memory system for OpenClaw agents. Gives agents instant context on startup with a 4-line state snapshot (L0) and 7-day rolling context (L1). Eliminate...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_memory_tiers",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Swarm Forge",
+      "features": [
+        "Tiered memory system for OpenClaw agents",
+        "Gives agents instant context on startup with a 4-line state snapshot (L0) and 7-day rolling con.",
+        "Eliminate..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-memory-tiers@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/248451410?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-memory-tiers",
+      "url": "https://clawhub.ai/skills/agent-memory-tiers"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-memory-tiers",
+    "url": "https://clawhub.ai/skills/agent-memory-tiers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-memory-tiers-a6746c74c38072c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-memory-tiers@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-memory-tiers-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8cb77f261c57c5c9083e5926570b383f34ce3680539ee1a918f9eb803c90167c",
+      "artifactSizeBytes": 2552
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T12:41:31.994Z"
+}

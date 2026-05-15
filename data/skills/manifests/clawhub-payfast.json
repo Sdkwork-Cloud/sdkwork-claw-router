@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34764,
+  "uuid": "skill-clawhub-payfast",
+  "skillKey": "clawhub-payfast",
+  "name": "Payfast",
+  "summary": "PayFast integration. Manage data, records, and automate workflows. Use when the user wants to interact with PayFast data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.payfast",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "PayFast integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with PayFast data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/payfast@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "payfast",
+      "url": "https://clawhub.ai/skills/payfast"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "payfast",
+    "url": "https://clawhub.ai/skills/payfast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/payfast-0666218046d3b770.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/payfast@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-payfast-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5133f549346a31e4d9fe1d89e9ba2306022aa8f49df7a9f4f1684549d38a2d86",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:22:37.247Z"
+}

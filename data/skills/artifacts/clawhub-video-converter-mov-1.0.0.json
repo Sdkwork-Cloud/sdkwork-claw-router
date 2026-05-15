@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-converter-mov@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_converter_mov",
+  "skill": {
+    "id": 55649,
+    "skillKey": "clawhub-video-converter-mov",
+    "name": "Video Converter Mov"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-converter-mov",
+    "url": "https://clawhub.ai/skills/video-converter-mov",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-converter-mov-3c8f6c73a9515ed8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — convert this MOV file to MP4 without losing quality — and get converted MP..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 109,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777307985969,
+      "changelog": "Video Converter MOV — Initial Release\n\n- Launches MOV to MP4 video conversion with a cloud-based backend, supporting MOV, MP4, AVI, and WebM uploads up to 500MB.\n- Automatically handles session setup, token management, and user onboarding.\n- Provides fast, high-quality format conversion ideal for sharing iPhone/Mac videos cross-platform.\n- Exposes key features like exporting, uploading, credits, and state checks via simple text prompts.\n- Includes robust error handling and clear guidance for common workflows and edge cases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:84ed3c67b6543e310fd75f962aedde28dc12219bf71b90738a19802512ba6b49"
+}

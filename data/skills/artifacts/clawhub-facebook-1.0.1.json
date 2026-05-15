@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/facebook@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.facebook",
+  "skill": {
+    "id": 8985,
+    "skillKey": "clawhub-facebook",
+    "name": "Facebook"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "facebook",
+    "url": "https://clawhub.ai/skills/facebook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/facebook-3d59f7548e1af215.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw skill for Facebook Graph API workflows focused on Pages posting, comments, and Page management using direct HTTPS requests."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codedao12",
+      "userId": "s17ax1y7n44r8sjagk48sw25bx84nzpq",
+      "displayName": "codedao12",
+      "image": "https://avatars.githubusercontent.com/u/249323427?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4629,
+      "installsAllTime": 25,
+      "installsCurrent": 23,
+      "stars": 7,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770028711580,
+      "changelog": "Version 1.0.1\n\n- Expanded documentation with six new reference files covering Graph API overview, Page posting, comments moderation, permissions/tokens, webhooks, and HTTP request examples.\n- Updated guidance to focus on direct HTTPS requests for Facebook Pages: posting, comment management, and Page operations.\n- Clarified required inputs (App ID/Secret, Page ID, token strategy).\n- Added detailed security and operational guardrails.\n- Clearly defined recommended use cases and limitations.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8e4e188fe86bc8bf200ee0d3c77de69bb73c40ea7013eb62b056c5834eb3c0e2"
+}

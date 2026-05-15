@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rwa-project-assessment@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rwa_project_assessment",
+  "skill": {
+    "id": 49594,
+    "skillKey": "clawhub-rwa-project-assessment",
+    "name": "Rwa Project Assessment"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rwa-project-assessment",
+    "url": "https://clawhub.ai/skills/rwa-project-assessment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rwa-project-assessment-0f908647a08fb3f4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Evaluates real-world asset tokenization projects - asset verification, custody, oracle mechanism, redemption rights, and regulatory structure - from user-pro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 74,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778177631337,
+      "changelog": "RWA Project Assessment skill initial release:\n\n- Provides a structured framework for evaluating real-world asset (RWA) tokenization projects using only user-supplied information.\n- Analyzes asset verification, custody, oracles, redemption rights, and regulatory structure as a 5-layer “trust stack.”\n- Identifies assumptions, information gaps, and compares RWA tokens to direct ownership based on provided details.\n- Supplies a decision checklist and highlights unknowns requiring independent verification.\n- Does not connect to wallets, fetch live data, or provide investment/legal advice; emphasizes user safety and verification.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:11bbc4811dc1650beeb0a3de038e08341db47a68fd08935de74a801e62fd3438"
+}

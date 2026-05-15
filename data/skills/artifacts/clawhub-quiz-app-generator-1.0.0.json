@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quiz-app-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quiz_app_generator",
+  "skill": {
+    "id": 72057,
+    "skillKey": "clawhub-quiz-app-generator",
+    "name": "刷题网页生成器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quiz-app-generator",
+    "url": "https://clawhub.ai/skills/quiz-app-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quiz-app-generator-39b8ea0172cd721a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "生成适合学生使用的交互式刷题单文件 HTML 网页应用，支持练习、考试、背题、错题重练四种模式，零外部依赖，可直接部署到服务器。哪怕用户没有明确叫出本技能的名字，只要提到\"帮我把这些题做成刷题网页\"、\"生成一个考试页面\"、\"制作交互式题目\"、\"把题库做成 HTML\"、\"给学生做一个测试工具\"，就应当立即使用本技能..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "duzhilei951",
+      "userId": "s17528wr0s8te7wbngrh6y2jz183w2mt",
+      "displayName": "duzhilei951",
+      "image": "https://avatars.githubusercontent.com/u/22375450?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775206789233,
+      "changelog": "初始版本：生成适合学生使用的交互式刷题单文件 HTML 网页应用，支持练习、考试、背题、错题重练四种模式，零外部依赖，可直接部署到服务器",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c2df7b07b64697b21beb01eff83c94ecbe3502cd5daf8fdf07d6843dc8e475b2"
+}

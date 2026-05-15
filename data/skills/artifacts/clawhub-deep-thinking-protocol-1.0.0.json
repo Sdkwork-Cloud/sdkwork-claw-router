@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deep-thinking-protocol@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deep_thinking_protocol",
+  "skill": {
+    "id": 73209,
+    "skillKey": "clawhub-deep-thinking-protocol",
+    "name": "深度思考协议"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deep-thinking-protocol",
+    "url": "https://clawhub.ai/skills/deep-thinking-protocol",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deep-thinking-protocol-68d16f712da3117c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "深度思考协议 - 增强AI助手的分析和推理能力。在处理复杂问题、需要多角度分析、深入推理或高价值决策时使用。当用户提出需要深度分析的问题、技术难题、战略决策、复杂系统设计或多利益相关者问题时触发此技能。适用于需要系统性思考、假设检验、模式识别和综合分析的场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hejng",
+      "userId": "s17241gfbwhvqemzf702wbx51d83hcbs",
+      "displayName": "hj",
+      "image": "https://avatars.githubusercontent.com/u/90391493?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774366107943,
+      "changelog": "初始版本：将Claude深度思考协议适配为OpenClaw技能，包含完整的思考框架、参考文件和工具脚本",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d3275a04595d9c19709e1f41b0dd485cfcb3a54e816b43f5600d0af04b9489ec"
+}

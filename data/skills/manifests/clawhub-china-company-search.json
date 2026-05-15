@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55133,
+  "uuid": "skill-clawhub-china-company-search",
+  "skillKey": "clawhub-china-company-search",
+  "name": "China company search 风鸟",
+  "summary": "China company search and business registry skill by Fengniao (Riskbird). Supports KYB, supplier verification, company due diligence, corporate risk screening...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_company_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xinshu001",
+      "features": [
+        "China company search and business registry skill by Fengniao (Riskbird)",
+        "Supports KYB, supplier verification, company due diligence, corporate risk screening..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/china-company-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270278415?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "china-company-search",
+      "url": "https://clawhub.ai/skills/china-company-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-company-search",
+    "url": "https://clawhub.ai/skills/china-company-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-company-search-8e555c6778d1e0ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/china-company-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-china-company-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ff028163780c544168bf5c4897f867f7f777a796d533d3c3412ac240857ebcb2",
+      "artifactSizeBytes": 2653
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T02:06:40.381Z"
+}

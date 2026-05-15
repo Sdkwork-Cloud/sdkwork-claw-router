@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51537,
+  "uuid": "skill-clawhub-faith-content-cron",
+  "skillKey": "clawhub-faith-content-cron",
+  "name": "Faith Content Cron — Daily Scripture & Devotional Posts",
+  "summary": "Generates and schedules daily scripture, devotionals, and prayer prompts tailored for specified social platforms and user preferences.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.faith_content_cron",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tenlifejosh",
+      "features": [
+        "Generates and schedules daily scripture, devotionals, and prayer prompts tailored for specified."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/faith-content-cron@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/205712596?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "faith-content-cron",
+      "url": "https://clawhub.ai/skills/faith-content-cron"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "faith-content-cron",
+    "url": "https://clawhub.ai/skills/faith-content-cron",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/faith-content-cron-326703ded9b350ca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/faith-content-cron@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-faith-content-cron-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:91f36fcf0a0c6c5ac3c8fe7e3d67719b5ca3eeb4d4b1dc63a43fd572fcee6458",
+      "artifactSizeBytes": 2049
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T18:30:13.216Z"
+}

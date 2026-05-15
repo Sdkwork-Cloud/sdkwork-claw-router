@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25496,
+  "uuid": "skill-clawhub-session-guardian",
+  "skillKey": "clawhub-session-guardian",
+  "name": "Session Guardian — Never Lose a Conversation Again",
+  "summary": "Never lose a conversation again. Auto-backup, smart recovery, and health monitoring for OpenClaw sessions. Protects against gateway crashes, model disconnect...",
+  "version": "3.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_guardian",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1052326311",
+      "features": [
+        "Never lose a conversation again",
+        "Auto-backup, smart recovery, and health monitoring for OpenClaw sessions",
+        "Protects against gateway crashes, model disconnect..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/session-guardian@3.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65798732?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "session-guardian",
+      "url": "https://clawhub.ai/skills/session-guardian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-guardian",
+    "url": "https://clawhub.ai/skills/session-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-guardian-56202622c0537658.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/session-guardian@3.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-session-guardian-3.1.0.json",
+      "version": "3.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:836af4dbfbbe1ba25f39daeb9f842de3f1a375d983eccfd139be461773fa669f",
+      "artifactSizeBytes": 2088
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T12:02:46.382Z"
+}

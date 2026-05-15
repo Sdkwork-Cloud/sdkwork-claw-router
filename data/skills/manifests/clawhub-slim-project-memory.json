@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53742,
+  "uuid": "skill-clawhub-slim-project-memory",
+  "skillKey": "clawhub-slim-project-memory",
+  "name": "Slim Project Memory",
+  "summary": "Use when a project's project memory file is over ~300 lines, when starting a new project from scratch, or when the user mentions context bloat, lost env URLs...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slim_project_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "adelvillar1",
+      "features": [
+        "Use when a project's project memory file is over ~300 lines, when starting a new project from s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/slim-project-memory@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/211379529?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "slim-project-memory",
+      "url": "https://clawhub.ai/skills/slim-project-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slim-project-memory",
+    "url": "https://clawhub.ai/skills/slim-project-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slim-project-memory-add337c4b8bffcd4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/slim-project-memory@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-slim-project-memory-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3114ca3f02aebddeedfe97f8397dfdc7c0f44fd83a2ed1f2e00859057ee9da24",
+      "artifactSizeBytes": 2085
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T12:35:20.892Z"
+}

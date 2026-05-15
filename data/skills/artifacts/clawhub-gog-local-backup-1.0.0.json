@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gog-local-backup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gog_local_backup",
+  "skill": {
+    "id": 26517,
+    "skillKey": "clawhub-gog-local-backup",
+    "name": "Gog.Local.Backup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gog-local-backup",
+    "url": "https://clawhub.ai/skills/gog-local-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gog-local-backup-fffe47b293caad05.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Google Workspace CLI for Gmail, Calendar, Drive, Contacts, Sheets, and Docs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "12357851",
+      "userId": "s170eqsx6mcdwwq987j2g40ahs83kfe4",
+      "displayName": "12357851",
+      "image": "https://avatars.githubusercontent.com/u/200716084?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 357,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773814213856,
+      "changelog": "Initial release of gog-local-backup.\n\n- Adds Google Workspace CLI integration for Gmail, Calendar, Drive, Contacts, Sheets, and Docs.\n- Provides setup instructions for OAuth authentication.\n- Includes common commands for searching, sending, listing, and modifying data across supported services.\n- Offers scripting support via JSON output and flags.\n- Adds helpful usage notes and best practices for working with accounts and Google services.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:31e4a0faa6611f439ed42142ca8ee2456cfa574ec35205fe4a3b8b73523ddc4e"
+}

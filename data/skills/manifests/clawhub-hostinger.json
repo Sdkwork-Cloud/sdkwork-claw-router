@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13881,
+  "uuid": "skill-clawhub-hostinger",
+  "skillKey": "clawhub-hostinger",
+  "name": "Hostinger",
+  "summary": "Manage Hostinger account via API — VPS administration (start/stop/restart, snapshots, backups, firewall, Docker), DNS zone management, domain portfolio, website hosting, and billing. Use when asked to deploy, publish, manage servers, confi.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hostinger",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rexlunae",
+      "features": [
+        "Manage Hostinger account via API — VPS administration (start/stop/restart, snapshots, backups,.",
+        "Use when asked to deploy, publish, manage servers, configure DNS, or control any Hostinger serv."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hostinger@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6726134?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hostinger",
+      "url": "https://clawhub.ai/skills/hostinger"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hostinger",
+    "url": "https://clawhub.ai/skills/hostinger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hostinger-fefaa42da40ecf93.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hostinger@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hostinger-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9fdf7115c868ba44baf16f8ded1971b24f84e101a86110756091a5560b8ff7e4",
+      "artifactSizeBytes": 1964
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T00:23:01.362Z"
+}

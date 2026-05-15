@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60710,
+  "uuid": "skill-clawhub-xiao-expense-tracker",
+  "skillKey": "clawhub-xiao-expense-tracker",
+  "name": "Xiao Expense Tracker",
+  "summary": "记账工具 - 收支记录、分类统计、预算管理",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiao_expense_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kaising-openclaw1",
+      "features": [
+        "收支记录、分类统计、预算管理"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiao-expense-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266910723?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiao-expense-tracker",
+      "url": "https://clawhub.ai/skills/xiao-expense-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiao-expense-tracker",
+    "url": "https://clawhub.ai/skills/xiao-expense-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiao-expense-tracker-85bdff1a54e6c0c7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiao-expense-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiao-expense-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0dd42af190131191be612271f5f8e6187ca6adb9e066ea6a699f160c91e39ffa",
+      "artifactSizeBytes": 2027
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T13:28:42.513Z"
+}

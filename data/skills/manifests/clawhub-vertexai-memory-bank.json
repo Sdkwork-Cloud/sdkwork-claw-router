@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26363,
+  "uuid": "skill-clawhub-vertexai-memory-bank",
+  "skillKey": "clawhub-vertexai-memory-bank",
+  "name": "Google Vertex AI Memory Bank",
+  "summary": "Install and configure the OpenClaw Vertex AI Memory Bank plugin for persistent, cross-agent memory. Use when the user wants long-term memory, cross-session r...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vertexai_memory_bank",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shubham Saboo",
+      "features": [
+        "Install and configure the OpenClaw Vertex AI Memory Bank plugin for persistent, cross-agent mem.",
+        "Use when the user wants long-term memory, cross-session r..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vertexai-memory-bank@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31396011?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vertexai-memory-bank",
+      "url": "https://clawhub.ai/skills/vertexai-memory-bank"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vertexai-memory-bank",
+    "url": "https://clawhub.ai/skills/vertexai-memory-bank",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vertexai-memory-bank-e4961c26d32a94e3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vertexai-memory-bank@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vertexai-memory-bank-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:281089df597cc48c81714ffea43d24772f589d86d6931eda1f95119a42fd9102",
+      "artifactSizeBytes": 2478
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T06:19:42.302Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bruce-doc-converter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bruce_doc_converter",
+  "skill": {
+    "id": 58725,
+    "skillKey": "clawhub-bruce-doc-converter",
+    "name": "bruce-doc-converter-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bruce-doc-converter",
+    "url": "https://clawhub.ai/skills/bruce-doc-converter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bruce-doc-converter-25bf9b3612a03875.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "双向文档转换工具，将 Word (.docx)、Excel (.xlsx)、PowerPoint (.pptx) 和 PDF (.pdf) 转换为 AI 友好的 Markdown，或将 Markdown (.md) 转换为 Word (.docx)。当用户请求文档转换、导出、读取、分析 Office/PDF/Ma..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bruc3van",
+      "userId": "s17an43c301m4vkr29gvy4mhg983hqms",
+      "displayName": "Bruce Van",
+      "image": "https://avatars.githubusercontent.com/u/10140863?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 89,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778151879474,
+      "changelog": "- Initial release of bruce-doc-converter.\n- Converts Word (.docx), Excel (.xlsx), PowerPoint (.pptx), and PDF (.pdf) files to AI-friendly Markdown.\n- Converts Markdown (.md) to Word (.docx).\n- Supports batch processing and direct analysis of Office/PDF document content.\n- Includes installation, usage, output handling, and troubleshooting instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e519c782392ade2ac58e4b5f95cde0e8d3aca44cabc991833767790ad1ff14ba"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-gitbak@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_gitbak",
+  "skill": {
+    "id": 32766,
+    "skillKey": "clawhub-openclaw-gitbak",
+    "name": "openclaw-gitbak"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-gitbak",
+    "url": "https://clawhub.ai/skills/openclaw-gitbak",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-gitbak-a4059915f0fb524e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Backup/restore OpenClaw config and workspace via git."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "burnlife001",
+      "userId": "s171fjepdq2p77bp1czaj9c8tx83jwxe",
+      "displayName": "burnlife",
+      "image": "https://avatars.githubusercontent.com/u/13991180?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 237,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774187277943,
+      "changelog": "- Fixes typo in script filename (bakup.sh → backup.sh).\n- Adds usage examples for backup and restore commands in the documentation.\n- Updates documentation to reflect the correct backup script and usage instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f279aebb8c17ff6e9e73380b19f8db2e5c2e61a6d7616b4103cd2e43b6b92d45"
+}

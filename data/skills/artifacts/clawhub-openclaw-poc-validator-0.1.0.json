@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-poc-validator@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_poc_validator",
+  "skill": {
+    "id": 32009,
+    "skillKey": "clawhub-openclaw-poc-validator",
+    "name": "Poc Validator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-poc-validator",
+    "url": "https://clawhub.ai/skills/openclaw-poc-validator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-poc-validator-3d303100a4f9260a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated Vulnerability Verification and Payload Replay Probe. Dynamically executes HTTP requests and analyzes HTTP status codes/error traces (e.g., SQL Inje..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whatyourname12345",
+      "userId": "publishers:whatyourname12345",
+      "displayName": "whatyourname12345",
+      "image": "https://avatars.githubusercontent.com/u/162994720?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774188187922,
+      "changelog": "**Initial public release of poc-validator.**\n\n- Automates vulnerability verification and payload replay for supplied raw HTTP requests or payloads.\n- Runs test requests via scripts/replay.py and analyzes HTTP responses for errors and stack traces.\n- Detects and reports signs of SQL injection and server exceptions by scanning response status and error keywords.\n- Produces clear, standardized validation reports including request details, outcome, and relevant evidence.\n- Not designed for mass scanning, DDoS, or unauthorized exploitation activities.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c18c87fb53d0bb80f7e6b7f1fc6d02b472a849237b8614869503a7ce3fdac797"
+}

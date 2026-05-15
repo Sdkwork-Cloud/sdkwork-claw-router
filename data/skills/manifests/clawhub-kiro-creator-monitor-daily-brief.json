@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19484,
+  "uuid": "skill-clawhub-kiro-creator-monitor-daily-brief",
+  "skillKey": "clawhub-kiro-creator-monitor-daily-brief",
+  "name": "Kiro Creator Monitor Daily Brief",
+  "summary": "Monitor creator topics across X, RSS, GitHub, and Reddit; deduplicate and score results; produce a daily top-5 brief plus one publish-ready X/LinkedIn draft;...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kiro_creator_monitor_daily_brief",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xinjin",
+      "features": [
+        "Monitor creator topics across X, RSS, GitHub, and Reddit",
+        "deduplicate and score results",
+        "produce a daily top-5 brief plus one publish-ready X/LinkedIn draft;..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kiro-creator-monitor-daily-brief@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/105750766?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kiro-creator-monitor-daily-brief",
+      "url": "https://clawhub.ai/skills/kiro-creator-monitor-daily-brief"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kiro-creator-monitor-daily-brief",
+    "url": "https://clawhub.ai/skills/kiro-creator-monitor-daily-brief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kiro-creator-monitor-daily-brief-8a0591fa7e93ccb8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kiro-creator-monitor-daily-brief@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kiro-creator-monitor-daily-brief-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9df14eb4ccd7917860b84a80d29205003461a80de6e5cd49c9a9615ebd77f45a",
+      "artifactSizeBytes": 2389
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T21:55:13.911Z"
+}

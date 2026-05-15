@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/proactive-tasks@1.2.3",
+  "version": "1.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proactive_tasks",
+  "skill": {
+    "id": 9023,
+    "skillKey": "clawhub-proactive-tasks",
+    "name": "Proactive Tasks"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proactive-tasks",
+    "url": "https://clawhub.ai/skills/proactive-tasks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proactive-tasks-264dfc38da8c3b84.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Proactive goal and task management system. Use when managing goals, breaking down projects into tasks, tracking progress, or working autonomously on objectives. Enables agents to work proactively during heartbeats, message humans with upda."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imrkhn03",
+      "userId": "s176ksg7mbw79jjbhwp7ad550d83m9fc",
+      "displayName": "ImrKhn03",
+      "image": "https://avatars.githubusercontent.com/u/67382535?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4207,
+      "installsAllTime": 14,
+      "installsCurrent": 14,
+      "stars": 10,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.2.3",
+      "createdAt": 1770894996689,
+      "changelog": "Complete: Recovery Protocol, VBR, Proactive Mindset",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bb16a1e9ca5cb45d129e67d115d358dd835a5a5f1f323f0df3930661c8debeee"
+}

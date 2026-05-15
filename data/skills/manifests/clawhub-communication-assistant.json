@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59345,
+  "uuid": "skill-clawhub-communication-assistant",
+  "skillKey": "clawhub-communication-assistant",
+  "name": "Communication Assistant",
+  "summary": "全能通信助理技能 - 统一管理iMessage短信、邮件和通知发送。支持BlueBubbles(iMessage)和Himalaya(邮件)集成。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.communication_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "terrycarter1985",
+      "features": [
+        "全能通信助理技能",
+        "统一管理iMessage短信、邮件和通知发送。支持BlueBubbles(iMessage)和Himalaya(邮件)集成。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/communication-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1542987?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "communication-assistant",
+      "url": "https://clawhub.ai/skills/communication-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "communication-assistant",
+    "url": "https://clawhub.ai/skills/communication-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/communication-assistant-62b2547cdd5dce67.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/communication-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-communication-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b8ae4a6d2919f0ea753243c7aa4740436aa18da66414178486e4b9e456ace89f",
+      "artifactSizeBytes": 1966
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T22:14:21.313Z"
+}

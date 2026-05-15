@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54540,
+  "uuid": "skill-clawhub-erz-entsorgung-recycling-zurich",
+  "skillKey": "clawhub-erz-entsorgung-recycling-zurich",
+  "name": "ERZ Entsorgung + Recycling Zürich",
+  "summary": "Abfuhrkalender für Zürich via OpenERZ API. Nutze bei Fragen zu Kehricht, Karton, Papier, Grüngut, Sonderabfall oder Entsorgungsterminen im Raum Zürich.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.erz_entsorgung_recycling_zurich",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MBjoern",
+      "features": [
+        "Abfuhrkalender für Zürich via OpenERZ API",
+        "Nutze bei Fragen zu Kehricht, Karton, Papier, Grüngut, Sonderabfall oder Entsorgungsterminen im."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/erz-entsorgung-recycling-zurich@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18655418?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "erz-entsorgung-recycling-zurich",
+      "url": "https://clawhub.ai/skills/erz-entsorgung-recycling-zurich"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "erz-entsorgung-recycling-zurich",
+    "url": "https://clawhub.ai/skills/erz-entsorgung-recycling-zurich",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/erz-entsorgung-recycling-zurich-a7182e0b60d5b69d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/erz-entsorgung-recycling-zurich@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-erz-entsorgung-recycling-zurich-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4f661adbbc000feb299f9cf74c66f3953d11ca9e7a2eed5c0602c6b22554084c",
+      "artifactSizeBytes": 2426
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-14T19:53:28.960Z"
+}

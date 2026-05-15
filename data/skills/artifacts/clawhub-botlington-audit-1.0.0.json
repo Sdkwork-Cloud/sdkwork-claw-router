@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/botlington-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.botlington_audit",
+  "skill": {
+    "id": 52072,
+    "skillKey": "clawhub-botlington-audit",
+    "name": "Botlington Agent Token Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "botlington-audit",
+    "url": "https://clawhub.ai/skills/botlington-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/botlington-audit-c9dc7286a9f31cc8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trigger an Agent Token Audit via Botlington's A2A endpoint. Use when you want to audit an AI agent's token efficiency — identifies model waste, context bloat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gary-botlington",
+      "userId": "s17ejj80ebp6bxn0xbj1n81as183n9d4",
+      "displayName": "gary-botlington",
+      "image": "https://avatars.githubusercontent.com/u/265977231?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774512120676,
+      "changelog": "Initial release — A2A-compliant skill for triggering Botlington agent token audits. Supports conversational (7-turn) and direct config submission flows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:77d6ebb99e34c063af895df97639a51f2ac2cddeafd47cb00ff9e8704b1959a0"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22446,
+  "uuid": "skill-clawhub-abra-flexibee",
+  "skillKey": "clawhub-abra-flexibee",
+  "name": "Abra Flexibee",
+  "summary": "ABRA FlexiBee integration. Manage data, records, and automate workflows. Use when the user wants to interact with ABRA FlexiBee data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abra_flexibee",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "ABRA FlexiBee integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with ABRA FlexiBee data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/abra-flexibee@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "abra-flexibee",
+      "url": "https://clawhub.ai/skills/abra-flexibee"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abra-flexibee",
+    "url": "https://clawhub.ai/skills/abra-flexibee",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abra-flexibee-ed3540ff47d4cc64.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/abra-flexibee@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-abra-flexibee-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8466eecbfd5b07a2fbdf825bf39f11825e582c0cbcc00704ab53b00c54bbccb3",
+      "artifactSizeBytes": 1883
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:07:24.994Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/honda@0.1.3",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.honda",
+  "skill": {
+    "id": 30987,
+    "skillKey": "clawhub-honda",
+    "name": "Honda"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "honda",
+    "url": "https://clawhub.ai/skills/honda",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/honda-8417659f46b5b43b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Honda vehicles, motorcycles, power equipment. Civic, CR-V, Accord specs, pricing, and reliability ratings."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 263,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.1.3",
+      "createdAt": 1776533730196,
+      "changelog": "- Expanded SKILL.md with detailed information on Honda’s history, milestones, business scope, and key statistics\n- Updated summary to highlight Honda as the world’s largest engine and motorcycle manufacturer\n- Added company development timeline, core features, advantages, and global data\n- Removed outdated honda/SKILL.md file",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d3f5bae9746722b1acf6ca11bbbed379f08f45693a0f157f541caa886b999a0a"
+}

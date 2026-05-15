@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49810,
+  "uuid": "skill-clawhub-property-management-agent",
+  "skillKey": "clawhub-property-management-agent",
+  "name": "Property Management Agent",
+  "summary": "Autonomous tenant maintenance and ticketing agent. Triages tenant requests, distinguishes emergencies from routine maintenance, and syncs with Buildium or Ap...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.property_management_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "IgorGanapolsky",
+      "features": [
+        "Autonomous tenant maintenance and ticketing agent",
+        "Triages tenant requests, distinguishes emergencies from routine maintenance, and syncs with Bui."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/property-management-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201209?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "property-management-agent",
+      "url": "https://clawhub.ai/skills/property-management-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "property-management-agent",
+    "url": "https://clawhub.ai/skills/property-management-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/property-management-agent-2312f3cc88163d2b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/property-management-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-property-management-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b2e1cf362c07f2da3457ec2f2143fc77d5825e4de259998e2d5a4ba1b05577fd",
+      "artifactSizeBytes": 2425
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T20:00:15.051Z"
+}

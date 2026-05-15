@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45206,
+  "uuid": "skill-clawhub-meeting-notetaker",
+  "skillKey": "clawhub-meeting-notetaker",
+  "name": "meeting-notetaker",
+  "summary": "Fetch and present meeting notes from monday.com Notetaker, or show the next upcoming meeting with full context prep. Use when: asked to summarize a meeting,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meeting_notetaker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Netanel Abergel",
+      "features": [
+        "Fetch and present meeting notes from monday.com Notetaker, or show the next upcoming meeting wi.",
+        "Use when: asked to summarize a meeting,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meeting-notetaker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/89765095?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meeting-notetaker",
+      "url": "https://clawhub.ai/skills/meeting-notetaker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meeting-notetaker",
+    "url": "https://clawhub.ai/skills/meeting-notetaker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meeting-notetaker-cad5b692b6303e26.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meeting-notetaker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meeting-notetaker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:88a5b9b6c0c1ec5b38b2d12850b53297750f19d125f09354f753b9f7313cbc5b",
+      "artifactSizeBytes": 1941
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T15:04:49.915Z"
+}

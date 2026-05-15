@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58459,
+  "uuid": "skill-clawhub-markdown-to-image",
+  "skillKey": "clawhub-markdown-to-image",
+  "name": "Markdown → 图片卡片",
+  "summary": "Use when user wants to convert Markdown content into shareable image cards — triggered by phrases like \"转图片\"、\"做卡片\"、\"生成海报\"、\"生成分享图\"、\"把这个转成图片\"、\"export as image\"...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.markdown_to_image",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ruifu Wu",
+      "features": [
+        "Use when user wants to convert Markdown content into shareable image cards — triggered by phras."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/markdown-to-image@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/96998152?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "markdown-to-image",
+      "url": "https://clawhub.ai/skills/markdown-to-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "markdown-to-image",
+    "url": "https://clawhub.ai/skills/markdown-to-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/markdown-to-image-f32586ec31d50691.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/markdown-to-image@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-markdown-to-image-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:50e23b02f07a2a7cce7ec7c02c2ee399f6d4bfc21ee77745c7804459f424b2f6",
+      "artifactSizeBytes": 2470
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T15:09:47.011Z"
+}

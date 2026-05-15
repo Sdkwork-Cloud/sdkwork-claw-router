@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17611,
+  "uuid": "skill-clawhub-chaos-pivot",
+  "skillKey": "clawhub-chaos-pivot",
+  "name": "Chaos pivot",
+  "summary": "Prevents LLMs from sunk-cost pushing broken solutions. Triggers when an agent is stuck, looping, or failing repeatedly. Forces a Popperian falsification mome...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chaos_pivot",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Manecharo",
+      "features": [
+        "Prevents LLMs from sunk-cost pushing broken solutions",
+        "Triggers when an agent is stuck, looping, or failing repeatedly",
+        "Forces a Popperian falsification mome..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chaos-pivot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/68385724?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chaos-pivot",
+      "url": "https://clawhub.ai/skills/chaos-pivot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chaos-pivot",
+    "url": "https://clawhub.ai/skills/chaos-pivot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chaos-pivot-095ef2b75882e67b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chaos-pivot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chaos-pivot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b154d29f07c4bd12abb6b5e568587577c7e0f6ab38630f5fe60d4c5fa4f0dacd",
+      "artifactSizeBytes": 2978
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T08:59:13.856Z"
+}

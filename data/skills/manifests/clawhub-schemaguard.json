@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18914,
+  "uuid": "skill-clawhub-schemaguard",
+  "skillKey": "clawhub-schemaguard",
+  "name": "SchemGuard",
+  "summary": "Detect breaking changes in OpenAPI specs. Use when reviewing API changes, validating PRs that modify API specs, checking backward compatibility, or linting O...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.schemaguard",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sethclawd-prog",
+      "features": [
+        "Detect breaking changes in OpenAPI specs",
+        "Use when reviewing API changes, validating PRs that modify API specs, checking backward compati."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/schemaguard@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257415333?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "schemaguard",
+      "url": "https://clawhub.ai/skills/schemaguard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "schemaguard",
+    "url": "https://clawhub.ai/skills/schemaguard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/schemaguard-9011c4355e3205e6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/schemaguard@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-schemaguard-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:42fd07be2de4ceaf380197cfda95655703590e26b034cc374856688a3a61aa98",
+      "artifactSizeBytes": 2243
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T00:43:04.751Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polyv-live-cli@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polyv_live_cli",
+  "skill": {
+    "id": 72113,
+    "skillKey": "clawhub-polyv-live-cli",
+    "name": "polyv-live-cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polyv-live-cli",
+    "url": "https://clawhub.ai/skills/polyv-live-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polyv-live-cli-dbb0781a17b7a220.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "管理保利威直播服务，包括频道管理、推流操作、商品管理、优惠券、回放、文档和统计数据。当用户需要管理直播频道、配置推流设置、管理商品、处理优惠券、查看直播数据或管理回放录像时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "terryso",
+      "userId": "s1728bgvqk8n00g21yrq6e2n3983hhhb",
+      "displayName": "NEE",
+      "image": "https://avatars.githubusercontent.com/u/106784?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 234,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1774943130624,
+      "changelog": "- No changes detected in this version.  \n- Documentation and functionality remain the same as the previous release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5f579eb77cead4d2efab21b7ab107a10a39d80bfa75a9be7e4da9f33978475e8"
+}

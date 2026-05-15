@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/helpscout@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.helpscout",
+  "skill": {
+    "id": 11738,
+    "skillKey": "clawhub-helpscout",
+    "name": "Helpscout"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "helpscout",
+    "url": "https://clawhub.ai/skills/helpscout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/helpscout-8c7ffb3f57c0b105.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetches messages from specific Helpscout inboxes"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fabiensebban",
+      "userId": "publishers:fabiensebban",
+      "displayName": "fabiensebban",
+      "image": "https://avatars.githubusercontent.com/u/5563909?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2028,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771099184149,
+      "changelog": "- Added the ability to send replies to Helpscout conversations, including customer-visible replies and internal notes.\n- Updated documentation to reflect support for sending replies and creating notes.\n- New script file (sendReply.js) added for handling replies.\n- Minor updates to clarify feature set and usage instructions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0fe72328e95e2322559bd7faec96b366a8a3d49caeafbf2b15b38a95066e1f51"
+}

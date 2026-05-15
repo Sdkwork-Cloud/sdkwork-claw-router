@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50325,
+  "uuid": "skill-clawhub-ollama-proxy",
+  "skillKey": "clawhub-ollama-proxy",
+  "name": "Ollama Proxy",
+  "summary": "Ollama proxy — one endpoint that routes to multiple Ollama instances. Drop-in Ollama proxy replacement for localhost:11434. Same Ollama API, same model names...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ollama_proxy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Twin Geeks",
+      "features": [
+        "Ollama proxy — one endpoint that routes to multiple Ollama instances",
+        "Drop-in Ollama proxy replacement for localhost:11434",
+        "Same Ollama API, same model names..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ollama-proxy@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261838102?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ollama-proxy",
+      "url": "https://clawhub.ai/skills/ollama-proxy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ollama-proxy",
+    "url": "https://clawhub.ai/skills/ollama-proxy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ollama-proxy-1c1a2b6aee279525.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ollama-proxy@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-ollama-proxy-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bcf55f14fe5457db523e5b20a27ea7ea9e21556b8ff2d0e12e1622f3a0a84bba",
+      "artifactSizeBytes": 1912
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T01:07:34.929Z"
+}

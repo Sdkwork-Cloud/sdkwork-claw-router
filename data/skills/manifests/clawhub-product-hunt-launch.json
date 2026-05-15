@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10504,
+  "uuid": "skill-clawhub-product-hunt-launch",
+  "skillKey": "clawhub-product-hunt-launch",
+  "name": "Product Hunt Launch",
+  "summary": "Track your Product Hunt launch stats (Rank, Upvotes, Comments) in real-time via CLI.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.product_hunt_launch",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "abakermi",
+      "features": [
+        "Track your Product Hunt launch stats (Rank, Upvotes, Comments) in real-time via CLI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/product-hunt-launch@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60294727?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "product-hunt-launch",
+      "url": "https://clawhub.ai/skills/product-hunt-launch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "product-hunt-launch",
+    "url": "https://clawhub.ai/skills/product-hunt-launch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/product-hunt-launch-9714ee2d9fb6afc0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/product-hunt-launch@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-product-hunt-launch-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:32e59ebabaa5f1f6a52177bf4728139fe4a73ad78a754c076a6bcf7f64124c09",
+      "artifactSizeBytes": 2115
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T19:44:32.891Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31111,
+  "uuid": "skill-clawhub-hugging-face-integration",
+  "skillKey": "clawhub-hugging-face-integration",
+  "name": "Hugging Face",
+  "summary": "Hugging Face integration. Manage Models, Datasets, Spaces. Use when the user wants to interact with Hugging Face data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hugging_face_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Hugging Face integration",
+        "Manage Models, Datasets, Spaces",
+        "Use when the user wants to interact with Hugging Face data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hugging-face-integration@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hugging-face-integration",
+      "url": "https://clawhub.ai/skills/hugging-face-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hugging-face-integration",
+    "url": "https://clawhub.ai/skills/hugging-face-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hugging-face-integration-c0866e83686d0a2f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hugging-face-integration@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-hugging-face-integration-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0dbf7b95a53e802ad27c3d06f3440eb64f8226127a88a8b189183b079a8258d4",
+      "artifactSizeBytes": 1925
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:57:13.031Z"
+}

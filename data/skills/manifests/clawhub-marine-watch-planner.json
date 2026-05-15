@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21246,
+  "uuid": "skill-clawhub-marine-watch-planner",
+  "skillKey": "clawhub-marine-watch-planner",
+  "name": "marine-watch-planner",
+  "summary": "Generate and adapt a sea-duty daily routine with watch rotations, sleep protection, duty handovers, internet-budgeted work blocks, and role-specific tasks. U...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.marine_watch_planner",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sytam",
+      "features": [
+        "Generate and adapt a sea-duty daily routine with watch rotations, sleep protection, duty handov."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/marine-watch-planner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/114871845?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "marine-watch-planner",
+      "url": "https://clawhub.ai/skills/marine-watch-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "marine-watch-planner",
+    "url": "https://clawhub.ai/skills/marine-watch-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/marine-watch-planner-dbb074c7abdc498c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/marine-watch-planner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-marine-watch-planner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5e7de23bcb0bad03c0adf99800a42bd49888f375004b02e51eaa0094d69df602",
+      "artifactSizeBytes": 2192
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T18:31:13.224Z"
+}

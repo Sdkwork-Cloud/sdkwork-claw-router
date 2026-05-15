@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27253,
+  "uuid": "skill-clawhub-openclaw-capture",
+  "skillKey": "clawhub-openclaw-capture",
+  "name": "OpenClaw Capture",
+  "summary": "Wrap a local openclaw_capture_workflow checkout as an OpenClaw/ClawHub skill that captures links, text, images, and videos, routes STT by platform, and fans...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_capture",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wu Bo Yu",
+      "features": [
+        "Wrap a local openclaw_capture_workflow checkout as an OpenClaw/ClawHub skill that captures link."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-capture@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95729350?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-capture",
+      "url": "https://clawhub.ai/skills/openclaw-capture"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-capture",
+    "url": "https://clawhub.ai/skills/openclaw-capture",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-capture-8276704c6b73541f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-capture@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-capture-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f20a1d59bb27bbe2fec0bbbbe1d72ca15649544db342c7e5d583ef757fff97e9",
+      "artifactSizeBytes": 1941
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T17:55:52.784Z"
+}

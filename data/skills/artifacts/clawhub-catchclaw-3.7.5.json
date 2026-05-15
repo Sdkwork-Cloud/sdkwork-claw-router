@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/catchclaw@3.7.5",
+  "version": "3.7.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.catchclaw",
+  "skill": {
+    "id": 17051,
+    "skillKey": "clawhub-catchclaw",
+    "name": "CatchClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "catchclaw",
+    "url": "https://clawhub.ai/skills/catchclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/catchclaw-0358c808e7290b9a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search, install, and export agentars and teams from the CatchClaw marketplace. Use when the user wants to find, install, or package agent templates or teams."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lovelcp",
+      "userId": "s170p1ew938vd1hzra53nz0se983jb5b",
+      "displayName": "kissrain",
+      "image": "https://avatars.githubusercontent.com/u/4645149?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 621,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 41
+    },
+    "latestVersion": {
+      "version": "3.7.5",
+      "createdAt": 1775223467232,
+      "changelog": "Add install command selection gate to prevent agents from using install instead of team install for teams",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4d96bb40ff9b0eda191fdbc1f795f145a5eb26d0abfa75f50b7536dd24a793df"
+}

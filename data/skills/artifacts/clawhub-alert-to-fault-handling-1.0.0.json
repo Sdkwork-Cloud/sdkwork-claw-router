@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alert-to-fault-handling@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alert_to_fault_handling",
+  "skill": {
+    "id": 62338,
+    "skillKey": "clawhub-alert-to-fault-handling",
+    "name": "Lerwee Alert To Fault Handling"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alert-to-fault-handling",
+    "url": "https://clawhub.ai/skills/alert-to-fault-handling",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alert-to-fault-handling-e2f5ecc68dbc3c79.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "告警自动处理工作流 - 监听告警上下文，匹配处理脚本，提示用户执行故障处理操作"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lerwee",
+      "userId": "s179drnz45v8z453519b5s430583nh0a",
+      "displayName": "Lerwee",
+      "image": "https://avatars.githubusercontent.com/u/162661167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 658,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773399196673,
+      "changelog": "- Initial release of the \"alert-to-fault-handling\" skill.\n- Automatically detects alert context and recommends matched fault-handling scripts.\n- Supports confirmation-based script execution with step-by-step user interaction.\n- Integrates script mapping and execution log configuration via JSON files.\n- Enforces strict rules for user confirmation and secure handling.\n- Provides clear result feedback and optional auto-closure of alerts after successful actions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e02b9cf0e9f2039b3696794aa45fe392632878c1a2317aa811ace060aaa1ea55"
+}

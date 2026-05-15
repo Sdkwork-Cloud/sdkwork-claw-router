@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35194,
+  "uuid": "skill-clawhub-shopping-advisor",
+  "skillKey": "clawhub-shopping-advisor",
+  "name": "Shopping Advisor",
+  "summary": "Shopping decision skill. Compares similar products, explains price gaps, judges whether something is worth buying, suggests better directions, flags common p...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shopping_advisor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Shopping decision skill",
+        "Compares similar products, explains price gaps, judges whether something is worth buying, sugge."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shopping-advisor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shopping-advisor",
+      "url": "https://clawhub.ai/skills/shopping-advisor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shopping-advisor",
+    "url": "https://clawhub.ai/skills/shopping-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shopping-advisor-b831bc76e49952c4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shopping-advisor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shopping-advisor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ef74fc9240630d86be20b10b67b03b4c70db46d9cc76d9159854cc553b13c389",
+      "artifactSizeBytes": 2453
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T12:55:53.100Z"
+}

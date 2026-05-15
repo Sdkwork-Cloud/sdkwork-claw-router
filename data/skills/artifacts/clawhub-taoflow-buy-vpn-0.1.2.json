@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/taoflow-buy-vpn@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taoflow_buy_vpn",
+  "skill": {
+    "id": 25245,
+    "skillKey": "clawhub-taoflow-buy-vpn",
+    "name": "Buy Taoflow VPN"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taoflow-buy-vpn",
+    "url": "https://clawhub.ai/skills/taoflow-buy-vpn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taoflow-buy-vpn-6dcd0c58129e08f9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guide users to choose and purchase Taoflow VPN plans safely and efficiently. Use when users ask about buying Taoflow VPN, selecting a plan, comparing billing..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "taoflownetwork",
+      "userId": "publishers:taoflownetwork",
+      "displayName": "taoflownetwork",
+      "image": "https://avatars.githubusercontent.com/u/264297735?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 293,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1773480157366,
+      "changelog": "Add API mode using taoflow.network/api.html and OpenAPI flow; include token/recovery-key safety guardrails.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a564dd7f96c067093e018bde42d377ac4936e61e55f25a3a4f7c19f4e25bd69f"
+}

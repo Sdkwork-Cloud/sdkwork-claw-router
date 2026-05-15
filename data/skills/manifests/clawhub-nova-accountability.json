@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45639,
+  "uuid": "skill-clawhub-nova-accountability",
+  "skillKey": "clawhub-nova-accountability",
+  "name": "Nova Accountability",
+  "summary": "Manage accountability items on a Monday.com board. Use when creating new accountability items, checking on existing ones, running work sessions, or when a cr...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nova_accountability",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "novalystrix",
+      "features": [
+        "Manage accountability items on a Monday.com board",
+        "Use when creating new accountability items, checking on existing ones, running work sessions, o."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nova-accountability@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262206259?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nova-accountability",
+      "url": "https://clawhub.ai/skills/nova-accountability"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nova-accountability",
+    "url": "https://clawhub.ai/skills/nova-accountability",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nova-accountability-008bf6a2dbc9c366.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nova-accountability@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nova-accountability-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0f507aa148cdc1c47a19d826ecae96636211e5f11a99b58cc96b9bfd59ddd7a2",
+      "artifactSizeBytes": 2152
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T12:08:48.631Z"
+}

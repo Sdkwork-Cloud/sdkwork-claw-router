@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18951,
+  "uuid": "skill-clawhub-gotchi-dao-voting",
+  "skillKey": "clawhub-gotchi-dao-voting",
+  "name": "Gotchi DAO Voting",
+  "summary": "Check active Aavegotchi DAO proposals and vote on Snapshot via Bankr EIP-712 signatures.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gotchi_dao_voting",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aaigotchi",
+      "features": [
+        "Check active Aavegotchi DAO proposals and vote on Snapshot via Bankr EIP-712 signatures."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gotchi-dao-voting@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258886199?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gotchi-dao-voting",
+      "url": "https://clawhub.ai/skills/gotchi-dao-voting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gotchi-dao-voting",
+    "url": "https://clawhub.ai/skills/gotchi-dao-voting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gotchi-dao-voting-a2bf2364b1e1ea42.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gotchi-dao-voting@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gotchi-dao-voting-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4175a480a44fcf6eb0bdf2ccb8c098d0838d1e3e92811fafe88a888fecb4021b",
+      "artifactSizeBytes": 1868
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T19:54:29.163Z"
+}

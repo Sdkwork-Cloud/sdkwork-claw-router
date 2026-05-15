@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-cleaner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_cleaner",
+  "skill": {
+    "id": 63538,
+    "skillKey": "clawhub-openclaw-cleaner",
+    "name": "openclaw-cleaner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-cleaner",
+    "url": "https://clawhub.ai/skills/openclaw-cleaner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-cleaner-528739ee45e52b20.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw清理大师 - 项目目录清理与优化工具。提供快照、Diff、检查点、任务进度等能力，AI 可直接调用自动执行。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "computersniper",
+      "userId": "publishers:computersniper",
+      "displayName": "computersniper",
+      "image": "https://avatars.githubusercontent.com/u/139130525?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 414,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773128799264,
+      "changelog": "A cleaning software toolbox for Openclaw",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:41a01bafdc312c1badd72d8bfbaf07bd53b387f1af28d7ad82bc1ba7f9675e37"
+}

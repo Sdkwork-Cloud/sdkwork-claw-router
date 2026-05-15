@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10187,
+  "uuid": "skill-clawhub-icalendar-sync",
+  "skillKey": "clawhub-icalendar-sync",
+  "name": "iCalendar Sync",
+  "summary": "Secure iCloud Calendar operations for OpenClaw with CalDAV and macOS native bridge providers. Use when tasks require calendar listing, event retrieval, event...",
+  "version": "2.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.icalendar_sync",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "h8kxrfp68z-lgtm",
+      "features": [
+        "Secure iCloud Calendar operations for OpenClaw with CalDAV and macOS native bridge providers",
+        "Use when tasks require calendar listing, event retrieval, event..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/icalendar-sync@2.4.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/247819571?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "icalendar-sync",
+      "url": "https://clawhub.ai/skills/icalendar-sync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "icalendar-sync",
+    "url": "https://clawhub.ai/skills/icalendar-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/icalendar-sync-a88ba72e4b7bca67.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/icalendar-sync@2.4.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-icalendar-sync-2.4.1.json",
+      "version": "2.4.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e43b329de0ff579a7fcad1f1ab9931ac293058183cb0e0156d557018c98760d8",
+      "artifactSizeBytes": 2150
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T12:44:25.318Z"
+}

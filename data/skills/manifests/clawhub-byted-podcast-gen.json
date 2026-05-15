@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66366,
+  "uuid": "skill-clawhub-byted-podcast-gen",
+  "skillKey": "clawhub-byted-podcast-gen",
+  "name": "Byted Podcast Gen",
+  "summary": "将某个话题或者网页内容总结合成为播客音频（Podcast）。基于火山引擎豆包语音播客合成协议生成最终音频。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.byted_podcast_gen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "volcengine-skills",
+      "features": [
+        "将某个话题或者网页内容总结合成为播客音频（Podcast）。基于火山引擎豆包语音播客合成协议生成最终音频。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/byted-podcast-gen@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260939792?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "byted-podcast-gen",
+      "url": "https://clawhub.ai/skills/byted-podcast-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "byted-podcast-gen",
+    "url": "https://clawhub.ai/skills/byted-podcast-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/byted-podcast-gen-36c156c84de731bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/byted-podcast-gen@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-byted-podcast-gen-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:915a21f080e7bd3211be9bc1fe875889a6d14202fec77dfd928eac1ca9e13576",
+      "artifactSizeBytes": 2513
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T07:41:07.030Z"
+}

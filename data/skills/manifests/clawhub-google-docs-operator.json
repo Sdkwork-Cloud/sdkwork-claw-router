@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22405,
+  "uuid": "skill-clawhub-google-docs-operator",
+  "skillKey": "clawhub-google-docs-operator",
+  "name": "Google Docs",
+  "summary": "Google Docs API integration with managed OAuth via Maton. Create documents, read full text, write/append content, search and replace, apply paragraph styles...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_docs_operator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tankeito",
+      "features": [
+        "Google Docs API integration with managed OAuth via Maton",
+        "Create documents, read full text, write/append content, search and replace, apply paragraph sty."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-docs-operator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/129169395?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-docs-operator",
+      "url": "https://clawhub.ai/skills/google-docs-operator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-docs-operator",
+    "url": "https://clawhub.ai/skills/google-docs-operator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-docs-operator-1be82814c020f545.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-docs-operator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-docs-operator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a33911dc828e8ae145bc52d8bc50905ddd772c51366e6644e2098f659f730df4",
+      "artifactSizeBytes": 2329
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T06:31:37.411Z"
+}

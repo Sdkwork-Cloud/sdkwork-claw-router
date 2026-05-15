@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70624,
+  "uuid": "skill-clawhub-real-human",
+  "skillKey": "clawhub-real-human",
+  "name": "真实的人类",
+  "summary": "真实的人类 - 帮助AI识别、分析和建模人类个体。当用户提到\"人类建模\"、\"用户画像\"、\"人格分析\"、\"了解一个人\"、\"分析行为模式\"、\"真实的人类\"时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.real_human",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wasinc",
+      "features": [
+        "帮助AI识别、分析和建模人类个体。当用户提到\"人类建模\"、\"用户画像\"、\"人格分析\"、\"了解一个人\"、\"分析行为模式\"、\"真实的人类\"时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/real-human@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/197626322?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "real-human",
+      "url": "https://clawhub.ai/skills/real-human"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "real-human",
+    "url": "https://clawhub.ai/skills/real-human",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/real-human-e3e9bca8af5b3db3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/real-human@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-real-human-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:440a1931134d200b14cc82b05b427cba34fe96559fc87c23be24a10bcee67b10",
+      "artifactSizeBytes": 1949
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T12:36:26.645Z"
+}

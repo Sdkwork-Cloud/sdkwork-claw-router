@@ -4,7 +4,7 @@ use axum::middleware::from_fn_with_state;
 use axum::Router;
 use sdkwork_claw_config::{
     ApiKeySecurityConfig, AppSessionConfig, DatabaseConfig, DatabaseEngine,
-    ProviderSecretMapConfig, TrustedSubjectConfig,
+    ProviderSecretMapConfig, StartupInstallMode, TrustedSubjectConfig,
 };
 use sdkwork_claw_product::application::{ApiKeySecretHasher, ModelRankingsService};
 use sdkwork_claw_product::infrastructure::crypto::HmacSha256ApiKeySecretHasher;
@@ -538,6 +538,25 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
     app_session_config: Option<AppSessionConfig>,
     provider_secret_map_config: Option<ProviderSecretMapConfig>,
 ) -> Result<Router, ProductCatalogRouterError> {
+    router_with_database_api_key_trusted_subject_app_session_and_optional_provider_secret_map_config_and_startup_install_mode(
+        config,
+        api_key_config,
+        trusted_subject_config,
+        app_session_config,
+        provider_secret_map_config,
+        StartupInstallMode::Ensure,
+    )
+    .await
+}
+
+async fn router_with_database_api_key_trusted_subject_app_session_and_optional_provider_secret_map_config_and_startup_install_mode(
+    config: DatabaseConfig,
+    api_key_config: Option<ApiKeySecurityConfig>,
+    trusted_subject_config: Option<TrustedSubjectConfig>,
+    app_session_config: Option<AppSessionConfig>,
+    provider_secret_map_config: Option<ProviderSecretMapConfig>,
+    startup_install_mode: StartupInstallMode,
+) -> Result<Router, ProductCatalogRouterError> {
     let api_key_hasher = build_api_key_hasher(api_key_config)?;
     let trusted_subject_config = require_trusted_subject_config(trusted_subject_config)?;
     let app_session_config = require_app_session_config(app_session_config)?;
@@ -558,7 +577,9 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
                 })?;
             let database_installer =
                 Arc::new(DatabaseInstaller::for_sqlite(pool.clone()).with_env_options()?);
-            database_installer.ensure_installed().await?;
+            if startup_install_mode.should_ensure() {
+                database_installer.ensure_installed().await?;
+            }
             let snapshot = SqlitePricingCatalogLoader::new(pool.clone())
                 .load_snapshot()
                 .await?;
@@ -638,7 +659,9 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
                 })?;
             let database_installer =
                 Arc::new(DatabaseInstaller::for_postgres(pool.clone()).with_env_options()?);
-            database_installer.ensure_installed().await?;
+            if startup_install_mode.should_ensure() {
+                database_installer.ensure_installed().await?;
+            }
             let snapshot = PostgresPricingCatalogLoader::new(pool.clone())
                 .load_snapshot()
                 .await?;
@@ -723,6 +746,8 @@ pub async fn router_with_optional_database_config(
 
 pub async fn router_from_env() -> Result<Router, ProductCatalogRouterError> {
     let config = DatabaseConfig::from_env().map_err(ProductCatalogRouterError::Config)?;
+    let startup_install_mode =
+        StartupInstallMode::from_env().map_err(ProductCatalogRouterError::Config)?;
     let api_key_config =
         ApiKeySecurityConfig::from_env().map_err(ProductCatalogRouterError::Config)?;
     let trusted_subject_config =
@@ -733,12 +758,13 @@ pub async fn router_from_env() -> Result<Router, ProductCatalogRouterError> {
         ProviderSecretMapConfig::from_env().map_err(ProductCatalogRouterError::Config)?;
     match config {
         Some(config) => {
-            router_with_database_api_key_trusted_subject_app_session_and_optional_provider_secret_map_config(
+            router_with_database_api_key_trusted_subject_app_session_and_optional_provider_secret_map_config_and_startup_install_mode(
                 config,
                 Some(require_api_key_security_config(api_key_config)?),
                 Some(require_trusted_subject_config(trusted_subject_config)?),
                 Some(require_app_session_config(app_session_config)?),
                 provider_secret_map_config,
+                startup_install_mode,
             )
             .await
         }

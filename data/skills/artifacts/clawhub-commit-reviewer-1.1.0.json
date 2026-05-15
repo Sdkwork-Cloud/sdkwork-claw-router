@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/commit-reviewer@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.commit_reviewer",
+  "skill": {
+    "id": 66173,
+    "skillKey": "clawhub-commit-reviewer",
+    "name": "Commit Reviewer（提交修复检查）"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "commit-reviewer",
+    "url": "https://clawhub.ai/skills/commit-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/commit-reviewer-36bd860a3aee6022.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据一个或多个 git 修订号和需求描述，检查提交是否真正修复了对应 bug，并给出逐条结论"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "carpedx",
+      "userId": "s173swf3ztbrxc0vb9e9wckgs184etbf",
+      "displayName": "carpe",
+      "image": "https://avatars.githubusercontent.com/u/40817772?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 232,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773977042707,
+      "changelog": "commit-reviewer 1.1.0\n\n- 支持 commit 自动识别项目（无需手动指定）\n- 支持指定项目名 / 项目路径分析\n- 支持短 commit（7~40 位）\n- 基于真实 diff 判断是否真正修复问题\n- 输出结构化评审结果（已解决 / 未解决 / 风险点）\n- 自动提示需要手测的前端 / UI 问题\n\n优化：\n- 提升多仓库扫描性能\n- 优化错误提示与用户交互体验",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:26d6847361aaee5df4587c6966fda31ad7c7f49800c81f8d5de32ce56186b6c5"
+}

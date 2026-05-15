@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/session-task-tracker@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_task_tracker",
+  "skill": {
+    "id": 41654,
+    "skillKey": "clawhub-session-task-tracker",
+    "name": "Session Task Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-task-tracker",
+    "url": "https://clawhub.ai/skills/session-task-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-task-tracker-ffa36f81a9b4404b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Task-based cross-session context management for OpenClaw agents. Maintains persistent task files so context survives session resets, compaction, and channel..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dylanzhang1128",
+      "userId": "s173gt1dqrf3aetjdswgnjebr183gkqx",
+      "displayName": "Dylan Zhang",
+      "image": "https://avatars.githubusercontent.com/u/247313522?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775010287813,
+      "changelog": "Remove personal task file names from example, use generic placeholders",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3702da11653c45bb54e7544b25f4f15e3ff5034210c22f70295dee7cff7d3861"
+}

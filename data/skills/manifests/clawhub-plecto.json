@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30699,
+  "uuid": "skill-clawhub-plecto",
+  "skillKey": "clawhub-plecto",
+  "name": "Plecto",
+  "summary": "Plecto integration. Manage Organizations, Persons, Deals, Pipelines, Activities, Notes and more. Use when the user wants to interact with Plecto data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plecto",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Plecto integration",
+        "Manage Organizations, Persons, Deals, Pipelines, Activities, Notes and more",
+        "Use when the user wants to interact with Plecto data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/plecto@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "plecto",
+      "url": "https://clawhub.ai/skills/plecto"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plecto",
+    "url": "https://clawhub.ai/skills/plecto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plecto-9c2d39cb432bf729.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/plecto@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-plecto-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5882f1e5be86ae9e1c5ca6be01ba89d88ee5bf9d1febcb300a779de7bc2e44f2",
+      "artifactSizeBytes": 1843
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:25:18.197Z"
+}

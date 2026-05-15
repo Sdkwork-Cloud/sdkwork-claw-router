@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-vetter-optimized@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_vetter_optimized",
+  "skill": {
+    "id": 65070,
+    "skillKey": "clawhub-skill-vetter-optimized",
+    "name": "Skill Vetter Optimized"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-vetter-optimized",
+    "url": "https://clawhub.ai/skills/skill-vetter-optimized",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-vetter-optimized-87ff3708a391af95.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "🔒 优化版技能审查器 - 安全优先的AI代理技能审查工具。在从ClawHub、GitHub或其他来源安装任何技能前使用。检查红标、权限范围和可疑模式。包含实用工具和系统化审查清单。基于原始skill-vetter优化，添加了Python检查脚本和详细审查流程。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "confidentkai",
+      "userId": "s178zptfxy85cb8ggdvqzq875183hvjc",
+      "displayName": "kvs-GoN",
+      "image": "https://avatars.githubusercontent.com/u/35253862?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 229,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1776225121620,
+      "changelog": "优化版本：添加Python检查脚本、系统化审查清单、完善文档、清理代码结构",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ad6941a68ccf3e97224e32a19ff33dffc1a77011ed30ddd3eb995f107cee7513"
+}

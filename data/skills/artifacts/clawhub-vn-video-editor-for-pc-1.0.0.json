@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vn-video-editor-for-pc@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vn_video_editor_for_pc",
+  "skill": {
+    "id": 45434,
+    "skillKey": "clawhub-vn-video-editor-for-pc",
+    "name": "Vn Video Editor For Pc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vn-video-editor-for-pc",
+    "url": "https://clawhub.ai/skills/vn-video-editor-for-pc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vn-video-editor-for-pc-14eea6b91e908702.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute desktop screen recording or phone footage into 1080p polished edited clips just by typing what you need. Whether it's editing and exporting v..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 134,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776241974185,
+      "changelog": "VN Video Editor for PC — Initial Release\n\n- Launch of cloud-based AI video editor for PC: upload raw clips, describe your edits, and export polished 1080p videos in minutes.\n- No timeline or export settings needed; simply type your instructions for edits like trimming, transitions, BGM sync, and more.\n- Seamless authentication: uses NEMO_TOKEN if set, or fetches a free anonymous token for new users.\n- Supports popular video, audio, and image formats up to 500MB; simple workflows for quick edits, batching, and iterative refinement.\n- Automatic session management, clear user prompts, and built-in handling for common errors (credits, token expiry, file limits).\n- Exports high-quality MP4 videos via cloud GPU rendering, typically processing jobs in 30–90 seconds.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0a760324c037e14074cb67855f88c17ee3f4d7fcd92839b8ff0ffe32b6e47bd1"
+}

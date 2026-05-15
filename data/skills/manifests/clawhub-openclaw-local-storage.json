@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65919,
+  "uuid": "skill-clawhub-openclaw-local-storage",
+  "skillKey": "clawhub-openclaw-local-storage",
+  "name": "Openclaw Local Storage",
+  "summary": "使用Node.js实现本地文件存储数据，支持增删改查功能。第一次使用时自动分析数据字段，之后可通过一句话命令进行操作。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_local_storage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "周小虎",
+      "features": [
+        "使用Node.js实现本地文件存储数据，支持增删改查功能。第一次使用时自动分析数据字段，之后可通过一句话命令进行操作。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-local-storage@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7563965?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-local-storage",
+      "url": "https://clawhub.ai/skills/openclaw-local-storage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-local-storage",
+    "url": "https://clawhub.ai/skills/openclaw-local-storage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-local-storage-28fc70b0d8f9d1ca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-local-storage@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-local-storage-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e8bd63e73c24c8045e44927b6a8d314764b525a7dd02d4ced3cea23b07eff4b4",
+      "artifactSizeBytes": 2291
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T04:08:01.350Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42375,
+  "uuid": "skill-clawhub-ekin-safety-netting",
+  "skillKey": "clawhub-ekin-safety-netting",
+  "name": "Safety Netting",
+  "summary": "Automated clinical safety netting for NHS GPs. Follows up with patients after appointments, checks for red flag symptoms, escalates to GP when needed.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ekin_safety_netting",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ekin-Kahraman",
+      "features": [
+        "Automated clinical safety netting for NHS GPs",
+        "Follows up with patients after appointments, checks for red flag symptoms, escalates to GP when."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ekin-safety-netting@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/252896499?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ekin-safety-netting",
+      "url": "https://clawhub.ai/skills/ekin-safety-netting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ekin-safety-netting",
+    "url": "https://clawhub.ai/skills/ekin-safety-netting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ekin-safety-netting-d67ef042eb8ea83e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ekin-safety-netting@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ekin-safety-netting-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ce4a136867db7924839376c56e02a2936132ad8c030f6ef022e333022371952",
+      "artifactSizeBytes": 2530
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T14:27:06.516Z"
+}

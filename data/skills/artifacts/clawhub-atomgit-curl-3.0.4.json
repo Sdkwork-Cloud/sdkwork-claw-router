@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/atomgit-curl@3.0.4",
+  "version": "3.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.atomgit_curl",
+  "skill": {
+    "id": 60863,
+    "skillKey": "clawhub-atomgit-curl",
+    "name": "Atomgit Curl"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "atomgit-curl",
+    "url": "https://clawhub.ai/skills/atomgit-curl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/atomgit-curl-be22757c489f51ed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AtomGit (GitCode) 代码托管平台集成 - Curl/Bash 版本。完整支持 PR 审查、批准、合并、仓库管理、Issues 管理。特色功能：批量并行处理、文件树查看、PR 检查触发、CI 流水线检查、仓库协作管理。跨平台：Windows(Git Bash)/Linux/macOS。提供 36 个..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "panchenbo",
+      "userId": "s17fzcsk1r5hcyfjmsa4g7x63d83gfv5",
+      "displayName": "panchenbo",
+      "image": "https://avatars.githubusercontent.com/u/75836904?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 278,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 17
+    },
+    "latestVersion": {
+      "version": "3.0.4",
+      "createdAt": 1774576968691,
+      "changelog": "v3.0.4 - High Confidence 修复：移除 set -e 避免管道冲突、使用局部变量存储 API 结果、添加 || true 防止 grep 失败",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:625a733b3b698f6897dce39e17b93d556e18b179fca7c5675c142f616e1d5b59"
+}

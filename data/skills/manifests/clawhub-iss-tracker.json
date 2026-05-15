@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19269,
+  "uuid": "skill-clawhub-iss-tracker",
+  "skillKey": "clawhub-iss-tracker",
+  "name": "ISS Tracker",
+  "summary": "Get the real-time location (latitude/longitude) of the International Space Station.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iss_tracker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shark bytes",
+      "features": [
+        "Get the real-time location (latitude/longitude) of the International Space Station."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/iss-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/206152689?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "iss-tracker",
+      "url": "https://clawhub.ai/skills/iss-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iss-tracker",
+    "url": "https://clawhub.ai/skills/iss-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iss-tracker-b552e72ae14114a6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/iss-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-iss-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2249160b5d5b2656487fa84fad60f1a0f45c6420e526f9e522f015e40a0bdf0c",
+      "artifactSizeBytes": 1996
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T02:34:11.720Z"
+}

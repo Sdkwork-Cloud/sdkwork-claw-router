@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toronto-opendata@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toronto_opendata",
+  "skill": {
+    "id": 39804,
+    "skillKey": "clawhub-toronto-opendata",
+    "name": "City of Toronto Open Data"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toronto-opendata",
+    "url": "https://clawhub.ai/skills/toronto-opendata",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toronto-opendata-d625d40b390550fd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access 537+ datasets from the City of Toronto open data portal. Search, fetch, and analyze city data on transit, traffic, housing, environment, and more via..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "raychanpmp",
+      "userId": "s17emyjj884k31zwctbp78w72d83nwm4",
+      "displayName": "Ray Chan, PMP",
+      "image": "https://avatars.githubusercontent.com/u/63657868?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774924226353,
+      "changelog": "Fixed: cache in skill dir",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:463ccb51a399e35741585975617a34ebe02070da2931439dab1954727470fc80"
+}

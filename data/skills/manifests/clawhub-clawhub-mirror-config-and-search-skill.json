@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60872,
+  "uuid": "skill-clawhub-clawhub-mirror-config-and-search-skill",
+  "skillKey": "clawhub-clawhub-mirror-config-and-search-skill",
+  "name": "Clawhub Mirror Config And Search Skill",
+  "summary": "配置 ClawHub 国内镜像解决限流问题，并安装 Multi Search Engine 技能。当遇到 ClawHub 安装技能限流、访问慢、需要配置 cn.clawhub-mirror.com 镜像、安装多搜索引擎技能、或需要归档配置到知识库时使用。涵盖 CLI 参数指定镜像、环境变量配置、17 个搜索引擎使...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_mirror_config_and_search_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Roger",
+      "features": [
+        "配置 ClawHub 国内镜像解决限流问题，并安装 Multi Search Engine 技能。当遇到 ClawHub 安装技能限流、访问慢、需要配置 cn.clawhub-mirror.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawhub-mirror-config-and-search-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6299813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawhub-mirror-config-and-search-skill",
+      "url": "https://clawhub.ai/skills/clawhub-mirror-config-and-search-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-mirror-config-and-search-skill",
+    "url": "https://clawhub.ai/skills/clawhub-mirror-config-and-search-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-mirror-config-and-search-skill-8aa91daee2951d76.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawhub-mirror-config-and-search-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawhub-mirror-config-and-search-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2f32cd315c3de6d733a6428850c40b95fadc921d1033a04885f864ef2a234dae",
+      "artifactSizeBytes": 2792
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T01:18:53.975Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24479,
+  "uuid": "skill-clawhub-podcast-transcribe",
+  "skillKey": "clawhub-podcast-transcribe",
+  "name": "Podcast Transcribe",
+  "summary": "For transcript or subtitle requests involving podcast URLs, public audio URLs/files, or raw transcript cleanup. Generates audio + SRT + TXT artifacts and can...",
+  "version": "1.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.podcast_transcribe",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dairui1",
+      "features": [
+        "For transcript or subtitle requests involving podcast URLs, public audio URLs/files, or raw tra.",
+        "Generates audio + SRT + TXT artifacts and can..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/podcast-transcribe@1.4.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/183250644?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "podcast-transcribe",
+      "url": "https://clawhub.ai/skills/podcast-transcribe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "podcast-transcribe",
+    "url": "https://clawhub.ai/skills/podcast-transcribe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/podcast-transcribe-0fd021e41b800ead.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/podcast-transcribe@1.4.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-podcast-transcribe-1.4.1.json",
+      "version": "1.4.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc9d53b532a9205918296e8dabcb51cbfa4f7d864e5bb1fb8e56e9fbc35cc123",
+      "artifactSizeBytes": 2199
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T03:30:41.895Z"
+}

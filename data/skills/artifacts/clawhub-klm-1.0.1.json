@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/klm@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.klm",
+  "skill": {
+    "id": 68554,
+    "skillKey": "clawhub-klm",
+    "name": "Klm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "klm",
+    "url": "https://clawhub.ai/skills/klm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/klm-15cb41f1adc95ad4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "荷兰皇家航空公司指南"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 237,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776261152571,
+      "changelog": "klm skill version 1.0.1 changes:\n\n- 更新文档内容，更加简洁聚焦“klm 品牌档案”\n- 增加 summary 和 read_when 以便快速检索和定位\n- 删减具体航班、会员、服务等详细信息，突出品牌核心介绍和全局视角\n- 新版突出“快速了解”与“深入探索”两大板块，便于概览和延伸阅读",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fd472b1422f2f9d068e298efb86473fa03abfb8826212551ece18310091b001b"
+}

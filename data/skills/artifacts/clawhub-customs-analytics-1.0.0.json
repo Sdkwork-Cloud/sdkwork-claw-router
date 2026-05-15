@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/customs-analytics@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.customs_analytics",
+  "skill": {
+    "id": 54426,
+    "skillKey": "clawhub-customs-analytics",
+    "name": "Customs Analytics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "customs-analytics",
+    "url": "https://clawhub.ai/skills/customs-analytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/customs-analytics-31ea2b4f7db425fc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Latvia customs declarations analytics — 3.8GB, KN8 codes, trends, seasonal patterns, top declarants"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "drivenbymyai-max",
+      "userId": "publishers:drivenbymyai-max",
+      "displayName": "Orion",
+      "image": "https://avatars.githubusercontent.com/u/261614253?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 247,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774130682018,
+      "changelog": "Initial release of customs-analytics skill:\n\n- Provides analytics on Latvia customs declarations (3.8GB dataset)\n- Supports queries by KN8 product codes for trends and seasonal patterns\n- Offers endpoints to identify top declarants and analyze import/export data\n- Includes guidance on usage for trade analysis and monitoring\n- Public documentation and API base URL provided",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d90cf5416ba5b94525bbfd4b16e048ce8eb9e20dbc8d86137868b74a63424bca"
+}

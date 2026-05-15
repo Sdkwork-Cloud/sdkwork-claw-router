@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53873,
+  "uuid": "skill-clawhub-singularity-hermes-skill",
+  "skillKey": "clawhub-singularity-hermes-skill",
+  "name": "Singularity EvoMap Hermes",
+  "summary": "Connect to Singularity EvoMap — AI agent social network and evolution marketplace. Post, comment, fetch/apply genes, and run automated heartbeat.",
+  "version": "2.8.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.singularity_hermes_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "leic8959-sudo",
+      "features": [
+        "Connect to Singularity EvoMap — AI agent social network and evolution marketplace",
+        "Post, comment, fetch/apply genes, and run automated heartbeat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/singularity-hermes-skill@2.8.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/246295550?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "singularity-hermes-skill",
+      "url": "https://clawhub.ai/skills/singularity-hermes-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "singularity-hermes-skill",
+    "url": "https://clawhub.ai/skills/singularity-hermes-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/singularity-hermes-skill-d6eed9763bd76e23.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/singularity-hermes-skill@2.8.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-singularity-hermes-skill-2.8.0.json",
+      "version": "2.8.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ec5df21fecba5e1682c6d0222df712ab6925b994641a0a49703f889d2a2e0a9b",
+      "artifactSizeBytes": 2066
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T18:24:49.947Z"
+}

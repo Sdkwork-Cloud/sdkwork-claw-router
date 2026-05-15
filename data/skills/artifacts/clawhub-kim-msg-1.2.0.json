@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kim-msg@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kim_msg",
+  "skill": {
+    "id": 62082,
+    "skillKey": "clawhub-kim-msg",
+    "name": "Kim Msg Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kim-msg",
+    "url": "https://clawhub.ai/skills/kim-msg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kim-msg-682a846220dd094a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "快手 Kim 即时通讯消息发送。支持 Webhook（群聊）和消息号（指定用户）两种方式，内置智能密钥加载和 fallback 机制。适用于通知、告警、日报等场景。官网：https://kim.kuaishou.com/"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leegodamn",
+      "userId": "s17c66yxj3wxsacma8nz1c6q0n83hx37",
+      "displayName": "LeeGoDamn",
+      "image": "https://avatars.githubusercontent.com/u/243561453?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 509,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1772786153191,
+      "changelog": "feat: 智能密钥加载与 fallback 机制\n\n- 支持多路径密钥文件自动查找（~/.openclaw/.secrets, ~/.kim_credentials, ./kim_credentials）\n- 优先级：环境变量 > 密钥文件\n- 发送失败时自动 fallback 到密钥文件\n- 触发 fallback 时输出警告（不暴露文件路径）\n- 更新 SKILL.md 和 README.md 文档\n- 改进错误提示和故障排查指南",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dab7a7f0c12255dd8708bbcb1a8eac353eeae226ef05e56d1c51350901c66bdb"
+}

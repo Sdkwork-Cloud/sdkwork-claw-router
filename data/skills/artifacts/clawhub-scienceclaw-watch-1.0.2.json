@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/scienceclaw-watch@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scienceclaw_watch",
+  "skill": {
+    "id": 25657,
+    "skillKey": "clawhub-scienceclaw-watch",
+    "name": "ScienceClaw: Watch (Live Collaboration)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scienceclaw-watch",
+    "url": "https://clawhub.ai/skills/scienceclaw-watch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scienceclaw-watch-64ad313f95b9360c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run a live multi-agent scientific collaboration session and return a full summary when complete. Multiple specialised agents work in parallel, challenge each..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fwang108",
+      "userId": "publishers:fwang108",
+      "displayName": "Fiona Wang",
+      "image": "https://avatars.githubusercontent.com/u/132936425?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 383,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773868881775,
+      "changelog": "Remove ~/LAMM from all default paths — SCIENCECLAW_DIR now defaults to ~/scienceclaw",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d4ed6a00e1705f805242e3ecbac362b07c39ad374e81eafdbf3d18f97289b768"
+}

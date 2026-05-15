@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xsqorange-stock-monitor@1.2.2",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xsqorange_stock_monitor",
+  "skill": {
+    "id": 68165,
+    "skillKey": "clawhub-xsqorange-stock-monitor",
+    "name": "Stock Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xsqorange-stock-monitor",
+    "url": "https://clawhub.ai/skills/xsqorange-stock-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xsqorange-stock-monitor-135bc76680131285.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "股票监控分析技能 - 自定义股票池监控、实时行情、技术指标分析、涨跌趋势预测、信号提醒"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xsqorange",
+      "userId": "s171a625svq8xqf0xtjqha944d83g4pq",
+      "displayName": "Leon Xue",
+      "image": "https://avatars.githubusercontent.com/u/17331219?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.2.2",
+      "createdAt": 1775563199671,
+      "changelog": "优化frontmatter格式，提升ClawHub渲染效果；A股/港股监控任务分离；精简SKILL.md",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f5b03656550c5b50c697d9c372896bdbd985961475d9b9253bbfda2f457d4ab8"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12724,
+  "uuid": "skill-clawhub-fork-manager",
+  "skillKey": "clawhub-fork-manager",
+  "name": "Fork Manager",
+  "summary": "Manage forks with open PRs - sync upstream, rebase branches, track PR status, and maintain production branches with pending contributions. Supports automatic...",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fork_manager",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Glucksberg",
+      "features": [
+        "Manage forks with open PRs",
+        "sync upstream, rebase branches, track PR status, and maintain production branches with pending.",
+        "Supports automatic..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fork-manager@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/80581902?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fork-manager",
+      "url": "https://clawhub.ai/skills/fork-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fork-manager",
+    "url": "https://clawhub.ai/skills/fork-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fork-manager-f19e3a0682817e9b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fork-manager@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-fork-manager-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c454f7047be4a6d7785186e5955b43d18a9fbce3c68e6f3bbb54df8c1d0a56bb",
+      "artifactSizeBytes": 1919
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T23:25:20.732Z"
+}

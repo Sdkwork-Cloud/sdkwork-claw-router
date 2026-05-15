@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10181,
+  "uuid": "skill-clawhub-keep-protocol",
+  "skillKey": "clawhub-keep-protocol",
+  "name": "Keep Protocol",
+  "summary": "Signed Protobuf packets over TCP for AI agent-to-agent communication. Now with MCP tools for sub-second latency! Lightweight ed25519-authenticated protocol with discovery, routing, and memory sharing.",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.keep_protocol",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nTEG-dev",
+      "features": [
+        "Signed Protobuf packets over TCP for AI agent-to-agent communication",
+        "Now with MCP tools for sub-second latency! Lightweight ed25519-authenticated protocol with disc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/keep-protocol@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23076126?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "keep-protocol",
+      "url": "https://clawhub.ai/skills/keep-protocol"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "keep-protocol",
+    "url": "https://clawhub.ai/skills/keep-protocol",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/keep-protocol-eff622f8a0e1d226.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/keep-protocol@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-keep-protocol-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7213ed7a19f3b0466a2945663d993570016d538b9af8fe44473be4695bb86c1f",
+      "artifactSizeBytes": 2036
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T15:23:26.151Z"
+}

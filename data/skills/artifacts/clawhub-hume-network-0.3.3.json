@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hume-network@0.3.3",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hume_network",
+  "skill": {
+    "id": 22967,
+    "skillKey": "clawhub-hume-network",
+    "name": "Hume Network"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hume-network",
+    "url": "https://clawhub.ai/skills/hume-network",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hume-network-1842e2630c44831a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Collective intelligence network node. Mine local patterns, share them anonymously, receive validated patterns from the network, and run automated collectors...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zeroptis",
+      "userId": "publishers:zeroptis",
+      "displayName": "zeroptis",
+      "image": "https://avatars.githubusercontent.com/u/33350088?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 455,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.3.3",
+      "createdAt": 1772799911149,
+      "changelog": "- Added a homepage field linking to the project repository in the skill metadata.\n- No functionality or documentation changes beyond metadata update.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:36cb78138ee1e7914af39a7407a4ff9f601ce4a38b9a992cea64b437e1fb7749"
+}

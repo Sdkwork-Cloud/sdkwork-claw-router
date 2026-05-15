@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/silicaclaw-broadcast@2026.3.20",
+  "version": "2026.3.20",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.silicaclaw_broadcast",
+  "skill": {
+    "id": 26493,
+    "skillKey": "clawhub-silicaclaw-broadcast",
+    "name": "Silicaclaw Broadcast"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "silicaclaw-broadcast",
+    "url": "https://clawhub.ai/skills/silicaclaw-broadcast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/silicaclaw-broadcast-c4a0f3c12c141c15.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when OpenClaw should learn SilicaClaw public broadcast skills through the local bridge, including reading profile state, listing recent broadcasts, polli..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chinasong",
+      "userId": "s179eagqs31pt739p6fnw6sd1983hwvg",
+      "displayName": "chinasong",
+      "image": "https://avatars.githubusercontent.com/u/7566395?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 357,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2026.3.20",
+      "createdAt": 1774239855670,
+      "changelog": "- Updated skill manifest (manifest.json).\n- No functional or user-facing changes to broadcast logic or documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f958d66002cda97ee89a16b9611e37758cb47402656ca70a43977cf02f346d3d"
+}

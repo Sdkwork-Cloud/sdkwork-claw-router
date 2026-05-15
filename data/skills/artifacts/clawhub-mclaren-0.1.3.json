@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mclaren@0.1.3",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mclaren",
+  "skill": {
+    "id": 56885,
+    "skillKey": "clawhub-mclaren",
+    "name": "Mclaren"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mclaren",
+    "url": "https://clawhub.ai/skills/mclaren",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mclaren-94baebcb5e5e0290.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Information assistant for McLaren 迈凯伦. Search models, specs, pricing, reviews, and dealership info."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 288,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.1.3",
+      "createdAt": 1776533851127,
+      "changelog": "- Updated skill summary and content to provide a concise, structured overview of McLaren, focusing on its brand, racing heritage, and technical highlights.\n- Expanded key facts with a timeline of McLaren's history and major milestones.\n- Added specific data such as annual production and parent company.\n- Removed the previously duplicated SKILL.md file to avoid confusion and redundancy.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:56693b44c9391583ca3c707d233cae13295fd0609529100b92184968e086d382"
+}

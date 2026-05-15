@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66051,
+  "uuid": "skill-clawhub-piaoliuping",
+  "skillKey": "clawhub-piaoliuping",
+  "name": "漂流瓶",
+  "summary": "随机获取一个漂流瓶（包含人生感悟、小故事、祝福或励志语录）。当用户要求漂流瓶、message in a bottle、随机消息、获取灵感、人生感悟时触发。触发词：漂流瓶、瓶中信、随机消息、获取祝福、人生感悟、message in a bottle、drift bottle。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.piaoliuping",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "enihsago",
+      "features": [
+        "随机获取一个漂流瓶（包含人生感悟、小故事、祝福或励志语录）。当用户要求漂流瓶、message in a bottle、随机消息、获取灵感、人生感悟时触发。触发词：漂流瓶、瓶中信、随机消息、获."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/piaoliuping@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265008639?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "piaoliuping",
+      "url": "https://clawhub.ai/skills/piaoliuping"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "piaoliuping",
+    "url": "https://clawhub.ai/skills/piaoliuping",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/piaoliuping-d92b3a21377e5794.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/piaoliuping@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-piaoliuping-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:99c27ddf8b151e1e7aec41bbfcbe3ae1264a1eabbc54eafa5cdecb63d4e05f06",
+      "artifactSizeBytes": 2089
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T15:15:44.308Z"
+}

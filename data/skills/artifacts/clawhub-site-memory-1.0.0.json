@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/site-memory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.site_memory",
+  "skill": {
+    "id": 31429,
+    "skillKey": "clawhub-site-memory",
+    "name": "site-memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "site-memory",
+    "url": "https://clawhub.ai/skills/site-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/site-memory-7fc4421efec1a56c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Persistent memory for repeated browser work. Use when an agent revisits the same sites or flows and should load a few relevant notes up front, then save dura..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "littleyier",
+      "userId": "s1772en685cp4hy3csm8kn3cc9854222",
+      "displayName": "12",
+      "image": "https://avatars.githubusercontent.com/u/153109197?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776583279389,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6c009ac99a9dad66238b109fd0411cbb93bae410fbd3c5c216570b093ae4e083"
+}

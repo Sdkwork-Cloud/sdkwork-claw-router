@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20070,
+  "uuid": "skill-clawhub-openclaw-memory-skill",
+  "skillKey": "clawhub-openclaw-memory-skill",
+  "name": "OpenClaw MongoDB Semantic Memory",
+  "summary": "MongoDB-backed long-term semantic memory for recalling, storing, searching, and managing facts, decisions, and user preferences across sessions.",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_memory_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Michael Lynn",
+      "features": [
+        "MongoDB-backed long-term semantic memory for recalling, storing, searching, and managing facts,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-memory-skill@0.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/192552?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-memory-skill",
+      "url": "https://clawhub.ai/skills/openclaw-memory-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-memory-skill",
+    "url": "https://clawhub.ai/skills/openclaw-memory-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-memory-skill-279985dcfb51d205.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-memory-skill@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-memory-skill-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9a70f78404301a6d5a5f787a6e7163c98e58891579cef5112d9fa4a1bb83590f",
+      "artifactSizeBytes": 2755
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T19:05:03.931Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42120,
+  "uuid": "skill-clawhub-mailjet-integration",
+  "skillKey": "clawhub-mailjet-integration",
+  "name": "Mailjet",
+  "summary": "Mailjet integration. Manage Campaigns, Templates, Senders. Use when the user wants to interact with Mailjet data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mailjet_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Mailjet integration",
+        "Manage Campaigns, Templates, Senders",
+        "Use when the user wants to interact with Mailjet data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mailjet-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mailjet-integration",
+      "url": "https://clawhub.ai/skills/mailjet-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mailjet-integration",
+    "url": "https://clawhub.ai/skills/mailjet-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mailjet-integration-b67db437fba27689.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mailjet-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-mailjet-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:095710ccbbef2bc1da08d3534e1de4b5068b6c2ccaabae2c1ef2c6e0368a7e3c",
+      "artifactSizeBytes": 1893
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:43:13.073Z"
+}

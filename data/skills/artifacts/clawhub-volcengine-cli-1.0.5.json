@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/volcengine-cli@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.volcengine_cli",
+  "skill": {
+    "id": 53429,
+    "skillKey": "clawhub-volcengine-cli",
+    "name": "Volcengine CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "volcengine-cli",
+    "url": "https://clawhub.ai/skills/volcengine-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/volcengine-cli-d44854ff4c4727b3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and manage Volcengine cloud resources using the Volcengine CLI (`ve` command). Supports all Volcengine services including ECS, VPC, CLB, RDS, Redis, a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "volc-sdk-team",
+      "userId": "s170xk93g8hnx1cthp5609en2s844kwe",
+      "displayName": "sdk-team",
+      "image": "https://avatars.githubusercontent.com/u/198185282?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 514,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1773397981662,
+      "changelog": "- Added `metadata.openclaw` section specifying required environment variables and binary dependencies for proper initialization and operation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0ad821fa99bd53b2e299718acfa703007bead3fe88a26303fefb3aa4d7d8855a"
+}

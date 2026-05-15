@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-deployment-checklist@98.0.1",
+  "version": "98.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_deployment_checklist",
+  "skill": {
+    "id": 29133,
+    "skillKey": "clawhub-agent-deployment-checklist",
+    "name": "Agent Deployment Checklist"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-deployment-checklist",
+    "url": "https://clawhub.ai/skills/agent-deployment-checklist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-deployment-checklist-f35f75fbeaf76400.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Production deployment checklist for AI agent infrastructure. Covers Mac Mini and server deployment with 5-layer stack (base install, IAM config, client softw..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "samledger67-dotcom",
+      "userId": "s17e6161jqcyaq82bkvewk1rz583ndyf",
+      "displayName": "samledger67-dotcom",
+      "image": "https://avatars.githubusercontent.com/u/261800271?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 299,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "98.0.1",
+      "createdAt": 1773724909664,
+      "changelog": "Corrected display name",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4ec238a5e71d2752433d423c6a2d78733adf976ff81c8a182bc314183bc4fca0"
+}

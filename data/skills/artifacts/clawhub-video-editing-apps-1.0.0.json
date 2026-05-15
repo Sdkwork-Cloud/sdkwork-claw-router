@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editing-apps@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editing_apps",
+  "skill": {
+    "id": 55469,
+    "skillKey": "clawhub-video-editing-apps",
+    "name": "Video Editing Apps"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editing-apps",
+    "url": "https://clawhub.ai/skills/video-editing-apps",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editing-apps-fe8a334121752f57.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — trim the pauses, add transitions, and export as a clean 60-second clip — a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776556617948,
+      "changelog": "Initial release of Video Editing Apps — fast, AI-powered video editing and export.\n\n- Upload raw video clips (MP4, MOV, AVI, WebM up to 500MB) for quick, automatic editing.\n- Describe edits like \"trim the pauses, add transitions,\" and get polished MP4s in 1–2 minutes.\n- Handles project/session management, uploading, editing, previewing, and cloud export.\n- Supports credit management, error handling, and user-friendly status updates.\n- No learning curve—ideal for creators and marketers needing instant, professional results.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bab2a5d26dbb0884a069f517d31ea827fa2ae12fc6fbe2d0af54ede1c7dd03a3"
+}

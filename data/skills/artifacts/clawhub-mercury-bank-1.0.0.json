@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mercury-bank@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mercury_bank",
+  "skill": {
+    "id": 27156,
+    "skillKey": "clawhub-mercury-bank",
+    "name": "Mercury Bank"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mercury-bank",
+    "url": "https://clawhub.ai/skills/mercury-bank",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mercury-bank-bf15b84e947928c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Mercury bank API for Digital 4 Jesus LLC (US entity). Use when the user asks about Mercury account balances, transactions, invoices, customers, or sending mo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "godsboy",
+      "userId": "s1785sktsbd5wgd7pevwjnc28x83fegx",
+      "displayName": "Dewaldt Huysamen",
+      "image": "https://avatars.githubusercontent.com/u/5792287?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 353,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773865359641,
+      "changelog": "Full Mercury bank API: account balances, transactions, AR invoices, AR customers, recipients, org details. MIT licensed. Requires Mercury Plus for invoicing endpoints. Includes mercury.sh CLI helper and full API reference.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e2d004a298030399f0cc3e8ff238560e503b0c0a079ecb3a6c637f4914285f58"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-to-text-online-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_to_text_online_free",
+  "skill": {
+    "id": 43612,
+    "skillKey": "clawhub-video-to-text-online-free",
+    "name": "Video To Text Online Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-to-text-online-free",
+    "url": "https://clawhub.ai/skills/video-to-text-online-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-to-text-online-free-a34e2b53f1621a98.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "convert video files into text transcripts with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. students, journalists, content creators use it f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776920436202,
+      "changelog": "Video to Text Online Free — Initial Release\n\n- Convert video files (MP4, MOV, AVI, WebM, up to 500MB) to text transcripts using a cloud backend.\n- Automatic setup with anonymous authentication (100 free credits, 7-day expiry).\n- Users can upload files, transcribe speech, edit tracks, check credits, and export 1080p MP4 results.\n- Clear workflow and error handling for uploads, session management, and export actions.\n- Action routing based on user commands; supports multiple video formats and multilanguage prompts.\n- Includes session, upload, export, and timeline summary features for easy editing and tracking.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4265522e5593bdfd1c4eec4a0461b8868885a4754c1212afea67dd2afd848721"
+}

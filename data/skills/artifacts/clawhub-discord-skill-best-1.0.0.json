@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/discord-skill-best@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.discord_skill_best",
+  "skill": {
+    "id": 48796,
+    "skillKey": "clawhub-discord-skill-best",
+    "name": "Discord skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "discord-skill-best",
+    "url": "https://clawhub.ai/skills/discord-skill-best",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/discord-skill-best-a291dba1b7dac4cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when you need to control Discord from Clawdbot via the discord tool: send messages, react, post or upload stickers, upload emojis, run polls, manage thre..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mariaponomarenko38",
+      "userId": "s17848qm0grmzcvmzcz0najh9984gyed",
+      "displayName": "MariaPonomarenko38",
+      "image": "https://avatars.githubusercontent.com/u/60076593?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 93,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777999011644,
+      "changelog": "Initial release of Discord Skill for Clawdbot.\n\n- Enables sending messages, reactions, stickers, emoji uploads, polls, and DMs via Discord.\n- Supports managing channels, threads, pins, and search.\n- Provides tools for uploading custom emojis and stickers (with file guidelines).\n- Allows fetching permissions, member, role, and channel info.\n- Actions for moderation, role management, and channel/category edit/create/delete are included but disabled by default.\n- All actions are documented with JSON examples and input requirements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d0b72c19d638a898d3cf82289e432959678976e4850757c81745dbd4e4038ed6"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/imap-smtp-email-plus@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.imap_smtp_email_plus",
+  "skill": {
+    "id": 14118,
+    "skillKey": "clawhub-imap-smtp-email-plus",
+    "name": "IMAP/SMTP Email (Plus)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "imap-smtp-email-plus",
+    "url": "https://clawhub.ai/skills/imap-smtp-email-plus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/imap-smtp-email-plus-ed344352b0c57c31.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read and send email via IMAP/SMTP. Check for new/unread messages, fetch content, search mailboxes, mark as read/unread, and send emails with attachments. Wor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lroccoon",
+      "userId": "publishers:lroccoon",
+      "displayName": "Roccoon",
+      "image": "https://avatars.githubusercontent.com/u/13002061?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1202,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771808032895,
+      "changelog": "Added move command to move emails between mailboxes",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:379470e1e16bfa88651b88c4af202d6e0b1824ca1bca6c0add2c9a58b8919cee"
+}

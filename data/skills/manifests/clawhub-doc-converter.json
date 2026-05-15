@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55914,
+  "uuid": "skill-clawhub-doc-converter",
+  "skillKey": "clawhub-doc-converter",
+  "name": "docx",
+  "summary": "Converts document files (.pdf, .docx, .xlsx, .pptx) to Markdown using the `markitdown` command.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doc_converter",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ytyytt520",
+      "features": [
+        "Converts document files (.pdf, .docx, .xlsx, .pptx) to Markdown using the `markitdown` command."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doc-converter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/190059155?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doc-converter",
+      "url": "https://clawhub.ai/skills/doc-converter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doc-converter",
+    "url": "https://clawhub.ai/skills/doc-converter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doc-converter-8bcee16c16d9434c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doc-converter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-doc-converter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ce420d1b51b190865c24757d5e77cf8163e889eb03520fb9439d10ae7c744f41",
+      "artifactSizeBytes": 1989
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T11:56:28.581Z"
+}

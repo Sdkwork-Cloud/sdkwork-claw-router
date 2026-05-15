@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40019,
+  "uuid": "skill-clawhub-my-api-test-automation",
+  "skillKey": "clawhub-my-api-test-automation",
+  "name": "API Test Automation",
+  "summary": "Generate complete automated API test cases from interface documentation such as OpenAPI, Swagger exports, Postman collections, Markdown API docs, or endpoint...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_api_test_automation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huahuaweiwei",
+      "features": [
+        "Generate complete automated API test cases from interface documentation such as OpenAPI, Swagge."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/my-api-test-automation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/136433144?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "my-api-test-automation",
+      "url": "https://clawhub.ai/skills/my-api-test-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-api-test-automation",
+    "url": "https://clawhub.ai/skills/my-api-test-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-api-test-automation-ca446a37dc239f09.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/my-api-test-automation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-my-api-test-automation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b7059e6dfb2d9574efd54b341054392aa7b6bd1052cb23b5fcce3e2f16206c2c",
+      "artifactSizeBytes": 2491
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T09:03:50.198Z"
+}

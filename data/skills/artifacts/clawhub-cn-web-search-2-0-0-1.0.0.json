@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cn-web-search-2-0-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_web_search_2_0_0",
+  "skill": {
+    "id": 63720,
+    "skillKey": "clawhub-cn-web-search-2-0-0",
+    "name": "Cn Web Search 2.0.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-web-search-2-0-0",
+    "url": "https://clawhub.ai/skills/cn-web-search-2-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-web-search-2-0-0-b127229a9649cfe8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "中文网页搜索 - 聚合 22+ 免费搜索引擎，无需 API Key，支持公众号/知乎/财经/技术/学术/知识搜索。唯一真正免费的中文多引擎搜索方案！"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhouhuihui008",
+      "userId": "s177e795b02ss55pv9yf7z53bd83kqj5",
+      "displayName": "zhouhuihui008",
+      "image": "https://avatars.githubusercontent.com/u/122507302?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 321,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774399233033,
+      "changelog": "Initial release of cn-web-search v1.0.0:\n\n- Aggregates 13+ free Chinese search engines for web, WeChat Official Accounts, finance, and technical content.\n- Fully free and does not require an API key.\n- Supports multi-engine smart switching for broader result coverage.\n- Enables searches on platforms including public accounts, Zhihu, financial (A-shares), and technology.\n- Simple installation and usage instructions provided.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7ab476167be39aa275fe1621c78d5899748e8a0b97c4b66723daf8b696d33854"
+}

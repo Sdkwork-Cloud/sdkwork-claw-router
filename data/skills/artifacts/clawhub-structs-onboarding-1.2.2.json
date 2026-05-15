@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/structs-onboarding@1.2.2",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.structs_onboarding",
+  "skill": {
+    "id": 19968,
+    "skillKey": "clawhub-structs-onboarding",
+    "name": "Structs Onboarding"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "structs-onboarding",
+    "url": "https://clawhub.ai/skills/structs-onboarding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/structs-onboarding-f40b511f616cf520.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Onboards a new player into Structs. Handles key creation/recovery, player creation (via reactor-infuse or guild signup), planet exploration, and initial infr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abstrct",
+      "userId": "s17cc5kakaxpzqm7102vd7gsax83srkw",
+      "displayName": "Josh McDougall",
+      "image": "https://avatars.githubusercontent.com/u/196776?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 571,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.2.2",
+      "createdAt": 1774840388595,
+      "changelog": "Sync with structs-ai upstream: guild rank note on join",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:014694e479f113c6076f2d3caad905659b6f3798a44e98c0e6235c80a8a9c303"
+}

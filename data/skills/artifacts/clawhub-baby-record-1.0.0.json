@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baby-record@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baby_record",
+  "skill": {
+    "id": 71290,
+    "skillKey": "clawhub-baby-record",
+    "name": "Baby record"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baby-record",
+    "url": "https://clawhub.ai/skills/baby-record",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baby-record-adc1aa7e76ec558d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "宝宝每日护理记录技能。支持通过拍照纸质表单或口语描述快速录入宝宝每日数据（体温、黄疸、沐浴、体重、睡眠、喂养、排泄等），数据存储为 JSON 文件。当用户提到以下内容时触发：记录宝宝今天数据、宝宝每日汇总、今天体温多少、今天喝了多少奶、宝宝最近数据、帮我看看这张表（图片）、宝宝日记、baby record、每日情..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cake-26",
+      "userId": "publishers:cake-26",
+      "displayName": "cake-26",
+      "image": "https://avatars.githubusercontent.com/u/260159719?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 378,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773071501937,
+      "changelog": "baby-record v1.0.0\n\n- 首次发布，实现宝宝每日护理数据的快速录入与查询。\n- 支持拍照纸质表单或口语描述，自动结构化存储为 JSON 文件。\n- 提供数据增量更新功能，同一天多次录入，自动合并并保留未提及值。\n- 内置多种数据查询与汇总指令，支持最近数据、范围查询、趋势分析等。\n- 交互全程中文，支持标准单位与规范化展示（如异常体温高亮）。\n- 所有数据存储于本地 data 目录，每日一个 JSON 文件，无需初始化。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0a0c179ab5e6fc24cf623c3470dfe0582678b90e939746ebf84ad62d9a42fe69"
+}

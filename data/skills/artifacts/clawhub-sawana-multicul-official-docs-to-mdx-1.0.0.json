@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sawana-multicul-official-docs-to-mdx@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sawana_multicul_official_docs_to_mdx",
+  "skill": {
+    "id": 20887,
+    "skillKey": "clawhub-sawana-multicul-official-docs-to-mdx",
+    "name": "sawana-multicul/official-docs-to-mdx"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sawana-multicul-official-docs-to-mdx",
+    "url": "https://clawhub.ai/skills/sawana-multicul-official-docs-to-mdx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sawana-multicul-official-docs-to-mdx-8ad9c374b6e1fe91.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Download and normalize official documentation pages into local .mdx files at user-specified paths using markdown.new. Use when user asks to fetch docs from a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "multicul-silver-wolf",
+      "userId": "publishers:multicul-silver-wolf",
+      "displayName": "multicul-silver-wolf",
+      "image": "https://avatars.githubusercontent.com/u/258458079?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 533,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772257208547,
+      "changelog": "align naming with local convention sawana-multicul/*",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:38fcca6d95d92ac189af4fd0de400228cb07a339f5d11863972b196ccb2f7feb"
+}

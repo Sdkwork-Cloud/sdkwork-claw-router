@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68643,
+  "uuid": "skill-clawhub-auto-accounting",
+  "skillKey": "clawhub-auto-accounting",
+  "name": "Auto Accounting",
+  "summary": "自动识别图片中的记账信息，并在一日记账APP中自动记录。支持微信、支付宝、京东、淘宝、美团等主流平台。",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_accounting",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "taobaoaz",
+      "features": [
+        "自动识别图片中的记账信息，并在一日记账APP中自动记录。支持微信、支付宝、京东、淘宝、美团等主流平台。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-accounting@1.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/118969539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-accounting",
+      "url": "https://clawhub.ai/skills/auto-accounting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-accounting",
+    "url": "https://clawhub.ai/skills/auto-accounting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-accounting-8bf6a0bb2283a6cc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-accounting@1.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-accounting-1.0.8.json",
+      "version": "1.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5a149a1b79863f064257f3bdd7e84ab7efe0620d75fe8e5a866dfca195d16d55",
+      "artifactSizeBytes": 2180
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T10:34:19.794Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaohongshu-publisher-setup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_publisher_setup",
+  "skill": {
+    "id": 63026,
+    "skillKey": "clawhub-xiaohongshu-publisher-setup",
+    "name": "小红书自动排版发布---一键安装"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-publisher-setup",
+    "url": "https://clawhub.ai/skills/xiaohongshu-publisher-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-publisher-setup-112429a19adc0144.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "部署小红书发布Agent团队（灵格排版设计+星阑运营发布），含XHS格式排版、浏览器自动化发布、数据分析。使用 /xiaohongshu-publisher-setup 触发部署，需先安装 content-creation。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "little-ke",
+      "userId": "s178xfv6xqv6bf6e5bhptm9sd183h3zx",
+      "displayName": "Little-ke",
+      "image": "https://avatars.githubusercontent.com/u/61963028?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774342600761,
+      "changelog": "xiaohongshu-publisher-setup v1.0.0\n\n- Initial release for automated deployment of a two-person Xiaohongshu publishing team (Lingge for formatting, Xinglan for operations).\n- Includes environment validation (OpenClaw, content-creation, Playwright dependencies) with clear error prompts.\n- Guided setup to collect account details and configure environment.\n- Automated file deployment, agent registration, and login session initialization.\n- Output deployment progress, verification steps, and user-facing help instructions for common errors.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ba8ed9fc1079171e311a31e3febb8ed0257565c205290d197e47e876918af826"
+}

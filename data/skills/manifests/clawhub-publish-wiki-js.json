@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38509,
+  "uuid": "skill-clawhub-publish-wiki-js",
+  "skillKey": "clawhub-publish-wiki-js",
+  "name": "Publish Wiki Pages",
+  "summary": "Publish markdown content to Wiki.js with proper formatting and metadata. Use when user wants to create or update wiki pages, convert notes/articles to wiki f...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.publish_wiki_js",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hugo Gu",
+      "features": [
+        "Publish markdown content to Wiki.js with proper formatting and metadata",
+        "Use when user wants to create or update wiki pages, convert notes/articles to wiki f..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/publish-wiki-js@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2989766?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "publish-wiki-js",
+      "url": "https://clawhub.ai/skills/publish-wiki-js"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "publish-wiki-js",
+    "url": "https://clawhub.ai/skills/publish-wiki-js",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/publish-wiki-js-056d47c0460dd03b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/publish-wiki-js@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-publish-wiki-js-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:043a1a1a567708f9d0ecf474cae3278ce51e1925c8aa089e76dca852837a6de9",
+      "artifactSizeBytes": 2618
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T13:02:17.954Z"
+}

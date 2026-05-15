@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14953,
+  "uuid": "skill-clawhub-remove-metadata-from-pdf",
+  "skillKey": "clawhub-remove-metadata-from-pdf",
+  "name": "Remove metadata from PDF",
+  "summary": "Remove metadata from one or multiple PDFs by uploading them to the Solutions API, polling until completion, then returning download URL(s) for the cleaned PDF(s) (or a ZIP if multiple).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.remove_metadata_from_pdf",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CrossServiceSolutions",
+      "features": [
+        "Remove metadata from one or multiple PDFs by uploading them to the Solutions API, polling until."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/remove-metadata-from-pdf@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201191521?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "remove-metadata-from-pdf",
+      "url": "https://clawhub.ai/skills/remove-metadata-from-pdf"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "remove-metadata-from-pdf",
+    "url": "https://clawhub.ai/skills/remove-metadata-from-pdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/remove-metadata-from-pdf-8fd076be91c3a10c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/remove-metadata-from-pdf@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-remove-metadata-from-pdf-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7cfdd35ba760dd615fd23949dbf09de586bec4ed6c970ee4de791a0dadfc3a70",
+      "artifactSizeBytes": 2393
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T02:28:09.526Z"
+}

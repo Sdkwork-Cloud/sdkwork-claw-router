@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/assistant-reliability-watchtower@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.assistant_reliability_watchtower",
+  "skill": {
+    "id": 46144,
+    "skillKey": "clawhub-assistant-reliability-watchtower",
+    "name": "Assistant Reliability Watchtower"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "assistant-reliability-watchtower",
+    "url": "https://clawhub.ai/skills/assistant-reliability-watchtower",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/assistant-reliability-watchtower-8cb189956b3fcffe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deterministic reliability monitoring for OpenClaw assistant workflows. Use when you need to run ARW smoke probes, generate a daily digest, validate scorecard..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wit-oc",
+      "userId": "s1706jmje0dgytbaknv4cwbvyn84mdpx",
+      "displayName": "wit-oc",
+      "image": "https://avatars.githubusercontent.com/u/258550756?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775934937657,
+      "changelog": "Initial public RC1 release: packaged OpenClaw skill, repo-backed wrapper commands, and RC release/config/probe docs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:682434e107df810fc61902b39edcfd7378974b1517c038df7e698928474e852d"
+}

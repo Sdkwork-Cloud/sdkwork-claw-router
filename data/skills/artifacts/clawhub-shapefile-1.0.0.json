@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shapefile@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shapefile",
+  "skill": {
+    "id": 55386,
+    "skillKey": "clawhub-shapefile",
+    "name": "shapefile"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shapefile",
+    "url": "https://clawhub.ai/skills/shapefile",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shapefile-ffd5599b2c48118a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Inspect, explain, validate, and convert ESRI Shapefile datasets, including `.shp/.shx/.dbf/.prj` sidecar requirements, CRS detection, field-name/type limits,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jvy",
+      "userId": "s17drhqvqmrfz94tm5320kfgj983kf7m",
+      "displayName": "jvy",
+      "image": "https://avatars.githubusercontent.com/u/5337221?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774090883040,
+      "changelog": "- Initial release of the shp skill for handling ESRI Shapefile datasets.\n- Supports inspection, validation, and conversion, addressing sidecar file requirements, CRS detection, encoding, and schema limitations.\n- Offers guidance on common failure cases and best practices for migrating to GeoPackage or GeoJSON.\n- Helps identify and troubleshoot multipart geometry and field truncation issues.\n- Provides workflow recommendations and directs users to appropriate tools or skills for complex operations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3ad96578009c235a5baa4d24a819ed76c4e80509c90a4fbe0dae444bd04279ee"
+}

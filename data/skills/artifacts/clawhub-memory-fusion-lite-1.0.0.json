@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-fusion-lite@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_fusion_lite",
+  "skill": {
+    "id": 60403,
+    "skillKey": "clawhub-memory-fusion-lite",
+    "name": "Memory Fusion Lite"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-fusion-lite",
+    "url": "https://clawhub.ai/skills/memory-fusion-lite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-fusion-lite-15489a7eed5d54b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Memory Fusion Light — 基于 dztabel-happy/openclaw-memory-fusion 核心思想：三层 cron 自动记忆提取/滚动蒸馏/防套娃。功能：①A′滚动7天区 ②增量扫描脚本 ③防套娃三保险 ④每周分类治理。适用已部署 Dreaming 的用户补强记忆闭环。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dxiaofeng0811-lgtm",
+      "userId": "s17atqadnqpa3am0hjznmvcev583sngm",
+      "displayName": "dxiaofeng0811-lgtm",
+      "image": "https://avatars.githubusercontent.com/u/266959010?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776402189112,
+      "changelog": "Initial release of memory-fusion-lite — a lightweight memory management enhancement for Dreaming users.\n\n- Implements three core features from memory-fusion: daily incremental scan (A′ 7-day rolling zone), anti-recursion safeguards, and weekly memory governance.\n- Adds an incremental Python script for session scanning and automated extraction.\n- Maintains an automatically managed 7-day rolling update section in MEMORY.md, with weekly classification and promotion.\n- Provides manual and scheduled cron triggers for daily and weekly memory operations.\n- Designed to complement Dreaming; requires Dreaming to be enabled and specific workspace directories to exist.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b10a629691ab7c4547ca513c2f66ff0374976746651f4fd826a73fda532b3242"
+}

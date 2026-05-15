@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/design-framework-generate@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.design_framework_generate",
+  "skill": {
+    "id": 71737,
+    "skillKey": "clawhub-design-framework-generate",
+    "name": "设计框架套件 - 生图交付"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "design-framework-generate",
+    "url": "https://clawhub.ai/skills/design-framework-generate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/design-framework-generate-2bf7beb38ba7fb84.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "设计框架自动生成套件（生图交付）：用户确认后自动生成概念图并私发给 Bot 主人"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "807209066",
+      "userId": "s17ev069wj6x7pf8cqcnjhkf4583jhzj",
+      "displayName": "807209066",
+      "image": "https://avatars.githubusercontent.com/u/86033938?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1776841950720,
+      "changelog": "v2.0 拆分重构：单一职责，用户确认后生图+私发框架+私发概念图+完成通知",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7421d021a5b45e8075003c18ce35e3c8abb65a640af9ea7e804deb87e4b0afe9"
+}

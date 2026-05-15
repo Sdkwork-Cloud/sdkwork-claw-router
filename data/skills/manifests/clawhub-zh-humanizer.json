@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9667,
+  "uuid": "skill-clawhub-zh-humanizer",
+  "skillKey": "clawhub-zh-humanizer",
+  "name": "Chinese Humanizer",
+  "summary": "Removes AI-style writing traces to make text sound naturally written by a real author, primarily in Chinese-language contexts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zh_humanizer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ironben",
+      "features": [
+        "Removes AI-style writing traces to make text sound naturally written by a real author, primaril."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zh-humanizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11755645?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zh-humanizer",
+      "url": "https://clawhub.ai/skills/zh-humanizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zh-humanizer",
+    "url": "https://clawhub.ai/skills/zh-humanizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zh-humanizer-13c75a48ba3d4565.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zh-humanizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zh-humanizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e835509b9af0d87624756bda592c6cdf11ac2f9c25d3cd68cb156069bbd1123",
+      "artifactSizeBytes": 2106
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T05:48:02.080Z"
+}

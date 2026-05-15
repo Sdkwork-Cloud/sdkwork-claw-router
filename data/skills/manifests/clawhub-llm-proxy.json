@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63696,
+  "uuid": "skill-clawhub-llm-proxy",
+  "skillKey": "clawhub-llm-proxy",
+  "name": "AI守门人",
+  "summary": "LLM API 代理服务管理工具。支持多 Provider 转发（百炼/OpenRouter/NVIDIA）、内容安全审计、健康监控。使用场景：(1)启动/停止/重启代理服务 (2)查看代理状态和统计 (3)配置内容过滤规则。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llm_proxy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "394286006",
+      "features": [
+        "LLM API 代理服务管理工具。支持多 Provider 转发（百炼/OpenRouter/NVIDIA）、内容安全审计、健康监控。使用场景：(1)启动/停止/重启代理服务 (2)查看代理."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/llm-proxy@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6963230?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "llm-proxy",
+      "url": "https://clawhub.ai/skills/llm-proxy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llm-proxy",
+    "url": "https://clawhub.ai/skills/llm-proxy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llm-proxy-c30d68644943cffe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/llm-proxy@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-llm-proxy-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:169325573edfb2a7697a022e4fd6c17b67b060b44262446f40f81aa5f95e1b7f",
+      "artifactSizeBytes": 2475
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T04:33:04.133Z"
+}

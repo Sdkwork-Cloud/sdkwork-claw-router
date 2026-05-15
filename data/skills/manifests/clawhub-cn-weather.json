@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61196,
+  "uuid": "skill-clawhub-cn-weather",
+  "skillKey": "clawhub-cn-weather",
+  "name": "中国天气技能 (cn-weather) v1.0.0 发布。 - 提供中国城市天气数据，集成和风天气（QWeather）",
+  "summary": "中国天气 API - 使用和風天气 (QWeather) 获取中国城市天气数据。支持双 API（和风天气 + Open-Meteo）。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_weather",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhengge6",
+      "features": [
+        "中国天气 API",
+        "使用和風天气 (QWeather) 获取中国城市天气数据。支持双 API（和风天气 + Open-Meteo）。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cn-weather@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78626189?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cn-weather",
+      "url": "https://clawhub.ai/skills/cn-weather"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-weather",
+    "url": "https://clawhub.ai/skills/cn-weather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-weather-7acbcd0f0298bf8b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cn-weather@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-cn-weather-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3e5c135fb620cc403a5d04b6a0770441fed871574f94b741f7d8536c35c97d16",
+      "artifactSizeBytes": 2433
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T12:13:37.618Z"
+}

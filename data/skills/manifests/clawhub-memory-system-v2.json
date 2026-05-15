@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8891,
+  "uuid": "skill-clawhub-memory-system-v2",
+  "skillKey": "clawhub-memory-system-v2",
+  "name": "Memory System V2",
+  "summary": "Fast semantic memory system with JSON indexing, auto-consolidation, and <20ms search. Capture learnings, decisions, insights, events. Use when you need persistent memory across sessions or want to recall prior work/decisions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_system_v2",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kellyclaudeai",
+      "features": [
+        "Fast semantic memory system with JSON indexing, auto-consolidation, and <20ms search",
+        "Capture learnings, decisions, insights, events",
+        "Use when you need persistent memory across sessions or want to recall prior work/decisions."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-system-v2@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258509868?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-system-v2",
+      "url": "https://clawhub.ai/skills/memory-system-v2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-system-v2",
+    "url": "https://clawhub.ai/skills/memory-system-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-system-v2-2beffb3152259f36.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-system-v2@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-system-v2-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f51b8ab214e2ecfdde27fb4423d33b2ffda4b747908a82b07354a82a0489a03c",
+      "artifactSizeBytes": 2510
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T14:54:14.359Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18487,
+  "uuid": "skill-clawhub-amateur-radio-dx",
+  "skillKey": "clawhub-amateur-radio-dx",
+  "name": "Amateur Radio DX Monitor",
+  "summary": "Monitor DX clusters for rare station spots, track active DX expeditions, and get daily band activity digests for amateur radio operators.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amateur_radio_dx",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "captmarbles",
+      "features": [
+        "Monitor DX clusters for rare station spots, track active DX expeditions, and get daily band act."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amateur-radio-dx@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5841195?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amateur-radio-dx",
+      "url": "https://clawhub.ai/skills/amateur-radio-dx"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amateur-radio-dx",
+    "url": "https://clawhub.ai/skills/amateur-radio-dx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amateur-radio-dx-0692720ded7a9b12.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amateur-radio-dx@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-amateur-radio-dx-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1190becf2b757d1a7eceb46b2bb5dc612c3e38584b28b15257ddbdcd1c70f296",
+      "artifactSizeBytes": 2394
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T21:58:51.413Z"
+}

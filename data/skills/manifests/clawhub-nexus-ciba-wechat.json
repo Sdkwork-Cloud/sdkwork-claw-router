@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57909,
+  "uuid": "skill-clawhub-nexus-ciba-wechat",
+  "skillKey": "clawhub-nexus-ciba-wechat",
+  "name": "词霸每日一句",
+  "summary": "generate shareable html and png cards from the ciba or iciba daily sentence api. use when the user asks for 词霸每日一句, iciba, ciba, open.iciba.com/dsapi, daily...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nexus_ciba_wechat",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Neway Lau",
+      "features": [
+        "generate shareable html and png cards from the ciba or iciba daily sentence api",
+        "use when the user asks for 词霸每日一句, iciba, ciba, open.iciba.com/dsapi, daily..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nexus-ciba-wechat@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5044960?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nexus-ciba-wechat",
+      "url": "https://clawhub.ai/skills/nexus-ciba-wechat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nexus-ciba-wechat",
+    "url": "https://clawhub.ai/skills/nexus-ciba-wechat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nexus-ciba-wechat-6593bb3cffe99c9f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nexus-ciba-wechat@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nexus-ciba-wechat-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9b0810df95d934ce605d0c12a9e277aa7c8d3df112fb2d75dc3bab6766ff9946",
+      "artifactSizeBytes": 2503
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T03:30:07.699Z"
+}

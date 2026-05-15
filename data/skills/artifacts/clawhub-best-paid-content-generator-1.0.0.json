@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/best-paid-content-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.best_paid_content_generator",
+  "skill": {
+    "id": 40936,
+    "skillKey": "clawhub-best-paid-content-generator",
+    "name": "Best Paid Content Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "best-paid-content-generator",
+    "url": "https://clawhub.ai/skills/best-paid-content-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/best-paid-content-generator-688bba898961f38c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate text prompts or footage into polished content videos with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators and markete..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776598779287,
+      "changelog": "**Initial release of Best Paid Content Generator — Generate and Export Monetizable Videos**\n\n- Upload text prompts or source footage and generate polished, monetizable video content (up to 1080p MP4, 500MB).\n- Fast cloud GPU processing: most exports complete in 1–2 minutes.\n- Supports a wide range of video, image, and audio formats (mp4, mov, avi, webm, jpg, png, mp3, wav, etc.).\n- Integrated setup with automatic API token retrieval, GUI mapping, and streamlined session handling.\n- Key features: export/download, credit checking, status/timeline previews, robust error handling for file limits, tokens, and plan restrictions.\n- Designed for content creators and marketers to quickly generate professional promotional videos from text or raw footage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3262f5b4b68b75824dcfe94e7d0ba3547088e14e5bbadcfc107c44acb9a74b8a"
+}

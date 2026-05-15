@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/news-events@2.0.3",
+  "version": "2.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_events",
+  "skill": {
+    "id": 30396,
+    "skillKey": "clawhub-news-events",
+    "name": "Polymarket News Events"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-events",
+    "url": "https://clawhub.ai/skills/news-events",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-events-9597bdc2ea617296.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitors 20+ premium RSS feeds for breaking news and matches stories to Polymarket markets via keyword analysis. Trades when breaking news creates an estimat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mibayy",
+      "userId": "s179d2am41rchxqf8a7jwrjp4n83gaje",
+      "displayName": "Mibayy",
+      "image": "https://avatars.githubusercontent.com/u/97958526?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 282,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.3",
+      "createdAt": 1774067408423,
+      "changelog": "Gradient sizing: /2/0/0 based on impact score — higher impact news gets bigger position",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f9b0e87e7a46279a318a00da1416565c9b08594832d87151ecdb7674962fa7b2"
+}

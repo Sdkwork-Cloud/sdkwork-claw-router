@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/spotify-news-digest@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spotify_news_digest",
+  "skill": {
+    "id": 26173,
+    "skillKey": "clawhub-spotify-news-digest",
+    "name": "spotify-news-digest"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spotify-news-digest",
+    "url": "https://clawhub.ai/skills/spotify-news-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spotify-news-digest-9b359009ee243628.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scrape and summarize Spotify-related news from multiple sources (Spotify official blogs, engineering/research/newsroom, TechCrunch, The Verge, Music Business..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ibillxia",
+      "userId": "s1724rhcp74qej595ajyp4mj6s85bras",
+      "displayName": "Bill Xia",
+      "image": "https://avatars.githubusercontent.com/u/2110361?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 273,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776824299843,
+      "changelog": "**Security-focused release: Now enforces strict domain allowlists and improved safety for news fetching.**\n\n- Enforces TLS verification on all HTTP requests for news fetching.\n- Introduces a strict domain allowlist (`ALLOWED_DDG_DOMAINS`) for all DuckDuckGo news search results; only results from approved public news domains are accepted.\n- Updates documentation with prominent security notes, including advice for safe scheduling and isolating the skill from internal networks and services.\n- Requires auditing of pip dependencies before installation in sensitive or production environments.\n- No changes to the news gathering features or API; security improvements and documentation clarification only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9170072bbe1d3efcc7c206e455c79af49bcb28a494539490a792dfee3b404b9d"
+}

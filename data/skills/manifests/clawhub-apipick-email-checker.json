@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19640,
+  "uuid": "skill-clawhub-apipick-email-checker",
+  "skillKey": "clawhub-apipick-email-checker",
+  "name": "Email check and vaildation",
+  "summary": "Validate email addresses using the apipick Email Validator API. Performs syntax checking, MX record verification, and disposable/throwaway email detection. U...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apipick_email_checker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "javainthinking",
+      "features": [
+        "Validate email addresses using the apipick Email Validator API",
+        "Performs syntax checking, MX record verification, and disposable/throwaway email detection"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/apipick-email-checker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2844583?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "apipick-email-checker",
+      "url": "https://clawhub.ai/skills/apipick-email-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apipick-email-checker",
+    "url": "https://clawhub.ai/skills/apipick-email-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apipick-email-checker-74c01c8f4b098133.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/apipick-email-checker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-apipick-email-checker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:79529a6dab5ffa72cc048e283ac6e293f6b6ba0873caf4635cc47fd1effc8c68",
+      "artifactSizeBytes": 2278
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T10:26:23.268Z"
+}

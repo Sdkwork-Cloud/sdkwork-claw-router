@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pdf-to-txt@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_to_txt",
+  "skill": {
+    "id": 41817,
+    "skillKey": "clawhub-pdf-to-txt",
+    "name": "PDF to Text"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-to-txt",
+    "url": "https://clawhub.ai/skills/pdf-to-txt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-to-txt-5124c1ec701d159f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract plain text from all or selected pages of a PDF."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rishabhdugar",
+      "userId": "s17er4205vjg2p2hpn1fxtpqz1850q84",
+      "displayName": "Rishabh Dugar",
+      "image": "https://avatars.githubusercontent.com/u/7722125?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776444404762,
+      "changelog": "Extract plain text from all or selected pages of a PDF. Useful for full-text search indexing, AI/LLM processing, content migration, and accessibility workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8199f6f5d9dd9cbf165a1b8bcc7c0b4f3243ed47eb56faf04e8a0221388bcba4"
+}

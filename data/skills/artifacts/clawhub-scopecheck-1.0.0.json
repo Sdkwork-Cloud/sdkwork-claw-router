@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/scopecheck@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scopecheck",
+  "skill": {
+    "id": 53050,
+    "skillKey": "clawhub-scopecheck",
+    "name": "Scopecheck"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scopecheck",
+    "url": "https://clawhub.ai/skills/scopecheck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scopecheck-2f5c502522bcabc7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze an OpenClaw SKILL.md and extract its permission scope — what env vars, CLI tools, filesystem paths, and network URLs it accesses. Compares declared r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mirni",
+      "userId": "s1711srsc0t5e7tx4tkwpmygw584bfmq",
+      "displayName": "mirni",
+      "image": "https://avatars.githubusercontent.com/u/13551232?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776067580106,
+      "changelog": "- Improved description for clarity and conciseness.\n- Updated metadata format and added emoji for better integration.\n- Revised installation instructions for clearer dependency management.\n- Simplified usage examples and response documentation.\n- Enhanced explanation of extracted fields and undeclared access detection.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cc5f643342610e935ae4d67bb6beb3fb8fafad4f73abe2313619cf6d36853506"
+}

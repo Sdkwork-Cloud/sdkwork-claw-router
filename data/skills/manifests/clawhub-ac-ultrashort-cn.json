@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70729,
+  "uuid": "skill-clawhub-ac-ultrashort-cn",
+  "skillKey": "clawhub-ac-ultrashort-cn",
+  "name": "A股超短线策略-CN",
+  "summary": "A股超短线交易策略。用于 Peter 的游牧型超短线交易风格：只做主线、只做最强、1-2天T+1套利。当需要分析A股盘面、筛选热点板块、寻找龙头股、制定买卖策略时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ac_ultrashort_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xbmchina",
+      "features": [
+        "A股超短线交易策略。用于 Peter 的游牧型超短线交易风格：只做主线、只做最强、1-2天T+1套利。当需要分析A股盘面、筛选热点板块、寻找龙头股、制定买卖策略时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ac-ultrashort-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14942293?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ac-ultrashort-cn",
+      "url": "https://clawhub.ai/skills/ac-ultrashort-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ac-ultrashort-cn",
+    "url": "https://clawhub.ai/skills/ac-ultrashort-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ac-ultrashort-cn-907c01fa03fe6f7f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ac-ultrashort-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ac-ultrashort-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9519920e595aae6840e1722c09680179a6ae73045c27c677afdcb34c9f9860a6",
+      "artifactSizeBytes": 2008
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T11:05:08.289Z"
+}

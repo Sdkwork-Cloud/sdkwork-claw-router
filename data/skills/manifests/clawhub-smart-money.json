@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57364,
+  "uuid": "skill-clawhub-smart-money",
+  "skillKey": "clawhub-smart-money",
+  "name": "Smart Money",
+  "summary": "Smart money whale tracking skill. Activate when user mentions smart money, whale tracking, 聪明钱, 鲸鱼追踪, fund tracking, on-chain signals, what are whales buying...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_money",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "deanpeng-dotcom",
+      "features": [
+        "Smart money whale tracking skill",
+        "Activate when user mentions smart money, whale tracking, 聪明钱, 鲸鱼追踪, fund tracking, on-chain sig."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-money@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271209600?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-money",
+      "url": "https://clawhub.ai/skills/smart-money"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-money",
+    "url": "https://clawhub.ai/skills/smart-money",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-money-8f8efb9736478b11.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-money@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-money-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2500a866e2e58ff775f6467d3d4ffe4e5d1a2af7891a4289522074915c7b69ce",
+      "artifactSizeBytes": 2671
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T15:44:20.276Z"
+}

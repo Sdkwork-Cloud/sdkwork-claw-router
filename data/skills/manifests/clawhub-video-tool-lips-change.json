@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52617,
+  "uuid": "skill-clawhub-video-tool-lips-change",
+  "skillKey": "clawhub-video-tool-lips-change",
+  "name": "WeryAI video tool — lips change",
+  "summary": "Lip-sync an existing HTTPS video to a separate audio URL via WeryAI (video-lips-change). Use when the user wants lip sync to new audio, not text-to-video.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_tool_lips_change",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "parallel world",
+      "features": [
+        "Lip-sync an existing HTTPS video to a separate audio URL via WeryAI (video-lips-change)",
+        "Use when the user wants lip sync to new audio, not text-to-video."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-tool-lips-change@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16458879?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-tool-lips-change",
+      "url": "https://clawhub.ai/skills/video-tool-lips-change"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-tool-lips-change",
+    "url": "https://clawhub.ai/skills/video-tool-lips-change",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-tool-lips-change-5c0d7fec15669067.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-tool-lips-change@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-tool-lips-change-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:976e25e64786a5cd9f99bf20d26898bc25e2f8b0fe75484a66c022d76c0bab67",
+      "artifactSizeBytes": 2511
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T03:57:11.931Z"
+}

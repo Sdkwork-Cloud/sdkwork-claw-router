@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/storyclaw-alpaca-trading@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.storyclaw_alpaca_trading",
+  "skill": {
+    "id": 24978,
+    "skillKey": "clawhub-storyclaw-alpaca-trading",
+    "name": "Storyclaw Alpaca Trading"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "storyclaw-alpaca-trading",
+    "url": "https://clawhub.ai/skills/storyclaw-alpaca-trading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/storyclaw-alpaca-trading-f35aa3e39bc02ea3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "US stock and crypto trading via Alpaca API. Paper trading (simulated) and real trading supported. Real-time quotes, orders, positions, RSI strategy."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "patches429",
+      "userId": "publishers:patches429",
+      "displayName": "Parker",
+      "image": "https://avatars.githubusercontent.com/u/169116739?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 398,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773459378967,
+      "changelog": "Initial release of storyclaw-alpaca-trading.\n\n- Enables US stock and crypto trading via the Alpaca API, supporting both paper (simulated) and real trading\n- Provides real-time quotes, order management, position tracking, and technical indicators like RSI\n- Enforces critical safety rules: explicit user confirmation required for all trades and plans\n- Supports multiple users with individual credentials and environment variable configuration\n- Includes command-line scripts for account checks, trading, strategy, and market data queries",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f339cd3245eb4e9df8630d11c93d303499b96e5b2ed0c0c3fc9b02c990ddbbd4"
+}

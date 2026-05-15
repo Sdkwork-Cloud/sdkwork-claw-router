@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/living-persona@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.living_persona",
+  "skill": {
+    "id": 39639,
+    "skillKey": "clawhub-living-persona",
+    "name": "Living Persona"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "living-persona",
+    "url": "https://clawhub.ai/skills/living-persona",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/living-persona-818b19fc7371e557.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides OpenClaw agents with dynamic, context-reactive personalities that adapt writing style and tone based on conversation signals and trait propagation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "toxzak-svg",
+      "userId": "s171x6a342g4egy1nwnmfjchgx83f91z",
+      "displayName": "toxzak-svg",
+      "image": "https://avatars.githubusercontent.com/u/238491517?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774293772421,
+      "changelog": "- Introduces Living Persona: a dynamic personality engine for OpenClaw agents that responds in real-time to conversation signals.\n- Supports signal-based trait detection, emotional resonance network, and hysteresis decay for gradual personality shifts.\n- Structural injection rewrites each generation prompt with the agent’s most active traits, making personality impact truly dynamic.\n- Includes downloadable personality presets and configurable personality persistence.\n- Quick setup with install/enabling instructions and new ambient vs. structural directive modes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7ba2f22cd33aae8317ba95223dc2b7ade32c6851488f56477f482ce7eff8c874"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9582,
+  "uuid": "skill-clawhub-mcp-microsoft365",
+  "skillKey": "clawhub-mcp-microsoft365",
+  "name": "Microsoft 365 MCP Server",
+  "summary": "Integrate Microsoft 365 to manage Outlook email, calendar events, OneDrive files, Tasks, Teams chats, and user profiles via Microsoft Graph and MCP protocol.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcp_microsoft365",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "makhatib",
+      "features": [
+        "Integrate Microsoft 365 to manage Outlook email, calendar events, OneDrive files, Tasks, Teams."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mcp-microsoft365@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16227316?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mcp-microsoft365",
+      "url": "https://clawhub.ai/skills/mcp-microsoft365"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcp-microsoft365",
+    "url": "https://clawhub.ai/skills/mcp-microsoft365",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcp-microsoft365-dedbce1ff8dc42eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mcp-microsoft365@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mcp-microsoft365-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9b929794392f4c1965d87998b9e7c40d1ae46b83be10f7b6148e4cad9a0f2efc",
+      "artifactSizeBytes": 1997
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-26T11:49:41.538Z"
+}

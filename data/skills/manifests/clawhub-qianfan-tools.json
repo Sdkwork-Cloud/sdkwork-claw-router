@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58425,
+  "uuid": "skill-clawhub-qianfan-tools",
+  "skillKey": "clawhub-qianfan-tools",
+  "name": "Baidu Qianfan Tools",
+  "summary": "百度千帆工具箱 - 集成百度千帆平台多种免费 API | Baidu Qianfan Tools - Integrate Baidu Qianfan Platform APIs",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qianfan_tools",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yingyangdao",
+      "features": [
+        "集成百度千帆平台多种免费 API | Baidu Qianfan Tools",
+        "Integrate Baidu Qianfan Platform APIs"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qianfan-tools@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/152696161?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qianfan-tools",
+      "url": "https://clawhub.ai/skills/qianfan-tools"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qianfan-tools",
+    "url": "https://clawhub.ai/skills/qianfan-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qianfan-tools-3659cd757ffeb03f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qianfan-tools@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qianfan-tools-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9728ac3ef421c4ca4bbad9c755a4c9c37d750e34016f9ddc2b0b7c175ab624d7",
+      "artifactSizeBytes": 2229
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T20:07:49.067Z"
+}

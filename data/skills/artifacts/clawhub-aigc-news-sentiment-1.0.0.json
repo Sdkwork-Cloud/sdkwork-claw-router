@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aigc-news-sentiment@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aigc_news_sentiment",
+  "skill": {
+    "id": 23722,
+    "skillKey": "clawhub-aigc-news-sentiment",
+    "name": "AI News Sentiment"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aigc-news-sentiment",
+    "url": "https://clawhub.ai/skills/aigc-news-sentiment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aigc-news-sentiment-b2e0956d96130f4f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze financial news sentiment, assess short- to long-term impacts, and classify news by type like earnings, contracts, investments, policies, and reports."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gbabyzs",
+      "userId": "s1751m6g9wq5jpfz5ceb9mkjwd83srqr",
+      "displayName": "GBABYZS",
+      "image": "https://avatars.githubusercontent.com/u/264446239?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 421,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773538501207,
+      "changelog": "Initial release - News sentiment analysis for financial markets",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8d2a61332530a349226cd8edab8f69f7c304e316f4dc5f1240424d13b8447e46"
+}

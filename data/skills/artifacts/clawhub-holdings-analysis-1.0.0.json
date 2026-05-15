@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/holdings-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.holdings_analysis",
+  "skill": {
+    "id": 73495,
+    "skillKey": "clawhub-holdings-analysis",
+    "name": "持仓诊断分析"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "holdings-analysis",
+    "url": "https://clawhub.ai/skills/holdings-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/holdings-analysis-9d8b132a0b61b2e6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "实时诊断持仓，结合腾讯行情和技术指标，计算买卖评分及状态，给出操作建议和盈亏情况。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jayden-zhong",
+      "userId": "s176spm6d59vka8srp6r8yznrh83xc9z",
+      "displayName": "Jayden-zhong",
+      "image": "https://avatars.githubusercontent.com/u/74336289?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776854025740,
+      "changelog": "v1.0.0: 持仓诊断系统，集成买入评分(M/A/R/V四维)+卖出评分+PASS/FAIL状态，支持腾讯API实时行情",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:87183c1fcac7e67cc624a9089cee378fd96a38260ba42868da39a7335ea44e38"
+}

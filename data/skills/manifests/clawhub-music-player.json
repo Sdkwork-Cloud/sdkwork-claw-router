@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35501,
+  "uuid": "skill-clawhub-music-player",
+  "skillKey": "clawhub-music-player",
+  "name": "Music Player for Windows",
+  "summary": "Provides music search, high-quality download, ID3 metadata embedding, and local playback on Windows using multiple music API sources.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.music_player",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "freebook8",
+      "features": [
+        "Provides music search, high-quality download, ID3 metadata embedding, and local playback on Win."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/music-player@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/142477383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "music-player",
+      "url": "https://clawhub.ai/skills/music-player"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "music-player",
+    "url": "https://clawhub.ai/skills/music-player",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/music-player-08df584fe37bd01b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/music-player@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-music-player-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6079797ca60e289bc0bbe3c4591dc5b5a704e29f93c9833fe2cd732b1d38398d",
+      "artifactSizeBytes": 1918
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T13:19:17.128Z"
+}

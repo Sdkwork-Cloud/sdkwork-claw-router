@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51384,
+  "uuid": "skill-clawhub-ctx-compress",
+  "skillKey": "clawhub-ctx-compress",
+  "name": "Context Compressor",
+  "summary": "Intelligently compress context — conversations, code, logs. Preserve key information while reducing token usage. Auto-detects content type and applies optima...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ctx_compress",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "besty0121",
+      "features": [
+        "Intelligently compress context — conversations, code, logs",
+        "Preserve key information while reducing token usage",
+        "Auto-detects content type and applies optima..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ctx-compress@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/133213023?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ctx-compress",
+      "url": "https://clawhub.ai/skills/ctx-compress"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ctx-compress",
+    "url": "https://clawhub.ai/skills/ctx-compress",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ctx-compress-fe5d2d8e33e2cc5a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ctx-compress@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ctx-compress-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0e3ff7372748ecf33f3ea6c12e436b3df487e61676ce3d2529fb7af6fdb2e376",
+      "artifactSizeBytes": 2442
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T01:57:16.488Z"
+}

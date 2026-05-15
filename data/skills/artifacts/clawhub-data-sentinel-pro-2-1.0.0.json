@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/data-sentinel-pro-2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_sentinel_pro_2",
+  "skill": {
+    "id": 64154,
+    "skillKey": "clawhub-data-sentinel-pro-2",
+    "name": "Data Sentinel Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-sentinel-pro-2",
+    "url": "https://clawhub.ai/skills/data-sentinel-pro-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-sentinel-pro-2-5ba5c2b497c73a17.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "7x24 小时监控网页、商品价格、竞对动态，变化即通知。 Use when: 用户需要监控特定网页的变化（价格、内容、状态）。 NOT for: 一次性数据查询，实时聊天。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anson125chen",
+      "userId": "s1799ak40zx0j8dqdjzntm5wnn83msa3",
+      "displayName": "anson125chen",
+      "image": "https://avatars.githubusercontent.com/u/269657022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775284065987,
+      "changelog": "Data Sentinel Pro 1.0.0\n\n- 更新了升级及支持联系方式：邮箱改为 ai.agent.anson@qq.com，官网改为 https://asmartglobal.com。\n- 配置示例中的凭据字段修改为更规范的占位符，增加安全提示建议使用环境变量或本地配置。\n- 脚本操作说明简化，核心检查脚本统一为 scripts/monitor.py，并补充用法示例。\n- 文档链接地址和支持信息更新，作者信息补充。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:af5b0da947cf04e574d8f6d4f45dc078a9c7d56a19148619956cc2f4131c2780"
+}

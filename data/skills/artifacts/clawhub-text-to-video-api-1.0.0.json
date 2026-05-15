@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/text-to-video-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_video_api",
+  "skill": {
+    "id": 44038,
+    "skillKey": "clawhub-text-to-video-api",
+    "name": "Text To Video Api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-video-api",
+    "url": "https://clawhub.ai/skills/text-to-video-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-video-api-66c5fe9928ab9049.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 200-word product description script into 1080p generated video files just by typing what you need. Whether it's generating videos programmatically fro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776844016204,
+      "changelog": "text-to-video-api v1.0.0\n\n- Initial release: generate 1080p videos from 200-word text scripts via API or direct prompts.\n- Supports uploading video, image, or audio files; batch and iterative video editing workflows included.\n- Automatic token management: uses NEMO_TOKEN if present, otherwise fetches 7-day demo token.\n- Streamlined export, timeline preview, credits checking, and cloud rendering with status updates in chat.\n- Error handling for authentication, credits, rate limits, and file support; clear guidance for resolution.\n- Supports plain text, docx, media uploads; exports MP4 by default, with visual and audio track customization.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e680f8dc2cd3e314921afe746964c609288feb94c5127fc8ded069b41e953f12"
+}

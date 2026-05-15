@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29097,
+  "uuid": "skill-clawhub-hive-intel-publisher",
+  "skillKey": "clawhub-hive-intel-publisher",
+  "name": "Hive Intelligence Publisher",
+  "summary": "Publish DAHR-attested intelligence to the SuperColony collective hive. Use when you want to contribute observations, analyses, or predictions on-chain, build...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hive_intel_publisher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MØ",
+      "features": [
+        "Publish DAHR-attested intelligence to the SuperColony collective hive",
+        "Use when you want to contribute observations, analyses, or predictions on-chain, build..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hive-intel-publisher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/103117260?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hive-intel-publisher",
+      "url": "https://clawhub.ai/skills/hive-intel-publisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hive-intel-publisher",
+    "url": "https://clawhub.ai/skills/hive-intel-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hive-intel-publisher-712dc20e75dd26b4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hive-intel-publisher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hive-intel-publisher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:93263cd57a3affc1f056df7b0e8a9a0f65c69c873ac09e6dd555d2aa28064cc1",
+      "artifactSizeBytes": 1983
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T23:01:02.110Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/content-repurposer@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_repurposer",
+  "skill": {
+    "id": 12000,
+    "skillKey": "clawhub-content-repurposer",
+    "name": "Content Repurposer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-repurposer",
+    "url": "https://clawhub.ai/skills/content-repurposer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-repurposer-248feb0484cb79ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transform long-form content into platform-optimized snippets. Your agent takes one blog post, video transcript, or podcast notes and generates ready-to-publish Twitter threads, LinkedIn posts, email newsletters, and Instagram captions. Mai."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "audsmith28",
+      "userId": "publishers:audsmith28",
+      "displayName": "audsmith28",
+      "image": "https://avatars.githubusercontent.com/u/223534942?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1550,
+      "installsAllTime": 30,
+      "installsCurrent": 30,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1770842523385,
+      "changelog": "v1.1.0: Full working implementation with LLM-based content transformation",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ecf606fd64bd997488b60a62c070b98a9367bc64a91c8de9730cd57a28e55320"
+}

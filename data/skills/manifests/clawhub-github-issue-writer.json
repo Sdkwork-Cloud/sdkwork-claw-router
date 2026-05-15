@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30860,
+  "uuid": "skill-clawhub-github-issue-writer",
+  "skillKey": "clawhub-github-issue-writer",
+  "name": "GithubIssue",
+  "summary": "Generate structured GitHub issue cards for the WeBuddhist team. Use this when a backend dev needs to document a new or changed endpoint, or when a frontend/a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_issue_writer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tech-lo",
+      "features": [
+        "Generate structured GitHub issue cards for the WeBuddhist team",
+        "Use this when a backend dev needs to document a new or changed endpoint, or when a frontend/a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-issue-writer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94886097?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-issue-writer",
+      "url": "https://clawhub.ai/skills/github-issue-writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-issue-writer",
+    "url": "https://clawhub.ai/skills/github-issue-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-issue-writer-4fc5238fc9b5c6f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-issue-writer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-issue-writer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e2753c1ca7633d8862ce51c747dd1e3156dee28619f402654112d9615ef5e0b6",
+      "artifactSizeBytes": 2472
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T11:43:28.816Z"
+}

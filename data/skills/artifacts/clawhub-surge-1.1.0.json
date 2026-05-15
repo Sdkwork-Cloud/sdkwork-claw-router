@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/surge@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.surge",
+  "skill": {
+    "id": 24739,
+    "skillKey": "clawhub-surge",
+    "name": "Surge Download Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "surge",
+    "url": "https://clawhub.ai/skills/surge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/surge-41ef29df4a53ab2d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Blazing fast TUI download manager with multi-connection, queue management, server mode, multiple mirrors, and a beautiful terminal interface."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kexu9",
+      "userId": "s177fq1kmnfz4mhm2xyw0c9kt183ga2b",
+      "displayName": "KeXu9",
+      "image": "https://avatars.githubusercontent.com/u/147953862?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 385,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772622660699,
+      "changelog": "v1.1.0 adds troubleshooting, reasoning framework, and improved guidance for users.\n\n- Introduced a reasoning framework and decision tree to help users choose how to use surge.\n- Added detailed troubleshooting section and common problem solutions.\n- Included a self-check list covering installation and server status.\n- Enhanced documentation with command references, examples, and workflow steps.\n- Added metadata \"category: utility\".",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:933c4f4722c7bbcd0684eca38d17b148e451050d4924e56d4b73020c9a8ca74b"
+}

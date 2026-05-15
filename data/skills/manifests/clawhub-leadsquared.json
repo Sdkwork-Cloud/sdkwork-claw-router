@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32605,
+  "uuid": "skill-clawhub-leadsquared",
+  "skillKey": "clawhub-leadsquared",
+  "name": "Leadsquared",
+  "summary": "LeadSquared integration. Manage data, records, and automate workflows. Use when the user wants to interact with LeadSquared data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.leadsquared",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "LeadSquared integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with LeadSquared data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/leadsquared@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "leadsquared",
+      "url": "https://clawhub.ai/skills/leadsquared"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "leadsquared",
+    "url": "https://clawhub.ai/skills/leadsquared",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/leadsquared-982aaad03b937087.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/leadsquared@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-leadsquared-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bfa6acd34540944ca6d5cea70fd1597ec3b43eac434bcc7ad024b68523671a30",
+      "artifactSizeBytes": 1857
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:06:23.717Z"
+}

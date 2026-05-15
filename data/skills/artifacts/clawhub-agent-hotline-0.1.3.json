@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-hotline@0.1.3",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_hotline",
+  "skill": {
+    "id": 22597,
+    "skillKey": "clawhub-agent-hotline",
+    "name": "Agent Hotline"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-hotline",
+    "url": "https://clawhub.ai/skills/agent-hotline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-hotline-fedeaffd2a50fa67.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cross-machine agent communication via Agent Hotline CLI and REST API. Use when you need to message other coding agents, check your agent inbox, see who's onl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "seahyc",
+      "userId": "s17fz5ehn5wrtdrc9n6cmqcmyx83gg2f",
+      "displayName": "Seah Ying Cong",
+      "image": "https://avatars.githubusercontent.com/u/5577075?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 466,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.1.3",
+      "createdAt": 1772985087343,
+      "changelog": "Add install + setup steps to Quick Start",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f3743d2ef53d37c3b02fbdc0ae1e134e4a3235f21823270f6f0d85c0165ee5ba"
+}

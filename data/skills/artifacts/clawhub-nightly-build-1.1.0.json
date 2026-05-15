@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nightly-build@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nightly_build",
+  "skill": {
+    "id": 14928,
+    "skillKey": "clawhub-nightly-build",
+    "name": "Nightly Build"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nightly-build",
+    "url": "https://clawhub.ai/skills/nightly-build",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nightly-build-85606f5aab0b628f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automates nightly maintenance tasks like skill audits, updates, cleanup, and health checks, then summarizes a morning report."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xraini",
+      "userId": "publishers:0xraini",
+      "displayName": "0xRaini",
+      "image": "https://avatars.githubusercontent.com/u/190923101?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1030,
+      "installsAllTime": 8,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1770714281123,
+      "changelog": "v1.1: Pure ESM Node.js, system health + disk + skill audit + memory stats + git status + auto cleanup",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a1361b27fab391362dc5b3a729f01232998f717dca1c0d3b9f132ab8ef6f1d47"
+}

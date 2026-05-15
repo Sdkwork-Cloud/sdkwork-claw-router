@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16441,
+  "uuid": "skill-clawhub-video-searching",
+  "skillKey": "clawhub-video-searching",
+  "name": "Video Searching",
+  "summary": "Search and analyze videos across YouTube, TikTok, Instagram, and X/Twitter via the Memories.ai Video Searching API.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_searching",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "memories-ai-official",
+      "features": [
+        "Search and analyze videos across YouTube, TikTok, Instagram, and X/Twitter via the Memories.ai."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-searching@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258160197?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-searching",
+      "url": "https://clawhub.ai/skills/video-searching"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-searching",
+    "url": "https://clawhub.ai/skills/video-searching",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-searching-5246124f1fc0ce19.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-searching@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-searching-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bb99777e6be52710ce16e0ba9c9bd775b857415ffcd5010e4a8483b7c1876002",
+      "artifactSizeBytes": 1997
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T10:43:27.946Z"
+}

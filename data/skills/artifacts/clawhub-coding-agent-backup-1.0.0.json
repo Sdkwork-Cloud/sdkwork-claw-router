@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/coding-agent-backup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coding_agent_backup",
+  "skill": {
+    "id": 10167,
+    "skillKey": "clawhub-coding-agent-backup",
+    "name": "Coding Agent Backup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coding-agent-backup",
+    "url": "https://clawhub.ai/skills/coding-agent-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coding-agent-backup-4cc9f4f9b0ed66c7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Delegate coding tasks to Codex, Claude Code, or Pi agents via background process. Use when: (1) building/creating new features or apps, (2) reviewing PRs (sp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nickchan0412",
+      "userId": "publishers:nickchan0412",
+      "displayName": "nickchan0412",
+      "image": "https://avatars.githubusercontent.com/u/82996427?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2501,
+      "installsAllTime": 33,
+      "installsCurrent": 29,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772104830179,
+      "changelog": "coding-agent-backup 1.0.0\n\n- Initial release of the coding-agent skill.\n- Enables background delegation of coding tasks to Codex, Claude Code, or Pi agents using a bash-first workflow.\n- Strong emphasis on pty:true (pseudo-terminal) requirement for all interactive coding agent sessions.\n- Supports spawning agents in arbitrary work directories for tasks like building features, code review (in temp dirs), and refactoring.\n- Provides detailed CLI usage patterns, process monitoring actions, and parallel workflow strategies with git worktrees.\n- Includes clear usage boundaries: not for simple fixes, general code reading, or work in ~/clawd workspace.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f020a1eae33f244c094e2c1d41386009e786eeb9266377df987b9bc95e8fcddc"
+}

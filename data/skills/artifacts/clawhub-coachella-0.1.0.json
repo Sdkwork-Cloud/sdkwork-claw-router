@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/coachella@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coachella",
+  "skill": {
+    "id": 62770,
+    "skillKey": "clawhub-coachella",
+    "name": "coachella"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coachella",
+    "url": "https://clawhub.ai/skills/coachella",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coachella-ee7c42567695733d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "全球最具影响力的音乐节"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775286296793,
+      "changelog": "- Initial release of the Coachella skill.\n- Provides comprehensive information about the Coachella music festival, including overview, history, key facts, latest news, and key data.\n- Offers quick access to official resources and related topics.\n- Supports real-time updates using web search for authoritative information.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d523f49e1798e8ce1727880596e7ec44dc19e0e38b52dfe88e64b7e1952ce76c"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cloudflare-guard@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloudflare_guard",
+  "skill": {
+    "id": 14383,
+    "skillKey": "clawhub-cloudflare-guard",
+    "name": "Cloudflare Guard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloudflare-guard",
+    "url": "https://clawhub.ai/skills/cloudflare-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloudflare-guard-b7c02928298c7d5c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Configures and manages Cloudflare DNS, caching, security rules, rate limiting, and Workers"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guifav",
+      "userId": "s17bdsbc0c31q1qryawma14pf5858sm5",
+      "displayName": "Guilherme Favaron",
+      "image": "https://avatars.githubusercontent.com/u/109181842?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1161,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1774228443568,
+      "changelog": "## cloudflare-guard 0.1.2\n\n- Added platform compatibility instructions for users without `jq`, especially on Windows.\n- Skills now include alternative JSON processing commands (`python3 -m json.tool`, `npx json`, or PowerShell's `ConvertFrom-Json`) and instruct checking for `jq` before using.\n- No breaking changes to API usage or workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b4b00f10aa618e45d96321dc5a0d34aa65b0351bf39718684f0a735d02147e6c"
+}

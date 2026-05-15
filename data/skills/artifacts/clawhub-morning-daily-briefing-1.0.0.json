@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/morning-daily-briefing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.morning_daily_briefing",
+  "skill": {
+    "id": 13985,
+    "skillKey": "clawhub-morning-daily-briefing",
+    "name": "Daily Briefing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "morning-daily-briefing",
+    "url": "https://clawhub.ai/skills/morning-daily-briefing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/morning-daily-briefing-51d0b02d181de290.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Creates a morning briefing with priorities, calendar, and key updates"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1kalin",
+      "userId": "s17e1q0nx23qnh4n429zzqc05x83hvsw",
+      "displayName": "1kalin",
+      "image": "https://avatars.githubusercontent.com/u/15705344?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1234,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770950425505,
+      "changelog": "Initial release of Daily Briefing skill.\n\n- Generates a concise morning briefing with daily schedule, top 3 priorities, email highlights, news, follow-ups, and heads-up.\n- Pulls information from calendar, email, CRM, tasks, news, and optional weather.\n- Uses a clear template and priority framework to keep briefings focused and actionable.\n- Offers an optional evening recap with summary of completed tasks, carry-overs, notes, and a preview of tomorrow.\n- Supports both on-demand and scheduled (automated) briefings.\n- Adapts tone and information to time of day and user’s working context.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ddf98b0652baf4c02263a0e89a1219f2950bd2a346be8c84dfc5ee8c069b0c4b"
+}

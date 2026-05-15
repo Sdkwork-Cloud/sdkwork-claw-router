@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aisa-perplexity-sonar-search@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aisa_perplexity_sonar_search",
+  "skill": {
+    "id": 39702,
+    "skillKey": "clawhub-aisa-perplexity-sonar-search",
+    "name": "AIsa Perplexity Sonar Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aisa-perplexity-sonar-search",
+    "url": "https://clawhub.ai/skills/aisa-perplexity-sonar-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aisa-perplexity-sonar-search-c4807e269b625ccf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run web, multi-source, or last-30-days research through AIsa. Use when: the user needs search, synthesis, competitor scans, or trend discovery. Supports rese..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "baofeng-tech",
+      "userId": "s1709d2takksyrxgx2kpxs3rj18433sv",
+      "displayName": "baofeng-tech",
+      "image": "https://avatars.githubusercontent.com/u/273012742?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776888224293,
+      "changelog": "- Updated description and documentation for improved clarity and guidance on usage scenarios.\n- Clarified required environment variables and compatibility with supported platforms.\n- Enhanced setup and usage instructions, including CLI references and example requests.\n- Added explicit guardrails for output integrity and transparency.\n- No functional changes to code are specified.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b0afe10823a66ae46f8a7f8c11b90b8dde2e6dbf02f65d57b6fd4ee1c19afe96"
+}

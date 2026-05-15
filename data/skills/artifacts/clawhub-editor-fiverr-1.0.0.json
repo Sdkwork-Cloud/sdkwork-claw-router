@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/editor-fiverr@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.editor_fiverr",
+  "skill": {
+    "id": 41756,
+    "skillKey": "clawhub-editor-fiverr",
+    "name": "Editor Fiverr"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "editor-fiverr",
+    "url": "https://clawhub.ai/skills/editor-fiverr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/editor-fiverr-6711aa5cbfc08473.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute unedited talking-head clip into 1080p polished edited clips just by typing what you need. Whether it's getting professional-looking edits wit..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776843028660,
+      "changelog": "- Initial release of the Editor Fiverr skill for instant AI video editing and export.\n- Upload a raw video, describe desired edits (e.g., \"cut the pauses, add captions\"), and receive a polished 1080p MP4 in 1–2 minutes.\n- No timeline dragging or manual export settings required; fully guided, prompt-based workflow.\n- Handles token/session management automatically; supports both free and registered user flows.\n- Supports uploads up to 500MB and batch editing in a single session.\n- Export enables multiple video/audio/image formats, including mp4, mov, avi, webm, gif, mp3, and wav.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:efa03ac5c0bd1aaa3ca7b119f58af8180bda1fad83831778db8f3bc24e4a5f1f"
+}

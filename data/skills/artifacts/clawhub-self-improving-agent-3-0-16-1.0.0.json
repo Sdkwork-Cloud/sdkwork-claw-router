@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/self-improving-agent-3-0-16@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_improving_agent_3_0_16",
+  "skill": {
+    "id": 36605,
+    "skillKey": "clawhub-self-improving-agent-3-0-16",
+    "name": "Self Improving Agent 3.0.16"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-improving-agent-3-0-16",
+    "url": "https://clawhub.ai/skills/self-improving-agent-3-0-16",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-improving-agent-3-0-16-f996869d84d2b410.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "youngsiai",
+      "userId": "s17abwm7b0mxqedfrryrvj1gsn853vkn",
+      "displayName": "youngsiAI",
+      "image": "https://avatars.githubusercontent.com/u/271660948?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 194,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776594742439,
+      "changelog": "Initial release of the self-improving-agent skill for continuous learning and improvement.\n\n- Provides a standardized process for logging learnings, errors, and feature requests to dedicated markdown files in `.learnings/`.\n- Includes initialization steps to create necessary log files without overwriting existing data.\n- Outlines clear logging categories and promotion workflows for escalating important insights to workspace files (`AGENTS.md`, `SOUL.md`, etc.).\n- Adds guidance for OpenClaw-specific setup and generic integration with other agents.\n- Details safe logging practices, emphasizing privacy and avoiding exposure of sensitive information.\n- Supplies easy-to-follow markdown templates for learning and error entries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a4d1bac4c8c1895dfef1375d0fd084c5871e6437c9984b49e14c8f14ba117a74"
+}

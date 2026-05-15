@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16762,
+  "uuid": "skill-clawhub-alicloud-platform-docs-api-review",
+  "skillKey": "clawhub-alicloud-platform-docs-api-review",
+  "name": "Alicloud Platform Docs Api Review",
+  "summary": "Automatically review latest Alibaba Cloud product docs and OpenAPI docs by product name, then output detailed prioritized improvement suggestions with eviden...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alicloud_platform_docs_api_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cinience",
+      "features": [
+        "Automatically review latest Alibaba Cloud product docs and OpenAPI docs by product name, then o."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alicloud-platform-docs-api-review@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/557426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alicloud-platform-docs-api-review",
+      "url": "https://clawhub.ai/skills/alicloud-platform-docs-api-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alicloud-platform-docs-api-review",
+    "url": "https://clawhub.ai/skills/alicloud-platform-docs-api-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alicloud-platform-docs-api-review-b1e82a61958e218a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alicloud-platform-docs-api-review@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-alicloud-platform-docs-api-review-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9dd73b5e9e08d482d371ee533d784576b605ff70378fef4a366094a8fbd3cd28",
+      "artifactSizeBytes": 2049
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T09:40:16.942Z"
+}

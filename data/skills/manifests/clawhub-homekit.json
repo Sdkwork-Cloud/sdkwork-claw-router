@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10165,
+  "uuid": "skill-clawhub-homekit",
+  "skillKey": "clawhub-homekit",
+  "name": "HomeKit Smart Home Control",
+  "summary": "Control Apple HomeKit smart home devices. Supports listing, discovering, pairing devices, and controlling lights, switches, outlets, thermostats. Use when th...",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.homekit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "manifold",
+      "features": [
+        "Control Apple HomeKit smart home devices",
+        "Supports listing, discovering, pairing devices, and controlling lights, switches, outlets, ther.",
+        "Use when th..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/homekit@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62403180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "homekit",
+      "url": "https://clawhub.ai/skills/homekit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "homekit",
+    "url": "https://clawhub.ai/skills/homekit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/homekit-af3d62d984e6bd5c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/homekit@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-homekit-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:32a4791ec234ce57d39e1dd2449f4446d49bc905ecf68d7ad795145d63fa755e",
+      "artifactSizeBytes": 2096
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T04:54:21.748Z"
+}

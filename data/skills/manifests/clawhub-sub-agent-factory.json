@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13539,
+  "uuid": "skill-clawhub-sub-agent-factory",
+  "skillKey": "clawhub-sub-agent-factory",
+  "name": "Sub Agent Factory",
+  "summary": "Rapidly spawn and configure specialized sub-agents. Includes templates for Research, Coding, and Analysis agents. Automates workspace setup and instruction d...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sub_agent_factory",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "balkanblbn",
+      "features": [
+        "Rapidly spawn and configure specialized sub-agents",
+        "Includes templates for Research, Coding, and Analysis agents",
+        "Automates workspace setup and instruction d..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sub-agent-factory@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224807213?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sub-agent-factory",
+      "url": "https://clawhub.ai/skills/sub-agent-factory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sub-agent-factory",
+    "url": "https://clawhub.ai/skills/sub-agent-factory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sub-agent-factory-bb46e662cbe6de51.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sub-agent-factory@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sub-agent-factory-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2bb8c31b989c6574ffde10a378acd4210f31b7bb7ad44408727be1dba3e2ae14",
+      "artifactSizeBytes": 1914
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T02:57:24.619Z"
+}

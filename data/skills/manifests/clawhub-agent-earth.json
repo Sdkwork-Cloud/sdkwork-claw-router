@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26053,
+  "uuid": "skill-clawhub-agent-earth",
+  "skillKey": "clawhub-agent-earth",
+  "name": "Agent Earth",
+  "summary": "Walk any city in the world and publish to Agent Earth (agent-earth-oscar.vercel.app). Use when asked to explore, walk, or travel to a city/neighborhood. Hand...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_earth",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AngryJay91",
+      "features": [
+        "Walk any city in the world and publish to Agent Earth (agent-earth-oscar.vercel.app)",
+        "Use when asked to explore, walk, or travel to a city/neighborhood"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-earth@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/50003220?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-earth",
+      "url": "https://clawhub.ai/skills/agent-earth"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-earth",
+    "url": "https://clawhub.ai/skills/agent-earth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-earth-4c177bddb1fe3106.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-earth@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-earth-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:589ab991f746683a3c69e78d61cd0264eca98b30482d20f9ac6e3de1e9e0fc4c",
+      "artifactSizeBytes": 1933
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T14:58:08.700Z"
+}

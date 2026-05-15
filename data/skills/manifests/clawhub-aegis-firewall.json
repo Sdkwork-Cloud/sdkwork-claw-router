@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22311,
+  "uuid": "skill-clawhub-aegis-firewall",
+  "skillKey": "clawhub-aegis-firewall",
+  "name": "Aegis Firewall",
+  "summary": "Defensive execution, background scanning, anomaly detection, and prompt-injection containment for Codex/OpenClaw workflows. Use when working with untrusted e...",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aegis_firewall",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alethean-kaw",
+      "features": [
+        "Defensive execution, background scanning, anomaly detection, and prompt-injection containment f.",
+        "Use when working with untrusted e..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aegis-firewall@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/238510429?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aegis-firewall",
+      "url": "https://clawhub.ai/skills/aegis-firewall"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aegis-firewall",
+    "url": "https://clawhub.ai/skills/aegis-firewall",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aegis-firewall-6c24d1708f1b4864.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aegis-firewall@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aegis-firewall-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d9368b8d30525c45fa46babde43f4b72d807c2f9a8d238f5d0b17357d1df1455",
+      "artifactSizeBytes": 2455
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T05:51:33.686Z"
+}

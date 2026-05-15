@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34890,
+  "uuid": "skill-clawhub-vikunja-api",
+  "skillKey": "clawhub-vikunja-api",
+  "name": "Vikunja",
+  "summary": "Interact with a Vikunja task management instance via its REST API. Use this skill whenever the user wants to manage tasks, projects, labels, assignees, or re...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vikunja_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sergio",
+      "features": [
+        "Interact with a Vikunja task management instance via its REST API",
+        "Use this skill whenever the user wants to manage tasks, projects, labels, assignees, or re..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vikunja-api@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24534525?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vikunja-api",
+      "url": "https://clawhub.ai/skills/vikunja-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vikunja-api",
+    "url": "https://clawhub.ai/skills/vikunja-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vikunja-api-4c57a93aa77bc689.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vikunja-api@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-vikunja-api-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8915168e1e3b7a6ba472364e7f3f67e7536510ba3759f64610013d098e05a7fa",
+      "artifactSizeBytes": 1882
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T00:33:36.162Z"
+}

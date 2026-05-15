@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hippocampus-sync@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hippocampus_sync",
+  "skill": {
+    "id": 54498,
+    "skillKey": "clawhub-hippocampus-sync",
+    "name": "Hippocampus"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hippocampus-sync",
+    "url": "https://clawhub.ai/skills/hippocampus-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hippocampus-sync-2cb243e29fd5850b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Daily incremental update of HIPPOCAMPUS.md — domain-filtered 14-day rolling context. Universal skill for all agents."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "comicsansbestfont",
+      "userId": "s17f1tf7kdwma0ef3s8sh5q14983e9p0",
+      "displayName": "Sachee",
+      "image": "https://avatars.githubusercontent.com/u/95063920?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1774305447166,
+      "changelog": "Add references section with links to The Markdown, plugin homepage, and GitHub repo",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c3daa38f7f2ab6c4396247d4f745c69090af310ffbb2856cb44084e08f951218"
+}

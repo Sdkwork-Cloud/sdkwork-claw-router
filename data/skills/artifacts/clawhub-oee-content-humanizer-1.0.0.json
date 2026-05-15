@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oee-content-humanizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oee_content_humanizer",
+  "skill": {
+    "id": 16521,
+    "skillKey": "clawhub-oee-content-humanizer",
+    "name": "OEE Content Humanizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oee-content-humanizer",
+    "url": "https://clawhub.ai/skills/oee-content-humanizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oee-content-humanizer-021b60611e8538b2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Rewrites AI-generated text to remove robotic tone, adding natural cadence and channel-specific style for platforms like Twitter, LinkedIn, blogs, email, or T..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "odinbot33",
+      "userId": "publishers:odinbot33",
+      "displayName": "OdinBot33",
+      "image": "https://avatars.githubusercontent.com/u/259951308?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 875,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771079669077,
+      "changelog": "- Initial release of Humanizer: transforms AI-generated text to sound more natural and human.\n- Detects AI language patterns such as buzzwords, tone inflation, and repetitive structure.\n- Rewrites text with human-like cadence, contractions, and rhythm.\n- Supports tuning output for various platforms: Twitter, LinkedIn, Blog, Email, and Telegram.\n- Includes detection-only mode to highlight robotic elements without rewriting.\n- No external dependencies required; runs with Python 3.10+ and Claude Haiku API.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bd5740f3137b47ff21b018104f8f95a3b235130bf4d792e19255530749e047d4"
+}

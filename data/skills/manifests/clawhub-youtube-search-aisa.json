@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34620,
+  "uuid": "skill-clawhub-youtube-search-aisa",
+  "skillKey": "clawhub-youtube-search-aisa",
+  "name": "youtube-search-aisa",
+  "summary": "Search YouTube videos, channels, and trends via AISA API using queries, filters, and pagination without requiring Google credentials.",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_search_aisa",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bibaofeng",
+      "features": [
+        "Search YouTube videos, channels, and trends via AISA API using queries, filters, and pagination."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-search-aisa@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86095131?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-search-aisa",
+      "url": "https://clawhub.ai/skills/youtube-search-aisa"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-search-aisa",
+    "url": "https://clawhub.ai/skills/youtube-search-aisa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-search-aisa-f192c86b969caa38.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-search-aisa@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-search-aisa-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f3f7bb4c588d571c6e5d360c1ca9eee3a59d11c1d89414716b4e281424e605d7",
+      "artifactSizeBytes": 2137
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T05:50:28.021Z"
+}

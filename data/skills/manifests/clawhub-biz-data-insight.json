@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64989,
+  "uuid": "skill-clawhub-biz-data-insight",
+  "skillKey": "clawhub-biz-data-insight",
+  "name": "商业数据洞察 / Biz Data Insight",
+  "summary": "商业数据洞察 — 连接业务数据源，自动生成数据分析报告和看板",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.biz_data_insight",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jun Zhang",
+      "features": [
+        "商业数据洞察 — 连接业务数据源，自动生成数据分析报告和看板"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/biz-data-insight@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11209115?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "biz-data-insight",
+      "url": "https://clawhub.ai/skills/biz-data-insight"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "biz-data-insight",
+    "url": "https://clawhub.ai/skills/biz-data-insight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/biz-data-insight-115475fa844e47e8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/biz-data-insight@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-biz-data-insight-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:216530c8d5901253c61621d0da76c8841b3b8e91a57708ee70dba89e0ad8c0dc",
+      "artifactSizeBytes": 2537
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T12:06:51.405Z"
+}

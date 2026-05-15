@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25173,
+  "uuid": "skill-clawhub-draft-agent-loop",
+  "skillKey": "clawhub-draft-agent-loop",
+  "name": "Draft Agent Loop",
+  "summary": "Enforce a Human-in-the-Right-Loop (HITRL) lifecycle for remote agents. Use this skill when the user wants structured oversight over an agent task: plan appro...",
+  "version": "1.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.draft_agent_loop",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jim Liu",
+      "features": [
+        "Enforce a Human-in-the-Right-Loop (HITRL) lifecycle for remote agents",
+        "Use this skill when the user wants structured oversight over an agent task: plan appro..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/draft-agent-loop@1.6.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1712231?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "draft-agent-loop",
+      "url": "https://clawhub.ai/skills/draft-agent-loop"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "draft-agent-loop",
+    "url": "https://clawhub.ai/skills/draft-agent-loop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/draft-agent-loop-7089df5b9794cd15.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/draft-agent-loop@1.6.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-draft-agent-loop-1.6.0.json",
+      "version": "1.6.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d46a259bde0757f1316fba5eaf3733d660716ea387b402500185a6471b97cdd",
+      "artifactSizeBytes": 2262
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T06:57:49.549Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32499,
+  "uuid": "skill-clawhub-recharge",
+  "skillKey": "clawhub-recharge",
+  "name": "Recharge",
+  "summary": "ReCharge integration. Manage Customers. Use when the user wants to interact with ReCharge data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recharge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "ReCharge integration",
+        "Manage Customers",
+        "Use when the user wants to interact with ReCharge data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/recharge@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "recharge",
+      "url": "https://clawhub.ai/skills/recharge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recharge",
+    "url": "https://clawhub.ai/skills/recharge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recharge-fe7280cbed88608f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/recharge@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-recharge-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c15aab1cc36ff16d4aa7db1f271c182753ae06b4ab86808e1eb97c35e008cd1a",
+      "artifactSizeBytes": 1802
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:32:13.917Z"
+}

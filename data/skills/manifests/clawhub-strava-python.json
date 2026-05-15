@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14525,
+  "uuid": "skill-clawhub-strava-python",
+  "skillKey": "clawhub-strava-python",
+  "name": "Strava Python",
+  "summary": "Query Strava activities, stats, and workout data using Python/stravalib with interactive setup",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.strava_python",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "abclark",
+      "features": [
+        "Query Strava activities, stats, and workout data using Python/stravalib with interactive setup"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/strava-python@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31861009?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "strava-python",
+      "url": "https://clawhub.ai/skills/strava-python"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "strava-python",
+    "url": "https://clawhub.ai/skills/strava-python",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/strava-python-9da222d61fa66cfa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/strava-python@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-strava-python-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:be87b8ba3c752fbd5500c5d43aaac41d9ab6a7b9f547e517a0b25f68881a89cf",
+      "artifactSizeBytes": 1857
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T08:13:12.724Z"
+}

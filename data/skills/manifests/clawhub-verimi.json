@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31954,
+  "uuid": "skill-clawhub-verimi",
+  "skillKey": "clawhub-verimi",
+  "name": "Verimi",
+  "summary": "Verimi integration. Manage data, records, and automate workflows. Use when the user wants to interact with Verimi data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.verimi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Verimi integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Verimi data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/verimi@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "verimi",
+      "url": "https://clawhub.ai/skills/verimi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "verimi",
+    "url": "https://clawhub.ai/skills/verimi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/verimi-10d86d8e809c2ee2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/verimi@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-verimi-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:52f10ebe31cf68cde8e43c21854bdbf6fb46e03fbd81443b2f82ecb48f90a7cc",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:58:52.323Z"
+}

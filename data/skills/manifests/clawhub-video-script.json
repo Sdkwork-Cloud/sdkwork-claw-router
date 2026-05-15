@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33339,
+  "uuid": "skill-clawhub-video-script",
+  "skillKey": "clawhub-video-script",
+  "name": "Video Script",
+  "summary": "generate text or brief into ready-to-film scripts with this skill. Works with TXT, DOCX, PDF, MP4 files up to 200MB. YouTubers, marketers, content creators u...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_script",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vcarolxhberger",
+      "features": [
+        "generate text or brief into ready-to-film scripts with this skill",
+        "Works with TXT, DOCX, PDF, MP4 files up to 200MB",
+        "YouTubers, marketers, content creators u..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-script@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210890217?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-script",
+      "url": "https://clawhub.ai/skills/video-script"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-script",
+    "url": "https://clawhub.ai/skills/video-script",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-script-ba9f84a2a9e1cc99.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-script@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-script-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1a4b8dfebda0c3d22906eb71e7214fb6b17716ccb2b56c0f068d7dc3912cc1ce",
+      "artifactSizeBytes": 2328
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T02:27:48.046Z"
+}

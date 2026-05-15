@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60162,
+  "uuid": "skill-clawhub-yunxiao-devops",
+  "skillKey": "clawhub-yunxiao-devops",
+  "name": "yunxiao-devops",
+  "summary": "与阿里云云效（Yunxiao）DevOps 平台交互，覆盖八大核心能力：项目协作 Projex、 代码管理 Codeup、流水线 Flow、应用交付 Appstack、制品仓库 Packages、 测试管理 Testhub、效能洞察 Insight、知识库 Thoughts。 当用户提到云效、Projex、Cod...",
+  "version": "2.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yunxiao_devops",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xiaodong Dai",
+      "features": [
+        "与阿里云云效（Yunxiao）DevOps 平台交互，覆盖八大核心能力：项目协作 Projex、 代码管理 Codeup、流水线 Flow、应用交付 Appstack、制品仓库 Packag."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yunxiao-devops@2.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9160284?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yunxiao-devops",
+      "url": "https://clawhub.ai/skills/yunxiao-devops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yunxiao-devops",
+    "url": "https://clawhub.ai/skills/yunxiao-devops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yunxiao-devops-1bd8331bf031f1ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yunxiao-devops@2.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yunxiao-devops-2.5.0.json",
+      "version": "2.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f98c610843d76609f747a1dc348394d453faf3efe8d5b3e88e5ac1ea07bfb50e",
+      "artifactSizeBytes": 2247
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T05:58:57.132Z"
+}

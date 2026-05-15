@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14886,
+  "uuid": "skill-clawhub-minimax-token-plan-tool",
+  "skillKey": "clawhub-minimax-token-plan-tool",
+  "name": "MiniMax Token Plan Tool",
+  "summary": "A lightweight MiniMax Token Plan Tool skill that directly calls official MCP APIs using pure JavaScript. No external MCP servers. No subprocess invocation. D...",
+  "version": "1.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_token_plan_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yorch",
+      "features": [
+        "A lightweight MiniMax Token Plan Tool skill that directly calls official MCP APIs using pure Ja.",
+        "No external MCP servers",
+        "No subprocess invocation"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/minimax-token-plan-tool@1.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40779737?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "minimax-token-plan-tool",
+      "url": "https://clawhub.ai/skills/minimax-token-plan-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-token-plan-tool",
+    "url": "https://clawhub.ai/skills/minimax-token-plan-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-token-plan-tool-7e0c09ec30134d68.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/minimax-token-plan-tool@1.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-minimax-token-plan-tool-1.1.5.json",
+      "version": "1.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:473519d4ce72849effec0023062e90c4cf55995b5ea0bbca3f28b68f8b5ffada",
+      "artifactSizeBytes": 2012
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T17:32:05.216Z"
+}

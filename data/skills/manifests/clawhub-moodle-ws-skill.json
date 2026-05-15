@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16924,
+  "uuid": "skill-clawhub-moodle-ws-skill",
+  "skillKey": "clawhub-moodle-ws-skill",
+  "name": "Moodle Web Services Skill",
+  "summary": "Integrate with Moodle 4.x via REST Web Services to create courses, manage enrollments, activities, grades, and list courses or students.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moodle_ws_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "exeandino",
+      "features": [
+        "Integrate with Moodle 4.x via REST Web Services to create courses, manage enrollments, activiti."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moodle-ws-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14221852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moodle-ws-skill",
+      "url": "https://clawhub.ai/skills/moodle-ws-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moodle-ws-skill",
+    "url": "https://clawhub.ai/skills/moodle-ws-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moodle-ws-skill-6327564611734924.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moodle-ws-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-moodle-ws-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8fbe57eb58e13f01dcfd0fc73f56df0cade608bb3d5fe03aaccc5fee17eb6792",
+      "artifactSizeBytes": 2293
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T06:46:50.844Z"
+}

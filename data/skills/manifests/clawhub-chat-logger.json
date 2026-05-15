@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61639,
+  "uuid": "skill-clawhub-chat-logger",
+  "skillKey": "clawhub-chat-logger",
+  "name": "Chat Logger",
+  "summary": "对话记录 - 自动记录飞书/钉钉消息（严格触发规则版） ⚠️ 严格触发规则： - 消息 \"chatlog汇总\" → 只能执行此 Skill，禁止主 Agent 处理 - 消息 \"今日简报\" → 只能执行此 Skill，禁止主 Agent 处理 - 消息 \"我的记录\" → 只能执行此 Skill，禁止主 Agent...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chat_logger",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bjmfjoy",
+      "features": [
+        "自动记录飞书/钉钉消息（严格触发规则版） ⚠️ 严格触发规则：",
+        "消息 \"chatlog汇总\" → 只能执行此 Skill，禁止主 Agent 处理",
+        "消息 \"今日简报\" → 只能执行此 Skill，禁止主 Agent 处理",
+        "消息 \"我的记录\" → 只能执行此 Skill，禁止主 Agent..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chat-logger@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264989835?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chat-logger",
+      "url": "https://clawhub.ai/skills/chat-logger"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chat-logger",
+    "url": "https://clawhub.ai/skills/chat-logger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chat-logger-eb946ea7b77cc8a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chat-logger@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chat-logger-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ff782f17bea9a63f1fe94d3fa575feec6bdcbc90bc55d11d6dbc947a15ab088a",
+      "artifactSizeBytes": 2542
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T03:55:12.345Z"
+}

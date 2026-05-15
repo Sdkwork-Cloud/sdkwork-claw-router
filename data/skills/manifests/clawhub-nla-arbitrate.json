@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26166,
+  "uuid": "skill-clawhub-nla-arbitrate",
+  "skillKey": "clawhub-nla-arbitrate",
+  "name": "Nla Arbitrate",
+  "summary": "Manually arbitrate NLA escrow fulfillments as an alternative to the automated oracle. Use when the user wants to review pending arbitration requests, evaluat...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nla_arbitrate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "疒奀",
+      "features": [
+        "Manually arbitrate NLA escrow fulfillments as an alternative to the automated oracle",
+        "Use when the user wants to review pending arbitration requests, evaluat..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nla-arbitrate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46226846?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nla-arbitrate",
+      "url": "https://clawhub.ai/skills/nla-arbitrate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nla-arbitrate",
+    "url": "https://clawhub.ai/skills/nla-arbitrate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nla-arbitrate-0125c9091ac5cdeb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nla-arbitrate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nla-arbitrate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f6f6b3ef0fa5f174de980fb0688b80d43376c345620cf7409ac5dacfb9733afc",
+      "artifactSizeBytes": 2310
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T12:27:49.431Z"
+}

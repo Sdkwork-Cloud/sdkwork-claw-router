@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47574,
+  "uuid": "skill-clawhub-seasonal-inventory-planner",
+  "skillKey": "clawhub-seasonal-inventory-planner",
+  "name": "Seasonal Inventory Planner",
+  "summary": "Build month-by-month inventory plans that align purchasing, stocking, and markdown timing with seasonal demand curves to prevent both stockouts during peaks...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seasonal_inventory_planner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeroyCreates",
+      "features": [
+        "Build month-by-month inventory plans that align purchasing, stocking, and markdown timing with."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/seasonal-inventory-planner@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130833525?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "seasonal-inventory-planner",
+      "url": "https://clawhub.ai/skills/seasonal-inventory-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seasonal-inventory-planner",
+    "url": "https://clawhub.ai/skills/seasonal-inventory-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seasonal-inventory-planner-7c6676645bfe4ed5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/seasonal-inventory-planner@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-seasonal-inventory-planner-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:39e1123e30d1ddc21875a25afda8c50e3c8ff852b0133b3cc9af97be214b943a",
+      "artifactSizeBytes": 2488
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T15:28:02.328Z"
+}

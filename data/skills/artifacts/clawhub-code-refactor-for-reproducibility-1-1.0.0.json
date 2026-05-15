@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/code-refactor-for-reproducibility-1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_refactor_for_reproducibility_1",
+  "skill": {
+    "id": 38878,
+    "skillKey": "clawhub-code-refactor-for-reproducibility-1",
+    "name": "Code Refactor for Reproducibility"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-refactor-for-reproducibility-1",
+    "url": "https://clawhub.ai/skills/code-refactor-for-reproducibility-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-refactor-for-reproducibility-1-856ecd41ef335212.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when refactoring research code for publication, adding documentation to existing analysis scripts, creating reproducible computational workflows, or prep..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775111883677,
+      "changelog": "Initial release of the research code reproducibility refactoring tool.\n\n- Provides a structured workflow for refactoring research code into reproducible, publication-ready scripts.\n- Adds thorough documentation, error handling, and environment specification guidance.\n- Details steps for analyzing code, refactoring, setting random seeds, and parameterizing hardcoded values.\n- Includes audit-ready commands and quick checks for validation.\n- Offers practical code snippets and real-world usage instructions.\n- Emphasizes reproducibility, explicit assumptions, and clear workflow boundaries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:666dfd32a9b231da4b2e6c7ad002e1432dc3c3d5c1c7714e4cdcedb37f3f5a89"
+}

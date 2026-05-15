@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shared-memory-kb@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shared_memory_kb",
+  "skill": {
+    "id": 71346,
+    "skillKey": "clawhub-shared-memory-kb",
+    "name": "多身份智能知识体系"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shared-memory-kb",
+    "url": "https://clawhub.ai/skills/shared-memory-kb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shared-memory-kb-8029e713967bb4c8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "为 OpenClaw 用户所有 Agent 身份提供统一的跨身份共享记忆层，支持写入、检索、浏览、关联和回顾个人知识库；当用户需要记录洞察、检索经验、总结知识或定期回顾时使用"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ludiansheng",
+      "userId": "s17c0dxa6k34zcd8tx5x7a8x3d83hdw7",
+      "displayName": "ludiansheng",
+      "image": "https://avatars.githubusercontent.com/u/269368209?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775987167189,
+      "changelog": "Initial release of shared-memory-kb – a unified memory layer for OpenClaw agents to store, retrieve, and review personal knowledge.\n\n- Provides cross-agent shared memory with support for storing, querying, browsing, linking, and reflecting on personal knowledge and insights.\n- Introduces semantic trigger and filtering rules for intelligent memory operations, including experience extraction, methodology summaries, breakthroughs, and decision logs.\n- Allows flexible command-line interaction for memory management: store, query, list, link, reflect, and recalc-importance.\n- Adds sensitivity configuration, automatic importance adjustment, and index rebuilding tools.\n- Includes automated categorization, tagging, and retrieval; supports non-intrusive operation for seamless dialog integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f0287e767e7145e09a4e5870211638c9f67b0792568afb42ded7f41294223555"
+}

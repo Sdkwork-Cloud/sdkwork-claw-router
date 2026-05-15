@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/powerpoint@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.powerpoint",
+  "skill": {
+    "id": 14221,
+    "skillKey": "clawhub-powerpoint",
+    "name": "PowerPoint"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "powerpoint",
+    "url": "https://clawhub.ai/skills/powerpoint",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/powerpoint-750fda7b74e35f21.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control PowerPoint app sessions, slides, notes, export, and presentation state with osascript workflows."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1171,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773403573522,
+      "changelog": "Initial release with live PowerPoint automation patterns for sessions, slides, export, slideshow state, and recovery.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3d7098e7760c53d42d6ec82ae6327e79ca698ec0986991e5e0db664335fd957e"
+}

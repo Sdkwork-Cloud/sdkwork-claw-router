@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37068,
+  "uuid": "skill-clawhub-journal-selector",
+  "skillKey": "clawhub-journal-selector",
+  "name": "Journal Selector",
+  "summary": "Suggest optimal academic venues for paper submission based on paper content, novelty level, and author's goals. Activated when Chopin asks 'which journal sho...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.journal_selector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chopin",
+      "features": [
+        "Suggest optimal academic venues for paper submission based on paper content, novelty level, and.",
+        "Activated when Chopin asks 'which journal sho..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/journal-selector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81441834?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "journal-selector",
+      "url": "https://clawhub.ai/skills/journal-selector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "journal-selector",
+    "url": "https://clawhub.ai/skills/journal-selector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/journal-selector-cfcf737480592f78.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/journal-selector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-journal-selector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb3a13f21670cd3c0028b79d90661785e35de8cbb617fe3b3f4f305aba6559ff",
+      "artifactSizeBytes": 2410
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T12:19:27.045Z"
+}

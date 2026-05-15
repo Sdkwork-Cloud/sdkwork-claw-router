@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27288,
+  "uuid": "skill-clawhub-knowledge-base-skill",
+  "skillKey": "clawhub-knowledge-base-skill",
+  "name": "Knowledge Base Skill",
+  "summary": "Multi-business knowledge base with image attachment + OCR support. Manage Q&A databases by business type, auto page splitting, and intelligent search.",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knowledge_base_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "william-w",
+      "features": [
+        "Multi-business knowledge base with image attachment + OCR support",
+        "Manage Q&A databases by business type, auto page splitting, and intelligent search."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/knowledge-base-skill@2.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/56250829?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "knowledge-base-skill",
+      "url": "https://clawhub.ai/skills/knowledge-base-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knowledge-base-skill",
+    "url": "https://clawhub.ai/skills/knowledge-base-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knowledge-base-skill-55989e23a0c6d529.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/knowledge-base-skill@2.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-knowledge-base-skill-2.1.1.json",
+      "version": "2.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e7d20cb0375728a8b21f6ce8a0641e7456287b6d736caddae9c50e911bd3b331",
+      "artifactSizeBytes": 2109
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T08:53:18.099Z"
+}

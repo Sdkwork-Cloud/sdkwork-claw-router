@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20832,
+  "uuid": "skill-clawhub-exa-integration",
+  "skillKey": "clawhub-exa-integration",
+  "name": "Exa",
+  "summary": "Exa integration. Manage Organizations. Use when the user wants to interact with Exa data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.exa_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Exa integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Exa data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/exa-integration@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "exa-integration",
+      "url": "https://clawhub.ai/skills/exa-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "exa-integration",
+    "url": "https://clawhub.ai/skills/exa-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/exa-integration-9ccafdff16761888.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/exa-integration@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-exa-integration-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5e8dee667101e2a86a791a6f8a67e843affc170b09f0eba2968ed8f895d792c3",
+      "artifactSizeBytes": 1833
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:45:13.594Z"
+}

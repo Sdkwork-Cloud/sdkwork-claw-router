@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32644,
+  "uuid": "skill-clawhub-vvvlink-site-builder",
+  "skillKey": "clawhub-vvvlink-site-builder",
+  "name": "VVVLINK Site Builder",
+  "summary": "Build and publish websites on vvvlink.com. Creates HTML sites, uploads to VVVLink API, publishes with unique subdomain URLs. Triggers on: \"create a site\", \"b...",
+  "version": "1.8.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vvvlink_site_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vladlat",
+      "features": [
+        "Build and publish websites on vvvlink.com",
+        "Creates HTML sites, uploads to VVVLink API, publishes with unique subdomain URLs",
+        "Triggers on: \"create a site\", \"b..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vvvlink-site-builder@1.8.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/252355414?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vvvlink-site-builder",
+      "url": "https://clawhub.ai/skills/vvvlink-site-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vvvlink-site-builder",
+    "url": "https://clawhub.ai/skills/vvvlink-site-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vvvlink-site-builder-5092f8e58a17b6d8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vvvlink-site-builder@1.8.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-vvvlink-site-builder-1.8.1.json",
+      "version": "1.8.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:668b41b70f54df114302e6cfabcc722765af5de2294567dd0f048a359f1b4ba5",
+      "artifactSizeBytes": 2511
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T16:44:19.117Z"
+}

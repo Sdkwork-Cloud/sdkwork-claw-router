@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56079,
+  "uuid": "skill-clawhub-cc-statusline",
+  "skillKey": "clawhub-cc-statusline",
+  "name": "Cc Statusline",
+  "summary": "Configure Claude Code statuslines / 状态栏. Use this skill whenever the user wants to install, set up, preview, switch, clean up, customize, restore, or fix a C...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cc_statusline",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Miluer",
+      "features": [
+        "Configure Claude Code statuslines / 状态栏",
+        "Use this skill whenever the user wants to install, set up, preview, switch, clean up, customize."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cc-statusline@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63732121?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cc-statusline",
+      "url": "https://clawhub.ai/skills/cc-statusline"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cc-statusline",
+    "url": "https://clawhub.ai/skills/cc-statusline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cc-statusline-fa39f56190e9bd9e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cc-statusline@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-cc-statusline-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:78d413b0df13fe1bf7f5e5e7a94aaf65571e3384f54f5bacb1b59bdfade08819",
+      "artifactSizeBytes": 2467
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T11:41:45.937Z"
+}

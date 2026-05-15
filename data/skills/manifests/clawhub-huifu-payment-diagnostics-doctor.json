@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69907,
+  "uuid": "skill-clawhub-huifu-payment-diagnostics-doctor",
+  "skillKey": "clawhub-huifu-payment-diagnostics-doctor",
+  "name": "汇付支付历史最强 Doctor：基于证据的支付诊断手册 (让你的AI不再胡思乱想）",
+  "summary": "基于证据的汇付/斗拱支付联调诊断 Skill，防止 AI 在联调失败后凭感觉乱猜原因。适用于汇付支付下单、查单、关单、退款、对账、签名验签、异步通知、前端收银台组件（checkout-js）拉起、最终支付状态确认、上线验收等失败场景；要求优先依据日志、请求响应、Webhook 轨迹、SDK 错误、商户配置和生产检...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huifu_payment_diagnostics_doctor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "edhahrehh-ship-it",
+      "features": [
+        "基于证据的汇付/斗拱支付联调诊断 Skill，防止 AI 在联调失败后凭感觉乱猜原因。适用于汇付支付下单、查单、关单、退款、对账、签名验签、异步通知、前端收银台组件（checkout-js）."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/huifu-payment-diagnostics-doctor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265963852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "huifu-payment-diagnostics-doctor",
+      "url": "https://clawhub.ai/skills/huifu-payment-diagnostics-doctor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huifu-payment-diagnostics-doctor",
+    "url": "https://clawhub.ai/skills/huifu-payment-diagnostics-doctor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huifu-payment-diagnostics-doctor-866f07ca9a5bcdee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/huifu-payment-diagnostics-doctor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-huifu-payment-diagnostics-doctor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2da4236ab9aa2b1cf5e9edb614a22e1e778668b59a9a003334498fa4a12023ec",
+      "artifactSizeBytes": 2950
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T11:02:15.984Z"
+}

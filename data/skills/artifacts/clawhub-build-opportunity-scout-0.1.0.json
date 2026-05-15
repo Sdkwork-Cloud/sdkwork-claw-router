@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/build-opportunity-scout@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.build_opportunity_scout",
+  "skill": {
+    "id": 34116,
+    "skillKey": "clawhub-build-opportunity-scout",
+    "name": "Build Opportunity Scout"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "build-opportunity-scout",
+    "url": "https://clawhub.ai/skills/build-opportunity-scout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/build-opportunity-scout-30ed187740e93c89.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze harvested trend data and generate prioritized build opportunities for new skills/apps (P0/P1/P2) with implementation hints. Use when user wants actio..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "meilihulee",
+      "userId": "s17ek276621e1fd88whdq72s3d848k5s",
+      "displayName": "captainlee",
+      "image": "https://avatars.githubusercontent.com/u/193682687?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 228,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774085349140,
+      "changelog": "Initial release: generate prioritized build opportunities from harvested trends.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ad96ee62bcd47bbb3a7ca48df85578c430f1ea0e6b83536cd8dca6a80a571e71"
+}

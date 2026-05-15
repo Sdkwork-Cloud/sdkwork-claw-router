@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stt-recognizer@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stt_recognizer",
+  "skill": {
+    "id": 61091,
+    "skillKey": "clawhub-stt-recognizer",
+    "name": "STT Recognizer | STT 识别器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stt-recognizer",
+    "url": "https://clawhub.ai/skills/stt-recognizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stt-recognizer-dea6eb09d5d73f7d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "语音转文字（Speech-to-Text / STT）工具。 支持从麦克风录音，使用 Whisper（faster-whisper）在本地进行语音转文字， 或通过 OpenAI 兼容 API 进行云端转写。 触发词：录音、语音转文字、STT、语音识别、转写、录音转文字。 适用平台：Linux / Windows..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "moroiser",
+      "userId": "s1708w2t7w31qf7b0gsy7kamnx83gqa6",
+      "displayName": "Morois",
+      "image": "https://avatars.githubusercontent.com/u/98001108?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 305,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1777471740715,
+      "changelog": "1. Fix all internal path references and display names to match the renamed stt-recognizer slug. 修复所有内部路径引用和展示名，统一为新命名的 stt-recognizer。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3327ef30b0e8d36fd66afb0543f3fa9dcc4e9815773e74dd770294a1705991e5"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68474,
+  "uuid": "skill-clawhub-credit-code-cert-ocr",
+  "skillKey": "clawhub-credit-code-cert-ocr",
+  "name": "Credit Code Cert Ocr",
+  "summary": "将图片中的文字、统一社会信用代码证书等信息识别并提取出来。本技能应在用户需要 OCR 识别图片中的文字，或识别统一社会信用代码证书时使用。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.credit_code_cert_ocr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SCNet-sugon",
+      "features": [
+        "将图片中的文字、统一社会信用代码证书等信息识别并提取出来。本技能应在用户需要 OCR 识别图片中的文字，或识别统一社会信用代码证书时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/credit-code-cert-ocr@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267813088?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "credit-code-cert-ocr",
+      "url": "https://clawhub.ai/skills/credit-code-cert-ocr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "credit-code-cert-ocr",
+    "url": "https://clawhub.ai/skills/credit-code-cert-ocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/credit-code-cert-ocr-2dc659024ab1d6cb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/credit-code-cert-ocr@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-credit-code-cert-ocr-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:95155e345fd9dc49f9df31d3567d3bc6a5b294123bb39b7a8b1b640824063ff9",
+      "artifactSizeBytes": 2317
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T03:55:01.369Z"
+}

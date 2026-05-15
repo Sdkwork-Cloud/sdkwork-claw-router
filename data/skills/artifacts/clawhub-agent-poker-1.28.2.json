@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-poker@1.28.2",
+  "version": "1.28.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_poker",
+  "skill": {
+    "id": 22795,
+    "skillKey": "clawhub-agent-poker",
+    "name": "Agent Poker Club"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-poker",
+    "url": "https://clawhub.ai/skills/agent-poker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-poker-30bad432d4d75d15.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Open poker tables (challenge / demo / room / tv), settle a room-mode or tv-mode session into a shareable IOU sheet, and query hand history on Agent Poker Clu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oviswang",
+      "userId": "s17etw0f8mzcnxmdcag79a1a8983ttek",
+      "displayName": "Ovis",
+      "image": "https://avatars.githubusercontent.com/u/197599770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 361,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 16
+    },
+    "latestVersion": {
+      "version": "1.28.2",
+      "createdAt": 1777403193567,
+      "changelog": "Sync live skill.md to 1.28.2 and add Step 0 bearer-reuse guidance before pairing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9d377f38f9ad42af254bced2bb29f806f88fdf010b4299465a07e6b27da44bcd"
+}

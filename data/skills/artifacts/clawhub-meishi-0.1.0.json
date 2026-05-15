@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meishi@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meishi",
+  "skill": {
+    "id": 71291,
+    "skillKey": "clawhub-meishi",
+    "name": "MeiShi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meishi",
+    "url": "https://clawhub.ai/skills/meishi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meishi-99cb72f994274a15.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供QQ阅读官网公开页面书库、会员、帮助信息整理及权益说明，不涉及账号或盗版内容。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mike47512",
+      "userId": "s17916ncgb6bpm0fs1wdm6932d83gha4",
+      "displayName": "mike47512",
+      "image": "https://avatars.githubusercontent.com/u/199718167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 233,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774223246207,
+      "changelog": "qq-reading skill v0.1.0 initial release:\n\n- Registers the \"QQ 阅读\" skill for organizing information from QQ Reading's public pages.\n- Focuses on book library entries, membership info, FAQ, and help/activities—strictly public info only.\n- Explicitly excludes piracy, API access, account/share workarounds, or handling private user data.\n- Lists key navigation points, typical tasks, relevant data fields, and automation focus areas.\n- Emphasizes compliance with copyright, platform rules, and privacy boundaries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5501f16349d38d8bb3f80165167c2cf10559d036e0c7c2726c193b5e9bb30cb3"
+}

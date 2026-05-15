@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baoyu-danger-x-to-markdown@1.103.2",
+  "version": "1.103.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baoyu_danger_x_to_markdown",
+  "skill": {
+    "id": 13252,
+    "skillKey": "clawhub-baoyu-danger-x-to-markdown",
+    "name": "Baoyu Danger X To Markdown"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baoyu-danger-x-to-markdown",
+    "url": "https://clawhub.ai/skills/baoyu-danger-x-to-markdown",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baoyu-danger-x-to-markdown-b71d8c261676c786.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Converts X (Twitter) tweets and articles to markdown with YAML front matter. Uses reverse-engineered API requiring user consent. Use when user mentions \"X to..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jimliu",
+      "userId": "s17dfbhg0khk4fvtnx0stqg0yx83j25z",
+      "displayName": "Jim Liu 宝玉",
+      "image": "https://avatars.githubusercontent.com/u/648674?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1126,
+      "installsAllTime": 39,
+      "installsCurrent": 39,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.103.2",
+      "createdAt": 1776808906255,
+      "changelog": "- Added explicit guidance on user input tools: prefer built-in agent tools (e.g., AskUserQuestion); fall back to plain-text prompts if unavailable.\n- Consolidated and simplified the EXTEND.md preferences path/priority table for clarity.\n- Removed duplicated or redundant OS-specific code snippets for EXTEND.md, referencing a concise priority order instead.\n- Clarified that any references to AskUserQuestion are illustrative; use the local equivalent in other runtimes.\n- Removed two files related to baoyu-chrome-cdp, cleaning up the scripts/vendor directory.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4352140da2147fe29da40aa00e17d9e8e5ee41fb12a5a95b096d8010160a880b"
+}

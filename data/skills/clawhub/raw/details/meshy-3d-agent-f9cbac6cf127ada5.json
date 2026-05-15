@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "meshy-3d-agent",
+    "displayName": "Meshy 3D Agent",
+    "summary": "Generate 3D models, textures, images, rig characters, animate them, and prepare for 3D printing using the Meshy AI API. Handles API key detection, task creat...",
+    "tags": {
+      "latest": "0.3.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 290,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "createdAt": 1773734721814,
+    "updatedAt": 1778310826619
+  },
+  "latestVersion": {
+    "version": "0.3.0",
+    "createdAt": 1778300379000,
+    "changelog": "## Meshy 3D Agent v0.3.0 – Changelog\n\n🎯 **Industry first** — End-to-end **printability pipeline** for AI agents now coming abord! Start from Meshy generation or your own model, experience the whole process of Analyze → Repair → Multi-color, **all FDM-print-ready**. \n\n### Added\n\n- **Printability automation suite** across all three skills (`meshy-3d-generation`, `meshy-3d-printing`, `meshy-openclaw`):\n  - `POST /openapi/v1/print/analyze` (FREE) — FDM printability check (watertightness, volume, non-manifold edges, degenerate faces, holes)\n  - `POST /openapi/v1/print/repair` (10 credits) — topology repair; output format mirrors input\n  - `POST /openapi/v1/print/multi-color` (10 credits) — now accepts `model_url` in addition to `input_task_id`\n- **2D optimization pre-step** — recommended workflow before image-to-3d when the user supplies low-quality references or a text-only prompt: `text-to-image` (`nano-banana-pro`, optional `generate_multi_view` + `pose_mode` for characters) or `image-to-image` (background removal / upscale / lighting normalization / style transfer). 3–9 extra credits typically buy a meaningful 3D-quality lift; documented in all three SKILL.md files.\n\n### Changed\n\n- `meshy-3d-printing` SKILL frontmatter version bumped 0.2.0 → 0.3.0; print pipeline rewritten as `generate → analyze (FREE) → repair? → multicolor? → download → send_to_slicer` to leverage the new automated printability check\n- The \"Printability Checklist (Manual Review)\" + \"Coming Soon: Printability Analysis & Fix API\" sections in `meshy-3d-printing` are replaced by the real automated check; the manual checklist now covers only print-quality concerns the API doesn't (wall thickness, overhangs, base stability)\n- `meshy-openclaw` printing section adds analyze/repair steps while preserving the SECURITY MANIFEST and `metadata.openclaw` frontmatter\n- Intent-mapping table in `meshy-3d-generation` and `meshy-openclaw` lists the three new print endpoints\n- Pricing summary in all three `reference.md` files lists `analyze` (FREE) and `repair` (10 credits)\n- Retexture section in all three `reference.md` files clarifies that the historical \"text-to-texture\" name redirects to retexture and there is no separate `/openapi/v1/text-to-texture` endpoint",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "arlieeee",
+    "userId": "s173wqqek0negpt5dy17a9085h842ea4",
+    "displayName": "Arlie Du",
+    "image": "https://avatars.githubusercontent.com/u/149051712?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.exposed_secret_literal"
+    ],
+    "summary": "Detected: suspicious.exposed_secret_literal",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778310826619
+  }
+}

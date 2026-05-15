@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70433,
+  "uuid": "skill-clawhub-tencentcloud-tts",
+  "skillKey": "clawhub-tencentcloud-tts",
+  "name": "TencentCloud TTS",
+  "summary": "腾讯云语音合成(TTS)服务技能包。当用户需要将文本转换为语音文件时使用此技能，支持多种音频格式输出和灵活的配置选项。当用户提到语音合成、文本转语音、TTS服务、音频文件生成时，都应该考虑使用此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencentcloud_tts",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jizhouli",
+      "features": [
+        "腾讯云语音合成(TTS)服务技能包。当用户需要将文本转换为语音文件时使用此技能，支持多种音频格式输出和灵活的配置选项。当用户提到语音合成、文本转语音、TTS服务、音频文件生成时，都应该考虑使."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tencentcloud-tts@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1290382?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tencentcloud-tts",
+      "url": "https://clawhub.ai/skills/tencentcloud-tts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencentcloud-tts",
+    "url": "https://clawhub.ai/skills/tencentcloud-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencentcloud-tts-eab3ae008c565d39.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tencentcloud-tts@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tencentcloud-tts-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6f6bd5e0e3d6cef47609bd734b042bc14aed04af8dfc6cfe1a0f80ea2f0f5fc1",
+      "artifactSizeBytes": 2363
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T10:49:49.861Z"
+}

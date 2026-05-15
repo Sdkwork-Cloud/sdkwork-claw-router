@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36842,
+  "uuid": "skill-clawhub-svn-code-review",
+  "skillKey": "clawhub-svn-code-review",
+  "name": "Svn Code Review",
+  "summary": "Use when completing tasks, implementing major features, or before merging to verify work meets requirements",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.svn_code_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhouzy-creator",
+      "features": [
+        "Use when completing tasks, implementing major features, or before merging to verify work meets."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/svn-code-review@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/80381240?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "svn-code-review",
+      "url": "https://clawhub.ai/skills/svn-code-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "svn-code-review",
+    "url": "https://clawhub.ai/skills/svn-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/svn-code-review-f03f2fd6609ebeee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/svn-code-review@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-svn-code-review-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2a020b2d0ce0041b6c35fc5a51dc237cc9394f1aaca5819fe02e21b92c22dd8b",
+      "artifactSizeBytes": 2427
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T08:43:11.337Z"
+}

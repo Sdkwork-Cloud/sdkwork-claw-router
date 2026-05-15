@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ride-hailing-helper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ride_hailing_helper",
+  "skill": {
+    "id": 59802,
+    "skillKey": "clawhub-ride-hailing-helper",
+    "name": "打车助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ride-hailing-helper",
+    "url": "https://clawhub.ai/skills/ride-hailing-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ride-hailing-helper-fa8470469759176c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "企业用车服务助手，支持即时用车、预约用车、接送机、包车等多种用车场景，提供车型选择、费用预估、订单管理等功能。Invoke when user needs to book a car, schedule a ride, airport transfer, or manage car service orders."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cs200809",
+      "userId": "s172rh39b43wvhw5j70bct90pd83jd2y",
+      "displayName": "cs200809",
+      "image": "https://avatars.githubusercontent.com/u/185908023?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774925660033,
+      "changelog": "fb-car-service-skill v1.0.0 Changelog\n\n- Initial release of the 企业用车服务助手 skill.\n- Supports ride-hailing for immediate rides, scheduled rides, airport transfers, and charter services.\n- Features real-time car type selection, price estimation, driver/vehicle info, and order management.\n- Provides detailed order status, invoicing, cancellation policies, and enterprise management functions.\n- Offers both API-only and user-facing interaction flows with rich display templates for trip and price details.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3959f54260a23329777e1a1b7ce26026b41e130335730572ce5780ca2c86a774"
+}

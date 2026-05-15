@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11091,
+  "uuid": "skill-clawhub-claw-voice",
+  "skillKey": "clawhub-claw-voice",
+  "name": "ClawVoice",
+  "summary": "Connects to a live voice session, receiving and sending messages in real time via a WebSocket interface using the bundled client script.",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_voice",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "niczy",
+      "features": [
+        "Connects to a live voice session, receiving and sending messages in real time via a WebSocket i."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-voice@0.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/825483?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-voice",
+      "url": "https://clawhub.ai/skills/claw-voice"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-voice",
+    "url": "https://clawhub.ai/skills/claw-voice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-voice-2626f94ec7993e1b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-voice@0.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-voice-0.0.2.json",
+      "version": "0.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:78f9f081b797411e00f256b6ac2b8a8a1f72fcb40003c0eb4e8a0fdbc76367f4",
+      "artifactSizeBytes": 2294
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T22:24:58.785Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paper-polisher-pro@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_polisher_pro",
+  "skill": {
+    "id": 41977,
+    "skillKey": "clawhub-paper-polisher-pro",
+    "name": "Paper Polisher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-polisher-pro",
+    "url": "https://clawhub.ai/skills/paper-polisher-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-polisher-pro-b3e54a4dce91002b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detect and quantify AI writing traces, rewrite to remove AI style and reduce similarity while preserving terminology, data, and academic rigor in bilingual p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "docsor1212",
+      "userId": "s17dagtwyk21qs6vpz98bzcrh1853t29",
+      "displayName": "docsor1212",
+      "image": "https://avatars.githubusercontent.com/u/253113937?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777721169860,
+      "changelog": "v1.1.0: 9-layer detection engine (+perplexity, burstiness 3-component, sentence templates, RLHF alignment), pattern library expanded to 1002 (ZH 663 + EN 339), synonym database 501 groups, benchmarked against 10x 2026 flagship models (98.3% F1 on long-form academic text)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2b708555019b8b1b393a3f93c554f91bdb30319564bb770470d93925247c0082"
+}

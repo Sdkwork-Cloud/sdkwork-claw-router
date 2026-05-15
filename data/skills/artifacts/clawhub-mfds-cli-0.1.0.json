@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mfds-cli@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mfds_cli",
+  "skill": {
+    "id": 58119,
+    "skillKey": "clawhub-mfds-cli",
+    "name": "Mfds Cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mfds-cli",
+    "url": "https://clawhub.ai/skills/mfds-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mfds-cli-5a95bdcdb7e2101b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Korean Ministry of Food and Drug Safety (식품의약품안전처) public API CLI. Search drug product permissions (의약품 허가정보), consumer-friendly drug info (e약은요), DUR contra..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chloepark85",
+      "userId": "s176h4kgd3ahcdsgj48g3epf1584a12v",
+      "displayName": "Chloe Park",
+      "image": "https://avatars.githubusercontent.com/u/15118976?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 100,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1778026234468,
+      "changelog": "- Initial release of mfds-cli, a CLI for Korea Ministry of Food and Drug Safety (MFDS) public APIs.\n- Supports searching drug product permissions, consumer-friendly drug info, DUR contraindications, and drug recall/sale-stop alerts, all normalized to JSONL output.\n- Four main subcommands: drug, drug-easy, dur, and recall, each wrapping a corresponding MFDS API endpoint.\n- Includes detailed flag support, normalization options, and example usage scripts for pharmacy and healthcare workflows.\n- Requires free MFDS_API_KEY registration at data.go.kr; data rate limits and licensing are documented.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c49854c4cb8b3fc20ac3ebc3da0bfcc936260c3b96fae949f49200da7381d121"
+}

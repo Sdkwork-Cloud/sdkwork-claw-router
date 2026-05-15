@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/solana-token-monitor@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solana_token_monitor",
+  "skill": {
+    "id": 40449,
+    "skillKey": "clawhub-solana-token-monitor",
+    "name": "Solana Token Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solana-token-monitor",
+    "url": "https://clawhub.ai/skills/solana-token-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solana-token-monitor-6221ebd115adab3b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor any Solana token 24/7 using DexScreener. Get alerts for price moves, whale activity, volume spikes, liquidity changes, and market cap milestones. Bui..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shepdogpack",
+      "userId": "s17agev49n8jwm72mnyx73vjmh84b2jn",
+      "displayName": "ShepDogPack",
+      "image": "https://avatars.githubusercontent.com/u/268517562?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775495123437,
+      "changelog": "v1.1.0: Implemented Telegram Bot API delivery directly in monitor.py (--telegram-token + --chat-id flags on setup). Fixed SKILL.md to accurately describe alert delivery. Removed inconsistent curl references from INSTRUCTIONS.md. API path verified against live DexScreener v1 endpoint.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1eb778a9aadbe25795e3f4ea1a33aae4a4bb32e49182372a2516266ef81b6818"
+}

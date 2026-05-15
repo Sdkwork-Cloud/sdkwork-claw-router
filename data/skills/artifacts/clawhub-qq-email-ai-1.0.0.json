@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qq-email-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qq_email_ai",
+  "skill": {
+    "id": 70302,
+    "skillKey": "clawhub-qq-email-ai",
+    "name": "QQ Email with AI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qq-email-ai",
+    "url": "https://clawhub.ai/skills/qq-email-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qq-email-ai-7e420eab6764c924.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "QQ 邮箱智能管理工具。支持收发邮件、搜索筛选、附件处理，以及 AI 智能整理功能（自动摘要、分类、优先级排序、待办提取）。当用户需要操作 QQ 邮箱、查收邮件、发送邮件、整理收件箱或处理邮件相关任务时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aohoyo",
+      "userId": "s172yjpf05bfj3wjfrwx88v8sx83hf31",
+      "displayName": "silas",
+      "image": "https://avatars.githubusercontent.com/u/169723524?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 398,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773929700418,
+      "changelog": "Initial release with AI organization",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8b34139e3933ef6bccf62e22c30531acc0e72449f498dc144c93c72d81d3662a"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mini-analysis-column@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mini_analysis_column",
+  "skill": {
+    "id": 59669,
+    "skillKey": "clawhub-mini-analysis-column",
+    "name": "Mini Analysis Column"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mini-analysis-column",
+    "url": "https://clawhub.ai/skills/mini-analysis-column",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mini-analysis-column-33d5e42ecb4a759d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "统计分析csv文件中某一列的表现"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fdmseven",
+      "userId": "s173ps6cd8w1qepmysz4qzqet1851sy7",
+      "displayName": "fdmseven",
+      "image": "https://avatars.githubusercontent.com/u/69615813?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1776420425683,
+      "changelog": "- Update: Only numeric columns are now supported for statistical analysis; string column analysis has been removed.\n- Add: Explicit dependency note for pandas installation.\n- Change: Usage instructions updated to clarify that only numeric columns can be analyzed.\n- Clarify: Documentation and notes now specify string columns are not supported.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1902090f396a9afbe8d4ec4d1c37ed33e07266b4096cf0f0b10183afc3375d06"
+}

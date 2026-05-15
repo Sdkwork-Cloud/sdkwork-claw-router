@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38642,
+  "uuid": "skill-clawhub-context-slimming",
+  "skillKey": "clawhub-context-slimming",
+  "name": "Context Slimming",
+  "summary": "Diagnose and optimize an OpenClaw agent workspace's injected context files (AGENTS.md, SOUL.md, USER.md, MEMORY.md, TOOLS.md, HEARTBEAT.md, etc.) to reduce p...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_slimming",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gong Cheng",
+      "features": [
+        "Diagnose and optimize an OpenClaw agent workspace's injected context files (AGENTS.md, SOUL.md,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/context-slimming@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13041847?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "context-slimming",
+      "url": "https://clawhub.ai/skills/context-slimming"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-slimming",
+    "url": "https://clawhub.ai/skills/context-slimming",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-slimming-643d07cf7f5b8968.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/context-slimming@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-context-slimming-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2172ea6c601d0df4eaef43e366dd10e5d641014c40c8e95cf785146631743cc5",
+      "artifactSizeBytes": 1991
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T03:29:40.690Z"
+}

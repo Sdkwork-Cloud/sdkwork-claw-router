@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rolex@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rolex",
+  "skill": {
+    "id": 72330,
+    "skillKey": "clawhub-rolex",
+    "name": "Rolex"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rolex",
+    "url": "https://clawhub.ai/skills/rolex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rolex-647308d903007051.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供劳力士手表系列、价格、型号、门店信息及保养建议，助您了解和选购瑞士奢侈腕表。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 188,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776295579357,
+      "changelog": "- 简化技能定位为“rolex 知识卡片”，聚焦基础信息速览。\n- 精炼使用场景，突出商用、学术、信息速查等用途。\n- 用表格展示关键维度，结构更清晰易读。\n- 移除详细系列、价格及服务信息，强调基础介绍和延伸参考。\n- 补充查阅行业报告的建议，引导进一步了解。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0d38f3e2aafb113baf69ac2edceaba6308db12dbc7c4134ca9cdbec945d522fe"
+}

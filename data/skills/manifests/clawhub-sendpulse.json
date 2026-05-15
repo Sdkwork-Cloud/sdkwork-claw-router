@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30409,
+  "uuid": "skill-clawhub-sendpulse",
+  "skillKey": "clawhub-sendpulse",
+  "name": "Sendpulse",
+  "summary": "SendPulse integration. Manage data, records, and automate workflows. Use when the user wants to interact with SendPulse data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sendpulse",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "SendPulse integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with SendPulse data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sendpulse@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sendpulse",
+      "url": "https://clawhub.ai/skills/sendpulse"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sendpulse",
+    "url": "https://clawhub.ai/skills/sendpulse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sendpulse-0ba14717891e7df3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sendpulse@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-sendpulse-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:deb2b3f0f1d6c2f2ba949a94fe0633f053b77e38ced8d6e8ba3eec35457347bb",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:39:54.397Z"
+}

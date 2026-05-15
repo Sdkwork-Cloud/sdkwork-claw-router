@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/photo-scorer@1.4.10",
+  "version": "1.4.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.photo_scorer",
+  "skill": {
+    "id": 59408,
+    "skillKey": "clawhub-photo-scorer",
+    "name": "摄影照片评分/Photo Scorer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "photo-scorer",
+    "url": "https://clawhub.ai/skills/photo-scorer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/photo-scorer-debbc2252b1fb1d4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "给你的照片打分、评价反馈、给出改进建议或美学分析 / Aesthetic photo scorer with detailed analysis"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kooui",
+      "userId": "s179rjgyhzv1p1esffzv3whf0h83gw0g",
+      "displayName": "kooui",
+      "image": "https://avatars.githubusercontent.com/u/35019576?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.4.10",
+      "createdAt": 1774232996301,
+      "changelog": "- Major update: Introduces a comprehensive, dynamic weighted two-tier scoring system for photo aesthetics and technical quality.\n- Added detailed explanations of the new architecture: combines an improved aesthetic predictor and NIMA assessment, with dynamic weight adjustment based on image score standard deviation.\n- Outlined multi-level output support (concise, medium, detailed) and flexible evaluation formatting for different user needs.\n- Included updated score interpretation guides and error handling procedures.\n- All evaluation is performed fully offline, ensuring user privacy and security.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d0ad23b6f31dddb78867966fb4f8ab1b76797bcf41b3b2faa8de91acc5633e6d"
+}

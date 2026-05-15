@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58401,
+  "uuid": "skill-clawhub-feishu-smart-doc-writer",
+  "skillKey": "clawhub-feishu-smart-doc-writer",
+  "name": "feishu-smart-doc-writer",
+  "summary": "Feishu/Lark Smart Document Writer - 飞书智能文档写入器. Core Features / 核心功能： 1. Smart Chunk Writing / 智能分块写入 - Solve API limit blank doc issues / 解决长文档API限制导致的空白问题 2...",
+  "version": "1.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_smart_doc_writer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "terrence741-cell",
+      "features": [
+        "Feishu/Lark Smart Document Writer",
+        "飞书智能文档写入器",
+        "Core Features / 核心功能： 1",
+        "Smart Chunk Writing / 智能分块写入"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-smart-doc-writer@1.4.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/232485900?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-smart-doc-writer",
+      "url": "https://clawhub.ai/skills/feishu-smart-doc-writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-smart-doc-writer",
+    "url": "https://clawhub.ai/skills/feishu-smart-doc-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-smart-doc-writer-2801a2c0dd9cdb41.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-smart-doc-writer@1.4.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-smart-doc-writer-1.4.1.json",
+      "version": "1.4.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1d58eed10d3c79e127b81a98850a5926fe9118ed6cc57dbf77c28e7c03bbe17e",
+      "artifactSizeBytes": 2243
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T08:14:34.198Z"
+}

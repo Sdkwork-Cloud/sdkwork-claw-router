@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/soul-agent@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.soul_agent",
+  "skill": {
+    "id": 21985,
+    "skillKey": "clawhub-soul-agent",
+    "name": "soul-agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "soul-agent",
+    "url": "https://clawhub.ai/skills/soul-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/soul-agent-4fd7a17ba1633af6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Make your agent 'live beside you' with heartbeats, mood system, relationship evolution, and independent memory. Use for creating a digital companion with its..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kitephp",
+      "userId": "s175nm61e9vqfydzfkk8e0qmcn83ksny",
+      "displayName": "kitephp",
+      "image": "https://avatars.githubusercontent.com/u/252767255?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 479,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773668532923,
+      "changelog": "soul-agent 1.0.1 introduces a heartbeat engine, mood system, relationship mechanics, daily planning, and enhanced memory for a more lifelike digital companion.\n\n- Added heartbeat, mood, relationship, and daily plan systems to make the agent \"live beside you\"\n- New scripts: heartbeat management, daily planning (plan_generator.py), LLM-powered narrative (heartbeat_engine.py), memory distillation (distill_life_log.py)\n- Integrated mood transitions, 5-stage relationship tracking, and auto-updating energy/state\n- 5 built-in life profiles with configurable schedules (freelancer, corporate, student, entrepreneur, custom)\n- Agent-driven initialization with user-friendly questions and non-interactive setup\n- Runtime writes detailed logs, plans, and mood history into the workspace for independent memory\n- All features designed for easy scheduling (e.g., via cron) and safe, managed file updates",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1819989f028944823d65de97c2e21cec0609434c203700ca8928f62678b433c6"
+}

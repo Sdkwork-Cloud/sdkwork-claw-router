@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web3-target-team-research@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web3_target_team_research",
+  "skill": {
+    "id": 12994,
+    "skillKey": "clawhub-web3-target-team-research",
+    "name": "Web3 Target Team Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web3-target-team-research",
+    "url": "https://clawhub.ai/skills/web3-target-team-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web3-target-team-research-8c4f003395bafba8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find crypto/web3 teams with $10M+ funding and verified Telegram contacts. Use when hunting for crypto leads, building contact lists, researching funded startups, or prospecting web3 companies. Spawns parallel subagent hunters to search VC."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shwchlorine",
+      "userId": "publishers:shwchlorine",
+      "displayName": "shwchlorine",
+      "image": "https://avatars.githubusercontent.com/u/44778771?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1936,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769399266730,
+      "changelog": "Initial public release: Find crypto/web3 teams with $10M+ funding and verified Telegram contacts.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:85473e4e6e6fcb090ee3f60c1998733a054704124c6f1c9c31ab762cc8c3c4ac"
+}

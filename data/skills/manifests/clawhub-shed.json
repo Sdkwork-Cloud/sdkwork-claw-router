@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33657,
+  "uuid": "skill-clawhub-shed",
+  "skillKey": "clawhub-shed",
+  "name": "Shed",
+  "summary": "Context window hygiene for long-running LLM agents. Decision rules for when and how to compress, mask, switch, or delegate context — backed by research (JetB...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shed",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "compass-soul",
+      "features": [
+        "Context window hygiene for long-running LLM agents",
+        "Decision rules for when and how to compress, mask, switch, or delegate context — backed by rese."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shed@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260311058?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shed",
+      "url": "https://clawhub.ai/skills/shed"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shed",
+    "url": "https://clawhub.ai/skills/shed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shed-2f3c3e5cf3c63b64.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shed@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shed-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9c2c9fa52297005cea283dacece7ff8a68ea3e809c90a1c1b09e223cdfde46a2",
+      "artifactSizeBytes": 1936
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T05:05:04.204Z"
+}

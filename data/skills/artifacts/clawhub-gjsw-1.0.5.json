@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gjsw@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gjsw",
+  "skill": {
+    "id": 70221,
+    "skillKey": "clawhub-gjsw",
+    "name": "gjsw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gjsw",
+    "url": "https://clawhub.ai/skills/gjsw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gjsw-4db09fb7def7de78.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "国家税务总局 12366 纳税服务平台自动登录技能。支持图形验证码 OCR 识别、持久化会话、自动定位表单元素。当用户要求登录税务平台、12366、国家税务总局、国家税务局12366 、12366国家税务局 等登录场景时触发。关键判断：用户提供用户名、密码以及登录页面 URL（或已设置环境变量），希望自动完成登录流程。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "edwn",
+      "userId": "s175ctzn42y07c65fxkq93qf418419za",
+      "displayName": "Edwn",
+      "image": "https://avatars.githubusercontent.com/u/5905669?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 211,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1776735026294,
+      "changelog": "Version 1.0.5\n\n- 更新描述，明确支持多种登录场景及参数输入方式，完善自动化流程说明\n- 增加功能说明：自动定位登录页表单元素、验证码 OCR、登录重试、会话持久化等\n- 明确命令行参数及环境变量配置方法\n- 优化前置要求与依赖安装指引\n- 移除未实际启用的 metadata 字段及交互配置，精简结构",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c5a45ba8b00f259e7e8348915f89c05d8c5a63577873ad5866ceb2ac5dd64a02"
+}

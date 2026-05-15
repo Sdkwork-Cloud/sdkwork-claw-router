@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dont-hack-me@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dont_hack_me",
+  "skill": {
+    "id": 11707,
+    "skillKey": "clawhub-dont-hack-me",
+    "name": "Dont Hack Me"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dont-hack-me",
+    "url": "https://clawhub.ai/skills/dont-hack-me",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dont-hack-me-6f0b1f877aec38a8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "別駭我！基本安全檢測 — Security self-check for Clawdbot/Moltbot. Run a quick audit of your clawdbot.json to catch dangerous misconfigurations — exposed gateway, missing auth, open DM policy, weak tokens, loose file permissions. Auto-fix included. In."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peterokase42",
+      "userId": "publishers:peterokase42",
+      "displayName": "peterokase42",
+      "image": "https://avatars.githubusercontent.com/u/240852882?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 5213,
+      "installsAllTime": 30,
+      "installsCurrent": 29,
+      "stars": 30,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769698064853,
+      "changelog": "加入中文 description「別駭我！基本安全檢測」、author 補回小安台灣、footer 補回中文標語",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e0cb77d57c3eedf71b1aad24dfcf1e75b25a23a8c67e35b0243a1ec3dbbe0f39"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59888,
+  "uuid": "skill-clawhub-arxiv-daily-skill",
+  "skillKey": "clawhub-arxiv-daily-skill",
+  "name": "Arxiv Daily Skill",
+  "summary": "每日自动搜集 arXiv 论文（LLM/RAG/Agent 方向），带机构信息，飞书推送",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arxiv_daily_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Seagle",
+      "features": [
+        "每日自动搜集 arXiv 论文（LLM/RAG/Agent 方向），带机构信息，飞书推送"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/arxiv-daily-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6970599?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "arxiv-daily-skill",
+      "url": "https://clawhub.ai/skills/arxiv-daily-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arxiv-daily-skill",
+    "url": "https://clawhub.ai/skills/arxiv-daily-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arxiv-daily-skill-ff7876ce7ee046b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/arxiv-daily-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-arxiv-daily-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:90499ccf104f1fe93f8aba8e91921e840254ba028749ccd27d8ac0dabee64781",
+      "artifactSizeBytes": 2249
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T13:02:01.193Z"
+}

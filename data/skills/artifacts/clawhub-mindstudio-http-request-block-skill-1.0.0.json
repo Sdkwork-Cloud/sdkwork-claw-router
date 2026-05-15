@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mindstudio-http-request-block-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mindstudio_http_request_block_skill",
+  "skill": {
+    "id": 30933,
+    "skillKey": "clawhub-mindstudio-http-request-block-skill",
+    "name": "MindStudio HTTP Request Block Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mindstudio-http-request-block-skill",
+    "url": "https://clawhub.ai/skills/mindstudio-http-request-block-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mindstudio-http-request-block-skill-0365cc5743ba0225.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Configure and use the MindStudio HTTP Request block to send data to external APIs, webhooks, and web services. Use this skill whenever a user mentions HTTP r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sol1986",
+      "userId": "s178mvyk5pdhapf6ax9thw3sn983svt8",
+      "displayName": "Sol Farahmand",
+      "image": "https://avatars.githubusercontent.com/u/65566755?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775805414722,
+      "changelog": "Initial release of the MindStudio HTTP Request Block Skill.\n\n- Provides a comprehensive guide for configuring HTTP Request blocks in MindStudio workflows.\n- Covers five key scenarios: Fetch Data (GET), Send Data (POST), Update/Modify (PATCH/PUT), Delete (DELETE), and Trigger External Systems.\n- Includes detailed user interview questions for each scenario to ensure correct and safe configuration.\n- Outlines best practices for authentication, headers, parameters, body setup, and downstream response handling.\n- Emphasizes never to configure from memory and always to use the documented process for reliability and safety.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a5e0374580fef6211e05543eb7374407c5136696b1ca781bff2cb62b3d11130d"
+}

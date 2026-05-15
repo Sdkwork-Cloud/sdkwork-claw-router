@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64450,
+  "uuid": "skill-clawhub-memory-archiver-pro",
+  "skillKey": "clawhub-memory-archiver-pro",
+  "name": "Memory Archiver Pro",
+  "summary": "自动按日期归档AI Agent记忆文件，支持关键词检索、跨会话继承和每日记忆简报，防止信息丢失。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_archiver_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linbo405",
+      "features": [
+        "自动按日期归档AI Agent记忆文件，支持关键词检索、跨会话继承和每日记忆简报，防止信息丢失。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-archiver-pro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259021343?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-archiver-pro",
+      "url": "https://clawhub.ai/skills/memory-archiver-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-archiver-pro",
+    "url": "https://clawhub.ai/skills/memory-archiver-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-archiver-pro-f81a5f49ccf8267b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-archiver-pro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-archiver-pro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ead79de7b4d9ac646d0482f8915d8cce8a47014a8ee1bca6e6e28cf40bb24611",
+      "artifactSizeBytes": 2256
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T04:56:19.452Z"
+}

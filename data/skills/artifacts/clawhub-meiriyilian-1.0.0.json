@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meiriyilian@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meiriyilian",
+  "skill": {
+    "id": 71976,
+    "skillKey": "clawhub-meiriyilian",
+    "name": "每日一练"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meiriyilian",
+    "url": "https://clawhub.ai/skills/meiriyilian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meiriyilian-65f59e2446b51c37.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于每日一练官网公开信息的中文 skill。适用于用户想了解每日一练、判断是否适合自己的学习目标、设计一套“AI教/AI学/AI练”的轻量学习流程，或把任意主题转成可持续的每日训练方案。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aitobook",
+      "userId": "s17egf4z99xv1790e2zy97s715842zgg",
+      "displayName": "aitobook",
+      "image": "https://avatars.githubusercontent.com/u/79955404?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775094790353,
+      "changelog": "Initial release of meiriyilian skill.\n\n- Provides explanations and workflows based on the official meiriyilian.com guidelines.\n- Supports user queries on what meiriyilian is, its learning model differences, and assessment of fit for their goals.\n- Enables conversion of any topic into daily, weekly, or monthly training plans.\n- Guides users through a lightweight \"AI教/AI学/AI练\" (Teach/Learn/Practice) learning flow.\n- Emphasizes actionable, small-step, and adaptive practice design.\n- Minimizes promotional content; focuses on practical guidance and immediate actions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dc84e4b6f1893d23fbeffe295abcf9aa897b077f508b6ed3ac9d04aa84ebda0b"
+}

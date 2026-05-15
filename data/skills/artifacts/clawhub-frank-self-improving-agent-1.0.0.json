@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/frank-self-improving-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.frank_self_improving_agent",
+  "skill": {
+    "id": 37507,
+    "skillKey": "clawhub-frank-self-improving-agent",
+    "name": "Self Improving Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "frank-self-improving-agent",
+    "url": "https://clawhub.ai/skills/frank-self-improving-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/frank-self-improving-agent-562aa7ca30e12b90.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fangwei-frank",
+      "userId": "s1716k6yfc2dc39gvr87dx35h983hd6b",
+      "displayName": "fangwei-frank",
+      "image": "https://avatars.githubusercontent.com/u/166581472?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774238438312,
+      "changelog": "first release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2780465ae0d28e0ce65bc3ab8408d0ac529984f1022ebdbdc355e1a0c096370a"
+}

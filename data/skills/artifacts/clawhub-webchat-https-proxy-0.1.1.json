@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/webchat-https-proxy@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.webchat_https_proxy",
+  "skill": {
+    "id": 19699,
+    "skillKey": "clawhub-webchat-https-proxy",
+    "name": "WebChat HTTPS Proxy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "webchat-https-proxy",
+    "url": "https://clawhub.ai/skills/webchat-https-proxy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/webchat-https-proxy-f9d3bcbceb93f4af.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "HTTPS/WSS reverse proxy for OpenClaw WebChat Control UI. Serves the Control UI over HTTPS with TLS cert management, proxies WebSocket connections to the gate..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "neldar",
+      "userId": "publishers:neldar",
+      "displayName": "neldar",
+      "image": "https://avatars.githubusercontent.com/u/387537?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 547,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773972051620,
+      "changelog": "MIT license added; same-origin transcribe auth hardening; preserve configured voice host on redeploy.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c3f1a86c229208ea1c21661aeb375a819887281069fbb0927efa6420b7d338a1"
+}

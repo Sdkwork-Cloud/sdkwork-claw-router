@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35876,
+  "uuid": "skill-clawhub-youtube-chapter-generator",
+  "skillKey": "clawhub-youtube-chapter-generator",
+  "name": "Youtube Chapter Generator",
+  "summary": "Auto-generate YouTube video chapters from subtitles. Parses VTT/SRT files, identifies topic transitions, and produces timestamped chapter markers. Triggers:...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_chapter_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dzxiatian-crypto",
+      "features": [
+        "Auto-generate YouTube video chapters from subtitles",
+        "Parses VTT/SRT files, identifies topic transitions, and produces timestamped chapter markers",
+        "Triggers:..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-chapter-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266891090?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-chapter-generator",
+      "url": "https://clawhub.ai/skills/youtube-chapter-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-chapter-generator",
+    "url": "https://clawhub.ai/skills/youtube-chapter-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-chapter-generator-d4b84afbb8782b0b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-chapter-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-chapter-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1616fc6d7e0413144a2a40a7c21db3c6ebd555982c1db99fbdc76b49fdf12ed3",
+      "artifactSizeBytes": 2303
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T04:18:27.894Z"
+}

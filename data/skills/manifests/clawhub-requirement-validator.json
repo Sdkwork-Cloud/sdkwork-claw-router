@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70237,
+  "uuid": "skill-clawhub-requirement-validator",
+  "skillKey": "clawhub-requirement-validator",
+  "name": "Requirement Validator 是一个数据驱动的需求验证工具，通过多维度分析帮你判断需求是否值得实现。",
+  "summary": "需求真实性验证器 - 用数据验证需求的真实性，避免伪需求浪费资源。多维度验证用户一致性、需求频次、影响面、竞品覆盖、替代方案、ROI等。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.requirement_validator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Socialite UCL LJH",
+      "features": [
+        "需求真实性验证器",
+        "用数据验证需求的真实性，避免伪需求浪费资源。多维度验证用户一致性、需求频次、影响面、竞品覆盖、替代方案、ROI等。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/requirement-validator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270577937?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "requirement-validator",
+      "url": "https://clawhub.ai/skills/requirement-validator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "requirement-validator",
+    "url": "https://clawhub.ai/skills/requirement-validator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/requirement-validator-b3bac6a3a23167a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/requirement-validator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-requirement-validator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8c0cf4d0fc1bf9ed8f91f93363319f82b7d9aea38d23de6c7e380e2e01535344",
+      "artifactSizeBytes": 2533
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T17:45:56.033Z"
+}

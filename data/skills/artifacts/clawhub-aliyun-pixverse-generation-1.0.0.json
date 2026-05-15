@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aliyun-pixverse-generation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun_pixverse_generation",
+  "skill": {
+    "id": 56902,
+    "skillKey": "clawhub-aliyun-pixverse-generation",
+    "name": "Aliyun Pixverse Generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun-pixverse-generation",
+    "url": "https://clawhub.ai/skills/aliyun-pixverse-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-pixverse-generation-e3beb7c2dd582ccf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when generating videos with Alibaba Cloud Model Studio PixVerse models (`pixverse/pixverse-v5.6-t2v`, `pixverse/pixverse-v5.6-it2v`, `pixverse/pixverse-v..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cinience",
+      "userId": "s1707avh05gnzr3g6e3m9ka6fh840rtd",
+      "displayName": "cinience",
+      "image": "https://avatars.githubusercontent.com/u/557426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 134,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775073743270,
+      "changelog": "Initial release of aliyun-pixverse-generation skill for Alibaba Cloud PixVerse video models.\n\n- Supports text-to-video, image-to-video, keyframe-to-video, and multi-image reference-to-video workflows.\n- Selects from four PixVerse model variants for non-Wan video generation tasks.\n- Provides clear model selection and parameter guidance for resolution, duration, and region.\n- Submits and polls asynchronous video generation tasks via DashScope API.\n- Saves normalized requests, responses, and evidence to output files for traceability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f6aa23d26463c08db8a310eb1f76508b438aede4611e7239b9212819a62d6351"
+}

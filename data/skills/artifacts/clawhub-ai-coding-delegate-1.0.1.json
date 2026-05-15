@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-coding-delegate@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_coding_delegate",
+  "skill": {
+    "id": 35230,
+    "skillKey": "clawhub-ai-coding-delegate",
+    "name": "Coding Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-coding-delegate",
+    "url": "https://clawhub.ai/skills/ai-coding-delegate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-coding-delegate-7fe40c82d0a0dbc9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Delegate coding tasks to Codex, Claude Code, or Pi agents via background process. Use when: (1) building/creating new features or apps, (2) reviewing PRs (sp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "utromaya-code",
+      "userId": "publishers:utromaya-code",
+      "displayName": "utromaya-code",
+      "image": "https://avatars.githubusercontent.com/u/254962629?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 216,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774226375113,
+      "changelog": "- Documentation wording and formatting updated for clarity; no functional or implementation changes.\n- Reorganized and clarified usage instructions and code examples.\n- No changes to skill logic or capabilities.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d1193c4195c2a814af3ae388e3c263ffa6131dca999a6c9ab43d1d140a670ba5"
+}

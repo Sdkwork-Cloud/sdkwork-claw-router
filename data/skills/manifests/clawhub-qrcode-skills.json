@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20841,
+  "uuid": "skill-clawhub-qrcode-skills",
+  "skillKey": "clawhub-qrcode-skills",
+  "name": "qrcode",
+  "summary": "Generate and decode QR codes locally. Use when the user wants to create a QR code from text/URL, decode/read QR code content from an image, or asks about QR...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qrcode_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hiNISAL",
+      "features": [
+        "Generate and decode QR codes locally",
+        "Use when the user wants to create a QR code from text/URL, decode/read QR code content from an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qrcode-skills@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19162201?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qrcode-skills",
+      "url": "https://clawhub.ai/skills/qrcode-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qrcode-skills",
+    "url": "https://clawhub.ai/skills/qrcode-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qrcode-skills-5e95f34b775f32b1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qrcode-skills@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-qrcode-skills-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8875c3f2282f749702e03f483532e3d0e9e9458e4975970870c47a02fe1aa176",
+      "artifactSizeBytes": 2893
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T06:22:51.701Z"
+}

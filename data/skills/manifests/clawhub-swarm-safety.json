@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21081,
+  "uuid": "skill-clawhub-swarm-safety",
+  "skillKey": "clawhub-swarm-safety",
+  "name": "SWARM Safety",
+  "summary": "SWARM: System-Wide Assessment of Risk in Multi-agent systems. 38 agent types, 29 governance levers, 55 scenarios. Study emergent risks, phase transitions, an...",
+  "version": "1.7.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swarm_safety",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rsavitt",
+      "features": [
+        "SWARM: System-Wide Assessment of Risk in Multi-agent systems",
+        "38 agent types, 29 governance levers, 55 scenarios",
+        "Study emergent risks, phase transitions, an..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/swarm-safety@1.7.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8360758?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "swarm-safety",
+      "url": "https://clawhub.ai/skills/swarm-safety"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swarm-safety",
+    "url": "https://clawhub.ai/skills/swarm-safety",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swarm-safety-ee67643b740a88aa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/swarm-safety@1.7.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-swarm-safety-1.7.1.json",
+      "version": "1.7.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:13eae5462e80707a1b88125cdab0998072ceb63ade39f90606dbc919690a4f62",
+      "artifactSizeBytes": 1879
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T05:04:24.053Z"
+}

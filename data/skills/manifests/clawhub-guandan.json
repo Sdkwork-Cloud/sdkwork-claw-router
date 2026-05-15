@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57008,
+  "uuid": "skill-clawhub-guandan",
+  "skillKey": "clawhub-guandan",
+  "name": "guandan",
+  "summary": "Play GuanDan(掼蛋) card game via `clawguandan CLI`. Use when users ask to play GuanDan or create/list/join tables in game.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.guandan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mike Wei",
+      "features": [
+        "Play GuanDan(掼蛋) card game via `clawguandan CLI`",
+        "Use when users ask to play GuanDan or create/list/join tables in game."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/guandan@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/97307?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "guandan",
+      "url": "https://clawhub.ai/skills/guandan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "guandan",
+    "url": "https://clawhub.ai/skills/guandan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/guandan-3c9cc3a327879506.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/guandan@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-guandan-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:efe25e312e67c5d012b1a103d8586a7d09177e92a0d02a48882107a035b26901",
+      "artifactSizeBytes": 1950
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T17:08:08.129Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56811,
+  "uuid": "skill-clawhub-reviewlens",
+  "skillKey": "clawhub-reviewlens",
+  "name": "评论透镜",
+  "summary": "Review intelligence skill for mainland China shopping that compresses large volumes of marketplace reviews into a decision card, surfaces repeated praise and...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reviewlens",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Review intelligence skill for mainland China shopping that compresses large volumes of marketpl."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reviewlens@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reviewlens",
+      "url": "https://clawhub.ai/skills/reviewlens"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reviewlens",
+    "url": "https://clawhub.ai/skills/reviewlens",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reviewlens-012af7cbcb3d9de5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reviewlens@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-reviewlens-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6420702fe495b04940fc782e8234637f19768a76cdb72ff0e856dd9b2bb6c6ce",
+      "artifactSizeBytes": 2059
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T08:33:00.075Z"
+}

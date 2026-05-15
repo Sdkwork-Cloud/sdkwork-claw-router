@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/self-improving-sales@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_improving_sales",
+  "skill": {
+    "id": 41497,
+    "skillKey": "clawhub-self-improving-sales",
+    "name": "Self-Improving Sales"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-improving-sales",
+    "url": "https://clawhub.ai/skills/self-improving-sales",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-improving-sales-22caf40a8f2026cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Captures pipeline leaks, objection patterns, pricing errors, forecast misses, competitor shifts, and deal velocity drops to enable continuous sales improveme..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jose-compu",
+      "userId": "s17bzpdy0evfmqz6nx069npr3n84p7f2",
+      "displayName": "José I. O.",
+      "image": "https://avatars.githubusercontent.com/u/30682875?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776169674009,
+      "changelog": "**Version 1.1.0**\n- Added stackability contract for multi-skill installations.\n- Added namespaced logging guidance (`.learnings/sales/`) for coexistence with other skills.\n- Added required `Skill: sales` metadata field and cross-skill precedence/ownership rules.\n- Clarified hook arbitration model (single dispatcher, dedupe, rate limiting).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4af9abee0050134b5710246a5022e9e52107abbba99ac25a51fb450aa8177c05"
+}

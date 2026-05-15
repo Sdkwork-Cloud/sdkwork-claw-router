@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ecommerce-after-sales-reply@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecommerce_after_sales_reply",
+  "skill": {
+    "id": 71801,
+    "skillKey": "clawhub-ecommerce-after-sales-reply",
+    "name": "Ecommerce After Sales Reply"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecommerce-after-sales-reply",
+    "url": "https://clawhub.ai/skills/ecommerce-after-sales-reply",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecommerce-after-sales-reply-a863653aba18ed1f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "生成面向电商客服场景的标准化退换货应答内容。用于买家咨询退款、退货、换货、补发、售后时效、责任判定、退回地址、凭证提交、平台规则说明、安抚说明等场景；当需要根据订单状态、商品类型、问题原因、平台约束和商家政策，稳定输出语气友好、信息准确、符合售后规则且可直接发送给买家的中文回复时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "terrycarter1985",
+      "userId": "s17brwfrqyjhbjgadkvar20h8x8492g8",
+      "displayName": "terrycarter1985",
+      "image": "https://avatars.githubusercontent.com/u/1542987?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 91,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778036096447,
+      "changelog": "Initial release: reusable non-code prompt skill for standardized ecommerce return/exchange customer service replies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e0f8ec125ca20c077aa22b598c0198b4c9d5adcdf6ece7a14b5f0a9032a146ee"
+}

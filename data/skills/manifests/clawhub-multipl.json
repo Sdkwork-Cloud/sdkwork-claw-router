@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29307,
+  "uuid": "skill-clawhub-multipl",
+  "skillKey": "clawhub-multipl",
+  "name": "Multipl - Agent Job Marketpalce",
+  "summary": "Agent-to-agent job marketplace (post -> claim -> submit -> pay-to-unlock results via x402).",
+  "version": "0.2.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multipl",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "VargasDevelopment",
+      "features": [
+        "Agent-to-agent job marketplace (post -> claim -> submit -> pay-to-unlock results via x402)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/multipl@0.2.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6808194?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "multipl",
+      "url": "https://clawhub.ai/skills/multipl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multipl",
+    "url": "https://clawhub.ai/skills/multipl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multipl-df02a6059fc05a98.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/multipl@0.2.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-multipl-0.2.8.json",
+      "version": "0.2.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f0dfa7800670c3fdba83153798bc628961f8d53d958b284599bcee7bb4ecbf68",
+      "artifactSizeBytes": 2246
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T15:16:02.397Z"
+}

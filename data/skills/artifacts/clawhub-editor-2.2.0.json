@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/editor@2.2.0",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.editor",
+  "skill": {
+    "id": 18431,
+    "skillKey": "clawhub-editor",
+    "name": "editor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "editor",
+    "url": "https://clawhub.ai/skills/editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/editor-1553cc62ff246044.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The final publishing layer for anything you write. Paste messy text and get something clear, strong, and ready to send."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agistack",
+      "userId": "s178h9d2k372k0rawyb3jd1h0d84vf26",
+      "displayName": "AGIstack",
+      "image": "https://avatars.githubusercontent.com/u/258523997?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 532,
+      "installsAllTime": 6,
+      "installsCurrent": 5,
+      "stars": 1,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "2.2.0",
+      "createdAt": 1773297795229,
+      "changelog": "editor v2.2.0\n\n- No user-facing changes; documentation updated only.\n- SKILL.md reviewed and saved with no visible modifications to functionality or protocol.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9d8348e684c30662f79a675fa6eee48dad631f6fa38023bc112c52906ad88fcb"
+}

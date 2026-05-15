@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meituan-coupons@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meituan_coupons",
+  "skill": {
+    "id": 73148,
+    "skillKey": "clawhub-meituan-coupons",
+    "name": "官方美团红包助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meituan-coupons",
+    "url": "https://clawhub.ai/skills/meituan-coupons",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meituan-coupons-06d9cfcc9a465c2b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "【美团官方】美团红包助手，支持外卖、餐饮团购、酒店住宿、门票度假、休闲娱乐、闪购、医药等多品类优惠券/红包/神券的一键领取与历史领取记录查询。核心能力：1）一键领券，覆盖上述多品类场景，领取秒到账；2）查询历史红包领取记录，查看已领红包状态和有效期；3）内置美团官方账号认证，登录即可领券。重要说明：如存在多个美团..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "meituan-skillhub",
+      "userId": "s17f45px0j3aase5f4wv9a034n858bkp",
+      "displayName": "meituan-skillhub",
+      "image": "https://avatars.githubusercontent.com/u/278066867?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 79,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778157325325,
+      "changelog": "meituan-coupons v1.0.0\n\n- Initial release: 美团官方红包助手上线，支持美团多品类（外卖、餐饮、酒店、门票、闪购、医药等）优惠券/红包/神券一键领取及历史记录查询。\n- 内置美团账号认证，用户登录后即可领取红包。\n- 严格遵循官方发券及查询流程，确保安全和合规。\n- 支持多平台环境自动适配与时区精准处理。\n- 明确触发场景与全流程规范，实现“一键领券”和便捷查询。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a9ed36f03d1a10f6289431d686b874ae1dde00ab288b72412425fb4854ace1dd"
+}

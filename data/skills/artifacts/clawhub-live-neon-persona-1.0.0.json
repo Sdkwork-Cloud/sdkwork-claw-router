@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/live-neon-persona@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.live_neon_persona",
+  "skill": {
+    "id": 54157,
+    "skillKey": "clawhub-live-neon-persona",
+    "name": "Live Neon Persona"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "live-neon-persona",
+    "url": "https://clawhub.ai/skills/live-neon-persona",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/live-neon-persona-4fa03e503608cf40.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage AI agent identities on the Live Neon platform — fetch identity, sync content, run discovery, review beliefs, build prompts"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liveneon",
+      "userId": "s178n3fwenkgb6pnsknzpahwx183e036",
+      "displayName": "LiveNeon.ai",
+      "image": "https://avatars.githubusercontent.com/u/261327260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774692531117,
+      "changelog": "live-neon-persona 1.0.0 — Initial release\n\n- Manage persistent, evolving AI agent identities on the Live Neon platform.\n- Fetch structured identities, sync content, run principle-based discovery, and build runtime prompts.\n- Review and approve beliefs & responsibilities with full provenance and approval workflows.\n- Integrates with diverse content sources (GitHub, web, RSS, social) to continuously update agent identity.\n- Command-line invocable; see SKILL.md for quick start and comprehensive API usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f6bc5f5aa9ab529c16660140c53bfdcf58e7451caafa1612763367d033180a6e"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/llm-evaluator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llm_evaluator",
+  "skill": {
+    "id": 22294,
+    "skillKey": "clawhub-llm-evaluator",
+    "name": "Llm Evaluator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llm-evaluator",
+    "url": "https://clawhub.ai/skills/llm-evaluator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llm-evaluator-d71872b06dc1fd4c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "LLM-as-a-Judge evaluation system using Langfuse. Score AI outputs on relevance, accuracy, hallucination, and helpfulness. Backfill scoring on historical trac..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiwithabidi",
+      "userId": "publishers:aiwithabidi",
+      "displayName": "aiwithabidi",
+      "image": "https://avatars.githubusercontent.com/u/208891229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 478,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772679152872,
+      "changelog": "- Initial release of the llm-evaluator skill.\n- Provides an LLM-as-a-Judge system for evaluating AI outputs using relevance, accuracy, hallucination, and helpfulness scores.\n- Integrates with Langfuse and uses GPT-5-nano for efficient automated judging.\n- Enables batch backfill scoring for historical traces and real-time evaluation of outputs.\n- Command-line interface for testing, scoring specific traces, and running backfills.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:182d198d0753381e1c454d253627b145171e60f2f80dcaa78f1d1c32bcdd5791"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kindle2md@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kindle2md",
+  "skill": {
+    "id": 31699,
+    "skillKey": "clawhub-kindle2md",
+    "name": "kindle2md"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kindle2md",
+    "url": "https://clawhub.ai/skills/kindle2md",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kindle2md-68bb4e5972330795.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert Kindle HTML notebook exports to Obsidian Markdown format. Use this when the user wants to convert a Kindle book notes HTML file (exported from the Ki..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "henrch1",
+      "userId": "s177x4g0mbwy4vaxmn1gyefb7s842nwa",
+      "displayName": "henrCh1",
+      "image": "https://avatars.githubusercontent.com/u/117563878?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 263,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773942220785,
+      "changelog": "- Initial release of kindle2md skill: Convert Kindle HTML notebook exports to Obsidian Markdown format.\n- Supports file path input, automatic book title extraction, and filename formatting.\n- Reads output directory from configuration; prompts if not set.\n- Runs included Python script for conversion and overwrites existing files.\n- Provides clear success and error messages to users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b0539596336e943ac7721da8f960e55999326aff6336d7279d0c2ec37b2a672b"
+}

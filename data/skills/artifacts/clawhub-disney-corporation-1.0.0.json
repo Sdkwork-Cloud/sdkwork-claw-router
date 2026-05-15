@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/disney-corporation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.disney_corporation",
+  "skill": {
+    "id": 47188,
+    "skillKey": "clawhub-disney-corporation",
+    "name": "Disney Corporation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "disney-corporation",
+    "url": "https://clawhub.ai/skills/disney-corporation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/disney-corporation-382113b38023fa9d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive insights into Disney's history, business model, key acquisitions, streaming growth, theme parks, and leadership impact."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 117,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777111608475,
+      "changelog": "Initial release of the disney-corporation skill.\n\n- Covers Disney’s evolution from a Kansas City animation studio to the world’s largest entertainment conglomerate\n- Provides a historical timeline of major milestones, acquisitions, and business achievements\n- Outlines Disney’s business model, revenue, and competitive advantages\n- Includes key financials and statistics for 2024\n- Offers interesting facts about Disney parks and classic films",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3620f510c72ffa335e04a27cc62afa46746ad86ad6f3a053328b64f1e0e344e9"
+}

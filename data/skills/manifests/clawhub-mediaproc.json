@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13607,
+  "uuid": "skill-clawhub-mediaproc",
+  "skillKey": "clawhub-mediaproc",
+  "name": "mediaproc",
+  "summary": "Process media files (video, audio, images) via a locked-down SSH container with ffmpeg, sox, and imagemagick. Use when the user wants to transcode video, pro...",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mediaproc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ciprian Mandache",
+      "features": [
+        "Process media files (video, audio, images) via a locked-down SSH container with ffmpeg, sox, an.",
+        "Use when the user wants to transcode video, pro..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mediaproc@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12934156?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mediaproc",
+      "url": "https://clawhub.ai/skills/mediaproc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mediaproc",
+    "url": "https://clawhub.ai/skills/mediaproc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mediaproc-8c867143eeb68a8b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mediaproc@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mediaproc-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6aefa0f83c206c35bbb22e1f0cc12ab4b7a44ebdf56cea302fb33684ef3680b3",
+      "artifactSizeBytes": 1959
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T11:52:49.971Z"
+}

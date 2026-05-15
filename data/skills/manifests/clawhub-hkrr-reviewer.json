@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70190,
+  "uuid": "skill-clawhub-hkrr-reviewer",
+  "skillKey": "clawhub-hkrr-reviewer",
+  "name": "潘天鸿Tims HKRR 内容审核建议框架",
+  "summary": "使用HKRR四要素（快乐、知识、共鸣、节奏）系统审核文章质量并提供评分与具体改进建议。",
+  "version": "10.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hkrr_reviewer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Agent外设王东旭",
+      "features": [
+        "使用HKRR四要素（快乐、知识、共鸣、节奏）系统审核文章质量并提供评分与具体改进建议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hkrr-reviewer@10.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/162526606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hkrr-reviewer",
+      "url": "https://clawhub.ai/skills/hkrr-reviewer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hkrr-reviewer",
+    "url": "https://clawhub.ai/skills/hkrr-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hkrr-reviewer-e72c4f748836163a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hkrr-reviewer@10.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hkrr-reviewer-10.0.0.json",
+      "version": "10.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ada54752b27e6d944db93c6fc9800a460cb37921cbab38543dfbc66f028ec45",
+      "artifactSizeBytes": 2044
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T02:59:52.184Z"
+}

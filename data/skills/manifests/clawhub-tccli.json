@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70824,
+  "uuid": "skill-clawhub-tccli",
+  "skillKey": "clawhub-tccli",
+  "name": "TCCLI - 腾讯云命令行工具",
+  "summary": "通过命令行方式管理和操作腾讯云200+云产品资源，支持实例查询、启动、停止、域名解析等功能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tccli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GuanM",
+      "features": [
+        "通过命令行方式管理和操作腾讯云200+云产品资源，支持实例查询、启动、停止、域名解析等功能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tccli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30427262?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tccli",
+      "url": "https://clawhub.ai/skills/tccli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tccli",
+    "url": "https://clawhub.ai/skills/tccli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tccli-81d84fb0f0411577.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tccli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tccli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bf49d612cdf57be8a84eb7dab4e84135f2ad8f92e0103429c46e74a1640e511d",
+      "artifactSizeBytes": 2232
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T08:50:38.941Z"
+}

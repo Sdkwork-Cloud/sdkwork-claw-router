@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10924,
+  "uuid": "skill-clawhub-investment-analyst",
+  "skillKey": "clawhub-investment-analyst",
+  "name": "Investment Analyst",
+  "summary": "Agente especialista em analise de investimentos com foco em analise fundamentalista e tecnica. Suporta: get_market_data, calculate_roi, portfolio_analysis, g...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.investment_analyst",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Edson Cavalca Jr.",
+      "features": [
+        "Agente especialista em analise de investimentos com foco em analise fundamentalista e tecnica",
+        "Suporta: get_market_data, calculate_roi, portfolio_analysis, g..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/investment-analyst@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60100458?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "investment-analyst",
+      "url": "https://clawhub.ai/skills/investment-analyst"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "investment-analyst",
+    "url": "https://clawhub.ai/skills/investment-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/investment-analyst-48e6651f77bc8017.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/investment-analyst@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-investment-analyst-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aa75bf780dda1816807866ac0458f7d74b74731f99a48b17fd28d30c27efbf4d",
+      "artifactSizeBytes": 2421
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T19:27:00.295Z"
+}

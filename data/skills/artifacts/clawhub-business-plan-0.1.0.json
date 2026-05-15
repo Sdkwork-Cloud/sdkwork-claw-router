@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/business-plan@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.business_plan",
+  "skill": {
+    "id": 9251,
+    "skillKey": "clawhub-business-plan",
+    "name": "Business Plan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "business-plan",
+    "url": "https://clawhub.ai/skills/business-plan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/business-plan-ab74cf42e0d1a4b5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Write, structure, and update a business plan for a solopreneur. Use when creating a plan from scratch, updating an existing plan after a pivot or new phase, or preparing a plan to share with investors, partners, or even just to clarify you."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jk-0001",
+      "userId": "s172spfmwsf80c1ymt8rffcz9h83gbzb",
+      "displayName": "Jatin Khatri",
+      "image": "https://avatars.githubusercontent.com/u/103896999?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3513,
+      "installsAllTime": 24,
+      "installsCurrent": 24,
+      "stars": 9,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770341763669,
+      "changelog": "Initial release of the \"business-plan\" skill for solopreneurs.\n\n- Guides users in writing, structuring, and updating a business plan tailored for a one-person business.\n- Covers all key sections: executive summary, company overview, problem/solution, market analysis, competitive landscape, business/revenue model, operations, marketing/sales, financial projections, and risk assessment.\n- Includes step-by-step prompts and rules for each section, ensuring clarity and practicality.\n- Contains specific instructions and templates to adapt outputs from market and competitor analysis skills.\n- Provides plan maintenance guidelines for regular updates and validation of assumptions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a9493ca686771906b73dd5e8323d8ddb555344f72c0b5f9dfa89c2203416f80c"
+}

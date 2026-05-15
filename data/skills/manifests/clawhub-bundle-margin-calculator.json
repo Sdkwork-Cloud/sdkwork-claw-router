@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32092,
+  "uuid": "skill-clawhub-bundle-margin-calculator",
+  "skillKey": "clawhub-bundle-margin-calculator",
+  "name": "Bundle Margin Calculator",
+  "summary": "Calculate whether a product bundle improves average order value without quietly destroying contribution margin. Use when teams want to test bundle structures...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bundle_margin_calculator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeroyCreates",
+      "features": [
+        "Calculate whether a product bundle improves average order value without quietly destroying cont.",
+        "Use when teams want to test bundle structures..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bundle-margin-calculator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130833525?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bundle-margin-calculator",
+      "url": "https://clawhub.ai/skills/bundle-margin-calculator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bundle-margin-calculator",
+    "url": "https://clawhub.ai/skills/bundle-margin-calculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bundle-margin-calculator-bd8483322b240b29.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bundle-margin-calculator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-bundle-margin-calculator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f67b2b276b56afcc2f2ad5b5ca0cd4dc9621edcd4f486632cf4243002f129bd7",
+      "artifactSizeBytes": 2012
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T13:22:00.877Z"
+}

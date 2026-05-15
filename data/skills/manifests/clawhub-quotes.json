@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14354,
+  "uuid": "skill-clawhub-quotes",
+  "skillKey": "clawhub-quotes",
+  "name": "Quotes",
+  "summary": "Build a personal quotes system for saving, discovering, and automatically surfacing meaningful words.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quotes",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Build a personal quotes system for saving, discovering, and automatically surfacing meaningful."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quotes@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quotes",
+      "url": "https://clawhub.ai/skills/quotes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quotes",
+    "url": "https://clawhub.ai/skills/quotes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quotes-37a6482867683ee3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quotes@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-quotes-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:87126318c55d4e70806596d9a1fe52bcd03b73e62f0e6f6bdb35d90fafbe7de2",
+      "artifactSizeBytes": 1768
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T01:54:15.829Z"
+}

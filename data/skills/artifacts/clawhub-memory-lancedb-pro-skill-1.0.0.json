@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-lancedb-pro-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_lancedb_pro_skill",
+  "skill": {
+    "id": 15322,
+    "skillKey": "clawhub-memory-lancedb-pro-skill",
+    "name": "Memory Lancedb Pro Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-lancedb-pro-skill",
+    "url": "https://clawhub.ai/skills/memory-lancedb-pro-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-lancedb-pro-skill-fcd0e2594e2a3805.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when working with memory-lancedb-pro, a production-grade long-term memory MCP plugin for OpenClaw AI agents. Use when installing, c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "darcy-wang",
+      "userId": "publishers:darcy-wang",
+      "displayName": "Darcy-Wang",
+      "image": "https://avatars.githubusercontent.com/u/22131131?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 634,
+      "installsAllTime": 41,
+      "installsCurrent": 37,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773833808522,
+      "changelog": "memory-lancedb-pro-skill v1.0.0\n\n- Initial release of memory-lancedb-pro skill for OpenClaw AI agents.\n- Provides step-by-step workflow for enabling optimal long-term memory configuration.\n- Includes detailed plan comparison (Full Power, Budget, Simple, Fully Local) with requirements and trade-offs.\n- Guides users through key setup, API verification, and safe config updates.\n- Supports advanced features: Smart Extraction, hybrid retrieval, memory lifecycle, multi-scope isolation, and self-improvement governance.\n- Ensures robust API key checks before making any configuration changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1d70b6075e848e406f1d1920be9ad4d6dbe46dfee9349da7c3ae356ccef91ab7"
+}

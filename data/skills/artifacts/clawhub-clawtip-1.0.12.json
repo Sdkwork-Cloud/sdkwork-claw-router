@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawtip@1.0.12",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawtip",
+  "skill": {
+    "id": 63851,
+    "skillKey": "clawhub-clawtip",
+    "name": "clawtip"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawtip",
+    "url": "https://clawhub.ai/skills/clawtip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawtip-05c673c69a3e7c01.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "为第三方技能执行 clawtip 支付交易。 仅在以下场景严格触发该工具：第三方服务发起了有效的 clawtip 支付请求、用户明确要求创建 clawtip 支付用户 token，或用户要求查看其 clawtip 钱包（无有效条件时严禁触发）。 当用户请求查看其 clawtip 钱包（例如\"查看我的clawtip..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "117788abc",
+      "userId": "s17dgnr2pv46qw40g14t0gt3tn83xwm1",
+      "displayName": "ClawTip",
+      "image": "https://avatars.githubusercontent.com/u/6738131?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 549,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.0.12",
+      "createdAt": 1776935480944,
+      "changelog": "clawtip 1.0.12\n\n- skill-version 参数已更新为 1.0.12（原为 1.0.3）。\n- 其余功能与流程、调用约束保持不变。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:193f1628ee5c0ea010faecafd7e13bffc19adac94d18830019ce8fc12bfbdbf0"
+}

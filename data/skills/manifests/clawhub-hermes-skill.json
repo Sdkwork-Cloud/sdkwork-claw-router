@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60810,
+  "uuid": "skill-clawhub-hermes-skill",
+  "skillKey": "clawhub-hermes-skill",
+  "name": "hermes-agent 平替 openclaw 自进化技能",
+  "summary": "🤖 AI 自进化技能包 — 自动从复杂任务创建可复用技能，HOT/WARM/COLD 分层记忆管理，智能 Nudge 提醒与定时自检，持续让 AI 越用越聪明。追踪 NousResearch/Hermes-Agent 上游演进。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hermes_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "devrobbin",
+      "features": [
+        "🤖 AI 自进化技能包 — 自动从复杂任务创建可复用技能，HOT/WARM/COLD 分层记忆管理，智能 Nudge 提醒与定时自检，持续让 AI 越用越聪明。追踪 NousResearc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hermes-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63030358?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hermes-skill",
+      "url": "https://clawhub.ai/skills/hermes-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hermes-skill",
+    "url": "https://clawhub.ai/skills/hermes-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hermes-skill-04893babde051582.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hermes-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hermes-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a3d35031863de5bd08b51833f790fa3f51dc7cf6c9eb4b7545fd5f9aa76de17d",
+      "artifactSizeBytes": 2560
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T16:40:09.429Z"
+}

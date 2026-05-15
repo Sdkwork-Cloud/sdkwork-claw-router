@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23456,
+  "uuid": "skill-clawhub-org-health-diagnostic",
+  "skillKey": "clawhub-org-health-diagnostic",
+  "name": "Org Health Diagnostic",
+  "summary": "Cross-functional organizational health check combining signals from all C-suite roles. Scores 8 dimensions on a traffic-light scale with drill-down recommend...",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.org_health_diagnostic",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alireza Rezvani",
+      "features": [
+        "Cross-functional organizational health check combining signals from all C-suite roles",
+        "Scores 8 dimensions on a traffic-light scale with drill-down recommend..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/org-health-diagnostic@2.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5697919?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "org-health-diagnostic",
+      "url": "https://clawhub.ai/skills/org-health-diagnostic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "org-health-diagnostic",
+    "url": "https://clawhub.ai/skills/org-health-diagnostic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/org-health-diagnostic-8805000fb346c799.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/org-health-diagnostic@2.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-org-health-diagnostic-2.1.1.json",
+      "version": "2.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8642ab06008b10c4d5d82ac3fca647073f5f78976ebf6fcc66387c4e08b8969b",
+      "artifactSizeBytes": 1969
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T00:35:46.368Z"
+}

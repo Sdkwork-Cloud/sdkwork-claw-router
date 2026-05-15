@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51748,
+  "uuid": "skill-clawhub-ai-travel-agent",
+  "skillKey": "clawhub-ai-travel-agent",
+  "name": "AI Travel Agent",
+  "summary": "Personal travel planning assistant. Requires a SerpAPI key (stored in ~/.serpapi_credentials). Searches real flights and hotels via Google (SerpAPI), checks...",
+  "version": "1.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_travel_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Floogles",
+      "features": [
+        "Personal travel planning assistant",
+        "Requires a SerpAPI key (stored in ~/.serpapi_credentials)",
+        "Searches real flights and hotels via Google (SerpAPI), checks..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-travel-agent@1.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/114444239?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-travel-agent",
+      "url": "https://clawhub.ai/skills/ai-travel-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-travel-agent",
+    "url": "https://clawhub.ai/skills/ai-travel-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-travel-agent-4b4fa16215cc085f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-travel-agent@1.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-travel-agent-1.1.4.json",
+      "version": "1.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:523b9ed3f8aa2cb169fae2cbd7aa8ac75e19ce44031c4693d80cffa651840405",
+      "artifactSizeBytes": 2036
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T22:46:39.220Z"
+}

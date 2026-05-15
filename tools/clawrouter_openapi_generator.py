@@ -1,5 +1,6 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
+# clawrouter-openapi-strong-types-marker
 import argparse
 import json
 import re
@@ -46,13 +47,24 @@ class ClawRouterOpenApiGenerator:
         "app": "SdkworkAppClient",
         "backend": "SdkworkBackendClient",
     }
+    PUBLIC_IAM_OPERATION_IDS = {
+        "oauthAuthorizationUrls.retrieve",
+        "oauthSessions.create",
+        "passwordResetRequests.create",
+        "passwordResets.create",
+        "registrations.create",
+        "sessions.create",
+        "verificationCodes.create",
+        "verificationCodes.verify",
+    }
+    REFRESH_TOKEN_OPERATION_IDS = {"sessions.refresh"}
     DEFAULT_QUERY_PARAMETERS = [
-        {"name": "pageNo", "in": "query", "required": False, "schema": {"type": "integer", "format": "int32"}},
-        {"name": "pageSize", "in": "query", "required": False, "schema": {"type": "integer", "format": "int32"}},
-        {"name": "keyword", "in": "query", "required": False, "schema": {"type": "string"}},
+        {"name": "page", "in": "query", "required": False, "schema": {"type": "integer", "format": "int32"}},
+        {"name": "page_size", "in": "query", "required": False, "schema": {"type": "integer", "format": "int32"}},
+        {"name": "q", "in": "query", "required": False, "schema": {"type": "string"}},
         {"name": "status", "in": "query", "required": False, "schema": {"type": "string"}},
-        {"name": "startTime", "in": "query", "required": False, "schema": {"type": "string", "format": "date-time"}},
-        {"name": "endTime", "in": "query", "required": False, "schema": {"type": "string", "format": "date-time"}},
+        {"name": "start_time", "in": "query", "required": False, "schema": {"type": "string", "format": "date-time"}},
+        {"name": "end_time", "in": "query", "required": False, "schema": {"type": "string", "format": "date-time"}},
     ]
 
     def __init__(
@@ -105,19 +117,25 @@ class ClawRouterOpenApiGenerator:
                 schema_components,
             )
 
+        components = self._components(operations, operation_ids, schema_components)
+        self._normalize_component_schemas(components)
+
         return {
-            "openapi": "3.0.3",
+            "openapi": "3.1.2",
+            "jsonSchemaDialect": "https://json-schema.org/draft/2020-12/schema",
             "info": {
                 "title": self.TITLES[surface],
                 "version": self._version(manifest),
                 "description": f"Generated from generated/api/api-contract-manifest.json for {boundary['sdk_client']}.",
             },
-            "servers": [{"url": self.SERVERS[surface]}],
+            "servers": [{"url": self.SERVERS[surface], "description": f"Local {surface} API server"}],
+            "security": [{"AuthToken": [], "SdkworkAccessToken": []}],
+            "tags": self._tags(operations),
             "x-sdk-client": boundary["sdk_client"],
             "x-sdk-family": boundary.get("sdk_family", surface),
             "x-api-prefix": boundary["api_prefix"],
             "paths": paths,
-            "components": self._components(operations, operation_ids, schema_components),
+            "components": components,
         }
 
     def render_json(self, surface: str) -> str:
@@ -166,8 +184,7 @@ class ClawRouterOpenApiGenerator:
             parameters.extend(self._idempotency_parameters())
         elif bool(operation.get("request_id_header")):
             parameters.append(self._request_id_parameter())
-        if method == "GET":
-            parameters.extend(self._operation_query_parameters(operation))
+        parameters.extend(self._operation_query_parameters(operation, method))
 
         spec: dict[str, Any] = {
             "tags": [self._string(operation.get("tag")) or "router"],
@@ -184,30 +201,81 @@ class ClawRouterOpenApiGenerator:
                         },
                     },
                 },
-                "400": {"description": "Bad Request", "content": {"application/json": {"schema": {"$ref": "#/components/schemas/ErrorResponse"}}}},
-                "401": {"description": "Unauthorized", "content": {"application/json": {"schema": {"$ref": "#/components/schemas/ErrorResponse"}}}},
-                "500": {"description": "Server Error", "content": {"application/json": {"schema": {"$ref": "#/components/schemas/ErrorResponse"}}}},
+                "400": self._problem_response("Bad Request"),
+                "401": self._problem_response("Unauthorized"),
+                "500": self._problem_response("Server Error"),
             },
             "x-source-file": self._string(operation.get("source")),
             "x-route-scope": self._string(operation.get("route_scope")),
             "x-contract-kind": self._string(operation.get("kind")),
             "x-read-sources": self._string_list(operation.get("read_sources")),
             "x-write-tables": self._string_list(operation.get("write_tables")),
+            "x-file-targets": self._string_list(operation.get("file_targets")),
         }
+        spec["security"] = self._operation_security(operation_id)
         sdk_domain = self._string(operation.get("sdk_domain"))
         if sdk_domain:
+            spec["x-sdkwork-domain"] = sdk_domain
             spec["x-sdk-domain"] = sdk_domain
-        if method in {"POST", "PUT", "PATCH"}:
-            request_schema_ref = self._operation_request_schema(operation)
+        spec["x-sdkwork-resource"] = self._sdkwork_resource(operation_id)
+        if method in {"POST", "PUT", "PATCH"} and self._operation_has_request_body(operation):
+            request_schema_ref = self._operation_request_schema(operation, operation_id)
+            request_content_type = self._request_content_type(operation)
             spec["requestBody"] = {
                 "required": self._request_body_required(operation, request_schema_ref),
+                "description": self._request_body_description(operation, operation_id),
                 "content": {
-                    "application/json": {
+                    request_content_type: {
                         "schema": request_schema_ref,
                     },
                 },
             }
         return spec
+
+    def _problem_response(self, description: str) -> dict[str, Any]:
+        return {
+            "description": description,
+            "content": {
+                "application/problem+json": {
+                    "schema": {"$ref": "#/components/schemas/ProblemDetail"},
+                },
+            },
+        }
+
+    def _tags(self, operations: list[dict[str, Any]]) -> list[dict[str, str]]:
+        tags = sorted(
+            {
+                self._string(operation.get("tag")) or "router"
+                for operation in operations
+                if isinstance(operation, dict)
+            }
+        )
+        return [
+            {
+                "name": tag,
+                "description": f"{self._tag_label(tag)} operations exposed by Claw Router.",
+            }
+            for tag in tags
+        ]
+
+    def _tag_label(self, tag: str) -> str:
+        words = [word for word in re.split(r"[^A-Za-z0-9]+", tag) if word]
+        return " ".join(words) if words else "Router"
+
+    def _request_body_description(self, operation: dict[str, Any], operation_id: str) -> str:
+        summary = self._summary(operation, operation_id)
+        return f"Typed request payload for {summary.lower()}."
+
+    def _operation_has_request_body(self, operation: dict[str, Any]) -> bool:
+        if self._payload_schema(operation.get("request_schema")) is not None:
+            return True
+        if isinstance(operation.get("request_body_required"), bool) and not operation["request_body_required"]:
+            return False
+        return True
+
+    def _request_content_type(self, operation: dict[str, Any]) -> str:
+        request_content_type = self._string(operation.get("request_content_type"))
+        return request_content_type or "application/json"
 
     def _request_body_required(
         self,
@@ -216,7 +284,7 @@ class ClawRouterOpenApiGenerator:
     ) -> bool:
         if isinstance(operation.get("request_body_required"), bool):
             return bool(operation["request_body_required"])
-        return request_schema_ref != {"$ref": "#/components/schemas/OperationRequest"}
+        return self._payload_schema(operation.get("request_schema")) is not None
 
     def _success_response_schema(
         self,
@@ -224,14 +292,12 @@ class ClawRouterOpenApiGenerator:
         operation_id: str,
         schema_components: dict[str, Any],
     ) -> dict[str, str]:
-        if self._operation_data_schema(operation, schema_components) is None:
-            return {"$ref": "#/components/schemas/PlusApiResult"}
         return {"$ref": f"#/components/schemas/{self._operation_result_component_name(operation_id)}"}
 
-    def _operation_request_schema(self, operation: dict[str, Any]) -> dict[str, str]:
+    def _operation_request_schema(self, operation: dict[str, Any], operation_id: str) -> dict[str, str]:
         payload_schema = self._payload_schema(operation.get("request_schema"))
         if payload_schema is None:
-            return {"$ref": "#/components/schemas/OperationRequest"}
+            return {"$ref": f"#/components/schemas/{self._operation_request_component_name(operation_id)}"}
         return {"$ref": f"#/components/schemas/{payload_schema[0]}"}
 
     def _path_parameter(self, name: str) -> dict[str, Any]:
@@ -240,6 +306,7 @@ class ClawRouterOpenApiGenerator:
             "in": "path",
             "required": True,
             "schema": {"type": "string"},
+            "description": f"{self._field_label(name).capitalize()} path parameter.",
         }
 
     def _idempotency_parameters(self) -> list[dict[str, Any]]:
@@ -263,7 +330,7 @@ class ClawRouterOpenApiGenerator:
             "description": "Optional caller-provided request identifier for audit correlation.",
         }
 
-    def _operation_query_parameters(self, operation: dict[str, Any]) -> list[dict[str, Any]]:
+    def _operation_query_parameters(self, operation: dict[str, Any], method: str) -> list[dict[str, Any]]:
         declared = operation.get("query_parameters")
         if isinstance(declared, list) and declared:
             parameters: list[dict[str, Any]] = []
@@ -285,18 +352,24 @@ class ClawRouterOpenApiGenerator:
                 description = self._string(parameter.get("description"))
                 if description:
                     item["description"] = description
+                else:
+                    item["description"] = f"{self._field_label(name).capitalize()} query parameter."
+                for field in ("style", "explode", "allowReserved", "deprecated", "allowEmptyValue"):
+                    if field in parameter:
+                        item[field] = parameter[field]
                 parameters.append(item)
             if parameters:
                 return parameters
         if operation.get("query_parameters_declared") is True:
             return []
-        return [dict(parameter) for parameter in self.DEFAULT_QUERY_PARAMETERS]
+        return []
 
     def _description(self, operation: dict[str, Any]) -> str:
         read_sources = ", ".join(self._string_list(operation.get("read_sources"))) or "none"
         write_tables = ", ".join(self._string_list(operation.get("write_tables"))) or "none"
+        file_targets = ", ".join(self._string_list(operation.get("file_targets"))) or "none"
         description = self._string(operation.get("description"))
-        suffix = f"Reads {read_sources}. Writes {write_tables}."
+        suffix = f"Reads {read_sources}. Writes {write_tables}. File targets {file_targets}."
         if description:
             return f"{description} {suffix}"
         return f"{self._summary(operation, self._string(operation.get('operation')))}. {suffix}"
@@ -364,27 +437,21 @@ class ClawRouterOpenApiGenerator:
         return [word for word in re.split(r"[^A-Za-z0-9]+", spaced) if word]
 
     def _operation_ids(self, operations: list[dict[str, Any]]) -> dict[int, str]:
-        counts: dict[str, int] = {}
-        for operation in operations:
-            base = self._safe_operation_id(self._string(operation.get("operation")) or "operation")
-            counts[base] = counts.get(base, 0) + 1
-
         result: dict[int, str] = {}
         used: set[str] = set()
         for operation in operations:
-            base = self._safe_operation_id(self._string(operation.get("operation")) or "operation")
-            if counts[base] > 1:
-                candidate = self._safe_operation_id(f"{self._string(operation.get('tag'))}_{base}")
-            else:
-                candidate = base
-            unique = candidate
-            suffix = 2
-            while unique in used:
-                unique = f"{candidate}{suffix}"
-                suffix += 1
-            used.add(unique)
-            result[id(operation)] = unique
+            base = self._operation_id_base(operation)
+            if base in used:
+                raise ValueError(f"duplicate OpenAPI operationId: {base}")
+            used.add(base)
+            result[id(operation)] = base
         return result
+
+    def _operation_id_base(self, operation: dict[str, Any]) -> str:
+        raw = self._string(operation.get("operation_id")) or self._string(operation.get("operation")) or "operation"
+        if re.match(r"^[a-z][A-Za-z0-9]*(?:\.[a-z][A-Za-z0-9]*)+$", raw):
+            return raw
+        raise ValueError(f"OpenAPI operation_id must use dotted lowerCamel segments: {raw}")
 
     def _safe_operation_id(self, value: str) -> str:
         parts = [part for part in re.split(r"[^A-Za-z0-9]+", value) if part]
@@ -397,6 +464,32 @@ class ClawRouterOpenApiGenerator:
             candidate = f"operation{candidate[0].upper()}{candidate[1:]}"
         return candidate
 
+    def _sdkwork_resource(self, operation_id: str) -> str:
+        parts = [part for part in operation_id.split(".") if part]
+        if len(parts) <= 1:
+            return ""
+        return ".".join(parts[:-1])
+
+    def _component_safe_operation_name(self, operation_id: str) -> str:
+        if re.match(r"^[A-Za-z_][A-Za-z0-9_]*$", operation_id):
+            return operation_id
+        parts = [part for part in re.split(r"[^A-Za-z0-9]+", operation_id) if part]
+        if not parts:
+            return "operation"
+        first = parts[0][0].lower() + parts[0][1:]
+        rest = "".join(part[0].upper() + part[1:] for part in parts[1:])
+        candidate = first + rest
+        if not re.match(r"^[A-Za-z_]", candidate):
+            candidate = f"operation{candidate[0].upper()}{candidate[1:]}"
+        return candidate
+
+    def _operation_security(self, operation_id: str) -> list[dict[str, list[str]]]:
+        if operation_id in self.PUBLIC_IAM_OPERATION_IDS:
+            return []
+        if operation_id in self.REFRESH_TOKEN_OPERATION_IDS:
+            return [{"AuthToken": [], "SdkworkAccessToken": []}]
+        return [{"AuthToken": [], "SdkworkAccessToken": []}]
+
     def _components(
         self,
         operations: list[dict[str, Any]],
@@ -404,63 +497,302 @@ class ClawRouterOpenApiGenerator:
         schema_components: dict[str, Any],
     ) -> dict[str, Any]:
         schemas = {
+            "JsonValue": {
+                "description": "JSON value accepted by flexible Claw Router metadata and extension maps.",
+                "oneOf": [
+                    {"type": "string", "description": "String JSON value."},
+                    {"type": "number", "description": "Number JSON value."},
+                    {"type": "integer", "description": "Integer JSON value."},
+                    {"type": "boolean", "description": "Boolean JSON value."},
+                    {"type": "array", "items": {"$ref": "#/components/schemas/JsonValue"}, "description": "Array JSON value."},
+                    {"$ref": "#/components/schemas/JsonObject", "description": "Object JSON value."},
+                    {"$ref": "#/components/schemas/JsonNull", "description": "Null JSON value."},
+                ],
+            },
+            "JsonNull": {
+                "type": "null",
+                "description": "JSON null value.",
+            },
+            "JsonObject": {
+                "type": "object",
+                "additionalProperties": {"$ref": "#/components/schemas/JsonValue"},
+                "description": "JSON object with typed JSON values.",
+            },
+            "NoData": {
+                "type": "object",
+                "additionalProperties": False,
+                "properties": {},
+                "description": "Closed empty payload for operations that complete without business data.",
+            },
             "PlusApiResult": {
                 "type": "object",
                 "additionalProperties": False,
+                "description": "Base Claw Router response envelope. Operation-specific Result schemas carry concrete business data.",
+                "required": ["code"],
                 "properties": {
                     "code": {"type": "string", "description": "Business response code."},
                     "msg": {"type": "string", "description": "Java-compatible response message field."},
                     "message": {"type": "string", "description": "Human-readable response message."},
-                    "data": {"$ref": "#/components/schemas/OperationResponse"},
+                    "data": self._no_data_schema("Default empty data payload for the base response envelope."),
                 },
             },
-            "OperationRequest": {
+            "FieldError": {
                 "type": "object",
-                "additionalProperties": True,
-                "description": "Operation-specific request body. Concrete DTOs are closed in Rust handlers before SDK regeneration.",
-            },
-            "OperationResponse": {
-                "type": "object",
-                "additionalProperties": True,
-                "description": "Operation-specific response payload wrapped by PlusApiResult.",
-            },
-            "PageResult": {
-                "type": "object",
-                "additionalProperties": True,
+                "additionalProperties": False,
+                "description": "Field-level validation problem detail.",
                 "properties": {
-                    "pageNo": {"type": "integer", "format": "int32"},
-                    "pageSize": {"type": "integer", "format": "int32"},
-                    "total": {"type": "integer", "format": "int64"},
-                    "records": {"type": "array", "items": {"type": "object", "additionalProperties": True}},
+                    "field": {"type": "string", "description": "Problem field path."},
+                    "message": {"type": "string", "description": "Human-readable field validation message."},
+                    "code": {"type": "string", "description": "Machine-readable field validation code."},
                 },
             },
-            "ErrorResponse": {
+            "ProblemDetail": {
                 "type": "object",
-                "additionalProperties": True,
+                "additionalProperties": {"$ref": "#/components/schemas/JsonValue"},
+                "description": "RFC 9457 problem details error response.",
+                "required": ["type", "title", "status"],
                 "properties": {
-                    "code": {"type": "string"},
-                    "msg": {"type": "string"},
-                    "message": {"type": "string"},
+                    "type": {"type": "string", "format": "uri-reference", "description": "Problem type URI reference."},
+                    "title": {"type": "string", "description": "Short human-readable problem title."},
+                    "status": {
+                        "type": "integer",
+                        "minimum": 100,
+                        "maximum": 599,
+                        "description": "HTTP status code generated by the origin server.",
+                    },
+                    "detail": {"type": "string", "description": "Human-readable explanation specific to this occurrence."},
+                    "instance": {"type": "string", "description": "URI reference identifying this occurrence."},
+                    "code": {"type": "string", "description": "SDKWork machine-readable error code."},
+                    "traceId": {"type": "string", "description": "Trace identifier for support and audit correlation."},
+                    "errors": {
+                        "type": "array",
+                        "items": {"$ref": "#/components/schemas/FieldError"},
+                        "description": "Field-level validation errors.",
+                    },
                 },
             },
         }
         for name, schema in self._operation_payload_schemas(operations).items():
             schemas[name] = schema
+        for name, schema in self._operation_fallback_request_schemas(operations, operation_ids).items():
+            schemas[name] = schema
         for name, schema in self._operation_result_schemas(operations, operation_ids, schema_components).items():
             schemas[name] = schema
         for name, schema in schema_components.items():
             schemas.setdefault(name, schema)
-        return {"schemas": schemas}
+        return {
+            "schemas": schemas,
+            "securitySchemes": {
+                "AuthToken": {
+                    "type": "http",
+                    "scheme": "bearer",
+                    "bearerFormat": "SDKWork auth token",
+                },
+                "SdkworkAccessToken": {
+                    "type": "apiKey",
+                    "in": "header",
+                    "name": "Sdkwork-Access-Token",
+                },
+            },
+        }
+
+    def _normalize_component_schemas(self, components: dict[str, Any]) -> None:
+        schemas = components.get("schemas")
+        if not isinstance(schemas, dict):
+            return
+
+        for schema_name, schema in list(schemas.items()):
+            if not isinstance(schema, dict):
+                continue
+            self._normalize_schema_node(schema, schema_name=schema_name, location=f"#/components/schemas/{schema_name}")
+
+    def _normalize_schema_node(self, node: Any, *, schema_name: str, location: str) -> None:
+        if isinstance(node, list):
+            for index, item in enumerate(node):
+                self._normalize_schema_node(item, schema_name=schema_name, location=f"{location}[{index}]")
+            return
+        if not isinstance(node, dict):
+            return
+        schema_ref = node.get("$ref")
+        if isinstance(schema_ref, str):
+            if node.get("nullable") is True:
+                description = node.get("description") or self._default_schema_node_description(
+                    schema_name=schema_name,
+                    location=location,
+                    node=node,
+                )
+                field_label = self._field_label(self._property_name_from_location(location) or "value")
+                node.clear()
+                node["oneOf"] = [
+                    {
+                        "allOf": [{"$ref": schema_ref}],
+                        "description": description,
+                    },
+                    {
+                        "allOf": [{"$ref": "#/components/schemas/JsonNull"}],
+                        "description": f"Null variant accepted by {field_label}.",
+                    },
+                ]
+                node["description"] = description
+                return
+            description = node.get("description")
+            if isinstance(description, str) and description.strip() and len(node) > 1:
+                node.clear()
+                node["allOf"] = [{"$ref": schema_ref}]
+                node["description"] = description
+            return
+
+        if node.get("nullable") is True and "type" not in node:
+            all_of = node.get("allOf")
+            if isinstance(all_of, list) and len(all_of) == 1 and isinstance(all_of[0], dict):
+                base_schema = {
+                    key: value
+                    for key, value in all_of[0].items()
+                    if key not in {"description", "nullable"}
+                }
+                description = node.get("description") or all_of[0].get("description")
+                node.pop("allOf", None)
+                node.update(base_schema)
+                node["nullable"] = True
+                if description:
+                    node["description"] = description
+
+        schema_type = node.get("type")
+        if schema_type == "object":
+            if "additionalProperties" not in node:
+                node["additionalProperties"] = False
+            elif node.get("additionalProperties") is True:
+                node["additionalProperties"] = {"$ref": "#/components/schemas/JsonValue"}
+        description = node.get("description")
+        if not isinstance(description, str) or not description.strip():
+            node["description"] = self._default_schema_node_description(schema_name=schema_name, location=location, node=node)
+
+        additional_properties = node.get("additionalProperties")
+        if isinstance(additional_properties, dict):
+            self._wrap_ref_schema_with_description(
+                additional_properties,
+                description=self._default_schema_node_description(
+                    schema_name=schema_name,
+                    location=f"{location}.additionalProperties",
+                    node=additional_properties,
+                ),
+            )
+            self._normalize_schema_node(
+                additional_properties,
+                schema_name=schema_name,
+                location=f"{location}.additionalProperties",
+            )
+
+        properties = node.get("properties")
+        if isinstance(properties, dict):
+            for property_name, property_schema in properties.items():
+                if not isinstance(property_schema, dict):
+                    continue
+                if not isinstance(property_schema.get("description"), str) or not property_schema["description"].strip():
+                    property_schema["description"] = self._default_property_description(
+                        schema_name=schema_name,
+                        property_name=property_name,
+                    )
+                self._wrap_ref_schema_with_description(
+                    property_schema,
+                    description=property_schema["description"],
+                )
+                self._normalize_schema_node(
+                    property_schema,
+                    schema_name=schema_name,
+                    location=f"{location}.properties.{property_name}",
+                )
+
+        items = node.get("items")
+        if isinstance(items, dict):
+            self._normalize_schema_node(items, schema_name=schema_name, location=f"{location}.items")
+
+        for union_key in ("oneOf", "anyOf", "allOf"):
+            branches = node.get(union_key)
+            if not isinstance(branches, list):
+                continue
+            for index, branch in enumerate(branches):
+                if isinstance(branch, dict) and union_key in {"oneOf", "anyOf"}:
+                    if not isinstance(branch.get("description"), str) or not branch["description"].strip():
+                        branch["description"] = self._default_union_branch_description(
+                            property_name=self._property_name_from_location(location),
+                            branch=branch,
+                        )
+                    self._wrap_ref_schema_with_description(
+                        branch,
+                        description=branch["description"],
+                    )
+                self._normalize_schema_node(
+                    branch,
+                    schema_name=schema_name,
+                    location=f"{location}.{union_key}[{index}]",
+                )
+
+    def _wrap_ref_schema_with_description(self, schema: dict[str, Any], *, description: str) -> None:
+        schema_ref = schema.get("$ref")
+        if not isinstance(schema_ref, str):
+            return
+        if schema.get("nullable") is True:
+            schema.setdefault("description", description)
+            return
+        schema.clear()
+        schema["allOf"] = [{"$ref": schema_ref}]
+        schema["description"] = description
+
+    def _default_schema_node_description(self, *, schema_name: str, location: str, node: dict[str, Any]) -> str:
+        if location == f"#/components/schemas/{schema_name}":
+            return f"{self._schema_label(schema_name).capitalize()} schema exposed by Claw Router."
+        property_name = self._property_name_from_location(location)
+        if property_name:
+            return self._default_property_description(schema_name=schema_name, property_name=property_name)
+        schema_type = node.get("type")
+        if isinstance(schema_type, str):
+            return f"{schema_type.capitalize()} schema used by {self._schema_label(schema_name)}."
+        return f"Schema fragment used by {self._schema_label(schema_name)}."
+
+    def _default_property_description(self, *, schema_name: str, property_name: str) -> str:
+        return f"{self._field_label(property_name).capitalize()} field on {self._schema_label(schema_name)}."
+
+    def _default_union_branch_description(self, *, property_name: str, branch: dict[str, Any]) -> str:
+        field_label = self._field_label(property_name) if property_name else "value"
+        ref = branch.get("$ref")
+        if isinstance(ref, str):
+            return f"{field_label.capitalize()} variant using {self._schema_label(ref.rsplit('/', 1)[-1])}."
+        schema_type = branch.get("type")
+        if isinstance(schema_type, str):
+            return f"{schema_type.capitalize()} variant accepted by {field_label}."
+        return f"Schema variant accepted by {field_label}."
+
+    def _property_name_from_location(self, location: str) -> str:
+        match = re.search(r"\.properties\.([^.[]+)(?:\.|$)", location)
+        return match.group(1) if match else ""
+
+    def _schema_label(self, schema_name: str) -> str:
+        return " ".join(self._identifier_words(schema_name)).lower()
+
+    def _field_label(self, field_name: str) -> str:
+        return " ".join(self._identifier_words(field_name)).lower() or field_name
+
+    def _identifier_words(self, identifier: str) -> list[str]:
+        return re.findall(r"[A-Z]+(?=[A-Z][a-z]|\d|$)|[A-Z]?[a-z]+|\d+", identifier.replace("_", " "))
 
     def _operation_payload_schemas(self, operations: list[dict[str, Any]]) -> dict[str, Any]:
         result: dict[str, Any] = {}
         for operation in operations:
             for field in ("request_schema", "response_schema"):
+                if field == "request_schema" and not self._operation_has_request_body(operation):
+                    continue
                 payload_schema = self._payload_schema(operation.get(field))
                 if payload_schema is None:
                     continue
                 name, schema = payload_schema
-                result.setdefault(name, self._lift_named_nested_schemas(schema, result, {name}))
+                if name in {"NoData", "PlusApiResult"}:
+                    continue
+                if self._is_self_schema_ref(name, schema):
+                    continue
+                lifted_schema = self._lift_named_nested_schemas(schema, result, {name})
+                if name not in result or self._is_self_schema_ref(name, result[name]):
+                    result[name] = lifted_schema
         return result
 
     def _lift_named_nested_schemas(
@@ -497,7 +829,7 @@ class ClawRouterOpenApiGenerator:
             components[nested_name] = component_schema
             if value.get("nullable") is True:
                 return {
-                    "allOf": [{"$ref": f"#/components/schemas/{nested_name}"}],
+                    "$ref": f"#/components/schemas/{nested_name}",
                     "nullable": True,
                 }
             return {"$ref": f"#/components/schemas/{nested_name}"}
@@ -529,7 +861,7 @@ class ClawRouterOpenApiGenerator:
         for operation in operations:
             data_schema = self._operation_data_schema(operation, schema_components)
             if data_schema is None:
-                continue
+                data_schema = self._no_data_schema("No business data returned by this operation.")
             operation_id = operation_ids[id(operation)]
             result[self._operation_result_component_name(operation_id)] = {
                 "type": "object",
@@ -545,9 +877,38 @@ class ClawRouterOpenApiGenerator:
             }
         return result
 
+    def _no_data_schema(self, description: str) -> dict[str, Any]:
+        return {
+            "allOf": [{"$ref": "#/components/schemas/NoData"}],
+            "description": description,
+        }
+
+    def _operation_fallback_request_schemas(
+        self,
+        operations: list[dict[str, Any]],
+        operation_ids: dict[int, str],
+    ) -> dict[str, Any]:
+        result: dict[str, Any] = {}
+        for operation in operations:
+            method = self._string(operation.get("api_method")).upper()
+            if method not in {"POST", "PUT", "PATCH"} or not self._operation_has_request_body(operation):
+                continue
+            if self._payload_schema(operation.get("request_schema")) is not None:
+                continue
+            operation_id = operation_ids[id(operation)]
+            result[self._operation_request_component_name(operation_id)] = {
+                "type": "object",
+                "additionalProperties": False,
+                "description": f"Explicit empty request body for {self._summary(operation, operation_id).lower()}.",
+                "properties": {},
+            }
+        return result
+
     def _operation_data_schema(self, operation: dict[str, Any], schema_components: dict[str, Any]) -> dict[str, str] | None:
         response_schema = self._payload_schema(operation.get("response_schema"))
         if response_schema is not None:
+            if response_schema[0] in {"PlusApiResult", "NoData"}:
+                return None
             return {"$ref": f"#/components/schemas/{response_schema[0]}"}
         if self._string(operation.get("api_method")).upper() != "GET":
             return None
@@ -562,10 +923,17 @@ class ClawRouterOpenApiGenerator:
             return record_ref
         return {"type": "array", "items": record_ref}
 
+    def _operation_request_component_name(self, operation_id: str) -> str:
+        if not operation_id:
+            return "OperationRequest"
+        safe = self._component_safe_operation_name(operation_id)
+        return safe[0].upper() + safe[1:] + "Request"
+
     def _operation_result_component_name(self, operation_id: str) -> str:
         if not operation_id:
             return "OperationResult"
-        return operation_id[0].upper() + operation_id[1:] + "Result"
+        safe = self._component_safe_operation_name(operation_id)
+        return safe[0].upper() + safe[1:] + "Result"
 
     def _record_component_name(self, table_name: str) -> str:
         return "".join(part.capitalize() for part in table_name.split("_")) + "Record"
@@ -591,9 +959,17 @@ class ClawRouterOpenApiGenerator:
             return None
         name = value.get("name")
         schema = value.get("schema")
-        if not isinstance(name, str) or not isinstance(schema, dict):
+        if not isinstance(name, str):
             return None
-        return name, schema
+        if isinstance(schema, dict):
+            return name, schema
+        inline_schema = {key: item for key, item in value.items() if key != "name"}
+        if not inline_schema:
+            return None
+        return name, inline_schema
+
+    def _is_self_schema_ref(self, name: str, schema: dict[str, Any]) -> bool:
+        return schema == {"$ref": f"#/components/schemas/{name}"}
 
     def _load_manifest(self) -> dict[str, Any]:
         if not self.manifest_path.exists():

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18090,
+  "uuid": "skill-clawhub-brw-plan-my-day",
+  "skillKey": "clawhub-brw-plan-my-day",
+  "name": "Plan My Day",
+  "summary": "Generate an energy-optimized, time-blocked daily plan based on circadian rhythm research and GTD principles",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brw_plan_my_day",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Brian Wagner",
+      "features": [
+        "Generate an energy-optimized, time-blocked daily plan based on circadian rhythm research and GT."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/brw-plan-my-day@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3800703?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "brw-plan-my-day",
+      "url": "https://clawhub.ai/skills/brw-plan-my-day"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brw-plan-my-day",
+    "url": "https://clawhub.ai/skills/brw-plan-my-day",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brw-plan-my-day-22223efb81b67e82.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/brw-plan-my-day@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-brw-plan-my-day-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:78ab04169c876f5c0d7bf99457a19e17aafd5d1e84cde7580fb4617999e0b7fd",
+      "artifactSizeBytes": 2360
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T22:04:12.458Z"
+}

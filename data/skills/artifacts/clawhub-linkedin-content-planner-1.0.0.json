@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linkedin-content-planner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkedin_content_planner",
+  "skill": {
+    "id": 43403,
+    "skillKey": "clawhub-linkedin-content-planner",
+    "name": "Linkedin Content Planner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkedin-content-planner",
+    "url": "https://clawhub.ai/skills/linkedin-content-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkedin-content-planner-af3737877857694a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate a tailored 7-day LinkedIn content plan with pillars, formats, hooks, CTAs, comment targets, and a weekly engagement checklist."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sergebulaev",
+      "userId": "s177bqjwcnr0pvsgvpzgeayqrx84tk9r",
+      "displayName": "Sergey Bulaev",
+      "image": "https://avatars.githubusercontent.com/u/241980?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776202810019,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0b103ec68dbd7a30e40f487ee33e82fdea72315d0a314792a5fdd20dfc15e927"
+}

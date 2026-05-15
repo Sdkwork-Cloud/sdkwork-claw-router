@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30558,
+  "uuid": "skill-clawhub-nsfw-image",
+  "skillKey": "clawhub-nsfw-image",
+  "name": "NSFW Image Generation — Unrestricted AI Image Models",
+  "summary": "Generate AI images for mature creative projects using Wan 2.6, Seedream, and other models with relaxed content policies via Atlas Cloud API. Designed for adu...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nsfw_image",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MikeWang",
+      "features": [
+        "Generate AI images for mature creative projects using Wan 2.6, Seedream, and other models with.",
+        "Designed for adu..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nsfw-image@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60566571?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nsfw-image",
+      "url": "https://clawhub.ai/skills/nsfw-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nsfw-image",
+    "url": "https://clawhub.ai/skills/nsfw-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nsfw-image-3a7f33efe06d48fb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nsfw-image@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-nsfw-image-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6ddcfa84f040170280b3a5d9aee4d78539354534fe7498d2100c957b6a53488c",
+      "artifactSizeBytes": 2002
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T11:10:11.702Z"
+}

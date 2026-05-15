@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amemo-skill@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amemo_skill",
+  "skill": {
+    "id": 64388,
+    "skillKey": "clawhub-amemo-skill",
+    "name": "Amemo Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amemo-skill",
+    "url": "https://clawhub.ai/skills/amemo-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amemo-skill-5cb83722e6531055.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "amemo-skill 统一调度中心，专为 AI 工具链接麦小记 APP 而开发的技能包，专注于笔记、清单和健康数据的管理。 何时用: 当用户提到「麦小记」或「amemo」，或涉及以下意图时立即调用。 触发词: 保存笔记(帮我记一下/save note/记录一下) | 任务提醒(提醒我/今天去/记得要/remin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lockfeel",
+      "userId": "s17e55ddfntv4tfzgtk1m6q4bn83gvvj",
+      "displayName": "lockfeel",
+      "image": "https://avatars.githubusercontent.com/u/15528131?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 360,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1776925756345,
+      "changelog": "amemo-skill 1.1.2\n\n- Improved and clarified routing rules for intent recognition and login flows.\n- Refined and expanded trigger word documentation for login, note, task, and health data features.\n- Enhanced error handling instructions, with clearer user prompts and fallback logic.\n- Made SKILL.md less verbose: removed inline sample user data and shortened welcome steps.\n- Removed the obsolete _meta.json file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c85d8993da0b5730c564198e1a4350559022b253d0afc28622c098730672b1e0"
+}

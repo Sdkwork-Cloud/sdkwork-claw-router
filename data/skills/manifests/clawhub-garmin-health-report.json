@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23829,
+  "uuid": "skill-clawhub-garmin-health-report",
+  "skillKey": "clawhub-garmin-health-report",
+  "name": "Garmin Health Report",
+  "summary": "Generate comprehensive daily health reports from Garmin Connect data with professional running analysis (Heart Rate Zones, TRIMP, Jack Daniels VDOT).",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.garmin_health_report",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GZZZJ",
+      "features": [
+        "Generate comprehensive daily health reports from Garmin Connect data with professional running."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/garmin-health-report@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42710355?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "garmin-health-report",
+      "url": "https://clawhub.ai/skills/garmin-health-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "garmin-health-report",
+    "url": "https://clawhub.ai/skills/garmin-health-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/garmin-health-report-cbc5d46bbf46214e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/garmin-health-report@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-garmin-health-report-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a983c7c1eded7efcb345783cedc0619b11aee705c403e6d9e5100ffdee4e6a20",
+      "artifactSizeBytes": 2511
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T02:30:21.951Z"
+}

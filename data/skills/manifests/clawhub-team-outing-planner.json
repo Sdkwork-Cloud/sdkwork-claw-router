@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70112,
+  "uuid": "skill-clawhub-team-outing-planner",
+  "skillKey": "clawhub-team-outing-planner",
+  "name": "Team Outing Planner",
+  "summary": "帮助公司团队规划团建活动目的地。收集团队成员的偏好（活动类型、预算、时间等），综合分析推荐最佳目的地，并通过flyai查询详细信息。适用于团建规划、集体出游、公司活动等场景。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.team_outing_planner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "时关",
+      "features": [
+        "帮助公司团队规划团建活动目的地。收集团队成员的偏好（活动类型、预算、时间等），综合分析推荐最佳目的地，并通过flyai查询详细信息。适用于团建规划、集体出游、公司活动等场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/team-outing-planner@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10721069?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "team-outing-planner",
+      "url": "https://clawhub.ai/skills/team-outing-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "team-outing-planner",
+    "url": "https://clawhub.ai/skills/team-outing-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/team-outing-planner-441492b735245098.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/team-outing-planner@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-team-outing-planner-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:af244a3eff69166811894c46e290a9412aa861e7cf7510730b7633496940cc6d",
+      "artifactSizeBytes": 2024
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T12:31:59.798Z"
+}

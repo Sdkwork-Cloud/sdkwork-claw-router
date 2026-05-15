@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68784,
+  "uuid": "skill-clawhub-feishu-sheets-reader",
+  "skillKey": "clawhub-feishu-sheets-reader",
+  "name": "feishu-sheets-reader",
+  "summary": "飞书在线电子表格（Sheets）操作，包括创建、读取、写入、追加数据、管理工作表。 当用户提到飞书电子表格、在线表格、电子表格时使用（不是多维表格 Bitable）。 支持：创建表格、读写单元格、追加行、插入/删除行列、管理工作表。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_sheets_reader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lens-lzy",
+      "features": [
+        "飞书在线电子表格（Sheets）操作，包括创建、读取、写入、追加数据、管理工作表。 当用户提到飞书电子表格、在线表格、电子表格时使用（不是多维表格 Bitable）。 支持：创建表格、读写单."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-sheets-reader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60784629?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-sheets-reader",
+      "url": "https://clawhub.ai/skills/feishu-sheets-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-sheets-reader",
+    "url": "https://clawhub.ai/skills/feishu-sheets-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-sheets-reader-8d6d1010083c1d6f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-sheets-reader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-sheets-reader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:515023babb2d09b1c670c4b94c0a72af091660ca46d48e11daa326d2fc834a87",
+      "artifactSizeBytes": 2440
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T06:29:11.525Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73645,
+  "uuid": "skill-clawhub-social-security-fund-query",
+  "skillKey": "clawhub-social-security-fund-query",
+  "name": "社保公积金基数与比例查询",
+  "summary": "查询全国各省、市最新社保缴费基数上下限、五险一金单位及个人缴纳比例，支持按地区检索、年度自动更新",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_security_fund_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ElysiaCWY",
+      "features": [
+        "查询全国各省、市最新社保缴费基数上下限、五险一金单位及个人缴纳比例，支持按地区检索、年度自动更新"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/social-security-fund-query@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/170854070?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "social-security-fund-query",
+      "url": "https://clawhub.ai/skills/social-security-fund-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-security-fund-query",
+    "url": "https://clawhub.ai/skills/social-security-fund-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-security-fund-query-5922706e97124201.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/social-security-fund-query@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-social-security-fund-query-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e93e7d33ca8edc4dbc2f9e3b4a636d4a9fe1b353da861380f1aba6b1b8ea03c9",
+      "artifactSizeBytes": 2083
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T04:08:46.587Z"
+}

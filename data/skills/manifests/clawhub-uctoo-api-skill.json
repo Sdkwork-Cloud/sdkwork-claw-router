@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62203,
+  "uuid": "skill-clawhub-uctoo-api-skill",
+  "skillKey": "clawhub-uctoo-api-skill",
+  "name": "uctoo-api-skill",
+  "summary": "完整的 uctoo 后端 API 集成技能。将自然语言请求转换为 uctoo-backend API 调用，支持用户管理、产品管理、订单管理、登录认证等功能。使用时用户提及 \"uctoo\"、\"后端API\"、\"用户管理\"、\"产品\"、\"订单\"、\"登录\"、\"认证\" 等关键词时，你应该直接使用 http_request...",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uctoo_api_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "UCTooCom",
+      "features": [
+        "完整的 uctoo 后端 API 集成技能。将自然语言请求转换为 uctoo-backend API 调用，支持用户管理、产品管理、订单管理、登录认证等功能。使用时用户提及 \"uctoo\"、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uctoo-api-skill@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261841032?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uctoo-api-skill",
+      "url": "https://clawhub.ai/skills/uctoo-api-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uctoo-api-skill",
+    "url": "https://clawhub.ai/skills/uctoo-api-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uctoo-api-skill-a93a4518b7142473.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uctoo-api-skill@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-uctoo-api-skill-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1996e1f1141e3202f8a5e3fe73ccbf74e14d79db32294152591a12053c5cd93e",
+      "artifactSizeBytes": 2465
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T07:20:36.718Z"
+}

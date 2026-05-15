@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16382,
+  "uuid": "skill-clawhub-vibe-notionbot",
+  "skillKey": "clawhub-vibe-notionbot",
+  "name": "Vibe Notionbot",
+  "summary": "Interact with Notion workspaces using official API - manage pages, databases, blocks, users, and comments",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vibe_notionbot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jeon Suyeol",
+      "features": [
+        "Interact with Notion workspaces using official API",
+        "manage pages, databases, blocks, users, and comments"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vibe-notionbot@1.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/931655?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vibe-notionbot",
+      "url": "https://clawhub.ai/skills/vibe-notionbot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vibe-notionbot",
+    "url": "https://clawhub.ai/skills/vibe-notionbot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vibe-notionbot-cd93c0a5d61e1720.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vibe-notionbot@1.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vibe-notionbot-1.5.0.json",
+      "version": "1.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e320a7b9f79c762e1ab3a7add39c6cc34fa0b9cfb07918576ba6834a0f8f3e8",
+      "artifactSizeBytes": 2073
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T06:50:32.558Z"
+}

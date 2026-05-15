@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/playwright-browser-automation@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.playwright_browser_automation",
+  "skill": {
+    "id": 8652,
+    "skillKey": "clawhub-playwright-browser-automation",
+    "name": "Playwright Browser Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "playwright-browser-automation",
+    "url": "https://clawhub.ai/skills/playwright-browser-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/playwright-browser-automation-f2bd6d11d8a8627b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browser automation using Playwright API directly. Navigate websites, interact with elements, extract data, take screenshots, generate PDFs, record videos, and automate complex workflows. More reliable than MCP approach."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "spiceman161",
+      "userId": "publishers:spiceman161",
+      "displayName": "Spiceman161",
+      "image": "https://avatars.githubusercontent.com/u/45951852?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 7939,
+      "installsAllTime": 64,
+      "installsCurrent": 57,
+      "stars": 9,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1770569278871,
+      "changelog": "Complete rewrite with direct Playwright API, best practices, working examples",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9cb8e694ae5fbc27bd466acfaaf38c17c3113d0d0011dafe2945f534d2e399e7"
+}

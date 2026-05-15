@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24426,
+  "uuid": "skill-clawhub-handwrytten-integration",
+  "skillKey": "clawhub-handwrytten-integration",
+  "name": "Handwrytten",
+  "summary": "Handwrytten integration. Manage Persons, Organizations, Deals, Leads, Activities, Notes and more. Use when the user wants to interact with Handwrytten data.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.handwrytten_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Handwrytten integration",
+        "Manage Persons, Organizations, Deals, Leads, Activities, Notes and more",
+        "Use when the user wants to interact with Handwrytten data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/handwrytten-integration@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "handwrytten-integration",
+      "url": "https://clawhub.ai/skills/handwrytten-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "handwrytten-integration",
+    "url": "https://clawhub.ai/skills/handwrytten-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/handwrytten-integration-ee01f8be7fdee983.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/handwrytten-integration@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-handwrytten-integration-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:135dc4c796938823c056de442baa853425cc7320f3265589bfad0279944d3f39",
+      "artifactSizeBytes": 1938
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T14:56:37.788Z"
+}

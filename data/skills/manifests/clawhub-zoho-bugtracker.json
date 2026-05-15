@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22048,
+  "uuid": "skill-clawhub-zoho-bugtracker",
+  "skillKey": "clawhub-zoho-bugtracker",
+  "name": "Zoho Bugtracker",
+  "summary": "Zoho Bugtracker integration. Manage Projects. Use when the user wants to interact with Zoho Bugtracker data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zoho_bugtracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Zoho Bugtracker integration",
+        "Manage Projects",
+        "Use when the user wants to interact with Zoho Bugtracker data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zoho-bugtracker@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zoho-bugtracker",
+      "url": "https://clawhub.ai/skills/zoho-bugtracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zoho-bugtracker",
+    "url": "https://clawhub.ai/skills/zoho-bugtracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zoho-bugtracker-b2045c52fac6370d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zoho-bugtracker@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-zoho-bugtracker-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:445051b28be0c3a1fe3d3f1be8ef2047dfa0a353465417152665e01c8ac6c03b",
+      "artifactSizeBytes": 1864
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:05:39.923Z"
+}

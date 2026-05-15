@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33102,
+  "uuid": "skill-clawhub-web-scraper-firecrawl",
+  "skillKey": "clawhub-web-scraper-firecrawl",
+  "name": "Web Scraper - Firecrawl",
+  "summary": "Web scraping and content extraction using Firecrawl API. Use when users need to crawl websites, extract structured data, convert web pages to markdown, scrap...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_scraper_firecrawl",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "antonia huang",
+      "features": [
+        "Web scraping and content extraction using Firecrawl API",
+        "Use when users need to crawl websites, extract structured data, convert web pages to markdown,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-scraper-firecrawl@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143588581?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-scraper-firecrawl",
+      "url": "https://clawhub.ai/skills/web-scraper-firecrawl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-scraper-firecrawl",
+    "url": "https://clawhub.ai/skills/web-scraper-firecrawl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-scraper-firecrawl-fbc7c334b247fdd0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-scraper-firecrawl@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-scraper-firecrawl-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9130076b9fb07701b12cf023fa72bfb0cf6946c311d0899ca39ea7fc7eb44e65",
+      "artifactSizeBytes": 1944
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T03:02:43.912Z"
+}

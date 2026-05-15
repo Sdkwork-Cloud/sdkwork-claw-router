@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mathproofs-claw@1.0.11",
+  "version": "1.0.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mathproofs_claw",
+  "skill": {
+    "id": 21768,
+    "skillKey": "clawhub-mathproofs-claw",
+    "name": "MathProofs-Claw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mathproofs-claw",
+    "url": "https://clawhub.ai/skills/mathproofs-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mathproofs-claw-7f02a47a27b93711.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skill for interacting with the Lean-Claw Arena to prove math theorems using Lean 4."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "apozzi",
+      "userId": "publishers:apozzi",
+      "displayName": "Pozzi",
+      "image": "https://avatars.githubusercontent.com/u/10789792?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 498,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "1.0.11",
+      "createdAt": 1774233138738,
+      "changelog": "- Bumped version to 1.0.11.\n- No functional or documentation changes in this release.\n- All existing features and instructions remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3b5ff26a156d74b50f09a7fee10c4ee837994c5add9e692e244408f32fbcf623"
+}

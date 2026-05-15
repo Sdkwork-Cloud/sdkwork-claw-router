@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaoyuzhou-asr@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaoyuzhou_asr",
+  "skill": {
+    "id": 57217,
+    "skillKey": "clawhub-xiaoyuzhou-asr",
+    "name": "xiaoyuzhou-asr"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaoyuzhou-asr",
+    "url": "https://clawhub.ai/skills/xiaoyuzhou-asr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaoyuzhou-asr-310a69276a946dae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transcribe 小宇宙 (Xiaoyuzhou) podcast episodes to text using local Qwen3-ASR speech recognition. Combines xyz API (小宇宙FM API) to fetch episode metadata and aud..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "worldwonderer",
+      "userId": "s1748rsha25rh871z39a8xdg9n85tqyh",
+      "displayName": "worldwonderer",
+      "image": "https://avatars.githubusercontent.com/u/49583093?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 107,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777652716315,
+      "changelog": "Initial release: Local speech-to-text for 小宇宙 podcasts using Qwen3-ASR\n\n- Transcribe 小宇宙 (Xiaoyuzhou) podcast episodes to text locally with Qwen3-ASR (Metal/CUDA accelerated).\n- Integrates xyz API to fetch episode metadata and audio URLs.\n- Supports keyword search, single/batch episode download, and batch transcription.\n- Provides full workflow: search, download, split audio, transcribe, and format output as markdown.\n- Requires local xyz API server, ffmpeg for audio processing, and a built-from-source qwen3-asr-rs binary.\n- Enforces audio segment length limits (≤3 minutes) for GPU stability; all data is processed locally, ensuring privacy.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:31b29d00cf2f9ba2bac0eb5b66cd5a8915bd7ca4fa7296cc4635cec98286bf22"
+}

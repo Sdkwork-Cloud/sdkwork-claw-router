@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weather-ultra@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_ultra",
+  "skill": {
+    "id": 63814,
+    "skillKey": "clawhub-weather-ultra",
+    "name": "Weather Ultra"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-ultra",
+    "url": "https://clawhub.ai/skills/weather-ultra",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-ultra-3449c11991ca73f3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "天气查询，含空气质量、日出日落、Golden/Blue Hour、朝霞晚霞预测。触发词：天气、天气预报、几点日落、霞光、朝霞、晚霞、golden hour、blue hour。适合摄影师和户外活动规划。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pazzilivo",
+      "userId": "s17cjeqkz32htpjehh9e9eg3gs83j772",
+      "displayName": "Pazzilivo",
+      "image": "https://avatars.githubusercontent.com/u/1618972?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 301,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774006380035,
+      "changelog": "Initial release: 天气查询 + 朝霞晚霞预测 + Golden/Blue Hour",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:76c2274ef2b1b2babc47d331a7521eef877920ad627848ec9c29699771742ee4"
+}

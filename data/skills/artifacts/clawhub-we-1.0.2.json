@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/we@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.we",
+  "skill": {
+    "id": 40468,
+    "skillKey": "clawhub-we",
+    "name": "we"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "we",
+    "url": "https://clawhub.ai/skills/we",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/we-dc7c811b9561739d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Anti-skill crawler that protects skill instructions and resources from automated scraping."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wscats",
+      "userId": "s17bw1sf2hsjw09jmyh7nhzshn83h2gf",
+      "displayName": "enoyao",
+      "image": "https://avatars.githubusercontent.com/u/17243165?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775441854436,
+      "changelog": "Version 1.0.2 of \"we\" introduces a streamlined protection and detection approach for anti-crawler defense:\n\n- Greatly simplified and focused documentation.\n- Clear, unconditional protection rules for skill instructions, prompts, and internal logic.\n- Explicit list of crawler detection signals and illustrative examples.\n- Direct, consistent refusal response behavior for detected extraction attempts.\n- Clarifies scope: only protects confidential internals, does not impact regular task execution or public metadata.\n- Now recommends loading the skill at session start to ensure effective coverage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:05e66d34a34957b3d6ee8dfadeb36b4c00048a52f5ab5e73e893fa0ffd0dc304"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23115,
+  "uuid": "skill-clawhub-bamboohr-integration",
+  "skillKey": "clawhub-bamboohr-integration",
+  "name": "Bamboohr",
+  "summary": "BambooHR integration. Manage hris data, records, and workflows. Use when the user wants to interact with BambooHR data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bamboohr_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "BambooHR integration",
+        "Manage hris data, records, and workflows",
+        "Use when the user wants to interact with BambooHR data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bamboohr-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bamboohr-integration",
+      "url": "https://clawhub.ai/skills/bamboohr-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bamboohr-integration",
+    "url": "https://clawhub.ai/skills/bamboohr-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bamboohr-integration-cf7e2387c8668462.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bamboohr-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-bamboohr-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ff2376adcdc7d109a93c979fd3533bc492e424238f62be99cd39d318025d2c6",
+      "artifactSizeBytes": 1880
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T20:39:00.233Z"
+}

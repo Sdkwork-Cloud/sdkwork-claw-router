@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/localsbnb-mcp@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.localsbnb_mcp",
+  "skill": {
+    "id": 59177,
+    "skillKey": "clawhub-localsbnb-mcp",
+    "name": "LocalsBnb MCP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "localsbnb-mcp",
+    "url": "https://clawhub.ai/skills/localsbnb-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/localsbnb-mcp-9143cef9ab11c819.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在 OpenClaw、Hermes Agent、Cursor 等支持 MCP 的客户端中，通过 npm 包 localsbnb-mcp-server 调用路客云（LocalsBnb / Lukeyun）官方 HTTP API，查询房态、房价、订单与经营数据；需由用户在客户端配置 APP_ID 与 APP_SECR..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "localsbnb",
+      "userId": "s1725t7kf0v6h23f65jfdnests84njcg",
+      "displayName": "localsbnb",
+      "image": "https://avatars.githubusercontent.com/u/275218978?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 95,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777435982453,
+      "changelog": "- 添加 version 字段与 metadata，规范 skill 元数据，补充 OpenClaw 自动化集成指引  \n- 明确只允许通过 MCP 访问官方 API 域名，强调不支持自定义 URL，提升安全合规说明  \n- skill 说明文档内容梳理优化，参数注入及环境变量要求迁移至 frontmatter  \n- 保持原有接口、使用规范和功能工具说明不变",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8f52eddf2d082f048fb8c36f33a45c6329cf29422c2396ffa26f128013e530c6"
+}

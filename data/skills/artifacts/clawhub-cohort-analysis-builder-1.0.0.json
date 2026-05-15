@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cohort-analysis-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cohort_analysis_builder",
+  "skill": {
+    "id": 49310,
+    "skillKey": "clawhub-cohort-analysis-builder",
+    "name": "Cohort Analysis Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cohort-analysis-builder",
+    "url": "https://clawhub.ai/skills/cohort-analysis-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cohort-analysis-builder-b714f8d56214b722.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build, validate, and interpret cohort retention analyses for SaaS / subscription / e-commerce / consumer products. Covers cohort definition (signup cohort vs..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 81,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778114757651,
+      "changelog": "Initial release of cohort-analysis-builder skill.\n\n- Helps build, validate, and interpret cohort retention analyses for SaaS, e-commerce, and consumer products.\n- Covers cohort definition types, appropriate cohort and retention time grains, and correct use of metrics (e.g., NRR, GRR, logo retention).\n- Provides guidance on analyzing retention shapes (e.g., declining, flat, smile curve) and common pitfalls.\n- Includes SQL patterns for constructing retention tables and highlights common implementation mistakes.\n- Designed to trigger on requests related to cohort analysis in analytics tools and board/investor reporting contexts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b41d707acefbf1adf93b808ad142f98251604bb7b82f978cdd4dda93393eb12a"
+}

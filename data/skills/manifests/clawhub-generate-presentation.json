@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11184,
+  "uuid": "skill-clawhub-generate-presentation",
+  "skillKey": "clawhub-generate-presentation",
+  "name": "Generate Presentation",
+  "summary": "Generate professional HTML and PDF presentations from markdown content, URLs, or topics. Creates visually stunning slides with AI-generated illustrations, ke...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.generate_presentation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nhype",
+      "features": [
+        "Generate professional HTML and PDF presentations from markdown content, URLs, or topics",
+        "Creates visually stunning slides with AI-generated illustrations, ke..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/generate-presentation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/55147435?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "generate-presentation",
+      "url": "https://clawhub.ai/skills/generate-presentation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "generate-presentation",
+    "url": "https://clawhub.ai/skills/generate-presentation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/generate-presentation-3b5c390189a7ee3f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/generate-presentation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-generate-presentation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c17be2a47dba8823d9c7de770c9541230060cf208ea29fde3f6a1a53dcd78f7e",
+      "artifactSizeBytes": 2404
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T16:45:08.666Z"
+}

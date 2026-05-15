@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30135,
+  "uuid": "skill-clawhub-calibre-convert",
+  "skillKey": "clawhub-calibre-convert",
+  "name": "calibre-convert",
+  "summary": "Use this skill when the user wants to convert ebook or document files between formats with Calibre, including EPUB to PDF, Markdown to EPUB, MOBI to EPUB, AZ...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.calibre_convert",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shake",
+      "features": [
+        "Use this skill when the user wants to convert ebook or document files between formats with Cali."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/calibre-convert@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78207?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "calibre-convert",
+      "url": "https://clawhub.ai/skills/calibre-convert"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "calibre-convert",
+    "url": "https://clawhub.ai/skills/calibre-convert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/calibre-convert-665a55d3796b61cc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/calibre-convert@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-calibre-convert-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4b385cd57e4972532a895c5d6de70ab31a9d852d47e57d8cd9bc30577a093ddb",
+      "artifactSizeBytes": 2462
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T06:42:22.611Z"
+}

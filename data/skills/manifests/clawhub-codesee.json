@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37165,
+  "uuid": "skill-clawhub-codesee",
+  "skillKey": "clawhub-codesee",
+  "name": "Codesee",
+  "summary": "CodeSee integration. Manage data, records, and automate workflows. Use when the user wants to interact with CodeSee data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codesee",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "CodeSee integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with CodeSee data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/codesee@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "codesee",
+      "url": "https://clawhub.ai/skills/codesee"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codesee",
+    "url": "https://clawhub.ai/skills/codesee",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codesee-c61db78dded8b6df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/codesee@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-codesee-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bf3a7ebaf2d1c1fedb8e20911f13cb15e30a1064eaf91234ffe7e8c70cd70a14",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:33:21.376Z"
+}

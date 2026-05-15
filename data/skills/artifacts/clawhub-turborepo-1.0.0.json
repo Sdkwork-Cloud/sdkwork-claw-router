@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/turborepo@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.turborepo",
+  "skill": {
+    "id": 14206,
+    "skillKey": "clawhub-turborepo",
+    "name": "Turborepo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "turborepo",
+    "url": "https://clawhub.ai/skills/turborepo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/turborepo-53c8d052468f5bbf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "WHAT: Turborepo monorepo build system - caching, task pipelines, and parallel execution for JS/TS projects. WHEN: User configures turbo.json, creates packages, sets up monorepo, shares code between apps, runs --affected builds, debugs cach."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wpank",
+      "userId": "publishers:wpank",
+      "displayName": "wpank",
+      "image": "https://avatars.githubusercontent.com/u/9498646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1154,
+      "installsAllTime": 10,
+      "installsCurrent": 9,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770727585730,
+      "changelog": "- Initial release of the Turborepo skill.\n- Provides guidance on configuring, structuring, and optimizing monorepos with turbo.json, package scripts, and best practices.\n- Emphasizes strict rules: never use root tasks, always delegate via turbo run, and avoid common anti-patterns.\n- Includes decision trees for task configuration, cache troubleshooting, filtering, CI setup, and environment variable handling.\n- Reference sections help users solve typical monorepo and Turborepo-specific issues.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:003352c201403780965416ebf9be0054ac9854ec9804f758ff9ab7393c1a4682"
+}

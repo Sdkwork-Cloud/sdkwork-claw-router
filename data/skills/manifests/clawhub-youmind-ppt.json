@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65469,
+  "uuid": "skill-clawhub-youmind-ppt",
+  "skillKey": "clawhub-youmind-ppt",
+  "name": "YouMind PPT",
+  "summary": "基于用户大纲生成 YouMind 插画风格的演示文稿（PPT）。这种风格的特征是：贯穿始终的可爱 IP 角色、蓝黄/蓝紫渐变背景、悬浮的 UI 元素（代码框、气泡通知、点状网络图）、2D 扁平矢量插画、极简信息图排版。当用户提到'YouMind 风格 PPT'、'插画风 PPT'、'IP 角色演示文稿'、'故事化...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youmind_ppt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xaioliu",
+      "features": [
+        "基于用户大纲生成 YouMind 插画风格的演示文稿（PPT）。这种风格的特征是：贯穿始终的可爱 IP 角色、蓝黄/蓝紫渐变背景、悬浮的 UI 元素（代码框、气泡通知、点状网络图）、2D 扁."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youmind-ppt@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/229441404?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youmind-ppt",
+      "url": "https://clawhub.ai/skills/youmind-ppt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youmind-ppt",
+    "url": "https://clawhub.ai/skills/youmind-ppt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youmind-ppt-e8c2695ded1fca75.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youmind-ppt@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-youmind-ppt-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c78d883e836f3900aa3027c894f9218a424de172c8401aa39b85345c4a7c9c6",
+      "artifactSizeBytes": 2069
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T12:09:26.729Z"
+}

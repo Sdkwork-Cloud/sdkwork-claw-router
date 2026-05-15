@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dlazy-video-scenes@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dlazy_video_scenes",
+  "skill": {
+    "id": 14285,
+    "skillKey": "clawhub-dlazy-video-scenes",
+    "name": "Dlazy Video Scenes"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dlazy-video-scenes",
+    "url": "https://clawhub.ai/skills/dlazy-video-scenes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dlazy-video-scenes-5d4292959deb7897.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detects and splits videos into scene clips using ffmpeg, providing URLs for each clip without analyzing video content."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dlazyai",
+      "userId": "s170j1ymymrxasgd00dsk7tckx84cf45",
+      "displayName": "dlazy",
+      "image": "https://avatars.githubusercontent.com/u/274158181?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1228,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1778076710263,
+      "changelog": "- Version bump from 1.1.0 to 1.1.1.\n- No functional or documentation changes found.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fcd9b7a92b926f0bf78fecf63557c72d904648cb980ea0f2d7b207ba60e04b0f"
+}

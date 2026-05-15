@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-bounty-finder@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_bounty_finder",
+  "skill": {
+    "id": 61677,
+    "skillKey": "clawhub-github-bounty-finder",
+    "name": "Github Bounty Finder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-bounty-finder",
+    "url": "https://clawhub.ai/skills/github-bounty-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-bounty-finder-be929aa20e295fad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动扫描并分析GitHub Issues中的bounty标签，推荐高价值低竞争的开源奖励机会并支持状态追踪提醒。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lvjunjie-byte",
+      "userId": "s17f7spafdf99xa1wkgwbztec183t877",
+      "displayName": "lvjunjie-byte",
+      "image": "https://avatars.githubusercontent.com/u/59714416?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 355,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773552898707,
+      "changelog": "Initial release - GitHub & Algora bounty scanner",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:516519639154a242abe5bb5ae8eac2a0ffa745d6b4f79d822303e58938eba9ed"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feednest@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feednest",
+  "skill": {
+    "id": 40135,
+    "skillKey": "clawhub-feednest",
+    "name": "FeedNest"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feednest",
+    "url": "https://clawhub.ai/skills/feednest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feednest-6fc8cb52f26a6fda.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Aggregate and manage articles, highlights, notes, and tags from your personal trusted feeds, podcasts, and news sources with FeedNest integration."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lucaiaconelli",
+      "userId": "s173m15s75ehb7q9w5mdwa0kh983hctv",
+      "displayName": "Luca Iaconelli",
+      "image": "https://avatars.githubusercontent.com/u/8015379?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1774081034073,
+      "changelog": "Initial release. 26 tools for articles, highlights, notes, tags, saving, and text-to-speech. Your sources inside your AI.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ecb0aac5dd529b427c24179f570d311d76fcdaf12c3364863b5a1f3084438f48"
+}

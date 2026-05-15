@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-trending@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_trending",
+  "skill": {
+    "id": 9568,
+    "skillKey": "clawhub-github-trending",
+    "name": "Github Trending"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-trending",
+    "url": "https://clawhub.ai/skills/github-trending",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-trending-85b562ec0175e105.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch GitHub trending repositories by daily, weekly, or monthly periods with output in Markdown or JSON format."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiangzhiyu",
+      "userId": "s17a5qqen3mfw2emw3fpcjype183gbfr",
+      "displayName": "johnson",
+      "image": "https://avatars.githubusercontent.com/u/2647732?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3354,
+      "installsAllTime": 31,
+      "installsCurrent": 30,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772434985985,
+      "changelog": "Initial release: fetch and display trending GitHub repositories.\n\n- Supports fetching trending projects for today, this week, or this month.\n- Outputs results as a Markdown table or in JSON format.\n- No authentication required; data scraped from GitHub Trending page in real-time.\n- Includes basic error handling for network issues, parsing failures, and rate limiting.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:491db1c130bca2367836fc6808e7131a304e952be5f43d41a83d25b578d1f035"
+}

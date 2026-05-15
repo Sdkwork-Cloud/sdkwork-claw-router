@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35560,
+  "uuid": "skill-clawhub-body-emotion-sensor",
+  "skillKey": "clawhub-body-emotion-sensor",
+  "name": "Body Emotion Sensor",
+  "summary": "Give an agent a persistent body-emotion state system that converts structured AnalysisInput JSON into runtime prompt tags and workspace state updates. Use wh...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.body_emotion_sensor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zhihao Kang",
+      "features": [
+        "Give an agent a persistent body-emotion state system that converts structured AnalysisInput JSO.",
+        "Use wh..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/body-emotion-sensor@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77649830?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "body-emotion-sensor",
+      "url": "https://clawhub.ai/skills/body-emotion-sensor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "body-emotion-sensor",
+    "url": "https://clawhub.ai/skills/body-emotion-sensor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/body-emotion-sensor-be16be7205ff60be.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/body-emotion-sensor@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-body-emotion-sensor-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf06358cb5b0f7a7a301e2eb43771705bae0d125ed035fab860d8757bfcf37cc",
+      "artifactSizeBytes": 2318
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T10:35:41.355Z"
+}

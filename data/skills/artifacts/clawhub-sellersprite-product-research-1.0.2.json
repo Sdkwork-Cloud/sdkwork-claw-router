@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sellersprite-product-research@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sellersprite_product_research",
+  "skill": {
+    "id": 50208,
+    "skillKey": "clawhub-sellersprite-product-research",
+    "name": "SellerSprite Product Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sellersprite-product-research",
+    "url": "https://clawhub.ai/skills/sellersprite-product-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sellersprite-product-research-384e28405280c618.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "SellerSprite Product Research Skill — Input a keyword or category, automatically fetch market data via SellerSprite API and run AI analysis, output a structu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mguozhen",
+      "userId": "s170nk66cz4zpwnnsv8bxksrp983f82k",
+      "displayName": "mguozhen",
+      "image": "https://avatars.githubusercontent.com/u/1411875?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 517,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773070560938,
+      "changelog": "Add multi-model support via --model flag (claude/gemini/gpt-5/grok/deepseek etc.)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e71a0ee8bad41193b126c2eccdfc481efac43afd7567eded97a3e0c926f05eb4"
+}

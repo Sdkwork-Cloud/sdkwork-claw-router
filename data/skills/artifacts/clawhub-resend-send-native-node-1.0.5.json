@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/resend-send-native-node@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resend_send_native_node",
+  "skill": {
+    "id": 39545,
+    "skillKey": "clawhub-resend-send-native-node",
+    "name": "Resend Send Native Node"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resend-send-native-node",
+    "url": "https://clawhub.ai/skills/resend-send-native-node",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resend-send-native-node-4505149e6cbe9f57.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send email via Resend.com's HTTPS API - native Node.js, zero dependencies. Use when the user explicitly asks to email, send a message, mail a report, or deli..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jwestburg",
+      "userId": "s177the448m6rk54wz8gse0jnd8587yq",
+      "displayName": "jwestburg",
+      "image": "https://avatars.githubusercontent.com/u/278213922?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1778254941161,
+      "changelog": "Replace placeholder sender example with generic verified-domain wording after final public review.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:59722f06b1f061b34f4dfbebe6be9b37c41282d727f394f171b4e4445cce1b49"
+}

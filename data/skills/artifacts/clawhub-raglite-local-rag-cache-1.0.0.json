@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/raglite-local-rag-cache@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.raglite_local_rag_cache",
+  "skill": {
+    "id": 12620,
+    "skillKey": "clawhub-raglite-local-rag-cache",
+    "name": "RAGLite"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "raglite-local-rag-cache",
+    "url": "https://clawhub.ai/skills/raglite-local-rag-cache",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/raglite-local-rag-cache-2b8e4d9b56632a3b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local-first RAG cache: distill docs into structured Markdown, then index/query with Chroma + hybrid search (vector + keyword)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "virajsanghvi1",
+      "userId": "publishers:virajsanghvi1",
+      "displayName": "Viraj Sanghvi",
+      "image": "https://avatars.githubusercontent.com/u/22336852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1710,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770264913473,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6554469f8518c16a63715a07494018eea619e01e0d0e1eec5fc7f0e98ca8fe77"
+}

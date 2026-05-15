@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ruiping-skill@2.0.4",
+  "version": "2.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ruiping_skill",
+  "skill": {
+    "id": 72772,
+    "skillKey": "clawhub-ruiping-skill",
+    "name": "Ruiping"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ruiping-skill",
+    "url": "https://clawhub.ai/skills/ruiping-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ruiping-skill-cbe2f16125a867f7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "新闻深度锐评，别人追热点你追观点。三步走：筛选→分析→评论，输出带态度的决策建议。 触发关键词：锐评、新闻评论、热点分析、深度评论、时事点评、帮我评一下、怎么看、有什么看法"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leslietong2046-ship-it",
+      "userId": "s172gnmy46r3x0p0mbwb7wjcy1861bmv",
+      "displayName": "leslietong2046-ship-it",
+      "image": "https://avatars.githubusercontent.com/u/248800123?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 195,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "2.0.4",
+      "createdAt": 1777998343871,
+      "changelog": "Added 30s quick-start guide",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:35c8693a3f9ad1e4a7378413b0be45a3adcddf1e7f7aa2be02e1d8a3c0c88d63"
+}

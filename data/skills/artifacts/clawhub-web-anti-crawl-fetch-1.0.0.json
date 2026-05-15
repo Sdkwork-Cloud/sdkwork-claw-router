@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-anti-crawl-fetch@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_anti_crawl_fetch",
+  "skill": {
+    "id": 68425,
+    "skillKey": "clawhub-web-anti-crawl-fetch",
+    "name": "web-fetch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-anti-crawl-fetch",
+    "url": "https://clawhub.ai/skills/web-anti-crawl-fetch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-anti-crawl-fetch-65230145040edc6a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用带 Stealth 插件的无头浏览器抓取网页内容并转换为 Markdown。用于当需要获取特定网页的正文、新闻详情、公司财报或其他长篇网页内容时。支持绕过大多数基础反爬虫检测。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dlutwuwei",
+      "userId": "s1790bqjfz22tdpqtw7rac6qph83hwf8",
+      "displayName": "wei.wu",
+      "image": "https://avatars.githubusercontent.com/u/3362483?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1043,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773762400209,
+      "changelog": "- Initial release of the web-fetch skill.\n- Fetches webpage content using a stealth-enabled headless browser.\n- Converts captured HTML content into readable Markdown format.\n- Bypasses most basic anti-crawling protections.\n- Supports user simulation and outputs progress, page title, and Markdown to the console.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e7be5b239fce005a97af365e892ce66c4518d700357be05041d8bd40cdc87cb2"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22542,
+  "uuid": "skill-clawhub-comfy-story-video",
+  "skillKey": "clawhub-comfy-story-video",
+  "name": "Comfy Story Video",
+  "summary": "Generate illustrated children's story videos with AI images and TTS narration using ComfyUI running locally.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.comfy_story_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shenlin0517",
+      "features": [
+        "Generate illustrated children's story videos with AI images and TTS narration using ComfyUI run."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/comfy-story-video@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21304810?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "comfy-story-video",
+      "url": "https://clawhub.ai/skills/comfy-story-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "comfy-story-video",
+    "url": "https://clawhub.ai/skills/comfy-story-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/comfy-story-video-d1f0da0dd79b4a3d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/comfy-story-video@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-comfy-story-video-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:80b96e3cd5206830536692974cbc131b5419bc1c1643c9bfd8b681c66b3c6209",
+      "artifactSizeBytes": 2212
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T08:23:34.906Z"
+}

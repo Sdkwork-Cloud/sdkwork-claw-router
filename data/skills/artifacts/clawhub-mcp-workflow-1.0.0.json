@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mcp-workflow@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcp_workflow",
+  "skill": {
+    "id": 14046,
+    "skillKey": "clawhub-mcp-workflow",
+    "name": "MCP Workflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcp-workflow",
+    "url": "https://clawhub.ai/skills/mcp-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcp-workflow-59ec5c8f07be3126.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Workflow automation using MCP (Model Context Protocol) patterns inspired by Jason Zhou"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "slemo54",
+      "userId": "publishers:slemo54",
+      "displayName": "slemo54",
+      "image": "https://avatars.githubusercontent.com/u/77224018?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1130,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771578503365,
+      "changelog": "Initial release: MCP workflow automation with prompt chains, resource templates, and multi-step orchestration inspired by Jason Zhou",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5676f29375afad9e1f914e4e1cbc04dc785080e4390fb738f2774d4365039ddc"
+}

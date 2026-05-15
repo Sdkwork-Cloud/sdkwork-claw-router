@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/finally-offline@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finally_offline",
+  "skill": {
+    "id": 20319,
+    "skillKey": "clawhub-finally-offline",
+    "name": "Finally Offline Culture MCP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finally-offline",
+    "url": "https://clawhub.ai/skills/finally-offline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finally-offline-b7643f6666333547.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browse culture articles and generate personalized HTML newsletters via MCP"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wn-fo",
+      "userId": "publishers:wn-fo",
+      "displayName": "WN-FO",
+      "image": "https://avatars.githubusercontent.com/u/186637785?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 561,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771796750664,
+      "changelog": "finally-offline-culture 1.0.0\n\n- Initial release.\n- Connects to Finally Offline culture publication for browsing and subscribing to curated articles on fashion, music, sneakers, design, and tech.\n- Supports browsing, searching, subscribing to content, generating branded HTML newsletter digests, and viewing subscription stats.\n- No API key required for browsing; subscription unlocks newsletter generation.\n- Includes setup instructions for MCP integration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:79db3d29e0418f22cdde1842df0e881391df16c9c3f6b265bf08ec09c2b5fde4"
+}

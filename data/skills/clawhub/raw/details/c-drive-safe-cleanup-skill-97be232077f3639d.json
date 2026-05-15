@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "c-drive-safe-cleanup-skill",
+    "displayName": "C盘清理员",
+    "summary": "按白名单目录扫描并逐项解释C盘临时文件、缓存等安全垃圾，用户确认后删除目录内容并生成详细Markdown清理日志。",
+    "tags": {
+      "latest": "0.1.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 187,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1776830213828,
+    "updatedAt": 1777527842722
+  },
+  "latestVersion": {
+    "version": "0.1.0",
+    "createdAt": 1776830213828,
+    "changelog": "Initial release – safely clean up C drive space by user-confirmed, whitelist-only methods.\n\n- Scans only approved, non-system directories like temp/cache/logs; WPS cache included if detected.\n- Each directory is explained (usage, source of clutter, deletion impact) in Chinese before prompting user confirmation.\n- Only deletes directory contents after explicit user consent, keeping directory structure intact.\n- Never scans whole drive, deletes downloads/desktop files, modifies registry, or touches system core directories.\n- Generates a detailed Markdown cleanup log with time, actions, results, and released space for each directory.\n- Provides a PowerShell script for usage, supporting dry-run and custom log paths.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "wanyvo",
+    "userId": "s17cyeg3ce3s4a39yt5kdhfjp185bwg7",
+    "displayName": "wanyvo",
+    "image": "https://avatars.githubusercontent.com/u/162299655?v=4"
+  },
+  "moderation": null
+}

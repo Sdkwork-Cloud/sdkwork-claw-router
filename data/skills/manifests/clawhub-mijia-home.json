@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71230,
+  "uuid": "skill-clawhub-mijia-home",
+  "skillKey": "clawhub-mijia-home",
+  "name": "小米/米家智能家居控制",
+  "summary": "小米/米家智能家居设备控制。通过 MCP Server 工具控制家中的小米设备，包括灯、空气净化器、电暖气、空调、风扇、扫地机器人、窗帘等。当用户提到任何关于智能家居控制的指令时触发，如\"把灯关掉\"、\"开空调\"、\"净化器调到睡眠模式\"、\"客厅太暗了\"、\"家里空气不好\"等。即使用户没有明确说\"小米\"或\"米家\"，只要...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mijia_home",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lino Silvan",
+      "features": [
+        "小米/米家智能家居设备控制。通过 MCP Server 工具控制家中的小米设备，包括灯、空气净化器、电暖气、空调、风扇、扫地机器人、窗帘等。当用户提到任何关于智能家居控制的指令时触发，如\"把."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mijia-home@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43599234?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mijia-home",
+      "url": "https://clawhub.ai/skills/mijia-home"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mijia-home",
+    "url": "https://clawhub.ai/skills/mijia-home",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mijia-home-636721ce8fd5facb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mijia-home@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mijia-home-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f5f4acf0f37f4ca9bfc0bd6be0d86f861f2047c64fa22934957a2e05997c1c9b",
+      "artifactSizeBytes": 2240
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T03:26:12.216Z"
+}

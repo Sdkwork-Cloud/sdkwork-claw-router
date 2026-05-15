@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/threshold-keel@0.2.7",
+  "version": "0.2.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.threshold_keel",
+  "skill": {
+    "id": 23888,
+    "skillKey": "clawhub-threshold-keel",
+    "name": "Threshold Keel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "threshold-keel",
+    "url": "https://clawhub.ai/skills/threshold-keel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/threshold-keel-16b6fd61fd013114.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Safety guardrails for autonomous agents. Intercepts destructive actions, requires structured approval before irreversible operations, with CLI-backed cryptog..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andaltan",
+      "userId": "s17ew9dvgdf1gpvp9na3fk5vhx83e8xr",
+      "displayName": "Threshold Signalworks",
+      "image": "https://avatars.githubusercontent.com/u/249287132?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 228,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.2.7",
+      "createdAt": 1774534888523,
+      "changelog": "- Changed Python package installer from \"uv\" to \"pip\" in the install metadata.\n- No other changes detected; skill behavior and documentation remain the same.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2654602e5c226fef1a12e76a7d78e371edb4dda78e2f5e6b1b5b8fbd0dd11d48"
+}

@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11038,
+  "uuid": "skill-clawhub-listing-swarm",
+  "skillKey": "clawhub-listing-swarm",
+  "name": "Listing Swarm",
+  "summary": "Submit your AI product to 70+ AI directories. Agent automates form filling, captcha solving (BYOK 2captcha), and email verification (BYOK IMAP). Save 10+ hours of manual submissions. User provides their own API keys - no credentials stored.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.listing_swarm",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Heyw00d",
+      "features": [
+        "Submit your AI product to 70+ AI directories",
+        "Agent automates form filling, captcha solving (BYOK 2captcha), and email verification (BYOK IMA.",
+        "Save 10+ hours of manual submissions",
+        "User provides their own API keys"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/listing-swarm@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39588901?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "listing-swarm",
+      "url": "https://clawhub.ai/skills/listing-swarm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "listing-swarm",
+    "url": "https://clawhub.ai/skills/listing-swarm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/listing-swarm-c84ec989a08339ee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/listing-swarm@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-listing-swarm-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6db75d8298018526ed0cd530b9fcb94e279ae24fdd0b7cd6e608775576fa1539",
+      "artifactSizeBytes": 2139
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T21:40:19.225Z"
+}

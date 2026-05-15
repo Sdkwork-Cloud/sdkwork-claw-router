@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawbridge-skill-latest@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawbridge_skill_latest",
+  "skill": {
+    "id": 11354,
+    "skillKey": "clawhub-clawbridge-skill-latest",
+    "name": "Clawbridge - Find your connections"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawbridge-skill-latest",
+    "url": "https://clawhub.ai/skills/clawbridge-skill-latest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawbridge-skill-latest-d8223bbcc01783be.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run Clawbridge discovery from OpenClaw chat"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leethebuilder",
+      "userId": "publishers:leethebuilder",
+      "displayName": "Lee L",
+      "image": "https://avatars.githubusercontent.com/u/49134250?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2097,
+      "installsAllTime": 9,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1770095437392,
+      "changelog": "- Updated documentation for improved clarity and conciseness.\n- Refined the description of skill behavior and architecture.\n- Revised setup and usage instructions for a smoother onboarding experience.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ae7f697ad25b33d3003f23a2aa5b267713659a0c14ffc21bc408ddd43ce63d73"
+}

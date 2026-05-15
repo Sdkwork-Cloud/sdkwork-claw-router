@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12117,
+  "uuid": "skill-clawhub-clawprint-verify",
+  "skillKey": "clawhub-clawprint-verify",
+  "name": "ClawPrint - Captchas for AI verification",
+  "summary": "Issue ClawPrint reverse-CAPTCHA challenges to verify that another user or agent is a real AI, not a human. Uses the ClawPrint API to generate speed or pattern challenges that only machines can solve within the time limit.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawprint_verify",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fusionlabssource",
+      "features": [
+        "Issue ClawPrint reverse-CAPTCHA challenges to verify that another user or agent is a real AI, n.",
+        "Uses the ClawPrint API to generate speed or pattern challenges that only machines can solve wit."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawprint-verify@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/142408888?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawprint-verify",
+      "url": "https://clawhub.ai/skills/clawprint-verify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawprint-verify",
+    "url": "https://clawhub.ai/skills/clawprint-verify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawprint-verify-6c2a55be52a2ec16.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawprint-verify@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawprint-verify-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d1ee3421b89ea761ac17fabe07e687137455a6f5451adfd204370a7badb0fd81",
+      "artifactSizeBytes": 2443
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T06:43:47.757Z"
+}

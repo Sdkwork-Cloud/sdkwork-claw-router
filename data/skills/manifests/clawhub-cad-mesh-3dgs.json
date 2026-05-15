@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52000,
+  "uuid": "skill-clawhub-cad-mesh-3dgs",
+  "skillKey": "clawhub-cad-mesh-3dgs",
+  "name": "Cad Mesh 3dgs",
+  "summary": "Bridge CAD, Mesh, and 3D Gaussian Splatting representations. Covers mesh↔3DGS conversion, surface extraction from Gaussians, CAD reverse engineering with 3DG...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cad_mesh_3dgs",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jaccen",
+      "features": [
+        "Bridge CAD, Mesh, and 3D Gaussian Splatting representations",
+        "Covers mesh↔3DGS conversion, surface extraction from Gaussians, CAD reverse engineering with 3D."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cad-mesh-3dgs@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11365494?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cad-mesh-3dgs",
+      "url": "https://clawhub.ai/skills/cad-mesh-3dgs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cad-mesh-3dgs",
+    "url": "https://clawhub.ai/skills/cad-mesh-3dgs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cad-mesh-3dgs-c7b70e98ad7b1b19.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cad-mesh-3dgs@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-cad-mesh-3dgs-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:99dbb0d2e2aa0316370921c9d160f2eed9353e4a7f880279e0007f2dbe0818be",
+      "artifactSizeBytes": 1997
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T01:08:56.368Z"
+}

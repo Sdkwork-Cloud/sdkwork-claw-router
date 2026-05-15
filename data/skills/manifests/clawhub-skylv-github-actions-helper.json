@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35749,
+  "uuid": "skill-clawhub-skylv-github-actions-helper",
+  "skillKey": "clawhub-skylv-github-actions-helper",
+  "name": "Skylv Github Actions Helper",
+  "summary": "GitHub Actions workflow generator. Creates CI/CD pipelines for Node.js, Python, Docker. Triggers: github actions, ci cd, workflow, automate build, github ci.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_github_actions_helper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "GitHub Actions workflow generator",
+        "Creates CI/CD pipelines for Node.js, Python, Docker",
+        "Triggers: github actions, ci cd, workflow, automate build, github ci."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skylv-github-actions-helper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skylv-github-actions-helper",
+      "url": "https://clawhub.ai/skills/skylv-github-actions-helper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-github-actions-helper",
+    "url": "https://clawhub.ai/skills/skylv-github-actions-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-github-actions-helper-63715aa30f67cb19.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skylv-github-actions-helper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skylv-github-actions-helper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9dacdbb4ab0c840731243b3ef640de2cb4add045c239ccd46578ead31aede8b0",
+      "artifactSizeBytes": 2383
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T01:03:15.383Z"
+}

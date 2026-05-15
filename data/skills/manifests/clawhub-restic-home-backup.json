@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15789,
+  "uuid": "skill-clawhub-restic-home-backup",
+  "skillKey": "clawhub-restic-home-backup",
+  "name": "Restic Home Backup",
+  "summary": "Design, implement, and operate encrypted restic backups for Linux home directories with systemd automation, retention policies, and restore validation. Use w...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.restic_home_backup",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Moep90",
+      "features": [
+        "Design, implement, and operate encrypted restic backups for Linux home directories with systemd.",
+        "Use w..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/restic-home-backup@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3042152?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "restic-home-backup",
+      "url": "https://clawhub.ai/skills/restic-home-backup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "restic-home-backup",
+    "url": "https://clawhub.ai/skills/restic-home-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/restic-home-backup-05e048106c367d2b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/restic-home-backup@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-restic-home-backup-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:29a2dcc52bedc1c54341a8d32c4979f20b625757af355b77c949fce8d0e6b8f4",
+      "artifactSizeBytes": 1991
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T20:48:58.209Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66119,
+  "uuid": "skill-clawhub-hotel-manager",
+  "skillKey": "clawhub-hotel-manager",
+  "name": "酒店管家",
+  "summary": "酒店管家 Skill - 管理酒店 OTA 基础信息、房价库存及订单同步。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hotel_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wolful",
+      "features": [
+        "酒店管家 Skill",
+        "管理酒店 OTA 基础信息、房价库存及订单同步。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hotel-manager@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11292892?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hotel-manager",
+      "url": "https://clawhub.ai/skills/hotel-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hotel-manager",
+    "url": "https://clawhub.ai/skills/hotel-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hotel-manager-86fbca44cd1ff529.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hotel-manager@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-hotel-manager-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5fe98f0e0cfe4251ce07f0e075ee8e08065dbeabe54aef538d1b8b453f4fa0de",
+      "artifactSizeBytes": 2293
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T06:07:59.097Z"
+}

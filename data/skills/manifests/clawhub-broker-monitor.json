@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44089,
+  "uuid": "skill-clawhub-broker-monitor",
+  "skillKey": "clawhub-broker-monitor",
+  "name": "broker-monitor",
+  "summary": "Generate a weekly monitoring report for US retail brokerage stocks (IBKR, SCHW, HOOD, FUTU) AND the broader trading ecosystem including US equity/options mar...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.broker_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sarahwang94712",
+      "features": [
+        "Generate a weekly monitoring report for US retail brokerage stocks (IBKR, SCHW, HOOD, FUTU) AND."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/broker-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67869404?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "broker-monitor",
+      "url": "https://clawhub.ai/skills/broker-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "broker-monitor",
+    "url": "https://clawhub.ai/skills/broker-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/broker-monitor-89260eeff610f7cb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/broker-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-broker-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2a4a44ceb94f810be37a7c75cc2e6c9dd78a00c419e3bb0eb164890f611293ca",
+      "artifactSizeBytes": 2627
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T16:02:43.642Z"
+}

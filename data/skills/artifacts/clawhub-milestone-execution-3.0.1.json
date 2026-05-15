@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/milestone-execution@3.0.1",
+  "version": "3.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.milestone_execution",
+  "skill": {
+    "id": 64791,
+    "skillKey": "clawhub-milestone-execution",
+    "name": "Milestone Execution"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "milestone-execution",
+    "url": "https://clawhub.ai/skills/milestone-execution",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/milestone-execution-de41e1976dbab4b7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "多阶段任务执行器 - 用户控制节奏，AI在独立工作会话中逐阶段执行任务。每个 milestone 完成后暂停汇报，用户确认后再继续下一阶段。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "siesta-0402",
+      "userId": "s170t4ensz5bckm607pyeh24kd849e28",
+      "displayName": "Siesta-0402",
+      "image": "https://avatars.githubusercontent.com/u/209415086?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "3.0.1",
+      "createdAt": 1775454020411,
+      "changelog": "添加 README.md 功能说明",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4f1fcf687cd25522066338a30739e00bf2b07bd5e4d2835b8649494d600d7ce6"
+}

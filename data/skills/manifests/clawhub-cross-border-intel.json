@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60709,
+  "uuid": "skill-clawhub-cross-border-intel",
+  "skillKey": "clawhub-cross-border-intel",
+  "name": "cross-border-intel",
+  "summary": "面向跨境卖家的选品与竞品情报助手，自动监控 Amazon ASIN 动态并追踪 TikTok 爆品趋势",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cross_border_intel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "leif Yi",
+      "features": [
+        "面向跨境卖家的选品与竞品情报助手，自动监控 Amazon ASIN 动态并追踪 TikTok 爆品趋势"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cross-border-intel@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4188624?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cross-border-intel",
+      "url": "https://clawhub.ai/skills/cross-border-intel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cross-border-intel",
+    "url": "https://clawhub.ai/skills/cross-border-intel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cross-border-intel-d1e17b4d6be93ee2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cross-border-intel@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cross-border-intel-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a361709cf7f6c7141bfac942caabcd8aaf82e0e55952dab94ccbff34ec90a8f8",
+      "artifactSizeBytes": 2336
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T00:59:31.789Z"
+}

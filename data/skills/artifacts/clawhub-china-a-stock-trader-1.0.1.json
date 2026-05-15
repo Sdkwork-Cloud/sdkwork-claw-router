@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/china-a-stock-trader@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_a_stock_trader",
+  "skill": {
+    "id": 69579,
+    "skillKey": "clawhub-china-a-stock-trader",
+    "name": "China A Stock Trader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-a-stock-trader",
+    "url": "https://clawhub.ai/skills/china-a-stock-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-a-stock-trader-7ae3bb5fc6f88412.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "中国A股实战分析Skill。用于分析A股、给出买卖建议、规避风险。包含实时行情、技术分析、基本面筛选、情绪周期判断、龙虎榜、量化工具。触发场景：问股票、分析行情、选股推荐、风险提示。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dxie48892-jpg",
+      "userId": "publishers:dxie48892-jpg",
+      "displayName": "dxie48892-jpg",
+      "image": "https://avatars.githubusercontent.com/u/264585984?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 583,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774069296224,
+      "changelog": "v1.0.1: 接入akshare真实财务数据、新增龙虎榜、市场热度、个股财务报告功能",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9d411a42a2c72a9561636b1c4d0e377efe90f9055af16e4bfb9d1dc5e8e902e3"
+}

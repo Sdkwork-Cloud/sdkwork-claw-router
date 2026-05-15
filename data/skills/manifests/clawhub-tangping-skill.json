@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64098,
+  "uuid": "skill-clawhub-tangping-skill",
+  "skillKey": "clawhub-tangping-skill",
+  "name": "躺平.skill",
+  "summary": "躺平 skill。仅在用户明确加载或调用“躺平.skill”“tangping-skill”，或要求 agent 进入拒绝工作、输出躺平语录、嘲讽生产力话术的模式时使用。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tangping_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Treap Huai",
+      "features": [
+        "躺平 skill。仅在用户明确加载或调用“躺平.skill”“tangping-skill”，或要求 agent 进入拒绝工作、输出躺平语录、嘲讽生产力话术的模式时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tangping-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34394212?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tangping-skill",
+      "url": "https://clawhub.ai/skills/tangping-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tangping-skill",
+    "url": "https://clawhub.ai/skills/tangping-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tangping-skill-348ecee1760d38f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tangping-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-tangping-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:49199417f895d1f4847a96eb677013db2078d84c034449c92d63f7d83327f307",
+      "artifactSizeBytes": 1953
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T19:55:14.709Z"
+}

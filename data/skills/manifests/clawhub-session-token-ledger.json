@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56522,
+  "uuid": "skill-clawhub-session-token-ledger",
+  "skillKey": "clawhub-session-token-ledger",
+  "name": "Session Token Ledger",
+  "summary": "Analyze local OpenClaw session token usage from a generated SQLite ledger and markdown summaries. Use when the user asks for a token audit, token体检报告, contex...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_token_ledger",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zgjq",
+      "features": [
+        "Analyze local OpenClaw session token usage from a generated SQLite ledger and markdown summaries",
+        "Use when the user asks for a token audit, token体检报告, contex..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/session-token-ledger@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32673211?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "session-token-ledger",
+      "url": "https://clawhub.ai/skills/session-token-ledger"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-token-ledger",
+    "url": "https://clawhub.ai/skills/session-token-ledger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-token-ledger-3f4cbf7751221ba3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/session-token-ledger@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-session-token-ledger-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fb415e9e516e9634fc24a4645a5352bd07b0252bd2d9da4dfe1f4b03f4a1334a",
+      "artifactSizeBytes": 2560
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T19:12:16.617Z"
+}

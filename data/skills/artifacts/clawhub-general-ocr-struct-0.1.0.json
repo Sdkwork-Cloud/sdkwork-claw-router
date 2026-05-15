@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/general-ocr-struct@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.general_ocr_struct",
+  "skill": {
+    "id": 21603,
+    "skillKey": "clawhub-general-ocr-struct",
+    "name": "General OCR Struct"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "general-ocr-struct",
+    "url": "https://clawhub.ai/skills/general-ocr-struct",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/general-ocr-struct-61fc76e46e0e0cad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Offline OCR extracting and structuring Chinese/English screenshot text into raw or cleaned rows and fields for receipts, tables, and statements."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "9penny",
+      "userId": "s177h3sqgyygsatz9w6ketdma183jds4",
+      "displayName": "JY",
+      "image": "https://avatars.githubusercontent.com/u/52766923?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 504,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774402992540,
+      "changelog": "Initial release: local RapidOCR-based OCR with raw extraction and transaction-style structuring workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:30785bda5e728f7a4751e461aaf1e836114431fd3e4220a23103eb4b604410f1"
+}

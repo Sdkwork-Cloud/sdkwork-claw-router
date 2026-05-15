@@ -104,15 +104,15 @@ pub fn admin_provider_secret_router_with_store(
 ) -> Router {
     Router::new()
         .route(
-            "/backend/v3/api/provider-secrets",
+            "/backend/v3/api/provider_secrets",
             post(create_provider_secret).put(update_provider_secret),
         )
         .route(
-            "/backend/v3/api/provider-secrets/list",
+            "/backend/v3/api/provider_secrets/list",
             post(fetch_provider_secrets),
         )
         .route(
-            "/backend/v3/api/provider-secrets/{secret_id}",
+            "/backend/v3/api/provider_secrets/{secret_id}",
             delete(delete_provider_secret),
         )
         .with_state(AdminProviderSecretState {

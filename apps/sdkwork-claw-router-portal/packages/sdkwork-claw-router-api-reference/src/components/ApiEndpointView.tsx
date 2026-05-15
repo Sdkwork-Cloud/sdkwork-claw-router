@@ -404,7 +404,7 @@ export function ApiEndpointView({ endpoint }: ApiEndpointProps) {
             <div>
               <div className="mb-4 flex flex-col gap-3 border-b border-slate-200 pb-4 dark:border-white/10">
                 <h3 className="text-xl font-semibold text-slate-900 dark:text-white">
-                  Response Parameters
+                  {t('api.responseProperties', 'Response Properties')}
                 </h3>
                 <div className="flex flex-wrap items-center gap-2 text-xs">
                   <span className="font-semibold uppercase tracking-wider text-slate-500">Response Object</span>
@@ -432,9 +432,9 @@ export function ApiEndpointView({ endpoint }: ApiEndpointProps) {
         <div className="space-y-8 xl:sticky xl:top-[110px] xl:self-start">
           <div>
             <h3 className="text-sm font-semibold text-slate-900 dark:text-white mb-3">{t('api.request', 'Request')}</h3>
-            <div className="rounded-xl overflow-hidden border border-slate-200 dark:border-white/10 bg-[#0d1117] shadow-lg">
-              <div className="flex flex-col bg-[#161b22] border-b border-slate-700/50 dark:border-white/5 relative">
-                <div className="flex items-center bg-[#010409]">
+            <div className="rounded-xl overflow-hidden border border-slate-200 bg-slate-50 shadow-lg dark:border-white/10 dark:bg-[#0d1117]">
+              <div className="flex flex-col bg-slate-100 border-b border-slate-200 dark:bg-[#161b22] dark:border-white/5 relative">
+                <div className="flex items-center bg-white dark:bg-[#010409]">
                   <div
                     ref={langScrollRef}
                     className="flex items-center overflow-x-auto hide-scrollbar scroll-smooth w-full relative"
@@ -449,8 +449,8 @@ export function ApiEndpointView({ endpoint }: ApiEndpointProps) {
                         }}
                         className={`px-4 py-2.5 text-[13px] font-medium whitespace-nowrap transition-colors relative ${
                           selectedLang === lang
-                            ? 'text-white bg-[#161b22] rounded-t-lg'
-                            : 'text-slate-400 hover:text-slate-200 hover:bg-white/5'
+                            ? 'text-slate-900 bg-slate-100 rounded-t-lg dark:text-white dark:bg-[#161b22]'
+                            : 'text-slate-500 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-slate-200 dark:hover:bg-white/5'
                         }`}
                       >
                         {lang}
@@ -473,7 +473,7 @@ export function ApiEndpointView({ endpoint }: ApiEndpointProps) {
                         className={`px-3 py-1 text-[12px] font-medium rounded-full transition-colors ${
                           selectedLib === lib
                             ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30'
-                            : 'bg-white/5 text-slate-400 border border-transparent hover:bg-white/10 hover:text-slate-300'
+                            : 'bg-white text-slate-500 border border-slate-200 hover:bg-slate-50 hover:text-slate-700 dark:bg-white/5 dark:text-slate-400 dark:border-transparent dark:hover:bg-white/10 dark:hover:text-slate-300'
                         }`}
                       >
                         {lib}
@@ -484,13 +484,13 @@ export function ApiEndpointView({ endpoint }: ApiEndpointProps) {
                     text={generatedCode}
                     label="Copy code"
                     copiedLabel="Code copied"
-                    className="p-1.5 shrink-0 text-slate-400 hover:text-white hover:bg-white/10 rounded-md transition-colors ml-2"
+                    className="p-1.5 shrink-0 text-slate-500 hover:text-slate-900 hover:bg-slate-200 dark:text-slate-400 dark:hover:text-white dark:hover:bg-white/10 rounded-md transition-colors ml-2"
                     title="Copy code"
                   />
                 </div>
               </div>
               <div className="p-5 overflow-x-auto custom-scrollbar">
-                <pre className="text-[13px] font-mono text-slate-300 leading-relaxed">
+                <pre className="text-[13px] font-mono text-slate-700 dark:text-slate-300 leading-relaxed">
                   <code>{generatedCode}</code>
                 </pre>
               </div>
@@ -499,18 +499,18 @@ export function ApiEndpointView({ endpoint }: ApiEndpointProps) {
 
           <div>
             <h3 className="text-sm font-semibold text-slate-900 dark:text-white mb-3">{t('api.response', 'Response')}</h3>
-            <div className="rounded-xl overflow-hidden border border-slate-200 dark:border-white/10 bg-[#0d1117] shadow-lg">
-              <div className="flex items-center justify-between px-4 py-2.5 bg-[#161b22] border-b border-white/5">
-                <span className="text-[13px] font-medium text-slate-400">JSON</span>
+            <div className="rounded-xl overflow-hidden border border-slate-200 bg-slate-50 shadow-lg dark:border-white/10 dark:bg-[#0d1117]">
+              <div className="flex items-center justify-between px-4 py-2.5 bg-slate-100 border-b border-slate-200 dark:bg-[#161b22] dark:border-white/5">
+                <span className="text-[13px] font-medium text-slate-500 dark:text-slate-400">JSON</span>
                 <CopyButton
                   text={endpoint.response}
                   label="Copy response"
                   copiedLabel="Response copied"
-                  className="p-1.5 -mr-2 text-slate-400 hover:text-white hover:bg-white/10 rounded-md transition-colors"
+                  className="p-1.5 -mr-2 text-slate-500 hover:text-slate-900 hover:bg-slate-200 dark:text-slate-400 dark:hover:text-white dark:hover:bg-white/10 rounded-md transition-colors"
                   title="Copy response"
                 />
               </div>
-              <div className="p-5 overflow-x-auto custom-scrollbar max-h-[400px]">
+              <div className="p-5 overflow-x-auto custom-scrollbar max-h-[400px] text-slate-700 dark:text-slate-300">
                 <pre className="text-[13px] font-mono leading-[21px] whitespace-pre-wrap break-all">
                   {endpoint.response ? <JsonSyntaxHighlight value={endpoint.response} /> : null}
                 </pre>

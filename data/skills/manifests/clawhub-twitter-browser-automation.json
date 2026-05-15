@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41377,
+  "uuid": "skill-clawhub-twitter-browser-automation",
+  "skillKey": "clawhub-twitter-browser-automation",
+  "name": "Twitter Browser Automation",
+  "summary": "Interact with Twitter/X through Chrome browser via browser-relay MCP. Post tweets, search trends and hashtags, analyze engagement metrics, create threads, an...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twitter_browser_automation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bulldozzer",
+      "features": [
+        "Interact with Twitter/X through Chrome browser via browser-relay MCP",
+        "Post tweets, search trends and hashtags, analyze engagement metrics, create threads, an..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/twitter-browser-automation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/131347676?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "twitter-browser-automation",
+      "url": "https://clawhub.ai/skills/twitter-browser-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twitter-browser-automation",
+    "url": "https://clawhub.ai/skills/twitter-browser-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twitter-browser-automation-c6cf8f9f4461ad4e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/twitter-browser-automation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-twitter-browser-automation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d7d2aee2f4f9156d92a0ac1642cac0278e0172885a8bdbe6e03bd6232f14914a",
+      "artifactSizeBytes": 2668
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T10:06:35.655Z"
+}

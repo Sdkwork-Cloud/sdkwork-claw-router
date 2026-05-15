@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/coze@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coze",
+  "skill": {
+    "id": 63255,
+    "skillKey": "clawhub-coze",
+    "name": "Coze"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coze",
+    "url": "https://clawhub.ai/skills/coze",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coze-e449ac7d5a882c92.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Coze 扣子 AI Bot 开发助手，精通 Bot 搭建、插件开发、工作流编排、知识库配置"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangifonly",
+      "userId": "publishers:zhangifonly",
+      "displayName": "zhangifonly",
+      "image": "https://avatars.githubusercontent.com/u/121886591?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 494,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774087456491,
+      "changelog": "Initial release of Coze AI Bot development assistant.\n\n- Provides comprehensive guidance on building bots with Coze, including workflows, plugin development, and knowledge base configuration.\n- Details the entire bot setup process: creation, plugin integration (built-in & custom), knowledge base segmentation/retrieval, and workflow orchestration.\n- Lists supported publishing channels: Doubao, WeChat, Feishu, web embed, and API integration.\n- Includes sample Coze API usage and practical bot use cases.\n- Offers best practices for prompts, segmentation, workflow design, and environment selection (coze.cn/coze.com).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:416cdd87219e5bbe228981b21a2cd252d2b7b8d85340048c8dafcafdf8524698"
+}

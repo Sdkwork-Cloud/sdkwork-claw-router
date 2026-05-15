@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/beyond-meat@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beyond_meat",
+  "skill": {
+    "id": 49880,
+    "skillKey": "clawhub-beyond-meat",
+    "name": "Beyond Meat"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beyond-meat",
+    "url": "https://clawhub.ai/skills/beyond-meat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beyond-meat-aa6a720223aa9f09.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Beyond Meat specializes in pea protein and heme-based plant meat alternatives, leading innovation in retail and fast-food channels globally since 2009."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 62,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778234703672,
+      "changelog": "- 初始发布，介绍Beyond Meat的发展历程、业务模式和市场表现  \n- 增加对核心技术（豌豆蛋白+血红素专利）、产品线和全球合作伙伴的梳理  \n- 对比Beyond Meat与传统肉企及Impossible Foods的技术与市场竞争  \n- 提供公司近年财务数据、全球市场覆盖和管理层调整等关键信息  \n- 适合行业分析、技术路线研究及食品科技创业者参考",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2f2f496dc58524ce81dee2cf76e76d71e2e73231d15e14e3a0a5f683a69865e2"
+}

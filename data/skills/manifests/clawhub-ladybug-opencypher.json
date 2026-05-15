@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28583,
+  "uuid": "skill-clawhub-ladybug-opencypher",
+  "skillKey": "clawhub-ladybug-opencypher",
+  "name": "ladybug-opencypher",
+  "summary": "Runs openCypher against Ladybug DB with schema-first DDL, Python sync/async execution, CALL procedures, full-text search (CREATE_FTS_INDEX / QUERY_FTS_INDEX)...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ladybug_opencypher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hugo",
+      "features": [
+        "Runs openCypher against Ladybug DB with schema-first DDL, Python sync/async execution, CALL pro."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ladybug-opencypher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25863274?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ladybug-opencypher",
+      "url": "https://clawhub.ai/skills/ladybug-opencypher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ladybug-opencypher",
+    "url": "https://clawhub.ai/skills/ladybug-opencypher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ladybug-opencypher-fb3da5013ed136c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ladybug-opencypher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ladybug-opencypher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0f174ddf263b956553f9333f592ac0c90ee9ca6a6bde104da7ad288742524232",
+      "artifactSizeBytes": 2371
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T18:42:33.447Z"
+}

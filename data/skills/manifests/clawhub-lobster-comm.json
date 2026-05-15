@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30993,
+  "uuid": "skill-clawhub-lobster-comm",
+  "skillKey": "clawhub-lobster-comm",
+  "name": "Lobster Comm",
+  "summary": "Bot-to-Bot P2P communication over Tailscale using the LCP/1.1 UDP protocol. Enables AI agents on different machines to exchange signed, reliable messages in...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobster_comm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JeffChang2024",
+      "features": [
+        "Bot-to-Bot P2P communication over Tailscale using the LCP/1.1 UDP protocol",
+        "Enables AI agents on different machines to exchange signed, reliable messages in..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lobster-comm@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/166408579?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lobster-comm",
+      "url": "https://clawhub.ai/skills/lobster-comm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobster-comm",
+    "url": "https://clawhub.ai/skills/lobster-comm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobster-comm-a29eb675a96442ea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lobster-comm@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lobster-comm-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:495fa16f6c54d9caba571b9884a0b5feb3b81b04ca9bf13cd35954b4420f7633",
+      "artifactSizeBytes": 1957
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T07:29:08.869Z"
+}

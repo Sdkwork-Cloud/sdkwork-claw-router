@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tianshu-baidu-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tianshu_baidu_search",
+  "skill": {
+    "id": 26617,
+    "skillKey": "clawhub-tianshu-baidu-search",
+    "name": "Tianshu Baidu Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tianshu-baidu-search",
+    "url": "https://clawhub.ai/skills/tianshu-baidu-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tianshu-baidu-search-c46cc7c3550165a2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search the web using Baidu AI Search Engine (BDSE). Use for live information, documentation, or research topics."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangshengli0421",
+      "userId": "s173hn02a3sr3war78x7qzxnhn83nttz",
+      "displayName": "tianshu",
+      "image": "https://avatars.githubusercontent.com/u/100948785?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 365,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773893274936,
+      "changelog": "Node.js 实现，替代 baidu-search",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:716dfa9888a21bc24ab8c104010f0b4a4a2cff6aef5e2f62c2db5c13721e3963"
+}

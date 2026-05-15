@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27595,
+  "uuid": "skill-clawhub-reading-buddy",
+  "skillKey": "clawhub-reading-buddy",
+  "name": "Reading Buddy",
+  "summary": "A social reading platform enabling users to register books, create and join virtual reading rooms, and share real-time chat and reading insights.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reading_buddy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "A social reading platform enabling users to register books, create and join virtual reading roo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reading-buddy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reading-buddy",
+      "url": "https://clawhub.ai/skills/reading-buddy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reading-buddy",
+    "url": "https://clawhub.ai/skills/reading-buddy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reading-buddy-40b1712825be8150.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reading-buddy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-reading-buddy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b1880804ad84c8993e5d6297b57c60a72e5b9e08cce96d69d83f903c82529906",
+      "artifactSizeBytes": 2285
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T11:32:03.610Z"
+}

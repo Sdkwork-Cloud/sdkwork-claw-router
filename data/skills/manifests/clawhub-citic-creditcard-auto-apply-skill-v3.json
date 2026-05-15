@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64228,
+  "uuid": "skill-clawhub-citic-creditcard-auto-apply-skill-v3",
+  "skillKey": "clawhub-citic-creditcard-auto-apply-skill-v3",
+  "name": "citic--auto--skill",
+  "summary": "基于中信银行信用卡官网进行卡种推荐，并使用 OpenClaw browser 工具辅助预填官方申请表；默认停在最终提交前，需客户本人确认。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.citic_creditcard_auto_apply_skill_v3",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lgmsmile",
+      "features": [
+        "基于中信银行信用卡官网进行卡种推荐，并使用 OpenClaw browser 工具辅助预填官方申请表；默认停在最终提交前，需客户本人确认。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/citic-creditcard-auto-apply-skill-v3@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46308112?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "citic-creditcard-auto-apply-skill-v3",
+      "url": "https://clawhub.ai/skills/citic-creditcard-auto-apply-skill-v3"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "citic-creditcard-auto-apply-skill-v3",
+    "url": "https://clawhub.ai/skills/citic-creditcard-auto-apply-skill-v3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/citic-creditcard-auto-apply-skill-v3-e57edec50125a8ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/citic-creditcard-auto-apply-skill-v3@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-citic-creditcard-auto-apply-skill-v3-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3f0d8f17196ece8f0670241867c9351717f55b5b30c5c55503d914bbe7ddef7a",
+      "artifactSizeBytes": 2652
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T09:07:09.094Z"
+}

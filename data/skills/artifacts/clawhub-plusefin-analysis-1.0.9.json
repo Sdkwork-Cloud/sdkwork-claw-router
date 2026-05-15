@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/plusefin-analysis@1.0.9",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plusefin_analysis",
+  "skill": {
+    "id": 16363,
+    "skillKey": "clawhub-plusefin-analysis",
+    "name": "Plusefin Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plusefin-analysis",
+    "url": "https://clawhub.ai/skills/plusefin-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plusefin-analysis-194b207fe81dd75c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-ready stock analysis with financial data, options, sentiment, and structured research framework"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wanghsinche",
+      "userId": "s178d43k7mqf660h541pzpcq3984hrts",
+      "displayName": "wanghsinche",
+      "image": "https://avatars.githubusercontent.com/u/14119632?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 684,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.0.9",
+      "createdAt": 1773166306627,
+      "changelog": "- Added detailed CLI usage instructions for each command.\n- Updated the commands table to include usage examples alongside descriptions.\n- Clarified how to run commands using plusefin.py with arguments.\n- No functional changes to the skill's capabilities.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1441f63a28142799d00358a6895148716499341010c90bccaf02b57ef8e6e9e0"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/minimax-tts-send@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_tts_send",
+  "skill": {
+    "id": 66991,
+    "skillKey": "clawhub-minimax-tts-send",
+    "name": "minimax-tts-send"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-tts-send",
+    "url": "https://clawhub.ai/skills/minimax-tts-send",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-tts-send-80eff727b63072c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "调用 MiniMax 语音合成 API 生成语音,发送语音消息。支持系统音色、克隆音色、流式/非流式输出。使用场景：用户需要生成高质量中文语音、语音合成、文本转语音。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "seacozz2007",
+      "userId": "publishers:seacozz2007",
+      "displayName": "Eric",
+      "image": "https://avatars.githubusercontent.com/u/3387875?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 433,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773918869354,
+      "changelog": "- Updated SKILL.md to anonymize example target ID in the Telegram sending command from a specific number to \"xxxxxxx\".\n- No code or functionality changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:452e63c9e6c02efbc41817ba357a18dd93fb19d40533cdf9283a28e6a3e07d31"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57947,
+  "uuid": "skill-clawhub-china-express",
+  "skillKey": "clawhub-china-express",
+  "name": "China Express",
+  "summary": "中国快递查询与物流信息解析。Use when the user wants to directly get a Chinese package status. Force browser automation on https://www.kuaidi100.com/ and read the live resu...",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_express",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToBeWin",
+      "features": [
+        "中国快递查询与物流信息解析。Use when the user wants to directly get a Chinese package status",
+        "Force browser automation on https://www.kuaidi100.com/ and read the live resu..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/china-express@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/145168989?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "china-express",
+      "url": "https://clawhub.ai/skills/china-express"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-express",
+    "url": "https://clawhub.ai/skills/china-express",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-express-1c8361091a3c96b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/china-express@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-china-express-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:345eb492357c2b115d7a5469da1728646fbca8430ffee6227d3bf729d44badef",
+      "artifactSizeBytes": 2666
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T16:23:52.385Z"
+}

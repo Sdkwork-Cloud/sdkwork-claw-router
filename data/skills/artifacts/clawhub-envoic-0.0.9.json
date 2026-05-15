@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/envoic@0.0.9",
+  "version": "0.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.envoic",
+  "skill": {
+    "id": 19877,
+    "skillKey": "clawhub-envoic",
+    "name": "envoic"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "envoic",
+    "url": "https://clawhub.ai/skills/envoic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/envoic-33b450fe7be8a1cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scan, audit, and clean up Python virtual environments (.venv, conda), node_modules, and development artifacts consuming disk space. Use when the user mention..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mahimairaja",
+      "userId": "publishers:mahimairaja",
+      "displayName": "Mahimai Raja J",
+      "image": "https://avatars.githubusercontent.com/u/81288263?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 485,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.9",
+      "createdAt": 1772302681354,
+      "changelog": "envoic 0.0.9 Changelog\n\n- Expanded to support both Python (venv, conda) and JavaScript (node_modules) environments.\n- Added disk space scanning and cleanup for virtual environments, node_modules, and development artifacts.\n- Introduced verified trigger phrases for easier discovery during workspace health checks and cleanups.\n- Emphasized safety: requires scans and dry-runs before destructive actions, and explicit confirmation for cleanup.\n- Provided quick start examples and detailed, workflow-oriented usage documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0604f1abc64f9d9d73181484ec0d0537580263cdbfba4835499784eedd975c01"
+}

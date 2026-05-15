@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/microsoft-excel@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.microsoft_excel",
+  "skill": {
+    "id": 8336,
+    "skillKey": "clawhub-microsoft-excel",
+    "name": "Microsoft Excel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "microsoft-excel",
+    "url": "https://clawhub.ai/skills/microsoft-excel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/microsoft-excel-a915bd902a515fa6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Microsoft Excel API integration with managed OAuth. Read and write Excel workbooks, worksheets, ranges, tables, and charts stored in OneDrive. Use this skill..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 3,
+      "downloads": 21473,
+      "installsAllTime": 162,
+      "installsCurrent": 148,
+      "stars": 39,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1777591178827,
+      "changelog": "- Base API URLs updated from gateway.maton.ai and ctrl.maton.ai to api.maton.ai for all endpoints.\n- Connection management instructions revised to reflect new URLs.\n- Security note added: all write operations now require explicit user approval and confirmation of target resource.\n- \"LICENSE.txt\" file removed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2ead43387db6d47bc5af79e9a4872cfcc8c0644b7e0c59c4d179eda50129fd45"
+}

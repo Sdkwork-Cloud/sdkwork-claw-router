@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41826,
+  "uuid": "skill-clawhub-repo-growth-operator",
+  "skillKey": "clawhub-repo-growth-operator",
+  "name": "Repo Growth Operator",
+  "summary": "Recommend small, practical growth actions for a public GitHub repository based on releases, skills, docs, and current positioning.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.repo_growth_operator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Guoma970",
+      "features": [
+        "Recommend small, practical growth actions for a public GitHub repository based on releases, ski."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/repo-growth-operator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266290379?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "repo-growth-operator",
+      "url": "https://clawhub.ai/skills/repo-growth-operator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "repo-growth-operator",
+    "url": "https://clawhub.ai/skills/repo-growth-operator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/repo-growth-operator-e15b90c581df307f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/repo-growth-operator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-repo-growth-operator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4959e4ea20d5759740aa8f962b89b596bfd1608f3ef9792e2affc0122fc200e1",
+      "artifactSizeBytes": 2031
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T09:58:27.295Z"
+}

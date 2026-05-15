@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24397,
+  "uuid": "skill-clawhub-riskadvisor",
+  "skillKey": "clawhub-riskadvisor",
+  "name": "Riskadvisor",
+  "summary": "RiskAdvisor integration. Manage Organizations, Leads, Pipelines, Users, Goals, Filters. Use when the user wants to interact with RiskAdvisor data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.riskadvisor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "RiskAdvisor integration",
+        "Manage Organizations, Leads, Pipelines, Users, Goals, Filters",
+        "Use when the user wants to interact with RiskAdvisor data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/riskadvisor@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "riskadvisor",
+      "url": "https://clawhub.ai/skills/riskadvisor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "riskadvisor",
+    "url": "https://clawhub.ai/skills/riskadvisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/riskadvisor-7b9b46ebcf02094d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/riskadvisor@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-riskadvisor-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:84a5dd0bf7af87911e79baad43faa88e5cba468473e2cc6531e50eed342e43c4",
+      "artifactSizeBytes": 1874
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:35:16.879Z"
+}

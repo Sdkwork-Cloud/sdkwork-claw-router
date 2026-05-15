@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/debate-4person@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.debate_4person",
+  "skill": {
+    "id": 67500,
+    "skillKey": "clawhub-debate-4person",
+    "name": "debate-4person"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "debate-4person",
+    "url": "https://clawhub.ai/skills/debate-4person",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/debate-4person-0ace3d42d8acf024.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "四人制标准辩论工具，AI 扮演正反方 8 名辩手，按立论→攻辩→总结流程辩论，支持打断、评委点评打分。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "woqigeshenmemingzibijiaoheshine",
+      "userId": "s177rqm22ecvvcvnaf9y8mwprn83ggyc",
+      "displayName": "woqigeshenmemingzibijiaoheshine",
+      "image": "https://avatars.githubusercontent.com/u/108391044?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 232,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773893749468,
+      "changelog": "debate-4person v1.0.0 — 四人制AI在线辩论工具首次发布\n\n- 支持标准“四人制”辩论流程，AI扮演正反双方 8 名辩手（立论、攻辩、驳论、总结）\n- 用户自然指令触发，论题确认后自动分配辩手与环节\n- Tavily 搜索与知识库结合，为论点提供数据、案例和观点支持\n- 提供打断、终止辩论及专家评委点评、打分功能\n- 针对论题模糊、流程异常等作出智能反馈和容错处理\n- 附详细演示用例，适合辩论训练、场景模拟与评测",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5d869fe641d9439c807a81b2ade6f2e8ce573a31f38eca58b1f6c750bcd13992"
+}

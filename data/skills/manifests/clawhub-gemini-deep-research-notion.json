@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50790,
+  "uuid": "skill-clawhub-gemini-deep-research-notion",
+  "skillKey": "clawhub-gemini-deep-research-notion",
+  "name": "Gemini Deep Research → Notion",
+  "summary": "Trigger Gemini Deep Research via browser and save results to Notion. Use when the user asks to \"deep research\" a topic, says \"gemini deep research\", or wants...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gemini_deep_research_notion",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Andy Xie",
+      "features": [
+        "Trigger Gemini Deep Research via browser and save results to Notion",
+        "Use when the user asks to \"deep research\" a topic, says \"gemini deep research\", or wants..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gemini-deep-research-notion@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21349144?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gemini-deep-research-notion",
+      "url": "https://clawhub.ai/skills/gemini-deep-research-notion"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gemini-deep-research-notion",
+    "url": "https://clawhub.ai/skills/gemini-deep-research-notion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gemini-deep-research-notion-40d1e53dee4beed1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gemini-deep-research-notion@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gemini-deep-research-notion-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9137413950d8b350728467c064c2362224641178879e2df842a5e7b493fa6c5a",
+      "artifactSizeBytes": 2056
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T15:38:38.575Z"
+}

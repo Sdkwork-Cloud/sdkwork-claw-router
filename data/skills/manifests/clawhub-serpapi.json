@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9132,
+  "uuid": "skill-clawhub-serpapi",
+  "skillKey": "clawhub-serpapi",
+  "name": "SerpAPI",
+  "summary": "Unified search API across Google, Amazon, Yelp, OpenTable, Walmart, and more. Use when searching for products, local businesses, restaurants, shopping, images, news, or any web search. One API key, many engines.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.serpapi",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ianpcook",
+      "features": [
+        "Unified search API across Google, Amazon, Yelp, OpenTable, Walmart, and more",
+        "Use when searching for products, local businesses, restaurants, shopping, images, news, or any.",
+        "One API key, many engines."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/serpapi@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4852217?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "serpapi",
+      "url": "https://clawhub.ai/skills/serpapi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "serpapi",
+    "url": "https://clawhub.ai/skills/serpapi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/serpapi-817bb784ab833599.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/serpapi@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-serpapi-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:94827f9495b030b0588a7e5daedfd6201bb84c937d17ce2de2916067f05b40bb",
+      "artifactSizeBytes": 1937
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-25T23:16:25.305Z"
+}

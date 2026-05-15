@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54656,
+  "uuid": "skill-clawhub-openfec",
+  "skillKey": "clawhub-openfec",
+  "name": "Openfec",
+  "summary": "OpenFEC — campaign finance data, candidates, committees, filings, and contribution search.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openfec",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aiwithabidi",
+      "features": [
+        "OpenFEC — campaign finance data, candidates, committees, filings, and contribution search."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openfec@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208891229?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openfec",
+      "url": "https://clawhub.ai/skills/openfec"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openfec",
+    "url": "https://clawhub.ai/skills/openfec",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openfec-6658dda43d3a182f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openfec@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openfec-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ce77e9cb71ec5556af3c17873801f37e58178f8fd916c3c55542416d6d345fda",
+      "artifactSizeBytes": 2133
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T22:53:01.356Z"
+}

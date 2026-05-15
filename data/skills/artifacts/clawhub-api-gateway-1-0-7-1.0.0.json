@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/api-gateway-1-0-7@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_gateway_1_0_7",
+  "skill": {
+    "id": 17229,
+    "skillKey": "clawhub-api-gateway-1-0-7",
+    "name": "Api Gateway 1.0.7"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-gateway-1-0-7",
+    "url": "https://clawhub.ai/skills/api-gateway-1-0-7",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-gateway-1-0-7-6b34f9cb77df5304.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "API gateway for calling third-party APIs with managed auth. Use this skill when users want to interact with external services like Slack, HubSpot, Salesforce..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "makforce",
+      "userId": "publishers:makforce",
+      "displayName": "Makforce",
+      "image": "https://avatars.githubusercontent.com/u/195388530?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 771,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771795802495,
+      "changelog": "Initial release of api-gateway skill.\n\n- Provides a passthrough proxy for direct access to 35+ third-party APIs (Slack, HubSpot, Salesforce, Google Workspace, Stripe, and more)\n- Enables managed OAuth authentication and connection management via Maton platform\n- Includes guides for API key setup, connection creation, and specifying connections per request\n- Documents endpoints and base URLs for supported services\n- Offers troubleshooting steps for common errors (e.g., 500 Internal Server Error due to expired tokens)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5af0d15eff0ea19c977fe7cf3a1aa81ef1dc3319d6e7f49df58b117bc45dbbe8"
+}

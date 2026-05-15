@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59273,
+  "uuid": "skill-clawhub-prowlarr-search",
+  "skillKey": "clawhub-prowlarr-search",
+  "name": "prowlarr-search",
+  "summary": "用Prowlarr搜索影视资源，搜索torrent种子，磁力链接Magnet",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prowlarr_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pengzhxyz",
+      "features": [
+        "用Prowlarr搜索影视资源，搜索torrent种子，磁力链接Magnet"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prowlarr-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15181343?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prowlarr-search",
+      "url": "https://clawhub.ai/skills/prowlarr-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prowlarr-search",
+    "url": "https://clawhub.ai/skills/prowlarr-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prowlarr-search-aaf6930185853879.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prowlarr-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-prowlarr-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e485c8f0710e181b7fbf778b94e3d0fb87ae4adad48e17e1156685c2b9b2bd64",
+      "artifactSizeBytes": 2231
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T06:44:21.673Z"
+}

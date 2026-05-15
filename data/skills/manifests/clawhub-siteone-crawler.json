@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49948,
+  "uuid": "skill-clawhub-siteone-crawler",
+  "skillKey": "clawhub-siteone-crawler",
+  "name": "Siteone Crawler",
+  "summary": "Website crawling, auditing, offline cloning, and markdown export using SiteOne Crawler (Rust). Trigger when the user asks to: crawl a website, audit/analyze...",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.siteone_crawler",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tsingliu",
+      "features": [
+        "Website crawling, auditing, offline cloning, and markdown export using SiteOne Crawler (Rust)",
+        "Trigger when the user asks to: crawl a website, audit/analyze..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/siteone-crawler@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14992305?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "siteone-crawler",
+      "url": "https://clawhub.ai/skills/siteone-crawler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "siteone-crawler",
+    "url": "https://clawhub.ai/skills/siteone-crawler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/siteone-crawler-1240c27bba023d9a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/siteone-crawler@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-siteone-crawler-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8ac900ee677313a2df1089a5aecef25a09f447c0ac56fcaa01994e2daba1b6ad",
+      "artifactSizeBytes": 2440
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T07:38:06.280Z"
+}

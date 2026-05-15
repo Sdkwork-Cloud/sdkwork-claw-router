@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10851,
+  "uuid": "skill-clawhub-security",
+  "skillKey": "clawhub-security",
+  "name": "AgentGuard",
+  "summary": "GoPlus AgentGuard — AI agent security guard. Run /agentguard checkup for a full security health check, scans all installed skills, checks credentials, permis...",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.security",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GoPlus",
+      "features": [
+        "GoPlus AgentGuard — AI agent security guard",
+        "Run /agentguard checkup for a full security health check, scans all installed skills, checks cr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/security@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24714804?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "security",
+      "url": "https://clawhub.ai/skills/security"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "security",
+    "url": "https://clawhub.ai/skills/security",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/security-5d2d3ceb7abe5523.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/security@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-security-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:23d98c572c5619cd9366c325de5ba395984cb882adc7b0e3ac621cd2db3bc2cc",
+      "artifactSizeBytes": 2359
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T05:46:24.325Z"
+}

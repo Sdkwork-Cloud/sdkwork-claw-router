@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8870,
+  "uuid": "skill-clawhub-summarizer",
+  "skillKey": "clawhub-summarizer",
+  "name": "Summarizer",
+  "summary": "Distill content to its essence with audience-aware compression, format selection, and quality verification.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.summarizer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Distill content to its essence with audience-aware compression, format selection, and quality v."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/summarizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "summarizer",
+      "url": "https://clawhub.ai/skills/summarizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "summarizer",
+    "url": "https://clawhub.ai/skills/summarizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/summarizer-d479f1971015ef04.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/summarizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-summarizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e5a34c0947c4588ea59dce1b58d560a3eaad4d027af63f9dfa053c67a9ca6f15",
+      "artifactSizeBytes": 1803
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T14:07:26.695Z"
+}

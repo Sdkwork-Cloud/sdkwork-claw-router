@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39332,
+  "uuid": "skill-clawhub-stock-analysis-fixed",
+  "skillKey": "clawhub-stock-analysis-fixed",
+  "name": "Stock Analysis",
+  "summary": "Use when analyzing stocks or cryptocurrencies with public market data, comparing tickers, and producing structured notes for a portfolio or watchlist.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_analysis_fixed",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "XuXu",
+      "features": [
+        "Use when analyzing stocks or cryptocurrencies with public market data, comparing tickers, and p."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-analysis-fixed@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/76080484?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-analysis-fixed",
+      "url": "https://clawhub.ai/skills/stock-analysis-fixed"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-analysis-fixed",
+    "url": "https://clawhub.ai/skills/stock-analysis-fixed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-analysis-fixed-5da0c1569668c073.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-analysis-fixed@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-analysis-fixed-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eae23e15c56fbceed8df9b21d9b076cb8a7c35d6edb6dcab4c126549b1047040",
+      "artifactSizeBytes": 2002
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T05:43:38.991Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21873,
+  "uuid": "skill-clawhub-nanobot-overstory-bridge",
+  "skillKey": "clawhub-nanobot-overstory-bridge",
+  "name": "Nanobot Overstory Bridge",
+  "summary": "Seamless bidirectional bridge between nanobot (Ollama Mistral orchestrator) and overstory (Claude Code agent swarm). Routes tasks through the OverClaw gatewa...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nanobot_overstory_bridge",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "austindixson",
+      "features": [
+        "Seamless bidirectional bridge between nanobot (Ollama Mistral orchestrator) and overstory (Clau.",
+        "Routes tasks through the OverClaw gatewa..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nanobot-overstory-bridge@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52183161?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nanobot-overstory-bridge",
+      "url": "https://clawhub.ai/skills/nanobot-overstory-bridge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nanobot-overstory-bridge",
+    "url": "https://clawhub.ai/skills/nanobot-overstory-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nanobot-overstory-bridge-e70c37da0d94741a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nanobot-overstory-bridge@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nanobot-overstory-bridge-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a81e7a7a28caa23d032457372a0ca48a97ff4b7de6f9b54616ff8abd7197ca8d",
+      "artifactSizeBytes": 2776
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T13:09:40.787Z"
+}

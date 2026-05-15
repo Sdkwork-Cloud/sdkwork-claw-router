@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29837,
+  "uuid": "skill-clawhub-publora",
+  "skillKey": "clawhub-publora",
+  "name": "Publora",
+  "summary": "Publora API — schedule and publish social media posts across 10 platforms (X/Twitter, LinkedIn, Instagram, Threads, TikTok, YouTube, Facebook, Bluesky, Masto...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.publora",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sergey Bulaev",
+      "features": [
+        "Publora API — schedule and publish social media posts across 10 platforms (X/Twitter, LinkedIn,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/publora@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/241980?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "publora",
+      "url": "https://clawhub.ai/skills/publora"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "publora",
+    "url": "https://clawhub.ai/skills/publora",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/publora-1ecc7a8386e9562a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/publora@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-publora-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e2bdaa919f47fb66dc868f2716c624fa448162e55966d62366d1270105fc9f47",
+      "artifactSizeBytes": 2046
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T13:00:08.704Z"
+}

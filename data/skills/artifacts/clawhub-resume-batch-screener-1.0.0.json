@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/resume-batch-screener@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resume_batch_screener",
+  "skill": {
+    "id": 72876,
+    "skillKey": "clawhub-resume-batch-screener",
+    "name": "第一阶段：批量筛选简历"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resume-batch-screener",
+    "url": "https://clawhub.ai/skills/resume-batch-screener",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resume-batch-screener-56f4c950c093547d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "第一阶段批量筛选 - 通用岗位简历批量筛选工具，自动从JD提取评估维度，多候选人打分排序，生成筛选报告和面试邀请名单"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "suql82",
+      "userId": "s17a8yv07xhw50zbtmyrkfs2h184e0pc",
+      "displayName": "suql82",
+      "image": "https://avatars.githubusercontent.com/u/269055178?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 119,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777204720259,
+      "changelog": "resume-batch-screener 1.0.0 — Initial release\n\n- Provides a universal bulk resume screening tool for any job position.\n- Automatically parses job descriptions to extract evaluation dimensions, requirements, and bonus items.\n- Scores, ranks, and outputs multiple candidate resumes to standardized Excel reports, including screening and interview invitation lists.\n- Supports multi-format input: JD (docx/pdf/md/txt) and resumes (docx/pdf/jpg/png).\n- Includes detailed, transparent scoring rules and multi-dimensional evaluation adaptable by job type.\n- Streamlines the first-phase filtering process and ensures cross-role comparability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:464384737138e2ff4dbd0791947ac1210f84656bb1075423ecff48dfc565fc3e"
+}

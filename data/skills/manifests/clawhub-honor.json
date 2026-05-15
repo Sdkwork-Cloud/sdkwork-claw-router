@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67568,
+  "uuid": "skill-clawhub-honor",
+  "skillKey": "clawhub-honor",
+  "name": "Honor",
+  "summary": "荣耀品牌介绍和手机产品指南",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.honor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "荣耀品牌介绍和手机产品指南"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/honor@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "honor",
+      "url": "https://clawhub.ai/skills/honor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "honor",
+    "url": "https://clawhub.ai/skills/honor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/honor-8ab4ca2f83725a04.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/honor@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-honor-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:74652dd2e164bb002f9727a71730b17a6f3b7523026cefeb3f13e263539ffefd",
+      "artifactSizeBytes": 1816
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T07:49:11.236Z"
+}

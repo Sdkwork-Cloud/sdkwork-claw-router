@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8708,
+  "uuid": "skill-clawhub-ticktick",
+  "skillKey": "clawhub-ticktick",
+  "name": "TickTick CLI",
+  "summary": "Manage TickTick tasks and projects from the command line with OAuth2 auth, batch operations, and rate limit handling.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ticktick",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ManuelHettich",
+      "features": [
+        "Manage TickTick tasks and projects from the command line with OAuth2 auth, batch operations, an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ticktick@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17690367?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ticktick",
+      "url": "https://clawhub.ai/skills/ticktick"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ticktick",
+    "url": "https://clawhub.ai/skills/ticktick",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ticktick-d468473c91a87d3d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ticktick@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ticktick-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7412713bc200dba7d2c3fe4edcac3b6fd95ed1e8abe8d36b41a55d3e1d597be6",
+      "artifactSizeBytes": 1877
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-07T16:06:44.538Z"
+}

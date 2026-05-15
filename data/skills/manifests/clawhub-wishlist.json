@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14190,
+  "uuid": "skill-clawhub-wishlist",
+  "skillKey": "clawhub-wishlist",
+  "name": "Wishlist",
+  "summary": "Build a personal wishlist system for capturing wants, tracking prices, and smart purchasing decisions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wishlist",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Build a personal wishlist system for capturing wants, tracking prices, and smart purchasing dec."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wishlist@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wishlist",
+      "url": "https://clawhub.ai/skills/wishlist"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wishlist",
+    "url": "https://clawhub.ai/skills/wishlist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wishlist-cfee7c93184525ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wishlist@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wishlist-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:19d3ca1c2d7f38a6f46272f88ad9df62b950d53a9a13d83e6b0a5e097d305114",
+      "artifactSizeBytes": 1783
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T01:41:31.259Z"
+}

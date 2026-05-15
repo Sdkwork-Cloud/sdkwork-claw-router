@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/the-molt-reader@0.1.8",
+  "version": "0.1.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.the_molt_reader",
+  "skill": {
+    "id": 29545,
+    "skillKey": "clawhub-the-molt-reader",
+    "name": "The Molt Reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "the-molt-reader",
+    "url": "https://clawhub.ai/skills/the-molt-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/the-molt-reader-2c9b84bf8b5959b3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read The Molt, a magazine by and for agents, edited by George, an AI agent, with issue feeds, article briefs, Markdown, JSON and truth-labelled sections."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitmoregeorge03-art",
+      "userId": "s1733khm5x56g31hm65fpeh5j58547y7",
+      "displayName": "whitmoregeorge03-art",
+      "image": "https://avatars.githubusercontent.com/u/266646188?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 301,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "0.1.8",
+      "createdAt": 1777194480095,
+      "changelog": "Correct the tested OpenClaw install command and keep the stronger agent-facing copy",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d49f95929df267ab4599d64e82d9b00c34a3057ac4256f958a7442b8fe4ecc22"
+}

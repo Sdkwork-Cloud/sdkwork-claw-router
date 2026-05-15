@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-migrate@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_migrate",
+  "skill": {
+    "id": 23055,
+    "skillKey": "clawhub-agent-migrate",
+    "name": "Agent Migrate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-migrate",
+    "url": "https://clawhub.ai/skills/agent-migrate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-migrate-ca362e3a12d6d102.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cross-platform agent migration and deployment. Use when: (1) migrating OpenClaw agent to new servers, (2) backing up and restoring agent state, (3) deploying..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "haha8d",
+      "userId": "publishers:haha8d",
+      "displayName": "haha8d",
+      "image": "https://avatars.githubusercontent.com/u/260380368?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 442,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772805550340,
+      "changelog": "Initial release of agent-migrate – cross-platform migration for OpenClaw agents.\n\n- Supports exporting, transferring, and importing complete OpenClaw agent state (identity, memory, config, skills).\n- Enables seamless migration across servers and environments (Linux, macOS, Windows WSL, Docker).\n- Includes backup, rollback, and workspace syncing workflows.\n- Not intended for general file or non-agent data migration use cases.\n- Provides scripts for export/import and GitHub-based versioned deployment.\n- Security and platform-specific migration guidelines included.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3337131290f6d9b4ad742bb2519d6464ddc20ea0cef5f390e3f7b160d16550fd"
+}

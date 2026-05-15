@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38907,
+  "uuid": "skill-clawhub-journalism-agent",
+  "skillKey": "clawhub-journalism-agent",
+  "name": "Journalism Agent",
+  "summary": "Multi-stage journalism agent for OpenClaw. Researches, drafts, and edits publication-quality articles. Also assembles mixed newsletters combining original ar...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.journalism_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "defineagain",
+      "features": [
+        "Multi-stage journalism agent for OpenClaw",
+        "Researches, drafts, and edits publication-quality articles",
+        "Also assembles mixed newsletters combining original ar..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/journalism-agent@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/145506209?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "journalism-agent",
+      "url": "https://clawhub.ai/skills/journalism-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "journalism-agent",
+    "url": "https://clawhub.ai/skills/journalism-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/journalism-agent-c6c07e2c6933e2b0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/journalism-agent@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-journalism-agent-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:66f15ff4697150f0a84069a1ce06860a520438feb68ab227632076af0ce2f07b",
+      "artifactSizeBytes": 2452
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T12:30:04.722Z"
+}

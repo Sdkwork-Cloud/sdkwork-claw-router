@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64114,
+  "uuid": "skill-clawhub-kunwu-builder",
+  "skillKey": "clawhub-kunwu-builder",
+  "name": "Kunwu Builder",
+  "summary": "控制Kunwu Builder工业仿真软件的HTTP API，实现模型管理、机器人控制、物流设备、相机及传感器操作、场景与行为配置等功能。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kunwu_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sam",
+      "features": [
+        "控制Kunwu Builder工业仿真软件的HTTP API，实现模型管理、机器人控制、物流设备、相机及传感器操作、场景与行为配置等功能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kunwu-builder@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37575256?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kunwu-builder",
+      "url": "https://clawhub.ai/skills/kunwu-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kunwu-builder",
+    "url": "https://clawhub.ai/skills/kunwu-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kunwu-builder-0809927ae0954649.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kunwu-builder@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-kunwu-builder-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:759b2facfc56bda9d0c8443d9c2c3e57462bdd4b02361fc79f85bfe5ffebc923",
+      "artifactSizeBytes": 2071
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T04:55:26.245Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44848,
+  "uuid": "skill-clawhub-cronlint",
+  "skillKey": "clawhub-cronlint",
+  "name": "cronlint",
+  "summary": "Scheduled task & cron job anti-pattern analyzer -- detects overlapping execution risks, timezone scheduling errors, missing error recovery, resource contenti...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cronlint",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "suhteevah",
+      "features": [
+        "Scheduled task & cron job anti-pattern analyzer -",
+        "detects overlapping execution risks, timezone scheduling errors, missing error recovery, resour."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cronlint@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2342183?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cronlint",
+      "url": "https://clawhub.ai/skills/cronlint"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cronlint",
+    "url": "https://clawhub.ai/skills/cronlint",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cronlint-a40fdc8e4836cf43.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cronlint@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-cronlint-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e405aa59802a0a490a89a6694dafa41bfd5983e6a779053a324dc17752e1809e",
+      "artifactSizeBytes": 1881
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T15:20:49.346Z"
+}

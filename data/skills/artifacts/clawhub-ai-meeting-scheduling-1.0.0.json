@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-meeting-scheduling@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_meeting_scheduling",
+  "skill": {
+    "id": 15173,
+    "skillKey": "clawhub-ai-meeting-scheduling",
+    "name": "Skipup - AI Meeting Scheduling"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-meeting-scheduling",
+    "url": "https://clawhub.ai/skills/ai-meeting-scheduling",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-meeting-scheduling-1a4b8cba17fa1375.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Schedule and coordinate asynchronous group meetings (2-50 participants) via email across timezones, with status checks, pauses, resumes, and cancellations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dheerg",
+      "userId": "publishers:dheerg",
+      "displayName": "DheerG",
+      "image": "https://avatars.githubusercontent.com/u/3100742?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 859,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771381981932,
+      "changelog": "Initial release of SkipUp Meeting Scheduler skill for async group meetings:\n\n- Schedule meetings with 2-50 participants coordinated via email—no booking links or calendar access required.\n- Supports creating, checking status, pausing, resuming, and canceling meeting requests.\n- Coordinator automates availability collection, time negotiation, and reminders across timezones.\n- Async-only: does not instant-book, access free/busy, reschedule, or handle recurring/room booking.\n- Includes tools to list/view meeting requests and verify workspace members for compliance.\n- Requires SKIPUP_API_KEY for authentication.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:da03af1860b23bb0c1c436efe494b53a40c17a65b1889b0b91a73d492157f512"
+}

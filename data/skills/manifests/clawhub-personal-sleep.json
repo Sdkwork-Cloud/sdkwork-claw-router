@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16499,
+  "uuid": "skill-clawhub-personal-sleep",
+  "skillKey": "clawhub-personal-sleep",
+  "name": "Personal Sleep Coach",
+  "summary": "Acts as the user's sleep coach in the Sleep topic. Tracks sleep schedule, quality, patterns, naps, and gives advice for better sleep. Use when in Personal ch...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_sleep",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GekaCross",
+      "features": [
+        "Acts as the user's sleep coach in the Sleep topic",
+        "Tracks sleep schedule, quality, patterns, naps, and gives advice for better sleep",
+        "Use when in Personal ch..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/personal-sleep@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57638140?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "personal-sleep",
+      "url": "https://clawhub.ai/skills/personal-sleep"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-sleep",
+    "url": "https://clawhub.ai/skills/personal-sleep",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-sleep-76b0483625708deb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/personal-sleep@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-personal-sleep-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:319015774f69ba0731f9c1a100da3a1a0439c65db1a939e35e292ffc4f2d252f",
+      "artifactSizeBytes": 2389
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T09:03:50.486Z"
+}

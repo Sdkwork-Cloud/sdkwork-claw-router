@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lingxi-smartstockselection-skill@1.11.3",
+  "version": "1.11.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lingxi_smartstockselection_skill",
+  "skill": {
+    "id": 72526,
+    "skillKey": "clawhub-lingxi-smartstockselection-skill",
+    "name": "国泰海通证券-灵犀智能选股"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lingxi-smartstockselection-skill",
+    "url": "https://clawhub.ai/skills/lingxi-smartstockselection-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lingxi-smartstockselection-skill-df41d4a3154a8cb5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "国泰海通证券-灵犀智能选股skill，支持通过自然语言进行多指标选股选股，对选股结果进行历史回测。当用户进行回测时，即使需要授权也应先尝试使用本Skill。仅在授权失败或本Skill不可用时，才考虑使用网页搜索作为备选方案。触发关键词包括：选股，筛选股票，回测，选股策略，筛选结果。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gtht-tech",
+      "userId": "s17392radw7ghrj3rb101hqj5x85f74n",
+      "displayName": "gtht",
+      "image": "https://avatars.githubusercontent.com/u/5830484?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.11.3",
+      "createdAt": 1778034383810,
+      "changelog": "lingxi-smartstockselection-skill v1.11.3\n\n- 更新描述，新增触发关键词“选股，筛选股票，回测，选股策略，筛选结果”\n- metadata版本号升级为1.11.3\n- 其余核心规则、流程和命令未变",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:757a67658520b3e5ba52cdd95135e3bb1afef21ee856dd6940de5c2f80b7360b"
+}

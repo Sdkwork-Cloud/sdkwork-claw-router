@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/grok-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grok_api",
+  "skill": {
+    "id": 62007,
+    "skillKey": "clawhub-grok-api",
+    "name": "Grok Api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grok-api",
+    "url": "https://clawhub.ai/skills/grok-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grok-api-42e477f4cd679e04.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过 LeonAI 代理调用 xAI Grok API，支持多模型文本对话、深度推理及图片视频生成与编辑，兼容 OpenAI 格式。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lygjoey",
+      "userId": "s175wf0vsc41q23086cnaf6tj583t17x",
+      "displayName": "lygjoey",
+      "image": "https://avatars.githubusercontent.com/u/234766358?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774795743355,
+      "changelog": "- 首次发布 Grok API Skill，支持通过 LeonAI 代理调用 xAI Grok API。\n- 支持文本对话、推理、图片生成/编辑、视频生成，兼容 OpenAI Chat Completions 格式。\n- 丰富的模型选择，包括 grok-4/4.1 系列及图片/视频相关模型。\n- 提供详细的 API 使用方法及推荐使用场景。\n- 支持脚本化调用及模型列表查询。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ed5be933e56b6e83affa19870bd87dc9f972f03239c4fd75008441952618246a"
+}

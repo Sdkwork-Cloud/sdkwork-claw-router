@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43870,
+  "uuid": "skill-clawhub-pcs-harvest-rewards",
+  "skillKey": "clawhub-pcs-harvest-rewards",
+  "name": "Harvest Rewards",
+  "summary": "Harvest pending CAKE and partner-token rewards from PancakeSwap farming positions. Use when user says \"/harvest-rewards\", \"harvest all my pending CAKE reward...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pcs_harvest_rewards",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pcs-bot",
+      "features": [
+        "Harvest pending CAKE and partner-token rewards from PancakeSwap farming positions",
+        "Use when user says \"/harvest-rewards\", \"harvest all my pending CAKE reward..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pcs-harvest-rewards@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/227519168?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pcs-harvest-rewards",
+      "url": "https://clawhub.ai/skills/pcs-harvest-rewards"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pcs-harvest-rewards",
+    "url": "https://clawhub.ai/skills/pcs-harvest-rewards",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pcs-harvest-rewards-7474657da62c0a8d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pcs-harvest-rewards@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pcs-harvest-rewards-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0238c4b207c95b947e4809c3208ff19f76655edad799149ec492faa246d9e811",
+      "artifactSizeBytes": 1956
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T02:44:37.199Z"
+}

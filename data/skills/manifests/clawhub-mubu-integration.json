@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69120,
+  "uuid": "skill-clawhub-mubu-integration",
+  "skillKey": "clawhub-mubu-integration",
+  "name": "Mubu Integration",
+  "summary": "幕布笔记集成，支持登录认证、文档管理、文件夹操作、大纲导出等功能。触发词：幕布、mubu、大纲笔记、思维导图导出、幕布同步",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mubu_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liuboacean",
+      "features": [
+        "幕布笔记集成，支持登录认证、文档管理、文件夹操作、大纲导出等功能。触发词：幕布、mubu、大纲笔记、思维导图导出、幕布同步"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mubu-integration@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27935764?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mubu-integration",
+      "url": "https://clawhub.ai/skills/mubu-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mubu-integration",
+    "url": "https://clawhub.ai/skills/mubu-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mubu-integration-f57c55ac2dfc4805.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mubu-integration@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mubu-integration-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:42b93445d85965eee6b9763fbb53cb8c1e704c270a8dc60aa2ab7d17d18607d5",
+      "artifactSizeBytes": 2310
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T06:28:17.781Z"
+}

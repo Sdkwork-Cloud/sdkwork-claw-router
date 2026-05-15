@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23162,
+  "uuid": "skill-clawhub-deep-research-plan",
+  "skillKey": "clawhub-deep-research-plan",
+  "name": "Deep Research",
+  "summary": "Automated deep research that performs comprehensive multi-source investigation and produces detailed reports with citations. Use when user requests research,...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deep_research_plan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bird-frank",
+      "features": [
+        "Automated deep research that performs comprehensive multi-source investigation and produces det.",
+        "Use when user requests research,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deep-research-plan@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7122030?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deep-research-plan",
+      "url": "https://clawhub.ai/skills/deep-research-plan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deep-research-plan",
+    "url": "https://clawhub.ai/skills/deep-research-plan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deep-research-plan-100b617ecd5c41ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deep-research-plan@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-deep-research-plan-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:667a53443b4b957145db7119943a9cacebf8a8d5d167d5c88d21437aec0a7681",
+      "artifactSizeBytes": 2364
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T09:11:09.179Z"
+}

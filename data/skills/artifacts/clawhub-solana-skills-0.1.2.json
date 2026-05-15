@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/solana-skills@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solana_skills",
+  "skill": {
+    "id": 10709,
+    "skillKey": "clawhub-solana-skills",
+    "name": "Solana"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solana-skills",
+    "url": "https://clawhub.ai/skills/solana-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solana-skills-61f2438052497b28.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Solana wallet operations - create wallets, check balances, send SOL/tokens, swap via Jupiter, launch tokens on Pump.fun"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "spendit-ai",
+      "userId": "publishers:spendit-ai",
+      "displayName": "spendit-ai",
+      "image": "https://avatars.githubusercontent.com/u/257153474?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2385,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1769437935228,
+      "changelog": "- Added Pump.fun token launch support, including new `scripts/pumpfun.py` script.\n- Updated documentation describing how to launch tokens on Pump.fun, with options for name, symbol, image, dev buy, and custom mint keys.\n- Expanded triggers to recognize \"pumpfun\", \"pump.fun\", and \"launch token\". \n- Examples and usage instructions added for launching and configuring Pump.fun tokens.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:19cb911a7761a6019a9367b43ccdec98bfa1c6ead81c689a5c9eecb9fe73a462"
+}

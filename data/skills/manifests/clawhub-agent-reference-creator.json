@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64863,
+  "uuid": "skill-clawhub-agent-reference-creator",
+  "skillKey": "clawhub-agent-reference-creator",
+  "name": "Agent reference creator",
+  "summary": "Создаёт нормативные Reference-файлы, описывающие узкие профессии для создания и управления агентами в системе OpenClaw.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_reference_creator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rodrigo",
+      "features": [
+        "Создаёт нормативные Reference-файлы, описывающие узкие профессии для создания и управления аген."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-reference-creator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/228974973?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-reference-creator",
+      "url": "https://clawhub.ai/skills/agent-reference-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-reference-creator",
+    "url": "https://clawhub.ai/skills/agent-reference-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-reference-creator-14c327509688d3e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-reference-creator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-reference-creator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:159aa2e2765b9b74411a00a8c2766a3c479d5f96cc5049efdeb50e49f1be41c6",
+      "artifactSizeBytes": 2544
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T11:43:46.796Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaohongshu-insight@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_insight",
+  "skill": {
+    "id": 41867,
+    "skillKey": "clawhub-xiaohongshu-insight",
+    "name": "Xiaohongshu Insight"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-insight",
+    "url": "https://clawhub.ai/skills/xiaohongshu-insight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-insight-37107aab854eb773.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides daily insights from 2000+ Xiaohongshu viral posts to support content creation, trend analysis, and creative inspiration based on engagement data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openlark",
+      "userId": "s1727wv2g20pc729snzcm4nf8183hy72",
+      "displayName": "OpenLark",
+      "image": "https://avatars.githubusercontent.com/u/260858787?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776392353429,
+      "changelog": "- Initial release of xiaohongshu-insight, a professional Xiaohongshu viral content data insight tool.\n- Collects and analyzes 2,000+ viral posts daily across the platform based on multiple virality criteria.\n- Provides detailed post data, including interaction stats, author profiles, content features, and traffic curves.\n- Supports use cases such as creative inspiration, traffic trend analysis, and competitor research.\n- Includes command-line scripts for querying viral posts, analyzing category trends, and exporting data in various formats.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8f119a79871fde64c62a19aa903064c10ad07439ffa0f3e431a39c5ff95b8007"
+}

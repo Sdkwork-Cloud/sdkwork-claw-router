@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oc-task-scheduler@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oc_task_scheduler",
+  "skill": {
+    "id": 38685,
+    "skillKey": "clawhub-oc-task-scheduler",
+    "name": "OpenClaw Task Scheduler"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oc-task-scheduler",
+    "url": "https://clawhub.ai/skills/oc-task-scheduler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oc-task-scheduler-f2e6947f29d0115a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Task queue management with WebSocket real-time updates. Schedule, monitor, and control background tasks. Supports immediate, scheduled, and recurring tasks w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "michealxie001",
+      "userId": "s170w0cbg2mpaewxv2748qq5cx83hwge",
+      "displayName": "michealxie001",
+      "image": "https://avatars.githubusercontent.com/u/231448030?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775129017503,
+      "changelog": "Background task queue with WebSocket real-time updates. Schedule, monitor, and control tasks with priorities.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c1a21cfd0a58836e78f08b34e24ea9f4c9b3ed33e585ffcc9c42f1a089fc0f6d"
+}

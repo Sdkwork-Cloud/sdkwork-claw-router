@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57880,
+  "uuid": "skill-clawhub-ccb",
+  "skillKey": "clawhub-ccb",
+  "name": "Ccb",
+  "summary": "Information assistant for 建设银行 CCB. Search products, news, financials, and official resources for 建设银行 CCB.",
+  "version": "0.1.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ccb",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Information assistant for 建设银行 CCB",
+        "Search products, news, financials, and official resources for 建设银行 CCB."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ccb@0.1.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ccb",
+      "url": "https://clawhub.ai/skills/ccb"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ccb",
+    "url": "https://clawhub.ai/skills/ccb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ccb-07404553acd631cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ccb@0.1.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-ccb-0.1.6.json",
+      "version": "0.1.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c9f4d46ab3ff5024aff4fad546075492b1f1c09f6bb4cba4e3abdf8f8428c6e",
+      "artifactSizeBytes": 2048
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T07:27:53.492Z"
+}

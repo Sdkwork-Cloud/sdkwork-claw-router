@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62330,
+  "uuid": "skill-clawhub-ai-companion",
+  "skillKey": "clawhub-ai-companion",
+  "name": "高情商聊天伴侣 AI Companion",
+  "summary": "高情商聊天伴侣，支持角色扮演、情感陪伴、职场沟通、社交话术等多种场景。模拟男友/女友、亲人、朋友、职场同事、老年人等角色进行对话。支持中英文场景，可生成聊天文案、话术模板。Use when user needs emotional companionship, relationship advice, workp...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_companion",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToBeWin",
+      "features": [
+        "高情商聊天伴侣，支持角色扮演、情感陪伴、职场沟通、社交话术等多种场景。模拟男友/女友、亲人、朋友、职场同事、老年人等角色进行对话。支持中英文场景，可生成聊天文案、话术模板。Use when."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-companion@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/145168989?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-companion",
+      "url": "https://clawhub.ai/skills/ai-companion"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-companion",
+    "url": "https://clawhub.ai/skills/ai-companion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-companion-f8fa65cd21219f99.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-companion@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-companion-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ae4c4c9bd44ddc399f86ffc4b1054f6f73d84774e21c9c95544bf18ca540422e",
+      "artifactSizeBytes": 2112
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T03:44:47.447Z"
+}

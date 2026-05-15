@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37002,
+  "uuid": "skill-clawhub-yt-timestamp-autoposter",
+  "skillKey": "clawhub-yt-timestamp-autoposter",
+  "name": "Youtube Description Autoposter",
+  "summary": "Generate SEO-optimized YouTube timestamps from a YouTube URL or a raw transcript string, then optionally append them to the description of that specific vide...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yt_timestamp_autoposter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Robj1925",
+      "features": [
+        "Generate SEO-optimized YouTube timestamps from a YouTube URL or a raw transcript string, then o."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yt-timestamp-autoposter@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/76661909?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yt-timestamp-autoposter",
+      "url": "https://clawhub.ai/skills/yt-timestamp-autoposter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yt-timestamp-autoposter",
+    "url": "https://clawhub.ai/skills/yt-timestamp-autoposter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yt-timestamp-autoposter-7a39822e26ac8db3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yt-timestamp-autoposter@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-yt-timestamp-autoposter-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b2bd5160b650ea4f7c25b9d65953252146d832fdc0ce8df526404220cdd9b98e",
+      "artifactSizeBytes": 2665
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T22:57:36.437Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66125,
+  "uuid": "skill-clawhub-source-to-architecture",
+  "skillKey": "clawhub-source-to-architecture",
+  "name": "Source To Architecture",
+  "summary": "实现从源码解析到五层架构的全链路可视化，支持版本控制、自动同步和多格式架构图生成。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.source_to_architecture",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vincentlau2046-sudo",
+      "features": [
+        "实现从源码解析到五层架构的全链路可视化，支持版本控制、自动同步和多格式架构图生成。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/source-to-architecture@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259013171?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "source-to-architecture",
+      "url": "https://clawhub.ai/skills/source-to-architecture"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "source-to-architecture",
+    "url": "https://clawhub.ai/skills/source-to-architecture",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/source-to-architecture-464e2b40f27839b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/source-to-architecture@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-source-to-architecture-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a6bfe2a9819c58ef37a10a71af6e88c207de2db70d2c2e42bc832bcbae5f7d15",
+      "artifactSizeBytes": 2628
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T05:10:47.392Z"
+}

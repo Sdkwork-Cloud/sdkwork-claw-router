@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sudoku@2.6.0",
+  "version": "2.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sudoku",
+  "skill": {
+    "id": 9315,
+    "skillKey": "clawhub-sudoku",
+    "name": "Sudoku"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sudoku",
+    "url": "https://clawhub.ai/skills/sudoku",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sudoku-ee0440321a0e5aa7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch Sudoku puzzles and store them as JSON in the workspace; render images on demand; reveal solutions later."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "odrobnik",
+      "userId": "s175mv7e1vzhser8sz79yq23fd83h54z",
+      "displayName": "Oliver Drobnik",
+      "image": "https://avatars.githubusercontent.com/u/333270?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3872,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 4,
+      "versions": 35
+    },
+    "latestVersion": {
+      "version": "2.6.0",
+      "createdAt": 1774376604133,
+      "changelog": "iOS SudokuPad share links: compressToBase64, strip padding, encode /, empty m field",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9c76c45e4c149767be15058cc805bde14e8914f8d8b285dca87a36d4b9581d3e"
+}

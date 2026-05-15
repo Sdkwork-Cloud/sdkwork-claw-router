@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/knowledge-management@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knowledge_management",
+  "skill": {
+    "id": 13468,
+    "skillKey": "clawhub-knowledge-management",
+    "name": "Knowledge Management"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knowledge-management",
+    "url": "https://clawhub.ai/skills/knowledge-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knowledge-management-79647438cfd6354d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Organize and classify OpenClaw knowledge entries into local folders by content type (Research, Decision, Insight, Lesson, Pattern, Project, Reference, Tutori..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "claireaicodes",
+      "userId": "publishers:claireaicodes",
+      "displayName": "ClaireAICodes",
+      "image": "https://avatars.githubusercontent.com/u/260567970?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1354,
+      "installsAllTime": 9,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1771999153373,
+      "changelog": "Added configurable workspace path (--workspace, OPENCLAWORKSPACE, or cwd). Separate organized output into memory/KM subfolder by default. Fixed missing warning() function. Backward compatible. Documentation updated.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:28ca860c4d1a2e367a95846723c56884ecb8ce20bf2b95c813dd59acdcc100df"
+}

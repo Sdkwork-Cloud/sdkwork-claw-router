@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35877,
+  "uuid": "skill-clawhub-youtube-video-publisher",
+  "skillKey": "clawhub-youtube-video-publisher",
+  "name": "Youtube Video Publisher",
+  "summary": "Upload videos and Shorts to YouTube. Use when the user says 'upload to YouTube', 'publish YouTube video', 'post a YouTube Short', 'upload video with thumbnai...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_video_publisher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "snoopyrain",
+      "features": [
+        "Upload videos and Shorts to YouTube",
+        "Use when the user says 'upload to YouTube', 'publish YouTube video', 'post a YouTube Short', 'u."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-video-publisher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9717776?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-video-publisher",
+      "url": "https://clawhub.ai/skills/youtube-video-publisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-video-publisher",
+    "url": "https://clawhub.ai/skills/youtube-video-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-video-publisher-4afa6cfab67b862d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-video-publisher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-video-publisher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fe24ec445132cb265e155f173af10755c218a0986567f0c25f7a4c094cca2e64",
+      "artifactSizeBytes": 2359
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T07:18:37.906Z"
+}

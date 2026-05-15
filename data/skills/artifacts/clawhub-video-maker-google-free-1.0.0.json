@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-maker-google-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_maker_google_free",
+  "skill": {
+    "id": 34614,
+    "skillKey": "clawhub-video-maker-google-free",
+    "name": "Video Maker Google Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-maker-google-free",
+    "url": "https://clawhub.ai/skills/video-maker-google-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-maker-google-free-ee7244887ee855a9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get polished MP4 videos ready to post, without touching a single slider. Upload your images or clips (MP4, MOV, JPG, PNG, up to 500MB), say something like \"c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776641137015,
+      "changelog": "Initial release — quickly create and export 1080p MP4 videos from images or clips via a free cloud service.\n\n- Upload JPG, PNG, MP4, or MOV files (up to 500MB) and specify your instructions for video creation (e.g., add music, text overlays).\n- Automatic cloud session setup and handling — no paid software or technical skills required.\n- Supports downloading polished, ready-to-post MP4 videos (1080p by default).\n- Provides status updates, tracks video editing steps, and details credit usage.\n- Error handling for token expiration, session issues, file limits, and supported formats.\n- Designed for students and small businesses to quickly make videos without cost.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c2562036242c43dca87031cbc7816d245d0cfbe10a5b7d6c746ddce60ee8a6d9"
+}

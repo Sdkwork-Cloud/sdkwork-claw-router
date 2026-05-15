@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68688,
+  "uuid": "skill-clawhub-daily-ai-briefing",
+  "skillKey": "clawhub-daily-ai-briefing",
+  "name": "Daily AI Briefing（每日AI简报）",
+  "summary": "每日AI硬核进展简报的质量规范与执行流程。定义红线规则、搜索策略、信息源、提纯标准、自检清单和输出模板。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_ai_briefing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tino Chen",
+      "features": [
+        "每日AI硬核进展简报的质量规范与执行流程。定义红线规则、搜索策略、信息源、提纯标准、自检清单和输出模板。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-ai-briefing@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263268772?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-ai-briefing",
+      "url": "https://clawhub.ai/skills/daily-ai-briefing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-ai-briefing",
+    "url": "https://clawhub.ai/skills/daily-ai-briefing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-ai-briefing-807a1f5cd73c1b17.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-ai-briefing@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-ai-briefing-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b8075acb70b8cc0117e24ecb6ea9321e8305632795eb735418f90b14cf208899",
+      "artifactSizeBytes": 1938
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T18:32:49.126Z"
+}

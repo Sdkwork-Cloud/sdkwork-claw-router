@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/think-first@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.think_first",
+  "skill": {
+    "id": 73695,
+    "skillKey": "clawhub-think-first",
+    "name": "头脑风暴"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "think-first",
+    "url": "https://clawhub.ai/skills/think-first",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/think-first-2816e25bc5e17007.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "头脑风暴。适用于任何需要思考的场景——商业决策、产品策划、内容创作、问题分析、方案选择。通过结构化对话帮用户把模糊的想法变成清晰的结论。不限于设计或代码，任何领域都能用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dizhu",
+      "userId": "s177gp8b3q1v25nzahp7d5adzh83sy4z",
+      "displayName": "dizhu",
+      "image": "https://avatars.githubusercontent.com/u/3749687?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776793603375,
+      "changelog": "Renamed: 通用头脑风暴 → 头脑风暴",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4a6b289fbc6d58a2612d6eba15b3bca40ebc9fdd3150163f51fc7d6f3d547b02"
+}

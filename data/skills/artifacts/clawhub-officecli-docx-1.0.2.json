@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/officecli-docx@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.officecli_docx",
+  "skill": {
+    "id": 27060,
+    "skillKey": "clawhub-officecli-docx",
+    "name": "officecli-docx"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "officecli-docx",
+    "url": "https://clawhub.ai/skills/officecli-docx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/officecli-docx-c1a3abe02038132c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill any time a .docx file is involved -- as input, output, or both. This includes: creating Word documents, reports, letters, memos, or proposals;..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "iceyliu",
+      "userId": "s17918nyt0e83vefggw276s5hx83xtxm",
+      "displayName": "瓦砾",
+      "image": "https://avatars.githubusercontent.com/u/10683426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 246,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775017562399,
+      "changelog": "- Added two new guide files: creating.md and editing.md\n- Quick reference table now links to detailed guides for creating and editing documents\n- No changes to commands or core functionality—documentation improvement only",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0cab72a6aa5735fb0e91a2d1c7167143423e5d4804e17b1bd2ef13da4b55d30a"
+}

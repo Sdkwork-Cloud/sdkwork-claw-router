@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/k-cinema-bridge@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.k_cinema_bridge",
+  "skill": {
+    "id": 13623,
+    "skillKey": "clawhub-k-cinema-bridge",
+    "name": "K Cinema Bridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "k-cinema-bridge",
+    "url": "https://clawhub.ai/skills/k-cinema-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/k-cinema-bridge-5883940f35d4011e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Korean multiplex (Lotte Cinema, CGV, Megabox) box office rankings and upcoming movie data enriched with KOBIS details. Use when the user asks about Korean movies currently showing, box office rankings, upcoming releases, or wants mov."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "uyeong",
+      "userId": "publishers:uyeong",
+      "displayName": "U-Yeong Ju",
+      "image": "https://avatars.githubusercontent.com/u/1321707?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1206,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1770914903188,
+      "changelog": "**Rewrite SKILL.md with structured instructions and frontmatter**\n                                                                                                                                           \n  - Rewrote SKILL.md entirely in English with YAML frontmatter (name, description, homepage, allowed-tools)                                \n  - Added structured agent instructions: recommending popular movies, announcing upcoming releases, searching by genre/director/actor,\n  filtering by audience rating, querying specific multiplexes, and comparing across chains\n  - Added response guidelines for consistent agent behavior\n\n**Initial OpenAPI specification added**\n\n- Added openapi.json file defining the API structure and endpoints.\n- Enables standard integration and discovery of API methods for box office and upcoming movie data.\n- No code changes; documentation and interoperability improvements only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6c6798eaa61b59070185f5367365a99fe3a1cc85c991700078fede30199d4e08"
+}

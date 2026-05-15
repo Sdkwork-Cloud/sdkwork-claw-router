@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69154,
+  "uuid": "skill-clawhub-ai-voice-synthesis-claw",
+  "skillKey": "clawhub-ai-voice-synthesis-claw",
+  "name": "智能配音合成虾",
+  "summary": "AI智能配音合成专家。将文案/脚本转换为高拟真语音音频，支持多种音色、情感控制、SSML标注和后期处理。 触发场景：用户说\"配音\"、\"语音合成\"、\"TTS\"、\"旁白\"、\"播客音频\"、\"有声读物\"、\"AI配音\"、\"朗读\"、\"音频生成\"， 或要求\"用XX声音读这段文案\"、\"生成播客音频\"、\"把文章转成有声版\"等。 支...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_voice_synthesis_claw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ricky",
+      "features": [
+        "AI智能配音合成专家。将文案/脚本转换为高拟真语音音频，支持多种音色、情感控制、SSML标注和后期处理。 触发场景：用户说\"配音\"、\"语音合成\"、\"TTS\"、\"旁白\"、\"播客音频\"、\"有声读."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-voice-synthesis-claw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82147388?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-voice-synthesis-claw",
+      "url": "https://clawhub.ai/skills/ai-voice-synthesis-claw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-voice-synthesis-claw",
+    "url": "https://clawhub.ai/skills/ai-voice-synthesis-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-voice-synthesis-claw-185abf024dc8a959.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-voice-synthesis-claw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-voice-synthesis-claw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:31c1449f3b82c509fd1d841963966b1a7b5f652b7273d88afd31ded5dd7f6ee7",
+      "artifactSizeBytes": 2293
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T08:18:30.125Z"
+}

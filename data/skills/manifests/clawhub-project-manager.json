@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9248,
+  "uuid": "skill-clawhub-project-manager",
+  "skillKey": "clawhub-project-manager",
+  "name": "Project Manager",
+  "summary": "Manage internal projects with JSON-based tasks, move them on Kanban, notify David on review/blocked, and sync tasks with Apple Reminders.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.project_manager",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fr0ziii",
+      "features": [
+        "Manage internal projects with JSON-based tasks, move them on Kanban, notify David on review/blo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/project-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58311234?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "project-manager",
+      "url": "https://clawhub.ai/skills/project-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "project-manager",
+    "url": "https://clawhub.ai/skills/project-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/project-manager-cecd58be4cefa807.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/project-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-project-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:39960b5e0be22f165c8c80f7fad25e77fde166794b4367579e6084c13b4a4503",
+      "artifactSizeBytes": 2268
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-26T00:37:19.084Z"
+}

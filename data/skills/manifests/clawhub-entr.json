@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11226,
+  "uuid": "skill-clawhub-entr",
+  "skillKey": "clawhub-entr",
+  "name": "entr",
+  "summary": "Run arbitrary commands when files change. Useful for watching files and triggering builds or tests.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.entr",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gustavo Madeira Santana",
+      "features": [
+        "Run arbitrary commands when files change",
+        "Useful for watching files and triggering builds or tests."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/entr@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5599352?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "entr",
+      "url": "https://clawhub.ai/skills/entr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "entr",
+    "url": "https://clawhub.ai/skills/entr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/entr-99d442deed3937e4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/entr@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-entr-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2472b10e8d2df27c58599a18d952e6157a5a5f5b571370b94a6d7aa86c0d8ae3",
+      "artifactSizeBytes": 1768
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-20T18:46:31.777Z"
+}

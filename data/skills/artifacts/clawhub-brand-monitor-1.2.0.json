@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brand-monitor@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brand_monitor",
+  "skill": {
+    "id": 65804,
+    "skillKey": "clawhub-brand-monitor",
+    "name": "Brand Monitor - 品牌舆情监控"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brand-monitor",
+    "url": "https://clawhub.ai/skills/brand-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brand-monitor-3ca8e92e8e791b27.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "新能源汽车品牌舆情监控 - 自动搜索、分析国内平台的品牌提及情况"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wenxiaoyu",
+      "userId": "publishers:wenxiaoyu",
+      "displayName": "pig",
+      "image": "https://avatars.githubusercontent.com/u/2597986?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 680,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1772181871801,
+      "changelog": "Summary: This release introduces a new local crawler, majorly reorganizes documentation, and updates core functionality for improved usability and independence.\n\n- Added custom Python crawler (crawler/search_crawler.py and SerpAPI version) for direct data collection, removing third-party search API dependencies.\n- Updated allowed-tools to include shell, enabling controlled execution of the crawler.\n- Major documentation overhaul: added multiple new guides (使用指南, 快速参考, 获取飞书Webhook指南, etc.), removed obsolete and redundant files.\n- Enhanced safety: local-only data processing, explicit platform compliance, more controlled script execution.\n- Improved configuration clarity and setup instructions in SKILL.md and related docs.\n- Reports and monitoring logic remain focused on new-energy vehicle brands, now more easily adaptable and deployable.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f45a62f743c811c91dd0941ee1e7477c504dfc0f0d9a9bd754991d7a3e5612a4"
+}

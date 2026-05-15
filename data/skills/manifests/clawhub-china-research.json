@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65710,
+  "uuid": "skill-clawhub-china-research",
+  "skillKey": "clawhub-china-research",
+  "name": "China Research",
+  "summary": "国内社交媒体调研工具。触发条件：(1) 用户想了解某个领域的真实需求 (2) 用户想调研国内市场机会 (3) 用户想做产品需求验证 (4) 用户问\"最近国内XX有什么动态\" (5) 用户提及\"国内调研\"、\"市场调研\"、\"用户反馈",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_research",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "云峰",
+      "features": [
+        "国内社交媒体调研工具。触发条件：(1) 用户想了解某个领域的真实需求 (2) 用户想调研国内市场机会 (3) 用户想做产品需求验证 (4) 用户问\"最近国内XX有什么动态\" (5) 用户提及."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/china-research@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16048740?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "china-research",
+      "url": "https://clawhub.ai/skills/china-research"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-research",
+    "url": "https://clawhub.ai/skills/china-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-research-9348869c4b2550a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/china-research@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-china-research-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:689169cfdde8eb9aaed7f5e5b598a443185abf4c7507c31c322e157b6b08cda1",
+      "artifactSizeBytes": 2064
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T14:29:07.614Z"
+}

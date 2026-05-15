@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36081,
+  "uuid": "skill-clawhub-timetonic",
+  "skillKey": "clawhub-timetonic",
+  "name": "Timetonic",
+  "summary": "TimeTonic integration. Manage data, records, and automate workflows. Use when the user wants to interact with TimeTonic data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.timetonic",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "TimeTonic integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with TimeTonic data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/timetonic@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "timetonic",
+      "url": "https://clawhub.ai/skills/timetonic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "timetonic",
+    "url": "https://clawhub.ai/skills/timetonic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/timetonic-7204d1fd719738a3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/timetonic@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-timetonic-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:64e91fd24bb492c6ecc4640adcfb2680f5c1807e26c2864e4337ed38ee3d5bb5",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:53:38.495Z"
+}

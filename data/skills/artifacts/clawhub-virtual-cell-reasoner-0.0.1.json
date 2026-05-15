@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/virtual-cell-reasoner@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.virtual_cell_reasoner",
+  "skill": {
+    "id": 52816,
+    "skillKey": "clawhub-virtual-cell-reasoner",
+    "name": "virtual-cell-reasoner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "virtual-cell-reasoner",
+    "url": "https://clawhub.ai/skills/virtual-cell-reasoner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/virtual-cell-reasoner-5c9cd51debf8d4a4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Consult a virtual cell language model on single-cell tasks — cell generation, cell understanding, cell perturbation, and biology Q&A using cell token sequences."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wxuanyuan",
+      "userId": "s17eyyrbc0gbc0kx798wxcbqe583sfg3",
+      "displayName": "WxuanYuan",
+      "image": "https://avatars.githubusercontent.com/u/83860738?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1774675890856,
+      "changelog": "- Initial release of Virtual Cell LLM for single-cell biology tasks\n- Enables cell generation, cell understanding, and biology Q&A using cell token sequences\n- Provides command-line API examples for generating cells, summarizing features from tokens, and answering biology questions\n- Supports useful flags for token limit, sampling temperature, and custom server endpoint",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:423a67adf4f72aa1f3c0c17c5ce29449c2abfa683a81a6725b8a235c3645c8c9"
+}

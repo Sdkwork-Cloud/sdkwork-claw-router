@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memstate-ai@1.2.4",
+  "version": "1.2.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memstate_ai",
+  "skill": {
+    "id": 52400,
+    "skillKey": "clawhub-memstate-ai",
+    "name": "Memstate AI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memstate-ai",
+    "url": "https://clawhub.ai/skills/memstate-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memstate-ai-17629fab09db171b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Versioned, structured memory for AI agents. Every fact is tracked, every change is logged, and your agent always gets the current answer — not a pile of outd..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yepthatsjason",
+      "userId": "s1745gx0nw6rqwqhz8443xyxy583ex3f",
+      "displayName": "Jason",
+      "image": "https://avatars.githubusercontent.com/u/246399?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.2.4",
+      "createdAt": 1774481940647,
+      "changelog": "Bundle Python scripts with skill package; add python3 to requires.bins; fix metadata to openclaw format",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4d4e181d4a0f9f9985debc66b23c0c9d17645c5dffc282fbb6a896a63dc8af71"
+}

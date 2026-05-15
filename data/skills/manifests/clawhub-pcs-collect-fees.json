@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44666,
+  "uuid": "skill-clawhub-pcs-collect-fees",
+  "skillKey": "clawhub-pcs-collect-fees",
+  "name": "Collect Fees",
+  "summary": "Check and collect LP fees from PancakeSwap V3 and Infinity (v4) positions. Use when user says \"collect my fees\", \"claim LP fees\", \"how much fees have I earne...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pcs_collect_fees",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pcs-bot",
+      "features": [
+        "Check and collect LP fees from PancakeSwap V3 and Infinity (v4) positions",
+        "Use when user says \"collect my fees\", \"claim LP fees\", \"how much fees have I earne..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pcs-collect-fees@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/227519168?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pcs-collect-fees",
+      "url": "https://clawhub.ai/skills/pcs-collect-fees"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pcs-collect-fees",
+    "url": "https://clawhub.ai/skills/pcs-collect-fees",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pcs-collect-fees-0fa4141423268458.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pcs-collect-fees@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pcs-collect-fees-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0f6624a1c94a4aa976da60143c63de6e88998a13530f69548729c5a38e066fde",
+      "artifactSizeBytes": 1937
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T02:44:23.603Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57838,
+  "uuid": "skill-clawhub-unraid-xml-generator",
+  "skillKey": "clawhub-unraid-xml-generator",
+  "name": "Unraid XML Generator",
+  "summary": "Generate Unraid DockerMan user template XML files from structured input. Use when: the user asks to \"生成 Unraid XML 模板\", \"创建 Docker 模板\", \"为 XXX 写 Unraid 模板\",...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unraid_xml_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ashanzzz",
+      "features": [
+        "Generate Unraid DockerMan user template XML files from structured input",
+        "Use when: the user asks to \"生成 Unraid XML 模板\", \"创建 Docker 模板\", \"为 XXX 写 Unraid 模板\",..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/unraid-xml-generator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19986978?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "unraid-xml-generator",
+      "url": "https://clawhub.ai/skills/unraid-xml-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unraid-xml-generator",
+    "url": "https://clawhub.ai/skills/unraid-xml-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unraid-xml-generator-d73f334db2086086.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/unraid-xml-generator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-unraid-xml-generator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a6f6e55f92d7e7cc7af843f7541d35c22509a46f8a0931ea1d1c30bd14e4a345",
+      "artifactSizeBytes": 1985
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T11:39:07.837Z"
+}

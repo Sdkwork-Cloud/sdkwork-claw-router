@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-guru@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_guru",
+  "skill": {
+    "id": 13619,
+    "skillKey": "clawhub-claw-guru",
+    "name": "Openclaw Guru - Documentation and Support expert"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-guru",
+    "url": "https://clawhub.ai/skills/claw-guru",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-guru-fc1b8b6d3fad3a69.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw expert — use for ANY OpenClaw question or problem including: config errors, gateway crashes, gateway not starting, slash commands, channel routing,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "isriam",
+      "userId": "publishers:isriam",
+      "displayName": "isriam",
+      "image": "https://avatars.githubusercontent.com/u/9697950?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1217,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 6,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771693735560,
+      "changelog": "Created claw-guru skill",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cf96586bbd6b6018b4110e570cf8e98a5ae8ab0764b284208af93892b84701e0"
+}

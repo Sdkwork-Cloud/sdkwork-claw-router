@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33886,
+  "uuid": "skill-clawhub-agent-browser-stealth-xyh",
+  "skillKey": "clawhub-agent-browser-stealth-xyh",
+  "name": "Agent Browser Stealth",
+  "summary": "Stealth browser automation with anti-detection. Launches Chromium with fingerprint randomization, webdriver flag removal, Canvas/WebGL spoofing, and permissi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_browser_stealth_xyh",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bfchain2-hub",
+      "features": [
+        "Stealth browser automation with anti-detection",
+        "Launches Chromium with fingerprint randomization, webdriver flag removal, Canvas/WebGL spoofing."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-browser-stealth-xyh@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257955050?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-browser-stealth-xyh",
+      "url": "https://clawhub.ai/skills/agent-browser-stealth-xyh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-browser-stealth-xyh",
+    "url": "https://clawhub.ai/skills/agent-browser-stealth-xyh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-browser-stealth-xyh-9fed045e0b483c93.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-browser-stealth-xyh@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-browser-stealth-xyh-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:62dea6a6092a852fc3cc60a4611cd49aeb7acf8ef6ae01f586c1cfb5dec9272f",
+      "artifactSizeBytes": 2536
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T15:44:45.198Z"
+}

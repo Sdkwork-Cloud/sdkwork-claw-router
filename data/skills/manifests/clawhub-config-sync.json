@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52160,
+  "uuid": "skill-clawhub-config-sync",
+  "skillKey": "clawhub-config-sync",
+  "name": "Config Sync — 16 AI Tools, 1 Source",
+  "summary": "Sync AI coding assistant config files from a single source. Generates CLAUDE.md, AGENTS.md, GEMINI.md, .cursor/rules/, .github/copilot-instructions.md, .wind...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.config_sync",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nadalpiantini",
+      "features": [
+        "Sync AI coding assistant config files from a single source",
+        "Generates CLAUDE.md, AGENTS.md, GEMINI.md, .cursor/rules/, .github/copilot-instructions.md, .wi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/config-sync@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/152635440?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "config-sync",
+      "url": "https://clawhub.ai/skills/config-sync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "config-sync",
+    "url": "https://clawhub.ai/skills/config-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/config-sync-2ff475eded7e6715.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/config-sync@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-config-sync-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ed2ea14032a8fd47c9470b9294b1f28afa64d36a3d67543146f5e4e7df6d452",
+      "artifactSizeBytes": 2080
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T01:41:15.523Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/miniade-dispatchi@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.miniade_dispatchi",
+  "skill": {
+    "id": 20099,
+    "skillKey": "clawhub-miniade-dispatchi",
+    "name": "Dispatchi (Ralph Loop)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "miniade-dispatchi",
+    "url": "https://clawhub.ai/skills/miniade-dispatchi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/miniade-dispatchi-19a693f654188f83.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Launch non-blocking interactive Claude Code tasks for slash-only plugins like ralph-loop. Use when a task needs interactive slash commands and completion cal..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "edxi",
+      "userId": "publishers:edxi",
+      "displayName": "Xi ErDe",
+      "image": "https://avatars.githubusercontent.com/u/8788717?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 562,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1772179104521,
+      "changelog": "release 0.1.1",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:abe7ca9b055a09b78b48780916531a78705f8e4213c94b2c023ddf352415e10b"
+}

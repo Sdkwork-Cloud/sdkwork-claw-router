@@ -45,7 +45,10 @@ fn app_account_summary_router_with_state(
     require_subject: bool,
 ) -> Router {
     Router::new()
-        .route("/app/v3/api/account/summary", get(fetch_account_summary))
+        .route(
+            "/app/v3/api/billing/account/summary",
+            get(fetch_account_summary),
+        )
         .with_state(AppAccountSummaryState {
             read_store,
             require_subject,

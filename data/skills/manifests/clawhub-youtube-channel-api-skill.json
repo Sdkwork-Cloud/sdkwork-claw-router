@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25729,
+  "uuid": "skill-clawhub-youtube-channel-api-skill",
+  "skillKey": "clawhub-youtube-channel-api-skill",
+  "name": "youtube-channel-api-skill",
+  "summary": "This skill helps users automatically extract structured channel data from YouTube search results via BrowserAct API. Agent should proactively apply this skil...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_channel_api_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Maggia",
+      "features": [
+        "This skill helps users automatically extract structured channel data from YouTube search result.",
+        "Agent should proactively apply this skil..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-channel-api-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259630312?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-channel-api-skill",
+      "url": "https://clawhub.ai/skills/youtube-channel-api-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-channel-api-skill",
+    "url": "https://clawhub.ai/skills/youtube-channel-api-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-channel-api-skill-e1ffdff7ced71e43.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-channel-api-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-channel-api-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f2939b534a4e70818e1f67cf5f8cf85bd2cbc0af960658d87dbe34fc685d8597",
+      "artifactSizeBytes": 2492
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T07:15:09.394Z"
+}

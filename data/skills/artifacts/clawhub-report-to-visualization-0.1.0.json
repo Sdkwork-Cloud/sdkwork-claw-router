@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/report-to-visualization@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.report_to_visualization",
+  "skill": {
+    "id": 65788,
+    "skillKey": "clawhub-report-to-visualization",
+    "name": "Report To Visualization"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "report-to-visualization",
+    "url": "https://clawhub.ai/skills/report-to-visualization",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/report-to-visualization-d554903804acd343.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将文本报告转换为可视化组件流。当用户需要将报告数据可视化或提到\"可视化报告\"、\"用图表展示\"、\"图文并茂\"时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1688aiinfra",
+      "userId": "s177df9srv6z2y0gd1kw90rern83hzxb",
+      "displayName": "1688AiInfra",
+      "image": "https://avatars.githubusercontent.com/u/266033968?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 56,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1778321427310,
+      "changelog": "Initial release of report-to-visualization skill.\n\n- Converts text reports into visual component flows using strict MODULE format.\n- Supports Line, Column, Pie, List, DataCard, TextCard, KeyValueCard, PhaseCard, TimelineCard, AlertCard, and InfluenceCard components.\n- Provides detailed criteria and formatting rules for each visualization type, ensuring data integrity and display clarity.\n- Designed for Chinese-language reports and visualization requirements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ef6f97cadda3ff48f8418c21938e0e6bf4fba54a9c883ec4a4bcc0cabafe0311"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/taapi@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taapi",
+  "skill": {
+    "id": 20661,
+    "skillKey": "clawhub-taapi",
+    "name": "TAAPI CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taapi",
+    "url": "https://clawhub.ai/skills/taapi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taapi-f4029925b4b3b675.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill to fetch TAAPI.IO indicator data for crypto or stocks, including fast single-indicator requests and bulk/multi-construct queries for agentic t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oscraters",
+      "userId": "publishers:oscraters",
+      "displayName": "oscraters",
+      "image": "https://avatars.githubusercontent.com/u/93680161?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 544,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772326693109,
+      "changelog": "- Added metadata block in SKILL.md with homepage and runtime requirements for better documentation and agent compatibility.\n- Added agents/openai.yaml for agent configuration support.\n- Expanded SKILL.md with a new \"Security And Runtime Requirements\" section outlining secret management, `curl` and `jq` dependencies, and endpoint security.\n- Clarified usage and tooling requirements for safer and more robust agentic trading workflows.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:eb271cca90dcc32291a44d1d7ba1e10944649cf6ac59aa965e40177cab471ae2"
+}

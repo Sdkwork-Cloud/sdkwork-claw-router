@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14672,
+  "uuid": "skill-clawhub-agentplace",
+  "skillKey": "clawhub-agentplace",
+  "name": "Agentplace",
+  "summary": "AI Agent Marketplace for OpenClaw. Browse and install free & paid agents when explicitly requested by the user.",
+  "version": "2.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentplace",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": ".",
+      "features": [
+        "AI Agent Marketplace for OpenClaw",
+        "Browse and install free & paid agents when explicitly requested by the user."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentplace@2.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/178129968?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentplace",
+      "url": "https://clawhub.ai/skills/agentplace"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentplace",
+    "url": "https://clawhub.ai/skills/agentplace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentplace-2ca0c3aa44be2bbf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentplace@2.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentplace-2.0.3.json",
+      "version": "2.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4b68c5e061ea0fdb4921b68bd9fb8ddc75404bf17ef68c4dc0cacd5b7e1f4df4",
+      "artifactSizeBytes": 2148
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T05:03:27.647Z"
+}

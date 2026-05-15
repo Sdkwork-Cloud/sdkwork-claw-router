@@ -1,4 +1,5 @@
 import tailwindcss from '@tailwindcss/vite';
+import react from '@vitejs/plugin-react';
 import { createRequire } from 'node:module';
 import fs from 'node:fs';
 import path from 'path';
@@ -16,6 +17,7 @@ const HTML_MODULE_SCRIPT_PATTERN = /<script\b(?=[^>]*\btype=["']module["'])(?=[^
 const RUNTIME_ENV_SCRIPT_PATH = '/runtime-env.js';
 const DEFAULT_PORTAL_DEV_PORT = 3901;
 const require = createRequire(import.meta.url);
+const localPortalPackageModuleCache = new Map<string, string | null>();
 const portalPackageModuleCache = new Map<string, string | null>();
 
 const PORTAL_RUNTIME_URL_ENV = [
@@ -97,6 +99,7 @@ function clawrouterTypeScriptTransform() {
   return {
     name: 'clawrouter-typescript-transform',
     enforce: 'pre' as const,
+    apply: 'build' as const,
     transform(code: string, id: string) {
       const [filePath] = id.split('?');
       if (!TYPESCRIPT_SOURCE_PATTERN.test(filePath) || filePath.endsWith('.d.ts')) {
@@ -137,25 +140,19 @@ function resolvePortalDependency(specifier: string, configDir: string): string {
   return require.resolve(specifier, {paths: [configDir]});
 }
 
-function resolvePortalTransitiveDependency(specifier: string, parentPackage: string, configDir: string): string {
-  const parentPackageJson = require.resolve(`${parentPackage}/package.json`, {paths: [configDir]});
-  return require.resolve(specifier, {paths: [path.dirname(parentPackageJson)]});
-}
+function clawrouterPortalLocalPackageResolver(configDir: string): Plugin {
+  return {
+    name: 'clawrouter-portal-local-package-resolver',
+    enforce: 'pre',
+    apply: 'serve',
+    resolveId(source) {
+      if (!shouldResolvePortalLocalPackage(source)) {
+        return null;
+      }
 
-function resolvePackageRootFromEntry(entryPath: string): string {
-  let currentDir = path.dirname(entryPath);
-  const rootDir = path.parse(currentDir).root;
-  while (currentDir !== rootDir) {
-    if (fs.existsSync(path.join(currentDir, 'package.json'))) {
-      return currentDir;
-    }
-    currentDir = path.dirname(currentDir);
-  }
-  throw new Error(`Unable to locate package root for ${entryPath}`);
-}
-
-function resolvePortalNestedDependency(specifier: string, parentEntryPath: string): string {
-  return require.resolve(specifier, {paths: [resolvePackageRootFromEntry(parentEntryPath)]});
+      return resolvePortalLocalPackageModule(source, configDir);
+    },
+  };
 }
 
 function clawrouterPortalWorkspaceDependencyResolver(
@@ -173,6 +170,19 @@ function clawrouterPortalWorkspaceDependencyResolver(
       return resolvePortalPackageModule(source, configDir);
     },
   };
+}
+
+function shouldResolvePortalLocalPackage(source: string): boolean {
+  if (
+    source.startsWith('.')
+    || source.startsWith('/')
+    || source.startsWith('\0')
+    || source.includes('?')
+  ) {
+    return false;
+  }
+
+  return parsePackageSpecifier(source).packageName.startsWith('sdkwork-claw-router-');
 }
 
 function shouldResolvePortalWorkspaceDependency(
@@ -204,9 +214,45 @@ function shouldResolvePortalWorkspaceDependency(
   return false;
 }
 
+function resolvePortalLocalPackageModule(specifier: string, configDir: string): string | null {
+  const cached = localPortalPackageModuleCache.get(specifier);
+  if (cached !== undefined) {
+    return cached;
+  }
+
+  const parsedSpecifier = parsePackageSpecifier(specifier);
+  const packageJsonPath = path.join(configDir, 'packages', parsedSpecifier.packageName, 'package.json');
+  if (!fs.existsSync(packageJsonPath)) {
+    localPortalPackageModuleCache.set(specifier, null);
+    return null;
+  }
+
+  const packageRoot = path.dirname(packageJsonPath);
+  const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8')) as {
+    exports?: unknown;
+    module?: string;
+    main?: string;
+  };
+  const entry = parsedSpecifier.subpath
+    ? readPackageImportEntry(packageJson.exports, `./${parsedSpecifier.subpath}`)
+      ?? parsedSpecifier.subpath
+    : readPackageImportEntry(packageJson.exports) ?? packageJson.module ?? packageJson.main ?? 'src/index.ts';
+  const resolved = path.resolve(packageRoot, entry);
+  localPortalPackageModuleCache.set(specifier, resolved);
+  return resolved;
+}
+
 function isPortalOwnedBareDependency(source: string): boolean {
   return (
     source === 'qrcode'
+    || source === 'i18next'
+    || source.startsWith('i18next/')
+    || source === 'react-i18next'
+    || source.startsWith('react-i18next/')
+    || source === 'html-parse-stringify'
+    || source.startsWith('html-parse-stringify/')
+    || source === 'void-elements'
+    || source.startsWith('void-elements/')
     || source === 'react-hook-form'
     || source === 'react'
     || source.startsWith('react/')
@@ -329,21 +375,15 @@ export default defineConfig(({mode}) => {
   const workspaceRoot = path.resolve(configDir, '../..');
   const appbaseRoot = path.resolve(configDir, '../../../sdkwork-appbase');
   const sdkworkUiRoot = path.resolve(configDir, '../../../sdkwork-ui');
-  const htmlParseStringifyEntry = resolvePortalTransitiveDependency('html-parse-stringify', 'react-i18next', configDir);
-  const reactRouterCookieEntry = resolvePortalTransitiveDependency('cookie', 'react-router', configDir);
-  const reactRouterSetCookieParserEntry = resolvePortalTransitiveDependency('set-cookie-parser', 'react-router', configDir);
-  const rechartsClsxEntry = resolvePortalTransitiveDependency('clsx', 'recharts', configDir);
-  const rechartsDecimalEntry = resolvePortalTransitiveDependency('decimal.js-light', 'recharts', configDir);
-  const rechartsEsToolkitRoot = resolvePackageRootFromEntry(resolvePortalTransitiveDependency('es-toolkit', 'recharts', configDir));
-  const rechartsRoot = resolvePackageRootFromEntry(resolvePortalTransitiveDependency('recharts/package.json', 'recharts', configDir));
-  const rechartsVictoryVendorRoot = resolvePackageRootFromEntry(resolvePortalTransitiveDependency('victory-vendor/package.json', 'recharts', configDir));
   loadEnv(mode, configDir, '');
   return {
     plugins: [
       clawrouterRuntimeEnvPlugin(),
+      react(),
       clawrouterNodeEnvTransform(),
       clawrouterImportMetaHotTransform(),
       clawrouterTypeScriptTransform(),
+      clawrouterPortalLocalPackageResolver(configDir),
       clawrouterPortalWorkspaceDependencyResolver(configDir, [appbaseRoot, sdkworkUiRoot]),
       tailwindcss(),
     ],
@@ -355,7 +395,6 @@ export default defineConfig(({mode}) => {
       },
     },
     resolve: {
-      preserveSymlinks: true,
       dedupe: [
         'react',
         'react/jsx-runtime',
@@ -368,31 +407,26 @@ export default defineConfig(({mode}) => {
       ],
       alias: [
         { find: '@sdkwork/appbase-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/foundation/sdkwork-appbase-pc-react/src/index.ts') },
-        { find: '@sdkwork/auth-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/identity/sdkwork-auth-pc-react/src/index.ts') },
-        { find: '@sdkwork/auth-runtime-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/identity/sdkwork-auth-runtime-pc-react/src/index.ts') },
-        { find: '@sdkwork/clawrouter-app-sdk', replacement: path.resolve(configDir, '../../sdks/clawrouter-app-sdk/src/index.ts') },
-        { find: '@sdkwork/clawrouter-backend-sdk', replacement: path.resolve(configDir, '../../sdks/clawrouter-backend-sdk/src/index.ts') },
+        { find: '@sdkwork/auth-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/iam/sdkwork-auth-pc-react/src/index.ts') },
+        { find: '@sdkwork/auth-runtime-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/iam/sdkwork-auth-runtime-pc-react/src/index.ts') },
+        { find: '@sdkwork/clawrouter-app-sdk', replacement: path.resolve(configDir, '../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/index.ts') },
+        { find: '@sdkwork/clawrouter-backend-sdk', replacement: path.resolve(configDir, '../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/src/index.ts') },
         { find: '@sdkwork/core-pc-react', replacement: path.resolve(configDir, 'src/auth/corePcReactCompat.ts') },
+        { find: '@sdkwork/generation-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/content/sdkwork-generation-pc-react/src/index.ts') },
         { find: '@sdkwork/host-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/host/sdkwork-host-pc-react/src/index.ts') },
         { find: '@sdkwork/host-tauri-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/host/sdkwork-host-tauri-pc-react/src/index.ts') },
+        { find: '@sdkwork/i18n-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/foundation/sdkwork-i18n-pc-react/src/index.ts') },
+        { find: '@sdkwork/iam-contracts', replacement: path.resolve(appbaseRoot, 'packages/common/iam/sdkwork-iam-contracts/src/index.ts') },
+        { find: '@sdkwork/iam-core-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/iam/sdkwork-iam-core-pc-react/src/index.ts') },
+        { find: '@sdkwork/iam-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/iam/sdkwork-iam-react/src/index.tsx') },
+        { find: '@sdkwork/iam-runtime', replacement: path.resolve(appbaseRoot, 'packages/common/iam/sdkwork-iam-runtime/src/index.ts') },
+        { find: '@sdkwork/iam-sdk-ports', replacement: path.resolve(appbaseRoot, 'packages/common/iam/sdkwork-iam-sdk-ports/src/index.ts') },
+        { find: '@sdkwork/iam-service', replacement: path.resolve(appbaseRoot, 'packages/common/iam/sdkwork-iam-service/src/index.ts') },
         { find: '@sdkwork/ui-pc-react/theme', replacement: path.resolve(sdkworkUiRoot, 'sdkwork-ui-pc-react/src/theme/index.ts') },
         { find: '@sdkwork/ui-pc-react', replacement: path.resolve(sdkworkUiRoot, 'sdkwork-ui-pc-react/src/index.ts') },
-        { find: 'clsx', replacement: rechartsClsxEntry },
-        { find: 'cookie', replacement: reactRouterCookieEntry },
-        { find: 'decimal.js-light', replacement: rechartsDecimalEntry },
-        { find: /^es-toolkit\/(.+)$/, replacement: path.join(rechartsEsToolkitRoot, '$1.js') },
-        { find: 'html-parse-stringify', replacement: htmlParseStringifyEntry },
         { find: 'qrcode', replacement: resolvePortalDependency('qrcode/lib/browser.js', configDir) },
-        { find: 'react-hook-form', replacement: path.resolve(sdkworkUiRoot, 'sdkwork-ui-pc-react/node_modules/react-hook-form/dist/index.esm.mjs') },
-        { find: 'react-router/dom', replacement: path.resolve(configDir, 'node_modules/react-router/dist/development/dom-export.mjs') },
-        { find: 'react-router', replacement: path.resolve(configDir, 'node_modules/react-router/dist/development/index.mjs') },
-        { find: 'react-router-dom', replacement: path.resolve(configDir, 'node_modules/react-router-dom/dist/index.mjs') },
-        { find: /^recharts$/, replacement: path.join(rechartsRoot, 'es6', 'index.js') },
-        { find: 'set-cookie-parser', replacement: reactRouterSetCookieParserEntry },
         { find: 'use-sync-external-store/shim/with-selector', replacement: path.resolve(configDir, 'src/auth/useSyncExternalStoreWithSelectorCompat.ts') },
         { find: 'use-sync-external-store/shim', replacement: path.resolve(configDir, 'src/auth/useSyncExternalStoreShimCompat.ts') },
-        { find: /^victory-vendor\/(.+)$/, replacement: path.join(rechartsVictoryVendorRoot, 'es', '$1.js') },
-        { find: 'void-elements', replacement: resolvePortalNestedDependency('void-elements', htmlParseStringifyEntry) },
         { find: '@', replacement: path.resolve(configDir, '.') },
       ],
     },
@@ -435,7 +469,20 @@ export default defineConfig(({mode}) => {
             const normalizedId = id.replaceAll('\\', '/');
             const routePackageMatch = normalizedId.match(LOCAL_ROUTE_PACKAGE_PATTERN);
             if (routePackageMatch) {
-              return routePackageMatch.groups?.packageName;
+              const packageName = routePackageMatch.groups?.packageName;
+              if (packageName === 'models') {
+                if (normalizedId.includes('/src/pages/ModelDetails') || normalizedId.includes('/src/modelDetailsRoute')) {
+                  return 'models-details';
+                }
+                if (normalizedId.includes('/src/pages/Models') || normalizedId.includes('/src/modelsRoute')) {
+                  return 'models';
+                }
+                if (normalizedId.includes('/src/components/ModelShowcase')) {
+                  return 'models-showcase';
+                }
+                return 'models-core';
+              }
+              return packageName;
             }
             if (!id.includes('node_modules')) {
               return undefined;
@@ -470,18 +517,17 @@ export default defineConfig(({mode}) => {
         'react/jsx-runtime',
         'react-dom',
         'react-dom/client',
+        'motion/react',
         'react-i18next',
-        'i18next',
         'html-parse-stringify',
         'void-elements',
+        'framer-motion',
+        'i18next',
         'recharts',
       ],
       needsInterop: [
         'react',
         'react-dom',
-        'html-parse-stringify',
-        'void-elements',
-        'es-toolkit/compat/get',
       ],
       esbuildOptions: {
         target: 'esnext',

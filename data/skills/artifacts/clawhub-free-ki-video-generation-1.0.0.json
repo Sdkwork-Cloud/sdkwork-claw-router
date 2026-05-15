@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-ki-video-generation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_ki_video_generation",
+  "skill": {
+    "id": 42674,
+    "skillKey": "clawhub-free-ki-video-generation",
+    "name": "Free Ki Video Generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-ki-video-generation",
+    "url": "https://clawhub.ai/skills/free-ki-video-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-ki-video-generation-68067deda9896de0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get AI generated videos ready to post, without touching a single slider. Upload your text prompts or images (MP4, MOV, JPG, PNG, up to 200MB), say something..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776779922608,
+      "changelog": "- Initial release of Free AI Video Generation skill.\n- Generate 1080p MP4 videos from text prompts or images (MP4, MOV, JPG, PNG, up to 200MB).\n- No editing skills or paid tools required—ideal for content creators, marketers, and students.\n- Supports direct upload, simple text instructions, background music, and timeline edits.\n- Includes free credits and session management with anonymous token workflow.\n- Fast, cloud-based rendering pipeline with quick status updates and error handling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a1d62bf49fb34eea1c77ba3dc3ded0c3a5070eef20b60b748d518b9eb2fcdcc8"
+}

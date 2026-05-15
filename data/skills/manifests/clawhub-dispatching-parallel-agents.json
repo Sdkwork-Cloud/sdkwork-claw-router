@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10323,
+  "uuid": "skill-clawhub-dispatching-parallel-agents",
+  "skillKey": "clawhub-dispatching-parallel-agents",
+  "name": "Dispatching Parallel Agents",
+  "summary": "Use when facing 2+ independent tasks that can be worked on without shared state or sequential dependencies",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dispatching_parallel_agents",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zlc000190",
+      "features": [
+        "Use when facing 2+ independent tasks that can be worked on without shared state or sequential d."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dispatching-parallel-agents@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8969941?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dispatching-parallel-agents",
+      "url": "https://clawhub.ai/skills/dispatching-parallel-agents"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dispatching-parallel-agents",
+    "url": "https://clawhub.ai/skills/dispatching-parallel-agents",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dispatching-parallel-agents-a65bf83cb26862a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dispatching-parallel-agents@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dispatching-parallel-agents-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4b201a5d1afa7eb753ef6472326a41db6a387b1ca3342de2fe72e9db3009fe16",
+      "artifactSizeBytes": 1943
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T02:51:37.597Z"
+}

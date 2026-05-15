@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/editor-pc@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.editor_pc",
+  "skill": {
+    "id": 46158,
+    "skillKey": "clawhub-editor-pc",
+    "name": "Editor Pc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "editor-pc",
+    "url": "https://clawhub.ai/skills/editor-pc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/editor-pc-8e58cda337269c5b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get edited MP4 files ready to post, without touching a single slider. Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say something like \"c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776915092916,
+      "changelog": "Initial release of Editor PC — cloud AI video editing for PC users.\n\n- Upload raw video (MP4, MOV, AVI, WebM up to 500MB), give editing instructions, and download a 1080p MP4—no need for manual controls.\n- One-click setup: Anonymous token and session management handled automatically; clear status updates as you connect.\n- Supports editing, cutting, transitions, text, audio tracks, and batch processing using simple natural language commands.\n- Cloud GPU rendering pipeline: Fast 30–90s exports; all processing occurs remotely.\n- Robust error handling covers tokens, credits, formats, and rate limits.\n- Designed for easy, fast edits—no experience with tools like Premiere required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:431d7889c7d3b5f5eacd2ce8c39e14b339d597ec1b1e91a47d7af2e5348cde7c"
+}

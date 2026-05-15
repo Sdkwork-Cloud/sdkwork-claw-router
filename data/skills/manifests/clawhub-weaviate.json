@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16697,
+  "uuid": "skill-clawhub-weaviate",
+  "skillKey": "clawhub-weaviate",
+  "name": "Weaviate",
+  "summary": "Build vector search with Weaviate using v4 syntax, proper module configuration, and production-ready patterns.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weaviate",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Build vector search with Weaviate using v4 syntax, proper module configuration, and production-."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weaviate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weaviate",
+      "url": "https://clawhub.ai/skills/weaviate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weaviate",
+    "url": "https://clawhub.ai/skills/weaviate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weaviate-ea3f2c381cdbe297.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weaviate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weaviate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f64be6a302e7b11b0f77f8ba8042fbac2b1e204ef93e23bb4be4060002425391",
+      "artifactSizeBytes": 1790
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T22:41:53.891Z"
+}

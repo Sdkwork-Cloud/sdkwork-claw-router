@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40575,
+  "uuid": "skill-clawhub-music-discovery",
+  "skillKey": "clawhub-music-discovery",
+  "name": "Music Discovery",
+  "summary": "Recommend music tracks and playlists tailored to mood, activity, BPM, energy, or genre using Spotify and Last.fm data.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.music_discovery",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codenova58",
+      "features": [
+        "Recommend music tracks and playlists tailored to mood, activity, BPM, energy, or genre using Sp."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/music-discovery@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191358186?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "music-discovery",
+      "url": "https://clawhub.ai/skills/music-discovery"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "music-discovery",
+    "url": "https://clawhub.ai/skills/music-discovery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/music-discovery-3cb645661cf0c4e4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/music-discovery@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-music-discovery-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a5adedee5a87c7242a5f02a232c47e34fad9006a6af7e77b532445e5f5d4e3b1",
+      "artifactSizeBytes": 2281
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T07:13:57.760Z"
+}

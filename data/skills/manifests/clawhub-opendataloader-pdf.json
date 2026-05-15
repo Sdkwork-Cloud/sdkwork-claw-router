@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28722,
+  "uuid": "skill-clawhub-opendataloader-pdf",
+  "skillKey": "clawhub-opendataloader-pdf",
+  "name": "opendataloader-pdf",
+  "summary": "Use when parsing PDFs for RAG pipelines, extracting structured data from PDFs, or converting PDFs to Markdown/JSON with bounding boxes for AI processing",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opendataloader_pdf",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "empty_4399",
+      "features": [
+        "Use when parsing PDFs for RAG pipelines, extracting structured data from PDFs, or converting PD."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/opendataloader-pdf@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33861431?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "opendataloader-pdf",
+      "url": "https://clawhub.ai/skills/opendataloader-pdf"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opendataloader-pdf",
+    "url": "https://clawhub.ai/skills/opendataloader-pdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opendataloader-pdf-1e9a10e6bc3608b1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/opendataloader-pdf@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-opendataloader-pdf-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0683ac27fe408f65237fcdb7957374c016c0e4a29348155306d45e0fd703f370",
+      "artifactSizeBytes": 2368
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T01:56:35.448Z"
+}

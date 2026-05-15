@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/personal-agent-browser@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_agent_browser",
+  "skill": {
+    "id": 65057,
+    "skillKey": "clawhub-personal-agent-browser",
+    "name": "Personal Agent Browser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-agent-browser",
+    "url": "https://clawhub.ai/skills/personal-agent-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-agent-browser-0ad03b6002e5f6cd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "一个为你的个人数字大脑设计的浏览器自动化技能。它调用你本地安装的 agent-browser CLI，安全地访问网页，提取标题和内容，并返回结构化摘要，让 AI 助手能理解并总结网页信息。 **使用场景**： (1) 用户要求：“帮我查看一下我的技能在 ClawHub 上的页面” (2) 用户希望 AI 自动抓取..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "awublack",
+      "userId": "s179k4wcec3dghbaskqd8r6d9584pvct",
+      "displayName": "awublack",
+      "image": "https://avatars.githubusercontent.com/u/22994037?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775976524422,
+      "changelog": "openclaw-agent-browser 1.1.0\n\n- 技能名称由 personal-agent-browser 更名为 openclaw-agent-browser\n- 安装指令和文档中的相关引用同步更换为新名称\n- 其余核心功能和使用说明保持不变",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7f11e1ebea9f685dff335007bafed344d66203e644e42009ec45c2abd76d2fe0"
+}

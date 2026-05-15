@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57701,
+  "uuid": "skill-clawhub-voice-reminder",
+  "skillKey": "clawhub-voice-reminder",
+  "name": "Voice Reminder",
+  "summary": "Use when user wants to make an outbound call or send a voice reminder, including delayed calls like \"X分钟后给XX打电话\" or \"通知XXX做YYY\". Also trigger on general noti...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voice_reminder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smallKeyboy",
+      "features": [
+        "Use when user wants to make an outbound call or send a voice reminder, including delayed calls.",
+        "Also trigger on general noti..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/voice-reminder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/68474019?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "voice-reminder",
+      "url": "https://clawhub.ai/skills/voice-reminder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voice-reminder",
+    "url": "https://clawhub.ai/skills/voice-reminder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voice-reminder-420eeaea245854a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/voice-reminder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-voice-reminder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:538e96b107050bd3110833cada2c43d7d2914971b0e14389295c975f72023622",
+      "artifactSizeBytes": 1955
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T12:21:10.415Z"
+}

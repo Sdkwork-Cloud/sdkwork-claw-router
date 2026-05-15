@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44105,
+  "uuid": "skill-clawhub-enrich-company-name",
+  "skillKey": "clawhub-enrich-company-name",
+  "name": "Enrich Company Name",
+  "summary": "Populate missing contact company name fields from associated company records using a HubSpot workflow with optional API backfill. Ensures contacts inherit th...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.enrich_company_name",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TomGranot",
+      "features": [
+        "Populate missing contact company name fields from associated company records using a HubSpot wo.",
+        "Ensures contacts inherit th..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/enrich-company-name@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8835035?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "enrich-company-name",
+      "url": "https://clawhub.ai/skills/enrich-company-name"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "enrich-company-name",
+    "url": "https://clawhub.ai/skills/enrich-company-name",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/enrich-company-name-cd63d2a8f436afb7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/enrich-company-name@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-enrich-company-name-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9b89184a575fc1ab762c863c8bdda877d163780db3878e838e5b239f8eac16d6",
+      "artifactSizeBytes": 2373
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T18:42:00.888Z"
+}

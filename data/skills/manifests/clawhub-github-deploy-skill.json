@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23199,
+  "uuid": "skill-clawhub-github-deploy-skill",
+  "skillKey": "clawhub-github-deploy-skill",
+  "name": "auto-git",
+  "summary": "Commit and push local project changes to GitHub, with optional repo creation and deployment hints.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_deploy_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "范士轶",
+      "features": [
+        "Commit and push local project changes to GitHub, with optional repo creation and deployment hin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-deploy-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35017791?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-deploy-skill",
+      "url": "https://clawhub.ai/skills/github-deploy-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-deploy-skill",
+    "url": "https://clawhub.ai/skills/github-deploy-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-deploy-skill-b1428d40cc07436b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-deploy-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-deploy-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e55a72f2077aed1838b93b7d6061a807bf76bdf7681c905bed49556cbd8576a",
+      "artifactSizeBytes": 2257
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T05:12:45.674Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25223,
+  "uuid": "skill-clawhub-google-colab",
+  "skillKey": "clawhub-google-colab",
+  "name": "Google Colab",
+  "summary": "Run Google Colab notebooks for Python and machine learning with reproducible runtimes, data pipelines, debugging workflows, and experiment discipline.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_colab",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Run Google Colab notebooks for Python and machine learning with reproducible runtimes, data pip."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-colab@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-colab",
+      "url": "https://clawhub.ai/skills/google-colab"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-colab",
+    "url": "https://clawhub.ai/skills/google-colab",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-colab-7d7752a268d98e32.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-colab@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-colab-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:357d89c007af022b168a215f4cdd176cf28fc47a9a9e1877d5bd33249b049a55",
+      "artifactSizeBytes": 1977
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T22:33:10.097Z"
+}

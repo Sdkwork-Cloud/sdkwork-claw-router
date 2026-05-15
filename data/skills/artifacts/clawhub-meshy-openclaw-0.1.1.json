@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meshy-openclaw@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meshy_openclaw",
+  "skill": {
+    "id": 32610,
+    "skillKey": "clawhub-meshy-openclaw",
+    "name": "Meshy Openclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meshy-openclaw",
+    "url": "https://clawhub.ai/skills/meshy-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meshy-openclaw-54ee95448c841298.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate 3D models, textures, images, rig characters, animate them, and prepare for 3D printing using the Meshy AI API. Handles API key detection, task creat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "arlieeee",
+      "userId": "s173wqqek0negpt5dy17a9085h842ea4",
+      "displayName": "Arlie Du",
+      "image": "https://avatars.githubusercontent.com/u/149051712?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 249,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773753013066,
+      "changelog": "Cross-platform slicer support and OBJ post-processing for 3D printing (coordinate rotation, scaling, XY centering)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dad4301a1daab332bde0dadbd4dd5a92655f4f205d8cec8d28b562f696559284"
+}

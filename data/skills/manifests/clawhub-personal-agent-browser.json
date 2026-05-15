@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65057,
+  "uuid": "skill-clawhub-personal-agent-browser",
+  "skillKey": "clawhub-personal-agent-browser",
+  "name": "Personal Agent Browser",
+  "summary": "一个为你的个人数字大脑设计的浏览器自动化技能。它调用你本地安装的 agent-browser CLI，安全地访问网页，提取标题和内容，并返回结构化摘要，让 AI 助手能理解并总结网页信息。 **使用场景**： (1) 用户要求：“帮我查看一下我的技能在 ClawHub 上的页面” (2) 用户希望 AI 自动抓取...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_agent_browser",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "awublack",
+      "features": [
+        "一个为你的个人数字大脑设计的浏览器自动化技能。它调用你本地安装的 agent-browser CLI，安全地访问网页，提取标题和内容，并返回结构化摘要，让 AI 助手能理解并总结网页信息。."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/personal-agent-browser@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22994037?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "personal-agent-browser",
+      "url": "https://clawhub.ai/skills/personal-agent-browser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-agent-browser",
+    "url": "https://clawhub.ai/skills/personal-agent-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-agent-browser-0ad03b6002e5f6cd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/personal-agent-browser@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-personal-agent-browser-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f11e1ebea9f685dff335007bafed344d66203e644e42009ec45c2abd76d2fe0",
+      "artifactSizeBytes": 2361
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T06:48:44.422Z"
+}

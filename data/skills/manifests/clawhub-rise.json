@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30403,
+  "uuid": "skill-clawhub-rise",
+  "skillKey": "clawhub-rise",
+  "name": "Rise",
+  "summary": "Rise integration. Manage Users, Organizations, Leads, Pipelines, Filters. Use when the user wants to interact with Rise data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rise",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Rise integration",
+        "Manage Users, Organizations, Leads, Pipelines, Filters",
+        "Use when the user wants to interact with Rise data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rise@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rise",
+      "url": "https://clawhub.ai/skills/rise"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rise",
+    "url": "https://clawhub.ai/skills/rise",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rise-dbfbe1cd2ee1f49a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rise@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-rise-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ed75e10f6abb984e27d022c355a7b8c3d6c525af3b8c3bfedac0148fa22d964",
+      "artifactSizeBytes": 1804
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:35:13.470Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15654,
+  "uuid": "skill-clawhub-synthesize",
+  "skillKey": "clawhub-synthesize",
+  "name": "Synthesize",
+  "summary": "Combine multiple sources into unified insights with source tracking, conflict resolution, and coverage verification.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.synthesize",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Combine multiple sources into unified insights with source tracking, conflict resolution, and c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/synthesize@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "synthesize",
+      "url": "https://clawhub.ai/skills/synthesize"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "synthesize",
+    "url": "https://clawhub.ai/skills/synthesize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/synthesize-6fb0ab0f5b1f03fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/synthesize@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-synthesize-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73e2d2c999a8296ab82513cb9663726a4a00e571cbf475797bcbc915004cb799",
+      "artifactSizeBytes": 1810
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T10:52:49.621Z"
+}

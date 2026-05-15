@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shadow-trading-dashboard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shadow_trading_dashboard",
+  "skill": {
+    "id": 18384,
+    "skillKey": "clawhub-shadow-trading-dashboard",
+    "name": "Shadow Trading Dashboard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shadow-trading-dashboard",
+    "url": "https://clawhub.ai/skills/shadow-trading-dashboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shadow-trading-dashboard-dbcefd7a7e5ffa02.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage and update Steven's A-share shadow trading dashboard including positions, trades, metrics, equity curve, and trade history."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "j97feng-beep",
+      "userId": "publishers:j97feng-beep",
+      "displayName": "j97feng-beep",
+      "image": "https://avatars.githubusercontent.com/u/260810274?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 666,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773851574743,
+      "changelog": "- Initial release of the shadow-trading-dashboard skill.\n- Provides detailed workflows and file structure for managing Steven's A-share shadow trading dashboard.\n- Specifies trigger commands for dashboard interaction and trade operations.\n- Documents all key data files, schemas, and dashboard update procedures.\n- Outlines standard workflows for executing trades and maintaining equity, positions, trade history, and dashboard metrics.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d44c249c4f0237f657a8613663029910a1cc960df36be362bc7a9edb66379e66"
+}

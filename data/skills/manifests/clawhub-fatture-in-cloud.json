@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38654,
+  "uuid": "skill-clawhub-fatture-in-cloud",
+  "skillKey": "clawhub-fatture-in-cloud",
+  "name": "Fatture In Cloud",
+  "summary": "Fatture in Cloud integration. Manage data, records, and automate workflows. Use when the user wants to interact with Fatture in Cloud data.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fatture_in_cloud",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Fatture in Cloud integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Fatture in Cloud data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fatture-in-cloud@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fatture-in-cloud",
+      "url": "https://clawhub.ai/skills/fatture-in-cloud"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fatture-in-cloud",
+    "url": "https://clawhub.ai/skills/fatture-in-cloud",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fatture-in-cloud-7074bfc529b2ce0b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fatture-in-cloud@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-fatture-in-cloud-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5206101d1711a7863288581e42d603157b48c41700892c9bbf0482e25a78ef4a",
+      "artifactSizeBytes": 1908
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T23:12:22.787Z"
+}

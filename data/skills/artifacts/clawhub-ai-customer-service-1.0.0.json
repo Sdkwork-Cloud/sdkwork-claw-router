@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-customer-service@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_customer_service",
+  "skill": {
+    "id": 18540,
+    "skillKey": "clawhub-ai-customer-service",
+    "name": "AI Customer Service KB Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-customer-service",
+    "url": "https://clawhub.ai/skills/ai-customer-service",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-customer-service-0f2c6c3d7541566e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build AI-powered customer service knowledge bases by extracting FAQs from documents or websites, enabling automated replies and multi-format exports."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dagangtj",
+      "userId": "publishers:dagangtj",
+      "displayName": "dagangtj",
+      "image": "https://avatars.githubusercontent.com/u/65108318?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 652,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772183740335,
+      "changelog": "- Initial release of the AI Customer Service Knowledge Base Builder.\n- Input FAQ documents (PDF, TXT, MD, DOCX) or website URLs to auto-generate a structured knowledge base.\n- Configure auto-reply and test Q&A matching locally.\n- Export the knowledge base to JSON, CSV, or Markdown formats.\n- All processing is local; no external API keys required for basic usage.\n- Supports both English and Chinese documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:080d89c7d433bf3b6a6a48689a39df4d49284204f7021879dbe9106f5fe2fbb2"
+}

@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "cms-personal-assistant",
+    "displayName": "cms-personal-assistant",
+    "summary": "BP个人月度汇报生成与发送工具。基于 BP 目标结构、衡量标准和当月汇报证据， 按分步流程生成结构固定、证据可追溯的月报初稿。 当用户需要生成、发送或预览个人BP月度汇报时使用。",
+    "tags": {
+      "latest": "0.2.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1776317693361,
+    "updatedAt": 1777527600265
+  },
+  "latestVersion": {
+    "version": "0.2.0",
+    "createdAt": 1776418835051,
+    "changelog": "**重大更新：切换为 BP 个人月度汇报专用工具，全面重构能力与流程。**\n\n- 全面移除原有个人助理（协同收件箱、时间管理、风控、钉钉推送等）相关能力与脚本。\n- 新增 BP 个人月度汇报数据采集与生成流程（目标分步采集，证据聚合，灯色判定）。\n- 新增报告模板、证据规则、灯色判断等参考规范文档，单独归档于 references。\n- 报告生成过程强制拆解为 4 大步、不可一步生成，强调证据可追溯和环节透明。\n- 新增 monthly_report_api.py，集中承载月报生命周期 API 操作（采集、汇总、状态流转等）。\n- 适配 BP 系统：支持分组、周期、目标逐步生成、上月对比与锚点引用。",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "spzwin",
+    "userId": "s174w40rh23bjb4hmnxn9p1fa983gsch",
+    "displayName": "spzwin",
+    "image": "https://avatars.githubusercontent.com/u/48741773?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527600265
+  }
+}

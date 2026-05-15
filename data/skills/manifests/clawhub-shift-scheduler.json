@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34250,
+  "uuid": "skill-clawhub-shift-scheduler",
+  "skillKey": "clawhub-shift-scheduler",
+  "name": "Shift Scheduler",
+  "summary": "Staff shift scheduling and management assistant for retail store managers and employees. Answers shift queries, sends reminders, handles swap requests, and m...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shift_scheduler",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fangwei-frank",
+      "features": [
+        "Staff shift scheduling and management assistant for retail store managers and employees",
+        "Answers shift queries, sends reminders, handles swap requests, and m..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shift-scheduler@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/166581472?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shift-scheduler",
+      "url": "https://clawhub.ai/skills/shift-scheduler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shift-scheduler",
+    "url": "https://clawhub.ai/skills/shift-scheduler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shift-scheduler-027cb9ba01562896.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shift-scheduler@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shift-scheduler-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:30f64bf4ba335b0d16ae769acfae043bb2b193e83b5a682aa58db16ba3de4038",
+      "artifactSizeBytes": 1901
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T04:00:45.646Z"
+}

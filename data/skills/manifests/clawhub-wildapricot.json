@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35872,
+  "uuid": "skill-clawhub-wildapricot",
+  "skillKey": "clawhub-wildapricot",
+  "name": "Wildapricot",
+  "summary": "WildApricot integration. Manage data, records, and automate workflows. Use when the user wants to interact with WildApricot data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wildapricot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "WildApricot integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with WildApricot data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wildapricot@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wildapricot",
+      "url": "https://clawhub.ai/skills/wildapricot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wildapricot",
+    "url": "https://clawhub.ai/skills/wildapricot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wildapricot-6f237f0c9b6fb74d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wildapricot@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-wildapricot-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1d0e51a7fd4b41b5289e05b3d11dbbfebf871416fb619ead57a3a1f3ba11b718",
+      "artifactSizeBytes": 1857
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:02:18.513Z"
+}

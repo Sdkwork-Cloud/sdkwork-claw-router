@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/private-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.private_search",
+  "skill": {
+    "id": 36713,
+    "skillKey": "clawhub-private-search",
+    "name": "Private Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "private-search",
+    "url": "https://clawhub.ai/skills/private-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/private-search-e8965ea1658a228e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Route OpenClaw web searches through privacy-respecting engines (Brave Search, Kagi, SearXNG) instead of Google or Bing. Eliminates ad-network tracking from y..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "u4ma-kev",
+      "userId": "s170e0x77pcec66jcd99j0063183jrcf",
+      "displayName": "u4ma-kev",
+      "image": "https://avatars.githubusercontent.com/u/45077960?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774401441449,
+      "changelog": "- Initial release of Private Search for OpenClaw.\n- Routes agent search queries through privacy-focused engines: Brave Search (default), Kagi, or self-hosted SearXNG.\n- Eliminates ad-network tracking and strips tracking parameters from search result URLs.\n- Fully configurable search engine, result count, and privacy settings via environment variables.\n- Simple setup for Brave Search; supports optional Kagi and SearXNG integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d09672143b81579018dce623ca0724e93b51395e05930c180ca32b021298a46c"
+}

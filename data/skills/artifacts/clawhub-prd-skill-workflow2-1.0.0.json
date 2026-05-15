@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prd-skill-workflow2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prd_skill_workflow2",
+  "skill": {
+    "id": 70315,
+    "skillKey": "clawhub-prd-skill-workflow2",
+    "name": "Prd Skill Workflow2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prd-skill-workflow2",
+    "url": "https://clawhub.ai/skills/prd-skill-workflow2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prd-skill-workflow2-e9ede6a57414d9fe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "全栈PRD协作工作流。与用户共同探讨，产出可供开发、设计、测试、运营、项目经理使用的完整PRD文档。 协作流程共10步，输出PRD包含14个章节（项目概述、市场分析、需求列表、信息架构、用户流程、原型设计、UI规范、功能规格、数据模型、技术方案、非功能需求、测试方案、数据埋点、运营方案、项目计划）。 当用户说\"帮..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shixiangyu2",
+      "userId": "s172tssf154bb00zr1jxkvpsrs83h4b9",
+      "displayName": "ShiXiangYu2",
+      "image": "https://avatars.githubusercontent.com/u/215228006?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774360880553,
+      "changelog": "Initial release of prd-skill-workflow2 as prd-fullstack for collaborative, professional PRD creation.\n\n- Supports a 10-step dialog-driven workflow to generate complete PRD documentation.\n- Outputs a 14-chapter, enterprise-standard PRD covering product, user experience, functionality, technology, quality, operation, and management.\n- Provides visualized output (tables, diagrams, flows) and allows step back/modification at any stage.\n- Includes ready-to-use templates, product-type configs, checklists, scripts, and sample projects.\n- Triggered by phrases like \"帮我写PRD\" or \"产品需求文档\".",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:be548ec90ab2f9b5aae0ee0930c709e6cbda6564a89c5405689fbb06e1eb867b"
+}

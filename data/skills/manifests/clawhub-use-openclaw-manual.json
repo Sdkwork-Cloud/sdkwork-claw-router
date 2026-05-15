@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62720,
+  "uuid": "skill-clawhub-use-openclaw-manual",
+  "skillKey": "clawhub-use-openclaw-manual",
+  "name": "Use OpenClaw Manual",
+  "summary": "配置 OpenClaw 前必须查阅官方文档的技能。当用户提到任何配置相关的话题（agent、session、channel、cron、通知、工具、workspace、gateway 等）时，立即使用此技能搜索本地文档。不要凭经验猜测——先查文档再设计方案。",
+  "version": "2.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.use_openclaw_manual",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "echoflying",
+      "features": [
+        "配置 OpenClaw 前必须查阅官方文档的技能。当用户提到任何配置相关的话题（agent、session、channel、cron、通知、工具、workspace、gateway 等）时，."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/use-openclaw-manual@2.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5063007?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "use-openclaw-manual",
+      "url": "https://clawhub.ai/skills/use-openclaw-manual"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "use-openclaw-manual",
+    "url": "https://clawhub.ai/skills/use-openclaw-manual",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/use-openclaw-manual-6557712f50bbc0bd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/use-openclaw-manual@2.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-use-openclaw-manual-2.0.3.json",
+      "version": "2.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fd440e3e686004f83c6371e1602b1136bb8fec4c92ad2a4c88cb99e2bd3a59c0",
+      "artifactSizeBytes": 2162
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T03:52:47.866Z"
+}

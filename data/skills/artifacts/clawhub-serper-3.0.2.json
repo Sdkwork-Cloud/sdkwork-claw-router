@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/serper@3.0.2",
+  "version": "3.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.serper",
+  "skill": {
+    "id": 9142,
+    "skillKey": "clawhub-serper",
+    "name": "serper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "serper",
+    "url": "https://clawhub.ai/skills/serper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/serper-c65a92835ae694ae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Google search via Serper API with full page content extraction. Fast API lookup + concurrent page scraping (3s timeout). One well-crafted query returns rich results — avoid multiple calls. Two modes, explicit locale control. API key via .e."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nesdeq",
+      "userId": "s1789jfqr432wa7px6cqnk6ded84y56q",
+      "displayName": "nesdeq",
+      "image": "https://avatars.githubusercontent.com/u/129054196?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4417,
+      "installsAllTime": 21,
+      "installsCurrent": 20,
+      "stars": 7,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "3.0.2",
+      "createdAt": 1769895947216,
+      "changelog": "- No code or documentation changes detected in this release.\n- Version number update only; functionality and documentation remain unchanged.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8865a051bc297ff38f222d4643aeb48707daf48f30466f5eeae22fd8c785078d"
+}

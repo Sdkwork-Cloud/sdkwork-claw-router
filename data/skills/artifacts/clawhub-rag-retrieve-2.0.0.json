@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rag-retrieve@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rag_retrieve",
+  "skill": {
+    "id": 42730,
+    "skillKey": "clawhub-rag-retrieve",
+    "name": "Rag Retrieve"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rag-retrieve",
+    "url": "https://clawhub.ai/skills/rag-retrieve",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rag-retrieve-8276e0fb41bf4d4e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Performs domain- and version-aware hybrid vector+BM25+metadata search on TiDB, with multi-query expansion and optional chain-of-retrieval for multi-hop queries."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stephenlthorn",
+      "userId": "s1781macwsy8b25gaqa558qrx5858x3k",
+      "displayName": "Stephen Thorn",
+      "image": "https://avatars.githubusercontent.com/u/49094234?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1776779200697,
+      "changelog": "**rag-retrieve 2.0.0 — Major architecture upgrade and new features**\n\n- Adds multi-query expansion for richer, more comprehensive retrievals.\n- Implements fast, version-aware filtering (essential for accurate iOS documentation).\n- Supports hybrid vector + BM25 + metadata search via TiDB.\n- Optional CoRAG (chain-of-retrieval) enables multi-hop reasoning and context accumulation.\n- Output includes direct trace of retrieval steps, estimated token count, and query variants.\n- Flexible filtering: domain, iOS version, frameworks, and user codebase now supported.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a2c60edf11c6b26a62af65b2d5602098f406ae0c75a0ddf58d6ad2bec5ae6d8e"
+}

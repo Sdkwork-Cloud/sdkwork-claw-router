@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/test123413123124231222@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test123413123124231222",
+  "skill": {
+    "id": 72968,
+    "skillKey": "clawhub-test123413123124231222",
+    "name": "测试审核记录保存4"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test123413123124231222",
+    "url": "https://clawhub.ai/skills/test123413123124231222",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test123413123124231222-33b229a84e3f7d57.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在任何创造性工作之前必须使用 - 创建功能、构建组件、添加新功能或修改行为。通过协作对话探索用户意图、需求和设计。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lky115",
+      "userId": "s17eyw94gx00cf2kh08jj3234183ncam",
+      "displayName": "LKY115",
+      "image": "https://avatars.githubusercontent.com/u/166357382?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776936190242,
+      "changelog": "- 新增核心头脑风暴技能，用于在创造性工作前进行协作对话\n- 通过分步流程将模糊想法转化为完整设计和规格说明\n- 支持分节呈现设计并逐节验证，确保理解准确\n- 提供领域扩展钩子，针对嵌入式或仿真项目推荐专用子技能\n- 遵循一次一个问题、首选选择题等核心原则，优化对话体验",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9adb09da3aebfeedc28b76655ad49477ce15d27ea9cbaa402b9c45c7d91d4a62"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66522,
+  "uuid": "skill-clawhub-baidu-finance-search",
+  "skillKey": "clawhub-baidu-finance-search",
+  "name": "Baidu Finance Search",
+  "summary": "百度财经搜索 skill。基于超哥方法论定制，支持雪球/知乎/东方财富/同花顺等站点的财经舆情搜索，适合短线情绪博弈和事件驱动分析。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_finance_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huangrichao2020",
+      "features": [
+        "百度财经搜索 skill。基于超哥方法论定制，支持雪球/知乎/东方财富/同花顺等站点的财经舆情搜索，适合短线情绪博弈和事件驱动分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baidu-finance-search@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/72842645?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baidu-finance-search",
+      "url": "https://clawhub.ai/skills/baidu-finance-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-finance-search",
+    "url": "https://clawhub.ai/skills/baidu-finance-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-finance-search-8e174116a05dbdb9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baidu-finance-search@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-baidu-finance-search-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3a096d2a65cafbafb8b47d63998f366a1adeae796eba4d386b1f78f1be8cb1e4",
+      "artifactSizeBytes": 2178
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T14:22:16.472Z"
+}

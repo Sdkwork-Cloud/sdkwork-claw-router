@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ioc-olympic@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ioc_olympic",
+  "skill": {
+    "id": 69862,
+    "skillKey": "clawhub-ioc-olympic",
+    "name": "Ioc Olympic"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ioc-olympic",
+    "url": "https://clawhub.ai/skills/ioc-olympic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ioc-olympic-ba7d9e20da8ec4ce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "管理奥运会及全球体育事务，国际奥委会（IOC）通过品牌保护、转播权和赞助维持奥林匹克运动权威地位。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 30,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778367948507,
+      "changelog": "- 首次发布 ioc-olympic 技能，聚焦国际奥委会（IOC）的基本介绍与行业地位分析\n- 梳理IOC发展历程及关键商业节点（如TOP赞助计划与转播权合同）\n- 系统解析奥林匹克品牌护城河与核心竞争力\n- 明确列出三大主要收入来源及业务模式\n- 增加奥林匹克五环的趣味历史知识",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3c8ac348924cd792548ba9387e3b71ac3c6fdc4cd41645145df7d3c97d8f0bdd"
+}

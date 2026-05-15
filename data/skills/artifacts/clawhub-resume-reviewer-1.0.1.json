@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/resume-reviewer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resume_reviewer",
+  "skill": {
+    "id": 25763,
+    "skillKey": "clawhub-resume-reviewer",
+    "name": "ANDG"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resume-reviewer",
+    "url": "https://clawhub.ai/skills/resume-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resume-reviewer-fe3c2fe543f59ed7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze resumes for target roles, identify weak bullets, missing keywords, ATS gaps, and provide actionable rewrite suggestions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andrewgufx",
+      "userId": "publishers:andrewgufx",
+      "displayName": "Andrew",
+      "image": "https://avatars.githubusercontent.com/u/98487831?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 362,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772878232162,
+      "changelog": "- Expanded focus to specifically support students and early-career candidates targeting analytics and data roles.\n- Added clear guidelines for handling academic, project-heavy, or plain-language resumes lacking business or outcome focus.\n- Updated review criteria to emphasize technical skill signals (SQL, Python, statistics, etc.) and credibility for analytics roles.\n- Introduced structured input handling for scenarios with incomplete user information.\n- Enhanced output format for greater clarity and consistency, including more tailored rewrite suggestions and fix plans.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:65f3de4f661ce1183aba0002447036148d19ab273161745261224b6b8a584bb8"
+}

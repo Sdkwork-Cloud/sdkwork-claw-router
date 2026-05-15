@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29005,
+  "uuid": "skill-clawhub-changelog-generator-pro",
+  "skillKey": "clawhub-changelog-generator-pro",
+  "name": "Changelog Generator Pro",
+  "summary": "Automatically creates user-facing changelogs from git commits by analyzing commit history, categorizing changes, and transforming technical commits into clea...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.changelog_generator_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hsuyungfeng",
+      "features": [
+        "Automatically creates user-facing changelogs from git commits by analyzing commit history, cate."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/changelog-generator-pro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/140491126?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "changelog-generator-pro",
+      "url": "https://clawhub.ai/skills/changelog-generator-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "changelog-generator-pro",
+    "url": "https://clawhub.ai/skills/changelog-generator-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/changelog-generator-pro-4ffe6acde55f0e42.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/changelog-generator-pro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-changelog-generator-pro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6dbd94274fd99667a51951bb7c56f82b651fd85cadc24bbe4618410f077a36b6",
+      "artifactSizeBytes": 2416
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T01:03:03.988Z"
+}

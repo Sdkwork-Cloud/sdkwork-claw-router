@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37054,
+  "uuid": "skill-clawhub-game-build-strategy",
+  "skillKey": "clawhub-game-build-strategy",
+  "name": "Game Build Strategy",
+  "summary": "Decide the AI-native development mode, quality target, task granularity, and refactor policy based on project state and user intent. This skill prevents both...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.game_build_strategy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mike007jd",
+      "features": [
+        "Decide the AI-native development mode, quality target, task granularity, and refactor policy ba.",
+        "This skill prevents both..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/game-build-strategy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31256541?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "game-build-strategy",
+      "url": "https://clawhub.ai/skills/game-build-strategy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "game-build-strategy",
+    "url": "https://clawhub.ai/skills/game-build-strategy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/game-build-strategy-240a86ab40b05d3d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/game-build-strategy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-game-build-strategy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:282514384935fe6c8efca26a17183680aa5c7d7000c829f88df34e2f95ae1fe7",
+      "artifactSizeBytes": 2360
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T07:51:22.780Z"
+}

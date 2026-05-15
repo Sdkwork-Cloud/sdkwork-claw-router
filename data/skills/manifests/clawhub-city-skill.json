@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40512,
+  "uuid": "skill-clawhub-city-skill",
+  "skillKey": "clawhub-city-skill",
+  "name": "City Skill",
+  "summary": "City.Skills - One-stop travel assistant for first-time visitors to China, multilingual support",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.city_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WangM-A3",
+      "features": [
+        "City.Skills",
+        "One-stop travel assistant for first-time visitors to China, multilingual support"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/city-skill@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274818589?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "city-skill",
+      "url": "https://clawhub.ai/skills/city-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "city-skill",
+    "url": "https://clawhub.ai/skills/city-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/city-skill-26a1b0ac9ab1f198.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/city-skill@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-city-skill-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:20f5a07b501e13f526159939aed960dbc82b5d6dccd01fcd95f68c7baa851a02",
+      "artifactSizeBytes": 1789
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T01:07:35.630Z"
+}

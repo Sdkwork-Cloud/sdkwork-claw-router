@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hookflo-tern@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hookflo_tern",
+  "skill": {
+    "id": 21995,
+    "skillKey": "clawhub-hookflo-tern",
+    "name": "Hookflo Webhooks"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hookflo-tern",
+    "url": "https://clawhub.ai/skills/hookflo-tern",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hookflo-tern-02ba2c9994bbbaaf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill for requests touching webhooks, event-driven infrastructure, or real-time HTTP callbacks — from beginner setup to advanced security and archit..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "prateek32177",
+      "userId": "publishers:prateek32177",
+      "displayName": "Prateek Jain",
+      "image": "https://avatars.githubusercontent.com/u/49508975?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 853,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771349910258,
+      "changelog": "Fix security scan  added homepage/source provenance, declared env vars, cleaned up activation language",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7e5b8ca898708ab1688baba36ef6f361499f117778c388e5b04b051c0309ba04"
+}

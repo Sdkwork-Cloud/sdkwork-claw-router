@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claude-code@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code",
+  "skill": {
+    "id": 8581,
+    "skillKey": "clawhub-claude-code",
+    "name": "Claude Code Integration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code",
+    "url": "https://clawhub.ai/skills/claude-code",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-28e174396028f226.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Claude Code integration for OpenClaw. This skill provides interfaces to: - Query Claude Code documentation from https://code.claude.com/docs - Manage subagents and coding tasks - Execute AI-assisted coding workflows - Access best practices."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hw10181913",
+      "userId": "publishers:hw10181913",
+      "displayName": "hw10181913",
+      "image": "https://avatars.githubusercontent.com/u/80155586?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 8211,
+      "installsAllTime": 115,
+      "installsCurrent": 113,
+      "stars": 15,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770794006933,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f3425abce7883733ac1650ff6fd22924a7b6e59e6af106005288f56495eda2f2"
+}

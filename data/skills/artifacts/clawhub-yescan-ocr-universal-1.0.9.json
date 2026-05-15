@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yescan-ocr-universal@1.0.9",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yescan_ocr_universal",
+  "skill": {
+    "id": 71399,
+    "skillKey": "clawhub-yescan-ocr-universal",
+    "name": "夸克扫描王 OCR文字识别 - yescan ocr universal"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yescan-ocr-universal",
+    "url": "https://clawhub.ai/skills/yescan-ocr-universal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yescan-ocr-universal-8ab899967336eeb7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "由夸克扫描王提供的专业 OCR 文字识别与处理工具。支持图片、截图、扫描件中的文字提取，包括手写文档、表格内容、数学公式、商品图片等复杂场景。精准识别各类证件（身份证、社保卡、驾驶证、行驶证、港澳通行证、学位证等证件）及票据（增值税发票、火车票、英文发票等票据），同时支持医疗报告单、营业执照、习题题目等专业文档识别。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mozhihuidage",
+      "userId": "s1765pmm648c2y0csv6xp0s2pd83ggmn",
+      "displayName": "夸克扫描王",
+      "image": "https://avatars.githubusercontent.com/u/259593130?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1308,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 3,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.0.9",
+      "createdAt": 1776341791743,
+      "changelog": "- 改进了环境变量配置说明，推荐使用 OpenClaw CLI 方式进行持久配置。\n- 简化和优化了主描述文本，使能力覆盖和应用场景表述更清晰。\n- 技能执行命令示例从 Python subprocess 方式切换为直接 Bash 命令格式，强化约束仅允许指定结构。\n- 增加了禁止自行拼接 --scene 参数的专门提示。\n- 移除了 _meta.json 文件。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a41b573758b3be96daa4ab441f9308492160d98815e175261170ca64630f9317"
+}

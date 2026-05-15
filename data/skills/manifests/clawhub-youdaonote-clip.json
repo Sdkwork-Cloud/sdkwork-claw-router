@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65776,
+  "uuid": "skill-clawhub-youdaonote-clip",
+  "skillKey": "clawhub-youdaonote-clip",
+  "name": "YoudaoNote Clip",
+  "summary": "网页剪藏到有道云笔记。触发词：剪藏网页、保存网页、收藏网页。",
+  "version": "1.21.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youdaonote_clip",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lephix",
+      "features": [
+        "网页剪藏到有道云笔记。触发词：剪藏网页、保存网页、收藏网页。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youdaonote-clip@1.21.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/308410?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youdaonote-clip",
+      "url": "https://clawhub.ai/skills/youdaonote-clip"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youdaonote-clip",
+    "url": "https://clawhub.ai/skills/youdaonote-clip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youdaonote-clip-ff371403de0a366a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youdaonote-clip@1.21.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-youdaonote-clip-1.21.8.json",
+      "version": "1.21.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2d3a6819edf43040b4c9db9be7db937ba35b0fa7fe08cbd408f880a4ad5f063c",
+      "artifactSizeBytes": 2007
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T07:54:10.797Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feedback-loop@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feedback_loop",
+  "skill": {
+    "id": 20694,
+    "skillKey": "clawhub-feedback-loop",
+    "name": "Feedback Loop"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feedback-loop",
+    "url": "https://clawhub.ai/skills/feedback-loop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feedback-loop-5282c524c53e8bab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Feedback Loop - Collect, analyze, and act on user feedback for continuous agent improvement"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 493,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773286398968,
+      "changelog": "Initial release of Feedback Loop skill.\n\n- Collect explicit and implicit user feedback with CLI commands and programming interface.\n- Analyze feedback with clustering, trend, sentiment, and pattern detection.\n- Automatically generate prioritized improvement suggestions with actionable items.\n- Track progress and effects of implemented suggestions.\n- Generate statistics and reports; export data in JSON/CSV.\n- Organize all feedback, suggestions, and tracking data for ongoing agent optimization.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ad445f670d182704a06ff657801d846e8fe5f53fae6397429a1e17f244827d52"
+}

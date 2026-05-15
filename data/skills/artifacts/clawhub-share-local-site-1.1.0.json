@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/share-local-site@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.share_local_site",
+  "skill": {
+    "id": 27214,
+    "skillKey": "clawhub-share-local-site",
+    "name": "Share Local Site"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "share-local-site",
+    "url": "https://clawhub.ai/skills/share-local-site",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/share-local-site-2d4cc4ccfc20d44a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Share a local development server with anyone via a public URL. Use when you need to demo a site to a client, let a colleague preview your work, test on mobil..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "darwin7381",
+      "userId": "s17d6805f0n7wkv9ewv2ayad7h84em8h",
+      "displayName": "Joey Luo",
+      "image": "https://avatars.githubusercontent.com/u/11506086?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 352,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773478910837,
+      "changelog": "Add recommendation to pair with openclaw-tmux-persistent-process for stable tunnels that survive exec session cleanup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5ff68c93f293c2fd4ecc77d6cd4b6406877f58229ca4cdf884f86487adadc530"
+}

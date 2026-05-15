@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33063,
+  "uuid": "skill-clawhub-gstack-review",
+  "skillKey": "clawhub-gstack-review",
+  "name": "Review",
+  "summary": "Pre-landing PR review. Analyzes diff against the base branch for SQL safety, LLM trust boundary violations, conditional side effects, and other structural is...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gstack_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Loocor",
+      "features": [
+        "Pre-landing PR review",
+        "Analyzes diff against the base branch for SQL safety, LLM trust boundary violations, conditiona."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gstack-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25772398?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gstack-review",
+      "url": "https://clawhub.ai/skills/gstack-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gstack-review",
+    "url": "https://clawhub.ai/skills/gstack-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gstack-review-aca9a0dec64ca3d7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gstack-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gstack-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:78730b795347c68ad6606ddd4fa8ff5d0d97232c81d6be933be74db0bacb1230",
+      "artifactSizeBytes": 2438
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T11:28:07.186Z"
+}

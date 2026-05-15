@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40648,
+  "uuid": "skill-clawhub-bcrypt-generate",
+  "skillKey": "clawhub-bcrypt-generate",
+  "name": "Bcrypt Generate",
+  "summary": "Hash passwords using bcrypt or verify a password against a bcrypt hash. Use when the user asks to bcrypt a password, generate a bcrypt hash, check if a passw...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bcrypt_generate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Omar Hernandez",
+      "features": [
+        "Hash passwords using bcrypt or verify a password against a bcrypt hash",
+        "Use when the user asks to bcrypt a password, generate a bcrypt hash, check if a passw..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bcrypt-generate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86250007?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bcrypt-generate",
+      "url": "https://clawhub.ai/skills/bcrypt-generate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bcrypt-generate",
+    "url": "https://clawhub.ai/skills/bcrypt-generate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bcrypt-generate-67ca6167bd225437.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bcrypt-generate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bcrypt-generate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9671edd8929508b23d63c92751689a06e82b77c9671a0bd60bff05e81caf9a8f",
+      "artifactSizeBytes": 2364
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T23:11:36.132Z"
+}

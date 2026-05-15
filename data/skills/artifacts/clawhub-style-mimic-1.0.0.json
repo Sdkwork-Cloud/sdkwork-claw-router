@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/style-mimic@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.style_mimic",
+  "skill": {
+    "id": 72766,
+    "skillKey": "clawhub-style-mimic",
+    "name": "社会洞察文章风格模仿"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "style-mimic",
+    "url": "https://clawhub.ai/skills/style-mimic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/style-mimic-ac35e7fb3f316fb7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "模仿社会洞察类文章风格进行写作的AI助手"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "titancheung",
+      "userId": "s17eg7wqz9gabrcnepcq52nxr183yfv9",
+      "displayName": "TitanCheung",
+      "image": "https://avatars.githubusercontent.com/u/253392546?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775005093754,
+      "changelog": "初始版本：社会洞察类文章风格模仿技能",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d7d8cbe75130a2316a79e5f78f97a0247277e966ffbe063b90584494eefb61f9"
+}

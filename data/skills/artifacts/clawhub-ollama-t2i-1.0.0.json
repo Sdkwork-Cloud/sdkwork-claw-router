@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ollama-t2i@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ollama_t2i",
+  "skill": {
+    "id": 64222,
+    "skillKey": "clawhub-ollama-t2i",
+    "name": "本地 Ollama 文生图工具。使用 x/z-image-turbo 模型生成图片，分辨率 1024x1024，每张图约耗时 90 秒。当用户说\"生成图片\"、\"文生图\"、\"画一张图\"、或提交中文提示词生成图像时使用。"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ollama-t2i",
+    "url": "https://clawhub.ai/skills/ollama-t2i",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ollama-t2i-2b15010cbc4a4925.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "本地 Ollama 文生图工具。使用 x/z-image-turbo 模型生成图片，分辨率 1024x1024，每张图约耗时 90 秒。当用户说\"生成图片\"、\"文生图\"、\"画一张图\"、或提交中文提示词生成图像时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiafeimao-gjf",
+      "userId": "s172t0fwn1ya1dg2pdg0w458zx84pbxf",
+      "displayName": "Thomas",
+      "image": "https://avatars.githubusercontent.com/u/16031366?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 277,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774160117808,
+      "changelog": "Ollama 文生图 1.0.0 首次发布：\n\n- 支持通过 x/z-image-turbo 模型在本地生成 1024x1024 图片（约 90 秒/张）。\n- 使用简单命令行工具，支持单次与批量中文提示词生图。\n- 输出图片自动保存于 images 目录并包含耗时统计。\n- 适配本地 Ollama 服务与模型。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:80ee7dd44cc2b8dbed20c778274c91f0b0df771ec9d887b5b465f544d33021c5"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69884,
+  "uuid": "skill-clawhub-volcengine-rtc-device-control",
+  "skillKey": "clawhub-volcengine-rtc-device-control",
+  "name": "volcengine-rtc-device-control",
+  "summary": "火山引擎AI音视频互动设备控制技能。用于控制当前硬件设备的行为，包含左摇头、右摇头、调大音量、调小音量、设备关机、调亮屏幕、调暗屏幕、温度调节等常见硬件控制行为。当需要生成或解析设备控制指令时使用此技能。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.volcengine_rtc_device_control",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huang-zhibin",
+      "features": [
+        "火山引擎AI音视频互动设备控制技能。用于控制当前硬件设备的行为，包含左摇头、右摇头、调大音量、调小音量、设备关机、调亮屏幕、调暗屏幕、温度调节等常见硬件控制行为。当需要生成或解析设备控制指令."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/volcengine-rtc-device-control@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/90199217?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "volcengine-rtc-device-control",
+      "url": "https://clawhub.ai/skills/volcengine-rtc-device-control"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "volcengine-rtc-device-control",
+    "url": "https://clawhub.ai/skills/volcengine-rtc-device-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/volcengine-rtc-device-control-ae5da6d6776f019d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/volcengine-rtc-device-control@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-volcengine-rtc-device-control-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:94732f0564d9e53d17f2f48ec5454847d4f0cd10b4c6c62dd32e4b1130364346",
+      "artifactSizeBytes": 2505
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T12:52:22.424Z"
+}

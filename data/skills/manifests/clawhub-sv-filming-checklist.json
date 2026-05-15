@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47657,
+  "uuid": "skill-clawhub-sv-filming-checklist",
+  "skillKey": "clawhub-sv-filming-checklist",
+  "name": "Short Video Filming Preparation Checklist",
+  "summary": "Generates tailored pre-shoot checklists covering equipment, location, talent, wardrobe, and contingency plans for video shoot preparation.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sv_filming_checklist",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Generates tailored pre-shoot checklists covering equipment, location, talent, wardrobe, and con."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sv-filming-checklist@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sv-filming-checklist",
+      "url": "https://clawhub.ai/skills/sv-filming-checklist"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sv-filming-checklist",
+    "url": "https://clawhub.ai/skills/sv-filming-checklist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sv-filming-checklist-fdb0cd2372ddefa4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sv-filming-checklist@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sv-filming-checklist-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:60f2086dc150d12e5c37f1775b7c343ce88148eba1cea141f92eb92495d97d9e",
+      "artifactSizeBytes": 1928
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T02:06:52.953Z"
+}

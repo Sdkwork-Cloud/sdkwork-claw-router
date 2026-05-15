@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54548,
+  "uuid": "skill-clawhub-prod-shield",
+  "skillKey": "clawhub-prod-shield",
+  "name": "Hardened execution guardrails — because production only gets one chance.",
+  "summary": "ProdShield: Hardened execution guardrails — because production only gets one chance. Use this skill whenever Claude is about to execute commands, run scripts...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prod_shield",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "2eux",
+      "features": [
+        "ProdShield: Hardened execution guardrails — because production only gets one chance",
+        "Use this skill whenever Claude is about to execute commands, run scripts..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prod-shield@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3762199?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prod-shield",
+      "url": "https://clawhub.ai/skills/prod-shield"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prod-shield",
+    "url": "https://clawhub.ai/skills/prod-shield",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prod-shield-33e2ec8e3c71cc6e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prod-shield@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-prod-shield-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:752c3936f5f4b046ddaef237ba33db6d06882babdbe39ec9c868d76305ea9745",
+      "artifactSizeBytes": 2421
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T04:40:24.536Z"
+}

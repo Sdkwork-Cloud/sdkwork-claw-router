@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bazi-daily@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bazi_daily",
+  "skill": {
+    "id": 70846,
+    "skillKey": "clawhub-bazi-daily",
+    "name": "Daily Bazi Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bazi-daily",
+    "url": "https://clawhub.ai/skills/bazi-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bazi-daily-96b84728d2ff470a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "面向“今日运势/今天适合做X吗/今日宜忌”类咨询的八字日运解读技能。使用场景：用户在 OpenClaw 中询问当日运势、某事项是否适合今天做、今日吉凶与建议时触发。技能会自动读取当前日期，查询当日对应的流年、流月、流日，并结合用户的八字四柱进行分析；若用户为首次使用且无个人四柱记忆，先引导用户提供四柱并写入长期记..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lilir-is-here",
+      "userId": "s1778hab5hphncdbjsg4bemfn983hqx8",
+      "displayName": "liliishere",
+      "image": "https://avatars.githubusercontent.com/u/123858288?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 716,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1774345040651,
+      "changelog": "Bazi Daily 1.0.4 — Switches to .sql calendar data and strengthens classic text guardrails\n\n- 日历数据源由 CSV 格式（assets/bazi_daily_calendar_2026.csv）切换为 SQL 格式（assets/bazi_daily_calendar_2026.sql）。\n- 知识源引用仅允许本地 txt 文本，经典文本缺失时禁止静默替代，并加入缺口警告和完整性说明。\n- references/classics 目录新增 README.md，详细说明经典文本缺失章节对分析影响。\n- 新增 references/import-command-template.md，明确年度日历 SQL 数据导入流程。\n- 删除 references/i18n-terminology.md，不再提及多语言术语映射与展示层路由规则。\n- 响应模板、守则、日志字段等规则精简，更聚焦实际 OpenClaw 运行场景。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:55527795d7a1ed2d93653b7c91a95c4e66025d2e8b36a88d9dd2bdf716136390"
+}

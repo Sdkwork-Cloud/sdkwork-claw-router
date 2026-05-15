@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10398,
+  "uuid": "skill-clawhub-fzf-fuzzy-finder",
+  "skillKey": "clawhub-fzf-fuzzy-finder",
+  "name": "Fzf Fuzzy Finder",
+  "summary": "Command-line fuzzy finder for interactive filtering and selection - integrates with shell, vim, and other tools.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fzf_fuzzy_finder",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Arnarsson",
+      "features": [
+        "Command-line fuzzy finder for interactive filtering and selection",
+        "integrates with shell, vim, and other tools."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fzf-fuzzy-finder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/96142966?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fzf-fuzzy-finder",
+      "url": "https://clawhub.ai/skills/fzf-fuzzy-finder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fzf-fuzzy-finder",
+    "url": "https://clawhub.ai/skills/fzf-fuzzy-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fzf-fuzzy-finder-f0ec755707bcac16.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fzf-fuzzy-finder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fzf-fuzzy-finder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:178a812973797f60b786ea001b406796175c6b4f6c1293e4820b8dbb7b892d8e",
+      "artifactSizeBytes": 2271
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-29T13:07:51.613Z"
+}

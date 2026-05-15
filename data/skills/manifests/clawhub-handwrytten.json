@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54358,
+  "uuid": "skill-clawhub-handwrytten",
+  "skillKey": "clawhub-handwrytten",
+  "name": "Handwrytten",
+  "summary": "Send real handwritten notes through robots with real pens — physical cards mailed to recipients",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.handwrytten",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "davidwachs",
+      "features": [
+        "Send real handwritten notes through robots with real pens — physical cards mailed to recipients"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/handwrytten@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12176167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "handwrytten",
+      "url": "https://clawhub.ai/skills/handwrytten"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "handwrytten",
+    "url": "https://clawhub.ai/skills/handwrytten",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/handwrytten-9e1b291073385e3d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/handwrytten@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-handwrytten-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3756f760255b9a65096f32cbcd05c829447b81ccd40d5a9f86837ac66f2b0e93",
+      "artifactSizeBytes": 1984
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T04:14:34.479Z"
+}

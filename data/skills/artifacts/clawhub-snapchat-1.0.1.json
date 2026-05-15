@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/snapchat@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.snapchat",
+  "skill": {
+    "id": 16209,
+    "skillKey": "clawhub-snapchat",
+    "name": "Snapchat"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "snapchat",
+    "url": "https://clawhub.ai/skills/snapchat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/snapchat-b200592c45d4fef7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Snapchat Marketing API integration with managed OAuth. Manage ad accounts, campaigns, ad squads, ads, creatives, and audiences. Use this skill when users wan..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 805,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777588111370,
+      "changelog": "- Changed all endpoints from gateway.maton.ai and ctrl.maton.ai to api.maton.ai for unified API access.\n- Updated connection management documentation to use new api.maton.ai endpoints.\n- Added section clarifying security, permission scope, and requirement for explicit user confirmation before write operations.\n- Improved connection header instructions; specify Maton-Connection header when managing multiple accounts.\n- Removed LICENSE.txt file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2ea1df231b37ce0d23548f0dc82e22362d1089444c553ab1c75d039478aeffde"
+}

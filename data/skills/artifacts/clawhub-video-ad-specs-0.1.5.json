@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-ad-specs@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_ad_specs",
+  "skill": {
+    "id": 16581,
+    "skillKey": "clawhub-video-ad-specs",
+    "name": "Video Ad Specs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-ad-specs",
+    "url": "https://clawhub.ai/skills/video-ad-specs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-ad-specs-b1604249d05430d3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Video ad creation with exact platform-specific specs for TikTok, Instagram, YouTube, Facebook, LinkedIn. Covers dimensions, duration limits, AIDA framework,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "okaris",
+      "userId": "s1737xapsjy8k5qnagtfyf5nrx85t72x",
+      "displayName": "Ömer Karışman",
+      "image": "https://avatars.githubusercontent.com/u/1448702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 840,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1771403470684,
+      "changelog": "- Added comprehensive platform-specific video ad specs for TikTok, Instagram, YouTube, Facebook, and LinkedIn, including dimensions, duration, and safe zones.\n- Detailed step-by-step CLI usage examples for creating ads with the inference.sh tool.\n- Included AIDA marketing framework and hook techniques tailored for high-performing video ads.\n- Provided best practices and templates for captions, emphasizing mandatory use due to silent autoplay.\n- Supplied ad structure templates (testimonial, demo, before/after) and highlighted common mistakes with solutions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dd9a318cea747fe564132cd4f605c793e62c1325c22854be759733ecccaa0b22"
+}

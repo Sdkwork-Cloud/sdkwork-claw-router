@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-face-swap@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_face_swap",
+  "skill": {
+    "id": 49082,
+    "skillKey": "clawhub-video-face-swap",
+    "name": "Video Face Swap"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-face-swap",
+    "url": "https://clawhub.ai/skills/video-face-swap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-face-swap-eab7f33852065fae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "replace video clips, images into face-swapped video with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators, filmmakers, social m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 88,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777482080266,
+      "changelog": "Initial release of Video Face Swap — easily swap faces in any video using cloud GPU processing.\n\n- Supports MP4, MOV, AVI, WebM video files up to 500MB; outputs 1080p MP4.\n- Simple upload and face replacement workflow for creators, filmmakers, and social media users.\n- Anonymous access with 7-day free credits if no API token is set.\n- Handles uploads, exports, status checks, and session management automatically.\n- Provides helpful messages for errors like unsupported formats, missing credits, or large files.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f5b5c9c4deb32cfbc9e6932b966b1781096af78ac1d97d265f90e11fe61c526e"
+}

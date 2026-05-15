@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65625,
+  "uuid": "skill-clawhub-xhs-content-generator",
+  "skillKey": "clawhub-xhs-content-generator",
+  "name": "XHS Content Generator",
+  "summary": "根据热点榜单和主题自动生成吸引眼球的小红书爆款标题和内容框架，支持多种热门领域并优化emoji使用。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhs_content_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mesiyoq965-sudo",
+      "features": [
+        "根据热点榜单和主题自动生成吸引眼球的小红书爆款标题和内容框架，支持多种热门领域并优化emoji使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xhs-content-generator@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259581182?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xhs-content-generator",
+      "url": "https://clawhub.ai/skills/xhs-content-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhs-content-generator",
+    "url": "https://clawhub.ai/skills/xhs-content-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhs-content-generator-66bee866b74a16dd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xhs-content-generator@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xhs-content-generator-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:144c9c0766e0fc41afc59c729e27928f16ca08d5e4c368aa73aa87b94e96fb86",
+      "artifactSizeBytes": 2264
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T14:14:51.717Z"
+}

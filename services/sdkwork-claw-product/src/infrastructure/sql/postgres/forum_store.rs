@@ -9,10 +9,12 @@ use crate::ports::{
     CreateForumCommentCommand, CreateForumFeedCommand, ForumAuthor, ForumCommandFuture,
     ForumCommentCommandStore, ForumCommentDetail, ForumCommentItem, ForumCommentPage,
     ForumCommentReadStore, ForumCommentStatistics, ForumFeedCommandStore, ForumFeedItem,
-    ForumFeedQuery, ForumFeedReadStore, ForumReadFuture, ForumSubject,
+    ForumFeedQuery, ForumFeedReadStore, ForumOverview, ForumOverviewSource, ForumOverviewStats,
+    ForumReadFuture, ForumSubject,
 };
 
 const CONTENT_TYPE_FEEDS: i64 = 5;
+const CONTENT_TYPE_COURSE: i64 = 6;
 const CONTENT_TYPE_COMMENTS: i64 = 22;
 const FEEDS_STATUS_PUBLISHED: i64 = 2;
 const FEEDS_STATUS_DELETED: i64 = 3;
@@ -45,8 +47,8 @@ impl ForumFeedReadStore for PostgresForumStore {
             let scope = read_scope(subject);
             let page = query.page.unwrap_or(1).max(1);
             let size = query
-                .limit
-                .or(query.size)
+                .size
+                .or(query.limit)
                 .unwrap_or(DEFAULT_PAGE_SIZE)
                 .clamp(1, MAX_PAGE_SIZE);
             let offset = (page - 1) * size;
@@ -141,48 +143,18 @@ impl ForumFeedReadStore for PostgresForumStore {
 
     fn load_feed_detail<'a>(
         &'a self,
-        feed_id: String,
+        feed_id: i64,
         subject: Option<ForumSubject>,
     ) -> ForumReadFuture<'a, Option<ForumFeedItem>> {
         Box::pin(async move {
-            let id = parse_i64_id(&feed_id, "feedId")?;
-            increment_feed_view_count(&self.pool, id).await?;
-            load_feed_by_id(&self.pool, id, subject).await
-        })
-    }
-
-    fn load_feed_categories<'a>(
-        &'a self,
-        subject: Option<ForumSubject>,
-    ) -> ForumReadFuture<'a, Vec<String>> {
-        Box::pin(async move {
-            let scope = read_scope(subject);
-            let rows = sqlx::query(
-                format!(
-                    r#"
-                    SELECT DISTINCT CAST(COALESCE(category_id, 0) AS TEXT) AS category_id
-                    FROM plus_feeds f
-                    WHERE COALESCE(status, 0) = $3
-                      AND {scope_filter}
-                    ORDER BY category_id
-                    LIMIT 100
-                    "#,
-                    scope_filter = postgres_scope_filter("f"),
-                )
-                .as_str(),
-            )
-            .bind(scope.tenant_id)
-            .bind(scope.organization_id)
-            .bind(FEEDS_STATUS_PUBLISHED)
-            .fetch_all(&self.pool)
-            .await
-            .map_err(sql_error)?;
-
-            Ok(rows
-                .iter()
-                .map(|row| string_cell(row, "category_id"))
-                .filter(|value| value != "0" && !value.trim().is_empty())
-                .collect())
+            if load_feed_by_id(&self.pool, feed_id, subject)
+                .await?
+                .is_none()
+            {
+                return Ok(None);
+            }
+            increment_feed_view_count(&self.pool, feed_id, subject).await?;
+            load_feed_by_id(&self.pool, feed_id, subject).await
         })
     }
 
@@ -197,6 +169,13 @@ impl ForumFeedReadStore for PostgresForumStore {
             };
             feed_is_collected(&self.pool, feed_id, subject).await
         })
+    }
+
+    fn load_overview<'a>(
+        &'a self,
+        subject: Option<ForumSubject>,
+    ) -> ForumReadFuture<'a, ForumOverview> {
+        Box::pin(async move { load_forum_overview(&self.pool, subject).await })
     }
 }
 
@@ -294,6 +273,7 @@ impl ForumFeedCommandStore for PostgresForumStore {
         subject: ForumSubject,
     ) -> ForumCommandFuture<'a, ForumFeedItem> {
         Box::pin(async move {
+            require_feed(&self.pool, feed_id, Some(subject)).await?;
             upsert_like_vote(
                 &self.pool,
                 subject,
@@ -313,6 +293,7 @@ impl ForumFeedCommandStore for PostgresForumStore {
         subject: ForumSubject,
     ) -> ForumCommandFuture<'a, ForumFeedItem> {
         Box::pin(async move {
+            require_feed(&self.pool, feed_id, Some(subject)).await?;
             delete_like_vote(&self.pool, subject, CONTENT_TYPE_FEEDS, feed_id).await?;
             refresh_feed_like_count(&self.pool, feed_id).await?;
             require_feed(&self.pool, feed_id, Some(subject)).await
@@ -326,9 +307,7 @@ impl ForumFeedCommandStore for PostgresForumStore {
         subject: ForumSubject,
     ) -> ForumCommandFuture<'a, ForumFeedItem> {
         Box::pin(async move {
-            let title = load_feed_title(&self.pool, feed_id)
-                .await?
-                .ok_or_else(|| DomainError::not_found("feed was not found"))?;
+            let feed = require_feed(&self.pool, feed_id, Some(subject)).await?;
             sqlx::query(
                 r#"
                 INSERT INTO plus_favorite
@@ -349,7 +328,7 @@ impl ForumFeedCommandStore for PostgresForumStore {
             .bind(subject.tenant_id)
             .bind(subject.organization_id)
             .bind(subject.user_id)
-            .bind(title)
+            .bind(feed.title)
             .bind(CONTENT_TYPE_FEEDS)
             .bind(feed_id)
             .bind(folder_id)
@@ -368,6 +347,7 @@ impl ForumFeedCommandStore for PostgresForumStore {
         subject: ForumSubject,
     ) -> ForumCommandFuture<'a, ForumFeedItem> {
         Box::pin(async move {
+            require_feed(&self.pool, feed_id, Some(subject)).await?;
             sqlx::query(
                 r#"
                 DELETE FROM plus_favorite
@@ -394,24 +374,29 @@ impl ForumFeedCommandStore for PostgresForumStore {
     fn share_feed<'a>(
         &'a self,
         feed_id: i64,
-        subject: Option<ForumSubject>,
+        subject: ForumSubject,
     ) -> ForumCommandFuture<'a, ForumFeedItem> {
         Box::pin(async move {
+            require_feed(&self.pool, feed_id, Some(subject)).await?;
             sqlx::query(
                 r#"
                 UPDATE plus_feeds
                 SET share_count = COALESCE(share_count, 0) + 1,
                     updated_at = CURRENT_TIMESTAMP
-                WHERE id = $1
-                  AND COALESCE(status, 0) = $2
+                WHERE id = $3
+                  AND COALESCE(status, 0) = $4
+                  AND tenant_id = $1
+                  AND organization_id = $2
                 "#,
             )
+            .bind(subject.tenant_id)
+            .bind(subject.organization_id)
             .bind(feed_id)
             .bind(FEEDS_STATUS_PUBLISHED)
             .execute(&self.pool)
             .await
             .map_err(sql_error)?;
-            require_feed(&self.pool, feed_id, subject).await
+            require_feed(&self.pool, feed_id, Some(subject)).await
         })
     }
 }
@@ -422,11 +407,11 @@ impl ForumCommentReadStore for PostgresForumStore {
         content_type: String,
         content_id: i64,
         query: Option<ForumFeedQuery>,
-        _subject: Option<ForumSubject>,
+        subject: Option<ForumSubject>,
     ) -> ForumReadFuture<'a, ForumCommentPage> {
         Box::pin(async move {
             let content_type = required_content_type_code(&content_type)?;
-            load_comment_page(&self.pool, content_type, content_id, None, query).await
+            load_comment_page(&self.pool, content_type, content_id, None, query, subject).await
         })
     }
 
@@ -434,10 +419,10 @@ impl ForumCommentReadStore for PostgresForumStore {
         &'a self,
         comment_id: i64,
         query: Option<ForumFeedQuery>,
-        _subject: Option<ForumSubject>,
+        subject: Option<ForumSubject>,
     ) -> ForumReadFuture<'a, ForumCommentPage> {
         Box::pin(async move {
-            let parent = load_comment_parent(&self.pool, comment_id)
+            let parent = load_comment_parent(&self.pool, comment_id, subject)
                 .await?
                 .ok_or_else(|| DomainError::not_found("comment was not found"))?;
             load_comment_page(
@@ -446,6 +431,7 @@ impl ForumCommentReadStore for PostgresForumStore {
                 parent.content_id,
                 Some(comment_id),
                 query,
+                subject,
             )
             .await
         })
@@ -454,10 +440,24 @@ impl ForumCommentReadStore for PostgresForumStore {
     fn load_comment_detail<'a>(
         &'a self,
         comment_id: i64,
-        _subject: Option<ForumSubject>,
+        subject: Option<ForumSubject>,
     ) -> ForumReadFuture<'a, Option<ForumCommentDetail>> {
         Box::pin(async move {
-            let row = sqlx::query(COMMENT_SELECT_BY_ID)
+            let scope = read_scope(subject);
+            let sql = format!(
+                r#"
+                {select}
+                WHERE id = $3
+                  AND COALESCE(status, 0) = $4
+                  AND {scope_filter}
+                LIMIT 1
+                "#,
+                select = COMMENT_SELECT_COLUMNS,
+                scope_filter = postgres_scope_filter("plus_comments"),
+            );
+            let row = sqlx::query(sql.as_str())
+                .bind(scope.tenant_id)
+                .bind(scope.organization_id)
                 .bind(comment_id)
                 .bind(COMMENT_STATUS_PUBLISHED)
                 .fetch_optional(&self.pool)
@@ -467,7 +467,8 @@ impl ForumCommentReadStore for PostgresForumStore {
                 return Ok(None);
             };
             let replies =
-                load_comment_items_by_parent(&self.pool, comment_id, DEFAULT_PAGE_SIZE, 0).await?;
+                load_comment_items_by_parent(&self.pool, comment_id, DEFAULT_PAGE_SIZE, 0, subject)
+                    .await?;
             Ok(Some(comment_detail_from_row(&row, replies)))
         })
     }
@@ -536,19 +537,27 @@ impl ForumCommentReadStore for PostgresForumStore {
         &'a self,
         content_type: String,
         content_id: i64,
-        _subject: Option<ForumSubject>,
+        subject: Option<ForumSubject>,
     ) -> ForumReadFuture<'a, ForumCommentStatistics> {
         Box::pin(async move {
             let content_type = required_content_type_code(&content_type)?;
+            let scope = read_scope(subject);
             let total = sqlx::query_scalar::<_, i64>(
-                r#"
+                format!(
+                    r#"
                 SELECT COUNT(1)
                 FROM plus_comments
-                WHERE content_type = $1
-                  AND content_id = $2
-                  AND COALESCE(status, 0) = $3
+                WHERE content_type = $3
+                  AND content_id = $4
+                  AND COALESCE(status, 0) = $5
+                  AND {scope_filter}
                 "#,
+                    scope_filter = postgres_scope_filter("plus_comments"),
+                )
+                .as_str(),
             )
+            .bind(scope.tenant_id)
+            .bind(scope.organization_id)
             .bind(content_type)
             .bind(content_id)
             .bind(COMMENT_STATUS_PUBLISHED)
@@ -574,7 +583,7 @@ impl ForumCommentCommandStore for PostgresForumStore {
             let comment_id = next_entity_id();
             let author = author_json(subject);
             let path = if let Some(parent_id) = command.parent_id {
-                let parent = load_comment_parent(&self.pool, parent_id)
+                let parent = load_comment_parent(&self.pool, parent_id, Some(subject))
                     .await?
                     .ok_or_else(|| DomainError::not_found("parent comment was not found"))?;
                 if parent.content_type != content_type || parent.content_id != command.content_id {
@@ -637,7 +646,7 @@ impl ForumCommentCommandStore for PostgresForumStore {
                 .map_err(sql_error)?;
             }
             increment_target_comment_count(&self.pool, content_type, command.content_id).await?;
-            require_comment_item(&self.pool, comment_id).await
+            require_comment_item(&self.pool, comment_id, Some(subject)).await
         })
     }
 
@@ -647,7 +656,7 @@ impl ForumCommentCommandStore for PostgresForumStore {
         subject: ForumSubject,
     ) -> ForumCommandFuture<'a, bool> {
         Box::pin(async move {
-            let parent = load_comment_parent(&self.pool, comment_id).await?;
+            let parent = load_comment_parent(&self.pool, comment_id, Some(subject)).await?;
             let rows = sqlx::query(
                 r#"
                 UPDATE plus_comments
@@ -704,6 +713,7 @@ impl ForumCommentCommandStore for PostgresForumStore {
         subject: ForumSubject,
     ) -> ForumCommandFuture<'a, ForumCommentItem> {
         Box::pin(async move {
+            require_comment_item(&self.pool, comment_id, Some(subject)).await?;
             upsert_like_vote(
                 &self.pool,
                 subject,
@@ -713,7 +723,7 @@ impl ForumCommentCommandStore for PostgresForumStore {
             )
             .await?;
             refresh_comment_like_count(&self.pool, comment_id).await?;
-            require_comment_item(&self.pool, comment_id).await
+            require_comment_item(&self.pool, comment_id, Some(subject)).await
         })
     }
 
@@ -723,9 +733,10 @@ impl ForumCommentCommandStore for PostgresForumStore {
         subject: ForumSubject,
     ) -> ForumCommandFuture<'a, ForumCommentItem> {
         Box::pin(async move {
+            require_comment_item(&self.pool, comment_id, Some(subject)).await?;
             delete_like_vote(&self.pool, subject, CONTENT_TYPE_COMMENTS, comment_id).await?;
             refresh_comment_like_count(&self.pool, comment_id).await?;
-            require_comment_item(&self.pool, comment_id).await
+            require_comment_item(&self.pool, comment_id, Some(subject)).await
         })
     }
 
@@ -761,7 +772,7 @@ impl ForumCommentCommandStore for PostgresForumStore {
             if rows == 0 {
                 return Err(DomainError::not_found("comment was not found"));
             }
-            require_comment_item(&self.pool, comment_id).await
+            require_comment_item(&self.pool, comment_id, Some(subject)).await
         })
     }
 }
@@ -776,21 +787,6 @@ const COMMENT_SELECT_COLUMNS: &str = r#"
         COALESCE(to_char((created_at AT TIME ZONE 'UTC'), 'YYYY-MM-DD"T"HH24:MI:SS"Z"'), '') AS created_at,
         COALESCE(to_char((updated_at AT TIME ZONE 'UTC'), 'YYYY-MM-DD"T"HH24:MI:SS"Z"'), '') AS updated_at
     FROM plus_comments
-"#;
-
-const COMMENT_SELECT_BY_ID: &str = r#"
-    SELECT
-        id, uuid, tenant_id, organization_id, user_id, parent_id,
-        content, content_type, content_id, status, likes, reply_count, is_top,
-        COALESCE(ip_address, '') AS ip_address,
-        COALESCE(device_info, '') AS device_info,
-        COALESCE(author::text, '') AS author,
-        COALESCE(to_char((created_at AT TIME ZONE 'UTC'), 'YYYY-MM-DD"T"HH24:MI:SS"Z"'), '') AS created_at,
-        COALESCE(to_char((updated_at AT TIME ZONE 'UTC'), 'YYYY-MM-DD"T"HH24:MI:SS"Z"'), '') AS updated_at
-    FROM plus_comments
-    WHERE id = $1
-      AND COALESCE(status, 0) = $2
-    LIMIT 1
 "#;
 
 async fn load_feed_by_id(
@@ -880,40 +876,34 @@ async fn require_feed(
         .ok_or_else(|| DomainError::not_found("feed was not found"))
 }
 
-async fn increment_feed_view_count(pool: &PgPool, feed_id: i64) -> DomainResult<()> {
+async fn increment_feed_view_count(
+    pool: &PgPool,
+    feed_id: i64,
+    subject: Option<ForumSubject>,
+) -> DomainResult<()> {
+    let scope = read_scope(subject);
     sqlx::query(
-        r#"
+        format!(
+            r#"
         UPDATE plus_feeds
         SET view_count = COALESCE(view_count, 0) + 1,
             updated_at = CURRENT_TIMESTAMP
-        WHERE id = $1
-          AND COALESCE(status, 0) = $2
+        WHERE id = $3
+          AND COALESCE(status, 0) = $4
+          AND {scope_filter}
         "#,
+            scope_filter = postgres_scope_filter("plus_feeds"),
+        )
+        .as_str(),
     )
+    .bind(scope.tenant_id)
+    .bind(scope.organization_id)
     .bind(feed_id)
     .bind(FEEDS_STATUS_PUBLISHED)
     .execute(pool)
     .await
     .map_err(sql_error)?;
     Ok(())
-}
-
-async fn load_feed_title(pool: &PgPool, feed_id: i64) -> DomainResult<Option<String>> {
-    let value = sqlx::query_scalar::<_, String>(
-        r#"
-        SELECT COALESCE(title, '')
-        FROM plus_feeds
-        WHERE id = $1
-          AND COALESCE(status, 0) = $2
-        LIMIT 1
-        "#,
-    )
-    .bind(feed_id)
-    .bind(FEEDS_STATUS_PUBLISHED)
-    .fetch_optional(pool)
-    .await
-    .map_err(sql_error)?;
-    Ok(value)
 }
 
 async fn feed_is_collected(
@@ -943,6 +933,81 @@ async fn feed_is_collected(
     .await
     .map_err(sql_error)?;
     Ok(count > 0)
+}
+
+async fn load_forum_overview(
+    pool: &PgPool,
+    subject: Option<ForumSubject>,
+) -> DomainResult<ForumOverview> {
+    let scope = read_scope(subject);
+    let sql = format!(
+        r#"
+        WITH published_feeds AS (
+            SELECT id, user_id, created_at, updated_at
+            FROM plus_feeds
+            WHERE COALESCE(status, 0) = $3
+              AND {feed_scope_filter}
+        ),
+        published_comments AS (
+            SELECT user_id, created_at, updated_at
+            FROM plus_comments
+            WHERE COALESCE(status, 0) = $4
+              AND COALESCE(content_type, 0) IN (5, 22)
+              AND {comment_scope_filter}
+        ),
+        activity_users AS (
+            SELECT user_id FROM published_feeds WHERE COALESCE(user_id, 0) > 0
+            UNION
+            SELECT user_id FROM published_comments WHERE COALESCE(user_id, 0) > 0
+        ),
+        recent_activity_users AS (
+            SELECT user_id
+            FROM published_feeds
+            WHERE COALESCE(user_id, 0) > 0
+              AND COALESCE(updated_at, created_at) >= CURRENT_TIMESTAMP - INTERVAL '7 days'
+            UNION
+            SELECT user_id
+            FROM published_comments
+            WHERE COALESCE(user_id, 0) > 0
+              AND COALESCE(updated_at, created_at) >= CURRENT_TIMESTAMP - INTERVAL '7 days'
+        )
+        SELECT
+            (SELECT COUNT(1) FROM published_feeds) AS total_posts,
+            (SELECT COUNT(1) FROM published_comments) AS total_comments,
+            (SELECT COUNT(1) FROM activity_users) AS member_count,
+            (SELECT COUNT(1) FROM recent_activity_users) AS online_members
+        "#,
+        feed_scope_filter = postgres_scope_filter("plus_feeds"),
+        comment_scope_filter = postgres_scope_filter("plus_comments"),
+    );
+    let row = sqlx::query(sql.as_str())
+        .bind(scope.tenant_id)
+        .bind(scope.organization_id)
+        .bind(FEEDS_STATUS_PUBLISHED)
+        .bind(COMMENT_STATUS_PUBLISHED)
+        .fetch_one(pool)
+        .await
+        .map_err(sql_error)?;
+    Ok(ForumOverview {
+        stats: ForumOverviewStats {
+            total_posts: integer_cell(&row, "total_posts"),
+            total_comments: integer_cell(&row, "total_comments"),
+            member_count: integer_cell(&row, "member_count"),
+            online_members: integer_cell(&row, "online_members"),
+        },
+        source: ForumOverviewSource {
+            source_label: "Live forum data".to_owned(),
+            source_description: "Derived from PlusFeeds, PlusComments, vote, and favorite tables."
+                .to_owned(),
+            source_tables: vec![
+                "plus_feeds".to_owned(),
+                "plus_comments".to_owned(),
+                "plus_content_vote".to_owned(),
+                "plus_favorite".to_owned(),
+            ],
+            observed_at: current_timestamp_string(),
+        },
+    })
 }
 
 async fn upsert_like_vote(
@@ -1133,26 +1198,32 @@ async fn load_comment_page(
     content_id: i64,
     parent_id: Option<i64>,
     query: Option<ForumFeedQuery>,
+    subject: Option<ForumSubject>,
 ) -> DomainResult<ForumCommentPage> {
+    let scope = read_scope(subject);
     let (page, size, offset) = page_window(query.as_ref());
     let parent_filter = if parent_id.is_some() {
-        "parent_id = $4"
+        "parent_id = $6"
     } else {
         "parent_id IS NULL"
     };
     let sql = format!(
         r#"
         {select}
-        WHERE content_type = $1
-          AND content_id = $2
-          AND COALESCE(status, 0) = $3
+        WHERE content_type = $3
+          AND content_id = $4
+          AND COALESCE(status, 0) = $5
           AND {parent_filter}
+          AND {scope_filter}
         ORDER BY COALESCE(is_top, false) DESC, created_at ASC, id ASC
-        LIMIT $5 OFFSET $6
+        LIMIT $7 OFFSET $8
         "#,
         select = COMMENT_SELECT_COLUMNS,
+        scope_filter = postgres_scope_filter("plus_comments"),
     );
     let rows = sqlx::query(sql.as_str())
+        .bind(scope.tenant_id)
+        .bind(scope.organization_id)
         .bind(content_type)
         .bind(content_id)
         .bind(COMMENT_STATUS_PUBLISHED)
@@ -1167,13 +1238,17 @@ async fn load_comment_page(
         r#"
         SELECT COUNT(1)
         FROM plus_comments
-        WHERE content_type = $1
-          AND content_id = $2
-          AND COALESCE(status, 0) = $3
+        WHERE content_type = $3
+          AND content_id = $4
+          AND COALESCE(status, 0) = $5
           AND {parent_filter}
+          AND {scope_filter}
         "#,
+        scope_filter = postgres_scope_filter("plus_comments"),
     );
     let total = sqlx::query_scalar::<_, i64>(count_sql.as_str())
+        .bind(scope.tenant_id)
+        .bind(scope.organization_id)
         .bind(content_type)
         .bind(content_id)
         .bind(COMMENT_STATUS_PUBLISHED)
@@ -1196,20 +1271,26 @@ async fn load_comment_items_by_parent(
     parent_id: i64,
     limit: i64,
     offset: i64,
+    subject: Option<ForumSubject>,
 ) -> DomainResult<Vec<ForumCommentItem>> {
+    let scope = read_scope(subject);
     let rows = sqlx::query(
         format!(
             r#"
             {select}
-            WHERE parent_id = $1
-              AND COALESCE(status, 0) = $2
+            WHERE parent_id = $3
+              AND COALESCE(status, 0) = $4
+              AND {scope_filter}
             ORDER BY created_at ASC, id ASC
-            LIMIT $3 OFFSET $4
+            LIMIT $5 OFFSET $6
             "#,
             select = COMMENT_SELECT_COLUMNS,
+            scope_filter = postgres_scope_filter("plus_comments"),
         )
         .as_str(),
     )
+    .bind(scope.tenant_id)
+    .bind(scope.organization_id)
     .bind(parent_id)
     .bind(COMMENT_STATUS_PUBLISHED)
     .bind(limit)
@@ -1231,16 +1312,25 @@ struct CommentParent {
 async fn load_comment_parent(
     pool: &PgPool,
     comment_id: i64,
+    subject: Option<ForumSubject>,
 ) -> DomainResult<Option<CommentParent>> {
+    let scope = read_scope(subject);
     let row = sqlx::query(
-        r#"
+        format!(
+            r#"
         SELECT content_type, content_id, parent_id, path
         FROM plus_comments
-        WHERE id = $1
-          AND COALESCE(status, 0) = $2
+        WHERE id = $3
+          AND COALESCE(status, 0) = $4
+          AND {scope_filter}
         LIMIT 1
         "#,
+            scope_filter = postgres_scope_filter("plus_comments"),
+        )
+        .as_str(),
     )
+    .bind(scope.tenant_id)
+    .bind(scope.organization_id)
     .bind(comment_id)
     .bind(COMMENT_STATUS_PUBLISHED)
     .fetch_optional(pool)
@@ -1254,8 +1344,26 @@ async fn load_comment_parent(
     }))
 }
 
-async fn require_comment_item(pool: &PgPool, comment_id: i64) -> DomainResult<ForumCommentItem> {
-    let row = sqlx::query(COMMENT_SELECT_BY_ID)
+async fn require_comment_item(
+    pool: &PgPool,
+    comment_id: i64,
+    subject: Option<ForumSubject>,
+) -> DomainResult<ForumCommentItem> {
+    let scope = read_scope(subject);
+    let sql = format!(
+        r#"
+        {select}
+        WHERE id = $3
+          AND COALESCE(status, 0) = $4
+          AND {scope_filter}
+        LIMIT 1
+        "#,
+        select = COMMENT_SELECT_COLUMNS,
+        scope_filter = postgres_scope_filter("plus_comments"),
+    );
+    let row = sqlx::query(sql.as_str())
+        .bind(scope.tenant_id)
+        .bind(scope.organization_id)
         .bind(comment_id)
         .bind(COMMENT_STATUS_PUBLISHED)
         .fetch_optional(pool)
@@ -1269,13 +1377,12 @@ async fn require_comment_item(pool: &PgPool, comment_id: i64) -> DomainResult<Fo
 fn feed_from_row(row: &sqlx::postgres::PgRow) -> ForumFeedItem {
     let user_id = integer_cell(row, "user_id");
     ForumFeedItem {
-        id: integer_cell(row, "id").to_string(),
+        id: integer_cell(row, "id"),
         title: string_cell(row, "title"),
         content: string_cell(row, "summary"),
         summary: string_cell(row, "summary"),
         cover_image: first_cover_image(&string_cell(row, "cover_images")),
         content_type: content_type_slug(integer_cell(row, "content_type")).to_owned(),
-        content_id: integer_cell(row, "content_id"),
         category_id: integer_cell(row, "category_id"),
         tags: parse_tags(&string_cell(row, "tags")),
         author: parse_author(&string_cell(row, "author"), user_id),
@@ -1283,7 +1390,6 @@ fn feed_from_row(row: &sqlx::postgres::PgRow) -> ForumFeedItem {
         like_count: integer_cell(row, "like_count"),
         comment_count: integer_cell(row, "comment_count"),
         share_count: integer_cell(row, "share_count"),
-        favorite_count: integer_cell(row, "favorite_count"),
         is_liked: bool_cell(row, "is_liked"),
         is_collected: bool_cell(row, "is_collected"),
         is_top: bool_cell(row, "is_top"),
@@ -1390,6 +1496,39 @@ fn next_entity_id() -> i64 {
     ((millis << 16) | sequence) as i64
 }
 
+fn current_timestamp_string() -> String {
+    let seconds = SystemTime::now()
+        .duration_since(UNIX_EPOCH)
+        .map(|duration| duration.as_secs() as i64)
+        .unwrap_or(0);
+    format_unix_timestamp(seconds)
+}
+
+fn format_unix_timestamp(seconds: i64) -> String {
+    let days = seconds.div_euclid(86_400);
+    let seconds_of_day = seconds.rem_euclid(86_400);
+    let (year, month, day) = civil_from_days(days);
+    let hour = seconds_of_day / 3_600;
+    let minute = (seconds_of_day % 3_600) / 60;
+    let second = seconds_of_day % 60;
+    format!("{year:04}-{month:02}-{day:02} {hour:02}:{minute:02}:{second:02}")
+}
+
+fn civil_from_days(days: i64) -> (i64, i64, i64) {
+    let days = days + 719_468;
+    let era = if days >= 0 { days } else { days - 146_096 } / 146_097;
+    let day_of_era = days - era * 146_097;
+    let year_of_era =
+        (day_of_era - day_of_era / 1_460 + day_of_era / 36_524 - day_of_era / 146_096) / 365;
+    let year = year_of_era + era * 400;
+    let day_of_year = day_of_era - (365 * year_of_era + year_of_era / 4 - year_of_era / 100);
+    let month_prime = (5 * day_of_year + 2) / 153;
+    let day = day_of_year - (153 * month_prime + 2) / 5 + 1;
+    let month = month_prime + if month_prime < 10 { 3 } else { -9 };
+    let year = year + if month <= 2 { 1 } else { 0 };
+    (year, month, day)
+}
+
 fn page_window(query: Option<&ForumFeedQuery>) -> (i64, i64, i64) {
     let page = query.and_then(|query| query.page).unwrap_or(1).max(1);
     let size = query
@@ -1434,8 +1573,8 @@ fn feed_order_by(feed_type: &str) -> &'static str {
         "hot" => "COALESCE(f.is_hot, false) DESC, COALESCE(f.like_count, 0) DESC, COALESCE(f.view_count, 0) DESC, COALESCE(f.publish_time, f.created_at) DESC NULLS LAST, f.id DESC",
         "recommend" | "recommended" => "COALESCE(f.is_recommended, false) DESC, COALESCE(f.sort_order, 0) DESC, COALESCE(f.publish_time, f.created_at) DESC NULLS LAST, f.id DESC",
         "top" | "pinned" => "COALESCE(f.is_top, false) DESC, COALESCE(f.publish_time, f.created_at) DESC NULLS LAST, f.id DESC",
-        "most-viewed" | "viewed" => "COALESCE(f.view_count, 0) DESC, COALESCE(f.publish_time, f.created_at) DESC, f.id DESC",
-        "most-liked" | "liked" => "COALESCE(f.like_count, 0) DESC, COALESCE(f.publish_time, f.created_at) DESC, f.id DESC",
+        "most_viewed" | "viewed" => "COALESCE(f.view_count, 0) DESC, COALESCE(f.publish_time, f.created_at) DESC, f.id DESC",
+        "most_liked" | "liked" => "COALESCE(f.like_count, 0) DESC, COALESCE(f.publish_time, f.created_at) DESC, f.id DESC",
         _ => "COALESCE(f.is_top, false) DESC, COALESCE(f.publish_time, f.created_at) DESC NULLS LAST, f.id DESC",
     }
 }
@@ -1449,6 +1588,7 @@ fn required_content_type_code(value: &str) -> DomainResult<i64> {
 fn content_type_code(value: &str) -> Option<i64> {
     match value.trim().to_ascii_lowercase().replace('-', "_").as_str() {
         "feeds" | "feed" | "forum" | "post" => Some(CONTENT_TYPE_FEEDS),
+        "course" | "courses" => Some(CONTENT_TYPE_COURSE),
         "comments" | "comment" => Some(CONTENT_TYPE_COMMENTS),
         "all" | "" => None,
         _ => value.trim().parse::<i64>().ok(),
@@ -1458,6 +1598,7 @@ fn content_type_code(value: &str) -> Option<i64> {
 fn content_type_slug(value: i64) -> &'static str {
     match value {
         CONTENT_TYPE_FEEDS => "feeds",
+        CONTENT_TYPE_COURSE => "course",
         CONTENT_TYPE_COMMENTS => "comments",
         _ => "unknown",
     }
@@ -1466,6 +1607,7 @@ fn content_type_slug(value: i64) -> &'static str {
 fn content_type_name(value: i64) -> &'static str {
     match value {
         CONTENT_TYPE_FEEDS => "FEEDS",
+        CONTENT_TYPE_COURSE => "COURSE",
         CONTENT_TYPE_COMMENTS => "COMMENTS",
         _ => "DEFAULT",
     }
@@ -1478,13 +1620,6 @@ fn comment_status_name(value: i64) -> &'static str {
         COMMENT_STATUS_DELETED => "DELETED",
         _ => "DEFAULT",
     }
-}
-
-fn parse_i64_id(value: &str, field: &str) -> DomainResult<i64> {
-    value
-        .trim()
-        .parse::<i64>()
-        .map_err(|_| DomainError::new(format!("{field} must be a valid int64 id")))
 }
 
 fn cover_images_json(images: &[String]) -> Value {
@@ -1530,6 +1665,15 @@ fn tags_json(tags: &[String]) -> Value {
 }
 
 fn author_json(subject: ForumSubject) -> Value {
+    if subject.user_id <= 0 {
+        return json!({
+            "id": 0,
+            "name": "Community Member",
+            "avatar": Value::Null,
+            "bio": Value::Null,
+            "isFollowing": false
+        });
+    }
     json!({
         "id": subject.user_id,
         "name": format!("User-{}", subject.user_id),

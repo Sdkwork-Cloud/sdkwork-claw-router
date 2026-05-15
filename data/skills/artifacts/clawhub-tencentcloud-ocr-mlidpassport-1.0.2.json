@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tencentcloud-ocr-mlidpassport@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencentcloud_ocr_mlidpassport",
+  "skill": {
+    "id": 66218,
+    "skillKey": "clawhub-tencentcloud-ocr-mlidpassport",
+    "name": "TencentCloud MLIDPassport OCR"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencentcloud-ocr-mlidpassport",
+    "url": "https://clawhub.ai/skills/tencentcloud-ocr-mlidpassport",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencentcloud-ocr-mlidpassport-44abb1b727a1cf3a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "腾讯云护照识别（多国多地区）(MLIDPassportOCR)接口调用技能。当用户需要识别护照图片中中国大陆、港澳台地区或其他国家/地区的护照信息（护照ID、姓名、出生日期、性别、有效期、发行国、国籍、国家地区代码、MRZ码等）时,应使用此技能。支持图片Base64和URL两种输入方式,支持护照图片人像照片裁剪功..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zt1314p-design",
+      "userId": "s171696cz5y91nef8xanxra4sh83gdb0",
+      "displayName": "tencent-ocr",
+      "image": "https://avatars.githubusercontent.com/u/246965649?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 443,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773110378173,
+      "changelog": "- 新增 UserAgent（可选）参数，用于请求来源标识，统一为 Skills\n- 其余内容保持不变，无其他功能或接口变动",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e2af08e46d78fc9561781a087b3f856999e9f6fe4d50f516814f448e4181b497"
+}

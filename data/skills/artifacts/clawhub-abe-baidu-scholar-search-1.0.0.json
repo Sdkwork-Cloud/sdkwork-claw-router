@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/abe-baidu-scholar-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abe_baidu_scholar_search",
+  "skill": {
+    "id": 46391,
+    "skillKey": "clawhub-abe-baidu-scholar-search",
+    "name": "Baidu Scholar Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abe-baidu-scholar-search",
+    "url": "https://clawhub.ai/skills/abe-baidu-scholar-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abe-baidu-scholar-search-ed155c8766eba4fb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Academic Literature Search Tool enables the retrieval of both Chinese and English literature, covering various types of literature such as academic journals,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abeltennyson",
+      "userId": "s174gfyzm9cmcv1mx6226h2s3584rfxt",
+      "displayName": "AbelTennyson",
+      "image": "https://avatars.githubusercontent.com/u/261241122?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 125,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776394052050,
+      "changelog": "Initial release of Baidu Scholar Search skill.\n\n- Search academic literature (journals, conference papers, dissertations) in both Chinese and English using keywords.\n- Uses the SkillBoss API Hub for comprehensive search results.\n- Requires SKILLBOSS_API_KEY environment variable for authentication.\n- Supports pagination and optional abstract retrieval.\n- Simple setup and usage via curl commands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2b287d89d568c51d66279e7e852f83a828935adadd5c85e1be95472f4930f2d9"
+}

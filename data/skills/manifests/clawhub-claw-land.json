@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13626,
+  "uuid": "skill-clawhub-claw-land",
+  "skillKey": "clawhub-claw-land",
+  "name": "Clawland",
+  "summary": "Play on-chain odd/even games on Solana devnet via Clawland. Mint GEM from SOL or USDC, bet odd or even, win 2x. Scripts handle wallet setup, minting, and autoplay.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_land",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ColdBell",
+      "features": [
+        "Play on-chain odd/even games on Solana devnet via Clawland",
+        "Mint GEM from SOL or USDC, bet odd or even, win 2x",
+        "Scripts handle wallet setup, minting, and autoplay."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-land@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60144158?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-land",
+      "url": "https://clawhub.ai/skills/claw-land"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-land",
+    "url": "https://clawhub.ai/skills/claw-land",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-land-623e374fbc2ec915.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-land@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-land-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b6739c7ae100e63c8465fd62a704ca2ca875536919fda7b849193f13fa6f1c0b",
+      "artifactSizeBytes": 2340
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T15:28:25.788Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/drift-bottle@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.drift_bottle",
+  "skill": {
+    "id": 44739,
+    "skillKey": "clawhub-drift-bottle",
+    "name": "Drift Bottle"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "drift-bottle",
+    "url": "https://clawhub.ai/skills/drift-bottle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/drift-bottle-4d7fca39a1b81df2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Retrieve a random drift bottle message with life insights, stories, wishes, or inspirational quotes for inspiration or reflection."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "enihsago",
+      "userId": "s179ytx375j1s47dywapjfr8e583hbk2",
+      "displayName": "enihsago",
+      "image": "https://avatars.githubusercontent.com/u/265008639?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776324135603,
+      "changelog": "- Initial release of drift-bottle skill.\n- Retrieve a random \"drift bottle\" message with life insights, stories, wishes, or inspirational quotes.\n- Triggered by keywords such as \"漂流瓶\", \"message in a bottle\", \"drift bottle\", \"随机消息\", and \"瓶中信\".\n- Easy message extension by editing the script's message list.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c6e94123eea43ef14d2dd8c1697fe5fb5c7193a27f2c32dc63f5a8d97d3629a8"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67492,
+  "uuid": "skill-clawhub-free",
+  "skillKey": "clawhub-free",
+  "name": "Free Fire",
+  "summary": "提供Free Fire游戏公开活动、版本更新、赛事信息及社区规则的整理与汇总，不涉及作弊或账号服务。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawKK",
+      "features": [
+        "提供Free Fire游戏公开活动、版本更新、赛事信息及社区规则的整理与汇总，不涉及作弊或账号服务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/free@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111570001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "free",
+      "url": "https://clawhub.ai/skills/free"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free",
+    "url": "https://clawhub.ai/skills/free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-ad95d5fa651ba86d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/free@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-free-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:adcfad27dec77594760f97fa92e7cb1b4116f437974b355f322dce7cf17b6d87",
+      "artifactSizeBytes": 2276
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T14:44:57.547Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65321,
+  "uuid": "skill-clawhub-turkish-airlines",
+  "skillKey": "clawhub-turkish-airlines",
+  "name": "Turkish Airlines",
+  "summary": "提供土耳其航空航线、机队、服务及枢纽伊斯坦布尔机场详细信息，覆盖全球128+国家和340+航点。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.turkish_airlines",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供土耳其航空航线、机队、服务及枢纽伊斯坦布尔机场详细信息，覆盖全球128+国家和340+航点。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/turkish-airlines@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "turkish-airlines",
+      "url": "https://clawhub.ai/skills/turkish-airlines"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "turkish-airlines",
+    "url": "https://clawhub.ai/skills/turkish-airlines",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/turkish-airlines-eaa9160c8fa65217.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/turkish-airlines@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-turkish-airlines-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b685da9e72747b5d462b57ec8d2c0b5c4c17eb2d92ce9934080696bfbf503ec2",
+      "artifactSizeBytes": 2345
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T00:02:42.719Z"
+}

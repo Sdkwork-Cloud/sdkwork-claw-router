@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nocodb-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nocodb_api",
+  "skill": {
+    "id": 24472,
+    "skillKey": "clawhub-nocodb-api",
+    "name": "NocoDB API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nocodb-api",
+    "url": "https://clawhub.ai/skills/nocodb-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nocodb-api-66e411cf35cd08a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect to NocoDB databases via REST API v3. Query records, manage database structure (tables, fields, views), handle linked records, filters, sorts, and att..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dofbi",
+      "userId": "s172drdb0e2ry95dt2s3fpnw55841e31",
+      "displayName": "dofbi.eth",
+      "image": "https://avatars.githubusercontent.com/u/84446?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 410,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773215381943,
+      "changelog": "Initial release - Complete NocoDB API v3 support",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2f3860f6e5ebec6ac84d3bbe3bfb7441165188dbcfbe646889b134e53ccf3ff9"
+}

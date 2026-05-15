@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9399,
+  "uuid": "skill-clawhub-box",
+  "skillKey": "clawhub-box",
+  "name": "Box",
+  "summary": "Box API integration with managed OAuth. Manage files, folders, collaborations, and cloud storage. Use this skill when users want to upload, download, share,...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.box",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byungkyu",
+      "features": [
+        "Box API integration with managed OAuth",
+        "Manage files, folders, collaborations, and cloud storage",
+        "Use this skill when users want to upload, download, share,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/box@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16563684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "box",
+      "url": "https://clawhub.ai/skills/box"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "box",
+    "url": "https://clawhub.ai/skills/box",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/box-26f8567f25691822.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/box@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-box-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0d5ae9a0e24841392ab4260221faff161f2b91eb6b3f2cae9278b374e3f9506a",
+      "artifactSizeBytes": 2139
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T00:29:36.225Z"
+}

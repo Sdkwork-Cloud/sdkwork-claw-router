@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/music-assistant@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.music_assistant",
+  "skill": {
+    "id": 21712,
+    "skillKey": "clawhub-music-assistant",
+    "name": "Music Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "music-assistant",
+    "url": "https://clawhub.ai/skills/music-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/music-assistant-b11ff727600e453b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control Music Assistant (Home Assistant music server) - playback, volume, queue management, and library search. Use when user wants to play/pause music, skip..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rodrigosiviero",
+      "userId": "s17ebzjwekw109mr7wjgp4jtp183k8v8",
+      "displayName": "Rodrigo",
+      "image": "https://avatars.githubusercontent.com/u/4370989?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 480,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1772736572474,
+      "changelog": "- Renamed the CLI script from scripts/mactl.py.txt to scripts/mactl.py for proper execution.\n- No changes to features or documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3a638113c892909ab1d064e8183a9e927ec3080a06917e931c5c875a5c377001"
+}

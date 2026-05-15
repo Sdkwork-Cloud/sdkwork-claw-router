@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/writing-triadic@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.writing_triadic",
+  "skill": {
+    "id": 41689,
+    "skillKey": "clawhub-writing-triadic",
+    "name": "Writing Triadic"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "writing-triadic",
+    "url": "https://clawhub.ai/skills/writing-triadic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/writing-triadic-f0ec8114027787e7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Triadic collaborative writing framework: Creator (Content Architect) mines user intent through progressive questioning (max 4/round), auto-matches the best w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sallyface0",
+      "userId": "s1738c3t7etdc7kv11d0bmxvjs86b4p0",
+      "displayName": "sallyface0",
+      "image": "https://avatars.githubusercontent.com/u/189972516?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 61,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778221620974,
+      "changelog": "Writing-Triadic 1.0.0 — Initial Release\n\n- Introduces a triadic collaborative writing framework with three roles: Creator (Content Architect), Executor (Precision Writer), and Reader (Audience Persona) for high-quality, user-intent-driven writing.\n- Supports article, blog, essay, copywriting, technical documentation, fiction, or any creative text generation—especially useful when ideas are vague and require clarification.\n- Implements structured multi-phase workflow: user intent mining (max 4 questions per round), template matching, web research, multi-version drafting, weighted multi-dimensional review, and iterative feedback.\n- Defines detailed workspace setup, file organization, and memory/knowledge base management to ensure persistent learning and adaptability.\n- Includes automated web research for up-to-date templates, techniques, and industry cases, with explicit skip conditions for privacy or user preference.\n- Embeds safeguards to avoid generic AI outputs and maintain authentic, audience-focused writing quality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e1d016b9915adcd14023514e1947233db2c074bd1e6a5d3e8529491de52d4764"
+}

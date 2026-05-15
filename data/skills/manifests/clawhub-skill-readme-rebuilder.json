@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58963,
+  "uuid": "skill-clawhub-skill-readme-rebuilder",
+  "skillKey": "clawhub-skill-readme-rebuilder",
+  "name": "Skill Readme Rebuilder",
+  "summary": "从 SKILL.md、脚本与资源反推 README、FAQ 与示例，保持说明一致。；use for skills, readme, docs workflows；do not use for 伪造脚本能力, 跳过真实依赖声明.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_readme_rebuilder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "从 SKILL.md、脚本与资源反推 README、FAQ 与示例，保持说明一致。；use for skills, readme, docs workflows；do not use for."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-readme-rebuilder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-readme-rebuilder",
+      "url": "https://clawhub.ai/skills/skill-readme-rebuilder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-readme-rebuilder",
+    "url": "https://clawhub.ai/skills/skill-readme-rebuilder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-readme-rebuilder-4c512850ce893c7d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-readme-rebuilder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-readme-rebuilder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:29af408ea9225adab3752e837fd0622e92e9221f8b556a7595d80611e52d991e",
+      "artifactSizeBytes": 2525
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T05:43:03.666Z"
+}

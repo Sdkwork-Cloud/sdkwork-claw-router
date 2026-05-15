@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/unclecheng-ai-resume-judge@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unclecheng_ai_resume_judge",
+  "skill": {
+    "id": 67014,
+    "skillKey": "clawhub-unclecheng-ai-resume-judge",
+    "name": "Resume Score for the resume"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unclecheng-ai-resume-judge",
+    "url": "https://clawhub.ai/skills/unclecheng-ai-resume-judge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unclecheng-ai-resume-judge-7cba179ec5bb439a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI简历评分助手。根据用户上传的简历（含Markdown文本或文件），按照AI领域满分/及格线两份参考简历为基准，计算简历能力值（满分100分）。若简历非AI领域，则进行跨行业等价换算，评估该简历在其所属行业的能力水平。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "unclecheng-li",
+      "userId": "s17bh56swwmbd744r9ap6pybk5841te4",
+      "displayName": "Unclecheng",
+      "image": "https://avatars.githubusercontent.com/u/55303635?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776000469223,
+      "changelog": "AI-Resume-Judge v1.0.0\n\n- 初始发布：简历能力智能评分助手上线，支持AI及多行业领域简历自适应打分。\n- 提供AI领域满分/及格线参考简历，使评分标准明确可追溯。\n- 支持100分细化的分项评分（7大维度），兼具成就、技术、经历、表达等层面。\n- 实现自动识别简历所属行业，并据行业难度系数进行等价分数换算。\n- 输出结构化报告，包括详细分维打分、具体点评与Top 3改进建议。\n- 修正行业识别逻辑，提升非技术类行业判定准确性。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:951440c5f04cf029fb6906a6c65c53588ca42058fc5cddff10c4aa092cb4c912"
+}

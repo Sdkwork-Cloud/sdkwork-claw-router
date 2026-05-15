@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14510,
+  "uuid": "skill-clawhub-ciso",
+  "skillKey": "clawhub-ciso",
+  "name": "Chief Information Security Officer",
+  "summary": "Lead security with infrastructure audits, vulnerability triage, compliance tracking, vendor assessment, and incident response.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ciso",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Lead security with infrastructure audits, vulnerability triage, compliance tracking, vendor ass."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ciso@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ciso",
+      "url": "https://clawhub.ai/skills/ciso"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ciso",
+    "url": "https://clawhub.ai/skills/ciso",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ciso-24dc3604e4725a3a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ciso@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ciso-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:82936cbd407b21ed9daf96d39b8fa384326176997957f6d7d056b46baabe72a9",
+      "artifactSizeBytes": 1808
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T14:06:23.260Z"
+}

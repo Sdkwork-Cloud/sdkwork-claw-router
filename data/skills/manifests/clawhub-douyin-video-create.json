@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73470,
+  "uuid": "skill-clawhub-douyin-video-create",
+  "skillKey": "clawhub-douyin-video-create",
+  "name": "抖音生成短视频",
+  "summary": "根据主题自动搜索整理信息，生成多风格视频脚本，并调用数字人平台创建完整短视频。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_video_create",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "陈杨",
+      "features": [
+        "根据主题自动搜索整理信息，生成多风格视频脚本，并调用数字人平台创建完整短视频。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/douyin-video-create@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77878123?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "douyin-video-create",
+      "url": "https://clawhub.ai/skills/douyin-video-create"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-video-create",
+    "url": "https://clawhub.ai/skills/douyin-video-create",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-video-create-2a169361734c1c0e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/douyin-video-create@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-douyin-video-create-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fdc31ce730ffb04d45331f77caeaf07d9f4017fc591a032465cad8e4ff09a6b7",
+      "artifactSizeBytes": 2481
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T14:17:33.680Z"
+}

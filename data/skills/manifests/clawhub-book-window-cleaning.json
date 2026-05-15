@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13013,
+  "uuid": "skill-clawhub-book-window-cleaning",
+  "skillKey": "clawhub-book-window-cleaning",
+  "name": "Book Window Cleaning",
+  "summary": "Book window-cleaning services through Lokuli MCP. Use when user needs to find and book window-cleaning. Triggers on requests like \"book a window-cleaning\", \"find window-cleaning near me\", or any window-cleaning service request.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_window_cleaning",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lokuli",
+      "features": [
+        "Book window-cleaning services through Lokuli MCP",
+        "Use when user needs to find and book window-cleaning",
+        "Triggers on requests like \"book a window-cleaning\", \"find window-cleaning near me\", or any wind."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-window-cleaning@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224194606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-window-cleaning",
+      "url": "https://clawhub.ai/skills/book-window-cleaning"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-window-cleaning",
+    "url": "https://clawhub.ai/skills/book-window-cleaning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-window-cleaning-a4813d12ff9f3e95.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-window-cleaning@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-window-cleaning-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8eeea55869b8fdbdd181eb87d90cba1b44eb8686ad103cd6e4e44f95eb2cd4c2",
+      "artifactSizeBytes": 2019
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T01:05:27.825Z"
+}

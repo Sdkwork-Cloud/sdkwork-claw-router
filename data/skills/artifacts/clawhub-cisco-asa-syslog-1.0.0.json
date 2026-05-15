@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cisco-asa-syslog@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cisco_asa_syslog",
+  "skill": {
+    "id": 25741,
+    "skillKey": "clawhub-cisco-asa-syslog",
+    "name": "cisco-asa-syslog"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cisco-asa-syslog",
+    "url": "https://clawhub.ai/skills/cisco-asa-syslog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cisco-asa-syslog-e881c70613e6aee0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Parse, interpret, and analyze Cisco ASA (Adaptive Security Appliance) firewall syslog messages. Use this skill whenever working with Cisco ASA log files, sys..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gangtao",
+      "userId": "s17fb3h3yznyvkzn8pjbvf2xkh83md0v",
+      "displayName": "Gang Tao",
+      "image": "https://avatars.githubusercontent.com/u/3509037?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 382,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772640540715,
+      "changelog": "Initial release—comprehensive Cisco ASA syslog message analysis skill:\n\n- Explains syslog protocol foundation, including severity/facility levels and RFC formats.\n- Details Cisco ASA-specific syslog message structure and message ID categorization.\n- Provides guidelines for interpreting, parsing, and extracting key ASA log fields.\n- Supplies regex patterns to extract critical message components.\n- Organizes reference documentation by message ID range and severity for further lookup.\n- Designed for anyone working with Cisco ASA logs or investigating firewall events.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f5fdf24816e12f9b37fe49bf119bf77e8d245d6c287cc1ab4da83a0ba2f02bab"
+}

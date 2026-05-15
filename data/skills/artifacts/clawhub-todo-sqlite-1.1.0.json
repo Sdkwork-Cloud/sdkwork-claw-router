@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/todo-sqlite@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.todo_sqlite",
+  "skill": {
+    "id": 32788,
+    "skillKey": "clawhub-todo-sqlite",
+    "name": "Todo SQLite"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "todo-sqlite",
+    "url": "https://clawhub.ai/skills/todo-sqlite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/todo-sqlite-dd20526060ce943e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage multi-project todos with SQLite, supporting subtasks, priority/urgency levels, keyword search, time filters, smart sorting, and scheduled reminders."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "laoyutang",
+      "userId": "s178m8svhv028vbj45qpf7qtpn83m7cx",
+      "displayName": "LaoYutang",
+      "image": "https://avatars.githubusercontent.com/u/98928624?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 247,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774232263945,
+      "changelog": "等级系统改为数字：1=普通, 2=重要🟠🔥, 3=紧急🔴🔥🔥",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2b70ac05e293c6815b3598c6192cf8c54f8f1317bc01d92e8584819a040ae3f4"
+}

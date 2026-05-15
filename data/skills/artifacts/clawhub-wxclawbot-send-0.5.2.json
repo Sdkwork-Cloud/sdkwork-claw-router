@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wxclawbot-send@0.5.2",
+  "version": "0.5.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wxclawbot_send",
+  "skill": {
+    "id": 61090,
+    "skillKey": "clawhub-wxclawbot-send",
+    "name": "WeixinClawBot Send"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wxclawbot-send",
+    "url": "https://clawhub.ai/skills/wxclawbot-send",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wxclawbot-send-bcf63107e7d6df33.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "主动给微信用户发消息（文本、图片、视频、文件）。微信机器人默认只能被动回复， 这个技能让 agent 能主动推送消息到用户微信。 Use when: 主动发微信, 定时提醒, 告警通知, 推送报告, 发图片/文件到微信, proactive WeChat message, push notification to..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lroolle",
+      "userId": "s177jyaj8w2f9qrbkvs3tf0kyd83m778",
+      "displayName": "Eric Wang",
+      "image": "https://avatars.githubusercontent.com/u/14071051?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 348,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "0.5.2",
+      "createdAt": 1774597132382,
+      "changelog": "- Skill documentation is now primarily in Chinese, optimized for mainland Chinese users.\n- Usage scenarios, quick start, and error handling sections revised with simplified instructions and clearer tables.\n- Descriptions and trigger lists updated to better match proactive WeChat messaging use-cases in both Chinese and English.\n- Environment variables and prerequisites section now feature improved Chinese explanations and example commands.\n- Package version bumped to 0.5.2.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2af4158e8687f2c1f8b42f2d537509fbe2b9bf3f77686ce24270f223d17144e8"
+}

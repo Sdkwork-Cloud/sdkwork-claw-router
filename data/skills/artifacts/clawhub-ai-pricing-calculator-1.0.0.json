@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-pricing-calculator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_pricing_calculator",
+  "skill": {
+    "id": 64085,
+    "skillKey": "clawhub-ai-pricing-calculator",
+    "name": "AI 价格计算器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-pricing-calculator",
+    "url": "https://clawhub.ai/skills/ai-pricing-calculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-pricing-calculator-70d576dee4c89712.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI 模型成本优化器 - 自动计算 API 费用，推荐最优模型，对比 DeepSeek/智谱/通义/GPT 成本。省钱必备工具。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yang1002378395-cmyk",
+      "userId": "s17627rpbb3atq3mbfabqbgtm983g9et",
+      "displayName": "yang1002378395-cmyk",
+      "image": "https://avatars.githubusercontent.com/u/261632147?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 248,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773953654531,
+      "changelog": "首次发布: 价格对比 + 费用计算 + 智能推荐",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:15b6b21be455e7c4daab0374ec05b1e0b7e73eee99b3e01e8a29b26e9c5a7ffc"
+}

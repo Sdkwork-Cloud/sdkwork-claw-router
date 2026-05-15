@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15109,
+  "uuid": "skill-clawhub-arc-shield",
+  "skillKey": "clawhub-arc-shield",
+  "name": "Arc Shield",
+  "summary": "Output sanitization for agent responses - prevents accidental secret leaks",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arc_shield",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "arc-claw-bot",
+      "features": [
+        "Output sanitization for agent responses",
+        "prevents accidental secret leaks"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/arc-shield@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258497391?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "arc-shield",
+      "url": "https://clawhub.ai/skills/arc-shield"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arc-shield",
+    "url": "https://clawhub.ai/skills/arc-shield",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arc-shield-1784a84726b1e1c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/arc-shield@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-arc-shield-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:006b61e21c89b0677710e04ca6e1e6b7024e98c65706499e48e19c10b3312856",
+      "artifactSizeBytes": 2399
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T13:14:13.017Z"
+}

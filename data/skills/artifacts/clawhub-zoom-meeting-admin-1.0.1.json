@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zoom-meeting-admin@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zoom_meeting_admin",
+  "skill": {
+    "id": 46040,
+    "skillKey": "clawhub-zoom-meeting-admin",
+    "name": "ZOOM Meeting Admin"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zoom-meeting-admin",
+    "url": "https://clawhub.ai/skills/zoom-meeting-admin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zoom-meeting-admin-4ea2ae7e4927c114.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Zoom Meeting REST API call skills. When users need to manage Zoom meetings, they can directly call the Zoom Meeting \"Server-to-Server OAuth\" REST API (withou..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mebusw",
+      "userId": "s17fqnnawywqwp37410y5w9r1h83pwab",
+      "displayName": "Jacky Shen",
+      "image": "https://avatars.githubusercontent.com/u/760587?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777962973625,
+      "changelog": "- Added .env and .env.sample files to provide environment configuration templates.\n- Updated documentation with enhanced guidance on minimum permission scopes and safety requirements for API use.\n- Command for deleting meetings now requires --yes for confirmation.\n- Adjusted trigger words in description for broader matching.\n- Introduced explicit agent operation protocols emphasizing user confirmation and restricting action scope.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7a422260cec8cb798243e5ffab0d3cd2af843146d24eab014c5bfef775655731"
+}

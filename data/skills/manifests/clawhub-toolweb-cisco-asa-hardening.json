@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39568,
+  "uuid": "skill-clawhub-toolweb-cisco-asa-hardening",
+  "skillKey": "clawhub-toolweb-cisco-asa-hardening",
+  "name": "Cisco ASA Hardening",
+  "summary": "Generates hardened Cisco ASA firewall configurations based on security best practices and specified hardening options.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toolweb_cisco_asa_hardening",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToolWeb",
+      "features": [
+        "Generates hardened Cisco ASA firewall configurations based on security best practices and speci."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/toolweb-cisco-asa-hardening@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245780162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "toolweb-cisco-asa-hardening",
+      "url": "https://clawhub.ai/skills/toolweb-cisco-asa-hardening"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toolweb-cisco-asa-hardening",
+    "url": "https://clawhub.ai/skills/toolweb-cisco-asa-hardening",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toolweb-cisco-asa-hardening-41fa0efc4570c9a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/toolweb-cisco-asa-hardening@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-toolweb-cisco-asa-hardening-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ef4cc70d3821fb4f84dadff6580db8b7905e148d7b7fbc2af43a70a4277af92",
+      "artifactSizeBytes": 2529
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T19:30:15.457Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-video-music-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_video_music_generator",
+  "skill": {
+    "id": 55372,
+    "skillKey": "clawhub-free-video-music-generator",
+    "name": "Free Video Music Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-video-music-generator",
+    "url": "https://clawhub.ai/skills/free-video-music-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-video-music-generator-80a1cb37db49dd82.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — generate and add background music that matches the mood of my video — and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 125,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776919290458,
+      "changelog": "- Initial release of Free Video Music Generator skill.\n- Instantly add AI-generated background music to your video clips (MP4, MOV, AVI, WebM, up to 500MB).\n- Simple workflow: upload a video, describe the mood, and get a music-backed video in 30-60 seconds.\n- No need for professional editing software or manual music licensing.\n- Includes cloud-based session handling, credit tracking, and export process with error handling.\n- Especially useful for TikTok creators seeking copyright-free background music.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:20d3c6344cb91a1ee9c965ca32fc71c613608b158f04be502b759ebea443ccf5"
+}

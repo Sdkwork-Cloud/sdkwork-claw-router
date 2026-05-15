@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiapi-style-rotation@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiapi_style_rotation",
+  "skill": {
+    "id": 72716,
+    "skillKey": "clawhub-xiapi-style-rotation",
+    "name": "虾皮市场风格轮动分析"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiapi-style-rotation",
+    "url": "https://clawhub.ai/skills/xiapi-style-rotation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiapi-style-rotation-629ff08bfec6a708.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "分析A股大小盘风格轮动，通过中证2000与沪深300的相对强弱差值判断风格偏向与切换信号。触发词：大小盘风格、风格轮动、大盘股小盘股、风格切换、沪深300、中证2000、微盘股投资策略。适用场景：判断市场风格偏向、识别风格切换信号、大盘小盘配置决策。不适用场景：个股分析、行业板块分析、债券分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ksky521",
+      "userId": "s177z4s6dabs1y9tx72np0acxs83zsfm",
+      "displayName": "三水清",
+      "image": "https://avatars.githubusercontent.com/u/1073262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775743313900,
+      "changelog": "**xiapi-style-rotation v1.0.1 Changelog**\n\n- 分析逻辑大幅升级：采用中证2000与沪深300相对强弱差值，动态计算历史百分位，提升风格判断准确性。\n- 增加极端区间均值回归概率，并特别强调大盘极端强与小盘极端强的历史非对称性。\n- 报告结构更加精练，结论先行，流程聚焦风格定位、趋势分析和极端状态评估。\n- 明确禁止在正常区间内滥用\"均值回归\"表述，强化风险提示。\n- 补充质量检查与常见陷阱说明，完善用户安全指引与出错排查说明。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aec43f01eb5ed62ee5ef274eda1f34ad28fcf143bf669dd8d5f19153f1d1232d"
+}

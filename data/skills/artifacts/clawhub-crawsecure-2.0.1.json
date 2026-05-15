@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crawsecure@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crawsecure",
+  "skill": {
+    "id": 11720,
+    "skillKey": "clawhub-crawsecure",
+    "name": "CrawSecure"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crawsecure",
+    "url": "https://clawhub.ai/skills/crawsecure",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crawsecure-0c9e59073a0ca403.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Offline security scanner that detects unsafe code patterns in ClawHub skills before installation to help users assess potential risks locally."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "diogopaesdev",
+      "userId": "s174ptjpn5ah0jp2rjzvn5xb2s83ppt0",
+      "displayName": "Diogo Paes Dev",
+      "image": "https://avatars.githubusercontent.com/u/18194262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1936,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1772475881995,
+      "changelog": "v2.0.1 is a documentation‑only clarification release:\n\n- Clarifies that this skill provides documentation only, with no executable code or scanning capability.\n- Clearly distinguishes the CrawSecure CLI as an external, optional tool the user must install separately.\n- Reinforces security philosophy, permissions, and boundaries.\n- Expands guidance for safe usage and understanding of risk signals.\n- Removes any ambiguity about what is included or performed by the skill itself.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:16aaefa843cc5ce47f3756792f976fc9616c1acce3dd2e368f69eebd9a637b90"
+}

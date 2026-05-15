@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39822,
+  "uuid": "skill-clawhub-123skill-name",
+  "skillKey": "clawhub-123skill-name",
+  "name": "123skill-display-name",
+  "summary": "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.123skill_name",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "suncrespo",
+      "features": [
+        "Captures learnings, errors, and corrections to enable continuous improvement",
+        "Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/123skill-name@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/209358250?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "123skill-name",
+      "url": "https://clawhub.ai/skills/123skill-name"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "123skill-name",
+    "url": "https://clawhub.ai/skills/123skill-name",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/123skill-name-6eff4e35017447de.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/123skill-name@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-123skill-name-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:13775f5803debe6a983d847a9bdedc627d798ce930423179013e638ca03e4359",
+      "artifactSizeBytes": 2602
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T13:07:08.349Z"
+}

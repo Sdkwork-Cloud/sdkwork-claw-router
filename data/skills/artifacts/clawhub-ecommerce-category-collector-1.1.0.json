@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ecommerce-category-collector@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecommerce_category_collector",
+  "skill": {
+    "id": 62790,
+    "skillKey": "clawhub-ecommerce-category-collector",
+    "name": "Audtools Ecommerce Category Collector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecommerce-category-collector",
+    "url": "https://clawhub.ai/skills/ecommerce-category-collector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecommerce-category-collector-a73f14693fcfc851.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动从Audtools电商采集工具批量提交分类链接采集任务。支持从CSV文件读取collections链接，自动登录、提交采集任务，并管理多个tab页面的生命周期。当需要通过Audtools批量采集电商分类商品时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qirongzhang",
+      "userId": "s17dh66kkb1s7nejv0c821b96s83n3yj",
+      "displayName": "QirongZhang",
+      "image": "https://avatars.githubusercontent.com/u/24821414?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 355,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773969226878,
+      "changelog": "修复全选逻辑 - 同时设置实际checkbox.checked=true; 修复导出流程 - 正确处理弹出层分类输入",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:72d65544befefd6fe39badafc3c4d80d4e4b9b3140db2c48e53b3bfab7db1d05"
+}

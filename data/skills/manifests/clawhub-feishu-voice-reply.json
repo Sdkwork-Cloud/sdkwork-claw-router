@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60248,
+  "uuid": "skill-clawhub-feishu-voice-reply",
+  "skillKey": "clawhub-feishu-voice-reply",
+  "name": "feishu voice reply",
+  "summary": "飞书语音消息自动回复技能 - 使用 Edge TTS 生成语音并通过飞书 API 发送",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_voice_reply",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xmx0632",
+      "features": [
+        "飞书语音消息自动回复技能",
+        "使用 Edge TTS 生成语音并通过飞书 API 发送"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-voice-reply@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/220372?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-voice-reply",
+      "url": "https://clawhub.ai/skills/feishu-voice-reply"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-voice-reply",
+    "url": "https://clawhub.ai/skills/feishu-voice-reply",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-voice-reply-505e1bf293e16086.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-voice-reply@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-voice-reply-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5cff42a0506033ad7828f05f0c56e5966a48ffe52aab2131be3834df60ff04da",
+      "artifactSizeBytes": 2289
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T22:51:08.370Z"
+}

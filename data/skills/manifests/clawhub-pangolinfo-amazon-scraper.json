@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24183,
+  "uuid": "skill-clawhub-pangolinfo-amazon-scraper",
+  "skillKey": "clawhub-pangolinfo-amazon-scraper",
+  "name": "Pangolinfo Amazon Scraper: Products + Keywords + Reviews + Categories",
+  "summary": "Scrape Amazon as JSON — products, keywords, reviews, BSR. 13 regions. Anti-bot. 60 free credits. Claude Code, Cursor, LangChain.",
+  "version": "2.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pangolinfo_amazon_scraper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pangolinfo",
+      "features": [
+        "Scrape Amazon as JSON — products, keywords, reviews, BSR",
+        "13 regions",
+        "Anti-bot",
+        "60 free credits"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pangolinfo-amazon-scraper@2.0.3",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/pangolinfo-amazon-scraper/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pangolinfo-amazon-scraper",
+      "url": "https://clawhub.ai/skills/pangolinfo-amazon-scraper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pangolinfo-amazon-scraper",
+    "url": "https://clawhub.ai/skills/pangolinfo-amazon-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pangolinfo-amazon-scraper-b60aaf8c24266336.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pangolinfo-amazon-scraper@2.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-pangolinfo-amazon-scraper-2.0.3.json",
+      "version": "2.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ce8ea3f4e4dccf87680e58f32dedf501bb1fd811fd1b1728c54625203bb6558",
+      "artifactSizeBytes": 2414
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T08:28:58.977Z"
+}

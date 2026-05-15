@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59604,
+  "uuid": "skill-clawhub-rainman-exchange-rate",
+  "skillKey": "clawhub-rainman-exchange-rate",
+  "name": "exchange-rate",
+  "summary": "汇率换算 — 查询实时汇率、历史汇率、汇率趋势。数据源为欧洲央行 (ECB)。 触发词: 汇率, 换算, exchange rate, convert currency, 多少钱, 美元, 欧元, 日元, 英镑, USD, EUR, JPY, GBP, 或任何 \"[金额] [货币A] 转/换/to [货币B]\"...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rainman_exchange_rate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rainman",
+      "features": [
+        "汇率换算 — 查询实时汇率、历史汇率、汇率趋势。数据源为欧洲央行 (ECB)。 触发词: 汇率, 换算, exchange rate, convert currency, 多少钱, 美元,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rainman-exchange-rate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42929363?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rainman-exchange-rate",
+      "url": "https://clawhub.ai/skills/rainman-exchange-rate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rainman-exchange-rate",
+    "url": "https://clawhub.ai/skills/rainman-exchange-rate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rainman-exchange-rate-d0571f3460ef6e9e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rainman-exchange-rate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rainman-exchange-rate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:536018bb2e9f4bb0b00be560789e1ff36d2cbda46e66aad6b08b4d7af117cd1e",
+      "artifactSizeBytes": 2044
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T14:48:34.528Z"
+}

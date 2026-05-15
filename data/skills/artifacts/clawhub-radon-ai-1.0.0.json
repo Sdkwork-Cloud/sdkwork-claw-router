@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/radon-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.radon_ai",
+  "skill": {
+    "id": 16400,
+    "skillKey": "clawhub-radon-ai",
+    "name": "Radon AI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "radon-ai",
+    "url": "https://clawhub.ai/skills/radon-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/radon-ai-d08b98978f570e64.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use Radon IDE's AI tools for React Native development - query library docs, view logs and network traffic, take screenshots, inspect component trees, and int..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "latekvo",
+      "userId": "publishers:latekvo",
+      "displayName": "Ignacy Łątka",
+      "image": "https://avatars.githubusercontent.com/u/74246391?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 880,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771523148078,
+      "changelog": "Initial release of radon-ai skill for React Native development.\n\n- Integrates Radon IDE's AI tools for enhanced React Native debugging and development workflows.\n- Provides commands to query React Native library documentation and get detailed library descriptions.\n- Enables interactive tools: reload application, view application logs, take screenshots, inspect component trees, and monitor network traffic.\n- Offers daily-updated knowledge base for popular React Native libraries and APIs.\n- Requires Radon IDE extension and license, and a running React Native or Expo project in VS Code or Cursor.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1da5c7eaad2b4e4f620fde7221a35b297a99d081603d7feebec5a4a48b9b6a90"
+}

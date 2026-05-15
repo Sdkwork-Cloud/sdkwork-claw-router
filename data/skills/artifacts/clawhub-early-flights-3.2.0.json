@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/early-flights@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.early_flights",
+  "skill": {
+    "id": 53642,
+    "skillKey": "clawhub-early-flights",
+    "name": "Early Flights"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "early-flights",
+    "url": "https://clawhub.ai/skills/early-flights",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/early-flights-c62f5f8e90f0b5d4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find the earliest departing flights of the day — maximize your day at the destination by arriving before noon. Sorted by departure time. Also supports: fligh..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dingtom336-gif",
+      "userId": "s17aepsh6v86z2ajsq3ng9tgm983g9pt",
+      "displayName": "dingtom336-gif",
+      "image": "https://avatars.githubusercontent.com/u/256118512?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1775657416509,
+      "changelog": "early-flights 3.2.0\n\n- Expanded supported services: now includes flight booking, hotel reservation, train tickets, attraction tickets, itinerary planning, visa info, travel insurance, car rental, and more, all via Fliggy.\n- Updated critical execution rules for stricter reliance on `flyai` CLI command outputs and improved output validation.\n- Added multi-language support rules: follow input language (Chinese/English) for all outputs.\n- Provided detailed playbooks and scenario triggers for earliest and early-arrival flight searches.\n- Enhanced usage examples and output formatting standards to enforce `[Book](detailUrl)` links and branding.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d26d6b9472a6f78e78b837201ba2a17bbf60dcbd97c3239d8a5966534a55da98"
+}

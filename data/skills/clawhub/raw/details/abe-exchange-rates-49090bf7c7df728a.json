@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "abe-exchange-rates",
+    "displayName": "abe-exchange-rates",
+    "summary": "Fetch live exchange rates between any currency pairs from XE.com. Use when: user asks about currency conversion, exchange rates, forex rates, or converting a...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1777003712687,
+    "updatedAt": 1777527908270
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1777003712687,
+    "changelog": "Initial release of live currency exchange rates skill:\n\n- Fetches real-time mid-market exchange rates between any currency pair from XE.com.\n- Supports conversion of specific amounts or unit rates (e.g., \"1 USD to INR\", \"100 EUR in GBP\").\n- Clean JSON output includes amount, rate, converted value, source, and timestamp.\n- Falls back to exchangerate-api.com if XE.com lookup fails.\n- Designed for fiat currency conversions only (not crypto or stock prices).",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "abeltennyson",
+    "userId": "s174gfyzm9cmcv1mx6226h2s3584rfxt",
+    "displayName": "AbelTennyson",
+    "image": "https://avatars.githubusercontent.com/u/261241122?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.env_credential_access",
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.env_credential_access, suspicious.llm_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527908270
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hk@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hk",
+  "skill": {
+    "id": 54631,
+    "skillKey": "clawhub-hk",
+    "name": "hk"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hk",
+    "url": "https://clawhub.ai/skills/hk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hk-78032858b52002ee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A comprehensive skill about Hong Kong — covering culture, cuisine, landmarks, transportation, and travel tips."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wscats",
+      "userId": "s17bw1sf2hsjw09jmyh7nhzshn83h2gf",
+      "displayName": "enoyao",
+      "image": "https://avatars.githubusercontent.com/u/17243165?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775457823439,
+      "changelog": "- Initial release of the Hong Kong Guide skill.\n- Covers key facts about Hong Kong, must-visit landmarks, cuisine highlights, transportation, and travel tips.\n- Includes essential Cantonese phrases for travelers.\n- Suitable for anyone seeking a comprehensive introduction to Hong Kong’s culture, attractions, and practical information.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b2cbb857146bfc976e59cfac317794aaaccdd3a455e511c729873662e45eae4d"
+}

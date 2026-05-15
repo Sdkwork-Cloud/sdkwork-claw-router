@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61361,
+  "uuid": "skill-clawhub-conversation-archive",
+  "skillKey": "clawhub-conversation-archive",
+  "name": "Conversation Archive",
+  "summary": "对话记忆仓库：自动归档 session 对话，保留原始记录，支持检索和误解纠正。可与 memory-never-forget 联动形成完整记忆体系。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.conversation_archive",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AnFengxiaoGuo",
+      "features": [
+        "对话记忆仓库：自动归档 session 对话，保留原始记录，支持检索和误解纠正。可与 memory-never-forget 联动形成完整记忆体系。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/conversation-archive@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139884360?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "conversation-archive",
+      "url": "https://clawhub.ai/skills/conversation-archive"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "conversation-archive",
+    "url": "https://clawhub.ai/skills/conversation-archive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/conversation-archive-9dc98b6f6e0d49c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/conversation-archive@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-conversation-archive-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f1257877b4a5a547fe9ed480a46350165bed4ff908d31f1d6cc5bba65f79fd45",
+      "artifactSizeBytes": 2508
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T10:10:32.623Z"
+}

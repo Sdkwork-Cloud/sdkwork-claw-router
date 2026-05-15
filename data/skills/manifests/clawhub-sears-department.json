@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66290,
+  "uuid": "skill-clawhub-sears-department",
+  "skillKey": "clawhub-sears-department",
+  "name": "Sears Department",
+  "summary": "提供Sears百年邮购目录零售历史、衰退原因及管理层争议，助力理解传统零售向电商转型过程。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sears_department",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供Sears百年邮购目录零售历史、衰退原因及管理层争议，助力理解传统零售向电商转型过程。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sears-department@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sears-department",
+      "url": "https://clawhub.ai/skills/sears-department"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sears-department",
+    "url": "https://clawhub.ai/skills/sears-department",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sears-department-aaa0de40d60ba5a1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sears-department@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sears-department-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e4299a47c1ee8aaad0386556169b03d85278f630d22635add053f092c5fdeaf",
+      "artifactSizeBytes": 2210
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T23:05:22.677Z"
+}

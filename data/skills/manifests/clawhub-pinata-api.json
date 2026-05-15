@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14648,
+  "uuid": "skill-clawhub-pinata-api",
+  "skillKey": "clawhub-pinata-api",
+  "name": "Pinata API",
+  "summary": "Pinata IPFS API for file storage, groups, gateways, signatures, x402 payments, and file vectorization.",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pinata_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pinata",
+      "features": [
+        "Pinata IPFS API for file storage, groups, gateways, signatures, x402 payments, and file vectori."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pinata-api@1.0.10",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/pinata-api/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pinata-api",
+      "url": "https://clawhub.ai/skills/pinata-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pinata-api",
+    "url": "https://clawhub.ai/skills/pinata-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pinata-api-cdd79464d27e1f07.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pinata-api@1.0.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-pinata-api-1.0.10.json",
+      "version": "1.0.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:120d8a48e0a3524d96b237a7b4f059e22f08d11b29d0f130156818b2ae4d4fc8",
+      "artifactSizeBytes": 1877
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T16:52:31.191Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65899,
+  "uuid": "skill-clawhub-feishu-meeting-minutes",
+  "skillKey": "clawhub-feishu-meeting-minutes",
+  "name": "feishu-meeting-minutes",
+  "summary": "飞书会议纪要自动生成工具。从飞书妙记链接、minute token 或现成 transcript 文件生成结构化中文会议纪要，并可选导出 PDF、上传回飞书云空间。适用于用户提供飞书妙记链接要求整理会议纪要、要求将逐字稿转正式文档、或希望把会议录音对应 transcript 快速整理成可分发纪要的场景。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_meeting_minutes",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jfvincentyang",
+      "features": [
+        "飞书会议纪要自动生成工具。从飞书妙记链接、minute token 或现成 transcript 文件生成结构化中文会议纪要，并可选导出 PDF、上传回飞书云空间。适用于用户提供飞书妙记链接."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-meeting-minutes@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264906315?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-meeting-minutes",
+      "url": "https://clawhub.ai/skills/feishu-meeting-minutes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-meeting-minutes",
+    "url": "https://clawhub.ai/skills/feishu-meeting-minutes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-meeting-minutes-0e4a77c997933fb5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-meeting-minutes@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-meeting-minutes-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6898b1f71c24dba5642aab57084f3dee127763da8a91120b5d76c0370e2bdc79",
+      "artifactSizeBytes": 2387
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T13:57:52.599Z"
+}

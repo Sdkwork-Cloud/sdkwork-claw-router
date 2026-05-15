@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zyka-ai@0.4.12",
+  "version": "0.4.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zyka_ai",
+  "skill": {
+    "id": 51459,
+    "skillKey": "clawhub-zyka-ai",
+    "name": "Zyka AI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zyka-ai",
+    "url": "https://clawhub.ai/skills/zyka-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zyka-ai-958b0c9bacd64010.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate AI videos, images, voice, and use AI apps using the Zyka CLI. Use when users want to create AI-generated media — videos (Sora, Veo, Kling, WAN, Seed..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "varshneyhars",
+      "userId": "s17cznczmp0ce4h565bbhh0x5h85pwt3",
+      "displayName": "Harshit Varshney",
+      "image": "https://avatars.githubusercontent.com/u/76244699?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "0.4.12",
+      "createdAt": 1777371076339,
+      "changelog": "remove duplicate skill subfolder; works with zyka@0.4.7 (CLI now installable from npm)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b062549e0c8035fe6a609cfaf5738532d3689fc97c7312c81c8871e28af7064a"
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13036,
+  "uuid": "skill-clawhub-book-tree-service",
+  "skillKey": "clawhub-book-tree-service",
+  "name": "Book Tree Service",
+  "summary": "Book tree-service services through Lokuli MCP. Use when user needs to find and book tree-service. Triggers on requests like \"book a tree-service\", \"find tree-service near me\", or any tree-service service request.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_tree_service",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lokuli",
+      "features": [
+        "Book tree-service services through Lokuli MCP",
+        "Use when user needs to find and book tree-service",
+        "Triggers on requests like \"book a tree-service\", \"find tree-service near me\", or any tree-servi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-tree-service@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224194606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-tree-service",
+      "url": "https://clawhub.ai/skills/book-tree-service"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-tree-service",
+    "url": "https://clawhub.ai/skills/book-tree-service",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-tree-service-c56ba230210db021.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-tree-service@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-tree-service-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c8f39e77cd9e5172ebf6e0e0a1bbf79a87cb483a2e134d1d85bcba6f75f87cd8",
+      "artifactSizeBytes": 1983
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T01:05:33.574Z"
+}

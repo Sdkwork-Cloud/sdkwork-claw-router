@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52433,
+  "uuid": "skill-clawhub-soft-landing",
+  "skillKey": "clawhub-soft-landing",
+  "name": "Soft Landing — Reflect Without Pressure",
+  "summary": "Helps you gently review and reflect on today, yesterday, or this week by organizing your thoughts into a clear, low-pressure summary.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.soft_landing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JoeyShee",
+      "features": [
+        "Helps you gently review and reflect on today, yesterday, or this week by organizing your though."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/soft-landing@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18341074?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "soft-landing",
+      "url": "https://clawhub.ai/skills/soft-landing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "soft-landing",
+    "url": "https://clawhub.ai/skills/soft-landing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/soft-landing-bfaff238cbaba5a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/soft-landing@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-soft-landing-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c1a7d8399bf4142a20e653902fc4159682c8f749c1f746edd524be580d0ae041",
+      "artifactSizeBytes": 2224
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T09:30:35.666Z"
+}

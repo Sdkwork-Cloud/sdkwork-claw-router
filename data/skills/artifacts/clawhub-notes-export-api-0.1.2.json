@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/notes-export-api@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notes_export_api",
+  "skill": {
+    "id": 59291,
+    "skillKey": "clawhub-notes-export-api",
+    "name": "Notes Export Api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notes-export-api",
+    "url": "https://clawhub.ai/skills/notes-export-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notes-export-api-915a6c1c4125fba0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过可配置的 notes-export-api 导出接口，把 Markdown 内容导出为锤子便签风格的长图 PNG。脚本会优先探测本地生产入口 `http://127.0.0.1:18080`，探测不到时再回退到 `https://notes.fangyuanxiaozhan.com/api/export`；如..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhaoolee",
+      "userId": "s175sbn2vcmksb2ekc23vqg45x83jwjf",
+      "displayName": "zhaoolee",
+      "image": "https://avatars.githubusercontent.com/u/15868458?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 453,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1776742421568,
+      "changelog": "Prefer local production endpoint first, document Docker single-entry deployment, and update export behavior for the latest self-hosted image.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:32cbf29de5c26a0d7606c2d93a703f7b77b2e947b6635ec8858ed0c1b96f97be"
+}

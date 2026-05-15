@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/proactive-agent@3.1.0",
+  "version": "3.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proactive_agent",
+  "skill": {
+    "id": 8216,
+    "skillKey": "clawhub-proactive-agent",
+    "name": "Proactive Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proactive-agent",
+    "url": "https://clawhub.ai/skills/proactive-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proactive-agent-bc9d494ae965d1db.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transform AI agents from task-followers into proactive partners that anticipate needs and continuously improve. Now with WAL Protocol, Working Buffer, Autonomous Crons, and battle-tested patterns. Part of the Hal Stack 🦞"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "halthelobster",
+      "userId": "publishers:halthelobster",
+      "displayName": "halthelobster",
+      "image": "https://avatars.githubusercontent.com/u/257232409?v=4"
+    },
+    "stats": {
+      "comments": 19,
+      "downloads": 155808,
+      "installsAllTime": 2877,
+      "installsCurrent": 2776,
+      "stars": 749,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "3.1.0",
+      "createdAt": 1770259214202,
+      "changelog": "Added: Autonomous vs Prompted Crons, Verify Implementation Not Intent, Tool Migration Checklist",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0faea3e50e02573b14665c3bc859912612b3192b26fba371512615f0f14d6df1"
+}

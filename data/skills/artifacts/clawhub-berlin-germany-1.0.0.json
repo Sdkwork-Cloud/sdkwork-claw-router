@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/berlin-germany@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.berlin_germany",
+  "skill": {
+    "id": 46282,
+    "skillKey": "clawhub-berlin-germany",
+    "name": "Berlin Germany"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "berlin-germany",
+    "url": "https://clawhub.ai/skills/berlin-germany",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/berlin-germany-1652ba7ac5635664.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides historical, economic, and cultural insights about Berlin, focusing on its startup ecosystem, Cold War history, and urban development."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777107847935,
+      "changelog": "- Initial release introducing the Berlin skill.\n- Covers Berlin’s historical timeline, cultural scene, and modern status as a European startup capital.\n- Provides data on population, startup activity, venture capital, and competitive advantages.\n- Highlights business model, creative industries, and government support.\n- Includes interesting facts about Berlin’s size and the Berlin Wall.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9cc83dec9f905b1302b51408bc65582a05376d9c3b55e7fc778e2dcd883ce8ef"
+}

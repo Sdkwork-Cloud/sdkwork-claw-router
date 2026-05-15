@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63961,
+  "uuid": "skill-clawhub-generate-poster",
+  "skillKey": "clawhub-generate-poster",
+  "name": "Generate Poster",
+  "summary": "通过 Flyelep API 生成电商产品主图和详情图海报。 当用户要求生成产品图、电商海报、Amazon 商品图、详情页图片时使用此技能。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.generate_poster",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "flyelep",
+      "features": [
+        "通过 Flyelep API 生成电商产品主图和详情图海报。 当用户要求生成产品图、电商海报、Amazon 商品图、详情页图片时使用此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/generate-poster@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57939552?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "generate-poster",
+      "url": "https://clawhub.ai/skills/generate-poster"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "generate-poster",
+    "url": "https://clawhub.ai/skills/generate-poster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/generate-poster-9d0a3437bd15c15d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/generate-poster@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-generate-poster-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:333d0ab780fbf40ad1ba480116e40b9dab57e967f6db3ac1a0486f4d13f24f7e",
+      "artifactSizeBytes": 2211
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T03:26:22.940Z"
+}

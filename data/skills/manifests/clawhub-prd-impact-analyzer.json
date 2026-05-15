@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63346,
+  "uuid": "skill-clawhub-prd-impact-analyzer",
+  "skillKey": "clawhub-prd-impact-analyzer",
+  "name": "prd-impact-analyzer",
+  "summary": "基于 Spec Coding 理念的 PRD 影响分析工具，采用渐进式上下文管理，专注于识别客户可见的前端变化，生成可执行的代码级影响规约 (Spec)，并支持通过 Workflow 编排实现自动化实施。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prd_impact_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ohalo",
+      "features": [
+        "基于 Spec Coding 理念的 PRD 影响分析工具，采用渐进式上下文管理，专注于识别客户可见的前端变化，生成可执行的代码级影响规约 (Spec)，并支持通过 Workflow 编排实."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prd-impact-analyzer@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2868547?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prd-impact-analyzer",
+      "url": "https://clawhub.ai/skills/prd-impact-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prd-impact-analyzer",
+    "url": "https://clawhub.ai/skills/prd-impact-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prd-impact-analyzer-128892e964a8f0de.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prd-impact-analyzer@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-prd-impact-analyzer-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f62a68f4526c218dd51158a72002c1b68e6ff62e49001a5941bf22a3954fcd37",
+      "artifactSizeBytes": 2691
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T02:00:23.408Z"
+}

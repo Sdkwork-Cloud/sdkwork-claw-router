@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59568,
+  "uuid": "skill-clawhub-pclaw-sourcing",
+  "skillKey": "clawhub-pclaw-sourcing",
+  "name": "Project sourcing engine. Supports 6 resource types (Skill/Service/Material/Equipment/Human/Digital). Built for engineers and AI.",
+  "summary": "Pclaw工程寻源技能 - 知识变现平台的核心技能。当用户需要发布工程需求、匹配资源、查询技能、管理分润、创建展会等Pclaw平台操作时使用。触发词：发布需求、寻源、查技能、上架、创建展会、展会、需求广场、知识商店。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pclaw_sourcing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shuangxipop1",
+      "features": [
+        "Pclaw工程寻源技能",
+        "知识变现平台的核心技能。当用户需要发布工程需求、匹配资源、查询技能、管理分润、创建展会等Pclaw平台操作时使用。触发词：发布需求、寻源、查技能、上架、创建展会、展会、需求广场、知识商店。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pclaw-sourcing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/223013916?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pclaw-sourcing",
+      "url": "https://clawhub.ai/skills/pclaw-sourcing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pclaw-sourcing",
+    "url": "https://clawhub.ai/skills/pclaw-sourcing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pclaw-sourcing-379ca2384178018e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pclaw-sourcing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pclaw-sourcing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a84213d85be46bf1dedaa0d11cd1c3909cac8422468e4e3fd1538778ec605a45",
+      "artifactSizeBytes": 2616
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T02:50:19.730Z"
+}

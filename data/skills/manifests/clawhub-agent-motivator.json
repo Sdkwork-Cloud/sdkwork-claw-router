@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70308,
+  "uuid": "skill-clawhub-agent-motivator",
+  "skillKey": "clawhub-agent-motivator",
+  "name": "Agent Motivator",
+  "summary": "正向激励与任务进度管理技能。使用幽默、积极的激励话术帮助 agent 保持高效工作状态。支持任务创建、进度追踪、里程碑庆祝、专注模式提醒和成果复盘。当需要激励 agent、管理任务进度、庆祝里程碑或进行工作总结时使用此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_motivator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Andy Tien",
+      "features": [
+        "正向激励与任务进度管理技能。使用幽默、积极的激励话术帮助 agent 保持高效工作状态。支持任务创建、进度追踪、里程碑庆祝、专注模式提醒和成果复盘。当需要激励 agent、管理任务进度、庆祝."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-motivator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35169750?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-motivator",
+      "url": "https://clawhub.ai/skills/agent-motivator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-motivator",
+    "url": "https://clawhub.ai/skills/agent-motivator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-motivator-0b21dfb512442299.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-motivator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-motivator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ef52524e943020779f73f19442f30877259db84bffc617fb0e8ce12ea265f1c",
+      "artifactSizeBytes": 2092
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T02:13:40.799Z"
+}

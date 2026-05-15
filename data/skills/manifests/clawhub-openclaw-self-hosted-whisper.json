@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20819,
+  "uuid": "skill-clawhub-openclaw-self-hosted-whisper",
+  "skillKey": "clawhub-openclaw-self-hosted-whisper",
+  "name": "K8s Self Hosted Whisper Api",
+  "summary": "Transcribe audio via the self-hosted Whisper ASR instance running on Kubernetes. Use this skill whenever the user wants to transcribe audio files, convert sp...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_self_hosted_whisper",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xavjer",
+      "features": [
+        "Transcribe audio via the self-hosted Whisper ASR instance running on Kubernetes",
+        "Use this skill whenever the user wants to transcribe audio files, convert sp..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-self-hosted-whisper@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4498205?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-self-hosted-whisper",
+      "url": "https://clawhub.ai/skills/openclaw-self-hosted-whisper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-self-hosted-whisper",
+    "url": "https://clawhub.ai/skills/openclaw-self-hosted-whisper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-self-hosted-whisper-3f26a286830c65af.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-self-hosted-whisper@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-self-hosted-whisper-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:141c8f4cf0306a82ef781a36eba9b8e44ab9338bd5074cf6c472afc66f6a4883",
+      "artifactSizeBytes": 2430
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T12:47:37.985Z"
+}

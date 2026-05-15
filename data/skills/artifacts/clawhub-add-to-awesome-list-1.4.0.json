@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/add-to-awesome-list@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.add_to_awesome_list",
+  "skill": {
+    "id": 25883,
+    "skillKey": "clawhub-add-to-awesome-list",
+    "name": "Add to Awesome Agent-Native Services"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "add-to-awesome-list",
+    "url": "https://clawhub.ai/skills/add-to-awesome-list",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/add-to-awesome-list-ba8bb357446294e4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guide a contributor through the full process of adding a new service to the awesome-agent-native-services catalog: verifying criteria, checking for URL Onboa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "haoruilee",
+      "userId": "s170d0pfsvstt5jkatm8fh4bz184ha70",
+      "displayName": "0x4C33",
+      "image": "https://avatars.githubusercontent.com/u/60883781?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 378,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1773643929054,
+      "changelog": "v1.4.0: Service file format updated — open-source services should include a | **Stars** | badge row in the metadata table using: [![GitHub Stars](https://img.shields.io/github/stars/{org}/{repo}?style=social)](https://github.com/{org}/{repo})",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac4fbe79f7d4ed078b9cdf0493dc511edac47c58439505f4c2abbd7bd965888f"
+}

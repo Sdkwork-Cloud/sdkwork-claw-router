@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24297,
+  "uuid": "skill-clawhub-canvas-design-anthropic",
+  "skillKey": "clawhub-canvas-design-anthropic",
+  "name": "Canvas Design Anthropic",
+  "summary": "Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.canvas_design_anthropic",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pupuking723",
+      "features": [
+        "Create beautiful visual art in .png and .pdf documents using design philosophy",
+        "You should use this skill when the user asks to create a poster, piece of art..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/canvas-design-anthropic@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/169750518?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "canvas-design-anthropic",
+      "url": "https://clawhub.ai/skills/canvas-design-anthropic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "canvas-design-anthropic",
+    "url": "https://clawhub.ai/skills/canvas-design-anthropic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/canvas-design-anthropic-04b275dd3b6e926e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/canvas-design-anthropic@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-canvas-design-anthropic-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5808218865223fba6bb2128d58fbca686834ed14f59e31e87818992bb100019c",
+      "artifactSizeBytes": 2792
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T14:31:04.623Z"
+}

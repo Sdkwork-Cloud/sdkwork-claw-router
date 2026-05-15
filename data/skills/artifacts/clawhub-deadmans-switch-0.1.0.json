@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deadmans-switch@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deadmans_switch",
+  "skill": {
+    "id": 42519,
+    "skillKey": "clawhub-deadmans-switch",
+    "name": "Dead Man's Switch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deadmans-switch",
+    "url": "https://clawhub.ai/skills/deadmans-switch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deadmans-switch-90c24fcee78df522.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Self-healing infrastructure guardian. Monitors services, diagnoses failures, executes recovery playbooks, and learns from incidents."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peres84",
+      "userId": "s179wj9yfmye4sdhbzk4svv1jh83svd4",
+      "displayName": "peres84",
+      "image": "https://avatars.githubusercontent.com/u/19377207?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774682206700,
+      "changelog": "Initial release of Dead Man's Switch, a self-healing infrastructure guardian:\n\n- Monitors essential services (Tailscale, websites, disk, process health) in a strict diagnostic order.\n- Executes automated recovery playbooks and logs every incident to aid future diagnosis and learning.\n- Detects recurring failures, triggers appropriate alerting and optional cron-based monitoring.\n- Provides clear summary notifications and (if configured) concise voice alerts after each run.\n- Learns from unknown errors by attempting web-sourced solutions and updating playbooks.\n- User-invocable, with support for manual and automated (cron) checks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4d491f818b12a640da87be06c0504f0114d5382389cfce946a300a9727dab775"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26108,
+  "uuid": "skill-clawhub-delx-launch-audit-48h",
+  "skillKey": "clawhub-delx-launch-audit-48h",
+  "name": "Delx Launch Audit (48h)",
+  "summary": "Rapid OpenClaw launch audit focused on revenue and reliability. Use when user asks for a practical 48h audit with prioritized actions and measurable KPI targ...",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.delx_launch_audit_48h",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "David Batista",
+      "features": [
+        "Rapid OpenClaw launch audit focused on revenue and reliability",
+        "Use when user asks for a practical 48h audit with prioritized actions and measurable KPI targ..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/delx-launch-audit-48h@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/624359?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "delx-launch-audit-48h",
+      "url": "https://clawhub.ai/skills/delx-launch-audit-48h"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "delx-launch-audit-48h",
+    "url": "https://clawhub.ai/skills/delx-launch-audit-48h",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/delx-launch-audit-48h-39960a0f94f5d8c0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/delx-launch-audit-48h@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-delx-launch-audit-48h-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3aa74197b41ab63bba4ce4aca1217f429e6b518e3e238e01d1afec3ea494c70c",
+      "artifactSizeBytes": 2228
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T16:11:41.883Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31324,
+  "uuid": "skill-clawhub-guided-conversation",
+  "skillKey": "clawhub-guided-conversation",
+  "name": "Guided Conversation",
+  "summary": "Minimize user friction by asking up to 4 clarifying questions before executing actions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.guided_conversation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Szpili",
+      "features": [
+        "Minimize user friction by asking up to 4 clarifying questions before executing actions."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/guided-conversation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/87379393?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "guided-conversation",
+      "url": "https://clawhub.ai/skills/guided-conversation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "guided-conversation",
+    "url": "https://clawhub.ai/skills/guided-conversation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/guided-conversation-5ba47d388f55a2c8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/guided-conversation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-guided-conversation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c2e886fe26c5df882413db862e04501ecf07f5f1ca40ad4e543c5074d4adc3a8",
+      "artifactSizeBytes": 2320
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T01:21:04.443Z"
+}

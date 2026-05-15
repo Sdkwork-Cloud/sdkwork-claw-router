@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65562,
+  "uuid": "skill-clawhub-finance-news-brief",
+  "skillKey": "clawhub-finance-news-brief",
+  "name": "dabai/finance-news-brief",
+  "summary": "搜集过去 24 小时全球重要财经新闻，生成中文简报，输出为 Markdown 和正式 PDF 文件（含封面）。 覆盖全球宏观（美联储、汇率、大宗商品）、美股、港股、A股四大板块。 当用户提到\"财经简报\"、\"财经新闻\"、\"市场资讯\"、\"今日行情\"、\"最新财经\"、\"生成财经报告\" 等关键词时，必须使用此 skill。...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finance_news_brief",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jihefanlan-art",
+      "features": [
+        "搜集过去 24 小时全球重要财经新闻，生成中文简报，输出为 Markdown 和正式 PDF 文件（含封面）。 覆盖全球宏观（美联储、汇率、大宗商品）、美股、港股、A股四大板块。 当用户提到."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/finance-news-brief@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/230648622?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "finance-news-brief",
+      "url": "https://clawhub.ai/skills/finance-news-brief"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finance-news-brief",
+    "url": "https://clawhub.ai/skills/finance-news-brief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finance-news-brief-5d78d6e29199a16b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/finance-news-brief@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-finance-news-brief-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3914aa5ecb3cdea30970347514732d15466c9a519f6396de69c0600d877367b8",
+      "artifactSizeBytes": 3472
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T01:26:00.747Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/codex-sessions-manager@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codex_sessions_manager",
+  "skill": {
+    "id": 34537,
+    "skillKey": "clawhub-codex-sessions-manager",
+    "name": "Codex Sessions Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codex-sessions-manager",
+    "url": "https://clawhub.ai/skills/codex-sessions-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codex-sessions-manager-113a1411d10f3ee1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when the user wants to inspect, search, export, verify, clean up, delete, restore, or purge local Codex sessions stored under a Codex root suc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1939869736luosi",
+      "userId": "s17f5xqqt3df53p279b233gkms8632pb",
+      "displayName": "Rose",
+      "image": "https://avatars.githubusercontent.com/u/195262969?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 113,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777958812256,
+      "changelog": "codex-sessions-manager v1.0.1\n\n- Added new recoverable trash/restore/purge capabilities, enabling safe deletion and recovery of Codex sessions.\n- Introduced `doctor`/`inspect_root` commands for detailed diagnosis and verification of Codex storage health.\n- Expanded CLI and MCP coverage: new commands for project, trash, and global-state management.\n- Updated safety rules for all destructive operations; require confirmation for delete, restore, purge, and cleanup actions.\n- Enhanced filters and grouping for listing sessions (by project, update time, status).\n- Clarified response guidelines and non-goals—UI/TUI, automatic cleanup, and force-overwrite restore are explicitly out of scope.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e6f5dad517b913adafa9e7f53a3c4811d2f3d8b76fd3d681c14991ffc912da60"
+}

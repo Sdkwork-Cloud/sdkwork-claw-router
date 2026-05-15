@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meihua-yijing@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meihua_yijing",
+  "skill": {
+    "id": 66347,
+    "skillKey": "clawhub-meihua-yijing",
+    "name": "Meihua Yijing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meihua-yijing",
+    "url": "https://clawhub.ai/skills/meihua-yijing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meihua-yijing-7106cad57ce00858.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "梅花易数占卜，基于时间、数字、方位起卦，解读吉凶祸福"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mingo-318",
+      "userId": "s174azpqkfzaht4rsrns8gsy4983gadk",
+      "displayName": "Mingo_318",
+      "image": "https://avatars.githubusercontent.com/u/62329898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 416,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772788065529,
+      "changelog": "meihua-yijing 1.1.0 Changelog\n\n- Initial release of the \"meihua-yijing\" skill.\n- Provides 梅花易数占卜 based on time, numbers, or direction.\n- Automatically interprets hexagrams and delivers clear analysis of 吉凶祸福.\n- Scripted 卦象 generation and structured output format.\n- Explains 体用生克 and hexagram relationships for easy understanding.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7b70d174d4c4cf356199e067d364c5fc6c939c93880c2cd21bedc48a41295c90"
+}

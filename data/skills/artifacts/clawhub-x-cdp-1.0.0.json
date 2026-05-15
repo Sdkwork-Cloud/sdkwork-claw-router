@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x-cdp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_cdp",
+  "skill": {
+    "id": 13947,
+    "skillKey": "clawhub-x-cdp",
+    "name": "X CDP Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-cdp",
+    "url": "https://clawhub.ai/skills/x-cdp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-cdp-ffaeb6cacd3eeabd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate X (Twitter) via Chromium CDP: post tweets, reply, quote-retweet, publish articles. Uses real browser sessions with existing login, no API keys neede..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stwith",
+      "userId": "s17ezsymtfvrm2ehq9aac4c9nx83gwws",
+      "displayName": "Jason Chai",
+      "image": "https://avatars.githubusercontent.com/u/35755092?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 693,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 6,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772096697136,
+      "changelog": "x-cdp 1.0.0\n\n- Initial release: Browser-based automation for X (Twitter) using Chromium CDP—no API keys needed.\n- Supports posting tweets, replying, quote-retweeting, and publishing X Premium articles via real browser sessions.\n- Setup wizard included for easy installation, Chromium/puppeteer-core setup, and login verification.\n- Multi-account workflows supported using separate Chromium profiles and ports.\n- All actions scriptable via CLI with optional dry-run mode for preview and integration with agent/automation flows.\n- Includes safety notes on rate limits and account protection.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5b52f12d4c4b5014d286f2d28ce758c69a252b76ba71983d3d8f75c00c4cc335"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-text-remover-from-video-openapi-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_text_remover_from_video_openapi_skill",
+  "skill": {
+    "id": 56458,
+    "skillKey": "clawhub-ai-text-remover-from-video-openapi-skill",
+    "name": "AI Text Remover from Video – Remove Text from Video Online Free – API-powered"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-text-remover-from-video-openapi-skill",
+    "url": "https://clawhub.ai/skills/ai-text-remover-from-video-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-text-remover-from-video-openapi-skill-95e871b7fe005d34.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI text remover from video — remove text overlays or watermarks from a video"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkleming",
+      "userId": "s173eywkn9gkx5va9p2tb6kh5h843s3s",
+      "displayName": "sparkleMing",
+      "image": "https://avatars.githubusercontent.com/u/38350996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776146667109,
+      "changelog": "- Initial release of ai-text-remover-from-video-openapi-skill.\n- Allows automatic removal of text overlays or watermarks from videos using the WeShop AI API.\n- Requires a WESHOP_API_KEY (environment variable supported).\n- Includes endpoints for starting and monitoring runs, plus image upload.\n- Security guidance included to protect API keys.\n- Supports simple input (video URL) and auto-detection of watermarks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8cde043c46d56957d73d1aeb83766e1a0f721402ef32f743e75c2e3f71865196"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/viral-hook-weaponizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.viral_hook_weaponizer",
+  "skill": {
+    "id": 23811,
+    "skillKey": "clawhub-viral-hook-weaponizer",
+    "name": "Viral Hook Weaponizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "viral-hook-weaponizer",
+    "url": "https://clawhub.ai/skills/viral-hook-weaponizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/viral-hook-weaponizer-fda5f4b0ba04072c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates 10 unique, under-15-word viral hooks based on psychological triggers for short-form content to boost engagement."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "theshimaw-svg",
+      "userId": "s17bqg08nqtkqtxp44tqkv87sh848ejp",
+      "displayName": "theshimaw-svg",
+      "image": "https://avatars.githubusercontent.com/u/266850601?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 430,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775509954394,
+      "changelog": "- Initial release of Viral Hook Weaponizer.\n- Instantly generates 10 unique, under-15-word viral hooks per request.\n- Hooks leverage psychological drivers: fear, curiosity, status, and urgency.\n- Uses three proven archetypes: curiosity gap, bold claim, and relatable pain.\n- Outputs are concise, human-sounding, and platform-aware for short-form content.\n- Avoids generic content, technical explanations, and emojis.\n\nFollow me on x @SaasKafle",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3200fba616a36ba66b1d0ada80ad0f4e920c58a87b5a2b149083df0899bd6e9b"
+}

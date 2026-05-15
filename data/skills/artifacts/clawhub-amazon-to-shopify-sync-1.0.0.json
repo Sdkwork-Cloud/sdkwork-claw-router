@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-to-shopify-sync@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_to_shopify_sync",
+  "skill": {
+    "id": 15666,
+    "skillKey": "clawhub-amazon-to-shopify-sync",
+    "name": "amazon-to-shopify-sync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-to-shopify-sync",
+    "url": "https://clawhub.ai/skills/amazon-to-shopify-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-to-shopify-sync-10337302a98d0e46.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract multilingual product data from Amazon and sync it to Shopify with automatic token renewal and English content rewriting via REST Admin API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "walynlee",
+      "userId": "s177vftkv8zt1sdyfdq17bs29x83saaq",
+      "displayName": "Walyn",
+      "image": "https://avatars.githubusercontent.com/u/70092910?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 989,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772787310272,
+      "changelog": "amazon-to-shopify-sync 1.0.0\n\n- Initial release.\n- Extracts product data from Amazon (supports multiple languages).\n- Auto-rewrites French content into high-conversion English for Shopify listings.\n- Syncs products to Shopify using REST Admin API with automatic token renewal.\n- Designed to work with dinoho.myshopify.com authentication and dinoho.cn data endpoints.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a816e15b2cbfe2ce87dde14ee5e748e400227e8c748b4ad5879b9a5a38d9be2a"
+}

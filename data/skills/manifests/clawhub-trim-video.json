@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42896,
+  "uuid": "skill-clawhub-trim-video",
+  "skillKey": "clawhub-trim-video",
+  "name": "Trim Video",
+  "summary": "Get trimmed video clips ready to post, without touching a single slider. Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"trim...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trim_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dsewell-583h0",
+      "features": [
+        "Get trimmed video clips ready to post, without touching a single slider",
+        "Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"trim..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trim-video@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210889896?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trim-video",
+      "url": "https://clawhub.ai/skills/trim-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trim-video",
+    "url": "https://clawhub.ai/skills/trim-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trim-video-8a6455b2e3bd4651.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trim-video@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trim-video-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dc5679719c627392261a020c7821d4fd4cf2be5535132e8253b2424f9556ba07",
+      "artifactSizeBytes": 2411
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T04:49:48.135Z"
+}

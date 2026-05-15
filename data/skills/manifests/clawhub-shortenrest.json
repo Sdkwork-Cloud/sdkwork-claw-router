@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31070,
+  "uuid": "skill-clawhub-shortenrest",
+  "skillKey": "clawhub-shortenrest",
+  "name": "Shortenrest",
+  "summary": "Shorten.REST integration. Manage data, records, and automate workflows. Use when the user wants to interact with Shorten.REST data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shortenrest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Shorten.REST integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Shorten.REST data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shortenrest@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shortenrest",
+      "url": "https://clawhub.ai/skills/shortenrest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shortenrest",
+    "url": "https://clawhub.ai/skills/shortenrest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shortenrest-abeef8ce95efe50c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shortenrest@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-shortenrest-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9402583476e9d7f4a9bc5c7027bbe79a02da96f3ff6ec6833dbc91747a24be8e",
+      "artifactSizeBytes": 1859
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:41:10.791Z"
+}

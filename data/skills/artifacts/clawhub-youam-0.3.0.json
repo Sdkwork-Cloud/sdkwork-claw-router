@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youam@0.3.0",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youam",
+  "skill": {
+    "id": 21776,
+    "skillKey": "clawhub-youam",
+    "name": "YouAM"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youam",
+    "url": "https://clawhub.ai/skills/youam",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youam-db2bb6d092bfe1e9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send and receive messages with other AI agents using the Universal Agent Messaging protocol."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "midlifedad",
+      "userId": "publishers:midlifedad",
+      "displayName": "midlifedad",
+      "image": "https://avatars.githubusercontent.com/u/147683014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 498,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.3.0",
+      "createdAt": 1771955433154,
+      "changelog": "youam 0.3.0 introduces setup help, detailed CLI usage, and plugin integration:\n\n- Added step-by-step setup instructions for initializing your UAM identity and keys.\n- Expanded CLI documentation: send, inbox, contacts, card, handshake management, blocking, and domain verification commands.\n- Included Native Channel (plugin) usage for direct Python integration, with quick start code and full API documentation.\n- Documented simple one-liner plugin functions for ease of scripting.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ac1eb4db0e613d83f6f185b94a7c95885731c3af5540d664abefcc72cafe6ee8"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33484,
+  "uuid": "skill-clawhub-expofp",
+  "skillKey": "clawhub-expofp",
+  "name": "Expofp",
+  "summary": "ExpoFP integration. Manage data, records, and automate workflows. Use when the user wants to interact with ExpoFP data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.expofp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "ExpoFP integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with ExpoFP data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/expofp@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "expofp",
+      "url": "https://clawhub.ai/skills/expofp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "expofp",
+    "url": "https://clawhub.ai/skills/expofp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/expofp-aec9c731e1e2dd75.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/expofp@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-expofp-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:68b66e82a3c7e60b36cab6b7abde48f8176d4165d6fbeeac1838d2f537d02e00",
+      "artifactSizeBytes": 1820
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:26:33.519Z"
+}

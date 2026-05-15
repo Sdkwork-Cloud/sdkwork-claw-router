@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shanghai-hua@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shanghai_hua",
+  "skill": {
+    "id": 72989,
+    "skillKey": "clawhub-shanghai-hua",
+    "name": "上海话（沪语）"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shanghai-hua",
+    "url": "https://clawhub.ai/skills/shanghai-hua",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shanghai-hua-44f10725cb32201b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "上海话（沪语）对话 Skill（默认模式）。支持日常对话、问候、情感表达、美食、职场吐槽、上海本地特色文化等场景。说\"普通话模式\"可切换到正常普通话模式。触发词包括：侬、阿拉、啥、哪能、今朝、蛮、忒、扎劲、轧闹猛、白相、吃生活、扎台型、坍台、拎不清、拆烂污、捣浆糊、豁翎子、接翎子、小龙花、摸鱼、搭子、噶山湖等上海..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adchina2025",
+      "userId": "s178zr3agqc91dpj9mr6we2xn983g5jq",
+      "displayName": "adchina2025",
+      "image": "https://avatars.githubusercontent.com/u/265822641?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775469073708,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8297a2e318ea095512855e73e40c11290f5bae3e9ef490daeae3e9e5af73fc96"
+}

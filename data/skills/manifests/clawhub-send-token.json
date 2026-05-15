@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21591,
+  "uuid": "skill-clawhub-send-token",
+  "skillKey": "clawhub-send-token",
+  "name": "Send Token",
+  "summary": "Transfer tokens on Solana or Base. Use when the user wants to send, transfer, or pay tokens. Supports native coins (SOL, ETH) and tokens (USDC) by name, plus...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.send_token",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ant-1984",
+      "features": [
+        "Transfer tokens on Solana or Base",
+        "Use when the user wants to send, transfer, or pay tokens",
+        "Supports native coins (SOL, ETH) and tokens (USDC) by name, plus..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/send-token@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261687401?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "send-token",
+      "url": "https://clawhub.ai/skills/send-token"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "send-token",
+    "url": "https://clawhub.ai/skills/send-token",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/send-token-85db1657a3d9476c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/send-token@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-send-token-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e6b47f69c74ca1dd0533b28b3aeef6d91a404a521df815d08c456f9550974470",
+      "artifactSizeBytes": 2308
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T21:54:46.801Z"
+}

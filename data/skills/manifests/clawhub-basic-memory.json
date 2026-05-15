@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35447,
+  "uuid": "skill-clawhub-basic-memory",
+  "skillKey": "clawhub-basic-memory",
+  "name": "basic-memory",
+  "summary": "Gives your OpenClaw agent persistent memory across conversations by organizing entries in the native MEMORY.md and daily memory files. Automatically loads sa...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.basic_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "billyhetech",
+      "features": [
+        "Gives your OpenClaw agent persistent memory across conversations by organizing entries in the n.",
+        "Automatically loads sa..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/basic-memory@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261541299?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "basic-memory",
+      "url": "https://clawhub.ai/skills/basic-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "basic-memory",
+    "url": "https://clawhub.ai/skills/basic-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/basic-memory-73959117f901deb9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/basic-memory@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-basic-memory-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b1874a88c7a072a2dd92334b3ef178cfa92361d2fa4acd7e068ff6a1275e1c23",
+      "artifactSizeBytes": 2391
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T09:09:17.189Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/content-id-guide@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_id_guide",
+  "skill": {
+    "id": 9951,
+    "skillKey": "clawhub-content-id-guide",
+    "name": "Content Id Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-id-guide",
+    "url": "https://clawhub.ai/skills/content-id-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-id-guide-b203f587af1419c8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A calm way for creators to understand and organize automated content claims across platforms, so nothing important gets missed."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "otherpowers",
+      "userId": "s17810eyaktqpr5cakxrfkdm2d83hdtf",
+      "displayName": "OtherPowers",
+      "image": "https://avatars.githubusercontent.com/u/44530314?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2944,
+      "installsAllTime": 14,
+      "installsCurrent": 13,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773449072215,
+      "changelog": "**Summary:** Expanded safety, compliance, and structure for improved clarity and neutral support.\n\n- Added detailed metadata and compliance directives in SKILL.md, replacing the older skill.md.\n- Enhanced mandatory disclaimer requirements and session gating before claim-specific help.\n- Strengthened PII redaction and output hygiene rules for better privacy and neutrality.\n- Updated skill description and operating constraints for consistent non-advisory procedural support.\n- Formalized input schema and evidence organization prompts for more structured guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:68476c33e5faedd127e7a73015628daa3249816b95c9fe98cc5322604d83dde7"
+}

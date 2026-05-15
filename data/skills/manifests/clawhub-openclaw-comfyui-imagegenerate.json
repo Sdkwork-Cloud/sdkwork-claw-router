@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61344,
+  "uuid": "skill-clawhub-openclaw-comfyui-imagegenerate",
+  "skillKey": "clawhub-openclaw-comfyui-imagegenerate",
+  "name": "openclaw-comfyui-imagegenerate",
+  "summary": "通过本地 ComfyUI 生成图片并发送到指定飞书会话，成功发送后无回复文字，保持界面简洁。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_comfyui_imagegenerate",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yun-openclaw",
+      "features": [
+        "通过本地 ComfyUI 生成图片并发送到指定飞书会话，成功发送后无回复文字，保持界面简洁。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-comfyui-imagegenerate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/238936014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-comfyui-imagegenerate",
+      "url": "https://clawhub.ai/skills/openclaw-comfyui-imagegenerate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-comfyui-imagegenerate",
+    "url": "https://clawhub.ai/skills/openclaw-comfyui-imagegenerate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-comfyui-imagegenerate-21d4ee972a35dbc3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-comfyui-imagegenerate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-comfyui-imagegenerate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e28e9cd7bd517c4f6c567e5089f94a68812edb4789420b91a08e1dacfbcf801a",
+      "artifactSizeBytes": 2429
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T03:41:11.087Z"
+}

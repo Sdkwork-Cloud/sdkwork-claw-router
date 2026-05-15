@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bookwriter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bookwriter",
+  "skill": {
+    "id": 21513,
+    "skillKey": "clawhub-bookwriter",
+    "name": "book_writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bookwriter",
+    "url": "https://clawhub.ai/skills/bookwriter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bookwriter-d020c092f0aa88bb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates structured, argument-driven book manuscript sections using modular 800--1000 word conceptual units."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eithyhe",
+      "userId": "s171ycem7wgnv31jzhh2cmk6wn856yf3",
+      "displayName": "EithyHe",
+      "image": "https://avatars.githubusercontent.com/u/136100329?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 506,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772332471663,
+      "changelog": "Book-manuscript-writer v1.0.0 — Initial Release\n\n- Generates argument-driven book manuscript sections in modular, 800–1000 word units.\n- Enforces a five-phase analytical structure for each unit: Opening Claim, Tension, Analytical Development, Conceptual Elevation, and Closure.\n- Requires detailed, claim-based outlines before manuscript generation; collaborates with users to develop these if needed.\n- Ensures chapters build a rigorous argument arc, with each unit serving an indispensable conceptual role.\n- Designed exclusively for theoretical book chapters and essays, not for IMRaD-style academic articles.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6713dd74b41bb8ddb22951a0f4ccea2d8c16d65c11a0bc701a9644890a50f4c5"
+}

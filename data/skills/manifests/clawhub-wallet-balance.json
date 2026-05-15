@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31529,
+  "uuid": "skill-clawhub-wallet-balance",
+  "skillKey": "clawhub-wallet-balance",
+  "name": "wallet balance",
+  "summary": "Multi-chain wallet balances (EVM + BTC). Supported non-BTC addresses use the company MCP tool wallet-balance-query; EVM queries can fall back to public data...",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wallet_balance",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bevanding",
+      "features": [
+        "Multi-chain wallet balances (EVM + BTC)",
+        "Supported non-BTC addresses use the company MCP tool wallet-balance-query",
+        "EVM queries can fall back to public data..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wallet-balance@1.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/85435357?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wallet-balance",
+      "url": "https://clawhub.ai/skills/wallet-balance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wallet-balance",
+    "url": "https://clawhub.ai/skills/wallet-balance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wallet-balance-96e997d277a0bb18.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wallet-balance@1.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wallet-balance-1.4.0.json",
+      "version": "1.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4ce61225fb29cfb35c4461764d995ff4699cfb6b73683d16b7aa3c7a9413d0e9",
+      "artifactSizeBytes": 1913
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T03:06:39.949Z"
+}

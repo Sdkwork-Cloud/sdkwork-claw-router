@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54044,
+  "uuid": "skill-clawhub-dreaming-optimizer",
+  "skillKey": "clawhub-dreaming-optimizer",
+  "name": "🌙 dreaming-optimizer",
+  "summary": "Optimizes memory entries using LLM scoring, semantic deduplication, fact tagging, and writes consolidated summaries to persistent storage.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dreaming_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chongjie-ran",
+      "features": [
+        "Optimizes memory entries using LLM scoring, semantic deduplication, fact tagging, and writes co."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dreaming-optimizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/198864991?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dreaming-optimizer",
+      "url": "https://clawhub.ai/skills/dreaming-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dreaming-optimizer",
+    "url": "https://clawhub.ai/skills/dreaming-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dreaming-optimizer-d7fb1647f25ab03d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dreaming-optimizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dreaming-optimizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:525989d2ef71c51066b4ebb7ad563aa25777f1d2ecc4184795f6f07a5eaa131a",
+      "artifactSizeBytes": 2367
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T03:32:52.299Z"
+}

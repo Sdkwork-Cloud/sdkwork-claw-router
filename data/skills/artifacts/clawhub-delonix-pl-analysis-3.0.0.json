@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/delonix-pl-analysis@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.delonix_pl_analysis",
+  "skill": {
+    "id": 70938,
+    "skillKey": "clawhub-delonix-pl-analysis",
+    "name": "德胧P&L分析Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "delonix-pl-analysis",
+    "url": "https://clawhub.ai/skills/delonix-pl-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/delonix-pl-analysis-3b0f774299f7e92d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供酒店项目P&L全方位分析，包括损益表、投资回报、多店对标、成本异常诊断及偏差校准等功能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chaoliuzhu",
+      "userId": "s17e38390rnhxjtv52ft6b44cx84s4n1",
+      "displayName": "Chaoliuzhu",
+      "image": "https://avatars.githubusercontent.com/u/207801254?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1776960826577,
+      "changelog": "v3.0 德胧官方版 · 五维分析体系 · 支持投资回报/多店对标/成本诊断/偏差校准",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:af24619d4471a7a8321ba9659963df8b2876d7bdfe494a5c2b3eb2d19c6716e4"
+}

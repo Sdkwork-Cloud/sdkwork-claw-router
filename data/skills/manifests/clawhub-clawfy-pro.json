@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17688,
+  "uuid": "skill-clawhub-clawfy-pro",
+  "skillKey": "clawhub-clawfy-pro",
+  "name": "Clawfy Pro",
+  "summary": "Process [Clawfy Pro] webhook messages from the browser extension. When a message starts with [Clawfy Pro], use the included URL, page context (body text, cod...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawfy_pro",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chaoss",
+      "features": [
+        "Process [Clawfy Pro] webhook messages from the browser extension",
+        "When a message starts with [Clawfy Pro], use the included URL, page context (body text, cod..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawfy-pro@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82003311?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawfy-pro",
+      "url": "https://clawhub.ai/skills/clawfy-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawfy-pro",
+    "url": "https://clawhub.ai/skills/clawfy-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawfy-pro-010bc6717f255433.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawfy-pro@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawfy-pro-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e4aa3700ca764393f7e9002d5f4aded23f8a318e564c60380e4d454ad2dea4e8",
+      "artifactSizeBytes": 2445
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T10:12:54.618Z"
+}

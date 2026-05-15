@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/unraid-xml-generator@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unraid_xml_generator",
+  "skill": {
+    "id": 57838,
+    "skillKey": "clawhub-unraid-xml-generator",
+    "name": "Unraid XML Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unraid-xml-generator",
+    "url": "https://clawhub.ai/skills/unraid-xml-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unraid-xml-generator-d73f334db2086086.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate Unraid DockerMan user template XML files from structured input. Use when: the user asks to \"生成 Unraid XML 模板\", \"创建 Docker 模板\", \"为 XXX 写 Unraid 模板\",..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ashanzzz",
+      "userId": "s175ehx49gd7de4ab3sm8bakrs83nnan",
+      "displayName": "ashanzzz",
+      "image": "https://avatars.githubusercontent.com/u/19986978?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775475547837,
+      "changelog": "Republish with correct slug; English summary",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a6f6e55f92d7e7cc7af843f7541d35c22509a46f8a0931ea1d1c30bd14e4a345"
+}

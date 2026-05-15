@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47101,
+  "uuid": "skill-clawhub-gateway-restore",
+  "skillKey": "clawhub-gateway-restore",
+  "name": "Gateway Restore",
+  "summary": "Restore a gateway to its last known-good configuration, or tag the current config as known-good. Use when a gateway config change breaks something and you ne...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gateway_restore",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "halfdeadcat",
+      "features": [
+        "Restore a gateway to its last known-good configuration, or tag the current config as known-good",
+        "Use when a gateway config change breaks something and you ne..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gateway-restore@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33385118?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gateway-restore",
+      "url": "https://clawhub.ai/skills/gateway-restore"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gateway-restore",
+    "url": "https://clawhub.ai/skills/gateway-restore",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gateway-restore-3af8fff23715a92a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gateway-restore@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gateway-restore-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7cac321303ca181be2d17de1d313ebb58cf1a8ac67d905769f08f7a65b810692",
+      "artifactSizeBytes": 2341
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T19:05:31.525Z"
+}

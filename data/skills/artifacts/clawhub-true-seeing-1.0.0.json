@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/true-seeing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.true_seeing",
+  "skill": {
+    "id": 65886,
+    "skillKey": "clawhub-true-seeing",
+    "name": "True Seeing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "true-seeing",
+    "url": "https://clawhub.ai/skills/true-seeing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/true-seeing-0cd03a085d2acb92.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "审核 AI 生成文章中的可验证事实，通过 web search 逐条校验，输出差异报告并支持用户审批替换。当用户需要事实核查、验证文章准确性、检查数据日期金额是否正确、去除 AI 幻觉内容、或 fact-check 一篇文章时使用。触发于\"事实核查\"、\"验一下这些数据\"、\"检查事实\"、\"去幻觉\"、\"fact ch..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francisk",
+      "userId": "s171n0z34s9r66n5d000f58ejs85za45",
+      "displayName": "francisk",
+      "image": "https://avatars.githubusercontent.com/u/3042012?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 111,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777738056405,
+      "changelog": "Initial release: AI article fact-checker with state machine, parallel verification, and pseudo-quantification detection",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:adbdf2d4b9aab1bf2a521323cee49940c7fe03f34b7e238767b9b587a97b66b0"
+}

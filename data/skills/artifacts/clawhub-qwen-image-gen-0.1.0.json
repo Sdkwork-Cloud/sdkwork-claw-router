@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qwen-image-gen@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qwen_image_gen",
+  "skill": {
+    "id": 67347,
+    "skillKey": "clawhub-qwen-image-gen",
+    "name": "qwen-image-gen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qwen-image-gen",
+    "url": "https://clawhub.ai/skills/qwen-image-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qwen-image-gen-f351d266838225b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于阿里云百炼 Qwen-Image 文生图模型的生图 skill。支持同步生成、异步任务轮询、下载生成结果到本地。 当用户需要根据提示词生成图片、批量出图、指定尺寸/比例，或继续查询已有图片生成任务时，使用此 skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhouweico",
+      "userId": "s17ap9f1exnb5yh0k65q8gft0x83kntw",
+      "displayName": "Wei Zhou",
+      "image": "https://avatars.githubusercontent.com/u/4317360?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774432356973,
+      "changelog": "Qwen-Image-Gen Skill 1.0.0\n\n- Initial release of a skill for generating images using Alibaba Cloud Qwen-Image API.\n- Supports both synchronous and asynchronous image generation, with automatic mode selection based on the chosen model.\n- CLI tool to generate images with prompt, batch generation, specify size/ratio, perform dry-run checks, and manage async tasks.\n- Images are automatically downloaded as PNG to a local folder upon success.\n- Detailed parameter controls and model selection for balancing quality, speed, and cost.\n- Price hints and task/result links handling note.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2c8d3e28a570a4bb48af56e675e06c7e009ff2bfe0d1ce7af64c9e80fa3a7a94"
+}

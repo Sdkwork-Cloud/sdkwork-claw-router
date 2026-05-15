@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/macos-spm-app-packaging@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.macos_spm_app_packaging",
+  "skill": {
+    "id": 10501,
+    "skillKey": "clawhub-macos-spm-app-packaging",
+    "name": "Macos Spm App Packaging"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "macos-spm-app-packaging",
+    "url": "https://clawhub.ai/skills/macos-spm-app-packaging",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/macos-spm-app-packaging-0838ca88817885ad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scaffold, build, and package SwiftPM-based macOS apps without an Xcode project. Use when you need a from-scratch macOS app layout, SwiftPM targets/resources, a custom .app bundle assembly script, or signing/notarization/appcast steps outsi."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dimillian",
+      "userId": "publishers:dimillian",
+      "displayName": "Dimillian",
+      "image": "https://avatars.githubusercontent.com/u/535509?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2415,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1767863087164,
+      "changelog": "Inital release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:13e24dac7e82650b52a5c4461c0169ced3f78ad68eca1cd7e5c7aaa6da9fd89f"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/peft@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.peft",
+  "skill": {
+    "id": 12328,
+    "skillKey": "clawhub-peft",
+    "name": "Peft Fine Tuning"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "peft",
+    "url": "https://clawhub.ai/skills/peft",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/peft-60ec1732ff77892b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Parameter-efficient fine-tuning for LLMs using LoRA, QLoRA, and 25+ methods. Use when fine-tuning large models (7B-70B) with limited GPU memory, when you need to train <1% of parameters with minimal accuracy loss, or for multi-adapter serv."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "desperado991128",
+      "userId": "publishers:desperado991128",
+      "displayName": "Desperado991128",
+      "image": "https://avatars.githubusercontent.com/u/54814928?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2286,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769438898184,
+      "changelog": "- Initial release of parameter-efficient fine-tuning (PEFT) support for large language models (LLMs), including LoRA, QLoRA, and 25+ adapter methods.\n- Enables fine-tuning of 7B–70B models on consumer GPUs by training less than 1% of model parameters, with adapters as small as 6MB.\n- Provides memory-optimized workflows for single-GPU fine-tuning of even the largest models using quantization (QLoRA).\n- Integrates fully with the HuggingFace transformers ecosystem and official PEFT library.\n- Includes practical guides, recommended settings, and code for adapter training, merging, and multi-adapter serving.\n- Offers architecture-specific configuration and compares leading parameter-efficient fine-tuning methods.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d8f78bab117d8cf6f2c7d57926aa3cdf40e7b0edb7bf4f96afd2b68eb7cec198"
+}

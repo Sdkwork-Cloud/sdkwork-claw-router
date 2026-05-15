@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/phylo-tree@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.phylo_tree",
+  "skill": {
+    "id": 44157,
+    "skillKey": "clawhub-phylo-tree",
+    "name": "Phylo Tree"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "phylo-tree",
+    "url": "https://clawhub.ai/skills/phylo-tree",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/phylo-tree-00df0e44d428508d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate publication-quality maximum likelihood phylogenetic trees and figures from enzyme names or FASTA sequences with advanced model selection and bootstr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "billwanttobetop",
+      "userId": "s17f0x7jsbj6mm6833qy4hrgks84c476",
+      "displayName": "Billwanttobetop",
+      "image": "https://avatars.githubusercontent.com/u/103113834?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776957490189,
+      "changelog": "- Manual FASTA file input is now recommended as the main workflow; updated instructions for downloading sequences from UniProt.\n- Clarified that UniProt API usage (`--query`) is optional and may be unstable; suggests manual sequence download for reliability.\n- Updated security section to emphasize completely offline operation with FASTA files and clarified network behavior.\n- Rearranged use cases to prioritize FASTA input, with clearer step-by-step guidance.\n- Minor adjustments to language throughout for clarity and reliability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:abce52c486e24107df3a2d09a9a9d2e086defd09fe0a01aa07a8f7ee0a54a830"
+}

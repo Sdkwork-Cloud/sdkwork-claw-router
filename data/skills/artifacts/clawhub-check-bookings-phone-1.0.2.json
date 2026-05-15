@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/check-bookings-phone@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.check_bookings_phone",
+  "skill": {
+    "id": 68417,
+    "skillKey": "clawhub-check-bookings-phone",
+    "name": "Check Bookings Phone"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "check-bookings-phone",
+    "url": "https://clawhub.ai/skills/check-bookings-phone",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/check-bookings-phone-582cee5260f26e50.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "检查携程旅行app预售订单的日期可用性。通过ADB连接Android设备，自动化操作携程app，遍历\"未使用 预售订单\"中的每个订单，查询指定日期范围内每天的预约状态（可约、约满、补差价等）。当用户提到检查携程订单、查看预售订单可用日期、查酒店预约状态时触发此skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zcqqq",
+      "userId": "s171vj616veh2p9d0vrqgrt8z983j0x5",
+      "displayName": "Chao Zheng",
+      "image": "https://avatars.githubusercontent.com/u/10296164?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 555,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772423568463,
+      "changelog": "- Added a new section for required environment variables in the SKILL.md file.\n- Included an explicit privacy notice about screenshot transmission to external visual model APIs.\n- No changes to code or behavior; documentation only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b700fbaa5e94c68a51c13a0e29fb924615fc6b0dcecc1f6f138cb2865c8d1c65"
+}

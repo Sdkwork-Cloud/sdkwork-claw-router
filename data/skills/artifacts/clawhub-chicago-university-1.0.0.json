@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chicago-university@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chicago_university",
+  "skill": {
+    "id": 49578,
+    "skillKey": "clawhub-chicago-university",
+    "name": "chicago-university"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chicago-university",
+    "url": "https://clawhub.ai/skills/chicago-university",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chicago-university-c664ff25b5cce9f3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides in-depth information on University of Chicago's history, Nobel laureates, Chicago School economics, nuclear research, and endowment fund management."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 75,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777525606505,
+      "changelog": "Initial OmniPedia publish: University of Chicago — 以经济学与物理学诺奖产出闻名的学术重镇及芝加哥学派发源地",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:071d6f9dc259528178d7dc4be642558345209d8599f681dae50bf7f17655e553"
+}

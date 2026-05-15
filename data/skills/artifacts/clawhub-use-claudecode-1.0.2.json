@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/use-claudecode@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.use_claudecode",
+  "skill": {
+    "id": 19698,
+    "skillKey": "clawhub-use-claudecode",
+    "name": "use-claudecode"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "use-claudecode",
+    "url": "https://clawhub.ai/skills/use-claudecode",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/use-claudecode-b184121c14685612.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A universal MCP-compatible tool/skill that empowers ANY AI Agent to natively call the local Anthropic Claude Code CLI. Ideal for code refactoring, large scal..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bighit1",
+      "userId": "s17f73daw06nn8zry28vsdx7mn83svp6",
+      "displayName": "BigHit1",
+      "image": "https://avatars.githubusercontent.com/u/105217660?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 497,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773304339882,
+      "changelog": "- No file changes detected in this release.\n- Documentation and functionality remain the same as the previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0db06f0c0d6b8120b5477c025e147eba1499e984dd9eae9b4fdd02560b55dec7"
+}

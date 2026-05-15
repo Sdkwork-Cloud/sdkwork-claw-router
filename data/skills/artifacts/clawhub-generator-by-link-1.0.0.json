@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/generator-by-link@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.generator_by_link",
+  "skill": {
+    "id": 47415,
+    "skillKey": "clawhub-generator-by-link",
+    "name": "Generator By Link"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "generator-by-link",
+    "url": "https://clawhub.ai/skills/generator-by-link",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/generator-by-link-2c2c5e8645cf6ee4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get generated video clips ready to post, without touching a single slider. Upload your URL or link (MP4, MOV, WebM, AVI, up to 500MB), say something like \"ge..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 114,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777337734934,
+      "changelog": "Initial release of Generator by Link — Create Videos from URLs.\n\n- Instantly generate 1080p MP4 videos from URLs (webpages, YouTube, articles) or direct uploads (MP4, MOV, WebM, AVI, up to 500MB).\n- Simple workflow: provide a link or file, describe your needs, and get a generated video ready to post—no manual editing required.\n- Includes credit system with anonymous token support and free trial credits (100, valid for 7 days).\n- Full support for uploading, exporting, checking credits and status, and summarizing video timelines via API-driven cloud pipeline.\n- Designed for marketers, bloggers, and creators seeking fast, no-fuss video generation from online content.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ff0cff0866b9f53bdbe7b54b17af1c99378367a665e05aafab57c73bb0701552"
+}

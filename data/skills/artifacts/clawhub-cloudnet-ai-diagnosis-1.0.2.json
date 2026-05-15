@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cloudnet-ai-diagnosis@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloudnet_ai_diagnosis",
+  "skill": {
+    "id": 59759,
+    "skillKey": "clawhub-cloudnet-ai-diagnosis",
+    "name": "Cloudnet AI Diagnostics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloudnet-ai-diagnosis",
+    "url": "https://clawhub.ai/skills/cloudnet-ai-diagnosis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloudnet-ai-diagnosis-0df53526d60e8fe7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cloudnet AI Diagnostics针对无线场景下终端体验差、网卡、无法接入 WiFi 等问题进行排障的技能"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cloudnet-skills",
+      "userId": "s1799rnqb8vyh5wgqvrfvbmefn83nm9f",
+      "displayName": "Cloudnet",
+      "image": "https://avatars.githubusercontent.com/u/271216532?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 286,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776132727376,
+      "changelog": "No user-visible changes in this version.\n\n- Version incremented to 1.0.2 with no code or documentation changes detected.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e9abe0c59a3ce6825b661a026f03c44eeedff72fdf141b123214d737a83cbeb7"
+}

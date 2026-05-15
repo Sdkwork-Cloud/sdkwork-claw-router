@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pacbio@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pacbio",
+  "skill": {
+    "id": 49198,
+    "skillKey": "clawhub-pacbio",
+    "name": "Pacbio"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pacbio",
+    "url": "https://clawhub.ai/skills/pacbio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pacbio-f401b44605814f30.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides detailed information on PacBio's long-read DNA sequencing technology, products, accuracy, history, and market position in genomics."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 84,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778094663359,
+      "changelog": "Initial release introducing the PacBio skill — a comprehensive overview of PacBio’s long-read sequencing technology and business.\n\n- Covers company history, key technological milestones, and product launches (SMRT, Sequel II, Revio, Onso).\n- Summarizes PacBio's business model, including instrument sales, consumables, and services.\n- Analyzes competitive advantages such as HiFi accuracy, patent portfolio, and impact on genome assembly.\n- Provides essential data: revenue, installed base, read lengths, and accuracy metrics.\n- Includes notable facts about the technology and its role in landmark genomics projects.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a10a20310b46e8f2c9edf1ac57912e6f8d3a34afaf5881a99017a078cefe7be8"
+}

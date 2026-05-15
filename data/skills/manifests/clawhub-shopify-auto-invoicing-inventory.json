@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29916,
+  "uuid": "skill-clawhub-shopify-auto-invoicing-inventory",
+  "skillKey": "clawhub-shopify-auto-invoicing-inventory",
+  "name": "Shopify Auto Invoicing & Inventory",
+  "summary": "Lightweight Shopify order invoicing and inventory operations workflow for detecting new orders, preparing invoice-ready billing data, updating stock tables,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shopify_auto_invoicing_inventory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GaelBuenoBarthe",
+      "features": [
+        "Lightweight Shopify order invoicing and inventory operations workflow for detecting new orders,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shopify-auto-invoicing-inventory@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/118111808?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shopify-auto-invoicing-inventory",
+      "url": "https://clawhub.ai/skills/shopify-auto-invoicing-inventory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shopify-auto-invoicing-inventory",
+    "url": "https://clawhub.ai/skills/shopify-auto-invoicing-inventory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shopify-auto-invoicing-inventory-f1d889e8c9a1135c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shopify-auto-invoicing-inventory@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shopify-auto-invoicing-inventory-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:472296e671fc4212f7815128c41d9070749d3faeee716cd1318bef095994839c",
+      "artifactSizeBytes": 2552
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T10:17:37.380Z"
+}

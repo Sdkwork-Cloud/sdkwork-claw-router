@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/neirong-liebian-gongchang@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neirong_liebian_gongchang",
+  "skill": {
+    "id": 71740,
+    "skillKey": "clawhub-neirong-liebian-gongchang",
+    "name": "内容裂变工厂"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neirong-liebian-gongchang",
+    "url": "https://clawhub.ai/skills/neirong-liebian-gongchang",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neirong-liebian-gongchang-6160459a314f103d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小红书热点追踪 × 爆文生成 × 知识卡片 × 公众号发布全链路自动化"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zlszhonglongshen",
+      "userId": "s178jr2zywr30fqk79fnqadhks83gpp0",
+      "displayName": "zlszhonglongshen",
+      "image": "https://avatars.githubusercontent.com/u/9023908?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 117,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777491764665,
+      "changelog": "Initial release of “内容裂变工厂”:\n\n- Enables full automation for trending topic selection, AI-driven analysis, viral article creation, knowledge card generation, and cross-platform publishing (WeChat, Feishu).\n- Integrates multiple skills: Agent-Reach (hotspot capture), summarize (trend analysis & suggestions), card-renderer (stylish info cards), wechat-article-pro (deep-dive posts), feishu_doc (archival).\n- Supports command triggers, manual & scheduled execution, and custom configuration.\n- Provides robust workflow steps with error handling and troubleshooting guidance.\n- Designed for efficiency: minimizes manual effort, maximizes content originality and team knowledge accumulation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:77e09c5be2f03586a1844a0b0919315c2c2b54f2173a50be4cab63d132741adb"
+}

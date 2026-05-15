@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62555,
+  "uuid": "skill-clawhub-xiaohongshu-auto",
+  "skillKey": "clawhub-xiaohongshu-auto",
+  "name": "Xiaohongshu Auto",
+  "summary": "小红书自动化技能，自动发布笔记和管理内容",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_auto",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "broommonk",
+      "features": [
+        "小红书自动化技能，自动发布笔记和管理内容"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaohongshu-auto@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46682368?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaohongshu-auto",
+      "url": "https://clawhub.ai/skills/xiaohongshu-auto"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-auto",
+    "url": "https://clawhub.ai/skills/xiaohongshu-auto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-auto-ca9b17156772d13b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaohongshu-auto@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaohongshu-auto-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:33fc1d7d395af14540f5ce3e4874db4dba546433acc664627c36040be06b8cd1",
+      "artifactSizeBytes": 2144
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T05:17:29.231Z"
+}

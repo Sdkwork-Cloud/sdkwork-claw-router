@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40741,
+  "uuid": "skill-clawhub-session-compress",
+  "skillKey": "clawhub-session-compress",
+  "name": "session-compress",
+  "summary": "Compress OpenClaw session .jsonl files by trimming old messages while preserving system messages, recent turns, and task-relevant context.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_compress",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ZZQSAMA066",
+      "features": [
+        "Compress OpenClaw session .jsonl files by trimming old messages while preserving system message."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/session-compress@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/76558347?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "session-compress",
+      "url": "https://clawhub.ai/skills/session-compress"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-compress",
+    "url": "https://clawhub.ai/skills/session-compress",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-compress-8e6274f4b40461f0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/session-compress@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-session-compress-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2d94d89b1e867e44bed2ebf9cc1872bff24f0c92107167761c63af3252f12618",
+      "artifactSizeBytes": 2294
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T08:09:20.698Z"
+}

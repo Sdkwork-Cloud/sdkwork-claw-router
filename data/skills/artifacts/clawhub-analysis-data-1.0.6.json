@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/analysis-data@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.analysis_data",
+  "skill": {
+    "id": 20760,
+    "skillKey": "clawhub-analysis-data",
+    "name": "Analysis Data"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "analysis-data",
+    "url": "https://clawhub.ai/skills/analysis-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/analysis-data-b37f6969b50c2d11.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when the user wants to create visualizations (charts, dashboards, diagrams, Gantt, PPT), analyze data (Excel/CSV upload, cross-file analysis,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chartgen-ai",
+      "userId": "s1760v3fs4sg6tdv3k9gq9792h83h5yy",
+      "displayName": "ChartGen AI",
+      "image": "https://avatars.githubusercontent.com/u/128801127?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 518,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1778043162045,
+      "changelog": "- Now uses a structured JSON request file for submissions instead of command-line arguments containing user data.\n- Adds strong guidance to never put user queries, channel names, or file paths directly inside shell commands; always generate a JSON file and reference its path.\n- Updates tool commands: submit requests by filename only and describes the new request JSON shape.\n- Enforces stricter validation of task IDs before polling results, stopping with an error if the ID is invalid.\n- Clarifies network boundary—skills only send data to chartgen.ai and do not support alternate API endpoints.\n- Improves workflow documentation for secure and robust operation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c8fd0827e74e6c456c92ef00e552c67612cd9f9c48f6e108dae30880d5c29d4b"
+}

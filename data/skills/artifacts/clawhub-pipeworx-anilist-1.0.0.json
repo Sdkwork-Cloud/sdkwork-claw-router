@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pipeworx-anilist@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_anilist",
+  "skill": {
+    "id": 44792,
+    "skillKey": "clawhub-pipeworx-anilist",
+    "name": "Pipeworx anilist"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-anilist",
+    "url": "https://clawhub.ai/skills/pipeworx-anilist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-anilist-c832fa574f2319f7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search, retrieve, and get trending anime details including title, episodes, status, score, genres, and synopsis via AniList GraphQL API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "b-gutman",
+      "userId": "s17de0904v925begb7h04jkph984bgct",
+      "displayName": "Bruce Gutman",
+      "image": "https://avatars.githubusercontent.com/u/270792185?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776900699866,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0ddc9b76d2e325cb673022108104e256784c3a5cff4bf3cf07ceaddc1e1f555a"
+}

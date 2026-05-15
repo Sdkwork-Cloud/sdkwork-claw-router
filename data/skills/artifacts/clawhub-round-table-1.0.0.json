@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/round-table@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.round_table",
+  "skill": {
+    "id": 69676,
+    "skillKey": "clawhub-round-table",
+    "name": "jinx"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "round-table",
+    "url": "https://clawhub.ai/skills/round-table",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/round-table-b8c7422350ea0cdd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "圆桌讨论模式——以\"求真\"为目标的结构化多角色深度对话。当用户说\"圆桌\"、\"圆桌讨论\"、\"roundtable\"或类似触发词时激活。也适用于需要多视角深度探讨任何议题的场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jingxxxxx",
+      "userId": "s178527fpkpdhzegsn689e21d583hpts",
+      "displayName": "jingxxxxx",
+      "image": "https://avatars.githubusercontent.com/u/258163677?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 235,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774240900615,
+      "changelog": "Initial release of \"roundtable\" discussion mode—a structured, multi-role deep-dive dialogue for truth-seeking.\n\n- Activates when user inputs \"圆桌\", \"圆桌讨论\", \"roundtable\", or similar keywords.\n- Host guides the discussion as a rational moderator, inviting 3-4 ideologically distinct figures with MBTI types for each.\n- Dialog proceeds in structured rounds: topic definition, viewpoint sharing, ASCII framework visualization, and dynamic questioning.\n- Markdown formatting ensures clarity; users can control discussion flow with commands.\n- Ends with a knowledge network summary upon user request.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5ac8d94914b6c7907e4321bdffa475176c6119340e2654e4867ccf90f58db657"
+}

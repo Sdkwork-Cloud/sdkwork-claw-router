@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37645,
+  "uuid": "skill-clawhub-psyke-audit",
+  "skillKey": "clawhub-psyke-audit",
+  "name": "Psyke SEO & GEO Audit",
+  "summary": "Produce a branded Psyke SEO & GEO audit deck for any website. Use when asked to run an SEO audit, GEO audit, site audit, or website health check for a Psyke...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.psyke_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Beebee",
+      "features": [
+        "Produce a branded Psyke SEO & GEO audit deck for any website",
+        "Use when asked to run an SEO audit, GEO audit, site audit, or website health check for a Psyke.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/psyke-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257633119?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "psyke-audit",
+      "url": "https://clawhub.ai/skills/psyke-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "psyke-audit",
+    "url": "https://clawhub.ai/skills/psyke-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/psyke-audit-ba22c5c2fab9b1f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/psyke-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-psyke-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:389f4573bc24441086e37c5a0545f6ee5f715905d7f7041941777c0bd968eb08",
+      "artifactSizeBytes": 2020
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T04:48:37.983Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/divide-agent@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.divide_agent",
+  "skill": {
+    "id": 16655,
+    "skillKey": "clawhub-divide-agent",
+    "name": "Divide Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "divide-agent",
+    "url": "https://clawhub.ai/skills/divide-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/divide-agent-3f70ac23130dee32.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI agent for divide agent tasks"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alvinecarn",
+      "userId": "publishers:alvinecarn",
+      "displayName": "alvinecarn",
+      "image": "https://avatars.githubusercontent.com/u/255032544?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 852,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771154135973,
+      "changelog": "Initial release of divide-agent skill.\n\n- Introduces capabilities for decomposing problems using the MECE principle.\n- Provides step-by-step instructions for breaking down user tasks into two MECE layers.\n- Supports various decomposition methods: existing analysis models, element, process, symmetric dichotomy, and matrix.\n- Outputs results as a tree diagram in mermaid syntax and generates a wiki document.\n- Includes workflow and usage notes for consistent application.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a069703b0e2576e0822cc3e90b4d7b0108fb8a39b3a4f7dff9fadee98bd4ba14"
+}

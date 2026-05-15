@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-sender-dxx@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_sender_dxx",
+  "skill": {
+    "id": 65260,
+    "skillKey": "clawhub-wechat-sender-dxx",
+    "name": "WeChat Sender by dxx"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-sender-dxx",
+    "url": "https://clawhub.ai/skills/wechat-sender-dxx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-sender-dxx-0c83f1e6382db67f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过OpenClaw微信通道主动发送文字、图片和文件消息，支持单发、定时和批量推送，需联系人已存在聊天记录。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ntaffffff",
+      "userId": "s178h8rgjjj5ctbk1bkky72vph8439t6",
+      "displayName": "ntaffffff",
+      "image": "https://avatars.githubusercontent.com/u/186145692?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775607629980,
+      "changelog": "Initial release of WeChat Sender skill.\n\n- Enables proactive sending of WeChat messages via the OpenClaw Weixin channel.\n- Supports multiple message types: text, image, and file.\n- Includes security measures: contact whitelist, rate limiting, content audit, and user authorization.\n- Provides sample scripts and detailed usage instructions.\n- Error handling and troubleshooting guide included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e45bedabdc0918ffc1a8299493d6b26fd8a1d881b2d5523a318286a606a087ca"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70194,
+  "uuid": "skill-clawhub-requirements-analyzer",
+  "skillKey": "clawhub-requirements-analyzer",
+  "name": "joe-tester",
+  "summary": "专业的需求分析专家，擅长从多种类型文档（Excel、PNG图片、TXT、PDF、Word）中提取和结构化整理需求信息。能够识别功能需求、非功能需求、业务规则、约束条件，并输出标准化的需求分析文档，包括需求依赖关系图和待确认问题清单。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.requirements_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xuping2012",
+      "features": [
+        "专业的需求分析专家，擅长从多种类型文档（Excel、PNG图片、TXT、PDF、Word）中提取和结构化整理需求信息。能够识别功能需求、非功能需求、业务规则、约束条件，并输出标准化的需求分析."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/requirements-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20850694?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "requirements-analyzer",
+      "url": "https://clawhub.ai/skills/requirements-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "requirements-analyzer",
+    "url": "https://clawhub.ai/skills/requirements-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/requirements-analyzer-9db53625ff3a0395.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/requirements-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-requirements-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b8b359c5aca85fffeca37a5cd1c5ca92295737c427376a0cd044b30acfb9b11",
+      "artifactSizeBytes": 2637
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T09:29:25.625Z"
+}

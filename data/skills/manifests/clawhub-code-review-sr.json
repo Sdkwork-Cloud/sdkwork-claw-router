@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17287,
+  "uuid": "skill-clawhub-code-review-sr",
+  "skillKey": "clawhub-code-review-sr",
+  "name": "Code Review",
+  "summary": "AI-powered code review that combines fast local static analysis with deep AI reasoning. Catches bugs, security vulnerabilities, performance issues, and style...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_review_sr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shadow Rose",
+      "features": [
+        "AI-powered code review that combines fast local static analysis with deep AI reasoning",
+        "Catches bugs, security vulnerabilities, performance issues, and style..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/code-review-sr@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262919821?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "code-review-sr",
+      "url": "https://clawhub.ai/skills/code-review-sr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-review-sr",
+    "url": "https://clawhub.ai/skills/code-review-sr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-review-sr-a571d7f61203e54a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/code-review-sr@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-code-review-sr-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bf037b9d6216bbd6a1bb177a58c198aeddae9a549884dac63e4f46d2a5c6f169",
+      "artifactSizeBytes": 2367
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T19:19:23.225Z"
+}

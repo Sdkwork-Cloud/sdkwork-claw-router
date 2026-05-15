@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openapi-parser@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openapi_parser",
+  "skill": {
+    "id": 45988,
+    "skillKey": "clawhub-openapi-parser",
+    "name": "openapi-parser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openapi-parser",
+    "url": "https://clawhub.ai/skills/openapi-parser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openapi-parser-ec23555734bbebd5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Parses complex OpenAPI specs and generates Drift test cases from them. Use whenever the user wants to generate, write, or scaffold Drift tests from an OpenAP..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kevinrvaz",
+      "userId": "s17d26vzq6j3bkdvf2xsdqayad83gyp1",
+      "displayName": "Kevin Rohan Vaz",
+      "image": "https://avatars.githubusercontent.com/u/36708857?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776194249055,
+      "changelog": "- Initial release of the openapi-parser skill.\n- Parses complex OpenAPI 3.x specs and generates Drift test cases, supporting advanced patterns like anyOf, oneOf, allOf, discriminators, polymorphism, inheritance, $ref chains, regex patterns, enums, and optional fields.\n- Provides a clear workflow: extracting endpoint definitions, resolving $refs, enumerating schema combinations, and generating ready-to-paste Drift YAML for maximal test coverage.\n- Includes detailed guides and references for mapping OpenAPI schema variants to Drift operations and datasets.\n- Outputs include analysis, operations YAML, datasets (if needed), and notes on intentionally excluded schema combinations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6a25f29a65e5c4f75ec86fb555847025efb8d6df80c7effda40f4fe7bff770f9"
+}

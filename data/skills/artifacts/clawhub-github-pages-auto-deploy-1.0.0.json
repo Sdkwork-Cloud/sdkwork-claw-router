@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-pages-auto-deploy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_pages_auto_deploy",
+  "skill": {
+    "id": 15133,
+    "skillKey": "clawhub-github-pages-auto-deploy",
+    "name": "GitHub Pages Auto Deploy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-pages-auto-deploy",
+    "url": "https://clawhub.ai/skills/github-pages-auto-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-pages-auto-deploy-03598c5ca4f29220.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Auto-deploy websites to GitHub Pages with custom domain support"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sendwealth",
+      "userId": "publishers:sendwealth",
+      "displayName": "sendwealth",
+      "image": "https://avatars.githubusercontent.com/u/261151873?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 975,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772258128933,
+      "changelog": "Initial release.\n\n- Auto-deploy static websites to GitHub Pages on every code push.\n- Supports custom domain binding, free HTTPS, and CDN acceleration.\n- Step-by-step setup guide including Actions workflow configuration.\n- Performance, caching, and monitoring recommendations included.\n- Suitable for blogs, company sites, docs, portfolios, and static apps.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:91d4580447a29ee705e9d6f1e4569f781bca62d3880e759e2d9da0a68e4c2658"
+}

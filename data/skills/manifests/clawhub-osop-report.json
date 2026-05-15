@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41627,
+  "uuid": "skill-clawhub-osop-report",
+  "skillKey": "clawhub-osop-report",
+  "name": "Osop Report",
+  "summary": "Convert .osop and .osoplog.yaml into standalone HTML report with dark mode and expandable nodes",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.osop_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Archie0125",
+      "features": [
+        "Convert .osop and .osoplog.yaml into standalone HTML report with dark mode and expandable nodes"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/osop-report@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58622712?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "osop-report",
+      "url": "https://clawhub.ai/skills/osop-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "osop-report",
+    "url": "https://clawhub.ai/skills/osop-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/osop-report-6f3e89249a5d0ebc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/osop-report@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-osop-report-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b92a81e0a18871a28c5b26f42a887d79976ec2a4eaf09e0d36f6a44241b75907",
+      "artifactSizeBytes": 1842
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T11:27:24.052Z"
+}

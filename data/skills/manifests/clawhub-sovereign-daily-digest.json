@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18189,
+  "uuid": "skill-clawhub-sovereign-daily-digest",
+  "skillKey": "clawhub-sovereign-daily-digest",
+  "name": "Sovereign Daily Digest",
+  "summary": "Compile and summarize configured news, weather, calendar, tasks, quotes, and more into a structured, daily personal intelligence briefing.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sovereign_daily_digest",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ryudi84",
+      "features": [
+        "Compile and summarize configured news, weather, calendar, tasks, quotes, and more into a struct."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sovereign-daily-digest@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67792598?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sovereign-daily-digest",
+      "url": "https://clawhub.ai/skills/sovereign-daily-digest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sovereign-daily-digest",
+    "url": "https://clawhub.ai/skills/sovereign-daily-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sovereign-daily-digest-8e8acf091a493dd7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sovereign-daily-digest@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sovereign-daily-digest-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c159873a5f403c5f0fa38c62b1f508c3061d2af27b55326f602a45c97625884c",
+      "artifactSizeBytes": 1957
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T00:24:52.109Z"
+}

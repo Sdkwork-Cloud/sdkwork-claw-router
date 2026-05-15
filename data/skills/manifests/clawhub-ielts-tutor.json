@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56282,
+  "uuid": "skill-clawhub-ielts-tutor",
+  "skillKey": "clawhub-ielts-tutor",
+  "name": "IELTS Tutor",
+  "summary": "IELTS exam tutoring skill using a structured \"quiz → attempt → correction → review\" loop. This skill should be used when the user wants to practice IELTS wri...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ielts_tutor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chang Liu",
+      "features": [
+        "IELTS exam tutoring skill using a structured \"quiz → attempt → correction → review\" loop",
+        "This skill should be used when the user wants to practice IELTS wri..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ielts-tutor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1787766?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ielts-tutor",
+      "url": "https://clawhub.ai/skills/ielts-tutor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ielts-tutor",
+    "url": "https://clawhub.ai/skills/ielts-tutor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ielts-tutor-6ecf399b892aec98.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ielts-tutor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ielts-tutor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b6fce5975fbe01805698154d81fb72d57e6e8fc7ff014bd290f4384c12de5e0c",
+      "artifactSizeBytes": 1930
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T04:31:08.215Z"
+}

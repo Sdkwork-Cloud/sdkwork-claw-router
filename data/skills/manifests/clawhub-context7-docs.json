@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18419,
+  "uuid": "skill-clawhub-context7-docs",
+  "skillKey": "clawhub-context7-docs",
+  "name": "Context7 Documentation Skill",
+  "summary": "Fetches up-to-date, version-specific documentation and code examples for any programming library or framework from Context7. Use this skill when the user nee...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context7_docs",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jay Lane",
+      "features": [
+        "Fetches up-to-date, version-specific documentation and code examples for any programming librar.",
+        "Use this skill when the user nee..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/context7-docs@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1765190?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "context7-docs",
+      "url": "https://clawhub.ai/skills/context7-docs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context7-docs",
+    "url": "https://clawhub.ai/skills/context7-docs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context7-docs-6bfdb6d225471fb7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/context7-docs@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-context7-docs-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f42c402fd9596ea41532afde515fdd24ce441bfb0cb0364790aa75e9df94779d",
+      "artifactSizeBytes": 2364
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T08:32:25.637Z"
+}

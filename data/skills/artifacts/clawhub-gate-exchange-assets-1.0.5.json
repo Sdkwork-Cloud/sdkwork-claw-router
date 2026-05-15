@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gate-exchange-assets@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_exchange_assets",
+  "skill": {
+    "id": 22890,
+    "skillKey": "clawhub-gate-exchange-assets",
+    "name": "Gate Exchange Assets"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-exchange-assets",
+    "url": "https://clawhub.ai/skills/gate-exchange-assets",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-exchange-assets-47a19d79f2f28b1c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Gate multi-account asset and balance query skill. Use when the user asks to check total assets, account balance, or specific coin holdings across all account..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gate-exchange",
+      "userId": "s172g4d1dcv6ccs6desbb2xw1583qza9",
+      "displayName": "Gate",
+      "image": "https://avatars.githubusercontent.com/u/33109813?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 458,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1775642341697,
+      "changelog": "- Runtime rules location updated: Now references `./references/gate-runtime-rules.md` (was `../gate-runtime-rules.md`).\n- Added `metadata` block for compatibility, including `openclaw` environment requirements and homepage link.\n- Removed unused files: `CHANGELOG.md`, `README.md`, and `references/scenarios.md`.\n- Added `references/gate-runtime-rules.md` to document runtime guidelines.\n- No changes to query logic or API surface.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4f758176996bdad620fd8607e7939a05a7541910cd64457d939684748be1b3a1"
+}

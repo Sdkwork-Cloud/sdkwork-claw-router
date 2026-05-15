@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weather-skill-hangs-001@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_skill_hangs_001",
+  "skill": {
+    "id": 39812,
+    "skillKey": "clawhub-weather-skill-hangs-001",
+    "name": "weather-skill-hangs-001"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-skill-hangs-001",
+    "url": "https://clawhub.ai/skills/weather-skill-hangs-001",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-skill-hangs-001-bed7fe4250fecf28.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides simulated current weather descriptions including temperature for specified major cities to assist travel and daily planning."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hangs111",
+      "userId": "s175sve6cawfb0debqtrqr7se1858bb3",
+      "displayName": "HangS111",
+      "image": "https://avatars.githubusercontent.com/u/188341870?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776749675179,
+      "changelog": "Initial release of Weather Skill.\n\n- Provides current weather descriptions based on city name.\n- Returns simulated (mock) weather data in a simple, structured format.\n- Designed for conversational agents and chatbot integration.\n- Supports basic use cases like travel planning and daily weather checks.\n- Only major cities are currently supported.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7850b8b2382a6db3f40e89e840669777899aae26ca0d90e37f3cfe4cdc8ba27e"
+}

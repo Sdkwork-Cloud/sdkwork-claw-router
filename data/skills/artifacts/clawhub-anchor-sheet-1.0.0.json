@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/anchor-sheet@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anchor_sheet",
+  "skill": {
+    "id": 55250,
+    "skillKey": "clawhub-anchor-sheet",
+    "name": "Anchor Sheet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anchor-sheet",
+    "url": "https://clawhub.ai/skills/anchor-sheet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anchor-sheet-7e11a25f5cacfe15.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract per-subsection “anchor facts” (NO PROSE) from evidence packs so the writer is forced to include concrete numbers/benchmarks/limitations instead of ge..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "willoscar",
+      "userId": "publishers:willoscar",
+      "displayName": "WILLOSCAR",
+      "image": "https://avatars.githubusercontent.com/u/63443351?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 214,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773911672542,
+      "changelog": "- Initial release of the anchor-sheet skill.\n- Extracts concrete “anchor facts” (numbers, benchmarks, limitations) from evidence packs for each H3 subsection.\n- Outputs a structured JSONL file (`outline/anchor_sheet.jsonl`) with citation-backed anchors, preventing content-poor prose.\n- Emphasizes selection of facts containing numbers, benchmarks, and explicit limitations only from existing evidence.\n- Ensures every H3 subsection gets at least 10 high-quality anchors, with quality and citation checks.\n- Includes workflow guidance, quality checklist, minimums for anchor use, and script usage instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2c9a1bfab2d2b0012b25f315d6d3635682b8b15c431bc59e0ca51a24694d9b34"
+}

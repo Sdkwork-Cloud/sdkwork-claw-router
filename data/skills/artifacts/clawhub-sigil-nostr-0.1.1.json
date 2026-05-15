@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sigil-nostr@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sigil_nostr",
+  "skill": {
+    "id": 51808,
+    "skillKey": "clawhub-sigil-nostr",
+    "name": "Sigil Nostr — P2P Encrypted Messaging for AI Agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sigil-nostr",
+    "url": "https://clawhub.ai/skills/sigil-nostr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sigil-nostr-2acac475ba28c6ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Nostr P2P messaging gateway for AI agents. Send and receive E2E encrypted messages via the Nostr protocol. Enables your agent to be reachable from Sigil Mess..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lmanchu",
+      "userId": "s176gfykamb64wdjw72tp8jbk983ts92",
+      "displayName": "lmanchu",
+      "image": "https://avatars.githubusercontent.com/u/8541873?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1774769021460,
+      "changelog": "Added client connection guide: iPhone, CLI, Mac, Damus interop, QR sharing",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0511113026c4f050c001ef644d91d6ee9e1de09a232ec8f55802decd2a4d90db"
+}

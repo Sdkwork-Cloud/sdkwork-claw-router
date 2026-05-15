@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62071,
+  "uuid": "skill-clawhub-news-aggregator",
+  "skillKey": "clawhub-news-aggregator",
+  "name": "News Aggregator",
+  "summary": "国内外社会、科技、军事新闻汇总。自动搜索、筛选、整理新闻要点。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_aggregator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "htten",
+      "features": [
+        "国内外社会、科技、军事新闻汇总。自动搜索、筛选、整理新闻要点。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/news-aggregator@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143494236?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "news-aggregator",
+      "url": "https://clawhub.ai/skills/news-aggregator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-aggregator",
+    "url": "https://clawhub.ai/skills/news-aggregator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-aggregator-32f1798fbcdd0f9e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/news-aggregator@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-news-aggregator-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:94b1cdfdf324b74992de542cca00af2cd9cc73226b6eda5ba47381e1c0d6bb4a",
+      "artifactSizeBytes": 1968
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T09:34:04.779Z"
+}

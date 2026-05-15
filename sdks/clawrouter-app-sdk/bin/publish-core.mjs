@@ -223,32 +223,22 @@ function resolveComposerCommand(projectDir) {
   return 'composer';
 }
 
-function hasTypeScriptSdkDependencies(projectDir) {
-  return existsSync(path.join(projectDir, 'node_modules', 'typescript'))
-    && existsSync(path.join(projectDir, 'node_modules', 'rollup'))
-    && existsSync(path.join(projectDir, 'node_modules', '@sdkwork', 'sdk-common'));
-}
-
 function runTypeScript(ctx) {
   const packageFile = path.join(ctx.projectDir, 'package.json');
   ensureFile(packageFile, 'package.json');
   const packageJson = loadJson(packageFile);
   const hasBuildScript = Boolean(packageJson?.scripts?.build);
 
-  if (!hasTypeScriptSdkDependencies(ctx.projectDir)) {
-    run('npm', ['install', '--ignore-scripts'], { cwd: ctx.projectDir });
-  } else {
-    log('TypeScript dependencies already installed, skipping npm install.');
+  if (ctx.action === 'check') {
+    run('npm', ['pack', '--dry-run'], { cwd: ctx.projectDir });
+    return;
   }
+
+  run('npm', ['install'], { cwd: ctx.projectDir });
   if (hasBuildScript) {
     run('npm', ['run', 'build'], { cwd: ctx.projectDir });
   } else {
     log('No build script found in package.json, skipping build.');
-  }
-
-  if (ctx.action === 'check') {
-    run('npm', ['pack', '--dry-run'], { cwd: ctx.projectDir });
-    return;
   }
 
   if (ctx.action === 'build') {

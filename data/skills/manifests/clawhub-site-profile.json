@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41202,
+  "uuid": "skill-clawhub-site-profile",
+  "skillKey": "clawhub-site-profile",
+  "name": "Site Profile",
+  "summary": "Short alias for external-site-profile-learning. Use this when investigating, adding, validating, or debugging external website profiles for the 99idea Playwr...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.site_profile",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AllenS0104",
+      "features": [
+        "Short alias for external-site-profile-learning",
+        "Use this when investigating, adding, validating, or debugging external website profiles for the."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/site-profile@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/213720862?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "site-profile",
+      "url": "https://clawhub.ai/skills/site-profile"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "site-profile",
+    "url": "https://clawhub.ai/skills/site-profile",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/site-profile-13480fd96c87e91d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/site-profile@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-site-profile-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dae85ffeb40c76af2c1b3a8df25768ab2f4420c7b5f7fcd5885561bec6b3c964",
+      "artifactSizeBytes": 2463
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T06:30:12.212Z"
+}

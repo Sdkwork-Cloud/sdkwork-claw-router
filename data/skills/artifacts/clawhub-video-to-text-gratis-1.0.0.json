@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-to-text-gratis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_to_text_gratis",
+  "skill": {
+    "id": 42178,
+    "skillKey": "clawhub-video-to-text-gratis",
+    "name": "Video To Text Gratis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-to-text-gratis",
+    "url": "https://clawhub.ai/skills/video-to-text-gratis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-to-text-gratis-6858a618c77254d9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "convert video files into transcribed text files with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. students, content creators, journalists us..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776800699588,
+      "changelog": "- Initial release of Video to Text Gratis — convert video speech to text with free cloud GPU processing.\n- Supports MP4, MOV, AVI, WebM files up to 500MB; delivers 1080p MP4 results in 30–60 seconds.\n- Automatically authenticates via anonymous token for first-time users (100 free credits, 7-day expiry).\n- Handles video upload, transcription, export, credit balance, and state queries through clear user prompts.\n- Guided error handling for unsupported formats, oversized files, expired tokens, and export restrictions.\n- Suitable for students, content creators, and journalists seeking quick video-to-text conversion.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d634f801c0d9ba0467add190165c6e5015639f5412e1e9c733d66a0bcb9b5688"
+}

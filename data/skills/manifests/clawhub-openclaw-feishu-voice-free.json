@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59945,
+  "uuid": "skill-clawhub-openclaw-feishu-voice-free",
+  "skillKey": "clawhub-openclaw-feishu-voice-free",
+  "name": "openclaw-feishu-voice-free",
+  "summary": "OpenClaw 飞书语音聊天技能，基于本地 Qwen3-TTS 和 Whisper，实现离线多语言语音识别与合成，无需云端API。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_feishu_voice_free",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shuai Shi",
+      "features": [
+        "OpenClaw 飞书语音聊天技能，基于本地 Qwen3-TTS 和 Whisper，实现离线多语言语音识别与合成，无需云端API。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-feishu-voice-free@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/146152826?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-feishu-voice-free",
+      "url": "https://clawhub.ai/skills/openclaw-feishu-voice-free"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-feishu-voice-free",
+    "url": "https://clawhub.ai/skills/openclaw-feishu-voice-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-feishu-voice-free-b066706a688ec8ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-feishu-voice-free@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-feishu-voice-free-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c5ab690798ab64b06a7de0d9d87df51b1494dcc312f57588d4125b91fa4525f",
+      "artifactSizeBytes": 1954
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T18:45:06.873Z"
+}

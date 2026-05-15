@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weather-stable@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_stable",
+  "skill": {
+    "id": 42181,
+    "skillKey": "clawhub-weather-stable",
+    "name": "Weather Stable"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-stable",
+    "url": "https://clawhub.ai/skills/weather-stable",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-stable-702619a793ff8855.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Stable weather skill for OpenClaw. Designed for reliable same-day weather queries with predictable output, Chinese city support, and automation-friendly plai..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "paceycrognale",
+      "userId": "s1799kv1005zx88mg814504g9s84jncp",
+      "displayName": "Paceycrognale",
+      "image": "https://avatars.githubusercontent.com/u/265425477?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775789413797,
+      "changelog": "Initial public release. Stable same-day weather lookup for OpenClaw with predictable plain/json output, Chinese-city support, and automation-first design.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:17d2f52e38ff1ce150d27bdb79d61802c732e708c894e7032a375580fb585f96"
+}

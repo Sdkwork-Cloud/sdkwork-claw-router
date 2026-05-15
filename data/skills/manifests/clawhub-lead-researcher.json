@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10981,
+  "uuid": "skill-clawhub-lead-researcher",
+  "skillKey": "clawhub-lead-researcher",
+  "name": "Lead Researcher",
+  "summary": "Automated lead research and enrichment for B2B sales. Finds companies matching your criteria, enriches with contact data, and generates personalized outreach messages.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lead_researcher",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rjrileybuisness-ai",
+      "features": [
+        "Automated lead research and enrichment for B2B sales",
+        "Finds companies matching your criteria, enriches with contact data, and generates personalized."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lead-researcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258930640?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lead-researcher",
+      "url": "https://clawhub.ai/skills/lead-researcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lead-researcher",
+    "url": "https://clawhub.ai/skills/lead-researcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lead-researcher-0a05e638103bad5f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lead-researcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lead-researcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dfe3bec23b77f9bd3b06b6bdbfaa01241ae8732bef29ff13ee712d5c94666511",
+      "artifactSizeBytes": 1947
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T02:19:06.819Z"
+}

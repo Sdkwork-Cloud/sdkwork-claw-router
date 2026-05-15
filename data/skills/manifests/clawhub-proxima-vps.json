@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36282,
+  "uuid": "skill-clawhub-proxima-vps",
+  "skillKey": "clawhub-proxima-vps",
+  "name": "Proxima VPS autoamtion",
+  "summary": "Set up, repair, or document a Proxima deployment on a remote Ubuntu VPS with a non-root Electron runtime, virtual desktop GUI, loopback-only VNC/noVNC/REST e...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proxima_vps",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MooNear",
+      "features": [
+        "Set up, repair, or document a Proxima deployment on a remote Ubuntu VPS with a non-root Electro."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/proxima-vps@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/66145311?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "proxima-vps",
+      "url": "https://clawhub.ai/skills/proxima-vps"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proxima-vps",
+    "url": "https://clawhub.ai/skills/proxima-vps",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proxima-vps-18da2943d7e5d1bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/proxima-vps@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-proxima-vps-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6c01a24813adf3f536e0d5d7336e8350a62fc25ff3efd826babb850c7ee6db6c",
+      "artifactSizeBytes": 2430
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T11:47:44.731Z"
+}

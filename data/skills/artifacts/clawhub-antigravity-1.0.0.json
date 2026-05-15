@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/antigravity@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.antigravity",
+  "skill": {
+    "id": 18935,
+    "skillKey": "clawhub-antigravity",
+    "name": "Antigravity"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "antigravity",
+    "url": "https://clawhub.ai/skills/antigravity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/antigravity-ac0a3dfd6dddb209.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides a comprehensive introduction and usage guide for Google Antigravity IDE, focusing on its Agent-First design, multi-model support, and Skills system."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "duanc-chao",
+      "userId": "publishers:duanc-chao",
+      "displayName": "wow",
+      "image": "https://avatars.githubusercontent.com/u/178591028?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 550,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773987378538,
+      "changelog": "- Initial release of the Antigravity skill, introducing comprehensive guides and best practices for Google Antigravity IDE.\n- Explains the Agent-First development philosophy and how it differs from traditional IDEs.\n- Details core features: AI agent integration, support for multiple AI models, Mission Control panel, and extensible Skills system.\n- Provides practical usage scenarios, including Vibe Coding, team and global Skills, and asynchronous visual feedback.\n- Includes FAQ highlighting distinctions from VS Code and instructions for installing Skills.\n- Supplies sample user–agent conversations for onboarding and clarification.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4c66b5b702ce3c69ee70c876c8b5faedb71f3d83529a5b0ccc2d4d9f43738afc"
+}

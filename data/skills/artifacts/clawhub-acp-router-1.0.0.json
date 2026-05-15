@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/acp-router@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acp_router",
+  "skill": {
+    "id": 15485,
+    "skillKey": "clawhub-acp-router",
+    "name": "Acp Router"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acp-router",
+    "url": "https://clawhub.ai/skills/acp-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acp-router-591e363ef3001e31.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Route plain-language requests for Pi, Claude Code, Codex, OpenCode, Gemini CLI, or ACP harness work into either OpenClaw ACP runtime sessions or direct acpx-..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yimeihuang1999-leaves",
+      "userId": "publishers:yimeihuang1999-leaves",
+      "displayName": "yimeihuang1999-leaves",
+      "image": "https://avatars.githubusercontent.com/u/257675720?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 906,
+      "installsAllTime": 11,
+      "installsCurrent": 11,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772707215114,
+      "changelog": "Initial release of acp-router skill.\n\n- Routes plain-language requests for Pi, Claude Code, Codex, OpenCode, Gemini CLI, or ACP harness work into correct ACP runtime or direct acpx-driven sessions.\n- Provides clear guidelines on intent detection, session spawn, agentId mapping, and error recovery.\n- Enforces ACP runtime path for thread creation with `sessions_spawn`; direct acpx path (“telephone game”) supported as fallback.\n- Details robust install, versioning, and repair policies for plugin-local acpx.\n- Outlines session management, fallback procedures, and clean user output handling for both ACP and acpx flows.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:717abf3d75e0fb36e090f77b99ebf3b7bc0459e3fa05da4b63c7b1e9a1d27bb0"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72198,
+  "uuid": "skill-clawhub-jisulu-cb-daily",
+  "skillKey": "clawhub-jisulu-cb-daily",
+  "name": "每日从集思录抓取可转债基本数据、强赎倒计时、下修倒计时，支持Cookie管理和本地持久化存储",
+  "summary": "每日从集思录抓取可转债基本数据、强赎倒计时、下修倒计时，支持Cookie管理和本地持久化存储",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jisulu_cb_daily",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ccHunter",
+      "features": [
+        "每日从集思录抓取可转债基本数据、强赎倒计时、下修倒计时，支持Cookie管理和本地持久化存储"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jisulu-cb-daily@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1041724?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jisulu-cb-daily",
+      "url": "https://clawhub.ai/skills/jisulu-cb-daily"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jisulu-cb-daily",
+    "url": "https://clawhub.ai/skills/jisulu-cb-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jisulu-cb-daily-4e57c2bfd91e10a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jisulu-cb-daily@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jisulu-cb-daily-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e49f2af4b70a5566150ce08cbdb4d8c2f7943fcaafc046164e0bb5436ab0b62b",
+      "artifactSizeBytes": 2467
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T07:40:13.023Z"
+}

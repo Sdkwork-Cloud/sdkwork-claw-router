@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39726,
+  "uuid": "skill-clawhub-chevrolet",
+  "skillKey": "clawhub-chevrolet",
+  "name": "Chevrolet",
+  "summary": "Provide detailed information on Chevrolet vehicles, brand history, models, and official resources upon user inquiry.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chevrolet",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Provide detailed information on Chevrolet vehicles, brand history, models, and official resourc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chevrolet@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chevrolet",
+      "url": "https://clawhub.ai/skills/chevrolet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chevrolet",
+    "url": "https://clawhub.ai/skills/chevrolet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chevrolet-9e48bad6e31c1282.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chevrolet@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-chevrolet-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:199f4f93ab9ad03e6abc8fe1463e95a060ebba27f3d89714d3d202d6c9098ab8",
+      "artifactSizeBytes": 2070
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T07:28:23.718Z"
+}

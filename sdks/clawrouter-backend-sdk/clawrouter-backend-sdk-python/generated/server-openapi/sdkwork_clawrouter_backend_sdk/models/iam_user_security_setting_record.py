@@ -1,0 +1,31 @@
+from __future__ import annotations
+from dataclasses import dataclass
+from typing import TYPE_CHECKING, Optional, List, Dict, Any
+
+
+@dataclass
+class IamUserSecuritySettingRecord:
+    """Iam user security setting record schema exposed by Claw Router."""
+    created_at: Optional[str] = None
+    data_scope: Optional[str] = None
+    deleted_at: Optional[str] = None
+    deleted_by: Optional[str] = None
+    id: Optional[str] = None
+    last_login_at: Optional[str] = None
+    last_login_ip_hash: Optional[str] = None
+    metadata: Optional[Dict[str, str]] = None
+    mfa_enabled: Optional[bool] = None
+    mfa_method: Optional[str] = None
+    organization_id: Optional[str] = None
+    owner_id: Optional[str] = None
+    owner_type: Optional[str] = None
+    password_last_changed_at: Optional[str] = None
+    security_level: Optional[str] = None
+    status: Optional[str] = None
+    tenant_id: Optional[str] = None
+    third_party_bound_snapshot: Optional[Dict[str, str]] = None
+    trusted_device_count: Optional[int] = None
+    updated_at: Optional[str] = None
+    user_id: Optional[str] = None
+    uuid: Optional[str] = None
+    version: Optional[str] = None

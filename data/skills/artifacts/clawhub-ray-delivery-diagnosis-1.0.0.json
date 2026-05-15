@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ray-delivery-diagnosis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ray_delivery_diagnosis",
+  "skill": {
+    "id": 46223,
+    "skillKey": "clawhub-ray-delivery-diagnosis",
+    "name": "Ray Delivery Diagnosis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ray-delivery-diagnosis",
+    "url": "https://clawhub.ai/skills/ray-delivery-diagnosis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ray-delivery-diagnosis-0377df67275b1f7d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automates delivery lane scans every 4 hours to detect failures, classify issues, update recovery tickets, and attempt specified recovery actions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "x-rayluan",
+      "userId": "s17c0n0ce78mre7mrytgzehcwn83hkp1",
+      "displayName": "X-RayLuan",
+      "image": "https://avatars.githubusercontent.com/u/150766707?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777022626777,
+      "changelog": "- Initial release of the recovery ticket runner and delivery diagnosis agent.\n- Automatically scans all delivery lanes every 4 hours (and on-demand) to detect unresolved blockers, classify failure types, and attempt recovery actions.\n- Supports multiple trigger sources, layered lane checks, and detailed failure classification.\n- Executes lane-specific recovery actions with capped auto-retries and escalation to human intervention when required.\n- Logs actions, updates recovery tickets, and outputs diagnosis reports for each run.\n- Implements strict safety and publishing checks to prevent unauthorized or indefinite retries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8c490c7d4d3f856439777ba6a66f850dd9289d705109be17cf38a017475b6aa9"
+}

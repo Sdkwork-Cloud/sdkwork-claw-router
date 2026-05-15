@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-guard-actor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_guard_actor",
+  "skill": {
+    "id": 21959,
+    "skillKey": "clawhub-skill-guard-actor",
+    "name": "SkillGuard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-guard-actor",
+    "url": "https://clawhub.ai/skills/skill-guard-actor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-guard-actor-9dddf5870c1aae24.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scan ClawHub skills for prompt injection and malicious content using Lakera Guard before installing them. Run automatically when the user asks to install a s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xmerkle",
+      "userId": "publishers:0xmerkle",
+      "displayName": "Merk",
+      "image": "https://avatars.githubusercontent.com/u/94654154?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 480,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772579960163,
+      "changelog": "Initial release — scan ClawHub skills for prompt injection before installing",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c358c090280be07600482dbe79a572be44f87699e4ed91fde137af5ee9d56d8f"
+}

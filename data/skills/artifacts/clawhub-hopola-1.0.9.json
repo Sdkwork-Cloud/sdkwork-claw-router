@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hopola@1.0.9",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hopola",
+  "skill": {
+    "id": 32673,
+    "skillKey": "clawhub-hopola",
+    "name": "Design With Hopola"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hopola",
+    "url": "https://clawhub.ai/skills/hopola",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hopola-6c9b7f5b1d3d3702.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Runs web research and orchestrates image/video/3D generation, logo and product visuals, upload, and Markdown reporting. Use when users need an end-to-end mul..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "typisin",
+      "userId": "s17ej4qmkh8sev3ckjzcd0g31d83n6xm",
+      "displayName": "typisin",
+      "image": "https://avatars.githubusercontent.com/u/109434347?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 248,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.9",
+      "createdAt": 1775321454731,
+      "changelog": "Hopola 1.0.9\n\n- Added required credentials (`OPENCLOW_KEY`) and permissions (`network:http`, `local_file:read`) to the skill manifest.\n- Clarified behavior on missing `OPENCLOW_KEY`: the skill now stops at precheck and returns a structured error (`GATEWAY_KEY_MISSING`) instead of proceeding.\n- No changes to core features or the pipeline; documentation was updated to reflect stricter prechecks for credentials.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:433ea3216490c78eddf080067b2338c9a40cb888e64bcf1d7ed5ea70f80ce715"
+}

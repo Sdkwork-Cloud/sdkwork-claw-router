@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smart-router@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_router",
+  "skill": {
+    "id": 10026,
+    "skillKey": "clawhub-smart-router",
+    "name": "A.I. Smart Router"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-router",
+    "url": "https://clawhub.ai/skills/smart-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-router-cc975f18a5c9f02f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Expertise-aware model router with semantic domain scoring, context-overflow protection, and security redaction. Automatically selects the optimal AI model using weighted expertise scoring (Feb 2026 benchmarks). Supports Claude, GPT, Gemini."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "c0nspic0us7urk3r",
+      "userId": "publishers:c0nspic0us7urk3r",
+      "displayName": "c0nSpIc0uS7uRk3r",
+      "image": "https://avatars.githubusercontent.com/u/191412934?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 2654,
+      "installsAllTime": 14,
+      "installsCurrent": 13,
+      "stars": 3,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1770175247188,
+      "changelog": "Smart-router 0.1.2 introduces state management and improved context handling.\n\n- Added persistent state documentation (STATE.md) to clarify router behavior across sessions.\n- Implemented context guard logic in new context_guard.py for enhanced context-overflow protection.\n- Updated routing logic in router_gateway.py to integrate state and context checks.\n- Documentation (README.md, SKILL.md) updated to reflect new features and version bump.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6a82cb8ac6f53efb63f122e440e25a02fed3d4282a97ed6a460c0ad369ea25d0"
+}

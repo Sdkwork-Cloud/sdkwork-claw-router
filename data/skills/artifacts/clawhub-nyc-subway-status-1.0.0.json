@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nyc-subway-status@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nyc_subway_status",
+  "skill": {
+    "id": 27406,
+    "skillKey": "clawhub-nyc-subway-status",
+    "name": "NYC Subway Status"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nyc-subway-status",
+    "url": "https://clawhub.ai/skills/nyc-subway-status",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nyc-subway-status-72d73777d5e040b1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Check real-time NYC subway arrivals, track trains, and find stations. Use when user asks about subway times, train status, MTA arrivals, or NYC transit."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mxs2019",
+      "userId": "publishers:mxs2019",
+      "displayName": "Max Shaw",
+      "image": "https://avatars.githubusercontent.com/u/1162871?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 349,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772650855470,
+      "changelog": "- Initial release: check real-time NYC subway arrivals, track trains, and find stations.\n- Search for stations and routes with `/api/search?q={query}` before fetching arrivals or status.\n- Get next train times, full station arrivals, line status, and track specific train trips.\n- Group arrivals by route and direction; recommend the faster train where relevant.\n- No API key required; workflow and endpoint details provided with a fetchable API reference.\n- Supports Model Context Protocol for compatible agents.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:50490899aa0e307f30eac7a6c6bdb74feb366c05a7af155f32245b7329f04b33"
+}

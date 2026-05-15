@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/redtransportecl@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.redtransportecl",
+  "skill": {
+    "id": 41988,
+    "skillKey": "clawhub-redtransportecl",
+    "name": "RedTransporteAPI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "redtransportecl",
+    "url": "https://clawhub.ai/skills/redtransportecl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/redtransportecl-47b4133552a35221.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CLI tool for managing local GTFS data, querying stops, routes, real-time predictions, and planning public transit trips in Chile's Red de Transporte system."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "iiroak",
+      "userId": "s17fabkymd64fhczp89v6977zx846sp8",
+      "displayName": "iroaK",
+      "image": "https://avatars.githubusercontent.com/u/55340002?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776034813857,
+      "changelog": "Version 1.0.1\n\n- Se agregaron metadatos OpenClaw, incluyendo la declaración de requerimiento del binario `red-transporte` en la sección de metadata.\n- No hubo cambios en los comandos ni en la funcionalidad descrita.\n- Mejoras menores de formato en el encabezado del archivo SKILL.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:439e228f1a03d8a314ca029cd40e45042d240322dc20730743f2fd6615bcce4b"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polymarket-analysis@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_analysis",
+  "skill": {
+    "id": 8674,
+    "skillKey": "clawhub-polymarket-analysis",
+    "name": "Polymarket Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-analysis",
+    "url": "https://clawhub.ai/skills/polymarket-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-analysis-babaa229021c2619.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze Polymarket prediction markets for trading edges. Pair Cost arbitrage, whale tracking, sentiment analysis, momentum signals, user profile tracking. No execution."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lukebaze",
+      "userId": "s172p8wgrrx4mfxhvtw2baw63h83hfqf",
+      "displayName": "lukebaze",
+      "image": "https://avatars.githubusercontent.com/u/67284748?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 6904,
+      "installsAllTime": 55,
+      "installsCurrent": 54,
+      "stars": 16,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1769662255777,
+      "changelog": "Add Data API for user profiles, positions, trades, P&L tracking",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1bb1b40576cea238069f33a9c3cfaf9372a4bc5056680e89dcdf1cfaf0629d49"
+}

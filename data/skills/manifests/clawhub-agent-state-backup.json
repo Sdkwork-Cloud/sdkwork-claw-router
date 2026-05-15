@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27274,
+  "uuid": "skill-clawhub-agent-state-backup",
+  "skillKey": "clawhub-agent-state-backup",
+  "name": "Agent State Backup",
+  "summary": "Auto-backs up core files (IDENTITY, SOUL, MEMORY, knowledge base) daily via cron, creates compressed .tgz archive, enables one-click restore in new environme...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_state_backup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "benxiao2026",
+      "features": [
+        "Auto-backs up core files (IDENTITY, SOUL, MEMORY, knowledge base) daily via cron, creates compr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-state-backup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263695994?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-state-backup",
+      "url": "https://clawhub.ai/skills/agent-state-backup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-state-backup",
+    "url": "https://clawhub.ai/skills/agent-state-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-state-backup-b66e92039aada636.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-state-backup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-state-backup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c115dd32c2a5522987cc4575c0bf8ac0a97b39d6a1811c9c33ae46547e5ca62",
+      "artifactSizeBytes": 2305
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T13:09:49.603Z"
+}

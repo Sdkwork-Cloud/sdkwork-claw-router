@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/raise-ai-media@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.raise_ai_media",
+  "skill": {
+    "id": 67841,
+    "skillKey": "clawhub-raise-ai-media",
+    "name": "raise-ai-media"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "raise-ai-media",
+    "url": "https://clawhub.ai/skills/raise-ai-media",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/raise-ai-media-80672ce9d6eb4ec7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "RaiseAI 媒体生成工具集 - 生图、生视频、脚本生成、图片解析、视频解析。 当用户提到以下任何关键词时必须触发此技能：生成图片、生成视频、图片生成、视频生成、脚本生成、 图片解析、图生文、反推提示词、视频解析、视频脚本、图片生图、视频生视频、 AI生图、AI生视频、AI创作、Media generation..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jacobluxj",
+      "userId": "s171394s2vkkpnegvr8yp5tan183mbnv",
+      "displayName": "JacobLUXJ",
+      "image": "https://avatars.githubusercontent.com/u/25626372?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774527699816,
+      "changelog": "[瑞思AI(RaiseAI)](https://ai.micrease.com/) 媒体生成工具集首次发布，支持多种图片、视频及脚本生成与解析：\n\n- 支持图片、视频的生成与解析，含高质量与快速模式选择。\n- 根据用户需求自动决策接口类型，无需用户手动区分。\n- 详细约束：默认均为高清任务且生成行为受用户语言触发严格管控。\n- 全流程异步任务，处理结果自动轮询并友好提示用户。\n- 支持脚本生成、图片提示词反推等高级功能。\n- API Key 可通过对话配置，无需手动操作。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:712d31286b98925012323e402905ebcc9ed40693c4eeb05b06011cbe70487150"
+}

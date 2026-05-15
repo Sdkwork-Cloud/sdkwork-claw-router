@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27097,
+  "uuid": "skill-clawhub-earnings-financials-agent",
+  "skillKey": "clawhub-earnings-financials-agent",
+  "name": "EarningsFinancialsAgent",
+  "summary": "An autonomous agent for monitoring corporate earnings and analyzing financial statements using yfinance.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.earnings_financials_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Anthony Assi",
+      "features": [
+        "An autonomous agent for monitoring corporate earnings and analyzing financial statements using."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/earnings-financials-agent@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41215706?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "earnings-financials-agent",
+      "url": "https://clawhub.ai/skills/earnings-financials-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "earnings-financials-agent",
+    "url": "https://clawhub.ai/skills/earnings-financials-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/earnings-financials-agent-37953f2a9a4c3d9d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/earnings-financials-agent@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-earnings-financials-agent-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:93eaa489a9191694cc7c43cf976c50ea3cdf2432d2dfb6371f2c3873f3b35b48",
+      "artifactSizeBytes": 2016
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T01:23:00.016Z"
+}

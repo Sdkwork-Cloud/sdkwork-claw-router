@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-withings@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_withings",
+  "skill": {
+    "id": 23767,
+    "skillKey": "clawhub-openclaw-withings",
+    "name": "Withings (Official API)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-withings",
+    "url": "https://clawhub.ai/skills/openclaw-withings",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-withings-0c16f8cf55e3c2ce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Official Withings OAuth integration for OpenClaw. Use to connect/authorize a personal Withings account, store+refresh tokens locally, and fetch health measur..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gavinchengcool",
+      "userId": "s17ah06n6ay2g64xj492qk88zs84a53k",
+      "displayName": "Gavin C.",
+      "image": "https://avatars.githubusercontent.com/u/201307310?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 430,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773386789692,
+      "changelog": "Initial release: OAuth (remote copy/paste + optional loopback), fetch daily measurements (weight/body fat/BP/HR) + sleep summary best-effort, normalize for Wellness hub, and channel-aware rendering.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3cc4c3548fc88cde2903698ed9dc9a3667f8c6ba756ec0aabdaf3c76823c39b5"
+}

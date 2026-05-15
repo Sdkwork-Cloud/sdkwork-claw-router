@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42743,
+  "uuid": "skill-clawhub-skill-manager-usm",
+  "skillKey": "clawhub-skill-manager-usm",
+  "name": "Skill Manager",
+  "summary": "Manages skill distribution and visibility across AI agents using a two-layer, two-dimension Universal Skill Manager with syncing and scope control.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_manager_usm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hulk",
+      "features": [
+        "Manages skill distribution and visibility across AI agents using a two-layer, two-dimension Uni."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-manager-usm@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1487095?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-manager-usm",
+      "url": "https://clawhub.ai/skills/skill-manager-usm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-manager-usm",
+    "url": "https://clawhub.ai/skills/skill-manager-usm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-manager-usm-3d68b894ad95864e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-manager-usm@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-manager-usm-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a6e63349d5aafcff26a4f70df51c49fc4b2348a100292d42480ccb7734a55961",
+      "artifactSizeBytes": 1888
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T10:35:39.977Z"
+}

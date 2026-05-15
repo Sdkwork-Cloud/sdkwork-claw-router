@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32381,
+  "uuid": "skill-clawhub-skylv-clawhub-search",
+  "skillKey": "clawhub-skylv-clawhub-search",
+  "name": "Skylv Clawhub Search",
+  "summary": "ClawHub Skill Discovery and Search. Find, browse, and install OpenClaw Skills from ClawHub marketplace. Triggers: search skills, find skills, clawhub, instal...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_clawhub_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "ClawHub Skill Discovery and Search",
+        "Find, browse, and install OpenClaw Skills from ClawHub marketplace",
+        "Triggers: search skills, find skills, clawhub, instal..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skylv-clawhub-search@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skylv-clawhub-search",
+      "url": "https://clawhub.ai/skills/skylv-clawhub-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-clawhub-search",
+    "url": "https://clawhub.ai/skills/skylv-clawhub-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-clawhub-search-7bde8cd96412d96e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skylv-clawhub-search@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-skylv-clawhub-search-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:15f891f25f51983e7dbcfd41f9afd36ced775624866b06029b5d78df6eb992b6",
+      "artifactSizeBytes": 2046
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T01:25:18.062Z"
+}

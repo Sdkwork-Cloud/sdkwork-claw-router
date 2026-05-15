@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chat-ui@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chat_ui",
+  "skill": {
+    "id": 13008,
+    "skillKey": "clawhub-chat-ui",
+    "name": "Chat Ui"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chat-ui",
+    "url": "https://clawhub.ai/skills/chat-ui",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chat-ui-c44c5634553fa0fd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Chat UI building blocks for React/Next.js from ui.inference.sh. Components: container, messages, input, typing indicators, avatars. Capabilities: chat interf..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "okaris",
+      "userId": "s1737xapsjy8k5qnagtfyf5nrx85t72x",
+      "displayName": "Ömer Karışman",
+      "image": "https://avatars.githubusercontent.com/u/1448702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1526,
+      "installsAllTime": 7,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1771403108366,
+      "changelog": "- Added comprehensive documentation (SKILL.md) for chat-ui, detailing available components and usage.\n- Included code examples for ChatContainer, ChatMessage, ChatInput, and TypingIndicator.\n- Provided a full example for building a chat interface with message state and input handling.\n- Listed message role variants and associated UI behaviors.\n- Offered related skills, styling tips, and links to further documentation and best practices.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2d5e3312dadac1a554901f854520b1d1b2ccd0f7d052018000722fd1f9bddbb8"
+}

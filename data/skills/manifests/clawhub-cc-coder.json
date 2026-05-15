@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63820,
+  "uuid": "skill-clawhub-cc-coder",
+  "skillKey": "clawhub-cc-coder",
+  "name": "Cc Coder",
+  "summary": "使用 Claude Code CLI 自动编写代码。触发条件：用户要求写代码、创建项目、修复 bug、实现功能等编程任务。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cc_coder",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Riven",
+      "features": [
+        "使用 Claude Code CLI 自动编写代码。触发条件：用户要求写代码、创建项目、修复 bug、实现功能等编程任务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cc-coder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7893693?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cc-coder",
+      "url": "https://clawhub.ai/skills/cc-coder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cc-coder",
+    "url": "https://clawhub.ai/skills/cc-coder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cc-coder-f630f529ff26fa74.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cc-coder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cc-coder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f7d43af36492cd6a304d449e2bdeee6fceac01ed80ae318d1fb77ff20e8129e7",
+      "artifactSizeBytes": 2141
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T18:00:13.994Z"
+}

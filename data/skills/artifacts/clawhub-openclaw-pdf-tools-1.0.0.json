@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-pdf-tools@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_pdf_tools",
+  "skill": {
+    "id": 65400,
+    "skillKey": "clawhub-openclaw-pdf-tools",
+    "name": "Pdf Toolkit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-pdf-tools",
+    "url": "https://clawhub.ai/skills/openclaw-pdf-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-pdf-tools-0492e145362a7238.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "PDF工具箱 - 合并、拆分、压缩、转换PDF文件。支持批量处理，无需联网，本地执行。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "newaiguy",
+      "userId": "s176zqcw03n2wnp2q2g7rbn4rs83g8kh",
+      "displayName": "Newaiguy",
+      "image": "https://avatars.githubusercontent.com/u/97015274?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774319523181,
+      "changelog": "Initial release of pdf-toolkit:\n\n- Provides local PDF merge, split, compress, conversion, and text extraction tools\n- Supports PDF-to-image, image-to-PDF, watermarking, and encryption/decryption\n- All features work offline for privacy protection\n- Includes batch processing and CLI/API usage\n- Requires system dependencies: poppler-utils, ghostscript, imagemagick",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d05058d7f756ec68053b0adc0b00108d43aa3c093978130b1d6a7c16c4538feb"
+}

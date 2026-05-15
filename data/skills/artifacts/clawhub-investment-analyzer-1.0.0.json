@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/investment-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.investment_analyzer",
+  "skill": {
+    "id": 35269,
+    "skillKey": "clawhub-investment-analyzer",
+    "name": "Investment Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "investment-analyzer",
+    "url": "https://clawhub.ai/skills/investment-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/investment-analyzer-446a1cd93f380446.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Investment analysis for properties and ETFs. BUY/PASS/INVESTIGATE verdicts backed by data. Scans Centris for listings, advises DCA allocation. Triggers: anal..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clairproqc-star",
+      "userId": "s1764nvxnv44jshf4jz7a51zms83jyc4",
+      "displayName": "clairproqc-star",
+      "image": "https://avatars.githubusercontent.com/u/264058938?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774397263003,
+      "changelog": "- Initial release of Investment Analyzer skill.\n- Provides data-driven analysis for properties and ETFs, delivering clear BUY / INVESTIGATE / PASS verdicts.\n- Supports Centris property scans, ETF assessments, and side-by-side real estate vs ETF comparisons.\n- Advises on DCA allocation based on personalized financial profile and priorities.\n- Standardized workflows and output format for consistent decision-making.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d0cfe5347cb4c44cad8388473a4af2a050e6ffece0a02f0f7c4fa4a23ed82aba"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/test-ai-map-api@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_ai_map_api",
+  "skill": {
+    "id": 58424,
+    "skillKey": "clawhub-test-ai-map-api",
+    "name": "test-ai-map-api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-ai-map-api",
+    "url": "https://clawhub.ai/skills/test-ai-map-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-ai-map-api-d69185987c398a49.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "百度地图 Agent Plan 直连调用 place、direction、geocoding、reverse_geocoding、weather 五类能力。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zxf969175364",
+      "userId": "s170rngj0m4c8rqgaxbpp5qx6d84176b",
+      "displayName": "Clifton Hills",
+      "image": "https://avatars.githubusercontent.com/u/12622610?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775628572554,
+      "changelog": "Version 1.0.1\n\n- Updated usage guidelines to clarify that when the user request contains vague locations like \"near me,\" the system can infer the name of a place from context but must not infer or fabricate coordinates.\n- Strengthened the rule that coordinates for parameters such as `center`, `location`, or `refer_pois` must come from user input or reliable sources, and require clarification or use of tools (e.g., `geocoding`, `place`) if unavailable.\n- Removed instructions related to handling region parameter ambiguities and prompting users for regional confirmation.\n- Additional minor editorial and clarity improvements in the global parameter and behavior constraints section.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c3670b9cc208c7346007781e749b85fb5bd9371b898e1b4303bdab0368a002f2"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30072,
+  "uuid": "skill-clawhub-ai-testcase-generator",
+  "skillKey": "clawhub-ai-testcase-generator",
+  "name": "AI Test Case Generator",
+  "summary": "Use when turning requirements, screenshots, or other QA inputs into structured test cases and review questions with an AI-assisted workflow.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_testcase_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "XuXu",
+      "features": [
+        "Use when turning requirements, screenshots, or other QA inputs into structured test cases and r."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-testcase-generator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/76080484?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-testcase-generator",
+      "url": "https://clawhub.ai/skills/ai-testcase-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-testcase-generator",
+    "url": "https://clawhub.ai/skills/ai-testcase-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-testcase-generator-67fa85e256dee879.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-testcase-generator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-testcase-generator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:953e2c9ec3aefc94ea2aedd8e70ddbb4a960e114eb95f82211bf17a1aedf5027",
+      "artifactSizeBytes": 2015
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T05:44:06.209Z"
+}

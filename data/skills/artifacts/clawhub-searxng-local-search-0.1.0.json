@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/searxng-local-search@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.searxng_local_search",
+  "skill": {
+    "id": 8959,
+    "skillKey": "clawhub-searxng-local-search",
+    "name": "Searxng Web Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "searxng-local-search",
+    "url": "https://clawhub.ai/skills/searxng-local-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/searxng-local-search-13d1681086d341d6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search the web using SearXNG. Use when you need current information, research topics, find documentation, verify facts, or look up anything beyond your knowledge. Returns ranked results with titles, URLs, and content snippets."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "noblepayne",
+      "userId": "publishers:noblepayne",
+      "displayName": "noblepayne",
+      "image": "https://avatars.githubusercontent.com/u/33278192?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 5110,
+      "installsAllTime": 34,
+      "installsCurrent": 28,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769835313265,
+      "changelog": "Initial release of SearXNG Web Search skill.\n\n- Provides web search using a self-hosted SearXNG instance via JSON API.\n- Supports advanced options: category, time range, language, and number of results.\n- Handles network errors, rate limiting, and empty result cases gracefully.\n- Outputs ranked and formatted search results with titles, URLs, snippets, and engines.\n- Includes command-line usage documentation and troubleshooting tips.\n- Requires `babashka`, the `bb` command, and the `SEARXNG_URL` environment variable.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6899f809358a1f5270b07357dc600a5ff7ff9304db11f7d8da0269084d2bd480"
+}

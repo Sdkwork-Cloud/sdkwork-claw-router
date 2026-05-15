@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48500,
+  "uuid": "skill-clawhub-cpa-gpt-image-2",
+  "skillKey": "clawhub-cpa-gpt-image-2",
+  "name": "CPA GPT Image 2",
+  "summary": "Use a text model such as gpt-5.4 with the image_generation tool over an OpenAI-compatible /v1/responses endpoint, matching the CPA blog example. Do not call...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cpa_gpt_image_2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shiftshen",
+      "features": [
+        "Use a text model such as gpt-5.4 with the image_generation tool over an OpenAI-compatible /v1/r.",
+        "Do not call..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cpa-gpt-image-2@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41694492?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cpa-gpt-image-2",
+      "url": "https://clawhub.ai/skills/cpa-gpt-image-2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cpa-gpt-image-2",
+    "url": "https://clawhub.ai/skills/cpa-gpt-image-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cpa-gpt-image-2-5ec9321603b7693b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cpa-gpt-image-2@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cpa-gpt-image-2-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1e8cb38484eab52d07036273305d89d5afe70b8c2dcd70c94556a82cfd96c1fb",
+      "artifactSizeBytes": 2004
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T04:04:20.071Z"
+}

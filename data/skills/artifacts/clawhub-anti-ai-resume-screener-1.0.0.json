@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/anti-ai-resume-screener@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anti_ai_resume_screener",
+  "skill": {
+    "id": 70731,
+    "skillKey": "clawhub-anti-ai-resume-screener",
+    "name": "反AI简历筛查助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anti-ai-resume-screener",
+    "url": "https://clawhub.ai/skills/anti-ai-resume-screener",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anti-ai-resume-screener-9003f876b5247576.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "反AI简历筛查助手Pro - 完整求职工具箱。整合ATS系统深度解析、简历诊断（100分制）、JD关键词优化、STAR法则改写、弱词替换、自我介绍/求职信生成、面试问题预测。适用于所有求职者（应届生、职场人士、转行者），默认中文简历。当用户提供简历或询问\"如何通过AI筛选\"、\"简历被刷\"、\"优化简历\"、\"简历优化..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ew-ericwu",
+      "userId": "s17beasw6n82r0y76ep3tw5wxs85n3wb",
+      "displayName": "EricWU",
+      "image": "https://avatars.githubusercontent.com/u/273024733?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 134,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777443239778,
+      "changelog": "anti-ai-resume-screener 1.0.0\n\n- 首发版本上线，专为中文用户打造的反AI/ATS简历筛查与优化助手。\n- 集成简历诊断（100分制）、JD关键词优化、STAR法改写、弱词替换、自我介绍和求职信生成、面试问题预测等功能，覆盖求职全流程。\n- 针对不同简历优化与求职场景，自动分阶段响应并输出结构化报告与建议。\n- 默认支持中文简历，适配应届生、职场进阶、转行等多类用户。\n- 提供详细参考资料及模板，帮助用户一站式提升通过率、优化求职表现。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b0c794ba9e4f6adbcbdb9b13a357a20c912ee92f8af036310375c4e906d428f1"
+}

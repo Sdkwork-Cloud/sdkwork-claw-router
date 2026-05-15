@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yusongtao-skill-auditor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yusongtao_skill_auditor",
+  "skill": {
+    "id": 66346,
+    "skillKey": "clawhub-yusongtao-skill-auditor",
+    "name": "Skill Auditor (于松涛版)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yusongtao-skill-auditor",
+    "url": "https://clawhub.ai/skills/yusongtao-skill-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yusongtao-skill-auditor-1d876a66beb28283.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "安全审计OpenClaw技能，检测文件操作、网络请求、命令执行、权限和数据泄露等安全风险并生成报告。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yustnust",
+      "userId": "publishers:yustnust",
+      "displayName": "Yustnust",
+      "image": "https://avatars.githubusercontent.com/u/205522004?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 227,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773744279663,
+      "changelog": "初始版本 - 技能安全审计工具",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3c98454eb6980e0734264ca77b203fce6d2230abf6e751b17e8cbfdea3a8e9f7"
+}

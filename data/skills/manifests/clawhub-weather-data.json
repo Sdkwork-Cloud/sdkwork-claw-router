@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17459,
+  "uuid": "skill-clawhub-weather-data",
+  "skillKey": "clawhub-weather-data",
+  "name": "Weather Data API",
+  "summary": "Provides weather forecast data from NOAA. Free tier returns 3-day forecast, premium tier returns 7-day with hourly data.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_data",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "letorresmeza",
+      "features": [
+        "Provides weather forecast data from NOAA",
+        "Free tier returns 3-day forecast, premium tier returns 7-day with hourly data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weather-data@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/253571911?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weather-data",
+      "url": "https://clawhub.ai/skills/weather-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-data",
+    "url": "https://clawhub.ai/skills/weather-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-data-a32dd62eebe81454.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weather-data@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weather-data-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e01576a2768a7d891ea71570f9f8f8beaef1f641ce90922009762460cc86851",
+      "artifactSizeBytes": 2170
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T22:44:38.957Z"
+}

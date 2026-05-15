@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/making-video-hd-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.making_video_hd_free",
+  "skill": {
+    "id": 43984,
+    "skillKey": "clawhub-making-video-hd-free",
+    "name": "Making Video Hd Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "making-video-hd-free",
+    "url": "https://clawhub.ai/skills/making-video-hd-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/making-video-hd-free-e1f1850fbc6054cd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute smartphone recording at low resolution into 1080p HD MP4 videos just by typing what you need. Whether it's creating and exporting HD quality..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776283775269,
+      "changelog": "- Initial release: Create and export HD (1080p) videos from low-resolution smartphone recordings for free.\n- Upload raw footage and describe desired edits—no timeline editing or export settings needed.\n- Free anonymous sessions available; token and session handled automatically at setup.\n- Supports video upscaling, audio tracks, text overlays, batch processing, and download in multiple formats (MP4, MOV, AVI, WebM, etc.).\n- Cloud processing on GPU nodes—1-2 minute turnaround for short clips; max upload size 500MB.\n- Clear workflows for quick edits, batching, and iterative refinements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:17a58f893ee551e8e20935ac98a181bbca679af95b5db9b390ff2ec77554cb41"
+}

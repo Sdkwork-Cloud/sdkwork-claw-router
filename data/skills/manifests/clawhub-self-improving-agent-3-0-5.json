@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21409,
+  "uuid": "skill-clawhub-self-improving-agent-3-0-5",
+  "skillKey": "clawhub-self-improving-agent-3-0-5",
+  "name": "Self Improving Agent 3.0.5",
+  "summary": "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_improving_agent_3_0_5",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mutsunico",
+      "features": [
+        "Captures learnings, errors, and corrections to enable continuous improvement",
+        "Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/self-improving-agent-3-0-5@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33931321?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "self-improving-agent-3-0-5",
+      "url": "https://clawhub.ai/skills/self-improving-agent-3-0-5"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-improving-agent-3-0-5",
+    "url": "https://clawhub.ai/skills/self-improving-agent-3-0-5",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-improving-agent-3-0-5-fc5379b824347f59.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/self-improving-agent-3-0-5@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-self-improving-agent-3-0-5-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a5826e291692d967690cdf578b671db783f44ddf95fd02569914292b69954d64",
+      "artifactSizeBytes": 2691
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T02:34:57.908Z"
+}

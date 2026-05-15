@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crypto-market-rank@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_market_rank",
+  "skill": {
+    "id": 18446,
+    "skillKey": "clawhub-crypto-market-rank",
+    "name": "Crypto Market Rank"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-market-rank",
+    "url": "https://clawhub.ai/skills/crypto-market-rank",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-market-rank-374f37f27598b727.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Crypto market rankings and leaderboards. Query trending tokens, top searched tokens, Binance Alpha tokens, tokenized stocks, social hype sentiment ranks, sma..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "awessh",
+      "userId": "publishers:awessh",
+      "displayName": "Awessh",
+      "image": "https://avatars.githubusercontent.com/u/99691122?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 581,
+      "installsAllTime": 11,
+      "installsCurrent": 11,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772853589153,
+      "changelog": "Initial release of the Crypto Market Rank skill.\n\n- Query crypto token rankings, trending tokens, top searches, Binance Alpha picks, tokenized stocks, and meme tokens.\n- Access social hype/sentiment leaderboards and social summaries.\n- Discover smart money inflow token rankings.\n- Browse top-performing trader PnL and win rates.\n- Supports BSC, Base, and Solana chains.\n- Flexible filtering and ranking options for targeted research.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1b0d6ad501799408ac3a55ce0fe487950a3fa60cf0cd143f84ce7f5f97fd2531"
+}

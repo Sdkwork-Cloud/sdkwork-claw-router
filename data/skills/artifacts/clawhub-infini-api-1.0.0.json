@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/infini-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.infini_api",
+  "skill": {
+    "id": 38784,
+    "skillKey": "clawhub-infini-api",
+    "name": "infini-api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "infini-api",
+    "url": "https://clawhub.ai/skills/infini-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/infini-api-c4a36b9a96a82d68.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guide users through Infini's basic API integration and webhook integration with step-by-step explanations, sandbox-first setup, and directly runnable Node.js..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cola234",
+      "userId": "s177e5k40gcmry5aadwvzb0afh83npfh",
+      "displayName": "Beiyue",
+      "image": "https://avatars.githubusercontent.com/u/94168159?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774509108817,
+      "changelog": "Initial release of Infini API integration skill.\n\n- Guides users step-by-step through Infini API and webhook integration, matching the user's language (Chinese or English).\n- Supports both Node.js and Python, with explanations and runnable code examples.\n- Defaults to sandbox environment and clearly explains production switch-over.\n- Progress is displayed at every step; users confirm step completion before moving on.\n- Official documentation links are provided in the user's language throughout the integration process.\n- Special handling for API key retrieval, webhook testing, common troubleshooting, and integration mode selection (Hosted Checkout or Advanced Payment API).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:539892afde7d10038e63d2e94c0be8746530110c61131931822376f843ca2804"
+}

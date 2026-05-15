@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cognitive-forge@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cognitive_forge",
+  "skill": {
+    "id": 57207,
+    "skillKey": "clawhub-cognitive-forge",
+    "name": "AI Self-Evolution Engine( AI 自我进化引擎）"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cognitive-forge",
+    "url": "https://clawhub.ai/skills/cognitive-forge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cognitive-forge-7adb405fffc88974.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Dual-value learning system - extracts reusable mental models from books, writes individual pattern files (patterns/{id}.md) with YAML frontmatter for buildin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kedoupi",
+      "userId": "s179gkrsgxgfzehrjabbrqk9rx83ht02",
+      "displayName": "KeDouPi(珂抖屁)",
+      "image": "https://avatars.githubusercontent.com/u/11420318?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 265,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1774629896780,
+      "changelog": "**Cognitive Forge 1.0.4 — Key Update: Model files now use individual Markdown files with YAML frontmatter.**\n\n- Each mental model is written to its own file (`patterns/{id}.md`) with YAML frontmatter, instead of being appended to `thinking-patterns.md`.\n- Knowledge base status/statistics now count `.md` files in `patterns/` for model total.\n- Model de-duplication uses book titles only; does not check or parse `patterns/`.\n- Permissions and config updated for new file structure.\n- All workflows, review, and status logic modernized to reference the new per-model file system.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8c8f473a28c20ec87ec483346ba6149a3a03310401d4d3557d24350dd8927ef5"
+}

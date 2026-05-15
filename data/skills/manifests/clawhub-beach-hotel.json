@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46512,
+  "uuid": "skill-clawhub-beach-hotel",
+  "skillKey": "clawhub-beach-hotel",
+  "name": "beach-hotel",
+  "summary": "Book flights to beach hotels and seaside resort destinations. Also supports: flight booking, hotel reservation, train tickets, attraction tickets, itinerary...",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beach_hotel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dingtom336-gif",
+      "features": [
+        "Book flights to beach hotels and seaside resort destinations",
+        "Also supports: flight booking, hotel reservation, train tickets, attraction tickets, itinerary.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/beach-hotel@3.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256118512?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "beach-hotel",
+      "url": "https://clawhub.ai/skills/beach-hotel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beach-hotel",
+    "url": "https://clawhub.ai/skills/beach-hotel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beach-hotel-240b67ac9a24b178.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/beach-hotel@3.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-beach-hotel-3.2.0.json",
+      "version": "3.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dd82c2f6e42b0d8bdf588f9bcd0e3eb6718649432f97d5ee74ea906ea3b8f782",
+      "artifactSizeBytes": 2413
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T06:20:51.850Z"
+}

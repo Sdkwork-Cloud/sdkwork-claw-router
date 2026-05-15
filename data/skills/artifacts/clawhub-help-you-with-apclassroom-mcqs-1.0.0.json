@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/help-you-with-apclassroom-mcqs@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.help_you_with_apclassroom_mcqs",
+  "skill": {
+    "id": 59061,
+    "skillKey": "clawhub-help-you-with-apclassroom-mcqs",
+    "name": "AP Classroom Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "help-you-with-apclassroom-mcqs",
+    "url": "https://clawhub.ai/skills/help-you-with-apclassroom-mcqs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/help-you-with-apclassroom-mcqs-e86cd116ae1bdc51.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "完成 AP Classroom 所有学科的作业。支持 AP Lang、AP Statistics、AP Computer Science 等所有 AP 课程。自动检查、答题、提交 Reading Quiz、Writing Quiz、Progress Check 等作业。使用当前已登录的浏览器。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rogerhyj",
+      "userId": "s17478yn0gj6fcy8rcg4hedz3h83g8k5",
+      "displayName": "Loki",
+      "image": "https://avatars.githubusercontent.com/u/221662918?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 377,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773887092694,
+      "changelog": "Help you to do all AP Classroom MCQs, all subjects. Directly control your browser to do the mcqs.\n\n一键控制你的电脑做APCLASSROOM的作业，懂得都懂",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:79fc8437e67c964af7a76ffa2f45d6f69e8f190af310a0cdd09252cff0d49453"
+}

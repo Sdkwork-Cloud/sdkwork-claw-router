@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-review-management@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_review_management",
+  "skill": {
+    "id": 33420,
+    "skillKey": "clawhub-amazon-review-management",
+    "name": "Amazon Review Management"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-review-management",
+    "url": "https://clawhub.ai/skills/amazon-review-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-review-management-18caf19b0d8ef417.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Amazon review management and response agent. Write professional responses to negative reviews, analyze review patterns to find product improvements, build co..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mguozhen",
+      "userId": "s170nk66cz4zpwnnsv8bxksrp983f82k",
+      "displayName": "mguozhen",
+      "image": "https://avatars.githubusercontent.com/u/1411875?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 228,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774070147427,
+      "changelog": "- Initial release of the Amazon Review Management agent.\n- Respond professionally to negative reviews using provided templates and frameworks.\n- Analyze review patterns to identify product improvement opportunities and systematic issues.\n- Generate compliant review request strategies, including insert card copy and follow-up methods.\n- Provide guides for Amazon Vine program enrollment and when to use it.\n- Offer crisis management tools for review bombing scenarios.\n- Enable review profile/history saving and competitor review analysis.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d8e964ef0192dea4db56df42dffb9171d9971eb70e8e59954b98543eae903399"
+}

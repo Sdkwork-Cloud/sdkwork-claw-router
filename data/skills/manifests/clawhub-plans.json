@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64816,
+  "uuid": "skill-clawhub-plans",
+  "skillKey": "clawhub-plans",
+  "name": "Plans & Todos",
+  "summary": "管理长期规划与短期待办事项。当用户提到目标、任务、计划、路线图，或需要将复杂目标拆解为存储在 memory/plans-todos.md 中的可执行项时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plans",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "InfiniEcho",
+      "features": [
+        "管理长期规划与短期待办事项。当用户提到目标、任务、计划、路线图，或需要将复杂目标拆解为存储在 memory/plans-todos.md 中的可执行项时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/plans@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12195307?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "plans",
+      "url": "https://clawhub.ai/skills/plans"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plans",
+    "url": "https://clawhub.ai/skills/plans",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plans-c404dc69b55c0692.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/plans@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-plans-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f0f93d1c3be9f6bd82d1ddb3192af1b9223cd53abeab3d547acf66f4ca52efe8",
+      "artifactSizeBytes": 2340
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T14:17:31.315Z"
+}

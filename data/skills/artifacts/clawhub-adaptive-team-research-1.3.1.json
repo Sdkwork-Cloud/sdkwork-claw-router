@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adaptive-team-research@1.3.1",
+  "version": "1.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adaptive_team_research",
+  "skill": {
+    "id": 34359,
+    "skillKey": "clawhub-adaptive-team-research",
+    "name": "Adaptive Team Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adaptive-team-research",
+    "url": "https://clawhub.ai/skills/adaptive-team-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adaptive-team-research-953225c535904272.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adaptive multi-agent team for software project reviews. Auto-selects collaboration mode (centralized / domain-lead / peer) and runs a 3-round workflow (facts..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "joe-rq",
+      "userId": "s178z6k03aymxgpfbzb4cnv7gx83x8rf",
+      "displayName": "Joe-rq",
+      "image": "https://avatars.githubusercontent.com/u/77777313?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 225,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.3.1",
+      "createdAt": 1773838395084,
+      "changelog": "- Clarified the differences between collaboration modes (centralized, domain-lead, peer) with concrete agent counts, prompts, and workflow paths.\n- Added mandatory user confirmation checkpoint after mode selection—execution pauses until user approves the chosen mode.\n- Strengthened instructions for fact-only collection in Round 1, with explicit banned words and error handling.\n- Specified steps and constraints for creating and storing the review canvas file as a standalone artifact.\n- Enhanced guidelines for the consensus-building phase, cost estimation, and responsibility assignment.\n- Expanded troubleshooting section detailing common misuses and system safeguards.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b9068370eedc9bd7904c09ffaef396e83c6e57afd4a03775b54c68c33dc3a199"
+}

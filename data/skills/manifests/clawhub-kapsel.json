@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50765,
+  "uuid": "skill-clawhub-kapsel",
+  "skillKey": "clawhub-kapsel",
+  "name": "Project- & Time-Capsules",
+  "summary": "Project memory capsules — archive completed project knowledge to Google Drive and reload it on demand. Use this skill whenever the user mentions \"Kapsel\", \"c...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kapsel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Djamel Saric",
+      "features": [
+        "Project memory capsules — archive completed project knowledge to Google Drive and reload it on.",
+        "Use this skill whenever the user mentions \"Kapsel\", \"c..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kapsel@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/252505821?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kapsel",
+      "url": "https://clawhub.ai/skills/kapsel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kapsel",
+    "url": "https://clawhub.ai/skills/kapsel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kapsel-b58cf6e181778b7c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kapsel@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kapsel-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f89bee09b27813e5da626e745b61293e58e2288fa037dfe4210f3163c3a8c37b",
+      "artifactSizeBytes": 2352
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T22:03:31.487Z"
+}

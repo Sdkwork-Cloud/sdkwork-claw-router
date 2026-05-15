@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brightdata-scrape@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brightdata_scrape",
+  "skill": {
+    "id": 55905,
+    "skillKey": "clawhub-brightdata-scrape",
+    "name": "Scrape"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brightdata-scrape",
+    "url": "https://clawhub.ai/skills/brightdata-scrape",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brightdata-scrape-f30aca2b1d7cfc58.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scrape web content as clean markdown/HTML/JSON via the Bright Data CLI (`bdata scrape`). Use when the user wants to fetch a page, extract content from a list..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "meirk-brd",
+      "userId": "s1785kqh67tb9awftjs3e67kds83ga1a",
+      "displayName": "Meir Kadosh",
+      "image": "https://avatars.githubusercontent.com/u/182499612?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 82,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777563201604,
+      "changelog": "Initial publish from brightdata-plugin repo",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9891d320db89831be956f839e839d0fb1ae6719350bc170c09ac38b2939a08b1"
+}

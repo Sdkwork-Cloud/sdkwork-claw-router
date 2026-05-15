@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linkedin-poster@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkedin_poster",
+  "skill": {
+    "id": 28098,
+    "skillKey": "clawhub-linkedin-poster",
+    "name": "LinkedIn Poster"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkedin-poster",
+    "url": "https://clawhub.ai/skills/linkedin-poster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkedin-poster-be80050824e4f78a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when you need to post content to LinkedIn, including text posts, image posts, and"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "david3xu",
+      "userId": "publishers:david3xu",
+      "displayName": "david3xu",
+      "image": "https://avatars.githubusercontent.com/u/123739158?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 334,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773893275907,
+      "changelog": "Text + image posting via native LinkedIn channel extension. Uses official UGC API — no cookies, no paid service.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c5cdee7eac093de7798f6d9278bcc01a888a4394d8f936e16aef236c98720f6c"
+}

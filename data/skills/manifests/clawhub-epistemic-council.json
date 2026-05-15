@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18259,
+  "uuid": "skill-clawhub-epistemic-council",
+  "skillKey": "clawhub-epistemic-council",
+  "name": "Epistemic Council",
+  "summary": "Manage and execute all Epistemic Council pipeline operations including status checks, validations, audits, and adversarial re-challenges.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.epistemic_council",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "su-ariel",
+      "features": [
+        "Manage and execute all Epistemic Council pipeline operations including status checks, validatio."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/epistemic-council@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/242868732?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "epistemic-council",
+      "url": "https://clawhub.ai/skills/epistemic-council"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "epistemic-council",
+    "url": "https://clawhub.ai/skills/epistemic-council",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/epistemic-council-db0b35e8b41360d2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/epistemic-council@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-epistemic-council-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fba9549fe9ac5cb18d5ea9282a9bceb30c7c237c06f6ca04e786ac24a1e9d2eb",
+      "artifactSizeBytes": 2282
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T23:58:12.724Z"
+}

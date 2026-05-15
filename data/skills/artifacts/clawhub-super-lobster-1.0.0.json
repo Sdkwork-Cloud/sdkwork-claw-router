@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/super-lobster@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.super_lobster",
+  "skill": {
+    "id": 43751,
+    "skillKey": "clawhub-super-lobster",
+    "name": "Super Lobster"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "super-lobster",
+    "url": "https://clawhub.ai/skills/super-lobster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/super-lobster-959220592a771ceb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Performs aggressive web research and data extraction via local scripts, browser rendering, crawling, and command execution on a China-networked gateway."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mrherojack",
+      "userId": "s171xwedb6c2xd478mn2p1v2sh83zagq",
+      "displayName": "MrHeroJack",
+      "image": "https://avatars.githubusercontent.com/u/9410620?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774934979142,
+      "changelog": "Initial release with aggressive web research and automation capabilities:\n\n- Provides tools for direct URL fetching, main content extraction, browser DOM rendering, and site crawling.\n- Designed for operation in a China network environment—does not assume western search engines or APIs are reachable.\n- Prefers local execution for scripting, scraping, parsing, and automation tasks.\n- Includes clear default workflows and tool usage guidelines for efficient information retrieval and processing.\n- Outlines specific rules for browser usage, coding, and network practices to optimize reliability and resource management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6cec5c0484c2ab2e22acc7bb6244b1d35017ec371f8543a22ebd3b9360bb8f58"
+}

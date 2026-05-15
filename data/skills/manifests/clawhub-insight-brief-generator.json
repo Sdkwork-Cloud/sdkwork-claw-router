@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59493,
+  "uuid": "skill-clawhub-insight-brief-generator",
+  "skillKey": "clawhub-insight-brief-generator",
+  "name": "Insight Brief Generator",
+  "summary": "把报表和图表转成管理层可读的洞察摘要，区分发现、解释和建议动作。；use for insights, analytics, briefing workflows；do not use for 夸大结论, 把相关性当因果.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.insight_brief_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "把报表和图表转成管理层可读的洞察摘要，区分发现、解释和建议动作。；use for insights, analytics, briefing workflows；do not use for."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/insight-brief-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "insight-brief-generator",
+      "url": "https://clawhub.ai/skills/insight-brief-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "insight-brief-generator",
+    "url": "https://clawhub.ai/skills/insight-brief-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/insight-brief-generator-e35b556e979fe77e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/insight-brief-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-insight-brief-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cb497716c74591aabe0641e70b9a77e2afb4affaed88ec3b1dfa7239ba07f38b",
+      "artifactSizeBytes": 2590
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T02:18:03.861Z"
+}

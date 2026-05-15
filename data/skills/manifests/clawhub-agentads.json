@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42917,
+  "uuid": "skill-clawhub-agentads",
+  "skillKey": "clawhub-agentads",
+  "name": "Agent Ads",
+  "summary": "Subscribe to Agent Ads to get intent-matched humans invited to your XMTP group on Base, paying only in USDC per accepted invite (no forced adds).",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentads",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mateo",
+      "features": [
+        "Subscribe to Agent Ads to get intent-matched humans invited to your XMTP group on Base, paying."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentads@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/196567463?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentads",
+      "url": "https://clawhub.ai/skills/agentads"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentads",
+    "url": "https://clawhub.ai/skills/agentads",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentads-f6eadeed306e3c8f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentads@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentads-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:46094df65d96f856d3bffd4a9564232cf94cc9bff513ab0e6553628ee28b9792",
+      "artifactSizeBytes": 1857
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T18:29:05.271Z"
+}

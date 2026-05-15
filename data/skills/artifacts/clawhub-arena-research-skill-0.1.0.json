@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/arena-research-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arena_research_skill",
+  "skill": {
+    "id": 16804,
+    "skillKey": "clawhub-arena-research-skill",
+    "name": "Arena Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arena-research-skill",
+    "url": "https://clawhub.ai/skills/arena-research-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arena-research-skill-f2101a0340e7d369.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search and explore Are.na for curated channels, references, and visual inspiration by analyzing connections and identifying key curators across any topic."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "givenness",
+      "userId": "publishers:givenness",
+      "displayName": "givenness",
+      "image": "https://avatars.githubusercontent.com/u/40750975?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 817,
+      "installsAllTime": 3,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771120837321,
+      "changelog": "Initial release of the arena-research skill — a general-purpose research agent for Are.na:\n\n- Enables curated search across Are.na for channels, blocks, users, and connections.\n- Explores the connection graph to surface adjacent ideas and influential curators.\n- Provides CLI scripts for searching, exploring channels/blocks, traversing connections, and listing user info.\n- Includes guide for agentic research: decomposing questions, identifying key collections, and following conceptual links.\n- Clarifies best use cases vs. other research sources (e.g., X/Twitter, web search).\n- Not intended for posting content or account management.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f048691c7615335f13a19fd0e7ee2d5343dad34ca06b8f45b9849695ba9d40ee"
+}

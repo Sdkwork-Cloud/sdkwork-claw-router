@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dark-factory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dark_factory",
+  "skill": {
+    "id": 45843,
+    "skillKey": "clawhub-dark-factory",
+    "name": "Dark-Factory-Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dark-factory",
+    "url": "https://clawhub.ai/skills/dark-factory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dark-factory-db59923a689b3fa6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomously validates specifications, runs behavioral tests, generates code, executes tests, and produces cryptographically signed outcome reports."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danielfoojunwei",
+      "userId": "s17f1g01v1cvanvy5v2deneeh583v13t",
+      "displayName": "Daniel Foo Jun Wei",
+      "image": "https://avatars.githubusercontent.com/u/122217524?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775395493145,
+      "changelog": "Initial release of dark-factory, the autonomous execution engine for validated specifications.\n\n- Validates specifications from intent-engineering for clarity and completeness.\n- Runs behavioral tests against a mock environment before implementation.\n- Autonomously generates code, executes unit and integration tests.\n- Produces cryptographically signed, verifiable outcome reports.\n- Can be used standalone or as Stage 2 in the unified-orchestrator pipeline.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c00fca11ce4245b4f2ecd8444b59aec15f046194900edd6fe2d561ea2ac5b0b8"
+}

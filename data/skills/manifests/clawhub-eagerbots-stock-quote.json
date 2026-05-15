@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53805,
+  "uuid": "skill-clawhub-eagerbots-stock-quote",
+  "skillKey": "clawhub-eagerbots-stock-quote",
+  "name": "Stock Quote",
+  "summary": "Get real-time stock, ETF, and crypto prices. Compare tickers, check market cap and volume. Uses Yahoo Finance — no API key required.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eagerbots_stock_quote",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Joseph Fluckiger",
+      "features": [
+        "Get real-time stock, ETF, and crypto prices",
+        "Compare tickers, check market cap and volume",
+        "Uses Yahoo Finance — no API key required."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eagerbots-stock-quote@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/899230?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eagerbots-stock-quote",
+      "url": "https://clawhub.ai/skills/eagerbots-stock-quote"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eagerbots-stock-quote",
+    "url": "https://clawhub.ai/skills/eagerbots-stock-quote",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eagerbots-stock-quote-6ac428d0df4276a3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eagerbots-stock-quote@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-eagerbots-stock-quote-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cdab7d0018c1ef6a785902129eefa8750c0e0fb9acd02222bf79721294de7d99",
+      "artifactSizeBytes": 2009
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T15:10:13.944Z"
+}

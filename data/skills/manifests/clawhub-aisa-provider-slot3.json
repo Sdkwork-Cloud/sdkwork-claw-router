@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55702,
+  "uuid": "skill-clawhub-aisa-provider-slot3",
+  "skillKey": "clawhub-aisa-provider-slot3",
+  "name": "AIsa Provider",
+  "summary": "Configure AIsa as an OpenAI-compatible provider endpoint for OpenClaw and related runtimes. Use this skill when the user wants to set `AISA_API_KEY`, point a...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aisa_provider_slot3",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIsa",
+      "features": [
+        "Configure AIsa as an OpenAI-compatible provider endpoint for OpenClaw and related runtimes",
+        "Use this skill when the user wants to set `AISA_API_KEY`, point a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aisa-provider-slot3@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245991925?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aisa-provider-slot3",
+      "url": "https://clawhub.ai/skills/aisa-provider-slot3"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aisa-provider-slot3",
+    "url": "https://clawhub.ai/skills/aisa-provider-slot3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aisa-provider-slot3-326a5c44ae9b1fcf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aisa-provider-slot3@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-aisa-provider-slot3-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9c82a52a1141ee7c866e802c3c80aad993b875caa7f0983f13ef9a065d523503",
+      "artifactSizeBytes": 2222
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T21:13:56.969Z"
+}

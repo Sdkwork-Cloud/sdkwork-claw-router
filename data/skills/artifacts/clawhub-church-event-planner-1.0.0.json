@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/church-event-planner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.church_event_planner",
+  "skill": {
+    "id": 39605,
+    "skillKey": "clawhub-church-event-planner",
+    "name": "Church Event Planner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "church-event-planner",
+    "url": "https://clawhub.ai/skills/church-event-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/church-event-planner-f4768bd18de0fafb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Plan and manage church events from start to finish, including timelines, task checklists, vendors, and volunteer coordination. Use this skill whenever someon..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chris-openclaw",
+      "userId": "s17f63svb641q2stekk1cmcdn183k4rq",
+      "displayName": "chris-openclaw",
+      "image": "https://avatars.githubusercontent.com/u/271059507?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775873547987,
+      "changelog": "Initial release of Church Event Planner skill.\n\n- Plan and manage all types of church events—gatherings, services, fundraisers, retreats, VBS, potlucks, weddings, funerals, and more.\n- Track events, task checklists, vendors, and volunteers in a single, organized workflow.\n- Built-in smart templates for common events like VBS, potlucks, special services, and retreats offer ready-to-use planning checklists.\n- All event data is persistently stored and updated in a structured JSON file for accuracy and continuity.\n- Automatically triggers when users mention any aspect of event planning, even in casual conversation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a30344e24e13f469e8a41f284b3630200ad01d846e670a9d5a4dc650803b2fd5"
+}

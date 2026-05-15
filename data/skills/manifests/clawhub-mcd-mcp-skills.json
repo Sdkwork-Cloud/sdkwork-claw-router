@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71364,
+  "uuid": "skill-clawhub-mcd-mcp-skills",
+  "skillKey": "clawhub-mcd-mcp-skills",
+  "name": "mcd-mcp-skills",
+  "summary": "麦当劳MCP平台集成，提供餐品营养查询、外送点餐、配送地址管理、优惠券管理、积分兑换等20个完整功能；当用户需要查询麦当劳餐品营养、下单外卖、管理地址、查询或领取优惠券、兑换积分商品时使用",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcd_mcp_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "末心",
+      "features": [
+        "麦当劳MCP平台集成，提供餐品营养查询、外送点餐、配送地址管理、优惠券管理、积分兑换等20个完整功能；当用户需要查询麦当劳餐品营养、下单外卖、管理地址、查询或领取优惠券、兑换积分商品时使用"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mcd-mcp-skills@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59173630?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mcd-mcp-skills",
+      "url": "https://clawhub.ai/skills/mcd-mcp-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcd-mcp-skills",
+    "url": "https://clawhub.ai/skills/mcd-mcp-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcd-mcp-skills-2942c1f851a4a181.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mcd-mcp-skills@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mcd-mcp-skills-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0942ce097cce861edd8b7f12738a06c5e6db9a7961642cf6f02adf0ae07795f3",
+      "artifactSizeBytes": 2511
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T18:41:01.110Z"
+}

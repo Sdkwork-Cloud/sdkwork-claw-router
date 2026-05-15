@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tencent-edgeone-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencent_edgeone_skill",
+  "skill": {
+    "id": 31883,
+    "skillKey": "clawhub-tencent-edgeone-skill",
+    "name": "Tencent EdgeOne"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencent-edgeone-skill",
+    "url": "https://clawhub.ai/skills/tencent-edgeone-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencent-edgeone-skill-cecfe0f837603840.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A comprehensive skill for Tencent EdgeOne (Edge Security & Acceleration Platform), covering edge acceleration (DNS, certificates, caching, rule engine, L4 pr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tencent-adm",
+      "userId": "s171cxjdnjyqjxa91pj2bfmr6x83gyg1",
+      "displayName": "腾讯开源",
+      "image": "https://avatars.githubusercontent.com/u/19383298?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776686958787,
+      "changelog": "## Link style migration\n\nAll internal Markdown hyperlinks (`[file.md](file.md)`) replaced with backtick code references (`` `file.md` ``) across every module, improving compatibility with AI agent file-reading.\n\n## API reference updates\n\n- Fallback doc URLs updated: `cloud.tencent.com/document/api/1552` → `edgeone.ai/document/50454`; `cloud.tencent.com/document/product/440` → `github.com/TencentCloud/tencentcloud-cli`\n- Added `metadata.openclaw.requires` declaring runtime dependencies (`tccli`, `gunzip`, `curl`/`wget`, `jq`, `python3`)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dc67e96078f794c80c68db315d6e89fc27b8c75915b596f18470fe7944e253a8"
+}

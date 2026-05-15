@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mysql-database-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mysql_database_skill",
+  "skill": {
+    "id": 63114,
+    "skillKey": "clawhub-mysql-database-skill",
+    "name": "MySQL Database CLI Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mysql-database-skill",
+    "url": "https://clawhub.ai/skills/mysql-database-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mysql-database-skill-1da53d7842bde293.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MySQL 数据库操作技能。通过 mysql CLI 连接数据库，执行 SELECT 查询、INSERT/UPDATE/DELETE 增删改、批量 SQL 执行、事务控制、数据库/表管理、JSON 格式输出。适用场景：查用户数据、统计报表、数据导入导出、数据库巡检、表结构查看、远程连接、生产环境调试。触发关键词：..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "429668385",
+      "userId": "s1761ynrawgks950k2cp4grq99841ssb",
+      "displayName": "429668385",
+      "image": "https://avatars.githubusercontent.com/u/16751044?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 365,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775030245998,
+      "changelog": "Added copyright: 少煊 <429668385@qq.com>",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5c046b156f74de2aa7baea3f73e9c5fe0f74084ba2243d498eaa98e4ea1af11e"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62075,
+  "uuid": "skill-clawhub-feishu-forward-reader",
+  "skillKey": "clawhub-feishu-forward-reader",
+  "name": "飞书转发消息读取器",
+  "summary": "读取和解析飞书合并转发消息(merge_forward)的详细内容。当收到飞书转发消息显示为\"Merged and Forwarded Message\"时使用此 skill 获取原始消息内容。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_forward_reader",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "konce",
+      "features": [
+        "读取和解析飞书合并转发消息(merge_forward)的详细内容。当收到飞书转发消息显示为\"Merged and Forwarded Message\"时使用此 skill 获取原始消息内容。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-forward-reader@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5655162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-forward-reader",
+      "url": "https://clawhub.ai/skills/feishu-forward-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-forward-reader",
+    "url": "https://clawhub.ai/skills/feishu-forward-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-forward-reader-da37d33e8d7af10e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-forward-reader@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-forward-reader-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:83be80c75345eff929f9ebacd973095bd2383a39775697982126184fb602a9c6",
+      "artifactSizeBytes": 2053
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T08:21:26.014Z"
+}

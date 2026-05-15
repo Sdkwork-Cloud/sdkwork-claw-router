@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aurora-norfolk@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aurora_norfolk",
+  "skill": {
+    "id": 36220,
+    "skillKey": "clawhub-aurora-norfolk",
+    "name": "aurora-norfolk"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aurora-norfolk",
+    "url": "https://clawhub.ai/skills/aurora-norfolk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aurora-norfolk-a714b4e3144455b0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "produce a practical 3-day northern lights planning and live-update workflow for tim in dereham, norfolk, with alert-day escalation, north norfolk coast compa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "timcoy47",
+      "userId": "publishers:timcoy47",
+      "displayName": "timcoy47",
+      "image": "https://avatars.githubusercontent.com/u/102976073?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 207,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774084852318,
+      "changelog": "Aurora Norfolk — Version 1.0.0\n\n- Initial release providing a 3-day, location-comparison aurora planning service for Dereham and the North Norfolk coast.\n- Implements practical decision logic factoring in space weather, local sky conditions, darkness, moon, and horizon advantage.\n- Defines clear action thresholds and conservative travel recommendations.\n- Outlines concise outputs for daily planning, change alerts, alert-day briefs, and live-night updates.\n- Uses authoritative data sources in priority order (NOAA SWPC, Met Office, AuroraWatch UK).\n- Ensures transparent confidence handling and honest uncertainty communication.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f9ac3658d1e57cb94d90ab7277ac5815e05781da5a6d122159d9d9825181039a"
+}

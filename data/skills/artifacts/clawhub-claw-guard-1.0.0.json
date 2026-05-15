@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-guard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_guard",
+  "skill": {
+    "id": 49425,
+    "skillKey": "clawhub-claw-guard",
+    "name": "ClawGuard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-guard",
+    "url": "https://clawhub.ai/skills/claw-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-guard-d8cdaa6c135cff53.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Security auditor for ClawHub skills. Run before installing ANY skill — scans SKILL.md and scripts for prompt injection, data exfiltration, shell injection, p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "taha2053",
+      "userId": "s172pj5a8m7ytaw9ex4d7h5zsn83h4g6",
+      "displayName": "Almouthana Taha Khalfallah",
+      "image": "https://avatars.githubusercontent.com/u/89487941?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 657,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771597894876,
+      "changelog": "ClawGuard v1.0.0 — Initial Release\n\n- Launches a local security auditor for ClawHub skills: scans for prompt injection, data exfiltration, shell injection, permission mismatches, and other malicious patterns.\n- Provides PASS / WARN / FAIL verdicts with detailed reports, requiring user request to run.\n- Fully local and read-only; no external calls, telemetry, or credential requirements.\n- Audits SKILL.md and scripts against 7 core security checks, including repository trust signals.\n- Simple usage via natural language in OpenClaw or CLI command.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:047858edec5bc1f45fd7e98a5e3892b389b5d7306432125e0bc1fdda98fb7681"
+}

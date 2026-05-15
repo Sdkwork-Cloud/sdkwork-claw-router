@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69787,
+  "uuid": "skill-clawhub-jftech-open-pro-video-record",
+  "skillKey": "clawhub-jftech-open-pro-video-record",
+  "name": "jftech-open-pro-video-record",
+  "summary": "杰峰设备录像回放技能。支持获取设备云存储录像和设备本地录像回放地址，包括录像列表查询、回放地址获取、录像下载等功能。使用场景：云存回放、本地卡录像回放、录像下载、历史视频查看。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jftech_open_pro_video_record",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jftech",
+      "features": [
+        "杰峰设备录像回放技能。支持获取设备云存储录像和设备本地录像回放地址，包括录像列表查询、回放地址获取、录像下载等功能。使用场景：云存回放、本地卡录像回放、录像下载、历史视频查看。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jftech-open-pro-video-record@1.0.0",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/jftech-open-pro-video-record/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jftech-open-pro-video-record",
+      "url": "https://clawhub.ai/skills/jftech-open-pro-video-record"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jftech-open-pro-video-record",
+    "url": "https://clawhub.ai/skills/jftech-open-pro-video-record",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jftech-open-pro-video-record-addd4cae77121b8e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jftech-open-pro-video-record@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jftech-open-pro-video-record-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b3c7310e9ff22cf838dc4477713b29d651a916b28ace946173236730c509ad5b",
+      "artifactSizeBytes": 2466
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T06:21:53.790Z"
+}

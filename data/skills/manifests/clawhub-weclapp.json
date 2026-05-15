@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22023,
+  "uuid": "skill-clawhub-weclapp",
+  "skillKey": "clawhub-weclapp",
+  "name": "Weclapp",
+  "summary": "Weclapp integration. Manage Organizations. Use when the user wants to interact with Weclapp data.",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weclapp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Weclapp integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Weclapp data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weclapp@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weclapp",
+      "url": "https://clawhub.ai/skills/weclapp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weclapp",
+    "url": "https://clawhub.ai/skills/weclapp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weclapp-f9238c57c232ebbf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weclapp@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-weclapp-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73eaf074ccdbf210b05ae1d6e4fa1f89f6ce499ce171951643151c459cbc0f32",
+      "artifactSizeBytes": 1797
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:01:22.270Z"
+}

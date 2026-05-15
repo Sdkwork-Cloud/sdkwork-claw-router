@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-safety-checker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_safety_checker",
+  "skill": {
+    "id": 18234,
+    "skillKey": "clawhub-skill-safety-checker",
+    "name": "Skill Safety Checker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-safety-checker",
+    "url": "https://clawhub.ai/skills/skill-safety-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-safety-checker-e165589f8ac3b341.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Runs VirusTotal-style security checks on OpenClaw/Cursor skills before install, including remote code execution (RCE) and malicious code (obfuscation, exfilt..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "austindixson",
+      "userId": "s17472vm40hmrgybr4rdjmet6h84bcs0",
+      "displayName": "austindixson",
+      "image": "https://avatars.githubusercontent.com/u/52183161?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 708,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771813473265,
+      "changelog": "Initial release of the skill-security-check tool for OpenClaw/Cursor skills.\n\n- Provides structured, VirusTotal-style security checks for skills before install, focusing on remote code execution (RCE) and malicious code detection.\n- Compares registry metadata with SKILL.md for consistency in purpose, required binaries, install steps, and credential declarations.\n- Flags suspicious patterns such as obfuscated code, install instructions from untrusted sources, and unexpected credential or privilege requirements.\n- Ensures all skills in the user’s directory can be batch-checked and classified as Benign or Suspicious, supporting user security decisions.\n- Designed to help both skill authors and users objectively assess and improve skill safety before installation or credential sharing.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a4e2547b9f5155b7d4d0820ea06efad2796d2bfd85795719d31755e36faafc1c"
+}

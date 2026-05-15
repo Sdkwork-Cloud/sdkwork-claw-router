@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/a2a-e2ee-encryption@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a2a_e2ee_encryption",
+  "skill": {
+    "id": 29973,
+    "skillKey": "clawhub-a2a-e2ee-encryption",
+    "name": "A2a E2ee Encryption"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a2a-e2ee-encryption",
+    "url": "https://clawhub.ai/skills/a2a-e2ee-encryption",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a2a-e2ee-encryption-87766de0a702c13c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Implements end-to-end encryption (E2EE) utilities for secure A2A (Agent-to-Agent) communication. Provides key generation, message encryption/decryption, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jpengcheng523-netizen",
+      "userId": "s177n9nwg73ep3g6fp9z19025n83h4xr",
+      "displayName": "jpengcheng523-netizen",
+      "image": "https://avatars.githubusercontent.com/u/226868999?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 291,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774483935395,
+      "changelog": "Initial release of A2A End-to-End Encryption utilities\n\n- Provides RSA key pair generation for secure agent communication.\n- Supports encrypting and decrypting messages between agents using asymmetric keys.\n- Implements secure key exchange, key rotation, and HMAC-based message authentication.\n- Includes key import/export utilities for easy key management.\n- Addresses key storage, rotation, validation, and hybrid encryption for large messages.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fa58c20674ba5084f54cf3daeeeb2380175d792699e6e219fbabce882458150d"
+}

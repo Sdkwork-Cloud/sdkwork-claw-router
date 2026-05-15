@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smic@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smic",
+  "skill": {
+    "id": 72520,
+    "skillKey": "clawhub-smic",
+    "name": "Smic"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smic",
+    "url": "https://clawhub.ai/skills/smic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smic-e1401bc4339b5212.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供中芯国际企业信息、工艺技术、产能布局、股票行情及半导体产业动态查询服务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776295609704,
+      "changelog": "smic skill version 1.0.1 introduces a revised and more concise overview.\n\n- 精简并统一技能简介，聚焦 smic 基本背景信息。\n- 使用条目列表展示 smic 核心了解点，包括历史、产品、全球布局及新闻。\n- 新增场景推荐，强调市场调研与商业合作等用途。\n- 优化阅读提示，更直接指引查询需求和信息来源。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f0e0805e244c7b32529f0908e9f12a9209d841fc9c9a2e2ccb98d9fee5fc91cf"
+}

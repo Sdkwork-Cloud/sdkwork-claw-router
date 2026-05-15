@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-audit-trail@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_audit_trail",
+  "skill": {
+    "id": 27964,
+    "skillKey": "clawhub-openclaw-audit-trail",
+    "name": "openclaw audit trail"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-audit-trail",
+    "url": "https://clawhub.ai/skills/openclaw-audit-trail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-audit-trail-7413f4310983d77c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The Immutable Black Box for AI Decisions - Track, audit, and verify AI agent decisions with cryptographic guarantees"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhenstaff",
+      "userId": "s173q0k18pjbw86jqbmsmgkz7h83h3vm",
+      "displayName": "Justin Liu",
+      "image": "https://avatars.githubusercontent.com/u/34432727?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 337,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773403786626,
+      "changelog": "**Initial public release with major cleanup and refocus:**\n\n- Removed setup scripts, documentation files, and legacy usage examples for a leaner distribution.\n- Replaced detailed technical docs with a feature-focused README (bilingual: Chinese/English), highlighting cryptographic audit trail capabilities.\n- All prior shell and Python example code, compliance mapping tables, and deep integration/formatting instructions have been removed.\n- Now emphasizes installation, core features, CLI/API usage, and practical use cases in a more accessible overview.\n- Prepared for new Node.js/NPM-based workflows and OpenClaw ecosystem integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:69495d5bb89d78c91036a9b6cc1e69a646df179c4d3d37f6a0c1b37fa8b07d32"
+}

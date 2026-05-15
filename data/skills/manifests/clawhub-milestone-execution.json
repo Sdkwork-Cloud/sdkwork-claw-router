@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64791,
+  "uuid": "skill-clawhub-milestone-execution",
+  "skillKey": "clawhub-milestone-execution",
+  "name": "Milestone Execution",
+  "summary": "多阶段任务执行器 - 用户控制节奏，AI在独立工作会话中逐阶段执行任务。每个 milestone 完成后暂停汇报，用户确认后再继续下一阶段。",
+  "version": "3.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.milestone_execution",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Siesta-0402",
+      "features": [
+        "多阶段任务执行器",
+        "用户控制节奏，AI在独立工作会话中逐阶段执行任务。每个 milestone 完成后暂停汇报，用户确认后再继续下一阶段。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/milestone-execution@3.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/209415086?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "milestone-execution",
+      "url": "https://clawhub.ai/skills/milestone-execution"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "milestone-execution",
+    "url": "https://clawhub.ai/skills/milestone-execution",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/milestone-execution-de41e1976dbab4b7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/milestone-execution@3.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-milestone-execution-3.0.1.json",
+      "version": "3.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4f1fcf687cd25522066338a30739e00bf2b07bd5e4d2835b8649494d600d7ce6",
+      "artifactSizeBytes": 1959
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T05:40:20.411Z"
+}

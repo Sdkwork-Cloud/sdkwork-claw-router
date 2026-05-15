@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68222,
+  "uuid": "skill-clawhub-candle-chart",
+  "skillKey": "clawhub-candle-chart",
+  "name": "蜡烛图分析",
+  "summary": "使用akshare获取股票数据，按Steve Nison《日本蜡烛图技术》逻辑识别形态，生成深色盯盘风格K线图（含信号带+成交量）",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.candle_chart",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wtjjacobj",
+      "features": [
+        "使用akshare获取股票数据，按Steve Nison《日本蜡烛图技术》逻辑识别形态，生成深色盯盘风格K线图（含信号带+成交量）"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/candle-chart@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/68179406?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "candle-chart",
+      "url": "https://clawhub.ai/skills/candle-chart"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "candle-chart",
+    "url": "https://clawhub.ai/skills/candle-chart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/candle-chart-502a64b7ca66c15a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/candle-chart@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-candle-chart-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3628954f46d2c6b7f5ac5de93ffe5000d24114a354ae8e2524797e278fc33d6a",
+      "artifactSizeBytes": 1958
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T08:38:55.666Z"
+}

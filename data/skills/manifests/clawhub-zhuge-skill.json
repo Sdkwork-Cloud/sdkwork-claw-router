@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69392,
+  "uuid": "skill-clawhub-zhuge-skill",
+  "skillKey": "clawhub-zhuge-skill",
+  "name": "Zhuge Skill",
+  "summary": "利用64卦推演和多数据源，提供足球比赛预测、经验自学习和多场决策支持的智能辅助工具。",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhuge_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "小九",
+      "features": [
+        "利用64卦推演和多数据源，提供足球比赛预测、经验自学习和多场决策支持的智能辅助工具。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zhuge-skill@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261852489?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zhuge-skill",
+      "url": "https://clawhub.ai/skills/zhuge-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhuge-skill",
+    "url": "https://clawhub.ai/skills/zhuge-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhuge-skill-2b85f43d19927aac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zhuge-skill@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-zhuge-skill-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1659b78e056e28dc1e0139fc2a9202450faf8cb58e0fe1cdd061e0b8e7da03ad",
+      "artifactSizeBytes": 1903
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T15:34:33.106Z"
+}

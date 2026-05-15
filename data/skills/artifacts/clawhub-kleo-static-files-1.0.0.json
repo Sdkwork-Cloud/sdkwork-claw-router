@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kleo-static-files@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kleo_static_files",
+  "skill": {
+    "id": 11914,
+    "skillKey": "clawhub-kleo-static-files",
+    "name": "Kleo Static files"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kleo-static-files",
+    "url": "https://clawhub.ai/skills/kleo-static-files",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kleo-static-files-8ad89a8155157453.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Host static files on subdomains with optional authentication. Use when you need to serve HTML, images, CSS, JS, or any static content on a dedicated subdomain. Supports file upload, basic auth, quota management, and automatic SSL via Caddy."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "awaaate",
+      "userId": "publishers:awaaate",
+      "displayName": "awaaate",
+      "image": "https://avatars.githubusercontent.com/u/20922733?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1977,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769885567722,
+      "changelog": "Host static files on subdomains with automatic SSL. Create sites, upload files, add basic auth. CLI + API included.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:eeb2f5d534ba3518176ff1d3897be4ea33f6815111ab85d6b55fe339c4eab0a2"
+}

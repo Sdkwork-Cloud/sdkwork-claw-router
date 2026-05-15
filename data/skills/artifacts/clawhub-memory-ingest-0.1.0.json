@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-ingest@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_ingest",
+  "skill": {
+    "id": 30211,
+    "skillKey": "clawhub-memory-ingest",
+    "name": "Memory Ingest"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-ingest",
+    "url": "https://clawhub.ai/skills/memory-ingest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-ingest-33e68cefd46e4ade.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Process unstructured external input (meeting transcripts, conversation logs, pasted documents) into structured Basic Memory entities. Extracts entities, sear..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "phernandez",
+      "userId": "publishers:phernandez",
+      "displayName": "Paul Hernandez",
+      "image": "https://avatars.githubusercontent.com/u/60959?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 287,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773281150528,
+      "changelog": "memory-ingest v0.1.0\n\n- Initial release of the memory-ingest skill.\n- Processes unstructured external input (e.g., meeting transcripts, conversation logs, pasted documents) into structured Basic Memory entities.\n- Extracts entities, searches for existing matches, proposes new entities for approval, and creates structured notes with observations and relations.\n- Captures action items and follows a step-by-step workflow for parsing, extraction, and note creation.\n- Supports verbatim source preservation alongside structured metadata and observations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4976d57ca346d1035ec1cc61df6f41e39e8ef05d9275cadcba7adb54d33fa147"
+}

@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "modelmanager",
+    "displayName": "model_manager",
+    "summary": "OpenClaw 模型管理工具。用于查看、设置和管理 OpenClaw 使用的大语言模型。 当用户提到以下场景时使用：切换模型、查看可用模型、设置备用模型、管理模型降级。 重要：此 skill 必须在获得用户明确指示后才能使用。",
+    "tags": {
+      "latest": "1.0.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1774553220180,
+    "updatedAt": 1777623950114
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1774553220180,
+    "changelog": "Initial release of the model-manager skill for OpenClaw:\n\n- Adds a tool for viewing, setting, and managing large language models in OpenClaw.\n- Provides query commands (list, status, fallback list) that do not require user authorization.\n- Restricts modifying commands (set, fallback add/remove) to explicit user instructions.\n- Includes clear usage instructions and command examples.\n- Integrates with OpenClaw’s model management CLI for seamless operations.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "williamxxu",
+    "userId": "s17brtj8tpdeg28844wreexved83ng6e",
+    "displayName": "WilliamXXu",
+    "image": "https://avatars.githubusercontent.com/u/47860185?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777623950114
+  }
+}

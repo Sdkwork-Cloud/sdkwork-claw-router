@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28544,
+  "uuid": "skill-clawhub-psd-automator-skill-command",
+  "skillKey": "clawhub-psd-automator-skill-command",
+  "name": "Psd Automator Skill Command",
+  "summary": "Dispatch PSD automation tasks through skill command entry while reusing the same /psd orchestrator. Requires psd-automator core.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.psd_automator_skill_command",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dhrxy",
+      "features": [
+        "Dispatch PSD automation tasks through skill command entry while reusing the same /psd orchestra.",
+        "Requires psd-automator core."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/psd-automator-skill-command@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51009660?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "psd-automator-skill-command",
+      "url": "https://clawhub.ai/skills/psd-automator-skill-command"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "psd-automator-skill-command",
+    "url": "https://clawhub.ai/skills/psd-automator-skill-command",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/psd-automator-skill-command-42fa82c640a20972.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/psd-automator-skill-command@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-psd-automator-skill-command-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b7d276564aea074408a33c3f4dc62949a3aaeebf6236373ff3ac74b0f6b133a3",
+      "artifactSizeBytes": 2394
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T03:44:56.905Z"
+}

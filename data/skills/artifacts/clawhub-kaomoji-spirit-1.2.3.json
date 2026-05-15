@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kaomoji-spirit@1.2.3",
+  "version": "1.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kaomoji_spirit",
+  "skill": {
+    "id": 62806,
+    "skillKey": "clawhub-kaomoji-spirit",
+    "name": "Kaomoji Spirit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kaomoji-spirit",
+    "url": "https://clawhub.ai/skills/kaomoji-spirit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kaomoji-spirit-6a857de05bfe0d48.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "顏文字推薦助手 - 根據語氣自動推薦合適顏文字"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "redwakame",
+      "userId": "s1752d2d37r7kps0axxb1k71gx83k8rj",
+      "displayName": "Wakame",
+      "image": "https://avatars.githubusercontent.com/u/264813137?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 243,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.2.3",
+      "createdAt": 1774003805485,
+      "changelog": "fix: restore correct content, remove private data",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1228a7c29c02122c3f0e766862cb7166919aabc3d9ae65bf66077ebd45d97647"
+}

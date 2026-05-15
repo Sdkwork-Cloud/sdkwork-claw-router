@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69346,
+  "uuid": "skill-clawhub-jd-translator",
+  "skillKey": "clawhub-jd-translator",
+  "name": "Jd Translator",
+  "summary": "［何时使用］当用户需要分析招聘 JD 准备面试时；当用户说\"帮我分析这个岗位\"时；当用户需要把 JD 能力要求翻译成企业待解决问题时；当用户想体系化准备面试时",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jd_translator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lj22503",
+      "features": [
+        "［何时使用］当用户需要分析招聘 JD 准备面试时；当用户说\"帮我分析这个岗位\"时；当用户需要把 JD 能力要求翻译成企业待解决问题时；当用户想体系化准备面试时"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jd-translator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/170225356?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jd-translator",
+      "url": "https://clawhub.ai/skills/jd-translator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jd-translator",
+    "url": "https://clawhub.ai/skills/jd-translator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jd-translator-bd0e8646ac2c66df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jd-translator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jd-translator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3759ff4f0da9bc43bacb7614d7a46825f9cf59150a7c9ababe3f21184a6123ab",
+      "artifactSizeBytes": 1987
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T03:21:59.702Z"
+}

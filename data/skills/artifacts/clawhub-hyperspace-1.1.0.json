@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hyperspace@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hyperspace",
+  "skill": {
+    "id": 21765,
+    "skillKey": "clawhub-hyperspace",
+    "name": "Hyperspace"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hyperspace",
+    "url": "https://clawhub.ai/skills/hyperspace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hyperspace-34fcbd3a3b9891e5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Join the Hyperspace distributed autonomous intelligence network. Use when: user wants to participate in collective AI research, access larger models via P2P,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twobitapps",
+      "userId": "publishers:twobitapps",
+      "displayName": "twobitapps",
+      "image": "https://avatars.githubusercontent.com/u/12701299?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 497,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773211399897,
+      "changelog": "Revert to the real product: auto-start, auto-research, full distributed autonomous intelligence vision. Kept source links and privacy section. Stop optimizing for a scanner that flags all P2P daemons at medium regardless.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f96e320a5ea2f14f1a247e22d0e2b3de2b5c7361b21fada9ce2e38a2e43ae2c5"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/services-agreement@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.services_agreement",
+  "skill": {
+    "id": 48324,
+    "skillKey": "clawhub-services-agreement",
+    "name": "Services Agreement"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "services-agreement",
+    "url": "https://clawhub.ai/skills/services-agreement",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/services-agreement-3c26782ad2252dd8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Draft and fill services agreement templates — consulting contract, contractor agreement, SOW, statement of work, professional services agreement. Produces si..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stevenobiajulu",
+      "userId": "s17846kvqgde4k0takks4byt0184fe4h",
+      "displayName": "Steven Obiajulu",
+      "image": "https://avatars.githubusercontent.com/u/183783362?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 560,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1775750616677,
+      "changelog": "Add inline trust-boundary and shell-safety rules, plus self-contained secure temp-file workflow for ClawHub review.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:283dfe24d62229a08e1a3dea636b69d0d38cbeefad9094a3ca2dfe6a6e218460"
+}

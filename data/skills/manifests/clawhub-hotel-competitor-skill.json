@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65789,
+  "uuid": "skill-clawhub-hotel-competitor-skill",
+  "skillKey": "clawhub-hotel-competitor-skill",
+  "name": "酒店竞对调研openclaw助手",
+  "summary": "酒店竞争分析 SKILL - 自动搜索周边酒店，生成竞争分析报告",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hotel_competitor_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chaoliuzhu65-tech",
+      "features": [
+        "酒店竞争分析 SKILL",
+        "自动搜索周边酒店，生成竞争分析报告"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hotel-competitor-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256701025?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hotel-competitor-skill",
+      "url": "https://clawhub.ai/skills/hotel-competitor-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hotel-competitor-skill",
+    "url": "https://clawhub.ai/skills/hotel-competitor-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hotel-competitor-skill-d91dfb94131f3748.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hotel-competitor-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hotel-competitor-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b504e7c814f164c769e675b6ad0db4c9798e54ab756fd241e4202af9dcf3a2d4",
+      "artifactSizeBytes": 2313
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T04:37:32.510Z"
+}

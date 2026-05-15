@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "msteamschinaadapter",
+    "displayName": "msteams china adapter",
+    "summary": "Patch OpenClaw to support Microsoft Teams China (世纪互联/21Vianet). 触发场景: (1) msteams webhook 401/AADSTS90002/AADSTS500011 错误; (2) JWT 验证失败/SigningKeyNotFoundEr...",
+    "tags": {
+      "latest": "10.0.2"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 397,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "createdAt": 1773490430255,
+    "updatedAt": 1778308732971
+  },
+  "latestVersion": {
+    "version": "10.0.2",
+    "createdAt": 1778047158075,
+    "changelog": "**Big Change: Adds full auto-detection and repair workflow for Microsoft Teams China integration in OpenClaw.**\n\n- Introduced 18 new files including reference documentation, troubleshooting guides, and script utilities for diagnosis and auto-repair.\n- Added automatic version detection and one-click patch workflow to handle OpenClaw and plugin upgrades.\n- Implemented comprehensive diagnosis, patching, and verification phases (6 stages), including SDK and environment variable configuration for China endpoints.\n- Automated Gateway restarts post-patch, preserving active sessions.\n- Outputs standardized repair reports; supports both manual trigger and auto-run via heartbeat or cron.\n- Enhanced documentation and error scenario mapping for easier troubleshooting and user self-service.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "yhs666",
+    "userId": "s175z9f9bb5vqnc2czwtqja6q983k5xf",
+    "displayName": "Max yang",
+    "image": "https://avatars.githubusercontent.com/u/3980889?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.dangerous_exec",
+      "suspicious.exposed_secret_literal",
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.dangerous_exec, suspicious.exposed_secret_literal, suspicious.llm_suspicious (+1 more)",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778308732971
+  }
+}

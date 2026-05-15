@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66136,
+  "uuid": "skill-clawhub-music-studio",
+  "skillKey": "clawhub-music-studio",
+  "name": "Music Studio",
+  "summary": "面向大模型（LLM）的轻量音乐创作工作台，通过自然语言交互生成音乐、歌词与翻唱。默认采用保守的本地配置与输出管理方式，当前正式支持 MiniMax 歌词、`music-2.6` 文本生成音乐，以及 `music-cover` 前处理配合 `music-2.6` 的两阶段翻唱链路；只有明确说「打开音乐工作室」才进入...",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.music_studio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mrgyan",
+      "features": [
+        "面向大模型（LLM）的轻量音乐创作工作台，通过自然语言交互生成音乐、歌词与翻唱。默认采用保守的本地配置与输出管理方式，当前正式支持 MiniMax 歌词、`music-2.6` 文本生成音乐."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/music-studio@1.0.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/55069687?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "music-studio",
+      "url": "https://clawhub.ai/skills/music-studio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "music-studio",
+    "url": "https://clawhub.ai/skills/music-studio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/music-studio-9dc15ca1854ae7a3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/music-studio@1.0.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-music-studio-1.0.10.json",
+      "version": "1.0.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dbbc9bc576cac4b191310f53708d255dd9e715a46ec193aa6284efbd91ad53eb",
+      "artifactSizeBytes": 2198
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T03:03:41.087Z"
+}

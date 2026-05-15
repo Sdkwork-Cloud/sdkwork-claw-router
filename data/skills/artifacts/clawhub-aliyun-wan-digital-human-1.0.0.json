@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aliyun-wan-digital-human@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun_wan_digital_human",
+  "skill": {
+    "id": 52259,
+    "skillKey": "clawhub-aliyun-wan-digital-human",
+    "name": "Aliyun Wan Digital Human"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun-wan-digital-human",
+    "url": "https://clawhub.ai/skills/aliyun-wan-digital-human",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-wan-digital-human-0b96e9bb744b927c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when generating talking, singing, or presentation videos from a single character image and audio with Alibaba Cloud Model Studio digital-human model `wan..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cinience",
+      "userId": "s1707avh05gnzr3g6e3m9ka6fh840rtd",
+      "displayName": "cinience",
+      "image": "https://avatars.githubusercontent.com/u/557426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775077486621,
+      "changelog": "Initial release of aliyun-wan-digital-human skill.\n\n- Enables generation of talking, singing, or presentation videos from a character image and audio using Alibaba Cloud Model Studio digital-human models.\n- Supports image validation and video generation workflows with distinct model names: `wan2.2-s2v-detect` for validation and `wan2.2-s2v` for video.\n- Exposes a normalized interface for detection and video creation requests.\n- Requires API key setup and China (Beijing) region.\n- Outputs all requests, responses, and task snapshots to a dedicated directory for traceability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a5cf756af1be38cc761910e29f20338c7d5a834af35e28b836430f0dc6ff459a"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mingquan@1.0.327851",
+  "version": "1.0.327851",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mingquan",
+  "skill": {
+    "id": 71753,
+    "skillKey": "clawhub-mingquan",
+    "name": "mingquan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mingquan",
+    "url": "https://clawhub.ai/skills/mingquan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mingquan-fa6b7d81eb3c4cda.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供鸣泉雨课堂账户和班级相关查询服务，包括用户ID、开班列表、班级数据、预警名单、今日授课及作业公告完成情况查询等。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xuetangop",
+      "userId": "s170cg921tmv25exe9jjs5crkx83mckr",
+      "displayName": "xuetangop",
+      "image": "https://avatars.githubusercontent.com/u/75600518?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.327851",
+      "createdAt": 1775201562327,
+      "changelog": "No changes detected in this version. No changelog necessary.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e102bf425ae9d24b2e5b5a4e3cb4bb03bce2751b36d69b93df27351f143c8ba7"
+}

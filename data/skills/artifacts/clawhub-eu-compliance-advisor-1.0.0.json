@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eu-compliance-advisor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eu_compliance_advisor",
+  "skill": {
+    "id": 71984,
+    "skillKey": "clawhub-eu-compliance-advisor",
+    "name": "中欧贸易合规高级顾问"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eu-compliance-advisor",
+    "url": "https://clawhub.ai/skills/eu-compliance-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eu-compliance-advisor-68a4a94f8912ec84.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专为中国跨境卖家设计，提供欧盟27国VAT计算、EPR合规检测及证书智能验证的中欧贸易合规服务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luongkim20222022-crypto",
+      "userId": "s17eepp1mca4agc7athvp25cqx8455bq",
+      "displayName": "智能体范式｜Agent Paradigm",
+      "image": "https://avatars.githubusercontent.com/u/238333871?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775217356047,
+      "changelog": "Changelog v1.0.0\n\n- 首次发布，专为中国跨境卖家打造的欧盟合规智能助手\n- 支持27个欧盟成员国VAT税费计算与IOSS判断\n- 提供EPR合规检测（包装法、WEEE、电池法、CE认证等）\n- 集成证书智能验证（OCR提取、类型判别、置信度评分）\n- 响应多种合规、税费场景，自动调用eu-compliance-skill插件相关功能\n- 中文回复，合规信息提示“仅供参考，具体以官方注册为准”",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e260aaa70874781f3b7f4bffb10d4bec9a8aa00235a3ccdd03f6c538c05b9777"
+}

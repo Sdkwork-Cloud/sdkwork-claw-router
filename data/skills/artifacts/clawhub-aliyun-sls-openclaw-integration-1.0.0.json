@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aliyun-sls-openclaw-integration@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun_sls_openclaw_integration",
+  "skill": {
+    "id": 44723,
+    "skillKey": "clawhub-aliyun-sls-openclaw-integration",
+    "name": "Aliyun Sls Openclaw Integration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun-sls-openclaw-integration",
+    "url": "https://clawhub.ai/skills/aliyun-sls-openclaw-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-sls-openclaw-integration-f9134862c5a97dce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user needs to integrate OpenClaw with Alibaba Cloud SLS/Observability, including collector setup, machine groups, indexes, dashboards, collectio..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cinience",
+      "userId": "s1707avh05gnzr3g6e3m9ka6fh840rtd",
+      "displayName": "cinience",
+      "image": "https://avatars.githubusercontent.com/u/557426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775096428193,
+      "changelog": "aliyun-sls-openclaw-integration v1.0.0\n\n- Initial release of OpenClaw integration with Alibaba Cloud SLS/Observability on Linux.\n- Automates setup: installs aliyun CLI and LoongCollector, provisions machine groups, creates logstore, indexes, dashboards, collection configs, and binds them.\n- Ensures idempotent, safe reruns, and checks all key inputs (PROJECT, LOGSTORE, credentials, sudo).\n- Requires Linux host access and AK/SK environment variables already set.\n- Uses strict template mode for SLS payloads (reads from reference files, supports placeholder replacement).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7b80ea7d6c802f7adea8db0f5ea7a5c70bd4e3c1ee53356459c08eb5e9853e1f"
+}

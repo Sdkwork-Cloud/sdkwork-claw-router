@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25820,
+  "uuid": "skill-clawhub-aiprox-market-oracle",
+  "skillKey": "clawhub-aiprox-market-oracle",
+  "name": "Aiprox Market Oracle",
+  "summary": "Get trading signals for single or batch Polymarket markets. Supports timeframe framing ranked by edge.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aiprox_market_oracle",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "unixlamadev-spec",
+      "features": [
+        "Get trading signals for single or batch Polymarket markets",
+        "Supports timeframe framing ranked by edge."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aiprox-market-oracle@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/251052015?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aiprox-market-oracle",
+      "url": "https://clawhub.ai/skills/aiprox-market-oracle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aiprox-market-oracle",
+    "url": "https://clawhub.ai/skills/aiprox-market-oracle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aiprox-market-oracle-2cd474deb439ae76.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aiprox-market-oracle@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-aiprox-market-oracle-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2f55daafbe0f1480702eb6d45c0a869da9c87fa601248c30b1b61b28a1643032",
+      "artifactSizeBytes": 2269
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T18:33:02.713Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13750,
+  "uuid": "skill-clawhub-smart-cron",
+  "skillKey": "clawhub-smart-cron",
+  "name": "Smart Cron",
+  "summary": "Schedule and manage OpenClaw tasks using natural language with timezone support, failure alerts, logs, and full cron lifecycle commands.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_cron",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mariusfit",
+      "features": [
+        "Schedule and manage OpenClaw tasks using natural language with timezone support, failure alerts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-cron@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/53900085?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-cron",
+      "url": "https://clawhub.ai/skills/smart-cron"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-cron",
+    "url": "https://clawhub.ai/skills/smart-cron",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-cron-eb97a22eba0ceb3e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-cron@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-cron-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1de71a82ccd12315a8c53fe7789a3b904f3484f72ec07d2c335e32051042f9e1",
+      "artifactSizeBytes": 2260
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T03:35:15.091Z"
+}

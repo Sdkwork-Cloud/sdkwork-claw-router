@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35234,
+  "uuid": "skill-clawhub-amazon-daily-market-radar",
+  "skillKey": "clawhub-amazon-daily-market-radar",
+  "name": "Amazon Daily Market Radar",
+  "summary": "Automated daily market monitoring and alert system for Amazon sellers. Tracks price changes, new competitors, BSR movements, review spikes, stock-out signals...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_daily_market_radar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "apiclaw",
+      "features": [
+        "Automated daily market monitoring and alert system for Amazon sellers",
+        "Tracks price changes, new competitors, BSR movements, review spikes, stock-out signals..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amazon-daily-market-radar@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268545826?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amazon-daily-market-radar",
+      "url": "https://clawhub.ai/skills/amazon-daily-market-radar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-daily-market-radar",
+    "url": "https://clawhub.ai/skills/amazon-daily-market-radar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-daily-market-radar-4565fcf6edc2fc97.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amazon-daily-market-radar@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-amazon-daily-market-radar-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:17b8cce5dbb897ef7c0375c74ba65dac2e61d13821fbf9848a3d3b25aea3626f",
+      "artifactSizeBytes": 2200
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T12:36:40.472Z"
+}

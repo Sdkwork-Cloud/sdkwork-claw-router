@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-ocr-zc@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_ocr_zc",
+  "skill": {
+    "id": 48898,
+    "skillKey": "clawhub-free-ocr-zc",
+    "name": "free-ocr-zc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-ocr-zc",
+    "url": "https://clawhub.ai/skills/free-ocr-zc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-ocr-zc-5cc2142e37ef842d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract text from images via OpenRouter API using Baidu Qianfan OCR model, supporting URLs and local files with customizable prompts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openclawzhangchong",
+      "userId": "s178cqx9kma3mpnvqe8evteyr983hvb4",
+      "displayName": "张翀",
+      "image": "https://avatars.githubusercontent.com/u/270544860?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 91,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1777869390856,
+      "changelog": "- No code or documentation changes in this release.\n- Version incremented to 1.0.3 for tracking purposes only.\n\n## 技能功能\n1. **图片描述**：先使用AI模型详细描述图片内容（物体、场景、颜色等）\n2. **文字识别（OCR）**：再提取图片中的文字内容\n3. **双重验证**：即使图片中没有文字，也能得到图片描述，避免返回空结果\n\n## 文件位置\n- 技能说明：`C:\\Users\\Administrator\\.openclaw\\workspace\\skills\\openrouter-ocr\\SKILL.md`\n- 主程序：`C:\\Users\\Administrator\\.openclaw\\workspace\\skills\\openrouter-ocr\\ocr.py`\n- API密钥存储：`C:\\Users\\Administrator\\.openclaw\\secrets\\openrouter.env`（已预配置您的密钥）\n\n## 使用方法\n```bash\npython ocr.py <图片URL或本地路径> [可选的OCR提示词]\n```\n\n### 示例\n```bash\n# 使用默认提示词\npython ocr.py \"https://live.staticflickr.com/3851/14825276609_098cac593d_b.jpg\"\n\n# 自定义OCR提示词\npython ocr.py \"https://example.com/image.jpg\" \"请识别图片中的所有文字\"\n```\n\n## 特点\n- ✅ 从 `secrets/openrouter.env` 文件读取API密钥，避免环境变量泄露\n- ✅ 支持HTTP/HTTPS URL和本地文件路径\n- ✅ 已修复Windows控制台编码问题（解决了emoji和特殊字符显示问题）\n- ✅ 默认使用 Baidu Qianfan OCR fast 模型（免费层级）\n- ✅ 可通过环境变量 `OCR_MODEL` 自定义模型\n\n## 测试结果\n使用您提供的海豚图片测试：\n- **图片描述**：正确描述了两只海豚在海水中嬉戏的场景\n- **OCR识别**：提取到了文字 \"跃出一跃\"\n\n技能已就绪，您可以直接使用。如需修改模型或其他配置，请编辑技能目录下的文件。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b8cf8de8188d470239203e0b36e9dcc282fed6bcf7eb422e6832a7962bb0a0a2"
+}

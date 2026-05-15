@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23862,
+  "uuid": "skill-clawhub-epoch",
+  "skillKey": "clawhub-epoch",
+  "name": "Epoch",
+  "summary": "Convert Unix timestamps, compare epochs, and do time arithmetic. Use when converting dates, debugging timestamps, or checking timezone offsets.",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.epoch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain3",
+      "features": [
+        "Convert Unix timestamps, compare epochs, and do time arithmetic",
+        "Use when converting dates, debugging timestamps, or checking timezone offsets."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/epoch@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218212813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "epoch",
+      "url": "https://clawhub.ai/skills/epoch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "epoch",
+    "url": "https://clawhub.ai/skills/epoch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/epoch-afc9b31d9f3f3645.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/epoch@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-epoch-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:96c2fc437adca9c748a56a0fb822587730e38093c18c5147c5f546c06c8a3984",
+      "artifactSizeBytes": 1866
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T10:37:04.759Z"
+}

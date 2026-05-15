@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nano-diary-hook@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nano_diary_hook",
+  "skill": {
+    "id": 23937,
+    "skillKey": "clawhub-nano-diary-hook",
+    "name": "Nano Diary Hook"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nano-diary-hook",
+    "url": "https://clawhub.ai/skills/nano-diary-hook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nano-diary-hook-b904659ef0af0032.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Post diary entries to a Nano diary platform via webhook. Supports creating new entries and AI-powered merging with existing handwritten diaries."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fengye607",
+      "userId": "publishers:fengye607",
+      "displayName": "fengye607",
+      "image": "https://avatars.githubusercontent.com/u/11850444?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 425,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772771930515,
+      "changelog": "Initial release of nano-diary-hook\n\n- Post diary entries to Nano diary platform via secure webhook.\n- Supports creating new entries or merging AI-generated content with existing handwritten diaries.\n- Requires personal webhook token and curl.\n- Plain text diary entries; one entry per date, with updates handled via merge or overwrite.\n- Merge process is asynchronous for entries with handwritten content.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:79e24b9683cca94417669b5e3137817bdbf59ddce55d437e43722db22f3ea2f0"
+}

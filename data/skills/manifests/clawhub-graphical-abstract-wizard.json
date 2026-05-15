@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39001,
+  "uuid": "skill-clawhub-graphical-abstract-wizard",
+  "skillKey": "clawhub-graphical-abstract-wizard",
+  "name": "Graphical Abstract Wizard",
+  "summary": "Generate graphical abstract layout recommendations based on paper abstracts",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.graphical_abstract_wizard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Generate graphical abstract layout recommendations based on paper abstracts"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/graphical-abstract-wizard@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "graphical-abstract-wizard",
+      "url": "https://clawhub.ai/skills/graphical-abstract-wizard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "graphical-abstract-wizard",
+    "url": "https://clawhub.ai/skills/graphical-abstract-wizard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/graphical-abstract-wizard-a16b9d533069bb76.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/graphical-abstract-wizard@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-graphical-abstract-wizard-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fcb9965466b87c3645a1ee96ff29524f7cb043fcd69db7ce2fd839395e0ddd5c",
+      "artifactSizeBytes": 2341
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T03:30:41.803Z"
+}

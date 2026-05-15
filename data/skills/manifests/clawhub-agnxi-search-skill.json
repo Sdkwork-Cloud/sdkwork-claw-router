@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9239,
+  "uuid": "skill-clawhub-agnxi-search-skill",
+  "skillKey": "clawhub-agnxi-search-skill",
+  "name": "Agent Skills Search",
+  "summary": "The official search utility for Agnxi.com - The premier directory of AI Agent Tools, MCP Servers, and Skills.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agnxi_search_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "doanbactam",
+      "features": [
+        "The official search utility for Agnxi.com",
+        "The premier directory of AI Agent Tools, MCP Servers, and Skills."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agnxi-search-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24356000?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agnxi-search-skill",
+      "url": "https://clawhub.ai/skills/agnxi-search-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agnxi-search-skill",
+    "url": "https://clawhub.ai/skills/agnxi-search-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agnxi-search-skill-a57a08e6176dc816.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agnxi-search-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agnxi-search-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:daa25174d003f1492ef59c11a0911958c784b1fbc60727d5e3a8fb685407e462",
+      "artifactSizeBytes": 2305
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T04:00:05.849Z"
+}

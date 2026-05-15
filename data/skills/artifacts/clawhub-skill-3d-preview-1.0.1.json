@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-3d-preview@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_3d_preview",
+  "skill": {
+    "id": 58427,
+    "skillKey": "clawhub-skill-3d-preview",
+    "name": "Skill 3d Preview"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-3d-preview",
+    "url": "https://clawhub.ai/skills/skill-3d-preview",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-3d-preview-a986fefa21b0356d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "3D效果预览 - ASCII渲染+Three.js导出"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zimuge-doudou",
+      "userId": "s179dwpwnaghfwrcq2x5am6qfn849pg4",
+      "displayName": "zimuge-doudou",
+      "image": "https://avatars.githubusercontent.com/u/269069087?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776049977841,
+      "changelog": "3D预览优化",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f2c75950c1b1cb8edb36e20c6c5f3b393b20daa44adf9fc3cec810225f36f0eb"
+}

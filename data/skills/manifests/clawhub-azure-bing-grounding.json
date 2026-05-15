@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43794,
+  "uuid": "skill-clawhub-azure-bing-grounding",
+  "skillKey": "clawhub-azure-bing-grounding",
+  "name": "Azure Bing Grounding",
+  "summary": "Web search grounding via Azure Foundry and Bing Grounding Search tool. Use when the user needs up-to-date information searched from the web via Azure AI Agen...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.azure_bing_grounding",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BoWang306",
+      "features": [
+        "Web search grounding via Azure Foundry and Bing Grounding Search tool",
+        "Use when the user needs up-to-date information searched from the web via Azure AI Agen..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/azure-bing-grounding@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37951864?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "azure-bing-grounding",
+      "url": "https://clawhub.ai/skills/azure-bing-grounding"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "azure-bing-grounding",
+    "url": "https://clawhub.ai/skills/azure-bing-grounding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/azure-bing-grounding-0ef110922d044d5c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/azure-bing-grounding@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-azure-bing-grounding-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:57798feb94e45bbe700db278f8a7c34ee46430c703e4120ba258749628531b1a",
+      "artifactSizeBytes": 2362
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T02:01:21.855Z"
+}

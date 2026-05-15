@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/economic-incentive-misalignment-detector@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.economic_incentive_misalignment_detector",
+  "skill": {
+    "id": 50064,
+    "skillKey": "clawhub-economic-incentive-misalignment-detector",
+    "name": "Economic Incentive Misalignment Detector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "economic-incentive-misalignment-detector",
+    "url": "https://clawhub.ai/skills/economic-incentive-misalignment-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/economic-incentive-misalignment-detector-ed107a72d88a6909.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helps identify when marketplace economic incentives systematically favor quantity over quality — creating structural pressure toward publishing unsafe skills..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andyxinweiminicloud",
+      "userId": "publishers:andyxinweiminicloud",
+      "displayName": "andyxinweiminicloud",
+      "image": "https://avatars.githubusercontent.com/u/201528876?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 544,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771856870298,
+      "changelog": "Initial release of economic-incentive-misalignment-detector:\n\n- Provides analysis to detect when marketplace incentives push for quantity over safety and quality.\n- Examines structural risk factors, including publisher concentration, publication velocity vs. review capacity, revenue model conflicts, investment ratios, and enforcement consistency.\n- Delivers comprehensive incentive alignment reports highlighting systemic misalignments even when individual code is technically sound.\n- Helps users and marketplaces understand root causes of quality degradation beyond what technical audits can reveal.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d5cb1340100e13bb790b7c24ec092ec06ae61bfb15b55130b74e1416f24d5a2e"
+}

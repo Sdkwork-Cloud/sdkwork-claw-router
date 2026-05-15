@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pear-apple@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pear_apple",
+  "skill": {
+    "id": 15830,
+    "skillKey": "clawhub-pear-apple",
+    "name": "Pear Apple"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pear-apple",
+    "url": "https://clawhub.ai/skills/pear-apple",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pear-apple-c5d06c251706e8ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "iCloud Calendar, Reminders & Contacts via Pear. Manage events, reminders, contacts, daily briefings, and AI scheduling. 27 tools for Apple iCloud via CalDAV/..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ashtonau",
+      "userId": "s170rr56kjnzd31106891v9zy58640mz",
+      "displayName": "Ashton",
+      "image": "https://avatars.githubusercontent.com/u/18462338?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 963,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771021964652,
+      "changelog": "Fixed SKILL.md metadata: Added primaryEnv and requires fields for env/network dependencies",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2c702abbb92d773427e2ab33545ce2fd44bc8ec4fd36f0612e5ce38bf3b613fd"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27699,
+  "uuid": "skill-clawhub-neo1307-env-health-check",
+  "skillKey": "clawhub-neo1307-env-health-check",
+  "name": "Env Health Check",
+  "summary": "Inspect environment variables, critical directories, and write permissions, then produce a health report. Use when validating deployment readiness, local run...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neo1307_env_health_check",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "neo1307",
+      "features": [
+        "Inspect environment variables, critical directories, and write permissions, then produce a heal.",
+        "Use when validating deployment readiness, local run..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/neo1307-env-health-check@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/196853531?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "neo1307-env-health-check",
+      "url": "https://clawhub.ai/skills/neo1307-env-health-check"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neo1307-env-health-check",
+    "url": "https://clawhub.ai/skills/neo1307-env-health-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neo1307-env-health-check-8c5b8a632d592c4e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/neo1307-env-health-check@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-neo1307-env-health-check-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cfe030c33461bfc5ad03e1e5581ebb3da595ae5262da977e8ccbbcd6db5a1fc2",
+      "artifactSizeBytes": 1946
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T06:40:08.824Z"
+}

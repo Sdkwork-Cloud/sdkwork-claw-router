@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37026,
+  "uuid": "skill-clawhub-broadbandmap-cell-coverage",
+  "skillKey": "clawhub-broadbandmap-cell-coverage",
+  "name": "Broadbandmap Cell Coverage",
+  "summary": "PRELIMINARY/ITERATING SKILL (v0.x) - Query BroadbandMap-style public APIs for cellular coverage at a location, normalize results, and return a concise human...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.broadbandmap_cell_coverage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hobbesoccc",
+      "features": [
+        "PRELIMINARY/ITERATING SKILL (v0.x)",
+        "Query BroadbandMap-style public APIs for cellular coverage at a location, normalize results, an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/broadbandmap-cell-coverage@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267166052?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "broadbandmap-cell-coverage",
+      "url": "https://clawhub.ai/skills/broadbandmap-cell-coverage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "broadbandmap-cell-coverage",
+    "url": "https://clawhub.ai/skills/broadbandmap-cell-coverage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/broadbandmap-cell-coverage-e36c09d8f792d904.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/broadbandmap-cell-coverage@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-broadbandmap-cell-coverage-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c2cf5c8efe8fa41a077ccee33fa8686be65f81e8e0a2b366edbbb0ea871e105f",
+      "artifactSizeBytes": 2009
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T18:38:00.249Z"
+}

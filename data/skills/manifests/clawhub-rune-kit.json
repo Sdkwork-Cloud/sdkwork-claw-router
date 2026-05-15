@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19570,
+  "uuid": "skill-clawhub-rune-kit",
+  "skillKey": "clawhub-rune-kit",
+  "name": "Rune",
+  "summary": "Performs adversarial red-team analysis on approved plans to identify edge cases, security risks, scalability issues, error paths, and integration risks befor...",
+  "version": "2.15.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rune_kit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "NGUYEN VIET NAM",
+      "features": [
+        "Performs adversarial red-team analysis on approved plans to identify edge cases, security risks."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rune-kit@2.15.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36666537?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rune-kit",
+      "url": "https://clawhub.ai/skills/rune-kit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rune-kit",
+    "url": "https://clawhub.ai/skills/rune-kit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rune-kit-9488b27fb306d686.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rune-kit@2.15.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rune-kit-2.15.0.json",
+      "version": "2.15.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d32e78576e60e5f02b629640fa76eb68a3f68b80a43d4be69ac1e993472853fd",
+      "artifactSizeBytes": 1909
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T11:09:28.519Z"
+}

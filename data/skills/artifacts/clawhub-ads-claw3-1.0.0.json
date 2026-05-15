@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ads-claw3@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ads_claw3",
+  "skill": {
+    "id": 58506,
+    "skillKey": "clawhub-ads-claw3",
+    "name": "adserFB3"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ads-claw3",
+    "url": "https://clawhub.ai/skills/ads-claw3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ads-claw3-1873d10cd624b514.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Giao tiếp tự động, không hỏi thêm khi Sếp nhắn; bảo trì báo cáo, cảnh báo, đề xuất, phân tích đối thủ và kế hoạch quảng cáo trên Telegram."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "phap1106",
+      "userId": "publishers:phap1106",
+      "displayName": "Phap1106",
+      "image": "https://avatars.githubusercontent.com/u/91425149?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774114734050,
+      "changelog": "**Initial release of boss-interaction skill for Telegram and chat. Focused on zero-question, tool-first automation for all boss (Sếp) messages.**\n\n- Enforces the zero-question policy: always call an actionable tool before asking for clarifications.\n- Automates morning briefing (7–9 AM VN time) and provides instant, structured reports.\n- Immediate command routing for all defined Vietnamese and English boss intents.\n- Escalates business-critical alerts and channels all proposals for approval—never executes high-impact changes directly.\n- Responds in Vietnamese, using Sếp address, proper format for currency, date, and percentage, and always includes a concrete next action or tip.\n- Specifically prohibits passive or vague responses; always delivers direct, actionable information.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6359ec3646dfe470622c3ce607e961b60400b99ada7c31dcba1f57e10b079bb8"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/global-search@1.1.9",
+  "version": "1.1.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.global_search",
+  "skill": {
+    "id": 14157,
+    "skillKey": "clawhub-global-search",
+    "name": "global-search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "global-search",
+    "url": "https://clawhub.ai/skills/global-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/global-search-e249a2686f647618.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Unleashes cutting-edge multi-source search technology that instantly synthesizes vast amounts of information across the web, delivering comprehensive and rel..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yangzhichao814-cell",
+      "userId": "s171440atefy8ry4701wkbmebx83hsnh",
+      "displayName": "zzsn",
+      "image": "https://avatars.githubusercontent.com/u/245179732?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 465,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 8,
+      "versions": 27
+    },
+    "latestVersion": {
+      "version": "1.1.9",
+      "createdAt": 1776761018015,
+      "changelog": "- Added homepage and publisher metadata fields to the skill description.\n- No changes to the functional code or documentation content.\n- Version bump for metadata update only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8aebd3fb522b30e466ad94c7ea5078bb50122bcbb201cda75880ace64c53a806"
+}

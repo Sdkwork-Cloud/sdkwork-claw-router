@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/webchat-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.webchat_pro",
+  "skill": {
+    "id": 67080,
+    "skillKey": "clawhub-webchat-pro",
+    "name": "OpenClaw Web Chat Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "webchat-pro",
+    "url": "https://clawhub.ai/skills/webchat-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/webchat-pro-e7e86ec842dd83f4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "生产级AI聊天网页应用，支持多模型、流式输出、会话持久化和导出，含文件上传、语音及多设备同步等高级功能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qqkzlm",
+      "userId": "publishers:qqkzlm",
+      "displayName": "qqkzlm",
+      "image": "https://avatars.githubusercontent.com/u/40537739?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 865,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771757836712,
+      "changelog": "OpenClaw Web Chat Pro 1.0.0\n\n- Initial release of a production-grade AI web chat application.\n- Supports basic chat (free), multi-model switching, streaming output, conversation persistence, chat export, and dark mode.\n- Pro features (subscription) include file uploads, voice input/output, multi-device sync, team collaboration, and advanced analytics.\n- Enterprise features (subscription) include private deployment, custom models, SSO login, audit logs, and SLA guarantee.\n- Provides configurable environment variables and simple API endpoints for chat, model listing, and health checks.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:78b97a199537b05af27cff518aa4c7508f30bdd90131ff3b81654876f87fc693"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43682,
+  "uuid": "skill-clawhub-ifttt-integration",
+  "skillKey": "clawhub-ifttt-integration",
+  "name": "Ifttt",
+  "summary": "IFTTT integration. Manage Applets, Services, Users. Use when the user wants to interact with IFTTT data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ifttt_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "IFTTT integration",
+        "Manage Applets, Services, Users",
+        "Use when the user wants to interact with IFTTT data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ifttt-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ifttt-integration",
+      "url": "https://clawhub.ai/skills/ifttt-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ifttt-integration",
+    "url": "https://clawhub.ai/skills/ifttt-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ifttt-integration-4d590cbd18a71445.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ifttt-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ifttt-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c30046c2e26b7051d776bf3c66ff8cb3bc162a43852bacae0f8d7a4bbad18188",
+      "artifactSizeBytes": 1844
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T22:58:19.362Z"
+}

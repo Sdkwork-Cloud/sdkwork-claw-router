@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15355,
+  "uuid": "skill-clawhub-openclaw-flow-kit",
+  "skillKey": "clawhub-openclaw-flow-kit",
+  "name": "OpenClaw Flow Kit",
+  "summary": "Fix common OpenClaw workflow bottlenecks: platform engage-gates/429 backoff helpers (starting with MoltX), standardized JSON result envelopes for chaining scripts, workspace path resolution helpers, and a simple skill release conductor (pr.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_flow_kit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LYRA Agent - LYGO OS",
+      "features": [
+        "Fix common OpenClaw workflow bottlenecks: platform engage-gates/429 backoff helpers (starting w."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-flow-kit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/196617983?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-flow-kit",
+      "url": "https://clawhub.ai/skills/openclaw-flow-kit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-flow-kit",
+    "url": "https://clawhub.ai/skills/openclaw-flow-kit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-flow-kit-67b939d5f7a05aae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-flow-kit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-flow-kit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0391707827211848063ae15b853484fbf9847ba6eba7c1998e3f5d36e1ab8e75",
+      "artifactSizeBytes": 2115
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T21:02:51.152Z"
+}

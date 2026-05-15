@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/spark-engineer@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spark_engineer",
+  "skill": {
+    "id": 11467,
+    "skillKey": "clawhub-spark-engineer",
+    "name": "Spark Engineer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spark-engineer",
+    "url": "https://clawhub.ai/skills/spark-engineer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spark-engineer-7945665908b4774a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when building Apache Spark applications, distributed data processing pipelines, or optimizing big data workloads. Invoke for DataFrame API, Spark SQL, RDD operations, performance tuning, streaming analytics."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "veeramanikandanr48",
+      "userId": "publishers:veeramanikandanr48",
+      "displayName": "Veera",
+      "image": "https://avatars.githubusercontent.com/u/119089869?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1999,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769839003707,
+      "changelog": "Initial release of spark-engineer skill.\n\n- Provides expert support for building and optimizing Apache Spark applications, ETL pipelines, and streaming analytics.\n- Covers workflows for requirement analysis, pipeline design, implementation, optimization, and validation.\n- Includes reference guides for DataFrame API, Spark SQL, RDD operations, partitioning, caching, performance tuning, and streaming.\n- Lists critical best practices and anti-patterns for production Spark workloads.\n- Supplies structured output templates including code, configurations, partitioning strategies, performance analysis, and monitoring advice.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d617655a256fcdc09b50bf2c097747534829be8e8860c2acfff6373e1a949fd5"
+}

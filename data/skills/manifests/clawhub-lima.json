@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71120,
+  "uuid": "skill-clawhub-lima",
+  "skillKey": "clawhub-lima",
+  "name": "Lima",
+  "summary": "提供lima品牌历史、业务概览、市场分布及竞争格局的关键信息，助力快速了解和分析。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lima",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供lima品牌历史、业务概览、市场分布及竞争格局的关键信息，助力快速了解和分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lima@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lima",
+      "url": "https://clawhub.ai/skills/lima"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lima",
+    "url": "https://clawhub.ai/skills/lima",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lima-00211591ce366b87.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lima@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-lima-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c5d1008f9d963cfe5e42478b45d02cbe9c855000c8dce8f493aa210761f385b",
+      "artifactSizeBytes": 2178
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T00:44:19.922Z"
+}

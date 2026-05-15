@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61193,
+  "uuid": "skill-clawhub-fastclaw-ai-deployer",
+  "skillKey": "clawhub-fastclaw-ai-deployer",
+  "name": "FastClaw AI部署工具",
+  "summary": "FastClaw是一款轻量级AI Agent运行时工具，支持通过OpenClaw Skills生态安装，提供内置Web界面、SOUL.md兼容、多模型支持等功能。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fastclaw_ai_deployer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yesong-Hue",
+      "features": [
+        "FastClaw是一款轻量级AI Agent运行时工具，支持通过OpenClaw Skills生态安装，提供内置Web界面、SOUL.md兼容、多模型支持等功能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fastclaw-ai-deployer@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/277589485?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fastclaw-ai-deployer",
+      "url": "https://clawhub.ai/skills/fastclaw-ai-deployer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fastclaw-ai-deployer",
+    "url": "https://clawhub.ai/skills/fastclaw-ai-deployer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fastclaw-ai-deployer-a7c7164c94ffc7fe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fastclaw-ai-deployer@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fastclaw-ai-deployer-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eee461dd27e9d54f0dd966fcfb33b42c20c7b49c333d7111b86cfe86239fd308",
+      "artifactSizeBytes": 1979
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T08:41:44.118Z"
+}

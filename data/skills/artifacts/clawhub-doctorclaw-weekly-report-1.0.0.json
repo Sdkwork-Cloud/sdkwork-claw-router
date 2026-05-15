@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/doctorclaw-weekly-report@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doctorclaw_weekly_report",
+  "skill": {
+    "id": 54296,
+    "skillKey": "clawhub-doctorclaw-weekly-report",
+    "name": "DoctorClaw Weekly Report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doctorclaw-weekly-report",
+    "url": "https://clawhub.ai/skills/doctorclaw-weekly-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doctorclaw-weekly-report-7075bcb4e796add5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Weekly report generator — compile progress from tasks, emails, and calendar into one summary. Friday cron or on-demand."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ceobotson-bot",
+      "userId": "s179qe3ytytdn9499vw61m1c4h83hhr8",
+      "displayName": "ceobotson-bot",
+      "image": "https://avatars.githubusercontent.com/u/263067918?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777035782442,
+      "changelog": "- Initial release of the doctorclaw-weekly-report skill.\n- Automatically compiles weekly progress reports from tasks, emails, and calendar events.\n- Summarizes wins, meetings, communications, blockers, and next week's priorities in a single report.\n- Supports scheduling via cron for weekly automation or on-demand generation.\n- Customizable inputs for task source, calendar, email, delivery method, and report format.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d3404ad1517aaabc5f2becb784b8c14fa72714a481fa660d8160a2b0f8e273c4"
+}

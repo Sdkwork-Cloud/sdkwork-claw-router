@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8352,
+  "uuid": "skill-clawhub-memory-hygiene",
+  "skillKey": "clawhub-memory-hygiene",
+  "name": "Memory Hygiene",
+  "summary": "Audit, clean, and optimize Clawdbot's vector memory (LanceDB). Use when memory is bloated with junk, token usage is high from irrelevant auto-recalls, or setting up memory maintenance automation.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_hygiene",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dylanbaker24",
+      "features": [
+        "Audit, clean, and optimize Clawdbot's vector memory (LanceDB)",
+        "Use when memory is bloated with junk, token usage is high from irrelevant auto-recalls, or sett."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-hygiene@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208568310?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-hygiene",
+      "url": "https://clawhub.ai/skills/memory-hygiene"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-hygiene",
+    "url": "https://clawhub.ai/skills/memory-hygiene",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-hygiene-9e93ed0d52465f7f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-hygiene@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-hygiene-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f7f76669f3957b89dd453878026d503ecc85fb7f2541a0ae6b5c3eddfea0212f",
+      "artifactSizeBytes": 2345
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-28T17:37:10.815Z"
+}

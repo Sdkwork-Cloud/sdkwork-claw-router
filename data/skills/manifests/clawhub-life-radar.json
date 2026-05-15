@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54500,
+  "uuid": "skill-clawhub-life-radar",
+  "skillKey": "clawhub-life-radar",
+  "name": "Life Radar",
+  "summary": "Build a concise “what needs action now” daily brief by aggregating reminders from multiple channels (email, calendar, SMS/iMessage, weather, and task notes)...",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.life_radar",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lucas",
+      "features": [
+        "Build a concise “what needs action now” daily brief by aggregating reminders from multiple chan."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/life-radar@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32409911?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "life-radar",
+      "url": "https://clawhub.ai/skills/life-radar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "life-radar",
+    "url": "https://clawhub.ai/skills/life-radar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/life-radar-2344df2178841842.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/life-radar@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-life-radar-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:984a0be7b60ee157376b0ae87eaa9364e3b42cfe74b9e474b8dd7b4b36e2255b",
+      "artifactSizeBytes": 1901
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T07:09:43.439Z"
+}

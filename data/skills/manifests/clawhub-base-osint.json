@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25304,
+  "uuid": "skill-clawhub-base-osint",
+  "skillKey": "clawhub-base-osint",
+  "name": "Base Network OSINT",
+  "summary": "Kybera wallet control and token research assistant",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.base_osint",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xipz",
+      "features": [
+        "Kybera wallet control and token research assistant"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/base-osint@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60103178?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "base-osint",
+      "url": "https://clawhub.ai/skills/base-osint"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "base-osint",
+    "url": "https://clawhub.ai/skills/base-osint",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/base-osint-c4571a36cd530e88.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/base-osint@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-base-osint-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9a9fb95222e269207527efd0705e6860386eda0d5560fc6edaa6a45687be2fb0",
+      "artifactSizeBytes": 2375
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T22:29:30.604Z"
+}

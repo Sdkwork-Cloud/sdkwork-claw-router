@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34902,
+  "uuid": "skill-clawhub-acumatica-customization",
+  "skillKey": "clawhub-acumatica-customization",
+  "name": "Acumatica Customization Management",
+  "summary": "Manage Acumatica ERP customization projects via the CustomizationApi web API. Use this skill whenever the user wants to export, import, publish, validate, un...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acumatica_customization",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "awei",
+      "features": [
+        "Manage Acumatica ERP customization projects via the CustomizationApi web API",
+        "Use this skill whenever the user wants to export, import, publish, validate, un..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/acumatica-customization@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8753764?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "acumatica-customization",
+      "url": "https://clawhub.ai/skills/acumatica-customization"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acumatica-customization",
+    "url": "https://clawhub.ai/skills/acumatica-customization",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acumatica-customization-2a76c564a8a3cab6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/acumatica-customization@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-acumatica-customization-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d53ef85681c2eac479802e2284e67390ac9d2b04902a8fd8f05d8c0283fdc80c",
+      "artifactSizeBytes": 2487
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T14:35:01.723Z"
+}

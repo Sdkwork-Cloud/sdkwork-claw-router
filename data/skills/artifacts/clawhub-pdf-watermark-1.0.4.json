@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pdf-watermark@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_watermark",
+  "skill": {
+    "id": 58575,
+    "skillKey": "clawhub-pdf-watermark",
+    "name": "PDF Watermark"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-watermark",
+    "url": "https://clawhub.ai/skills/pdf-watermark",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-watermark-b055576e7af7ad9c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "PDF文字水印工具 / PDF text watermark tool. 智能检测页面方向，自动调整角度和大小，支持中文，居中显示。Auto-detects page orientation, adjusts angle & size, supports Chinese, centered."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zss04124586",
+      "userId": "publishers:zss04124586",
+      "displayName": "zss04124586",
+      "image": "https://avatars.githubusercontent.com/u/17841180?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 489,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1772788409981,
+      "changelog": "Natural bilingual description without explicit CN/EN markers",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8cc4b31cfc6128000c5723707241a3328689d8b530b1e59fbc453434404f0663"
+}

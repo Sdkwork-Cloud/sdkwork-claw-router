@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43885,
+  "uuid": "skill-clawhub-self-host-deployer",
+  "skillKey": "clawhub-self-host-deployer",
+  "name": "Self-Host Deployer",
+  "summary": "Deploy self-hosted applications to any VPS with Docker Compose. Catalog of 18 apps with production-ready configs, Nginx reverse proxy, SSL via Certbot, autom...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_host_deployer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Samih Mansour",
+      "features": [
+        "Deploy self-hosted applications to any VPS with Docker Compose",
+        "Catalog of 18 apps with production-ready configs, Nginx reverse proxy, SSL via Certbot, autom..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/self-host-deployer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/164091210?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "self-host-deployer",
+      "url": "https://clawhub.ai/skills/self-host-deployer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-host-deployer",
+    "url": "https://clawhub.ai/skills/self-host-deployer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-host-deployer-04c5bc1dfcb453d8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/self-host-deployer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-self-host-deployer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:42dfc955c153bf0656d0be21b909a507f60db6b1eb3decaa49f6ee84965fbc4c",
+      "artifactSizeBytes": 2509
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T07:13:14.106Z"
+}

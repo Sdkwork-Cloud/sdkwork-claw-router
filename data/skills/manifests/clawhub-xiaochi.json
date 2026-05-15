@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71895,
+  "uuid": "skill-clawhub-xiaochi",
+  "skillKey": "clawhub-xiaochi",
+  "name": "XiaoChi",
+  "summary": "通过美团外卖公开页面检索并摘要商家与商品信息，提供评分、价格、配送及销售数据对比分析。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaochi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawKK",
+      "features": [
+        "通过美团外卖公开页面检索并摘要商家与商品信息，提供评分、价格、配送及销售数据对比分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaochi@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111570001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaochi",
+      "url": "https://clawhub.ai/skills/xiaochi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaochi",
+    "url": "https://clawhub.ai/skills/xiaochi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaochi-541884a8f2a8fb88.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaochi@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaochi-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:08b179fca06144d88c4a735f05af879e00f688fdb3602646ea5dcd5f957bedb1",
+      "artifactSizeBytes": 2265
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T18:14:57.321Z"
+}

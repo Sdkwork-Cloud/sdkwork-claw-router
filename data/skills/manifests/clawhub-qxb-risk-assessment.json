@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73683,
+  "uuid": "skill-clawhub-qxb-risk-assessment",
+  "skillKey": "clawhub-qxb-risk-assessment",
+  "name": "企业风险排查",
+  "summary": "全面排查企业的经营风险情况，适用于供应商准入尽调、贷前风险筛查、合作伙伴背景调查等场景，全方位预警潜在经营风险，辅助决策者规避合作隐患。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qxb_risk_assessment",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "llx-26",
+      "features": [
+        "全面排查企业的经营风险情况，适用于供应商准入尽调、贷前风险筛查、合作伙伴背景调查等场景，全方位预警潜在经营风险，辅助决策者规避合作隐患。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qxb-risk-assessment@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/73281691?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qxb-risk-assessment",
+      "url": "https://clawhub.ai/skills/qxb-risk-assessment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qxb-risk-assessment",
+    "url": "https://clawhub.ai/skills/qxb-risk-assessment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qxb-risk-assessment-ff7e925777acd96b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qxb-risk-assessment@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-qxb-risk-assessment-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bfdd0cf6f2d256ce7efb62c2d658bcfa969fd8db4d467bdbfee8859153bbde65",
+      "artifactSizeBytes": 2081
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T09:44:33.631Z"
+}

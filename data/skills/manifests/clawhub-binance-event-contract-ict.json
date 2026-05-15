@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27821,
+  "uuid": "skill-clawhub-binance-event-contract-ict",
+  "skillKey": "clawhub-binance-event-contract-ict",
+  "name": "Binance ICT Structure Recognizer",
+  "summary": "Automatically identifies ICT structures like Order Blocks, FVGs, and liquidity sweeps on Binance BTC/ETH 1H data to verify SSS tier signals.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.binance_event_contract_ict",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "acwxpunh",
+      "features": [
+        "Automatically identifies ICT structures like Order Blocks, FVGs, and liquidity sweeps on Binanc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/binance-event-contract-ict@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218176710?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "binance-event-contract-ict",
+      "url": "https://clawhub.ai/skills/binance-event-contract-ict"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "binance-event-contract-ict",
+    "url": "https://clawhub.ai/skills/binance-event-contract-ict",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/binance-event-contract-ict-5c1e478af2268a25.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/binance-event-contract-ict@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-binance-event-contract-ict-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f37551a67e064bbed3be914f75c8ad8e838e4102836b404bd424a1aeddb1932b",
+      "artifactSizeBytes": 2513
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T12:18:39.049Z"
+}

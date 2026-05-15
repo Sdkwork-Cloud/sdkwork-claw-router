@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reading-buddy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reading_buddy",
+  "skill": {
+    "id": 27595,
+    "skillKey": "clawhub-reading-buddy",
+    "name": "Reading Buddy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reading-buddy",
+    "url": "https://clawhub.ai/skills/reading-buddy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reading-buddy-40b1712825be8150.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A social reading platform enabling users to register books, create and join virtual reading rooms, and share real-time chat and reading insights."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 335,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773055923610,
+      "changelog": "Initial release of Reading Buddy – a social reading platform.\n\n- Browse, search, and manage books in a centralized catalog.\n- Create and join virtual reading rooms with real-time status management.\n- Participate in group chats and share reading insights; chat history can be exported.\n- Manage users and their participation via a built-in CLI.\n- Supports Node.js + TypeScript, uses SQLite for storage, and Commander.js for CLI.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b1880804ad84c8993e5d6297b57c60a72e5b9e08cce96d69d83f903c82529906"
+}

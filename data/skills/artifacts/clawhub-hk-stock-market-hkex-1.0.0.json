@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hk-stock-market-hkex@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hk_stock_market_hkex",
+  "skill": {
+    "id": 38053,
+    "skillKey": "clawhub-hk-stock-market-hkex",
+    "name": "Hong Kong Stock Market HKEX"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hk-stock-market-hkex",
+    "url": "https://clawhub.ai/skills/hk-stock-market-hkex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hk-stock-market-hkex-589f30ee174399ae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get HKEX (Hong Kong Stock Exchange) market data via FinanceAgent on OneKey Gateway."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ai-hub-admin",
+      "userId": "s17d1vfn6f6qk27s9f66nbe8ed83hcrr",
+      "displayName": "AI-Hub-Admin",
+      "image": "https://avatars.githubusercontent.com/u/184629057?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774882802055,
+      "changelog": "Initial release for HKEX (Hong Kong Stock Exchange) market data access.\n\n- Provides real-time HKEX stock data via FinanceAgent on OneKey Gateway.\n- Supports querying multiple HKEX stock codes (stock symbols as string, e.g. \"700\", \"1024\").\n- Offers CLI and HTTP (curl) usage examples for easy integration.\n- Requires a OneKey Gateway API key (DEEPNLP_ONEKEY_ROUTER_ACCESS) for authentication.\n- Includes step-by-step installation and setup instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:91bc5524059eac58e35e7ba82e104f2e6c21fdf2f249b35a675edbe6a56c7466"
+}

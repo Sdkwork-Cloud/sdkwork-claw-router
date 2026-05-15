@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65439,
+  "uuid": "skill-clawhub-pretend-sick",
+  "skillKey": "clawhub-pretend-sick",
+  "name": "Pretend-Sick 🤒",
+  "summary": "帮请病假 - AI推测合理病症、生成请假话术、指导开证明、管理生病状态",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pretend_sick",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cainer",
+      "features": [
+        "AI推测合理病症、生成请假话术、指导开证明、管理生病状态"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pretend-sick@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16192055?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pretend-sick",
+      "url": "https://clawhub.ai/skills/pretend-sick"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pretend-sick",
+    "url": "https://clawhub.ai/skills/pretend-sick",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pretend-sick-261a0bcd399f1641.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pretend-sick@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-pretend-sick-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b94d0a9ee6d5487a15d389ca0fd3fcf5dd14483452a58b0e0416a9e3048696a",
+      "artifactSizeBytes": 1836
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T14:20:47.122Z"
+}

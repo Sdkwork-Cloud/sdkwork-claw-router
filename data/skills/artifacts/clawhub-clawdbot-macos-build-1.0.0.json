@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawdbot-macos-build@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdbot_macos_build",
+  "skill": {
+    "id": 10752,
+    "skillKey": "clawhub-clawdbot-macos-build",
+    "name": "clawdbot-macos-build"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdbot-macos-build",
+    "url": "https://clawhub.ai/skills/clawdbot-macos-build",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdbot-macos-build-0b871bbc21648282.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build the Clawdbot macOS menu bar app from source. Use when you need to install the Clawdbot.app companion (for menu bar status, permissions, and Mac hardware access like camera/screen recording). Handles dependency installation, UI build,."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "manish-basargekar",
+      "userId": "publishers:manish-basargekar",
+      "displayName": "manish-basargekar",
+      "image": "https://avatars.githubusercontent.com/u/64839201?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2295,
+      "installsAllTime": 9,
+      "installsCurrent": 9,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769362731324,
+      "changelog": "Initial release of the skill to build the Clawdbot macOS companion app from source.\n\n- Automates the full build process: dependency install, UI build, Swift compilation, code signing, and packaging.\n- Supports both ad-hoc and Developer ID signing for local or production builds.\n- Includes detailed build instructions, troubleshooting steps, and prerequisite requirements.\n- Enables macOS app features: menu bar status, hardware access, notifications, and deep linking.\n- Provides guidance for installing, launching, and configuring the app after build.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a5ca3e91abee53d3652a978172fb1411f031635a51ef9df1d248dc3c99e77dc9"
+}

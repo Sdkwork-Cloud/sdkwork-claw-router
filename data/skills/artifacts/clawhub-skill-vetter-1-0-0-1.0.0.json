@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-vetter-1-0-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_vetter_1_0_0",
+  "skill": {
+    "id": 8553,
+    "skillKey": "clawhub-skill-vetter-1-0-0",
+    "name": "Skill Vetter 1.0.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-vetter-1-0-0",
+    "url": "https://clawhub.ai/skills/skill-vetter-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-vetter-1-0-0-2c560abf72f0ce86.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Security-first skill vetting for AI agents. Use before installing any skill from ClawdHub, GitHub, or other sources. Checks for red flags, permission scope,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fedrov2025",
+      "userId": "publishers:fedrov2025",
+      "displayName": "fedrov2025",
+      "image": "https://avatars.githubusercontent.com/u/198596579?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 8842,
+      "installsAllTime": 191,
+      "installsCurrent": 177,
+      "stars": 9,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773478992969,
+      "changelog": "Initial release of skill-vetter: a security-first vetting protocol for AI agent skills.\n\n- Provides a step-by-step protocol to vet skills before installation, including source check, code review, and permission scope evaluation.\n- Lists explicit security “red flags” for immediate rejection.\n- Outlines a clear risk classification system with recommended actions.\n- Includes a standardized vetting report template for documentation.\n- Offers quick vetting commands for GitHub-hosted skills and a trust hierarchy guide.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8eb9535c806d01f6684c458344a901cc38f83ffde9bc1addcad8a1271e4d6206"
+}

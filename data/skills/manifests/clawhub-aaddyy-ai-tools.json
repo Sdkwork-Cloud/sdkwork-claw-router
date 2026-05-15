@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52869,
+  "uuid": "skill-clawhub-aaddyy-ai-tools",
+  "skillKey": "clawhub-aaddyy-ai-tools",
+  "name": "AADDYY AI Tools",
+  "summary": "Access 100+ AI tools via MCP — image generation, article writing, logo creation, SEO analysis, math solving, video generation. One API key, pay-per-use pricing.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aaddyy_ai_tools",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Adi",
+      "features": [
+        "Access 100+ AI tools via MCP — image generation, article writing, logo creation, SEO analysis,.",
+        "One API key, pay-per-use pricing."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aaddyy-ai-tools@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33628153?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aaddyy-ai-tools",
+      "url": "https://clawhub.ai/skills/aaddyy-ai-tools"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aaddyy-ai-tools",
+    "url": "https://clawhub.ai/skills/aaddyy-ai-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aaddyy-ai-tools-cb3805c05de53575.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aaddyy-ai-tools@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aaddyy-ai-tools-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:829b0b791b2de372c309a16094ed4ebe8452c5a5eea64eee6863e2f9c4cefb9d",
+      "artifactSizeBytes": 2052
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T04:54:32.113Z"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19010,
+  "uuid": "skill-clawhub-morning-briefing-pro",
+  "skillKey": "clawhub-morning-briefing-pro",
+  "name": "Morning Briefing",
+  "summary": "Generate a daily morning briefing (weather, calendar, news, reminders) using the local `briefing` CLI. No API tokens consumed for data gathering. Use when the user asks for a morning briefing, daily summary, schedule overview, or wants aut.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.morning_briefing_pro",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ddakju",
+      "features": [
+        "Generate a daily morning briefing (weather, calendar, news, reminders) using the local `briefin.",
+        "No API tokens consumed for data gathering",
+        "Use when the user asks for a morning briefing, daily summary, schedule overview, or wants autom."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/morning-briefing-pro@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208553634?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "morning-briefing-pro",
+      "url": "https://clawhub.ai/skills/morning-briefing-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "morning-briefing-pro",
+    "url": "https://clawhub.ai/skills/morning-briefing-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/morning-briefing-pro-1a3dc9d4ccc7d1e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/morning-briefing-pro@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-morning-briefing-pro-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6a6f6a3adaa51dc557629405a7e720796807794a2bc1d586521176b24ede2f73",
+      "artifactSizeBytes": 2037
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T12:24:30.843Z"
+}

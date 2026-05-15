@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-daily-paper@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_daily_paper",
+  "skill": {
+    "id": 66215,
+    "skillKey": "clawhub-agent-daily-paper",
+    "name": "agent-daily-paper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-daily-paper",
+    "url": "https://clawhub.ai/skills/agent-daily-paper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-daily-paper-3ec27c6e826792e3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "支持用户按一个或多个研究领域订阅 arXiv 最新论文，按重要性排序并以中英双语卡片形式推送（英文标题/中文标题/英文摘要/中文摘要/arXiv 链接）。支持每领域独立数量上限（5-20）、关键词高亮、NEW/UPDATED 版本标识、Markdown 存档，以及定时推送与即时推送双路径。首次使用时先完成订阅配置..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ricardo-ping",
+      "userId": "publishers:ricardo-ping",
+      "displayName": "Ricardo-Ping",
+      "image": "https://avatars.githubusercontent.com/u/82622786?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 416,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773752381114,
+      "changelog": "**新增“领域解读”及检索优化，为每篇论文自动生成基于 PDF 的长文中文解读，改进领域解析与缓存。**\n\n- 新增 Agent 解读功能：每篇论文推送时自动生成基于 PDF 内容的中文长文解读，如失败回退至摘要，解读不少于 500 字并自带问题、方法、创新等结构化要点。\n- 增加 `insight_mode` 配置（默认 `pdf`），支持 PDF 解析，解读提示模板写入规范，支持 Agent 单篇批判性解读。\n- 改进领域名解析逻辑：优先将中文领域名翻译为英文后检索，避免直接用中文查 arXiv。\n- 引入“领域指纹缓存”，首次准备领域种子语料并 embedding，后续复用减少重复抓取，支持强制刷新选项。\n- 去重状态仅用新方案（按订阅领域），自动每 7 天清空，不再",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8ac39593494111664f63dd40a4f9138524f7cf11c55ca983be4f001e0ed768ce"
+}

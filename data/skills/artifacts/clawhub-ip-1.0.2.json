@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ip@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ip",
+  "skill": {
+    "id": 63470,
+    "skillKey": "clawhub-ip",
+    "name": "IP Address Query - IP查询"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ip",
+    "url": "https://clawhub.ai/skills/ip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ip-bb9af5d1915da1fb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据 IP 查归属地与运营商类型。当用户说：这个 IP 是哪里的？是不是机房 IP？或类似 IP 归属问题时，使用本技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jisuapi",
+      "userId": "s174fh1b14sn7vkvbqwsdn0xtd83gz5h",
+      "displayName": "极速数据",
+      "image": "https://avatars.githubusercontent.com/u/30516426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 528,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 9,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775209382206,
+      "changelog": "- Updated skill description to clarify intent and trigger usage when users ask about IP attribution or data center IPs.\n- Expanded configuration instructions and API Key application guide for improved onboarding.\n- Added \"About 极速数据\" section with a comprehensive API catalog to increase context and visibility of data sources.\n- Made formatting clearer and improved documentation style, with greater detail for recommended use and result interpretation.\n- No code or functional changes in this release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b151327da0f933039ac9f72d0b7052bd8b72c0f70aa8025744cd108cfa64e360"
+}

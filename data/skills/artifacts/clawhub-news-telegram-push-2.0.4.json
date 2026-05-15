@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/news-telegram-push@2.0.4",
+  "version": "2.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_telegram_push",
+  "skill": {
+    "id": 39889,
+    "skillKey": "clawhub-news-telegram-push",
+    "name": "News Telegram Push"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-telegram-push",
+    "url": "https://clawhub.ai/skills/news-telegram-push",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-telegram-push-166edc5489654b0d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Curate and send twice-daily English Telegram news updates featuring top 10 vetted stories on FX/CFD, crypto, trading tech, finance, and global politics."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chamic24",
+      "userId": "s17e8wg6fqj7pdrn9f0b7vtg4s85arph",
+      "displayName": "Chamic24",
+      "image": "https://avatars.githubusercontent.com/u/182578680?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "2.0.4",
+      "createdAt": 1777062970729,
+      "changelog": "news-telegram-push v2.0.4\n\n- Tightened and clarified output formatting: each headline must now be on the same line as its number, with the \"Read more\" link indented on the line below.\n- Added explicit prohibition of summaries, commentary, and source labels in all sections.\n- Updated the required numbering and indentation style for news items for greater clarity and Telegram compatibility.\n- Minor editorial refinements to documentation for consistency and precision.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:979bd2ac24dbc3ec26bbd0860978297ae8f1aa0ab496855f30d8f66479829fa1"
+}

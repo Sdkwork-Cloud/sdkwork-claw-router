@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22180,
+  "uuid": "skill-clawhub-hoseo-lms",
+  "skillKey": "clawhub-hoseo-lms",
+  "name": "hoseo-lms",
+  "summary": "LMS data aggregation and reporting tool for course information management.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hoseo_lms",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Seongmin Hong",
+      "features": [
+        "LMS data aggregation and reporting tool for course information management."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hoseo-lms@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58035862?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hoseo-lms",
+      "url": "https://clawhub.ai/skills/hoseo-lms"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hoseo-lms",
+    "url": "https://clawhub.ai/skills/hoseo-lms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hoseo-lms-a70bc0c889fa7f07.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hoseo-lms@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-hoseo-lms-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ca9235d88cfb3b608f52b0381be2488a440352ecd2cf29bd8bfeb8edcb6de603",
+      "artifactSizeBytes": 1755
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T13:06:49.110Z"
+}

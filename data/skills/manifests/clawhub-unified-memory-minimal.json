@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36745,
+  "uuid": "skill-clawhub-unified-memory-minimal",
+  "skillKey": "clawhub-unified-memory-minimal",
+  "name": "Unified Memory",
+  "summary": "Provides a layered, atomic, and performant memory management system with structured recall, vector search, smart deduplication, compression, and lifecycle ma...",
+  "version": "5.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unified_memory_minimal",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "程序员小刘",
+      "features": [
+        "Provides a layered, atomic, and performant memory management system with structured recall, vec."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/unified-memory-minimal@5.2.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48978046?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "unified-memory-minimal",
+      "url": "https://clawhub.ai/skills/unified-memory-minimal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unified-memory-minimal",
+    "url": "https://clawhub.ai/skills/unified-memory-minimal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unified-memory-minimal-7d59728a121eafda.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/unified-memory-minimal@5.2.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-unified-memory-minimal-5.2.5.json",
+      "version": "5.2.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dc53db75cb4dfffee0ebd548710b9d5d7fdf096416d793cba17906f6ad6ccc4d",
+      "artifactSizeBytes": 2116
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T10:33:32.055Z"
+}

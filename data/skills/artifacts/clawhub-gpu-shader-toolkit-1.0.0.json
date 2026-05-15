@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gpu-shader-toolkit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gpu_shader_toolkit",
+  "skill": {
+    "id": 46935,
+    "skillKey": "clawhub-gpu-shader-toolkit",
+    "name": "GPU shader toolkit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gpu-shader-toolkit",
+    "url": "https://clawhub.ai/skills/gpu-shader-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gpu-shader-toolkit-f5f610d216d61fce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Expert GPU shader development toolkit covering HLSL, GLSL, MSL, WGSL, ReShade FX, Unity ShaderLab, and WebGL. Features cross-language conversion, GPU perform..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "darkd",
+      "userId": "s173ygxbz6mwm1ttp918wzyced84qty5",
+      "displayName": "DarkD",
+      "image": "https://avatars.githubusercontent.com/u/6061259?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 120,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776008799179,
+      "changelog": "gpu-shader-toolkit 1.0.0\n\n- Initial release of an expert GPU shader development toolkit.\n- Supports cross-language shader conversion (HLSL, GLSL, MSL, WGSL, ReShade FX, Unity ShaderLab, WebGL).\n- Provides advanced GPU performance optimization tips, patterns, and quick references.\n- Includes documentation for shader reverse engineering: NVIDIA shader cache extraction, DirectX shader decompilation, game shader PAK file analysis, and PSP/PPSSPP GE dump analysis.\n- Guides users through using nvcachetools, nvdisasm, envytools, and related tools for compiled shader inspection and optimization.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3a539004ce000ae4bf4f1339fa8b7960bd9fd75607b9c6cb8ca3775eff21e2c9"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70944,
+  "uuid": "skill-clawhub-color-filer",
+  "skillKey": "clawhub-color-filer",
+  "name": "color-filer",
+  "summary": "智能文件夹颜色标注与命名规范技能。通过 emoji 色块对文件/文件夹进行颜色分类，配合序号补零排序规则，实现直观的视觉化文件管理。适用于个人知识库、项目分类、资源归档等场景。",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.color_filer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cyrilcao",
+      "features": [
+        "智能文件夹颜色标注与命名规范技能。通过 emoji 色块对文件/文件夹进行颜色分类，配合序号补零排序规则，实现直观的视觉化文件管理。适用于个人知识库、项目分类、资源归档等场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/color-filer@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23330582?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "color-filer",
+      "url": "https://clawhub.ai/skills/color-filer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "color-filer",
+    "url": "https://clawhub.ai/skills/color-filer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/color-filer-f451d1e817a5ef12.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/color-filer@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-color-filer-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2a4d42d87993f553d4e05e031197c16b317b524aceb70780484835ec6fa9b8be",
+      "artifactSizeBytes": 2249
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T16:12:43.245Z"
+}

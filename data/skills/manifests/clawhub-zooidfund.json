@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48491,
+  "uuid": "skill-clawhub-zooidfund",
+  "skillKey": "clawhub-zooidfund",
+  "name": "zooidfund",
+  "summary": "Evaluate and donate USDC on Base to humanitarian crowdfunding campaigns at zooid.fund. Use when the operator asks the agent to browse campaigns, assess evide...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zooidfund",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ales375",
+      "features": [
+        "Evaluate and donate USDC on Base to humanitarian crowdfunding campaigns at zooid.fund",
+        "Use when the operator asks the agent to browse campaigns, assess evide..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zooidfund@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/223296058?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zooidfund",
+      "url": "https://clawhub.ai/skills/zooidfund"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zooidfund",
+    "url": "https://clawhub.ai/skills/zooidfund",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zooidfund-27dd97a9247adc89.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zooidfund@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zooidfund-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dd4fd52ea96e13009f258b99124fa514aba462ccf7ea67bf994a437b9beedc46",
+      "artifactSizeBytes": 1849
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T16:43:10.725Z"
+}

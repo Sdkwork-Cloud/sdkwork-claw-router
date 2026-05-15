@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-self-reflection-1-0-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_self_reflection_1_0_0",
+  "skill": {
+    "id": 19760,
+    "skillKey": "clawhub-agent-self-reflection-1-0-0",
+    "name": "Agent Self Reflection 1.0.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-self-reflection-1-0-0",
+    "url": "https://clawhub.ai/skills/agent-self-reflection-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-self-reflection-1-0-0-8d56f6e8fbf5f707.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Periodic self-reflection on recent sessions. Analyzes what went well, what went wrong, and writes concise, actionable insights to the appropriate workspace f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mrhenghu",
+      "userId": "publishers:mrhenghu",
+      "displayName": "mrhenghu",
+      "image": "https://avatars.githubusercontent.com/u/193038063?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 452,
+      "installsAllTime": 14,
+      "installsCurrent": 14,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773475553652,
+      "changelog": "- Initial release of the self-reflection skill—enables periodic analysis of recent sessions to extract actionable insights.\n- Gathers recent Telegram, direct, and cron-triggered sessions, ignoring subagent and self-reflection sessions.\n- Reviews only the latest portion of session transcripts (with strict token and size limits) to identify what went well, what went wrong, and lessons learned.\n- Routes insights to appropriate files such as AGENTS.md, TOOLS.md, daily memory, about-user.md, skill docs, and memory index.\n- Emphasizes concise, specific, and non-redundant insights, avoiding vague, obvious, or duplicate notes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a45565189b0fd59df135f9cf3b68532be4d9c94619115ba07c62180273bfe232"
+}

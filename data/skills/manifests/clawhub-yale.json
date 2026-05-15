@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72684,
+  "uuid": "skill-clawhub-yale",
+  "skillKey": "clawhub-yale",
+  "name": "Yale",
+  "summary": "提供耶鲁大学历史、学院介绍、招生政策、学费资助、知名校友及学术实力等详细信息查询服务。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yale",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供耶鲁大学历史、学院介绍、招生政策、学费资助、知名校友及学术实力等详细信息查询服务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yale@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yale",
+      "url": "https://clawhub.ai/skills/yale"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yale",
+    "url": "https://clawhub.ai/skills/yale",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yale-63866302165d1f77.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yale@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yale-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6f99672a44ae4ec296a3775af5e237236999ab5680c02972dfac0cd3f90aff4c",
+      "artifactSizeBytes": 2285
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T08:41:27.065Z"
+}

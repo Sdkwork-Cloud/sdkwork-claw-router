@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38670,
+  "uuid": "skill-clawhub-integrate-vimeo",
+  "skillKey": "clawhub-integrate-vimeo",
+  "name": "Vimeo",
+  "summary": "Vimeo integration. Manage Videos. Use when the user wants to interact with Vimeo data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.integrate_vimeo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Vimeo integration",
+        "Manage Videos",
+        "Use when the user wants to interact with Vimeo data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/integrate-vimeo@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "integrate-vimeo",
+      "url": "https://clawhub.ai/skills/integrate-vimeo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "integrate-vimeo",
+    "url": "https://clawhub.ai/skills/integrate-vimeo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/integrate-vimeo-6bc607fbd140ab45.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/integrate-vimeo@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-integrate-vimeo-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:05f3fec3b31ec50835595510204b4f21f6ea50f65b905dee6896cad56d1d5954",
+      "artifactSizeBytes": 1832
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:00:49.916Z"
+}

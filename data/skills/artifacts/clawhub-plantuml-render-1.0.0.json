@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/plantuml-render@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plantuml_render",
+  "skill": {
+    "id": 40590,
+    "skillKey": "clawhub-plantuml-render",
+    "name": "plantuml-render"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plantuml-render",
+    "url": "https://clawhub.ai/skills/plantuml-render",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plantuml-render-f7b8e71ba0876e48.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Render PlantUML diagrams using the PlantUML JAR. Use this skill to generate PNG/SVG/PDF images from PlantUML source code."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiafeimao-gjf",
+      "userId": "s172t0fwn1ya1dg2pdg0w458zx84pbxf",
+      "displayName": "Thomas",
+      "image": "https://avatars.githubusercontent.com/u/16031366?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 68,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778250246145,
+      "changelog": "- Initial release of the plantuml-render skill.\n- Render PlantUML diagrams as PNG, SVG, or PDF using the PlantUML JAR.\n- Includes instructions for saving PlantUML source files and generating images via a Python script.\n- Example workflow and Markdown embedding provided",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:45a7f7918fe3d8d70ba7ff7a081e5dffcc424a56b466500e33e9d84bce4c557f"
+}

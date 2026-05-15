@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-agent-reputation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_agent_reputation",
+  "skill": {
+    "id": 25913,
+    "skillKey": "clawhub-openclaw-agent-reputation",
+    "name": "openclaw agent reputation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-agent-reputation",
+    "url": "https://clawhub.ai/skills/openclaw-agent-reputation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-agent-reputation-99b41da645f260fc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "On-chain credit scoring and soulbound identity for autonomous agents"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhenstaff",
+      "userId": "s173q0k18pjbw86jqbmsmgkz7h83h3vm",
+      "displayName": "Justin Liu",
+      "image": "https://avatars.githubusercontent.com/u/34432727?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 378,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773303378135,
+      "changelog": "OpenClaw Agent Reputation v1.0.0\n\n- Initial release providing blockchain-based credit scoring and soulbound identity for autonomous AI Agents.\n- Core functions include agent SBT identity creation, identity and credit score queries, attestations, agent comparison, and detailed report generation.\n- Credit score system modeled on FICO range (300–850) with weighted evaluation across task success, uptime, security, attestations, and economic activity.\n- All on-chain data is permanent, transparent, and verifiable, leveraging non-transferable SBTs.\n- Full documentation and API available in both English and Chinese.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eff8d248a764c0d8f165470f57b8c33bdf47bf2e243432218d1423a361a9b8cd"
+}

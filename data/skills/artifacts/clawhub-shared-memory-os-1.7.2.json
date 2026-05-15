@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shared-memory-os@1.7.2",
+  "version": "1.7.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shared_memory_os",
+  "skill": {
+    "id": 51010,
+    "skillKey": "clawhub-shared-memory-os",
+    "name": "Shared Memory Os"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shared-memory-os",
+    "url": "https://clawhub.ai/skills/shared-memory-os",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shared-memory-os-59154733a31925c6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Shared memory governance for multi-agent OpenClaw workspaces — with tiered memory, learnings capture, promotion review, lifecycle management, self-maintainin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zqh2333",
+      "userId": "s17dq27qynd9j1cwkrxvc2qzfd83z6x1",
+      "displayName": "Qihong",
+      "image": "https://avatars.githubusercontent.com/u/49940695?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 277,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 16
+    },
+    "latestVersion": {
+      "version": "1.7.2",
+      "createdAt": 1775824191959,
+      "changelog": "Prefer first-class OpenClaw cron tool for automatic recurring job creation in agent sessions; keep CLI bootstrap scripts as terminal fallbacks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6459c3b3307dfa5008b2e7c354c099f967817c9d39f15d6dc6a23f84b6078dfd"
+}

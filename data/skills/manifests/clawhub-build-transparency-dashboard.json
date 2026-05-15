@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20574,
+  "uuid": "skill-clawhub-build-transparency-dashboard",
+  "skillKey": "clawhub-build-transparency-dashboard",
+  "name": "Build Transparency Dashboard",
+  "summary": "Automatically update a public dashboard with commit count, last commit, and timestamps from a private GitHub repo for transparent project progress.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.build_transparency_dashboard",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Novaiok",
+      "features": [
+        "Automatically update a public dashboard with commit count, last commit, and timestamps from a p."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/build-transparency-dashboard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/145139814?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "build-transparency-dashboard",
+      "url": "https://clawhub.ai/skills/build-transparency-dashboard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "build-transparency-dashboard",
+    "url": "https://clawhub.ai/skills/build-transparency-dashboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/build-transparency-dashboard-80f9fae1f868e5d2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/build-transparency-dashboard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-build-transparency-dashboard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2076bd652b72d0821bb7fee7e8cac90218180fb8b28562d88a2f2090abcffbc",
+      "artifactSizeBytes": 2111
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T21:07:40.762Z"
+}

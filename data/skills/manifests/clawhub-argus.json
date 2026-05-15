@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29310,
+  "uuid": "skill-clawhub-argus",
+  "skillKey": "clawhub-argus",
+  "name": "Argus Intelligence",
+  "summary": "Free onchain intel and risk scanner. Basically free for most users with 35 free queries a day, then only costs $0.03/query. Token analysis, address risk, sma...",
+  "version": "1.9.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.argus",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sooyoon-eth",
+      "features": [
+        "Free onchain intel and risk scanner",
+        "Basically free for most users with 35 free queries a day, then only costs $0.03/query",
+        "Token analysis, address risk, sma..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/argus@1.9.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259049018?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "argus",
+      "url": "https://clawhub.ai/skills/argus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "argus",
+    "url": "https://clawhub.ai/skills/argus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/argus-444b759c5264422e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/argus@1.9.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-argus-1.9.3.json",
+      "version": "1.9.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f1403780080a795ba41b27b629c652540267d5d6ba7fcd2a9a0f0f664d5e7f7a",
+      "artifactSizeBytes": 2155
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T03:48:13.037Z"
+}

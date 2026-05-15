@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23610,
+  "uuid": "skill-clawhub-context7-cli",
+  "skillKey": "clawhub-context7-cli",
+  "name": "Context7 Cli",
+  "summary": "Manage Context7 via CLI - search libraries, get documentation context. Use when user mentions 'context7', 'library docs', 'documentation context', or wants t...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context7_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Melvyn",
+      "features": [
+        "Manage Context7 via CLI",
+        "search libraries, get documentation context",
+        "Use when user mentions 'context7', 'library docs', 'documentation context', or wants t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/context7-cli@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/56388157?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "context7-cli",
+      "url": "https://clawhub.ai/skills/context7-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context7-cli",
+    "url": "https://clawhub.ai/skills/context7-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context7-cli-ca1aa335abeead3a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/context7-cli@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-context7-cli-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dde948dfe6ae2f79272f5e1cdec74956cc51c8ad96228b5f9294d4ab871be020",
+      "artifactSizeBytes": 2286
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T16:51:11.302Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qfc-order@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qfc_order",
+  "skill": {
+    "id": 16538,
+    "skillKey": "clawhub-qfc-order",
+    "name": "Qfc Order"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qfc-order",
+    "url": "https://clawhub.ai/skills/qfc-order",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qfc-order-9c724fadbd3b512c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automates adding unchecked grocery-list items to QFC online cart, adjusts quantities, confirms cart details, and schedules a pickup slot via attached Chrome..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jasonahorn",
+      "userId": "publishers:jasonahorn",
+      "displayName": "jasonahorn",
+      "image": "https://avatars.githubusercontent.com/u/9679065?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 854,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771205479556,
+      "changelog": "qfc-order v1.0.0\n\n- Initial release: fully automates QFC grocery pickup orders using browser automation via a logged-in Chrome tab.\n- Robust item add: reliably adds grocery-list items to cart, using multi-term search, scrolling, quantity selects, and OOS alternatives.\n- Provides detailed cart review, including quantities and prices, before order slot selection.\n- Guides user through required browser steps; no credentials stored, relies on user Chrome session.\n- Includes informative progress and error reporting for each order attempt.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0e966fd85b7275f2f4a61cffc48eacbd85ec4452e6d022670d8b8084e52d7140"
+}

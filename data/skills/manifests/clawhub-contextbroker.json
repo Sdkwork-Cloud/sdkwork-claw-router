@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35570,
+  "uuid": "skill-clawhub-contextbroker",
+  "skillKey": "clawhub-contextbroker",
+  "name": "Contextbroker",
+  "summary": "A cross-agent memory and context SDK for AI systems. Provides structured context injection, conversation memory portability, and context enrichment.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.contextbroker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AVale-SLAI",
+      "features": [
+        "A cross-agent memory and context SDK for AI systems",
+        "Provides structured context injection, conversation memory portability, and context enrichment."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/contextbroker@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270702039?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "contextbroker",
+      "url": "https://clawhub.ai/skills/contextbroker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "contextbroker",
+    "url": "https://clawhub.ai/skills/contextbroker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/contextbroker-a6b4bb18b92a5d19.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/contextbroker@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-contextbroker-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4089e64a69bf78bf43d9f6e2e1b9b8a78435f93f66a9256f3e6abb619f38a39c",
+      "artifactSizeBytes": 1961
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T23:51:10.939Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/screengrab@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.screengrab",
+  "skill": {
+    "id": 29208,
+    "skillKey": "clawhub-screengrab",
+    "name": "Screengrab"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "screengrab",
+    "url": "https://clawhub.ai/skills/screengrab",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/screengrab-b9b6d386c6a6a893.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Quick macOS display snapshot. Captures what's currently on screen without opening a browser. Saves to /tmp or a custom path. Supports multiple displays and p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wrentheai",
+      "userId": "publishers:wrentheai",
+      "displayName": "wrentheai",
+      "image": "https://avatars.githubusercontent.com/u/257617545?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 307,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773872931410,
+      "changelog": "- Initial release of screengrab: a minimal macOS tool for instantly capturing current screen state.\n- Save screenshots to /tmp or any custom path; supports multiple displays.\n- Includes watch mode for periodic screen captures.\n- Lists connected displays and allows capture of a specific one.\n- Designed for fast debugging, app state checks, and remote awareness—without launching browsers or extra dependencies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:038ef52fa2b7c631c3faa016d683e6ea04a498ce48357fe8d3b1b484f21afd6c"
+}

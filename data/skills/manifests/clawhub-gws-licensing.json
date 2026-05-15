@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22432,
+  "uuid": "skill-clawhub-gws-licensing",
+  "skillKey": "clawhub-gws-licensing",
+  "name": "Gws Licensing",
+  "summary": "Google Workspace Enterprise License Manager: Manage product licenses.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gws_licensing",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Google Workspace Enterprise License Manager: Manage product licenses."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gws-licensing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gws-licensing",
+      "url": "https://clawhub.ai/skills/gws-licensing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gws-licensing",
+    "url": "https://clawhub.ai/skills/gws-licensing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gws-licensing-d674a67ef078fdef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gws-licensing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gws-licensing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:32b8f1a986f1a69feadceaa12ab789441071a5b5e3a4d9b028c75ea01360667e",
+      "artifactSizeBytes": 2216
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T22:09:13.475Z"
+}

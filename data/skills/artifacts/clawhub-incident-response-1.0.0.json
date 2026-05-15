@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/incident-response@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.incident_response",
+  "skill": {
+    "id": 18204,
+    "skillKey": "clawhub-incident-response",
+    "name": "Incident Response"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "incident-response",
+    "url": "https://clawhub.ai/skills/incident-response",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/incident-response-ea07419970edbeb8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides a structured 7-phase process to investigate, diagnose, restore, prevent, monitor, and document OpenClaw system failures including config loss, crash..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chunhualiao",
+      "userId": "s17czb50cec363y7yz4cchy9p9848424",
+      "displayName": "Chunhua Liao",
+      "image": "https://avatars.githubusercontent.com/u/1627206?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 639,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772643368366,
+      "changelog": "v1.0.0: Initial release. 7-phase structured IR workflow built from real production incidents — binding loss, gateway crashes, config regressions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1c26b66347f5243d389b3cbc4e95727e873ae81367dc05f2a8147f0282e662fc"
+}

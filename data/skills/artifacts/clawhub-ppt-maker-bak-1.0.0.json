@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ppt-maker-bak@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ppt_maker_bak",
+  "skill": {
+    "id": 44013,
+    "skillKey": "clawhub-ppt-maker-bak",
+    "name": "Ppt Maker Bak"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ppt-maker-bak",
+    "url": "https://clawhub.ai/skills/ppt-maker-bak",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ppt-maker-bak-db6b7885a4ce8cc4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 12-slide PowerPoint file on quarterly sales into 1080p slide-based videos just by typing what you need. Whether it's converting PowerPoint presentatio..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vynbosserman65",
+      "userId": "s175xbynxxje7z8y8jbn28x5vx84dckp",
+      "displayName": "vynbosserman65",
+      "image": "https://avatars.githubusercontent.com/u/208823770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776443969038,
+      "changelog": "Initial release of PPT Maker — Convert Slides into Shareable Videos.\n\n- Instantly convert PowerPoint slides into 1080p videos by uploading your presentation and describing your needs.\n- Automatic backend connection setup, including anonymous authentication when needed.\n- Cloud GPU processing delivers video exports (MP4, up to 1080p) in about 1–2 minutes.\n- Supports direct file uploads (PPT, PPTX, PDF, images, audio, and more) with a 200MB size limit.\n- Simple text prompts route to actions like export, check credits, view status, or upload.\n- User-friendly error handling and streamlined workflows: quick edits, batch processing, and iterative updates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bdb3f9e94d511117be8c5e2867e4388594614af92a05073f85ed1392ecc8a62c"
+}

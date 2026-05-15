@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16734,
+  "uuid": "skill-clawhub-creaa-ai",
+  "skillKey": "clawhub-creaa-ai",
+  "name": "Creaa Ai",
+  "summary": "Creaa AI - Generate and edit images, plus generate videos via Creaa.ai API. Text-to-image, image edit, text-to-video, image-to-video with multiple AI models.",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.creaa_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yys2024",
+      "features": [
+        "Creaa AI",
+        "Generate and edit images, plus generate videos via Creaa.ai API",
+        "Text-to-image, image edit, text-to-video, image-to-video with multiple AI models."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/creaa-ai@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/178146656?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "creaa-ai",
+      "url": "https://clawhub.ai/skills/creaa-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "creaa-ai",
+    "url": "https://clawhub.ai/skills/creaa-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/creaa-ai-8620ea02d042a860.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/creaa-ai@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-creaa-ai-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:53f1f5da94683dc3302d97798567be5c28889ebfbf167d3fcf7fe6f77e557df9",
+      "artifactSizeBytes": 1859
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T13:53:29.306Z"
+}

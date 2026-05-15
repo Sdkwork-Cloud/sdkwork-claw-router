@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/snapgen@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.snapgen",
+  "skill": {
+    "id": 41660,
+    "skillKey": "clawhub-snapgen",
+    "name": "SnapGen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "snapgen",
+    "url": "https://clawhub.ai/skills/snapgen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/snapgen-c313488830b5981c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when the user asks to open, run, or automate a specific desktop application. It manages the full lifecycle of automation scripts within dedica..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "snapgen",
+      "userId": "s175fkba1gybr6kxv7j9hzzcds8594f3",
+      "displayName": "SnapGen",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776761278859,
+      "changelog": "- Removed manual dependency checking and pip install logic; installs are now covered via unified metadata.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:673924f2f7eee3fae5d3505c1de29321860d3dbd9078fd927f6168b70ca88121"
+}

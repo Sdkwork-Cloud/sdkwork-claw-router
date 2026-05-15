@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawguard-secure@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawguard_secure",
+  "skill": {
+    "id": 57922,
+    "skillKey": "clawhub-clawguard-secure",
+    "name": "ClawGuard Security Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawguard-secure",
+    "url": "https://clawhub.ai/skills/clawguard-secure",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawguard-secure-f0543951045650a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ClawGuard security assistant for OpenClaw. Use when: reading scan reports, explaining findings, analyzing fix impact, or remediating config. 安全扫描、报告解析与配置修复."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "r0llcre",
+      "userId": "s17axv5aacr4rr2x0ykpk57q4d83wea4",
+      "displayName": "R0llcre",
+      "image": "https://avatars.githubusercontent.com/u/115418608?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 226,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1775098594941,
+      "changelog": "Add CLAWGUARD_ANALYSIS_V1 compact website handoff protocol. Update copyright to ClawGuard Security Lab. Add openclaw skills install method to README.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ba6821fa96f14a081bb46778203ddcc9f9298b4be6772d9edcf0f080c89c8682"
+}

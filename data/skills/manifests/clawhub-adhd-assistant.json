@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8935,
+  "uuid": "skill-clawhub-adhd-assistant",
+  "skillKey": "clawhub-adhd-assistant",
+  "name": "ADHD Assistant",
+  "summary": "ADHD-friendly life management assistant for OpenClaw. Helps with daily planning, task breakdown, time management, prioritization, body doubling, dopamine regulation, and maintaining routines. Use when the user asks for help organizing thei.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adhd_assistant",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "thinktankmachine",
+      "features": [
+        "ADHD-friendly life management assistant for OpenClaw",
+        "Helps with daily planning, task breakdown, time management, prioritization, body doubling, dopa.",
+        "Use when the user asks for help organizing their life, staying on top of tasks, beating procras."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/adhd-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/129122861?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "adhd-assistant",
+      "url": "https://clawhub.ai/skills/adhd-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adhd-assistant",
+    "url": "https://clawhub.ai/skills/adhd-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adhd-assistant-8dba745227d5a49a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/adhd-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-adhd-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:df83f378888e36ba0565b2a7e2ac109135b5541f26332d6594641f80342052af",
+      "artifactSizeBytes": 2815
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T10:20:53.086Z"
+}

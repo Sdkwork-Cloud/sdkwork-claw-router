@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/viral-video-predictor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.viral_video_predictor",
+  "skill": {
+    "id": 72841,
+    "skillKey": "clawhub-viral-video-predictor",
+    "name": "短视频爆款预测脚本"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "viral-video-predictor",
+    "url": "https://clawhub.ai/skills/viral-video-predictor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/viral-video-predictor-b8e3e7517e05a194.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "输入短视频脚本，自动预测爆款概率（钩子分析/节奏/情绪曲线/优化建议）"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "amaxclaw",
+      "userId": "s172p7d4fz0vh9vgc9wdvrav4x84xj9g",
+      "displayName": "Amaxclaw",
+      "image": "https://avatars.githubusercontent.com/u/269517300?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776254308675,
+      "changelog": "付费技能首发 - 爆款预测",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:73d192f096db3f9002011414033214a7399c44c95f7e0c4eef0e7dde2b64b703"
+}

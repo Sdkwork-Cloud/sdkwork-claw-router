@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11657,
+  "uuid": "skill-clawhub-taskleef",
+  "skillKey": "clawhub-taskleef",
+  "name": "taskleef",
+  "summary": "Use when managing todos, tasks, projects, or kanban boards via Taskleef.com. Supports adding, listing, completing, deleting todos, organizing with projects, and managing kanban boards. Use when the user wants to track tasks, manage their t.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taskleef",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xatter",
+      "features": [
+        "Use when managing todos, tasks, projects, or kanban boards via Taskleef.com",
+        "Supports adding, listing, completing, deleting todos, organizing with projects, and managing ka.",
+        "Use when the user wants to track tasks, manage their todo list, organize work by projects, or u."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/taskleef@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/451994?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "taskleef",
+      "url": "https://clawhub.ai/skills/taskleef"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taskleef",
+    "url": "https://clawhub.ai/skills/taskleef",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taskleef-6519197a8662e738.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/taskleef@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-taskleef-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4cc0217b04d496b24041a8bab46592804529f7bd1ed534a7d45a83e204145bbb",
+      "artifactSizeBytes": 1994
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-27T14:11:01.614Z"
+}

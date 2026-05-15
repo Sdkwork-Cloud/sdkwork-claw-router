@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30231,
+  "uuid": "skill-clawhub-tomtom-traffic",
+  "skillKey": "clawhub-tomtom-traffic",
+  "name": "TomTom Traffic Intelligence",
+  "summary": "Provides real-time traffic data, route calculation, and departure planning using TomTom Traffic API for commute and meeting alerts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tomtom_traffic",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jkimnw-code",
+      "features": [
+        "Provides real-time traffic data, route calculation, and departure planning using TomTom Traffic."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tomtom-traffic@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265171537?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tomtom-traffic",
+      "url": "https://clawhub.ai/skills/tomtom-traffic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tomtom-traffic",
+    "url": "https://clawhub.ai/skills/tomtom-traffic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tomtom-traffic-d16da71d7c84f710.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tomtom-traffic@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tomtom-traffic-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8644d61861684481b2daefc38e18cdd1c01cd7f98dfd1b081c5ea634ea722ef7",
+      "artifactSizeBytes": 1919
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T01:48:28.780Z"
+}

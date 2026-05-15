@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43187,
+  "uuid": "skill-clawhub-web-search-aisa",
+  "skillKey": "clawhub-web-search-aisa",
+  "name": "web-search-aisa",
+  "summary": "Search the public web through the AISA web search endpoint and return structured titles, links, and snippets. Use when: the user asks to look something up on...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_search_aisa",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIsa",
+      "features": [
+        "Search the public web through the AISA web search endpoint and return structured titles, links,.",
+        "Use when: the user asks to look something up on..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-search-aisa@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245991925?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-search-aisa",
+      "url": "https://clawhub.ai/skills/web-search-aisa"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-search-aisa",
+    "url": "https://clawhub.ai/skills/web-search-aisa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-search-aisa-9fe53d37b91630eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-search-aisa@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-search-aisa-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b81dd005791bec9a91af4eef9431bafdef5d8b8680fb5149f33c8a24161ce16c",
+      "artifactSizeBytes": 2247
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T09:12:17.777Z"
+}

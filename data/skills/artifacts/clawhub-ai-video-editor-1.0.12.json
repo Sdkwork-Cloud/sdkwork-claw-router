@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-editor@1.0.12",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_editor",
+  "skill": {
+    "id": 12464,
+    "skillKey": "clawhub-ai-video-editor",
+    "name": "AI Video Editor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-editor",
+    "url": "https://clawhub.ai/skills/ai-video-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-editor-aeb079bff5bfdf08.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Raw assets + Requirements in, result video out. Edit any type of video with Sparki (the video agent powered by Gemini multimodal AI)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "symbolk",
+      "userId": "s17e3mejw3ew7dtqfqz71spav583g96y",
+      "displayName": "BoShen",
+      "image": "https://avatars.githubusercontent.com/u/14107297?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 1332,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 4,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.0.12",
+      "createdAt": 1774319543518,
+      "changelog": "**Major update: Skill is now Python-first and cross-platform (Windows support, no shell dependencies).**\n\n- Replaced shell scripts with Python scripts for setup, health checks, and video editing.\n- Added Windows and Python support; removed reliance on bash and related binaries.\n- Updated usage instructions to run via `python scripts/edit_video.py`.\n- Simplified environment and configuration management.\n- Removed obsolete and shell-specific files.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:598e150ea4195d699ef6f2650d9f4300331b293167326604cc05cc3f3f85acca"
+}

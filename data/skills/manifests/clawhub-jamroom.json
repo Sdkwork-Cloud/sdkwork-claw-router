@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35038,
+  "uuid": "skill-clawhub-jamroom",
+  "skillKey": "clawhub-jamroom",
+  "name": "Jamroom",
+  "summary": "Jamroom integration. Manage data, records, and automate workflows. Use when the user wants to interact with Jamroom data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jamroom",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Jamroom integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Jamroom data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jamroom@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jamroom",
+      "url": "https://clawhub.ai/skills/jamroom"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jamroom",
+    "url": "https://clawhub.ai/skills/jamroom",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jamroom-28c80f96a4e92908.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jamroom@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-jamroom-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73fc2ff9474cce13bd741265d0f4826c50a378fff10d3697991171279cec25b3",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:38:40.779Z"
+}

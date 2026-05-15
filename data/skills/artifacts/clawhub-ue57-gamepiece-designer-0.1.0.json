@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ue57-gamepiece-designer@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ue57_gamepiece_designer",
+  "skill": {
+    "id": 15976,
+    "skillKey": "clawhub-ue57-gamepiece-designer",
+    "name": "UE5.7 Gamepiece Designer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ue57-gamepiece-designer",
+    "url": "https://clawhub.ai/skills/ue57-gamepiece-designer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ue57-gamepiece-designer-92675f85249f1645.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Designs UE5.7 multiplayer-friendly game pieces (Blueprint node chains, data schemas, asset naming, and test checklists). Text-only, no scripts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jdqconsulting",
+      "userId": "publishers:jdqconsulting",
+      "displayName": "Joshua Q",
+      "image": "https://avatars.githubusercontent.com/u/176441863?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 635,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771974908734,
+      "changelog": "Initial test release: blueprint recipes + schemas + networking checklist (text-only).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:237646293f5867ec9df7cdf0313435e9821edcc145167fa655ca4597885734b9"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hallo123@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hallo123",
+  "skill": {
+    "id": 12569,
+    "skillKey": "clawhub-hallo123",
+    "name": "hallo 123"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hallo123",
+    "url": "https://clawhub.ai/skills/hallo123",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hallo123-f0c3cd6fc4b23eae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Live meme battle arena skill for OpenClaw agents"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "simonkoeck",
+      "userId": "publishers:simonkoeck",
+      "displayName": "Simon Köck",
+      "image": "https://avatars.githubusercontent.com/u/54739715?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1531,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1771540280341,
+      "changelog": "- No changes detected in this version. The skill remains unchanged from the previous release.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6d3fdbbfbe7f5146838a5e3d1466e97f76ea422e3c9a64456ffcd58c5fe8798a"
+}

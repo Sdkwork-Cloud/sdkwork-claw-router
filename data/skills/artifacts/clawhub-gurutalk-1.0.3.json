@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gurutalk@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gurutalk",
+  "skill": {
+    "id": 61335,
+    "skillKey": "clawhub-gurutalk",
+    "name": "GuruTalk 大师云"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gurutalk",
+    "url": "https://clawhub.ai/skills/gurutalk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gurutalk-6952f6c74caa8da6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "创建/同步/管理本地数字人格目录；用户通过 `/{slug} {message}` 直接开始与人物对话，后续消息默认继续发送给当前人物，直到 `/gurutalk end`，或通过 `/{another-figure} {message}` 切换人物；扮演人物时，每条回复都必须以 `\"{Display Name}..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "casterkay",
+      "userId": "s17b045jds6qjexefbfvxmk7yn83gwm5",
+      "displayName": "Caster Kay",
+      "image": "https://avatars.githubusercontent.com/u/34415979?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 227,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776305415824,
+      "changelog": "- 新增了对环境变量 BIBLIOTALK_API_KEY 的显式声明与说明，以要求 API key 必须配置用于访问 Bibliotalk 服务器\n- 其余功能与说明未作改动，仅增强了配置要求的可见性",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ed0cfe735d94f78615c6f1fae516e75b66a564b14dfb2764dc5540233bc800fc"
+}

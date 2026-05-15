@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13092,
+  "uuid": "skill-clawhub-book-massage",
+  "skillKey": "clawhub-book-massage",
+  "name": "Book Massage",
+  "summary": "Book massage services through Lokuli MCP. Use when user needs to find and book massage. Triggers on requests like \"book a massage\", \"find massage near me\", or any massage service request.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_massage",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lokuli",
+      "features": [
+        "Book massage services through Lokuli MCP",
+        "Use when user needs to find and book massage",
+        "Triggers on requests like \"book a massage\", \"find massage near me\", or any massage service requ."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-massage@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224194606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-massage",
+      "url": "https://clawhub.ai/skills/book-massage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-massage",
+    "url": "https://clawhub.ai/skills/book-massage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-massage-f2a89f77631056b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-massage@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-massage-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2516c814388233204c6664384c971e4174ac061e1efb099ff337c71f6401bc74",
+      "artifactSizeBytes": 1923
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T01:05:36.510Z"
+}

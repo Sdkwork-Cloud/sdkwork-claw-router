@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kesha-voice-kit@1.4.4",
+  "version": "1.4.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kesha_voice_kit",
+  "skill": {
+    "id": 30864,
+    "skillKey": "clawhub-kesha-voice-kit",
+    "name": "Kesha Voice Kit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kesha-voice-kit",
+    "url": "https://clawhub.ai/skills/kesha-voice-kit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kesha-voice-kit-912bfac59619f402.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Offline voice toolkit for speech-to-text, text-to-speech, and language detection supporting 25 languages with no API keys or cloud usage."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "drakulavich",
+      "userId": "s17b3c9zks1vdxe5e7vt4f316h8571qe",
+      "displayName": "Anton Yakutovich",
+      "image": "https://avatars.githubusercontent.com/u/129260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 275,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.4.4",
+      "createdAt": 1777192467688,
+      "changelog": "v1.4.4: include LICENSE in bundle (1.4.3 dropped it accidentally).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bb7cea0abb7756d0617309a534263975c3d1cb33fb8408c402ed1c137e2a95fe"
+}

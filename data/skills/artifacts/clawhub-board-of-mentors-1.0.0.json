@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/board-of-mentors@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.board_of_mentors",
+  "skill": {
+    "id": 18801,
+    "skillKey": "clawhub-board-of-mentors",
+    "name": "Board Of Mentors"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "board-of-mentors",
+    "url": "https://clawhub.ai/skills/board-of-mentors",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/board-of-mentors-bfd780f2447dc392.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect with 17 specialized AI mentors for expert guidance on growth, fundraising, sales, product, engineering, operations, finance, legal, hiring, leadershi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rmarji",
+      "userId": "s179jmctmpcqqrfkpf8cjhye5983mf0n",
+      "displayName": "Raed Marji",
+      "image": "https://avatars.githubusercontent.com/u/2573647?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 660,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772762847373,
+      "changelog": "- Initial release: Launches the Board of Mentors skill with 17 specialized AI mentors for founders and operators.\n- Each mentor features unique expertise, personality, communication style, signature questions, and frameworks.\n- Expertise domains include growth, fundraising, sales, product, engineering, operations, finance, legal, hiring, leadership, wellness, and industry-specific roles.\n- Mentor matching system routes user challenges to the most relevant mentor(s) based on keywords.\n- Focus is on wisdom-sharing and strategic guidance, not execution or deliverables.\n- Includes detailed mentor archetype cards and clear usage instructions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c3639e05f509eb5779137c8a34ba98d3a8979d64840cc74565262e481abab7c1"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-self-care@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_self_care",
+  "skill": {
+    "id": 23498,
+    "skillKey": "clawhub-agent-self-care",
+    "name": "Agent Self-Care"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-self-care",
+    "url": "https://clawhub.ai/skills/agent-self-care",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-self-care-3b8bfef2f86c9057.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous agent health, optimization, and cleanup. Use when: (1) running scheduled cron jobs for agent maintenance, (2) responding to \"optimize\", \"cleanup\",..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "robshabbir",
+      "userId": "publishers:robshabbir",
+      "displayName": "robshabbir",
+      "image": "https://avatars.githubusercontent.com/u/257857774?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 428,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772931122030,
+      "changelog": "Initial release - autonomous health monitoring for OpenClaw agents",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6b20db49771faf597e775984d0f3a405b89f14b1502fd302cbdfe08d4cd35f91"
+}

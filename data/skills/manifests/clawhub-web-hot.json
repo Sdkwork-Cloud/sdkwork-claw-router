@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59011,
+  "uuid": "skill-clawhub-web-hot",
+  "skillKey": "clawhub-web-hot",
+  "name": "热点话题追踪",
+  "summary": "获取微博、知乎、百度、抖音、今日头条、B站等主流中文平台的实时热搜榜单和热门话题。Use when users want to know trending topics, hot searches, or popular content on Chinese social media platforms.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_hot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lk360287680-byte",
+      "features": [
+        "获取微博、知乎、百度、抖音、今日头条、B站等主流中文平台的实时热搜榜单和热门话题。Use when users want to know trending topics, hot searc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-hot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266419613?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-hot",
+      "url": "https://clawhub.ai/skills/web-hot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-hot",
+    "url": "https://clawhub.ai/skills/web-hot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-hot-3e8c54d7d4a80304.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-hot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-hot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c573cf24047db8e93bf82584af0c880133d45e082cfa9a8530433d55b9d9e727",
+      "artifactSizeBytes": 2413
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T10:11:15.389Z"
+}

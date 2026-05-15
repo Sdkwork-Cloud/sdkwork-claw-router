@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/benchmark-store@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.benchmark_store",
+  "skill": {
+    "id": 60900,
+    "skillKey": "clawhub-benchmark-store",
+    "name": "Benchmark Store"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "benchmark-store",
+    "url": "https://clawhub.ai/skills/benchmark-store",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/benchmark-store-3f6b162ebd32bb8f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "当需要初始化基准数据库、对比 skill 评分与历史基线、查看 Pareto front 是否有维度回退、或查阅质量分级标准时使用。不用于给候选打分（用 improvement-discriminator）或自动改进（用 improvement-learner）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lanyasheng",
+      "userId": "s179bk63dv96y90hw97xaay4fx83t7yr",
+      "displayName": "_silhouette",
+      "image": "https://avatars.githubusercontent.com/u/22570800?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1775495425735,
+      "changelog": "v2.0: 9-dim evaluation (coverage/completeness split), 4-role weighted scoring with category modifiers (tool/knowledge/orchestration/rule), per-dim Pareto tolerances (security 2%, efficiency 10%, others 5%), LLM-as-Judge default, enriched SKILL.md docs, 11 test fixes, GEPA references removed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c1d124defda9cbed60b9fa2c288aff297daebfb5a42540d1515bb91f76431d87"
+}

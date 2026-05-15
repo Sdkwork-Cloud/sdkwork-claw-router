@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-review-intelligence-extractor@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_review_intelligence_extractor",
+  "skill": {
+    "id": 34802,
+    "skillKey": "clawhub-amazon-review-intelligence-extractor",
+    "name": "Amazon Review Intelligence Extractor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-review-intelligence-extractor",
+    "url": "https://clawhub.ai/skills/amazon-review-intelligence-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-review-intelligence-extractor-d89ca1f8649576a7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deep consumer insights from 1B+ pre-analyzed Amazon reviews. Extracts pain points, buying factors, user profiles, usage patterns, and differentiation opportu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "apiclaw",
+      "userId": "s17081rahwfg1emrhs1pmfhmq984gan3",
+      "displayName": "apiclaw",
+      "image": "https://avatars.githubusercontent.com/u/268545826?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776083852083,
+      "changelog": "- Documentation clarifications: Minor improvements in instructions and descriptions for easier understanding.\n- SKILL.md rewritten for accuracy and updated formatting; removed \"execute, don't read\" note for the script file.\n- No logic or API changes—functionality remains as in the previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d2cb748fccfed14f77cf069cdcd58ad6025d664714883f082e5e6b0138b4d13b"
+}

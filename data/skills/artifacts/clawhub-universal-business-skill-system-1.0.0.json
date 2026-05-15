@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/universal-business-skill-system@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.universal_business_skill_system",
+  "skill": {
+    "id": 69403,
+    "skillKey": "clawhub-universal-business-skill-system",
+    "name": "Universal Business Skill System"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "universal-business-skill-system",
+    "url": "https://clawhub.ai/skills/universal-business-skill-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/universal-business-skill-system-a48b377dd2637e04.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通用行业业务技能体系。基于\"任务为中心，AI Pipeline驱动\"思想，适用于任何行业的结构化业务能力框架。覆盖情报采集、内容生产、活动运营、数据分析、知识管理、合规风控、客户运营、流程协同、资质认证、供应链运营十大业务流。内置12个行业校准模板（消费与零售、平台与数字、专业与知识、制造与工业、强监管、资产运营..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangjiaocheng",
+      "userId": "s175zq13kt63ypfry5rgxh1pv18440m2",
+      "displayName": "波动几何",
+      "image": "https://avatars.githubusercontent.com/u/25478397?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 105,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777660222842,
+      "changelog": "Initial release: a universal, industry-agnostic business skill framework driven by \"task-centered, AI Pipeline\" design.\n\n- Covers 10 major business flows: intelligence, content, activity, analytics, knowledge, compliance, customer, workflow, qualification, and operations.\n- Includes 286 atomic skill units with independent inputs/outputs and clear combinability.\n- Features 12 industry calibration templates across 6 broad groups; supports both light calibration and full imitation for industry adaptation.\n- Built-in execution rules for unit loading, industry calibration, dependency checks, and pipeline reuse.\n- Provides pre-defined cross-cluster pipeline templates for common business scenarios.\n- Complete reference files support: skill unit index, industry calibration, and pipeline templates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d4d0e7c9f7df0cfe522e69f650f7c27f477284a8a7f8a4a61389a779d7af4237"
+}

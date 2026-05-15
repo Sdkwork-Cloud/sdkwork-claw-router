@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lhx11@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lhx11",
+  "skill": {
+    "id": 28535,
+    "skillKey": "clawhub-lhx11",
+    "name": "lhx11"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lhx11",
+    "url": "https://clawhub.ai/skills/lhx11",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lhx11-51ea8018ca28b318.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive spreadsheet creation, editing, and analysis with support for formulas, formatting, data analysis, and visualization. When Claude needs to work..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "goulonghui",
+      "userId": "s173brmg4arw0wp0embj2ych7h83hzb2",
+      "displayName": "lhuigou",
+      "image": "https://avatars.githubusercontent.com/u/38848479?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 322,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773751900144,
+      "changelog": "No file changes detected for version 1.0.0.\n\n- Initial release of the \"xlsx\" skill with detailed standards for spreadsheet creation, editing, and analysis.\n- Includes strict formatting, error-prevention, and documentation requirements for financial models.\n- Provides standard workflows and code examples for using pandas and openpyxl.\n- Enforces mandatory use of formulas (not hardcoded values) for all calculations.\n- Details process for recalculating and verifying formulas using LibreOffice and recalc.py.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9fff5bb60dfc0bd5ce19b14759b6fb9c91650706a4f97ab47e2954d343b1bd02"
+}

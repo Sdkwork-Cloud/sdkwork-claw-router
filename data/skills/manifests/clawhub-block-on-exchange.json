@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52686,
+  "uuid": "skill-clawhub-block-on-exchange",
+  "skillKey": "clawhub-block-on-exchange",
+  "name": "ics to exchange-blocker",
+  "summary": "Sync any ICS/iCal calendar to Microsoft Exchange as blocked time slots — supports recurring events, change detection, and privacy-preserving sync",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.block_on_exchange",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Blucaru",
+      "features": [
+        "Sync any ICS/iCal calendar to Microsoft Exchange as blocked time slots — supports recurring eve."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/block-on-exchange@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48087428?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "block-on-exchange",
+      "url": "https://clawhub.ai/skills/block-on-exchange"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "block-on-exchange",
+    "url": "https://clawhub.ai/skills/block-on-exchange",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/block-on-exchange-6fa7f934f69b1bdb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/block-on-exchange@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-block-on-exchange-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1a0c59b0d1309b41e2ae62a13a253646f8dda634d093eb92f38d668d15ff396a",
+      "artifactSizeBytes": 2594
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T21:05:06.822Z"
+}

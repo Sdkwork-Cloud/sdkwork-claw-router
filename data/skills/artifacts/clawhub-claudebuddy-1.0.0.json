@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claudebuddy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claudebuddy",
+  "skill": {
+    "id": 40119,
+    "skillKey": "clawhub-claudebuddy",
+    "name": "Buddy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claudebuddy",
+    "url": "https://clawhub.ai/skills/claudebuddy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claudebuddy-b16ee777ef106303.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A virtual ASCII companion that lives in your chat. Hatches from an egg, reacts to conversations with cute sprites, celebrates wins, mourns errors, and grows..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "l-ryland",
+      "userId": "s17cfb4nw307hk3gsjqevb8esx845xfg",
+      "displayName": "L-Ryland",
+      "image": "https://avatars.githubusercontent.com/u/41134883?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775187207853,
+      "changelog": "Buddy Skill 1.0.0 — Bring a virtual ASCII companion to your chat!\n\n- Adds an interactive virtual pet that hatches from an egg and evolves based on your conversation.\n- Companion reacts to keywords and project events with ASCII art, mood changes, and short messages.\n- Supports multiple companion species, eye and hat customizations, and randomly generated personalities.\n- Tracks stats like encouragement given, jokes made, and snacks earned.\n- Includes simple chat commands for managing, customizing, and retiring your companion.\n- Stores companion state locally and renders sprites in chat with mood indicators.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9901d5497c542ac9ff1ff948e9a062f8a287bba1448d9303a7ed9b3474137dc7"
+}

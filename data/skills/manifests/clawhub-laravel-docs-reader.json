@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40989,
+  "uuid": "skill-clawhub-laravel-docs-reader",
+  "skillKey": "clawhub-laravel-docs-reader",
+  "name": "Laravel Docs Reader",
+  "summary": "Provides instant Laravel documentation, auto-detects project version, generates PSR-12 Laravel code, and highlights differences across Laravel 10 to 12 versi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.laravel_docs_reader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gao.QiLin",
+      "features": [
+        "Provides instant Laravel documentation, auto-detects project version, generates PSR-12 Laravel."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/laravel-docs-reader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1791740?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "laravel-docs-reader",
+      "url": "https://clawhub.ai/skills/laravel-docs-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "laravel-docs-reader",
+    "url": "https://clawhub.ai/skills/laravel-docs-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/laravel-docs-reader-1dc1f9715e53a36c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/laravel-docs-reader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-laravel-docs-reader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:86b23c0d54b27560ee7245dacbea9326a620306fc166a469c74330066f49fe17",
+      "artifactSizeBytes": 2526
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T14:16:55.529Z"
+}

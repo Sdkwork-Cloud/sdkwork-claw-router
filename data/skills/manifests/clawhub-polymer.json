@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40176,
+  "uuid": "skill-clawhub-polymer",
+  "skillKey": "clawhub-polymer",
+  "name": "Polymer",
+  "summary": "Polymer integration. Manage data, records, and automate workflows. Use when the user wants to interact with Polymer data.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Polymer integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Polymer data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymer",
+      "url": "https://clawhub.ai/skills/polymer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymer",
+    "url": "https://clawhub.ai/skills/polymer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymer-c1233198763e2318.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:beda4b2e4f7b22c940095bdecbf88787062f91b2256d810a813a1c12926566a5",
+      "artifactSizeBytes": 1827
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T19:19:05.950Z"
+}

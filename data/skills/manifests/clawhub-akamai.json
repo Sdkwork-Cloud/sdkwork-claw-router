@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34714,
+  "uuid": "skill-clawhub-akamai",
+  "skillKey": "clawhub-akamai",
+  "name": "Akamai",
+  "summary": "Akamai integration. Manage data, records, and automate workflows. Use when the user wants to interact with Akamai data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.akamai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Akamai integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Akamai data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/akamai@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "akamai",
+      "url": "https://clawhub.ai/skills/akamai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "akamai",
+    "url": "https://clawhub.ai/skills/akamai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/akamai-a3c4d61dbebabbaf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/akamai@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-akamai-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:74fdc5986f2e6a88fe8e5b47691b00c1e021ac2411cbd8a6d91f63f37c2fa7b7",
+      "artifactSizeBytes": 1820
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:09:01.457Z"
+}

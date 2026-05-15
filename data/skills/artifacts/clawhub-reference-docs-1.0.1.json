@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reference-docs@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reference_docs",
+  "skill": {
+    "id": 35189,
+    "skillKey": "clawhub-reference-docs",
+    "name": "Reference Docs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reference-docs",
+    "url": "https://clawhub.ai/skills/reference-docs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reference-docs-c7d5f178470792e9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reference documentation patterns for API and symbol documentation. Use when writing reference docs, API docs, parameter tables, or technical specifications...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anderskev",
+      "userId": "s17b1fzefm8nj8j1sdkzrze7gn83pfrg",
+      "displayName": "Kevin Anderson",
+      "image": "https://avatars.githubusercontent.com/u/17010022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 207,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776831067520,
+      "changelog": "Version 1.0.1\n\n- Added a new \"Gates (completion order)\" section outlining a sequenced checklist for reference documentation quality.\n- Clarified that each major section must exist or have an explicit omission note.\n- Defined \"Pass\" conditions for structure and table completeness.\n- No other sections or content were changed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:24759dc4891fac2e0f7da7e01752db1baa1549b4235bc0dabc848eb48ffc7c33"
+}

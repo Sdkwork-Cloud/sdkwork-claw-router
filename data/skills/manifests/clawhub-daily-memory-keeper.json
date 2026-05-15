@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66624,
+  "uuid": "skill-clawhub-daily-memory-keeper",
+  "skillKey": "clawhub-daily-memory-keeper",
+  "name": "Daily Memory Keeper",
+  "summary": "自动按日期整理AI记忆文件，支持关键词检索、跨会话继承，每日生成简报并定期清理过期数据。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_memory_keeper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linbo405",
+      "features": [
+        "自动按日期整理AI记忆文件，支持关键词检索、跨会话继承，每日生成简报并定期清理过期数据。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-memory-keeper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259021343?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-memory-keeper",
+      "url": "https://clawhub.ai/skills/daily-memory-keeper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-memory-keeper",
+    "url": "https://clawhub.ai/skills/daily-memory-keeper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-memory-keeper-b6aa774abe8917f7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-memory-keeper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-memory-keeper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73cc481a55d56f6168e8d372664590b45d35a1fe596274fb4edf9143bc1f4891",
+      "artifactSizeBytes": 2215
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T04:56:56.750Z"
+}

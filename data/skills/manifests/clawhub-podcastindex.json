@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26350,
+  "uuid": "skill-clawhub-podcastindex",
+  "skillKey": "clawhub-podcastindex",
+  "name": "PodcastIndex",
+  "summary": "Search and retrieve podcast and episode details from Podcast Index API using keywords, titles, feed IDs, URLs, or featured persons with authenticated requests.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.podcastindex",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ComicStrip",
+      "features": [
+        "Search and retrieve podcast and episode details from Podcast Index API using keywords, titles,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/podcastindex@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/70763580?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "podcastindex",
+      "url": "https://clawhub.ai/skills/podcastindex"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "podcastindex",
+    "url": "https://clawhub.ai/skills/podcastindex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/podcastindex-f98410a155bbe8ba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/podcastindex@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-podcastindex-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4b4ebddd9435b77bf25de9ea3431f13be8223c90283e995a6471d89fcfb4bad7",
+      "artifactSizeBytes": 2221
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T19:35:27.275Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40361,
+  "uuid": "skill-clawhub-ai-saas-pricing",
+  "skillKey": "clawhub-ai-saas-pricing",
+  "name": "AI SaaS Pricing",
+  "summary": "Scrapes competitor SaaS pricing and user feedback to model optimal tiers, detect gaps, and generate pricing pages and announcement videos in 10 minutes.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_saas_pricing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nicemaths123",
+      "features": [
+        "Scrapes competitor SaaS pricing and user feedback to model optimal tiers, detect gaps, and gene."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-saas-pricing@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/244252350?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-saas-pricing",
+      "url": "https://clawhub.ai/skills/ai-saas-pricing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-saas-pricing",
+    "url": "https://clawhub.ai/skills/ai-saas-pricing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-saas-pricing-58640700c1f32aca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-saas-pricing@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-saas-pricing-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e2197af30ccecbdc23c3ebaaa99494bda8074e86c0bc9fd815d817804f546148",
+      "artifactSizeBytes": 2520
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T13:40:29.525Z"
+}

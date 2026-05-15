@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73030,
+  "uuid": "skill-clawhub-recall-tao",
+  "skillKey": "clawhub-recall-tao",
+  "name": "桃噗噗回复助手",
+  "summary": "抖音自动回复技能。通过浏览器自动化连接抖音创作者中心，监控评论，智能分析后自动生成积极、大方、热情、合法的回复。支持关键词匹配、敏感词过滤、评论分类、多账号管理。触发场景：用户提到\"抖音自动回复\"、\"抖音评论回复\"、\"抖音客服\"、\"抖音智能回复\"、\"抖音机器人\"等关键词，或明确要求在抖音平台进行自动回复操作。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recall_tao",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hexiuqian",
+      "features": [
+        "抖音自动回复技能。通过浏览器自动化连接抖音创作者中心，监控评论，智能分析后自动生成积极、大方、热情、合法的回复。支持关键词匹配、敏感词过滤、评论分类、多账号管理。触发场景：用户提到\"抖音自动."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/recall-tao@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/50606225?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "recall-tao",
+      "url": "https://clawhub.ai/skills/recall-tao"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recall-tao",
+    "url": "https://clawhub.ai/skills/recall-tao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recall-tao-daf61b1d02afadd5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/recall-tao@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-recall-tao-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1639ba2e8f5d11c07a1a3242be672bb6ca19d9616a7a3c81560f98b9f1639a6f",
+      "artifactSizeBytes": 2581
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T07:43:40.935Z"
+}

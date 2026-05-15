@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/learning-sys-v1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.learning_sys_v1",
+  "skill": {
+    "id": 67129,
+    "skillKey": "clawhub-learning-sys-v1",
+    "name": "Learning System Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "learning-sys-v1",
+    "url": "https://clawhub.ai/skills/learning-sys-v1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/learning-sys-v1-94bb345c97f9fe65.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI 领域系统学习体系。管理知识图谱、深度学习笔记、实战复盘和关联网络。触发场景：学习计划、知识图谱更新、深度研究某个 AI 主题、实战复盘总结、调研后沉淀知识、每周学习回顾。当用户说'学了什么'、'总结一下'、'沉淀知识'、'复盘'、'更新图谱'、'深入研究'、'写笔记'、'学习回顾'、'review what..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "onlyloveher",
+      "userId": "s174xx7xgy6h0qxxb3z22szwc183pph8",
+      "displayName": "onlyloveher",
+      "image": "https://avatars.githubusercontent.com/u/972832?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774591589622,
+      "changelog": "Initial release with a systematic AI learning workflow.\n\n- Introduces four main modes: deep-dive (深度研究), recap (实战复盘), review (每周回顾), and health check (健康检查), with clear argument hints and user triggers.\n- Provides step-by-step checklists and templates for deep study, knowledge recap, and weekly review workflows.\n- Structures all knowledge as notes, weekly reviews, and a knowledge map, emphasizing mastery tracking and interconnected learning.\n- Includes automatic mastery scoring and knowledge health checks via scripts.\n- Actively encourages linking related topics and integrating with other skills and data sources.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:071c0ca2f5011caf78d760dc1de61b55d2972ca07921d55c1e22afbd8eb70e9b"
+}

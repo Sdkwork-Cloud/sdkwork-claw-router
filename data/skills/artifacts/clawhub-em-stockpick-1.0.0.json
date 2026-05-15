@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/em-stockpick@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.em_stockpick",
+  "skill": {
+    "id": 57566,
+    "skillKey": "clawhub-em-stockpick",
+    "name": "东方财富网条件选股"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "em-stockpick",
+    "url": "https://clawhub.ai/skills/em-stockpick",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/em-stockpick-4e27c13aa9f36ee0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use eastmoney official website to perform conditional stock selection with natural language. Invoke when user asks to select stocks based on conditions, anal..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "silverfoxchina-gif",
+      "userId": "s17d6wcaacn6847a4ejp9r3jd983jc10",
+      "displayName": "silverfoxchina-gif",
+      "image": "https://avatars.githubusercontent.com/u/253531929?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 400,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776153483837,
+      "changelog": "DFCF_StockPick Skill 1.0.0\n\n- Initial release: Query stock data from eastmoney official website using natural language.\n- Supports selecting A-shares, Hong Kong stocks, ETFs, convertible bonds, and sectors.\n- Allows combining multiple technical and fundamental conditions.\n- Provides a command-line Python interface for flexible stock selection based on user-defined queries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:15ffc4bc277005f628fd005ac4caaf1f38c9261975eb8f274d3b0d3868484a2c"
+}

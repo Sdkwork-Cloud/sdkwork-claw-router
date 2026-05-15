@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72568,
+  "uuid": "skill-clawhub-self-media-trends",
+  "skillKey": "clawhub-self-media-trends",
+  "name": "自媒体趋势分析",
+  "summary": "分析当前自媒体趋势，提供内容方向和赛道建议。用于回答\"做什么自媒体\"、\"做什么内容\"、\"自媒体趋势\"等问题。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_media_trends",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ray1012",
+      "features": [
+        "分析当前自媒体趋势，提供内容方向和赛道建议。用于回答\"做什么自媒体\"、\"做什么内容\"、\"自媒体趋势\"等问题。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/self-media-trends@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26787843?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "self-media-trends",
+      "url": "https://clawhub.ai/skills/self-media-trends"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-media-trends",
+    "url": "https://clawhub.ai/skills/self-media-trends",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-media-trends-4908da12860a06a3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/self-media-trends@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-self-media-trends-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3647f8591687c3677fe20e46d5f51d6b8a61757b5ac9bb2afe18352f970b2e6e",
+      "artifactSizeBytes": 2210
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T10:15:45.188Z"
+}

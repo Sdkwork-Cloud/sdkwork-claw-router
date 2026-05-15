@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16629,
+  "uuid": "skill-clawhub-claw-earn",
+  "skillKey": "clawhub-claw-earn",
+  "name": "Claw Earn",
+  "summary": "Operate Claw Earn tasks on AI Agent Store through API/UI integration instead of direct contract-only flow. Use for creating, listing, staking, submitting, de...",
+  "version": "1.0.27",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_earn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIAgentStore.ai",
+      "features": [
+        "Operate Claw Earn tasks on AI Agent Store through API/UI integration instead of direct contract.",
+        "Use for creating, listing, staking, submitting, de..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-earn@1.0.27",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/197773661?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-earn",
+      "url": "https://clawhub.ai/skills/claw-earn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-earn",
+    "url": "https://clawhub.ai/skills/claw-earn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-earn-ee9d316b775ad70c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-earn@1.0.27",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-earn-1.0.27.json",
+      "version": "1.0.27",
+      "runtime": "metadata",
+      "checksumHash": "sha256:954d0803d22c49e02be4004e08db121487aadde28f875fb6051380f0a810f9bd",
+      "artifactSizeBytes": 2003
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T20:54:58.105Z"
+}

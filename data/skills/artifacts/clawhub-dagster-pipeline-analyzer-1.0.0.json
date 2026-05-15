@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dagster-pipeline-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dagster_pipeline_analyzer",
+  "skill": {
+    "id": 48421,
+    "skillKey": "clawhub-dagster-pipeline-analyzer",
+    "name": "Dagster Pipeline Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dagster-pipeline-analyzer",
+    "url": "https://clawhub.ai/skills/dagster-pipeline-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dagster-pipeline-analyzer-616963d0a71555cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze Dagster pipelines and software-defined assets for quality, scheduling, partitioning, IO managers, resource configuration, and observability. Checks a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 90,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777592906638,
+      "changelog": "Initial release of Dagster Pipeline Analyzer\n\n- Analyze Dagster pipelines and software-defined assets for quality, scheduling, partitioning, IO managers, resource configuration, and observability.\n- Audits asset dependencies, freshness policies, group structure, sensor/schedule configuration, and operational best practices.\n- Provides actionable checks and best-practice recommendations on asset graph design, partitioning, IO manager selection, resource security, and observability.\n- Outputs a health score with a per-category breakdown, critical issue highlights, and remediation code examples.\n- Suitable for code review, deployment audits, partition optimization, and observability improvements in any Dagster project.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3f1e07b4fec5c0e95ebd66b054fd34ae40c9d45038b6390702c7d84840e3f093"
+}

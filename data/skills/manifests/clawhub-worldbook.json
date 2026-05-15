@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16383,
+  "uuid": "skill-clawhub-worldbook",
+  "skillKey": "clawhub-worldbook",
+  "name": "Worldbook",
+  "summary": "AI's Knowledge Base CLI - Query and manage world knowledge for AI agents. Use when users want to search knowledge, add knowledge sources, or interact with th...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.worldbook",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "femto",
+      "features": [
+        "AI's Knowledge Base CLI",
+        "Query and manage world knowledge for AI agents",
+        "Use when users want to search knowledge, add knowledge sources, or interact with th..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/worldbook@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6938?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "worldbook",
+      "url": "https://clawhub.ai/skills/worldbook"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "worldbook",
+    "url": "https://clawhub.ai/skills/worldbook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/worldbook-b229173f6c5f0b8b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/worldbook@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-worldbook-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:583c2c371239e326b0d3d37e6a54dfe5849197332782b2b524be85803d15e044",
+      "artifactSizeBytes": 2235
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T05:22:23.824Z"
+}

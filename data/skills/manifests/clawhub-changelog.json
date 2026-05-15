@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19464,
+  "uuid": "skill-clawhub-changelog",
+  "skillKey": "clawhub-changelog",
+  "name": "Changelog",
+  "summary": "Changelog - command-line tool for everyday use Use when you need changelog.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.changelog",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "Changelog",
+        "command-line tool for everyday use Use when you need changelog."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/changelog@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "changelog",
+      "url": "https://clawhub.ai/skills/changelog"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "changelog",
+    "url": "https://clawhub.ai/skills/changelog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/changelog-6665bc2f57c4a704.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/changelog@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-changelog-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1caac1ef6d342b3e91d132f57f3cb96cc2968c3c3a2b7b442fc5bfd9cffe37e8",
+      "artifactSizeBytes": 1817
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T19:14:48.972Z"
+}

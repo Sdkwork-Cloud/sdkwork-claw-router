@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36231,
+  "uuid": "skill-clawhub-btc-sprint-stack",
+  "skillKey": "clawhub-btc-sprint-stack",
+  "name": "Btc Sprint Stack",
+  "summary": "Trade BTC 5m/15m Polymarket fast markets on Simmer with dry-run-first execution, fee-aware filtering, bankroll limits, flat signal_data, journaling, heartbea...",
+  "version": "0.4.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.btc_sprint_stack",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Captain",
+      "features": [
+        "Trade BTC 5m/15m Polymarket fast markets on Simmer with dry-run-first execution, fee-aware filt."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/btc-sprint-stack@0.4.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94413210?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "btc-sprint-stack",
+      "url": "https://clawhub.ai/skills/btc-sprint-stack"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "btc-sprint-stack",
+    "url": "https://clawhub.ai/skills/btc-sprint-stack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/btc-sprint-stack-ee3583dfc9bab060.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/btc-sprint-stack@0.4.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-btc-sprint-stack-0.4.2.json",
+      "version": "0.4.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:80b81804a35c38575feefd5cf6aacc96d8af538e06d148a85ecc879c798ef6ae",
+      "artifactSizeBytes": 1973
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T15:13:12.445Z"
+}

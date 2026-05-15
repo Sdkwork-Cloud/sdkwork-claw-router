@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30691,
+  "uuid": "skill-clawhub-netfluid",
+  "skillKey": "clawhub-netfluid",
+  "name": "Netfluid",
+  "summary": "Enables AI agents to process fiat and crypto payments, manage accounts, and handle multi-currency transfers via Netfluid.",
+  "version": "7.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.netfluid",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jnysschensol",
+      "features": [
+        "Enables AI agents to process fiat and crypto payments, manage accounts, and handle multi-curren."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/netfluid@7.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/99023418?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "netfluid",
+      "url": "https://clawhub.ai/skills/netfluid"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "netfluid",
+    "url": "https://clawhub.ai/skills/netfluid",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/netfluid-33584b4b506a94ab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/netfluid@7.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-netfluid-7.0.5.json",
+      "version": "7.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6bbe4804b97846d305533504a0bab65374a507d2bdae46157701036b39df363a",
+      "artifactSizeBytes": 1948
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T18:14:18.619Z"
+}

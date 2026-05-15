@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tender-bid-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tender_bid_generator",
+  "skill": {
+    "id": 23624,
+    "skillKey": "clawhub-tender-bid-generator",
+    "name": "Tender Bid Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tender-bid-generator",
+    "url": "https://clawhub.ai/skills/tender-bid-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tender-bid-generator-e5fcb05da674084e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate high-quality bid documents from tender documents. Use when users need to create bid proposals based on tender documents, including extracting tender..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chengcheng8632",
+      "userId": "s17cpa50q7xdzcv6ra4w1jggax83j6db",
+      "displayName": "tender-cc",
+      "image": "https://avatars.githubusercontent.com/u/53079012?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 436,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773643473682,
+      "changelog": "Initial release: Generate bid documents from tender documents",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d09cb50a45050660cb1b3ff4353a4f651809b4ccf18bc2496899d2a26661af5b"
+}

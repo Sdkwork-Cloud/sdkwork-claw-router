@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nuberea@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nuberea",
+  "skill": {
+    "id": 38927,
+    "skillKey": "clawhub-nuberea",
+    "name": "Nuberea"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nuberea",
+    "url": "https://clawhub.ai/skills/nuberea",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nuberea-e2a504be0afa28da.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bible research platform for AI agents. NuBerea provides direct access to original-language Hebrew and Greek morphology, the LSJ and BDB lexicons, KJV Bible t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "streamsapps",
+      "userId": "s17fvmb30tf9exp87gd7e2a6ph84rb1v",
+      "displayName": "streamsapps",
+      "image": "https://avatars.githubusercontent.com/u/53987456?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776099097795,
+      "changelog": "Initial release of nuberea — a comprehensive Bible research platform.\n\n- Provides direct access to Hebrew and Greek morphology, major lexicons (LSJ, BDB, Abbott-Smith), KJV Bible text, Dead Sea Scrolls, NT manuscript transcriptions, Septuagint LXX, and synoptic parallels.\n- Features 57 specialized tools for querying texts, lexicons, manuscripts, and performing analytics via SQL.\n- Supports workflows for word studies, exegesis, morphology analysis, lexicon lookups, and manuscript research.\n- Designed for advanced Bible study, biblical languages research, and working with ancient texts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9703d237a7d85fea99def5f87c2de3f5e1e4745cb50edbe9a294407817f9e804"
+}

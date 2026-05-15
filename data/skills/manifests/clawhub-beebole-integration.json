@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38743,
+  "uuid": "skill-clawhub-beebole-integration",
+  "skillKey": "clawhub-beebole-integration",
+  "name": "Beebole",
+  "summary": "Beebole integration. Manage Users, Organizations, Filters. Use when the user wants to interact with Beebole data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beebole_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Beebole integration",
+        "Manage Users, Organizations, Filters",
+        "Use when the user wants to interact with Beebole data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/beebole-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "beebole-integration",
+      "url": "https://clawhub.ai/skills/beebole-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beebole-integration",
+    "url": "https://clawhub.ai/skills/beebole-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beebole-integration-d5dd53a1663a66b4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/beebole-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-beebole-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:00ca89600a1bc37797c7c127d3adcf84e030d2df4e25ec853fa7a7b1bf4f3bf5",
+      "artifactSizeBytes": 1885
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:22:54.861Z"
+}

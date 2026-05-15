@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40182,
+  "uuid": "skill-clawhub-read-document",
+  "skillKey": "clawhub-read-document",
+  "name": "read-any-document (Canonizr)",
+  "summary": "Convert any document to markdown using Canonizr",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.read_document",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hector Miller-Bakewell",
+      "features": [
+        "Convert any document to markdown using Canonizr"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/read-document@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4368351?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "read-document",
+      "url": "https://clawhub.ai/skills/read-document"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "read-document",
+    "url": "https://clawhub.ai/skills/read-document",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/read-document-82600fb267160582.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/read-document@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-read-document-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fcb2f0d38137fcd8a8edbb897d3e9420c40b36297861f145d5913bb8d40dbe71",
+      "artifactSizeBytes": 2150
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T09:48:34.010Z"
+}

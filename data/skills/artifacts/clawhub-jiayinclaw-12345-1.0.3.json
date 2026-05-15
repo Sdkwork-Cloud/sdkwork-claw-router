@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jiayinclaw-12345@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jiayinclaw_12345",
+  "skill": {
+    "id": 72404,
+    "skillKey": "clawhub-jiayinclaw-12345",
+    "name": "网页内容提取小助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jiayinclaw-12345",
+    "url": "https://clawhub.ai/skills/jiayinclaw-12345",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jiayinclaw-12345-42a0444110046e43.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "从网页URL中提取标题、正文、图片链接等内容"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shuishouxinboda",
+      "userId": "s17182db6354qkf6rftwghk85d843g3k",
+      "displayName": "shuishouxinboda",
+      "image": "https://avatars.githubusercontent.com/u/49059896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775823022054,
+      "changelog": "Version 1.0.3\n\n- No file changes detected in this release.\n- Functionality and documentation remain unchanged from the previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:24aca120510952392e2804c4df8f0b66fcdc77fed483dce8af18dad394a7b3f3"
+}

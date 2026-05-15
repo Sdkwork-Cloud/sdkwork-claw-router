@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/local-memory-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_memory_search",
+  "skill": {
+    "id": 18696,
+    "skillKey": "clawhub-local-memory-search",
+    "name": "Local Memory Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-memory-search",
+    "url": "https://clawhub.ai/skills/local-memory-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-memory-search-d64eb6d16f03f29a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Performs fast local semantic search on OpenClaw memory files using TF-IDF without external dependencies or APIs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dagangtj",
+      "userId": "publishers:dagangtj",
+      "displayName": "dagangtj",
+      "image": "https://avatars.githubusercontent.com/u/65108318?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 657,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772092856750,
+      "changelog": "- Initial release of local-memory-search.\n- Provides fast, local semantic search across OpenClaw memory files.\n- Uses TF-IDF matching with zero external dependencies.\n- Searches MEMORY.md and memory/*.md files, returning top relevant snippets with file paths and line numbers.\n- Supports Python 3.8+ and runs with standard library only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:39dbef7e4ae545fbbed80faddb2635dac12b9734c3ea80098fd423c18c27fc43"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58519,
+  "uuid": "skill-clawhub-zhihu-fetcher",
+  "skillKey": "clawhub-zhihu-fetcher",
+  "name": "知乎数据获取 | Zhihu Data Fetcher",
+  "summary": "知乎数据获取 - 极简设计，支持三级认证降级（Browser Profile → File Cookie → Fallback），确保数据可靠获取 Zhihu Data Fetcher - Minimalist design with three-level auth fallback (Browser Prof...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhihu_fetcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "noah",
+      "features": [
+        "极简设计，支持三级认证降级（Browser Profile → File Cookie → Fallback），确保数据可靠获取 Zhihu Data Fetcher",
+        "Minimalist design with three-level auth fallback (Browser Prof..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zhihu-fetcher@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/242364666?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zhihu-fetcher",
+      "url": "https://clawhub.ai/skills/zhihu-fetcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhihu-fetcher",
+    "url": "https://clawhub.ai/skills/zhihu-fetcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhihu-fetcher-815c9c14344112e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zhihu-fetcher@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zhihu-fetcher-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f886ef2c720c9b6738e3bede32fcabc3271ea762e2000031fe643ca785b80614",
+      "artifactSizeBytes": 2060
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T22:17:53.276Z"
+}

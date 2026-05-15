@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45899,
+  "uuid": "skill-clawhub-seem-skill",
+  "skillKey": "clawhub-seem-skill",
+  "name": "SEEM",
+  "summary": "Advanced episodic memory system for multi-turn conversations. Store and retrieve structured conversation memories with fact graph, PPR retrieval, and three r...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seem_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RyanToleco",
+      "features": [
+        "Advanced episodic memory system for multi-turn conversations",
+        "Store and retrieve structured conversation memories with fact graph, PPR retrieval, and three r."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/seem-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45578913?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "seem-skill",
+      "url": "https://clawhub.ai/skills/seem-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seem-skill",
+    "url": "https://clawhub.ai/skills/seem-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seem-skill-ee875eea492002b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/seem-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-seem-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0544abf5121c1a2b32848bcff3fe94073a18f3dd532dce80780fae4e26eda7ad",
+      "artifactSizeBytes": 2558
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T03:21:39.829Z"
+}

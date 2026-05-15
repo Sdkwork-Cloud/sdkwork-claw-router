@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawhub-publishing-mother-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_publishing_mother_skill",
+  "skill": {
+    "id": 41436,
+    "skillKey": "clawhub-clawhub-publishing-mother-skill",
+    "name": "Clawhub Publishing Mother Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-publishing-mother-skill",
+    "url": "https://clawhub.ai/skills/clawhub-publishing-mother-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-publishing-mother-skill-946fa7045be78aa5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The ultimate OpenClaw publishing skill with personality baked in. Publishes skills, tracks impact, engages community, and does it all with recognizable Stef..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stefanferreira",
+      "userId": "s174f5nq8v4pyqpbz80b1gew5d83pkm9",
+      "displayName": "stefanferreira",
+      "image": "https://avatars.githubusercontent.com/u/6356549?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776066351516,
+      "changelog": "Semver fix follow-up publish and metadata refresh",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aea519296429e28ee18751e22f93933bacc3a67d0bb734dbcb924d373a9b3f82"
+}

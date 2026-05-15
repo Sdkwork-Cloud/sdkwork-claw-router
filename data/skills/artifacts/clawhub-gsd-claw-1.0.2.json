@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gsd-claw@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gsd_claw",
+  "skill": {
+    "id": 13993,
+    "skillKey": "clawhub-gsd-claw",
+    "name": "Gsd Claw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gsd-claw",
+    "url": "https://clawhub.ai/skills/gsd-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gsd-claw-c2a206e9d18c864e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Spec-driven development with built-in verification for substantial projects. Use when user wants to plan a project, scope a feature, build something with structure, or says \"GSD mode\", \"let's plan\", \"scope out\", \"spec-driven\". Workflow is."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rubenaquispe",
+      "userId": "s17f9rkw2t06cm3ya2a4spns4d83x9jk",
+      "displayName": "Ruben Quispe",
+      "image": "https://avatars.githubusercontent.com/u/44844199?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1773,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 3,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770487545641,
+      "changelog": "Fixed display name to GSD Claw",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:11842022e85a4423bb425e6f2b3a3ad06068a71b9959b056cfef32232a698cd7"
+}

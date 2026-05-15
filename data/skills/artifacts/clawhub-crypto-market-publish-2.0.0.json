@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crypto-market-publish@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_market_publish",
+  "skill": {
+    "id": 24071,
+    "skillKey": "clawhub-crypto-market-publish",
+    "name": "Crypto Market Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-market-publish",
+    "url": "https://clawhub.ai/skills/crypto-market-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-market-publish-d9fd5e93b7987d64.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive cryptocurrency market monitoring and economic data analysis. Use when tracking crypto prices, market sentiment, economic data releases, or anal..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kjjjj0",
+      "userId": "publishers:kjjjj0",
+      "displayName": "KJjjj0",
+      "image": "https://avatars.githubusercontent.com/u/91359013?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 420,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773409513983,
+      "changelog": "v2.0: Removed hardcoded paths, added installation guide, improved portability and usability",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5dcb3b5830905a7fe5e8358b8944fb389303b64b7caa133c12fdb5da5c4102d9"
+}

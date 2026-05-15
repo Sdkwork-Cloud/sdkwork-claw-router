@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50777,
+  "uuid": "skill-clawhub-api-router",
+  "skillKey": "clawhub-api-router",
+  "name": "Api Router",
+  "summary": "Reference tool for devtools — covers intro, quickstart, patterns and more. Quick lookup for API Router concepts, best practices, and implementation patterns.",
+  "version": "3.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_router",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "Reference tool for devtools — covers intro, quickstart, patterns and more",
+        "Quick lookup for API Router concepts, best practices, and implementation patterns."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/api-router@3.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "api-router",
+      "url": "https://clawhub.ai/skills/api-router"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-router",
+    "url": "https://clawhub.ai/skills/api-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-router-f3be06a05497e56b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/api-router@3.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-api-router-3.0.2.json",
+      "version": "3.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b25843a5d0787f91e7b35ad54683f39b7774f9c336b0c471c6eba373e3e4d66",
+      "artifactSizeBytes": 1858
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T01:11:18.337Z"
+}

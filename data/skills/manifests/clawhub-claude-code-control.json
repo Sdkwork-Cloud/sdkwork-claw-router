@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12204,
+  "uuid": "skill-clawhub-claude-code-control",
+  "skillKey": "clawhub-claude-code-control",
+  "name": "Claude Code Control",
+  "summary": "Programmatically control Claude Code in visible macOS Terminal windows via AppleScript for command input, screenshots, session logging, and terminal management.",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code_control",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Michael Melichar",
+      "features": [
+        "Programmatically control Claude Code in visible macOS Terminal windows via AppleScript for comm."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claude-code-control@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35645069?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claude-code-control",
+      "url": "https://clawhub.ai/skills/claude-code-control"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code-control",
+    "url": "https://clawhub.ai/skills/claude-code-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-control-787ff07cf4bf786f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claude-code-control@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claude-code-control-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6b3647ef30e2718ad0e7ce91324b57d562e14bbf736b63226c12e96d7fd621c7",
+      "artifactSizeBytes": 1974
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T04:06:28.131Z"
+}

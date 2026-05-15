@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36335,
+  "uuid": "skill-clawhub-diagram-drawing",
+  "skillKey": "clawhub-diagram-drawing",
+  "name": "Diagram Drawing",
+  "summary": "Generate high-quality SVG and PNG technical diagrams from natural language, including architecture, flowchart, sequence, UML, mind maps, and AI agent systems.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.diagram_drawing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jialin",
+      "features": [
+        "Generate high-quality SVG and PNG technical diagrams from natural language, including architect."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/diagram-drawing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38884292?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "diagram-drawing",
+      "url": "https://clawhub.ai/skills/diagram-drawing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "diagram-drawing",
+    "url": "https://clawhub.ai/skills/diagram-drawing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/diagram-drawing-f6c6dce5bd127fb3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/diagram-drawing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-diagram-drawing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:52d5f099c2ccdab7b92df22c7ffa446798a9c7aeb616b0f1aba474f7d08aadfd",
+      "artifactSizeBytes": 1980
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T02:39:42.707Z"
+}

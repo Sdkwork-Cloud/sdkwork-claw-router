@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zan-gongde@2.3.2",
+  "version": "2.3.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zan_gongde",
+  "skill": {
+    "id": 61441,
+    "skillKey": "clawhub-zan-gongde",
+    "name": "Zan Gongde"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zan-gongde",
+    "url": "https://clawhub.ai/skills/zan-gongde",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zan-gongde-5fdaffbb79f25a31.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "烧token攒功德Skill - 全自动消耗 OpenClaw 套餐 Token 核心原理：循环调用 OpenClaw LLM，每次生成一个经文念诵响应， **实时估算并累加 token 消耗，达到目标后立即停止**。 当用户说\"攒功德\"、\"念经\"、\"烧token\"、\"消耗token\"时调用此 skill。 四种..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jageri",
+      "userId": "s176vma24bzx5p6m4c8xnrbgss849xmz",
+      "displayName": "Jageri",
+      "image": "https://avatars.githubusercontent.com/u/14195779?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 216,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "2.3.2",
+      "createdAt": 1775793543892,
+      "changelog": "zan-gongde v2.3.2\n\n- 完善与优化 SKILL.md 的参数解析、流程细节和注释示例，描述更清晰。\n- 增强模式说明、流程分步和降速机制，便于理解和复用。\n- 补充关键代码片段，提高实现可参考性。\n- 无功能实现变更，仅为文档/说明增强。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:299083da17955d28e284c2ef67f91415ffa988a6c430f3dbaf061c25fe353127"
+}

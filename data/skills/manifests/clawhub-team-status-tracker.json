@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21411,
+  "uuid": "skill-clawhub-team-status-tracker",
+  "skillKey": "clawhub-team-status-tracker",
+  "name": "Team Status Tracker",
+  "summary": "Systematic team status tracking via Slack DMs with confidential Obsidian-based internal tracking. Maintains confidentiality while gathering actionable projec...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.team_status_tracker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "parthpandya1729",
+      "features": [
+        "Systematic team status tracking via Slack DMs with confidential Obsidian-based internal tracking",
+        "Maintains confidentiality while gathering actionable projec..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/team-status-tracker@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31759500?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "team-status-tracker",
+      "url": "https://clawhub.ai/skills/team-status-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "team-status-tracker",
+    "url": "https://clawhub.ai/skills/team-status-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/team-status-tracker-88d123e51763aa01.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/team-status-tracker@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-team-status-tracker-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b6d694afe4745a924eb885ea19c6ef260451d45e6d07f8b3a7253afa9efc3d5",
+      "artifactSizeBytes": 2078
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T12:29:45.569Z"
+}

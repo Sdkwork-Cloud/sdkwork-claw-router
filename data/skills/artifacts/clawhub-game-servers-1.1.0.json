@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/game-servers@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.game_servers",
+  "skill": {
+    "id": 22862,
+    "skillKey": "clawhub-game-servers",
+    "name": "Supercraft Game Servers"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "game-servers",
+    "url": "https://clawhub.ai/skills/game-servers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/game-servers-13e025f64bd6f646.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Order, configure and manage dedicated game servers (20+ games) via Supercraft REST API"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mcjkrs",
+      "userId": "publishers:mcjkrs",
+      "displayName": "mcjkrs",
+      "image": "https://avatars.githubusercontent.com/u/26937313?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 458,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773140565837,
+      "changelog": "Fix auth/claim method, purchase no-auth, add purchase flow warning, cron polling, all game tags",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0bcaa733cd928cebea68f83f9d2186df39635ea5427d16edac02a79b65d48654"
+}

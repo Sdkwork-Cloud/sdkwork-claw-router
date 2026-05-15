@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37891,
+  "uuid": "skill-clawhub-acedatacloud-hailuo-video",
+  "skillKey": "clawhub-acedatacloud-hailuo-video",
+  "name": "Hailuo Video",
+  "summary": "Generate AI videos with Hailuo (MiniMax) via AceDataCloud API. Use when creating videos from text descriptions or animating images into video. Supports text-...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acedatacloud_hailuo_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Germey",
+      "features": [
+        "Generate AI videos with Hailuo (MiniMax) via AceDataCloud API",
+        "Use when creating videos from text descriptions or animating images into video",
+        "Supports text-..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/acedatacloud-hailuo-video@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8678661?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "acedatacloud-hailuo-video",
+      "url": "https://clawhub.ai/skills/acedatacloud-hailuo-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acedatacloud-hailuo-video",
+    "url": "https://clawhub.ai/skills/acedatacloud-hailuo-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acedatacloud-hailuo-video-ef228a012f2ff189.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/acedatacloud-hailuo-video@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-acedatacloud-hailuo-video-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3f09763ca820114124cde8fc475dc7233b6d373c57b79bbef88aeff759d01fa2",
+      "artifactSizeBytes": 2393
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T04:39:01.186Z"
+}

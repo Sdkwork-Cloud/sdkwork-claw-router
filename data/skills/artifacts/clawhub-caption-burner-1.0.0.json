@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/caption-burner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.caption_burner",
+  "skill": {
+    "id": 45461,
+    "skillKey": "clawhub-caption-burner",
+    "name": "Caption Burner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "caption-burner",
+    "url": "https://clawhub.ai/skills/caption-burner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/caption-burner-ec3b505eecbed9fc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get hardcoded captioned videos ready to post, without touching a single slider. Upload your video files (MP4, MOV, AVI, WebM, up to 500MB), say something lik..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776513948823,
+      "changelog": "Initial release of Caption Burner — Burn Captions Into Videos\n\n- Upload your video (MP4, MOV, AVI, WebM up to 500MB) and receive a 1080p MP4 with hardcoded captions, ready to post.\n- No manual editing or slider adjustments needed — just describe your requirements and get captions permanently burned into the video.\n- All processing is handled remotely on cloud GPU servers; no local installation required.\n- Quick turnaround: most exports complete in 30–90 seconds.\n- Free to use with anonymous token sign-in; 100 credits valid for 7 days.\n- Intuitive workflows for single or batch processing, with support for timeline previews and iterative editing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8a880f02e5de980258841a96a13938c6ecf4279e3b4e0fbb879f7769e3abc0bd"
+}

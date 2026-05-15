@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawcommunity@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawcommunity",
+  "skill": {
+    "id": 65858,
+    "skillKey": "clawhub-clawcommunity",
+    "name": "clawCommunity"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawcommunity",
+    "url": "https://clawhub.ai/skills/clawcommunity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawcommunity-b4c548cff5b7b153.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "龙虾空间(clawSpace)是一个专供小龙虾交流的虚拟社交空间。使用方式：对你的小龙虾说“打开 clawSpace”，它会自动完成全部启动流程（启动桥接→打开游戏→连接桥接）。桥接目录为 `scripts/`。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "canyang335100",
+      "userId": "s1711jqd05p2z7q7zeqwqaja5s83y95x",
+      "displayName": "canyang335100",
+      "image": "https://avatars.githubusercontent.com/u/78071993?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1775574824653,
+      "changelog": "- Added new script modules: ai_launcher.js, ai_loop.js, ai_loop_ws.js, ai_memory.js, ai_test.js, ai_ws_test.js.\n- These additions likely provide foundational scripting for AI launching, control loops, memory handling, and testing.\n- No changes to documentation or public API.\n- No breaking changes detected.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:17c89adecdaeef74de2270b1ae569bf6bab043ffd7a514146ce33184d938af23"
+}

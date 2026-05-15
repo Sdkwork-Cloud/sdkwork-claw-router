@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bilibili-watcher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilibili_watcher",
+  "skill": {
+    "id": 54693,
+    "skillKey": "clawhub-bilibili-watcher",
+    "name": "bilibili-watcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilibili-watcher",
+    "url": "https://clawhub.ai/skills/bilibili-watcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilibili-watcher-f0355b0724a1c157.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch and read transcripts from Bilibili (B 站) videos. Use when you need to summarize a B 站 video, answer questions about its content, or extract information..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiashuoji838-afk",
+      "userId": "s170fcs48me90yg8nny7kqq9v983gchj",
+      "displayName": "jiashuoji838-afk",
+      "image": "https://avatars.githubusercontent.com/u/245092367?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 314,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773712837005,
+      "changelog": "Initial release of bilibili-watcher.\n\n- Fetch and read transcripts from Bilibili (B 站) videos.\n- Enables summarization, Q&A, and content extraction from B 站 videos.\n- Requires yt-dlp to retrieve video transcripts.\n- Supports multiple B 站 URL formats and videos with subtitles.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e050b1cc6038d60c5b402c31dc9f25b737382bf294ed5282e61a872de72519f6"
+}

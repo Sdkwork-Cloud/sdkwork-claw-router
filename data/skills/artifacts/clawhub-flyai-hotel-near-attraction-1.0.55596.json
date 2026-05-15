@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flyai-hotel-near-attraction@1.0.55596",
+  "version": "1.0.55596",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flyai_hotel_near_attraction",
+  "skill": {
+    "id": 19952,
+    "skillKey": "clawhub-flyai-hotel-near-attraction",
+    "name": "\"Find hotels closest to a specific attraction, landmark, or scenic spot. Searches by POI name, sorts by distance, and shows wal."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flyai-hotel-near-attraction",
+    "url": "https://clawhub.ai/skills/flyai-hotel-near-attraction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flyai-hotel-near-attraction-6eb79390b1dac380.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find hotels nearest to a specified attraction by POI name, sorted by walking distance, with support for flights, tickets, visas, insurance, and car rentals."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dingtom336-gif",
+      "userId": "s17aepsh6v86z2ajsq3ng9tgm983g9pt",
+      "displayName": "dingtom336-gif",
+      "image": "https://avatars.githubusercontent.com/u/256118512?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 695,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.55596",
+      "createdAt": 1774855599645,
+      "changelog": "Initial upload",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:393845fce20bb8fb22f0a3f79a75e52f690d92ded5ad028b2d2c2a2c33606586"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18076,
+  "uuid": "skill-clawhub-people-strategy",
+  "skillKey": "clawhub-people-strategy",
+  "name": "People Strategy",
+  "summary": "Manage and query a persistent SQLite-based graph of people and their relationships for personal CRM, org charts, mentorship, and collaboration mapping.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.people_strategy",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Manojkumar Kotakonda",
+      "features": [
+        "Manage and query a persistent SQLite-based graph of people and their relationships for personal."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/people-strategy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44414430?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "people-strategy",
+      "url": "https://clawhub.ai/skills/people-strategy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "people-strategy",
+    "url": "https://clawhub.ai/skills/people-strategy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/people-strategy-2953ace503010020.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/people-strategy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-people-strategy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73c1b4156e94be785d271cfb48c91613b0b1f19111d57ac62957299d4e31afd9",
+      "artifactSizeBytes": 2640
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T03:46:52.647Z"
+}

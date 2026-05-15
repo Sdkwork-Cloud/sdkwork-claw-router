@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32363,
+  "uuid": "skill-clawhub-nex-pricewatch",
+  "skillKey": "clawhub-nex-pricewatch",
+  "name": "Nex Pricewatch",
+  "summary": "Monitor competitor and supplier website prices using CSS, XPath, or regex selectors; track changes with alerts, view history, trends, and export data locally.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nex_pricewatch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nex AI",
+      "features": [
+        "Monitor competitor and supplier website prices using CSS, XPath, or regex selectors",
+        "track changes with alerts, view history, trends, and export data locally."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nex-pricewatch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/149910894?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nex-pricewatch",
+      "url": "https://clawhub.ai/skills/nex-pricewatch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nex-pricewatch",
+    "url": "https://clawhub.ai/skills/nex-pricewatch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nex-pricewatch-b4570dfc991ec28a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nex-pricewatch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nex-pricewatch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dcb2daddbe489513a7c7e6606b24d711a8d575e2a86a2916c59ac3234bcf7d2d",
+      "artifactSizeBytes": 1882
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T04:20:41.374Z"
+}

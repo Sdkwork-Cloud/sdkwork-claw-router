@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/beauty-geo-writer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beauty_geo_writer",
+  "skill": {
+    "id": 39470,
+    "skillKey": "clawhub-beauty-geo-writer",
+    "name": "Beauty GEO Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beauty-geo-writer",
+    "url": "https://clawhub.ai/skills/beauty-geo-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beauty-geo-writer-94a481d3e16cc8cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A prompt-only skill for generating answer-first, AI-readable, evidence-led medical-aesthetics educational content with light brand integration. Designed for..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ljseeking",
+      "userId": "s172qdnna7e9rmecem8tckdtd1845fvv",
+      "displayName": "LJseeking",
+      "image": "https://avatars.githubusercontent.com/u/84867345?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777602830822,
+      "changelog": "**beauty-geo-writer v1.1 — Adds formal metadata and clarifies scope**\n\n- Added explicit versioning and metadata fields (author, homepage, license, type, scope, compliance, data policy) for greater transparency.\n- Clarified \"prompt-only\" and \"text-only\" nature in description and metadata.\n- Stated that no external data, API keys, or system access are used.\n- No changes to the core instructions, structure, or workflow logic.\n- Improves clarity for integration and compliance in GEO content workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ffa86bf030f356a4175d2bd2d81d276a7615a7a393d9faac415f711388e28f4a"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/creat-anget@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.creat_anget",
+  "skill": {
+    "id": 66242,
+    "skillKey": "clawhub-creat-anget",
+    "name": "creat-anget"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "creat-anget",
+    "url": "https://clawhub.ai/skills/creat-anget",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/creat-anget-2003a79136bd344a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "创建具有独立工作区和配置的独立 OpenClaw Agent。适用于用户需要完全隔离的 Agent（独立工作区、配置、身份），而不是临时子 Agent 会话的情况。支持飞书机器人绑定，用于多机器人部署。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "song5749",
+      "userId": "s171dmdrac62v71atnqfbsg9m183jnzr",
+      "displayName": "song5749",
+      "image": "https://avatars.githubusercontent.com/u/8469692?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 352,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773977676365,
+      "changelog": "No visible file changes or user-facing updates in this version.\n\n- No changes detected compared to the previous version.\n- Documentation, features, and usage remain the same.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:85df38b902eee14ed17d65dc8f5775f9e8fa5afb63b4d47901c892f86dbe6b45"
+}

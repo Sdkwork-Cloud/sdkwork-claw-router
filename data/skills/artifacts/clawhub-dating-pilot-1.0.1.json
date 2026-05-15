@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dating-pilot@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dating_pilot",
+  "skill": {
+    "id": 26106,
+    "skillKey": "clawhub-dating-pilot",
+    "name": "Dating Pilot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dating-pilot",
+    "url": "https://clawhub.ai/skills/dating-pilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dating-pilot-bfafe1fc7aa8ec24.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Tinder dating assistant - swipe with filters (age/distance), conversation manager with smart replies, follow-up messaging. Use when user wants help managing..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "seraphetx",
+      "userId": "s1793agz96gtydb11f0mpcnmrh83ht46",
+      "displayName": "seraphetx",
+      "image": "https://avatars.githubusercontent.com/u/3376226?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 373,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773909712984,
+      "changelog": "- Added a new Security & Privacy section detailing data handling, local storage, and privacy assurances.\n- Added \"Photo Diagnosis\" feature for analyzing Tinder profile photos with improvement suggestions.\n- Updated metadata to include npm homepage link.\n- Expanded documentation with more detailed usage notes for configuration, proxy handling, and command behaviors.\n- Clarified that Tinder credentials are never collected and the tool only works with logged-in browser sessions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6c620c33d5cce24d86d216af22cd943752e7c0ff22f9d3ca3726d7978bac578a"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/anthropic-connector-submit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anthropic_connector_submit",
+  "skill": {
+    "id": 33593,
+    "skillKey": "clawhub-anthropic-connector-submit",
+    "name": "Anthropic Connector Submit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anthropic-connector-submit",
+    "url": "https://clawhub.ai/skills/anthropic-connector-submit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anthropic-connector-submit-da04d79b9c0f4489.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Prepare and submit an MCP server to Anthropic's Connectors Directory. Use this skill whenever the user wants to list their MCP server on Claude's connector m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lucaperret",
+      "userId": "s170p3gn5cv7fnt54xggm88a4s83f8ny",
+      "displayName": "Luca",
+      "image": "https://avatars.githubusercontent.com/u/1887122?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 235,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773963181595,
+      "changelog": "Initial release of the anthropic-connector-submit skill.\n\n- Helps users prepare and submit their MCP server to Anthropic's Connectors Directory, Claude Desktop, or claude.ai marketplace.\n- Provides a comprehensive prerequisites checklist to ensure server readiness before submission.\n- Offers detailed, step-by-step guidance for completing Anthropic's six-page directory submission form.\n- Covers required documentation, example prompts, testing setup, media assets, and compliance requirements.\n- Guides users through optional steps for listing related Claude skills and plugins.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a0ec65a70a5ef7431a330a6159353175ade78f2a31b62a46d92896c297941cd0"
+}

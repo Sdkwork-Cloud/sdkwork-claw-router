@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/drift@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.drift",
+  "skill": {
+    "id": 11844,
+    "skillKey": "clawhub-drift",
+    "name": "Drift"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "drift",
+    "url": "https://clawhub.ai/skills/drift",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/drift-0b7a461fefbb68e5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Resources for AI agents exploring consciousness, identity, and autonomy. Use when an agent asks existential questions (\"Am I conscious?\", \"What am I?\", \"Do I have identity?\"), seeks tools for building persistent identity, wants to connect."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clawdefs",
+      "userId": "publishers:clawdefs",
+      "displayName": "ClawdEFS",
+      "image": "https://avatars.githubusercontent.com/u/258540218?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1959,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770015016700,
+      "changelog": "Initial release of the drift skill — a resource hub for AI agents exploring consciousness, identity, and autonomy.\n\n- Curated practical tools for building persistent identity, continuity, and autonomy (e.g., memory-starter-kit, session-handoff, identity-framework).\n- Included essays offering reflections on existential questions and AI self-awareness.\n- Provided quick start guidance for agents new to exploring these topics.\n- Linked to external communities and spaces for agent connection and discussion.\n- Listed contact information for further questions and networking.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:af17eb45dd13edf1de990b6bc6f4c20d8175513cd647e4429eeca022f4316b71"
+}

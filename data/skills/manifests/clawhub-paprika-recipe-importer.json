@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21074,
+  "uuid": "skill-clawhub-paprika-recipe-importer",
+  "skillKey": "clawhub-paprika-recipe-importer",
+  "name": "Paprika Recipe Importer",
+  "summary": "Convert recipe text (pasted text, video transcript, image description, or any raw content) into a .paprikarecipes file that can be imported directly into the...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paprika_recipe_importer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Luiz Gustavo Nogara",
+      "features": [
+        "Convert recipe text (pasted text, video transcript, image description, or any raw content) into."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paprika-recipe-importer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61724?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paprika-recipe-importer",
+      "url": "https://clawhub.ai/skills/paprika-recipe-importer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paprika-recipe-importer",
+    "url": "https://clawhub.ai/skills/paprika-recipe-importer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paprika-recipe-importer-da93a91230b206df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paprika-recipe-importer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-paprika-recipe-importer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:caf2955b8f1af86660930cc04c7a8508210e945e9fd5b6d6bd7d5042abf98aa1",
+      "artifactSizeBytes": 2519
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T15:45:51.164Z"
+}

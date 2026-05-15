@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58004,
+  "uuid": "skill-clawhub-xhs-video-downloader",
+  "skillKey": "clawhub-xhs-video-downloader",
+  "name": "XHS Video Downloader",
+  "summary": "Download videos from Xiaohongshu (小红书) pages. Use when the user wants to save or download a video from a xiaohongshu.com URL, or mentions \"小红书视频下载\", \"保存小红书视频...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhs_video_downloader",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KINO",
+      "features": [
+        "Download videos from Xiaohongshu (小红书) pages",
+        "Use when the user wants to save or download a video from a xiaohongshu.com URL, or mentions \"小红."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xhs-video-downloader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25725035?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xhs-video-downloader",
+      "url": "https://clawhub.ai/skills/xhs-video-downloader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhs-video-downloader",
+    "url": "https://clawhub.ai/skills/xhs-video-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhs-video-downloader-e28b0d5e02cef997.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xhs-video-downloader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xhs-video-downloader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6da35e17f2937ce0986c4eb50c150db63f65ff9aa98e6517c888c91380a2ba34",
+      "artifactSizeBytes": 2020
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T20:05:21.920Z"
+}

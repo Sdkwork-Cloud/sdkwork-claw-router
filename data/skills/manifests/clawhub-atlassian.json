@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24064,
+  "uuid": "skill-clawhub-atlassian",
+  "skillKey": "clawhub-atlassian",
+  "name": "Atlassian Cloud APIs + CLIs",
+  "summary": "Operate Atlassian Cloud APIs and CLIs across Jira, Confluence, Bitbucket, Trello, Admin, Forge, Compass, Opsgenie, and Statuspage.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.atlassian",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Operate Atlassian Cloud APIs and CLIs across Jira, Confluence, Bitbucket, Trello, Admin, Forge,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/atlassian@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "atlassian",
+      "url": "https://clawhub.ai/skills/atlassian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "atlassian",
+    "url": "https://clawhub.ai/skills/atlassian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/atlassian-651b2c67d5361363.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/atlassian@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-atlassian-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:79b1282676819c07327d7a9366d2c466d9b060f60b0c60991b75583615d4acd3",
+      "artifactSizeBytes": 1973
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T11:55:13.627Z"
+}

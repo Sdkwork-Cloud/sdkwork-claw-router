@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/camino-journey@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.camino_journey",
+  "skill": {
+    "id": 15863,
+    "skillKey": "clawhub-camino-journey",
+    "name": "Journey Planning with Waypoints"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "camino-journey",
+    "url": "https://clawhub.ai/skills/camino-journey",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/camino-journey-a8c1b4d9e937b7cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Plan multi-waypoint journeys with route optimization, feasibility analysis, and time budget constraints. Use when you need to plan trips with multiple stops..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "james-southendsolutions",
+      "userId": "publishers:james-southendsolutions",
+      "displayName": "James-southendsolutions",
+      "image": "https://avatars.githubusercontent.com/u/93152760?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 760,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771275230156,
+      "changelog": "Initial release of camino-journey skill.\n\n- Enables planning of multi-waypoint journeys with route optimization and time/cost constraints.\n- Provides feasibility analysis, total distance, duration, and route breakdown for custom itineraries.\n- Supports multiple transport modes (walking, car, bike) and time budgets.\n- Includes shell and curl usage examples, plus instant API trial setup.\n- Designed for integration as part of the Camino AI location intelligence suite.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a8b5f1c2ba9511bdadecf133c91a06d843de6ecf84456028b822d74a0239bda2"
+}

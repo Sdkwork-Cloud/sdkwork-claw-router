@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/java-maven-secondary-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.java_maven_secondary_analysis",
+  "skill": {
+    "id": 43845,
+    "skillKey": "clawhub-java-maven-secondary-analysis",
+    "name": "Java Maven Secondary Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "java-maven-secondary-analysis",
+    "url": "https://clawhub.ai/skills/java-maven-secondary-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/java-maven-secondary-analysis-180b3bf1be3548b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze a Java Maven project delivered as a ZIP archive or a GitLab repository URL for secondary-development scope, class counts, module distribution, produc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mrliugangqiang",
+      "userId": "s177arjkyjq4f4505q7fdmnkds83qj48",
+      "displayName": "刘岗强",
+      "image": "https://avatars.githubusercontent.com/u/7357127?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776155399182,
+      "changelog": "Initial release: Analyze Java Maven projects for secondary-development scope, code structure, and customization risks.\n\n- Supports input as ZIP archives or GitLab repository URLs.\n- Inspects class counts, module distribution, and code layer separation (controller/service/mapper/config).\n- Detects product customization, invasive modifications, and upgrade pollution risks.\n- Generates formal markdown reports with structured findings and supporting evidence.\n- Utilizes the `java-maven-common` skill for input normalization before analysis.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3f56635d08f92bccfab29684babacbc1fbe9d4b5b4a0bb7beb4b2cbc9201ea6f"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/non-tumor-ml-research-planner@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.non_tumor_ml_research_planner",
+  "skill": {
+    "id": 26479,
+    "skillKey": "clawhub-non-tumor-ml-research-planner",
+    "name": "Non Tumor Ml Research Planner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "non-tumor-ml-research-planner",
+    "url": "https://clawhub.ai/skills/non-tumor-ml-research-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/non-tumor-ml-research-planner-90abd899efdef463.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates structured research designs for non-tumor biomedical machine learning studies, focusing on diagnostic models, biomarker discovery, and mechanism an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 368,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773403427592,
+      "changelog": "Initial release of non-tumor-ml-research-planner.\n\n- Generates structured, publication-style ML bioinformatics study designs for non-cancer diseases.\n- Supports diagnostic models, biomarker discovery, mechanism analysis, and multi-tier workload planning (Lite/Standard/Advanced/Publication+).\n- Handles studies involving public datasets (especially GEO), multiple mechanisms (pyroptosis, ferroptosis, etc.), and custom model/validation demands.\n- Provides detailed, modular output: research question, step-by-step workflow, validation/robustness, deliverables, risks, and evidence layering.\n- Built-in input validation ensures applicability only to non-tumor projects; includes dataset search guidance if input data is uncertain.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a572cb2ad2fa43322852b53675cd478701cc977f325afc20d63b4cc84a29e23a"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49129,
+  "uuid": "skill-clawhub-yfinance-cli",
+  "skillKey": "clawhub-yfinance-cli",
+  "name": "Yahoo Finance CLI",
+  "summary": "Fetch live financial data from Yahoo Finance. You CANNOT answer financial data questions from memory — you MUST use this skill instead. Trigger whenever the...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yfinance_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiwenjun",
+      "features": [
+        "Fetch live financial data from Yahoo Finance",
+        "You CANNOT answer financial data questions from memory — you MUST use this skill instead",
+        "Trigger whenever the..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yfinance-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37527051?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yfinance-cli",
+      "url": "https://clawhub.ai/skills/yfinance-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yfinance-cli",
+    "url": "https://clawhub.ai/skills/yfinance-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yfinance-cli-da40f81c159a9d19.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yfinance-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yfinance-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a9bad72126eee4aad8027a3a79945ca64d23f1eee15cae7f94d47d26c2cb07cb",
+      "artifactSizeBytes": 1893
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T14:48:49.732Z"
+}

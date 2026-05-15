@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65577,
+  "uuid": "skill-clawhub-mmxagent-skill-manager",
+  "skillKey": "clawhub-mmxagent-skill-manager",
+  "name": "mmxagent-skill-manager",
+  "summary": "一个管理所有maxclaw内部skill的技能，主要实时管理所有安装维护im的skill以及一些官方自己维护的skill。当用户做某些操作时，可以翻看这个技能内容，看看有没有一些官方的更新内容来辅助操作。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mmxagent_skill_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OreoAndYuumi",
+      "features": [
+        "一个管理所有maxclaw内部skill的技能，主要实时管理所有安装维护im的skill以及一些官方自己维护的skill。当用户做某些操作时，可以翻看这个技能内容，看看有没有一些官方的更新内."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mmxagent-skill-manager@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/169647655?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mmxagent-skill-manager",
+      "url": "https://clawhub.ai/skills/mmxagent-skill-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mmxagent-skill-manager",
+    "url": "https://clawhub.ai/skills/mmxagent-skill-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mmxagent-skill-manager-2fbad9feab77c697.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mmxagent-skill-manager@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mmxagent-skill-manager-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bef82ba89488ea465baf8b000cba3d4cf0a237b5323e2b9e0ed17a9f043b8407",
+      "artifactSizeBytes": 2276
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T07:00:56.956Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editor-ai-list@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editor_ai_list",
+  "skill": {
+    "id": 44573,
+    "skillKey": "clawhub-video-editor-ai-list",
+    "name": "Video Editor Ai List"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editor-ai-list",
+    "url": "https://clawhub.ai/skills/video-editor-ai-list",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editor-ai-list-6db74b5f63aacc39.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get edited video clips ready to post, without touching a single slider. Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"trim..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776238364073,
+      "changelog": "Initial release of Video Editor AI List — AI-powered video editing with a simple chat workflow.\n\n- Upload video and audio files (up to 500MB) and get AI-edited outputs by describing your desired edits.\n- No manual timeline or sliders: just chat prompts like \"trim silences, add transitions, and export a clean final cut.\"\n- Automated session, authentication, and cloud job handling with feedback on process and errors.\n- Export final edits as 1080p MP4 and monitor credits, status, and timeline details in real time.\n- Clear mapping of common editing requests and error handling, with support for popular formats (MP4, MOV, AVI, WebM, MP3, WAV, etc.).\n- Built for fast results for content creators and marketers without video editing expertise.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f4019cac469ae47725d4f3e0c7da0f3b3937d7ef1bcca8f97e8664790d0ac226"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67602,
+  "uuid": "skill-clawhub-popeye-health",
+  "skillKey": "clawhub-popeye-health",
+  "name": "Popeye Health",
+  "summary": "健康助手 - 运动计划、饮食建议、睡眠优化。触发词：运动计划、饮食建议、改善睡眠",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.popeye_health",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiangtaoid",
+      "features": [
+        "运动计划、饮食建议、睡眠优化。触发词：运动计划、饮食建议、改善睡眠"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/popeye-health@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62326134?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "popeye-health",
+      "url": "https://clawhub.ai/skills/popeye-health"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "popeye-health",
+    "url": "https://clawhub.ai/skills/popeye-health",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/popeye-health-4bbfd4d3cd7892ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/popeye-health@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-popeye-health-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1e1752b5eba855672672b2ff996ad9bdce0309c7176b65dd0a9790930bb01208",
+      "artifactSizeBytes": 1851
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T09:03:47.001Z"
+}

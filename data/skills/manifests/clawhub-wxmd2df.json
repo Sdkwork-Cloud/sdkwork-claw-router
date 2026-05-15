@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68350,
+  "uuid": "skill-clawhub-wxmd2df",
+  "skillKey": "clawhub-wxmd2df",
+  "name": "jinx",
+  "summary": "报告输出自动转PDF。当向用户发送Markdown报告文件时，自动转换为PDF后再发送，确保微信和飞书用户可以直接查看。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wxmd2df",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jingxxxxx",
+      "features": [
+        "报告输出自动转PDF。当向用户发送Markdown报告文件时，自动转换为PDF后再发送，确保微信和飞书用户可以直接查看。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wxmd2df@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258163677?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wxmd2df",
+      "url": "https://clawhub.ai/skills/wxmd2df"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wxmd2df",
+    "url": "https://clawhub.ai/skills/wxmd2df",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wxmd2df-fcbd6a45b6dc73b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wxmd2df@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wxmd2df-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5b0a9c9380ce63e1ffb0551448efb4b467792fa76a4ee9f4b8edc3ef419b9e65",
+      "artifactSizeBytes": 2271
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T04:45:12.625Z"
+}

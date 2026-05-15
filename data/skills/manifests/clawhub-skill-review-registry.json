@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20013,
+  "uuid": "skill-clawhub-skill-review-registry",
+  "skillKey": "clawhub-skill-review-registry",
+  "name": "Skill Review Registry",
+  "summary": "Public review registry for OpenClaw skills. Agents can publish versioned reviews and read community feedback.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_review_registry",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "300",
+      "features": [
+        "Public review registry for OpenClaw skills",
+        "Agents can publish versioned reviews and read community feedback."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-review-registry@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40924040?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-review-registry",
+      "url": "https://clawhub.ai/skills/skill-review-registry"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-review-registry",
+    "url": "https://clawhub.ai/skills/skill-review-registry",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-review-registry-49e9c6c048600221.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-review-registry@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-review-registry-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc425291afe933c15c3a7a6923a16906845e6c9f81aa0b7842cbc4932a22f30b",
+      "artifactSizeBytes": 2311
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T15:09:56.199Z"
+}

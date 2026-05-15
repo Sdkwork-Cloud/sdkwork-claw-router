@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fast-browser-use-1-0-5@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fast_browser_use_1_0_5",
+  "skill": {
+    "id": 17841,
+    "skillKey": "clawhub-fast-browser-use-1-0-5",
+    "name": "Fast Browser Use 1.0.5"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fast-browser-use-1-0-5",
+    "url": "https://clawhub.ai/skills/fast-browser-use-1-0-5",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fast-browser-use-1-0-5-d9089685a4494a51.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Rust-based Chrome automation for ultra-fast, token-efficient DOM extraction, session management, screenshots, infinite scroll harvesting, and sitemap analysis."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "makforce",
+      "userId": "publishers:makforce",
+      "displayName": "Makforce",
+      "image": "https://avatars.githubusercontent.com/u/195388530?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 690,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771795828322,
+      "changelog": "- Initial release of fast-browser-use: a Rust-powered browser automation tool.\n- Offers 10x faster DOM extraction than Puppeteer, with efficient Chrome control via CDP.\n- Provides recipes for scraping, session management, infinite scroll harvesting, screenshots, and site structure analysis.\n- Includes both navigation and interaction commands (click, input, scroll, etc.) and advanced extraction tools.\n- Lightweight (15 MB memory footprint) and quick startup (< 50ms), optimized for high-performance browser automation.\n- Supports macOS and Linux, installable via Homebrew or Cargo.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0a4dc04312cc35e1fb6732f83f18b8f8e08154a4b36886c42984c43cca5708ee"
+}

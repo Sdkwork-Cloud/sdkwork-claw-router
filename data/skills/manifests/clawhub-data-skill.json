@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68396,
+  "uuid": "skill-clawhub-data-skill",
+  "skillKey": "clawhub-data-skill",
+  "name": "data-skill",
+  "summary": "专门处理日常办公场景下的高频、复杂数据分析与处理的助手。使用本地代码执行模式（SQL 或 Python + SQLite）来处理数据导入、清洗、查询、提取、合并拆分及报告生成，支持大数据量且保障数据隐私安全。当用户需要处理 Excel/CSV 文件、跨表查询、生成图表或输出数据分析报告时使用此 Skill。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lgwanai",
+      "features": [
+        "专门处理日常办公场景下的高频、复杂数据分析与处理的助手。使用本地代码执行模式（SQL 或 Python + SQLite）来处理数据导入、清洗、查询、提取、合并拆分及报告生成，支持大数据量且."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/data-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210057668?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "data-skill",
+      "url": "https://clawhub.ai/skills/data-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-skill",
+    "url": "https://clawhub.ai/skills/data-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-skill-91c7a6d2badde722.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/data-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-data-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:be97b2824f80162bf4a2b2f537decc4d01a453968a3363cfcc5ddcabae94738a",
+      "artifactSizeBytes": 2711
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T17:34:33.912Z"
+}

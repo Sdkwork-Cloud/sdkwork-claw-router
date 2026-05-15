@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/structured-vector-memory@3.1.0",
+  "version": "3.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.structured_vector_memory",
+  "skill": {
+    "id": 59022,
+    "skillKey": "clawhub-structured-vector-memory",
+    "name": "Structured Vector Memory (SVM)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "structured-vector-memory",
+    "url": "https://clawhub.ai/skills/structured-vector-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/structured-vector-memory-504c01507dfebf84.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Structured Vector Memory (SVM) / 三层高效记忆存储法。整合 LanceDB Pro 向量引擎 + 三层结构化管理，涵盖：每日记忆整理（Micro Sync + Daily Wrapup）、记忆蒸馏压缩（Weekly Compound）、去重检测、scope 隔离、archive 机..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kylin19860916",
+      "userId": "publishers:kylin19860916",
+      "displayName": "kylin19860916",
+      "image": "https://avatars.githubusercontent.com/u/229595532?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 386,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "3.1.0",
+      "createdAt": 1773544856134,
+      "changelog": "v3.1: Merged structured-memory (5-layer) into SVM. Entity/relationship management via entity category.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dc64cba1e12a6785cc5d6a1611cd9c26c6313a42c3f5d418edbad367e5236033"
+}

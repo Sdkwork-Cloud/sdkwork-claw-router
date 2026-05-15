@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71481,
+  "uuid": "skill-clawhub-mental-health-assistant",
+  "skillKey": "clawhub-mental-health-assistant",
+  "name": "Mental Health Assistant",
+  "summary": "专业心理健康支持助手，基于临床心理学与精神医学标准，涵盖循证心理治疗、心理评估、危机干预、精神医学基础。触发词：心理、情绪、焦虑、抑郁、压力、失眠、倾诉、心情不好、想聊聊、冥想、放松、心理测试、自杀、自伤、求助热线、心理评估。",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mental_health_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ttooong",
+      "features": [
+        "专业心理健康支持助手，基于临床心理学与精神医学标准，涵盖循证心理治疗、心理评估、危机干预、精神医学基础。触发词：心理、情绪、焦虑、抑郁、压力、失眠、倾诉、心情不好、想聊聊、冥想、放松、心理测."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mental-health-assistant@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/127076394?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mental-health-assistant",
+      "url": "https://clawhub.ai/skills/mental-health-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mental-health-assistant",
+    "url": "https://clawhub.ai/skills/mental-health-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mental-health-assistant-fe7aadedbc2ebfb0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mental-health-assistant@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mental-health-assistant-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:08f666aa88c1000e616aa1e4ccb4e684968131b0528a7e92a03e0fd25dd58fda",
+      "artifactSizeBytes": 2238
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T03:47:09.068Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44398,
+  "uuid": "skill-clawhub-image-to-video-demo",
+  "skillKey": "clawhub-image-to-video-demo",
+  "name": "Image To Video Demo",
+  "summary": "convert still images into animated video clips with this skill. Works with JPG, PNG, WEBP, HEIC files up to 200MB. marketers, content creators use it for con...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_to_video_demo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mory128",
+      "features": [
+        "convert still images into animated video clips with this skill",
+        "Works with JPG, PNG, WEBP, HEIC files up to 200MB",
+        "marketers, content creators use it for con..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-to-video-demo@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270709915?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-to-video-demo",
+      "url": "https://clawhub.ai/skills/image-to-video-demo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-to-video-demo",
+    "url": "https://clawhub.ai/skills/image-to-video-demo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-to-video-demo-b87d3005bfebf654.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-to-video-demo@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-to-video-demo-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5d5678967dc5f362c87c8c21e6645bec4ccda857600aca55b54e41a5620596bb",
+      "artifactSizeBytes": 2573
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T15:22:15.700Z"
+}

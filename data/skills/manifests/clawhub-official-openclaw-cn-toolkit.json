@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61453,
+  "uuid": "skill-clawhub-official-openclaw-cn-toolkit",
+  "skillKey": "clawhub-official-openclaw-cn-toolkit",
+  "name": "Official Openclaw Cn Toolkit",
+  "summary": "OpenClaw-cn 社区全能工具包。集成论坛交互、文档搜索与技能发布三大核心能力，是 Agent 参与社区建设的必备工具。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.official_openclaw_cn_toolkit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hin Liang",
+      "features": [
+        "OpenClaw-cn 社区全能工具包。集成论坛交互、文档搜索与技能发布三大核心能力，是 Agent 参与社区建设的必备工具。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/official-openclaw-cn-toolkit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1326875?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "official-openclaw-cn-toolkit",
+      "url": "https://clawhub.ai/skills/official-openclaw-cn-toolkit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "official-openclaw-cn-toolkit",
+    "url": "https://clawhub.ai/skills/official-openclaw-cn-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/official-openclaw-cn-toolkit-3bd18862ec63455a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/official-openclaw-cn-toolkit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-official-openclaw-cn-toolkit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0faeeb528d817896d0359976116461c6c9ead7936a5f3328e1ced0c2eae325b6",
+      "artifactSizeBytes": 2339
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T06:31:24.949Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64095,
+  "uuid": "skill-clawhub-webfetch",
+  "skillKey": "clawhub-webfetch",
+  "name": "webfetch",
+  "summary": "网页内容抓取工具。使用 webfetch CLI 抓取网页内容并转换为 Markdown、文本或 HTML 格式。触发场景：用户要求抓取网页、获取网页内容、网页转 Markdown、网页转文本、下载网页。",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.webfetch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "一个有毅力的吃货",
+      "features": [
+        "网页内容抓取工具。使用 webfetch CLI 抓取网页内容并转换为 Markdown、文本或 HTML 格式。触发场景：用户要求抓取网页、获取网页内容、网页转 Markdown、网页转文."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/webfetch@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30676974?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "webfetch",
+      "url": "https://clawhub.ai/skills/webfetch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "webfetch",
+    "url": "https://clawhub.ai/skills/webfetch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/webfetch-32ed3a37e22652f5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/webfetch@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-webfetch-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:955a231d1005ac59d3e5cf527ecd7e72913fa2facd33476a9874d8cf7b300326",
+      "artifactSizeBytes": 1932
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T15:15:29.968Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nirvana-plugin@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nirvana_plugin",
+  "skill": {
+    "id": 35175,
+    "skillKey": "clawhub-nirvana-plugin",
+    "name": "Nirvana"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nirvana-plugin",
+    "url": "https://clawhub.ai/skills/nirvana-plugin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nirvana-plugin-c74ec85c89321368.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local-first OpenClaw plugin providing privacy-focused AI inference with bundled qwen2.5:7b model, intelligent routing, audit logging, and optional cloud fall..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shivaclaw",
+      "userId": "s17en5fpjwrkkkz2azf8m3akg983rtkm",
+      "displayName": "Shiva&G",
+      "image": "https://avatars.githubusercontent.com/u/268223005?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 217,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1776630101469,
+      "changelog": "- Updated plugin-manifest.json.\n- No functional or documentation changes to SKILL.md.\n- Maintenance release only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:31dc260ac6f84864a548864890deaab6bb4070173a20089319e9b14093eaa55c"
+}

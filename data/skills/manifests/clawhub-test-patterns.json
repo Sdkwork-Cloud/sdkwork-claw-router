@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9466,
+  "uuid": "skill-clawhub-test-patterns",
+  "skillKey": "clawhub-test-patterns",
+  "name": "Test Patterns",
+  "summary": "Write and run tests across languages and frameworks. Use when setting up test suites, writing unit/integration/E2E tests, measuring coverage, mocking dependencies, or debugging test failures. Covers Node.js (Jest/Vitest), Python (pytest),.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_patterns",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gitgoodordietrying",
+      "features": [
+        "Write and run tests across languages and frameworks",
+        "Use when setting up test suites, writing unit/integration/E2E tests, measuring coverage, mockin.",
+        "Covers Node.js (Jest/Vitest), Python (pytest), Go, Rust, and Bash."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/test-patterns@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/116975874?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "test-patterns",
+      "url": "https://clawhub.ai/skills/test-patterns"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-patterns",
+    "url": "https://clawhub.ai/skills/test-patterns",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-patterns-1acf3f591ff6806c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/test-patterns@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-test-patterns-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d20a6725b801f8ae6043a4bca0c0ab624e7d9747f95b4b5c0d48f9b4de75c8f8",
+      "artifactSizeBytes": 2090
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T21:44:41.722Z"
+}

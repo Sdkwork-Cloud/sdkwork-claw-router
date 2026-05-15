@@ -79,7 +79,7 @@ async fn sqlite_forum_store_uses_java_plus_feeds_and_comments_contract() {
     assert_eq!(feed.id, list[0].id);
 
     let detail = store
-        .load_feed_detail(feed.id.clone(), Some(subject))
+        .load_feed_detail(feed.id, Some(subject))
         .await
         .unwrap()
         .expect("created published feed must be readable");
@@ -91,7 +91,7 @@ async fn sqlite_forum_store_uses_java_plus_feeds_and_comments_contract() {
                 subject,
                 uuid: "comment-contract-1".to_owned(),
                 content_type: "feeds".to_owned(),
-                content_id: feed.id.parse::<i64>().unwrap(),
+                content_id: feed.id,
                 content: "Use weighted fallback with explicit health windows.".to_owned(),
                 parent_id: None,
                 device_info: Some("rust-test".to_owned()),
@@ -103,7 +103,7 @@ async fn sqlite_forum_store_uses_java_plus_feeds_and_comments_contract() {
         .await
         .unwrap();
     assert_eq!("FEEDS", comment.content_type);
-    assert_eq!(feed.id.parse::<i64>().unwrap(), comment.content_id);
+    assert_eq!(feed.id, comment.content_id);
     assert_eq!(subject.user_id, comment.user_id);
     assert_eq!("PUBLISHED", comment.status);
     assert_eq!(0, comment.reply_count);
@@ -115,7 +115,7 @@ async fn sqlite_forum_store_uses_java_plus_feeds_and_comments_contract() {
                 subject,
                 uuid: "reply-contract-1".to_owned(),
                 content_type: "feeds".to_owned(),
-                content_id: feed.id.parse::<i64>().unwrap(),
+                content_id: feed.id,
                 content: "Agree, and expose the retry reason in trace logs.".to_owned(),
                 parent_id: Some(comment.comment_id.parse::<i64>().unwrap()),
                 device_info: Some("rust-test".to_owned()),
@@ -132,12 +132,7 @@ async fn sqlite_forum_store_uses_java_plus_feeds_and_comments_contract() {
     );
 
     let comments = store
-        .load_comments(
-            "feeds".to_owned(),
-            feed.id.parse::<i64>().unwrap(),
-            None,
-            Some(subject),
-        )
+        .load_comments("feeds".to_owned(), feed.id, None, Some(subject))
         .await
         .unwrap();
     assert_eq!(1, comments.items.len());
@@ -166,6 +161,216 @@ async fn sqlite_forum_store_uses_java_plus_feeds_and_comments_contract() {
         2, refreshed_feed.view_count,
         "detail reads must mirror Java app API and increment plus_feeds.view_count"
     );
+}
+
+#[tokio::test]
+async fn sqlite_forum_store_scopes_comments_to_the_current_forum_subject() {
+    let pool = SqlitePoolOptions::new()
+        .max_connections(1)
+        .connect("sqlite::memory:")
+        .await
+        .unwrap();
+    DatabaseInstaller::for_sqlite(pool.clone())
+        .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
+        .unwrap()
+        .ensure_installed()
+        .await
+        .unwrap();
+
+    let store = SqliteForumStore::new(pool);
+    let tenant_a = owner_subject();
+    let tenant_b = ForumSubject {
+        tenant_id: tenant_a.tenant_id + 1,
+        organization_id: tenant_a.organization_id,
+        user_id: tenant_a.user_id + 1,
+    };
+    let content_id = 42;
+
+    let tenant_a_comment = store
+        .create_comment(
+            CreateForumCommentCommand {
+                subject: tenant_a,
+                uuid: "tenant-a-comment".to_owned(),
+                content_type: "feeds".to_owned(),
+                content_id,
+                content: "Tenant A should only see this comment.".to_owned(),
+                parent_id: None,
+                device_info: None,
+                ip_address: None,
+                requested_at: "2026-05-09T10:03:00Z".to_owned(),
+            },
+            Some(tenant_a),
+        )
+        .await
+        .unwrap();
+    let tenant_b_comment = store
+        .create_comment(
+            CreateForumCommentCommand {
+                subject: tenant_b,
+                uuid: "tenant-b-comment".to_owned(),
+                content_type: "feeds".to_owned(),
+                content_id,
+                content: "Tenant B must not leak into tenant A reads.".to_owned(),
+                parent_id: None,
+                device_info: None,
+                ip_address: None,
+                requested_at: "2026-05-09T10:04:00Z".to_owned(),
+            },
+            Some(tenant_b),
+        )
+        .await
+        .unwrap();
+
+    let tenant_a_comments = store
+        .load_comments("feeds".to_owned(), content_id, None, Some(tenant_a))
+        .await
+        .unwrap();
+    assert_eq!(1, tenant_a_comments.items.len());
+    assert_eq!(
+        tenant_a_comment.comment_id,
+        tenant_a_comments.items[0].comment_id
+    );
+    assert_ne!(
+        tenant_b_comment.comment_id,
+        tenant_a_comments.items[0].comment_id
+    );
+
+    assert!(
+        store
+            .load_comment_detail(
+                tenant_b_comment.comment_id.parse::<i64>().unwrap(),
+                Some(tenant_a),
+            )
+            .await
+            .unwrap()
+            .is_none(),
+        "comment details must not cross tenant boundaries",
+    );
+    assert_eq!(
+        1,
+        store
+            .load_comment_statistics("feeds".to_owned(), content_id, Some(tenant_a))
+            .await
+            .unwrap()
+            .total_comments,
+    );
+}
+
+#[tokio::test]
+async fn sqlite_forum_store_does_not_apply_feed_side_effects_across_tenants() {
+    let pool = SqlitePoolOptions::new()
+        .max_connections(1)
+        .connect("sqlite::memory:")
+        .await
+        .unwrap();
+    DatabaseInstaller::for_sqlite(pool.clone())
+        .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
+        .unwrap()
+        .ensure_installed()
+        .await
+        .unwrap();
+
+    let store = SqliteForumStore::new(pool.clone());
+    let owner = owner_subject();
+    let other_tenant = ForumSubject {
+        tenant_id: owner.tenant_id + 1,
+        organization_id: owner.organization_id,
+        user_id: owner.user_id + 1,
+    };
+
+    let feed = store
+        .create_feed(
+            CreateForumFeedCommand {
+                subject: owner,
+                uuid: "tenant-owned-feed".to_owned(),
+                title: Some("Tenant owned feed".to_owned()),
+                content: "Cross-tenant access must not mutate this feed.".to_owned(),
+                category_id: Some(1001),
+                images: Vec::new(),
+                tags: Vec::new(),
+                source: None,
+                source_url: None,
+                requested_at: "2026-05-09T10:05:00Z".to_owned(),
+            },
+            Some(owner),
+        )
+        .await
+        .unwrap();
+
+    assert!(
+        store
+            .load_feed_detail(feed.id, Some(other_tenant))
+            .await
+            .unwrap()
+            .is_none(),
+        "feed detail reads must not cross tenant boundaries",
+    );
+    assert!(
+        store.like_feed(feed.id, other_tenant).await.is_err(),
+        "liking an invisible feed must fail before writing a vote",
+    );
+    assert!(
+        store
+            .collect_feed(feed.id, Some(77), other_tenant)
+            .await
+            .is_err(),
+        "collecting an invisible feed must fail before writing a favorite",
+    );
+    assert!(
+        store.share_feed(feed.id, other_tenant).await.is_err(),
+        "sharing an invisible feed must fail before incrementing share_count",
+    );
+
+    let (view_count, like_count, favorite_count, share_count) =
+        sqlx::query_as::<_, (i64, i64, i64, i64)>(
+            r#"
+            SELECT view_count, like_count, favorite_count, share_count
+            FROM plus_feeds
+            WHERE id = ?1
+            "#,
+        )
+        .bind(feed.id)
+        .fetch_one(&pool)
+        .await
+        .unwrap();
+    assert_eq!(0, view_count);
+    assert_eq!(0, like_count);
+    assert_eq!(0, favorite_count);
+    assert_eq!(0, share_count);
+
+    let foreign_votes = sqlx::query_scalar::<_, i64>(
+        r#"
+        SELECT COUNT(1)
+        FROM plus_content_vote
+        WHERE tenant_id = ?1
+          AND user_id = ?2
+          AND content_id = ?3
+        "#,
+    )
+    .bind(other_tenant.tenant_id)
+    .bind(other_tenant.user_id)
+    .bind(feed.id)
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(0, foreign_votes);
+
+    let foreign_favorites = sqlx::query_scalar::<_, i64>(
+        r#"
+        SELECT COUNT(1)
+        FROM plus_favorite
+        WHERE tenant_id = ?1
+          AND user_id = ?2
+          AND content_id = ?3
+        "#,
+    )
+    .bind(other_tenant.tenant_id)
+    .bind(other_tenant.user_id)
+    .bind(feed.id)
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(0, foreign_favorites);
 }
 
 fn owner_subject() -> ForumSubject {

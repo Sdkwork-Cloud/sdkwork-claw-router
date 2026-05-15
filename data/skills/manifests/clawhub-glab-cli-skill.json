@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55210,
+  "uuid": "skill-clawhub-glab-cli-skill",
+  "skillKey": "clawhub-glab-cli-skill",
+  "name": "glab-cli-skill",
+  "summary": "Guidance for using the GitLab CLI (`glab`) from the terminal for merge requests, issues, CI/CD pipelines and jobs, repository targeting and inspection, clone...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.glab_cli_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wu Fei",
+      "features": [
+        "Guidance for using the GitLab CLI (`glab`) from the terminal for merge requests, issues, CI/CD."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/glab-cli-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63766429?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "glab-cli-skill",
+      "url": "https://clawhub.ai/skills/glab-cli-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "glab-cli-skill",
+    "url": "https://clawhub.ai/skills/glab-cli-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/glab-cli-skill-dc3ca8fc13e71bcc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/glab-cli-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-glab-cli-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fd8e6b846b4f892173ddeaade172449375ab70765e8a28328d4d1b30fa8ad153",
+      "artifactSizeBytes": 2358
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T16:20:01.164Z"
+}

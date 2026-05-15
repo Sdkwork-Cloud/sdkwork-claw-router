@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/knowledge-answer@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knowledge_answer",
+  "skill": {
+    "id": 14011,
+    "skillKey": "clawhub-knowledge-answer",
+    "name": "Knowledge Answer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knowledge-answer",
+    "url": "https://clawhub.ai/skills/knowledge-answer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knowledge-answer-5ec0dd88bd229bbc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides accurate answers with current date and includes clickable numbered citation marks linked to source references when applicable."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alvinecarn",
+      "userId": "publishers:alvinecarn",
+      "displayName": "alvinecarn",
+      "image": "https://avatars.githubusercontent.com/u/255032544?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1207,
+      "installsAllTime": 9,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771221496898,
+      "changelog": "Initial release of the knowledge-answer skill.\n\n- Provides specialized capabilities for answering knowledge-based queries.\n- Maintains user language by default, unless a different language is specified.\n- Adds clickable numbered footnote citations for answers based on search results.\n- Includes a sequentially numbered reference list at the end of each answer.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6716f7dc85ca7fdfc1826cb0b1825d9c730fefb78913f0dcc4b45809f223ab70"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/monday-ops@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.monday_ops",
+  "skill": {
+    "id": 54005,
+    "skillKey": "clawhub-monday-ops",
+    "name": "Monday Ops"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "monday-ops",
+    "url": "https://clawhub.ai/skills/monday-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/monday-ops-53d362ce55a31cdd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agentic framework for operating monday.com workspaces via the Monday MCP connector. Use this skill whenever the user wants to interact with monday.com — crea..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sharoonsharif",
+      "userId": "s17cbqpc05capj08csqdymywcs83haev",
+      "displayName": "Sharoon Sharif",
+      "image": "https://avatars.githubusercontent.com/u/150296639?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 95,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1777656501052,
+      "changelog": "Initial release: monday.com agentic operations skill",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:46ad27a08e0305c5e237c75781c79a62bb7821a5488f0eefa78c3bd7b5fd25f5"
+}

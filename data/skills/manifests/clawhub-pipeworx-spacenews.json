@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43428,
+  "uuid": "skill-clawhub-pipeworx-spacenews",
+  "skillKey": "clawhub-pipeworx-spacenews",
+  "name": "Pipeworx spacenews",
+  "summary": "Provides the latest spaceflight news articles and blog posts with search by keyword via the Spaceflight News API.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_spacenews",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Provides the latest spaceflight news articles and blog posts with search by keyword via the Spa."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-spacenews@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138315805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-spacenews",
+      "url": "https://clawhub.ai/skills/pipeworx-spacenews"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-spacenews",
+    "url": "https://clawhub.ai/skills/pipeworx-spacenews",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-spacenews-5af79896e3f579da.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-spacenews@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-spacenews-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:20cdeb4de1cee80260dfce571fe4694d2f25b4af86f10790356ba744293e66d6",
+      "artifactSizeBytes": 1874
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T17:38:15.062Z"
+}

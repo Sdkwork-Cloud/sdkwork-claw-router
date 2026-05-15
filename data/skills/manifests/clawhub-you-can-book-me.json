@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32215,
+  "uuid": "skill-clawhub-you-can-book-me",
+  "skillKey": "clawhub-you-can-book-me",
+  "name": "You Can Book Me",
+  "summary": "You Can Book Me integration. Manage data, records, and automate workflows. Use when the user wants to interact with You Can Book Me data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.you_can_book_me",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "You Can Book Me integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with You Can Book Me data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/you-can-book-me@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "you-can-book-me",
+      "url": "https://clawhub.ai/skills/you-can-book-me"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "you-can-book-me",
+    "url": "https://clawhub.ai/skills/you-can-book-me",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/you-can-book-me-b409901f0c2f1661.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/you-can-book-me@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-you-can-book-me-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3507f433c8b5cc14d600daca3d9340424a7651562546c548f14fd19dc62618ad",
+      "artifactSizeBytes": 1901
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:12:28.422Z"
+}

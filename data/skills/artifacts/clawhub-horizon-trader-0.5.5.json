@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/horizon-trader@0.5.5",
+  "version": "0.5.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.horizon_trader",
+  "skill": {
+    "id": 15996,
+    "skillKey": "clawhub-horizon-trader",
+    "name": "Horizon SDK"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "horizon-trader",
+    "url": "https://clawhub.ai/skills/horizon-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/horizon-trader-cff0ad85bd61bfec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "v0.4.16 - Trade prediction markets (Polymarket, Kalshi) - positions, orders, risk management, Kelly sizing, wallet analytics, Monte Carlo, arbitrage, quantit..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jesusmanuelrg",
+      "userId": "publishers:jesusmanuelrg",
+      "displayName": "Jesus",
+      "image": "https://avatars.githubusercontent.com/u/95700832?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 941,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "0.5.5",
+      "createdAt": 1771605293398,
+      "changelog": "- Expanded quantitative analytics: added AFML features (bars, labeling, fractional differentiation, HRP, denoising).\n- Added multi-strategy orchestration and alpha research tools.\n- Introduced tier-gated features for advanced users.\n- Enhanced documentation and versioning details.\n- Core prediction market trading, analytics, and risk management features retained.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f89eaaf2f0b4deec9db8bc1313b23c9c54695afc281234ae28a351d70de56673"
+}

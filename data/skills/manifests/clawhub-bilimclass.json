@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57704,
+  "uuid": "skill-clawhub-bilimclass",
+  "skillKey": "clawhub-bilimclass",
+  "name": "BilimClass",
+  "summary": "Access BilimClass school platform (Kazakhstan) for schedule, homework, grades, and diary via API. Triggers on schedule/raspisanie/расписание, homework/domash...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilimclass",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "podberezovk",
+      "features": [
+        "Access BilimClass school platform (Kazakhstan) for schedule, homework, grades, and diary via API",
+        "Triggers on schedule/raspisanie/расписание, homework/domash..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bilimclass@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/225475743?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bilimclass",
+      "url": "https://clawhub.ai/skills/bilimclass"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilimclass",
+    "url": "https://clawhub.ai/skills/bilimclass",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilimclass-168c5659088dacad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bilimclass@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bilimclass-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:896f732b48f4f75164633c31ac25e30867dfd359837dc5ab5b3b14bbd6874e2f",
+      "artifactSizeBytes": 2499
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T14:24:16.096Z"
+}

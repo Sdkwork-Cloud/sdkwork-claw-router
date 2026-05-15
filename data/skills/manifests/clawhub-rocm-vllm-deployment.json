@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17710,
+  "uuid": "skill-clawhub-rocm-vllm-deployment",
+  "skillKey": "clawhub-rocm-vllm-deployment",
+  "name": "ROCm vLLM Deployment",
+  "summary": "Production-ready vLLM deployment on AMD ROCm GPUs. Combines environment auto-check, model parameter detection, Docker Compose deployment, health verification...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rocm_vllm_deployment",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alexhegit",
+      "features": [
+        "Production-ready vLLM deployment on AMD ROCm GPUs",
+        "Combines environment auto-check, model parameter detection, Docker Compose deployment, health v."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rocm-vllm-deployment@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31022192?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rocm-vllm-deployment",
+      "url": "https://clawhub.ai/skills/rocm-vllm-deployment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rocm-vllm-deployment",
+    "url": "https://clawhub.ai/skills/rocm-vllm-deployment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rocm-vllm-deployment-6db27bb35109f044.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rocm-vllm-deployment@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rocm-vllm-deployment-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:68a53a9681e5823fff986d2d601a4b7e4ff448ea7d62d53f851dcbf3887206b4",
+      "artifactSizeBytes": 1957
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T09:32:50.473Z"
+}

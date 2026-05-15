@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72073,
+  "uuid": "skill-clawhub-zlbx-bidding-skill",
+  "skillKey": "clawhub-zlbx-bidding-skill",
+  "name": "全网招中标数据平台-知了标讯",
+  "summary": "全网招中标数据查询与分析助手。当用户涉及以下任何场景时，必须使用此SKILL：查询招标/中标公告、搜索标讯、查找临期/即将到期项目、商机预测、推荐潜在投标供应商、分析公司主营业务/历史中标、查询公司上下游合作客户与供应商、分析竞争对手/竞对企业、查询Top采购单位/Top中标单位/Top中标品牌、招中标数据统计分...",
+  "version": "1.4.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zlbx_bidding_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liu-jiapeng",
+      "features": [
+        "全网招中标数据查询与分析助手。当用户涉及以下任何场景时，必须使用此SKILL：查询招标/中标公告、搜索标讯、查找临期/即将到期项目、商机预测、推荐潜在投标供应商、分析公司主营业务/历史中标、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zlbx-bidding-skill@1.4.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37843351?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zlbx-bidding-skill",
+      "url": "https://clawhub.ai/skills/zlbx-bidding-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zlbx-bidding-skill",
+    "url": "https://clawhub.ai/skills/zlbx-bidding-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zlbx-bidding-skill-78e2f9d049a3b416.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zlbx-bidding-skill@1.4.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-zlbx-bidding-skill-1.4.2.json",
+      "version": "1.4.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:07db378453157a2f18c32f7e81a2ff67c60ed59faaf46444091c559f79504870",
+      "artifactSizeBytes": 2742
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T12:16:30.393Z"
+}

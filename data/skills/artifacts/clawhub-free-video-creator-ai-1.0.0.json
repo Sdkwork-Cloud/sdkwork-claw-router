@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-video-creator-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_video_creator_ai",
+  "skill": {
+    "id": 47345,
+    "skillKey": "clawhub-free-video-creator-ai",
+    "name": "Free Video Creator Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-video-creator-ai",
+    "url": "https://clawhub.ai/skills/free-video-creator-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-video-creator-ai-ca528f5d6e3c435b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get finished MP4 video ready to post, without touching a single slider. Upload your images or clips (MP4, MOV, JPG, PNG, up to 500MB), say something like \"tu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susan4731-wilfordf",
+      "userId": "s1782w3wqej6a5gnp3w63eb80184cckp",
+      "displayName": "susan4731-wilfordf",
+      "image": "https://avatars.githubusercontent.com/u/208907675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 115,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777100815645,
+      "changelog": "Initial release of Free Video Creator AI — make and export videos using simple chat commands.\n\n- Instantly create 1080p MP4 videos from uploaded images or clips with AI handling editing, music, and text.\n- Supports quick connection via free anonymous token—no account required.\n- Drag & drop up to 500MB in MP4, MOV, JPG, or PNG formats; export for free and download finished videos in 1–2 minutes.\n- Designed for content creators and small businesses to bypass complex video editors.\n- Friendly chat interface guides you through upload, editing, preview, and export.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8ab647a8ff605a735dd16e247be873b5f60ad0112f1089fca36f05505641fe6d"
+}

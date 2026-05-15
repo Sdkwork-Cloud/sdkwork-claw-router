@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25914,
+  "uuid": "skill-clawhub-openclaw-gitcode-pr-monitor",
+  "skillKey": "clawhub-openclaw-gitcode-pr-monitor",
+  "name": "openclaw-gitcode-pr-monitor",
+  "summary": "Monitor GitCode PRs for one or more repos, auto-run AI review via OpenClaw Gateway, post PR comments, and send notifications (DingTalk + WeCom).",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_gitcode_pr_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mingyang1996",
+      "features": [
+        "Monitor GitCode PRs for one or more repos, auto-run AI review via OpenClaw Gateway, post PR com."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-gitcode-pr-monitor@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29513824?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-gitcode-pr-monitor",
+      "url": "https://clawhub.ai/skills/openclaw-gitcode-pr-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-gitcode-pr-monitor",
+    "url": "https://clawhub.ai/skills/openclaw-gitcode-pr-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-gitcode-pr-monitor-ff9677581001143c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-gitcode-pr-monitor@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-gitcode-pr-monitor-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fbb2d0aaa9f793b06af6a2adefb68df1ade5382b4cc23ac1e3d89bc418b77b5b",
+      "artifactSizeBytes": 2084
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T11:11:17.871Z"
+}

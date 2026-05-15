@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9744,
+  "uuid": "skill-clawhub-windows-screenshot",
+  "skillKey": "clawhub-windows-screenshot",
+  "name": "Windows Screenshot",
+  "summary": "Pure PowerShell GDI+ screenshot tool for Windows. No external dependencies, captures to PNG with automatic scaling.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.windows_screenshot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vvxer",
+      "features": [
+        "Pure PowerShell GDI+ screenshot tool for Windows",
+        "No external dependencies, captures to PNG with automatic scaling."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/windows-screenshot@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/125258732?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "windows-screenshot",
+      "url": "https://clawhub.ai/skills/windows-screenshot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "windows-screenshot",
+    "url": "https://clawhub.ai/skills/windows-screenshot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/windows-screenshot-38cb048ee671c675.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/windows-screenshot@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-windows-screenshot-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0cd89b39f09a2690677e0cd432dd0378e7e971d75a06cc228345e8ad79ee9931",
+      "artifactSizeBytes": 2005
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T02:42:09.709Z"
+}

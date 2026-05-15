@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fanta@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fanta",
+  "skill": {
+    "id": 69235,
+    "skillKey": "clawhub-fanta",
+    "name": "Fanta"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fanta",
+    "url": "https://clawhub.ai/skills/fanta",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fanta-9ef4410bacc37b58.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供芬达 Fanta 品牌介绍、产品信息、行业地位、全球布局与最新动态的详细咨询服务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1776238627943,
+      "changelog": "- 优化技能概述与模块说明，提升内容结构清晰度。\n- 场景描述更详细，明确适用用户需求。\n- 补充关键信息点，如创始人、业务特色、全球布局等栏目。\n- 建议访问官方网站获取更多详情。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7edea1bcb124d70781896c7b8b096e9718ae734daa8c069b61d8e778a4cfb804"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58961,
+  "uuid": "skill-clawhub-social-post-batcher",
+  "skillKey": "clawhub-social-post-batcher",
+  "name": "Social Post Batcher",
+  "summary": "把一个主题拆成 7/14/30 条系列帖子，控制重复度和叙事连续性。；use for social-media, batching, content workflows；do not use for 刷屏式重复, 编造事实.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_post_batcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "把一个主题拆成 7/14/30 条系列帖子，控制重复度和叙事连续性。；use for social-media, batching, content workflows；do not use."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/social-post-batcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "social-post-batcher",
+      "url": "https://clawhub.ai/skills/social-post-batcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-post-batcher",
+    "url": "https://clawhub.ai/skills/social-post-batcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-post-batcher-6c0c2efb6faa2030.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/social-post-batcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-social-post-batcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aefebcb62fc2fa3b70e903a183b543e6b254dd1899793a3e307f52b1c900a61e",
+      "artifactSizeBytes": 2611
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T05:43:53.165Z"
+}

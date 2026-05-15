@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/websearch@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.websearch",
+  "skill": {
+    "id": 10702,
+    "skillKey": "clawhub-websearch",
+    "name": "WebSearch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "websearch",
+    "url": "https://clawhub.ai/skills/websearch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/websearch-c4ef3e6214a4b8dd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Performs a web search using a local SearXNG instance and returns raw search results for the given query."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "netobasilio",
+      "userId": "publishers:netobasilio",
+      "displayName": "netobasilio",
+      "image": "https://avatars.githubusercontent.com/u/1233710?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2299,
+      "installsAllTime": 22,
+      "installsCurrent": 21,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772221372974,
+      "changelog": "Initial release.\nProvides web search via a local SearXNG instance.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d5fd416a40506335929ce77a80218c37e2dfd83e01b11e18dba39991299776e9"
+}

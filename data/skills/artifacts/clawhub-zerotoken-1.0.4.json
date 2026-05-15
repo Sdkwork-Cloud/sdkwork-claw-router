@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zerotoken@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zerotoken",
+  "skill": {
+    "id": 21386,
+    "skillKey": "clawhub-zerotoken",
+    "name": "ZeroToken - Record once, automate forever"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zerotoken",
+    "url": "https://clawhub.ai/skills/zerotoken",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zerotoken-99d7624424e22c8f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when using ZeroToken MCP via OpenClaw for browser automation, trajectory recording and low-token replay, especially for recurring or scheduled browser ta..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "amos144",
+      "userId": "publishers:amos144",
+      "displayName": "AMOS144",
+      "image": "https://avatars.githubusercontent.com/u/200456612?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 501,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1773220297785,
+      "changelog": "- Added detailed instructions for OpenClaw users to run ZeroToken in streamable HTTP mode, including service startup and configuration steps.\n- Updated installation guidance to emphasize HTTP mode setup for OpenClaw, replacing previous shell command approach.\n- Clarified recommended configuration for MCP server in `openclaw.json`, providing explicit JSON examples.\n- Improved troubleshooting steps for missing or misconfigured ZeroToken MCP in OpenClaw environments.\n- No functional changes to tool interface or workflow; documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:55e4e9533166b60eba7093819bdfd2f447b251f368a313e243077064325d490f"
+}

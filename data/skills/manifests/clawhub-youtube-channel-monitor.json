@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60560,
+  "uuid": "skill-clawhub-youtube-channel-monitor",
+  "skillKey": "clawhub-youtube-channel-monitor",
+  "name": "Youtube Channel Monitor",
+  "summary": "YouTube 频道订阅+自动摘要+Telegraph 发布工具。用于： 1. 定时监控指定 YouTube 频道的新视频 2. 提取视频字幕（支持中英双语） 3. 生成可读性强的中文专栏文章 4. 自动发布到 Telegraph 并推送到 Telegram 频道 触发场景： - 用户想订阅 YouTube 频道...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_channel_monitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "subwukong",
+      "features": [
+        "YouTube 频道订阅+自动摘要+Telegraph 发布工具。用于： 1",
+        "定时监控指定 YouTube 频道的新视频 2",
+        "提取视频字幕（支持中英双语） 3",
+        "生成可读性强的中文专栏文章 4"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-channel-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/123579422?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-channel-monitor",
+      "url": "https://clawhub.ai/skills/youtube-channel-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-channel-monitor",
+    "url": "https://clawhub.ai/skills/youtube-channel-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-channel-monitor-f770c083af157fa1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-channel-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-channel-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d9df3cdc563f9619fcf9172d78982216ca47995e3aee30480fe5483422b654da",
+      "artifactSizeBytes": 2473
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T16:30:28.097Z"
+}

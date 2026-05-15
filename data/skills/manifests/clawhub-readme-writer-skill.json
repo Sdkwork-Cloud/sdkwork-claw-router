@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29341,
+  "uuid": "skill-clawhub-readme-writer-skill",
+  "skillKey": "clawhub-readme-writer-skill",
+  "name": "readme-writer-skill",
+  "summary": "Expert README writing skill for open source projects. Use this skill whenever the user wants to write, improve, or review a README for any open source reposi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.readme_writer_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "caopulan",
+      "features": [
+        "Expert README writing skill for open source projects",
+        "Use this skill whenever the user wants to write, improve, or review a README for any open sourc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/readme-writer-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48318302?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "readme-writer-skill",
+      "url": "https://clawhub.ai/skills/readme-writer-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "readme-writer-skill",
+    "url": "https://clawhub.ai/skills/readme-writer-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/readme-writer-skill-f392bc5256a8ea02.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/readme-writer-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-readme-writer-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e8ca0612f183630d5345651529a6d187b2c5b5150f867f004f00c93041ad2ae9",
+      "artifactSizeBytes": 2405
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T05:05:36.932Z"
+}

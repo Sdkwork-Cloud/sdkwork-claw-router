@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23546,
+  "uuid": "skill-clawhub-hashgen",
+  "skillKey": "clawhub-hashgen",
+  "name": "Hashgen",
+  "summary": "Hash files and strings, verify checksums, and run integrity checks fast. Use when generating SHA hashes, verifying files, or comparing digest values.",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hashgen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain3",
+      "features": [
+        "Hash files and strings, verify checksums, and run integrity checks fast",
+        "Use when generating SHA hashes, verifying files, or comparing digest values."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hashgen@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218212813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hashgen",
+      "url": "https://clawhub.ai/skills/hashgen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hashgen",
+    "url": "https://clawhub.ai/skills/hashgen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hashgen-21084204464ec87d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hashgen@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hashgen-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5904b7e08fed7aec349d3032179ac1ed9d1618fd7cb621f15b232c4cba602eb1",
+      "artifactSizeBytes": 1867
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T10:41:26.587Z"
+}

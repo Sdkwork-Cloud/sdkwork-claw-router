@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62814,
+  "uuid": "skill-clawhub-fapiao-clipper",
+  "skillKey": "clawhub-fapiao-clipper",
+  "name": "Fapiao Clipper",
+  "summary": "发票夹子 v1.4 - 本地大模型驱动的发票自动识别与报销管理工具。 2级降级链：PyMuPDF文本提取（修复跨行匹配）→ Qwen3-VL视觉模型。 新增：seller/buyer跨行匹配修复、日期标准化。 功能：8项风控验真 + 一键导出 Excel + 合并 PDF。",
+  "version": "1.5.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fapiao_clipper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alan5168",
+      "features": [
+        "发票夹子 v1.4",
+        "本地大模型驱动的发票自动识别与报销管理工具。 2级降级链：PyMuPDF文本提取（修复跨行匹配）→ Qwen3-VL视觉模型。 新增：seller/buyer跨行匹配修复、日期标准化。 功能."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fapiao-clipper@1.5.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/196271153?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fapiao-clipper",
+      "url": "https://clawhub.ai/skills/fapiao-clipper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fapiao-clipper",
+    "url": "https://clawhub.ai/skills/fapiao-clipper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fapiao-clipper-31b107b018fc57fe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fapiao-clipper@1.5.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-fapiao-clipper-1.5.2.json",
+      "version": "1.5.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ac0b788750f7c177bc37f896e253d3eda19f92fa7e7616f4500a41455a53f5e",
+      "artifactSizeBytes": 2104
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T16:52:32.088Z"
+}

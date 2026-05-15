@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12539,
+  "uuid": "skill-clawhub-agent-rate-limiter",
+  "skillKey": "clawhub-agent-rate-limiter",
+  "name": "Agent Rate Limiter",
+  "summary": "Prevent 429s with automatic tier-based throttling & exponential backoff. Zero deps. By The Agent Wire (theagentwire.ai)",
+  "version": "1.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_rate_limiter",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "The Agent Wire",
+      "features": [
+        "Prevent 429s with automatic tier-based throttling & exponential backoff",
+        "Zero deps",
+        "By The Agent Wire (theagentwire.ai)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-rate-limiter@1.3.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260305314?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-rate-limiter",
+      "url": "https://clawhub.ai/skills/agent-rate-limiter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-rate-limiter",
+    "url": "https://clawhub.ai/skills/agent-rate-limiter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-rate-limiter-aef8a934fdc88a39.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-rate-limiter@1.3.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-rate-limiter-1.3.1.json",
+      "version": "1.3.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:39db96ea1f4a8184913cb6d4b71f46582439ef0a1871d880379fc4b179169bad",
+      "artifactSizeBytes": 1936
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T17:45:30.760Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59572,
+  "uuid": "skill-clawhub-safe-guard",
+  "skillKey": "clawhub-safe-guard",
+  "name": "safe-guard",
+  "summary": "Claude Code / OpenClaw Skill 安全防护工具。 三大能力：(1) 始终生效的 PreToolUse Hook，拦截高危操作； (2) 静态正则 + LLM 语义审计的深度扫描； (3) 沙盒隔离环境运行脚本并监控行为。 支持 scan-only、safe-run、sandbox-test...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safe_guard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Igloos",
+      "features": [
+        "Claude Code / OpenClaw Skill 安全防护工具。 三大能力：(1) 始终生效的 PreToolUse Hook，拦截高危操作； (2) 静态正则 + LLM 语义审计."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/safe-guard@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/140521398?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "safe-guard",
+      "url": "https://clawhub.ai/skills/safe-guard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safe-guard",
+    "url": "https://clawhub.ai/skills/safe-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safe-guard-8f39fa589941ed42.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/safe-guard@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-safe-guard-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f813efcf9e8d99776cea665d876776e03ae2d291a17fa8e5e543b3b7c1d846d",
+      "artifactSizeBytes": 2150
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T07:54:59.433Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64133,
+  "uuid": "skill-clawhub-eli-lilly",
+  "skillKey": "clawhub-eli-lilly",
+  "name": "Eli Lilly",
+  "summary": "提供礼来 Eli Lilly公司背景、产品（胰岛素、GLP-1减肥药）及其行业地位与发展信息查询。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eli_lilly",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供礼来 Eli Lilly公司背景、产品（胰岛素、GLP-1减肥药）及其行业地位与发展信息查询。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eli-lilly@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eli-lilly",
+      "url": "https://clawhub.ai/skills/eli-lilly"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eli-lilly",
+    "url": "https://clawhub.ai/skills/eli-lilly",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eli-lilly-c7cd817806926008.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eli-lilly@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-eli-lilly-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9929f2e55c23ec8236b9d1cb84c24b4733076a22c1a7cca54a0abf71badf51f9",
+      "artifactSizeBytes": 2233
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T18:00:37.178Z"
+}

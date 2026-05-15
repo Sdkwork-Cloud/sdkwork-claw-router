@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pinduoduo-cs-assistant-v2@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pinduoduo_cs_assistant_v2",
+  "skill": {
+    "id": 65802,
+    "skillKey": "clawhub-pinduoduo-cs-assistant-v2",
+    "name": "拼多多客服助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pinduoduo-cs-assistant-v2",
+    "url": "https://clawhub.ai/skills/pinduoduo-cs-assistant-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pinduoduo-cs-assistant-v2-bbd902a0fc38fb2c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "拼多多商家客服自动化助手 - 基于 CDP (Chrome DevTools Protocol) 连接真实浏览器、自动登录拼多多商家后台、智能消息回复、售后处理。使用用户日常 Chrome，天然携带登录态，避免平台风控"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rfdiosuao",
+      "userId": "s176m0k7cncqqrh1hnapx8zbz183f0gt",
+      "displayName": "rfdiosuao",
+      "image": "https://avatars.githubusercontent.com/u/190207982?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 304,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1775202391214,
+      "changelog": "v1.1.1: CDP Proxy 支持、Chrome 远程调试配置、CDB 数据库、站点经验积累",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:424ad9dbdaaa342767e548e0cb3eba99dff729bc076bafd2111caa01d8804d73"
+}

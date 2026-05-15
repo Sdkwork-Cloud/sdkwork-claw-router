@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71613,
+  "uuid": "skill-clawhub-auckland",
+  "skillKey": "clawhub-auckland",
+  "name": "Auckland",
+  "summary": "提供奥克兰城市概况、旅游景点、教育资源、区域介绍及生活和经济信息，助力旅游和生活规划。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auckland",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供奥克兰城市概况、旅游景点、教育资源、区域介绍及生活和经济信息，助力旅游和生活规划。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auckland@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auckland",
+      "url": "https://clawhub.ai/skills/auckland"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auckland",
+    "url": "https://clawhub.ai/skills/auckland",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auckland-dc930d31d2ac87e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auckland@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-auckland-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e38685dc9afd477b47ea5a8014f8e6baf55cd625424c18f8320da8dd8158468d",
+      "artifactSizeBytes": 1890
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T06:01:25.349Z"
+}

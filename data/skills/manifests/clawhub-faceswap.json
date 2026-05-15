@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18130,
+  "uuid": "skill-clawhub-faceswap",
+  "skillKey": "clawhub-faceswap",
+  "name": "Faceswap",
+  "summary": "AI Face Swap - Swap face in video, deepfake face replacement, face swap for portraits. Use from command line. Supports local video files, YouTube, Bilibili U...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.faceswap",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "VergingAI",
+      "features": [
+        "AI Face Swap",
+        "Swap face in video, deepfake face replacement, face swap for portraits",
+        "Use from command line",
+        "Supports local video files, YouTube, Bilibili U..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/faceswap@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/227587937?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "faceswap",
+      "url": "https://clawhub.ai/skills/faceswap"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "faceswap",
+    "url": "https://clawhub.ai/skills/faceswap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/faceswap-67e391bc0ee31117.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/faceswap@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-faceswap-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ea0f17c0baa8fb43e05f944f9e2180869a593aedc8e7a3d1f5527013accc797",
+      "artifactSizeBytes": 2225
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T06:26:52.146Z"
+}

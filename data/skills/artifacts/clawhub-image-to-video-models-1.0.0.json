@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-to-video-models@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_to_video_models",
+  "skill": {
+    "id": 42398,
+    "skillKey": "clawhub-image-to-video-models",
+    "name": "Image To Video Models"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-to-video-models",
+    "url": "https://clawhub.ai/skills/image-to-video-models",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-to-video-models-34cccb0488ff2a79.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get animated video clips ready to post, without touching a single slider. Upload your still images (JPG, PNG, WEBP, HEIC, up to 50MB), say something like \"an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susan4731-wilfordf",
+      "userId": "s1782w3wqej6a5gnp3w63eb80184cckp",
+      "displayName": "susan4731-wilfordf",
+      "image": "https://avatars.githubusercontent.com/u/208907675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776080816299,
+      "changelog": "- Initial release of \"Image to Video Models\" skill — convert still images (JPG, PNG, WEBP, HEIC) into animated video clips using cloud-based AI.\n- Supports seamless upload, AI-guided animation from text instructions, and 1080p MP4 exports.\n- Simple onboarding: automatic cloud token setup and user feedback (\"Connecting...\", \"Ready!\").\n- Built for fast workflows — no manual animation skills needed, ideal for marketers, social creators, and designers.\n- Provides credit tracking, status monitoring, error handling, and tips for best results.\n- Session-based editing enables iterative video creation and batch processing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:62c515955ef73dbf224e29db7e786cf9865681ba85b58bd02a6671e4d96d7866"
+}

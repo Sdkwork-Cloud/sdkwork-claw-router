@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-watcher-cn@4.0.2",
+  "version": "4.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_watcher_cn",
+  "skill": {
+    "id": 72871,
+    "skillKey": "clawhub-stock-watcher-cn",
+    "name": "股票盯盯智能监控系统"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-watcher-cn",
+    "url": "https://clawhub.ai/skills/stock-watcher-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-watcher-cn-a387fe35c7d35341.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "股票盯盯 - 全功能智能股票监控预警系统。支持成本百分比、均线金叉死叉、RSI超买超卖、成交量异动、跳空缺口、动态止盈等7大预警规则。符合中国投资者习惯（红涨绿跌）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "koradji77",
+      "userId": "s17fdz8w64rvpa80whagpmkq7x83rgs9",
+      "displayName": "Koradji77",
+      "image": "https://avatars.githubusercontent.com/u/262987851?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 238,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "4.0.2",
+      "createdAt": 1774683962097,
+      "changelog": "新增详细中文使用说明，包含完整配置指南、使用技巧和故障排查",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:075b3a525ecc489f9ca4572f293b2b3067ec760715308749c2ab866f5199dbea"
+}

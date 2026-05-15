@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/presentation-maker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.presentation_maker",
+  "skill": {
+    "id": 65217,
+    "skillKey": "clawhub-presentation-maker",
+    "name": "Presentation Maker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "presentation-maker",
+    "url": "https://clawhub.ai/skills/presentation-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/presentation-maker-e82d6c54b007ad2c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动将结构化Markdown大纲转为符合演示标准的HTML幻灯片，包含封面、目录、内容及总结页，支持图表可视化和交互操作。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vincentlau2046-sudo",
+      "userId": "s177qxxtwn13trxmgd54c7a6wh83h7rc",
+      "displayName": "vincentlau2046-sudo",
+      "image": "https://avatars.githubusercontent.com/u/259013171?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 213,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774716557646,
+      "changelog": "- Initial release of Presentation Maker skill.\n- Converts structured Markdown outlines into professional HTML slide decks.\n- Generates slides with a cover, table of contents, content pages, and a summary.\n- Built as fully static HTML/CSS/JS, with embedded SVG charts and no external dependencies.\n- Slides feature strict 16:9 aspect ratio, responsive design, keyboard navigation, fullscreen mode, and touch support.\n- Ensures visually unified, accessible, and high-performance presentations suitable for multiple themes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7bfccc0542c1c23d17d147194fb8e655cc9cf03f900b0d4ba5ecbfa722429dc6"
+}

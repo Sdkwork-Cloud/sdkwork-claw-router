@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26204,
+  "uuid": "skill-clawhub-invoice-gen",
+  "skillKey": "clawhub-invoice-gen",
+  "name": "Invoice Gen",
+  "summary": "Generate professional PDF invoices from simple text commands. Supports multiple currencies, tax calculation, CJK text, and customizable templates. No externa...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.invoice_gen",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shihao Jiang (Zac)",
+      "features": [
+        "Generate professional PDF invoices from simple text commands",
+        "Supports multiple currencies, tax calculation, CJK text, and customizable templates",
+        "No externa..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/invoice-gen@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15880609?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "invoice-gen",
+      "url": "https://clawhub.ai/skills/invoice-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "invoice-gen",
+    "url": "https://clawhub.ai/skills/invoice-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/invoice-gen-9024aaac2ee7de59.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/invoice-gen@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-invoice-gen-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b9561d9e0407427f0f87d4b4e3aba9060fe110b16a85bd0567e8e6989ebca5e0",
+      "artifactSizeBytes": 2312
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T13:50:14.015Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63104,
+  "uuid": "skill-clawhub-agent-regression-testing",
+  "skillKey": "clawhub-agent-regression-testing",
+  "name": "Agent Regression Testing",
+  "summary": "管理回归测试计划、执行回归测试用例、验证缺陷修复。 Use when: 用户说\"开始回归测试\"、\"验证缺陷修复\"、\"执行回归验证\"。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_regression_testing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LuiciferYi",
+      "features": [
+        "管理回归测试计划、执行回归测试用例、验证缺陷修复。 Use when: 用户说\"开始回归测试\"、\"验证缺陷修复\"、\"执行回归验证\"。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-regression-testing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24913493?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-regression-testing",
+      "url": "https://clawhub.ai/skills/agent-regression-testing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-regression-testing",
+    "url": "https://clawhub.ai/skills/agent-regression-testing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-regression-testing-52dc829a5dcd6eb0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-regression-testing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-regression-testing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d1bcbdbd63bb75dc1f6e03fa764a04b4ebcb1cf5079fd03248042a25df031278",
+      "artifactSizeBytes": 2564
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T07:31:35.305Z"
+}

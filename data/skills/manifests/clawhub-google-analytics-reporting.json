@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54268,
+  "uuid": "skill-clawhub-google-analytics-reporting",
+  "skillKey": "clawhub-google-analytics-reporting",
+  "name": "Google Analytics",
+  "summary": "Run GA4 reports, inspect properties, list audiences and data streams, and analyze traffic and conversion data — powered by ClawLink.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_analytics_reporting",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hithesh Jay",
+      "features": [
+        "Run GA4 reports, inspect properties, list audiences and data streams, and analyze traffic and c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-analytics-reporting@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83839061?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-analytics-reporting",
+      "url": "https://clawhub.ai/skills/google-analytics-reporting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-analytics-reporting",
+    "url": "https://clawhub.ai/skills/google-analytics-reporting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-analytics-reporting-9f53fd8c12b5c203.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-analytics-reporting@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-analytics-reporting-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c50d077e8646b3f744e8acde06775a5ccbe2ed737ba4127c4f2d328223aaf34",
+      "artifactSizeBytes": 2506
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T13:33:39.479Z"
+}

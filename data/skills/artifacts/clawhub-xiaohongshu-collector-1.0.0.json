@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaohongshu-collector@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_collector",
+  "skill": {
+    "id": 39692,
+    "skillKey": "clawhub-xiaohongshu-collector",
+    "name": "Xiaohongshu Collector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-collector",
+    "url": "https://clawhub.ai/skills/xiaohongshu-collector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-collector-8c4f9b1fd8b1c4d3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Work on Xiaohongshu post/comment collection, cookie handling, refresh flows, and browser plugin integration in the forbidden_company repo."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pengluday",
+      "userId": "s178dzdbn6en043612h1m0ee9184dgd7",
+      "displayName": "Jack.L.P",
+      "image": "https://avatars.githubusercontent.com/u/41465413?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775527535680,
+      "changelog": "Added Xiaohongshu post/comment collection, cookie handling, full comment pagination, browser-rendered fallback, single-URL refresh, and browser plugin integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:78bf52e27b57a19975556b614988544e352fa54a8202da0c7b9d81d91b83f8c5"
+}

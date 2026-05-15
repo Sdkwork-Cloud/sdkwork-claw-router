@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chinese-ai-agent-guide@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chinese_ai_agent_guide",
+  "skill": {
+    "id": 63680,
+    "skillKey": "clawhub-chinese-ai-agent-guide",
+    "name": "chinese-ai-agent-guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chinese-ai-agent-guide",
+    "url": "https://clawhub.ai/skills/chinese-ai-agent-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chinese-ai-agent-guide-74ec24ce2b6cd6ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "中文 AI 代理最佳实践指南 - 针对中文互联网环境优化的 AI 行为准则，新增主流社交平台（小红书/即刻/微信）深度适配。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gmsx000-cloud",
+      "userId": "publishers:gmsx000-cloud",
+      "displayName": "gmsx000-cloud",
+      "image": "https://avatars.githubusercontent.com/u/260407988?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1552,
+      "installsAllTime": 23,
+      "installsCurrent": 21,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772380154716,
+      "changelog": "Summary: Enhanced with deep adaptation for major Chinese social platforms and improved Chinese semantic understanding.\n\n- Added platform-specific best practices for Xiaohongshu, Jike/Weibo, and WeChat/Enterprise WeChat.\n- Updated guidelines to optimize AI-generated content for each platform’s style, tone, and interaction norms.\n- Enhanced handling of nuanced Chinese phrases and “between-the-lines” meanings.\n- Refined suggestions to avoid typical “AI-speak” and promote more natural, human-like language.\n- Updated quick reference table summarizing different platform strategies.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9bfea8170b26bf6256d98fca60f5f3e3a7c44f67e3eb135da8d1cc31a5de27b8"
+}

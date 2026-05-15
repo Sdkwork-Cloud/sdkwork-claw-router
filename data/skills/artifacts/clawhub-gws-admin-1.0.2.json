@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gws-admin@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gws_admin",
+  "skill": {
+    "id": 20734,
+    "skillKey": "clawhub-gws-admin",
+    "name": "Gws Admin"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gws-admin",
+    "url": "https://clawhub.ai/skills/gws-admin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gws-admin-8f3eee4d4d7b9dcb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Google Workspace Admin SDK: Manage users, groups, and devices."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "googleworkspace-bot",
+      "userId": "s17d07d7j6wvs7e49gkh2nncms83fh1m",
+      "displayName": "googleworkspace-bot",
+      "image": "https://avatars.githubusercontent.com/u/109114539?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 510,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772665467966,
+      "changelog": "- Expanded several method descriptions in SKILL.md for improved clarity.\n- Added warnings, detailed instructions, and additional context to API command documentation.\n- Fixed truncated and incomplete descriptions for resources such as chromeosdevices, members, mobiledevices, and users.\n- Updated references and links to relevant Google Workspace Admin SDK documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:df11a9d678002faa7f1589047df6be18f32308ec6d81acbf9d127baf79b5a2be"
+}

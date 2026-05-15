@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37649,
+  "uuid": "skill-clawhub-review-python",
+  "skillKey": "clawhub-review-python",
+  "name": "Review Python",
+  "summary": "Comprehensive Python/FastAPI backend code review with optional parallel agents",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.review_python",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kevin Anderson",
+      "features": [
+        "Comprehensive Python/FastAPI backend code review with optional parallel agents"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/review-python@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17010022?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "review-python",
+      "url": "https://clawhub.ai/skills/review-python"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "review-python",
+    "url": "https://clawhub.ai/skills/review-python",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/review-python-08cbe0fd9cc60715.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/review-python@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-review-python-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ee6249ffc7c3e77f9004d0994db672019875470df22f3f034512607b07f5508f",
+      "artifactSizeBytes": 2569
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T04:14:30.183Z"
+}

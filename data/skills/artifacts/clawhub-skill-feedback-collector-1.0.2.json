@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-feedback-collector@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_feedback_collector",
+  "skill": {
+    "id": 26531,
+    "skillKey": "clawhub-skill-feedback-collector",
+    "name": "skill-feedback-collector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-feedback-collector",
+    "url": "https://clawhub.ai/skills/skill-feedback-collector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-feedback-collector-67d42866d032d4b0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Human-in-the-loop MCP feedback collector with task queue. Pauses to collect human input via browser UI before continuing. Use when completing tasks, encounte..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "2019-02-18",
+      "userId": "s174hkqvfzq95pr0fjbdadj3j983gyws",
+      "displayName": "LIU",
+      "image": "https://avatars.githubusercontent.com/u/47735347?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 356,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773374223265,
+      "changelog": "- Added a new \"Security\" section to the documentation with best practices for environment variable use, firewall setup, local history storage, and network behavior.\n- Removed unnecessary bins specification (\"bins\":[\"node\"]) from the installation metadata.\n- No code or functional changes; documentation improvements only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:53ffdb80fa9a2374e79103a034446d4e45f012621501f678d2eeb01ae6622c26"
+}

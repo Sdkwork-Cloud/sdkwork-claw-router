@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66374,
+  "uuid": "skill-clawhub-imap-idle-sender",
+  "skillKey": "clawhub-imap-idle-sender",
+  "name": "imap-idle-sender",
+  "summary": "使用 IMAP IDLE 保持长连接实时监听新邮件，并发送给指定飞书账号。当需要：1）监听新邮件并实时推送通知，2）建立邮件推送服务，3）替代轮询检查新邮件时使用此 skill。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.imap_idle_sender",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "apple133junjiang-a11y",
+      "features": [
+        "使用 IMAP IDLE 保持长连接实时监听新邮件，并发送给指定飞书账号。当需要：1）监听新邮件并实时推送通知，2）建立邮件推送服务，3）替代轮询检查新邮件时使用此 skill。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/imap-idle-sender@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245159344?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "imap-idle-sender",
+      "url": "https://clawhub.ai/skills/imap-idle-sender"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "imap-idle-sender",
+    "url": "https://clawhub.ai/skills/imap-idle-sender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/imap-idle-sender-fd558c5ef15a96fe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/imap-idle-sender@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-imap-idle-sender-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4cc76bb05f8b031c33c06473f249eaef0b76bbb7fbb81b80d37d206d648e3fe0",
+      "artifactSizeBytes": 2429
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T14:22:27.035Z"
+}

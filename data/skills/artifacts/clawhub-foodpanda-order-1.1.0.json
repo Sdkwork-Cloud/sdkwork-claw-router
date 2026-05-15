@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/foodpanda-order@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.foodpanda_order",
+  "skill": {
+    "id": 23198,
+    "skillKey": "clawhub-foodpanda-order",
+    "name": "Foodpanda.ph Ordering"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "foodpanda-order",
+    "url": "https://clawhub.ai/skills/foodpanda-order",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/foodpanda-order-c42a3d57cdc475ea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Order food from foodpanda.ph using the foodpanda-cli command-line tool. Use when the user wants to search restaurants, browse menus, build a cart, or place a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johnwhoyou",
+      "userId": "s171vjwhj8bn6k0rrtyvm0t8yn85843s",
+      "displayName": "John Carlo Joyo",
+      "image": "https://avatars.githubusercontent.com/u/76046600?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 448,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772634611280,
+      "changelog": "foodpanda-cli 1.1.0 introduces comprehensive skill documentation and usage guidance.\n\n- Adds detailed SKILL.md with command references, setup steps, workflow, and common usage patterns.\n- Clarifies command requirements and output formats.\n- Documents rules for user confirmation, payment methods, and cart behavior.\n- Emphasizes compatibility (Node.js 18+, npm, shell access) and Philippines-only support.\n- Provides examples for searching, menu browsing, item customization, and chain outlet selection.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ac2eca08e144ada08591b0fe16ff0f918bd3d82cdb648dc317e1e99b70386138"
+}

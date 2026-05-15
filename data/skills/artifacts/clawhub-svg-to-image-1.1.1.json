@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/svg-to-image@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.svg_to_image",
+  "skill": {
+    "id": 16800,
+    "skillKey": "clawhub-svg-to-image",
+    "name": "SVG to Image"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "svg-to-image",
+    "url": "https://clawhub.ai/skills/svg-to-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/svg-to-image-ad0be28102d95093.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert SVG to PNG or JPG for quick sharing (e.g. Telegram) or print."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qrost",
+      "userId": "publishers:qrost",
+      "displayName": "AddinCui",
+      "image": "https://avatars.githubusercontent.com/u/12784080?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 838,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1771638013177,
+      "changelog": "Patch: OpenClaw allowed media paths docs.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e7f99836284da85fc962cbcaf73d46620615257df366084e0a45c735fc1cdd36"
+}

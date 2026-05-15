@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37217,
+  "uuid": "skill-clawhub-moark-web-search",
+  "skillKey": "clawhub-moark-web-search",
+  "name": "Moark Web Search",
+  "summary": "Search web content such as webpages, images, and videos using the /web-search API with an Access Token.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moark_web_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fchange",
+      "features": [
+        "Search web content such as webpages, images, and videos using the /web-search API with an Acces."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moark-web-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17701167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moark-web-search",
+      "url": "https://clawhub.ai/skills/moark-web-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moark-web-search",
+    "url": "https://clawhub.ai/skills/moark-web-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moark-web-search-8dcaeb067cd71a85.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moark-web-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-moark-web-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4fa97eb071c5e9468669411f6b39dbb93eafa88f39ad5730dac628e520e08de6",
+      "artifactSizeBytes": 2292
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T07:39:06.482Z"
+}

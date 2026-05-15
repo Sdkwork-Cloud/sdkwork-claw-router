@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hookpipe@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hookpipe",
+  "skill": {
+    "id": 33753,
+    "skillKey": "clawhub-hookpipe",
+    "name": "hookpipe"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hookpipe",
+    "url": "https://clawhub.ai/skills/hookpipe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hookpipe-d8151c58f4039ffd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reliable webhook infrastructure for AI agents. Receive webhooks from Stripe, GitHub, Slack, Shopify, Vercel with signature verification, durable queuing, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linyiru",
+      "userId": "s17dv1xkzjdns5cf84r27xvhhn83gney",
+      "displayName": "Lawrence Lin",
+      "image": "https://avatars.githubusercontent.com/u/8616?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 233,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773883319554,
+      "changelog": "Initial publish as hookpipe (renamed from hookflare)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b60048531436cca8d44b11dafb51b6fa5183c9d4cd7d75ce1d9273039a73c371"
+}

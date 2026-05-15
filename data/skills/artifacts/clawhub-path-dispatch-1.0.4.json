@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/path-dispatch@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.path_dispatch",
+  "skill": {
+    "id": 43569,
+    "skillKey": "clawhub-path-dispatch",
+    "name": "Path-Dispatch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "path-dispatch",
+    "url": "https://clawhub.ai/skills/path-dispatch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/path-dispatch-29b8b8af7aa27f7f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discrete Hamiltonian task dispatch for multi-hop workflows. Maps task dependencies as a graph, precomputes reachability matrices, and solves constrained path..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "turinfohlen",
+      "userId": "s17fz4w553pec7mghb98bzaxsn850z9f",
+      "displayName": "TurinFohlen",
+      "image": "https://avatars.githubusercontent.com/u/208427613?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1777225144138,
+      "changelog": "- Added backup metadata file `_meta.json.bak` for the skill.\n- Updated environment variable configuration: removed 不存在的 `PATH_DISPATCH_PICKLE_CACHE`  in SKILL.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:420820e47c58978dde72cebc05ad3ce69b7c3a5eb7f67205322a195d90aaea1f"
+}

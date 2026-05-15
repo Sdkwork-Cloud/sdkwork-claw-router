@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67805,
+  "uuid": "skill-clawhub-get-resource-element",
+  "skillKey": "clawhub-get-resource-element",
+  "name": "Get Resource Element",
+  "summary": "根据产品名称查询对应标准硬件资源评估要点，智能对比用户提供内容是否完整并返回缺失项或确认完整。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.get_resource_element",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hellohushuai",
+      "features": [
+        "根据产品名称查询对应标准硬件资源评估要点，智能对比用户提供内容是否完整并返回缺失项或确认完整。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/get-resource-element@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40168227?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "get-resource-element",
+      "url": "https://clawhub.ai/skills/get-resource-element"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "get-resource-element",
+    "url": "https://clawhub.ai/skills/get-resource-element",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/get-resource-element-5032ab18f7b662cb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/get-resource-element@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-get-resource-element-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:32540900feb66da0a27fcb046afbc5ecc63499e25ae9cad4ae2d12fc01be630b",
+      "artifactSizeBytes": 2426
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T03:32:31.267Z"
+}

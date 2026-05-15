@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/acestep-songwriting@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acestep_songwriting",
+  "skill": {
+    "id": 14032,
+    "skillKey": "clawhub-acestep-songwriting",
+    "name": "acestep-songwriting"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acestep-songwriting",
+    "url": "https://clawhub.ai/skills/acestep-songwriting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acestep-songwriting-024414472855388d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Music songwriting guide for ACE-Step. Provides professional knowledge on writing captions, lyrics, choosing BPM/key/duration, and structuring songs. Use this skill when users want to create, write, or plan a song before generating it with."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dumoedss",
+      "userId": "publishers:dumoedss",
+      "displayName": "Sayo",
+      "image": "https://avatars.githubusercontent.com/u/10694619?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1173,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770953127193,
+      "changelog": "Initial release of ACE-Step songwriting guide.\n\n- Provides a comprehensive framework for writing captions, lyrics, and setting musical parameters for song generation.\n- Defines structured output format: `Caption`, `Lyrics` (with tags), and music parameters (duration, BPM, key, time signature, language).\n- Offers detailed principles and best practices for crafting effective captions across style, emotion, instrumentation, and more.\n- Establishes guidelines for lyric structure using section tags, vocal/instrumental/energy cues, and methods to avoid generic \"AI-flavored\" lyrics.\n- Includes tables for music metadata, when to set parameters manually, and practical duration estimation methods.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ffcd1e17d6cfe03dcaf96cbc374ac18dc7e363a38172d2d73e83ac0d8390dd83"
+}

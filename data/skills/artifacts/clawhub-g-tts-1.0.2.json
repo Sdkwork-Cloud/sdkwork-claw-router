@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/g-tts@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.g_tts",
+  "skill": {
+    "id": 35474,
+    "skillKey": "clawhub-g-tts",
+    "name": "Google Chirp 3 HD TTS Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "g-tts",
+    "url": "https://clawhub.ai/skills/g-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/g-tts-7113eeacf6e817c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "High-definition generative speech synthesis using Google Cloud Chirp 3 HD voices. Delivers superior realism, emotional expressiveness, and natural pacing usi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jarar21",
+      "userId": "s178qw4tpzxw2w3rykam2x1v0s84src3",
+      "displayName": "jarar21",
+      "image": "https://avatars.githubusercontent.com/u/99759491?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776099342177,
+      "changelog": "- Removed legacy dependency management files: scripts/package.json and scripts/package-lock.json.\n- Simplified project by eliminating unneeded Node.js package files from the scripts directory.\n- No user-facing functionality changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cdfaf0c1e5d3b3496c0d6a66a60a62246ebe971e0acf066e92cb3e1ffbb646b0"
+}

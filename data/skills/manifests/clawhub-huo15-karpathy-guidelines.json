@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58379,
+  "uuid": "skill-clawhub-huo15-karpathy-guidelines",
+  "skillKey": "clawhub-huo15-karpathy-guidelines",
+  "name": "Huo15 Karpathy Guidelines",
+  "summary": "将 Andrej Karpathy 的 LLM 编程四大行为规范打包为 OpenClaw Skill",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huo15_karpathy_guidelines",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Job Zhao",
+      "features": [
+        "将 Andrej Karpathy 的 LLM 编程四大行为规范打包为 OpenClaw Skill"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/huo15-karpathy-guidelines@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13188275?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "huo15-karpathy-guidelines",
+      "url": "https://clawhub.ai/skills/huo15-karpathy-guidelines"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huo15-karpathy-guidelines",
+    "url": "https://clawhub.ai/skills/huo15-karpathy-guidelines",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huo15-karpathy-guidelines-b9a0ae434fc88a8d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/huo15-karpathy-guidelines@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-huo15-karpathy-guidelines-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:912c1e437933a12a339a2b11978859fe02358b887532225213d2248fd73ff710",
+      "artifactSizeBytes": 1996
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T04:15:19.827Z"
+}

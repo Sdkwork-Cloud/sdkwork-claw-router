@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48420,
+  "uuid": "skill-clawhub-crypto-sniping",
+  "skillKey": "clawhub-crypto-sniping",
+  "name": "Crypto Sniping",
+  "summary": "Automated Binance bot using RSI, MACD, volume spikes, and whale tracking to generate signals, execute trades, and manage risk on BTC, ETH, and SOL.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_sniping",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dorjenorbulim",
+      "features": [
+        "Automated Binance bot using RSI, MACD, volume spikes, and whale tracking to generate signals, e."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crypto-sniping@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269761677?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crypto-sniping",
+      "url": "https://clawhub.ai/skills/crypto-sniping"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-sniping",
+    "url": "https://clawhub.ai/skills/crypto-sniping",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-sniping-4282e078a5b23327.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crypto-sniping@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crypto-sniping-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e42ddc319fd4ea9f7983a84837a005b080e2eb1a9e089ee5d53b99b0e7a93040",
+      "artifactSizeBytes": 1879
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T17:13:58.526Z"
+}

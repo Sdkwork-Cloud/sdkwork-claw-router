@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bilibit@0.1.11",
+  "version": "0.1.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilibit",
+  "skill": {
+    "id": 65312,
+    "skillKey": "clawhub-bilibit",
+    "name": "bilibit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilibit",
+    "url": "https://clawhub.ai/skills/bilibit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilibit-2d1671a210d5290e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "B 站视频下载工具。支持哔哩哔哩视频下载、弹幕下载。用户说\"B 站下载\"、\"哔哩哔哩\"、\"bilibili\"时使用。无需 API Key。纯下载工具，不支持搜索。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aoturlab",
+      "userId": "s1721esg423ntb0xa8k6qd1ath83h2rz",
+      "displayName": "Roland Dickens",
+      "image": "https://avatars.githubusercontent.com/u/9696000?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 415,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "0.1.11",
+      "createdAt": 1776665501184,
+      "changelog": "fix: 修正clawhub显示名称",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:62b1188f0d3826f8c931c0b6c119e4564a618915a2b84842251b833014969083"
+}

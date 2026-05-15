@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/inter-control-03-logistics-alert@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inter_control_03_logistics_alert",
+  "skill": {
+    "id": 68629,
+    "skillKey": "clawhub-inter-control-03-logistics-alert",
+    "name": "03 Logistics Alert"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inter-control-03-logistics-alert",
+    "url": "https://clawhub.ai/skills/inter-control-03-logistics-alert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inter-control-03-logistics-alert-68347d774193a31b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "对菜鸟物流订单进行异常监控、预警分级和赔偿标准匹配。 基于淘宝/天猫物流时效规则（2024最新版）、菜鸟专线赔付标准 和行业物流SLA基准数据，帮助内控人员快速识别异常订单、 预判风险并给出处置建议和赔偿预算。 v1.7 新增：AE-03细分规则（退件/异地/乱序）、AE-10联动供应商评分规则、赔偿封顶规则明确..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nic-yuan",
+      "userId": "s17601s6pc41mkraa1bkeshfx983kdsw",
+      "displayName": "nic-yuan",
+      "image": "https://avatars.githubusercontent.com/u/195308903?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 110,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777636214389,
+      "changelog": "**Changelog: inter-control-03-logistics-alert v1.0.1**\n\n- Refined and clarified AE-03 (track anomaly) sub-rules, with detailed differentiation of return/incorrect location/out-of-sequence.\n- Enhanced reference structure; all exception type codes, compensation standards, and timing benchmarks are fully unified with GLOSSARY.md, and missing info handling and rules update processes are externally referenced.\n- Removed outdated/duplicated alert rules (ALERT-RULES.md); documentation is now consolidated and cross-linked.\n- Updated batch abnormal (AE-10) supplier risk linking workflow and outputs.\n- Standardized report templates for both single and batch orders.\n- General documentation restructure for easier versioning and downstream updating.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7cdfb584e728b7570905b9b31cf898e80fb578c7ea4bb3d596f5e564dc306dc1"
+}

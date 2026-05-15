@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42958,
+  "uuid": "skill-clawhub-expertpack-cli",
+  "skillKey": "clawhub-expertpack-cli",
+  "name": "ExpertPack CLI",
+  "summary": "Run ExpertPack CLI tools for validating, fixing, graphing, and deploying packs. Use when: running ep-validate, ep-doctor, ep-graph-export, ep-strip-frontmatt...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.expertpack_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Brian Hearn",
+      "features": [
+        "Run ExpertPack CLI tools for validating, fixing, graphing, and deploying packs",
+        "Use when: running ep-validate, ep-doctor, ep-graph-export, ep-strip-frontmatt..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/expertpack-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1640595?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "expertpack-cli",
+      "url": "https://clawhub.ai/skills/expertpack-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "expertpack-cli",
+    "url": "https://clawhub.ai/skills/expertpack-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/expertpack-cli-2872c60c5dbc0f32.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/expertpack-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-expertpack-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:24d8f4636f07ccb49311048801c47b26514e03e472d7c8ea3fb589e1f6fd006d",
+      "artifactSizeBytes": 2009
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T20:40:21.299Z"
+}

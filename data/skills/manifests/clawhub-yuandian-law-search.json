@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73612,
+  "uuid": "skill-clawhub-yuandian-law-search",
+  "skillKey": "clawhub-yuandian-law-search",
+  "name": "元典法条与案例检索",
+  "summary": "元典法条与案例检索。本技能应在需要查询中国法律法规条文、检索相关案例、为法律分析提供数据支撑时使用。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yuandian_law_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xierluo",
+      "features": [
+        "元典法条与案例检索。本技能应在需要查询中国法律法规条文、检索相关案例、为法律分析提供数据支撑时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yuandian-law-search@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/66555304?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yuandian-law-search",
+      "url": "https://clawhub.ai/skills/yuandian-law-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yuandian-law-search",
+    "url": "https://clawhub.ai/skills/yuandian-law-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yuandian-law-search-303f9c2bbda936bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yuandian-law-search@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yuandian-law-search-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:03598cc8a94aa9965f43a7f510896be4780e4d379f394752f0823d0b7dfbffea",
+      "artifactSizeBytes": 2022
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T05:23:08.586Z"
+}

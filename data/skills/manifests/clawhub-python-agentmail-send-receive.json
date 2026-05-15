@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23045,
+  "uuid": "skill-clawhub-python-agentmail-send-receive",
+  "skillKey": "clawhub-python-agentmail-send-receive",
+  "name": "AgentMail sending and receiving with Python scripts",
+  "summary": "python files which are used to send an email and to download received emails from an inbox. The email provider is agentmail.to, which offers an API. This way...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.python_agentmail_send_receive",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gerhard Lausser",
+      "features": [
+        "python files which are used to send an email and to download received emails from an inbox",
+        "The email provider is agentmail.to, which offers an API",
+        "This way..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/python-agentmail-send-receive@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/198968?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "python-agentmail-send-receive",
+      "url": "https://clawhub.ai/skills/python-agentmail-send-receive"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "python-agentmail-send-receive",
+    "url": "https://clawhub.ai/skills/python-agentmail-send-receive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/python-agentmail-send-receive-56e16c0ecc051baa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/python-agentmail-send-receive@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-python-agentmail-send-receive-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf720f1e174d50d890c9ae609086e7b51285b04f5a81be00f6b3265b80fed37a",
+      "artifactSizeBytes": 2371
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T22:54:00.442Z"
+}

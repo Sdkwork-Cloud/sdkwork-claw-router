@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66631,
+  "uuid": "skill-clawhub-long-image-slicer",
+  "skillKey": "clawhub-long-image-slicer",
+  "name": "Long Image Slicer",
+  "summary": "智能长截图切片工具。将超长图片（如聊天记录、长截图）按 9:16 比例智能切片，确保文字/拼音不被分割，输出 PDF/ZIP/切片图片。使用场景：用户发送长截图要求切片、分割、转 PDF 等。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.long_image_slicer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yunkai",
+      "features": [
+        "智能长截图切片工具。将超长图片（如聊天记录、长截图）按 9:16 比例智能切片，确保文字/拼音不被分割，输出 PDF/ZIP/切片图片。使用场景：用户发送长截图要求切片、分割、转 PDF 等。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/long-image-slicer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1469328?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "long-image-slicer",
+      "url": "https://clawhub.ai/skills/long-image-slicer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "long-image-slicer",
+    "url": "https://clawhub.ai/skills/long-image-slicer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/long-image-slicer-df41ea1814a26d46.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/long-image-slicer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-long-image-slicer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8e6b4921198fbaa5603f6080e2f785e169a2eeb32f20af459895134184b9e835",
+      "artifactSizeBytes": 2059
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T09:47:49.580Z"
+}

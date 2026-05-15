@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dlazy-image-generate@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dlazy_image_generate",
+  "skill": {
+    "id": 14260,
+    "skillKey": "clawhub-dlazy-image-generate",
+    "name": "Dlazy Image Generate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dlazy-image-generate",
+    "url": "https://clawhub.ai/skills/dlazy-image-generate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dlazy-image-generate-c9435c067732258a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Image generation skill. Automatically selects the best dlazy CLI image model based on the prompt."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dlazyai",
+      "userId": "s170j1ymymrxasgd00dsk7tckx84cf45",
+      "displayName": "dlazy",
+      "image": "https://avatars.githubusercontent.com/u/274158181?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1234,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1778076316177,
+      "changelog": "Version 1.1.1\n\n- Expanded and updated the list of available image models with detailed descriptions for each, including newly documented models and capabilities.\n- Clarified use cases and feature distinctions for each model to help users select the most suitable option.\n- No changes to the core logic or API usage—documentation updates only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8565a2c1c650c2a5e38ffb6a3abb781627e12d7c5a82e4fb19026242ca265d03"
+}

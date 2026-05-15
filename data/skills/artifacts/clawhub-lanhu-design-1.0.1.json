@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lanhu-design@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lanhu_design",
+  "skill": {
+    "id": 57521,
+    "skillKey": "clawhub-lanhu-design",
+    "name": "Lanhu Design"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lanhu-design",
+    "url": "https://clawhub.ai/skills/lanhu-design",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lanhu-design-1bce3e29efc14ff2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read Lanhu UI designs, extract slices, and download Web/iOS/Android assets using lh-design. Use when the user mentions 蓝湖, Lanhu, UI稿, 设计稿, 切图, iOS @2x/@3x,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xuwenxindeai",
+      "userId": "s172mm8a36wsyt0w857e1vx8qx86627g",
+      "displayName": "xuwenxindeai",
+      "image": "https://avatars.githubusercontent.com/u/11506134?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 90,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778035848555,
+      "changelog": "Remove remote installer command from the agent-facing skill instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fc30afa1928818e51c189076317bd8056356bd3c9f441556bd0704259f0772c8"
+}

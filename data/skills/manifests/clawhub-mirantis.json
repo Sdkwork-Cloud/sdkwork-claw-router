@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37331,
+  "uuid": "skill-clawhub-mirantis",
+  "skillKey": "clawhub-mirantis",
+  "name": "Mirantis",
+  "summary": "Mirantis integration. Manage data, records, and automate workflows. Use when the user wants to interact with Mirantis data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mirantis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Mirantis integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Mirantis data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mirantis@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mirantis",
+      "url": "https://clawhub.ai/skills/mirantis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mirantis",
+    "url": "https://clawhub.ai/skills/mirantis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mirantis-983e0dbf8f9738b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mirantis@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-mirantis-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:26a1311db9e88f4db928d357ec62ff47f69d74c1e1c9e1e1a99b87f316adc40e",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:14:31.057Z"
+}

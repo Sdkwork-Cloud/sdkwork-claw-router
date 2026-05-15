@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-to-markdown-converter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_to_markdown_converter",
+  "skill": {
+    "id": 56875,
+    "skillKey": "clawhub-wechat-to-markdown-converter",
+    "name": "WeChat Article to Markdown"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-to-markdown-converter",
+    "url": "https://clawhub.ai/skills/wechat-to-markdown-converter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-to-markdown-converter-cb8572b6043d62e1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill converts WeChat Official Account (微信公众号) article pages into high-quality, clean Markdown format. It should be used when the user provides a WeChat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "benzking",
+      "userId": "s17eytpmak0fh78xhm4nyk35hh841jw4",
+      "displayName": "benzking",
+      "image": "https://avatars.githubusercontent.com/u/2979921?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775803512174,
+      "changelog": "WeChat Article to Markdown skill – Initial Release\n\n- Converts WeChat Official Account articles (mp.weixin.qq.com) to high-quality, clean Markdown.\n- Deep noise removal targets 30+ WeChat-specific elements (ads, comments, QR codes, etc.).\n- Smart code block detection supports 25+ programming languages and various WeChat formats.\n- Preserves rich text (bold, lists, blockquotes, tables, headings) and formats paragraphs intelligently.\n- Extracts full article metadata into YAML frontmatter.\n- Downloads and manages all article images with error handling and fallback.\n- Includes both CLI and Python API usage for single or batch conversions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3c5698aca9ca70eab88ca3522116783c2fed5423f646bd1244d023ac5a5a946d"
+}

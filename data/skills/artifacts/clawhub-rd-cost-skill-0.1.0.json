@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rd-cost-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rd_cost_skill",
+  "skill": {
+    "id": 72755,
+    "skillKey": "clawhub-rd-cost-skill",
+    "name": "Rd Cost"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rd-cost-skill",
+    "url": "https://clawhub.ai/skills/rd-cost-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rd-cost-skill-e4c702aae40bd37e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "研发费用评估、研发预算测算、项目研发成本分析的专业技能。 当用户需要进行研发费用评估、研发预算编制、项目成本测算、研发投资回报分析、研发项目可行性分析时，务必使用此技能。 适用于企业研发部门、财务部门、项目管理团队进行研发成本控制和预算规划。 支持软件开发、硬件研发、AI算法研发、工艺技术研发等各类项目的成本评估..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yejinlei",
+      "userId": "s1764y37qa3bnbheme5ejcvb2x83h026",
+      "displayName": "yejinlei",
+      "image": "https://avatars.githubusercontent.com/u/1418455?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 335,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773103573046,
+      "changelog": "- 首个公开版本，提供全面的研发费用评估与预算测算功能。\n- 支持软件、硬件、AI算法、工艺技术等多类型项目的成本分析和合规预算输出。\n- 明确必需参数、计算公式和行业标准，确保预算编制科学合理。\n- 输出符合高新技术企业和研发费用加计扣除的规范要求。\n- 支持Excel、CSV数据源输入，报告可导出为Excel、Word、Markdown多种格式。\n- 提供详细标准报告模板及多场景使用示例。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aca1b1068f3ad29c6be99dc5bcacc5b957ea7d3c8123ad471ad5d0f553cd811a"
+}

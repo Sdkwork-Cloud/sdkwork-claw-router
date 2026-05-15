@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-wealth-guide@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_wealth_guide",
+  "skill": {
+    "id": 61870,
+    "skillKey": "clawhub-openclaw-wealth-guide",
+    "name": "Openclaw Wealth Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-wealth-guide",
+    "url": "https://clawhub.ai/skills/openclaw-wealth-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-wealth-guide-68900529a14e88e7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动采集、处理多种数据源并导出JSON、CSV、Excel等格式，支持定时任务及OpenClaw无缝集成，适合中国市场。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dxg852621787",
+      "userId": "s171syv6e0z8pstnyvs6cff6g98483y0",
+      "displayName": "dxg852621787",
+      "image": "https://avatars.githubusercontent.com/u/271096132?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775729085371,
+      "changelog": "Smart Data Harvester 1.0.0 初始发布\n\n- 支持网页、API、数据库和文件等多数据源采集\n- 提供完整数据处理管道：清洗、转换、聚合与分析\n- 多种数据导出格式：JSON、CSV、Excel、SQLite、PDF\n- 定时任务调度功能，支持自动化采集\n- 完全中文界面与文档，专为中国用户优化\n- 原生OpenClaw技能，无缝集成与安装",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3b56a046d9da0beb0211f9bc2a7d07bc12f6743ec2b7ba5116e9572075a7199b"
+}

@@ -226,6 +226,40 @@ test("skills catalog view model derives categories sort tabs cards and empty sta
   assert.equal(view.emptyStateVisible, false);
 });
 
+test("skills catalog keeps SDKWork Official first in category options", () => {
+  const officialSkill: Skill = {
+    ...runtimeSkills[2],
+    id: "skill-official",
+    name: "Prompt Optimizer",
+    developer: "SDKWork",
+    category: "SDKWork Official",
+  };
+  const communitySkill: Skill = {
+    ...runtimeSkills[0],
+    id: "skill-community",
+    name: "Browser Use",
+    developer: "ClawHub",
+    category: "ClawHub Community",
+  };
+
+  const view = deriveSkillCatalogViewModel({
+    skills: [communitySkill, officialSkill],
+    categories: ["ClawHub Community", "SDKWork Official"],
+    installedSkills: [],
+    filters: {
+      searchQuery: "",
+      categories: [],
+      sortBy: "Most Popular",
+    },
+  });
+
+  assert.deepEqual(view.categoryOptions.map((category) => category.id), [
+    "All",
+    "SDKWork Official",
+    "ClawHub Community",
+  ]);
+});
+
 test("skills catalog cards derive installed and disabled states from user installations", () => {
   const view = deriveSkillCatalogViewModel({
     skills: runtimeSkills,
@@ -274,6 +308,8 @@ test("skills hub page exposes installed skill state through generated app SDK da
   );
 
   assert.match(source, /skillService\.getMySkills/);
+  assert.match(source, /hasStoredPortalSession/);
+  assert.match(source, /if \(!hasStoredPortalSession\(\)\) \{\s*setInstalledSkills\(\[\]\);\s*setInstalledLoadError\(null\);\s*return;\s*\}/u);
   assert.match(source, /installedSkills/);
   assert.match(source, /installedLoadError/);
   assert.match(source, /installationLabel/);
@@ -438,12 +474,39 @@ test("skills detail page exposes SDK-backed installed skill configuration manage
     "utf8",
   );
 
+  assert.match(source, /useLocation/u);
+  assert.match(source, /useNavigate/u);
+  assert.match(source, /hasStoredPortalSession/u);
+  assert.match(source, /buildPortalAuthLoginRedirect/u);
+  assert.match(source, /requirePortalLoginForAction/u);
   assert.match(source, /skillService\.updateSkillConfig/);
   assert.match(source, /parseSkillConfigEditorValue/);
   assert.match(source, /formatSkillConfigEditorValue/);
   assert.match(source, /Skill configuration JSON/);
   assert.doesNotMatch(source, /\bfetch\s*\(/);
   assert.doesNotMatch(source, /\baxios\b/);
+});
+
+test("skills detail private actions require login before generated SDK mutations", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-skills-hub/src/pages/SkillDetails.tsx", import.meta.url),
+    "utf8",
+  );
+
+  for (const guardedCall of [
+    "skillService.disableSkill",
+    "skillService.enableSkill",
+    "skillService.updateSkillConfig",
+  ]) {
+    const callIndex = source.indexOf(guardedCall);
+    assert.notEqual(callIndex, -1, `${guardedCall} must remain wired`);
+    const precedingSource = source.slice(Math.max(0, callIndex - 500), callIndex);
+    assert.match(
+      precedingSource,
+      /requirePortalLoginForAction\(\)/u,
+      `${guardedCall} must be guarded before the SDK mutation`,
+    );
+  }
 });
 
 test("skills detail page wires visible share control to canonical copy behavior", () => {
@@ -477,13 +540,15 @@ test("skills service normalizes catalog filters before generated app SDK call", 
   await withAppSdkFetch(
     (url) => {
       const requestUrl = new URL(url, "http://localhost");
-      assert.equal(requestUrl.pathname, "/app/v3/api/skills");
-      assert.equal(requestUrl.searchParams.get("pageNo"), "3");
-      assert.equal(requestUrl.searchParams.get("pageSize"), "50");
-      assert.equal(requestUrl.searchParams.get("keyword"), "data analysis");
+      assert.equal(requestUrl.pathname, "/app/v3/api/ecosystem/skills");
+      assert.equal(requestUrl.searchParams.get("page"), "3");
+      assert.equal(requestUrl.searchParams.get("page_size"), "50");
+      assert.equal(requestUrl.searchParams.get("q"), "data analysis");
+      assert.equal(requestUrl.searchParams.has("search_query"), false);
+      assert.equal(requestUrl.searchParams.has("searchQuery"), false);
       assert.equal(requestUrl.searchParams.get("status"), "published");
-      assert.equal(requestUrl.searchParams.get("startTime"), "2026-05-01T00:00:00Z");
-      assert.equal(requestUrl.searchParams.get("endTime"), "2026-05-31T23:59:59Z");
+      assert.equal(requestUrl.searchParams.get("start_time"), "2026-05-01T00:00:00Z");
+      assert.equal(requestUrl.searchParams.get("end_time"), "2026-05-31T23:59:59Z");
       assert.equal(requestUrl.searchParams.has("search"), false);
       assert.equal(requestUrl.searchParams.has("categories"), false);
       assert.equal(requestUrl.searchParams.has("sortBy"), false);
@@ -510,8 +575,8 @@ test("skills service normalizes catalog filters before generated app SDK call", 
     },
     async (captured) => {
       const result = await skillService.getSkills({
-        search: " data analysis ",
-        pageNo: "3",
+        searchQuery: " data analysis ",
+        page: "3",
         pageSize: "50",
         status: " published ",
         startTime: " 2026-05-01T00:00:00Z ",
@@ -534,13 +599,13 @@ test("skills service rejects invalid catalog query filters before generated app 
       throw new Error("app SDK must not be called for invalid skill catalog filters");
     },
     async (captured) => {
-      await assert.rejects(() => skillService.getSkills({ pageNo: 0 } as any), /pageNo must be a positive integer/);
-      await assert.rejects(() => skillService.getSkills({ pageNo: "abc" } as any), /pageNo must be a positive integer/);
+      await assert.rejects(() => skillService.getSkills({ page: 0 } as any), /page must be a positive integer/);
+      await assert.rejects(() => skillService.getSkills({ page: "abc" } as any), /page must be a positive integer/);
       await assert.rejects(() => skillService.getSkills({ pageSize: 0 } as any), /pageSize must be between 1 and 100/);
       await assert.rejects(() => skillService.getSkills({ pageSize: 101 } as any), /pageSize must be between 1 and 100/);
       await assert.rejects(
-        () => skillService.getSkills({ search: "x".repeat(129) } as any),
-        /search must be at most 128 characters/,
+        () => skillService.getSkills({ searchQuery: "x".repeat(129) } as any),
+        /searchQuery must be at most 128 characters/,
       );
       await assert.rejects(
         () => skillService.getSkills({ endTime: { value: "2026-05-31T23:59:59Z" } } as any),
@@ -570,7 +635,7 @@ test("skills service rejects unsafe skill detail ids before generated app SDK ca
 test("skills service returns undefined when detail response data is null", async () => {
   await withAppSdkFetch(
     (url, init) => {
-      assert.equal(url, "/app/v3/api/skills/missing-skill");
+      assert.equal(url, "/app/v3/api/ecosystem/skills/missing-skill");
       assert.equal(init?.method ?? "GET", "GET");
       return null;
     },
@@ -586,7 +651,7 @@ test("skills service returns undefined when detail response data is null", async
 test("skills service loads installed user skills through generated app SDK", async () => {
   await withAppSdkFetch(
     (url, init) => {
-      assert.equal(url, "/app/v3/api/skills/my");
+      assert.equal(url, "/app/v3/api/ecosystem/users/current/skills");
       assert.equal(init?.method ?? "GET", "GET");
       return {
         items: [
@@ -625,7 +690,7 @@ test("skills service loads installed user skills through generated app SDK", asy
 test("skills service enables disables and updates config through generated app SDK", async () => {
   await withAppSdkFetch(
     (url, init) => {
-      if (url === "/app/v3/api/skills/skill-1/enable" && init?.method === "POST") {
+      if (url === "/app/v3/api/ecosystem/skills/skill-1/enable" && init?.method === "POST") {
         assert.deepEqual(JSON.parse(String(init.body)), { config: { mode: "strict" } });
         return {
           item: installedSkillApiRecord({
@@ -634,16 +699,16 @@ test("skills service enables disables and updates config through generated app S
           }),
         };
       }
-      if (url === "/app/v3/api/skills/skill-1/disable" && init?.method === "POST") {
-        assert.equal(init.body, undefined);
-        return {
-          item: installedSkillApiRecord({
-            enabled: false,
-            config: { mode: "strict" },
+        if (url === "/app/v3/api/ecosystem/skills/skill-1/disable" && init?.method === "POST") {
+          assert.ok(init?.body == null || init.body === "", "disableSkill must send an empty request body");
+          return {
+            item: installedSkillApiRecord({
+              enabled: false,
+              config: { mode: "strict" },
           }),
         };
       }
-      if (url === "/app/v3/api/skills/skill-1/config" && init?.method === "PUT") {
+      if (url === "/app/v3/api/ecosystem/skills/skill-1/config" && init?.method === "PUT") {
         assert.deepEqual(JSON.parse(String(init.body)), { config: { mode: "balanced" } });
         return {
           item: installedSkillApiRecord({
@@ -662,9 +727,9 @@ test("skills service enables disables and updates config through generated app S
       assert.deepEqual(
         captured.map((item) => `${item.method} ${item.url}`),
         [
-          "POST /app/v3/api/skills/skill-1/enable",
-          "POST /app/v3/api/skills/skill-1/disable",
-          "PUT /app/v3/api/skills/skill-1/config",
+          "POST /app/v3/api/ecosystem/skills/skill-1/enable",
+          "POST /app/v3/api/ecosystem/skills/skill-1/disable",
+          "PUT /app/v3/api/ecosystem/skills/skill-1/config",
         ],
       );
       assert.equal(enabled.enabled, true);
@@ -706,7 +771,7 @@ test("skills service rejects unsafe command ids and non-object configs before ge
 test("skills service fails closed when detail response does not contain a skill entity", async () => {
   await withAppSdkFetch(
     (url, init) => {
-      if (url === "/app/v3/api/skills/skill-1" && (init?.method ?? "GET") === "GET") {
+      if (url === "/app/v3/api/ecosystem/skills/skill-1" && (init?.method ?? "GET") === "GET") {
         return {
           items: [
             {
@@ -755,7 +820,7 @@ function installedSkillApiRecord({
 test("skills service fails closed when catalog response contains malformed skill rows", async () => {
   await withAppSdkFetch(
     (url, init) => {
-      if (url === "/app/v3/api/skills" && (init?.method ?? "GET") === "GET") {
+      if (url === "/app/v3/api/ecosystem/skills" && (init?.method ?? "GET") === "GET") {
         return { items: ["not-a-skill-record"] };
       }
       throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
@@ -777,7 +842,7 @@ test("skills service fails closed when catalog response omits required skill ide
   ] as const) {
     await withAppSdkFetch(
       (url, init) => {
-        if (url === "/app/v3/api/skills" && (init?.method ?? "GET") === "GET") {
+        if (url === "/app/v3/api/ecosystem/skills" && (init?.method ?? "GET") === "GET") {
           const skill = {
             id: "skill-1",
             name: "Advanced Data Analysis",

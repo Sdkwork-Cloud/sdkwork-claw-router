@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72951,
+  "uuid": "skill-clawhub-clawdbot-mutual-aid",
+  "skillKey": "clawhub-clawdbot-mutual-aid",
+  "name": "🦞 大龙虾互助技能",
+  "summary": "自动记录任务经验并生成标签，检测负面反馈时向其他AI助手求助并共享经验以提升协作效率。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdbot_mutual_aid",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mwl481306354-blip",
+      "features": [
+        "自动记录任务经验并生成标签，检测负面反馈时向其他AI助手求助并共享经验以提升协作效率。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawdbot-mutual-aid@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258620341?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawdbot-mutual-aid",
+      "url": "https://clawhub.ai/skills/clawdbot-mutual-aid"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdbot-mutual-aid",
+    "url": "https://clawhub.ai/skills/clawdbot-mutual-aid",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdbot-mutual-aid-74c5a54fb1023a09.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawdbot-mutual-aid@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawdbot-mutual-aid-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c1eb9023a8cab0049694cea31e500fee23c77d2e1d4fb3eb16743fdce6a228b1",
+      "artifactSizeBytes": 2397
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T12:26:47.794Z"
+}

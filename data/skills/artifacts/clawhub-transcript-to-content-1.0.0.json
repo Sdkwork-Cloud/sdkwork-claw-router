@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/transcript-to-content@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.transcript_to_content",
+  "skill": {
+    "id": 11083,
+    "skillKey": "clawhub-transcript-to-content",
+    "name": "Transcript to Content"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "transcript-to-content",
+    "url": "https://clawhub.ai/skills/transcript-to-content",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/transcript-to-content-377cb7b81b72f5d6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill transforms training and onboarding meeting transcripts into structured learning materials, documentation, and actionable review content. Use this skill when processing meeting transcripts from onboarding sessions, training meeti."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tomstools11",
+      "userId": "s17bm3wtrz765e4ey40n6zq4qx867krs",
+      "displayName": "TomsTools",
+      "image": "https://avatars.githubusercontent.com/u/167941621?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2172,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769457795412,
+      "changelog": "Initial release: Transform meeting and training transcripts into structured learning and reference materials.\n\n- Converts transcripts into study guides, SOPs, checklists, quick reference sheets, FAQs, action item lists, and training assessments.\n- Supports extraction of key information, procedures, critical nuances, and terminology.\n- Provides workflows for branded or unbranded document creation.\n- Ensures content accuracy by strictly using source material and flagging unknowns.\n- Delivers materials in clean, standardized formats suitable for onboarding and training.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e522dbd10d660e59b68277bfec5966d00edfe878042c308b58cb223978512fd5"
+}

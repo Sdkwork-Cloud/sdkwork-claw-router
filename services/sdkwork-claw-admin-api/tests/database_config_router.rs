@@ -9,9 +9,9 @@ use sdkwork_claw_config::{
 };
 use sdkwork_claw_http::TrustedRequestSubject;
 use sdkwork_claw_test_support::{
-    api_key_security_config as test_api_key_security_config, app_session_bearer_token,
-    app_session_config as test_app_session_config, default_trusted_request_subject,
-    seeded_sqlite_catalog, trusted_request_subject,
+    api_key_security_config as test_api_key_security_config,
+    app_session_config as test_app_session_config, app_session_dual_token_headers,
+    default_trusted_request_subject, seeded_sqlite_catalog, trusted_request_subject,
     trusted_subject_config as test_trusted_subject_config, trusted_subject_signature,
 };
 use serde_json::json;
@@ -69,9 +69,9 @@ async fn database_config_router_uses_sqlite_catalog_for_backend_model_list() {
 
     let response = router
         .oneshot(signed_request(
-            "POST",
-            "/backend/v3/api/model/list",
-            Body::from("{}"),
+            "GET",
+            "/backend/v3/api/ai/models",
+            Body::empty(),
         ))
         .await
         .unwrap();
@@ -118,8 +118,8 @@ async fn database_config_router_requires_admin_subject_for_backend_model_managem
         .clone()
         .oneshot(
             Request::builder()
-                .method("POST")
-                .uri("/backend/v3/api/model/list")
+                .method("GET")
+                .uri("/backend/v3/api/ai/models")
                 .header("authorization", catalog.gateway_authorization_header())
                 .body(Body::empty())
                 .unwrap(),
@@ -136,9 +136,9 @@ async fn database_config_router_requires_admin_subject_for_backend_model_managem
 
     let response = router
         .oneshot(app_session_request(
-            "POST",
-            "/backend/v3/api/model/list",
-            Body::from("{}"),
+            "GET",
+            "/backend/v3/api/ai/models",
+            Body::empty(),
         ))
         .await
         .unwrap();
@@ -178,7 +178,7 @@ async fn database_config_router_serves_signed_subject_model_catalog_commands() {
         router.clone(),
         app_session_request(
             "POST",
-            "/backend/v3/api/router/model-vendors",
+            "/backend/v3/api/ai/model_vendors",
             Body::from(
                 r#"{"vendorCode":"acme-ai","name":"Acme AI","status":"active","color":"bg-cyan-700","description":"Acme hosted models"}"#,
             ),
@@ -205,7 +205,7 @@ async fn database_config_router_serves_signed_subject_model_catalog_commands() {
         router.clone(),
         signed_request(
             "POST",
-            "/backend/v3/api/model",
+            "/backend/v3/api/ai/models",
             Body::from(format!(
                 r#"{{"vendorId":"{vendor_id}","name":"acme-chat-large","type":"Chat","priceIn":"0.120000","priceOut":"0.450000","contextTokens":"128k"}}"#
             )),
@@ -227,7 +227,7 @@ async fn database_config_router_serves_signed_subject_model_catalog_commands() {
 
     let vendors_payload = request_json(
         router.clone(),
-        signed_request("GET", "/backend/v3/api/router/model-vendors", Body::empty()),
+        signed_request("GET", "/backend/v3/api/ai/model_vendors", Body::empty()),
     )
     .await;
     let vendors = vendors_payload["data"]["items"].as_array().unwrap();
@@ -237,7 +237,7 @@ async fn database_config_router_serves_signed_subject_model_catalog_commands() {
         router,
         signed_request(
             "POST",
-            "/backend/v3/api/router/models/sync",
+            "/backend/v3/api/ai/models/refresh",
             Body::from(r#"{"source":"local_catalog"}"#),
         ),
     )
@@ -315,7 +315,7 @@ async fn database_config_router_serves_signed_subject_announcement_crud() {
         .clone()
         .oneshot(app_session_request(
             "POST",
-            "/backend/v3/api/router/announcements",
+            "/backend/v3/api/content/announcements",
             Body::from(
                 r#"{"title":"Gateway maintenance","target":"all","status":"draft","content":"Maintenance window"}"#,
             ),
@@ -336,7 +336,7 @@ async fn database_config_router_serves_signed_subject_announcement_crud() {
         .clone()
         .oneshot(signed_request(
             "PATCH",
-            "/backend/v3/api/router/announcements/1",
+            "/backend/v3/api/content/announcements/1",
             Body::from(r#"{"status":"published","target":"vip"}"#),
         ))
         .await
@@ -355,7 +355,7 @@ async fn database_config_router_serves_signed_subject_announcement_crud() {
         .clone()
         .oneshot(signed_request(
             "GET",
-            "/backend/v3/api/router/announcements",
+            "/backend/v3/api/content/announcements",
             Body::empty(),
         ))
         .await
@@ -373,7 +373,7 @@ async fn database_config_router_serves_signed_subject_announcement_crud() {
         .clone()
         .oneshot(signed_request(
             "DELETE",
-            "/backend/v3/api/router/announcements/1",
+            "/backend/v3/api/content/announcements/1",
             Body::empty(),
         ))
         .await
@@ -817,7 +817,7 @@ async fn database_config_router_serves_signed_subject_provider_secret_crud_witho
         .clone()
         .oneshot(app_session_request(
             "POST",
-            "/backend/v3/api/provider-secrets",
+            "/backend/v3/api/provider_secrets",
             Body::from(
                 r#"{"providerCode":"OpenAI","name":"OpenAI production","secretRef":"vault://providers/openai/account/main","authType":"api-key"}"#,
             ),
@@ -843,7 +843,7 @@ async fn database_config_router_serves_signed_subject_provider_secret_crud_witho
         .clone()
         .oneshot(signed_request(
             "PUT",
-            "/backend/v3/api/provider-secrets",
+            "/backend/v3/api/provider_secrets",
             Body::from(format!(
                 r#"{{"id":"{provider_secret_id}","name":"OpenAI rotated","secretRef":"vault://providers/openai/account/rotated","status":"disabled"}}"#
             )),
@@ -868,7 +868,7 @@ async fn database_config_router_serves_signed_subject_provider_secret_crud_witho
         .clone()
         .oneshot(signed_request(
             "POST",
-            "/backend/v3/api/provider-secrets/list",
+            "/backend/v3/api/provider_secrets/list",
             Body::from(r#"{"providerCode":"openai"}"#),
         ))
         .await
@@ -887,7 +887,7 @@ async fn database_config_router_serves_signed_subject_provider_secret_crud_witho
         .clone()
         .oneshot(signed_request(
             "DELETE",
-            &format!("/backend/v3/api/provider-secrets/{provider_secret_id}"),
+            &format!("/backend/v3/api/provider_secrets/{provider_secret_id}"),
             Body::empty(),
         ))
         .await
@@ -924,7 +924,7 @@ async fn database_config_router_serves_signed_subject_access_group_crud() {
         .clone()
         .oneshot(app_session_request(
             "POST",
-            "/backend/v3/api/router/access-groups",
+            "/backend/v3/api/router/access_groups",
             Body::from(
                 r#"{"name":"\u4e2d\u6587 enterprise","platform":"OpenAI","billingType":"standard","rateMultiplier":1.25,"type":"dedicated","capacity":{"total":500},"status":"active"}"#,
             ),
@@ -955,7 +955,7 @@ async fn database_config_router_serves_signed_subject_access_group_crud() {
         .clone()
         .oneshot(signed_request(
             "PATCH",
-            &format!("/backend/v3/api/router/access-groups/{group_id}"),
+            &format!("/backend/v3/api/router/access_groups/{group_id}"),
             Body::from(
                 r#"{"name":"OpenAI dedicated","rateMultiplier":1.5,"capacity":{"total":750},"status":"disabled"}"#,
             ),
@@ -978,7 +978,7 @@ async fn database_config_router_serves_signed_subject_access_group_crud() {
         .clone()
         .oneshot(signed_request(
             "GET",
-            "/backend/v3/api/router/access-groups",
+            "/backend/v3/api/router/access_groups",
             Body::empty(),
         ))
         .await
@@ -1002,7 +1002,7 @@ async fn database_config_router_serves_signed_subject_access_group_crud() {
         .clone()
         .oneshot(signed_request(
             "DELETE",
-            &format!("/backend/v3/api/router/access-groups/{group_id}"),
+            &format!("/backend/v3/api/router/access_groups/{group_id}"),
             Body::empty(),
         ))
         .await
@@ -1019,7 +1019,7 @@ async fn database_config_router_serves_signed_subject_access_group_crud() {
     let final_list_response = router
         .oneshot(signed_request(
             "GET",
-            "/backend/v3/api/router/access-groups",
+            "/backend/v3/api/router/access_groups",
             Body::empty(),
         ))
         .await
@@ -1062,7 +1062,7 @@ async fn database_config_router_serves_signed_subject_ip_rate_limit_create_and_l
         .clone()
         .oneshot(app_session_request(
             "POST",
-            "/backend/v3/api/router/rate-limits/ip",
+            "/backend/v3/api/router/rate_limits/ip",
             Body::from(
                 r#"{"ruleName":"\u4e2d\u6587 crawler guard","targetIp":"10.10.10.9/24","rps":12,"rpm":360,"blockDuration":"15m"}"#,
             ),
@@ -1091,7 +1091,7 @@ async fn database_config_router_serves_signed_subject_ip_rate_limit_create_and_l
         .clone()
         .oneshot(signed_request(
             "GET",
-            "/backend/v3/api/router/rate-limits/ip",
+            "/backend/v3/api/router/rate_limits/ip",
             Body::empty(),
         ))
         .await
@@ -1113,7 +1113,7 @@ async fn database_config_router_serves_signed_subject_ip_rate_limit_create_and_l
         .clone()
         .oneshot(signed_request(
             "POST",
-            "/backend/v3/api/router/rate-limits/ip",
+            "/backend/v3/api/router/rate_limits/ip",
             Body::from(
                 r#"{"ruleName":"Crawler guard updated","targetIp":"10.10.10.88/24","rps":25,"rpm":600,"blockDuration":"1h","status":"inactive"}"#,
             ),
@@ -1146,7 +1146,7 @@ async fn database_config_router_serves_signed_subject_ip_rate_limit_create_and_l
         router,
         signed_request(
             "GET",
-            "/backend/v3/api/router/rate-limits/ip",
+            "/backend/v3/api/router/rate_limits/ip",
             Body::empty(),
         ),
     )
@@ -1187,7 +1187,7 @@ async fn database_config_router_serves_signed_subject_api_key_rate_limit_create_
         .clone()
         .oneshot(app_session_request(
             "POST",
-            "/backend/v3/api/router/rate-limits/api-keys",
+            "/backend/v3/api/router/rate_limits/api_keys",
             Body::from(r#"{"keyPrefix":"sk-test","user":"30","rps":7,"rpd":1200,"burst":14}"#),
         ))
         .await
@@ -1210,7 +1210,7 @@ async fn database_config_router_serves_signed_subject_api_key_rate_limit_create_
     let list_response = router
         .oneshot(signed_request(
             "GET",
-            "/backend/v3/api/router/rate-limits/api-keys",
+            "/backend/v3/api/router/rate_limits/api_keys",
             Body::empty(),
         ))
         .await
@@ -1248,7 +1248,7 @@ async fn database_config_router_serves_signed_subject_model_rate_limit_create_an
         .clone()
         .oneshot(app_session_request(
             "POST",
-            "/backend/v3/api/router/rate-limits/models",
+            "/backend/v3/api/router/rate_limits/models",
             Body::from(
                 r#"{"model":"gpt-4o-mini","group":"standard-group","rpm":600,"tpm":120000}"#,
             ),
@@ -1272,7 +1272,7 @@ async fn database_config_router_serves_signed_subject_model_rate_limit_create_an
     let list_response = router
         .oneshot(signed_request(
             "GET",
-            "/backend/v3/api/router/rate-limits/models",
+            "/backend/v3/api/router/rate_limits/models",
             Body::empty(),
         ))
         .await
@@ -1616,7 +1616,7 @@ async fn database_config_router_serves_signed_subject_admin_user_management() {
         .clone()
         .oneshot(signed_request(
             "POST",
-            "/backend/v3/api/router/users/30/balance-adjustments",
+            "/backend/v3/api/billing/users/30/balance_adjustments",
             Body::from(r#"{"amount":5,"type":"recharge"}"#),
         ))
         .await
@@ -1673,7 +1673,7 @@ async fn database_config_router_serves_signed_subject_admin_marketing() {
 
     let coupons_payload = request_json(
         router.clone(),
-        signed_request("POST", "/backend/v3/api/coupon/list", Body::from("{}")),
+        signed_request("GET", "/backend/v3/api/billing/coupons", Body::empty()),
     )
     .await;
     assert_eq!("2000", coupons_payload["code"]);
@@ -1687,7 +1687,7 @@ async fn database_config_router_serves_signed_subject_admin_marketing() {
         router.clone(),
         signed_request(
             "GET",
-            "/backend/v3/api/router/coupon-batches",
+            "/backend/v3/api/billing/coupon_batches",
             Body::empty(),
         ),
     )
@@ -1697,7 +1697,7 @@ async fn database_config_router_serves_signed_subject_admin_marketing() {
 
     let promo_payload = request_json(
         router.clone(),
-        signed_request("GET", "/backend/v3/api/router/coupon-codes", Body::empty()),
+        signed_request("GET", "/backend/v3/api/billing/coupon_codes", Body::empty()),
     )
     .await;
     assert_eq!("WELCOME-0002", promo_payload["data"]["items"][0]["code"]);
@@ -1711,7 +1711,7 @@ async fn database_config_router_serves_signed_subject_admin_marketing() {
         .clone()
         .oneshot(signed_request(
             "PATCH",
-            "/backend/v3/api/router/coupon-codes/502/status",
+            "/backend/v3/api/billing/coupon_codes/502/status",
             Body::from(r#"{"status":"available"}"#),
         ))
         .await
@@ -1731,7 +1731,7 @@ async fn database_config_router_serves_signed_subject_admin_marketing() {
 
     let promo_after_invalid_update = request_json(
         router.clone(),
-        signed_request("GET", "/backend/v3/api/router/coupon-codes", Body::empty()),
+        signed_request("GET", "/backend/v3/api/billing/coupon_codes", Body::empty()),
     )
     .await;
     assert_eq!(
@@ -1745,7 +1745,11 @@ async fn database_config_router_serves_signed_subject_admin_marketing() {
 
     let redemptions_payload = request_json(
         router.clone(),
-        signed_request("POST", "/backend/v3/api/user/coupon/list", Body::from("{}")),
+        signed_request(
+            "GET",
+            "/backend/v3/api/billing/users/coupons",
+            Body::empty(),
+        ),
     )
     .await;
     assert_eq!(
@@ -1757,9 +1761,9 @@ async fn database_config_router_serves_signed_subject_admin_marketing() {
     let recharges_payload = request_json(
         router.clone(),
         signed_request(
-            "POST",
-            "/backend/v3/api/vip/recharge/list",
-            Body::from("{}"),
+            "GET",
+            "/backend/v3/api/billing/recharges/records",
+            Body::empty(),
         ),
     )
     .await;
@@ -1771,6 +1775,22 @@ async fn database_config_router_serves_signed_subject_admin_marketing() {
         "1000",
         recharges_payload["data"]["items"][0]["usd_credited"]
     );
+
+    let recharge_packages_payload = request_json(
+        router.clone(),
+        signed_request(
+            "GET",
+            "/backend/v3/api/billing/recharges/packages",
+            Body::empty(),
+        ),
+    )
+    .await;
+    assert_eq!(
+        "10.00",
+        recharge_packages_payload["data"]["items"][0]["rmb"]
+    );
+    assert_eq!(25, recharge_packages_payload["data"]["items"][0]["bonus"]);
+    assert_eq!(125, recharge_packages_payload["data"]["items"][0]["points"]);
 
     let referrals_payload = request_json(
         router.clone(),
@@ -1788,7 +1808,7 @@ async fn database_config_router_serves_signed_subject_admin_marketing() {
         router.clone(),
         signed_request(
             "POST",
-            "/backend/v3/api/coupon",
+            "/backend/v3/api/billing/coupons",
             Body::from(r#"{"name":"Launch credit","type":"amount","value":"$8.50"}"#),
         ),
     )
@@ -1807,7 +1827,7 @@ async fn database_config_router_serves_signed_subject_admin_marketing() {
         router.clone(),
         signed_request(
             "POST",
-            "/backend/v3/api/router/coupon-batches/generate",
+            "/backend/v3/api/billing/coupon_batches",
             Body::from(format!(
                 r#"{{"couponId":"{new_coupon_id}","name":"Launch batch","count":2,"prefix":"LAUNCH"}}"#
             )),
@@ -1822,11 +1842,66 @@ async fn database_config_router_serves_signed_subject_admin_marketing() {
     assert_eq!("LAUNCH-0001", generate_payload["data"]["codes"][0]["code"]);
     assert_eq!("LAUNCH-0002", generate_payload["data"]["codes"][1]["code"]);
 
+    let create_recharge_package_payload = request_json(
+        router.clone(),
+        signed_request(
+            "POST",
+            "/backend/v3/api/billing/recharges/packages",
+            Body::from(r#"{"rmb":"12.00","bonus":30,"status":"active"}"#),
+        ),
+    )
+    .await;
+    assert_eq!(
+        "12.00",
+        create_recharge_package_payload["data"]["item"]["rmb"]
+    );
+    assert_eq!(30, create_recharge_package_payload["data"]["item"]["bonus"]);
+    assert_eq!(
+        150,
+        create_recharge_package_payload["data"]["item"]["points"]
+    );
+    let new_recharge_package_id = create_recharge_package_payload["data"]["item"]["id"]
+        .as_str()
+        .unwrap()
+        .to_owned();
+
+    let update_recharge_package_payload = request_json(
+        router.clone(),
+        signed_request(
+            "PUT",
+            format!("/backend/v3/api/billing/recharges/packages/{new_recharge_package_id}")
+                .as_str(),
+            Body::from(r#"{"rmb":"20.00","bonus":50,"status":"inactive"}"#),
+        ),
+    )
+    .await;
+    assert_eq!(
+        "20.00",
+        update_recharge_package_payload["data"]["item"]["rmb"]
+    );
+    assert_eq!(50, update_recharge_package_payload["data"]["item"]["bonus"]);
+    assert_eq!(
+        250,
+        update_recharge_package_payload["data"]["item"]["points"]
+    );
+
+    let delete_recharge_package_payload = request_json(
+        router.clone(),
+        signed_request(
+            "DELETE",
+            format!("/backend/v3/api/billing/recharges/packages/{new_recharge_package_id}")
+                .as_str(),
+            Body::empty(),
+        ),
+    )
+    .await;
+    assert_eq!(true, delete_recharge_package_payload["data"]["deleted"]);
+
     let second_generate_payload = request_json(
         router.clone(),
         signed_request(
             "POST",
-            "/backend/v3/api/router/coupon-batches/generate",
+            "/backend/v3/api/billing/coupon_batches",
             Body::from(format!(
                 r#"{{"couponId":"{new_coupon_id}","name":"Launch batch two","count":2,"prefix":"LAUNCH"}}"#
             )),
@@ -1848,7 +1923,7 @@ async fn database_config_router_serves_signed_subject_admin_marketing() {
 
     let promo_after_generation_payload = request_json(
         router.clone(),
-        signed_request("GET", "/backend/v3/api/router/coupon-codes", Body::empty()),
+        signed_request("GET", "/backend/v3/api/billing/coupon_codes", Body::empty()),
     )
     .await;
     let first_batch_id = generate_payload["data"]["batch"]["id"].as_str().unwrap();
@@ -1890,7 +1965,7 @@ async fn database_config_router_serves_signed_subject_admin_marketing() {
         router.clone(),
         signed_request_for_subject(
             "POST",
-            "/backend/v3/api/coupon",
+            "/backend/v3/api/billing/coupons",
             Body::from(r#"{"name":"Regional launch credit","type":"amount","value":"$9.00"}"#),
             other_subject,
         ),
@@ -1904,7 +1979,7 @@ async fn database_config_router_serves_signed_subject_admin_marketing() {
         router.clone(),
         signed_request_for_subject(
             "POST",
-            "/backend/v3/api/router/coupon-batches/generate",
+            "/backend/v3/api/billing/coupon_batches",
             Body::from(format!(
                 r#"{{"couponId":"{other_coupon_id}","name":"Regional launch batch","count":2,"prefix":"LAUNCH"}}"#
             )),
@@ -1929,7 +2004,7 @@ async fn database_config_router_serves_signed_subject_admin_marketing() {
         router.clone(),
         signed_request(
             "PATCH",
-            format!("/backend/v3/api/router/coupon-codes/{new_promo_id}/status").as_str(),
+            format!("/backend/v3/api/billing/coupon_codes/{new_promo_id}/status").as_str(),
             Body::from(r#"{"status":"voided"}"#),
         ),
     )
@@ -1940,7 +2015,7 @@ async fn database_config_router_serves_signed_subject_admin_marketing() {
         router,
         signed_request(
             "DELETE",
-            format!("/backend/v3/api/coupon/{new_coupon_id}").as_str(),
+            format!("/backend/v3/api/billing/coupons/{new_coupon_id}").as_str(),
             Body::empty(),
         ),
     )
@@ -1969,7 +2044,11 @@ async fn database_config_router_serves_signed_subject_admin_finance() {
 
     let transactions_payload = request_json(
         router.clone(),
-        signed_request("GET", "/backend/v3/api/finance/admin/ledger", Body::empty()),
+        signed_request(
+            "GET",
+            "/backend/v3/api/billing/finance/ledger",
+            Body::empty(),
+        ),
     )
     .await;
     assert_eq!("2000", transactions_payload["code"]);
@@ -1997,7 +2076,7 @@ async fn database_config_router_serves_signed_subject_admin_finance() {
         router,
         signed_request(
             "GET",
-            "/backend/v3/api/router/finance/usage-statements",
+            "/backend/v3/api/billing/finance/usage_statements",
             Body::empty(),
         ),
     )
@@ -2037,11 +2116,9 @@ async fn database_config_router_serves_signed_subject_admin_record() {
     let payload = request_json(
         router,
         signed_request(
-            "POST",
-            "/backend/v3/api/record/list",
-            Body::from(
-                r#"{"user":"owner@example.com","token":"Production","model":"gpt-4o-mini"}"#,
-            ),
+            "GET",
+            "/backend/v3/api/system/records?user=owner%40example.com&token=Production&model=gpt-4o-mini",
+            Body::empty(),
         ),
     )
     .await;
@@ -2084,10 +2161,10 @@ async fn optional_database_config_keeps_manifest_fallback_when_catalog_is_not_co
     let response = router
         .oneshot(
             Request::builder()
-                .method("POST")
-                .uri("/backend/v3/api/model/list")
+                .method("GET")
+                .uri("/backend/v3/api/ai/models")
                 .header("content-type", "application/json")
-                .body(Body::from("{}"))
+                .body(Body::empty())
                 .unwrap(),
         )
         .await
@@ -2152,13 +2229,15 @@ fn signed_request_for_subject(
 fn app_session_request(method: &str, path: &str, body: Body) -> Request<Body> {
     let issued_at = current_unix_seconds();
     let expires_at = issued_at + 3600;
-    let authorization =
-        app_session_bearer_token(default_trusted_request_subject(), issued_at, expires_at).unwrap();
+    let (authorization, access_token) =
+        app_session_dual_token_headers(default_trusted_request_subject(), issued_at, expires_at)
+            .unwrap();
     Request::builder()
         .method(method)
         .uri(path)
         .header("content-type", "application/json")
         .header("authorization", authorization)
+        .header("Sdkwork-Access-Token", access_token)
         .body(body)
         .unwrap()
 }
@@ -2207,13 +2286,15 @@ async fn configured_router_with_provider_secret_map(
 fn app_session_request_builder(method: &str, path: &str) -> axum::http::request::Builder {
     let issued_at = current_unix_seconds();
     let expires_at = issued_at + 3600;
-    let authorization =
-        app_session_bearer_token(default_trusted_request_subject(), issued_at, expires_at).unwrap();
+    let (authorization, access_token) =
+        app_session_dual_token_headers(default_trusted_request_subject(), issued_at, expires_at)
+            .unwrap();
     Request::builder()
         .method(method)
         .uri(path)
         .header("content-type", "application/json")
         .header("authorization", authorization)
+        .header("Sdkwork-Access-Token", access_token)
 }
 
 async fn request_json(router: axum::Router, request: Request<Body>) -> serde_json::Value {
@@ -2295,16 +2376,46 @@ async fn create_schema(pool: &SqlitePool) {
             vendor_code TEXT NOT NULL,
             region_code TEXT,
             vendor_name_snapshot TEXT,
+            family_id INTEGER,
+            family_code TEXT,
+            provider_hint TEXT,
+            model_family TEXT,
+            model_version TEXT,
+            model_aliases TEXT,
             capability INTEGER,
             modalities TEXT,
+            input_modalities TEXT,
+            output_modalities TEXT,
+            icon_url TEXT,
+            color_token TEXT,
+            docs_url TEXT,
+            license_type INTEGER,
+            description TEXT,
+            capability_intro TEXT,
+            limitations TEXT,
+            supported_languages TEXT,
+            use_cases TEXT,
+            training_data_cutoff TEXT,
             context_tokens INTEGER,
+            max_input_tokens INTEGER,
+            max_output_tokens INTEGER,
+            max_duration_seconds INTEGER,
             supports_streaming INTEGER,
             supports_tools INTEGER,
             supports_json_schema INTEGER,
             api_format TEXT,
+            performance_profile TEXT,
+            default_pricing_id INTEGER,
+            release_stage INTEGER NOT NULL DEFAULT 1,
+            shelf_state INTEGER NOT NULL DEFAULT 1,
+            routing_state INTEGER NOT NULL DEFAULT 1,
+            deprecated_at TEXT,
+            retired_at TEXT,
+            replacement_model TEXT,
             capabilities TEXT NOT NULL DEFAULT '[]',
             status INTEGER NOT NULL,
             deleted_at TEXT,
+            deleted_by INTEGER,
             rank_score TEXT
         )"#,
         r#"CREATE TABLE integration_provider (
@@ -4006,6 +4117,9 @@ async fn seed_admin_marketing(pool: &SqlitePool) {
         r#"INSERT INTO plus_vip_recharge
             (id, uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope, user_id, vip_level_id, amount, point_amount, recharge_type, recharge_time, transaction_no, status, remark, recharge_method_id, recharge_pack_id)
             VALUES (701, 'recharge-701', '2026-04-29 10:00:00', '2026-04-29 10:00:00', 0, 10, 20, 1, 30, NULL, '10.00', 1000, 1, '2026-04-29 10:00:00', 'recharge-100', 1, '', 1, NULL)"#,
+        r#"INSERT INTO plus_vip_recharge_pack
+            (id, uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope, app_id, name, description, price, point_amount, vip_duration_days, status, sort_weight, valid_from, valid_to, remark, recharge_type)
+            VALUES (801, 'recharge-pack-801', '2026-04-29 10:00:00', '2026-04-29 10:00:00', 0, 10, 20, 1, 1, 'Starter Recharge Pack', '', '10.00', 25, NULL, 1, 1, NULL, NULL, '', 2)"#,
         r#"INSERT INTO ops_referral_stat_snapshot
             (id, uuid, tenant_id, organization_id, source_type, source_id, source_version, status, created_at, updated_at, rebuild_version, metadata, inviter_user_id, inviter_name_snapshot, inviter_email_snapshot, invitation_code_id, invitation_code, invite_link, snapshot_period, period_start, period_end, total_invited_count, direct_invited_count, secondary_invited_count, paid_invitee_count, total_revenue_amount, reward_awarded_amount, reward_pending_amount, currency, snapshot_at)
             VALUES (801, 'referral-801', 10, 20, 'daily', 30, 1, 1, '2026-04-29 10:00:00', '2026-04-29 10:00:00', 0, '{}', 30, 'Owner', 'owner@example.com', 1, 'OWNER', 'https://claw.local/invite/OWNER', 'daily', '2026-04-29 00:00:00', '2026-04-29 23:59:59', 3, 2, 1, 1, '120.00', '12.00', '1.00', 'USD', '2026-04-29 10:00:00')"#,

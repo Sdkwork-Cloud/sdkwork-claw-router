@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mrscraper@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mrscraper",
+  "skill": {
+    "id": 15765,
+    "skillKey": "clawhub-mrscraper",
+    "name": "MrScraper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mrscraper",
+    "url": "https://clawhub.ai/skills/mrscraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mrscraper-53ccdcd5f71de358.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run AI-powered, unblockable web scraping, data extraction with natural language via the MrScraper API"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ai-mrscraper",
+      "userId": "publishers:ai-mrscraper",
+      "displayName": "MrScraper",
+      "image": "https://avatars.githubusercontent.com/u/261125219?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 773,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1772604247356,
+      "changelog": "- Added Bulk Rerun Manual Scraper",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:28a176df7fefd4d26ffc6ab6c3649bd7b6f9c5c2530a55e8f73043b1b3be2579"
+}

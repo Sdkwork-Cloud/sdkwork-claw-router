@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/playlistgen@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.playlistgen",
+  "skill": {
+    "id": 36167,
+    "skillKey": "clawhub-playlistgen",
+    "name": "MusicPlaylistGen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "playlistgen",
+    "url": "https://clawhub.ai/skills/playlistgen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/playlistgen-ef72eff290c6a75f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate natural language playlists from your local music library using LLMs, accessible via web or API after indexing your music folder once."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "asriverwang",
+      "userId": "s1747y2ca8xhb5z6ksja1gsvms83h2q0",
+      "displayName": "Ju-Chiang Wang",
+      "image": "https://avatars.githubusercontent.com/u/9029902?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 208,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774416018343,
+      "changelog": "Version 1.0.3\n\n- Added a sample environment configuration file (`env.sample`) to the repository.\n- Updated setup instructions to refer to `env.sample` instead of `.env.example` for environment variable configuration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bdaf2fee7290157aa6d8e99763d62df98f46b29afb283372bd6f83680edfbe55"
+}

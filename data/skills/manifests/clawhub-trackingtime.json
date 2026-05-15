@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33338,
+  "uuid": "skill-clawhub-trackingtime",
+  "skillKey": "clawhub-trackingtime",
+  "name": "Trackingtime",
+  "summary": "TrackingTime integration. Manage data, records, and automate workflows. Use when the user wants to interact with TrackingTime data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trackingtime",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "TrackingTime integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with TrackingTime data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trackingtime@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trackingtime",
+      "url": "https://clawhub.ai/skills/trackingtime"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trackingtime",
+    "url": "https://clawhub.ai/skills/trackingtime",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trackingtime-3a2aec4dc400f9a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trackingtime@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-trackingtime-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:14f397d272740e0437e768b29dfe8e99339e661605d55c886ae9e53afce1edec",
+      "artifactSizeBytes": 1866
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:54:44.914Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15585,
+  "uuid": "skill-clawhub-docsync",
+  "skillKey": "clawhub-docsync",
+  "name": "DocSync",
+  "summary": "Generate and auto-sync documentation from code with git hooks; detect and fix doc drift using tree-sitter parsing and semantic diffs locally.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docsync",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "suhteevah",
+      "features": [
+        "Generate and auto-sync documentation from code with git hooks",
+        "detect and fix doc drift using tree-sitter parsing and semantic diffs locally."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/docsync@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2342183?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "docsync",
+      "url": "https://clawhub.ai/skills/docsync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docsync",
+    "url": "https://clawhub.ai/skills/docsync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docsync-0867ed50acccb27a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/docsync@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-docsync-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:017a5c389935b032aa4e00fe04c8211590f1331ff4ebc25c319a3a3d5e326952",
+      "artifactSizeBytes": 1864
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T19:42:00.714Z"
+}

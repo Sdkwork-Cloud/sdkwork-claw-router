@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/asana-pat@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.asana_pat",
+  "skill": {
+    "id": 10278,
+    "skillKey": "clawhub-asana-pat",
+    "name": "Asana (PAT)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "asana-pat",
+    "url": "https://clawhub.ai/skills/asana-pat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/asana-pat-f82668da5de4f158.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Asana tasks, projects, briefs, status updates, custom fields, dependencies, attachments, events, and timelines via Personal Access Token (PAT)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "l-u-c-k-y",
+      "userId": "publishers:l-u-c-k-y",
+      "displayName": "L-U-C-K-Y",
+      "image": "https://avatars.githubusercontent.com/u/14868134?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2482,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 3,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1769958612310,
+      "changelog": "**Summary:**  \nThis release renames the skill to \"asana\", improves integration guidance for OpenClaw/Clawdbot, and streamlines configuration and usage documentation.\n\n- Skill renamed from \"asana-pat\" to \"asana\".\n- Updated environment variable guidance for OpenClaw/Clawdbot, including best practices for token injection and config management.\n- Refined and reorganized documentation for clearer setup, key workflows, and recommendations.\n- Improved CLI usage instructions, with concise command examples and task workflows.\n- Metadata fields updated; non-essential fields and legacy details removed.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7bed883498b927a9296d8a269e0821c4c25b07d42e25c209763509678a95d63b"
+}

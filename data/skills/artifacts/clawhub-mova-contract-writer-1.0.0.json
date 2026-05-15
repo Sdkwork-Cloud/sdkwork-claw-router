@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mova-contract-writer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mova_contract_writer",
+  "skill": {
+    "id": 52792,
+    "skillKey": "clawhub-mova-contract-writer",
+    "name": "Mova Contract Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mova-contract-writer",
+    "url": "https://clawhub.ai/skills/mova-contract-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mova-contract-writer-dc48e6cd3e90566c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Translate a pre-contract (output of mova-intent-calibration) into a complete, valid MOVA contract — envelope, data schema references, instruction profile, an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mova-compact",
+      "userId": "s174xckyab9x52fg7dps9cca2983g5a4",
+      "displayName": "Sergii Miasoiedov",
+      "image": "https://avatars.githubusercontent.com/u/258828376?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774858885222,
+      "changelog": "Initial release: translate a VALID pre-contract into a complete MOVA contract with envelope, instruction profile, and episode frame",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9f9a8b46b772c19820668bd5d247d0681602dd80218372fce9e51143a2c5cd39"
+}

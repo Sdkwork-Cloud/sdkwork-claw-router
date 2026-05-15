@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58274,
+  "uuid": "skill-clawhub-ugreen-nas-openclaw-backup",
+  "skillKey": "clawhub-ugreen-nas-openclaw-backup",
+  "name": "绿联NAS OpenClaw备份",
+  "summary": "绿联NAS OpenClaw Docker部署的备份与恢复工具 / Ugreen NAS OpenClaw Docker deployment backup and restore tool",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ugreen_nas_openclaw_backup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zh4o",
+      "features": [
+        "绿联NAS OpenClaw Docker部署的备份与恢复工具 / Ugreen NAS OpenClaw Docker deployment backup and restore tool"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ugreen-nas-openclaw-backup@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45188515?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ugreen-nas-openclaw-backup",
+      "url": "https://clawhub.ai/skills/ugreen-nas-openclaw-backup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ugreen-nas-openclaw-backup",
+    "url": "https://clawhub.ai/skills/ugreen-nas-openclaw-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ugreen-nas-openclaw-backup-97132598de266a2d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ugreen-nas-openclaw-backup@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-ugreen-nas-openclaw-backup-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d45a82139d2cf83bb9416b4e5150b3ff02c16e4d4a6521d46127f026e1812081",
+      "artifactSizeBytes": 1957
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T11:28:23.588Z"
+}

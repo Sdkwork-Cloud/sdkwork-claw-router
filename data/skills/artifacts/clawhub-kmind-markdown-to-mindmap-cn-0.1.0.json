@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kmind-markdown-to-mindmap-cn@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kmind_markdown_to_mindmap_cn",
+  "skill": {
+    "id": 64722,
+    "skillKey": "clawhub-kmind-markdown-to-mindmap-cn",
+    "name": "KMind文档转思维导图"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kmind-markdown-to-mindmap-cn",
+    "url": "https://clawhub.ai/skills/kmind-markdown-to-mindmap-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kmind-markdown-to-mindmap-cn-291bd55677cc5fcd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将 Markdown 大纲或纯文本转换为 KMind 导图，并导出 SVG 或 PNG 图片。支持主题、布局、连线、深浅色和彩虹分支配置。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "suka233",
+      "userId": "s1752xpm2vzsznfdctdne5mtns83gscd",
+      "displayName": "suka233",
+      "image": "https://avatars.githubusercontent.com/u/43712875?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775218263522,
+      "changelog": "- Initial release: Convert Markdown outlines or plain text into KMind mind maps with SVG or PNG export.\n- Supports theme, layout, connector, light/dark appearance, and rainbow branch configurations.\n- Operates fully offline; no internet connection required.\n- Enables easy command-line use with sensible defaults and manual/auto browser modes.\n- Exposes only safe theme, layout, and edge route options for enhanced security.\n- Offers `.kmindz.svg` export for further editing in KMind Zen clients.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bf12ca0e15642ca63fd25de1568bc64abc8f016aefc6ae0b4f538a02a8ab2fea"
+}

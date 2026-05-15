@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/orchestrix-guide@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.orchestrix_guide",
+  "skill": {
+    "id": 50617,
+    "skillKey": "clawhub-orchestrix-guide",
+    "name": "Orchestrix Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "orchestrix-guide",
+    "url": "https://clawhub.ai/skills/orchestrix-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/orchestrix-guide-8c61b79f0ad93647.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Orchestrix multi-agent workflow guide for OpenClaw. Defines two operational phases: (1) Planning Phase — sequential agent orchestration in a single tmux wind..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dorayo",
+      "userId": "s170vkqknc65p9m708z2yhk5p583xz4c",
+      "displayName": "dorayo",
+      "image": "https://avatars.githubusercontent.com/u/3347991?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 460,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1774880625781,
+      "changelog": "**Major update: tmux command protocol and completion detection fully revised, plus new test phase.**\n\n- Standardized tmux command protocol to a strict 3-step pattern (send content → wait 1s → Enter) for all Claude Code CLI interactions.\n- Added detailed handling and timing for multi-line content, agent switching, /clear usage, and trust dialog auto-accept.\n- Reworked task completion detection rules: now uses Claude Code’s “Xxxed for <duration>” message as primary signal, plus enhanced polling scripts and approval automation.\n- New global workflow adds Phase C (Testing): epic smoke test, fix, and retest loop until all pass.\n- Scripts like monitor-agent.sh and ensure-session.sh are now referenced for robust automation.\n- Documentation clarified, edge cases and error handling explictly described.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:215ce13147cd3c6d91225d9152a8051f8335d7e5525736f79bcd70ed803a831f"
+}

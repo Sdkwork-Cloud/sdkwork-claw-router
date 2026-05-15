@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24507,
+  "uuid": "skill-clawhub-job-claw",
+  "skillKey": "clawhub-job-claw",
+  "name": "JobClaw",
+  "summary": "AI-powered automated job search skill. Searches LinkedIn and Indeed daily, scores jobs against the user's profile, and saves results to a local CSV. Use when...",
+  "version": "1.0.20260329-142ceea",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.job_claw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Simon",
+      "features": [
+        "AI-powered automated job search skill",
+        "Searches LinkedIn and Indeed daily, scores jobs against the user's profile, and saves results t.",
+        "Use when..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/job-claw@1.0.20260329-142ceea",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17016006?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "job-claw",
+      "url": "https://clawhub.ai/skills/job-claw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "job-claw",
+    "url": "https://clawhub.ai/skills/job-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/job-claw-c8930c05e3d52ce0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/job-claw@1.0.20260329-142ceea",
+      "artifactUrl": "data/skills/artifacts/clawhub-job-claw-1.0.20260329-142ceea.json",
+      "version": "1.0.20260329-142ceea",
+      "runtime": "metadata",
+      "checksumHash": "sha256:adc742cccd329d590db9e288eab166e70db329bfa11c07c873741ba6607f55cd",
+      "artifactSizeBytes": 2550
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T15:43:14.413Z"
+}

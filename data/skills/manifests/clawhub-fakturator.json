@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56040,
+  "uuid": "skill-clawhub-fakturator",
+  "skillKey": "clawhub-fakturator",
+  "name": "Fakturownik",
+  "summary": "Profesjonalny generator faktur VAT zgodny z polskim prawem, oferujący szablony, automatyczne obliczenia, numerację i eksport PDF.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fakturator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tomasz-Pedzierski-Infinity",
+      "features": [
+        "Profesjonalny generator faktur VAT zgodny z polskim prawem, oferujący szablony, automatyczne ob."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fakturator@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267662562?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fakturator",
+      "url": "https://clawhub.ai/skills/fakturator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fakturator",
+    "url": "https://clawhub.ai/skills/fakturator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fakturator-6458d00d6b11fb75.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fakturator@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fakturator-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b5b758fd335d372766c48803d7696b9ac27cef6d588472c7119e2ac6b0451ab6",
+      "artifactSizeBytes": 2159
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T22:35:23.832Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-to-video-by-prompt@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_to_video_by_prompt",
+  "skill": {
+    "id": 53320,
+    "skillKey": "clawhub-image-to-video-by-prompt",
+    "name": "Image To Video By Prompt"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-to-video-by-prompt",
+    "url": "https://clawhub.ai/skills/image-to-video-by-prompt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-to-video-by-prompt-8df79d2ef3b3ce4b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — animate this image into a 5-second video of the shoes in motion on a track..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 120,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776446045936,
+      "changelog": "Initial release — turn images into animated videos with prompts.\n\n- Instantly animate images into 5-second AI-generated video clips via prompt.\n- Supports JPG, PNG, WEBP, HEIC uploads up to 200MB.\n- Simple onboarding: auto-acquire a free 7-day token if needed, connect to backend, and start generating videos.\n- Drag & drop/upload, prompt, preview, and export videos (1080p MP4) in 30–90 seconds.\n- Built-in credit management, file type checks, and streamlined error handling.\n- Designed for ease of use—ideal for marketers, social creators, and designers.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d4c49c124345ba0c18601bec3cb4749ca2922a19a7b1de90e2bb22cf89468d82"
+}

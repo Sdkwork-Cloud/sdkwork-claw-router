@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/unifuncs-deep-research@0.0.7",
+  "version": "0.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unifuncs_deep_research",
+  "skill": {
+    "id": 14231,
+    "skillKey": "clawhub-unifuncs-deep-research",
+    "name": "Unifuncs Deep Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unifuncs-deep-research",
+    "url": "https://clawhub.ai/skills/unifuncs-deep-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unifuncs-deep-research-f5f03929cd60f606.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use UniFuncs Deep Research API to run in-depth research and generate long-form reports (10,000 words or more). Use this skill when users request deep researc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vinlic",
+      "userId": "s17azb6vg38k6qc2j24htf3pk583qew4",
+      "displayName": "UniFuncs",
+      "image": "https://avatars.githubusercontent.com/u/20235341?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1240,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.0.7",
+      "createdAt": 1774794585128,
+      "changelog": "Enforces explicit second-step user confirmation before starting deep research.\n\n- Added a mandatory process: summarize the research request and require clear user confirmation before running any Deep Research scripts.\n- Users must confirm the topic, acknowledge runtime and cost, and review any special options before the skill proceeds.\n- Repeats confirmation step if user changes research topic/options.\n- Previous usage guidelines updated to reflect this two-step confirmation requirement.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1f0bd6cd3787049caf8f82f2d59b8ac398a1e86de89517dd72c64fc96073e7e0"
+}

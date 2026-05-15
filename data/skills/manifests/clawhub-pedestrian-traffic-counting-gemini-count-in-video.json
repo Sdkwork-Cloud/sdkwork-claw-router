@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46105,
+  "uuid": "skill-clawhub-pedestrian-traffic-counting-gemini-count-in-video",
+  "skillKey": "clawhub-pedestrian-traffic-counting-gemini-count-in-video",
+  "name": "gemini-count-in-video",
+  "summary": "Analyze and count objects in videos using Google Gemini API (object counting, pedestrian detection, vehicle tracking, and surveillance video analysis).",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pedestrian_traffic_counting_gemini_count_in_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lnj22",
+      "features": [
+        "Analyze and count objects in videos using Google Gemini API (object counting, pedestrian detect."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pedestrian-traffic-counting-gemini-count-in-video@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/234027299?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pedestrian-traffic-counting-gemini-count-in-video",
+      "url": "https://clawhub.ai/skills/pedestrian-traffic-counting-gemini-count-in-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pedestrian-traffic-counting-gemini-count-in-video",
+    "url": "https://clawhub.ai/skills/pedestrian-traffic-counting-gemini-count-in-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pedestrian-traffic-counting-gemini-count-in-video-cb954ae9c135cfe9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pedestrian-traffic-counting-gemini-count-in-video@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pedestrian-traffic-counting-gemini-count-in-video-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:66f7c81e6b004bcfe7ae1bf5d45e7f69432cf72b8afb90fbf6d4bc215230dcf8",
+      "artifactSizeBytes": 2112
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T13:35:24.954Z"
+}

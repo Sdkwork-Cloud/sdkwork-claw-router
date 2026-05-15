@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59803,
+  "uuid": "skill-clawhub-corporate-car",
+  "skillKey": "clawhub-corporate-car",
+  "name": "企业用车",
+  "summary": "企业用车服务助手，支持即时用车、预约用车、接送机、包车等多种用车场景，提供车型选择、费用预估、订单管理等功能。Invoke when user needs to book a car, schedule a ride, airport transfer, or manage car service orders.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.corporate_car",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cs200809",
+      "features": [
+        "企业用车服务助手，支持即时用车、预约用车、接送机、包车等多种用车场景，提供车型选择、费用预估、订单管理等功能。Invoke when user needs to book a car, sc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/corporate-car@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/185908023?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "corporate-car",
+      "url": "https://clawhub.ai/skills/corporate-car"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "corporate-car",
+    "url": "https://clawhub.ai/skills/corporate-car",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/corporate-car-0634d4e01e115ce9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/corporate-car@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-corporate-car-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb6f251a7f4003986f5625d140e14f79c31bc7b5dede16894c84f39686a7ce7d",
+      "artifactSizeBytes": 2418
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T02:59:15.827Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kalshi-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kalshi_api",
+  "skill": {
+    "id": 21092,
+    "skillKey": "clawhub-kalshi-api",
+    "name": "kalshi api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kalshi-api",
+    "url": "https://clawhub.ai/skills/kalshi-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kalshi-api-0b3236db216f6b59.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read-only Kalshi API skill for market discovery, liquidity checks, and market validation. Use for scanning and ranking Kalshi opportunities. Pair with a sepa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brs999",
+      "userId": "s178txbzyphw8mm8dpnnh6eyx183m9m4",
+      "displayName": "Ben",
+      "image": "https://avatars.githubusercontent.com/u/6516437?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 423,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773339124346,
+      "changelog": "Initial release of kalshi-trades (v1.0.0):\n\n- Introduces a read-only Kalshi OpenAPI skill for market discovery, liquidity checks, and validation.\n- Enables users to scan, rank, and summarize Kalshi market opportunities using accessible CLI scripts.\n- Does not support order placement, amendment, or cancellation (no trading/execution features included).\n- Designed to pair with a separate skill for paper-trading execution if open/close workflows are needed.\n- Includes examples for broad market scans, focused market validation, and basic configuration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:152f5f050b0ef6ff0e1a26ce45b7d62963dfe12c6d91385ad528ea2f2d790f86"
+}

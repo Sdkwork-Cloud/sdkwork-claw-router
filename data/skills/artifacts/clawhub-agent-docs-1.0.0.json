@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-docs@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_docs",
+  "skill": {
+    "id": 9781,
+    "skillKey": "clawhub-agent-docs",
+    "name": "Agent Docs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-docs",
+    "url": "https://clawhub.ai/skills/agent-docs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-docs-f037d142a06b5d27.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create documentation optimized for AI agent consumption. Use when writing SKILL.md files, README files, API docs, or any documentation that will be read by LLMs in context windows. Helps structure content for RAG retrieval, token efficienc."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tylervovan",
+      "userId": "publishers:tylervovan",
+      "displayName": "tylervovan",
+      "image": "https://avatars.githubusercontent.com/u/225073022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2907,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769921982939,
+      "changelog": "Initial release - Hybrid Context Hierarchy for AI agent documentation",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:47c94985e52e2a23f5aea745ff70f6c510bf529a5ad37657c4eef9e59a8e9069"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56160,
+  "uuid": "skill-clawhub-adopt-a-echo",
+  "skillKey": "clawhub-adopt-a-echo",
+  "name": "Echo — Adopt an Echo. AI-Native Pet. 回声。Eco.",
+  "summary": "Adopt a virtual Echo AI-native pet at animalhouse.ai. Repeats your last action. Mirrors your care pattern back at you. Feeding every 4 hours. Common tier cre...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adopt_a_echo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Twin Geeks",
+      "features": [
+        "Adopt a virtual Echo AI-native pet at animalhouse.ai",
+        "Repeats your last action",
+        "Mirrors your care pattern back at you",
+        "Feeding every 4 hours"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/adopt-a-echo@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261838102?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "adopt-a-echo",
+      "url": "https://clawhub.ai/skills/adopt-a-echo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adopt-a-echo",
+    "url": "https://clawhub.ai/skills/adopt-a-echo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adopt-a-echo-f5f7c8f873eb0a00.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/adopt-a-echo@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-adopt-a-echo-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:97dad4dd94fa6f0fb6cad9f48d396c4be9564d59c4511e24ed7e99d979acadc3",
+      "artifactSizeBytes": 2292
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T01:49:49.440Z"
+}

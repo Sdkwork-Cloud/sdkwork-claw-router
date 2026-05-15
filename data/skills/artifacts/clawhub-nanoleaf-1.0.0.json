@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nanoleaf@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nanoleaf",
+  "skill": {
+    "id": 11725,
+    "skillKey": "clawhub-nanoleaf",
+    "name": "Nanoleaf (Picoleaf)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nanoleaf",
+    "url": "https://clawhub.ai/skills/nanoleaf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nanoleaf-9ec074b8b134fd1e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control Nanoleaf light panels via the Picoleaf CLI. Use for turning Nanoleaf on/off, adjusting brightness, setting colors (RGB/HSL), changing color temperature, or any Nanoleaf lighting control."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rstierli",
+      "userId": "publishers:rstierli",
+      "displayName": "rstierli",
+      "image": "https://avatars.githubusercontent.com/u/105365304?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2043,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1768296710556,
+      "changelog": "Initial release of the Nanoleaf skill.\n\n- Control Nanoleaf light panels using the Picoleaf CLI.\n- Features include on/off, brightness adjustment, RGB/HSL color setting, and color temperature changes.\n- Provides setup instructions and usage examples for all major controls.\n- Supports installation via Homebrew or binary download.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bf851def523abea4249f2f9f0a9331728c215675ef0335f1c92c13a44b2ed095"
+}

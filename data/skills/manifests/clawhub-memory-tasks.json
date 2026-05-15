@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29529,
+  "uuid": "skill-clawhub-memory-tasks",
+  "skillKey": "clawhub-memory-tasks",
+  "name": "Memory Tasks",
+  "summary": "Task management via Basic Memory schemas: create, track, and resume structured tasks that survive context compaction. Uses BM's schema system for uniform not...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_tasks",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Paul Hernandez",
+      "features": [
+        "Task management via Basic Memory schemas: create, track, and resume structured tasks that survi.",
+        "Uses BM's schema system for uniform not..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-tasks@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60959?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-tasks",
+      "url": "https://clawhub.ai/skills/memory-tasks"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-tasks",
+    "url": "https://clawhub.ai/skills/memory-tasks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-tasks-391a72ef9bfcfd89.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-tasks@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-tasks-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:57be8a5687965186b6891de380a9db4ed234d671601523c446bfce46eb63fced",
+      "artifactSizeBytes": 2397
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T03:42:41.158Z"
+}

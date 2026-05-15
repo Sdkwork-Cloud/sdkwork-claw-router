@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69311,
+  "uuid": "skill-clawhub-ro-prompt-optimizer",
+  "skillKey": "clawhub-ro-prompt-optimizer",
+  "name": "Ro Prompt Optimizer",
+  "summary": "基于R-O框架（角色&现实情况、对象&输出）优化用户提示词，将普通需求转化为专业、结构化的AI提示词，以激发AI最大潜力。当用户需要优化提示词、改善与AI的交互效果、创建更有效的指令时使用此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ro_prompt_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DukeAcco",
+      "features": [
+        "基于R-O框架（角色&现实情况、对象&输出）优化用户提示词，将普通需求转化为专业、结构化的AI提示词，以激发AI最大潜力。当用户需要优化提示词、改善与AI的交互效果、创建更有效的指令时使用此."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ro-prompt-optimizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65537752?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ro-prompt-optimizer",
+      "url": "https://clawhub.ai/skills/ro-prompt-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ro-prompt-optimizer",
+    "url": "https://clawhub.ai/skills/ro-prompt-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ro-prompt-optimizer-ad352559acbf70a3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ro-prompt-optimizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ro-prompt-optimizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6042380ddb0a30a676a7a7c574c8533fd72b4ac03597fdecd2af3f04417bce04",
+      "artifactSizeBytes": 2508
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T05:44:00.955Z"
+}

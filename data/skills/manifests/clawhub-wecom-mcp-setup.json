@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63878,
+  "uuid": "skill-clawhub-wecom-mcp-setup",
+  "skillKey": "clawhub-wecom-mcp-setup",
+  "name": "WeCom MCP Setup",
+  "summary": "企业微信 MCP 配置指南。当用户需要\"添加企业微信\"、\"配置企微\"、\"启用企微消息\"、\"设置企业微信集成\"时触发。提供完整的 MCP Server 配置、权限白名单设置和 Gateway 重启指引。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wecom_mcp_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "stliuexp",
+      "features": [
+        "企业微信 MCP 配置指南。当用户需要\"添加企业微信\"、\"配置企微\"、\"启用企微消息\"、\"设置企业微信集成\"时触发。提供完整的 MCP Server 配置、权限白名单设置和 Gateway."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wecom-mcp-setup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/150825109?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wecom-mcp-setup",
+      "url": "https://clawhub.ai/skills/wecom-mcp-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wecom-mcp-setup",
+    "url": "https://clawhub.ai/skills/wecom-mcp-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wecom-mcp-setup-edd78c1343dd5338.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wecom-mcp-setup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wecom-mcp-setup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7321837524d66b4abc4684d1f444d615811089566390742a9355423049f14a1f",
+      "artifactSizeBytes": 2004
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T14:33:42.652Z"
+}

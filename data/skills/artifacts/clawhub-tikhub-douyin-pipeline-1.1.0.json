@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tikhub-douyin-pipeline@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tikhub_douyin_pipeline",
+  "skill": {
+    "id": 61336,
+    "skillKey": "clawhub-tikhub-douyin-pipeline",
+    "name": "TikTok/Douyin 创作流水线"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tikhub-douyin-pipeline",
+    "url": "https://clawhub.ai/skills/tikhub-douyin-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tikhub-douyin-pipeline-33522375abbaa1de.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "TikHub API 多平台数据爬取工具，支持抖音/TikTok/B站等。当用户提到：(1) 爬取抖音/TikTok/B站视频或评论；(2) 获取用户信息/粉丝列表；(3) 批量下载无水印视频；(4) 抖音链接转文字（下载→音频→Whisper pipeline）；(5) 调用 TikHub API。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kk-kingkong",
+      "userId": "s1731en9evjsph1ehgg4pxazrd83mafn",
+      "displayName": "kk.Tang",
+      "image": "https://avatars.githubusercontent.com/u/129717525?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774701629754,
+      "changelog": "SKILL.md v5: 修复API调用方式(v4→v5 Client异步)、API Key从.env读取、补全抖音链接解析、全新Pipeline代码",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6c5a4bf510dcb19fb6b29e4a16b2090ba3d8bd3f425666e2f08e1c6108143296"
+}

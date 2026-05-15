@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39464,
+  "uuid": "skill-clawhub-alvis-gh-v2",
+  "skillKey": "clawhub-alvis-gh-v2",
+  "name": "Gh",
+  "summary": "Use the GitHub CLI (gh) to perform core GitHub operations: auth status, repo create/clone/fork, issues, pull requests, releases, and basic repo management. T...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alvis_gh_v2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AlvisDunlop",
+      "features": [
+        "Use the GitHub CLI (gh) to perform core GitHub operations: auth status, repo create/clone/fork,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alvis-gh-v2@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255881479?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alvis-gh-v2",
+      "url": "https://clawhub.ai/skills/alvis-gh-v2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alvis-gh-v2",
+    "url": "https://clawhub.ai/skills/alvis-gh-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alvis-gh-v2-58669e65c421a87b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alvis-gh-v2@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-alvis-gh-v2-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0d3b3ea93f48434dd0344c18c08c11239b691a5df1093910acb10357b82db5aa",
+      "artifactSizeBytes": 1883
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T01:58:57.623Z"
+}

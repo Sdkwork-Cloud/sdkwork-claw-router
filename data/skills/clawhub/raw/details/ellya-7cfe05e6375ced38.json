@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "ellya",
+    "displayName": "Ellya--Your Virtual Companion",
+    "summary": "OpenClaw virtual companion skill. Use it to bootstrap runtime files (SOUL and base image), guide user personalization, learn and store style prompts from upl...",
+    "tags": {
+      "latest": "1.0.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 605,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1771680059913,
+    "updatedAt": 1778387205446
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1772779227791,
+    "changelog": "# Changelog\n\nAll notable changes to the Ellya skill will be documented in this file.\n\n## [Unreleased]\n\n### Added\n- **AI-Powered Series Generation**: New `series` command that intelligently generates photo series from a single base image\n  - Automatic scene classification: AI analyzes the image and chooses between story mode or pose mode\n  - **Story Mode**: Generates narrative photo sequences with logical progression\n    - Creates realistic, physically possible story scenes\n    - Includes photographer's perspective with camera angles, body postures, facial expressions\n    - Validates variations to ensure concrete, actionable descriptions\n  - **Pose Mode**: Generates technical photography variations\n    - Different camera angles (front-facing, three-quarter, side profile, overhead, low-angle)\n    - Various body postures and expressions\n    - Maintains scene consistency while varying composition\n  - Configurable count parameter (`-n/--count`) to specify number of images (default: 3, max: 10)\n  - Automatic scene and character extraction from base image\n  - Context generation (story plot or scene summary) for better coherence\n\n### Changed\n- **Decoupled Media Sending**: Removed `send_media()` function from generation scripts\n  - Scripts now focus solely on image generation\n  - Media sending is handled by OpenClaw through skill handler\n  - Removed CLI parameters: `-c/--channel`, `-t/--target`, `-msg/--message`\n  - Simplified function signatures across all generation methods\n\n### Fixed\n- Prompt placeholder replacement: Fixed double braces `{{}}` to single braces `{}` for proper `.format()` substitution\n- Count parameter validation: Added 1-10 range validation with proper error messages\n- Array overflow protection: Implemented modulo cycling when count exceeds default variation list length\n- Resource management: Added proper file handle closing using `with` statements\n- Exception handling: Added `FileNotFoundError` catch for missing dependencies\n\n### Improved\n- Unified prompt management: All prompts defined as constants at file header\n- Code quality: Translated all Chinese comments and docstrings to English\n- Default variations: Updated with more concrete, specific descriptions including camera angles\n- Validation logic: Added `is_valid_story_variation()` to filter abstract or unrealistic descriptions\n\n## [Previous Versions]\n\nInitial release with basic image generation and analysis capabilities.",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "laogiant",
+    "userId": "s177r8dcy9ttmf9dstw8saxma983warv",
+    "displayName": "laogiant",
+    "image": "https://avatars.githubusercontent.com/u/261174351?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778387205446
+  }
+}

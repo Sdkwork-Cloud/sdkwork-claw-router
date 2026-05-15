@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/redteam@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.redteam",
+  "skill": {
+    "id": 42443,
+    "skillKey": "clawhub-redteam",
+    "name": "Red Team"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "redteam",
+    "url": "https://clawhub.ai/skills/redteam",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/redteam-00befddf09a04b43.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Proactively scan AI agents for vulnerabilities including prompt injection, secret extraction, and tool abuse by running targeted security audits."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yao23",
+      "userId": "s1761p62ekb5mczgvrkjppgs5d83yd23",
+      "displayName": "Yao Li",
+      "image": "https://avatars.githubusercontent.com/u/3107449?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775025739643,
+      "changelog": "- Initial release of the redteam skill.\n- Added proactive AI agent security scanning features.\n- Supports prompt injection detection, secret extraction, and tool abuse audits.\n- Command to scan: @redteam scan [agent-id].\n- Includes help command for listing audit types.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7034143ee81addf7b50d73530eba0fea389cf271e498ff85544dd9d21646f27a"
+}

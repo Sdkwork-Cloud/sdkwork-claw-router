@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18748,
+  "uuid": "skill-clawhub-tax",
+  "skillKey": "clawhub-tax",
+  "name": "Tax",
+  "summary": "Local-first year-round tax memory system for individuals, freelancers, and small businesses. Use when users mention tax documents, receipts, expenses, tax no...",
+  "version": "4.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tax",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "agenticio",
+      "features": [
+        "Local-first year-round tax memory system for individuals, freelancers, and small businesses",
+        "Use when users mention tax documents, receipts, expenses, tax no..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tax@4.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259287600?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tax",
+      "url": "https://clawhub.ai/skills/tax"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tax",
+    "url": "https://clawhub.ai/skills/tax",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tax-1ffc0406b9891fcd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tax@4.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tax-4.0.0.json",
+      "version": "4.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:96724e4a1b22133f78d820aa4c8d206e8bebbd57e06359f2e5cf0cca717cec77",
+      "artifactSizeBytes": 1831
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T14:35:27.138Z"
+}

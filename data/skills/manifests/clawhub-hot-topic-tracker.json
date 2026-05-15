@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73705,
+  "uuid": "skill-clawhub-hot-topic-tracker",
+  "skillKey": "clawhub-hot-topic-tracker",
+  "name": "热点追踪专家",
+  "summary": "热点追踪专家：基于用户输入的主题，搜索最新信源、挖掘近期爆点话题，并生成高质量长文内容。适合追踪热点事件、行业动态、人物资讯等持续性话题。关键词：热点、追踪、爆点、话题、长文、新媒体、信源",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hot_topic_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangdlam88-hub",
+      "features": [
+        "热点追踪专家：基于用户输入的主题，搜索最新信源、挖掘近期爆点话题，并生成高质量长文内容。适合追踪热点事件、行业动态、人物资讯等持续性话题。关键词：热点、追踪、爆点、话题、长文、新媒体、信源"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hot-topic-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270519377?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hot-topic-tracker",
+      "url": "https://clawhub.ai/skills/hot-topic-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hot-topic-tracker",
+    "url": "https://clawhub.ai/skills/hot-topic-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hot-topic-tracker-071ead5012c8a311.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hot-topic-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hot-topic-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cfac0e43eca71211be1631b00a022a2e3f60d10482dac60f35a8d570e37b9cc1",
+      "artifactSizeBytes": 2813
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T00:03:10.825Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42485,
+  "uuid": "skill-clawhub-agent-id-io",
+  "skillKey": "clawhub-agent-id-io",
+  "name": "agent-id.io",
+  "summary": "OpenClaw skill for the agent-id.io identity and trust service. Use it to register an AI agent, authenticate with challenge/response, manage passkeys and cryp...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_id_io",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Plak",
+      "features": [
+        "OpenClaw skill for the agent-id.io identity and trust service",
+        "Use it to register an AI agent, authenticate with challenge/response, manage passkeys and cryp.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-id-io@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4619098?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-id-io",
+      "url": "https://clawhub.ai/skills/agent-id-io"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-id-io",
+    "url": "https://clawhub.ai/skills/agent-id-io",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-id-io-4c1af5f745757a01.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-id-io@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-id-io-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c48c26dad1243ca06f8f059575c4f590f3599ba4361868f281b833c58b1b6b66",
+      "artifactSizeBytes": 1918
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T16:55:57.578Z"
+}

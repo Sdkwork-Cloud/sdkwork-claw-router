@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42355,
+  "uuid": "skill-clawhub-canvas-lms-student",
+  "skillKey": "clawhub-canvas-lms-student",
+  "name": "Canvas LMS Student Skill",
+  "summary": "Use when the user needs to interact with Canvas LMS as a student. Trigger phrases include \"check my homework\", \"what's due\", \"download my lecture PDFs\", \"lis...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.canvas_lms_student",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Efan404",
+      "features": [
+        "Use when the user needs to interact with Canvas LMS as a student",
+        "Trigger phrases include \"check my homework\", \"what's due\", \"download my lecture PDFs\", \"lis..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/canvas-lms-student@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/202685755?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "canvas-lms-student",
+      "url": "https://clawhub.ai/skills/canvas-lms-student"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "canvas-lms-student",
+    "url": "https://clawhub.ai/skills/canvas-lms-student",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/canvas-lms-student-3025757eeeba3468.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/canvas-lms-student@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-canvas-lms-student-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:94486b0727b024865de2e1b7650fc5289986641ba35c252c9b29677374f7f969",
+      "artifactSizeBytes": 1986
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T19:43:23.627Z"
+}

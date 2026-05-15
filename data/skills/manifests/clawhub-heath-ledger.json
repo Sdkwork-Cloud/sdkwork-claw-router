@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17080,
+  "uuid": "skill-clawhub-heath-ledger",
+  "skillKey": "clawhub-heath-ledger",
+  "name": "Heath Ledger",
+  "summary": "AI bookkeeping agent for Mercury bank accounts. Pulls transactions, categorizes them (rule-based + AI), and generates Excel workbooks with P&L, Balance Sheet...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.heath_ledger",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Andrew Pierno",
+      "features": [
+        "AI bookkeeping agent for Mercury bank accounts",
+        "Pulls transactions, categorizes them (rule-based + AI), and generates Excel workbooks with P&L,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/heath-ledger@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5325165?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "heath-ledger",
+      "url": "https://clawhub.ai/skills/heath-ledger"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "heath-ledger",
+    "url": "https://clawhub.ai/skills/heath-ledger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/heath-ledger-748931bd384dd26b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/heath-ledger@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-heath-ledger-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fecb01253c71d84ba23a22fea894c60eacdbfbd3b6c07308a7da43d1a5f7d736",
+      "artifactSizeBytes": 2049
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T05:29:40.783Z"
+}

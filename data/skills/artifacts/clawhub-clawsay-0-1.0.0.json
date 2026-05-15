@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawsay-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawsay_0",
+  "skill": {
+    "id": 18606,
+    "skillKey": "clawhub-clawsay-0",
+    "name": "clawsay"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawsay-0",
+    "url": "https://clawhub.ai/skills/clawsay-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawsay-0-b73c9050eb1ce676.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Display a message in a speech bubble spoken by an ASCII lobster."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tjade273",
+      "userId": "publishers:tjade273",
+      "displayName": "Tjaden Hess",
+      "image": "https://avatars.githubusercontent.com/u/3936648?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 665,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771514773604,
+      "changelog": "Initial release of Clawsay.\n\n- Display a user-provided message in a speech bubble with an ASCII art lobster.\n- Lobster appears colored red in the output.\n- Usage guide and example provided in the documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7c8cd006425e2580a138e2162761403f92816e3410ff5ef2ca8f65ff816a11d4"
+}

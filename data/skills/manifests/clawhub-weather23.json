@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38720,
+  "uuid": "skill-clawhub-weather23",
+  "skillKey": "clawhub-weather23",
+  "name": "weather",
+  "summary": "Get current weather and forecasts (no API key required).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather23",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lonika",
+      "features": [
+        "Get current weather and forecasts (no API key required)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weather23@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18641798?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weather23",
+      "url": "https://clawhub.ai/skills/weather23"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather23",
+    "url": "https://clawhub.ai/skills/weather23",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather23-f862caa1f71cb7ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weather23@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weather23-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:38420359d75c17bfee45c502450bea85dcd47eae8866fc7c3c510252c8c64108",
+      "artifactSizeBytes": 1956
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T06:20:40.011Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/motor-parameter-calculator@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.motor_parameter_calculator",
+  "skill": {
+    "id": 64378,
+    "skillKey": "clawhub-motor-parameter-calculator",
+    "name": "Motor Parameter Calculator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "motor-parameter-calculator",
+    "url": "https://clawhub.ai/skills/motor-parameter-calculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/motor-parameter-calculator-e3beb279ee74e025.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "电机设计参数计算助手 | 根据基本参数计算极槽配合、匝数、磁密、反电动势等核心设计数据"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yongjie666888",
+      "userId": "s17drc5xysxp2mbjvg182tkj5183gqyv",
+      "displayName": "yongjie666888",
+      "image": "https://avatars.githubusercontent.com/u/177016990?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 232,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774373215253,
+      "changelog": "v1.2: 新增完整参数计算脚本(param_calculator.py)、槽数扫描分析、性能估算(Ke/Kt/Tm/Te)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:549237d29e37ff88e494bebb4ad371d8bbebc0ce5330f9d7eb15ffeb0bd77b8d"
+}

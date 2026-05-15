@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/derek-bitcoin-intel@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.derek_bitcoin_intel",
+  "skill": {
+    "id": 18776,
+    "skillKey": "clawhub-derek-bitcoin-intel",
+    "name": "Bitcoin Market Intelligence"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "derek-bitcoin-intel",
+    "url": "https://clawhub.ai/skills/derek-bitcoin-intel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/derek-bitcoin-intel-ddf2d3f3ac2d5d13.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The only Bitcoin intelligence agent that pays for its own data with sats. Serves live price, Fear & Greed, mempool fees, ETF flows, on-chain metrics, and pre..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fr0zen80",
+      "userId": "publishers:fr0zen80",
+      "displayName": "Fr0zen80",
+      "image": "https://avatars.githubusercontent.com/u/47923098?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 661,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1773456971308,
+      "changelog": "test",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9b7a54aa98db238537bfaeca8abae888878968b5fb6fabc756ad5f410e39f9ee"
+}

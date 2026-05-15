@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-duoge002@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_duoge002",
+  "skill": {
+    "id": 69347,
+    "skillKey": "clawhub-feishu-duoge002",
+    "name": "feishu-duoge002"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-duoge002",
+    "url": "https://clawhub.ai/skills/feishu-duoge002",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-duoge002-99cc770548ba5ce4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "批量创建多飞书机器人，每个独立记忆、存储、大模型配置和连接，实现多角色多账号完全隔离管理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lcz5221-svg",
+      "userId": "s17b1rt7d6h1pece40w729s5qh84ehav",
+      "displayName": "lcz5221-svg",
+      "image": "https://avatars.githubusercontent.com/u/261157830?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 102,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777799872539,
+      "changelog": "Feishu Multi-Bot Setup 1.0.0\n\n- Initial release enabling batch creation of fully independent Feishu bots.\n- Each bot features separate memory, storage, model configuration, personality, and Feishu connection.\n- Provides automatic conversion from single-account to multi-account configuration.\n- Includes scripts for easy setup and management, with clear instructions and troubleshooting.\n- Supports independent allowlist management and dmPolicy options per bot.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:554a3479b3bf72af521175477ab356f3ae20834a040cad3a1808d062e0a8f9f4"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-harness-construction@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_harness_construction",
+  "skill": {
+    "id": 42916,
+    "skillKey": "clawhub-agent-harness-construction",
+    "name": "Agent Harness Construction"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-harness-construction",
+    "url": "https://clawhub.ai/skills/agent-harness-construction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-harness-construction-65b822343d57d7ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design and optimize AI agent action spaces, tool definitions, and observation formatting for higher completion rates."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "2072932870wh-ui",
+      "userId": "s17c25fvnwnnd1vcqsfzhywz3d85eyzj",
+      "displayName": "2072932870wh-ui",
+      "image": "https://avatars.githubusercontent.com/u/267572502?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777000276699,
+      "changelog": "Initial release of agent-harness-construction.\n\n- Provides a comprehensive guide for designing and optimizing AI agent action spaces and tool usage.\n- Introduces standardized observation formats and error recovery contracts.\n- Offers practical granularity rules for tool design and clear anti-patterns to avoid.\n- Includes benchmarking recommendations to measure agent output quality and completion rates.\n- Suggests architecture patterns for effective agent planning and execution.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c62c21086041d10c6a60093b912477ceb0886a9ea69d062dc56039001cb28576"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59970,
+  "uuid": "skill-clawhub-heartbeat-memory",
+  "skillKey": "clawhub-heartbeat-memory",
+  "name": "skill-heartbeat-memory",
+  "summary": "自动记忆保存 Skill。支持 Heartbeat 自动触发和主 Agent 中手动调用两种方式。自动检查新 sessions，生成 Daily 笔记，定期提炼 MEMORY.md，支持备份已删除的 sessions。",
+  "version": "0.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.heartbeat_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ZeroX",
+      "features": [
+        "自动记忆保存 Skill。支持 Heartbeat 自动触发和主 Agent 中手动调用两种方式。自动检查新 sessions，生成 Daily 笔记，定期提炼 MEMORY.md，支持备份."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/heartbeat-memory@0.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7137280?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "heartbeat-memory",
+      "url": "https://clawhub.ai/skills/heartbeat-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "heartbeat-memory",
+    "url": "https://clawhub.ai/skills/heartbeat-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/heartbeat-memory-5a8b3cbc4c5f504a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/heartbeat-memory@0.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-heartbeat-memory-0.0.7.json",
+      "version": "0.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2855d71e7ec4b2f76e04fa42c06c50dbe52706609ebfa4e18876d067f373f44d",
+      "artifactSizeBytes": 2125
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T10:59:01.597Z"
+}

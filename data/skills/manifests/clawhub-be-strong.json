@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45825,
+  "uuid": "skill-clawhub-be-strong",
+  "skillKey": "clawhub-be-strong",
+  "name": "xiaowei-skill",
+  "summary": "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.be_strong",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mn4223222-afk",
+      "features": [
+        "Captures learnings, errors, and corrections to enable continuous improvement",
+        "Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/be-strong@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257959856?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "be-strong",
+      "url": "https://clawhub.ai/skills/be-strong"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "be-strong",
+    "url": "https://clawhub.ai/skills/be-strong",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/be-strong-9be11bd82057ccbf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/be-strong@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-be-strong-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a445f8c614fb8ecd28542d3fb7e6b1402c25390528ea4cc6174f2654211f9df0",
+      "artifactSizeBytes": 2673
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T10:17:34.058Z"
+}

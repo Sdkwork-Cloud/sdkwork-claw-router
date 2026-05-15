@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-generator-auto-post@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_generator_auto_post",
+  "skill": {
+    "id": 19502,
+    "skillKey": "clawhub-video-generator-auto-post",
+    "name": "Video Generator Auto Post"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-generator-auto-post",
+    "url": "https://clawhub.ai/skills/video-generator-auto-post",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-generator-auto-post-dc9998f0185f0065.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate videos using local AI models (ComfyUI/Stable Video Diffusion) and auto-publish to social media platforms. Supports text-to-video, image-to-video, ba..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "954215110",
+      "userId": "publishers:954215110",
+      "displayName": "954215110",
+      "image": "https://avatars.githubusercontent.com/u/255541495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 599,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772365207284,
+      "changelog": "- Added recommendations to store output videos, models, and workflows on the D: drive to save C: drive space.\n- Updated the \"Configure Output Paths\" section with new example paths and CLI configuration commands.\n- Adjusted storage requirements to highlight the use of the D: drive.\n- No changes to code or core functionality; documentation and setup instructions improved for better user experience.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1f8c6cbe75d8089fe9d4ffb08633d5efada556184f976231de2b76c4f96c8095"
+}

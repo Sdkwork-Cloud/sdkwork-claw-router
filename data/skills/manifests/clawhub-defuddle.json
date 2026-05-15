@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13062,
+  "uuid": "skill-clawhub-defuddle",
+  "skillKey": "clawhub-defuddle",
+  "name": "defuddle-web-cleaner",
+  "summary": "Extract and clean readable article content, metadata, and markdown from URLs or HTML for research, note taking, and web scraping.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.defuddle",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "extrastu",
+      "features": [
+        "Extract and clean readable article content, metadata, and markdown from URLs or HTML for resear."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/defuddle@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19451694?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "defuddle",
+      "url": "https://clawhub.ai/skills/defuddle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "defuddle",
+    "url": "https://clawhub.ai/skills/defuddle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/defuddle-63d75e959d29f4a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/defuddle@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-defuddle-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:00411dd0d294decb23923060a3916658538f73f7fba75829e6c4731c15be3906",
+      "artifactSizeBytes": 2272
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T12:18:18.220Z"
+}

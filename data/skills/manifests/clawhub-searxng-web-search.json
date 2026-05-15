@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19412,
+  "uuid": "skill-clawhub-searxng-web-search",
+  "skillKey": "clawhub-searxng-web-search",
+  "name": "searxng-web-search",
+  "summary": "Search the web using a self-hosted SearXNG metasearch engine. Use when the user asks to search the web, find information online, look up recent news, researc...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.searxng_web_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gang Tao",
+      "features": [
+        "Search the web using a self-hosted SearXNG metasearch engine",
+        "Use when the user asks to search the web, find information online, look up recent news, researc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/searxng-web-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3509037?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "searxng-web-search",
+      "url": "https://clawhub.ai/skills/searxng-web-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "searxng-web-search",
+    "url": "https://clawhub.ai/skills/searxng-web-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/searxng-web-search-4c8a2fa1ccdcef5b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/searxng-web-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-searxng-web-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9a0b9648eb131824c92e35ab9811d38c60b998fedfd87784bf55daee1801e0cb",
+      "artifactSizeBytes": 2451
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T17:30:44.196Z"
+}

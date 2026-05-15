@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10910,
+  "uuid": "skill-clawhub-simplify",
+  "skillKey": "clawhub-simplify",
+  "name": "Simplify Code",
+  "summary": "Refactor code for clarity, consistency, and maintainability without changing behavior. Use when the user types /simplify or asks to simplify code.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.simplify",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bestisblessed",
+      "features": [
+        "Refactor code for clarity, consistency, and maintainability without changing behavior",
+        "Use when the user types /simplify or asks to simplify code."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/simplify@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59031057?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "simplify",
+      "url": "https://clawhub.ai/skills/simplify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "simplify",
+    "url": "https://clawhub.ai/skills/simplify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/simplify-e55dea01f8db239d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/simplify@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-simplify-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:257afcf0ed26d384caf2ca01e016ed232fbe7556508fa7eadaaf3f5ec5c03250",
+      "artifactSizeBytes": 1912
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T06:19:55.081Z"
+}

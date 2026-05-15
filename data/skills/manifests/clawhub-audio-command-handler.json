@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47330,
+  "uuid": "skill-clawhub-audio-command-handler",
+  "skillKey": "clawhub-audio-command-handler",
+  "name": "Audio Command Handler",
+  "summary": "Handle audio messages as commands. When user sends an audio file (WAV/PCM/MP3), transcribe it using iFlytek Speed Transcription and either (1) execute the tr...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audio_command_handler",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smallKeyboy",
+      "features": [
+        "Handle audio messages as commands",
+        "When user sends an audio file (WAV/PCM/MP3), transcribe it using iFlytek Speed Transcription an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/audio-command-handler@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/68474019?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "audio-command-handler",
+      "url": "https://clawhub.ai/skills/audio-command-handler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audio-command-handler",
+    "url": "https://clawhub.ai/skills/audio-command-handler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audio-command-handler-d18629d1c4d662fd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/audio-command-handler@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-audio-command-handler-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:19ead73eb572d05832002a228aa163b3910da7c60cec7cdbed8daace4437cc7a",
+      "artifactSizeBytes": 2439
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T06:45:03.599Z"
+}

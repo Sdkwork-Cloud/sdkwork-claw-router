@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57404,
+  "uuid": "skill-clawhub-gyms",
+  "skillKey": "clawhub-gyms",
+  "name": "健身房",
+  "summary": "Find nearby gyms. Invoke when user asks for fitness centers near me.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gyms",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mikeclaw007",
+      "features": [
+        "Find nearby gyms",
+        "Invoke when user asks for fitness centers near me."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gyms@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265502950?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gyms",
+      "url": "https://clawhub.ai/skills/gyms"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gyms",
+    "url": "https://clawhub.ai/skills/gyms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gyms-729b5ddd6fdbcacf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gyms@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gyms-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ebb7baa0f56163717efd10c6f42bdaf897bba33e8621af8d4bbc9875750b5338",
+      "artifactSizeBytes": 2131
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T02:02:59.048Z"
+}

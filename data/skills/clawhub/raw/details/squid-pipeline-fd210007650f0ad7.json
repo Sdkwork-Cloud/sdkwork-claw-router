@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "squid-pipeline",
+    "displayName": "Squid",
+    "summary": "Create, modify, and debug agentic pipelines with Squid. Define multi-agent YAML workflows with spawn (OpenClaw, Claude Code, OpenCode), gates, parallel execu...",
+    "tags": {
+      "latest": "1.0.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1775518669086,
+    "updatedAt": 1777527253472
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1775602206804,
+    "changelog": "### Robust JSON Extraction\n- New `json-extract.ts` module: `parseAgentOutput()` extracts JSON from markdown fences (`` ```json ... ``` ``), embedded objects in prose, and raw JSON\n- All 3 adapters (OpenClaw, Claude Code, OpenCode) now use `parseAgentOutput()` instead of fragile `JSON.parse(stdout)`\n- Fixes the production issue where OpenClaw agents return JSON wrapped in markdown or prose instead of raw JSON\n- 16 unit tests covering all extraction patterns\n\n### Claude Code Sub-Agent Support\n- `agentId` now works with the `claude-code` adapter — passed as `--agent <name>` to the CLI\n- Targets Claude Code sub-agents defined in `.claude/agents/<name>.md`\n- `agentId` is no longer OpenClaw-only — works across `claude-code` and `openclaw` adapters\n\n### Parser Validation\n- Warning when `model:` is set with `runtime: subagent` — model is ignored for OpenClaw sub-agents (model is configured per agent in OpenClaw, not in the pipeline)\n\n### OpenClaw Adapter Cleanup\n- Removed dead `OPENCLAW_TOKEN` / `OPENCLAW_GATEWAY_TOKEN` / `CLAWD_TOKEN` env var handling — the `openclaw` CLI never reads these; it authenticates via `openclaw config` stored credentials\n- Removed `token` config field from `OpenClawConfig` interface\n\n### Documentation\n- Updated `docs/adapters.md`: fixed `agentId` support table (now \"Yes\" for Claude Code), corrected OpenClaw auth to CLI-only (no HTTP mode), updated comparison table\n- Updated SKILL.md with full adapter guide: when to use which adapter, `SQUID_AGENT` env var, `agentId` cross-adapter table, `model:` behavior per runtime\n- Added raw GitHub URLs for all doc files in SKILL.md Documentation Links section\n- Clarified `${ref}` interpolation in transforms (R7) vs bare `$ref` in `when:` conditions",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "dominno",
+    "userId": "s17fcnmb6p8eawr2zckc2d38rn84bs2t",
+    "displayName": "Dominik Szopa",
+    "image": "https://avatars.githubusercontent.com/u/150737?v=4"
+  },
+  "moderation": null
+}

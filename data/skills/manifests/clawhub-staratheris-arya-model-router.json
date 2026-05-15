@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13224,
+  "uuid": "skill-clawhub-staratheris-arya-model-router",
+  "skillKey": "clawhub-staratheris-arya-model-router",
+  "name": "Arya Model Router",
+  "summary": "Router that selects between cheap, default, and pro GPT models to save tokens, using sub-agents and optional briefing for heavy tasks.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.staratheris_arya_model_router",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "StarAtheris",
+      "features": [
+        "Router that selects between cheap, default, and pro GPT models to save tokens, using sub-agents."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/staratheris-arya-model-router@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86037915?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "staratheris-arya-model-router",
+      "url": "https://clawhub.ai/skills/staratheris-arya-model-router"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "staratheris-arya-model-router",
+    "url": "https://clawhub.ai/skills/staratheris-arya-model-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/staratheris-arya-model-router-052264c8c41d52af.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/staratheris-arya-model-router@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-staratheris-arya-model-router-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:879bbebceb896231347bd458ec1277c14af3bce4aaa6f3906eefc451ea50ea3f",
+      "artifactSizeBytes": 1964
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T02:29:27.257Z"
+}

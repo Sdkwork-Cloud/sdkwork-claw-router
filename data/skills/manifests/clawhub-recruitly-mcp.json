@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15616,
+  "uuid": "skill-clawhub-recruitly-mcp",
+  "skillKey": "clawhub-recruitly-mcp",
+  "name": "Recruitly CRM",
+  "summary": "Search candidates, manage jobs, view pipelines, track billing and team performance in Recruitly CRM via MCP.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recruitly_mcp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "willgary",
+      "features": [
+        "Search candidates, manage jobs, view pipelines, track billing and team performance in Recruitly."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/recruitly-mcp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/66531981?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "recruitly-mcp",
+      "url": "https://clawhub.ai/skills/recruitly-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recruitly-mcp",
+    "url": "https://clawhub.ai/skills/recruitly-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recruitly-mcp-739529beb47aad4f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/recruitly-mcp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-recruitly-mcp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c595f937f8564f2b90af54cb35c3dbc75004444bf0ed36fa385e003a1b283553",
+      "artifactSizeBytes": 2273
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T18:54:08.346Z"
+}

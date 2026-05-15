@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29425,
+  "uuid": "skill-clawhub-mx-technologies",
+  "skillKey": "clawhub-mx-technologies",
+  "name": "Mx Technologies",
+  "summary": "MX Technologies integration. Manage Users, Organizations, Pipelines, Goals, Filters, Files and more. Use when the user wants to interact with MX Technologies...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mx_technologies",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "MX Technologies integration",
+        "Manage Users, Organizations, Pipelines, Goals, Filters, Files and more",
+        "Use when the user wants to interact with MX Technologies..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mx-technologies@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mx-technologies",
+      "url": "https://clawhub.ai/skills/mx-technologies"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mx-technologies",
+    "url": "https://clawhub.ai/skills/mx-technologies",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mx-technologies-0373c0aaccee331e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mx-technologies@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-mx-technologies-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9110b0d24a742855f8dd94c3fe3710ad0871efaa3c5512f3bf767635180325cb",
+      "artifactSizeBytes": 1916
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:16:08.820Z"
+}

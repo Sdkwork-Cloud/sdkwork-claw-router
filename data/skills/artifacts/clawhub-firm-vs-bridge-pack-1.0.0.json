@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/firm-vs-bridge-pack@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.firm_vs_bridge_pack",
+  "skill": {
+    "id": 22088,
+    "skillKey": "clawhub-firm-vs-bridge-pack",
+    "name": "Firm Vs Bridge Pack"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "firm-vs-bridge-pack",
+    "url": "https://clawhub.ai/skills/firm-vs-bridge-pack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/firm-vs-bridge-pack-bffa6a1293e1d8cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "VS Code bridge pack. Context push/pull and session linking between VS Code and OpenClaw Gateway. 4 bridge tools."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "romainsantoli-web",
+      "userId": "publishers:romainsantoli-web",
+      "displayName": "romainsantoli-web",
+      "image": "https://avatars.githubusercontent.com/u/246739959?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 465,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772410651096,
+      "changelog": "Initial release — 4 tools: VS Code context push/pull, session link/status",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e589dcfea028a260ba6ffb0542af761e1fceb44c2cb917fbd7f0182f2d2bf2ed"
+}

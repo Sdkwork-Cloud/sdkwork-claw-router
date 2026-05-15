@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mindstudio-generate-text-block-prompting-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mindstudio_generate_text_block_prompting_skill",
+  "skill": {
+    "id": 51212,
+    "skillKey": "clawhub-mindstudio-generate-text-block-prompting-skill",
+    "name": "Mindstudio Generate Text Block Prompting Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mindstudio-generate-text-block-prompting-skill",
+    "url": "https://clawhub.ai/skills/mindstudio-generate-text-block-prompting-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mindstudio-generate-text-block-prompting-skill-6e64bcee29d57b5f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Write, review, or improve prompts for MindStudio Generate Text blocks — whether the output is plain text or structured JSON. Use this skill whenever someone..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sol1986",
+      "userId": "s178mvyk5pdhapf6ax9thw3sn983svt8",
+      "displayName": "Sol Farahmand",
+      "image": "https://avatars.githubusercontent.com/u/65566755?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775234260210,
+      "changelog": "Initial release of MindStudio Generate Text Block Prompting Skill.\n\n- Guides users in writing, reviewing, and improving prompts for MindStudio Generate Text blocks (plain text or JSON).\n- Provides comprehensive instructions for interviewing users to gather workflow and variable details before prompt writing.\n- Details best practices for structuring prompts, including Markdown formatting and XML-style variable injection.\n- Explains how to configure output schemas and sample outputs, especially for JSON, ensuring correct downstream workflow parsing.\n- Includes example prompt templates and sample outputs to help users create production-ready prompts for both text and structured data scenarios.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ee47c2525f0ac9a25971ad5d6b985a51226f3d4cd2f217414b19ffb2251902b3"
+}

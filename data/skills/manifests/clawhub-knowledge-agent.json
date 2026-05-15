@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53280,
+  "uuid": "skill-clawhub-knowledge-agent",
+  "skillKey": "clawhub-knowledge-agent",
+  "name": "Knowledge Agent",
+  "summary": "Build a knowledge consultant Agent on OpenClaw — turn your expertise into a 24/7 AI assistant that serves clients via Feishu groups. Use when: (1) Creating a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knowledge_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "simonlin",
+      "features": [
+        "Build a knowledge consultant Agent on OpenClaw — turn your expertise into a 24/7 AI assistant t.",
+        "Use when: (1) Creating a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/knowledge-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/166034225?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "knowledge-agent",
+      "url": "https://clawhub.ai/skills/knowledge-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knowledge-agent",
+    "url": "https://clawhub.ai/skills/knowledge-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knowledge-agent-a094004036db29c6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/knowledge-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-knowledge-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7061dcaf91b2103599510b54d0ee58013595eb05780e2ae51e3423e25f1da79e",
+      "artifactSizeBytes": 1966
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T06:05:09.927Z"
+}

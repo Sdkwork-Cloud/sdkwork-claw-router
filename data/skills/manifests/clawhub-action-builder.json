@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31372,
+  "uuid": "skill-clawhub-action-builder",
+  "skillKey": "clawhub-action-builder",
+  "name": "Action Builder",
+  "summary": "Action Builder integration. Manage data, records, and automate workflows. Use when the user wants to interact with Action Builder data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.action_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Action Builder integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Action Builder data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/action-builder@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "action-builder",
+      "url": "https://clawhub.ai/skills/action-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "action-builder",
+    "url": "https://clawhub.ai/skills/action-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/action-builder-bc5ca4d24616026e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/action-builder@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-action-builder-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ec236ea5d51ed27ade540b8a94255b5e659dad607a218a474fee2e6ebf9926c",
+      "artifactSizeBytes": 1884
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:15:16.429Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57572,
+  "uuid": "skill-clawhub-trade-show-fit-score",
+  "skillKey": "clawhub-trade-show-fit-score",
+  "name": "Trade Show Fit Score",
+  "summary": "Score a trade show against your company profile for an AI-backed exhibit vs. skip decision. \"Should we exhibit at this show?\" / \"这个展会值得参加吗\" / \"Lohnt sich die...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trade_show_fit_score",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "weilun88313",
+      "features": [
+        "Score a trade show against your company profile for an AI-backed exhibit vs",
+        "skip decision",
+        "\"Should we exhibit at this show?\" / \"这个展会值得参加吗\" / \"Lohnt sich die..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trade-show-fit-score@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33587196?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trade-show-fit-score",
+      "url": "https://clawhub.ai/skills/trade-show-fit-score"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trade-show-fit-score",
+    "url": "https://clawhub.ai/skills/trade-show-fit-score",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trade-show-fit-score-2fd6d4815845337b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trade-show-fit-score@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trade-show-fit-score-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:898df3b218e4d399651fa1446dec8543d67d47b314bcde63a0bd2fc8a74407c3",
+      "artifactSizeBytes": 2617
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T00:53:53.029Z"
+}

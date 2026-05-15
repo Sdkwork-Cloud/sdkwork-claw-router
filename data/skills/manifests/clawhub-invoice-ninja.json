@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26400,
+  "uuid": "skill-clawhub-invoice-ninja",
+  "skillKey": "clawhub-invoice-ninja",
+  "name": "Invoice Ninja",
+  "summary": "Invoice Ninja integration. Manage Organizations. Use when the user wants to interact with Invoice Ninja data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.invoice_ninja",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Invoice Ninja integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Invoice Ninja data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/invoice-ninja@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "invoice-ninja",
+      "url": "https://clawhub.ai/skills/invoice-ninja"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "invoice-ninja",
+    "url": "https://clawhub.ai/skills/invoice-ninja",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/invoice-ninja-523267c11231fb27.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/invoice-ninja@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-invoice-ninja-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:882b5f6caaf96968c5b55b68c72f23c5a29d2794d1131197aba20695576e9496",
+      "artifactSizeBytes": 1859
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:38:14.202Z"
+}

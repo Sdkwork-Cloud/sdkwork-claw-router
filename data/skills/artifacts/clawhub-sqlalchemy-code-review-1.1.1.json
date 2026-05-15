@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sqlalchemy-code-review@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sqlalchemy_code_review",
+  "skill": {
+    "id": 33093,
+    "skillKey": "clawhub-sqlalchemy-code-review",
+    "name": "Sqlalchemy Code Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sqlalchemy-code-review",
+    "url": "https://clawhub.ai/skills/sqlalchemy-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sqlalchemy-code-review-4a2efdfd2ab33677.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reviews SQLAlchemy code for session management, relationships, N+1 queries, and migration patterns. Use when reviewing SQLAlchemy 2.0 code, checking session..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anderskev",
+      "userId": "s17b1fzefm8nj8j1sdkzrze7gn83pfrg",
+      "displayName": "Kevin Anderson",
+      "image": "https://avatars.githubusercontent.com/u/17010022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 233,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1776831279371,
+      "changelog": "- Added SQLAlchemy-specific \"Gates\" section with detailed, step-by-step review protocols for session management, N+1/lazy loading, and migrations.\n- Clarified when to cite `file:line` locations and how to proceed based on review evidence.\n- No changes to core checklist, references, or review questions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a065aaf5edd8c8b7404b7b37495e25545f2e283ee93b60a79988c7740a62720e"
+}

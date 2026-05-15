@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/report-sql@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.report_sql",
+  "skill": {
+    "id": 39904,
+    "skillKey": "clawhub-report-sql",
+    "name": "Report Sql"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "report-sql",
+    "url": "https://clawhub.ai/skills/report-sql",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/report-sql-4d7109da6794d939.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Define and validate SQL template variables and blocks for report-service with zero tolerance, supporting safe injection, conditional fragments, loops, and da..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "23396599",
+      "userId": "s17505rt29bfvda7ea1vychx6n83hp39",
+      "displayName": "23396599",
+      "image": "https://avatars.githubusercontent.com/u/126645196?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774330127417,
+      "changelog": "- Initial release of the `report-sql` skill.\n- Defines a strict SQL variable templating protocol for `report-service`, supporting precise, safe, and namespaced variable injection.\n- Introduces block-level variable syntax (`${...}`) for conditional SQL fragments with \"empty-safe\" rendering.\n- Adds common SQL snippet patterns: fuzzy matching, date range queries, array variable loops (`$@... -> OR { ... }`), and complex EXISTS subqueries.\n- Details best practices to ensure SQL syntax integrity, including strict namespace and boundary rules for dynamic blocks.\n- Documents a structured JSON-based data transformation pipeline for SQL query results, supporting initialization, conditional assignment, object mapping, left joins, and complex response assembly.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4da7d31b9d763ea0df7d17e9eae178d05c4f5f9c42c79ff094cdbd4dfb302084"
+}

@@ -1,0 +1,48 @@
+{
+  "skill": {
+    "slug": "safe-fuzzer-skill",
+    "displayName": "SAFE-Fuzzer",
+    "summary": "Sandbox-only behavior-led gray-box skill fuzzer. Spawns a worker subagent, probes an installed target skill, deploys honeypot fixtures, and returns a structu...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1774824285855,
+    "updatedAt": 1777526866503
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1774824285855,
+    "changelog": "Initial release of safe-fuzzer.\n\n- Provides a gray-box, behavior-led fuzzer for installed skills, operating only inside a locked sandbox.\n- Orchestrates fuzzing using a parent/worker agent model, with parent setup and worker executing probes.\n- Supports configurable presets for probe depth (`min`, `balanced`, `max`), with CLI invocation and timeout recommendations.\n- Deploys honeypot fixtures, probes skill execution, records file/shell/network behavior, and returns a structured JSON risk report.\n- Includes strict safety gates to prevent host compromise, secrets leakage, or running outside the sandbox.\n- Comprehensive execution flow: preflight, target resolution, test strategy planning, fixture deployment, probe loop, and final reporting.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "agentsey",
+    "userId": "s175swzq6x653fz70w4br6z8ds83q7ac",
+    "displayName": "Agentsey",
+    "image": null
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777526866503
+  }
+}

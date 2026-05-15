@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/biogen@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.biogen",
+  "skill": {
+    "id": 68469,
+    "skillKey": "clawhub-biogen",
+    "name": "Biogen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "biogen",
+    "url": "https://clawhub.ai/skills/biogen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/biogen-24541c996caf62a4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供美国生物制药公司Biogen的历史、核心业务、产品信息及最新行业动态介绍"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 194,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776232937155,
+      "changelog": "- Added version metadata to SKILL.md (now version 1.0.4).\n- No changes to content or functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:de62b7900263ac89b1b08177c224899fd734783307ef5621b1c337b9e3e2fecf"
+}

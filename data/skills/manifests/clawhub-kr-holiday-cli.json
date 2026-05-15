@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57167,
+  "uuid": "skill-clawhub-kr-holiday-cli",
+  "skillKey": "clawhub-kr-holiday-cli",
+  "name": "Korean Holiday CLI",
+  "summary": "Korean public holidays, business-day calculator, and lunar↔solar converter (CLI). Check if a date is a Korean public holiday (including 대체공휴일), list holidays...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kr_holiday_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chloe Park",
+      "features": [
+        "Korean public holidays, business-day calculator, and lunar↔solar converter (CLI)",
+        "Check if a date is a Korean public holiday (including 대체공휴일), list holidays..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kr-holiday-cli@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15118976?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kr-holiday-cli",
+      "url": "https://clawhub.ai/skills/kr-holiday-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kr-holiday-cli",
+    "url": "https://clawhub.ai/skills/kr-holiday-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kr-holiday-cli-a0b21c7c5b5e13ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kr-holiday-cli@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kr-holiday-cli-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:15c5bb8dbbec65d93fc3e58dcda41c946ab5f3ce3ad98c23f98e937914d1cc3f",
+      "artifactSizeBytes": 2057
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T00:07:23.896Z"
+}

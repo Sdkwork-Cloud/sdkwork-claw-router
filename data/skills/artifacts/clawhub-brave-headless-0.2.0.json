@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brave-headless@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brave_headless",
+  "skill": {
+    "id": 15122,
+    "skillKey": "clawhub-brave-headless",
+    "name": "Headless Brave Browser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brave-headless",
+    "url": "https://clawhub.ai/skills/brave-headless",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brave-headless-3d3c14dde8d2c49a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Headless web search and content extraction via the Brave Search API. Features exponential-backoff retry, circuit breaker fault isolation, bounded-concurrency..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kelexine",
+      "userId": "publishers:kelexine",
+      "displayName": "Franklin Kelechi",
+      "image": "https://avatars.githubusercontent.com/u/70432347?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 857,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1771525721132,
+      "changelog": "- Adds structured leveled logging and improved configuration validation with environment variables.\n- Introduces exponential-backoff retry, circuit breaker fault isolation, and bounded-concurrency parallel page fetching.\n- Implements smart paragraph-boundary truncation for extracted content.\n- Enhances CLI with new options for output format, concurrency, and content extraction.\n- Requires Node.js 20+ and npm; runs on macOS and Linux.\n- Misconfigured environment variables now cause immediate, descriptive startup errors.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:69e3110e72077cca3712960023d85b4d7a2592455243d41c395366492793343d"
+}

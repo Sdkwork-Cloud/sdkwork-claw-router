@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57014,
+  "uuid": "skill-clawhub-bazi-chart",
+  "skillKey": "clawhub-bazi-chart",
+  "name": "BaZi Chart Calculator (八字排盘)",
+  "summary": "Professional BaZi (八字) chart calculator and analysis tool. Calculate Four Pillars of Destiny from birth date, time, and location. Features precise solar term...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bazi_chart",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Reed",
+      "features": [
+        "Professional BaZi (八字) chart calculator and analysis tool",
+        "Calculate Four Pillars of Destiny from birth date, time, and location",
+        "Features precise solar term..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bazi-chart@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/129141816?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bazi-chart",
+      "url": "https://clawhub.ai/skills/bazi-chart"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bazi-chart",
+    "url": "https://clawhub.ai/skills/bazi-chart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bazi-chart-29e31304d2445473.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bazi-chart@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bazi-chart-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6e209ee710eeccbbfe8c70455578e1eb46c2b3a6d8fb428623e78d56d1b6b24d",
+      "artifactSizeBytes": 2036
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T16:42:19.323Z"
+}

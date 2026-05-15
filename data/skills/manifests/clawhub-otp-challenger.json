@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10242,
+  "uuid": "skill-clawhub-otp-challenger",
+  "skillKey": "clawhub-otp-challenger",
+  "name": "Otp Challenger",
+  "summary": "Enable agents and skills to challenge users for fresh two-factor authentication proof (TOTP or YubiKey) before executing sensitive actions. Use this for identity verification in approval workflows - deploy commands, financial operations, d.",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.otp_challenger",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ryan Nelson",
+      "features": [
+        "Enable agents and skills to challenge users for fresh two-factor authentication proof (TOTP or.",
+        "Use this for identity verification in approval workflows",
+        "deploy commands, financial operations, data access, admin operations, and change control."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/otp-challenger@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/347171?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "otp-challenger",
+      "url": "https://clawhub.ai/skills/otp-challenger"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "otp-challenger",
+    "url": "https://clawhub.ai/skills/otp-challenger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/otp-challenger-c64a02604f883de6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/otp-challenger@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-otp-challenger-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7201cea94a48108b186bdb5e62d969477067380cf63ca915e61982e6cc27daa4",
+      "artifactSizeBytes": 2259
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T05:39:13.744Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37903,
+  "uuid": "skill-clawhub-appm",
+  "skillKey": "clawhub-appm",
+  "name": "APPM: Atlas-Parallel Project Management",
+  "summary": "Manages AI Agent project memories by creating and updating .openclaw/MISSION.md and SNAPSHOT.md for parallel project progress tracking.",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.appm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanchunlee",
+      "features": [
+        "Manages AI Agent project memories by creating and updating .openclaw/MISSION.md and SNAPSHOT.md."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/appm@2.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/198865190?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "appm",
+      "url": "https://clawhub.ai/skills/appm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "appm",
+    "url": "https://clawhub.ai/skills/appm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/appm-5ec70c1ba41b3a3d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/appm@2.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-appm-2.2.0.json",
+      "version": "2.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a00808ab909fa6465c8d20e141e952df14cbcff6a01dcaf2203a2e9acd26dc15",
+      "artifactSizeBytes": 1914
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T08:43:00.711Z"
+}

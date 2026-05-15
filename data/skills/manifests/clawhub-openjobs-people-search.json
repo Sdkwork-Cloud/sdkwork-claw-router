@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16828,
+  "uuid": "skill-clawhub-openjobs-people-search",
+  "skillKey": "clawhub-openjobs-people-search",
+  "name": "Openjobs People Search",
+  "summary": "Search, discover, and retrieve professional candidate profiles using OpenJobs AI. Supports structured search, profile lookup, candidate comparison, talent an...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openjobs_people_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OpenJobs AI",
+      "features": [
+        "Search, discover, and retrieve professional candidate profiles using OpenJobs AI",
+        "Supports structured search, profile lookup, candidate comparison, talent an..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openjobs-people-search@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/176164832?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openjobs-people-search",
+      "url": "https://clawhub.ai/skills/openjobs-people-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openjobs-people-search",
+    "url": "https://clawhub.ai/skills/openjobs-people-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openjobs-people-search-78e12e2641c74182.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openjobs-people-search@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openjobs-people-search-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:50446aa57966662c3595d0b7e6e5e294550bb9d37977457eb6f6122761b59cdd",
+      "artifactSizeBytes": 2395
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T07:24:49.602Z"
+}

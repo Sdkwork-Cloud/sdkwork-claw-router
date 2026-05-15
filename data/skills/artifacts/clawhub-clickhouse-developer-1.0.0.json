@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clickhouse-developer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clickhouse_developer",
+  "skill": {
+    "id": 46919,
+    "skillKey": "clawhub-clickhouse-developer",
+    "name": "Clickhouse for Developers"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clickhouse-developer",
+    "url": "https://clawhub.ai/skills/clickhouse-developer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clickhouse-developer-84808183d17e9259.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive ClickHouse skill covering everything you need to work with a ClickHouse analytics database: schema design, query optimization, insert strategie..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "encryptshawn",
+      "userId": "s17acjjwshpqj4xkbngejj57nx83zbcy",
+      "displayName": "EncryptShawn",
+      "image": "https://avatars.githubusercontent.com/u/56897824?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 120,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777254029514,
+      "changelog": "Initial major release with new “rules”-based structure and streamlined best practices.\n\n- Switched to a comprehensive set of modular, topic-focused rules for schema design, query optimization, inserts, and engine selection.\n- Removed legacy monolithic documentation files; all guidance is now organized by workflow and use-case.\n- Added step-by-step instructions for schema partitioning, primary key and ORDER BY design, and column types.\n- Explicit reference for backend integration, CLI workflows, caching strategy, and testing/debugging ClickHouse data.\n- Enhanced clarity on when to use which table engines and how to avoid common ClickHouse pitfalls.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e135e43056791e9d079f1d6bcb595a406e4cb632b4cb31a1c9f001d3c63301ac"
+}

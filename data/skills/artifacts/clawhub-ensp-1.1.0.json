@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ensp@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ensp",
+  "skill": {
+    "id": 36022,
+    "skillKey": "clawhub-ensp",
+    "name": "eNSP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ensp",
+    "url": "https://clawhub.ai/skills/ensp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ensp-fc318d13f7eab1bb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Always use when user asks to create, generate, or design a network topology diagram for eNSP (Enterprise Network Simulation Platform), or mentions creating e..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "forealmy",
+      "userId": "s17d4esfzgz8wrg6e6y93yfsm1842ryh",
+      "displayName": "forealmy",
+      "image": "https://avatars.githubusercontent.com/u/34614792?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775634587872,
+      "changelog": "Version 1.1.0\n\n- Expanded and clarified device type tables, including new routers, switches, firewalls, wireless, and endpoint models with interface configs.\n- Improved organization by grouping devices under clear section headings.\n- Added and standardized interface configuration details for each device model.\n- No changes to output format, layout algorithm, or file generation process.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:27a8913139289757f3f121d521fc2da0457272ba44ca6b7000eea635a96ec21c"
+}

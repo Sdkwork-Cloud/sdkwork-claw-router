@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-shared-memory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_shared_memory",
+  "skill": {
+    "id": 38080,
+    "skillKey": "clawhub-openclaw-shared-memory",
+    "name": "OpenClaw Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-shared-memory",
+    "url": "https://clawhub.ai/skills/openclaw-shared-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-shared-memory-be2dba1b63fdac2c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reuse, inspect, search, or append shared OpenClaw memory on the current machine. Use when a request depends on remembered local servers, deploy hosts, intern..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kamiender",
+      "userId": "s177mn43eec15xwznjjhzp0f1d83j1fs",
+      "displayName": "KAMIENDER",
+      "image": "https://avatars.githubusercontent.com/u/30643514?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774419711812,
+      "changelog": "Initial public release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9b6d7a76cef75bcc9891c96007fb9ba860aac985ce0e108b9bbd2e1060396c1d"
+}

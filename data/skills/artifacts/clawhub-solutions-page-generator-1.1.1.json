@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/solutions-page-generator@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solutions_page_generator",
+  "skill": {
+    "id": 32938,
+    "skillKey": "clawhub-solutions-page-generator",
+    "name": "solutions-page-generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solutions-page-generator",
+    "url": "https://clawhub.ai/skills/solutions-page-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solutions-page-generator-04572a55dfacf272.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When the user wants to create, optimize, or audit solutions pages. Also use when the user mentions \"solutions,\" \"solutions page,\" \"by industry,\" \"industry so..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kostja94",
+      "userId": "s172p99xpjz6dy9bjqbs8x8d0x83hc45",
+      "displayName": "Kostja Zhang",
+      "image": "https://avatars.githubusercontent.com/u/168074885?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 235,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1774974616892,
+      "changelog": "Batch: pricing through feedback",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:431b09573dbfc5b0883d6c7a7d8c0011ba21ae6e80b3955af842e0ba96ffe42a"
+}

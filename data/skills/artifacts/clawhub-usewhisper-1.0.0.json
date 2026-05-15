@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/usewhisper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.usewhisper",
+  "skill": {
+    "id": 16063,
+    "skillKey": "clawhub-usewhisper",
+    "name": "usewhisper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "usewhisper",
+    "url": "https://clawhub.ai/skills/usewhisper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/usewhisper-8f13a20cd0b420d1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Official Whisper Context skill for OpenClaw. Cuts context tokens via delta compression + caching, and adds long-term memory across sessions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alinxus",
+      "userId": "publishers:alinxus",
+      "displayName": "Alinxus",
+      "image": "https://avatars.githubusercontent.com/u/81990934?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 932,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770960338204,
+      "changelog": "Initial release – introduces Whisper Context skill for OpenClaw.\n\n- Enables delta compression and caching of context to reduce API token usage and cost.\n- Supports long-term memory across sessions for OpenClaw agents.\n- Provides Node-based helper (`whisper-context.mjs`) with commands: `query_context`, `ingest_session`, `memory_write`, `memory_search`, `oracle_search`, `get_cost_summary`, `cache_stats`, and `cache_warm`.\n- Allows skill installation via ClawHub and setup via environment variables.\n- Outlines security and privacy notes for API key handling and data submission.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ff6c82ebaf0d7bcdb0d281da075a75bb8d4f4c7935aae6402c0bfb9d6e478d18"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cyber-girlfriend@0.3.4",
+  "version": "0.3.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cyber_girlfriend",
+  "skill": {
+    "id": 17258,
+    "skillKey": "clawhub-cyber-girlfriend",
+    "name": "Cyber Girlfriend"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cyber-girlfriend",
+    "url": "https://clawhub.ai/skills/cyber-girlfriend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cyber-girlfriend-7c7cb1928d3dddac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build or customize an owner-only proactive companion system with a cyber-girlfriend persona, configurable guardrails, lightweight relationship memory, and op..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kasanuowa",
+      "userId": "s179sw03xjd5aqn751cpzenk4n83v551",
+      "displayName": "XieJiaQi",
+      "image": "https://avatars.githubusercontent.com/u/23185829?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 698,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "0.3.4",
+      "createdAt": 1777605703529,
+      "changelog": "Template refresh for safer OpenClaw companion setups.\n\nHighlights:\n- Recommend dedicated persistent companion sessions for live cron jobs (for example session:companion-owner).\n- Clarify that main + systemEvent remains legacy-compatible but can bleed into heartbeat or owner-chat context.\n- Refresh live cron templates to include explicit session routing and explicit delivery targets.\n- Align the top-level SKILL.md architecture guidance with the updated OpenClaw integration docs.\n\nNotes:\n- Documentation/template release only; pacing/state script behavior is unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:40f54fcebbe9e62d5184d1030209b3314ffedfcc8aff393c8bc7699120b41a2a"
+}

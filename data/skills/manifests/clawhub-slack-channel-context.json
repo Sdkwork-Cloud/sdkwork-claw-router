@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31944,
+  "uuid": "skill-clawhub-slack-channel-context",
+  "skillKey": "clawhub-slack-channel-context",
+  "name": "Slack Channel Context",
+  "summary": "Automatically loads Slack channel context files (e.g., bebops.md, C0AK8SDFS4W.md) into session context for Slack channels and threads. Use this skill wheneve...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slack_channel_context",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Brian",
+      "features": [
+        "Automatically loads Slack channel context files (e.g., bebops.md, C0AK8SDFS4W.md) into session.",
+        "Use this skill wheneve..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/slack-channel-context@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/252240545?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "slack-channel-context",
+      "url": "https://clawhub.ai/skills/slack-channel-context"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slack-channel-context",
+    "url": "https://clawhub.ai/skills/slack-channel-context",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slack-channel-context-b355824e6118fe24.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/slack-channel-context@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-slack-channel-context-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dc1fdc8e0b982019e5cb53eed8b66730f80ff067dce04f16ea043489f963f3f4",
+      "artifactSizeBytes": 1934
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T01:26:35.403Z"
+}

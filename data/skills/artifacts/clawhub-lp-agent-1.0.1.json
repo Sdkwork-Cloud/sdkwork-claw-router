@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lp-agent@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lp_agent",
+  "skill": {
+    "id": 21007,
+    "skillKey": "clawhub-lp-agent",
+    "name": "LP Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lp-agent",
+    "url": "https://clawhub.ai/skills/lp-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lp-agent-66aabaac287fa74d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run automated liquidity provision strategies on concentrated liquidity (CLMM) DEXs using Hummingbot API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fengtality",
+      "userId": "s17e4dmyqswjyz0b64xsrbe1r585g65b",
+      "displayName": "Michael Feng",
+      "image": "https://avatars.githubusercontent.com/u/1795030?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 517,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772239699576,
+      "changelog": "Sensible defaults, null price limits, 0.1% offset, production gotchas",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a6db85e71a14d32ae51489b1eba2bb441b1fe6b982de5b33347b0912dd194d32"
+}

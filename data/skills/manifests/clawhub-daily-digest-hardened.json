@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47184,
+  "uuid": "skill-clawhub-daily-digest-hardened",
+  "skillKey": "clawhub-daily-digest-hardened",
+  "name": "Daily Digest Hardened",
+  "summary": "Generate a daily digest from memory and interactions, stored under journals/digest/.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_digest_hardened",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Faberlens",
+      "features": [
+        "Generate a daily digest from memory and interactions, stored under journals/digest/."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-digest-hardened@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261834257?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-digest-hardened",
+      "url": "https://clawhub.ai/skills/daily-digest-hardened"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-digest-hardened",
+    "url": "https://clawhub.ai/skills/daily-digest-hardened",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-digest-hardened-6e78b979793c2964.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-digest-hardened@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-digest-hardened-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:12e4d7015f0080a1d741fbcfd4e43054771acd2073d6556e7940735ccf9422fc",
+      "artifactSizeBytes": 2427
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T05:20:57.334Z"
+}

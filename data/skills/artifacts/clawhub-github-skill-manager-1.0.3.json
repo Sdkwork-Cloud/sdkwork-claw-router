@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-skill-manager@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_skill_manager",
+  "skill": {
+    "id": 63193,
+    "skillKey": "clawhub-github-skill-manager",
+    "name": "github-skill-manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-skill-manager",
+    "url": "https://clawhub.ai/skills/github-skill-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-skill-manager-dda9606e416a7ca9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "管理来自 GitHub 仓库的技能。用户要安装技能、检查技能更新、更新已安装技能、卸载技能，或提到注册技能、GitHub 技能、REGISTRY.yaml 时，优先使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qvshuo",
+      "userId": "s174agq79fy8k18ctdj97dfpkn84s4rr",
+      "displayName": "An Jing",
+      "image": "https://avatars.githubusercontent.com/u/16971146?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776097728779,
+      "changelog": "- Improved documentation: SKILL.md now provides clear step-by-step instructions for installing, updating, and uninstalling skills from GitHub repositories.\n- Outlines input fields, system requirements, and usage examples for managing skills via the `gh` CLI and REGISTRY.yaml tracking.\n- Defines precise behavior for skill installation, version checking, updates, and removal, including conflict and error handling.\n- Clarifies communication: results, updates, and errors are reported directly to the user with tables or targeted messages.\n- Enforces strict management of skills only from GitHub and reinforces safeguards against unwanted overwrites and partial installations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dde0aef6db766a7ab75999451be372e6540f280dbb70e4b7a72c22ae60afb536"
+}

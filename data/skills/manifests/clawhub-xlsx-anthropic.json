@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21478,
+  "uuid": "skill-clawhub-xlsx-anthropic",
+  "skillKey": "clawhub-xlsx-anthropic",
+  "name": "Xlsx Anthropic",
+  "summary": "Use this skill any time a spreadsheet file is the primary input or output. This means any task where the user wants to: open, read, edit, or fix an existing...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xlsx_anthropic",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pupuking723",
+      "features": [
+        "Use this skill any time a spreadsheet file is the primary input or output",
+        "This means any task where the user wants to: open, read, edit, or fix an existing..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xlsx-anthropic@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/169750518?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xlsx-anthropic",
+      "url": "https://clawhub.ai/skills/xlsx-anthropic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xlsx-anthropic",
+    "url": "https://clawhub.ai/skills/xlsx-anthropic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xlsx-anthropic-4bc51620ddd659a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xlsx-anthropic@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xlsx-anthropic-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3cb61f127fa4a486658d671e4c56524bd2718c94ba8046f6bd16e868c286c11b",
+      "artifactSizeBytes": 2765
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T18:46:07.325Z"
+}

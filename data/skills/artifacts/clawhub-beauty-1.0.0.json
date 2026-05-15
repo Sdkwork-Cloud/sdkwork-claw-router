@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/beauty@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beauty",
+  "skill": {
+    "id": 21913,
+    "skillKey": "clawhub-beauty",
+    "name": "Beauty"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beauty",
+    "url": "https://clawhub.ai/skills/beauty",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beauty-b5610de1f6ffecc8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build practical beauty routines with skincare basics, makeup strategy, and hair care plans tailored to skin type, budget, and schedule."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 462,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772324127556,
+      "changelog": "Initial release with personalized beauty routines, safety guardrails, and situation-specific guidance for daily and event looks.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:64be7e4f962f6288aea27cbe1a4a7afa7d639f3d921d35658de5f3c874f87414"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ms-forms-auto@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ms_forms_auto",
+  "skill": {
+    "id": 38279,
+    "skillKey": "clawhub-ms-forms-auto",
+    "name": "MS Forms Auto"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ms-forms-auto",
+    "url": "https://clawhub.ai/skills/ms-forms-auto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ms-forms-auto-38f4f66ae9b33079.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate Microsoft Forms daily submissions with M365 MFA support and dual-calendar integration to auto-fill training, content dev, and learning hours."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "claireaicodes",
+      "userId": "publishers:claireaicodes",
+      "displayName": "ClaireAICodes",
+      "image": "https://avatars.githubusercontent.com/u/260567970?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 179,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774095935443,
+      "changelog": "Initial release with robust authentication, calendar-fetch integration, and OpenClaw cron compatibility. Smart MFA detection, consistent entry format, and navigation stability fixes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4127fafbe46867047a0b9e8e39d81bb49101584f96b6b08e5b5ba7a09a4888bd"
+}

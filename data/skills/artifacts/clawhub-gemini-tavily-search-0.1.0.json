@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gemini-tavily-search@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gemini_tavily_search",
+  "skill": {
+    "id": 30744,
+    "skillKey": "clawhub-gemini-tavily-search",
+    "name": "Gemini Tavily Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gemini-tavily-search",
+    "url": "https://clawhub.ai/skills/gemini-tavily-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gemini-tavily-search-3551f2930d2c2690.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when the user asks about current events, real-time information, recent news, live scores, financial data, price updates, recent changes, or an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "josearroyave",
+      "userId": "publishers:josearroyave",
+      "displayName": "Jose Arroyave",
+      "image": "https://avatars.githubusercontent.com/u/84480024?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 277,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773854805686,
+      "changelog": "- Initial release of gemini-tavily-search skill.\n- Provides up-to-date web information by combining Gemini (with Google Search) and automatic fallback to Tavily in case of errors.\n- Only activates for questions requiring current, real-time, or recently updated data.\n- Always returns results in a consistent JSON format, hiding any fallback details from the user.\n- Requires TAVILY_API_KEY and GEMINI_API_KEY for setup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:47aeba4a37820693430b5a9a30c5042f5497c08cd040aa845dc72dcd754212f2"
+}

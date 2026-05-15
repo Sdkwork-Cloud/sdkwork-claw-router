@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/notes-reminders@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notes_reminders",
+  "skill": {
+    "id": 18678,
+    "skillKey": "clawhub-notes-reminders",
+    "name": "Notes Reminders"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notes-reminders",
+    "url": "https://clawhub.ai/skills/notes-reminders",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notes-reminders-5b532925633165c1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage quick notes and time-based reminders."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yusaku-0426",
+      "userId": "publishers:yusaku-0426",
+      "displayName": "yusaku-0426",
+      "image": "https://avatars.githubusercontent.com/u/225117374?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 659,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771938428490,
+      "changelog": "Initial release of notes-reminders\n\n- Add scripts for managing quick notes (add, search)\n- Add scripts for creating and managing time-based reminders (add, list, check-and-fire)\n- Workflow for sending reminder messages to designated channels when due\n- Time handling: supports natural language requests in Asia/Tokyo timezone, converts to ISO 8601 format",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0a729443262dc41a0c5769601e59b9f01201266545d957ae7f7a4a51b3bc883d"
+}

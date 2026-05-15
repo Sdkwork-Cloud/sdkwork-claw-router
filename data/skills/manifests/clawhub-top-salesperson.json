@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71741,
+  "uuid": "skill-clawhub-top-salesperson",
+  "skillKey": "clawhub-top-salesperson",
+  "name": "金牌销售",
+  "summary": "生成销售场景话术，覆盖场景化脚本、异议处理、FAB转化和风格模仿。Use when 用户需要销售沟通文案、电话/面谈/微信话术、处理“太贵了/再考虑/和家人商量”等异议，或把产品功能转成客户利益点。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.top_salesperson",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nycxk",
+      "features": [
+        "生成销售场景话术，覆盖场景化脚本、异议处理、FAB转化和风格模仿。Use when 用户需要销售沟通文案、电话/面谈/微信话术、处理“太贵了/再考虑/和家人商量”等异议，或把产品功能转成客户."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/top-salesperson@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57032061?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "top-salesperson",
+      "url": "https://clawhub.ai/skills/top-salesperson"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "top-salesperson",
+    "url": "https://clawhub.ai/skills/top-salesperson",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/top-salesperson-44e06c734666c93d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/top-salesperson@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-top-salesperson-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8fea7af236e88ef81abe797af9e16729e9020957a0350da817d96c6c208a7a66",
+      "artifactSizeBytes": 1985
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T08:42:55.997Z"
+}

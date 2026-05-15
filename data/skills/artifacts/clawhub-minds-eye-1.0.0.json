@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/minds-eye@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minds_eye",
+  "skill": {
+    "id": 23903,
+    "skillKey": "clawhub-minds-eye",
+    "name": "minds-eye"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minds-eye",
+    "url": "https://clawhub.ai/skills/minds-eye",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minds-eye-78c5cd462550676a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Remember and retrieve visual content from conversations. Use when: (1) user sends an image, photo, chart, diagram, or screenshot and wants it saved/remembere..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "horisky",
+      "userId": "publishers:horisky",
+      "displayName": "Tianyu Jiang",
+      "image": "https://avatars.githubusercontent.com/u/198194441?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 327,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772743248468,
+      "changelog": "Initial release: visual memory skill for AI agents",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:41ffa72fe0ddbaa3ebeaa7252b3b8c3cc941bd5b7dd44197012f763ba3fff26a"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yescan-scan-universal@1.0.11",
+  "version": "1.0.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yescan_scan_universal",
+  "skill": {
+    "id": 71787,
+    "skillKey": "clawhub-yescan-scan-universal",
+    "name": "夸克扫描王 文件扫描增强 - yescan scan universal"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yescan-scan-universal",
+    "url": "https://clawhub.ai/skills/yescan-scan-universal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yescan-scan-universal-9f1d196bc47f6de4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "由夸克扫描王提供的专业智能文档扫描与图像处理工具。支持图片、截图、扫描件的图像增强与优化，包括画质增强、证件照优化、考试试卷增强等场景。智能去除手写笔迹、水印、阴影、摩尔纹、底色等干扰元素。支持图像裁剪矫正、素描效果转换、线稿提取。输出优化后的高清图片。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mozhihuidage",
+      "userId": "s1765pmm648c2y0csv6xp0s2pd83ggmn",
+      "displayName": "夸克扫描王",
+      "image": "https://avatars.githubusercontent.com/u/259593130?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 549,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.0.11",
+      "createdAt": 1776342025059,
+      "changelog": "- 更新描述和部分术语，突出“夸克扫描王”品牌，并对功能进行了简化说明\n- 技能配置推荐方式由“环境变量（免权限）”改为“CLI 配置（永久生效）”\n- 删除“手写文档识别”场景及相关意图，调整意图匹配顺序（考试增强排首）\n- 执行命令指令要求由 Python subprocess 转为直接标准命令行调用格式，相关举例及安全说明同步调整\n- 简化和重写部分约束、执行指南和注意事项，减少冗余内容\n- 移除 _meta.json 文件",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a4ed2084571425f5e6e1111d5bdeb91e8d81abf4bbe773ed41434c1348bbc33a"
+}

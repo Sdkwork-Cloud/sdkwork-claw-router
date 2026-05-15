@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-subtitle-bangla@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_subtitle_bangla",
+  "skill": {
+    "id": 55671,
+    "skillKey": "clawhub-ai-subtitle-bangla",
+    "name": "Ai Subtitle Bangla"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-subtitle-bangla",
+    "url": "https://clawhub.ai/skills/ai-subtitle-bangla",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-subtitle-bangla-1cac58d5b672ad52.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — generate Bangla subtitles for my video automatically — and get Bangla capt..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 110,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777222908801,
+      "changelog": "AI Subtitle Bangla — Generate Bangla Subtitles Automatically (v1.0.0)\n\n- Initial release of AI Subtitle Bangla skill: automate Bangla subtitle generation for uploaded videos.\n- Supports MP4, MOV, AVI, and WebM uploads up to 500MB.\n- Cloud-based rendering provides accurate Bangla captions within 1-2 minutes.\n- Simple session/token setup—no software installation required.\n- Includes one-command export, credits checking, and full media state/status tracking.\n- Tailored for Bengali content creators who need fast, reliable, server-side video captioning.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:42e5b9d7a22cb548b6ff617b6dd3451414e68fa76e8bce92781aee95c64289fe"
+}

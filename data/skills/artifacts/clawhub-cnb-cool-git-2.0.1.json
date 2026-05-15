@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cnb-cool-git@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cnb_cool_git",
+  "skill": {
+    "id": 63369,
+    "skillKey": "clawhub-cnb-cool-git",
+    "name": "Cnb Cool Git"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cnb-cool-git",
+    "url": "https://clawhub.ai/skills/cnb-cool-git",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cnb-cool-git-dcc461681410c84f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CNB 云原生构建平台的 Git 操作技能。使用 git 和 CNB Open API 进行代码克隆、提交、推送、分支管理、Merge Request 管理、流水线触发、流水线结果读取等操作。首次使用需收集用户的 Git 用户名和邮箱信息。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twksos",
+      "userId": "s1737btkwbey7w10ax7ewqmf4583ma0d",
+      "displayName": "twksos",
+      "image": "https://avatars.githubusercontent.com/u/912025?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 226,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1774544486779,
+      "changelog": "- 完善了 CNB 云原生构建平台 Git 操作技能的文档，系统性覆盖了令牌配置、git 用户信息、API 用法和最佳实践\n- 增加了详细的示例，包括 MR 管理、Pipeline 触发与读取结果、环境变量等\n- 明确区分了不同类型令牌的使用场景与限制\n- 进一步强调令牌及凭证安全管理方法\n- 面向开发者提供一站式 Git + API 操作流程参考",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d74c1dd45ab248d1446f6cd82866cfdf2eead6986875a471c0b8883e0bfb79dd"
+}

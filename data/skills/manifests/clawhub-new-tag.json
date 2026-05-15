@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27496,
+  "uuid": "skill-clawhub-new-tag",
+  "skillKey": "clawhub-new-tag",
+  "name": "New Tag",
+  "summary": "Prepare and publish a git release tag by inspecting the repo's release convention, bumping affected package versions, validating release builds, committing t...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.new_tag",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "femto",
+      "features": [
+        "Prepare and publish a git release tag by inspecting the repo's release convention, bumping affe."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/new-tag@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6938?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "new-tag",
+      "url": "https://clawhub.ai/skills/new-tag"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "new-tag",
+    "url": "https://clawhub.ai/skills/new-tag",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/new-tag-3601ef7106c35760.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/new-tag@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-new-tag-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bd0caba8b72af269486f13a374e5fb4302b4feb2395c593168e474bfd46f73bc",
+      "artifactSizeBytes": 1880
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T11:24:47.161Z"
+}

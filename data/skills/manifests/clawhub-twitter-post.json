@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9211,
+  "uuid": "skill-clawhub-twitter-post",
+  "skillKey": "clawhub-twitter-post",
+  "name": "Twitter Post",
+  "summary": "Post tweets to Twitter/X via the official API v2 (OAuth 1.0a). Use when the user asks to tweet, post to Twitter/X, send a thread, reply to a tweet, or quote...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twitter_post",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pt",
+      "features": [
+        "Post tweets to Twitter/X via the official API v2 (OAuth 1.0a)",
+        "Use when the user asks to tweet, post to Twitter/X, send a thread, reply to a tweet, or quote..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/twitter-post@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2328167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "twitter-post",
+      "url": "https://clawhub.ai/skills/twitter-post"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twitter-post",
+    "url": "https://clawhub.ai/skills/twitter-post",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twitter-post-c19537333171eedf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/twitter-post@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-twitter-post-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a38a6baca5760bd559ebef9524ad73730e32922db93247aaa8a5e2c0e3850813",
+      "artifactSizeBytes": 1905
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T02:35:12.380Z"
+}

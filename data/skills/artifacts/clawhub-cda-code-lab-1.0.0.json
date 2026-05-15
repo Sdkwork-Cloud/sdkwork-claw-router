@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cda-code-lab@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cda_code_lab",
+  "skill": {
+    "id": 61720,
+    "skillKey": "clawhub-cda-code-lab",
+    "name": "CDA Code Lab"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cda-code-lab",
+    "url": "https://clawhub.ai/skills/cda-code-lab",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cda-code-lab-ed783c4e90147325.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CDA 架构代码工坊——按 Causal Dynamics Architecture 规范生成可执行的 Python 仿真代码。 覆盖核心组件：CDABlock 管线、PINN 机制函数、哈密顿投影模块、辛积分器、NOTEARS 因果发现、 贝叶斯在线更新、CER 因果封装递归。 生成的代码可直接运行，依赖 Py..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangjiaocheng",
+      "userId": "s175zq13kt63ypfry5rgxh1pv18440m2",
+      "displayName": "波动几何",
+      "image": "https://avatars.githubusercontent.com/u/25478397?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777233606794,
+      "changelog": "CDA 架构代码工坊 1.0.0 – 初始发布\n\n- 支持按 Causal Dynamics Architecture (CDA) 规范生成可执行的 Python 仿真代码。\n- 覆盖核心组件：CDABlock 管线、PINN 机制函数、哈密顿投影、辛积分器、NOTEARS 因果发现、贝叶斯在线更新、CER 因果封装递归等。\n- 代码可直接运行，主要依赖 PyTorch，可读取 CDA Data Synthesizer 输出的 JSON 数据。\n- 提供详细的组件划分、生成流程和代码生成原则，自带引用标准与实现文档导航。\n- 适用于因果动力学仿真、机制函数实现、实验原型搭建等多种研发场景。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a8009364735eda3a73962073c6078199c7bbac0d1823fae2f1c376845dac210f"
+}

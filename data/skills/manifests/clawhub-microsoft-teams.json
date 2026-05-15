@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13442,
+  "uuid": "skill-clawhub-microsoft-teams",
+  "skillKey": "clawhub-microsoft-teams",
+  "name": "Microsoft Teams",
+  "summary": "Microsoft Teams API integration with managed OAuth. Manage teams, channels, messages, and meetings via Microsoft Graph API. Use this skill when users want to...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.microsoft_teams",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byungkyu",
+      "features": [
+        "Microsoft Teams API integration with managed OAuth",
+        "Manage teams, channels, messages, and meetings via Microsoft Graph API",
+        "Use this skill when users want to..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/microsoft-teams@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16563684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "microsoft-teams",
+      "url": "https://clawhub.ai/skills/microsoft-teams"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "microsoft-teams",
+    "url": "https://clawhub.ai/skills/microsoft-teams",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/microsoft-teams-9088a7e8c4f70b91.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/microsoft-teams@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-microsoft-teams-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:01b8aadf8a625f87305cb3b818a77cc82351352fae55585105b5102eba4a5ed2",
+      "artifactSizeBytes": 2247
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T22:27:02.168Z"
+}

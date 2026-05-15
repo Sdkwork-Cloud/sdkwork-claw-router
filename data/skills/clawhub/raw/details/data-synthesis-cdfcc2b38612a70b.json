@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "data-synthesis",
+    "displayName": "data-synthesis",
+    "summary": "从 CSV 语料切块后，用同一套 LLM 接口依次生成问题与答案，输出 JSONL 训练数据。 适用于文档/表格语料合成 QA、微调数据准备；支持 OpenAI 兼容网关与内网 Qwen 等服务。",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1776050570611,
+    "updatedAt": 1777527477710
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1776050570611,
+    "changelog": "- Initial release of \"data-synthesis\": generates QA training data by splitting CSV text into chunks, then using an LLM to create questions and answers for each chunk.\n- Supports both OpenAI-compatible APIs and internal Qwen services.\n- Implements a dry-run mode (no API calls) and flexible environment configuration.\n- Provides scripts for CSV parsing and full QA data synthesis, outputting JSONL with key metadata.\n- Designed for efficient document/table data QA synthesis, with clear input/output formats and usage instructions.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "erxiong0",
+    "userId": "s17cc7sd69341dzvpnas4mz9as83gj7m",
+    "displayName": "chichisyun",
+    "image": "https://avatars.githubusercontent.com/u/93334194?v=4"
+  },
+  "moderation": null
+}

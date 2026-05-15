@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14367,
+  "uuid": "skill-clawhub-hookaido",
+  "skillKey": "clawhub-hookaido",
+  "name": "Hookaido Webhook Integration",
+  "summary": "Webhook infrastructure for receiving, queuing, and delivering webhooks. Operate Hookaido webhook ingress, durable webhook queue (SQLite/Postgres), webhook de...",
+  "version": "2.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hookaido",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sebastian Gieseler",
+      "features": [
+        "Webhook infrastructure for receiving, queuing, and delivering webhooks",
+        "Operate Hookaido webhook ingress, durable webhook queue (SQLite/Postgres), webhook de..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hookaido@2.6.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20063940?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hookaido",
+      "url": "https://clawhub.ai/skills/hookaido"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hookaido",
+    "url": "https://clawhub.ai/skills/hookaido",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hookaido-3b9bb07414bac50e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hookaido@2.6.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hookaido-2.6.0.json",
+      "version": "2.6.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3e8781a2069437f345dfed2e4854d3ce3cd0f5d87cd962f604046632c03c86f6",
+      "artifactSizeBytes": 2184
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T22:20:18.274Z"
+}

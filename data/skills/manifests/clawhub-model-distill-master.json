@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71823,
+  "uuid": "skill-clawhub-model-distill-master",
+  "skillKey": "clawhub-model-distill-master",
+  "name": "模型蒸馏大师",
+  "summary": "模型蒸馏大师：将大模型能力迁移到小模型的完整工作流。 支持自适应蒸馏、课程学习、能力感知、对抗训练、多维度评估。 触发词：「蒸馏模型」「把XX模型蒸馏到YY」「压缩模型」「做小模型」「教师模型分析」。 默认学生模型：gemma-3-4b-it（4B参数，适合边缘部署）。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_distill_master",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ShiXiangYu2",
+      "features": [
+        "模型蒸馏大师：将大模型能力迁移到小模型的完整工作流。 支持自适应蒸馏、课程学习、能力感知、对抗训练、多维度评估。 触发词：「蒸馏模型」「把XX模型蒸馏到YY」「压缩模型」「做小模型」「教师模."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/model-distill-master@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/215228006?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "model-distill-master",
+      "url": "https://clawhub.ai/skills/model-distill-master"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-distill-master",
+    "url": "https://clawhub.ai/skills/model-distill-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-distill-master-593e15ea74cd5961.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/model-distill-master@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-model-distill-master-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:217762491293eeeb90a9606e588cd598dcc967bbda94e2491d770501adf3dfff",
+      "artifactSizeBytes": 2812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T04:22:49.190Z"
+}

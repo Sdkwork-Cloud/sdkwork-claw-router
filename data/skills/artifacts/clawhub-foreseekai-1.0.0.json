@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/foreseekai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.foreseekai",
+  "skill": {
+    "id": 11939,
+    "skillKey": "clawhub-foreseekai",
+    "name": "Foreseek AI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "foreseekai",
+    "url": "https://clawhub.ai/skills/foreseekai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/foreseekai-3ac50f943f8da57c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trade prediction markets with natural language via Foreseek. Matches your beliefs to Kalshi contracts and executes trades. Use when user wants to bet on or trade predictions about elections, politics, sports outcomes, economic data (Fed ra."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hypegamer007",
+      "userId": "publishers:hypegamer007",
+      "displayName": "HypeGamer007",
+      "image": "https://avatars.githubusercontent.com/u/89711539?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1861,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769928669248,
+      "changelog": "Initial release of the Foreseek skill for trading prediction markets via natural language.\n\n- Trade, manage, and view Kalshi prediction markets using simple commands.\n- Parse natural language predictions and match them to relevant markets.\n- Execute market and limit orders, view open positions, and manage orders (view/cancel).\n- Search for markets, view account status, balance, and portfolio.\n- Supports watchlists and detailed operation reference for all endpoints.\n- Requires a FORESEEK_API_KEY environment variable for authentication.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cef39a829848ce123ed780b07f5a847314c617da5316184c2a9225e24b96fb3b"
+}

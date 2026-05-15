@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70099,
+  "uuid": "skill-clawhub-qingbo-search",
+  "skillKey": "clawhub-qingbo-search",
+  "name": "Qingbo Search",
+  "summary": "通过清博开放平台，根据关键词、时间和媒体类型检索并返回相关网络文章标题、链接及发布时间等信息。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qingbo_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangqiang327",
+      "features": [
+        "通过清博开放平台，根据关键词、时间和媒体类型检索并返回相关网络文章标题、链接及发布时间等信息。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qingbo-search@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201034195?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qingbo-search",
+      "url": "https://clawhub.ai/skills/qingbo-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qingbo-search",
+    "url": "https://clawhub.ai/skills/qingbo-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qingbo-search-1fa8c9d89be768d9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qingbo-search@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-qingbo-search-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:00f776ed9679bbd41f6370c4b26cbcd621ab53b21429a97bd4e25f79a9b108a1",
+      "artifactSizeBytes": 1993
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T09:44:21.379Z"
+}

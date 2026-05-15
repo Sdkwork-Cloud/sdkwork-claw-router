@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18631,
+  "uuid": "skill-clawhub-tweet-summarizer-lite",
+  "skillKey": "clawhub-tweet-summarizer-lite",
+  "name": "Tweet Summarizer Lite",
+  "summary": "Fetch and summarize single tweets from Twitter/X. Basic search and single tweet fetching. Lightweight version perfect for quick tweet lookups.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tweet_summarizer_lite",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FranciscoBuiltDat",
+      "features": [
+        "Fetch and summarize single tweets from Twitter/X",
+        "Basic search and single tweet fetching",
+        "Lightweight version perfect for quick tweet lookups."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tweet-summarizer-lite@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260347361?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tweet-summarizer-lite",
+      "url": "https://clawhub.ai/skills/tweet-summarizer-lite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tweet-summarizer-lite",
+    "url": "https://clawhub.ai/skills/tweet-summarizer-lite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tweet-summarizer-lite-c14c03eedb40cb23.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tweet-summarizer-lite@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-tweet-summarizer-lite-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:31f305e247cc8894e274c84fdc63bfd11ef9ee4e3691d51232dd5a79444b9e4d",
+      "artifactSizeBytes": 2184
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T19:11:30.041Z"
+}

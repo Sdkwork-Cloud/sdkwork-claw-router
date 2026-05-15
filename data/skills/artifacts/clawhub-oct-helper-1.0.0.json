@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oct-helper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oct_helper",
+  "skill": {
+    "id": 62906,
+    "skillKey": "clawhub-oct-helper",
+    "name": "OCT 助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oct-helper",
+    "url": "https://clawhub.ai/skills/oct-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oct-helper-87f81242cf1a349a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供 OpenClaw Terminal (OCT) 的配置模板和使用指南，支持智能对话、系统控制和开发辅助功能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zl585451",
+      "userId": "publishers:zl585451",
+      "displayName": "Amy",
+      "image": "https://avatars.githubusercontent.com/u/52300214?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 304,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773315983467,
+      "changelog": "首次发布：OCT 桌面应用配置和使用技能",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a898fea502ac5173a7e5b0f59dc074efc5437b037a6e197a718d360db390ae99"
+}

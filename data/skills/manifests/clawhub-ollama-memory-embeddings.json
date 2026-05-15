@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10825,
+  "uuid": "skill-clawhub-ollama-memory-embeddings",
+  "skillKey": "clawhub-ollama-memory-embeddings",
+  "name": "Ollama Memory Embeddings",
+  "summary": "Configure OpenClaw memory search to use Ollama as the embeddings server (OpenAI-compatible /v1/embeddings) instead of the built-in node-llama-cpp local GGUF loading. Includes interactive model selection and optional import of an existing l.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ollama_memory_embeddings",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vidarbrekke",
+      "features": [
+        "Configure OpenClaw memory search to use Ollama as the embeddings server (OpenAI-compatible /v1/.",
+        "Includes interactive model selection and optional import of an existing local embedding GGUF in."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ollama-memory-embeddings@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1120991?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ollama-memory-embeddings",
+      "url": "https://clawhub.ai/skills/ollama-memory-embeddings"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ollama-memory-embeddings",
+    "url": "https://clawhub.ai/skills/ollama-memory-embeddings",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ollama-memory-embeddings-4a1b8743c84bb33e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ollama-memory-embeddings@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-ollama-memory-embeddings-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4839a6aaffda99e901450c7252bbbac84824b4de1d7fa374101c2d5c54324e67",
+      "artifactSizeBytes": 2170
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T02:10:02.442Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39402,
+  "uuid": "skill-clawhub-my-skill-clawhub-skill",
+  "skillKey": "clawhub-my-skill-clawhub-skill",
+  "name": "My Skill ClawHub Skill",
+  "summary": "Standardizes skill publishing with required versions and changelogs, and allows verified installation with optional versioning for ClawHub skills.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_skill_clawhub_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "canonxu",
+      "features": [
+        "Standardizes skill publishing with required versions and changelogs, and allows verified instal."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/my-skill-clawhub-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7338324?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "my-skill-clawhub-skill",
+      "url": "https://clawhub.ai/skills/my-skill-clawhub-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-skill-clawhub-skill",
+    "url": "https://clawhub.ai/skills/my-skill-clawhub-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-skill-clawhub-skill-692aac32e7930927.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/my-skill-clawhub-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-my-skill-clawhub-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8f5b0505acac6207542b7c9d6ef7e436dff33851b2f43c2b818897dbc3387672",
+      "artifactSizeBytes": 1960
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T22:22:10.820Z"
+}

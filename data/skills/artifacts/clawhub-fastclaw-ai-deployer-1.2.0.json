@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fastclaw-ai-deployer@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fastclaw_ai_deployer",
+  "skill": {
+    "id": 61193,
+    "skillKey": "clawhub-fastclaw-ai-deployer",
+    "name": "FastClaw AI部署工具"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fastclaw-ai-deployer",
+    "url": "https://clawhub.ai/skills/fastclaw-ai-deployer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fastclaw-ai-deployer-a7c7164c94ffc7fe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "FastClaw是一款轻量级AI Agent运行时工具，支持通过OpenClaw Skills生态安装，提供内置Web界面、SOUL.md兼容、多模型支持等功能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yesong-hue",
+      "userId": "s17865seb2fyk8mpkmjge2xwmd857k7c",
+      "displayName": "yesong-Hue",
+      "image": "https://avatars.githubusercontent.com/u/277589485?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1777970504118,
+      "changelog": "移除exe和install脚本描述，降低安全风险提示",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eee461dd27e9d54f0dd966fcfb33b42c20c7b49c333d7111b86cfe86239fd308"
+}

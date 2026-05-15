@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-prompt-shield@0.4.4",
+  "version": "0.4.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_prompt_shield",
+  "skill": {
+    "id": 34676,
+    "skillKey": "clawhub-openclaw-prompt-shield",
+    "name": "Openclaw Prompt Shield"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-prompt-shield",
+    "url": "https://clawhub.ai/skills/openclaw-prompt-shield",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-prompt-shield-972615122c713db5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local input-hardening scanner for OpenClaw agents. Pattern-based detection across 9 categories of LLM input risks, with combined-signal scoring and caller-su..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gopendrasharma89-tech",
+      "userId": "s17cp87fy279ggwne1mqcb6675843tdy",
+      "displayName": "gopendrasharma89-tech",
+      "image": "https://avatars.githubusercontent.com/u/226691732?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 221,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "0.4.4",
+      "createdAt": 1778319151438,
+      "changelog": "v0.4.4 — removes the last literal attack-template phrase from references/categories.txt comments. The LLM scanner was citing the phrase verbatim in its summary, so removing it from documentation should clear the llm_suspicious flag. No code, detection, or behaviour changes vs v0.4.3.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c9ec48f33c37e3ceb63290831539371a4fbf94b695ae51697997e99426898fa6"
+}

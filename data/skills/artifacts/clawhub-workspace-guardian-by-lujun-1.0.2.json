@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/workspace-guardian-by-lujun@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workspace_guardian_by_lujun",
+  "skill": {
+    "id": 71555,
+    "skillKey": "clawhub-workspace-guardian-by-lujun",
+    "name": "Workspace Guardian"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workspace-guardian-by-lujun",
+    "url": "https://clawhub.ai/skills/workspace-guardian-by-lujun",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workspace-guardian-by-lujun-0829b25475608f4c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "文件创建与目录组织规则。强制执行统一的命名规范和目录结构，确保所有产出物可预测、可查找、可追溯。价值：节省 token（减少重复搜索定位）、节约时间（不再花时间找文件）、降低管理成本（产出物有序不混乱）。当用户没有明确指定路径时，此规则强制生效。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lujun2508",
+      "userId": "s17fvfkn1ffzjp1mats1dk351583h595",
+      "displayName": "lujun2508",
+      "image": "https://avatars.githubusercontent.com/u/267008723?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 128,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776173703297,
+      "changelog": "Workspace Guardian v1.0.2\n\n- Clarified and enforced standardized file and directory organization rules across projects.\n- Detailed naming conventions for files, scripts, and reports to enhance predictability and traceability.\n- Listed prohibited behaviors with corrective guidance to avoid directory clutter and confusion.\n- Introduced automated cleaning procedures for unapproved outputs, failed scripts, temp files, and empty directories.\n- Provided self-check steps for each file creation to ensure users can quickly locate new files.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9e6b5a007d3fee69637f9fc70bf5261a793508fa24b811f952aaa5a605cf426d"
+}

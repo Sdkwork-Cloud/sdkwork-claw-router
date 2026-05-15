@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13588,
+  "uuid": "skill-clawhub-financial-overview",
+  "skillKey": "clawhub-financial-overview",
+  "name": "Financial Overview",
+  "summary": "Get a complete financial overview of the business including balance, recent transactions, outstanding invoices, and upcoming tax obligations. Use when the us...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.financial_overview",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Stan Kharlap",
+      "features": [
+        "Get a complete financial overview of the business including balance, recent transactions, outst.",
+        "Use when the us..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/financial-overview@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/117379032?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "financial-overview",
+      "url": "https://clawhub.ai/skills/financial-overview"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "financial-overview",
+    "url": "https://clawhub.ai/skills/financial-overview",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/financial-overview-6d72758db32cb758.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/financial-overview@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-financial-overview-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b8f9f2d4cba8d32e721cdbd9cc19b1d38b19720f4a28986607c9349697aac8a",
+      "artifactSizeBytes": 1999
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T18:36:26.906Z"
+}

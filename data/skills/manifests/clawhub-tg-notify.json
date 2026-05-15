@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23354,
+  "uuid": "skill-clawhub-tg-notify",
+  "skillKey": "clawhub-tg-notify",
+  "name": "Tg Notify",
+  "summary": "tg-notify",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tg_notify",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AgohpAI",
+      "features": [
+        "tg-notify"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tg-notify@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/233072885?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tg-notify",
+      "url": "https://clawhub.ai/skills/tg-notify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tg-notify",
+    "url": "https://clawhub.ai/skills/tg-notify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tg-notify-1f3a8945e376102a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tg-notify@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-tg-notify-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:23bdaa11778bcd4c08122f280113e0a634bf81d2c0411cfebc626b84aeb401b9",
+      "artifactSizeBytes": 1908
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T22:53:24.266Z"
+}

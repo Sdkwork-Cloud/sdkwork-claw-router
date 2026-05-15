@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69911,
+  "uuid": "skill-clawhub-tobemsk-image-search",
+  "skillKey": "clawhub-tobemsk-image-search",
+  "name": "本地图片语义搜索",
+  "summary": "本地图片语义搜索工具，基于 CLIP 模型实现中英文图片内容的语义理解检索，类似小米相册 AI 搜索功能。使用场景：(1) 用户想用自然语言搜索本地图片 (2) 用户需要搜索中文关键词相关的图片 (3) 用户提到\"搜图片\"、\"找图片\"、\"图片搜索\"、\"AI相册\"等关键词",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tobemsk_image_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tobemsk",
+      "features": [
+        "本地图片语义搜索工具，基于 CLIP 模型实现中英文图片内容的语义理解检索，类似小米相册 AI 搜索功能。使用场景：(1) 用户想用自然语言搜索本地图片 (2) 用户需要搜索中文关键词相关的."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tobemsk-image-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/230471728?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tobemsk-image-search",
+      "url": "https://clawhub.ai/skills/tobemsk-image-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tobemsk-image-search",
+    "url": "https://clawhub.ai/skills/tobemsk-image-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tobemsk-image-search-ecbdd99340ccfb8a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tobemsk-image-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tobemsk-image-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:81b865095c1250d85040e5bb903e9dacafe89f997f343af06b675d33f3bb6346",
+      "artifactSizeBytes": 2495
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T18:09:13.188Z"
+}

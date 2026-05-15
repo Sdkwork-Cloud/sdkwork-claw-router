@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/parcel-tracking@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.parcel_tracking",
+  "skill": {
+    "id": 48073,
+    "skillKey": "clawhub-parcel-tracking",
+    "name": "Parcel Tracking"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "parcel-tracking",
+    "url": "https://clawhub.ai/skills/parcel-tracking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/parcel-tracking-854bd701f1db91a4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Erkennt automatisch den Paketdienst (DHL, Hermes, UPS, GLS, Amazon etc.) via Track123-API und ruft Tracking-Informationen ab. Optional PLZ für erweiterte Infos."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dany9328",
+      "userId": "publishers:dany9328",
+      "displayName": "dany9328",
+      "image": "https://avatars.githubusercontent.com/u/117908379?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 652,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771881690062,
+      "changelog": "- Initial release with project dependencies and Python virtual environment setup.\n- Added requirements.txt and full venv structure with core libraries (certifi, charset_normalizer, idna, pip) included.\n- No code or documentation changes to skill logic.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:83125d2ec70d4c16fdc84c89d3cdf67a99df42a594cb050e892c974fb75edaf8"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65864,
+  "uuid": "skill-clawhub-ielts-extractor",
+  "skillKey": "clawhub-ielts-extractor",
+  "name": "Ielts Extractor",
+  "summary": "自动从剑桥雅思PDF中提取多页连续阅读文章和题目内容，支持双栏排版并保存为结构化JSON格式。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ielts_extractor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xuanyu Chen",
+      "features": [
+        "自动从剑桥雅思PDF中提取多页连续阅读文章和题目内容，支持双栏排版并保存为结构化JSON格式。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ielts-extractor@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/150888349?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ielts-extractor",
+      "url": "https://clawhub.ai/skills/ielts-extractor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ielts-extractor",
+    "url": "https://clawhub.ai/skills/ielts-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ielts-extractor-707c5d324c3b206f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ielts-extractor@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ielts-extractor-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a1c5df720b438aef4ed268649d434da076701a22931531a720eb95e22a1dc07a",
+      "artifactSizeBytes": 2348
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T10:09:05.401Z"
+}

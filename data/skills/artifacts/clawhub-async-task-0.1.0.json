@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/async-task@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.async_task",
+  "skill": {
+    "id": 9704,
+    "skillKey": "clawhub-async-task",
+    "name": "Async Task"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "async-task",
+    "url": "https://clawhub.ai/skills/async-task",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/async-task-9e7591c295077afc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run and manage long tasks exceeding HTTP timeouts by starting, updating, and completing them asynchronously with immediate responses."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "enderfga",
+      "userId": "publishers:enderfga",
+      "displayName": "Enderfga",
+      "image": "https://avatars.githubusercontent.com/u/74981769?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3279,
+      "installsAllTime": 14,
+      "installsCurrent": 12,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769957539219,
+      "changelog": "- Initial release of async-task skill.\n- Enables execution of long-running tasks without HTTP timeouts.\n- Provides CLI commands for starting, updating, and completing background tasks.\n- Supports integration with OpenClaw, Clawdbot, and custom webhook endpoints.\n- Automatic session detection—zero configuration required.\n- Includes critical usage rules to ensure task lifecycle consistency.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fee0bf1ed84a09952033e0c9f58e8aee5b380eab41edde6edda4d4d59691e194"
+}

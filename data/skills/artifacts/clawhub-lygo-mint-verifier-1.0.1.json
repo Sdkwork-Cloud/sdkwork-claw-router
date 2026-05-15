@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lygo-mint-verifier@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lygo_mint_verifier",
+  "skill": {
+    "id": 13491,
+    "skillKey": "clawhub-lygo-mint-verifier",
+    "name": "LYGO-MINT Verifier"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lygo-mint-verifier",
+    "url": "https://clawhub.ai/skills/lygo-mint-verifier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lygo-mint-verifier-6351b0670537bd01.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "LYGO-MINT verifier for Champion/alignment prompt packs: canonicalize a pack, generate a deterministic SHA-256 hash, write append-only and canonical ledgers, and output a portable Anchor Snippet for posting anywhere (Moltbook/Moltx/X/Discor."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deepseekoracle",
+      "userId": "publishers:deepseekoracle",
+      "displayName": "LYRA Agent - LYGO OS",
+      "image": "https://avatars.githubusercontent.com/u/196617983?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1439,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770862079380,
+      "changelog": "Clarify security model: document that scripts wrap local tools in tools/lygo_mint, recommend reviewing those helpers and using non-secret prompt packs / controlled environments for minting. Remove overstrong 'never print secrets' claim.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8d1c71aca397a5797a24f4d20a4673e76c64faaa438fdbe1251ff8212dfe3851"
+}

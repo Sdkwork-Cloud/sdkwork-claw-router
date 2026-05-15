@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57628,
+  "uuid": "skill-clawhub-alibabacloud-flink-workspace-ops",
+  "skillKey": "clawhub-alibabacloud-flink-workspace-ops",
+  "name": "Alibabacloud Flink Workspace Ops",
+  "summary": "Use when user explicitly asks Flink/Ververica/Realtime Compute Console workspace operations: 草稿(draft), SQL校验/执行, 部署(deployment), 作业(job), Session Cluster, n...",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_flink_workspace_ops",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alibabacloud-skills-team",
+      "features": [
+        "Use when user explicitly asks Flink/Ververica/Realtime Compute Console workspace operations: 草稿."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alibabacloud-flink-workspace-ops@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49941014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alibabacloud-flink-workspace-ops",
+      "url": "https://clawhub.ai/skills/alibabacloud-flink-workspace-ops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-flink-workspace-ops",
+    "url": "https://clawhub.ai/skills/alibabacloud-flink-workspace-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-flink-workspace-ops-216b442311243fa8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alibabacloud-flink-workspace-ops@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-alibabacloud-flink-workspace-ops-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d8b9f78e93edffaa505b4b175afc5f6bf0cea78be984165543f355c6be82f285",
+      "artifactSizeBytes": 2945
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T07:34:04.777Z"
+}

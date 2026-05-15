@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50948,
+  "uuid": "skill-clawhub-fia-signals",
+  "skillKey": "clawhub-fia-signals",
+  "name": "Fia Signals",
+  "summary": "Real-time crypto market intelligence from Fía Signals. Use when asked about: crypto market regime, BTC regime, trending up or down, market direction, funding...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fia_signals",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Odds7",
+      "features": [
+        "Real-time crypto market intelligence from Fía Signals",
+        "Use when asked about: crypto market regime, BTC regime, trending up or down, market direction,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fia-signals@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/73413752?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fia-signals",
+      "url": "https://clawhub.ai/skills/fia-signals"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fia-signals",
+    "url": "https://clawhub.ai/skills/fia-signals",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fia-signals-0a1411ff5194d0c4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fia-signals@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fia-signals-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8ec5697083081c46ca98cc46357fcf29e4737abc78973f88a139ddeb5466b1d4",
+      "artifactSizeBytes": 1978
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T21:44:26.626Z"
+}

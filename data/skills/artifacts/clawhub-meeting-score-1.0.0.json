@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meeting-score@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meeting_score",
+  "skill": {
+    "id": 72111,
+    "skillKey": "clawhub-meeting-score",
+    "name": "meeting-score"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meeting-score",
+    "url": "https://clawhub.ai/skills/meeting-score",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meeting-score-963a615fd0e9145d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "会议议题评分系统。会议主持人提供议题名称、材料链接和评委名单，自动在飞书多维表格中创建评分表。每位评委独立打分（打分维度一（替换为实际）、打分维度二（替换为实际）、打分维度三（替换为实际）），打分范围 H/M/L，评分完成后主持人可查看各议题平均分汇总。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lixiaojie-1012",
+      "userId": "publishers:lixiaojie-1012",
+      "displayName": "Jay",
+      "image": "https://avatars.githubusercontent.com/u/77764854?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 490,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772264508005,
+      "changelog": "Initial release of the meeting agenda scoring system for Feishu:\n\n- Hosts can create a scoring table with custom agenda titles, material links, and a judge list in Feishu Bitable.\n- Judges score each agenda independently across three customizable dimensions (H/M/L), with individual anonymity.\n- Automatic calculation of subtotal and average scores for each agenda; host can view real-time summary and ranking.\n- Step-by-step setup guidance, including detailed instructions for advanced row-level permissions to ensure scoring privacy.\n- Supports periodic auto-calculation via scheduled polling, and manual \"view summary\" reporting at any time.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:21180fd02a5c6f79bdfbac27aae6c8f4f023bef21340c9cd4cb5729535008528"
+}

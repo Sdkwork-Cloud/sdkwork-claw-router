@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/backup-restore@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.backup_restore",
+  "skill": {
+    "id": 68962,
+    "skillKey": "clawhub-backup-restore",
+    "name": "Backup Restore"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "backup-restore",
+    "url": "https://clawhub.ai/skills/backup-restore",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/backup-restore-b55246662563b0c0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "系统备份恢复 - 全量备份、增量备份、自动备份计划、一键恢复、备份验证。保护配置、数据、技能和工作区。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuhui435",
+      "userId": "s176hmr9pf23xfpssd2n4k42wx83mhyh",
+      "displayName": "yuhui435",
+      "image": "https://avatars.githubusercontent.com/u/63905485?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 259,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774261416041,
+      "changelog": "- Updated SKILL.md to clarify the backup range for configuration files, including support for cron/jobs.json and crons.json (compatibility).\n- No changes to functionality; documentation improvement only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b9e32d4593b62e2cbba2c66abb0b14fa5a78b07a71c974f01bcb9c969a53077b"
+}

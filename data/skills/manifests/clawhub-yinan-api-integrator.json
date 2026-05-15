@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18825,
+  "uuid": "skill-clawhub-yinan-api-integrator",
+  "skillKey": "clawhub-yinan-api-integrator",
+  "name": "Api Integrator",
+  "summary": "API integration and automation skill for connecting services, webhooks, and third-party platforms. Use when integrating APIs, building webhooks, syncing data...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yinan_api_integrator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yinanping",
+      "features": [
+        "API integration and automation skill for connecting services, webhooks, and third-party platfor.",
+        "Use when integrating APIs, building webhooks, syncing data..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yinan-api-integrator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/87659652?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yinan-api-integrator",
+      "url": "https://clawhub.ai/skills/yinan-api-integrator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yinan-api-integrator",
+    "url": "https://clawhub.ai/skills/yinan-api-integrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yinan-api-integrator-43e4c8ddc551e859.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yinan-api-integrator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-yinan-api-integrator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b21b48b27c0b545433e964d162c653c05dbf80c9713af182b80159bbbbb36994",
+      "artifactSizeBytes": 2322
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T10:41:25.305Z"
+}

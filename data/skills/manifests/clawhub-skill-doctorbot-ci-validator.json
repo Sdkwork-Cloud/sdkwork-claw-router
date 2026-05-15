@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16344,
+  "uuid": "skill-clawhub-skill-doctorbot-ci-validator",
+  "skillKey": "clawhub-skill-doctorbot-ci-validator",
+  "name": "Doctorbot Ci Validator",
+  "summary": "Stop failing in production. Validate your GitHub Actions, GitLab CI & Keep workflows offline with surgical precision. Born from Keep bounty research, perfected for agents.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_doctorbot_ci_validator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bamontejano",
+      "features": [
+        "Stop failing in production",
+        "Validate your GitHub Actions, GitLab CI & Keep workflows offline with surgical precision",
+        "Born from Keep bounty research, perfected for agents."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-doctorbot-ci-validator@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/209756837?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-doctorbot-ci-validator",
+      "url": "https://clawhub.ai/skills/skill-doctorbot-ci-validator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-doctorbot-ci-validator",
+    "url": "https://clawhub.ai/skills/skill-doctorbot-ci-validator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-doctorbot-ci-validator-df5e380626905129.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-doctorbot-ci-validator@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-doctorbot-ci-validator-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:37888a4edab88ff5b230788c5cf75281aa3e5691fd249219846e1c694cfdb1bf",
+      "artifactSizeBytes": 2438
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T16:15:47.946Z"
+}

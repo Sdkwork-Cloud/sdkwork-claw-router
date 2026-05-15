@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64581,
+  "uuid": "skill-clawhub-1lou-search",
+  "skillKey": "clawhub-1lou-search",
+  "name": "1lou Search",
+  "summary": "在1lou网站搜索影视资源并下载到群晖qBittorrent。用于手动搜索电影或电视剧。触发关键词：影视搜索",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.1lou_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bluepop1991-cloud",
+      "features": [
+        "在1lou网站搜索影视资源并下载到群晖qBittorrent。用于手动搜索电影或电视剧。触发关键词：影视搜索"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/1lou-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267942322?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "1lou-search",
+      "url": "https://clawhub.ai/skills/1lou-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "1lou-search",
+    "url": "https://clawhub.ai/skills/1lou-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/1lou-search-4e95bf4850f4bcfa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/1lou-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-1lou-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:02a88706a3effbff04ce514586d100fa947b14c96762479ad1295ba8efb64f59",
+      "artifactSizeBytes": 2501
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T21:44:07.547Z"
+}

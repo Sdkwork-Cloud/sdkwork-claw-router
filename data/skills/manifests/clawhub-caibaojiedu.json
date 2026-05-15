@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71981,
+  "uuid": "skill-clawhub-caibaojiedu",
+  "skillKey": "clawhub-caibaojiedu",
+  "name": "caibao",
+  "summary": "精准解读真实财报数据，分析重资产周期拐点，排查财务造假，提供严谨投资决断建议。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.caibaojiedu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "houyucheg",
+      "features": [
+        "精准解读真实财报数据，分析重资产周期拐点，排查财务造假，提供严谨投资决断建议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/caibaojiedu@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57081480?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "caibaojiedu",
+      "url": "https://clawhub.ai/skills/caibaojiedu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "caibaojiedu",
+    "url": "https://clawhub.ai/skills/caibaojiedu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/caibaojiedu-6b1e068dd25e2fcf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/caibaojiedu@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-caibaojiedu-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3f4f6a1a88e6a65d2bfc98fd6b76915d8a9fa9fb16f605629c365692cafc2ad1",
+      "artifactSizeBytes": 2144
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T12:54:42.961Z"
+}

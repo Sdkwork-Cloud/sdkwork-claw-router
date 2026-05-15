@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flight-price-advisor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flight_price_advisor",
+  "skill": {
+    "id": 27335,
+    "skillKey": "clawhub-flight-price-advisor",
+    "name": "Flight Price Advisor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flight-price-advisor",
+    "url": "https://clawhub.ai/skills/flight-price-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flight-price-advisor-b69b304e25866226.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate concise, user-friendly flight price summaries with buy/wait recommendations. Requires SerpAPI key for real-time price data. Use when users ask about..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "keyikoi",
+      "userId": "s17a98te59fgza3ns6rs8sd4w183kr6g",
+      "displayName": "keyikoi",
+      "image": "https://avatars.githubusercontent.com/u/135075047?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 350,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775048973801,
+      "changelog": "flight-price-advisor v1.0.0\n\n- Initial release with concise flight price summaries and buy/wait recommendations.\n- Requires SerpAPI key for real-time flight price data; includes clear setup instructions.\n- Designed for C-end chat: outputs Markdown-only text, friendly tone, and actionable advice.\n- Provides automatic price level assessment (low/mid/high) and simple trend analysis.\n- Includes fallback guidance when data or SerpAPI is unavailable, plus sample response templates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:377dc85e537d3f3357a52396e194378770a01cdc6f896271f4998b4116e08a41"
+}

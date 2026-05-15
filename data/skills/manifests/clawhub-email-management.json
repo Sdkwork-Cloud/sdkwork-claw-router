@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9970,
+  "uuid": "skill-clawhub-email-management",
+  "skillKey": "clawhub-email-management",
+  "name": "Email Management",
+  "summary": "Triage inbox email, draft clear replies, and manage follow-ups with priority routing, commitment tracking, and reusable templates.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_management",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Triage inbox email, draft clear replies, and manage follow-ups with priority routing, commitmen."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/email-management@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "email-management",
+      "url": "https://clawhub.ai/skills/email-management"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-management",
+    "url": "https://clawhub.ai/skills/email-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-management-81edcdf8391ced9e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/email-management@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-email-management-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:60b9220012033c2b552ecae4dfa639e3e58bb781fc83bc9e71955c5920ae35df",
+      "artifactSizeBytes": 1971
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T19:41:58.743Z"
+}

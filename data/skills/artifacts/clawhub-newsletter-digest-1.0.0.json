@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/newsletter-digest@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.newsletter_digest",
+  "skill": {
+    "id": 8958,
+    "skillKey": "clawhub-newsletter-digest",
+    "name": "Newsletter Digest"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "newsletter-digest",
+    "url": "https://clawhub.ai/skills/newsletter-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/newsletter-digest-8ed257427f6543da.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Summarize newsletters and articles, extract key insights, create reading lists"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jhillin8",
+      "userId": "publishers:jhillin8",
+      "displayName": "jhillin8",
+      "image": "https://avatars.githubusercontent.com/u/79551560?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4988,
+      "installsAllTime": 37,
+      "installsCurrent": 36,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769326504920,
+      "changelog": "Initial release of Newsletter Digest.\n\n- Summarizes newsletters and articles, highlighting key insights\n- Extracts topics and categorizes content automatically\n- Creates and manages personalized reading lists\n- Learns user interests for better content recommendations\n- Supports simple commands for summaries, reading lists, and preferences",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:76399111029d688e1ea66d2d27054bbc7e464850061c9c3a530f8c916bc39c87"
+}

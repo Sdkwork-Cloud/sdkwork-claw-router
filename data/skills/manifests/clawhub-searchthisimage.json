@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51847,
+  "uuid": "skill-clawhub-searchthisimage",
+  "skillKey": "clawhub-searchthisimage",
+  "name": "Reverse Image Search",
+  "summary": "Reverse image search — find where an image appears on the web, visually similar images, and what the image contains. Works with image URLs or uploaded image...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.searchthisimage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "selvatuple",
+      "features": [
+        "Reverse image search — find where an image appears on the web, visually similar images, and wha.",
+        "Works with image URLs or uploaded image..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/searchthisimage@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/140517908?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "searchthisimage",
+      "url": "https://clawhub.ai/skills/searchthisimage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "searchthisimage",
+    "url": "https://clawhub.ai/skills/searchthisimage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/searchthisimage-54a74534bd6051d9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/searchthisimage@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-searchthisimage-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:91f7550ad0bafb4af69c3a9e9b85dcf744ce7c1b9ebbc625b2a06a0296291205",
+      "artifactSizeBytes": 2208
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T06:14:57.713Z"
+}

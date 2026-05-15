@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30075,
+  "uuid": "skill-clawhub-bank-reconciliation-agent",
+  "skillKey": "clawhub-bank-reconciliation-agent",
+  "name": "Bank Reconciliation Agent",
+  "summary": "Automate bank statement reconciliation against general ledger records. Upload or paste bank statements (CSV, OFX, QFX, or plain text) alongside GL export dat...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bank_reconciliation_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "samledger67-dotcom",
+      "features": [
+        "Automate bank statement reconciliation against general ledger records",
+        "Upload or paste bank statements (CSV, OFX, QFX, or plain text) alongside GL export dat..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bank-reconciliation-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261800271?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bank-reconciliation-agent",
+      "url": "https://clawhub.ai/skills/bank-reconciliation-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bank-reconciliation-agent",
+    "url": "https://clawhub.ai/skills/bank-reconciliation-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bank-reconciliation-agent-7b2c2323a83643a3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bank-reconciliation-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bank-reconciliation-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a10859439b04576bca5aca2bdb5d7cd407206f8d845c469f53e4db5243c575e4",
+      "artifactSizeBytes": 2092
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T06:16:06.232Z"
+}

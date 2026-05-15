@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/codex-orchestrator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codex_orchestrator",
+  "skill": {
+    "id": 9451,
+    "skillKey": "clawhub-codex-orchestrator",
+    "name": "Codex Orchestrator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codex-orchestrator",
+    "url": "https://clawhub.ai/skills/codex-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codex-orchestrator-8b92bdb10dfddb9f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor, control, and orchestrate background Codex sessions. Use this skill to track progress, handle interruptions, and ensure task completion for long-running coding tasks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "microcarft",
+      "userId": "publishers:microcarft",
+      "displayName": "Microcarft",
+      "image": "https://avatars.githubusercontent.com/u/152399668?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3612,
+      "installsAllTime": 29,
+      "installsCurrent": 28,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770382517965,
+      "changelog": "Initial release of codex-orchestrator skill:\n\n- Enables monitoring, control, and orchestration of background Codex coding sessions.\n- Introduces workflow for launching Codex in background PTY sessions and tracking progress.\n- Provides procedures for handling stuck processes, interacting with prompts, and killing unresponsive sessions.\n- Describes standard operating protocols for diagnosing and resuming tasks.\n- Outlines best practices for log retrieval, reporting, and maintaining records of coding activity.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f510718e8d7678638d64a2f5e75de2fba30e43af094adf01b23fbd13ed42a196"
+}

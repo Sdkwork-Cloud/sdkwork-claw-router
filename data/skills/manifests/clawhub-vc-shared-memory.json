@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70454,
+  "uuid": "skill-clawhub-vc-shared-memory",
+  "skillKey": "clawhub-vc-shared-memory",
+  "name": "Shared Memory",
+  "summary": "共享记忆池 - 跨团队、跨窗口、跨会话的统一记忆系统。支持公司公告板、项目协作空间、知识库、员工状态追踪。适用于虚拟公司、多人协作、AI 团队工作场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vc_shared_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "davidme6",
+      "features": [
+        "跨团队、跨窗口、跨会话的统一记忆系统。支持公司公告板、项目协作空间、知识库、员工状态追踪。适用于虚拟公司、多人协作、AI 团队工作场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vc-shared-memory@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/198009354?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vc-shared-memory",
+      "url": "https://clawhub.ai/skills/vc-shared-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vc-shared-memory",
+    "url": "https://clawhub.ai/skills/vc-shared-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vc-shared-memory-93e47a547756e8d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vc-shared-memory@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vc-shared-memory-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac61bc2ddf966eccaed4dc095571e14124d989e99d6798b90422dc9e0f4d1f42",
+      "artifactSizeBytes": 2588
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T14:46:19.584Z"
+}

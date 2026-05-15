@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67772,
+  "uuid": "skill-clawhub-marketing-calendar",
+  "skillKey": "clawhub-marketing-calendar",
+  "name": "marketing-calendar",
+  "summary": "华与华营销日历创意生成器。 输入品牌名与品牌资料，自动执行「盘点品牌资产 → 匹配文化母体 → 五要素创意 → 打分筛选」流程， 输出≥80分的营销日历活动方案，并生成可视化 HTML 报告。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.marketing_calendar",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CoCokkxy",
+      "features": [
+        "华与华营销日历创意生成器。 输入品牌名与品牌资料，自动执行「盘点品牌资产 → 匹配文化母体 → 五要素创意 → 打分筛选」流程， 输出≥80分的营销日历活动方案，并生成可视化 HTML 报告。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/marketing-calendar@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/160399987?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "marketing-calendar",
+      "url": "https://clawhub.ai/skills/marketing-calendar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "marketing-calendar",
+    "url": "https://clawhub.ai/skills/marketing-calendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/marketing-calendar-e34e18ee0874d01e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/marketing-calendar@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-marketing-calendar-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:671d819f69607b8dc58544169264c7684fd0b991d154d0ac501cd10a8959a66c",
+      "artifactSizeBytes": 2600
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T07:13:46.059Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/workflow-structurer-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workflow_structurer_skill",
+  "skill": {
+    "id": 41059,
+    "skillKey": "clawhub-workflow-structurer-skill",
+    "name": "An interactive workflow structuring assistant that progressively clarifies and decomposes a vague process into a structured, ex."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workflow-structurer-skill",
+    "url": "https://clawhub.ai/skills/workflow-structurer-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workflow-structurer-skill-bbc9467687424783.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interactive workflow structuring assistant that guides users step-by-step to transform vague process descriptions into structured, executable workflow docume..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "csh995426531",
+      "userId": "s1778bfhms2ke78ezxgzh2ahth83k15b",
+      "displayName": "csh995426531",
+      "image": "https://avatars.githubusercontent.com/u/23441583?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776316476567,
+      "changelog": "- Initial release of workflow-structurer: an interactive assistant for step-by-step workflow clarification and documentation.\n- Guides users to progressively clarify goals, extract high-level steps, drill into each step's details, and document inputs, outputs, responsibilities, risks, validation, and rules.\n- Supports both Chinese and English, automatically matching user's language.\n- Structured process with progress tracking, user confirmation at every step, and interruption/resume capability.\n- Generates a skill-creator handoff summary upon workflow completion.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e2aedbea3c16c25c6b136812bc88ca708bec9d9221be53c2d8a8bf9e17b8697e"
+}

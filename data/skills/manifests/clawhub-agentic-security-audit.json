@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10837,
+  "uuid": "skill-clawhub-agentic-security-audit",
+  "skillKey": "clawhub-agentic-security-audit",
+  "name": "Agentic Security Audit",
+  "summary": "Audit codebases, infrastructure, AND agentic AI systems for security issues. Covers traditional security (dependencies, secrets, OWASP web top 10, SSL/TLS, f...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentic_security_audit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kingrubic",
+      "features": [
+        "Audit codebases, infrastructure, AND agentic AI systems for security issues",
+        "Covers traditional security (dependencies, secrets, OWASP web top 10, SSL/TLS, f..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentic-security-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/116256161?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentic-security-audit",
+      "url": "https://clawhub.ai/skills/agentic-security-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentic-security-audit",
+    "url": "https://clawhub.ai/skills/agentic-security-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentic-security-audit-fb9973691de10e36.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentic-security-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentic-security-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:25f4d7f3c54f793a50a3191f315231bdc7e11ffe06c1bb2df0904ad1336377e4",
+      "artifactSizeBytes": 2260
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T03:46:50.591Z"
+}

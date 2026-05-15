@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-lancedb-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_lancedb_pro",
+  "skill": {
+    "id": 9526,
+    "skillKey": "clawhub-memory-lancedb-pro",
+    "name": "memory-lancedb-pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-lancedb-pro",
+    "url": "https://clawhub.ai/skills/memory-lancedb-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-lancedb-pro-ffde449513e5c5fd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when working with memory-lancedb-pro, a production-grade long-term memory MCP plugin for OpenClaw AI agents. Use when installing, c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aaronx-hu",
+      "userId": "s170j25rnbf0xvayvcwphhznpn83pe0j",
+      "displayName": "aaronx-hu",
+      "image": "https://avatars.githubusercontent.com/u/240210130?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3454,
+      "installsAllTime": 29,
+      "installsCurrent": 28,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773674780872,
+      "changelog": "memory-lancedb-pro v1.0.0 — Initial Release\n\n- Introduces a production-grade long-term memory plugin for OpenClaw AI agents, built on LanceDB.\n- Supports advanced features: Smart Extraction, hybrid retrieval (vector + BM25), memory lifecycle management (Weibull decay), multi-scope isolation, and self-improvement governance.\n- Provides clear, step-by-step workflow for optimal configuration, including multiple provider plans (Jina, SiliconFlow, OpenAI, Ollama/local).\n- Guides users through API key verification, configuration selection, and merging/config file management.\n- Adds tool support for memory operations (recall, store, forget, update, stats, list, self-improvement log/extract/review).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0460d2e086909133de1958e0f7196a9117051d182be182b23f124d71eb19d747"
+}

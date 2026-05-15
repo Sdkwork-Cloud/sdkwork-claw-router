@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14096,
+  "uuid": "skill-clawhub-server-health-agent",
+  "skillKey": "clawhub-server-health-agent",
+  "name": "Server Health Agent",
+  "summary": "Monitor VPS and server health metrics including real-time CPU usage, RAM utilization, disk usage, and Docker container status. Useful for DevOps monitoring,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.server_health_agent",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sanjay Jain",
+      "features": [
+        "Monitor VPS and server health metrics including real-time CPU usage, RAM utilization, disk usag.",
+        "Useful for DevOps monitoring,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/server-health-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/96682016?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "server-health-agent",
+      "url": "https://clawhub.ai/skills/server-health-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "server-health-agent",
+    "url": "https://clawhub.ai/skills/server-health-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/server-health-agent-217f1b0730d8c9e6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/server-health-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-server-health-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:494d1b1c8c8b6a9db6bc74c524f9b41a9decfd6e4e5bee889d322a75af19d818",
+      "artifactSizeBytes": 2234
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T12:39:34.025Z"
+}

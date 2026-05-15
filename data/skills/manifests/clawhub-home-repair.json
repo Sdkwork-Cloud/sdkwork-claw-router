@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69513,
+  "uuid": "skill-clawhub-home-repair",
+  "skillKey": "clawhub-home-repair",
+  "name": "Home Repair",
+  "summary": "该技能介绍如何通过上门维修实现变现；当你计划从事或优化上门维修时调用。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.home_repair",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mike47512",
+      "features": [
+        "该技能介绍如何通过上门维修实现变现；当你计划从事或优化上门维修时调用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/home-repair@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199718167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "home-repair",
+      "url": "https://clawhub.ai/skills/home-repair"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "home-repair",
+    "url": "https://clawhub.ai/skills/home-repair",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/home-repair-0d94aaf5d9bf192d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/home-repair@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-home-repair-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e6b5cd419a08a271bb99890a9a841778444170aa9b26a5a8328070c099a7c91e",
+      "artifactSizeBytes": 2173
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T16:27:55.870Z"
+}

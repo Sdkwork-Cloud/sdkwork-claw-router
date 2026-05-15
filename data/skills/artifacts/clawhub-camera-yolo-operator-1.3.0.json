@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/camera-yolo-operator@1.3.0",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.camera_yolo_operator",
+  "skill": {
+    "id": 58694,
+    "skillKey": "clawhub-camera-yolo-operator",
+    "name": "Camera YOLO Operator | 摄像头 YOLO 操控者"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "camera-yolo-operator",
+    "url": "https://clawhub.ai/skills/camera-yolo-operator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/camera-yolo-operator-b1c422ccda2f3b25.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Webcam YOLO and depth detection. 摄像头 YOLO 目标检测与 DA3Metric 深度估计；模型放 modules 缓存，输出放 projects。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "moroiser",
+      "userId": "s1708w2t7w31qf7b0gsy7kamnx83gqa6",
+      "displayName": "Morois",
+      "image": "https://avatars.githubusercontent.com/u/98001108?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 443,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.3.0",
+      "createdAt": 1777531989029,
+      "changelog": "1. Standardize model and output paths: models now live under ~/.cache/huggingface/modules/camera-yolo-operator, outputs under ~/.openclaw/workspace/projects/camera-yolo-operator, and the skill folder stays code-only. 统一模型与输出路径：模型放 modules 缓存，运行结果放 projects，技能文件夹仅保留代码。 2. Refresh the bilingual ClawHub Summary and default script paths for cleaner publishing and runtime behavior. 更新双语 ClawHub Summary 与脚本默认路径，提升发布与运行目录规范性。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3f95fee2c71e5ee2875c2fa3bdb21705ff4519b13c681bdd5f90f8a5cbed1dbf"
+}

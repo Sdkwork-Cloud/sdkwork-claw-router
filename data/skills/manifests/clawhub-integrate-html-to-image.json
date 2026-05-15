@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38668,
+  "uuid": "skill-clawhub-integrate-html-to-image",
+  "skillKey": "clawhub-integrate-html-to-image",
+  "name": "Html To Image",
+  "summary": "HTML to Image integration. Manage Images. Use when the user wants to interact with HTML to Image data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.integrate_html_to_image",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "HTML to Image integration",
+        "Manage Images",
+        "Use when the user wants to interact with HTML to Image data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/integrate-html-to-image@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "integrate-html-to-image",
+      "url": "https://clawhub.ai/skills/integrate-html-to-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "integrate-html-to-image",
+    "url": "https://clawhub.ai/skills/integrate-html-to-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/integrate-html-to-image-cc7bdcfb42d2d22e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/integrate-html-to-image@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-integrate-html-to-image-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d0d9464d9e04b436710337ca1b2fe3dd7e58d2aa5733ec11116a4c5213721e6",
+      "artifactSizeBytes": 1904
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:00:20.706Z"
+}

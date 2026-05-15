@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yuketang-incub@1.0.12",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yuketang_incub",
+  "skill": {
+    "id": 26307,
+    "skillKey": "clawhub-yuketang-incub",
+    "name": "yuketang-incub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yuketang-incub",
+    "url": "https://clawhub.ai/skills/yuketang-incub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yuketang-incub-f1d94c130ec493c1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when the user asks about Rain Classroom (Yuketang), such as their account ID, courses they teach, or courses they take. Trigger phrases includ..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "softwolves",
+      "userId": "s175fx4rbw9t0mw7q4b7tmk23x83x4mb",
+      "displayName": "刘兴辉",
+      "image": "https://avatars.githubusercontent.com/u/21190603?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 371,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.0.12",
+      "createdAt": 1774878483180,
+      "changelog": "**新增当日课程详情等功能，规范输出格式。**\n\n- 新增 `cube_teacher_today_teaching_detail`，支持查询当日单个课程详情\n- 新增 `cube_lesson_resolve_by_names` 工具，按名称查询 lessonId\n- 明确 `cube_teacher_today_teaching` 只输出 data.clawUserText，不允许改写或添加格式\n- 各工具和输出要求进一步细化，如必须展示正确班级、统计数据和原文链接\n- 场景表、速查表增加了“今天上课的情况”、“今天的课有多少人来上课了”等支持",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:51f233d14fed6875b9711457424c299fc4b7467fd4cac3ac1155b0be3ecc03d6"
+}

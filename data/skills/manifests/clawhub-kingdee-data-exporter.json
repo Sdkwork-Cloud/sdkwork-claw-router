@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58954,
+  "uuid": "skill-clawhub-kingdee-data-exporter",
+  "skillKey": "clawhub-kingdee-data-exporter",
+  "name": "KingdeeDataExporter",
+  "summary": "金蝶 K3Cloud 经营数据（多表单据+报表）导出 Skill。用于指导用户安装后填写 `config.py` 的 `KINGDEE_CONFIG`（base_url/acctid/username/password），然后运行 `data_exporter.py` 批量导出 `bill_configs` +...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kingdee_data_exporter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "YK",
+      "features": [
+        "金蝶 K3Cloud 经营数据（多表单据+报表）导出 Skill。用于指导用户安装后填写 `config.py` 的 `KINGDEE_CONFIG`（base_url/acctid/use."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kingdee-data-exporter@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/198171436?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kingdee-data-exporter",
+      "url": "https://clawhub.ai/skills/kingdee-data-exporter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kingdee-data-exporter",
+    "url": "https://clawhub.ai/skills/kingdee-data-exporter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kingdee-data-exporter-c7f836dedc4893dc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kingdee-data-exporter@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kingdee-data-exporter-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e9ac069fac943d3bb09a114eae3e0ebd788639e7856c84620ae877cb7646d890",
+      "artifactSizeBytes": 2540
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T08:25:29.319Z"
+}

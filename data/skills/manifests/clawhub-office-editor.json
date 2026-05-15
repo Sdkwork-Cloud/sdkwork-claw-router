@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15258,
+  "uuid": "skill-clawhub-office-editor",
+  "skillKey": "clawhub-office-editor",
+  "name": "Office-Editor",
+  "summary": "Create or modify Word (.docx), Excel (.xlsx), and PowerPoint (.pptx) files. Use when the user mentions Office, Word, Excel, PowerPoint, docx, xlsx, pptx, spr...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.office_editor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Noah",
+      "features": [
+        "Create or modify Word (.docx), Excel (.xlsx), and PowerPoint (.pptx) files",
+        "Use when the user mentions Office, Word, Excel, PowerPoint, docx, xlsx, pptx, spr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/office-editor@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/152876591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "office-editor",
+      "url": "https://clawhub.ai/skills/office-editor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "office-editor",
+    "url": "https://clawhub.ai/skills/office-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/office-editor-0ef85b675753296b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/office-editor@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-office-editor-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8ddbeba9f432a8ee38cca77d93c6a34b0e4db79a43643d019e2737a4f3f94d25",
+      "artifactSizeBytes": 2453
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T08:46:52.523Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/8917-minimax-toolkit@0.2.4",
+  "version": "0.2.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.8917_minimax_toolkit",
+  "skill": {
+    "id": 62762,
+    "skillKey": "clawhub-8917-minimax-toolkit",
+    "name": "8917 Minimax Toolkit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "8917-minimax-toolkit",
+    "url": "https://clawhub.ai/skills/8917-minimax-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/8917-minimax-toolkit-d7d98883a70e477e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MiniMax 多模态工具集。用于图片生成、图生图、视频生成、视频模板、语音合成、长文本 TTS、声音克隆、声音设计与音乐生成。适用于需要调用 MiniMax 官方 API 处理文本、图片、音频或视频素材的场景。默认将产物输出到当前工作区的 `workspace/03-Resources/minimax-outp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "blicae8917",
+      "userId": "s17f7fwtq7a2jx5s51yyf0h7wn83hsze",
+      "displayName": "叶澄风",
+      "image": "https://avatars.githubusercontent.com/u/248330750?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 279,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.2.4",
+      "createdAt": 1774361215280,
+      "changelog": "**New unified command-line interface; enhanced references and trust boundary documentation.**\n\n- Added unified entry script (`scripts/mm.py`) supporting 9 modalities for all generation scenarios, streamlining usage.\n- Introduced new reference files: capabilities, budget & privacy guidance, feature flags, quota mappings, official sources, and troubleshooting.\n- Implemented official documentation verification and local reference fallback; outputs difference reports for transparency.\n- Updated output directory and project isolation rules for more robust and predictable behavior.\n- Strengthened user prompts: always display estimated Token Plan request usage, rolling window policy, and privacy/trust boundary before execution.\n- Maintained compatibility with legacy scripts while promoting transition to the new interface.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0a0443e17d4ee2115c8d7d6e5f9515a8bcf682bb151de1a62320df748d7c2b68"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/task-assessor@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_assessor",
+  "skill": {
+    "id": 71094,
+    "skillKey": "clawhub-task-assessor",
+    "name": "task-assessor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-assessor",
+    "url": "https://clawhub.ai/skills/task-assessor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-assessor-9706b756a6e9216f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "任务难度与成本评估技能。当用户要求评估任务复杂度、所需时间、消耗成本或需要什么技能时激活。触发词包括\"评估任务\"、\"难度分析\"、\"成本估算\"、\"需要多久\"、\"需要什么技能\"、\"任务规划\"。**重要：自动检测任务难度，L3及以上在执行前必须先报告并确认。**"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qq16685283172",
+      "userId": "s17e23bbjne268mqgeer72787186af2t",
+      "displayName": "qq16685283172",
+      "image": "https://avatars.githubusercontent.com/u/132888882?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 96,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1778242129113,
+      "changelog": "新增规则：L3及以上任务执行前必须报告并确认，L1-L2直接执行",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4048f9f8cbfad6f5c1ac9909ae086afa816dd11024a9c1b70f90ad6accfc96d3"
+}

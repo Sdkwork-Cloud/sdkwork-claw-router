@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/upbit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.upbit",
+  "skill": {
+    "id": 24003,
+    "skillKey": "clawhub-upbit",
+    "name": "Upbit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "upbit",
+    "url": "https://clawhub.ai/skills/upbit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/upbit-dae0f8ff7c5cf2ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real-time cryptocurrency price lookup from Upbit (Korean KRW exchange). Use when user asks for Korean crypto prices, Upbit prices, domestic cryptocurrency ra..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lkjsays",
+      "userId": "publishers:lkjsays",
+      "displayName": "lkjsays",
+      "image": "https://avatars.githubusercontent.com/u/75766373?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 424,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772216784848,
+      "changelog": "- Initial release of Upbit Price Lookup skill.\n- Provides real-time cryptocurrency prices from Upbit (KRW markets).\n- Supports all coins listed on Upbit; fetch data using public API with `KRW-{SYMBOL}` format.\n- Returns current price, daily change, 24h statistics, and 52-week range.\n- Clear error handling for unsupported or invalid market codes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cad47ccc9ffc884ebd4eb22a34facfe8a068993be7be768add839135cc8c0b61"
+}

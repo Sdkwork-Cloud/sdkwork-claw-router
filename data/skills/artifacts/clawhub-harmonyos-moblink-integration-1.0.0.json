@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/harmonyos-moblink-integration@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.harmonyos_moblink_integration",
+  "skill": {
+    "id": 57862,
+    "skillKey": "clawhub-harmonyos-moblink-integration",
+    "name": "Harmonyos Moblink Integration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "harmonyos-moblink-integration",
+    "url": "https://clawhub.ai/skills/harmonyos-moblink-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/harmonyos-moblink-integration-06245de28199395f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interactive guide for integrating MobTech MobLink into HarmonyOS NEXT projects with 6-step workflow. Use when user says \"MobLink集成\", \"Link集成\", \"鸿蒙深度链接\", \"场景还..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mobsupport",
+      "userId": "s1795q9k9a75n8jgb852pqydgd85dg1d",
+      "displayName": "MobSupport",
+      "image": "https://avatars.githubusercontent.com/u/242118548?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 56,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778322431605,
+      "changelog": "Initial release of the HarmonyOS MobLink integration skill with a 6-step interactive guide.\n\n- Guides users through MobTech MobLink SDK integration for HarmonyOS NEXT, including privacy compliance and deep-link scene restore.\n- Provides official ohpm commands, project file requirements, and explicit config validation.\n- Interactive Excel-based MobLink config with step-by-step user prompts and field verification.\n- Covers ohpm dependency setup, module.json5 permissions, URI scheme/host configuration, and AbilityStage restore listener setup.\n- Includes privacy consent insertion and options for advanced business logic with ZztCustomController.\n- References all relevant MobTech MobLink HarmonyOS documentation for accurate, up-to-date guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:50ca67c2623ce0a64a1f18ef0c62eb665873444350480ed988b3e7966bc88d3b"
+}

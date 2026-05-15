@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-review-export@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_review_export",
+  "skill": {
+    "id": 52645,
+    "skillKey": "clawhub-amazon-review-export",
+    "name": "Amazon Review Export"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-review-export",
+    "url": "https://clawhub.ai/skills/amazon-review-export",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-review-export-e070e66a944d88da.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Amazon product review export and analysis agent. Extract, organize, and analyze Amazon reviews — export to structured format, identify sentiment patterns, su..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mguozhen",
+      "userId": "s170nk66cz4zpwnnsv8bxksrp983f82k",
+      "displayName": "mguozhen",
+      "image": "https://avatars.githubusercontent.com/u/1411875?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774345717574,
+      "changelog": "- Initial release of amazon-review-export.\n- Extracts, organizes, and analyzes Amazon product reviews.\n- Supports export to structured CSV format and generates full sentiment and pattern analysis.\n- Identifies key product insights, customer pain points, and competitive intelligence from reviews.\n- Provides ready-to-use outputs: rating breakdown, sentiment score, theme frequencies, VOC summary, and listing optimization recommendations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:55b0675cbf2162d0b332a69ca19679a4110739fb963e61f1cc7f488504d20de1"
+}

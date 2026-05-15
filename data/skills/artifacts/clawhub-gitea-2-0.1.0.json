@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gitea-2@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gitea_2",
+  "skill": {
+    "id": 57686,
+    "skillKey": "clawhub-gitea-2",
+    "name": "Gitea"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gitea-2",
+    "url": "https://clawhub.ai/skills/gitea-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gitea-2-a8aeda54bee5a9e4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with Gitea using the `tea` CLI. Use `tea issue`, `tea pr`, `tea actions`, and `tea api` for issues, PRs, Actions, and advanced queries."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "razzeee",
+      "userId": "publishers:razzeee",
+      "displayName": "razzeee",
+      "image": "https://avatars.githubusercontent.com/u/5943908?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1197,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770599564973,
+      "changelog": "Initial release of the gitea skill.\n\n- Provides instructions for using the tea CLI to interact with Gitea: managing issues, pull requests, CI/CD actions, and API queries.\n- Details steps for installing the tea CLI via Homebrew or Go.\n- Shows how to list and view issues, pull requests, repository secrets, and variables.\n- Explains login configuration for accessing different Gitea instances.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3c3860565d32176ffb72d69adc2e189849540b55114d4c0c377a05a037742b02"
+}

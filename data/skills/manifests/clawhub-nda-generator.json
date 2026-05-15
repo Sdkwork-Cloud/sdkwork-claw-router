@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59005,
+  "uuid": "skill-clawhub-nda-generator",
+  "skillKey": "clawhub-nda-generator",
+  "name": "Nda Generator",
+  "summary": "保密协议生成器。双向/单向NDA、员工保密、审查、模板库。NDA generator with mutual, unilateral, employee versions. 保密协议、NDA。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nda_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain3",
+      "features": [
+        "保密协议生成器。双向/单向NDA、员工保密、审查、模板库。NDA generator with mutual, unilateral, employee versions",
+        "保密协议、NDA。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nda-generator@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218212813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nda-generator",
+      "url": "https://clawhub.ai/skills/nda-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nda-generator",
+    "url": "https://clawhub.ai/skills/nda-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nda-generator-c5c0daa2ae37c33d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nda-generator@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nda-generator-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5759a89383aa76a280d973fcfd7b60ba18cf1358b888e60da32e17526a6fa37c",
+      "artifactSizeBytes": 1928
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T18:59:27.449Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23589,
+  "uuid": "skill-clawhub-namely",
+  "skillKey": "clawhub-namely",
+  "name": "Namely",
+  "summary": "Namely integration. Manage Persons, Organizations, Jobs, Goals, Payrolls. Use when the user wants to interact with Namely data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.namely",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Namely integration",
+        "Manage Persons, Organizations, Jobs, Goals, Payrolls",
+        "Use when the user wants to interact with Namely data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/namely@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "namely",
+      "url": "https://clawhub.ai/skills/namely"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "namely",
+    "url": "https://clawhub.ai/skills/namely",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/namely-faa94f91ef29ae16.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/namely@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-namely-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:71196e9a9170b86db312d0984ad616ea08bb5ae3428bcfcb8233c2c83a87cd2a",
+      "artifactSizeBytes": 1802
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T20:41:31.598Z"
+}

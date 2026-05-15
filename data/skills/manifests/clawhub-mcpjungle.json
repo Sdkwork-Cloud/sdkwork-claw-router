@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47121,
+  "uuid": "skill-clawhub-mcpjungle",
+  "skillKey": "clawhub-mcpjungle",
+  "name": "mcpjungle",
+  "summary": "Manage MCPJungle gateway through its CLI. Use when the user needs to list, register, deregister, enable, disable, invoke, or inspect MCP servers, tools, prom...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcpjungle",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ctxinf",
+      "features": [
+        "Manage MCPJungle gateway through its CLI",
+        "Use when the user needs to list, register, deregister, enable, disable, invoke, or inspect MCP."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mcpjungle@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/136044792?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mcpjungle",
+      "url": "https://clawhub.ai/skills/mcpjungle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcpjungle",
+    "url": "https://clawhub.ai/skills/mcpjungle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcpjungle-2fd31510ea483583.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mcpjungle@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-mcpjungle-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e166e209eb00609b55184b39dd0f7722da1f02b7c40758d4b25e253b4f7ee0b3",
+      "artifactSizeBytes": 2030
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T08:17:17.029Z"
+}

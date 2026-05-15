@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/discount@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.discount",
+  "skill": {
+    "id": 66687,
+    "skillKey": "clawhub-discount",
+    "name": "Discount Info"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "discount",
+    "url": "https://clawhub.ai/skills/discount",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/discount-221617318bcf5128.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供全网电商红包、线下超市折扣及品牌内购优惠汇总指引。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mike47512",
+      "userId": "s17916ncgb6bpm0fs1wdm6932d83gha4",
+      "displayName": "mike47512",
+      "image": "https://avatars.githubusercontent.com/u/199718167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 253,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773766295080,
+      "changelog": "Initial release of Discount Info.\n\n- 汇总全网电商红包、线下超市折扣及品牌内购优惠指引\n- 提供多维筛选项（如类别、场景、状态等）\n- 返回详细的操作流程、功能亮点及避坑指南\n- 支持实时状态追踪与消息提醒\n- 明确隐私及数据安全注意事项",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ff5206af09ac3f72f78c0716b910ef77a54dc9003a407fe94b38398a7236844c"
+}

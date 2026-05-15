@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63359,
+  "uuid": "skill-clawhub-maxhub-sora2",
+  "skillKey": "clawhub-maxhub-sora2",
+  "name": "Maxhub Sora2",
+  "summary": "Sora2平台公开内容浏览与用户信息查询。当用户提到sora、sora2、ai视频、视频创作者等相关需求时激活此Skill。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maxhub_sora2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xie Hao",
+      "features": [
+        "Sora2平台公开内容浏览与用户信息查询。当用户提到sora、sora2、ai视频、视频创作者等相关需求时激活此Skill。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/maxhub-sora2@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128963651?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "maxhub-sora2",
+      "url": "https://clawhub.ai/skills/maxhub-sora2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maxhub-sora2",
+    "url": "https://clawhub.ai/skills/maxhub-sora2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maxhub-sora2-da774983221463e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/maxhub-sora2@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-maxhub-sora2-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8ea0b36237d20c3e7bc552a57328de4243959c840c7c41560fe38bfaeec7ae01",
+      "artifactSizeBytes": 1900
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T16:12:35.089Z"
+}

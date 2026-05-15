@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mit24-product-definition@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mit24_product_definition",
+  "skill": {
+    "id": 68299,
+    "skillKey": "clawhub-mit24-product-definition",
+    "name": "Mit24 Product Definition"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mit24-product-definition",
+    "url": "https://clawhub.ai/skills/mit24-product-definition",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mit24-product-definition-b8b203bff1b278d9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MIT有序创业24步法第三阶段（步骤11-14）。当用户需要制定产品定价策略、计算客户终身价值CLV、设计MVP产品方案、量化客户购买决策标准时使用。触发词：产品定价、定价策略、客户终身价值、CLV、MVP、最小可行产品、产品设计、产品方案、购买决策标准、客户需求优先级"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "earthwalking",
+      "userId": "s17c22xptvm4zbcs3vbdf4mwj583hzep",
+      "displayName": "Roma",
+      "image": "https://avatars.githubusercontent.com/u/105550312?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 181,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775027421130,
+      "changelog": "Initial release - provides guidance for MIT Entrepreneurship 24 Steps Phase 3 (Steps 11–14):\n\n- Covers product pricing strategy selection, customer lifetime value (CLV) calculation, MVP product design, and quantification of customer purchase decision criteria.\n- Outlines step-by-step workflow from pricing method selection to decision matrix construction.\n- Provides clear expected outputs for each step, including pricing documents, CLV analysis, MVP specification, and decision matrix.\n- Includes actionable suggestions and tabulated comparisons for different pricing strategies.\n- Structured for use after completion of market segmentation and value proposition phases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ef20020cdd84429119355e656c236cf191b3008490b7a6c86b8e61815eeb5995"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shelly-invoice-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shelly_invoice_generator",
+  "skill": {
+    "id": 18385,
+    "skillKey": "clawhub-shelly-invoice-generator",
+    "name": "Invoice Generator Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shelly-invoice-generator",
+    "url": "https://clawhub.ai/skills/shelly-invoice-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shelly-invoice-generator-c37c6482ab598ff3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate professional invoices in Markdown or HTML by specifying client, items, tax, currency, dates, and output format."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "claudiodrusus",
+      "userId": "publishers:claudiodrusus",
+      "displayName": "claudiodrusus",
+      "image": "https://avatars.githubusercontent.com/u/258132540?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 695,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771792470067,
+      "changelog": "- Initial release of Invoice Generator.\n- Generate professional invoices in Markdown or HTML with simple command-line inputs.\n- Support for multiple items, custom tax rate, currency, and invoice numbering.\n- Output invoices to stdout or save as a file.\n- HTML output uses a print-ready template; Markdown uses clean tables.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8f191ad75d4bee812a28326312c64fd025557a21570a059239fc8a5f1c9ddca7"
+}

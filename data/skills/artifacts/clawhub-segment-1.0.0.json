@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/segment@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.segment",
+  "skill": {
+    "id": 54231,
+    "skillKey": "clawhub-segment",
+    "name": "Segment"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "segment",
+    "url": "https://clawhub.ai/skills/segment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/segment-03e71c6d7dc6bd4e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Segment — manage sources, destinations, events, and tracking plans via Config & Tracking APIs"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiwithabidi",
+      "userId": "publishers:aiwithabidi",
+      "displayName": "aiwithabidi",
+      "image": "https://avatars.githubusercontent.com/u/208891229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 443,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772823168536,
+      "changelog": "- Initial release of the Segment skill.\n- Manage Segment sources, destinations, events, and tracking plans via Config and Tracking APIs.\n- Python 3.10+ only, no external dependencies required.\n- All commands available through a single CLI script: sources, destinations, warehouses, catalogs, tracking plans, events, and more.\n- Outputs JSON by default, with an option for human-readable formatting.\n- Requires SEGMENT_ACCESS_TOKEN and SEGMENT_WRITE_KEY environment variables.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cedb9e29a913d78bc04c0623c1375e9b0a158af0b3fa6cd8404c37917b988570"
+}

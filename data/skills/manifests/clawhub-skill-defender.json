@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10792,
+  "uuid": "skill-clawhub-skill-defender",
+  "skillKey": "clawhub-skill-defender",
+  "name": "Skill Defender",
+  "summary": "Scans installed OpenClaw skills for malicious patterns including prompt injection, credential theft, data exfiltration, obfuscated payloads, and backdoors. Use when installing new skills, after skill updates, or for periodic security scans.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_defender",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "itsclawdbro",
+      "features": [
+        "Scans installed OpenClaw skills for malicious patterns including prompt injection, credential t.",
+        "Use when installing new skills, after skill updates, or for periodic security scans",
+        "Runs deterministic pattern matching — fast, offline, no API cost."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-defender@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257197593?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-defender",
+      "url": "https://clawhub.ai/skills/skill-defender"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-defender",
+    "url": "https://clawhub.ai/skills/skill-defender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-defender-d1adae9fda66c25f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-defender@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-defender-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b6794f5ab03c6fd8ed90406184f44f21cf11076e5712f1fd64a33051871cacb4",
+      "artifactSizeBytes": 2103
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T08:40:53.902Z"
+}

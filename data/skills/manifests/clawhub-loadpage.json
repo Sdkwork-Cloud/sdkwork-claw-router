@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11974,
+  "uuid": "skill-clawhub-loadpage",
+  "skillKey": "clawhub-loadpage",
+  "name": "loadpage",
+  "summary": "Remove signs of AI-generated writing from text. Use when editing or reviewing text to make it sound more natural and human-written. Based on Wikipedia's comprehensive \"Signs of AI writing\" guide. Detects and fixes patterns including: infla.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.loadpage",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jazzyong2023",
+      "features": [
+        "Remove signs of AI-generated writing from text",
+        "Use when editing or reviewing text to make it sound more natural and human-written",
+        "Based on Wikipedia's comprehensive \"Signs of AI writing\" guide",
+        "Detects and fixes patterns including: inflated symbolism, promotional language, superficial -in."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/loadpage@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130814641?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "loadpage",
+      "url": "https://clawhub.ai/skills/loadpage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "loadpage",
+    "url": "https://clawhub.ai/skills/loadpage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/loadpage-e47e6c6ca367be40.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/loadpage@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-loadpage-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1e1054b9833ac46dc53b46244817c05f793300272a443a830d174d0a520f412f",
+      "artifactSizeBytes": 2360
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-28T07:03:14.877Z"
+}

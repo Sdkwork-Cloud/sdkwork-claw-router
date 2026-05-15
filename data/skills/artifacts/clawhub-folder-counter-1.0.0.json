@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/folder-counter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.folder_counter",
+  "skill": {
+    "id": 72424,
+    "skillKey": "clawhub-folder-counter",
+    "name": "folder-counter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "folder-counter",
+    "url": "https://clawhub.ai/skills/folder-counter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/folder-counter-8590467df7aa8398.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "统计指定文件夹下的文件数量和文件类型分布。当用户需要了解某个目录包含多少文件、或者在建立索引前需要评估文件规模时使用。触发场景：「帮我数一下这个文件夹有多少文件」「这个目录有多少东西」「统计一下这个路径的文件」"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xjkvbnwe",
+      "userId": "s172gtrs398jg362w3hyakkkbx848zv7",
+      "displayName": "xjkvbnwe",
+      "image": "https://avatars.githubusercontent.com/u/52073953?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775348189899,
+      "changelog": "- Initial release of Folder Counter.\n- Quickly count the number of files in a specified folder.\n- Optionally analyze and display the distribution of file types.\n- Provides both fast (total count only) and detailed (type breakdown) modes.\nindexing strategies based on file counts.\n- Includes tips for performance and usage scenarios.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8e31f7e97f70c23e21c7f26e039b832decfd251cfefe428e13a79e42df68d6f2"
+}

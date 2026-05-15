@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/castreader-openclaw-skill@2.1.1",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.castreader_openclaw_skill",
+  "skill": {
+    "id": 20726,
+    "skillKey": "clawhub-castreader-openclaw-skill",
+    "name": "Castreader Openclaw Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "castreader-openclaw-skill",
+    "url": "https://clawhub.ai/skills/castreader-openclaw-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/castreader-openclaw-skill-ff31b0206d62cbb0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read any web page aloud with natural AI voices. Extract article text from any URL and convert it to audio (MP3). Use when the user wants to: listen to a webp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vinxu",
+      "userId": "s17fq3s780haf58jdqhe46zwdn83hd32",
+      "displayName": "vinxu",
+      "image": "https://avatars.githubusercontent.com/u/310579?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 530,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "2.1.1",
+      "createdAt": 1773378401436,
+      "changelog": "Update README and docs to match v2.1 flow: extract→choose full/summary→generate audio",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a235eda8d31f13a1414fea67fbf4529201f818baa678b2e994881c99940d5227"
+}

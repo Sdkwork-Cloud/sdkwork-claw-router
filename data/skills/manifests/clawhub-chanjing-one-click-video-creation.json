@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61718,
+  "uuid": "skill-clawhub-chanjing-one-click-video-creation",
+  "skillKey": "clawhub-chanjing-one-click-video-creation",
+  "name": "Chanjing One Click Video Creation",
+  "summary": "用户输入选题或工作流，自动生成完整短视频成片（文案、分镜、数字人口播与 AI 画面混剪）；调用 Chanjing Open API 与同仓库子技能脚本。",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chanjing_one_click_video_creation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BinKes",
+      "features": [
+        "用户输入选题或工作流，自动生成完整短视频成片（文案、分镜、数字人口播与 AI 画面混剪）；调用 Chanjing Open API 与同仓库子技能脚本。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chanjing-one-click-video-creation@1.0.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7719663?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chanjing-one-click-video-creation",
+      "url": "https://clawhub.ai/skills/chanjing-one-click-video-creation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chanjing-one-click-video-creation",
+    "url": "https://clawhub.ai/skills/chanjing-one-click-video-creation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chanjing-one-click-video-creation-32eb51d18a57c536.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chanjing-one-click-video-creation@1.0.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-chanjing-one-click-video-creation-1.0.10.json",
+      "version": "1.0.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7b33154c93f077f0f54ffe92f08089f92535be71621c6c5cc445eeda52099a29",
+      "artifactSizeBytes": 2558
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T07:50:21.857Z"
+}

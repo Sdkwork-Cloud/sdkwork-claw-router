@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-animation-studio@2.1.1",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_animation_studio",
+  "skill": {
+    "id": 67303,
+    "skillKey": "clawhub-ai-animation-studio",
+    "name": "AI Animation Studio"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-animation-studio",
+    "url": "https://clawhub.ai/skills/ai-animation-studio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-animation-studio-b7a2e7d2f333db9a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动将用户故事转分镜、画面和动画生成视频，支持多风格、自动配音、字幕和背景音乐选择。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "systiger",
+      "userId": "s17ajdwb6mqagsb70yednmgn5n83gwd8",
+      "displayName": "systiger",
+      "image": "https://avatars.githubusercontent.com/u/154035099?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 349,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.1.1",
+      "createdAt": 1774783686350,
+      "changelog": "优化BGM合成时机，在最后阶段才添加BGM，改进三步工作流程",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:090c2010cf72482a5cdb21d90fcc3405becc6f424542464ed955edcceb464811"
+}

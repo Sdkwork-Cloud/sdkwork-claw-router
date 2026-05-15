@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/muguozi1-openclaw-security-auditor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.muguozi1_openclaw_security_auditor",
+  "skill": {
+    "id": 26341,
+    "skillKey": "clawhub-muguozi1-openclaw-security-auditor",
+    "name": "Muguozi1 Openclaw Security Auditor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "muguozi1-openclaw-security-auditor",
+    "url": "https://clawhub.ai/skills/muguozi1-openclaw-security-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/muguozi1-openclaw-security-auditor-55ca3b32207ab148.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when reviewing code for security vulnerabilities, implementing authentication flows, auditing OWASP Top 10, configuring CORS/CSP headers, handling secret..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "muguozi1",
+      "userId": "s17197vrn391tcfkwt2y7v215n83gb4q",
+      "displayName": "muguozi1",
+      "image": "https://avatars.githubusercontent.com/u/63887927?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 369,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773638493867,
+      "changelog": "Initial release — a comprehensive security code review skill focused on OWASP Top 10 and secure coding.\n\n- Provides actionable code examples and checklists for common security vulnerabilities (access control, cryptography, injection, XSS, misconfiguration).\n- Outlines principles such as input validation, dependency scanning, and defense in depth.\n- Includes templates for security headers, input/file validation, and JWT authentication best practices.\n- Aims to help developers identify, audit, and fix security issues across authentication flows, code reviews, and configuration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8486eaf8d730f53228f54a43c16a7309cdcb381bfe739d76414b3cf3807a09bc"
+}

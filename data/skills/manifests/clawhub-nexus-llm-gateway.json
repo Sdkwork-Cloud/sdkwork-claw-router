@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22369,
+  "uuid": "skill-clawhub-nexus-llm-gateway",
+  "skillKey": "clawhub-nexus-llm-gateway",
+  "name": "NEXUS Llm Gateway",
+  "summary": "Smart multi-model AI gateway on Cardano. Routes prompts to the best LLM (GPT-5.2, Claude Sonnet 4.5, GPT-4o, Claude Haiku 4.5, GPT-4o-mini) with automatic fa...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nexus_llm_gateway",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CyberForexBlockchain",
+      "features": [
+        "Smart multi-model AI gateway on Cardano",
+        "Routes prompts to the best LLM (GPT-5.2, Claude Sonnet 4.5, GPT-4o, Claude Haiku 4.5, GPT-4o-mi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nexus-llm-gateway@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37193064?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nexus-llm-gateway",
+      "url": "https://clawhub.ai/skills/nexus-llm-gateway"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nexus-llm-gateway",
+    "url": "https://clawhub.ai/skills/nexus-llm-gateway",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nexus-llm-gateway-25c294a55525a66f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nexus-llm-gateway@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nexus-llm-gateway-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fad6bbbde098955bd331f6a3a8a910f0de9a3ff896835c4634d9e1d48b455060",
+      "artifactSizeBytes": 2019
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T17:12:16.500Z"
+}

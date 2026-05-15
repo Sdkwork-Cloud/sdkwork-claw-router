@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55735,
+  "uuid": "skill-clawhub-sogni-agent",
+  "skillKey": "clawhub-sogni-agent",
+  "name": "Sogni Gen",
+  "summary": "Generate images **and videos** using Sogni AI's decentralized network, with local credential/config files and optional local media inputs. Ask the agent to \"...",
+  "version": "1.5.16",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sogni_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mauvis Ledford",
+      "features": [
+        "Generate images **and videos** using Sogni AI's decentralized network, with local credential/co.",
+        "Ask the agent to \"..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sogni-agent@1.5.16",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20738?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sogni-agent",
+      "url": "https://clawhub.ai/skills/sogni-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sogni-agent",
+    "url": "https://clawhub.ai/skills/sogni-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sogni-agent-2f75d81c2a2f583f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sogni-agent@1.5.16",
+      "artifactUrl": "data/skills/artifacts/clawhub-sogni-agent-1.5.16.json",
+      "version": "1.5.16",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6c01da0c9295ed5bc75e17cd1916c09b12a662839d578cd914bfe73b733c2fdf",
+      "artifactSizeBytes": 1963
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T10:44:29.172Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45308,
+  "uuid": "skill-clawhub-pdf-vision",
+  "skillKey": "clawhub-pdf-vision",
+  "name": "Pdf Vision",
+  "summary": "Extract text content from image-based/scanned PDFs using multiple vision APIs with automatic fallback. Supports Xflow (qwen3-vl-plus) and ZhipuAI (GLM-4.6V-F...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_vision",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lpq6",
+      "features": [
+        "Extract text content from image-based/scanned PDFs using multiple vision APIs with automatic fa.",
+        "Supports Xflow (qwen3-vl-plus) and ZhipuAI (GLM-4.6V-F..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf-vision@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/113075650?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf-vision",
+      "url": "https://clawhub.ai/skills/pdf-vision"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-vision",
+    "url": "https://clawhub.ai/skills/pdf-vision",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-vision-6fcf4fbd1d5d687e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf-vision@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf-vision-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4fc80aa6d624572a557c146c1be89a4670c5dab72488be7b9ec355fd3c680c69",
+      "artifactSizeBytes": 2526
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T05:42:05.919Z"
+}

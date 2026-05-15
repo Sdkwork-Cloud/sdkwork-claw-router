@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/human-handoff-coordinator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.human_handoff_coordinator",
+  "skill": {
+    "id": 27149,
+    "skillKey": "clawhub-human-handoff-coordinator",
+    "name": "Ads Human Handoff"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "human-handoff-coordinator",
+    "url": "https://clawhub.ai/skills/human-handoff-coordinator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/human-handoff-coordinator-039e5e5b79290e3e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Escalate automation conversations to human ad experts for Meta (Facebook/Instagram), Google Ads, TikTok Ads, and YouTube Ads operations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danyangliu-sandwichlab",
+      "userId": "publishers:danyangliu-sandwichlab",
+      "displayName": "danyangliu",
+      "image": "https://avatars.githubusercontent.com/u/184733968?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 354,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772543613407,
+      "changelog": "- Initial release of the human-handoff-coordinator skill.\n- Automates escalation of ad platform issues to human experts for Meta, Google Ads, TikTok Ads, and YouTube Ads.\n- Outlines actionable, platform-specific plans for ad execution, troubleshooting, and escalation.\n- Defines clear input/output contracts, triage workflow, and escalation triggers.\n- Includes quality and safety guidelines such as measurable action language and rollback conditions.\n- Provides practical examples and JSON handoff templates for rapid issue triage.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:99d6b4eed56f9797797128682cac6147681006c339950cf9e80073d0a42a0c12"
+}

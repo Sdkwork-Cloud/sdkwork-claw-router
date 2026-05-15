@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44017,
+  "uuid": "skill-clawhub-prompt-shield-lite",
+  "skillKey": "clawhub-prompt-shield-lite",
+  "name": "Duru Prompt Shield",
+  "summary": "Minimal anti-prompt-injection guardrail for OpenClaw agents. Use when handling untrusted external content (web pages, emails, tool output, documents), before...",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_shield_lite",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Duru",
+      "features": [
+        "Minimal anti-prompt-injection guardrail for OpenClaw agents",
+        "Use when handling untrusted external content (web pages, emails, tool output, documents), befor."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prompt-shield-lite@0.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265482592?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prompt-shield-lite",
+      "url": "https://clawhub.ai/skills/prompt-shield-lite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-shield-lite",
+    "url": "https://clawhub.ai/skills/prompt-shield-lite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-shield-lite-1e5dbc49f830302a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prompt-shield-lite@0.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-prompt-shield-lite-0.1.3.json",
+      "version": "0.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c79814807be7295a9abda3f86ef497f374f8062bfb3367edd446b7d116f6842",
+      "artifactSizeBytes": 2045
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T02:15:00.127Z"
+}

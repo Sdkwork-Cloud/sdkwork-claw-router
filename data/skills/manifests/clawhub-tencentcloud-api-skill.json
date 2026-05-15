@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58611,
+  "uuid": "skill-clawhub-tencentcloud-api-skill",
+  "skillKey": "clawhub-tencentcloud-api-skill",
+  "name": "tencentcloud-api-skill",
+  "summary": "Skill to call Cloud API for Tencent Cloud (腾讯云). Used for cloud automation or resource management. 当用户需要查询、创建、管理腾讯云资源，或执行云 API 自动化操作时触发。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencentcloud_api_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "腾讯开源",
+      "features": [
+        "Skill to call Cloud API for Tencent Cloud (腾讯云)",
+        "Used for cloud automation or resource management",
+        "当用户需要查询、创建、管理腾讯云资源，或执行云 API 自动化操作时触发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tencentcloud-api-skill@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19383298?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tencentcloud-api-skill",
+      "url": "https://clawhub.ai/skills/tencentcloud-api-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencentcloud-api-skill",
+    "url": "https://clawhub.ai/skills/tencentcloud-api-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencentcloud-api-skill-56e62cdb6e38ec02.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tencentcloud-api-skill@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-tencentcloud-api-skill-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c92536824331183ee2b07c6249bd28c122364fd0dfd73f8ea178a4c764a04d4e",
+      "artifactSizeBytes": 2540
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T08:13:14.862Z"
+}

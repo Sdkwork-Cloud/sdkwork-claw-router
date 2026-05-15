@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8278,
+  "uuid": "skill-clawhub-n8n-workflow-automation",
+  "skillKey": "clawhub-n8n-workflow-automation",
+  "name": "n8n workflow automation",
+  "summary": "Designs and outputs n8n workflow JSON with robust triggers, idempotency, error handling, logging, retries, and human-in-the-loop review queues. Use when you need an auditable automation that won’t silently fail.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.n8n_workflow_automation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KOwl64",
+      "features": [
+        "Designs and outputs n8n workflow JSON with robust triggers, idempotency, error handling, loggin.",
+        "Use when you need an auditable automation that won’t silently fail."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/n8n-workflow-automation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59417033?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "n8n-workflow-automation",
+      "url": "https://clawhub.ai/skills/n8n-workflow-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "n8n-workflow-automation",
+    "url": "https://clawhub.ai/skills/n8n-workflow-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/n8n-workflow-automation-70e1618bd27d2fea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/n8n-workflow-automation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-n8n-workflow-automation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:48487eb33ea7df80d6f44925347c0ba887e7cb4c81607ede6e6d99550f2fbb8e",
+      "artifactSizeBytes": 2522
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-17T15:38:41.187Z"
+}

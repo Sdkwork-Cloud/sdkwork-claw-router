@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/super-blueauto@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.super_blueauto",
+  "skill": {
+    "id": 25391,
+    "skillKey": "clawhub-super-blueauto",
+    "name": "Super Blueauto"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "super-blueauto",
+    "url": "https://clawhub.ai/skills/super-blueauto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/super-blueauto-8bad9ced96abf35e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cross-platform AI skill for local Bluetooth device control, enabling scan, connect, monitor, and manage all BLE devices without cloud or data collection."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "josephsuo",
+      "userId": "publishers:josephsuo",
+      "displayName": "josephsuo",
+      "image": "https://avatars.githubusercontent.com/u/28395004?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 389,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773276350803,
+      "changelog": "SuperBlueAuto 0.1.0 – Initial Release\n\n- Introduces a cross-platform, local-first Bluetooth control hub supporting Windows, macOS, Android, iOS, HarmonyOS, Linux, and embedded devices.\n- Enables natural language control and management of all Bluetooth/BLE devices, with no cloud or data collection.\n- Features device scanning, connection management, device info retrieval, characteristic read/write, and batch device handling.\n- Ensures privacy: local-only operations, no network/data uploads, and explicit user consent for any remote control.\n- Launches as the first universal Bluetooth AI skill for ClawHub.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:47e664482c5dff352eaddf0082c69d1ae68f12be4eb51ae2639d98a7306b4f61"
+}

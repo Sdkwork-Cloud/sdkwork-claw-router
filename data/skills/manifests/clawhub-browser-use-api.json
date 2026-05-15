@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9559,
+  "uuid": "skill-clawhub-browser-use-api",
+  "skillKey": "clawhub-browser-use-api",
+  "name": "Browser Use API",
+  "summary": "Cloud browser automation via Browser Use API. Use when you need AI-driven web browsing, scraping, form filling, or multi-step web tasks without local browser control. Triggers on \"browser use\", \"cloud browser\", \"scrape website\", \"automate.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_use_api",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jfrux",
+      "features": [
+        "Cloud browser automation via Browser Use API",
+        "Use when you need AI-driven web browsing, scraping, form filling, or multi-step web tasks witho.",
+        "Triggers on \"browser use\", \"cloud browser\", \"scrape website\", \"automate web task\", or when loca."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/browser-use-api@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/171077?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "browser-use-api",
+      "url": "https://clawhub.ai/skills/browser-use-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-use-api",
+    "url": "https://clawhub.ai/skills/browser-use-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-use-api-17fb651c6a8e1450.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/browser-use-api@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-browser-use-api-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:300852aff3095238aa2dd57fce331d8be7aade2a0b92c901fefd855220c8335e",
+      "artifactSizeBytes": 1980
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-26T01:02:14.215Z"
+}

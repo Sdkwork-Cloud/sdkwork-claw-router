@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73022,
+  "uuid": "skill-clawhub-futures-morning-brief",
+  "skillKey": "clawhub-futures-morning-brief",
+  "name": "卓钢链黑色产研院的早报工具",
+  "summary": "期货早报生成工具。用户输入网址或留空默认使用西本资讯，自动抓取当天最新行业要闻早餐，按固定HTML格式输出，包含：整体综述（置顶）、重点关注（3条）、信息速览（行情表格）、宏观要闻（10条+详情）、产业要闻（6条+详情）。触发词：生成早报、期货早报、早间新闻、行业要闻早餐、早班车、卓钢早报。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.futures_morning_brief",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lirenming",
+      "features": [
+        "期货早报生成工具。用户输入网址或留空默认使用西本资讯，自动抓取当天最新行业要闻早餐，按固定HTML格式输出，包含：整体综述（置顶）、重点关注（3条）、信息速览（行情表格）、宏观要闻（10条+."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/futures-morning-brief@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31441363?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "futures-morning-brief",
+      "url": "https://clawhub.ai/skills/futures-morning-brief"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "futures-morning-brief",
+    "url": "https://clawhub.ai/skills/futures-morning-brief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/futures-morning-brief-9dc752da1af10748.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/futures-morning-brief@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-futures-morning-brief-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:094c4402fd6715d0e79c31bce3d7d6a4d71780b7912c190fbabda023b67f8757",
+      "artifactSizeBytes": 2705
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T14:28:31.873Z"
+}

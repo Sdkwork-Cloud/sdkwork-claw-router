@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27838,
+  "uuid": "skill-clawhub-linear-1-0-0",
+  "skillKey": "clawhub-linear-1-0-0",
+  "name": "Linear 1.0.0",
+  "summary": "Query and manage Linear issues, projects, and team workflows.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linear_1_0_0",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TerryRen2024",
+      "features": [
+        "Query and manage Linear issues, projects, and team workflows."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linear-1-0-0@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/192179498?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linear-1-0-0",
+      "url": "https://clawhub.ai/skills/linear-1-0-0"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linear-1-0-0",
+    "url": "https://clawhub.ai/skills/linear-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linear-1-0-0-87a1b2351451496c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linear-1-0-0@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-linear-1-0-0-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:38c2b179de830e7ccaf55e796e16ac152fbe1f62bff93c6948d7b170366e0573",
+      "artifactSizeBytes": 2222
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T02:35:32.926Z"
+}

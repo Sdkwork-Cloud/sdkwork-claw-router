@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/squareup@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.squareup",
+  "skill": {
+    "id": 8938,
+    "skillKey": "clawhub-squareup",
+    "name": "Square"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "squareup",
+    "url": "https://clawhub.ai/skills/squareup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/squareup-572699c38eddc0f0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Square API integration with managed OAuth. Install only if you need Square administration. Connect with the least-privileged Square account and OAuth scopes..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 5593,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1777705313750,
+      "changelog": "squareup 1.0.8\n\n- Refined security and approval language to clarify that this integration mutates Square data, and emphasize explicit approval for each write action.\n- Shortened and clarified the description and introductory notes for easier reading.\n- Trimmed detailed feature lists in the introduction; now directs users to the API Reference for supported endpoints.\n- Strengthened language on least-privilege, account selection, and resource verification before write operations.\n- No functional changes to API endpoints or usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a76ff4937fe01970e4f03b51cdc708734b2de35745b542bb45c23271aee02142"
+}

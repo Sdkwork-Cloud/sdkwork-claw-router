@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/review-lens@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.review_lens",
+  "skill": {
+    "id": 51283,
+    "skillKey": "clawhub-review-lens",
+    "name": "Review Lens"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "review-lens",
+    "url": "https://clawhub.ai/skills/review-lens",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/review-lens-4b2ebeb0f8a95044.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Finds what human code reviewers miss — not style issues or formatting, but logical errors, silent edge cases, performance cliffs, implicit assumptions, and t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jcools1977",
+      "userId": "publishers:jcools1977",
+      "displayName": "John DeVere Cooley",
+      "image": "https://avatars.githubusercontent.com/u/75928463?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 350,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772618171438,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f53a222064e8805b96821035ec99f506fadfd51b396e908fbaa7cda8bedd70f9"
+}

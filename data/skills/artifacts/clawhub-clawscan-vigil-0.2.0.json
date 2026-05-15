@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawscan-vigil@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawscan_vigil",
+  "skill": {
+    "id": 60853,
+    "skillKey": "clawhub-clawscan-vigil",
+    "name": "Clawscan Vigil"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawscan-vigil",
+    "url": "https://clawhub.ai/skills/clawscan-vigil",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawscan-vigil-93cb1ff476a50ca1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "安装前扫描 OpenClaw Skill 安全风险，静态+动态双重检测，识别恶意代码"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jjj09090",
+      "userId": "publishers:jjj09090",
+      "displayName": "jjj09090",
+      "image": "https://avatars.githubusercontent.com/u/2885027?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 355,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1773895619250,
+      "changelog": "clawscan-vigil 0.2.0\n\n- Major update introducing new CLI and core modules for scanning.\n- Added advanced analyzer, batch scanner, dynamic tracer, and risk engine for improved security detection.\n- Introduced license management and support for Premium features.\n- Added comprehensive documentation and usage guides.\n- Improved code structure and maintainability by splitting logic into multiple core components.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0ca822e49d7594954a7da38154eca4683dbcdbe0f33ca495d4ea7eab45decb60"
+}

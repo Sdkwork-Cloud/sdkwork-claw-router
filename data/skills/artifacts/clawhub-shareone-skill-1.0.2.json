@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shareone-skill@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shareone_skill",
+  "skill": {
+    "id": 64220,
+    "skillKey": "clawhub-shareone-skill",
+    "name": "Shareone"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shareone-skill",
+    "url": "https://clawhub.ai/skills/shareone-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shareone-skill-cc3d3cef4142167c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "发布本地生成的 HTML 网页、PDF 或 PPTX 到 ShareOne 平台，生成公网分享短链接（Capability URL）。当用户要求“发布”、“分享”、“生成链接”或“上线”某个生成的页面/文档时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "haibozhang1985",
+      "userId": "s172ztzvva2bm0h4p9fzxgw59h8457gb",
+      "displayName": "sudoprivacy",
+      "image": "https://avatars.githubusercontent.com/u/26501403?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 212,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775716316429,
+      "changelog": "- All scripts have been reorganized into a new scripts/ subdirectory for improved code structure and clarity.\n- API and file operation instructions updated to reference scripts/ path when calling Node.js helper scripts.\n- All relevant API URLs updated from shareone.sudoprivacy.com to shareone.app for current platform alignment and correct domain enforcement.\n- Upload and file update steps clarified for both first-time and update (PUT) scenarios, including optional password/watermark handling.\n- Feature discovery tip wording and prompting logic improved—now provides context-aware suggestions for using password and watermark features only on first link generation in a session.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9b398cfccbae329d8fd347568613895c8840838b02b8b38e73a66286cb7cddad"
+}

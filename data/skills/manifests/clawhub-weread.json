@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68723,
+  "uuid": "skill-clawhub-weread",
+  "skillKey": "clawhub-weread",
+  "name": "WeRead (微信读书)",
+  "summary": "微信读书（WeRead）数据查询与笔记管理技能。获取书架、搜索书籍、查看阅读进度/时长、获取笔记划线、热门书评、章节信息、随机笔记抽取和批量导出。当用户提到\"微信读书\"、\"WeRead\"、\"书架\"、\"读书进度\"、\"划线\"、\"笔记\"、\"书评\"、\"在读\"、\"读完\"、\"阅读时长\"、\"读书回顾\"、\"导出笔记\"时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weread",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "陈源泉",
+      "features": [
+        "微信读书（WeRead）数据查询与笔记管理技能。获取书架、搜索书籍、查看阅读进度/时长、获取笔记划线、热门书评、章节信息、随机笔记抽取和批量导出。当用户提到\"微信读书\"、\"WeRead\"、\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weread@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/84364275?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weread",
+      "url": "https://clawhub.ai/skills/weread"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weread",
+    "url": "https://clawhub.ai/skills/weread",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weread-a27693b0bcad0e42.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weread@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weread-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:546240d703b91fe47fd0cb6ef87f50713ce18b39a717af70a7eb242b4a4a1bc5",
+      "artifactSizeBytes": 2210
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T23:14:37.091Z"
+}

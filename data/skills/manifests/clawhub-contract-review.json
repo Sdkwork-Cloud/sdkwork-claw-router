@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13371,
+  "uuid": "skill-clawhub-contract-review",
+  "skillKey": "clawhub-contract-review",
+  "name": "Contract Review",
+  "summary": "Legal contract analysis using CUAD dataset (41 risk categories). Supports NDA, SaaS, M&A, employment, payment/merchant, and finder/broker agreements. Identif...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.contract_review",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lmanchu",
+      "features": [
+        "Legal contract analysis using CUAD dataset (41 risk categories)",
+        "Supports NDA, SaaS, M&A, employment, payment/merchant, and finder/broker agreements",
+        "Identif..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/contract-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8541873?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "contract-review",
+      "url": "https://clawhub.ai/skills/contract-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "contract-review",
+    "url": "https://clawhub.ai/skills/contract-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/contract-review-575462e3193beeda.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/contract-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-contract-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e1c3fc58f2328a93d2328e9169c10dbd043b42bd93d147912602431f20796cb",
+      "artifactSizeBytes": 2647
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T22:42:27.285Z"
+}

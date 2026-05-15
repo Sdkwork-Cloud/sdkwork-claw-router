@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24568,
+  "uuid": "skill-clawhub-safebooru-fetcher",
+  "skillKey": "clawhub-safebooru-fetcher",
+  "name": "Anime Image Downloader (Safebooru, Download Only)",
+  "summary": "Download multiple high-quality original anime images from Safebooru by tags, saving files locally with safe content only.",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safebooru_fetcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "litousteven",
+      "features": [
+        "Download multiple high-quality original anime images from Safebooru by tags, saving files local."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/safebooru-fetcher@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26245339?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "safebooru-fetcher",
+      "url": "https://clawhub.ai/skills/safebooru-fetcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safebooru-fetcher",
+    "url": "https://clawhub.ai/skills/safebooru-fetcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safebooru-fetcher-f97efaf9e9288a7d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/safebooru-fetcher@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-safebooru-fetcher-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:739773ae0fda187e0fd08cb668bb1ad9384361c50d209e6b437a67f3fff2fc4a",
+      "artifactSizeBytes": 2027
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T18:50:14.451Z"
+}

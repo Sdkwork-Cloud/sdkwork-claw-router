@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/network-tools@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.network_tools",
+  "skill": {
+    "id": 27205,
+    "skillKey": "clawhub-network-tools",
+    "name": "Network Tools"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "network-tools",
+    "url": "https://clawhub.ai/skills/network-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/network-tools-bd9788848c972f7a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enables efficient internet access by selecting and managing local network tools with automatic proxy routing for blocked and direct connections."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "savior-li",
+      "userId": "s178y3exs8bfb0gjz5v2tgkt9d846bmm",
+      "displayName": "AISavior",
+      "image": "https://avatars.githubusercontent.com/u/266409577?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 323,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1775517171423,
+      "changelog": "**Major update with expanded tool support, enhanced diagnostics, and improved usability.**\n\n- Added network diagnostics commands: DNS queries, ping, traceroute, whois, and public IP info.\n- Introduced unified proxy, user-agent rotation, and smarter tool selection logic.\n- Overhauled command interface: new commands (`media`, `dns`, `ipinfo`, etc.), better argument handling, and auto-resume for downloads.\n- Documentation is fully updated with clear examples and extended best practices.\n- Now requires no API keys and works solely with local command-line tools.\n- Added changelog and package management files for improved transparency and maintainability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2dfac36cebf44aaf1f28f09d9c9bca16f8bf343948cb1894f37e67ebb21cfb31"
+}

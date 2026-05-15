@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chat-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chat_ai",
+  "skill": {
+    "id": 68252,
+    "skillKey": "clawhub-chat-ai",
+    "name": "chat-ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chat-ai",
+    "url": "https://clawhub.ai/skills/chat-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chat-ai-fe40bcce87e402c0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将自然语言问题转化为 SQL 查询并执行，支持多轮对话、意图识别、SQL 审计、可视化推荐等全流程。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lovenervermore",
+      "userId": "s179eehz3gk12qcjky3an7t6sx83pxjj",
+      "displayName": "LoveNerverMore",
+      "image": "https://avatars.githubusercontent.com/u/68802221?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 369,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773036386461,
+      "changelog": "chat-ai 1.0.0\n\n- Initial release.\n- Converts natural language questions into SQL queries and executes them.\n- Supports multi-turn conversation, intent recognition, SQL auditing, and visualization recommendations.\n- Provides concise summary and visual suggestions in the output.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8bed639b18b52d41bf54b007266b2ae29132a5db918fb4eb2a2cb4cee457c61a"
+}

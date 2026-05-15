@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34787,
+  "uuid": "skill-clawhub-twocaptcha",
+  "skillKey": "clawhub-twocaptcha",
+  "name": "Twocaptcha",
+  "summary": "2Captcha integration. Manage data, records, and automate workflows. Use when the user wants to interact with 2Captcha data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twocaptcha",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "2Captcha integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with 2Captcha data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/twocaptcha@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "twocaptcha",
+      "url": "https://clawhub.ai/skills/twocaptcha"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twocaptcha",
+    "url": "https://clawhub.ai/skills/twocaptcha",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twocaptcha-20bb642b4255f61f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/twocaptcha@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-twocaptcha-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:27c659415dd347e146b44b05f563cdc0afd87a14e411dcfb8ef638076f54e7fe",
+      "artifactSizeBytes": 1844
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:56:07.475Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/investment-advisor-zhang-openclaw-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.investment_advisor_zhang_openclaw_cn",
+  "skill": {
+    "id": 59675,
+    "skillKey": "clawhub-investment-advisor-zhang-openclaw-cn",
+    "name": "Investment Advisor Zhang Openclaw Cn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "investment-advisor-zhang-openclaw-cn",
+    "url": "https://clawhub.ai/skills/investment-advisor-zhang-openclaw-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/investment-advisor-zhang-openclaw-cn-f43fc0eca68cde60.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过百度 AI 搜索 API 进行网页搜索，获取实时信息和搜索结果。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "acceleratel",
+      "userId": "s17eby488a3wnm238dsm9j9n1s83kc7p",
+      "displayName": "Liu HaoRan",
+      "image": "https://avatars.githubusercontent.com/u/86031205?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774427898661,
+      "changelog": "Initial release: Enables real-time Chinese web search via Baidu AI.\n\n- Supports keyword, site-specific, and recent-time filtered search.\n- Requires BAIDU_API_KEY environment variable for setup.\n- Provides structured JSON results including title, URL, summary, and site name.\n- Useful for retrieving news, weather, financial info, and other timely content from the Chinese web.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:39f26271cc7b288d4eab3b30f3f59ccb92a82ab691c34256cc19ce9bdb23be8e"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/calendly-api@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.calendly_api",
+  "skill": {
+    "id": 8410,
+    "skillKey": "clawhub-calendly-api",
+    "name": "Calendly"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "calendly-api",
+    "url": "https://clawhub.ai/skills/calendly-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/calendly-api-4f905cfcd3e570a7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Calendly API integration with managed OAuth. Access event types, scheduled events, invitees, availability, and manage webhooks. Use this skill when users wan..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 5,
+      "downloads": 17191,
+      "installsAllTime": 12,
+      "installsCurrent": 12,
+      "stars": 13,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1777593246105,
+      "changelog": "- Updated API base URLs from gateway.maton.ai and ctrl.maton.ai to api.maton.ai throughout documentation and examples.\n- Expanded security and permissions section; clarified the requirement for explicit user approval for all write operations.\n- Adjusted connection management instructions, consolidating endpoints under api.maton.ai.\n- Minor clarifications on using the Maton-Connection header when working with multiple accounts.\n- Removed the LICENSE.txt file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a266996bb728c9c68e1c26b927dd74faf2fe5b397156511130c44f4cb1513679"
+}

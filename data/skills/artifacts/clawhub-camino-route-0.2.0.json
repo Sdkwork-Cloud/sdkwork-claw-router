@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/camino-route@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.camino_route",
+  "skill": {
+    "id": 15244,
+    "skillKey": "clawhub-camino-route",
+    "name": "Route between two locations"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "camino-route",
+    "url": "https://clawhub.ai/skills/camino-route",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/camino-route-5c6d1534899ca405.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get detailed routing between two points with distance, duration, and optional turn-by-turn directions. Use when you need navigation instructions or travel ti..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "james-southendsolutions",
+      "userId": "publishers:james-southendsolutions",
+      "displayName": "James-southendsolutions",
+      "image": "https://avatars.githubusercontent.com/u/93152760?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 858,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1771301273047,
+      "changelog": "- Added \"curl\" and \"jq\" as required binaries in skill metadata.\n- No other content changes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c314933a13225a0b02b8a11780df383b2f3462e00e456ac49678314ebedcd470"
+}

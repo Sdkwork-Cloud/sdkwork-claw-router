@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/developer-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.developer_agent",
+  "skill": {
+    "id": 14452,
+    "skillKey": "clawhub-developer-agent",
+    "name": "Developer Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "developer-agent",
+    "url": "https://clawhub.ai/skills/developer-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/developer-agent-4ff4421da45461d8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Orchestrates software development by coordinating with Cursor Agent, managing git workflows, and ensuring quality delivery. Use when implementing development..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "47vigen",
+      "userId": "s173hfp5a3nv39w8zz3tsdremx84tsy1",
+      "displayName": "Vigen Pouya",
+      "image": "https://avatars.githubusercontent.com/u/70017709?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1129,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771794645290,
+      "changelog": "- Initial release of Developer Agent skill.\n- Automates end-to-end software development workflow, including requirements analysis, git management, build verification, and deployment pipeline monitoring.\n- Integrates with Cursor Agent for planning and implementation of complex tasks.\n- Enforces explicit user approval before implementation, strict build verification before commit, and comprehensive self-review procedures.\n- Provides detailed final reporting after successful deployment.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3a4e7e48c53438230a8e0a491bd0fab95a3bec532cff102e03d9fe0c82c92c77"
+}

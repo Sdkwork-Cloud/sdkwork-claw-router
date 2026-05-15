@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68453,
+  "uuid": "skill-clawhub-qnit-llm-data-auto",
+  "skillKey": "clawhub-qnit-llm-data-auto",
+  "name": "LLM数据自动化",
+  "summary": "自动生成满足需求的Python和Pandas数据处理代码，支持基于描述快速完成数据操作任务。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qnit_llm_data_auto",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yesong-Hue",
+      "features": [
+        "自动生成满足需求的Python和Pandas数据处理代码，支持基于描述快速完成数据操作任务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qnit-llm-data-auto@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/277589485?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qnit-llm-data-auto",
+      "url": "https://clawhub.ai/skills/qnit-llm-data-auto"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qnit-llm-data-auto",
+    "url": "https://clawhub.ai/skills/qnit-llm-data-auto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qnit-llm-data-auto-e65dc4df55fd777d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qnit-llm-data-auto@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qnit-llm-data-auto-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f7f7f01110c5f36e516e75865de6926806b2ce4c79018ff38ab5d53574b24533",
+      "artifactSizeBytes": 1871
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T06:04:37.360Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/blog-polish-en-astro-cn@1.0.12",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blog_polish_en_astro_cn",
+  "skill": {
+    "id": 52900,
+    "skillKey": "clawhub-blog-polish-en-astro-cn",
+    "name": "blog-polish-en-astro-cn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blog-polish-en-astro-cn",
+    "url": "https://clawhub.ai/skills/blog-polish-en-astro-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blog-polish-en-astro-cn-cf9a5e3a6aa6dcb0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Polish and translate a technical blog draft into a 1000–1200 word, 4-5 section Markdown article in English and Simplified Chinese (zh-CN), preserving technic..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "j3ffyang",
+      "userId": "s1779e1n6evsf8stg77rena51983qpyd",
+      "displayName": "Jeff Yang",
+      "image": "https://avatars.githubusercontent.com/u/245605?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.12",
+      "createdAt": 1774180402160,
+      "changelog": "blog-polish-en-astro-cn v1.0.12\n\n- First public release of the skill.\n- Polishes technical blog drafts in English, targeting clarity, structure, and length (1000–1200 words, 4–5 sections).\n- Translates the polished blog to Simplified Chinese (zh-CN), preserving technical terms and code formatting.\n- Converts the final English blog into Astro-compatible Markdown with standard YAML frontmatter.\n- Outputs all file paths (English, Chinese, Astro version) as a JSON object.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7f5699b9da86d4528c9184f65a292e66105f0a9094a6065512373ac8761ece27"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26454,
+  "uuid": "skill-clawhub-clawhub-publisher-auto",
+  "skillKey": "clawhub-clawhub-publisher-auto",
+  "name": "ClawHub Publisher",
+  "summary": "Automated skill publishing to ClawHub. Fix push error issue with acceptLicenseTerms support",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_publisher_auto",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rao Lin",
+      "features": [
+        "Automated skill publishing to ClawHub",
+        "Fix push error issue with acceptLicenseTerms support"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawhub-publisher-auto@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16436148?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawhub-publisher-auto",
+      "url": "https://clawhub.ai/skills/clawhub-publisher-auto"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-publisher-auto",
+    "url": "https://clawhub.ai/skills/clawhub-publisher-auto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-publisher-auto-b0fed90704dee184.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawhub-publisher-auto@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawhub-publisher-auto-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b1f7c67ff5213b3ea3f4dcb1c04c848fc72e8b10a117e6dfb84b64a5cc8b274b",
+      "artifactSizeBytes": 2229
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T01:50:58.842Z"
+}

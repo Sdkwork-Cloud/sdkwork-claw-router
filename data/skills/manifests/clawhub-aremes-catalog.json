@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36316,
+  "uuid": "skill-clawhub-aremes-catalog",
+  "skillKey": "clawhub-aremes-catalog",
+  "name": "aremes-catalog",
+  "summary": "Query Ryan Seslow's art & design catalog, look up individual works, check x402 quotes, and log purchase intent via the AREMES autonomous commerce agent.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aremes_catalog",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RYAN SESLOW",
+      "features": [
+        "Query Ryan Seslow's art & design catalog, look up individual works, check x402 quotes, and log."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aremes-catalog@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21285648?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aremes-catalog",
+      "url": "https://clawhub.ai/skills/aremes-catalog"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aremes-catalog",
+    "url": "https://clawhub.ai/skills/aremes-catalog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aremes-catalog-80bb0300321f71d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aremes-catalog@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aremes-catalog-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:07c2f8963cb6c266c8b17bd13f7e5354c06347b9b0bc661bbfe3d10fbff1e4a8",
+      "artifactSizeBytes": 2620
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T18:13:27.485Z"
+}

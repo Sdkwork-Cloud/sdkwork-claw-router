@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "jumpserver-skills",
+    "displayName": "JumpServer",
+    "summary": "Use for JumpServer V4 preflight, `.env.local` initialization, org selection, and read-only asset, permission, audit, and access queries through the bundled `...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1774425965730,
+    "updatedAt": 1777623511930
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1774425965730,
+    "changelog": "Initial release of jumpserver-skills\n\n- Provides read-only querying and environment initialization for JumpServer V4 via bundled CLI scripts.\n- Supports `.env.local` generation/updating and persistent org selection (`JMS_ORG_ID`).\n- Allows listing and retrieving assets, users, nodes, permissions, and audit details.\n- Blocks all create, update, delete, append, or remove actions for business objects or permissions.\n- Preflight checks enforce a strict flow: config status → config write → ping → org selection → query.\n- Only executes queries through official CLI entry points; temporary SDK/HTTP scripts not supported.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "liqiang-fit2cloud",
+    "userId": "s173f2qd73s3pczbgvwg83n93983j96w",
+    "displayName": "liqiang-fit2cloud",
+    "image": "https://avatars.githubusercontent.com/u/20766823?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777623511930
+  }
+}

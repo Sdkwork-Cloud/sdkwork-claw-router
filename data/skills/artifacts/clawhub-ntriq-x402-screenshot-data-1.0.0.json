@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ntriq-x402-screenshot-data@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ntriq_x402_screenshot_data",
+  "skill": {
+    "id": 55895,
+    "skillKey": "clawhub-ntriq-x402-screenshot-data",
+    "name": "Ntriq X402 Screenshot Data"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ntriq-x402-screenshot-data",
+    "url": "https://clawhub.ai/skills/ntriq-x402-screenshot-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ntriq-x402-screenshot-data-a0e5a9b898488957.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert screenshots into structured data — extract text, UI layout, tables, or charts from any screen image. Pay $0.02 USDC via x402."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ntriq-gh",
+      "userId": "s170tfc8cnswm72pmy4aqs9yd5841wq0",
+      "displayName": "ntriq",
+      "image": "https://avatars.githubusercontent.com/u/215101248?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776427237177,
+      "changelog": "- Initial release of ntriq-x402-screenshot-data.\n- Instantly convert screenshots into structured data, including text, UI layout, tables, and charts.\n- Supports extracting full JSON, text only, layout analysis, or data from any screen image.\n- Integration with the x402 protocol for easy $0.02 USDC per call payments (Base mainnet).\n- Flexible input via image URL or base64; customize output with extract_type and language options.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cccb80875d82ab6ce45160b373d9f39cbc017c3d24976d93c9e0dd18a5c5c62f"
+}

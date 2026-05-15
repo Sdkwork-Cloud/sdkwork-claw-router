@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/api-merchant-fee@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_merchant_fee",
+  "skill": {
+    "id": 69221,
+    "skillKey": "clawhub-api-merchant-fee",
+    "name": "API Merchant Fee"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-merchant-fee",
+    "url": "https://clawhub.ai/skills/api-merchant-fee",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-merchant-fee-b152cd8f9f96fac8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "商户费率查询 API。当用户提到查询商户费率、商户信息、贷记卡费率、借记卡费率、扫码费率、商户管理费，或需要查询某个商户的费率信息时触发。触发词包括：查询商户费率、商户费率、商户费率查询、merchant fee。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sgfa005",
+      "userId": "s177k6wzhk81sbrdjxr33vf8sd84yx3f",
+      "displayName": "sgfa005",
+      "image": "https://avatars.githubusercontent.com/u/97841177?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776351974767,
+      "changelog": "api-merchant-fee v1.0.0\n\n- Initial release of the 商户费率查询 (Merchant Fee Query) skill.\n- Supports querying merchant rates by parsing user input for required parameters (agentNo, apikey, userId, tusn).\n- Caches agentNo and apikey locally for convenient repeat queries.\n- Handles input validation and parameter completion with clear user prompts.\n- Formats successful, failed, or incomplete queries with easy-to-read templates.\n- Includes robust error handling for network, authentication, and business logic errors.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fad533b4c956735285b08d76b12485347ff10b7dba5b2befe218040a163eef89"
+}

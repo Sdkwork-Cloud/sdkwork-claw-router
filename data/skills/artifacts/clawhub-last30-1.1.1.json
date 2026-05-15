@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/last30@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.last30",
+  "skill": {
+    "id": 28934,
+    "skillKey": "clawhub-last30",
+    "name": "Last30 Deep Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "last30",
+    "url": "https://clawhub.ai/skills/last30",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/last30-51f6d5d563c34fd7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deep research across Reddit, X/Twitter, Hacker News, YouTube, Polymarket, and the web from the last 30 days. Synthesizes findings into a grounded, cited brie..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ralph-oei",
+      "userId": "s17e8hm3xg7rrjsh2xwg05xzcs83g6mx",
+      "displayName": "ralph-oei",
+      "image": "https://avatars.githubusercontent.com/u/84568575?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 314,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1774339073256,
+      "changelog": "Added Polymarket search — surfaces active prediction markets and consensus odds for the topic",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e496989b917ec82be4be3364d1fcdb872ddc988d7ea705e373b2e4f18b9de076"
+}

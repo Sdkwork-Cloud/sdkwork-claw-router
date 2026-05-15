@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smarty-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smarty_skill",
+  "skill": {
+    "id": 30362,
+    "skillKey": "clawhub-smarty-skill",
+    "name": "3 layer of memory system"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smarty-skill",
+    "url": "https://clawhub.ai/skills/smarty-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smarty-skill-85a59c2b7f64434f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Always active in every session. Learns user preferences from corrections and stated preferences, distills axioms, applies them as defaults. Makes every other..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ckpxgfnksd-max",
+      "userId": "publishers:ckpxgfnksd-max",
+      "displayName": "ckpxgfnksd-max",
+      "image": "https://avatars.githubusercontent.com/u/252361165?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 284,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773651307267,
+      "changelog": "An OpenClaw skill that silently learns your preferences, judgment patterns, and working style across sessions — then applies them as soft defaults in every future conversation.\n\nYour AI gets sharper about you over time. You never configure anything.\n\nhttps://github.com/ckpxgfnksd-max/smarty-skills-infra",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8ad53ed4e619f82df0e6a3dc6cce8ba3f08071617fc4a9d11297b6f1b820c6e9"
+}

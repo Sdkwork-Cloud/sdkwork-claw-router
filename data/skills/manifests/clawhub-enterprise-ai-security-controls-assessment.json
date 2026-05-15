@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50780,
+  "uuid": "skill-clawhub-enterprise-ai-security-controls-assessment",
+  "skillKey": "clawhub-enterprise-ai-security-controls-assessment",
+  "name": "Enterprise AI Security Controls Assessment",
+  "summary": "Assess OT/ICS security posture across 30 controls in 6 principles — Business Driven, Risk Based, Enterprise Wide, Methodical, OT Security Focused, and OT Sec...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.enterprise_ai_security_controls_assessment",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToolWeb",
+      "features": [
+        "Assess OT/ICS security posture across 30 controls in 6 principles — Business Driven, Risk Based."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/enterprise-ai-security-controls-assessment@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245780162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "enterprise-ai-security-controls-assessment",
+      "url": "https://clawhub.ai/skills/enterprise-ai-security-controls-assessment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "enterprise-ai-security-controls-assessment",
+    "url": "https://clawhub.ai/skills/enterprise-ai-security-controls-assessment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/enterprise-ai-security-controls-assessment-bf6c4ca9aacfa9d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/enterprise-ai-security-controls-assessment@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-enterprise-ai-security-controls-assessment-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a088593a5644b8c130c7154b9de7d083b73dbc42a50e9e1ce1c7d89d153c1148",
+      "artifactSizeBytes": 2631
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T07:51:41.937Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37048,
+  "uuid": "skill-clawhub-file-backup-organizer",
+  "skillKey": "clawhub-file-backup-organizer",
+  "name": "file-backup-organizer",
+  "summary": "Intelligent file backup and organizer. Recursively scans folders, categorizes files by type, supports filtering/exclusion, handles duplicates, and generates...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_backup_organizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "psyhl",
+      "features": [
+        "Intelligent file backup and organizer",
+        "Recursively scans folders, categorizes files by type, supports filtering/exclusion, handles dup."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/file-backup-organizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/110092079?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "file-backup-organizer",
+      "url": "https://clawhub.ai/skills/file-backup-organizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-backup-organizer",
+    "url": "https://clawhub.ai/skills/file-backup-organizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-backup-organizer-53f8613e6754f99b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/file-backup-organizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-file-backup-organizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:280b7847666ea77d51f27a30ff7aebf78f237580659f5ae5ae8652a0475b24c9",
+      "artifactSizeBytes": 2005
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T15:22:43.864Z"
+}

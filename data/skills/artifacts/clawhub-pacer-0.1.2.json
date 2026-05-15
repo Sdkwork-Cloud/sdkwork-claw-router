@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pacer@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pacer",
+  "skill": {
+    "id": 51509,
+    "skillKey": "clawhub-pacer",
+    "name": "Pacer Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pacer",
+    "url": "https://clawhub.ai/skills/pacer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pacer-5ed2573b3d99a653.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Your AI career companion. Scan your situation, map possible paths, simulate futures, and track progress week by week — with interactive charts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hectormeta",
+      "userId": "publishers:hectormeta",
+      "displayName": "hectormeta",
+      "image": "https://avatars.githubusercontent.com/u/205048087?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 380,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1773308990501,
+      "changelog": "Add npx one-liner install with rate limit note",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c697efe3f52d14812c11cf386f39430d1abe44b84b2a3ba756a62cc0f1f3ec48"
+}

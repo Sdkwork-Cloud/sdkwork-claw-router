@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17654,
+  "uuid": "skill-clawhub-poidh",
+  "skillKey": "clawhub-poidh",
+  "name": "POIDH Bounty Bot",
+  "summary": "Post bounties and evaluate/accept winning submissions on poidh (pics or it didn't happen) on Arbitrum, Base, or Degen Chain. Use this skill when the user wan...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.poidh",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "saltoriousSIG",
+      "features": [
+        "Post bounties and evaluate/accept winning submissions on poidh (pics or it didn't happen) on Ar.",
+        "Use this skill when the user wan..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/poidh@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20292420?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "poidh",
+      "url": "https://clawhub.ai/skills/poidh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "poidh",
+    "url": "https://clawhub.ai/skills/poidh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/poidh-3a33b226c9766a91.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/poidh@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-poidh-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ef97148eaf75a0d15ba5b3ed127bb7cbe83f9433b010fd5cd3048c91facc0662",
+      "artifactSizeBytes": 2251
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T16:36:13.578Z"
+}

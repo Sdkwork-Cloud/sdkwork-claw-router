@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27401,
+  "uuid": "skill-clawhub-llm-signal-geo-analyst",
+  "skillKey": "clawhub-llm-signal-geo-analyst",
+  "name": "LLM Signal GEO Analyst",
+  "summary": "Run LLM Signal GEO analyst workflows from OpenClaw. Use when you need to fetch deterministic GEO action plans, check site health status, and execute/review h...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llm_signal_geo_analyst",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ImMythz",
+      "features": [
+        "Run LLM Signal GEO analyst workflows from OpenClaw",
+        "Use when you need to fetch deterministic GEO action plans, check site health status, and execut."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/llm-signal-geo-analyst@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/72038731?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "llm-signal-geo-analyst",
+      "url": "https://clawhub.ai/skills/llm-signal-geo-analyst"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llm-signal-geo-analyst",
+    "url": "https://clawhub.ai/skills/llm-signal-geo-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llm-signal-geo-analyst-80965e8d0a807d2b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/llm-signal-geo-analyst@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-llm-signal-geo-analyst-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d61081b540307e9d258c5e37c6c54750729553e8f5ce24d6bce993240adce6c9",
+      "artifactSizeBytes": 2406
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T00:39:53.371Z"
+}

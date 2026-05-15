@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22343,
+  "uuid": "skill-clawhub-easy-crawl",
+  "skillKey": "clawhub-easy-crawl",
+  "name": "EASY_CRAWL4AI",
+  "summary": "Use Crawl4AI to fetch and convert complex webpages, including dynamic content, into Markdown for summarization, data extraction, or analysis.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.easy_crawl",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aesopdeng",
+      "features": [
+        "Use Crawl4AI to fetch and convert complex webpages, including dynamic content, into Markdown fo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/easy-crawl@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168056688?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "easy-crawl",
+      "url": "https://clawhub.ai/skills/easy-crawl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "easy-crawl",
+    "url": "https://clawhub.ai/skills/easy-crawl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/easy-crawl-bf78844362ddda10.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/easy-crawl@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-easy-crawl-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6c8187ad1162eb66f0af994c63d88246ec760a23bd99945ce804e8a7c6f20dfd",
+      "artifactSizeBytes": 1895
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T07:00:44.564Z"
+}

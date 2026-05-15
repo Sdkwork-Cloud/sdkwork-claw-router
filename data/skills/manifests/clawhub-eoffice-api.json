@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60800,
+  "uuid": "skill-clawhub-eoffice-api",
+  "skillKey": "clawhub-eoffice-api",
+  "name": "泛微 e-office v11 协同办公系统 OpenAPI",
+  "summary": "泛微 e-office 协同办公系统 OpenAPI - 用户管理、部门管理、审批流程、考勤等企业级 API",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eoffice_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "quanruxiaohong",
+      "features": [
+        "泛微 e-office 协同办公系统 OpenAPI",
+        "用户管理、部门管理、审批流程、考勤等企业级 API"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eoffice-api@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13463980?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eoffice-api",
+      "url": "https://clawhub.ai/skills/eoffice-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eoffice-api",
+    "url": "https://clawhub.ai/skills/eoffice-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eoffice-api-c5e20f6632727349.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eoffice-api@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-eoffice-api-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2983cff5ba042d15b7941110b40839600c735535d04187230b88b3e6bd65ac00",
+      "artifactSizeBytes": 1960
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T05:12:35.445Z"
+}

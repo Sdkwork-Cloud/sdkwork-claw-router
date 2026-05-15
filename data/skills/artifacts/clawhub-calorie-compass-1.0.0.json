@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/calorie-compass@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.calorie_compass",
+  "skill": {
+    "id": 37396,
+    "skillKey": "clawhub-calorie-compass",
+    "name": "Calorie Compass"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "calorie-compass",
+    "url": "https://clawhub.ai/skills/calorie-compass",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/calorie-compass-581c141a77d4fbfe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Estimate calorie content from food names, portion sizes, or food images."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rajib76",
+      "userId": "s17arsp5j5yvgdx98wmm3rajkx83v8st",
+      "displayName": "rajib",
+      "image": "https://avatars.githubusercontent.com/u/16340036?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 197,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774760635327,
+      "changelog": "Calorie Compass 1.0.0 – Initial release\n\n- Estimates calorie content from food names, portion sizes, or uploaded food images.\n- Supports calculations for individual items and full meals with multiple components.\n- Understands common quantity formats (grams, cups, slices, bowls, etc.).\n- Provides flexible, reasoned calorie estimates, clarifying assumptions and possible variations.\n- Delivers total and per-item calories, and may provide basic macronutrient data when details allow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fed5b142df685b5516c573ade7a200986f227364915ae9af5cd0f01b854817cc"
+}

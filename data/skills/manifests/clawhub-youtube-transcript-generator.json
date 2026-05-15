@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19717,
+  "uuid": "skill-clawhub-youtube-transcript-generator",
+  "skillKey": "clawhub-youtube-transcript-generator",
+  "name": "YouTube Transcript Generator",
+  "summary": "Download and generate clean, readable transcripts from any YouTube video. Extracts subtitles (auto-generated or manual), removes timestamps and formatting, a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_transcript_generator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "floriandarroman",
+      "features": [
+        "Download and generate clean, readable transcripts from any YouTube video",
+        "Extracts subtitles (auto-generated or manual), removes timestamps and formatting, a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-transcript-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/198684129?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-transcript-generator",
+      "url": "https://clawhub.ai/skills/youtube-transcript-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-transcript-generator",
+    "url": "https://clawhub.ai/skills/youtube-transcript-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-transcript-generator-123b7899f366a862.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-transcript-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-transcript-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eed5590cdff7ab523ba298d8646a8dcd7504b35fd91308686b5cb4ca3e8407ba",
+      "artifactSizeBytes": 2072
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T05:34:15.342Z"
+}

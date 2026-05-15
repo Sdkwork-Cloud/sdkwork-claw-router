@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17456,
+  "uuid": "skill-clawhub-searxng-selfhost",
+  "skillKey": "clawhub-searxng-selfhost",
+  "name": "SearXNG Self-Host",
+  "summary": "Self-hosted web search aggregator for OpenClaw agents. Use this skill to (1) install SearXNG on a VPS/server so the agent can search the web without API keys...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.searxng_selfhost",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Saikat Kumar Dey",
+      "features": [
+        "Self-hosted web search aggregator for OpenClaw agents",
+        "Use this skill to (1) install SearXNG on a VPS/server so the agent can search the web without A."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/searxng-selfhost@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4646605?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "searxng-selfhost",
+      "url": "https://clawhub.ai/skills/searxng-selfhost"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "searxng-selfhost",
+    "url": "https://clawhub.ai/skills/searxng-selfhost",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/searxng-selfhost-755a930d32fc8646.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/searxng-selfhost@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-searxng-selfhost-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9abc1404238643722d48b824b24e61e9b939f03ec011f945a3992b1907a89afc",
+      "artifactSizeBytes": 1972
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T17:11:46.683Z"
+}

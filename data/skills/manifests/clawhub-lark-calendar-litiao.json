@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26073,
+  "uuid": "skill-clawhub-lark-calendar-litiao",
+  "skillKey": "clawhub-lark-calendar-litiao",
+  "name": "Lark Calendar Litiao",
+  "summary": "Create, update, and delete calendar events and tasks in Lark (Feishu). Includes employee directory for automatic name-to-user_id resolution.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lark_calendar_litiao",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "litiao1224",
+      "features": [
+        "Create, update, and delete calendar events and tasks in Lark (Feishu)",
+        "Includes employee directory for automatic name-to-user_id resolution."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lark-calendar-litiao@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/183017089?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lark-calendar-litiao",
+      "url": "https://clawhub.ai/skills/lark-calendar-litiao"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lark-calendar-litiao",
+    "url": "https://clawhub.ai/skills/lark-calendar-litiao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lark-calendar-litiao-5c140c5cc70d374a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lark-calendar-litiao@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lark-calendar-litiao-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:856b397783c5a1718c5d76571c0576dd113ee8c72cc5e91eeaabf8244f7d5919",
+      "artifactSizeBytes": 1932
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T05:01:18.579Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10896,
+  "uuid": "skill-clawhub-diagram",
+  "skillKey": "clawhub-diagram",
+  "name": "Diagram",
+  "summary": "Generate diagrams from descriptions with Mermaid, PlantUML, or ASCII for architecture, flows, sequences, and data models.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.diagram",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Generate diagrams from descriptions with Mermaid, PlantUML, or ASCII for architecture, flows, s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/diagram@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "diagram",
+      "url": "https://clawhub.ai/skills/diagram"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "diagram",
+    "url": "https://clawhub.ai/skills/diagram",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/diagram-2c20a6b064ee805c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/diagram@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-diagram-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d9040b3d6013f42e7ac7ed5f106d91c0ca6582d39aa5d841b7e3f88acf9741a6",
+      "artifactSizeBytes": 1797
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T09:17:27.954Z"
+}

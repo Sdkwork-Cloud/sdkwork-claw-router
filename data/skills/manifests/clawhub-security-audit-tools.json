@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23912,
+  "uuid": "skill-clawhub-security-audit-tools",
+  "skillKey": "clawhub-security-audit-tools",
+  "name": "Security Audit Tools",
+  "summary": "Inspect third-party Claude/OpenClaw/Codex/OpenCode skills, plugins, repos, npm packages, pip packages, shell installers, and GitHub Actions before any downlo...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.security_audit_tools",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Polymarket",
+      "features": [
+        "Inspect third-party Claude/OpenClaw/Codex/OpenCode skills, plugins, repos, npm packages, pip pa."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/security-audit-tools@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78879434?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "security-audit-tools",
+      "url": "https://clawhub.ai/skills/security-audit-tools"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "security-audit-tools",
+    "url": "https://clawhub.ai/skills/security-audit-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/security-audit-tools-b4e53061aa0dc31d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/security-audit-tools@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-security-audit-tools-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:07a757cded3ad9e4335aea929cc18c2ac8f4b4f56f553eeb4065e6778c19e2a2",
+      "artifactSizeBytes": 9165
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T15:57:25.673Z"
+}

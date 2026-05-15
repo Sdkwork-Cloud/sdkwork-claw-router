@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23446,
+  "uuid": "skill-clawhub-fgo-invoicing",
+  "skillKey": "clawhub-fgo-invoicing",
+  "name": "FGO Invoicing",
+  "summary": "Issue FGO.ro invoices through the FGO API with local automation. Use for FGO tasks such as validating invoice payloads, issuing invoices, checking invoice st...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fgo_invoicing",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Maverick",
+      "features": [
+        "Issue FGO.ro invoices through the FGO API with local automation",
+        "Use for FGO tasks such as validating invoice payloads, issuing invoices, checking invoice st..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fgo-invoicing@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261420589?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fgo-invoicing",
+      "url": "https://clawhub.ai/skills/fgo-invoicing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fgo-invoicing",
+    "url": "https://clawhub.ai/skills/fgo-invoicing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fgo-invoicing-70b751c15c05623a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fgo-invoicing@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-fgo-invoicing-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4df7cff8af788ba626af1a27875da722e8f6fab23f7c08563b7bb11d8955bd2c",
+      "artifactSizeBytes": 2221
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T13:20:23.213Z"
+}

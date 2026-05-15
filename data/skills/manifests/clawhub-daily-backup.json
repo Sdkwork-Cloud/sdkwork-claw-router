@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65281,
+  "uuid": "skill-clawhub-daily-backup",
+  "skillKey": "clawhub-daily-backup",
+  "name": "Daily Backup",
+  "summary": "每日 Git 备份。提交工作区所有变更，记录变更摘要。触发时机：cron 定时任务或手动调用。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_backup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AxelHu",
+      "features": [
+        "每日 Git 备份。提交工作区所有变更，记录变更摘要。触发时机：cron 定时任务或手动调用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-backup@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12809280?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-backup",
+      "url": "https://clawhub.ai/skills/daily-backup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-backup",
+    "url": "https://clawhub.ai/skills/daily-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-backup-2e4ff958929fa8d8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-backup@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-backup-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e5a970d08e4ea3a553bce0ae01575711c6d9dd86eff4ac8083b7573f6ecd267",
+      "artifactSizeBytes": 1958
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T01:15:55.444Z"
+}

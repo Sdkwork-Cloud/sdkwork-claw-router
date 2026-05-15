@@ -25,7 +25,7 @@ const Toggle = ({ checked, onChange, disabled = false }: { checked: boolean, onC
 );
 
 export function SettingsView() {
-  const { isDark, toggleTheme } = useOutletContext<ConsoleContextProps>();
+  const { isDark, setTheme } = useOutletContext<ConsoleContextProps>();
   const [activeTab, setActiveTab] = useState('general');
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
@@ -256,7 +256,7 @@ export function SettingsView() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-xl">
                     <button
-                      onClick={() => { if (isDark) toggleTheme(); }}
+                      onClick={() => setTheme('light')}
                       className={`flex flex-col items-center gap-4 p-5 rounded-xl border-2 transition-colors relative ${!isDark ? 'border-blue-500 bg-blue-50 dark:bg-blue-500/5' : 'border-slate-200 dark:border-transparent hover:border-blue-300 dark:hover:bg-white/10'}`}
                     >
                       {!isDark && (
@@ -271,7 +271,7 @@ export function SettingsView() {
                     </button>
 
                     <button
-                      onClick={() => { if (!isDark) toggleTheme(); }}
+                      onClick={() => setTheme('dark')}
                       className={`flex flex-col items-center gap-4 p-5 rounded-xl border-2 transition-colors relative ${isDark ? 'border-blue-500 bg-blue-50 dark:bg-blue-500/5' : 'border-slate-200 dark:border-transparent hover:border-blue-300 dark:hover:bg-white/10'}`}
                     >
                       {isDark && (

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brave-shim@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brave_shim",
+  "skill": {
+    "id": 44839,
+    "skillKey": "clawhub-brave-shim",
+    "name": "brave-shim"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brave-shim",
+    "url": "https://clawhub.ai/skills/brave-shim",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brave-shim-64334aaabbf8d6d1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set up brave_shim as a free local proxy for OpenClaw web_search, routing Brave API requests to DuckDuckGo. Use when user asks to enable free web search, conf..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weare20202020",
+      "userId": "s17dnh4sjxsyx90b00a3hvj1h18492ye",
+      "displayName": "weare20202020",
+      "image": "https://avatars.githubusercontent.com/u/139963404?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775404465432,
+      "changelog": "Initial release: free web_search via DuckDuckGo",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e6d81f864ca918c360d26fce7232f21e3b36f5595358d05d3351ac4e62e5626f"
+}

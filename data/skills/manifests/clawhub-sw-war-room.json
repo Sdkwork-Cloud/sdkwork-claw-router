@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36510,
+  "uuid": "skill-clawhub-sw-war-room",
+  "skillKey": "clawhub-sw-war-room",
+  "name": "War Room Debug",
+  "summary": "Facilitates coordinated crisis response using multiple agents to assess, investigate, fix, and document critical production issues efficiently.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sw_war_room",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "amdf01-debug",
+      "features": [
+        "Facilitates coordinated crisis response using multiple agents to assess, investigate, fix, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sw-war-room@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/252609374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sw-war-room",
+      "url": "https://clawhub.ai/skills/sw-war-room"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sw-war-room",
+    "url": "https://clawhub.ai/skills/sw-war-room",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sw-war-room-3d088176a8b7d321.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sw-war-room@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sw-war-room-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:332d304cd08c7572771ab3efb1fafcfb87c6fac625a490c2336ea81624f7bcbc",
+      "artifactSizeBytes": 1850
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T06:10:19.181Z"
+}

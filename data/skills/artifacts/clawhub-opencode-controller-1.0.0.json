@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/opencode-controller@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opencode_controller",
+  "skill": {
+    "id": 8323,
+    "skillKey": "clawhub-opencode-controller",
+    "name": "Opencode-controller"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opencode-controller",
+    "url": "https://clawhub.ai/skills/opencode-controller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opencode-controller-41b16a6888f47938.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control and operate Opencode via slash commands. Use this skill to manage sessions, select models, switch agents (plan/build), and coordinate coding through Opencode."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "karatla",
+      "userId": "publishers:karatla",
+      "displayName": "July",
+      "image": "https://avatars.githubusercontent.com/u/55880954?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 20607,
+      "installsAllTime": 191,
+      "installsCurrent": 178,
+      "stars": 74,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769633853391,
+      "changelog": "opencode-controller 1.0.0\n\n- Initial release.\n- Enables controlling Opencode sessions and workflows via slash commands.\n- Guides users through provider selection, authentication, and session management.\n- Supports agent switching between planning and building modes.\n- Enforces step-by-step planning before any code generation.\n- Ensures all actions and choices are explicit in the output.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:538a77a2d37333e225094eb033680a6296e55fa496cab03af04536cde27907bd"
+}

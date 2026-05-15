@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/inkwell@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inkwell",
+  "skill": {
+    "id": 44133,
+    "skillKey": "clawhub-inkwell",
+    "name": "Inkwell"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inkwell",
+    "url": "https://clawhub.ai/skills/inkwell",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inkwell-5819f51d8686086c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bootstrap a complete 3-layer memory system for any OpenClaw agent. PARA knowledge structure, QMD search integration, daily consolidation cron, transcript ver..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "davidkim01",
+      "userId": "s17cy0g3wv6em1a83qcb3adm8184db1n",
+      "displayName": "DavidKim01",
+      "image": "https://avatars.githubusercontent.com/u/31714605?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775593335173,
+      "changelog": "Initial release: Production-grade 3-layer memory system with PARA structure, QMD integration, daily consolidation, transcript verification, and sign-off routine.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6fe82da3b77dafd5a79204fae8b97fd65d3fbcb18f8fc0ff64c87f9def160b0d"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37386,
+  "uuid": "skill-clawhub-alibabacloud-polardbx-sql",
+  "skillKey": "clawhub-alibabacloud-polardbx-sql",
+  "name": "Alibabacloud Polardbx Sql",
+  "summary": "Design partition schemes, select partition keys, create GSI, and write SQL for PolarDB-X 2.0 Enterprise Edition AUTO mode databases, handling PolarDB-X vs My...",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_polardbx_sql",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alibabacloud-skills-team",
+      "features": [
+        "Design partition schemes, select partition keys, create GSI, and write SQL for PolarDB-X 2.0 En."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alibabacloud-polardbx-sql@0.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49941014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alibabacloud-polardbx-sql",
+      "url": "https://clawhub.ai/skills/alibabacloud-polardbx-sql"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-polardbx-sql",
+    "url": "https://clawhub.ai/skills/alibabacloud-polardbx-sql",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-polardbx-sql-39e4f612807cf181.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alibabacloud-polardbx-sql@0.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-alibabacloud-polardbx-sql-0.0.2.json",
+      "version": "0.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6c6820ab4d92a953628cb29b9236c9f38ec000626d646f77532345d98d34828b",
+      "artifactSizeBytes": 2709
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T05:50:59.581Z"
+}

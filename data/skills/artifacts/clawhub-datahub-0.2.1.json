@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/datahub@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.datahub",
+  "skill": {
+    "id": 37815,
+    "skillKey": "clawhub-datahub",
+    "name": "DataHub for Any Data"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "datahub",
+    "url": "https://clawhub.ai/skills/datahub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/datahub-e290059b42945193.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Call any data interface through natural language with DataHub API. Covers e-commerce, local services, recruitment, social media, short video, finance, news,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xplore3",
+      "userId": "s173r606b05pzgvxpramtkhfdh83w4fk",
+      "displayName": "Xplore3",
+      "image": "https://avatars.githubusercontent.com/u/193786010?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 193,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1777608381557,
+      "changelog": "- Expanded and clarified supported data domains, adding specific examples and a new Travel category.\n- Updated instructions and website references for obtaining an API key (now points to https://datahub.codes).\n- Refined domain tables to separate category-level and provider-level details for easier understanding.\n- No code or structural changes; documentation enhancements only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ed964bb22d063e230fad6c1dda959759c35678efc886505e91327686f533a46d"
+}

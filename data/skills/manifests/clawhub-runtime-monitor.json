@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61722,
+  "uuid": "skill-clawhub-runtime-monitor",
+  "skillKey": "clawhub-runtime-monitor",
+  "name": "Runtime Monitor",
+  "summary": "AI 代理运行时 I/O 安全监控 - 检测提示注入、数据外泄、危险命令",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.runtime_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liwiw",
+      "features": [
+        "AI 代理运行时 I/O 安全监控",
+        "检测提示注入、数据外泄、危险命令"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/runtime-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266823704?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "runtime-monitor",
+      "url": "https://clawhub.ai/skills/runtime-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "runtime-monitor",
+    "url": "https://clawhub.ai/skills/runtime-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/runtime-monitor-7c798220f213703f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/runtime-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-runtime-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2c411a155b6d98645ff355d83721131e22d9203e3b53efba5c860a2452e23739",
+      "artifactSizeBytes": 2148
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T22:53:03.907Z"
+}

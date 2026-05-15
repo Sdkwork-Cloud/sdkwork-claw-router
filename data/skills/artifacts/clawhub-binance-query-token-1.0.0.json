@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/binance-query-token@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.binance_query_token",
+  "skill": {
+    "id": 24107,
+    "skillKey": "clawhub-binance-query-token",
+    "name": "Binance Query Token"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "binance-query-token",
+    "url": "https://clawhub.ai/skills/binance-query-token",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/binance-query-token-5ce9da0bcd7aee8c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query token details by keyword, contract address, or chain. Search tokens, get metadata and social links, retrieve real-time market data (price, price trend,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "viktor-huang",
+      "userId": "publishers:viktor-huang",
+      "displayName": "viktor-huang",
+      "image": "https://avatars.githubusercontent.com/u/131138970?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 400,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772693577151,
+      "changelog": "Version 1.0.0 – Initial Release\n\n- Skill enables querying token info by keyword, contract address, or chain.\n- Provides token search, metadata (name, symbol, links, creator info), real-time market data (price, volume, liquidity, holders), and K-Line candlestick charts.\n- Supports BSC, Base, and Solana chains.\n- Designed for token discovery, project research, market analysis, and charting.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:aed538c56fd2ea20c8409a8224ea72695ba95cb5225fde7a60b2b1c6bdeae188"
+}

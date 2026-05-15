@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skylv-cron-parser@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_cron_parser",
+  "skill": {
+    "id": 36187,
+    "skillKey": "clawhub-skylv-cron-parser",
+    "name": "Skylv Cron Parser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-cron-parser",
+    "url": "https://clawhub.ai/skills/skylv-cron-parser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-cron-parser-a316487f704e7677.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Parses, validates, and explains cron expressions. Converts between human-readable and cron format. Triggers: parse cron, validate cron, cron expression."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776664490549,
+      "changelog": "Initial release of skylv-cron-parser.\n\n- Parses, validates, and explains cron expressions.\n- Converts between human-readable and cron formats.\n- Supports common crontab shortcuts (e.g., @daily, @weekly).\n- Provides validation and error-checking for each field.\n- Trigger: cron-parser.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2fea36d9512e7115701af116ab5d24a999a0cd0165f8a007f48e083126cb6e23"
+}

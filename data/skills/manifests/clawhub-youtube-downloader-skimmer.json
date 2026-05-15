@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58924,
+  "uuid": "skill-clawhub-youtube-downloader-skimmer",
+  "skillKey": "clawhub-youtube-downloader-skimmer",
+  "name": "Youtube Downloader Skimmer",
+  "summary": "下载 YouTube 视频并自动剪辑关键片段",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_downloader_skimmer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rao Lin",
+      "features": [
+        "下载 YouTube 视频并自动剪辑关键片段"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-downloader-skimmer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16436148?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-downloader-skimmer",
+      "url": "https://clawhub.ai/skills/youtube-downloader-skimmer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-downloader-skimmer",
+    "url": "https://clawhub.ai/skills/youtube-downloader-skimmer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-downloader-skimmer-ea2c1fb090a74884.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-downloader-skimmer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-downloader-skimmer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:011a24dd1044192e047e1795d154e814d4acdbe3ca9304dbfd85bcebe9388d2e",
+      "artifactSizeBytes": 2232
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T07:25:08.729Z"
+}

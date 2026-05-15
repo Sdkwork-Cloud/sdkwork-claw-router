@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25112,
+  "uuid": "skill-clawhub-wip-xai-grok",
+  "skillKey": "clawhub-wip-xai-grok",
+  "name": "Wip Xai Grok Private",
+  "summary": "xAI Grok API. Search the web, search X, generate images, generate video.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wip_xai_grok",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Parker Todd Brooks",
+      "features": [
+        "xAI Grok API",
+        "Search the web, search X, generate images, generate video."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wip-xai-grok@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/585456?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wip-xai-grok",
+      "url": "https://clawhub.ai/skills/wip-xai-grok"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wip-xai-grok",
+    "url": "https://clawhub.ai/skills/wip-xai-grok",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wip-xai-grok-0140f223925cb5c9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wip-xai-grok@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-wip-xai-grok-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fd3c23a5fb5d2bf72ddac868d73271219fd69511b3dc11c4d223772d24d59550",
+      "artifactSizeBytes": 1983
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T18:03:01.194Z"
+}

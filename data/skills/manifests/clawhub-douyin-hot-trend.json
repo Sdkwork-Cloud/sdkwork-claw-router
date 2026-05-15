@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65953,
+  "uuid": "skill-clawhub-douyin-hot-trend",
+  "skillKey": "clawhub-douyin-hot-trend",
+  "name": "Douyin Hot Trend",
+  "summary": "获取抖音热榜/热搜榜数据，包含热门视频、挑战赛、音乐等多领域热门内容，并输出标题、热度值、跳转链接及封面图（如有）。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_hot_trend",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaofei",
+      "features": [
+        "获取抖音热榜/热搜榜数据，包含热门视频、挑战赛、音乐等多领域热门内容，并输出标题、热度值、跳转链接及封面图（如有）。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/douyin-hot-trend@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/236318269?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "douyin-hot-trend",
+      "url": "https://clawhub.ai/skills/douyin-hot-trend"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-hot-trend",
+    "url": "https://clawhub.ai/skills/douyin-hot-trend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-hot-trend-9138cde424769dd4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/douyin-hot-trend@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-douyin-hot-trend-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:59423c70cace065dd7503ae30d080787bea8550828bf067b69471de04cb3c53d",
+      "artifactSizeBytes": 2008
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T18:01:33.299Z"
+}

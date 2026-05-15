@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66934,
+  "uuid": "skill-clawhub-todoist-visibility",
+  "skillKey": "clawhub-todoist-visibility",
+  "name": "Todoist 任务可见性管理",
+  "summary": "基于 Todoist 的任务可见性管理。用于创建、更新和追踪任务状态（进行中🟡、等待中🟠、已完成🟢），并记录进度评论。当用户提到 Todoist 任务管理、任务状态追踪、或需要使用 Todoist API 时触发。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.todoist_visibility",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "near2sea",
+      "features": [
+        "基于 Todoist 的任务可见性管理。用于创建、更新和追踪任务状态（进行中🟡、等待中🟠、已完成🟢），并记录进度评论。当用户提到 Todoist 任务管理、任务状态追踪、或需要使用 T."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/todoist-visibility@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4099187?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "todoist-visibility",
+      "url": "https://clawhub.ai/skills/todoist-visibility"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "todoist-visibility",
+    "url": "https://clawhub.ai/skills/todoist-visibility",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/todoist-visibility-19a68ac23b817e86.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/todoist-visibility@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-todoist-visibility-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:118b2f7d804b947db41b573fd2ebdda5bbaef5f43079bc8720206ab4f46c5c00",
+      "artifactSizeBytes": 2153
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T06:22:22.237Z"
+}

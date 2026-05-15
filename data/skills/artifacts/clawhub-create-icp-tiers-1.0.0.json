@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/create-icp-tiers@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.create_icp_tiers",
+  "skill": {
+    "id": 41119,
+    "skillKey": "clawhub-create-icp-tiers",
+    "name": "Create Icp Tiers"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "create-icp-tiers",
+    "url": "https://clawhub.ai/skills/create-icp-tiers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/create-icp-tiers-67039e168f00d757.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Classify companies into Ideal Customer Profile (ICP) tiers based on firmographic data (industry + employee count). Creates a custom property via API and 4 cl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tomgranot",
+      "userId": "s17cmf9jxs7s60v7thhms9w09h83m293",
+      "displayName": "TomGranot",
+      "image": "https://avatars.githubusercontent.com/u/8835035?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774546576885,
+      "changelog": "Initial release of the create-icp-tiers skill.\n\n- Classifies companies into Ideal Customer Profile (ICP) tiers using industry and employee count.\n- Creates a custom dropdown \"ICP Tier\" property via API for company records.\n- Sets up 4 automated workflows in HubSpot UI to continuously assign companies to Tier 1, Tier 2, Tier 3, or Not ICP.\n- Includes a requirements-gathering interview to collect industry, employee thresholds, and optional additional criteria.\n- Supports both API-based and manual UI setup.\n- Provides guidance to ensure accurate and conservative classification, prioritizing systematic lead prioritization and sales/marketing alignment.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:247d4d0054f099046cfef7bdd4cbace77a194508e9e1bddc35f45d021c5bef35"
+}

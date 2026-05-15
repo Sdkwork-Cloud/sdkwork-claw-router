@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71503,
+  "uuid": "skill-clawhub-operation-daily-report-claw",
+  "skillKey": "clawhub-operation-daily-report-claw",
+  "name": "运营数据日报虾",
+  "summary": "运营数据日报虾 — 自动化多平台运营数据采集与日报生成。从抖音、小红书、视频号、B站、微博等平台采集数据，清洗标准化后生成结构化日报，并推送到飞书文档/群聊。 **当以下情况时使用此 Skill**： (1) 需要汇总多个内容平台（抖音/小红书/视频号/B站/微博）的运营数据 (2) 需要生成运营日报、周报、月报...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.operation_daily_report_claw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ricky",
+      "features": [
+        "运营数据日报虾 — 自动化多平台运营数据采集与日报生成。从抖音、小红书、视频号、B站、微博等平台采集数据，清洗标准化后生成结构化日报，并推送到飞书文档/群聊。 **当以下情况时使用此 Ski."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/operation-daily-report-claw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82147388?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "operation-daily-report-claw",
+      "url": "https://clawhub.ai/skills/operation-daily-report-claw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "operation-daily-report-claw",
+    "url": "https://clawhub.ai/skills/operation-daily-report-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/operation-daily-report-claw-d4ba32f463aabed8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/operation-daily-report-claw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-operation-daily-report-claw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cd3cff85aa26057c7282f66d62a54e94ca9cdd99547f017ab60b40f9a498a431",
+      "artifactSizeBytes": 2344
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T04:05:03.681Z"
+}

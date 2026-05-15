@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12139,
+  "uuid": "skill-clawhub-flatnotes-tasksmd-github-audit",
+  "skillKey": "clawhub-flatnotes-tasksmd-github-audit",
+  "name": "Flatnotes + Tasks.md GitHub Audit",
+  "summary": "Thoroughly audit Tasks.md + Flatnotes for drift and accuracy; use GitHub (gh CLI) as source of truth to detect stale notes/cards and missing links. Produces a report and an optional fix plan.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flatnotes_tasksmd_github_audit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "branexp",
+      "features": [
+        "Thoroughly audit Tasks.md + Flatnotes for drift and accuracy",
+        "use GitHub (gh CLI) as source of truth to detect stale notes/cards and missing links",
+        "Produces a report and an optional fix plan."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flatnotes-tasksmd-github-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/148727817?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flatnotes-tasksmd-github-audit",
+      "url": "https://clawhub.ai/skills/flatnotes-tasksmd-github-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flatnotes-tasksmd-github-audit",
+    "url": "https://clawhub.ai/skills/flatnotes-tasksmd-github-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flatnotes-tasksmd-github-audit-6f811e434b63823e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flatnotes-tasksmd-github-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-flatnotes-tasksmd-github-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2fd5bc78cb288a19f77ed1d0b1feeedc583857914420fcef3f464e78fc84e3e8",
+      "artifactSizeBytes": 2014
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T20:04:09.546Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meyhem-capabilities@0.1.4",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meyhem_capabilities",
+  "skill": {
+    "id": 26120,
+    "skillKey": "clawhub-meyhem-capabilities",
+    "name": "Meyhem Capabilities"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meyhem-capabilities",
+    "url": "https://clawhub.ai/skills/meyhem-capabilities",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meyhem-capabilities-640ef03694a3421c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find the best tool for your task across 22,000+ MCP servers and OpenClaw skills. Ranked by community trust. No API key."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "c5huracan",
+      "userId": "s173vpr4map3x4yc4hdhbbhj1d83ra1z",
+      "displayName": "c5huracan",
+      "image": "https://avatars.githubusercontent.com/u/93015898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 364,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.1.4",
+      "createdAt": 1773199972082,
+      "changelog": "22,000+ capabilities: added 2,125 MCP servers from Official Registry",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dea2ad55ffa5598bcc4e30589baac257d1f46854200bfea104f4a681a3451c07"
+}

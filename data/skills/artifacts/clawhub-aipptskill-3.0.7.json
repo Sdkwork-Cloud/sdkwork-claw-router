@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aipptskill@3.0.7",
+  "version": "3.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aipptskill",
+  "skill": {
+    "id": 19781,
+    "skillKey": "clawhub-aipptskill",
+    "name": "aippt-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aipptskill",
+    "url": "https://clawhub.ai/skills/aipptskill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aipptskill-282a60edc23aa918.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A skill to automatically generate and download PPT presentations using AIPPT APIs based on a provided topic."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huiyuan1234",
+      "userId": "s1729e174yw2mv8bberb06vrbx83hkwt",
+      "displayName": "aippt",
+      "image": "https://avatars.githubusercontent.com/u/46413028?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 492,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "3.0.7",
+      "createdAt": 1777361530399,
+      "changelog": "No user-visible changes in this release; content and functionality remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dea03e79982bea2aac379e9ba17cd9eb3e54428e012fce22a672e258ba75579b"
+}

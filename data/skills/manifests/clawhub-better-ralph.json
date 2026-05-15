@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15641,
+  "uuid": "skill-clawhub-better-ralph",
+  "skillKey": "clawhub-better-ralph",
+  "name": "Better Ralph",
+  "summary": "Run one Better Ralph iteration: pick next incomplete PRD story by priority, implement it, run checks, commit, mark passed, and append progress, using only st...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.better_ralph",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "austindixson",
+      "features": [
+        "Run one Better Ralph iteration: pick next incomplete PRD story by priority, implement it, run c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/better-ralph@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52183161?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "better-ralph",
+      "url": "https://clawhub.ai/skills/better-ralph"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "better-ralph",
+    "url": "https://clawhub.ai/skills/better-ralph",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/better-ralph-ff223d6cc13aecf0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/better-ralph@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-better-ralph-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5157822ada7bb854ac2e652795e6248fd15186056110126845531afa73f88770",
+      "artifactSizeBytes": 2510
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T22:17:44.986Z"
+}

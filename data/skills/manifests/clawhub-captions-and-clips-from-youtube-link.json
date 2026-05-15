@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17888,
+  "uuid": "skill-clawhub-captions-and-clips-from-youtube-link",
+  "skillKey": "clawhub-captions-and-clips-from-youtube-link",
+  "name": "Captions and Clips from YouTube Link",
+  "summary": "Turn YouTube videos into viral short-form clips with captions (TikTok, Reels, Shorts) using the MakeAIClips API at https://makeaiclips.live. Use when user wa...",
+  "version": "1.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.captions_and_clips_from_youtube_link",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nosselil",
+      "features": [
+        "Turn YouTube videos into viral short-form clips with captions (TikTok, Reels, Shorts) using the.",
+        "Use when user wa..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/captions-and-clips-from-youtube-link@1.3.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/194730614?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "captions-and-clips-from-youtube-link",
+      "url": "https://clawhub.ai/skills/captions-and-clips-from-youtube-link"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "captions-and-clips-from-youtube-link",
+    "url": "https://clawhub.ai/skills/captions-and-clips-from-youtube-link",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/captions-and-clips-from-youtube-link-c55439ab0deaa7d8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/captions-and-clips-from-youtube-link@1.3.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-captions-and-clips-from-youtube-link-1.3.1.json",
+      "version": "1.3.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f34ee2686dd27a9253abce4011c817082641decfed12846e9c4cd14906bae09d",
+      "artifactSizeBytes": 2589
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T07:40:31.140Z"
+}

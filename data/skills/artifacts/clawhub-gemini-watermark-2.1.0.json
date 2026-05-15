@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gemini-watermark@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gemini_watermark",
+  "skill": {
+    "id": 23931,
+    "skillKey": "clawhub-gemini-watermark",
+    "name": "Gemini Watermark"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gemini-watermark",
+    "url": "https://clawhub.ai/skills/gemini-watermark",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gemini-watermark-1ccc42761c6b829e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Remove visible Gemini AI watermarks from images via reverse alpha blending. Use for cleaning Gemini-generated images, removing the star/sparkle logo watermar..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "h1bomb",
+      "userId": "s17374y1qzmey0dqkt8xae780583k6b3",
+      "displayName": "h1bomb",
+      "image": "https://avatars.githubusercontent.com/u/641828?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 416,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1772242743955,
+      "changelog": "- New version 2.1.0 introduces complete standalone documentation in SKILL.md.\n- Describes reverse alpha blending approach for removing Gemini AI's visible star/sparkle logo watermark from images.\n- Supports single image and batch directory processing, with options for detection, force removal, custom alpha maps, and multiple output formats (JPEG, PNG, WebP, BMP).\n- Includes detailed CLI usage, advanced detection techniques, troubleshooting tips, and precise description of supported and unsupported scenarios.\n- Requires only Python (≥3.9), Pillow, and numpy; no external binaries or network access.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f240987fce33f2b1b2e0e49fffe40419c2eeeca59c0e50282eec3cc1ac83687e"
+}

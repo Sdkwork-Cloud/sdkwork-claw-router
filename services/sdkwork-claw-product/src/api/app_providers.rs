@@ -45,7 +45,7 @@ fn app_providers_router_with_state(
     require_subject: bool,
 ) -> Router {
     Router::new()
-        .route("/app/v3/api/router/providers", get(fetch_providers))
+        .route("/app/v3/api/ai/providers", get(fetch_providers))
         .with_state(AppProvidersState {
             read_store,
             require_subject,

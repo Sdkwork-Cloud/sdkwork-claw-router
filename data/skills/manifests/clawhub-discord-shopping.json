@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22031,
+  "uuid": "skill-clawhub-discord-shopping",
+  "skillKey": "clawhub-discord-shopping",
+  "name": "Discord Shopping Deals",
+  "summary": "Finds and lists the top 3 best new, used, or refurbished deals with prices, links, and coupons for products searched via Discord chat keywords.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.discord_shopping",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Robert Caryl",
+      "features": [
+        "Finds and lists the top 3 best new, used, or refurbished deals with prices, links, and coupons."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/discord-shopping@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/229191428?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "discord-shopping",
+      "url": "https://clawhub.ai/skills/discord-shopping"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "discord-shopping",
+    "url": "https://clawhub.ai/skills/discord-shopping",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/discord-shopping-1b9a258792202987.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/discord-shopping@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-discord-shopping-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:abf12404088a2b168b5153c9e0a2889580e7421049d50174ccb3ecc8b1a3dca1",
+      "artifactSizeBytes": 1953
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T14:11:13.414Z"
+}

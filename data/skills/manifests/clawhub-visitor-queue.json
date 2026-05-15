@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35317,
+  "uuid": "skill-clawhub-visitor-queue",
+  "skillKey": "clawhub-visitor-queue",
+  "name": "Visitor Queue",
+  "summary": "Visitor Queue integration. Manage data, records, and automate workflows. Use when the user wants to interact with Visitor Queue data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.visitor_queue",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Visitor Queue integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Visitor Queue data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/visitor-queue@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "visitor-queue",
+      "url": "https://clawhub.ai/skills/visitor-queue"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "visitor-queue",
+    "url": "https://clawhub.ai/skills/visitor-queue",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/visitor-queue-8631ddcdf6bb5721.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/visitor-queue@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-visitor-queue-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7de599b35af800143b6ff1382346e8326bef11358ca180b44a192bd73218799b",
+      "artifactSizeBytes": 1875
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:59:25.964Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36832,
+  "uuid": "skill-clawhub-sanity",
+  "skillKey": "clawhub-sanity",
+  "name": "Sanity CMS",
+  "summary": "Query and manage Sanity CMS content via GROQ queries and the Sanity HTTP API. Use when asked to fetch content from a Sanity dataset, create or update documen...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sanity",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dwhite-oss",
+      "features": [
+        "Query and manage Sanity CMS content via GROQ queries and the Sanity HTTP API",
+        "Use when asked to fetch content from a Sanity dataset, create or update documen..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sanity@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256912923?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sanity",
+      "url": "https://clawhub.ai/skills/sanity"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sanity",
+    "url": "https://clawhub.ai/skills/sanity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sanity-766da84f2bcd80d6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sanity@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sanity-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1e071a987d96a3d8cfe110b16d06517846d8eda06834a4bdffcefecee074e1a8",
+      "artifactSizeBytes": 1860
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T19:08:28.025Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67681,
+  "uuid": "skill-clawhub-minimaxmusic",
+  "skillKey": "clawhub-minimaxmusic",
+  "name": "minimaxmusic",
+  "summary": "使用 MiniMax API 生成创意音乐。当用户要求生成音乐、创作歌曲、制作背景音乐时使用。支持纯音乐和人声歌曲，可指定风格、情绪和场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimaxmusic",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaohuozi",
+      "features": [
+        "使用 MiniMax API 生成创意音乐。当用户要求生成音乐、创作歌曲、制作背景音乐时使用。支持纯音乐和人声歌曲，可指定风格、情绪和场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/minimaxmusic@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/79885733?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "minimaxmusic",
+      "url": "https://clawhub.ai/skills/minimaxmusic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimaxmusic",
+    "url": "https://clawhub.ai/skills/minimaxmusic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimaxmusic-3fe3609918ca6967.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/minimaxmusic@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-minimaxmusic-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3cf048bd3c39531d3b67132e99723050128e27eef5ecea7505a559ecdbf5e166",
+      "artifactSizeBytes": 2287
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T03:54:28.189Z"
+}

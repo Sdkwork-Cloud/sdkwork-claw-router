@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16817,
+  "uuid": "skill-clawhub-noizai-tts",
+  "skillKey": "clawhub-noizai-tts",
+  "name": "tts",
+  "summary": "Use this skill whenever the user wants to convert text into speech, generate audio from text, or produce voiceovers. Triggers include: any mention of 'TTS',...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.noizai_tts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kusuriuri",
+      "features": [
+        "Use this skill whenever the user wants to convert text into speech, generate audio from text, o.",
+        "Triggers include: any mention of 'TTS',..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/noizai-tts@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/84056810?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "noizai-tts",
+      "url": "https://clawhub.ai/skills/noizai-tts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "noizai-tts",
+    "url": "https://clawhub.ai/skills/noizai-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/noizai-tts-eb0ace50276084ee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/noizai-tts@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-noizai-tts-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:af6f17d07417d2ae1cb2226d640f11e0c99aa40694cd37aeafbae74d06929bbe",
+      "artifactSizeBytes": 2106
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T07:35:15.335Z"
+}

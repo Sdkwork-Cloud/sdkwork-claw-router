@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/generator-from-text@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.generator_from_text",
+  "skill": {
+    "id": 48256,
+    "skillKey": "clawhub-generator-from-text",
+    "name": "Generator From Text"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "generator-from-text",
+    "url": "https://clawhub.ai/skills/generator-from-text",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/generator-from-text-664b79f00325b456.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get text-based videos ready to post, without touching a single slider. Upload your text prompt (TXT, DOCX, PDF, copied text, up to 500MB), say something like..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 102,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777831794739,
+      "changelog": "- Initial release of Generator From Text: turn written prompts (TXT, DOCX, PDF, or copied text up to 500MB) into ready-to-post AI-generated videos.\n- Simple prompt workflow: Upload text, describe video style or duration, and download a 1080p MP4 result in about 1-2 minutes.\n- Automatic session setup with anonymous token creation and cloud video processing—no manual API handling needed.\n- Supports file upload, video export, credits check, and session state tracking with clear error handling and user instructions.\n- Designed for marketers and creators to generate videos without filming or editing skills.\n- Multiple file formats supported; free plan available with 100 credits for 7 days.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c9fa4dd7be6f0c84f45bd13bb98fa1e0a5e7b4a1531254f46dd23f211d3235b3"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/telegram-checkin@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.telegram_checkin",
+  "skill": {
+    "id": 59930,
+    "skillKey": "clawhub-telegram-checkin",
+    "name": "Telegram 自动签到"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "telegram-checkin",
+    "url": "https://clawhub.ai/skills/telegram-checkin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/telegram-checkin-07179ce9305379ed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 agent-browser 对 Telegram 机器人进行自动签到。当用户提到\"签到\"、\"Telegram 机器人自动操作\"、\"OKEmbyBot\"、\"Telegram Web 自动化\"、\"Telegram 按钮点击\"时触发。使用持久化 Chrome Profile 保存 cookies，关掉再开无需重新登录。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lanbeizizi-max",
+      "userId": "s17avskzzekrst33x3jkqthtc584xk0c",
+      "displayName": "lanbeizizi-max",
+      "image": "https://avatars.githubusercontent.com/u/268800607?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776241618680,
+      "changelog": "首次发布：支持 Telegram 机器人自动签到，使用持久化 Chrome Profile 保存 cookies",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:12af4cdfe9c38d79e5b78e5c6ffd7975660a07e3b464607109748a5a06abe097"
+}

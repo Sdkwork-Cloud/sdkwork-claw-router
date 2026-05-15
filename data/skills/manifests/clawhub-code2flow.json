@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45598,
+  "uuid": "skill-clawhub-code2flow",
+  "skillKey": "clawhub-code2flow",
+  "name": "Code2Flow",
+  "summary": "Analyze codebase structures and source files to generate clear, accurate Mermaid.js diagrams that visualize system architecture and workflows.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code2flow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "raden wahid",
+      "features": [
+        "Analyze codebase structures and source files to generate clear, accurate Mermaid.js diagrams th."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/code2flow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61126583?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "code2flow",
+      "url": "https://clawhub.ai/skills/code2flow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code2flow",
+    "url": "https://clawhub.ai/skills/code2flow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code2flow-4cd665a98eb8f301.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/code2flow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-code2flow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c5adbd862b759944af9170ad0758bb5b8060923b905425e3c829ad3942e4e89e",
+      "artifactSizeBytes": 2380
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T04:58:45.798Z"
+}

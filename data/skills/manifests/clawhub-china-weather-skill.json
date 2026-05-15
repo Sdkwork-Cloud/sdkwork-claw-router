@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72773,
+  "uuid": "skill-clawhub-china-weather-skill",
+  "skillKey": "clawhub-china-weather-skill",
+  "name": "⛅ 中国天气查询工具",
+  "summary": "中国城市天气查询工具",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_weather_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "木炭",
+      "features": [
+        "中国城市天气查询工具"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/china-weather-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/70026047?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "china-weather-skill",
+      "url": "https://clawhub.ai/skills/china-weather-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-weather-skill",
+    "url": "https://clawhub.ai/skills/china-weather-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-weather-skill-21aec7e158669c34.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/china-weather-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-china-weather-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:32c63c95825d8f93b0174261ca01864f8a19df90b198eaf4fac3540bed152796",
+      "artifactSizeBytes": 2413
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T16:47:49.677Z"
+}

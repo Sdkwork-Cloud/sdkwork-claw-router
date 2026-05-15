@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39285,
+  "uuid": "skill-clawhub-clio-manage",
+  "skillKey": "clawhub-clio-manage",
+  "name": "Clio Manage",
+  "summary": "Clio integration. Manage Recordses. Use when the user wants to interact with Clio data.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clio_manage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Clio integration",
+        "Manage Recordses",
+        "Use when the user wants to interact with Clio data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clio-manage@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clio-manage",
+      "url": "https://clawhub.ai/skills/clio-manage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clio-manage",
+    "url": "https://clawhub.ai/skills/clio-manage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clio-manage-a93cf6f831374c83.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clio-manage@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clio-manage-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:128e8031c0fdd66fbe220451be63f0b8fa3fccc69df030f7d70b898b977da33d",
+      "artifactSizeBytes": 1815
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:31:46.495Z"
+}

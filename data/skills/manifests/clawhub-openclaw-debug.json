@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19769,
+  "uuid": "skill-clawhub-openclaw-debug",
+  "skillKey": "clawhub-openclaw-debug",
+  "name": "OpenClaw Debug",
+  "summary": "When users encounter OpenClaw-related issues or errors, search official docs and GitHub issues first, then provide solutions. Use for: feature malfunctions,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_debug",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sky Yan",
+      "features": [
+        "When users encounter OpenClaw-related issues or errors, search official docs and GitHub issues.",
+        "Use for: feature malfunctions,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-debug@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/945860?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-debug",
+      "url": "https://clawhub.ai/skills/openclaw-debug"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-debug",
+    "url": "https://clawhub.ai/skills/openclaw-debug",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-debug-434219eb49261a81.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-debug@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-debug-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e36c5280610b14b2c08412b578b6f40393e53ba068c617d3e08acc899bd99493",
+      "artifactSizeBytes": 1944
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T05:50:44.930Z"
+}

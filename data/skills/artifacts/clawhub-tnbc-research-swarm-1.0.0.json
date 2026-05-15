@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tnbc-research-swarm@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tnbc_research_swarm",
+  "skill": {
+    "id": 15183,
+    "skillKey": "clawhub-tnbc-research-swarm",
+    "name": "TNBC Research Swarm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tnbc-research-swarm",
+    "url": "https://clawhub.ai/skills/tnbc-research-swarm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tnbc-research-swarm-a1793c9b2014e85e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Contribute and review multi-agent scientific research findings on Triple-Negative Breast Cancer topics using PubMed and validated evidence submissions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "angusthefuzz",
+      "userId": "publishers:angusthefuzz",
+      "displayName": "angusthefuzz",
+      "image": "https://avatars.githubusercontent.com/u/226103412?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 858,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771384507220,
+      "changelog": "Initial release - contribute TNBC research to Research Swarm platform",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4f890d99a4c072739eae865fee5c0c26f7989b1ce4bce8129b21397123609922"
+}

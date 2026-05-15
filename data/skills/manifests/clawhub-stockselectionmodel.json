@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63322,
+  "uuid": "skill-clawhub-stockselectionmodel",
+  "skillKey": "clawhub-stockselectionmodel",
+  "name": "Sun Yuchen's stock selection model",
+  "summary": "A股板块实时研报。全球新闻→A股映射、板块趋势研判、美股关联、利好利空、大事件提醒。零配置可用，输出兼容飞书/扣子/Markdown平台。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stockselectionmodel",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "内容科学|Content Science",
+      "features": [
+        "A股板块实时研报。全球新闻→A股映射、板块趋势研判、美股关联、利好利空、大事件提醒。零配置可用，输出兼容飞书/扣子/Markdown平台。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stockselectionmodel@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/88421824?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stockselectionmodel",
+      "url": "https://clawhub.ai/skills/stockselectionmodel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stockselectionmodel",
+    "url": "https://clawhub.ai/skills/stockselectionmodel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stockselectionmodel-21897e72f245e364.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stockselectionmodel@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stockselectionmodel-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6cc2d8519ea3a7920385636f93eaf0ffe55d87d8e1a98dfc6b8011b37466aba3",
+      "artifactSizeBytes": 2642
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T13:36:59.982Z"
+}

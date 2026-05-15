@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crif@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crif",
+  "skill": {
+    "id": 28450,
+    "skillKey": "clawhub-crif",
+    "name": "Crypto Research Interactive Framework"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crif",
+    "url": "https://clawhub.ai/skills/crif",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crif-8e42716e84fdb9d5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Crypto Research Interactive Framework — interactive crypto deep-research with human-AI collaboration. Use this skill when users want to research crypto proje..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kudodefi",
+      "userId": "s17edgbaysjztmpsf9w0y43z4d845vxg",
+      "displayName": "kudodefi",
+      "image": "https://avatars.githubusercontent.com/u/139238305?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 821,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1775216605219,
+      "changelog": "- Major refactor: migrated all framework files from framework/ to references/ directory for improved organization\n- Introduced orchestrator-based architecture with single orchestration entry point, session management, and agent embodiment\n- Updated file structure and clarified file reading priority (orchestrator, config, workflow, agents, components, guides)\n- Added new agents (market-analyst, project-analyst, image-creator) and expanded component/guides coverage\n- Execution modes now selected at session level; users prompted to choose collaborative or autonomous if not specified\n- Updated skill description and usage triggers for broader, clearer activation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7ba36fa6d643341957c8d2046757a0634b32e52afb14fc11971364a522dbef58"
+}

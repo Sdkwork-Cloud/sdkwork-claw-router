@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22979,
+  "uuid": "skill-clawhub-sentisense",
+  "skillKey": "clawhub-sentisense",
+  "name": "Sentisense",
+  "summary": "Read-only financial market data API. Stock prices, sentiment, insider trading, institutional flows, politician trades, AI insights. No trading, no purchases,...",
+  "version": "2.2.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sentisense",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Senti",
+      "features": [
+        "Read-only financial market data API",
+        "Stock prices, sentiment, insider trading, institutional flows, politician trades, AI insights",
+        "No trading, no purchases,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sentisense@2.2.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265723691?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sentisense",
+      "url": "https://clawhub.ai/skills/sentisense"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sentisense",
+    "url": "https://clawhub.ai/skills/sentisense",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sentisense-bb9d273c5a564b86.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sentisense@2.2.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-sentisense-2.2.4.json",
+      "version": "2.2.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7b12d4b4da67be6697407b2e68bde7c1458a8eba47f34f75fecdba2406c1904c",
+      "artifactSizeBytes": 1988
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T08:04:23.099Z"
+}

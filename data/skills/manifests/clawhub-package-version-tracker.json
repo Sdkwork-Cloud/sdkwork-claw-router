@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61321,
+  "uuid": "skill-clawhub-package-version-tracker",
+  "skillKey": "clawhub-package-version-tracker",
+  "name": "Package Version Tracker",
+  "summary": "查询 npm 和 PyPI 包的版本信息、历史发布及依赖，支持版本比较和批量查询，响应快速无须 API key。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.package_version_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SxLiuYu",
+      "features": [
+        "查询 npm 和 PyPI 包的版本信息、历史发布及依赖，支持版本比较和批量查询，响应快速无须 API key。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/package-version-tracker@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95198625?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "package-version-tracker",
+      "url": "https://clawhub.ai/skills/package-version-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "package-version-tracker",
+    "url": "https://clawhub.ai/skills/package-version-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/package-version-tracker-999203f3ceaab907.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/package-version-tracker@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-package-version-tracker-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7910ec8bad109498ba9d95fcc75737662be4a733d36d26e7e61960103ba30bb9",
+      "artifactSizeBytes": 2033
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T11:26:58.399Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bitopro-skill-hub@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bitopro_skill_hub",
+  "skill": {
+    "id": 52089,
+    "skillKey": "clawhub-bitopro-skill-hub",
+    "name": "bitopro-market-intel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bitopro-skill-hub",
+    "url": "https://clawhub.ai/skills/bitopro-skill-hub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bitopro-skill-hub-4c821affe9b2be2d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Crypto market intelligence, macro indicators, listing-catalog discovery, and BitoPro-relevant news aggregation — strictly scoped to BitoPro-listed spot coins..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bitopro",
+      "userId": "s17dvmnbbbvgn7ewy5svbacpjd841fth",
+      "displayName": "bitopro",
+      "image": "https://avatars.githubusercontent.com/u/49395162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 221,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1777365218943,
+      "changelog": "BitoPro Market Intel Skill 1.4.0\n\n- Added BitoPro-relevant cryptocurrency news aggregation (Tool 8): collects news from 6 sources (3 zh-tw + 3 English auto-translated to 繁中) and filters to BitoPro-listed coins.\n- Updated description and documentation to reflect new news aggregation feature.\n- Included unofficial Google Translate integration for automatic translation of English news to 繁中.\n- Added new file: references/news-categories.md for news filtering and categories.\n- No API or data source changes for existing market intel features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b83776aa49ad9a4ae6f96c05c7e69f96e6d0993ea4620f5ee55aad59cb6b367c"
+}

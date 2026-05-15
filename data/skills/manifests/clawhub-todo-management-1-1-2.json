@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10232,
+  "uuid": "skill-clawhub-todo-management-1-1-2",
+  "skillKey": "clawhub-todo-management-1-1-2",
+  "name": "Todo Management 1.1.2",
+  "summary": "Per-workspace SQLite todo manager (./todo.db) with groups and task statuses (pending/in_progress/done/skipped), operated via {baseDir}/scripts/todo.sh for adding, listing, editing, moving, and removing entries and managing groups.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.todo_management_1_1_2",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lucky-2968",
+      "features": [
+        "Per-workspace SQLite todo manager (./todo.db) with groups and task statuses (pending/in_progres."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/todo-management-1-1-2@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208146076?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "todo-management-1-1-2",
+      "url": "https://clawhub.ai/skills/todo-management-1-1-2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "todo-management-1-1-2",
+    "url": "https://clawhub.ai/skills/todo-management-1-1-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/todo-management-1-1-2-e61d597eda35ec88.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/todo-management-1-1-2@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-todo-management-1-1-2-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:72043ef510fe5ab62d608dc7223acc162a1c290180e359768037dbdeec310cf3",
+      "artifactSizeBytes": 2417
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T13:32:08.812Z"
+}

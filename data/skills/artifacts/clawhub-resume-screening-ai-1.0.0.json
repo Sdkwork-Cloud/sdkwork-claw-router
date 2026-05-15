@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/resume-screening-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resume_screening_ai",
+  "skill": {
+    "id": 72783,
+    "skillKey": "clawhub-resume-screening-ai",
+    "name": "简历筛选助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resume-screening-ai",
+    "url": "https://clawhub.ai/skills/resume-screening-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resume-screening-ai-9a825b6cee1bb524.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "实习生简历筛选与岗位匹配评估。用于HR招聘场景，当用户需要筛选候选人简历、评估简历与岗位JD匹配度、分析候选人基本信息/实习经历/技能是否符合要求时使用。支持PDF简历解析，输出结构化的筛选结论。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qiuxin-bit",
+      "userId": "s17d2e676wwzjz71zf3c1ck0rn85nbk8",
+      "displayName": "Qiuxin Wang",
+      "image": "https://avatars.githubusercontent.com/u/251168703?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 107,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777264798107,
+      "changelog": "Initial release: 实习生简历筛选功能",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2ca895c443bb4b1033f4e3ffb14cf8f3b412ec63a1177a904541987d15160445"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/add-typescript-best-practices@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.add_typescript_best_practices",
+  "skill": {
+    "id": 43199,
+    "skillKey": "clawhub-add-typescript-best-practices",
+    "name": "Add Typescript Best Practices"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "add-typescript-best-practices",
+    "url": "https://clawhub.ai/skills/add-typescript-best-practices",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/add-typescript-best-practices-3789bc971305c023.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Setup TypeScript best practices and code style rules in CLAUDE.md"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hahamumu08",
+      "userId": "s17djv8fs491yzn6ftz1hdvhtd850y4s",
+      "displayName": "hahamumu08",
+      "image": "https://avatars.githubusercontent.com/u/202640507?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776415365431,
+      "changelog": "- Initial release of the skill to add TypeScript best practices and code style rules.\n- Sets up standardized content for CLAUDE.md, including strict type enforcement, code style preferences, and best practice guidelines.\n- Library recommendations and common code quality rules are specified for consistent TypeScript usage across projects.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ad18b41fac876392530e662901190806e67d8bedd8b8fadc2c13a0c3314be251"
+}

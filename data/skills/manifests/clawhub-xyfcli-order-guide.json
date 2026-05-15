@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66326,
+  "uuid": "skill-clawhub-xyfcli-order-guide",
+  "skillKey": "clawhub-xyfcli-order-guide",
+  "name": "Xyfcli Order Guide",
+  "summary": "肥料订单下单与客户/供应商管理技能。使用 xyfcli CLI 执行：(1) 下单/订货/采购肥料；(2) 查询产品信息/价格/库存；(3) 查询客户/供应商/经销商信息；(4) 解析订货单图片。触发词：下单、订货、买肥料、查产品、查客户、供应商信息、产品列表、客户编码。",
+  "version": "1.4.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xyfcli_order_guide",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mayafans",
+      "features": [
+        "肥料订单下单与客户/供应商管理技能。使用 xyfcli CLI 执行：(1) 下单/订货/采购肥料；(2) 查询产品信息/价格/库存；(3) 查询客户/供应商/经销商信息；(4) 解析订货单."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xyfcli-order-guide@1.4.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32680030?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xyfcli-order-guide",
+      "url": "https://clawhub.ai/skills/xyfcli-order-guide"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xyfcli-order-guide",
+    "url": "https://clawhub.ai/skills/xyfcli-order-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xyfcli-order-guide-780897ff6720a5b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xyfcli-order-guide@1.4.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-xyfcli-order-guide-1.4.4.json",
+      "version": "1.4.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f28e218bbf2568559c40331b7e8fc4f205240232a74ce1f3b02ea2575b98d72c",
+      "artifactSizeBytes": 2590
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T03:18:08.479Z"
+}

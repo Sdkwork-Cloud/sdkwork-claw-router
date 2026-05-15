@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gromacs-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gromacs_skills",
+  "skill": {
+    "id": 59436,
+    "skillKey": "clawhub-gromacs-skills",
+    "name": "GROMACS Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gromacs-skills",
+    "url": "https://clawhub.ai/skills/gromacs-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gromacs-skills-312340bb0a6c1f5d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "GROMACS 分子动力学模拟软件命令参考。当 Agent 需要执行 GROMACS 命令但不清楚用法时调用。功能覆盖：(1) 拓扑与结构处理 - pdb2gmx、editconf、solvate、insert-molecules、genrestr；(2) 模拟设置与运行 - grompp、mdrun；(3) 轨..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charleshahn",
+      "userId": "publishers:charleshahn",
+      "displayName": "CharlesHahn",
+      "image": "https://avatars.githubusercontent.com/u/40332300?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 292,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773763103325,
+      "changelog": "gromacs-skills 1.0.0 初始版本\n\n- 提供 GROMACS 分子动力学模拟命令与参数详尽参考\n- 覆盖命令类别：拓扑与结构、模拟设置、能量与轨迹分析、工具等\n- 强调优先使用本地 gmx <command> -h 获取命令帮助\n- 列举输入输出文件格式与常用命令参数\n- 补充性能优化、常见问题与最佳实践指导\n- 明确安全原则：生产运行应生成脚本，由用户执行",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5dcdf285b5d3c994c3175b1832fb1b65283af8e02f054dedb47f5f40decc7bc5"
+}

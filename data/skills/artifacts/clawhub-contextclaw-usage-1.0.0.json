@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/contextclaw-usage@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.contextclaw_usage",
+  "skill": {
+    "id": 17506,
+    "skillKey": "clawhub-contextclaw-usage",
+    "name": "ContextClaw Plugin Usage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "contextclaw-usage",
+    "url": "https://clawhub.ai/skills/contextclaw-usage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/contextclaw-usage-14dbc4a43ab9fc3a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage and analyze OpenClaw sessions by checking usage, pruning old sessions, cleaning orphaned files, and viewing stats via CLI or dashboard."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rmruss2022",
+      "userId": "publishers:rmruss2022",
+      "displayName": "rmruss2022",
+      "image": "https://avatars.githubusercontent.com/u/50064453?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 772,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771269123597,
+      "changelog": "Initial release: Skill for using ContextClaw plugin",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:67bea85da9390b3ba2853923ac9b4810bbacbbbfbdf3fd3d61db01bd8f243834"
+}

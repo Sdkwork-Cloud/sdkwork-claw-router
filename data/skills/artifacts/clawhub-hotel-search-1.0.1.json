@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hotel-search@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hotel_search",
+  "skill": {
+    "id": 18451,
+    "skillKey": "clawhub-hotel-search",
+    "name": "Google Hotels"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hotel-search",
+    "url": "https://clawhub.ai/skills/hotel-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hotel-search-4326417cd804d652.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search Google Hotels for hotel prices, ratings, and availability using browser automation. Use when user asks to search hotels, find accommodation, compare h..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "skillhq-ai",
+      "userId": "s170mz62e9kg0yg49p4x2z6wzd84rjra",
+      "displayName": "skillhq-ai",
+      "image": "https://avatars.githubusercontent.com/u/257330909?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 670,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772618602646,
+      "changelog": "Add ClawHub auto-publish workflow\n\nPublishes skill to ClawHub on every push to main with auto\npatch version bumping.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1a32db502a096a2457253fb0868d190b7cdcc7bf3298e52ab0eaba455274d6cb"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62593,
+  "uuid": "skill-clawhub-feishu-edge-tts",
+  "skillKey": "clawhub-feishu-edge-tts",
+  "name": "Feishu Edge Tts",
+  "summary": "使用微软 Edge TTS（免费）生成语音，发送到飞书。无需 API key，音质优秀，支持多语言多音色。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_edge_tts",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Anightmare2",
+      "features": [
+        "使用微软 Edge TTS（免费）生成语音，发送到飞书。无需 API key，音质优秀，支持多语言多音色。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-edge-tts@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/198483483?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-edge-tts",
+      "url": "https://clawhub.ai/skills/feishu-edge-tts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-edge-tts",
+    "url": "https://clawhub.ai/skills/feishu-edge-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-edge-tts-be4b8d1aa321529b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-edge-tts@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-edge-tts-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1eb76c1df8a287361dccba28cf28c3f6efe16f5ffed744b6ae34f0c47cac61fc",
+      "artifactSizeBytes": 1884
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T13:25:39.442Z"
+}

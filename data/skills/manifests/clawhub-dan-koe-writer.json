@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63991,
+  "uuid": "skill-clawhub-dan-koe-writer",
+  "skillKey": "clawhub-dan-koe-writer",
+  "name": "Dan Koe Writer",
+  "summary": "Dan Koe 写作方法论工具箱。基于 OpenClaw Agent 模型，把爆款内容拆解成「创意积木」，再组装成新文章。触发场景：(1) 用户要拆解爆款文章并提取写作要素；(2) 用户需要写作方向或创意灵感；(3) 用户要生成完整的公众号/小红书/推特文章；(4) 用户想学习 Dan Koe 的 APAG 框架...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dan_koe_writer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alleliu",
+      "features": [
+        "Dan Koe 写作方法论工具箱。基于 OpenClaw Agent 模型，把爆款内容拆解成「创意积木」，再组装成新文章。触发场景：(1) 用户要拆解爆款文章并提取写作要素；(2) 用户需要."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dan-koe-writer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29890772?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dan-koe-writer",
+      "url": "https://clawhub.ai/skills/dan-koe-writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dan-koe-writer",
+    "url": "https://clawhub.ai/skills/dan-koe-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dan-koe-writer-876a75c2dd514841.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dan-koe-writer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-dan-koe-writer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ebc69481ba1352eb21c44257f52610daa0ac963b649abca78c901d3b831f9cca",
+      "artifactSizeBytes": 2147
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T13:39:03.498Z"
+}

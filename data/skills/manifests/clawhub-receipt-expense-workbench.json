@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27068,
+  "uuid": "skill-clawhub-receipt-expense-workbench",
+  "skillKey": "clawhub-receipt-expense-workbench",
+  "name": "receipt-expense-workbench",
+  "summary": "Normalize receipts, reimbursement slips, and invoices into a clean expense ledger with category mapping and anomaly flags.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.receipt_expense_workbench",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "Normalize receipts, reimbursement slips, and invoices into a clean expense ledger with category."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/receipt-expense-workbench@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "receipt-expense-workbench",
+      "url": "https://clawhub.ai/skills/receipt-expense-workbench"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "receipt-expense-workbench",
+    "url": "https://clawhub.ai/skills/receipt-expense-workbench",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/receipt-expense-workbench-f102c37d53ec146e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/receipt-expense-workbench@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-receipt-expense-workbench-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:14964cf19fe61c4b77ffaacdaf191f0664668bfcdcbce1fc7ed2105045c65940",
+      "artifactSizeBytes": 2588
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T07:44:18.718Z"
+}

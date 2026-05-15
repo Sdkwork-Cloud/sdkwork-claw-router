@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bookforge-method-decomposition-refactoring@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bookforge_method_decomposition_refactoring",
+  "skill": {
+    "id": 36225,
+    "skillKey": "clawhub-bookforge-method-decomposition-refactoring",
+    "name": "Method Decomposition Refactoring"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bookforge-method-decomposition-refactoring",
+    "url": "https://clawhub.ai/skills/bookforge-method-decomposition-refactoring",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bookforge-method-decomposition-refactoring-6ddc99ed7c0638b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Decompose long, tangled methods into clean, composable units using the 9 composing-method refactorings from Fowler's catalog. Use when: a method has grown to..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quochungto",
+      "userId": "s176b6gfk8djgcz320d83ta4e184bx1v",
+      "displayName": "Hung Quoc To",
+      "image": "https://avatars.githubusercontent.com/u/88069966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 207,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776625958123,
+      "changelog": "Version 1.0.0 of method-decomposition-refactoring skill\n\n- Introduces a refactoring skill focused on decomposing long or tangled methods into clear, composable units, following Fowler's 9 composing-method refactorings.\n- Designed for situations where methods are hard to understand at a glance, contain explanatory comments, or manage excessive local variables.\n- Guides users through identifying decomposition boundaries, eliminating obstructive locals, extracting cohesive fragments, and verifying correctness via tests.\n- Integrates with code-smell-diagnosis to trigger refactoring on \"Long Method\" or similar smells.\n- Includes comprehensive explanation of context, input requirements, refactoring steps, and audiences.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0669fa26f0a6cc8c23cb217655642168ba2e346705961e99c123efec542dd469"
+}

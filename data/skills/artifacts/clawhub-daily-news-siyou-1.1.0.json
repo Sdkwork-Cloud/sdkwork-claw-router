@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-news-siyou@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_news_siyou",
+  "skill": {
+    "id": 68176,
+    "skillKey": "clawhub-daily-news-siyou",
+    "name": "Daily News Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-news-siyou",
+    "url": "https://clawhub.ai/skills/daily-news-siyou",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-news-siyou-1a7c85b4d2e36093.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自定义新闻类型，自动从互联网抓取最新消息，用语音播报。支持科技/财经/体育/娱乐等多个类别，定时发送。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anightmare2",
+      "userId": "publishers:anightmare2",
+      "displayName": "Anightmare2",
+      "image": "https://avatars.githubusercontent.com/u/198483483?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 501,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772888545613,
+      "changelog": "v1.1.0 - 优化新闻源，添加去重功能",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b0943e90aa39a92fc9494adc2c8c7afdb62e3bbf63898e91cef8ba2959850f9a"
+}

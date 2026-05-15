@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73034,
+  "uuid": "skill-clawhub-xiaozhi-learning-dna",
+  "skillKey": "clawhub-xiaozhi-learning-dna",
+  "name": "学习DNA档案",
+  "summary": "小龙虾“长期记忆”的核心引擎——学习DNA档案。仅在学生或监护人明确开启、 或主动提出“记住我”“查看档案”“更新档案”“删除档案”等请求时激活。 普通答疑默认不强制调用；未获同意时，仅允许使用当前会话信息，不建立跨会话档案。 该版本已补充查看、更正、删除、暂停共享与最小化记录边界。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaozhi_learning_dna",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaozhi",
+      "features": [
+        "小龙虾“长期记忆”的核心引擎——学习DNA档案。仅在学生或监护人明确开启、 或主动提出“记住我”“查看档案”“更新档案”“删除档案”等请求时激活。 普通答疑默认不强制调用；未获同意时，仅允许."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaozhi-learning-dna@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2926929?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaozhi-learning-dna",
+      "url": "https://clawhub.ai/skills/xiaozhi-learning-dna"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaozhi-learning-dna",
+    "url": "https://clawhub.ai/skills/xiaozhi-learning-dna",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaozhi-learning-dna-b2a5c63b38fbc6e9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaozhi-learning-dna@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaozhi-learning-dna-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fa6b4c9fffb7d2f3df2f5192c7c73af4d454dc015b7ec0b81062f881d3c79e88",
+      "artifactSizeBytes": 2951
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T01:27:08.640Z"
+}

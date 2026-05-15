@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/code-run-auto-fix@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_run_auto_fix",
+  "skill": {
+    "id": 67571,
+    "skillKey": "clawhub-code-run-auto-fix",
+    "name": "代码自动运行和修复"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-run-auto-fix",
+    "url": "https://clawhub.ai/skills/code-run-auto-fix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-run-auto-fix-5fc27e18df87e01c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动运行并调试 Python、C 和 x86_64 汇编代码，错误时自动修复并返回可执行版本。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zyk-404",
+      "userId": "s1754dwqj2an297vhpdkmcdhf183p4pr",
+      "displayName": "zyk-404",
+      "image": "https://avatars.githubusercontent.com/u/76244158?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 234,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774580762910,
+      "changelog": "自动运行 Python / C / 汇编代码，捕获报错后使用龙虾内置 LLM 自动修复，并直接返回修复后的代码，实现代码自动纠错闭环。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6e01aaba310793776e9b928ec186051ccccd138613b5e68912ebaca744bfc414"
+}

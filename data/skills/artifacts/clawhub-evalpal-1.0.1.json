@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/evalpal@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.evalpal",
+  "skill": {
+    "id": 54584,
+    "skillKey": "clawhub-evalpal",
+    "name": "Evalpal"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "evalpal",
+    "url": "https://clawhub.ai/skills/evalpal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/evalpal-fe7b89515960438a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run AI agent evaluations via EvalPal — trigger eval runs, check results, and list available evaluations"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "matthewengman",
+      "userId": "s17dck0m693envzsk7f9nz76gs83n6c7",
+      "displayName": "MatthewEngman",
+      "image": "https://avatars.githubusercontent.com/u/198623666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774568682195,
+      "changelog": "Declare EVALPAL_API_KEY env var and curl/jq binary requirements in registry metadata",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0d4dae09e89c05b12acdf133145705ce8a574647cc92cf699d967d521636b3af"
+}

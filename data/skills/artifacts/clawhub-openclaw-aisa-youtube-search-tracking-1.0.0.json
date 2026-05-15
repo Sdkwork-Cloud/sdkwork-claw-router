@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-aisa-youtube-search-tracking@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_aisa_youtube_search_tracking",
+  "skill": {
+    "id": 13687,
+    "skillKey": "clawhub-openclaw-aisa-youtube-search-tracking",
+    "name": "Youtube Search and Tracking API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-aisa-youtube-search-tracking",
+    "url": "https://clawhub.ai/skills/openclaw-aisa-youtube-search-tracking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-aisa-youtube-search-tracking-ccff7000c085e8aa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aisadocs",
+      "userId": "s172yz541n4361fw0sapygg0r583eghk",
+      "displayName": "AIsa",
+      "image": "https://avatars.githubusercontent.com/u/245991925?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1386,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770471942193,
+      "changelog": "Initial release of OpenClaw YouTube: fast YouTube content and competitor research for agents.\n\n- Perform YouTube SERP searches for top-ranking videos, channels, and trending topics.\n- Supports filtering by country, language, and advanced YouTube parameters.\n- Includes Python and curl client examples for fast integration.\n- Enables content research, gap analysis, competitor tracking, trend and audience discovery.\n- Comprehensive API reference and use case guidance included.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2525158e117b6e24f2d463df1cc57e2843bfa3cec24e150ac5a1c9acd85c3866"
+}

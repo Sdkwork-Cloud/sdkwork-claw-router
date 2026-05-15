@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42133,
+  "uuid": "skill-clawhub-pdf-to-image",
+  "skillKey": "clawhub-pdf-to-image",
+  "name": "PDF to Image",
+  "summary": "Convert PDF pages to images (PNG, JPG, or WebP). Supports DPI control, resize, background color, and page selection.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_to_image",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rishabh Dugar",
+      "features": [
+        "Convert PDF pages to images (PNG, JPG, or WebP)",
+        "Supports DPI control, resize, background color, and page selection."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf-to-image@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7722125?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf-to-image",
+      "url": "https://clawhub.ai/skills/pdf-to-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-to-image",
+    "url": "https://clawhub.ai/skills/pdf-to-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-to-image-8e816b73b9d4fd4c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf-to-image@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf-to-image-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f7e99b3c444d6c94325639101cfaa0582a405bc4c9b137223b10e9020bec3203",
+      "artifactSizeBytes": 2233
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T15:06:56.915Z"
+}

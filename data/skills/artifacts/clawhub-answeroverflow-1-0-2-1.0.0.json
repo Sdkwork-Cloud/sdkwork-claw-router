@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/answeroverflow-1-0-2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.answeroverflow_1_0_2",
+  "skill": {
+    "id": 14473,
+    "skillKey": "clawhub-answeroverflow-1-0-2",
+    "name": "Answeroverflow 1.0.2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "answeroverflow-1-0-2",
+    "url": "https://clawhub.ai/skills/answeroverflow-1-0-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/answeroverflow-1-0-2-da2f8b4c86a576a5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search indexed Discord community discussions via Answer Overflow. Find solutions to coding problems, library issues, and community Q&A that only exist in Discord conversations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brave88heart",
+      "userId": "publishers:brave88heart",
+      "displayName": "brave88heart",
+      "image": "https://avatars.githubusercontent.com/u/80658202?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 975,
+      "installsAllTime": 13,
+      "installsCurrent": 13,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770966160935,
+      "changelog": "Answer Overflow Skill 1.0.0 released – search Discord Q&A via indexed discussions.\n\n- Provides web and API-based search for public Discord community Q&A.\n- Supports markdown-formatted thread fetching via specific URL patterns or Accept headers.\n- Documents available API endpoints for searching, server/channels lookup, and message/thread retrieval.\n- Includes examples and tips for using skill with search and fetch workflows.\n- Links to official Answer Overflow website, documentation, MCP server, and Discord.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2fb83b3536f64bea5d4448fd1baca816f8805715249d5fed02ae2932cd6aabf2"
+}

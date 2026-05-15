@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/text-cleaner-lite@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_cleaner_lite",
+  "skill": {
+    "id": 44453,
+    "skillKey": "clawhub-text-cleaner-lite",
+    "name": "text-cleaner-lite"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-cleaner-lite",
+    "url": "https://clawhub.ai/skills/text-cleaner-lite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-cleaner-lite-a13f3f16da335cdd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Normalize whitespace, remove duplicated blank lines, and trim leading/trailing spaces from text input."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "askjda",
+      "userId": "s177f3gb2a9yv3fnggrm9g4z4983wgj5",
+      "displayName": "askjda",
+      "image": "https://avatars.githubusercontent.com/u/94748630?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775578562658,
+      "changelog": "text-cleaner-lite 1.0.0\n\n- Initial release.\n- Normalizes whitespace in input text.\n- Removes duplicated blank lines.\n- Trims leading and trailing spaces.\n- Supports optional parameter to keep newlines.\n- Designed for safe, general-purpose text cleanup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:787e656e04bed7890d11e8bfd1a59592ce05e43ee5293fb93c157de6bc14a345"
+}

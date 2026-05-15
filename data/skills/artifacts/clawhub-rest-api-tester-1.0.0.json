@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rest-api-tester@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rest_api_tester",
+  "skill": {
+    "id": 16330,
+    "skillKey": "clawhub-rest-api-tester",
+    "name": "REST API Tester"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rest-api-tester",
+    "url": "https://clawhub.ai/skills/rest-api-tester",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rest-api-tester-3e76de28586a334d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Test REST APIs with customizable headers, authentication, and request bodies. Use when debugging API endpoints, testing authentication flows, validating resp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leonardodpanda",
+      "userId": "publishers:leonardodpanda",
+      "displayName": "LeonardoDpanda",
+      "image": "https://avatars.githubusercontent.com/u/51777214?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 769,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772544980909,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c696e7b004b1ceda8078f8bfef94f0263b83ac8e6d2d26acc1c77786546540fd"
+}

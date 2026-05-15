@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64049,
+  "uuid": "skill-clawhub-skill-sharpener",
+  "skillKey": "clawhub-skill-sharpener",
+  "name": "Skill Sharpener",
+  "summary": "对现有 Agent Skill（SKILL.md）进行全面质量评估并生成优化建议报告。当用户想要审查、评估、诊断或改进某个 skill 的质量时使用此技能，包括：检查 skill 是否符合最佳实践、描述是否有效触发、结构是否合理、内容是否简洁。使用关键词如\"评估 skill\"、\"优化 skill\"、\"审查 ski...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_sharpener",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liuxxxu",
+      "features": [
+        "对现有 Agent Skill（SKILL.md）进行全面质量评估并生成优化建议报告。当用户想要审查、评估、诊断或改进某个 skill 的质量时使用此技能，包括：检查 skill 是否符合最."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-sharpener@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/96455140?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-sharpener",
+      "url": "https://clawhub.ai/skills/skill-sharpener"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-sharpener",
+    "url": "https://clawhub.ai/skills/skill-sharpener",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-sharpener-8c9b28bf66d96422.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-sharpener@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-sharpener-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0baeac5c618e7e4670a7bbec5e5859d6ad43442516cff819bb82a7455dcbab78",
+      "artifactSizeBytes": 2758
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T02:34:05.959Z"
+}

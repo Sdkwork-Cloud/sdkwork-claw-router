@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/convex@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.convex",
+  "skill": {
+    "id": 22543,
+    "skillKey": "clawhub-convex",
+    "name": "Convex"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "convex",
+    "url": "https://clawhub.ai/skills/convex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/convex-f804ff2fd8efd844.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build and maintain Convex backends with schema-safe modeling, query and mutation patterns, auth guards, and production rollout checks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 439,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772324538884,
+      "changelog": "Initial release with schema, auth, indexing, and rollout guidance for Convex projects.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1ae56ac42a956faffe9de99c3d1a2664cd6d6f36cc0b6c64f5d467f2975d40b0"
+}

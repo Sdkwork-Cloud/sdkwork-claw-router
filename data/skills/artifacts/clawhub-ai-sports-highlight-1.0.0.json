@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-sports-highlight@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_sports_highlight",
+  "skill": {
+    "id": 46264,
+    "skillKey": "clawhub-ai-sports-highlight",
+    "name": "Ai Sports Highlight"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-sports-highlight",
+    "url": "https://clawhub.ai/skills/ai-sports-highlight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-sports-highlight-414d8a48c5456af2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate raw sports footage into sports highlight reel with this skill. Works with MP4, MOV, AVI, MTS files up to 500MB. coaches, athletes, sports content cr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777163887425,
+      "changelog": "- Initial release of AI Sports Highlight skill for fast, automated sports highlight reel creation.\n- Supports video upload (MP4, MOV, AVI, MTS, up to 500MB); outputs 1080p MP4 in 1–2 minutes via cloud GPU processing.\n- Handles session management, token acquisition, credits, export, and state tracking through the Nemo Video API.\n- Guides users with workflow prompts and shows connection/progress status in chat.\n- Includes robust error handling with user-friendly guidance for common issues (file size/type, credits, rate limits).\n- Enables easy highlight extraction for coaches, athletes, and content creators without installing any local software.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e603bce9bc21f9bc75a76929e6b666ae26488b927401d54ca5be37f8d7a5b6db"
+}

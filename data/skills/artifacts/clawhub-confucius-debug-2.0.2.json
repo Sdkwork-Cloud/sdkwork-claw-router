@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/confucius-debug@2.0.2",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.confucius_debug",
+  "skill": {
+    "id": 14242,
+    "skillKey": "clawhub-confucius-debug",
+    "name": "Confucius Debug"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "confucius-debug",
+    "url": "https://clawhub.ai/skills/confucius-debug",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/confucius-debug-93225fe24157aef8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI debugging assistant that never repeats a mistake. Searches the YanHui Knowledge Base (6,800+ scraped issues, 980+ imported solutions) for instant fixes, o..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sstklen",
+      "userId": "publishers:sstklen",
+      "displayName": "tkman",
+      "image": "https://avatars.githubusercontent.com/u/90471971?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1197,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.0.2",
+      "createdAt": 1772113115319,
+      "changelog": "Add debug_escalate (5th tool), channel tracking, honest unsolved response, free pricing",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0e98bdfd412d5959746a2c5acbf20eba66e95c96277985ac7a1b2a1af136d30b"
+}

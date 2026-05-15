@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/z-price-compare@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.z_price_compare",
+  "skill": {
+    "id": 73442,
+    "skillKey": "clawhub-z-price-compare",
+    "name": "购物比价师"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "z-price-compare",
+    "url": "https://clawhub.ai/skills/z-price-compare",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/z-price-compare-3b802e0c25d92c11.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过搜索引擎公开数据，比较各大电商平台商品价格，生成对比报告并提供个人购买建议。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhongzhiqiang-test",
+      "userId": "s17bvnrqc3zcd662gpg274y83583n1bk",
+      "displayName": "zhongzhiqiang-test",
+      "image": "https://avatars.githubusercontent.com/u/18751499?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774580761069,
+      "changelog": "**Major update — Safe mode & compliance rewrite:**\n\n- All direct scraping/crawling features removed; now relies solely on search engine results for data collection.\n- Extensive legal disclaimer and compliance section added (in both English & Chinese), outlining responsible use and prohibited activities.\n- Output/reporting logic revised for clear, search-based comparison tables with highlighted platform info and buying advice.\n- Trust score and phase/gate mechanisms from previous workflow removed to match new \"safe-mode\" approach.\n- Reference and script files reorganized; legacy trust-checklist/platforms references removed.\n- Now targets Chinese shopping platforms (JD, Taobao, Tmall, Pinduoduo, etc.) and output examples adapted for this market.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9828bcb2bdbdbcd5dd2144fb4ad996b0dbda9ae34a88e3f316ac781d963d1100"
+}

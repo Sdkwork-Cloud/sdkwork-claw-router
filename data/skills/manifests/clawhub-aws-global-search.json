@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43075,
+  "uuid": "skill-clawhub-aws-global-search",
+  "skillKey": "clawhub-aws-global-search",
+  "name": "AWS Global Search",
+  "summary": "Query AWS (Amazon Web Services) product information, documentation, parameters, features, and pricing from official sources without login. Use when the user...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aws_global_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WBP",
+      "features": [
+        "Query AWS (Amazon Web Services) product information, documentation, parameters, features, and p.",
+        "Use when the user..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aws-global-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/273774793?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aws-global-search",
+      "url": "https://clawhub.ai/skills/aws-global-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aws-global-search",
+    "url": "https://clawhub.ai/skills/aws-global-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aws-global-search-f549241b67f51d89.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aws-global-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aws-global-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dcfbe565aa81ff29802832ee717f174ad25b203c2b7d62d874c72a895244a1e8",
+      "artifactSizeBytes": 2417
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T06:46:21.078Z"
+}

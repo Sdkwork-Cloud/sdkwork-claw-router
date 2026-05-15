@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/plutio@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plutio",
+  "skill": {
+    "id": 22128,
+    "skillKey": "clawhub-plutio",
+    "name": "Plutio"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plutio",
+    "url": "https://clawhub.ai/skills/plutio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plutio-0a0aa0b4346e8683.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Plutio projects and tasks. Use when you need to create, update, close, or query tasks and projects in Plutio (task/project management platform). Suppo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "grewingm",
+      "userId": "publishers:grewingm",
+      "displayName": "GrewingM",
+      "image": "https://avatars.githubusercontent.com/u/222843494?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 484,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772376173250,
+      "changelog": "FIXED: Tasks now require taskBoardId and taskGroupId to appear in Plutio UI. Updated create-task command and documentation. Removed unsupported projectId parameter.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2a3e8e559372da542c5c62690b1abfb3b40d4f56ab30854885b8be322f45d8e6"
+}

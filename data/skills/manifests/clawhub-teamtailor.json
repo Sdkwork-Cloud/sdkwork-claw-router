@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34699,
+  "uuid": "skill-clawhub-teamtailor",
+  "skillKey": "clawhub-teamtailor",
+  "name": "Teamtailor",
+  "summary": "Teamtailor integration. Manage data, records, and automate workflows. Use when the user wants to interact with Teamtailor data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.teamtailor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Teamtailor integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Teamtailor data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/teamtailor@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "teamtailor",
+      "url": "https://clawhub.ai/skills/teamtailor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "teamtailor",
+    "url": "https://clawhub.ai/skills/teamtailor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/teamtailor-27b211ad189d6d25.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/teamtailor@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-teamtailor-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:787614d9c22bfcb75c656cff5d5803b1e138d5549e897f2e4f0301e45e8701fc",
+      "artifactSizeBytes": 1848
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:51:00.752Z"
+}

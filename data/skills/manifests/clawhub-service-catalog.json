@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53294,
+  "uuid": "skill-clawhub-service-catalog",
+  "skillKey": "clawhub-service-catalog",
+  "name": "Service Catalog",
+  "summary": "Auto-discover and catalog all services in a codebase or organization — scan Dockerfiles, docker-compose, Kubernetes manifests, package.json, systemd units, P...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.service_catalog",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Auto-discover and catalog all services in a codebase or organization — scan Dockerfiles, docker."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/service-catalog@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "service-catalog",
+      "url": "https://clawhub.ai/skills/service-catalog"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "service-catalog",
+    "url": "https://clawhub.ai/skills/service-catalog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/service-catalog-e69ae8d6be5fe62a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/service-catalog@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-service-catalog-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8c8dc1c50aca199a71826ed7f08aa3a4f3120758f3459d984f0672774c6f4ace",
+      "artifactSizeBytes": 2018
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:02:54.587Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28651,
+  "uuid": "skill-clawhub-phemex-trade",
+  "skillKey": "clawhub-phemex-trade",
+  "name": "Phemex Trade",
+  "summary": "Trade on Phemex (USDT-M futures, Coin-M futures, Spot) — place orders, manage positions, check balances, and query market data. Use when the user wants to (1...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.phemex_trade",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aaron liu",
+      "features": [
+        "Trade on Phemex (USDT-M futures, Coin-M futures, Spot) — place orders, manage positions, check.",
+        "Use when the user wants to (1..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/phemex-trade@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5351233?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "phemex-trade",
+      "url": "https://clawhub.ai/skills/phemex-trade"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "phemex-trade",
+    "url": "https://clawhub.ai/skills/phemex-trade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/phemex-trade-e817c670d1a89a8d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/phemex-trade@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-phemex-trade-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:55e9600a532b5ea5feb71cbb2ee26d6f5912000f6f478a27e660a50a55dc4c7b",
+      "artifactSizeBytes": 2424
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T21:16:10.533Z"
+}

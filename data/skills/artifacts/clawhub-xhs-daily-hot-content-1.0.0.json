@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xhs-daily-hot-content@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhs_daily_hot_content",
+  "skill": {
+    "id": 66029,
+    "skillKey": "clawhub-xhs-daily-hot-content",
+    "name": "XHS Daily Hot Content"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhs-daily-hot-content",
+    "url": "https://clawhub.ai/skills/xhs-daily-hot-content",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhs-daily-hot-content-6d233702e0ae3a55.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "每日自动搜索全网热点，结合 AI教育+亲子育儿赛道定位，批量生成高质量小红书营销文案并追加到文案库。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangcongwangcong",
+      "userId": "s17cpphzxefer6sa2w7gz88gpd83yq41",
+      "displayName": "wangcongwangcong",
+      "image": "https://avatars.githubusercontent.com/u/177513401?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774961122889,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:892a00f43027c074acf5f0e0b64c25a97f8e368a122c41917b16b3dd223c6f9b"
+}

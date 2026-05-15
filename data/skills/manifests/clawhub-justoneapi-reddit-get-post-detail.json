@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49484,
+  "uuid": "skill-clawhub-justoneapi-reddit-get-post-detail",
+  "skillKey": "clawhub-justoneapi-reddit-get-post-detail",
+  "name": "Reddit Post Details API",
+  "summary": "Call GET /api/reddit/get-post-detail/v1 for Reddit Post Details through JustOneAPI with postId.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_reddit_get_post_detail",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Call GET /api/reddit/get-post-detail/v1 for Reddit Post Details through JustOneAPI with postId."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-reddit-get-post-detail@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-reddit-get-post-detail",
+      "url": "https://clawhub.ai/skills/justoneapi-reddit-get-post-detail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-reddit-get-post-detail",
+    "url": "https://clawhub.ai/skills/justoneapi-reddit-get-post-detail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-reddit-get-post-detail-95c10e68837ad58d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-reddit-get-post-detail@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-reddit-get-post-detail-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:75e919c02e86adc75825167e7a611ff4ffbab8c567d003d67f988815d1673dab",
+      "artifactSizeBytes": 1947
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T04:09:29.266Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42433,
+  "uuid": "skill-clawhub-postdoc-fellowship-matcher",
+  "skillKey": "clawhub-postdoc-fellowship-matcher",
+  "name": "Post-doc Fellowship Matcher",
+  "summary": "Filter and match postdoctoral fellowship opportunities based on applicant nationality, years since PhD, and research field from a curated database.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.postdoc_fellowship_matcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Filter and match postdoctoral fellowship opportunities based on applicant nationality, years si."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/postdoc-fellowship-matcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "postdoc-fellowship-matcher",
+      "url": "https://clawhub.ai/skills/postdoc-fellowship-matcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "postdoc-fellowship-matcher",
+    "url": "https://clawhub.ai/skills/postdoc-fellowship-matcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/postdoc-fellowship-matcher-bf01e3cbb76bbddc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/postdoc-fellowship-matcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-postdoc-fellowship-matcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:969955f1511a16958abb6ff75e91a08f9029833a52e4c3de29ffe84bc5695825",
+      "artifactSizeBytes": 2598
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T08:54:32.362Z"
+}

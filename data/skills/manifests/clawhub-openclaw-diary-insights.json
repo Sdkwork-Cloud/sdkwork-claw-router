@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68057,
+  "uuid": "skill-clawhub-openclaw-diary-insights",
+  "skillKey": "clawhub-openclaw-diary-insights",
+  "name": "OpenClaw Diary Insights",
+  "summary": "日记洞察提取与可视化系统。从日记中提取思维卡片、情绪轨迹和成长维度，生成可交互的本地可视化页面。 **立即触发当**：用户说「分析日记」「生成洞察」「我的思考花园」「insights」「提取笔记」「/note-extractor」。 **主动建议当**：用户连续记录日记超过 7 天，或月末时主动提醒用户可以生成本...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_diary_insights",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smorzandos",
+      "features": [
+        "日记洞察提取与可视化系统。从日记中提取思维卡片、情绪轨迹和成长维度，生成可交互的本地可视化页面。 **立即触发当**：用户说「分析日记」「生成洞察」「我的思考花园」「insights」「提取."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-diary-insights@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/124900390?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-diary-insights",
+      "url": "https://clawhub.ai/skills/openclaw-diary-insights"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-diary-insights",
+    "url": "https://clawhub.ai/skills/openclaw-diary-insights",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-diary-insights-8c50015b40fd2f45.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-diary-insights@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-diary-insights-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:85845c4843f7b7ac0d23cd95609d3c195f2e5cba9da6f3bb8ba98fd840766bd5",
+      "artifactSizeBytes": 2244
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T05:39:04.734Z"
+}

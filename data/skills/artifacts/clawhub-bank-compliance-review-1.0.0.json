@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bank-compliance-review@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bank_compliance_review",
+  "skill": {
+    "id": 40241,
+    "skillKey": "clawhub-bank-compliance-review",
+    "name": "Bank Compliance Review Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bank-compliance-review",
+    "url": "https://clawhub.ai/skills/bank-compliance-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bank-compliance-review-a229d3e74648ae15.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered bank compliance and regulatory review assistant - screen marketing materials, KYC documents, AML alerts, and CBIRC compliance checks through struc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gechengling",
+      "userId": "s17ewqc4f2s6gpcbm88hy7fgvn85kg1g",
+      "displayName": "lingfeng-19",
+      "image": "https://avatars.githubusercontent.com/u/8140166?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 70,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778140720542,
+      "changelog": "Initial release: AI-powered bank compliance review - marketing material screening, KYC/AML checks, and CBIRC regulatory compliance",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a73036db008a3e6187adee025f4df5e541c3b13fc5f42f1356063635cb016a73"
+}

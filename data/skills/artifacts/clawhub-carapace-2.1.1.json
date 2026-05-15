@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/carapace@2.1.1",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.carapace",
+  "skill": {
+    "id": 13895,
+    "skillKey": "clawhub-carapace",
+    "name": "Carapace — Shared Knowledge Base for AI Agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "carapace",
+    "url": "https://clawhub.ai/skills/carapace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/carapace-1e91b168f61983b2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query and contribute structured understanding to Carapace — the shared knowledge base for AI agents. Includes Chitin integration for bridging personal and di..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "morpheis",
+      "userId": "s17etpzv05kvssrjch82p9prps83h494",
+      "displayName": "Morpheis",
+      "image": "https://avatars.githubusercontent.com/u/6878926?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2296,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.1.1",
+      "createdAt": 1775074861626,
+      "changelog": "Update display name",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:25ca54575a3829b0ca047ec68b637f55dae07d94448a971ba982cf30ca127938"
+}

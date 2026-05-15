@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/midscene-computer-chrome-bridge@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.midscene_computer_chrome_bridge",
+  "skill": {
+    "id": 20016,
+    "skillKey": "clawhub-midscene-computer-chrome-bridge",
+    "name": "Midscene Automations Skills for Browser with Bridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "midscene-computer-chrome-bridge",
+    "url": "https://clawhub.ai/skills/midscene-computer-chrome-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/midscene-computer-chrome-bridge-7b4f2a8237b5ffc3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Vision-driven browser automation using Midscene Bridge mode. Operates entirely from screenshots — no DOM or accessibility labels required. Can interact with..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quanru",
+      "userId": "s1792azzwsceqz4d9m7cffzt7h83j8rx",
+      "displayName": "Leyang",
+      "image": "https://avatars.githubusercontent.com/u/11739753?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1021,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1772858375652,
+      "changelog": "**Adds strict result reporting requirements and updates model guidance.**\n\n- Now mandates a clear summary of results after every automation task, including data found, actions completed, screenshots taken, and relevant findings.\n- Updates environment variable examples and recommended models (adds Qwen 3.5, Doubao Seed 2.0 Lite, and related provider instructions).\n- Clarifies workflow: do not disconnect from Bridge mode unless the user's entire task is fully complete; keep sessions available for continued use.\n- Revises best practices and workflow pattern for improved clarity and efficiency.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2ab41c4a27aac531d3c27655334fdb13a48f93ee9dfa1129761d36d3c7dcb093"
+}

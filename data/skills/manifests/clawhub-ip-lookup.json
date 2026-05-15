@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22677,
+  "uuid": "skill-clawhub-ip-lookup",
+  "skillKey": "clawhub-ip-lookup",
+  "name": "ip-lookup",
+  "summary": "Lookup IP address or hostname details including geolocation, ASN/ISP, reverse DNS, RDAP/WHOIS network info, and optional AbuseIPDB reputation check without A...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ip_lookup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MichaelZhangty",
+      "features": [
+        "Lookup IP address or hostname details including geolocation, ASN/ISP, reverse DNS, RDAP/WHOIS n."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ip-lookup@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36727768?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ip-lookup",
+      "url": "https://clawhub.ai/skills/ip-lookup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ip-lookup",
+    "url": "https://clawhub.ai/skills/ip-lookup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ip-lookup-8fdbcc885499b073.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ip-lookup@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ip-lookup-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:97f42b4f364e6b57eeec08a5ad3dff4f680ed9cff8b8f31f5141d97faca8401c",
+      "artifactSizeBytes": 2265
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T07:11:16.654Z"
+}

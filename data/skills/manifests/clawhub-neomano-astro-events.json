@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28346,
+  "uuid": "skill-clawhub-neomano-astro-events",
+  "skillKey": "clawhub-neomano-astro-events",
+  "name": "Neomano Astro Events (Local Sky + ISS)",
+  "summary": "Provides local astronomical visibility including moon phase, rise/set times, planet viewing windows, and optional ISS pass predictions by location and date.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neomano_astro_events",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "elandivar",
+      "features": [
+        "Provides local astronomical visibility including moon phase, rise/set times, planet viewing win."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/neomano-astro-events@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4536961?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "neomano-astro-events",
+      "url": "https://clawhub.ai/skills/neomano-astro-events"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neomano-astro-events",
+    "url": "https://clawhub.ai/skills/neomano-astro-events",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neomano-astro-events-d196967e56baf5ba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/neomano-astro-events@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-neomano-astro-events-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:36ce0f14a29a3e639743ab048cada88383a2dc44e2e4885689120da509d4a2ae",
+      "artifactSizeBytes": 2079
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T22:24:52.243Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50145,
+  "uuid": "skill-clawhub-finskills-one",
+  "skillKey": "clawhub-finskills-one",
+  "name": "finskills-one",
+  "summary": "One-stop access to real-time financial data via the Finskills REST API at https://finskills.net. Covers stocks (quotes, history, fundamentals, options, holde...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finskills_one",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "finskills",
+      "features": [
+        "One-stop access to real-time financial data via the Finskills REST API at https://finskills.net",
+        "Covers stocks (quotes, history, fundamentals, options, holde..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/finskills-one@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32382589?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "finskills-one",
+      "url": "https://clawhub.ai/skills/finskills-one"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finskills-one",
+    "url": "https://clawhub.ai/skills/finskills-one",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finskills-one-dd1fdeb0a52e5bc2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/finskills-one@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-finskills-one-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:918f6b1fd436f92036461f2dae10f992a9bf0d8e53557d086c295fdcad6a7230",
+      "artifactSizeBytes": 2470
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-10T00:38:40.348Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawmatch@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawmatch",
+  "skill": {
+    "id": 55145,
+    "skillKey": "clawhub-clawmatch",
+    "name": "Clawmatch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawmatch",
+    "url": "https://clawhub.ai/skills/clawmatch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawmatch-58281c86876fcbd8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when the user wants to find compatible people — romantic partners, business partners, or friends — based on deep psychological profiling. Trig..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivankoriako",
+      "userId": "s17azbcr7k1ytmpj3mjtm6s7js83gsht",
+      "displayName": "Lifegamer",
+      "image": "https://avatars.githubusercontent.com/u/149903830?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 270,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773952254034,
+      "changelog": "Initial release of ClawMatch.\n\n- Introduced psychological profiling-based compatibility matching for romantic, business, and friendship connections.\n- Profile builder and matching engine are in development.\n- Added clear installation and usage instructions.\n- Emphasized local data privacy and OpenClaw integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b158941baabe59fac3b889d8ce4cb703cab6d666014036c2525def37dc5b73ae"
+}

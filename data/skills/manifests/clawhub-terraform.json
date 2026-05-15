@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11352,
+  "uuid": "skill-clawhub-terraform",
+  "skillKey": "clawhub-terraform",
+  "name": "Terraform",
+  "summary": "Avoid common Terraform mistakes — state corruption, count vs for_each, lifecycle traps, and dependency ordering.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.terraform",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Avoid common Terraform mistakes — state corruption, count vs for_each, lifecycle traps, and dep."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/terraform@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "terraform",
+      "url": "https://clawhub.ai/skills/terraform"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "terraform",
+    "url": "https://clawhub.ai/skills/terraform",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/terraform-94dc3ea57721d541.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/terraform@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-terraform-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dac70f17e7b215074d87faf31269dd4944386400c5b9d71441972fd4f08010d2",
+      "artifactSizeBytes": 1804
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T00:31:05.588Z"
+}

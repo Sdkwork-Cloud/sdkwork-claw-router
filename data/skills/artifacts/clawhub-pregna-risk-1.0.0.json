@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pregna-risk@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pregna_risk",
+  "skill": {
+    "id": 34681,
+    "skillKey": "clawhub-pregna-risk",
+    "name": "PREGNA-RISK: Pregnancy Risk in SLE/APS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pregna-risk",
+    "url": "https://clawhub.ai/skills/pregna-risk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pregna-risk-866006d1a09cc821.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Calculates a weighted composite score predicting adverse pregnancy outcomes in SLE/APS patients to guide risk stratification and management."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cryptoreumd",
+      "userId": "publishers:cryptoreumd",
+      "displayName": "CryptoReuMD",
+      "image": "https://avatars.githubusercontent.com/u/106553699?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 222,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774190710686,
+      "changelog": "PREGNA-RISK 1.0.0\n\n- Initial release of quantitative pregnancy risk stratification tool for patients with SLE and/or APS.\n- Computes a composite risk score based on clinical, serological, and treatment factors, using weights from major cohort studies.\n- Provides evidence-based risk categories and monitoring recommendations for pregnancy management.\n- Includes protective weighting for hydroxychloroquine, aspirin, and LMWH use.\n- Utilizes Monte Carlo simulations to estimate uncertainty in the composite score.\n- Command-line usage with minimal dependency (`numpy`).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:717c64810a01e8d47855d6b67b91653951e311a1872e6b7edc238a569e9b6433"
+}

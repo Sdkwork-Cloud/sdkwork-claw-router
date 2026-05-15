@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adaptive-trial-simulator@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adaptive_trial_simulator",
+  "skill": {
+    "id": 30720,
+    "skillKey": "clawhub-adaptive-trial-simulator",
+    "name": "Adaptive Trial Simulator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adaptive-trial-simulator",
+    "url": "https://clawhub.ai/skills/adaptive-trial-simulator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adaptive-trial-simulator-40c94e9e1ac8a425.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design and simulate adaptive clinical trials with interim analyses, sample size re-estimation, and early stopping rules. Evaluate Type I error control, power..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 277,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773796430935,
+      "changelog": "- Initial release of the adaptive-trial-simulator skill.\n- Enables design and Monte Carlo simulation of adaptive clinical trials with interim analyses, sample size re-estimation, and early stopping rules.\n- Supports multiple adaptive design strategies, including group sequential, sample size re-estimation, and drop-the-loser multi-arm designs.\n- Validates Type I error control, power, and expected sample size for user-specified designs.\n- Command-line usage supports parameter customization, design optimization, and visualization of results.\n- Focused on statistical simulation; outputs results in JSON for further analysis.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c7f3a6572713d2fa5440b345d7715b122dbd9ce598c58b8cc59695e57cdd398a"
+}

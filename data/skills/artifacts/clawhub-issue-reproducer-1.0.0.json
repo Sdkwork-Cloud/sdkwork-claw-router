@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/issue-reproducer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.issue_reproducer",
+  "skill": {
+    "id": 59906,
+    "skillKey": "clawhub-issue-reproducer",
+    "name": "Issue Reproducer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "issue-reproducer",
+    "url": "https://clawhub.ai/skills/issue-reproducer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/issue-reproducer-7484c3614c0ea339.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "把 bug 描述整理成可复现步骤、环境、预期与实际结果和最小复现条件。；use for bug, reproduction, qa workflows；do not use for 伪造日志, 忽略用户给出的环境差异."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "52yuanchangxing",
+      "userId": "s178sqjkywrs4vbnfcrr7wx7f583gef5",
+      "displayName": "vx：17605205782",
+      "image": "https://avatars.githubusercontent.com/u/39086567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 231,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773800290417,
+      "changelog": "Initial release of issue-reproducer skill.\n\n- Organizes bug descriptions into reproducible steps, environment, expected and actual results, and minimum reproduction criteria.\n- Emphasizes explicit listing of missing information when details are insufficient.\n- Provides structured, reviewable drafts and executable checklists for issue reproduction.\n- Highlights safety boundaries: read-only, auditable, no fabrication of logs or results, and preserves environment details.\n- Local resources and templates included to standardize outputs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:25c72ae9fb37c1706bd3919e9ab41680458c9c7583b06df9926a29941fd78805"
+}

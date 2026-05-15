@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tumblr-auto-post@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tumblr_auto_post",
+  "skill": {
+    "id": 68795,
+    "skillKey": "clawhub-tumblr-auto-post",
+    "name": "Tumblr Auto Post"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tumblr-auto-post",
+    "url": "https://clawhub.ai/skills/tumblr-auto-post",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tumblr-auto-post-fe508b20a9f0d7a6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动生成傅盛风格文章和封面图，一键发布到 Tumblr。每次运行时会依次询问主题、目标读者、写作目标、期望长度、内容偏好，确认后自动发布。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lgx-00",
+      "userId": "s17b31x2ahgahgg6fkptrd6sjs83gn1y",
+      "displayName": "GuangxianLiu",
+      "image": "https://avatars.githubusercontent.com/u/83075652?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776777011492,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:95b44eae78ab6cf0eb7a07cfed6388c594fcc5b9946381bd26ee764f7fb8c8a2"
+}

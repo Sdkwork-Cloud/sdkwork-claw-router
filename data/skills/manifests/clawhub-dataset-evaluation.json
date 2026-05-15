@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29009,
+  "uuid": "skill-clawhub-dataset-evaluation",
+  "skillKey": "clawhub-dataset-evaluation",
+  "name": "Dataset Evaluation",
+  "summary": "Evaluate a submission by scoring content consistency of texts and quality of structured data based on completeness, accuracy, type correctness, and informati...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dataset_evaluation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "levey",
+      "features": [
+        "Evaluate a submission by scoring content consistency of texts and quality of structured data ba."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dataset-evaluation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/629136?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dataset-evaluation",
+      "url": "https://clawhub.ai/skills/dataset-evaluation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dataset-evaluation",
+    "url": "https://clawhub.ai/skills/dataset-evaluation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dataset-evaluation-7df2ae93a3dec25c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dataset-evaluation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dataset-evaluation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a995cf71dc65eacc68e607324291b29e339b70fd8549afd6a25740e6d16a15a",
+      "artifactSizeBytes": 2291
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T10:35:35.737Z"
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17929,
+  "uuid": "skill-clawhub-gmail-1-0-6",
+  "skillKey": "clawhub-gmail-1-0-6",
+  "name": "Gmail 1.0.6",
+  "summary": "Gmail API integration with managed OAuth. Read, send, and manage emails, threads, labels, and drafts. Use this skill when users want to interact with Gmail....",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gmail_1_0_6",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bobby Zhao",
+      "features": [
+        "Gmail API integration with managed OAuth",
+        "Read, send, and manage emails, threads, labels, and drafts",
+        "Use this skill when users want to interact with Gmail...."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gmail-1-0-6@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/76505318?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gmail-1-0-6",
+      "url": "https://clawhub.ai/skills/gmail-1-0-6"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gmail-1-0-6",
+    "url": "https://clawhub.ai/skills/gmail-1-0-6",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gmail-1-0-6-3c46d36b19e3fbac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gmail-1-0-6@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gmail-1-0-6-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2526125e8ecc0bb5431d049631d53ce5f317d348dfd100bf88ef2d215d3dceb1",
+      "artifactSizeBytes": 2342
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T17:13:07.436Z"
+}

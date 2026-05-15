@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73417,
+  "uuid": "skill-clawhub-feishu-multi-account",
+  "skillKey": "clawhub-feishu-multi-account",
+  "name": "多子代理配置飞书",
+  "summary": "支持为多个子代理配置独立飞书机器人账号，确保飞书消息按账号绑定正确路由。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_multi_account",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhili007",
+      "features": [
+        "支持为多个子代理配置独立飞书机器人账号，确保飞书消息按账号绑定正确路由。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-multi-account@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/178701974?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-multi-account",
+      "url": "https://clawhub.ai/skills/feishu-multi-account"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-multi-account",
+    "url": "https://clawhub.ai/skills/feishu-multi-account",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-multi-account-95d026c8f77050f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-multi-account@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-multi-account-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2dfe463851faf4eac148878c348e7cfe2df0471076e9d888dbf8c0e47eb274fa",
+      "artifactSizeBytes": 2276
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T09:41:11.791Z"
+}

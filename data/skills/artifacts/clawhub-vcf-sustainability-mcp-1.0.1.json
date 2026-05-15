@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vcf-sustainability-mcp@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vcf_sustainability_mcp",
+  "skill": {
+    "id": 39256,
+    "skillKey": "clawhub-vcf-sustainability-mcp",
+    "name": "VCF Green IT & Carbon Footprint"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vcf-sustainability-mcp",
+    "url": "https://clawhub.ai/skills/vcf-sustainability-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vcf-sustainability-mcp-b1667ffd5b7eb0fe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "An MCP server that interfaces with VMware Aria Operations to extract Green IT metrics, carbon footprint data, and the organizational Green Score for ESG repo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kasture-rohit",
+      "userId": "s175x5xysdq5z7gbxacgde64sx848wgj",
+      "displayName": "Rohit Kasture",
+      "image": "https://avatars.githubusercontent.com/u/219512019?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775419627978,
+      "changelog": "- Added a homepage URL to SKILL.md for easier access to documentation and source code.\n- Updated the version number to 1.0.1.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac802f79544064a3057d1e84a674c0092008f96ddb4cf41993ef51b1b1549890"
+}

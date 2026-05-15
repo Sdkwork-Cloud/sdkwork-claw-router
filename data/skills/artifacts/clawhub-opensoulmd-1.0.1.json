@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/opensoulmd@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opensoulmd",
+  "skill": {
+    "id": 16757,
+    "skillKey": "clawhub-opensoulmd",
+    "name": "opensoulmd"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opensoulmd",
+    "url": "https://clawhub.ai/skills/opensoulmd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opensoulmd-ca68d8a777633c02.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search, summon, and possess your agent with SOUL.md personality files from the OpenSOUL.md registry"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danielliuzy",
+      "userId": "publishers:danielliuzy",
+      "displayName": "Daniel Liu",
+      "image": "https://avatars.githubusercontent.com/u/47194494?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 852,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771297165827,
+      "changelog": "Version 1.0.1 of opensoulmd\n\n- No file changes detected in this update.\n- No functional, documentation, or metadata differences from the previous version.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:88623acfca496da5a12fe3342f673c00fe2405c2e71e3bebb3636cdd5ab00a92"
+}

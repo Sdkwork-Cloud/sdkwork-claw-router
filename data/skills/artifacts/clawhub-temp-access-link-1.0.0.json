@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/temp-access-link@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.temp_access_link",
+  "skill": {
+    "id": 41511,
+    "skillKey": "clawhub-temp-access-link",
+    "name": "Temp Access Link"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "temp-access-link",
+    "url": "https://clawhub.ai/skills/temp-access-link",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/temp-access-link-238fa0990ddb0d29.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate secure, time-limited access links for file sharing with automatic expiration."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krishnakumarmahadevan-cmd",
+      "userId": "s177cvva4qaee9r80e44xt5cqx83ga38",
+      "displayName": "ToolWeb",
+      "image": "https://avatars.githubusercontent.com/u/245780162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774241940695,
+      "changelog": "- Initial release of Temporary Access Link Generator.\n- Generate secure, time-limited access links for sharing files, with automatic expiration and token-based authentication.\n- Endpoints to create links for existing file URLs or uploaded files.\n- Endpoint for validating tokens and retrieving file metadata, plus direct file serving for valid requests.\n- Suitable for secure, compliance-driven file distribution with detailed usage and pricing documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ae65579f5afae87d711330072e41a51c1fbc865a530fd734f823b353885a020a"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12077,
+  "uuid": "skill-clawhub-linux-desktop",
+  "skillKey": "clawhub-linux-desktop",
+  "name": "Linux Desktop Control",
+  "summary": "Linux desktop automation and control. Use when: (1) taking screenshots of the screen or windows, (2) controlling mouse and keyboard, (3) managing windows, (4...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linux_desktop",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ouyangAbel",
+      "features": [
+        "Linux desktop automation and control",
+        "Use when: (1) taking screenshots of the screen or windows, (2) controlling mouse and keyboard,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linux-desktop@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/156869006?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linux-desktop",
+      "url": "https://clawhub.ai/skills/linux-desktop"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linux-desktop",
+    "url": "https://clawhub.ai/skills/linux-desktop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linux-desktop-2d63344ddf88473c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linux-desktop@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-linux-desktop-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:14154ca8704d7c36eff2860f041faa50dfcd1bc8b336a025525ef5b5aa0a63b7",
+      "artifactSizeBytes": 1957
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T12:40:25.582Z"
+}

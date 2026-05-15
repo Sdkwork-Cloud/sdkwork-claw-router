@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flux@2.3.0",
+  "version": "2.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flux",
+  "skill": {
+    "id": 11745,
+    "skillKey": "clawhub-flux",
+    "name": "Flux"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flux",
+    "url": "https://clawhub.ai/skills/flux",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flux-a2e10207c7be30e1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Publish events and query shared world state via Flux state engine. Use when agents need to share observations, coordinate on shared data, or track entity sta..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eckmantechllc",
+      "userId": "publishers:eckmantechllc",
+      "displayName": "EckmanTechLLC",
+      "image": "https://avatars.githubusercontent.com/u/211055804?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 1775,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 2,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "2.3.0",
+      "createdAt": 1772144949174,
+      "changelog": "Added Getting Started section: check flux-core/directory to discover available namespaces and data",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6da3a3fb4ac5ec4d92fb2030096c25cdd3e7262031638795e49d222aee19ff12"
+}

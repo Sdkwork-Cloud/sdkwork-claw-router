@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moneybiga@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moneybiga",
+  "skill": {
+    "id": 65411,
+    "skillKey": "clawhub-moneybiga",
+    "name": "MoneybigA"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moneybiga",
+    "url": "https://clawhub.ai/skills/moneybiga",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moneybiga-b0bf5429643a4809.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "moneybigA — A股/港股/美股机构级多框架股票分析 Skill。 专为主动交易者和研究者设计：筹码分布+主力控盘、智能资金概念(SMC)订单块/公允价值缺口/流动性清扫、 威科夫吸筹/派发六阶段、波浪理论浪级判断、MACD背离、量价关系； 基本面层：杜邦三因子、DCF内在价值、PEG/EV-EBITDA..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cosmofang",
+      "userId": "s171tf9j3dvx7de9j9b2wg5mzs83g5b4",
+      "displayName": "Cosmos Fang",
+      "image": "https://avatars.githubusercontent.com/u/255512740?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 112,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777261614241,
+      "changelog": "Initial release: moneybigA v1.0.0 — multi-framework institutional-grade stock analysis\n\n- Provides technical, fundamental, and quantitative analysis (A/H/US stocks), including chip distribution, main force control, Wyckoff, SMC Order Block, Elliott Wave, MACD, and Alpha 101 factor scoring.\n- Outputs interactive HTML analysis dashboard with comprehensive scoring (0–100), multi-level buy/sell signals, risk conditions, stop loss and target price reference.\n- Covers real-time data collection via WebSearch (no credentials required), with clear scope on supported and unsupported requests.\n- Does not execute real trades, write to local files, or save user data; analysis is for research and education only.\n- Installable and instantly usable in Claude Code — no environment variables or API tokens needed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a46361e73a2e231a6f66a8d6619ecf5aaa637dafbc18dbcaa7a1a6e611b4091e"
+}

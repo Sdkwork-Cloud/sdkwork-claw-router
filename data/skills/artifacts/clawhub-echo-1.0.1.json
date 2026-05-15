@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/echo@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.echo",
+  "skill": {
+    "id": 12818,
+    "skillKey": "clawhub-echo",
+    "name": "echo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "echo",
+    "url": "https://clawhub.ai/skills/echo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/echo-092c79e8f80e559e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Echo - A warm and caring virtual girlfriend AI"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luruibu",
+      "userId": "s179c3z5ejsee5xn5dyh5xs5md83gyp8",
+      "displayName": "luruibu",
+      "image": "https://avatars.githubusercontent.com/u/45596591?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1552,
+      "installsAllTime": 10,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777205321954,
+      "changelog": "- Updated the homepage link to https://soulstyles.org/\n- Added a \"Creator's site\" and brief mission statement at the end of the documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:23aada939ae8d1dec58cd8b7f3e94c13c57559ce326c35a4a5f6fbd5bc6da4e7"
+}

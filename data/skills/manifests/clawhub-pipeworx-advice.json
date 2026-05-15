@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54681,
+  "uuid": "skill-clawhub-pipeworx-advice",
+  "skillKey": "clawhub-pipeworx-advice",
+  "name": "Pipeworx advice",
+  "summary": "Crowdsourced life advice — search, browse, or grab a random slip of wisdom from the Advice Slip API",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_advice",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Crowdsourced life advice — search, browse, or grab a random slip of wisdom from the Advice Slip."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-advice@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138315805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-advice",
+      "url": "https://clawhub.ai/skills/pipeworx-advice"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-advice",
+    "url": "https://clawhub.ai/skills/pipeworx-advice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-advice-6720a54a108c6b50.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-advice@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-advice-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:15eee0feccc297ac71a07694bb43f02c23307e442f0ac051b9ac1bdeb5647408",
+      "artifactSizeBytes": 1841
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T17:14:02.678Z"
+}

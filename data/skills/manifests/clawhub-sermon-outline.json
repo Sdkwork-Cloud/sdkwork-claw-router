@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28727,
+  "uuid": "skill-clawhub-sermon-outline",
+  "skillKey": "clawhub-sermon-outline",
+  "name": "Sermon Outline (OpenClaw Church)",
+  "summary": "Produces a sermon outline from a scripture passage or theme, ready for preaching. Use when the user asks for a sermon outline, preaching structure, or exposi...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sermon_outline",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cheniOS",
+      "features": [
+        "Produces a sermon outline from a scripture passage or theme, ready for preaching",
+        "Use when the user asks for a sermon outline, preaching structure, or exposi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sermon-outline@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16813163?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sermon-outline",
+      "url": "https://clawhub.ai/skills/sermon-outline"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sermon-outline",
+    "url": "https://clawhub.ai/skills/sermon-outline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sermon-outline-2b60291f5e219740.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sermon-outline@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sermon-outline-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a96a024af69f7874c763c68d26f6bdb883ee7adc7fa11f2ab77f2bf3022091d2",
+      "artifactSizeBytes": 1971
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T07:44:01.841Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32360,
+  "uuid": "skill-clawhub-k8s-security-review",
+  "skillKey": "clawhub-k8s-security-review",
+  "name": "K8s Security Review",
+  "summary": "Analyzes Kubernetes YAML manifests for security misconfigurations, best practices violations, and compliance risks.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.k8s_security_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToolWeb",
+      "features": [
+        "Analyzes Kubernetes YAML manifests for security misconfigurations, best practices violations, a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/k8s-security-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245780162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "k8s-security-review",
+      "url": "https://clawhub.ai/skills/k8s-security-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "k8s-security-review",
+    "url": "https://clawhub.ai/skills/k8s-security-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/k8s-security-review-09748fa3acf8ef2f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/k8s-security-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-k8s-security-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7289951ea9e30ffc08dc06d26e19614259d480730af83c6742a7f9c5dd4918b2",
+      "artifactSizeBytes": 2581
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T08:32:11.470Z"
+}

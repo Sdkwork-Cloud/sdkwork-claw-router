@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/binance-square-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.binance_square_skill",
+  "skill": {
+    "id": 56678,
+    "skillKey": "clawhub-binance-square-skill",
+    "name": "binance-square-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "binance-square-skill",
+    "url": "https://clawhub.ai/skills/binance-square-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/binance-square-skill-16519e90a6f84aeb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Binance Square (币安广场) signal agent. Scrapes 200+ posts via Puppeteer + API interception, detects bot-pushed narratives, runs on-chain confirmation (OI/fundin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ru7superbeauty",
+      "userId": "s17btjxx0yk80a3agywsxk1st184stfd",
+      "displayName": "RU7superbeauty",
+      "image": "https://avatars.githubusercontent.com/u/257958087?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776087233514,
+      "changelog": "Binance Square Signal Agent v1.0.0\n\n- Provides an end-to-end pipeline for detecting crypto trade signals based on Binance Square narrative tracking and on-chain confirmation.\n- Scrapes 200+ Binance Square posts using Puppeteer with multi-method bot detection.\n- Runs on-chain confirmation steps for each coin via user-supplied Coinglass API/proxy (OI, funding rates, liquidations).\n- Combines four signal sources (liquidation, funding, OI/price, Square sentiment) for actionable LONG/SHORT/AVOID/WATCH calls.\n- Generates detailed markdown reports and optionally pushes summary signals to Telegram (configurable via environment variables).\n- Supports multiple modes: full scan, Telegram push, deep coin drill, and keyword/article summary.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bde3649beebfe81666023e9d2116bf14bec31f413b16c560ca5cc3667a5c706f"
+}

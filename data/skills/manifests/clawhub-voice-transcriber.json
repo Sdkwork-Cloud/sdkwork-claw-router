@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18970,
+  "uuid": "skill-clawhub-voice-transcriber",
+  "skillKey": "clawhub-voice-transcriber",
+  "name": "Voice Transcriber",
+  "summary": "Voice note transcription and archival for OpenClaw agents. Powered by Deepgram Nova-3. Transcribes audio messages, saves both audio files and text transcript...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voice_transcriber",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aiwithabidi",
+      "features": [
+        "Voice note transcription and archival for OpenClaw agents",
+        "Powered by Deepgram Nova-3",
+        "Transcribes audio messages, saves both audio files and text transcript..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/voice-transcriber@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208891229?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "voice-transcriber",
+      "url": "https://clawhub.ai/skills/voice-transcriber"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voice-transcriber",
+    "url": "https://clawhub.ai/skills/voice-transcriber",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voice-transcriber-ce4733e958d67642.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/voice-transcriber@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-voice-transcriber-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:38491d7e3b4c5b975799bc7d24b29bfef0fb3f1bf0d440b05300af80aa77898f",
+      "artifactSizeBytes": 2270
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T06:53:15.573Z"
+}

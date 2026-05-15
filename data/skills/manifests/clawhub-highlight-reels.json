@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23232,
+  "uuid": "skill-clawhub-highlight-reels",
+  "skillKey": "clawhub-highlight-reels",
+  "name": "Highlight Reels",
+  "summary": "Scenario-focused Sparki skill for highlight extraction while using the latest official Sparki setup, API-key, and upload workflow guidance.",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.highlight_reels",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fischerlam",
+      "features": [
+        "Scenario-focused Sparki skill for highlight extraction while using the latest official Sparki s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/highlight-reels@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168167263?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "highlight-reels",
+      "url": "https://clawhub.ai/skills/highlight-reels"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "highlight-reels",
+    "url": "https://clawhub.ai/skills/highlight-reels",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/highlight-reels-132a6dc10fb711d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/highlight-reels@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-highlight-reels-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7737f1fe89ef6b49575651ad6e95e68d32941f0d682f58905d2e8d10d3236d06",
+      "artifactSizeBytes": 2078
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T23:06:39.804Z"
+}

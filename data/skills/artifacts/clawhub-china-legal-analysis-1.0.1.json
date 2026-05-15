@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/china-legal-analysis@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_legal_analysis",
+  "skill": {
+    "id": 57614,
+    "skillKey": "clawhub-china-legal-analysis",
+    "name": "China Legal Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-legal-analysis",
+    "url": "https://clawhub.ai/skills/china-legal-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-legal-analysis-121ea296708ca2f3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "中国法律场景解析工具。Use when user needs to analyze legal scenarios, understand legal implications, or get legal guidance for specific situations. Supports contract di..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tobewin",
+      "userId": "s174rz3f0862tcfw7pzfh5w8kn83hv2z",
+      "displayName": "ToBeWin",
+      "image": "https://avatars.githubusercontent.com/u/145168989?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 872,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774716555734,
+      "changelog": "修复依赖声明：移除不需要的python3和curl，纯指令型skill",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:304d8d94b9f23d6cf921cfb20af19440724eb666d7e312361db9e905f28ab8e5"
+}

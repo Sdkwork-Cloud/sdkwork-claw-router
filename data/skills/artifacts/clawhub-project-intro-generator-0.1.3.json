@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/project-intro-generator@0.1.3",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.project_intro_generator",
+  "skill": {
+    "id": 73326,
+    "skillKey": "clawhub-project-intro-generator",
+    "name": "项目宣传页和长截图一键生成工具"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "project-intro-generator",
+    "url": "https://clawhub.ai/skills/project-intro-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/project-intro-generator-5f5c9202e9647f1c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "一键生成项目介绍页，支持本地编辑和长图导出。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kunyashaw",
+      "userId": "s17e7zcx0awf4bg4j1vw271zan83rxch",
+      "displayName": "kunyashaw",
+      "image": "https://avatars.githubusercontent.com/u/7325213?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 416,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.3",
+      "createdAt": 1773418652555,
+      "changelog": "- Updated version to 0.1.2 in SKILL.md.\n- Reformatted and reorganized SKILL.md for improved clarity.\n- Moved installation tip and demo video up in the documentation.\n- Minor adjustments to formatting and list descriptions in usage and feature sections.\n- No code changes detected; documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d84e3ad40d0dbef7e8cad83b4836fd638e2bcaca3531ff8ed5d614137cd62063"
+}

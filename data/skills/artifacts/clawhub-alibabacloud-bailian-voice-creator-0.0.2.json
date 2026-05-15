@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibabacloud-bailian-voice-creator@0.0.2",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_bailian_voice_creator",
+  "skill": {
+    "id": 48497,
+    "skillKey": "clawhub-alibabacloud-bailian-voice-creator",
+    "name": "Alibabacloud Bailian Voice Creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-bailian-voice-creator",
+    "url": "https://clawhub.ai/skills/alibabacloud-bailian-voice-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-bailian-voice-creator-ca6a94323c14521b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI voice creation skill supporting speech recognition (ASR) and text-to-speech (TTS). Uses qwen3-asr-flash-filetrans, qwen-tts and other models. Use this ski..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdk-team",
+      "userId": "s173swjet2yrebzqrp6hjkvmy583mxef",
+      "displayName": "alibabacloud-skills-team",
+      "image": "https://avatars.githubusercontent.com/u/49941014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 98,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.2",
+      "createdAt": 1778312900964,
+      "changelog": "- Adds a note in the description clarifying that on first run the skill will auto-manage DashScope API Keys (create/recycle) and may auto-install the Alibaba Cloud CLI ModelStudio plugin.\n- No other significant changes; all core security, API usage, and orchestration logic remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0ef806fbeec48b519f92f4e72b6521d2f8db245162435d0af13beedf1222e492"
+}

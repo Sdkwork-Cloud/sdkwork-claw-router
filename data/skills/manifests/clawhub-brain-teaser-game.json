@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59634,
+  "uuid": "skill-clawhub-brain-teaser-game",
+  "skillKey": "clawhub-brain-teaser-game",
+  "name": "Brain Tease Game",
+  "summary": "[中文] 多语言脑筋急转弯互动游戏，支持中文、英文、日文。自动检测用户语言，支持随机出题、答案判断、提示系统、不重复题目历史记录。 [English] Multi-language brain teaser interactive game supporting Chinese, English, and Jap...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brain_teaser_game",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KickEGG",
+      "features": [
+        "[中文] 多语言脑筋急转弯互动游戏，支持中文、英文、日文。自动检测用户语言，支持随机出题、答案判断、提示系统、不重复题目历史记录。 [English] Multi-language brai."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/brain-teaser-game@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13705844?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "brain-teaser-game",
+      "url": "https://clawhub.ai/skills/brain-teaser-game"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brain-teaser-game",
+    "url": "https://clawhub.ai/skills/brain-teaser-game",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brain-teaser-game-bd1e9630080ebfed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/brain-teaser-game@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-brain-teaser-game-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aa12ce1c094a25a04edcc52fd4ff50d6a93a2815757f41a9bdfba733a59d4caa",
+      "artifactSizeBytes": 2456
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T03:30:55.539Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/five-star-reviewers@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.five_star_reviewers",
+  "skill": {
+    "id": 39743,
+    "skillKey": "clawhub-five-star-reviewers",
+    "name": "Five Star Reviewers"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "five-star-reviewers",
+    "url": "https://clawhub.ai/skills/five-star-reviewers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/five-star-reviewers-84f96526cfb45200.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "orchestrate a five-reviewer code review over a git diff, pull request diff, patch, or commit range by launching one dedicated sub-agent per reviewer role, th..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vincent-ng",
+      "userId": "s17dfzc2yygnnv80kqzxb02jad84jyjx",
+      "displayName": "wuzhanwei",
+      "image": "https://avatars.githubusercontent.com/u/6469269?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775791965662,
+      "changelog": "Initial release: five-agent coordinated code review with correctness, architecture, testability, readability, and simplicity reviewers",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:36fe56496fbbf99d0648115888a8696b36d5da6a38a106cfd596779d92a0ab79"
+}

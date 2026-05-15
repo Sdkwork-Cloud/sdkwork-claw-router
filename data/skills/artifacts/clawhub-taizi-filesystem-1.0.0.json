@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/taizi-filesystem@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taizi_filesystem",
+  "skill": {
+    "id": 25722,
+    "skillKey": "clawhub-taizi-filesystem",
+    "name": "Taizi Filesystem"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taizi-filesystem",
+    "url": "https://clawhub.ai/skills/taizi-filesystem",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taizi-filesystem-6cc24899381498ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Advanced filesystem operations - listing, searching, batch processing, and directory analysis for Clawdbot"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fresh3",
+      "userId": "publishers:fresh3",
+      "displayName": "fresh3",
+      "image": "https://avatars.githubusercontent.com/u/23310067?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 372,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773709282330,
+      "changelog": "- Initial release of taizi-filesystem skill for Clawdbot\n- Provides advanced filesystem operations: listing, searching, batch copying, and directory analysis\n- Features smart file filtering, rich output formatting, and content-aware search\n- Includes dry run mode, error handling, and various safety checks\n- Designed for seamless integration with Clawdbot tools and productivity workflows",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2a9a20fec374943a9ed79b86ff4b07c44233d4485551fa604395d39b5116b0f8"
+}

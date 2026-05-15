@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37334,
+  "uuid": "skill-clawhub-oatda-vision-analysis",
+  "skillKey": "clawhub-oatda-vision-analysis",
+  "name": "OATDA Vision Analysis",
+  "summary": "Analyze images using vision-capable AI models through OATDA's unified API. Triggers when the user wants to analyze, describe, or understand images; extract t...",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oatda_vision_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "devcsde",
+      "features": [
+        "Analyze images using vision-capable AI models through OATDA's unified API",
+        "Triggers when the user wants to analyze, describe, or understand images",
+        "extract t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oatda-vision-analysis@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29840319?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oatda-vision-analysis",
+      "url": "https://clawhub.ai/skills/oatda-vision-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oatda-vision-analysis",
+    "url": "https://clawhub.ai/skills/oatda-vision-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oatda-vision-analysis-84fdb3571b1a0b9e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oatda-vision-analysis@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-oatda-vision-analysis-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0cdb1b8a4c4981b4eab5a6dfa37c735ed0a85f09993a8bcff1a375429f9846a3",
+      "artifactSizeBytes": 1979
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T12:14:20.068Z"
+}

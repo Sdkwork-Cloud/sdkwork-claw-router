@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48643,
+  "uuid": "skill-clawhub-jq-hardened",
+  "skillKey": "clawhub-jq-hardened",
+  "name": "Jq Hardened",
+  "summary": "Command-line JSON processor. Extract, filter, transform JSON.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jq_hardened",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Faberlens",
+      "features": [
+        "Command-line JSON processor",
+        "Extract, filter, transform JSON."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jq-hardened@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261834257?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jq-hardened",
+      "url": "https://clawhub.ai/skills/jq-hardened"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jq-hardened",
+    "url": "https://clawhub.ai/skills/jq-hardened",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jq-hardened-b98760bf83ea2e42.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jq-hardened@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jq-hardened-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4cb631351047d4c36b0fb95d1fdcfbb46199241c6296cf9539a0209ebadcd01",
+      "artifactSizeBytes": 2106
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T03:00:22.810Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/api-docs-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_docs_generator",
+  "skill": {
+    "id": 59040,
+    "skillKey": "clawhub-api-docs-generator",
+    "name": "API Docs Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-docs-generator",
+    "url": "https://clawhub.ai/skills/api-docs-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-docs-generator-829781c17ff10cbe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "从代码注释自动生成 API 文档，支持 OpenAPI/Swagger 格式，输出 JSON 或 YAML。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sunshine-del-ux",
+      "userId": "publishers:sunshine-del-ux",
+      "displayName": "Sunshine-del-ux",
+      "image": "https://avatars.githubusercontent.com/u/83053073?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 554,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772443874005,
+      "changelog": "- Initial release of api-docs-generator.\n- Automatically generates API documentation from code comments.\n- Supports OpenAPI 3.0 and Swagger 2.0 formats.\n- Outputs documentation in JSON or YAML.\n- Exports Postman Collections.\n- Framework support includes Express.js, FastAPI, Flask, Gin, Spring Boot, and Rails.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9f3ea7f5dccfbdb691a665f650052930d0846d799e7302e62265fb151f8e00b9"
+}

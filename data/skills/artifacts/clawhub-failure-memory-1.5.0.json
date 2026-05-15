@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/failure-memory@1.5.0",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.failure_memory",
+  "skill": {
+    "id": 49725,
+    "skillKey": "clawhub-failure-memory",
+    "name": "Failure Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "failure-memory",
+    "url": "https://clawhub.ai/skills/failure-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/failure-memory-a95bb8f90bfc5843.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Stop making the same mistakes — turn failures into patterns that prevent recurrence"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leegitw",
+      "userId": "s179srg0a58h1v79wy2w7g9ymh83jxhd",
+      "displayName": "Lee Brown",
+      "image": "https://avatars.githubusercontent.com/u/1395866?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1060,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.5.0",
+      "createdAt": 1771894024907,
+      "changelog": "Version 1.5.0\n\n- Expanded and refined tags for improved discovery and categorization.\n- Updated data handling description for clarity on model usage and workspace trust boundaries.\n- Removed the disable-model-invocation flag from metadata.\n- Restructured and clarified documentation for installation, integration, and outputs.\n- No changes to command syntax, logic, or feature set.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fa7a69eed70ffdbad997b6baac5c1305f9d7ae5061f889e56a75f481ba60b383"
+}

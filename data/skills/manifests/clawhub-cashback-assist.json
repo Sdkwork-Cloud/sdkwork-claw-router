@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73469,
+  "uuid": "skill-clawhub-cashback-assist",
+  "skillKey": "clawhub-cashback-assist",
+  "name": "返利全能助手",
+  "summary": "返利全流程助手，从选品比价、领券下单到返利追踪、提现指导，覆盖返利购物完整链路。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cashback_assist",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fangshan101-coder",
+      "features": [
+        "返利全流程助手，从选品比价、领券下单到返利追踪、提现指导，覆盖返利购物完整链路。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cashback-assist@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267524233?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cashback-assist",
+      "url": "https://clawhub.ai/skills/cashback-assist"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cashback-assist",
+    "url": "https://clawhub.ai/skills/cashback-assist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cashback-assist-19e4da83b72641d2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cashback-assist@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cashback-assist-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c1cc6a4a565e25e84bc3dd48879db8e9f906d97e588b984e7f09f0aeac79e5ac",
+      "artifactSizeBytes": 1871
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T01:44:00.949Z"
+}

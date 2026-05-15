@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48372,
+  "uuid": "skill-clawhub-mcporter-hardened",
+  "skillKey": "clawhub-mcporter-hardened",
+  "name": "Mcporter Hardened",
+  "summary": "Use the mcporter CLI to list, configure, auth, and call MCP servers/tools directly (HTTP or stdio), including ad-hoc servers, config edits, and CLI/type gene...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcporter_hardened",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Faberlens",
+      "features": [
+        "Use the mcporter CLI to list, configure, auth, and call MCP servers/tools directly (HTTP or std."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mcporter-hardened@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261834257?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mcporter-hardened",
+      "url": "https://clawhub.ai/skills/mcporter-hardened"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcporter-hardened",
+    "url": "https://clawhub.ai/skills/mcporter-hardened",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcporter-hardened-e95f56c481f45b51.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mcporter-hardened@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mcporter-hardened-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dc8912d543f5d5777074e61906725e2e9935d2d52f54757d4b47c9b7655ade67",
+      "artifactSizeBytes": 2367
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T05:00:07.757Z"
+}

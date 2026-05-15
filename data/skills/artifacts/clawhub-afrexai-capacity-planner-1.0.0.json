@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/afrexai-capacity-planner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_capacity_planner",
+  "skill": {
+    "id": 16908,
+    "skillKey": "clawhub-afrexai-capacity-planner",
+    "name": "Capacity Planner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-capacity-planner",
+    "url": "https://clawhub.ai/skills/afrexai-capacity-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-capacity-planner-6b16eacc2cfbcd79.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyzes team size, workload, and pipeline data to forecast capacity, identify bottlenecks, and recommend actions 4-8 weeks before crises occur."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1kalin",
+      "userId": "s17e1q0nx23qnh4n429zzqc05x83hvsw",
+      "displayName": "1kalin",
+      "image": "https://avatars.githubusercontent.com/u/15705344?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 828,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770970409206,
+      "changelog": "- Initial release of Capacity Planner skill.\n- Build forward-looking workload models based on team size, utilization, pipeline, and seasonal trends.\n- Automatically flag bottlenecks and risks 4-8 weeks in advance.\n- Output structured capacity snapshots, risk summaries, and actionable recommendations.\n- Includes built-in scenario modeling for hiring, project changes, and unexpected staff loss.\n- Provides clear utilization bands and key metrics to support data-driven planning.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fc9c139efd5998d7cfbcffb5d4f8168b8c97a8aea181387f5723d1dd386990fa"
+}

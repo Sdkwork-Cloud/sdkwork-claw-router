@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prompt-token-counter@1.0.11",
+  "version": "1.0.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_token_counter",
+  "skill": {
+    "id": 23738,
+    "skillKey": "clawhub-prompt-token-counter",
+    "name": "Prompt Token Counter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-token-counter",
+    "url": "https://clawhub.ai/skills/prompt-token-counter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-token-counter-41d5fee3114a14e1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Count tokens and estimate costs for 300+ LLM models. Primary use: audit OpenClaw workspace token consumption (memory, persona, skills)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhaobudaoyuema",
+      "userId": "publishers:zhaobudaoyuema",
+      "displayName": "Zhaobudaoyuema",
+      "image": "https://avatars.githubusercontent.com/u/66905526?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 412,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "1.0.11",
+      "createdAt": 1773638267540,
+      "changelog": "**Changelog for version 1.0.11:**\n\n- Updated documentation and CLI usage for consistency: now supports batch mode by default, allowing multiple file paths directly as arguments (no segmentation).\n- Clarified example commands to demonstrate batch mode and simplified file handling syntax.\n- README and usage examples emphasize file-path-first usage and streamlined batch counting.\n- No core logic/code changes; this release is focused on improved documentation and clearer workflow presentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c974fb47df97902e622566cc13fabda7befd1cd4020e77e183852608eae66f1c"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38802,
+  "uuid": "skill-clawhub-openclaw-launcher",
+  "skillKey": "clawhub-openclaw-launcher",
+  "name": "OpenClaw Launcher",
+  "summary": "Create Windows desktop shortcut and scripts for one-click OpenClaw startup on WSL. Use when: (1) user asks to create/open/fix OpenClaw launcher, (2) user rep...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_launcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kevinL1993",
+      "features": [
+        "Create Windows desktop shortcut and scripts for one-click OpenClaw startup on WSL",
+        "Use when: (1) user asks to create/open/fix OpenClaw launcher, (2) user rep..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-launcher@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/154061950?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-launcher",
+      "url": "https://clawhub.ai/skills/openclaw-launcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-launcher",
+    "url": "https://clawhub.ai/skills/openclaw-launcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-launcher-0bc446f8f12a2930.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-launcher@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-launcher-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:004a98396956efd64e375ae95185ba9923f077c69ca79542d56f431120448c40",
+      "artifactSizeBytes": 2126
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T01:51:05.208Z"
+}

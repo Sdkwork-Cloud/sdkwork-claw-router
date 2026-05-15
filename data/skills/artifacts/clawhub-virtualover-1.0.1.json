@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/virtualover@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.virtualover",
+  "skill": {
+    "id": 53255,
+    "skillKey": "clawhub-virtualover",
+    "name": "Virtualover"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "virtualover",
+    "url": "https://clawhub.ai/skills/virtualover",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/virtualover-b8963b8653340a36.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn raw video clips into polished, layered productions with virtualover — a skill built for blending virtual graphics, overlays, and composited elements dir..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774963446069,
+      "changelog": "- Updated skill documentation for improved clarity and conciseness in onboarding and setup instructions.\n- Refined descriptions and usage examples to better highlight key overlay features.\n- Streamlined first-time connection steps and authentication explanation.\n- Adjusted positioning and tone of introductory and guidance sections for accessibility.\n- No changes to the code or skill logic; this is a docs-only update.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d018fafe51e11d4a6069ecee6738bada2e5ca5f8f20ada8347171931424e64e6"
+}

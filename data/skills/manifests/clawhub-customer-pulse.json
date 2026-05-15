@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63733,
+  "uuid": "skill-clawhub-customer-pulse",
+  "skillKey": "clawhub-customer-pulse",
+  "name": "客户脉搏 / Customer Pulse",
+  "summary": "客户脉搏 — 轻量级CRM助手，追踪客户跟进状态，不让商机\"掉地上",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.customer_pulse",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jun Zhang",
+      "features": [
+        "客户脉搏 — 轻量级CRM助手，追踪客户跟进状态，不让商机\"掉地上"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/customer-pulse@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11209115?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "customer-pulse",
+      "url": "https://clawhub.ai/skills/customer-pulse"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "customer-pulse",
+    "url": "https://clawhub.ai/skills/customer-pulse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/customer-pulse-211475c494c8a27e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/customer-pulse@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-customer-pulse-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ade01f404148b76e008b478f19547ffe92d14f151041a54c5ff076e7336c376",
+      "artifactSizeBytes": 2545
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T12:20:03.548Z"
+}

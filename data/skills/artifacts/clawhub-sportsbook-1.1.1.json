@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sportsbook@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sportsbook",
+  "skill": {
+    "id": 15457,
+    "skillKey": "clawhub-sportsbook",
+    "name": "Sportsbook Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sportsbook",
+    "url": "https://clawhub.ai/skills/sportsbook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sportsbook-c4c6dfa746694877.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access real-time Fuku Sportsbook data to get predictions, odds, team/player stats, create AI betting agents, and receive pick notifications across CBB, NBA,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cryptopunk2070",
+      "userId": "publishers:cryptopunk2070",
+      "displayName": "cryptopunk2070",
+      "image": "https://avatars.githubusercontent.com/u/156964037?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1023,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1771039135181,
+      "changelog": "Fix notification ACK payload key",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0739c75026f32dc9c4655e63095351511b432bb23939309a1589950602da5c4f"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9403,
+  "uuid": "skill-clawhub-exchange-rates",
+  "skillKey": "clawhub-exchange-rates",
+  "name": "Exchange Rates",
+  "summary": "Fetch live exchange rates between any currency pairs from XE.com. Use when: user asks about currency conversion, exchange rates, forex rates, or converting a...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.exchange_rates",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mrInvincible29",
+      "features": [
+        "Fetch live exchange rates between any currency pairs from XE.com",
+        "Use when: user asks about currency conversion, exchange rates, forex rates, or converting a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/exchange-rates@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201322320?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "exchange-rates",
+      "url": "https://clawhub.ai/skills/exchange-rates"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "exchange-rates",
+    "url": "https://clawhub.ai/skills/exchange-rates",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/exchange-rates-f0fceb14f00dc7ab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/exchange-rates@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-exchange-rates-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4d9653a448e4ffcddab9f369a74b271c724d766965ee32d6021dbcd96f6a72d",
+      "artifactSizeBytes": 2143
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T04:57:06.062Z"
+}

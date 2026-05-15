@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17461,
+  "uuid": "skill-clawhub-whoop-cli",
+  "skillKey": "clawhub-whoop-cli",
+  "name": "WHOOP CLI for Agents",
+  "summary": "Use whoop-cli to fetch WHOOP data, generate day briefs/health flags, and export trend data for automation workflows.",
+  "version": "0.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whoop_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "andreasnlarsen",
+      "features": [
+        "Use whoop-cli to fetch WHOOP data, generate day briefs/health flags, and export trend data for."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/whoop-cli@0.3.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/166701478?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "whoop-cli",
+      "url": "https://clawhub.ai/skills/whoop-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whoop-cli",
+    "url": "https://clawhub.ai/skills/whoop-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whoop-cli-3005b51e3138c899.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/whoop-cli@0.3.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-whoop-cli-0.3.1.json",
+      "version": "0.3.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:22ae7a2eb04f1c4f7e3b376ad7fbf0967100f27987869061067960a8139d0fc0",
+      "artifactSizeBytes": 1990
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T15:49:08.124Z"
+}

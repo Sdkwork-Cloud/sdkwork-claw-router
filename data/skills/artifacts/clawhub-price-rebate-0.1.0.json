@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/price-rebate@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.price_rebate",
+  "skill": {
+    "id": 73098,
+    "skillKey": "clawhub-price-rebate",
+    "name": "比价返利雷达"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "price-rebate",
+    "url": "https://clawhub.ai/skills/price-rebate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/price-rebate-cf9f990ebd5781d7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "跨平台商品比价与返利综合工具，计算各平台真实到手价（售价-券-返利），推荐最优购买渠道。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fangshan101-coder",
+      "userId": "s1782arxyb13jw6g2c7z1z1n4183nyc9",
+      "displayName": "fangshan101-coder",
+      "image": "https://avatars.githubusercontent.com/u/267524233?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774586119644,
+      "changelog": "初始发布",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f753a663d778f816b25230b7f615953e3b06b61f1bbbc0a8bb8c36e857e4e8ef"
+}

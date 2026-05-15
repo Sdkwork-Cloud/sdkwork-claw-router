@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bid-proposal-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bid_proposal_manager",
+  "skill": {
+    "id": 60762,
+    "skillKey": "clawhub-bid-proposal-manager",
+    "name": "Bid Proposal Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bid-proposal-manager",
+    "url": "https://clawhub.ai/skills/bid-proposal-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bid-proposal-manager-dec13a1aa8ebde40.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "입찰/사업/연구 공모 안내문을 파싱하여 벡터화하고, 제출서류 검증 및 관련 정보를 자동 추출하여 Notion 프로젝트 페이지를 생성하는 스킬. PDF, HWP, HWPX, DOCX, 웹페이지 형식의 공고문을 지원하며, PostgreSQL + pgvector로 시맨틱 검색 가능."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "parkbeomjun-gkgkgk",
+      "userId": "s1783m6q1m9gbf3fnbgmd720bn84abb6",
+      "displayName": "parkbeomjun-gkgkgk",
+      "image": "https://avatars.githubusercontent.com/u/219679755?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775455506777,
+      "changelog": "Initial release - 첫 번째 ClawHub 퍼블리시",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b4a90d2ccefabb50446f227cf936bd539b714c1c92b5a56a5a748de2b4c994e9"
+}

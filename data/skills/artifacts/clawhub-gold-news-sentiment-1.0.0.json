@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gold-news-sentiment@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gold_news_sentiment",
+  "skill": {
+    "id": 30336,
+    "skillKey": "clawhub-gold-news-sentiment",
+    "name": "Gold News Sentiment"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gold-news-sentiment",
+    "url": "https://clawhub.ai/skills/gold-news-sentiment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gold-news-sentiment-434c6fd3e1bd65ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when users want to pull recent global gold-related news, assess short-term or medium-term market sentiment for gold, connect macro drivers lik..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cyecho-io",
+      "userId": "publishers:cyecho-io",
+      "displayName": "cyecho-io",
+      "image": "https://avatars.githubusercontent.com/u/19159859?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 284,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773984408292,
+      "changelog": "gold-news-sentiment v1.0.0\n\n- Initial release providing structured sentiment analysis for gold based on recent global news and macro drivers.\n- Supports cached sentiment snapshots for fast responses, with configurable freshness windows.\n- Detailed workflow for deduplicating news, classifying headlines, and linking them to key macro factors.\n- Outputs disciplined conclusions as 看涨, 看跌, or 观望, with explicit uncertainty and risk notes.\n- Designed for recurring sentiment tracking and transparent, evidence-based analysis.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:27a8bcb102710b5afd5869291b9b85ea5f4c98445d3262dc28964a086ae241e4"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-songwriter@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_songwriter",
+  "skill": {
+    "id": 69616,
+    "skillKey": "clawhub-ai-songwriter",
+    "name": "AI Songwriter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-songwriter",
+    "url": "https://clawhub.ai/skills/ai-songwriter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-songwriter-7a94392735754f8e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "三道工序 AI 写歌。用户只需给主题，全自动跑完白描起草→注入灵魂金句→完美押韵排版→Suno生成，最终直接返回试听链接。中间不停顿、不等用户确认。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jason-hou-pe",
+      "userId": "publishers:jason-hou-pe",
+      "displayName": "jason-hou-pe",
+      "image": "https://avatars.githubusercontent.com/u/190561125?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 435,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773404237049,
+      "changelog": "V1.1.0: Major stability update. Fully automated workflow with KIE_API_KEY env config, relaxed model requirements (runs smoothly with Minimax/Gemini), and explicit anti-interruption prompts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:29328ff4ca00560304f0f55513be6a07aec282bed1cc8be486d23a72a687a57a"
+}

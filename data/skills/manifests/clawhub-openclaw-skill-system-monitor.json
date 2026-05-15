@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16329,
+  "uuid": "skill-clawhub-openclaw-skill-system-monitor",
+  "skillKey": "clawhub-openclaw-skill-system-monitor",
+  "name": "System Monitor",
+  "summary": "Real-time system metrics monitoring (CPU, memory, disk, network, processes). Use when: user asks to check system status, cpu usage, memory usage, disk space,...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_skill_system_monitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pp",
+      "features": [
+        "Real-time system metrics monitoring (CPU, memory, disk, network, processes)",
+        "Use when: user asks to check system status, cpu usage, memory usage, disk space,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-skill-system-monitor@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263042322?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-skill-system-monitor",
+      "url": "https://clawhub.ai/skills/openclaw-skill-system-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-skill-system-monitor",
+    "url": "https://clawhub.ai/skills/openclaw-skill-system-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-skill-system-monitor-05c6a6bdd97b455b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-skill-system-monitor@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-skill-system-monitor-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:22afe94edd02c8dfc68c1084c6d5b5bca88041900895250116e32046cf6cfe74",
+      "artifactSizeBytes": 1963
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T23:04:42.719Z"
+}

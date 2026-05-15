@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sunsetbot-watch@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sunsetbot_watch",
+  "skill": {
+    "id": 62587,
+    "skillKey": "clawhub-sunsetbot-watch",
+    "name": "sunsetbot-watch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sunsetbot-watch",
+    "url": "https://clawhub.ai/skills/sunsetbot-watch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sunsetbot-watch-b5a2b594220fe328.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "全自动 sunsetbot 晚霞查询，使用 agent-browser 访问 sunsetbot.top 网站，自动解析页面，输出指定城市当天晚霞的鲜艳度和气溶胶质量。触发场景：用户需要查询某个城市今天/明天晚霞概率，查询 sunsetbot 晚霞预报。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weiwei106",
+      "userId": "publishers:weiwei106",
+      "displayName": "weiwei106",
+      "image": "https://avatars.githubusercontent.com/u/20461396?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 230,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773745388889,
+      "changelog": "sunsetbot-watch v1.0.0\n\n- Initial release: enables automatic sunset forecast queries for any specified city.\n- Uses agent-browser to access sunsetbot.top, parse vividness and aerosol (AOD) data for the requested date.\n- Allows querying by city and optional date (default is today).\n- Outputs vividness and aerosol values, includes human-friendly explanations and sunset probability assessment.\n- All steps and formatting are fully automated; no extra scripts or resources required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2464283aea1c355aa1bc8ebae645821b68f3838a69a15b3648d876a1a8072e11"
+}

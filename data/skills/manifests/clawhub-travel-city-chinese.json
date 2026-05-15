@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68506,
+  "uuid": "skill-clawhub-travel-city-chinese",
+  "skillKey": "clawhub-travel-city-chinese",
+  "name": "travel city chinese",
+  "summary": "生成完整的中文城市旅行简报，面向中文读者，默认输出简体中文，并同时覆盖美国护照与中国护照的签证/入境说明。",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.travel_city_chinese",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiahongc",
+      "features": [
+        "生成完整的中文城市旅行简报，面向中文读者，默认输出简体中文，并同时覆盖美国护照与中国护照的签证/入境说明。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/travel-city-chinese@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61323260?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "travel-city-chinese",
+      "url": "https://clawhub.ai/skills/travel-city-chinese"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "travel-city-chinese",
+    "url": "https://clawhub.ai/skills/travel-city-chinese",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/travel-city-chinese-366969f30e762d75.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/travel-city-chinese@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-travel-city-chinese-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:25b6ea35b1c0a69e9e846bf6e633debaccaec522092c4ce0c61fdcc2b4617b32",
+      "artifactSizeBytes": 1963
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T12:40:56.327Z"
+}

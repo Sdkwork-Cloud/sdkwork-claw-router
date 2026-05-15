@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29474,
+  "uuid": "skill-clawhub-llm-perf-estimator",
+  "skillKey": "clawhub-llm-perf-estimator",
+  "name": "LLM Inference Performance Estimator",
+  "summary": "Estimate LLM inference performance metrics including TTFT, decode speed, and VRAM requirements based on model architecture, GPU specs, and quantization format.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llm_perf_estimator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangyu68",
+      "features": [
+        "Estimate LLM inference performance metrics including TTFT, decode speed, and VRAM requirements."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/llm-perf-estimator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36838019?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "llm-perf-estimator",
+      "url": "https://clawhub.ai/skills/llm-perf-estimator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llm-perf-estimator",
+    "url": "https://clawhub.ai/skills/llm-perf-estimator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llm-perf-estimator-2693863e388ab7e0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/llm-perf-estimator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-llm-perf-estimator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:afafe1ae3ad1843215c6984a72f3f638f64c0fcfdcef756c1e8a21b8ffa0b2ca",
+      "artifactSizeBytes": 2453
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T02:26:53.630Z"
+}

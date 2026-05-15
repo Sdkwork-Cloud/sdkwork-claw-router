@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58152,
+  "uuid": "skill-clawhub-deep-scraper-amazon",
+  "skillKey": "clawhub-deep-scraper-amazon",
+  "name": "Deep Scraper + Amazon",
+  "summary": "High-performance containerized web scraper (Docker + Crawlee + Playwright). Use when user mentions any of these: 爬虫, 爬取, 抓取, 采集, 数据采集, 爬数据, 抓数据, 获取数据, scrape...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deep_scraper_amazon",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiafar",
+      "features": [
+        "High-performance containerized web scraper (Docker + Crawlee + Playwright)",
+        "Use when user mentions any of these: 爬虫, 爬取, 抓取, 采集, 数据采集, 爬数据, 抓数据, 获取数据, scrape..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deep-scraper-amazon@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94378558?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deep-scraper-amazon",
+      "url": "https://clawhub.ai/skills/deep-scraper-amazon"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deep-scraper-amazon",
+    "url": "https://clawhub.ai/skills/deep-scraper-amazon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deep-scraper-amazon-5393d5cd1822e80a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deep-scraper-amazon@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-deep-scraper-amazon-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:450a65bcd8516ae52a132435f581497d69b8379951052ee6968280771b40e37d",
+      "artifactSizeBytes": 2193
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T00:26:21.881Z"
+}

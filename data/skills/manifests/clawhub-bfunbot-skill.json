@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44352,
+  "uuid": "skill-clawhub-bfunbot-skill",
+  "skillKey": "clawhub-bfunbot-skill",
+  "name": "BFunbot Skill",
+  "summary": "Create tokens on BSC, check fee earnings, check BFun.bot Credits balance, trigger agent credit reload, and interact with BFunBot's Agent API and BFun LLM Gat...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bfunbot_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BFunbot",
+      "features": [
+        "Create tokens on BSC, check fee earnings, check BFun.bot Credits balance, trigger agent credit."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bfunbot-skill@1.0.0",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/bfunbot-skill/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bfunbot-skill",
+      "url": "https://clawhub.ai/skills/bfunbot-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bfunbot-skill",
+    "url": "https://clawhub.ai/skills/bfunbot-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bfunbot-skill-a428748cbfb0b530.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bfunbot-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bfunbot-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a4e471c4eaabe76c937af422d53be3fc0511e4524327ca21724a16b82f83c738",
+      "artifactSizeBytes": 2187
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T03:20:02.452Z"
+}

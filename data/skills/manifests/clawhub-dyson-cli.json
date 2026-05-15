@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10606,
+  "uuid": "skill-clawhub-dyson-cli",
+  "skillKey": "clawhub-dyson-cli",
+  "name": "Dyson Fan Control",
+  "summary": "Control Dyson air purifiers, fans, and heaters via local MQTT. Use when asked to control Dyson devices, adjust fan speed, set temperature/heat, enable oscillation, or check room temperature/humidity. Requires being on the same WiFi network.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dyson_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tmustier",
+      "features": [
+        "Control Dyson air purifiers, fans, and heaters via local MQTT",
+        "Use when asked to control Dyson devices, adjust fan speed, set temperature/heat, enable oscilla.",
+        "Requires being on the same WiFi network as the device."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dyson-cli@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6326440?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dyson-cli",
+      "url": "https://clawhub.ai/skills/dyson-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dyson-cli",
+    "url": "https://clawhub.ai/skills/dyson-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dyson-cli-2382e528e61cbea1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dyson-cli@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dyson-cli-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:df10824034e5ef638e41bd3c7517c93aa6fddb3b2c1cfaae567f3c99d1a6e2f8",
+      "artifactSizeBytes": 2354
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-06T12:02:57.982Z"
+}

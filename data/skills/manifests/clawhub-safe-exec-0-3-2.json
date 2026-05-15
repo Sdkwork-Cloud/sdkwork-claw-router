@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9882,
+  "uuid": "skill-clawhub-safe-exec-0-3-2",
+  "skillKey": "clawhub-safe-exec-0-3-2",
+  "name": "Safe Exec 0.3.2",
+  "summary": "Safe command execution for OpenClaw Agents with automatic danger pattern detection, risk assessment, user approval workflow, and audit logging. Use when agents need to execute shell commands that may be dangerous (rm -rf, dd, fork bombs, s.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safe_exec_0_3_2",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lucky-2968",
+      "features": [
+        "Safe command execution for OpenClaw Agents with automatic danger pattern detection, risk assess.",
+        "Use when agents need to execute shell commands that may be dangerous (rm -rf, dd, fork bombs, s.",
+        "Provides multi-level risk assessment (CRITICAL/HIGH/MEDIUM/LOW), in-session notifications, pend."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/safe-exec-0-3-2@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208146076?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "safe-exec-0-3-2",
+      "url": "https://clawhub.ai/skills/safe-exec-0-3-2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safe-exec-0-3-2",
+    "url": "https://clawhub.ai/skills/safe-exec-0-3-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safe-exec-0-3-2-ac92bb871cf9fb69.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/safe-exec-0-3-2@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-safe-exec-0-3-2-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a70760028870a80fecfba32b19cf08ec17ba8eaf8fdef13d3b81f4e8f914e1b7",
+      "artifactSizeBytes": 2518
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T13:31:59.894Z"
+}

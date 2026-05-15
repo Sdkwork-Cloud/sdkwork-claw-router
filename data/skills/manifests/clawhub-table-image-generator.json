@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9036,
+  "uuid": "skill-clawhub-table-image-generator",
+  "skillKey": "clawhub-table-image-generator",
+  "name": "Table Image",
+  "summary": "Generate clean table images from data. Perfect for Discord/Telegram where ASCII tables look broken. Supports dark/light mode, custom styling, and auto-sizing...",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.table_image_generator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Danny Shmueli",
+      "features": [
+        "Generate clean table images from data",
+        "Perfect for Discord/Telegram where ASCII tables look broken",
+        "Supports dark/light mode, custom styling, and auto-sizing..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/table-image-generator@1.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4062328?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "table-image-generator",
+      "url": "https://clawhub.ai/skills/table-image-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "table-image-generator",
+    "url": "https://clawhub.ai/skills/table-image-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/table-image-generator-c3e64e52debab15f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/table-image-generator@1.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-table-image-generator-1.4.0.json",
+      "version": "1.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f1c7e7c3a579ad226144ff035c5c30272ed24a42adf445568d1bb5ed0b70110",
+      "artifactSizeBytes": 1973
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T07:59:22.688Z"
+}

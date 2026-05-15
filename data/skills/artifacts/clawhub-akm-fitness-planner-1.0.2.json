@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/akm-fitness-planner@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.akm_fitness_planner",
+  "skill": {
+    "id": 34629,
+    "skillKey": "clawhub-akm-fitness-planner",
+    "name": "AKM Fitness"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "akm-fitness-planner",
+    "url": "https://clawhub.ai/skills/akm-fitness-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/akm-fitness-planner-f15fd89e2fa18e2d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AKM implementation for training decision workflows. Models goals, body limits, equipment context, time budget, and recovery before outputting a workout decis..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sirsws",
+      "userId": "s175qq486ya4r3ss70a41jr67983mn9v",
+      "displayName": "sirsws",
+      "image": "https://avatars.githubusercontent.com/u/87917823?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 222,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774585106454,
+      "changelog": "Add public sample record and clean source links.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:469f1c8580b30a7c71696ed22eaeb1b0d2c8c277cf8c8e549c81a59bd931b3d0"
+}

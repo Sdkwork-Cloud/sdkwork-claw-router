@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tke-skill-pro@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tke_skill_pro",
+  "skill": {
+    "id": 63605,
+    "skillKey": "clawhub-tke-skill-pro",
+    "name": "tke skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tke-skill-pro",
+    "url": "https://clawhub.ai/skills/tke-skill-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tke-skill-pro-58ee6ebbe6c49a49.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "腾讯云 TKE 容器服务运维专家，支持集群巡检、状态查询、节点池管理、kubeconfig 获取等"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tangcong",
+      "userId": "s1710f1kx8w1sns3xtht7n9wpx83gmdg",
+      "displayName": "tangcong",
+      "image": "https://avatars.githubusercontent.com/u/2403673?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 384,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773318881372,
+      "changelog": "tke-skill-pro 0.1.0 初始发布\n\n- 新增腾讯云 TKE 容器服务运维支持，覆盖集群查询、状态巡检、节点池管理、kubeconfig 获取、集群端点开启/关闭等操作\n- 提供 tke_cli.py 全面命令说明与示例，包括凭证配置方式\n- 明确输出规范，支持表格与 JSON 补充、异常状态高亮\n- 指导标准运维流程（巡检、凭证获取、端点管理、规格评估）\n- 推荐与 Kubernetes Specialist Skill 联动，共享集群云平台与 K8s 资源操作能力",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:618ae10b838ecc9643b3daf189448b25524df934206f4d81d57e79ec1562ff80"
+}

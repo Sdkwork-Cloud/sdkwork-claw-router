@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gitlab-api-client@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gitlab_api_client",
+  "skill": {
+    "id": 39299,
+    "skillKey": "clawhub-gitlab-api-client",
+    "name": "GitLab API Client"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gitlab-api-client",
+    "url": "https://clawhub.ai/skills/gitlab-api-client",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gitlab-api-client-a5e4c178354a4fab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with GitLab API for managing projects, issues, merge requests, branches, pipelines, users, groups, and more. Use when the user needs to perform GitL..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jonasgao",
+      "userId": "s1750kyxngca0hmh2r3c4ac1ns83n3d1",
+      "displayName": "JonasGao",
+      "image": "https://avatars.githubusercontent.com/u/4549584?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 179,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774932452110,
+      "changelog": "Initial release: GitLab REST API v4 client with full project/issue/MR/pipeline management",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e920ee59012acbd0b1beb85167526eacc0755dfb6d0bbbd188d44048eb8e1b94"
+}

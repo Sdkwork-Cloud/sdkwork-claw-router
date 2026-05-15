@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31540,
+  "uuid": "skill-clawhub-aport-handoff",
+  "skillKey": "clawhub-aport-handoff",
+  "name": "Aport Handoff",
+  "summary": "Package completed work for handoff to another agent or a human. Every item in the handoff must have a verified APort decision. The handoff document is verifi...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aport_handoff",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Uchi Uchibeke",
+      "features": [
+        "Package completed work for handoff to another agent or a human",
+        "Every item in the handoff must have a verified APort decision",
+        "The handoff document is verifi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aport-handoff@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5677552?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aport-handoff",
+      "url": "https://clawhub.ai/skills/aport-handoff"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aport-handoff",
+    "url": "https://clawhub.ai/skills/aport-handoff",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aport-handoff-68ef6625073f954e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aport-handoff@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aport-handoff-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9cdfb4e6f29feaa018ea03d189d4cfd5969a049ef291a8a2e2eb9db19e6c51da",
+      "artifactSizeBytes": 2344
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T03:24:30.223Z"
+}

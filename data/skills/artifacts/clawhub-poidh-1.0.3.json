@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/poidh@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.poidh",
+  "skill": {
+    "id": 17654,
+    "skillKey": "clawhub-poidh",
+    "name": "POIDH Bounty Bot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "poidh",
+    "url": "https://clawhub.ai/skills/poidh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/poidh-3a33b226c9766a91.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Post bounties and evaluate/accept winning submissions on poidh (pics or it didn't happen) on Arbitrum, Base, or Degen Chain. Use this skill when the user wan..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "saltorioussig",
+      "userId": "publishers:saltorioussig",
+      "displayName": "saltoriousSIG",
+      "image": "https://avatars.githubusercontent.com/u/20292420?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 658,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1772382973578,
+      "changelog": "poidh v1.0.3\n\n- Added Degen Chain support (new contract address, explorer, and bounty minimums).\n- Updated description and instructions to cover Arbitrum, Base, and Degen.\n- Added chain-specific poidh.xyz URL and frontend bounty ID offset logic.\n- Updated command examples for returning frontend-ready URLs and IDs when posting bounties.\n- Improved clarity and accuracy of environment variable and chain selection documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ef97148eaf75a0d15ba5b3ed127bb7cbe83f9433b010fd5cd3048c91facc0662"
+}

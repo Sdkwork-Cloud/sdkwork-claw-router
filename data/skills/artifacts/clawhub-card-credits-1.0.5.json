@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/card-credits@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.card_credits",
+  "skill": {
+    "id": 50647,
+    "skillKey": "clawhub-card-credits",
+    "name": "Card Credits"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "card-credits",
+    "url": "https://clawhub.ai/skills/card-credits",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/card-credits-4e88d1504f9b51a9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Return statement credits and cash-like credits for one major-US credit card — amount, cadence, trigger rules, enrollment requirements, and restrictions. Cove..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiahongc",
+      "userId": "s17bwps1v7fqm560253grqacxn83kpf2",
+      "displayName": "jiahongc",
+      "image": "https://avatars.githubusercontent.com/u/61323260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 454,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1776259449748,
+      "changelog": "Refresh published skill",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b60a14ea994eb02af85257774f8752a4d1b7ef2231b93d544cdc08245843b23c"
+}

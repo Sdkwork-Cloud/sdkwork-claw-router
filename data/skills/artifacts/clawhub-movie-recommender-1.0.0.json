@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/movie-recommender@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.movie_recommender",
+  "skill": {
+    "id": 68316,
+    "skillKey": "clawhub-movie-recommender",
+    "name": "Movie Recommender - 电影推荐"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "movie-recommender",
+    "url": "https://clawhub.ai/skills/movie-recommender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/movie-recommender-8ef0f5b728169de7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据用户心情、类型、演员、导演或年份，推荐电影并查询豆瓣评分，支持观影记录管理和相似电影推荐。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cp3d1455926-svg",
+      "userId": "s177dnrcxaj8y42437mjj0m9y583t54n",
+      "displayName": "cp3d1455926-svg",
+      "image": "https://avatars.githubusercontent.com/u/268315927?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 325,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774862727089,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a7ee2156bc0bc16260b972806ed8c97ac9405fff66a840e7f288c2b580355d8a"
+}

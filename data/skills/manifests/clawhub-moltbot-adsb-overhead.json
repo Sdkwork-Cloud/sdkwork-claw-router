@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12061,
+  "uuid": "skill-clawhub-moltbot-adsb-overhead",
+  "skillKey": "clawhub-moltbot-adsb-overhead",
+  "name": "ADS-B Overhead",
+  "summary": "Notify when aircraft are overhead within a configurable radius using a local ADS-B SBS/BaseStation feed (readsb port 30003). Use when setting up or troubleshooting plane-overhead alerts, configuring radius/home coordinates/cooldowns, or cr.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltbot_adsb_overhead",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "davestarling",
+      "features": [
+        "Notify when aircraft are overhead within a configurable radius using a local ADS-B SBS/BaseStat.",
+        "Use when setting up or troubleshooting plane-overhead alerts, configuring radius/home coordinat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moltbot-adsb-overhead@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1181807?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moltbot-adsb-overhead",
+      "url": "https://clawhub.ai/skills/moltbot-adsb-overhead"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltbot-adsb-overhead",
+    "url": "https://clawhub.ai/skills/moltbot-adsb-overhead",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltbot-adsb-overhead-9d074e09706a8de1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moltbot-adsb-overhead@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-moltbot-adsb-overhead-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7453d67c8799e11c8503e96d3a3b3b6854049b26f425ae83270818091d0da21f",
+      "artifactSizeBytes": 2350
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T15:44:12.917Z"
+}

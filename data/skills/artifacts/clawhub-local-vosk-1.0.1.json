@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/local-vosk@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_vosk",
+  "skill": {
+    "id": 14416,
+    "skillKey": "clawhub-local-vosk",
+    "name": "Local Vosk STT"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-vosk",
+    "url": "https://clawhub.ai/skills/local-vosk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-vosk-71f93302c024acad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local speech-to-text using Vosk. Lightweight, fast, fully offline. Perfect for transcribing Telegram voice messages, audio files, or any speech-to-text task without cloud APIs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sfkiwi",
+      "userId": "publishers:sfkiwi",
+      "displayName": "Mike Sutherland",
+      "image": "https://avatars.githubusercontent.com/u/3675012?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1195,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770729136246,
+      "changelog": "Added Telegram voice message use case + improved docs",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8d6c562ce3d513b232e4f83c8bb7575752c03e117fba9f8c8780061cb8ff0df1"
+}

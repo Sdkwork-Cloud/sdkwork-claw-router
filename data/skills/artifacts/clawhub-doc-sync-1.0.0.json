@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/doc-sync@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doc_sync",
+  "skill": {
+    "id": 30381,
+    "skillKey": "clawhub-doc-sync",
+    "name": "doc-sync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doc-sync",
+    "url": "https://clawhub.ai/skills/doc-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doc-sync-523b82839b20c685.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Context-Aware Doc Generator: Automatically syncs Python docstrings (Google style), Go comments, and README.md based on code changes. Also logs change summari..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shangter666",
+      "userId": "publishers:shangter666",
+      "displayName": "shangter666",
+      "image": "https://avatars.githubusercontent.com/u/239501276?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 283,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773719359508,
+      "changelog": "- Initial release of doc-sync.\n- Automatically updates Python docstrings (Google style) and Go comments to reflect code changes.\n- Keeps README.md in sync with new or changed APIs, CLI flags, or endpoints.\n- Logs concise change summaries to a local knowledge base (ChromaDB or JSONL).\n- Supports clear commands to trigger documentation and knowledge base updates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7eecc2d986b2aae3f618977abdb2c06bb81ac03e1f0fa2fc0713fce8e24ddffd"
+}

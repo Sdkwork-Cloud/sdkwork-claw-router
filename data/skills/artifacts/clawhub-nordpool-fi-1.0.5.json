@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nordpool-fi@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nordpool_fi",
+  "skill": {
+    "id": 10417,
+    "skillKey": "clawhub-nordpool-fi",
+    "name": "Nordpool Fi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nordpool-fi",
+    "url": "https://clawhub.ai/skills/nordpool-fi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nordpool-fi-e3e7a309ba077079.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Hourly electricity prices for Finland with optimal EV charging window calculation (3h, 4h, 5h)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ovaris",
+      "userId": "publishers:ovaris",
+      "displayName": "ovaris",
+      "image": "https://avatars.githubusercontent.com/u/2553533?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2619,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1769150974176,
+      "changelog": "Fix: Add User-Agent header to avoid 403 Forbidden errors",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fa0bdec514961f84dc4fef5ea14487dd9e916b7b27b566ed4c719497f25c89da"
+}

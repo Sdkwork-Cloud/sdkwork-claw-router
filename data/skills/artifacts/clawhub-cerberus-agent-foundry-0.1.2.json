@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cerberus-agent-foundry@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cerberus_agent_foundry",
+  "skill": {
+    "id": 23725,
+    "skillKey": "clawhub-cerberus-agent-foundry",
+    "name": "Isolated Multi-Agent Control Plane"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cerberus-agent-foundry",
+    "url": "https://clawhub.ai/skills/cerberus-agent-foundry",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cerberus-agent-foundry-94fda3cfca85e09e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Production-ready multi-agent architecture kit for OpenClaw. Provides isolated per-agent workspaces, control-plane orchestration, structured task lifecycle, c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "delibrately-cmyk",
+      "userId": "publishers:delibrately-cmyk",
+      "displayName": "delibrately-cmyk",
+      "image": "https://avatars.githubusercontent.com/u/253489992?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 431,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1772305104607,
+      "changelog": "Rename project title to a function-first professional name; keep architecture and protocol stack unchanged.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bd6b0c31d0bc7e6a908e17b190d430b50410276c71478707a30d36b4a09331e1"
+}

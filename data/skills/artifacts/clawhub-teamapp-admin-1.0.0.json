@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/teamapp-admin@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.teamapp_admin",
+  "skill": {
+    "id": 43593,
+    "skillKey": "clawhub-teamapp-admin",
+    "name": "TeamApp Admin"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "teamapp-admin",
+    "url": "https://clawhub.ai/skills/teamapp-admin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/teamapp-admin-d62139739be85e0b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when interacting with TeamApp club admin JSON endpoints on teamapp.com to create/read/update News articles and Schedule events, and to resolve Team and A..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thed000d",
+      "userId": "s17d88jbzw77ftrrrk82c932rs83etvd",
+      "displayName": "Steve G",
+      "image": "https://avatars.githubusercontent.com/u/1156111?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774307214007,
+      "changelog": "Initial release of the teamapp-admin-api skill.\n\n- Enables interaction with TeamApp club admin JSON endpoints to manage News articles and Schedule events.\n- Supports ID resolution workflows for teams and access groups.\n- Requires all API requests to be routed through the provided bash wrapper for authentication/session management.\n- Provides examples and reference for required payload fields and notification controls.\n- Documentation links key endpoint and schema resources for reliable usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c00e0a47185d7c14d9ff466b7e091c705407f2b9558f14e54db43e28b48a7080"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/npc-dialogue-rehearser@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.npc_dialogue_rehearser",
+  "skill": {
+    "id": 43862,
+    "skillKey": "clawhub-npc-dialogue-rehearser",
+    "name": "Npc Dialogue Rehearser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "npc-dialogue-rehearser",
+    "url": "https://clawhub.ai/skills/npc-dialogue-rehearser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/npc-dialogue-rehearser-5b4efb16120655e0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Rehearse a real-world conversation by modeling likely counterpart styles such as busy, defensive, friendly, or authority-like NPCs. Generate a natural openin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776246436782,
+      "changelog": "- Initial release of npc-dialogue-rehearser skill.\n- Helps users rehearse real-world conversations by simulating different counterpart styles (e.g., busy, defensive, friendly, authority).\n- Generates a natural opening line, a short branching script, safer alternatives to risky phrases, and a calm closing line.\n- Designed for practicing requests, setting boundaries, explaining needs, or managing mildly tense conversations.\n- Output includes objective, script, phrase replacements, and safety notes when appropriate.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2a46af9b6336d728bc8607eb15c43d7beca696841db68f2f5d0d4d663fe7ea32"
+}

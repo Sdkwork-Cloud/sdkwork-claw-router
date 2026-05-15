@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39390,
+  "uuid": "skill-clawhub-lite-session-cleaner",
+  "skillKey": "clawhub-lite-session-cleaner",
+  "name": "Lite Session Cleaner",
+  "summary": "Automatically cleans up inactive sessions (older than 1 hour) and sends a notification.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lite_session_cleaner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liu hongbin",
+      "features": [
+        "Automatically cleans up inactive sessions (older than 1 hour) and sends a notification."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lite-session-cleaner@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2080853?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lite-session-cleaner",
+      "url": "https://clawhub.ai/skills/lite-session-cleaner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lite-session-cleaner",
+    "url": "https://clawhub.ai/skills/lite-session-cleaner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lite-session-cleaner-32d064e79c464b89.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lite-session-cleaner@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lite-session-cleaner-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4346d0efe3e71f45d7d62ae14e6c74ffb45f994cad2689678bb366bdb1928d6e",
+      "artifactSizeBytes": 2029
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T14:09:38.090Z"
+}

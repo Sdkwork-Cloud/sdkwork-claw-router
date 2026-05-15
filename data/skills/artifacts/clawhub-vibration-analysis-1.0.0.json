@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vibration-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vibration_analysis",
+  "skill": {
+    "id": 24446,
+    "skillKey": "clawhub-vibration-analysis",
+    "name": "Vibration Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vibration-analysis",
+    "url": "https://clawhub.ai/skills/vibration-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vibration-analysis-74d4fc9a69b03e09.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyzes wind turbine drivetrain vibration data (main bearing, gearbox, generator) from CMS trends, RMS/peak values, frequency spectrum, and SCADA alarms. Cl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sertug17",
+      "userId": "publishers:sertug17",
+      "displayName": "Sertug17",
+      "image": "https://avatars.githubusercontent.com/u/104278804?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 412,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772292003976,
+      "changelog": "Initial release of wind-turbine-vibration-analysis.\n\n- Analyzes drivetrain vibration data from CMS/SCADA (main bearing, gearbox, generator)\n- Interprets RMS, peak-to-peak, frequency spectrum, and alarms to classify faults\n- Assigns severity (levels 1–5) and recommends appropriate shutdown or monitoring actions\n- Provides detailed report format with fault hypotheses and recommended next steps\n- Supports cross-correlation with gearbox and blade inspection data for comprehensive diagnostics",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:da54c09fa7a090fac74fbd944e8966ada6804456d03d3de89727330ea620a7c7"
+}

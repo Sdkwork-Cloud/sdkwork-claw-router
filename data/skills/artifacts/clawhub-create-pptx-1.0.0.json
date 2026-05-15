@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/create-pptx@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.create_pptx",
+  "skill": {
+    "id": 15704,
+    "skillKey": "clawhub-create-pptx",
+    "name": "create-pptx"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "create-pptx",
+    "url": "https://clawhub.ai/skills/create-pptx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/create-pptx-eabecdcf5ed564c1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create PowerPoint presentations (PPTX) using Python and python-pptx. Handles timelines, charts, diagrams, slide layouts, custom colors, shapes, connectors, t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "scottliu007",
+      "userId": "publishers:scottliu007",
+      "displayName": "fanzhuo",
+      "image": "https://avatars.githubusercontent.com/u/128193289?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 943,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773970525155,
+      "changelog": "- Initial release of create-pptx: generate PowerPoint (PPTX) presentations using python-pptx.\n- Supports timelines, charts, diagrams, custom slide layouts, themes, colors, shapes, connectors, text formatting, and transitions.\n- Includes helpers for common drawing tasks and guides on EMU units, slide planning, and WPS compatibility.\n- Provides template assets (business dark, education) and references for patterns, charts, standard slides, and WPS issues.\n- Workflow designed for multi-slide progressive reveals to ensure full compatibility with WPS.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3adfb8fbe3bb7e5842a4fc33f3375ffaddf2fc61da7a71d0cc94c01d4fc00119"
+}

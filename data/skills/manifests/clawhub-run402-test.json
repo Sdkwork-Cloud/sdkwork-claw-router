@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51000,
+  "uuid": "skill-clawhub-run402-test",
+  "skillKey": "clawhub-run402-test",
+  "name": "Run402 Test",
+  "summary": "Test skill for Run402 — provision AI-native Postgres databases with REST API, auth, and row-level security using x402 micropayments on Base.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.run402_test",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tal Weiss",
+      "features": [
+        "Test skill for Run402 — provision AI-native Postgres databases with REST API, auth, and row-lev."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/run402-test@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1009089?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "run402-test",
+      "url": "https://clawhub.ai/skills/run402-test"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "run402-test",
+    "url": "https://clawhub.ai/skills/run402-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/run402-test-772c9f3759565072.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/run402-test@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-run402-test-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:12c00d902bb8775206a5eb38086b09bc1557305a845a1b460387871db9983bd7",
+      "artifactSizeBytes": 1859
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T21:43:29.804Z"
+}

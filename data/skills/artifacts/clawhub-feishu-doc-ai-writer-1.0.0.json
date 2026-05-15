@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-doc-ai-writer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_doc_ai_writer",
+  "skill": {
+    "id": 67973,
+    "skillKey": "clawhub-feishu-doc-ai-writer",
+    "name": "Feishu Doc Ai Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-doc-ai-writer",
+    "url": "https://clawhub.ai/skills/feishu-doc-ai-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-doc-ai-writer-b66762e8ffa95153.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "飞书文档AI写作助手 — 自动撰写、格式化、美化飞书文档。支持周报生成、会议纪要、项目方案、产品文档等飞书文档的智能创建。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "young-joey",
+      "userId": "s179a1hc0q79dprdtxz2krr4hh869mzn",
+      "displayName": "Young-Joey",
+      "image": "https://avatars.githubusercontent.com/u/25998415?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 67,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778134732664,
+      "changelog": "飞书文档AI写作助手首次发布，提供飞书文档自动生成与美化功能：\n\n- 支持智能生成周报、会议纪要、项目方案、产品文档等结构化内容  \n- 自动美化文档排版，包括标题、表格、关键信息高亮和图片插入  \n- 批量文档创建、模板化生成、内容批量替换  \n- 输出完全符合飞书标准排版  \n- 可与 feishu-bitable-butler 组合使用，构建数据分析与文档生成自动化流程",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:da5903338596fdde7812ae873f3f8c54d33ba713cdc50d54a5da59047e762ac8"
+}

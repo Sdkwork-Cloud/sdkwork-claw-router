@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73041,
+  "uuid": "skill-clawhub-xiapi-premarket-briefing",
+  "skillKey": "clawhub-xiapi-premarket-briefing",
+  "name": "市场盘前概览简报",
+  "summary": "交易日开盘前（8:00-9:25）生成A股市场全景简报，整合市场结构、资金热度、风格轮动、板块强弱等信息，帮助把握当日投资主线。触发词：盘前简报、盘前分析、今日市场、开盘前瞻、市场主线、今日热点。适用场景：交易日开盘前快速了解市场全貌、投资决策参考、识别当日主线方向。不适用场景：非交易日、盘中实时分析、个股深度研究。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiapi_premarket_briefing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "三水清",
+      "features": [
+        "交易日开盘前（8:00-9:25）生成A股市场全景简报，整合市场结构、资金热度、风格轮动、板块强弱等信息，帮助把握当日投资主线。触发词：盘前简报、盘前分析、今日市场、开盘前瞻、市场主线、今日."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiapi-premarket-briefing@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1073262?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiapi-premarket-briefing",
+      "url": "https://clawhub.ai/skills/xiapi-premarket-briefing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiapi-premarket-briefing",
+    "url": "https://clawhub.ai/skills/xiapi-premarket-briefing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiapi-premarket-briefing-d230ec2e6e1c05a3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiapi-premarket-briefing@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiapi-premarket-briefing-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:829337efe494d0d730f16817cdc2c410af9656e02d683a6e3d004c0475f6c15f",
+      "artifactSizeBytes": 2588
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T09:21:06.773Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meme-analyst@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meme_analyst",
+  "skill": {
+    "id": 17065,
+    "skillKey": "clawhub-meme-analyst",
+    "name": "Meme Analyst"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meme-analyst",
+    "url": "https://clawhub.ai/skills/meme-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meme-analyst-0e86ad8f3f1956b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when a user sends you an image, meme, screenshot, or asks you to explain a joke or meme. Also used during cron meme ingestion from Telegram channels. Dec..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "antibagr",
+      "userId": "publishers:antibagr",
+      "displayName": "antibagr",
+      "image": "https://avatars.githubusercontent.com/u/16188591?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 789,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1771277975385,
+      "changelog": "Add Step 2: Decompose phrases to meme core - strip variations to root catchphrase before searching (e.g. 'не всех блядей перекорёжило' → 'блядей корёжит мем')",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4a6b8a4bf7fd663b67f97ccb19aea06db26b4fa3ce10350a960c6d3239ea6f07"
+}

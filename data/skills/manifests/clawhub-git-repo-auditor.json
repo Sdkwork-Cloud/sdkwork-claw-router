@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28715,
+  "uuid": "skill-clawhub-git-repo-auditor",
+  "skillKey": "clawhub-git-repo-auditor",
+  "name": "Git Repo Auditor",
+  "summary": "Audit Git repositories for security issues, large files, sensitive data, and repository health metrics.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_repo_auditor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Derick",
+      "features": [
+        "Audit Git repositories for security issues, large files, sensitive data, and repository health."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/git-repo-auditor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/114499711?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "git-repo-auditor",
+      "url": "https://clawhub.ai/skills/git-repo-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-repo-auditor",
+    "url": "https://clawhub.ai/skills/git-repo-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-repo-auditor-1ed494fc24a3aa6a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/git-repo-auditor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-git-repo-auditor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:41d94e5718a76361e38ea938670a37adedd9abad91af3991c9b2ccf19b8190fd",
+      "artifactSizeBytes": 2478
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T19:39:12.182Z"
+}

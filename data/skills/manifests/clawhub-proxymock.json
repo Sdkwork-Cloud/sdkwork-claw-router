@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17790,
+  "uuid": "skill-clawhub-proxymock",
+  "skillKey": "clawhub-proxymock",
+  "name": "proxymock",
+  "summary": "Record, inspect, mock, replay, and generate API traffic using the proxymock CLI. Use when the user wants to capture HTTP/gRPC/database traffic, create mocks...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proxymock",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Matthew LeRay",
+      "features": [
+        "Record, inspect, mock, replay, and generate API traffic using the proxymock CLI",
+        "Use when the user wants to capture HTTP/gRPC/database traffic, create mocks..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/proxymock@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30029105?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "proxymock",
+      "url": "https://clawhub.ai/skills/proxymock"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proxymock",
+    "url": "https://clawhub.ai/skills/proxymock",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proxymock-4362a196722238ba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/proxymock@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-proxymock-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a6821aa26f334c940a1aa4bd2487433d1939c09935c12a8d21553a76f618c074",
+      "artifactSizeBytes": 1845
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T18:45:57.680Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17756,
+  "uuid": "skill-clawhub-tonfun-feed",
+  "skillKey": "clawhub-tonfun-feed",
+  "name": "TON.fun Feed Relay",
+  "summary": "Subscribe to @TonFunX tweets and auto cross-post tagged posts (#retweet, #share, #repost) to BotWorld, Moltbook, or your platform without API keys.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tonfun_feed",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AlphaFan",
+      "features": [
+        "Subscribe to @TonFunX tweets and auto cross-post tagged posts (#retweet, #share, #repost) to Bo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tonfun-feed@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/215535724?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tonfun-feed",
+      "url": "https://clawhub.ai/skills/tonfun-feed"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tonfun-feed",
+    "url": "https://clawhub.ai/skills/tonfun-feed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tonfun-feed-478a6c9150237256.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tonfun-feed@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tonfun-feed-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d969bbb757e28c0c6ef8c4bea5dba2069eff9ee9737c7692b7af2f499316f30",
+      "artifactSizeBytes": 1924
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T14:13:10.341Z"
+}

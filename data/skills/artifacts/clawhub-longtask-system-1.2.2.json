@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/longtask-system@1.2.2",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.longtask_system",
+  "skill": {
+    "id": 17602,
+    "skillKey": "clawhub-longtask-system",
+    "name": "LongTask System"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "longtask-system",
+    "url": "https://clawhub.ai/skills/longtask-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/longtask-system-6e5fe560d87902a9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "State-file driven long task manager splitting tasks into sequential subtasks, supporting multi-agent collaboration and real-time visual monitoring."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "noah-1106",
+      "userId": "s1786dbb8r9dh5a5r5xxmjqs2s83gej1",
+      "displayName": "noah",
+      "image": "https://avatars.githubusercontent.com/u/242364666?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 632,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.2.2",
+      "createdAt": 1774347089738,
+      "changelog": "Fix: Trigger cockpit render when step completes via complete_step.sh. Ensure final step completion is reflected in UI.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5add4894f229d401fff5308e4c890a83662d741d6d05df55650e8b6d472332f5"
+}

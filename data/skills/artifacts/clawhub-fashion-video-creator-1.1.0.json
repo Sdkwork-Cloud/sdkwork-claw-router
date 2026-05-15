@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fashion-video-creator@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fashion_video_creator",
+  "skill": {
+    "id": 59099,
+    "skillKey": "clawhub-fashion-video-creator",
+    "name": "Fashion Video Creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fashion-video-creator",
+    "url": "https://clawhub.ai/skills/fashion-video-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fashion-video-creator-7a7ca798a4c6a59b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "穿搭视频创作 — 生成虚拟模特图(Seedream 4.5/5.0) + Seedance 2.0 视频Prompt + 操作手册(SOP)。支持单条和批量模式。Use when: '帮我做穿搭视频', '生成模特图', 'generate outfit video', '批量生成穿搭prompt', '穿搭创作..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dingtom336-gif",
+      "userId": "s17aepsh6v86z2ajsq3ng9tgm983g9pt",
+      "displayName": "dingtom336-gif",
+      "image": "https://avatars.githubusercontent.com/u/256118512?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775067133861,
+      "changelog": "v1.1.0 — 94分优化版",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:de9c45143744117dbe7afab804b87b5ea2d061f308568f40bf4bfdb33f409b3e"
+}

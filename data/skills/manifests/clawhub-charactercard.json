@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60747,
+  "uuid": "skill-clawhub-charactercard",
+  "skillKey": "clawhub-charactercard",
+  "name": "Sillytavern Charactecard",
+  "summary": "完美兼容 SillyTavern 角色卡的导入、解析、导出功能。支持 V1/V2/V3 规范，支持 PNG 嵌入式 JSON 和纯 JSON 格式。当用户需要导入、查看、编辑或导出 SillyTavern 角色卡时使用此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.charactercard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FanYin1",
+      "features": [
+        "完美兼容 SillyTavern 角色卡的导入、解析、导出功能。支持 V1/V2/V3 规范，支持 PNG 嵌入式 JSON 和纯 JSON 格式。当用户需要导入、查看、编辑或导出 Sill."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/charactercard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83162102?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "charactercard",
+      "url": "https://clawhub.ai/skills/charactercard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "charactercard",
+    "url": "https://clawhub.ai/skills/charactercard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/charactercard-1e20f7de9bfd8767.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/charactercard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-charactercard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:10db8ec3d4d38a382050fbe399df3272895ab4ab8d51906db78216a56d3798e1",
+      "artifactSizeBytes": 2405
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T02:50:03.838Z"
+}

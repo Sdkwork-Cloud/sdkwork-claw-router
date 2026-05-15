@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-evolution@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_evolution",
+  "skill": {
+    "id": 51449,
+    "skillKey": "clawhub-auto-evolution",
+    "name": "Auto Evolution (Hybrid Mode)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-evolution",
+    "url": "https://clawhub.ai/skills/auto-evolution",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-evolution-fe2aecd28e842f36.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-agent auto-evolution system with hybrid mode — orchestrate review-execute-audit loops with 4 roles (Coordinator, Reviewer, Executor, Auditor). Supports..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cjboy007",
+      "userId": "s17c8f5qp6wpzyxcf0v2588kmd83qzw7",
+      "displayName": "Jaden's built a claw",
+      "image": "https://avatars.githubusercontent.com/u/64246343?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 244,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1774753962979,
+      "changelog": "v2.0.0 - 混合模式实现：支持简单任务手动 Subtask 和复杂任务自动 Subtask 生成。新增 5 维度复杂度评分模型、任务创建工具、Reviewer 启动工具。完全向后兼容。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:370e90bb30aac87c91f00a9f2cdc882fce2375e1a87383d6be8c52358978c0fa"
+}

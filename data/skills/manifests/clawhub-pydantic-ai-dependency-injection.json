@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31722,
+  "uuid": "skill-clawhub-pydantic-ai-dependency-injection",
+  "skillKey": "clawhub-pydantic-ai-dependency-injection",
+  "name": "Pydantic Ai Dependency Injection",
+  "summary": "Implement dependency injection in PydanticAI agents using RunContext and deps_type. Use when agents need database connections, API clients, user context, or...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pydantic_ai_dependency_injection",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kevin Anderson",
+      "features": [
+        "Implement dependency injection in PydanticAI agents using RunContext and deps_type",
+        "Use when agents need database connections, API clients, user context, or..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pydantic-ai-dependency-injection@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17010022?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pydantic-ai-dependency-injection",
+      "url": "https://clawhub.ai/skills/pydantic-ai-dependency-injection"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pydantic-ai-dependency-injection",
+    "url": "https://clawhub.ai/skills/pydantic-ai-dependency-injection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pydantic-ai-dependency-injection-949b4cf16edd82fb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pydantic-ai-dependency-injection@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pydantic-ai-dependency-injection-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:680407c75896c52abf49ebe4550e1c0d6a73e201ab73e3e0d6b620b1f355ec00",
+      "artifactSizeBytes": 2246
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T04:09:29.038Z"
+}

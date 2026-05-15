@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70511,
+  "uuid": "skill-clawhub-motion-video-skill",
+  "skillKey": "clawhub-motion-video-skill",
+  "name": "动画视频制作skill",
+  "summary": "根据文本、脚本或 Markdown 生成结构化讲解动画视频，使用 Web 页面制作和预览 AE / PR 风格的动效。必须严格根据解说文本规划合理的动画播放与切换时间，先生成预览，只有在用户明确确认后才导出 mp4。适用于知识讲解、产品介绍、口播配套动画、字幕强化、步骤演示和数据解说视频。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.motion_video_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MrQ",
+      "features": [
+        "根据文本、脚本或 Markdown 生成结构化讲解动画视频，使用 Web 页面制作和预览 AE / PR 风格的动效。必须严格根据解说文本规划合理的动画播放与切换时间，先生成预览，只有在用户."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/motion-video-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/183293891?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "motion-video-skill",
+      "url": "https://clawhub.ai/skills/motion-video-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "motion-video-skill",
+    "url": "https://clawhub.ai/skills/motion-video-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/motion-video-skill-5a5f67f0f118ed0e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/motion-video-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-motion-video-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:192ab447300c21a823d0d98f397788a38f45194f0d0f969351bb2e85e527a44a",
+      "artifactSizeBytes": 2868
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T15:53:56.402Z"
+}

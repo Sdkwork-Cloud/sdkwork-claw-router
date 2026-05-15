@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65621,
+  "uuid": "skill-clawhub-cognitive-loop",
+  "skillKey": "clawhub-cognitive-loop",
+  "name": "Cognitive Loop",
+  "summary": "认知闭环执行 Skill - 实现「思考-行动-反思-测试」四环闭环的高自主性 Agent 架构。当需要任务规划、多步骤执行、错误恢复、测试验证时激活。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cognitive_loop",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "World-peace001",
+      "features": [
+        "认知闭环执行 Skill",
+        "实现「思考-行动-反思-测试」四环闭环的高自主性 Agent 架构。当需要任务规划、多步骤执行、错误恢复、测试验证时激活。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cognitive-loop@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/175280674?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cognitive-loop",
+      "url": "https://clawhub.ai/skills/cognitive-loop"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cognitive-loop",
+    "url": "https://clawhub.ai/skills/cognitive-loop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cognitive-loop-a2315d34e2df929f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cognitive-loop@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cognitive-loop-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:19d886e64d112c5a502b74d966ca51af035f8c4d10a280492b24f4239c6042ce",
+      "artifactSizeBytes": 2010
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T10:43:37.565Z"
+}

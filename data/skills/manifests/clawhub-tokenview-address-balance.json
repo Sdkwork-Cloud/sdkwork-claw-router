@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30711,
+  "uuid": "skill-clawhub-tokenview-address-balance",
+  "skillKey": "clawhub-tokenview-address-balance",
+  "name": "Blockchain Balance Checker",
+  "summary": "Query the balance of a blockchain address via Tokenview API, defaulting to BTC and requiring TOKENVIEW_API_KEY in the environment.",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tokenview_address_balance",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bdonglobal",
+      "features": [
+        "Query the balance of a blockchain address via Tokenview API, defaulting to BTC and requiring TO."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tokenview-address-balance@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/116442891?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tokenview-address-balance",
+      "url": "https://clawhub.ai/skills/tokenview-address-balance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tokenview-address-balance",
+    "url": "https://clawhub.ai/skills/tokenview-address-balance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tokenview-address-balance-db3833fd44d1a0d8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tokenview-address-balance@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-tokenview-address-balance-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c3c77340fb982ec569ef77dbfcbd2080bb046774a682500bd0fd40a878a2de2b",
+      "artifactSizeBytes": 2100
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T12:44:18.558Z"
+}

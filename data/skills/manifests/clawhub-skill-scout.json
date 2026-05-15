@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24772,
+  "uuid": "skill-clawhub-skill-scout",
+  "skillKey": "clawhub-skill-scout",
+  "name": "Skill Scout",
+  "summary": "Search, discover, compare, and install OpenClaw skills from ClawHub using CLI and web lookups.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_scout",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mohdalhashemi98-hue",
+      "features": [
+        "Search, discover, compare, and install OpenClaw skills from ClawHub using CLI and web lookups."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-scout@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/241047511?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-scout",
+      "url": "https://clawhub.ai/skills/skill-scout"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-scout",
+    "url": "https://clawhub.ai/skills/skill-scout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-scout-e66ba352cb11e0b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-scout@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-scout-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e63461f8f1bf1ae8a6fbbdf39be2e3f8540837ba7b4b34448039b1995c3de885",
+      "artifactSizeBytes": 2386
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T22:17:10.317Z"
+}

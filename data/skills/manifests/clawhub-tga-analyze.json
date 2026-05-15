@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42755,
+  "uuid": "skill-clawhub-tga-analyze",
+  "skillKey": "clawhub-tga-analyze",
+  "name": "TGA Analyze",
+  "summary": "Logs into TGA (hortorgames), parses projectId and dashboardId from panel URL, downloads report zip via API, unzips to tga-downloads/, and analyzes all xlsx f...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tga_analyze",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xifengxi",
+      "features": [
+        "Logs into TGA (hortorgames), parses projectId and dashboardId from panel URL, downloads report."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tga-analyze@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10802972?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tga-analyze",
+      "url": "https://clawhub.ai/skills/tga-analyze"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tga-analyze",
+    "url": "https://clawhub.ai/skills/tga-analyze",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tga-analyze-6699628ebac7e46e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tga-analyze@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tga-analyze-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2c059e5710b891edff143d846a6b9bbcf5126bf674989ff6c3f5f72ab0ce3eb3",
+      "artifactSizeBytes": 2469
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T12:02:51.899Z"
+}

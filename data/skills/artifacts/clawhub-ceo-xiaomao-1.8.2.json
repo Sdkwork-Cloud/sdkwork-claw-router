@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ceo-xiaomao@1.8.2",
+  "version": "1.8.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ceo_xiaomao",
+  "skill": {
+    "id": 66726,
+    "skillKey": "clawhub-ceo-xiaomao",
+    "name": "CEO小茂能力包"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ceo-xiaomao",
+    "url": "https://clawhub.ai/skills/ceo-xiaomao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ceo-xiaomao-07224adc1d52cec9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CEO小茂聚合技能包。用于外贸 CEO/业务负责人场景：协调汇报、Google Maps 商务联系人收集、OneABC 模型调用、邮件发送、WhatsApp 消息发送、WhatsApp 会话助理，并支持一键初始化模板文件。适用于想安装后快速搭建一套可配置业务工作流的人。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xingfan0828",
+      "userId": "s17crm29x5j7ry8q5144ayzz6983kfnp",
+      "displayName": "Xingfan0828",
+      "image": "https://avatars.githubusercontent.com/u/95142250?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.8.2",
+      "createdAt": 1775109246175,
+      "changelog": "Public clean edition: softened wording, neutral credential naming, removed host-specific fallback paths, and improved scan-friendliness while preserving functionality",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b542268686ae79f61b355cc929d792f9543f378b6c38affd28a613a361672cb2"
+}

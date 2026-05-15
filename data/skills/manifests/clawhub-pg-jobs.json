@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53596,
+  "uuid": "skill-clawhub-pg-jobs",
+  "skillKey": "clawhub-pg-jobs",
+  "name": "Pg Jobs",
+  "summary": "Use when interacting with the ProxyGate job marketplace / bounty board — listing jobs, creating bounties, claiming work, submitting results, or managing job...",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pg_jobs",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jwelten",
+      "features": [
+        "Use when interacting with the ProxyGate job marketplace / bounty board — listing jobs, creating."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pg-jobs@0.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/194850832?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pg-jobs",
+      "url": "https://clawhub.ai/skills/pg-jobs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pg-jobs",
+    "url": "https://clawhub.ai/skills/pg-jobs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pg-jobs-21339b9c528d79da.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pg-jobs@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pg-jobs-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a466109cfec5733e72be2407109e945ab5d3a649c4d9e8ab539f2b1bb7f54eff",
+      "artifactSizeBytes": 1890
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T22:33:46.948Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polymarket-sdk@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_sdk",
+  "skill": {
+    "id": 15396,
+    "skillKey": "clawhub-polymarket-sdk",
+    "name": "polymarket-sdk"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-sdk",
+    "url": "https://clawhub.ai/skills/polymarket-sdk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-sdk-063f78bf4c2eef93.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with Polymarket US prediction markets. Use when the user wants to: browse/search prediction markets, check market prices and odds, view portfolio po..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tyhouch",
+      "userId": "publishers:tyhouch",
+      "displayName": "Tyler Houchin",
+      "image": "https://avatars.githubusercontent.com/u/64996608?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 983,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771286035906,
+      "changelog": "Initial release of the Polymarket skill.\n\n- Enables browsing, searching, and trading on Polymarket US prediction markets via the Python SDK.\n- Supports viewing market data, prices, odds, and settlement info without authentication.\n- Allows portfolio management and trading with API key authentication (see setup instructions).\n- Enforces important trading safety rules: always preview and confirm before executing orders.\n- Clearly outlines result formatting for user-friendly market and position data displays.\n- Requires the polymarket-us Python package for all functionality.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c25da5b19f98663e316fb09fbcbd257ebbcf7e0497b5efc1d519f3c5b638b4dc"
+}

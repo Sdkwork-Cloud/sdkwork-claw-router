@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64246,
+  "uuid": "skill-clawhub-ai-talent-hunter",
+  "skillKey": "clawhub-ai-talent-hunter",
+  "name": "GitHub 人才猎手 (GitHub Talent Hunter)",
+  "summary": "从 GitHub 找到最匹配的技术人才，生成个性化触达话术。适用于招聘工程师、寻找技术合伙人、猎头交付候选人等场景。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_talent_hunter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KeDouPi(珂抖屁)",
+      "features": [
+        "从 GitHub 找到最匹配的技术人才，生成个性化触达话术。适用于招聘工程师、寻找技术合伙人、猎头交付候选人等场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-talent-hunter@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11420318?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-talent-hunter",
+      "url": "https://clawhub.ai/skills/ai-talent-hunter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-talent-hunter",
+    "url": "https://clawhub.ai/skills/ai-talent-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-talent-hunter-76f9e011d4725d8c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-talent-hunter@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-talent-hunter-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:305a486bcbf495fe8a0a7d9eb432b89c6f5e8bcffe9d8283800b37241eb904a0",
+      "artifactSizeBytes": 2414
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T04:43:55.532Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nepse-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nepse_skill",
+  "skill": {
+    "id": 32119,
+    "skillKey": "clawhub-nepse-skill",
+    "name": "Nepse Analyst"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nepse-skill",
+    "url": "https://clawhub.ai/skills/nepse-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nepse-skill-e0208d92950f8bc2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "NEPSE stock market analyst for Nepal. Use this skill whenever the user asks about NEPSE stocks, share prices, technical analysis, buy/sell signals, market al..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "uddin-rajaul",
+      "userId": "s172yxex7smeyq2bgdzgdnn8hn84x15x",
+      "displayName": "uddin-rajaul",
+      "image": "https://avatars.githubusercontent.com/u/110954532?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776264797571,
+      "changelog": "Initial release: Adaptive NEPSE stock analysis skill for Nepal.\n\n- Provides technical analysis, fundamentals, and market alerts for NEPSE stocks.\n- Adapts all indicators (EMA, RSI, ADX, OBV) to limited or new stock data; transparently notes data quality.\n- Offers watchlist management and price alerts, with instructions for cron-based daily alerting.\n- Returns structured, NEPSE-specific analysis with strong risk disclaimers.\n- Scrapes data from Merolagani; falls back to Sharesansar if needed.\n- Requires Python3 and installs dependencies automatically if missing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:18c4a73e37b98d31f17d8bf1138173e9799608c2fc403f6d0bf6899e01ab4596"
+}

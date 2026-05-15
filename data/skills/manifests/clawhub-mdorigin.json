@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36038,
+  "uuid": "skill-clawhub-mdorigin",
+  "skillKey": "clawhub-mdorigin",
+  "name": "Mdorigin",
+  "summary": "Build, preview, and deploy markdown-first sites with local preview, Cloudflare bundles, and agent-readable raw markdown routes.",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mdorigin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jolestar",
+      "features": [
+        "Build, preview, and deploy markdown-first sites with local preview, Cloudflare bundles, and age."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mdorigin@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77268?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mdorigin",
+      "url": "https://clawhub.ai/skills/mdorigin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mdorigin",
+    "url": "https://clawhub.ai/skills/mdorigin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mdorigin-ed8e9f28f23275f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mdorigin@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mdorigin-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3522681feea40cbff1220709411287e0a184651ffaf38e2da9e5fcfeb6cf88da",
+      "artifactSizeBytes": 1897
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T05:55:51.520Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/balance-checker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.balance_checker",
+  "skill": {
+    "id": 60814,
+    "skillKey": "clawhub-balance-checker",
+    "name": "Balance Checker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "balance-checker",
+    "url": "https://clawhub.ai/skills/balance-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/balance-checker-8f042c199ff09ef9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询 AI API 服务商的余额（DeepSeek、Moonshot/Kimi、火山引擎）。当用户说\"查余额\"、\"还有多少额度\"、\"余额多少\"时自动触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kyya",
+      "userId": "s1780ndkmn44942ajpzvcgf84s8434t7",
+      "displayName": "kyya",
+      "image": "https://avatars.githubusercontent.com/u/13448248?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1737,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770199771426,
+      "changelog": "Initial release of balance-checker skill.\n\n- Allows users to check balances across DeepSeek, Moonshot/Kimi, and 火山引擎 AI API providers with one command.\n- Triggers automatically on common balance-related keywords (e.g. \"查余额\", \"余额多少\").\n- Supports balance lookup via API keys and environment variables.\n- Includes scripts and setup instructions for initial installation, especially for 火山引擎 (Python SDK required).\n- Provides a sample output for easy reference.\n- Documentation covers supported providers, configuration, and links to respective API docs.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f95f77292dfaf7053c33dffaf36c7a7b24516729bce824022398aeccc754ee60"
+}

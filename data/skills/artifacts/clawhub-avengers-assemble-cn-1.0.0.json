@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/avengers-assemble-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.avengers_assemble_cn",
+  "skill": {
+    "id": 65301,
+    "skillKey": "clawhub-avengers-assemble-cn",
+    "name": "Avengers Assemble CN"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "avengers-assemble-cn",
+    "url": "https://clawhub.ai/skills/avengers-assemble-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/avengers-assemble-cn-f33ea678cfa75b56.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "复仇者联盟主题多Agent协作系统（中文版）。尼克·弗瑞调度6位超级英雄通过sessions_spawn委派任务。融入中国漫威粉丝梗文化，轮询调度、先回复再派遣、sessionKey复用。适合需要多元专业能力的复杂任务协作。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenxinbest",
+      "userId": "s170bn7cpbskczc812w19yynqx83k9tx",
+      "displayName": "ChenXinBest",
+      "image": "https://avatars.githubusercontent.com/u/62179299?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 321,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773887635970,
+      "changelog": "avengers-assemble-cn 1.0.0\n\n- 发布首个中文版多Agent复仇者联盟主题协作系统\n- 新增尼克·弗瑞调度6位英雄（美国队长、钢铁侠、浩克、黑寡妇、鹰眼、雷神）完成任务分派\n- 独创轮询调度、sessionKey复用和多任务并行派遣机制\n- 全面融入中国漫威粉丝梗文化与本地化沟通风格\n- 严格分工：“先回复再派遣”与“sessionKey必传”两条铁律\n- 包含详细威胁等级评估与任务拆解流程，支持多元专业协作",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bb12adc143412739b84f3041b9ed57873ce68e458b53bddd8179ec5270f51191"
+}

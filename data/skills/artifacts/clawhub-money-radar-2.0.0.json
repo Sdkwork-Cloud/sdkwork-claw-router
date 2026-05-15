@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/money-radar@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.money_radar",
+  "skill": {
+    "id": 69544,
+    "skillKey": "clawhub-money-radar",
+    "name": "MoneyRadar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "money-radar",
+    "url": "https://clawhub.ai/skills/money-radar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/money-radar-ce71a78eb75a1046.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "海外金融产品推荐顾问。帮用户查询和筛选港美股券商、海外银行账户、U卡（虚拟卡）、加密货币交易所、汇款服务的开户奖励、邀请码、注册条件和推荐链接。 当用户问到以下场景时务必使用此 skill：开户奖励、券商推荐、U卡推荐、海外银行开户、 加密交易所注册、汇款转账优惠、邀请码、referral、sign-up bon..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "laosji",
+      "userId": "s17bvrvdh2c2agckbj8csxcmb583ysa0",
+      "displayName": "laosji",
+      "image": "https://avatars.githubusercontent.com/u/71160766?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 510,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773994050453,
+      "changelog": "Version 2.0.0 — Major upgrade for smarter, region-aware overseas finance recommendations\n\n- Upgraded from a simple offer query tool to an intelligent advisor: now analyzes user identity, region, and needs before recommending products.\n- Reworked data structure: supports richer product info and region-matching logic.\n- Adds region/identity-based smart filtering to recommend only accounts the user can actually register.\n- Enhanced response format: includes not just bonus, but also requirements, links, update time, detailed tutorials (where available), plus added tips and disclaimers.\n- Now always prompts user to clarify location if unclear, for more relevant results.\n- Expanded product categories and blog tutorial mapping for deeper guidance.\n- Removed logo.svg.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:119d2dee111c4f402157a01cb2bc0ccacdbee9aa52a3fbf48e3591e9f6f3116a"
+}

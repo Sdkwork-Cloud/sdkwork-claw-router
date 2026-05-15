@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41220,
+  "uuid": "skill-clawhub-vcf-compliance-mcp",
+  "skillKey": "clawhub-vcf-compliance-mcp",
+  "name": "VCF Regulatory Compliance",
+  "summary": "An MCP server that interfaces with VMware Aria Operations to run regulatory compliance checks (ISO 27001, PCI DSS, CIS, etc.) against the VCF environment.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vcf_compliance_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rohit Kasture",
+      "features": [
+        "An MCP server that interfaces with VMware Aria Operations to run regulatory compliance checks (."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vcf-compliance-mcp@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/219512019?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vcf-compliance-mcp",
+      "url": "https://clawhub.ai/skills/vcf-compliance-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vcf-compliance-mcp",
+    "url": "https://clawhub.ai/skills/vcf-compliance-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vcf-compliance-mcp-999d7c796ea4bd4c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vcf-compliance-mcp@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-vcf-compliance-mcp-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f611237dfcdaa39994ed63e23cd56109a8c71055aaea733f1cd63338d3e550b5",
+      "artifactSizeBytes": 2028
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T20:06:33.325Z"
+}

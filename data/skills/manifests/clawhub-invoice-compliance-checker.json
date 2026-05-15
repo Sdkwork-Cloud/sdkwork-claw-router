@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38905,
+  "uuid": "skill-clawhub-invoice-compliance-checker",
+  "skillKey": "clawhub-invoice-compliance-checker",
+  "name": "Invoice Compliance Checker",
+  "summary": "Provides structured analysis, templates, and recommendations to assess invoice compliance with regulations and internal policies without executing transactions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.invoice_compliance_checker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Provides structured analysis, templates, and recommendations to assess invoice compliance with."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/invoice-compliance-checker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "invoice-compliance-checker",
+      "url": "https://clawhub.ai/skills/invoice-compliance-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "invoice-compliance-checker",
+    "url": "https://clawhub.ai/skills/invoice-compliance-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/invoice-compliance-checker-24a6f73dbcc9a03a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/invoice-compliance-checker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-invoice-compliance-checker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7fbe4b5f14917abd98eb05b10a2f8c57e4c9289e8efe4823f43c69a0043f0c73",
+      "artifactSizeBytes": 2470
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T03:45:45.324Z"
+}

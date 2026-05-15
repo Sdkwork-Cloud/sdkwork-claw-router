@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62321,
+  "uuid": "skill-clawhub-cpp-code-review-master",
+  "skillKey": "clawhub-cpp-code-review-master",
+  "name": "C++ Code Review Master",
+  "summary": "组合式 C++ 代码评审方案 — 融合静态分析、AI 推理、多轮迭代评审、C++ 专项检查。 适用于：PR review、增量代码审查、全量项目评审、代码质量评分。 触发词：review cpp、cpp 代码评审、C++ review、代码审查。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cpp_code_review_master",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bigmasteryy",
+      "features": [
+        "组合式 C++ 代码评审方案 — 融合静态分析、AI 推理、多轮迭代评审、C++ 专项检查。 适用于：PR review、增量代码审查、全量项目评审、代码质量评分。 触发词：review c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cpp-code-review-master@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48463859?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cpp-code-review-master",
+      "url": "https://clawhub.ai/skills/cpp-code-review-master"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cpp-code-review-master",
+    "url": "https://clawhub.ai/skills/cpp-code-review-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cpp-code-review-master-ddba07c7764a0d7c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cpp-code-review-master@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cpp-code-review-master-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:72cc302f2a2adf06c99c62043501e04cc97c87260119c13ed5846bf611f84bd0",
+      "artifactSizeBytes": 2182
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T14:33:59.914Z"
+}

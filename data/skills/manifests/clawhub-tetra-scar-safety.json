@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41048,
+  "uuid": "skill-clawhub-tetra-scar-safety",
+  "skillKey": "clawhub-tetra-scar-safety",
+  "name": "Tetra Scar Safety",
+  "summary": "Agent safety that learns from incidents. Reflex arc blocks repeat threats without LLM calls.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tetra_scar_safety",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aibenyclaude-coder",
+      "features": [
+        "Agent safety that learns from incidents",
+        "Reflex arc blocks repeat threats without LLM calls."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tetra-scar-safety@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259613785?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tetra-scar-safety",
+      "url": "https://clawhub.ai/skills/tetra-scar-safety"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tetra-scar-safety",
+    "url": "https://clawhub.ai/skills/tetra-scar-safety",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tetra-scar-safety-ed3fd45a9d6bb726.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tetra-scar-safety@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tetra-scar-safety-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b12f026e027c1fe5c7ffc24ac03f8654fd9fd8943d019285fe620618d47393cd",
+      "artifactSizeBytes": 2401
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T02:55:48.115Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12082,
+  "uuid": "skill-clawhub-transport-investigation-acas-aligned-pack",
+  "skillKey": "clawhub-transport-investigation-acas-aligned-pack",
+  "name": "Investigation Pack (ACAS-aligned)",
+  "summary": "Generates ACAS-aligned investigation invite wording, neutral question sets, and evidence logs. USE WHEN starting a driver incident investigation/interview.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.transport_investigation_acas_aligned_pack",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KOwl64",
+      "features": [
+        "Generates ACAS-aligned investigation invite wording, neutral question sets, and evidence logs",
+        "USE WHEN starting a driver incident investigation/interview."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/transport-investigation-acas-aligned-pack@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59417033?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "transport-investigation-acas-aligned-pack",
+      "url": "https://clawhub.ai/skills/transport-investigation-acas-aligned-pack"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "transport-investigation-acas-aligned-pack",
+    "url": "https://clawhub.ai/skills/transport-investigation-acas-aligned-pack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/transport-investigation-acas-aligned-pack-a3eb7386052ddfe7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/transport-investigation-acas-aligned-pack@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-transport-investigation-acas-aligned-pack-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a6ccc6a74d1f20b465aeab85cfaca01463079f3ceeb621d0099c5788e6141abc",
+      "artifactSizeBytes": 2678
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-17T14:40:28.767Z"
+}

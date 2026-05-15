@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31049,
+  "uuid": "skill-clawhub-logistia-route-planner",
+  "skillKey": "clawhub-logistia-route-planner",
+  "name": "Logistia Route Planner",
+  "summary": "Logistia Route Planner integration. Manage Routes, Vehicles, Drivers, Depots, OptimizationProfiles. Use when the user wants to interact with Logistia Route P...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.logistia_route_planner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Logistia Route Planner integration",
+        "Manage Routes, Vehicles, Drivers, Depots, OptimizationProfiles",
+        "Use when the user wants to interact with Logistia Route P..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/logistia-route-planner@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "logistia-route-planner",
+      "url": "https://clawhub.ai/skills/logistia-route-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "logistia-route-planner",
+    "url": "https://clawhub.ai/skills/logistia-route-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/logistia-route-planner-94a76742ddd405e0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/logistia-route-planner@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-logistia-route-planner-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9f811de5659b98974345fed34cf7161990ac277d84394267255320885e16c39a",
+      "artifactSizeBytes": 1973
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:42:33.283Z"
+}

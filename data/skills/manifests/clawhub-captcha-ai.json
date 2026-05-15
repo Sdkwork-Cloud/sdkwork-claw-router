@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12055,
+  "uuid": "skill-clawhub-captcha-ai",
+  "skillKey": "clawhub-captcha-ai",
+  "name": "ClawPrint - Captchas for AI verification",
+  "summary": "Issue ClawPrint reverse-CAPTCHA challenges to verify that another user or agent is a real AI, not a human. Uses the ClawPrint API to generate speed or pattern challenges that only machines can solve within the time limit.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.captcha_ai",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fusionlabssource",
+      "features": [
+        "Issue ClawPrint reverse-CAPTCHA challenges to verify that another user or agent is a real AI, n.",
+        "Uses the ClawPrint API to generate speed or pattern challenges that only machines can solve wit."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/captcha-ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/142408888?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "captcha-ai",
+      "url": "https://clawhub.ai/skills/captcha-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "captcha-ai",
+    "url": "https://clawhub.ai/skills/captcha-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/captcha-ai-22431075bac3852f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/captcha-ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-captcha-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:21cbb64fe78caec18f08ec318b89887d07cd039e87322f7caa25ce7da604c8c8",
+      "artifactSizeBytes": 2261
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T06:08:35.794Z"
+}

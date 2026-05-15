@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weather-pollen@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_pollen",
+  "skill": {
+    "id": 9007,
+    "skillKey": "clawhub-weather-pollen",
+    "name": "Weather Pollen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-pollen",
+    "url": "https://clawhub.ai/skills/weather-pollen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-pollen-c3e71fd54a437a54.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Weather and pollen reports for any location using free APIs. Get current conditions, forecasts, and pollen data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thesethrose",
+      "userId": "publishers:thesethrose",
+      "displayName": "Seth Rose",
+      "image": "https://avatars.githubusercontent.com/u/10383809?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4973,
+      "installsAllTime": 27,
+      "installsCurrent": 26,
+      "stars": 2,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1768400884123,
+      "changelog": "test",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1e1cdc53f126aad40dcf1edc749f3a54e56c21861cc75619e26dde8906f0fe30"
+}

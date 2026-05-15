@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23309,
+  "uuid": "skill-clawhub-pixel-attribution-readiness-checker",
+  "skillKey": "clawhub-pixel-attribution-readiness-checker",
+  "name": "Ads Pixel Readiness",
+  "summary": "Validate event tracking and attribution readiness for Meta Pixel, Google Ads tags, TikTok Pixel, and cross-channel optimization.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pixel_attribution_readiness_checker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "danyangliu",
+      "features": [
+        "Validate event tracking and attribution readiness for Meta Pixel, Google Ads tags, TikTok Pixel."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pixel-attribution-readiness-checker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/184733968?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pixel-attribution-readiness-checker",
+      "url": "https://clawhub.ai/skills/pixel-attribution-readiness-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pixel-attribution-readiness-checker",
+    "url": "https://clawhub.ai/skills/pixel-attribution-readiness-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pixel-attribution-readiness-checker-fc1c09826c83d01f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pixel-attribution-readiness-checker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pixel-attribution-readiness-checker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:191a82f2ad88e18fc6847ac9053ddfd7fe1d29c69ce577023191183aed1cddc1",
+      "artifactSizeBytes": 2490
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T03:19:00.232Z"
+}

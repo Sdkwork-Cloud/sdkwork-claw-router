@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66111,
+  "uuid": "skill-clawhub-lj22503-context-manager",
+  "skillKey": "clawhub-lj22503-context-manager",
+  "name": "Context Manager",
+  "summary": "［何时使用］当用户需要管理个人 Context（上下文）时；当用户说\"记录触动事\"\"整理认知\"\"建立知识连接\"时；当检测到\"晨间日记\"\"认知地图\"\"知识整合\"等关键词时",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lj22503_context_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lj22503",
+      "features": [
+        "［何时使用］当用户需要管理个人 Context（上下文）时；当用户说\"记录触动事\"\"整理认知\"\"建立知识连接\"时；当检测到\"晨间日记\"\"认知地图\"\"知识整合\"等关键词时"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lj22503-context-manager@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/170225356?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lj22503-context-manager",
+      "url": "https://clawhub.ai/skills/lj22503-context-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lj22503-context-manager",
+    "url": "https://clawhub.ai/skills/lj22503-context-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lj22503-context-manager-dd0191d12826377b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lj22503-context-manager@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lj22503-context-manager-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:98414fedb9bdd8e7a35a35663f18fa6b1e447dce940265ba5a4b1dcadea61ec1",
+      "artifactSizeBytes": 2766
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T01:29:38.691Z"
+}

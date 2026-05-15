@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27518,
+  "uuid": "skill-clawhub-warehouse-reports",
+  "skillKey": "clawhub-warehouse-reports",
+  "name": "warehouse",
+  "summary": "Generate warehouse analytics charts, table images, and report-ready visuals from SQLite/CSV data. Use when the user asks for warehouse charts, product table...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.warehouse_reports",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CHINMAYA GARNAIK",
+      "features": [
+        "Generate warehouse analytics charts, table images, and report-ready visuals from SQLite/CSV data",
+        "Use when the user asks for warehouse charts, product table..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/warehouse-reports@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86422995?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "warehouse-reports",
+      "url": "https://clawhub.ai/skills/warehouse-reports"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "warehouse-reports",
+    "url": "https://clawhub.ai/skills/warehouse-reports",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/warehouse-reports-6612b1692ee3ca80.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/warehouse-reports@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-warehouse-reports-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc9316e694b8aaef90a6aa3e4d10df47b7bc867af8d137913aaf2de91cf53b5a",
+      "artifactSizeBytes": 2324
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T18:45:40.048Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13133,
+  "uuid": "skill-clawhub-railway-deploy",
+  "skillKey": "clawhub-railway-deploy",
+  "name": "Railway Deploy",
+  "summary": "This skill should be used when the user wants to push code to Railway, says \"railway up\", \"deploy\", \"deploy to railway\", \"ship\", or \"push\". For initial setup or creating services, use new skill. For Docker images, use environment skill.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.railway_deploy",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dbanys",
+      "features": [
+        "This skill should be used when the user wants to push code to Railway, says \"railway up\", \"depl.",
+        "For initial setup or creating services, use new skill",
+        "For Docker images, use environment skill."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/railway-deploy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18741261?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "railway-deploy",
+      "url": "https://clawhub.ai/skills/railway-deploy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "railway-deploy",
+    "url": "https://clawhub.ai/skills/railway-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/railway-deploy-34433cfcd74b831a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/railway-deploy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-railway-deploy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f006ecdd512b50e53f5f3ae103910acfc2d690e02c53c425b85cc828b4ea2a80",
+      "artifactSizeBytes": 2422
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T18:04:04.200Z"
+}

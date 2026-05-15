@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57050,
+  "uuid": "skill-clawhub-knowair-air-quality",
+  "skillKey": "clawhub-knowair-air-quality",
+  "name": "KnowAir Air Quality 明气空气质量",
+  "summary": "Get hourly (up to 360 hours) and daily (up to 15 days) weather forecasts by latitude and longitude via the Caiyun Weather API. Returns temperature trends, we...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knowair_air_quality",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shuo Wang",
+      "features": [
+        "Get hourly (up to 360 hours) and daily (up to 15 days) weather forecasts by latitude and longit.",
+        "Returns temperature trends, we..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/knowair-air-quality@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16516703?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "knowair-air-quality",
+      "url": "https://clawhub.ai/skills/knowair-air-quality"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knowair-air-quality",
+    "url": "https://clawhub.ai/skills/knowair-air-quality",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knowair-air-quality-01860bf1d3d41cce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/knowair-air-quality@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-knowair-air-quality-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:030ca0e6ef7d09696372ae83139e4d769d108d0fa3f76c22624e4dd7eb91c2f3",
+      "artifactSizeBytes": 2418
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T13:59:41.332Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60679,
+  "uuid": "skill-clawhub-xiaodu-leave-home-mode-official",
+  "skillKey": "clawhub-xiaodu-leave-home-mode-official",
+  "name": "xiaodu-leave-home-mode-official",
+  "summary": "基于已安装的 xiaodu-control-official 编排离家场景。当用户说“出门了”“离家模式”“出门前检查一下”“帮我把家里设备关一下”时使用。这个 skill 会复用 xiaodu-control-official 的现有脚本，对小度智能屏和小度 IoT 设备执行 scene-first 的离家编排...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaodu_leave_home_mode_official",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dueros-mcp",
+      "features": [
+        "基于已安装的 xiaodu-control-official 编排离家场景。当用户说“出门了”“离家模式”“出门前检查一下”“帮我把家里设备关一下”时使用。这个 skill 会复用 xiao."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaodu-leave-home-mode-official@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218767264?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaodu-leave-home-mode-official",
+      "url": "https://clawhub.ai/skills/xiaodu-leave-home-mode-official"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaodu-leave-home-mode-official",
+    "url": "https://clawhub.ai/skills/xiaodu-leave-home-mode-official",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaodu-leave-home-mode-official-e0e17940311040b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaodu-leave-home-mode-official@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaodu-leave-home-mode-official-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bbd7f8f009bdd4f48e72db8e666fd8d669fa3a4302e70a211b805be63b768b83",
+      "artifactSizeBytes": 2173
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T08:56:49.873Z"
+}

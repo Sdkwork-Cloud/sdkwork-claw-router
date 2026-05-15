@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26660,
+  "uuid": "skill-clawhub-pingbell",
+  "skillKey": "clawhub-pingbell",
+  "name": "Pingbell",
+  "summary": "PingBell integration. Manage Organizations. Use when the user wants to interact with PingBell data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pingbell",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "PingBell integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with PingBell data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pingbell@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pingbell",
+      "url": "https://clawhub.ai/skills/pingbell"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pingbell",
+    "url": "https://clawhub.ai/skills/pingbell",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pingbell-7d00717e188a5cf6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pingbell@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-pingbell-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:13a0a77436edcf095374f844dadb8999d74ab7f0ff55081dfe3361bc3d871b44",
+      "artifactSizeBytes": 1806
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:24:21.376Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-quote@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_quote",
+  "skill": {
+    "id": 52812,
+    "skillKey": "clawhub-daily-quote",
+    "name": "Daily Quote"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-quote",
+    "url": "https://clawhub.ai/skills/daily-quote",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-quote-de2618f10476d7f6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Daily curated quote from philosophers, leaders, and thinkers — with author context and why it resonates today. Bilingual EN/CN shareable visual card."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiajiaoy",
+      "userId": "s17cev4f59prejmqpq8qft2ffn83g42e",
+      "displayName": "jiajiaoy",
+      "image": "https://avatars.githubusercontent.com/u/254620896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 226,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777286833192,
+      "changelog": "- Updated the description to highlight author context and the quote's relevance for today.\n- Added README.md for improved documentation.\n- No functional changes to workflow or outputs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:12682a2d76018154604824149a2b9fc34a5d0bcbb2c2c7ba73b5e8d05826ca35"
+}

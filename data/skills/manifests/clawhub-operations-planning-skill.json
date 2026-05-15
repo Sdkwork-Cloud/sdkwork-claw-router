@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71250,
+  "uuid": "skill-clawhub-operations-planning-skill",
+  "skillKey": "clawhub-operations-planning-skill",
+  "name": "运营策划技能",
+  "summary": "综合运营策划技能，专注于活动策划和产品运营策划，针对内容平台和社区运营场景。支持自动化生成策划方案、数据分析和项目管理。使用场景：(1) 创建内容平台活动策划方案 (2) 设计产品运营增长策略 (3) 制定社区运营计划 (4) 进行社交媒体营销策划 (5) 执行数据分析和KPI追踪",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.operations_planning_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bxwzan",
+      "features": [
+        "综合运营策划技能，专注于活动策划和产品运营策划，针对内容平台和社区运营场景。支持自动化生成策划方案、数据分析和项目管理。使用场景：(1) 创建内容平台活动策划方案 (2) 设计产品运营增长策."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/operations-planning-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257239708?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "operations-planning-skill",
+      "url": "https://clawhub.ai/skills/operations-planning-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "operations-planning-skill",
+    "url": "https://clawhub.ai/skills/operations-planning-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/operations-planning-skill-b8bd9b1acb1bef60.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/operations-planning-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-operations-planning-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:75be909f4d10c52cfe2eed898abb5b8fafd024883451c1972d92fe2f48665bfa",
+      "artifactSizeBytes": 2834
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T07:30:58.380Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/neomutt-commander@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neomutt_commander",
+  "skill": {
+    "id": 50888,
+    "skillKey": "clawhub-neomutt-commander",
+    "name": "Neomutt Commander"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neomutt-commander",
+    "url": "https://clawhub.ai/skills/neomutt-commander",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neomutt-commander-62b5e6c36dfb6bf0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read, search, organise, and draft emails using neomutt — a terminal IMAP client. List inbox, search, read HTML email via w3m, mark read/unread, manage folder..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "elmoyeldo",
+      "userId": "publishers:elmoyeldo",
+      "displayName": "Elmo",
+      "image": "https://avatars.githubusercontent.com/u/6438308?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 396,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772142549167,
+      "changelog": "Initial release of neomutt-commander.\n\n- Read, search, organise, and draft emails in terminal using neomutt and w3m.\n- Supports listing inbox, reading HTML emails, marking read/unread, managing folders, and archiving messages.\n- Compose new emails or replies; outgoing messages are saved as drafts unless sending is explicitly approved.\n- Works with multiple IMAP providers (Gmail, Fastmail, Outlook, etc.).\n- Includes detailed setup and usage instructions for configuration and navigation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8250787fc04eb4fa468c24c2c2be5d958708936273c38e2650ea11c9764dc160"
+}

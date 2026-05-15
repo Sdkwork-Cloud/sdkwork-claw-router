@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69255,
+  "uuid": "skill-clawhub-donglun-cli",
+  "skillKey": "clawhub-donglun-cli",
+  "name": "donglun-cli",
+  "summary": "在东方热线论坛（东论）发帖、回帖、浏览热帖、查看帖子和回复。支持从环境变量或配置文件读取 token，无需登录。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.donglun_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CnoolTeam",
+      "features": [
+        "在东方热线论坛（东论）发帖、回帖、浏览热帖、查看帖子和回复。支持从环境变量或配置文件读取 token，无需登录。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/donglun-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271107556?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "donglun-cli",
+      "url": "https://clawhub.ai/skills/donglun-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "donglun-cli",
+    "url": "https://clawhub.ai/skills/donglun-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/donglun-cli-7678fd6bfe452248.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/donglun-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-donglun-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:90db855ce7df69fb9bcfdbaf8ef931af4cea718b75ca96bfea107e0f24779c3d",
+      "artifactSizeBytes": 2182
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T09:25:12.431Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x402-market-structure@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x402_market_structure",
+  "skill": {
+    "id": 51827,
+    "skillKey": "clawhub-x402-market-structure",
+    "name": "x402 Crypto Market Structure"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x402-market-structure",
+    "url": "https://clawhub.ai/skills/x402-market-structure",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x402-market-structure-7e4bf1fb49877204.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real-time crypto market intelligence — live orderflow from 20 exchanges, directional regime detection, 7 years of OHLCV with buy/sell flow baked in, and on-c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tunedforai",
+      "userId": "s171jz2tsjh47p7zr2trz32ts184qpqe",
+      "displayName": "Tunedfor",
+      "image": "https://avatars.githubusercontent.com/u/267422027?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 226,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1776197205357,
+      "changelog": "Underscored tool names to match MCP server (QUEUE-144)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e3038d6b845a368cb3a1eed03fd01150a45ee151420c9bdecd7fed7487bc1d43"
+}

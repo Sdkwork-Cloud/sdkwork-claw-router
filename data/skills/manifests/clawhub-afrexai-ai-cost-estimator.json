@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29889,
+  "uuid": "skill-clawhub-afrexai-ai-cost-estimator",
+  "skillKey": "clawhub-afrexai-ai-cost-estimator",
+  "name": "Ai Cost Estimator",
+  "summary": "Estimate infrastructure and API costs for running AI agents in production. Covers compute, API tokens, storage, and monitoring costs. Use when planning AI ag...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_ai_cost_estimator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "afrexai-cto",
+      "features": [
+        "Estimate infrastructure and API costs for running AI agents in production",
+        "Covers compute, API tokens, storage, and monitoring costs",
+        "Use when planning AI ag..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/afrexai-ai-cost-estimator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261321054?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "afrexai-ai-cost-estimator",
+      "url": "https://clawhub.ai/skills/afrexai-ai-cost-estimator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-ai-cost-estimator",
+    "url": "https://clawhub.ai/skills/afrexai-ai-cost-estimator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-ai-cost-estimator-4f8813a75f7afdc5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/afrexai-ai-cost-estimator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-afrexai-ai-cost-estimator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ac8f6e445ce48bea738ed969cc2abd5f469f50bf0adab4f22831b611886140e",
+      "artifactSizeBytes": 2503
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T12:33:04.283Z"
+}

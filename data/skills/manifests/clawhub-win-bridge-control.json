@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32947,
+  "uuid": "skill-clawhub-win-bridge-control",
+  "skillKey": "clawhub-win-bridge-control",
+  "name": "Windows Host UI Bridge",
+  "summary": "Bridge: Cross-OS UI automation for Windows Host",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.win_bridge_control",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Minhao Wang",
+      "features": [
+        "Bridge: Cross-OS UI automation for Windows Host"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/win-bridge-control@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36786667?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "win-bridge-control",
+      "url": "https://clawhub.ai/skills/win-bridge-control"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "win-bridge-control",
+    "url": "https://clawhub.ai/skills/win-bridge-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/win-bridge-control-c875cc29a0a59c71.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/win-bridge-control@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-win-bridge-control-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2c58f448e2a9576b9988423ea30d76a99809cb38beb9c5a82001cc9895d9f90f",
+      "artifactSizeBytes": 2309
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T09:35:10.953Z"
+}

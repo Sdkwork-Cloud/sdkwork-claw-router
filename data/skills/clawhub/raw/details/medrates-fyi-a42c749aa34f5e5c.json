@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "medrates-fyi",
+    "displayName": "MedRates.fyi",
+    "summary": "Query US hospital price transparency data via the MedRates REST API. Search medical procedure prices, compare hospitals, filter by insurance plan and locatio...",
+    "tags": {
+      "latest": "1.0.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 245,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1773789966457,
+    "updatedAt": 1777620618693
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1773852329418,
+    "changelog": "- Added plan_category filter to the price quote endpoint (`GET /api/price-quote`), supporting \"Commercial\", \"Medicare\", \"Medicaid\", or \"Other\".\n- Price quote endpoint response now includes a `plan_category` field for negotiated/estimated-rate items when a payer is specified.\n- Documentation updated to reflect new filtering and response field for plan category.\n- No functional changes to endpoints or API structure beyond the new filter and response field.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "dimaosipa",
+    "userId": "publishers:dimaosipa",
+    "displayName": "dimaosipa",
+    "image": "https://avatars.githubusercontent.com/u/1094629?v=4"
+  },
+  "moderation": null
+}

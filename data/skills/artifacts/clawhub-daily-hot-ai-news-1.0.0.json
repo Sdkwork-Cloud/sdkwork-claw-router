@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-hot-ai-news@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_hot_ai_news",
+  "skill": {
+    "id": 67904,
+    "skillKey": "clawhub-daily-hot-ai-news",
+    "name": "daily-hot-ai-news"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-hot-ai-news",
+    "url": "https://clawhub.ai/skills/daily-hot-ai-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-hot-ai-news-69eaa34de89a6f08.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "当用户想要获取AI领域的最新新闻、热点、动态、资讯或话题时使用此技能。 触发场景包括：询问\"今天AI有什么新闻\"、\"最近AI热点\"、\"最新AI资讯\"、 \"AI圈发生了什么\"、\"帮我看看AI动态\"等类似表达。 不需要定时任务，仅当用户主动请求时执行。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenhao11235813",
+      "userId": "publishers:chenhao11235813",
+      "displayName": "chenhao11235813",
+      "image": "https://avatars.githubusercontent.com/u/220284256?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 506,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773282369618,
+      "changelog": "Daily AI News skill (v1.0.0) initial release:\n\n- Provides users with concise, up-to-date AI news briefs in Chinese, including headlines, deep analysis, impact overview, and source links.\n- News includes industry trends, technical breakthroughs, expert opinions, and hot topics, with content gathered from both domestic and international sources.\n- Skill is activated only upon user request with various trigger phrases (e.g., \"今日AI新闻\", \"AI热点\", or \"/ai-news\").\n- Organizes output into clear sections: top news, major events, expert and community viewpoints, and international dynamics.\n- Ensures news is easy to understand, neutrally explained, and always includes direct source links.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0c01422908b15734e4a73fdcc916736d51407362ec9505bc3d932d1f70c93d54"
+}

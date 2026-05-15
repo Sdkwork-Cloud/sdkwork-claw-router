@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14702,
+  "uuid": "skill-clawhub-authenticate-wallet",
+  "skillKey": "clawhub-authenticate-wallet",
+  "name": "Authenticate Wallet",
+  "summary": "Sign in to the wallet. Use when you or the user want to log in, sign in, connect, or set up the wallet, or when any wallet operation fails with authentication or \"not signed in\" errors. This skill is a prerequisite before sending, trading,.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.authenticate_wallet",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "0xRAG",
+      "features": [
+        "Sign in to the wallet",
+        "Use when you or the user want to log in, sign in, connect, or set up the wallet, or when any wa.",
+        "This skill is a prerequisite before sending, trading, or funding."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/authenticate-wallet@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15928227?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "authenticate-wallet",
+      "url": "https://clawhub.ai/skills/authenticate-wallet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "authenticate-wallet",
+    "url": "https://clawhub.ai/skills/authenticate-wallet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/authenticate-wallet-72fccf723476a780.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/authenticate-wallet@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-authenticate-wallet-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:15a0209df0625c6a7926366ddef43b753be8bd617becfd0b85f8f28be36335e2",
+      "artifactSizeBytes": 2364
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T20:38:40.590Z"
+}

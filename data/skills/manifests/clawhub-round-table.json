@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69676,
+  "uuid": "skill-clawhub-round-table",
+  "skillKey": "clawhub-round-table",
+  "name": "jinx",
+  "summary": "圆桌讨论模式——以\"求真\"为目标的结构化多角色深度对话。当用户说\"圆桌\"、\"圆桌讨论\"、\"roundtable\"或类似触发词时激活。也适用于需要多视角深度探讨任何议题的场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.round_table",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jingxxxxx",
+      "features": [
+        "圆桌讨论模式——以\"求真\"为目标的结构化多角色深度对话。当用户说\"圆桌\"、\"圆桌讨论\"、\"roundtable\"或类似触发词时激活。也适用于需要多视角深度探讨任何议题的场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/round-table@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258163677?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "round-table",
+      "url": "https://clawhub.ai/skills/round-table"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "round-table",
+    "url": "https://clawhub.ai/skills/round-table",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/round-table-b8c7422350ea0cdd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/round-table@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-round-table-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ac8d94914b6c7907e4321bdffa475176c6119340e2654e4867ccf90f58db657",
+      "artifactSizeBytes": 2539
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T04:41:40.615Z"
+}

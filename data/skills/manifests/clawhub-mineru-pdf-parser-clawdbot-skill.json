@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11531,
+  "uuid": "skill-clawhub-mineru-pdf-parser-clawdbot-skill",
+  "skillKey": "clawhub-mineru-pdf-parser-clawdbot-skill",
+  "name": "MinerU PDF Parser Clawdbot Skill",
+  "summary": "Parse PDFs locally (CPU) into Markdown/JSON using MinerU. Assumes MinerU creates per‑doc output folders; supports table/image extraction.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mineru_pdf_parser_clawdbot_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kesslerio",
+      "features": [
+        "Parse PDFs locally (CPU) into Markdown/JSON using MinerU",
+        "Assumes MinerU creates per‑doc output folders",
+        "supports table/image extraction."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mineru-pdf-parser-clawdbot-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2647990?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mineru-pdf-parser-clawdbot-skill",
+      "url": "https://clawhub.ai/skills/mineru-pdf-parser-clawdbot-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mineru-pdf-parser-clawdbot-skill",
+    "url": "https://clawhub.ai/skills/mineru-pdf-parser-clawdbot-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mineru-pdf-parser-clawdbot-skill-ff7693884177cff7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mineru-pdf-parser-clawdbot-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mineru-pdf-parser-clawdbot-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c909acc432c390bd26e11fe8932b139c135e8c2a51d29d78e2e2033140d89a8f",
+      "artifactSizeBytes": 2361
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-23T19:26:59.179Z"
+}

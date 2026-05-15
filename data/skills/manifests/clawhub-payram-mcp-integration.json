@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28281,
+  "uuid": "skill-clawhub-payram-mcp-integration",
+  "skillKey": "clawhub-payram-mcp-integration",
+  "name": "PayRam MCP Integration",
+  "summary": "Stripe banned your account? High-risk merchant? No KYC crypto payments via PayRam MCP — 36 tools, zero setup. Accept USDC/USDT/BTC, create payment links, run...",
+  "version": "1.4.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.payram_mcp_integration",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Siddharth Menon",
+      "features": [
+        "Stripe banned your account? High-risk merchant? No KYC crypto payments via PayRam MCP — 36 tool.",
+        "Accept USDC/USDT/BTC, create payment links, run..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/payram-mcp-integration@1.4.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/609407?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "payram-mcp-integration",
+      "url": "https://clawhub.ai/skills/payram-mcp-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "payram-mcp-integration",
+    "url": "https://clawhub.ai/skills/payram-mcp-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/payram-mcp-integration-b9847124649bcc87.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/payram-mcp-integration@1.4.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-payram-mcp-integration-1.4.2.json",
+      "version": "1.4.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f20a5bd3d55c7bb1170149e2240967d3947b38ee7da7fae44950a89ee3fd7899",
+      "artifactSizeBytes": 2081
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T22:58:03.289Z"
+}

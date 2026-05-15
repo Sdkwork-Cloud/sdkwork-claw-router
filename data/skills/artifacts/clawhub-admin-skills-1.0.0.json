@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/admin-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.admin_skills",
+  "skill": {
+    "id": 67834,
+    "skillKey": "clawhub-admin-skills",
+    "name": "hr-admin-assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "admin-skills",
+    "url": "https://clawhub.ai/skills/admin-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/admin-skills-ee43f3dbae89800f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "人力行政总监智能助理。适用于科技公司后方（HR/行政/法务/财务支持）业务场景。 当用户提出以下类型需求时，应使用此 skill： - 提出后方业务需求、想法、流程改进诉求 - 起草或生成文件（规章制度、通知、合同、HR文书、审批表单、工作报告、OKR/KPI） - 分析和整理现有文档 - 梳理或设计业务流程（招..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sirutong",
+      "userId": "s173830481cvsb1jcxmmt96k2s83mgb5",
+      "displayName": "sirutong",
+      "image": "https://avatars.githubusercontent.com/u/46773951?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 301,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773744138482,
+      "changelog": "Initial release of \"hr-admin-assistant\" skill for HR/Admin/Legal/Finance business support in tech companies.\n\n- Provides intelligent assistant capabilities for HR, administrative, and legal/finance business scenarios.\n- Supports drafting documents, process design, requirements analysis, policy development, meeting minutes, and business reporting.\n- Features structured workflows: requirement analysis, document generation, process design, report preparation, and more.\n- Incorporates best practices and compliance guidance across six major business domains.\n- Output standards and templates are included for various document and report types.\n- Designed for continuous iteration and easy expansion to cover new business needs and processes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c30f8bf1348afcede827beb33e22d4c134f5bbffb12c5c318b5093c49e2c63a2"
+}

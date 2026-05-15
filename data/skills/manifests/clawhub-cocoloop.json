@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60927,
+  "uuid": "skill-clawhub-cocoloop",
+  "skillKey": "clawhub-cocoloop",
+  "name": "CocoLoop",
+  "summary": "一个更快速、更安全的 Skill 管理器。CLI 只负责网络 API wrapper 和已知安装流程 wrapper；搜索判断、fallback 探索和复杂编排由 Agent 自己完成。",
+  "version": "0.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cocoloop",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CatREFuse",
+      "features": [
+        "一个更快速、更安全的 Skill 管理器。CLI 只负责网络 API wrapper 和已知安装流程 wrapper；搜索判断、fallback 探索和复杂编排由 Agent 自己完成。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cocoloop@0.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8400960?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cocoloop",
+      "url": "https://clawhub.ai/skills/cocoloop"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cocoloop",
+    "url": "https://clawhub.ai/skills/cocoloop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cocoloop-6e450a1c4bf450b0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cocoloop@0.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cocoloop-0.5.0.json",
+      "version": "0.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6b68bd1c5e17557e662985e8f21ddbe7a707c0c73cb297e630bde5f6ad5c6b54",
+      "artifactSizeBytes": 2259
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T05:36:57.028Z"
+}

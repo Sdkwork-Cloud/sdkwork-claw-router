@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22084,
+  "uuid": "skill-clawhub-coding-agent-backup-fixed",
+  "skillKey": "clawhub-coding-agent-backup-fixed",
+  "name": "Coding Agent Backup Fixed",
+  "summary": "Delegate coding tasks to Codex, Claude Code, or Pi agents via background process. Use when: (1) building/creating new features or apps, (2) reviewing PRs (sp...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coding_agent_backup_fixed",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "QCZX0318",
+      "features": [
+        "Delegate coding tasks to Codex, Claude Code, or Pi agents via background process",
+        "Use when: (1) building/creating new features or apps, (2) reviewing PRs (sp..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coding-agent-backup-fixed@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199915236?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coding-agent-backup-fixed",
+      "url": "https://clawhub.ai/skills/coding-agent-backup-fixed"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coding-agent-backup-fixed",
+    "url": "https://clawhub.ai/skills/coding-agent-backup-fixed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coding-agent-backup-fixed-f846323ef654c9aa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coding-agent-backup-fixed@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-coding-agent-backup-fixed-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9307ed7e0f82b611e9147a52dafb57ec41c34188e72ef6426b515f41116b8e0c",
+      "artifactSizeBytes": 2087
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T03:56:15.420Z"
+}

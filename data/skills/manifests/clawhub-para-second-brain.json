@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8541,
+  "uuid": "skill-clawhub-para-second-brain",
+  "skillKey": "clawhub-para-second-brain",
+  "name": "PARA Second Brain",
+  "summary": "Organize your agent's knowledge using PARA (Projects, Areas, Resources, Archive) — then make it ALL searchable. The symlink trick enables full semantic search across your entire knowledge base, not just MEMORY.md. Includes session transcri.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.para_second_brain",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "halthelobster",
+      "features": [
+        "Organize your agent's knowledge using PARA (Projects, Areas, Resources, Archive) — then make it.",
+        "The symlink trick enables full semantic search across your entire knowledge base, not just MEMO.",
+        "Includes session transcript indexing and memory flush protocol",
+        "Your agent finally has a real second brain."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/para-second-brain@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257232409?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "para-second-brain",
+      "url": "https://clawhub.ai/skills/para-second-brain"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "para-second-brain",
+    "url": "https://clawhub.ai/skills/para-second-brain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/para-second-brain-597cd2571ee4a583.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/para-second-brain@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-para-second-brain-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fafa09e850d4ca7953719ec5d5c00986b0d3f961d5576481d607772329c2fe98",
+      "artifactSizeBytes": 2066
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-29T16:42:22.488Z"
+}

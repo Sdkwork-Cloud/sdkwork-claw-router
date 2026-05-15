@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/maverick-stripe-mcp@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maverick_stripe_mcp",
+  "skill": {
+    "id": 44777,
+    "skillKey": "clawhub-maverick-stripe-mcp",
+    "name": "Stripe mcp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maverick-stripe-mcp",
+    "url": "https://clawhub.ai/skills/maverick-stripe-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maverick-stripe-mcp-a096c98110acc71a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search, read, and manage Stripe account data through Stripe's hosted MCP server. Thin pass-through to Stripe's official MCP; the live tool catalog is whateve..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maverick",
+      "userId": "s17b4scyfsybdcep8c0034pgs186087n",
+      "displayName": "Maverick",
+      "image": "https://avatars.githubusercontent.com/u/261420589"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778232773901,
+      "changelog": "- Removed dependency on bash scripts for initialization and invocation (scripts/init-mcporter.sh, scripts/invoke.sh deleted).\n- Usage is now direct via `mcporter`; instructions updated for improved simplicity and clarity.\n- Environment requirements reduced to only `MAVERICK_STRIPE_MCP_ACCESS_TOKEN`.\n- Removed requirements for `jq`, `flock`, and `shasum` as dependencies.\n- Documentation has been revised for a streamlined setup and for pointing to the Stripe MCP documentation as the source of truth.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0881524a5ff4e54bd0c2e8c4354414b7612c00245d3ec2659885157622e69481"
+}

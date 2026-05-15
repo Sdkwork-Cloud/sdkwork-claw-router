@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29872,
+  "uuid": "skill-clawhub-substreams-search",
+  "skillKey": "clawhub-substreams-search",
+  "name": "Substreams Search",
+  "summary": "Search, inspect, and analyze Substreams packages to discover modules, visualize data flows, and generate sink deployment commands.",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.substreams_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PaulieB14",
+      "features": [
+        "Search, inspect, and analyze Substreams packages to discover modules, visualize data flows, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/substreams-search@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94752445?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "substreams-search",
+      "url": "https://clawhub.ai/skills/substreams-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "substreams-search",
+    "url": "https://clawhub.ai/skills/substreams-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/substreams-search-07a4a99078e9ea0a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/substreams-search@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-substreams-search-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b0ba09469756fa2d5715663b3757974461840275b726b724d085754edab679e",
+      "artifactSizeBytes": 2348
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T21:19:42.860Z"
+}

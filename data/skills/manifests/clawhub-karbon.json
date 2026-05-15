@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27243,
+  "uuid": "skill-clawhub-karbon",
+  "skillKey": "clawhub-karbon",
+  "name": "Karbon",
+  "summary": "Karbon integration. Manage Organizations, Contacts, Workflows, Templates, Users, Roles. Use when the user wants to interact with Karbon data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.karbon",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Karbon integration",
+        "Manage Organizations, Contacts, Workflows, Templates, Users, Roles",
+        "Use when the user wants to interact with Karbon data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/karbon@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "karbon",
+      "url": "https://clawhub.ai/skills/karbon"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "karbon",
+    "url": "https://clawhub.ai/skills/karbon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/karbon-1ca0acf49daa83f0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/karbon@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-karbon-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:42c984185138fe2cfae5fe0557f8bd93b7043b62a5f035f59ef0174856dfdbc9",
+      "artifactSizeBytes": 1816
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T21:06:09.408Z"
+}

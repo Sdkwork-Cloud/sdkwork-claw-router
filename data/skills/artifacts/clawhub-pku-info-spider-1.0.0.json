@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pku-info-spider@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pku_info_spider",
+  "skill": {
+    "id": 57343,
+    "skillKey": "clawhub-pku-info-spider",
+    "name": "PKU Info Spider"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pku-info-spider",
+    "url": "https://clawhub.ai/skills/pku-info-spider",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pku-info-spider-35281f7a5fd43e7b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "WeChat Official Account article crawler (微信公众号爬虫) CLI tool built in Rust. Use this skill when working on the info-spider crate, debugging spider commands, ad..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wjsoj",
+      "userId": "s170ksphbtrkq0sghjqcwn5v3s83v5ew",
+      "displayName": "wjsoj",
+      "image": "https://avatars.githubusercontent.com/u/59087896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 222,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775720887108,
+      "changelog": "- Initial release of info-spider: a CLI tool for scraping WeChat Official Account (微信公众号) articles.\n- Supports WeChat QR code login (distinct from IAAA), storing its own session data.\n- Provides search, article fetch, and single article-to-Markdown conversion features.\n- Mimics real user behavior with customizable anti-crawler delays.\n- Output articles in table, JSON, or JSONL formats.\n- All user-facing output is in Chinese; robust error handling with context provided.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a24f0d1b1b319c3b4b71ab4e200375f8ca0f12f9c48563d2a0395d9459fb5838"
+}

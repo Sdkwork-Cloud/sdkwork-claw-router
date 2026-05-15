@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xianchou@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xianchou",
+  "skill": {
+    "id": 59514,
+    "skillKey": "clawhub-xianchou",
+    "name": "献丑 Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xianchou",
+    "url": "https://clawhub.ai/skills/xianchou",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xianchou-0d7c62a0cff78c5e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Xianchou CLI (xianchou) — 面向 AI Agent 的 Markdown/MDX 自动配图与 AI 视频生成工具。 支持调用献丑 /api/cli 专用接口进行 AI 生图、AI 生视频、模型查询、任务轮询， 以及为任意 Markdown/MDX 插入图片。Use when editing..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "starlying",
+      "userId": "s17fkxdgj9v9h6530n2z43h9vx85s398",
+      "displayName": "tim",
+      "image": "https://avatars.githubusercontent.com/u/4256611?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 108,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1777450897529,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3a3f0d98f2b9f1aae970e762cd5d92fb4a2ee5e6232551f1662f9f1724c2d7b6"
+}

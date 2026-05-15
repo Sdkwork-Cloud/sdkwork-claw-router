@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/value-chain@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.value_chain",
+  "skill": {
+    "id": 31211,
+    "skillKey": "clawhub-value-chain",
+    "name": "Value Chain"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "value-chain",
+    "url": "https://clawhub.ai/skills/value-chain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/value-chain-47125ded7eb59e9e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Map industry value chain to understand where value is created and captured. Use for industry analysis, vertical integration decisions, and identifying strate..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linuszz",
+      "userId": "s17e0e5q8g0sjf5mpwdq1sy65183gmj7",
+      "displayName": "linuszz",
+      "image": "https://avatars.githubusercontent.com/u/46770204?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 260,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774184723543,
+      "changelog": "Initial release of the value-chain-analysis skill.\n\n- Provides a framework to map and analyze industry value chains from raw materials to end customer.\n- Includes detailed analysis of value creation, value capture, and power dynamics at each stage.\n- Offers structured output for value chain mapping, value distribution, and strategic insights.\n- Supports strategic decisions on vertical integration, partnerships, and competitive threats.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5924cd8bae2120353ac11cd084900637f4647d778ea6b3ba7fea3173aa838a8f"
+}

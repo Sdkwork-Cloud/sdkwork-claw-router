@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16492,
+  "uuid": "skill-clawhub-langsearch",
+  "skillKey": "clawhub-langsearch",
+  "name": "Langsearch",
+  "summary": "Free web search and semantic reranking API for AGI applications. Use when you need to perform web searches, retrieve current information from the internet, o...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.langsearch",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vaibhav Kumar",
+      "features": [
+        "Free web search and semantic reranking API for AGI applications",
+        "Use when you need to perform web searches, retrieve current information from the internet, o..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/langsearch@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7772194?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "langsearch",
+      "url": "https://clawhub.ai/skills/langsearch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "langsearch",
+    "url": "https://clawhub.ai/skills/langsearch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/langsearch-cf6e766c5b30819a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/langsearch@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-langsearch-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6fb38876c3e4420b31e795c85d93fb91640006aea9c03330b6d96a842088ffe1",
+      "artifactSizeBytes": 2042
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T04:47:26.333Z"
+}

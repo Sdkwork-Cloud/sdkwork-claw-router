@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71550,
+  "uuid": "skill-clawhub-jw-feishu-suite",
+  "skillKey": "clawhub-jw-feishu-suite",
+  "name": "Feishu Suite",
+  "summary": "飞书全功能集成技能 - 消息、文档、日历、任务、多维表格一站式管理。适用于企业协作、工作流自动化、数据管理。觸發詞：飛書、文檔、日程、任務、多維表格、協作。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jw_feishu_suite",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "a85012712",
+      "features": [
+        "飞书全功能集成技能",
+        "消息、文档、日历、任务、多维表格一站式管理。适用于企业协作、工作流自动化、数据管理。觸發詞：飛書、文檔、日程、任務、多維表格、協作。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jw-feishu-suite@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271745311?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jw-feishu-suite",
+      "url": "https://clawhub.ai/skills/jw-feishu-suite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jw-feishu-suite",
+    "url": "https://clawhub.ai/skills/jw-feishu-suite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jw-feishu-suite-6e239e2b0c233d63.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jw-feishu-suite@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jw-feishu-suite-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c7bef2535dd1639d5569f4883feee0cefd7688f09711d443d16cda0ae870f132",
+      "artifactSizeBytes": 2000
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T03:37:22.039Z"
+}

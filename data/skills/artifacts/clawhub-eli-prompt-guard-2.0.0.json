@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eli-prompt-guard@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eli_prompt_guard",
+  "skill": {
+    "id": 39294,
+    "skillKey": "clawhub-eli-prompt-guard",
+    "name": "Eli Prompt Guard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eli-prompt-guard",
+    "url": "https://clawhub.ai/skills/eli-prompt-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eli-prompt-guard-f99be352d47475dd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically detects and blocks prompt injection attempts across multiple platforms to protect against unauthorized commands and data leaks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danlct27",
+      "userId": "s170vywn1sf915b1y3q8bqk2y983nh10",
+      "displayName": "danlct27",
+      "image": "https://avatars.githubusercontent.com/u/182242979?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 179,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1774544669164,
+      "changelog": "Initial release: 49+ prompt injection detection patterns, 9 platforms, 16+ API key detection, PII protection2",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:96a156b679c8f08b003cec72b81323c69e8631f6142b6ca2d14981a46ad3f6ac"
+}

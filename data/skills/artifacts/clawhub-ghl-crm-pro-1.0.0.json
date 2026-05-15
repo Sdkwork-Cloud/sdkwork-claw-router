@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ghl-crm-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ghl_crm_pro",
+  "skill": {
+    "id": 22986,
+    "skillKey": "clawhub-ghl-crm-pro",
+    "name": "GHL CRM Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ghl-crm-pro",
+    "url": "https://clawhub.ai/skills/ghl-crm-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ghl-crm-pro-03c3f3879c33b676.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "GoHighLevel CRM integration — manage contacts, pipelines, conversations (SMS/email/WhatsApp), calendars, appointments, and workflows through the GHL API v2...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiwithabidi",
+      "userId": "publishers:aiwithabidi",
+      "displayName": "aiwithabidi",
+      "image": "https://avatars.githubusercontent.com/u/208891229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 839,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771147647166,
+      "changelog": "Initial release of GoHighLevel CRM integration for OpenClaw.\n\n- Manage contacts, pipelines, conversations (SMS/email/WhatsApp), calendars, appointments, and workflows via GHL API v2.\n- Supports searching, creating, updating, and deleting contacts and opportunities.\n- Enables sending SMS and email, booking appointments, and managing workflows from scripts.\n- Includes quick start instructions, authentication setup, and command reference.\n- Automatic rate limit handling with retries built-in.\n- Documentation provides API endpoint overview and example integration patterns.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ef81e678af1b09ea5b3c5a58d5e17d95b7a57b7f18090d1212a62bfea7c38c38"
+}

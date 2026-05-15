@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20944,
+  "uuid": "skill-clawhub-openclaw-safe-change-flow",
+  "skillKey": "clawhub-openclaw-safe-change-flow",
+  "name": "OpenClaw Safe Change Flow",
+  "summary": "Safe OpenClaw config change workflow with backup, minimal edits, validation, health checks, and rollback. Single-instance first; secondary instance optional.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_safe_change_flow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1987566643",
+      "features": [
+        "Safe OpenClaw config change workflow with backup, minimal edits, validation, health checks, and.",
+        "Single-instance first",
+        "secondary instance optional."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-safe-change-flow@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51523972?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-safe-change-flow",
+      "url": "https://clawhub.ai/skills/openclaw-safe-change-flow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-safe-change-flow",
+    "url": "https://clawhub.ai/skills/openclaw-safe-change-flow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-safe-change-flow-053913b4c8f703ee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-safe-change-flow@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-safe-change-flow-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2632b45702eb622a523cee0745623c61408b65c3cb37462844e03a5d6c04f54a",
+      "artifactSizeBytes": 2090
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T04:13:24.237Z"
+}

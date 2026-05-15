@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/autonomous-commerce@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autonomous_commerce",
+  "skill": {
+    "id": 14911,
+    "skillKey": "clawhub-autonomous-commerce",
+    "name": "Autonomous Commerce"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autonomous-commerce",
+    "url": "https://clawhub.ai/skills/autonomous-commerce",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autonomous-commerce-e6a12e8e3d4390fd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Execute real-world e-commerce purchases autonomously with escrow protection and cryptographic proof. Use when: User requests a physical purchase (Amazon, retail), budget is specified, escrow funds are available. Don't use when: Just browsi."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pandeyaby",
+      "userId": "publishers:pandeyaby",
+      "displayName": "pandeyaby",
+      "image": "https://avatars.githubusercontent.com/u/8624924?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 913,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770877288053,
+      "changelog": "autonomous-commerce v1.0.0\n\n- Launches a real-world skill for autonomous e-commerce purchases with escrow protection and cryptographic proof.\n- Enables agents to execute purchases only when a budget is specified and escrow funds are available; not for browsing or price research.\n- All transactions use saved payment methods and addresses, with strict guardrails (no new payment methods or addresses).\n- Each completed purchase provides cryptographic order proof and requires delivery verification.\n- Security and workflow steps are clearly defined, including templates for order confirmation and proof generation.\n- Proven capability with successful Amazon orders; includes clear examples of correct and incorrect usage.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ee0d0b76aabffedcdd42ce678c8963754817472f666a1c32e8f514ac60614cc7"
+}

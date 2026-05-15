@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dex@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dex",
+  "skill": {
+    "id": 10307,
+    "skillKey": "clawhub-dex",
+    "name": "Dex Task Tracking"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dex",
+    "url": "https://clawhub.ai/skills/dex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dex-9d0fbf9349f646f1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Task tracking for async/multi-step work. Use dex to create, track, and complete tasks that span multiple sessions or require coordination (e.g., coding agent dispatches, PR reviews, background jobs). Tasks stored as JSON files in .dex/task."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gricha",
+      "userId": "publishers:gricha",
+      "displayName": "gricha",
+      "image": "https://avatars.githubusercontent.com/u/875316?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2602,
+      "installsAllTime": 9,
+      "installsCurrent": 8,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1769215492071,
+      "changelog": "Trimmed for conciseness",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:90ad5566dae1c2f8613be5cd0c1258e3939571d43b3c30ef64c7daba4e1061af"
+}

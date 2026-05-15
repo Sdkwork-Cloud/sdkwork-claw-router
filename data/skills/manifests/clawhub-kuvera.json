@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22611,
+  "uuid": "skill-clawhub-kuvera",
+  "skillKey": "clawhub-kuvera",
+  "name": "Kuvera Portfolio & Market Data",
+  "summary": "Kuvera portfolio & market data CLI. Query mutual fund data, gold prices, USD/INR rates, fund category returns, and user portfolio info from Kuvera. Use when...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kuvera",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ankit Sultania",
+      "features": [
+        "Kuvera portfolio & market data CLI",
+        "Query mutual fund data, gold prices, USD/INR rates, fund category returns, and user portfolio i.",
+        "Use when..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kuvera@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3957998?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kuvera",
+      "url": "https://clawhub.ai/skills/kuvera"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kuvera",
+    "url": "https://clawhub.ai/skills/kuvera",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kuvera-527412baf4a89be5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kuvera@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kuvera-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb166ef691f58c0937ce620c26e1f816d39f1e6b3339e17d8c213f51038098b0",
+      "artifactSizeBytes": 1946
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T17:27:07.541Z"
+}

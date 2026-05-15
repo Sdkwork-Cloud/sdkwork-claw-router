@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24524,
+  "uuid": "skill-clawhub-stripemeter",
+  "skillKey": "clawhub-stripemeter",
+  "name": "Stripemeter",
+  "summary": "Integrate Stripe usage-based billing with idempotent event ingestion, late-event handling, and pre-invoice reconciliation. Use when implementing usage meteri...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stripemeter",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "geminimir",
+      "features": [
+        "Integrate Stripe usage-based billing with idempotent event ingestion, late-event handling, and.",
+        "Use when implementing usage meteri..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stripemeter@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30325922?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stripemeter",
+      "url": "https://clawhub.ai/skills/stripemeter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stripemeter",
+    "url": "https://clawhub.ai/skills/stripemeter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stripemeter-ad570464de6bbd15.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stripemeter@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stripemeter-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c973463e50a841606ee203e48add563cc2834caaccd786683129f5cd930f4b8d",
+      "artifactSizeBytes": 2402
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T05:10:05.131Z"
+}

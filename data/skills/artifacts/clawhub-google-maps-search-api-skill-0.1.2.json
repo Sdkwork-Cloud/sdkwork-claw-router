@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-maps-search-api-skill@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_maps_search_api_skill",
+  "skill": {
+    "id": 11819,
+    "skillKey": "clawhub-google-maps-search-api-skill",
+    "name": "Google Maps Search Api Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-maps-search-api-skill",
+    "url": "https://clawhub.ai/skills/google-maps-search-api-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-maps-search-api-skill-3d1369070243d834.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill is designed to help users automatically extract business data from Google Maps search results. The Agent should proactively apply this skill when..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "phheng",
+      "userId": "s17cnrtda4fqzdjza3g2hx20bs83f18z",
+      "displayName": "Henk Nie",
+      "image": "https://avatars.githubusercontent.com/u/44972754?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1581,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 4,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1773744747585,
+      "changelog": "google-maps-search-api-skill v0.1.2\n\n- SKILL.md streamlined for clarity and brevity; repetitive and verbose instructions removed.\n- API key guidance and error-handling instructions simplified.\n- Improved agent guidance for status monitoring and retry logic.\n- Updated script usage path example to reflect actual directory structure.\n- Added metadata section to SKILL.md for requirements and emoji.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:93c23780494ce10d09f5d310cde50a3b49c9c257c0aec207c8e90e2062b35258"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19901,
+  "uuid": "skill-clawhub-model-routing-orchestrator",
+  "skillKey": "clawhub-model-routing-orchestrator",
+  "name": "Model Routing Orchestrator",
+  "summary": "Route each user request to the most cost-effective model or multi-model workflow based on task type, complexity, risk, latency, budget, tool needs, and verif...",
+  "version": "2026.3.27",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_routing_orchestrator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "stephensu66",
+      "features": [
+        "Route each user request to the most cost-effective model or multi-model workflow based on task."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/model-routing-orchestrator@2026.3.27",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143712578?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "model-routing-orchestrator",
+      "url": "https://clawhub.ai/skills/model-routing-orchestrator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-routing-orchestrator",
+    "url": "https://clawhub.ai/skills/model-routing-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-routing-orchestrator-a03f17b1dfdd3a14.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/model-routing-orchestrator@2026.3.27",
+      "artifactUrl": "data/skills/artifacts/clawhub-model-routing-orchestrator-2026.3.27.json",
+      "version": "2026.3.27",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fb308f3d7025bb72fd3d4da8fc0e9d9e79a20268b14ac108aaf47cf4a995b175",
+      "artifactSizeBytes": 2079
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T13:19:50.565Z"
+}

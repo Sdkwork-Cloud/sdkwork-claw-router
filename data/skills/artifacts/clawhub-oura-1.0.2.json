@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oura@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oura",
+  "skill": {
+    "id": 9829,
+    "skillKey": "clawhub-oura",
+    "name": "Oura Ring Integration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oura",
+    "url": "https://clawhub.ai/skills/oura",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oura-1e161a85f1c9c8bf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Retrieve and summarize health, sleep, activity, readiness, and biometric data from the Oura Ring API via a command-line interface."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ruhrpotter",
+      "userId": "publishers:ruhrpotter",
+      "displayName": "ruhrpotter",
+      "image": "https://avatars.githubusercontent.com/u/96240955?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2806,
+      "installsAllTime": 13,
+      "installsCurrent": 11,
+      "stars": 4,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1767899327568,
+      "changelog": "Added installation instructions (git clone, go build, OAuth setup)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4f236de7c64dc88732af39cf51cd4f3771e54fda7d82d64bfe9b2c2cadebf4f9"
+}

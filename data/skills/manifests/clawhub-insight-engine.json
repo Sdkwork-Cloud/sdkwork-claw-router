@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55878,
+  "uuid": "skill-clawhub-insight-engine",
+  "skillKey": "clawhub-insight-engine",
+  "name": "Insight Engine",
+  "summary": "Logs/metrics → Python statistics → LLM interpretation → Notion reports. Use when: generating daily/weekly/monthly operational insights from AI system logs, p...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.insight_engine",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nissan Dookeran",
+      "features": [
+        "Logs/metrics → Python statistics → LLM interpretation → Notion reports",
+        "Use when: generating daily/weekly/monthly operational insights from AI system logs, p..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/insight-engine@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12583?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "insight-engine",
+      "url": "https://clawhub.ai/skills/insight-engine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "insight-engine",
+    "url": "https://clawhub.ai/skills/insight-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/insight-engine-6468ad0b74068395.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/insight-engine@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-insight-engine-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:218b82c3adf0884fce46a4937dd5316a6aaff5de92eb770915b7932563c03791",
+      "artifactSizeBytes": 1989
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T04:41:13.787Z"
+}

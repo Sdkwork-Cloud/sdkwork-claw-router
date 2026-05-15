@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/soul-forge@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.soul_forge",
+  "skill": {
+    "id": 16716,
+    "skillKey": "clawhub-soul-forge",
+    "name": "SoulForge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "soul-forge",
+    "url": "https://clawhub.ai/skills/soul-forge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/soul-forge-8137e9eedcd51924.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically evolves your SOUL.md by analyzing your conversation patterns and behavior, then proposes updates to reflect who you truly are over time."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "taha2053",
+      "userId": "s172pj5a8m7ytaw9ex4d7h5zsn83h4g6",
+      "displayName": "Almouthana Taha Khalfallah",
+      "image": "https://avatars.githubusercontent.com/u/89487941?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 827,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771598459036,
+      "changelog": "SoulForge 1.0.0 — Initial Release\n\n- Automatically observes your real session patterns to propose updates for your SOUL.md.\n- Surfaces actionable insights and suggestions based on recurring behavior, decisions, tone, and language.\n- Proposes clear, reasoned edits for your approval—no SOUL.md changes happen without you.\n- All analysis is fully local: no external endpoints, no telemetry, no credentials required.\n- Keeps a complete version history with restore and timeline features for your evolving SOUL.md.\n- Auto-observes every 10 sessions for continuous, privacy-respecting evolution of your agent's soul.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:214ceef21f8248848617f5528525492216f205777a879233fca4a4168fb197dc"
+}

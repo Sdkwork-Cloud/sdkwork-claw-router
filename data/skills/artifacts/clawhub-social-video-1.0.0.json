@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/social-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_video",
+  "skill": {
+    "id": 42454,
+    "skillKey": "clawhub-social-video",
+    "name": "Social Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-video",
+    "url": "https://clawhub.ai/skills/social-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-video-28210b3e2427c91b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get shareable social clips ready to post, without touching a single slider. Upload your raw video clips (MP4, MOV, WebM, AVI, up to 500MB), say something lik..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775939548672,
+      "changelog": "Initial release of social-video skill for rapid social clip creation.\n\n- Instantly create and export platform-ready video clips for TikTok, Instagram, and more, using natural language prompts.\n- Upload raw video files (MP4, MOV, WebM, AVI, up to 500MB), request edits (e.g., \"cut this into a 30-second Instagram Reel with captions and background music\"), and download a 1080p MP4 in seconds.\n- Automated backend handles authentication, session management, job queueing, and file exports; includes free credits for new users.\n- Built-in error handling for authentication, credits, file support, and rate limiting.\n- Supports multipart uploads, export in multiple formats, tracking session state, and cloud GPU rendering.\n- Optimized for creators wanting fast, no-slider social video editing and export.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a5565f5403d0caa402de7dbbd0b9d13b9406d1dd7cf0a8d1e4e4ec4dd25d89a1"
+}

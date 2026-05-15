@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/longevity-assistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.longevity_assistant",
+  "skill": {
+    "id": 10534,
+    "skillKey": "clawhub-longevity-assistant",
+    "name": "Longevity Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "longevity-assistant",
+    "url": "https://clawhub.ai/skills/longevity-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/longevity-assistant-970a07d344f11405.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Evaluates longevity interventions using evidence tiers. Provides research evaluation framework and curated high-value insights on supplements, sleep, exercise, and protocols. Activate for anti-aging, healthspan, supplement evaluation, or r."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lofimichael",
+      "userId": "publishers:lofimichael",
+      "displayName": "lofimichael",
+      "image": "https://avatars.githubusercontent.com/u/94795502?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2270,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770078518722,
+      "changelog": "Longevity Assistant 1.0.0\n\n- Initial release providing a detailed research evaluation framework for longevity interventions.\n- Introduces a 4-tier evidence rating system (A–D) for assessing supplements, protocols, and interventions.\n- Includes a practical checklist and red flags for research paper evaluation.\n- Offers the \"Alpha Discovery Framework\" for finding high-leverage, non-obvious insights about dosing, timing, synergy, bioavailability, and more.\n- Contains curated evidence-based examples demonstrating the framework across sleep, exercise, supplements, and anti-aging strategies.\n- Designed for use in anti-aging, healthspan optimization, supplement evaluation, and research paper analysis.\n\nsource:\nhttps://github.com/lofimichael/longevity-skill",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2c5a09e301300ca0b07a67dc5a37e399db9870b30673fe9ebb9e1ce38ba79e31"
+}

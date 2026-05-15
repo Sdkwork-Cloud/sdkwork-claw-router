@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/night-shift@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.night_shift",
+  "skill": {
+    "id": 41970,
+    "skillKey": "clawhub-night-shift",
+    "name": "Night Shift"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "night-shift",
+    "url": "https://clawhub.ai/skills/night-shift",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/night-shift-4f4fa824fc9c532b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Queue coding plans during the day, approve them, execute later in isolated worktrees, and inspect reports. Background agentic execution requires an explicitl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vardhineediganesh877-ui",
+      "userId": "s174de6375a63p24r7c7yf857n85j8e3",
+      "displayName": "vardhineediganesh877-ui",
+      "image": "https://avatars.githubusercontent.com/u/274308381?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1777244543913,
+      "changelog": "Registry package hardening: exclude local ops watchdog/notification/test helpers from public package, keep core executor/preflight/dry-run workflow, and reduce scanner noise while preserving local source/tests.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:21398304e9a158ef9ebd198e2f695d9484c3e68c893bf39f008b2bd01a13af48"
+}

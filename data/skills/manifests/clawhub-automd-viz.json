@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34367,
+  "uuid": "skill-clawhub-automd-viz",
+  "skillKey": "clawhub-automd-viz",
+  "name": "AutoMD-Viz",
+  "summary": "Generate publication-quality molecular dynamics visualizations including structures, data plots, trajectory projections, and full reports with journal-specif...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.automd_viz",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Billwanttobetop",
+      "features": [
+        "Generate publication-quality molecular dynamics visualizations including structures, data plots."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/automd-viz@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/103113834?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "automd-viz",
+      "url": "https://clawhub.ai/skills/automd-viz"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "automd-viz",
+    "url": "https://clawhub.ai/skills/automd-viz",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/automd-viz-119700210d5316ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/automd-viz@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-automd-viz-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:34e73ef651100da6bbc92fbbcb0c1f3e8fe94b4873796f425fe1a209fda8e0ed",
+      "artifactSizeBytes": 1982
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T12:58:00.912Z"
+}

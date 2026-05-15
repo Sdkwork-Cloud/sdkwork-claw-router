@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59442,
+  "uuid": "skill-clawhub-data-retention-mapper",
+  "skillKey": "clawhub-data-retention-mapper",
+  "name": "Data Retention Mapper",
+  "summary": "梳理数据保留周期、落盘位置、清理责任与过期处置建议。；use for data-retention, governance, privacy workflows；do not use for 替代正式合规意见, 隐瞒敏感存储位置风险.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_retention_mapper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "梳理数据保留周期、落盘位置、清理责任与过期处置建议。；use for data-retention, governance, privacy workflows；do not use for."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/data-retention-mapper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "data-retention-mapper",
+      "url": "https://clawhub.ai/skills/data-retention-mapper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-retention-mapper",
+    "url": "https://clawhub.ai/skills/data-retention-mapper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-retention-mapper-2671bf32153cb752.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/data-retention-mapper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-data-retention-mapper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5b0e42aa860948ce4f13362b4e61d1db1be3696eb20e7de74006d0ecc522a68e",
+      "artifactSizeBytes": 2584
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T08:21:09.005Z"
+}

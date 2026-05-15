@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70594,
+  "uuid": "skill-clawhub-skill-alimail",
+  "skillKey": "clawhub-skill-alimail",
+  "name": "Alimail Manager",
+  "summary": "提供阿里邮箱API调用能力，支持用户信息查询、邮件详情获取、邮件搜索；当用户需要查询企业邮箱用户信息、查看特定邮件内容、搜索符合条件的邮件时使用",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_alimail",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vber",
+      "features": [
+        "提供阿里邮箱API调用能力，支持用户信息查询、邮件详情获取、邮件搜索；当用户需要查询企业邮箱用户信息、查看特定邮件内容、搜索符合条件的邮件时使用"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-alimail@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1329609?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-alimail",
+      "url": "https://clawhub.ai/skills/skill-alimail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-alimail",
+    "url": "https://clawhub.ai/skills/skill-alimail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-alimail-a079031b53c4e19a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-alimail@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-alimail-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e36887285d6dcb679386a66583c8f4b7c29e641fdd940e00bd44a2db3123f2e8",
+      "artifactSizeBytes": 2190
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T02:14:52.539Z"
+}

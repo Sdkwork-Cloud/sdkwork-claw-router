@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15719,
+  "uuid": "skill-clawhub-openclaw-config-reference",
+  "skillKey": "clawhub-openclaw-config-reference",
+  "name": "OpenClaw Config Reference",
+  "summary": "OpenClaw configuration reference for openclaw.json. Use when asked about config, configuration, gateway settings, channel setup, agent config, session manage...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_config_reference",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daniel Samer",
+      "features": [
+        "OpenClaw configuration reference for openclaw.json",
+        "Use when asked about config, configuration, gateway settings, channel setup, agent config, sess."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-config-reference@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6413829?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-config-reference",
+      "url": "https://clawhub.ai/skills/openclaw-config-reference"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-config-reference",
+    "url": "https://clawhub.ai/skills/openclaw-config-reference",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-config-reference-2e5152cf56982912.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-config-reference@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-config-reference-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1928ae4516b80b95b271886ba2c43b04bfa9404319de546a7eeb11fac2c84117",
+      "artifactSizeBytes": 2230
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T16:05:21.910Z"
+}

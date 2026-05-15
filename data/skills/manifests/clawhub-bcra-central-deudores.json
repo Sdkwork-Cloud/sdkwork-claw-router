@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43774,
+  "uuid": "skill-clawhub-bcra-central-deudores",
+  "skillKey": "clawhub-bcra-central-deudores",
+  "name": "Central de Deudores BCRA",
+  "summary": "Query the BCRA (Banco Central de la República Argentina) Central de Deudores API to check the credit status of individuals or companies in Argentina's financ...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bcra_central_deudores",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Fermin Rodriguez Penelas",
+      "features": [
+        "Query the BCRA (Banco Central de la República Argentina) Central de Deudores API to check the c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bcra-central-deudores@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21282919?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bcra-central-deudores",
+      "url": "https://clawhub.ai/skills/bcra-central-deudores"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bcra-central-deudores",
+    "url": "https://clawhub.ai/skills/bcra-central-deudores",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bcra-central-deudores-ca72c247486d0825.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bcra-central-deudores@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bcra-central-deudores-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cada3693f7559e0df5a0102da6ae814627b7e2c4c127bb80cb727a641b49c8a4",
+      "artifactSizeBytes": 2313
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T00:54:11.129Z"
+}

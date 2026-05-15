@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64177,
+  "uuid": "skill-clawhub-dream-interpretation",
+  "skillKey": "clawhub-dream-interpretation",
+  "name": "Dream Interpretation",
+  "summary": "用中文理解并解读用户描述的梦境：优先上网搜索“周公解梦/解梦/梦见/梦到”相关中文资料，提炼传统民俗解释；当用户还想知道现实含义时，补充一段现代心理学视角。Use when the user describes a dream, asks“这个梦什么意思/帮我解梦/周公解梦/梦见XX代表什么/梦到XX是什么意思”...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dream_interpretation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "用中文理解并解读用户描述的梦境：优先上网搜索“周公解梦/解梦/梦见/梦到”相关中文资料，提炼传统民俗解释；当用户还想知道现实含义时，补充一段现代心理学视角。Use when the user."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dream-interpretation@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dream-interpretation",
+      "url": "https://clawhub.ai/skills/dream-interpretation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dream-interpretation",
+    "url": "https://clawhub.ai/skills/dream-interpretation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dream-interpretation-4b5c47f879d53763.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dream-interpretation@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-dream-interpretation-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6fd88ddeb4194c0e34ba374700c9bb848bed1a32be94a492155f4f3a3b02287d",
+      "artifactSizeBytes": 2634
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T13:28:22.929Z"
+}

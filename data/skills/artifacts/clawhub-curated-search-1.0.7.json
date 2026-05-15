@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/curated-search@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.curated_search",
+  "skill": {
+    "id": 15900,
+    "skillKey": "clawhub-curated-search",
+    "name": "Curated Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "curated-search",
+    "url": "https://clawhub.ai/skills/curated-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/curated-search-937625e8bb5fadca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Domain-restricted full-text search over curated technical documentation"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qsmtco",
+      "userId": "publishers:qsmtco",
+      "displayName": "qsmtco",
+      "image": "https://avatars.githubusercontent.com/u/45089207?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 934,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1771391861901,
+      "changelog": "Added security manifest headers to all scripts; fixed SKILL.md compliance; improved .clawhubignore; removed skill.json. No functional changes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:560dbd0f92a587f8720190ab658c95f0564488ce4b5e92844190753430464942"
+}

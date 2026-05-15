@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24998,
+  "uuid": "skill-clawhub-feishu-md2blocks",
+  "skillKey": "clawhub-feishu-md2blocks",
+  "name": "Feishu Md2blocks",
+  "summary": "Insert rich Markdown content (including tables) into Feishu documents. Use when feishu_doc write/append fails with tables, or when inserting complex formatte...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_md2blocks",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "deadblue",
+      "features": [
+        "Insert rich Markdown content (including tables) into Feishu documents",
+        "Use when feishu_doc write/append fails with tables, or when inserting complex formatte..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-md2blocks@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/448649?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-md2blocks",
+      "url": "https://clawhub.ai/skills/feishu-md2blocks"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-md2blocks",
+    "url": "https://clawhub.ai/skills/feishu-md2blocks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-md2blocks-42f20ccec7fff5ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-md2blocks@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-md2blocks-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ee7df857b78543b38d64da49e4e43f0d7dbc46437fbfa546de7b536fdd1c7236",
+      "artifactSizeBytes": 2450
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T06:26:18.855Z"
+}

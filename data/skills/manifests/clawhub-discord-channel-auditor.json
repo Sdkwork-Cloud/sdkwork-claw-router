@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22833,
+  "uuid": "skill-clawhub-discord-channel-auditor",
+  "skillKey": "clawhub-discord-channel-auditor",
+  "name": "Discord Channel Auditor",
+  "summary": "Audit and auto-update a Discord server guide channel. Compares a reference guide message against actual channels, detects new/renamed/deleted/moved channels,...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.discord_channel_auditor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "npfaerber",
+      "features": [
+        "Audit and auto-update a Discord server guide channel",
+        "Compares a reference guide message against actual channels, detects new/renamed/deleted/moved c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/discord-channel-auditor@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258851131?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "discord-channel-auditor",
+      "url": "https://clawhub.ai/skills/discord-channel-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "discord-channel-auditor",
+    "url": "https://clawhub.ai/skills/discord-channel-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/discord-channel-auditor-a0730957d8e426e3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/discord-channel-auditor@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-discord-channel-auditor-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5790a41dd7297a7c3e20d60acd6ee5e892373dc2a4de219764056fb941bb6a60",
+      "artifactSizeBytes": 2192
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T10:12:30.816Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nano-banana-pro-1-0-1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nano_banana_pro_1_0_1",
+  "skill": {
+    "id": 24873,
+    "skillKey": "clawhub-nano-banana-pro-1-0-1",
+    "name": "Nano Banana Pro 1.0.1"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nano-banana-pro-1-0-1",
+    "url": "https://clawhub.ai/skills/nano-banana-pro-1-0-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nano-banana-pro-1-0-1-4d90e085623a9a63.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate/edit images with Nano Banana Pro (Gemini 3 Pro Image). Use for image create/modify requests incl. edits. Supports text-to-image + image-to-image; 1K..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guogithubname",
+      "userId": "s173v81h670sdrw1e5kz631y8s83kx38",
+      "displayName": "Guogithubname",
+      "image": "https://avatars.githubusercontent.com/u/88263054?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 221,
+      "installsAllTime": 18,
+      "installsCurrent": 15,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774416676081,
+      "changelog": "- Initial release of nano-banana-pro skill, enabling image generation and editing via Google’s Gemini 3 Pro Image API.\n- Supports both text-to-image and image-to-image workflows, including prompt-based edits.\n- Handles 1K, 2K, and 4K resolution options with user-friendly resolution mapping.\n- Saves images in the current working directory using timestamped, descriptive filenames.\n- Flexible API key management (argument or environment variable).\n- Includes preflight checks, error handling guidance, and prompt templates for both generation and editing use cases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f9f66ac2c9b28f78b345363c2628390dbce327eb2db31863578f84eec0fbbc5b"
+}

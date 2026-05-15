@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54320,
+  "uuid": "skill-clawhub-ntriq-x402-invoice-extract",
+  "skillKey": "clawhub-ntriq-x402-invoice-extract",
+  "name": "Ntriq X402 Invoice Extract",
+  "summary": "Extract structured invoice data (vendor, line items, totals, tax) from any invoice image. Pay $0.03 USDC via x402.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ntriq_x402_invoice_extract",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ntriq",
+      "features": [
+        "Extract structured invoice data (vendor, line items, totals, tax) from any invoice image",
+        "Pay $0.03 USDC via x402."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ntriq-x402-invoice-extract@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/215101248?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ntriq-x402-invoice-extract",
+      "url": "https://clawhub.ai/skills/ntriq-x402-invoice-extract"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ntriq-x402-invoice-extract",
+    "url": "https://clawhub.ai/skills/ntriq-x402-invoice-extract",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ntriq-x402-invoice-extract-49d1a1be424b1797.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ntriq-x402-invoice-extract@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ntriq-x402-invoice-extract-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1fa38be11c509340b43d34257fb797cd5541c89288ce94828c1c842ca1a39fb2",
+      "artifactSizeBytes": 2250
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T00:00:37.975Z"
+}

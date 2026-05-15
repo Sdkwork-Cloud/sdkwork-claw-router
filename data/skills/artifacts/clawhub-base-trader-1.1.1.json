@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/base-trader@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.base_trader",
+  "skill": {
+    "id": 8629,
+    "skillKey": "clawhub-base-trader",
+    "name": "Base Trader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "base-trader",
+    "url": "https://clawhub.ai/skills/base-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/base-trader-d2cdf2545ab03ab5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous crypto trading on Base via Bankr. Use for trading tokens, monitoring launches, executing strategies, or managing a trading portfolio. Triggers on \"trade\", \"buy\", \"sell\", \"launch\", \"snipe\", \"profit\", \"PnL\", \"portfolio balance\", o."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sp0oby",
+      "userId": "publishers:sp0oby",
+      "displayName": "sp0oby",
+      "image": "https://avatars.githubusercontent.com/u/39270883?v=4"
+    },
+    "stats": {
+      "comments": 4,
+      "downloads": 7103,
+      "installsAllTime": 29,
+      "installsCurrent": 25,
+      "stars": 24,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1769633204815,
+      "changelog": "Remove personal data for public distribution - no hardcoded wallets or user-specific references",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0d8836457231da1ccabd35ac75d57719acdf1180bafdca85229cad12922a8da3"
+}

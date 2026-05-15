@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72789,
+  "uuid": "skill-clawhub-feishu-meeting-summary",
+  "skillKey": "clawhub-feishu-meeting-summary",
+  "name": "飞书会议总结",
+  "summary": "飞书会议总结技能 - 读取飞书会议纪要，生成结构化总结，沉淀知识，支持搜索",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_meeting_summary",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yann",
+      "features": [
+        "飞书会议总结技能",
+        "读取飞书会议纪要，生成结构化总结，沉淀知识，支持搜索"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-meeting-summary@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18591539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-meeting-summary",
+      "url": "https://clawhub.ai/skills/feishu-meeting-summary"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-meeting-summary",
+    "url": "https://clawhub.ai/skills/feishu-meeting-summary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-meeting-summary-eb1ea22da8a4402b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-meeting-summary@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-meeting-summary-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1fdc769df49aad94eb5899cc2e1a72fbd72b3f1081b856c070c84e4bcccbe7b3",
+      "artifactSizeBytes": 2290
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T07:33:02.668Z"
+}

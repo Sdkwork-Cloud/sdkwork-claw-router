@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20637,
+  "uuid": "skill-clawhub-bee-push-email-skill",
+  "skillKey": "clawhub-bee-push-email-skill",
+  "name": "Bee Push Email",
+  "summary": "Monitors email in real-time via IMAP IDLE and triggers the OpenClaw agent to notify users through active channels like Telegram or Discord.",
+  "version": "1.5.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bee_push_email_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "canihojr",
+      "features": [
+        "Monitors email in real-time via IMAP IDLE and triggers the OpenClaw agent to notify users throu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bee-push-email-skill@1.5.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25158827?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bee-push-email-skill",
+      "url": "https://clawhub.ai/skills/bee-push-email-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bee-push-email-skill",
+    "url": "https://clawhub.ai/skills/bee-push-email-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bee-push-email-skill-7bf2def554a2e991.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bee-push-email-skill@1.5.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-bee-push-email-skill-1.5.3.json",
+      "version": "1.5.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f4f8e8733134ab2a67a6d8c67de6ff6c654a507abe26d9b27e3722d9ba7c134a",
+      "artifactSizeBytes": 2366
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T09:01:09.217Z"
+}

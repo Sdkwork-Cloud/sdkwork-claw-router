@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48158,
+  "uuid": "skill-clawhub-check-point",
+  "skillKey": "clawhub-check-point",
+  "name": "Check Point",
+  "summary": "Check Point pioneered stateful firewall technology, providing enterprise network, cloud, and mobile security with hardware, software, and SaaS solutions glob...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.check_point",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Check Point pioneered stateful firewall technology, providing enterprise network, cloud, and mo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/check-point@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "check-point",
+      "url": "https://clawhub.ai/skills/check-point"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "check-point",
+    "url": "https://clawhub.ai/skills/check-point",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/check-point-d45ee996ae2c72c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/check-point@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-check-point-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f53c5e2ffcec1f2411d70c9aab59c34fb39ea4eec53cf9bba0b7bc339150accd",
+      "artifactSizeBytes": 2417
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T21:05:30.860Z"
+}

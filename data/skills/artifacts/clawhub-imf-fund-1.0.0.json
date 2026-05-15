@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/imf-fund@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.imf_fund",
+  "skill": {
+    "id": 50119,
+    "skillKey": "clawhub-imf-fund",
+    "name": "Imf Fund"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "imf-fund",
+    "url": "https://clawhub.ai/skills/imf-fund",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/imf-fund-8981ab382ee8f7de.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides authoritative data and analysis on IMF policies, loans, conditionality, and global economic monitoring for countries facing balance of payments diff..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 34,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778367925706,
+      "changelog": "- 首次发布，介绍IMF（国际货币基金组织）的核心功能及历史演变。\n- 提供IMF历史时间线、商业模式、护城河分析及最新关键数据。\n- 详细说明SDR机制和IMF在全球金融治理中的独特地位。\n- 补充有趣事实，包括IMF黄金储备与SDR货币篮子结构。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c4de52791c346ec16554c33c636e5ad4aaa7e3aca57d4ae3ac8aba8d44a86171"
+}

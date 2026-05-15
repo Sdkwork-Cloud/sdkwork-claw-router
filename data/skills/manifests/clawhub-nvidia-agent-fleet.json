@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58563,
+  "uuid": "skill-clawhub-nvidia-agent-fleet",
+  "skillKey": "clawhub-nvidia-agent-fleet",
+  "name": "Nvidia Agent Fleet",
+  "summary": "NVIDIA Agent Fleet — 19个模型Agent + 智能调度引擎 + 并行协作",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nvidia_agent_fleet",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Clement Gu",
+      "features": [
+        "NVIDIA Agent Fleet — 19个模型Agent + 智能调度引擎 + 并行协作"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nvidia-agent-fleet@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16643417?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nvidia-agent-fleet",
+      "url": "https://clawhub.ai/skills/nvidia-agent-fleet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nvidia-agent-fleet",
+    "url": "https://clawhub.ai/skills/nvidia-agent-fleet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nvidia-agent-fleet-c3de68965d664d2c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nvidia-agent-fleet@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-nvidia-agent-fleet-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a215ee64e17fc5ee257fe16d79980648af6043788f1c70489ea62ebc2ef13464",
+      "artifactSizeBytes": 2048
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T02:43:10.782Z"
+}

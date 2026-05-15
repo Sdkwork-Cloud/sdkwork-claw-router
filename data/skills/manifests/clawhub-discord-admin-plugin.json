@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50541,
+  "uuid": "skill-clawhub-discord-admin-plugin",
+  "skillKey": "clawhub-discord-admin-plugin",
+  "name": "Discord Admin",
+  "summary": "Full Discord server administration suite for OpenClaw — roles, moderation, channels, invites, webhooks, audit log, and member management.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.discord_admin_plugin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rendrag-git",
+      "features": [
+        "Full Discord server administration suite for OpenClaw — roles, moderation, channels, invites, w."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/discord-admin-plugin@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/253747599?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "discord-admin-plugin",
+      "url": "https://clawhub.ai/skills/discord-admin-plugin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "discord-admin-plugin",
+    "url": "https://clawhub.ai/skills/discord-admin-plugin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/discord-admin-plugin-96b19808cdcd0288.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/discord-admin-plugin@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-discord-admin-plugin-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:834c0e5e55394da5dc29b847d2fa4141a03f85a11dffb3e3edb1d2bfcc1cf097",
+      "artifactSizeBytes": 2188
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T04:34:12.852Z"
+}

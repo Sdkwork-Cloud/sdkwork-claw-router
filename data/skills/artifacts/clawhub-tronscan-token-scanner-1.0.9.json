@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tronscan-token-scanner@1.0.9",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tronscan_token_scanner",
+  "skill": {
+    "id": 17757,
+    "skillKey": "clawhub-tronscan-token-scanner",
+    "name": "TronScan Token Scanner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tronscan-token-scanner",
+    "url": "https://clawhub.ai/skills/tronscan-token-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tronscan-token-scanner-44449f53c4911178.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scan TRON tokens for total supply, market cap, price, rating, launch time, holders. Includes TRX: TRX price, TRX supply, market cap, daily net change, and su..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sshnii",
+      "userId": "s17dsg90r9649q4z39neh6fte983h6eb",
+      "displayName": "BigFrog",
+      "image": "https://avatars.githubusercontent.com/u/142767282?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 550,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.0.9",
+      "createdAt": 1774596340653,
+      "changelog": "tronscan-token-scanner 1.0.9\n\n- No changes were detected in this version.\n- All existing features, documentation, and capabilities remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:86ca2ae4b71ba64fc649d08748fbe39c10cf88b64b27167eed6e8811c40e397c"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67405,
+  "uuid": "skill-clawhub-laozhangapi-image",
+  "skillKey": "clawhub-laozhangapi-image",
+  "name": "Laozhangapi Image",
+  "summary": "使用老张 API 生成和编辑图片，最低 $0.01/张。支持文生图、图片编辑、多图融合、多种比例。触发词：生成图片、画图、AI作图、文生图、图片编辑、换背景、风格转换、Sora生图。",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.laozhangapi_image",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "enihsago",
+      "features": [
+        "使用老张 API 生成和编辑图片，最低 $0.01/张。支持文生图、图片编辑、多图融合、多种比例。触发词：生成图片、画图、AI作图、文生图、图片编辑、换背景、风格转换、Sora生图。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/laozhangapi-image@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265008639?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "laozhangapi-image",
+      "url": "https://clawhub.ai/skills/laozhangapi-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "laozhangapi-image",
+    "url": "https://clawhub.ai/skills/laozhangapi-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/laozhangapi-image-f23cb87d08fe2ab5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/laozhangapi-image@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-laozhangapi-image-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:99a0831d78012d1a4e63d8afc4f9651ef663ec544d015c0b25f24861bc618d06",
+      "artifactSizeBytes": 2018
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T15:21:05.528Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42688,
+  "uuid": "skill-clawhub-integrate-getresponse",
+  "skillKey": "clawhub-integrate-getresponse",
+  "name": "Getresponse",
+  "summary": "GetResponse integration. Manage data, records, and automate workflows. Use when the user wants to interact with GetResponse data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.integrate_getresponse",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "GetResponse integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with GetResponse data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/integrate-getresponse@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "integrate-getresponse",
+      "url": "https://clawhub.ai/skills/integrate-getresponse"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "integrate-getresponse",
+    "url": "https://clawhub.ai/skills/integrate-getresponse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/integrate-getresponse-b6759b473eba52ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/integrate-getresponse@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-integrate-getresponse-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:569a2d07b6430a36bf48dafb561f044b81160c3b270da132428dd506d17e47cd",
+      "artifactSizeBytes": 1925
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:36:29.397Z"
+}

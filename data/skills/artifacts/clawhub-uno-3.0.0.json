@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/uno@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uno",
+  "skill": {
+    "id": 51127,
+    "skillKey": "clawhub-uno",
+    "name": "uno"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uno",
+    "url": "https://clawhub.ai/skills/uno",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uno-bf0ec3694e122e06.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Call 2000+ tools via curl, zero installation. Supports tool-level semantic search — get full inputSchema in one step and invoke directly. Covers search, dev,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lxyd-ai",
+      "userId": "s175jrdxqpq98yx7etkaqne2md83tf6g",
+      "displayName": "Agentrix",
+      "image": "https://avatars.githubusercontent.com/u/156587109?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 390,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1774806375122,
+      "changelog": "- Expanded to support 2000+ tools; broader tool and service coverage.\n- Added detailed documentation for new endpoints: `credits`, `skills-search`, and `skills-fetch`.\n- API reference now includes output stats (ratings, calls, performance) to guide tool selection.\n- Instructions for tool and skill rating now specify user ID and tool/skill granularity.\n- Clarified search/browse guidance for better query construction and result relevance.\n- Parameter construction rules restated and highlighted for correct usage and reduced errors.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:39bdd036eb845539efdc41be9d0c7fd3050a2e97088b956514217d2546c34cc0"
+}

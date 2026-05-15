@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28086,
+  "uuid": "skill-clawhub-agentbrowse",
+  "skillKey": "clawhub-agentbrowse",
+  "name": "AgentBrowse",
+  "summary": "Browser automation workflows through the agentbrowse CLI for launch, attach, observe, act, extract, navigation, and screenshots.",
+  "version": "0.1.22",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentbrowse",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dmitry Ukhanov",
+      "features": [
+        "Browser automation workflows through the agentbrowse CLI for launch, attach, observe, act, extr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentbrowse@0.1.22",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47590526?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentbrowse",
+      "url": "https://clawhub.ai/skills/agentbrowse"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentbrowse",
+    "url": "https://clawhub.ai/skills/agentbrowse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentbrowse-d0333d51f9b0f6a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentbrowse@0.1.22",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentbrowse-0.1.22.json",
+      "version": "0.1.22",
+      "runtime": "metadata",
+      "checksumHash": "sha256:796b9300d5a6aaacd2353569bd0257c561430e6f6b1aeac6e09bf039ce8edf38",
+      "artifactSizeBytes": 1852
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T09:18:09.831Z"
+}

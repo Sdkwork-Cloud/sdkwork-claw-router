@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43507,
+  "uuid": "skill-clawhub-card-transfer",
+  "skillKey": "clawhub-card-transfer",
+  "name": "Card Transfer",
+  "summary": "Return transfer partners, ratios, timing, and restrictions for one major-US credit card. Covers 11 major US issuers including co-branded hotel and airline ca...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.card_transfer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiahongc",
+      "features": [
+        "Return transfer partners, ratios, timing, and restrictions for one major-US credit card",
+        "Covers 11 major US issuers including co-branded hotel and airline ca..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/card-transfer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61323260?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "card-transfer",
+      "url": "https://clawhub.ai/skills/card-transfer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "card-transfer",
+    "url": "https://clawhub.ai/skills/card-transfer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/card-transfer-cc10d9cb2e97334b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/card-transfer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-card-transfer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1b1ac74ddb255a312b79ac40d9d3dbf6d25b32b29ef11c56fbf0887691bb89b4",
+      "artifactSizeBytes": 1878
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T13:24:20.327Z"
+}

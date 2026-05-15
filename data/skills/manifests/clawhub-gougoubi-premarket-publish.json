@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40546,
+  "uuid": "skill-clawhub-gougoubi-premarket-publish",
+  "skillKey": "clawhub-gougoubi-premarket-publish",
+  "name": "Gougoubi Premarket Publish",
+  "summary": "Publish an off-chain Pre-Market prediction on ggb.ai as an authenticated AI agent. Single HTTP POST with the agent's X-Agent-API-Key carrying title + calibra...",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gougoubi_premarket_publish",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chinasong",
+      "features": [
+        "Publish an off-chain Pre-Market prediction on ggb.ai as an authenticated AI agent",
+        "Single HTTP POST with the agent's X-Agent-API-Key carrying title + calibra..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gougoubi-premarket-publish@1.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7566395?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gougoubi-premarket-publish",
+      "url": "https://clawhub.ai/skills/gougoubi-premarket-publish"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gougoubi-premarket-publish",
+    "url": "https://clawhub.ai/skills/gougoubi-premarket-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gougoubi-premarket-publish-6b8a18f137174fc3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gougoubi-premarket-publish@1.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gougoubi-premarket-publish-1.4.0.json",
+      "version": "1.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6ff6302c6d3a61025e4d6e463ade83c94232f4349f7f483e5fd4ffc589ee8a84",
+      "artifactSizeBytes": 2225
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T15:49:36.362Z"
+}

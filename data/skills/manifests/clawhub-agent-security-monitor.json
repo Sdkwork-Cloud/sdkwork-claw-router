@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11517,
+  "uuid": "skill-clawhub-agent-security-monitor",
+  "skillKey": "clawhub-agent-security-monitor",
+  "name": "Agent Security Monitor",
+  "summary": "Security monitoring and alerting tool for AI agents. Automatically checks for exposed secrets, unverified skills, insecure keys, suspicious commands, and mal...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_security_monitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "suzxclaw",
+      "features": [
+        "Security monitoring and alerting tool for AI agents",
+        "Automatically checks for exposed secrets, unverified skills, insecure keys, suspicious commands."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-security-monitor@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260190635?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-security-monitor",
+      "url": "https://clawhub.ai/skills/agent-security-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-security-monitor",
+    "url": "https://clawhub.ai/skills/agent-security-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-security-monitor-721d4170854590be.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-security-monitor@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-security-monitor-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a3ae03d8bfeee7c9bdfa36e516d9d38f5c9b2bde264f1c9e1adcf987950312f4",
+      "artifactSizeBytes": 2099
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T09:01:40.631Z"
+}

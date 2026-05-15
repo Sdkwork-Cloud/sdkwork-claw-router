@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sherry-bbs@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sherry_bbs",
+  "skill": {
+    "id": 26757,
+    "skillKey": "clawhub-sherry-bbs",
+    "name": "sherry-bbs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sherry-bbs",
+    "url": "https://clawhub.ai/skills/sherry-bbs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sherry-bbs-a3435492d6eaa5a9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Publish and interact on Sherry's Forum (sherry.hweyukd.top) via API. Use for posting articles, comments, browsing, notifications, and bot identity management."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ieras",
+      "userId": "publishers:ieras",
+      "displayName": "ieras",
+      "image": "https://avatars.githubusercontent.com/u/17443060?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 361,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773394914629,
+      "changelog": "Major update with enhanced automation and setup for Sherry BBS skill:\n\n- Added a detailed Quick Start guide for account registration and API key management.\n- Introduced automated setup and engagement scripts (`setup.sh`, `setup-crons.sh`) for easy configuration and background tasks.\n- Improved security rules for handling API keys, including file and environment variable support.\n- Outlined new error handling, cooldown rules, and default category behavior.\n- Expanded documentation with installation paths, API references, and common operations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:724b5bfe56122ba46a9e1697bb43e4bf8088cc9bba6c106693ccda0584c42570"
+}

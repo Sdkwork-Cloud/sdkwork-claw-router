@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28301,
+  "uuid": "skill-clawhub-gracie-crm",
+  "skillKey": "clawhub-gracie-crm",
+  "name": "Gracie Crm",
+  "summary": "Manage and track Gracie AI Receptionist sales leads with CLI commands to add, update, log calls, notes, and view sales pipeline summaries.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gracie_crm",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JayJJimenez",
+      "features": [
+        "Manage and track Gracie AI Receptionist sales leads with CLI commands to add, update, log calls."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gracie-crm@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/79680021?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gracie-crm",
+      "url": "https://clawhub.ai/skills/gracie-crm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gracie-crm",
+    "url": "https://clawhub.ai/skills/gracie-crm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gracie-crm-613407d357f4fed1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gracie-crm@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gracie-crm-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ae6e7ab423f1e39aedcd3eca54ce4e24c4f46582ab377d93d7f28057ad3a2db",
+      "artifactSizeBytes": 2247
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T20:57:40.732Z"
+}

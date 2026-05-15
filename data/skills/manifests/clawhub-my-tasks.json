@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19708,
+  "uuid": "skill-clawhub-my-tasks",
+  "skillKey": "clawhub-my-tasks",
+  "name": "My Tasks",
+  "summary": "View your personal task history and status on OpenAnt. Use when the user wants to see their own tasks, check what they've completed, review their task histor...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_tasks",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ant-1984",
+      "features": [
+        "View your personal task history and status on OpenAnt",
+        "Use when the user wants to see their own tasks, check what they've completed, review their task."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/my-tasks@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261687401?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "my-tasks",
+      "url": "https://clawhub.ai/skills/my-tasks"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-tasks",
+    "url": "https://clawhub.ai/skills/my-tasks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-tasks-6c1b34d2118f91e6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/my-tasks@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-my-tasks-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e4b2401cc1a2fab47820c1014a43e5955f2577ebdc0748106d9ea26635846c13",
+      "artifactSizeBytes": 2262
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T11:42:21.232Z"
+}

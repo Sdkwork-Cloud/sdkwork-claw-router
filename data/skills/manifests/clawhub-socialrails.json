@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22689,
+  "uuid": "skill-clawhub-socialrails",
+  "skillKey": "clawhub-socialrails",
+  "name": "SocialRails",
+  "summary": "Manage social media by scheduling posts, viewing analytics, generating AI captions, and listing connected accounts via the SocialRails API.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.socialrails",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Matt",
+      "features": [
+        "Manage social media by scheduling posts, viewing analytics, generating AI captions, and listing."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/socialrails@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/176761426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "socialrails",
+      "url": "https://clawhub.ai/skills/socialrails"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "socialrails",
+    "url": "https://clawhub.ai/skills/socialrails",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/socialrails-a7371c5b4329c10f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/socialrails@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-socialrails-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d5b17178d9330b5ad85c368ff0aae457be47288146b9195e65afdc25d946679e",
+      "artifactSizeBytes": 2187
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T19:33:02.501Z"
+}

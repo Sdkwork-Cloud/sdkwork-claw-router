@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18972,
+  "uuid": "skill-clawhub-amazon-shipping-calculator",
+  "skillKey": "clawhub-amazon-shipping-calculator",
+  "name": "Amazon Shipping Calculator",
+  "summary": "Calculate Amazon shipping and fulfillment costs for FBA and FBM. Dimensional weight, storage fees, removal fees, and long-term storage cost estimation.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_shipping_calculator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nexscope-ai",
+      "features": [
+        "Calculate Amazon shipping and fulfillment costs for FBA and FBM",
+        "Dimensional weight, storage fees, removal fees, and long-term storage cost estimation."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amazon-shipping-calculator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265748176?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amazon-shipping-calculator",
+      "url": "https://clawhub.ai/skills/amazon-shipping-calculator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-shipping-calculator",
+    "url": "https://clawhub.ai/skills/amazon-shipping-calculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-shipping-calculator-d51a13acec4e234e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amazon-shipping-calculator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-amazon-shipping-calculator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8eab17587d12d0b4a95710cca642214a87357da0a9b19e493ea6f4a69f5aa02f",
+      "artifactSizeBytes": 2503
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T05:42:19.218Z"
+}

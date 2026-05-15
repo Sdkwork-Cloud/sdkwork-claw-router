@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45204,
+  "uuid": "skill-clawhub-linkedin-thread-engagement",
+  "skillKey": "clawhub-linkedin-thread-engagement",
+  "name": "Linkedin Thread Engagement",
+  "summary": "Tracks your LinkedIn comments for author replies within 72h, flags high-value engagement windows, and drafts timely follow-ups to maximize thread momentum.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkedin_thread_engagement",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sergey Bulaev",
+      "features": [
+        "Tracks your LinkedIn comments for author replies within 72h, flags high-value engagement window."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linkedin-thread-engagement@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/241980?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linkedin-thread-engagement",
+      "url": "https://clawhub.ai/skills/linkedin-thread-engagement"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkedin-thread-engagement",
+    "url": "https://clawhub.ai/skills/linkedin-thread-engagement",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkedin-thread-engagement-abc78c4b9b4a5efe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linkedin-thread-engagement@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-linkedin-thread-engagement-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:78b006065e78e8f652bc5e458c23fc6b3c3db80a4b96e46163043a846cebb7db",
+      "artifactSizeBytes": 1970
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T21:40:25.382Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/runrelay@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.runrelay",
+  "skill": {
+    "id": 23016,
+    "skillKey": "clawhub-runrelay",
+    "name": "Runrelay"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "runrelay",
+    "url": "https://clawhub.ai/skills/runrelay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/runrelay-08458040f4f298f6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search and book flights, hotels, and travel via RunRelay API. Covers 300+ airlines including low-cost carriers (Ryanair, Wizz Air, EasyJet) that no other API..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "runrelay",
+      "userId": "publishers:runrelay",
+      "displayName": "runrelay",
+      "image": "https://avatars.githubusercontent.com/u/260778404?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 454,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772493495020,
+      "changelog": "- Initial release of the runrelay skill.\n- Search and book flights (including 300+ airlines and exclusive low-cost carrier coverage like Ryanair, Wizz Air, EasyJet).\n- Search and book hotels worldwide via RateHawk integration.\n- Supports multi-agent trip planning with parallel flight, hotel, and activity searches.\n- MCP server compatibility for Claude, Cursor, and other AI agents.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:43de635e650408be9879215ca0e9c3f1538f80a5cba591750145891c812700ca"
+}

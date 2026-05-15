@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/51mee-resume-diagnose@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.51mee_resume_diagnose",
+  "skill": {
+    "id": 65744,
+    "skillKey": "clawhub-51mee-resume-diagnose",
+    "name": "51mee Resume Diagnose"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "51mee-resume-diagnose",
+    "url": "https://clawhub.ai/skills/51mee-resume-diagnose",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/51mee-resume-diagnose-0ee75e879d85c4eb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "简历诊断。触发场景：用户要求诊断简历质量；用户想优化简历; 用户问我的简历有什么问题。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "51mee-com",
+      "userId": "publishers:51mee-com",
+      "displayName": "51mee",
+      "image": "https://avatars.githubusercontent.com/u/226007355?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 360,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1773657724577,
+      "changelog": "- Initial release of the 51mee-resume-diagnose skill for resume quality assessment.\n- Upload a resume file (PDF, DOC, DOCX, JPG, PNG) to receive a structured, multi-dimensional diagnosis report.\n- Uses a large language model to analyze resumes across five key dimensions: content completeness, structure rationality, format standardization, keyword optimization, and language expression.\n- Provides prioritized issue detection, actionable optimization plans, and rewrite suggestions.\n- Outputs results in both JSON and a clear, user-friendly Markdown report template.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c10e866a5903201109d6817eb1006932d936996cfdee3d0276a2c3b72b9bce52"
+}

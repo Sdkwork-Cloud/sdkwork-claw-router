@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/multi-platform-publisher-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_platform_publisher_agent",
+  "skill": {
+    "id": 64914,
+    "skillKey": "clawhub-multi-platform-publisher-agent",
+    "name": "Multi Platform Publisher Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-platform-publisher-agent",
+    "url": "https://clawhub.ai/skills/multi-platform-publisher-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-platform-publisher-agent-4cc33b822fa25f93.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "多平台发布智能体。当需要在各平台发布书籍、管理发布计划、处理封面和格式时触发本技能。用于：(1) 将小说内容发布到Amazon KDP/番茄/起点/晋江等平台 (2) 适配各平台格式和封面要求 (3) 管理定时发布和更新节奏 (4) 处理滑块验证码 (5) 记录发布状态和回传数据"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ouyang198000",
+      "userId": "s17epgek7r0dqrspt31mgsk23s8436f0",
+      "displayName": "Ouyang198000",
+      "image": "https://avatars.githubusercontent.com/u/136032898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775133184079,
+      "changelog": "- Initial release of the multi-platform publisher agent.\n- Supports automated publishing of books to multiple platforms including Amazon KDP, 番茄小说, 起点中文网, 晋江文学城, Royal Road, and 七猫小说.\n- Handles content format adaptation, sensitive word replacement, and custom cover generation per platform requirements.\n- Provides account management, publishing scheduling (immediate/timed/serial), and status feedback for all platforms.\n- Integrates legal CAPTCHA solving via third-party services for publishing automation.\n- Records and returns book IDs, review status, and exception logs for analytics and monitoring.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5a2f2947236c51b11be22cf8317f4bc1907cf7c17f37ae7b81d7b250b25789cc"
+}

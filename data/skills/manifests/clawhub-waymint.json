@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42032,
+  "uuid": "skill-clawhub-waymint",
+  "skillKey": "clawhub-waymint",
+  "name": "wayMint Identity",
+  "summary": "Link your OpenClaw agent to its wayMint ERC-8004 on-chain identity certificate. Responds to /8004 with your verified identity URL. Configure once, reference...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.waymint",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Maksika",
+      "features": [
+        "Link your OpenClaw agent to its wayMint ERC-8004 on-chain identity certificate",
+        "Responds to /8004 with your verified identity URL",
+        "Configure once, reference..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/waymint@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13403493?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "waymint",
+      "url": "https://clawhub.ai/skills/waymint"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "waymint",
+    "url": "https://clawhub.ai/skills/waymint",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/waymint-f4cc8f5fde432ecf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/waymint@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-waymint-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:99c8a747471c32556f4ad15c4193a18c02a9719c6d894bc4e348b0dd5d49ef90",
+      "artifactSizeBytes": 1878
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T10:56:34.448Z"
+}

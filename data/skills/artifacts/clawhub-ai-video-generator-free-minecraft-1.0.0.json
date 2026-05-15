@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-generator-free-minecraft@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_generator_free_minecraft",
+  "skill": {
+    "id": 44486,
+    "skillKey": "clawhub-ai-video-generator-free-minecraft",
+    "name": "Ai Video Generator Free Minecraft"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-generator-free-minecraft",
+    "url": "https://clawhub.ai/skills/ai-video-generator-free-minecraft",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-generator-free-minecraft-99403968aded0d4b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate text prompts into Minecraft-style video clips with this skill. Works with MP4, MOV, WebM, GIF files up to 500MB. Minecraft content creators use it f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776371056561,
+      "changelog": "AI Video Generator Free Minecraft 1.0.0 — Initial Release\n\n- Generate Minecraft-style video clips from text prompts, delivering 1080p MP4 files within 1–2 minutes.\n- Supports uploads in MP4, MOV, WebM, GIF, and various popular formats (up to 500MB).\n- Automated cloud session and token management, with 100 free credits on signup.\n- Offers actions for exporting videos, checking credits, session state, and file uploads.\n- Robust error handling and clear user feedback at each step.\n- Designed for Minecraft content creators seeking free, AI-generated video content from simple text descriptions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:be7494423dd74e517a71d8747c6d79a053bd2e16d4d6e2f6e8e1b86672d32a36"
+}

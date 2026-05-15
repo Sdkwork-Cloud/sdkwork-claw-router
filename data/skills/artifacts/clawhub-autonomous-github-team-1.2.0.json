@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/autonomous-github-team@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autonomous_github_team",
+  "skill": {
+    "id": 52389,
+    "skillKey": "clawhub-autonomous-github-team",
+    "name": "Autonomous GitHub Team"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autonomous-github-team",
+    "url": "https://clawhub.ai/skills/autonomous-github-team",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autonomous-github-team-2f50efa4bef1843a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous GitHub Team — 41 AI agents that autonomously monitor a GitHub repository, detect bugs, create fixes, open PRs, and release to production. Triggers..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "captainsvbot",
+      "userId": "publishers:captainsvbot",
+      "displayName": "captainsvbot",
+      "image": "https://avatars.githubusercontent.com/u/258705474?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774057749020,
+      "changelog": "v1.2.0: Full security overhaul — declare GH_TOKEN/TARGET_REPO as primaryEnv, pinned clone to v1.0.0 tag, added audit-before-running warning, least-privilege PAT guidance, isolated-test-repo requirement, no-auto-merge-to-main policy.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a452c3f20c87244587e7a65ca3592e3733f1eeaa90aafb5f47b0dfbfdfe7376c"
+}

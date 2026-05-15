@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62535,
+  "uuid": "skill-clawhub-ftshare-holder-data",
+  "skillKey": "clawhub-ftshare-holder-data",
+  "name": "Skills of A-share holder data released by ft.tech.",
+  "summary": "非凸科技 A 股股东数据技能集。覆盖十大股东、十大流通股东、股东户数、股权质押总揽等接口（market.ft.tech）。用户询问 A 股某只股票的历期十大股东、股东结构变动、持股比例、股东人数变化、或全市场股权质押情况时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ftshare_holder_data",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shawn92",
+      "features": [
+        "非凸科技 A 股股东数据技能集。覆盖十大股东、十大流通股东、股东户数、股权质押总揽等接口（market.ft.tech）。用户询问 A 股某只股票的历期十大股东、股东结构变动、持股比例、股东."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ftshare-holder-data@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17521361?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ftshare-holder-data",
+      "url": "https://clawhub.ai/skills/ftshare-holder-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ftshare-holder-data",
+    "url": "https://clawhub.ai/skills/ftshare-holder-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ftshare-holder-data-a9c9744c1c42bfc1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ftshare-holder-data@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ftshare-holder-data-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ee7e1ca0bb83af515c0c4ccc95f7bab82dcda6785589774dc2e57fec257a8601",
+      "artifactSizeBytes": 2578
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T16:24:43.283Z"
+}

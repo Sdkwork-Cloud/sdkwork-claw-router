@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/markdown-to-feishu-post@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.markdown_to_feishu_post",
+  "skill": {
+    "id": 66702,
+    "skillKey": "clawhub-markdown-to-feishu-post",
+    "name": "Markdown to Feishu Post"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "markdown-to-feishu-post",
+    "url": "https://clawhub.ai/skills/markdown-to-feishu-post",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/markdown-to-feishu-post-b1794ec574cccfe7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将标准 Markdown 文本转换为飞书富文本消息（Post）的 JSON 结构。支持多级标题、粗体、斜体、下划线、删除线、链接、@用户、图片、有序/无序列表、代码块、引用和分割线。当用户需要发送飞书富文本消息、将 Markdown 转换为飞书格式、构建飞书机器人消息内容时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "killingjacky",
+      "userId": "publishers:killingjacky",
+      "displayName": "Jack Shao",
+      "image": "https://avatars.githubusercontent.com/u/5130185?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 205,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774155365363,
+      "changelog": "Initial release: Convert Markdown to Feishu Post (rich text) JSON. Supports headers, bold, italic, underline, strikethrough, links, @mentions, lists, code blocks, blockquotes, and nested styles.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a69f318cfcbce6964c778a0aeac1fba4421d9cc7e17f0cefaf688bb620da9551"
+}

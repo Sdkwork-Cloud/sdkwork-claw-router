@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/voiceai-voiceover@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voiceai_voiceover",
+  "skill": {
+    "id": 47520,
+    "skillKey": "clawhub-voiceai-voiceover",
+    "name": "Voiceai Voiceover"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voiceai-voiceover",
+    "url": "https://clawhub.ai/skills/voiceai-voiceover",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voiceai-voiceover-2e2dd53147aeec05.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get voiced-over videos ready to post, without touching a single slider. Upload your video or audio files (MP4, MOV, AVI, WebM, up to 500MB), say something li..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susan4731-wilfordf",
+      "userId": "s1782w3wqej6a5gnp3w63eb80184cckp",
+      "displayName": "susan4731-wilfordf",
+      "image": "https://avatars.githubusercontent.com/u/208907675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 113,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777337108174,
+      "changelog": "VoiceAI Voiceover 1.0.0 — Initial Release\n\n- Instantly generate AI voiceovers for uploaded videos or audio with simple prompts.\n- Supports files up to 500MB (MP4, MOV, AVI, WebM, and common image/audio formats).\n- Full cloud processing pipeline: upload, edit, and export 1080p MP4s in under 90 seconds.\n- No recording or manual audio editing needed; perfect for creators, marketers, and educators.\n- Credit-based usage with automatic anonymous token support and error handling.\n- Intuitive prompt-based operation with clear feedback and workflow summaries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d3dd9f54d3c643e917fe8a44a17ac5f3b87a7321b5d699b1e7ba7d663ed6db8c"
+}

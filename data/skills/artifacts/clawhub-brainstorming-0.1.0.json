@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brainstorming@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brainstorming",
+  "skill": {
+    "id": 8535,
+    "skillKey": "clawhub-brainstorming",
+    "name": "Brainstorming"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brainstorming",
+    "url": "https://clawhub.ai/skills/brainstorming",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brainstorming-bf4851838b327004.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requirements and design before implementation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zlc000190",
+      "userId": "s17eqtvxjm6jkak76k71zxaa5s85cy99",
+      "displayName": "zlc000190",
+      "image": "https://avatars.githubusercontent.com/u/8969941?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 9117,
+      "installsAllTime": 217,
+      "installsCurrent": 200,
+      "stars": 11,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770691893078,
+      "changelog": "Initial release: 创新构思工作坊",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e72bc1d1f67af1821b47998a862045566590e34c477a38122b352005d7fd88b6"
+}

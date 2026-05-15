@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/how-much-token-did-this-chat-used@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.how_much_token_did_this_chat_used",
+  "skill": {
+    "id": 34396,
+    "skillKey": "clawhub-how-much-token-did-this-chat-used",
+    "name": "Token Cost"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "how-much-token-did-this-chat-used",
+    "url": "https://clawhub.ai/skills/how-much-token-did-this-chat-used",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/how-much-token-did-this-chat-used-94ecb57345f7e8d9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track and display token usage for the current OpenClaw session and recent sessions, with cost estimation and remaining days projection. Auto-detects active m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aaroncxxx",
+      "userId": "s17509zamkdtrtbahz6xrwbmx585c88m",
+      "displayName": "aaroncxxx",
+      "image": "https://avatars.githubusercontent.com/u/255621878?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 225,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1777260101170,
+      "changelog": "7天趋势图(文本柱状图); 费用告警阈值 --warn 80/95%; Top烧钱会话分列; 剩余天数加权平均(近3天60%+7天30%+30天10%); JSON增强(trend/top_sessions/alerts); 输出格式优化",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3baad62c2cd77ef301e4929afc6f39322ec99faa8e8c31e751932d2cffcc7b17"
+}

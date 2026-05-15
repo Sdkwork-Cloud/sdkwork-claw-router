@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62480,
+  "uuid": "skill-clawhub-text-to-markdown",
+  "skillKey": "clawhub-text-to-markdown",
+  "name": "Text to Markdown",
+  "summary": "纯文本格式预处理工具，自动插入换行、拆分长段落，为后续 AI/LLM 生成 Markdown 提供结构化输入。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_markdown",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "花渡",
+      "features": [
+        "纯文本格式预处理工具，自动插入换行、拆分长段落，为后续 AI/LLM 生成 Markdown 提供结构化输入。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/text-to-markdown@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/50451660?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "text-to-markdown",
+      "url": "https://clawhub.ai/skills/text-to-markdown"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-markdown",
+    "url": "https://clawhub.ai/skills/text-to-markdown",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-markdown-dace5dbb4d56826e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/text-to-markdown@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-text-to-markdown-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c3127b3b78cedee907a7279b205ffee7ae655ed7da20209a5bc49fb7816020e4",
+      "artifactSizeBytes": 1916
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T15:31:14.500Z"
+}

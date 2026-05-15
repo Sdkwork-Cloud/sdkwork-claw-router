@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lite-research@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lite_research",
+  "skill": {
+    "id": 33764,
+    "skillKey": "clawhub-lite-research",
+    "name": "Lite Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lite-research",
+    "url": "https://clawhub.ai/skills/lite-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lite-research-6a5428d0972ac293.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Perform lite research using web search and web fetch tools. Use when user asks to \"research\" something (not \"deep research\"). Uses advanced search strategies..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chand1012",
+      "userId": "s17cmgfcvp6x2ka40mxvjt1cfd83gtf7",
+      "displayName": "chand1012",
+      "image": "https://avatars.githubusercontent.com/u/3521582?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 233,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773841893659,
+      "changelog": "lite-research 1.0.0 – Initial release\n\n- Introduces a skill for performing quick research using advanced web search strategies.\n- Automatically generates up to 5 diverse queries per topic, using Boolean operators, synonyms, and alternative terminology.\n- Fetches and analyzes the top 5 results for each query, summarizing key findings, trends, challenges, and applications.\n- Only activates on \"research\" (not \"deep research\") requests and never spawns sub-agents.\n- Provides users with concise summaries and transparent source links.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:31211270c1572c68e0427e7889d8e5753f375444777e52afbb161a7df7d56ad4"
+}

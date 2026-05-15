@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/law-search@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.law_search",
+  "skill": {
+    "id": 57526,
+    "skillKey": "clawhub-law-search",
+    "name": "한국 법령/판례 검색"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "law-search",
+    "url": "https://clawhub.ai/skills/law-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/law-search-81f4f8e6ac0ada82.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Korean law/case search via law.go.kr + data.go.kr APIs. Use for legal questions, statute lookup, court cases, and everyday legal info."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sw326",
+      "userId": "publishers:sw326",
+      "displayName": "김성우",
+      "image": "https://avatars.githubusercontent.com/u/172457805?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 886,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1771803739287,
+      "changelog": "law.go.kr + data.go.kr 기반 법령·판례·생활법령 검색",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:14b39bb29005a55c8fe0df1c83ce0d4476ef6fd15f0377c52fc62137b16eac08"
+}

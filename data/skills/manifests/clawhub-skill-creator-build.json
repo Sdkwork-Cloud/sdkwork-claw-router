@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60550,
+  "uuid": "skill-clawhub-skill-creator-build",
+  "skillKey": "clawhub-skill-creator-build",
+  "name": "Build",
+  "summary": "生成定制化的构建项目 Skill（含 SKILL.md + references/），为用户的构建过程提供从规划到结项的 持续引导。触发场景：用户表达想做一个项目（\"我想做个 X\"\"帮我开发一个 X\"\"搭个 X\" \"写个 X\"\"做个 X 出来\"\"build X\"\"create X\"\"develop X\"\"make...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_creator_build",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Balancegogogo",
+      "features": [
+        "生成定制化的构建项目 Skill（含 SKILL.md + references/），为用户的构建过程提供从规划到结项的 持续引导。触发场景：用户表达想做一个项目（\"我想做个 X\"\"帮我开发."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-creator-build@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24697086?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-creator-build",
+      "url": "https://clawhub.ai/skills/skill-creator-build"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-creator-build",
+    "url": "https://clawhub.ai/skills/skill-creator-build",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-creator-build-bdf5eccca5bd7a8d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-creator-build@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-creator-build-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d38a0b73c74ee71c5d2b5e905fc19b5e1d75750a3242ac9ff17b57d03d34319a",
+      "artifactSizeBytes": 2655
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T05:11:42.581Z"
+}

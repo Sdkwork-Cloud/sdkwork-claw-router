@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22239,
+  "uuid": "skill-clawhub-model-switchboard",
+  "skillKey": "clawhub-model-switchboard",
+  "name": "Model Switchboard",
+  "summary": "Safely configure OpenClaw AI models by validating roles, autoloading backups, blocking unsafe changes, and managing via CLI or Canvas UI.",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_switchboard",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "frank-bot07",
+      "features": [
+        "Safely configure OpenClaw AI models by validating roles, autoloading backups, blocking unsafe c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/model-switchboard@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259001718?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "model-switchboard",
+      "url": "https://clawhub.ai/skills/model-switchboard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-switchboard",
+    "url": "https://clawhub.ai/skills/model-switchboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-switchboard-1b37ec184d168d88.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/model-switchboard@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-model-switchboard-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:09acd4b44ee0807f24e90a490a7ab3b94971c7765dd22ba87be2ba92e991d79d",
+      "artifactSizeBytes": 2397
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T00:54:40.160Z"
+}

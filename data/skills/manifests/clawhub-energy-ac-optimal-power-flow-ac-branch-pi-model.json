@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56709,
+  "uuid": "skill-clawhub-energy-ac-optimal-power-flow-ac-branch-pi-model",
+  "skillKey": "clawhub-energy-ac-optimal-power-flow-ac-branch-pi-model",
+  "name": "ac-branch-pi-model",
+  "summary": "AC branch pi-model power flow equations (P/Q and |S|) with transformer tap ratio and phase shift, matching `acopf-math-model.md` and MATPOWER branch fields....",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.energy_ac_optimal_power_flow_ac_branch_pi_model",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wu-uk",
+      "features": [
+        "AC branch pi-model power flow equations (P/Q and |S|) with transformer tap ratio and phase shif."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/energy-ac-optimal-power-flow-ac-branch-pi-model@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199610473?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "energy-ac-optimal-power-flow-ac-branch-pi-model",
+      "url": "https://clawhub.ai/skills/energy-ac-optimal-power-flow-ac-branch-pi-model"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "energy-ac-optimal-power-flow-ac-branch-pi-model",
+    "url": "https://clawhub.ai/skills/energy-ac-optimal-power-flow-ac-branch-pi-model",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/energy-ac-optimal-power-flow-ac-branch-pi-model-20e4159beec429ee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/energy-ac-optimal-power-flow-ac-branch-pi-model@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-energy-ac-optimal-power-flow-ac-branch-pi-model-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eedb07ef34ec7b2b6f72a17d9ccb8baf615c81bc78f178b698bac9cb8a51558a",
+      "artifactSizeBytes": 2105
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T04:02:41.860Z"
+}

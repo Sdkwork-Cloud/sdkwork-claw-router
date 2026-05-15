@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9865,
+  "uuid": "skill-clawhub-skill-from-memory",
+  "skillKey": "clawhub-skill-from-memory",
+  "name": "Skill From Memory",
+  "summary": "Convert memory, conversation history, or completed tasks into publishable OpenClaw skills. Use when (1) A task or workflow should be reusable, (2) Extracting...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_from_memory",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zfanmy",
+      "features": [
+        "Convert memory, conversation history, or completed tasks into publishable OpenClaw skills",
+        "Use when (1) A task or workflow should be reusable, (2) Extracting..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-from-memory@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33675069?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-from-memory",
+      "url": "https://clawhub.ai/skills/skill-from-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-from-memory",
+    "url": "https://clawhub.ai/skills/skill-from-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-from-memory-fa63f31b0b348a3e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-from-memory@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-from-memory-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:164e1bf87598a01b83e62243d17f0024fc5ab5f8d3ffe432f61df301a0dd9192",
+      "artifactSizeBytes": 2066
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T04:08:25.873Z"
+}

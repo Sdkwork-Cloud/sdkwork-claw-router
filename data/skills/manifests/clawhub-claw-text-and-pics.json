@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40388,
+  "uuid": "skill-clawhub-claw-text-and-pics",
+  "skillKey": "clawhub-claw-text-and-pics",
+  "name": "claw-text-and-pics",
+  "summary": "Extract text and embedded images from scanned documents, PDFs, and photos via Mistral OCR API. Use when reading receipts, invoices, contracts, handwritten no...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_text_and_pics",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "photon78",
+      "features": [
+        "Extract text and embedded images from scanned documents, PDFs, and photos via Mistral OCR API",
+        "Use when reading receipts, invoices, contracts, handwritten no..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-text-and-pics@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59928921?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-text-and-pics",
+      "url": "https://clawhub.ai/skills/claw-text-and-pics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-text-and-pics",
+    "url": "https://clawhub.ai/skills/claw-text-and-pics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-text-and-pics-29d9137a9fdcbab9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-text-and-pics@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-text-and-pics-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:07d5e46ac3e156f382588059f3f07baeeb3e0a3a286dfc680fe6b7de023d9f91",
+      "artifactSizeBytes": 2034
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T09:42:06.975Z"
+}

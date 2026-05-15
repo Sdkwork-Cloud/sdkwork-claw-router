@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46934,
+  "uuid": "skill-clawhub-global-weather-service",
+  "skillKey": "clawhub-global-weather-service",
+  "name": "Global Weather Service",
+  "summary": "Complete weather system powered by Open-Meteo for global city weather lookup and scheduled weather subscriptions. Use when the user asks to check current or...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.global_weather_service",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zykkk-power",
+      "features": [
+        "Complete weather system powered by Open-Meteo for global city weather lookup and scheduled weat.",
+        "Use when the user asks to check current or..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/global-weather-service@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/185013102?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "global-weather-service",
+      "url": "https://clawhub.ai/skills/global-weather-service"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "global-weather-service",
+    "url": "https://clawhub.ai/skills/global-weather-service",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/global-weather-service-6967d4660ccca158.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/global-weather-service@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-global-weather-service-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba45e3202ce32776a4d8bc1180bbd4aa6925902820892c5bf4f80d84fa0209d0",
+      "artifactSizeBytes": 1986
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T15:37:51.547Z"
+}

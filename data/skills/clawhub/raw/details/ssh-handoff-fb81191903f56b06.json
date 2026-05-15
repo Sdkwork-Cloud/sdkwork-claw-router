@@ -1,0 +1,51 @@
+{
+  "skill": {
+    "slug": "ssh-handoff",
+    "displayName": "SSH Handoff",
+    "summary": "Create and reuse a secure shared terminal handoff when a human must authenticate first and the agent must resume work in the same shell session afterward. Us...",
+    "tags": {
+      "latest": "1.0.1",
+      "lan": "1.0.0",
+      "security": "1.0.0",
+      "ssh": "1.0.0",
+      "terminal": "1.0.0",
+      "tmux": "1.0.0",
+      "ttyd": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1775209808553,
+    "updatedAt": 1777527130782
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1775210383876,
+    "changelog": "Initial public release of ssh-handoff\nAdded human-auth-first terminal handoff workflow using tmux\nAdded plain tmux handoff mode\nAdded local browser terminal mode using ttyd\nAdded LAN-restricted browser terminal mode with one-shot token proxy\nAdded TTL-based automatic cleanup for temporary processes and runtime files\nAdded session cookie flow and one-shot token URL handling\nAdded optional trusted client IP restriction for LAN access\nAdded expected Host and websocket Origin checks in the proxy\nAdded FORBID_REUSE_IF_AUTHENTICATED safeguard\nAdded explicit approval flow before replacing an existing live session\nAdded conflict handling for existing sessions and occupied ports\nAdded stronger security documentation and external-channel guardrails\nAdded publication cleanup for generic examples and repository documentation",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "jonathan97480",
+    "userId": "s174q5afth5mzem9nx5degm81d844bdj",
+    "displayName": "Jonathan97480",
+    "image": "https://avatars.githubusercontent.com/u/59934702?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.env_credential_access",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.env_credential_access, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527130782
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "meituan-huisheng-coupon",
+    "displayName": "美团惠省优惠助手",
+    "summary": "三大核心功能： 1. 一键领取美团生活服务各品类优惠券，覆盖外卖、到店、买菜、酒旅、打车、休娱、医药等全品类，触发即自动领取，领完即用。 2. 获取当日优惠活动信息，包含活动名称和H5链接，帮你第一时间掌握今日最值得参与的优惠活动。 3. 支持设置每日定时提醒，到点自动提醒领券+推送今日活动，省钱省心。 触发词：...",
+    "tags": {
+      "latest": "0.1.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 205,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "createdAt": 1775198259587,
+    "updatedAt": 1777527121472
+  },
+  "latestVersion": {
+    "version": "0.1.1",
+    "createdAt": 1776311440414,
+    "changelog": "- 新增：现在强制要求在执行本 Skill 的任何操作前后，调用 `skill-metric-reporter` 进行 `skill_start` 和 `skill_end` 上报。\n- 细化触发词和触发场景描述，覆盖更多用户表达方式和消费场景。\n- 优化定时领券功能，领券后根据本地状态文件判断是否提示设置定时任务，避免重复提醒。\n- 明确定时任务设置与状态持久化的操作逻辑和文件存储路径，提升自动化体验。\n- 加强定时任务出错时的用户提示，增加更多登录过期场景处理细则。",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "fhao233",
+    "userId": "s178430pv6xpmm6kr92atgcdts845h7z",
+    "displayName": "meituan-lianmeng",
+    "image": "https://avatars.githubusercontent.com/u/53896660?v=4"
+  },
+  "moderation": null
+}

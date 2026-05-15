@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20484,
+  "uuid": "skill-clawhub-nini-git-workflow",
+  "skillKey": "clawhub-nini-git-workflow",
+  "name": "Git Workflow",
+  "summary": "Use this skill for any git commit, pull request, or release task. Invoke immediately when the user wants to: stage and commit changes, write a commit message...",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nini_git_workflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Niracler",
+      "features": [
+        "Use this skill for any git commit, pull request, or release task",
+        "Invoke immediately when the user wants to: stage and commit changes, write a commit message..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nini-git-workflow@0.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24842631?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nini-git-workflow",
+      "url": "https://clawhub.ai/skills/nini-git-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nini-git-workflow",
+    "url": "https://clawhub.ai/skills/nini-git-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nini-git-workflow-983f4f1249c0af3d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nini-git-workflow@0.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nini-git-workflow-0.3.0.json",
+      "version": "0.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2c62d8dac3fd2c6c3ec593bab16e2e7317c9ff6bae3dc6fab8f850347b59880c",
+      "artifactSizeBytes": 1962
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T01:32:47.836Z"
+}

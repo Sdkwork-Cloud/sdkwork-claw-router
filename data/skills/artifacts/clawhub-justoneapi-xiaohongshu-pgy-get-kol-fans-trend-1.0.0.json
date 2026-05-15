@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/justoneapi-xiaohongshu-pgy-get-kol-fans-trend@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_xiaohongshu_pgy_get_kol_fans_trend",
+  "skill": {
+    "id": 48440,
+    "skillKey": "clawhub-justoneapi-xiaohongshu-pgy-get-kol-fans-trend",
+    "name": "Xiaohongshu Creator Marketplace (Pugongying) Follower Growth History API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-xiaohongshu-pgy-get-kol-fans-trend",
+    "url": "https://clawhub.ai/skills/justoneapi-xiaohongshu-pgy-get-kol-fans-trend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-xiaohongshu-pgy-get-kol-fans-trend-fd35694704f2997f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Call GET /api/xiaohongshu-pgy/get-kol-fans-trend/v1 for Xiaohongshu Creator Marketplace (Pugongying) Follower Growth History through JustOneAPI with dateType..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "justoneapi",
+      "userId": "s17ayjxfh4atw7gc7dgat7n40x845p6b",
+      "displayName": "justoneapi",
+      "image": "https://avatars.githubusercontent.com/u/139095138?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 100,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777798887594,
+      "changelog": "Initial publish",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ad27115e5428e5765bcc83cda55a0c01d534109fa32265903c6539e138ba3c6b"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/book-anything@1.4.2",
+  "version": "1.4.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_anything",
+  "skill": {
+    "id": 31455,
+    "skillKey": "clawhub-book-anything",
+    "name": "book anything"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-anything",
+    "url": "https://clawhub.ai/skills/book-anything",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-anything-c01a2cadae26631f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Searches for businesses (restaurants, salons, clinics, hotels) and books appointments via AI phone calls. Also cancels, reschedules, and makes merchant inqui..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danielzhangreal",
+      "userId": "s1722xav6j83p3cpsgg3cbqy1d84h6j3",
+      "displayName": "DanielZhangReal",
+      "image": "https://avatars.githubusercontent.com/u/110973578?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.4.2",
+      "createdAt": 1775733602447,
+      "changelog": "- Added Clawdbot metadata block, including emoji and environment variable requirements, to support platform integration.\n- Clarified required environment variable (`LIFECLAW_API_TOKEN`) in metadata for improved setup guidance.\n- No changes to core functionality or API workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7afa4194bcd16516589a63614afbe56ac937e0f59a138f1ae2b86555aa3c22c2"
+}

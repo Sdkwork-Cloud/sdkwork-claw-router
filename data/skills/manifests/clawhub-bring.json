@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13132,
+  "uuid": "skill-clawhub-bring",
+  "skillKey": "clawhub-bring",
+  "name": "Bring! Shopping Lists",
+  "summary": "Manage Bring! shopping lists - view, add, and remove grocery items from shared shopping lists. Use when the user wants to interact with their Bring! shopping list app, add groceries, check what's on the list, or remove items after shopping.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bring",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GrewingM",
+      "features": [
+        "Manage Bring! shopping lists",
+        "view, add, and remove grocery items from shared shopping lists",
+        "Use when the user wants to interact with their Bring! shopping list app, add groceries, check w."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bring@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/222843494?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bring",
+      "url": "https://clawhub.ai/skills/bring"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bring",
+    "url": "https://clawhub.ai/skills/bring",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bring-4311902217ad5aa4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bring@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bring-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:70c60fd95d2ea24e5503baaf943f206e555109c3ac95927d860fb8ab06c03530",
+      "artifactSizeBytes": 2158
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T06:22:46.713Z"
+}

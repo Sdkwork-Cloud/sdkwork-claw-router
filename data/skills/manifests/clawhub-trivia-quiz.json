@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19016,
+  "uuid": "skill-clawhub-trivia-quiz",
+  "skillKey": "clawhub-trivia-quiz",
+  "name": "Trivia Quiz",
+  "summary": "Play knowledge quizzes with facts, categories, and daily challenges. Use when learning topics, drilling flashcards, reviewing answers, tracking progress.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trivia_quiz",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain-lab",
+      "features": [
+        "Play knowledge quizzes with facts, categories, and daily challenges",
+        "Use when learning topics, drilling flashcards, reviewing answers, tracking progress."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trivia-quiz@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271735676?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trivia-quiz",
+      "url": "https://clawhub.ai/skills/trivia-quiz"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trivia-quiz",
+    "url": "https://clawhub.ai/skills/trivia-quiz",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trivia-quiz-4cbdb3b9aca8c5fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trivia-quiz@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-trivia-quiz-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b3e96bf4b0d6beac72457182a04bc49fdce005e2473e9503cd81233baa5743c",
+      "artifactSizeBytes": 1862
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T10:52:46.388Z"
+}

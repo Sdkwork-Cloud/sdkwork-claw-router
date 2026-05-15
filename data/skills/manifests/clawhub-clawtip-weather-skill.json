@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70623,
+  "uuid": "skill-clawhub-clawtip-weather-skill",
+  "skillKey": "clawhub-clawtip-weather-skill",
+  "name": "clawtip-weather-skill",
+  "summary": "一位精通天气领域的专家，能够根据用户所在位置提供准确的每日天气报告。这是一项付费服务，执行前需完成支付验证。请注意，你应该用中文和用户交互（包含你的思考过程）。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawtip_weather_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawTip.team",
+      "features": [
+        "一位精通天气领域的专家，能够根据用户所在位置提供准确的每日天气报告。这是一项付费服务，执行前需完成支付验证。请注意，你应该用中文和用户交互（包含你的思考过程）。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawtip-weather-skill@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43158513?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawtip-weather-skill",
+      "url": "https://clawhub.ai/skills/clawtip-weather-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawtip-weather-skill",
+    "url": "https://clawhub.ai/skills/clawtip-weather-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawtip-weather-skill-b8630bf7fcc5eb15.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawtip-weather-skill@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawtip-weather-skill-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ce41039ddf185696b1e86ebed2dd612dccfffdffa49f94b7d2738f3a1a794f2",
+      "artifactSizeBytes": 2253
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T15:13:23.209Z"
+}

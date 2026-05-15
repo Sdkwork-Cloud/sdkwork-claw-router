@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sbti-claw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sbti_claw",
+  "skill": {
+    "id": 70583,
+    "skillKey": "clawhub-sbti-claw",
+    "name": "SBTI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sbti-claw",
+    "url": "https://clawhub.ai/skills/sbti-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sbti-claw-033fb55f2205729a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "SBTI 恶搞人格测试。给用户出一组抽象搞笑的测试题，根据回答生成一个离谱的人格类型和解读。触发词：SBTI、人格测试、性格测试、测一测、做个测试。当用户提到 SBTI、想做人格测试、或有人分享了 SBTI 结果时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "enihsago",
+      "userId": "s179ytx375j1s47dywapjfr8e583hbk2",
+      "displayName": "enihsago",
+      "image": "https://avatars.githubusercontent.com/u/265008639?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 211,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775869857682,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a458c025b65a5c8443df55ae39fe3c7c4568d067c0161eaaf3f69caf6d419fa9"
+}

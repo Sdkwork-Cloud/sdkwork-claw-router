@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smb-sales-boost-leads@1.9.0",
+  "version": "1.9.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smb_sales_boost_leads",
+  "skill": {
+    "id": 24290,
+    "skillKey": "clawhub-smb-sales-boost-leads",
+    "name": "SMB Sales Boost — B2B Lead Database of SMBs for Cold Outreach & GTM"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smb-sales-boost-leads",
+    "url": "https://clawhub.ai/skills/smb-sales-boost-leads",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smb-sales-boost-leads-cec65d834442a139.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query and manage leads from the SMB Sales Boost B2B lead database. Search newly registered businesses, filter by location/industry/keywords, export leads, ma..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tomsonx232",
+      "userId": "s17bzws62cdb8ssanr7pt47cpx847m2s",
+      "displayName": "Tomsonx232",
+      "image": "https://avatars.githubusercontent.com/u/43103360?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 843,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.9.0",
+      "createdAt": 1775313360034,
+      "changelog": "SMB Sales Boost Leads v1.9.0 Changelog\n\n- Added highest-tier (Platinum and Enterprise) monthly credit purchase limits to the documentation.\n- Expanded account profile details to include new fields: totalLeadsExported, monthlyLeadsExported, and autoTopUp configuration details.\n- Clarified that credit pricing table now includes max purchase per transaction for all plan tiers.\n- No functional code changes; documentation improvements only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8a0094661d5bd50c6de7fb9fd34f0b3421c2b756f7571db1fe4fb18704e4a0d4"
+}

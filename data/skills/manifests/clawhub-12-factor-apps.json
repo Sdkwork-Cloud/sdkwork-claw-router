@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33524,
+  "uuid": "skill-clawhub-12-factor-apps",
+  "skillKey": "clawhub-12-factor-apps",
+  "name": "12 Factor Apps",
+  "summary": "Perform 12-Factor App compliance analysis on any codebase. Use when evaluating application architecture, auditing SaaS applications, or reviewing cloud-nativ...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.12_factor_apps",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kevin Anderson",
+      "features": [
+        "Perform 12-Factor App compliance analysis on any codebase",
+        "Use when evaluating application architecture, auditing SaaS applications, or reviewing cloud-na."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/12-factor-apps@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17010022?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "12-factor-apps",
+      "url": "https://clawhub.ai/skills/12-factor-apps"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "12-factor-apps",
+    "url": "https://clawhub.ai/skills/12-factor-apps",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/12-factor-apps-cd7694e8c58bb259.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/12-factor-apps@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-12-factor-apps-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c78eac8ebe507f0f7f7daa46908658a8f1019d45d21d2778ee2d0f0fd9a87862",
+      "artifactSizeBytes": 2375
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T06:45:27.006Z"
+}

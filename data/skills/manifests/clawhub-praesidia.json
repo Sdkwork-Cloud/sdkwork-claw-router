@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10850,
+  "uuid": "skill-clawhub-praesidia",
+  "skillKey": "clawhub-praesidia",
+  "name": "Praesidia",
+  "summary": "Verify AI agents, check trust scores (0-100), fetch A2A agent cards, discover marketplace agents, apply guardrails for security and compliance. Use when user mentions agent verification, trust scores, agent discovery, A2A protocol, agent i.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.praesidia",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "msoica",
+      "features": [
+        "Verify AI agents, check trust scores (0-100), fetch A2A agent cards, discover marketplace agent.",
+        "Use when user mentions agent verification, trust scores, agent discovery, A2A protocol, agent i."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/praesidia@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13220606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "praesidia",
+      "url": "https://clawhub.ai/skills/praesidia"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "praesidia",
+    "url": "https://clawhub.ai/skills/praesidia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/praesidia-614cd7bca7f69ee4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/praesidia@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-praesidia-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2d03d0220271c45543e0bc285167bd0889ff8bda6619e1e148d8a4824476826d",
+      "artifactSizeBytes": 2219
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T17:08:28.470Z"
+}

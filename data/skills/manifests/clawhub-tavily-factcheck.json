@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40196,
+  "uuid": "skill-clawhub-tavily-factcheck",
+  "skillKey": "clawhub-tavily-factcheck",
+  "name": "Tavily Fact-Check Search",
+  "summary": "Enhanced Tavily web search for fact-checking and cross-verification. Aligned with official Tavily API (2026-03). Supports time_range, exact_match, domain fil...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tavily_factcheck",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KKKKane84727",
+      "features": [
+        "Enhanced Tavily web search for fact-checking and cross-verification",
+        "Aligned with official Tavily API (2026-03)",
+        "Supports time_range, exact_match, domain fil..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tavily-factcheck@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/240415254?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tavily-factcheck",
+      "url": "https://clawhub.ai/skills/tavily-factcheck"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tavily-factcheck",
+    "url": "https://clawhub.ai/skills/tavily-factcheck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tavily-factcheck-d8d218f3523c0fb6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tavily-factcheck@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tavily-factcheck-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e58bbd297b2eeb4b366af1c8009b8e65222e2790d19f06cea29c2249f774acf4",
+      "artifactSizeBytes": 2107
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T11:11:06.683Z"
+}

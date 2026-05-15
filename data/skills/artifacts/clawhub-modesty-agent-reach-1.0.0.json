@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/modesty-agent-reach@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.modesty_agent_reach",
+  "skill": {
+    "id": 49333,
+    "skillKey": "clawhub-modesty-agent-reach",
+    "name": "Agent Reach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "modesty-agent-reach",
+    "url": "https://clawhub.ai/skills/modesty-agent-reach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/modesty-agent-reach-5911797834e9c008.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Give your AI agent eyes to see the entire internet. 7500+ GitHub stars. Search and read 14 platforms: Twitter/X, Reddit, YouTube, GitHub, Bilibili, XiaoHongS..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "modestyrichards",
+      "userId": "s17069c392wb17n1nvrdv0kq1h84qjrk",
+      "displayName": "ModestyRichards",
+      "image": "https://avatars.githubusercontent.com/u/261238899?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 82,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777539642333,
+      "changelog": "Initial release of agent-reach 1.0.0:\n\n- Enables agent search, reading, posting, and interaction across 14 platforms (e.g., Twitter/X, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu, Douyin, Weibo, WeChat Articles, LinkedIn, Instagram, RSS, SkillBoss API, and general web pages)\n- One-command install; zero configuration needed for 8 channels; diagnostics via agent-reach doctor\n- Broad trigger phrase support for natural language and platform-specific actions in Chinese and English\n- Unified API and command-line instructions for searching, scraping, and posting to platforms\n- Troubleshooting and persistent data handling explained in detailed usage guide",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:86439cbdc3f9e542c866efa7414b8c4fc07774092cbec5ab7cfae5007327c266"
+}

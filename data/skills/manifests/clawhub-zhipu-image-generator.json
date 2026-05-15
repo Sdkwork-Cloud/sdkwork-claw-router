@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18816,
+  "uuid": "skill-clawhub-zhipu-image-generator",
+  "skillKey": "clawhub-zhipu-image-generator",
+  "name": "Image Generator",
+  "summary": "Generate images via BigModel APIs and send them as chat images (e.g. Feishu). Invoke when user asks to create a single picture with specific style/size.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhipu_image_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hongz",
+      "features": [
+        "Generate images via BigModel APIs and send them as chat images (e.g",
+        "Invoke when user asks to create a single picture with specific style/size."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zhipu-image-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41034271?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zhipu-image-generator",
+      "url": "https://clawhub.ai/skills/zhipu-image-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhipu-image-generator",
+    "url": "https://clawhub.ai/skills/zhipu-image-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhipu-image-generator-d1a08e0734dda5a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zhipu-image-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zhipu-image-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a6aabdff3a85cddfa6c5c7b8ad00aa0f619c9a9e79dd72cfe90a2d2088882903",
+      "artifactSizeBytes": 2078
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T02:41:54.014Z"
+}

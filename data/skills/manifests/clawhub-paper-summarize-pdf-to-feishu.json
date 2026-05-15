@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62617,
+  "uuid": "skill-clawhub-paper-summarize-pdf-to-feishu",
+  "skillKey": "clawhub-paper-summarize-pdf-to-feishu",
+  "name": "Paper Summarize Pdf To Feishu",
+  "summary": "总结论文 PDF 为飞书文档（含图表）。采用主控 - 子代理 (Orchestrator-Subagents) 架构处理长流程。 支持学术论文、技术报告的自动去重、总结、配图、真实比对审核与人工确认。 触发场景：发送 PDF 附件、\"总结这个 PDF\"、\"把 PDF 写成飞书文档\"、\"论文总结\"。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_summarize_pdf_to_feishu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "YY-FAN",
+      "features": [
+        "总结论文 PDF 为飞书文档（含图表）。采用主控",
+        "子代理 (Orchestrator-Subagents) 架构处理长流程。 支持学术论文、技术报告的自动去重、总结、配图、真实比对审核与人工确认。 触发场景：发送 PDF 附件、\"总结这个."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paper-summarize-pdf-to-feishu@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/189575990?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paper-summarize-pdf-to-feishu",
+      "url": "https://clawhub.ai/skills/paper-summarize-pdf-to-feishu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-summarize-pdf-to-feishu",
+    "url": "https://clawhub.ai/skills/paper-summarize-pdf-to-feishu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-summarize-pdf-to-feishu-784c808aec55014a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paper-summarize-pdf-to-feishu@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-paper-summarize-pdf-to-feishu-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:af29c3a6b00f7178a298610531c3d714a584317df898a1e892539435643ee953",
+      "artifactSizeBytes": 2345
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T12:57:49.094Z"
+}

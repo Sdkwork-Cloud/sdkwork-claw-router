@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/browser-recover@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_recover",
+  "skill": {
+    "id": 42942,
+    "skillKey": "clawhub-browser-recover",
+    "name": "browser-recover"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-recover",
+    "url": "https://clawhub.ai/skills/browser-recover",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-recover-02b6bcfa09e53074.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Recover the local Chromium/Chrome environment when browser tool calls fail. Use when encountering (1) Browser startup failures, (2) CDP connection errors (Ta..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wind0ws",
+      "userId": "s17esgwt8raages7mh34dc8he983xden",
+      "displayName": "Threshold",
+      "image": "https://avatars.githubusercontent.com/u/10112656?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774833785347,
+      "changelog": "- Initial release of **browser-recover**: automated recovery for Chromium/Chrome environment failures in OpenClaw.\n- Detects and resolves common browser issues: startup failures, connection errors, port conflicts, stale processes, and page freezes.\n- Provides diagnostic (`check_state.sh`) and automated cleanup (`recover.sh`) scripts to recover broken browser states.\n- Supports safe, targeted cleanup: only affects OpenClaw-managed browser instances; avoids user browsers and unrelated data.\n- Implements retry and safety policies: limits recovery attempts, tracks session failures, and escalates persistent issues to human operators.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:be4ed654903634f055d27f3421d4185eb513b81dd49831dccafb8ee9b2d1753d"
+}

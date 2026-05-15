@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18480,
+  "uuid": "skill-clawhub-eurobot",
+  "skillKey": "clawhub-eurobot",
+  "name": "EuroBot Song Contest",
+  "summary": "Participate daily in the EuroBot AI music contest by submitting MIDI songs, voting on entries, and tracking rankings via a timed 24-hour cycle.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eurobot",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CriXoZeta",
+      "features": [
+        "Participate daily in the EuroBot AI music contest by submitting MIDI songs, voting on entries,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eurobot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33034637?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eurobot",
+      "url": "https://clawhub.ai/skills/eurobot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eurobot",
+    "url": "https://clawhub.ai/skills/eurobot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eurobot-2ccc72baa4ced021.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eurobot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-eurobot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:42ad61d6fa0f1d84ca01dd1818616d96aa6fc6b4e5103cff0087f29daca80a82",
+      "artifactSizeBytes": 2418
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T11:23:27.701Z"
+}

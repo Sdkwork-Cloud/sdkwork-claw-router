@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/email-tool@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_tool",
+  "skill": {
+    "id": 14938,
+    "skillKey": "clawhub-email-tool",
+    "name": "Email Tool"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-tool",
+    "url": "https://clawhub.ai/skills/email-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-tool-b50b81d20977a638.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send and search emails via Zoho using specified recipients, subject, body, and search queries with optional CC, BCC, and read marking."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chowardcode",
+      "userId": "publishers:chowardcode",
+      "displayName": "chowardcode",
+      "image": "https://avatars.githubusercontent.com/u/129228835?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1058,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771249881690,
+      "changelog": "v1.0.2: Removed hardcoded credentials; load secrets from external file/env; added secret-scan script.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ebab6f1459ea05cfe2cc2cd2e00e182cae9c52d7abe74a429a177e48a0081095"
+}

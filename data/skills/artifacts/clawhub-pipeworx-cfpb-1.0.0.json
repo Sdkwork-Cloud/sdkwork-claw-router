@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pipeworx-cfpb@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_cfpb",
+  "skill": {
+    "id": 45310,
+    "skillKey": "clawhub-pipeworx-cfpb",
+    "name": "Pipeworx cfpb"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-cfpb",
+    "url": "https://clawhub.ai/skills/pipeworx-cfpb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-cfpb-1e0b4d903c9160e5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search and retrieve detailed consumer financial complaints, company complaint summaries, top complaint companies, and product category breakdowns from CFPB d..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "b-gutman",
+      "userId": "s17de0904v925begb7h04jkph984bgct",
+      "displayName": "Bruce Gutman",
+      "image": "https://avatars.githubusercontent.com/u/270792185?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 135,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776919464302,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b13dba6712f21595a9ad625a751ee293d7981a80824790fa6b52eb3789b68185"
+}

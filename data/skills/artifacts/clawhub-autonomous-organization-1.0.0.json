@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/autonomous-organization@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autonomous_organization",
+  "skill": {
+    "id": 23113,
+    "skillKey": "clawhub-autonomous-organization",
+    "name": "Autonomous Organization"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autonomous-organization",
+    "url": "https://clawhub.ai/skills/autonomous-organization",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autonomous-organization-07697abb167315ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manages and schedules autonomous agents to perform research, projects, memory upkeep, cleanup, and security tasks around the clock."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xeonai44",
+      "userId": "s172v8xprg1cws58zrv31gffjs83gvqa",
+      "displayName": "xeonai44",
+      "image": "https://avatars.githubusercontent.com/u/261166030?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 450,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773479722500,
+      "changelog": "- Introduced the core framework for running continuous autonomous agents.\n- Outlined a daily schedule for agent activities, divided into morning, afternoon, evening, and night tasks.\n- Defined five core agent types: Memory, Research, Project, Cleanup, and Security agents.\n- Provided instructions for spawning new autonomous agents using the command-line.\n- Clarified the orchestration model: use the orchestrator for planning and sub-agents for execution.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a66b1311e3ae9debc950d006c53b1e637ff538caf0286f2a74d11eae0c26181c"
+}

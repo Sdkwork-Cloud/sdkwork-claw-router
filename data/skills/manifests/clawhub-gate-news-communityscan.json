@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35034,
+  "uuid": "skill-clawhub-gate-news-communityscan",
+  "skillKey": "clawhub-gate-news-communityscan",
+  "name": "gate-news-communityscan",
+  "summary": "Community sentiment via Gate-News MCP, X/Twitter-first. Use for social discussion, KOL takes, or opinion on a coin or topic. Triggers: what does the communit...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_news_communityscan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gate",
+      "features": [
+        "Community sentiment via Gate-News MCP, X/Twitter-first",
+        "Use for social discussion, KOL takes, or opinion on a coin or topic",
+        "Triggers: what does the communit..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gate-news-communityscan@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33109813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gate-news-communityscan",
+      "url": "https://clawhub.ai/skills/gate-news-communityscan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-news-communityscan",
+    "url": "https://clawhub.ai/skills/gate-news-communityscan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-news-communityscan-47a4bd3b6628cb62.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gate-news-communityscan@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-gate-news-communityscan-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:18a297a7367cf195f166140dd1393c1dbd00324fca021ca2acb58bc8628d9ccb",
+      "artifactSizeBytes": 2486
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T10:35:55.284Z"
+}

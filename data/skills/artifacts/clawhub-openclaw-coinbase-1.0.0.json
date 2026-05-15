@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-coinbase@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_coinbase",
+  "skill": {
+    "id": 36960,
+    "skillKey": "clawhub-openclaw-coinbase",
+    "name": "Coinbase"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-coinbase",
+    "url": "https://clawhub.ai/skills/openclaw-coinbase",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-coinbase-9f3b7ae9b5564c6f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access Coinbase API to fetch balances, get EUR trading pairs, create market or limit crypto orders, and view order history and fills."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mtrab",
+      "userId": "s17ax7mdy8p4rc49w50y40r3m1856qve",
+      "displayName": "MTrab",
+      "image": "https://avatars.githubusercontent.com/u/14296463?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776681086209,
+      "changelog": "Coinbase Skill 1.0.0\n\n- New version converts the skill from a governance/risk analysis assistant to a developer-focused, trading API integration.\n- Adds Python API functions for account balances, product info, order creation, and order history using the Coinbase API.\n- Requires API key/private key setup and cryptography library for authenticated requests.\n- All trading operations focus on EUR pairs (e.g., BTC-EUR).\n- Previous institutional governance, recordkeeping, and risk-isolation documentation has been removed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a87f8a480af51b7e8012534acf69e0014cadbae6dc59644f1dc8c72d0ac559c4"
+}

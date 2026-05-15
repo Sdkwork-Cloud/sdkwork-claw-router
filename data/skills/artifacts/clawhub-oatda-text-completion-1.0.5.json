@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oatda-text-completion@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oatda_text_completion",
+  "skill": {
+    "id": 38183,
+    "skillKey": "clawhub-oatda-text-completion",
+    "name": "OATDA Text Completion"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oatda-text-completion",
+    "url": "https://clawhub.ai/skills/oatda-text-completion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oatda-text-completion-7be5556057bddbdc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate text using OATDA's unified LLM API. Triggers when the user wants to generate, write, or complete text using a specific LLM provider (OpenAI, Anthrop..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "devcsde",
+      "userId": "s1715k9c0vyqryjet8h0ek3xc58447z6",
+      "displayName": "devcsde",
+      "image": "https://avatars.githubusercontent.com/u/29840319?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1775218442992,
+      "changelog": "Re-publish with config path declaration for trust scan refresh",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6b2cedf1e7a641b8431221525493c21e9265a95753c31f6f1005d8bd43f83458"
+}

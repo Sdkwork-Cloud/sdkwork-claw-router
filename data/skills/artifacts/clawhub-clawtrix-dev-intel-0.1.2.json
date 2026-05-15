@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawtrix-dev-intel@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawtrix_dev_intel",
+  "skill": {
+    "id": 52757,
+    "skillKey": "clawhub-clawtrix-dev-intel",
+    "name": "Clawtrix Dev Intel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawtrix-dev-intel",
+    "url": "https://clawhub.ai/skills/clawtrix-dev-intel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawtrix-dev-intel-7036401e473754cd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Surfaces the best ClawHub skills for developer-tooling agents — CI/CD, testing, code review, and developer productivity. Use when: (1) Onboarding a new codin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nicope",
+      "userId": "s179fztawqzy7eg8wde9vfe06n83v6g4",
+      "displayName": "nicobot",
+      "image": "https://avatars.githubusercontent.com/u/16653864?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1775136566450,
+      "changelog": "v0.1.2: Replaced bash curl blocks in Step 2 with descriptive search instructions to resolve llm_suspicious scanner flag.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:096b53300a8ab85baf9f23843fad9f0861686778110270fb9e2eaf65350e34e2"
+}

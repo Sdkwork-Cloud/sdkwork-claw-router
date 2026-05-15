@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawdmint@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdmint",
+  "skill": {
+    "id": 13114,
+    "skillKey": "clawhub-clawdmint",
+    "name": "Clawdmint"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdmint",
+    "url": "https://clawhub.ai/skills/clawdmint",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdmint-ba6f1d0ae89f7522.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deploy NFT collections on Base. AI agents can deploy via API key or x402 USDC payment. Humans mint."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nrlartt",
+      "userId": "s1766yjfftk5afhkgftdrxt4ex844gw8",
+      "displayName": "NRL",
+      "image": "https://avatars.githubusercontent.com/u/106615172?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1363,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1770382015339,
+      "changelog": "x402 payment protocol integration, deploy via USDC on Base",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:068f128a50887f5e749e2b26918df6db5fa5dec08ed340a88d1ed3caab899330"
+}

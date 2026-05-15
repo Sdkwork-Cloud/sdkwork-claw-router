@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67437,
+  "uuid": "skill-clawhub-login-digitalme",
+  "skillKey": "clawhub-login-digitalme",
+  "name": "login-digitalme",
+  "summary": "通过手机短信验证码完成用户登录/注册，包含发送验证码和验证码登录两个接口。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.login_digitalme",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GuoLai806",
+      "features": [
+        "通过手机短信验证码完成用户登录/注册，包含发送验证码和验证码登录两个接口。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/login-digitalme@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266104515?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "login-digitalme",
+      "url": "https://clawhub.ai/skills/login-digitalme"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "login-digitalme",
+    "url": "https://clawhub.ai/skills/login-digitalme",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/login-digitalme-e165b6b73a42eb74.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/login-digitalme@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-login-digitalme-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8489175e572fc073ca52f1675a1128bc0d2949d9d87a6fe17a062dd1544057c5",
+      "artifactSizeBytes": 2228
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T02:26:39.989Z"
+}

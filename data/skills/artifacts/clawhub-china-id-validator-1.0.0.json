@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/china-id-validator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_id_validator",
+  "skill": {
+    "id": 58684,
+    "skillKey": "clawhub-china-id-validator",
+    "name": "China Id Validator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-id-validator",
+    "url": "https://clawhub.ai/skills/china-id-validator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-id-validator-ead427f7f671b6ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Validate and extract info from Chinese ID card numbers (身份证). 身份证号码验证、归属地查询、出生日期提取、性别判断、年龄计算、15位转18位。China mainland ID card validator and parser."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "darbling",
+      "userId": "s1735cfbwbr6ybnmzw58m9bhkx85my84",
+      "displayName": "darbling",
+      "image": "https://avatars.githubusercontent.com/u/105998927?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 115,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777290649068,
+      "changelog": "Initial release of China ID Validator:\n\n- Validate both 15- and 18-digit Chinese ID card numbers.\n- Extract province, birthdate, gender, and age information.\n- Convert between 15-digit and 18-digit ID formats.\n- Verify the 18th check digit.\n- Includes a command-line interface for validation, information extraction, and test ID number generation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6ca434f9bfc1aa24250d41b9e85785ebf31f9f2f96459014c4ade8ab38133935"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/8d-problem-solving@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.8d_problem_solving",
+  "skill": {
+    "id": 72375,
+    "skillKey": "clawhub-8d-problem-solving",
+    "name": "8D 问题解决方法"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "8d-problem-solving",
+    "url": "https://clawhub.ai/skills/8d-problem-solving",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/8d-problem-solving-6060a57661dbdfcd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "系统化应用8D流程，通过团队协作识别、分析、解决并防范复杂质量和运营问题。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "allenwenpeng",
+      "userId": "s17cqdg1q1jqt2re7nh1g71w2583nxdm",
+      "displayName": "allenwenpeng",
+      "image": "https://avatars.githubusercontent.com/u/268523626?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 208,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1775826902635,
+      "changelog": "V2.0: 修正 8D 理解 - D4 5Why 必须追问到系统性根因，D6 验证下次是否再发生，D7 形成文件/规范/流程并水平展开",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e2b4c7e491828ced7b60159de08b1b71561ccc43dd748aa40c1674f5b00a5ef6"
+}

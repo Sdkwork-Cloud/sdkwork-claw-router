@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/volcengine-ai-misc-model-discovery@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.volcengine_ai_misc_model_discovery",
+  "skill": {
+    "id": 15168,
+    "skillKey": "clawhub-volcengine-ai-misc-model-discovery",
+    "name": "Volcengine Ai Misc Model Discovery"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "volcengine-ai-misc-model-discovery",
+    "url": "https://clawhub.ai/skills/volcengine-ai-misc-model-discovery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/volcengine-ai-misc-model-discovery-413317fa3660d551.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover and route Volcengine AI model capabilities. Use when users ask which model to use, need endpoint capability checks, or require model selection matrices."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cinience",
+      "userId": "s1707avh05gnzr3g6e3m9ka6fh840rtd",
+      "displayName": "cinience",
+      "image": "https://avatars.githubusercontent.com/u/557426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1041,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770769449830,
+      "changelog": "Initial ClawHub publish for Volcengine skills with agents metadata.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b3289e224102d8949936264f44d6480c4b2eb49b035758d50640774a692da20f"
+}

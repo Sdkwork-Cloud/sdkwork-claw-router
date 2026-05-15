@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gpt-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gpt_analyzer",
+  "skill": {
+    "id": 17373,
+    "skillKey": "clawhub-gpt-analyzer",
+    "name": "Gpt Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gpt-analyzer",
+    "url": "https://clawhub.ai/skills/gpt-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gpt-analyzer-c882fdaf1841ddc0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "GPT-specific pattern detection with model fingerprinting and version identification"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "raghulpasupathi",
+      "userId": "s17ea3bzwjbttkwd39h6mqkr6n83g14c",
+      "displayName": "raghulpasupathi",
+      "image": "https://avatars.githubusercontent.com/u/15859053?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 757,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771604233179,
+      "changelog": "- Initial release of GPT Analyzer (v1.0.0).\n- Detects GPT-generated content with model-specific pattern recognition and fingerprinting.\n- Identifies likely GPT version (gpt-4, gpt-3.5, or general GPT-family).\n- Provides confidence scoring and analysis indicators.\n- Offers recommendation labels (e.g., \"Very likely GPT\").\n- Allows configuration of detection options and confidence threshold.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0a9d5c1ebce96f78b8ad7a5de9ea298d1ff5780a51ed7d15b4ac09886366c9d8"
+}

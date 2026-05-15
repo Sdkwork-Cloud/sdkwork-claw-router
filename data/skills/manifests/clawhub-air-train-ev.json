@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24892,
+  "uuid": "skill-clawhub-air-train-ev",
+  "skillKey": "clawhub-air-train-ev",
+  "name": "air-train-ev",
+  "summary": "Provides flight prices with Amadeus, train itineraries and schedules with Navitia, and nearby EV charge points using Open Charge Map.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.air_train_ev",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alessandro",
+      "features": [
+        "Provides flight prices with Amadeus, train itineraries and schedules with Navitia, and nearby E."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/air-train-ev@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95449989?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "air-train-ev",
+      "url": "https://clawhub.ai/skills/air-train-ev"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "air-train-ev",
+    "url": "https://clawhub.ai/skills/air-train-ev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/air-train-ev-2efadd405eca371d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/air-train-ev@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-air-train-ev-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f007b3db4aca988bd995998e15b9d0fbe606407027c3dfdd3b2a2b14015be107",
+      "artifactSizeBytes": 2295
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T13:17:34.695Z"
+}

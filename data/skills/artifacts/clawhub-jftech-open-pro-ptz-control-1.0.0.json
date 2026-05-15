@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jftech-open-pro-ptz-control@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jftech_open_pro_ptz_control",
+  "skill": {
+    "id": 68642,
+    "skillKey": "clawhub-jftech-open-pro-ptz-control",
+    "name": "jftech-open-pro-ptz-control"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jftech-open-pro-ptz-control",
+    "url": "https://clawhub.ai/skills/jftech-open-pro-ptz-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jftech-open-pro-ptz-control-cc4e7ab7d50d63f3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "面向开发者杰峰设备 API 工具，可支持设备状态、方向控制、一键遮蔽、变倍和聚焦、预置位及巡航计划管理功能等。触发词：云台控制、设备状态、方向转动、预置位、巡航计划、一键遮蔽。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jftech",
+      "userId": "s174gzt1b9vjabkvgdmp64k4t985nzhw",
+      "displayName": "jftech",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 97,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777271268729,
+      "changelog": "Initial release of jf-open-pro-ptz-control.\n\n- Provides command-line Python tools for PTZ control on JieFeng devices: device status, direction control, masking, zoom/focus, preset, and tour management.\n- All credentials are set via environment variables for security; config files and CLI params are not supported.\n- Supports both international and mainland China API endpoints.\n- Detailed usage instructions and parameter lists are provided for all supported features.\n- Sample usage scenarios included for fast start and common PTZ workflow reference.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f5bd973635ac2aee9757904be78d69815047a261b45a8f5184dcf9103de36344"
+}

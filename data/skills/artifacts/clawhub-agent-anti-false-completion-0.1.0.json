@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-anti-false-completion@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_anti_false_completion",
+  "skill": {
+    "id": 69473,
+    "skillKey": "clawhub-agent-anti-false-completion",
+    "name": "Agent 防假完成工具"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-anti-false-completion",
+    "url": "https://clawhub.ai/skills/agent-anti-false-completion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-anti-false-completion-df54f275c4809750.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "用于减少 AI agent 假完成行为，通过任务约束、结果校验和执行规范，确保复杂任务真实执行与可信交付。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "initail",
+      "userId": "s17f7yh5asw5nws80f6sp0t2ad83hxgs",
+      "displayName": "dry3",
+      "image": "https://avatars.githubusercontent.com/u/30338314?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774344476337,
+      "changelog": "减少 Agent 假完成行为，含 10 种大厂 PUA 话术、能动性等级、压力升级机制、7 项检查清单",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:23181ad54aef5825e3da82788339ca13a252f734d56e3838c126e65771adaa2a"
+}

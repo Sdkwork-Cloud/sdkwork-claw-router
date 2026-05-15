@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67759,
+  "uuid": "skill-clawhub-vt-insight",
+  "skillKey": "clawhub-vt-insight",
+  "name": "VirusTotal 样本查询",
+  "summary": "根据用户提供的哈希值，自动查询并格式化输出VirusTotal样本的检测统计、家族标签、沙箱分析及关键信息报告。",
+  "version": "1.8.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vt_insight",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ling",
+      "features": [
+        "根据用户提供的哈希值，自动查询并格式化输出VirusTotal样本的检测统计、家族标签、沙箱分析及关键信息报告。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vt-insight@1.8.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49932219?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vt-insight",
+      "url": "https://clawhub.ai/skills/vt-insight"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vt-insight",
+    "url": "https://clawhub.ai/skills/vt-insight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vt-insight-1bf95aec6c6c2d5d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vt-insight@1.8.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-vt-insight-1.8.6.json",
+      "version": "1.8.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ca60764d44ac032e2ca16fa72525aafee496bb412af5a1c663ff5ee0b1148c72",
+      "artifactSizeBytes": 1936
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T12:01:48.102Z"
+}

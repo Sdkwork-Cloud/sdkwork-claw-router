@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11297,
+  "uuid": "skill-clawhub-jules-and-lobster",
+  "skillKey": "clawhub-jules-and-lobster",
+  "name": "Jules and the Lobster API headless",
+  "summary": "Use the Jules REST API (v1alpha) via curl to list sources, create sessions, monitor activities, approve plans, send messages, and retrieve outputs (e.g., PR...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jules_and_lobster",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SanJacob99",
+      "features": [
+        "Use the Jules REST API (v1alpha) via curl to list sources, create sessions, monitor activities,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jules-and-lobster@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/136534181?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jules-and-lobster",
+      "url": "https://clawhub.ai/skills/jules-and-lobster"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jules-and-lobster",
+    "url": "https://clawhub.ai/skills/jules-and-lobster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jules-and-lobster-4baad16d27ff5676.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jules-and-lobster@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-jules-and-lobster-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0978d5f042effe9f50ce348a8805606c387dfe3e5ff0fd91388825859238510e",
+      "artifactSizeBytes": 2301
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T17:18:52.286Z"
+}

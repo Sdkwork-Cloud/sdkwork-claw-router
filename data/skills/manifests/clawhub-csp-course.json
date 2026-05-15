@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68686,
+  "uuid": "skill-clawhub-csp-course",
+  "skillKey": "clawhub-csp-course",
+  "name": "CSP课件制作技能",
+  "summary": "这个技能用于为信息学/CSP竞赛 C++ 课程（小学高年级到初中竞赛班）生成完整的教学资料套件：游戏化趣味课件（.pptx）、详细教案（.docx）、学生任务单（.docx）、代码示例（.cpp）以及网页版互动闯关游戏（.html）。支持单课制作和批量（从PDF教材）批量生成全套课程资料。当用户需要制作 C++/...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.csp_course",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "steam2001",
+      "features": [
+        "这个技能用于为信息学/CSP竞赛 C++ 课程（小学高年级到初中竞赛班）生成完整的教学资料套件：游戏化趣味课件（.pptx）、详细教案（.docx）、学生任务单（.docx）、代码示例（.c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/csp-course@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63189664?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "csp-course",
+      "url": "https://clawhub.ai/skills/csp-course"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "csp-course",
+    "url": "https://clawhub.ai/skills/csp-course",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/csp-course-7a31abb54f0bf505.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/csp-course@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-csp-course-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6532230acf64794b4d25166cbbbd7bcd7e8e6b25db8b01fc830bfe701158088a",
+      "artifactSizeBytes": 2098
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T09:50:37.020Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50020,
+  "uuid": "skill-clawhub-sales-qualification",
+  "skillKey": "clawhub-sales-qualification",
+  "name": "sales-qualification",
+  "summary": "Evaluates sales opportunities using BANT or MEDDICC methodology.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sales_qualification",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jacentyty",
+      "features": [
+        "Evaluates sales opportunities using BANT or MEDDICC methodology."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sales-qualification@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/241536085?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sales-qualification",
+      "url": "https://clawhub.ai/skills/sales-qualification"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sales-qualification",
+    "url": "https://clawhub.ai/skills/sales-qualification",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sales-qualification-496c69980c9d791f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sales-qualification@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sales-qualification-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:17c765bef8c0acdf15252596b4f0c5091aca2d2324a8158f37418e0a9f5f7756",
+      "artifactSizeBytes": 2285
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T12:00:08.146Z"
+}

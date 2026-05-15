@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gmail-draft-email@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gmail_draft_email",
+  "skill": {
+    "id": 37188,
+    "skillKey": "clawhub-gmail-draft-email",
+    "name": "Gmail Draft Email"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gmail-draft-email",
+    "url": "https://clawhub.ai/skills/gmail-draft-email",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gmail-draft-email-d35f3b54d883be51.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Atomic node skill to draft an email via Gmail using the gog CLI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zvirb",
+      "userId": "s178ycq6n64frv7zswtx5rvyfd85kc2g",
+      "displayName": "zvirb",
+      "image": "https://avatars.githubusercontent.com/u/130008533?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1777277714952,
+      "changelog": "- Improved reliability with an explicit Jidoka-validated retry loop: will verify draft creation and retry up to 3 times on failure.\n- Updated Cognitive Directives to detail verification steps and error handling.\n- No changes to CLI usage or schema; workflow is now more robust against transient errors.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:83d3d618e2f9a732c620251da9f2f8ac8f61698e69ad03d3fb6f233470846056"
+}

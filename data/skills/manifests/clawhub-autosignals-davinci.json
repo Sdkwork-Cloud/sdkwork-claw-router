@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41899,
+  "uuid": "skill-clawhub-autosignals-davinci",
+  "skillKey": "clawhub-autosignals-davinci",
+  "name": "AutoSignals",
+  "summary": "Monitors and controls the AutoSignals autonomous research loop.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autosignals_davinci",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RunByDaVinci",
+      "features": [
+        "Monitors and controls the AutoSignals autonomous research loop."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/autosignals-davinci@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266047309?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "autosignals-davinci",
+      "url": "https://clawhub.ai/skills/autosignals-davinci"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autosignals-davinci",
+    "url": "https://clawhub.ai/skills/autosignals-davinci",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autosignals-davinci-5b0b0e560b0f9aed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/autosignals-davinci@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-autosignals-davinci-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cd25645d436d4a7e9fb264101f540db5277d63be3d3e34e5a788181bfd191408",
+      "artifactSizeBytes": 1823
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T09:21:56.110Z"
+}

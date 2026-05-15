@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/multi-agent-coordinator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_agent_coordinator",
+  "skill": {
+    "id": 60476,
+    "skillKey": "clawhub-multi-agent-coordinator",
+    "name": "Multi-Agent Coordinator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-agent-coordinator",
+    "url": "https://clawhub.ai/skills/multi-agent-coordinator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-agent-coordinator-026ca7d7c16fdab1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "协调并管理多个AI子Agent（Learner、Critic等）进行任务分工、通信和结果整合，实现复杂任务的多Agent协作。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yangchunwanwusheng",
+      "userId": "publishers:yangchunwanwusheng",
+      "displayName": "yangchunwanwusheng",
+      "image": "https://avatars.githubusercontent.com/u/200794576?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2175,
+      "installsAllTime": 25,
+      "installsCurrent": 25,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772436959217,
+      "changelog": "Initial release: Multi-Agent coordination skill based on real-world experience with Learner and Critic agents",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:478750a0a2f4a30682a44024ea1fa2268bfd22804a1ed499440c393b9e09ace1"
+}

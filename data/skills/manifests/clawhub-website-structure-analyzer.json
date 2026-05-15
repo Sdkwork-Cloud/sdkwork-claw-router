@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70660,
+  "uuid": "skill-clawhub-website-structure-analyzer",
+  "skillKey": "clawhub-website-structure-analyzer",
+  "name": "Website Structure Analyzer",
+  "summary": "分析网站功能结构。当用户需要了解某个网站的功能模块、页面结构、核心业务流程、技术栈、或想对目标网站进行竞品分析时使用。触发词包括：分析网站、结构、功能、竞品、网站架构、页面结构、功能模块、网站结构分析。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.website_structure_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wei3bao",
+      "features": [
+        "分析网站功能结构。当用户需要了解某个网站的功能模块、页面结构、核心业务流程、技术栈、或想对目标网站进行竞品分析时使用。触发词包括：分析网站、结构、功能、竞品、网站架构、页面结构、功能模块、网."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/website-structure-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/89014855?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "website-structure-analyzer",
+      "url": "https://clawhub.ai/skills/website-structure-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "website-structure-analyzer",
+    "url": "https://clawhub.ai/skills/website-structure-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/website-structure-analyzer-209847f08672d432.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/website-structure-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-website-structure-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ca6cd33680597e3a176c2eab05a1deb857476b83f843116bf37cd932434db491",
+      "artifactSizeBytes": 2576
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T15:24:19.323Z"
+}

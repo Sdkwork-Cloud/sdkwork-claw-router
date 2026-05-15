@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33164,
+  "uuid": "skill-clawhub-ns1",
+  "skillKey": "clawhub-ns1",
+  "name": "Ns1",
+  "summary": "NS1 integration. Manage data, records, and automate workflows. Use when the user wants to interact with NS1 data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ns1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "NS1 integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with NS1 data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ns1@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ns1",
+      "url": "https://clawhub.ai/skills/ns1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ns1",
+    "url": "https://clawhub.ai/skills/ns1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ns1-4d2b33d1dfddd7bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ns1@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-ns1-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3decbe9c7713bface3b119a2fbab5f4a93e044ebea6579bddd042b2768f6b237",
+      "artifactSizeBytes": 1785
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:18:20.197Z"
+}

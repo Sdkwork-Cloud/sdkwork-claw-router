@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gold-market@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gold_market",
+  "skill": {
+    "id": 72601,
+    "skillKey": "clawhub-gold-market",
+    "name": "gold-market"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gold-market",
+    "url": "https://clawhub.ai/skills/gold-market",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gold-market-a1d7cb90ba61ce35.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "国内金价查询工具。用于查询黄金实时价格、银行金条价格、金店零售价、国际金价和黄金未来趋势分析。当用户询问金价、黄金价格、今日金价、金店价格、银行金条、国际金价、伦敦金、黄金走势或未来趋势时触发此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fmouseboy",
+      "userId": "s172cbtek476cw42nfxa6hxczx83pzaf",
+      "displayName": "FMouse",
+      "image": "https://avatars.githubusercontent.com/u/36061597?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 517,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1773250581045,
+      "changelog": "Version 1.0.8\n\n- Removed technical indicators reference and the gold search script.\n- Updated skill description and documentation to focus on querying gold prices from jinjia.com.cn using extract_content_from_websites.\n- Streamlined functionality scope: real-time domestic/international gold prices, bank gold bar prices, retail gold shop prices, and trend analysis.\n- No longer mentions Tavily API or integration scripts.\n- Added detailed usage examples for both data extraction and trend analysis.\n- Noted investment and data accuracy considerations in the documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f52d8f8d2845e523403b2e871b94d98667281108d87f5eefbb912a157e3ec342"
+}

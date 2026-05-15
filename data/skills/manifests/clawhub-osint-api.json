@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28895,
+  "uuid": "skill-clawhub-osint-api",
+  "skillKey": "clawhub-osint-api",
+  "name": "OSINT Information",
+  "summary": "AI-powered OSINT intelligence reports via API. Multiple RSS feeds across 15 categories with enriched analysis, domain recon, and automated feed health monito...",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.osint_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ahsan3274",
+      "features": [
+        "AI-powered OSINT intelligence reports via API",
+        "Multiple RSS feeds across 15 categories with enriched analysis, domain recon, and automated fee."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/osint-api@1.0.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31914981?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "osint-api",
+      "url": "https://clawhub.ai/skills/osint-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "osint-api",
+    "url": "https://clawhub.ai/skills/osint-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/osint-api-b65a0eb59b4c43e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/osint-api@1.0.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-osint-api-1.0.9.json",
+      "version": "1.0.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8e03831708929b99dc5157ff8f7e868258668713277c50203003e4b932944b6a",
+      "artifactSizeBytes": 2029
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T15:09:58.788Z"
+}

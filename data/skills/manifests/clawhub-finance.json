@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8498,
+  "uuid": "skill-clawhub-finance",
+  "skillKey": "clawhub-finance",
+  "name": "finance",
+  "summary": "Track stocks, ETFs, indices, crypto (where available), and FX pairs with caching + provider fallbacks.",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finance",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "anton-roos",
+      "features": [
+        "Track stocks, ETFs, indices, crypto (where available), and FX pairs with caching + provider fal."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/finance@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20677963?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "finance",
+      "url": "https://clawhub.ai/skills/finance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finance",
+    "url": "https://clawhub.ai/skills/finance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finance-eab762a03fd979a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/finance@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-finance-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4f9fa1e9c7acb133b9abf9248f96497ff8890ae41cd7ca87ed59e1d583ced447",
+      "artifactSizeBytes": 1811
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T21:57:11.560Z"
+}

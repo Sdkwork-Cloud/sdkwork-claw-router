@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69817,
+  "uuid": "skill-clawhub-childcare",
+  "skillKey": "clawhub-childcare",
+  "name": "Childcare",
+  "summary": "提供婴幼儿生长曲线记录、早教互动课程、入托政策查询及疫苗提醒。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.childcare",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawKK",
+      "features": [
+        "提供婴幼儿生长曲线记录、早教互动课程、入托政策查询及疫苗提醒。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/childcare@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111570001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "childcare",
+      "url": "https://clawhub.ai/skills/childcare"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "childcare",
+    "url": "https://clawhub.ai/skills/childcare",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/childcare-889508afe2d56326.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/childcare@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-childcare-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:88af34fdba70ae696adeac6104232c84b291c2ecb32104644f605dc025adcec9",
+      "artifactSizeBytes": 2190
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T16:32:02.616Z"
+}

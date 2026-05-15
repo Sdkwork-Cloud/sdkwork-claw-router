@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mission-control@2.3.1",
+  "version": "2.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mission_control",
+  "skill": {
+    "id": 8586,
+    "skillKey": "clawhub-mission-control",
+    "name": "Mission Control"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mission-control",
+    "url": "https://clawhub.ai/skills/mission-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mission-control-67b7b26de9f67946.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Kanban-style task management dashboard for AI assistants. Manage tasks via CLI or dashboard UI. Use when user mentions tasks, kanban, task board, mission con..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rdsthomas",
+      "userId": "publishers:rdsthomas",
+      "displayName": "rdsthomas",
+      "image": "https://avatars.githubusercontent.com/u/95073824?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 8849,
+      "installsAllTime": 78,
+      "installsCurrent": 73,
+      "stars": 10,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.3.1",
+      "createdAt": 1771603328123,
+      "changelog": "Fix: Renamed from 'Jeannie Control' to 'Mission Control'. Removed private cron data from demo crons.json. Clean demo data only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:59fa9b783fa3b6e6c0d2ba115fac1b53e04fa644637d692c828708cf33062b5a"
+}

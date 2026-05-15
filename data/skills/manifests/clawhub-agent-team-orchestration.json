@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8318,
+  "uuid": "skill-clawhub-agent-team-orchestration",
+  "skillKey": "clawhub-agent-team-orchestration",
+  "name": "Agent Team Orchestration",
+  "summary": "Orchestrate multi-agent teams with defined roles, task lifecycles, handoff protocols, and review workflows. Use when: (1) Setting up a team of 2+ agents with different specializations, (2) Defining task routing and lifecycle (inbox → spec.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_team_orchestration",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "arminn",
+      "features": [
+        "Orchestrate multi-agent teams with defined roles, task lifecycles, handoff protocols, and revie.",
+        "Use when: (1) Setting up a team of 2+ agents with different specializations, (2) Defining task."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-team-orchestration@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4364977?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-team-orchestration",
+      "url": "https://clawhub.ai/skills/agent-team-orchestration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-team-orchestration",
+    "url": "https://clawhub.ai/skills/agent-team-orchestration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-team-orchestration-ae512136a9b77e59.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-team-orchestration@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-team-orchestration-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b3fe72adba5842c8ecb56f825847c6383674b44e5279892fd792854babde170",
+      "artifactSizeBytes": 2665
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T16:00:01.303Z"
+}

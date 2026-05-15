@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52955,
+  "uuid": "skill-clawhub-bookers-openclaw-backup",
+  "skillKey": "clawhub-bookers-openclaw-backup",
+  "name": "Booker's OpenClaw Backup",
+  "summary": "Create, inspect, configure, and restore self-contained backup bundles for ~/.openclaw. Use when the user wants full-state backup, backup listing, changing th...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bookers_openclaw_backup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Silronin",
+      "features": [
+        "Create, inspect, configure, and restore self-contained backup bundles for ~/.openclaw",
+        "Use when the user wants full-state backup, backup listing, changing th..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bookers-openclaw-backup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67084317?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bookers-openclaw-backup",
+      "url": "https://clawhub.ai/skills/bookers-openclaw-backup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bookers-openclaw-backup",
+    "url": "https://clawhub.ai/skills/bookers-openclaw-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bookers-openclaw-backup-50d6f084aa5f652a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bookers-openclaw-backup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bookers-openclaw-backup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c041d8ac24fb9272edacb0b02beb4aa728176afc3d32610503fd1c18ad72c55",
+      "artifactSizeBytes": 2084
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T06:01:42.629Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18695,
+  "uuid": "skill-clawhub-linear-cli",
+  "skillKey": "clawhub-linear-cli",
+  "name": "Linear CLI",
+  "summary": "Linear CLI skill for OpenClaw workflows, powered by Api2Cli (a2c) against Linear's GraphQL API. Provides a wrapper script that generates its a2c workspace co...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linear_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Simon van Laak",
+      "features": [
+        "Linear CLI skill for OpenClaw workflows, powered by Api2Cli (a2c) against Linear's GraphQL API",
+        "Provides a wrapper script that generates its a2c workspace co..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linear-cli@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32648751?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linear-cli",
+      "url": "https://clawhub.ai/skills/linear-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linear-cli",
+    "url": "https://clawhub.ai/skills/linear-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linear-cli-a1c1ab6b8c2ce7c7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linear-cli@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-linear-cli-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1463295053b637d4940529e59d6d1d1c5ab6f8fe4252ccab4e2bfe9bc6a28c42",
+      "artifactSizeBytes": 1909
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T19:09:38.674Z"
+}

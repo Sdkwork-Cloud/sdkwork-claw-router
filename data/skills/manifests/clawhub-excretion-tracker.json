@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23223,
+  "uuid": "skill-clawhub-excretion-tracker",
+  "skillKey": "clawhub-excretion-tracker",
+  "name": "Excretion Tracker",
+  "summary": "Track bathroom events (pee/poop) via chat: start time, duration, color, pain, and Bristol stool scale. Generates weekly summaries and optional constipation r...",
+  "version": "0.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.excretion_tracker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HerveClawd",
+      "features": [
+        "Track bathroom events (pee/poop) via chat: start time, duration, color, pain, and Bristol stool.",
+        "Generates weekly summaries and optional constipation r..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/excretion-tracker@0.4.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261343483?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "excretion-tracker",
+      "url": "https://clawhub.ai/skills/excretion-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "excretion-tracker",
+    "url": "https://clawhub.ai/skills/excretion-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/excretion-tracker-789633e4e8ea1d18.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/excretion-tracker@0.4.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-excretion-tracker-0.4.1.json",
+      "version": "0.4.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:32b6f0d23bfcc6bf6e5bc6f1e9696c777c4842ce372d01407710849d94cfa074",
+      "artifactSizeBytes": 1982
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T01:59:58.618Z"
+}

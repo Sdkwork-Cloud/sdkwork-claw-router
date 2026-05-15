@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/doc-format-gw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doc_format_gw",
+  "skill": {
+    "id": 68321,
+    "skillKey": "clawhub-doc-format-gw",
+    "name": "机关公文排版skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doc-format-gw",
+    "url": "https://clawhub.ai/skills/doc-format-gw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doc-format-gw-863b42d4e496e225.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "公文排版工具 - 根据公文格式规范自动排版Word文档。适用于发送Word文件前进行格式调整。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "batduke",
+      "userId": "s1710jssbhq0m8pchpayp7j3c583nh8z",
+      "displayName": "batduke",
+      "image": "https://avatars.githubusercontent.com/u/210201426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 583,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773416027729,
+      "changelog": "📋 核心格式\n标题: 方正小标宋_GBK，二号字，居中\n正文: 方正仿宋_gbk，三号字，两端对齐，首行缩进2字符\n页边距: 上37mm，下35mm，左28mm，右26mm\n📑 标题层级\n一级: 方正黑体 + 一、\n二级: 方正楷体 + （一）\n三级: 方正仿宋(粗体) + 1. 或 1、\n四级: 方正仿宋 + （1）\n📊 表格规则\n表题: 方正小标宋\n表头: 方正黑体14pt居中\n表体: 方正仿宋14pt",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:78df5fd8e21cf260ff4eed3df76944e4cd92e94e067a598b77ffeea442d18945"
+}

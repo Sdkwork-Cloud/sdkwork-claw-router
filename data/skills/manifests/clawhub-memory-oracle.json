@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36944,
+  "uuid": "skill-clawhub-memory-oracle",
+  "skillKey": "clawhub-memory-oracle",
+  "name": "Memory Oracle",
+  "summary": "Persistent structured memory system for OpenClaw agents with SQLite storage, hybrid search (FTS5 + decay scoring), rule-based capture, LLM-powered daily refl...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_oracle",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Oleg",
+      "features": [
+        "Persistent structured memory system for OpenClaw agents with SQLite storage, hybrid search (FTS."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-oracle@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/104734742?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-oracle",
+      "url": "https://clawhub.ai/skills/memory-oracle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-oracle",
+    "url": "https://clawhub.ai/skills/memory-oracle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-oracle-f4b7d8f645613fa8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-oracle@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-oracle-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b7de0c0fc3e6cb0cb38e7eba78b90e8023db29330fc7e95c4d469da4ae313222",
+      "artifactSizeBytes": 2101
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T04:13:04.971Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jancong-seedance-video-gen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jancong_seedance_video_gen",
+  "skill": {
+    "id": 61241,
+    "skillKey": "clawhub-jancong-seedance-video-gen",
+    "name": "Seedance AI Video Gen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jancong-seedance-video-gen",
+    "url": "https://clawhub.ai/skills/jancong-seedance-video-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jancong-seedance-video-gen-ea3489cd2f390c2c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用火山引擎 Seedance 2.0 系列模型（doubao-seedance-2-0 / doubao-seedance-2-0-fast）通过方舟平台 API 生成高质量 AI 视频。支持文生视频、图生视频、视频参考、音频参考等多模态内容生成，适用于用户要求生成/制作/创建视频、文生视频、图生视频、AI 生..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jancong",
+      "userId": "s1743dj50nxpdfdydmas430ctx84ajvj",
+      "displayName": "Cong Pendy",
+      "image": "https://avatars.githubusercontent.com/u/16347506?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775817281626,
+      "changelog": "Initial release of Seedance 视频生成 Skill:\n\n- Supports generating high-quality AI videos using Huoshan Yinqing Seedance 2.0 models via Ark platform API.\n- Multi-modal input: text, image, video, and audio references for versatile content creation.\n- Two model options: standard (high quality) and fast (faster results).\n- Flexible parameters: video duration, aspect ratio, watermark, and optional audio generation.\n- Provides detailed workflow for task submission, status polling, and result retrieval.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:81c16841dd762cc0d64a3d8f440885461492cee166d0582a67861ef0f87e3489"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/improve-doc@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.improve_doc",
+  "skill": {
+    "id": 36929,
+    "skillKey": "clawhub-improve-doc",
+    "name": "Improve Doc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "improve-doc",
+    "url": "https://clawhub.ai/skills/improve-doc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/improve-doc-bd1fafbff43ba24f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze and improve existing documentation using Diataxis principles"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anderskev",
+      "userId": "s17b1fzefm8nj8j1sdkzrze7gn83pfrg",
+      "displayName": "Kevin Anderson",
+      "image": "https://avatars.githubusercontent.com/u/17010022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776831064980,
+      "changelog": "Version 1.0.1\n\n- Adds explicit phase gates for each critical step; the skill will only proceed after specific user or artifact confirmation.\n- Ensures no document edits occur until the user explicitly enters `start` after seeing the full analysis summary.\n- If the user aborts or a section’s Diataxis classification is unclear, the original content is strictly preserved with no partial edits or overwrites.\n- Once interactive refinement begins, guarantees that every section’s outcome is finalized before any write occurs, and skipped sections remain byte-for-byte identical to the input.\n- Final save delayed until all gating rules are satisfied; major restructures or backups are reported on completion.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9dc74e38b6329f8b5ad56ff2d3ca9f5bffdb68c028fea35b53f43fcbcf56c6c7"
+}

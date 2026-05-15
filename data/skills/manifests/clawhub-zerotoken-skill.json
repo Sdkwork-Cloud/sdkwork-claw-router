@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45335,
+  "uuid": "skill-clawhub-zerotoken-skill",
+  "skillKey": "clawhub-zerotoken-skill",
+  "name": "ZeroToken Skill",
+  "summary": "Default token-efficient assistant discipline. Use by default for all suitable tasks unless the user explicitly asks for exhaustive detail, teaching-style exp...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zerotoken_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ethan Wilkins",
+      "features": [
+        "Default token-efficient assistant discipline",
+        "Use by default for all suitable tasks unless the user explicitly asks for exhaustive detail, te."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zerotoken-skill@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/73684172?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zerotoken-skill",
+      "url": "https://clawhub.ai/skills/zerotoken-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zerotoken-skill",
+    "url": "https://clawhub.ai/skills/zerotoken-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zerotoken-skill-5262128d3cd4bf06.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zerotoken-skill@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-zerotoken-skill-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba34fc85406a4edfed1fbcbf6328718f1536bc9500463930280243c3b9fa7ca4",
+      "artifactSizeBytes": 2004
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T07:45:09.100Z"
+}

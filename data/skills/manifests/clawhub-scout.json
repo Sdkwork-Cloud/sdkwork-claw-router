@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13186,
+  "uuid": "skill-clawhub-scout",
+  "skillKey": "clawhub-scout",
+  "name": "Scout",
+  "summary": "Agent trust intelligence for Moltbook and x402 Bazaar. Use when you need to check if an agent or service is trustworthy before paying, compare agents side-by-side, scan feeds for quality agents, or make trust-gated USDC payments. Answers t.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scout",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Operon",
+      "features": [
+        "Agent trust intelligence for Moltbook and x402 Bazaar",
+        "Use when you need to check if an agent or service is trustworthy before paying, compare agents.",
+        "Answers the question \"should I pay this agent?\" with research-backed scoring across 6 dimension."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/scout@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62118705?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "scout",
+      "url": "https://clawhub.ai/skills/scout"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scout",
+    "url": "https://clawhub.ai/skills/scout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scout-3608e4bd0e693177.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/scout@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-scout-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f87502705d7b9740a459b55e931a6e0f22e12880b0a4ee091f32daab5c840d44",
+      "artifactSizeBytes": 1949
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T21:52:22.414Z"
+}

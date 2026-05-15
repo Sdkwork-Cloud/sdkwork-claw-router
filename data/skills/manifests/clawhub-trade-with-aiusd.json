@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12849,
+  "uuid": "skill-clawhub-trade-with-aiusd",
+  "skillKey": "clawhub-trade-with-aiusd",
+  "name": "trade-with-aiusd",
+  "summary": "Manage AIUSD trading, staking, withdrawals, balance checks, gas top-ups, and transaction history via authenticated backend calls.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trade_with_aiusd",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ChaunceyLiu",
+      "features": [
+        "Manage AIUSD trading, staking, withdrawals, balance checks, gas top-ups, and transaction histor."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trade-with-aiusd@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18446173?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trade-with-aiusd",
+      "url": "https://clawhub.ai/skills/trade-with-aiusd"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trade-with-aiusd",
+    "url": "https://clawhub.ai/skills/trade-with-aiusd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trade-with-aiusd-c9dee5d11265e5eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trade-with-aiusd@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-trade-with-aiusd-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4902306206a8dd8bc3145371369a3069809a128e43ac141634a6f7448ff7d0ac",
+      "artifactSizeBytes": 2026
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T01:04:12.363Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61151,
+  "uuid": "skill-clawhub-theo-confluence-reader",
+  "skillKey": "clawhub-theo-confluence-reader",
+  "name": "crawl requirement from confluence",
+  "summary": "读取Confluence需求文档并整理成指定格式。采集原则是\"忠实记录\"，而非\"需求分析\"。输出包括：{序号}_{标题}.md（每个页面一个Markdown文件）、requirement-meta.md（元信息）、images/（所有图片，文件中包含图片引用）。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.theo_confluence_reader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mcxxtyhd",
+      "features": [
+        "读取Confluence需求文档并整理成指定格式。采集原则是\"忠实记录\"，而非\"需求分析\"。输出包括：{序号}_{标题}.md（每个页面一个Markdown文件）、requirement-m."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/theo-confluence-reader@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18400683?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "theo-confluence-reader",
+      "url": "https://clawhub.ai/skills/theo-confluence-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "theo-confluence-reader",
+    "url": "https://clawhub.ai/skills/theo-confluence-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/theo-confluence-reader-373ae98a75d04b48.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/theo-confluence-reader@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-theo-confluence-reader-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e9f6950b40edcd2e68035139adbe9e0babcd8984eb28d3a64e5869e2c553723e",
+      "artifactSizeBytes": 2086
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T06:31:16.369Z"
+}

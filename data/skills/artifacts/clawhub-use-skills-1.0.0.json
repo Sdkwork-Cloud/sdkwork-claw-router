@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/use-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.use_skills",
+  "skill": {
+    "id": 49461,
+    "skillKey": "clawhub-use-skills",
+    "name": "Use Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "use-skills",
+    "url": "https://clawhub.ai/skills/use-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/use-skills-f16745d4c56f2caf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helps choose relevant installed skills for complex requests and briefly shows the working set before answering."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cyrusse",
+      "userId": "s17d0fr6b41ahs38xk0gfs2kz985w395",
+      "displayName": "Cyrus",
+      "image": "https://avatars.githubusercontent.com/u/80195151?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 79,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777622482116,
+      "changelog": "Initial public marketplace release from github.com/CyrusSE/use-skills.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ab656128b5d40e5077b2016a2be538d8f7a2cc876a0f08a2d19ba0d1587f2be9"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/contract-doc-sync@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.contract_doc_sync",
+  "skill": {
+    "id": 61653,
+    "skillKey": "clawhub-contract-doc-sync",
+    "name": "contract-doc-sync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "contract-doc-sync",
+    "url": "https://clawhub.ai/skills/contract-doc-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/contract-doc-sync-73c3eeb8ba137463.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "文档同步工具——检测代码-文档漂移并同步修复。仅读写本地 docs/ 下 Markdown 文件，仅运行本地脚本（git diff、md-sections）。 源码文件只读，无网络请求，无加密操作，无支付/购买功能，无远程下载。 需要: python3, git, bash。 写入范围白名单: docs/modu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leonardo-lb",
+      "userId": "s173fecesqz6npp546249nqprd83jtfx",
+      "displayName": "LeoNardo-LB",
+      "image": "https://avatars.githubusercontent.com/u/58056860?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776237000589,
+      "changelog": "**contract-doc-sync 1.0.1 Changelog**\n\n- Clarified runtime dependencies and safety boundaries: now explicitly states all required tools (python3, git, bash) and the full scope of readable/writable files.\n- Updated description to emphasize only local Markdown file editing, local script execution, and strong read-only policy for source code/config.\n- Added explicit behavior boundaries: no network requests, encryption, payment, or remote downloading; clarified absolute prohibition on non-docs directory file writes.\n- Added privacy/safety note for L3/D10 (semantic alignment): warns of cloud LLM data egress and provides skip instruction with `DOC_SYNC_SKIP_D10=true`.\n- Now includes explicit handling of missing dependencies with clear user-facing error messages.\n- No file/code logic changes; documentation refinement only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ed160b789712d5e4b090157b0b6589136245580d65ff54d32b9286a4de1cd14e"
+}

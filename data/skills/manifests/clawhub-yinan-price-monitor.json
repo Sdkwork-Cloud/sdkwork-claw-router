@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27272,
+  "uuid": "skill-clawhub-yinan-price-monitor",
+  "skillKey": "clawhub-yinan-price-monitor",
+  "name": "Price Monitor",
+  "summary": "Monitor website prices, inventory, and content changes using browser automation. Use when tracking e-commerce prices, competitor monitoring, stock alerts, or...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yinan_price_monitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yinanping",
+      "features": [
+        "Monitor website prices, inventory, and content changes using browser automation",
+        "Use when tracking e-commerce prices, competitor monitoring, stock alerts, or..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yinan-price-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/87659652?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yinan-price-monitor",
+      "url": "https://clawhub.ai/skills/yinan-price-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yinan-price-monitor",
+    "url": "https://clawhub.ai/skills/yinan-price-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yinan-price-monitor-3886a1c420aed473.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yinan-price-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yinan-price-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a7d68dda75992a9556efcaba6f987b6b2761d06637003d4f4404c42e340f2ec2",
+      "artifactSizeBytes": 2433
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T09:13:35.214Z"
+}

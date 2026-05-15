@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56263,
+  "uuid": "skill-clawhub-openclaw-aws-sre-report",
+  "skillKey": "clawhub-openclaw-aws-sre-report",
+  "name": "Sre Publish",
+  "summary": "AWS SRE health check with FinOps — queries CloudWatch, SQS DLQ, and Cost Explorer, generates a Bedrock-powered incident diagnosis (Contexto, Soluções, CTAs),...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_aws_sre_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Diego Vieira",
+      "features": [
+        "AWS SRE health check with FinOps — queries CloudWatch, SQS DLQ, and Cost Explorer, generates a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-aws-sre-report@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13529266?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-aws-sre-report",
+      "url": "https://clawhub.ai/skills/openclaw-aws-sre-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-aws-sre-report",
+    "url": "https://clawhub.ai/skills/openclaw-aws-sre-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-aws-sre-report-87f25d9f87456ee8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-aws-sre-report@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-aws-sre-report-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c1eae4f9b484962581dd5a806fcaabbd683d8af66b401d81b01297f9467c39b6",
+      "artifactSizeBytes": 2020
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T12:53:53.238Z"
+}

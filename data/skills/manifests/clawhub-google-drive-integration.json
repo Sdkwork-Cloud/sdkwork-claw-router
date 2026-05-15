@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18273,
+  "uuid": "skill-clawhub-google-drive-integration",
+  "skillKey": "clawhub-google-drive-integration",
+  "name": "Google Drive",
+  "summary": "Google Drive integration. Manage Drives, Users, Permissions. Use when the user wants to interact with Google Drive data.",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_drive_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Google Drive integration",
+        "Manage Drives, Users, Permissions",
+        "Use when the user wants to interact with Google Drive data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-drive-integration@1.0.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-drive-integration",
+      "url": "https://clawhub.ai/skills/google-drive-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-drive-integration",
+    "url": "https://clawhub.ai/skills/google-drive-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-drive-integration-6a4d085e5ec6f9f9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-drive-integration@1.0.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-drive-integration-1.0.9.json",
+      "version": "1.0.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9a84f6e78000cc0456ef1c15321e53f93de2dd14d82cfbc209a90cee09f884af",
+      "artifactSizeBytes": 1936
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:31:09.637Z"
+}

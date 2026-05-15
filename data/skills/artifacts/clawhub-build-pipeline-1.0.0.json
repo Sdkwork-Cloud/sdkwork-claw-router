@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/build-pipeline@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.build_pipeline",
+  "skill": {
+    "id": 26579,
+    "skillKey": "clawhub-build-pipeline",
+    "name": "Build Pipeline"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "build-pipeline",
+    "url": "https://clawhub.ai/skills/build-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/build-pipeline-9de2a7ec4bb80add.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Orchestrate agent build workflow. you handle parse and research, then delegates the full build to Builder. Use for new builds and error handling."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dweikanas",
+      "userId": "publishers:dweikanas",
+      "displayName": "Anas Dweik",
+      "image": "https://avatars.githubusercontent.com/u/159037900?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 354,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773578388716,
+      "changelog": "build-pipeline v1.0.0\n\n- Initial release introducing a full build orchestration pipeline for agent creation.\n- Automates: parsing user requests, parallel spawning of research workers and builder, collecting research outputs, and coordinating the build process.\n- Enforces structured stepper event progress updates for user-friendly, non-technical status reporting.\n- Defines strict sub-agent patterns—requiring workers to follow their SKILL.md, write YAML outputs, and exit silently.\n- Standardizes task prompts, research worker roles, and pipeline step schemas for consistent execution and error handling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:068e4bf08a524bd7afe58f0a67c7fbec24f41a8f02f706f89e9fd0dc2ea96646"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32613,
+  "uuid": "skill-clawhub-mjk39966-document-parser",
+  "skillKey": "clawhub-mjk39966-document-parser",
+  "name": "document-parser",
+  "summary": "Parse and extract content from .docx, .pdf, and .txt documents. Extracts plain text and tables for analysis. Use when the user uploads a document file or ask...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mjk39966_document_parser",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mjk39966-glitch",
+      "features": [
+        "Parse and extract content from .docx, .pdf, and .txt documents",
+        "Extracts plain text and tables for analysis",
+        "Use when the user uploads a document file or ask..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mjk39966-document-parser@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/237672151?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mjk39966-document-parser",
+      "url": "https://clawhub.ai/skills/mjk39966-document-parser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mjk39966-document-parser",
+    "url": "https://clawhub.ai/skills/mjk39966-document-parser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mjk39966-document-parser-2ed39fb370a7dab4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mjk39966-document-parser@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mjk39966-document-parser-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:61f9a1063aeab591e4e6c0ec42c2c21ee32d918a9cc6ac5a730cb86a2cf28f3d",
+      "artifactSizeBytes": 2512
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T03:07:26.973Z"
+}

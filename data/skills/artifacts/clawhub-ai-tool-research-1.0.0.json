@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-tool-research@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_tool_research",
+  "skill": {
+    "id": 42043,
+    "skillKey": "clawhub-ai-tool-research",
+    "name": "ai-tool-research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-tool-research",
+    "url": "https://clawhub.ai/skills/ai-tool-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-tool-research-f79a44290f88630d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Researches how people are using an AI tool (Claude Desktop, Cursor, OpenAI Codex, Google Gemini, or OpenClaw) and generates a Productivity Playbook plus a Sk..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nazmul87-wq",
+      "userId": "s17fqennsk6n3nr3famthjaaks85asfh",
+      "displayName": "nazmul87-wq",
+      "image": "https://avatars.githubusercontent.com/u/264048177?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776819739342,
+      "changelog": "ai-tool-research v1.0.0 — initial release\n\n- Provides monthly research updates and productivity playbooks for Claude Desktop, Cursor, OpenAI Codex, Google Gemini, and OpenClaw.\n- Generates two Markdown files per tool: a Productivity Playbook (use cases, personas, examples, links) and a Skills Catalog (rated list of skills/extensions/plugins, mapped to personas).\n- Uses a consistent, rated, month-over-month format with file date stamps and explicit \"what's new\" sections.\n- Includes a checklist-driven workflow: confirms inputs, checks existing files, researches updates, rates new items, composes updates, and logs runs.\n- Honors the open SKILL.md standard; works across common AI tool runtimes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:da309d8797658755012276c93f15d88a133d0ba7039385b572f51c36f448d1ba"
+}

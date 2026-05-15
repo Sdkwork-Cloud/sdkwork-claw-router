@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/transcribe-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.transcribe_video",
+  "skill": {
+    "id": 46019,
+    "skillKey": "clawhub-transcribe-video",
+    "name": "transcribe-video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "transcribe-video",
+    "url": "https://clawhub.ai/skills/transcribe-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/transcribe-video-b9ed3d7fd80cd1f4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract transcript or subtitles from a local video file. Use this skill whenever the user asks to transcribe a video, extract speech-to-text, get subtitles,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "feiskyer",
+      "userId": "s174q6bx170bf0qb9wjqhqfv6x83vv3e",
+      "displayName": "Pengfei Ni",
+      "image": "https://avatars.githubusercontent.com/u/676637?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776249141108,
+      "changelog": "- Initial release: transcribe-video skill extracts transcripts or subtitles from local video files.\n- Automatically checks for embedded subtitles first for fast, accurate results; uses speech-to-text API if none are found.\n- Supports popular video formats: mp4, mkv, mov, avi, webm, and others ffmpeg can read.\n- Guides user through dependencies for API transcription if required.\n- Outputs a text transcript file in the same folder as the video, and shows a preview with basic info.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:60ffbbef68746ddabafbcdb82fad27c6f13a98a706aa9286cad27fe7250ac4f7"
+}

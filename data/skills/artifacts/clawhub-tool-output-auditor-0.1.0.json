@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tool-output-auditor@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tool_output_auditor",
+  "skill": {
+    "id": 35423,
+    "skillKey": "clawhub-tool-output-auditor",
+    "name": "Tool Output Auditor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tool-output-auditor",
+    "url": "https://clawhub.ai/skills/tool-output-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tool-output-auditor-48c855aae27da75b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit tool and command results before acting on them. Use when an agent has already run a command or tool, especially in multi-step workflows where a failed,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daowuu",
+      "userId": "s17ekd62805dxqaxqw8vt41qds83h8aa",
+      "displayName": "wuu Dao",
+      "image": "https://avatars.githubusercontent.com/u/74347577?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 215,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774371569469,
+      "changelog": "Initial release of the Tool Output Auditor skill.\n\n- Provides guidelines for auditing tool and command outputs before proceeding in workflows.\n- Introduces a 4-state classification for outputs: success, failure, partial, or ambiguous.\n- Describes common pitfalls and anti-patterns when handling tool outputs.\n- Includes scripts/audit_output.py to classify output files and suggest next actions.\n- Offers references and checklists for safer workflow automation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:86cfc22f1a11d4aa626f06ac6fa06ac9e3cff2748d326074b9edb45c500b9e37"
+}

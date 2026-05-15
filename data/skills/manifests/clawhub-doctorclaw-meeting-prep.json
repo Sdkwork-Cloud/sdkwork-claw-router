@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52109,
+  "uuid": "skill-clawhub-doctorclaw-meeting-prep",
+  "skillKey": "clawhub-doctorclaw-meeting-prep",
+  "name": "DoctorClaw Meeting Prep",
+  "summary": "Meeting prep — pull context on attendees, topics, and action items before every calendar event. Auto or on-demand.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doctorclaw_meeting_prep",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ceobotson-bot",
+      "features": [
+        "Meeting prep — pull context on attendees, topics, and action items before every calendar event",
+        "Auto or on-demand."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doctorclaw-meeting-prep@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263067918?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doctorclaw-meeting-prep",
+      "url": "https://clawhub.ai/skills/doctorclaw-meeting-prep"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doctorclaw-meeting-prep",
+    "url": "https://clawhub.ai/skills/doctorclaw-meeting-prep",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doctorclaw-meeting-prep-69ead598a273715e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doctorclaw-meeting-prep@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-doctorclaw-meeting-prep-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c4c773bb6d08f073701d20169351ae6a8f545353ba81f99ce6cecd21df37710",
+      "artifactSizeBytes": 2032
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T13:03:30.485Z"
+}

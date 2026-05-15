@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59120,
+  "uuid": "skill-clawhub-xiaozhua-agent-deployment",
+  "skillKey": "clawhub-xiaozhua-agent-deployment",
+  "name": "Agent Deployment",
+  "summary": "AI Agent 部署与管理。在 WSL2/Linux 上安装 OpenClaw，配置 GitHub Copilot 认证，启动 Gateway，初始化 workspace（SOUL.md/USER.md/TASKS.md）。支持多 Agent 部署、端口配置、认证排错。使用场景：部署新 Agent、重启 Age...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaozhua_agent_deployment",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mirowangl-ops",
+      "features": [
+        "AI Agent 部署与管理。在 WSL2/Linux 上安装 OpenClaw，配置 GitHub Copilot 认证，启动 Gateway，初始化 workspace（SOUL.md/."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaozhua-agent-deployment@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267263361?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaozhua-agent-deployment",
+      "url": "https://clawhub.ai/skills/xiaozhua-agent-deployment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaozhua-agent-deployment",
+    "url": "https://clawhub.ai/skills/xiaozhua-agent-deployment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaozhua-agent-deployment-64ae9744edb1a106.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaozhua-agent-deployment@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaozhua-agent-deployment-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7e2ed8ec37f717e46bf3304cca9cf3afbf2ed64d6bcafba8209b5a45cb73f674",
+      "artifactSizeBytes": 2494
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T11:42:42.419Z"
+}

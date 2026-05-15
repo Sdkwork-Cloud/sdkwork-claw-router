@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20450,
+  "uuid": "skill-clawhub-claimable-postgres",
+  "skillKey": "clawhub-claimable-postgres",
+  "name": "Claimable Postgres",
+  "summary": "Provision instant temporary Postgres databases via Claimable Postgres by Neon (neon.new) with no login, signup, or credit card. Supports REST API, CLI, and S...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claimable_postgres",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Andre Landgraf",
+      "features": [
+        "Provision instant temporary Postgres databases via Claimable Postgres by Neon (neon.new) with n.",
+        "Supports REST API, CLI, and S..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claimable-postgres@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15163028?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claimable-postgres",
+      "url": "https://clawhub.ai/skills/claimable-postgres"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claimable-postgres",
+    "url": "https://clawhub.ai/skills/claimable-postgres",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claimable-postgres-c9f71f5ac867fefd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claimable-postgres@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-claimable-postgres-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cdbe8d331533aa81c8f09ea05e5cc90c237839e17a38aa0fa1179223a6db4146",
+      "artifactSizeBytes": 2395
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T21:27:04.100Z"
+}

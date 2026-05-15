@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/edgeiq-email-header-analyzer@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edgeiq_email_header_analyzer",
+  "skill": {
+    "id": 40530,
+    "skillKey": "clawhub-edgeiq-email-header-analyzer",
+    "name": "Email Header Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edgeiq-email-header-analyzer",
+    "url": "https://clawhub.ai/skills/edgeiq-email-header-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edgeiq-email-header-analyzer-834258642372e335.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Parses email headers to detect spoofing, phishing, SPF/DKIM/DMARC failures, routing anomalies, and provides forensic analysis of email authenticity."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "edgeiq-labs",
+      "userId": "s17281v95sfy21qznab55m4qb984t38a",
+      "displayName": "EdgeIQLabs",
+      "image": "https://avatars.githubusercontent.com/u/16479432?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1777136912503,
+      "changelog": "v1.4.0: URGENT FIX — corrected Stripe Payment Link URLs",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:72ae195716d13bf145ef7cf93ad87103a3c64b286ab8453a43f394610fffd4da"
+}

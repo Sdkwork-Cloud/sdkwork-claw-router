@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/competitive-intelligence@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.competitive_intelligence",
+  "skill": {
+    "id": 16101,
+    "skillKey": "clawhub-competitive-intelligence",
+    "name": "Competitive Intelligence"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "competitive-intelligence",
+    "url": "https://clawhub.ai/skills/competitive-intelligence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/competitive-intelligence-5c4508dd9ef20802.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate competitive analysis reports and differentiation talking points based on secondary research"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "findhappy7",
+      "userId": "s1701f5z695a3sxp0qr39avsjn83kdpg",
+      "displayName": "findhappy7",
+      "image": "https://avatars.githubusercontent.com/u/14501839?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 898,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774161889451,
+      "changelog": "Initial release of competitive-intelligence skill.\n\n- Enables generation of competitive analysis reports and differentiation talking points based on secondary research.\n- Offers standardized workflows and best practices for market research.\n- Provides data-driven insights and actionable recommendations.\n- Supports business optimization, strategy, automation, and performance monitoring across various industries.\n- Outputs include customizable deliverables and implementation guidance.\n- Requires clear business context and relevant data for best results.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eb77b3eb5a6ef7293f7fd32a7108c965a35a714eff853d69307815465ef832a9"
+}

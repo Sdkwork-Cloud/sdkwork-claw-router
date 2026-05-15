@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17566,
+  "uuid": "skill-clawhub-nod",
+  "skillKey": "clawhub-nod",
+  "name": "Nod",
+  "summary": "Find and connect with professionals, experts, freelancers, and business contacts. Search people by role, skill, location, or intent. Send introductions and m...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nod",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yoann a.",
+      "features": [
+        "Find and connect with professionals, experts, freelancers, and business contacts",
+        "Search people by role, skill, location, or intent",
+        "Send introductions and m..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nod@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/182226389?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nod",
+      "url": "https://clawhub.ai/skills/nod"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nod",
+    "url": "https://clawhub.ai/skills/nod",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nod-4043d35e7dd415e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nod@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nod-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5da901d47f6d4d13d78686d37bb98c57f4a0cb68d6bd3022604388732806cde0",
+      "artifactSizeBytes": 2339
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T22:09:25.980Z"
+}

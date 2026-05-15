@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69947,
+  "uuid": "skill-clawhub-memory-write",
+  "skillKey": "clawhub-memory-write",
+  "name": "Memory Write",
+  "summary": "自动化将每日工作索引、架构细节和临时想法按规则归档至多层记忆库，确保内容完整可读。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_write",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MarkMa84",
+      "features": [
+        "自动化将每日工作索引、架构细节和临时想法按规则归档至多层记忆库，确保内容完整可读。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-write@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19796416?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-write",
+      "url": "https://clawhub.ai/skills/memory-write"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-write",
+    "url": "https://clawhub.ai/skills/memory-write",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-write-6a2cfa91e82d5ca6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-write@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-write-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ed58043e71fd274a684e75a7bf508fcedd5d231823b775165c834b41fbe8c9ec",
+      "artifactSizeBytes": 1874
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T10:54:37.488Z"
+}

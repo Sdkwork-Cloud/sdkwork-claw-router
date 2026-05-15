@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28503,
+  "uuid": "skill-clawhub-image-breaker",
+  "skillKey": "clawhub-image-breaker",
+  "name": "Image Breaker",
+  "summary": "Extract and break down content from web documents, PDFs, images, and URLs into structured markdown notes stored locally and synced to Obsidian. Use when the...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_breaker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "biohackerrrrrr",
+      "features": [
+        "Extract and break down content from web documents, PDFs, images, and URLs into structured markd.",
+        "Use when the..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-breaker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/207184515?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-breaker",
+      "url": "https://clawhub.ai/skills/image-breaker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-breaker",
+    "url": "https://clawhub.ai/skills/image-breaker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-breaker-9dcf6176b2b2af97.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-breaker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-breaker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f25de8a784d3302b34ee04a39a542592821ebdfc8c2bc00ecf0feda3c4a502b",
+      "artifactSizeBytes": 2555
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T14:36:18.573Z"
+}

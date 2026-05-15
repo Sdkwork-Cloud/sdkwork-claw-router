@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67188,
+  "uuid": "skill-clawhub-byted-voice-notify",
+  "skillKey": "clawhub-byted-voice-notify",
+  "name": "Byted Voice Notify",
+  "summary": "使用火山引擎API向指定手机号发送语音通知，可根据语言和关键词选择语音资源并自动调用号码池发送。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.byted_voice_notify",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "volcengine-skills",
+      "features": [
+        "使用火山引擎API向指定手机号发送语音通知，可根据语言和关键词选择语音资源并自动调用号码池发送。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/byted-voice-notify@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260939792?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "byted-voice-notify",
+      "url": "https://clawhub.ai/skills/byted-voice-notify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "byted-voice-notify",
+    "url": "https://clawhub.ai/skills/byted-voice-notify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/byted-voice-notify-ad136d9a9a3969de.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/byted-voice-notify@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-byted-voice-notify-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dd9cbf05d7700e5f3f9b58c45b42fb43162335510e6120f5662f7c0934d07a69",
+      "artifactSizeBytes": 2269
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T04:51:21.835Z"
+}

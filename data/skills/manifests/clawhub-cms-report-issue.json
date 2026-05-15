@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60565,
+  "uuid": "skill-clawhub-cms-report-issue",
+  "skillKey": "clawhub-cms-report-issue",
+  "name": "Cms Report Issue",
+  "summary": "用于\"反馈问题 / 报 bug / 上报错误 / 提交 issue / 查看 Skill 问题列表 / 标记问题已解决 / 关闭问题\"。处理 Skill 使用过程中遇到的报错、异常、改进建议；支持 stdin 管道接收错误输出。是 cms-create-skill 与 cms-push-skill 的统一问题反馈入口",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cms_report_issue",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "spzwin",
+      "features": [
+        "用于\"反馈问题 / 报 bug / 上报错误 / 提交 issue / 查看 Skill 问题列表 / 标记问题已解决 / 关闭问题\"。处理 Skill 使用过程中遇到的报错、异常、改进建议."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cms-report-issue@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48741773?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cms-report-issue",
+      "url": "https://clawhub.ai/skills/cms-report-issue"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cms-report-issue",
+    "url": "https://clawhub.ai/skills/cms-report-issue",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cms-report-issue-0b9b1c01f997e617.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cms-report-issue@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-cms-report-issue-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5768593220eb118c8f054cb22f4b6be4fb9fac25c72fdb8a4a33a545c8bfee73",
+      "artifactSizeBytes": 2115
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T14:26:20.464Z"
+}

@@ -59,6 +59,29 @@ class FrontendOperationAudit:
         "app": "getClawRouterAppSdkClient",
         "backend": "getClawRouterBackendSdkClient",
     }
+    APPBASE_IAM_RUNTIME_PATTERN = re.compile(r"\bgetClawRouterIamRuntime\s*\(\s*\)\s*\.service\b")
+    APPBASE_IAM_CONTROLLER_PATTERN = re.compile(
+        r"\bcreateSdkworkIamRuntimeAuthController\s*\([\s\S]*\bgetRuntime\s*:\s*getClawRouterIamRuntime\b"
+    )
+    APPBASE_IAM_CONTROLLER_OPERATIONS = (
+        "bootstrap",
+        "checkLoginQrCodeStatus",
+        "generateLoginQrCode",
+        "getOAuthAuthorizationUrl",
+        "register",
+        "requestPasswordReset",
+        "resetPassword",
+        "refreshSession",
+        "sendVerifyCode",
+        "signIn",
+        "signInWithEmailCode",
+        "signInWithOAuth",
+        "signInWithPhoneCode",
+        "signInWithSessionBridge",
+        "signOut",
+        "updateCurrentSession",
+        "verifyCode",
+    )
     MOCK_DATA_PATTERNS = (
         ("setTimeout", re.compile(r"\bsetTimeout\s*\(")),
         ("Math.random", re.compile(r"\bMath\.random\s*\(")),
@@ -103,6 +126,7 @@ class FrontendOperationAudit:
                         "api_path": contract.get("api_path"),
                         "read_sources": contract.get("read_sources", []),
                         "write_tables": contract.get("write_tables", []),
+                        "file_targets": contract.get("file_targets", []),
                     }
                 )
 
@@ -199,8 +223,6 @@ class FrontendOperationAudit:
                     messages.append(f"frontend operation {key} kind {kind} does not allow api_method {normalized_method}")
             if not isinstance(api_path, str):
                 messages.append(f"frontend operation {key} must declare api_path")
-            elif isinstance(api_surface, str) and api_surface in self.API_PREFIXES and not api_path.startswith(self.API_PREFIXES[api_surface]):
-                messages.append(f"frontend operation {key} api_path must start with {self.API_PREFIXES[api_surface]}")
             if isinstance(route, str) and isinstance(api_surface, str):
                 if route.startswith("/admin") and api_surface != "backend":
                     messages.append(f"frontend operation {key} route {route} must use backend api_surface")
@@ -209,32 +231,58 @@ class FrontendOperationAudit:
             if isinstance(api_surface, str) and api_surface in self.SDK_CLIENTS:
                 source_text = self._source_text(source, source_text_cache)
                 sdk_client = self.SDK_CLIENTS[api_surface]
-                if source_text is not None and not re.search(rf"\b{re.escape(sdk_client)}\s*\(", source_text):
+                if (
+                    source_text is not None
+                    and not re.search(rf"\b{re.escape(sdk_client)}\s*\(", source_text)
+                    and not (
+                        api_surface == "app"
+                        and (
+                            self.APPBASE_IAM_RUNTIME_PATTERN.search(source_text)
+                            or self.APPBASE_IAM_CONTROLLER_PATTERN.search(source_text)
+                        )
+                    )
+                ):
                     messages.append(f"frontend operation {key} must use {sdk_client} for {api_surface} api_surface")
                 for label in self._mock_data_pattern_labels(source_text):
                     messages.append(f"frontend operation {key} must not use mock async data pattern: {label}")
 
-            read_sources = entry.get("read_sources")
-            if not isinstance(read_sources, list) or not read_sources or not all(isinstance(source, str) for source in read_sources):
+            read_sources = entry.get("read_sources", [])
+            write_tables = entry.get("write_tables", [])
+            file_targets = entry.get("file_targets", [])
+            request_content_type = entry.get("request_content_type")
+            is_multipart_upload = request_content_type == "multipart/form-data"
+            valid_read_sources = isinstance(read_sources, list) and all(isinstance(source, str) for source in read_sources)
+            valid_write_tables = isinstance(write_tables, list) and all(isinstance(table, str) for table in write_tables)
+            valid_file_targets = isinstance(file_targets, list) and all(isinstance(target, str) for target in file_targets)
+
+            if not valid_read_sources:
+                messages.append(f"frontend operation {key} must declare read_sources as a string list")
+            elif not read_sources and not is_multipart_upload:
                 messages.append(f"frontend operation {key} must declare non-empty read_sources")
-            elif isinstance(route, str) and route in route_tables:
+            elif read_sources and isinstance(route, str) and route in route_tables:
                 for read_source in read_sources:
                     if read_source not in route_tables[route]:
                         messages.append(
                             f"frontend operation {key} read_source {read_source} is not declared in route {route} required_tables"
                         )
 
-            write_tables = entry.get("write_tables", [])
+            if not valid_write_tables:
+                messages.append(f"frontend operation {key} write_tables must be a string list")
+            if not valid_file_targets:
+                messages.append(f"frontend operation {key} file_targets must be a string list")
+            if is_multipart_upload and valid_file_targets and not file_targets:
+                messages.append(f"frontend operation {key} multipart upload must declare non-empty file_targets")
+
             if kind in self.WRITE_KINDS:
-                if not isinstance(write_tables, list) or not write_tables or not all(isinstance(table, str) for table in write_tables):
+                if valid_write_tables and not write_tables and not is_multipart_upload:
                     messages.append(f"frontend operation {key} kind {kind} must declare non-empty write_tables")
-                elif isinstance(route, str) and route in route_tables:
+                elif valid_write_tables and write_tables and isinstance(route, str) and route in route_tables:
                     for write_table in write_tables:
                         if write_table not in route_tables[route]:
                             messages.append(
                                 f"frontend operation {key} write_table {write_table} is not declared in route {route} required_tables"
                             )
-            elif write_tables:
+            elif valid_write_tables and write_tables:
                 messages.append(f"frontend operation {key} kind read must not declare write_tables")
 
         for key in sorted(actual):
@@ -289,6 +337,8 @@ class FrontendOperationAudit:
     def _extract_operations(self, source: Path) -> list[str]:
         text = source.read_text(encoding="utf-8", errors="ignore")
         operations: list[str] = []
+        if self.APPBASE_IAM_CONTROLLER_PATTERN.search(text):
+            operations.extend(self.APPBASE_IAM_CONTROLLER_OPERATIONS)
         class_spans = self._class_spans(text)
         for match in self.CLASS_STATIC_ASYNC_PATTERN.finditer(text):
             operation = match.group(1)

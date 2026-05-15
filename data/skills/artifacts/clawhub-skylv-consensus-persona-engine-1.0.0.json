@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skylv-consensus-persona-engine@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_consensus_persona_engine",
+  "skill": {
+    "id": 43158,
+    "skillKey": "clawhub-skylv-consensus-persona-engine",
+    "name": "Skylv Consensus Persona Engine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-consensus-persona-engine",
+    "url": "https://clawhub.ai/skills/skylv-consensus-persona-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-consensus-persona-engine-202dc78e52d3b388.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Builds consensus-driven AI personas from multiple perspectives"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776487005665,
+      "changelog": "- Initial release of the skylv-consensus-persona-engine.\n- Aligns multiple AI agents by calculating a consensus personality through agent voting on key personality dimensions.\n- Supports six configurable personality dimensions: tone, verbosity, risk tolerance, autonomy, safety level, and creativity.\n- Provides CLI commands to cast votes, calculate consensus, and list dimensions.\n- Outputs consensus personality profiles, confidence scores, generated rules, and ready-to-use JSON configs.\n- Designed for consistent behavior across collaborative AI agents.\n- Presents a novel, low-competition solution for multi-agent persona alignment.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f58029ed46dfc37371624c2bd85811897941584957e86323b1971e084915b520"
+}

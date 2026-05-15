@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dual-retrieval@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dual_retrieval",
+  "skill": {
+    "id": 43823,
+    "skillKey": "clawhub-dual-retrieval",
+    "name": "Dual Retrieval"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dual-retrieval",
+    "url": "https://clawhub.ai/skills/dual-retrieval",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dual-retrieval-46ac2f8cca5502b9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Combines M-Flow graph topology and QMD BM25+vector retrieval to merge and rank results for precise multi-hop and semantic search."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sora-mury",
+      "userId": "s17btvz19kqmt9aqs6tajsns8n83gebg",
+      "displayName": "sune",
+      "image": "https://avatars.githubusercontent.com/u/165292279?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775390320404,
+      "changelog": "Initial release: M-Flow + QMD hybrid retrieval pipeline",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3bf0cdc1657256b7c484068a76f0f5f636c6c1839b1b5857728033a8acea5c0b"
+}

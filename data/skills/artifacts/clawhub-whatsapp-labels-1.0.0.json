@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/whatsapp-labels@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whatsapp_labels",
+  "skill": {
+    "id": 19613,
+    "skillKey": "clawhub-whatsapp-labels",
+    "name": "WhatsApp Labels"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whatsapp-labels",
+    "url": "https://clawhub.ai/skills/whatsapp-labels",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whatsapp-labels-50ebcb1003febf21.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "List and search WhatsApp Business labels/tags"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "marcosrippel",
+      "userId": "publishers:marcosrippel",
+      "displayName": "Marcos Santos",
+      "image": "https://avatars.githubusercontent.com/u/74862230?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 602,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771519411483,
+      "changelog": "Initial release. Manages WhatsApp Business labels/tags from Baileys session cache. List all available labels with their colors and IDs, and find which chats are associated with a specific label.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:422516d8621df625841a37358092e791e241bfd039355c48a548317b93330114"
+}

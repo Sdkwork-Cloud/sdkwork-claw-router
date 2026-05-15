@@ -1,0 +1,37 @@
+{
+  "skill": {
+    "slug": "china-express",
+    "displayName": "China Express",
+    "summary": "中国快递查询与物流信息解析。Use when the user wants to directly get a Chinese package status. Force browser automation on https://www.kuaidi100.com/ and read the live resu...",
+    "tags": {
+      "latest": "3.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 304,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "createdAt": 1774007044728,
+    "updatedAt": 1777621692824
+  },
+  "latestVersion": {
+    "version": "3.0.0",
+    "createdAt": 1774023832385,
+    "changelog": "**重大变更：统一强制使用快递100网页作为唯一数据源，取消所有其他查询链路和降级方案。**\n\n- 现只通过浏览器自动化访问 https://www.kuaidi100.com/ 查询快递信息，读取页面实时结果。\n- 移除了对各家快递公司官网、历史查询、短信文本、第三方聚合等所有备选查询和降级路径。\n- 如遇人机验证、验证码或浏览器自动化不可用，将直接提示无法查询，不再尝试其他方法。\n- 明确约束“不得伪造结果”，输出仅以快递100页面实时数据为准。\n- 全流程、输出格式和异常处理均以快递100为唯一标准，提升结论一致性与准确性。\n- 文档简化、对旧有的多种兼容/容错逻辑进行删除和收敛。",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "tobewin",
+    "userId": "s174rz3f0862tcfw7pzfh5w8kn83hv2z",
+    "displayName": "ToBeWin",
+    "image": "https://avatars.githubusercontent.com/u/145168989?v=4"
+  },
+  "moderation": null
+}

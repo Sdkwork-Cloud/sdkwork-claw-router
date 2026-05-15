@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-runtime@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_runtime",
+  "skill": {
+    "id": 61867,
+    "skillKey": "clawhub-agent-runtime",
+    "name": "Agent Runtime"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-runtime",
+    "url": "https://clawhub.ai/skills/agent-runtime",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-runtime-39949fb73e3c4171.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能体运行时系统。整合工具注册、权限控制、Hook拦截、上下文压缩、Usage追踪的完整Agent运行时。 当用户说\"创建Agent\"、\"运行Agent\"、\"Agent Runtime\"、\"子代理\"时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xhmqq616",
+      "userId": "s17evsy03dtqhcsv6fqy5yyqs184bmrr",
+      "displayName": "xhmqq616",
+      "image": "https://avatars.githubusercontent.com/u/230696037?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775482404003,
+      "changelog": "Initial release of agent-runtime: a complete Agent runtime system integrating tool registration, permission control, hooks, context compression, and usage tracking.\n\n- Supports handling \"创建Agent\", \"运行Agent\", \"Agent Runtime\", \"子代理\" triggers.\n- Modular architecture with ToolRegistry, PermissionPolicy, HookRunner, SessionCompactor, and UsageTracker components.\n- Allows registering tools, controlling permissions, adding pre/post hooks, and compressing context within agent sessions.\n- Includes built-in support for multiple agent types: explore, plan, verify, and general.\n- Provides usage examples and clear file structure for integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:87432b64ad352103cd86f927a0860b7ca98290d9fabd0d73964da85e3bc0407d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ur-robot@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ur_robot",
+  "skill": {
+    "id": 59955,
+    "skillKey": "clawhub-ur-robot",
+    "name": "Universal Robots 机器人控制技能 - URSim 仿真 + URScript + RTDE"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ur-robot",
+    "url": "https://clawhub.ai/skills/ur-robot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ur-robot-7d9fd986e3d1d2c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "支持Universal Robots仿真与控制，包含URSim仿真、URScript指令发送及RTDE数据通信接口，支持关节与笛卡尔空间运动。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qujingyang28",
+      "userId": "s17dbgh8kq1pqqr9wcyrmy0svh83pag3",
+      "displayName": "Robot_Qu",
+      "image": "https://avatars.githubusercontent.com/u/117743580?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775118072439,
+      "changelog": "- Initial release version 1.0.1.\n- No file changes detected compared to the previous version.\n- Skill features, usage, and documentation remain unchanged from v1.0.0.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c6b2b73f0d99bd85b916b0222a9964aa36584fd5800b7668e2d4cbd2aa82702e"
+}

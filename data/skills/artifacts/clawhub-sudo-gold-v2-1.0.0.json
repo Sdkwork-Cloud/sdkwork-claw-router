@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sudo-gold-v2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sudo_gold_v2",
+  "skill": {
+    "id": 72037,
+    "skillKey": "clawhub-sudo-gold-v2",
+    "name": "Sudo Gold"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sudo-gold-v2",
+    "url": "https://clawhub.ai/skills/sudo-gold-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sudo-gold-v2-a848ee0d85508a38.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "黄金投资分析工具，提供实时金价查询、技术指标分析、新闻基本面分析功能。当用户询问黄金价格、黄金走势、黄金投资、黄金分析、黄金新闻、黄金技术分析、黄金支撑位阻力位等相关问题时触发此 Skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fmouseboy",
+      "userId": "s172cbtek476cw42nfxa6hxczx83pzaf",
+      "displayName": "FMouse",
+      "image": "https://avatars.githubusercontent.com/u/36061597?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 71,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773233574799,
+      "changelog": "sudo-gold-v2 1.0.0 – 黄金投资分析工具首发上线\n\n- 支持实时金价查询（美元/盎司，人民币/克）、支撑位与阻力位分析\n- 集成主要技术指标分析：RSI、MACD、移动平均线等\n- 提供黄金新闻及基本面分析：央行购金、地缘政治影响、美联储政策等\n- 输出标准化分析报告，包含价格、技术、基本面及风险提示\n- 默认使用 Tavily API 获取黄金相关信息，支持自定义 API Key",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:775b4f66670f769d9bf4c8c3dbd0fb6b7ec1344d18f8765488a574f0d7d662aa"
+}

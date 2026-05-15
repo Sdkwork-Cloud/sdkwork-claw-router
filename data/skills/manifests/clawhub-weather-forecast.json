@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17269,
+  "uuid": "skill-clawhub-weather-forecast",
+  "skillKey": "clawhub-weather-forecast",
+  "name": "Weather Forecast",
+  "summary": "This skill should be used when users ask about weather forecasts, temperature information, or need to retrieve weather data for specific locations. It provid...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_forecast",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alex098929",
+      "features": [
+        "This skill should be used when users ask about weather forecasts, temperature information, or n.",
+        "It provid..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weather-forecast@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/217886385?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weather-forecast",
+      "url": "https://clawhub.ai/skills/weather-forecast"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-forecast",
+    "url": "https://clawhub.ai/skills/weather-forecast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-forecast-cb616819d716c3e1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weather-forecast@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weather-forecast-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f26e1bdf0a01c461751f9210163b688142d89e7eb020c439807e86bb2738fae4",
+      "artifactSizeBytes": 2435
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T08:59:15.191Z"
+}

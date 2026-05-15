@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/musa-torch-coding@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.musa_torch_coding",
+  "skill": {
+    "id": 27347,
+    "skillKey": "clawhub-musa-torch-coding",
+    "name": "musa-torch-coding"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "musa-torch-coding",
+    "url": "https://clawhub.ai/skills/musa-torch-coding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/musa-torch-coding-8687634c97f52260.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transcribe audio via OpenAI Audio Transcriptions API (Whisper)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lipeidcc",
+      "userId": "s17c0685m24vrt90aq0485aqen85tjbp",
+      "displayName": "peli",
+      "image": "https://avatars.githubusercontent.com/u/11436018?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 349,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773395939713,
+      "changelog": "musa-torch-coding 1.0.0 – Initial release\n\n- Provides a guide for generating PyTorch code compatible with Moore Threads (MUSA) GPUs using torch_musa.\n- Documents key differences between CUDA and MUSA APIs.\n- Outlines environment setup, detection, and usage of pre-configured conda environments for MUSA.\n- Details code generation rules, including device selection and distributed training with mccl backend.\n- Includes model templates, common code patterns, and troubleshooting tips specific to MUSA environments.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:16bf763c7a6b7106f5607129a74cbee57e46c8ff4f0665e9c4f6c60ddf71491d"
+}

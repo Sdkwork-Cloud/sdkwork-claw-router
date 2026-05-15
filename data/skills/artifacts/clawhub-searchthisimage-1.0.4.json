@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/searchthisimage@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.searchthisimage",
+  "skill": {
+    "id": 51847,
+    "skillKey": "clawhub-searchthisimage",
+    "name": "Reverse Image Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "searchthisimage",
+    "url": "https://clawhub.ai/skills/searchthisimage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/searchthisimage-54a74534bd6051d9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reverse image search — find where an image appears on the web, visually similar images, and what the image contains. Works with image URLs or uploaded image..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "selvatuple",
+      "userId": "s174xffdr6fh6hc0ka1j2ctnzh83f3xm",
+      "displayName": "selvatuple",
+      "image": "https://avatars.githubusercontent.com/u/140517908?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 250,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1774332897713,
+      "changelog": "- Added required environment variable SEARCHTHISIMAGE_API_KEY for API authentication.\n- Updated API usage instructions to include X-API-Key header.\n- Expanded privacy section: clarified no client IP logging and linked full privacy policy.\n- No code changes detected; documentation and configuration improvements only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:91f7550ad0bafb4af69c3a9e9b85dcf744ce7c1b9ebbc625b2a06a0296291205"
+}

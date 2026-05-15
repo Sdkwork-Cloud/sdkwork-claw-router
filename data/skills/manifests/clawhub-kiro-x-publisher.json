@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17399,
+  "uuid": "skill-clawhub-kiro-x-publisher",
+  "skillKey": "clawhub-kiro-x-publisher",
+  "name": "Kiro X Publisher",
+  "summary": "Discover hot topics on X, enrich tweets one-by-one, score and summarize signals, generate one tweet draft, and optionally publish on schedule.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kiro_x_publisher",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xinjin",
+      "features": [
+        "Discover hot topics on X, enrich tweets one-by-one, score and summarize signals, generate one t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kiro-x-publisher@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/105750766?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kiro-x-publisher",
+      "url": "https://clawhub.ai/skills/kiro-x-publisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kiro-x-publisher",
+    "url": "https://clawhub.ai/skills/kiro-x-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kiro-x-publisher-fcabe14069c36fc0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kiro-x-publisher@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kiro-x-publisher-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e7cd7f70b7d4f9097567f45f8d680fabacef7bb80f9b9d41d03a312ca41ee8df",
+      "artifactSizeBytes": 2142
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T22:03:13.298Z"
+}

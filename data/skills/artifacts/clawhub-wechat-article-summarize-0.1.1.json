@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-article-summarize@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_article_summarize",
+  "skill": {
+    "id": 26242,
+    "skillKey": "clawhub-wechat-article-summarize",
+    "name": "WeChat Article Summarize"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-article-summarize",
+    "url": "https://clawhub.ai/skills/wechat-article-summarize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-article-summarize-f9ca9f3d7bb568df.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read one or more WeChat public account article links from mp.weixin.qq.com, extract cleaned full text and optional image links, summarize each article in Chi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "juneliu1999",
+      "userId": "s173qm7kb10vpnrsayje33a09n83gnhp",
+      "displayName": "JuneLiu",
+      "image": "https://avatars.githubusercontent.com/u/238388053?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 272,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773682582101,
+      "changelog": "优化公开展示内容：更新 SKILL.md 与 README，移除示例性文字，完善发布版本。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cb19a052291c39fceedf35e1ffa203ebf5aa35cbb759b346755ace22eec743af"
+}

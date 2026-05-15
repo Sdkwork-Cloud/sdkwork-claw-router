@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/serpapi-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.serpapi_search",
+  "skill": {
+    "id": 9512,
+    "skillKey": "clawhub-serpapi-search",
+    "name": "SerpAPI Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "serpapi-search",
+    "url": "https://clawhub.ai/skills/serpapi-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/serpapi-search-06ebd7db156f429c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search Google via SerpAPI (Google Search, Google News, Google Local). Use when you need to search the web, find news articles, or look up local businesses. Supports country/language targeting for region-specific results."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ericsantos",
+      "userId": "s172zebvz8fjz93gkgsdmt98w583jy65",
+      "displayName": "Eric Santos",
+      "image": "https://avatars.githubusercontent.com/u/180174?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3372,
+      "installsAllTime": 20,
+      "installsCurrent": 18,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769551263414,
+      "changelog": "Initial release: Google Search, Google News, Google Local with country/language targeting",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1d59098e04063f16badc037a6f9be59ab1548b09be642cf49d9e612d64b5c3f5"
+}

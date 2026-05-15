@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/searxng-search-2@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.searxng_search_2",
+  "skill": {
+    "id": 11172,
+    "skillKey": "clawhub-searxng-search-2",
+    "name": "Searxng Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "searxng-search-2",
+    "url": "https://clawhub.ai/skills/searxng-search-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/searxng-search-2-7d98f5b8a3517d01.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Web search using SearXNG instance via MCP. Provides web search capability for agents with configurable SearXNG endpoint."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zfanmy",
+      "userId": "s17a9n0kykchma2r1hmwr1dheh83hyv2",
+      "displayName": "zfanmy",
+      "image": "https://avatars.githubusercontent.com/u/33675069?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2127,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1771301282532,
+      "changelog": "Version 0.1.2 of searxng-search-2\n\n- No file changes detected in this release.\n- No updates to features, configuration, or documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bb9f2e337371142b24aef9fe3093ad28400f60bd6c1253796d58fa3e2edf9876"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/retail-clerk-comparison-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.retail_clerk_comparison_analysis",
+  "skill": {
+    "id": 67924,
+    "skillKey": "clawhub-retail-clerk-comparison-analysis",
+    "name": "导购对比分析"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "retail-clerk-comparison-analysis",
+    "url": "https://clawhub.ai/skills/retail-clerk-comparison-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/retail-clerk-comparison-analysis-a28ae3f471a51d11.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "导购对比分析工具。基于clerk-performance-analysis的扩展，提供导购业绩的多维度对比分析。 核心能力： 1. 时间维度对比（培训前后、活动前后、月度环比） 2. 横向对比（多人排名、标杆学习、差距分析） 3. 高频场景（晨会对比、周会报告、绩效对标） 4. 导购能力雷达图对比 5. 业绩贡献..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gwyang7",
+      "userId": "s174smknxqd6qs6q88gjradc7x83ngrp",
+      "displayName": "Xtechmerge.AI",
+      "image": "https://avatars.githubusercontent.com/u/176652150?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774526354943,
+      "changelog": "Initial release: 支持导购时间维度对比、横向对比、标杆学习",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8882b9d9431d261d5e3397a2d396fb82397e470305d8cecde97ba352d4d7a956"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-shared-context@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_shared_context",
+  "skill": {
+    "id": 52088,
+    "skillKey": "clawhub-agent-shared-context",
+    "name": "Agent Shared Context"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-shared-context",
+    "url": "https://clawhub.ai/skills/agent-shared-context",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-shared-context-1fc2b73213de095e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cross-agent context sharing via shared files. Agents write trends, highlights, and signals to a shared folder. Other agents read before acting — creating coo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gum97",
+      "userId": "publishers:gum97",
+      "displayName": "Gum97",
+      "image": "https://avatars.githubusercontent.com/u/21122797?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 221,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774058848923,
+      "changelog": "Initial release: cross-agent context sharing via shared JSON files. Trends, highlights, cleanup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d51939f5f3cdd17ec8e0f63874c857de6626cbd2d307d45e756953dc31d14e7e"
+}

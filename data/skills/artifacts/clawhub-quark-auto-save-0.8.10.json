@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quark-auto-save@0.8.10",
+  "version": "0.8.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quark_auto_save",
+  "skill": {
+    "id": 58599,
+    "skillKey": "clawhub-quark-auto-save",
+    "name": "Manage quark-auto-save(QAS, 夸克自动转存, 夸克转存, 夸克订阅) tasks via CLI."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quark-auto-save",
+    "url": "https://clawhub.ai/skills/quark-auto-save",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quark-auto-save-f7276bb7fafc575a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage quark-auto-save(QAS, 夸克自动转存, 夸克转存, 夸克订阅) tasks via CLI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cp0204",
+      "userId": "s17fr8rdgmsc0cq5k4zdsmard583k7j6",
+      "displayName": "Cp0204",
+      "image": "https://avatars.githubusercontent.com/u/5239753?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 463,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 3,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "0.8.10",
+      "createdAt": 1778306334250,
+      "changelog": "- Added new CLI options: `detail` now supports `-a` for showing all files, and new `delete \"fid\"` command for deleting files.\n- Improved usage documentation for cli commands in SKILL.md.\n- No changes detected in code files; documentation updated only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cb1a698fea291e0479985ebba5967df60815ce33011bd6709edfa24b5f41d4f4"
+}

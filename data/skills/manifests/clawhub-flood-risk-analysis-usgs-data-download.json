@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44863,
+  "uuid": "skill-clawhub-flood-risk-analysis-usgs-data-download",
+  "skillKey": "clawhub-flood-risk-analysis-usgs-data-download",
+  "name": "usgs-data-download",
+  "summary": "Download water level data from USGS using the dataretrieval package. Use when accessing real-time or historical streamflow data, downloading gage height or d...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flood_risk_analysis_usgs_data_download",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wu-uk",
+      "features": [
+        "Download water level data from USGS using the dataretrieval package",
+        "Use when accessing real-time or historical streamflow data, downloading gage height or d..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flood-risk-analysis-usgs-data-download@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199610473?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flood-risk-analysis-usgs-data-download",
+      "url": "https://clawhub.ai/skills/flood-risk-analysis-usgs-data-download"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flood-risk-analysis-usgs-data-download",
+    "url": "https://clawhub.ai/skills/flood-risk-analysis-usgs-data-download",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flood-risk-analysis-usgs-data-download-2adfae876964ce6b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flood-risk-analysis-usgs-data-download@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-flood-risk-analysis-usgs-data-download-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:69dc413091f6005201e05cd02602c09aa4442e90eb5b012c4a7a60cb7693f003",
+      "artifactSizeBytes": 2052
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T09:23:06.279Z"
+}

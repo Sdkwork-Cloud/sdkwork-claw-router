@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73545,
+  "uuid": "skill-clawhub-group-rebate",
+  "skillKey": "clawhub-group-rebate",
+  "name": "拼团返利达人",
+  "summary": "拼团与社群团购场景的返利优化工具，帮助用户在拼团购物中获得额外返利收益，团长和团员均可受益。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.group_rebate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fangshan101-coder",
+      "features": [
+        "拼团与社群团购场景的返利优化工具，帮助用户在拼团购物中获得额外返利收益，团长和团员均可受益。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/group-rebate@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267524233?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "group-rebate",
+      "url": "https://clawhub.ai/skills/group-rebate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "group-rebate",
+    "url": "https://clawhub.ai/skills/group-rebate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/group-rebate-a3fc59e000621f01.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/group-rebate@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-group-rebate-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ca7c14e3597620f9f3d65757115f6c09c1c62ac5ec895fb8c0d8a9ff43c65ca",
+      "artifactSizeBytes": 1871
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T02:45:31.940Z"
+}

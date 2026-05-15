@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rsad-copilot@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rsad_copilot",
+  "skill": {
+    "id": 29588,
+    "skillKey": "clawhub-rsad-copilot",
+    "name": "RSAD Copilot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rsad-copilot",
+    "url": "https://clawhub.ai/skills/rsad-copilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rsad-copilot-4512afbe316c47e4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when working with IBM Rational Software Architect Designer (RSAD/RSA) in the context of IBM FTM (Financial Transaction Manager) development. T..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shoaibkhan",
+      "userId": "s17a2g4ppd34g28jqtrh00762n83kv4c",
+      "displayName": "Shoaib Khan",
+      "image": "https://avatars.githubusercontent.com/u/23154062?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774455237918,
+      "changelog": "Initial release of rsad-copilot for IBM RSAD and FTM design workflows.\n\n- Provides expert guidance for IBM Rational Software Architect Designer (RSAD) in IBM Financial Transaction Manager (FTM) projects.\n- Details key RSAD concepts, FTM interface artifacts, and modeling practices (UML, FSM, SP/Channel, SQL exports).\n- Includes standard design artifact checklist and workflow for FTM interface development.\n- Describes FTM-specific UML profiles, stereotypes, and their required usage.\n- Offers reference links for UML modeling, FTM workflow, FSM design, mapping, and standard artifacts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7cfa6f6ed642c52740bb6d93fb243ba10828076c305134360911f39517821c97"
+}

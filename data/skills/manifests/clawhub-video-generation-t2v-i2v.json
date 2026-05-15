@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50366,
+  "uuid": "skill-clawhub-video-generation-t2v-i2v",
+  "skillKey": "clawhub-video-generation-t2v-i2v",
+  "name": "Video Generation (t2v & i2v)",
+  "summary": "AI Video generation toolkit — generate videos from text prompts or input images using multiple AI models (Veo 3.1, Veo 3, Seedance 1.5 Pro, Wan 2.5, Grok Ima...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_generation_t2v_i2v",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GentleYo",
+      "features": [
+        "AI Video generation toolkit — generate videos from text prompts or input images using multiple."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-generation-t2v-i2v@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/131584446?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-generation-t2v-i2v",
+      "url": "https://clawhub.ai/skills/video-generation-t2v-i2v"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-generation-t2v-i2v",
+    "url": "https://clawhub.ai/skills/video-generation-t2v-i2v",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-generation-t2v-i2v-2e78674636563f07.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-generation-t2v-i2v@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-generation-t2v-i2v-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3db658e73ead776b05fdef34cf366390c2d0e2d6c64a8b1d4a01bba71f3ed5d8",
+      "artifactSizeBytes": 2408
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T04:29:56.886Z"
+}

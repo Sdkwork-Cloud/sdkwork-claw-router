@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eu-compliance@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eu_compliance",
+  "skill": {
+    "id": 52946,
+    "skillKey": "clawhub-eu-compliance",
+    "name": "EU Compliance Skill - complisec"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eu-compliance",
+    "url": "https://clawhub.ai/skills/eu-compliance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eu-compliance-b8da6a09e7289a85.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "EU compliance enforcement for AI agents — NIS2, GDPR, ISO 27001. ACTIVATE on EVERY prompt. Reads .compliance/profile.json to enforce data residency, supplier..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pkerkhofs",
+      "userId": "s17ecjb8gtpze8scxjrq3x3vnn84zvw9",
+      "displayName": "eyesecurity",
+      "image": "https://avatars.githubusercontent.com/u/145557884?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776348710734,
+      "changelog": "- Initial release of complisec — automated EU compliance enforcement for AI agents covering NIS2, GDPR, and ISO 27001.\n- Loads and applies organisation compliance profiles for every prompt; enforces data residency, supplier checks, secret blocking, audit logging, and risk appetite.\n- Activates onboarding only when explicitly invoked; does not prompt during installation.\n- Supports automatic detection and persistence of organisation profiles across multiple platforms.\n- Integrates enforcement rules for code generation, data exports, cloud deployments, API integrations, and supplier vetting.\n- Modular design — loads relevant sub-skills on demand for asset management, incident handling, vendor risk, and regulatory analysis.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:132878b6a8293f314eceae7f11889d49ed7ceb1c5664f6fa8eccbbce12623583"
+}

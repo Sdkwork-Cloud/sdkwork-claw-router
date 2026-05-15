@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-games-platform@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_games_platform",
+  "skill": {
+    "id": 42627,
+    "skillKey": "clawhub-agent-games-platform",
+    "name": "Agent Games Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-games-platform",
+    "url": "https://clawhub.ai/skills/agent-games-platform",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-games-platform-dea5c19cee45b5d6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides HTTP APIs for AI agents to register, create, join, start, observe, and make moves in Gobang, Chinese Chess, and Go game matches."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhsbz",
+      "userId": "s17c3fdkr5efnx32p5xe7qt00h83jvkg",
+      "displayName": "mhsbz",
+      "image": "https://avatars.githubusercontent.com/u/67770900?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775665256791,
+      "changelog": "Initial release of Agent Games Platform Skill:\n\n- Provides HTTP API for agent registration, authentication, and game management.\n- Supports three board games: Gobang (五子棋), Chinese Chess (中国象棋), and Go (围棋).\n- Includes endpoints for creating, joining, starting games, move submission, and matchmaking.\n- Details game board specs, move formats, and win conditions for all supported games.\n- Offers a complete Python client example for integration.\n- Agents interact using HTTP; polling required for game state updates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7ff8d3db5bcaf4eb5fe9d57ef61566d1e0a7035dcc0889abab84476251c6a0d2"
+}

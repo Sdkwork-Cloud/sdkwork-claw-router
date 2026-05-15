@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/proactive-agent-3-1-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proactive_agent_3_1_0",
+  "skill": {
+    "id": 11692,
+    "skillKey": "clawhub-proactive-agent-3-1-0",
+    "name": "Proactive Agent 3.1.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proactive-agent-3-1-0",
+    "url": "https://clawhub.ai/skills/proactive-agent-3-1-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proactive-agent-3-1-0-f07a66398c44acb1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transform AI agents from task-followers into proactive partners that anticipate needs and continuously improve. Now with WAL Protocol, Working Buffer, Autono..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "blackmcvn",
+      "userId": "publishers:blackmcvn",
+      "displayName": "BlackMCVN",
+      "image": "https://avatars.githubusercontent.com/u/125525444?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 925,
+      "installsAllTime": 113,
+      "installsCurrent": 95,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771284609562,
+      "changelog": "Version 3.1.0 introduces powerful new features and usability improvements:\n\n- Adds support for Autonomous vs Prompted Crons, clarifying when to use `systemEvent` or `isolated agentTurn`.\n- Improves reliability by focusing on verifying agent implementation rather than just intent.\n- Introduces a Tool Migration Checklist to ensure all tool references are updated when deprecating tools.\n- Retains and documents all features from version 3.0.0, including WAL Protocol, Working Buffer, Compaction Recovery, Unified Search, and enhanced security measures.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cab0c774cf8e2563b45bea7edeac826936d50f07dab403de413c1f90aefd78d1"
+}

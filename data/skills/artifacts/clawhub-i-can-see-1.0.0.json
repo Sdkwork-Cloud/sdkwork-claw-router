@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/i-can-see@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.i_can_see",
+  "skill": {
+    "id": 66128,
+    "skillKey": "clawhub-i-can-see",
+    "name": "i-can-see"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "i-can-see",
+    "url": "https://clawhub.ai/skills/i-can-see",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/i-can-see-3c706a56aabc7c2d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "赋予OpenClaw视觉能力，让他能够“看见世界”。当用户要求“看看”、“你看到了什么”、“拍张照”时激活此技能。通过调用capture.py连接ESP32-CAM拍照，并进行图像分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "libaibuzai",
+      "userId": "s17depqyhaty3djw273z3ar76n83kc73",
+      "displayName": "libai",
+      "image": "https://avatars.githubusercontent.com/u/39814390?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774406230902,
+      "changelog": "- Initial release: Adds the \"i-can-see\" skill, enabling OpenClaw to gain visual perception by capturing real-world images via ESP32-CAM.\n- Provides a `capture.py` script for photo capture, requiring the Python `requests` library.\n- Includes workflow guidance for image storage, command execution, and result verification.\n- Details how OpenClaw should perform image recognition and respond to users based on visual input.\n- Offers example usage scenarios and troubleshooting tips for ESP32-CAM connections.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a87c7e4626fabfffb942f6d119b9f5cdccc4f9036511c7958b7ba9a5b95987bf"
+}

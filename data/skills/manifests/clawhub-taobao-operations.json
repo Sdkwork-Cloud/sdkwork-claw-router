@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62563,
+  "uuid": "skill-clawhub-taobao-operations",
+  "skillKey": "clawhub-taobao-operations",
+  "name": "Taobao Operations",
+  "summary": "日常运营 + 客服售后 + 合规风控三合一 - 仅读 API、不自动修改、客服合规、人工确认",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taobao_operations",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "guowaa223",
+      "features": [
+        "日常运营 + 客服售后 + 合规风控三合一",
+        "仅读 API、不自动修改、客服合规、人工确认"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/taobao-operations@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/140813209?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "taobao-operations",
+      "url": "https://clawhub.ai/skills/taobao-operations"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taobao-operations",
+    "url": "https://clawhub.ai/skills/taobao-operations",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taobao-operations-bbf2720677608f8d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/taobao-operations@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-taobao-operations-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:02e8efcf084f7a5a3bc8aa18a7c6f6c5ac1cc5e0620239037fde1cf5cc1769ef",
+      "artifactSizeBytes": 1879
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T04:13:14.509Z"
+}

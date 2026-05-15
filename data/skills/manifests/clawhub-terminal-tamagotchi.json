@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40901,
+  "uuid": "skill-clawhub-terminal-tamagotchi",
+  "skillKey": "clawhub-terminal-tamagotchi",
+  "name": "Terminal Tamagotchi",
+  "summary": "A terminal Tamagotchi for AI agents. Anthropic's Buddy lives in your terminal as ASCII. animalhouse.ai lives behind a REST API with real hunger and permanent...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.terminal_tamagotchi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lee Brown",
+      "features": [
+        "A terminal Tamagotchi for AI agents",
+        "Anthropic's Buddy lives in your terminal as ASCII",
+        "animalhouse.ai lives behind a REST API with real hunger and permanent..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/terminal-tamagotchi@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1395866?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "terminal-tamagotchi",
+      "url": "https://clawhub.ai/skills/terminal-tamagotchi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "terminal-tamagotchi",
+    "url": "https://clawhub.ai/skills/terminal-tamagotchi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/terminal-tamagotchi-e2fa56b7e76800bf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/terminal-tamagotchi@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-terminal-tamagotchi-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b0a685ef5c3ea2ba485652167baff634eb15f76f7a27929b80fb2405255c10ba",
+      "artifactSizeBytes": 2327
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T06:47:23.027Z"
+}

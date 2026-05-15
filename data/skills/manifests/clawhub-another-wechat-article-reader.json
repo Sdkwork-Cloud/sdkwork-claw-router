@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62265,
+  "uuid": "skill-clawhub-another-wechat-article-reader",
+  "skillKey": "clawhub-another-wechat-article-reader",
+  "name": "wechat-article-reader",
+  "summary": "当用户提供微信公众号文章链接（URL 包含 mp.weixin.qq.com）时，必须使用此 skill 读取文章内容，禁止使用 web_fetch、web_search 或其他方式替代。本 skill 通过专用脚本稳定抓取并返回结构化结果，包括标题、发布时间、作者和正文。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.another_wechat_article_reader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pangahn",
+      "features": [
+        "当用户提供微信公众号文章链接（URL 包含 mp.weixin.qq.com）时，必须使用此 skill 读取文章内容，禁止使用 web_fetch、web_search 或其他方式替代。本."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/another-wechat-article-reader@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16132124?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "another-wechat-article-reader",
+      "url": "https://clawhub.ai/skills/another-wechat-article-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "another-wechat-article-reader",
+    "url": "https://clawhub.ai/skills/another-wechat-article-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/another-wechat-article-reader-d9ccf5964c5e08aa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/another-wechat-article-reader@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-another-wechat-article-reader-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ae467c97c4fc2ae84f13d287895f5a77fb51cc3815d47751154582889d418d1",
+      "artifactSizeBytes": 2706
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T15:33:03.632Z"
+}

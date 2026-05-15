@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73571,
+  "uuid": "skill-clawhub-company-pension-search",
+  "skillKey": "clawhub-company-pension-search",
+  "name": "企业年金查询技能",
+  "summary": "智能查询企业年金及职业年金，自动识别单位性质和年金类型，多渠道验证并输出带来源链接的标准调查报告。",
+  "version": "3.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.company_pension_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "鄢文哲",
+      "features": [
+        "智能查询企业年金及职业年金，自动识别单位性质和年金类型，多渠道验证并输出带来源链接的标准调查报告。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/company-pension-search@3.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31566708?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "company-pension-search",
+      "url": "https://clawhub.ai/skills/company-pension-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "company-pension-search",
+    "url": "https://clawhub.ai/skills/company-pension-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/company-pension-search-4e78b58d892fcb1f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/company-pension-search@3.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-company-pension-search-3.2.1.json",
+      "version": "3.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d7a8ef68760bbd87fb97f3c9cf8684180a2d7560fa211e775f784898a990a33",
+      "artifactSizeBytes": 1970
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T02:13:36.851Z"
+}

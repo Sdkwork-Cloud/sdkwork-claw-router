@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23732,
+  "uuid": "skill-clawhub-gate-mcp-codex-installer",
+  "skillKey": "clawhub-gate-mcp-codex-installer",
+  "name": "Gate Codex One-Click Installer (MCP + Skills)",
+  "summary": "Gate MCP and Gate skills installer for Codex. Use when the user asks to add Gate MCP or skills to Codex. Triggers on 'install Gate MCP Codex', 'Gate skills C...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_mcp_codex_installer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gate",
+      "features": [
+        "Gate MCP and Gate skills installer for Codex",
+        "Use when the user asks to add Gate MCP or skills to Codex",
+        "Triggers on 'install Gate MCP Codex', 'Gate skills C..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gate-mcp-codex-installer@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33109813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gate-mcp-codex-installer",
+      "url": "https://clawhub.ai/skills/gate-mcp-codex-installer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-mcp-codex-installer",
+    "url": "https://clawhub.ai/skills/gate-mcp-codex-installer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-mcp-codex-installer-2c14e778a0ec88e6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gate-mcp-codex-installer@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-gate-mcp-codex-installer-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b552ba5f4f119f25087eecada79007c6bbef94d684699ba1ad9d9b6a1e61d2e",
+      "artifactSizeBytes": 2461
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T07:22:07.448Z"
+}

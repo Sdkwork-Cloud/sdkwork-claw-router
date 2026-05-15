@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61601,
+  "uuid": "skill-clawhub-config-validator-zh-cn",
+  "skillKey": "clawhub-config-validator-zh-cn",
+  "name": "Config Validator",
+  "summary": "验证和查询 OpenClaw 配置字段及有效值，提供配置示例并保证配置符合官方 schema 标准。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.config_validator_zh_cn",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nicoxia",
+      "features": [
+        "验证和查询 OpenClaw 配置字段及有效值，提供配置示例并保证配置符合官方 schema 标准。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/config-validator-zh-cn@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7669766?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "config-validator-zh-cn",
+      "url": "https://clawhub.ai/skills/config-validator-zh-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "config-validator-zh-cn",
+    "url": "https://clawhub.ai/skills/config-validator-zh-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/config-validator-zh-cn-73bb5abecc4e6deb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/config-validator-zh-cn@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-config-validator-zh-cn-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d44ef4a8bc9d4a3726f02f4c19530149b5e919f8a9817a50c62dc7ce99a655a8",
+      "artifactSizeBytes": 1873
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T16:38:37.275Z"
+}

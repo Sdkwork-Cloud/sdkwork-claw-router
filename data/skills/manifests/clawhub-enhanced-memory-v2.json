@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59670,
+  "uuid": "skill-clawhub-enhanced-memory-v2",
+  "skillKey": "clawhub-enhanced-memory-v2",
+  "name": "Enhanced Memory System V2",
+  "summary": "完整记忆系统 - 文件系统记忆 + 向量搜索 + 四类记忆分类 + AutoDream 自动整合",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.enhanced_memory_v2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "minmengxhw-cpu",
+      "features": [
+        "文件系统记忆 + 向量搜索 + 四类记忆分类 + AutoDream 自动整合"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/enhanced-memory-v2@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265757721?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "enhanced-memory-v2",
+      "url": "https://clawhub.ai/skills/enhanced-memory-v2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "enhanced-memory-v2",
+    "url": "https://clawhub.ai/skills/enhanced-memory-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/enhanced-memory-v2-ec598f67e650a17d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/enhanced-memory-v2@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-enhanced-memory-v2-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ee7828607c85780813459d75a0594c0da2258cf6b8795a69e4afdd2a379fa963",
+      "artifactSizeBytes": 1899
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T11:28:00.521Z"
+}

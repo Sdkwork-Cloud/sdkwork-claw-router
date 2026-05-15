@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41982,
+  "uuid": "skill-clawhub-polymarket-scout",
+  "skillKey": "clawhub-polymarket-scout",
+  "name": "Polymarket Scout — Hourly Edge Detector",
+  "summary": "Scan Polymarket hourly crypto markets (BTC/ETH/SOL/XRP) for edge opportunities. Detects counter-consensus setups, freshness windows, and expected value using...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_scout",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JamieRossouw",
+      "features": [
+        "Scan Polymarket hourly crypto markets (BTC/ETH/SOL/XRP) for edge opportunities",
+        "Detects counter-consensus setups, freshness windows, and expected value using..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-scout@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/219507116?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-scout",
+      "url": "https://clawhub.ai/skills/polymarket-scout"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-scout",
+    "url": "https://clawhub.ai/skills/polymarket-scout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-scout-033e9f13ce9e548f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-scout@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-scout-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ea56d0b78d299e26a5832cfb456db1ce940e1f1e19eddf6eb5099c615737025a",
+      "artifactSizeBytes": 2041
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T14:47:03.733Z"
+}

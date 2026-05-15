@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/session-logs1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_logs1",
+  "skill": {
+    "id": 34873,
+    "skillKey": "clawhub-session-logs1",
+    "name": "session-logs1"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-logs1",
+    "url": "https://clawhub.ai/skills/session-logs1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-logs1-de8c143b3064ad77.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search and analyze your own session logs (older/parent conversations) using jq."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yanjiang8124",
+      "userId": "publishers:yanjiang8124",
+      "displayName": "yanjiang8124",
+      "image": "https://avatars.githubusercontent.com/u/56903467?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773988686856,
+      "changelog": "- Initial release of the session-logs skill.\n- Enables searching and analyzing your own session logs using jq and ripgrep.\n- Provides command-line examples for listing, filtering, and extracting messages from historical conversation sessions.\n- Supports cost analysis, keyword search, and tool usage breakdowns in session transcripts.\n- Documentation includes usage tips and session log structure details.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:618b398107e8b8f314435c25ff7968cc1f0e6dc07320c67679cf98b88c2447e2"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/academic-search-bak@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.academic_search_bak",
+  "skill": {
+    "id": 35224,
+    "skillKey": "clawhub-academic-search-bak",
+    "name": "Academic Search.Bak"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "academic-search-bak",
+    "url": "https://clawhub.ai/skills/academic-search-bak",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/academic-search-bak-252f28b1d15fb57c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Systematically search multiple academic databases, screen and analyze papers, and provide the Top 5 most relevant scholarly articles with full citation and s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xunhe730",
+      "userId": "s17b5fhw172whkyvtq35eqe2fh83t710",
+      "displayName": "Xingdong Zhang",
+      "image": "https://avatars.githubusercontent.com/u/255865148?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774746444165,
+      "changelog": "- Initial release of academic-search-bak, version 1.0.0.\n- Supports systematic academic paper search across arXiv, Google Scholar, and Semantic Scholar.\n- Screens abstracts, analyzes citation networks, and synthesizes findings into structured research summaries.\n- Returns the Top 5 most relevant papers per topic, including full bibliographic metadata and publication status.\n- Excludes non-academic sources, never fabricates results, and clearly distinguishes between preprints and peer-reviewed publications.\n- Integrates with google-search for advanced query construction, result deduplication, and credibility assessment.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:702820bd6f697faca79e74193ae18f195ce4fd7fffb5f79a004e15319bafd32f"
+}

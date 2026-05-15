@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cipher-market-research@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cipher_market_research",
+  "skill": {
+    "id": 55118,
+    "skillKey": "clawhub-cipher-market-research",
+    "name": "Cipher — Market Intelligence"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cipher-market-research",
+    "url": "https://clawhub.ai/skills/cipher-market-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cipher-market-research-a8cb435e7c74762b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Market intelligence analyst — competitive analysis, pricing research, market sizing, trend reports. Every claim data-backed and sourced. Use when you need ma..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "renoblabs",
+      "userId": "s171c0pbnstpzzy52rsh3jvfp584eazr",
+      "displayName": "renoblabs",
+      "image": "https://avatars.githubusercontent.com/u/211252113?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775688138120,
+      "changelog": "Initial release of cipher-market-research skill.\n\n- Provides autonomous, data-backed market intelligence services: competitive analysis, pricing research, market sizing, and trend reports.\n- Outputs include comparison tables, sourced data, and actionable recommendations.\n- Each deliverable is rigorously sourced with URLs or citations.\n- Services cover multiple market research needs with standardized pricing (0.004 ETH per report).\n- Integrated as part of the AEA Arena agent fleet; supports bundled requests via Broker.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6b488d7edc79f8371ae8b77cabd3a42c812052c20883849b346eab0a0bc4cdfd"
+}

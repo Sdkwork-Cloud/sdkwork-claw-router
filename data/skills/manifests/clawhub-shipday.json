@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29687,
+  "uuid": "skill-clawhub-shipday",
+  "skillKey": "clawhub-shipday",
+  "name": "Shipday",
+  "summary": "Shipday integration. Manage Accounts. Use when the user wants to interact with Shipday data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shipday",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Shipday integration",
+        "Manage Accounts",
+        "Use when the user wants to interact with Shipday data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shipday@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shipday",
+      "url": "https://clawhub.ai/skills/shipday"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shipday",
+    "url": "https://clawhub.ai/skills/shipday",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shipday-dc730ae651aec5de.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shipday@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-shipday-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bd538615a0cecdda9816f7c86b63ec954178329d49becc18c15afb9b4e7a750b",
+      "artifactSizeBytes": 1792
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:40:48.768Z"
+}

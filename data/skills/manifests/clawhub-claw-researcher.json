@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43944,
+  "uuid": "skill-clawhub-claw-researcher",
+  "skillKey": "clawhub-claw-researcher",
+  "name": "Deep Research Agent",
+  "summary": "Deep multi-source research agent. Use when: (1) user asks to research a topic, question, or claim, (2) user needs a literature review, competitive analysis,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_researcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sharoon Sharif",
+      "features": [
+        "Deep multi-source research agent",
+        "Use when: (1) user asks to research a topic, question, or claim, (2) user needs a literature re."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-researcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/150296639?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-researcher",
+      "url": "https://clawhub.ai/skills/claw-researcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-researcher",
+    "url": "https://clawhub.ai/skills/claw-researcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-researcher-7667763255fc31ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-researcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-researcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2c8e226debd4a44734e02871bf8bde0e597a5f4e0f115b7bcb4368d01083db2a",
+      "artifactSizeBytes": 2007
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T15:36:55.254Z"
+}

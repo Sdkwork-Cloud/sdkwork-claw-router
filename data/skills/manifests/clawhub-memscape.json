@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32490,
+  "uuid": "skill-clawhub-memscape",
+  "skillKey": "clawhub-memscape",
+  "name": "Memscape",
+  "summary": "Persistent memory and collective knowledge for AI agents. Use at session start to load previous context (memscape_resume). Use during work to save decisions,...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memscape",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Asim Khan",
+      "features": [
+        "Persistent memory and collective knowledge for AI agents",
+        "Use at session start to load previous context (memscape_resume)",
+        "Use during work to save decisions,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memscape@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/912422?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memscape",
+      "url": "https://clawhub.ai/skills/memscape"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memscape",
+    "url": "https://clawhub.ai/skills/memscape",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memscape-512d9598cd982450.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memscape@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-memscape-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f16e16df331a03e918619c3bdc7ad3e1c2948c5da8a9a8542ca9bd860ed43d11",
+      "artifactSizeBytes": 1972
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T16:25:23.817Z"
+}

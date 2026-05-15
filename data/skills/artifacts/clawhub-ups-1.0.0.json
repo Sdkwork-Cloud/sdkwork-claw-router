@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ups@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ups",
+  "skill": {
+    "id": 69972,
+    "skillKey": "clawhub-ups",
+    "name": "Ups"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ups",
+    "url": "https://clawhub.ai/skills/ups",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ups-a513bdd290dbcac4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供UPS全球物流、运营模式及ORION路线优化算法详尽解读，助力理解现代快递和供应链管理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776888853440,
+      "changelog": "- 首发版本，介绍UPS的百年成长历程及业务模式\n- 讲述ORION路线优化算法及其行业影响\n- 分析UPS收入结构、护城河和数据驱动优势\n- 提供2024年最新数据和运营规模\n- 分享UPS鲜为人知的工作细节及企业文化",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0b811c0a3dd0d5863c96ddad2dff41c5bca2d03c7898589b2436280e76c38d13"
+}

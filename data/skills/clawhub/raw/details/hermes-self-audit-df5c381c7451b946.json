@@ -1,0 +1,37 @@
+{
+  "skill": {
+    "slug": "hermes-self-audit",
+    "displayName": "Hermes Self Audit",
+    "summary": "定期审计 Hermes Agent 的自改进行为 - skill 变更、curator 状态、记忆库健康度。防止 Agent 在用户不知情的情况下悄悄进化。建议配合 cronjob 每周运行一次。",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 82,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1778147576269,
+    "updatedAt": 1778147688627
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1778147576269,
+    "changelog": "Initial release of hermes-self-audit skill:\n\n- Provides scheduled and on-demand audits of Hermes Agent’s internal changes, including skill modifications, curator status, and memory provider health.\n- Outputs formatted audit reports to chat platforms (Feishu, Discord, etc.) and saves a local log.\n- Designed to help users detect agent self-modification, unexpected skill creation, high-frequency changes, and configuration drift.\n- Recommends weekly automated runs via cronjob for ongoing visibility.\n- All operations are read-only and non-intrusive for safety and transparency.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "freepengyang",
+    "userId": "s17awhsb821pah3b7qbwfbwrm584yvyq",
+    "displayName": "freepengyang",
+    "image": "https://avatars.githubusercontent.com/u/18629902?v=4"
+  },
+  "moderation": null
+}

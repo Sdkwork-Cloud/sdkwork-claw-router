@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toolweb-sabsa-architecture@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toolweb_sabsa_architecture",
+  "skill": {
+    "id": 36083,
+    "skillKey": "clawhub-toolweb-sabsa-architecture",
+    "name": "SABSA Architecture"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toolweb-sabsa-architecture",
+    "url": "https://clawhub.ai/skills/toolweb-sabsa-architecture",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toolweb-sabsa-architecture-d69f108181e3afcc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Professional enterprise security architecture maturity analysis platform based on the SABSA framework."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krishnakumarmahadevan-cmd",
+      "userId": "s177cvva4qaee9r80e44xt5cqx83ga38",
+      "displayName": "ToolWeb",
+      "image": "https://avatars.githubusercontent.com/u/245780162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774785737514,
+      "changelog": "- Initial release of the SABSA Security Architecture Assessment skill.\n- Provides comprehensive security architecture maturity assessments based on the SABSA framework.\n- Includes endpoints for running assessments, retrieving framework information, and maturity level definitions.\n- Returns detailed maturity scores, findings, recommendations, and gap analysis to guide security program improvements.\n- Multiple pricing tiers are available, from free to enterprise level.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:41a894288c2c08eb3088abe8f35d324eede418ceee0614ccbe7346070e5cd347"
+}

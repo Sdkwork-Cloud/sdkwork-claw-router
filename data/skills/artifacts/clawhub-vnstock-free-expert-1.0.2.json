@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vnstock-free-expert@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vnstock_free_expert",
+  "skill": {
+    "id": 17770,
+    "skillKey": "clawhub-vnstock-free-expert",
+    "name": "Vnstock Free Expert"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vnstock-free-expert",
+    "url": "https://clawhub.ai/skills/vnstock-free-expert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vnstock-free-expert-f90179237f3ec414.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Runs an end-to-end vnstock workflow for free-tier-safe Vietnam stock valuation, ranking, and API operations with strict rate-limit control; used when users r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ndtchan",
+      "userId": "s172d4r9d0h6bvvd3mpq517yrn861np5",
+      "displayName": "Nguyễn Đức Thành",
+      "image": "https://avatars.githubusercontent.com/u/35481632?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 728,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771982403105,
+      "changelog": "vnstock-free-expert 1.0.2\n\n- Minor update to agent configuration (agents/openai.yaml) with no changes to skill logic or documentation.\n- No changes to usage, API, scripts, or user-facing behavior.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:169fe8327deba9120d00757b8b469a139a4829ff72ecd98f02d7b2ba74d914f2"
+}

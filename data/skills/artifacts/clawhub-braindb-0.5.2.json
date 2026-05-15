@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/braindb@0.5.2",
+  "version": "0.5.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.braindb",
+  "skill": {
+    "id": 50982,
+    "skillKey": "clawhub-braindb",
+    "name": "BrainDB"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "braindb",
+    "url": "https://clawhub.ai/skills/braindb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/braindb-1386f8893f06d5ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Persistent, semantic memory for AI agents. Gives your AI long-term recall that survives compaction and session resets — 98% accuracy, 20ms latency."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chair4ce",
+      "userId": "publishers:chair4ce",
+      "displayName": "ChairForce",
+      "image": "https://avatars.githubusercontent.com/u/33118919?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1086,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.5.2",
+      "createdAt": 1771197399674,
+      "changelog": "Fix display name",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a2a7164f85d1418a720588d8886b7505b52ffe1fba1b97a06d5c8a1ac64679fe"
+}

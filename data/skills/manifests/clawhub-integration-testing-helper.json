@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45097,
+  "uuid": "skill-clawhub-integration-testing-helper",
+  "skillKey": "clawhub-integration-testing-helper",
+  "name": "Integration Testing Helper",
+  "summary": "Assist with creating, running, and managing integration tests for APIs, databases, and services, including orchestration, data setup, and reporting.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.integration_testing_helper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "Assist with creating, running, and managing integration tests for APIs, databases, and services."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/integration-testing-helper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "integration-testing-helper",
+      "url": "https://clawhub.ai/skills/integration-testing-helper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "integration-testing-helper",
+    "url": "https://clawhub.ai/skills/integration-testing-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/integration-testing-helper-4a75b21e2544301b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/integration-testing-helper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-integration-testing-helper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6f9a9b39aaf0aef58fbf91873a1031b8d09f677faaf89beb31336c3289359a8a",
+      "artifactSizeBytes": 2478
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T22:01:23.136Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37918,
+  "uuid": "skill-clawhub-consul-api",
+  "skillKey": "clawhub-consul-api",
+  "name": "Consul API",
+  "summary": "Consul HTTP API operations for service discovery, key-value store, health checks, and service mesh management. Use when working with Consul clusters for: (1)...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.consul_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JonasGao",
+      "features": [
+        "Consul HTTP API operations for service discovery, key-value store, health checks, and service m.",
+        "Use when working with Consul clusters for: (1)..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/consul-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4549584?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "consul-api",
+      "url": "https://clawhub.ai/skills/consul-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "consul-api",
+    "url": "https://clawhub.ai/skills/consul-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/consul-api-0a0855f6b5e92540.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/consul-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-consul-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:33b3ed015307e08fdd3a9e57eec36eb04acd64e86fd0f8808d2eec9e5558a7f4",
+      "artifactSizeBytes": 1949
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T07:34:23.916Z"
+}

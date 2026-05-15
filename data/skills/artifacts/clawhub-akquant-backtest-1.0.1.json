@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/akquant-backtest@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.akquant_backtest",
+  "skill": {
+    "id": 27863,
+    "skillKey": "clawhub-akquant-backtest",
+    "name": "AKQuant A-Share Backtesting"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "akquant-backtest",
+    "url": "https://clawhub.ai/skills/akquant-backtest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/akquant-backtest-1e105bf7af2f8e2d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A-share quantitative trading backtesting using AKQuant (Rust engine) and AKShare data. Use when user asks to \"backtest a stock strategy\", \"test trading algor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lamtest556-blip",
+      "userId": "s1749mwbdj78jahf34pzw7j2zh83nfha",
+      "displayName": "lamtest556-blip",
+      "image": "https://avatars.githubusercontent.com/u/261954715?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 329,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774503769637,
+      "changelog": "Added README.md documentation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ff3e4f93db70603c1bd427c42009623358ef2acd3c51bbc62a97c73098498419"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/journal-intel-extractor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.journal_intel_extractor",
+  "skill": {
+    "id": 60189,
+    "skillKey": "clawhub-journal-intel-extractor",
+    "name": "Journal Deep Intel Extractor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "journal-intel-extractor",
+    "url": "https://clawhub.ai/skills/journal-intel-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/journal-intel-extractor-eb9dbf999879b722.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专业的学术情报提取工具。支持 Nature/Science/Cell 等全球主流期刊，自动化抓取过去 N 天内新增的 Article 或 Review，并深度提取 PMID 与 Abstract 全文，为 AI 科普总结提供核心数据源。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenghan66",
+      "userId": "s171bs1df8mbv0h7t5f4t0bsxn83zdkv",
+      "displayName": "Chenghan66",
+      "image": "https://avatars.githubusercontent.com/u/110957410?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775012289577,
+      "changelog": "Journal Deep Intel Extractor 1.7.0 introduces deep extraction mode for journal articles.\n\n- Now fetches both titles and article abstracts by navigating to PubMed article detail pages.\n- Provides raw materials (abstracts) for AI-generated lay summaries.\n- Includes support for filtering by journal name, article type (Article or Review), and days to look back.\n- Note: Extraction time increases with the number of articles (about 1 second per article), as each abstract is fetched individually.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e9f7c89f59efd983775f5dfc89a37e5afc76dd547aa2c04d4c763b20aa546ac0"
+}

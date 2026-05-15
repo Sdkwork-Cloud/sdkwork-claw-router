@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clash-verge-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clash_verge_skill",
+  "skill": {
+    "id": 33357,
+    "skillKey": "clawhub-clash-verge-skill",
+    "name": "Clash Verge Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clash-verge-skill",
+    "url": "https://clawhub.ai/skills/clash-verge-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clash-verge-skill-6aef68b94c120e1f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control Clash Verge Rev via mihomo API. Query proxy status, switch nodes, test delays, manage connections, DNS, and more. Use when user mentions Clash, proxy..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brianping7",
+      "userId": "s17327tm1ajrc84jpj6b2s5m9583mz9c",
+      "displayName": "brianping7",
+      "image": "https://avatars.githubusercontent.com/u/18287956?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 239,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774056869301,
+      "changelog": "- Initial release of Clash Verge Skill for controlling Clash Verge Rev (mihomo core) via its external API.\n- Includes CLI tool to check status, manage proxy modes, switch nodes, test delays, and handle connections and DNS.\n- Supports Unix socket and HTTP API connections with environment variable and CLI flag overrides.\n- No external dependencies; fully Python stdlib-based.\n- Handles proxy group and node names with special characters.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:456a5ec66fb7819557efa34bc6ec78f37944a63d7d2bbbbd97b03cd4c730f5f1"
+}

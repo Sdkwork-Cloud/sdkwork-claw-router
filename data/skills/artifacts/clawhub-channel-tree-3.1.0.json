@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/channel-tree@3.1.0",
+  "version": "3.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.channel_tree",
+  "skill": {
+    "id": 34913,
+    "skillKey": "clawhub-channel-tree",
+    "name": "Channel Tree"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "channel-tree",
+    "url": "https://clawhub.ai/skills/channel-tree",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/channel-tree-39913d741e07e59b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manages hierarchical OpenClaw session channels to split tasks, create sub-channels, track status, and save tree state with inheritance and health monitoring."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kukuxnd",
+      "userId": "s178szgv2bfpqct26qfg70ajwh83pse8",
+      "displayName": "kukuxNd",
+      "image": "https://avatars.githubusercontent.com/u/182144217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 219,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "3.1.0",
+      "createdAt": 1774600976195,
+      "changelog": "Added ->0 command for history sync. Improved documentation. Multi-hall support.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6fb42934819e6793f17683404d38ef24b6b2ba3358af51db55fa6889b63d3d5a"
+}

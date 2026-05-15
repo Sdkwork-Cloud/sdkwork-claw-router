@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/datahive-installer@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.datahive_installer",
+  "skill": {
+    "id": 24378,
+    "skillKey": "clawhub-datahive-installer",
+    "name": "DataHive Installer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "datahive-installer",
+    "url": "https://clawhub.ai/skills/datahive-installer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/datahive-installer-8076d9593e4708c8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automates DataHive sign-in using a magic link workflow: requests the link, retrieves it from Gmail via gog, and opens it in a Chrome DevTools tab."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tuleyko",
+      "userId": "s17fhm07z0mpjpedj9np738myh83g4mt",
+      "displayName": "Maxim Tuleyko",
+      "image": "https://avatars.githubusercontent.com/u/15267170?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 412,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773044953693,
+      "changelog": "Initial release of datahive-installer.\n\n- Automates DataHive dashboard login using a magic link workflow.\n- Detects platform (Ubuntu or macOS) and installs required dependencies.\n- Launches Chrome in persistent background mode with DevTools enabled.\n- Retrieves magic login link from Gmail via gog and opens it automatically.\n- Enforces a strict, stepwise execution sequence.\n- Limited to dashboard authentication; does not handle dataset management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:68c0df6c6f4acd93bc9a290f3d495c94f45eb88ad448af01f8baac2127f31e6e"
+}

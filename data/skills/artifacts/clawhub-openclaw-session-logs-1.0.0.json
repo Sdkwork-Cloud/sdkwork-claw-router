@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-session-logs@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_session_logs",
+  "skill": {
+    "id": 49745,
+    "skillKey": "clawhub-openclaw-session-logs",
+    "name": "OpenClaw Session Logs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-session-logs",
+    "url": "https://clawhub.ai/skills/openclaw-session-logs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-session-logs-1ad25c844c5e8dee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search and analyze your past session logs stored in JSONL files to retrieve prior conversation details and historical context."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aaronmda",
+      "userId": "s17e94e7fsc6q38t734pe57fa5869aha",
+      "displayName": "Aaron Daley",
+      "image": "https://avatars.githubusercontent.com/u/26989992?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 68,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778247433656,
+      "changelog": "Initial free core release. Searches/analyzes session JSONL histories. Premium support: aaronmda@clawhub.com",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eb38c5d9754fb02ebc668dcc09872589c72f06f5363f61cd542665cf0729135c"
+}

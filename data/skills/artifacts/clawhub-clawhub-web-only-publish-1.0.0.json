@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawhub-web-only-publish@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_web_only_publish",
+  "skill": {
+    "id": 21242,
+    "skillKey": "clawhub-clawhub-web-only-publish",
+    "name": "ClawHub Web Only Publish"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-web-only-publish",
+    "url": "https://clawhub.ai/skills/clawhub-web-only-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-web-only-publish-4e02ff5c7ec0af38.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Publish skills to ClawHub via web dashboard only. No CLI login, no device flow. Reuse existing browser session."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dalomeve",
+      "userId": "s170jb8y518cbtqkxpgjgcz0yn843mr1",
+      "displayName": "Dalomeve",
+      "image": "https://avatars.githubusercontent.com/u/115125037?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 516,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772360582327,
+      "changelog": "Initial release: Publish skills to ClawHub via web dashboard only—no CLI login or device flow required.\n\n- Publish directly from browser using active session; eliminates CLI login, device flow, and session issues.\n- Requires SKILL.md present in skill folder.\n- Step-by-step web workflow: upload, validate, and publish from https://clawhub.ai/upload.\n- CLI fallback allowed only if prior token exists—never use `clawhub login`.\n- Ensures no secrets included in published files for safety.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0880b6a78096b707e4d286d55eae74e7c8c6a39edcf43b1e7f0f0c0c144b9f57"
+}

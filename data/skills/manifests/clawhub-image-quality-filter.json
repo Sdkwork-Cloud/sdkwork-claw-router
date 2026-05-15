@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27197,
+  "uuid": "skill-clawhub-image-quality-filter",
+  "skillKey": "clawhub-image-quality-filter",
+  "name": "Image Quality Filter",
+  "summary": "Detect and filter out low-quality images by analyzing blur, brightness, and resolution to clean up image datasets efficiently.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_quality_filter",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mingo_318",
+      "features": [
+        "Detect and filter out low-quality images by analyzing blur, brightness, and resolution to clean."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-quality-filter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62329898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-quality-filter",
+      "url": "https://clawhub.ai/skills/image-quality-filter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-quality-filter",
+    "url": "https://clawhub.ai/skills/image-quality-filter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-quality-filter-2655666d4273fbdc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-quality-filter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-quality-filter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a08b1e4ec0aefd74c9ad20ccb985fc36e2858254c92c77eae2b92aa25b7f562a",
+      "artifactSizeBytes": 2230
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T10:35:23.859Z"
+}

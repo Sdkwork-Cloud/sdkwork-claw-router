@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17336,
+  "uuid": "skill-clawhub-arxivkb",
+  "skillKey": "clawhub-arxivkb",
+  "name": "arxivkb",
+  "summary": "Local arXiv paper manager with semantic search. Crawls arXiv categories, downloads PDFs, chunks content, and indexes with FAISS + Ollama embeddings. No cloud...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arxivkb",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "camopel",
+      "features": [
+        "Local arXiv paper manager with semantic search",
+        "Crawls arXiv categories, downloads PDFs, chunks content, and indexes with FAISS + Ollama embedd.",
+        "No cloud..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/arxivkb@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18227220?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "arxivkb",
+      "url": "https://clawhub.ai/skills/arxivkb"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arxivkb",
+    "url": "https://clawhub.ai/skills/arxivkb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arxivkb-9f48f544bd817bf5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/arxivkb@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-arxivkb-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b707d6621e86d0551c52385f0ba6f29f71bc9d9c12273b25c4d179d2a5604468",
+      "artifactSizeBytes": 1806
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T22:44:05.339Z"
+}

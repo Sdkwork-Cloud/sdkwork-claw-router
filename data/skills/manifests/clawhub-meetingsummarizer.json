@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28384,
+  "uuid": "skill-clawhub-meetingsummarizer",
+  "skillKey": "clawhub-meetingsummarizer",
+  "name": "Meeting Summarizer",
+  "summary": "Transcribe meetings with SenseAudio ASR speaker diarization, timestamps, and meeting-note extraction workflows. Use when users need meeting transcription, me...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meetingsummarizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "scikkk",
+      "features": [
+        "Transcribe meetings with SenseAudio ASR speaker diarization, timestamps, and meeting-note extra.",
+        "Use when users need meeting transcription, me..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meetingsummarizer@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77485593?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meetingsummarizer",
+      "url": "https://clawhub.ai/skills/meetingsummarizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meetingsummarizer",
+    "url": "https://clawhub.ai/skills/meetingsummarizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meetingsummarizer-06742880abb0c571.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meetingsummarizer@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-meetingsummarizer-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc062d36f2f98f9b5818cb3fe6cba1c4aef56b12c702a02f94ecb192b1b36dfd",
+      "artifactSizeBytes": 2148
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T07:54:22.324Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21446,
+  "uuid": "skill-clawhub-variflight",
+  "skillKey": "clawhub-variflight",
+  "name": "Variflight",
+  "summary": "Query flight information, train tickets, and travel data using Variflight (飞常准) HTTP API. Use when the user needs to (1) search flights by route or flight number, (2) check flight status and punctuality, (3) find train tickets, (4) get air.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.variflight",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Variflight",
+      "features": [
+        "Query flight information, train tickets, and travel data using Variflight (飞常准) HTTP API",
+        "Use when the user needs to (1) search flights by route or flight number, (2) check flight statu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/variflight@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3955656?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "variflight",
+      "url": "https://clawhub.ai/skills/variflight"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "variflight",
+    "url": "https://clawhub.ai/skills/variflight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/variflight-3e755391d25e5ecd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/variflight@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-variflight-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3911efe223887ab8c787bac28de205ddb335a5a7913298f1407e6e85d149cc68",
+      "artifactSizeBytes": 1961
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T06:53:11.930Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9837,
+  "uuid": "skill-clawhub-agent-commons",
+  "skillKey": "clawhub-agent-commons",
+  "name": "Agent Commons",
+  "summary": "Consult, commit, extend, and challenge reasoning chains in the Agent Commons - a shared reasoning layer for AI agents.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_commons",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ZanBlayde",
+      "features": [
+        "Consult, commit, extend, and challenge reasoning chains in the Agent Commons",
+        "a shared reasoning layer for AI agents."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-commons@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/167496902?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-commons",
+      "url": "https://clawhub.ai/skills/agent-commons"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-commons",
+    "url": "https://clawhub.ai/skills/agent-commons",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-commons-ff3bc032d473d6a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-commons@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-commons-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b8cfa9a26f310e5dbacd37dd6e3dfb602dd07fdd89d6e822d36749aa402965f0",
+      "artifactSizeBytes": 1892
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T04:28:36.977Z"
+}

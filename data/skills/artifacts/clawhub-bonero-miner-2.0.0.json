@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bonero-miner@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bonero_miner",
+  "skill": {
+    "id": 11269,
+    "skillKey": "clawhub-bonero-miner",
+    "name": "Bonero-Miner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bonero-miner",
+    "url": "https://clawhub.ai/skills/bonero-miner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bonero-miner-4cad93c3680b4442.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Mine Bonero - private cryptocurrency for AI agents. RandomX CPU mining, Monero-based privacy."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "happybigmtn",
+      "userId": "publishers:happybigmtn",
+      "displayName": "rk",
+      "image": "https://avatars.githubusercontent.com/u/166826369?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2025,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1770018659249,
+      "changelog": "Bonero Miner 2.0.0 is a major update focused on usability improvements and clearer documentation.\n\n- Introduced a simplified, one-command install script for faster setup.\n- Streamlined and clarified mining and wallet setup instructions.\n- Expanded and updated the list of public seed nodes.\n- Added best practices for CPU thread usage and reminders to get human consent.\n- Enhanced privacy feature explanations for users.\n- Improved troubleshooting and command documentation for easier maintenance.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dea61f4957790796f50155d64514e97ddb1ccdb14cf72c57c097dbb9424b40cb"
+}

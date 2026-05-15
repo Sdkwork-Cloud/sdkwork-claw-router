@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/china-summarizer@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_summarizer",
+  "skill": {
+    "id": 58238,
+    "skillKey": "clawhub-china-summarizer",
+    "name": "china-summarizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-summarizer",
+    "url": "https://clawhub.ai/skills/china-summarizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-summarizer-ec6741385fe463d5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "中文内容智能总结工具。Summarize local files (TXT/MD/PDF/Word), web pages, news articles, or WeChat articles. No login, no API key required. 内容总结、文章提炼。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tobewin",
+      "userId": "s174rz3f0862tcfw7pzfh5w8kn83hv2z",
+      "displayName": "ToBeWin",
+      "image": "https://avatars.githubusercontent.com/u/145168989?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 305,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777425040710,
+      "changelog": "v1.1.0: Security hardening - removed curl dependency, removed all code examples, pure instruction-based skill.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d6de592d35c2727e8aedb440090861d0c304f866c7fe98eab28677d6913c4154"
+}

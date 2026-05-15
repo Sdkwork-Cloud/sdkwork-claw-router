@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58502,
+  "uuid": "skill-clawhub-kis-trading",
+  "skillKey": "clawhub-kis-trading",
+  "name": "KIS Trading (한국투자증권)",
+  "summary": "한국투자증권(KIS) Open API를 이용한 국내 주식 트레이딩. 잔고 조회, 시세 확인, 매수/매도 주문, 매매 내역, 시장 개황 등. | Korean stock trading via KIS (Korea Investment & Securities) Open API. Balance, quotes, buy/sell orders, trade history, market overview.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kis_trading",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tgparkk",
+      "features": [
+        "한국투자증권(KIS) Open API를 이용한 국내 주식 트레이딩",
+        "잔고 조회, 시세 확인, 매수/매도 주문, 매매 내역, 시장 개황 등",
+        "| Korean stock trading via KIS (Korea Investment & Securities) Open API",
+        "Balance, quotes, buy/sell orders, trade history, market overview."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kis-trading@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45591830?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kis-trading",
+      "url": "https://clawhub.ai/skills/kis-trading"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kis-trading",
+    "url": "https://clawhub.ai/skills/kis-trading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kis-trading-9c13c6bac7e54bb5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kis-trading@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kis-trading-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6ddbe26f9cfa7b7edb15b223d3c01086a40ab39f04307dbe375d26a1c775f905",
+      "artifactSizeBytes": 2050
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T13:21:46.067Z"
+}

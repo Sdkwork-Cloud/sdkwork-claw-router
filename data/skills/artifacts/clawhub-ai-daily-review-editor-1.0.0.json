@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-daily-review-editor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_daily_review_editor",
+  "skill": {
+    "id": 42630,
+    "skillKey": "clawhub-ai-daily-review-editor",
+    "name": "Ai Daily Review Editor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-daily-review-editor",
+    "url": "https://clawhub.ai/skills/ai-daily-review-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-daily-review-editor-4204ed85379ffcab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get polished review videos ready to post, without touching a single slider. Upload your daily review footage (MP4, MOV, AVI, WebM, up to 500MB), say somethin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775983037346,
+      "changelog": "AI Daily Review Editor 1.0.0 — initial release\n\n- Instantly edit and export daily review videos up to 5 minutes and 500MB (MP4, MOV, AVI, WebM).\n- Automated cloud video editing: trim pauses, add intros/outros, sync background music, and more via natural instructions.\n- Simple setup: anonymous token flow, no manual installation or config required (uses NEMO_TOKEN).\n- Download polished 1080p MP4 files, ready for publishing in about 1–2 minutes for short clips.\n- Credits, upload, export, and status actions mapped to easy-to-understand chat commands.\n- Error handling, API event mapping, and session state management for a seamless, resilient workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7f806909ebc6cd0433ce77b5a4ee41e71ec8907fe43f2965287ee29e5295862b"
+}

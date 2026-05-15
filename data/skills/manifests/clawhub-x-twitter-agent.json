@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44708,
+  "uuid": "skill-clawhub-x-twitter-agent",
+  "skillKey": "clawhub-x-twitter-agent",
+  "name": "X/Twitter Agent",
+  "summary": "Post tweets, read mentions, reply, like, retweet, and search on X/Twitter using the official v2 API. Use for all X interactions instead of bird-cli or browse...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_twitter_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JoeyTbuilds",
+      "features": [
+        "Post tweets, read mentions, reply, like, retweet, and search on X/Twitter using the official v2.",
+        "Use for all X interactions instead of bird-cli or browse..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-twitter-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/272441554?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-twitter-agent",
+      "url": "https://clawhub.ai/skills/x-twitter-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-twitter-agent",
+    "url": "https://clawhub.ai/skills/x-twitter-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-twitter-agent-da684ca129ff691b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-twitter-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-twitter-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0eb2337d4a6a710a70e1e330bb716f570ad5db07d259ccb0948f0f2c5eced02e",
+      "artifactSizeBytes": 1899
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T04:02:17.968Z"
+}

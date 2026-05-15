@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/giveaway-skills@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.giveaway_skills",
+  "skill": {
+    "id": 25846,
+    "skillKey": "clawhub-giveaway-skills",
+    "name": "Giveaway Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "giveaway-skills",
+    "url": "https://clawhub.ai/skills/giveaway-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/giveaway-skills-80daa5f9c69596a4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Call guide and best practices for the BSC on-chain giveaway contract based on contracts/contracts/Giveaway.sol, including contract address, core method signa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "franckstone",
+      "userId": "s179dy7mg9yxyw6z1v2q7kj55h859vpq",
+      "displayName": "Franck.S",
+      "image": "https://avatars.githubusercontent.com/u/24389569?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 379,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772852029817,
+      "changelog": "Initial release of BSC Giveaway Contract Call Skill.\n\n- Provides call guide and best practices for the Giveaway.sol contract on BSC mainnet.\n- Documents core function signatures, parameters, method conventions, and contract address.\n- Explains setup for creating and claiming giveaways, managing whitelists, and withdrawing expired giveaways.\n- Includes usage examples for integrating with scripts and frontends using ethers.js.\n- Offers concise overviews of distribution types, claim restrictions, and contract data structures.\n- Lists minimal ABI information and guidance for both ERC20 and BNB giveaways.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b27a17250b2c22e4623764e40dabcdbcb7a056d423e5ec3989b0f06e902e802d"
+}

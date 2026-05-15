@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/showcase-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.showcase_video",
+  "skill": {
+    "id": 55668,
+    "skillKey": "clawhub-showcase-video",
+    "name": "Showcase Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "showcase-video",
+    "url": "https://clawhub.ai/skills/showcase-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/showcase-video-c0871120169fd783.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — cut the best moments and arrange them into a 60-second showcase reel — and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776443456658,
+      "changelog": "Showcase-video 1.0.0 — Initial Release\n\n- Instantly create and export 60-second AI-generated highlight reels from uploaded video clips (up to 500MB; MP4, MOV, AVI, WebM supported).\n- Simple workflow: upload, describe your desired highlights, and get a polished export in 1–2 minutes without manual editing.\n- Seamlessly handles session setup, free token generation, and cloud video rendering via the NemoVideo API.\n- Supports status and balance queries, iterative edits, and batch processing — no editing software required.\n- All actions available via chat prompts; export outputs in MP4 at 1080p by default.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7f45108bffae9e162f7af3a35eb3d4b1b9fb06632e47eb638accb47dd0796c9f"
+}

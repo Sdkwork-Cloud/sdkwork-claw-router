@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18829,
+  "uuid": "skill-clawhub-crypto-executor",
+  "skillKey": "clawhub-crypto-executor",
+  "name": "Crypto Executor",
+  "summary": "Complete autonomous trading engine for Binance with WebSocket real-time, OCO orders, Kelly Criterion position sizing, trailing stops, circuit breakers, daily...",
+  "version": "2.3.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_executor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wesley Armando",
+      "features": [
+        "Complete autonomous trading engine for Binance with WebSocket real-time, OCO orders, Kelly Crit."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crypto-executor@2.3.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130360599?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crypto-executor",
+      "url": "https://clawhub.ai/skills/crypto-executor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-executor",
+    "url": "https://clawhub.ai/skills/crypto-executor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-executor-0b055356a7d2bf60.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crypto-executor@2.3.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-crypto-executor-2.3.4.json",
+      "version": "2.3.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6493564e047a3e62532f1621668e1b785ca7a2fc037f72b5a78694c618bb8110",
+      "artifactSizeBytes": 2125
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T17:44:57.694Z"
+}

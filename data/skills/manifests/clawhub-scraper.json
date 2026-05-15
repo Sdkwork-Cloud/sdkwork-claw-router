@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15005,
+  "uuid": "skill-clawhub-scraper",
+  "skillKey": "clawhub-scraper",
+  "name": "Scraper",
+  "summary": "Structured extraction and cleanup for public, user-authorized web pages. Use when the user wants to collect, clean, summarize, or transform content from acce...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scraper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AGIstack",
+      "features": [
+        "Structured extraction and cleanup for public, user-authorized web pages",
+        "Use when the user wants to collect, clean, summarize, or transform content from acce..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/scraper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258523997?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "scraper",
+      "url": "https://clawhub.ai/skills/scraper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scraper",
+    "url": "https://clawhub.ai/skills/scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scraper-7c09b62405a2c091.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/scraper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-scraper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:09cb7b8803879021e1da15880a58515cd1d31e6740d722f6a0f262c49e130729",
+      "artifactSizeBytes": 1970
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T07:44:58.247Z"
+}

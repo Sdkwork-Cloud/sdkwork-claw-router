@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/uni-image@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uni_image",
+  "skill": {
+    "id": 27659,
+    "skillKey": "clawhub-uni-image",
+    "name": "uni-image"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uni-image",
+    "url": "https://clawhub.ai/skills/uni-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uni-image-f64dad804436b8a9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Unified multi-platform AI image generation. Supports Volcengine Seedream, Alibaba Qwen Image, and Google Gemini (Nano Banana). Switch between models with a d..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sangjiexun",
+      "userId": "publishers:sangjiexun",
+      "displayName": "以码悟道",
+      "image": "https://avatars.githubusercontent.com/u/59449516?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 343,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774054647541,
+      "changelog": "- Initial release of UniImage: unified multi-platform AI image generation.\n- Supports Volcengine Seedream, Alibaba Qwen Image, and Google Gemini (Nano Banana) providers.\n- Add dropdown selector on the paint page for easy switching between image generation models.\n- Proxy server routes requests to the appropriate provider API based on model selection.\n- API key configuration via UI or environment variables.\n- Includes CLI usage examples and setup instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3d1a5a5fcd4b3944d840572b092bef0bedc879c151c6a393358fddd38090eee7"
+}

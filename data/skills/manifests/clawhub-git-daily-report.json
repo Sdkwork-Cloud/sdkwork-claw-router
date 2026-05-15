@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59618,
+  "uuid": "skill-clawhub-git-daily-report",
+  "skillKey": "clawhub-git-daily-report",
+  "name": "Git Daily Report",
+  "summary": "发送 image-tool (所有 remote 分支) 和 voc 项目 (dev 分支) 的每日 Git 变化报告 + 代码审查（安全 + 通用）（前一天）。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_daily_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kidok",
+      "features": [
+        "发送 image-tool (所有 remote 分支) 和 voc 项目 (dev 分支) 的每日 Git 变化报告 + 代码审查（安全 + 通用）（前一天）。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/git-daily-report@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7350940?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "git-daily-report",
+      "url": "https://clawhub.ai/skills/git-daily-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-daily-report",
+    "url": "https://clawhub.ai/skills/git-daily-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-daily-report-0fb1035f375fe3d6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/git-daily-report@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-git-daily-report-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0be0a97012aa55b04ed6d6dcaa9ddb0db8bb93dc37bbceab9c4fe1d26738c0b9",
+      "artifactSizeBytes": 2528
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T08:59:05.261Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46007,
+  "uuid": "skill-clawhub-shotcut",
+  "skillKey": "clawhub-shotcut",
+  "name": "Shotcut",
+  "summary": "Get edited video clips ready to post, without touching a single slider. Upload your raw video footage (MP4, MOV, AVI, MKV, up to 500MB), say something like \"...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shotcut",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "susan4731-wilfordf",
+      "features": [
+        "Get edited video clips ready to post, without touching a single slider",
+        "Upload your raw video footage (MP4, MOV, AVI, MKV, up to 500MB), say something like \"..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shotcut@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208907675?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shotcut",
+      "url": "https://clawhub.ai/skills/shotcut"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shotcut",
+    "url": "https://clawhub.ai/skills/shotcut",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shotcut-2f0f7f7368a35220.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shotcut@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shotcut-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:77400e5ef7093411477a3e87a842ba718d0891c9e9fdde55901c2438cfca9a82",
+      "artifactSizeBytes": 2403
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T18:20:34.086Z"
+}

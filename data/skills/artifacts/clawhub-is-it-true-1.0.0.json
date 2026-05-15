@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/is-it-true@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.is_it_true",
+  "skill": {
+    "id": 34224,
+    "skillKey": "clawhub-is-it-true",
+    "name": "is-it-true"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "is-it-true",
+    "url": "https://clawhub.ai/skills/is-it-true",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/is-it-true-3448007854898318.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Conduct critical analysis of viewpoints, factual statements, or web content using the critical thinking framework from \"Asking the Right Questions\". Use when..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenyichu86",
+      "userId": "s170g3jgarda7fzs0mcwfr9j7183j07d",
+      "displayName": "chenyichu86",
+      "image": "https://avatars.githubusercontent.com/u/33452235?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 227,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774437656533,
+      "changelog": "Initial release of \"is-it-true\" skill.\n\n- Provides a critical thinking framework for analyzing viewpoints, factual statements, and web content, based on \"Asking the Right Questions\".\n- Distinguishes and applies separate verification and analysis processes for factual, opinion-based, and mixed statements.\n- Introduces a structured, step-by-step multi-source cross-validation checklist for all information types.\n- Incorporates a source credibility rating system from highest (A+) to lowest (D).\n- Supports scientific principle and evidence quality assessments, as well as logical consistency checks.\n- Guides comprehensive analysis of argument structure and underlying assumptions for opinion-based content.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:675a5226e63111abb8e01a27ade3e7999a239af18671db7cb7aa862fd0923da8"
+}

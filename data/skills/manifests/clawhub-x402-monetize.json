@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54967,
+  "uuid": "skill-clawhub-x402-monetize",
+  "skillKey": "clawhub-x402-monetize",
+  "name": "X402 Monetize",
+  "summary": "Creates paid API endpoints using the x402 micropayment protocol. Wraps existing Zo skills and tools behind per-request payment walls. Each call costs $0.001–...",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x402_monetize",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ssyopro",
+      "features": [
+        "Creates paid API endpoints using the x402 micropayment protocol",
+        "Wraps existing Zo skills and tools behind per-request payment walls",
+        "Each call costs $0.001–..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x402-monetize@1.0.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/156830224?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x402-monetize",
+      "url": "https://clawhub.ai/skills/x402-monetize"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x402-monetize",
+    "url": "https://clawhub.ai/skills/x402-monetize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x402-monetize-343ca6bcfe82ad93.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x402-monetize@1.0.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-x402-monetize-1.0.9.json",
+      "version": "1.0.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5d18a0a5b8181691a12860b07c61a4deb93624738aa3d1d56c839d9d115f3e87",
+      "artifactSizeBytes": 2023
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T13:49:16.917Z"
+}

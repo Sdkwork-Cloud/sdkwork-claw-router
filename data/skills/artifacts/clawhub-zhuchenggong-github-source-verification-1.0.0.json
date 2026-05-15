@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zhuchenggong-github-source-verification@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhuchenggong_github_source_verification",
+  "skill": {
+    "id": 70625,
+    "skillKey": "clawhub-zhuchenggong-github-source-verification",
+    "name": "GitHub可信来源验证"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhuchenggong-github-source-verification",
+    "url": "https://clawhub.ai/skills/zhuchenggong-github-source-verification",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhuchenggong-github-source-verification-97db4823c492a32b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "验证GitHub中国开发者身份，搜索并核实其B站、抖音、小红书、知乎等平台账号和粉丝活跃度以判断可信度。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhuchenggong19851114-design",
+      "userId": "s175hh7wvdt1z18hr1txy3da4h83haab",
+      "displayName": "zhuchenggong19851114-design",
+      "image": "https://avatars.githubusercontent.com/u/266258234?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 237,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774481078094,
+      "changelog": "Initial release of GitHub可信来源验证 skill:\n\n- Enables verification of Chinese GitHub developers' identity across multiple platforms (B站、抖音、小红书、知乎、掘金、CSDN).\n- Provides a clear output table showing author, GitHub project, verification platform, and credibility.\n- Outlines standardized credibility criteria (followers, content presence).\n- Includes step-by-step workflow and example usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5c3e3cf02ce5c1eb43bc609e50b1204477928d7f5d055a8e564f1e9005b4ed85"
+}

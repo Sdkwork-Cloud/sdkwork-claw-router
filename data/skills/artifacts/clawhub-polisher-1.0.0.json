@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polisher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polisher",
+  "skill": {
+    "id": 21640,
+    "skillKey": "clawhub-polisher",
+    "name": "language-polisher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polisher",
+    "url": "https://clawhub.ai/skills/polisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polisher-bb93a5d3c8418c7f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when polishing input, fixing grammar, improving wording, and making user prompts sound natural and concise. Keywords - polish , grammar fix, rewrite sent..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "supremes",
+      "userId": "publishers:supremes",
+      "displayName": "Supremes",
+      "image": "https://avatars.githubusercontent.com/u/12729750?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 473,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773122457532,
+      "changelog": "- Initial release of the \"polisher\" skill for improving clarity, grammar, and natural phrasing of user prompts.\n- Preserves original intent and meaning, ensuring no additional facts or information are introduced.\n- Provides concise and/or slightly formal rewritten alternatives to input when useful.\n- Outputs brief reasoning for edits, with optional notes for ambiguous cases.\n- Designed to give clear, readable results without lengthy explanations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bafe630514ceae42cb1b68f781766de0ef09731c7db047f5157912c534b80981"
+}

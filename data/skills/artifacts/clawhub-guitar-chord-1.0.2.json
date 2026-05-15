@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/guitar-chord@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.guitar_chord",
+  "skill": {
+    "id": 21605,
+    "skillKey": "clawhub-guitar-chord",
+    "name": "Guitar Chord"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "guitar-chord",
+    "url": "https://clawhub.ai/skills/guitar-chord",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/guitar-chord-e6e7ba5d718ab4d5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guitar chord toolkit with chord identification, chord diagrams, capo calculation, and more. Features: - Identify chord from notes (reverse lookup) - Look up..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deantiwang",
+      "userId": "publishers:deantiwang",
+      "displayName": "DeAnti-",
+      "image": "https://avatars.githubusercontent.com/u/21234945?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 483,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773675309200,
+      "changelog": "Version 1.1.0 is a feature update with drop2 voicings support.\n\n- Added drop2 voicing generation and lookup for chords (via --drop2)\n- Updated documentation to describe drop2 feature and usage examples\n- Minor description updates in SKILL.md to reflect new functionality",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:89b72eb365f66e3ed5cf87e11e5e08886b4671f812159f041501af5860b26334"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50193,
+  "uuid": "skill-clawhub-tistory-publish",
+  "skillKey": "clawhub-tistory-publish",
+  "name": "Tistory Publish",
+  "summary": "Automate Tistory blog publishing via OpenClaw Playwright CDP. Supports any post format — handles TinyMCE editor manipulation, OG card insertion, banner uploa...",
+  "version": "5.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tistory_publish",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "garibong-labs",
+      "features": [
+        "Automate Tistory blog publishing via OpenClaw Playwright CDP",
+        "Supports any post format — handles TinyMCE editor manipulation, OG card insertion, banner uploa."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tistory-publish@5.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258610216?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tistory-publish",
+      "url": "https://clawhub.ai/skills/tistory-publish"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tistory-publish",
+    "url": "https://clawhub.ai/skills/tistory-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tistory-publish-27dd254387afb5e8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tistory-publish@5.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-tistory-publish-5.1.4.json",
+      "version": "5.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d2ec06b8555d9d0c1581286d507edf7f079f7eb534569c027dbc2f3bff3c726",
+      "artifactSizeBytes": 2036
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T14:50:03.766Z"
+}

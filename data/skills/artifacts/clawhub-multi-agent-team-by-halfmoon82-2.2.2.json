@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/multi-agent-team-by-halfmoon82@2.2.2",
+  "version": "2.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_agent_team_by_halfmoon82",
+  "skill": {
+    "id": 47158,
+    "skillKey": "clawhub-multi-agent-team-by-halfmoon82",
+    "name": "Multi Agent Dev Team"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-agent-team-by-halfmoon82",
+    "url": "https://clawhub.ai/skills/multi-agent-team-by-halfmoon82",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-agent-team-by-halfmoon82-ff025d4392448c14.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set up and manage 2–10 agent dev teams with customizable roles, workflows, multiple parallel teams, and auto-assigned AI models for collaborative software de..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "halfmoon82",
+      "userId": "s173a0sd7rjbb7s3bsayc8607s83n58t",
+      "displayName": "halfmoon82",
+      "image": "https://avatars.githubusercontent.com/u/261569221?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 559,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.2.2",
+      "createdAt": 1772887398017,
+      "changelog": "Multi-Agent Dev Team v2.2.2 — Changelog\n\n- Updated post-setup workflow to require mandatory subagent timeout governance, including graded timeouts, retries, circuit breaker policies, and detailed health-check reporting.\n- Introduced allowlist guardrail: `allowAgents` must be merged into `main.subagents.allowAgents` for all-team scope.\n- Enhanced weekly optimization flow: new logging and history storage requirements, enforce no team-specific hardcoding in optimizers.\n- Added new failure classifications to spawning/reporting: `SPAWN_REJECTED`, `TIMEOUT`, `NO_CHANNEL_503`, `RATE_LIMIT`, `UNKNOWN`.\n- Documentation improvements for team structure, workflow templates, and troubleshooting.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c8b8d0ab9afd783ca8d0d7ffb41cfa075fd5aceaa6746986dba85f9640171129"
+}

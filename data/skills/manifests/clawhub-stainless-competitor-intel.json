@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64905,
+  "uuid": "skill-clawhub-stainless-competitor-intel",
+  "skillKey": "clawhub-stainless-competitor-intel",
+  "name": "Stainless Competitor Intel",
+  "summary": "收集并分析不锈钢行业竞争对手钢厂、贸易商和加工厂的工商、产能、价格、客户及风险信息，支持SWOT分析。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stainless_competitor_intel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wuxi304-collab",
+      "features": [
+        "收集并分析不锈钢行业竞争对手钢厂、贸易商和加工厂的工商、产能、价格、客户及风险信息，支持SWOT分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stainless-competitor-intel@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/232284953?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stainless-competitor-intel",
+      "url": "https://clawhub.ai/skills/stainless-competitor-intel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stainless-competitor-intel",
+    "url": "https://clawhub.ai/skills/stainless-competitor-intel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stainless-competitor-intel-478cec105e57ee51.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stainless-competitor-intel@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stainless-competitor-intel-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc7a9416692bb15cb129e23f9279d59ed85d56b5041fed321baa94f8fee4ef21",
+      "artifactSizeBytes": 2571
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T04:31:45.710Z"
+}

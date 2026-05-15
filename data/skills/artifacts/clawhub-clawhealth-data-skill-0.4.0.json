@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawhealth-data-skill@0.4.0",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhealth_data_skill",
+  "skill": {
+    "id": 34376,
+    "skillKey": "clawhub-clawhealth-data-skill",
+    "name": "ClawHealth Data Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhealth-data-skill",
+    "url": "https://clawhub.ai/skills/clawhealth-data-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhealth-data-skill-e00a3307dd5e2944.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read a user's ClawHealth 30-day HealthKit sync, produce daily/weekly/long-term health reports, open temporary panels, explain health-check signals, and recom..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hengruizzzz",
+      "userId": "s17b9fsdf1xm32gj55mfrzsz3h8698d9",
+      "displayName": "SuperHz",
+      "image": "https://avatars.githubusercontent.com/u/44789407?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 124,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.4.0",
+      "createdAt": 1778197397741,
+      "changelog": "Adds nutrition monitor, basic profile targets, readiness and mood tracking, bilingual guidance, and updated ClawHealth panel workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d930c7ce567634a43a333b3f4e80535a7107f93febf14fe9e2aae745b9ce49dd"
+}

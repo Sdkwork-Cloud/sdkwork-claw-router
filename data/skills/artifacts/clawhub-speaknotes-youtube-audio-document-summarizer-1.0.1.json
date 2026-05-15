@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/speaknotes-youtube-audio-document-summarizer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.speaknotes_youtube_audio_document_summarizer",
+  "skill": {
+    "id": 27512,
+    "skillKey": "clawhub-speaknotes-youtube-audio-document-summarizer",
+    "name": "SpeakNotes: YouTube, Audio & Document Summaries"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "speaknotes-youtube-audio-document-summarizer",
+    "url": "https://clawhub.ai/skills/speaknotes-youtube-audio-document-summarizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/speaknotes-youtube-audio-document-summarizer-a8a8eac55a8590d9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when OpenClaw needs to call SpeakNotes API routes directly using an API key and generate transcripts/summaries from YouTube URLs, media files, or documen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jacklillie",
+      "userId": "publishers:jacklillie",
+      "displayName": "Jack Lillie",
+      "image": "https://avatars.githubusercontent.com/u/42320657?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 347,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772653580134,
+      "changelog": "1.0.1 - OpenClaw credential metadata + setup clarification\n\n- Added OpenClaw skill metadata declaring required env credential:\n  - `SPEAKNOTES_API_KEY`\n  - `primaryEnv: SPEAKNOTES_API_KEY`\n- Updated prerequisites to explicitly require storing the API key in OpenClaw secret/config.\n- Added an OpenClaw config example showing how to pass `apiKey` and `env` values.\n- Expanded setup phase guidance for missing keys:\n  - upgrade path via `/pricing/pro`\n  - key creation via `/settings/api-keys`\n  - save key as `SPEAKNOTES_API_KEY` before API calls.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5167969ad332eacc769a0c35d0318dcdb222bda1a101dcd7ebf31d92bd670bed"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/get-resource-element@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.get_resource_element",
+  "skill": {
+    "id": 67805,
+    "skillKey": "clawhub-get-resource-element",
+    "name": "Get Resource Element"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "get-resource-element",
+    "url": "https://clawhub.ai/skills/get-resource-element",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/get-resource-element-5032ab18f7b662cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据产品名称查询对应标准硬件资源评估要点，智能对比用户提供内容是否完整并返回缺失项或确认完整。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hellohushuai",
+      "userId": "s17afc6pzvsmvb48a4ypa98kg983qve2",
+      "displayName": "hellohushuai",
+      "image": "https://avatars.githubusercontent.com/u/40168227?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773977551267,
+      "changelog": "- Initial release of the get-resource-element skill.\n- Supports querying and comparing required hardware resource assessment elements for specified products.\n- Automatically extracts product name and provided elements, locates the standard reference file, and performs element completeness checks.\n- Returns \"ok\" if requirements are fully met; otherwise, lists missing assessment elements.\n- Supports CDSS 系统, VTE 系统, 病历质控系统, 单病种系统, and 智医助理 - 基层人工智能辅助诊疗系统.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:32540900feb66da0a27fcb046afbc5ecc63499e25ae9cad4ae2d12fc01be630b"
+}

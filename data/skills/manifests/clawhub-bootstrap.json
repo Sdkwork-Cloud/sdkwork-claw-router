@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19748,
+  "uuid": "skill-clawhub-bootstrap",
+  "skillKey": "clawhub-bootstrap",
+  "name": "Bootstrap",
+  "summary": "Generate a personalized SOUL.md through a warm, adaptive onboarding conversation. Trigger when the user wants to create, set up, or initialize their AI partn...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bootstrap",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bukas",
+      "features": [
+        "Generate a personalized SOUL.md through a warm, adaptive onboarding conversation",
+        "Trigger when the user wants to create, set up, or initialize their AI partn..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bootstrap@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5865669?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bootstrap",
+      "url": "https://clawhub.ai/skills/bootstrap"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bootstrap",
+    "url": "https://clawhub.ai/skills/bootstrap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bootstrap-333c04dd151a2a68.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bootstrap@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bootstrap-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cce7f2290de494344dd3711db4ba1a78cdf80757d132f06a01f601c1b8c366cc",
+      "artifactSizeBytes": 2426
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T03:12:32.930Z"
+}

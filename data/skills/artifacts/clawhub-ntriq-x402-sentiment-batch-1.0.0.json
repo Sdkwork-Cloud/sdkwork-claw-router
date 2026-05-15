@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ntriq-x402-sentiment-batch@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ntriq_x402_sentiment_batch",
+  "skill": {
+    "id": 54852,
+    "skillKey": "clawhub-ntriq-x402-sentiment-batch",
+    "name": "Ntriq X402 Sentiment Batch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ntriq-x402-sentiment-batch",
+    "url": "https://clawhub.ai/skills/ntriq-x402-sentiment-batch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ntriq-x402-sentiment-batch-b03fb22b35655deb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Batch sentiment and intent analysis for up to 500 texts. Flat $3.00 USDC via x402."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ntriq-gh",
+      "userId": "s170tfc8cnswm72pmy4aqs9yd5841wq0",
+      "displayName": "ntriq",
+      "image": "https://avatars.githubusercontent.com/u/215101248?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 122,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776470417664,
+      "changelog": "- Initial release of Sentiment Batch (x402).\n- Analyze sentiment, emotions, and intent for up to 500 text inputs in a single request.\n- Returns confidence scores, emotion breakdowns, and intent classifications for each input.\n- Flat $3.00 USDC payment via x402 protocol; 100% local inference on Mac Mini.\n- Easy RESTful API endpoint with sample requests and responses provided.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8069d4c913c303516184054f5fe383b3b2806d0748c63af34f1f4322d9f1358f"
+}

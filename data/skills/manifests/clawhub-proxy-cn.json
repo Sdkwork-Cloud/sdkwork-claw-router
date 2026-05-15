@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59190,
+  "uuid": "skill-clawhub-proxy-cn",
+  "skillKey": "clawhub-proxy-cn",
+  "name": "Proxy Cn",
+  "summary": "在中国大陆或受限网络环境下，为访问 GitHub、OpenAI、npm、PyPI、Docker Hub 等境外服务自动或按需注入 http_proxy / https_proxy / ALL_PROXY（本地 SOCKS5 + HTTP 端口）。 在用户需要执行 curl、git、npm、pip、docker p...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proxy_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clawkk",
+      "features": [
+        "在中国大陆或受限网络环境下，为访问 GitHub、OpenAI、npm、PyPI、Docker Hub 等境外服务自动或按需注入 http_proxy / https_proxy / ALL."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/proxy-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265748372?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "proxy-cn",
+      "url": "https://clawhub.ai/skills/proxy-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proxy-cn",
+    "url": "https://clawhub.ai/skills/proxy-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proxy-cn-099741a161dcedb0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/proxy-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-proxy-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c3c4114234b43fba093c020f32f5dfb80dbd88b4016ae5f09744a734be6a72c4",
+      "artifactSizeBytes": 2657
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T03:28:23.269Z"
+}

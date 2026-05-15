@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63170,
+  "uuid": "skill-clawhub-ask-ai-1-2",
+  "skillKey": "clawhub-ask-ai-1-2",
+  "name": "ask-ai1.2",
+  "summary": "遇难题时自动调用豆包/千问/Kimi/DeepSeek AI，按优先级轮询获取具体解决方案并执行方案。",
+  "version": "1.2.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ask_ai_1_2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "danielwang20150225-source",
+      "features": [
+        "遇难题时自动调用豆包/千问/Kimi/DeepSeek AI，按优先级轮询获取具体解决方案并执行方案。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ask-ai-1-2@1.2.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226548993?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ask-ai-1-2",
+      "url": "https://clawhub.ai/skills/ask-ai-1-2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ask-ai-1-2",
+    "url": "https://clawhub.ai/skills/ask-ai-1-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ask-ai-1-2-a880a66ce65cb0f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ask-ai-1-2@1.2.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-ask-ai-1-2-1.2.4.json",
+      "version": "1.2.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:808e3eb8a9f00e40a7ebcff1d3a2ebb46be98bd4f84b763e20d6caf5e692e726",
+      "artifactSizeBytes": 2565
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T01:16:12.761Z"
+}

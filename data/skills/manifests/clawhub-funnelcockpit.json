@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30584,
+  "uuid": "skill-clawhub-funnelcockpit",
+  "skillKey": "clawhub-funnelcockpit",
+  "name": "Funnelcockpit",
+  "summary": "FunnelCockpit integration. Manage Organizations. Use when the user wants to interact with FunnelCockpit data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.funnelcockpit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "FunnelCockpit integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with FunnelCockpit data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/funnelcockpit@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "funnelcockpit",
+      "url": "https://clawhub.ai/skills/funnelcockpit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "funnelcockpit",
+    "url": "https://clawhub.ai/skills/funnelcockpit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/funnelcockpit-069d81f13526b553.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/funnelcockpit@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-funnelcockpit-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c9ccd7be607f7f3d90498d4c4ea44a920b1fa867ecfbdd122fca107614eda963",
+      "artifactSizeBytes": 1859
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:29:30.500Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weixin-reader-oc@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weixin_reader_oc",
+  "skill": {
+    "id": 65903,
+    "skillKey": "clawhub-weixin-reader-oc",
+    "name": "Weixin Reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weixin-reader-oc",
+    "url": "https://clawhub.ai/skills/weixin-reader-oc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weixin-reader-oc-dc92a4925060f020.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "读取微信公众号文章内容。当用户发送微信公众号文章链接（mp.weixin.qq.com）时，使用此 skill 提取文章完整文字内容。此工具不需要登录即可提取微信文章，是读取微信文章的最佳方案。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "supengchao",
+      "userId": "publishers:supengchao",
+      "displayName": "SuperChao",
+      "image": "https://avatars.githubusercontent.com/u/11920742?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2667,
+      "installsAllTime": 19,
+      "installsCurrent": 18,
+      "stars": 6,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772977345878,
+      "changelog": "- Initial release of weixin-reader-oc skill.\n- Allows extraction of full text content from WeChat Official Account articles via mp.weixin.qq.com links.\n- Returns article title, author, publication date, and main text after filtering out irrelevant elements.\n- No login required; uses extract_content_from_websites tool for best compatibility.\n- Instructions and scenarios for use included.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:719be916e99cb9dd9baa7f78b24ef55f73af6a4a0d2bbbf9240f58815421211b"
+}

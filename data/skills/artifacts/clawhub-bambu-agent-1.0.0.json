@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bambu-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bambu_agent",
+  "skill": {
+    "id": 19462,
+    "skillKey": "clawhub-bambu-agent",
+    "name": "bambu-agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bambu-agent",
+    "url": "https://clawhub.ai/skills/bambu-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bambu-agent-29d275db551266c8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor and manage Bambu Lab 3D printers in your local network with real-time status, error decoding, and a web dashboard interface."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhouzia",
+      "userId": "publishers:zhouzia",
+      "displayName": "Zhouzia",
+      "image": "https://avatars.githubusercontent.com/u/89388457?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 491,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773426925018,
+      "changelog": "Initial release of Bambu Farm Agent skill:\n\n- Enables real-time monitoring of Bambu Lab printer clusters within a local network.\n- Parses and reports HMS error codes, provides web-based visual monitoring access.\n- Agent can fetch farm status, report consumption materials, and provide hourly or event-based voice summaries.\n- Response logic defined for common user requests, including error reporting and print progress queries.\n- Ensures privacy by referencing printer nicknames instead of serial numbers; local network security emphasized.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b30fc6476f26b4c082c40e782f53b1cdec8c95cdf59bafcbcd09a8a4e41bf4ab"
+}

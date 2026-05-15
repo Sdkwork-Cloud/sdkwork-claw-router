@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72543,
+  "uuid": "skill-clawhub-distribution",
+  "skillKey": "clawhub-distribution",
+  "name": "分销",
+  "summary": "提供渠道分销的可落地指南与SOP。在开展渠道分销相关工作时调用。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.distribution",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codenova58",
+      "features": [
+        "提供渠道分销的可落地指南与SOP。在开展渠道分销相关工作时调用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/distribution@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191358186?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "distribution",
+      "url": "https://clawhub.ai/skills/distribution"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "distribution",
+    "url": "https://clawhub.ai/skills/distribution",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/distribution-93354845030274cd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/distribution@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-distribution-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:49d91b28790a877f3e0114a9145b693b266f8d416c977a62074c91495f8d2435",
+      "artifactSizeBytes": 2150
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T23:53:20.047Z"
+}

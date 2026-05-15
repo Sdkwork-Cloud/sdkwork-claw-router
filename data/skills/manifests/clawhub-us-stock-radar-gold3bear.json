@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65190,
+  "uuid": "skill-clawhub-us-stock-radar-gold3bear",
+  "skillKey": "clawhub-us-stock-radar-gold3bear",
+  "name": "Us Stock Radar Gold3bear",
+  "summary": "美股行情与舆情监控工具。当用户询问「美股怎么样」「纳指」「标普」「道指」「美股大盘」「今晚美股」「US股」「美股行情」「美股期货」「NQ」「ES」时使用。支持Yahoo Finance获取实时行情，以及Google News RSS和X/Twitter舆情监控。📢微信公众号：PM熊叔（打造一人公司的投研团队）",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.us_stock_radar_gold3bear",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bear Xiong",
+      "features": [
+        "美股行情与舆情监控工具。当用户询问「美股怎么样」「纳指」「标普」「道指」「美股大盘」「今晚美股」「US股」「美股行情」「美股期货」「NQ」「ES」时使用。支持Yahoo Finance获取实."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/us-stock-radar-gold3bear@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5952306?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "us-stock-radar-gold3bear",
+      "url": "https://clawhub.ai/skills/us-stock-radar-gold3bear"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "us-stock-radar-gold3bear",
+    "url": "https://clawhub.ai/skills/us-stock-radar-gold3bear",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/us-stock-radar-gold3bear-c38c0ce8d655b5da.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/us-stock-radar-gold3bear@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-us-stock-radar-gold3bear-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bbbc9a32214375f867e488a72abbcac8b25cc5566b99776db207a310395fcc90",
+      "artifactSizeBytes": 2347
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T02:32:29.191Z"
+}

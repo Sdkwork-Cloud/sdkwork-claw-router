@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54233,
+  "uuid": "skill-clawhub-cursor-agent-openclaw",
+  "skillKey": "clawhub-cursor-agent-openclaw",
+  "name": "Cursor Agent for OpenClaw",
+  "summary": "Run Cursor Agent CLI for coding tasks — writing, editing, refactoring, reviewing, or planning code — without spending OpenClaw API credits. Use when the user...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cursor_agent_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Luis Albinati",
+      "features": [
+        "Run Cursor Agent CLI for coding tasks — writing, editing, refactoring, reviewing, or planning c.",
+        "Use when the user..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cursor-agent-openclaw@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11786063?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cursor-agent-openclaw",
+      "url": "https://clawhub.ai/skills/cursor-agent-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cursor-agent-openclaw",
+    "url": "https://clawhub.ai/skills/cursor-agent-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cursor-agent-openclaw-3bd34dff1ffe83e1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cursor-agent-openclaw@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-cursor-agent-openclaw-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e86107777726c91fc3164b125ebf34ff2afece630dfd60175c7e6d1c3886c21b",
+      "artifactSizeBytes": 2108
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T19:21:38.715Z"
+}

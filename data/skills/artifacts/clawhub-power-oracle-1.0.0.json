@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/power-oracle@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.power_oracle",
+  "skill": {
+    "id": 43875,
+    "skillKey": "clawhub-power-oracle",
+    "name": "Power Oracle"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "power-oracle",
+    "url": "https://clawhub.ai/skills/power-oracle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/power-oracle-646938ace31db0fb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user wants Power Oracle to compute workout work or power from structured or shorthand workout details. Do not use for coaching or general fitnes..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "workcapacity-io",
+      "userId": "s173tym0qssbmbyjxf5gafxsn183t82z",
+      "displayName": "Work Capacity",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775868197587,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:772e3f0bb28ba7f26dbf518c4644a484401c7bef7f5c622520a5d602d1c53169"
+}

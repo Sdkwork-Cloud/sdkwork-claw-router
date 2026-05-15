@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/virtuoso-skill@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.virtuoso_skill",
+  "skill": {
+    "id": 61317,
+    "skillKey": "clawhub-virtuoso-skill",
+    "name": "Virtuoso Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "virtuoso-skill",
+    "url": "https://clawhub.ai/skills/virtuoso-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/virtuoso-skill-f4f458d9d6dc2bd0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cadence Virtuoso Skill语言开发辅助工具，包含API查询、代码校验、智能补全功能。使用场景：(1) 编写/调试Virtuoso Skill代码；(2) 检查API调用是否合法；(3) 查询Skill函数的用法和参数；(4) 避免API幻觉和未定义函数调用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "keenone",
+      "userId": "s174dgyt8x8fwbj5v9yrb90jpn84vsap",
+      "displayName": "keenone",
+      "image": "https://avatars.githubusercontent.com/u/11455610?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 403,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1773740845108,
+      "changelog": "Fix: correct database path handling for both tools, support gzipped full database, remove large temp file",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3b00d529e75d514a528416e42d6c409c13f29d6820563f317ab8ac42a6a08ea9"
+}

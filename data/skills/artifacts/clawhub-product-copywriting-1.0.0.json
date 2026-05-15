@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/product-copywriting@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.product_copywriting",
+  "skill": {
+    "id": 57108,
+    "skillKey": "clawhub-product-copywriting",
+    "name": "产品文案编写 skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "product-copywriting",
+    "url": "https://clawhub.ai/skills/product-copywriting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/product-copywriting-cd172239d4af6d1e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reviews and rewrites product UI copy (error messages, buttons, forms, dialogs) to be user-friendly, actionable, and concise. Use when writing or reviewing us..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qmisky",
+      "userId": "s17dzj579v679et2393td4j2r583m5ee",
+      "displayName": "qmisky",
+      "image": "https://avatars.githubusercontent.com/u/12380475?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 411,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774511648300,
+      "changelog": "v1.0.0                                                                                                                                                                                                \n                                                                                                                                                                                                        \n  首次发布产品文案 Skill。                                                                                                                                                                              \n                                                                                                                                                                                                        \n  覆盖 10 个 UI 文案场景：错误/异常提示、表单/输入项、按钮/行动点、弹窗/对话框、空状态、加载/等待状态、成功反馈、权限请求、破坏性操作确认。                                                             \n                                                                                                                                                                                                        \n  包含 5 条核心原则（说人话、现状+下一步、不拒绝给出路、简洁、格式规范），每条配有正反示例，附最终 5 问自检清单。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6cc64d831bd2e40bec2eb71cbb3bbfb3452b3986e6cef00a55254e692c7634e1"
+}

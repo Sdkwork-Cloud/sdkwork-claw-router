@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/captcha-relay@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.captcha_relay",
+  "skill": {
+    "id": 15716,
+    "skillKey": "clawhub-captcha-relay",
+    "name": "Captcha Relay"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "captcha-relay",
+    "url": "https://clawhub.ai/skills/captcha-relay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/captcha-relay-3880ad5d37bea1c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Human-in-the-loop CAPTCHA solving with two modes: screenshot (default, zero infrastructure) and token relay (requires network access). Screenshot mode captur..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xclanky",
+      "userId": "publishers:0xclanky",
+      "displayName": "0xclanky",
+      "image": "https://avatars.githubusercontent.com/u/261785288?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 941,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1771894394530,
+      "changelog": "Initial publish — human-in-the-loop CAPTCHA solving via screenshot or token relay",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:263d2ca3fce9409bf1785752cf4c941673008c231349791fc6786db3c7e78d02"
+}

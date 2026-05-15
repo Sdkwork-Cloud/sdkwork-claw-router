@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15384,
+  "uuid": "skill-clawhub-task-review-workflow",
+  "skillKey": "clawhub-task-review-workflow",
+  "name": "Task Review Workflow",
+  "summary": "Standard PR review and merge workflow for task-driven development. Use when reviewing a programmer agent PR linked to a task, deciding merge vs change reques...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_review_workflow",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Md. Mushraful Hoque Anik",
+      "features": [
+        "Standard PR review and merge workflow for task-driven development",
+        "Use when reviewing a programmer agent PR linked to a task, deciding merge vs change reques..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/task-review-workflow@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1005616?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "task-review-workflow",
+      "url": "https://clawhub.ai/skills/task-review-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-review-workflow",
+    "url": "https://clawhub.ai/skills/task-review-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-review-workflow-058f89348723183a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/task-review-workflow@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-task-review-workflow-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:227d9413b02cbb7d79d7359b6a2fd1c4d61e3c6f8f9e97b5d0824f6879fcb6c3",
+      "artifactSizeBytes": 1970
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T14:48:13.793Z"
+}

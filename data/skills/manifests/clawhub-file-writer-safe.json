@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19722,
+  "uuid": "skill-clawhub-file-writer-safe",
+  "skillKey": "clawhub-file-writer-safe",
+  "name": "File Writer Safe",
+  "summary": "Safely write or update large files over 5000 bytes by reading, incrementally editing small sections, verifying after each step, and using backups for recovery.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_writer_safe",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "YuKaiXu",
+      "features": [
+        "Safely write or update large files over 5000 bytes by reading, incrementally editing small sect."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/file-writer-safe@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30675834?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "file-writer-safe",
+      "url": "https://clawhub.ai/skills/file-writer-safe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-writer-safe",
+    "url": "https://clawhub.ai/skills/file-writer-safe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-writer-safe-363a9fb082f7a700.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/file-writer-safe@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-file-writer-safe-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:452b4d6888a0a3a7ff80c9748993d159846e76d659aefb1c5627aa3d60fb0fbb",
+      "artifactSizeBytes": 1990
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T05:18:42.163Z"
+}

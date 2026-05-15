@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11075,
+  "uuid": "skill-clawhub-grokipedia",
+  "skillKey": "clawhub-grokipedia",
+  "name": "Grokipedia",
+  "summary": "Search and fetch articles from Grokipedia.com — xAI's AI-generated encyclopedia (like Wikipedia but written by Grok). Use when asked about topics that might have a Grokipedia article, or when the user explicitly mentions Grokipedia.",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grokipedia",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kirillleventcov",
+      "features": [
+        "Search and fetch articles from Grokipedia.com — xAI's AI-generated encyclopedia (like Wikipedia.",
+        "Use when asked about topics that might have a Grokipedia article, or when the user explicitly m."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/grokipedia@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/101816126?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "grokipedia",
+      "url": "https://clawhub.ai/skills/grokipedia"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grokipedia",
+    "url": "https://clawhub.ai/skills/grokipedia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grokipedia-946fbdbf2bd725c9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/grokipedia@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-grokipedia-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e1fa72001bc0dea00eda08d779f3667d776ec26580b97bc5e4a9a189a6126b8c",
+      "artifactSizeBytes": 2446
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T18:41:38.996Z"
+}

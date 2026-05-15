@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32454,
+  "uuid": "skill-clawhub-whaly",
+  "skillKey": "clawhub-whaly",
+  "name": "Whaly",
+  "summary": "Whaly integration. Manage data, records, and automate workflows. Use when the user wants to interact with Whaly data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whaly",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Whaly integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Whaly data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/whaly@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "whaly",
+      "url": "https://clawhub.ai/skills/whaly"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whaly",
+    "url": "https://clawhub.ai/skills/whaly",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whaly-62ffdd66719e4f02.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/whaly@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-whaly-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f3c816bfc3a20e6b6bc43eab3f65dfa9001013d8e05823035995a4353bff5418",
+      "artifactSizeBytes": 1803
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:01:40.270Z"
+}

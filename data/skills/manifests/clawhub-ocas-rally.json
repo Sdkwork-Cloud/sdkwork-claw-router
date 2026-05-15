@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40866,
+  "uuid": "skill-clawhub-ocas-rally",
+  "skillKey": "clawhub-ocas-rally",
+  "name": "Rally",
+  "summary": "Research, score, and plan long-only portfolio allocations and trades for public markets with risk constraints and explainable decisions.",
+  "version": "3.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ocas_rally",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Indigo Karasu",
+      "features": [
+        "Research, score, and plan long-only portfolio allocations and trades for public markets with ri."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ocas-rally@3.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265148029?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ocas-rally",
+      "url": "https://clawhub.ai/skills/ocas-rally"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ocas-rally",
+    "url": "https://clawhub.ai/skills/ocas-rally",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ocas-rally-ef63ae1e43b729ad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ocas-rally@3.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ocas-rally-3.0.1.json",
+      "version": "3.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:32d58b1c3d72f52dfb16ede533dbf9395ebfe85b4451492807c0dd1421f60f0e",
+      "artifactSizeBytes": 2364
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T07:39:12.896Z"
+}

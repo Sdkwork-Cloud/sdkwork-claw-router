@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58367,
+  "uuid": "skill-clawhub-chatbot-engine",
+  "skillKey": "clawhub-chatbot-engine",
+  "name": "Chatbot Engine",
+  "summary": "智能对话引擎 - 多轮对话与意图识别 | Chatbot Engine - Multi-turn dialogue and intent recognition",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chatbot_engine",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lv Lancer",
+      "features": [
+        "多轮对话与意图识别 | Chatbot Engine",
+        "Multi-turn dialogue and intent recognition"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chatbot-engine@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29176686?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chatbot-engine",
+      "url": "https://clawhub.ai/skills/chatbot-engine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chatbot-engine",
+    "url": "https://clawhub.ai/skills/chatbot-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chatbot-engine-cb0490aaed687ae9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chatbot-engine@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chatbot-engine-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d96daa45453345bd735679c29df772ba9010191be942909eda9dc5532dddae44",
+      "artifactSizeBytes": 1887
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T13:46:59.542Z"
+}

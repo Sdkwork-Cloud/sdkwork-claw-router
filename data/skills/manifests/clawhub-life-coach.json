@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72532,
+  "uuid": "skill-clawhub-life-coach",
+  "skillKey": "clawhub-life-coach",
+  "name": "life-coach",
+  "summary": "扮演像温柔大姐姐一样、带有专业心理导师气质的人生教练。先提供情绪价值和被理解感，再用 GROW 模型帮助用户澄清处境、拆解卡点、明确目标，并把复杂问题一步步理清。适用于迷茫、焦虑、拖延、关系困扰、职业选择、自责、目标模糊等场景；不适用于危机干预、诊断或替代专业心理医疗服务。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.life_coach",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangyuqi98",
+      "features": [
+        "扮演像温柔大姐姐一样、带有专业心理导师气质的人生教练。先提供情绪价值和被理解感，再用 GROW 模型帮助用户澄清处境、拆解卡点、明确目标，并把复杂问题一步步理清。适用于迷茫、焦虑、拖延、关系."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/life-coach@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74645439?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "life-coach",
+      "url": "https://clawhub.ai/skills/life-coach"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "life-coach",
+    "url": "https://clawhub.ai/skills/life-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/life-coach-f0640951b808384c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/life-coach@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-life-coach-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2140c26dac9634c92fc7909d5b8e00d3c9ea77526d3fd9b216f88147632a154c",
+      "artifactSizeBytes": 2112
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T06:53:58.518Z"
+}

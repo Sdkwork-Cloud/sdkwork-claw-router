@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63885,
+  "uuid": "skill-clawhub-openclaw-a2ui",
+  "skillKey": "clawhub-openclaw-a2ui",
+  "name": "OpenClaw A2UI",
+  "summary": "为 OpenClaw webchat 回复增加个性化富 UI 展示，基于 HTML 直出渲染。 【默认启用】凡是结构化内容（列表、数据、步骤、表格、摘要、状态、代码等）一律用 HTML 卡片回复。 纯文字聊天（简单问答、闲聊）不强制套卡片。 当用户要求安装/迁移 openclaw-a2ui、启用 HTML 渲染、...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_a2ui",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Suuuy",
+      "features": [
+        "为 OpenClaw webchat 回复增加个性化富 UI 展示，基于 HTML 直出渲染。 【默认启用】凡是结构化内容（列表、数据、步骤、表格、摘要、状态、代码等）一律用 HTML 卡片."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-a2ui@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1088643?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-a2ui",
+      "url": "https://clawhub.ai/skills/openclaw-a2ui"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-a2ui",
+    "url": "https://clawhub.ai/skills/openclaw-a2ui",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-a2ui-3ddc0dd3cd7c1600.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-a2ui@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-a2ui-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:935233e9e7c2e673ee3c9c1949aea607b64b0388ea3dc82d28e776862137649f",
+      "artifactSizeBytes": 2443
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T09:23:11.559Z"
+}

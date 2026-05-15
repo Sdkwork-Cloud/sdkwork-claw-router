@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mh-healthcheck@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mh_healthcheck",
+  "skill": {
+    "id": 20769,
+    "skillKey": "clawhub-mh-healthcheck",
+    "name": "MH healthcheck"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mh-healthcheck",
+    "url": "https://clawhub.ai/skills/mh-healthcheck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mh-healthcheck-f78df7f3f3bf5536.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Host security hardening and risk-tolerance configuration for OpenClaw deployments. Use when a user asks for security audits, firewall/SSH/update hardening, r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mohdalhashemi98-hue",
+      "userId": "publishers:mohdalhashemi98-hue",
+      "displayName": "mohdalhashemi98-hue",
+      "image": "https://avatars.githubusercontent.com/u/241047511?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 539,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771957087126,
+      "changelog": "Priority upload batch",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8ccc92cbdc20a9f227e2647281a3f0de69fccc07bf8de1bbfb9a06852e364f23"
+}

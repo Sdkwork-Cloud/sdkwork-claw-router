@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11175,
+  "uuid": "skill-clawhub-drawthings",
+  "skillKey": "clawhub-drawthings",
+  "name": "DrawThings Image Generation",
+  "summary": "Generate images with DrawThings (Stable Diffusion) via API. Use when creating images from text prompts, running image generation workflows, or batch generating images. DrawThings runs locally on Mac with MLX/CoreML acceleration.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.drawthings",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dustinparsons",
+      "features": [
+        "Generate images with DrawThings (Stable Diffusion) via API",
+        "Use when creating images from text prompts, running image generation workflows, or batch genera.",
+        "DrawThings runs locally on Mac with MLX/CoreML acceleration."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/drawthings@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5814803?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "drawthings",
+      "url": "https://clawhub.ai/skills/drawthings"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "drawthings",
+    "url": "https://clawhub.ai/skills/drawthings",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/drawthings-1adda14ee633cb9b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/drawthings@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-drawthings-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9016e4eb33f0a4118a3eb8909d206f7f5167332371440b815c205593d145c071",
+      "artifactSizeBytes": 2048
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T04:23:07.509Z"
+}

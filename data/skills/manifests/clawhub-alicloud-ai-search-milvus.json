@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14376,
+  "uuid": "skill-clawhub-alicloud-ai-search-milvus",
+  "skillKey": "clawhub-alicloud-ai-search-milvus",
+  "name": "Alicloud Ai Search Milvus",
+  "summary": "Use AliCloud Milvus (serverless) with PyMilvus to create collections, insert vectors, and run filtered similarity search. Optimized for Claude Code/Codex vec...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alicloud_ai_search_milvus",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cinience",
+      "features": [
+        "Use AliCloud Milvus (serverless) with PyMilvus to create collections, insert vectors, and run f.",
+        "Optimized for Claude Code/Codex vec..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alicloud-ai-search-milvus@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/557426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alicloud-ai-search-milvus",
+      "url": "https://clawhub.ai/skills/alicloud-ai-search-milvus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alicloud-ai-search-milvus",
+    "url": "https://clawhub.ai/skills/alicloud-ai-search-milvus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alicloud-ai-search-milvus-55be3e393e31ed78.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alicloud-ai-search-milvus@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-alicloud-ai-search-milvus-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:838f3b973c5609afa560f2aa9179dd2b5c71d36403f90ca5a2a574a4a00f8c44",
+      "artifactSizeBytes": 1994
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T09:38:00.019Z"
+}

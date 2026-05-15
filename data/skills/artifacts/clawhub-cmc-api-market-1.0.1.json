@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cmc-api-market@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cmc_api_market",
+  "skill": {
+    "id": 16178,
+    "skillKey": "clawhub-cmc-api-market",
+    "name": "CoinMarketCap Market Overview APIs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cmc-api-market",
+    "url": "https://clawhub.ai/skills/cmc-api-market",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cmc-api-market-8393f48518f5cfb7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "API reference for CoinMarketCap market-wide endpoints including global metrics, fear/greed, indices, trending topics, and charts. Use this skill whenever the..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bryan-cmc",
+      "userId": "s17bca3zner64rbfxfnh3vp5s183nv6n",
+      "displayName": "CoinMarketCap",
+      "image": "https://avatars.githubusercontent.com/u/158990050?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 708,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772469562983,
+      "changelog": "- Added homepage and source links to the skill metadata for easier access to documentation and project repository.\n- No other changes to functionality or API documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:27ce64ee1a27edd6db41ed9f1b30a417e80d5341888b1f27145150e3a171d7ff"
+}

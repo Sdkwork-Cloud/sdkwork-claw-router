@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34785,
+  "uuid": "skill-clawhub-tutor-lms",
+  "skillKey": "clawhub-tutor-lms",
+  "name": "Tutor Lms",
+  "summary": "Tutor LMS integration. Manage data, records, and automate workflows. Use when the user wants to interact with Tutor LMS data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tutor_lms",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Tutor LMS integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Tutor LMS data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tutor-lms@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tutor-lms",
+      "url": "https://clawhub.ai/skills/tutor-lms"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tutor-lms",
+    "url": "https://clawhub.ai/skills/tutor-lms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tutor-lms-35817eceabba3774.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tutor-lms@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-tutor-lms-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5d281d059c9e2fa80d4c9be1fe1903a029a9a1df558c49fe38cb5f8969b2b7fc",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:55:54.510Z"
+}

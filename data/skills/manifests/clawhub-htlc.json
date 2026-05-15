@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18911,
+  "uuid": "skill-clawhub-htlc",
+  "skillKey": "clawhub-htlc",
+  "name": "Hash Time Locked Contract",
+  "summary": "Enables trustless atomic swaps and escrow for inscriptions and NFTs on EVM chains using Hash Time Locked Contracts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.htlc",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "web4agent",
+      "features": [
+        "Enables trustless atomic swaps and escrow for inscriptions and NFTs on EVM chains using Hash Ti."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/htlc@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256044405?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "htlc",
+      "url": "https://clawhub.ai/skills/htlc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "htlc",
+    "url": "https://clawhub.ai/skills/htlc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/htlc-ef8c49cab8ca567b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/htlc@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-htlc-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:add19273a5afb23874e85beb823ec876425b197a3a1ed3c2e841bafe080da65d",
+      "artifactSizeBytes": 2209
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T11:04:48.172Z"
+}

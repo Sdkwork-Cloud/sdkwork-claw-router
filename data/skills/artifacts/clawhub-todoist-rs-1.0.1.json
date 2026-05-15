@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/todoist-rs@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.todoist_rs",
+  "skill": {
+    "id": 10430,
+    "skillKey": "clawhub-todoist-rs",
+    "name": "todoist latest"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "todoist-rs",
+    "url": "https://clawhub.ai/skills/todoist-rs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/todoist-rs-53ef57bf83662e09.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Todoist tasks. Use when the user mentions \"todoist\", \"my tasks\", \"task list\", \"add a task\", \"complete task\", or wants to interact with their Todoist account."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luoandorder",
+      "userId": "publishers:luoandorder",
+      "displayName": "Kevin Luo",
+      "image": "https://avatars.githubusercontent.com/u/205654?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2287,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 4,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769552671529,
+      "changelog": "- Added `homepage` field with the project GitHub link.\n- Included detailed skill metadata for installation and requirements.\n- No changes to functionality or usage instructions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:67fb7decfdd23906fd644717f3a88097e22c53b36b789f3eaaaa90327c7ba241"
+}

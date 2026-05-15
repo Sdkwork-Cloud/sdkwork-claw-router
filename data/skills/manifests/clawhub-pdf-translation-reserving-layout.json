@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42863,
+  "uuid": "skill-clawhub-pdf-translation-reserving-layout",
+  "skillKey": "clawhub-pdf-translation-reserving-layout",
+  "name": "PDF Translation Reserving Exact Same Layout",
+  "summary": "Translate PDFs locally by extracting page text and using the agent's own language capability. Use when Codex needs a repeatable workflow for born-digital or...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_translation_reserving_layout",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "getlinnk",
+      "features": [
+        "Translate PDFs locally by extracting page text and using the agent's own language capability",
+        "Use when Codex needs a repeatable workflow for born-digital or..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf-translation-reserving-layout@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/161434432?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf-translation-reserving-layout",
+      "url": "https://clawhub.ai/skills/pdf-translation-reserving-layout"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-translation-reserving-layout",
+    "url": "https://clawhub.ai/skills/pdf-translation-reserving-layout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-translation-reserving-layout-0a4ba83b94f517b1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf-translation-reserving-layout@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf-translation-reserving-layout-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f14c15891af15ac3ea0759248ebdb2c4b863217898f89346e2dfd079cd9b56d0",
+      "artifactSizeBytes": 2200
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T15:18:21.497Z"
+}

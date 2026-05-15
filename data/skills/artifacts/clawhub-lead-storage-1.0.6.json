@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lead-storage@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lead_storage",
+  "skill": {
+    "id": 17212,
+    "skillKey": "clawhub-lead-storage",
+    "name": "Lead Storage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lead-storage",
+    "url": "https://clawhub.ai/skills/lead-storage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lead-storage-d29dcee5fce7a7a2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Persist validated lead objects through write-only storage operations after Supervisor provides explicit confirmation. Use when users ask to save approved lea..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vishalgojha",
+      "userId": "s1734m1f9fbyb2afev5yeccvnx84nrvt",
+      "displayName": "Vishal",
+      "image": "https://avatars.githubusercontent.com/u/254436161?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 774,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1771814816785,
+      "changelog": "Align broker-group contracts: dataset_mode, record_type, and expanded summary/prioritization schemas.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:097139ce788d2e6a8fe9d4af18c27435a33b90501dd30b50619b2f5256d02c6a"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-doc-design@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_doc_design",
+  "skill": {
+    "id": 73604,
+    "skillKey": "clawhub-skill-doc-design",
+    "name": "软件设计文档生成"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-doc-design",
+    "url": "https://clawhub.ai/skills/skill-doc-design",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-doc-design-1a9954bd4e70ad93.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据上传需求文档自动生成详细的软件设计文档，包含架构、模块、接口及通信协议等内容，且关键步骤需用户确认。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zlq54321",
+      "userId": "publishers:zlq54321",
+      "displayName": "Helpu",
+      "image": "https://avatars.githubusercontent.com/u/34448316?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 277,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773735679910,
+      "changelog": "Skill version 1.0.0 for “skill-doc-design” released.\n\n- Automates software design document generation based on uploaded specification files.\n- Guides user through each key step: file selection, folder naming, technical details, document scope, and structure confirmation.\n- Extracts and summarizes project details; always requires user confirmation before proceeding.\n- Builds organized project directory and design docs, sends creation progress every minute.\n- Special handling for unsupported formats, file analysis, and user inactivity reminders.\n- Notifies user upon completion with file locations and contents.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e3a6b86c038a8c9c26646ea54a6f83634ab24d005fd07453c98a05b6b561799f"
+}

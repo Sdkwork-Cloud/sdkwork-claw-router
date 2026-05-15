@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27199,
+  "uuid": "skill-clawhub-jeftest",
+  "skillKey": "clawhub-jeftest",
+  "name": "Jeftest",
+  "summary": "Connect to 100+ APIs (Google Workspace, Microsoft 365, GitHub, Notion, Slack, Airtable, HubSpot, etc.) with managed OAuth. Use this skill when users want to...",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jeftest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hjcloud",
+      "features": [
+        "Connect to 100+ APIs (Google Workspace, Microsoft 365, GitHub, Notion, Slack, Airtable, HubSpot.",
+        "Use this skill when users want to..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jeftest@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48515051?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jeftest",
+      "url": "https://clawhub.ai/skills/jeftest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jeftest",
+    "url": "https://clawhub.ai/skills/jeftest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jeftest-1b9afb41000ffc0d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jeftest@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-jeftest-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5554f284cc7e1aec9d43fc8e8525476baf496591eee4043942d8ef097f34fb44",
+      "artifactSizeBytes": 2463
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T10:09:41.091Z"
+}

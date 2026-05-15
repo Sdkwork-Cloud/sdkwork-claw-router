@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bosszhipin-automation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bosszhipin_automation",
+  "skill": {
+    "id": 64682,
+    "skillKey": "clawhub-bosszhipin-automation",
+    "name": "boss直聘自动化（无GUI）"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bosszhipin-automation",
+    "url": "https://clawhub.ai/skills/bosszhipin-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bosszhipin-automation-0083e2d49ec54977.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于 pyautogui 实现 Boss 直聘职位浏览、OCR 分析、技术匹配及自动生成并发送沟通话术的无GUI全自动化技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tinkerjueberg",
+      "userId": "s170hhyjpb2dt1xq7jgyrj1rs583pscy",
+      "displayName": "TinkerJueBerg",
+      "image": "https://avatars.githubusercontent.com/u/19902041?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777393405870,
+      "changelog": "Bosszhipin-automation v1.0.0\n\n- Initial release providing full desktop automation for Boss 直聘职位沟通流程.\n- Automates browsing, OCR analysis, technical stack matching, chat phrase generation, and messaging.\n- Features adaptive screen resolution, coordinate scaling, and human-like random delays.\n- Includes configurable matching rules, chat templates, and coordinate settings.\n- Offers both automated workflow and CLI command support for fine-grained controls.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0e06ce239f47ffded5ba002cf0bb31c093661bfefd7d26946316714b0ef3e083"
+}

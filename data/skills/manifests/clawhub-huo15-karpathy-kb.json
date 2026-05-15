@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60065,
+  "uuid": "skill-clawhub-huo15-karpathy-kb",
+  "skillKey": "clawhub-huo15-karpathy-kb",
+  "name": "火一五知识库技能(Karpathy)",
+  "summary": "【青岛火一五信息科技有限公司】基于 Karpathy LLM Knowledge Base 三层架构（Data Ingest → Compilation → Active Maintenance）的知识捕获与管理技能。将知识点写入 memory/ 目录并同步到公司 Odoo 知识库。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huo15_karpathy_kb",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Job Zhao",
+      "features": [
+        "【青岛火一五信息科技有限公司】基于 Karpathy LLM Knowledge Base 三层架构（Data Ingest → Compilation → Active Maintenan."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/huo15-karpathy-kb@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13188275?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "huo15-karpathy-kb",
+      "url": "https://clawhub.ai/skills/huo15-karpathy-kb"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huo15-karpathy-kb",
+    "url": "https://clawhub.ai/skills/huo15-karpathy-kb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huo15-karpathy-kb-2aa757b047668d7d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/huo15-karpathy-kb@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-huo15-karpathy-kb-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b3e77a9be5ea9b18645d4ed61345455cc5c1411817aa6bdc2bcbabd59432ea0c",
+      "artifactSizeBytes": 2434
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T02:43:55.888Z"
+}

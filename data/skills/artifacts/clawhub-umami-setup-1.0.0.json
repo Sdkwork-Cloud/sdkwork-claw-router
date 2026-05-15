@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/umami-setup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.umami_setup",
+  "skill": {
+    "id": 20757,
+    "skillKey": "clawhub-umami-setup",
+    "name": "umami-setup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "umami-setup",
+    "url": "https://clawhub.ai/skills/umami-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/umami-setup-a71d8625b3839f65.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Add Umami self-hosted analytics to any website with adblocker-proof proxy. Covers: creating the website in Umami, setting up a same-domain proxy (Next.js, As..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "superworldsavior",
+      "userId": "s1780dfmwpjesx1ngmtvpg2bds858vsj",
+      "displayName": "Erwan Lee Pesle",
+      "image": "https://avatars.githubusercontent.com/u/20945750?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 539,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772158139756,
+      "changelog": "Initial: Umami self-hosted analytics setup with adblocker-proof proxy",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7162b4171faba174ab36069e0d31bf734b98c111c29d4dbf9bea69dc7e75905d"
+}

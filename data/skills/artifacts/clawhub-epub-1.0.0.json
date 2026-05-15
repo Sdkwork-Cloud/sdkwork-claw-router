@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/epub@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.epub",
+  "skill": {
+    "id": 20053,
+    "skillKey": "clawhub-epub",
+    "name": "EPUB reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "epub",
+    "url": "https://clawhub.ai/skills/epub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/epub-83e895b8f0af41ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill whenever the user wants to read, parse, extract content from, modify, or otherwise process an .epub file. Triggers include any mention of \".ep..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gaojizhou",
+      "userId": "publishers:gaojizhou",
+      "displayName": "gaojizhou",
+      "image": "https://avatars.githubusercontent.com/u/58933313?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 546,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772587086845,
+      "changelog": "Initial release of the epub skill.\n\n- Enables extraction, parsing, and modification of .epub ebook files.\n- Uses robust unzip-then-parse workflow for reliable processing.\n- Supports reading chapters, table of contents, metadata, text, and images.\n- Allows conversion, inspection, and editing of epub content.\n- Handles both EPUB2 and EPUB3 file structures.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6df70adbff8f722de29518b3f9ae20a6cd1ab5a8ed3fca218e81f23f9e43be53"
+}

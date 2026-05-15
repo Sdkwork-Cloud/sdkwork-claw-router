@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openrouter-free-rotate@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openrouter_free_rotate",
+  "skill": {
+    "id": 38803,
+    "skillKey": "clawhub-openrouter-free-rotate",
+    "name": "OpenRouter Free Model Rotate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openrouter-free-rotate",
+    "url": "https://clawhub.ai/skills/openrouter-free-rotate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openrouter-free-rotate-4fef1c75b2334883.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scan OpenRouter for available free models (zero cost), benchmark them, score by capability, and auto-update OpenClaw config with the best ones. Use when: \"ro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liligit1815",
+      "userId": "s175x7np10yzkz12zqrskj6nvd83qbgj",
+      "displayName": "liligit1815",
+      "image": "https://avatars.githubusercontent.com/u/45731845?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1775189626014,
+      "changelog": "v2.0 — Smart capability scoring, concurrent testing, quality benchmark, result caching, JSON reports, capability filter, multi-field ranking by score",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:63e6e5462b618e650eb3ed9b1da473c981d33e27ae4882acaff768e744425a57"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gui-automation@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gui_automation",
+  "skill": {
+    "id": 21261,
+    "skillKey": "clawhub-gui-automation",
+    "name": "GUI Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gui-automation",
+    "url": "https://clawhub.ai/skills/gui-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gui-automation-1b7331c694fad6b1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control the desktop via CUA computer server API running on port 8000"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sarinali",
+      "userId": "publishers:sarinali",
+      "displayName": "sarinali",
+      "image": "https://avatars.githubusercontent.com/u/74844953?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 485,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773189558928,
+      "changelog": "Version 1.0.1\n\n- Improved security guidance and best practices prominently in the documentation.\n- Clarified that running the Cua server as a temporary foreground process is recommended.\n- Reduced instructions about persistent/system/background installation; now emphasizes temporary/manual use.\n- Simplified installation and troubleshooting steps for easier and safer onboarding.\n- Expanded and reorganized documentation warnings about the server’s capabilities and risks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f0d6de6ed23435813052f2721b7afa7927b92097302913c657218803d3a1d50c"
+}

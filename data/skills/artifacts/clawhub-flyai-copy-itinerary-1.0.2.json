@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flyai-copy-itinerary@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flyai_copy_itinerary",
+  "skill": {
+    "id": 73226,
+    "skillKey": "clawhub-flyai-copy-itinerary",
+    "name": "一键抄作业"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flyai-copy-itinerary",
+    "url": "https://clawhub.ai/skills/flyai-copy-itinerary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flyai-copy-itinerary-2bfdd9847210e945.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "一键抄作业攻略转化助手，把小红书/抖音/携程攻略链接丢进来，AI自动提取行程，调用飞猪填充真实航班、酒店、景点数据，生成可预订的个性化攻略。触发词：抄作业、攻略转行程、复制攻略、链接变行程、把这篇变成我的攻略、帮我抄这个、种草变攻略。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hello-ahang",
+      "userId": "s173amcatjt4szds3pjwe405r584382h",
+      "displayName": "hello_hang",
+      "image": "https://avatars.githubusercontent.com/u/19886468?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775237407882,
+      "changelog": "- Added comprehensive function reference files covering FlyAI搜索、用户画像、关键字/Ai搜索等调用文档\n- 拆分核心工作流与工具说明，主文档大幅简化，逻辑结构更清晰\n- 新增异常处理、输入方式支持等章节，增强稳健性及用户体验\n- 支持用户画像双通道获取与落盘，自动读取、保存个性偏好\n- 输出格式、平台解析等实现文档化，便于自定义和二次开发",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d2c270844fd93750d5d3e359fabbcb4be1aa6627dc6bfc65c9b86544941df857"
+}

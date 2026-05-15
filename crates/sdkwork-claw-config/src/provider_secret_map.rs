@@ -27,23 +27,23 @@ impl ProviderSecretMapConfig {
 
         let value: serde_json::Value = serde_json::from_str(secret_map_json).map_err(|error| {
             format!(
-                "{} must be a JSON object mapping provider secret_ref to bearer token: {error}",
+                "{} must be a JSON object mapping provider secret_ref to secret value: {error}",
                 Self::ENV_PROVIDER_SECRET_MAP_JSON
             )
         })?;
 
         let object = value.as_object().ok_or_else(|| {
             format!(
-                "{} must be a JSON object mapping provider secret_ref to bearer token",
+                "{} must be a JSON object mapping provider secret_ref to secret value",
                 Self::ENV_PROVIDER_SECRET_MAP_JSON
             )
         })?;
 
         let mut secrets = BTreeMap::new();
-        for (secret_ref, bearer_token) in object {
-            let bearer_token = bearer_token.as_str().ok_or_else(|| {
+        for (secret_ref, secret_value) in object {
+            let secret_value = secret_value.as_str().ok_or_else(|| {
                 format!(
-                    "{} values must be bearer token strings",
+                    "{} values must be provider secret value strings",
                     Self::ENV_PROVIDER_SECRET_MAP_JSON
                 )
             })?;
@@ -51,11 +51,11 @@ impl ProviderSecretMapConfig {
             if secret_ref.is_empty() {
                 return Err("provider secret_ref must not be blank".to_owned());
             }
-            let bearer_token = bearer_token.trim();
-            if bearer_token.is_empty() {
-                return Err("provider bearer token must not be blank".to_owned());
+            let secret_value = secret_value.trim();
+            if secret_value.is_empty() {
+                return Err("provider secret value must not be blank".to_owned());
             }
-            secrets.insert(secret_ref.to_owned(), bearer_token.to_owned());
+            secrets.insert(secret_ref.to_owned(), secret_value.to_owned());
         }
 
         if secrets.is_empty() {
@@ -76,7 +76,7 @@ impl ProviderSecretMapConfig {
         self.secrets.len()
     }
 
-    pub fn bearer_token(&self, secret_ref: &str) -> Option<&str> {
+    pub fn secret_value(&self, secret_ref: &str) -> Option<&str> {
         self.secrets.get(secret_ref).map(String::as_str)
     }
 
@@ -90,7 +90,7 @@ impl fmt::Debug for ProviderSecretMapConfig {
         formatter
             .debug_struct("ProviderSecretMapConfig")
             .field("secret_count", &self.secrets.len())
-            .field("bearer_tokens", &"[REDACTED]")
+            .field("secret_values", &"[REDACTED]")
             .finish()
     }
 }

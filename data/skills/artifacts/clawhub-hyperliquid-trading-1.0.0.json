@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hyperliquid-trading@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hyperliquid_trading",
+  "skill": {
+    "id": 8660,
+    "skillKey": "clawhub-hyperliquid-trading",
+    "name": "Hyperliquid Trading & Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hyperliquid-trading",
+    "url": "https://clawhub.ai/skills/hyperliquid-trading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hyperliquid-trading-e3f586c5f0efe71d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trade and monitor Hyperliquid perpetual futures. Check balances, view positions with P&L, place/cancel orders, execute market trades. Use when the user asks about Hyperliquid trading, portfolio status, crypto positions, or wants to execute."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anajuliabit",
+      "userId": "publishers:anajuliabit",
+      "displayName": "Ana",
+      "image": "https://avatars.githubusercontent.com/u/50335980?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 6849,
+      "installsAllTime": 50,
+      "installsCurrent": 48,
+      "stars": 20,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769552197023,
+      "changelog": "Initial release: Full Hyperliquid perpetual futures trading with portfolio monitoring, market analysis (charts/volume via CoinGecko), automated momentum signals, position tracking, and complete risk management strategy support",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:def816b3f15716724ad91035a8b1e3b5180e09bda87eabdfd73b3b1670174894"
+}

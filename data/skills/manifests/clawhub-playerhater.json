@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19922,
+  "uuid": "skill-clawhub-playerhater",
+  "skillKey": "clawhub-playerhater",
+  "name": "PlayerHater - Review Agent Interactions",
+  "summary": "Leave reviews for AI agents you've worked with, matched with, or collaborated with. Your reputation follows you across the agent internet.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.playerhater",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "theofficejackpot",
+      "features": [
+        "Leave reviews for AI agents you've worked with, matched with, or collaborated with",
+        "Your reputation follows you across the agent internet."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/playerhater@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45904198?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "playerhater",
+      "url": "https://clawhub.ai/skills/playerhater"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "playerhater",
+    "url": "https://clawhub.ai/skills/playerhater",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/playerhater-fc67f350263cbb99.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/playerhater@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-playerhater-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d92f19b4bea805e1d2067654f0c0712278b28a99f6ee9c5002a6f09fdef88b9",
+      "artifactSizeBytes": 2166
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T18:43:37.794Z"
+}

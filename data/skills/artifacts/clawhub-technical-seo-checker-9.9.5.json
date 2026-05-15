@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/technical-seo-checker@9.9.5",
+  "version": "9.9.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.technical_seo_checker",
+  "skill": {
+    "id": 50423,
+    "skillKey": "clawhub-technical-seo-checker",
+    "name": "Technical Seo Checker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "technical-seo-checker",
+    "url": "https://clawhub.ai/skills/technical-seo-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/technical-seo-checker-a66f524020d9c4a2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Technical SEO audit: Core Web Vitals, crawl, indexing, mobile, speed, architecture, redirects. 技术SEO/网站速度"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aaron-he-zhu",
+      "userId": "s17e1tg8pjra8dn1dvtq21sahx83hrxj",
+      "displayName": "Aaron Zhu",
+      "image": "https://avatars.githubusercontent.com/u/139607425?v=4"
+    },
+    "stats": {
+      "comments": 6,
+      "downloads": 3926,
+      "installsAllTime": 15,
+      "installsCurrent": 15,
+      "stars": 6,
+      "versions": 23
+    },
+    "latestVersion": {
+      "version": "9.9.5",
+      "createdAt": 1777349143343,
+      "changelog": "Published from main @ 7ecc77b",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:648e84ce2618cd4e977263941293f065dc0b1eb8ae6acb13eaefbe708b2dd354"
+}

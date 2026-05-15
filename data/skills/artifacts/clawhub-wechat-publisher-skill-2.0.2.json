@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-publisher-skill@2.0.2",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_publisher_skill",
+  "skill": {
+    "id": 32452,
+    "skillKey": "clawhub-wechat-publisher-skill",
+    "name": "Wechat Publisher Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-publisher-skill",
+    "url": "https://clawhub.ai/skills/wechat-publisher-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-publisher-skill-40eb8051f02a785a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically collects 15 AI news items, generates HTML content, and publishes drafts to WeChat official accounts with customizable templates and scheduling."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "403914291",
+      "userId": "s173w6c6a6hdnc51n5eg51s2cx83qd4z",
+      "displayName": "403914291",
+      "image": "https://avatars.githubusercontent.com/u/95468942?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 252,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "2.0.2",
+      "createdAt": 1775312023927,
+      "changelog": "新增安装手册：包含系统要求、快速安装步骤、详细配置说明、环境配置、授权激活、常见问题等完整安装指南",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:afd8204d271f8833b91780e795c927a7a8449cc67a0fb18bb9529f5ff7416a66"
+}

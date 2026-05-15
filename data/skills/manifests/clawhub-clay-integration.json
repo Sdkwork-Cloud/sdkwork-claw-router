@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33052,
+  "uuid": "skill-clawhub-clay-integration",
+  "skillKey": "clawhub-clay-integration",
+  "name": "Clay",
+  "summary": "Clay integration. Manage data, records, and automate workflows. Use when the user wants to interact with Clay data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clay_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Clay integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Clay data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clay-integration@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clay-integration",
+      "url": "https://clawhub.ai/skills/clay-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clay-integration",
+    "url": "https://clawhub.ai/skills/clay-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clay-integration-05a14ccc45e0f1ca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clay-integration@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-clay-integration-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dd9d8f75862130b86afef6d2c931ca7b1039f467b3347c0737bac690d85d11df",
+      "artifactSizeBytes": 1866
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:30:50.703Z"
+}

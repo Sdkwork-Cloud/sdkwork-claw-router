@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-skills-setup-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_skills_setup_cn",
+  "skill": {
+    "id": 59938,
+    "skillKey": "clawhub-openclaw-skills-setup-cn",
+    "name": "Openclaw Skills Setup Cn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-skills-setup-cn",
+    "url": "https://clawhub.ai/skills/openclaw-skills-setup-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-skills-setup-cn-627a830ff4a2946a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ClawHub 安装与配置 | ClawHub setup. 帮助中文用户安装 ClawHub、配置镜像（如阿里云）、 找技能（发现/推荐）、以及技能的安装/更新/启用/禁用。 Use when: 安装 clawhub, clawhub 怎么用, 找技能/找 skill, 有什么技能可以/有什么 skill 可以..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "binbin",
+      "userId": "s1782dxvn6h7vsb92bk4fhrg9583k1tb",
+      "displayName": "Beta",
+      "image": "https://avatars.githubusercontent.com/u/276284?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 930,
+      "installsAllTime": 5,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772945803125,
+      "changelog": "- Initial release of openclaw-skills-setup-cn.\n- Provides step-by-step instructions for installing and configuring ClawHub, including mirror setup for Chinese users.\n- Details how to find, install, update, enable, and disable skills.\n- Offers recommendations for essential skills and bulk installation commands.\n- Includes guidance on searching and evaluating skills using ClawHub commands.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d145cccb3356fea9e06b5b2725ddbbbfc0cb0eff03f885ed1860deb02fbcc05a"
+}

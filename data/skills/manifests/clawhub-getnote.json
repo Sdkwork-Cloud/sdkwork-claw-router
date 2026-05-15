@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63006,
+  "uuid": "skill-clawhub-getnote",
+  "skillKey": "clawhub-getnote",
+  "name": "Get笔记",
+  "summary": "Get笔记 - 保存、搜索、管理个人笔记和知识库。 **当以下情况时使用此 Skill**： (1) 用户要保存内容到笔记：发链接、发图片、说「记一下」「存到笔记」「保存」「收藏」 (2) 用户要搜索或查看笔记：「搜一下」「找找笔记」「最近存了什么」「看看原文」 (3) 用户要管理知识库或标签：「加到知识库」「建...",
+  "version": "1.8.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.getnote",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Get笔记",
+      "features": [
+        "保存、搜索、管理个人笔记和知识库。 **当以下情况时使用此 Skill**： (1) 用户要保存内容到笔记：发链接、发图片、说「记一下」「存到笔记」「保存」「收藏」 (2) 用户要搜索或查看."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/getnote@1.8.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3115061?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "getnote",
+      "url": "https://clawhub.ai/skills/getnote"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "getnote",
+    "url": "https://clawhub.ai/skills/getnote",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/getnote-2ca34a51eb966c9e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/getnote@1.8.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-getnote-1.8.3.json",
+      "version": "1.8.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ef00a02b63a94adbed46dd87157d3b79a937527ea2a48436dfec1da613385c2f",
+      "artifactSizeBytes": 2141
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T12:14:18.808Z"
+}

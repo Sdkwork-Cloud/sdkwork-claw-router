@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/inkos@2.3.3",
+  "version": "2.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inkos",
+  "skill": {
+    "id": 9074,
+    "skillKey": "clawhub-inkos",
+    "name": "Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inkos",
+    "url": "https://clawhub.ai/skills/inkos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inkos-e335e3bab9f0c5ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous novel writing CLI agent with web workbench (InkOS Studio) - use for creative fiction writing, novel generation, style imitation, chapter continuat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "narcooo",
+      "userId": "s17dg8mcmt8sznh586nw63b9tx83nwx7",
+      "displayName": "Narcooo",
+      "image": "https://avatars.githubusercontent.com/u/33502405?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4488,
+      "installsAllTime": 16,
+      "installsCurrent": 16,
+      "stars": 5,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "2.3.3",
+      "createdAt": 1777715427173,
+      "changelog": "v1.3.7: refresh InkOS skill docs for long-form writing quality rules and hook-ledger payoff checks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:edba895ab1fcadd1aeaa11a72072bd7a8703d819eab65233613f58d052a932c2"
+}

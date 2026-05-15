@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33781,
+  "uuid": "skill-clawhub-process-monitor-dashboard",
+  "skillKey": "clawhub-process-monitor-dashboard",
+  "name": "Process Monitor Dashboard",
+  "summary": "Monitor system processes, resource usage, and performance metrics with real-time terminal dashboard.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.process_monitor_dashboard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Derick",
+      "features": [
+        "Monitor system processes, resource usage, and performance metrics with real-time terminal dashb."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/process-monitor-dashboard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/114499711?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "process-monitor-dashboard",
+      "url": "https://clawhub.ai/skills/process-monitor-dashboard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "process-monitor-dashboard",
+    "url": "https://clawhub.ai/skills/process-monitor-dashboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/process-monitor-dashboard-52f737a86913f6ab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/process-monitor-dashboard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-process-monitor-dashboard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fdcba76024afec973896f59070f2f4809d9818910698e8366ae48a75aec00014",
+      "artifactSizeBytes": 2504
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T14:01:08.199Z"
+}

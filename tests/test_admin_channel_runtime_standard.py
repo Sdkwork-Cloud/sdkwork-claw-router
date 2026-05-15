@@ -1,4 +1,4 @@
-import unittest
+﻿import unittest
 import json
 from pathlib import Path
 
@@ -22,8 +22,7 @@ class AdminChannelRuntimeStandardTest(unittest.TestCase):
         add_provider_secret = operations[f"{source}#addProviderSecret"]
         update_provider_secret = operations[f"{source}#updateProviderSecret"]
 
-        self.assertEqual("AdminChannelListRequest", fetch_channels["request_schema"]["name"])
-        self.assertEqual([], fetch_channels["request_schema"]["schema"]["required"])
+        self.assertIsNone(fetch_channels.get("request_schema"))
 
         self.assertEqual("AdminChannelCreateRequest", add_channel["request_schema"]["name"])
         self.assertEqual(["name", "vendor", "secretRef", "models"], add_channel["request_schema"]["schema"]["required"])
@@ -50,11 +49,11 @@ class AdminChannelRuntimeStandardTest(unittest.TestCase):
         self.assertIsNone(test_channel.get("request_schema"))
         self.assertEqual("AdminChannelTestResponse", test_channel["response_schema"]["name"])
         self.assertEqual(["channelId", "success", "status", "latency", "item"], test_channel["response_schema"]["schema"]["required"])
-        self.assertEqual("/backend/v3/api/channel/{channelId}/test", test_channel["api_path"])
+        self.assertEqual("/backend/v3/api/integration/channels/{channelId}/verify", test_channel["api_path"])
         self.assertEqual("POST", test_channel["api_method"])
 
-        self.assertEqual("AdminProviderSecretListRequest", fetch_provider_secrets["request_schema"]["name"])
-        self.assertEqual([], fetch_provider_secrets["request_schema"]["schema"]["required"])
+        self.assertIsNone(fetch_provider_secrets.get("request_schema"))
+        self.assertEqual("/backend/v3/api/integration/provider_secrets", fetch_provider_secrets["api_path"])
 
         self.assertEqual("AdminProviderSecretCreateRequest", add_provider_secret["request_schema"]["name"])
         self.assertEqual(
@@ -78,30 +77,28 @@ class AdminChannelRuntimeStandardTest(unittest.TestCase):
             / "src"
             / "channelService.ts"
         ).read_text(encoding="utf-8")
-        channel_api = (ROOT / "sdks" / "clawrouter-backend-sdk" / "src" / "api" / "channel.ts").read_text(
+        channel_api = (ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "api" / "integration.ts").read_text(
             encoding="utf-8"
         )
         provider_secret_api = (
-            ROOT / "sdks" / "clawrouter-backend-sdk" / "src" / "api" / "provider-secrets.ts"
+            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "api" / "integration.ts"
         ).read_text(encoding="utf-8")
         type_exports = (
-            ROOT / "sdks" / "clawrouter-backend-sdk" / "src" / "types" / "index.ts"
+            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "types" / "index.ts"
         ).read_text(encoding="utf-8")
 
         for token in [
             "AdminChannelCreateRequest",
-            "AdminChannelListRequest",
             "AdminChannelUpdateRequest",
             "ProviderRetryPolicy",
-            "AdminProviderSecretListRequest",
+            "IntegrationProviderSecretsListParams",
             "AdminProviderSecretCreateRequest",
             "AdminProviderSecretUpdateRequest",
             "toCreateChannelRequest",
-            "toChannelListRequest",
             "toUpdateChannelRequest",
             "export interface ChannelTestResult",
             "testChannel(id: string): Promise<ChannelTestResult>",
-            "channel.test(",
+            "integration.channels.verify(",
             "toProviderSecretListRequest",
             "toCreateProviderSecretRequest",
             "toUpdateProviderSecretRequest",
@@ -112,42 +109,49 @@ class AdminChannelRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("filter as Record<string, unknown>", service)
         self.assertNotIn("{ id, ...updates } as Record<string, unknown>", service)
 
-        self.assertIn("async fetchChannels(body: AdminChannelListRequest): Promise<PlusApiResult>", channel_api)
-        self.assertIn("async add(body: AdminChannelCreateRequest, headers?: Record<string, string>): Promise<AddChannelResult>", channel_api)
-        self.assertIn("async updateChannel(body: AdminChannelUpdateRequest, headers?: Record<string, string>): Promise<UpdateChannelResult>", channel_api)
-        self.assertIn("async test(channelId: string | number, body?: OperationRequest, headers?: Record<string, string>): Promise<TestChannelResult>", channel_api)
-        self.assertIn("retryPolicy?: ProviderRetryPolicy", (ROOT / "sdks" / "clawrouter-backend-sdk" / "src" / "types" / "admin-channel-create-request.ts").read_text(encoding="utf-8"))
-        self.assertIn("timeoutMs?: number", (ROOT / "sdks" / "clawrouter-backend-sdk" / "src" / "types" / "admin-channel-create-request.ts").read_text(encoding="utf-8"))
-        self.assertIn("retryPolicy?: ProviderRetryPolicy | null", (ROOT / "sdks" / "clawrouter-backend-sdk" / "src" / "types" / "admin-channel-update-request.ts").read_text(encoding="utf-8"))
-        self.assertIn("timeoutMs?: number | null", (ROOT / "sdks" / "clawrouter-backend-sdk" / "src" / "types" / "admin-channel-update-request.ts").read_text(encoding="utf-8"))
-        self.assertNotIn("async fetchChannels(body?: OperationRequest): Promise<PlusApiResult>", channel_api)
-        self.assertNotIn("async add(body?: OperationRequest): Promise<PlusApiResult>", channel_api)
-        self.assertNotIn("async updateChannel(body?: OperationRequest): Promise<PlusApiResult>", channel_api)
+        self.assertIn("async list(): Promise<ChannelsListResult>", channel_api)
+        self.assertIn("async create(body: AdminChannelCreateRequest, params?: IntegrationChannelsCreateParams): Promise<ChannelsCreateResult>", channel_api)
+        self.assertIn("async update(body: AdminChannelUpdateRequest, params?: IntegrationChannelsUpdateParams): Promise<ChannelsUpdateResult>", channel_api)
+        self.assertIn("async verify(channelId: string, params?: IntegrationChannelsVerifyParams): Promise<ChannelsVerifyResult>", channel_api)
+        self.assertIn("retryPolicy?: ProviderRetryPolicy", (ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "types" / "admin-channel-create-request.ts").read_text(encoding="utf-8"))
+        self.assertIn("timeoutMs?: number", (ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "types" / "admin-channel-create-request.ts").read_text(encoding="utf-8"))
+        self.assertIn("retryPolicy?: ProviderRetryPolicy | JsonNull", (ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "types" / "admin-channel-update-request.ts").read_text(encoding="utf-8"))
+        self.assertIn("timeoutMs?: number | null", (ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "types" / "admin-channel-update-request.ts").read_text(encoding="utf-8"))
+        self.assertNotIn("async list(body?: OperationRequest): Promise<PlusApiResult>", channel_api)
+        self.assertNotIn("async create(body?: OperationRequest): Promise<PlusApiResult>", channel_api)
+        self.assertNotIn("async update(body?: OperationRequest): Promise<PlusApiResult>", channel_api)
+        self.assertNotIn("TestChannelRequest", channel_api)
+        self.assertNotIn("channelId: string | number", channel_api)
 
-        self.assertIn("async fetch(body: AdminProviderSecretListRequest): Promise<PlusApiResult>", provider_secret_api)
-        self.assertIn("async addProviderSecret(body: AdminProviderSecretCreateRequest, headers?: Record<string, string>): Promise<AddProviderSecretResult>", provider_secret_api)
-        self.assertIn("async updateProviderSecret(body: AdminProviderSecretUpdateRequest, headers?: Record<string, string>): Promise<UpdateProviderSecretResult>", provider_secret_api)
-        self.assertNotIn("async addProviderSecret(body?: OperationRequest): Promise<PlusApiResult>", provider_secret_api)
-        self.assertNotIn("async updateProviderSecret(body?: OperationRequest): Promise<PlusApiResult>", provider_secret_api)
+        self.assertIn("async list(params?: IntegrationProviderSecretsListParams): Promise<ProviderSecretsListResult>", provider_secret_api)
+        self.assertIn("async create(body: AdminProviderSecretCreateRequest, params?: IntegrationProviderSecretsCreateParams): Promise<ProviderSecretsCreateResult>", provider_secret_api)
+        self.assertIn("async update(body: AdminProviderSecretUpdateRequest, params?: IntegrationProviderSecretsUpdateParams): Promise<ProviderSecretsUpdateResult>", provider_secret_api)
+        self.assertNotIn("async create(body?: OperationRequest): Promise<PlusApiResult>", provider_secret_api)
+        self.assertNotIn("async update(body?: OperationRequest): Promise<PlusApiResult>", provider_secret_api)
 
         for token in [
             "AdminChannelCreateRequest",
-            "AdminChannelListRequest",
             "AdminChannelUpdateRequest",
             "ProviderRetryPolicy",
             "AdminChannelMutationResponse",
             "AdminChannelTestResponse",
-            "AddChannelResult",
-            "TestChannelResult",
-            "UpdateChannelResult",
-            "AdminProviderSecretListRequest",
+            "ChannelsCreateResult",
+            "ChannelsVerifyResult",
+            "ChannelsUpdateResult",
             "AdminProviderSecretCreateRequest",
             "AdminProviderSecretUpdateRequest",
             "AdminProviderSecretMutationResponse",
-            "AddProviderSecretResult",
-            "UpdateProviderSecretResult",
+            "ProviderSecretsCreateResult",
+            "ProviderSecretsListResult",
+            "ProviderSecretsUpdateResult",
         ]:
             self.assertIn(f"export type {{ {token} }}", type_exports)
+
+        for removed_token in [
+            "AdminChannelListRequest",
+            "TestChannelRequest",
+        ]:
+            self.assertNotIn(f"export type {{ {removed_token} }}", type_exports)
 
     def test_admin_channel_forms_use_dedicated_command_inputs(self) -> None:
         package_root = (
@@ -255,9 +259,11 @@ class AdminChannelRuntimeStandardTest(unittest.TestCase):
         ).read_text(encoding="utf-8")
 
         self.assertIn("static async testChannel(id: string): Promise<ChannelTestResult>", service)
-        self.assertIn("channelBackendClient().channel.test(", service)
-        self.assertIn("requestHeaders('admin-channel-test')", service)
+        self.assertIn("channelBackendClient().integration.channels.verify(", service)
+        self.assertIn("requestParams('admin-channel-test')", service)
         self.assertIn("readRequiredApiItem(result, 'Channel test response is missing channel data', ['item'])", service)
+        self.assertNotIn("emptyTestChannelRequest", service)
+        self.assertNotIn("TestChannelRequest", service)
         self.assertNotIn("secretRef: readOptionalString(item, 'secretRef')", service.split("function normalizeChannel", 1)[1])
 
         self.assertIn("const handleTestChannel = async (id: string)", ui)
@@ -267,7 +273,7 @@ class AdminChannelRuntimeStandardTest(unittest.TestCase):
         self.assertIn("<Network className=\"w-4 h-4\" />", ui)
 
         self.assertIn("operation: testChannel", contract)
-        self.assertIn("api_path: /backend/v3/api/channel/{channelId}/test", contract)
+        self.assertIn("api_path: /backend/v3/api/integration/channels/{channelId}/verify", contract)
         self.assertIn("name: AdminChannelTestResponse", contract)
 
     def test_admin_channel_destructive_actions_use_shared_confirm_dialog(self) -> None:

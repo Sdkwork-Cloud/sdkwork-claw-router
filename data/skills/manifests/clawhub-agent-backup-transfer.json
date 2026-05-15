@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26052,
+  "uuid": "skill-clawhub-agent-backup-transfer",
+  "skillKey": "clawhub-agent-backup-transfer",
+  "name": "agent-backup-transfer",
+  "summary": "Backup and restore your OpenClaw agent's workspace and config to preserve memory, identity, and settings or migrate to a new computer.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_backup_transfer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pacifier00",
+      "features": [
+        "Backup and restore your OpenClaw agent's workspace and config to preserve memory, identity, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-backup-transfer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/53246196?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-backup-transfer",
+      "url": "https://clawhub.ai/skills/agent-backup-transfer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-backup-transfer",
+    "url": "https://clawhub.ai/skills/agent-backup-transfer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-backup-transfer-1b518934348a8563.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-backup-transfer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-backup-transfer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:71588a7d3bf9ffea857a2d3155b6c44804c94840a61cd64e4910a3c62a5bd828",
+      "artifactSizeBytes": 2359
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T09:55:02.855Z"
+}

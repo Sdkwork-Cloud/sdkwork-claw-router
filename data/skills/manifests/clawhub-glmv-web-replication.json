@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50452,
+  "uuid": "skill-clawhub-glmv-web-replication",
+  "skillKey": "clawhub-glmv-web-replication",
+  "name": "web-replication",
+  "summary": "Frontend visual replication skill. Explores a target website’s publicly visible pages via Playwright MCP or agent-browser, captures screenshots and layout in...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.glmv_web_replication",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zai-org",
+      "features": [
+        "Frontend visual replication skill",
+        "Explores a target website’s publicly visible pages via Playwright MCP or agent-browser, capture."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/glmv-web-replication@1.0.2",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/glmv-web-replication/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "glmv-web-replication",
+      "url": "https://clawhub.ai/skills/glmv-web-replication"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "glmv-web-replication",
+    "url": "https://clawhub.ai/skills/glmv-web-replication",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/glmv-web-replication-7660b12419d011c5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/glmv-web-replication@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-glmv-web-replication-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cfa43eb913db49d32e8a33da78b8d1ad58c07bdccf66b32613296c8cd8c03504",
+      "artifactSizeBytes": 2656
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T03:57:53.951Z"
+}

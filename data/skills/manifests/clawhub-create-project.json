@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50275,
+  "uuid": "skill-clawhub-create-project",
+  "skillKey": "clawhub-create-project",
+  "name": "Create Project",
+  "summary": "Interactive Orchestrix project scaffolding. Creates project directory under ~/Codes/, generates project brief from Q&A, installs MCP config, hooks, slash com...",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.create_project",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dorayo",
+      "features": [
+        "Interactive Orchestrix project scaffolding",
+        "Creates project directory under ~/Codes/, generates project brief from Q&A, installs MCP config."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/create-project@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3347991?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "create-project",
+      "url": "https://clawhub.ai/skills/create-project"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "create-project",
+    "url": "https://clawhub.ai/skills/create-project",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/create-project-3c19483b6c7689ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/create-project@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-create-project-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4d9297d09a177b4b4fcc5b5d8410b9824f946f8c752a7602b0b7a358c32e8e98",
+      "artifactSizeBytes": 2402
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T14:23:39.917Z"
+}

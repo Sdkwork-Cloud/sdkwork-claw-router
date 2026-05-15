@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16898,
+  "uuid": "skill-clawhub-email-verifier",
+  "skillKey": "clawhub-email-verifier",
+  "name": "Email Verifier",
+  "summary": "Verify email address deliverability via SMTP without sending mail. Checks MX records, performs RCPT TO verification, and detects catch-all domains. Use when...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_verifier",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "psyduckler",
+      "features": [
+        "Verify email address deliverability via SMTP without sending mail",
+        "Checks MX records, performs RCPT TO verification, and detects catch-all domains",
+        "Use when..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/email-verifier@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260153069?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "email-verifier",
+      "url": "https://clawhub.ai/skills/email-verifier"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-verifier",
+    "url": "https://clawhub.ai/skills/email-verifier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-verifier-eaa47bb70c67ec75.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/email-verifier@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-email-verifier-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dcf118be504b57b78cf6235b513f6cfe5b91b7e855ccae205d77b2ecc5b9d481",
+      "artifactSizeBytes": 1947
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T16:08:13.886Z"
+}

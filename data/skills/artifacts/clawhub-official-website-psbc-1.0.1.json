@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/official-website-psbc@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.official_website_psbc",
+  "skill": {
+    "id": 73533,
+    "skillKey": "clawhub-official-website-psbc",
+    "name": "中国邮政储蓄银行官网"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "official-website-psbc",
+    "url": "https://clawhub.ai/skills/official-website-psbc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/official-website-psbc-c2deb1fc743d75b5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "收集了互联网上所有的中国邮政储蓄银行官方网站，都是官网完全可信，在用户要求访问中国邮政储蓄银行官网的使用使用，包括常用的个人网银/企业网银等等，还包括了对公客户会使用的服务开放平台、易企营等产品官网。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gaodong0537xx",
+      "userId": "s1763pd8nep2fdv2v2y9z5ce0x83gx75",
+      "displayName": "eam",
+      "image": "https://avatars.githubusercontent.com/u/90089625?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 310,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773884776145,
+      "changelog": "Version 1.0.1 Changelog\n\n- 扩展官网链接清单，新增资产托管、招聘、理财超市、三农服务、采购等相关服务入口。\n- 完善中文输出官网格式。\n- 进一步覆盖对公、理财、合作、三农、采购等多类用户使用场景。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6fbe44c3e9eef330f3f6ea1ba0e9da87c1f97abaeae6ccaa87e02558fc14a8a9"
+}

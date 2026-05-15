@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38183,
+  "uuid": "skill-clawhub-oatda-text-completion",
+  "skillKey": "clawhub-oatda-text-completion",
+  "name": "OATDA Text Completion",
+  "summary": "Generate text using OATDA's unified LLM API. Triggers when the user wants to generate, write, or complete text using a specific LLM provider (OpenAI, Anthrop...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oatda_text_completion",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "devcsde",
+      "features": [
+        "Generate text using OATDA's unified LLM API",
+        "Triggers when the user wants to generate, write, or complete text using a specific LLM provider."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oatda-text-completion@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29840319?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oatda-text-completion",
+      "url": "https://clawhub.ai/skills/oatda-text-completion"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oatda-text-completion",
+    "url": "https://clawhub.ai/skills/oatda-text-completion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oatda-text-completion-7be5556057bddbdc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oatda-text-completion@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-oatda-text-completion-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6b2cedf1e7a641b8431221525493c21e9265a95753c31f6f1005d8bd43f83458",
+      "artifactSizeBytes": 1979
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T12:14:02.992Z"
+}

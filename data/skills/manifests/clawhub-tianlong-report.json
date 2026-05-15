@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73492,
+  "uuid": "skill-clawhub-tianlong-report",
+  "skillKey": "clawhub-tianlong-report",
+  "name": "天龙自动化报告生成",
+  "summary": "基于天龙引擎需求解构能力，挖掘需求本质，评估复杂度，提供批判性分析与结构化决策建议。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tianlong_report",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "guilinleolee",
+      "features": [
+        "基于天龙引擎需求解构能力，挖掘需求本质，评估复杂度，提供批判性分析与结构化决策建议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tianlong-report@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/190466955?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tianlong-report",
+      "url": "https://clawhub.ai/skills/tianlong-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tianlong-report",
+    "url": "https://clawhub.ai/skills/tianlong-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tianlong-report-385c5dfe4482f327.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tianlong-report@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tianlong-report-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f602fdeb016f2968ba507787fee381ebe7d9b3c04a81ed2710e29f44ce266b82",
+      "artifactSizeBytes": 2239
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T02:13:04.382Z"
+}

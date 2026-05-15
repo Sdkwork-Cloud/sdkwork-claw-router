@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cluster-agent-swarm-skills@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cluster_agent_swarm_skills",
+  "skill": {
+    "id": 50573,
+    "skillKey": "clawhub-cluster-agent-swarm-skills",
+    "name": "Cluster Agent Swarm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cluster-agent-swarm-skills",
+    "url": "https://clawhub.ai/skills/cluster-agent-swarm-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cluster-agent-swarm-skills-18a571023f57523f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete Platform Agent Swarm — A coordinated multi-agent system for Kubernetes and OpenShift platform operations. Includes Orchestrator (Jarvis), Cluster Op..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kcns008",
+      "userId": "s179qpj0ks76sgmsqnpgx63rsx83g7ef",
+      "displayName": "Chin K",
+      "image": "https://avatars.githubusercontent.com/u/3204061?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 465,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772498806833,
+      "changelog": "Initial release of cluster-agent-swarm skill: a coordinated multi-agent system for Kubernetes and OpenShift platform operations.\n\n- Introduces the Swarm: 7 specialized agents (Orchestrator, Cluster Ops, GitOps, Security, Observability, Artifacts, Developer Experience) working together.\n- Supports major platforms: OpenShift, Kubernetes, EKS, AKS, GKE, ROSA, ARO.\n- Provides a comprehensive set of operational tools (e.g., kubectl, oc, argocd, helm).\n- Details installation options for the full swarm or individual agent skills.\n- Lists agent capabilities, limitations, communication patterns, and escalation paths.\n- Defines clear principles and staggered heartbeat schedules for reliability and cost-efficiency.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cf99c77f36c6f755e672444afa59ca83098729c060395b376c16586b423d6d21"
+}

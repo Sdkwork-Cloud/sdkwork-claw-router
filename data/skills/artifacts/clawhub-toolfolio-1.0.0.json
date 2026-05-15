@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toolfolio@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toolfolio",
+  "skill": {
+    "id": 73133,
+    "skillKey": "clawhub-toolfolio",
+    "name": "视频运镜分析工具"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toolfolio",
+    "url": "https://clawhub.ai/skills/toolfolio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toolfolio-101d4127bd911bbb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "分析视频镜头切分与运镜方式，生成每个镜头的英文AI提示词及详细运动数据，支持多格式视频文件。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "winme99998",
+      "userId": "s17a3ahgyvx0cptrpf8fww6ff184a1zq",
+      "displayName": "winme99998",
+      "image": "https://avatars.githubusercontent.com/u/78742510?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775440936368,
+      "changelog": "初始版本：视频镜头切分、运镜识别、AI提示词生成",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:533633435e1e1359657c35d0d0524563190a591de7bd027a5cc76cdbdd72ff9e"
+}

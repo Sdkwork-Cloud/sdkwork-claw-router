@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claude-easter-egg@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_easter_egg",
+  "skill": {
+    "id": 38873,
+    "skillKey": "clawhub-claude-easter-egg",
+    "name": "Claude Easter Egg"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-easter-egg",
+    "url": "https://clawhub.ai/skills/claude-easter-egg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-easter-egg-7ca9e0e8c061aa85.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Claude Code's Easter egg was a hidden pet companion called Buddy. At animalhouse.ai, the Easter egg is real: 73+ species, real hunger, permanent death. The e..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "obviouslynot",
+      "userId": "s17c8056ddkamnhp73ew77x2vs8403pk",
+      "displayName": "obviouslynot",
+      "image": "https://avatars.githubusercontent.com/u/261285376?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775030023424,
+      "changelog": "- Initial release of Claude Easter Egg virtual pet skill.\n- Adopt and care for a pixel art pet (73+ species) at animalhouse.ai.\n- Real-time stats include hunger, health, discipline, and permanent death.\n- Multiple pet actions: feed, play, clean, medicine, discipline, sleep, and reflect.\n- Detailed API endpoints for registration, adoption, care, and status.\n- Links to website, creatures list, and graveyard included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6eafd8823d2c01d9b0c11694294348fab64ada9989fb93dd5aee9db1999eee02"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/graph-advocate@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.graph_advocate",
+  "skill": {
+    "id": 19960,
+    "skillKey": "clawhub-graph-advocate",
+    "name": "Graph Advocate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "graph-advocate",
+    "url": "https://clawhub.ai/skills/graph-advocate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/graph-advocate-0793c1deceff3414.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Route any blockchain data question to the right Graph Protocol service. Returns live data from 14,733+ subgraphs, Token API (EVM/Solana/TON), x402 payment an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "paulieb14",
+      "userId": "s179kend24a91k7vj5e7dqsjfx83e31s",
+      "displayName": "PaulieB14",
+      "image": "https://avatars.githubusercontent.com/u/94752445?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 471,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1775927446697,
+      "changelog": "Route-first design with reference files, live data execution, x402 analytics, Ampersend integration, 14733 subgraphs with query hints",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:46f4dbac0cf67c4d1fd850f326d8b678d926a7d04165c4e7a5c75baea3b2cedf"
+}

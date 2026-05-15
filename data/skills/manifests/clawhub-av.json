@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44956,
+  "uuid": "skill-clawhub-av",
+  "skillKey": "clawhub-av",
+  "name": "AV Skill",
+  "summary": "Toolkit for converting, editing, analyzing, and generating audio and video files, supporting common formats and effects within OpenClaw.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.av",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bittao",
+      "features": [
+        "Toolkit for converting, editing, analyzing, and generating audio and video files, supporting co."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/av@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17961407?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "av",
+      "url": "https://clawhub.ai/skills/av"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "av",
+    "url": "https://clawhub.ai/skills/av",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/av-27a26bca625b2239.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/av@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-av-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ad90ac36a63a3341f88ef1806eb829d30594c6f460d40ff808346363869a9047",
+      "artifactSizeBytes": 2364
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T14:56:40.906Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/upcoming-metal-concerts@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.upcoming_metal_concerts",
+  "skill": {
+    "id": 27129,
+    "skillKey": "clawhub-upcoming-metal-concerts",
+    "name": "Upcoming Metal Concerts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "upcoming-metal-concerts",
+    "url": "https://clawhub.ai/skills/upcoming-metal-concerts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/upcoming-metal-concerts-0b6b260ff2a756de.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Collect upcoming metal concerts and festivals by country using concerts-metal.com. Use when the user asks about upcoming metal shows, gigs, or festivals."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "patfitzner",
+      "userId": "publishers:patfitzner",
+      "displayName": "Pat Fitzner",
+      "image": "https://avatars.githubusercontent.com/u/168721415?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 355,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773222066790,
+      "changelog": "Detect potentially cancelled concerts, simplify output format, conform to ClawHub skill structure",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:23bafce4d041a086cd6ae807f5b570e38d55e628924f3a7d9b68373059cf45ce"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59696,
+  "uuid": "skill-clawhub-obsidian-wsl",
+  "skillKey": "clawhub-obsidian-wsl",
+  "name": "Obsidian WSL",
+  "summary": "通过 notesmd-cli 操作 Obsidian 知识库 — 搜索、创建、编辑、移动、删除笔记及管理 frontmatter，无需 Obsidian 运行。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_wsl",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kxindot",
+      "features": [
+        "通过 notesmd-cli 操作 Obsidian 知识库 — 搜索、创建、编辑、移动、删除笔记及管理 frontmatter，无需 Obsidian 运行。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/obsidian-wsl@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42717683?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "obsidian-wsl",
+      "url": "https://clawhub.ai/skills/obsidian-wsl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-wsl",
+    "url": "https://clawhub.ai/skills/obsidian-wsl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-wsl-15536dc3a158d913.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/obsidian-wsl@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-obsidian-wsl-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:837b4768edf79d45196620584e1b11fc8c8a6f91cf8a0a6c1ecf73e36c57c097",
+      "artifactSizeBytes": 1978
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T17:37:58.017Z"
+}

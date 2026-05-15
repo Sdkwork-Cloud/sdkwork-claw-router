@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-write@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_write",
+  "skill": {
+    "id": 69947,
+    "skillKey": "clawhub-memory-write",
+    "name": "Memory Write"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-write",
+    "url": "https://clawhub.ai/skills/memory-write",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-write-6a2cfa91e82d5ca6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动化将每日工作索引、架构细节和临时想法按规则归档至多层记忆库，确保内容完整可读。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "markma84",
+      "userId": "s1781mqr2e06xdvhk7gbfzd2vs83kfra",
+      "displayName": "MarkMa84",
+      "image": "https://avatars.githubusercontent.com/u/19796416?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1777978477488,
+      "changelog": "路径更新：workspace/memory → workspace/记忆宫",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ed58043e71fd274a684e75a7bf508fcedd5d231823b775165c834b41fbe8c9ec"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cwork-skill-update@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cwork_skill_update",
+  "skill": {
+    "id": 65379,
+    "skillKey": "clawhub-cwork-skill-update",
+    "name": "Cwork Skill Update"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cwork-skill-update",
+    "url": "https://clawhub.ai/skills/cwork-skill-update",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cwork-skill-update-2fa47bd3ddb3f6d7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "管理工作协同中的员工查询、汇报处理、待办闭环和任务协作流程。触发词：cwork/CWork/工作协同/发送汇报/发汇报/汇报/申请/周报/待办/任务/催办/搜索员工/查收件箱。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "spzwin",
+      "userId": "s174w40rh23bjb4hmnxn9p1fa983gsch",
+      "displayName": "spzwin",
+      "image": "https://avatars.githubusercontent.com/u/48741773?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1775651113500,
+      "changelog": "cms-cwork-workflow 1.0.5\n\n- 新增“搜索员工”功能脚本（cwork-search-emp.py），支持按姓名/关键词模糊查找员工并区分内外部。\n- 强化脚本 API 封装和参数校验，所有 API 调用统一通过脚本处理，禁止直接 HTTP 调用。\n- 所有写操作支持 --dry-run/--preview-only 幂等安全机制。\n- 工具集丰富，包括汇报、任务、待办等核心操作，并支持自动上报问题至 GitHub Issues。\n- 更新文档，详细说明使用方法、字段解释与典型流程指引。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a0accb197e5038d822c2fd98189480b298968dac5bb20eb4ee67bf7016259af8"
+}

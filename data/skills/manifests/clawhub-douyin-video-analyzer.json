@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64540,
+  "uuid": "skill-clawhub-douyin-video-analyzer",
+  "skillKey": "clawhub-douyin-video-analyzer",
+  "name": "Douyin Video Analyzer",
+  "summary": "深度拆解抖音视频，自动生成包含数据、结构、视觉、文案的完整分析报告。",
+  "version": "3.7.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_video_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaofei",
+      "features": [
+        "深度拆解抖音视频，自动生成包含数据、结构、视觉、文案的完整分析报告。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/douyin-video-analyzer@3.7.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/236318269?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "douyin-video-analyzer",
+      "url": "https://clawhub.ai/skills/douyin-video-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-video-analyzer",
+    "url": "https://clawhub.ai/skills/douyin-video-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-video-analyzer-41bc33a76e69c9d6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/douyin-video-analyzer@3.7.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-douyin-video-analyzer-3.7.4.json",
+      "version": "3.7.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3237f5e20e681828c324d7bb39d62d04cf1dc7540a795a2879e9d0db777a2277",
+      "artifactSizeBytes": 2004
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T01:00:53.801Z"
+}

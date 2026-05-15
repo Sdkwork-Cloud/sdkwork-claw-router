@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x-92bilal26-pdf@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_92bilal26_pdf",
+  "skill": {
+    "id": 30235,
+    "skillKey": "clawhub-x-92bilal26-pdf",
+    "name": "X 92bilal26 Pdf"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-92bilal26-pdf",
+    "url": "https://clawhub.ai/skills/x-92bilal26-pdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-92bilal26-pdf-20bbf21aa3dd5c3c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nicky1108",
+      "userId": "publishers:nicky1108",
+      "displayName": "nicky1108",
+      "image": "https://avatars.githubusercontent.com/u/4279283?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 277,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773493707867,
+      "changelog": "Initial release of the PDF skill, providing a comprehensive toolkit for PDF manipulation.\n\n- Extracts text and tables from PDFs using Python and command-line tools\n- Supports creating, merging, splitting, rotating, and watermarking PDFs\n- Handles PDF form processing (refer to forms.md for details)\n- Includes OCR for scanned PDFs and image extraction tools\n- Offers quick reference guidance for common PDF tasks",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b7028eba5a43d7b7b9ed2ee551659e3fdc3d8fab3aa04590c1108d18de665a63"
+}

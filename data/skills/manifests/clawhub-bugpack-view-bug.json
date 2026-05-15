@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33126,
+  "uuid": "skill-clawhub-bugpack-view-bug",
+  "skillKey": "clawhub-bugpack-view-bug",
+  "name": "BugPack View Bug",
+  "summary": "View detailed bug context from BugPack including screenshots, environment info, and related files. Use when: user wants to see bug details, screenshots, or u...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bugpack_view_bug",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "duhuazhu",
+      "features": [
+        "View detailed bug context from BugPack including screenshots, environment info, and related fil.",
+        "Use when: user wants to see bug details, screenshots, or u..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bugpack-view-bug@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45280664?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bugpack-view-bug",
+      "url": "https://clawhub.ai/skills/bugpack-view-bug"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bugpack-view-bug",
+    "url": "https://clawhub.ai/skills/bugpack-view-bug",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bugpack-view-bug-814906731590220c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bugpack-view-bug@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-bugpack-view-bug-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6b89ee3bcbd8ccd69c3f5ab66493f8fe2396ef1f5781279ed11b5cc86aa66e88",
+      "artifactSizeBytes": 2319
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T09:27:49.361Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/longterm-memory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.longterm_memory",
+  "skill": {
+    "id": 73383,
+    "skillKey": "clawhub-longterm-memory",
+    "name": "永久记忆系统"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "longterm-memory",
+    "url": "https://clawhub.ai/skills/longterm-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/longterm-memory-1b6c1b1bbd9ea07a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "永久记忆自动归档系统。每次对话自动记录，语义搜索，跨会话继承。重启不丢、永不覆盖、0学习成本。用于用户提到记忆、历史、之前说过、记得什么等场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liujw0214",
+      "userId": "s170dy42phba5mfs38gpqywtpd83h0p8",
+      "displayName": "Primordia",
+      "image": "https://avatars.githubusercontent.com/u/224094441?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777745088684,
+      "changelog": "Permanent memory system for automatic dialogue archiving and semantic search.\n\n- Conversations are automatically and permanently archived after each session.\n- Key preferences, decisions, and project details are summarized in MEMORY.md; all dialogues are logged by date.\n- Memory is append-only: nothing is ever overwritten or deleted.\n- Context is seamlessly inherited across sessions, even after restarts.\n- No extra setup needed—just enable to use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9cc087c0944a7dae3136685e47beef9a2aeac65aaf622804c55ee2d51fec621d"
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12952,
+  "uuid": "skill-clawhub-scryfall-cards",
+  "skillKey": "clawhub-scryfall-cards",
+  "name": "scryfall-cards",
+  "summary": "Search and retrieve Magic: The Gathering card data using the Scryfall API. Use this skill when the user asks about MTG cards, wants to search for cards by name, type, color, mana cost, oracle text, set, or any other card attribute. Also us.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scryfall_cards",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "santidev95",
+      "features": [
+        "Search and retrieve Magic: The Gathering card data using the Scryfall API",
+        "Use this skill when the user asks about MTG cards, wants to search for cards by name, type, col.",
+        "Also use for getting card images, prices, rulings, legality information, or random cards",
+        "Triggers include mentions of MTG, Magic, Magic: The Gathering, card names, deck building questi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/scryfall-cards@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5595663?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "scryfall-cards",
+      "url": "https://clawhub.ai/skills/scryfall-cards"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scryfall-cards",
+    "url": "https://clawhub.ai/skills/scryfall-cards",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scryfall-cards-4b141ef97fda0411.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/scryfall-cards@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-scryfall-cards-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:de38e20939574fd3b3db780a9b0ec0afc47127726b7e99e8bd8abd5395371c48",
+      "artifactSizeBytes": 2383
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T16:25:57.163Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/airlines@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.airlines",
+  "skill": {
+    "id": 71000,
+    "skillKey": "clawhub-airlines",
+    "name": "Airlines"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "airlines",
+    "url": "https://clawhub.ai/skills/airlines",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/airlines-c6f986974e6f7fd1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供航空公司历史、产品、市场地位、全球布局及最新动态的全面信息查询服务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776232805627,
+      "changelog": "- 增加了 version 字段到 SKILL.md，现在显示为 1.0.4\n- 文档内容保持不变，仅结构上有小幅更新",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ff313bfc939168ab55c4370fd51c5f85f850a58d21853525875f2062fd7c692a"
+}

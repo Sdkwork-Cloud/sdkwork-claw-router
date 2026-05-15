@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vincent-agent-wallet@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vincent_agent_wallet",
+  "skill": {
+    "id": 13867,
+    "skillKey": "clawhub-vincent-agent-wallet",
+    "name": "Vincent - A secure wallet for your agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vincent-agent-wallet",
+    "url": "https://clawhub.ai/skills/vincent-agent-wallet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vincent-agent-wallet-826e7f7acc89653b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill to safely create a wallet the agent can use for transfers, swaps, and any EVM chain transaction. Also supports raw signing and polymarket betting."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "piperwallet",
+      "userId": "publishers:piperwallet",
+      "displayName": "piperwallet",
+      "image": "https://avatars.githubusercontent.com/u/4969170?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1335,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770258972247,
+      "changelog": "- Initial release of Vincent agent wallet skill.\n- Create smart account wallets for agents for use on any EVM chain, supporting transfers, swaps, and contract interactions without exposing private keys.\n- Multiple wallet types supported: EVM_WALLET, RAW_SIGNER (Ethereum & Solana signing), and POLYMARKET_WALLET (Polygon, prediction markets).\n- Owner-defined policies: set transfer limits, approval workflows, and allowlists for secure agent wallet operations.\n- API endpoints for creating wallets, checking balances, transferring tokens, swapping, custom transactions, and re-linking API access.\n- Fully documented usage and configuration examples provided.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ce854fb9b245410cdb259a4ed130307cae00253818304f3e37ac8c32fe60cf4b"
+}

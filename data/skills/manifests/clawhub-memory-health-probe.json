@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50402,
+  "uuid": "skill-clawhub-memory-health-probe",
+  "skillKey": "clawhub-memory-health-probe",
+  "name": "Memory Health Probe",
+  "summary": "QMD memory system telemetry — measure index health, BM25 retrieval quality, coverage maps, and trend analysis. Use when running QMD memory backend and need d...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_health_probe",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nissan Dookeran",
+      "features": [
+        "QMD memory system telemetry — measure index health, BM25 retrieval quality, coverage maps, and.",
+        "Use when running QMD memory backend and need d..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-health-probe@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12583?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-health-probe",
+      "url": "https://clawhub.ai/skills/memory-health-probe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-health-probe",
+    "url": "https://clawhub.ai/skills/memory-health-probe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-health-probe-5a4016f037964d66.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-health-probe@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-health-probe-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7e6afb773970affbf3f488ef240cbadfb1f7aefb49228ee98d26b88e7da7f1e0",
+      "artifactSizeBytes": 1994
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T04:41:58.873Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10461,
+  "uuid": "skill-clawhub-typhoon-starknet-account",
+  "skillKey": "clawhub-typhoon-starknet-account",
+  "name": "Typhoon Starknet Account",
+  "summary": "Create an anonymous Starknet wallet via Typhoon and interact with Starknet contracts. Privacy-focused wallet creation for agents requiring anonymity.",
+  "version": "0.3.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.typhoon_starknet_account",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "esdras-sena",
+      "features": [
+        "Create an anonymous Starknet wallet via Typhoon and interact with Starknet contracts",
+        "Privacy-focused wallet creation for agents requiring anonymity."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/typhoon-starknet-account@0.3.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/177535782?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "typhoon-starknet-account",
+      "url": "https://clawhub.ai/skills/typhoon-starknet-account"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "typhoon-starknet-account",
+    "url": "https://clawhub.ai/skills/typhoon-starknet-account",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/typhoon-starknet-account-87642ccb8dac9c80.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/typhoon-starknet-account@0.3.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-typhoon-starknet-account-0.3.8.json",
+      "version": "0.3.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a24fa3316711967e3f3b63936d46b4fae6a53d7e9620ebba042fc68e544e5bb6",
+      "artifactSizeBytes": 2025
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T17:13:28.577Z"
+}

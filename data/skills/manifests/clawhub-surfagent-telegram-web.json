@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39678,
+  "uuid": "skill-clawhub-surfagent-telegram-web",
+  "skillKey": "clawhub-surfagent-telegram-web",
+  "name": "SurfAgent Telegram Web",
+  "summary": "Telegram Web platform skill for SurfAgent, covering chat state, composer flows, send verification, and when to use the Telegram Web adapter over raw browser...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.surfagent_telegram_web",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "surfagentapp",
+      "features": [
+        "Telegram Web platform skill for SurfAgent, covering chat state, composer flows, send verificati."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/surfagent-telegram-web@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269739611?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "surfagent-telegram-web",
+      "url": "https://clawhub.ai/skills/surfagent-telegram-web"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "surfagent-telegram-web",
+    "url": "https://clawhub.ai/skills/surfagent-telegram-web",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/surfagent-telegram-web-102cd42bcddff4fb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/surfagent-telegram-web@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-surfagent-telegram-web-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:844fca7fc4e382d40488143071b44706c194468349de9c910f703fc21352d765",
+      "artifactSizeBytes": 1965
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T05:28:08.036Z"
+}

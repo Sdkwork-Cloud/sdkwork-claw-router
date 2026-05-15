@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/investment-portfolio@4.0.0",
+  "version": "4.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.investment_portfolio",
+  "skill": {
+    "id": 12862,
+    "skillKey": "clawhub-investment-portfolio",
+    "name": "Investment Portfolio"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "investment-portfolio",
+    "url": "https://clawhub.ai/skills/investment-portfolio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/investment-portfolio-8fb6f6eb17a05721.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track investments with buy/sell records, allocation charts, and P/L analysis. Use when managing a stock or crypto portfolio, rebalancing, or comparing assets."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ckchzh",
+      "userId": "s1722v35hsq964bw64ecjw43z583fbex",
+      "displayName": "BytesAgain2",
+      "image": "https://avatars.githubusercontent.com/u/44366898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1567,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 0,
+      "versions": 20
+    },
+    "latestVersion": {
+      "version": "4.0.0",
+      "createdAt": 1773883937143,
+      "changelog": "v4.0.0: Complete rewrite — clean heredocs, all 16 commands with real calculations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:de2c39ebb4ae66d2583ffa116833e4bc0df02be41741f2f0fc7804d9e652e8f2"
+}

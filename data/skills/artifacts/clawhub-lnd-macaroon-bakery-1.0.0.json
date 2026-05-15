@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lnd-macaroon-bakery@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lnd_macaroon_bakery",
+  "skill": {
+    "id": 18197,
+    "skillKey": "clawhub-lnd-macaroon-bakery",
+    "name": "lnd macaroon bakery"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lnd-macaroon-bakery",
+    "url": "https://clawhub.ai/skills/lnd-macaroon-bakery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lnd-macaroon-bakery-7b7c4f6700eff14c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bake, inspect, and manage lnd macaroons for least-privilege agent access. Use when an agent needs scoped credentials — pay-only, invoice-only, read-only, or custom permissions. Also covers signer macaroon scoping and macaroon rotation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "roasbeef",
+      "userId": "publishers:roasbeef",
+      "displayName": "Roasbeef",
+      "image": "https://avatars.githubusercontent.com/u/998190?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1103,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770777646123,
+      "changelog": "Initial release of lnd-macaroon-bakery.\n\n- Bake least-privilege lnd macaroons for pay-only, invoice-only, read-only, channel-admin, and signer-only roles.\n- Inspect macaroons to verify permissions before use.\n- Supports custom permission sets for fine-grained access control.\n- Works with local, Docker, and remote lnd nodes.\n- Features macaroon rotation and signer macaroon scoping (for lightning-security-module).\n- Includes guidance and best practices to avoid using `admin.macaroon` in production.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:763a1160d4fae344007467b9499023c4f1ed3a5e49fd73aec8070e08413892a1"
+}

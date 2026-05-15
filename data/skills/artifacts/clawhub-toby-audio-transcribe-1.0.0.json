@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toby-audio-transcribe@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toby_audio_transcribe",
+  "skill": {
+    "id": 44693,
+    "skillKey": "clawhub-toby-audio-transcribe",
+    "name": "audio-transcribe"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toby-audio-transcribe",
+    "url": "https://clawhub.ai/skills/toby-audio-transcribe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toby-audio-transcribe-fa356d0de3a6edc5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transcribe, diarise, translate, post-process, and structure audio/video with AssemblyAI. Use this skill when the user wants AssemblyAI specifically, needs hi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tobeyrebecca",
+      "userId": "s17a4w4rxr2w5b31z6gnpnqg2184msz0",
+      "displayName": "TobeyRebecca",
+      "image": "https://avatars.githubusercontent.com/u/260428668?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776130144246,
+      "changelog": "AssemblyAI-specific, agent-friendly audio/video transcription and processing.\n\n- Now focused on AssemblyAI features: model routing, diarisation, speaker mapping, and advanced transcript exports (Markdown, JSON, manifest).\n- Provides a CLI for transcription, understanding, formatting, LLM-based extraction, and bundled output for agents or downstream workflows.\n- Supports language detection/code-switching, translation, and rich output formats (subtitles, paragraphs, sentences).\n- Facilitates advanced workflows: speaker name/role mapping, structured extraction, agent-ready outputs.\n- Includes model/language lookup commands and local bundled knowledge for easy discovery of supported features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e290e2c8906156d1386829c12ab5d954d33c26d75b2141f4056fb9260ddef6f3"
+}

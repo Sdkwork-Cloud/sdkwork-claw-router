@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/voice-ai-voices@1.1.5",
+  "version": "1.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voice_ai_voices",
+  "skill": {
+    "id": 10137,
+    "skillKey": "clawhub-voice-ai-voices",
+    "name": "Voice.ai Voices"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voice-ai-voices",
+    "url": "https://clawhub.ai/skills/voice-ai-voices",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voice-ai-voices-48f4b5c3d49a501a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "High-quality voice synthesis with 9 personas, 11 languages, and streaming using Voice.ai API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gizmogremlin",
+      "userId": "publishers:gizmogremlin",
+      "displayName": "Nick Gill",
+      "image": "https://avatars.githubusercontent.com/u/42254038?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2890,
+      "installsAllTime": 7,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.5",
+      "createdAt": 1771285443904,
+      "changelog": "- Added CHANGELOG.md, LICENSE.md, README.md, SECURITY.md, package.json, and voices.json for better documentation, licensing, and security clarity.\n- Declared runtime and environment requirements in skill metadata for improved integration with ClawHub and OpenClaw.\n- Updated available voices in documentation to reflect new or renamed personas.\n- Split configuration, security, and usage documentation into separate, dedicated files.\n- Revised OpenClaw integration details and streamlined example commands.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4b9bd81d3be25185595bac5c0b1dc8b38a1a608bc83ca0222860cecc041dcac0"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/django-vue-admin@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.django_vue_admin",
+  "skill": {
+    "id": 37041,
+    "skillKey": "clawhub-django-vue-admin",
+    "name": "Django Vue Admin"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "django-vue-admin",
+    "url": "https://clawhub.ai/skills/django-vue-admin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/django-vue-admin-b2f25e3526a0d557.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate complete django-vue-admin style CRUD code including Django models, serializers, views, URLs, Vue API, and Vue pages from module descriptions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jpzhengcn",
+      "userId": "s173afppv4r7cjgjk1ggx4ttq583yxpd",
+      "displayName": "jpzhengcn",
+      "image": "https://avatars.githubusercontent.com/u/268075627?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774955290543,
+      "changelog": "django-vue-admin 1.0.0\n\n- 首次发布，支持一键生成完整的 django-vue-admin 风格项目代码\n- 根据用户描述自动生成 Django Model、Serializer、ViewSet、URL 及 Vue 页面和 API\n- 内置多种模板文档，实现自定义字段、业务逻辑与流程自动读取和应用\n- 用户通过简单对话即可完成模块代码生成，支持 CRUD 全流程",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:57fc2793b1a227da76b8539e92256b4a3165c09d548c5f3fb80d2cf5248b46fc"
+}

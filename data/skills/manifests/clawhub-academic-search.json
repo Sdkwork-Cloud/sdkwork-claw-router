@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11396,
+  "uuid": "skill-clawhub-academic-search",
+  "skillKey": "clawhub-academic-search",
+  "name": "Academic Search",
+  "summary": "Conducts systematic searches across arXiv, Google Scholar, and Semantic Scholar to find, analyze, and summarize the top 5 relevant academic papers with full...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.academic_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ArthurNie",
+      "features": [
+        "Conducts systematic searches across arXiv, Google Scholar, and Semantic Scholar to find, analyz."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/academic-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264332276?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "academic-search",
+      "url": "https://clawhub.ai/skills/academic-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "academic-search",
+    "url": "https://clawhub.ai/skills/academic-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/academic-search-59ed16c847ec6e6e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/academic-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-academic-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7af1f41526e3a78b7a9b10832f389dfca1a35809c4a203b71064cd7aeec89bab",
+      "artifactSizeBytes": 2557
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T07:38:18.703Z"
+}

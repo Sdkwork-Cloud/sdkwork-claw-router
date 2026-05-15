@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21424,
+  "uuid": "skill-clawhub-douyin-to-photos",
+  "skillKey": "clawhub-douyin-to-photos",
+  "name": "Douyin To Photos",
+  "summary": "Build and maintain an Apple Shortcuts workflow that takes a Douyin share link, resolves a no-watermark MP4 URL via configurable backend APIs, saves the video...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_to_photos",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vahnxu",
+      "features": [
+        "Build and maintain an Apple Shortcuts workflow that takes a Douyin share link, resolves a no-wa."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/douyin-to-photos@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19759725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "douyin-to-photos",
+      "url": "https://clawhub.ai/skills/douyin-to-photos"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-to-photos",
+    "url": "https://clawhub.ai/skills/douyin-to-photos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-to-photos-2b4ac2b0321958d7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/douyin-to-photos@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-douyin-to-photos-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:55cf23900f7c0e4c0cb00439dc0178dc662685bacddac744a6f19bf274fe3182",
+      "artifactSizeBytes": 2426
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T15:53:23.552Z"
+}

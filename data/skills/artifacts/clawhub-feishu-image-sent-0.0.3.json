@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-image-sent@0.0.3",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_image_sent",
+  "skill": {
+    "id": 68011,
+    "skillKey": "clawhub-feishu-image-sent",
+    "name": "feishu-image-sender"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-image-sent",
+    "url": "https://clawhub.ai/skills/feishu-image-sent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-image-sent-69ec7d441782d5ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "飞书图片发送工具，支持系统截屏、区域截图和本地图片文件发送到飞书工作区，方便快速分享屏幕内容。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andersonhjb",
+      "userId": "s17dz73q6zkbag0z5s5yhgvfyh83pjzm",
+      "displayName": "AI悦创Python一对一辅导",
+      "image": "https://avatars.githubusercontent.com/u/48122016?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 491,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.0.3",
+      "createdAt": 1773622865838,
+      "changelog": "Version 0.0.3\n\n- 新增 improved/config/settings.sh 配置文件\n- 为后续优化或自定义配置做准备，当前并无对核心流程和功能的更动\n- 其余功能与说明未作修改，兼容原有用法",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a5b03b90c5cf12850adc350906fe745b58ecb61524d6b73b057fffb1474d6693"
+}

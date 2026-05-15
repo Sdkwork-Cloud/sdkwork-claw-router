@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/r-analyst@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.r_analyst",
+  "skill": {
+    "id": 34768,
+    "skillKey": "clawhub-r-analyst",
+    "name": "R Analyst"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "r-analyst",
+    "url": "https://clawhub.ai/skills/r-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/r-analyst-a3629420b117a374.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "R-style statistical analysis powered by Python 3. Use when computing descriptive statistics, generating ASCII histograms, calculating correlation matrices, d..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "loutai0307-prog",
+      "userId": "s178me4n5rr0ch93xv584tjyv183s7r1",
+      "displayName": "loutai0307-prog",
+      "image": "https://avatars.githubusercontent.com/u/266760463?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 211,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776407223687,
+      "changelog": "Fix: align SKILL.md commands with script implementation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:523100b8c206445d06dc9cc89279e91bf34184625b9c0cbd7b1bfd76d8bbd037"
+}

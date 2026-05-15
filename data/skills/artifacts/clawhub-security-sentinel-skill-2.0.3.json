@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/security-sentinel-skill@2.0.3",
+  "version": "2.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.security_sentinel_skill",
+  "skill": {
+    "id": 8569,
+    "skillKey": "clawhub-security-sentinel-skill",
+    "name": "Anti-Injection-Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "security-sentinel-skill",
+    "url": "https://clawhub.ai/skills/security-sentinel-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/security-sentinel-skill-cacabc28cd0eab8b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detect prompt injection, jailbreak, role-hijack, and system extraction attempts. Applies multi-layer defense with semantic analysis and penalty scoring."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "georges91560",
+      "userId": "publishers:georges91560",
+      "displayName": "Wesley Armando",
+      "image": "https://avatars.githubusercontent.com/u/130360599?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 9810,
+      "installsAllTime": 21,
+      "installsCurrent": 19,
+      "stars": 10,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "2.0.3",
+      "createdAt": 1771514979461,
+      "changelog": "Security Sentinel 2.0.3 Changelog\n\n- Added CONFIGURATION.md with setup and usage information.\n- Added SECURITY.md to document security policies and vulnerability disclosure procedures.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c0bc4c1a5578dadb93cd1f83110e37e36d7f4d0c2c6b4b15290d8ddf09444156"
+}

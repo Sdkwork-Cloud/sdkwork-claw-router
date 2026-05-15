@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toggl@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toggl",
+  "skill": {
+    "id": 11064,
+    "skillKey": "clawhub-toggl",
+    "name": "Toggl"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toggl",
+    "url": "https://clawhub.ai/skills/toggl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toggl-ce0ac89c1eb6795e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track time with Toggl via the toggl CLI. Use when the user wants to start/stop time tracking, check current timer, view today's or weekly reports, list recent entries, or manage time entries. Triggers on \"toggl\", \"time tracking\", \"timer\",."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clvrobj",
+      "userId": "publishers:clvrobj",
+      "displayName": "clvrobj",
+      "image": "https://avatars.githubusercontent.com/u/437388?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2194,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769854199350,
+      "changelog": "Initial release: Toggl time tracking via @beauraines/toggl-cli. Start/stop timers, view reports, manage entries.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:86c86cb5a1129114e63651a6048abe505f12d304720f30b3fd95a1e986ce551e"
+}

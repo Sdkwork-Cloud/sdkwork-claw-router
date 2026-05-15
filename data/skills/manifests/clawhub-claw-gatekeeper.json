@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24541,
+  "uuid": "skill-clawhub-claw-gatekeeper",
+  "skillKey": "clawhub-claw-gatekeeper",
+  "name": "Claw Gatekeeper",
+  "summary": "OpenClaw Guardian is a comprehensive security control system for OpenClaw that intercepts high-risk operations and requires human confirmation before executi...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_gatekeeper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "stephenlzc",
+      "features": [
+        "OpenClaw Guardian is a comprehensive security control system for OpenClaw that intercepts high-."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-gatekeeper@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52523593?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-gatekeeper",
+      "url": "https://clawhub.ai/skills/claw-gatekeeper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-gatekeeper",
+    "url": "https://clawhub.ai/skills/claw-gatekeeper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-gatekeeper-ff60ba478215ea2b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-gatekeeper@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-gatekeeper-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e9f47a621383d5e92bfd9596b028bb7984982fb6aaaca8b6ac24ffcb23fa055f",
+      "artifactSizeBytes": 2513
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T04:35:17.882Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71149,
+  "uuid": "skill-clawhub-feishu-share-link",
+  "skillKey": "clawhub-feishu-share-link",
+  "name": "feishu-share-link",
+  "summary": "飞书专属分享链接生成规范。当生成文档、多维表格、知识库等链接时，必须同时提供专属企业域名的链接和通用飞书根域名的链接，确保稳妥访问。支持多租户动态读取。",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_share_link",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AI悦创Python一对一辅导",
+      "features": [
+        "飞书专属分享链接生成规范。当生成文档、多维表格、知识库等链接时，必须同时提供专属企业域名的链接和通用飞书根域名的链接，确保稳妥访问。支持多租户动态读取。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-share-link@0.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48122016?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-share-link",
+      "url": "https://clawhub.ai/skills/feishu-share-link"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-share-link",
+    "url": "https://clawhub.ai/skills/feishu-share-link",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-share-link-54e2fbe71db3fdfe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-share-link@0.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-share-link-0.0.2.json",
+      "version": "0.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:90b7ec74ff5044160e21aca6aa283f2e12abbf2acef765c08cb12603d5821069",
+      "artifactSizeBytes": 2339
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T08:59:52.227Z"
+}

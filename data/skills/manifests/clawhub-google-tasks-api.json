@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8789,
+  "uuid": "skill-clawhub-google-tasks-api",
+  "skillKey": "clawhub-google-tasks-api",
+  "name": "Google Tasks",
+  "summary": "Google Tasks API integration with managed OAuth. Manage task lists and tasks with full CRUD operations. Use this skill when users want to read, create, updat...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_tasks_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byungkyu",
+      "features": [
+        "Google Tasks API integration with managed OAuth",
+        "Manage task lists and tasks with full CRUD operations",
+        "Use this skill when users want to read, create, updat..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-tasks-api@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16563684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-tasks-api",
+      "url": "https://clawhub.ai/skills/google-tasks-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-tasks-api",
+    "url": "https://clawhub.ai/skills/google-tasks-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-tasks-api-e05fad2e68ce00ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-tasks-api@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-tasks-api-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:63d0a64232dbe06fcb22be56e191ac8b423cccd25b134e8a3336942b2e9eade3",
+      "artifactSizeBytes": 2287
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T10:05:27.218Z"
+}

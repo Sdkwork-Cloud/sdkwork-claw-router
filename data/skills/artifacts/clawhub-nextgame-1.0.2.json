@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nextgame@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nextgame",
+  "skill": {
+    "id": 37535,
+    "skillKey": "clawhub-nextgame",
+    "name": "next ai game"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nextgame",
+    "url": "https://clawhub.ai/skills/nextgame",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nextgame-dc1bb75c53e2ebd6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and upload a mobile-compatible HTML game to the brianclan/aigames GitHub with wallet-linked config and preview image for thenext.games."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brianclan",
+      "userId": "s176ct9319ts8rh8c12tmwt77983gw05",
+      "displayName": "thenext",
+      "image": "https://avatars.githubusercontent.com/u/105781102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774715063961,
+      "changelog": "- Fixed formatting issue in config.json example in section III; removed malformed \"address\" field and notes to ensure valid JSON.\n- Updated the experience URL format in the upload completion step to https://thenext.games/game/ + gameFolder for consistency.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:da07d16b212c9978d63633463c951adcf2df5b05fb91fd9ad580144d03c5eb28"
+}

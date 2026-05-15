@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9786,
+  "uuid": "skill-clawhub-skill-writer",
+  "skillKey": "clawhub-skill-writer",
+  "name": "Skill Writer",
+  "summary": "Write high-quality agent skills (SKILL.md files) for ClawdHub/MoltHub. Use when creating a new skill from scratch, structuring skill content, writing effective frontmatter and descriptions, choosing section patterns, or following best prac.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_writer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gitgoodordietrying",
+      "features": [
+        "Write high-quality agent skills (SKILL.md files) for ClawdHub/MoltHub",
+        "Use when creating a new skill from scratch, structuring skill content, writing effective frontm."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-writer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/116975874?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-writer",
+      "url": "https://clawhub.ai/skills/skill-writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-writer",
+    "url": "https://clawhub.ai/skills/skill-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-writer-983599989fe74fdf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-writer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-writer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2dc6be0002177ec8ebcb5eb395d702aa55f49b2b9cee4932d6df4845657ff7c0",
+      "artifactSizeBytes": 2018
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T22:55:56.664Z"
+}

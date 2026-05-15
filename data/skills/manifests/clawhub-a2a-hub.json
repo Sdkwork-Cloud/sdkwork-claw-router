@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15058,
+  "uuid": "skill-clawhub-a2a-hub",
+  "skillKey": "clawhub-a2a-hub",
+  "name": "A2A Hub",
+  "summary": "Manage the MoltBot A2A Hub — register agents, search the registry, relay messages, and stream responses. Use when working with the A2A agent-to-agent protocol hub deployed at a2a-hub.fly.dev.",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a2a_hub",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "myrodar",
+      "features": [
+        "Manage the MoltBot A2A Hub — register agents, search the registry, relay messages, and stream r.",
+        "Use when working with the A2A agent-to-agent protocol hub deployed at a2a-hub.fly.dev."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/a2a-hub@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/108596859?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "a2a-hub",
+      "url": "https://clawhub.ai/skills/a2a-hub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a2a-hub",
+    "url": "https://clawhub.ai/skills/a2a-hub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a2a-hub-8d18532d4337c648.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/a2a-hub@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-a2a-hub-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6056f4872a479c44ce0949000952421bceabfada9f57edcec46114f7b461d53a",
+      "artifactSizeBytes": 1888
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T10:06:49.860Z"
+}

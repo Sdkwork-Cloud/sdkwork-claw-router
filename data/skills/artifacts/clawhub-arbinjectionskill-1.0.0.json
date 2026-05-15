@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/arbinjectionskill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arbinjectionskill",
+  "skill": {
+    "id": 13493,
+    "skillKey": "clawhub-arbinjectionskill",
+    "name": "BYOCB ArbInjectionSkill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arbinjectionskill",
+    "url": "https://clawhub.ai/skills/arbinjectionskill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arbinjectionskill-05f4db131d873a4e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "BYOCB ArbInjectionSkill: Scan EVM smart contracts for arbitrary call injection vulnerabilities. Monitor chains in real-time or scan specific addresses."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cryptotooldev",
+      "userId": "publishers:cryptotooldev",
+      "displayName": "CryptoToolDev",
+      "image": "https://avatars.githubusercontent.com/u/131488347?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1438,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770291981409,
+      "changelog": "Initial release of BYOCB ArbInjectionSkill:\n\n- Scans EVM smart contracts for arbitrary call injection vulnerabilities.\n- Monitors multiple blockchains in real-time for new contract deployments.\n- Supports on-demand scanning of specific addresses.\n- Saves findings with risk verdicts (CRITICAL, HIGH, MEDIUM, LOW/SAFE) and detailed reports.\n- Provides guidance for alerting users and avoiding false positives.\n- Includes scheduled update recommendations and environment variable support.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b721f224a25d6e240c030ca3006b4b3f7d4038f6190b423249c53c0baab1fe9c"
+}

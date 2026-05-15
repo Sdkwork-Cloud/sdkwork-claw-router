@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13265,
+  "uuid": "skill-clawhub-aisa-media-gen-skill",
+  "skillKey": "clawhub-aisa-media-gen-skill",
+  "name": "AI Media Generation",
+  "summary": "Generate images & videos with AIsa. Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aisa_media_gen_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bowen-dotcom",
+      "features": [
+        "Generate images & videos with AIsa",
+        "Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aisa-media-gen-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258157479?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aisa-media-gen-skill",
+      "url": "https://clawhub.ai/skills/aisa-media-gen-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aisa-media-gen-skill",
+    "url": "https://clawhub.ai/skills/aisa-media-gen-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aisa-media-gen-skill-895db969f5ccb295.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aisa-media-gen-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-aisa-media-gen-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fdd183e74d358d1cb7129f98c1242be9d9dccc8d45501c36926b652f340503a6",
+      "artifactSizeBytes": 2131
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T09:55:13.186Z"
+}

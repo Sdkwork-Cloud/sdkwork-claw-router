@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stableops-lifi-treasury@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stableops_lifi_treasury",
+  "skill": {
+    "id": 41209,
+    "skillKey": "clawhub-stableops-lifi-treasury",
+    "name": "StableOps Treasury"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stableops-lifi-treasury",
+    "url": "https://clawhub.ai/skills/stableops-lifi-treasury",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stableops-lifi-treasury-240b5fc6fa76d2cc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when a team, DAO, or builder wants to deploy USDC from a stablecoin treasury into LI.FI Earn vaults under explicit treasury policy limits, pre..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "richard7463",
+      "userId": "s171aabnhwf1azz5asdd7pk8sn83g299",
+      "displayName": "richard7463",
+      "image": "https://avatars.githubusercontent.com/u/13402558?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775990185870,
+      "changelog": "- Initial release of stableops-lifi-treasury for policy-driven treasury management.\n- Enables USDC deployment from team, DAO, or builder treasuries into LI.FI Earn vaults under explicit policy limits.\n- Supports policy checks including reserve target, max per execution, allowed chains, risk level, and minimum TVL.\n- Prepares Composer deposit and generates receipt-token execution reports with plain-language explanations.\n- Prioritizes treasury rules and compliance before yield considerations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bca5a5c51aee9cf16f06d3a139638d87386f10c996a0d5a59e3d25539da1da20"
+}

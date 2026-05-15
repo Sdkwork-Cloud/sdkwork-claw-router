@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/git-team-ops@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_team_ops",
+  "skill": {
+    "id": 24646,
+    "skillKey": "clawhub-git-team-ops",
+    "name": "Git Team Ops"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-team-ops",
+    "url": "https://clawhub.ai/skills/git-team-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-team-ops-3a45a26110bf55a1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Role-based GitOps skill for OpenClaw agents with junior and senior operating modes."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "launchthatbot",
+      "userId": "publishers:launchthatbot",
+      "displayName": "launchthatbot",
+      "image": "https://avatars.githubusercontent.com/u/261104215?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 406,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1772567292281,
+      "changelog": "launchthatbot-git-team-ops v0.1.5\n\n- Introduced strict role-based policies for \"junior\" (PR-only) and \"senior\" (review/merge) agent modes.\n- Added support for multiple authentication modes: managed-app (default), custom GitHub app (byo-app), and fallback PAT.\n- Documented comprehensive onboarding flows for both senior and junior agents, including required branch and workflow setup steps.\n- Outlined detailed operational guardrails and security practices for safe GitOps workflows.\n- Clarified required output and interaction style for clear reporting and approvals.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:83c018f0e02683c31d5c2f05df596bc80e11979ed355a7a2dae39c34f3231121"
+}

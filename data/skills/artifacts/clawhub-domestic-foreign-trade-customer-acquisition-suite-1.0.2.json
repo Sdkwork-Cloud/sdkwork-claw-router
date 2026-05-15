@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/domestic-foreign-trade-customer-acquisition-suite@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.domestic_foreign_trade_customer_acquisition_suite",
+  "skill": {
+    "id": 70365,
+    "skillKey": "clawhub-domestic-foreign-trade-customer-acquisition-suite",
+    "name": "内外贸全渠道获客智能助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "domestic-foreign-trade-customer-acquisition-suite",
+    "url": "https://clawhub.ai/skills/domestic-foreign-trade-customer-acquisition-suite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/domestic-foreign-trade-customer-acquisition-suite-63449d5c4513da68.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "人机协作台技能。用户输入自然语言销售指令，AI自动分析拆解任务参数，调用 deepsop 平台接口提交任务，等待后查询结果并推送。触发场景：用户说「帮我找客户」「挖掘XXX行业客户」「找XXX个客户」「提交任务」等与客户挖掘、销售任务相关的指令；「发TikTok视频」「生成视频发布到TikTok」等TikTok视..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kukuoai",
+      "userId": "s1712m8vcb80w6w0b38d1tr5eh84tsxd",
+      "displayName": "kukuoAI",
+      "image": "https://avatars.githubusercontent.com/u/275868190?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1778155990875,
+      "changelog": "1. Updated API Key acquisition instructions for clarity, adding direct login and registration links.\n2. No changes to business logic, API endpoints, or program flow.\n3. Documentation now emphasizes the requirement for API Key authorization before use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b7a48bf46131613651d8a6762ed3340ebf3678ebca3a0954293108ad2f552fd7"
+}

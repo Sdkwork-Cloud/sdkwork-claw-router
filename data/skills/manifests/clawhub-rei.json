@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11357,
+  "uuid": "skill-clawhub-rei",
+  "skillKey": "clawhub-rei",
+  "name": "Rei-Clawd",
+  "summary": "Set up Rei Qwen3 Coder as a model provider. Use when configuring coder.reilabs.org, adding Rei to Clawdbot, or troubleshooting 403 errors from Rei endpoints.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rei",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "0xReisearch",
+      "features": [
+        "Set up Rei Qwen3 Coder as a model provider",
+        "Use when configuring coder.reilabs.org, adding Rei to Clawdbot, or troubleshooting 403 errors f."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rei@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/188171611?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rei",
+      "url": "https://clawhub.ai/skills/rei"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rei",
+    "url": "https://clawhub.ai/skills/rei",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rei-780a23528c754a50.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rei@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-rei-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e92ca5804e8c3788b8cb181f09d09b38ddbbbdb266a4c627b2689a71d63d5922",
+      "artifactSizeBytes": 1806
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-27T09:35:50.807Z"
+}

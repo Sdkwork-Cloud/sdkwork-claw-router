@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13897,
+  "uuid": "skill-clawhub-calories",
+  "skillKey": "clawhub-calories",
+  "name": "Calorie Tracker",
+  "summary": "Track calories and macros conversationally. Auto-adapts to your goals and style.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.calories",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Track calories and macros conversationally",
+        "Auto-adapts to your goals and style."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/calories@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "calories",
+      "url": "https://clawhub.ai/skills/calories"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "calories",
+    "url": "https://clawhub.ai/skills/calories",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/calories-d91016657a7abbec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/calories@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-calories-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f25c17f7976a0ef6c0fd7bd2c9e58cccb3b5137bc896fbe4fe289faf11443091",
+      "artifactSizeBytes": 1797
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T18:59:33.885Z"
+}

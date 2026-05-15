@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15101,
+  "uuid": "skill-clawhub-agos-marketplace",
+  "skillKey": "clawhub-agos-marketplace",
+  "name": "Agos Marketplace",
+  "summary": "Integrate OpenClaw with Agos Marketplace and automatically execute both sell-side listing creation and buy-side order creation through executable scripts. Us...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agos_marketplace",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DanielW8088",
+      "features": [
+        "Integrate OpenClaw with Agos Marketplace and automatically execute both sell-side listing creat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agos-marketplace@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/108506245?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agos-marketplace",
+      "url": "https://clawhub.ai/skills/agos-marketplace"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agos-marketplace",
+    "url": "https://clawhub.ai/skills/agos-marketplace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agos-marketplace-fa9b095e1de25c13.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agos-marketplace@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-agos-marketplace-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:801edb585ba4cc739c1aff0d100e6cb99cda9a42c59707ca57f259bab463b41e",
+      "artifactSizeBytes": 1996
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T19:56:03.299Z"
+}

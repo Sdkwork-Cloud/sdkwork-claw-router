@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60717,
+  "uuid": "skill-clawhub-openclaw-ops-guardrails",
+  "skillKey": "clawhub-openclaw-ops-guardrails",
+  "name": "OpenClaw Ops Guardrails",
+  "summary": "OpenClaw 运维防呆与排障标准化技能。用于跨设备（Gateway + Mac nodes）巡检、远程执行稳定性治理、CLI-only 兼容、配对/审批异常排查、以及对外发布前脱敏检查。用户提到“又报错了/审批超时/pairing required/system.run failed/如何标准化运维规则”时使用。",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_ops_guardrails",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xyezir",
+      "features": [
+        "OpenClaw 运维防呆与排障标准化技能。用于跨设备（Gateway + Mac nodes）巡检、远程执行稳定性治理、CLI-only 兼容、配对/审批异常排查、以及对外发布前脱敏检查。."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-ops-guardrails@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5794890?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-ops-guardrails",
+      "url": "https://clawhub.ai/skills/openclaw-ops-guardrails"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-ops-guardrails",
+    "url": "https://clawhub.ai/skills/openclaw-ops-guardrails",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-ops-guardrails-755fee8599194215.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-ops-guardrails@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-ops-guardrails-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6def3d54414c97542d989e163c8f19158009d2c05d22b6b7267e7dadecfc88e9",
+      "artifactSizeBytes": 2178
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T14:50:08.638Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pmproducer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pmproducer",
+  "skill": {
+    "id": 73210,
+    "skillKey": "clawhub-pmproducer",
+    "name": "产品经理求职助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pmproducer",
+    "url": "https://clawhub.ai/skills/pmproducer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pmproducer-02a0f020ecf022ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "用于产品经理岗位求职的辅导者"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ffernnnl",
+      "userId": "s17btzt2s8zdv1xk6e8wcfs5jd85bp85",
+      "displayName": "Fern",
+      "image": "https://avatars.githubusercontent.com/u/142765700?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776845800090,
+      "changelog": "Initial version with major functional overhaul focused on PM job interview coaching:\n\n- Replaced previous tech lead development workflow with a structured product manager (PM) interview coaching assistant.\n- Added step-by-step process including company research, JD analysis, resume-JD matching, tailored mock interview, and targeted feedback.\n- Emphasized real-world research, custom high-frequency interview questions, STAR-driven feedback, and resume improvement suggestions.\n- Updated all content, output style, and workflow to suit Chinese-speaking PM candidates seeking interview preparation.\n- Enforced new constraints: fact-based analysis, structured responses, and process-driven user guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4a035311329a20e63321b6ea6f190d3286683ec4e882949885752658b23ec961"
+}

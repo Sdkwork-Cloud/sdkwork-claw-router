@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51183,
+  "uuid": "skill-clawhub-error-handling",
+  "skillKey": "clawhub-error-handling",
+  "name": "Error Handling",
+  "summary": "Deep error handling workflow—taxonomy, user-visible vs internal errors, retries and idempotency, observability, and supportability. Use when standardizing fa...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.error_handling",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mike47512",
+      "features": [
+        "Deep error handling workflow—taxonomy, user-visible vs internal errors, retries and idempotency.",
+        "Use when standardizing fa..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/error-handling@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199718167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "error-handling",
+      "url": "https://clawhub.ai/skills/error-handling"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "error-handling",
+    "url": "https://clawhub.ai/skills/error-handling",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/error-handling-4897fca9dd43ad57.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/error-handling@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-error-handling-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:21a38dab811baca3af591d21599865bc7f29578868e86d83208e607d53d4a4c9",
+      "artifactSizeBytes": 2427
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T00:24:39.427Z"
+}

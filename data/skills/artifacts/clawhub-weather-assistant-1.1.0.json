@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weather-assistant@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_assistant",
+  "skill": {
+    "id": 70256,
+    "skillKey": "clawhub-weather-assistant",
+    "name": "Weather Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-assistant",
+    "url": "https://clawhub.ai/skills/weather-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-assistant-ac7545561fec8bfb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "天气助手。查询任意城市天气、编辑城市配置、定时推送天气到微信（附名人名言）。当用户提到天气、查天气、天气推送、每日天气、城市配置、weather 时触发。使用前需配置城市列表和微信推送参数。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jerryaction",
+      "userId": "s17ch8d1k8f9yvavtk62edjjj985kjd2",
+      "displayName": "JerryAction",
+      "image": "https://avatars.githubusercontent.com/u/44667395?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 128,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777199757959,
+      "changelog": "Merged daily-weather-push: added daily cron push with quote, clothing advice, and full cron config",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a385bd6f267cc6705f7940b2a10c46edca596bb8820970ee82236ddb767f40b0"
+}

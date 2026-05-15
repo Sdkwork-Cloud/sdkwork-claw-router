@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8977,
+  "uuid": "skill-clawhub-developer",
+  "skillKey": "clawhub-developer",
+  "name": "Developer",
+  "summary": "Write clean, maintainable code with debugging, testing, and architectural best practices.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.developer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Write clean, maintainable code with debugging, testing, and architectural best practices."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/developer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "developer",
+      "url": "https://clawhub.ai/skills/developer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "developer",
+    "url": "https://clawhub.ai/skills/developer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/developer-88fa0d759f845b47.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/developer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-developer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7774a14e528224308d528ca32cf531335d4e092aa379ef417b0b6df0a81ebc9a",
+      "artifactSizeBytes": 1778
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T21:44:02.162Z"
+}

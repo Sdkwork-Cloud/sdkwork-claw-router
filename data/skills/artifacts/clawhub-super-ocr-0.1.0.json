@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/super-ocr@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.super_ocr",
+  "skill": {
+    "id": 20633,
+    "skillKey": "clawhub-super-ocr",
+    "name": "Super Ocr"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "super-ocr",
+    "url": "https://clawhub.ai/skills/super-ocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/super-ocr-cdb7f0b8fe6e9f90.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Production-grade OCR with intelligent engine selection. Tesseract (lightweight, fast) and PaddleOCR (high accuracy, Chinese-optimized). Use when extracting t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nimachu",
+      "userId": "s176sa0panxanbc9h2g1sxajrs83kjbr",
+      "displayName": "Nima Chu",
+      "image": "https://avatars.githubusercontent.com/u/210636628?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 496,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772858905235,
+      "changelog": "- Initial release of Super OCR: a production-grade OCR tool with intelligent engine selection.\n- Supports both Tesseract (fast, lightweight, ideal for English) and PaddleOCR (high-accuracy, optimized for Chinese).\n- Auto-detects language/content to pick the optimal engine, with force mode for manual selection.\n- Flexible output formats: plain text, structured, JSON, and verbose/debug options.\n- Includes an automated dependency management script for easy setup and environment checks.\n- Batch processing, advanced configuration, and Python API usage supported out of the box.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3cd6a7c31122f20270dc7abe8fc4f76d87878d3546aa65a7953e798518763995"
+}

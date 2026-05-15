@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49215,
+  "uuid": "skill-clawhub-awareness-memory",
+  "skillKey": "clawhub-awareness-memory",
+  "name": "Awareness Memory",
+  "summary": "Persistent memory across sessions — local-first, no account needed. Automatically recalls past decisions, code, and tasks before each prompt, and saves sessi...",
+  "version": "0.3.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.awareness_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Awareness",
+      "features": [
+        "Persistent memory across sessions — local-first, no account needed",
+        "Automatically recalls past decisions, code, and tasks before each prompt, and saves sessi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/awareness-memory@0.3.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260036552?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "awareness-memory",
+      "url": "https://clawhub.ai/skills/awareness-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "awareness-memory",
+    "url": "https://clawhub.ai/skills/awareness-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/awareness-memory-cb700d1b48504df6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/awareness-memory@0.3.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-awareness-memory-0.3.10.json",
+      "version": "0.3.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:69d86ca95bd015ef7f6fea65b1f8952da7cdf5fd87a1e11927da134e6c7efdc8",
+      "artifactSizeBytes": 1984
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T09:10:14.675Z"
+}

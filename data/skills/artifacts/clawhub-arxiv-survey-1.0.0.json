@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/arxiv-survey@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arxiv_survey",
+  "skill": {
+    "id": 40103,
+    "skillKey": "clawhub-arxiv-survey",
+    "name": "arxiv-survey"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arxiv-survey",
+    "url": "https://clawhub.ai/skills/arxiv-survey",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arxiv-survey-599ff1b794aacb72.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Survey arXiv papers from a given year to present on a specific theme. Automatically categorizes papers, translates abstracts to Chinese, and generates a stru..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "6eanut",
+      "userId": "s179e3xs55eqb020yde29z4an984gttk",
+      "displayName": "Jiakai Xu",
+      "image": "https://avatars.githubusercontent.com/u/137808952?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775881427475,
+      "changelog": "arxiv-survey 1.0.0\n\n- Initial release of arxiv-survey, a tool for generating structured markdown surveys on arXiv papers by theme and year.\n- Automatically searches, filters, categorizes, and summarizes papers; translates abstracts to Chinese.\n- Outputs a markdown report with categorized tables of contents and detailed sections for each paper.\n- Includes a convenient shell script for running the full workflow.\n- Adapts to both niche and popular topics; English file naming is enforced.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:95661484554557fdeb1638e5a8faeb37b249c8e0b8c2d7703e26bc710dabd32d"
+}

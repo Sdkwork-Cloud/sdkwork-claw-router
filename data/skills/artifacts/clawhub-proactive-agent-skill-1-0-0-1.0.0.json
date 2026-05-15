@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/proactive-agent-skill-1-0-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proactive_agent_skill_1_0_0",
+  "skill": {
+    "id": 20592,
+    "skillKey": "clawhub-proactive-agent-skill-1-0-0",
+    "name": "Proactive Agent Skill 1.0.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proactive-agent-skill-1-0-0",
+    "url": "https://clawhub.ai/skills/proactive-agent-skill-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proactive-agent-skill-1-0-0-d334263c7d6cc43c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transform AI agents from task-followers into proactive partners that anticipate needs and continuously improve. Includes WAL Protocol, Working Buffer, Autono..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flychicks",
+      "userId": "s17egvnj58tmnqgw2j0nm1sja183zj2x",
+      "displayName": "Flychicks",
+      "image": "https://avatars.githubusercontent.com/u/48264948?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 518,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773681728909,
+      "changelog": "- Initial release of the proactive-agent skill.\n- Introduces WAL Protocol for reliable state preservation and recovery.\n- Implements a working buffer to prevent context loss and auto-archive critical logs.\n- Adds autonomous and prompted cron features for automation and proactive agent behavior.\n- Provides configurable heartbeat checks for routine status monitoring.\n- Includes setup guides, usage examples, and best practices for building self-improving agents.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a84f7bfdff8210dbb5754c95985e33e7eeb105b4f4d7b0febb56efdb08534bf7"
+}

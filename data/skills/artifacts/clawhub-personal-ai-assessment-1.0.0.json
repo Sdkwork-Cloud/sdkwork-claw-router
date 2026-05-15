@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/personal-ai-assessment@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_ai_assessment",
+  "skill": {
+    "id": 71892,
+    "skillKey": "clawhub-personal-ai-assessment",
+    "name": "个人AI能力测评工具"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-ai-assessment",
+    "url": "https://clawhub.ai/skills/personal-ai-assessment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-ai-assessment-65d2585191929e0b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "个人AI能力测评工具，帮助个人评估AI知识水平、工具使用能力、实战应用能力、创新思维和伦理意识。提供能力等级评定、能力雷达图、学习路径和提升建议。当用户询问\"我的AI能力如何\"、\"如何提升AI能力\"、\"AI能力测评\"等个人AI能力相关问题时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nickyhu1699",
+      "userId": "s1774kzk6sqnneyjdmsmjp8m25842kkd",
+      "displayName": "nickyhu1699",
+      "image": "https://avatars.githubusercontent.com/u/207309431?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 265,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773415343452,
+      "changelog": "初始版本：5维度测评、5级等级、学习路径、双版本报告",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:28a47f2acea20f9360ef2b18a627e257a634d474e0764d5f66fd9d483e787d44"
+}

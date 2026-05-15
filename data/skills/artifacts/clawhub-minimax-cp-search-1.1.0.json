@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/minimax-cp-search@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_cp_search",
+  "skill": {
+    "id": 63663,
+    "skillKey": "clawhub-minimax-cp-search",
+    "name": "Minimax Web Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-cp-search",
+    "url": "https://clawhub.ai/skills/minimax-cp-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-cp-search-639409154159a24b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 MiniMax Coding Plan API 进行网页搜索和图像理解。当用户要求搜索信息、查找资料、或者询问实时内容时使用搜索功能；当用户要求识图、分析图片、描述图片内容时使用 understand_image 功能。触发词：搜索、查找、search、look up、识图、分析图片、图片里是什么"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mirrorpromax",
+      "userId": "publishers:mirrorpromax",
+      "displayName": "镜子",
+      "image": "https://avatars.githubusercontent.com/u/51259226?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 429,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773846797855,
+      "changelog": "Expanded skill to support image understanding alongside web search.\n- Added new script mmvision.py for image analysis and description.\n- Updated documentation to include both search and vision usage with examples.\n- Enhanced skill description and trigger phrases to cover image understanding features.\n- Listed supported image formats (JPEG, PNG, WebP).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3876e81d05ce133f6323525a5cd2c7a76c0bdcbd131c5ebff5e62c75c29f7860"
+}

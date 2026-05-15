@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17379,
+  "uuid": "skill-clawhub-holded-skill",
+  "skillKey": "clawhub-holded-skill",
+  "name": "Holded Skill",
+  "summary": "Operate Holded ERP through holdedcli to read and update data safely. Use when the user asks to read, search, create, update, or delete Holded entities (conta...",
+  "version": "0.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.holded_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jaumecornado",
+      "features": [
+        "Operate Holded ERP through holdedcli to read and update data safely",
+        "Use when the user asks to read, search, create, update, or delete Holded entities (conta..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/holded-skill@0.2.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/617176?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "holded-skill",
+      "url": "https://clawhub.ai/skills/holded-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "holded-skill",
+    "url": "https://clawhub.ai/skills/holded-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/holded-skill-e00be2fbceed013c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/holded-skill@0.2.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-holded-skill-0.2.3.json",
+      "version": "0.2.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:61cc2a8903bac0d40f38229d35bd6acc505d301699bb7c25b2681ee80c3ef516",
+      "artifactSizeBytes": 2002
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T10:03:06.289Z"
+}

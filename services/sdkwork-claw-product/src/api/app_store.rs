@@ -25,10 +25,9 @@ struct AppStoreState {
 }
 
 #[derive(Debug, Deserialize)]
-#[serde(rename_all = "camelCase")]
 struct AppStoreCatalogQuery {
-    keyword: Option<String>,
-    page_no: Option<i64>,
+    q: Option<String>,
+    page: Option<i64>,
     page_size: Option<i64>,
     status: Option<String>,
     start_time: Option<String>,
@@ -69,7 +68,7 @@ pub fn app_store_router() -> Router {
 pub fn app_store_router_with_read_store(
     read_store: Arc<dyn AppStoreReadStore + Send + Sync>,
 ) -> Router {
-    app_store_router_with_state(read_store, true)
+    app_store_router_with_state(read_store, false)
 }
 
 fn app_store_router_with_state(
@@ -77,9 +76,15 @@ fn app_store_router_with_state(
     require_subject: bool,
 ) -> Router {
     Router::new()
-        .route("/app/v3/api/app/store", get(fetch_apps))
-        .route("/app/v3/api/app/store/categories", get(fetch_categories))
-        .route("/app/v3/api/app/store/{app_id}", get(fetch_app_by_id))
+        .route("/app/v3/api/platform/apps/store", get(fetch_apps))
+        .route(
+            "/app/v3/api/platform/apps/store/categories",
+            get(fetch_categories),
+        )
+        .route(
+            "/app/v3/api/platform/apps/store/{app_id}",
+            get(fetch_app_by_id),
+        )
         .with_state(AppStoreState {
             read_store,
             require_subject,
@@ -140,22 +145,22 @@ async fn fetch_categories(State(state): State<AppStoreState>, headers: HeaderMap
 }
 
 fn validate_catalog_query(query: AppStoreCatalogQuery) -> Result<AppStoreQuery, String> {
-    let page_no = validate_optional_positive(query.page_no, "pageNo")?;
-    let page_size = validate_optional_positive(query.page_size, "pageSize")?;
+    let page_no = validate_optional_positive(query.page, "page")?;
+    let page_size = validate_optional_positive(query.page_size, "page_size")?;
     if page_size.unwrap_or(1) > MAX_CATALOG_PAGE_SIZE {
-        return Err(format!("pageSize must be at most {MAX_CATALOG_PAGE_SIZE}"));
+        return Err(format!("page_size must be at most {MAX_CATALOG_PAGE_SIZE}"));
     }
 
-    let start_time = normalize_time_filter(query.start_time, "startTime", false)?;
-    let end_time = normalize_time_filter(query.end_time, "endTime", true)?;
+    let start_time = normalize_time_filter(query.start_time, "start_time", false)?;
+    let end_time = normalize_time_filter(query.end_time, "end_time", true)?;
     if let (Some(start_time), Some(end_time)) = (&start_time, &end_time) {
         if start_time > end_time {
-            return Err("startTime must be earlier than or equal to endTime".to_owned());
+            return Err("start_time must be earlier than or equal to end_time".to_owned());
         }
     }
 
     Ok(AppStoreQuery {
-        keyword: normalize_query_text(query.keyword, "keyword", MAX_CATALOG_TEXT_LEN)?,
+        keyword: normalize_query_text(query.q, "q", MAX_CATALOG_TEXT_LEN)?,
         page_no,
         page_size,
         status: normalize_status_filter(query.status)?,

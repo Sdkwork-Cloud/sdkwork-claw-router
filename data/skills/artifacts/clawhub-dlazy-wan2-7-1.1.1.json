@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dlazy-wan2-7@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dlazy_wan2_7",
+  "skill": {
+    "id": 14597,
+    "skillKey": "clawhub-dlazy-wan2-7",
+    "name": "Dlazy Wan2.7"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dlazy-wan2-7",
+    "url": "https://clawhub.ai/skills/dlazy-wan2-7",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dlazy-wan2-7-445d3bbcb35e260b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Tongyi Wanxiang 2.7 video model model covers text-to-video, first/last-frame-to-video, and reference-to-video."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dlazyai",
+      "userId": "s170j1ymymrxasgd00dsk7tckx84cf45",
+      "displayName": "dlazy",
+      "image": "https://avatars.githubusercontent.com/u/274158181?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1168,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1778076775318,
+      "changelog": "- Clarified option description for --generation_mode (now explains \"components\" and \"frames\" more clearly).\n- No changes to functionality or CLI parameters.\n- Documentation updated for greater clarity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1cd527874db29c42b52ab109f29e8c4962a7281a2c2c2d7cb3589af08660d96a"
+}

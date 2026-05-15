@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baidu-doc-pipeline-parser@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_doc_pipeline_parser",
+  "skill": {
+    "id": 68141,
+    "skillKey": "clawhub-baidu-doc-pipeline-parser",
+    "name": "百度文档解析pipeline-parser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-doc-pipeline-parser",
+    "url": "https://clawhub.ai/skills/baidu-doc-pipeline-parser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-doc-pipeline-parser-5c01bb3f6d0e1f7c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "调用百度文档解析API解析文档。支持PDF、Word、Excel、PPT、图片等18+格式。提取文本、表格、版面分析、OCR识别及RAG文档分块。当用户需要解析文档、提取文本/表格、分析文档结构、处理扫描件时使用。触发词：文档解析、PDF解析、Word解析、表格提取、OCR、文档分析、提取文本、文档结构、扫描识别。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maglanyulan",
+      "userId": "s17cm4qmnj4y8xj888f3gjms0583hg9z",
+      "displayName": "Maglanyulan",
+      "image": "https://avatars.githubusercontent.com/u/40079055?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 93,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1778317280416,
+      "changelog": "baidu-doc-pipeline-parser v1.0.2\n\n- Initial release of the skill under the new name \"baidu-doc-pipeline-parser\" with updated metadata.\n- Added _meta.json file.\n- SKILL.md revised and localized: clearer documentation, parameter and return value tables, and example usage in Chinese.\n- Enhanced details for file, API, and result structure; included new formatting and examples for improved usability.\n- Maintains support for parsing 18+ document formats with OCR, structure extraction, and RAG document chunking as described previously.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9c785658a80c2b3ef074b2d6d9205719d08b316439b5fbc891dfb46c81e83df5"
+}

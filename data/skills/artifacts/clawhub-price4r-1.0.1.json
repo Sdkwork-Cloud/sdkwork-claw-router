@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/price4r@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.price4r",
+  "skill": {
+    "id": 69566,
+    "skillKey": "clawhub-price4r",
+    "name": "汽车配件 - 多维 参考价查询"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "price4r",
+    "url": "https://clawhub.ai/skills/price4r",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/price4r-79961f004bc87919.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用积智数据 参考价格查询 API，通过 配件编码 列表 查询 配件的 参考价格信息。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "polaris2013",
+      "userId": "s171hqr9bvzxxtfmbv266vthpd83hbhx",
+      "displayName": "Ju Yuan",
+      "image": "https://avatars.githubusercontent.com/u/5111899?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774432356775,
+      "changelog": "- 修正技能名称为 jz-parts-price4r，描述更新为“使用积智数据 参考价格查询 API，通过配件编码列表查询配件的参考价格信息”。\n- 修正了文档中的 metadata 字段格式和内容。\n- 文档内容与示例更准确地表达为“参考价格查询”，并补充了错误码信息。\n- 删除了原先描述中的多余字段和重复内容，增强了文档清晰度。\n- 没有代码变更，仅 SKILL.md 文档更新。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:430c44fd8cb86570f3eeb694c8883de7e13d3dc10794f3f4ba1325d5c378eb0a"
+}

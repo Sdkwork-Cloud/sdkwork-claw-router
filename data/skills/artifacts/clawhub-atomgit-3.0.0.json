@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/atomgit@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.atomgit",
+  "skill": {
+    "id": 59789,
+    "skillKey": "clawhub-atomgit",
+    "name": "atomgit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "atomgit",
+    "url": "https://clawhub.ai/skills/atomgit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/atomgit-3e98e85118ab79f1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AtomGit/GitCode 仓库管理技能，提供用户、仓库、Issue、PR、文件、分支等 API 操作。AtomGit 和 GitCode 是同一平台的不同域名（atomgit.com / gitcode.com），共享相同的 API 后端。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weidongkl",
+      "userId": "s170sqmtx96w7vj0g1ee234b5583hhtw",
+      "displayName": "wei dong",
+      "image": "https://avatars.githubusercontent.com/u/7512609?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 357,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1774173713848,
+      "changelog": "添加完整 294 个 API 接口文档，包含 46 个接口实测结果",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eaea0ece277daae45fd204e6fa1d1331263983d55d43299f04243df4edafa199"
+}

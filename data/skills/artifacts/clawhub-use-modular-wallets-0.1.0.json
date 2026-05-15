@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/use-modular-wallets@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.use_modular_wallets",
+  "skill": {
+    "id": 30233,
+    "skillKey": "clawhub-use-modular-wallets",
+    "name": "Use Modular Wallets"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "use-modular-wallets",
+    "url": "https://clawhub.ai/skills/use-modular-wallets",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/use-modular-wallets-371c2b195a0b5658.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build crypto wallets using Circle Modular Wallets SDK with passkey authentication, gasless transactions, and extensible module architecture. Use when: creati..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mscandlen3",
+      "userId": "publishers:mscandlen3",
+      "displayName": "Madelyn",
+      "image": "https://avatars.githubusercontent.com/u/43209384?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 287,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773689380928,
+      "changelog": "Initial release of the use-modular-wallets skill.\n\n- Enables building crypto wallets using Circle Modular Wallets SDK.\n- Supports passkey (WebAuthn) authentication, gasless transactions via paymaster, and modular smart contract accounts (MSCAs).\n- Allows batch transactions, passkey recovery with BIP-39, and extensible onchain wallet modules.\n- Enforces strict security rules against hardcoding or mishandling keys, credentials, and recovery phrases.\n- Includes comprehensive setup instructions, supported chains, and core conceptual guidance.\n- Provides best practices and reference links for secure and correct implementation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b57060dacdbf4f8e20a26bf115b40033e37f39bb242141d10063cced89c16b81"
+}

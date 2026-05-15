@@ -29,33 +29,25 @@ const MAX_APP_CATALOG_PAGE_SIZE = 100;
 const MAX_APP_CATALOG_QUERY_TEXT_LENGTH = 128;
 const MAX_APP_CATALOG_TIMESTAMP_LENGTH = 64;
 type AppCatalogStatus = 'ACTIVE' | 'INACTIVE';
-type AppCatalogQueryArguments = [
-  pageNo?: number,
-  pageSize?: number,
-  keyword?: string,
-  status?: AppCatalogStatus,
-  startTime?: string,
-  endTime?: string,
-];
 type AppCatalogQueryParams = {
-  pageNo?: number;
+  page?: number;
   pageSize?: number;
-  keyword?: string;
+  q?: string;
   status?: AppCatalogStatus;
   startTime?: string;
   endTime?: string;
 };
 
 export interface AppFilters {
-  search?: string;
+  searchQuery?: string;
   platformTypes?: PlatformType[];
   categories?: string[];
   sortBy?: AppSortKey;
 }
 
 type AppCatalogQueryFilterInput = AppFilters & {
-  keyword?: unknown;
-  pageNo?: unknown;
+  searchQuery?: unknown;
+  page?: unknown;
   pageSize?: unknown;
   status?: unknown;
   startTime?: unknown;
@@ -64,7 +56,8 @@ type AppCatalogQueryFilterInput = AppFilters & {
 
 export const appService = {
   async getApps(filters?: AppFilters): Promise<App[]> {
-    const result = await getClawRouterAppSdkClient().app.getApps(...appCatalogQueryArguments(filters));
+    const query = toAppCatalogQueryParams(filters);
+    const result = await getClawRouterAppSdkClient().platform.apps.store.list(query);
     ensurePlusApiSuccess(result, 'Failed to fetch apps');
     const items: SdkAppCatalogResponse['items'] = readRequiredApiItems(
       result,
@@ -73,7 +66,7 @@ export const appService = {
     return filterAppsForCatalog(
       items.map(normalizeAppApiRecord),
       {
-        searchQuery: filters?.search ?? '',
+        searchQuery: filters?.searchQuery ?? '',
         platformTypes: filters?.platformTypes ?? [],
         categories: filters?.categories ?? [],
         sortBy: filters?.sortBy ?? 'Most Popular',
@@ -82,7 +75,7 @@ export const appService = {
   },
 
   async getAppById(id: string): Promise<App | undefined> {
-    const result = await getClawRouterAppSdkClient().app.getAppById(requiredSafePathSegment(id, 'appId'));
+    const result = await getClawRouterAppSdkClient().platform.apps.store.retrieve(requiredSafePathSegment(id, 'appId'));
     if (result === null || result === undefined) {
       return undefined;
     }
@@ -95,7 +88,7 @@ export const appService = {
   },
 
   async getCategories(): Promise<string[]> {
-    const result = await getClawRouterAppSdkClient().app.getCategories();
+    const result = await getClawRouterAppSdkClient().platform.apps.store.categories.list();
     ensurePlusApiSuccess(result, 'Failed to fetch app categories');
     const items: SdkAppCategoriesResponse['items'] = readRequiredApiItems(
       result,
@@ -114,28 +107,16 @@ export const appService = {
 };
 
 function toAppCatalogQueryParams(filters: AppCatalogQueryFilterInput | undefined = {}): AppCatalogQueryParams {
-  const keyword = optionalText(filters.keyword ?? filters.search, 'search', MAX_APP_CATALOG_QUERY_TEXT_LENGTH);
+  const searchQuery = optionalText(filters.searchQuery, 'searchQuery', MAX_APP_CATALOG_QUERY_TEXT_LENGTH);
 
   return pruneUndefinedQueryParams({
-    pageNo: optionalPositiveInteger(filters.pageNo, 'pageNo'),
+    page: optionalPositiveInteger(filters.page, 'page'),
     pageSize: optionalBoundedPositiveInteger(filters.pageSize, 'pageSize', MAX_APP_CATALOG_PAGE_SIZE),
-    keyword,
+    q: searchQuery,
     status: optionalAppCatalogStatus(filters.status),
     startTime: optionalText(filters.startTime, 'startTime', MAX_APP_CATALOG_TIMESTAMP_LENGTH),
     endTime: optionalText(filters.endTime, 'endTime', MAX_APP_CATALOG_TIMESTAMP_LENGTH),
   }) as AppCatalogQueryParams;
-}
-
-function appCatalogQueryArguments(filters: AppCatalogQueryFilterInput | undefined = {}): AppCatalogQueryArguments {
-  const params = toAppCatalogQueryParams(filters);
-  return [
-    params.pageNo,
-    params.pageSize,
-    params.keyword,
-    params.status,
-    params.startTime,
-    params.endTime,
-  ];
 }
 
 function optionalAppCatalogStatus(value: unknown): AppCatalogStatus | undefined {

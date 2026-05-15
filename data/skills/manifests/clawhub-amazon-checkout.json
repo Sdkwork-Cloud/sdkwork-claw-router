@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14198,
+  "uuid": "skill-clawhub-amazon-checkout",
+  "skillKey": "clawhub-amazon-checkout",
+  "name": "CreditClaw Amazon",
+  "summary": "Amazon Checkout - Use the new UCP search function from Shop App from Shopify.",
+  "version": "2.9.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_checkout",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CreditClaw",
+      "features": [
+        "Amazon Checkout",
+        "Use the new UCP search function from Shop App from Shopify."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amazon-checkout@2.9.5",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/amazon-checkout/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amazon-checkout",
+      "url": "https://clawhub.ai/skills/amazon-checkout"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-checkout",
+    "url": "https://clawhub.ai/skills/amazon-checkout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-checkout-8b1dfc0836cce808.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amazon-checkout@2.9.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-amazon-checkout-2.9.5.json",
+      "version": "2.9.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:68544b949c851db87aff422ffa0c79f16184d5a2fddd7556d981e52654de30ba",
+      "artifactSizeBytes": 2654
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T19:41:37.648Z"
+}

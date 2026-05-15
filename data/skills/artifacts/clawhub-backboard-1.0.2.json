@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/backboard@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.backboard",
+  "skill": {
+    "id": 10710,
+    "skillKey": "clawhub-backboard",
+    "name": "Backboard.io"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "backboard",
+    "url": "https://clawhub.ai/skills/backboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/backboard-2373233dc7e8ee09.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Integrate Backboard.io for assistants, threads, memories, and document RAG via a local backend on http://localhost:5100."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chrisk60331",
+      "userId": "publishers:chrisk60331",
+      "displayName": "chrisk60331",
+      "image": "https://avatars.githubusercontent.com/u/86388348?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2204,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 3,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770242829996,
+      "changelog": "- Added a complete backend implementation for Backboard integration, including API routes, models, and services.\n- Introduced backend startup script and configuration files for easy deployment.\n- Implemented support for assistants, threads, memories, and document RAG operations via local Flask backend.\n- No changes to the user-facing skill documentation or instructions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:19ad695cfaf68773e86ae9bee6e09896518147c82c73c999e66ce0b601e46bb9"
+}

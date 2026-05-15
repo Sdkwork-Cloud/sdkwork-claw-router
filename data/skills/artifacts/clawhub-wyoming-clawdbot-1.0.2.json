@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wyoming-clawdbot@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wyoming_clawdbot",
+  "skill": {
+    "id": 11084,
+    "skillKey": "clawhub-wyoming-clawdbot",
+    "name": "Wyoming Clawdbot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wyoming-clawdbot",
+    "url": "https://clawhub.ai/skills/wyoming-clawdbot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wyoming-clawdbot-77426cd18ead39f4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Wyoming Protocol bridge for Home Assistant voice assistant integration with Clawdbot."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vglafirov",
+      "userId": "publishers:vglafirov",
+      "displayName": "vglafirov",
+      "image": "https://avatars.githubusercontent.com/u/1367968?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2291,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1769456289891,
+      "changelog": "Use $HOME instead of hardcoded path in docker-compose.yml",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5c5cff281d7439e9e66cb1efbb3548a7709712ecb168a0214ce74248c8d8f991"
+}

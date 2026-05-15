@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14048,
+  "uuid": "skill-clawhub-retention",
+  "skillKey": "clawhub-retention",
+  "name": "Retention",
+  "summary": "User retention strategy, cohort analysis, churn prevention, and reactivation campaigns",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.retention",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "User retention strategy, cohort analysis, churn prevention, and reactivation campaigns"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/retention@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "retention",
+      "url": "https://clawhub.ai/skills/retention"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "retention",
+    "url": "https://clawhub.ai/skills/retention",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/retention-8e220124401da6e1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/retention@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-retention-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fdfcd947795777fe9014ed580e2d3d08bf0235dcc712a5ad14bdd25a8d11a7ba",
+      "artifactSizeBytes": 1774
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T03:52:14.134Z"
+}

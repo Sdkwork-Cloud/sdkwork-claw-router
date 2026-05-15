@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18210,
+  "uuid": "skill-clawhub-unit-convert",
+  "skillKey": "clawhub-unit-convert",
+  "name": "Unit Converter",
+  "summary": "Comprehensive unit converter for length, weight, temperature, area, volume, speed, time, and data. Use when: (1) converting between measurement units, (2) ca...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unit_convert",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ouyangAbel",
+      "features": [
+        "Comprehensive unit converter for length, weight, temperature, area, volume, speed, time, and da.",
+        "Use when: (1) converting between measurement units, (2) ca..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/unit-convert@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/156869006?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "unit-convert",
+      "url": "https://clawhub.ai/skills/unit-convert"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unit-convert",
+    "url": "https://clawhub.ai/skills/unit-convert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unit-convert-fe5fe0e28f9781bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/unit-convert@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-unit-convert-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bf6045b22dc3491412632c7f920d57d9b3fcffe5f09cfe90db26a03cb00108e4",
+      "artifactSizeBytes": 1920
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T12:46:18.827Z"
+}

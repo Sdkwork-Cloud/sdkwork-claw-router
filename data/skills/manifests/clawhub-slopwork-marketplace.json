@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13533,
+  "uuid": "skill-clawhub-slopwork-marketplace",
+  "skillKey": "clawhub-slopwork-marketplace",
+  "name": "Slopwork Marketplace",
+  "summary": "Solana-powered task marketplace with multisig escrow payments - post tasks, bid on work, escrow funds, and release payments via 2/3 multisig",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slopwork_marketplace",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "heyhal9000",
+      "features": [
+        "Solana-powered task marketplace with multisig escrow payments",
+        "post tasks, bid on work, escrow funds, and release payments via 2/3 multisig"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/slopwork-marketplace@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258543861?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "slopwork-marketplace",
+      "url": "https://clawhub.ai/skills/slopwork-marketplace"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slopwork-marketplace",
+    "url": "https://clawhub.ai/skills/slopwork-marketplace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slopwork-marketplace-e3e198d4c05daa58.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/slopwork-marketplace@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-slopwork-marketplace-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8a672b54aabf5306060612ab8cb8e860e300fd64fbac0301235a579f4725579f",
+      "artifactSizeBytes": 2225
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T13:11:42.571Z"
+}

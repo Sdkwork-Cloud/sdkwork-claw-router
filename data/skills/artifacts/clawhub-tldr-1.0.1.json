@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tldr@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tldr",
+  "skill": {
+    "id": 9897,
+    "skillKey": "clawhub-tldr",
+    "name": "tldr"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tldr",
+    "url": "https://clawhub.ai/skills/tldr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tldr-c652ca494d50bd83.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Simplified man pages from tldr-pages. Use this to quickly understand CLI tools."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gumadeiras",
+      "userId": "s1753zvp6tjqvngzbef17gxshh849mep",
+      "displayName": "Gustavo Madeira Santana",
+      "image": "https://avatars.githubusercontent.com/u/5599352?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2958,
+      "installsAllTime": 19,
+      "installsCurrent": 18,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769060848674,
+      "changelog": "Clarify source: tldr-pages (github.com/tldr-pages/tldr)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0dffadca2f044a1c6c48a14ed1bbfb7e636fcb5dd090f780919460b97c50c7ff"
+}

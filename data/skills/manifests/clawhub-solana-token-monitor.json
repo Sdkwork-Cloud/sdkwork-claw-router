@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40449,
+  "uuid": "skill-clawhub-solana-token-monitor",
+  "skillKey": "clawhub-solana-token-monitor",
+  "name": "Solana Token Monitor",
+  "summary": "Monitor any Solana token 24/7 using DexScreener. Get alerts for price moves, whale activity, volume spikes, liquidity changes, and market cap milestones. Bui...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solana_token_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ShepDogPack",
+      "features": [
+        "Monitor any Solana token 24/7 using DexScreener",
+        "Get alerts for price moves, whale activity, volume spikes, liquidity changes, and market cap mi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/solana-token-monitor@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268517562?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "solana-token-monitor",
+      "url": "https://clawhub.ai/skills/solana-token-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solana-token-monitor",
+    "url": "https://clawhub.ai/skills/solana-token-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solana-token-monitor-6221ebd115adab3b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/solana-token-monitor@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-solana-token-monitor-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1eb778a9aadbe25795e3f4ea1a33aae4a4bb32e49182372a2516266ef81b6818",
+      "artifactSizeBytes": 2203
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T17:05:23.437Z"
+}

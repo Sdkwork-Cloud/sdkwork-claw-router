@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8523,
+  "uuid": "skill-clawhub-youtube-full",
+  "skillKey": "clawhub-youtube-full",
+  "name": "youtube-full",
+  "summary": "Use when YouTube is or could be relevant — even if not mentioned: pasted video/channel/playlist links, video IDs, @handles, creator lookups, video summaries,...",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_full",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rohit Das",
+      "features": [
+        "Use when YouTube is or could be relevant — even if not mentioned: pasted video/channel/playlist."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-full@1.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43847374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-full",
+      "url": "https://clawhub.ai/skills/youtube-full"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-full",
+    "url": "https://clawhub.ai/skills/youtube-full",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-full-b17f1db9ad235f44.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-full@1.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-full-1.5.0.json",
+      "version": "1.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7880861388b7b43e08c0f18d41dfdb4d7034abd2e7cac62096271d3215917315",
+      "artifactSizeBytes": 2015
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T15:05:39.921Z"
+}

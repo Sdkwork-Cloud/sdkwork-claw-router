@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25647,
+  "uuid": "skill-clawhub-multi-source-feed",
+  "skillKey": "clawhub-multi-source-feed",
+  "name": "Multi-Source Feed",
+  "summary": "Set up and manage an AI-curated daily tech brief from customizable sources. Use when user says \"set up multi-source-feed\", \"configure my daily brief\", or \"ms...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_source_feed",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zidooong",
+      "features": [
+        "Set up and manage an AI-curated daily tech brief from customizable sources",
+        "Use when user says \"set up multi-source-feed\", \"configure my daily brief\", or \"ms..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/multi-source-feed@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/127370409?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "multi-source-feed",
+      "url": "https://clawhub.ai/skills/multi-source-feed"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-source-feed",
+    "url": "https://clawhub.ai/skills/multi-source-feed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-source-feed-2a86e9a32b76a930.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/multi-source-feed@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-multi-source-feed-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c5795179e2bdcb0380d8f8fe0fb9f76e799049d5db896c03505bce6b155d4ac8",
+      "artifactSizeBytes": 2331
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T11:26:32.307Z"
+}

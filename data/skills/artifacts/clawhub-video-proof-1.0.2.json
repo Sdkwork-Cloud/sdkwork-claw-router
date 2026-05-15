@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-proof@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_proof",
+  "skill": {
+    "id": 19017,
+    "skillKey": "clawhub-video-proof",
+    "name": "Video Proof"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-proof",
+    "url": "https://clawhub.ai/skills/video-proof",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-proof-0647716f833448e0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Record video proof of implemented features after coding tasks complete. Use when a coding agent finishes work and needs to visually verify and demonstrate th..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rikisann",
+      "userId": "publishers:rikisann",
+      "displayName": "rikisann",
+      "image": "https://avatars.githubusercontent.com/u/52165646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 543,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772135101483,
+      "changelog": "Fix: re-publish with complete package files.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1150132163376fec789102bb151016b7cc09783ddc28c60d19219a68cada2d1c"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71669,
+  "uuid": "skill-clawhub-tianjin",
+  "skillKey": "clawhub-tianjin",
+  "name": "Tianjin",
+  "summary": "提供天津旅游、历史文化、美食推荐及旅行规划，涵盖五大道、相声和特色小吃等信息。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tianjin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供天津旅游、历史文化、美食推荐及旅行规划，涵盖五大道、相声和特色小吃等信息。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tianjin@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tianjin",
+      "url": "https://clawhub.ai/skills/tianjin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tianjin",
+    "url": "https://clawhub.ai/skills/tianjin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tianjin-35732a0d2644c14a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tianjin@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tianjin-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:54ec8479085bdfd04ed4cff207524d1df07c6b57c16e56432df720ea7ee8dc79",
+      "artifactSizeBytes": 2279
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T09:59:37.655Z"
+}

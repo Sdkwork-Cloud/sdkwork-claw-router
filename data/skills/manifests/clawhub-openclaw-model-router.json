@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17911,
+  "uuid": "skill-clawhub-openclaw-model-router",
+  "skillKey": "clawhub-openclaw-model-router",
+  "name": "Model Router",
+  "summary": "Intelligent cost-aware model routing that classifies task complexity and selects the optimal AI model. Automatically routes simple tasks to cheap models and...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_model_router",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jsgoecke",
+      "features": [
+        "Intelligent cost-aware model routing that classifies task complexity and selects the optimal AI.",
+        "Automatically routes simple tasks to cheap models and..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-model-router@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/754?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-model-router",
+      "url": "https://clawhub.ai/skills/openclaw-model-router"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-model-router",
+    "url": "https://clawhub.ai/skills/openclaw-model-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-model-router-0f4ee64e981d6150.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-model-router@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-model-router-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ef8c69ab9d7ebd36bd1f0438aa883ffa08ab5f611fb6b9ee34485608627452e5",
+      "artifactSizeBytes": 2455
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T20:26:28.549Z"
+}

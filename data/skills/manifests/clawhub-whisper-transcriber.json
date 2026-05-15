@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20442,
+  "uuid": "skill-clawhub-whisper-transcriber",
+  "skillKey": "clawhub-whisper-transcriber",
+  "name": "Whisper Transcriber",
+  "summary": "Offline speech-to-text (ASR) using whisper.cpp (whisper-cli) + ffmpeg. Supports batch transcription, timestamps, SRT/TXT/JSON outputs, and model download. Cr...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whisper_transcriber",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vvusu",
+      "features": [
+        "Offline speech-to-text (ASR) using whisper.cpp (whisper-cli) + ffmpeg",
+        "Supports batch transcription, timestamps, SRT/TXT/JSON outputs, and model download"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/whisper-transcriber@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8391123?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "whisper-transcriber",
+      "url": "https://clawhub.ai/skills/whisper-transcriber"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whisper-transcriber",
+    "url": "https://clawhub.ai/skills/whisper-transcriber",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whisper-transcriber-43ecf57f41350235.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/whisper-transcriber@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-whisper-transcriber-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e7fb159a5551e4afe5c5fedb04f4f0e2fc97fd0689bcebce271bdb03573f17d",
+      "artifactSizeBytes": 2128
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T10:05:28.281Z"
+}

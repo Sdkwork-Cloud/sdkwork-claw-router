@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22360,
+  "uuid": "skill-clawhub-ai-video-maker",
+  "skillKey": "clawhub-ai-video-maker",
+  "name": "AIVideomaker",
+  "summary": "Executes AIVideoMaker API workflows for text-to-video and image-to-video generation, including task creation, status polling, task details retrieval, and can...",
+  "version": "1.0.14",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_maker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "husu",
+      "features": [
+        "Executes AIVideoMaker API workflows for text-to-video and image-to-video generation, including."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-video-maker@1.0.14",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8263559?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-video-maker",
+      "url": "https://clawhub.ai/skills/ai-video-maker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-maker",
+    "url": "https://clawhub.ai/skills/ai-video-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-maker-3e548d78c0fbba45.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-video-maker@1.0.14",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-video-maker-1.0.14.json",
+      "version": "1.0.14",
+      "runtime": "metadata",
+      "checksumHash": "sha256:52cbd013fe3c97991629434850b408592509e08096e2cd8d21a0f76a8051b2ee",
+      "artifactSizeBytes": 2327
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T08:31:51.643Z"
+}

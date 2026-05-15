@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/browser-nemo-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_nemo_video",
+  "skill": {
+    "id": 50043,
+    "skillKey": "clawhub-browser-nemo-video",
+    "name": "Browser Nemo Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-nemo-video",
+    "url": "https://clawhub.ai/skills/browser-nemo-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-nemo-video-88616e1b25b2a312.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute MP4 recorded on a laptop into 1080p edited MP4 clips just by typing what you need. Whether it's editing and exporting videos directly in the..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhogan2013-9",
+      "userId": "s1734kgyh0j16a86enc51zqp6184cy81",
+      "displayName": "mhogan2013-9",
+      "image": "https://avatars.githubusercontent.com/u/208827708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 47,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778296322867,
+      "changelog": "Initial public release of browser-nemo-video.\n\n- Instantly edit and export videos up to 2 minutes (MP4, MOV, etc.) directly in the browser — no software install needed.\n- Describe your desired result in plain language (e.g., \"trim, add text overlay\") and get a processed 1080p MP4 in 1–2 minutes.\n- Automatic backend session setup and free token generation (100 credits, 7-day validity) for first-time users.\n- Simple command mapping for uploading, editing, exporting, managing credits, and viewing session status.\n- Robust error handling with clear user guidance for authentication, credits, file types, and limits.\n- Supports a range of media formats for content creators and marketers seeking fast, timeline-free video editing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7bd3705f7bc4d1e17658cf8cc90a6107d41d75f5f49c1d970fddee999b3e0025"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/patent-writer-cn@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.patent_writer_cn",
+  "skill": {
+    "id": 72201,
+    "skillKey": "clawhub-patent-writer-cn",
+    "name": "Patent Writer Cn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "patent-writer-cn",
+    "url": "https://clawhub.ai/skills/patent-writer-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/patent-writer-cn-3b65d99427e5f385.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "中国发明专利交底书撰写与软著申请材料准备工具。当用户需要撰写专利、写专利交底书、申请软件著作权、准备软著材料、提取技术发明点、撰写权利要求书、生成专利附图文档时使用此 skill。触发词：专利、专利撰写、专利交底书、发明点、权利要求、软著、软件著作权、著作权申请、软著材料、鉴别材料、申请材料清单。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jessy-huang",
+      "userId": "s17305rtbzmgmx4xggvnjq913583j3kd",
+      "displayName": "Jessy-Huang",
+      "image": "https://avatars.githubusercontent.com/u/66520966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 222,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776952502401,
+      "changelog": "- No code or content changes detected in this release.\n- Version updated without modifications to functionality or documentation.\n- All workflows and feature descriptions remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d96c6ebc1adb59dc25b6d9a88811251611fa14138975b8b30be0c582ff69ba97"
+}

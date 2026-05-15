@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rm-safety@1.2.2",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rm_safety",
+  "skill": {
+    "id": 27764,
+    "skillKey": "clawhub-rm-safety",
+    "name": "Rm Safety"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rm-safety",
+    "url": "https://clawhub.ai/skills/rm-safety",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rm-safety-2ff4073c637d5ec1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Intercepts risky rm commands to assess impact, confirm user intent, and suggest safer alternatives before execution to prevent accidental data loss."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "caesaryp",
+      "userId": "s178v5zq5jrhb0evsbe6axn2rx83hwaa",
+      "displayName": "CaesarYP",
+      "image": "https://avatars.githubusercontent.com/u/90097973?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 242,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.2.2",
+      "createdAt": 1774347950699,
+      "changelog": "Version bump to 1.2.2: Unified metadata version, bilingual EN/ZH documentation, MIT-0 license, security hardened with path injection prevention | 版本更新至 1.2.2：统一元数据版本，中英双语文档，MIT-0 许可证，安全加固（路径注入防护）",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a825553f516870a27cc72a21a632c77bab400b74d8252ad3ac5f46540d5821e3"
+}

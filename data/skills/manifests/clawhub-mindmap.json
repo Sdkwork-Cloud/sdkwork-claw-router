@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13388,
+  "uuid": "skill-clawhub-mindmap",
+  "skillKey": "clawhub-mindmap",
+  "name": "Mindmap",
+  "summary": "Create and visualize mind maps in the terminal with branching and export. Use when brainstorming ideas, organizing thoughts, exporting mind map structures.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mindmap",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain-lab",
+      "features": [
+        "Create and visualize mind maps in the terminal with branching and export",
+        "Use when brainstorming ideas, organizing thoughts, exporting mind map structures."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mindmap@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271735676?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mindmap",
+      "url": "https://clawhub.ai/skills/mindmap"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mindmap",
+    "url": "https://clawhub.ai/skills/mindmap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mindmap-0e8309dff245264c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mindmap@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mindmap-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:76b9da5e6e0e96caec52504487d075c680c8812068960f2f09566b2598d116e7",
+      "artifactSizeBytes": 1837
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T10:46:58.810Z"
+}

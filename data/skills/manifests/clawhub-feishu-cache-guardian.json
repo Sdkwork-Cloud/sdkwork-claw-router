@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65516,
+  "uuid": "skill-clawhub-feishu-cache-guardian",
+  "skillKey": "clawhub-feishu-cache-guardian",
+  "name": "Feishu Cache Guardian",
+  "summary": "飞书缓存配置守护工具。用于检查和修复 OpenClaw 飞书插件的 probe.ts 缓存配置。当飞书 API 健康检查的缓存时间被重置为默认值时，自动修复为60分钟缓存，避免API配额被快速耗尽。使用场景：OpenClaw升级后、飞书插件被覆盖后、定期检查缓存配置是否正常。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_cache_guardian",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhs0430-sudo",
+      "features": [
+        "飞书缓存配置守护工具。用于检查和修复 OpenClaw 飞书插件的 probe.ts 缓存配置。当飞书 API 健康检查的缓存时间被重置为默认值时，自动修复为60分钟缓存，避免API配额被快."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-cache-guardian@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/250953778?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-cache-guardian",
+      "url": "https://clawhub.ai/skills/feishu-cache-guardian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-cache-guardian",
+    "url": "https://clawhub.ai/skills/feishu-cache-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-cache-guardian-8adcca92a2ed2aa7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-cache-guardian@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-cache-guardian-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0789806dc675a1349f3560b21a57c9f57f3c83b9c778ea4faaf50fa2431f2208",
+      "artifactSizeBytes": 2726
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T10:01:02.677Z"
+}

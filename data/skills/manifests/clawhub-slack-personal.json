@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9852,
+  "uuid": "skill-clawhub-slack-personal",
+  "skillKey": "clawhub-slack-personal",
+  "name": "Slk",
+  "summary": "Read, send, search, and manage Slack messages and DMs via the slk CLI. Use when the user asks to check Slack, read channels or DMs, send Slack messages, search Slack, check unreads, manage drafts, view saved items, or interact with Slack w.",
+  "version": "0.1.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slack_personal",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rohit Das",
+      "features": [
+        "Read, send, search, and manage Slack messages and DMs via the slk CLI",
+        "Use when the user asks to check Slack, read channels or DMs, send Slack messages, search Slack,.",
+        "Also use for heartbeat Slack checks",
+        "Triggers on \"check slack\", \"any slack messages\", \"send on slack\", \"slack unreads\", \"search slac."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/slack-personal@0.1.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43847374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "slack-personal",
+      "url": "https://clawhub.ai/skills/slack-personal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slack-personal",
+    "url": "https://clawhub.ai/skills/slack-personal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slack-personal-fd8a0561f857a286.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/slack-personal@0.1.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-slack-personal-0.1.7.json",
+      "version": "0.1.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b4d82a29a755bb9cc171712f2876dd7f8fb27a339172a5c14faf1118d0cf1936",
+      "artifactSizeBytes": 2063
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T07:02:17.078Z"
+}

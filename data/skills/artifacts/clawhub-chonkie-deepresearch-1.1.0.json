@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chonkie-deepresearch@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chonkie_deepresearch",
+  "skill": {
+    "id": 50453,
+    "skillKey": "clawhub-chonkie-deepresearch",
+    "name": "Chonkie DeepResearch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chonkie-deepresearch",
+    "url": "https://clawhub.ai/skills/chonkie-deepresearch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chonkie-deepresearch-c11b4f74e105bb1f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run deep research queries using Chonkie DeepResearch. Returns comprehensive research reports with citations — useful for market analysis, competitive intelli..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chonknick",
+      "userId": "publishers:chonknick",
+      "displayName": "chonknick",
+      "image": "https://avatars.githubusercontent.com/u/206151257?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 485,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772995190774,
+      "changelog": "Use sub-agents for non-blocking research, cron for status checks instead of polling",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a57a697286cdbf3c181d68249dd0f4f9c6beec17fc41b99b50df4a2b78a0d9ed"
+}

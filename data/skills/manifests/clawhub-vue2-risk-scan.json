@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63003,
+  "uuid": "skill-clawhub-vue2-risk-scan",
+  "skillKey": "clawhub-vue2-risk-scan",
+  "name": "用于自动扫描 Vue2 项目的潜在风险，依赖安全，Webpack 配置风险， Babel 配置问题",
+  "summary": "Skill 用于自动扫描 Vue2 项目的潜在风险，依赖安全，Webpack 配置风险， Babel 配置问题",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vue2_risk_scan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gfrxf",
+      "features": [
+        "Skill 用于自动扫描 Vue2 项目的潜在风险，依赖安全，Webpack 配置风险， Babel 配置问题"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vue2-risk-scan@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/96175959?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vue2-risk-scan",
+      "url": "https://clawhub.ai/skills/vue2-risk-scan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vue2-risk-scan",
+    "url": "https://clawhub.ai/skills/vue2-risk-scan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vue2-risk-scan-7668d65ac9a0db09.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vue2-risk-scan@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vue2-risk-scan-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fd39a1b920823817fb0085bb14a416ce7ba7ea70d470b25432a12b35455438a2",
+      "artifactSizeBytes": 2247
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T07:37:12.721Z"
+}

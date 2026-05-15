@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16351,
+  "uuid": "skill-clawhub-context-builder",
+  "skillKey": "clawhub-context-builder",
+  "name": "Context Builder",
+  "summary": "Generate LLM-optimized codebase context from any directory using context-builder CLI",
+  "version": "0.8.3-1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_builder",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "igorls",
+      "features": [
+        "Generate LLM-optimized codebase context from any directory using context-builder CLI"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/context-builder@0.8.3-1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4753812?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "context-builder",
+      "url": "https://clawhub.ai/skills/context-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-builder",
+    "url": "https://clawhub.ai/skills/context-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-builder-8536aa09e33a4bca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/context-builder@0.8.3-1",
+      "artifactUrl": "data/skills/artifacts/clawhub-context-builder-0.8.3-1.json",
+      "version": "0.8.3-1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7494ec0677b4d2453a8bc902cfd52c64ef3e7b6c9b8c681c678cef67bcbf3b14",
+      "artifactSizeBytes": 2182
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T06:05:29.206Z"
+}

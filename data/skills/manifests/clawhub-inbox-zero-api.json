@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29279,
+  "uuid": "skill-clawhub-inbox-zero-api",
+  "skillKey": "clawhub-inbox-zero-api",
+  "name": "Inbox Zero API CLI",
+  "summary": "Use the Inbox Zero API CLI to inspect the live API schema, list and manage automation rules, and read inbox analytics through the public API. Use this when a...",
+  "version": "2.29.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inbox_zero_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Elie Steinbock",
+      "features": [
+        "Use the Inbox Zero API CLI to inspect the live API schema, list and manage automation rules, an.",
+        "Use this when a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/inbox-zero-api@2.29.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3090527?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "inbox-zero-api",
+      "url": "https://clawhub.ai/skills/inbox-zero-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inbox-zero-api",
+    "url": "https://clawhub.ai/skills/inbox-zero-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inbox-zero-api-476393acba0ab864.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/inbox-zero-api@2.29.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-inbox-zero-api-2.29.2.json",
+      "version": "2.29.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5cab51ef21f6d700935dd3f6bd9d407a5aa9a87dd80a986f4e2267f3bf709188",
+      "artifactSizeBytes": 1943
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T15:14:53.166Z"
+}

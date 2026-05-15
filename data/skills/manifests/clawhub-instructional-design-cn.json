@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73239,
+  "uuid": "skill-clawhub-instructional-design-cn",
+  "skillKey": "clawhub-instructional-design-cn",
+  "name": "教学设计",
+  "summary": "培训课程大纲设计、效果评估、内部分享材料生成",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.instructional_design_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "走过",
+      "features": [
+        "培训课程大纲设计、效果评估、内部分享材料生成"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/instructional-design-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48984941?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "instructional-design-cn",
+      "url": "https://clawhub.ai/skills/instructional-design-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "instructional-design-cn",
+    "url": "https://clawhub.ai/skills/instructional-design-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/instructional-design-cn-5fa2abae608126e0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/instructional-design-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-instructional-design-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d453972bc0188dd25bac40ca0a23d7bf0f92aec6ca6c392652f49c76c48333f",
+      "artifactSizeBytes": 2260
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T08:20:46.016Z"
+}

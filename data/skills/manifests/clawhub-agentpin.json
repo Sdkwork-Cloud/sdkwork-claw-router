@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15701,
+  "uuid": "skill-clawhub-agentpin",
+  "skillKey": "clawhub-agentpin",
+  "name": "AgentPin",
+  "summary": "Provides domain-anchored cryptographic identity verification for AI agents using ES256 JWTs, TOFU key pinning, revocation, and delegation chain checks.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentpin",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jascha",
+      "features": [
+        "Provides domain-anchored cryptographic identity verification for AI agents using ES256 JWTs, TO."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentpin@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/768841?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentpin",
+      "url": "https://clawhub.ai/skills/agentpin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentpin",
+    "url": "https://clawhub.ai/skills/agentpin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentpin-97a21e5d96d44a95.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentpin@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentpin-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:df6a3282a38ad5fb5d24af2207c2d16e7db3aceb9f647d3bbdc98abdb4e0097f",
+      "artifactSizeBytes": 2383
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T06:56:57.907Z"
+}

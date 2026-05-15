@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32950,
+  "uuid": "skill-clawhub-youzer",
+  "skillKey": "clawhub-youzer",
+  "name": "Youzer",
+  "summary": "Youzer integration. Manage data, records, and automate workflows. Use when the user wants to interact with Youzer data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Youzer integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Youzer data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youzer@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youzer",
+      "url": "https://clawhub.ai/skills/youzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youzer",
+    "url": "https://clawhub.ai/skills/youzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youzer-8d2b8027aee625f4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youzer@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-youzer-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cae492e08c54089053ad8aac4e1d38bfec19fe88def9b1006adb85915cffa4d2",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:04:20.797Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62724,
+  "uuid": "skill-clawhub-feishu-api-bitable",
+  "skillKey": "clawhub-feishu-api-bitable",
+  "name": "Feishu Bitable API",
+  "summary": "飞书多维表格(Bitable)API技能。用于创建、读取、更新和删除飞书多维表格的数据表、记录和字段。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_api_bitable",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "StevenLikeWatermelon",
+      "features": [
+        "飞书多维表格(Bitable)API技能。用于创建、读取、更新和删除飞书多维表格的数据表、记录和字段。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-api-bitable@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34053346?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-api-bitable",
+      "url": "https://clawhub.ai/skills/feishu-api-bitable"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-api-bitable",
+    "url": "https://clawhub.ai/skills/feishu-api-bitable",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-api-bitable-cbf1900dc2475550.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-api-bitable@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-api-bitable-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e4d2ed75b9d20ceb2bf90a09de7dffb027ee373dcc51e47812eae7d7866af35a",
+      "artifactSizeBytes": 2044
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T02:57:50.898Z"
+}

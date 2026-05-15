@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trilium@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trilium",
+  "skill": {
+    "id": 12502,
+    "skillKey": "clawhub-trilium",
+    "name": "Trilium"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trilium",
+    "url": "https://clawhub.ai/skills/trilium",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trilium-56ec1e34c0dc7b52.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Trilium Notes by reading, searching, and creating notes via the ETAPI with provided server URL and ETAPI token."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mtbf999",
+      "userId": "publishers:mtbf999",
+      "displayName": "mtbf999",
+      "image": "https://avatars.githubusercontent.com/u/203152504?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1449,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 3,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1770835575382,
+      "changelog": "trilium 1.0.3\n\n- No file changes detected in this release.\n- Functionality and documentation remain unchanged from the previous version.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:416fadaa75fe264eafa72a54424f01b7c2a16de725702ac9ba52f5bd6bef8908"
+}

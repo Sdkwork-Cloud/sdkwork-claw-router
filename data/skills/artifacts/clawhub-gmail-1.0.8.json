@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gmail@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gmail",
+  "skill": {
+    "id": 8284,
+    "skillKey": "clawhub-gmail",
+    "name": "Gmail"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gmail",
+    "url": "https://clawhub.ai/skills/gmail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gmail-576ba7c2e4abb718.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Gmail API integration with managed OAuth. Read, send, and manage emails, threads, labels, and drafts. Use this skill when users want to interact with Gmail...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 3,
+      "downloads": 33642,
+      "installsAllTime": 322,
+      "installsCurrent": 304,
+      "stars": 70,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1778148211420,
+      "changelog": "- Added CLI usage examples throughout documentation for common Gmail operations.\n- Included installation instructions for Maton CLI via NPM and Homebrew.\n- Expanded Quick Start and Connection Management sections to cover both CLI and Python methods.\n- Added specific CLI commands for sending, replying, and forwarding messages, as well as label and thread management.\n- Improved organization and clarity for multi-connection scenarios and authentication steps.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3281346659832a1565e3563322cc0fdd0be0a5f60aac8eab68312cace1f41141"
+}

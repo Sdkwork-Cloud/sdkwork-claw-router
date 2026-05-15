@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deadline-paperwork-navigator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deadline_paperwork_navigator",
+  "skill": {
+    "id": 49859,
+    "skillKey": "clawhub-deadline-paperwork-navigator",
+    "name": "Deadline Paperwork Navigator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deadline-paperwork-navigator",
+    "url": "https://clawhub.ai/skills/deadline-paperwork-navigator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deadline-paperwork-navigator-4112315b411c68b1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert form instructions and deadlines into clear checklists, timelines, and prep plans to organize paperwork and submission tasks efficiently."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 63,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778280408789,
+      "changelog": "Initial release of Deadline Paperwork Navigator\n\n- Transforms instructions for forms and applications into checklists, timelines, and submission plans.\n- Guides users through a structured workflow: intake, structuring information, drafting outputs, and verification.\n- Outputs include: summaries, action tables, checklists, timelines, message drafts, and next steps.\n- Designed for anyone needing practical, checklist-based support for paperwork and deadlines.\n- Clearly separates must-do and optional items, and always prompts the user to verify critical details.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f6a7c4eb58dba1979db91b2042ea2f8b58b081d0395e2c6d7f5796276b1dff7b"
+}

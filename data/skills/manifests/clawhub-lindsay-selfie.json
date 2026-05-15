@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28175,
+  "uuid": "skill-clawhub-lindsay-selfie",
+  "skillKey": "clawhub-lindsay-selfie",
+  "name": "Lindsay Selfie",
+  "summary": "Generates a consistent selfie of Lindsay using a local reference photo and Nano Banana Pro.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lindsay_selfie",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jake-fong",
+      "features": [
+        "Generates a consistent selfie of Lindsay using a local reference photo and Nano Banana Pro."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lindsay-selfie@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/102400485?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lindsay-selfie",
+      "url": "https://clawhub.ai/skills/lindsay-selfie"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lindsay-selfie",
+    "url": "https://clawhub.ai/skills/lindsay-selfie",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lindsay-selfie-4d3418b2ea32a473.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lindsay-selfie@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lindsay-selfie-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ee32c4ded1f52231bcc5898319da65643107ab571ee48f091402b6e40476f2c",
+      "artifactSizeBytes": 2404
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T05:06:52.298Z"
+}

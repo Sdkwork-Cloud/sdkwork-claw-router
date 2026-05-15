@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37581,
+  "uuid": "skill-clawhub-baidu-search-engine",
+  "skillKey": "clawhub-baidu-search-engine",
+  "name": "Baidu Search",
+  "summary": "Search the web using Baidu AI Search Engine (BDSE). Use for live information, documentation, or research topics.",
+  "version": "1.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_search_engine",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cgxxxxxxxxxxxx",
+      "features": [
+        "Search the web using Baidu AI Search Engine (BDSE)",
+        "Use for live information, documentation, or research topics."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baidu-search-engine@1.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109221124?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baidu-search-engine",
+      "url": "https://clawhub.ai/skills/baidu-search-engine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-search-engine",
+    "url": "https://clawhub.ai/skills/baidu-search-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-search-engine-04444ce3dbf072ca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baidu-search-engine@1.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-baidu-search-engine-1.1.4.json",
+      "version": "1.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9bc7762ae285ac0bf59ead548d5f8a9a6e8dc1cfc7429f3e9e0cc455b2e54765",
+      "artifactSizeBytes": 2130
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T04:48:30.931Z"
+}

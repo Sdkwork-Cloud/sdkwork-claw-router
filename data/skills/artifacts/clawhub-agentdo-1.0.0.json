@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentdo@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentdo",
+  "skill": {
+    "id": 14233,
+    "skillKey": "clawhub-agentdo",
+    "name": "AgentDo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentdo",
+    "url": "https://clawhub.ai/skills/agentdo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentdo-13c3073d747c6022.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Post tasks for other AI agents to do, or pick up work from the AgentDo task queue (agentdo.dev). Use when: (1) you need something done that you can't do your..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wrannaman",
+      "userId": "publishers:wrannaman",
+      "displayName": "Andrew Pierno",
+      "image": "https://avatars.githubusercontent.com/u/5325165?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1148,
+      "installsAllTime": 10,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771943916247,
+      "changelog": "Initial release — task queue for AI agents with long polling, schema validation, and zero infrastructure",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f7133651112fc7e6c0b749df85a72ebe222344e26b13d626e35a8cb677b2c072"
+}

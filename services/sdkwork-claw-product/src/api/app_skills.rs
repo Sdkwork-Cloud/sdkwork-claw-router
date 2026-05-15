@@ -34,10 +34,9 @@ struct AppSkillsState {
 }
 
 #[derive(Debug, Deserialize)]
-#[serde(rename_all = "camelCase")]
 struct AppSkillsCatalogQuery {
-    keyword: Option<String>,
-    page_no: Option<i64>,
+    q: Option<String>,
+    page: Option<i64>,
     page_size: Option<i64>,
     status: Option<String>,
     start_time: Option<String>,
@@ -137,7 +136,7 @@ pub fn app_skills_router_with_read_store(
         read_store,
         Arc::new(EmptyAppSkillsCommandStore),
         Arc::new(OsApiKeySecretGenerator),
-        true,
+        false,
     )
 }
 
@@ -146,7 +145,7 @@ pub fn app_skills_router_with_store(
     command_store: Arc<dyn AppSkillsCommandStore + Send + Sync>,
     entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
 ) -> Router {
-    app_skills_router_with_state(read_store, command_store, entity_uuid_generator, true)
+    app_skills_router_with_state(read_store, command_store, entity_uuid_generator, false)
 }
 
 fn app_skills_router_with_state(
@@ -156,14 +155,26 @@ fn app_skills_router_with_state(
     require_subject: bool,
 ) -> Router {
     Router::new()
-        .route("/app/v3/api/skills", get(fetch_skills))
-        .route("/app/v3/api/skills/my", get(fetch_user_skills))
-        .route("/app/v3/api/skills/categories", get(fetch_categories))
-        .route("/app/v3/api/skills/{skill_id}", get(fetch_skill_by_id))
-        .route("/app/v3/api/skills/{skill_id}/enable", post(enable_skill))
-        .route("/app/v3/api/skills/{skill_id}/disable", post(disable_skill))
+        .route("/app/v3/api/ecosystem/skills", get(fetch_skills))
+        .route("/app/v3/api/ecosystem/skills/mine", get(fetch_user_skills))
         .route(
-            "/app/v3/api/skills/{skill_id}/config",
+            "/app/v3/api/ecosystem/skills/categories",
+            get(fetch_categories),
+        )
+        .route(
+            "/app/v3/api/ecosystem/skills/{skill_id}",
+            get(fetch_skill_by_id),
+        )
+        .route(
+            "/app/v3/api/ecosystem/skills/{skill_id}/enable",
+            post(enable_skill),
+        )
+        .route(
+            "/app/v3/api/ecosystem/skills/{skill_id}/disable",
+            post(disable_skill),
+        )
+        .route(
+            "/app/v3/api/ecosystem/skills/{skill_id}/config",
             put(update_skill_config),
         )
         .with_state(AppSkillsState {
@@ -200,7 +211,14 @@ async fn fetch_user_skills(State(state): State<AppSkillsState>, headers: HeaderM
         Err(response) => return response,
     };
 
-    match state.read_store.load_user_skills(subject).await {
+    let Some(subject) = subject else {
+        return Json(PlusApiResult::success(AppSkillsItems::<
+            AppInstalledSkillItem,
+        >::new(Vec::new())))
+        .into_response();
+    };
+
+    match state.read_store.load_user_skills(Some(subject)).await {
         Ok(items) => Json(PlusApiResult::success(AppSkillsItems::new(items))).into_response(),
         Err(error) => app_skills_read_model_error(error),
     }
@@ -334,14 +352,14 @@ fn build_enable_command(
 }
 
 fn validate_catalog_query(query: AppSkillsCatalogQuery) -> Result<AppSkillsQuery, String> {
-    let page_no = validate_optional_positive(query.page_no, "pageNo")?;
-    let page_size = validate_optional_positive(query.page_size, "pageSize")?;
+    let page_no = validate_optional_positive(query.page, "page")?;
+    let page_size = validate_optional_positive(query.page_size, "page_size")?;
     if page_size.unwrap_or(1) > MAX_CATALOG_PAGE_SIZE {
-        return Err(format!("pageSize must be at most {MAX_CATALOG_PAGE_SIZE}"));
+        return Err(format!("page_size must be at most {MAX_CATALOG_PAGE_SIZE}"));
     }
 
     Ok(AppSkillsQuery {
-        keyword: normalize_query_text(query.keyword),
+        keyword: normalize_query_text(query.q),
         page_no,
         page_size,
         status: normalize_query_text(query.status),
@@ -357,9 +375,9 @@ fn required_app_skills_subject(
     match app_skills_subject(headers, require_subject)? {
         Some(subject) => Ok(subject),
         None => Err((
-            StatusCode::UNAUTHORIZED,
+            StatusCode::FORBIDDEN,
             Json(PlusApiResult::error(
-                "4010",
+                "4030",
                 "trusted request subject is required for app skills command",
             )),
         )

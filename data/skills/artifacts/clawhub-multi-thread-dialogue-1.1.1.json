@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/multi-thread-dialogue@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_thread_dialogue",
+  "skill": {
+    "id": 59179,
+    "skillKey": "clawhub-multi-thread-dialogue",
+    "name": "领导模块"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-thread-dialogue",
+    "url": "https://clawhub.ai/skills/multi-thread-dialogue",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-thread-dialogue-7926ef634c1a5680.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "多线程对话架构：主代理前台响应，子代理后台处理任务，支持打断、状态处理、两阶段审查和任务监控 / Multi-thread dialogue architecture: main agent responds in foreground, sub-agents handle tasks in background..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "philonis",
+      "userId": "s17590jb1j9fp2b74f3p7he73n83kfvc",
+      "displayName": "philonis",
+      "image": "https://avatars.githubusercontent.com/u/3388405?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 366,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1773383415196,
+      "changelog": "- Added full bilingual (Chinese/English) documentation and instructions throughout SKILL.md for broader accessibility.\n- No functional or logic changes; primary update is extended documentation for installation, usage, features, configuration, and file structure in both languages.\n- Clarified that all core logic remains implemented via AGENTS.md, with this skill focusing on guidance and templates.\n- No code or underlying logic modifications in this version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:08a252d6db7f07d842898e68a3556e1804f17c5692b189e76930cf1b6d57ad1d"
+}

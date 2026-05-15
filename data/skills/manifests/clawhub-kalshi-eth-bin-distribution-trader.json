@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52431,
+  "uuid": "skill-clawhub-kalshi-eth-bin-distribution-trader",
+  "skillKey": "clawhub-kalshi-eth-bin-distribution-trader",
+  "name": "Kalshi ETH Bin Distribution Trader",
+  "summary": "Trades ETH price bin markets on Kalshi by exploiting the constraint that all bins must sum to 100%. When the sum deviates, identifies mispriced bins and trad...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kalshi_eth_bin_distribution_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "diagnostikon",
+      "features": [
+        "Trades ETH price bin markets on Kalshi by exploiting the constraint that all bins must sum to 1.",
+        "When the sum deviates, identifies mispriced bins and trad..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kalshi-eth-bin-distribution-trader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17246180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kalshi-eth-bin-distribution-trader",
+      "url": "https://clawhub.ai/skills/kalshi-eth-bin-distribution-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kalshi-eth-bin-distribution-trader",
+    "url": "https://clawhub.ai/skills/kalshi-eth-bin-distribution-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kalshi-eth-bin-distribution-trader-7d8a949b4e59bfd1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kalshi-eth-bin-distribution-trader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kalshi-eth-bin-distribution-trader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5869a96d8c59900a73e1b11b8b12ef31edf39cd45405647ac7f7d2c8efc5b9e7",
+      "artifactSizeBytes": 2487
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T17:30:10.014Z"
+}

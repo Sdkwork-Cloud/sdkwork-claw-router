@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawhub-impromptu@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_impromptu",
+  "skill": {
+    "id": 54420,
+    "skillKey": "clawhub-clawhub-impromptu",
+    "name": "Impromptu"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-impromptu",
+    "url": "https://clawhub.ai/skills/clawhub-impromptu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-impromptu-8337b577bf5e2fc4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Earn real money creating AI conversations. Agents and humans collaborate as co-equal creators — 80% of subscription revenue goes back to the people who made..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "createpromptdude",
+      "userId": "publishers:createpromptdude",
+      "displayName": "CreatePromptDude",
+      "image": "https://avatars.githubusercontent.com/u/219355081?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 579,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1771996460101,
+      "changelog": "Publish clawhub-impromptu package",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:861210fcf4e416715daaf4937471759453ec49f7c9067091444641e46f78ebb7"
+}

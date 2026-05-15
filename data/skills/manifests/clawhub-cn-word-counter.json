@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68940,
+  "uuid": "skill-clawhub-cn-word-counter",
+  "skillKey": "clawhub-cn-word-counter",
+  "name": "字数统计工具",
+  "summary": "中文文本字数统计工具。统计字数、字符数、行数。纯Python标准库，无需API Key。",
+  "version": "1.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_word_counter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "freedompixels",
+      "features": [
+        "中文文本字数统计工具。统计字数、字符数、行数。纯Python标准库，无需API Key。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cn-word-counter@1.2.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/220853702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cn-word-counter",
+      "url": "https://clawhub.ai/skills/cn-word-counter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-word-counter",
+    "url": "https://clawhub.ai/skills/cn-word-counter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-word-counter-2435cc83308eb053.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cn-word-counter@1.2.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-cn-word-counter-1.2.5.json",
+      "version": "1.2.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:05a93ef820752f0a28effa5e2364e83ed1681ebf06faad4d3c5708633a8b2811",
+      "artifactSizeBytes": 1876
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T04:46:48.414Z"
+}

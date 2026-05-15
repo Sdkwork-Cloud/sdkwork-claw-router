@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29148,
+  "uuid": "skill-clawhub-grafana-readonly",
+  "skillKey": "clawhub-grafana-readonly",
+  "name": "Grafana Readonly",
+  "summary": "Read existing Grafana dashboards and panels without modifying them. Use when answering questions about values already visible in Grafana, locating the right...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grafana_readonly",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qwqcode",
+      "features": [
+        "Read existing Grafana dashboards and panels without modifying them",
+        "Use when answering questions about values already visible in Grafana, locating the right..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/grafana-readonly@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22412567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "grafana-readonly",
+      "url": "https://clawhub.ai/skills/grafana-readonly"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grafana-readonly",
+    "url": "https://clawhub.ai/skills/grafana-readonly",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grafana-readonly-d6ebeeadf3d227d6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/grafana-readonly@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-grafana-readonly-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:99be59b812deed36a87b723e37a671d11d9b636f74ef5723e01e3e92b5fdc803",
+      "artifactSizeBytes": 2380
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T03:55:07.583Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/12@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.12",
+  "skill": {
+    "id": 27938,
+    "skillKey": "clawhub-12",
+    "name": "321"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "12",
+    "url": "https://clawhub.ai/skills/12",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/12-6b51d431df5d7f14.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "china-mobile2008",
+      "userId": "s17efh1s7htg4hb4em1s4re9s983qqw7",
+      "displayName": "Mr.Zhang",
+      "image": "https://avatars.githubusercontent.com/u/10908640?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 336,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773893490362,
+      "changelog": "Self-Improvement skill rebuilt for OpenClaw, replacing financial analysis functionality:\n\n- Completely replaced previous financial analysis skill with a new self-improvement logging skill.\n- Adds `.learnings/` directory with markdown logs for learnings, errors, and feature requests.\n- Includes OpenClaw integration: directory structure, hooks, and workspace memory promotion.\n- Features detailed logging formats and workflow for continuous agent self-improvement.\n- Removes all legacy files and documentation related to financial analysis and data handling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e72234029f6ee924d83d7b6b9157c583ffa27202bdaf0f0d6bb92135daf047b9"
+}

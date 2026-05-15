@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36631,
+  "uuid": "skill-clawhub-vidu-provider",
+  "skillKey": "clawhub-vidu-provider",
+  "name": "Vidu Video Generation Provider",
+  "summary": "Video generation provider plugin for Vidu (viduq3-pro, viduq3-turbo, viduq2, viduq1). Supports text-to-video, image-to-video, reference-to-video, and start-e...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vidu_provider",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaonan",
+      "features": [
+        "Video generation provider plugin for Vidu (viduq3-pro, viduq3-turbo, viduq2, viduq1)",
+        "Supports text-to-video, image-to-video, reference-to-video, and start-e..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vidu-provider@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/167301007?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vidu-provider",
+      "url": "https://clawhub.ai/skills/vidu-provider"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vidu-provider",
+    "url": "https://clawhub.ai/skills/vidu-provider",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vidu-provider-30cce51ec3be0565.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vidu-provider@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-vidu-provider-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:387bcaccff9a92890995d1d0de0123691f5bb5104ec3324cc36d63238eb8d315",
+      "artifactSizeBytes": 1933
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T12:09:02.168Z"
+}

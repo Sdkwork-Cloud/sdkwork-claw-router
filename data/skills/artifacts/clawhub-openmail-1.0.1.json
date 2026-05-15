@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openmail@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openmail",
+  "skill": {
+    "id": 26559,
+    "skillKey": "clawhub-openmail",
+    "name": "OpenMail"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openmail",
+    "url": "https://clawhub.ai/skills/openmail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openmail-d5270efc6b65c58f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Gives the agent a dedicated email address for sending and receiving email. Use when the agent needs to send email to external services, receive replies, sign..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "armandokun",
+      "userId": "s175t41vp8gq9y4mpncmat36ax83h4f0",
+      "displayName": "Armandas Vaičikauskas",
+      "image": "https://avatars.githubusercontent.com/u/37222499?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 266,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774455069026,
+      "changelog": "- Switched all \"new mail\" workflows to use threads list with --is-read false, instead of messages list, for accurate unread tracking.\n- Added explicit instructions to mark threads as read after processing, preventing duplicate alerts or processing.\n- Updated automation and polling examples to use threads list with unread filtering and marking.\n- Clarified that messages list is now only for searching, not for detecting new mail.\n- Streamlined related documentation, removing outdated or redundant polling logic.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:87c25317ef46b99760703e08d46d8ce679c8b3d272a9f08d149eee7a0faa3dee"
+}

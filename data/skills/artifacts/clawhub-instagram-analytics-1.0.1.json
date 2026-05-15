@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/instagram-analytics@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.instagram_analytics",
+  "skill": {
+    "id": 22406,
+    "skillKey": "clawhub-instagram-analytics",
+    "name": "Instagram Analytics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "instagram-analytics",
+    "url": "https://clawhub.ai/skills/instagram-analytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/instagram-analytics-5a621b1f6634348d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track Instagram performance and analytics. Use when the user says 'Instagram analytics', 'Instagram metrics', 'how are my Reels doing', 'Instagram reach', 'I..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "snoopyrain",
+      "userId": "s17caa3d3hyz4mwjdj866q0we983qd7s",
+      "displayName": "snoopyrain",
+      "image": "https://avatars.githubusercontent.com/u/9717776?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 364,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774622339761,
+      "changelog": "Add detailed Security & Data Handling",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:72726c540eeab043985315f54d308da20badda3252c843aab483fcf5b8eb3c5e"
+}

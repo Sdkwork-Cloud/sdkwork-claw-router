@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-video-edit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_video_edit",
+  "skill": {
+    "id": 29414,
+    "skillKey": "clawhub-free-video-edit",
+    "name": "Free Video Edit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-video-edit",
+    "url": "https://clawhub.ai/skills/free-video-edit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-video-edit-fb8c676311eaf45a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get edited video clips ready to post, without touching a single slider. Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say something like..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vynbosserman65",
+      "userId": "s175xbynxxje7z8y8jbn28x5vx84dckp",
+      "displayName": "vynbosserman65",
+      "image": "https://avatars.githubusercontent.com/u/208823770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 303,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775959073014,
+      "changelog": "Initial release of Free Video Edit — instant AI-powered video editing in the cloud.\n\n- Upload raw video (MP4, MOV, AVI, or WebM, up to 500MB); edit and export 1080p MP4 ready to post.\n- No manual editing or software installation needed; just describe the edits you want.\n- 100 free credits (7-day expiry) provided automatically on anonymous sign-up.\n- Supports trimming, adding transitions, overlays, audio, and export; handles edits via keyword/intent.\n- Fast processing (1–2 minutes per typical clip); transparent session and job management.\n- Easy session setup and error handling; helpful instructions and workflow tips included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7480a8e784d6a9afd80d04accc9e96174b7d6ccb82351fc2c49bd20967666d53"
+}

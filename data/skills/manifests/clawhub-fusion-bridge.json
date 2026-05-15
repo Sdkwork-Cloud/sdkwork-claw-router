@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52526,
+  "uuid": "skill-clawhub-fusion-bridge",
+  "skillKey": "clawhub-fusion-bridge",
+  "name": "Fusion 360 Bridge",
+  "summary": "Use the Fusion 360 Bridge to inspect or control Autodesk Fusion 360 over HTTP from OpenClaw. Use this skill when interacting with the Fusion Bridge add-in, `...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fusion_bridge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Michael Beetz",
+      "features": [
+        "Use the Fusion 360 Bridge to inspect or control Autodesk Fusion 360 over HTTP from OpenClaw",
+        "Use this skill when interacting with the Fusion Bridge add-in, `..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fusion-bridge@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4079451?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fusion-bridge",
+      "url": "https://clawhub.ai/skills/fusion-bridge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fusion-bridge",
+    "url": "https://clawhub.ai/skills/fusion-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fusion-bridge-d07286d0b245dc28.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fusion-bridge@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-fusion-bridge-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f036765620aacf1c794accba6e7a8a3fb4826c23721eea81f556efd93e0b87b2",
+      "artifactSizeBytes": 1954
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T09:17:37.645Z"
+}

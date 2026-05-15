@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/engagement-suppression-workflow@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.engagement_suppression_workflow",
+  "skill": {
+    "id": 36341,
+    "skillKey": "clawhub-engagement-suppression-workflow",
+    "name": "Engagement Suppression Workflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "engagement-suppression-workflow",
+    "url": "https://clawhub.ai/skills/engagement-suppression-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/engagement-suppression-workflow-14a0d2988ce6865c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build a two-tier sunset workflow that re-engages dormant contacts before suppressing them. Tier 1 triggers a re-engagement campaign after a configurable inac..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tomgranot",
+      "userId": "s17cmf9jxs7s60v7thhms9w09h83m293",
+      "displayName": "TomGranot",
+      "image": "https://avatars.githubusercontent.com/u/8835035?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774550509182,
+      "changelog": "Initial release: Two-tier sunset workflow for re-engagement and suppression of inactive contacts.\n\n- Triggers a re-engagement campaign after a configurable inactivity (sunset) window.\n- Suppresses contacts that remain inactive after a follow-up re-engagement window.\n- Provides guidance for building the workflow manually, or using HubSpot Breeze AI or Claude Chrome extension.\n- Includes clear prerequisites, detailed step-by-step build instructions, and best practices for workflow verification.\n- Designed to preserve deliverability while maximizing reactivation opportunities.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ec2bc9e43f3ba0551edb3c577a34a971c20ee9902e5efd0ce571fa6abd8ca04d"
+}

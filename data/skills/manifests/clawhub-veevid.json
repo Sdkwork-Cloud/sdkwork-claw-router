@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51687,
+  "uuid": "skill-clawhub-veevid",
+  "skillKey": "clawhub-veevid",
+  "name": "Veevid AI Video Generator",
+  "summary": "AI video generator — text to video, image to video, and reference-to-video via Veevid API. Supports Kling 3.0, Sora 2, Veo 3.1, LTX 2.3, Seedance, Wan 2.6, a...",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.veevid",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Veevid AI",
+      "features": [
+        "AI video generator — text to video, image to video, and reference-to-video via Veevid API",
+        "Supports Kling 3.0, Sora 2, Veo 3.1, LTX 2.3, Seedance, Wan 2.6, a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/veevid@1.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1229786?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "veevid",
+      "url": "https://clawhub.ai/skills/veevid"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "veevid",
+    "url": "https://clawhub.ai/skills/veevid",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/veevid-64f60340e2ee38fd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/veevid@1.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-veevid-1.2.2.json",
+      "version": "1.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7b0f73180aa9961b2d527b5a22b61c346fc869bcdd8f2194aaaf5b18df2bf145",
+      "artifactSizeBytes": 1885
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T15:03:21.494Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42085,
+  "uuid": "skill-clawhub-error-diagnosis",
+  "skillKey": "clawhub-error-diagnosis",
+  "name": "Error Diagnosis",
+  "summary": "Analyze error messages and logs to identify root causes of crashes, build failures, or runtime errors and suggest actionable fixes with code examples.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.error_diagnosis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Analyze error messages and logs to identify root causes of crashes, build failures, or runtime."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/error-diagnosis@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "error-diagnosis",
+      "url": "https://clawhub.ai/skills/error-diagnosis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "error-diagnosis",
+    "url": "https://clawhub.ai/skills/error-diagnosis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/error-diagnosis-8bdd2a53fe6bd076.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/error-diagnosis@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-error-diagnosis-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:24dd90c48450a6a3abe391412306acbc09ce7e2fa11fc8c8b06d0a191cbad9a7",
+      "artifactSizeBytes": 2011
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:01:28.924Z"
+}

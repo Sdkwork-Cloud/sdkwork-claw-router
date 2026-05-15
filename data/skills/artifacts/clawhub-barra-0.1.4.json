@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/barra@0.1.4",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.barra",
+  "skill": {
+    "id": 71405,
+    "skillKey": "clawhub-barra",
+    "name": "Barra"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "barra",
+    "url": "https://clawhub.ai/skills/barra",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/barra-84c7497f72a364db.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在币安交易所通过市价单或限价单买入BTC现货，自动处理交易参数和账户验证并反馈成交详情。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "violetsakura-7",
+      "userId": "s178xrp78yvf2v5gt2bb61dnj583ggv8",
+      "displayName": "violetsakura",
+      "image": "https://avatars.githubusercontent.com/u/180240001?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 425,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.1.4",
+      "createdAt": 1774573502585,
+      "changelog": "- Added metadata file (_meta.json) for the skill.\n- No changes to functionality or documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7447af80a9fe533446f66737ea876f41dc375f9e9c440e2c134110bd202af1bc"
+}

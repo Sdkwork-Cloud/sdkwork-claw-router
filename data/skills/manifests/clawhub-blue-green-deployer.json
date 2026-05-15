@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31454,
+  "uuid": "skill-clawhub-blue-green-deployer",
+  "skillKey": "clawhub-blue-green-deployer",
+  "name": "Blue Green Deployer",
+  "summary": "A specialized skill for safely managing and testing OpenClaw configuration changes using a Blue/Green deployment pattern. Use when you need to test new setti...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blue_green_deployer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "joshualeecowan33-ui",
+      "features": [
+        "A specialized skill for safely managing and testing OpenClaw configuration changes using a Blue.",
+        "Use when you need to test new setti..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/blue-green-deployer@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264918583?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "blue-green-deployer",
+      "url": "https://clawhub.ai/skills/blue-green-deployer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blue-green-deployer",
+    "url": "https://clawhub.ai/skills/blue-green-deployer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blue-green-deployer-58067a8c29b18e1e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/blue-green-deployer@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-blue-green-deployer-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6b4bd06dd1cb3051d132e0adbb88596c9badbd72c2f940f5e55278611f1f064b",
+      "artifactSizeBytes": 2385
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T19:39:30.457Z"
+}

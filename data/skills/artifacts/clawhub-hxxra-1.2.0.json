@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hxxra@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hxxra",
+  "skill": {
+    "id": 13158,
+    "skillKey": "clawhub-hxxra",
+    "name": "hxxra"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hxxra",
+    "url": "https://clawhub.ai/skills/hxxra",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hxxra-b7dffd9a23e5f315.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Research Assistant skill to search, download, analyze research papers via APIs, and save results to Zotero collections using Python scripts and LLM analysis."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cxlhyx",
+      "userId": "s1737edg3fvd6hwyzxndcqw8z184jcpz",
+      "displayName": "货又星",
+      "image": "https://avatars.githubusercontent.com/u/144350779?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 1349,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1773247974186,
+      "changelog": "**v1.2.0 · 2026/3/8**\n\n- Added `report` command to generate comprehensive Markdown reports from all `analysis.json` files\n- Report includes keyword statistics, overview table, and detailed content for each paper\n- Supports sorting by year (default), title, or author\n- Generates clean, readable Markdown format with tables, headers, and structured content\n- Updated documentation to include the new report command in workflows and examples",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cf3b51d4070a9d45406ae800426145ae083f9c3491fb0297b33652e83806d0f7"
+}

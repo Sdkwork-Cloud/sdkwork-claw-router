@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pandadoc@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pandadoc",
+  "skill": {
+    "id": 54788,
+    "skillKey": "clawhub-pandadoc",
+    "name": "Pandadoc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pandadoc",
+    "url": "https://clawhub.ai/skills/pandadoc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pandadoc-e3aa0c88475b4892.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "PandaDoc — manage documents, templates, contacts, and e-signatures via REST API"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiwithabidi",
+      "userId": "publishers:aiwithabidi",
+      "displayName": "aiwithabidi",
+      "image": "https://avatars.githubusercontent.com/u/208891229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 375,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772765547430,
+      "changelog": "Initial release of the PandaDoc skill.\n\n- Manage PandaDoc documents, templates, contacts, and e-signatures via REST API.\n- Easy CLI for common operations: list, create, send, get status, and delete documents.\n- Supports additional commands for managing templates, contacts, folders, and webhooks.\n- Requires PANDADOC_API_KEY; outputs JSON by default with optional human-readable formatting.\n- No dependencies; compatible with Python 3.10+ (stdlib only).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fb0ba12b2ffdd200e17917440d1dad16bb418eceff842be507d0cea9768bbf2e"
+}

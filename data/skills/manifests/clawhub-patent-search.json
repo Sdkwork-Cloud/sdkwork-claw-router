@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19326,
+  "uuid": "skill-clawhub-patent-search",
+  "skillKey": "clawhub-patent-search",
+  "name": "patent-search",
+  "summary": "Search, view and analyze patents directly in OpenClaw. Supports global patent databases with intelligent search and analysis features.",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.patent_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "windinwing",
+      "features": [
+        "Search, view and analyze patents directly in OpenClaw",
+        "Supports global patent databases with intelligent search and analysis features."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/patent-search@1.0.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5076411?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "patent-search",
+      "url": "https://clawhub.ai/skills/patent-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "patent-search",
+    "url": "https://clawhub.ai/skills/patent-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/patent-search-03e49bf87f9a867e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/patent-search@1.0.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-patent-search-1.0.9.json",
+      "version": "1.0.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:853e0f33621c6e668cbc37c64732c406283ffbbb38e2e9a0ed25723798482686",
+      "artifactSizeBytes": 2419
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T19:00:03.025Z"
+}

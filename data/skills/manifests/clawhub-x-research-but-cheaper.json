@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16385,
+  "uuid": "skill-clawhub-x-research-but-cheaper",
+  "skillKey": "clawhub-x-research-but-cheaper",
+  "name": "X Research But Cheaper",
+  "summary": "X/Twitter research skill powered by TwitterAPI.io. Agentic search, profile analysis, thread reading, watchlists, and sourced briefings. Use when asked to sea...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_research_but_cheaper",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "minilozio",
+      "features": [
+        "X/Twitter research skill powered by TwitterAPI.io",
+        "Agentic search, profile analysis, thread reading, watchlists, and sourced briefings",
+        "Use when asked to sea..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-research-but-cheaper@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261203432?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-research-but-cheaper",
+      "url": "https://clawhub.ai/skills/x-research-but-cheaper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-research-but-cheaper",
+    "url": "https://clawhub.ai/skills/x-research-but-cheaper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-research-but-cheaper-7e63773e3d66c17d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-research-but-cheaper@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-research-but-cheaper-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c2e853ec5126061927be1b020690b145b9bf5d90b67ce15f524cd7990f96f024",
+      "artifactSizeBytes": 2230
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T14:36:34.723Z"
+}

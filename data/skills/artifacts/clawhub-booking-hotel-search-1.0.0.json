@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/booking-hotel-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.booking_hotel_search",
+  "skill": {
+    "id": 22081,
+    "skillKey": "clawhub-booking-hotel-search",
+    "name": "Booking Real Time Hotel Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "booking-hotel-search",
+    "url": "https://clawhub.ai/skills/booking-hotel-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/booking-hotel-search-05ba402775b4dc84.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search Booking.com for real-time hotel availability, prices, and room details"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mtnrabi",
+      "userId": "s17btxx12ay7gfgqb033fyjrq183hbb8",
+      "displayName": "mtnrabi",
+      "image": "https://avatars.githubusercontent.com/u/46162004?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 486,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773340953839,
+      "changelog": "Initial release.\n\n- Search Booking.com for real-time hotel availability, prices, and detailed room information.\n- Supports destination-based searches, hotel name lookup, and filtering by amenities and budget.\n- Provides endpoints to check individual or multiple hotel availabilities.\n- Requires a RapidAPI key for authentication.\n- Simple, direct API usage via curl commands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:041ed290dece13577aaba6a863fdbf03b7507de3249b180835f7f7365cd3f4d0"
+}

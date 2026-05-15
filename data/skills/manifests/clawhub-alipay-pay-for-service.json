@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62589,
+  "uuid": "skill-clawhub-alipay-pay-for-service",
+  "skillKey": "clawhub-alipay-pay-for-service",
+  "name": "alipay-pay-for-service",
+  "summary": "支付宝支付服务处理技能。解析收银台链接、提交支付请求、查询支付结果. 当以下任一情况出现时，应当调用本技能处理支付流程： (1) 对话上下文中出现了 cashier*.alipay.com 或 *excashier*.alipay.com 域名的 URL，且用户表现出了支付意愿。 (2) 任何工具、技能或 API...",
+  "version": "1.0.9-beta1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alipay_pay_for_service",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alipay",
+      "features": [
+        "支付宝支付服务处理技能。解析收银台链接、提交支付请求、查询支付结果",
+        "当以下任一情况出现时，应当调用本技能处理支付流程： (1) 对话上下文中出现了 cashier*.alipay.com 或 *excashier*.alipay.com 域名的 URL，且用."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alipay-pay-for-service@1.0.9-beta1",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/alipay-pay-for-service/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alipay-pay-for-service",
+      "url": "https://clawhub.ai/skills/alipay-pay-for-service"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alipay-pay-for-service",
+    "url": "https://clawhub.ai/skills/alipay-pay-for-service",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alipay-pay-for-service-ff9a2d51541f5c20.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alipay-pay-for-service@1.0.9-beta1",
+      "artifactUrl": "data/skills/artifacts/clawhub-alipay-pay-for-service-1.0.9-beta1.json",
+      "version": "1.0.9-beta1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5fb1da4dce470a26b82bdeefed3af19a4a56ff6b5b5f24dbb493a5190766a57c",
+      "artifactSizeBytes": 2312
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T04:38:43.591Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/okx-strategy-factory@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.okx_strategy_factory",
+  "skill": {
+    "id": 59929,
+    "skillKey": "clawhub-okx-strategy-factory",
+    "name": "Okx Strategy Factory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "okx-strategy-factory",
+    "url": "https://clawhub.ai/skills/okx-strategy-factory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/okx-strategy-factory-ec5b93f619365d8a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent Team 工厂：协调 5 个 AI Agent（Strategy/Backtest/Infra/Publish/Iteration）完成 OKX OnchainOS 链上交易策略的全生命周期——开发、回测、部署、发布、迭代。支持多策略并行，每个策略独立状态管理。触发词：策略开发、agent team、..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "synththoughts",
+      "userId": "s17ck4tsqe5hd01dsn49q7dac183kd47",
+      "displayName": "SynthThoughts",
+      "image": "https://avatars.githubusercontent.com/u/261547909?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 354,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1774003148772,
+      "changelog": "add platform compatibility: recommend Claude Code/Cursor/Gemini CLI, not OpenClaw",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aa0e299dc522a0cc396be5c44180487863b69ed70ab44f53aef96699acc31550"
+}

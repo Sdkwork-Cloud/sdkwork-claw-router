@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/my-firewall-v2@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_firewall_v2",
+  "skill": {
+    "id": 28768,
+    "skillKey": "clawhub-my-firewall-v2",
+    "name": "My Firewall v2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-firewall-v2",
+    "url": "https://clawhub.ai/skills/my-firewall-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-firewall-v2-626f2d379d0bbdd2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Configure firewalls on servers and cloud providers with security best practices."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gonzachee",
+      "userId": "publishers:gonzachee",
+      "displayName": "gonzachee",
+      "image": "https://avatars.githubusercontent.com/u/128383251?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 318,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773593443909,
+      "changelog": "Custom fork: added extra policy checks and removed telemetry",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cf8bbf229db286a27ecc721c4ffc145b45461ef1530b89f22d71261225ad4be8"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deep-scraper@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deep_scraper",
+  "skill": {
+    "id": 8525,
+    "skillKey": "clawhub-deep-scraper",
+    "name": "Deep Scraper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deep-scraper",
+    "url": "https://clawhub.ai/skills/deep-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deep-scraper-2990a5e216ab1697.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Performs deep scraping of complex sites like YouTube using containerized Crawlee, extracting validated, ad-free transcripts and content as JSON output."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "opsun",
+      "userId": "publishers:opsun",
+      "displayName": "opsun",
+      "image": "https://avatars.githubusercontent.com/u/5980701?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 10813,
+      "installsAllTime": 73,
+      "installsCurrent": 65,
+      "stars": 10,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770205151953,
+      "changelog": "Included Dockerfile in the package",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6aab673c059ee8dae0128590b61e0b9ce8b6dc603621f7ad539eacd92d9684c4"
+}

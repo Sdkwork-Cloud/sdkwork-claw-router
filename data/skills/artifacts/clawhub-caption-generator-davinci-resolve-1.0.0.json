@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/caption-generator-davinci-resolve@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.caption_generator_davinci_resolve",
+  "skill": {
+    "id": 42797,
+    "skillKey": "clawhub-caption-generator-davinci-resolve",
+    "name": "Caption Generator Davinci Resolve"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "caption-generator-davinci-resolve",
+    "url": "https://clawhub.ai/skills/caption-generator-davinci-resolve",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/caption-generator-davinci-resolve-bbf24c5c699491d1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get captioned video files ready to post, without touching a single slider. Upload your video clips (MP4, MOV, AVI, MKV, up to 500MB), say something like \"gen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776029207668,
+      "changelog": "Initial release with full-featured cloud captioning workflow for DaVinci Resolve users:\n\n- Upload video files (MP4, MOV, AVI, MKV, up to 500MB) for fast, server-side caption generation and burn-in.\n- Easy setup: automatic anonymous authentication and session creation with free trial credits.\n- Simple prompt-based interface—just tell it to generate captions and export video.\n- Clear guidance and error handling for uploads, exporting, credits, file formats, and common issues.\n- Supports interactive workflows: uploads, caption generate/burn-in, 1080p MP4 export, and timeline previews.\n- All rendering and edits are processed remotely; no DaVinci Resolve plugin or local install required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:18c36d841a311858b5f811935dbc8e163909017dffa9a85aecc0bd6bff61b86d"
+}

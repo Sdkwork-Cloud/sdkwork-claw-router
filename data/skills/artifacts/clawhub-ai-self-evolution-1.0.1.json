@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-self-evolution@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_self_evolution",
+  "skill": {
+    "id": 70740,
+    "skillKey": "clawhub-ai-self-evolution",
+    "name": "AI自动进化工程，结合self-improvement技巧+实际运行总结而成"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-self-evolution",
+    "url": "https://clawhub.ai/skills/ai-self-evolution",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-self-evolution-44ac88831ca3e9fa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "记录经验、错误与修正，持续改进。触发场景：命令失败 | 操作出错 | 用户纠正（不对、实际上、你错了） | 功能请求（能不能、我希望、有没有办法） | API或工具失败 | 知识过时 | 发现更优做法 | 重复模式 | 非显而易见的问题。执行重大任务前先回顾历史经验。会话开始时回顾，会话结束时总结。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andylue",
+      "userId": "publishers:andylue",
+      "displayName": "Andy",
+      "image": "https://avatars.githubusercontent.com/u/8328012?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 412,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773279798113,
+      "changelog": "ai-self-evolution v1.0.1\n\n- No file changes detected in this version; documentation and logic remain unchanged.\n- No user-facing or internal feature adjustments in this release.\n- Behavior, workflows, and formats remain consistent with previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ca5ecbe0ffd0874e4b2a53846a981d9b48aa10a289c243a661e97499c6c25d40"
+}

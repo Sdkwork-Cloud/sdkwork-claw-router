@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64951,
+  "uuid": "skill-clawhub-query-skills",
+  "skillKey": "clawhub-query-skills",
+  "name": "Query-Skills",
+  "summary": "智能搜索和发现 OpenClaw 技能，支持中英双语、多来源搜索、实时更新及技能详情查询。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.query_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bittao",
+      "features": [
+        "智能搜索和发现 OpenClaw 技能，支持中英双语、多来源搜索、实时更新及技能详情查询。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/query-skills@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17961407?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "query-skills",
+      "url": "https://clawhub.ai/skills/query-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "query-skills",
+    "url": "https://clawhub.ai/skills/query-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/query-skills-3da69e1a43b65c0c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/query-skills@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-query-skills-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ad8cc864eafbbc4e35fce418b91d0d5f61323d522c98b7f87214e9e97feddac8",
+      "artifactSizeBytes": 2245
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T15:08:58.214Z"
+}

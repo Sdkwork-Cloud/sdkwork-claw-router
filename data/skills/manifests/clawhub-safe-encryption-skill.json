@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50294,
+  "uuid": "skill-clawhub-safe-encryption-skill",
+  "skillKey": "clawhub-safe-encryption-skill",
+  "name": "Safe Encryption",
+  "summary": "Encrypt, decrypt, and manage keys with the SAFE CLI — a modern GPG alternative with post-quantum support.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safe_encryption_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nick Sullivan",
+      "features": [
+        "Encrypt, decrypt, and manage keys with the SAFE CLI — a modern GPG alternative with post-quantu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/safe-encryption-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5125095?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "safe-encryption-skill",
+      "url": "https://clawhub.ai/skills/safe-encryption-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safe-encryption-skill",
+    "url": "https://clawhub.ai/skills/safe-encryption-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safe-encryption-skill-a196e99c3e8779a6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/safe-encryption-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-safe-encryption-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:426cd0d74484a0f34abd839c441866e5922725ba2deb5f8987d1d6844a1c149c",
+      "artifactSizeBytes": 2375
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T16:53:30.018Z"
+}

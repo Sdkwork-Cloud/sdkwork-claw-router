@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45230,
+  "uuid": "skill-clawhub-smart-summarizer-v1",
+  "skillKey": "clawhub-smart-summarizer-v1",
+  "name": "smart summarizer",
+  "summary": "Summarizes URLs, articles, YouTube videos, PDFs, and pasted text into a structured digest with TL;DR, key takeaways, and action items. Use this skill wheneve...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_summarizer_v1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "billyhetech",
+      "features": [
+        "Summarizes URLs, articles, YouTube videos, PDFs, and pasted text into a structured digest with.",
+        "Use this skill wheneve..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-summarizer-v1@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261541299?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-summarizer-v1",
+      "url": "https://clawhub.ai/skills/smart-summarizer-v1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-summarizer-v1",
+    "url": "https://clawhub.ai/skills/smart-summarizer-v1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-summarizer-v1-ddb86dc1dee57dc6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-summarizer-v1@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-summarizer-v1-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:06844e943a373b17887fe1c8aec30373ed0db566126de41807e7847311fb97ae",
+      "artifactSizeBytes": 2642
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T13:17:17.665Z"
+}

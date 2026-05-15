@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/obsidians@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidians",
+  "skill": {
+    "id": 26345,
+    "skillKey": "clawhub-obsidians",
+    "name": "Pub Obsidian"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidians",
+    "url": "https://clawhub.ai/skills/obsidians",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidians-18ee63abc3aa5808.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Work with Obsidian vaults (plain Markdown notes) and automate via obsidian-cli. And also 50+ models for image generation, video generation, text-to-speech, s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alvisdunlop",
+      "userId": "s17fq465rgqaeb4mjcdf3p9dkh84s6zy",
+      "displayName": "AlvisDunlop",
+      "image": "https://avatars.githubusercontent.com/u/255881479?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 369,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773295770628,
+      "changelog": "obsidians 1.0.0\n\n- Initial release.\n- Work with Obsidian vaults (plain Markdown notes) and automate via obsidian-cli.\n- Access to 50+ models for image generation, video generation, text-to-speech, speech-to-text, music, chat, web search, document parsing, email, and SMS, all via a unified API.\n- Includes detailed usage and model listing instructions for all supported AI tasks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bc054d957690662de7dc7e0df6c789fb13fc07c67035c74bc45592194d9d77e1"
+}

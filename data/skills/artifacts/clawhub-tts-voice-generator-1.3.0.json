@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tts-voice-generator@1.3.0",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tts_voice_generator",
+  "skill": {
+    "id": 69604,
+    "skillKey": "clawhub-tts-voice-generator",
+    "name": "Tts Voice Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tts-voice-generator",
+    "url": "https://clawhub.ai/skills/tts-voice-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tts-voice-generator-4f94ffc1bfdf92e1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "文本转语音生成工具，支持浏览声音列表、选择声音、上传自定义音频（带文本内容）并命名保存、生成语音和查询任务状态等功能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "seanfeng1234",
+      "userId": "s179h12jxswpc507yk0bqbkv0983h3mk",
+      "displayName": "SeanFeng1234",
+      "image": "https://avatars.githubusercontent.com/u/165649584?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.3.0",
+      "createdAt": 1775386775797,
+      "changelog": "**目录结构优化与自定义声音功能优化**\n\n- 技能目录结构调整，主程序和相关文件移至 tts-voice-generator 子文件夹。\n- 支持“上传自定义音频”时同时提交音频内容文本和声音名称，并永久保存自定义声音，可重复使用。\n- 文档（skill.md）全面完善，增加上传和调用自定义声音的详细示例、操作说明及约束要求。\n- 简化并明确了浏览声音、选择、生成和查询流程。\n- 移除冗余旧目录及文件，保留核心和文档。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b4baa9463034194aaa2700034abc7a0b3e6dccdd3429099e1370b666ff23e420"
+}

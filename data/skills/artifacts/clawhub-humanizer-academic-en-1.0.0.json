@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/humanizer-academic-en@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.humanizer_academic_en",
+  "skill": {
+    "id": 41947,
+    "skillKey": "clawhub-humanizer-academic-en",
+    "name": "humanizer-academic-en"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "humanizer-academic-en",
+    "url": "https://clawhub.ai/skills/humanizer-academic-en",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/humanizer-academic-en-e3c3cf8019683417.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Humanizer Academic English edition. Trigger when the user asks to polish academic prose, remove AI tone, reduce AIGC traces, or says things like \"make this s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "duducoco",
+      "userId": "s178pr8w191p0vksftmxs13z9n84d6wc",
+      "displayName": "Duducoco",
+      "image": "https://avatars.githubusercontent.com/u/69681789?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775590378649,
+      "changelog": "- Initial release of Humanizer Academic English Edition.\n- Detects and rewrites AI-generated patterns in academic English text.\n- Preserves meaning, accuracy, disciplinary norms, and authorial voice.\n- Includes a comprehensive pattern library targeting rhetorical inflation, word choice, sentence structure, transitions, attribution, formatting, and boilerplate.\n- Focuses on natural academic prose by removing formulaic structures and restoring writer presence.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d1bccda0dee5608e86ebcc29b64e4ebfe1f68ddc188f45a4930c9efacd97e810"
+}

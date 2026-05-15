@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meme-cog@1.0.12",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meme_cog",
+  "skill": {
+    "id": 10063,
+    "skillKey": "clawhub-meme-cog",
+    "name": "Meme Cog"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meme-cog",
+    "url": "https://clawhub.ai/skills/meme-cog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meme-cog-c724ad9485ae9924.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI meme generation powered by CellCog. Memes, viral content, reaction images, internet humor. Audience targeting, trend research, and multi-angle generation..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nitishgargiitd",
+      "userId": "s1766yx1dct3dffeec508gjrz983fce7",
+      "displayName": "CellCog",
+      "image": "https://avatars.githubusercontent.com/u/14193431?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2373,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 6,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.0.12",
+      "createdAt": 1776925150105,
+      "changelog": "- Added explicit requirements in metadata: now lists required binary (`python3`) and necessary environment variable (`CELLCOG_API_KEY`).\n- No other changes to functionality or documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a8674de33013e8d0f6f8540d53cb5f405e9a2c9e098455f2b0324a4b1b924859"
+}

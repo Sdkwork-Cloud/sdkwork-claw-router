@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8829,
+  "uuid": "skill-clawhub-ffmpeg-cli",
+  "skillKey": "clawhub-ffmpeg-cli",
+  "name": "FFmpeg CLI",
+  "summary": "Process video and audio using FFmpeg CLI for transcoding, cutting, merging, audio extraction, thumbnails, GIFs, speed, filters, subtitles, and watermarks.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ffmpeg_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ascendswang",
+      "features": [
+        "Process video and audio using FFmpeg CLI for transcoding, cutting, merging, audio extraction, t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ffmpeg-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257700150?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ffmpeg-cli",
+      "url": "https://clawhub.ai/skills/ffmpeg-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ffmpeg-cli",
+    "url": "https://clawhub.ai/skills/ffmpeg-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ffmpeg-cli-61ba8b2a2c274625.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ffmpeg-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ffmpeg-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b6ff95c40ba88a47b59994794682131a6efc055d154353baadbd7c9047742baf",
+      "artifactSizeBytes": 1963
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-28T05:53:27.401Z"
+}

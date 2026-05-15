@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21809,
+  "uuid": "skill-clawhub-elite-to-expertpack",
+  "skillKey": "clawhub-elite-to-expertpack",
+  "name": "Elite To Expertpack",
+  "summary": "Convert Elite Longterm Memory data into a structured ExpertPack. Migrates the 5-layer memory system (SESSION-STATE hot RAM, LanceDB warm store, Git-Notes col...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.elite_to_expertpack",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Brian Hearn",
+      "features": [
+        "Convert Elite Longterm Memory data into a structured ExpertPack",
+        "Migrates the 5-layer memory system (SESSION-STATE hot RAM, LanceDB warm store, Git-Notes col..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/elite-to-expertpack@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1640595?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "elite-to-expertpack",
+      "url": "https://clawhub.ai/skills/elite-to-expertpack"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "elite-to-expertpack",
+    "url": "https://clawhub.ai/skills/elite-to-expertpack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/elite-to-expertpack-2e10f36f3204e88b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/elite-to-expertpack@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-elite-to-expertpack-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7b302eb31209ead3f8cb334def5c2efb2125f122adce729b55626fda050ef10a",
+      "artifactSizeBytes": 2021
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T19:40:44.832Z"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62194,
+  "uuid": "skill-clawhub-fmtwiki",
+  "skillKey": "clawhub-fmtwiki",
+  "name": "FMTWiki — 肠菌移植专业知识库",
+  "summary": "FMTWiki 肠菌移植专业知识库运营与维护 Skill。 触发场景（精确匹配）： - 用户说\"更新FMTWiki\"、\"更新知识库\"、\"刷新词条\" - 用户提到具体疾病词条（rCDI/UC/CD/ASD等）+ \"更新\"或\"补充\" - 用户说\"发布新文献\"、\"添加PubMed\"、\"补充论文\" - 用户说\"给FMTW...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fmtwiki",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mingyuan",
+      "features": [
+        "FMTWiki 肠菌移植专业知识库运营与维护 Skill。 触发场景（精确匹配）：",
+        "用户说\"更新FMTWiki\"、\"更新知识库\"、\"刷新词条\"",
+        "用户提到具体疾病词条（rCDI/UC/CD/ASD等）+ \"更新\"或\"补充\"",
+        "用户说\"发布新文献\"、\"添加PubMed\"、\"补充论文\""
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fmtwiki@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267627552?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fmtwiki",
+      "url": "https://clawhub.ai/skills/fmtwiki"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fmtwiki",
+    "url": "https://clawhub.ai/skills/fmtwiki",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fmtwiki-d9e49ed33baa8781.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fmtwiki@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fmtwiki-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3a22a44d7610fa8a7812ad71259d47ca0170ef274862c8adc25e7c1cbf538340",
+      "artifactSizeBytes": 2209
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T14:31:37.698Z"
+}

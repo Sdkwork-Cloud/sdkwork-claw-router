@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smart-illustrator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_illustrator",
+  "skill": {
+    "id": 61143,
+    "skillKey": "clawhub-smart-illustrator",
+    "name": "Smart Illustrator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-illustrator",
+    "url": "https://clawhub.ai/skills/smart-illustrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-illustrator-5ff887bbbaddef33.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能配图与 PPT 信息图生成器。支持三种模式：(1) 文章配图模式 - 分析文章内容，生成插图；(2) PPT/Slides 模式 - 生成批量信息图；(3) Cover 模式 - 生成封面图。所有模式默认生成图片，`--prompt-only` 只输出 prompt。支持 Bento Grid 功能展示图风格..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "axtonliu",
+      "userId": "publishers:axtonliu",
+      "displayName": "Axton",
+      "image": "https://avatars.githubusercontent.com/u/34881731?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 478,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773100322068,
+      "changelog": "Smart Illustrator 1.0.0 - 初始版本发布\n\n- 支持三种模式：文章配图、PPT/Slides 信息图批量生成、封面图生成（含主流平台尺寸）。\n- 配图引擎自动选择（Gemini/Excalidraw/Mermaid），满足不同类型的可视化需求。\n- 必须读取指定 style 文件，严格区分不同模式和风格。\n- 支持`--prompt-only`模式，自动将 JSON prompt 复制到剪贴板，便于手动生成图片。\n- 丰富 CLI 参数，支持多种自定义风格、参考图、多候选图、不同引擎等灵活配置。\n- 输出带图片的 markdown 文档及所有图片、源文件，便于后续编辑和发布。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0e40c65951bfa8b3b3a58bde180408e9ae741a0dc7167b91ef88f52e5bc1c913"
+}

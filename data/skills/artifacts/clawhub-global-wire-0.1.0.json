@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/global-wire@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.global_wire",
+  "skill": {
+    "id": 29857,
+    "skillKey": "clawhub-global-wire",
+    "name": "GlobalWire"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "global-wire",
+    "url": "https://clawhub.ai/skills/global-wire",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/global-wire-f6ad42a90a5a3b42.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn answers about major world events into wire-style briefings, rolling event timelines, verification notes, and alert bullets with stable formatting, sourc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yly46967-source",
+      "userId": "s17b5xb8ncmfa50pr96twd4e4583gfy3",
+      "displayName": "Yansoun",
+      "image": "https://avatars.githubusercontent.com/u/251599478?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 194,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774492719518,
+      "changelog": "Initial public release: wire-style global news briefings with credibility labels, rolling timelines, and verification-focused formatting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b31003c75eb5cdd80839a5274c29ca7925f346e8d5c9a1287c089b707c7c1094"
+}

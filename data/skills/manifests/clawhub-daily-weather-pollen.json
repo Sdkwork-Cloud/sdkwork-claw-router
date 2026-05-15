@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73663,
+  "uuid": "skill-clawhub-daily-weather-pollen",
+  "skillKey": "clawhub-daily-weather-pollen",
+  "name": "花粉过敏指数权威发布",
+  "summary": "花粉过敏指数权威发布。当用户需要查询花粉浓度、设置每日定时推送花粉过敏预警时使用。支持自定义城市，可查询花粉浓度和天气，并可设置定时任务自动推送。",
+  "version": "4.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_weather_pollen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fengdzh",
+      "features": [
+        "花粉过敏指数权威发布。当用户需要查询花粉浓度、设置每日定时推送花粉过敏预警时使用。支持自定义城市，可查询花粉浓度和天气，并可设置定时任务自动推送。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-weather-pollen@4.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6056895?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-weather-pollen",
+      "url": "https://clawhub.ai/skills/daily-weather-pollen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-weather-pollen",
+    "url": "https://clawhub.ai/skills/daily-weather-pollen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-weather-pollen-b581c0522b046bbc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-weather-pollen@4.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-weather-pollen-4.0.0.json",
+      "version": "4.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4cfdb69dac99966ff6956a51fc440d3e8642a9ea1e6a0950b94e11eaa0be27ec",
+      "artifactSizeBytes": 2081
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T01:21:10.980Z"
+}

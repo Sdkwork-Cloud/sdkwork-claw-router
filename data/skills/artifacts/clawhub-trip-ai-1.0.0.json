@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trip-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trip_ai",
+  "skill": {
+    "id": 59115,
+    "skillKey": "clawhub-trip-ai",
+    "name": "出行AI助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trip-ai",
+    "url": "https://clawhub.ai/skills/trip-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trip-ai-5b4538e7fd078c42.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI智能旅行助手套装，包含行程规划、目的地指南、预算管理、签证办理、天气打包等一站式旅行服务。Invoke when user needs comprehensive travel planning, itinerary creation, destination information, budget calc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gaogao605",
+      "userId": "s17cxwwzm94v9ntkczkmq0r2x983km1s",
+      "displayName": "fenbeitong-trip",
+      "image": "https://avatars.githubusercontent.com/u/265222913?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774875212192,
+      "changelog": "AI智能旅行助手套装 (ai-travel-skill-package) 1.0.0 首次发布\n\n- 提供行程规划、目的地指南、旅行预算、签证办理、天气打包等五大核心旅行服务，一站式解决出行相关需求\n- 各子技能协作，涵盖智能行程生成、景点推荐、美食交通指南、费用预算、签证与打包建议\n- 全面规范数据真实性、预算透明性与签证信息更新\n- 支持标准化响应格式与详细的技能触发场景\n- 内建数据共享模型，方便不同服务间精准协作",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d56df19497de67224470312100b6f9af79a3f3cab49e8d9ce1e60e7ca4a452bc"
+}

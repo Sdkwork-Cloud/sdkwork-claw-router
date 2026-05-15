@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44655,
+  "uuid": "skill-clawhub-modesty-arxiv-watcher",
+  "skillKey": "clawhub-modesty-arxiv-watcher",
+  "name": "arxiv watcher",
+  "summary": "Search and summarize papers from ArXiv. Use when the user asks for the latest research, specific topics on ArXiv, or a daily summary of AI papers.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.modesty_arxiv_watcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ModestyRichards",
+      "features": [
+        "Search and summarize papers from ArXiv",
+        "Use when the user asks for the latest research, specific topics on ArXiv, or a daily summary of."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/modesty-arxiv-watcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261238899?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "modesty-arxiv-watcher",
+      "url": "https://clawhub.ai/skills/modesty-arxiv-watcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "modesty-arxiv-watcher",
+    "url": "https://clawhub.ai/skills/modesty-arxiv-watcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/modesty-arxiv-watcher-71bad8a4807adc94.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/modesty-arxiv-watcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-modesty-arxiv-watcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:164b7bad6417d0d67a6d7c937a532a4f063a72c99fa4a82d3dbc1d9b3c6eb902",
+      "artifactSizeBytes": 2307
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T13:18:06.920Z"
+}

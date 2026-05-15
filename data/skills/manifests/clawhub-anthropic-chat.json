@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28200,
+  "uuid": "skill-clawhub-anthropic-chat",
+  "skillKey": "clawhub-anthropic-chat",
+  "name": "Anthropic Chat",
+  "summary": "Interact directly with Claude via Anthropic Messages API using your own API key to send and receive natural language tasks and responses.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anthropic_chat",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liutao0401-afk",
+      "features": [
+        "Interact directly with Claude via Anthropic Messages API using your own API key to send and rec."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/anthropic-chat@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/241881850?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "anthropic-chat",
+      "url": "https://clawhub.ai/skills/anthropic-chat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anthropic-chat",
+    "url": "https://clawhub.ai/skills/anthropic-chat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anthropic-chat-24078a073fb70f72.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/anthropic-chat@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-anthropic-chat-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:89b5383892294dfd0d54a2d6a2b6727f95a376e4b7e69de2b9407c6cdaf0dd8d",
+      "artifactSizeBytes": 2158
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T01:37:32.915Z"
+}

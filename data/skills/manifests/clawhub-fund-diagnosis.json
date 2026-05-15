@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71948,
+  "uuid": "skill-clawhub-fund-diagnosis",
+  "skillKey": "clawhub-fund-diagnosis",
+  "name": "fund-diagnosis",
+  "summary": "面向公募基金的单基金综合诊断能力。适用于用户提出“这只基金怎么样”“适不适合继续持有”“风险和收益特征如何”等泛化问题时，返回结构化的Markdown诊断报告。每次仅分析一只基金，不处理多基金对比与量化建模。触发核心条件：用户问法为概括性诊断，未要求具体指标公式计算或回测建模。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fund_diagnosis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Financial AI Analyst",
+      "features": [
+        "面向公募基金的单基金综合诊断能力。适用于用户提出“这只基金怎么样”“适不适合继续持有”“风险和收益特征如何”等泛化问题时，返回结构化的Markdown诊断报告。每次仅分析一只基金，不处理多基."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fund-diagnosis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41098207?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fund-diagnosis",
+      "url": "https://clawhub.ai/skills/fund-diagnosis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fund-diagnosis",
+    "url": "https://clawhub.ai/skills/fund-diagnosis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fund-diagnosis-6c6ee6b2cbc54dc4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fund-diagnosis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fund-diagnosis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:562e53a2c66225b696da67b9448058105a63a787260b9c1553764b3486074930",
+      "artifactSizeBytes": 2148
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T11:18:27.865Z"
+}

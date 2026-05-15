@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openai-whisper-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openai_whisper_api",
+  "skill": {
+    "id": 8292,
+    "skillKey": "clawhub-openai-whisper-api",
+    "name": "Openai Whisper Api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openai-whisper-api",
+    "url": "https://clawhub.ai/skills/openai-whisper-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openai-whisper-api-6a5f78d01770c803.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transcribe audio via OpenAI Audio Transcriptions API (Whisper)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "steipete",
+      "userId": "s179zksw999xz8ms4cy7pb2fr183m5jq",
+      "displayName": "Peter Steinberger",
+      "image": "https://avatars.githubusercontent.com/u/58493?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 23652,
+      "installsAllTime": 1165,
+      "installsCurrent": 1132,
+      "stars": 50,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1767545368103,
+      "changelog": "",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f98f93f72ce4aead049da0d5c2689541a30d5f89a8496b314a0f5550a964ed1a"
+}

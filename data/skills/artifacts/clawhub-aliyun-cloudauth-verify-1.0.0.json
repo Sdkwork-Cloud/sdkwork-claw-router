@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aliyun-cloudauth-verify@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun_cloudauth_verify",
+  "skill": {
+    "id": 45164,
+    "skillKey": "clawhub-aliyun-cloudauth-verify",
+    "name": "Aliyun Cloudauth Verify"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun-cloudauth-verify",
+    "url": "https://clawhub.ai/skills/aliyun-cloudauth-verify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-cloudauth-verify-e6a6bae4cc8038e5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when managing Alibaba Cloud ID Verification (Cloudauth) via OpenAPI/SDK, including the user is working on identity-verification resource operations, conf..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cinience",
+      "userId": "s1707avh05gnzr3g6e3m9ka6fh840rtd",
+      "displayName": "cinience",
+      "image": "https://avatars.githubusercontent.com/u/557426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775104016202,
+      "changelog": "Initial release of aliyun-cloudauth-verify skill.\n\n- Provides guided workflows for managing Alibaba Cloud ID Verification (Cloudauth) via OpenAPI/SDK.\n- Outlines best practices for using environment variables and shared config files for AccessKey.\n- Details common API operation patterns (listing, configuration changes, status/troubleshooting).\n- Includes quickstart and validation scripts for API discovery and skill setup.\n- Defines output and evidence storage policies for reproducibility.\n- Lists prerequisites and documentation references.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7231dbe7fb5b4547a852e281161ed776c071d0e93013f1a77f516c736f532df0"
+}

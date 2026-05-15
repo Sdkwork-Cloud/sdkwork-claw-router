@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rolex-maybeai-sheet@0.1.4",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rolex_maybeai_sheet",
+  "skill": {
+    "id": 27847,
+    "skillKey": "clawhub-rolex-maybeai-sheet",
+    "name": "1"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rolex-maybeai-sheet",
+    "url": "https://clawhub.ai/skills/rolex-maybeai-sheet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rolex-maybeai-sheet-38b63ba733f3bba9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MaybeAI Sheet skill for full Excel/spreadsheet lifecycle management. Upload, read, edit, and analyze Excel files via the MaybeAI platform. Use when the user..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ojbkxiongdei",
+      "userId": "s17fq4rfdxf3nmdmgtj5y0n8bs83wqqc",
+      "displayName": "ojbkxiongdei",
+      "image": "https://avatars.githubusercontent.com/u/55149555?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 339,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.4",
+      "createdAt": 1773725598577,
+      "changelog": "fix: add auth headers to read scripts, hardcode BASE_URL",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:abb2b73d172411675085b139c36e86ab86bf656328b0f30ceda11f41e6d47e53"
+}

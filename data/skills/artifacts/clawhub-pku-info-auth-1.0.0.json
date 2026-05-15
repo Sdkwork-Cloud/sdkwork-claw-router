@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pku-info-auth@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pku_info_auth",
+  "skill": {
+    "id": 57194,
+    "skillKey": "clawhub-pku-info-auth",
+    "name": "PKU Info Auth"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pku-info-auth",
+    "url": "https://clawhub.ai/skills/pku-info-auth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pku-info-auth-c5c962e4fb4f7c2f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "PKU unified credential management CLI (统一凭据管理). Use this skill when the user or AI Agent needs to authenticate with PKU services, manage stored credentials,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wjsoj",
+      "userId": "s170ksphbtrkq0sghjqcwn5v3s83v5ew",
+      "displayName": "wjsoj",
+      "image": "https://avatars.githubusercontent.com/u/59087896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 216,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775725593913,
+      "changelog": "Initial release of PKU unified credential management CLI.\n\n- Provides secure credential storage for all PKU CLI tools using the OS keyring (supports Linux, macOS, Windows).\n- Allows users to manage, check, and clear PKU credentials without exposing passwords to agents or tools.\n- Enables seamless auto-login for PKU services (treehole, course, campuscard, elective) after one-time setup.\n- Supports SMS verification workflow and checks session status across all services.\n- All commands and feedback are available in Chinese for user clarity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:96b41c4009b49de0d108f974ce3ed9539c9ab59339da9a8fb49e1979ca7f6109"
+}

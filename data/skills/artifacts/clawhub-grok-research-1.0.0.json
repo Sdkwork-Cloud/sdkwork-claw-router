@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/grok-research@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grok_research",
+  "skill": {
+    "id": 28695,
+    "skillKey": "clawhub-grok-research",
+    "name": "Grok Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grok-research",
+    "url": "https://clawhub.ai/skills/grok-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grok-research-239b5d8607cf6b2d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Crypto research via Grok model's real-time X/Twitter knowledge. Forwards the user's query as-is to Grok API — no prompt injection, no context bloat. Use when..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "arespollo",
+      "userId": "publishers:arespollo",
+      "displayName": "pollo",
+      "image": "https://avatars.githubusercontent.com/u/131782671?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 833,
+      "installsAllTime": 6,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771928772406,
+      "changelog": "Initial release: forward queries to Grok API for crypto narrative research via real-time X/Twitter data",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2db21d753b15e0facd203d5449b09605d8957867bc7f1a0d14ba158d9e3eeabc"
+}

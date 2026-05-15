@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60135,
+  "uuid": "skill-clawhub-openclaw-intelligence-officer",
+  "skillKey": "clawhub-openclaw-intelligence-officer",
+  "name": "OpenClaw行业情报官",
+  "summary": "行业情报官 - 定时采集 GitHub Trending、X(Twitter)、知乎、36kr、掘金等平台热点，AI 摘要后推送到指定渠道。集成 fxtwitter API 和 RSSHub。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_intelligence_officer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "muisenice",
+      "features": [
+        "定时采集 GitHub Trending、X(Twitter)、知乎、36kr、掘金等平台热点，AI 摘要后推送到指定渠道。集成 fxtwitter API 和 RSSHub。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-intelligence-officer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/170805867?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-intelligence-officer",
+      "url": "https://clawhub.ai/skills/openclaw-intelligence-officer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-intelligence-officer",
+    "url": "https://clawhub.ai/skills/openclaw-intelligence-officer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-intelligence-officer-cd80fd35b9114bc5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-intelligence-officer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-intelligence-officer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:469c897b31ab9e1a511ab5bb83b9812d3612caa8745187234f5376183900ef72",
+      "artifactSizeBytes": 2434
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T05:47:58.504Z"
+}

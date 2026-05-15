@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12683,
+  "uuid": "skill-clawhub-runstr-fitness",
+  "skillKey": "clawhub-runstr-fitness",
+  "name": "RUNSTR Fitness",
+  "summary": "Give your AI agent access to your health and fitness data from RUNSTR. Fetches workouts, habits, journal entries, mood, steps, and more from Nostr. Use when the user asks about their workouts, fitness history, health habits, mood tracking,.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.runstr_fitness",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TheWildHustle",
+      "features": [
+        "Give your AI agent access to your health and fitness data from RUNSTR",
+        "Fetches workouts, habits, journal entries, mood, steps, and more from Nostr",
+        "Use when the user asks about their workouts, fitness history, health habits, mood tracking, or."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/runstr-fitness@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/145122833?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "runstr-fitness",
+      "url": "https://clawhub.ai/skills/runstr-fitness"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "runstr-fitness",
+    "url": "https://clawhub.ai/skills/runstr-fitness",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/runstr-fitness-03e07efa09e4034a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/runstr-fitness@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-runstr-fitness-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:75c90e8de08c8ab5a3b826f190b9f8c6cf86408bae437bda96fb942575a137f6",
+      "artifactSizeBytes": 1966
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T03:45:48.034Z"
+}

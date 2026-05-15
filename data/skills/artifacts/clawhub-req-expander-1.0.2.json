@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/req-expander@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.req_expander",
+  "skill": {
+    "id": 73396,
+    "skillKey": "clawhub-req-expander",
+    "name": "明源云需求扩写"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "req-expander",
+    "url": "https://clawhub.ai/skills/req-expander",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/req-expander-d5ee1de11dd6017a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "依据需求概述，按明源定制开发设计要点输出可覆盖研发、测试的详细需求要点；"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mamamacb",
+      "userId": "s1783p42bvckgq3mwsyafnadd5840n0e",
+      "displayName": "Mamamacb",
+      "image": "https://avatars.githubusercontent.com/u/232988242?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 362,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773652780454,
+      "changelog": "- 增加疑问澄清机制：对关键信息不明确时，使用 [AskUserQuestion] 向用户提不超过5个问题以澄清。\n- 输出要求优化：如支持企微文档，优先创建企微文档，否则输出为Markdown文件。\n- 其他内容与格式保持不变。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fdae365b680e9e4799757a3a7b0aa2a7d27e7040cb0e7b441c526ee0f2be9ffb"
+}

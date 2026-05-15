@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reva@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reva",
+  "skill": {
+    "id": 16152,
+    "skillKey": "clawhub-reva",
+    "name": "Reva"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reva",
+    "url": "https://clawhub.ai/skills/reva",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reva-60a43483d1a41327.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete Reva wallet management - passwordless authentication, PayID name claiming, multi-chain crypto transfers to PayIDs or wallet addresses, balance track..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pax47",
+      "userId": "publishers:pax47",
+      "displayName": "redd",
+      "image": "https://avatars.githubusercontent.com/u/60554826?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 722,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1772040255457,
+      "changelog": "- Removed README.md and install.sh files.\n- No user-facing features or command changes.\n- Internal or documentation-related cleanup only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5d52b75f07cff3665b9f5dad914efc437ad6c0f22452125ab50fa85cb959cb60"
+}

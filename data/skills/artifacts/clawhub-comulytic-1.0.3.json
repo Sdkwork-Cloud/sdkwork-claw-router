@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/comulytic@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.comulytic",
+  "skill": {
+    "id": 28608,
+    "skillKey": "clawhub-comulytic",
+    "name": "Comulytic"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "comulytic",
+    "url": "https://clawhub.ai/skills/comulytic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/comulytic-d5c5751790ce9706.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Comulytic meetings, contacts, action items, and conversation history. Use when: user asks about meetings, notes, call summaries, contacts, pending task..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenbaochao",
+      "userId": "s173ksadtpepgpm9x37fc92e0h83ht6z",
+      "displayName": "chenbaochao",
+      "image": "https://avatars.githubusercontent.com/u/23637914?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 320,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773839272759,
+      "changelog": "Fix: login API path /api/kirby/v1/auth/login/email",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:476bc5185c2189d59e01c933adac7062948752d0fa0e0046f5595d8f26405a52"
+}

@@ -1,4 +1,4 @@
-import json
+﻿import json
 import unittest
 from pathlib import Path
 
@@ -40,11 +40,11 @@ class AdminGroupRuntimeStandardTest(unittest.TestCase):
             / "src"
             / "groupService.ts"
         ).read_text(encoding="utf-8")
-        access_groups_api = (
-            ROOT / "sdks" / "clawrouter-backend-sdk" / "src" / "api" / "access-groups.ts"
+        iam_api = (
+            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "api" / "iam.ts"
         ).read_text(encoding="utf-8")
         type_exports = (
-            ROOT / "sdks" / "clawrouter-backend-sdk" / "src" / "types" / "index.ts"
+            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "types" / "index.ts"
         ).read_text(encoding="utf-8")
 
         self.assertIn("AdminAccessGroupCreateRequest", service)
@@ -54,29 +54,31 @@ class AdminGroupRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("as unknown as Record<string, unknown>", service)
         self.assertNotIn("updates as Record<string, unknown>", service)
 
-        self.assertIn("AdminAccessGroupCreateRequest", access_groups_api)
-        self.assertIn("AdminAccessGroupUpdateRequest", access_groups_api)
-        self.assertIn("AddGroupResult", access_groups_api)
-        self.assertIn("UpdateGroupResult", access_groups_api)
+        self.assertIn("AdminAccessGroupCreateRequest", iam_api)
+        self.assertIn("AdminAccessGroupUpdateRequest", iam_api)
+        self.assertIn("AccessGroupsCreateResult", iam_api)
+        self.assertIn("AccessGroupsUpdateResult", iam_api)
         self.assertIn(
-            "async addGroup(body: AdminAccessGroupCreateRequest, headers?: Record<string, string>): Promise<AddGroupResult>",
-            access_groups_api,
+            "async create(body: AdminAccessGroupCreateRequest, params?: IamAccessGroupsCreateParams): Promise<AccessGroupsCreateResult>",
+            iam_api,
         )
         self.assertIn(
-            "async updateGroup(groupId: string | number, body: AdminAccessGroupUpdateRequest, headers?: Record<string, string>): Promise<UpdateGroupResult>",
-            access_groups_api,
+            "async update(groupId: string, body: AdminAccessGroupUpdateRequest, params?: IamAccessGroupsUpdateParams): Promise<AccessGroupsUpdateResult>",
+            iam_api,
         )
-        self.assertNotIn("async addGroup(body?: OperationRequest): Promise<PlusApiResult>", access_groups_api)
+        self.assertNotIn("async create(body?: OperationRequest): Promise<PlusApiResult>", iam_api)
         self.assertNotIn(
-            "async updateGroup(groupId: string | number, body?: OperationRequest): Promise<PlusApiResult>",
-            access_groups_api,
+            "async update(groupId: string | number, body?: OperationRequest): Promise<PlusApiResult>",
+            iam_api,
         )
+        self.assertNotIn("async update(groupId: string | number", iam_api)
+        self.assertNotIn("headers?: Record<string, string>", iam_api)
 
         self.assertIn("export type { AdminAccessGroupCreateRequest }", type_exports)
         self.assertIn("export type { AdminAccessGroupUpdateRequest }", type_exports)
         self.assertIn("export type { AdminAccessGroupMutationResponse }", type_exports)
-        self.assertIn("export type { AddGroupResult }", type_exports)
-        self.assertIn("export type { UpdateGroupResult }", type_exports)
+        self.assertIn("export type { AccessGroupsCreateResult }", type_exports)
+        self.assertIn("export type { AccessGroupsUpdateResult }", type_exports)
 
     def test_admin_group_frontend_uses_standard_domain_values_without_mojibake(self) -> None:
         package = (

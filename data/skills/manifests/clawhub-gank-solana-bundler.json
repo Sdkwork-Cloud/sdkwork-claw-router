@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18226,
+  "uuid": "skill-clawhub-gank-solana-bundler",
+  "skillKey": "clawhub-gank-solana-bundler",
+  "name": "solana-bundler-sniper-volume-bot",
+  "summary": "Manage Solana wallets, launch tokens, run coordinated buys, volume bots, and wallet operations via gank.dev trading terminal API.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gank_solana_bundler",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pissdart",
+      "features": [
+        "Manage Solana wallets, launch tokens, run coordinated buys, volume bots, and wallet operations."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gank-solana-bundler@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/189094390?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gank-solana-bundler",
+      "url": "https://clawhub.ai/skills/gank-solana-bundler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gank-solana-bundler",
+    "url": "https://clawhub.ai/skills/gank-solana-bundler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gank-solana-bundler-09841beb8fc5e20e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gank-solana-bundler@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-gank-solana-bundler-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fcab928a1979dbe71ce193e72d9424ae51a2d1bb8b53687cdd33a7ba063c4206",
+      "artifactSizeBytes": 1892
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T07:37:40.801Z"
+}

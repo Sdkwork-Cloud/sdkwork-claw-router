@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/twitter-api-v2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twitter_api_v2",
+  "skill": {
+    "id": 24698,
+    "skillKey": "clawhub-twitter-api-v2",
+    "name": "X"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twitter-api-v2",
+    "url": "https://clawhub.ai/skills/twitter-api-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twitter-api-v2-7244fb2ba2bf260e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access X (Twitter) via API v2: user profiles, timelines, threads, search, bookmarks, likes, and posting. Use when asked to: (1) get user info or profile, (2)..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "odrobnik",
+      "userId": "s175mv7e1vzhser8sz79yq23fd83h54z",
+      "displayName": "Oliver Drobnik",
+      "image": "https://avatars.githubusercontent.com/u/333270?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 395,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772922456814,
+      "changelog": "Initial release of X (Twitter) API v2 client.\n\n- Provides CLI access to X (Twitter) user profiles, timelines, threads, search, bookmarks, likes, and posting via API v2.\n- Supports both public data (bearer token) and user-specific actions (OAuth 2.0).\n- All features use Python standard library with zero dependencies.\n- Clean, readable text output for all commands.\n- Rate limits, billing info, and usage tips documented.\n- Advanced search operators and filtering supported (e.g., exclude retweets/replies).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5f36485a16ccd63e1b221024ae0dda3cbcdd520effcfb27e4d5c589801a53801"
+}

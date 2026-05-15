@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/discord-channel-auditor@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.discord_channel_auditor",
+  "skill": {
+    "id": 22833,
+    "skillKey": "clawhub-discord-channel-auditor",
+    "name": "Discord Channel Auditor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "discord-channel-auditor",
+    "url": "https://clawhub.ai/skills/discord-channel-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/discord-channel-auditor-a0730957d8e426e3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit and auto-update a Discord server guide channel. Compares a reference guide message against actual channels, detects new/renamed/deleted/moved channels,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "npfaerber",
+      "userId": "publishers:npfaerber",
+      "displayName": "npfaerber",
+      "image": "https://avatars.githubusercontent.com/u/258851131?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 459,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772273550816,
+      "changelog": "- Added a new \"Requirements\" section detailing necessary permissions and dependencies (OpenClaw, bot permissions).\n- Clarified that all Discord operations use OpenClaw's built-in message tool.\n- No changes to workflow, guide format, cron setup, or edge case handling.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5790a41dd7297a7c3e20d60acd6ee5e892373dc2a4de219764056fb941bb6a60"
+}

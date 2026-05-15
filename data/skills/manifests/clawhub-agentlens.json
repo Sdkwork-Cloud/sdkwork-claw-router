@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9037,
+  "uuid": "skill-clawhub-agentlens",
+  "skillKey": "clawhub-agentlens",
+  "name": "Agentlens",
+  "summary": "Navigate and understand codebases using agentlens hierarchical documentation. Use when exploring new projects, finding modules, locating symbols in large files, finding TODOs/warnings, or understanding code structure.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentlens",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nguyenphutrong",
+      "features": [
+        "Navigate and understand codebases using agentlens hierarchical documentation",
+        "Use when exploring new projects, finding modules, locating symbols in large files, finding TODO."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentlens@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62984954?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentlens",
+      "url": "https://clawhub.ai/skills/agentlens"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentlens",
+    "url": "https://clawhub.ai/skills/agentlens",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentlens-95050afca81d63b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentlens@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentlens-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7bcbb93710539da036a42c5dd52dcd35bd49fc8f1dab405d3455f91b1587e55a",
+      "artifactSizeBytes": 2826
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-08T14:30:46.426Z"
+}

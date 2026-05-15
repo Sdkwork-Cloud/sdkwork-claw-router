@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-cmo@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_cmo",
+  "skill": {
+    "id": 36217,
+    "skillKey": "clawhub-ai-cmo",
+    "name": "AI-CMO Social Media Promoter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-cmo",
+    "url": "https://clawhub.ai/skills/ai-cmo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-cmo-f27320635fc92456.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find the best social media promotion spots for any product and generate platform-tailored engagement copy"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xjouska",
+      "userId": "s17eys7w92v4vkdcjrmysjxd9d83t90z",
+      "displayName": "Xiaosen Li",
+      "image": "https://avatars.githubusercontent.com/u/149303023?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 207,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774929493041,
+      "changelog": "- Updated all site and API URLs to use https://www.aicmo.site (with www).\n- Added a note about analysis time: processing takes 2–4 minutes and HTTP client timeout should be set to at least 300 seconds.\n- Clarified API base URL: always use `https://www.aicmo.site/api/v1/open`.\n- No code or feature changes; documentation updates only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:41b3ca085ea82cb3cd3aa4b33b027d0ca222710106b990d0719de4d72da72b78"
+}

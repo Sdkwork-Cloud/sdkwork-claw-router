@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53538,
+  "uuid": "skill-clawhub-lexi",
+  "skillKey": "clawhub-lexi",
+  "name": "Lexi",
+  "summary": "Filesystem librarian for OpenClaw environments. Systematically scans, catalogs, and organizes the entire file structure — identifying orphaned files, misplac...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lexi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "M. Christopher Roebuck",
+      "features": [
+        "Filesystem librarian for OpenClaw environments",
+        "Systematically scans, catalogs, and organizes the entire file structure — identifying orphaned."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lexi@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61991332?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lexi",
+      "url": "https://clawhub.ai/skills/lexi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lexi",
+    "url": "https://clawhub.ai/skills/lexi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lexi-3837436094815981.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lexi@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lexi-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a6d8f5a904c8c830e8b8ccd2971189932b5617b083f5ddd888a9df834acf698e",
+      "artifactSizeBytes": 2354
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T03:22:58.758Z"
+}

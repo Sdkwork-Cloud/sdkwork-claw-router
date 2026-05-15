@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/met-museum@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.met_museum",
+  "skill": {
+    "id": 63513,
+    "skillKey": "clawhub-met-museum",
+    "name": "Met Museum"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "met-museum",
+    "url": "https://clawhub.ai/skills/met-museum",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/met-museum-2348df828a13d396.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "200万件藏品、5000年文明史、每年700万参观者——大都会艺术博物馆"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777244895486,
+      "changelog": "- 首发版本，介绍大都会艺术博物馆的历史、藏品规模和核心数据\n- 详细解析博物馆的运营模式、收入构成和会员体系\n- 强调艺术品数字化与开放获取趋势\n- 补充有趣事实，如屋顶花园酒吧等特色体验",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7405fecc48f1f5b7c74d9d920d80b933faa352d7337f404babce2209e06b2cd2"
+}

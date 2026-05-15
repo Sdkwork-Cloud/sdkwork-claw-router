@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63476,
+  "uuid": "skill-clawhub-dify-8d-analyzer",
+  "skillKey": "clawhub-dify-8d-analyzer",
+  "name": "Dify 8D分析助手",
+  "summary": "当用户问题以「调用 8D 报告分析助手」开头时，调用 Dify API 进行 8D 问题分析",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dify_8d_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "langwang1pm",
+      "features": [
+        "当用户问题以「调用 8D 报告分析助手」开头时，调用 Dify API 进行 8D 问题分析"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dify-8d-analyzer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35751321?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dify-8d-analyzer",
+      "url": "https://clawhub.ai/skills/dify-8d-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dify-8d-analyzer",
+    "url": "https://clawhub.ai/skills/dify-8d-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dify-8d-analyzer-66f96217db6e0775.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dify-8d-analyzer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-dify-8d-analyzer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a1cbf2fa48fc3f8bad796fdef99529df141435316a2793ccfcb48765fc42b1a4",
+      "artifactSizeBytes": 1883
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T02:48:01.097Z"
+}

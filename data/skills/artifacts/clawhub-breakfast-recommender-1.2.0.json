@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/breakfast-recommender@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.breakfast_recommender",
+  "skill": {
+    "id": 73668,
+    "skillKey": "clawhub-breakfast-recommender",
+    "name": "早餐推荐助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "breakfast-recommender",
+    "url": "https://clawhub.ai/skills/breakfast-recommender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/breakfast-recommender-0acbb0e04eb4d6ae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能早餐推荐助手，根据冰箱食材推荐早餐、管理食材、记录偏好与历史。当用户告知冰箱食材、询问早餐推荐、更新食材、设置饮食偏好、或要求定时推荐早餐时激活。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sophiayuan1984-jpg",
+      "userId": "s1708cjxg3s5v3rbxrr93d7vy183qtwk",
+      "displayName": "sophiayuan",
+      "image": "https://avatars.githubusercontent.com/u/243960448?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 345,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1775222746106,
+      "changelog": "修复多用户文件路径冲突；新增查看冰箱场景；完善定时推荐配置；history.md 自动清理；优化食材更新交互",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d74137a4a2110d07f9fa34a3adc122efa7aa5579ed6f4fdc365d57d08ae3b2ca"
+}

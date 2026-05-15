@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30935,
+  "uuid": "skill-clawhub-mopidy",
+  "skillKey": "clawhub-mopidy",
+  "name": "Mopidy",
+  "summary": "Control a Mopidy music system via Mopidy JSON-RPC for everyday listening, queue management, and playback control. Use when the user wants to search for music...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mopidy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "grantmacnamara",
+      "features": [
+        "Control a Mopidy music system via Mopidy JSON-RPC for everyday listening, queue management, and.",
+        "Use when the user wants to search for music..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mopidy@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6692175?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mopidy",
+      "url": "https://clawhub.ai/skills/mopidy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mopidy",
+    "url": "https://clawhub.ai/skills/mopidy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mopidy-3e5c4a14f2bdfaf6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mopidy@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-mopidy-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:52b0f45298393465503841cb72b38ba592c25d7c073269bb1aba9822d88ca6e3",
+      "artifactSizeBytes": 2073
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T15:44:38.051Z"
+}

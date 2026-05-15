@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auth0-express@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auth0_express",
+  "skill": {
+    "id": 35118,
+    "skillKey": "clawhub-auth0-express",
+    "name": "Auth0 Express"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auth0-express",
+    "url": "https://clawhub.ai/skills/auth0-express",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auth0-express-4d4944225612c1a8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when adding authentication (login, logout, protected routes) to Express.js web applications - integrates express-openid-connect for session-based auth."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "auth0",
+      "userId": "s1705618g3dhya8px0x9gnyy4d84geyh",
+      "displayName": "Auth0",
+      "image": "https://avatars.githubusercontent.com/u/2824157"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778072246902,
+      "changelog": "Bump to 1.0.1",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e7c2e2e3c988b3de081878bdbc6cc18750b10032b6b9559967d68c3ac089212e"
+}

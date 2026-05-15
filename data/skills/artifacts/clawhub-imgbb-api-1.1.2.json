@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/imgbb-api@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.imgbb_api",
+  "skill": {
+    "id": 21899,
+    "skillKey": "clawhub-imgbb-api",
+    "name": "ImgBB API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "imgbb-api",
+    "url": "https://clawhub.ai/skills/imgbb-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/imgbb-api-131ecab3717d038d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Upload images to ImgBB via local file, URL, or base64 and get shareable direct links, supporting batch uploads and optional expiration settings."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kexu9",
+      "userId": "s177fq1kmnfz4mhm2xyw0c9kt183ga2b",
+      "displayName": "KeXu9",
+      "image": "https://avatars.githubusercontent.com/u/147953862?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 383,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1772634223158,
+      "changelog": "- Added \"requests\" to the required Python packages in the setup metadata.\n- No changes to user-facing functionality or interface.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:be54cea3208161f140f533ba6bd9828e98b6e58f47d8b52f852b2e12e83003a1"
+}

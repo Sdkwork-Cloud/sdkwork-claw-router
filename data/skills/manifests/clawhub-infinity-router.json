@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46447,
+  "uuid": "skill-clawhub-infinity-router",
+  "skillKey": "clawhub-infinity-router",
+  "name": "Infinity Router",
+  "summary": "Routes AI requests across free OpenRouter models for OpenClaw and Claude Code. Auto-discovers, scores, and configures the best free model with a smart fallba...",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.infinity_router",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "genoshide",
+      "features": [
+        "Routes AI requests across free OpenRouter models for OpenClaw and Claude Code",
+        "Auto-discovers, scores, and configures the best free model with a smart fallba..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/infinity-router@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224774597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "infinity-router",
+      "url": "https://clawhub.ai/skills/infinity-router"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "infinity-router",
+    "url": "https://clawhub.ai/skills/infinity-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/infinity-router-de81a7a40b4021d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/infinity-router@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-infinity-router-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:111d080f3735d316adf32f2166afe8d12a34f884709495c99fb97313b44cf63b",
+      "artifactSizeBytes": 2375
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T18:04:36.393Z"
+}

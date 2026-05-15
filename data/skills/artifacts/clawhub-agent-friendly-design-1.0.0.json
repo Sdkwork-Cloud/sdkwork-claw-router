@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-friendly-design@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_friendly_design",
+  "skill": {
+    "id": 32958,
+    "skillKey": "clawhub-agent-friendly-design",
+    "name": "Agent-Friendly Design"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-friendly-design",
+    "url": "https://clawhub.ai/skills/agent-friendly-design",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-friendly-design-83e3db9b8e90bbe3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design websites and applications that AI agents can consume, navigate, and interact with. Use when building any site, app, or product that agents will use as..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aa-on-ai",
+      "userId": "s17c7rw6zqf32g9sv6mqgxjxhh83fa3a",
+      "displayName": "ai-ron",
+      "image": "https://avatars.githubusercontent.com/u/94061050?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 244,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774041722974,
+      "changelog": "Initial release: introduce comprehensive guidelines for designing agent-friendly websites and applications.\n\n- Details how to structure HTML and ARIA for agent and accessibility compatibility.\n- Introduces best practices for machine-readable state, structured data (Schema.org, JSON-LD), and new agent protocols (llms.txt, MCP, NLWeb, A2UI).\n- Covers strategies for crawlability, predictable interactions, and API-first design.\n- Offers actionable checklist items and testing methods to ensure sites are accessible and usable by AI agents.\n- Advocates “dual-interface” design: building for both human users and AI agents.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c9c6a23158cd892dabcf46d898c3947d84c1403ecbbfdcdd22a9ee154164122f"
+}

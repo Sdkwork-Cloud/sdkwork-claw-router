@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38460,
+  "uuid": "skill-clawhub-chess-coach",
+  "skillKey": "clawhub-chess-coach",
+  "name": "Chess Coach",
+  "summary": "Interactive chess coaching based on Chess.com games and stats. Monitors a user's progress, analyzes recent games according to their skill level, and offers p...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chess_coach",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "twharmon",
+      "features": [
+        "Interactive chess coaching based on Chess.com games and stats",
+        "Monitors a user's progress, analyzes recent games according to their skill level, and offers p.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chess-coach@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16892444?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chess-coach",
+      "url": "https://clawhub.ai/skills/chess-coach"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chess-coach",
+    "url": "https://clawhub.ai/skills/chess-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chess-coach-8ed353a6bf64c3a6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chess-coach@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chess-coach-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a4b0fbed70db344d4fc085e1b5ffbf497a7c75e1ab70cdf97f42ccf6476c41dc",
+      "artifactSizeBytes": 2297
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T20:32:45.936Z"
+}

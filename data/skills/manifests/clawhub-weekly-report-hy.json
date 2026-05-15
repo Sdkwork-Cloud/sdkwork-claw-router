@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72733,
+  "uuid": "skill-clawhub-weekly-report-hy",
+  "skillKey": "clawhub-weekly-report-hy",
+  "name": "根据用户提供的本周工作内容,生成格式标准、内容饱满丰富、语言专业的中文周报。当用户提到\"周报\"、\"周总结\"、\"工作汇报\"、\"本周工作\"、\"整理成周报\"等关键词,或者把本周做的事情罗列出来希望整理成正式格式时,务必使用此技能。该技能会智能识别并将工作内容按.",
+  "summary": "根据用户提供的本周工作内容,生成格式标准、内容饱满丰富、语言专业的中文周报。当用户提到\"周报\"、\"周总结\"、\"工作汇报\"、\"本周工作\"、\"整理成周报\"等关键词,或者把本周做的事情罗列出来希望整理成正式格式时,务必使用此技能。该技能会智能识别并将工作内容按项目或主题分类,使用【】格式作为大标题,大标题下用阿拉伯数字...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weekly_report_hy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cryptocxf",
+      "features": [
+        "根据用户提供的本周工作内容,生成格式标准、内容饱满丰富、语言专业的中文周报。当用户提到\"周报\"、\"周总结\"、\"工作汇报\"、\"本周工作\"、\"整理成周报\"等关键词,或者把本周做的事情罗列出来希望."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weekly-report-hy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35908338?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weekly-report-hy",
+      "url": "https://clawhub.ai/skills/weekly-report-hy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weekly-report-hy",
+    "url": "https://clawhub.ai/skills/weekly-report-hy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weekly-report-hy-06923b438478a4d5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weekly-report-hy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weekly-report-hy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:399f05a4cb6903068f9455611b7c55f74341fd8fbc2bb15bdabd3d34f3cda05e",
+      "artifactSizeBytes": 3015
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T07:58:36.595Z"
+}

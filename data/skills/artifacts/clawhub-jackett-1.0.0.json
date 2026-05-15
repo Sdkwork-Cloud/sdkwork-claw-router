@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jackett@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jackett",
+  "skill": {
+    "id": 44992,
+    "skillKey": "clawhub-jackett",
+    "name": "Jackett"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jackett",
+    "url": "https://clawhub.ai/skills/jackett",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jackett-5edb0843e2dab078.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search torrent indexers with Jackett. Use when the user asks to \"search torrents\", \"search with Jackett\", \"find releases\", \"search indexers\", \"list Jackett i..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imyukehan",
+      "userId": "s1724q8km9g1nm9an8g4tnja7h848hp3",
+      "displayName": "Nah3k",
+      "image": "https://avatars.githubusercontent.com/u/25715791?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775362363832,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:895e156ebe0a9ab48db4ae65720732e26ff2f0223b3f3b65b595e7ea693942ee"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tbd-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tbd_agent",
+  "skill": {
+    "id": 45790,
+    "skillKey": "clawhub-tbd-agent",
+    "name": "TBD Prediction Market Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tbd-agent",
+    "url": "https://clawhub.ai/skills/tbd-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tbd-agent-0f5d066c36448ef7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Prediction market for crypto, sports, politics, and culture"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "coreyjoshuamiller",
+      "userId": "s17a630zadtx2120pt2z1np30h84c7r9",
+      "displayName": "coreyjoshuamiller",
+      "image": "https://avatars.githubusercontent.com/u/4739639?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775592813298,
+      "changelog": "TBD Agent v1.0.0 — Initial release\n\n- Introduces a CLI and API for participating in prediction markets on crypto, sports, politics, and culture using USDC.\n- Allows users to browse campaigns, check balances, configure default bet size, and place bets programmatically or using a CLI.\n- Provides detailed CLI command reference and an autonomous operation loop for agents.\n- Documents rate limits: 60 reads/min, 10 bets/min.\n- Offers raw HTTP endpoints as a fallback for agents without npm access.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b137c6d23b585b8410fba78c638837604cb0e1d33f7af6868d83f1f7e567fd44"
+}

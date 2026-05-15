@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43873,
+  "uuid": "skill-clawhub-pipeworx-tle",
+  "skillKey": "clawhub-pipeworx-tle",
+  "name": "Pipeworx tle",
+  "summary": "Fetch and search Two-Line Element sets for satellites by NORAD ID or name, providing orbit data for tracking and analysis.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_tle",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Fetch and search Two-Line Element sets for satellites by NORAD ID or name, providing orbit data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-tle@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270792185?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-tle",
+      "url": "https://clawhub.ai/skills/pipeworx-tle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-tle",
+    "url": "https://clawhub.ai/skills/pipeworx-tle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-tle-b6c3cd326fe9ebee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-tle@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-tle-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:54755d490e76452dbc9a96c1fdec94f056388f3020abc1df7a45556d4e258497",
+      "artifactSizeBytes": 1838
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T22:03:44.789Z"
+}

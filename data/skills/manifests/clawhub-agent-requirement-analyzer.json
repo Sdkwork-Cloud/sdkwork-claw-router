@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62364,
+  "uuid": "skill-clawhub-agent-requirement-analyzer",
+  "skillKey": "clawhub-agent-requirement-analyzer",
+  "name": "Agent Requirement Analyzer",
+  "summary": "分析 AI 智能体平台的需求文档，提取测试需求、功能点、交互场景、边界条件。专注智能体创建、配置、发布、调用全生命周期。 Use when: 用户说\"分析需求\"、\"需求解析\"、\"智能体需求分析\"、\"PRD 分析\"。 NOT for: 生成测试用例（用 agent-testcase-generator）、生成测试方...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_requirement_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LuiciferYi",
+      "features": [
+        "分析 AI 智能体平台的需求文档，提取测试需求、功能点、交互场景、边界条件。专注智能体创建、配置、发布、调用全生命周期。 Use when: 用户说\"分析需求\"、\"需求解析\"、\"智能体需求分."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-requirement-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24913493?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-requirement-analyzer",
+      "url": "https://clawhub.ai/skills/agent-requirement-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-requirement-analyzer",
+    "url": "https://clawhub.ai/skills/agent-requirement-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-requirement-analyzer-cefa51bb7369b830.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-requirement-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-requirement-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:24fe1e976eeb8d5cb2ddb97ff2b9439ddd3dc9dc14d94bc868bb957431e52f17",
+      "artifactSizeBytes": 2648
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T07:31:45.701Z"
+}

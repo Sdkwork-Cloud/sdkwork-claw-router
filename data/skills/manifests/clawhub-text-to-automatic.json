@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49847,
+  "uuid": "skill-clawhub-text-to-automatic",
+  "skillKey": "clawhub-text-to-automatic",
+  "name": "Text To Automatic",
+  "summary": "Get auto-generated videos ready to post, without touching a single slider. Upload your text scripts (TXT, DOCX, PDF, SRT, up to 500MB), say something like \"t...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_automatic",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vcarolxhberger",
+      "features": [
+        "Get auto-generated videos ready to post, without touching a single slider",
+        "Upload your text scripts (TXT, DOCX, PDF, SRT, up to 500MB), say something like \"t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/text-to-automatic@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210890217?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "text-to-automatic",
+      "url": "https://clawhub.ai/skills/text-to-automatic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-automatic",
+    "url": "https://clawhub.ai/skills/text-to-automatic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-automatic-04358b1203da7d93.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/text-to-automatic@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-text-to-automatic-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e8b9e3b95c195693264ee07fad316d424b4612b2306759e890e1bda586c0a373",
+      "artifactSizeBytes": 2486
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T03:07:46.668Z"
+}

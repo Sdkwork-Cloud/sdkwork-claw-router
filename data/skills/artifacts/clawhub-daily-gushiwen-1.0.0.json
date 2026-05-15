@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-gushiwen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_gushiwen",
+  "skill": {
+    "id": 66343,
+    "skillKey": "clawhub-daily-gushiwen",
+    "name": "daily-gushiwen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-gushiwen",
+    "url": "https://clawhub.ai/skills/daily-gushiwen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-gushiwen-ac943d57004c5869.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "每日从古诗文网(gushiwen.cn)首页爬取诗词文句、古画名句等内容，整理后发送为消息。用于用户询问\"每日古文\"、\"古诗\"、\"诗词推荐\"或需要每日古文推荐时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "enchograph",
+      "userId": "publishers:enchograph",
+      "displayName": "陈广隰 / Chen Guangxi",
+      "image": "https://avatars.githubusercontent.com/u/67186192?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 753,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771484844209,
+      "changelog": "- 首发版本，支持每日从古诗文网首页抓取并整理诗词文句、古画配句、名句摘录。\n- 精确按照首页顺序整理诗词与古画，包含古画图片URL提取及媒体发送方式。\n- 支持通过用户关键词自动触发，并以规定格式推送结果。\n- 输出内容涵盖日期、诗词、古画配句、名句，区块清晰分隔。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a5444ff35e1434239c1c6f4509d8de8c96f6883dc01be69f47c3dcd32c3d08a6"
+}

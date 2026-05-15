@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/onchain-contract-token-analysi@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.onchain_contract_token_analysi",
+  "skill": {
+    "id": 29378,
+    "skillKey": "clawhub-onchain-contract-token-analysi",
+    "name": "onchain contract token analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "onchain-contract-token-analysi",
+    "url": "https://clawhub.ai/skills/onchain-contract-token-analysi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/onchain-contract-token-analysi-d0e37b9483b11d99.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze smart contracts, token mechanics, permissions, fee flows, upgradeability, market risks, and likely attack surfaces for onchain projects. Use when rev..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xrowan",
+      "userId": "publishers:0xrowan",
+      "displayName": "Rowan",
+      "image": "https://avatars.githubusercontent.com/u/199686996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 304,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773376748503,
+      "changelog": "- Initial release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9fded7a9f7073492617952696663f0014415b15f6307457b52cccacd823e6134"
+}

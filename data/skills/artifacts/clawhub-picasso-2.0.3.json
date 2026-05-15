@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/picasso@2.0.3",
+  "version": "2.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.picasso",
+  "skill": {
+    "id": 36824,
+    "skillKey": "clawhub-picasso",
+    "name": "Picasso"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "picasso",
+    "url": "https://clawhub.ai/skills/picasso",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/picasso-88669879cd6ae5e2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The ultimate frontend design and UI engineering skill. Use this whenever the user asks to build, design, style, or improve any web interface, component, page..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "viperrcrypto",
+      "userId": "s17a4s4g50j3a6e3h1wfk4s7c5843bpb",
+      "displayName": "Viperr",
+      "image": "https://avatars.githubusercontent.com/u/253949741?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "2.0.3",
+      "createdAt": 1775099019711,
+      "changelog": "Line-by-line audit fixes: OpenClaw path bug, godmode gate gap, macOS grep compat, heading consistency, version sync",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:753c6ce37d4282ea85d66f67b0f6cf2f803fd158747cda3fc2f74cc6d9cac83d"
+}

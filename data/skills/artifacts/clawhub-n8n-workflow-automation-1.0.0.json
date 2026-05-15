@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/n8n-workflow-automation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.n8n_workflow_automation",
+  "skill": {
+    "id": 8278,
+    "skillKey": "clawhub-n8n-workflow-automation",
+    "name": "n8n workflow automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "n8n-workflow-automation",
+    "url": "https://clawhub.ai/skills/n8n-workflow-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/n8n-workflow-automation-70e1618bd27d2fea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Designs and outputs n8n workflow JSON with robust triggers, idempotency, error handling, logging, retries, and human-in-the-loop review queues. Use when you need an auditable automation that won’t silently fail."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kowl64",
+      "userId": "publishers:kowl64",
+      "displayName": "KOwl64",
+      "image": "https://avatars.githubusercontent.com/u/59417033?v=4"
+    },
+    "stats": {
+      "comments": 4,
+      "downloads": 29941,
+      "installsAllTime": 306,
+      "installsCurrent": 291,
+      "stars": 142,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1768664321187,
+      "changelog": "Initial release of n8n-workflow-automation skill.\n\n- Designs and outputs n8n workflow JSON with robust triggers, idempotency, error handling, logging, retries, and review queues.\n- Supports both cron and webhook triggers with configurable schedules and data contracts.\n- Outputs include workflow design specs, importable n8n JSON, and runbooks (on request).\n- Features audit logging, error notification, human-in-the-loop review queues, and safeguards against silent failures.\n- Omits secrets from outputs and enforces least-privilege by design.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:48487eb33ea7df80d6f44925347c0ba887e7cb4c81607ede6e6d99550f2fbb8e"
+}

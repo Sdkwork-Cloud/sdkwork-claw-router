@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/playwright-cli-openclaw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.playwright_cli_openclaw",
+  "skill": {
+    "id": 64602,
+    "skillKey": "clawhub-playwright-cli-openclaw",
+    "name": "Playwright CLI Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "playwright-cli-openclaw",
+    "url": "https://clawhub.ai/skills/playwright-cli-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/playwright-cli-openclaw-1e080784888345a2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "官方Microsoft Playwright CLI网页自动化工具，支持所有主流浏览器的无头/有头自动化操作，包括页面导航、元素交互、截图、录制、测试等功能。当用户提到网页自动化、浏览器操作、爬虫、截图、录制用户操作、E2E测试时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "michael-c-matias",
+      "userId": "publishers:michael-c-matias",
+      "displayName": "Michael-C-Matias",
+      "image": "https://avatars.githubusercontent.com/u/234448516?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2898,
+      "installsAllTime": 19,
+      "installsCurrent": 19,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773287492717,
+      "changelog": "Initial release, support full Microsoft Playwright CLI web automation operations, including page navigation, element interaction, screenshot, PDF generation, operation recording and other functions",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6a0d2fb3219bd90385c320575dc5ad1d8e7f0c459f7d5eafdccd0edfb00aa8cf"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rbw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rbw",
+  "skill": {
+    "id": 17942,
+    "skillKey": "clawhub-rbw",
+    "name": "Securely interact with Bitwarden/Vaultwarden vaults using rbw CLI. Use when retrieving credentials, managing vault items, or in."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rbw",
+    "url": "https://clawhub.ai/skills/rbw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rbw-aaa3d7acde239a59.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Securely interact with Bitwarden/Vaultwarden vaults using rbw CLI. Use when retrieving credentials, managing vault items, or integrating secrets into scripts..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tripleight",
+      "userId": "publishers:tripleight",
+      "displayName": "Denis Pisarev",
+      "image": "https://avatars.githubusercontent.com/u/17856421?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 611,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772027273780,
+      "changelog": "- Initial release of the rbw skill (v1.0.0)\n- Provides commands for unlocking, listing, retrieving, syncing, and adding Bitwarden/Vaultwarden items using the rbw CLI\n- Includes detailed usage patterns for interactive and non-interactive/systemd environments, with secure authentication examples\n- Documents folder and field access, custom field handling, and script integration practices\n- Offers troubleshooting steps, error handling guidance, and best practices for secure automation",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0325f669bad8a8eed6c91faf473994088806e7b329dd0f0eeab98307744c7759"
+}

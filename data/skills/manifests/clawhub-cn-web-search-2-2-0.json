@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62423,
+  "uuid": "skill-clawhub-cn-web-search-2-2-0",
+  "skillKey": "clawhub-cn-web-search-2-2-0",
+  "name": "Cn Web Search 2.2.0",
+  "summary": "中文网页搜索 - 聚合 17 个免费搜索引擎，无需 API Key，纯网页抓取，支持公众号/财经/技术/学术/知识搜索。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_web_search_2_2_0",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MisonoKisaki",
+      "features": [
+        "聚合 17 个免费搜索引擎，无需 API Key，纯网页抓取，支持公众号/财经/技术/学术/知识搜索。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cn-web-search-2-2-0@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/136620920?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cn-web-search-2-2-0",
+      "url": "https://clawhub.ai/skills/cn-web-search-2-2-0"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-web-search-2-2-0",
+    "url": "https://clawhub.ai/skills/cn-web-search-2-2-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-web-search-2-2-0-2b6d3cc2e916ec51.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cn-web-search-2-2-0@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cn-web-search-2-2-0-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:94956c9e7ac9ac0aa06a476fbdc37a59452c1e0db4e064ec5c35a24acc2090ce",
+      "artifactSizeBytes": 2190
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T09:15:29.090Z"
+}

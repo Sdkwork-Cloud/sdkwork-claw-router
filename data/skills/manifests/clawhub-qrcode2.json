@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61513,
+  "uuid": "skill-clawhub-qrcode2",
+  "skillKey": "clawhub-qrcode2",
+  "name": "Local QR Code Generation And Recognition Not Require An API_KEY - 本地二维码生成与识别",
+  "summary": "本地将文本/URL 编成 PNG 二维码，或从图片识别二维码，可与远程 qrcode 技能搭配。当用户说：本地生成二维码图片、离线扫图读码，或类似本地二维码问题时，使用本技能。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qrcode2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "极速数据",
+      "features": [
+        "本地将文本/URL 编成 PNG 二维码，或从图片识别二维码，可与远程 qrcode 技能搭配。当用户说：本地生成二维码图片、离线扫图读码，或类似本地二维码问题时，使用本技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qrcode2@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30516426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qrcode2",
+      "url": "https://clawhub.ai/skills/qrcode2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qrcode2",
+    "url": "https://clawhub.ai/skills/qrcode2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qrcode2-a1bb1bd19282705c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qrcode2@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-qrcode2-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e3ea31cfd753df8b1d022b340fffc9fa1165c4dc85dfabbc58035496e31df3e4",
+      "artifactSizeBytes": 2141
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T09:21:40.453Z"
+}

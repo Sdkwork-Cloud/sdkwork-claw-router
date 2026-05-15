@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33891,
+  "uuid": "skill-clawhub-async-concurrency-reviewer",
+  "skillKey": "clawhub-async-concurrency-reviewer",
+  "name": "Async & Concurrency Reviewer",
+  "summary": "Reviews async and concurrency code for deadlocks, race conditions, missing cancellation, and misuse across multiple languages, returning detailed fix reports.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.async_concurrency_reviewer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lnguyen1996",
+      "features": [
+        "Reviews async and concurrency code for deadlocks, race conditions, missing cancellation, and mi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/async-concurrency-reviewer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/97846628?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "async-concurrency-reviewer",
+      "url": "https://clawhub.ai/skills/async-concurrency-reviewer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "async-concurrency-reviewer",
+    "url": "https://clawhub.ai/skills/async-concurrency-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/async-concurrency-reviewer-522bdfe76ff70454.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/async-concurrency-reviewer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-async-concurrency-reviewer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:48b07eebdad812d3863e92d8523b4f36e7502d62a692cae69c7d3dbc43f2acd2",
+      "artifactSizeBytes": 2461
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T03:54:42.874Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34196,
+  "uuid": "skill-clawhub-auto-video-editor",
+  "skillKey": "clawhub-auto-video-editor",
+  "name": "Auto Video Editor",
+  "summary": "Automated video editing skill for talk/vlog/standup videos. Use when: cutting video, splitting video into sentences, merging video clips, extracting audio, t...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_video_editor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Liu Jie",
+      "features": [
+        "Automated video editing skill for talk/vlog/standup videos",
+        "Use when: cutting video, splitting video into sentences, merging video clips, extracting audio,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-video-editor@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/405711?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-video-editor",
+      "url": "https://clawhub.ai/skills/auto-video-editor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-video-editor",
+    "url": "https://clawhub.ai/skills/auto-video-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-video-editor-b88063c0270fe6ab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-video-editor@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-video-editor-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b19ba6031a38e755865ad32de2b45ed85781d38d72614bf8fb3c184c0c2768cd",
+      "artifactSizeBytes": 1897
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T23:36:37.382Z"
+}

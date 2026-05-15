@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apollo-research-synthesis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apollo_research_synthesis",
+  "skill": {
+    "id": 61909,
+    "skillKey": "clawhub-apollo-research-synthesis",
+    "name": "Apollo Research Synthesis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apollo-research-synthesis",
+    "url": "https://clawhub.ai/skills/apollo-research-synthesis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apollo-research-synthesis-06bd7403f46ff186.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "多Agent任务协调模式：研究阶段并行执行，综合阶段由主Agent自己完成。 避免让子Agent做综合判断——那是Coordinator的工作。 触发词：并行研究、综合、汇总、Coordinator模式、多Agent协作。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nic-yuan",
+      "userId": "s17601s6pc41mkraa1bkeshfx983kdsw",
+      "displayName": "nic-yuan",
+      "image": "https://avatars.githubusercontent.com/u/195308903?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775194700932,
+      "changelog": "多Agent任务协调：研究阶段并行，综合阶段主Agent自己完成",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e215733cfc015f73a2f6ef9c14a3e9e65751b356e3d51a75f11deb617cbe8f1b"
+}

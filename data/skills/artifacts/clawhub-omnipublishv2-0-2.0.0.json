@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/omnipublishv2-0@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.omnipublishv2_0",
+  "skill": {
+    "id": 62473,
+    "skillKey": "clawhub-omnipublishv2-0",
+    "name": "OmniPublishv2.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "omnipublishv2-0",
+    "url": "https://clawhub.ai/skills/omnipublishv2-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/omnipublishv2-0-0d1aaab0f86466f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "全链路多平台发帖工作台（单机版）。一键部署、启动、运维 OmniPublish V2.0（FastAPI + Vue 3 + SQLite）六步流水线：素材选择→AI文案→图片处理→封面制作→水印→多平台发布。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xaviermary56",
+      "userId": "s176fp65pxxh36er7py22sjw4h83gnqw",
+      "displayName": "Xavier Mary",
+      "image": "https://avatars.githubusercontent.com/u/225500647?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1776271709497,
+      "changelog": "OmniPublish V2.0 introduces a full-featured single-machine multi-platform publishing workbench with streamlined setup and usage:\n\n- New six-step automated pipeline: material selection, AI copywriting, image processing, cover creation, watermark, multi-platform publishing.\n- Out-of-the-box usage with FastAPI backend, Vue 3 frontend, and SQLite database—no manual configuration needed.\n- Quick one-command service activation, with auto-checks and browser launch.\n- Adds convenient local commands for start/stop/restart/log viewing.\n- Includes detailed guides for debugging, API interaction, and typical issues.\n- Supports AI copywriting (configurable), image/video handling, batch distribution, and real-time status.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fb156ceb781b2ca76fc8fec839e7e689f89bea14d522f1ca78ba8bc363fb201f"
+}

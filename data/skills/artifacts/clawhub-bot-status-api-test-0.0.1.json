@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bot-status-api-test@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bot_status_api_test",
+  "skill": {
+    "id": 13609,
+    "skillKey": "clawhub-bot-status-api-test",
+    "name": "Test"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bot-status-api-test",
+    "url": "https://clawhub.ai/skills/bot-status-api-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bot-status-api-test-a0bc500a7f2e2a16.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deploy a lightweight status API that exposes your OpenClaw bot's runtime health, service connectivity, cron jobs, skills, system metrics, and more. Use when setting up a monitoring dashboard, health endpoint, or status page for an OpenClaw."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "suspect80",
+      "userId": "publishers:suspect80",
+      "displayName": "suspect80",
+      "image": "https://avatars.githubusercontent.com/u/28205496?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1685,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1770307589984,
+      "changelog": "test",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e51dc20361912910b771608b64cb6d776bbbb0a0b0a0e253bed3ef1a54f4fbc3"
+}

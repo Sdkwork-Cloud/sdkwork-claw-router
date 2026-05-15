@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/git2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git2",
+  "skill": {
+    "id": 64245,
+    "skillKey": "clawhub-git2",
+    "name": "git"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git2",
+    "url": "https://clawhub.ai/skills/git2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git2-2849b80e3c5b34ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "快速处理各种 Git 指令的技能。适用于：git 操作、代码提交、分支管理、合并冲突、版本回退、远程仓库同步、查看提交历史、撤销修改等场景。触发词：git、提交、推送、拉取、分支、合并、rebase、reset、revert、stash、cherry-pick、tag、diff、log、status。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mickey0811",
+      "userId": "s171ghc6ekh7zzkned6ntcax7s83kczm",
+      "displayName": "Mickey0811",
+      "image": "https://avatars.githubusercontent.com/u/49522921?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 216,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774439333113,
+      "changelog": "- Major update: condensed all skill content into a single file with Chinese usage instructions.\n- Removed detailed topic files (advanced.md, branching.md, collaboration.md, etc.).\n- SKILL.md now provides a concise Git command reference covering common scenarios: commit, branch, merge, rebase, reset, stash, history, remote, tag, and typical safety notes.\n- All documentation now in Chinese for easier local reference.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:13687e3c35dd4dd78a687f8e61a151d3a76606ab302027077c4cf5361df9829d"
+}

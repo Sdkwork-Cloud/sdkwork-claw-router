@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35247,
+  "uuid": "skill-clawhub-claimback-radar",
+  "skillKey": "clawhub-claimback-radar",
+  "name": "Claimback Radar",
+  "summary": "Scans emails and bills to extract billing data, detect refund opportunities, subscription risks, and generate actionable savings recommendations.",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claimback_radar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JEP (Judgment Event Protocol)",
+      "features": [
+        "Scans emails and bills to extract billing data, detect refund opportunities, subscription risks."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claimback-radar@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10815391?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claimback-radar",
+      "url": "https://clawhub.ai/skills/claimback-radar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claimback-radar",
+    "url": "https://clawhub.ai/skills/claimback-radar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claimback-radar-1c1ebe8eac62a11d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claimback-radar@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-claimback-radar-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0045cac8989684b76989241fcce4e18adf185e7f416106bd46c8ebe80e65eb57",
+      "artifactSizeBytes": 2142
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T01:36:31.873Z"
+}

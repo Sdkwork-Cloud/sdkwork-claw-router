@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30468,
+  "uuid": "skill-clawhub-openclaw-skill-local-docker-health-check",
+  "skillKey": "clawhub-openclaw-skill-local-docker-health-check",
+  "name": "Docker Medic",
+  "summary": "Inspects container health and suggests fixes for common errors",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_skill_local_docker_health_check",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Peter Lum",
+      "features": [
+        "Inspects container health and suggests fixes for common errors"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-skill-local-docker-health-check@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/211891?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-skill-local-docker-health-check",
+      "url": "https://clawhub.ai/skills/openclaw-skill-local-docker-health-check"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-skill-local-docker-health-check",
+    "url": "https://clawhub.ai/skills/openclaw-skill-local-docker-health-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-skill-local-docker-health-check-1acda89b868b7bf1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-skill-local-docker-health-check@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-skill-local-docker-health-check-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b0789c1ff59ece5806001fe5f2049e31e725b837aa71eb26e84ec2b561bcc2f",
+      "artifactSizeBytes": 3788
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T02:38:07.316Z"
+}

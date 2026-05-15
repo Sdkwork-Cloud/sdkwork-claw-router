@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59491,
+  "uuid": "skill-clawhub-cn-dev-setup",
+  "skillKey": "clawhub-cn-dev-setup",
+  "name": "Cn Dev Setup",
+  "summary": "一键配置国内开发环境镜像源。解决 npm/pip/go/docker/cargo 等工具在国内下载慢、超时的问题。 支持 npm、yarn、pnpm、pip、Go (GOPROXY)、Docker、Cargo、Maven、Gradle、Homebrew 镜像源切换。 Use when: 用户说\"配置镜像源\"、\"n...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_dev_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ironmanc2014",
+      "features": [
+        "一键配置国内开发环境镜像源。解决 npm/pip/go/docker/cargo 等工具在国内下载慢、超时的问题。 支持 npm、yarn、pnpm、pip、Go (GOPROXY)、Doc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cn-dev-setup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77605535?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cn-dev-setup",
+      "url": "https://clawhub.ai/skills/cn-dev-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-dev-setup",
+    "url": "https://clawhub.ai/skills/cn-dev-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-dev-setup-a003153ad4d30f1b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cn-dev-setup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cn-dev-setup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d03b108ecaeb4293cb3773bd01bc44e37ea3e30d9999b9c6f9e1edfcfe745abc",
+      "artifactSizeBytes": 2423
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T09:25:02.454Z"
+}

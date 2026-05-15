@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-to-video-luma@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_to_video_luma",
+  "skill": {
+    "id": 49328,
+    "skillKey": "clawhub-image-to-video-luma",
+    "name": "Image To Video Luma"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-to-video-luma",
+    "url": "https://clawhub.ai/skills/image-to-video-luma",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-to-video-luma-3ec31beb3862d2c6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get animated video clips ready to post, without touching a single slider. Upload your still images (JPG, PNG, WEBP, HEIC, up to 20MB), say something like \"an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vynbosserman65",
+      "userId": "s175xbynxxje7z8y8jbn28x5vx84dckp",
+      "displayName": "vynbosserman65",
+      "image": "https://avatars.githubusercontent.com/u/208823770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 82,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777869601694,
+      "changelog": "Initial release of \"Image to Video Luma\" skill:\n\n- Instantly animate still images into cinematic 1080p MP4 video clips using AI cloud rendering.\n- Simple upload and prompt-driven workflow—no manual sliders or editing required.\n- Handles popular image formats (JPG, PNG, WEBP, HEIC, up to 20MB).\n- Automatic free session setup with 100 credits; guides users through token and upload steps.\n- Supports timeline editing, track summaries, and fast export/download of video results.\n- Clear handling of common error codes and feedback messages for a smooth user experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dca75a036c0e6bd0718a80c74183e866cff203bc98df09b17be3383953c09242"
+}

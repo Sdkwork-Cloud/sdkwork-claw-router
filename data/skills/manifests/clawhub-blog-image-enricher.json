@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52886,
+  "uuid": "skill-clawhub-blog-image-enricher",
+  "skillKey": "clawhub-blog-image-enricher",
+  "name": "blog-image-enricher",
+  "summary": "Read a plain Markdown file (e.g. 260321_openclawConfig.md), generate header and section images using the default OpenClaw image model and API key from ~/open...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blog_image_enricher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jeff Yang",
+      "features": [
+        "Read a plain Markdown file (e.g",
+        "260321_openclawConfig.md), generate header and section images using the default OpenClaw image."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/blog-image-enricher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245605?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "blog-image-enricher",
+      "url": "https://clawhub.ai/skills/blog-image-enricher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blog-image-enricher",
+    "url": "https://clawhub.ai/skills/blog-image-enricher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blog-image-enricher-1fac34b88b812bbc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/blog-image-enricher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-blog-image-enricher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da981626c950eeb58eb333c76a89cb9e0c34519e8f7f47f56857305cb150ea8a",
+      "artifactSizeBytes": 2580
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T04:14:43.569Z"
+}

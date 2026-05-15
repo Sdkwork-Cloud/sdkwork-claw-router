@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43137,
+  "uuid": "skill-clawhub-n-plus-one-detector",
+  "skillKey": "clawhub-n-plus-one-detector",
+  "name": "N Plus One Detector",
+  "summary": "Detect N+1 query problems in application code and ORM usage. Analyze database query patterns, find loops that generate excessive queries, and recommend fixes...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.n_plus_one_detector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Detect N+1 query problems in application code and ORM usage",
+        "Analyze database query patterns, find loops that generate excessive queries, and recommend fixe."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/n-plus-one-detector@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "n-plus-one-detector",
+      "url": "https://clawhub.ai/skills/n-plus-one-detector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "n-plus-one-detector",
+    "url": "https://clawhub.ai/skills/n-plus-one-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/n-plus-one-detector-d9ca6ddc9e2130b9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/n-plus-one-detector@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-n-plus-one-detector-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:02859b8783a88c31b3d4f18ede9af3f2a24cbe3e5d4211c558a1a7dfa6582bef",
+      "artifactSizeBytes": 2001
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:02:16.415Z"
+}

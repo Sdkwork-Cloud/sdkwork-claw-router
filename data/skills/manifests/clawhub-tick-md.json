@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12165,
+  "uuid": "skill-clawhub-tick-md",
+  "skillKey": "clawhub-tick-md",
+  "name": "tick-md",
+  "summary": "Multi-agent task coordination via Git-backed Markdown. Claim tasks, prevent collisions, track history with automatic commits.",
+  "version": "1.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tick_md",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gianni D'Alerta",
+      "features": [
+        "Multi-agent task coordination via Git-backed Markdown",
+        "Claim tasks, prevent collisions, track history with automatic commits."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tick-md@1.3.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/770459?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tick-md",
+      "url": "https://clawhub.ai/skills/tick-md"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tick-md",
+    "url": "https://clawhub.ai/skills/tick-md",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tick-md-790ce45f0361d83d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tick-md@1.3.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-tick-md-1.3.3.json",
+      "version": "1.3.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4f3cd1bef90d217b93aee38a59c5b856d1aa56d09a7118795252031008852f94",
+      "artifactSizeBytes": 2103
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T04:30:15.267Z"
+}

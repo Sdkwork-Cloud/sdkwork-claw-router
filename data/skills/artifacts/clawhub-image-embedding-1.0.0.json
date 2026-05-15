@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-embedding@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_embedding",
+  "skill": {
+    "id": 73670,
+    "skillKey": "clawhub-image-embedding",
+    "name": "图片向量嵌入技能"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-embedding",
+    "url": "https://clawhub.ai/skills/image-embedding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-embedding-8ba0b497ddec370a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "图片向量嵌入技能，支持将病害图片转换为特征向量，用于后续的图片检索和相似度匹配。适用于病害知识库的图片特征提取、向量入库等场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kumamon2019s",
+      "userId": "s173tg1xa240bcd524t0ct9kn583t82b",
+      "displayName": "Venwell Chiang",
+      "image": "https://avatars.githubusercontent.com/u/42192791?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774944083327,
+      "changelog": "Initial release of image-embedding skill:\n\n- Converts disease images (JPG/PNG/WebP) into 1024-dimensional normalized feature vectors.\n- Enables both single and batch image processing (up to 100 images per batch).\n- Integrates a pre-trained disease feature extraction model for out-of-the-box use.\n- Designed for image retrieval and similarity matching in disease knowledge bases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9614b312cc715acc603dd0200421ffb83d7d778be480d4bb118c20e3e7f03560"
+}

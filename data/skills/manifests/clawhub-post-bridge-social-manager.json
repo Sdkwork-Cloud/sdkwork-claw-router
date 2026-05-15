@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10370,
+  "uuid": "skill-clawhub-post-bridge-social-manager",
+  "skillKey": "clawhub-post-bridge-social-manager",
+  "name": "Social Media Assistant (via post-bridge.com)",
+  "summary": "Turn your OpenClaw into an autonomous social media manager using Post Bridge API. Use when scheduling, posting, or managing content across TikTok, Instagram...",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.post_bridge_social_manager",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jackfriks",
+      "features": [
+        "Turn your OpenClaw into an autonomous social media manager using Post Bridge API",
+        "Use when scheduling, posting, or managing content across TikTok, Instagram..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/post-bridge-social-manager@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/112214002?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "post-bridge-social-manager",
+      "url": "https://clawhub.ai/skills/post-bridge-social-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "post-bridge-social-manager",
+    "url": "https://clawhub.ai/skills/post-bridge-social-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/post-bridge-social-manager-bb099a4ca34c9a13.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/post-bridge-social-manager@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-post-bridge-social-manager-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8a97026a3469b4e0f7bd0fcc72b17104023c26577ea01e12fb01de87a4de0aeb",
+      "artifactSizeBytes": 2742
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T14:53:27.816Z"
+}

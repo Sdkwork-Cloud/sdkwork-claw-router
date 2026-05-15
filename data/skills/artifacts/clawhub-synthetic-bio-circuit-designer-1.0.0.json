@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/synthetic-bio-circuit-designer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.synthetic_bio_circuit_designer",
+  "skill": {
+    "id": 38424,
+    "skillKey": "clawhub-synthetic-bio-circuit-designer",
+    "name": "Synthetic Bio Circuit Designer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "synthetic-bio-circuit-designer",
+    "url": "https://clawhub.ai/skills/synthetic-bio-circuit-designer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/synthetic-bio-circuit-designer-7c41f09baade983a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design gene circuits for synthetic biology applications"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 188,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775030770245,
+      "changelog": "- Initial release of Synthetic Bio Circuit Designer (v1.0.0).\n- Enables design and simulation of gene circuits (toggle switch, oscillator) for synthetic biology.\n- Provides circuit design, component list, and expected behavior as outputs.\n- Includes risk assessment and security checklist for responsible use.\n- Requires no additional Python packages; runs locally with provided scripts.\n- Draft status with evaluation criteria and future improvement plans outlined.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e4e45b337d03da8102a2ad9d20ad0aae30fcb7bd4f726fa1b7eb121055a84bd3"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64180,
+  "uuid": "skill-clawhub-xiaohongshu-skill",
+  "skillKey": "clawhub-xiaohongshu-skill",
+  "name": "小红书skill",
+  "summary": "当用户想要与小红书（xiaohongshu/rednote）交互时使用此 Skill。包括搜索笔记、获取帖子详情、查看用户主页、二维码扫码登录、提取平台内容等。当用户提到 xiaohongshu、小红书、rednote，或需要浏览/抓取中国社交媒体内容时激活此 Skill。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Delicious",
+      "features": [
+        "当用户想要与小红书（xiaohongshu/rednote）交互时使用此 Skill。包括搜索笔记、获取帖子详情、查看用户主页、二维码扫码登录、提取平台内容等。当用户提到 xiaohongs."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaohongshu-skill@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/101502465?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaohongshu-skill",
+      "url": "https://clawhub.ai/skills/xiaohongshu-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-skill",
+    "url": "https://clawhub.ai/skills/xiaohongshu-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-skill-b018fc75884fcabb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaohongshu-skill@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaohongshu-skill-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:95069ea3326bccc9e7b79fdec8beb4abd316435d6572d942f379ea46f4db163f",
+      "artifactSizeBytes": 2146
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T05:50:00.721Z"
+}

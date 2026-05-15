@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62161,
+  "uuid": "skill-clawhub-memory-layer",
+  "skillKey": "clawhub-memory-layer",
+  "name": "Memory Layer",
+  "summary": "基于 Claude Code 记忆哲学的三层记忆管理系统。当需要以下操作时使用：(1) 设计 Index/Topic/Transcript 记忆架构，(2) 迁移现有记忆文件到分层结构，(3) 配置 autoDream 自动整理，(4) 优化上下文窗口使用率 70%+，(5) 实现基于重要性评分的记忆排序和检索。",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_layer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "whyischen",
+      "features": [
+        "基于 Claude Code 记忆哲学的三层记忆管理系统。当需要以下操作时使用：(1) 设计 Index/Topic/Transcript 记忆架构，(2) 迁移现有记忆文件到分层结构，(3."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-layer@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25917825?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-layer",
+      "url": "https://clawhub.ai/skills/memory-layer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-layer",
+    "url": "https://clawhub.ai/skills/memory-layer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-layer-8c42d390ced393ee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-layer@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-layer-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a544995e40b6c9ac2bbddfeb6a9bfea5c0b53561febe524afb1c1daa464b2f36",
+      "artifactSizeBytes": 2559
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T17:08:49.585Z"
+}

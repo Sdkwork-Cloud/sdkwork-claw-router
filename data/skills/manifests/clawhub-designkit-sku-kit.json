@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60505,
+  "uuid": "skill-clawhub-designkit-sku-kit",
+  "skillKey": "clawhub-designkit-sku-kit",
+  "name": "DesignKit SKU 套图生成器",
+  "summary": "AI 图片处理与电商商品图生成技能包（美图设计室 DesignKit）。 支持抠图去背景、透明底、AI 变清晰/画质修复、商品主图与 Listing 套图生成； 根据用户意图路由到 designkit-edit-tools 与 designkit-ecommerce-product-kit。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.designkit_sku_kit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "joywenxu100",
+      "features": [
+        "AI 图片处理与电商商品图生成技能包（美图设计室 DesignKit）。 支持抠图去背景、透明底、AI 变清晰/画质修复、商品主图与 Listing 套图生成； 根据用户意图路由到 desi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/designkit-sku-kit@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/205193681?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "designkit-sku-kit",
+      "url": "https://clawhub.ai/skills/designkit-sku-kit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "designkit-sku-kit",
+    "url": "https://clawhub.ai/skills/designkit-sku-kit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/designkit-sku-kit-1327b5520afe4191.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/designkit-sku-kit@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-designkit-sku-kit-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:edf1621cfba096e6d747792ade1861b241739d7c0ff4a7bd4ec24664aed106bf",
+      "artifactSizeBytes": 2100
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T09:22:08.588Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-animate@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_animate",
+  "skill": {
+    "id": 10880,
+    "skillKey": "clawhub-auto-animate",
+    "name": "Auto Animate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-animate",
+    "url": "https://clawhub.ai/skills/auto-animate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-animate-881b8a6018740ecb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Zero-config animations for React, Vue, Solid, Svelte, Preact with @formkit/auto-animate (3.28kb). Prevents 15 documented errors including React 19 StrictMode bugs, SSR imports, conditional parents, viewport issues, drag & drop conflicts, a."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "veeramanikandanr48",
+      "userId": "publishers:veeramanikandanr48",
+      "displayName": "Veera",
+      "image": "https://avatars.githubusercontent.com/u/119089869?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2261,
+      "installsAllTime": 5,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769871219878,
+      "changelog": "Auto-animate v0.1.0 — initial release with robust error prevention and animation patterns.\n\n- Introduces zero-config animations for React, Vue, Solid, Svelte, and Preact using @formkit/auto-animate.\n- Documents prevention for 15 common errors, including React 19 StrictMode bugs, SSR import issues, conditional parents, viewport problems, drag & drop conflicts, and CSS transform bugs.\n- Provides SSR-safe usage patterns essential for serverless frameworks (e.g., Next.js, Cloudflare Workers).\n- Includes framework-specific solutions, test/jest config guidance, and accessibility best practices for smooth, accessible transitions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:74d0cd37767446b7abcfc258ef1fdf47aba3849388dac60ba57535f8db482f8e"
+}

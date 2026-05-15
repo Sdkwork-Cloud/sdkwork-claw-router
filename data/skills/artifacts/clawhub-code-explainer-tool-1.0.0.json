@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/code-explainer-tool@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_explainer_tool",
+  "skill": {
+    "id": 52927,
+    "skillKey": "clawhub-code-explainer-tool",
+    "name": "Code Explainer Tool"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-explainer-tool",
+    "url": "https://clawhub.ai/skills/code-explainer-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-explainer-tool-c5de9a96e349a3a2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Explain any code snippet or file in plain English. Paste code → get a clear explanation of what it does, how it works, and key concepts. Use when the user sh..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cloudcompile",
+      "userId": "s17cjp62zjrtm3j1sf474sp4dd845jvt",
+      "displayName": "CJ Hauser",
+      "image": "https://avatars.githubusercontent.com/u/201248601?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775315946320,
+      "changelog": "Initial release - Explain code in plain English",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ae3f11ce73b25c6ca596bfa90aef583651a4dec697190b99057c604871f4bd51"
+}

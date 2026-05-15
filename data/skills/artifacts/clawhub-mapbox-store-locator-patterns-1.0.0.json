@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mapbox-store-locator-patterns@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mapbox_store_locator_patterns",
+  "skill": {
+    "id": 39127,
+    "skillKey": "clawhub-mapbox-store-locator-patterns",
+    "name": "Mapbox Store Locator Patterns"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mapbox-store-locator-patterns",
+    "url": "https://clawhub.ai/skills/mapbox-store-locator-patterns",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mapbox-store-locator-patterns-4bd46ae5c43e2c61.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Common patterns for building store locators, restaurant finders, and location-based search applications with Mapbox. Covers marker display, filtering, distan..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mapbox",
+      "userId": "s1788z7b0bkaaj7e70n1x8vr0583qtta",
+      "displayName": "Mapbox",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 181,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774944608986,
+      "changelog": "Initial release of mapbox-store-locator-patterns.\n\n- Provides comprehensive patterns and examples for building store locators and location-based search apps using Mapbox GL JS.\n- Covers marker strategies, filtering, distance calculation, and interactive lists.\n- Includes code snippets for adding maps, markers (HTML, symbol layers, clustering), and interactive location panels.\n- Recommends using `@turf/turf` for spatial calculations.\n- Details GeoJSON structure and best practices for data handling and UI interactions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2cf51f7efa472a6086cd1f3477de04800662a4e5bd7b15a5b53ee5b24267f821"
+}

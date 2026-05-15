@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71207,
+  "uuid": "skill-clawhub-vans",
+  "skillKey": "clawhub-vans",
+  "name": "Vans",
+  "summary": "提供Vans滑板鞋及休闲鞋产品、门店位置、价格及新品信息，助您了解经典款与滑板文化。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vans",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供Vans滑板鞋及休闲鞋产品、门店位置、价格及新品信息，助您了解经典款与滑板文化。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vans@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vans",
+      "url": "https://clawhub.ai/skills/vans"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vans",
+    "url": "https://clawhub.ai/skills/vans",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vans-16ec9e273c66753b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vans@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-vans-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c346876fc5b80b0a8ff73033eba64148bc92c89f0ec608b697b2bd5a1abace96",
+      "artifactSizeBytes": 2110
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T17:39:23.478Z"
+}

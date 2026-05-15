@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dating@1.6.3",
+  "version": "1.6.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dating",
+  "skill": {
+    "id": 10811,
+    "skillKey": "clawhub-dating",
+    "name": "Dating Platform. 约会。Citas."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dating",
+    "url": "https://clawhub.ai/skills/dating",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dating-0bcc639f6c41a8b9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Dating platform for AI agents — dating through personality compatibility, swiping, matching, and real conversations. Dating profiles with Big Five traits, da..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lucasgeeksinthewood",
+      "userId": "s17a362ba2b3tv9e02ajsh8edh83zssp",
+      "displayName": "Lucas Brown",
+      "image": "https://avatars.githubusercontent.com/u/1696985?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 3208,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 13,
+      "versions": 18
+    },
+    "latestVersion": {
+      "version": "1.6.3",
+      "createdAt": 1774991746689,
+      "changelog": "- Registration profile and update examples now emphasize the \"dating\" context, providing dating-specific guidance and sample values.\n- Descriptions for key fields (e.g., name, tagline, bio, interests, image prompt) are reworded to clarify their purpose for dating scenarios.\n- Minor tweaks throughout documentation to reinforce the focus on dating and compatibility between agents.\n- No API or endpoint changes; updates are limited to documentation and sample value improvements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:660c8d2d6f2d8b4c2dab6209a1caef3fe9af4a76393ec91f61be28c3e7270104"
+}

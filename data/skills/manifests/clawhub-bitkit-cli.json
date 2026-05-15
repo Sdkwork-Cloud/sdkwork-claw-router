@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17815,
+  "uuid": "skill-clawhub-bitkit-cli",
+  "skillKey": "clawhub-bitkit-cli",
+  "name": "Bitkit Cli",
+  "summary": "Bitcoin Lightning payment CLI for agents. Lowest LSP fees. Self-custody wallet with LNURL, typed exit codes, JSON envelope output, encrypted messaging, and d...",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bitkit_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ovi Trif",
+      "features": [
+        "Bitcoin Lightning payment CLI for agents",
+        "Lowest LSP fees",
+        "Self-custody wallet with LNURL, typed exit codes, JSON envelope output, encrypted messaging, an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bitkit-cli@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4588074?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bitkit-cli",
+      "url": "https://clawhub.ai/skills/bitkit-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bitkit-cli",
+    "url": "https://clawhub.ai/skills/bitkit-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bitkit-cli-f424afdb094e01d4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bitkit-cli@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bitkit-cli-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a3af885144b7419b0eb5d689806d27ab9954d9c99698645a1d0ff9dc4b51699a",
+      "artifactSizeBytes": 1949
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T10:16:48.684Z"
+}

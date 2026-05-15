@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/redline@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.redline",
+  "skill": {
+    "id": 32516,
+    "skillKey": "clawhub-redline",
+    "name": "RedLine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "redline",
+    "url": "https://clawhub.ai/skills/redline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/redline-7f411c23e7d9d268.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Live rate-limit awareness for Claude.ai (Max/Pro) and OpenAI (Plus/Pro/Codex). Never hit the red line again — your agent checks remaining budget every heartb..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wgj",
+      "userId": "publishers:wgj",
+      "displayName": "Weston Johnson",
+      "image": "https://avatars.githubusercontent.com/u/463564?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 745,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1771476312745,
+      "changelog": "Added OpenAI usage checker, improved Claude token expiry detection, full SKILL.md with pacing tiers and heartbeat integration docs",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:425ab87e2cc765431eb55313381004850329379f3581124c699df304e87b190e"
+}

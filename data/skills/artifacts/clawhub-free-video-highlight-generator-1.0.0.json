@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-video-highlight-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_video_highlight_generator",
+  "skill": {
+    "id": 55159,
+    "skillKey": "clawhub-free-video-highlight-generator",
+    "name": "Free Video Highlight Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-video-highlight-generator",
+    "url": "https://clawhub.ai/skills/free-video-highlight-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-video-highlight-generator-65c36064d540e666.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — extract the best 60 seconds from my 3-hour stream — and get highlight clip..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776918159065,
+      "changelog": "Initial release of Free Video Highlight Generator.\n\n- Instantly extract and export highlight clips from long videos (MP4, MOV, AVI, WebM up to 500MB).\n- Upload footage or describe your desired highlights; AI handles auto-extraction in 1–2 minutes.\n- No manual scrubbing or professional editing skills required; ideal for streamers, sports creators, and event videographers.\n- 100 free credits on signup; authentication uses a simple token system.\n- Supports exporting in multiple formats (including MP4, MOV, AVI, WebM, GIF, MP3, PNG).\n- Automatic backend connection and streamlined session management for a smooth workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cac8e9f2fbf06bb8e27c6a5a3b35df97ea1bd60cb99fc32c3f1ad7ab5c4f99ae"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17596,
+  "uuid": "skill-clawhub-message-injector",
+  "skillKey": "clawhub-message-injector",
+  "name": "Message Injector",
+  "summary": "OpenClaw plugin that prepends custom text to every user message before it reaches the agent. Use for: enforcing memory_search before replies, injecting syste...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.message_injector",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Leo_yang",
+      "features": [
+        "OpenClaw plugin that prepends custom text to every user message before it reaches the agent",
+        "Use for: enforcing memory_search before replies, injecting syste..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/message-injector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/152083905?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "message-injector",
+      "url": "https://clawhub.ai/skills/message-injector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "message-injector",
+    "url": "https://clawhub.ai/skills/message-injector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/message-injector-76dc5df1c2062f64.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/message-injector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-message-injector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1d93174f68e999449328d8a612af00ca82ba846d7f2b64a7b132ffbeae4f9299",
+      "artifactSizeBytes": 1968
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T09:07:03.747Z"
+}

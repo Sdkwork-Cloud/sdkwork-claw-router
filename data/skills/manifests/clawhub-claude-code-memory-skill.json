@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55001,
+  "uuid": "skill-clawhub-claude-code-memory-skill",
+  "skillKey": "clawhub-claude-code-memory-skill",
+  "name": "Claude Code Memory Skill",
+  "summary": "Use when you want to set up, maintain, or review a Claude Code style layered memory workflow, including `CLAUDE.md` rules, session memory, durable memory, an...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code_memory_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Liu Wenyu",
+      "features": [
+        "Use when you want to set up, maintain, or review a Claude Code style layered memory workflow, i."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claude-code-memory-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/117838866?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claude-code-memory-skill",
+      "url": "https://clawhub.ai/skills/claude-code-memory-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code-memory-skill",
+    "url": "https://clawhub.ai/skills/claude-code-memory-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-memory-skill-82ece8fa5003f3aa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claude-code-memory-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claude-code-memory-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f6b341966e593bf57014be7ec2f6926a84c3a238593d8c402378a8d122469f9",
+      "artifactSizeBytes": 2026
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T04:14:29.998Z"
+}

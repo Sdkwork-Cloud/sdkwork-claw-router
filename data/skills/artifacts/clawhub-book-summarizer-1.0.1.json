@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/book-summarizer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_summarizer",
+  "skill": {
+    "id": 26190,
+    "skillKey": "clawhub-book-summarizer",
+    "name": "Book summarizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-summarizer",
+    "url": "https://clawhub.ai/skills/book-summarizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-summarizer-81b1ad97676634cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when the user wants a long-form book summarized in the user's preferred language at an explicitly verified 20 percent compression ratio, with..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dannyxyz22",
+      "userId": "s17arzgw4f6zdxp4209sj5gs018676pd",
+      "displayName": "Daniel Lélis Baggio",
+      "image": "https://avatars.githubusercontent.com/u/56499?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 272,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773880983588,
+      "changelog": "- Added a warning to the description: the skill may consume many tokens because it can run multiple times to meet the requested compression rate.\n- No functional or workflow changes. All rules and procedures remain the same.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7dd8e4b1f30cfe34b19198ccf7f77ebf8eb1e1fc18168251f0cf7485acd5ba18"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61711,
+  "uuid": "skill-clawhub-openclaw-doc",
+  "skillKey": "clawhub-openclaw-doc",
+  "name": "openclaw-doc",
+  "summary": "OpenClaw 平台完整使用指南。涵盖 Gateway 配置、频道设置（Telegram/Discord/WhatsApp/微信等）、定时任务、会话管理、安全策略、沙盒配置、模型管理、Agent 管理、设备配对、心跳机制、CLI 命令等。当需要：(1) 配置或排查 OpenClaw (2) 添加频道/定时任务/...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_doc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "amazcuter(神奇可人）",
+      "features": [
+        "OpenClaw 平台完整使用指南。涵盖 Gateway 配置、频道设置（Telegram/Discord/WhatsApp/微信等）、定时任务、会话管理、安全策略、沙盒配置、模型管理、Ag."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-doc@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/90633247?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-doc",
+      "url": "https://clawhub.ai/skills/openclaw-doc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-doc",
+    "url": "https://clawhub.ai/skills/openclaw-doc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-doc-54e704e9dcbd874b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-doc@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-doc-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a3f44437c1f45da9dcb1ceb050220d7710858fa45fdc2b18b9c4b9f55e0fe5b2",
+      "artifactSizeBytes": 2460
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T04:46:42.216Z"
+}

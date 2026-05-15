@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/copypaste@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.copypaste",
+  "skill": {
+    "id": 31610,
+    "skillKey": "clawhub-copypaste",
+    "name": "copy-paste.cloud"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "copypaste",
+    "url": "https://clawhub.ai/skills/copypaste",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/copypaste-1a7e42ca78cf357e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read and create pastes on copy-paste.cloud. Fetch recent public pastes, retrieve a paste by ID, or publish new content via the public API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "orti99",
+      "userId": "s171ec8yjedmptvjehqqkt176x84a2c2",
+      "displayName": "orti99",
+      "image": "https://avatars.githubusercontent.com/u/11789254?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775461658999,
+      "changelog": "Initial release of copypaste-cloud skill.\nShare data across agents/devices\n\n- Read and create pastes on copy-paste.cloud via public API.\n- Fetch recent public pastes or retrieve a paste by ID.\n- Publish new pastes with options for title, language, privacy, tags, and expiration.\n- Requires API key and uses `curl` and `jq` for operations.\n- No local data storage; all actions interact directly with copy-paste.cloud.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2d1b133f61ff3c2dc0b1c4211845a102cb25ffa22449c4f9cc725dae7d142b72"
+}

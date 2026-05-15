@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/personal-task-tracking@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_task_tracking",
+  "skill": {
+    "id": 55000,
+    "skillKey": "clawhub-personal-task-tracking",
+    "name": "Personal Task Tracking"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-task-tracking",
+    "url": "https://clawhub.ai/skills/personal-task-tracking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-task-tracking-998e425fa60bb97c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query and manage ClickUp via REST API and the local `scripts/query.sh` helper. Use when listing open or completed tasks, counting due work, looking up spaces..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mmaggiezhou",
+      "userId": "s17994m6zsnkyrwt8m5aymsm8583kdpt",
+      "displayName": "MMaggieZhou",
+      "image": "https://avatars.githubusercontent.com/u/6497456?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 232,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774931859428,
+      "changelog": "- Renamed the skill from \"clickup\" to \"personal-task-tracking\"\n- Updated the skill description to clarify supported actions and usage with ClickUp tasks\n- Added metadata for tool requirements and installation instructions (bash, curl, jq, env variables)\n- Refined configuration instructions and streamlined documentation for using the helper script\n- Enhanced clarity about required environment variables and helper script functionality",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:10ab7e4c3a69f1295466f2a1ceb4b6b86e89afc718e85d0514e407e26d8659f7"
+}

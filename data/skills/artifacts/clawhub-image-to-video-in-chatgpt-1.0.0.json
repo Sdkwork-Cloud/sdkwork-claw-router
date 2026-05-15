@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-to-video-in-chatgpt@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_to_video_in_chatgpt",
+  "skill": {
+    "id": 46732,
+    "skillKey": "clawhub-image-to-video-in-chatgpt",
+    "name": "Image To Video In Chatgpt"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-to-video-in-chatgpt",
+    "url": "https://clawhub.ai/skills/image-to-video-in-chatgpt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-to-video-in-chatgpt-b7b606499859877f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn three product photos in JPG format into 1080p animated image videos just by typing what you need. Whether it's converting still images into shareable vi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 122,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776278324495,
+      "changelog": "Initial release: Convert static product images into animated 1080p video clips in ChatGPT.\n\n- Upload up to three JPG images and describe the video result you want.\n- Fully cloud-based rendering—no installation required; outputs ready-to-share 1080p MP4 videos within 30–60 seconds.\n- Simple token-based authentication with optional free trial; setup handled automatically on first use.\n- Supports editing actions, exporting, credit checking, and session state via clear, intent-based commands.\n- Error handling for common issues like expired tokens, file limits, or export restrictions, with clear guidance for users.\n- Accepts popular image and video formats (JPG, PNG, GIF, MP4, etc.); max file size 200MB.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:856bc02f421c9e44d186ed5b64aa8a1caf01b99fac2e01641e764559717906c9"
+}

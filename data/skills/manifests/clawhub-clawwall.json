@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50276,
+  "uuid": "skill-clawhub-clawwall",
+  "skillKey": "clawhub-clawwall",
+  "name": "ClawWall",
+  "summary": "Outbound DLP for OpenClaw — hard regex blocks secrets & PII from leaving the machine. Domain control, no LLM.",
+  "version": "0.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawwall",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Stan Liu",
+      "features": [
+        "Outbound DLP for OpenClaw — hard regex blocks secrets & PII from leaving the machine",
+        "Domain control, no LLM."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawwall@0.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37076001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawwall",
+      "url": "https://clawhub.ai/skills/clawwall"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawwall",
+    "url": "https://clawhub.ai/skills/clawwall",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawwall-f49b6df38f3327b5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawwall@0.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawwall-0.2.2.json",
+      "version": "0.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:516b7bf2e0edea4652d995dbbffa55e8c4f6bd59faa8f37775a3fc2cef90f3c4",
+      "artifactSizeBytes": 1899
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T03:22:04.236Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tap@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tap",
+  "skill": {
+    "id": 54200,
+    "skillKey": "clawhub-tap",
+    "name": "Tap"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tap",
+    "url": "https://clawhub.ai/skills/tap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tap-729cd87c6329408e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI browser automation protocol — run pre-built skills for 41 sites, or forge new ones. MCP native, deterministic, zero AI at runtime."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leonting1010",
+      "userId": "s17axg010j644jshcrkcpaszrh83xsn6",
+      "displayName": "LeonTing1010",
+      "image": "https://avatars.githubusercontent.com/u/1998680?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1774864701172,
+      "changelog": "v0.1.2: Add Security & Trust section. Replace --allow-all with explicit permissions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4c255480e02f40488e5b6738b710bca27b8061ddb028f8036d2c112c6758c5d3"
+}

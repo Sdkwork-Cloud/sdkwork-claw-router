@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17199,
+  "uuid": "skill-clawhub-soul-audit",
+  "skillKey": "clawhub-soul-audit",
+  "name": "soul-audit",
+  "summary": "Evaluate any AI agent's soul file, system prompt, or AGENTS.md against the Guardian v0.7 framework (Forrest Landry's Immanent Metaphysics). Generates a score...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.soul_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kapslap",
+      "features": [
+        "Evaluate any AI agent's soul file, system prompt, or AGENTS.md against the Guardian v0.7 framew.",
+        "Generates a score..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/soul-audit@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/92482462?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "soul-audit",
+      "url": "https://clawhub.ai/skills/soul-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "soul-audit",
+    "url": "https://clawhub.ai/skills/soul-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/soul-audit-375d88b38fda9e92.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/soul-audit@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-soul-audit-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ad4fdead94af2e2200572734a5d5fe1dbdb4bd94fb493cc59db955339681db80",
+      "artifactSizeBytes": 1911
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T17:16:15.930Z"
+}

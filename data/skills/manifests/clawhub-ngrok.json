@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30808,
+  "uuid": "skill-clawhub-ngrok",
+  "skillKey": "clawhub-ngrok",
+  "name": "Ngrok",
+  "summary": "Ngrok integration. Manage data, records, and automate workflows. Use when the user wants to interact with Ngrok data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ngrok",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Ngrok integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Ngrok data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ngrok@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ngrok",
+      "url": "https://clawhub.ai/skills/ngrok"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ngrok",
+    "url": "https://clawhub.ai/skills/ngrok",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ngrok-84b6f03ebe1a7594.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ngrok@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-ngrok-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cef2d3aaa5579df7d660b0384680b233ff582a3b73a6ae92383cac258eb524f7",
+      "artifactSizeBytes": 1803
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:17:44.450Z"
+}

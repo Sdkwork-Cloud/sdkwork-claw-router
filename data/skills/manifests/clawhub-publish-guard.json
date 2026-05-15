@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23745,
+  "uuid": "skill-clawhub-publish-guard",
+  "skillKey": "clawhub-publish-guard",
+  "name": "PublishGuard — Post Verification & Credential Manager",
+  "summary": "Prevents false \"posted successfully\" claims by verifying content URLs, enforcing platform rules, tracking rate limits, and securely storing credentials persi...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.publish_guard",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "edmonddantesj",
+      "features": [
+        "Prevents false \"posted successfully\" claims by verifying content URLs, enforcing platform rules."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/publish-guard@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/217761516?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "publish-guard",
+      "url": "https://clawhub.ai/skills/publish-guard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "publish-guard",
+    "url": "https://clawhub.ai/skills/publish-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/publish-guard-e77ab4d39e5924ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/publish-guard@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-publish-guard-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:46730042b75609e97bfd11ee6aeac9b70fbbe28320063f0ec23cc8f864f7fa78",
+      "artifactSizeBytes": 2069
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T11:05:02.954Z"
+}

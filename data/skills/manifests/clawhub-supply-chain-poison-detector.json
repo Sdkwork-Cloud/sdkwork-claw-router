@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20311,
+  "uuid": "skill-clawhub-supply-chain-poison-detector",
+  "skillKey": "clawhub-supply-chain-poison-detector",
+  "name": "Supply Chain Poison Detector",
+  "summary": "Helps detect supply chain poisoning in AI agent marketplace skills. Scans Gene/Capsule validation fields for shell injection, outbound requests, and encoded...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.supply_chain_poison_detector",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "andyxinweiminicloud",
+      "features": [
+        "Helps detect supply chain poisoning in AI agent marketplace skills",
+        "Scans Gene/Capsule validation fields for shell injection, outbound requests, and encoded..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/supply-chain-poison-detector@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201528876?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "supply-chain-poison-detector",
+      "url": "https://clawhub.ai/skills/supply-chain-poison-detector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "supply-chain-poison-detector",
+    "url": "https://clawhub.ai/skills/supply-chain-poison-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/supply-chain-poison-detector-5761692d540bd3ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/supply-chain-poison-detector@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-supply-chain-poison-detector-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e41f857597420fa4f8fb4e2bbcfb688d138e36fadc06951b25d9227ab36dc26f",
+      "artifactSizeBytes": 2011
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T18:09:40.755Z"
+}

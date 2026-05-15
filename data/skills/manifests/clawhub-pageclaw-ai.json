@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53003,
+  "uuid": "skill-clawhub-pageclaw-ai",
+  "skillKey": "clawhub-pageclaw-ai",
+  "name": "PageClaw",
+  "summary": "AI skills for managing Facebook business pages — auto-reply, content posting, bookings, reviews, and lead capture across 9 industries",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pageclaw_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vik",
+      "features": [
+        "AI skills for managing Facebook business pages — auto-reply, content posting, bookings, reviews."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pageclaw-ai@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/126449787?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pageclaw-ai",
+      "url": "https://clawhub.ai/skills/pageclaw-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pageclaw-ai",
+    "url": "https://clawhub.ai/skills/pageclaw-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pageclaw-ai-d551178e19089d7a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pageclaw-ai@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pageclaw-ai-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4493fc38fc918eae7777f9ebc8ffa1b6d7cd54ff6484679f30c628ec1559e5c7",
+      "artifactSizeBytes": 1833
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T06:17:42.071Z"
+}

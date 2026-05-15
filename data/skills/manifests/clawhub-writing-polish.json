@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68319,
+  "uuid": "skill-clawhub-writing-polish",
+  "skillKey": "clawhub-writing-polish",
+  "name": "Writing Polish",
+  "summary": "中文写作与润色。当用户要求润色文章、改写段落、优化文风、修改措辞、让文章更通顺、写作辅助、改稿、polish writing、或者给出一段中文文本要求改善时，使用此skill。也适用于用户说\"帮我改改这篇文章\"、\"润色一下\"、\"语言不够好\"、\"读起来不顺\"、\"太空洞了\"、\"太说教了\"等场景。即使用户没有明确说\"润...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.writing_polish",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liujuntao123",
+      "features": [
+        "中文写作与润色。当用户要求润色文章、改写段落、优化文风、修改措辞、让文章更通顺、写作辅助、改稿、polish writing、或者给出一段中文文本要求改善时，使用此skill。也适用于用户说."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/writing-polish@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22583601?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "writing-polish",
+      "url": "https://clawhub.ai/skills/writing-polish"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "writing-polish",
+    "url": "https://clawhub.ai/skills/writing-polish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/writing-polish-37e38a0b2ede97d7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/writing-polish@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-writing-polish-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f140baa2e3eb12a5698aff4214c336428e19cd86fa11f0dc46cadbfbca31f62b",
+      "artifactSizeBytes": 2583
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T03:29:25.856Z"
+}

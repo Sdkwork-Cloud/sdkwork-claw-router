@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-daily@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_daily",
+  "skill": {
+    "id": 42845,
+    "skillKey": "clawhub-memory-daily",
+    "name": "Memory Daily"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-daily",
+    "url": "https://clawhub.ai/skills/memory-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-daily-85fe7c04bc073979.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automates daily memory file management. Use when creating, reading, or appending to daily memory notes (memory/YYYY-MM-DD.md). Helps the agent maintain conti..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "toller892",
+      "userId": "s174b6nsrhwdg0bejd8psr4f1585b7ks",
+      "displayName": "toller892",
+      "image": "https://avatars.githubusercontent.com/u/125938283?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776868211310,
+      "changelog": "Automates daily memory file management (memory/YYYY-MM-DD.md) for OpenClaw agents",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:df243eb0807451b98506938e00449548e845a547b674c5656ddd5e72dbcdcdc3"
+}

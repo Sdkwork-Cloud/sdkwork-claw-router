@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yuketang@1.0.327853",
+  "version": "1.0.327853",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yuketang",
+  "skill": {
+    "id": 71644,
+    "skillKey": "clawhub-yuketang",
+    "name": "yuketang"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yuketang",
+    "url": "https://clawhub.ai/skills/yuketang",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yuketang-b6591160bddc2f0b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供雨课堂账户和班级相关查询服务，包括用户ID、开班列表、班级数据、预警名单、今日授课及作业公告完成情况查询等。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xuetangop",
+      "userId": "s170cg921tmv25exe9jjs5crkx83mckr",
+      "displayName": "xuetangop",
+      "image": "https://avatars.githubusercontent.com/u/75600518?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 271,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.327853",
+      "createdAt": 1775201800642,
+      "changelog": "No user-facing changes in this version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:541902b6574a6f6fd4f6177e1074fa1293ce4cab70e503999b432412a41a1600"
+}

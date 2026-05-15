@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11013,
+  "uuid": "skill-clawhub-amazon-product-fetcher",
+  "skillKey": "clawhub-amazon-product-fetcher",
+  "name": "Amazon Product Fetcher",
+  "summary": "Fetch complete Amazon product data including title, current price, currency, star rating, review count, availability, main image, and product URL. Works from...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_product_fetcher",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Louis Lu",
+      "features": [
+        "Fetch complete Amazon product data including title, current price, currency, star rating, revie.",
+        "Works from..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amazon-product-fetcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25275443?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amazon-product-fetcher",
+      "url": "https://clawhub.ai/skills/amazon-product-fetcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-product-fetcher",
+    "url": "https://clawhub.ai/skills/amazon-product-fetcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-product-fetcher-8bf48b16880be90a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amazon-product-fetcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-amazon-product-fetcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b490202ff848af048aa00de5d2046a9428a0b19fe92fd59f5937c2d9b2db5506",
+      "artifactSizeBytes": 2040
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T13:13:19.013Z"
+}

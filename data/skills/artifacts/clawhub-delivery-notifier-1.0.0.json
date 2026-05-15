@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/delivery-notifier@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.delivery_notifier",
+  "skill": {
+    "id": 23512,
+    "skillKey": "clawhub-delivery-notifier",
+    "name": "Delivery Notifier"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "delivery-notifier",
+    "url": "https://clawhub.ai/skills/delivery-notifier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/delivery-notifier-be72477bddf7d674.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetches delivery emails from Gmail, extracts tracking info from selected couriers, filters marketing messages, and sends WhatsApp alerts for personal deliver..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "o0o-sp",
+      "userId": "publishers:o0o-sp",
+      "displayName": "o0o-sp",
+      "image": "https://avatars.githubusercontent.com/u/149572930?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 428,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772779681824,
+      "changelog": "Initial release of Delivery Notifier:\n\n- Scans Gmail inbox for delivery notifications from major couriers.\n- Filters out marketing emails to focus on personal deliveries.\n- Extracts tracking numbers and key details when available.\n- Sends formatted WhatsApp alerts to a specified recipient.\n- Tracks sent notifications to prevent duplicates and manages notification history.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8fec95f716ab5abb746484582b977162e2234bee223c29a60aaf65b9e3d21858"
+}

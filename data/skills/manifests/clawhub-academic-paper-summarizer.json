@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38436,
+  "uuid": "skill-clawhub-academic-paper-summarizer",
+  "skillKey": "clawhub-academic-paper-summarizer",
+  "name": "Academic Paper Summarizer",
+  "summary": "Extracts key points, methods, results, conclusions, and simplifies explanations from academic paper PDFs in Chinese and English.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.academic_paper_summarizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "eric060",
+      "features": [
+        "Extracts key points, methods, results, conclusions, and simplifies explanations from academic p."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/academic-paper-summarizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/220817446?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "academic-paper-summarizer",
+      "url": "https://clawhub.ai/skills/academic-paper-summarizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "academic-paper-summarizer",
+    "url": "https://clawhub.ai/skills/academic-paper-summarizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/academic-paper-summarizer-3ede7e510ff2b9a1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/academic-paper-summarizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-academic-paper-summarizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:994dde7d07eab13e488297a86f484229da8059fd76ff90a8b25e110673113d3d",
+      "artifactSizeBytes": 2321
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T14:54:05.827Z"
+}

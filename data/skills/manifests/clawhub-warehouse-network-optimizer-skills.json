@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72867,
+  "uuid": "skill-clawhub-warehouse-network-optimizer-skills",
+  "skillKey": "clawhub-warehouse-network-optimizer-skills",
+  "name": "仓配网络优化器",
+  "summary": "基于整数规划（MILP）的仓配网络优化系统，支持时效计算（含等待时间）、中转链路、供应关系到区县等。",
+  "version": "2.7.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.warehouse_network_optimizer_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jinqianfei",
+      "features": [
+        "基于整数规划（MILP）的仓配网络优化系统，支持时效计算（含等待时间）、中转链路、供应关系到区县等。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/warehouse-network-optimizer-skills@2.7.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258724353?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "warehouse-network-optimizer-skills",
+      "url": "https://clawhub.ai/skills/warehouse-network-optimizer-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "warehouse-network-optimizer-skills",
+    "url": "https://clawhub.ai/skills/warehouse-network-optimizer-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/warehouse-network-optimizer-skills-3304ce8c11938373.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/warehouse-network-optimizer-skills@2.7.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-warehouse-network-optimizer-skills-2.7.0.json",
+      "version": "2.7.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:01b13faf96cd1db14c6ca620912b17d7a94ad2cf07c359a348b34a7faf977825",
+      "artifactSizeBytes": 2042
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T07:06:30.656Z"
+}

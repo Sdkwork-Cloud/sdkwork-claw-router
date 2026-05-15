@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58197,
+  "uuid": "skill-clawhub-huo15-autoresearch-loop",
+  "skillKey": "clawhub-huo15-autoresearch-loop",
+  "name": "Huo15 Autoresearch Loop",
+  "summary": "基于 Karpathy 自主研究循环的 OpenClaw Skill，Modify → Verify → Keep/Discard → Repeat forever",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huo15_autoresearch_loop",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Job Zhao",
+      "features": [
+        "基于 Karpathy 自主研究循环的 OpenClaw Skill，Modify → Verify → Keep/Discard → Repeat forever"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/huo15-autoresearch-loop@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13188275?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "huo15-autoresearch-loop",
+      "url": "https://clawhub.ai/skills/huo15-autoresearch-loop"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huo15-autoresearch-loop",
+    "url": "https://clawhub.ai/skills/huo15-autoresearch-loop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huo15-autoresearch-loop-df48582d5fc24dd6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/huo15-autoresearch-loop@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-huo15-autoresearch-loop-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1fbf5c996b5b6cc1aabe5d7b07ab54319bcdc11da3308762994243b65f3c282b",
+      "artifactSizeBytes": 2052
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T04:15:23.163Z"
+}

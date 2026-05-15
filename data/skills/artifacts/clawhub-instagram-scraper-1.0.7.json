@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/instagram-scraper@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.instagram_scraper",
+  "skill": {
+    "id": 9456,
+    "skillKey": "clawhub-instagram-scraper",
+    "name": "Instagram Scraper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "instagram-scraper",
+    "url": "https://clawhub.ai/skills/instagram-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/instagram-scraper-60632a04f4b8955a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browser-based tool to discover Instagram profiles by location/category and scrape their public info, stats, images, and engagement with export options."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "arulmozhiv",
+      "userId": "s17d6p47jmzs92ja3p6wh80wx983h93g",
+      "displayName": "ArulmozhiV",
+      "image": "https://avatars.githubusercontent.com/u/58811343?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3272,
+      "installsAllTime": 12,
+      "installsCurrent": 11,
+      "stars": 6,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1772592805428,
+      "changelog": "- Updated SKILL.md to bump the documented version from 1.0.3 to 1.0.6.\n- No code or feature changes; changelog reflects documentation version update only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ba68764c427373787f1580d3281abe0e8e780cbc44c90e7e591ee45091da0e5a"
+}

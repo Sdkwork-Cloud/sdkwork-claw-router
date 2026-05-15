@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/attribution-engine@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.attribution_engine",
+  "skill": {
+    "id": 10873,
+    "skillKey": "clawhub-attribution-engine",
+    "name": "Attribution Engine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "attribution-engine",
+    "url": "https://clawhub.ai/skills/attribution-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/attribution-engine-2aca961ed0dbb81b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helps creators clearly credit collaborators, tools, and partners in a way platforms understand. Reduces confusion, missed disclosures, and avoidable issues b..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "otherpowers",
+      "userId": "s17810eyaktqpr5cakxrfkdm2d83hdtf",
+      "displayName": "OtherPowers",
+      "image": "https://avatars.githubusercontent.com/u/44530314?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2284,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1773449056329,
+      "changelog": "- Added _meta.json file to the project.\n- No changes to functionality or documentation in SKILL.md.\n- Version updated for metadata addition.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9c54854421f8328a4f29e0098abad323d7fbef5fbc624d05a59496fd47eac786"
+}

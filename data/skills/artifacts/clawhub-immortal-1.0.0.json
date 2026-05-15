@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/immortal@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.immortal",
+  "skill": {
+    "id": 15801,
+    "skillKey": "clawhub-immortal",
+    "name": "Immortal"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "immortal",
+    "url": "https://clawhub.ai/skills/immortal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/immortal-556f9cb498932264.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Empowers AI agents with crypto resource vitality assessment. Calls the Majestify API (crypto-health-hub) to compute Sharpe, Sortino, VaR, CVaR, drawdown, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "majestyatenkhu",
+      "userId": "s177menkgvz0tw6ytsef2szm1d83gv97",
+      "displayName": "Majesty Atenkhu",
+      "image": "https://avatars.githubusercontent.com/u/116476408?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 768,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771412941479,
+      "changelog": "Immortal skill provides AI agents with the capability to manage crypto resources by leveraging a robust  DeFi risk intelligence powered by majestify.io.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:365ac4fbb529cd05b326d339d97c99cad18ae0348a4e33dcb16c9886881e4c88"
+}

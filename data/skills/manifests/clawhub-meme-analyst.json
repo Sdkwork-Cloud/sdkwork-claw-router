@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17065,
+  "uuid": "skill-clawhub-meme-analyst",
+  "skillKey": "clawhub-meme-analyst",
+  "name": "Meme Analyst",
+  "summary": "Use when a user sends you an image, meme, screenshot, or asks you to explain a joke or meme. Also used during cron meme ingestion from Telegram channels. Dec...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meme_analyst",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "antibagr",
+      "features": [
+        "Use when a user sends you an image, meme, screenshot, or asks you to explain a joke or meme",
+        "Also used during cron meme ingestion from Telegram channels"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meme-analyst@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16188591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meme-analyst",
+      "url": "https://clawhub.ai/skills/meme-analyst"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meme-analyst",
+    "url": "https://clawhub.ai/skills/meme-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meme-analyst-0e86ad8f3f1956b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meme-analyst@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meme-analyst-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a6b8a4bf7fd663b67f97ccb19aea06db26b4fa3ce10350a960c6d3239ea6f07",
+      "artifactSizeBytes": 2040
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T21:39:35.385Z"
+}

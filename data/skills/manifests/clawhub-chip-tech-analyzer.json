@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72066,
+  "uuid": "skill-clawhub-chip-tech-analyzer",
+  "skillKey": "clawhub-chip-tech-analyzer",
+  "name": "显卡cpu评测",
+  "summary": "生成专业的芯片（CPU/显卡/GPU）技术分析文档，包含架构解析、性能评测、功耗分析、性价比评估等。适用于硬件评测、选购指南、技术研究报告等场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chip_tech_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rumu14",
+      "features": [
+        "生成专业的芯片（CPU/显卡/GPU）技术分析文档，包含架构解析、性能评测、功耗分析、性价比评估等。适用于硬件评测、选购指南、技术研究报告等场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chip-tech-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/116565375?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chip-tech-analyzer",
+      "url": "https://clawhub.ai/skills/chip-tech-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chip-tech-analyzer",
+    "url": "https://clawhub.ai/skills/chip-tech-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chip-tech-analyzer-eb73f714f28e597e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chip-tech-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chip-tech-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9b9dfed6eb3fed9c314d41065a1417140e709ed91b42cda11b3ab5dc59642481",
+      "artifactSizeBytes": 2672
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T15:39:02.064Z"
+}

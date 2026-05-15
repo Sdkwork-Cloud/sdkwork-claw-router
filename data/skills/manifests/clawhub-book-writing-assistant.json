@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36770,
+  "uuid": "skill-clawhub-book-writing-assistant",
+  "skillKey": "clawhub-book-writing-assistant",
+  "name": "Book Writing Assistant",
+  "summary": "A complete writing companion for book authors covering both fiction and nonfiction. Tracks characters, plot threads, chapter outlines, research, world-buildi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_writing_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chris-openclaw",
+      "features": [
+        "A complete writing companion for book authors covering both fiction and nonfiction",
+        "Tracks characters, plot threads, chapter outlines, research, world-buildi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-writing-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271059507?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-writing-assistant",
+      "url": "https://clawhub.ai/skills/book-writing-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-writing-assistant",
+    "url": "https://clawhub.ai/skills/book-writing-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-writing-assistant-e9024178055ffe8f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-writing-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-writing-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b8d453c07c8749a7ed1770c428d02265e55643c85a311ff243c8b9014fea6796",
+      "artifactSizeBytes": 2657
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T02:09:36.462Z"
+}

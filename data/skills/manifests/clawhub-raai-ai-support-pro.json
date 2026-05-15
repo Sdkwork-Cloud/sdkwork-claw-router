@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68204,
+  "uuid": "skill-clawhub-raai-ai-support-pro",
+  "skillKey": "clawhub-raai-ai-support-pro",
+  "name": "Ai Support Pro",
+  "summary": "Заменяет оператора 1-й линии на 60-80%. Полноценный AI-отдел поддержки клиентов: автоматическая категоризация обращений, SLA-трекинг с алертами, эскалационна...",
+  "version": "3.5.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.raai_ai_support_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RAAIPRO",
+      "features": [
+        "Заменяет оператора 1-й линии на 60-80%",
+        "Полноценный AI-отдел поддержки клиентов: автоматическая категоризация обращений, SLA-трекинг с."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/raai-ai-support-pro@3.5.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/237434479?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "raai-ai-support-pro",
+      "url": "https://clawhub.ai/skills/raai-ai-support-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "raai-ai-support-pro",
+    "url": "https://clawhub.ai/skills/raai-ai-support-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/raai-ai-support-pro-d380f6a03af629f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/raai-ai-support-pro@3.5.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-raai-ai-support-pro-3.5.2.json",
+      "version": "3.5.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c8da01d5e9f8dab336862614eacae1b3b79d3b48e71d30b5233a37da67399611",
+      "artifactSizeBytes": 2054
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T14:15:26.685Z"
+}

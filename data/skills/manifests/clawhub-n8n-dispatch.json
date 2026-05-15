@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11734,
+  "uuid": "skill-clawhub-n8n-dispatch",
+  "skillKey": "clawhub-n8n-dispatch",
+  "name": "N8n Dispatch",
+  "summary": "Forwards user requests labeled state, action, or historical with text prompts to a configured n8n_dispatch MCP service and returns its response.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.n8n_dispatch",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "enchantedmotorcycle",
+      "features": [
+        "Forwards user requests labeled state, action, or historical with text prompts to a configured n."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/n8n-dispatch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/88115702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "n8n-dispatch",
+      "url": "https://clawhub.ai/skills/n8n-dispatch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "n8n-dispatch",
+    "url": "https://clawhub.ai/skills/n8n-dispatch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/n8n-dispatch-d50cca179d76a4cd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/n8n-dispatch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-n8n-dispatch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f097a18a02eed914d4ea142bf967725676ad084f8b3559516ceed00e912c16ca",
+      "artifactSizeBytes": 2273
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T01:40:00.389Z"
+}

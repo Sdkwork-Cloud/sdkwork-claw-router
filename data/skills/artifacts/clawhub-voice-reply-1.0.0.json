@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/voice-reply@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voice_reply",
+  "skill": {
+    "id": 9141,
+    "skillKey": "clawhub-voice-reply",
+    "name": "Voice Reply"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voice-reply",
+    "url": "https://clawhub.ai/skills/voice-reply",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voice-reply-a2a848318054f739.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local text-to-speech using Piper voices via sherpa-onnx. 100% offline, no API keys required. Use when user asks for a voice reply, audio response, spoken answer, or wants to hear something read aloud. Supports multiple languages including."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stolot0mt0m",
+      "userId": "publishers:stolot0mt0m",
+      "displayName": "stolot0mt0m",
+      "image": "https://avatars.githubusercontent.com/u/234781750?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4270,
+      "installsAllTime": 34,
+      "installsCurrent": 32,
+      "stars": 6,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770046947534,
+      "changelog": "Initial release of voice-reply.\n\n- Generates speech replies locally using Piper TTS via sherpa-onnx; 100% offline, no cloud APIs or API keys required.\n- Supports German and English voices, with automatic language detection.\n- Produces Telegram-compatible voice notes (voice bubbles) via [[audio_as_voice]] tag.\n- Installation instructions provided for sherpa-onnx, Piper models, ffmpeg, and environment setup.\n- Easy command-line usage for generating voice replies from text.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:26c67f0555d2271d5df16d8e0ee06d32155599ccb921b0c4549d31d0f11807d8"
+}

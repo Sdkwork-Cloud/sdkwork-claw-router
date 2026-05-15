@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/podcast-summarize@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.podcast_summarize",
+  "skill": {
+    "id": 18209,
+    "skillKey": "clawhub-podcast-summarize",
+    "name": "Podcast Summarize"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "podcast-summarize",
+    "url": "https://clawhub.ai/skills/podcast-summarize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/podcast-summarize-080ae7e0ea8fee8b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Summarize podcast episodes into concise, actionable insights. Use when users want to get the key points from a podcast episode without listening to the entir..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hughtan93-dev",
+      "userId": "s170sb8tmh8hxnkzme2nk7fxcs842rxk",
+      "displayName": "hughtan93-dev",
+      "image": "https://avatars.githubusercontent.com/u/254217053?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 580,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773582894983,
+      "changelog": "Podcast Summarize skill initial release:\n\n- Summarizes podcast episodes into concise, actionable insights.\n- Supports multiple input formats: local audio files, audio URLs, YouTube videos, RSS feeds, and podcast platform links.\n- Provides structured summaries with key points, detailed overviews, action items, and relevant links.\n- Uses Whisper for multi-language audio transcription and handles long episodes.\n- Offers user options for brief or detailed summaries and extraction of specific segments.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4a5cc6c50f1dda6e2fb0f1525fb5b35cac5c72471c0a139bf6bdfe1ffd5325dc"
+}

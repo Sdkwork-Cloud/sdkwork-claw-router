@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16776,
+  "uuid": "skill-clawhub-dex-quote",
+  "skillKey": "clawhub-dex-quote",
+  "name": "DEX Aggregator Quote",
+  "summary": "Fetch optimal swap quotes from OKX DEX Aggregator API (v6). Use this skill when a user wants to: 1. Get the best price for swapping tokens on any supported E...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dex_quote",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ez Orion",
+      "features": [
+        "Fetch optimal swap quotes from OKX DEX Aggregator API (v6)",
+        "Use this skill when a user wants to: 1",
+        "Get the best price for swapping tokens on any supported E..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dex-quote@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30826833?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dex-quote",
+      "url": "https://clawhub.ai/skills/dex-quote"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dex-quote",
+    "url": "https://clawhub.ai/skills/dex-quote",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dex-quote-25c6e7d0096f5b0f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dex-quote@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dex-quote-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:64721736310cf3ccf2845651e54927579ca6ab0992c392a7ac4b487c7e469231",
+      "artifactSizeBytes": 2217
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T05:45:19.068Z"
+}

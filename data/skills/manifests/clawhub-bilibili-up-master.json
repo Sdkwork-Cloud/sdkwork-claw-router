@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66842,
+  "uuid": "skill-clawhub-bilibili-up-master",
+  "skillKey": "clawhub-bilibili-up-master",
+  "name": "Bilibili Up Master",
+  "summary": "提供B站UP主热门监控、粉丝与视频数据分析、竞品研究及内容策划建议，助力运营成长与报告生成。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilibili_up_master",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "onlyloveher",
+      "features": [
+        "提供B站UP主热门监控、粉丝与视频数据分析、竞品研究及内容策划建议，助力运营成长与报告生成。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bilibili-up-master@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/972832?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bilibili-up-master",
+      "url": "https://clawhub.ai/skills/bilibili-up-master"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilibili-up-master",
+    "url": "https://clawhub.ai/skills/bilibili-up-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilibili-up-master-d9a42eb025f7bc5e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bilibili-up-master@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bilibili-up-master-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ad6920114e06f886cfff9548eca78c1c61ea518c0eeeaf6d0a6275c27e0875c2",
+      "artifactSizeBytes": 2255
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T08:06:17.983Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41264,
+  "uuid": "skill-clawhub-blog-content-processor",
+  "skillKey": "clawhub-blog-content-processor",
+  "name": "blog-content-processor",
+  "summary": "Process blog content to extract videos and generate GIF previews. Works with blogwatcher, video-frames, and gifgrep skills.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blog_content_processor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "terrycarter1985",
+      "features": [
+        "Process blog content to extract videos and generate GIF previews",
+        "Works with blogwatcher, video-frames, and gifgrep skills."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/blog-content-processor@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1542987?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "blog-content-processor",
+      "url": "https://clawhub.ai/skills/blog-content-processor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blog-content-processor",
+    "url": "https://clawhub.ai/skills/blog-content-processor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blog-content-processor-a1520bf72cf957e3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/blog-content-processor@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-blog-content-processor-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c52bb131c201e79578c5549504d332a3785acfda4d7ea9825c56d1f5c1ff377c",
+      "artifactSizeBytes": 1923
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T20:41:51.470Z"
+}

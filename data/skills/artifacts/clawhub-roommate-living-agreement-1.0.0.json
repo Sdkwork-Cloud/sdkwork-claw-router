@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/roommate-living-agreement@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.roommate_living_agreement",
+  "skill": {
+    "id": 50072,
+    "skillKey": "clawhub-roommate-living-agreement",
+    "name": "Roommate Living Agreement"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "roommate-living-agreement",
+    "url": "https://clawhub.ai/skills/roommate-living-agreement",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/roommate-living-agreement-84ebd3648a220eb1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Help roommates create clear, practical agreements on chores, bills, guests, noise, shared supplies, conflict check-ins, and move-out expectations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 45,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778299907697,
+      "changelog": "- Initial release of the Roommate Living Agreement skill.\n- Guides users through mapping household members, shared spaces, and friction points.\n- Helps create and draft plain-language roommate agreements including chores, bills, guests, quiet hours, and move-out expectations.\n- Provides structured workflows for intake, organizing information, drafting documents, and verification steps.\n- Offers output formats such as summaries, checklists, action tables, and message drafts.\n- Includes clear disclaimers that this is not legal advice and highlights safety boundaries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:814754a439bf415c04959118a7985880b290735a4543f222738313cdce1af14e"
+}

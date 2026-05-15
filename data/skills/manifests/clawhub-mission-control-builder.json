@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16237,
+  "uuid": "skill-clawhub-mission-control-builder",
+  "skillKey": "clawhub-mission-control-builder",
+  "name": "Mission Control Builder",
+  "summary": "Build a personal dashboard for OpenClaw with task management, memory browser, calendar, team tracking, and GitHub trends. Use when the user wants to create a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mission_control_builder",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shukiclaw",
+      "features": [
+        "Build a personal dashboard for OpenClaw with task management, memory browser, calendar, team tr.",
+        "Use when the user wants to create a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mission-control-builder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258221813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mission-control-builder",
+      "url": "https://clawhub.ai/skills/mission-control-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mission-control-builder",
+    "url": "https://clawhub.ai/skills/mission-control-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mission-control-builder-808f8056dda300d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mission-control-builder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mission-control-builder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0cf461ca88a825f7482c536a84316cdddd50d7ef8e7472bcdcf457c19aff8d5c",
+      "artifactSizeBytes": 2409
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T12:21:36.992Z"
+}

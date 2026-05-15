@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21087,
+  "uuid": "skill-clawhub-change-management",
+  "skillKey": "clawhub-change-management",
+  "name": "Change Management",
+  "summary": "Framework for rolling out organizational changes without chaos. Covers the ADKAR model adapted for startups, communication templates, resistance patterns, an...",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.change_management",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alireza Rezvani",
+      "features": [
+        "Framework for rolling out organizational changes without chaos",
+        "Covers the ADKAR model adapted for startups, communication templates, resistance patterns, an..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/change-management@2.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5697919?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "change-management",
+      "url": "https://clawhub.ai/skills/change-management"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "change-management",
+    "url": "https://clawhub.ai/skills/change-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/change-management-102f2698c79618ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/change-management@2.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-change-management-2.1.1.json",
+      "version": "2.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:14ab83f4a79ba7199f04f48f73b582a60015383326d3bf54e9f11303f446600a",
+      "artifactSizeBytes": 1941
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T19:31:44.412Z"
+}

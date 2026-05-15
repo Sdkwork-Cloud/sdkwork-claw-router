@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-configurator@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_configurator",
+  "skill": {
+    "id": 26079,
+    "skillKey": "clawhub-openclaw-configurator",
+    "name": "openclaw configurator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-configurator",
+    "url": "https://clawhub.ai/skills/openclaw-configurator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-configurator-17afa49a9a3f5c22.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A smart assistant specialized in helping users configure OpenClaw. It provides guidance based on vague user requirements (clarifying needs through multi-roun..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qomob",
+      "userId": "s1712hx0t1qgg41g18p2bb0d6583ms02",
+      "displayName": "qomob",
+      "image": "https://avatars.githubusercontent.com/u/194083399?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 375,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774793475239,
+      "changelog": "**Major update: Added onboarding ritual, enhanced security/config guidance, and expanded multi-language support.**\n\n- Introduced BOOTSTRAP.md for one-time onboarding, including setup dialogue and first-run verification.\n- Enhanced workflow with explicit security and channel handling (e.g., WhatsApp/Discord, pairing policy).\n- Expanded configuration specs: AGENTS.md now includes workspace git repo suggestion; TOOLS.md supports environment-specific skill notes.\n- Added detailed loading timing for each file and clearer output/placement instructions.\n- Dropped SKILL_en.md and unified documentation in English.\n- All files are now to be stored in `~/.openclaw/workspace/`.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bd226c81939e005d641757b40dde40b2202a27fc88f7299bb2e976d12ce8d029"
+}

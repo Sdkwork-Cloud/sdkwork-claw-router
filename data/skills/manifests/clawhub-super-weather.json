@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45232,
+  "uuid": "skill-clawhub-super-weather",
+  "skillKey": "clawhub-super-weather",
+  "name": "super-weather",
+  "summary": "Get current weather and forecasts (no API key required).[boston tonight today normally im reno chicago sunday roughly 190 raining umbrella acceptable shit warm]",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.super_weather",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Subaru0573",
+      "features": [
+        "Get current weather and forecasts (no API key required).[boston tonight today normally im reno."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/super-weather@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/188862647?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "super-weather",
+      "url": "https://clawhub.ai/skills/super-weather"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "super-weather",
+    "url": "https://clawhub.ai/skills/super-weather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/super-weather-81a00134d05859af.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/super-weather@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-super-weather-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:974e4156439eada118d6e9f69e494ebca39642855527c15e810a0602de070d71",
+      "artifactSizeBytes": 2218
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T11:57:19.643Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alevel-physics-cie@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alevel_physics_cie",
+  "skill": {
+    "id": 28565,
+    "skillKey": "clawhub-alevel-physics-cie",
+    "name": "A-Level Physics CIE 9702"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alevel-physics-cie",
+    "url": "https://clawhub.ai/skills/alevel-physics-cie",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alevel-physics-cie-c51bae88f95bfaee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate structured answer templates for CIE A-Level Physics (9702) exam questions. Fine-tuned Qwen3-4B LoRA model: question type, given/required, formulae,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kevin0818-lxd",
+      "userId": "s179hhzw0zteyz1ae4wjft1kjh83e23s",
+      "displayName": "kevin0818-lxd",
+      "image": "https://avatars.githubusercontent.com/u/75295236?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 321,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773956248960,
+      "changelog": "No functional code changes; skill README clarified for users, orchestrators, and security reviewers.\n\n- Updated SKILL.md to clarify strict boundaries between local inference (no API/web access) and optional data-generation or retraining tools.\n- Added mandatory rule: orchestrators and clients must display all math as plain text (never LaTeX delimiters like $...$), matching enforced script output.\n- Expanded security and usage notes, including reference to SECURITY.md.\n- Minor corrections to references and output-format display instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f900249e53a23b795ee86b30811d3ffe07f7c1091e5d6da68b7d82abaf0d34be"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/inventpay-api@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inventpay_api",
+  "skill": {
+    "id": 25051,
+    "skillKey": "clawhub-inventpay-api",
+    "name": "inventpay"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inventpay-api",
+    "url": "https://clawhub.ai/skills/inventpay-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inventpay-api-9bdbce6c20ae627d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Accept crypto payments, manage a digital storefront, and track balances through the InventPay REST API"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jams24",
+      "userId": "publishers:jams24",
+      "displayName": "jams24",
+      "image": "https://avatars.githubusercontent.com/u/43240258?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 396,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1774131636681,
+      "changelog": "- Added support for Solana (SOL), USD Coin (USDC_SOL, USDC_BEP20), expanding payment and balance options.\n- Updated documentation and tags to include SOL and USDC alongside existing currencies.\n- Payment and invoice endpoints now support the new currencies for both fixed and multi-currency flows.\n- You can now check balances and accept payments in SOL and USDC in addition to BTC, ETH, LTC, and USDT.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7a47e7ec081b17c3b781f28ba1b49c6c5c135d3d67f980cab1425f4b0885e7b5"
+}

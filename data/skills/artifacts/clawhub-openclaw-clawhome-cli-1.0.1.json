@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-clawhome-cli@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_clawhome_cli",
+  "skill": {
+    "id": 58875,
+    "skillKey": "clawhub-openclaw-clawhome-cli",
+    "name": "openclaw-clawhome-cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-clawhome-cli",
+    "url": "https://clawhub.ai/skills/openclaw-clawhome-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-clawhome-cli-4f1af6657f0ec427.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将 OpenClaw 连接到 Clawhome 聊天平台，实现 AI 自动回复。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shengguo",
+      "userId": "s1736f18zf8z70qkmssh3gn4vs83hnt4",
+      "displayName": "Kevin Ji",
+      "image": "https://avatars.githubusercontent.com/u/4366878?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 193,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774313039576,
+      "changelog": "消息平台类似飞书，帮你在外网接入本地的openclaw",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:23f58373ad2a4b1085be5bc4c6577de6a964225bda6450f0d697bb380d9b4232"
+}

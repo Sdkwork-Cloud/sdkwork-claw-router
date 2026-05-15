@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chat-lift@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chat_lift",
+  "skill": {
+    "id": 23696,
+    "skillKey": "clawhub-chat-lift",
+    "name": "Chat Lift"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chat-lift",
+    "url": "https://clawhub.ai/skills/chat-lift",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chat-lift-ea6e5616ff6887ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Import, search, and archive AI conversations from ChatGPT, Claude, and Gemini. Clean indexed formats, full-text search, static HTML archive. No server required."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "theshadowrose",
+      "userId": "s1736mx5m1zt9qzh6fvzvffnhh83hgf8",
+      "displayName": "Shadow Rose",
+      "image": "https://avatars.githubusercontent.com/u/262919821?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 422,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773081379382,
+      "changelog": "- Updated version to 1.0.1.\n- Corrected the name from \"ChatLift � AI Conversation Exporter & Archive\" to \"ChatLift AI Conversation Exporter & Archive\" (removed invalid character).\n- No other functional or documentation changes were made.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b8c19bfbbbd03486b7fcd76a9fb7fab4d583d7bf652b5f2d8549c1d139b60392"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50013,
+  "uuid": "skill-clawhub-pixverse-ai-image-and-video-generator",
+  "skillKey": "clawhub-pixverse-ai-image-and-video-generator",
+  "name": "PixVerse AI Image and Video Generator",
+  "summary": "PixVerse CLI — generate AI videos and images from the command line. Supports PixVerse V6, Veo, Sora, Grok video models; Nano Banana (Gemini), Seedream, Qwen...",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pixverse_ai_image_and_video_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PixVerse-Official",
+      "features": [
+        "PixVerse CLI — generate AI videos and images from the command line",
+        "Supports PixVerse V6, Veo, Sora, Grok video models",
+        "Nano Banana (Gemini), Seedream, Qwen..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pixverse-ai-image-and-video-generator@1.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/204729415?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pixverse-ai-image-and-video-generator",
+      "url": "https://clawhub.ai/skills/pixverse-ai-image-and-video-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pixverse-ai-image-and-video-generator",
+    "url": "https://clawhub.ai/skills/pixverse-ai-image-and-video-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pixverse-ai-image-and-video-generator-ba70a460f8ac72a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pixverse-ai-image-and-video-generator@1.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pixverse-ai-image-and-video-generator-1.5.0.json",
+      "version": "1.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9517bf01577195d099f3f8a66fa5297c632827971771ef43c6377e4c415bdeff",
+      "artifactSizeBytes": 2674
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T09:30:52.274Z"
+}

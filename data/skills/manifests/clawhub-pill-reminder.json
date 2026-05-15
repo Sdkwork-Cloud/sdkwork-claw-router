@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46657,
+  "uuid": "skill-clawhub-pill-reminder",
+  "skillKey": "clawhub-pill-reminder",
+  "name": "Pill Reminder",
+  "summary": "Sends scheduled medication reminders with tracking, supports multiple users, refill alerts, and generates adherence reports; not a substitute for medical adv...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pill_reminder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bgoodwinstudio",
+      "features": [
+        "Sends scheduled medication reminders with tracking, supports multiple users, refill alerts, and.",
+        "not a substitute for medical adv..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pill-reminder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/205076654?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pill-reminder",
+      "url": "https://clawhub.ai/skills/pill-reminder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pill-reminder",
+    "url": "https://clawhub.ai/skills/pill-reminder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pill-reminder-69fe3a653f97ac26.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pill-reminder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pill-reminder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aede35fd70bc0b2ba5ad02eb49ab96adccfa0104451fc2fb2806633ea117cd44",
+      "artifactSizeBytes": 2000
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T12:18:47.703Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xhs-md2pic@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhs_md2pic",
+  "skill": {
+    "id": 16822,
+    "skillKey": "clawhub-xhs-md2pic",
+    "name": "Xhs Md2img"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhs-md2pic",
+    "url": "https://clawhub.ai/skills/xhs-md2pic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhs-md2pic-4c4942d59b9cd456.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert Markdown text to beautiful Xiaohongshu (XHS) style card images with 5 themes, deterministic browser screenshot rules, auto-pagination, smart title ex..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhang122994917",
+      "userId": "s175b2fzsv1b3dbwpvac6dd75n83wj9p",
+      "displayName": "szshzzy",
+      "image": "https://avatars.githubusercontent.com/u/16549797?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 737,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773282637457,
+      "changelog": "**Summary:**  \nThis release adds extensive documentation, detailed usage examples, new themes and screenshot reference materials, and introduces deterministic browser rendering controls for XHS-style card image generation.\n\n- Added comprehensive documentation files and usage examples, including advanced/manual pagination and browser rendering reference.\n- Introduced detailed input schema, template references, and requirements specification for reproducible outputs.\n- Enhanced the SKILL.md to describe deterministic card rendering, strict pagination rules, and stable multi-page screenshot contracts.\n- Added separate documentation of themes, API integration, and browser screenshot specifications for reliable XHS-like output.\n- Improved README and onboarding materials for both basic and advanced users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:196ae4c3866d7d3b201d433a08391984dc45d6728f819942779642316134ea67"
+}

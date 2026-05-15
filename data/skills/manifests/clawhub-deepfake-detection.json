@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32233,
+  "uuid": "skill-clawhub-deepfake-detection",
+  "skillKey": "clawhub-deepfake-detection",
+  "name": "Deepfake Check",
+  "summary": "Detect deepfakes in images or videos using the Scam.ai API. Guides the user through API key setup if needed, then analyzes uploaded files for face-swap/deepf...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deepfake_detection",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yuchennnnnnn",
+      "features": [
+        "Detect deepfakes in images or videos using the Scam.ai API",
+        "Guides the user through API key setup if needed, then analyzes uploaded files for face-swap/dee."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deepfake-detection@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/98231657?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deepfake-detection",
+      "url": "https://clawhub.ai/skills/deepfake-detection"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deepfake-detection",
+    "url": "https://clawhub.ai/skills/deepfake-detection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deepfake-detection-98740f2a84cd156e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deepfake-detection@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-deepfake-detection-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e92270f25d5ac6cc2283a794cfa26f37c5c432ba2696052819d6d1c559b092a9",
+      "artifactSizeBytes": 2075
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T20:27:52.361Z"
+}

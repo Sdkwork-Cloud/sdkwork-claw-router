@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/usaspending@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.usaspending",
+  "skill": {
+    "id": 53640,
+    "skillKey": "clawhub-usaspending",
+    "name": "Usaspending"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "usaspending",
+    "url": "https://clawhub.ai/skills/usaspending",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/usaspending-16cd3fc5fd8b6326.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "USAspending.gov — federal spending data, contracts, grants, awards, agencies, and recipient search. No API key required."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiwithabidi",
+      "userId": "publishers:aiwithabidi",
+      "displayName": "aiwithabidi",
+      "image": "https://avatars.githubusercontent.com/u/208891229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 314,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772866346147,
+      "changelog": "Initial release of the usaspending skill.\n\n- Provides command-line access to USAspending.gov federal spending data—search contracts, grants, awards, agencies, and recipients.\n- No API key or external dependencies required.\n- Outputs data in JSON format by default.\n- Includes CLI scripts for award details, recipient and agency lookups, spending analysis, and autocomplete search.\n- Compatible with Python 3.10+ (stdlib only).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f789b951432a2076031d9014f1ed8c010dc4937edd89d1c357288992342c7574"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/favicon-so@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.favicon_so",
+  "skill": {
+    "id": 51709,
+    "skillKey": "clawhub-favicon-so",
+    "name": "favicon-so"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "favicon-so",
+    "url": "https://clawhub.ai/skills/favicon-so",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/favicon-so-816381a7a2976ce0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "favicon.so project API reference — covers the favicon fetch API and image-to-favicon-package convert API. Use when working on API routes, building integratio..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "go7hic",
+      "userId": "publishers:go7hic",
+      "displayName": "YiChu",
+      "image": "https://avatars.githubusercontent.com/u/3821390?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 293,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773301989720,
+      "changelog": "Initial release providing favicon fetching and image-to-favicon package conversion APIs.\n\n- Fetch favicons for any domain using short or verbose endpoints, with support for image or JSON metadata responses.\n- Upload images to generate a full favicon package (ICO, PNGs, manifest) as ZIP or JSON.\n- Supports multiple input formats (PNG, JPG, WebP, GIF, BMP, TIFF) and raw byte uploads.\n- Includes robust fallback and domain validation logic for favicon fetching.\n- No authentication required; CORS enabled.\n- Core endpoints: `/api/favicon`, `/{domain}`, `/api/convert`.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1b9109307d459fae7a57ca082590639ac769431a0b1dd30b7e13213930aabc2e"
+}

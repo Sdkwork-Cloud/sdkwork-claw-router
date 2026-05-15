@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/llm-eval-router@1.2.2",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llm_eval_router",
+  "skill": {
+    "id": 48985,
+    "skillKey": "clawhub-llm-eval-router",
+    "name": "Llm Eval Router"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llm-eval-router",
+    "url": "https://clawhub.ai/skills/llm-eval-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llm-eval-router-87a63344e3127f8e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Shadow-test local Ollama models against a cloud baseline with a multi-judge ensemble. Automatically promotes models when statistically proven equivalent — re..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nissan",
+      "userId": "s17f2fw07zktjmcgagf5c29tbd83rt7v",
+      "displayName": "Nissan Dookeran",
+      "image": "https://avatars.githubusercontent.com/u/12583?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 637,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.2.2",
+      "createdAt": 1774672905149,
+      "changelog": "Add security_notes: no telemetry, all API calls use user's own keys, local Ollama never sends data externally",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0d69d9fff9ba0597b990c6253c45d543cc9d7844eeaad7f557d3f61a8e2ae5de"
+}

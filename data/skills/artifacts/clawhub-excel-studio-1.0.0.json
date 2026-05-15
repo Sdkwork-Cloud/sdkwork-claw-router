@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/excel-studio@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.excel_studio",
+  "skill": {
+    "id": 12853,
+    "skillKey": "clawhub-excel-studio",
+    "name": "Excel Studio"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "excel-studio",
+    "url": "https://clawhub.ai/skills/excel-studio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/excel-studio-21eeab05511e26d7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Professional Excel spreadsheet generator. Use when user needs to create data tables, reports, charts, financial models, or any structured data in Excel forma..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tobewin",
+      "userId": "s174rz3f0862tcfw7pzfh5w8kn83hv2z",
+      "displayName": "ToBeWin",
+      "image": "https://avatars.githubusercontent.com/u/145168989?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1301,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774352965496,
+      "changelog": "专业Excel电子表格生成器：支持xlsx/xls/csv，图表/公式/多Sheet，多语言，跨平台兼容",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3bc439e3675abb283b540f410c18294d6459c4db4677a0104600a2d080d749ce"
+}

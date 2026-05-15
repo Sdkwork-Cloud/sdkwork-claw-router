@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/est321@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.est321",
+  "skill": {
+    "id": 73066,
+    "skillKey": "clawhub-est321",
+    "name": "头脑超级风暴"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "est321",
+    "url": "https://clawhub.ai/skills/est321",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/est321-89f22097b0a2470c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在任何创造性工作之前必须使用 - 创建功能、构建组件、添加新功能或修改行为。通过协作对话探索用户意图、需求和设计。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lky115",
+      "userId": "s17eyw94gx00cf2kh08jj3234183ncam",
+      "displayName": "LKY115",
+      "image": "https://avatars.githubusercontent.com/u/166357382?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774600642980,
+      "changelog": "- Introduced a new brainstorming skill for creative work, focusing on collaborative dialogue to transform ideas into designs\n- Structured process with three phases: understanding ideas, exploring solutions, and presenting designs incrementally\n- Added domain-specific hooks for embedded and simulation projects with recommended sub-skills\n- Emphasizes core principles like asking one question at a time and exploring multiple alternatives\n- Integrates with documentation and implementation workflows, requiring sub-skills for detailed planning",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ccb9cc37df08e0a5baaee96cfb88928bfea26e1dec5224ef7438ddbde22e2b80"
+}

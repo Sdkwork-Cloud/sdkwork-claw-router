@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gateway-manager@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gateway_manager",
+  "skill": {
+    "id": 34548,
+    "skillKey": "clawhub-gateway-manager",
+    "name": "OpenClaw Gateway Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gateway-manager",
+    "url": "https://clawhub.ai/skills/gateway-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gateway-manager-84c1d575496d9369.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Unified multi-cloud management tool for detecting, configuring, restarting, verifying, creating, and safely deleting all OpenClaw gateway instances on macOS."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "seastaradmin",
+      "userId": "s173nh1ssg47htx2hcfadnrn7183w9tq",
+      "displayName": "seastaradmin",
+      "image": "https://avatars.githubusercontent.com/u/102996509?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774209884114,
+      "changelog": "v1.0.2 - 跨平台 + 安全响应\n新增：\n✅ 跨平台支持（macOS/Linux/Windows）\n✅ SECURITY_RESPONSE.md 安全审查响应\n✅ 自动操作系统检测\n✅ 平台特定服务管理\n修复：\n✅ 所有安全审查问题\n✅ 硬编码路径\n✅ 依赖声明",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7522196da9a8fb872c1d86363258d4032eb7eeb9febe04bfac60abad00226af3"
+}

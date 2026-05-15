@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/taobao-competitor-analyzer@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taobao_competitor_analyzer",
+  "skill": {
+    "id": 13584,
+    "skillKey": "clawhub-taobao-competitor-analyzer",
+    "name": "Taobao Competitor Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taobao-competitor-analyzer",
+    "url": "https://clawhub.ai/skills/taobao-competitor-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taobao-competitor-analyzer-a718e289724e70e6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Compare a Taobao product with JD.com, Pinduoduo, and Vipshop using browser-visible evidence only, then tell the user where it is actually worth buying. Use w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1157,
+      "installsAllTime": 6,
+      "installsCurrent": 5,
+      "stars": 2,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774951234737,
+      "changelog": "Add matrix cross-sell guidance to route users to the right shopping skill.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9a9dd70ed0a57195eab589b4832bfe8b681611b54bdfc214bfc96c9b1900179c"
+}

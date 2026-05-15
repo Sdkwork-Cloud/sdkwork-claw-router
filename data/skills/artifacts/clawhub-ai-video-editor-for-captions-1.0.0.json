@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-editor-for-captions@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_editor_for_captions",
+  "skill": {
+    "id": 44718,
+    "skillKey": "clawhub-ai-video-editor-for-captions",
+    "name": "Ai Video Editor For Captions"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-editor-for-captions",
+    "url": "https://clawhub.ai/skills/ai-video-editor-for-captions",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-editor-for-captions-c28674ae0e5795b7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get captioned video files ready to post, without touching a single slider. Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"ad..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776797143163,
+      "changelog": "AI Video Editor for Captions — Version 1.0.0\n\n- Initial release: auto-generates and burns in captions to uploaded videos (MP4, MOV, AVI, WebM, up to 500MB).\n- Supports multi-language captions with auto-sync (e.g. English and Spanish).\n- Cloud-based pipeline: handles upload, editing, captioning, and 1080p MP4 export without local installation.\n- Interactive workflow: upload clips, give editing instructions via chat, and download captioned videos within ~30–90 seconds.\n- Tracks credits and session status automatically; provides clear error handling for authentication, file type, and export issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8efd584c080268ef889f63a5931dca21013a82985f759c4a0e267d59fe442e0a"
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50403,
+  "uuid": "skill-clawhub-bitcoin-mcp",
+  "skillKey": "clawhub-bitcoin-mcp",
+  "name": "bitcoin-mcp",
+  "summary": "47 Bitcoin tools for your AI agent — fee intelligence, mempool analysis, address lookups, transaction decoding, and more. MCP server backed by the Satoshi API.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bitcoin_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Andrew Barnes",
+      "features": [
+        "47 Bitcoin tools for your AI agent — fee intelligence, mempool analysis, address lookups, trans.",
+        "MCP server backed by the Satoshi API."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bitcoin-mcp@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/169967362?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bitcoin-mcp",
+      "url": "https://clawhub.ai/skills/bitcoin-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bitcoin-mcp",
+    "url": "https://clawhub.ai/skills/bitcoin-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bitcoin-mcp-a3d29e5c152e5d1b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bitcoin-mcp@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bitcoin-mcp-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b26c788230d2d40428321720800a4c7128f35d72edb7440f46076fd1d44401a2",
+      "artifactSizeBytes": 1939
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T03:56:23.926Z"
+}

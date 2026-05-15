@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18626,
+  "uuid": "skill-clawhub-farseek",
+  "skillKey": "clawhub-farseek",
+  "name": "Farseek",
+  "summary": "Search AI-powered job listings matched to your skills across 22,700+ company boards and 20+ ATS platforms with relevance ranking and filtering.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.farseek",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "farseek2020",
+      "features": [
+        "Search AI-powered job listings matched to your skills across 22,700+ company boards and 20+ ATS."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/farseek@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/68807642?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "farseek",
+      "url": "https://clawhub.ai/skills/farseek"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "farseek",
+    "url": "https://clawhub.ai/skills/farseek",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/farseek-1f3e0cbb7bdd66ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/farseek@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-farseek-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:414a3dc7f307951d1ceda717322faf8d3e880365a412ccbabbe80783f4851d20",
+      "artifactSizeBytes": 1840
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T23:08:57.137Z"
+}

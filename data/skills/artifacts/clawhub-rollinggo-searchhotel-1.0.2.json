@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rollinggo-searchhotel@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rollinggo_searchhotel",
+  "skill": {
+    "id": 40326,
+    "skillKey": "clawhub-rollinggo-searchhotel",
+    "name": "rollinggo-searchhotel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rollinggo-searchhotel",
+    "url": "https://clawhub.ai/skills/rollinggo-searchhotel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rollinggo-searchhotel-cbf53c72688e66e5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Hotel search and pricing via the RollingGo CLI. Use when the user wants to search hotels by destination, filter by date/star/budget/tags/distance, inspect ho..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dreamtzlong",
+      "userId": "s1778zncyn3j956nag4kfqw3cs83grbr",
+      "displayName": "dreamtzlong",
+      "image": "https://avatars.githubusercontent.com/u/232517634?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774319235089,
+      "changelog": "- Skill name changed from rollinggo-hotel to rollinggo-searchhotel.\n- Environment variable for API key updated from AIGOHOTEL_API_KEY to RollingGo_API_KEY.\n- Added a new section on version freshness, specifying that the latest release of rollinggo is always used on every run.\n- No other functional changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ef8138163b3f76d492bb151b4468299b774bb5fa3a869c5ca34144eb2f53e169"
+}

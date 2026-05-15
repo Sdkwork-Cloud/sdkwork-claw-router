@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63975,
+  "uuid": "skill-clawhub-mama-crawler",
+  "skillKey": "clawhub-mama-crawler",
+  "name": "妈妈网爬虫",
+  "summary": "妈妈网育儿知识爬虫（PC端）。爬取妈妈网（www.mama.cn）育儿文章，输出 Markdown 格式并存入御知库（~/.yuzhi/crawls/mama_cn/）。默认使用PC端User-Agent，按分类或关键词搜索爬取。帝说\"爬取妈妈网\"、\"/爬虫\"或需要采集育儿知识时触发。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mama_crawler",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zton100",
+      "features": [
+        "妈妈网育儿知识爬虫（PC端）。爬取妈妈网（www.mama.cn）育儿文章，输出 Markdown 格式并存入御知库（~/.yuzhi/crawls/mama_cn/）。默认使用PC端Use."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mama-crawler@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42246306?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mama-crawler",
+      "url": "https://clawhub.ai/skills/mama-crawler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mama-crawler",
+    "url": "https://clawhub.ai/skills/mama-crawler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mama-crawler-1a5c058b11322e9e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mama-crawler@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mama-crawler-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:23994d4227a77c1a6caad6e39a6cc3e4db21171d4abf861d174e9749b3de5197",
+      "artifactSizeBytes": 2338
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T11:40:27.400Z"
+}

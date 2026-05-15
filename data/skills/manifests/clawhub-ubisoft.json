@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64497,
+  "uuid": "skill-clawhub-ubisoft",
+  "skillKey": "clawhub-ubisoft",
+  "name": "Ubisoft",
+  "summary": "提供育碧游戏信息查询、价格和新品发布，支持游戏推荐及Ubisoft Connect订阅服务咨询。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ubisoft",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供育碧游戏信息查询、价格和新品发布，支持游戏推荐及Ubisoft Connect订阅服务咨询。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ubisoft@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ubisoft",
+      "url": "https://clawhub.ai/skills/ubisoft"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ubisoft",
+    "url": "https://clawhub.ai/skills/ubisoft",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ubisoft-ff1a199925e407fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ubisoft@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ubisoft-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8963721dae6886490a57bcdc7e44033fed264b5bc20c3473b70b6af4e7c53cc9",
+      "artifactSizeBytes": 2063
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T23:27:44.518Z"
+}

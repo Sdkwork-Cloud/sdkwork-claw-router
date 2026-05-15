@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21600,
+  "uuid": "skill-clawhub-cpbox-batch-balance",
+  "skillKey": "clawhub-cpbox-batch-balance",
+  "name": "cpbox-batch-balance",
+  "summary": "Guide users on how to use the Batch EVM Address Balance Query API (/api/x402/batch-balance). Use when users ask about batch balance queries, multicall balanc...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cpbox_batch_balance",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "springmint",
+      "features": [
+        "Guide users on how to use the Batch EVM Address Balance Query API (/api/x402/batch-balance)",
+        "Use when users ask about batch balance queries, multicall balanc..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cpbox-batch-balance@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/166361573?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cpbox-batch-balance",
+      "url": "https://clawhub.ai/skills/cpbox-batch-balance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cpbox-batch-balance",
+    "url": "https://clawhub.ai/skills/cpbox-batch-balance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cpbox-batch-balance-e1e51d85e725d678.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cpbox-batch-balance@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cpbox-batch-balance-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7819c04418f344acf7601a27bb9b3ea7c5c940042a401f89f7f4526b5c023443",
+      "artifactSizeBytes": 1917
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T07:31:31.155Z"
+}

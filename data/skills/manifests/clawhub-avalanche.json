@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15201,
+  "uuid": "skill-clawhub-avalanche",
+  "skillKey": "clawhub-avalanche",
+  "name": "Avalanche",
+  "summary": "Assist with Avalanche C-Chain transactions, AVAX transfers, subnets, and cross-chain bridges.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.avalanche",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Assist with Avalanche C-Chain transactions, AVAX transfers, subnets, and cross-chain bridges."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/avalanche@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "avalanche",
+      "url": "https://clawhub.ai/skills/avalanche"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "avalanche",
+    "url": "https://clawhub.ai/skills/avalanche",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/avalanche-bb93cff8851d49ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/avalanche@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-avalanche-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4923be770c5dcd855d9c67adebe7e0116a609de11e4a9171bbf68388b21d7e73",
+      "artifactSizeBytes": 1780
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T18:12:15.121Z"
+}

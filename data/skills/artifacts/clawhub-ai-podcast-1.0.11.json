@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-podcast@1.0.11",
+  "version": "1.0.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_podcast",
+  "skill": {
+    "id": 11984,
+    "skillKey": "clawhub-ai-podcast",
+    "name": "Podcast Generation from PDF, Text, and Links"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-podcast",
+    "url": "https://clawhub.ai/skills/ai-podcast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-podcast-10dd8f318197baba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate AI podcast episodes from PDFs, text, notes, and links using MagicPodcast in OpenClaw. Creates natural two-person dialogue audio, supports custom lan..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mogens9",
+      "userId": "publishers:mogens9",
+      "displayName": "mogens9",
+      "image": "https://avatars.githubusercontent.com/u/41573644?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1485,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 4,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "1.0.11",
+      "createdAt": 1772341554337,
+      "changelog": "ai-podcast 1.0.11 changelog\n\n- Updated the skill description for clarity and detail, highlighting OpenClaw and supported input types (PDFs, text, notes, links).\n- Emphasized the dashboard experience and custom language support in the description.\n- No functional or code changes in this release.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:91906eadc5d7c8c66695a4997d9877843cd21d2458791cc7a996607ee2807d16"
+}

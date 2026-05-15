@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/script-to-storyboard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.script_to_storyboard",
+  "skill": {
+    "id": 68220,
+    "skillKey": "clawhub-script-to-storyboard",
+    "name": "Script to Storyboard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "script-to-storyboard",
+    "url": "https://clawhub.ai/skills/script-to-storyboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/script-to-storyboard-812f24dbe3d79b90.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将电影/视频剧本转换为分镜脚本表格。适用于：(1) 将剧本文本解析为结构化分镜，(2) 根据场景描述生成拍摄计划，(3) 提取视觉元素并输出标准分镜表格（镜号、景别/拍摄角度、画面内容、出场人物、场景、音效）。当用户提到分镜、storyboard、镜头脚本、剧本转换时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eita19",
+      "userId": "s174kjqgzf1744tsr6w4xg0r1s84y03x",
+      "displayName": "Eita19",
+      "image": "https://avatars.githubusercontent.com/u/152852917?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 886,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773979045101,
+      "changelog": "Initial release: 将剧本转换为分镜脚本表格",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8c93955758bc17f32acd920c2d20a74c16981d7ec261278f0b5eca090aca3154"
+}

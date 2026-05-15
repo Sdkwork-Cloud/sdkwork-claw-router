@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43004,
+  "uuid": "skill-clawhub-outlook-addin",
+  "skillKey": "clawhub-outlook-addin",
+  "name": "Outlook Add-in",
+  "summary": "Outlook sidebar add-in that brings the full power of your OpenClaw agent into Microsoft Outlook. Chat with your agent about any email, use all your tools and...",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.outlook_addin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nachtsheim",
+      "features": [
+        "Outlook sidebar add-in that brings the full power of your OpenClaw agent into Microsoft Outlook",
+        "Chat with your agent about any email, use all your tools and..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/outlook-addin@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2680978?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "outlook-addin",
+      "url": "https://clawhub.ai/skills/outlook-addin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "outlook-addin",
+    "url": "https://clawhub.ai/skills/outlook-addin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/outlook-addin-250240ff08cf428d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/outlook-addin@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-outlook-addin-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cd520185e5fa3caff3c7788cbcd65a4661a9e2d1096f071a782b322738b5211c",
+      "artifactSizeBytes": 2283
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T03:18:09.964Z"
+}

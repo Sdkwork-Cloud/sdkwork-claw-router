@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30530,
+  "uuid": "skill-clawhub-lifi-mcp-skill",
+  "skillKey": "clawhub-lifi-mcp-skill",
+  "name": "LI.FI MCP Skill",
+  "summary": "Use the LI.FI MCP server through UXC for cross-chain route discovery, bridge/DEX availability checks, token and chain lookup, gas/balance/allowance checks, q...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lifi_mcp_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jolestar",
+      "features": [
+        "Use the LI.FI MCP server through UXC for cross-chain route discovery, bridge/DEX availability c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lifi-mcp-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77268?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lifi-mcp-skill",
+      "url": "https://clawhub.ai/skills/lifi-mcp-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lifi-mcp-skill",
+    "url": "https://clawhub.ai/skills/lifi-mcp-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lifi-mcp-skill-44cbd8d3c45ed58f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lifi-mcp-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lifi-mcp-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c136a82403f3e700f9b62dde26550cd5b6507d616240fa8da00eb59b7cec600a",
+      "artifactSizeBytes": 2419
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T00:33:28.469Z"
+}

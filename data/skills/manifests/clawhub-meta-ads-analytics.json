@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14963,
+  "uuid": "skill-clawhub-meta-ads-analytics",
+  "skillKey": "clawhub-meta-ads-analytics",
+  "name": "Meta Ads Analytics",
+  "summary": "Le campanhas, conjuntos, anuncios e criativos no Meta Ads para diagnostico, relatorios e recomendacoes operacionais usando somente o MCP brijr/meta-mcp.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meta_ads_analytics",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alan Mosko",
+      "features": [
+        "Le campanhas, conjuntos, anuncios e criativos no Meta Ads para diagnostico, relatorios e recome."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meta-ads-analytics@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6052272?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meta-ads-analytics",
+      "url": "https://clawhub.ai/skills/meta-ads-analytics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meta-ads-analytics",
+    "url": "https://clawhub.ai/skills/meta-ads-analytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meta-ads-analytics-c003564fd75cf283.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meta-ads-analytics@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meta-ads-analytics-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3a077c68f40e03048a65a14388ae5bb34f2c3d991032caba105b1be8e758d1a5",
+      "artifactSizeBytes": 2548
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T14:03:25.168Z"
+}

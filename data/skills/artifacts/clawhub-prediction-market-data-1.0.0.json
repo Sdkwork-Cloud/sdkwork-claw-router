@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prediction-market-data@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prediction_market_data",
+  "skill": {
+    "id": 41821,
+    "skillKey": "clawhub-prediction-market-data",
+    "name": "Prediction Market Data"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prediction-market-data",
+    "url": "https://clawhub.ai/skills/prediction-market-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prediction-market-data-9eff4fed81411941.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cross-platform prediction market data via AIsa API. Query Polymarket and Kalshi markets, prices, orderbooks, candlesticks, positions, and trades. Use when us..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bibaofeng",
+      "userId": "s1740zrgcnwxsxgzt9bfj5a1jn842mag",
+      "displayName": "bibaofeng",
+      "image": "https://avatars.githubusercontent.com/u/86095131?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775135520636,
+      "changelog": "- Initial release of the prediction-market-data skill.\n- Query Polymarket and Kalshi markets for prices, orderbooks, candlesticks, positions, and trades via AIsa API.\n- Supports searching for prediction markets, getting market odds, wallet PnL, and cross-platform market comparison.\n- All commands require an AISA_API_KEY and are fully read-only; no trading capability or wallet access.\n- Sports market queries included (e.g., NBA, NFL) with simple date-based commands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:19c7f61a121cf8a5623f36def1fdf9306fdb5438f454223b45e33a980c0559cb"
+}

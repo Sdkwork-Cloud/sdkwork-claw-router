@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38306,
+  "uuid": "skill-clawhub-shipping-cost-optimizer",
+  "skillKey": "clawhub-shipping-cost-optimizer",
+  "name": "Shipping Cost Optimizer",
+  "summary": "Analyze ecommerce fulfillment notes across weight, volume, packaging, region, carrier pricing, and free-shipping policy, then turn rough order-cost data into...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shipping_cost_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Analyze ecommerce fulfillment notes across weight, volume, packaging, region, carrier pricing,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shipping-cost-optimizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shipping-cost-optimizer",
+      "url": "https://clawhub.ai/skills/shipping-cost-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shipping-cost-optimizer",
+    "url": "https://clawhub.ai/skills/shipping-cost-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shipping-cost-optimizer-e0413bad75e3cc14.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shipping-cost-optimizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shipping-cost-optimizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:17f998896fab1178ce49f39f594a0f061a005592c9e048b99b70fe84fe73a44f",
+      "artifactSizeBytes": 2494
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T01:46:06.187Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/instagram-collector-adarsh@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.instagram_collector_adarsh",
+  "skill": {
+    "id": 25326,
+    "skillKey": "clawhub-instagram-collector-adarsh",
+    "name": "Instagram Collector Adarsh"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "instagram-collector-adarsh",
+    "url": "https://clawhub.ai/skills/instagram-collector-adarsh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/instagram-collector-adarsh-041027da11df8b28.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Collects Instagram profile metrics for a handle using Apify, returning followers, posts, engagement rate, posting frequency, avg likes/comments, and top hash..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adarshvmore",
+      "userId": "publishers:adarshvmore",
+      "displayName": "Adarsh More",
+      "image": "https://avatars.githubusercontent.com/u/103880462?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 381,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772845993836,
+      "changelog": "- Added metadata file `_meta.json` for skill indexing and discovery.\n- No functional changes to the collector logic.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:63ba98da78fbeb600ab64eace766b8f7016bceec77b6b3b950be6f146d45c5f8"
+}

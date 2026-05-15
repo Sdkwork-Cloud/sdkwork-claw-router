@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10953,
+  "uuid": "skill-clawhub-prowlarr",
+  "skillKey": "clawhub-prowlarr",
+  "name": "Prowlarr",
+  "summary": "Search indexers and manage Prowlarr. Use when the user asks to \"search for a torrent\", \"search indexers\", \"find a release\", \"check indexer status\", \"list indexers\", \"prowlarr search\", \"sync indexers\", or mentions Prowlarr/indexer managemen.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prowlarr",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jmagar",
+      "features": [
+        "Search indexers and manage Prowlarr",
+        "Use when the user asks to \"search for a torrent\", \"search indexers\", \"find a release\", \"check i."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prowlarr@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38927646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prowlarr",
+      "url": "https://clawhub.ai/skills/prowlarr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prowlarr",
+    "url": "https://clawhub.ai/skills/prowlarr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prowlarr-39a0be6d6589d78d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prowlarr@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-prowlarr-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d7b6b1d930f337ebb99ad03783b30019cea02a20d70d9836db4fa7eb63e4987c",
+      "artifactSizeBytes": 2327
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-23T21:18:49.451Z"
+}

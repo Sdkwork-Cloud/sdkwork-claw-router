@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dup-finder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dup_finder",
+  "skill": {
+    "id": 44854,
+    "skillKey": "clawhub-dup-finder",
+    "name": "Dup Finder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dup-finder",
+    "url": "https://clawhub.ai/skills/dup-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dup-finder-1657400a8b053170.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Identifies and lists duplicate files in a directory to help users easily clean up and save storage space."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "albionaiinc-del",
+      "userId": "s17a02897swm2wgc0ge6g3j8ss83mx5y",
+      "displayName": "albionaiinc-del",
+      "image": "https://avatars.githubusercontent.com/u/269741383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776428797045,
+      "changelog": "Initial release of Dup Finder.\n\n- Quickly detects and lists duplicate files within a specified directory.\n- Simple command-line usage for easy integration into workflows.\n- Helps users reclaim storage space by identifying unnecessary duplicates.\n- Available for $1.50.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9244ce14e1a5a9446d14d8bc4ab0992e15646c2bf5758dcc1c9430d20ce1f577"
+}

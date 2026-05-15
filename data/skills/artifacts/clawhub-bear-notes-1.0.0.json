@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bear-notes@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bear_notes",
+  "skill": {
+    "id": 8376,
+    "skillKey": "clawhub-bear-notes",
+    "name": "Bear Notes"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bear-notes",
+    "url": "https://clawhub.ai/skills/bear-notes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bear-notes-f688a4b6b3e49f79.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create, search, and manage Bear notes via grizzly CLI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "steipete",
+      "userId": "s179zksw999xz8ms4cy7pb2fr183m5jq",
+      "displayName": "Peter Steinberger",
+      "image": "https://avatars.githubusercontent.com/u/58493?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 10882,
+      "installsAllTime": 1042,
+      "installsCurrent": 1015,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1767545298356,
+      "changelog": "",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2d2927985a166d5dd8372fab3bed08dbbf8d82ac0d6322e8c170f3cf853defca"
+}

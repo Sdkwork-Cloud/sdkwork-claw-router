@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/anime-ebook-reader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anime_ebook_reader",
+  "skill": {
+    "id": 69088,
+    "skillKey": "clawhub-anime-ebook-reader",
+    "name": "Anime Ebook Reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anime-ebook-reader",
+    "url": "https://clawhub.ai/skills/anime-ebook-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anime-ebook-reader-0810df8575e00b06.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "动漫轻小说、电子书阅读助手。支持TXT、PDF、EPUB、MOBI等格式。用于阅读动漫小说、整理书单、管理阅读进度、提取章节内容。触发场景：用户上传动漫电子书/轻小说文件、询问书单推荐、整理阅读笔记、提取小说章节。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "marson2016",
+      "userId": "s172vkdpdktv2qw54n6t3ye4mx847hp9",
+      "displayName": "Marson",
+      "image": "https://avatars.githubusercontent.com/u/23474376?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775306134834,
+      "changelog": "Initial release of anime-ebook-reader.\n\n- Supports anime light novel and ebook reading (TXT, PDF, EPUB, MOBI formats)\n- Extracts book info (title, author, chapter count) and organizes table of contents\n- Allows chapter navigation, \"continue reading\" from last position\n- Summarizes and extracts key points from each chapter automatically\n- Manages user reading lists and progress, recommends related books\n- Prioritizes Chinese titles/content and maintains light novel style",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4b291099762999702600394da001f8f9422bac8e4dcd4c2d2165ca42bc609cd2"
+}

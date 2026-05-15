@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23579,
+  "uuid": "skill-clawhub-gi-security-audit",
+  "skillKey": "clawhub-gi-security-audit",
+  "name": "GI Security Audit",
+  "summary": "Audit code for security issues - sensitive data exposure, dependency vulnerabilities, SQL injection, hardcoded secrets. Use when the user asks for security c...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gi_security_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "laimiaohua",
+      "features": [
+        "Audit code for security issues",
+        "sensitive data exposure, dependency vulnerabilities, SQL injection, hardcoded secrets",
+        "Use when the user asks for security c..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gi-security-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36961979?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gi-security-audit",
+      "url": "https://clawhub.ai/skills/gi-security-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gi-security-audit",
+    "url": "https://clawhub.ai/skills/gi-security-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gi-security-audit-f4a2c46e840fd311.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gi-security-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gi-security-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6323dd0272753922e7ef384e34e3581243c2402b38f5b49123bd6816e383bb58",
+      "artifactSizeBytes": 1923
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T01:58:35.089Z"
+}

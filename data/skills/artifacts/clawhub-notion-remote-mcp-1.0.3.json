@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/notion-remote-mcp@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notion_remote_mcp",
+  "skill": {
+    "id": 39318,
+    "skillKey": "clawhub-notion-remote-mcp",
+    "name": "Notion Remote Mcp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notion-remote-mcp",
+    "url": "https://clawhub.ai/skills/notion-remote-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notion-remote-mcp-397fd5e42f7ca412.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use Notion through mcporter-backed MCP tools. Use when working with Notion pages, databases, search, content updates, or workspace lookups via an MCP-integra..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dam1k",
+      "userId": "s1735m64zz4haeajqmr0f2jcr1850vgw",
+      "displayName": "Damian Bostan",
+      "image": "https://avatars.githubusercontent.com/u/62200289?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 179,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1777651692325,
+      "changelog": "- Updated skill name from \"notion-remote-mcp\" to \"notion\".\n- Simplified and clarified the description for improved readability.\n- Shortened and modernized workflow and best practices; emphasized credential safety.\n- Streamlined the Tool Guide into practical usage notes and checks.\n- Removed detailed workflow, tool-by-tool descriptions, and guardrails for brevity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d5ded038c83ac6365b1d22223aa895d47ac2a9314f33a56942ccfaea33f0c33c"
+}

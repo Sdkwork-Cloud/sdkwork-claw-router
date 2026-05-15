@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44010,
+  "uuid": "skill-clawhub-pilot-status-page-setup",
+  "skillKey": "clawhub-pilot-status-page-setup",
+  "name": "Pilot Status Page Setup",
+  "summary": "Deploy a status page pipeline with 3 agents that automate service monitoring, status aggregation, and public incident communication. Use this skill when: 1....",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_status_page_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "Deploy a status page pipeline with 3 agents that automate service monitoring, status aggregatio.",
+        "Use this skill when: 1...."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-status-page-setup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-status-page-setup",
+      "url": "https://clawhub.ai/skills/pilot-status-page-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-status-page-setup",
+    "url": "https://clawhub.ai/skills/pilot-status-page-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-status-page-setup-b816ee703dba2cd6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-status-page-setup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-status-page-setup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:489d18d0c47de97d08ad14dbd1ae30d2494f23dd18fed363a11edb296ccef668",
+      "artifactSizeBytes": 1952
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T05:44:53.508Z"
+}

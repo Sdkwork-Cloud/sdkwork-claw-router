@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nanda-chapter@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nanda_chapter",
+  "skill": {
+    "id": 52314,
+    "skillKey": "clawhub-nanda-chapter",
+    "name": "NANDA Chapter Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nanda-chapter",
+    "url": "https://clawhub.ai/skills/nanda-chapter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nanda-chapter-4fdfef49fa0c445a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "projectnanda.org chapter skill — register an OpenClaw agent with a NANDA chapter, submit signed intents, respond to calls, and render chapter dashboards."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sharathvc23",
+      "userId": "s17akmf344eh0yryp8q4j71ra186bq7n",
+      "displayName": "sharathvc",
+      "image": "https://avatars.githubusercontent.com/u/177432131?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1778259964089,
+      "changelog": "0.2.0 — default to NANDA Chapter Protocol v0.3 signing. Canonical string now binds method, url_path, body, agent_id, timestamp, and a 32-byte per-request nonce. Chapter side (all 5 production chapters) enforces (agent_id, nonce) uniqueness within ≥600 s. v0.2 (ed25519) remains available via --scheme ed25519 for older chapters. Closes the cross-endpoint replay + same-window replay weaknesses flagged in the ClawHub security audit.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a3c5671e0255b87d3ac7f404543a3f79c100a97f3cea609b1c0ba27739f83213"
+}

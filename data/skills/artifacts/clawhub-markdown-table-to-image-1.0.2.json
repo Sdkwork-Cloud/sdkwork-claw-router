@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/markdown-table-to-image@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.markdown_table_to_image",
+  "skill": {
+    "id": 62642,
+    "skillKey": "clawhub-markdown-table-to-image",
+    "name": "Table To Image"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "markdown-table-to-image",
+    "url": "https://clawhub.ai/skills/markdown-table-to-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/markdown-table-to-image-82ef2102948f63b3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将 Markdown 表格转换为清晰图片。当用户说\"表格看不清\"、\"生成图片\"、\"转成图片\"时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bg1avd",
+      "userId": "s17e1m5ac1rppw87gfc2cfare9846fyp",
+      "displayName": "Rao Lin",
+      "image": "https://avatars.githubusercontent.com/u/16436148?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 533,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772699108897,
+      "changelog": "v1.0.2: 版本号修正",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b2c462875479ba91b0bac384c7711edd9515ebfb661754cbdea703ad3c6ba567"
+}

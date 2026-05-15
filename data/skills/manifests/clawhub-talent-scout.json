@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54579,
+  "uuid": "skill-clawhub-talent-scout",
+  "skillKey": "clawhub-talent-scout",
+  "name": "Talent Scout — Competitor Talent Intelligence",
+  "summary": "Steal your competitors' best people — scrape LinkedIn, AI-rank candidates, and generate personalized outreach DMs in one command",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.talent_scout",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Behruamm",
+      "features": [
+        "Steal your competitors' best people — scrape LinkedIn, AI-rank candidates, and generate persona."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/talent-scout@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/90729321?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "talent-scout",
+      "url": "https://clawhub.ai/skills/talent-scout"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "talent-scout",
+    "url": "https://clawhub.ai/skills/talent-scout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/talent-scout-dfe24db02f87574e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/talent-scout@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-talent-scout-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4fecacc4cd3963da45e50e9fbade889d0504757d0e303915b511f2fe6e79652e",
+      "artifactSizeBytes": 2064
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T02:01:49.487Z"
+}

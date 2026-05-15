@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "inflynce-campaign",
+    "displayName": "Inflynce Campaign",
+    "summary": "Create and launch Inflynce Boost campaigns on Base to promote any https HTTPS link by paying USDC rewards to real users based on social influence scores.",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 369,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1773501177807,
+    "updatedAt": 1778308832443
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1773501177807,
+    "changelog": "Inflynce Create Campaign 1.0.0\n\n- Enforces `GRAPHQL_URL` must be exactly `https://boost.inflynce.com/api/graphql` at runtime for added security.\n- Updated documentation to clarify security model, required environment variables, and command usage.\n- Improved structure and instructions for running main scripts (`create_campaign.js`, `pay_fee.js`, `top_up.js`), including support for `--dry-run` mode.\n- README.md was removed; all documentation is now consolidated in SKILL.md.\n- Detailed usage examples, error handling, and best practices for handling USDC payments on Base are provided.\n- Makes clear distinctions between manual and programmatic usage, and provides guidance for supplying private keys and RPC URLs.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "inflynceprotocol",
+    "userId": "s175tad36y1ygp2jd84bxpwvt984b652",
+    "displayName": "Inflynce Protocol",
+    "image": "https://avatars.githubusercontent.com/u/222016158?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.dangerous_exec",
+      "suspicious.env_credential_access",
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.dangerous_exec, suspicious.env_credential_access, suspicious.llm_suspicious (+1 more)",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778308832443
+  }
+}

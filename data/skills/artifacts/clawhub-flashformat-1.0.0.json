@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flashformat@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flashformat",
+  "skill": {
+    "id": 23515,
+    "skillKey": "clawhub-flashformat",
+    "name": "flashformat"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flashformat",
+    "url": "https://clawhub.ai/skills/flashformat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flashformat-4e755765a44019e3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provide five repository-local format conversion scripts (yaml-to-json, json-to-yaml, markdown-to-text, json-minify, yaml-auto-fix) for offline CLI and pipeli..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "phantom5125",
+      "userId": "publishers:phantom5125",
+      "displayName": "GreatHato",
+      "image": "https://avatars.githubusercontent.com/u/25700541?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 438,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772728917302,
+      "changelog": "Initial release of flashformat-local-converters skill.\n\n- Provides five standalone Python scripts for local format conversion: yaml-to-json, json-to-yaml, markdown-to-text, json-minify, and yaml-auto-fix.\n- Designed for offline use, CI pipelines, or batch processing without relying on the FlashFormat API.\n- Supports unified command-line options for flexible input and output handling.\n- Implements both plain text and structured JSON output modes.\n- Includes detailed usage instructions and script functionality map.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b354b0dd9b3de8512f3b48dbf1a774fdd6245eedac5a2cdab70120ad9db8f37a"
+}

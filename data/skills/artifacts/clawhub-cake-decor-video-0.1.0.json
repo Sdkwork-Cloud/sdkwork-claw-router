@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cake-decor-video@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cake_decor_video",
+  "skill": {
+    "id": 34202,
+    "skillKey": "clawhub-cake-decor-video",
+    "name": "Cake Decor Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cake-decor-video",
+    "url": "https://clawhub.ai/skills/cake-decor-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cake-decor-video-95e8ccb9bb12818d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate vertical short videos of cake decorating and pastry finishing (WeryAI): frosting, piping, mirror glaze, and other high-aesthetic handmade beats. Use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zoucdr",
+      "userId": "s17112gmymgcv04spgyd4zzw3583h7ab",
+      "displayName": "parallel world",
+      "image": "https://avatars.githubusercontent.com/u/16458879?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 217,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774068411968,
+      "changelog": "Initial release of cake-decor-video.\n\n- Generate vertical short videos of cake decorating and pastry finishing, including frosting, piping, glaze, and satisfying handmade details.\n- Expands user briefs into full English production prompts detailing shot, lighting, action, and aspect ratio for maximum video quality.\n- Supports text-to-video and image-to-video for cake decorating scenarios with clear workflow and model parameter checks.\n- Requires WERYAI API key and Node.js 18+; outlines environment and API usage in detail.\n- Ensures confirmation of all parameters and full expanded prompt before video generation, with user control over edits.\n- Explicitly documents API parameter constraints, supported models, prompt expansion rules, and intended use cases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1ca87f849e3f71a7cac36468141ff237720e6a44c6532f2ae64a1e44ef01c39a"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29487,
+  "uuid": "skill-clawhub-shopify-seo-audit",
+  "skillKey": "clawhub-shopify-seo-audit",
+  "name": "Shopify Seo Audit",
+  "summary": "Shopify SEO audit agent. Audits store pages for missing meta titles and descriptions, duplicate content, thin product pages, broken internal links, image alt...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shopify_seo_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mguozhen",
+      "features": [
+        "Shopify SEO audit agent",
+        "Audits store pages for missing meta titles and descriptions, duplicate content, thin product pa."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shopify-seo-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1411875?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shopify-seo-audit",
+      "url": "https://clawhub.ai/skills/shopify-seo-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shopify-seo-audit",
+    "url": "https://clawhub.ai/skills/shopify-seo-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shopify-seo-audit-4e885b75fa3dab01.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shopify-seo-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shopify-seo-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f3b55261f8ad4fb43180849015468030884b3146b7d498443aa39e8dc181e527",
+      "artifactSizeBytes": 2619
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T21:43:05.167Z"
+}

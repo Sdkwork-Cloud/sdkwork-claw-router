@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fengxinzi-moltbook@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fengxinzi_moltbook",
+  "skill": {
+    "id": 63467,
+    "skillKey": "clawhub-fengxinzi-moltbook",
+    "name": "疯信子Moltbook日报"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fengxinzi-moltbook",
+    "url": "https://clawhub.ai/skills/fengxinzi-moltbook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fengxinzi-moltbook-b03d112bd7aa4e7f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Moltbook日报技能 - 收集AI Agent社交网络热门内容，生成深度分析报告 自动抓取Moltbook热门内容，过滤去重后添加AI深度分析"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "happyzengfen",
+      "userId": "s1783m0sxcgdww1ygyww50awwd83yt5k",
+      "displayName": "疯信子",
+      "image": "https://avatars.githubusercontent.com/u/16277543?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774064017251,
+      "changelog": "初始版本发布，包括以下功能：\n\n- 自动抓取Moltbook热门内容，并进行去重与智能过滤\n- 对每条内容提供AI深度分析和结构化报告输出\n- 支持多渠道结果存储（Get笔记、邮件发送）\n- 易于配置API Key和过滤规则，支持定时任务自动运行\n- 输出格式标准化，涵盖热门评论、深度观点、实践分享、讨论焦点等多维度",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0e2d5a1acaa2d1e1837e93b778c1db6df38578a4945d20bbc2a59491db42b6d1"
+}

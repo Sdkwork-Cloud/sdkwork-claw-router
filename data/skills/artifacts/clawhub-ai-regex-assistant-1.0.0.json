@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-regex-assistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_regex_assistant",
+  "skill": {
+    "id": 39186,
+    "skillKey": "clawhub-ai-regex-assistant",
+    "name": "Regex Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-regex-assistant",
+    "url": "https://clawhub.ai/skills/ai-regex-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-regex-assistant-d0d927b833ded2a5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered regular expression generation, explanation, testing, debugging, and cross-language conversion. Generate regex from natural language, explain compl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "evolinkai",
+      "userId": "s176k82x7tm60j2kx309p7evxs83j3z7",
+      "displayName": "EvolinkAI",
+      "image": "https://avatars.githubusercontent.com/u/253253881?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776606143598,
+      "changelog": "Initial release of Regex Assistant — AI-powered regex tools in your terminal.\n\n- Generate regex from natural language descriptions with usage examples\n- Explain complex regex patterns component by component\n- Test and debug regex patterns against files and troubleshoot failures\n- Convert regex patterns between multiple programming languages\n- Includes a quick reference cheatsheet for regex syntax (no API key needed)\n- Requires EvoLink API key for AI-powered features; supports Python, JavaScript, Go, Java, Rust, and more",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a469bc0518686f9303183f2cc37654fa7cebfc59df1e06b17208451b79fcb12e"
+}

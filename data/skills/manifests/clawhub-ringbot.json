@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10133,
+  "uuid": "skill-clawhub-ringbot",
+  "skillKey": "clawhub-ringbot",
+  "name": "RingBot",
+  "summary": "Make outbound AI phone calls. Use when asked to call a business, make a phone call, order food by phone, schedule appointments, or any task requiring voice calls. Triggers on \"call\", \"phone\", \"dial\", \"ring\", \"order pizza\", \"make reservatio.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ringbot",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ringbot",
+      "features": [
+        "Make outbound AI phone calls",
+        "Use when asked to call a business, make a phone call, order food by phone, schedule appointment.",
+        "Triggers on \"call\", \"phone\", \"dial\", \"ring\", \"order pizza\", \"make reservation\", \"schedule appoi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ringbot@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2677699?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ringbot",
+      "url": "https://clawhub.ai/skills/ringbot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ringbot",
+    "url": "https://clawhub.ai/skills/ringbot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ringbot-f364ab43f0db4cb0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ringbot@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ringbot-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:17661dc950c990a3cf1b7950c9453ab07ae3349f9acf34733df83016be6ad849",
+      "artifactSizeBytes": 1996
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-28T22:01:11.080Z"
+}

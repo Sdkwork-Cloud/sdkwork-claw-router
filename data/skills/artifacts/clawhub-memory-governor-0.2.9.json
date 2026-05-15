@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-governor@0.2.9",
+  "version": "0.2.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_governor",
+  "skill": {
+    "id": 27758,
+    "skillKey": "clawhub-memory-governor",
+    "name": "Memory Governor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-governor",
+    "url": "https://clawhub.ai/skills/memory-governor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-governor-fd3138d9ee35d9d3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Memory governance kernel for AI agents that complements OpenClaw Dreaming with explicit correction staging, target-class routing, adapter boundaries, and saf..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sakenw",
+      "userId": "s177a0ypdfkj0zvv4r3h29y5ss83tna0",
+      "displayName": "Saken",
+      "image": "https://avatars.githubusercontent.com/u/16665726?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 242,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "0.2.9",
+      "createdAt": 1775519024688,
+      "changelog": "- Added guidance for OpenClaw Dreaming integration to clarify boundaries and avoid duplicate promotion flows.\n- Introduced explicit mention of correction staging, adapter separation, and hardening rules in the skill description.\n- Expanded reference documentation, including a new dreaming-integration guide.\n- Improved rule descriptions around target-class routing and memory promotion.\n- Updated references and docs to refine installation, adapters, host profiles, and integration practices.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8d3539bd6f042be7ccd28605cccf02d20cad44e3ae9cc0568629154507b5a95f"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65487,
+  "uuid": "skill-clawhub-my-stock-watchlist-skill",
+  "skillKey": "clawhub-my-stock-watchlist-skill",
+  "name": "my_stock_watchlist_skill",
+  "summary": "当用户提到“观察列表”或“股票观察”时触发。用于管理钉钉多维表格中的股票观察名单。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_stock_watchlist_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "canonxu",
+      "features": [
+        "当用户提到“观察列表”或“股票观察”时触发。用于管理钉钉多维表格中的股票观察名单。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/my-stock-watchlist-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7338324?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "my-stock-watchlist-skill",
+      "url": "https://clawhub.ai/skills/my-stock-watchlist-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-stock-watchlist-skill",
+    "url": "https://clawhub.ai/skills/my-stock-watchlist-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-stock-watchlist-skill-76d7a705dfca9899.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/my-stock-watchlist-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-my-stock-watchlist-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7df795514e9b53632b0a3cc047fcb6338d7f42e2214f5c159cc210415ad48a27",
+      "artifactSizeBytes": 1924
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T03:14:30.149Z"
+}

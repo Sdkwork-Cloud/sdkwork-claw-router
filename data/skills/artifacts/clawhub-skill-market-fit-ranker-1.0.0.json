@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-market-fit-ranker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_market_fit_ranker",
+  "skill": {
+    "id": 58985,
+    "skillKey": "clawhub-skill-market-fit-ranker",
+    "name": "Skill Market Fit Ranker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-market-fit-ranker",
+    "url": "https://clawhub.ai/skills/skill-market-fit-ranker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-market-fit-ranker-56638092b51f3a87.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "对一批 Skill 选题按高频、低门槛、传播性、ROI 和风险做排序。；use for skills, market-fit, prioritization workflows；do not use for 只按个人偏好排序, 忽略发布风险."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "52yuanchangxing",
+      "userId": "s178sqjkywrs4vbnfcrr7wx7f583gef5",
+      "displayName": "vx：17605205782",
+      "image": "https://avatars.githubusercontent.com/u/39086567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 222,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773974467636,
+      "changelog": "Initial release of skill-market-fit-ranker.\n\n- Ranks a list of skills based on frequency, entry barrier, virality, ROI, and risk.\n- Provides structured outputs: scoring dimensions, sorted results, high-potential and low-priority topics, risk notes, and a suggested roadmap.\n- Explicitly identifies missing information instead of making assumptions.\n- Adheres to clear safety and execution boundaries—outputs are reviewable and non-destructive.\n- Supports both script execution and local template-based workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:716eb0813ecb8d8441aa46c78e9ef62e0a08634cdb4a1c5e42fca2270ea0c0d3"
+}

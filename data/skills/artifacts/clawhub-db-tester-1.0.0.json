@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/db-tester@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.db_tester",
+  "skill": {
+    "id": 40818,
+    "skillKey": "clawhub-db-tester",
+    "name": "Database Tester"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "db-tester",
+    "url": "https://clawhub.ai/skills/db-tester",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/db-tester-f9d7547bad10aea3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Database testing for data integrity, SQL validation, migration verification, and performance. Test CRUD operations, constraints, transactions, stored procedu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhanghengyi1986-afk",
+      "userId": "s173knyfg55hja2f40zjr9egvs84wkbp",
+      "displayName": "zhanghengyi1986-afk",
+      "image": "https://avatars.githubusercontent.com/u/266693384?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776221512275,
+      "changelog": "Initial release: CRUD/constraint/transaction/migration testing, MySQL+PostgreSQL, slow query analysis",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:800061aae93a7fab6f32e4a4c60a03275efab7cd2fa9017be54b77ae72e77dee"
+}

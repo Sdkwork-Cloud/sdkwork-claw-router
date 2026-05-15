@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/joule-dao@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.joule_dao",
+  "skill": {
+    "id": 17628,
+    "skillKey": "clawhub-joule-dao",
+    "name": "JOULE DAO"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "joule-dao",
+    "url": "https://clawhub.ai/skills/joule-dao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/joule-dao-0fb3048d03428a22.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with JOULE DAO on Base: track treasury, view proposals, vote, discuss, check balances, join as member, and earn JOULE for productive work contributi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "echo-autonomous",
+      "userId": "publishers:echo-autonomous",
+      "displayName": "echo-autonomous",
+      "image": "https://avatars.githubusercontent.com/u/258002730?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 760,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771459323943,
+      "changelog": "Initial launch: JOULE DAO skill for the energy-backed agent token on Base. Vote, discuss, earn JOULE through Proof of Productive Work.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c63ce66dbc02cbbe9efb74bb2325d28f65827388c3f382f54a7a135a06861fd2"
+}

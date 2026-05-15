@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawapp-creator@0.1.7",
+  "version": "0.1.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawapp_creator",
+  "skill": {
+    "id": 27730,
+    "skillKey": "clawhub-clawapp-creator",
+    "name": "Clawapp Creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawapp-creator",
+    "url": "https://clawhub.ai/skills/clawapp-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawapp-creator-61c82c8027d9f3e8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build or adapt static front-end apps and mini-games so they match the Nima Tech Space upload format, optionally wire the platform LLM API, package a complian..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nimachu",
+      "userId": "s176sa0panxanbc9h2g1sxajrs83kjbr",
+      "displayName": "Nima Chu",
+      "image": "https://avatars.githubusercontent.com/u/210636628?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 341,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "0.1.7",
+      "createdAt": 1774233208788,
+      "changelog": "**Adds game-specific guidelines, persistent storage utility, and new account workflow script.**\n\n- New: Added `assets/clawspace-game-storage.js` for simple local game data (e.g. best score) in game starters.\n- New: Added `scripts/check_clawspace_account.py` to check active CLAWSPACE account before uploading.\n- Improved: Game projects now get specific suggestions for polish and lightweight persistence (not enforced for non-game apps).\n- Changed: Starter games generate lighter cover/icon assets and include the new storage utility.\n- Updated documentation in SKILL.md to reflect new workflows, defaults, and usage tips.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:03279b54d373e58d80accd4037059f2995377350ebafc68794b72f679d0bd46c"
+}

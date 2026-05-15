@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaoai-bridge@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaoai_bridge",
+  "skill": {
+    "id": 68767,
+    "skillKey": "clawhub-xiaoai-bridge",
+    "name": "xiaoai-bridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaoai-bridge",
+    "url": "https://clawhub.ai/skills/xiaoai-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaoai-bridge-a87dbfef54e0e315.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小米小爱音箱语音指令桥接。截取小爱音箱的语音消息，转换为 AI 助手指令，并通过 TTS 回复。支持触发词过滤、自动去重、后台监听。适用于通过小爱音箱语音控制 OpenClaw 助手、智能家居联动、语音任务执行等场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "warm-winter",
+      "userId": "s1706kw3dybsa1n2gprfzm0egs85wx0f",
+      "displayName": "冬暖夏凉",
+      "image": "https://avatars.githubusercontent.com/u/155865306?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 895,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771217180575,
+      "changelog": "Initial release of xiaoai-bridge skill.\n\n- Enables voice command integration with Xiaomi XiaoAi speakers for OpenClaw assistant and smart home scenarios.\n- Supports real-time voice message polling, trigger word filtering, duplicate message prevention, and background listening.\n- Converts XiaoAi voice input to AI assistant commands; replies via TTS on the speaker.\n- Provides simple configuration via environment variables and usage examples for integration and TTS playback.\n- Includes troubleshooting tips, best practices, and complete code samples for seamless adoption.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:72aec001b79d5f88190ab392a0c7b5db95dde762ea6b24b88e386f2af2a0eb60"
+}

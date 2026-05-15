@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/task-todo@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_todo",
+  "skill": {
+    "id": 15144,
+    "skillKey": "clawhub-task-todo",
+    "name": "Task ToDo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-todo",
+    "url": "https://clawhub.ai/skills/task-todo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-todo-2e1f9700ea08c746.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage tasks with persistent storage, supporting creation, retrieval, updates, deletion, filtering by status or priority, and status tracking via SQLite."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "makkzone",
+      "userId": "s17929tv5gkjxsem66rjb5mp6x848r8d",
+      "displayName": "Manojkumar Kotakonda",
+      "image": "https://avatars.githubusercontent.com/u/44414430?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1065,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770864301320,
+      "changelog": "Initial release of the Task-Todo skill.\n\n- Provides persistent task storage and management using an SQLite database.\n- Supports task creation, retrieval, filtering, updating, and deletion with status and priority fields.\n- Includes CLI commands for all major operations.\n- Automatically manages creation and update timestamps.\n- Validates task status and priority at the database level; uses only Python built-in dependencies.\n- Returns structured responses for all operations.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e674d198c935ff683a58a404a91cf457ef6865971957f0d7008e04713d4deed3"
+}

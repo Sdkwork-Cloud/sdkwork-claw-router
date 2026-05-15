@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60771,
+  "uuid": "skill-clawhub-garmin-trail-running-training-plan",
+  "skillKey": "clawhub-garmin-trail-running-training-plan",
+  "name": "Garmin Trail Running Roadmap & Training Plan",
+  "summary": "根据佳明(Garmin)运动数据和比赛GPX轨迹，自动化制作专业越野赛路书、动态训练计划，并同步至系统日历。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.garmin_trail_running_training_plan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mtroymatt",
+      "features": [
+        "根据佳明(Garmin)运动数据和比赛GPX轨迹，自动化制作专业越野赛路书、动态训练计划，并同步至系统日历。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/garmin-trail-running-training-plan@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/125783854?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "garmin-trail-running-training-plan",
+      "url": "https://clawhub.ai/skills/garmin-trail-running-training-plan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "garmin-trail-running-training-plan",
+    "url": "https://clawhub.ai/skills/garmin-trail-running-training-plan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/garmin-trail-running-training-plan-92298c688394a89b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/garmin-trail-running-training-plan@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-garmin-trail-running-training-plan-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:37ff6b33dc0a014cb2ecb4b09fca4855ff2d3dc483f3d1067d01d05d98709852",
+      "artifactSizeBytes": 2470
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T04:02:04.125Z"
+}

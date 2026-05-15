@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clean-web-fetch@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clean_web_fetch",
+  "skill": {
+    "id": 61032,
+    "skillKey": "clawhub-clean-web-fetch",
+    "name": "clean-web-fetch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clean-web-fetch",
+    "url": "https://clawhub.ai/skills/clean-web-fetch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clean-web-fetch-9fd7e0ca188587b3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "获取干净、可读的现代网页正文内容，支持微信公众号文章抓取与尾部噪音清洗，减少无用信息与 token 消耗；适合新闻、博客、公告及许多普通 fetch 不稳定、存在反爬或动态渲染干扰的网页。Clean readable web fetch for modern pages, with WeChat cleanup,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jllyzzd2023",
+      "userId": "publishers:jllyzzd2023",
+      "displayName": "晨冬",
+      "image": "https://avatars.githubusercontent.com/u/142871762?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 922,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773001444648,
+      "changelog": "Initial publish",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f8f7ac20a1009dd3e84b1093db8339f0ff9bbf427e000e4d3ecc6d66ee63ab0b"
+}

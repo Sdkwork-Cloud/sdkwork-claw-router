@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67025,
+  "uuid": "skill-clawhub-self-evolution-pro",
+  "skillKey": "clawhub-self-evolution-pro",
+  "name": "Self Evolution Pro",
+  "summary": "增强型自我进化技能，集成自动技能提取、根因分析、知识图谱、跨会话同步、自动晋级机制。触发词：'总结这个经验'、'保存为技能'、'自我进化'、'学习这个'、'记录教训'。相比原版self-improving-agent，新增自动提取、多维度分析、进化追踪功能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_evolution_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "windy-001-crypto",
+      "features": [
+        "增强型自我进化技能，集成自动技能提取、根因分析、知识图谱、跨会话同步、自动晋级机制。触发词：'总结这个经验'、'保存为技能'、'自我进化'、'学习这个'、'记录教训'。相比原版self-im."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/self-evolution-pro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258460660?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "self-evolution-pro",
+      "url": "https://clawhub.ai/skills/self-evolution-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-evolution-pro",
+    "url": "https://clawhub.ai/skills/self-evolution-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-evolution-pro-cac08213b1bc4248.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/self-evolution-pro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-self-evolution-pro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:accc7b41321c93e5908f36da804bdca8c9e7ee37be9bcf1a176825d43aa8566b",
+      "artifactSizeBytes": 2757
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T08:41:21.471Z"
+}

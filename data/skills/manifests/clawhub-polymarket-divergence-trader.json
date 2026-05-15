@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47436,
+  "uuid": "skill-clawhub-polymarket-divergence-trader",
+  "skillKey": "clawhub-polymarket-divergence-trader",
+  "name": "Polymarket Divergence Trader",
+  "summary": "Trades a Simmer-indexed market when your estimated probability diverges from the live market price, with dry-run on sim by default, context checks, reasoning...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_divergence_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ssj124",
+      "features": [
+        "Trades a Simmer-indexed market when your estimated probability diverges from the live market pr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-divergence-trader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83407521?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-divergence-trader",
+      "url": "https://clawhub.ai/skills/polymarket-divergence-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-divergence-trader",
+    "url": "https://clawhub.ai/skills/polymarket-divergence-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-divergence-trader-f05b1af442300371.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-divergence-trader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-divergence-trader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9467e03e468003f28fd527b2d774a980375056a25693e4819ba4167540a16506",
+      "artifactSizeBytes": 2444
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T02:27:59.644Z"
+}

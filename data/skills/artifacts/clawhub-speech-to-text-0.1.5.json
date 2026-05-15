@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/speech-to-text@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.speech_to_text",
+  "skill": {
+    "id": 9826,
+    "skillKey": "clawhub-speech-to-text",
+    "name": "Speech To Text"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "speech-to-text",
+    "url": "https://clawhub.ai/skills/speech-to-text",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/speech-to-text-f9b954eac6019216.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transcribe audio to text with Whisper models via inference.sh CLI. Models: Fast Whisper Large V3, Whisper V3 Large. Capabilities: transcription, translation,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "okaris",
+      "userId": "s1737xapsjy8k5qnagtfyf5nrx85t72x",
+      "displayName": "Ömer Karışman",
+      "image": "https://avatars.githubusercontent.com/u/1448702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3000,
+      "installsAllTime": 34,
+      "installsCurrent": 33,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1771403390089,
+      "changelog": "- Updated documentation for clear setup instructions using inference.sh CLI.\n- Detailed available Whisper model options, usage examples, and input formats.\n- Added new sections on extracting audio from video, translation, and video subtitle workflows.\n- Enhanced guidance for supported languages and output structure.\n- Improved 'Related Skills' for easy access to complementary AI tools.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7e1b4ec41a596bf01b1d418ae8833203d1bf703bd8dbffb31a44521a1e6e1497"
+}

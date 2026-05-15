@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23917,
+  "uuid": "skill-clawhub-upload-clawhub",
+  "skillKey": "clawhub-upload-clawhub",
+  "name": "Upload Clawhub",
+  "summary": "Execute DeFi transactions on BSC via SHLL AgentNFA. The AI handles all commands and users only need to chat.",
+  "version": "6.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.upload_clawhub",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kledx",
+      "features": [
+        "Execute DeFi transactions on BSC via SHLL AgentNFA",
+        "The AI handles all commands and users only need to chat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/upload-clawhub@6.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259126602?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "upload-clawhub",
+      "url": "https://clawhub.ai/skills/upload-clawhub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "upload-clawhub",
+    "url": "https://clawhub.ai/skills/upload-clawhub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/upload-clawhub-f34f7f1755569d7f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/upload-clawhub@6.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-upload-clawhub-6.0.5.json",
+      "version": "6.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:495eb1f3c4a9f0724e0db39a2639b850c10b65405576502d0f1857ac71bcf1ca",
+      "artifactSizeBytes": 1876
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T14:30:00.895Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skylv-diff-viewer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_diff_viewer",
+  "skill": {
+    "id": 43586,
+    "skillKey": "clawhub-skylv-diff-viewer",
+    "name": "Skylv Diff Viewer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-diff-viewer",
+    "url": "https://clawhub.ai/skills/skylv-diff-viewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-diff-viewer-a0be356a6dcacf39.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates beautiful side-by-side diff comparisons for code review"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776487028994,
+      "changelog": "- Added frontmatter section with description, keywords, name, and triggers at the top of SKILL.md.\n- Introduced a new \"Usage\" section outlining installation, configuration, and usage steps.\n- No code or feature changes; documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d2251427ab5a373126969e01bc6836966193571f0186f7c3b0006ac522b70a86"
+}

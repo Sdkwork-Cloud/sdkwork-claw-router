@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/speech-recognition-forqq@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.speech_recognition_forqq",
+  "skill": {
+    "id": 49244,
+    "skillKey": "clawhub-speech-recognition-forqq",
+    "name": "Speech Recognition"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "speech-recognition-forqq",
+    "url": "https://clawhub.ai/skills/speech-recognition-forqq",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/speech-recognition-forqq-93b3c100de4e666b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert QQ voice messages in AMR/SILK format to text using pysilk decoding and faster-whisper transcription."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yvanboyang",
+      "userId": "s175jqk2rr5b5t2z2hdj0sfren85t1jh",
+      "displayName": "yvanboyang",
+      "image": "https://avatars.githubusercontent.com/u/32995360?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 84,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777544814452,
+      "changelog": "Initial release of Speech Recognition skill for AMR/SILK:\n\n- Converts QQ/AMR/SILK audio files to text using pysilk and faster-whisper.\n- Simple Python API: transcribe_audio(\"/path/to/audio.amr\").\n- Supports QQ .amr (SILK_V3), amr, amrnb, amrwb formats.\n- Includes setup instructions and model download steps.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:79adc6448a996f248d023fe177326da7c012043430d11cb618e6d299ddcda3e0"
+}

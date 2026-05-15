@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64965,
+  "uuid": "skill-clawhub-karpathy-guidelines",
+  "skillKey": "clawhub-karpathy-guidelines",
+  "name": "Karpathy Guidelines",
+  "summary": "基于 Andrej Karpathy 观察的编码指南。用于编写、审查或重构代码时，避免过度复杂化、进行精准修改、表面化假设，并定义可验证的成功标准。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.karpathy_guidelines",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wasinc",
+      "features": [
+        "基于 Andrej Karpathy 观察的编码指南。用于编写、审查或重构代码时，避免过度复杂化、进行精准修改、表面化假设，并定义可验证的成功标准。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/karpathy-guidelines@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/197626322?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "karpathy-guidelines",
+      "url": "https://clawhub.ai/skills/karpathy-guidelines"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "karpathy-guidelines",
+    "url": "https://clawhub.ai/skills/karpathy-guidelines",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/karpathy-guidelines-a059725b571d5dd9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/karpathy-guidelines@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-karpathy-guidelines-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a734d2e6882b8f2f92ec10989a9589b832e92ee08c419c51d86b68364626f161",
+      "artifactSizeBytes": 1990
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T12:32:38.091Z"
+}

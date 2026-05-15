@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23202,
+  "uuid": "skill-clawhub-kyc-vault",
+  "skillKey": "clawhub-kyc-vault",
+  "name": "KYC Vault",
+  "summary": "Automates KYC identity verification by securely managing and submitting identity documents. Always asks user permission before accessing or uploading any fil...",
+  "version": "0.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kyc_vault",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "seamao",
+      "features": [
+        "Automates KYC identity verification by securely managing and submitting identity documents",
+        "Always asks user permission before accessing or uploading any fil..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kyc-vault@0.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34310148?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kyc-vault",
+      "url": "https://clawhub.ai/skills/kyc-vault"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kyc-vault",
+    "url": "https://clawhub.ai/skills/kyc-vault",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kyc-vault-f5f169f4fec11ddb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kyc-vault@0.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-kyc-vault-0.2.2.json",
+      "version": "0.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:166a633142968765bd720a0ee390e5266932908334fc76339099ee8eee1acdea",
+      "artifactSizeBytes": 2077
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T08:24:21.767Z"
+}

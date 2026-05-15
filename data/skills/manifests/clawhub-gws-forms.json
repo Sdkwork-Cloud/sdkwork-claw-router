@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17548,
+  "uuid": "skill-clawhub-gws-forms",
+  "skillKey": "clawhub-gws-forms",
+  "name": "Gws Forms",
+  "summary": "Read and write Google Forms.",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gws_forms",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Read and write Google Forms."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gws-forms@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gws-forms",
+      "url": "https://clawhub.ai/skills/gws-forms"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gws-forms",
+    "url": "https://clawhub.ai/skills/gws-forms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gws-forms-c9102e081656a546.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gws-forms@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-gws-forms-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b7a56079faa2da607ff3a417c4988f50568e36927c4a49d12be79ad28a1b30ea",
+      "artifactSizeBytes": 1799
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:33:55.716Z"
+}

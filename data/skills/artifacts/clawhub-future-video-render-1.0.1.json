@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/future-video-render@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.future_video_render",
+  "skill": {
+    "id": 36349,
+    "skillKey": "clawhub-future-video-render",
+    "name": "Future Video Render"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "future-video-render",
+    "url": "https://clawhub.ai/skills/future-video-render",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/future-video-render-ac4f347c6fb75c7d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create polished multi-shot videos with the Future Video Studio MCP, using either an account API key or no-account Link pay-per-render quotes. Use when an Ope..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ariadne-coil",
+      "userId": "s17dz0kbzjbr8gbf8b467jvsqn84qckt",
+      "displayName": "Ariadne Cyber",
+      "image": "https://avatars.githubusercontent.com/u/257156613?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 105,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778086295298,
+      "changelog": "- Added requirement for explicit user approval before submitting wallet-backed renders in account mode.\n- Clarified that an API key is not blanket permission; always confirm with the user prior to spending wallet credits.\n- Updated instructions to display render summary, requested duration/resolution, and cost estimate before account-mode submission.\n- Specified that pay-per-render mode should be used if the user wants to see a price before paying.\n- Tightened default environment usage: only use trusted local or staging environments if explicitly configured.\n- Emphasized user privacy: never request raw card details; payments must go through Link or approved payment tools.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:890bc0636d2dc73a9c20bbe3daad50a301c01ef41199d036a91b392d7cec413b"
+}

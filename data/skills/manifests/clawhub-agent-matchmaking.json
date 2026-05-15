@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35228,
+  "uuid": "skill-clawhub-agent-matchmaking",
+  "skillKey": "clawhub-agent-matchmaking",
+  "name": "Agent Matchmaking",
+  "summary": "Cross-platform agent discovery and trust-weighted matching for the autonomous agent economy. Capability profiles, reputation-based ranking, compatibility sco...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_matchmaking",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alexfleetcommander",
+      "features": [
+        "Cross-platform agent discovery and trust-weighted matching for the autonomous agent economy",
+        "Capability profiles, reputation-based ranking, compatibility sco..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-matchmaking@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269201541?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-matchmaking",
+      "url": "https://clawhub.ai/skills/agent-matchmaking"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-matchmaking",
+    "url": "https://clawhub.ai/skills/agent-matchmaking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-matchmaking-dccc954036bc3b05.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-matchmaking@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-matchmaking-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9b850b320125d892f70d3098d9120d7e5c5b4d45ba062fc78e628d6da5618a08",
+      "artifactSizeBytes": 1991
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T01:50:16.085Z"
+}

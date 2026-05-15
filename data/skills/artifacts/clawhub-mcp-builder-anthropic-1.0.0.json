@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mcp-builder-anthropic@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcp_builder_anthropic",
+  "skill": {
+    "id": 19899,
+    "skillKey": "clawhub-mcp-builder-anthropic",
+    "name": "Mcp Builder Anthropic"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcp-builder-anthropic",
+    "url": "https://clawhub.ai/skills/mcp-builder-anthropic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcp-builder-anthropic-ce6cb72223346c35.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use whe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pupuking723",
+      "userId": "publishers:pupuking723",
+      "displayName": "pupuking723",
+      "image": "https://avatars.githubusercontent.com/u/169750518?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 575,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773502657990,
+      "changelog": "mcp-builder-anthropic 1.0.0\n\n- Initial release of the MCP server development guide.\n- Covers all phases: research, planning, implementation, review/testing, and evaluation creation.\n- Includes best practices for tool design, naming, error handling, and evaluation question writing.\n- Provides structured workflows and links to core and framework-specific documentation.\n- Offers language-specific advice for TypeScript and Python MCP server development.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d64527f6068fbb86678ef3ff47632c71ded9293f4959557ddd994e5b6acca610"
+}

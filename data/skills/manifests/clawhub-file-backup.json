@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70773,
+  "uuid": "skill-clawhub-file-backup",
+  "skillKey": "clawhub-file-backup",
+  "name": "File Backup",
+  "summary": "修改文件前的自动备份工具。 当需要修改重要文件时，先备份再修改，改完后让用户检查，确认无误后删除备份。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_backup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jiaqi-Guo-0114",
+      "features": [
+        "修改文件前的自动备份工具。 当需要修改重要文件时，先备份再修改，改完后让用户检查，确认无误后删除备份。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/file-backup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264645355?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "file-backup",
+      "url": "https://clawhub.ai/skills/file-backup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-backup",
+    "url": "https://clawhub.ai/skills/file-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-backup-d2a3ebf55a9b2869.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/file-backup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-file-backup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:16940d606eaff2edc4275addd70c3d2b6b1f4e202dc003fe044aa322a81f3b9c",
+      "artifactSizeBytes": 1868
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T00:29:32.942Z"
+}

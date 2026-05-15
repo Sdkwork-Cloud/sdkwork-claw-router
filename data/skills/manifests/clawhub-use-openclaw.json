@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36853,
+  "uuid": "skill-clawhub-use-openclaw",
+  "skillKey": "clawhub-use-openclaw",
+  "name": "how to use openclaw",
+  "summary": "Explain how to use OpenClaw in a local environment. Use when the user asks how to find OpenClaw config or workspace files, how to add or inspect skills, how...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.use_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Selena",
+      "features": [
+        "Explain how to use OpenClaw in a local environment",
+        "Use when the user asks how to find OpenClaw config or workspace files, how to add or inspect sk."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/use-openclaw@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28377813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "use-openclaw",
+      "url": "https://clawhub.ai/skills/use-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "use-openclaw",
+    "url": "https://clawhub.ai/skills/use-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/use-openclaw-98a6e1a14bf02d2b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/use-openclaw@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-use-openclaw-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:31dc605aa77386e61678f86b89a7d402bbf25b50d441c19a0cbd9f74738ff454",
+      "artifactSizeBytes": 2406
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T13:32:30.556Z"
+}

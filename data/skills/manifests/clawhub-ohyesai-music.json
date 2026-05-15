@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57443,
+  "uuid": "skill-clawhub-ohyesai-music",
+  "skillKey": "clawhub-ohyesai-music",
+  "name": "音乐生成",
+  "summary": "Generate custom music tracks (vocal or instrumental) via OhYesAI asynchronously.",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ohyesai_music",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bajie-git",
+      "features": [
+        "Generate custom music tracks (vocal or instrumental) via OhYesAI asynchronously."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ohyesai-music@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63085735?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ohyesai-music",
+      "url": "https://clawhub.ai/skills/ohyesai-music"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ohyesai-music",
+    "url": "https://clawhub.ai/skills/ohyesai-music",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ohyesai-music-531322c3ed3f30c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ohyesai-music@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-ohyesai-music-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:38bd7be722a3b1fed8e234a21e68b95b38f56cf6f6350cef572db38e690dd46f",
+      "artifactSizeBytes": 2063
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T06:27:02.578Z"
+}

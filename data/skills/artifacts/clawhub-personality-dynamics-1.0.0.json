@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/personality-dynamics@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personality_dynamics",
+  "skill": {
+    "id": 14781,
+    "skillKey": "clawhub-personality-dynamics",
+    "name": "Personality Dynamics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personality-dynamics",
+    "url": "https://clawhub.ai/skills/personality-dynamics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personality-dynamics-0095b5e393b5c939.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adapts OpenClaw agents by learning user interaction patterns, switching personas by context, and evolving personality weekly."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ngmeyer",
+      "userId": "publishers:ngmeyer",
+      "displayName": "Neal Meyer",
+      "image": "https://avatars.githubusercontent.com/u/3868701?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1060,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771046286884,
+      "changelog": "- Initial release of personality-dynamics for OpenClaw agents.\n- Enables dynamic personality evolution based on user interaction patterns.\n- Supports adaptive tone, explicit persona modes (Professional, Creative, Casual, Focus), and weekly evolution suggestions.\n- New commands for initialization, persona generation, pattern analysis, evolution reporting, and mode switching.\n- Easy setup and configuration through OpenClaw.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:41725d944cc526721d6f81a4eeb39ab525a6bf8f8db4c3835b7073ca1fa7d18e"
+}

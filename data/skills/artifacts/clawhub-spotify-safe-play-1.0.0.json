@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/spotify-safe-play@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spotify_safe_play",
+  "skill": {
+    "id": 38708,
+    "skillKey": "clawhub-spotify-safe-play",
+    "name": "Spotify Safe Play"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spotify-safe-play",
+    "url": "https://clawhub.ai/skills/spotify-safe-play",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spotify-safe-play-e4e214d952972f05.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Safer Spotify playback for OpenClaw on setups where direct spogo play is unreliable."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "surdragon-design",
+      "userId": "s173c23c87a9qxj8t6dv2tzw6h83kvvf",
+      "displayName": "surdragon-design",
+      "image": "https://avatars.githubusercontent.com/u/261763033?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "v0.1.0",
+      "createdAt": 1774038521078,
+      "changelog": "Initial public release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a4d83066df414d6508ee31a24586f754a31f57acc455862fcb34d17166d4c340"
+}

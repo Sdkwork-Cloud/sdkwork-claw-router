@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-face@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_face",
+  "skill": {
+    "id": 49303,
+    "skillKey": "clawhub-ai-video-face",
+    "name": "Ai Video Face"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-face",
+    "url": "https://clawhub.ai/skills/ai-video-face",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-face-03b09f618570882e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 30-second talking head video clip into 1080p face-edited videos just by typing what you need. Whether it's replacing or enhancing faces in video clips..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 82,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777438555107,
+      "changelog": "AI Video Face launches with seamless face swapping/editing in videos using a simple, chat-based workflow.\n\n- Instantly edit or swap faces in 30-second video clips—just describe your edits.\n- No manual timeline work or export settings; easy upload-to-download in 1–2 minutes.\n- Handles user authentication, session management, and cloud GPU rendering automatically.\n- Built-in handling for upload, export, credit check, and session state requests.\n- Returns high-quality 1080p MP4 videos with support for other popular formats.\n- Offers clear error handling, session state recovery, and helpful workflow tips.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f0d3da407121cd5d086bf13932d851b8dc231c5220657625d3a4ea4de7f005fd"
+}

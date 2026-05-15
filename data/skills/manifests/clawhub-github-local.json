@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57829,
+  "uuid": "skill-clawhub-github-local",
+  "skillKey": "clawhub-github-local",
+  "name": "Github Local",
+  "summary": "Interact with GitHub using the `gh` CLI. Use `gh issue`, `gh pr`, `gh run`, and `gh api` for issues, PRs, CI runs, and advanced queries.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_local",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "morrison230",
+      "features": [
+        "Interact with GitHub using the `gh` CLI",
+        "Use `gh issue`, `gh pr`, `gh run`, and `gh api` for issues, PRs, CI runs, and advanced queries."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-local@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/120681849?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-local",
+      "url": "https://clawhub.ai/skills/github-local"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-local",
+    "url": "https://clawhub.ai/skills/github-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-local-be4f78be0c66d3f2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-local@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-local-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:17f4b539a26d41f1b269bc8010fb434c527e61d3f05c04008503f9ce441ee69d",
+      "artifactSizeBytes": 2212
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T18:12:39.240Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15695,
+  "uuid": "skill-clawhub-json-repair-kit",
+  "skillKey": "clawhub-json-repair-kit",
+  "name": "Json Repair Kit",
+  "summary": "Repair malformed JSON files by normalizing them through Node.js evaluation. Use this to fix trailing commas, single quotes, unquoted keys, or other common sy...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.json_repair_kit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WANGJUNJIE",
+      "features": [
+        "Repair malformed JSON files by normalizing them through Node.js evaluation",
+        "Use this to fix trailing commas, single quotes, unquoted keys, or other common sy..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/json-repair-kit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32323900?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "json-repair-kit",
+      "url": "https://clawhub.ai/skills/json-repair-kit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "json-repair-kit",
+    "url": "https://clawhub.ai/skills/json-repair-kit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/json-repair-kit-d68183962a6ba591.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/json-repair-kit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-json-repair-kit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ce5443f6617f6b199a94882622b10e53cc44d2ddeff0469c7230f163b931b6b",
+      "artifactSizeBytes": 2289
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T21:35:59.934Z"
+}

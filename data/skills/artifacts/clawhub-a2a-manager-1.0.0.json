@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/a2a-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a2a_manager",
+  "skill": {
+    "id": 20956,
+    "skillKey": "clawhub-a2a-manager",
+    "name": "A2a Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a2a-manager",
+    "url": "https://clawhub.ai/skills/a2a-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a2a-manager-f4efa25d91c35159.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage agent creation, Discord channels/roles, agent-to-agent task coordination, sub-agent spawning, A2A_MAP updates, and Notion-based task workflows."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nyrosveil",
+      "userId": "s173b6e7n9d6bbwmcff3awg7z583hhs3",
+      "displayName": "Cuong Pahm",
+      "image": "https://avatars.githubusercontent.com/u/167317755?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 519,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772606388151,
+      "changelog": "A2A Manager 1.0.0 - Initial Release\n\n- Introduces a skill for managing agent-to-agent coordination and Discord resources.\n- Supports creating and managing agents, spawning/disposal of specialist sub-agents, and binding agents to Discord channels.\n- Provides task workflow integration with Notion, including task board setup and management.\n- Implements versioned management and validation for A2A_MAP, with quick command-line actions.\n- Offers Discord category/channel/role management via dedicated scripts.\n- Includes Vietnamese descriptions and clear trigger phrases for each core action.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:71dccc1205be739ef84c65b22e70f8787927c7b137c9a8cff609f5886d4c79c7"
+}

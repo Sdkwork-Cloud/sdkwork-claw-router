@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22870,
+  "uuid": "skill-clawhub-scenario-war-room",
+  "skillKey": "clawhub-scenario-war-room",
+  "name": "Scenario War Room",
+  "summary": "Cross-functional what-if modeling for cascading multi-variable scenarios. Unlike single-assumption stress testing, this models compound adversity across all...",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scenario_war_room",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alireza Rezvani",
+      "features": [
+        "Cross-functional what-if modeling for cascading multi-variable scenarios",
+        "Unlike single-assumption stress testing, this models compound adversity across all..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/scenario-war-room@2.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5697919?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "scenario-war-room",
+      "url": "https://clawhub.ai/skills/scenario-war-room"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scenario-war-room",
+    "url": "https://clawhub.ai/skills/scenario-war-room",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scenario-war-room-4aa117f6767109b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/scenario-war-room@2.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-scenario-war-room-2.1.1.json",
+      "version": "2.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:98d51f273d52cf8f13c74018d7a57e1a20eafff35af230dabe3fc67e02694f56",
+      "artifactSizeBytes": 1940
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T00:35:55.038Z"
+}

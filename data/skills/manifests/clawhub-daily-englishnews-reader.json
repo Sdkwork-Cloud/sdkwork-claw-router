@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61951,
+  "uuid": "skill-clawhub-daily-englishnews-reader",
+  "skillKey": "clawhub-daily-englishnews-reader",
+  "name": "Daily-EnglishNews-Reader",
+  "summary": "单次生成符合i+1学习法的英语阅读材料，自动适配CEFR难度，生成飞书云文档",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_englishnews_reader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "赖余轩",
+      "features": [
+        "单次生成符合i+1学习法的英语阅读材料，自动适配CEFR难度，生成飞书云文档"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-englishnews-reader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/151629301?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-englishnews-reader",
+      "url": "https://clawhub.ai/skills/daily-englishnews-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-englishnews-reader",
+    "url": "https://clawhub.ai/skills/daily-englishnews-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-englishnews-reader-9dd77bba2bf89ace.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-englishnews-reader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-englishnews-reader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2bda1857c451b698926eae38df2d708ea79d59d06274f146b5a507d88aaeabf3",
+      "artifactSizeBytes": 1883
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T10:17:10.200Z"
+}

@@ -1,248 +1,431 @@
-use std::str::FromStr;
-use std::sync::atomic::{AtomicU64, Ordering};
+use std::sync::Arc;
 use std::time::{SystemTime, UNIX_EPOCH};
 
 use axum::body::Body;
 use axum::http::{Request, StatusCode};
-use sdkwork_claw_config::DatabaseConfig;
-use sdkwork_claw_test_support::{
-    api_key_security_config, app_session_bearer_token, app_session_config, payment_webhook_config,
-    trusted_request_subject, trusted_subject_config,
+use sdkwork_claw_product::application::EntityUuidGenerator;
+use sdkwork_claw_product::domain::{DomainError, DomainResult};
+use sdkwork_claw_product::ports::{
+    CreateForumCommentCommand, CreateForumFeedCommand, ForumCommandFuture,
+    ForumCommentCommandStore, ForumCommentDetail, ForumCommentItem, ForumCommentPage,
+    ForumCommentReadStore, ForumCommentStatistics, ForumFeedCommandStore, ForumFeedItem,
+    ForumFeedQuery, ForumFeedReadStore, ForumOverview, ForumOverviewSource, ForumOverviewStats,
+    ForumReadFuture, ForumSubject,
 };
-use sqlx::sqlite::{SqliteConnectOptions, SqlitePoolOptions};
+use sdkwork_claw_test_support::{
+    app_session_config, app_session_dual_token_headers, trusted_request_subject,
+    trusted_subject_config,
+};
 use tower::ServiceExt;
 
-static DB_SEQUENCE: AtomicU64 = AtomicU64::new(0);
-
 #[tokio::test]
-async fn database_config_forum_route_persists_plus_feeds_and_comments_contract() {
-    let database_url = unique_sqlite_url();
-    let router =
-        sdkwork_claw_app_api::router_with_database_config_api_key_trusted_subject_and_app_session_config(
-            DatabaseConfig::from_url_with_max_connections(database_url.as_str(), 1).unwrap(),
-            api_key_security_config().unwrap(),
-            trusted_subject_config().unwrap(),
-            app_session_config().unwrap(),
-            payment_webhook_config().unwrap(),
-        )
-        .await
-        .unwrap();
+async fn app_api_forum_boundary_allows_public_reads_and_public_publishing_while_user_actions_need_subject(
+) {
+    let feed_store = Arc::new(TestForumStore);
+    let comment_store = feed_store.clone();
+    let router = sdkwork_claw_app_api::app_forum_router_with_store_and_subject_boundary(
+        feed_store.clone(),
+        feed_store.clone(),
+        comment_store.clone(),
+        comment_store,
+        trusted_subject_config().unwrap(),
+        app_session_config().unwrap(),
+    );
 
-    let unauthenticated_response = router
+    let public_list_response = router
         .clone()
         .oneshot(
             Request::builder()
                 .method("GET")
-                .uri("/app/v3/api/feeds/list")
+                .uri("/app/v3/api/content/feeds")
                 .body(Body::empty())
                 .unwrap(),
         )
         .await
         .unwrap();
-    assert_eq!(StatusCode::UNAUTHORIZED, unauthenticated_response.status());
+    assert_eq!(StatusCode::OK, public_list_response.status());
 
-    let feed_payload = request_json(
-        router.clone(),
-        app_session_request(
-            "POST",
-            "/app/v3/api/feeds",
-            json_body(
-                r#"{
-                    "title": "Provider fallback patterns",
-                    "content": "How should Claw Router handle model provider failover?",
-                    "categoryId": 1001,
-                    "images": ["https://cdn.sdkwork.com/forum/failover.png"],
-                    "tags": ["routing", "fallback"],
-                    "source": "community",
-                    "sourceUrl": "https://sdkwork.com/forum/provider-fallback"
-                }"#,
-            ),
-            forum_tenant_id(),
-            user_organization_id(),
-            forum_user_id(),
-        ),
-    )
-    .await;
-    assert_eq!("2000", feed_payload["code"]);
-    let feed_id = feed_payload["data"]["id"]
-        .as_str()
-        .expect("feed id must be returned")
-        .to_owned();
-    assert_eq!("Provider fallback patterns", feed_payload["data"]["title"]);
-    assert_eq!("feeds", feed_payload["data"]["contentType"]);
-    assert_eq!(0, feed_payload["data"]["viewCount"]);
-
-    let list_payload = request_json(
-        router.clone(),
-        app_session_request(
-            "GET",
-            "/app/v3/api/feeds/list?keyword=failover&page=1&size=10",
-            Body::empty(),
-            forum_tenant_id(),
-            user_organization_id(),
-            forum_user_id(),
-        ),
-    )
-    .await;
-    assert_eq!("2000", list_payload["code"]);
-    assert!(list_payload["data"]["items"]
-        .as_array()
-        .unwrap()
-        .iter()
-        .any(|item| item["id"] == feed_id));
-
-    let detail_payload = request_json(
-        router.clone(),
-        app_session_request(
-            "GET",
-            &format!("/app/v3/api/feeds/detail/{feed_id}"),
-            Body::empty(),
-            forum_tenant_id(),
-            user_organization_id(),
-            forum_user_id(),
-        ),
-    )
-    .await;
-    assert_eq!("2000", detail_payload["code"]);
-    assert_eq!(1, detail_payload["data"]["viewCount"]);
-
-    let content_id = feed_id.parse::<i64>().unwrap();
-    let comment_payload = request_json(
-        router.clone(),
-        app_session_request(
-            "POST",
-            "/app/v3/api/comments",
-            json_body(&format!(
-                r#"{{
-                    "contentType": "feeds",
-                    "contentId": {content_id},
-                    "content": "Use weighted fallback with explicit health windows.",
-                    "deviceInfo": "route-test",
-                    "ipAddress": "127.0.0.1"
-                }}"#
-            )),
-            forum_tenant_id(),
-            user_organization_id(),
-            forum_user_id(),
-        ),
-    )
-    .await;
-    assert_eq!("2000", comment_payload["code"]);
-    let comment_id = comment_payload["data"]["commentId"]
-        .as_str()
-        .unwrap()
-        .to_owned();
-    assert_eq!("FEEDS", comment_payload["data"]["contentType"]);
-    assert_eq!("PUBLISHED", comment_payload["data"]["status"]);
-
-    let reply_payload = request_json(
-        router.clone(),
-        app_session_request(
-            "POST",
-            &format!("/app/v3/api/comments/{comment_id}/reply"),
-            json_body(&format!(
-                r#"{{
-                    "contentType": "feeds",
-                    "contentId": {content_id},
-                    "content": "Expose the retry reason in trace logs.",
-                    "deviceInfo": "route-test",
-                    "ipAddress": "127.0.0.1"
-                }}"#
-            )),
-            forum_tenant_id(),
-            user_organization_id(),
-            forum_user_id(),
-        ),
-    )
-    .await;
-    assert_eq!("2000", reply_payload["code"]);
-    assert_eq!(
-        comment_id.parse::<i64>().unwrap(),
-        reply_payload["data"]["parentId"]
-    );
-
-    let comments_payload = request_json(
-        router.clone(),
-        app_session_request(
-            "GET",
-            &format!("/app/v3/api/comments/list?contentType=feeds&contentId={content_id}"),
-            Body::empty(),
-            forum_tenant_id(),
-            user_organization_id(),
-            forum_user_id(),
-        ),
-    )
-    .await;
-    assert_eq!("2000", comments_payload["code"]);
-    assert_eq!(1, comments_payload["data"]["totalElements"]);
-    assert_eq!(1, comments_payload["data"]["items"][0]["replyCount"]);
-
-    let replies_payload = request_json(
-        router,
-        app_session_request(
-            "GET",
-            &format!("/app/v3/api/comments/{comment_id}/replies"),
-            Body::empty(),
-            forum_tenant_id(),
-            user_organization_id(),
-            forum_user_id(),
-        ),
-    )
-    .await;
-    assert_eq!("2000", replies_payload["code"]);
-    assert_eq!(1, replies_payload["data"]["totalElements"]);
-
-    let pool = connect_sqlite_for_test(&database_url).await;
-    let feed_count: i64 = sqlx::query_scalar(
-        "SELECT COUNT(1) FROM plus_feeds WHERE id = ? AND content_type = 5 AND status = 2",
-    )
-    .bind(content_id)
-    .fetch_one(&pool)
-    .await
-    .unwrap();
-    assert_eq!(1, feed_count);
-    let comment_count: i64 = sqlx::query_scalar(
-        "SELECT COUNT(1) FROM plus_comments WHERE content_id = ? AND content_type = 5 AND status = 1",
-    )
-    .bind(content_id)
-    .fetch_one(&pool)
-    .await
-    .unwrap();
-    assert_eq!(2, comment_count);
-    pool.close().await;
-}
-
-async fn request_json(router: axum::Router, request: Request<Body>) -> serde_json::Value {
-    let response = router.oneshot(request).await.unwrap();
-    let status = response.status();
-    let body = axum::body::to_bytes(response.into_body(), usize::MAX)
+    let public_overview_response = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("GET")
+                .uri("/app/v3/api/content/feeds/overview")
+                .body(Body::empty())
+                .unwrap(),
+        )
         .await
         .unwrap();
-    assert_eq!(
-        StatusCode::OK,
-        status,
-        "unexpected response body: {}",
-        String::from_utf8_lossy(&body)
-    );
-    serde_json::from_slice(&body).unwrap()
+    assert_eq!(StatusCode::OK, public_overview_response.status());
+
+    let public_create_response = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/app/v3/api/content/feeds")
+                .header("content-type", "application/json")
+                .body(Body::from(
+                    r#"{"title":"Unauthorized post","content":"Write actions still require a subject."}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::OK, public_create_response.status());
+
+    let public_share_response = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/app/v3/api/content/feeds/42/shares")
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::UNAUTHORIZED, public_share_response.status());
+
+    let signed_create_response = router
+        .clone()
+        .oneshot(app_session_request(
+            "POST",
+            "/app/v3/api/content/feeds",
+            Body::from(r#"{"title":"Signed post","content":"A signed forum write."}"#),
+        ))
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::OK, signed_create_response.status());
+
+    let signed_share_response = router
+        .oneshot(app_session_request(
+            "POST",
+            "/app/v3/api/content/feeds/42/shares",
+            Body::empty(),
+        ))
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::OK, signed_share_response.status());
 }
 
-fn json_body(value: &str) -> Body {
-    Body::from(value.to_owned())
+struct TestForumStore;
+
+impl ForumFeedReadStore for TestForumStore {
+    fn load_feeds<'a>(
+        &'a self,
+        _query: ForumFeedQuery,
+        subject: Option<ForumSubject>,
+    ) -> ForumReadFuture<'a, Vec<ForumFeedItem>> {
+        Box::pin(async move {
+            Ok(vec![ForumFeedItem {
+                id: 42,
+                title: if subject.is_some() {
+                    "Signed forum feed".to_owned()
+                } else {
+                    "Public forum feed".to_owned()
+                },
+                content: "Forum reads should not require authorization.".to_owned(),
+                summary: "Forum reads should not require authorization.".to_owned(),
+                content_type: "feeds".to_owned(),
+                category_id: 1001,
+                created_at: "2026-05-11 10:00:00".to_owned(),
+                updated_at: "2026-05-11 10:00:00".to_owned(),
+                ..ForumFeedItem::default()
+            }])
+        })
+    }
+
+    fn load_feed_detail<'a>(
+        &'a self,
+        feed_id: i64,
+        _subject: Option<ForumSubject>,
+    ) -> ForumReadFuture<'a, Option<ForumFeedItem>> {
+        Box::pin(async move {
+            Ok(Some(ForumFeedItem {
+                id: feed_id,
+                title: "Forum feed detail".to_owned(),
+                content: "Forum detail reads should not require authorization.".to_owned(),
+                summary: "Forum detail reads should not require authorization.".to_owned(),
+                content_type: "feeds".to_owned(),
+                category_id: 1001,
+                ..ForumFeedItem::default()
+            }))
+        })
+    }
+
+    fn is_feed_collected<'a>(
+        &'a self,
+        _feed_id: i64,
+        subject: Option<ForumSubject>,
+    ) -> ForumReadFuture<'a, bool> {
+        Box::pin(async move { Ok(subject.is_some()) })
+    }
+
+    fn load_overview<'a>(
+        &'a self,
+        _subject: Option<ForumSubject>,
+    ) -> ForumReadFuture<'a, ForumOverview> {
+        Box::pin(async {
+            Ok(ForumOverview {
+                stats: ForumOverviewStats {
+                    total_posts: 1,
+                    total_comments: 0,
+                    member_count: 0,
+                    online_members: 0,
+                },
+                source: ForumOverviewSource {
+                    source_label: "Live forum data".to_owned(),
+                    source_description:
+                        "Derived from Java-compatible PlusFeeds, PlusComments, vote, and favorite tables."
+                            .to_owned(),
+                    source_tables: vec![
+                        "plus_feeds".to_owned(),
+                        "plus_comments".to_owned(),
+                        "plus_content_vote".to_owned(),
+                        "plus_favorite".to_owned(),
+                    ],
+                    observed_at: "2026-05-11 10:00:00".to_owned(),
+                },
+            })
+        })
+    }
 }
 
-fn app_session_request(
-    method: &str,
-    path: &str,
-    body: Body,
-    tenant_id: i64,
-    organization_id: i64,
-    user_id: i64,
-) -> Request<Body> {
+impl ForumFeedCommandStore for TestForumStore {
+    fn create_feed<'a>(
+        &'a self,
+        command: CreateForumFeedCommand,
+        subject: Option<ForumSubject>,
+    ) -> ForumCommandFuture<'a, ForumFeedItem> {
+        Box::pin(async move {
+            if subject.is_none()
+                && (command.subject.tenant_id != 0
+                    || command.subject.organization_id != 0
+                    || command.subject.user_id != 0)
+            {
+                return Err(DomainError::new(
+                    "public forum writes must use public subject",
+                ));
+            }
+            Ok(ForumFeedItem {
+                id: 43,
+                title: command.title.unwrap_or_else(|| "Signed post".to_owned()),
+                content: command.content,
+                summary: "A signed forum write.".to_owned(),
+                content_type: "feeds".to_owned(),
+                category_id: command.category_id.unwrap_or_default(),
+                ..ForumFeedItem::default()
+            })
+        })
+    }
+
+    fn delete_feed<'a>(
+        &'a self,
+        _feed_id: i64,
+        _subject: ForumSubject,
+    ) -> ForumCommandFuture<'a, bool> {
+        Box::pin(async { Ok(true) })
+    }
+
+    fn like_feed<'a>(
+        &'a self,
+        feed_id: i64,
+        _subject: ForumSubject,
+    ) -> ForumCommandFuture<'a, ForumFeedItem> {
+        Box::pin(async move { Ok(feed_item(feed_id, 1, false)) })
+    }
+
+    fn unlike_feed<'a>(
+        &'a self,
+        feed_id: i64,
+        _subject: ForumSubject,
+    ) -> ForumCommandFuture<'a, ForumFeedItem> {
+        Box::pin(async move { Ok(feed_item(feed_id, 0, false)) })
+    }
+
+    fn collect_feed<'a>(
+        &'a self,
+        feed_id: i64,
+        _folder_id: Option<i64>,
+        _subject: ForumSubject,
+    ) -> ForumCommandFuture<'a, ForumFeedItem> {
+        Box::pin(async move { Ok(feed_item(feed_id, 0, true)) })
+    }
+
+    fn uncollect_feed<'a>(
+        &'a self,
+        feed_id: i64,
+        _subject: ForumSubject,
+    ) -> ForumCommandFuture<'a, ForumFeedItem> {
+        Box::pin(async move { Ok(feed_item(feed_id, 0, false)) })
+    }
+
+    fn share_feed<'a>(
+        &'a self,
+        feed_id: i64,
+        _subject: ForumSubject,
+    ) -> ForumCommandFuture<'a, ForumFeedItem> {
+        Box::pin(async move {
+            let mut item = feed_item(feed_id, 0, false);
+            item.share_count = 1;
+            Ok(item)
+        })
+    }
+}
+
+impl ForumCommentReadStore for TestForumStore {
+    fn load_comments<'a>(
+        &'a self,
+        _content_type: String,
+        _content_id: i64,
+        _query: Option<ForumFeedQuery>,
+        _subject: Option<ForumSubject>,
+    ) -> ForumReadFuture<'a, ForumCommentPage> {
+        Box::pin(async { Ok(ForumCommentPage::default()) })
+    }
+
+    fn load_comment_replies<'a>(
+        &'a self,
+        _comment_id: i64,
+        _query: Option<ForumFeedQuery>,
+        _subject: Option<ForumSubject>,
+    ) -> ForumReadFuture<'a, ForumCommentPage> {
+        Box::pin(async { Ok(ForumCommentPage::default()) })
+    }
+
+    fn load_comment_detail<'a>(
+        &'a self,
+        comment_id: i64,
+        _subject: Option<ForumSubject>,
+    ) -> ForumReadFuture<'a, Option<ForumCommentDetail>> {
+        Box::pin(async move {
+            Ok(Some(ForumCommentDetail {
+                comment_id: comment_id.to_string(),
+                content: "Comment".to_owned(),
+                content_type: "FEEDS".to_owned(),
+                content_id: 42,
+                status: "PUBLISHED".to_owned(),
+                created_at: "2026-05-11 10:00:00".to_owned(),
+                updated_at: "2026-05-11 10:00:00".to_owned(),
+                ..ForumCommentDetail::default()
+            }))
+        })
+    }
+
+    fn load_my_comments<'a>(
+        &'a self,
+        _query: Option<ForumFeedQuery>,
+        _subject: ForumSubject,
+    ) -> ForumReadFuture<'a, ForumCommentPage> {
+        Box::pin(async { Ok(ForumCommentPage::default()) })
+    }
+
+    fn load_comment_statistics<'a>(
+        &'a self,
+        _content_type: String,
+        _content_id: i64,
+        _subject: Option<ForumSubject>,
+    ) -> ForumReadFuture<'a, ForumCommentStatistics> {
+        Box::pin(async { Ok(ForumCommentStatistics { total_comments: 0 }) })
+    }
+}
+
+impl ForumCommentCommandStore for TestForumStore {
+    fn create_comment<'a>(
+        &'a self,
+        command: CreateForumCommentCommand,
+        _subject: Option<ForumSubject>,
+    ) -> ForumCommandFuture<'a, ForumCommentItem> {
+        Box::pin(async move {
+            Ok(ForumCommentItem {
+                comment_id: "100".to_owned(),
+                content: command.content,
+                content_type: command.content_type.to_ascii_uppercase(),
+                content_id: command.content_id,
+                status: "PUBLISHED".to_owned(),
+                parent_id: command.parent_id,
+                ..ForumCommentItem::default()
+            })
+        })
+    }
+
+    fn delete_comment<'a>(
+        &'a self,
+        _comment_id: i64,
+        _subject: ForumSubject,
+    ) -> ForumCommandFuture<'a, bool> {
+        Box::pin(async { Ok(true) })
+    }
+
+    fn like_comment<'a>(
+        &'a self,
+        comment_id: i64,
+        _subject: ForumSubject,
+    ) -> ForumCommandFuture<'a, ForumCommentItem> {
+        Box::pin(async move { Ok(comment_item(comment_id, 1)) })
+    }
+
+    fn unlike_comment<'a>(
+        &'a self,
+        comment_id: i64,
+        _subject: ForumSubject,
+    ) -> ForumCommandFuture<'a, ForumCommentItem> {
+        Box::pin(async move { Ok(comment_item(comment_id, 0)) })
+    }
+
+    fn pin_comment<'a>(
+        &'a self,
+        comment_id: i64,
+        _subject: ForumSubject,
+        pinned: bool,
+    ) -> ForumCommandFuture<'a, ForumCommentItem> {
+        Box::pin(async move {
+            let mut item = comment_item(comment_id, 0);
+            item.is_top = pinned;
+            Ok(item)
+        })
+    }
+}
+
+impl EntityUuidGenerator for TestForumStore {
+    fn generate_entity_uuid(&self) -> DomainResult<String> {
+        Ok("forum-route-test-uuid".to_owned())
+    }
+}
+
+fn feed_item(id: i64, like_count: i64, is_collected: bool) -> ForumFeedItem {
+    ForumFeedItem {
+        id,
+        title: "Forum feed".to_owned(),
+        content: "Forum content".to_owned(),
+        summary: "Forum content".to_owned(),
+        content_type: "feeds".to_owned(),
+        category_id: 1001,
+        like_count,
+        is_liked: like_count > 0,
+        is_collected,
+        ..ForumFeedItem::default()
+    }
+}
+
+fn comment_item(id: i64, likes: i64) -> ForumCommentItem {
+    ForumCommentItem {
+        comment_id: id.to_string(),
+        content: "Comment".to_owned(),
+        content_type: "FEEDS".to_owned(),
+        content_id: 42,
+        status: "PUBLISHED".to_owned(),
+        likes,
+        ..ForumCommentItem::default()
+    }
+}
+
+fn app_session_request(method: &str, path: &str, body: Body) -> Request<Body> {
     let issued_at = current_unix_seconds();
     let expires_at = issued_at + 3600;
-    let authorization = app_session_bearer_token(
-        trusted_request_subject(tenant_id, organization_id, user_id),
+    let (authorization, access_token) = app_session_dual_token_headers(
+        trusted_request_subject(20_001, 20, 30),
         issued_at,
         expires_at,
     )
@@ -252,20 +435,9 @@ fn app_session_request(
         .uri(path)
         .header("content-type", "application/json")
         .header("authorization", authorization)
+        .header("Sdkwork-Access-Token", access_token)
         .body(body)
         .unwrap()
-}
-
-fn forum_tenant_id() -> i64 {
-    20_001
-}
-
-fn user_organization_id() -> i64 {
-    20
-}
-
-fn forum_user_id() -> i64 {
-    30
 }
 
 fn current_unix_seconds() -> i64 {
@@ -273,27 +445,4 @@ fn current_unix_seconds() -> i64 {
         .duration_since(UNIX_EPOCH)
         .map(|duration| duration.as_secs() as i64)
         .unwrap_or(0)
-}
-
-fn unique_sqlite_url() -> String {
-    let nonce = SystemTime::now()
-        .duration_since(UNIX_EPOCH)
-        .unwrap()
-        .as_nanos();
-    let sequence = DB_SEQUENCE.fetch_add(1, Ordering::Relaxed);
-    let process_id = std::process::id();
-    let path = format!("target/test-dbs/forum-route-{process_id}-{nonce}-{sequence}.db");
-    std::fs::create_dir_all("target/test-dbs").unwrap();
-    format!("sqlite://{path}")
-}
-
-async fn connect_sqlite_for_test(database_url: &str) -> sqlx::SqlitePool {
-    let options = SqliteConnectOptions::from_str(database_url)
-        .unwrap()
-        .create_if_missing(true);
-    SqlitePoolOptions::new()
-        .max_connections(1)
-        .connect_with(options)
-        .await
-        .unwrap()
 }

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45647,
+  "uuid": "skill-clawhub-pipeworx-college-scorecard",
+  "skillKey": "clawhub-pipeworx-college-scorecard",
+  "name": "Pipeworx college-scorecard",
+  "summary": "Search US colleges by name or get detailed information including tuition and admission rates using the US Department of Education College Scorecard API.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_college_scorecard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Search US colleges by name or get detailed information including tuition and admission rates us."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-college-scorecard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270792185?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-college-scorecard",
+      "url": "https://clawhub.ai/skills/pipeworx-college-scorecard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-college-scorecard",
+    "url": "https://clawhub.ai/skills/pipeworx-college-scorecard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-college-scorecard-b189f692480876b7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-college-scorecard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-college-scorecard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dc2dec760d8cbceb0f5203b5156641258a1bdc844d7bc014a40ce1400e60b7d5",
+      "artifactSizeBytes": 1966
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T18:58:31.667Z"
+}

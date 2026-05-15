@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73290,
+  "uuid": "skill-clawhub-project-flow-manager",
+  "skillKey": "clawhub-project-flow-manager",
+  "name": "项目流程管理器",
+  "summary": "全流程项目管理工具，用于梳理项目关键节点、管理参与部门与任务排期、跟踪KPI完成度、生成定期报告、发送进度提醒邮件、创建可视化看板。适用于需要结构化项目管理的场景，包括项目启动、里程碑跟踪、跨部门协作、进度汇报、风险预警等。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.project_flow_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jiaming Wang",
+      "features": [
+        "全流程项目管理工具，用于梳理项目关键节点、管理参与部门与任务排期、跟踪KPI完成度、生成定期报告、发送进度提醒邮件、创建可视化看板。适用于需要结构化项目管理的场景，包括项目启动、里程碑跟踪、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/project-flow-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41296195?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "project-flow-manager",
+      "url": "https://clawhub.ai/skills/project-flow-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "project-flow-manager",
+    "url": "https://clawhub.ai/skills/project-flow-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/project-flow-manager-dc87ea77823ccdd2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/project-flow-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-project-flow-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:99da0b201f7df63b10ffa650065533f556f806eb459c0978437d73e55b75a511",
+      "artifactSizeBytes": 2204
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T07:34:23.542Z"
+}

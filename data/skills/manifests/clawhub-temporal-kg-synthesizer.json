@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41369,
+  "uuid": "skill-clawhub-temporal-kg-synthesizer",
+  "skillKey": "clawhub-temporal-kg-synthesizer",
+  "name": "Temporal Knowledge Graph Synthesizer",
+  "summary": "Actively parses daily session logs and unstructured memory files to extract entities, temporal data, and relationships into a structured Knowledge Graph.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.temporal_kg_synthesizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "The Mooorish",
+      "features": [
+        "Actively parses daily session logs and unstructured memory files to extract entities, temporal."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/temporal-kg-synthesizer@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/213910000?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "temporal-kg-synthesizer",
+      "url": "https://clawhub.ai/skills/temporal-kg-synthesizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "temporal-kg-synthesizer",
+    "url": "https://clawhub.ai/skills/temporal-kg-synthesizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/temporal-kg-synthesizer-94f7cf00ec5942eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/temporal-kg-synthesizer@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-temporal-kg-synthesizer-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7468d821b63cc01f1dfb6b381ae3a808656897b4b6ab2752b917ca3365fa8d69",
+      "artifactSizeBytes": 2259
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T23:50:08.931Z"
+}

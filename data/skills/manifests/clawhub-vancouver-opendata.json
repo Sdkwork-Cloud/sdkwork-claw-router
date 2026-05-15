@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40204,
+  "uuid": "skill-clawhub-vancouver-opendata",
+  "skillKey": "clawhub-vancouver-opendata",
+  "name": "City of Vancouver Open Data",
+  "summary": "Access 194+ datasets from the City of Vancouver open data portal. Search, fetch, and analyze city data on parking, transit, permits, demographics, and more v...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vancouver_opendata",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ray Chan, PMP",
+      "features": [
+        "Access 194+ datasets from the City of Vancouver open data portal",
+        "Search, fetch, and analyze city data on parking, transit, permits, demographics, and more v..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vancouver-opendata@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63657868?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vancouver-opendata",
+      "url": "https://clawhub.ai/skills/vancouver-opendata"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vancouver-opendata",
+    "url": "https://clawhub.ai/skills/vancouver-opendata",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vancouver-opendata-2a00155fa46432b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vancouver-opendata@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-vancouver-opendata-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2c60c754988b9edae6fc9d7ce781cb4dcb1199c1b70e8f4977608ced7a916725",
+      "artifactSizeBytes": 1965
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T02:31:04.105Z"
+}

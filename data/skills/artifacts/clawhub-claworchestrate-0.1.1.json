@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claworchestrate@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claworchestrate",
+  "skill": {
+    "id": 46616,
+    "skillKey": "clawhub-claworchestrate",
+    "name": "ClawOrchestrate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claworchestrate",
+    "url": "https://clawhub.ai/skills/claworchestrate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claworchestrate-a5a6b1b0032a9505.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Orchestrate AI agents across multiple machines. Dispatch tasks, monitor progress, and coordinate teams from a central gateway. Works over Tailscale, SSH, or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "loop-capital",
+      "userId": "s17cg8new7xne3ecr19d0t4dtn8501n5",
+      "displayName": "loop-capital",
+      "image": "https://avatars.githubusercontent.com/u/261833308?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 123,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1776401229879,
+      "changelog": "Added ClawStudio branding, product cross-links",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fe16d7cf0051ae9a790059e07b32af325e76749f6bea596e2da129adcce999e8"
+}

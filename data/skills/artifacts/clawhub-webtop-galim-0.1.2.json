@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/webtop-galim@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.webtop_galim",
+  "skill": {
+    "id": 40077,
+    "skillKey": "clawhub-webtop-galim",
+    "name": "Webtop Galim"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "webtop-galim",
+    "url": "https://clawhub.ai/skills/webtop-galim",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/webtop-galim-4feab9b587a5a747.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Check, monitor, and summarize student homework/tasks from Webtop (SmartSchool), Galim Pro, and Ofek. Use when the user asks to inspect homework, pending task..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shaike1",
+      "userId": "s17crfcb8n2p2xp8y2nmmny9xn83rm8t",
+      "displayName": "shaike1",
+      "image": "https://avatars.githubusercontent.com/u/72298764?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1774779764617,
+      "changelog": "Add detailed Ofek reporting (visible task title/subject/teacher/due-date sections), update docs/prompts, and keep Claude Code/local env support.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:13f87a35ade6ed5333e171f71df885a603e54ed1dbdc5cc5ad4003852780c217"
+}

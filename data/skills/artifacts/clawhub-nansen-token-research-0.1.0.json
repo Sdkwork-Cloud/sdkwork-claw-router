@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nansen-token-research@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nansen_token_research",
+  "skill": {
+    "id": 51669,
+    "skillKey": "clawhub-nansen-token-research",
+    "name": "Nansen Token Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nansen-token-research",
+    "url": "https://clawhub.ai/skills/nansen-token-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nansen-token-research-fcf4fe397a6f77ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Token deep dive — info, OHLCV, holders, flows, flow intelligence, who bought/sold, DEX trades, PnL, perp trades, perp positions, perp PnL leaderboard. Use wh..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nansen-devops",
+      "userId": "s174hnr0xtfypzan2x804p4me183nkqz",
+      "displayName": "Nansen AI",
+      "image": "https://avatars.githubusercontent.com/u/93130718?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 253,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773761299714,
+      "changelog": "Initial release: Token deep dive research CLI for Nansen.\n\n- Retrieve token info, OHLCV price data, top holders (optionally smart money only), and wallet flows.\n- Analyze flow intelligence by wallet label (whales, smart traders, etc.).\n- View DEX trades, on-chain PnL, and sortable leaderboard.\n- Access perp trade, position, and PnL leaderboard endpoints by symbol.\n- Supports major chains (e.g. solana, ethereum, base); flags for custom queries.\n- CLI documented with command examples and flag explanations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:69f9f8e8911893ce176b898c35726a57fbe2fb8e7be41f5f02e4dc19a23a5dc5"
+}

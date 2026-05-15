@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53555,
+  "uuid": "skill-clawhub-clawcost-basic",
+  "skillKey": "clawhub-clawcost-basic",
+  "name": "ClawCost Basic — API Cost Monitor for OpenClaw",
+  "summary": "Monitors OpenClaw API usage and costs, sends Telegram alerts at budget limits, and suggests cheaper models to optimize spend.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawcost_basic",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jairog813",
+      "features": [
+        "Monitors OpenClaw API usage and costs, sends Telegram alerts at budget limits, and suggests che."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawcost-basic@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/212160585?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawcost-basic",
+      "url": "https://clawhub.ai/skills/clawcost-basic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawcost-basic",
+    "url": "https://clawhub.ai/skills/clawcost-basic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawcost-basic-337c3526539333c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawcost-basic@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawcost-basic-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:05201306f296eed6edea57279fd1a470c2d92f6f8d6f577867432b65495a2b12",
+      "artifactSizeBytes": 1989
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T14:30:56.749Z"
+}

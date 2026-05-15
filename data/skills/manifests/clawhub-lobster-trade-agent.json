@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49591,
+  "uuid": "skill-clawhub-lobster-trade-agent",
+  "skillKey": "clawhub-lobster-trade-agent",
+  "name": "Trade Agent",
+  "summary": "Automates gold and forex market analysis to provide trading signals, risk assessment, and position suggestions with 24/7 monitoring via MCP backend.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobster_trade_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Freeman88-tch",
+      "features": [
+        "Automates gold and forex market analysis to provide trading signals, risk assessment, and posit."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lobster-trade-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/212022282?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lobster-trade-agent",
+      "url": "https://clawhub.ai/skills/lobster-trade-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobster-trade-agent",
+    "url": "https://clawhub.ai/skills/lobster-trade-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobster-trade-agent-c8d45144f073a118.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lobster-trade-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lobster-trade-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:069e7d85ef1ff3f49d2849f3ff50d07caaf9f3c874c7158f6d6cee70bdc8196a",
+      "artifactSizeBytes": 1939
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T17:56:12.671Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31663,
+  "uuid": "skill-clawhub-yanado",
+  "skillKey": "clawhub-yanado",
+  "name": "Yanado",
+  "summary": "Yanado integration. Manage data, records, and automate workflows. Use when the user wants to interact with Yanado data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yanado",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Yanado integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Yanado data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yanado@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yanado",
+      "url": "https://clawhub.ai/skills/yanado"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yanado",
+    "url": "https://clawhub.ai/skills/yanado",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yanado-3577736b3cc3d3fd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yanado@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-yanado-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e64b16845c121c5102b19afde530dfe5c28d548eb6fcd0a81cb208abce708f29",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:03:54.487Z"
+}

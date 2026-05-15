@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39704,
+  "uuid": "skill-clawhub-amarin-memory",
+  "skillKey": "clawhub-amarin-memory",
+  "name": "Amarin Memory",
+  "summary": "Persistent adaptive memory for AI agents. Store memories that fade naturally over time (temporal decay), deduplicate automatically (0.85 cosine threshold), s...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amarin_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "flaggdavid-source",
+      "features": [
+        "Persistent adaptive memory for AI agents",
+        "Store memories that fade naturally over time (temporal decay), deduplicate automatically (0.85."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amarin-memory@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258542791?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amarin-memory",
+      "url": "https://clawhub.ai/skills/amarin-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amarin-memory",
+    "url": "https://clawhub.ai/skills/amarin-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amarin-memory-880c0b325fdec9cb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amarin-memory@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-amarin-memory-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:87e69456ca9dfd255b42d87fabd439e2a8e3e00ff64abcc344d0009c43f41fb4",
+      "artifactSizeBytes": 2390
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T01:11:52.332Z"
+}

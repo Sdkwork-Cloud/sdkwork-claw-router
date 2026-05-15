@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22445,
+  "uuid": "skill-clawhub-comfyui-workflow",
+  "skillKey": "clawhub-comfyui-workflow",
+  "name": "Comfyui Workflow",
+  "summary": "Universal ComfyUI workflow executor with 33+ workflow templates. Self-describing — use --inspect on ANY workflow to discover inputs and outputs automatically...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.comfyui_workflow",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yiqi Liu",
+      "features": [
+        "Universal ComfyUI workflow executor with 33+ workflow templates",
+        "Self-describing — use --inspect on ANY workflow to discover inputs and outputs automatically..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/comfyui-workflow@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/66063897?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "comfyui-workflow",
+      "url": "https://clawhub.ai/skills/comfyui-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "comfyui-workflow",
+    "url": "https://clawhub.ai/skills/comfyui-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/comfyui-workflow-a38d4eded1016f0e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/comfyui-workflow@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-comfyui-workflow-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:98807dab58133f6312fb405de5f7d9928cb191627fbfffb0ce570cad529dcc92",
+      "artifactSizeBytes": 2490
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T03:47:00.566Z"
+}

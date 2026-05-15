@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/socraticmathcoach@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.socraticmathcoach",
+  "skill": {
+    "id": 59057,
+    "skillKey": "clawhub-socraticmathcoach",
+    "name": "A Mathematics Problem-Solving Coach Skill Based on Socratic Dialogue Guidance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "socraticmathcoach",
+    "url": "https://clawhub.ai/skills/socraticmathcoach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/socraticmathcoach-9b26bb7bf584ec80.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "简化版数学辅导 skill，用于测试核心功能。提供分步提示、错误检查和基础总结。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xyz-123a",
+      "userId": "s1773gxxxp5pbqss3cj5vxqm3h83j9vs",
+      "displayName": "xyz_123",
+      "image": "https://avatars.githubusercontent.com/u/208251689?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 231,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774945767874,
+      "changelog": "Initial release of a simplified math coaching skill for testing core functions.\n\n- Provides step-by-step hints, error checking, and basic summaries.\n- Introduces graduated hint levels (from guiding questions to direct answers).\n- Outlines specific rules for when to increase or decrease hint detail.\n- Defines workflow for interpreting queries, selecting hint level, giving help, and offering summaries.\n- Lists common error types for better feedback.\n- Includes example reply templates and clear prohibited behaviors.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5ab62e94eeff1e35fe1eba71709d5909d19c355388fff8d9f0bc711c45fc87df"
+}

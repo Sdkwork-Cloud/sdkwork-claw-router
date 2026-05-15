@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rednote-cli@0.1.14",
+  "version": "0.1.14",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rednote_cli",
+  "skill": {
+    "id": 31961,
+    "skillKey": "clawhub-rednote-cli",
+    "name": "Rednote CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rednote-cli",
+    "url": "https://clawhub.ai/skills/rednote-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rednote-cli-755bd6dfbc34e2bb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user wants to operate Xiaohongshu (RedNote) from the terminal with the `@skills-store/rednote` CLI, including browser setup, login, environment..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "darknoah",
+      "userId": "s17ej6pe6hc67ygkxpdwcwpfd583gryy",
+      "displayName": "noah",
+      "image": "https://avatars.githubusercontent.com/u/13805682?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 978,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 4,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "0.1.14",
+      "createdAt": 1774359221219,
+      "changelog": "- No user-visible changes in this release.\n- No file changes were detected for version 0.1.14.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8992bd30e6167d36294cf43d2a31800f28c38bda1bb688cbda6ed1bd0112a421"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30579,
+  "uuid": "skill-clawhub-ethereum-jsonrpc-skill",
+  "skillKey": "clawhub-ethereum-jsonrpc-skill",
+  "name": "Ethereum JSON-RPC Skill",
+  "summary": "Operate Ethereum execution JSON-RPC through UXC with the official execution OpenRPC schema, public EVM read methods, and eth_subscribe pubsub guardrails.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ethereum_jsonrpc_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jolestar",
+      "features": [
+        "Operate Ethereum execution JSON-RPC through UXC with the official execution OpenRPC schema, pub."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ethereum-jsonrpc-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77268?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ethereum-jsonrpc-skill",
+      "url": "https://clawhub.ai/skills/ethereum-jsonrpc-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ethereum-jsonrpc-skill",
+    "url": "https://clawhub.ai/skills/ethereum-jsonrpc-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ethereum-jsonrpc-skill-2c7b2dcc00c7e547.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ethereum-jsonrpc-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ethereum-jsonrpc-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e3a1038874704a78d6c78e233b3c5f68da2e93de50990cb97bca1fe7f750c30d",
+      "artifactSizeBytes": 2680
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T23:24:16.733Z"
+}

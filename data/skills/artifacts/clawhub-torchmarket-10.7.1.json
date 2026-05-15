@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/torchmarket@10.7.1",
+  "version": "10.7.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.torchmarket",
+  "skill": {
+    "id": 8942,
+    "skillKey": "clawhub-torchmarket",
+    "name": "Torch Market"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "torchmarket",
+    "url": "https://clawhub.ai/skills/torchmarket",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/torchmarket-778eaaeaca7cbfe3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Every token is its own margin market. Depth-adaptive risk engine, treasury-backed lending, real-token short selling. No oracles. No stored baselines. No keep..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mrsirg97-rgb",
+      "userId": "s17d9w2mfj16a1rp60fv63j17h83shtj",
+      "displayName": "mr brightside",
+      "image": "https://avatars.githubusercontent.com/u/255471849?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 5229,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 6,
+      "versions": 88
+    },
+    "latestVersion": {
+      "version": "10.7.1",
+      "createdAt": 1776643491939,
+      "changelog": "- Updated to version 10.7.1 with torchsdk@^10.7.1 as the recommended SDK.\n- Expanded SDK query functions to include `getUserStats`, `getProtocolTreasuryState`, and `getTreasuryState`.\n- No code or implementation changes detected; SKILL.md documentation improvements and SDK version update only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:90c7034832d9a6439cc94e0bfb332140b181010a35f1524a49d9341e8463cafc"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/task-supervisor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_supervisor",
+  "skill": {
+    "id": 50205,
+    "skillKey": "clawhub-task-supervisor",
+    "name": "Task Supervisor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-supervisor",
+    "url": "https://clawhub.ai/skills/task-supervisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-supervisor-4e027df4fef2b8d7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage complex tasks with 5+ steps or duration >20 min, tracking progress via task files and sending periodic status reports until completion or pause."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mashirops",
+      "userId": "publishers:mashirops",
+      "displayName": "Peng Shu",
+      "image": "https://avatars.githubusercontent.com/u/58142289?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 593,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772466937222,
+      "changelog": "Initial release: self-supervising long-running task manager with checkpoint files, step tracking, and periodic Feishu progress reports.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:56abef4261340807a0e551736540e58816491b3e0375ab6ee7160850a3a4a889"
+}

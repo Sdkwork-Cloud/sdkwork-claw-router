@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hugo-blog-publisher@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hugo_blog_publisher",
+  "skill": {
+    "id": 59959,
+    "skillKey": "clawhub-hugo-blog-publisher",
+    "name": "Hugo Blog Publisher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hugo-blog-publisher",
+    "url": "https://clawhub.ai/skills/hugo-blog-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hugo-blog-publisher-e9ab7401a8ccfbde.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "发布文章到 Hugo 博客。用于当用户说\"发布博客\"、\"推送到blog\"、\"post to blog\"、\"发布文章\"等。自动完成 front matter 渲染、<!--more--> 标记添加、git 推送流程。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tanteng",
+      "userId": "s17arxxkc5tdc79a7pbqxxapad83jnyw",
+      "displayName": "Tony",
+      "image": "https://avatars.githubusercontent.com/u/3405598?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1110,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1774409467815,
+      "changelog": "修正标签分类映射方式，全部使用_index.md文件",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:78a901fa6e53303e5a2e963004faf2e18105942c26aa0f82cf407a5ce46c9432"
+}

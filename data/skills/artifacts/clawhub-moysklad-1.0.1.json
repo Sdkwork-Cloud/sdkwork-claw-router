@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moysklad@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moysklad",
+  "skill": {
+    "id": 70235,
+    "skillKey": "clawhub-moysklad",
+    "name": "МойСклад"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moysklad",
+    "url": "https://clawhub.ai/skills/moysklad",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moysklad-d3efa607c9de76ce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "МойСклад ERP — управление товарами, контрагентами, заказами, складами, остатками и документами через REST API. Используй когда нужно получить данные из МойСк..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "monsterdeveloper",
+      "userId": "s171w9vgrv0ke0v4cx2pjtdzkd84tsfr",
+      "displayName": "MonsterDeveloper",
+      "image": "https://avatars.githubusercontent.com/u/16190582?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776189789131,
+      "changelog": "- Документация обновлена: из описания убрано упоминание автора, а также удалён справочник по библиотеке moysklad-ts.\n- Упрощён раздел \"Настройка\" — установка зависимостей убрана.\n- Справочный раздел теперь содержит только материалы по API, основным сущностям и примеры кода.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fad722f1804a362c3152a054f907f8a7080eabbae79846a83ad854216c517dfa"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52325,
+  "uuid": "skill-clawhub-clarity-first",
+  "skillKey": "clawhub-clarity-first",
+  "name": "Clarity First",
+  "summary": "Intent detection protocol for Claude — identifies the real goal behind requests, surfaces hidden assumptions, and knows when to ask vs. when to proceed. Elim...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clarity_first",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiajiaoy",
+      "features": [
+        "Intent detection protocol for Claude — identifies the real goal behind requests, surfaces hidde.",
+        "when to proceed"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clarity-first@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254620896?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clarity-first",
+      "url": "https://clawhub.ai/skills/clarity-first"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clarity-first",
+    "url": "https://clawhub.ai/skills/clarity-first",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clarity-first-2f664f7629c83267.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clarity-first@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-clarity-first-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:40f7f96dd2dad33049080a07ef0be00498e8cbd10be4d0e9107c1ac454c6a19c",
+      "artifactSizeBytes": 1999
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T08:56:30.938Z"
+}

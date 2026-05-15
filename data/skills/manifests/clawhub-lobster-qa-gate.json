@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49903,
+  "uuid": "skill-clawhub-lobster-qa-gate",
+  "skillKey": "clawhub-lobster-qa-gate",
+  "name": "Qa Gate",
+  "summary": "Standardized QA process with 8 checks and lobster debate logic to ensure artifacts are accurate, complete, consistent, sound, and free of sensitive data befo...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobster_qa_gate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Freeman88-tch",
+      "features": [
+        "Standardized QA process with 8 checks and lobster debate logic to ensure artifacts are accurate."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lobster-qa-gate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/212022282?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lobster-qa-gate",
+      "url": "https://clawhub.ai/skills/lobster-qa-gate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobster-qa-gate",
+    "url": "https://clawhub.ai/skills/lobster-qa-gate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobster-qa-gate-d1c1722a7bf39f1f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lobster-qa-gate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lobster-qa-gate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f6b125f2048f32af20b3625fd9c4df77517df9ac100822f04f33a130a81b7484",
+      "artifactSizeBytes": 1923
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T16:03:03.874Z"
+}

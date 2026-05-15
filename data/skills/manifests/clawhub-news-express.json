@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29375,
+  "uuid": "skill-clawhub-news-express",
+  "skillKey": "clawhub-news-express",
+  "name": "News Express",
+  "summary": "Use this skill when users ask for news updates, daily briefings, or what's happening in the world.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_express",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OpenLark",
+      "features": [
+        "Use this skill when users ask for news updates, daily briefings, or what's happening in the wor."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/news-express@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260858787?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "news-express",
+      "url": "https://clawhub.ai/skills/news-express"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-express",
+    "url": "https://clawhub.ai/skills/news-express",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-express-91a5afd4877f7b94.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/news-express@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-news-express-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:339a0672ea8c809a34b1d2486afe5fff823ef02764a02b759f7afdab60920c42",
+      "artifactSizeBytes": 2199
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T01:54:14.258Z"
+}

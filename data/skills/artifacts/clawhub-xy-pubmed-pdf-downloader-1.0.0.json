@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xy-pubmed-pdf-downloader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xy_pubmed_pdf_downloader",
+  "skill": {
+    "id": 15639,
+    "skillKey": "clawhub-xy-pubmed-pdf-downloader",
+    "name": "XY PubMed PDF Downloader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xy-pubmed-pdf-downloader",
+    "url": "https://clawhub.ai/skills/xy-pubmed-pdf-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xy-pubmed-pdf-downloader-670c83c521fec6f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Download PDFs from PubMed Central (PMC) and Europe PMC. Use when the user needs to download open-access academic papers from PubMed Central using PMC ID, Pub..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xuyuan0805",
+      "userId": "publishers:xuyuan0805",
+      "displayName": "xuyuan0805",
+      "image": "https://avatars.githubusercontent.com/u/65079773?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 985,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771987688803,
+      "changelog": "Initial release: PubMed Central and Europe PMC PDF downloader",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3775e6ad775319254222cbe53add4f2081414a6abc5494beb7aeb1e593d7d2e3"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44168,
+  "uuid": "skill-clawhub-ratelint",
+  "skillKey": "clawhub-ratelint",
+  "name": "ratelint",
+  "summary": "Rate limiting & API throttling anti-pattern analyzer -- detects missing rate limits, brute force exposure, no backoff strategies, unbounded queues, retry sto...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ratelint",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "suhteevah",
+      "features": [
+        "Rate limiting & API throttling anti-pattern analyzer -",
+        "detects missing rate limits, brute force exposure, no backoff strategies, unbounded queues, ret."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ratelint@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2342183?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ratelint",
+      "url": "https://clawhub.ai/skills/ratelint"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ratelint",
+    "url": "https://clawhub.ai/skills/ratelint",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ratelint-3bafd708dc22557f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ratelint@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ratelint-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b468b1f848f458d103f15dbe064847f891b4780564570b7fa74de7bf11eab19",
+      "artifactSizeBytes": 2525
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T10:09:03.796Z"
+}

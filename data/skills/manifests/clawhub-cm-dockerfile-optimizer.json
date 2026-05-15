@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53917,
+  "uuid": "skill-clawhub-cm-dockerfile-optimizer",
+  "skillKey": "clawhub-cm-dockerfile-optimizer",
+  "name": "Dockerfile Optimizer",
+  "summary": "Optimize Dockerfiles for smaller images, faster builds, better security, and production readiness — multi-stage builds, layer caching, vulnerability reduction.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cm_dockerfile_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Optimize Dockerfiles for smaller images, faster builds, better security, and production readine."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cm-dockerfile-optimizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cm-dockerfile-optimizer",
+      "url": "https://clawhub.ai/skills/cm-dockerfile-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cm-dockerfile-optimizer",
+    "url": "https://clawhub.ai/skills/cm-dockerfile-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cm-dockerfile-optimizer-24955d48a5184400.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cm-dockerfile-optimizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cm-dockerfile-optimizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0555fd5558a37203b36e4abeffbfc7b56d0cdfda258650738a0e4c94d0034432",
+      "artifactSizeBytes": 2422
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T03:54:49.771Z"
+}

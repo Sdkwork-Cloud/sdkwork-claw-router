@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/huxiu@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huxiu",
+  "skill": {
+    "id": 67634,
+    "skillKey": "clawhub-huxiu",
+    "name": "Huxiu News"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huxiu",
+    "url": "https://clawhub.ai/skills/huxiu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huxiu-81e1bc543a03da9b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "获取虎嗅网文章和24小时资讯。用于当用户想查看虎嗅网热点文章或24小时模块内容。支持的场景：(1) 查看虎嗅网首页热点 (2) 获取24小时模块资讯 (3) 获取特定文章详细内容"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lvliangbo",
+      "userId": "s17e5zcg1bv0swssgemds7s3nh83heks",
+      "displayName": "lvliangbo",
+      "image": "https://avatars.githubusercontent.com/u/2268508?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 472,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772423915808,
+      "changelog": "- Added support for retrieving Tiger Sniff (虎嗅网) 24-hour module news aggregation and details.\n- Updated description and usage instructions to reflect new 24小时模块 scenarios.\n- Adjusted output format to generalize for both articles and fast news (\"内容摘要\" instead of fixed text length).\n- Clarified that multiple hot topics are displayed as lists, and noted typical \"持续更新\" tags on headline news.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c4ea173a9f3f3050346f3d804165274a16c48b39cecce1c4f7abf285b73acf05"
+}

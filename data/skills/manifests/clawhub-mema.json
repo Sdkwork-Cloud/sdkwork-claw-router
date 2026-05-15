@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15691,
+  "uuid": "skill-clawhub-mema",
+  "skillKey": "clawhub-mema",
+  "name": "Mema Brain",
+  "summary": "Mema's personal brain - SQLite metadata index for documents and Redis short-term context buffer. Use for organizing workspace knowledge paths and managing ep...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mema",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "azzar budiyanto",
+      "features": [
+        "Mema's personal brain",
+        "SQLite metadata index for documents and Redis short-term context buffer",
+        "Use for organizing workspace knowledge paths and managing ep..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mema@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48999412?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mema",
+      "url": "https://clawhub.ai/skills/mema"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mema",
+    "url": "https://clawhub.ai/skills/mema",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mema-48ebef73894899e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mema@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mema-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e79c93c620e42929c620b14308504fa72bbaaa45eb7801a119c0fcdb89154e9",
+      "artifactSizeBytes": 1942
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T18:34:40.950Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46647,
+  "uuid": "skill-clawhub-lapse-video",
+  "skillKey": "clawhub-lapse-video",
+  "name": "Lapse Video",
+  "summary": "Turn 200 JPEG photos taken every 30 seconds into 1080p timelapse MP4 video just by typing what you need. Whether it's turning photo sequences into timelapse...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lapse_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mory128",
+      "features": [
+        "Turn 200 JPEG photos taken every 30 seconds into 1080p timelapse MP4 video just by typing what.",
+        "Whether it's turning photo sequences into timelapse..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lapse-video@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270709915?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lapse-video",
+      "url": "https://clawhub.ai/skills/lapse-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lapse-video",
+    "url": "https://clawhub.ai/skills/lapse-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lapse-video-11da92995afde9c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lapse-video@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lapse-video-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6038f0a193aeb381ab2da589c5122f218b1e68f383966503dcce19f76780c473",
+      "artifactSizeBytes": 2502
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T06:53:07.550Z"
+}

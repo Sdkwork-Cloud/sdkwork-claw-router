@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kejian365-aippt@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kejian365_aippt",
+  "skill": {
+    "id": 57239,
+    "skillKey": "clawhub-kejian365-aippt",
+    "name": "课件帮 Aippt"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kejian365-aippt",
+    "url": "https://clawhub.ai/skills/kejian365-aippt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kejian365-aippt-b73dc686b7fbacc5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate professional PPT presentations using the 课件帮 (Kejian365) AI platform. Handles the full pipeline: outline generation, theme selection, AI content cre..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "good0007",
+      "userId": "s177ddnbgnvx10bf1jmgv0s321857h33",
+      "displayName": "左手代码右手诗",
+      "image": "https://avatars.githubusercontent.com/u/19685988?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 134,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776946565961,
+      "changelog": "- Initial release of kejian365-aippt: generate professional PPT presentations via the 课件帮 AI platform.\n- Automates the entire workflow: gathers user requirements, creates an outline, selects a suitable template, generates content and layout, and delivers a preview link.\n- Supports common presentation scenarios: business reports, product introductions, academic presentations, and training materials.\n- Fully script-driven; no manual API calls required.\n- Includes robust error handling and progress reporting throughout the process.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4d68b964dc571257499e6a9c65f02d486be6ff45080d914d6a2686bff56a076f"
+}

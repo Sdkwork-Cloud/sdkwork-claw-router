@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68823,
+  "uuid": "skill-clawhub-walter-competitor",
+  "skillKey": "clawhub-walter-competitor",
+  "name": "Walter Competitor",
+  "summary": "亚马逊竞品流量攻防智能分析。自动发现竞品、分析流量结构、识别弱点、生成攻击矩阵。无需手动提供ASIN，全自动竞品情报获取。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.walter_competitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "beyondbright",
+      "features": [
+        "亚马逊竞品流量攻防智能分析。自动发现竞品、分析流量结构、识别弱点、生成攻击矩阵。无需手动提供ASIN，全自动竞品情报获取。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/walter-competitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9914857?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "walter-competitor",
+      "url": "https://clawhub.ai/skills/walter-competitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "walter-competitor",
+    "url": "https://clawhub.ai/skills/walter-competitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/walter-competitor-7f261d5c41a1a099.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/walter-competitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-walter-competitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c49a5b69c2f79e1cf761348302d7cdc5a3988cd90828eea807bd0ccc0d5b46db",
+      "artifactSizeBytes": 2537
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T16:55:37.028Z"
+}

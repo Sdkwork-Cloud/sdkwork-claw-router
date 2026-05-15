@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32078,
+  "uuid": "skill-clawhub-site-use-x",
+  "skillKey": "clawhub-site-use-x",
+  "name": "X use",
+  "summary": "Use when the user wants to collect tweets, search Twitter/X, get tweet details, set up site-use, or browse cached posts. Examples: 'set up site-use', 'grab l...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.site_use_x",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WilliamPenrose",
+      "features": [
+        "Use when the user wants to collect tweets, search Twitter/X, get tweet details, set up site-use.",
+        "Examples: 'set up site-use', 'grab l..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/site-use-x@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/140290499?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "site-use-x",
+      "url": "https://clawhub.ai/skills/site-use-x"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "site-use-x",
+    "url": "https://clawhub.ai/skills/site-use-x",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/site-use-x-279b336efca03064.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/site-use-x@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-site-use-x-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b1c4566c57696cc7d2f4d5c753c0ef6b7be4726fee6b147c95310207947d0324",
+      "artifactSizeBytes": 1891
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T03:54:56.656Z"
+}

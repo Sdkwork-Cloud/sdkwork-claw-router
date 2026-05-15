@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18004,
+  "uuid": "skill-clawhub-agent-memory-setup-qmd",
+  "skillKey": "clawhub-agent-memory-setup-qmd",
+  "name": "Agent Memory Setup",
+  "summary": "Set up the full OpenClaw agent memory system with 3-tier memory (HOT/WARM/COLD), daily logs, semantic search (QMD), and lossless context management (Lossless...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_memory_setup_qmd",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Didac",
+      "features": [
+        "Set up the full OpenClaw agent memory system with 3-tier memory (HOT/WARM/COLD), daily logs, se."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-memory-setup-qmd@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/202002756?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-memory-setup-qmd",
+      "url": "https://clawhub.ai/skills/agent-memory-setup-qmd"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-memory-setup-qmd",
+    "url": "https://clawhub.ai/skills/agent-memory-setup-qmd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-memory-setup-qmd-92f72552c8f55ff0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-memory-setup-qmd@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-memory-setup-qmd-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:463950ee219512c8304638a0e4d1f78f7b3d0b8890da9f88bcb5dd9cafb5a808",
+      "artifactSizeBytes": 2160
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T22:09:06.813Z"
+}

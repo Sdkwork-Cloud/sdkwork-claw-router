@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23652,
+  "uuid": "skill-clawhub-system-info-skill",
+  "skillKey": "clawhub-system-info-skill",
+  "name": "system-info-skill",
+  "summary": "Query system information including OS, CPU, memory, and disk usage. Use when users ask about system configuration, resource usage, performance diagnostics, o...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.system_info_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liujintao-2021",
+      "features": [
+        "Query system information including OS, CPU, memory, and disk usage",
+        "Use when users ask about system configuration, resource usage, performance diagnostics, o..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/system-info-skill@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78404834?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "system-info-skill",
+      "url": "https://clawhub.ai/skills/system-info-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "system-info-skill",
+    "url": "https://clawhub.ai/skills/system-info-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/system-info-skill-32296d8d385d628b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/system-info-skill@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-system-info-skill-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7ac404ee367cf2e0ce0c75a2370698f4ffc3ad769c4f3860cc77311a65bee9d8",
+      "artifactSizeBytes": 2043
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T06:03:36.684Z"
+}

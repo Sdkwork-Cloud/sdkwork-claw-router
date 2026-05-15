@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kanbanflow-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kanbanflow_skill",
+  "skill": {
+    "id": 10399,
+    "skillKey": "clawhub-kanbanflow-skill",
+    "name": "Kanbanflow Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kanbanflow-skill",
+    "url": "https://clawhub.ai/skills/kanbanflow-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kanbanflow-skill-ea3c9f7105ac27ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage and organize KanbanFlow board tasks by adding, moving, coloring, and deleting tasks across columns to track work progress."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abakermi",
+      "userId": "publishers:abakermi",
+      "displayName": "abakermi",
+      "image": "https://avatars.githubusercontent.com/u/60294727?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2561,
+      "installsAllTime": 7,
+      "installsCurrent": 6,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769929630388,
+      "changelog": "Initial release of KanbanFlow skill.\n\n- Manage KanbanFlow boards, columns, and tasks.\n- Add, move, color, and delete tasks using simple commands.\n- Organize work and track progress with command-line usage.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:952173161ed1024ac1953478c7b563f6aa51161244f6a47fe2865ac035d4450f"
+}

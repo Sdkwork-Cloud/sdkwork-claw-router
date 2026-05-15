@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69618,
+  "uuid": "skill-clawhub-voice-chat",
+  "skillKey": "clawhub-voice-chat",
+  "name": "Voice Chat Bridge",
+  "summary": "自动处理语音消息：将语音转写为文字，结合上下文生成智能回复，并合成语音回复。当收到语音或音频消息时自动激活。",
+  "version": "2.3.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voice_chat",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangqinghua2015",
+      "features": [
+        "自动处理语音消息：将语音转写为文字，结合上下文生成智能回复，并合成语音回复。当收到语音或音频消息时自动激活。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/voice-chat@2.3.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15626167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "voice-chat",
+      "url": "https://clawhub.ai/skills/voice-chat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voice-chat",
+    "url": "https://clawhub.ai/skills/voice-chat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voice-chat-3506838ec12c6122.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/voice-chat@2.3.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-voice-chat-2.3.5.json",
+      "version": "2.3.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6ff6c2eb627117ca2bb104aef0ff14d0c7a0380d1675df047639289ca009478f",
+      "artifactSizeBytes": 1929
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T15:08:30.370Z"
+}

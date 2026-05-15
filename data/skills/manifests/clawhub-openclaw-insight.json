@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26481,
+  "uuid": "skill-clawhub-openclaw-insight",
+  "skillKey": "clawhub-openclaw-insight",
+  "name": "openclaw-insight",
+  "summary": "Analyze OpenClaw AI assistant usage patterns and generate interactive insight reports. Trigger when users ask about: OpenClaw usage stats, session analytics,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_insight",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linsheng9731",
+      "features": [
+        "Analyze OpenClaw AI assistant usage patterns and generate interactive insight reports",
+        "Trigger when users ask about: OpenClaw usage stats, session analytics,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-insight@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5237574?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-insight",
+      "url": "https://clawhub.ai/skills/openclaw-insight"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-insight",
+    "url": "https://clawhub.ai/skills/openclaw-insight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-insight-7f2e66524a01f710.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-insight@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-insight-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b5582b729da3b621ca63398c508892aef1d01f7fe4d37d1f8a682f404fe2e098",
+      "artifactSizeBytes": 2485
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T08:33:34.508Z"
+}

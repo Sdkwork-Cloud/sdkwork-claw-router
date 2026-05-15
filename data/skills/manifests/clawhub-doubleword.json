@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11764,
+  "uuid": "skill-clawhub-doubleword",
+  "skillKey": "clawhub-doubleword",
+  "name": "Doubleword API",
+  "summary": "Submit and manage asynchronous batch AI inference jobs via Doubleword API supporting OpenAI-compatible endpoints, tool calling, and structured outputs.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doubleword",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pjb157",
+      "features": [
+        "Submit and manage asynchronous batch AI inference jobs via Doubleword API supporting OpenAI-com."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doubleword@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/84070455?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doubleword",
+      "url": "https://clawhub.ai/skills/doubleword"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doubleword",
+    "url": "https://clawhub.ai/skills/doubleword",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doubleword-2843b3bd8f16ba8b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doubleword@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-doubleword-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c28dc0d7cc279bab8bd05c5afeb8d3b71be5d3c47f9ed2f4c5aa1cab5b5c62e0",
+      "artifactSizeBytes": 1820
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-27T20:52:20.805Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39415,
+  "uuid": "skill-clawhub-paper-impact-analyzer",
+  "skillKey": "clawhub-paper-impact-analyzer",
+  "name": "Paper Impact Analyzer",
+  "summary": "Analyze academic paper impact using multiple data sources (arXiv, GitHub, OpenAlex, Semantic Scholar). Input an arXiv ID and get a multi-dimensional impact a...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_impact_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haataa",
+      "features": [
+        "Analyze academic paper impact using multiple data sources (arXiv, GitHub, OpenAlex, Semantic Sc.",
+        "Input an arXiv ID and get a multi-dimensional impact a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paper-impact-analyzer@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7435270?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paper-impact-analyzer",
+      "url": "https://clawhub.ai/skills/paper-impact-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-impact-analyzer",
+    "url": "https://clawhub.ai/skills/paper-impact-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-impact-analyzer-fcd80d9801974d05.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paper-impact-analyzer@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-paper-impact-analyzer-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f2b530b3c3772e92d7ae43929b253b9565e9e9b3c9276d38cbdd1f71463a91d5",
+      "artifactSizeBytes": 2388
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T11:07:37.676Z"
+}

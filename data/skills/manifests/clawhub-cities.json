@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73446,
+  "uuid": "skill-clawhub-cities",
+  "skillKey": "clawhub-cities",
+  "name": "网红城市",
+  "summary": "提供关于网红城市的推荐清单、打卡路线与指南。用户搜索网红城市或规划相关出行时调用。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cities",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mike47512",
+      "features": [
+        "提供关于网红城市的推荐清单、打卡路线与指南。用户搜索网红城市或规划相关出行时调用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cities@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199718167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cities",
+      "url": "https://clawhub.ai/skills/cities"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cities",
+    "url": "https://clawhub.ai/skills/cities",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cities-53f25148803d5a4f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cities@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cities-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:71939faff4676510c4c94be42774137c1f055949bc0cc44e613b547129397faa",
+      "artifactSizeBytes": 2155
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T06:41:30.394Z"
+}

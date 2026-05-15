@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/inventory-anomaly@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inventory_anomaly",
+  "skill": {
+    "id": 70427,
+    "skillKey": "clawhub-inventory-anomaly",
+    "name": "inventory-anomaly"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inventory-anomaly",
+    "url": "https://clawhub.ai/skills/inventory-anomaly",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inventory-anomaly-548512aba1229747.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "库存异常检测和需求预测系统生成工具。当用户需要搭建库存管理系统、实现异常检测算法、开发需求预测功能（如ARIMA模型）、创建库存预警系统时使用此skill。特别适用于制造业、零售业、备件管理等场景，需要处理Excel数据、检测库存异常、预测未来需求并生成报告的情况。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openclawvincent",
+      "userId": "s17em1pykxjvc8ehz4kh5raxc583htds",
+      "displayName": "Vincent_Openclaw",
+      "image": "https://avatars.githubusercontent.com/u/45728689?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 684,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773327072292,
+      "changelog": "Initial release of inventory-anomaly-prediction skill:\n\n- Provides a modular system for inventory anomaly detection and demand forecasting, supporting use cases in manufacturing, retail, and spare parts management.\n- Includes core modules for Excel data management, inventory queries, demand calculation, anomaly detection, ARIMA-based demand forecasting, test data generation, and report creation.\n- Supports generating and processing real or simulated inventory and order data, identifying abnormal inventory and demand trends, and providing restock recommendations.\n- Outputs a comprehensive TXT report covering inventory status, detected anomalies, forecast results, and urgent replenishment advice.\n- Designed for easy customization and integration, with guidance for parameter adjustment, model replacement, and report formatting.\n- Utilizes pandas, numpy, statsmodels (ARIMA), and openpyxl for data handling and analytics.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e9382701895868d7aaa726a18901ab4012588c1cb996a9ceb8fe6140a9cf5b47"
+}

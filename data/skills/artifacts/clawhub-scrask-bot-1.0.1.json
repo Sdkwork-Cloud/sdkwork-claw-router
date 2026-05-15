@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/scrask-bot@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scrask_bot",
+  "skill": {
+    "id": 17438,
+    "skillKey": "clawhub-scrask-bot",
+    "name": "Scrask"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scrask-bot",
+    "url": "https://clawhub.ai/skills/scrask-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scrask-bot-b237882476ea29fa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When the user sends a screenshot via Telegram, parse it using Gemini (fast, default) with automatic Claude fallback when confidence is low. Saves results to..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "devsandip",
+      "userId": "publishers:devsandip",
+      "displayName": "Sandip Dev",
+      "image": "https://avatars.githubusercontent.com/u/19489947?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 779,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771380206488,
+      "changelog": "Version 1.0.1 Use at your own risk",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9b57db456e376289d160c186fb83463623ddcbaf2735c0e62153838fa2a70d45"
+}

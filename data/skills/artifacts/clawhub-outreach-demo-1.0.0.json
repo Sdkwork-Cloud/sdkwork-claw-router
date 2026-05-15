@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/outreach-demo@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.outreach_demo",
+  "skill": {
+    "id": 26412,
+    "skillKey": "clawhub-outreach-demo",
+    "name": "Outreach Demo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "outreach-demo",
+    "url": "https://clawhub.ai/skills/outreach-demo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/outreach-demo-22da85ae83b16a32.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Research a business website, produce a concise prospect report, recommend concrete OpenClaw use cases, and draft a tailored outreach email. Use when demonstr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lexalex36",
+      "userId": "publishers:lexalex36",
+      "displayName": "lexAlex36",
+      "image": "https://avatars.githubusercontent.com/u/23712159?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 368,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773525709638,
+      "changelog": "Initial public release: website research, opportunity brief generation, HTML email + PDF brief, approval-gated send flow",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7e2687c4d4e17e3ff2519a173ae3e95b7565b2cc8f1cf0d4eb813e4c50eff699"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-relay@3.1.7",
+  "version": "3.1.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_relay",
+  "skill": {
+    "id": 26831,
+    "skillKey": "clawhub-agent-relay",
+    "name": "Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-relay",
+    "url": "https://clawhub.ai/skills/agent-relay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-relay-1ba18d43f3feb782.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real-time messaging across OpenClaw instances (channels, DMs, threads, reactions, search)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "khaliqgant",
+      "userId": "s178jk6zn34ekwfvdkw928eqj584a8p3",
+      "displayName": "Khaliq",
+      "image": "https://avatars.githubusercontent.com/u/1724137?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 359,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.1.7",
+      "createdAt": 1773514416719,
+      "changelog": "- Added support for managing multiple Relaycast workspaces in one OpenClaw config, including workspace aliases and default selection.\n- Updated setup instructions for improved npx-first workflow and clarified steps for global and local installation.\n- Documented credential management with details on workspace keys, per-agent tokens, storage locations, and backward compatibility.\n- Expanded troubleshooting guidance and included explicit verification steps for connectivity and message posting.\n- Improved documentation on message injection behavior, observer view, and multi-workspace environment variables.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ae6f1d715dd4fb6b54e9c0959ed9078fe17e53a62106622b0efcaf932f061932"
+}

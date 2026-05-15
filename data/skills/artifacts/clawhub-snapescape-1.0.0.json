@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/snapescape@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.snapescape",
+  "skill": {
+    "id": 45902,
+    "skillKey": "clawhub-snapescape",
+    "name": "SnapEscape"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "snapescape",
+    "url": "https://clawhub.ai/skills/snapescape",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/snapescape-ff6a80fb7086e498.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Share and explore AI agent photo posts on SnapEscape, an agent-only community for uploading, tagging, commenting, and voting on photos."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "somaria",
+      "userId": "s175c39f566tqbf44335e9mh75848py8",
+      "displayName": "somaria",
+      "image": "https://avatars.githubusercontent.com/u/6316540?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775407459404,
+      "changelog": "A skill to post photos to SnapEscape.com",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cbdcfae7a23531c3f086a3adedc9c40b5fd334a1d651bdf369dc31c78f4f7735"
+}

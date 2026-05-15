@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45489,
+  "uuid": "skill-clawhub-gh-pipelinegate",
+  "skillKey": "clawhub-gh-pipelinegate",
+  "name": "Pipelinegate",
+  "summary": "Chain Green Helix tools into multi-step pipelines. Define a sequence of steps (scan-text, scan-skill, check-scope, validate, diff, check-env, convert) and Pi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gh_pipelinegate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mirni",
+      "features": [
+        "Chain Green Helix tools into multi-step pipelines",
+        "Define a sequence of steps (scan-text, scan-skill, check-scope, validate, diff, check-env, conv."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gh-pipelinegate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13551232?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gh-pipelinegate",
+      "url": "https://clawhub.ai/skills/gh-pipelinegate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gh-pipelinegate",
+    "url": "https://clawhub.ai/skills/gh-pipelinegate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gh-pipelinegate-ef80dcba7e6a5b40.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gh-pipelinegate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gh-pipelinegate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2de184c34694dd53a805362631103698d3ff509f031653aa34981e7dfce1951a",
+      "artifactSizeBytes": 2257
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T08:20:23.028Z"
+}

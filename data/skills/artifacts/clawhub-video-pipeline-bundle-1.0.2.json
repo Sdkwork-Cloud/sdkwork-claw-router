@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-pipeline-bundle@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_pipeline_bundle",
+  "skill": {
+    "id": 60359,
+    "skillKey": "clawhub-video-pipeline-bundle",
+    "name": "Video Pipeline Bundle"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-pipeline-bundle",
+    "url": "https://clawhub.ai/skills/video-pipeline-bundle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-pipeline-bundle-4a7a73e69cab8ef9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "视频一站式工作流技能包。整合视频剪辑、转写、烧录、拼接全流程，支持分步执行和用户确认。 包含：(1) auto-editor - 视频剪辑去除静音片段；(2) Faster Whisper + MiniMax LLM - 语音转字幕； (3) ffmpeg - 烧录字幕到视频；(4) FFmpeg 工具箱 - 拼..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leochens",
+      "userId": "s17eq3w3yhhheykg1m9yrhb4v983k0zq",
+      "displayName": "Leochens",
+      "image": "https://avatars.githubusercontent.com/u/30434852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 702,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772208487633,
+      "changelog": "恢复原始行为: 设置--target自动发送飞书通知",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8dc514c6b2bee524f6736e6163e0a93440c517d36009f733efb1a9aaef1b0227"
+}

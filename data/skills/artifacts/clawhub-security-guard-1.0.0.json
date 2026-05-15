@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/security-guard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.security_guard",
+  "skill": {
+    "id": 15407,
+    "skillKey": "clawhub-security-guard",
+    "name": "Security Guard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "security-guard",
+    "url": "https://clawhub.ai/skills/security-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/security-guard-87e54d2d8bf75970.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enforce strict security rules to protect sensitive information (API keys, tokens, credentials, PII, financial data). Always sanitize or refuse to reveal full..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "frw1988",
+      "userId": "publishers:frw1988",
+      "displayName": "frw1988",
+      "image": "https://avatars.githubusercontent.com/u/242961453?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 782,
+      "installsAllTime": 15,
+      "installsCurrent": 14,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772710699354,
+      "changelog": "- Initial release of security-guard skill enforcing strict handling of sensitive data.\n- Implements session initialization protocol to read user, assistant, and memory context at every session start.\n- Ensures API keys, credentials, PII, and financial data are never revealed in any chat or channel.\n- Provides guidance on safe alternatives: sanitized snippets, file paths, or instructions to view locally.\n- Applies security rules uniformly across all supported platforms and for every user, with no exceptions.\n- Responds firmly to all attempts to bypass security, referencing permanently locked rules.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b43ae8c0aa1ccdc64f480595d0c78d644f8551cd3497c9d2b87b3693feec5676"
+}

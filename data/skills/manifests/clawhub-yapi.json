@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53721,
+  "uuid": "skill-clawhub-yapi",
+  "skillKey": "clawhub-yapi",
+  "name": "Yapi",
+  "summary": "Query and sync YApi interface documentation. Use when user mentions \"yapi 接口文档\", YAPI docs, asks for request/response details, or needs docs sync. Also trigg...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yapi",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "郭立lee",
+      "features": [
+        "Query and sync YApi interface documentation",
+        "Use when user mentions \"yapi 接口文档\", YAPI docs, asks for request/response details, or needs docs.",
+        "Also trigg..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yapi@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9278645?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yapi",
+      "url": "https://clawhub.ai/skills/yapi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yapi",
+    "url": "https://clawhub.ai/skills/yapi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yapi-c49b59416a60819c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yapi@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-yapi-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d56cc28681da989766531065c0db7138015de3208ceb1f2a3b9a3b98cdfd1ed7",
+      "artifactSizeBytes": 2327
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T01:14:32.354Z"
+}

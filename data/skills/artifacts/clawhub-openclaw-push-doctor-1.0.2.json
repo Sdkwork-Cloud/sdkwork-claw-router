@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-push-doctor@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_push_doctor",
+  "skill": {
+    "id": 37756,
+    "skillKey": "clawhub-openclaw-push-doctor",
+    "name": "Openclaw Push Doctor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-push-doctor",
+    "url": "https://clawhub.ai/skills/openclaw-push-doctor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-push-doctor-fa9e10d45d9a1ac2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "openclaw-healthcheck is a self-diagnostic skill that checks and repairs openclaw's communication channels and scheduled tasks. It diagnoses Feishu/lark-cli a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cosmofang",
+      "userId": "s171tf9j3dvx7de9j9b2wg5mzs83g5b4",
+      "displayName": "Cosmos Fang",
+      "image": "https://avatars.githubusercontent.com/u/255512740?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 194,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775381666412,
+      "changelog": "fix: remove secret-in-chat pattern (never ask user to paste token in conversation), add explicit crontab confirmation pause before applying edits",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b78a74d085f2a7fbb8ec03eb68931ba9a8636a48e906c11a85814392c530eec5"
+}

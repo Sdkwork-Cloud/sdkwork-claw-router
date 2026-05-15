@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/greenhelix-agent-commerce-discovery@1.3.1",
+  "version": "1.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.greenhelix_agent_commerce_discovery",
+  "skill": {
+    "id": 33613,
+    "skillKey": "clawhub-greenhelix-agent-commerce-discovery",
+    "name": "Agent Commerce Discovery"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "greenhelix-agent-commerce-discovery",
+    "url": "https://clawhub.ai/skills/greenhelix-agent-commerce-discovery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/greenhelix-agent-commerce-discovery-c45cf051180d0299.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent Commerce Discovery. Build machine-readable service catalogs, knowledge graphs, and UCP/MCP/A2A protocol endpoints so AI shopping agents can discover, e..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mirni",
+      "userId": "s1711srsc0t5e7tx4tkwpmygw584bfmq",
+      "displayName": "mirni",
+      "image": "https://avatars.githubusercontent.com/u/13551232?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 235,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.3.1",
+      "createdAt": 1776236897086,
+      "changelog": "greenhelix-agent-commerce-discovery 1.3.1\n\n- Added `metadata.openclaw.requires.env` and `primaryEnv` fields to SKILL.md for clearer environment variable documentation and improved OpenClaw compatibility.\n- No functional or content changes to the guide itself.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:594b4d1cc38667394434102141ab0fa9b79d3d3a13a0eb12c9a227f3ac4ed2ca"
+}

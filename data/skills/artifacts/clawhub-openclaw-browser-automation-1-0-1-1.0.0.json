@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-browser-automation-1-0-1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_browser_automation_1_0_1",
+  "skill": {
+    "id": 32617,
+    "skillKey": "clawhub-openclaw-browser-automation-1-0-1",
+    "name": "Openclaw Browser Automation 1.0.1"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-browser-automation-1-0-1",
+    "url": "https://clawhub.ai/skills/openclaw-browser-automation-1-0-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-browser-automation-1-0-1-524957d0acc1c059.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate web browser interactions using natural language via CLI commands. Use when the user asks to browse websites, navigate web pages, extract data from w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "q262045312-ui",
+      "userId": "s17cvxcgk4yddbbby712p3qx0583h7c2",
+      "displayName": "q262045312-ui",
+      "image": "https://avatars.githubusercontent.com/u/245663412?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 249,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774768804714,
+      "changelog": "- Initial release of openclaw-browser: automate web browser interactions via CLI using natural language commands.\n- Supports both local Chrome and remote Browserbase environments, with automatic mode selection based on configuration.\n- Provides commands to navigate, act, extract data, observe elements, take screenshots, and close the browser.\n- No user prompts required for environment selection; determined by existing API keys or local setup.\n- Includes best practices, troubleshooting tips, and links to detailed documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fe53ae28b0eaae1f49136b41f628bf3c5c2600af48c8710987dde7d9604e092f"
+}

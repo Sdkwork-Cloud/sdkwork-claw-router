@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70598,
+  "uuid": "skill-clawhub-recycle",
+  "skillKey": "clawhub-recycle",
+  "name": "Recycle",
+  "summary": "提供旧衣、空瓶、废旧电子产品上门回收预约及绿色碳账户指引。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recycle",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codenova58",
+      "features": [
+        "提供旧衣、空瓶、废旧电子产品上门回收预约及绿色碳账户指引。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/recycle@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191358186?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "recycle",
+      "url": "https://clawhub.ai/skills/recycle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recycle",
+    "url": "https://clawhub.ai/skills/recycle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recycle-ef5988103d7b93b7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/recycle@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-recycle-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:12f0736fa97282e0c6667b99be488a9cf5aa3488bbda25059f145034f4e9b255",
+      "artifactSizeBytes": 2384
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T18:23:46.478Z"
+}

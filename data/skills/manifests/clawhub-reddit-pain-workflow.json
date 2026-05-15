@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56701,
+  "uuid": "skill-clawhub-reddit-pain-workflow",
+  "skillKey": "clawhub-reddit-pain-workflow",
+  "name": "Reddit Pain Workflow",
+  "summary": "Daily automated pipeline: Reddit scan → classify → generate report → push to GitHub → metrics tracking. Cron-friendly with short timeouts. Drives star growth...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reddit_pain_workflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Maya Tao",
+      "features": [
+        "Daily automated pipeline: Reddit scan → classify → generate report → push to GitHub → metrics t.",
+        "Cron-friendly with short timeouts",
+        "Drives star growth..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reddit-pain-workflow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226037090?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reddit-pain-workflow",
+      "url": "https://clawhub.ai/skills/reddit-pain-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reddit-pain-workflow",
+    "url": "https://clawhub.ai/skills/reddit-pain-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reddit-pain-workflow-52a9622b62230164.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reddit-pain-workflow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-reddit-pain-workflow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0db2765e643abfadcd0f936de0f9fea80de30ed5e3601deb8994e754f0aa09ef",
+      "artifactSizeBytes": 2074
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T07:29:45.793Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/subagent-driven-dev@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subagent_driven_dev",
+  "skill": {
+    "id": 33256,
+    "skillKey": "clawhub-subagent-driven-dev",
+    "name": "Subagent-Driven Development"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subagent-driven-dev",
+    "url": "https://clawhub.ai/skills/subagent-driven-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subagent-driven-dev-aed55faaab21740d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when executing implementation plans with independent tasks in the current session"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "user-wangjun",
+      "userId": "s17722te3pzafbgfa52d1tfg7h83t9ht",
+      "displayName": "user-wangjun",
+      "image": "https://avatars.githubusercontent.com/u/230838159?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775524150180,
+      "changelog": "subagent-driven-dev 1.0.1\n\n- No file changes detected in this release.\n- Documentation, workflow, and process remain the same as previous version.\n- No new features, fixes, or updates introduced.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3ab5251f039a11717247e71f90c6bcaca8b5a7cc18f78b6989de9594c65bc8a7"
+}

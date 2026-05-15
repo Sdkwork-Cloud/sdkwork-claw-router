@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skylv-sql-helper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_sql_helper",
+  "skill": {
+    "id": 34876,
+    "skillKey": "clawhub-skylv-sql-helper",
+    "name": "Skylv Sql Helper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-sql-helper",
+    "url": "https://clawhub.ai/skills/skylv-sql-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-sql-helper-def24b42ef54c5bd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "SQL query builder and optimizer. Generates queries, explains execution plans, and optimizes slow queries. Triggers: sql query, database query, sql optimization."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 210,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776737060317,
+      "changelog": "Initial release.\n\n- SQL query builder and optimizer: generates, explains, and optimizes queries.\n- Helps write, debug, and speed up SQL queries.\n- Offers best practices and common anti-patterns to avoid.\n- Provides examples for pagination and joins with aggregation.\n- Activated with “sql-helper” trigger.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1e42fdecd72434d6668ab57ac90dcb53d43ae9609d1abb75dbcccb25a30522be"
+}

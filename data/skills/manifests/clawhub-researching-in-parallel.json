@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25195,
+  "uuid": "skill-clawhub-researching-in-parallel",
+  "skillKey": "clawhub-researching-in-parallel",
+  "name": "Researching In Parallel",
+  "summary": "Research any topic thoroughly by running three sub-agents with distinct analytical lenses (breadth, critique, evidence), then giving their outputs to a final...",
+  "version": "1.4.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.researching_in_parallel",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vsamtani",
+      "features": [
+        "Research any topic thoroughly by running three sub-agents with distinct analytical lenses (brea."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/researching-in-parallel@1.4.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45857552?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "researching-in-parallel",
+      "url": "https://clawhub.ai/skills/researching-in-parallel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "researching-in-parallel",
+    "url": "https://clawhub.ai/skills/researching-in-parallel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/researching-in-parallel-36eb15a56dcd41c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/researching-in-parallel@1.4.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-researching-in-parallel-1.4.2.json",
+      "version": "1.4.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6bf56b28a4cdeed912bd603dcb2bd05217eb07ed085d4d636815bbd3bd66277f",
+      "artifactSizeBytes": 2272
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T10:17:34.750Z"
+}

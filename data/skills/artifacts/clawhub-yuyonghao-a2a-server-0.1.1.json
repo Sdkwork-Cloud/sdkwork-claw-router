@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yuyonghao-a2a-server@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yuyonghao_a2a_server",
+  "skill": {
+    "id": 64029,
+    "skillKey": "clawhub-yuyonghao-a2a-server",
+    "name": "A2a Server"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yuyonghao-a2a-server",
+    "url": "https://clawhub.ai/skills/yuyonghao-a2a-server",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yuyonghao-a2a-server-094ae1f2cbe03bda.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于 WebSocket 的多智能体 P2P 通信服务器，支持低延迟消息转发、RPC 调用、发布/订阅、能力发现及离线消息队列。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuyonghao-123",
+      "userId": "s173qtadqbwthef9dwg283f54n83np6t",
+      "displayName": "yuyonghao-123",
+      "image": "https://avatars.githubusercontent.com/u/267580628?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 275,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1774920547895,
+      "changelog": "- Updated dependencies in `package.json` for improved stability and compatibility.\n- No changes to functionality or API.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:26e26710db7e4ec987cc0bc2128e228161a976cae374bac194ababb723369655"
+}

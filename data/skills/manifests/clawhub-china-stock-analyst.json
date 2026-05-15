@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72737,
+  "uuid": "skill-clawhub-china-stock-analyst",
+  "skillKey": "clawhub-china-stock-analyst",
+  "name": "A股短线营收分析助手",
+  "summary": "A股短线营收分析助手，聚焦\"短线交易信号+营收质量\"双轨研判，8位专家并行分析，输出可复核证据链、双轨评分与明确交易条件",
+  "version": "2.4.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_stock_analyst",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MarkWu",
+      "features": [
+        "A股短线营收分析助手，聚焦\"短线交易信号+营收质量\"双轨研判，8位专家并行分析，输出可复核证据链、双轨评分与明确交易条件"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/china-stock-analyst@2.4.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/222328252?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "china-stock-analyst",
+      "url": "https://clawhub.ai/skills/china-stock-analyst"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-stock-analyst",
+    "url": "https://clawhub.ai/skills/china-stock-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-stock-analyst-5a93ab7932eebac2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/china-stock-analyst@2.4.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-china-stock-analyst-2.4.3.json",
+      "version": "2.4.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9b55f1ae3ea3faf7f2ef9fb48d827cb67db906d6ae02cc850a9180b481345c25",
+      "artifactSizeBytes": 1974
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T05:01:20.038Z"
+}

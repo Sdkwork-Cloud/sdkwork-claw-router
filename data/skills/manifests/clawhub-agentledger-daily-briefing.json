@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50557,
+  "uuid": "skill-clawhub-agentledger-daily-briefing",
+  "skillKey": "clawhub-agentledger-daily-briefing",
+  "name": "Daily Briefing",
+  "summary": "Structured morning briefing skill — daily summaries covering calendar, tasks, weather, news, and priorities. Supports cron, heartbeat, and on-demand triggers.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentledger_daily_briefing",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Clawdssen",
+      "features": [
+        "Structured morning briefing skill — daily summaries covering calendar, tasks, weather, news, an.",
+        "Supports cron, heartbeat, and on-demand triggers."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentledger-daily-briefing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262485069?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentledger-daily-briefing",
+      "url": "https://clawhub.ai/skills/agentledger-daily-briefing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentledger-daily-briefing",
+    "url": "https://clawhub.ai/skills/agentledger-daily-briefing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentledger-daily-briefing-df6decf780a81cd4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentledger-daily-briefing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentledger-daily-briefing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:549978b370366c059497d8b010d158dff70defc7e80ce6b307f0f80666ecd05a",
+      "artifactSizeBytes": 2398
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T23:14:17.746Z"
+}

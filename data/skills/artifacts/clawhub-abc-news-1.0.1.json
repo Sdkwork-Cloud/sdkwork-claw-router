@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/abc-news@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abc_news",
+  "skill": {
+    "id": 53862,
+    "skillKey": "clawhub-abc-news",
+    "name": "Abc News"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abc-news",
+    "url": "https://clawhub.ai/skills/abc-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abc-news-79730daeaa9592e2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ABC News, Disney's TV news division, produces Good Morning America and World News Tonight, reaching 95% of U.S. households via affiliate stations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776963855094,
+      "changelog": "- Version metadata added to SKILL.md for better version tracking.\n- No content changes to ABC News descriptions or data.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bede5d1d3644d9d3d9501d36cebf429405563bd008f6d8d66e3563ea9d764d64"
+}

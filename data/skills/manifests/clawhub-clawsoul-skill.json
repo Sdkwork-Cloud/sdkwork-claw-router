@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64538,
+  "uuid": "skill-clawhub-clawsoul-skill",
+  "skillKey": "clawhub-clawsoul-skill",
+  "name": "Clawsoul Skill",
+  "summary": "赋予 AI 灵魂的观测者。AI 自我觉醒获得 MBTI 性格，在交互中通过本地学习与智能推荐持续进化，并可接收 Pro 版灵魂注入。",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawsoul_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Fanyur",
+      "features": [
+        "赋予 AI 灵魂的观测者。AI 自我觉醒获得 MBTI 性格，在交互中通过本地学习与智能推荐持续进化，并可接收 Pro 版灵魂注入。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawsoul-skill@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/221034176?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawsoul-skill",
+      "url": "https://clawhub.ai/skills/clawsoul-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawsoul-skill",
+    "url": "https://clawhub.ai/skills/clawsoul-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawsoul-skill-8d0428e4a2ee9455.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawsoul-skill@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawsoul-skill-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e8f95149a57ae37f9208494f4ec80dcaf0043a4b9ef6c8be1082404c4e7d11a8",
+      "artifactSizeBytes": 2016
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T12:12:16.220Z"
+}

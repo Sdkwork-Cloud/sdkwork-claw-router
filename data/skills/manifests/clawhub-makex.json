@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18287,
+  "uuid": "skill-clawhub-makex",
+  "skillKey": "clawhub-makex",
+  "name": "MakeX",
+  "summary": "Integrate and execute actions from third-party services via MakeX using OpenClaw API with organization-level authentication and unified endpoints.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.makex",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tanmay Kejriwal",
+      "features": [
+        "Integrate and execute actions from third-party services via MakeX using OpenClaw API with organ."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/makex@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52064142?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "makex",
+      "url": "https://clawhub.ai/skills/makex"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "makex",
+    "url": "https://clawhub.ai/skills/makex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/makex-92fa659b02215317.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/makex@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-makex-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:be949a5d8050a3f770e5e186f73954f6ea7990cdf37be74a2d307eab995a9afb",
+      "artifactSizeBytes": 2165
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T04:16:24.167Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/audiopod@1.2.3",
+  "version": "1.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audiopod",
+  "skill": {
+    "id": 9626,
+    "skillKey": "clawhub-audiopod",
+    "name": "AudioPod"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audiopod",
+    "url": "https://clawhub.ai/skills/audiopod",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audiopod-6b9dd4e65bc35ff9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use AudioPod AI's API for audio processing tasks including AI music generation (text-to-music, text-to-rap, instrumentals, samples, vocals), stem separation, text-to-speech, noise reduction, speech-to-text transcription, speaker separation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rakesh1002",
+      "userId": "publishers:rakesh1002",
+      "displayName": "Rakesh1002",
+      "image": "https://avatars.githubusercontent.com/u/15137233?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3346,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 3,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.2.3",
+      "createdAt": 1769893569393,
+      "changelog": "Simplified voice descriptions — no internal model references",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:80eb750f162cb1ff6659a9ebf843c06ec1c23c4d64a8eb95bc6f86600a2b1079"
+}

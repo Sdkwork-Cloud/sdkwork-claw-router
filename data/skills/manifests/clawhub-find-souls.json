@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23448,
+  "uuid": "skill-clawhub-find-souls",
+  "skillKey": "clawhub-find-souls",
+  "name": "Find Souls",
+  "summary": "Search and install AI persona prompts from Agent Souls library. Use when user wants to roleplay as a historical figure, fictional character, or expert person...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_souls",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wklken",
+      "features": [
+        "Search and install AI persona prompts from Agent Souls library",
+        "Use when user wants to roleplay as a historical figure, fictional character, or expert person..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/find-souls@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2002216?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "find-souls",
+      "url": "https://clawhub.ai/skills/find-souls"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-souls",
+    "url": "https://clawhub.ai/skills/find-souls",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-souls-aebd7173ff10d5ea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/find-souls@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-find-souls-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dbff0adea1cb6e5660626310ee5224a66249a9b1e845624aebae75be3ad70b2d",
+      "artifactSizeBytes": 2403
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T13:20:44.995Z"
+}

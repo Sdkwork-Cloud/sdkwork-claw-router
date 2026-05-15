@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shoofly-advanced@1.3.0",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shoofly_advanced",
+  "skill": {
+    "id": 39551,
+    "skillKey": "clawhub-shoofly-advanced",
+    "name": "Shoofly Advanced"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shoofly-advanced",
+    "url": "https://clawhub.ai/skills/shoofly-advanced",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shoofly-advanced-3972c0bf0196b657.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Pre-execution security layer for AI agents. Intercepts and blocks dangerous tool calls before they fire -- not detected after. Works with OpenClaw and Claude..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wow-leeroy-jenkins05",
+      "userId": "s178g202whexww1hvxqpvd48y983fp65",
+      "displayName": "wow-leeroy-jenkins05",
+      "image": "https://avatars.githubusercontent.com/u/266177925?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.3.0",
+      "createdAt": 1774735475091,
+      "changelog": "v2: Claude Code runtime support — PreToolUse hook, install-claude-code-advanced.sh, same threat policy as OpenClaw",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a9599330ad8878c9feb58768f3a5836f157eae3aaa8ac435f5c2117ed53134ee"
+}

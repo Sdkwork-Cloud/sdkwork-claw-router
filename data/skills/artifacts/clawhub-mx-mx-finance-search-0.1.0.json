@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mx-mx-finance-search@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mx_mx_finance_search",
+  "skill": {
+    "id": 61658,
+    "skillKey": "clawhub-mx-mx-finance-search",
+    "name": "Mx Finance Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mx-mx-finance-search",
+    "url": "https://clawhub.ai/skills/mx-mx-finance-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mx-mx-finance-search-9ec1fbba847a39c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于东方财富数据库，支持自然语言搜索全网最新公告、研报、财经新闻、交易所动态及官方政策等，覆盖全球市场标的，可用于热点捕捉、舆情监控、研报速览、公告精读及投资决策等场景。Natural language search for financial information, covering authoritativ..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "akiry09",
+      "userId": "s17205bb2ccd3q6k7btzf8bsjd847htt",
+      "displayName": "akiry09",
+      "image": "https://avatars.githubusercontent.com/u/267565654?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775309046168,
+      "changelog": "Initial release – Powerful natural language financial information search based on authoritative sources.\n\n- Enables natural language search for news, announcements, research, and policy updates from the Eastmoney database.\n- Supports global markets and returns readable content with options to save results locally.\n- Requires only an EM_API_KEY environment variable for authentication.\n- Offers both command-line and Python code usage with clear output structures.\n- Designed for use cases like event tracking, market sentiment monitoring, and investment analysis.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0209c7ef79269c5eb1b6b134046cb77a34caefee42b1a9c9bef6f52fd3d2b73a"
+}

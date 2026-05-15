@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56812,
+  "uuid": "skill-clawhub-picsee-url-shortener-web",
+  "skillKey": "clawhub-picsee-url-shortener-web",
+  "name": "PicSee URL Shortener & QR Codes (Web)",
+  "summary": "Quickly shorten URLs and generate QR codes via PicSee (picsee.io). After logging in, you can also view analytics and history. Use when user says \"縮網址\", \"短網址\"...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.picsee_url_shortener_web",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PicSee Inc.",
+      "features": [
+        "Quickly shorten URLs and generate QR codes via PicSee (picsee.io)",
+        "After logging in, you can also view analytics and history",
+        "Use when user says \"縮網址\", \"短網址\"..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/picsee-url-shortener-web@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23622185?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "picsee-url-shortener-web",
+      "url": "https://clawhub.ai/skills/picsee-url-shortener-web"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "picsee-url-shortener-web",
+    "url": "https://clawhub.ai/skills/picsee-url-shortener-web",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/picsee-url-shortener-web-ae1cfaf3e04d9083.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/picsee-url-shortener-web@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-picsee-url-shortener-web-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f15af32e3616a7f8828d7bce6a4a70fd7d34b34e1862beab8c5a05b93e2c89b3",
+      "artifactSizeBytes": 2006
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T09:52:53.270Z"
+}

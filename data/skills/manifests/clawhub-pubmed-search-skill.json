@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14457,
+  "uuid": "skill-clawhub-pubmed-search-skill",
+  "skillKey": "clawhub-pubmed-search-skill",
+  "name": "PubMed Search",
+  "summary": "AI-powered tool for searching and analyzing PubMed biomedical literature",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pubmed_search_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JackKuo666",
+      "features": [
+        "AI-powered tool for searching and analyzing PubMed biomedical literature"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pubmed-search-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41313632?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pubmed-search-skill",
+      "url": "https://clawhub.ai/skills/pubmed-search-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pubmed-search-skill",
+    "url": "https://clawhub.ai/skills/pubmed-search-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pubmed-search-skill-6c0bfa4625c037b1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pubmed-search-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pubmed-search-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ea6b23b71f475fa3f820e1b9ccf876d96b12db2675fdae08f9a269666ced2c8f",
+      "artifactSizeBytes": 2352
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T01:16:56.526Z"
+}

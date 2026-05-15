@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70229,
+  "uuid": "skill-clawhub-media-news-summary",
+  "skillKey": "clawhub-media-news-summary",
+  "name": "media-news-summary",
+  "summary": "汇总和分析世界主要媒体对重大新闻事件的报道和观点。当用户想要了解不同国家/地区媒体对同一事件的看法、立场差异或详细报道内容时使用，例如：\"查看XX事件的国际媒体反应\"、\"世界媒体怎么看这件事\"、\"各国媒体头条\"等。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.media_news_summary",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "QiQingnan",
+      "features": [
+        "汇总和分析世界主要媒体对重大新闻事件的报道和观点。当用户想要了解不同国家/地区媒体对同一事件的看法、立场差异或详细报道内容时使用，例如：\"查看XX事件的国际媒体反应\"、\"世界媒体怎么看这件事."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/media-news-summary@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7042942?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "media-news-summary",
+      "url": "https://clawhub.ai/skills/media-news-summary"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "media-news-summary",
+    "url": "https://clawhub.ai/skills/media-news-summary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/media-news-summary-6c15698d70eab7ad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/media-news-summary@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-media-news-summary-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:843735df29132d430a0daa7849808d0e0786853a6e7136edba1894ab0531b4ce",
+      "artifactSizeBytes": 2355
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T16:26:00.503Z"
+}

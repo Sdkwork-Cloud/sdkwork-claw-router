@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-paper-survey@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_paper_survey",
+  "skill": {
+    "id": 30840,
+    "skillKey": "clawhub-ai-paper-survey",
+    "name": "Ai Paper Survey"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-paper-survey",
+    "url": "https://clawhub.ai/skills/ai-paper-survey",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-paper-survey-a4bcb4771360c49f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Conduct structured AI paper surveys using alphaXiv MCP tools. Reads user research interests from a keywords file, searches recent papers across multiple dime..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "haataa",
+      "userId": "s171m2rjehg17ey6e0r9c1fcw983jhwm",
+      "displayName": "haataa",
+      "image": "https://avatars.githubusercontent.com/u/7435270?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 275,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774609647905,
+      "changelog": "- Added metadata file (_meta.json) to support skill discovery and management.\n- No changes to core skill workflow or documentation (SKILL.md unchanged).\n- Incremented version to 1.1.0 for improved packaging and compatibility.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0ec022e6761c22be7fd565c38ae62f8e082f94c3b1b89dc8f6168125e67ee769"
+}

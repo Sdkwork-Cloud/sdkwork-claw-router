@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tutor-for-all@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tutor_for_all",
+  "skill": {
+    "id": 70251,
+    "skillKey": "clawhub-tutor-for-all",
+    "name": "tutor-for-all"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tutor-for-all",
+    "url": "https://clawhub.ai/skills/tutor-for-all",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tutor-for-all-711369578558d3db.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据你的学习目标和时间，制定个性化课程及计划，跟踪进度，答疑解惑，并推荐优质学习资源辅助提升。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "futureidiot",
+      "userId": "s175kn3mxh2s66yhtg7by69x8x83gb8w",
+      "displayName": "枳初",
+      "image": "https://avatars.githubusercontent.com/u/74137379?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774617563743,
+      "changelog": "Tutor Skill v1.0.0 — 首发上线！\n\n- 一站式私人学习导师，支持个性化课程规划、进度追踪、答疑与资源推荐。\n- 多种命令模式（如 /learn、/checkin、/study、/ask、/progress），覆盖从计划到复盘的全流程。\n- 所有学习数据本地Markdown文件化，结构透明、便于编辑和查阅。\n- 推荐高质量书籍与视频，强调资源精挑细选和阶段适配。\n- 注重简洁、互动的对话风格，推动用户主动思考和持续学习。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cab70471a1469080a41214ded8dd848d41005f18c7d9c7d3f86d28aad21e1a61"
+}

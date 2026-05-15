@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-scorer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_scorer",
+  "skill": {
+    "id": 66717,
+    "skillKey": "clawhub-skill-scorer",
+    "name": "Skill Scorer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-scorer",
+    "url": "https://clawhub.ai/skills/skill-scorer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-scorer-6c0f794eab9e93ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "对任何 SKILL.md（或 skill 文件夹）进行质量评估和打分，基于行业最佳实践，生成 8 维度 100 分制的结构化质检报告，精准定位问题并提供可执行的优化建议。当用户要求评审、审计、评分、检测、质检任何 skill 时使用——哪怕只是说「这个 skill 写得怎么样？」也会触发。也支持：skill质检、..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dingtom336-gif",
+      "userId": "s17aepsh6v86z2ajsq3ng9tgm983g9pt",
+      "displayName": "dingtom336-gif",
+      "image": "https://avatars.githubusercontent.com/u/256118512?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 210,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775121151443,
+      "changelog": "1.0.0 — Initial release with an 8-dimension scoring rubric:\n\n- Evaluates any SKILL.md (or skill folder) for quality and compliance.\n- Assigns scores out of 100 across 8 weighted dimensions based on best practices.\n- Identifies all issues by severity with actionable, specific suggestions.\n- Generates a bilingual (Chinese + English) structured quality report for every evaluation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:71e66a9de6c0f7e264101ed24d670ae6d858f3443ff53d76093d0a4425f9209f"
+}

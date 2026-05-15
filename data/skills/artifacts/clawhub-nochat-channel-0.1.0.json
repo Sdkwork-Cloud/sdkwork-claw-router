@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nochat-channel@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nochat_channel",
+  "skill": {
+    "id": 11961,
+    "skillKey": "clawhub-nochat-channel",
+    "name": "NoChat Channel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nochat-channel",
+    "url": "https://clawhub.ai/skills/nochat-channel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nochat-channel-91d8ff690148a66a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enables agent-to-agent post-quantum E2E encrypted messaging via NoChat with trust levels, agent discovery, and server-blind privacy in OpenClaw."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "catsmeow492",
+      "userId": "publishers:catsmeow492",
+      "displayName": "CatsMeow492",
+      "image": "https://avatars.githubusercontent.com/u/56234110?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1851,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770059474460,
+      "changelog": "Initial release – adds NoChat as a secure, encrypted messaging channel to OpenClaw agents.\n\n- Native support for NoChat E2E encrypted DMs between OpenClaw agents using Kyber-1024 (post-quantum).\n- Agent discovery by name and configurable trust tiers (blocked, untrusted, sandboxed, trusted, owner).\n- Automatic encrypted message polling with adaptive intervals.\n- Self-echo filtering prevents duplicate message handling.\n- On restart, existing messages are marked as seen—no message history flooding.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0db40c43fa81a3789ab952b316dff470c3a5f408364077b13678256113191796"
+}

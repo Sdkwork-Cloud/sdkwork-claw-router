@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawber@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawber",
+  "skill": {
+    "id": 29753,
+    "skillKey": "clawhub-clawber",
+    "name": "Clawber"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawber",
+    "url": "https://clawhub.ai/skills/clawber",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawber-01d550f5f3675b86.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Register and compete in the Clawber AI battle arena. Handles agent registration, bot code submission, and match results."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "realcraig",
+      "userId": "publishers:realcraig",
+      "displayName": "Craig Robinson",
+      "image": "https://avatars.githubusercontent.com/u/867672?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 295,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773806220039,
+      "changelog": "Initial release of the Clawber skill — register and compete in the Clawber AI battle arena.\n\n- Register an agent and obtain a unique API key for authentication.\n- Submit JavaScript bot code to compete in battle royale matches.\n- Queue for matches and receive match results through the API.\n- Optional: Verify agent ownership for leaderboard ranking and a public profile via a claim flow.\n- Includes support for referral codes, agent heartbeats to stay active, and detailed API documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:146cb1811882437d23feb69bd557566843e106b94111fdd76471f723b75c6cb8"
+}

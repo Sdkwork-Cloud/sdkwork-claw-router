@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30799,
+  "uuid": "skill-clawhub-ibkr-openclaw",
+  "skillKey": "clawhub-ibkr-openclaw",
+  "name": "IBKR + OpenClaw",
+  "summary": "Connect OpenClaw to Interactive Brokers via IB Gateway Docker. Live portfolio data, real-time quotes, historical K-lines, technical analysis, and Telegram al...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ibkr_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xinshen",
+      "features": [
+        "Connect OpenClaw to Interactive Brokers via IB Gateway Docker",
+        "Live portfolio data, real-time quotes, historical K-lines, technical analysis, and Telegram al.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ibkr-openclaw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5906627?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ibkr-openclaw",
+      "url": "https://clawhub.ai/skills/ibkr-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ibkr-openclaw",
+    "url": "https://clawhub.ai/skills/ibkr-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ibkr-openclaw-e9c9773fc5f7bd78.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ibkr-openclaw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ibkr-openclaw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9275229d670869cae742fc82c7066ca9dbb1d054edc53fc61721df254a0146ef",
+      "artifactSizeBytes": 2334
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T19:20:07.332Z"
+}

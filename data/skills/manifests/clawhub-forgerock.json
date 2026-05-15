@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36025,
+  "uuid": "skill-clawhub-forgerock",
+  "skillKey": "clawhub-forgerock",
+  "name": "Forgerock",
+  "summary": "ForgeRock integration. Manage data, records, and automate workflows. Use when the user wants to interact with ForgeRock data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.forgerock",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "ForgeRock integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with ForgeRock data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/forgerock@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "forgerock",
+      "url": "https://clawhub.ai/skills/forgerock"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "forgerock",
+    "url": "https://clawhub.ai/skills/forgerock",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/forgerock-f342fc42b447003b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/forgerock@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-forgerock-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f59add6c4b72b788f69934ea84e60f47ef3ef8114f3325f2cb89a6934934bffc",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T22:25:24.650Z"
+}

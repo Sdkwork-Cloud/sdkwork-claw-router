@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-doc-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_doc_cn",
+  "skill": {
+    "id": 56109,
+    "skillKey": "clawhub-feishu-doc-cn",
+    "name": "Feishu Doc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-doc-cn",
+    "url": "https://clawhub.ai/skills/feishu-doc-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-doc-cn-21f65698e2783b19.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read, create, update, and append content in Feishu (飞书) documents with appropriate user permissions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "erick0309",
+      "userId": "s17fkwp5fn3x7sfy124ngsh0gs83xgtx",
+      "displayName": "erick0309",
+      "image": "https://avatars.githubusercontent.com/u/30321886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 400,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774836580210,
+      "changelog": "Initial release: Read, create, update Feishu documents",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a31447867cf069afc688d5440b61c9dcafefc09c25effce44153a2fe3d0c5bb7"
+}

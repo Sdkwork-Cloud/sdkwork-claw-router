@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tt@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tt",
+  "skill": {
+    "id": 11960,
+    "skillKey": "clawhub-tt",
+    "name": "jj"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tt",
+    "url": "https://clawhub.ai/skills/tt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tt-0e07cf830957701d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send WhatsApp messages to other people or search/sync WhatsApp history via the wacli CLI (not for normal user chats)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rafay0313",
+      "userId": "publishers:rafay0313",
+      "displayName": "rafay0313",
+      "image": "https://avatars.githubusercontent.com/u/177396381?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1952,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769547594770,
+      "changelog": "wacli skill initial release: A new skill for sending WhatsApp messages to others and managing history via the wacli CLI.\n\n- Enables message sending, chat search, and history sync/backfill using wacli.\n- Not for normal user chats—use only when explicitly requested to contact a third party or manage WhatsApp history.\n- Safety checks require explicit recipient and message, and confirmation before sending.\n- Includes command references for authentication, sync, chat/message search, backfill, and file transfer.\n- Provides installation instructions for wacli via Homebrew or Go.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3f6b5ff853ecf578ccdbe509a3b4ee393aebcaae7b1fac33e45394050536a3f6"
+}

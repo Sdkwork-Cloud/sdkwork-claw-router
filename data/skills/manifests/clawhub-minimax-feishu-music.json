@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39022,
+  "uuid": "skill-clawhub-minimax-feishu-music",
+  "skillKey": "clawhub-minimax-feishu-music",
+  "name": "MiniMax Feishu Music",
+  "summary": "Generate themed music with lyrics using MiniMax music-2.6 and send as a high-quality MP3 audio attachment to a Feishu user.",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_feishu_music",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xRay",
+      "features": [
+        "Generate themed music with lyrics using MiniMax music-2.6 and send as a high-quality MP3 audio."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/minimax-feishu-music@1.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57515812?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "minimax-feishu-music",
+      "url": "https://clawhub.ai/skills/minimax-feishu-music"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-feishu-music",
+    "url": "https://clawhub.ai/skills/minimax-feishu-music",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-feishu-music-d1ac12b6993e9b5a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/minimax-feishu-music@1.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-minimax-feishu-music-1.4.0.json",
+      "version": "1.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0a0398569d6a31be7d73f7a495dc2b660513b0483bb0a8aa554580047404201c",
+      "artifactSizeBytes": 1995
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T07:20:39.591Z"
+}

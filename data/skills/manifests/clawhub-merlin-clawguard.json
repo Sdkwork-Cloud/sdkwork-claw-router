@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56156,
+  "uuid": "skill-clawhub-merlin-clawguard",
+  "skillKey": "clawhub-merlin-clawguard",
+  "name": "Merlin Clawguard",
+  "summary": "Système immunitaire numérique pour agents autonomes. Détecte les skills malveillantes via Clawdex (par Koi), scanne avec 4 vaccines Python (C2, rootkits, cha...",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.merlin_clawguard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kofna3369",
+      "features": [
+        "Système immunitaire numérique pour agents autonomes",
+        "Détecte les skills malveillantes via Clawdex (par Koi), scanne avec 4 vaccines Python (C2, root."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/merlin-clawguard@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/110220070?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "merlin-clawguard",
+      "url": "https://clawhub.ai/skills/merlin-clawguard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "merlin-clawguard",
+    "url": "https://clawhub.ai/skills/merlin-clawguard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/merlin-clawguard-56e80d943b07b272.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/merlin-clawguard@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-merlin-clawguard-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b7671d4c69ed03f1a682ea5521bdf8deacfeaeab9d4d39ddef915c645ed7d374",
+      "artifactSizeBytes": 2017
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T10:33:50.525Z"
+}

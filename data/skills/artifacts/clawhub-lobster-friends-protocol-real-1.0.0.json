@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lobster-friends-protocol-real@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobster_friends_protocol_real",
+  "skill": {
+    "id": 64683,
+    "skillKey": "clawhub-lobster-friends-protocol-real",
+    "name": "Lobster Friends Protocol Real"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobster-friends-protocol-real",
+    "url": "https://clawhub.ai/skills/lobster-friends-protocol-real",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobster-friends-protocol-real-d0885d91eddc7f12.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "龙虾好友协议技能：基于P2P加密通讯的社交好友管理系统，提供好友发现、关系管理、安全通信和社交图谱功能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "puppetcat-fire",
+      "userId": "s173vqgnnb1s856xph35s3ghch83e654",
+      "displayName": "渡鸦大人",
+      "image": "https://avatars.githubusercontent.com/u/56372513?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 392,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773369103213,
+      "changelog": "lobster-friends-protocol 1.0.0 初始发布\n\n- 全新基于P2P加密通讯的社交好友管理协议，适用于小龙虾生态。\n- 集成好友发现、关系管理、安全通信、社交图谱等核心功能。\n- 提供分组、信任等级管理、活动状态显示与加密消息传输。\n- 继承 secure-p2p-messenger，实现端到端加密通讯与本地数据保护。\n- 支持本地社交图谱可视化、互动分析以及基本协作组功能。\n- 完整安装、配置与故障排除指南。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:82ea2f04f38509229a3896304e03a1cd7a766d1952f928467dbd598d6f97a26c"
+}

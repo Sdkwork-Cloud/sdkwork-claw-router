@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8741,
+  "uuid": "skill-clawhub-linkedin-automation",
+  "skillKey": "clawhub-linkedin-automation",
+  "name": "LinkedIn Automation by Zich (BradAI's OpenClaw)",
+  "summary": "Automate LinkedIn content creation, posting, engagement tracking, and audience growth. Use for posting content, scheduling posts, analyzing engagement metrics, generating content ideas, commenting on posts, and building LinkedIn presence..",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkedin_automation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zich-dev",
+      "features": [
+        "Automate LinkedIn content creation, posting, engagement tracking, and audience growth",
+        "Use for posting content, scheduling posts, analyzing engagement metrics, generating content ide.",
+        "Requires browser access with LinkedIn logged in."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linkedin-automation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59956290?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linkedin-automation",
+      "url": "https://clawhub.ai/skills/linkedin-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkedin-automation",
+    "url": "https://clawhub.ai/skills/linkedin-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkedin-automation-43f2b703fefc2889.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linkedin-automation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-linkedin-automation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f693caef33db1be602c9bd137787a7ac746f977b7dc43ab71bbe3dc465ba0418",
+      "artifactSizeBytes": 2451
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T10:42:09.853Z"
+}

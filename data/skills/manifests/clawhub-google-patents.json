@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56228,
+  "uuid": "skill-clawhub-google-patents",
+  "skillKey": "clawhub-google-patents",
+  "name": "Google Patents",
+  "summary": "Search Google Patents database for patent research, infringement risk checks, and competitive IP analysis. Use when user mentions: 专利, patent, 侵权, infringeme...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_patents",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiafar",
+      "features": [
+        "Search Google Patents database for patent research, infringement risk checks, and competitive I.",
+        "Use when user mentions: 专利, patent, 侵权, infringeme..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-patents@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94378558?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-patents",
+      "url": "https://clawhub.ai/skills/google-patents"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-patents",
+    "url": "https://clawhub.ai/skills/google-patents",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-patents-82d87321f2b95330.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-patents@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-patents-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d953d77880fb9765a157015348f596f4d8a1509d03901f40aa582eb29d5dc90c",
+      "artifactSizeBytes": 2030
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T23:54:01.588Z"
+}

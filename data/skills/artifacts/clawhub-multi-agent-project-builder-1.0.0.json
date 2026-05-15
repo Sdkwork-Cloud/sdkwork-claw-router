@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/multi-agent-project-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_agent_project_builder",
+  "skill": {
+    "id": 65368,
+    "skillKey": "clawhub-multi-agent-project-builder",
+    "name": "多 Agent 项目协作工厂"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-agent-project-builder",
+    "url": "https://clawhub.ai/skills/multi-agent-project-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-agent-project-builder-c62c32cd74f92e09.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "多 Agent 项目协作工厂 - 一键实现智能分工完成互联网项目"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ninetyhe-90",
+      "userId": "s17fmngbaem7xbfp5xj2bxgj0n84nv4c",
+      "displayName": "ninetyhe",
+      "image": "https://avatars.githubusercontent.com/u/97206190?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775978760229,
+      "changelog": "Initial release of multi-agent-project-builder – 一键实现多智能体协作项目工厂\n\n- 支持多 Agent 协作自动分工，覆盖需求分析、调研、架构、实现、测试等环节\n- 智能任务分解及自动 Todo 创建\n- 五大专业角色默认支持，流程可自定义扩展\n- 并行任务执行和实时产出追踪\n- 支持一键生成完整项目结构，跨平台兼容（如 Hermes、Claude、OpenClaw）\n- 灵活项目与 Agent 配置，自定义提示词与流程",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aa4788a281e02795f6b96e21b89530c3dd23514bc308f344dcffd10d7318683d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alista@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alista",
+  "skill": {
+    "id": 20314,
+    "skillKey": "clawhub-alista",
+    "name": "alista"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alista",
+    "url": "https://clawhub.ai/skills/alista",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alista-801f415ad9be0eb1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Save restaurants, bars, and cafes from TikTok and Instagram videos. Search your saved places and get weekend suggestions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bgrober",
+      "userId": "publishers:bgrober",
+      "displayName": "Brian",
+      "image": "https://avatars.githubusercontent.com/u/7087466?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 460,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1773318135665,
+      "changelog": "fix: soften SKILL.md language to address ClawHub trust flags",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a4a6e51deb3cb4a9f02b39ee5f1660b807651451475986428457ae67f3cf9937"
+}

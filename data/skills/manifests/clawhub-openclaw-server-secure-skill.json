@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9580,
+  "uuid": "skill-clawhub-openclaw-server-secure-skill",
+  "skillKey": "clawhub-openclaw-server-secure-skill",
+  "name": "openclaw-server-secure-skill",
+  "summary": "Comprehensive security hardening and installation guide for OpenClaw (formerly Clawdbot/Moltbot). Use this skill when the user wants to secure a server, install the OpenClaw agent, or configure Tailscale/Firewall for the agent.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_server_secure_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kime541200",
+      "features": [
+        "Comprehensive security hardening and installation guide for OpenClaw (formerly Clawdbot/Moltbot)",
+        "Use this skill when the user wants to secure a server, install the OpenClaw agent, or configure."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-server-secure-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48781152?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-server-secure-skill",
+      "url": "https://clawhub.ai/skills/openclaw-server-secure-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-server-secure-skill",
+    "url": "https://clawhub.ai/skills/openclaw-server-secure-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-server-secure-skill-9f2413eb2724c5e3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-server-secure-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-server-secure-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:df163e9c19fef52c760b0e5a84001401c3898e20beca4bdc2ff435cddbc11ed5",
+      "artifactSizeBytes": 2390
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T04:07:21.071Z"
+}

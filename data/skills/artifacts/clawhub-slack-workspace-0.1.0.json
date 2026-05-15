@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/slack-workspace@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slack_workspace",
+  "skill": {
+    "id": 54790,
+    "skillKey": "clawhub-slack-workspace",
+    "name": "Slack"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slack-workspace",
+    "url": "https://clawhub.ai/skills/slack-workspace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slack-workspace-4645d6a77b06054e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send and manage messages, channels, and files in Slack workspaces — powered by ClawLink."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hith3sh",
+      "userId": "s173vws87a7ss71xf9rq53k5gd8568kv",
+      "displayName": "Hithesh Jay",
+      "image": "https://avatars.githubusercontent.com/u/83839061?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 103,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1777821510172,
+      "changelog": "Initial release of Slack workspace management via ClawLink.\n\n- Send and manage messages, channels, and files in Slack through ClawLink integration.\n- Guided setup: install ClawLink plugin, pair account, and connect Slack with no need for manual API credentials.\n- Use ClawLink tools to access Slack features dynamically; tools are discovered live based on connected integrations.\n- Supports common Slack actions: messaging, scheduling, channel management, file uploads, reactions, and more (subject to connected account permissions).\n- Setup and action workflows documented to assist users with pairing, connection, and troubleshooting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:464c425e7b4be4fe86daebee8ddc86be161b340f6195966d8576e3a620fd9773"
+}

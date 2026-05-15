@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-searcher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_searcher",
+  "skill": {
+    "id": 13516,
+    "skillKey": "clawhub-web-searcher",
+    "name": "Web Searcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-searcher",
+    "url": "https://clawhub.ai/skills/web-searcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-searcher-58cccd635acedcdb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous web research agent that performs multi-step searches, follows links, extracts data, and synthesizes findings into structured reports. Use when asked to research a topic, find information across multiple sources, compare options,."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kassimisai",
+      "userId": "publishers:kassimisai",
+      "displayName": "kassimisai",
+      "image": "https://avatars.githubusercontent.com/u/183769921?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1394,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770811690681,
+      "changelog": "Initial release: autonomous web research agent with multi-step search, fetch, cross-reference, and structured report synthesis",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:689a69cce796eb34563596c5885095f01a69e85faeb6315d58d09902087849a7"
+}

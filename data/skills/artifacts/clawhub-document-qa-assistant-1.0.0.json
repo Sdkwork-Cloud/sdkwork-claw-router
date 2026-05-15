@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/document-qa-assistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.document_qa_assistant",
+  "skill": {
+    "id": 71345,
+    "skillKey": "clawhub-document-qa-assistant",
+    "name": "文档问答助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "document-qa-assistant",
+    "url": "https://clawhub.ai/skills/document-qa-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/document-qa-assistant-598fc1cd42cda094.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "文档问答助手。基于本地文档（PDF/Word/Markdown/TXT）回答问题，支持知识库检索和多文档交叉验证。当用户需要：从文档中查找答案、基于文档回答问题、跨多个文档综合查询、验证信息一致性、生成文档摘要时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xuyongliang-eccom",
+      "userId": "s17fp5xmt9fkkpfap18esxa1h183mfev",
+      "displayName": "xuyongliang",
+      "image": "https://avatars.githubusercontent.com/u/105618971?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 229,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774536472304,
+      "changelog": "首发版本",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c6e1a0c57bfcb679422bb4b77876ccac786e18640380488c63d44ca3ceaaf08a"
+}

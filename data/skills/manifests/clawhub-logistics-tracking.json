@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14802,
+  "uuid": "skill-clawhub-logistics-tracking",
+  "skillKey": "clawhub-logistics-tracking",
+  "name": "Logistics Tracking",
+  "summary": "Track international packages by tracking number. Supports 3100+ carriers (China Post, DHL, FedEx, UPS, USPS, Yanwen, Cainiao, etc.) via 17track. Optional: se...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.logistics_tracking",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shopme",
+      "features": [
+        "Track international packages by tracking number",
+        "Supports 3100+ carriers (China Post, DHL, FedEx, UPS, USPS, Yanwen, Cainiao, etc.) via 17track",
+        "Optional: se..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/logistics-tracking@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261120965?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "logistics-tracking",
+      "url": "https://clawhub.ai/skills/logistics-tracking"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "logistics-tracking",
+    "url": "https://clawhub.ai/skills/logistics-tracking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/logistics-tracking-854c8f038b5cac25.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/logistics-tracking@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-logistics-tracking-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e668d3d02282435281fa397e5ed72fbce4e93b384eff1ebebddea46e08064594",
+      "artifactSizeBytes": 2002
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T07:37:07.730Z"
+}

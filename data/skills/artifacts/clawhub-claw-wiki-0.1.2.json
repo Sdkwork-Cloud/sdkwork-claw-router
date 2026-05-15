@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-wiki@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_wiki",
+  "skill": {
+    "id": 13223,
+    "skillKey": "clawhub-claw-wiki",
+    "name": "Claw Wiki"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-wiki",
+    "url": "https://clawhub.ai/skills/claw-wiki",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-wiki-e8d89aa4250341a1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reference and refresh a local OpenClaw documentation snapshot for product usage, deployment, configuration, CLI commands, channels, gateway behavior, tools,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lueashes",
+      "userId": "s176d57vjj5732bx98axhsy43s83ga2j",
+      "displayName": "lueashes",
+      "image": "https://avatars.githubusercontent.com/u/209020605?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1427,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1773506518602,
+      "changelog": "- Added a SECURITY.md file to document security practices.\n- Introduced a \"Safety Contract\" section in SKILL.md outlining strict behavioral boundaries and explicit limitations for sync, execution, and data usage.\n- Clarified allowed/forbidden skill behaviors, emphasizing risk reduction and refusal of unsafe/irrelevant operations.\n- Added \"Maintenance Guardrails\" section to strengthen process safety around documentation refresh and validation.\n- No functional code changes are indicated; this is a documentation and security policy update.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:152afd278170ec6d82f00779b149e7780a7567f0c722abc3264142b0bcc1f1ca"
+}

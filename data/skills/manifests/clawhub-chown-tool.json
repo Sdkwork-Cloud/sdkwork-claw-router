@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47686,
+  "uuid": "skill-clawhub-chown-tool",
+  "skillKey": "clawhub-chown-tool",
+  "name": "Chown Tool",
+  "summary": "Perform chown-tool operations from the command line.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chown_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BIN",
+      "features": [
+        "Perform chown-tool operations from the command line."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chown-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9191597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chown-tool",
+      "url": "https://clawhub.ai/skills/chown-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chown-tool",
+    "url": "https://clawhub.ai/skills/chown-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chown-tool-b440d85139c0dde2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chown-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chown-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5554dd75a82bc9fd1955ba8251b6689887ae049380257a038afea5f9256b0446",
+      "artifactSizeBytes": 1745
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T19:52:47.492Z"
+}

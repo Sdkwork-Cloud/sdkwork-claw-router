@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57242,
+  "uuid": "skill-clawhub-jd-price-protect",
+  "skillKey": "clawhub-jd-price-protect",
+  "name": "JD Price Protection 京东自动价保",
+  "summary": "Auto-apply JD.com (京东) price protection on all eligible orders. Connects to Chrome via OpenClaw Browser Relay CDP, navigates to JD price protection page, cli...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jd_price_protect",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Danielwangyy",
+      "features": [
+        "Auto-apply JD.com (京东) price protection on all eligible orders",
+        "Connects to Chrome via OpenClaw Browser Relay CDP, navigates to JD price protection page, cli..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jd-price-protect@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32700482?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jd-price-protect",
+      "url": "https://clawhub.ai/skills/jd-price-protect"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jd-price-protect",
+    "url": "https://clawhub.ai/skills/jd-price-protect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jd-price-protect-c6c6dd4a533058ba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jd-price-protect@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jd-price-protect-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d30d30dffc145f7667b56dc0824eccd6ae3c5e107960c27a7767765e88f61afe",
+      "artifactSizeBytes": 2023
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T15:04:12.670Z"
+}

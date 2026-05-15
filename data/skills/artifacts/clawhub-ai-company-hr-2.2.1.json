@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-company-hr@2.2.1",
+  "version": "2.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_company_hr",
+  "skill": {
+    "id": 67903,
+    "skillKey": "clawhub-ai-company-hr",
+    "name": "AI Company HR"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-company-hr",
+    "url": "https://clawhub.ai/skills/ai-company-hr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-company-hr-ae6c97fc48e988a9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI公司人力资源技能包（执行层）。AI Agent全生命周期管理：招聘→入职→考核→伦理→淘汰，三位一体考核指标，标准化退役流程。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johnsmithfan",
+      "userId": "s17ar8yxm9wh64zhr7mr0xemcn84gs16",
+      "displayName": "JohnSmithfan",
+      "image": "https://avatars.githubusercontent.com/u/147225147?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 309,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "2.2.1",
+      "createdAt": 1776877456588,
+      "changelog": "English metadata update - standardize description to English",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:105355fad625df30ef4f3dd63de9dc2eb005489f7162e1acdb50ef9978c6ba95"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quantinuumclaw@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quantinuumclaw",
+  "skill": {
+    "id": 22415,
+    "skillKey": "clawhub-quantinuumclaw",
+    "name": "Quantinuumclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quantinuumclaw",
+    "url": "https://clawhub.ai/skills/quantinuumclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quantinuumclaw-c79196fff9f2689a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enables building and deploying quantum computing applications with Quantinuum, Guppy, Selene, and Fly.io. Use for the OpenClaw Clinical Hackathon, clinical o..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "arunnadarasa",
+      "userId": "s175spnx5m2qksm07wmc9jw9qh83hq8x",
+      "displayName": "Arun Nadarasa",
+      "image": "https://avatars.githubusercontent.com/u/186420617?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 473,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772546244079,
+      "changelog": "Initial release of the quantinuumclaw skill for building and deploying quantum-powered clinical and web applications.\n\n- Provides an end-to-end stack: Quantinuum (hardware/emulator), Guppy (quantum language), Selene (FastAPI backend), Fly.io (cloud deployment), and Lovable (frontend template).\n- Includes scripts for rapid app creation, backend setup, cloud deployment, and frontend integration.\n- Features templates and references specifically for clinical/healthcare quantum use-cases (drug discovery, treatment optimization, patient stratification, molecular simulation, clinical trials, etc.).\n- Offers compliance and data handling guidance for healthcare projects.\n- Documentation includes workflow, troubleshooting, use-case mapping, performance/cost/security tips, and advanced patterns.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8c6e63749984257bde61eb45115f4ad5f27a2f46b55ea50c4aad6ec6f8f2167e"
+}

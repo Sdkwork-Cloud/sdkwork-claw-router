@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10067,
+  "uuid": "skill-clawhub-files",
+  "skillKey": "clawhub-files",
+  "name": "Files",
+  "summary": "Safely organize, deduplicate, and analyze files with intelligent bulk operations and full undo support.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.files",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Safely organize, deduplicate, and analyze files with intelligent bulk operations and full undo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/files@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "files",
+      "url": "https://clawhub.ai/skills/files"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "files",
+    "url": "https://clawhub.ai/skills/files",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/files-3d7db37d08f9140f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/files@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-files-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3040ee12f881dd79666875ad35166964da35f25198d6e1f57446f93476d632c0",
+      "artifactSizeBytes": 1765
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T12:06:23.597Z"
+}

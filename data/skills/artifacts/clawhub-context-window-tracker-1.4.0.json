@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/context-window-tracker@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_window_tracker",
+  "skill": {
+    "id": 30567,
+    "skillKey": "clawhub-context-window-tracker",
+    "name": "Context Window Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-window-tracker",
+    "url": "https://clawhub.ai/skills/context-window-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-window-tracker-7be74631d8a82d51.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track and report OpenClaw context window usage with a detailed breakdown of what's consuming tokens. Use when: user asks about context usage, token usage, \"h..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "99rebels",
+      "userId": "s17b17x5vmnh2q27ane7sj7an5843qs4",
+      "displayName": "99rebels",
+      "image": "https://avatars.githubusercontent.com/u/148632105?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 280,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1777154219267,
+      "changelog": "Updated output format: default shows unicode bar + turns remaining + tokens/turn. Detailed view on explicit request. Slack rendering fix for asterisk markdown conflict.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c84de73ce4afcc0297a92ad48cc1133a4cefea6000bb61e6e43e7acab7e6fe15"
+}

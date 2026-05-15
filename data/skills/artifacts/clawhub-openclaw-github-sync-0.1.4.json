@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-github-sync@0.1.4",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_github_sync",
+  "skill": {
+    "id": 18811,
+    "skillKey": "clawhub-openclaw-github-sync",
+    "name": "Openclaw Github Sync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-github-sync",
+    "url": "https://clawhub.ai/skills/openclaw-github-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-github-sync-0808d6023911c142.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Keep an OpenClaw agent's non-sensitive context (selected memory, MD files, notes, and custom skills) under version control in a separate Git repository for r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bradvin",
+      "userId": "publishers:bradvin",
+      "displayName": "Brad Vincent",
+      "image": "https://avatars.githubusercontent.com/u/1409490?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 659,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.1.4",
+      "createdAt": 1771962642877,
+      "changelog": "Update to the sync.sh script to ensure the readme.md is built for a sync",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bffdb8e1488c5ec39e06d93e06295f93e07a70683002c8b954b5bf1087d9dd37"
+}

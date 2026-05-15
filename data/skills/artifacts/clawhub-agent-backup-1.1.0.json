@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-backup@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_backup",
+  "skill": {
+    "id": 26146,
+    "skillKey": "clawhub-agent-backup",
+    "name": "Openclaw Backup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-backup",
+    "url": "https://clawhub.ai/skills/agent-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-backup-289269ebfd288777.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Encrypted backup and restore for OpenClaw agents. Two-tier archives: operational data safe for cloud storage, secrets encrypted with age for local recovery...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zurbrick",
+      "userId": "s17644fr465554b2j12pdyaxrh83ekff",
+      "displayName": "Don Zurbrick",
+      "image": "https://avatars.githubusercontent.com/u/24554955?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 372,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773920052735,
+      "changelog": "v1.1.0: Added workflows — weekly-verify.sh (archive validation + retention pruning), monthly-drill.sh (automated restore dry-run), pre-change-snapshot.sh (quick snapshot before config changes), GitHub Actions CI for backup verification on push.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9acc51ba42fd6d2039ab25af3c8db7c1fe9e90581acbee30e7b3da93c069641e"
+}

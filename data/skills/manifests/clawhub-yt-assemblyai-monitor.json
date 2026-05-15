@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52288,
+  "uuid": "skill-clawhub-yt-assemblyai-monitor",
+  "skillKey": "clawhub-yt-assemblyai-monitor",
+  "name": "Yt Assemblyai Monitor",
+  "summary": "YouTube channel monitor and video transcription using AssemblyAI cloud API. Pure Python + requests only — no ffmpeg, no Whisper, no extra tools needed. Monit...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yt_assemblyai_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "大佬的鼠DonRat",
+      "features": [
+        "YouTube channel monitor and video transcription using AssemblyAI cloud API",
+        "Pure Python + requests only — no ffmpeg, no Whisper, no extra tools needed",
+        "Monit..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yt-assemblyai-monitor@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/134839692?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yt-assemblyai-monitor",
+      "url": "https://clawhub.ai/skills/yt-assemblyai-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yt-assemblyai-monitor",
+    "url": "https://clawhub.ai/skills/yt-assemblyai-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yt-assemblyai-monitor-0d8ba8ca8c4c4777.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yt-assemblyai-monitor@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-yt-assemblyai-monitor-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4522777ff78315de5ce41ff786b761d12ef5dcfaac73c79bdd5a2ee5c62a091f",
+      "artifactSizeBytes": 1975
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T12:43:20.029Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15699,
+  "uuid": "skill-clawhub-suno",
+  "skillKey": "clawhub-suno",
+  "name": "Suno",
+  "summary": "Generate AI music with Suno via API or browser, with prompt engineering and song extensions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.suno",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Generate AI music with Suno via API or browser, with prompt engineering and song extensions."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/suno@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "suno",
+      "url": "https://clawhub.ai/skills/suno"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "suno",
+    "url": "https://clawhub.ai/skills/suno",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/suno-586937124e151c46.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/suno@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-suno-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3e5fd7f539231b80404287545579c1968a11738d6364a366d2440313e9f17d88",
+      "artifactSizeBytes": 2270
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T22:03:18.337Z"
+}

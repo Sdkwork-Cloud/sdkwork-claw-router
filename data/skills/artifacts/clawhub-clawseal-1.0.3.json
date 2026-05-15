@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawseal@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawseal",
+  "skill": {
+    "id": 45941,
+    "skillKey": "clawhub-clawseal",
+    "name": "ClawSeal"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawseal",
+    "url": "https://clawhub.ai/skills/clawseal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawseal-36ff885a58fc89ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cryptographic memory for AI agents with QSEAL tamper-evidence. Zero-config demo mode, scroll-native YAML storage."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdvegas21",
+      "userId": "s1750pea87sbkpc8jzgdr8afgh84xexp",
+      "displayName": "Shawn Cohen",
+      "image": "https://avatars.githubusercontent.com/u/192919475?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776273676884,
+      "changelog": "Initial ClawSeal release — cryptographic memory for OpenClaw agents with QSEAL tamper-evidence",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ae8685029f540fb53bf12308dea572acb1054c13b75e24b234628e813ff7cb4b"
+}

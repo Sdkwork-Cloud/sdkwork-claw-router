@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/script-generator-intl@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.script_generator_intl",
+  "skill": {
+    "id": 44680,
+    "skillKey": "clawhub-script-generator-intl",
+    "name": "Script Generator Intl"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "script-generator-intl",
+    "url": "https://clawhub.ai/skills/script-generator-intl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/script-generator-intl-6ec19886f92ad36e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate topic or brief into multilingual video scripts with this skill. Works with TXT, DOCX, PDF, MP4 files up to 200MB. marketers use it for generating vi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776443766837,
+      "changelog": "- Initial release of Script Generator Intl skill.\n- Generate multilingual video scripts from your topic or brief, supporting TXT, DOCX, PDF, and MP4 files up to 200MB.\n- Automated setup with cloud backend; supports session management and anonymous token authentication.\n- Fast processing (20–40 seconds) on cloud GPUs; export results as 1080p MP4 and several other formats.\n- Simple commands for upload, export, credit checking, and state tracking.\n- Optimized error handling and workflow for marketers and international audiences.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c6056802b8eb591cdd0ebbccc68a159836a0caad2a9f1e3e351e2dfe162185ba"
+}

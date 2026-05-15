@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56824,
+  "uuid": "skill-clawhub-manus-planning-with-files-2-26-1",
+  "skillKey": "clawhub-manus-planning-with-files-2-26-1",
+  "name": "类Manus任务规划Planning With Files 2.26.1",
+  "summary": "Implements Manus-style file-based planning to organize and track progress on complex tasks. Creates task_plan.md, findings.md, and progress.md. Use when aske...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.manus_planning_with_files_2_26_1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kakaxiazai",
+      "features": [
+        "Implements Manus-style file-based planning to organize and track progress on complex tasks",
+        "Creates task_plan.md, findings.md, and progress.md",
+        "Use when aske..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/manus-planning-with-files-2-26-1@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/165533420?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "manus-planning-with-files-2-26-1",
+      "url": "https://clawhub.ai/skills/manus-planning-with-files-2-26-1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "manus-planning-with-files-2-26-1",
+    "url": "https://clawhub.ai/skills/manus-planning-with-files-2-26-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/manus-planning-with-files-2-26-1-4b09f57f88dec842.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/manus-planning-with-files-2-26-1@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-manus-planning-with-files-2-26-1-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ef56ffda6ea96cebcc5afab6af874c787423d579afe63676708a80982ba892e",
+      "artifactSizeBytes": 2649
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T19:01:53.874Z"
+}

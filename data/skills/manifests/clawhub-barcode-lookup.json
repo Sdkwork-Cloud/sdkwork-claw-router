@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31544,
+  "uuid": "skill-clawhub-barcode-lookup",
+  "skillKey": "clawhub-barcode-lookup",
+  "name": "Barcode Lookup",
+  "summary": "Barcode Lookup integration. Manage data, records, and automate workflows. Use when the user wants to interact with Barcode Lookup data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.barcode_lookup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Barcode Lookup integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Barcode Lookup data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/barcode-lookup@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "barcode-lookup",
+      "url": "https://clawhub.ai/skills/barcode-lookup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "barcode-lookup",
+    "url": "https://clawhub.ai/skills/barcode-lookup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/barcode-lookup-d92dc4316c8a515d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/barcode-lookup@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-barcode-lookup-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:30788201520ac300e63cc465d8543c6d28a31177675a4a7502bb14ca337b06c4",
+      "artifactSizeBytes": 1884
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:22:31.257Z"
+}

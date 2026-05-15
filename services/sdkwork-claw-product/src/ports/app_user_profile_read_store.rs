@@ -18,11 +18,13 @@ pub struct AppUserProfileSubject {
 #[derive(Debug, Clone, Serialize, PartialEq, Eq)]
 #[serde(rename_all = "camelCase")]
 pub struct AppUserProfileSnapshot {
-    pub name: String,
+    pub id: String,
+    pub username: String,
+    pub display_name: String,
     pub email: String,
+    pub avatar_url: String,
     pub phone: String,
     pub language: String,
-    pub avatar: String,
     pub is_verified: bool,
     pub status: String,
     pub registered_at: String,
@@ -36,11 +38,13 @@ pub struct AppUserProfileSnapshot {
 impl Default for AppUserProfileSnapshot {
     fn default() -> Self {
         Self {
-            name: String::new(),
+            id: String::new(),
+            username: String::new(),
+            display_name: String::new(),
             email: String::new(),
+            avatar_url: String::new(),
             phone: String::new(),
             language: "en-US".to_owned(),
-            avatar: String::new(),
             is_verified: false,
             status: String::new(),
             registered_at: String::new(),

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/en-espanol-editor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.en_espanol_editor",
+  "skill": {
+    "id": 47756,
+    "skillKey": "clawhub-en-espanol-editor",
+    "name": "En Espanol Editor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "en-espanol-editor",
+    "url": "https://clawhub.ai/skills/en-espanol-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/en-espanol-editor-eb9278b4bfe5c6a8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get Spanish-captioned videos ready to post, without touching a single slider. Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 109,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777340496548,
+      "changelog": "en-espanol-editor 1.0.0 — Initial Release\n\n- Instantly generate Spanish subtitles for videos (MP4, MOV, AVI, WebM up to 500MB) via cloud rendering.\n- Simple workflow: upload clips, say \"add Spanish subtitles\", and download a 1080p MP4.\n- Automatic anonymous authentication with 100 free credits and session management.\n- Supports fast preview, batch processing, and iterative edits without manual translation.\n- All exports and API calls require proper attribution headers; detailed error handling and file type limits included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f5b82f9bba7ec1c904080bb71dffcdff392a7741592ee3604c62e6f71a9efc06"
+}

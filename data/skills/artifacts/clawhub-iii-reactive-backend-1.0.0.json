@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/iii-reactive-backend@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iii_reactive_backend",
+  "skill": {
+    "id": 40288,
+    "skillKey": "clawhub-iii-reactive-backend",
+    "name": "iii-reactive-backend"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iii-reactive-backend",
+    "url": "https://clawhub.ai/skills/iii-reactive-backend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iii-reactive-backend-30d0e23fd6e377a3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Builds reactive real-time backends on the iii engine. Use when building event-driven apps where state changes automatically trigger side effects, clients rec..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rohitg00",
+      "userId": "s1764xxjbprf3br6gghgha128x84zctc",
+      "displayName": "Rohit Ghumare",
+      "image": "https://avatars.githubusercontent.com/u/48523873?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776357405492,
+      "changelog": "Initial release of iii-reactive-backend.\n\n- Enables building reactive, real-time backends on the iii engine.\n- Supports state triggers, automatic side effects, and real-time client updates via streams or websockets.\n- Provides CRUD endpoints through the state module and REST.\n- Includes clear boundaries and adaptation guidelines for using this pattern.\n- Reference implementation demonstrates a real-time todo app with live updating and aggregate metrics.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:15611d2e19732512566b775fce3ec6571a8d3c119e33c32c00c8f3132619fb9f"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/swagger-v2-retrofit-generator@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swagger_v2_retrofit_generator",
+  "skill": {
+    "id": 29595,
+    "skillKey": "clawhub-swagger-v2-retrofit-generator",
+    "name": "Swagger V2 Retrofit Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swagger-v2-retrofit-generator",
+    "url": "https://clawhub.ai/skills/swagger-v2-retrofit-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swagger-v2-retrofit-generator-d0056c05b3361e63.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate Android Retrofit/Kotlin client code from Swagger v2 (OpenAPI 2.0) API documentation. Supports fetching Swagger docs via HTTP with no auth, Basic Aut..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "opoojkk",
+      "userId": "s17d3cw25v9j850vzp90q7g9as83h3x4",
+      "displayName": "opoojkk",
+      "image": "https://avatars.githubusercontent.com/u/33021407?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 300,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773105262957,
+      "changelog": "Initial release of swagger-v2-retrofit-generator.\n\n- Generate Android Retrofit/Kotlin client code from Swagger v2 (OpenAPI 2.0) API docs.\n- Supports fetching Swagger documentation via HTTP with no auth, Basic Auth, Bearer Token, and API Key.\n- Outputs Kotlin Retrofit Service interfaces and data classes.\n- Enables filtering and selective generation by path, method, tag, or keyword search.\n- Provides command-line tools for fetching Swagger docs and generating code.\n- Includes automatic class name conversion for Chinese and special-character names.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6c749a92af47407476dc4649827950636f61cf11b3f6935e11630b1e631c7c4b"
+}

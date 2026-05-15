@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/box-kvcache@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.box_kvcache",
+  "skill": {
+    "id": 44229,
+    "skillKey": "clawhub-box-kvcache",
+    "name": "Box-KVCache"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "box-kvcache",
+    "url": "https://clawhub.ai/skills/box-kvcache",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/box-kvcache-1a299951f79ab8cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local KV Cache compression for LLMs using low-rank decomposition and INT8 quantization to reduce GPU memory by 2-4x during inference."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "heijiaziopenclaw",
+      "userId": "s170hgkv2hkkrtwg0m5b56v015848sn0",
+      "displayName": "heijiaziopenclaw",
+      "image": "https://avatars.githubusercontent.com/u/269780373?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775415124894,
+      "changelog": "box-kvcache 1.1.0\n\n- 增加系统要求说明，包括操作系统、Ollama 版本、Python 依赖等。\n- 新增“安装依赖”、“安装 Ollama”及“系统要求”详细说明。\n- 增补 Windows/Linux/macOS 脚本与依赖工具要求。\n- 新增常用环境变量说明表格。\n- 明确 Windows、Linux/macOS 支持情况及注意事项。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:507c9654eabda58060f14b0d9d420701500361cd2dc1ac96bd2bdf9875c23fa4"
+}

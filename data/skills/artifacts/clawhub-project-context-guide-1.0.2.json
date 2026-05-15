@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/project-context-guide@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.project_context_guide",
+  "skill": {
+    "id": 29821,
+    "skillKey": "clawhub-project-context-guide",
+    "name": "project-context-guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "project-context-guide",
+    "url": "https://clawhub.ai/skills/project-context-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/project-context-guide-051daa9d86a26c6c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when users need to understand codebase structure, trace code decisions, analyze code dependencies and impact, identify code maintai..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "teamoplum",
+      "userId": "s17d84ghx09dvq74n6zhxnz66s845bxs",
+      "displayName": "TeamoPlum",
+      "image": "https://avatars.githubusercontent.com/u/38601376?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 294,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773997915923,
+      "changelog": "- Major skill redesign and rename from \"fragment-stitcher\" to \"Project Context Guide\"\n- Refocused on codebase comprehension: project structure, decision tracing, dependency/impact analysis, and ownership tracking\n- Added new tools/scripts for code analysis, dependency mapping, Git history inspection, and ownership tracking\n- Removed previous scripts and references related to knowledge fragment collection and stitching\n- Comprehensive updates to documentation, including new usage scenarios and technical details\n- Improved support for onboarding, code review, and understanding complex or legacy codebases",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8fb071c6c0c2f50063bdae8cd642d448311c8ed32a4e80aea5a3679dc6f03d55"
+}

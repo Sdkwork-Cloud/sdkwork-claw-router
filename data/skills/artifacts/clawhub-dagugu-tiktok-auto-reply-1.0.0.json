@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dagugu-tiktok-auto-reply@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dagugu_tiktok_auto_reply",
+  "skill": {
+    "id": 65925,
+    "skillKey": "clawhub-dagugu-tiktok-auto-reply",
+    "name": "Tiktok Auto Reply"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dagugu-tiktok-auto-reply",
+    "url": "https://clawhub.ai/skills/dagugu-tiktok-auto-reply",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dagugu-tiktok-auto-reply-82a3416485800d28.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动监控指定关键词的TikTok热门视频评论并定时发送配置的自动回复，支持频率限制和多模板切换。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kamiguyi",
+      "userId": "s17e6y2dyp5byvr1cbmh9qyps1857tre",
+      "displayName": "kamiguyi",
+      "image": "https://avatars.githubusercontent.com/u/179662880?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 366,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773973881366,
+      "changelog": "- Initial release of the TikTok 自动回复 skill.\n- Monitors trending TikTok videos by keywords and fetches comments.\n- Automatically replies to comments based on configurable templates.\n- Includes setup instructions, risk notices, and best practice guidelines.\n- Requires TikTok developer account, API access, and Node.js environment.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2c0f84cddde22b99a2ec7489366072abdbf9c26efcf97fe584c7f79f7c29f713"
+}

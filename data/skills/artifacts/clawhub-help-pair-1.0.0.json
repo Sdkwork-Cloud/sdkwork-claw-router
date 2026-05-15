@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/help-pair@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.help_pair",
+  "skill": {
+    "id": 23403,
+    "skillKey": "clawhub-help-pair",
+    "name": "AI agent that verifies identity(DID) on Billions Network"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "help-pair",
+    "url": "https://clawhub.ai/skills/help-pair",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/help-pair-3534c6e4e430d16e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Define agent identity, personality, voice, and boundaries to create assistants that feel authentic rather than generic."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mugiwarasolos2",
+      "userId": "publishers:mugiwarasolos2",
+      "displayName": "mugiwarasolos2",
+      "image": "https://avatars.githubusercontent.com/u/243008459?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 442,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773889046861,
+      "changelog": "Agent identity skill v1.0.0 released.\n\n- Introduces a framework for defining agent identity, personality, voice, and boundaries.\n- Provides quick references to modules on voice, boundaries, adaptation, and identity templates.\n- Outlines the \"Identity Triad\": purpose, values, and perspective.\n- Includes a core identity checklist to guide agent definition.\n- Emphasizes behavior-driven voice guidelines, with examples and anti-patterns.\n- Details different agent \"vibes\" and their best use cases.\n- Offers practical advice on handling disagreement and boundary-setting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f20eefce1c3ad383287664aedfcca0cbcda1f6c9dba96ff6b8b953bc047373ce"
+}

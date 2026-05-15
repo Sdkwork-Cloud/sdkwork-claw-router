@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27765,
+  "uuid": "skill-clawhub-scoredetect",
+  "skillKey": "clawhub-scoredetect",
+  "name": "Scoredetect",
+  "summary": "ScoreDetect integration. Manage Organizations. Use when the user wants to interact with ScoreDetect data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scoredetect",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "ScoreDetect integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with ScoreDetect data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/scoredetect@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "scoredetect",
+      "url": "https://clawhub.ai/skills/scoredetect"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scoredetect",
+    "url": "https://clawhub.ai/skills/scoredetect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scoredetect-595b0b63708dec3b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/scoredetect@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-scoredetect-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d22e3532ea44dc87d4481c5f1558697a7ad224bb41dc2acec50545c3fc0790b4",
+      "artifactSizeBytes": 1833
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:38:00.877Z"
+}

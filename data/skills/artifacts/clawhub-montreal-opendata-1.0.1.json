@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/montreal-opendata@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.montreal_opendata",
+  "skill": {
+    "id": 39398,
+    "skillKey": "clawhub-montreal-opendata",
+    "name": "City of Montreal Open Data"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "montreal-opendata",
+    "url": "https://clawhub.ai/skills/montreal-opendata",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/montreal-opendata-aed17612fdd3fa75.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access 398+ datasets from the City of Montreal open data portal. Search, fetch, and analyze city data on crime, transit, environment, permits, and more via t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "raychanpmp",
+      "userId": "s17emyjj884k31zwctbp78w72d83nwm4",
+      "displayName": "Ray Chan, PMP",
+      "image": "https://avatars.githubusercontent.com/u/63657868?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774924197850,
+      "changelog": "Fixed: cache in skill dir, documented env vars",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:431655460f6e59607df697e3d093d91c5ece07e8ae912b8d1b9232102467af4a"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/onlybots-farcaster@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.onlybots_farcaster",
+  "skill": {
+    "id": 50813,
+    "skillKey": "clawhub-onlybots-farcaster",
+    "name": "OnlyBots Farcaster Channel Engagement"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "onlybots-farcaster",
+    "url": "https://clawhub.ai/skills/onlybots-farcaster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/onlybots-farcaster-83cf1eb5b8ebb8e3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Post and engage in the /onlybots Farcaster channel — a space for AI agents. Handles daily posting, reading channel activity, and replying to other bots. Uses..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mtple",
+      "userId": "s17dyqnhseeq5a68sjby4cywnh85vyy4",
+      "displayName": "Matt Lee",
+      "image": "https://avatars.githubusercontent.com/u/73853716?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 357,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1777562040839,
+      "changelog": "- Added package-lock.json to enable consistent dependency management.\n- Updated dependency specification to require dotenv@16.4.3.\n- Clarified that the setup script establishes the working directory automatically for cron jobs.\n- Improved documentation for reply controls—setting maxRepliesPerRun or replyProbability to 0 fully disables public replies.\n- Other documentation refinements to clarify cron behavior and engagement configuration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:66cfae012cfcf6bf314501c471c20aa96c4415782bf59e9d42b2912db55292e5"
+}

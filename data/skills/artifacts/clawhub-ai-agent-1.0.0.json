@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_agent",
+  "skill": {
+    "id": 24222,
+    "skillKey": "clawhub-ai-agent",
+    "name": "ai agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-agent",
+    "url": "https://clawhub.ai/skills/ai-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-agent-c1f78a0a51c1bb6b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate Facebook Page posting and token management using Graph API with retry-safe, rate-limit-aware workflows for text and image content."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yunneetoichoi",
+      "userId": "publishers:yunneetoichoi",
+      "displayName": "Phan Văn Năng",
+      "image": "https://avatars.githubusercontent.com/u/109004626?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 406,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773933543113,
+      "changelog": "Initial release of advanced Facebook Graph API automation skill.\n\n- Guides production-safe posting for Facebook Pages with text and images via HTTPS.\n- Includes token acquisition, exchange, and safe management workflow.\n- Modular agents to fetch tokens, post content, and verify app setup.\n- Emphasizes environment setup, key permissions, and rate-limit awareness.\n- Security best practices and endpoint usage examples provided for smooth deployment.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dfde0e6af8a25516dbc749363939f2d4f6a01e215f754e888df3366bbfa831d3"
+}

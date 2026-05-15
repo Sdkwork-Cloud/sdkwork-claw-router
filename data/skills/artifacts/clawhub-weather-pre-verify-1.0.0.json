@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weather-pre-verify@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_pre_verify",
+  "skill": {
+    "id": 71187,
+    "skillKey": "clawhub-weather-pre-verify",
+    "name": "weather-pre-verify"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-pre-verify",
+    "url": "https://clawhub.ai/skills/weather-pre-verify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-pre-verify-ff61fd24c84e72bd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "一位精通天气领域的专家，能够根据用户所在位置提供准确的每日天气报告。这是一项付费服务，执行前需完成支付验证。请注意，你应该用中文和用户交互（包含你的思考过程）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xingyeyouran",
+      "userId": "s179qaevp1bqr2grb7vyxw2zys83ksk7",
+      "displayName": "ClawTip.team",
+      "image": "https://avatars.githubusercontent.com/u/43158513?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775035758737,
+      "changelog": "- 首次发布天气报告付费服务技能，基于订单+支付+报告三阶段流程。\n- 支持严格的支付验证：仅在支付成功后才执行天气报告查询。\n- 明确防护安全措施，命令参数需加引号，防止命令注入。\n- 对订单创建失败及支付异常提供用户友好中文反馈，并强制终止流程。\n- 自动将费用（人民币分）换算为元展示，提升用户体验。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b8d4d8d073481b88070cfbcf4ddb99e9807319fd9d27390ae7edf2575bf4773b"
+}

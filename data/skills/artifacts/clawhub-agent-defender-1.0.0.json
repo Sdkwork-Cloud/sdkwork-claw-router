@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-defender@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_defender",
+  "skill": {
+    "id": 59928,
+    "skillKey": "clawhub-agent-defender",
+    "name": "Agent Defender"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-defender",
+    "url": "https://clawhub.ai/skills/agent-defender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-defender-fb62d145bc8078a8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent Defender - AI智能体安全防护平台。静态扫描+运行时防护+DLP脱敏。触发：(1)扫描Skill (2)启动防护 (3)DLP检测 (4)安全审计"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "caidongyun",
+      "userId": "s17fyrnjh6q0nmpwx68s5yy7wd842pjv",
+      "displayName": "caidongyun",
+      "image": "https://avatars.githubusercontent.com/u/1638934?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776050124254,
+      "changelog": "Initial release of Agent Defender – an AI security protection platform.\n\n- Provides static scanning, runtime protection, and DLP (data loss prevention).\n- Supports YARA rule scanning, AST analysis, and permission checks.\n- Offers system monitoring, behavior interception, and sensitive data masking.\n- Includes CLI usage for scanning, real-time protection, DLP checks, and configuration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8ccaf6c085128be49f2c132c1e34083f2eace7b9efe6735ba3ac590e704e387c"
+}

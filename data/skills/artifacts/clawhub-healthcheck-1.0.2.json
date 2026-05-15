@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/healthcheck@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.healthcheck",
+  "skill": {
+    "id": 8297,
+    "skillKey": "clawhub-healthcheck",
+    "name": "healthcheck"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "healthcheck",
+    "url": "https://clawhub.ai/skills/healthcheck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/healthcheck-b1d5226fdc3d7e02.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track water and sleep with JSON file storage"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stellarhold170nt",
+      "userId": "publishers:stellarhold170nt",
+      "displayName": "Stellarhold170NT",
+      "image": "https://avatars.githubusercontent.com/u/99376592?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 26086,
+      "installsAllTime": 1159,
+      "installsCurrent": 1125,
+      "stars": 10,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1769965007932,
+      "changelog": "- Renamed skill from \"health-tracker\" to \"healthcheck\"\n- Simplified and rewrote documentation for conciseness and clarity\n- Shortened all Node.js one-liners for recording and managing water and sleep data\n- Updated data format: renamed fields (e.g., \"timestamp\" → \"time\"), edited usage examples\n- Removed metadata and some advanced examples (e.g., reminders, detailed stats)\n- Focused on essential file operations: add, update, delete, and stats for water/sleep records",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9c1cc84a0ee5ce7e8d8bb810d11cb4f9dae2e818a573858475ec02744bd9e936"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/verified-agent-nifey@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.verified_agent_nifey",
+  "skill": {
+    "id": 48399,
+    "skillKey": "clawhub-verified-agent-nifey",
+    "name": "Verified Agent Nifey"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "verified-agent-nifey",
+    "url": "https://clawhub.ai/skills/verified-agent-nifey",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/verified-agent-nifey-d4abed9faad24c34.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Billions decentralized identity for agents. Link agents to human identities using Billions ERC-8004 and Attestation Registries. Verify and generate authentic..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mangfiksi",
+      "userId": "s173ncrwztkbnqy5wqk4zjj1m985s52p",
+      "displayName": "NifeySncy",
+      "image": "https://avatars.githubusercontent.com/u/129894764?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 101,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777645284858,
+      "changelog": "- Initial release of the Billions decentralized identity skill for agents.\n- Enables agents to create and manage decentralized identities and link them to human owners using the Billions Network.\n- Provides scripts for creating identities, generating and signing challenges, linking human and agent identities, and verifying ownership.\n- Strict guardrails enforced for secure identity management—only supported scripts may be used, with no manual cryptographic workarounds allowed.\n- Identity and key data are stored under $HOME/.openclaw/billions for plugin compatibility and security.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b73700de9bb80468a9d61696e625082906c59204c0105e5d35301cb252c1ef48"
+}

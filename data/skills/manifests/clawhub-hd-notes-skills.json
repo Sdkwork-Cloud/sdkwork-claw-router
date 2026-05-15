@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70104,
+  "uuid": "skill-clawhub-hd-notes-skills",
+  "skillKey": "clawhub-hd-notes-skills",
+  "name": "话袋笔记 Skill",
+  "summary": "话袋笔记 - 新建、更新和搜索个人笔记。 **当以下情况时使用此 Skill**： (1) 用户要保存内容到笔记：「记一下」「存到笔记」「保存」「收藏」 (2) 用户要更新内容到笔记：「更新一下」「更新笔记」 (3) 用户要搜索或查看笔记：「搜一下」「找找笔记」「打开某条笔记」「笔记详情」 (4) 用户要配置话袋...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hd_notes_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "monkeyDB",
+      "features": [
+        "新建、更新和搜索个人笔记。 **当以下情况时使用此 Skill**： (1) 用户要保存内容到笔记：「记一下」「存到笔记」「保存」「收藏」 (2) 用户要更新内容到笔记：「更新一下」「更新笔."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hd-notes-skills@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/54386391?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hd-notes-skills",
+      "url": "https://clawhub.ai/skills/hd-notes-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hd-notes-skills",
+    "url": "https://clawhub.ai/skills/hd-notes-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hd-notes-skills-62576c0e81afd37f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hd-notes-skills@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hd-notes-skills-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7a41dae7442aac16e039c3235bd3c97d6ea47d29ce530bac6b1542394f8f3c63",
+      "artifactSizeBytes": 2404
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T07:22:04.831Z"
+}

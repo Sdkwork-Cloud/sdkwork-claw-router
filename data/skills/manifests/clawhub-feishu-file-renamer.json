@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68591,
+  "uuid": "skill-clawhub-feishu-file-renamer",
+  "skillKey": "clawhub-feishu-file-renamer",
+  "name": "Feishu File Renamer",
+  "summary": "批量恢复和重命名飞书机器人下载的哈希文件名，支持群聊、云文档及多维表格映射，自动冲突处理和日志记录。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_file_renamer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rfdiosuao",
+      "features": [
+        "批量恢复和重命名飞书机器人下载的哈希文件名，支持群聊、云文档及多维表格映射，自动冲突处理和日志记录。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-file-renamer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/190207982?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-file-renamer",
+      "url": "https://clawhub.ai/skills/feishu-file-renamer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-file-renamer",
+    "url": "https://clawhub.ai/skills/feishu-file-renamer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-file-renamer-817342651257413a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-file-renamer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-file-renamer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aa1f889634242d4d3abc1ed6c2b0f0e8b82de1be5d688a3ed83eb0220f3c26e3",
+      "artifactSizeBytes": 2333
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T16:05:26.743Z"
+}

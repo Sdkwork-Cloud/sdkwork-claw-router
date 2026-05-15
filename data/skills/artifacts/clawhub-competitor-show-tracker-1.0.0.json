@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/competitor-show-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.competitor_show_tracker",
+  "skill": {
+    "id": 57553,
+    "skillKey": "clawhub-competitor-show-tracker",
+    "name": "Competitor Show Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "competitor-show-tracker",
+    "url": "https://clawhub.ai/skills/competitor-show-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/competitor-show-tracker-dc169bba77507c33.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Rank upcoming trade shows by how many of your competitors are exhibiting there. \"Which shows are my competitors at?\" / \"竞争对手去哪些展会\" / \"Auf welchen Messen sind..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weilun88313",
+      "userId": "s1723bcbr1g507y1ekdjmbyct983h3dw",
+      "displayName": "weilun88313",
+      "image": "https://avatars.githubusercontent.com/u/33587196?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775095207747,
+      "changelog": "Competitor Show Tracker 1.0.0 – initial release\n\n- Track and rank upcoming trade shows by the number of your competitors confirmed as exhibitors.\n- Input a list of competitor companies; receive a ranked summary of shows, event details, and competitive overlaps.\n- Filters for future events with optional date range and supports up to 20 competitors per query.\n- Summarizes findings in a clear table, lists detailed event cards for shows with multiple competitors, and provides actionable insights.\n- Requires a Lensmor API key to access exhibitor data; halts with instructions if not configured.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1dc2fa3577bc5561f08156eb4b2e9d5ffeca272bb9274b9b1b1452bb7ecea6e6"
+}

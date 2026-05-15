@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30771,
+  "uuid": "skill-clawhub-text2sql",
+  "skillKey": "clawhub-text2sql",
+  "name": "TEXT2SQL",
+  "summary": "Support generating SQL queries through natural language; use when users need to configure Text-to-SQL database, manage data topics, or generate SQL with natu...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text2sql",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zionwa",
+      "features": [
+        "Support generating SQL queries through natural language",
+        "use when users need to configure Text-to-SQL database, manage data topics, or generate SQL with."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/text2sql@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/55965646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "text2sql",
+      "url": "https://clawhub.ai/skills/text2sql"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text2sql",
+    "url": "https://clawhub.ai/skills/text2sql",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text2sql-fffe0e0f98c0281e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/text2sql@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-text2sql-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:10c7d2a537a062d2cd4544fca76c1ca41a0c1dc78c1d05beb6519d8b961d7c9e",
+      "artifactSizeBytes": 2063
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T06:19:20.494Z"
+}

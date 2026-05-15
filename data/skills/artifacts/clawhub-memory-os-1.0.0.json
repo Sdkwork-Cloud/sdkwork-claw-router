@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-os@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_os",
+  "skill": {
+    "id": 50490,
+    "skillKey": "clawhub-memory-os",
+    "name": "Memory OS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-os",
+    "url": "https://clawhub.ai/skills/memory-os",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-os-41186e0fb985b2d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Persistent memory system for AI agents — daily logs, long-term memory, identity files, and heartbeat-driven recall. Solves context amnesia across sessions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clawdssen",
+      "userId": "publishers:clawdssen",
+      "displayName": "Clawdssen",
+      "image": "https://avatars.githubusercontent.com/u/262485069?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 499,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772730692199,
+      "changelog": "Initial release — persistent memory system for AI agents",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ad270ab005170426cb56fa0e0e5d4b2251704eda4657064d433f159a7b0948c4"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kibibot-skill@1.5.2",
+  "version": "1.5.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kibibot_skill",
+  "skill": {
+    "id": 37204,
+    "skillKey": "clawhub-kibibot-skill",
+    "name": "KibiBot Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kibibot-skill",
+    "url": "https://clawhub.ai/skills/kibibot-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kibibot-skill-5d5ec473370e60d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create tokens on-chain, check fee earnings, check Kibi Credit balance, trigger agent credit reload, and interact with KibiBot's Agent API and Kibi LLM Gatewa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kibiagent",
+      "userId": "s1708ygnr9myerfw179f89n2v983g4cd",
+      "displayName": "KibiAgent",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.5.2",
+      "createdAt": 1774840501080,
+      "changelog": "KibiBot Skill 1.5.2 Changelog\n\n- Updated model list for Kibi LLM Gateway: added GPT 5.2 Chat, MiMo models, GLM models, and revised context window sizes.\n- Removed Gemini 3 Pro from model list and reorganized ordering for clarity.\n- Version bump only; no logic or functionality changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7956feedc263711eb0eea6e016f61b0ae1a415005fc4491446fdfb48e84bcaa6"
+}

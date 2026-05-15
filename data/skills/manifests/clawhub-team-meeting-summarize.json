@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36511,
+  "uuid": "skill-clawhub-team-meeting-summarize",
+  "skillKey": "clawhub-team-meeting-summarize",
+  "name": "team-meeting-summarize",
+  "summary": "Convert raw meeting notes or transcripts into organized summaries highlighting decisions, action items with owners and deadlines, key discussions, and next s...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.team_meeting_summarize",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huajianjiu",
+      "features": [
+        "Convert raw meeting notes or transcripts into organized summaries highlighting decisions, actio."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/team-meeting-summarize@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/163974966?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "team-meeting-summarize",
+      "url": "https://clawhub.ai/skills/team-meeting-summarize"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "team-meeting-summarize",
+    "url": "https://clawhub.ai/skills/team-meeting-summarize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/team-meeting-summarize-d02abd22a5df8699.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/team-meeting-summarize@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-team-meeting-summarize-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ff013d2e37bc3d4b7d285808fe6a4300594bc8914b961025c93eaeab279c78cb",
+      "artifactSizeBytes": 2225
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T20:33:12.004Z"
+}

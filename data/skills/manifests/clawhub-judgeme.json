@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24958,
+  "uuid": "skill-clawhub-judgeme",
+  "skillKey": "clawhub-judgeme",
+  "name": "Judgeme",
+  "summary": "Judge.me integration. Manage Reviews, Products. Use when the user wants to interact with Judge.me data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.judgeme",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Judge.me integration",
+        "Manage Reviews, Products",
+        "Use when the user wants to interact with Judge.me data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/judgeme@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "judgeme",
+      "url": "https://clawhub.ai/skills/judgeme"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "judgeme",
+    "url": "https://clawhub.ai/skills/judgeme",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/judgeme-e855371831b593cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/judgeme@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-judgeme-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2bfeb8b6a631dbe74cf6f1eb5aafd3b5d06e7652be73cdf669e0bdb7d4da04b8",
+      "artifactSizeBytes": 1803
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:02:44.165Z"
+}

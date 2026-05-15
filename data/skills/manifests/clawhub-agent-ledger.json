@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35227,
+  "uuid": "skill-clawhub-agent-ledger",
+  "skillKey": "clawhub-agent-ledger",
+  "name": "Agent Ledger",
+  "summary": "Track AI agent earnings, tasks, and payments. Use when logging completed work, checking balance, viewing payment history, or generating invoices. Supports cr...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_ledger",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rogue-agent1",
+      "features": [
+        "Track AI agent earnings, tasks, and payments",
+        "Use when logging completed work, checking balance, viewing payment history, or generating invoi.",
+        "Supports cr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-ledger@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259556880?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-ledger",
+      "url": "https://clawhub.ai/skills/agent-ledger"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-ledger",
+    "url": "https://clawhub.ai/skills/agent-ledger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-ledger-1f1a0192a4ab476b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-ledger@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-ledger-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6e6fa6b34eec05b000bd5f7230b48ab681fd9de89b8d74926031c92bcbbff113",
+      "artifactSizeBytes": 2300
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T19:15:07.963Z"
+}

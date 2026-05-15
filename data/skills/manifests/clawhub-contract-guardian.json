@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64297,
+  "uuid": "skill-clawhub-contract-guardian",
+  "skillKey": "clawhub-contract-guardian",
+  "name": "合同卫士 / Contract Guardian",
+  "summary": "合同卫士 — AI合同审查助手，识别风险条款、提取关键信息、追踪到期日",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.contract_guardian",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jun Zhang",
+      "features": [
+        "合同卫士 — AI合同审查助手，识别风险条款、提取关键信息、追踪到期日"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/contract-guardian@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11209115?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "contract-guardian",
+      "url": "https://clawhub.ai/skills/contract-guardian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "contract-guardian",
+    "url": "https://clawhub.ai/skills/contract-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/contract-guardian-e75fc516297e8954.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/contract-guardian@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-contract-guardian-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3e1d4a1a3e695a2fa9e2b93d3051097d03f971b0c45f801058eb66478bbf5a15",
+      "artifactSizeBytes": 2227
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T12:15:03.154Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66369,
+  "uuid": "skill-clawhub-alipay-notify",
+  "skillKey": "clawhub-alipay-notify",
+  "name": "支付宝支付异步通知助手",
+  "summary": "支付宝异步通知中继：本地开发无公网 IP 也能收到支付宝异步通知。 Skill 自包含 CLI 脚本，安装后 Agent 自动执行注册 → 获取 notify_url → 实时监听 → 查看原始报文 → 本地验签全流程。 仅依赖 Python 3，无需部署服务端。仅限联调环境。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alipay_notify",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangke091",
+      "features": [
+        "支付宝异步通知中继：本地开发无公网 IP 也能收到支付宝异步通知。 Skill 自包含 CLI 脚本，安装后 Agent 自动执行注册 → 获取 notify_url → 实时监听 → 查看."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alipay-notify@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28504641?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alipay-notify",
+      "url": "https://clawhub.ai/skills/alipay-notify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alipay-notify",
+    "url": "https://clawhub.ai/skills/alipay-notify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alipay-notify-39dad91e154c6dc3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alipay-notify@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-alipay-notify-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0967f9c4d8e8d39e7fd2348a42174ca28f9b004eeec02b814559eb88347d67ad",
+      "artifactSizeBytes": 2187
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T16:48:06.548Z"
+}

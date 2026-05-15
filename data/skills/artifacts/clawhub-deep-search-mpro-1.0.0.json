@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deep-search-mpro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deep_search_mpro",
+  "skill": {
+    "id": 64343,
+    "skillKey": "clawhub-deep-search-mpro",
+    "name": "Deep Search-mpro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deep-search-mpro",
+    "url": "https://clawhub.ai/skills/deep-search-mpro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deep-search-mpro-a5d28a478b6981a4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专业深度研究与报告生成技能。支持企业竞争分析、产品竞争分析、行业分析、市场规模/竞争格局、AI大模型厂商、AI工具学习指南等领域。基于 Agent 内置 `web_search` + `web_fetch`（无需 API key），三阶段工作流（主题确认→框架生成→报告输出），运用PESTEL、SWOT、波特五力..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "muqi98-michael",
+      "userId": "s1786vqaawd38hwpx08gqmettn83gzv4",
+      "displayName": "muqi98-michael",
+      "image": "https://avatars.githubusercontent.com/u/231383293?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 446,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774366744647,
+      "changelog": "deep-search-mpro v1.0.1\n\n- 精简和统一数据检索方式，仅保留 Agent 内置的 web_search 与 web_fetch，无需 API key，去除第三方多源引擎集成。\n- 精化数据采集策略，采用两层（web_search → web_fetch）优先级逻辑，简化执行流程和指引。\n- 明确不自动启用本地脚本/采集程序，所有检索动作均通过内置检索能力完成。\n- 优化描述与说明文档，新增英文介绍，突出报告结构、输出规范和模板体系。\n- 保留完整三阶段研究报告生成工作流，完善模型库与场景适配建议。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:93ea8e1c7676002f45bf911524e5c54d86fef01b1daec232024865ce0b20cb11"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10137,
+  "uuid": "skill-clawhub-voice-ai-voices",
+  "skillKey": "clawhub-voice-ai-voices",
+  "name": "Voice.ai Voices",
+  "summary": "High-quality voice synthesis with 9 personas, 11 languages, and streaming using Voice.ai API.",
+  "version": "1.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voice_ai_voices",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nick Gill",
+      "features": [
+        "High-quality voice synthesis with 9 personas, 11 languages, and streaming using Voice.ai API."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/voice-ai-voices@1.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42254038?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "voice-ai-voices",
+      "url": "https://clawhub.ai/skills/voice-ai-voices"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voice-ai-voices",
+    "url": "https://clawhub.ai/skills/voice-ai-voices",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voice-ai-voices-48f4b5c3d49a501a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/voice-ai-voices@1.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-voice-ai-voices-1.1.5.json",
+      "version": "1.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4b9bd81d3be25185595bac5c0b1dc8b38a1a608bc83ca0222860cecc041dcac0",
+      "artifactSizeBytes": 2314
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T23:44:03.904Z"
+}

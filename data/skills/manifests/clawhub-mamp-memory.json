@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54187,
+  "uuid": "skill-clawhub-mamp-memory",
+  "skillKey": "clawhub-mamp-memory",
+  "name": "MAMP",
+  "summary": "Mark AI Memory Protocol — persistent, searchable session memory for AI agents. SQLite-only, zero external dependencies.",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mamp_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rokkiezeng",
+      "features": [
+        "Mark AI Memory Protocol — persistent, searchable session memory for AI agents",
+        "SQLite-only, zero external dependencies."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mamp-memory@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/186370749?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mamp-memory",
+      "url": "https://clawhub.ai/skills/mamp-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mamp-memory",
+    "url": "https://clawhub.ai/skills/mamp-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mamp-memory-b3c22ffb4e62b404.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mamp-memory@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mamp-memory-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:32c58f7da55ceabfb6c04572f3a97b17fca4a883d214c23ff8445711a1d9ad21",
+      "artifactSizeBytes": 2249
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T16:35:30.321Z"
+}

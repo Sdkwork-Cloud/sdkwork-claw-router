@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16038,
+  "uuid": "skill-clawhub-smartbill-invoicing",
+  "skillKey": "clawhub-smartbill-invoicing",
+  "name": "SmartBill Invoicing",
+  "summary": "Issue SmartBill invoices through the SmartBill.ro API with local automation. Use for SmartBill tasks such as validating invoice payloads, creating invoices,...",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smartbill_invoicing",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Maverick",
+      "features": [
+        "Issue SmartBill invoices through the SmartBill.ro API with local automation",
+        "Use for SmartBill tasks such as validating invoice payloads, creating invoices,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smartbill-invoicing@1.0.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261420589?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smartbill-invoicing",
+      "url": "https://clawhub.ai/skills/smartbill-invoicing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smartbill-invoicing",
+    "url": "https://clawhub.ai/skills/smartbill-invoicing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smartbill-invoicing-0b9a8b8c51bb2fec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smartbill-invoicing@1.0.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-smartbill-invoicing-1.0.9.json",
+      "version": "1.0.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:834c1bcec15498c3f699adcbb1adaa4440c67c49519b90a73a9bbb6b3054b807",
+      "artifactSizeBytes": 2329
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T07:35:57.433Z"
+}

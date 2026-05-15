@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52656,
+  "uuid": "skill-clawhub-huggingface-api",
+  "skillKey": "clawhub-huggingface-api",
+  "name": "huggingface",
+  "summary": "Full Hugging Face Hub skill — CLI and Python API for downloading models/datasets, uploading files, managing repos and Spaces, searching the Hub, and handling...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huggingface_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FantoX",
+      "features": [
+        "Full Hugging Face Hub skill — CLI and Python API for downloading models/datasets, uploading fil."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/huggingface-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143634789?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "huggingface-api",
+      "url": "https://clawhub.ai/skills/huggingface-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huggingface-api",
+    "url": "https://clawhub.ai/skills/huggingface-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huggingface-api-de9d968bbd4fbff2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/huggingface-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-huggingface-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4a168336d03438a665831df4fb45c053821ca9cdede5bbd83a2fbdfd3c1e0e6",
+      "artifactSizeBytes": 2367
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T07:01:00.134Z"
+}

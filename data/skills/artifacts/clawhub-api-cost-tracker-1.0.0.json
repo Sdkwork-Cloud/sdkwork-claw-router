@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/api-cost-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_cost_tracker",
+  "skill": {
+    "id": 19218,
+    "skillKey": "clawhub-api-cost-tracker",
+    "name": "API Cost Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-cost-tracker",
+    "url": "https://clawhub.ai/skills/api-cost-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-cost-tracker-91d5aec8cf9097a1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track AI API costs across OpenAI, Anthropic, Google AI with budget alerts, analytics, and optimization tips"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "k5rs4n",
+      "userId": "publishers:k5rs4n",
+      "displayName": "k5rs4n",
+      "image": "https://avatars.githubusercontent.com/u/59661616?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 608,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772404619044,
+      "changelog": "Initial release of API Cost Tracker – monitor and manage AI API usage and costs across major providers.\n\n- Track real-time spending on OpenAI, Anthropic, and Google AI APIs.\n- Set budgets with customizable alerts and webhook integration.\n- Analyze usage with detailed analytics and model cost comparisons.\n- Export reports in JSON, CSV, or Markdown formats.\n- Get optimization tips and maintain historical cost data locally.\n- Supports automated checks, easy configuration, and troubleshooting commands.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d2de61ed37f939b26b1f07e0c6a0c7045bf547e4f3711c60cea429395932ca9e"
+}

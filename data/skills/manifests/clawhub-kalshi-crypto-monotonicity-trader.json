@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57057,
+  "uuid": "skill-clawhub-kalshi-crypto-monotonicity-trader",
+  "skillKey": "clawhub-kalshi-crypto-monotonicity-trader",
+  "name": "Kalshi Crypto Monotonicity Trader",
+  "summary": "Enforces monotonicity constraints on crypto price-level markets on Kalshi. P(BTC > $110k) must always >= P(BTC > $120k). Trades violations by buying underpri...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kalshi_crypto_monotonicity_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "diagnostikon",
+      "features": [
+        "Enforces monotonicity constraints on crypto price-level markets on Kalshi",
+        "P(BTC > $110k) must always >= P(BTC > $120k)",
+        "Trades violations by buying underpri..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kalshi-crypto-monotonicity-trader@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17246180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kalshi-crypto-monotonicity-trader",
+      "url": "https://clawhub.ai/skills/kalshi-crypto-monotonicity-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kalshi-crypto-monotonicity-trader",
+    "url": "https://clawhub.ai/skills/kalshi-crypto-monotonicity-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kalshi-crypto-monotonicity-trader-f45c3af8636c68c7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kalshi-crypto-monotonicity-trader@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-kalshi-crypto-monotonicity-trader-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ed5051b2cf3a9530858f92c854a3b9b63889ded160338a176f5a017c14d92680",
+      "artifactSizeBytes": 2027
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T18:53:08.322Z"
+}

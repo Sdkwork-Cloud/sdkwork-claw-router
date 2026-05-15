@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72700,
+  "uuid": "skill-clawhub-text-game-generator",
+  "skillKey": "clawhub-text-game-generator",
+  "name": "文游剧本生成系统",
+  "summary": "根据用户主题生成文字游戏剧本，内置19种成熟模板（古代家族、偶像养成、末日求生、校园恋爱、修仙等），支持导出Word文档到桌面。触发场景：生成文字游戏、文字游戏剧本创作、玩文字游戏、导出Word剧本。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_game_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "810722796-lgtm",
+      "features": [
+        "根据用户主题生成文字游戏剧本，内置19种成熟模板（古代家族、偶像养成、末日求生、校园恋爱、修仙等），支持导出Word文档到桌面。触发场景：生成文字游戏、文字游戏剧本创作、玩文字游戏、导出Wo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/text-game-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/251615676?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "text-game-generator",
+      "url": "https://clawhub.ai/skills/text-game-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-game-generator",
+    "url": "https://clawhub.ai/skills/text-game-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-game-generator-b8a9d2155d762140.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/text-game-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-text-game-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c35ecbe8cb8e8a6ea579d7ca43053725f341768cc9ea29931df774f1c41e323",
+      "artifactSizeBytes": 2414
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T15:35:09.778Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ollivanders-agent-shop@0.1.4",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ollivanders_agent_shop",
+  "skill": {
+    "id": 34500,
+    "skillKey": "clawhub-ollivanders-agent-shop",
+    "name": "Ollivanders Agent Shop"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ollivanders-agent-shop",
+    "url": "https://clawhub.ai/skills/ollivanders-agent-shop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ollivanders-agent-shop-9c203e92ef349be8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design and land persona-driven agents by matching role, work identity, cognitive structure, personality grounding, identity-binding, and file skeleton into o..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "child2d",
+      "userId": "s172h25bjnxt427zar4wb9p65n83jw75",
+      "displayName": "child2d",
+      "image": "https://avatars.githubusercontent.com/u/13100099?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 224,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.1.4",
+      "createdAt": 1774788573479,
+      "changelog": "Make runtime registration safer by default: provide config snippets for user-applied patches instead of directly editing central config.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0112d95cd88e9920d6a15473b0199d5abbe99b0b37b08d66970cc05b09311f57"
+}

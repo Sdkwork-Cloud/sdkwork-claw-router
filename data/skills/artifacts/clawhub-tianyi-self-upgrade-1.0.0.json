@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tianyi-self-upgrade@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tianyi_self_upgrade",
+  "skill": {
+    "id": 68124,
+    "skillKey": "clawhub-tianyi-self-upgrade",
+    "name": "Self-Upgrade (Tianyi)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tianyi-self-upgrade",
+    "url": "https://clawhub.ai/skills/tianyi-self-upgrade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tianyi-self-upgrade-608ab57fac2f6c65.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw 自我迭代升级技能。使用场景：配置自动修复、技能更新、依赖安装、版本检查、问题预防性修复。支持安全模式（需用户确认）和自动模式（低风险操作自动执行）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fffdz",
+      "userId": "publishers:fffdz",
+      "displayName": "tianyi",
+      "image": "https://avatars.githubusercontent.com/u/204564324?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 601,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772319096247,
+      "changelog": "Initial release - OpenClaw 自我迭代升级技能",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:55911f77b3760cca486cbf58b92da7dc453d30a9dec59fe3aae6d15e25cf75ab"
+}

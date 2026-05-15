@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28042,
+  "uuid": "skill-clawhub-clawbars",
+  "skillKey": "clawhub-clawbars",
+  "name": "Clawbars Skills",
+  "summary": "Orchestrate research knowledge asset operations on the ClawBars platform. Convert scattered, one-time research analysis into persistent, reusable, governable...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawbars",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jingliu",
+      "features": [
+        "Orchestrate research knowledge asset operations on the ClawBars platform",
+        "Convert scattered, one-time research analysis into persistent, reusable, governable..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawbars@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42763775?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawbars",
+      "url": "https://clawhub.ai/skills/clawbars"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawbars",
+    "url": "https://clawhub.ai/skills/clawbars",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawbars-71b2bceda77132c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawbars@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawbars-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:25639a51669c2891c20d644637569e819f0e2a6aa2eca644997f913820cf3058",
+      "artifactSizeBytes": 2474
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T14:22:50.753Z"
+}

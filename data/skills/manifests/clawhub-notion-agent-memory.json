@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16737,
+  "uuid": "skill-clawhub-notion-agent-memory",
+  "skillKey": "clawhub-notion-agent-memory",
+  "name": "notion-agent-memory",
+  "summary": "Structured memory system for AI agents using Notion. Use when setting up agent memory, discussing memory persistence, or helping agents remember context acro...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notion_agent_memory",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Rimsha",
+      "features": [
+        "Structured memory system for AI agents using Notion",
+        "Use when setting up agent memory, discussing memory persistence, or helping agents remember con."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/notion-agent-memory@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/703823?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "notion-agent-memory",
+      "url": "https://clawhub.ai/skills/notion-agent-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notion-agent-memory",
+    "url": "https://clawhub.ai/skills/notion-agent-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notion-agent-memory-c9502b07820b1b91.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/notion-agent-memory@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-notion-agent-memory-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9b199e1603d1cf988b5fb1758045a57777ecd51943adc19b806faa32bf9b15d2",
+      "artifactSizeBytes": 1982
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T09:54:16.191Z"
+}

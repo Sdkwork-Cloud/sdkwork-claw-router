@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editor-baby@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editor_baby",
+  "skill": {
+    "id": 49081,
+    "skillKey": "clawhub-video-editor-baby",
+    "name": "Video Editor Baby"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editor-baby",
+    "url": "https://clawhub.ai/skills/video-editor-baby",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editor-baby-2fae71389a21ea8c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "edit raw baby footage into edited baby clips with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. new parents and family vloggers use it for tu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 88,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777551923095,
+      "changelog": "- Initial release of Video Editor Baby — an AI-powered video editing skill for baby footage.\n- Supports editing raw baby videos into shareable highlight clips (MP4, MOV, AVI, WebM up to 500MB).\n- Fast cloud-based processing (1–2 minutes) with default 1080p MP4 export.\n- Easy workflow: upload video, ask for edits (trim, add music, captions), and download the finished result.\n- Automatic anonymous session/token setup, with clear user status updates and error handling.\n- Designed for new parents and family vloggers needing quick, polished baby videos.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ef38191ce8a956d0ae0a04dc9f134fe59c42a1e1208ff2569543e142fc76813a"
+}

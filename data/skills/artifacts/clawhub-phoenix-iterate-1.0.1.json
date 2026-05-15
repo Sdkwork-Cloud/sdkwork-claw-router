@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/phoenix-iterate@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.phoenix_iterate",
+  "skill": {
+    "id": 52127,
+    "skillKey": "clawhub-phoenix-iterate",
+    "name": "Phoenix Iterate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "phoenix-iterate",
+    "url": "https://clawhub.ai/skills/phoenix-iterate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/phoenix-iterate-429ce20464cb4f33.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-driven quantitative strategy iteration workflow — a complete loop of briefing, hypothesis, code generation, constitutional scan, backtest submission, fore..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tltby12341",
+      "userId": "s17b0eq3j5h16t0deanr16r2hx83qchd",
+      "displayName": "tltby12341",
+      "image": "https://avatars.githubusercontent.com/u/30487767?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 233,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773762558042,
+      "changelog": "**Added dependency documentation and integration instructions.**\n\n- Documents the required companion skills (`backtest-poller`, `qc-deep-feature-forensics`) and their commands.\n- Updates command references to use the appropriate skill locations and CLI wrappers.\n- Adds explicit installation steps for dependencies.\n- Clarifies which commands belong to which skill and how to adjust for different install locations.\n- No functional changes to code; documentation change only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:03a3e31fc3fbb8f706c289828ad48fe32fcafe0ac8af75f4a5d27e7ea98a6d24"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10684,
+  "uuid": "skill-clawhub-kraken",
+  "skillKey": "clawhub-kraken",
+  "name": "Kraken",
+  "summary": "Query Kraken crypto account balances, portfolio, trades, and staking positions.",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kraken",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Seth Rose",
+      "features": [
+        "Query Kraken crypto account balances, portfolio, trades, and staking positions."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kraken@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10383809?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kraken",
+      "url": "https://clawhub.ai/skills/kraken"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kraken",
+    "url": "https://clawhub.ai/skills/kraken",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kraken-686d22d695e2c211.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kraken@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-kraken-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:922e04eaa6dbd0a6e23b528890525138c4de7afe51674c2ef936ca312c7280b9",
+      "artifactSizeBytes": 1791
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-15T01:23:18.595Z"
+}

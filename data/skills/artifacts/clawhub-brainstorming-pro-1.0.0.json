@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brainstorming-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brainstorming_pro",
+  "skill": {
+    "id": 27024,
+    "skillKey": "clawhub-brainstorming-pro",
+    "name": "Brainstorming Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brainstorming-pro",
+    "url": "https://clawhub.ai/skills/brainstorming-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brainstorming-pro-2caefacd414ed14e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Facilitates structured ideation sessions for features, products, content, and strategy. Use when: (1) planning new features, (2) exploring product directions..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "arn0ld87",
+      "userId": "s17ejhfr1m1zcg2dmjrqdsd9a983g0n3",
+      "displayName": "Alexander Schneider",
+      "image": "https://avatars.githubusercontent.com/u/212052432?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 336,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774389769067,
+      "changelog": "- Initial release of \"brainstorming-pro\" skill for structured ideation sessions.\n- Guides users through clear phases: goal clarification, divergent ideation, convergent selection, and action follow-up.\n- Includes detailed workflow, checklists, facilitation techniques, and framework recommendations (e.g., SCAMPER, RICE, Kano).\n- Emphasizes quality with best practices for moderation, documentation, and measurable outcomes.\n- Supports collaboration with related skills (e.g., product-owner, skill-creator, strategy).\n- Output and facilitation rules provided for both German and English contexts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e406e42b0643e4d3f1621529cc20f924f765dba3eec6121f93651be8559b0466"
+}

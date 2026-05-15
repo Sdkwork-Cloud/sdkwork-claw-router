@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60229,
+  "uuid": "skill-clawhub-hermes-agent-skill",
+  "skillKey": "clawhub-hermes-agent-skill",
+  "name": "hermes agent skill",
+  "summary": "突触式多智能体调度 + 主动记忆洞察 + GEPA 技能自进化",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hermes_agent_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "briefness",
+      "features": [
+        "突触式多智能体调度 + 主动记忆洞察 + GEPA 技能自进化"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hermes-agent-skill@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25975388?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hermes-agent-skill",
+      "url": "https://clawhub.ai/skills/hermes-agent-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hermes-agent-skill",
+    "url": "https://clawhub.ai/skills/hermes-agent-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hermes-agent-skill-32a4f858afb983c4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hermes-agent-skill@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-hermes-agent-skill-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6db6f2dcc9582c48217c2a73bef4b449b641a68fc74076123e2ad135c9037dea",
+      "artifactSizeBytes": 2275
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T08:22:51.747Z"
+}

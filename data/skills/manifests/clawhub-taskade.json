@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31882,
+  "uuid": "skill-clawhub-taskade",
+  "skillKey": "clawhub-taskade",
+  "name": "Taskade",
+  "summary": "Taskade integration. Manage data, records, and automate workflows. Use when the user wants to interact with Taskade data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taskade",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Taskade integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Taskade data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/taskade@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "taskade",
+      "url": "https://clawhub.ai/skills/taskade"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taskade",
+    "url": "https://clawhub.ai/skills/taskade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taskade-598ef4c2f2c4f416.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/taskade@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-taskade-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8069940198192761e5c004b2d39e089ce8b60d0f658efe415fb5f74221352753",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:04:26.775Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24599,
+  "uuid": "skill-clawhub-human-approval",
+  "skillKey": "clawhub-human-approval",
+  "name": "Human Approval",
+  "summary": "Soft human-in-the-loop approval gate. Asks the user for confirmation before the agent executes high-risk actions like deleting files, sending emails, or runn...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.human_approval",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OpenAuthority",
+      "features": [
+        "Soft human-in-the-loop approval gate",
+        "Asks the user for confirmation before the agent executes high-risk actions like deleting files,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/human-approval@1.0.0",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/human-approval/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "human-approval",
+      "url": "https://clawhub.ai/skills/human-approval"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "human-approval",
+    "url": "https://clawhub.ai/skills/human-approval",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/human-approval-b32eb94798cf03ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/human-approval@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-human-approval-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4dde5cabdee6c358e6039c3eee461bcb9cf94a22f53cf43c68f4b47cb7f0af93",
+      "artifactSizeBytes": 2611
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T12:57:47.979Z"
+}

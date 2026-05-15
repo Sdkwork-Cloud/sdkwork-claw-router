@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-deals-1-0-0@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_deals_1_0_0",
+  "skill": {
+    "id": 67897,
+    "skillKey": "clawhub-daily-deals-1-0-0",
+    "name": "Daily Deals 1.0.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-deals-1-0-0",
+    "url": "https://clawhub.ai/skills/daily-deals-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-deals-1-0-0-43aba492ba4e95cd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "每日神价推送服务，自动聚合全网优惠，生成精简报告。适合忙碌的省钱达人、副业套利者。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gf1023456",
+      "userId": "s174vncbkzar7ed9srv8ka3std83g9cv",
+      "displayName": "gf1023456",
+      "image": "https://avatars.githubusercontent.com/u/53164796?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 207,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1774494253484,
+      "changelog": "- Removed sample configuration file: config/config.json\n- No changes to features or documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c0c515e1d6ae2f3bd4b1f3391bf5fbb59a73583bba9121bd97ecbcb1adb4f937"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alpha-copilot-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alpha_copilot_skill",
+  "skill": {
+    "id": 28524,
+    "skillKey": "clawhub-alpha-copilot-skill",
+    "name": "Researcher Alpha Copilot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alpha-copilot-skill",
+    "url": "https://clawhub.ai/skills/alpha-copilot-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alpha-copilot-skill-b1b6aeb1f7b77a37.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate a daily priority leaderboard for 5 crypto tokens, with per-token fundamentals, liquidity, and risk summaries plus ready-to-publish drafts for X post..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "2663629531",
+      "userId": "publishers:2663629531",
+      "displayName": "2663629531",
+      "image": "https://avatars.githubusercontent.com/u/85226053?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 313,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772848012877,
+      "changelog": "Initial public release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8f3e744590a6f4ef0d407f683d62e9714ea9495b0c2f1ebe39abf90b9cb03fd0"
+}

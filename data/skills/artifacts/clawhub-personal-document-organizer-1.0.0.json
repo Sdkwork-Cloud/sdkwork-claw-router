@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/personal-document-organizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_document_organizer",
+  "skill": {
+    "id": 49747,
+    "skillKey": "clawhub-personal-document-organizer",
+    "name": "Personal Document Organizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-document-organizer",
+    "url": "https://clawhub.ai/skills/personal-document-organizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-document-organizer-b31113ad64f8fdf9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build a findable, tiered personal document system. Know what you have, where it is, and what you'd grab in an emergency."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 68,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778280429108,
+      "changelog": "Personal Document Organizer 1.0.0\n\n- Initial release providing a structured, three-tier personal document organization system.\n- Includes clear distinctions between emergency (Grab-and-Go), active reference, and deep archive document categories.\n- Offers step-by-step guidance for document inventory and categorization.\n- Recommends storage methods for both physical and digital documents.\n- Lists when to use the skill and important exclusions (not legal, financial, or medical advice).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a8a74cfaed5bf34c2e7b24d55d0c0e4403cf3bdfe80fd5c31b0668a2f7b3ddb8"
+}

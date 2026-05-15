@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12016,
+  "uuid": "skill-clawhub-vietstock",
+  "skillKey": "clawhub-vietstock",
+  "name": "FireAnt Stock Checker",
+  "summary": "Automated Vietnamese stock price and index checking on FireAnt.vn. Use when checking current stock prices, market indices, trading volumes, or financial info...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vietstock",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Loc Vo",
+      "features": [
+        "Automated Vietnamese stock price and index checking on FireAnt.vn",
+        "Use when checking current stock prices, market indices, trading volumes, or financial info..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vietstock@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10195964?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vietstock",
+      "url": "https://clawhub.ai/skills/vietstock"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vietstock",
+    "url": "https://clawhub.ai/skills/vietstock",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vietstock-573bb0f75e04e6f2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vietstock@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vietstock-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:99e5565412e37ced1f02f7a21e8962ae6877ff0fa9d95c46ccafd88c44cbacc7",
+      "artifactSizeBytes": 1918
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T23:47:03.433Z"
+}

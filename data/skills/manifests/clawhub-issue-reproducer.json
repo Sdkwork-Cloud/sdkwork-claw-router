@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59906,
+  "uuid": "skill-clawhub-issue-reproducer",
+  "skillKey": "clawhub-issue-reproducer",
+  "name": "Issue Reproducer",
+  "summary": "把 bug 描述整理成可复现步骤、环境、预期与实际结果和最小复现条件。；use for bug, reproduction, qa workflows；do not use for 伪造日志, 忽略用户给出的环境差异.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.issue_reproducer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "把 bug 描述整理成可复现步骤、环境、预期与实际结果和最小复现条件。；use for bug, reproduction, qa workflows；do not use for 伪造日志."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/issue-reproducer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "issue-reproducer",
+      "url": "https://clawhub.ai/skills/issue-reproducer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "issue-reproducer",
+    "url": "https://clawhub.ai/skills/issue-reproducer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/issue-reproducer-7484c3614c0ea339.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/issue-reproducer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-issue-reproducer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:25c72ae9fb37c1706bd3919e9ab41680458c9c7583b06df9926a29941fd78805",
+      "artifactSizeBytes": 2486
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T02:18:10.417Z"
+}

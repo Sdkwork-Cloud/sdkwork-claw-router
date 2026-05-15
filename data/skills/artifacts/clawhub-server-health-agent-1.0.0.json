@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/server-health-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.server_health_agent",
+  "skill": {
+    "id": 14096,
+    "skillKey": "clawhub-server-health-agent",
+    "name": "Server Health Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "server-health-agent",
+    "url": "https://clawhub.ai/skills/server-health-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/server-health-agent-217f1b0730d8c9e6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor VPS and server health metrics including real-time CPU usage, RAM utilization, disk usage, and Docker container status. Useful for DevOps monitoring,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sanjay-gthb",
+      "userId": "publishers:sanjay-gthb",
+      "displayName": "Sanjay Jain",
+      "image": "https://avatars.githubusercontent.com/u/96682016?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1197,
+      "installsAllTime": 8,
+      "installsCurrent": 7,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771591174025,
+      "changelog": "Initial release of Server Health Agent.\n\nFeatures:\n- Real-time CPU monitoring using top command\n- RAM usage monitoring with fallback support\n- Disk usage detection\n- Docker container status detection\n- Structured JSON output for OpenClaw compatibility\n- Node.js 18–22 compatible\n- Docker-safe execution\n- CLI testing support",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:494d1b1c8c8b6a9db6bc74c524f9b41a9decfd6e4e5bee889d322a75af19d818"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/colombo@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.colombo",
+  "skill": {
+    "id": 71794,
+    "skillKey": "clawhub-colombo",
+    "name": "Colombo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "colombo",
+    "url": "https://clawhub.ai/skills/colombo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/colombo-468f3a27ec26ff39.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "斯里兰卡科伦坡城市指南 — 印度洋门户、殖民历史、港口城市转型。当用户询问斯里兰卡旅行、印度洋贸易时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 109,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777719901098,
+      "changelog": "- Initial release of the Colombo city guide skill.\n- Provides historical timeline, business insights, and key facts about Colombo.\n- Triggers on queries about Sri Lanka travel, Indian Ocean trade, and South Asian history.\n- Covers port logistics, urban development, tea trade, manufacturing, and Belt and Road projects.\n- Includes unique facts and economic statistics about Colombo.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b37f1253fd70cf70c02bd256dc07dcc9b3a763ff5c3504925fd9a1c27161bbb4"
+}

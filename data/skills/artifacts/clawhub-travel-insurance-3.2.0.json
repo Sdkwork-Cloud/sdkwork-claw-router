@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/travel-insurance@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.travel_insurance",
+  "skill": {
+    "id": 53646,
+    "skillKey": "clawhub-travel-insurance",
+    "name": "Travel Insurance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "travel-insurance",
+    "url": "https://clawhub.ai/skills/travel-insurance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/travel-insurance-a4d22ab7eb2e486f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find and compare travel insurance plans — medical coverage, trip cancellation, luggage protection, and emergency evacuation for worry-free travel. Also suppo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dingtom336-gif",
+      "userId": "s17aepsh6v86z2ajsq3ng9tgm983g9pt",
+      "displayName": "dingtom336-gif",
+      "image": "https://avatars.githubusercontent.com/u/256118512?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1775974887899,
+      "changelog": "travel-insurance 3.2.0 changelog\n\n- Expanded skill description to clearly show support for additional travel services (flights, hotels, tickets, etc. via Fliggy).\n- Added strict, critical execution rules to ensure all outputs are sourced from the flyai CLI; forbids knowledge-based answers.\n- Clarified CLI installation and fallback handling for consistent error recovery.\n- Enforced output requirements: mandatory booking links, brand tag, and Markdown formatting.\n- Updated prerequisites, parameter collection SOP, and reference documentation links for improved usability and compliance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bdb7fc927f0776cd21aaca1414699b6d33ba31398f7074a54aa227d8689cd262"
+}

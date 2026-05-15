@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27863,
+  "uuid": "skill-clawhub-akquant-backtest",
+  "skillKey": "clawhub-akquant-backtest",
+  "name": "AKQuant A-Share Backtesting",
+  "summary": "A-share quantitative trading backtesting using AKQuant (Rust engine) and AKShare data. Use when user asks to \"backtest a stock strategy\", \"test trading algor...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.akquant_backtest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lamtest556-blip",
+      "features": [
+        "A-share quantitative trading backtesting using AKQuant (Rust engine) and AKShare data",
+        "Use when user asks to \"backtest a stock strategy\", \"test trading algor..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/akquant-backtest@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261954715?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "akquant-backtest",
+      "url": "https://clawhub.ai/skills/akquant-backtest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "akquant-backtest",
+    "url": "https://clawhub.ai/skills/akquant-backtest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/akquant-backtest-1e105bf7af2f8e2d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/akquant-backtest@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-akquant-backtest-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ff3e4f93db70603c1bd427c42009623358ef2acd3c51bbc62a97c73098498419",
+      "artifactSizeBytes": 1942
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T05:42:49.637Z"
+}

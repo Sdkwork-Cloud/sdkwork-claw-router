@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/firm-acp-bridge@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.firm_acp_bridge",
+  "skill": {
+    "id": 50433,
+    "skillKey": "clawhub-firm-acp-bridge",
+    "name": "Firm Acp Bridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "firm-acp-bridge",
+    "url": "https://clawhub.ai/skills/firm-acp-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/firm-acp-bridge-bef4728782a248f0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Haute disponibilité du bridge ACP et gestion des sessions agents autonomes. Comble les gaps C4 (ACP sans persistance), H3 (sessions spawn sans provider env),..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "romainsantoli-web",
+      "userId": "publishers:romainsantoli-web",
+      "displayName": "romainsantoli-web",
+      "image": "https://avatars.githubusercontent.com/u/246739959?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 507,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772318871330,
+      "changelog": "firm-acp-bridge v1.0.0\n\n- Initial release, addressing reliability and session management gaps in openclaw/openclaw.\n- Adds persistence for ACP session mappings to prevent data loss on crash/restart (C4 gap).\n- Enables injection of provider environment variables into spawned/cron sessions (H3 gap).\n- Provides safe cron task scheduling on main session to bypass sandbox restrictions (H4 gap).\n- Implements advisory workspace file locking to prevent race conditions on shared resources (H5 gap).\n- Includes tools for session monitoring, restoration, and environment management.\n- No external dependencies; session data is stored using atomic local JSON file writes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:34e549457c9affaaedeb3606a6f3a98ffa3115b0f6d2350ea4b5e05871c462a4"
+}

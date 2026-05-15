@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/win-football-predictor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.win_football_predictor",
+  "skill": {
+    "id": 59592,
+    "skillKey": "clawhub-win-football-predictor",
+    "name": "Win Football Predictor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "win-football-predictor",
+    "url": "https://clawhub.ai/skills/win-football-predictor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/win-football-predictor-1d18d0ac97558f1e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "胜负彩预测模型，基于Pi-Rating评分系统 + CatBoost/XGBoost/Dixon-Coles三模型融合，覆盖710期9940场历史数据，支持联赛专项微调"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yangjinfc",
+      "userId": "s17fs57yt798arqfyzn648nszs83ngy1",
+      "displayName": "yangjinfc",
+      "image": "https://avatars.githubusercontent.com/u/24784538?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 326,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774506325633,
+      "changelog": "Initial release: 胜负彩预测模型，三模型融合，覆盖710期9940场历史数据",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5d1a6ee63a797236befe7c2ef8c4b60d512826c35c40a32f4bb30fbe3daa1e4f"
+}

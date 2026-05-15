@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29712,
+  "uuid": "skill-clawhub-daily-review-dashboard",
+  "skillKey": "clawhub-daily-review-dashboard",
+  "name": "Daily Review Dashboard",
+  "summary": "Manage Steven's daily subjective review dashboard by reading, updating, and displaying daily reviews, issue tracking, sentiment tags, and next plans in revie...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_review_dashboard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "j97feng-beep",
+      "features": [
+        "Manage Steven's daily subjective review dashboard by reading, updating, and displaying daily re."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-review-dashboard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260810274?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-review-dashboard",
+      "url": "https://clawhub.ai/skills/daily-review-dashboard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-review-dashboard",
+    "url": "https://clawhub.ai/skills/daily-review-dashboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-review-dashboard-06cf5acb0a0aaa14.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-review-dashboard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-review-dashboard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d3d6741d5a729b503bbe86107f62206fbbb928965ec46f1298860dc22d4595a",
+      "artifactSizeBytes": 2496
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T16:33:03.011Z"
+}

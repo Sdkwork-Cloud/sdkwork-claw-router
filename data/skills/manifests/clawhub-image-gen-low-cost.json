@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63700,
+  "uuid": "skill-clawhub-image-gen-low-cost",
+  "skillKey": "clawhub-image-gen-low-cost",
+  "name": "Image Gen Low Cost",
+  "summary": "低成本 AI 图片生成 CLI 工具。支持文生图、图片编辑。触发词：生成图片、画图、AI 作图、文生图、图片编辑、imgen。",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_gen_low_cost",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "enihsago",
+      "features": [
+        "低成本 AI 图片生成 CLI 工具。支持文生图、图片编辑。触发词：生成图片、画图、AI 作图、文生图、图片编辑、imgen。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-gen-low-cost@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265008639?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-gen-low-cost",
+      "url": "https://clawhub.ai/skills/image-gen-low-cost"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-gen-low-cost",
+    "url": "https://clawhub.ai/skills/image-gen-low-cost",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-gen-low-cost-3dcb6d9771af9510.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-gen-low-cost@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-gen-low-cost-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1a4197eb79fbf72e0080431365962b037b37d59f8c43a6d86ba7900e0feb2497",
+      "artifactSizeBytes": 2096
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T06:36:57.861Z"
+}

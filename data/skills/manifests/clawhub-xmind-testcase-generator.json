@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61349,
+  "uuid": "skill-clawhub-xmind-testcase-generator",
+  "skillKey": "clawhub-xmind-testcase-generator",
+  "name": "XMind Test Case Generator",
+  "summary": "根据需求文档生成 XMind 格式测试用例。当用户要求\"写测试用例\"、\"生成用例\"、\"写XMind用例\"时使用。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xmind_testcase_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wxl1779766474",
+      "features": [
+        "根据需求文档生成 XMind 格式测试用例。当用户要求\"写测试用例\"、\"生成用例\"、\"写XMind用例\"时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xmind-testcase-generator@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/70827107?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xmind-testcase-generator",
+      "url": "https://clawhub.ai/skills/xmind-testcase-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xmind-testcase-generator",
+    "url": "https://clawhub.ai/skills/xmind-testcase-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xmind-testcase-generator-55422f8dd9d8f0ca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xmind-testcase-generator@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xmind-testcase-generator-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e44e6b9db06d80463f114337b4cb299452cbee159c04f3f955d791baa9126b4c",
+      "artifactSizeBytes": 1995
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T04:56:55.802Z"
+}

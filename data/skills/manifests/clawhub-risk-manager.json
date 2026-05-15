@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41990,
+  "uuid": "skill-clawhub-risk-manager",
+  "skillKey": "clawhub-risk-manager",
+  "name": "risk-manager",
+  "summary": "Compute portfolio risk metrics including VaR, Sharpe ratio, and Kelly criterion using historical and real-time data from the Finskills API.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.risk_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "finskills",
+      "features": [
+        "Compute portfolio risk metrics including VaR, Sharpe ratio, and Kelly criterion using historica."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/risk-manager@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32382589?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "risk-manager",
+      "url": "https://clawhub.ai/skills/risk-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "risk-manager",
+    "url": "https://clawhub.ai/skills/risk-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/risk-manager-448c86ccb9b66f01.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/risk-manager@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-risk-manager-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f12909e722ab0bfe899a102f630e81dc84d81c5b345fa42e335e1eaf7a7a0b06",
+      "artifactSizeBytes": 2081
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T16:04:35.225Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-hub-gateway@2.4.2",
+  "version": "2.4.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_hub_gateway",
+  "skill": {
+    "id": 18166,
+    "skillKey": "clawhub-skill-hub-gateway",
+    "name": "Skill Hub Gateway"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-hub-gateway",
+    "url": "https://clawhub.ai/skills/skill-hub-gateway",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-hub-gateway-1b9924f6e3004c04.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Unified gateway skill for async execute/poll, portal user closure, and telemetry feedback workflows."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chinasilva",
+      "userId": "s1702gacd3xqn76t52dae61n9983gzxk",
+      "displayName": "chinasilva",
+      "image": "https://avatars.githubusercontent.com/u/16743182?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 593,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "2.4.2",
+      "createdAt": 1773329156092,
+      "changelog": "- Added `/api/blob/upload-file` as a fallback upload endpoint for `file_path` inputs when `@vercel/blob/client` is unavailable.\n- Enhanced `portal.skill.presentation` to render output files and return `visual.files.assets`, including overlay, mask, and cutout URLs.\n- Audio outputs now normalize to `output.media_files.assets` with uploaded file URLs when blob storage is available.\n- No breaking changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e1d6e9f474e15008368f62413dc2d44c6c27d0b32be3504ba8c9bee445295ce7"
+}

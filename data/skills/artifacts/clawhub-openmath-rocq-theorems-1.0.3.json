@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openmath-rocq-theorems@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openmath_rocq_theorems",
+  "skill": {
+    "id": 39412,
+    "skillKey": "clawhub-openmath-rocq-theorems",
+    "name": "openmath-rocq-theorem"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openmath-rocq-theorems",
+    "url": "https://clawhub.ai/skills/openmath-rocq-theorems",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openmath-rocq-theorems-469754500e8ffb78.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Configures Rocq environments, runs preflight checks, and guides the proving workflow for OpenMath Rocq theorems. Use when the user wants to set up Rocq tooli..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shentu-ai",
+      "userId": "s171kbv2h9y00rfnvgsrh9229s83kw0r",
+      "displayName": "shentu",
+      "image": "https://avatars.githubusercontent.com/u/259856114?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774420289470,
+      "changelog": "Clarify isolated Rocq theorem skill boundary",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:998a0963540af01b33d1158d881028d54ec4cc1b3a006660f823f3441be2b9e5"
+}

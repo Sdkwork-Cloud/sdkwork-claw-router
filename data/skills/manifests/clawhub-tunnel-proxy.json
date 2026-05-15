@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55062,
+  "uuid": "skill-clawhub-tunnel-proxy",
+  "skillKey": "clawhub-tunnel-proxy",
+  "name": "TunnelProxy",
+  "summary": "🐴 RAT (Remote Access Trojan) for AI agents. What it does: Agent sends commands → Your machine executes them. What it can do: Whatever you can do in a termin...",
+  "version": "1.0.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tunnel_proxy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TurinFohlen",
+      "features": [
+        "🐴 RAT (Remote Access Trojan) for AI agents",
+        "What it does: Agent sends commands → Your machine executes them",
+        "What it can do: Whatever you can do in a termin..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tunnel-proxy@1.0.11",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208427613?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tunnel-proxy",
+      "url": "https://clawhub.ai/skills/tunnel-proxy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tunnel-proxy",
+    "url": "https://clawhub.ai/skills/tunnel-proxy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tunnel-proxy-bf6ceccbe55ca938.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tunnel-proxy@1.0.11",
+      "artifactUrl": "data/skills/artifacts/clawhub-tunnel-proxy-1.0.11.json",
+      "version": "1.0.11",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1d56ef89eb0a1384ebd28806e3bdc1d38db575d93bb65278c6b0e75c03209f65",
+      "artifactSizeBytes": 2032
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T06:25:36.569Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64526,
+  "uuid": "skill-clawhub-skill-orchestration-core",
+  "skillKey": "clawhub-skill-orchestration-core",
+  "name": "Skill 编排核心",
+  "summary": "Skill 编排核心 - 上下文管理、流程编排、质量保证",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_orchestration_core",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fish1981bimmer",
+      "features": [
+        "Skill 编排核心",
+        "上下文管理、流程编排、质量保证"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-orchestration-core@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271533977?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-orchestration-core",
+      "url": "https://clawhub.ai/skills/skill-orchestration-core"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-orchestration-core",
+    "url": "https://clawhub.ai/skills/skill-orchestration-core",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-orchestration-core-68c7ea5c21767441.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-orchestration-core@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-orchestration-core-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:de88d1c66d997a3593f9d542f6898ee63c7d16c2ff93c635d84c22dea667d932",
+      "artifactSizeBytes": 1938
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T07:07:10.704Z"
+}

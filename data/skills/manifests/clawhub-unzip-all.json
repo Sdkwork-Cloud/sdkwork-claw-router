@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66064,
+  "uuid": "skill-clawhub-unzip-all",
+  "skillKey": "clawhub-unzip-all",
+  "name": "unzip-all",
+  "summary": "递归解压所有嵌套的压缩包(zip/7z/rar)，支持中文文件名。用于解压包含多层嵌套压缩包的文件夹。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unzip_all",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tang-dafa",
+      "features": [
+        "递归解压所有嵌套的压缩包(zip/7z/rar)，支持中文文件名。用于解压包含多层嵌套压缩包的文件夹。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/unzip-all@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61231262?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "unzip-all",
+      "url": "https://clawhub.ai/skills/unzip-all"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unzip-all",
+    "url": "https://clawhub.ai/skills/unzip-all",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unzip-all-d27e795354848630.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/unzip-all@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-unzip-all-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b0b645370b6301673197a92982edbd5bda50cd131c602dcf8e8ad21fc1a8d204",
+      "artifactSizeBytes": 1878
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T07:34:25.162Z"
+}

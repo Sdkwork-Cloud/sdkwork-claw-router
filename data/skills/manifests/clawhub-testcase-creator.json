@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69047,
+  "uuid": "skill-clawhub-testcase-creator",
+  "skillKey": "clawhub-testcase-creator",
+  "name": "testcase-creator",
+  "summary": "本技能从需求文档生成全面的测试用例文档。当用户需要从需求文档、产品规格说明或描述系统功能的文档创建测试用例时使用此技能。默认生成Markdown格式的测试用例文档；当用户明确要求生成\"思维导图格式\"或\"xmind格式\"时，会额外生成XMind思维导图文件。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.testcase_creator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dodo",
+      "features": [
+        "本技能从需求文档生成全面的测试用例文档。当用户需要从需求文档、产品规格说明或描述系统功能的文档创建测试用例时使用此技能。默认生成Markdown格式的测试用例文档；当用户明确要求生成\"思维导."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/testcase-creator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2852945?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "testcase-creator",
+      "url": "https://clawhub.ai/skills/testcase-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "testcase-creator",
+    "url": "https://clawhub.ai/skills/testcase-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/testcase-creator-dcffb10331e253e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/testcase-creator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-testcase-creator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4115d7ffaa55f8e3623f6cf80639068000e34097035d7f660300f96736cc1d1",
+      "artifactSizeBytes": 2076
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T03:39:03.360Z"
+}

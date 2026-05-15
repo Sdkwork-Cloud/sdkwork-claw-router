@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33497,
+  "uuid": "skill-clawhub-ont-v1",
+  "skillKey": "clawhub-ont-v1",
+  "name": "Ontology",
+  "summary": "Typed knowledge graph for structured agent memory and composable skills. Use when creating/querying entities (Person, Project, Task, Event, Document), linkin...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ont_v1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "onlyloveher",
+      "features": [
+        "Typed knowledge graph for structured agent memory and composable skills",
+        "Use when creating/querying entities (Person, Project, Task, Event, Document), linkin..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ont-v1@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/972832?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ont-v1",
+      "url": "https://clawhub.ai/skills/ont-v1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ont-v1",
+    "url": "https://clawhub.ai/skills/ont-v1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ont-v1-51615856526bcaaa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ont-v1@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ont-v1-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf1ad4baaf8557bf3edec8df17130a0342b0601517737a0d5f42d5cbebd63b40",
+      "artifactSizeBytes": 2417
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T06:05:23.004Z"
+}

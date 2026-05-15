@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47648,
+  "uuid": "skill-clawhub-raindrop-io-bookmark-manager",
+  "skillKey": "clawhub-raindrop-io-bookmark-manager",
+  "name": "Raindrop.io Bookmark Manager",
+  "summary": "Raindrop.io bookmark and collection manager for a local OpenClaw workspace. Use when the user wants to validate Raindrop auth, inspect their account, list or...",
+  "version": "0.2.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.raindrop_io_bookmark_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Stanislav Stankovic",
+      "features": [
+        "Raindrop.io bookmark and collection manager for a local OpenClaw workspace",
+        "Use when the user wants to validate Raindrop auth, inspect their account, list or..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/raindrop-io-bookmark-manager@0.2.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1871432?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "raindrop-io-bookmark-manager",
+      "url": "https://clawhub.ai/skills/raindrop-io-bookmark-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "raindrop-io-bookmark-manager",
+    "url": "https://clawhub.ai/skills/raindrop-io-bookmark-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/raindrop-io-bookmark-manager-686e991481ec3394.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/raindrop-io-bookmark-manager@0.2.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-raindrop-io-bookmark-manager-0.2.4.json",
+      "version": "0.2.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8cd4b9af1364f725bf29419fe08224ade1659174a5b2226577a1759a8c4b5cbb",
+      "artifactSizeBytes": 2104
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T12:35:39.802Z"
+}

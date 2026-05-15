@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ling-mem@0.4.4",
+  "version": "0.4.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ling_mem",
+  "skill": {
+    "id": 56280,
+    "skillKey": "clawhub-ling-mem",
+    "name": "Ling Mem"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ling-mem",
+    "url": "https://clawhub.ai/skills/ling-mem",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ling-mem-9df7ed1f5c6e6241.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Durable memory across sessions — a model of who the user is, not a log of what was done. Markdown core plus a RAG store via the `ling-mem` daemon. Same seman..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linggen",
+      "userId": "s172zz5p82y8keqvtq5gmsjhm5867sm9",
+      "displayName": "Linggen",
+      "image": "https://avatars.githubusercontent.com/u/247240390?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.4.4",
+      "createdAt": 1778174838291,
+      "changelog": "install.sh now wires the OpenClaw integration: detects ~/.openclaw/workspace/USER.md and appends a marker-bracketed 'use ling-mem as your second memory system' directive so the OpenClaw agent proactively reaches for ling-mem alongside its native MEMORY.md. Marker-bracketed and idempotent (LING_MEM_SKIP_OPENCLAW=1 to disable). Pins binary to v0.4.4 (dashboard add-fact UI sync fix).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0dae8b063a36f8f7abd8e1517f9680e6251db487e78f35d3b7223c0b142de6d3"
+}

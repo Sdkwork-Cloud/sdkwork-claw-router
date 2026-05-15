@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/odoo-erp-connector@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.odoo_erp_connector",
+  "skill": {
+    "id": 11410,
+    "skillKey": "clawhub-odoo-erp-connector",
+    "name": "Clawhub Package Full"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "odoo-erp-connector",
+    "url": "https://clawhub.ai/skills/odoo-erp-connector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/odoo-erp-connector-1322121a0b8fb10a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Full-featured Odoo 19 ERP connector for OpenClaw - Sales, CRM, Purchase, Inventory, Projects, HR, Fleet, Manufacturing (80+ operations, complete Python code included, XML-RPC integration)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nullnaveen",
+      "userId": "publishers:nullnaveen",
+      "displayName": "NullNaveen",
+      "image": "https://avatars.githubusercontent.com/u/212133580?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1902,
+      "installsAllTime": 6,
+      "installsCurrent": 5,
+      "stars": 2,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1770660302552,
+      "changelog": "v1.1.0: Full Python code included (no GitHub clone needed), updated for Odoo 19, removed non-text files",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c44fb9021582b3cab3efeb1b7a96efa4e944ff165b889bc90b2b2cddcac6c174"
+}

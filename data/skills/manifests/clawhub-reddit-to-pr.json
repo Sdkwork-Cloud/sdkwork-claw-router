@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53342,
+  "uuid": "skill-clawhub-reddit-to-pr",
+  "skillKey": "clawhub-reddit-to-pr",
+  "name": "Reddit to PR",
+  "summary": "Scan Reddit for pain points in a product’s niche, identify a real user complaint worth fixing, and prepare an approved patch or PR workflow for a target repo...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reddit_to_pr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ryan McNutt",
+      "features": [
+        "Scan Reddit for pain points in a product’s niche, identify a real user complaint worth fixing,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reddit-to-pr@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6811527?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reddit-to-pr",
+      "url": "https://clawhub.ai/skills/reddit-to-pr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reddit-to-pr",
+    "url": "https://clawhub.ai/skills/reddit-to-pr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reddit-to-pr-6e7b9892771e4f7a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reddit-to-pr@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-reddit-to-pr-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4404c383ecc05f2d3e7ea24225259acd4b7b341bf3db1cda5d3340d7cbd6bac1",
+      "artifactSizeBytes": 1950
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T22:19:21.081Z"
+}

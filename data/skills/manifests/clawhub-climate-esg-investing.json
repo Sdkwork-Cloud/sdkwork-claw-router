@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65163,
+  "uuid": "skill-clawhub-climate-esg-investing",
+  "skillKey": "clawhub-climate-esg-investing",
+  "name": "Climate Esg Investing",
+  "summary": "使用Fama-French因子模型进行气候ESG投资分析，支持月度股价数据下载、因子相关性计算、OLS回归诊断及显著性筛选，帮助用户构建因子组合和风险评估。",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.climate_esg_investing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tang Weigang",
+      "features": [
+        "使用Fama-French因子模型进行气候ESG投资分析，支持月度股价数据下载、因子相关性计算、OLS回归诊断及显著性筛选，帮助用户构建因子组合和风险评估。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/climate-esg-investing@0.3.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259277235?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "climate-esg-investing",
+      "url": "https://clawhub.ai/skills/climate-esg-investing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "climate-esg-investing",
+    "url": "https://clawhub.ai/skills/climate-esg-investing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/climate-esg-investing-b101247c405f7729.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/climate-esg-investing@0.3.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-climate-esg-investing-0.3.3.json",
+      "version": "0.3.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:052b87fa3d3b9205b4e4f15dfe31cad6ad974c8859158393350776096150d218",
+      "artifactSizeBytes": 2113
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T14:24:16.540Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58407,
+  "uuid": "skill-clawhub-smart-crawler",
+  "skillKey": "clawhub-smart-crawler",
+  "name": "Smart Crawler",
+  "summary": "智能爬虫工具 - 企业级数据采集与反爬虫处理 | Smart Web Crawler - Enterprise data collection with anti-detection",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_crawler",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lv Lancer",
+      "features": [
+        "企业级数据采集与反爬虫处理 | Smart Web Crawler",
+        "Enterprise data collection with anti-detection"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-crawler@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29176686?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-crawler",
+      "url": "https://clawhub.ai/skills/smart-crawler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-crawler",
+    "url": "https://clawhub.ai/skills/smart-crawler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-crawler-b5835a39a7d569b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-crawler@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-crawler-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:124149a3e3190cfa5d7b9aa93d4adf64d791e4a294e3aab6d580f2157b3d6575",
+      "artifactSizeBytes": 1893
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T13:46:39.424Z"
+}

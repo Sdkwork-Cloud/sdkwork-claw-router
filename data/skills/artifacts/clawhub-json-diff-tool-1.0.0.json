@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/json-diff-tool@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.json_diff_tool",
+  "skill": {
+    "id": 68105,
+    "skillKey": "clawhub-json-diff-tool",
+    "name": "JSON Diff Tool"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "json-diff-tool",
+    "url": "https://clawhub.ai/skills/json-diff-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/json-diff-tool-54db568988b86974.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "免费在线 JSON 对比工具，支持路径级别差异高亮显示，数据本地处理不上传，适合接口、配置和测试数据差异分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shenghoo123-png",
+      "userId": "s17dv44xed17vb7n7v728mr4dd846y7m",
+      "displayName": "shenghoo123-png",
+      "image": "https://avatars.githubusercontent.com/u/265226019?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775518984223,
+      "changelog": "- Initial release\n- Supports path-level JSON diff with syntax highlighting\n- All processing is done locally—no data uploaded\n- Swappable, copyable sides and preset sample data\n- Keyboard shortcut (Ctrl+Enter) for quick comparison",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3669b6a324bed58945353d1efa74f10157b82db2cd892da73a2c7fb1210d7b6f"
+}

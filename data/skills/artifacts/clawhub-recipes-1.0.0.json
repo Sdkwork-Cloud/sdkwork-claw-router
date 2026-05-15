@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/recipes@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recipes",
+  "skill": {
+    "id": 12297,
+    "skillKey": "clawhub-recipes",
+    "name": "Recipes"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recipes",
+    "url": "https://clawhub.ai/skills/recipes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recipes-63b8bd59a482879a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CLI for AI agents to find recipes for their humans. Uses TheMealDB API. No auth required."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jeffaf",
+      "userId": "s170beydycbvfehr2pz7rj84p183gak4",
+      "displayName": "jeffaf",
+      "image": "https://avatars.githubusercontent.com/u/102811047?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1701,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770258660994,
+      "changelog": "Initial release of the Recipes skill\n\n- Search, browse, and get details for recipes using TheMealDB API—no authentication required.\n- Supports searching by keyword, fetching full details by meal ID, and getting random recipes.\n- Allows listing of categories and browsing recipes by area/cuisine.\n- Provides user-friendly CLI commands for agents, with clear recipe output formatting.\n- Includes implementation notes and usage suggestions for agents.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:62d0ca346686195250523bd8ac48841020d11dae83abde46663b08ce2818b228"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pain-point-finder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pain_point_finder",
+  "skill": {
+    "id": 20772,
+    "skillKey": "clawhub-pain-point-finder",
+    "name": "Pain Point Finder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pain-point-finder",
+    "url": "https://clawhub.ai/skills/pain-point-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pain-point-finder-b877de494195b7da.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover pain points, frustrations, and unmet needs on Reddit using PullPush API. No API keys required. Use to find startup ideas backed by real user complai..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yanji84",
+      "userId": "publishers:yanji84",
+      "displayName": "Ji Yan",
+      "image": "https://avatars.githubusercontent.com/u/131415?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 538,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772086926248,
+      "changelog": "Initial release of Pain Point Finder.\n\n- Find pain points, frustrations, and unmet needs on Reddit using PullPush API—no API keys needed.\n- Structured 4-phase workflow: discover subreddits, scan for pain points, deep-dive on top posts, and synthesize findings.\n- CLI options for targeted discovery, filtering, and analysis.\n- Output includes agreement signals, failed solution attempts, and mapped competitive landscape.\n- Built-in rate limits and retry logic for stable operation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:04045c63355be3d145d1f15bc7c59b1e771e81cd9dbf32cb3e6a79a723750808"
+}

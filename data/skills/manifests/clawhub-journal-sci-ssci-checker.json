@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65799,
+  "uuid": "skill-clawhub-journal-sci-ssci-checker",
+  "skillKey": "clawhub-journal-sci-ssci-checker",
+  "name": "Journal SCI/SSCI Checker",
+  "summary": "检查心理学学术期刊是否被 SCI 或 SSCI 索引。在评估文献质量时使用，帮助筛选符合条件的期刊文章。 触发场景： - 用户要求检查某期刊是否被 SCI/SSCI 索引 - 在评估非预印本文献质量时自动调用 - 构建心理学语料库时作为期刊筛选工具 不适用于预印本平台的文章（直接跳过，使用 PaperClaw 评估）。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.journal_sci_ssci_checker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jiaqi-Guo-0114",
+      "features": [
+        "检查心理学学术期刊是否被 SCI 或 SSCI 索引。在评估文献质量时使用，帮助筛选符合条件的期刊文章。 触发场景：",
+        "用户要求检查某期刊是否被 SCI/SSCI 索引",
+        "在评估非预印本文献质量时自动调用",
+        "构建心理学语料库时作为期刊筛选工具 不适用于预印本平台的文章（直接跳过，使用 PaperClaw 评估）。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/journal-sci-ssci-checker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264645355?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "journal-sci-ssci-checker",
+      "url": "https://clawhub.ai/skills/journal-sci-ssci-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "journal-sci-ssci-checker",
+    "url": "https://clawhub.ai/skills/journal-sci-ssci-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/journal-sci-ssci-checker-68c6c346ca5a57d8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/journal-sci-ssci-checker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-journal-sci-ssci-checker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b1c4a7b5e08c79638f0dbc7840b92e16c745028a7f675fcd3cc545bdd3252b54",
+      "artifactSizeBytes": 2202
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T00:42:40.817Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50631,
+  "uuid": "skill-clawhub-setuporion-byimpa",
+  "skillKey": "clawhub-setuporion-byimpa",
+  "name": "SetupOrion ByImpa",
+  "summary": "Setup completo de VPS Ubuntu/Debian para produção com Docker Swarm, Traefik v3 (SSL/HTTPS automático), Portainer CE e rede overlay. Baseado no SetupOrion v2.8.0. Executa todos os comandos automaticamente.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.setuporion_byimpa",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "impa365",
+      "features": [
+        "Setup completo de VPS Ubuntu/Debian para produção com Docker Swarm, Traefik v3 (SSL/HTTPS autom.",
+        "Baseado no SetupOrion v2.8.0",
+        "Executa todos os comandos automaticamente."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/setuporion-byimpa@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/91766929?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "setuporion-byimpa",
+      "url": "https://clawhub.ai/skills/setuporion-byimpa"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "setuporion-byimpa",
+    "url": "https://clawhub.ai/skills/setuporion-byimpa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/setuporion-byimpa-461fec96e2781700.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/setuporion-byimpa@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-setuporion-byimpa-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:89820e87364254a5136d0f9a1881a4facae6eed007336a59b29caa6b32800323",
+      "artifactSizeBytes": 2427
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T21:58:04.769Z"
+}

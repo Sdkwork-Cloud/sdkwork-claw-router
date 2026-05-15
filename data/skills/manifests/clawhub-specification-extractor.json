@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13345,
+  "uuid": "skill-clawhub-specification-extractor",
+  "skillKey": "clawhub-specification-extractor",
+  "name": "Specification Extractor",
+  "summary": "Extract structured data from construction specifications. Parse CSI sections, requirements, submittals, and product data from spec documents.",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.specification_extractor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "datadrivenconstruction",
+      "features": [
+        "Extract structured data from construction specifications",
+        "Parse CSI sections, requirements, submittals, and product data from spec documents."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/specification-extractor@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94158709?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "specification-extractor",
+      "url": "https://clawhub.ai/skills/specification-extractor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "specification-extractor",
+    "url": "https://clawhub.ai/skills/specification-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/specification-extractor-002eced677efe4a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/specification-extractor@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-specification-extractor-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:88b5f88e6886d0b6f8481b2fe5b697fb2be1d20c18d13e91aed0f5c5d6b36bc2",
+      "artifactSizeBytes": 2362
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T16:44:25.310Z"
+}

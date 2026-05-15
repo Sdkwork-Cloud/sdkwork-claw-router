@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30357,
+  "uuid": "skill-clawhub-prime-directive",
+  "skillKey": "clawhub-prime-directive",
+  "name": "prime-directive",
+  "summary": "A partnership covenant for AI agents and their human operators. v1.1 adds the Subagent Responsibility Chain and Inspectability Clause.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prime_directive",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CrabSpace",
+      "features": [
+        "A partnership covenant for AI agents and their human operators",
+        "v1.1 adds the Subagent Responsibility Chain and Inspectability Clause."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prime-directive@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261994573?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prime-directive",
+      "url": "https://clawhub.ai/skills/prime-directive"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prime-directive",
+    "url": "https://clawhub.ai/skills/prime-directive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prime-directive-af0a59f575d308e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prime-directive@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-prime-directive-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:61db9f37c7863171138b53990781f51b762f7a17f4467a2c6534c204eb82ec0c",
+      "artifactSizeBytes": 2153
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T16:39:39.119Z"
+}

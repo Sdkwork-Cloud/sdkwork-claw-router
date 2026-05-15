@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25481,
+  "uuid": "skill-clawhub-piggy",
+  "skillKey": "clawhub-piggy",
+  "name": "Piggy",
+  "summary": "Piggy integration. Manage Accounts, Budgets, Goals. Use when the user wants to interact with Piggy data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.piggy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Piggy integration",
+        "Manage Accounts, Budgets, Goals",
+        "Use when the user wants to interact with Piggy data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/piggy@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "piggy",
+      "url": "https://clawhub.ai/skills/piggy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "piggy",
+    "url": "https://clawhub.ai/skills/piggy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/piggy-bb21cd8328ef5bba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/piggy@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-piggy-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8e450de64f59f166c97617a712f0c39199adad4f070bc6265713805100381be6",
+      "artifactSizeBytes": 1798
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:51:46.694Z"
+}

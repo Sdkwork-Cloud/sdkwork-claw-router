@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68077,
+  "uuid": "skill-clawhub-email-assistant-pro",
+  "skillKey": "clawhub-email-assistant-pro",
+  "name": "Email Assistant Pro",
+  "summary": "智能邮件处理助手，自动归类邮件，起草专业回复，提取任务和截止日期，生成摘要并按优先级排序邮件。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_assistant_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "--冷月无心--",
+      "features": [
+        "智能邮件处理助手，自动归类邮件，起草专业回复，提取任务和截止日期，生成摘要并按优先级排序邮件。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/email-assistant-pro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26730984?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "email-assistant-pro",
+      "url": "https://clawhub.ai/skills/email-assistant-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-assistant-pro",
+    "url": "https://clawhub.ai/skills/email-assistant-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-assistant-pro-96b641e9b0e19fd2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/email-assistant-pro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-email-assistant-pro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dd3eed4664be47aa53ee7bd6eebc2626fe5de43e45eb6ab4b542a84f2dfd52ae",
+      "artifactSizeBytes": 1952
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T15:05:22.713Z"
+}

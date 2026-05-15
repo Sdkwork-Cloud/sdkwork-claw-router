@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61435,
+  "uuid": "skill-clawhub-radar-collision-warning",
+  "skillKey": "clawhub-radar-collision-warning",
+  "name": "Radar Collision Warning",
+  "summary": "雷达防撞预警 — 调用树莓派上 ROS2 节点的雷达预警服务。当用户说\"雷达防撞预警\"、\"开启雷达监控\"、\"检查障碍物\"等时使用。通过 rosbridge WebSocket 向树莓派发送 ROS2 Service 请求，获取最近障碍物距离并给出预警。依赖 Node.js 18+（内置 WebSocket，无需安...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.radar_collision_warning",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "33-code",
+      "features": [
+        "雷达防撞预警 — 调用树莓派上 ROS2 节点的雷达预警服务。当用户说\"雷达防撞预警\"、\"开启雷达监控\"、\"检查障碍物\"等时使用。通过 rosbridge WebSocket 向树莓派发送."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/radar-collision-warning@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/207119435?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "radar-collision-warning",
+      "url": "https://clawhub.ai/skills/radar-collision-warning"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "radar-collision-warning",
+    "url": "https://clawhub.ai/skills/radar-collision-warning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/radar-collision-warning-658f17162c1ac97a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/radar-collision-warning@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-radar-collision-warning-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:afa4c183e2b6373c4cda1f8345e5dc9d05675e71d9b84ef427bfba0f93084818",
+      "artifactSizeBytes": 2539
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T07:30:04.183Z"
+}

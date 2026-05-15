@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62976,
+  "uuid": "skill-clawhub-business-api-recorder",
+  "skillKey": "clawhub-business-api-recorder",
+  "name": "Business API Recorder",
+  "summary": "通过Chrome扩展记录目标系统业务流程的完整API调用，生成详细接口文档和实现方案辅助AI重构。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.business_api_recorder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sihan2017",
+      "features": [
+        "通过Chrome扩展记录目标系统业务流程的完整API调用，生成详细接口文档和实现方案辅助AI重构。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/business-api-recorder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31059536?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "business-api-recorder",
+      "url": "https://clawhub.ai/skills/business-api-recorder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "business-api-recorder",
+    "url": "https://clawhub.ai/skills/business-api-recorder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/business-api-recorder-7a3ae17ace548408.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/business-api-recorder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-business-api-recorder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e572190cc97e52f1deee4f81aa431ffbeef60491999c2c6832a3d5584649e5c0",
+      "artifactSizeBytes": 2376
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T09:38:56.259Z"
+}

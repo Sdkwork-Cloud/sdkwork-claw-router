@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-summarize@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_summarize",
+  "skill": {
+    "id": 71796,
+    "skillKey": "clawhub-wechat-summarize",
+    "name": "微信公众号内容总结"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-summarize",
+    "url": "https://clawhub.ai/skills/wechat-summarize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-summarize-f91c3268ecafa109.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "抓取微信公众号文章并转换为Markdown，提取正文内容后总结核心观点或直接输出完整文章。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kongym1234",
+      "userId": "s171ka8j7h7b6rx3mf57gjswn984hpva",
+      "displayName": "kongym1234",
+      "image": "https://avatars.githubusercontent.com/u/37609239?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775896252744,
+      "changelog": "- Initial release of the WeChat Official Account article reader skill.\n- Added wechat2md.py script for fetching and converting WeChat articles to Markdown format.\n- Removed previous plugin installation logic (scripts/start.mjs).\n- Standard workflow: fetch article by link, convert to markdown, summarize or output raw content, and auto-delete the output file unless requested.\n- Dependencies: html2text, beautifulsoup4, requests (auto-installed to /tmp/pylibs if missing).\n- Improved error handling and image support; clear user instructions for each step.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0cbb494144f9e76eccd49fd715590f68e8befb2081ddc29f4f686620d4a6e11f"
+}

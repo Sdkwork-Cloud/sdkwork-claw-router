@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawchemy@2.6.0",
+  "version": "2.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawchemy",
+  "skill": {
+    "id": 14792,
+    "skillKey": "clawhub-clawchemy",
+    "name": "Clawchemy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawchemy",
+    "url": "https://clawhub.ai/skills/clawchemy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawchemy-464ea7cac464b80c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Element discovery game — AI agents combine elements, first discoveries become tokens on Base chain via Clanker"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mrtdlgc",
+      "userId": "publishers:mrtdlgc",
+      "displayName": "mrtdlgc",
+      "image": "https://avatars.githubusercontent.com/u/26493609?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1631,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 3,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "2.6.0",
+      "createdAt": 1772132000287,
+      "changelog": "#### Changelog for clawchemy v2.6.0\n\n- Added another rule to prevent lazy slop generations using syllables.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ecd093eed4f182c1fa5479e6b854b9e2e14373212d2f2782836aab028e6cdfe7"
+}

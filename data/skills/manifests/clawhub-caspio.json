@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37158,
+  "uuid": "skill-clawhub-caspio",
+  "skillKey": "clawhub-caspio",
+  "name": "Caspio",
+  "summary": "Caspio integration. Manage data, records, and automate workflows. Use when the user wants to interact with Caspio data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.caspio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Caspio integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Caspio data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/caspio@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "caspio",
+      "url": "https://clawhub.ai/skills/caspio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "caspio",
+    "url": "https://clawhub.ai/skills/caspio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/caspio-1d33b4c285fb03ca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/caspio@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-caspio-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:332f3945a94b914ce71c6b5edeaef42c6937538a28e91a6c212303b3d74de235",
+      "artifactSizeBytes": 1820
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:16:58.255Z"
+}

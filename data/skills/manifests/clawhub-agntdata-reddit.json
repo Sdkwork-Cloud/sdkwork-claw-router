@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33041,
+  "uuid": "skill-clawhub-agntdata-reddit",
+  "skillKey": "clawhub-agntdata-reddit",
+  "name": "Reddit API",
+  "summary": "Use one API key to pull Reddit data (subreddits, posts, and community data) for agents, automations, and analytics. Structured JSON, credit-based pricing, no se",
+  "version": "1.0.15",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agntdata_reddit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jaen",
+      "features": [
+        "Use one API key to pull Reddit data (subreddits, posts, and community data) for agents, automat.",
+        "Structured JSON, credit-based pricing, no se"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agntdata-reddit@1.0.15",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/53541106?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agntdata-reddit",
+      "url": "https://clawhub.ai/skills/agntdata-reddit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agntdata-reddit",
+    "url": "https://clawhub.ai/skills/agntdata-reddit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agntdata-reddit-262a5fe7702571a1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agntdata-reddit@1.0.15",
+      "artifactUrl": "data/skills/artifacts/clawhub-agntdata-reddit-1.0.15.json",
+      "version": "1.0.15",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a5a90f7039e41fbef1052f749e409eddd66f4e296405321f8ecd10ce347d1d2",
+      "artifactSizeBytes": 2040
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T23:44:50.192Z"
+}

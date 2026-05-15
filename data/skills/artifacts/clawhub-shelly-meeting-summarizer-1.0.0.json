@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shelly-meeting-summarizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shelly_meeting_summarizer",
+  "skill": {
+    "id": 18386,
+    "skillKey": "clawhub-shelly-meeting-summarizer",
+    "name": "Meeting Notes Summarizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shelly-meeting-summarizer",
+    "url": "https://clawhub.ai/skills/shelly-meeting-summarizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shelly-meeting-summarizer-e4bd0b4e64a97abc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates concise meeting summaries highlighting key decisions, action items with owners, follow-up dates, and a brief 3-sentence overview."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "claudiodrusus",
+      "userId": "publishers:claudiodrusus",
+      "displayName": "claudiodrusus",
+      "image": "https://avatars.githubusercontent.com/u/258132540?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 686,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771792511873,
+      "changelog": "Initial release: Easily convert meeting transcripts into actionable summaries.\n\n- Extracts key decisions, action items with owners, and follow-up dates from transcripts.\n- Provides a concise 3-sentence summary of each meeting.\n- Outputs structured results in Markdown format.\n- Supports input via file, clipboard, or inline text.\n- Requires Bash 4+, curl, and ANTHROPIC_API_KEY.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3a6735e19e5b304351d267321869eba7f74508c5d13b1e59dd91eccf038372e2"
+}

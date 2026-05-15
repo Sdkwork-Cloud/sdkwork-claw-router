@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57531,
+  "uuid": "skill-clawhub-study-plan-maker",
+  "skillKey": "clawhub-study-plan-maker",
+  "name": "学习计划制定助手",
+  "summary": "Use this skill when creating personalized study plans, learning roadmaps, or skill acquisition schedules. Activates on requests like \"make a study plan for X...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.study_plan_maker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hjs102468",
+      "features": [
+        "Use this skill when creating personalized study plans, learning roadmaps, or skill acquisition.",
+        "Activates on requests like \"make a study plan for X..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/study-plan-maker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31621036?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "study-plan-maker",
+      "url": "https://clawhub.ai/skills/study-plan-maker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "study-plan-maker",
+    "url": "https://clawhub.ai/skills/study-plan-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/study-plan-maker-f920187d62dfcc0a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/study-plan-maker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-study-plan-maker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e39bd8ba63c4a0f0f833a1d1664dfce3c12e01cdbd102bd21481cba3f429ebe4",
+      "artifactSizeBytes": 1908
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T10:36:30.305Z"
+}

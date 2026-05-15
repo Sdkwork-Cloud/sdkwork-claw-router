@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oc-code-review@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oc_code_review",
+  "skill": {
+    "id": 69001,
+    "skillKey": "clawhub-oc-code-review",
+    "name": "OC Code Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oc-code-review",
+    "url": "https://clawhub.ai/skills/oc-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oc-code-review-011ac6b1f5f146cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供代码安全、性能、质量与可维护性四维度全面审查，评分并生成改进建议与详细报告。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "penghang1223",
+      "userId": "s172cqnwbhjm7vh8k94913pe1h83qnca",
+      "displayName": "Narain",
+      "image": "https://avatars.githubusercontent.com/u/66556401?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775025071852,
+      "changelog": "v1.0.0 - 4维度代码审查（安全/性能/质量/可维护），支持快速/深度/安全专项3种模式",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:01a7ce0c46c5359980092986dafbb232aa7db96f2946e4eb9ad468dbc52c75c4"
+}

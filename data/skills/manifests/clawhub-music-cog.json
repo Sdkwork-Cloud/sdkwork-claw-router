@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9256,
+  "uuid": "skill-clawhub-music-cog",
+  "skillKey": "clawhub-music-cog",
+  "name": "Music Cog",
+  "summary": "AI music generation powered by CellCog. Original instrumental and vocal tracks, 5 seconds to 10 minutes. Cinematic scores, background tracks, podcast intros,...",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.music_cog",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CellCog",
+      "features": [
+        "AI music generation powered by CellCog",
+        "Original instrumental and vocal tracks, 5 seconds to 10 minutes",
+        "Cinematic scores, background tracks, podcast intros,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/music-cog@1.0.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14193431?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "music-cog",
+      "url": "https://clawhub.ai/skills/music-cog"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "music-cog",
+    "url": "https://clawhub.ai/skills/music-cog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/music-cog-cda349201872e8b5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/music-cog@1.0.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-music-cog-1.0.10.json",
+      "version": "1.0.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:592b1cbc67078d24f1f9b275c100c5c0ae437e0b07e4e8f4a3fe8dd3ab1059e4",
+      "artifactSizeBytes": 2079
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T06:19:12.472Z"
+}

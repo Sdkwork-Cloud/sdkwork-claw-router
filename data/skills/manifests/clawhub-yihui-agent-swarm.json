@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47157,
+  "uuid": "skill-clawhub-yihui-agent-swarm",
+  "skillKey": "clawhub-yihui-agent-swarm",
+  "name": "YiHui Agent Swarm",
+  "summary": "Multi-agent orchestration framework for OpenClaw. Define roles, route tasks, manage state, and coordinate agent teams using structured YAML configs and a pro...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yihui_agent_swarm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "辉哥",
+      "features": [
+        "Multi-agent orchestration framework for OpenClaw",
+        "Define roles, route tasks, manage state, and coordinate agent teams using structured YAML confi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yihui-agent-swarm@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/197358991?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yihui-agent-swarm",
+      "url": "https://clawhub.ai/skills/yihui-agent-swarm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yihui-agent-swarm",
+    "url": "https://clawhub.ai/skills/yihui-agent-swarm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yihui-agent-swarm-b6400957978f5884.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yihui-agent-swarm@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yihui-agent-swarm-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b9ffb724496a1fd8379bb46c6b46c0725f75fdb36c0ba3b48836c49adc798b3c",
+      "artifactSizeBytes": 1961
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T08:50:03.973Z"
+}

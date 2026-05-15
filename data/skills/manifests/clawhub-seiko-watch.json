@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49241,
+  "uuid": "skill-clawhub-seiko-watch",
+  "skillKey": "clawhub-seiko-watch",
+  "name": "Seiko Watch",
+  "summary": "Provides detailed history, innovations, and business insights on Seiko Watch, including quartz invention, Spring Drive, Grand Seiko luxury, and industry impact.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seiko_watch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Provides detailed history, innovations, and business insights on Seiko Watch, including quartz."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/seiko-watch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "seiko-watch",
+      "url": "https://clawhub.ai/skills/seiko-watch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seiko-watch",
+    "url": "https://clawhub.ai/skills/seiko-watch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seiko-watch-d2bf0b87934d22d4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/seiko-watch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-seiko-watch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2697e2722ed06887d552c2f8f0969bca89f397a0a113b7a0e6e5dc8d6768d6da",
+      "artifactSizeBytes": 2309
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T05:06:21.887Z"
+}

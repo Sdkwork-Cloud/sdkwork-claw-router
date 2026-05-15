@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26155,
+  "uuid": "skill-clawhub-echtpost-postcards",
+  "skillKey": "clawhub-echtpost-postcards",
+  "name": "Echtpost Postcards",
+  "summary": "EchtPost Postcards integration. Manage Postcards, Campaigns, Templates, Users. Use when the user wants to interact with EchtPost Postcards data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.echtpost_postcards",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "EchtPost Postcards integration",
+        "Manage Postcards, Campaigns, Templates, Users",
+        "Use when the user wants to interact with EchtPost Postcards data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/echtpost-postcards@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "echtpost-postcards",
+      "url": "https://clawhub.ai/skills/echtpost-postcards"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "echtpost-postcards",
+    "url": "https://clawhub.ai/skills/echtpost-postcards",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/echtpost-postcards-3c5bd17253dd5bfa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/echtpost-postcards@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-echtpost-postcards-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cceadc5fd41979462d7eb6030df95bf889aae8924e4931fda2e933b6e8531bd6",
+      "artifactSizeBytes": 1929
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:25:23.106Z"
+}

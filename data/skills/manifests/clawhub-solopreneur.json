@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20967,
+  "uuid": "skill-clawhub-solopreneur",
+  "skillKey": "clawhub-solopreneur",
+  "name": "Solopreneur",
+  "summary": "Solo business management with dashboard, pipeline tracking, invoicing, and weekly reviews. Use when user mentions solo business, clients, revenue, pipeline,...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solopreneur",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AGIstack",
+      "features": [
+        "Solo business management with dashboard, pipeline tracking, invoicing, and weekly reviews",
+        "Use when user mentions solo business, clients, revenue, pipeline,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/solopreneur@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258523997?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "solopreneur",
+      "url": "https://clawhub.ai/skills/solopreneur"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solopreneur",
+    "url": "https://clawhub.ai/skills/solopreneur",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solopreneur-c4cfbf4c17e2c64a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/solopreneur@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-solopreneur-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b00271b2d69ad44feace50cd9b349550895e120c19085ab15de59078df2fdf9b",
+      "artifactSizeBytes": 1967
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T06:09:55.008Z"
+}

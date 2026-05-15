@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/principle-comparator@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.principle_comparator",
+  "skill": {
+    "id": 20663,
+    "skillKey": "clawhub-principle-comparator",
+    "name": "Principle Comparator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "principle-comparator",
+    "url": "https://clawhub.ai/skills/principle-comparator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/principle-comparator-596b8f42d75b92e7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Compare two sources to find shared and divergent principles — discover what survives independent observation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leegitw",
+      "userId": "s179srg0a58h1v79wy2w7g9ymh83jxhd",
+      "displayName": "Lee Brown",
+      "image": "https://avatars.githubusercontent.com/u/1395866?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1294,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774471989275,
+      "changelog": "No user-facing changes; file contents unchanged in this version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:364d01e3759eb441baea4eb7455b5c2c4423b20d6a9aebcd6419f075bcb7eb13"
+}

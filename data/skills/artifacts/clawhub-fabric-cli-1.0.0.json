@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fabric-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fabric_cli",
+  "skill": {
+    "id": 54968,
+    "skillKey": "clawhub-fabric-cli",
+    "name": "Fabric CLI skill - Self-Organizing Personal Cloud"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fabric-cli",
+    "url": "https://clawhub.ai/skills/fabric-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fabric-cli-62d7afdf4d3fc29c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill for Fabric.so CLI workflows with the `fabric` terminal command: diagnose/install/login, search or browse a Fabric library, save notes/links/fi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tristanmanchester",
+      "userId": "s17c3xv8wvvzzbj84z9vcj498n83gnkp",
+      "displayName": "Tristan Manchester",
+      "image": "https://avatars.githubusercontent.com/u/108270628?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 106,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777487466250,
+      "changelog": "Initial release of the Fabric.so CLI agent skill.\n\n- Provides safe, guided workflows for using the Fabric.so command-line interface (CLI) via the fabric executable.\n- Covers searching and browsing libraries, saving notes/links/files, creating folders, asking the Fabric AI assistant, managing tasks/workspaces, and generating shell completion.\n- Explains what is and isn’t covered (not for Microsoft Fabric, Power BI, Miessler’s Fabric, Python SSH, Fabric.js, textiles, etc.).\n- Strong emphasis on consent, safety, and non-destructive actions: warns before state-changing commands, never installs or deletes without explicit approval.\n- Describes JSON output usage, environment checks, command mapping, and defensive error handling.\n- Includes practical tips for selecting commands, handling authentication, and parsing output.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:55ef714c9ecee331554efa087325eac1d3531d4447ba9ee83ef4c8baed7b0013"
+}

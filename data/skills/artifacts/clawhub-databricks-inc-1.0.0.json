@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/databricks-inc@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.databricks_inc",
+  "skill": {
+    "id": 63785,
+    "skillKey": "clawhub-databricks-inc",
+    "name": "Databricks Inc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "databricks-inc",
+    "url": "https://clawhub.ai/skills/databricks-inc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/databricks-inc-76a33fc38fab7e20.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供统一数据与AI平台，融合Lakehouse架构，支持大规模数据处理、管理和生成式AI模型训练。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777050623138,
+      "changelog": "- 首个版本发布，介绍Databricks从Apache Spark起步，发展为统一数据+AI平台。\n- 涵盖Databricks与Snowflake的战略差异及“数据战争”对比。\n- 总结公司历史时间线、商业模式、竞争护城河及核心数据。\n- 提供Delta Lake、DBRX等关键技术节点与公司大事件速览。\n- 包含有趣公司事实和生成式AI基础设施方面的最新动态。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4b5779e03ecb9387cb6959218b043552f0063882d0d74a7f90c0d4c2e378fb11"
+}

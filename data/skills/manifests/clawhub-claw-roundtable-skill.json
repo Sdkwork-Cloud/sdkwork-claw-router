@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61527,
+  "uuid": "skill-clawhub-claw-roundtable-skill",
+  "skillKey": "clawhub-claw-roundtable-skill",
+  "name": "Claw Roundtable Skill",
+  "summary": "多 Agent 深度讨论系统 V2。需求驱动的智能专家匹配系统，模拟真实圆桌会议。 集成 146 个全领域专家（engineering/design/marketing/sales/product 等），支持任何复杂问题的多专家讨论。 核心改进： 1. 需求智能拆解 → 精准匹配专家（从 146 个专家库中选择）...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_roundtable_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Krislu",
+      "features": [
+        "多 Agent 深度讨论系统 V2。需求驱动的智能专家匹配系统，模拟真实圆桌会议。 集成 146 个全领域专家（engineering/design/marketing/sales/prod.",
+        "需求智能拆解 → 精准匹配专家（从 146 个专家库中选择）..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-roundtable-skill@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258380416?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-roundtable-skill",
+      "url": "https://clawhub.ai/skills/claw-roundtable-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-roundtable-skill",
+    "url": "https://clawhub.ai/skills/claw-roundtable-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-roundtable-skill-58b65b99b0e44886.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-roundtable-skill@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-roundtable-skill-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eaaf21a54a14d60204a6d935fb3be95f73b1abb51fb935cb7623e656b35e5c73",
+      "artifactSizeBytes": 2730
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T14:20:58.806Z"
+}

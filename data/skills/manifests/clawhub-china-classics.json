@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71672,
+  "uuid": "skill-clawhub-china-classics",
+  "skillKey": "clawhub-china-classics",
+  "name": "China Classics中国古经典",
+  "summary": "中国古代经典知识库 - 提供四书五经、诸子百家、史书典籍、文学经典、明清小说的权威解答。使用场景：经典查询、名言出处、人物典故、历史背景、思想解析、名句赏析、书目推荐、阅读指导。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_classics",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mikewong",
+      "features": [
+        "中国古代经典知识库",
+        "提供四书五经、诸子百家、史书典籍、文学经典、明清小说的权威解答。使用场景：经典查询、名言出处、人物典故、历史背景、思想解析、名句赏析、书目推荐、阅读指导。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/china-classics@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267503469?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "china-classics",
+      "url": "https://clawhub.ai/skills/china-classics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-classics",
+    "url": "https://clawhub.ai/skills/china-classics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-classics-341eadcd6fbf23f4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/china-classics@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-china-classics-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eeebe474a1f0574259552d1d7ef85507faf015da8865c8301d71b58ce2c29ab1",
+      "artifactSizeBytes": 2092
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T20:46:07.544Z"
+}

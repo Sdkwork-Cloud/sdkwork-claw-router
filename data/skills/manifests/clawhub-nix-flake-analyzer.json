@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54076,
+  "uuid": "skill-clawhub-nix-flake-analyzer",
+  "skillKey": "clawhub-nix-flake-analyzer",
+  "name": "Nix Flake Analyzer",
+  "summary": "Analyze Nix flakes for best practices, input management, reproducibility, and derivation quality — audit flake.nix, overlays, and development shells.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nix_flake_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Analyze Nix flakes for best practices, input management, reproducibility, and derivation qualit."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nix-flake-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nix-flake-analyzer",
+      "url": "https://clawhub.ai/skills/nix-flake-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nix-flake-analyzer",
+    "url": "https://clawhub.ai/skills/nix-flake-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nix-flake-analyzer-8fc6db7175aff45c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nix-flake-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nix-flake-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4cadd67c38f82a33fa392203a735a52c6ef614b820e38016f2140df2d2ac8309",
+      "artifactSizeBytes": 2339
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T08:45:36.255Z"
+}

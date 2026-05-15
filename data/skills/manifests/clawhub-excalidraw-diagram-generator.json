@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9581,
+  "uuid": "skill-clawhub-excalidraw-diagram-generator",
+  "skillKey": "clawhub-excalidraw-diagram-generator",
+  "name": "Excalidraw Diagram Generator",
+  "summary": "Generate Excalidraw diagrams from natural language descriptions. Use when asked to \"create a diagram\", \"make a flowchart\", \"visualize a process\", \"draw a sys...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.excalidraw_diagram_generator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Morpheous",
+      "features": [
+        "Generate Excalidraw diagrams from natural language descriptions",
+        "Use when asked to \"create a diagram\", \"make a flowchart\", \"visualize a process\", \"draw a sys..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/excalidraw-diagram-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9301701?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "excalidraw-diagram-generator",
+      "url": "https://clawhub.ai/skills/excalidraw-diagram-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "excalidraw-diagram-generator",
+    "url": "https://clawhub.ai/skills/excalidraw-diagram-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/excalidraw-diagram-generator-84bdd1034cd7f356.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/excalidraw-diagram-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-excalidraw-diagram-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e9a50beb5f6e8ff3fdd69e87fbe9ffd9c7ce09cd3175c49dd17be737bbbff54",
+      "artifactSizeBytes": 2592
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T04:28:02.442Z"
+}

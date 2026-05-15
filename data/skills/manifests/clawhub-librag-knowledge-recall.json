@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66008,
+  "uuid": "skill-clawhub-librag-knowledge-recall",
+  "skillKey": "clawhub-librag-knowledge-recall",
+  "name": "librag-recall",
+  "summary": "使用 LibRAG 本地 `/api/v1/librag/knowbase/recall` 接口做知识库数据召回。适用于中文场景下的知识库检索、资料召回、证据段落提取、出处定位、基于知识库的问答取证，以及用户用“知识库查询”“数据召回”“从文档里找答案”等表达发起的任务。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.librag_knowledge_recall",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "7010G",
+      "features": [
+        "使用 LibRAG 本地 `/api/v1/librag/knowbase/recall` 接口做知识库数据召回。适用于中文场景下的知识库检索、资料召回、证据段落提取、出处定位、基于知识库的."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/librag-knowledge-recall@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37602564?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "librag-knowledge-recall",
+      "url": "https://clawhub.ai/skills/librag-knowledge-recall"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "librag-knowledge-recall",
+    "url": "https://clawhub.ai/skills/librag-knowledge-recall",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/librag-knowledge-recall-786609577f6fd71c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/librag-knowledge-recall@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-librag-knowledge-recall-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cbfdef0c3c45803012e853000a211ac513fc8a34c26054c8ce46236be2a19c44",
+      "artifactSizeBytes": 2554
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T07:47:56.709Z"
+}

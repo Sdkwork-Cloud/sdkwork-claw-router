@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26060,
+  "uuid": "skill-clawhub-clawbio-equity-scorer",
+  "skillKey": "clawhub-clawbio-equity-scorer",
+  "name": "ClawBio Equity Scorer",
+  "summary": "Compute HEIM diversity and equity metrics from VCF or ancestry data. Generates heterozygosity, FST, PCA plots, and a composite HEIM Equity Score with markdow...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawbio_equity_scorer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "manuelcorpas",
+      "features": [
+        "Compute HEIM diversity and equity metrics from VCF or ancestry data",
+        "Generates heterozygosity, FST, PCA plots, and a composite HEIM Equity Score with markdow..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawbio-equity-scorer@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/383303?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawbio-equity-scorer",
+      "url": "https://clawhub.ai/skills/clawbio-equity-scorer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawbio-equity-scorer",
+    "url": "https://clawhub.ai/skills/clawbio-equity-scorer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawbio-equity-scorer-c97e95fb2d319df5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawbio-equity-scorer@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawbio-equity-scorer-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9548d9c748cd28fbc702da4ab5ba3d4605a276a7cfbba9d85454bdb9c62e920e",
+      "artifactSizeBytes": 1975
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T18:04:44.553Z"
+}

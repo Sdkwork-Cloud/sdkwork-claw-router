@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/social-media-auto@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_media_auto",
+  "skill": {
+    "id": 60236,
+    "skillKey": "clawhub-social-media-auto",
+    "name": "Social Media Auto"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-media-auto",
+    "url": "https://clawhub.ai/skills/social-media-auto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-media-auto-746c45f5eb9c8766.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自媒体内容生成技能 - 热点抓取 + AI 创作 + 多平台适配"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linzmin",
+      "userId": "s17eepdr8qnckgm3n0pc6619md83mm15",
+      "displayName": "linzmin",
+      "image": "https://avatars.githubusercontent.com/u/14884257?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 332,
+      "installsAllTime": 3,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774510981689,
+      "changelog": "- 首个版本发布，提供全功能自媒体内容生成工具\n- 支持微博热搜和知乎热榜自动抓取\n- 一键 AI 生成内容，支持多语气、多长度\n- 自动适配公众号、小红书、抖音三大平台格式\n- 内置草稿管理和版本控制功能\n- 提供清晰模板与脚本化操作流程",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:880b7896d11cdca5bb19a1518e9ca9acc1c5346880db80ebe942611b59038cae"
+}

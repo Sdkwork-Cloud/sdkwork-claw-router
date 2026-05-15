@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67590,
+  "uuid": "skill-clawhub-eastmoney-stock-simulator",
+  "skillKey": "clawhub-eastmoney-stock-simulator",
+  "name": "eastmoney skills",
+  "summary": "妙想提供的股票模拟组合管理系统，支持持仓查询、买卖操作、撤单、委托查询、历史成交查询和资金查询等功能。通过安全认证的API接口实现真实交易体验。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eastmoney_stock_simulator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "eastmoney_dev",
+      "features": [
+        "妙想提供的股票模拟组合管理系统，支持持仓查询、买卖操作、撤单、委托查询、历史成交查询和资金查询等功能。通过安全认证的API接口实现真实交易体验。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eastmoney-stock-simulator@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109639273?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eastmoney-stock-simulator",
+      "url": "https://clawhub.ai/skills/eastmoney-stock-simulator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eastmoney-stock-simulator",
+    "url": "https://clawhub.ai/skills/eastmoney-stock-simulator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eastmoney-stock-simulator-b43a59ebbf585634.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eastmoney-stock-simulator@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-eastmoney-stock-simulator-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:760fef0cd95ccbb7fde7da1365e618dd92476297dd537388436417f4b6c5a159",
+      "artifactSizeBytes": 2174
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T03:23:02.881Z"
+}

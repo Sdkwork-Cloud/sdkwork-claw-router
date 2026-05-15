@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50750,
+  "uuid": "skill-clawhub-shadows-doc-forge",
+  "skillKey": "clawhub-shadows-doc-forge",
+  "name": "Shadows Doc Forge",
+  "summary": "Auto-documentation generator — analyzes code and generates README, API docs, architecture docs, inline comments. Use when documentation is missing or outdated.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shadows_doc_forge",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "NakedoShadow",
+      "features": [
+        "Auto-documentation generator — analyzes code and generates README, API docs, architecture docs,.",
+        "Use when documentation is missing or outdated."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shadows-doc-forge@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/196211757?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shadows-doc-forge",
+      "url": "https://clawhub.ai/skills/shadows-doc-forge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shadows-doc-forge",
+    "url": "https://clawhub.ai/skills/shadows-doc-forge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shadows-doc-forge-214b0277ee30309f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shadows-doc-forge@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shadows-doc-forge-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73707028a653fbc485066a483470eae69742ababe2210773bda2d4e63588a00c",
+      "artifactSizeBytes": 1915
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T15:24:42.656Z"
+}

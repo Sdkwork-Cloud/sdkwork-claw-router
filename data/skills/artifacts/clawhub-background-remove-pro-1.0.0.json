@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/background-remove-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.background_remove_pro",
+  "skill": {
+    "id": 69920,
+    "skillKey": "clawhub-background-remove-pro",
+    "name": "Bg Remove"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "background-remove-pro",
+    "url": "https://clawhub.ai/skills/background-remove-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/background-remove-pro-fe339bdd6886ec26.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能识别并移除图片背景，支持多格式批量处理，输出带透明通道的PNG，可选本地或云端模型。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sxliuyu",
+      "userId": "publishers:sxliuyu",
+      "displayName": "SxLiuYu",
+      "image": "https://avatars.githubusercontent.com/u/95198625?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 289,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773741390763,
+      "changelog": "- Initial release of bg-remove, providing intelligent AI-based background removal for images.\n- Supports multiple input formats (PNG, JPG, WebP, BMP) and outputs transparent PNG files.\n- Enables batch processing for folders and can keep original file names.\n- Option to select between different models (u2net or RMBG-1.4) and use local models.\n- Includes advanced options: adjustable threshold, alpha matting for improved edges, and file overwrite control.\n- Command-line usage with detailed parameter documentation and clear example commands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aca79f6cf4fabbed18f20569f37d673756bdafac9edca9bab1aec3b52458dea9"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18573,
+  "uuid": "skill-clawhub-self-driven",
+  "skillKey": "clawhub-self-driven",
+  "name": "Self Driven",
+  "summary": "Enables AI to autonomously select, execute, evaluate, and record tasks in a closed loop without human prompts, prioritizing efficiency and continuous improve...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_driven",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Anonymous",
+      "features": [
+        "Enables AI to autonomously select, execute, evaluate, and record tasks in a closed loop without."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/self-driven@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32920883?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "self-driven",
+      "url": "https://clawhub.ai/skills/self-driven"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-driven",
+    "url": "https://clawhub.ai/skills/self-driven",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-driven-a891282a463d0a31.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/self-driven@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-self-driven-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6acd3a2a82a709238dafbb99fbb6fb8a0b95ba12591f7b8861aa63c96b54ad24",
+      "artifactSizeBytes": 2357
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T11:12:03.901Z"
+}

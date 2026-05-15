@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gpt-go@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gpt_go",
+  "skill": {
+    "id": 26792,
+    "skillKey": "clawhub-gpt-go",
+    "name": "gpt-go"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gpt-go",
+    "url": "https://clawhub.ai/skills/gpt-go",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gpt-go-8286c6942373045d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enter GPT strong execution mode for the current conversation when explicitly invoked, such as with /gpt-go. Persist across the conversation. Default to execu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "c-joey",
+      "userId": "s178ay2k7851fer4psk2swm5bn83g91r",
+      "displayName": "Joey-Chen",
+      "image": "https://avatars.githubusercontent.com/u/48274987?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 361,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773910745567,
+      "changelog": "Tighten GPT-go behavior: shorter, harder execution-first guidance and gateway sync companion files.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:76eb03ed7efd0dac1d768e689f1cbf012610d3ca582481a0d7f1034479c872fc"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23853,
+  "uuid": "skill-clawhub-bing-wallpaper",
+  "skillKey": "clawhub-bing-wallpaper",
+  "name": "Bing Wallpaper",
+  "summary": "Use when users need to fetch the daily Bing wallpaper.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bing_wallpaper",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JaceyMarvin99",
+      "features": [
+        "Use when users need to fetch the daily Bing wallpaper."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bing-wallpaper@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/73216966?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bing-wallpaper",
+      "url": "https://clawhub.ai/skills/bing-wallpaper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bing-wallpaper",
+    "url": "https://clawhub.ai/skills/bing-wallpaper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bing-wallpaper-fccf53f6583516af.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bing-wallpaper@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bing-wallpaper-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f14a5c652c01c68c8ffaf8fed99e655bf7ab129178ff4b809ed344ad4ad18b58",
+      "artifactSizeBytes": 2086
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T05:14:50.014Z"
+}

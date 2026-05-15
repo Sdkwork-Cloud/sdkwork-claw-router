@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bookforge-social-proof-optimizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bookforge_social_proof_optimizer",
+  "skill": {
+    "id": 43082,
+    "skillKey": "clawhub-bookforge-social-proof-optimizer",
+    "name": "Social Proof Optimizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bookforge-social-proof-optimizer",
+    "url": "https://clawhub.ai/skills/bookforge-social-proof-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bookforge-social-proof-optimizer-c12e9dc011d92d2d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Optimize social proof strategy using uncertainty and similarity conditions. Use this skill when designing testimonials, reviews, user counts, case studies, s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quochungto",
+      "userId": "s176b6gfk8djgcz320d83ta4e184bx1v",
+      "displayName": "Hung Quoc To",
+      "image": "https://avatars.githubusercontent.com/u/88069966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776159895644,
+      "changelog": "- Initial release of the Social Proof Optimizer skill for marketing and persuasion scenarios.\n- Guides users through assessing and designing effective social proof elements (testimonials, reviews, user counts, etc.).\n- Includes structured process to score audience uncertainty and evaluate similarity of proof sources to maximize persuasive impact.\n- Supports both application (design/improve) and defense (audit/evaluate for authenticity) use cases.\n- Offers context gathering prompts and default assumptions to streamline optimization even with limited initial information.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c3088f1084825c6ac1417692da56c51d5b5d8e43333784a442066477d35cd4bb"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8969,
+  "uuid": "skill-clawhub-google-merchant",
+  "skillKey": "clawhub-google-merchant",
+  "name": "Google Merchant Center",
+  "summary": "Google Merchant Center API integration with managed OAuth. This is a write-capable integration — it can read, create, update, and delete products, inventorie...",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_merchant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byungkyu",
+      "features": [
+        "Google Merchant Center API integration with managed OAuth",
+        "This is a write-capable integration — it can read, create, update, and delete products, invento."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-merchant@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16563684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-merchant",
+      "url": "https://clawhub.ai/skills/google-merchant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-merchant",
+    "url": "https://clawhub.ai/skills/google-merchant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-merchant-ea12384c44858798.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-merchant@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-merchant-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aaa37f2d1a2077f569b08cae4d73dfb223408f892502f3374eeb0544e97bd5fc",
+      "artifactSizeBytes": 2420
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T09:53:16.342Z"
+}

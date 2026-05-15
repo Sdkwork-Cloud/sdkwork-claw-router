@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66229,
+  "uuid": "skill-clawhub-redbookskill",
+  "skillKey": "clawhub-redbookskill",
+  "name": "redbook skill1.0",
+  "summary": "定时采集近24小时小红书低粉爆款果茶咖啡健康饮品热点，生成手机友好HTML报告并自动推送飞书群。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.redbookskill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yuheng0330",
+      "features": [
+        "定时采集近24小时小红书低粉爆款果茶咖啡健康饮品热点，生成手机友好HTML报告并自动推送飞书群。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/redbookskill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43717485?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "redbookskill",
+      "url": "https://clawhub.ai/skills/redbookskill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "redbookskill",
+    "url": "https://clawhub.ai/skills/redbookskill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/redbookskill-bbedbf4268627a49.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/redbookskill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-redbookskill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:986e209b3c0ab139001b31311b53dc6278f4f42690580425ec00fbc82c08851d",
+      "artifactSizeBytes": 2474
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T07:38:41.906Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28754,
+  "uuid": "skill-clawhub-dicom-anonymizer",
+  "skillKey": "clawhub-dicom-anonymizer",
+  "name": "Dicom Anonymizer",
+  "summary": "Batch anonymize DICOM medical images by removing patient sensitive information (name, ID, birth date) while preserving image data for research use. Trigger w...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dicom_anonymizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Batch anonymize DICOM medical images by removing patient sensitive information (name, ID, birth.",
+        "Trigger w..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dicom-anonymizer@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dicom-anonymizer",
+      "url": "https://clawhub.ai/skills/dicom-anonymizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dicom-anonymizer",
+    "url": "https://clawhub.ai/skills/dicom-anonymizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dicom-anonymizer-d16fb0ea22687c23.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dicom-anonymizer@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dicom-anonymizer-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5458a0d9d78a01d14275de772ec2eabadad73ceb6161738d72bdcf9481b1ee1d",
+      "artifactSizeBytes": 2633
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T01:39:09.232Z"
+}

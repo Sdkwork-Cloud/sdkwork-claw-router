@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stremio-cast@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stremio_cast",
+  "skill": {
+    "id": 16945,
+    "skillKey": "clawhub-stremio-cast",
+    "name": "Stremio Casting"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stremio-cast",
+    "url": "https://clawhub.ai/skills/stremio-cast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stremio-cast-947793133c6ac708.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Busca conteúdo no Stremio Web e transmite para dispositivos Chromecast usando CATT e Playwright. Use para reproduzir filmes e séries diretamente do Stremio em TVs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pedro-valentim",
+      "userId": "publishers:pedro-valentim",
+      "displayName": "pedro-valentim",
+      "image": "https://avatars.githubusercontent.com/u/18179935?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1951,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769722293034,
+      "changelog": "- Primeira versão da skill.\n- Permite buscar filmes e séries no Stremio Web e transmitir diretamente para Chromecast usando CATT e Playwright.\n- Busca pelo título, seleciona o melhor link de streaming local e envia para o dispositivo Chromecast escolhido.\n- Requer Stremio Service local ativo, Playwright e CATT instalados.\n- Inclui instruções de uso, parâmetros configuráveis e observações sobre possíveis ajustes em seletores e sessão.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4de40e771485d33d53b98efca2f836ab8be86af1d4cc6de07992a0dec1f7beed"
+}

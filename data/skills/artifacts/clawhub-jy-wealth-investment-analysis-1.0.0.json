@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jy-wealth-investment-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jy_wealth_investment_analysis",
+  "skill": {
+    "id": 68627,
+    "skillKey": "clawhub-jy-wealth-investment-analysis",
+    "name": "jy-wealth-investment-analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jy-wealth-investment-analysis",
+    "url": "https://clawhub.ai/skills/jy-wealth-investment-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jy-wealth-investment-analysis-69c564c3c81aeb5c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专业的银行理财产品分析报告生成工具。使用 mcporter 调用恒生聚源服务获取理财产品数据，按照标准化模板撰写包含产品概览、业绩表现、风险特征、资产配置、市场舆情、投资建议的完整分析报告。当用户需要分析银行理财产品、生成理财报告、评估产品投资价值、查询理财产品业绩、对比多个理财产品时触发。Professiona..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiayinian",
+      "userId": "s1705v3dg957451717s1bbzck983nebe",
+      "displayName": "jiayinian",
+      "image": "https://avatars.githubusercontent.com/u/22932351?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775188470453,
+      "changelog": "jy-wealth-investment-analysis 1.0.0 - Initial Release\n\n- Launches a professional bank wealth product analysis report generator based on Hengsheng Juyuan data.\n- Supports deep analysis and horizontal comparison (2-5 products), fast reports, PDF export, and scheduled updates.\n- Automatically checks environment and MCP service configuration; provides setup and troubleshooting guidance.\n- Fetches key product data in parallel, with data validation and fallback for missing non-core info.\n- Generates standardized, multi-section analytical reports (overview, performance, risk, allocation, sentiment, recommendations).\n- Markdown output by default, optional PDF export, and includes clear data source attribution.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b7276bc8352ca99651e97f390adb148ee845f215cc94bf55bfb932ffff5172f9"
+}

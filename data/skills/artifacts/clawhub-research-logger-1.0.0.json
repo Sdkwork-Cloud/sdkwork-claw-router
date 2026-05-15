@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/research-logger@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.research_logger",
+  "skill": {
+    "id": 21665,
+    "skillKey": "clawhub-research-logger",
+    "name": "Research Logger"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "research-logger",
+    "url": "https://clawhub.ai/skills/research-logger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/research-logger-92fe4e8e04166f96.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI research pipeline with automatic logging. Search via Perplexity, auto-save results to SQLite with topic and project metadata, full Langfuse tracing. Never..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiwithabidi",
+      "userId": "publishers:aiwithabidi",
+      "displayName": "aiwithabidi",
+      "image": "https://avatars.githubusercontent.com/u/208891229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 491,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772801562153,
+      "changelog": "- Initial release of research-logger.\n- Enables automatic logging of research queries and results to SQLite.\n- Integrates Perplexity search and saves results with topic and project metadata.\n- Provides full Langfuse tracing for every research session.\n- Includes CLI for searching, viewing past research, and browsing recent entries.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fdbff74e4d89383906f04c4f0b6308b94dc5f36c3fe24290c8e99342a8941044"
+}

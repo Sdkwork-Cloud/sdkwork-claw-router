@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-digest@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_digest",
+  "skill": {
+    "id": 8753,
+    "skillKey": "clawhub-daily-digest",
+    "name": "Daily Digest"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-digest",
+    "url": "https://clawhub.ai/skills/daily-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-digest-d6c3e87ae49c7082.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates a daily digest from stored memory files, summarizing decisions, lessons, actions, and questions into a dated journal entry."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pmaeter",
+      "userId": "publishers:pmaeter",
+      "displayName": "Patrick Maeter",
+      "image": "https://avatars.githubusercontent.com/u/43902331?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 6098,
+      "installsAllTime": 114,
+      "installsCurrent": 111,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770227706597,
+      "changelog": "Initial release of the daily-digest skill.\n\n- Generates a daily digest from memory and interactions, saved as journals/digest/digest-YYYY-MM-DD.md.\n- Run the digest_daily.py script manually or automate with a scheduler.\n- Extracts decisions, lessons, actions, and questions from daily memory files.\n- Includes a placeholder summary if no structured entries are found.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9cffe662b67d07a0350426b054b14c3026f4c641645c1c540c8cc40fbc10c111"
+}

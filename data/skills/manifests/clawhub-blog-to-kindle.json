@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10227,
+  "uuid": "skill-clawhub-blog-to-kindle",
+  "skillKey": "clawhub-blog-to-kindle",
+  "name": "Blog to Kindle",
+  "summary": "Scrape blogs/essay sites and compile into Kindle-friendly EPUB with AI-generated cover. Use for requests to download blogs for Kindle, compile essays into ebook, or send blog archives to Kindle. Supports Paul Graham, Kevin Kelly, Derek Siv.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blog_to_kindle",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ainekomacx",
+      "features": [
+        "Scrape blogs/essay sites and compile into Kindle-friendly EPUB with AI-generated cover",
+        "Use for requests to download blogs for Kindle, compile essays into ebook, or send blog archives.",
+        "Supports Paul Graham, Kevin Kelly, Derek Sivers, Wait But Why, Astral Codex Ten, and custom sit."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/blog-to-kindle@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255280009?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "blog-to-kindle",
+      "url": "https://clawhub.ai/skills/blog-to-kindle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blog-to-kindle",
+    "url": "https://clawhub.ai/skills/blog-to-kindle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blog-to-kindle-d8a7fc6633db4344.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/blog-to-kindle@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-blog-to-kindle-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:56be86f6a5477e9b92bb1889c5726c16b08927f3c66f7a7b28e75a82d8dd623c",
+      "artifactSizeBytes": 2046
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-28T02:30:21.550Z"
+}

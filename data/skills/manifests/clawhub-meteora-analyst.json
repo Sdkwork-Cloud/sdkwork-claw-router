@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39133,
+  "uuid": "skill-clawhub-meteora-analyst",
+  "skillKey": "clawhub-meteora-analyst",
+  "name": "Meteora Liquidity Analyst",
+  "summary": "Meteora liquidity analyst for OpenClaw. Turns the agent into an expert that queries Meteora public APIs (DLMM, DAMM v1, DAMM v2) in real time to answer quest...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meteora_analyst",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "angelespinoza",
+      "features": [
+        "Meteora liquidity analyst for OpenClaw",
+        "Turns the agent into an expert that queries Meteora public APIs (DLMM, DAMM v1, DAMM v2) in rea."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meteora-analyst@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8810052?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meteora-analyst",
+      "url": "https://clawhub.ai/skills/meteora-analyst"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meteora-analyst",
+    "url": "https://clawhub.ai/skills/meteora-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meteora-analyst-3a84f357555116e8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meteora-analyst@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meteora-analyst-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:21e05c883aabc2bc12cba10764f383d3cb1de6e4ab161b54cb2935d4388b0755",
+      "artifactSizeBytes": 1917
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T21:58:18.389Z"
+}

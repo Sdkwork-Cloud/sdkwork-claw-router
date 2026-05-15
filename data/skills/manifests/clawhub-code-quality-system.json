@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69639,
+  "uuid": "skill-clawhub-code-quality-system",
+  "skillKey": "clawhub-code-quality-system",
+  "name": "代码质量分析系统",
+  "summary": "完整的代码质量分析系统，包含前后端服务和数据库。支持周/月维度分析、AI代码审查、Teams消息通知、邮件报告。触发场景：(1) 用户要求进行代码质量分析 (2) 生成周报/月报 (3) 统计代码变更 (4) 分析分支提交 (5) 同步分析数据到数据库。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_quality_system",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FightingDao",
+      "features": [
+        "完整的代码质量分析系统，包含前后端服务和数据库。支持周/月维度分析、AI代码审查、Teams消息通知、邮件报告。触发场景：(1) 用户要求进行代码质量分析 (2) 生成周报/月报 (3) 统."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/code-quality-system@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18576791?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "code-quality-system",
+      "url": "https://clawhub.ai/skills/code-quality-system"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-quality-system",
+    "url": "https://clawhub.ai/skills/code-quality-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-quality-system-f8e579a6dd3fc6e1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/code-quality-system@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-code-quality-system-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2589762d0f5e16a41319fe201f612db6bbbfac90124bb2d5a10485e6b53d9573",
+      "artifactSizeBytes": 2169
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T03:47:25.195Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50137,
+  "uuid": "skill-clawhub-cta",
+  "skillKey": "clawhub-cta",
+  "name": "Cta Skill",
+  "summary": "Chicago CTA transit — real-time L train arrivals, bus predictions, service alerts, and route info. Use when the user asks about Chicago public transit, L tra...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cta",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Brian Leach",
+      "features": [
+        "Chicago CTA transit — real-time L train arrivals, bus predictions, service alerts, and route in.",
+        "Use when the user asks about Chicago public transit, L tra..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cta@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1900805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cta",
+      "url": "https://clawhub.ai/skills/cta"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cta",
+    "url": "https://clawhub.ai/skills/cta",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cta-061ab7e7d3b73063.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cta@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cta-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fa99cb6393b088ace179b9185b4a90b9e0412be58b945c0982363f6b9b4c0004",
+      "artifactSizeBytes": 1813
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T23:59:11.998Z"
+}

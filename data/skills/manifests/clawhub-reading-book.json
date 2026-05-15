@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67317,
+  "uuid": "skill-clawhub-reading-book",
+  "skillKey": "clawhub-reading-book",
+  "name": "standard-book-learning",
+  "summary": "协调管理书籍学习流程，按顺序调用章节提取、笔记生成、图谱构建及导入模块，跟踪进度并生成总结报告。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reading_book",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "buruqinshouburu",
+      "features": [
+        "协调管理书籍学习流程，按顺序调用章节提取、笔记生成、图谱构建及导入模块，跟踪进度并生成总结报告。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reading-book@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28603383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reading-book",
+      "url": "https://clawhub.ai/skills/reading-book"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reading-book",
+    "url": "https://clawhub.ai/skills/reading-book",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reading-book-b3a95bfc0acd4710.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reading-book@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-reading-book-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a8e3cf3fef8ab9bd1ea5e57da458f05910bc4f049c9f72ef3018fc6bcc6b9cc4",
+      "artifactSizeBytes": 2377
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T11:23:13.469Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mupeng-skill-router@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mupeng_skill_router",
+  "skill": {
+    "id": 14467,
+    "skillKey": "clawhub-mupeng-skill-router",
+    "name": "skill-router"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mupeng-skill-router",
+    "url": "https://clawhub.ai/skills/mupeng-skill-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mupeng-skill-router-eff32cdd7c17250a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Context-based skill auto-routing + federated skill composition. Analyzes user input to auto-select single or multiple skills and execute in order. First gate..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mupengi-bot",
+      "userId": "s17cb0n67gxg14m41wrqex0hr183j5d2",
+      "displayName": "mupengi-bot",
+      "image": "https://avatars.githubusercontent.com/u/259087580?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1056,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771175791539,
+      "changelog": "initial batch publish",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:171c0f624dc2a11f7ba4bab1be0f588690da9310f178437702ee20a0e1016fd3"
+}

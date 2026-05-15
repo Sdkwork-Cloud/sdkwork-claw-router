@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58587,
+  "uuid": "skill-clawhub-windows-local-embedding",
+  "skillKey": "clawhub-windows-local-embedding",
+  "name": "Windows Local Embedding",
+  "summary": "在 Windows 上为 OpenClaw 配置本地 embedding / 本地记忆检索时使用。适用于：下载并接入 `nomic-embed-text-v1.5.Q8_0.gguf`、把 `memorySearch.provider` 改成 `local`、检查 `openclaw memory status...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.windows_local_embedding",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dadaniya99",
+      "features": [
+        "在 Windows 上为 OpenClaw 配置本地 embedding / 本地记忆检索时使用。适用于：下载并接入 `nomic-embed-text-v1.5.Q8_0.gguf`、把."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/windows-local-embedding@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254098635?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "windows-local-embedding",
+      "url": "https://clawhub.ai/skills/windows-local-embedding"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "windows-local-embedding",
+    "url": "https://clawhub.ai/skills/windows-local-embedding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/windows-local-embedding-925716f2793e4828.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/windows-local-embedding@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-windows-local-embedding-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:85e8bd9d5726599b6e77cebb12b04d115596328dbdf20b2f0e287a8c45f6700f",
+      "artifactSizeBytes": 2192
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T11:01:42.006Z"
+}

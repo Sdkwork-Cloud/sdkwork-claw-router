@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39491,
+  "uuid": "skill-clawhub-driverag",
+  "skillKey": "clawhub-driverag",
+  "name": "Rag based on Google drive",
+  "summary": "Use the Google Drive RAG CLI to search your synced personal documents, add tracking folders, or check the service account status.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.driverag",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "eladrave",
+      "features": [
+        "Use the Google Drive RAG CLI to search your synced personal documents, add tracking folders, or."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/driverag@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86946294?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "driverag",
+      "url": "https://clawhub.ai/skills/driverag"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "driverag",
+    "url": "https://clawhub.ai/skills/driverag",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/driverag-fcfafcdec9e9cd92.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/driverag@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-driverag-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a7a22f56ef103431e32927764921f10f42a82c47a189bc0bdaaee6dc59fa8694",
+      "artifactSizeBytes": 2243
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T02:15:44.714Z"
+}

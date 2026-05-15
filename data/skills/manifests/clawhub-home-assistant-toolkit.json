@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52077,
+  "uuid": "skill-clawhub-home-assistant-toolkit",
+  "skillKey": "clawhub-home-assistant-toolkit",
+  "name": "Home Assistant Toolkit",
+  "summary": "Home Assistant full management skill — control devices, create automations, monitor health, manage backups, update HACS, generate dashboards, all via SSH. Us...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.home_assistant_toolkit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "motionbeard",
+      "features": [
+        "Home Assistant full management skill — control devices, create automations, monitor health, man."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/home-assistant-toolkit@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/188769082?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "home-assistant-toolkit",
+      "url": "https://clawhub.ai/skills/home-assistant-toolkit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "home-assistant-toolkit",
+    "url": "https://clawhub.ai/skills/home-assistant-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/home-assistant-toolkit-95ced4a51b482d1c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/home-assistant-toolkit@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-home-assistant-toolkit-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4eb55226f3c72cc4a6e993c5463e13563eb658f5096cb3c6e9a2977be106b618",
+      "artifactSizeBytes": 2676
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T23:27:41.570Z"
+}

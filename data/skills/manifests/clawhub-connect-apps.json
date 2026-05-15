@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16309,
+  "uuid": "skill-clawhub-connect-apps",
+  "skillKey": "clawhub-connect-apps",
+  "name": "Connect Apps",
+  "summary": "Connect Claude to external apps like Gmail, Slack, GitHub. Use this skill when the user wants to send emails, create issues, post messages, or take actions i...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.connect_apps",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sohamganatra",
+      "features": [
+        "Connect Claude to external apps like Gmail, Slack, GitHub",
+        "Use this skill when the user wants to send emails, create issues, post messages, or take action."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/connect-apps@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7982102?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "connect-apps",
+      "url": "https://clawhub.ai/skills/connect-apps"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "connect-apps",
+    "url": "https://clawhub.ai/skills/connect-apps",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/connect-apps-ce39b5f54f76c60b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/connect-apps@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-connect-apps-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4de84c539ddd64818d67fa8f42a2bb75ba1f16744c629beb1f9eb795ef53c46",
+      "artifactSizeBytes": 2403
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T23:35:57.868Z"
+}

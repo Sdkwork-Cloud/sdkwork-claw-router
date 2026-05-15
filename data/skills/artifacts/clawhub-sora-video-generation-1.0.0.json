@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sora-video-generation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sora_video_generation",
+  "skill": {
+    "id": 45027,
+    "skillKey": "clawhub-sora-video-generation",
+    "name": "Sora Video Generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sora-video-generation",
+    "url": "https://clawhub.ai/skills/sora-video-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sora-video-generation-23c499f7513d195b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate text prompts into AI generated videos with this sora-video-generation skill. Works with TXT, PNG, JPG, MP4 files up to 200MB. content creators use i..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775853733818,
+      "changelog": "- Initial release of the sora-video-generation skill.\n- Generate AI-powered 1080p MP4 videos from text prompts, supporting TXT, PNG, JPG, and MP4 files up to 200MB.\n- Automatic backend setup with anonymous token authentication and session creation.\n- Supports user actions like uploading files, exporting videos, checking credits/status, and editing tracks through intuitive text commands.\n- Provides real-time processing updates and handles errors with helpful messages.\n- Includes clear guidance for first-time setup, common workflows, and usage tips for best results.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6a67133b4ba028a700eb36267a668fc0d3b5ab06acee2a831e9095de4d94f6be"
+}

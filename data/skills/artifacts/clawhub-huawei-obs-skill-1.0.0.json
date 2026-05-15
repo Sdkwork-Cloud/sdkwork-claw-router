@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/huawei-obs-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huawei_obs_skill",
+  "skill": {
+    "id": 65852,
+    "skillKey": "clawhub-huawei-obs-skill",
+    "name": "Huawei Cloud OBS SDK"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huawei-obs-skill",
+    "url": "https://clawhub.ai/skills/huawei-obs-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huawei-obs-skill-ac12f744aef162c1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "华为云 OBS 对象存储 SDK 使用指南。包含 SDK 安装、初始化客户端、文件上传/下载、管理存储桶、管理对象等核心操作的最佳实践和代码示例。使用当需要操作华为云 OBS 对象存储时。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "idiosyncraticdragon",
+      "userId": "publishers:idiosyncraticdragon",
+      "displayName": "IdiosyncraticDragon",
+      "image": "https://avatars.githubusercontent.com/u/3750460?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 390,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773335115906,
+      "changelog": "huawei-obs-skill v1.0.0\n\n- 初始发布，提供华为云 OBS（对象存储服务）Python SDK 的核心使用方法和实践指南。\n- 覆盖 SDK 安装、客户端初始化、文件上传/下载、存储桶管理、对象管理等操作。\n- 包含代码示例和常用操作入口，便于快速集成与上手。\n- 给出安全最佳实践和错误处理建议。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1ef1769cc92494f5b8d8c906228ae8f3e77b35e7c68a56fb75b4e96a18c0f367"
+}

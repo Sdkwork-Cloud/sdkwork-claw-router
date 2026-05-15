@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cybersec-cert-advisor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cybersec_cert_advisor",
+  "skill": {
+    "id": 34922,
+    "skillKey": "clawhub-cybersec-cert-advisor",
+    "name": "CyberSec Cert Advisor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cybersec-cert-advisor",
+    "url": "https://clawhub.ai/skills/cybersec-cert-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cybersec-cert-advisor-04d160435a66ab84.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate personalized cybersecurity certification and career advancement plans based on individual assessment data and professional goals."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krishnakumarmahadevan-cmd",
+      "userId": "s177cvva4qaee9r80e44xt5cqx83ga38",
+      "displayName": "ToolWeb",
+      "image": "https://avatars.githubusercontent.com/u/245780162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 219,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774372653080,
+      "changelog": "Cybersecurity Certification Advisor v1.0.0 – Initial Release\n\n- Launches a professional guidance platform for personalized cybersecurity certification and career advancement planning.\n- Provides data-driven, tailored certification roadmaps based on users’ experience, interests, and career goals.\n- Features API endpoint for generating certification plans, identified skill gaps, and phased career pathways with salary projections.\n- Designed for security professionals, hiring managers, educational advisors, and organizations seeking workforce upskilling.\n- Includes clear usage examples, detailed endpoint documentation, and transparent pricing plans.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a5ac782806221d7c7a4564010cd2af3e980d2dfc8071e3c033528ac34e5efbd3"
+}

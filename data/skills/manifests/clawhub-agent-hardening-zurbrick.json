@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40226,
+  "uuid": "skill-clawhub-agent-hardening-zurbrick",
+  "skillKey": "clawhub-agent-hardening-zurbrick",
+  "name": "Agent Hardening",
+  "summary": "Lock down any LLM agent against prompt injection, data exfiltration, social engineering, and channel-based attacks. Use when setting up a new agent, auditing...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_hardening_zurbrick",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Don Zurbrick",
+      "features": [
+        "Lock down any LLM agent against prompt injection, data exfiltration, social engineering, and ch.",
+        "Use when setting up a new agent, auditing..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-hardening-zurbrick@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24554955?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-hardening-zurbrick",
+      "url": "https://clawhub.ai/skills/agent-hardening-zurbrick"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-hardening-zurbrick",
+    "url": "https://clawhub.ai/skills/agent-hardening-zurbrick",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-hardening-zurbrick-1babccca85ee848e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-hardening-zurbrick@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-hardening-zurbrick-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:56ac8aee3bc4491ffc1782971b4113caa31684ddc4c9fe75904a788233670c6d",
+      "artifactSizeBytes": 2080
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T23:26:00.415Z"
+}

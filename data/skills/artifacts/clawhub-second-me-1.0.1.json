@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/second-me@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.second_me",
+  "skill": {
+    "id": 53464,
+    "skillKey": "clawhub-second-me",
+    "name": "Second Me"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "second-me",
+    "url": "https://clawhub.ai/skills/second-me",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/second-me-eea61751500f0100.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build your digital twin through conversation. Your AI learns who you are by talking to you — not by reading a form."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "paul-leo",
+      "userId": "s1752kcbgt0ajgbfqwd4y5vb3n83kvp4",
+      "displayName": "Paul Leo",
+      "image": "https://avatars.githubusercontent.com/u/55380315?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 368,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773638957012,
+      "changelog": "- File storage paths have been updated to use the `.openclaw/data/second-me/` directory instead of `.claude/second-me/`.\n- All references to `~/.claude/second-me/` and its subfolders are now `~/.openclaw/data/second-me/`.\n- Onboarding and evolve process logic, conversation topics, and SOUL.md/spec structure remain unchanged.\n- No other functional or behavioral changes were introduced.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7390c220b53f535483b0d04dbaaa0b485acf096ba655860a3c701c04b99d598a"
+}

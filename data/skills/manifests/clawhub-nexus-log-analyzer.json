@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24660,
+  "uuid": "skill-clawhub-nexus-log-analyzer",
+  "skillKey": "clawhub-nexus-log-analyzer",
+  "name": "NEXUS Log Analyzer",
+  "summary": "Parse and analyze application logs for patterns",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nexus_log_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CyberForexBlockchain",
+      "features": [
+        "Parse and analyze application logs for patterns"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nexus-log-analyzer@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37193064?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nexus-log-analyzer",
+      "url": "https://clawhub.ai/skills/nexus-log-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nexus-log-analyzer",
+    "url": "https://clawhub.ai/skills/nexus-log-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nexus-log-analyzer-51dc5d67d3a69f6d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nexus-log-analyzer@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nexus-log-analyzer-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f107658622108906af1f1654826f3dd7c379a8530b50bf4cfc8424ac9d6a88b8",
+      "artifactSizeBytes": 1913
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T17:12:20.796Z"
+}

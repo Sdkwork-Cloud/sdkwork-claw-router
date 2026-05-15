@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50266,
+  "uuid": "skill-clawhub-session-history-enhancements",
+  "skillKey": "clawhub-session-history-enhancements",
+  "name": "Session History Enhanced",
+  "summary": "Session history system for OpenClaw — persistent, browsable, resumable chat sessions with SQLite index, archive/restore, migration, paginated UI, and chat dr...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_history_enhancements",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "maverick-software",
+      "features": [
+        "Session history system for OpenClaw — persistent, browsable, resumable chat sessions with SQLit."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/session-history-enhancements@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/85259593?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "session-history-enhancements",
+      "url": "https://clawhub.ai/skills/session-history-enhancements"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-history-enhancements",
+    "url": "https://clawhub.ai/skills/session-history-enhancements",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-history-enhancements-9a78f16d023e2c0d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/session-history-enhancements@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-session-history-enhancements-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f59e4bd4773d1b5bb7dd5c8aa28797f57bd5267784be2a994bc12d68182d36f8",
+      "artifactSizeBytes": 2638
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T18:48:30.328Z"
+}

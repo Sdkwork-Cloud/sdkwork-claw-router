@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fastmail@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fastmail",
+  "skill": {
+    "id": 11489,
+    "skillKey": "clawhub-fastmail",
+    "name": "Fastmail"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fastmail",
+    "url": "https://clawhub.ai/skills/fastmail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fastmail-0fc712a7cb8fc3e5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manages Fastmail email and calendar via JMAP and CalDAV APIs. Use for emails (read, send, reply, search, organize, bulk operations, threads) or calendar (events, reminders, RSVP invitations). Timezone auto-detected from system."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "witooh",
+      "userId": "publishers:witooh",
+      "displayName": "witooh",
+      "image": "https://avatars.githubusercontent.com/u/1762587?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2088,
+      "installsAllTime": 4,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770278389341,
+      "changelog": "- No user-visible changes in this release.\n- No file changes detected compared to previous version.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c72f49004472528c8a041e102972d288bed490af3b904a0ae100280fbec99036"
+}

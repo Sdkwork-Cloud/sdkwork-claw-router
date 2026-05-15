@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-clawhub@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_clawhub",
+  "skill": {
+    "id": 68572,
+    "skillKey": "clawhub-stock-clawhub",
+    "name": "Stock Clawhub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-clawhub",
+    "url": "https://clawhub.ai/skills/stock-clawhub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-clawhub-38911b86b5a039bb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供股票查询和分析功能，支持 A 股、港股、美股和 ETF 查询，包括实时价格查询、基本面分析、技术指标分析、高潜力股推荐等。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shinewilzhang",
+      "userId": "s172anppmf1c60vrfeynjvf5fd83zxw0",
+      "displayName": "shinewilzhang",
+      "image": "https://avatars.githubusercontent.com/u/242368578?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774930281635,
+      "changelog": "Stock-analyzer skill initial release.\n\n- Provides real-time stock price and ETF queries for A-shares, Hong Kong stocks, US stocks, and ETFs.\n- Offers fundamental and technical analysis tools, including major indicators and charts.\n- Recommends high-potential stocks with detailed analysis reports.\n- Supports user watchlists with management and regular performance analysis.\n- Enables price alerts and scheduled analysis notifications.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:effb4493a260b8fed4a9336f48e51b93336a9457be4855eb2fd3cfffa8f61505"
+}

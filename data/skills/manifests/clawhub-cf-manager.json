@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19291,
+  "uuid": "skill-clawhub-cf-manager",
+  "skillKey": "clawhub-cf-manager",
+  "name": "Cloudflare Manager",
+  "summary": "Manage Cloudflare via API — DNS zones and records, page rules, SSL/TLS settings, caching, firewall rules, Workers, and analytics. Free tier includes DNS, CDN, DDoS protection, and SSL.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cf_manager",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rexlunae",
+      "features": [
+        "Manage Cloudflare via API — DNS zones and records, page rules, SSL/TLS settings, caching, firew.",
+        "Free tier includes DNS, CDN, DDoS protection, and SSL."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cf-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6726134?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cf-manager",
+      "url": "https://clawhub.ai/skills/cf-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cf-manager",
+    "url": "https://clawhub.ai/skills/cf-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cf-manager-fbeeb2ec31ec353c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cf-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cf-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:54b06945ed660685f17520267fa7694bd07f0603fa68d7bae1b5e2d832e04173",
+      "artifactSizeBytes": 2482
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T02:02:50.874Z"
+}

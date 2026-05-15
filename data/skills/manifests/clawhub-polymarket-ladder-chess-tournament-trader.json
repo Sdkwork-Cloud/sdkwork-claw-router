@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55963,
+  "uuid": "skill-clawhub-polymarket-ladder-chess-tournament-trader",
+  "skillKey": "clawhub-polymarket-ladder-chess-tournament-trader",
+  "name": "Polymarket Ladder Chess Tournament Trader",
+  "summary": "Trades distribution-sum violations in chess tournament winner markets on Polymarket. Player winner probabilities must sum to ~100% — when the field total dev...",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_ladder_chess_tournament_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "diagnostikon",
+      "features": [
+        "Trades distribution-sum violations in chess tournament winner markets on Polymarket",
+        "Player winner probabilities must sum to ~100% — when the field total dev..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-ladder-chess-tournament-trader@0.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17246180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-ladder-chess-tournament-trader",
+      "url": "https://clawhub.ai/skills/polymarket-ladder-chess-tournament-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-ladder-chess-tournament-trader",
+    "url": "https://clawhub.ai/skills/polymarket-ladder-chess-tournament-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-ladder-chess-tournament-trader-2be2d9d515925215.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-ladder-chess-tournament-trader@0.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-ladder-chess-tournament-trader-0.0.3.json",
+      "version": "0.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f81b0404b3f7f9f1764f5824f3bba654df90a01818b76114352a3340fc2cd47d",
+      "artifactSizeBytes": 2119
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T14:26:43.569Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/binance-crypto-price@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.binance_crypto_price",
+  "skill": {
+    "id": 16684,
+    "skillKey": "clawhub-binance-crypto-price",
+    "name": "Binance Crypto Price"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "binance-crypto-price",
+    "url": "https://clawhub.ai/skills/binance-crypto-price",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/binance-crypto-price-ba004517994aafb6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query real-time cryptocurrency prices using the Binance API. Get latest prices for Bitcoin, Ethereum, and all BN listed cryptocurrencies. No API key required."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yangzhe1991",
+      "userId": "s1708qg6h23dd2tajyc1egf2m185vvej",
+      "displayName": "Zhe (Phil) Yang",
+      "image": "https://avatars.githubusercontent.com/u/860739?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 740,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1772692103933,
+      "changelog": "Updated description: covers all Binance listed cryptocurrencies",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d0d750dc5566e8ac67c91951650421b1fc7861c6ab374638efb68df0fbff44a4"
+}

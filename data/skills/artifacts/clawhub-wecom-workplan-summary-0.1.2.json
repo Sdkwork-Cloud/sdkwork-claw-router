@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wecom-workplan-summary@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wecom_workplan_summary",
+  "skill": {
+    "id": 70681,
+    "skillKey": "clawhub-wecom-workplan-summary",
+    "name": "wecom-workplan-summary"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wecom-workplan-summary",
+    "url": "https://clawhub.ai/skills/wecom-workplan-summary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wecom-workplan-summary-6a11cd31002f8ae3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "团队工作计划周度/月度汇总分析。仅当用户**明确提供**了团队工作计划数据（粘贴内容或指向企微智能表格）并要求汇总/分析时触发。典型意图：\"这是团队工作计划，帮我看下上周/本周情况\"、\"我把数据复制过来了，分析一下\"、\"帮我从企微表格拉取工作计划汇总\"。**不触发**：仅提到\"周报\"、\"本周工作\"等通用词但未提供..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangpengle",
+      "userId": "s17f8zn362dqdvydaw7pkk45es83ghqw",
+      "displayName": "zhangpengle",
+      "image": "https://avatars.githubusercontent.com/u/152125462?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 205,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1775024202683,
+      "changelog": "- 改变触发逻辑：仅当用户明确提供数据或要求从企微表格拉取时才会触发，不再针对泛泛\"周报\"/\"本周工作\"等通用词自动响应。\n- 新增两种输入模式：支持用户直接粘贴表格内容（粘贴模式）或自动从企微智能表格读取（MCP模式）。\n- 明确分支执行步骤：详细说明根据输入方式分支处理流程，包括数据保存、脚本调用等。\n- 报告生成规范大幅扩展：细化汇总、目标对齐、建议等输出要求，要求自然语言转化结构化原始数据。\n- 更新依赖说明及工具调用格式。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:df3e8b2b6fdb173b84117cc6c20e0cc34904102f8769d57716964a76c5a2eeea"
+}

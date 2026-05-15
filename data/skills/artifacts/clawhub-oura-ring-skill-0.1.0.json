@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oura-ring-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oura_ring_skill",
+  "skill": {
+    "id": 12153,
+    "skillKey": "clawhub-oura-ring-skill",
+    "name": "Oura Ring"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oura-ring-skill",
+    "url": "https://clawhub.ai/skills/oura-ring-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oura-ring-skill-0744d71637364721.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch Oura Ring readiness/sleep + 7-day readiness trends via Oura Cloud API V2, and generate a Morning Readiness Brief."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sameerbajaj",
+      "userId": "publishers:sameerbajaj",
+      "displayName": "sameerbajaj",
+      "image": "https://avatars.githubusercontent.com/u/3718043?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1871,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769460595121,
+      "changelog": "Initial release of oura-ring-skill.\n\n- Fetches Oura Ring Readiness, Sleep data, and 7-day readiness trends via Oura Cloud API V2.\n- Provides a formatted Morning Readiness Brief with tactical recommendations.\n- Includes trend analysis and resilience tracking features.\n- Command-line utilities support raw data output and formatted briefs.\n- Supports mock mode and easy .env configuration for fast setup and testing.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:71bb84b280153b81286c1132557368f446a818c7939329f756c9fdce879997b1"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49032,
+  "uuid": "skill-clawhub-reading-retention-booster",
+  "skillKey": "clawhub-reading-retention-booster",
+  "name": "Reading Retention Booster",
+  "summary": "Improves retention with recall prompts, spaced review, teaching checks, and personal retrieval cues.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reading_retention_booster",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Improves retention with recall prompts, spaced review, teaching checks, and personal retrieval."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reading-retention-booster@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reading-retention-booster",
+      "url": "https://clawhub.ai/skills/reading-retention-booster"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reading-retention-booster",
+    "url": "https://clawhub.ai/skills/reading-retention-booster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reading-retention-booster-9fa8b947e66c2081.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reading-retention-booster@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-reading-retention-booster-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:870a1afb718c7cacb5c0545750cb59ea7b6103010b7f2d9c50f062c4a54b71fa",
+      "artifactSizeBytes": 2442
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T15:21:53.578Z"
+}

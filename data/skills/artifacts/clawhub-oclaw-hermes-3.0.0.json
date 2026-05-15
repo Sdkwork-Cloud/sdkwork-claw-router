@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oclaw-hermes@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oclaw_hermes",
+  "skill": {
+    "id": 60725,
+    "skillKey": "clawhub-oclaw-hermes",
+    "name": "Oclaw Hermes"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oclaw-hermes",
+    "url": "https://clawhub.ai/skills/oclaw-hermes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oclaw-hermes-5909a5dbc7f02485.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw × Hermes × DeerFlow 三位一体智能体桥接方案 - 实现 mflow 记忆流同步、智能体集群协作、深度研究链和专家蒸馏。让 OpenClaw、Hermes、DeerFlow 的边界，成为你能力的延伸。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ruiyongwang",
+      "userId": "s17794q4z9wefyrcsdwngwptzd83qkh2",
+      "displayName": "ruiyongwang",
+      "image": "https://avatars.githubusercontent.com/u/127424769?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1775918212726,
+      "changelog": "oclaw-hermes v3.0.0 is a major update with deep system fusion, memory-driven routing, and new unified architecture.\n\n- Introduced UnifiedCore to deeply merge OpenClaw, Hermes, and DeerFlow systems.\n- Added mflow v2.0: five-layer memory flow for real-time, cross-platform memory synchronization.\n- Implemented memory-driven agent routing and Skill-memory dual enhancement.\n- Expanded agent cluster to six core roles (Lead/Research/Code/Browser/Memory/Skill).\n- Enabled automatic memory extraction and graph-based memory reasoning.\n- Added scripts: auto_memory.py, mflow_v2.py, store_memory.py, and unified_core.py.\n- Updated documentation to reflect new architecture and features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ae13cd3cedfdb5b62a4cb9c9f553dff33aebb62639fabdc2121d35c2d3ed2088"
+}

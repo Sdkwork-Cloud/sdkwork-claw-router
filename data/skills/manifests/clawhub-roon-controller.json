@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10513,
+  "uuid": "skill-clawhub-roon-controller",
+  "skillKey": "clawhub-roon-controller",
+  "name": "Roon Controller",
+  "summary": "Control Roon music player through Roon API with automatic Core discovery and zone filtering. Supports play/pause, next/previous track, and current track query. Automatically finds Muspi zones. Supports Chinese commands.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.roon_controller",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "puterjam",
+      "features": [
+        "Control Roon music player through Roon API with automatic Core discovery and zone filtering",
+        "Supports play/pause, next/previous track, and current track query",
+        "Automatically finds Muspi zones",
+        "Supports Chinese commands."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/roon-controller@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/576261?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "roon-controller",
+      "url": "https://clawhub.ai/skills/roon-controller"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "roon-controller",
+    "url": "https://clawhub.ai/skills/roon-controller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/roon-controller-15454894ee18755f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/roon-controller@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-roon-controller-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:48f64d35c013f57b9c84c2bd1927b91325dfdb675f17f95eabe6f5f3a030f5e0",
+      "artifactSizeBytes": 2541
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-29T09:52:35.120Z"
+}

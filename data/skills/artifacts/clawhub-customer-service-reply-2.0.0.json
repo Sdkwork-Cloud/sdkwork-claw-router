@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/customer-service-reply@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.customer_service_reply",
+  "skill": {
+    "id": 58675,
+    "skillKey": "clawhub-customer-service-reply",
+    "name": "Customer Service Reply"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "customer-service-reply",
+    "url": "https://clawhub.ai/skills/customer-service-reply",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/customer-service-reply-f692d04c5fad03ad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "客服回复模板。售前咨询、售后处理、退换货、投诉回复、好评引导、升级处理、行业FAQ、满意度挽回。Customer service reply templates for pre-sale, after-sale, returns, complaints, escalation, FAQ generation, s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ckchzh",
+      "userId": "s1722v35hsq964bw64ecjw43z583fbex",
+      "displayName": "BytesAgain2",
+      "image": "https://avatars.githubusercontent.com/u/44366898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1294,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 3,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773773822660,
+      "changelog": "v2.5 standard: Use-when desc, homepage, source, security fix",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:38941a40b5907476b200c39b114d0ecbd9c11b8c6376f6f8d859371a5ce49ead"
+}

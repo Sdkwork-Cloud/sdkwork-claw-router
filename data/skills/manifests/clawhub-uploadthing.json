@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50836,
+  "uuid": "skill-clawhub-uploadthing",
+  "skillKey": "clawhub-uploadthing",
+  "name": "Uploadthing",
+  "summary": "Uploadthing file hosting — upload, list, and manage files via the Uploadthing API. Simple file uploads with automatic CDN delivery, file metadata, and usage...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uploadthing",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aiwithabidi",
+      "features": [
+        "Uploadthing file hosting — upload, list, and manage files via the Uploadthing API",
+        "Simple file uploads with automatic CDN delivery, file metadata, and usage..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uploadthing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208891229?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uploadthing",
+      "url": "https://clawhub.ai/skills/uploadthing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uploadthing",
+    "url": "https://clawhub.ai/skills/uploadthing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uploadthing-b001f8188c08f075.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uploadthing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-uploadthing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9f7f31311a65e269570c80b8fef93eaffecff7c12eb61c63f34b91d599ad6c29",
+      "artifactSizeBytes": 2258
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T04:52:59.884Z"
+}

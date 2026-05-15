@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32111,
+  "uuid": "skill-clawhub-kiwi-receipts",
+  "skillKey": "clawhub-kiwi-receipts",
+  "name": "Kiwi Receipts",
+  "summary": "NZ tax assistant for sole traders. Process receipt photos into IRD-ready GST reports, track sales income for GST Box 5, calculate IR3 annual income tax, prov...",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kiwi_receipts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Liu Jie",
+      "features": [
+        "NZ tax assistant for sole traders",
+        "Process receipt photos into IRD-ready GST reports, track sales income for GST Box 5, calculate."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kiwi-receipts@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/405711?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kiwi-receipts",
+      "url": "https://clawhub.ai/skills/kiwi-receipts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kiwi-receipts",
+    "url": "https://clawhub.ai/skills/kiwi-receipts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kiwi-receipts-14e98632828d5345.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kiwi-receipts@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-kiwi-receipts-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e56ecaa2774f6b46d74c9d73c4a3557751c1df72b0758acf45a25db28a591b34",
+      "artifactSizeBytes": 2009
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T11:56:03.409Z"
+}

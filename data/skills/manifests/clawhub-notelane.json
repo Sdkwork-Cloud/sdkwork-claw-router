@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33772,
+  "uuid": "skill-clawhub-notelane",
+  "skillKey": "clawhub-notelane",
+  "name": "Notelane",
+  "summary": "Organize notes as a personal knowledge base with tagging and full-text search. Use when capturing notes, searching entries, building a knowledge base.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notelane",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain3",
+      "features": [
+        "Organize notes as a personal knowledge base with tagging and full-text search",
+        "Use when capturing notes, searching entries, building a knowledge base."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/notelane@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218212813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "notelane",
+      "url": "https://clawhub.ai/skills/notelane"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notelane",
+    "url": "https://clawhub.ai/skills/notelane",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notelane-63553d9a8ca78a4d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/notelane@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-notelane-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e797cc7cf694bfe6b42e25ec5348fc74df6e9084a74b850dd808d9b1b782f82b",
+      "artifactSizeBytes": 1848
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T11:02:22.755Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pest-disease-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pest_disease_tracker",
+  "skill": {
+    "id": 15018,
+    "skillKey": "clawhub-pest-disease-tracker",
+    "name": "Pest & Disease Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pest-disease-tracker",
+    "url": "https://clawhub.ai/skills/pest-disease-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pest-disease-tracker-f135520bba096bdf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Identify, track, and manage garden pests and diseases, log treatments, monitor effectiveness, and get tailored control recommendations for home gardeners and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johstracke",
+      "userId": "publishers:johstracke",
+      "displayName": "johstracke",
+      "image": "https://avatars.githubusercontent.com/u/63787617?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1085,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770574282644,
+      "changelog": "Initial release - Track garden pests and diseases with treatment history. 20+ treatment recommendations. Fourth gardening skill, zero competition!",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:debf84c5de6357281d8bbf72709fc99bee9c57d52267cd663f1033e2beb89754"
+}

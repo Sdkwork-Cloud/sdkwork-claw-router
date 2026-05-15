@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55684,
+  "uuid": "skill-clawhub-polymarket-5m-trading",
+  "skillKey": "clawhub-polymarket-5m-trading",
+  "name": "Polymarket 5m Trading",
+  "summary": "Find a high-volume BTC-related Polymarket priced between 40% and 60%, buy 1 USD of YES, hold for 5 minutes, sell, wait 5 minutes, and repeat until 10 complet...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_5m_trading",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sky",
+      "features": [
+        "Find a high-volume BTC-related Polymarket priced between 40% and 60%, buy 1 USD of YES, hold fo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-5m-trading@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23567092?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-5m-trading",
+      "url": "https://clawhub.ai/skills/polymarket-5m-trading"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-5m-trading",
+    "url": "https://clawhub.ai/skills/polymarket-5m-trading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-5m-trading-e9dac75c0192f237.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-5m-trading@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-5m-trading-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e7aad09bda213fe3391ddd18cf84e310987555bec66124e35846488d9bf9f25c",
+      "artifactSizeBytes": 2416
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T08:26:21.771Z"
+}

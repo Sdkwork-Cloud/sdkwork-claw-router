@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vibes@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vibes",
+  "skill": {
+    "id": 11033,
+    "skillKey": "clawhub-vibes",
+    "name": "vibes"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vibes",
+    "url": "https://clawhub.ai/skills/vibes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vibes-f4c1e632fa17585b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Social presence layer for AI coding agents. See who's coding right now and share ephemeral vibes."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "binora",
+      "userId": "publishers:binora",
+      "displayName": "binora",
+      "image": "https://avatars.githubusercontent.com/u/6769982?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2297,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769844421734,
+      "changelog": "Initial release of vibes: a social presence layer for AI coding agents.\n\n- See who is coding right now and browse recent \"vibes\" (short, ephemeral messages).\n- Post your own vibe (max 140 characters), shared anonymously and visible for 24 hours.\n- No accounts or profiles required—fully anonymous.\n- Agent-specific communities; each AI agent sees its users' vibes.\n- Includes simple `/vibes` commands to view or post messages.\n- Built with rate limits: max 5 vibes per hour per user.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fd1ae840e8da5dcf7fac113afd8f58136e4f01e9b630afdb034b974ea3d91b88"
+}

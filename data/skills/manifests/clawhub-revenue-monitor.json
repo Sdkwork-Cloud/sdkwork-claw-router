@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51075,
+  "uuid": "skill-clawhub-revenue-monitor",
+  "skillKey": "clawhub-revenue-monitor",
+  "name": "Revenue Monitor — Gumroad, KDP & Etsy Sales Tracker",
+  "summary": "Track daily sales and revenue from Gumroad, KDP, and Etsy; send alerts on spikes, drops, and generate daily, weekly, and monthly revenue summaries.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.revenue_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tenlifejosh",
+      "features": [
+        "Track daily sales and revenue from Gumroad, KDP, and Etsy",
+        "send alerts on spikes, drops, and generate daily, weekly, and monthly revenue summaries."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/revenue-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/205712596?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "revenue-monitor",
+      "url": "https://clawhub.ai/skills/revenue-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "revenue-monitor",
+    "url": "https://clawhub.ai/skills/revenue-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/revenue-monitor-1de6016ed3de9b96.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/revenue-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-revenue-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:19a8330c1568b907fc9d39ad7fc5148722ddcef109c399b72e82c6d756e414c5",
+      "artifactSizeBytes": 2022
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T18:30:20.679Z"
+}

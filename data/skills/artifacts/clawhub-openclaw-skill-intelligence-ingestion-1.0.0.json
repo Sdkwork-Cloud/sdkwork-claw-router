@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-skill-intelligence-ingestion@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_skill_intelligence_ingestion",
+  "skill": {
+    "id": 18700,
+    "skillKey": "clawhub-openclaw-skill-intelligence-ingestion",
+    "name": "Openclaw Skill Intelligence Ingestion"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-skill-intelligence-ingestion",
+    "url": "https://clawhub.ai/skills/openclaw-skill-intelligence-ingestion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-skill-intelligence-ingestion-9bc8a438b9c884bb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Auto-analyze URLs/info for OpenClaw strategic value, classify, create Obsidian notes, update memory. Use when user shares a URL, article, tweet, or any exter..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "2233admin",
+      "userId": "s17146zc2bhwqgxe6pp8t34acs83rnqt",
+      "displayName": "2233admin",
+      "image": "https://avatars.githubusercontent.com/u/57929895?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 657,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771842953611,
+      "changelog": "Initial release of Intelligence Ingestion Skill.\n\n- Automatically analyzes and classifies external content (URL, article, tweet) for OpenClaw relevance.\n- Generates Obsidian-formatted notes with strategic assessment and actionable insights.\n- Updates daily memory log and, if critical, system bottleneck and principles/tool references.\n- Responds to user with a concise ingestion summary, including strategic value and next steps.\n- Handles multiple URLs, duplicates, non-English, paywalled content, and integrates user-provided analysis.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:155031b2128494c1a44fb7a5a1817904fd3c6d9cc6de1155366f3fff5b3c7348"
+}

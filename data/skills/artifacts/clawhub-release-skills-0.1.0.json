@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/release-skills@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.release_skills",
+  "skill": {
+    "id": 56354,
+    "skillKey": "clawhub-release-skills",
+    "name": "Release Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "release-skills",
+    "url": "https://clawhub.ai/skills/release-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/release-skills-9395c2d409e895ce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "WHAT: Universal release workflow with auto-detection, multi-language changelogs, semantic versioning, and git tagging. WHEN: User wants to create a release, bump version, update changelog, push a new version, or prepare for deployment. KEY."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wpank",
+      "userId": "publishers:wpank",
+      "displayName": "wpank",
+      "image": "https://avatars.githubusercontent.com/u/9498646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 895,
+      "installsAllTime": 13,
+      "installsCurrent": 12,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770730203970,
+      "changelog": "Initial release: introduces a universal, multi-language release workflow for any project type.\n\n- Auto-detects project type and version files (Node.js, Python, Rust, Claude Plugin, generic)\n- Generates semantic release changelogs in multiple languages, detecting changelog files and languages\n- Analyzes commits for feature, fix, breaking changes using conventional commit messages\n- Suggests and applies semantic version bumps with user confirmation and dry-run support\n- Automates release tasks: changelog generation, version file update, git commit, tagging, and optional push\n- Never pushes or tags without explicit user confirmation",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:efe5fcd70e8303358f9c027997265aba86d96b4068e3c370d61629ae49d391ae"
+}

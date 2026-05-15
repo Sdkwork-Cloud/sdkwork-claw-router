@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/text-to-image@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_image",
+  "skill": {
+    "id": 20490,
+    "skillKey": "clawhub-text-to-image",
+    "name": "Text To Image"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-image",
+    "url": "https://clawhub.ai/skills/text-to-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-image-c5fe79918dd54080.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Render text into an image and return a temporary local image file path, with optional data URI. Use when Clawhub or Codex needs to convert plain text, styled..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "erickong",
+      "userId": "s17bymxhk5940xqazef9nyctf583gast",
+      "displayName": "erickong",
+      "image": "https://avatars.githubusercontent.com/u/1572768?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 544,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773243202297,
+      "changelog": "Initial release: text-to-image skill with svg/png/jpg output, color highlights, auto-fit sizing, local file paths, and Windows/macOS font fallback.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5275abf1898efd37e180d6e01054185055bf2e8467704da70d1e7e4a6bdc2cc1"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39808,
+  "uuid": "skill-clawhub-usmle-case-generator",
+  "skillKey": "clawhub-usmle-case-generator",
+  "name": "USMLE Case Scenario Generator",
+  "summary": "Generate USMLE Step 1/2 style clinical cases with patient history, physical.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.usmle_case_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Generate USMLE Step 1/2 style clinical cases with patient history, physical."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/usmle-case-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "usmle-case-generator",
+      "url": "https://clawhub.ai/skills/usmle-case-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "usmle-case-generator",
+    "url": "https://clawhub.ai/skills/usmle-case-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/usmle-case-generator-70ecbf213307bacd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/usmle-case-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-usmle-case-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:662b2fc132fb302bd59b4665cf6367bd3b9f35e46db5255a34ee6537ae4b6a8f",
+      "artifactSizeBytes": 2528
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T08:13:54.907Z"
+}

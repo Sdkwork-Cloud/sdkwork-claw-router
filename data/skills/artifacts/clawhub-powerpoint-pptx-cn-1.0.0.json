@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/powerpoint-pptx-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.powerpoint_pptx_cn",
+  "skill": {
+    "id": 54714,
+    "skillKey": "clawhub-powerpoint-pptx-cn",
+    "name": "PowerPoint PPTX处理"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "powerpoint-pptx-cn",
+    "url": "https://clawhub.ai/skills/powerpoint-pptx-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/powerpoint-pptx-cn-6f3a8eeb60ab6dca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create, inspect, and edit Microsoft PowerPoint presentations and PPTX decks with reliable layouts, templates, placeholders, notes, charts, and visual QA. Use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linbo405",
+      "userId": "s17404ahym3v74cyh9f41zw9s183h5ga",
+      "displayName": "linbo405",
+      "image": "https://avatars.githubusercontent.com/u/259021343?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 385,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776071624595,
+      "changelog": "- Rebalanced the skill to focus more on template inventory, layout mapping, and higher-signal visual QA based on a stricter audit.\n- Updated guidance to prioritize inspecting and matching deck templates, layouts, placeholders, and notes before making edits.\n- Emphasized the importance of running both content QA and visual QA separately.\n- Added traps and best practices for preserving template fidelity and deck portability.\n- Clarified use cases and related skills for better workflow integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2317629eca7280a3d64ebd8837f1c8925c62cd135e558ad1844ce831319d4c37"
+}

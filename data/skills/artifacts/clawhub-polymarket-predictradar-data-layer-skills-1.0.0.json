@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polymarket-predictradar-data-layer-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_predictradar_data_layer_skills",
+  "skill": {
+    "id": 45894,
+    "skillKey": "clawhub-polymarket-predictradar-data-layer-skills",
+    "name": "polymarket-predictradar-data-layer-skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-predictradar-data-layer-skills",
+    "url": "https://clawhub.ai/skills/polymarket-predictradar-data-layer-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-predictradar-data-layer-skills-faa04d320addd6c3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Shared Polymarket and prediction-market data access layer. Use this skill whenever another skill or task needs trader positions, trade history, market metada..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cnica",
+      "userId": "s1712b9wmz7y6nf4c7d7jz5wb1841xmq",
+      "displayName": "Yeri",
+      "image": "https://avatars.githubusercontent.com/u/83803401?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775119665327,
+      "changelog": "- Initial release of the Polymarket data access layer, providing a unified interface for market and trader intelligence.\n- Features automatic MCP session handshake and prioritizes the PredicTradar MCP Server as the primary data source, with fallbacks to polymarket-cli and Polymarket Data API.\n- Exposes high-level tools for trader positions, detailed market data, trade history, leaderboards, and SQL-based analytics.\n- Documents full MCP tool catalog, table schemas for `trades` and `positions`, and example usage patterns.\n- Introduces convenience wrappers for key operations and details recommended environment variables.\n- Provides example and helper scripts for integration and data exploration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ed03e845163f6293eacb2c4af629a52000ab6a47e456cb3cb90c84df4882da73"
+}

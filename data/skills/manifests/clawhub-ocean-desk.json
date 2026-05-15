@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53829,
+  "uuid": "skill-clawhub-ocean-desk",
+  "skillKey": "clawhub-ocean-desk",
+  "name": "Ocean Desk",
+  "summary": "Backend human-agent desk infrastructure for OceanBus brand agents. Not customer-facing — used by brand agents to escalate to human operators. Responds to -hu...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ocean_desk",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ryanbihai",
+      "features": [
+        "Backend human-agent desk infrastructure for OceanBus brand agents",
+        "Not customer-facing — used by brand agents to escalate to human operators",
+        "Responds to -hu..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ocean-desk@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/89728875?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ocean-desk",
+      "url": "https://clawhub.ai/skills/ocean-desk"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ocean-desk",
+    "url": "https://clawhub.ai/skills/ocean-desk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ocean-desk-80287e02a051a8dc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ocean-desk@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ocean-desk-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:21d589c21b927b81138a63b0e4bdf471de9950f72f6947be8cf93044b565790f",
+      "artifactSizeBytes": 1977
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T07:07:42.623Z"
+}

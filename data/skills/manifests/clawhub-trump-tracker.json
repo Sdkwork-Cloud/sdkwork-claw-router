@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61188,
+  "uuid": "skill-clawhub-trump-tracker",
+  "skillKey": "clawhub-trump-tracker",
+  "name": "Trump Tracker",
+  "summary": "川普动态实时监控及“不靠谱”预测模型 (Python 版)。",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trump_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KenneyChen",
+      "features": [
+        "川普动态实时监控及“不靠谱”预测模型 (Python 版)。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trump-tracker@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16686081?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trump-tracker",
+      "url": "https://clawhub.ai/skills/trump-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trump-tracker",
+    "url": "https://clawhub.ai/skills/trump-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trump-tracker-e1149c7a9174bf70.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trump-tracker@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-trump-tracker-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b45fb0a86267d32079a1c52c71b3c92771d815a2b79404b2855e00ccbe657654",
+      "artifactSizeBytes": 1984
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T03:50:00.166Z"
+}

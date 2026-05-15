@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/autodream-memory@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autodream_memory",
+  "skill": {
+    "id": 41416,
+    "skillKey": "clawhub-autodream-memory",
+    "name": "AutoDream Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autodream-memory",
+    "url": "https://clawhub.ai/skills/autodream-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autodream-memory-f1094f64850aaf37.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AutoDream - Automatic memory consolidation sub-agent. Periodically (24h +5 sessions) organizes MEMORY.md and memory files, deduplicates, merges, removes stal..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bigkingcn",
+      "userId": "s17enmq05hs7558vfwvpz5rc4s83qtse",
+      "displayName": "Bigkingcn",
+      "image": "https://avatars.githubusercontent.com/u/202888286?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775096418847,
+      "changelog": "v1.0.1: Privacy audit passed, no API keys or personal info included. 4-phase memory consolidation pipeline.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:32afd5545c0a0067c3cea6dbe4263f1f6e94c1078fa6311de5494bd3e30e69e9"
+}

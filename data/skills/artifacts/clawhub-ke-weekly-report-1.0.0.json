@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ke-weekly-report@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ke_weekly_report",
+  "skill": {
+    "id": 59876,
+    "skillKey": "clawhub-ke-weekly-report",
+    "name": "Weekly Report Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ke-weekly-report",
+    "url": "https://clawhub.ai/skills/ke-weekly-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ke-weekly-report-65126afe84c08e75.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "科特船长 - 自动生成周报/月报/工作总结，支持 Word/PPT 格式输出"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaoheizp",
+      "userId": "s17cq06tb454q3pgk4jt5rddq583gxgz",
+      "displayName": "xiaoheizp",
+      "image": "https://avatars.githubusercontent.com/u/132731427?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 211,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773985598007,
+      "changelog": "ke-weekly-report v1.0.0\n\n- 首发版本，支持自动生成结构化的周报、月报和述职报告\n- 支持 markdown 格式输出和基础模板\n- 可通过命令行输入主要工作内容，自动整理并填充报告模板\n- 提供 formal、detailed 等多种报告风格\n- 简单易用，适用于个人及职场报告自动化",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:446e043e42cc14d1bc80ee3797bda347bbc50fa666715aa8f9b06836879f2b47"
+}

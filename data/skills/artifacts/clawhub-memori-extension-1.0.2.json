@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memori-extension@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memori_extension",
+  "skill": {
+    "id": 25755,
+    "skillKey": "clawhub-memori-extension",
+    "name": "memori-extension"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memori-extension",
+    "url": "https://clawhub.ai/skills/memori-extension",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memori-extension-827e1e4ed8703cb1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Memory augmentation and LLM call interception using the Memori Python library with optional Zhipu API integration."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ian-at",
+      "userId": "publishers:ian-at",
+      "displayName": "ian-at",
+      "image": "https://avatars.githubusercontent.com/u/172589295?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 382,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772435260400,
+      "changelog": "**Security & privacy information added for file/database operations and external API calls.**\n\n- Added a comprehensive \"Security & Privacy Notice\" section, detailing data flow, local file/database usage, and when/what is sent to external APIs.\n- Documented all supported environment variables, clarifying privacy impact of each.\n- Provided explicit recommendations for safe use and cautions regarding enabling Zhipu API integration.\n- Clarified local-only operation (no external data transmission) unless API keys are provided.\n- Highlighted file/database access patterns and best practices for privacy-conscious deployments.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7bf0298825e388ac4994309e168a01a3b6b0096b4cfba314dd330b0e0a01877b"
+}

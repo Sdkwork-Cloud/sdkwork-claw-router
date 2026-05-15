@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kimi-search@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kimi_search",
+  "skill": {
+    "id": 61119,
+    "skillKey": "clawhub-kimi-search",
+    "name": "Kimi Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kimi-search",
+    "url": "https://clawhub.ai/skills/kimi-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kimi-search-502ca5f794b8330a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 Moonshot Kimi API 的 $web_search 内置工具进行联网搜索。当需要进行网络搜索获取实时信息时使用，支持中文和英文搜索查询。需要配置 MOONSHOT_API_KEY。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chrisbdz",
+      "userId": "publishers:chrisbdz",
+      "displayName": "ChrisBDZ",
+      "image": "https://avatars.githubusercontent.com/u/67193145?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 944,
+      "installsAllTime": 11,
+      "installsCurrent": 9,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772892462224,
+      "changelog": "Improved documentation: clarified primaryEnv injection mechanism, added security recommendations, added dependency installation instructions, explained builtin_function behavior",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b2f50f451a27b2f6836f90808ed559ff8d2f63ac0a06c705bcbb63a302e283a4"
+}

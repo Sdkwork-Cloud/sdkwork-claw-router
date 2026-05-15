@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/virlo-short-form-video-training-data@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.virlo_short_form_video_training_data",
+  "skill": {
+    "id": 23186,
+    "skillKey": "clawhub-virlo-short-form-video-training-data",
+    "name": "Virlo Short-Form Video Training Data"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "virlo-short-form-video-training-data",
+    "url": "https://clawhub.ai/skills/virlo-short-form-video-training-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/virlo-short-form-video-training-data-29619691d57b33ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Virlo social media intelligence — viral video analytics, hashtag rankings, trend digests, and social listening across YouTube, TikTok, and Instagram. Use for..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "virlogit",
+      "userId": "publishers:virlogit",
+      "displayName": "Virlo",
+      "image": "https://avatars.githubusercontent.com/u/183632860?v=4"
+    },
+    "stats": {
+      "comments": 4,
+      "downloads": 757,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771354020709,
+      "changelog": "Minor update: Added homepage and source links to metadata and documentation, and clarified direct curl usage.\n\n- Added \"homepage\" and \"source\" fields to metadata.\n- Added homepage, source, and API documentation/playground links to the main docs.\n- Rewrote API request instructions to use curl directly with documented examples.\n- Provided detailed authentication, response envelope, and pagination guides.\n- No changes to the underlying API or features.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d59488809fb5d172fe00327a30f65c5667239e2ee73bdfaf1c1be8af25045bde"
+}

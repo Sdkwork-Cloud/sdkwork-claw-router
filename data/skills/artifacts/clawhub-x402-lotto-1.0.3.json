@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x402-lotto@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x402_lotto",
+  "skill": {
+    "id": 36753,
+    "skillKey": "clawhub-x402-lotto",
+    "name": "x402 Lotto"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x402-lotto",
+    "url": "https://clawhub.ai/skills/x402-lotto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x402-lotto-f21cde186997c704.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access lottery data and services via x402 payment protocol, including listing lotteries, fetching jackpots, purchasing tickets, and checking results."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shanemort1982",
+      "userId": "s17ffmf2knqwfrbwj14zzyb1pd83jqqn",
+      "displayName": "shanemort1982",
+      "image": "https://avatars.githubusercontent.com/u/156683457?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774476627265,
+      "changelog": "Republish",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d47efe63b0173ffc841d0dc7ca48edd8a3519c739166e8d03c4967cd7f9c7641"
+}

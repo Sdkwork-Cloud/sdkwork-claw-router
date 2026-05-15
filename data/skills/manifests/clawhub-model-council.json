@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51029,
+  "uuid": "skill-clawhub-model-council",
+  "skillKey": "clawhub-model-council",
+  "name": "Model Council",
+  "summary": "Multi-model consensus system — send a query to 3+ different LLMs via OpenRouter simultaneously, then a judge model evaluates all responses and produces a win...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_council",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aiwithabidi",
+      "features": [
+        "Multi-model consensus system — send a query to 3+ different LLMs via OpenRouter simultaneously,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/model-council@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208891229?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "model-council",
+      "url": "https://clawhub.ai/skills/model-council"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-council",
+    "url": "https://clawhub.ai/skills/model-council",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-council-1400ac207cc15d5e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/model-council@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-model-council-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5d0b632907e1f14cc88afd38627794456aca0020dd0d45b81a2a11d0ff3bd4f0",
+      "artifactSizeBytes": 2287
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T18:52:34.164Z"
+}

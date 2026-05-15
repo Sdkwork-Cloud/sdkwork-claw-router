@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9597,
+  "uuid": "skill-clawhub-avatar-video-messages",
+  "skillKey": "clawhub-avatar-video-messages",
+  "name": "Video Messages from your openclaw",
+  "summary": "Generate and send video messages with a lip-syncing VRM avatar. Use when user asks for video message, avatar video, video reply, or when TTS should be delivered as video instead of audio.",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.avatar_video_messages",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "thewulf7",
+      "features": [
+        "Generate and send video messages with a lip-syncing VRM avatar",
+        "Use when user asks for video message, avatar video, video reply, or when TTS should be delivere."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/avatar-video-messages@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1582808?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "avatar-video-messages",
+      "url": "https://clawhub.ai/skills/avatar-video-messages"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "avatar-video-messages",
+    "url": "https://clawhub.ai/skills/avatar-video-messages",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/avatar-video-messages-839df56d9b36f62c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/avatar-video-messages@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-avatar-video-messages-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:556f12c74a63179c4918d7a97b3997614c46e6bac4f56fe9017ca3212b5d5558",
+      "artifactSizeBytes": 2400
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T11:00:32.308Z"
+}

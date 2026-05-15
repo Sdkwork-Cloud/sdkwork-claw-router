@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13918,
+  "uuid": "skill-clawhub-vocabulary-builder",
+  "skillKey": "clawhub-vocabulary-builder",
+  "name": "Vocabulary Builder",
+  "summary": "Build and review vocabulary from books, podcasts, and daily encounters. Use when the user wants to READ a book, shares a new word, asks about a word while re...",
+  "version": "1.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vocabulary_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "William",
+      "features": [
+        "Build and review vocabulary from books, podcasts, and daily encounters",
+        "Use when the user wants to READ a book, shares a new word, asks about a word while re..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vocabulary-builder@1.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2777660?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vocabulary-builder",
+      "url": "https://clawhub.ai/skills/vocabulary-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vocabulary-builder",
+    "url": "https://clawhub.ai/skills/vocabulary-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vocabulary-builder-a55709cbb8b314d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vocabulary-builder@1.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-vocabulary-builder-1.1.4.json",
+      "version": "1.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:10b943a4348d370bc3b6c2e38b42b408f6555a7103655518a243f4bc5704f354",
+      "artifactSizeBytes": 2003
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T11:30:24.529Z"
+}

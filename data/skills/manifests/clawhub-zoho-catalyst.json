@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31899,
+  "uuid": "skill-clawhub-zoho-catalyst",
+  "skillKey": "clawhub-zoho-catalyst",
+  "name": "Zoho Catalyst",
+  "summary": "Zoho Catalyst integration. Manage data, records, and automate workflows. Use when the user wants to interact with Zoho Catalyst data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zoho_catalyst",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Zoho Catalyst integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Zoho Catalyst data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zoho-catalyst@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zoho-catalyst",
+      "url": "https://clawhub.ai/skills/zoho-catalyst"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zoho-catalyst",
+    "url": "https://clawhub.ai/skills/zoho-catalyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zoho-catalyst-aed3ba3ed454a1da.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zoho-catalyst@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-zoho-catalyst-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7a30926ba06919ef80ad87f9a620e5666d165270bab31460732fb8c5e3390b14",
+      "artifactSizeBytes": 1875
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:05:50.217Z"
+}

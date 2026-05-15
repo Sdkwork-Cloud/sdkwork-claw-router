@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58916,
+  "uuid": "skill-clawhub-fixed-amount-invoice-ocr",
+  "skillKey": "clawhub-fixed-amount-invoice-ocr",
+  "name": "Fixed Amount Invoice Ocr",
+  "summary": "支持定额发票识别。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fixed_amount_invoice_ocr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SCNet-sugon",
+      "features": [
+        "支持定额发票识别。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fixed-amount-invoice-ocr@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267813088?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fixed-amount-invoice-ocr",
+      "url": "https://clawhub.ai/skills/fixed-amount-invoice-ocr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fixed-amount-invoice-ocr",
+    "url": "https://clawhub.ai/skills/fixed-amount-invoice-ocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fixed-amount-invoice-ocr-8bd31ce8c414d98b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fixed-amount-invoice-ocr@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-fixed-amount-invoice-ocr-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2a8161eed14fff2ec46979ec9f2a9b7933c074fa28aca15f18551ad6f0310bdb",
+      "artifactSizeBytes": 2068
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T05:26:05.967Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46651,
+  "uuid": "skill-clawhub-marjorie-adaptive-reasoning",
+  "skillKey": "clawhub-marjorie-adaptive-reasoning",
+  "name": "Adaptive Reasoning",
+  "summary": "Automatically assess task complexity and adjust reasoning level. Triggers on every user message to evaluate whether extended thinking (reasoning mode) would...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.marjorie_adaptive_reasoning",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MarjorieBroad",
+      "features": [
+        "Automatically assess task complexity and adjust reasoning level",
+        "Triggers on every user message to evaluate whether extended thinking (reasoning mode) would..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/marjorie-adaptive-reasoning@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260425366?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "marjorie-adaptive-reasoning",
+      "url": "https://clawhub.ai/skills/marjorie-adaptive-reasoning"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "marjorie-adaptive-reasoning",
+    "url": "https://clawhub.ai/skills/marjorie-adaptive-reasoning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/marjorie-adaptive-reasoning-ab09f3aed0843b66.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/marjorie-adaptive-reasoning@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-marjorie-adaptive-reasoning-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba0678a9df5b7c62c25e5c8db176cf0a17bd579d6b19016f8588994248643761",
+      "artifactSizeBytes": 1977
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T02:42:44.492Z"
+}

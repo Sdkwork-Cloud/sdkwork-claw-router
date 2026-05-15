@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34290,
+  "uuid": "skill-clawhub-coding-guidelines",
+  "skillKey": "clawhub-coding-guidelines",
+  "name": "Coding Guidelines",
+  "summary": "Apply AI-assisted coding best practices when helping with programming tasks. Use when (1) the user asks for help writing, refactoring, debugging, or architec...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coding_guidelines",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "benzooku",
+      "features": [
+        "Apply AI-assisted coding best practices when helping with programming tasks",
+        "Use when (1) the user asks for help writing, refactoring, debugging, or architec..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coding-guidelines@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/85350214?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coding-guidelines",
+      "url": "https://clawhub.ai/skills/coding-guidelines"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coding-guidelines",
+    "url": "https://clawhub.ai/skills/coding-guidelines",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coding-guidelines-00657f5b6ad04c08.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coding-guidelines@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-coding-guidelines-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73924340409cf36d717b018771b7638f0ce8511d43a79e8222a5ea8597a7c432",
+      "artifactSizeBytes": 2343
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T16:23:03.491Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/notestorelab-case-review@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notestorelab_case_review",
+  "skill": {
+    "id": 39025,
+    "skillKey": "clawhub-notestorelab-case-review",
+    "name": "NoteStore Lab Case Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notestorelab-case-review",
+    "url": "https://clawhub.ai/skills/notestorelab-case-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notestorelab-case-review-8b0da710fbdf6c09.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when the user asks to \"review an Apple Notes case root\", \"set up NoteStore Lab MCP\", \"run notes-recovery-mcp\", \"ask one bounded que..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaojiou176",
+      "userId": "s170nkfkw4w7zm8rkrxee73k4984et24",
+      "displayName": "Yifeng[Terry] Yu",
+      "image": "https://avatars.githubusercontent.com/u/125581657?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775687770640,
+      "changelog": "notestorelab-case-review 1.0.2\n\n- Added explicit documentation of MCP capability surface and available review workflows.\n- Clarified local-only, single case root approach; reinforced restriction against treating NoteStore Lab as a hosted platform.\n- Updated language throughout for accuracy and clarity regarding product truth and workflow.\n- Improved guidance on using review surfaces, workflows, and preferred evidence order.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0f3e83c7183276c777a15606c33e6d59e3efa0d0b52bbef8ed32929ecb2c21e0"
+}

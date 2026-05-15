@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11792,
+  "uuid": "skill-clawhub-productboard-release",
+  "skillKey": "clawhub-productboard-release",
+  "name": "Productboard Release",
+  "summary": "Manage ProductBoard releases and roadmap planning",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.productboard_release",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "robertoamoreno",
+      "features": [
+        "Manage ProductBoard releases and roadmap planning"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/productboard-release@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16195292?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "productboard-release",
+      "url": "https://clawhub.ai/skills/productboard-release"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "productboard-release",
+    "url": "https://clawhub.ai/skills/productboard-release",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/productboard-release-b9dc5f33a1fa1b68.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/productboard-release@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-productboard-release-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:15348890f5769a63e75f3edca913d21ecd4b309ecd760cbec53295b2ea2c1754",
+      "artifactSizeBytes": 2190
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T05:59:33.232Z"
+}

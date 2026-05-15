@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-soul@3.0.1",
+  "version": "3.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_soul",
+  "skill": {
+    "id": 61784,
+    "skillKey": "clawhub-openclaw-soul",
+    "name": "Openclaw Soul"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-soul",
+    "url": "https://clawhub.ai/skills/openclaw-soul",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-soul-0b3f7514a62965c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw 自我进化框架一键部署。安装宪法(AGENTS.md)、可进化灵魂(SOUL.md)、心跳系统、六层记忆架构、目标管理、思维方法论（HDD/SDD）、安全审查（skill-vetter），并通过场景化对话引导用户定义 Agent 性格。用户可选安装 EvoClaw（审批制进化）、Self-Impr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kianzzz",
+      "userId": "s17cag39esy8d7cq8hgpq0p6ps83qjfn",
+      "displayName": "Kianzzz",
+      "image": "https://avatars.githubusercontent.com/u/126930443?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 580,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "3.0.1",
+      "createdAt": 1775150346191,
+      "changelog": "fix: BOOTSTRAP完成后主动过渡到系统配置，不再等用户询问",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4a1338513389b0c21534b629d778a638e1895f0046ae9815ffb94c0ba33bcad0"
+}

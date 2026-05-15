@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skillup@0.1.9",
+  "version": "0.1.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skillup",
+  "skill": {
+    "id": 32380,
+    "skillKey": "clawhub-skillup",
+    "name": "SkillUp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skillup",
+    "url": "https://clawhub.ai/skills/skillup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skillup-a332d41d94ad02a8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "SkillUp is a cross-platform skill publishing tool for packaging and syncing custom skills to GitHub, Xiaping Skill, OpenClaw CN, and ClawHub."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cjke84",
+      "userId": "s1775q36xrk1nbvfv7740t5m6983hmxz",
+      "displayName": "Biu",
+      "image": "https://avatars.githubusercontent.com/u/138677870?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 253,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.1.9",
+      "createdAt": 1774447184890,
+      "changelog": "- Added two new commands: install-local (install skill to local codex/openclaw directories) and rollback (restore local skill files from a GitHub release).\n- Introduced --parallel-publish and --sequential-publish options to control parallel or sequential multi-platform publishing.\n- The publish flow now fetches and summarizes remote platform status and diffs before packaging and publishing.\n- Structured JSON result files now include extra fields (local_version, remote_version, platform_adjusted, blocking).\n- Docs and usage instructions updated to reflect new features and workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:68791bf45076f8843a02b76694d0aa7b26372c40fb74202855932ded51df7158"
+}

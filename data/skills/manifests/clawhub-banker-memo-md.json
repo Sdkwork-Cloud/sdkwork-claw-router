@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56217,
+  "uuid": "skill-clawhub-banker-memo-md",
+  "skillKey": "clawhub-banker-memo-md",
+  "name": "Banker Memo Md",
+  "summary": "Produce an investment-banker-grade research memo (analysis.md + data-provenance.md) from CN raw-data/ JSON snapshots. Use when the user asks for \"投行 md\" / \"银...",
+  "version": "0.9.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.banker_memo_md",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jackdark",
+      "features": [
+        "Produce an investment-banker-grade research memo (analysis.md + data-provenance.md) from CN raw.",
+        "Use when the user asks for \"投行 md\" / \"银..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/banker-memo-md@0.9.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201514154?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "banker-memo-md",
+      "url": "https://clawhub.ai/skills/banker-memo-md"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "banker-memo-md",
+    "url": "https://clawhub.ai/skills/banker-memo-md",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/banker-memo-md-8251a7842636736f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/banker-memo-md@0.9.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-banker-memo-md-0.9.7.json",
+      "version": "0.9.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6e9f20623945bdf5af12dfca467129a8b33410875b1a5b0eaf4088251f8a3f59",
+      "artifactSizeBytes": 2515
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T02:20:05.448Z"
+}

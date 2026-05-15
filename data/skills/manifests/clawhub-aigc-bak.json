@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70778,
+  "uuid": "skill-clawhub-aigc-bak",
+  "skillKey": "clawhub-aigc-bak",
+  "name": "Aigc.Bak",
+  "summary": "AIGC 图片生成助手，帮助用户生成图片。当用户想要生成图片、AI 绘画、文生图、创作图片时自动触发。支持负面提示词、图片比例、批量生成等参数。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aigc_bak",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kinggu",
+      "features": [
+        "AIGC 图片生成助手，帮助用户生成图片。当用户想要生成图片、AI 绘画、文生图、创作图片时自动触发。支持负面提示词、图片比例、批量生成等参数。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aigc-bak@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10531802?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aigc-bak",
+      "url": "https://clawhub.ai/skills/aigc-bak"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aigc-bak",
+    "url": "https://clawhub.ai/skills/aigc-bak",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aigc-bak-6f93c8a04b5bf465.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aigc-bak@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aigc-bak-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc51337564ee6164313c160f0b6d28ac0a8eee8e8a9499601ad7bd57fa821cda",
+      "artifactSizeBytes": 2171
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T06:33:07.858Z"
+}

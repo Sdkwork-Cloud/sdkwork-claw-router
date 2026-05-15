@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sprintx-openclaw-handoff@0.1.3",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sprintx_openclaw_handoff",
+  "skill": {
+    "id": 30954,
+    "skillKey": "clawhub-sprintx-openclaw-handoff",
+    "name": "SprintX OpenClaw Handoff"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sprintx-openclaw-handoff",
+    "url": "https://clawhub.ai/skills/sprintx-openclaw-handoff",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sprintx-openclaw-handoff-2bbc22d085b6bdc6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guide an OpenClaw operator through SprintX handoff by verifying prerequisites, authenticating, selecting the project, sending event and artifact, then confir..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "terry3838",
+      "userId": "s179sxete92612qta4ht1q6mn58426a2",
+      "displayName": "Terry Kim",
+      "image": "https://avatars.githubusercontent.com/u/217904664?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.1.3",
+      "createdAt": 1776067299482,
+      "changelog": "Add localized READMEs and tighten metadata to match real requirements",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9f759f6ba9b44406870a47ed84254c6be60a403d1ba551392bd5adb27dfbc706"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gws-gmail-read@1.0.12",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gws_gmail_read",
+  "skill": {
+    "id": 21606,
+    "skillKey": "clawhub-gws-gmail-read",
+    "name": "Gws Gmail Read"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gws-gmail-read",
+    "url": "https://clawhub.ai/skills/gws-gmail-read",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gws-gmail-read-b379ab9e49290b0d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Gmail: Read a message and extract its body or headers."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "googleworkspace-bot",
+      "userId": "s17d07d7j6wvs7e49gkh2nncms83fh1m",
+      "displayName": "googleworkspace-bot",
+      "image": "https://avatars.githubusercontent.com/u/109114539?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 484,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.0.12",
+      "createdAt": 1774982042908,
+      "changelog": "- Updated version in SKILL.md metadata from 0.22.4 to 0.22.5.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3d9606fda48a5ff863564c42028e76616b45701ce889fb89fb7077e6595aa8c7"
+}

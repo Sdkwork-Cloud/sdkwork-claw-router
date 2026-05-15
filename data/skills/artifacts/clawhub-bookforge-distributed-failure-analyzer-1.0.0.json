@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bookforge-distributed-failure-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bookforge_distributed_failure_analyzer",
+  "skill": {
+    "id": 52529,
+    "skillKey": "clawhub-bookforge-distributed-failure-analyzer",
+    "name": "Distributed Failure Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bookforge-distributed-failure-analyzer",
+    "url": "https://clawhub.ai/skills/bookforge-distributed-failure-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bookforge-distributed-failure-analyzer-c9928f128a28c38d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Diagnose distributed system failures caused by network faults, unreliable clocks, or process pauses — and map each to its correct mitigation. Use when: a nod..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quochungto",
+      "userId": "s176b6gfk8djgcz320d83ta4e184bx1v",
+      "displayName": "Hung Quoc To",
+      "image": "https://avatars.githubusercontent.com/u/88069966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775889413883,
+      "changelog": "Initial release of distributed-failure-analyzer: structured diagnosis of distributed system failures.\n\n- Provides a failure analysis framework covering network faults, unreliable clocks, and process pauses, mapping each symptom to root cause and mitigation.\n- Supports both reactive incident analysis and proactive audit of timing, locking, and clock-related assumptions in distributed system architectures.\n- Analyzes inputs such as codebases, infra configs, and verbal symptom descriptions to produce actionable, structured reports.\n- Distinct from replication-failure-analyzer; focuses on failure modes like zombie leaders, lock/lease issues, and data loss due to timing or clock issues rather than replication lag or quorum.\n- Targets engineers, architects, and SREs familiar with distributed systems.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6ed85f6b1fd4def3ae2ec9f8e596d5a92ec6688793b2c7a0875624de17a1fa68"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/neon-postgres@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neon_postgres",
+  "skill": {
+    "id": 17721,
+    "skillKey": "clawhub-neon-postgres",
+    "name": "Neon Postgres"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neon-postgres",
+    "url": "https://clawhub.ai/skills/neon-postgres",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neon-postgres-95e87c129ceedcd9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guides and best practices for working with Neon Serverless Postgres. Covers getting started, local development with Neon, choosing a connection method, Neon..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andrelandgraf",
+      "userId": "publishers:andrelandgraf",
+      "displayName": "Andre Landgraf",
+      "image": "https://avatars.githubusercontent.com/u/15163028?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 732,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772156102911,
+      "changelog": "Initial release of neon-postgres skill.\n\n- Provides guides and best practices for working with Neon Serverless Postgres.\n- Covers setup, local development, connection methods, authentication, and developer tools.\n- Includes documentation links for advanced Neon features like scaling, branching, replicas, pooling, and automation via API/SDKs.\n- Detailed references for Neon Auth, instant restore, read replicas, autoscaling, and connection pooling.\n- Focused on supporting any Neon-related questions with up-to-date documentation sources.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b3077c88567ba27ab4c2f8b00b31a709389165783fb089fe4c1b605e07a683b8"
+}

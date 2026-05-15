@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/snapshot-to-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.snapshot_to_api",
+  "skill": {
+    "id": 50312,
+    "skillKey": "clawhub-snapshot-to-api",
+    "name": "Snapshot to API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "snapshot-to-api",
+    "url": "https://clawhub.ai/skills/snapshot-to-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/snapshot-to-api-6ce004a80cc66199.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover hidden APIs behind web pages and replace expensive browser snapshots with lightweight API calls. Saves ~15-20x tokens and 2x speed on browser automa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ianzlm",
+      "userId": "s17cjgajahqet60af52bkmakhx83hx6y",
+      "displayName": "fafa-ai-data-labs",
+      "image": "https://avatars.githubusercontent.com/u/39694479?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 440,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773812657969,
+      "changelog": "Initial release of snapshot-to-api skill, enabling efficient API discovery and replacement of browser snapshot workflows:\n\n- Quickly find and use hidden APIs behind web pages to obtain structured data directly.\n- Achieve significant performance gains: 15–20x token savings and 2x speed improvement over browser DOM snapshots.\n- Clear step-by-step workflow provided for API discovery, testing, and data extraction.\n- Includes guidelines for when to use (or not use) API replacement and tips for handling different environments.\n- Advice on updating skills, maintaining fallbacks, and documenting discoveries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d70d465cbf718125cfcab15a68681b7c9402827ddc2a0eeea23f1dae1d9b5f9d"
+}

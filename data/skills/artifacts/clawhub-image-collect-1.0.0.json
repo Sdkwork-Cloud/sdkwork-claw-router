@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-collect@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_collect",
+  "skill": {
+    "id": 34938,
+    "skillKey": "clawhub-image-collect",
+    "name": "image-collect"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-collect",
+    "url": "https://clawhub.ai/skills/image-collect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-collect-0962b328670b1ae7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill extracts knowledge from an image and saves it locally."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bondli",
+      "userId": "s177p2wmp8es5mem55h55wyq7183h7bj",
+      "displayName": "bondli",
+      "image": "https://avatars.githubusercontent.com/u/6427929?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 219,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774347352325,
+      "changelog": "Initial release of image-collect skill.\n\n- Extracts knowledge from images using OCR and content analysis.\n- Saves the original image locally.\n- Generates a summary, keywords, and extracted text from the image.\n- Appends the extracted knowledge to a JSON database for future reference.\n- Supports various image sources: URLs, base64 strings, and local file paths.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6afa3beb1ec126706db3647bbcedd24ec328a908434ce0a05e893d812478c9c1"
+}

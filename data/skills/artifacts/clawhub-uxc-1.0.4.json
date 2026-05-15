@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/uxc@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uxc",
+  "skill": {
+    "id": 18915,
+    "skillKey": "clawhub-uxc",
+    "name": "Uxc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uxc",
+    "url": "https://clawhub.ai/skills/uxc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uxc-315a29b5c5b7873e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover and call remote schema-exposed interfaces with UXC. Use when an agent or skill needs to list operations, inspect operation schemas, and execute Open..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jolestar",
+      "userId": "s1769rm50f8wvzw550m22hg10x83gkem",
+      "displayName": "jolestar",
+      "image": "https://avatars.githubusercontent.com/u/77268?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 631,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1773049275338,
+      "changelog": "- Clarified and expanded authentication guidance in SKILL.md, directing users to specific reference tracks for API keys, multi-field auth, and OAuth.\n- Updated references/auth-configuration.md and references/usage-patterns.md to reflect new authentication approaches.\n- Improved reference documentation to clarify handling of request signers and multi-field secrets.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:163fa77f07db41471f475c1ab00a4e1600f9fb51d762193621aacfcb351b0e4b"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52101,
+  "uuid": "skill-clawhub-budget-meal-prep",
+  "skillKey": "clawhub-budget-meal-prep",
+  "name": "Budget Meal Prep",
+  "summary": "Weekly meal prep system for one person on a tight budget. Use when someone wants to eat well on $40-60/week, reduce food waste, stop relying on takeout, or b...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.budget_meal_prep",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HowToUseHumans",
+      "features": [
+        "Weekly meal prep system for one person on a tight budget",
+        "Use when someone wants to eat well on $40-60/week, reduce food waste, stop relying on takeout,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/budget-meal-prep@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/151727669?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "budget-meal-prep",
+      "url": "https://clawhub.ai/skills/budget-meal-prep"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "budget-meal-prep",
+    "url": "https://clawhub.ai/skills/budget-meal-prep",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/budget-meal-prep-9fc54db1d8d8ff62.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/budget-meal-prep@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-budget-meal-prep-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:83407ca3f8174509ec1c9863aa5de301f8085d5f0bb29abe92869fc552fe9843",
+      "artifactSizeBytes": 2512
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T17:57:40.824Z"
+}

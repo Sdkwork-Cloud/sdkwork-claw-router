@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37633,
+  "uuid": "skill-clawhub-openclaw-doc-sync",
+  "skillKey": "clawhub-openclaw-doc-sync",
+  "name": "Openclaw Doc Sync",
+  "summary": "Post-release documentation sync skill that automatically aligns README/ARCHITECTURE/CONTRIBUTING/CLAUDE.md with actual changes, cleans up TODOs, polishes Cha...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_doc_sync",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "X-RayLuan",
+      "features": [
+        "Post-release documentation sync skill that automatically aligns README/ARCHITECTURE/CONTRIBUTIN."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-doc-sync@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/150766707?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-doc-sync",
+      "url": "https://clawhub.ai/skills/openclaw-doc-sync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-doc-sync",
+    "url": "https://clawhub.ai/skills/openclaw-doc-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-doc-sync-c66772963d7ba63b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-doc-sync@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-doc-sync-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4ba3eb151694486196dcec0dab8c86874c81944a3c13f0dd96502ee3f780f88d",
+      "artifactSizeBytes": 1950
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T15:58:02.579Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bilibili-video-downloader@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilibili_video_downloader",
+  "skill": {
+    "id": 64223,
+    "skillKey": "clawhub-bilibili-video-downloader",
+    "name": "Bilibili Video Downloader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilibili-video-downloader",
+    "url": "https://clawhub.ai/skills/bilibili-video-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilibili-video-downloader-a3ac0b1a29018460.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "哔哩哔哩视频搜索与下载工具。使用场景： - 根据关键词搜索B站视频 - 下载B站视频（支持多种清晰度） - 获取视频详情、弹幕、评论 - 批量下载UP主视频 - \"帮我下载B站上的XX视频\" - \"搜索B站关于XX的视频\" - \"把B站这个视频下载下来\" - \"获取B站视频弹幕"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "epantrip",
+      "userId": "s1727e37wkznrvn429aqm7tze184t5bq",
+      "displayName": "epantrip",
+      "image": "https://avatars.githubusercontent.com/u/139935842?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 303,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774071334361,
+      "changelog": "**Major update: Script-based, multi-platform Bilibili downloader with search, video info, danmaku/comments, and cookie support, using yt-dlp.**\n\n- Migrated from Python API to cross-platform shell/PowerShell scripts wrapping `yt-dlp` for video downloads.\n- Added keyword-based Bilibili video search (`search.sh`/`search.ps1`).\n- Supports single, batch, and UP主 (creator) video downloads with quality selection.\n- Added scripts for fetching video info, comments, danmaku, and playlist/UP主 video listing.\n- Introduced cookie configuration for restricted/high-quality videos.\n- Provided detailed usage, dependency installation, and security notes in documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:430aaadfd37bb967f29d8b8d540d6a2553d5511eb393594dd3cddaad9c0cd41f"
+}

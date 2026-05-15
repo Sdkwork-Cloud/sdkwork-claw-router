@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-subtitle-downloader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_subtitle_downloader",
+  "skill": {
+    "id": 43611,
+    "skillKey": "clawhub-video-subtitle-downloader",
+    "name": "Video Subtitle Downloader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-subtitle-downloader",
+    "url": "https://clawhub.ai/skills/video-subtitle-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-subtitle-downloader-f4b14a6237782242.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Download and convert subtitles from YouTube, Bilibili, and 1000+ platforms into SRT, JSON, or TXT with automatic timestamps and GPU acceleration support."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shenghoo123-png",
+      "userId": "s17dv44xed17vb7n7v728mr4dd846y7m",
+      "displayName": "shenghoo123-png",
+      "image": "https://avatars.githubusercontent.com/u/265226019?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775277787266,
+      "changelog": "Video Subtitle Downloader v1.0.0\n\n- Initial release.\n- Supports downloading subtitles from 1000+ platforms including YouTube, Bilibili, and Twitter.\n- Fetches both auto-generated and manual subtitles in SRT, JSON, or TXT formats.\n- Automatically segments subtitles for videos longer than 30 minutes.\n- Offers GPU-accelerated transcription via faster-whisper.\n- Provides multiple pricing tiers (Free, Professional, Enterprise) and platform comparison.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7ade92314754c1b0b796ff271b1d9a36a6c9c6b9f40d76bd20c7f91054915694"
+}

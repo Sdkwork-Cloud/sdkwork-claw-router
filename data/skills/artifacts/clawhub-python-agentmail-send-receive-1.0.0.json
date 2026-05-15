@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/python-agentmail-send-receive@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.python_agentmail_send_receive",
+  "skill": {
+    "id": 23045,
+    "skillKey": "clawhub-python-agentmail-send-receive",
+    "name": "AgentMail sending and receiving with Python scripts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "python-agentmail-send-receive",
+    "url": "https://clawhub.ai/skills/python-agentmail-send-receive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/python-agentmail-send-receive-56e16c0ecc051baa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "python files which are used to send an email and to download received emails from an inbox. The email provider is agentmail.to, which offers an API. This way..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lausser",
+      "userId": "publishers:lausser",
+      "displayName": "Gerhard Lausser",
+      "image": "https://avatars.githubusercontent.com/u/198968?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 454,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772232840442,
+      "changelog": "- Initial release of python-agentmail-send-receive.\n- Provides scripts to send and receive email via agentmail.to using its API.\n- Includes setup steps for deployment, environment configuration, and verification.\n- Scripts support downloading new messages as JSON and sending/replying to emails.\n- Output files, usage examples, and relevant API parameters are documented for clarity.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cf720f1e174d50d890c9ae609086e7b51285b04f5a81be00f6b3265b80fed37a"
+}

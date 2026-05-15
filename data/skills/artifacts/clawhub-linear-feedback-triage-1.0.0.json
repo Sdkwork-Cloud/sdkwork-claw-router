@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linear-feedback-triage@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linear_feedback_triage",
+  "skill": {
+    "id": 56499,
+    "skillKey": "clawhub-linear-feedback-triage",
+    "name": "Linear Feedback Triage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linear-feedback-triage",
+    "url": "https://clawhub.ai/skills/linear-feedback-triage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linear-feedback-triage-1adb8f70696a782e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Triage user-feedback issues in Linear, especially FB team / 用户反馈 workflows. Use when asked to query Linear issues, list recent complaints, find duplicate fee..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qwqcode",
+      "userId": "publishers:qwqcode",
+      "displayName": "qwqcode",
+      "image": "https://avatars.githubusercontent.com/u/22412567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 319,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773719712465,
+      "changelog": "Initial release of linear-feedback-triage skill.\n\n- Enables querying, triaging, labeling, and replying to user-feedback issues from Linear, focused on the FB team workflow.\n- Provides command templates for listing issues, querying details, and managing statuses/labels/assignees.\n- Includes clear guidance for categorizing feedback, deduplicating issues, and handling membership/payment complaints.\n- Supports drafting user replies with recommended formats and tones per issue type.\n- Ensures data mutation (writes) are performed only upon clear user request or explicit workflow triggers.\n- Outlines concise and actionable output formats for status reporting and grouping requests.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:66bda1b516f8bbdd2803e754a166d3ea7b81dc355ad5143dbeadf65bd8eb2523"
+}

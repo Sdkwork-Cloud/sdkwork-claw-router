@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61045,
+  "uuid": "skill-clawhub-smart-data-scraper",
+  "skillKey": "clawhub-smart-data-scraper",
+  "name": "Smart Data Scraper",
+  "summary": "数据抓取工具 - 从任何网站提取结构化数据",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_data_scraper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dht9898-cell",
+      "features": [
+        "从任何网站提取结构化数据"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-data-scraper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/232001010?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-data-scraper",
+      "url": "https://clawhub.ai/skills/smart-data-scraper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-data-scraper",
+    "url": "https://clawhub.ai/skills/smart-data-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-data-scraper-a4ae6bd9ea4f6bd1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-data-scraper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-data-scraper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:676581328101e145bbfb9beeed0286aa80a533931da7235a90daddbcfae49d6d",
+      "artifactSizeBytes": 2105
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T04:36:08.573Z"
+}

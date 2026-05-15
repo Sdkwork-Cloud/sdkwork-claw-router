@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24232,
+  "uuid": "skill-clawhub-gitee-repo-explorer",
+  "skillKey": "clawhub-gitee-repo-explorer",
+  "name": "Repo Explorer",
+  "summary": "Use this skill when the user asks to explore a repository, get familiar with a project, \"repo explorer\", \"tell me about this repo\", \"repo-explorer\", \"what do...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gitee_repo_explorer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "开源中国",
+      "features": [
+        "Use this skill when the user asks to explore a repository, get familiar with a project, \"repo e."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gitee-repo-explorer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1540855?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gitee-repo-explorer",
+      "url": "https://clawhub.ai/skills/gitee-repo-explorer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gitee-repo-explorer",
+    "url": "https://clawhub.ai/skills/gitee-repo-explorer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gitee-repo-explorer-b6e7e9a42c847706.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gitee-repo-explorer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gitee-repo-explorer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:64ab8c970b9f92691dc29dc74c2c4ec7a58ae7f9c40678000466b94c92833a2c",
+      "artifactSizeBytes": 2439
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T06:26:26.470Z"
+}

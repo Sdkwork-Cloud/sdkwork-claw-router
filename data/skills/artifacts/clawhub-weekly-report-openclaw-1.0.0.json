@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weekly-report-openclaw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weekly_report_openclaw",
+  "skill": {
+    "id": 64129,
+    "skillKey": "clawhub-weekly-report-openclaw",
+    "name": "Weekly Report (OpenClaw)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weekly-report-openclaw",
+    "url": "https://clawhub.ai/skills/weekly-report-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weekly-report-openclaw-d8c76901a9f5befe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动化工作周报生成系统。支持自动登录周报系统、获取团队周报数据、使用 AI 进行内容提炼总结、生成格式化的 Word 文档。 触发场景：(1) 用户要求生成周报 (2) 用户询问本周/上周工作总结 (3) 用户提到\"周报\"、\"weekly report\"、\"工作总结\" (4) 用户需要汇总团队成员工作内容"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kaillera999",
+      "userId": "publishers:kaillera999",
+      "displayName": "kaillera999",
+      "image": "https://avatars.githubusercontent.com/u/7145592?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 396,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772901123684,
+      "changelog": "Initial release: automated weekly report generation with AI summarization, Playwright browser automation, and Word document output",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8f11db8fed54f1661bd5915b77c8ad4d30d8b6d3f9021a370d8cc99f44d7497c"
+}

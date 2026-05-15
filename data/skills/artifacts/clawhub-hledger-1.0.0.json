@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hledger@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hledger",
+  "skill": {
+    "id": 21897,
+    "skillKey": "clawhub-hledger",
+    "name": "Hledger"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hledger",
+    "url": "https://clawhub.ai/skills/hledger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hledger-6a4df82419833ef8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Execute hledger CLI commands to query balances, registers, reports, and journals, returning structured output from local ledger files."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bisbeebucky",
+      "userId": "publishers:bisbeebucky",
+      "displayName": "bisbeebucky",
+      "image": "https://avatars.githubusercontent.com/u/19618919?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 492,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772300230082,
+      "changelog": "hledger skill 1.0.0 initial release:\n\n- Allows execution of `hledger` CLI commands via OpenClaw.\n- Returns structured stdout and stderr output from `hledger`.\n- Supports querying balances, registers, reports, and journal data.\n- Enables automation of personal finance tasks inside OpenClaw.\n- Ensures only `hledger` commands are executable for added security.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:109bed4fc77b9917a83cc70f0900379289e4259166492bd20354c74dbc84d1c5"
+}

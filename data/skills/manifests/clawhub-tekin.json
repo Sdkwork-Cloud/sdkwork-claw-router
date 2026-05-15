@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10803,
+  "uuid": "skill-clawhub-tekin",
+  "skillKey": "clawhub-tekin",
+  "name": "tekin",
+  "summary": "A fast Rust-based headless browser automation CLI with Node.js fallback that enables AI agents to navigate, click, type, and snapshot pages via structured commands.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tekin",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tekin",
+      "features": [
+        "A fast Rust-based headless browser automation CLI with Node.js fallback that enables AI agents."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tekin@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257014427?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tekin",
+      "url": "https://clawhub.ai/skills/tekin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tekin",
+    "url": "https://clawhub.ai/skills/tekin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tekin-b428c745c4f7b50b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tekin@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tekin-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:303d2f16e1e77a60ea737801cb027202f10d956a485d5f8bb0e8ed14f3b417ea",
+      "artifactSizeBytes": 2426
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-24T17:56:56.015Z"
+}

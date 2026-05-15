@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-browsing-bak@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_browsing_bak",
+  "skill": {
+    "id": 34099,
+    "skillKey": "clawhub-web-browsing-bak",
+    "name": "Web Browsing.Bak"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-browsing-bak",
+    "url": "https://clawhub.ai/skills/web-browsing-bak",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-browsing-bak-f807196dd762103f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browse and summarize websites, extract content from URLs, search the web for information. Use when user asks to visit a website, get webpage content, search..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xpneuma",
+      "userId": "s174pybjnfq5kz3ff7r1kpkrvx841v1q",
+      "displayName": "xpneuma",
+      "image": "https://avatars.githubusercontent.com/u/2805947?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 229,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774031783045,
+      "changelog": "Initial release of the web-browsing skill.\n\n- Enables browsing and summarizing website content, extracting data from URLs, and searching the web.\n- Provides clear guidance and examples for use cases such as summarizing pages, extracting current news, and finding specific online information.\n- Describes available tools: web search, fetching URLs, and extracting content.\n- Outlines best practices and current limitations regarding site access and supported content types.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6ab7efd8250fba118e934ea811555c67976a6da8d9bc31300e91e365dd5e3429"
+}

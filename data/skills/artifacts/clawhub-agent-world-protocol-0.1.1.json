@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-world-protocol@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_world_protocol",
+  "skill": {
+    "id": 34181,
+    "skillKey": "clawhub-agent-world-protocol",
+    "name": "Agent World Protocol"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-world-protocol",
+    "url": "https://clawhub.ai/skills/agent-world-protocol",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-world-protocol-ad404268be5617b5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect to a persistent multi-agent world on Solana where you trade SOL, build, claim land, fight, form guilds, complete bounties, and interact economically."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xmerl99",
+      "userId": "s170axqc06a6j224fhh821dmyd83rqp6",
+      "displayName": "0xMerl",
+      "image": "https://avatars.githubusercontent.com/u/240320824?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 227,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1774879030605,
+      "changelog": "- Default server endpoint updated from `wss://agent-world-protocol.onrender.com` to `wss://agentworld.pro`.\n- No other user-facing changes or new features in this version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:acd6cd6c5ce1d6e66a5af9ec4ecca09ccee44869621c43441e3ab13eb7adb130"
+}

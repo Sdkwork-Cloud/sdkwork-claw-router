@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71897,
+  "uuid": "skill-clawhub-web-access-bak",
+  "skillKey": "clawhub-web-access-bak",
+  "name": "Web Access.Bak",
+  "summary": "所有联网操作必须通过此 skill 处理，包括：搜索、网页抓取、登录后操作、网络交互等。 触发场景：用户要求搜索信息、查看网页内容、访问需要登录的网站、操作网页界面、抓取社交媒体内容（小红书、微博、推特等）、读取动态渲染页面、以及任何需要真实浏览器环境的网络任务。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_access_bak",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aysun168",
+      "features": [
+        "所有联网操作必须通过此 skill 处理，包括：搜索、网页抓取、登录后操作、网络交互等。 触发场景：用户要求搜索信息、查看网页内容、访问需要登录的网站、操作网页界面、抓取社交媒体内容（小红书."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-access-bak@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17974169?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-access-bak",
+      "url": "https://clawhub.ai/skills/web-access-bak"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-access-bak",
+    "url": "https://clawhub.ai/skills/web-access-bak",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-access-bak-4db4630ef26ded34.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-access-bak@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-access-bak-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4ed71d80f45304dc626959f92691d60d9e8fd5e4845b03cf6be990aa74fb9794",
+      "artifactSizeBytes": 2907
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T04:05:17.069Z"
+}

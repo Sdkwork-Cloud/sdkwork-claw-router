@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-browser-clawdbot@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_browser_clawdbot",
+  "skill": {
+    "id": 8227,
+    "skillKey": "clawhub-agent-browser-clawdbot",
+    "name": "Agent Browser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-browser-clawdbot",
+    "url": "https://clawhub.ai/skills/agent-browser-clawdbot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-browser-clawdbot-81f7fcfc35df0715.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Headless browser automation CLI optimized for AI agents with accessibility tree snapshots and ref-based element selection"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "matrixy",
+      "userId": "publishers:matrixy",
+      "displayName": "MaTriXy",
+      "image": "https://avatars.githubusercontent.com/u/3080139?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 104996,
+      "installsAllTime": 785,
+      "installsCurrent": 713,
+      "stars": 374,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769032854381,
+      "changelog": "- Initial release of agent-browser-clawdbot skill.\n- Enables fast, headless browser automation via CLI, optimized for AI agent workflows.\n- Provides accessibility tree snapshots with ref-based deterministic element selection.\n- Supports session isolation, state persistence, and robust automation commands (navigation, interaction, data extraction, network control, and more).\n- Includes example workflows and best practices for efficient automation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fee39f14c92d44dd6483007b72324829c41bf5b37e4117ce759e067c8c608e09"
+}

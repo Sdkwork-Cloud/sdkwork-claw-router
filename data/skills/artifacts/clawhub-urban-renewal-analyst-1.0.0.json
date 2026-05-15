@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/urban-renewal-analyst@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.urban_renewal_analyst",
+  "skill": {
+    "id": 57715,
+    "skillKey": "clawhub-urban-renewal-analyst",
+    "name": "城市更新改造现场分析"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "urban-renewal-analyst",
+    "url": "https://clawhub.ai/skills/urban-renewal-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/urban-renewal-analyst-25f4cb465d27e9a6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when the user wants to analyze an urban renewal or renovation scene from a photo. It performs a structured multi-dimensional on-sit..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "innocencexy",
+      "userId": "s17c70tk8cbmcnv1aehymnyfyd83q2rx",
+      "displayName": "Ashi",
+      "image": "https://avatars.githubusercontent.com/u/52907284?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 197,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774711004662,
+      "changelog": "urban-renewal-analyst 1.0.0 — Initial Release\n\n- Introduces a comprehensive, photo-based urban renewal analysis covering six key dimensions: environment, structure, facade, hard landscaping, furniture, and greenery.\n- Provides structured step-by-step workflow with detailed scoring (1–5 per dimension), composite rating, and renovation level classification.\n- Generates actionable, layered renovation strategies tailored to identified issues.\n- Outputs three optimized Gemini 3 image-to-image prompts in photorealistic, architectural rendering, and watercolor/hand-drawn styles.\n- Supports multiple trigger phrases for ease of use in both English and Chinese.\n- Includes clear output formatting and interaction guidelines for consistent, detailed reports.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cc8476680b43da29ca671b22926e4a98fe9edf07a31b4b4e4a69ce3c73b672d6"
+}

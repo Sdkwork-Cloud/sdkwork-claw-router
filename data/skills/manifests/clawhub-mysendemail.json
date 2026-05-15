@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25648,
+  "uuid": "skill-clawhub-mysendemail",
+  "skillKey": "clawhub-mysendemail",
+  "name": "my_send_email",
+  "summary": "Send an email by specifying the receiver's address, subject, and content.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mysendemail",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ZhaoYaofeng168",
+      "features": [
+        "Send an email by specifying the receiver's address, subject, and content."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mysendemail@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/202365200?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mysendemail",
+      "url": "https://clawhub.ai/skills/mysendemail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mysendemail",
+    "url": "https://clawhub.ai/skills/mysendemail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mysendemail-e9e641e3819f12aa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mysendemail@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mysendemail-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:edc9eb0a032be930808ca5c59b2599a123de14bd882b0626e43aa3f0470a1524",
+      "artifactSizeBytes": 1785
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T04:14:28.828Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64359,
+  "uuid": "skill-clawhub-skill-publish-evolution",
+  "skillKey": "clawhub-skill-publish-evolution",
+  "name": "Skill Publish & Evolution Workflow",
+  "summary": "技能发布与自我进化工作流 — 自动化发现可封装能力、发布到技能市场、学习其他Agent优秀实践并回灌改进。适用于Agent能力沉淀、市场发布、持续进化闭环。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_publish_evolution",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "terrycarter1985",
+      "features": [
+        "技能发布与自我进化工作流 — 自动化发现可封装能力、发布到技能市场、学习其他Agent优秀实践并回灌改进。适用于Agent能力沉淀、市场发布、持续进化闭环。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-publish-evolution@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1542987?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-publish-evolution",
+      "url": "https://clawhub.ai/skills/skill-publish-evolution"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-publish-evolution",
+    "url": "https://clawhub.ai/skills/skill-publish-evolution",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-publish-evolution-a29c47fae7d68563.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-publish-evolution@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-publish-evolution-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e2d711b85a39b06fcbb27a366330a1b0d450731a3b8fafdfb075827d9e2afee2",
+      "artifactSizeBytes": 2413
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T03:08:17.353Z"
+}

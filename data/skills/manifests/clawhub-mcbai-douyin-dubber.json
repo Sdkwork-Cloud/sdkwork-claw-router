@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55436,
+  "uuid": "skill-clawhub-mcbai-douyin-dubber",
+  "skillKey": "clawhub-mcbai-douyin-dubber",
+  "name": "MCBAI Douyin Dubber",
+  "summary": "Auto-dub Douyin/TikTok videos into any language using a fully local pipeline: download with Playwright Chromium + Douyin cookie → transcribe with Whisper → t...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcbai_douyin_dubber",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MCB AI",
+      "features": [
+        "Auto-dub Douyin/TikTok videos into any language using a fully local pipeline: download with Pla."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mcbai-douyin-dubber@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/132585065?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mcbai-douyin-dubber",
+      "url": "https://clawhub.ai/skills/mcbai-douyin-dubber"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcbai-douyin-dubber",
+    "url": "https://clawhub.ai/skills/mcbai-douyin-dubber",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcbai-douyin-dubber-0fd0ab6d8f71381a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mcbai-douyin-dubber@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-mcbai-douyin-dubber-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d9b38d5c349568adeddc0095bd2cd3082dc8203ac4b341ed2a8a3b5ad0da3dc6",
+      "artifactSizeBytes": 2088
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T08:03:53.746Z"
+}

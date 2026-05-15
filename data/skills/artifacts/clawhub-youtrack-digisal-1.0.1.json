@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtrack-digisal@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtrack_digisal",
+  "skill": {
+    "id": 11645,
+    "skillKey": "clawhub-youtrack-digisal",
+    "name": "YouTrack Project Management"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtrack-digisal",
+    "url": "https://clawhub.ai/skills/youtrack-digisal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtrack-digisal-22db86a88b4caea2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with YouTrack project management system via REST API. Read projects and issues, create tasks, generate invoices from time tracking data, and manage knowledge base articles. Use for reading projects and work items, creating or upda."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "digisal",
+      "userId": "publishers:digisal",
+      "displayName": "digiSal",
+      "image": "https://avatars.githubusercontent.com/u/5326798?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 1973,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769572337862,
+      "changelog": "Update documentation: generic instance URL, corrected API token generation steps",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:04560480aa15468bf87c9fccd4b8853e3caebf34bf6a104394da01e701201ab1"
+}

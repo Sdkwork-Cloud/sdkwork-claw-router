@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25553,
+  "uuid": "skill-clawhub-metatextai-inference-api",
+  "skillKey": "clawhub-metatextai-inference-api",
+  "name": "Metatextai Inference Api",
+  "summary": "Metatext.AI Inference API integration. Manage data, records, and automate workflows. Use when the user wants to interact with Metatext.AI Inference API data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.metatextai_inference_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Metatext.AI Inference API integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Metatext.AI Inference API data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/metatextai-inference-api@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "metatextai-inference-api",
+      "url": "https://clawhub.ai/skills/metatextai-inference-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "metatextai-inference-api",
+    "url": "https://clawhub.ai/skills/metatextai-inference-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/metatextai-inference-api-fcf5a22142617d7f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/metatextai-inference-api@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-metatextai-inference-api-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:84cb32e554edfddd8b2b7aad4a71dcfbeb808f00dd2ce29749c3367ffc0164a7",
+      "artifactSizeBytes": 1984
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:44:32.836Z"
+}

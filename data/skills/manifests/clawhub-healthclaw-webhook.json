@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31108,
+  "uuid": "skill-clawhub-healthclaw-webhook",
+  "skillKey": "clawhub-healthclaw-webhook",
+  "name": "Skill",
+  "summary": "Streams Apple Health data via a local webhook server to enable AI analysis, recovery scores, anomaly alerts, and health trend queries.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.healthclaw_webhook",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "crxiaobailiu-gif",
+      "features": [
+        "Streams Apple Health data via a local webhook server to enable AI analysis, recovery scores, an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/healthclaw-webhook@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264762413?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "healthclaw-webhook",
+      "url": "https://clawhub.ai/skills/healthclaw-webhook"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "healthclaw-webhook",
+    "url": "https://clawhub.ai/skills/healthclaw-webhook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/healthclaw-webhook-196dbdb552b90828.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/healthclaw-webhook@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-healthclaw-webhook-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ee638a81eca33a8e4aab9b9afe105a77288a0bc85980decad2419b47cbe28aa9",
+      "artifactSizeBytes": 2519
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T12:03:21.727Z"
+}

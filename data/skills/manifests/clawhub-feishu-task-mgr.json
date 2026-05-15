@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45390,
+  "uuid": "skill-clawhub-feishu-task-mgr",
+  "skillKey": "clawhub-feishu-task-mgr",
+  "name": "Feishu Task Manager",
+  "summary": "Manage Feishu tasks by creating, listing, completing, commenting, and organizing to-dos with assignees, due dates, and checklists.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_task_mgr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "a3152557994-ship-it",
+      "features": [
+        "Manage Feishu tasks by creating, listing, completing, commenting, and organizing to-dos with as."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-task-mgr@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/248589521?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-task-mgr",
+      "url": "https://clawhub.ai/skills/feishu-task-mgr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-task-mgr",
+    "url": "https://clawhub.ai/skills/feishu-task-mgr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-task-mgr-57ab9fd62c160463.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-task-mgr@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-task-mgr-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d6085b8e25061b818edde1d36a9496b139f8a7d244e5e7387d9a7c46d26c780",
+      "artifactSizeBytes": 1933
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T13:01:17.764Z"
+}

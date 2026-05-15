@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bicycle-shops@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bicycle_shops",
+  "skill": {
+    "id": 37022,
+    "skillKey": "clawhub-bicycle-shops",
+    "name": "Nearby Bicycle Shops"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bicycle-shops",
+    "url": "https://clawhub.ai/skills/bicycle-shops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bicycle-shops-2b7cbab3df865147.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find nearby bicycle shops. Invoke when user asks for bike shops near me."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codekungfu",
+      "userId": "s174hbct7jzfnq4tb6w04gnans83gh5h",
+      "displayName": "ClawKK",
+      "image": "https://avatars.githubusercontent.com/u/111570001?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774237643710,
+      "changelog": "Initial release of Nearby Bicycle Shops skill:\n\n- Find nearby bicycle shops based on user's location.\n- Supports filters like open_now, min_rating, and keywords.\n- Returns a standardized list of shops for easy integration.\n- Includes error handling for invalid input, excessive radius, provider outages, and rate limiting.\n- Protects user privacy and encourages short-term caching to reduce query frequency.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1ac5784507d84a6d645947f1c960d9910d5577b9ff5e9a115451b5827f41ddc5"
+}

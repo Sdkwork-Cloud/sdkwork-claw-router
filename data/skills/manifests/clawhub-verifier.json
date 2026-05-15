@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26142,
+  "uuid": "skill-clawhub-verifier",
+  "skillKey": "clawhub-verifier",
+  "name": "Verifier",
+  "summary": "Trust and evidence verification engine for claims, sources, screenshots, profiles, offers, and suspicious messages. Use whenever the user asks whether someth...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.verifier",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ProjectSnowWork",
+      "features": [
+        "Trust and evidence verification engine for claims, sources, screenshots, profiles, offers, and.",
+        "Use whenever the user asks whether someth..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/verifier@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/216470608?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "verifier",
+      "url": "https://clawhub.ai/skills/verifier"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "verifier",
+    "url": "https://clawhub.ai/skills/verifier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/verifier-88c9eae68eb300b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/verifier@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-verifier-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6c7a5545a1af3741547ebb89aea325fbc4cf58fbd97194fbbb386442b48a1469",
+      "artifactSizeBytes": 2098
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T14:58:17.336Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smart-data-scraper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_data_scraper",
+  "skill": {
+    "id": 61045,
+    "skillKey": "clawhub-smart-data-scraper",
+    "name": "Smart Data Scraper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-data-scraper",
+    "url": "https://clawhub.ai/skills/smart-data-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-data-scraper-a4ae6bd9ea4f6bd1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "数据抓取工具 - 从任何网站提取结构化数据"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dht9898-cell",
+      "userId": "publishers:dht9898-cell",
+      "displayName": "dht9898-cell",
+      "image": "https://avatars.githubusercontent.com/u/232001010?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 412,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774240568573,
+      "changelog": "Initial release of smart-data-scraper:\n\n- Automates extraction of structured data from any website.\n- Runs 24/7 with real-time monitoring and auto-optimization.\n- Supports integration with mainstream platforms via API.\n- Flexible configuration and easy customization.\n- Simple installation using clawhub.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:676581328101e145bbfb9beeed0286aa80a533931da7235a90daddbcfae49d6d"
+}

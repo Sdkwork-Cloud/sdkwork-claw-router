@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-compact@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_compact",
+  "skill": {
+    "id": 62633,
+    "skillKey": "clawhub-memory-compact",
+    "name": "memory-compact"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-compact",
+    "url": "https://clawhub.ai/skills/memory-compact",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-compact-4e7e633e7812f24c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "每日记忆自动压缩备份和关键点提取，每天早上 6:30 运行"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "garryfan-ai",
+      "userId": "s176zbq9mqqe3mffrmqnpp1jn583gpp9",
+      "displayName": "GarryFan-AI",
+      "image": "https://avatars.githubusercontent.com/u/194744048?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 435,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1773617169437,
+      "changelog": "memory-compact v1.0.5\n\n- Added detailed security certification section, highlighting no external risks and safe operation scope\n- Enhanced documentation on workflow, configuration, and usage with improved formatting and clarity\n- Clarified that all file operations are restricted to the workspace directory\n- README.md file added for user guidance",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c1ffd543931ab48bca17868e826ab6a4e24268ddddbdf873800989faac1b00e5"
+}

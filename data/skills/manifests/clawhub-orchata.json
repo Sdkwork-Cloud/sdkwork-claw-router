@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15259,
+  "uuid": "skill-clawhub-orchata",
+  "skillKey": "clawhub-orchata",
+  "name": "Orchata",
+  "summary": "Knowledge management and RAG platform with tree-based document indexing. Use this skill to search, browse, and manage Orchata knowledge bases via MCP tools.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.orchata",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ehudsn",
+      "features": [
+        "Knowledge management and RAG platform with tree-based document indexing",
+        "Use this skill to search, browse, and manage Orchata knowledge bases via MCP tools."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/orchata@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46681118?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "orchata",
+      "url": "https://clawhub.ai/skills/orchata"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "orchata",
+    "url": "https://clawhub.ai/skills/orchata",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/orchata-2be1f16f53fc043d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/orchata@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-orchata-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d0bb903f7d6e7747c178450014262af096383023ee242b5cea11598fb80dc8f",
+      "artifactSizeBytes": 2696
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T12:51:19.116Z"
+}

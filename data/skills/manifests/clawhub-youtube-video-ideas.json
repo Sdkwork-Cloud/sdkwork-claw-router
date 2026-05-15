@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21801,
+  "uuid": "skill-clawhub-youtube-video-ideas",
+  "skillKey": "clawhub-youtube-video-ideas",
+  "name": "Youtube Video Ideas",
+  "summary": "AI-powered YouTube video ideas generator. Generate viral video concepts, titles, and hooks.",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_video_ideas",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "icepopma",
+      "features": [
+        "AI-powered YouTube video ideas generator",
+        "Generate viral video concepts, titles, and hooks."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-video-ideas@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259024160?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-video-ideas",
+      "url": "https://clawhub.ai/skills/youtube-video-ideas"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-video-ideas",
+    "url": "https://clawhub.ai/skills/youtube-video-ideas",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-video-ideas-8c6c21aded1d1832.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-video-ideas@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-video-ideas-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b63a7fcf9a97ffb57052fb232d6b0add8f07df2776b29b078f84e000995aaa7b",
+      "artifactSizeBytes": 1946
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T16:34:09.565Z"
+}

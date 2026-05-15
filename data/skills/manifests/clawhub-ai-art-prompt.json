@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31606,
+  "uuid": "skill-clawhub-ai-art-prompt",
+  "skillKey": "clawhub-ai-art-prompt",
+  "name": "AI Art Prompt",
+  "summary": "Generates creative and detailed prompts for AI art generation based on user-specified themes.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_art_prompt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToolWeb",
+      "features": [
+        "Generates creative and detailed prompts for AI art generation based on user-specified themes."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-art-prompt@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245780162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-art-prompt",
+      "url": "https://clawhub.ai/skills/ai-art-prompt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-art-prompt",
+    "url": "https://clawhub.ai/skills/ai-art-prompt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-art-prompt-00aa15b070da0550.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-art-prompt@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-art-prompt-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:421e662fa1846f60a89658d0ab7e774ca9f75ae42af6e7474d856df7fcb91cda",
+      "artifactSizeBytes": 2186
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T07:42:56.225Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65266,
+  "uuid": "skill-clawhub-j-portfolio-monitor",
+  "skillKey": "clawhub-j-portfolio-monitor",
+  "name": "Portfolio Monitor | 投资组合监控",
+  "summary": "定期监控投资组合，检查持仓公司基本面变化，生成周报",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.j_portfolio_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jearrylee",
+      "features": [
+        "定期监控投资组合，检查持仓公司基本面变化，生成周报"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/j-portfolio-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/198688240?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "j-portfolio-monitor",
+      "url": "https://clawhub.ai/skills/j-portfolio-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "j-portfolio-monitor",
+    "url": "https://clawhub.ai/skills/j-portfolio-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/j-portfolio-monitor-a4f3950035ff81c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/j-portfolio-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-j-portfolio-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d8d461215a4c504942651cf2a1c5a5faf24bbb5950fbe4d78e00a2e65fa11fb",
+      "artifactSizeBytes": 1896
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T16:07:22.000Z"
+}

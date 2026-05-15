@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mfa@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mfa",
+  "skill": {
+    "id": 72784,
+    "skillKey": "clawhub-mfa",
+    "name": "Mfa"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mfa",
+    "url": "https://clawhub.ai/skills/mfa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mfa-cb0356a0532e824b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供中华人民共和国外交政策、国际关系、领事服务及海外安全提醒的官方信息查询。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 193,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776295441889,
+      "changelog": "- Updated skill focus and summary: The skill now offers a concise \"mfa 知识卡片\" for quick information.\n- Reworked content structure: Changed from detailed service features to a key facts table and practical usage tips.\n- Broadened application scenarios to include business decisions and academic research.\n- Added suggestions for further research via official and industry sources.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ee4ffd28cda30ca541fab0ecd38a725b8e3dae9b73aa0d2b2eb4567f52dab4eb"
+}

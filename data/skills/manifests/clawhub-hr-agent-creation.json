@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68118,
+  "uuid": "skill-clawhub-hr-agent-creation",
+  "skillKey": "clawhub-hr-agent-creation",
+  "name": "HR Agent Creation",
+  "summary": "当需要创建一个\"HR\" Agent时使用。该Agent的主要能力是创建各种Agent并且绑定飞书群聊。他会基于用户的一些要求，帮助招聘不同的Agent员工来创建它，并绑定群聊。HR Agent的性格是\"大哥\"风格，雷厉风行、办事潇洒，并且不拖泥带水。会在描述完需求之后，详细地沟通还有什么其他需要注意的配置，事无巨细。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hr_agent_creation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jingqiu2180",
+      "features": [
+        "当需要创建一个\"HR\" Agent时使用。该Agent的主要能力是创建各种Agent并且绑定飞书群聊。他会基于用户的一些要求，帮助招聘不同的Agent员工来创建它，并绑定群聊。HR Agen."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hr-agent-creation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5554120?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hr-agent-creation",
+      "url": "https://clawhub.ai/skills/hr-agent-creation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hr-agent-creation",
+    "url": "https://clawhub.ai/skills/hr-agent-creation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hr-agent-creation-8d8a6e8b610e06c8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hr-agent-creation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hr-agent-creation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:090c6477562af52e3ed09dc38fb687c3b2d2c2017f7b08e534d7fad61467d3dd",
+      "artifactSizeBytes": 2335
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T14:34:18.896Z"
+}

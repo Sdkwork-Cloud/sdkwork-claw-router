@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21543,
+  "uuid": "skill-clawhub-crypto-research-using-cmc-mcp",
+  "skillKey": "clawhub-crypto-research-using-cmc-mcp",
+  "name": "Crypto Research using CoinMarketCap MCP",
+  "summary": "Performs comprehensive due diligence on a cryptocurrency using CoinMarketCap MCP data. Use when users ask about a specific coin beyond just its price. This i...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_research_using_cmc_mcp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CoinMarketCap",
+      "features": [
+        "Performs comprehensive due diligence on a cryptocurrency using CoinMarketCap MCP data",
+        "Use when users ask about a specific coin beyond just its price",
+        "This i..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crypto-research-using-cmc-mcp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/158990050?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crypto-research-using-cmc-mcp",
+      "url": "https://clawhub.ai/skills/crypto-research-using-cmc-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-research-using-cmc-mcp",
+    "url": "https://clawhub.ai/skills/crypto-research-using-cmc-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-research-using-cmc-mcp-c29ef6b5de16a749.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crypto-research-using-cmc-mcp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crypto-research-using-cmc-mcp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e89ee97c455c26a0a6a982cae149178cfeb7107ec39961974c69d3c8a33b8545",
+      "artifactSizeBytes": 2483
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T13:37:07.789Z"
+}

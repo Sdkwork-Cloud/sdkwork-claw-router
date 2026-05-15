@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/market-sentiment-pulse@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.market_sentiment_pulse",
+  "skill": {
+    "id": 9355,
+    "skillKey": "clawhub-market-sentiment-pulse",
+    "name": "Market Sentiment Pulse"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "market-sentiment-pulse",
+    "url": "https://clawhub.ai/skills/market-sentiment-pulse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/market-sentiment-pulse-fdf2457866b61b33.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Aggregates and analyzes market sentiment for specific crypto or stock tickers by scanning news and social signals. Useful for quick vibe checks before trading."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "balkanblbn",
+      "userId": "publishers:balkanblbn",
+      "displayName": "balkanblbn",
+      "image": "https://avatars.githubusercontent.com/u/224807213?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3928,
+      "installsAllTime": 21,
+      "installsCurrent": 18,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772247436866,
+      "changelog": "Added sentiment analysis engine",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e1eeaa30d917753cc660f1273ad5bb304bc9db5ddf5cd06f17c1eb2af9e8b2fb"
+}

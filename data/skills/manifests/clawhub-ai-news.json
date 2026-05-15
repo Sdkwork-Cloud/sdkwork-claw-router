@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70006,
+  "uuid": "skill-clawhub-ai-news",
+  "skillKey": "clawhub-ai-news",
+  "name": "ai-news",
+  "summary": "每日新闻获取技能。通过 API 获取每日新闻摘要和详情，支持按日期查询、热点新闻排行、新闻详情阅读。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_news",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Victoria",
+      "features": [
+        "每日新闻获取技能。通过 API 获取每日新闻摘要和详情，支持按日期查询、热点新闻排行、新闻详情阅读。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-news@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/178981575?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-news",
+      "url": "https://clawhub.ai/skills/ai-news"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-news",
+    "url": "https://clawhub.ai/skills/ai-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-news-855267dff5bac8c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-news@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-news-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73cb2c83f32e6aacdeea3167a9b3de42b750207601e5cf94b037d83fbf1d477d",
+      "artifactSizeBytes": 2188
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T04:46:23.366Z"
+}

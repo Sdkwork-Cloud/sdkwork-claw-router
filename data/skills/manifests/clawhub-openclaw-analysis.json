@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59571,
+  "uuid": "skill-clawhub-openclaw-analysis",
+  "skillKey": "clawhub-openclaw-analysis",
+  "name": "Openclaw Analysis",
+  "summary": "用 OpenClaw 七大核心理念分析重大项目架构",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "horizoncove",
+      "features": [
+        "用 OpenClaw 七大核心理念分析重大项目架构"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/221652459?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-analysis",
+      "url": "https://clawhub.ai/skills/openclaw-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-analysis",
+    "url": "https://clawhub.ai/skills/openclaw-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-analysis-1199098df1317828.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7146ce98d39081661e6ec431e4ab5a6790b0fa68992daa16664042e8c807a20a",
+      "artifactSizeBytes": 2222
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T16:50:05.510Z"
+}

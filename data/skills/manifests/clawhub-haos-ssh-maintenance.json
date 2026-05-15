@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43386,
+  "uuid": "skill-clawhub-haos-ssh-maintenance",
+  "skillKey": "clawhub-haos-ssh-maintenance",
+  "name": "Haos Ssh Maintenance",
+  "summary": "Perform Home Assistant OS maintenance via SSH for direct file access, YAML edits, custom component inspection, shell troubleshooting, and interactive ha CLI...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.haos_ssh_maintenance",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Altair",
+      "features": [
+        "Perform Home Assistant OS maintenance via SSH for direct file access, YAML edits, custom compon."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/haos-ssh-maintenance@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1401591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "haos-ssh-maintenance",
+      "url": "https://clawhub.ai/skills/haos-ssh-maintenance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "haos-ssh-maintenance",
+    "url": "https://clawhub.ai/skills/haos-ssh-maintenance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/haos-ssh-maintenance-fd39a2646169f7ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/haos-ssh-maintenance@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-haos-ssh-maintenance-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0470cc2791235575ead8b1f84ae417622f5f1f2baac3d6569254947940c02a49",
+      "artifactSizeBytes": 2332
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T08:22:43.784Z"
+}

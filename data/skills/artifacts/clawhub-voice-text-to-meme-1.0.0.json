@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/voice-text-to-meme@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voice_text_to_meme",
+  "skill": {
+    "id": 69929,
+    "skillKey": "clawhub-voice-text-to-meme",
+    "name": "voice-text-to-meme"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voice-text-to-meme",
+    "url": "https://clawhub.ai/skills/voice-text-to-meme",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voice-text-to-meme-994b3051826f0998.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据输入法语音识别文本或润色后文本生成单张表情包图片。适用于用户想把一句话做成聊天可发送的表情包、meme 图、带字梗图或贴纸图时。支持原始语音文本和润色后文本两种输入，默认优先使用润色后文本；自动根据文本语气判断风格；默认直接生成带字图片，也支持生成无字图并同时给出配文模板；使用 doubao-seedream..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hei-maom",
+      "userId": "publishers:hei-maom",
+      "displayName": "HeiMaoM",
+      "image": "https://avatars.githubusercontent.com/u/145641200?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 315,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773479544671,
+      "changelog": "- Initial release of the \"voice-text-to-meme\" skill.\n- Converts speech-to-text input into a chat-friendly meme image.\n- Supports both original and polished text input, prioritizing polished text.\n- Auto-selects meme style based on input tone and intent.\n- By default, generates a single meme image with embedded caption; also supports generating caption-free images with separate caption templates.\n- Utilizes the doubao-seedream-4-5-251128 model for image generation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1e784d3b23b6b566bfc7245fb03e67fa67b5aacebbfd203e2a0ae5e7a896bc6c"
+}

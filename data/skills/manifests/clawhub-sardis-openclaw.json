@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24922,
+  "uuid": "skill-clawhub-sardis-openclaw",
+  "skillKey": "clawhub-sardis-openclaw",
+  "name": "Sardis Openclaw",
+  "summary": "Enable AI agents to make secure, policy-controlled payments through Sardis Payment OS",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sardis_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EfeDurmaz16",
+      "features": [
+        "Enable AI agents to make secure, policy-controlled payments through Sardis Payment OS"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sardis-openclaw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/75971010?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sardis-openclaw",
+      "url": "https://clawhub.ai/skills/sardis-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sardis-openclaw",
+    "url": "https://clawhub.ai/skills/sardis-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sardis-openclaw-f796d0a8c1502f06.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sardis-openclaw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sardis-openclaw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7a551757956fe57ef602528f1a0eca2182177ea321229922d28f1a367b62528b",
+      "artifactSizeBytes": 2284
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T12:24:26.826Z"
+}

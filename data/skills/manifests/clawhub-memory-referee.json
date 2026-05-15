@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36945,
+  "uuid": "skill-clawhub-memory-referee",
+  "skillKey": "clawhub-memory-referee",
+  "name": "memory-referee",
+  "summary": "Memory hygiene and adjudication layer for OpenClaw agent workflows. Deduplicates entities, resolves naming conflicts, separates facts from goals from specula...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_referee",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "honouralexwill",
+      "features": [
+        "Memory hygiene and adjudication layer for OpenClaw agent workflows",
+        "Deduplicates entities, resolves naming conflicts, separates facts from goals from specula..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-referee@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/213247219?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-referee",
+      "url": "https://clawhub.ai/skills/memory-referee"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-referee",
+    "url": "https://clawhub.ai/skills/memory-referee",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-referee-c25393808c8011eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-referee@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-referee-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ee6f65312d213c751e7b56b7b91b98cf20f957813b52a3e22d77ebd21a3a4514",
+      "artifactSizeBytes": 2351
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T01:46:37.134Z"
+}

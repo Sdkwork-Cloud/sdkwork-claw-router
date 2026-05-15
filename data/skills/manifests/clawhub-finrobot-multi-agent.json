@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67959,
+  "uuid": "skill-clawhub-finrobot-multi-agent",
+  "skillKey": "clawhub-finrobot-multi-agent",
+  "name": "Finrobot Multi Agent",
+  "summary": "多智能体金融分析平台，支持股票研究、市场预测、财报解读与量化回测策略构建，覆盖全球市场数据分析。",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finrobot_multi_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tang Weigang",
+      "features": [
+        "多智能体金融分析平台，支持股票研究、市场预测、财报解读与量化回测策略构建，覆盖全球市场数据分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/finrobot-multi-agent@0.3.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259277235?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "finrobot-multi-agent",
+      "url": "https://clawhub.ai/skills/finrobot-multi-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finrobot-multi-agent",
+    "url": "https://clawhub.ai/skills/finrobot-multi-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finrobot-multi-agent-ab29f31ab8113a5b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/finrobot-multi-agent@0.3.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-finrobot-multi-agent-0.3.3.json",
+      "version": "0.3.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:763e42f4dda0d721e5de6133b213c4f9c99dc7c527b17f169a664acba981a257",
+      "artifactSizeBytes": 2055
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T14:26:51.236Z"
+}

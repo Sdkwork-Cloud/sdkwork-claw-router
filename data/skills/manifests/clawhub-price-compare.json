@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29431,
+  "uuid": "skill-clawhub-price-compare",
+  "skillKey": "clawhub-price-compare",
+  "name": "Price Compare",
+  "summary": "Compare product prices across major US e-commerce platforms. Triggers when the user asks \"what's the best price for X\", \"compare prices\", \"where to buy [prod...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.price_compare",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lucasye378",
+      "features": [
+        "Compare product prices across major US e-commerce platforms",
+        "Triggers when the user asks \"what's the best price for X\", \"compare prices\", \"where to buy [pro."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/price-compare@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266547926?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "price-compare",
+      "url": "https://clawhub.ai/skills/price-compare"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "price-compare",
+    "url": "https://clawhub.ai/skills/price-compare",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/price-compare-e16f5bd982cd9f93.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/price-compare@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-price-compare-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:33805e7e407ee3e04cc3dd63544d0fdad4127cb040be862a1c89c0689a69e471",
+      "artifactSizeBytes": 2238
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T20:38:35.533Z"
+}

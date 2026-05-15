@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/asset-extension@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.asset_extension",
+  "skill": {
+    "id": 35555,
+    "skillKey": "clawhub-asset-extension",
+    "name": "Asset Extension"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "asset-extension",
+    "url": "https://clawhub.ai/skills/asset-extension",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/asset-extension-68147957b6929f0e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze how to extend and leverage existing assets. Use for growth strategy and resource optimization."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linuszz",
+      "userId": "s17e0e5q8g0sjf5mpwdq1sy65183gmj7",
+      "displayName": "linuszz",
+      "image": "https://avatars.githubusercontent.com/u/46770204?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 213,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773980579770,
+      "changelog": "- Initial release of asset-extension skill.\n- Provides a framework to analyze and extend existing business assets.\n- Includes asset types, extension options, and a value/utilization matrix.\n- Delivers standardized output for asset extension analysis, opportunities, and recommendations.\n- Offers practical tips for growth strategy and resource optimization.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:43b76db448a226b218cbccd8683764eda58e638e8404a90b31c447fe4e190396"
+}

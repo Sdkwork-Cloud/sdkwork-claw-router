@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24934,
+  "uuid": "skill-clawhub-zsxq-digest",
+  "skillKey": "clawhub-zsxq-digest",
+  "name": "ZSXQ Digest",
+  "summary": "Summarize recent posts from followed Knowledge Planet circles into a daily digest prioritizing key updates using local tokens or browser relay for access.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zsxq_digest",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sealiu1997",
+      "features": [
+        "Summarize recent posts from followed Knowledge Planet circles into a daily digest prioritizing."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zsxq-digest@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37955471?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zsxq-digest",
+      "url": "https://clawhub.ai/skills/zsxq-digest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zsxq-digest",
+    "url": "https://clawhub.ai/skills/zsxq-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zsxq-digest-6dd2abadbe25c4f6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zsxq-digest@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zsxq-digest-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:96608ee58fff550e16e36afb1e95957602c2227e49b4f0ba9e0678f8264f8869",
+      "artifactSizeBytes": 1944
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T14:10:34.751Z"
+}

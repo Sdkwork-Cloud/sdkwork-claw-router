@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59279,
+  "uuid": "skill-clawhub-execution-plan-splitter",
+  "skillKey": "clawhub-execution-plan-splitter",
+  "name": "Execution Plan Splitter",
+  "summary": "把大目标拆为 30/60/90 天执行路径、阶段成果、资源需求与放弃条件。；use for execution-plan, roadmap, 90-day workflows；do not use for 承诺无法验证的收益, 替代正式预算审批.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.execution_plan_splitter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "把大目标拆为 30/60/90 天执行路径、阶段成果、资源需求与放弃条件。；use for execution-plan, roadmap, 90-day workflows；do not."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/execution-plan-splitter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "execution-plan-splitter",
+      "url": "https://clawhub.ai/skills/execution-plan-splitter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "execution-plan-splitter",
+    "url": "https://clawhub.ai/skills/execution-plan-splitter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/execution-plan-splitter-53e522dd23b4f066.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/execution-plan-splitter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-execution-plan-splitter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b5ab0de9b9988003df52bdeb7bfbbf7eba5d0443c487e59153f0d4210367ff11",
+      "artifactSizeBytes": 2567
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T06:37:03.377Z"
+}

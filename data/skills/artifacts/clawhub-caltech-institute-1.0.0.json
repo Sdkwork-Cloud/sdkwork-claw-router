@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/caltech-institute@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.caltech_institute",
+  "skill": {
+    "id": 49667,
+    "skillKey": "clawhub-caltech-institute",
+    "name": "Caltech Institute"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "caltech-institute",
+    "url": "https://clawhub.ai/skills/caltech-institute",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/caltech-institute-09c1f249b6ed67b3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides in-depth insights into Caltech's elite education, Nobel laureates, JPL operations, and its impact on science and NASA space missions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 71,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778187992689,
+      "changelog": "- 首次发布 Caltech (加州理工学院) skill，涵盖历史、商业模式、护城河、关键数据和趣闻。\n- 提供详细时间线，突出 JPL 创立与运营、诺贝尔奖得主等里程碑。\n- 分析超小规模高等学府的学术地位与 NASA 合作优势。\n- 汇总师生比、科研经费、招生哲学等核心竞争力。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cd37120115f35f1b95eb1c2d89a9e3b7a808b7bf00388d1bc1a019c37f80f7f5"
+}

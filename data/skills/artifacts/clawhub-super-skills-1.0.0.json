@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/super-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.super_skills",
+  "skill": {
+    "id": 10374,
+    "skillKey": "clawhub-super-skills",
+    "name": "Decomposes complex user requests into executable subtasks, identifies required capabilities, searches for existing skills at sk."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "super-skills",
+    "url": "https://clawhub.ai/skills/super-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/super-skills-a34330bb937c6a0b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Decomposes complex user requests into executable subtasks, identifies required capabilities, searches for existing skills at skills.sh, and creates new skills when no solution exists. This skill should be used when the user submits a compl."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "10e9928a",
+      "userId": "s173hqfrbd6mvjnmfqwmhrksbd83k4x2",
+      "displayName": "10e9928a",
+      "image": "https://avatars.githubusercontent.com/u/99306962?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2578,
+      "installsAllTime": 7,
+      "installsCurrent": 6,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770276107164,
+      "changelog": "- Initial release of the \"task-decomposer\" skill.\n- Automatically breaks down complex user requests into executable subtasks.\n- Identifies required capabilities for each subtask using a universal capability taxonomy.\n- Searches for existing skills on skills.sh and maps them to tasks.\n- Creates new skills when no suitable solution is found in the skills ecosystem.\n- Provides a clear execution plan to automate workflows or manage large tasks.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a44a5c15c323a2eaeb686cdb2bbb9ac6afebe675740388353ccc5fd6b8f3ae88"
+}

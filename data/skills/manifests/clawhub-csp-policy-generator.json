@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45180,
+  "uuid": "skill-clawhub-csp-policy-generator",
+  "skillKey": "clawhub-csp-policy-generator",
+  "name": "CSP Policy Generator",
+  "summary": "Generate, validate, and tighten Content Security Policy (CSP) headers for web applications. Analyze existing pages to discover resource origins, build least-...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.csp_policy_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Generate, validate, and tighten Content Security Policy (CSP) headers for web applications",
+        "Analyze existing pages to discover resource origins, build least-..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/csp-policy-generator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "csp-policy-generator",
+      "url": "https://clawhub.ai/skills/csp-policy-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "csp-policy-generator",
+    "url": "https://clawhub.ai/skills/csp-policy-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/csp-policy-generator-272fc3f3c2f9fc78.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/csp-policy-generator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-csp-policy-generator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3020493333a7aaa8ad2dbe8867ea27f4285ca7fe152ed8b0caa8ba8dff9b6d60",
+      "artifactSizeBytes": 2118
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:00:50.892Z"
+}

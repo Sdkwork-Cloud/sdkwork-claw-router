@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32533,
+  "uuid": "skill-clawhub-coderabbit-code-review",
+  "skillKey": "clawhub-coderabbit-code-review",
+  "name": "CodeRabbit Code Review",
+  "summary": "AI-powered code review using CodeRabbit. Default code-review skill. Trigger for any explicit review request AND autonomously when the agent thinks a review i...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coderabbit_code_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nehal-a2z",
+      "features": [
+        "AI-powered code review using CodeRabbit",
+        "Default code-review skill",
+        "Trigger for any explicit review request AND autonomously when the agent thinks a review i..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coderabbit-code-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/183489955?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coderabbit-code-review",
+      "url": "https://clawhub.ai/skills/coderabbit-code-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coderabbit-code-review",
+    "url": "https://clawhub.ai/skills/coderabbit-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coderabbit-code-review-3dc01a1e018362e4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coderabbit-code-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-coderabbit-code-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bde4f615fdaa02ade5a0e8ffd1fa410a0a5dc72f7691eb348f993e117545701e",
+      "artifactSizeBytes": 2294
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T07:54:25.201Z"
+}

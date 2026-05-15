@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/twilio-comms@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twilio_comms",
+  "skill": {
+    "id": 54276,
+    "skillKey": "clawhub-twilio-comms",
+    "name": "Twilio Comms"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twilio-comms",
+    "url": "https://clawhub.ai/skills/twilio-comms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twilio-comms-76120cd2c53b7486.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Twilio SMS, Voice, WhatsApp, and Verify (2FA) — send messages, make calls, and run verification flows from the CLI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fr3kstyle",
+      "userId": "publishers:fr3kstyle",
+      "displayName": "fr3kstyle",
+      "image": "https://avatars.githubusercontent.com/u/218435724?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 221,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774091591097,
+      "changelog": "SMS, Voice, WhatsApp, Verify/2FA via Twilio API",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d211c6b59e8eb5d5a63a53ac7959bc0c760e9172146e725de7d9f9ac7b677f45"
+}

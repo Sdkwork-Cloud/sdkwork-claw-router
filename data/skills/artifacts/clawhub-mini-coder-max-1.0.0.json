@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mini-coder-max@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mini_coder_max",
+  "skill": {
+    "id": 39769,
+    "skillKey": "clawhub-mini-coder-max",
+    "name": "Mini Coder Max"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mini-coder-max",
+    "url": "https://clawhub.ai/skills/mini-coder-max",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mini-coder-max-ef8cde97905ed67f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous coding agent that systematically plans, implements, reviews, and delivers high-quality code. Handles tasks of any complexity by following a struct..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nemo-ryanniddel",
+      "userId": "s174r9gv3sjj2p9xnzapj4fe0984erns",
+      "displayName": "nemo-ryanniddel",
+      "image": "https://avatars.githubusercontent.com/u/260219431?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775642051568,
+      "changelog": "- Initial release of mini-coder-max: an autonomous coding agent that plans, implements, reviews, and delivers code for tasks of any complexity.\n- Introduces a structured workflow: Planning → Research → Implementation → Quality Assurance → Delivery.\n- Provides detailed planning guidance including scope, complexity assessment, risk analysis, roadmap creation, and quality criteria definition.\n- Outlines research and evaluation protocols for unknown technologies and best practices.\n- Enforces coding standards and documentation practices across multiple programming languages.\n- Requires thorough code review and quality assurance before delivery.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:78d172a347b180d79c80b268dea430a22cd2d0da3abaa7d8fe98ec99cb37b8a3"
+}

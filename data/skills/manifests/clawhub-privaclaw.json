@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52873,
+  "uuid": "skill-clawhub-privaclaw",
+  "skillKey": "clawhub-privaclaw",
+  "name": "PrivaClaw",
+  "summary": "Secure outbound-only relay for remote OpenClaw control — no exposed ports, no SSH, no Telegram.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.privaclaw",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jason Czarnecki",
+      "features": [
+        "Secure outbound-only relay for remote OpenClaw control — no exposed ports, no SSH, no Telegram."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/privaclaw@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/118073592?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "privaclaw",
+      "url": "https://clawhub.ai/skills/privaclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "privaclaw",
+    "url": "https://clawhub.ai/skills/privaclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/privaclaw-8422c1ca0cf1f71d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/privaclaw@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-privaclaw-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e58482a8420943d1a015f2a847b21d883ea8b22e60542328d80d0ca1195077b8",
+      "artifactSizeBytes": 2201
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T23:47:11.403Z"
+}

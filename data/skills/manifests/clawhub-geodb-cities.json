@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24596,
+  "uuid": "skill-clawhub-geodb-cities",
+  "skillKey": "clawhub-geodb-cities",
+  "name": "Geodb Cities",
+  "summary": "GeoDB Cities integration. Manage Cities, Countries, Continents. Use when the user wants to interact with GeoDB Cities data.",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geodb_cities",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "GeoDB Cities integration",
+        "Manage Cities, Countries, Continents",
+        "Use when the user wants to interact with GeoDB Cities data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/geodb-cities@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "geodb-cities",
+      "url": "https://clawhub.ai/skills/geodb-cities"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geodb-cities",
+    "url": "https://clawhub.ai/skills/geodb-cities",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geodb-cities-b32a97abcc19adaf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/geodb-cities@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-geodb-cities-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d397e9434e65f5941e7d8b9e5c35d6c1c588be057fcb1b61c1cac2d6931d3b0",
+      "artifactSizeBytes": 1866
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:29:40.758Z"
+}

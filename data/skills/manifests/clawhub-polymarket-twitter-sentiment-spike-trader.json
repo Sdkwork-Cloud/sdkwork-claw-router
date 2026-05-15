@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31717,
+  "uuid": "skill-clawhub-polymarket-twitter-sentiment-spike-trader",
+  "skillKey": "clawhub-polymarket-twitter-sentiment-spike-trader",
+  "name": "Polymarket Twitter Sentiment Spike Trader",
+  "summary": "Detects crisis and news spikes across other Polymarket markets and adjusts expected posting rates upward for post-count bins. Requires SIMMER_API_KEY and sim...",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_twitter_sentiment_spike_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "diagnostikon",
+      "features": [
+        "Detects crisis and news spikes across other Polymarket markets and adjusts expected posting rat.",
+        "Requires SIMMER_API_KEY and sim..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-twitter-sentiment-spike-trader@0.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17246180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-twitter-sentiment-spike-trader",
+      "url": "https://clawhub.ai/skills/polymarket-twitter-sentiment-spike-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-twitter-sentiment-spike-trader",
+    "url": "https://clawhub.ai/skills/polymarket-twitter-sentiment-spike-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-twitter-sentiment-spike-trader-45b2d612330377a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-twitter-sentiment-spike-trader@0.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-twitter-sentiment-spike-trader-0.0.3.json",
+      "version": "0.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9747192421ad2b6b09396b74061133cbb05304c8ddc0a6693a6214039fe3abed",
+      "artifactSizeBytes": 2117
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T14:32:17.215Z"
+}

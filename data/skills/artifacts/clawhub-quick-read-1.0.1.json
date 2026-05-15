@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quick-read@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quick_read",
+  "skill": {
+    "id": 31004,
+    "skillKey": "clawhub-quick-read",
+    "name": "quick-read"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quick-read",
+    "url": "https://clawhub.ai/skills/quick-read",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quick-read-c76428c1b6764701.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Quickly extract the key points from a book or article and organize them into structured markdown notes. Use this when the user asks for a summary of a book o..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenyichu86",
+      "userId": "s170g3jgarda7fzs0mcwfr9j7183j07d",
+      "displayName": "chenyichu86",
+      "image": "https://avatars.githubusercontent.com/u/33452235?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 263,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774437516255,
+      "changelog": "- Added full English translation of the skill documentation and prompt templates.\n- Clarified instructions, workflow, and output structure for broader accessibility.\n- Updated example scenarios and quality standards for clarity.\n- No code or logic changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:97ca58b77ff6203b63b1f0663f5f97e0fa285fbe0e2472b016920d19fb334b32"
+}

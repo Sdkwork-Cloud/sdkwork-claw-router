@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/keyue-call@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.keyue_call",
+  "skill": {
+    "id": 60832,
+    "skillKey": "clawhub-keyue-call",
+    "name": "keyue-call"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "keyue-call",
+    "url": "https://clawhub.ai/skills/keyue-call",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/keyue-call-dcdb10d97f9d6978.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过百度 AIOB 的获取 Token 与实时任务接口创建外呼任务。适用于：立即拨打电话、定时提醒电话（例如 5 分钟后拨打）、以及需要把用户意图整理为 dialogVar.name、dialogVar.owner_name 和 dialogVar.user_intent 后再发起外呼的场景；也适合通过脚本自动化..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangchengzc",
+      "userId": "s173z1m4r29h63qgsp44y4gg3h83gbbh",
+      "displayName": "zhangchengzc",
+      "image": "https://avatars.githubusercontent.com/u/8746919?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1260,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 33,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1773973974989,
+      "changelog": "keyue-call 1.0.5\n\n- No file or functionality changes detected in this release.\n- Documentation remains unchanged from the previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ee06f5f2d55256a4134f116db3fdc3367b2290a28759b207f5c73a5aa6b1db93"
+}

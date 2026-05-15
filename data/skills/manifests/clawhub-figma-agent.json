@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31986,
+  "uuid": "skill-clawhub-figma-agent",
+  "skillKey": "clawhub-figma-agent",
+  "name": "Figma Agent",
+  "summary": "Figma MCP integration for OpenClaw. Use when the user wants to read Figma designs, inspect design tokens/variables, work with Code Connect, or create/edit Fi...",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.figma_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Simeon",
+      "features": [
+        "Figma MCP integration for OpenClaw",
+        "Use when the user wants to read Figma designs, inspect design tokens/variables, work with Code."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/figma-agent@0.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/114735614?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "figma-agent",
+      "url": "https://clawhub.ai/skills/figma-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "figma-agent",
+    "url": "https://clawhub.ai/skills/figma-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/figma-agent-692e6e9036d7db90.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/figma-agent@0.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-figma-agent-0.3.0.json",
+      "version": "0.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d11a6769499aa73897695576d73dce5c90eba4a6a74d38b69456590778e39d08",
+      "artifactSizeBytes": 2385
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T10:12:58.102Z"
+}

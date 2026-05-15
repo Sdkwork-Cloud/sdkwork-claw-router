@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/afrexai-vendor-risk-assessment@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_vendor_risk_assessment",
+  "skill": {
+    "id": 33715,
+    "skillKey": "clawhub-afrexai-vendor-risk-assessment",
+    "name": "Vendor Risk Assessment"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-vendor-risk-assessment",
+    "url": "https://clawhub.ai/skills/afrexai-vendor-risk-assessment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-vendor-risk-assessment-340884b253ffc989.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Assess third-party vendor risk for AI and SaaS products. Evaluates security posture, data handling, compliance, financial stability, and operational resilien..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "afrexai-cto",
+      "userId": "s176d3cp92hzph7jd2dtka26md83h078",
+      "displayName": "afrexai-cto",
+      "image": "https://avatars.githubusercontent.com/u/261321054?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 233,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774249257485,
+      "changelog": "- Added detailed vendor risk assessment framework covering 6 risk dimensions: Security Posture, Data Handling & Privacy, Compliance & Certifications, Financial Stability, Operational Resilience, and Contractual Terms.\n- Defined when and how to use the skill, including required input and output formats.\n- Included a scoring methodology and weighted risk calculation based on data sensitivity.\n- Provided step-by-step research process and best practices for effective vendor assessment.\n- Outlined actionable pro tips and mitigation strategies for risk management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:be0228cf9b04693e547df0324b33556bd5a4bbf1508508c461bbbc4412fd1586"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9519,
+  "uuid": "skill-clawhub-prompt-log",
+  "skillKey": "clawhub-prompt-log",
+  "name": "Prompt Log",
+  "summary": "Extract conversation transcripts from AI coding session logs (Clawdbot, Claude Code, Codex). Use when asked to export prompt history, session logs, or transcripts from .jsonl session files.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_log",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "thesash",
+      "features": [
+        "Extract conversation transcripts from AI coding session logs (Clawdbot, Claude Code, Codex)",
+        "Use when asked to export prompt history, session logs, or transcripts from .jsonl session files."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prompt-log@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1166151?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prompt-log",
+      "url": "https://clawhub.ai/skills/prompt-log"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-log",
+    "url": "https://clawhub.ai/skills/prompt-log",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-log-74e9ac7539aafda1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prompt-log@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-prompt-log-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:05a16d42f0d59b9223861bf9ed65850f1a038c11419c037ddfcb4c69414c2e28",
+      "artifactSizeBytes": 2193
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-13T05:51:13.035Z"
+}

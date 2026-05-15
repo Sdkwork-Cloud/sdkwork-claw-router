@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kimiclaw-bridge@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kimiclaw_bridge",
+  "skill": {
+    "id": 52965,
+    "skillKey": "clawhub-kimiclaw-bridge",
+    "name": "KimiClaw Bridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kimiclaw-bridge",
+    "url": "https://clawhub.ai/skills/kimiclaw-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kimiclaw-bridge-3919cee9d5aa4063.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "KimiClaw Bridge: Connect OpenClaw to Kimi K2.5 — the free, Anthropic-compatible coding model. One config change to run Claude Code, spawn coding agents, or c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jack-yang-ai",
+      "userId": "s17fy463zpx7rzw9znpvr534m183htbb",
+      "displayName": "Jack-Yang-ai",
+      "image": "https://avatars.githubusercontent.com/u/224765952?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774356140192,
+      "changelog": "KimiClaw Bridge v1.0: Connect OpenClaw to Kimi K2.5. One-click setup for OpenClaw provider, Claude Code CLI, and ACP coding agents. Bilingual EN+CN.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0acf303daea50ac797fab9ce49ab59c73b4addb6aa90301eace4463231ab7d8b"
+}

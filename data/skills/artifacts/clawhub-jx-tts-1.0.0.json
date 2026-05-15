@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jx-tts@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jx_tts",
+  "skill": {
+    "id": 39121,
+    "skillKey": "clawhub-jx-tts",
+    "name": "tts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jx-tts",
+    "url": "https://clawhub.ai/skills/jx-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jx-tts-d55dd4fcb3d67ee0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert text to speech using SkillBoss API Hub. Use when the user asks for an audio message, a voice reply, or to hear something \"of vive voix\"."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kirkraman",
+      "userId": "s171c4e2zwz2yy69j6tp9xcfc184vnxz",
+      "displayName": "KirkRaman",
+      "image": "https://avatars.githubusercontent.com/u/255880392?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 181,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776683664416,
+      "changelog": "Initial release of the jx-tts skill.\n\n- Converts text to speech and generates MP3 audio files via the SkillBoss API Hub.\n- Supports primary (alloy) and alternative (nova) voices.\n- Requires the SKILLBOSS_API_KEY environment variable.\n- Provides command-line usage examples and integration instructions.\n- Outputs file paths for use with the message tool.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:259e5bd6e6534e030e395e2bccc015dfb77dcd237dd6d0f60edc3ec36da2370e"
+}

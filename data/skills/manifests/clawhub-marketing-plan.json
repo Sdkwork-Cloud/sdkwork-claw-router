@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20586,
+  "uuid": "skill-clawhub-marketing-plan",
+  "skillKey": "clawhub-marketing-plan",
+  "name": "Marketing Plan",
+  "summary": "Marketing plan generator with web research and Word output. Use when user needs to create marketing plans, promotional campaigns, social media strategies. Fe...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.marketing_plan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToBeWin",
+      "features": [
+        "Marketing plan generator with web research and Word output",
+        "Use when user needs to create marketing plans, promotional campaigns, social media strategies"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/marketing-plan@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/145168989?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "marketing-plan",
+      "url": "https://clawhub.ai/skills/marketing-plan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "marketing-plan",
+    "url": "https://clawhub.ai/skills/marketing-plan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/marketing-plan-df4e06a025041563.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/marketing-plan@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-marketing-plan-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:34df4ee33b443da3abfcbdc2662c25c0f6dc96c59717d7d1372de685e3432ca8",
+      "artifactSizeBytes": 1902
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T02:14:14.524Z"
+}

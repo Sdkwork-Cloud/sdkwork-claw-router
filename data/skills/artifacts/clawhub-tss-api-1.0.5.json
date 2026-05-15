@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tss-api@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tss_api",
+  "skill": {
+    "id": 72081,
+    "skillKey": "clawhub-tss-api",
+    "name": "tss-api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tss-api",
+    "url": "https://clawhub.ai/skills/tss-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tss-api-305b7a9998c14b46.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供跨链交易查询服务，包括获取交易高度、交易列表、订单和交易哈希对应的详细跨链交易记录与状态。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lbtsm",
+      "userId": "s173btr78pwygm4wanfj0ezk1h83h9b6",
+      "displayName": "map",
+      "image": "https://avatars.githubusercontent.com/u/30146448?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 297,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1774515849765,
+      "changelog": "- Initial release of the Compass TSS API skill documentation (v1.0.5).\n- Provides detailed API endpoints for cross-chain transaction queries, including order and transaction lookup, status codes, and data models.\n- Endpoints support querying by chainId, block height, orderId, and txHash.\n- Includes clear descriptions of request parameters, response formats, error codes, and example usages.\n- Covers functions such as querying highest scanned block, pending transactions, and detailed transaction records.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d366af3cd814b2bae5dab40e6527fe361d8726725f722d4b2c130d2df4e7ba40"
+}

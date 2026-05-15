@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27100,
+  "uuid": "skill-clawhub-google-analytics-ga4",
+  "skillKey": "clawhub-google-analytics-ga4",
+  "name": "Google-analytics-GA4",
+  "summary": "Query Google Analytics GA4 properties for realtime and historical user metrics, dimensions, and metadata using the official Data API.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_analytics_ga4",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "whao",
+      "features": [
+        "Query Google Analytics GA4 properties for realtime and historical user metrics, dimensions, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-analytics-ga4@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16221204?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-analytics-ga4",
+      "url": "https://clawhub.ai/skills/google-analytics-ga4"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-analytics-ga4",
+    "url": "https://clawhub.ai/skills/google-analytics-ga4",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-analytics-ga4-3d1df6c1549814dc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-analytics-ga4@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-analytics-ga4-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b58595110f97652fad70cd49aa2286dba0cba7d8a4f1ef5329c6716be46f475",
+      "artifactSizeBytes": 1975
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T10:00:09.630Z"
+}

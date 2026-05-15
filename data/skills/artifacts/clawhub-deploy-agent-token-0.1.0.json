@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deploy-agent-token@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deploy_agent_token",
+  "skill": {
+    "id": 20996,
+    "skillKey": "clawhub-deploy-agent-token",
+    "name": "Uniswap Deploy Agent Token"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deploy-agent-token",
+    "url": "https://clawhub.ai/skills/deploy-agent-token",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deploy-agent-token-6ad29a0c307a76a4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deploy an agent token with a Uniswap V4 pool — handles pool creation with configurable hooks (anti-snipe, dynamic fees, revenue share), initial liquidity bootstrapping, LP locking, and post-deployment monitoring. Use when the user wants to."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wpank",
+      "userId": "publishers:wpank",
+      "displayName": "wpank",
+      "image": "https://avatars.githubusercontent.com/u/9498646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 869,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770745412765,
+      "changelog": "Initial release – deploy and monitor a new agent token with Uniswap V4 pool creation, hooks, and liquidity bootstrapping.\n\n- Automates full token launch: pool creation, configurable launch hooks, initial liquidity, LP locking, and early monitoring.\n- Supports anti-snipe, dynamic fees, and revenue share hooks; defaults to anti-snipe protection.\n- Delegates all deployment steps to the token-deployer agent for safety and robust configuration.\n- User specifies token address, paired token, chain, pricing and liquidity targets, and hook settings.\n- Returns a complete deployment report with pool details, liquidity, LP lock status, and early trading data.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:26c1160eb350929b73b372ab2e71a10632a102135fb35eca1e38347c6aea273c"
+}

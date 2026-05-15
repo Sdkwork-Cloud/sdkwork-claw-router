@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vscode-node@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vscode_node",
+  "skill": {
+    "id": 14001,
+    "skillKey": "clawhub-vscode-node",
+    "name": "VS Code Node"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vscode-node",
+    "url": "https://clawhub.ai/skills/vscode-node",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vscode-node-2a329b745b586ef0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Operate on code through a VS Code/Cursor IDE connected as an OpenClaw Node. Provides 40+ commands for file operations, language intelligence, git, testing, d..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaoyaner0201",
+      "userId": "s1785gskknnt63nakfhmqr7rph83nm0y",
+      "displayName": "xiaoyaner0201",
+      "image": "https://avatars.githubusercontent.com/u/258399167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1149,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772089531945,
+      "changelog": "Fix ClawHub URLs to correct /{owner}/{slug} format",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1fc28a0b1879802b5f270355a6c8e43654b61b7e1a58133d0633d03fc4a92e0f"
+}

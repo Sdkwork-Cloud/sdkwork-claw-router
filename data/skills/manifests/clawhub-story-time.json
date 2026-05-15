@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20374,
+  "uuid": "skill-clawhub-story-time",
+  "skillKey": "clawhub-story-time",
+  "name": "StoryTime Interactive Fiction Engine",
+  "summary": "Choose-your-own-adventure interactive fiction through your agent. Pre-built stories and a framework for building your own.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.story_time",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shadow Rose",
+      "features": [
+        "Choose-your-own-adventure interactive fiction through your agent",
+        "Pre-built stories and a framework for building your own."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/story-time@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262919821?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "story-time",
+      "url": "https://clawhub.ai/skills/story-time"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "story-time",
+    "url": "https://clawhub.ai/skills/story-time",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/story-time-d65fbe6b9098dee2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/story-time@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-story-time-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b31c8a9982f868aa92348e904ac69150a13a06c6a9fd24ea1be1ce530b47e982",
+      "artifactSizeBytes": 1853
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T00:00:10.889Z"
+}

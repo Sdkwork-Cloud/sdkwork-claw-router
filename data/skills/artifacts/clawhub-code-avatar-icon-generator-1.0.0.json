@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/code-avatar-icon-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_avatar_icon_generator",
+  "skill": {
+    "id": 64349,
+    "skillKey": "clawhub-code-avatar-icon-generator",
+    "name": "Code Avatar Icon Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-avatar-icon-generator",
+    "url": "https://clawhub.ai/skills/code-avatar-icon-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-avatar-icon-generator-6b1d95164e584545.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "用代码生成高质量头像、App 图标与基础品牌图形。强调可控、可迭代、可导出，而不是随机黑盒出图。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tobewin",
+      "userId": "s174rz3f0862tcfw7pzfh5w8kn83hv2z",
+      "displayName": "ToBeWin",
+      "image": "https://avatars.githubusercontent.com/u/145168989?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 439,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774019350576,
+      "changelog": "- Initial release of code-avatar-icon-generator skill.\n- Generate high-quality avatars, app icons, and basic brand graphics through code.\n- Emphasizes controllable, iterative, and exportable results rather than random image generation.\n- Supports multiple export sizes and maintains visual clarity at small sizes.\n- Follows structured workflow with clear guidelines for style, use cases, and implementation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:801b93d1e1e62faf9c74fafb8d4173f8372d5a67ae10d7bc27e94aaca63da248"
+}

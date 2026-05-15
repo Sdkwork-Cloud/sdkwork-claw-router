@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/isp-throttle-detective@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.isp_throttle_detective",
+  "skill": {
+    "id": 37945,
+    "skillKey": "clawhub-isp-throttle-detective",
+    "name": "Isp Throttle Detective"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "isp-throttle-detective",
+    "url": "https://clawhub.ai/skills/isp-throttle-detective",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/isp-throttle-detective-cd0f53f8ef79509c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run speed tests to multiple endpoints, log results, and detect ISP throttling patterns. Use when the user mentions speed test, internet slow, ISP throttling,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "newageinvestments25-byte",
+      "userId": "s1750zbb4q7vnt30b4h3mhgarx83n6hn",
+      "displayName": "New Age Investments",
+      "image": "https://avatars.githubusercontent.com/u/243381911?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774868144184,
+      "changelog": "Initial release: Multi-endpoint speed testing with ISP throttling detection. Peak vs off-peak analysis, CDN discrimination reports, evidence generation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4de4b3b6dbb8bda925c0eba379b3ac92a041196a0a69a47ebc55dfe91b1138a8"
+}

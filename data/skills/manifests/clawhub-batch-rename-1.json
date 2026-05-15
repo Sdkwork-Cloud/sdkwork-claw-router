@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37148,
+  "uuid": "skill-clawhub-batch-rename-1",
+  "skillKey": "clawhub-batch-rename-1",
+  "name": "batch-rename",
+  "summary": "This skill should be used when the user wants to batch rename multiple files at once. It handles various rename patterns including sequential numbering, find...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.batch_rename_1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1227323804",
+      "features": [
+        "This skill should be used when the user wants to batch rename multiple files at once",
+        "It handles various rename patterns including sequential numbering, find..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/batch-rename-1@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43328708?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "batch-rename-1",
+      "url": "https://clawhub.ai/skills/batch-rename-1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "batch-rename-1",
+    "url": "https://clawhub.ai/skills/batch-rename-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/batch-rename-1-0477b46a88ba1555.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/batch-rename-1@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-batch-rename-1-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9dd3b1a79050207c91badb2b4677708026b7b04be7784f31184bff0c5870b1bc",
+      "artifactSizeBytes": 2426
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T07:06:44.805Z"
+}

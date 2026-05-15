@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13758,
+  "uuid": "skill-clawhub-sansfiction-library",
+  "skillKey": "clawhub-sansfiction-library",
+  "name": "Library",
+  "summary": "Authorized SansFiction library manager. Adds books to your library, updates reading status, logs progress, and can schedule a daily “how much did you read today?” check-in. Requires a SansFiction personal token (read/write).",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sansfiction_library",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fgbytes",
+      "features": [
+        "Authorized SansFiction library manager",
+        "Adds books to your library, updates reading status, logs progress, and can schedule a daily “ho.",
+        "Requires a SansFiction personal token (read/write)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sansfiction-library@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5557016?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sansfiction-library",
+      "url": "https://clawhub.ai/skills/sansfiction-library"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sansfiction-library",
+    "url": "https://clawhub.ai/skills/sansfiction-library",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sansfiction-library-a8269c3d215e4d9f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sansfiction-library@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sansfiction-library-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2af7681b42febd8a87c92329166024ed1f24a66dc185b66dae47dd4d1407651e",
+      "artifactSizeBytes": 1978
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T22:48:35.390Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-download@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_download",
+  "skill": {
+    "id": 18035,
+    "skillKey": "clawhub-youtube-download",
+    "name": "Youtube Download"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-download",
+    "url": "https://clawhub.ai/skills/youtube-download",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-download-9fe4e322aaf698fa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Downloads YouTube videos to ~/Downloads. Use when user wants to download a YouTube video to their machine."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bestisblessed",
+      "userId": "s179qhkgs0350567tyc17d8kg5858kzd",
+      "displayName": "bestisblessed",
+      "image": "https://avatars.githubusercontent.com/u/59031057?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1177,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 3,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1776854536849,
+      "changelog": "Fix yt-dlp option injection: add -- end-of-options separator before URL argument",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bd9cf76c1416c5a0fb93a60e87f69f423dbe18641bf79c543f2916941c2782d7"
+}

@@ -1,12 +1,12 @@
-use std::env;
+﻿use std::env;
 use std::time::{SystemTime, UNIX_EPOCH};
 
 use sdkwork_claw_product::infrastructure::sql::postgres::{
-    PostgresAppPlaygroundHistoryReadStore, PostgresBillingStore, PostgresGatewayUsageRecorder,
+    PostgresAppGenerationHistoryReadStore, PostgresBillingStore, PostgresGatewayUsageRecorder,
     PostgresPaymentCallbackStore,
 };
 use sdkwork_claw_product::ports::{
-    AppPlaygroundHistoryReadStore, AppPlaygroundHistorySubject, BillingStore, BillingSubject,
+    AppGenerationHistoryReadStore, AppGenerationHistorySubject, BillingStore, BillingSubject,
     GatewayUsageRecordCommand, GatewayUsageRecorder, PaymentCallbackCommand, PaymentCallbackStatus,
     PaymentCallbackStore, RedeemCodeCommand,
 };
@@ -238,15 +238,15 @@ async fn postgres_gateway_usage_recorder_preserves_non_pending_usage_fact_on_dup
 }
 
 #[tokio::test]
-async fn postgres_playground_history_loads_visible_statuses_without_sensitive_fields() {
-    let Some(ctx) = PostgresTestContext::new("playground_history").await else {
+async fn postgres_generation_history_loads_visible_statuses_without_sensitive_fields() {
+    let Some(ctx) = PostgresTestContext::new("generation_history").await else {
         return;
     };
-    seed_mixed_playground_history(&ctx.pool).await;
+    seed_mixed_generation_history(&ctx.pool).await;
 
-    let store = PostgresAppPlaygroundHistoryReadStore::new(ctx.pool.clone());
+    let store = PostgresAppGenerationHistoryReadStore::new(ctx.pool.clone());
     let items = store
-        .load_playground_history(Some(AppPlaygroundHistorySubject {
+        .load_generation_history(Some(AppGenerationHistorySubject {
             tenant_id: 10,
             organization_id: 20,
             user_id: 30,
@@ -295,7 +295,7 @@ async fn postgres_playground_history_loads_visible_statuses_without_sensitive_fi
     ] {
         assert!(
             !payload.contains(internal_value),
-            "Postgres playground history DTO must not expose internal field value: {internal_value}"
+            "Postgres generation history DTO must not expose internal field value: {internal_value}"
         );
     }
 
@@ -303,8 +303,8 @@ async fn postgres_playground_history_loads_visible_statuses_without_sensitive_fi
 }
 
 #[tokio::test]
-async fn postgres_playground_history_orders_newest_first_and_limits_to_100() {
-    let Some(ctx) = PostgresTestContext::new("playground_history_limit").await else {
+async fn postgres_generation_history_orders_newest_first_and_limits_to_100() {
+    let Some(ctx) = PostgresTestContext::new("generation_history_limit").await else {
         return;
     };
     for id in 1..=105_i64 {
@@ -325,9 +325,9 @@ async fn postgres_playground_history_orders_newest_first_and_limits_to_100() {
         .await;
     }
 
-    let store = PostgresAppPlaygroundHistoryReadStore::new(ctx.pool.clone());
+    let store = PostgresAppGenerationHistoryReadStore::new(ctx.pool.clone());
     let items = store
-        .load_playground_history(Some(AppPlaygroundHistorySubject {
+        .load_generation_history(Some(AppGenerationHistorySubject {
             tenant_id: 10,
             organization_id: 20,
             user_id: 30,
@@ -913,7 +913,7 @@ fn usage_command(request_id: &str, http_status: u16) -> GatewayUsageRecordComman
     }
 }
 
-async fn seed_mixed_playground_history(pool: &PgPool) {
+async fn seed_mixed_generation_history(pool: &PgPool) {
     insert_generation_asset(
         pool,
         101,

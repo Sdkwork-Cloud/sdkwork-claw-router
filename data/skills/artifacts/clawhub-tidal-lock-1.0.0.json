@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tidal-lock@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tidal_lock",
+  "skill": {
+    "id": 51491,
+    "skillKey": "clawhub-tidal-lock",
+    "name": "Tidal Lock"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tidal-lock",
+    "url": "https://clawhub.ai/skills/tidal-lock",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tidal-lock-d2f527cbb8cf1a0f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detects unhealthy coupling between components — when two modules, services, or layers have become gravitationally locked, unable to change independently. Lik..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jcools1977",
+      "userId": "publishers:jcools1977",
+      "displayName": "John DeVere Cooley",
+      "image": "https://avatars.githubusercontent.com/u/75928463?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 324,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772568138607,
+      "changelog": "Initial release — Coupling health analyzer mapping gravitational bonds between components",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3677c36db247df3270726ef8fd4cf56aed715c899aab1180239d88d603fec778"
+}

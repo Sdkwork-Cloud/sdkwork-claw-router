@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24107,
+  "uuid": "skill-clawhub-binance-query-token",
+  "skillKey": "clawhub-binance-query-token",
+  "name": "Binance Query Token",
+  "summary": "Query token details by keyword, contract address, or chain. Search tokens, get metadata and social links, retrieve real-time market data (price, price trend,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.binance_query_token",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "viktor-huang",
+      "features": [
+        "Query token details by keyword, contract address, or chain",
+        "Search tokens, get metadata and social links, retrieve real-time market data (price, price tren."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/binance-query-token@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/131138970?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "binance-query-token",
+      "url": "https://clawhub.ai/skills/binance-query-token"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "binance-query-token",
+    "url": "https://clawhub.ai/skills/binance-query-token",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/binance-query-token-5ce9da0bcd7aee8c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/binance-query-token@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-binance-query-token-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aed538c56fd2ea20c8409a8224ea72695ba95cb5225fde7a60b2b1c6bdeae188",
+      "artifactSizeBytes": 2300
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T06:52:57.151Z"
+}

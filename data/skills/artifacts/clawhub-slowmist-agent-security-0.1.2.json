@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/slowmist-agent-security@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slowmist_agent_security",
+  "skill": {
+    "id": 11150,
+    "skillKey": "clawhub-slowmist-agent-security",
+    "name": "SlowMist Agent Security"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slowmist-agent-security",
+    "url": "https://clawhub.ai/skills/slowmist-agent-security",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slowmist-agent-security-cf113835aa83b94d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive security review framework for AI agents. Covers skill/MCP installation, GitHub repos, URLs/documents, on-chain addresses, products/services, an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "slowmist",
+      "userId": "s17ebm2vbzwe8n9mvdn8gez9rh83g9zt",
+      "displayName": "SlowMist",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1243,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 10,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1774405099558,
+      "changelog": "- Downgraded version from 1.1.0 to 0.1.2 to align with intended release sequence.\n- No functional, documentation, or content changes introduced in this version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d141d9e3bb8c2025ea3f705955d94b554cf50b4f760aabac67c47274b0cd9962"
+}

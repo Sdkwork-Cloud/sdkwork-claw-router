@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66920,
+  "uuid": "skill-clawhub-wx-skill-factory",
+  "skillKey": "clawhub-wx-skill-factory",
+  "name": "Skill Factory",
+  "summary": "Skill工厂，AI作为规划层循环迭代生产新Skill（需求对齐→选档→设计→生成→测试→对比→迭代→交付），支持手动/半自动/全自动三档模式",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wx_skill_factory",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mwangxiang",
+      "features": [
+        "Skill工厂，AI作为规划层循环迭代生产新Skill（需求对齐→选档→设计→生成→测试→对比→迭代→交付），支持手动/半自动/全自动三档模式"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wx-skill-factory@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/127031609?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wx-skill-factory",
+      "url": "https://clawhub.ai/skills/wx-skill-factory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wx-skill-factory",
+    "url": "https://clawhub.ai/skills/wx-skill-factory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wx-skill-factory-688580a0811c2abe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wx-skill-factory@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wx-skill-factory-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b20f21125b9f93cfe01b67837c66c6294def956500a37306d1eae649c5ba4f1e",
+      "artifactSizeBytes": 2671
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T13:18:03.879Z"
+}

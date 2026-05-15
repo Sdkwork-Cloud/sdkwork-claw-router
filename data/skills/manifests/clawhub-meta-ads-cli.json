@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55049,
+  "uuid": "skill-clawhub-meta-ads-cli",
+  "skillKey": "clawhub-meta-ads-cli",
+  "name": "Meta Ads CLI - control your ad campaigns",
+  "summary": "Control Meta/Facebook/Instagram ads through Meta's official `meta ads ...` CLI. Use for read-only audits, reporting, safe planning, and approved one-step mut...",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meta_ads_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tristan Manchester",
+      "features": [
+        "Control Meta/Facebook/Instagram ads through Meta's official `meta ads ...` CLI",
+        "Use for read-only audits, reporting, safe planning, and approved one-step mut..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meta-ads-cli@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/108270628?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meta-ads-cli",
+      "url": "https://clawhub.ai/skills/meta-ads-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meta-ads-cli",
+    "url": "https://clawhub.ai/skills/meta-ads-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meta-ads-cli-baa963e9d66e1540.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meta-ads-cli@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meta-ads-cli-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:198abad360bd35470fc5b6c92896734f7cfed5a5b8c86a5e4a2aa4578ffc5d6a",
+      "artifactSizeBytes": 2638
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T20:10:55.984Z"
+}

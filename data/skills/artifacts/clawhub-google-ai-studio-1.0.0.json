@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-ai-studio@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_ai_studio",
+  "skill": {
+    "id": 53660,
+    "skillKey": "clawhub-google-ai-studio",
+    "name": "Google Ai Studio"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-ai-studio",
+    "url": "https://clawhub.ai/skills/google-ai-studio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-ai-studio-42467737cd0f659e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — use Gemini AI to summarize this video and generate a short highlight reel..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 123,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776408012446,
+      "changelog": "Initial release of Google AI Studio — Generate and Edit AI Videos.\n\n- Enables AI-powered video summarization and highlight generation using Google Gemini AI.\n- Supports uploading up to 500MB in MP4, MOV, WebM, AVI formats for server-side processing.\n- Automatic session and token management with easy cloud setup.\n- Simple prompts for tasks like editing, summarizing, or exporting video.\n- Fast turnaround: get processed video results within 30–90 seconds.\n- Includes quick balance checks, export actions, and detailed session status.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f3242dd36591b4a80c01afcd2aac380ff9a2eed6f0eea0dd70dd34e3c245610b"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63871,
+  "uuid": "skill-clawhub-openclaw-workflow-analyzer",
+  "skillKey": "clawhub-openclaw-workflow-analyzer",
+  "name": "Openclaw Workflow Analyzer",
+  "summary": "分析用户的工作流程，判断哪些环节可以用 OpenClaw（个人 AI Agent）自动化实现。 将工作流拆解为子流程，按 ⭐1-10 星难度阶梯评估可行性，对第三方数据依赖主动确认可用性， 给出先易后难的落地建议和学习路径。 触发词：分析工作流程、workflow analysis、哪些可以自动化、OpenCla...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_workflow_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fangshan101-coder",
+      "features": [
+        "分析用户的工作流程，判断哪些环节可以用 OpenClaw（个人 AI Agent）自动化实现。 将工作流拆解为子流程，按 ⭐1-10 星难度阶梯评估可行性，对第三方数据依赖主动确认可用性，."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-workflow-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267524233?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-workflow-analyzer",
+      "url": "https://clawhub.ai/skills/openclaw-workflow-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-workflow-analyzer",
+    "url": "https://clawhub.ai/skills/openclaw-workflow-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-workflow-analyzer-ed9489f1d6a1e7df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-workflow-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-workflow-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f51b5ba46c9098951217f2e71723cedec713ace60a1ae512b80ab88e561b2938",
+      "artifactSizeBytes": 2197
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T10:07:44.802Z"
+}

@@ -8,7 +8,7 @@ async fn dashboard_overview_route_returns_standard_empty_read_model_without_data
     let response = sdkwork_claw_app_api::router()
         .oneshot(
             Request::builder()
-                .uri("/app/v3/api/router/dashboard/overview?keyword=daily")
+                .uri("/app/v3/api/ai/dashboard/overview?time_range=daily")
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -47,11 +47,11 @@ async fn dashboard_overview_route_returns_standard_empty_read_model_without_data
 }
 
 #[tokio::test]
-async fn dashboard_overview_route_rejects_unsupported_keyword() {
+async fn dashboard_overview_route_rejects_unsupported_time_range() {
     let response = sdkwork_claw_app_api::router()
         .oneshot(
             Request::builder()
-                .uri("/app/v3/api/router/dashboard/overview?keyword=weekly")
+                .uri("/app/v3/api/ai/dashboard/overview?time_range=weekly")
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -60,7 +60,7 @@ async fn dashboard_overview_route_rejects_unsupported_keyword() {
 
     assert_standard_bad_request(
         response,
-        "dashboard overview keyword must be one of hourly, daily, monthly, yearly",
+        "dashboard overview time_range must be one of hourly, daily, monthly, yearly",
     )
     .await;
 }
@@ -70,7 +70,7 @@ async fn dashboard_overview_route_rejects_invalid_start_time() {
     let response = sdkwork_claw_app_api::router()
         .oneshot(
             Request::builder()
-                .uri("/app/v3/api/router/dashboard/overview?startTime=not-a-date")
+                .uri("/app/v3/api/ai/dashboard/overview?start_time=not-a-date")
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -79,7 +79,7 @@ async fn dashboard_overview_route_rejects_invalid_start_time() {
 
     assert_standard_bad_request(
         response,
-        "dashboard overview startTime must be a valid UTC timestamp",
+        "dashboard overview start_time must be a valid UTC timestamp",
     )
     .await;
 }
@@ -89,7 +89,7 @@ async fn dashboard_overview_route_rejects_reversed_time_range() {
     let response = sdkwork_claw_app_api::router()
         .oneshot(
             Request::builder()
-                .uri("/app/v3/api/router/dashboard/overview?startTime=2026-02-01T00:00:00Z&endTime=2026-01-01T00:00:00Z")
+                .uri("/app/v3/api/ai/dashboard/overview?start_time=2026-02-01T00:00:00Z&end_time=2026-01-01T00:00:00Z")
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -98,7 +98,7 @@ async fn dashboard_overview_route_rejects_reversed_time_range() {
 
     assert_standard_bad_request(
         response,
-        "dashboard overview endTime must be greater than or equal to startTime",
+        "dashboard overview end_time must be greater than or equal to start_time",
     )
     .await;
 }
@@ -108,7 +108,7 @@ async fn dashboard_overview_route_rejects_time_range_above_commercial_limit() {
     let response = sdkwork_claw_app_api::router()
         .oneshot(
             Request::builder()
-                .uri("/app/v3/api/router/dashboard/overview?keyword=yearly&startTime=2020-01-01T00:00:00Z&endTime=2026-01-01T00:00:00Z")
+                .uri("/app/v3/api/ai/dashboard/overview?time_range=yearly&start_time=2020-01-01T00:00:00Z&end_time=2026-01-01T00:00:00Z")
                 .body(Body::empty())
                 .unwrap(),
         )

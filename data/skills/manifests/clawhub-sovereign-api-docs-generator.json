@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14098,
+  "uuid": "skill-clawhub-sovereign-api-docs-generator",
+  "skillKey": "clawhub-sovereign-api-docs-generator",
+  "name": "API Documentation Generator",
+  "summary": "Auto-generates comprehensive API docs from code. REST, GraphQL, WebSocket with examples and schemas.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sovereign_api_docs_generator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ryudi84",
+      "features": [
+        "Auto-generates comprehensive API docs from code",
+        "REST, GraphQL, WebSocket with examples and schemas."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sovereign-api-docs-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67792598?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sovereign-api-docs-generator",
+      "url": "https://clawhub.ai/skills/sovereign-api-docs-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sovereign-api-docs-generator",
+    "url": "https://clawhub.ai/skills/sovereign-api-docs-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sovereign-api-docs-generator-e9e9197140dd32ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sovereign-api-docs-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sovereign-api-docs-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:61a9abed7e32ea131b1bf497377294387a1f5d8ef360351fa01d6c37346902ab",
+      "artifactSizeBytes": 2374
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T02:12:10.982Z"
+}

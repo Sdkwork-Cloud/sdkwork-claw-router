@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/binance-trading-assistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.binance_trading_assistant",
+  "skill": {
+    "id": 25167,
+    "skillKey": "clawhub-binance-trading-assistant",
+    "name": "Binance Trading Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "binance-trading-assistant",
+    "url": "https://clawhub.ai/skills/binance-trading-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/binance-trading-assistant-0aca61df45d81a81.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor Binance spot and futures balances, open positions with P&L, portfolio performance, and set price alerts via your AI assistant."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dagangtj",
+      "userId": "publishers:dagangtj",
+      "displayName": "dagangtj",
+      "image": "https://avatars.githubusercontent.com/u/65108318?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 383,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773695297309,
+      "changelog": "Binance Trading Assistant Skill 1.0.0\n\n- Initial release with support for Binance spot and futures accounts\n- Query balances, monitor real-time open positions and P&L\n- Track portfolio performance and set price alerts for cryptocurrencies\n- Simple setup with secure, read-only API key storage\n- Subscription required: $5/month via ClawHub",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e34b4c912cecb934efce1d0c01c4a416c4ec797063f423bfecb96b20cdc66d25"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65510,
+  "uuid": "skill-clawhub-lyft-company",
+  "skillKey": "clawhub-lyft-company",
+  "name": "Lyft Company",
+  "summary": "提供Lyft公司发展历程、商业模式、品牌差异化及与Waymo合作的自动驾驶网约车战略分析。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lyft_company",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供Lyft公司发展历程、商业模式、品牌差异化及与Waymo合作的自动驾驶网约车战略分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lyft-company@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lyft-company",
+      "url": "https://clawhub.ai/skills/lyft-company"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lyft-company",
+    "url": "https://clawhub.ai/skills/lyft-company",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lyft-company-8e20487acd45d1fe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lyft-company@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lyft-company-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e7986bcfd3fc0a93201f47ccd7b0b28d22f7bc1ee89b3ed4ae2935360cc9227b",
+      "artifactSizeBytes": 2175
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T12:07:28.020Z"
+}

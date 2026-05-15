@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16899,
+  "uuid": "skill-clawhub-greptile",
+  "skillKey": "clawhub-greptile",
+  "name": "Greptile",
+  "summary": "Query, search, and manage repositories indexed by Greptile (AI codebase intelligence). Use when asking questions about a codebase, searching for code pattern...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.greptile",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "iAhmadZain",
+      "features": [
+        "Query, search, and manage repositories indexed by Greptile (AI codebase intelligence)",
+        "Use when asking questions about a codebase, searching for code pattern..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/greptile@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9432748?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "greptile",
+      "url": "https://clawhub.ai/skills/greptile"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "greptile",
+    "url": "https://clawhub.ai/skills/greptile",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/greptile-b282d274ebe2e68d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/greptile@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-greptile-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a93575aded731b51454a0f87c7eaac121d3952e970fe23c8a3abf88defed5c62",
+      "artifactSizeBytes": 1912
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T09:24:32.179Z"
+}

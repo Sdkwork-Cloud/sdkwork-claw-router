@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/semantic-paper-radar@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.semantic_paper_radar",
+  "skill": {
+    "id": 14340,
+    "skillKey": "clawhub-semantic-paper-radar",
+    "name": "Semantic Paper Radar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "semantic-paper-radar",
+    "url": "https://clawhub.ai/skills/semantic-paper-radar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/semantic-paper-radar-9548f431db81992a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Semantic literature discovery and synthesis across arXiv/OpenAlex/PubMed (and optional Google Scholar adapters). Use when users ask for domain must-read pape..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rogerrrr18",
+      "userId": "s17etrbtda050n9s21fmgge5xx86a1w2",
+      "displayName": "Roger Yang",
+      "image": "https://avatars.githubusercontent.com/u/198148965?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1071,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772539204056,
+      "changelog": "Initial open-source release: arXiv/OpenAlex/PubMed semantic search, clickable links, milestones, HTML export.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ef43e03d95fbb9af3f5f4f534e17c3381423bb06e9753bdfbd1d9b6d311bd34f"
+}

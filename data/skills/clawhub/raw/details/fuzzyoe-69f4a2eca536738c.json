@@ -1,0 +1,37 @@
+{
+  "skill": {
+    "slug": "fuzzyoe",
+    "displayName": "VIN配件 模糊译码(车型)",
+    "summary": "使用积智数据模糊译码 API，通过 17 位 VIN 车架号的车型 与 待译码的配件别名列表, 模糊解出这些配件的 标准配件编码OE 与 标准配件名称等信息，用于当精准译码无法解析出配件编码OE 与 标准配件名称时。",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 212,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1774428643727,
+    "updatedAt": 1777623409130
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1774428643727,
+    "changelog": "jz-fuzzy-oe 1.0.0\n\n- Initial release providing VIN CARTYPE + PARTSNAME fuzzy decoding.\n- Enables lookup of standard OE part codes and names using a 17-character VIN and a list of part aliases, especially when exact decoding fails.\n- Requires JZ_API_KEY environment variable and access to external API service.\n- Includes command-line script with straightforward usage and error handling examples.\n- Documentation details API parameters, usage samples, and common error codes.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "polaris2013",
+    "userId": "s171hqr9bvzxxtfmbv266vthpd83hbhx",
+    "displayName": "Ju Yuan",
+    "image": "https://avatars.githubusercontent.com/u/5111899?v=4"
+  },
+  "moderation": null
+}

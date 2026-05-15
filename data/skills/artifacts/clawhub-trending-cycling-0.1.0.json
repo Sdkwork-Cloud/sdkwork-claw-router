@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trending-cycling@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trending_cycling",
+  "skill": {
+    "id": 73438,
+    "skillKey": "clawhub-trending-cycling",
+    "name": "网红骑行"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trending-cycling",
+    "url": "https://clawhub.ai/skills/trending-cycling",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trending-cycling-7db4030a0990ccb5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供关于网红骑行的推荐清单、打卡路线与指南。用户搜索网红骑行或规划相关出行时调用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codenova58",
+      "userId": "s173fekm3yw84k7gp861dme7dd83gvyf",
+      "displayName": "codenova58",
+      "image": "https://avatars.githubusercontent.com/u/191358186?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 225,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773970070240,
+      "changelog": "Initial release of 网红骑行 skill:\n\n- 提供网红骑行推荐清单、路线与指南\n- 支持多项筛选（难度、距离、海拔、路况、季节、气候等）\n- 返回详细信息（路线图、补给点、拍摄位、风险点等）\n- 内含实用示例请求与安全建议\n- 每周更新，紧跟网红路线热度和用户反馈",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4263250edbbbcc2075860d5776d756a3a98ffde21d464f223c6d33f1977824af"
+}

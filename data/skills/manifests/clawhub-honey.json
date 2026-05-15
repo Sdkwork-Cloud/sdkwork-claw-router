@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65770,
+  "uuid": "skill-clawhub-honey",
+  "skillKey": "clawhub-honey",
+  "name": "Honey优惠券助手",
+  "summary": "Honey（PayPal旗下）浏览器优惠券自动应用工具，自动在结算时测试所有可用优惠码，并提供Honey Gold返利积分。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.honey",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fangshan101-coder",
+      "features": [
+        "Honey（PayPal旗下）浏览器优惠券自动应用工具，自动在结算时测试所有可用优惠码，并提供Honey Gold返利积分。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/honey@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267524233?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "honey",
+      "url": "https://clawhub.ai/skills/honey"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "honey",
+    "url": "https://clawhub.ai/skills/honey",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/honey-a55e2e3846a51f6a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/honey@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-honey-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f3be814f1666b2209a6f151f174fe756531c602f9c513d89487ebe7d0898b0f",
+      "artifactSizeBytes": 1837
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T04:00:31.844Z"
+}

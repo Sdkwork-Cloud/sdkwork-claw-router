@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15471,
+  "uuid": "skill-clawhub-nextcloud-integration",
+  "skillKey": "clawhub-nextcloud-integration",
+  "name": "Nextcloud",
+  "summary": "Nextcloud integration. Manage Users, Groups, Files, Folders, Calendars, Contacts and more. Use when the user wants to interact with Nextcloud data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nextcloud_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Nextcloud integration",
+        "Manage Users, Groups, Files, Folders, Calendars, Contacts and more",
+        "Use when the user wants to interact with Nextcloud data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nextcloud-integration@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nextcloud-integration",
+      "url": "https://clawhub.ai/skills/nextcloud-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nextcloud-integration",
+    "url": "https://clawhub.ai/skills/nextcloud-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nextcloud-integration-3feae7a16a2b4b05.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nextcloud-integration@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-nextcloud-integration-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ef462aacb2f3bbaf47a70d79c76414a010cba27efafd7269e7dfa4e906d3b2a",
+      "artifactSizeBytes": 1942
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:46:41.043Z"
+}

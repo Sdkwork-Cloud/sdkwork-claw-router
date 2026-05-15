@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/studio-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.studio_video",
+  "skill": {
+    "id": 46966,
+    "skillKey": "clawhub-studio-video",
+    "name": "Studio Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "studio-video",
+    "url": "https://clawhub.ai/skills/studio-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/studio-video-a6956b88bdcbd342.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "edit raw video footage into polished studio videos with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators and marketers use it f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 120,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776444558058,
+      "changelog": "Initial release of studio-video: edit raw video footage into studio-quality exports via cloud AI.\n\n- Upload raw MP4, MOV, AVI, or WebM videos up to 500MB for cloud-based editing.\n- Automatic session/token management with 100 free credits for anonymous users.\n- Supports actions for edit, upload, preview, export, and checking credits/balance.\n- Fast AI-powered processing (1-2 minutes typical), exporting 1080p MP4 files.\n- Responsive error handling for expired tokens, quota, and unsupported files.\n- Designed for creators and marketers seeking quick, high-quality video turnarounds.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2238b01a4d09133b5bbe9bde2b7d50b7e9b9d92dfffea4a99ca0ceb5c945d965"
+}

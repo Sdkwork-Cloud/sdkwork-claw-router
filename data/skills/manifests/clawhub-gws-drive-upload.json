@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16959,
+  "uuid": "skill-clawhub-gws-drive-upload",
+  "skillKey": "clawhub-gws-drive-upload",
+  "name": "Gws Drive Upload",
+  "summary": "Google Drive: Upload a file with automatic metadata.",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gws_drive_upload",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Google Drive: Upload a file with automatic metadata."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gws-drive-upload@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gws-drive-upload",
+      "url": "https://clawhub.ai/skills/gws-drive-upload"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gws-drive-upload",
+    "url": "https://clawhub.ai/skills/gws-drive-upload",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gws-drive-upload-d586f16e4dc888e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gws-drive-upload@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-gws-drive-upload-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a3a62f32f39befb75595ca2ce34c6968fe890ca83ff541b1790b90ebb1194970",
+      "artifactSizeBytes": 1928
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:33:45.509Z"
+}

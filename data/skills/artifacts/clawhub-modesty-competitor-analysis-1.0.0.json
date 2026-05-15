@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/modesty-competitor-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.modesty_competitor_analysis",
+  "skill": {
+    "id": 39397,
+    "skillKey": "clawhub-modesty-competitor-analysis",
+    "name": "competitor-analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "modesty-competitor-analysis",
+    "url": "https://clawhub.ai/skills/modesty-competitor-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/modesty-competitor-analysis-000fe794ee558cc3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when the user asks to \"analyze competitors\", \"competitor SEO\", \"who ranks for\", \"competitive analysis\", \"what are my competitors do..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kirkraman",
+      "userId": "s171c4e2zwz2yy69j6tp9xcfc184vnxz",
+      "displayName": "KirkRaman",
+      "image": "https://avatars.githubusercontent.com/u/255880392?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776735085066,
+      "changelog": "- Major upgrade: richer, step-by-step guidelines for comprehensive competitor SEO and GEO analysis.\n- Expands triggers to support more user queries around competitor research and ranking.\n- Now covers keyword rankings, content strategies, backlink profiles, technical SEO, and AI citation patterns.\n- Offers specific instructions for both automated data integration and manual analysis.\n- Includes detailed competitor identification framework, output structure, and validation checklists.\n- Cross-references supporting resources and related skills for targeted benchmarking or gap analysis.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4f64607e8864b28aeef2ba120c696085aafde6e9f61cf073317f99f67e433a19"
+}

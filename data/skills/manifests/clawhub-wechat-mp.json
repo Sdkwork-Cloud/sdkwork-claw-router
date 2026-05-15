@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65108,
+  "uuid": "skill-clawhub-wechat-mp",
+  "skillKey": "clawhub-wechat-mp",
+  "name": "Wechat MP Article Stats Comments Suite - 微信公众号管理套件",
+  "summary": "公众号运营：发文到草稿、样式与封面、评论与用户管理、数据统计等。当用户说：把这篇 Markdown 发到公众号草稿、看下昨天阅读量统计，或类似公众号后台操作时，使用本技能。",
+  "version": "1.0.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_mp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "极速数据",
+      "features": [
+        "公众号运营：发文到草稿、样式与封面、评论与用户管理、数据统计等。当用户说：把这篇 Markdown 发到公众号草稿、看下昨天阅读量统计，或类似公众号后台操作时，使用本技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-mp@1.0.11",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30516426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-mp",
+      "url": "https://clawhub.ai/skills/wechat-mp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-mp",
+    "url": "https://clawhub.ai/skills/wechat-mp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-mp-4c7520f9440822ea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-mp@1.0.11",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-mp-1.0.11.json",
+      "version": "1.0.11",
+      "runtime": "metadata",
+      "checksumHash": "sha256:605bd8db7f19f0b7edc3f5b9eac5dd76663b13e2f25c8bb26837f785f2cf26e9",
+      "artifactSizeBytes": 2170
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T09:15:14.971Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/legado-book-source-developer@2.3.7",
+  "version": "2.3.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.legado_book_source_developer",
+  "skill": {
+    "id": 55060,
+    "skillKey": "clawhub-legado-book-source-developer",
+    "name": "Legado Book Source Developer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "legado-book-source-developer",
+    "url": "https://clawhub.ai/skills/legado-book-source-developer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/legado-book-source-developer-7ca0f0719fbc9284.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Legado (阅读) Android app book source development skill. For creating book sources for novel/manga websites, debugging existing book source rules, querying Leg..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuluoxci",
+      "userId": "s176k0a9h09ry65n48nqbnwet183vh2c",
+      "displayName": "yuluoxci",
+      "image": "https://avatars.githubusercontent.com/u/45326074?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "2.3.7",
+      "createdAt": 1775463928925,
+      "changelog": "v2.3.7: 移除user.js调试脚本(含base64 favicon被扫描器标记)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:630fb6215f58d1b339b3d5294b2f0071697a01690b6955654aa4f1073bb0e1c0"
+}

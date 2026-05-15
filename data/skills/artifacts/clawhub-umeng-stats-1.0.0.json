@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/umeng-stats@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.umeng_stats",
+  "skill": {
+    "id": 55778,
+    "skillKey": "clawhub-umeng-stats",
+    "name": "Umeng Stats"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "umeng-stats",
+    "url": "https://clawhub.ai/skills/umeng-stats",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/umeng-stats-a8e44858951f73cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Umeng (友盟) app statistics including U-APM crash/error data and U-App analytics. Covers: crash stats, ANR counts, error trends, affected users, daily ac..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fengerzh",
+      "userId": "s17d45e8rs498frv4a50tb087583gvtz",
+      "displayName": "Buzz Zhang",
+      "image": "https://avatars.githubusercontent.com/u/2883744?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 125,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776332953035,
+      "changelog": "Initial release: U-APM crash stats + U-App analytics for 20 apps",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:43f2d42c7825647d9a80fc672b00d604060dfc5bb6865399b456134515344874"
+}

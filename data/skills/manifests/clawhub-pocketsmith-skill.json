@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13111,
+  "uuid": "skill-clawhub-pocketsmith-skill",
+  "skillKey": "clawhub-pocketsmith-skill",
+  "name": "Manage PocketSmith transactions, categories, budgets and financial data",
+  "summary": "Manage PocketSmith transactions, categories, and financial data via the API",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pocketsmith_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lextoumbourou",
+      "features": [
+        "Manage PocketSmith transactions, categories, and financial data via the API"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pocketsmith-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1080552?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pocketsmith-skill",
+      "url": "https://clawhub.ai/skills/pocketsmith-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pocketsmith-skill",
+    "url": "https://clawhub.ai/skills/pocketsmith-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pocketsmith-skill-bee4ca76f7378ce1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pocketsmith-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pocketsmith-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b7eca2ac814268ff1b5659648436b5c01c9f504812a92d312967a520ca0144bd",
+      "artifactSizeBytes": 2399
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T19:55:14.048Z"
+}

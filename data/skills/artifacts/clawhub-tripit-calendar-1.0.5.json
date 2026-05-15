@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tripit-calendar@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tripit_calendar",
+  "skill": {
+    "id": 25666,
+    "skillKey": "clawhub-tripit-calendar",
+    "name": "Tripit Calendar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tripit-calendar",
+    "url": "https://clawhub.ai/skills/tripit-calendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tripit-calendar-746d410714a9e84c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read upcoming TripIt travel plans from a TripIt iCal feed; use for next trip, upcoming travel, itinerary, flight or hotel bookings already in TripIt; do not..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "caddytan",
+      "userId": "s17etfpf4er1zwg410bbjz475583k102",
+      "displayName": "caddytan",
+      "image": "https://avatars.githubusercontent.com/u/163805554?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 374,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1773665596123,
+      "changelog": "No code changes; documentation improved for clarity and usage.\n\n- SKILL.md expanded with clearer usage boundaries (when to use and not use the skill).\n- Setup and environment requirements detailed, including fallback behavior if env variable is missing.\n- Response handling instructions specify not to invent details and to clearly state when there are no upcoming trips.\n- Example user prompts and script commands provided.\n- Troubleshooting steps added for common setup issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a5bc9e92c8cd206674e6d5f45b801e0a71c2a1ce88780d8d6ae6479f9473c4dd"
+}

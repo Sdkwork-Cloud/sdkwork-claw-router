@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19970,
+  "uuid": "skill-clawhub-tikhub-social-media",
+  "skillKey": "clawhub-tikhub-social-media",
+  "name": "Tikhub Social Media",
+  "summary": "Query social media data via TikHub API (https://api.tikhub.io). Covers 20+ platforms: Douyin, TikTok, Xiaohongshu, Instagram, YouTube, Twitter/X, Threads, Re...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tikhub_social_media",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dr-xiaoming",
+      "features": [
+        "Query social media data via TikHub API (https://api.tikhub.io)",
+        "Covers 20+ platforms: Douyin, TikTok, Xiaohongshu, Instagram, YouTube, Twitter/X, Threads, Re..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tikhub-social-media@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/88608717?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tikhub-social-media",
+      "url": "https://clawhub.ai/skills/tikhub-social-media"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tikhub-social-media",
+    "url": "https://clawhub.ai/skills/tikhub-social-media",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tikhub-social-media-d532bf13744a95a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tikhub-social-media@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tikhub-social-media-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eac2908ef2f57cf16ab94eb22b5995ef6d5a8dcbb35729dad99e170bc669ca70",
+      "artifactSizeBytes": 2042
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T09:15:13.357Z"
+}

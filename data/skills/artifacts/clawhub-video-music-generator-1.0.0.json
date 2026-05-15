@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-music-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_music_generator",
+  "skill": {
+    "id": 47451,
+    "skillKey": "clawhub-video-music-generator",
+    "name": "Video Music Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-music-generator",
+    "url": "https://clawhub.ai/skills/video-music-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-music-generator-e3e161bea9ee61e9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate video clips into music-backed videos with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators use it for automatically ge..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 114,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777337813616,
+      "changelog": "Initial public release of Video Music Generator.\n\n- Generate AI-matched background music for your video clips (MP4, MOV, AVI, WebM up to 500MB).\n- Quick processing on cloud GPUs — typical render time 30-60 seconds, with 1080p MP4 output.\n- Simple setup: automatic session and token management for seamless onboarding with 100 free credits.\n- Supports common workflows including instant music generation, iterative edits, and batch processing.\n- Intuitive interface: route user prompts to upload, export, status, or credit actions.\n- Clear pipeline details, helpful error messages, and tips for optimal results.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fc66798bb88e79c19321bc160c61303186c5575be423f0fd4ccd257ecc4bdd8a"
+}

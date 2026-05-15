@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50322,
+  "uuid": "skill-clawhub-pump-mcp-server",
+  "skillKey": "clawhub-pump-mcp-server",
+  "name": "Pump MCP Server",
+  "summary": "Model Context Protocol server exposing 7 tools, 3 resource types, and 3 prompts for AI agent consumption — Solana wallet operations, vanity address generatio...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pump_mcp_server",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "speraxos",
+      "features": [
+        "Model Context Protocol server exposing 7 tools, 3 resource types, and 3 prompts for AI agent co."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pump-mcp-server@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/220422846?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pump-mcp-server",
+      "url": "https://clawhub.ai/skills/pump-mcp-server"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pump-mcp-server",
+    "url": "https://clawhub.ai/skills/pump-mcp-server",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pump-mcp-server-95a333ab2bf95228.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pump-mcp-server@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pump-mcp-server-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:45293d611989279b12ab7880d6a3ed92916de8f5e597d6f36151fbfe5b0f72ae",
+      "artifactSizeBytes": 2475
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T00:13:27.039Z"
+}

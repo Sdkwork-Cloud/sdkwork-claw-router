@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trip-plan@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trip_plan",
+  "skill": {
+    "id": 19139,
+    "skillKey": "clawhub-trip-plan",
+    "name": "Trip Plan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trip-plan",
+    "url": "https://clawhub.ai/skills/trip-plan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trip-plan-0ed01a1e05fa3ed2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate day-wise travel itineraries with timings, food spots, activities, and transport. Handles \"plan my trip\", \"make an itinerary\", revisions like \"swap d..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "swayamg20",
+      "userId": "publishers:swayamg20",
+      "displayName": "Swayam Gupta",
+      "image": "https://avatars.githubusercontent.com/u/77153230?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 586,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772350515255,
+      "changelog": "Trip Plan 1.0.0 — Initial Release\n\n- Generate detailed, day-wise travel itineraries with timings, activities, food spots, and transport.\n- Responds to requests like \"plan my trip\", \"make an itinerary\", and detailed user preferences or constraints.\n- Handles revisions such as swapping days, adding activities, making plans cheaper, or extending the trip.\n- Adjusts itinerary based on user’s existing flight or train timings.\n- Provides a clear itinerary format including budget breakdown and realistic daily schedules.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fd630b3c94ad085bf1a12bbeb919eef930704a4d12f61485ebb5e1057125a520"
+}

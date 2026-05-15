@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37092,
+  "uuid": "skill-clawhub-openclaw-optimize",
+  "skillKey": "clawhub-openclaw-optimize",
+  "name": "OpenClaw Optimize",
+  "summary": "Audit and optimize OpenClaw token usage, cron job efficiency, and agent performance. Use when user says \"optimize openclaw\", \"reduce token usage\", \"cron audi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_optimize",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mrmps",
+      "features": [
+        "Audit and optimize OpenClaw token usage, cron job efficiency, and agent performance",
+        "Use when user says \"optimize openclaw\", \"reduce token usage\", \"cron audi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-optimize@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41216139?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-optimize",
+      "url": "https://clawhub.ai/skills/openclaw-optimize"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-optimize",
+    "url": "https://clawhub.ai/skills/openclaw-optimize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-optimize-c10d254da3ddfad9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-optimize@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-optimize-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:167893ee5d919abbb87eaf3518f0f35aa1b50d2698f507608658ccdb582d5281",
+      "artifactSizeBytes": 2545
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T10:18:05.799Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66221,
+  "uuid": "skill-clawhub-foc-parameter-identifier",
+  "skillKey": "clawhub-foc-parameter-identifier",
+  "name": "Foc Parameter Identifier",
+  "summary": "FOC电机参数辨识助手 | 帮助进行FOC控制的电机参数测量和辨识，包括定子电阻R、dq电感L、磁链常数Ke、极对数、转动惯量J。提供阶跃响应测试、高频注入法、DC衰减法等实用辨识方案。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.foc_parameter_identifier",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yongjie666888",
+      "features": [
+        "FOC电机参数辨识助手 | 帮助进行FOC控制的电机参数测量和辨识，包括定子电阻R、dq电感L、磁链常数Ke、极对数、转动惯量J。提供阶跃响应测试、高频注入法、DC衰减法等实用辨识方案。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/foc-parameter-identifier@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/177016990?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "foc-parameter-identifier",
+      "url": "https://clawhub.ai/skills/foc-parameter-identifier"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "foc-parameter-identifier",
+    "url": "https://clawhub.ai/skills/foc-parameter-identifier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/foc-parameter-identifier-8627aea5f59fbcb6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/foc-parameter-identifier@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-foc-parameter-identifier-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b6d5be71df5522a35e323a980aa749374a067649c65c6d552ca78bc6521ebe05",
+      "artifactSizeBytes": 2102
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T16:53:22.490Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22527,
+  "uuid": "skill-clawhub-health-auto-log",
+  "skillKey": "clawhub-health-auto-log",
+  "name": "Health Auto Log",
+  "summary": "Automatically detect and log health data (weight, blood sugar, exercise) to AX3 system. Use when user sends health measurements via WhatsApp or other messagi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.health_auto_log",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "klcintw",
+      "features": [
+        "Automatically detect and log health data (weight, blood sugar, exercise) to AX3 system",
+        "Use when user sends health measurements via WhatsApp or other messagi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/health-auto-log@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61076?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "health-auto-log",
+      "url": "https://clawhub.ai/skills/health-auto-log"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "health-auto-log",
+    "url": "https://clawhub.ai/skills/health-auto-log",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/health-auto-log-65c8023d984ac62d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/health-auto-log@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-health-auto-log-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1b2a7bb662a2daa87493adae6b431bcc9c6ab19e1a95675168bf51a2a49e6340",
+      "artifactSizeBytes": 1885
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T04:32:41.560Z"
+}

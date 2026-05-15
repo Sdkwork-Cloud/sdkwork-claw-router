@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gitcode-api@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gitcode_api",
+  "skill": {
+    "id": 29669,
+    "skillKey": "clawhub-gitcode-api",
+    "name": "GitCode API Usage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gitcode-api",
+    "url": "https://clawhub.ai/skills/gitcode-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gitcode-api-5a6aac582d473f5c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides Python SDK access to GitCode REST API with sync/async clients, repo helpers, and CLI scripts for managing repos, pulls, users, and searches."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "trenza1ore",
+      "userId": "s17fkyygppevs0wt88954q57rs83hz0r",
+      "displayName": "Hugo",
+      "image": "https://avatars.githubusercontent.com/u/25863274?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777593027989,
+      "changelog": "Version 1.1.0\n\n- Added runtime resource introspection (`methods` and `method_signature(name)`) for all resource groups; details in `references/api-reference.md`.\n- Updated guidance on CLI usage: marked bundled CLI script as deprecated, with recommendation to use the package's built-in CLI and best practices for token handling.\n- Expanded documentation links, including direct links to hosted SDK quickstart and CLI documentation.\n- No code or file changes detected; updates apply to documentation and usage advice only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a9c100e4665807c91641908cab98998b1174e975978b3cb1a8be5815ca5910bd"
+}

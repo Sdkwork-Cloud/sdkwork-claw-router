@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/codex-autopilot@0.7.1",
+  "version": "0.7.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codex_autopilot",
+  "skill": {
+    "id": 19537,
+    "skillKey": "clawhub-codex-autopilot",
+    "name": "Codex Autopilot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codex-autopilot",
+    "url": "https://clawhub.ai/skills/codex-autopilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codex-autopilot-1abc891a1450ac58.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-model AI coding automation system with intelligent task routing and built-in CI/CD. Watchdog-driven loop that orchestrates Codex (backend) and Gemini (..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imwyvern",
+      "userId": "s17as2pe33fqm26ag8dqnwe0gx83gd3q",
+      "displayName": "wes",
+      "image": "https://avatars.githubusercontent.com/u/1765672?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 596,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.7.1",
+      "createdAt": 1774367818702,
+      "changelog": "Add test-agent CI/CD with auto-enqueue bugfix on failure, coverage ratchet, discord-notify retry, Gemini tmux as primary frontend routing",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5df3f54daffd586945972962535dd86165b18c88f68dcea2e6dc4c0805e53e18"
+}

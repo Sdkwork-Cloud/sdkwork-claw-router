@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-tiering@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_tiering",
+  "skill": {
+    "id": 8429,
+    "skillKey": "clawhub-memory-tiering",
+    "name": "Memory Tiering"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-tiering",
+    "url": "https://clawhub.ai/skills/memory-tiering",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-tiering-055149b169c14089.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated multi-tiered memory management (HOT, WARM, COLD). Use this skill to organize, prune, and archive context during memory operations or compactions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sarielwang93",
+      "userId": "publishers:sarielwang93",
+      "displayName": "SarielWang93",
+      "image": "https://avatars.githubusercontent.com/u/47969932?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 14721,
+      "installsAllTime": 134,
+      "installsCurrent": 126,
+      "stars": 9,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770556647573,
+      "changelog": "memory-tiering 1.0.0\n\n- Introduces dynamic, three-tiered memory management: HOT, WARM, and COLD.\n- Automates context organization, pruning, and archival using a structured workflow.\n- Supports both manual and automatic triggers (e.g., after compaction).\n- Enhances retrieval efficiency and context relevance by enforcing tier redistribution and summarization steps.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e8c4428521a07dbbf566ef29662f49bd43f999e75b986537139bd505fdce2903"
+}

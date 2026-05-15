@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68633,
+  "uuid": "skill-clawhub-tencentcloud-ocr-idcard",
+  "skillKey": "clawhub-tencentcloud-ocr-idcard",
+  "name": "TencentCloud IDCard OCR",
+  "summary": "腾讯云身份证识别(IDCardOCR)接口调用技能。当用户需要识别身份证图片中中国大陆居民二代身份证正反面信息（姓名、性别、民族、出生日期、住址、身份证号、签发机关、有效期限等）时,应使用此技能。支持图片Base64和URL两种输入方式,同时支持身份证图片照片裁剪和多种告警功能。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencentcloud_ocr_idcard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tencent-ocr",
+      "features": [
+        "腾讯云身份证识别(IDCardOCR)接口调用技能。当用户需要识别身份证图片中中国大陆居民二代身份证正反面信息（姓名、性别、民族、出生日期、住址、身份证号、签发机关、有效期限等）时,应使用此."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tencentcloud-ocr-idcard@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/246965649?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tencentcloud-ocr-idcard",
+      "url": "https://clawhub.ai/skills/tencentcloud-ocr-idcard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencentcloud-ocr-idcard",
+    "url": "https://clawhub.ai/skills/tencentcloud-ocr-idcard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencentcloud-ocr-idcard-b46b34c2aaca7636.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tencentcloud-ocr-idcard@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-tencentcloud-ocr-idcard-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fac9bd4bb567ccb0f20fbb3a468eac21ea4e5020a7aeac4095104476803f87e9",
+      "artifactSizeBytes": 2236
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T06:21:32.671Z"
+}

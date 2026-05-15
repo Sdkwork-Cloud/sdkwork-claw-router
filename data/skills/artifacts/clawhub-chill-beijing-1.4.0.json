@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chill-beijing@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chill_beijing",
+  "skill": {
+    "id": 66504,
+    "skillKey": "clawhub-chill-beijing",
+    "name": "Chill Beijing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chill-beijing",
+    "url": "https://clawhub.ai/skills/chill-beijing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chill-beijing-ee800319b2e47cfc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "北京下班及周末放松推荐助手 v1.4.0。工作日推荐电影、脱口秀、演出；周末推荐City Walk、京郊游、社交活动、演出。实时抓取猫眼/大麦/美团/小红书数据。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "caoyachao",
+      "userId": "s17c8nwvz269n17p2y4dc46xfn83kk1d",
+      "displayName": "caoyachao",
+      "image": "https://avatars.githubusercontent.com/u/13848791?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1775204408831,
+      "changelog": "v1.4.0: 重写推荐理由，每段都深入分析为什么值得去；实时抓取猫眼/大麦/美团/小红书数据；智能工作日/周末推荐",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:46cf20e2bbde495aa2e5f883c04b5180d9adc067455889e990bfa2e52fa56921"
+}

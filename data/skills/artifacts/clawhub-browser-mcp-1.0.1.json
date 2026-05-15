@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/browser-mcp@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_mcp",
+  "skill": {
+    "id": 63939,
+    "skillKey": "clawhub-browser-mcp",
+    "name": "browser-mcp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-mcp",
+    "url": "https://clawhub.ai/skills/browser-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-mcp-40653b6bc41a559b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 Chrome DevTools MCP 协议远程控制 Chrome 浏览器执行网页任务。当用户说\"打开网站\"、\"帮我搜索\"、\"点进去看看\"、\"查看详情\"、\"操作网页\"、\"打开 ChatGPT/Gemini\"等任何需要浏览器自动化执行的任务时触发。支持网站导航、元素交互、表单填写、多步骤跳转、信息提取、SSR..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nasvip",
+      "userId": "s178x05940fy53fdnnetb1w81583ke05",
+      "displayName": "Nasvip",
+      "image": "https://avatars.githubusercontent.com/u/208974317?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 216,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774420173929,
+      "changelog": "Remove personal information (username, IP addresses)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9af07277160f3ad5a37fb7739d44258e25944667dabb623675972c795b2eead5"
+}

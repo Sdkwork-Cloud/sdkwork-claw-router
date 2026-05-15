@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chapter-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chapter_generator",
+  "skill": {
+    "id": 44611,
+    "skillKey": "clawhub-chapter-generator",
+    "name": "Chapter Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chapter-generator",
+    "url": "https://clawhub.ai/skills/chapter-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chapter-generator-8daa2aa322911dd3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 45-minute tutorial video recording into 1080p chaptered video file just by typing what you need. Whether it's adding timestamped chapters to long YouT..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vynbosserman65",
+      "userId": "s175xbynxxje7z8y8jbn28x5vx84dckp",
+      "displayName": "vynbosserman65",
+      "image": "https://avatars.githubusercontent.com/u/208823770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776233691309,
+      "changelog": "Chapter Generator 1.0.0 — Initial Release\n\n- Instantly generate timestamped chaptered videos from long-form uploads, with 45-minute+ support.\n- Simple workflow: upload, describe results, receive a 1080p MP4 with chapters in under a minute.\n- Automatic backend session/token management with free credits for new users.\n- Supports chapter/timeline editing, BGM/text overlays, and cloud rendering on GPU nodes.\n- Handles file uploads (video, audio, images), download/export, credit check, and session status queries.\n- Comprehensive error handling and clear user messaging for every step.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6a96330b4fe681ef69c5425d5d9e237b8ec87cc868d108859e80424e7d465a35"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68867,
+  "uuid": "skill-clawhub-manual-to-solution",
+  "skillKey": "clawhub-manual-to-solution",
+  "name": "manual-to-solution操作手册转解决方案",
+  "summary": "将软件/系统操作手册转换为专业的系统解决方案建议书。适用场景： (1) 用户上传了一份操作手册/用户手册，要求转写为解决方案/方案建议书/投标方案 (2) 需要从\"功能描述\"升维为\"业务价值+技术架构+实施规划+ROI分析\"的完整方案 (3) 制作包含架构图、流程图、路线图等专业配图的方案文档 触发关键词：操作手...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.manual_to_solution",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kingluu",
+      "features": [
+        "将软件/系统操作手册转换为专业的系统解决方案建议书。适用场景： (1) 用户上传了一份操作手册/用户手册，要求转写为解决方案/方案建议书/投标方案 (2) 需要从\"功能描述\"升维为\"业务价值."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/manual-to-solution@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49439091?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "manual-to-solution",
+      "url": "https://clawhub.ai/skills/manual-to-solution"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "manual-to-solution",
+    "url": "https://clawhub.ai/skills/manual-to-solution",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/manual-to-solution-a60d7d745d9c3566.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/manual-to-solution@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-manual-to-solution-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ccb0fb759fe3e9cdd6aa592f4182cbeeb8e12a01b7dbd2b9905930b659c69f7",
+      "artifactSizeBytes": 2202
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T06:18:13.408Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56030,
+  "uuid": "skill-clawhub-baoyu-post-to-xhs",
+  "skillKey": "clawhub-baoyu-post-to-xhs",
+  "name": "Baoyu Post To Xhs",
+  "summary": "Posts image-text notes to Xiaohongshu (小红书) via Chrome CDP. Supports uploading multiple images, filling title/description, adding topics, and optional auto-s...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baoyu_post_to_xhs",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "praguepp",
+      "features": [
+        "Posts image-text notes to Xiaohongshu (小红书) via Chrome CDP",
+        "Supports uploading multiple images, filling title/description, adding topics, and optional auto."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baoyu-post-to-xhs@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2470007?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baoyu-post-to-xhs",
+      "url": "https://clawhub.ai/skills/baoyu-post-to-xhs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baoyu-post-to-xhs",
+    "url": "https://clawhub.ai/skills/baoyu-post-to-xhs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baoyu-post-to-xhs-a75487264484e8b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baoyu-post-to-xhs@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-baoyu-post-to-xhs-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:19de796f9df86146f40668de5f0ef84d3b61cc5e87b2f34d4f3dc56f2a4f045c",
+      "artifactSizeBytes": 2044
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T01:49:58.721Z"
+}

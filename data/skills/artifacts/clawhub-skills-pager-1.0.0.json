@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skills-pager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skills_pager",
+  "skill": {
+    "id": 30953,
+    "skillKey": "clawhub-skills-pager",
+    "name": "skills-pager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skills-pager",
+    "url": "https://clawhub.ai/skills/skills-pager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skills-pager-a17fe8e0a984f483.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build or reuse a compact navigation index for large, multi-file, or layered skills so you can load only the sections you need instead of rereading the full s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "haoh51918-lgtm",
+      "userId": "s175bn94p1vaagvs92mnkfv2n983h23x",
+      "displayName": "haoh51918-lgtm",
+      "image": "https://avatars.githubusercontent.com/u/265189361?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 273,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773817311266,
+      "changelog": "Initial release of skills-pager — efficient navigation for large skills.\n\n- Introduces a workflow to build or reuse a compact index for large, multi-file, or layered skills, minimizing source rereading.\n- Indexes enable rapid re-entry by mapping major routes and sections, saving context and speeding up partial access.\n- Provides guidance on when and how to create, use, and update `.skill-index/skills/<skill-id>/index.md`.\n- Includes a companion script (`scripts/create-skills-pager-map.js`) to scaffold indexes quickly.\n- Designed for one skill at a time; supports partial and multi-file skill navigation while keeping source as the authority.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9e5d970c7cc0de5ba29fb55a91c233f7feed6ea4a85f403125ca24766e3275ee"
+}

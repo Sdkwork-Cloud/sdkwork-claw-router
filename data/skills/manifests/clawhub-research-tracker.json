@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9780,
+  "uuid": "skill-clawhub-research-tracker",
+  "skillKey": "clawhub-research-tracker",
+  "name": "Research Tracker",
+  "summary": "Manage and track autonomous AI research projects with state logging, instruction queues, agent coordination, and progress monitoring via SQLite.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.research_tracker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "julian1645",
+      "features": [
+        "Manage and track autonomous AI research projects with state logging, instruction queues, agent."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/research-tracker@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256913974?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "research-tracker",
+      "url": "https://clawhub.ai/skills/research-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "research-tracker",
+    "url": "https://clawhub.ai/skills/research-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/research-tracker-9a1caa7b13d50ffd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/research-tracker@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-research-tracker-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:20a200218980f5ce6fd486e839a0352b395f7dc9b0dcb84fb61aa2ccaca9c1d7",
+      "artifactSizeBytes": 2379
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-25T20:41:23.230Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21438,
+  "uuid": "skill-clawhub-short-drama-publisher",
+  "skillKey": "clawhub-short-drama-publisher",
+  "name": "Short Drama Publisher",
+  "summary": "Automated short drama video publisher. Downloads drama content from MoboBoost, uses AI to identify highlight moments, clips 15-second vertical videos with te...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.short_drama_publisher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ye4wzp",
+      "features": [
+        "Automated short drama video publisher",
+        "Downloads drama content from MoboBoost, uses AI to identify highlight moments, clips 15-second."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/short-drama-publisher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60957471?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "short-drama-publisher",
+      "url": "https://clawhub.ai/skills/short-drama-publisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "short-drama-publisher",
+    "url": "https://clawhub.ai/skills/short-drama-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/short-drama-publisher-3915b80f9d0a5860.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/short-drama-publisher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-short-drama-publisher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:de98df89932e541bda9020211cccf59e3c981034ec0250736305e605bb467e89",
+      "artifactSizeBytes": 2035
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T17:09:45.043Z"
+}

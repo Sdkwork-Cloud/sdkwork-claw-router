@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/afrexai-offboarding@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_offboarding",
+  "skill": {
+    "id": 17538,
+    "skillKey": "clawhub-afrexai-offboarding",
+    "name": "Employee Offboarding Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-offboarding",
+    "url": "https://clawhub.ai/skills/afrexai-offboarding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-offboarding-fc8269b7bcad3680.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates detailed offboarding checklists, knowledge transfer plans, compliance steps, manager transitions, and day-by-day timelines for departing employees."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1kalin",
+      "userId": "s17e1q0nx23qnh4n429zzqc05x83hvsw",
+      "displayName": "1kalin",
+      "image": "https://avatars.githubusercontent.com/u/15705344?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 759,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770983001289,
+      "changelog": "afrexai-offboarding v1.0.0\n\n- Initial release of Employee Offboarding Manager skill.\n- Generates comprehensive offboarding checklists and transition plans based on departing employee’s details.\n- Covers IT & access revocation, knowledge transfer, HR and compliance actions, and managerial transition steps.\n- Provides a structured timeline from notice to last day.\n- Works with any AI agent platform, requiring no API keys—context-only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:23d4fc5fdee91b103b6208951c5f1fdb7620f24a3fd722cfa5e4c61ef604e2c0"
+}

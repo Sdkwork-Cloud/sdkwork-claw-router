@@ -1,0 +1,49 @@
+{
+  "skill": {
+    "slug": "yoder-skill-auditor",
+    "displayName": "Yoder Skill Auditor",
+    "summary": "The definitive security scanner for OpenClaw skills. 18 security checks including prompt injection detection, download-and-execute, privilege escalation, cre...",
+    "tags": {
+      "latest": "3.1.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 5976,
+      "installsAllTime": 9,
+      "installsCurrent": 7,
+      "stars": 3,
+      "versions": 2
+    },
+    "createdAt": 1771241415710,
+    "updatedAt": 1778040674854
+  },
+  "latestVersion": {
+    "version": "3.1.0",
+    "createdAt": 1771258895953,
+    "changelog": "Security advisory remediation: removed self-allowlist, excluded test fixtures, removed auto-install, documented pattern filters, added warnings",
+    "license": null
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "yoder-bawt",
+    "userId": "publishers:yoder-bawt",
+    "displayName": "yoder-bawt",
+    "image": "https://avatars.githubusercontent.com/u/259239279?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.env_credential_access",
+      "suspicious.potential_exfiltration",
+      "suspicious.prompt_injection_instructions"
+    ],
+    "summary": "Detected: suspicious.env_credential_access, suspicious.potential_exfiltration, suspicious.prompt_injection_instructions",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778040674854
+  }
+}

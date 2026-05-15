@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-sync-protocol@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_sync_protocol",
+  "skill": {
+    "id": 16166,
+    "skillKey": "clawhub-memory-sync-protocol",
+    "name": "Memory Sync Protocol"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-sync-protocol",
+    "url": "https://clawhub.ai/skills/memory-sync-protocol",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-sync-protocol-231723886c011b8d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Synchronize durable behavior or preference changes across TOOLS.md, MEMORY.md, AGENTS.md, and memory/YYYY-MM-DD.md with one consistent workflow. Use when use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "markisadesigner1992-eng",
+      "userId": "publishers:markisadesigner1992-eng",
+      "displayName": "markisadesigner1992-eng",
+      "image": "https://avatars.githubusercontent.com/u/254804547?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 651,
+      "installsAllTime": 7,
+      "installsCurrent": 5,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772690821065,
+      "changelog": "- Initial release of memory-sync-protocol skill.\n- Provides a consistent workflow for synchronizing behavior or preference changes across TOOLS.md, MEMORY.md, AGENTS.md, and memory log files.\n- Outlines file responsibilities, update steps, daily logging, and commit discipline.\n- Includes guardrails to avoid duplication, sensitive data exposure, and MEMORY bloat.\n- Triggered when users request to remember, update, or sync rules, preferences, or conventions across files.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0ec0f4262686ba572c0af5ff2cf6147bcaf4e7e33f9b97daf1353e7210b8715f"
+}

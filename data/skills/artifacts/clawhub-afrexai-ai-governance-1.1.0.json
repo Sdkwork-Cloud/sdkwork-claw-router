@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/afrexai-ai-governance@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_ai_governance",
+  "skill": {
+    "id": 17885,
+    "skillKey": "clawhub-afrexai-ai-governance",
+    "name": "AI Governance Policy Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-ai-governance",
+    "url": "https://clawhub.ai/skills/afrexai-ai-governance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-ai-governance-3781e0b78e00207b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Framework to establish AI governance, assess AI maturity, manage algorithmic risks, conduct impact assessments, classify AI system risk, and ensure regulator..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1kalin",
+      "userId": "s17e1q0nx23qnh4n429zzqc05x83hvsw",
+      "displayName": "1kalin",
+      "image": "https://avatars.githubusercontent.com/u/15705344?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 726,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1771715668963,
+      "changelog": "**Summary:** Major update focusing on practical policy templates and governance structures for organizational AI.\n\n- Introduces a comprehensive AI policy builder, including Acceptable Use Policy, procurement scorecards, and board-level governance reporting.\n- Adds clear frameworks for data handling, regulatory mapping (EU AI Act, NIST, ISO 42001), and vendor contract review.\n- Replaces prior theoretical/maturity model content with practical checklists, templates, and committee structures.\n- Provides actionable risk controls for shadow AI, incident response, and compliance tracking.\n- Delivers concise, real-world tools for organizations establishing or updating internal AI governance programs.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6cd551086f250042c7144178eb7629debf30dd6647108c8b19963d3102f68f3e"
+}

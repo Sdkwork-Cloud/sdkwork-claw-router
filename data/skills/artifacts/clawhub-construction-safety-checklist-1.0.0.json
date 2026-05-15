@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/construction-safety-checklist@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.construction_safety_checklist",
+  "skill": {
+    "id": 29613,
+    "skillKey": "clawhub-construction-safety-checklist",
+    "name": "Construction Safety Inspection Checklist"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "construction-safety-checklist",
+    "url": "https://clawhub.ai/skills/construction-safety-checklist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/construction-safety-checklist-08db6dc3cb1c0df0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guide a site supervisor through a structured safety inspection using conversational interaction, generating a completed inspection report with findings and c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nitevity",
+      "userId": "publishers:nitevity",
+      "displayName": "nitevity",
+      "image": "https://avatars.githubusercontent.com/u/206263748?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 299,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774208923222,
+      "changelog": "Initial release of construction safety inspection checklist skill.\n\n- Guides site supervisors through a structured, conversational safety inspection covering 10 key categories.\n- Captures essential header information and detailed observations for each safety area.\n- Classifies findings by severity and records corrective actions with deadlines.\n- Generates a comprehensive safety inspection report based on user input.\n- Designed for compliance with standard construction HSE policies and procedures.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e0749e9ba40ff741dcf4cef89483dea7f53b9d1547338dde3d082e728abd28fc"
+}

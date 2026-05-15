@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tiktok-crawling@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tiktok_crawling",
+  "skill": {
+    "id": 8923,
+    "skillKey": "clawhub-tiktok-crawling",
+    "name": "TikTok Crawling (yt-dlp)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tiktok-crawling",
+    "url": "https://clawhub.ai/skills/tiktok-crawling",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tiktok-crawling-7776026e45f0b4f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use for TikTok crawling, content retrieval, and analysis"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "romneyda",
+      "userId": "s17fz4afqm3ppq3as8chj27cq5862h3g",
+      "displayName": "Dallin Romney",
+      "image": "https://avatars.githubusercontent.com/u/6581799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4513,
+      "installsAllTime": 18,
+      "installsCurrent": 17,
+      "stars": 13,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770714305918,
+      "changelog": "- Initial release of TikTok crawling and analysis skill using yt-dlp",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:757d1514f41e6f5e4686a1eb1641fc9dcfd76ccc333914186f12215698f93a3e"
+}

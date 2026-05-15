@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73461,
+  "uuid": "skill-clawhub-analyze-stock",
+  "skillKey": "clawhub-analyze-stock",
+  "name": "股票分析助手",
+  "summary": "股票分析技能，提供买卖点判断、仓位管理、基本面分析。使用当用户需要分析股票投资价值时。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.analyze_stock",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zxsadc2025",
+      "features": [
+        "股票分析技能，提供买卖点判断、仓位管理、基本面分析。使用当用户需要分析股票投资价值时。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/analyze-stock@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266325895?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "analyze-stock",
+      "url": "https://clawhub.ai/skills/analyze-stock"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "analyze-stock",
+    "url": "https://clawhub.ai/skills/analyze-stock",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/analyze-stock-68c2ef05416f6c29.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/analyze-stock@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-analyze-stock-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:44365ef54bced97251d4e2e2f9a4fcde9b0dc8f085e9b11fac36848dfd32e341",
+      "artifactSizeBytes": 1999
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T06:59:10.306Z"
+}

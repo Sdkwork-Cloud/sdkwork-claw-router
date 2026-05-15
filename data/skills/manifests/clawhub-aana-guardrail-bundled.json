@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33659,
+  "uuid": "skill-clawhub-aana-guardrail-bundled",
+  "skillKey": "clawhub-aana-guardrail-bundled",
+  "name": "AANA Guardrail Skill Bundled Helper Variant",
+  "summary": "Provides a local Python helper to send minimal review payloads to a trusted AANA HTTP bridge for policy guidance inside the skill package.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aana_guardrail_bundled",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mindbomber",
+      "features": [
+        "Provides a local Python helper to send minimal review payloads to a trusted AANA HTTP bridge fo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aana-guardrail-bundled@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42798111?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aana-guardrail-bundled",
+      "url": "https://clawhub.ai/skills/aana-guardrail-bundled"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aana-guardrail-bundled",
+    "url": "https://clawhub.ai/skills/aana-guardrail-bundled",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aana-guardrail-bundled-2e8eaaaaf4fe4422.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aana-guardrail-bundled@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-aana-guardrail-bundled-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8e882d73317ceefb2f3aa44b0135a5b0f90e4231702e955053f7b2282d20f90a",
+      "artifactSizeBytes": 2140
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T18:05:59.512Z"
+}

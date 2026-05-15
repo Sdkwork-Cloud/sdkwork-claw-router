@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50149,
+  "uuid": "skill-clawhub-approve-pairing",
+  "skillKey": "clawhub-approve-pairing",
+  "name": "Approve Pairing",
+  "summary": "Approve a pending DM pairing request without the openclaw CLI, by directly editing credential files. Use when `openclaw pairing approve` is unavailable (CLI...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.approve_pairing",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "madan-wego",
+      "features": [
+        "Approve a pending DM pairing request without the openclaw CLI, by directly editing credential f.",
+        "Use when `openclaw pairing approve` is unavailable (CLI..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/approve-pairing@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/222174212?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "approve-pairing",
+      "url": "https://clawhub.ai/skills/approve-pairing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "approve-pairing",
+    "url": "https://clawhub.ai/skills/approve-pairing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/approve-pairing-d06f6b200dca6f6c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/approve-pairing@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-approve-pairing-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:36a571b4ce156b400d7f0d50a6a5558aea7f6969c99fc481dfc6e318936044e7",
+      "artifactSizeBytes": 1920
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T20:21:50.887Z"
+}

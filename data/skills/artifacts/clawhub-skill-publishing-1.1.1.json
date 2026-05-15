@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-publishing@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_publishing",
+  "skill": {
+    "id": 42450,
+    "skillKey": "clawhub-skill-publishing",
+    "name": "Hermes Skill Publishing Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-publishing",
+    "url": "https://clawhub.ai/skills/skill-publishing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-publishing-81901d691ade7870.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guide to publishing and sharing Hermes skills through ClawHub, including safe login practices, release hygiene, and security scan preparation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xuxuclassmate",
+      "userId": "s17ev136gszam5rsp8hcgkksex83gbfy",
+      "displayName": "XuXu",
+      "image": "https://avatars.githubusercontent.com/u/76080484?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1776836617013,
+      "changelog": "Translate the title to English and tighten the publishing guidance around secure login and scan hygiene.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:08476a9c59e03c856fab6ed034f97a2d1d84ca035e4a8264f74fafabbc0a47ef"
+}

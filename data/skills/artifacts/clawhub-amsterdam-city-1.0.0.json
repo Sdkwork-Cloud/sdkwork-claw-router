@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amsterdam-city@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amsterdam_city",
+  "skill": {
+    "id": 66048,
+    "skillKey": "clawhub-amsterdam-city",
+    "name": "Amsterdam City"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amsterdam-city",
+    "url": "https://clawhub.ai/skills/amsterdam-city",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amsterdam-city-9ecdc5298f8bb410.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "阿姆斯特丹 —— 荷兰首都，运河之城，从 17 世纪贸易帝国中心到全球最开放的创新城市"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 111,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777496709835,
+      "changelog": "- 首发版本，收录阿姆斯特丹城市百科全书。\n- 涵盖历史时间线、经济结构、运河系统与创新文化等知识。\n- 提供城市商业模式与“护城河”分析，突出金融、科技、贸易与可持续发展优势。\n- 收集核心数据、创业生态、人口和旅游等关键统计。\n- 增加趣味性事实，便于了解阿姆斯特丹的独特地位。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:272731b6b2e3619f7204f9c00315fae1399f892b2b58748439100bdbe6177512"
+}

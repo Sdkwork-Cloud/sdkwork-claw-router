@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25891,
+  "uuid": "skill-clawhub-clawlite-openclaw-security-guard",
+  "skillKey": "clawhub-clawlite-openclaw-security-guard",
+  "name": "OpenClaw Security Guard",
+  "summary": "This skill should be used when the user asks to harden agent workflows, audit prompts/commands/URLs/paths, scan a third-party skill before install or publish...",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawlite_openclaw_security_guard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "X-RayLuan",
+      "features": [
+        "This skill should be used when the user asks to harden agent workflows, audit prompts/commands/."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawlite-openclaw-security-guard@0.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/150766707?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawlite-openclaw-security-guard",
+      "url": "https://clawhub.ai/skills/clawlite-openclaw-security-guard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawlite-openclaw-security-guard",
+    "url": "https://clawhub.ai/skills/clawlite-openclaw-security-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawlite-openclaw-security-guard-e6b50251a7770751.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawlite-openclaw-security-guard@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawlite-openclaw-security-guard-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c17eb76b5001365c3d55e2af5ff85b821c4968e7e8ec887b9051a7b5aa1860ec",
+      "artifactSizeBytes": 2067
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T18:24:08.940Z"
+}

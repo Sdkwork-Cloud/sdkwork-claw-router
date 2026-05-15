@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29394,
+  "uuid": "skill-clawhub-yuki",
+  "skillKey": "clawhub-yuki",
+  "name": "Yuki",
+  "summary": "Yuki integration. Manage data, records, and automate workflows. Use when the user wants to interact with Yuki data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yuki",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Yuki integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Yuki data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yuki@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yuki",
+      "url": "https://clawhub.ai/skills/yuki"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yuki",
+    "url": "https://clawhub.ai/skills/yuki",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yuki-ec6b64f31af43e90.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yuki@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-yuki-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e04af106d91b52840fd94d5cd7efcb807c02879169404cf28d0ad461bf0a0ba",
+      "artifactSizeBytes": 1794
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:04:23.839Z"
+}

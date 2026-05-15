@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9502,
+  "uuid": "skill-clawhub-radarr",
+  "skillKey": "clawhub-radarr",
+  "name": "Radarr",
+  "summary": "Search and add movies to Radarr. Supports collections, search-on-add option.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.radarr",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jordyvandomselaar",
+      "features": [
+        "Search and add movies to Radarr",
+        "Supports collections, search-on-add option."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/radarr@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12712484?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "radarr",
+      "url": "https://clawhub.ai/skills/radarr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "radarr",
+    "url": "https://clawhub.ai/skills/radarr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/radarr-7da0324ce46c55f7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/radarr@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-radarr-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0a7e8f352e93a29023ff571492028c9dfe0515c15c152ba9b58f90d19913b49c",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-09T19:13:52.665Z"
+}

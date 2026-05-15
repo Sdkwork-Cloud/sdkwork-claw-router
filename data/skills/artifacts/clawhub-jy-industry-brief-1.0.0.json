@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jy-industry-brief@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jy_industry_brief",
+  "skill": {
+    "id": 63813,
+    "skillKey": "clawhub-jy-industry-brief",
+    "name": "jy-industry-brief"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jy-industry-brief",
+    "url": "https://clawhub.ai/skills/jy-industry-brief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jy-industry-brief-e7efe8872f1d3cc9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于 MCP 聚源金融数据库生成指定行业过去24小时内的速报，涵盖简读素材、重要新闻、企业动态及投融资事件，支持 Markdown 和 HTML 格式。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiayinian",
+      "userId": "s1705v3dg957451717s1bbzck983nebe",
+      "displayName": "jiayinian",
+      "image": "https://avatars.githubusercontent.com/u/22932351?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775179104792,
+      "changelog": "Initial release of jy-industry-brief\n\n- Provides 24-hour industry briefings based on the MCP 聚源金融数据库, covering brief reading materials, important news, industry corporate developments, and investment/financing events.\n- All information includes traceable sources and original publication timestamps.\n- Default output is Markdown; supports HTML and PDF if requested.\n- Strict workflow and format validation requirements, with comprehensive step-by-step execution and environment checks.\n- Intended for rapid updates on specified industries; supports multi-industry coverage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5c5df43dedec8df4098e2d53c408785b76c2a4bedaa2151ace39c2b1634a9d93"
+}

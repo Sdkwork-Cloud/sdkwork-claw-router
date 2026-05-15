@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35231,
+  "uuid": "skill-clawhub-ai-logo-generator",
+  "skillKey": "clawhub-ai-logo-generator",
+  "name": "AI Logo Generator",
+  "summary": "Generate professional logos from text prompts using artificial intelligence.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_logo_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToolWeb",
+      "features": [
+        "Generate professional logos from text prompts using artificial intelligence."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-logo-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245780162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-logo-generator",
+      "url": "https://clawhub.ai/skills/ai-logo-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-logo-generator",
+    "url": "https://clawhub.ai/skills/ai-logo-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-logo-generator-6b12270f2c38b0bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-logo-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-logo-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4ecd0328427b29ea09dc4767c18afe3e6b95c039ddbfab3155c1252c37820511",
+      "artifactSizeBytes": 2389
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T20:22:21.438Z"
+}

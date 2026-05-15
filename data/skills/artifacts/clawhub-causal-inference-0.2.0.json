@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/causal-inference@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.causal_inference",
+  "skill": {
+    "id": 9600,
+    "skillKey": "clawhub-causal-inference",
+    "name": "Causal Inference"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "causal-inference",
+    "url": "https://clawhub.ai/skills/causal-inference",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/causal-inference-098f6d2a85519179.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Add causal reasoning to agent actions. Trigger on ANY high-level action with observable outcomes - emails, messages, calendar changes, file operations, API calls, notifications, reminders, purchases, deployments. Use for planning intervent."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oswalpalash",
+      "userId": "publishers:oswalpalash",
+      "displayName": "oswalpalash",
+      "image": "https://avatars.githubusercontent.com/u/6431196?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 3030,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 6,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1769414192860,
+      "changelog": "Expanded triggers to all high-level actions, added backfill scripts for email/calendar/messages, broader domain coverage",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:875b16957ccf090d7aa7fb9d70a1cfeb49e7704aaae939bb2f2246c3e3388c8a"
+}

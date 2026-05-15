@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11273,
+  "uuid": "skill-clawhub-molt-trust",
+  "skillKey": "clawhub-molt-trust",
+  "name": "Moltbook Trust Engine",
+  "summary": "The Analytics Engine for Moltbook. Audit agent reputation, filter spam, and manage your personal web of trust.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.molt_trust",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "drjmz",
+      "features": [
+        "The Analytics Engine for Moltbook",
+        "Audit agent reputation, filter spam, and manage your personal web of trust."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/molt-trust@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139523448?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "molt-trust",
+      "url": "https://clawhub.ai/skills/molt-trust"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "molt-trust",
+    "url": "https://clawhub.ai/skills/molt-trust",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/molt-trust-e978a51732251e4d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/molt-trust@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-molt-trust-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5758bd114d61cd2f91ca4a09e0b992df465a4bb68114ebfde1f1d57bb84be3a5",
+      "artifactSizeBytes": 2284
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T10:16:48.803Z"
+}

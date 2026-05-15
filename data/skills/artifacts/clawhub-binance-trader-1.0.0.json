@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/binance-trader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.binance_trader",
+  "skill": {
+    "id": 40502,
+    "skillKey": "clawhub-binance-trader",
+    "name": "Binance Trader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "binance-trader",
+    "url": "https://clawhub.ai/skills/binance-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/binance-trader-485c68309637a89e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provide Binance spot and futures trading with account info, price quotes, order placement, position tracking, and historical data retrieval."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shenry07",
+      "userId": "s17bzfsjh8jqs4tea8thncht0d83qvce",
+      "displayName": "Henry Sun",
+      "image": "https://avatars.githubusercontent.com/u/39635430?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775843083838,
+      "changelog": "Initial release of the Binance Trader skill:\n\n- Supports spot and futures trading on Binance\n- Includes examples for viewing account balance, placing orders, checking prices, retrieving K-line data, and viewing order history\n- Provides setup instructions for installing dependencies and configuring API keys\n- Contains security suggestions and error handling tips\n- Usage documentation is provided in Chinese",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:20184185d0820dede5780fb289ac746b2d2c0c7e64a44abe48f18da3a7c07467"
+}

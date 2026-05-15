@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42402,
+  "uuid": "skill-clawhub-integration-testing",
+  "skillKey": "clawhub-integration-testing",
+  "name": "Integration Testing",
+  "summary": "Automated integration testing with external services using testcontainers, wiremock, localstack. Use when developer needs to set up integration tests for tes...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.integration_testing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ahmed181283",
+      "features": [
+        "Automated integration testing with external services using testcontainers, wiremock, localstack",
+        "Use when developer needs to set up integration tests for tes..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/integration-testing@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26248550?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "integration-testing",
+      "url": "https://clawhub.ai/skills/integration-testing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "integration-testing",
+    "url": "https://clawhub.ai/skills/integration-testing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/integration-testing-fbb985a6f54809df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/integration-testing@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-integration-testing-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7a83eede5be268589d26b5b25925ab3264305f4f2b2eddea1cd6fbd616491422",
+      "artifactSizeBytes": 2161
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T21:49:10.855Z"
+}

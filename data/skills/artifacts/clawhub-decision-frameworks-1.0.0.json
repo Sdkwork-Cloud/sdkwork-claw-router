@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/decision-frameworks@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.decision_frameworks",
+  "skill": {
+    "id": 12541,
+    "skillKey": "clawhub-decision-frameworks",
+    "name": "Decision Frameworks"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "decision-frameworks",
+    "url": "https://clawhub.ai/skills/decision-frameworks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/decision-frameworks-f42213b4b16da059.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Structured decision-making patterns for common engineering choices — library selection, architecture, build vs buy, prioritization, reversibility analysis, and ADRs. Use when choosing between tools, architectures, or approaches, or when do."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wpank",
+      "userId": "publishers:wpank",
+      "displayName": "wpank",
+      "image": "https://avatars.githubusercontent.com/u/9498646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1979,
+      "installsAllTime": 12,
+      "installsCurrent": 10,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770728520121,
+      "changelog": "Initial release of the Decision Frameworks skill for engineering decision-making:\n\n- Provides structured templates for library selection, architecture choices, build vs buy, prioritization, and documenting decisions.\n- Includes weighted decision matrix, build-vs-buy tree, and tradeoff tables for key architectural patterns.\n- Supplies practical heuristics (e.g., reversibility check, MoSCoW, RICE scoring) to guide and document significant technical choices.\n- Designed to improve confidence, alignment, and traceability in engineering decisions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c84730eb638f95b39f5ea5190e8b88846f537baf2d96df4a242e62210de6cae8"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63602,
+  "uuid": "skill-clawhub-miaoda-text-gen-image",
+  "skillKey": "clawhub-miaoda-text-gen-image",
+  "name": "妙达文字生成图片",
+  "summary": "让 AI 生成的图片像真实摄影师拍的一样。不用学 prompt 技巧，一句话生成电影感大片。触发词：生成图片, 画图, 图片生成, text to image, 文字生成图片, AI 画图, 生成配图, 生成封面, 生成插图, generate image, 画一张, 做一张图",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.miaoda_text_gen_image",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nice1234-h",
+      "features": [
+        "让 AI 生成的图片像真实摄影师拍的一样。不用学 prompt 技巧，一句话生成电影感大片。触发词：生成图片, 画图, 图片生成, text to image, 文字生成图片, AI 画图,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/miaoda-text-gen-image@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/55769646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "miaoda-text-gen-image",
+      "url": "https://clawhub.ai/skills/miaoda-text-gen-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "miaoda-text-gen-image",
+    "url": "https://clawhub.ai/skills/miaoda-text-gen-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/miaoda-text-gen-image-0bb53c9c6dd7e9ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/miaoda-text-gen-image@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-miaoda-text-gen-image-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6f1f8c45a803dfb584355c8ed8f8d8ac5a7b0a77817d2e643349908784730131",
+      "artifactSizeBytes": 2646
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T06:56:50.140Z"
+}

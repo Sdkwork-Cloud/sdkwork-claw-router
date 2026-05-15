@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jd-price-history@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jd_price_history",
+  "skill": {
+    "id": 67795,
+    "skillKey": "clawhub-jd-price-history",
+    "name": "Jd Price History"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jd-price-history",
+    "url": "https://clawhub.ai/skills/jd-price-history",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jd-price-history-dfe9f2b2ddc3c14d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "京东商品价格历史查询，发现真实低价，避开先涨后降套路。适合比价购物、电商卖家。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "275254cl-hash",
+      "userId": "s17bgvrh57w97t0z4ajg11mdrx83gcqc",
+      "displayName": "275254cl-hash",
+      "image": "https://avatars.githubusercontent.com/u/246240596?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 782,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774402935251,
+      "changelog": "- Initial release of jd-price-history skill.\n- Query 90/180/365-day price trends for JD.com products.\n- Set price alerts and get notified on drops.\n- Analyze promotions to spot real discounts and avoid price manipulation.\n- Recommend similar items with lower prices.\n- Get price increase warnings and historical lowest price data.\n- Free for up to 5 daily queries; paid options for unlimited queries and extra features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6649e4f6d8ccef3cdb79eadd30ad56816d560f3b9e9880360157371bb5d2db78"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/using-git-worktrees@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.using_git_worktrees",
+  "skill": {
+    "id": 11040,
+    "skillKey": "clawhub-using-git-worktrees",
+    "name": "Using Git Worktrees"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "using-git-worktrees",
+    "url": "https://clawhub.ai/skills/using-git-worktrees",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/using-git-worktrees-ba4506df1ea02480.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when starting feature work that needs isolation from current workspace or before executing implementation plans - creates isolated git worktrees with smart directory selection and safety verification"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zlc000190",
+      "userId": "s17eqtvxjm6jkak76k71zxaa5s85cy99",
+      "displayName": "zlc000190",
+      "image": "https://avatars.githubusercontent.com/u/8969941?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1605,
+      "installsAllTime": 73,
+      "installsCurrent": 67,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770691938383,
+      "changelog": "Initial release: 使用 Git 工作树",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:20b4037e1feab2f2f30d7ec58ac49c20051f1523af3573e1a0ceadd5ed92b681"
+}

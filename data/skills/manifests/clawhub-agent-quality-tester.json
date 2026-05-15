@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41884,
+  "uuid": "skill-clawhub-agent-quality-tester",
+  "skillKey": "clawhub-agent-quality-tester",
+  "name": "Agent Quality Tester",
+  "summary": "Evaluates AI agent outputs across accuracy, efficiency, safety, coherence, and adaptability, providing scores and improvement suggestions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_quality_tester",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "Evaluates AI agent outputs across accuracy, efficiency, safety, coherence, and adaptability, pr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-quality-tester@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-quality-tester",
+      "url": "https://clawhub.ai/skills/agent-quality-tester"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-quality-tester",
+    "url": "https://clawhub.ai/skills/agent-quality-tester",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-quality-tester-9e190da152f6493f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-quality-tester@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-quality-tester-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6981cb5728757b39a172b81d2b4cfbfeaa56ec22a16f9d645598a55e38c714b5",
+      "artifactSizeBytes": 2348
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T00:54:06.278Z"
+}

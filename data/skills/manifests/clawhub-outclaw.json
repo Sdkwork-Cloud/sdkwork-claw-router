@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38806,
+  "uuid": "skill-clawhub-outclaw",
+  "skillKey": "clawhub-outclaw",
+  "name": "Outclaw",
+  "summary": "B2B outreach orchestrator. Entry point for ANY request that mentions reaching out, contacting, emailing, messaging, DMing, following-up, or otherwise engagin...",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.outclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "milstan",
+      "features": [
+        "B2B outreach orchestrator",
+        "Entry point for ANY request that mentions reaching out, contacting, emailing, messaging, DMing,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/outclaw@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/317424?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "outclaw",
+      "url": "https://clawhub.ai/skills/outclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "outclaw",
+    "url": "https://clawhub.ai/skills/outclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/outclaw-9b482cd1e8b62da3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/outclaw@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-outclaw-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c841753491a2fa06b1755f317f8a07bc44624e9285754fae071300faa3e6b994",
+      "artifactSizeBytes": 1929
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T02:43:54.464Z"
+}

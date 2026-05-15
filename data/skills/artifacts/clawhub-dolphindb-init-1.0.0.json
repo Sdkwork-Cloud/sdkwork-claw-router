@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dolphindb-init@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dolphindb_init",
+  "skill": {
+    "id": 60188,
+    "skillKey": "clawhub-dolphindb-init",
+    "name": "Dolphindb Init"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dolphindb-init",
+    "url": "https://clawhub.ai/skills/dolphindb-init",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dolphindb-init-41d5e1baf6351724.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "DolphinDB Python 环境初始化技能。自动检测并切换到已安装 DolphinDB SDK 的 Python 环境（含 Anaconda/Miniconda/系统 Python），若未找到则自动安装。**这是 DolphinDB 套件的前置依赖，所有 DolphinDB 相关操作必须首先执行此技能**。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ugpoor",
+      "userId": "s177qqrp481qedfn5w9m5nmte183ge14",
+      "displayName": "superStupidBear",
+      "image": "https://avatars.githubusercontent.com/u/6762468?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 238,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774482691347,
+      "changelog": "dolphindb-init 1.0.0\n\n- 首次发布 DolphinDB Python 环境初始化技能。\n- 自动检测并切换到已安装 DolphinDB SDK 的 Python 环境（支持 Anaconda/Miniconda/系统 Python），若未找到则自动安装。\n- 提供统一的调用接口（如 dolphin_python、dolphin_pip），导出标准环境变量。\n- 明确作为 DolphinDB 技能套件的前置依赖，所有 DolphinDB 操作需首先执行本技能。\n- 包含环境检测、变量管理、故障排查指引等详细说明。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:35f88a67894cd6652c53cdca50b3d83b1c3a4492c3720e13327615f9f06b923a"
+}

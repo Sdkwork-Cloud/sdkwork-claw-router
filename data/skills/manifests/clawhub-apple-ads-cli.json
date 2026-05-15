@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45822,
+  "uuid": "skill-clawhub-apple-ads-cli",
+  "skillKey": "clawhub-apple-ads-cli",
+  "name": "Apple Ads CLI",
+  "summary": "Apple Search Ads data analysis and reporting via apple-ads-cli. Use when the user wants to check Apple Search Ads performance, pull campaign/ad group/keyword...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apple_ads_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bin-Huang",
+      "features": [
+        "Apple Search Ads data analysis and reporting via apple-ads-cli",
+        "Use when the user wants to check Apple Search Ads performance, pull campaign/ad group/keyword..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/apple-ads-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20723142?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "apple-ads-cli",
+      "url": "https://clawhub.ai/skills/apple-ads-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apple-ads-cli",
+    "url": "https://clawhub.ai/skills/apple-ads-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apple-ads-cli-bd80f365f9c35fbe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/apple-ads-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-apple-ads-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e4c93aeef7c14951cb9db2d8e6ace218f0ed8218c5b7b824e56e932c5add80e2",
+      "artifactSizeBytes": 2249
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T07:31:43.319Z"
+}

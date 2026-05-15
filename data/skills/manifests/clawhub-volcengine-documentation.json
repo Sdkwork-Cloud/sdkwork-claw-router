@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70754,
+  "uuid": "skill-clawhub-volcengine-documentation",
+  "skillKey": "clawhub-volcengine-documentation",
+  "name": "Volcengine Documentation",
+  "summary": "火山引擎官方文档查询工具，支持文档检索和全文获取。涵盖火山引擎全部产品、开发者工具、服务支持、最佳实践，包括产品介绍、使用、计费、部署、故障排查、API、SDK、服务条款/协议等全流程。任何涉及火山引擎产品咨询、使用问题、文档查询的需求都优先调用本技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.volcengine_documentation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sdk-team",
+      "features": [
+        "火山引擎官方文档查询工具，支持文档检索和全文获取。涵盖火山引擎全部产品、开发者工具、服务支持、最佳实践，包括产品介绍、使用、计费、部署、故障排查、API、SDK、服务条款/协议等全流程。任何."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/volcengine-documentation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/198185282?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "volcengine-documentation",
+      "url": "https://clawhub.ai/skills/volcengine-documentation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "volcengine-documentation",
+    "url": "https://clawhub.ai/skills/volcengine-documentation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/volcengine-documentation-9f801f1eb40e458d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/volcengine-documentation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-volcengine-documentation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1a6b66df49483c2e8f9e72c71a7fb4877380be1ef699b2137379af41d2033477",
+      "artifactSizeBytes": 2627
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T03:27:47.602Z"
+}

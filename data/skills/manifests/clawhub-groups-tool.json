@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48258,
+  "uuid": "skill-clawhub-groups-tool",
+  "skillKey": "clawhub-groups-tool",
+  "name": "Groups Tool",
+  "summary": "Display user group memberships on the system. Shows all groups a user belongs to for permission auditing and access control verification.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.groups_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BIN",
+      "features": [
+        "Display user group memberships on the system",
+        "Shows all groups a user belongs to for permission auditing and access control verification."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/groups-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9191597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "groups-tool",
+      "url": "https://clawhub.ai/skills/groups-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "groups-tool",
+    "url": "https://clawhub.ai/skills/groups-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/groups-tool-13b66973a02961d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/groups-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-groups-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cc90eb5d41cb72e1df7befba63a8f4bc8a9c12d5b90ba3a5d3c9438fbf5f9e6e",
+      "artifactSizeBytes": 1837
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T21:05:21.876Z"
+}

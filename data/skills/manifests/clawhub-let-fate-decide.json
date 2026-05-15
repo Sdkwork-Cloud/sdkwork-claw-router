@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47360,
+  "uuid": "skill-clawhub-let-fate-decide",
+  "skillKey": "clawhub-let-fate-decide",
+  "name": "Let Fate Decide",
+  "summary": "Draw Tarot cards using cryptographic randomness to inject entropy into planning when prompts are vague or underspecified. Interprets a 4-card spread to guide...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.let_fate_decide",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Karl",
+      "features": [
+        "Draw Tarot cards using cryptographic randomness to inject entropy into planning when prompts ar.",
+        "Interprets a 4-card spread to guide..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/let-fate-decide@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1467813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "let-fate-decide",
+      "url": "https://clawhub.ai/skills/let-fate-decide"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "let-fate-decide",
+    "url": "https://clawhub.ai/skills/let-fate-decide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/let-fate-decide-cbdf982a19d78f77.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/let-fate-decide@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-let-fate-decide-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc50d3d8aeeafef53778153a83160bff50992cfbdeb634d9a3872bae6cb88d07",
+      "artifactSizeBytes": 1935
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T15:30:08.100Z"
+}

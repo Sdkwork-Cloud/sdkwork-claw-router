@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/defillama-prices-openapi-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.defillama_prices_openapi_skill",
+  "skill": {
+    "id": 29616,
+    "skillKey": "clawhub-defillama-prices-openapi-skill",
+    "name": "DefiLlama Prices OpenAPI Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "defillama-prices-openapi-skill",
+    "url": "https://clawhub.ai/skills/defillama-prices-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/defillama-prices-openapi-skill-012ad2bb64caa847.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Operate DefiLlama public price APIs through UXC with a curated OpenAPI schema and read-first guardrails."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jolestar",
+      "userId": "s1769rm50f8wvzw550m22hg10x83gkem",
+      "displayName": "jolestar",
+      "image": "https://avatars.githubusercontent.com/u/77268?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 279,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773712967434,
+      "changelog": "Initial release of DefiLlama Prices OpenAPI skill:\n\n- Enables access to DefiLlama's public coin price APIs via UXC and OpenAPI.\n- Supports current price lookups for single or multiple assets.\n- Operates in read-only mode; no write or advanced endpoints included.\n- Uses curated OpenAPI schema with clear workflow and guardrails.\n- No authentication required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9117a35fdc6734ba7aaf73b6aa535ab0344997d6b4baeb770d0400161a43de8d"
+}

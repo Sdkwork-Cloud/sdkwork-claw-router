@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68276,
+  "uuid": "skill-clawhub-video-frames-skill",
+  "skillKey": "clawhub-video-frames-skill",
+  "name": "video-frames",
+  "summary": "基于 PyAV 的命令行工具，支持按帧号、时间点提取视频帧，批量采样，视频信息查看及视频和图片压缩转换。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_frames_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Liu Wenyu",
+      "features": [
+        "基于 PyAV 的命令行工具，支持按帧号、时间点提取视频帧，批量采样，视频信息查看及视频和图片压缩转换。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-frames-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/117838866?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-frames-skill",
+      "url": "https://clawhub.ai/skills/video-frames-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-frames-skill",
+    "url": "https://clawhub.ai/skills/video-frames-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-frames-skill-3bb3fcb03896144a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-frames-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-frames-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6946f1673d165861eee96a6aeebc088822c3d12160b50be90ea41d92cad6050f",
+      "artifactSizeBytes": 2384
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T01:51:45.267Z"
+}

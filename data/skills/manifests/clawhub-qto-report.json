@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15309,
+  "uuid": "skill-clawhub-qto-report",
+  "skillKey": "clawhub-qto-report",
+  "name": "Qto Report",
+  "summary": "Generate Quantity Take-Off (QTO) reports from BIM/CAD data. Extract volumes, areas, counts by category. Group elements, apply calculation rules, and create c...",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qto_report",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "datadrivenconstruction",
+      "features": [
+        "Generate Quantity Take-Off (QTO) reports from BIM/CAD data",
+        "Extract volumes, areas, counts by category",
+        "Group elements, apply calculation rules, and create c..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qto-report@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94158709?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qto-report",
+      "url": "https://clawhub.ai/skills/qto-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qto-report",
+    "url": "https://clawhub.ai/skills/qto-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qto-report-e7d93e4fb303e60f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qto-report@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qto-report-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e6a03dfe03fe17ce6c24e909916728031b77b673df815368d21f330405842db7",
+      "artifactSizeBytes": 2164
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T17:30:32.703Z"
+}

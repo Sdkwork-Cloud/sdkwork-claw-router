@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kameo@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kameo",
+  "skill": {
+    "id": 10631,
+    "skillKey": "clawhub-kameo",
+    "name": "kameo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kameo",
+    "url": "https://clawhub.ai/skills/kameo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kameo-a706f49f6b2763d8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate expressive talking-head videos from static images using Kameo AI. Converts static avatars/portraits into dynamic 5-second videos with realistic facial expressions, lip-sync, and motion. Use when you need to bring static images to."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "veya2ztn",
+      "userId": "publishers:veya2ztn",
+      "displayName": "veya2ztn",
+      "image": "https://avatars.githubusercontent.com/u/18117225?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 2033,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 5,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770196908024,
+      "changelog": "- Updated documentation examples to use a new API key format.\n- No changes to code or features.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fe88c0558c8dea0677976d79ae25ab26dd6aaa09f9e9f25504b548a6321d2f4e"
+}

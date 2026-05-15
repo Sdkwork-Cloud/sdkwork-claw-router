@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68278,
+  "uuid": "skill-clawhub-cms-personal-assistant",
+  "skillKey": "clawhub-cms-personal-assistant",
+  "name": "cms-personal-assistant",
+  "summary": "BP个人月度汇报生成与发送工具。基于 BP 目标结构、衡量标准和当月汇报证据， 按分步流程生成结构固定、证据可追溯的月报初稿。 当用户需要生成、发送或预览个人BP月度汇报时使用。",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cms_personal_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "spzwin",
+      "features": [
+        "BP个人月度汇报生成与发送工具。基于 BP 目标结构、衡量标准和当月汇报证据， 按分步流程生成结构固定、证据可追溯的月报初稿。 当用户需要生成、发送或预览个人BP月度汇报时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cms-personal-assistant@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48741773?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cms-personal-assistant",
+      "url": "https://clawhub.ai/skills/cms-personal-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cms-personal-assistant",
+    "url": "https://clawhub.ai/skills/cms-personal-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cms-personal-assistant-2c7248092dfc15c4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cms-personal-assistant@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cms-personal-assistant-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d508eeb49c1ce924d849beed7917c3689b74f6e4fe162786bda0416d598e49c6",
+      "artifactSizeBytes": 2773
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T09:40:35.051Z"
+}

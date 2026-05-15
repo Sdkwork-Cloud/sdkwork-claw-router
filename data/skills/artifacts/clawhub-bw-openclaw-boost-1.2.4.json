@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bw-openclaw-boost@1.2.4",
+  "version": "1.2.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bw_openclaw_boost",
+  "skill": {
+    "id": 38456,
+    "skillKey": "clawhub-bw-openclaw-boost",
+    "name": "Bw Openclaw Boost"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bw-openclaw-boost",
+    "url": "https://clawhub.ai/skills/bw-openclaw-boost",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bw-openclaw-boost-ad67c3205b45639b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw Boost enhances OpenClaw efficiency with cost tracking, memory management, compression, permission control, and task coordination tools."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bw520333",
+      "userId": "s172n6zzvtcv8ktj1bc035hagn83gnj6",
+      "displayName": "bw520333",
+      "image": "https://avatars.githubusercontent.com/u/20568413?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 18
+    },
+    "latestVersion": {
+      "version": "1.2.4",
+      "createdAt": 1775228307911,
+      "changelog": "清理所有GuBao路径引用，统一使用技能本地目录",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ebb7f49d94f8b5199569b84e74a3ae227bf4e7b97616d0679831ccfc35722563"
+}

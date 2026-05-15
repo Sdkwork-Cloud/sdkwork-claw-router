@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13101,
+  "uuid": "skill-clawhub-weatherkit",
+  "skillKey": "clawhub-weatherkit",
+  "name": "WeatherKit",
+  "summary": "Access Apple WeatherKit REST API for detailed weather forecasts using JWT authentication.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weatherkit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jim McQuillan",
+      "features": [
+        "Access Apple WeatherKit REST API for detailed weather forecasts using JWT authentication."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weatherkit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/348998?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weatherkit",
+      "url": "https://clawhub.ai/skills/weatherkit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weatherkit",
+    "url": "https://clawhub.ai/skills/weatherkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weatherkit-93478651d8675b6b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weatherkit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weatherkit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b6e9f56bbbe780562e189451a7be63cb27048401c3055b9268d7fb788d61aaba",
+      "artifactSizeBytes": 2005
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T06:22:17.006Z"
+}

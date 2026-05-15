@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/miniade-cancel@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.miniade_cancel",
+  "skill": {
+    "id": 20431,
+    "skillKey": "clawhub-miniade-cancel",
+    "name": "Cancel Dispatch Run"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "miniade-cancel",
+    "url": "https://clawhub.ai/skills/miniade-cancel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/miniade-cancel-b9ccde7389101d06.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cancel an active interactive dispatch run by run-id from slash command cancel. Use when user wants to stop a dispatchi or ralph-loop task immediately."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "edxi",
+      "userId": "publishers:edxi",
+      "displayName": "Xi ErDe",
+      "image": "https://avatars.githubusercontent.com/u/8788717?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 545,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1772179110490,
+      "changelog": "release 0.1.1",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ee4f4d7ceed42f92d8711793605cc40b16b82eafa70ac355acdf24c2a5c31c51"
+}

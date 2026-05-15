@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-veo3-video-gen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_veo3_video_gen",
+  "skill": {
+    "id": 20465,
+    "skillKey": "clawhub-skill-veo3-video-gen",
+    "name": "Skill Veo3 Video Gen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-veo3-video-gen",
+    "url": "https://clawhub.ai/skills/skill-veo3-video-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-veo3-video-gen-cd0047c8caf489a9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate and stitch short videos via Google Veo 3.x using the Gemini API (google-genai). Use when you need to create video clips from prompts (ads, UGC-style..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zero2ai-hub",
+      "userId": "s17a1b8dv4hc6x68q9m057m67n83ryrt",
+      "displayName": "Zero2Ai",
+      "image": "https://avatars.githubusercontent.com/u/244362887?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 544,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772327198663,
+      "changelog": "Initial release of Veo 3 Video Generation skill.\n\n- Generate short MP4 video clips from text prompts using Google Veo 3.x via the Gemini API.\n- Supports creating longer videos by automatically stitching multiple segments.\n- Includes options for prompt consistency, segment style, reference images, and intermediate file handling.\n- Handles API rate limits and provides fallback instructions.\n- Requires GEMINI_API_KEY and ffmpeg for multi-segment videos.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c2f1a8cfab79ac5a49bd144f23f14264f7070710abb1848f0ba631fa6b14c823"
+}

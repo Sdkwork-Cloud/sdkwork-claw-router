@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zhouyi-bazi@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhouyi_bazi",
+  "skill": {
+    "id": 66657,
+    "skillKey": "clawhub-zhouyi-bazi",
+    "name": "Zhouyi Bazi Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhouyi-bazi",
+    "url": "https://clawhub.ai/skills/zhouyi-bazi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhouyi-bazi-479cb071a5c004d1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "深入回答周易、四柱八字、子平/奇门命理、调候与经典源流问题时使用。涵盖典籍脉络、取用神步骤、理气/格局解析与现代化表述建议，需引用 references/ 下的整理笔记。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhanglinghao01-rakuten",
+      "userId": "s1752bkwmdzs7qdw1gbwhd96hx83gf79",
+      "displayName": "zhanglinghao01-rakuten",
+      "image": "https://avatars.githubusercontent.com/u/47613864?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 511,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772595127740,
+      "changelog": "Initial release of zhouyi-bazi skill.\n\n- Provides structured answers on Zhouyi, Bazi, Zi Ping, Qi Men, and classic metaphysics using curated reference notes.\n- Focuses on interpretation, classic text context, and modern expression—no chart calculation or live analysis.\n- Detailed workflow for referencing sources and delivering concise, professional responses with appropriate citations.\n- Includes clear boundaries, stressing that metaphysics is for thought and cannot replace professional medical/legal advice.\n- Lists typical usage scenarios and recommendations for expanded reference materials in future updates.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f616797360a675f5a525698e94a4c645138af84038d4d461620f005d7c364c2d"
+}

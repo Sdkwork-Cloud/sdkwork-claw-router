@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15892,
+  "uuid": "skill-clawhub-perplexity-research",
+  "skillKey": "clawhub-perplexity-research",
+  "name": "Perplexity Research",
+  "summary": "Conduct deep research using Perplexity Agent API with web search, reasoning, and multi-model analysis. Use when the user needs current information, market re...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.perplexity_research",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Joe Hu",
+      "features": [
+        "Conduct deep research using Perplexity Agent API with web search, reasoning, and multi-model an.",
+        "Use when the user needs current information, market re..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/perplexity-research@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6365707?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "perplexity-research",
+      "url": "https://clawhub.ai/skills/perplexity-research"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "perplexity-research",
+    "url": "https://clawhub.ai/skills/perplexity-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/perplexity-research-7e450958fe8a986f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/perplexity-research@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-perplexity-research-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a078672eb4627f90b8437fb667ddb4275542bd8bd17b4c5107654e9ad815dbd8",
+      "artifactSizeBytes": 2097
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T13:47:45.798Z"
+}

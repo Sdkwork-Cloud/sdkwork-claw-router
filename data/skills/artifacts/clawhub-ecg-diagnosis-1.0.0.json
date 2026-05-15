@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ecg-diagnosis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecg_diagnosis",
+  "skill": {
+    "id": 67907,
+    "skillKey": "clawhub-ecg-diagnosis",
+    "name": "ecg-diagnosis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecg-diagnosis",
+    "url": "https://clawhub.ai/skills/ecg-diagnosis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecg-diagnosis-7156a92cd05f36ce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "2026 视觉语义化心电助手（增强校验版）。强制执行本地脚本，内置文件名格式审计与拟人进度播报。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fanglucheng",
+      "userId": "s1736x346b9679c3r5tnzc0y6983hk9d",
+      "displayName": "fanglucheng",
+      "image": "https://avatars.githubusercontent.com/u/109670253?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775829334750,
+      "changelog": "Free to use, modify, and redistribute. No attribution required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d38beefc908fe508af832fb3c56df8a10515c35337c0132cd323c6656989948e"
+}

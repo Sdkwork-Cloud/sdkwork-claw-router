@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aapanel-5h3ll@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aapanel_5h3ll",
+  "skill": {
+    "id": 52034,
+    "skillKey": "clawhub-aapanel-5h3ll",
+    "name": "Aapanel 5h3ll"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aapanel-5h3ll",
+    "url": "https://clawhub.ai/skills/aapanel-5h3ll",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aapanel-5h3ll-f29a5b113dec58c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "aaPanel/BT-Panel server monitoring and file management skill — system resources, site status, service status, SSH logs, cron jobs, log reading, and remote fi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "social5h3ll",
+      "userId": "s1714rzkkf8ecdcqe3gx1q5sz184krpz",
+      "displayName": "Social5h3ll",
+      "image": "https://avatars.githubusercontent.com/u/270819256?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 248,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1777593153761,
+      "changelog": "v1.0.7: fix ssl.py stdlib conflict + missing BtClient imports",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c2679a2305e9d94cb0cb1474366966451fbf7cf6cd3bed74b48c00572d2a6fd6"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-orchestration@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_orchestration",
+  "skill": {
+    "id": 10495,
+    "skillKey": "clawhub-agent-orchestration",
+    "name": "Agent Orchestration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-orchestration",
+    "url": "https://clawhub.ai/skills/agent-orchestration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-orchestration-a39be28ab5e2b168.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Master the art of spawning and managing sub-agents. Write prompts that actually work, track running agents, and learn from every outcome. Part of the Hal Stack 🦞"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clawdnw",
+      "userId": "publishers:clawdnw",
+      "displayName": "clawdnw",
+      "image": "https://avatars.githubusercontent.com/u/257213758?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 2926,
+      "installsAllTime": 19,
+      "installsCurrent": 18,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769966469147,
+      "changelog": "agent-orchestration 2.0.0 — Major skill rewrite for sub-agent management and prompt structuring.\n\n- Redesigned prompt framework with a comprehensive 5-layer architecture (Identity, Context, Task, Process, Output).\n- Expanded documentation on writing effective, contract-based prompts to improve agent outcomes.\n- Detailed guidance on model selection, constraints, canonical documentation, and error handling.\n- Introduced practical templates and \"Ralph Mode\" for resilient, iterative agent execution.\n- Now part of the Hal Stack 🦞 with consistent voice and expert strategies for orchestrating multiple agents.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0ba009cab8611a7a5ac67fba141fa6f0b9e5d33f4ee115860ccc68016e04d844"
+}

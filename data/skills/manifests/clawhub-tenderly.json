@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35864,
+  "uuid": "skill-clawhub-tenderly",
+  "skillKey": "clawhub-tenderly",
+  "name": "Tenderly",
+  "summary": "Tenderly integration. Manage data, records, and automate workflows. Use when the user wants to interact with Tenderly data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tenderly",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Tenderly integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Tenderly data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tenderly@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tenderly",
+      "url": "https://clawhub.ai/skills/tenderly"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tenderly",
+    "url": "https://clawhub.ai/skills/tenderly",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tenderly-f19f9f2fb2540665.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tenderly@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-tenderly-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b656fc9f4b6d4815910ab38d57a2e096df489260ca7861d12c9a2d4f314e7137",
+      "artifactSizeBytes": 1838
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:04:48.600Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52036,
+  "uuid": "skill-clawhub-memory-engine-3layer",
+  "skillKey": "clawhub-memory-engine-3layer",
+  "name": "Memory Engine",
+  "summary": "Memory guardian for OpenClaw — three-layer anti-amnesia with capacity management. v6.0: MEMORY.md soft cap (5000 chars) + USER.md cap (1500 chars) prevent pr...",
+  "version": "6.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_engine_3layer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ZackO2o",
+      "features": [
+        "Memory guardian for OpenClaw — three-layer anti-amnesia with capacity management",
+        "v6.0: MEMORY.md soft cap (5000 chars) + USER.md cap (1500 chars) prevent pr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-engine-3layer@6.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/132591805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-engine-3layer",
+      "url": "https://clawhub.ai/skills/memory-engine-3layer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-engine-3layer",
+    "url": "https://clawhub.ai/skills/memory-engine-3layer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-engine-3layer-ce9b0b0b487eec54.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-engine-3layer@6.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-engine-3layer-6.0.0.json",
+      "version": "6.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e81de81653c07bd003706141b03a946bf42cfc61ae7b37d3a54a23ac506b5724",
+      "artifactSizeBytes": 2161
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T14:23:12.019Z"
+}

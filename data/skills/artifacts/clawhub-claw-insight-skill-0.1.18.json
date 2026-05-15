@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-insight-skill@0.1.18",
+  "version": "0.1.18",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_insight_skill",
+  "skill": {
+    "id": 50435,
+    "skillKey": "clawhub-claw-insight-skill",
+    "name": "ClawInsight"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-insight-skill",
+    "url": "https://clawhub.ai/skills/claw-insight-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-insight-skill-f9e54ee61af0fd37.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Earn passive income from market research. Your agent drafts answers to brand survey questions — you review, edit, and approve every answer before it's shared..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tgzhou98",
+      "userId": "s17908fqacfqz8rcr7a18skhdd83sne4",
+      "displayName": "tgzhou98",
+      "image": "https://avatars.githubusercontent.com/u/24786426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 420,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 19
+    },
+    "latestVersion": {
+      "version": "0.1.18",
+      "createdAt": 1773702946858,
+      "changelog": "**ClawInsight Skill v0.1.18 Changelog**\n\n- Added main API client (clawinsight.js) and package.json for improved integration and metadata management.\n- Updated SKILL.md: streamlined instructions, clarified data boundaries, and documented network/API requirements.\n- Enhanced documentation of registration/authentication, consent, data boundaries, and user protections.\n- Made network/server endpoints and allowed fields explicit for improved transparency.\n- No functional logic changes—this update focuses on developer onboarding, clarity, and compliance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a49d01bba02a1f0fd5fdeccf59fe8ac36a18bcb896af43eaf5732fc046b16b94"
+}

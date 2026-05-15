@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15593,
+  "uuid": "skill-clawhub-four-claw",
+  "skillKey": "clawhub-four-claw",
+  "name": "FourClawFun",
+  "summary": "Launch custom tokens on Solana (BAGS) or BNB Chain (FLAP) via API with configurable tax and revenue sharing options.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.four_claw",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FourClawTeam",
+      "features": [
+        "Launch custom tokens on Solana (BAGS) or BNB Chain (FLAP) via API with configurable tax and rev."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/four-claw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259024571?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "four-claw",
+      "url": "https://clawhub.ai/skills/four-claw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "four-claw",
+    "url": "https://clawhub.ai/skills/four-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/four-claw-2e52a9bbb032fe70.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/four-claw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-four-claw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6e3c4b81a90a892fe672d3bfad4e8e9598b14930d8b5ba5f4e2fe235379097cd",
+      "artifactSizeBytes": 1793
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T03:23:47.182Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58862,
+  "uuid": "skill-clawhub-error-analysis",
+  "skillKey": "clawhub-error-analysis",
+  "name": "Error Analysis",
+  "summary": "错题分析助手。错题归类、知识点定位、薄弱环节分析、复习建议。Error analysis for study with categorization, knowledge gap identification. 错题本、考试复盘、学习分析。Use when analyzing exam mistakes.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.error_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "错题分析助手。错题归类、知识点定位、薄弱环节分析、复习建议。Error analysis for study with categorization, knowledge gap ident.",
+        "错题本、考试复盘、学习分析。Use when analyzing exam mistakes."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/error-analysis@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "error-analysis",
+      "url": "https://clawhub.ai/skills/error-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "error-analysis",
+    "url": "https://clawhub.ai/skills/error-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/error-analysis-200789b846cdf809.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/error-analysis@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-error-analysis-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dd754bb4b2982f4540af15df96fd4e200bf9f01448cea5a7513da73dff4fd81d",
+      "artifactSizeBytes": 2013
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T18:56:58.222Z"
+}

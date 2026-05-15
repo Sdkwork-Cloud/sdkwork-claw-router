@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/game-strategy-vault@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.game_strategy_vault",
+  "skill": {
+    "id": 49733,
+    "skillKey": "clawhub-game-strategy-vault",
+    "name": "Game Strategy Vault"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "game-strategy-vault",
+    "url": "https://clawhub.ai/skills/game-strategy-vault",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/game-strategy-vault-57e96b07a3b3e7be.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provide detailed game info and goals to get tailored build optimizations, boss tactics, meta-analysis, and strategy advice for PC, console, and mobile games."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 68,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778247997522,
+      "changelog": "Initial release of Game Strategy Vault.\n\n- Provides strategic analysis for a wide range of game genres: RPGs, strategy, MOBA, FPS, fighting, roguelikes, puzzle, and simulation/management games.\n- Offers help with boss tactics, build optimization, meta-analysis, and route planning.\n- Guides users on effective queries by detailing what information to provide for tailored advice.\n- Supports both competitive and single-player scenarios, with tips for adapting strategies.\n- Explains mechanics, optimizes decisions, recommends strategies, and educates on underlying principles.\n- Clarifies limitations: does not provide cheats, emphasizes version/meta context, and analyzes RNG outcomes probabilistically.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0d8cefe0f0ee553ad40c8866c1670565a09f544e2c63d7a199575d387f2b600b"
+}

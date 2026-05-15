@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ramboxie-claw-rpg@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ramboxie_claw_rpg",
+  "skill": {
+    "id": 22811,
+    "skillKey": "clawhub-ramboxie-claw-rpg",
+    "name": "RAMBOXIE Claw Rpg"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ramboxie-claw-rpg",
+    "url": "https://clawhub.ai/skills/ramboxie-claw-rpg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ramboxie-claw-rpg-5bcbc36391be3580.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "D&D-style RPG system for AI lobsters that auto-generates characters, tracks XP from conversations, manages leveling and prestige, and provides a web dashboard."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ramboxie",
+      "userId": "s179vdtva3hjq8xcjkvgcs85e183gsbj",
+      "displayName": "RAMBOXIE",
+      "image": "https://avatars.githubusercontent.com/u/74229868?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 460,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773122168216,
+      "changelog": "- English README rewrite with streamlined instructions and clear separation of features.\n- Added documentation for new \"easter egg\" system: hidden RPG flavor text triggered during conversations with probability and milestone guarantees.\n- Updated integration steps for both the easter egg trigger and daily greeting systems.\n- Clarified file descriptions and usage, and improved formatting for better readability.\n- Deprecated inline Chinese documentation in favor of a concise, accessible structure for all users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:547658985a9b070929ea3d9d521c9f06c388d3021d89afcdff5f958d09c5ed7a"
+}

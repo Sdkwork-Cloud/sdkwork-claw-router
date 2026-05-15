@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17121,
+  "uuid": "skill-clawhub-django-creator",
+  "skillKey": "clawhub-django-creator",
+  "name": "Django Project Creator",
+  "summary": "Automatically create a ready-to-use Django or Django REST Framework project with preconfigured settings and environment provisioning for fast, consistent setup.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.django_creator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nassi Mohammed",
+      "features": [
+        "Automatically create a ready-to-use Django or Django REST Framework project with preconfigured."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/django-creator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/115360141?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "django-creator",
+      "url": "https://clawhub.ai/skills/django-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "django-creator",
+    "url": "https://clawhub.ai/skills/django-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/django-creator-59ec1f26cb80de96.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/django-creator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-django-creator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:201a7146b9d186387d7cabbd51f9d88256be4af82338279803d263abb408d3a1",
+      "artifactSizeBytes": 2245
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T15:13:12.184Z"
+}

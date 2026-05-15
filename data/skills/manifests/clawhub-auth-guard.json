@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21967,
+  "uuid": "skill-clawhub-auth-guard",
+  "skillKey": "clawhub-auth-guard",
+  "name": "Auth Guard",
+  "summary": "Standardize API credential handling and startup auth checks to prevent \"missing key\" regressions across sessions. Use when an agent repeatedly loses auth sta...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auth_guard",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ada Vale",
+      "features": [
+        "Standardize API credential handling and startup auth checks to prevent \"missing key\" regression.",
+        "Use when an agent repeatedly loses auth sta..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auth-guard@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/104856138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auth-guard",
+      "url": "https://clawhub.ai/skills/auth-guard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auth-guard",
+    "url": "https://clawhub.ai/skills/auth-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auth-guard-99b337f967d1cf03.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auth-guard@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-auth-guard-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc4e2a5e90c8db92a6614a538a90d93bbb364e92d96b8e5a9b47440b9f9413ee",
+      "artifactSizeBytes": 1956
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T17:44:46.482Z"
+}

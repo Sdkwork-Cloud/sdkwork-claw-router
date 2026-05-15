@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53934,
+  "uuid": "skill-clawhub-agent-gateway",
+  "skillKey": "clawhub-agent-gateway",
+  "name": "Agent Gateway",
+  "summary": "Smart multi-model routing — use Claude, GPT, Gemini, or local Ollama models with automatic cost optimization, fallback chains, and usage tracking.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_gateway",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Blossom",
+      "features": [
+        "Smart multi-model routing — use Claude, GPT, Gemini, or local Ollama models with automatic cost."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-gateway@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19878893?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-gateway",
+      "url": "https://clawhub.ai/skills/agent-gateway"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-gateway",
+    "url": "https://clawhub.ai/skills/agent-gateway",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-gateway-d01575d0012a37a1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-gateway@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-gateway-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0d624e3a17f6928763479eda747866070bb0d5350b34b4b9ecef7b7066f2c4fb",
+      "artifactSizeBytes": 2372
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T07:24:47.203Z"
+}

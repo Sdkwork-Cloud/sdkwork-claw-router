@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gate-info-risk-check@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_info_risk_check",
+  "skill": {
+    "id": 26330,
+    "skillKey": "clawhub-gate-info-risk-check",
+    "name": "gate-info-riskcheck"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-info-risk-check",
+    "url": "https://clawhub.ai/skills/gate-info-risk-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-info-risk-check-8719cf14885c34e5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Token and address risk assessment. Use this skill ONLY when the user's query is exclusively about token/contract/address security with no other analysis dime..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gate-exchange",
+      "userId": "s172g4d1dcv6ccs6desbb2xw1583qza9",
+      "displayName": "Gate",
+      "image": "https://avatars.githubusercontent.com/u/33109813?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 360,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775558088595,
+      "changelog": "gate-info-riskcheck 1.0.3\n\n- Updated SKILL.md to simplify local maintenance rules and clarify path references for runtime rules.\n- Improved skill installation and routing instructions for greater clarity.\n- Removed `scripts/update-skill.sh` for streamlined skill maintenance.\n- No changes to query intent coverage or tool usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ad9c1f58df7366c762eef83914691b0c39af19375b7c80fe4ef09c49344405f6"
+}

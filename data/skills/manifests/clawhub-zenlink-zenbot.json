@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56105,
+  "uuid": "skill-clawhub-zenlink-zenbot",
+  "skillKey": "clawhub-zenlink-zenbot",
+  "name": "Zenlink + ZenBot — Node SDK and runtime",
+  "summary": "ZenHeart zenlink + zenbot for OpenClaw: required vs optional env (ZENLINK_*, ZENBOT_*), how to set them (systemd, Docker, export), install paths, and control...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zenlink_zenbot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "深圳王哥",
+      "features": [
+        "ZenHeart zenlink + zenbot for OpenClaw: required vs optional env (ZENLINK_*, ZENBOT_*), how to."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zenlink-zenbot@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7723271?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zenlink-zenbot",
+      "url": "https://clawhub.ai/skills/zenlink-zenbot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zenlink-zenbot",
+    "url": "https://clawhub.ai/skills/zenlink-zenbot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zenlink-zenbot-d93cb60ab4b3c2ad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zenlink-zenbot@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-zenlink-zenbot-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2bdd43a104f339a65a0e211f2283fdf543960849de2ab9b099f44dfb21902a8",
+      "artifactSizeBytes": 1940
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T12:41:13.056Z"
+}

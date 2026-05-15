@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/personal-crm@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_crm",
+  "skill": {
+    "id": 10449,
+    "skillKey": "clawhub-personal-crm",
+    "name": "Personal CRM"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-crm",
+    "url": "https://clawhub.ai/skills/personal-crm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-crm-8fe294fb6a158cf2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Personal relationship manager that helps you stay in touch with important people through gentle nudges, birthday reminders, and conversation tracking."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "matthewpoe",
+      "userId": "publishers:matthewpoe",
+      "displayName": "matthewpoe",
+      "image": "https://avatars.githubusercontent.com/u/28708585?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2318,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1770164356393,
+      "changelog": "- Initial release of personal-crm: a personal relationship manager to help you maintain important connections.\n- Provides gentle nudges for check-ins, birthday reminders (day-of and advance), and tracks conversations.\n- Introduces a smart two-file architecture—NETWORK.md for deep history/context and NETWORK-ACTIVE.md for weekly actionable items—optimized for speed and large networks.\n- Features onboarding flow to set up core contacts, track standing events, and log special dates.\n- Offers optional integration with calendar and email for importing birthdays and logging touchpoints.\n- Focuses on warmth and helpfulness, avoiding guilt-driven reminders.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0b935cd7f479ddc27e13c6a8040c68d3b4b6a0a2d79c9ad4c23ee2881bb6ecc1"
+}

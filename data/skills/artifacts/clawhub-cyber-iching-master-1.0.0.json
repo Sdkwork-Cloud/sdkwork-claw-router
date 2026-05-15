@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cyber-iching-master@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cyber_iching_master",
+  "skill": {
+    "id": 68234,
+    "skillKey": "clawhub-cyber-iching-master",
+    "name": "🔮 赛博易经大师 | Cyber I Ching Master"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cyber-iching-master",
+    "url": "https://clawhub.ai/skills/cyber-iching-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cyber-iching-master-931a30680d3f1cb9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于周易六十四卦，支持多种起卦法及三层义理解读，提供数字占卜和八字排盘服务，助用户洞察趋势与自省。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agent4quant",
+      "userId": "s178tb2hn25zendeee4pf2yfs9844sgx",
+      "displayName": "agent4quant",
+      "image": "https://avatars.githubusercontent.com/u/271207309?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 125,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777083034323,
+      "changelog": "Cyber I Ching Master 1.0.0 – Initial release.\n\n- Offers digital I Ching divination with classic methods: Milfoil (蓍草法), Coin, and Number-based hexagram generation.\n- Provides multi-layered hexagram interpretation (Image, Number, Principle) with detailed Yao explanations.\n- Includes BaZi (Four Pillars) chart calculation and rendering.\n- Features clear API and CLI usage examples for all functions.\n- Adheres to ethical guidelines, restricting prohibited questions.\n- Complete project structure and method references documented.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7db8f2db4191a0a261aa3b7ea900fe2592bdedf6c710b18ac2ac6fa3183e14a7"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23890,
+  "uuid": "skill-clawhub-trip-discover",
+  "skillKey": "clawhub-trip-discover",
+  "name": "Trip Discover",
+  "summary": "Recommend travel destinations based on vibe, budget, duration, and group size. Handles \"suggest a trip\", \"where should I go\", \"weekend getaway\", \"compare X v...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trip_discover",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Swayam Gupta",
+      "features": [
+        "Recommend travel destinations based on vibe, budget, duration, and group size",
+        "Handles \"suggest a trip\", \"where should I go\", \"weekend getaway\", \"compare X v..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trip-discover@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77153230?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trip-discover",
+      "url": "https://clawhub.ai/skills/trip-discover"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trip-discover",
+    "url": "https://clawhub.ai/skills/trip-discover",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trip-discover-7f85a6528bdcd42b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trip-discover@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trip-discover-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2cc3cddbdc99d9f13395d8719e839a1ae6111ab9f2ae1d86ac23060f92bc73b3",
+      "artifactSizeBytes": 2415
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T07:35:10.801Z"
+}

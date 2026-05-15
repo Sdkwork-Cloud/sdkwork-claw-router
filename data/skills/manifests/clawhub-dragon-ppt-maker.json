@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64164,
+  "uuid": "skill-clawhub-dragon-ppt-maker",
+  "skillKey": "clawhub-dragon-ppt-maker",
+  "name": "PPT制作",
+  "summary": "使用python-pptx制作科技风PPT，支持多布局、多图文混排及HTML内容嵌入，轻松生成专业演示文稿。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dragon_ppt_maker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dragon015",
+      "features": [
+        "使用python-pptx制作科技风PPT，支持多布局、多图文混排及HTML内容嵌入，轻松生成专业演示文稿。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dragon-ppt-maker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43516666?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dragon-ppt-maker",
+      "url": "https://clawhub.ai/skills/dragon-ppt-maker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dragon-ppt-maker",
+    "url": "https://clawhub.ai/skills/dragon-ppt-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dragon-ppt-maker-da5b8a23f8ca7ad5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dragon-ppt-maker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dragon-ppt-maker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c8d51c0c1cd182f2e8d15c103457234d3a8c0d0cbf5a5e4e84e114c96a23ec5",
+      "artifactSizeBytes": 1857
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T08:09:17.960Z"
+}

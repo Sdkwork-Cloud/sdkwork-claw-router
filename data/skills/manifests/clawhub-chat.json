@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12032,
+  "uuid": "skill-clawhub-chat",
+  "skillKey": "clawhub-chat",
+  "name": "Chat",
+  "summary": "Learns communication preferences from explicit feedback. Adapts tone, format, and style.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chat",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Learns communication preferences from explicit feedback",
+        "Adapts tone, format, and style."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chat@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chat",
+      "url": "https://clawhub.ai/skills/chat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chat",
+    "url": "https://clawhub.ai/skills/chat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chat-31e06f7d89feb99a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chat@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chat-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:791ffec82ab82bc14e78e7c69107718785a7f949c1d057c1edff6e6134fa89b9",
+      "artifactSizeBytes": 1803
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T14:13:40.050Z"
+}

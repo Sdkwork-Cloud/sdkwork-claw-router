@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17610,
+  "uuid": "skill-clawhub-ave-cloud",
+  "skillKey": "clawhub-ave-cloud",
+  "name": "AVE Cloud Skill",
+  "summary": "Query on-chain crypto data via the AVE Cloud API (https://cloud.ave.ai/). Use this skill whenever the user wants to: - Search for tokens by name, symbol, or...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ave_cloud",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ave",
+      "features": [
+        "Query on-chain crypto data via the AVE Cloud API (https://cloud.ave.ai/)",
+        "Use this skill whenever the user wants to:",
+        "Search for tokens by name, symbol, or..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ave-cloud@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/244296584?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ave-cloud",
+      "url": "https://clawhub.ai/skills/ave-cloud"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ave-cloud",
+    "url": "https://clawhub.ai/skills/ave-cloud",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ave-cloud-0dbf45131d1853bd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ave-cloud@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ave-cloud-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:edc8da6188f7fa4690c6e4ffcfae711669688a2700207026e7b42c05ac71b578",
+      "artifactSizeBytes": 1845
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T01:55:19.162Z"
+}

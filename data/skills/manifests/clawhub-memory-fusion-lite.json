@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60403,
+  "uuid": "skill-clawhub-memory-fusion-lite",
+  "skillKey": "clawhub-memory-fusion-lite",
+  "name": "Memory Fusion Lite",
+  "summary": "Memory Fusion Light — 基于 dztabel-happy/openclaw-memory-fusion 核心思想：三层 cron 自动记忆提取/滚动蒸馏/防套娃。功能：①A′滚动7天区 ②增量扫描脚本 ③防套娃三保险 ④每周分类治理。适用已部署 Dreaming 的用户补强记忆闭环。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_fusion_lite",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dxiaofeng0811-lgtm",
+      "features": [
+        "Memory Fusion Light — 基于 dztabel-happy/openclaw-memory-fusion 核心思想：三层 cron 自动记忆提取/滚动蒸馏/防套娃。功能：①."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-fusion-lite@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266959010?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-fusion-lite",
+      "url": "https://clawhub.ai/skills/memory-fusion-lite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-fusion-lite",
+    "url": "https://clawhub.ai/skills/memory-fusion-lite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-fusion-lite-15489a7eed5d54b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-fusion-lite@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-fusion-lite-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b10a629691ab7c4547ca513c2f66ff0374976746651f4fd826a73fda532b3242",
+      "artifactSizeBytes": 2726
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T05:03:09.112Z"
+}

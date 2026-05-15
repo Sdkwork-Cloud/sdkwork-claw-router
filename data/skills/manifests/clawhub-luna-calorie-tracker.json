@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25705,
+  "uuid": "skill-clawhub-luna-calorie-tracker",
+  "skillKey": "clawhub-luna-calorie-tracker",
+  "name": "Luna Calorie Tracker",
+  "summary": "Track daily caloric intake by sending food photos. Luna analyzes images using vision AI, estimates calories and macros, and stores everything in memory for d...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.luna_calorie_tracker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sidney Schwartz",
+      "features": [
+        "Track daily caloric intake by sending food photos",
+        "Luna analyzes images using vision AI, estimates calories and macros, and stores everything in m."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/luna-calorie-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60203408?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "luna-calorie-tracker",
+      "url": "https://clawhub.ai/skills/luna-calorie-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "luna-calorie-tracker",
+    "url": "https://clawhub.ai/skills/luna-calorie-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/luna-calorie-tracker-3f2b6da68e7ba385.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/luna-calorie-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-luna-calorie-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b1fc32d54deac767715f6c8782f4a8be6088c2cacec2ce775b9def0977dcc738",
+      "artifactSizeBytes": 2475
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T06:22:23.115Z"
+}

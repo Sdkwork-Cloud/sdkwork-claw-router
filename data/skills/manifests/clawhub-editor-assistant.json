@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72056,
+  "uuid": "skill-clawhub-editor-assistant",
+  "skillKey": "clawhub-editor-assistant",
+  "name": "小编助手",
+  "summary": "小编助手～帮你创作超有个人风格的公众号/小红书推文！当你想写文章、需要我帮你分析整理内容、或者想基于某些素材创作有趣有料的推文时，就找小编吧～ 典型场景： - \"帮我写一篇公众号推文\" - \"分析一下这几篇文章\" - \"基于这些内容写个有个性的文章\" - \"帮我看看这几篇文章的主要观点",
+  "version": "1.4.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.editor_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "沈荣明",
+      "features": [
+        "小编助手～帮你创作超有个人风格的公众号/小红书推文！当你想写文章、需要我帮你分析整理内容、或者想基于某些素材创作有趣有料的推文时，就找小编吧～ 典型场景：",
+        "\"帮我写一篇公众号推文\"",
+        "\"分析一下这几篇文章\"",
+        "\"基于这些内容写个有个性的文章\""
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/editor-assistant@1.4.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2356195?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "editor-assistant",
+      "url": "https://clawhub.ai/skills/editor-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "editor-assistant",
+    "url": "https://clawhub.ai/skills/editor-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/editor-assistant-30d54336dba0b858.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/editor-assistant@1.4.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-editor-assistant-1.4.7.json",
+      "version": "1.4.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4bc430a84ed115683f44a3de5e706cdf44cba20362c5d56b680585c288115c8c",
+      "artifactSizeBytes": 2232
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T15:00:08.542Z"
+}

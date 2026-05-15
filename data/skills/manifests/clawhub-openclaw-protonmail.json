@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15392,
+  "uuid": "skill-clawhub-openclaw-protonmail",
+  "skillKey": "clawhub-openclaw-protonmail",
+  "name": "ProtonMail via Proton Mail Bridge",
+  "summary": "ProtonMail integration via Proton Mail Bridge for reading and sending encrypted emails.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_protonmail",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jim Staley, CISSP",
+      "features": [
+        "ProtonMail integration via Proton Mail Bridge for reading and sending encrypted emails."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-protonmail@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/102480967?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-protonmail",
+      "url": "https://clawhub.ai/skills/openclaw-protonmail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-protonmail",
+    "url": "https://clawhub.ai/skills/openclaw-protonmail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-protonmail-15364b8081dc21e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-protonmail@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-protonmail-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f22392a758c8292af568d0939a7eb931d9e4ae7e74896823ce8bb73e0267b96e",
+      "artifactSizeBytes": 1968
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T05:04:39.243Z"
+}

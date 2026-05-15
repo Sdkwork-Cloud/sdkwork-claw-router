@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-linear@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_linear",
+  "skill": {
+    "id": 14583,
+    "skillKey": "clawhub-openclaw-linear",
+    "name": "Linear CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-linear",
+    "url": "https://clawhub.ai/skills/openclaw-linear",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-linear-9b9888dc32ed9720.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Linear issues, projects, teams, and documents from the command line using the linear CLI. Create, update, list, and track issues; manage projects and milestones; interact with the Linear GraphQL API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cipher-shad0w",
+      "userId": "publishers:cipher-shad0w",
+      "displayName": "cipher-shad0w",
+      "image": "https://avatars.githubusercontent.com/u/107557730?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1171,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770724665348,
+      "changelog": "Re-publishing Linear CLI skill with full documentation and reference files",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f68c0c7c9dab2a71976785e5d4124f33214e45df660f5a5d8c0ee31487e6fcd9"
+}

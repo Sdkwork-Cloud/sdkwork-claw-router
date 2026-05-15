@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70904,
+  "uuid": "skill-clawhub-odaily-skill",
+  "skillKey": "clawhub-odaily-skill",
+  "name": "Odaily Skill",
+  "summary": "Odaily 星球日报加密市场智能助手，非简单信息流接口，围绕价格、资金与事件三大信号源，对加密资讯与信息进行结构化拆解与决策级输出。帮助用户在定价之前识别变化、理解逻辑并做出判断。提供五大核心模块：① 今日必关注 ② 加密市场分析 ③ 明日关键事件 ④ 预测市场异动+聪明巨鲸尾盘追踪 ⑤ API模块化调用",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.odaily_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "odaily",
+      "features": [
+        "Odaily 星球日报加密市场智能助手，非简单信息流接口，围绕价格、资金与事件三大信号源，对加密资讯与信息进行结构化拆解与决策级输出。帮助用户在定价之前识别变化、理解逻辑并做出判断。提供五大."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/odaily-skill@1.0.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144371275?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "odaily-skill",
+      "url": "https://clawhub.ai/skills/odaily-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "odaily-skill",
+    "url": "https://clawhub.ai/skills/odaily-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/odaily-skill-92d1b44654fcdbfc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/odaily-skill@1.0.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-odaily-skill-1.0.10.json",
+      "version": "1.0.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:841ae571f0cb77b50dd3ec033b4bbb83db89bda18ced45af50684bfbb31110dc",
+      "artifactSizeBytes": 2447
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T09:16:41.991Z"
+}

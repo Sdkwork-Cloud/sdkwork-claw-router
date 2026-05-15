@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/holiday-travel-ranker@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.holiday_travel_ranker",
+  "skill": {
+    "id": 70038,
+    "skillKey": "clawhub-holiday-travel-ranker",
+    "name": "Holiday Travel Ranker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "holiday-travel-ranker",
+    "url": "https://clawhub.ai/skills/holiday-travel-ranker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/holiday-travel-ranker-a3ce66f1ff4c7ee9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "假期旅行目的地推荐排名工具。当用户想了解长假/小长假去哪里旅行最值、想对比国内外旅行目的地性价比、想获取假期出行推荐排名时使用。触发词：假期去哪玩、旅行推荐、出行目的地、性价比旅行、假期旅游排名、holiday travel、去哪里旅游、五一去哪、国庆去哪、春节出游。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dilicloud11",
+      "userId": "s17a39adn005e9jx6nvcwsf0vn840npv",
+      "displayName": "Dilicloud11",
+      "image": "https://avatars.githubusercontent.com/u/62525635?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775040142033,
+      "changelog": "Initial release of holiday-travel-ranker\n\n- Recommends Top 10 domestic and Top 10 international travel destinations for Chinese public holidays based on 8 multi-dimensional criteria.\n- Supports user-customized ranking: departure city, holiday period, prioritized factors (e.g. price, safety), and optional budget.\n- Automated workflow: user preference collection, web data gathering, scoring & ranking, and detailed report output.\n- Generates both a structured Markdown report and a responsive, interactive HTML page with sortable rankings and destination highlights.\n- Transparent scoring system with customizable weightings and clear data sourcing for each ranking dimension.\n- Includes candidate destination pools and detailed resource references for scoring and research.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:66ae1e0705a5880c1db6fb7c13c6bbfeb01ffa8b495ed6c78ddbc9e3692dee82"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46254,
+  "uuid": "skill-clawhub-clawlogic",
+  "skillKey": "clawhub-clawlogic",
+  "name": "CLAWLOGIC Trader",
+  "summary": "Use this skill to operate CLAWLOGIC prediction markets via `clawlogic-agent`: initialize wallet, register agent (ENS optional), create creator-seeded CPMM markets, analyze, trade YES/NO, assert and settle outcomes, claim fees, and post mar.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawlogic",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kaushal-205",
+      "features": [
+        "Use this skill to operate CLAWLOGIC prediction markets via `clawlogic-agent`: initialize wallet."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawlogic@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/64428589?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawlogic",
+      "url": "https://clawhub.ai/skills/clawlogic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawlogic",
+    "url": "https://clawhub.ai/skills/clawlogic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawlogic-492a57a6dd03b5b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawlogic@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawlogic-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:be25bb093c853ba2b7551782919371570bdc02558df01c4f81519368c6f35e19",
+      "artifactSizeBytes": 2450
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T20:06:22.838Z"
+}

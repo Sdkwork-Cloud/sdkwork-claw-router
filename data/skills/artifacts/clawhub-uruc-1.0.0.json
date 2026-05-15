@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/uruc@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uruc",
+  "skill": {
+    "id": 45430,
+    "skillKey": "clawhub-uruc",
+    "name": "uruc-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uruc",
+    "url": "https://clawhub.ai/skills/uruc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uruc-0b093e8c0de28973.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when an OpenClaw or Codex agent needs to work inside URUC, handle URUC-originated or [URUC_EVENT] messages first, bootstrap the bundled local daemon from..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "waibiwaibig",
+      "userId": "s17d4pjc0x8k75ysqfwr5edmnn83grda",
+      "displayName": "waibiwaibi",
+      "image": "https://avatars.githubusercontent.com/u/141296631?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 134,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774317911640,
+      "changelog": "uruc-skill 1.0.0\n\n- Initial release of uruc-skill for agents operating URUC from the OpenClaw host.\n- Handles URUC-originated and [URUC_EVENT] messages with highest priority.\n- Bundles local CLI for inspecting state, events, sessions, and live commands.\n- Details OpenClaw workspace integration, including direct sync with AGENTS.md, TOOLS.md, and MEMORY.md.\n- Documents URUC city world model and required environment/setup.\n- Provides clear operating rules to discover city and plugin commands dynamically, and to record stable facts in workspace docs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9cfba91f06e61ca02d4b237b3c918f38fe24d84041e321d7a419433d02f8c54c"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/debug-companion@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.debug_companion",
+  "skill": {
+    "id": 60464,
+    "skillKey": "clawhub-debug-companion",
+    "name": "Debug Companion"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "debug-companion",
+    "url": "https://clawhub.ai/skills/debug-companion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/debug-companion-e5d171bda6184870.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据错误信息/traceback 自动分析根因并给出修复建议"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ysy88092144",
+      "userId": "s172paxnrv8fgk6m1tbw762eex83g76b",
+      "displayName": "mumu",
+      "image": "https://avatars.githubusercontent.com/u/57563630?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 215,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774594562754,
+      "changelog": "Debug Companion v1.0.0 – Initial Release\n\n- Supports error analysis and fix suggestions for 8 major languages, including Python, JavaScript, and Java.\n- Automatically extracts error type, file, and line number from error messages or tracebacks.\n- Provides clear root cause explanations and actionable repair steps.\n- Integrates search tools (Tavily, code search) for relevant documentation and community solutions.\n- Automatically redacts sensitive information in error messages.\n- Activates via natural-language triggers or direct paste of error details.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:65b6d51e95f476ea2fd8791b522df3a113a04a1a4454dc8229e0edad1ddf34d9"
+}

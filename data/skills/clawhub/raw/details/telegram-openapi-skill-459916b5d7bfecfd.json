@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "telegram-openapi-skill",
+    "displayName": "Telegram OpenAPI Skill",
+    "summary": "Operate Telegram Bot API through UXC with a curated OpenAPI schema, bot-token path auth, polling-based reads, and webhook management guardrails.",
+    "tags": {
+      "latest": "1.0.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 304,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1773587241661,
+    "updatedAt": 1777619841470
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1773922302309,
+    "changelog": "- Add support for `multipart/form-data` local file upload to `sendPhoto` and `sendDocument` (via local path strings).\n- Update guardrails: clarify that `sendMediaGroup` is still JSON-only and does not use multipart file arrays.\n- Expand documentation for multipart usage, including local photo/document file upload examples.\n- `setWebhook` now supports multipart certificate uploads for self-signed certificates through the `certificate` file field.\n- Update OpenAPI schema and usage references to reflect multipart and related behavior.\n- Improve prerequisites, scope, and operation documentation for clarity.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "jolestar",
+    "userId": "s1769rm50f8wvzw550m22hg10x83gkem",
+    "displayName": "jolestar",
+    "image": "https://avatars.githubusercontent.com/u/77268?v=4"
+  },
+  "moderation": null
+}

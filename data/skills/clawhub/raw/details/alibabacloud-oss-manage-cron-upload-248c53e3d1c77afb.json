@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "alibabacloud-oss-manage-cron-upload",
+    "displayName": "Alibabacloud Oss Manage Cron Upload",
+    "summary": "Alibaba Cloud OSS scheduled local-folder sync skill using aliyun CLI, including integrated ossutil commands for incremental upload. Use when the user wants t...",
+    "tags": {
+      "latest": "0.0.2"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1774939942587,
+    "updatedAt": 1777526951584
+  },
+  "latestVersion": {
+    "version": "0.0.2",
+    "createdAt": 1777018453995,
+    "changelog": "v0.0.2 introduces stricter CLI safety and user-agent requirements for better security and traceability.\n\n- Enforces enabling aliyun CLI AI-mode before any workflow starts and mandates disabling it at every exit point.\n- Requires all CLI invocations to explicitly set a unique skill-specific user-agent string.\n- Updates installation and workflow steps to reflect these new mandatory safety and traceability controls.\n- No functional changes to parameters, input validation, or OSS prerequisites.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "sdk-team",
+    "userId": "s173swjet2yrebzqrp6hjkvmy583mxef",
+    "displayName": "alibabacloud-skills-team",
+    "image": "https://avatars.githubusercontent.com/u/49941014?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.generated_source_template_injection",
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.generated_source_template_injection, suspicious.llm_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777526951584
+  }
+}

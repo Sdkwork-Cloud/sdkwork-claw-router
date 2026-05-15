@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73552,
+  "uuid": "skill-clawhub-bazi-pan-skill",
+  "skillKey": "clawhub-bazi-pan-skill",
+  "name": "八字排盘技能",
+  "summary": "八字命理排盘技能。支持四柱八字排盘、十神计算、大运排法、五行统计、格局判断、用神选取、流年推算、详细断语。",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bazi_pan_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dglijin-oss",
+      "features": [
+        "八字命理排盘技能。支持四柱八字排盘、十神计算、大运排法、五行统计、格局判断、用神选取、流年推算、详细断语。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bazi-pan-skill@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/251980243?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bazi-pan-skill",
+      "url": "https://clawhub.ai/skills/bazi-pan-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bazi-pan-skill",
+    "url": "https://clawhub.ai/skills/bazi-pan-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bazi-pan-skill-0cb4bb64da9d36fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bazi-pan-skill@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-bazi-pan-skill-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2a1f94166e75dfa11528547cee187f703fa933611dadd37c97b9af4c1645c97e",
+      "artifactSizeBytes": 1917
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T15:12:00.306Z"
+}

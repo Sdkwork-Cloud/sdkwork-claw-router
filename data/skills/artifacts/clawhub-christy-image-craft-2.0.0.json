@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/christy-image-craft@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.christy_image_craft",
+  "skill": {
+    "id": 55835,
+    "skillKey": "clawhub-christy-image-craft",
+    "name": "Image Craft"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "christy-image-craft",
+    "url": "https://clawhub.ai/skills/christy-image-craft",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/christy-image-craft-cda43441ea38b723.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Curated image generation assistant covering four categories — characters, scenes, products, and style transformation — for generating high-quality stylized 3..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ericn26-star",
+      "userId": "s17a4j37w3f2wyke5hajt5vtad85wyxf",
+      "displayName": "ericn26-star",
+      "image": "https://avatars.githubusercontent.com/u/270299470?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 102,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1777658291427,
+      "changelog": "ImageCraft 2.0.0 — Major update with comprehensive, category-based image generation\n\n- Consolidates image generation into four categories: Characters, Scenes, Products, and Style Transformation, covering 17 unique styles.\n- Introduces dedicated workflow and prompt templates for each style, with clear execution rules for concise communication and direct image delivery.\n- Adds language detection for all outputs and enforces minimal, streamlined user guidance and interaction.\n- Images are now delivered directly using a standardized format; explanations and summaries are removed throughout.\n- Interactive options and style picking now always use `genui-form-wizard` (plain text tables are forbidden).\n- Example generation mode (\"try it\") available with built-in sample cases for every style.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:94c15bf4769547663b15e4c9a88626191b4e8ca89f5ffd14760882811286cbab"
+}

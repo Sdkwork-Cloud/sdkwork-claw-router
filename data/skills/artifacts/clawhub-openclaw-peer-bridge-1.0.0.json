@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-peer-bridge@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_peer_bridge",
+  "skill": {
+    "id": 29105,
+    "skillKey": "clawhub-openclaw-peer-bridge",
+    "name": "OpenClaw Peer Bridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-peer-bridge",
+    "url": "https://clawhub.ai/skills/openclaw-peer-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-peer-bridge-549237db76dfd1f3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design and operate communication patterns between two OpenClaw instances. Use when a user wants one OpenClaw deployment to send status, tasks, reminders, aud..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clawdpi-ai",
+      "userId": "s17c59wx2z3g9hb03wec1g2cgx83tfgr",
+      "displayName": "ClawdPI-AI",
+      "image": "https://avatars.githubusercontent.com/u/189876277?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 310,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773338205363,
+      "changelog": "Initial release: communication patterns between OpenClaw instances via webhook, cron, chat relay, and local/remote coordination.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:004ad6ae02e85c14e0127cd5e4e8b32eb7f6587fe5b62f7f39b7122fed95c010"
+}

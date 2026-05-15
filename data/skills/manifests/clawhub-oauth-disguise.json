@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51795,
+  "uuid": "skill-clawhub-oauth-disguise",
+  "skillKey": "clawhub-oauth-disguise",
+  "name": "Oauth Disguise",
+  "summary": "Configure Anthropic OAuth tokens (sk-ant-oat01-*) to work as API keys in OpenClaw via environment variable injection, enabling Claude Pro/Team API access.",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oauth_disguise",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiafar",
+      "features": [
+        "Configure Anthropic OAuth tokens (sk-ant-oat01-*) to work as API keys in OpenClaw via environme."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oauth-disguise@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94378558?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oauth-disguise",
+      "url": "https://clawhub.ai/skills/oauth-disguise"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oauth-disguise",
+    "url": "https://clawhub.ai/skills/oauth-disguise",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oauth-disguise-748d67132bee921f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oauth-disguise@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-oauth-disguise-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3897375ecde472ecb184a95f9a94dbd117eb69370c1e7808d8c515bf8844a8a3",
+      "artifactSizeBytes": 2339
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T13:44:56.210Z"
+}

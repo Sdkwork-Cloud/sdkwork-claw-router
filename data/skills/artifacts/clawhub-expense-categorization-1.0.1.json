@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/expense-categorization@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.expense_categorization",
+  "skill": {
+    "id": 23167,
+    "skillKey": "clawhub-expense-categorization",
+    "name": "Expense Categorization"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "expense-categorization",
+    "url": "https://clawhub.ai/skills/expense-categorization",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/expense-categorization-c26160c0f968a685.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract and categorize expenses from receipts or statements, map to GL codes, check compliance with policies, and flag anomalies for review."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "samledger67-dotcom",
+      "userId": "s17e6161jqcyaq82bkvewk1rz583ndyf",
+      "displayName": "samledger67-dotcom",
+      "image": "https://avatars.githubusercontent.com/u/261800271?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 439,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773796598507,
+      "changelog": "Proper name and description (was published as TEST)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9f75886b8eabf2bd2f6ea81b96da51c155050e620b291e4ac297dab51638434e"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/readdy-website-builder@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.readdy_website_builder",
+  "skill": {
+    "id": 19793,
+    "skillKey": "clawhub-readdy-website-builder",
+    "name": "Readdy.ai WebSite Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "readdy-website-builder",
+    "url": "https://clawhub.ai/skills/readdy-website-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/readdy-website-builder-f0de7e6e97ce9bd6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when the user asks to \"create a website\", \"generate a website\", \"build a website\", \"modify a website\", \"update my Readdy project\",..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "frankready2025",
+      "userId": "s1762sp6bpf9e5f9sxwp9c3tss83gqvp",
+      "displayName": "frankready2025",
+      "image": "https://avatars.githubusercontent.com/u/222576792?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 292,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1774402800979,
+      "changelog": "Version 1.0.5 of readdy-website-builder\n\n- No code or documentation changes detected in this release.\n- No new features, fixes, or updates included in this version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d901113cbfbb42eb8b1e3af8d5592cdac5818b90a91d4b118ecd038c1ae32090"
+}

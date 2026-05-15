@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/concept-decoder@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.concept_decoder",
+  "skill": {
+    "id": 56946,
+    "skillKey": "clawhub-concept-decoder",
+    "name": "Concept Decoder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "concept-decoder",
+    "url": "https://clawhub.ai/skills/concept-decoder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/concept-decoder-26d16d5e8efcf284.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deconstructs complex concepts with a layered, intuition-first pipeline (prereqs → motivation → analogies → math → connections → tests). Use when user asks 'w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "onlybelter",
+      "userId": "s176h5vgv0w6v0rs1rwaw0aaz984cv8a",
+      "displayName": "Xin Xiong",
+      "image": "https://avatars.githubusercontent.com/u/16537617?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776504096519,
+      "changelog": "No functional or content changes in this release.\n\n- Updated skill metadata (name and description block) for clarity and alignment with conventions.\n- No changes detected in workflow, explanation pipeline, or skill behavior.\n- Documentation and instructional content remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:da7fe02754ac9850bff4d0d6ef76d5ac98ecfd27e8ad3bb48d715764953e9d8e"
+}

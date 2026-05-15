@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/recruiter-assistant@1.4.2",
+  "version": "1.4.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recruiter_assistant",
+  "skill": {
+    "id": 15631,
+    "skillKey": "clawhub-recruiter-assistant",
+    "name": "Recruiter Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recruiter-assistant",
+    "url": "https://clawhub.ai/skills/recruiter-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recruiter-assistant-2c1f344562a582f3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A professional recruitment workflow assistant. Evaluates resumes against dynamic requirements and AI proficiency, provides critical Pros/Cons analysis, and p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gakkiismywife",
+      "userId": "s173h25mbz062j85kh5f6cs13n83gapx",
+      "displayName": "gakkiismywife",
+      "image": "https://avatars.githubusercontent.com/u/40749544?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 936,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "1.4.2",
+      "createdAt": 1772107757206,
+      "changelog": "Fixed Feishu blank page issue via create-then-append logic.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b28b2d3673b9859661a5ec0789fd34e6bca8282586bc9b98023093cedc4e2a47"
+}

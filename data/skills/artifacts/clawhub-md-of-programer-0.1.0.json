@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/md-of-programer@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.md_of_programer",
+  "skill": {
+    "id": 45106,
+    "skillKey": "clawhub-md-of-programer",
+    "name": "Md Of Programer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "md-of-programer",
+    "url": "https://clawhub.ai/skills/md-of-programer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/md-of-programer-02cd5499369a3507.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Insert mind maps and architecture diagrams into Markdown documents. Triggered when the user says \"draw a mind map\", \"draw an architecture diagram\", \"insert a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "drunkpig",
+      "userId": "s1750yhtx2015rdbkat7q25hb183g0pn",
+      "displayName": "drunkpig",
+      "image": "https://avatars.githubusercontent.com/u/60862764?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1776251707154,
+      "changelog": "Initial release of md-of-programer.\n\n- Insert mind maps and architecture diagrams into Markdown documents via simple trigger phrases.\n- Ensures all diagrams and source files are managed in the `.mddoc/` directory with strict naming rules.\n- Automates dependency checks and provides clear install instructions for required tools (`mddoc`, `d2`).\n- Outlines step-by-step instructions for generating and embedding diagrams, keeping the source and image together.\n- Provides guidance for regenerating all diagrams and includes a feedback link for issues or suggestions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:be40fc3481e7c4c0a3973616c6b49810364acc2f32a1c033dd1bf519296200d8"
+}

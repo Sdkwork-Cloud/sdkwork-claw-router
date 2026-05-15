@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/research-paper-monitor@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.research_paper_monitor",
+  "skill": {
+    "id": 68215,
+    "skillKey": "clawhub-research-paper-monitor",
+    "name": "Research Paper Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "research-paper-monitor",
+    "url": "https://clawhub.ai/skills/research-paper-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/research-paper-monitor-6fb4717e7c489f05.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "科研文献智能监测与摘要推送系统。自动监测多个学术信源（arXiv、PubMed、CNKI等），根据用户关注的领域和关键词采集最新论文，生成中文摘要并推送。适用于需要跟踪学术前沿的科研工作者、研究生、教师等。使用场景包括：(1) 定时监测特定研究领域的最新论文，(2) 根据关键词筛选高相关度论文，(3) 自动生成论..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wiltonmotta",
+      "userId": "s1793kekgdbng3ppkq15emz8bs83gd71",
+      "displayName": "孙金刚",
+      "image": "https://avatars.githubusercontent.com/u/2639819?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 545,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 3,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773974250362,
+      "changelog": "Security fix: Remove unsafe SSL certificate verification bypass (ssl.CERT_NONE) that triggered VirusTotal suspicious pattern detection",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bee479ebbdc1eb4c792b903cc2742d079fbfe67147343e46e13b5a0cff754a30"
+}

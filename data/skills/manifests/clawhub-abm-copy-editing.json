@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33806,
+  "uuid": "skill-clawhub-abm-copy-editing",
+  "skillKey": "clawhub-abm-copy-editing",
+  "name": "Copy Editing",
+  "summary": "When the user wants to edit, review, or improve existing marketing copy. Also use when the user mentions 'edit this copy,' 'review my copy,' 'copy feedback,'...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abm_copy_editing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mario Karras",
+      "features": [
+        "When the user wants to edit, review, or improve existing marketing copy",
+        "Also use when the user mentions 'edit this copy,' 'review my copy,' 'copy feedback,'..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/abm-copy-editing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199292356?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "abm-copy-editing",
+      "url": "https://clawhub.ai/skills/abm-copy-editing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abm-copy-editing",
+    "url": "https://clawhub.ai/skills/abm-copy-editing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abm-copy-editing-6ff9f616858db7b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/abm-copy-editing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-abm-copy-editing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c35e3dfc7ca0c97cfbff496bd62153cb0a0b8db3bae6265b974b12ccd255da63",
+      "artifactSizeBytes": 2444
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T05:00:23.227Z"
+}

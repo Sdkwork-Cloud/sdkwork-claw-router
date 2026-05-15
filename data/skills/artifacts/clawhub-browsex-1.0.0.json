@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/browsex@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browsex",
+  "skill": {
+    "id": 20039,
+    "skillKey": "clawhub-browsex",
+    "name": "the skill to browse X"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browsex",
+    "url": "https://clawhub.ai/skills/browsex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browsex-992c7d64703a5bc4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "X/Twitter CLI using OpenClaw browser tool. Use when the user wants to interact with X/Twitter: reading timeline, posting tweets, liking, retweeting, replying..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "coding-commits",
+      "userId": "publishers:coding-commits",
+      "displayName": "William Xu",
+      "image": "https://avatars.githubusercontent.com/u/118314584?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 467,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772165482835,
+      "changelog": "- Initial release of browsex: a browser-based CLI tool to interact with X/Twitter via OpenClaw.\n- Supports common actions: reading timeline, viewing tweets and profiles, posting, liking, retweeting, replying, searching, and following.\n- Read-only browsing works without login; write actions require an authenticated X/Twitter account.\n- Designed for environments without Homebrew; alternative to the bird CLI.\n- Includes detailed usage instructions, troubleshooting tips, and a comparison with bird CLI.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:15d1329beb8c28b4a52cd4029c7a72ae37d63d0f02e8ca62c6ce5b622bdfe600"
+}

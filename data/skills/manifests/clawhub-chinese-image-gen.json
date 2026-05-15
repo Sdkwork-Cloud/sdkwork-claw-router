@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57582,
+  "uuid": "skill-clawhub-chinese-image-gen",
+  "skillKey": "clawhub-chinese-image-gen",
+  "name": "Chinese Image Gen",
+  "summary": "Generate Chinese vertical images (750×1334px) for 微头条/social media using Playwright + Google Fonts CDN. Solves PIL Chinese font glyph bugs. Triggers: 生成图片, 做...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chinese_image_gen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bashu",
+      "features": [
+        "Generate Chinese vertical images (750×1334px) for 微头条/social media using Playwright + Google Fo.",
+        "Solves PIL Chinese font glyph bugs",
+        "Triggers: 生成图片, 做..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chinese-image-gen@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6837586?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chinese-image-gen",
+      "url": "https://clawhub.ai/skills/chinese-image-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chinese-image-gen",
+    "url": "https://clawhub.ai/skills/chinese-image-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chinese-image-gen-2159c30839117762.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chinese-image-gen@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chinese-image-gen-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cd868c9262e5381c9d014e1f33dd22dc0e35574b0ad5438890ac69591daabed5",
+      "artifactSizeBytes": 1992
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T14:36:20.015Z"
+}

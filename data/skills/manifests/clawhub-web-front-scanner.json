@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18671,
+  "uuid": "skill-clawhub-web-front-scanner",
+  "skillKey": "clawhub-web-front-scanner",
+  "name": "Web Security Client-Side Scanner 1773654191",
+  "summary": "Perform a thorough client-side / browser-facing security assessment of a target web application. Use this skill whenever the user asks to pentest, audit, or...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_front_scanner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ender Loc Phan",
+      "features": [
+        "Perform a thorough client-side / browser-facing security assessment of a target web application",
+        "Use this skill whenever the user asks to pentest, audit, or..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-front-scanner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15033155?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-front-scanner",
+      "url": "https://clawhub.ai/skills/web-front-scanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-front-scanner",
+    "url": "https://clawhub.ai/skills/web-front-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-front-scanner-1fa3835dfe8f1ab6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-front-scanner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-front-scanner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:953f2c0853f863bc8fff2d8298541ddc709746fa8db94b34c5b39db7461ef428",
+      "artifactSizeBytes": 1940
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T09:43:13.507Z"
+}

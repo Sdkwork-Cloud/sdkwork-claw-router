@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14285,
+  "uuid": "skill-clawhub-dlazy-video-scenes",
+  "skillKey": "clawhub-dlazy-video-scenes",
+  "name": "Dlazy Video Scenes",
+  "summary": "Detects and splits videos into scene clips using ffmpeg, providing URLs for each clip without analyzing video content.",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dlazy_video_scenes",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dlazy",
+      "features": [
+        "Detects and splits videos into scene clips using ffmpeg, providing URLs for each clip without a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dlazy-video-scenes@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274158181?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dlazy-video-scenes",
+      "url": "https://clawhub.ai/skills/dlazy-video-scenes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dlazy-video-scenes",
+    "url": "https://clawhub.ai/skills/dlazy-video-scenes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dlazy-video-scenes-5d4292959deb7897.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dlazy-video-scenes@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-dlazy-video-scenes-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fcd9b7a92b926f0bf78fecf63557c72d904648cb980ea0f2d7b207ba60e04b0f",
+      "artifactSizeBytes": 1938
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T14:11:50.263Z"
+}

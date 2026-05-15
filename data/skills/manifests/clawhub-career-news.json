@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39365,
+  "uuid": "skill-clawhub-career-news",
+  "skillKey": "clawhub-career-news",
+  "name": "Career News",
+  "summary": "Daily profession-targeted news from X (Twitter), Google News, Grok, and global media. Supports bilingual (zh/en), multi-profession subscriptions, keyword fil...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.career_news",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cosmos Fang",
+      "features": [
+        "Daily profession-targeted news from X (Twitter), Google News, Grok, and global media",
+        "Supports bilingual (zh/en), multi-profession subscriptions, keyword fil..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/career-news@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255512740?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "career-news",
+      "url": "https://clawhub.ai/skills/career-news"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "career-news",
+    "url": "https://clawhub.ai/skills/career-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/career-news-b869f1e5ce2707a3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/career-news@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-career-news-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4c26232626eae9b7f1d2f45fdcf9647206fb4b0a250ea56ccacc1c9b942ad190",
+      "artifactSizeBytes": 2081
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T05:30:00.952Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/doubao-media@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doubao_media",
+  "skill": {
+    "id": 58735,
+    "skillKey": "clawhub-doubao-media",
+    "name": "doubao-media"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doubao-media",
+    "url": "https://clawhub.ai/skills/doubao-media",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doubao-media-65024daa5146c446.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Doubao (Volcengine ARK) 文生图、文生视频工具 - 生成后自动发送到对话，无需手动查找文件。Text-to-image and text-to-video with auto-send to chat."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "systiger",
+      "userId": "s17ajdwb6mqagsb70yednmgn5n83gwd8",
+      "displayName": "systiger",
+      "image": "https://avatars.githubusercontent.com/u/154035099?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774744817209,
+      "changelog": "doubao-media 1.0.0 – Initial release\n\n- Provides text-to-image, text-to-video, and image-to-video generation via Doubao (Volcengine ARK).\n- Automatically sends generated content to chat for convenience.\n- Supports both synchronous and asynchronous video generation modes.\n- Compatible with Windows; requires Python 3.8+ and the requests library.\n- Includes detailed usage instructions and troubleshooting tips.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6aa3d5f214e1b059004fffb9fc6a797ff77e131ab414b6330d23846b87f93aa5"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65867,
+  "uuid": "skill-clawhub-mdt-consultation",
+  "skillKey": "clawhub-mdt-consultation",
+  "name": "MDT Consultation",
+  "summary": "Agent MDT 多学科会诊——多个智能体并行协作完成复杂任务。类似医院MDT会诊，针对大事/难事/重要文件，同时派发多个专科agent并行分析，最后综合研判出高质量输出。使用场景：(1) 重要合同签署前审查 (2) 重要公文/领导讲话稿打磨 (3) 品牌宣传多平台内容策划 (4) 重大决策分析 (5) 技术方...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mdt_consultation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "luaqnyin",
+      "features": [
+        "Agent MDT 多学科会诊——多个智能体并行协作完成复杂任务。类似医院MDT会诊，针对大事/难事/重要文件，同时派发多个专科agent并行分析，最后综合研判出高质量输出。使用场景：(1)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mdt-consultation@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/162386609?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mdt-consultation",
+      "url": "https://clawhub.ai/skills/mdt-consultation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mdt-consultation",
+    "url": "https://clawhub.ai/skills/mdt-consultation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mdt-consultation-e63ffe5114b997e6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mdt-consultation@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mdt-consultation-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:76335a8f075f25ac0a7b7be0832b39bb14298833d98206356a9fa8a926c0904e",
+      "artifactSizeBytes": 2209
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T07:01:54.097Z"
+}

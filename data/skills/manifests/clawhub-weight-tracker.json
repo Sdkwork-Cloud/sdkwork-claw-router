@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68708,
+  "uuid": "skill-clawhub-weight-tracker",
+  "skillKey": "clawhub-weight-tracker",
+  "name": "减肥打卡记录",
+  "summary": "减肥进度追踪助手。用户告诉 AI 今天的体重，AI 自动帮您记录并生成漂亮的图表，清晰展示减肥进度。支持中英文界面，macOS/Windows/Linux 多平台使用。当用户说\"记录体重\"、\"今天体重\"、\"减肥打卡\"、\"体重多少\"时自动触发。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weight_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "万码千钧",
+      "features": [
+        "减肥进度追踪助手。用户告诉 AI 今天的体重，AI 自动帮您记录并生成漂亮的图表，清晰展示减肥进度。支持中英文界面，macOS/Windows/Linux 多平台使用。当用户说\"记录体重\"、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weight-tracker@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15697850?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weight-tracker",
+      "url": "https://clawhub.ai/skills/weight-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weight-tracker",
+    "url": "https://clawhub.ai/skills/weight-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weight-tracker-4dc668785814a6af.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weight-tracker@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-weight-tracker-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b21652367a9af4c8f89364aba090f9accb2da4884a2c99335eb694e49f2a4e54",
+      "artifactSizeBytes": 2408
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T08:52:46.437Z"
+}

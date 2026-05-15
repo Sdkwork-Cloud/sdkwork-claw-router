@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28842,
+  "uuid": "skill-clawhub-feishu-macos-voice",
+  "skillKey": "clawhub-feishu-macos-voice",
+  "name": "Feishu Voice (macOS)",
+  "summary": "Send voice/audio messages to Feishu (Lark) chats using TTS. Automatically uses OpenAI TTS (gpt-4o-mini-tts) if OPENAI_API_KEY is set, otherwise falls back to...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_macos_voice",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zihui",
+      "features": [
+        "Send voice/audio messages to Feishu (Lark) chats using TTS",
+        "Automatically uses OpenAI TTS (gpt-4o-mini-tts) if OPENAI_API_KEY is set, otherwise falls back."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-macos-voice@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3918434?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-macos-voice",
+      "url": "https://clawhub.ai/skills/feishu-macos-voice"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-macos-voice",
+    "url": "https://clawhub.ai/skills/feishu-macos-voice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-macos-voice-73235e2af91c94ff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-macos-voice@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-macos-voice-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ad73a35392a37d38b0a0d2f9373076f5359bbc7120ea04f42d77853ab819c87a",
+      "artifactSizeBytes": 2044
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T13:54:25.172Z"
+}

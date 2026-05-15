@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-to-gif@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_to_gif",
+  "skill": {
+    "id": 17002,
+    "skillKey": "clawhub-video-to-gif",
+    "name": "Video to GIF"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-to-gif",
+    "url": "https://clawhub.ai/skills/video-to-gif",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-to-gif-9dc3ca02728ac140.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when converting a video clip into a GIF with ffmpeg. Supports trimming by start time and duration, controlling frame rate and width, and returning the ou..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sallyxie2026",
+      "userId": "s17734wca1dxps119jynt3nm8d83k9ej",
+      "displayName": "sallyxie2026",
+      "image": "https://avatars.githubusercontent.com/u/261160993?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 579,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773245032309,
+      "changelog": "Initial public release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d74af8bd7ec4cf67a1e17f75ca0473e04e6e4e2e240915a180e206add21f3136"
+}

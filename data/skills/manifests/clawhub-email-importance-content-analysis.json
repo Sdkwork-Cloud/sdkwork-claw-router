@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14437,
+  "uuid": "skill-clawhub-email-importance-content-analysis",
+  "skillKey": "clawhub-email-importance-content-analysis",
+  "name": "Email Importance Content Analysis",
+  "summary": "Judge whether an email is important/urgent using content-based analysis rather than sender name or mailbox labels (which can be spoofed). Use when asked to triage emails, decide priority, detect phishing/social-engineering, or recommend ne.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_importance_content_analysis",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shingo0620",
+      "features": [
+        "Judge whether an email is important/urgent using content-based analysis rather than sender name.",
+        "Use when asked to triage emails, decide priority, detect phishing/social-engineering, or recomm."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/email-importance-content-analysis@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/359648?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "email-importance-content-analysis",
+      "url": "https://clawhub.ai/skills/email-importance-content-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-importance-content-analysis",
+    "url": "https://clawhub.ai/skills/email-importance-content-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-importance-content-analysis-b3238ef54f407360.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/email-importance-content-analysis@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-email-importance-content-analysis-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dce806c400ced8d17613b791644e2fa3b24a20db7847f6a289d1408f78b15b52",
+      "artifactSizeBytes": 2197
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T16:49:03.844Z"
+}

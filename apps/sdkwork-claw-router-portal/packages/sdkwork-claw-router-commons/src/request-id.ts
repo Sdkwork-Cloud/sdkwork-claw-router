@@ -23,3 +23,11 @@ export function createRequestToken(prefix: string): string {
 
   throw new Error('Secure random source returned an invalid token seed.');
 }
+
+export function createRequestParams(prefix: string): { idempotencyKey: string; xRequestId: string } {
+  const normalizedPrefix = prefix.trim() || 'request';
+  return {
+    idempotencyKey: createRequestToken(normalizedPrefix),
+    xRequestId: createRequestToken(`${normalizedPrefix}-request`),
+  };
+}

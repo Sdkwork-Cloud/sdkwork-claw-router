@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deepseek-v4-reasoning-bug@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deepseek_v4_reasoning_bug",
+  "skill": {
+    "id": 58431,
+    "skillKey": "clawhub-deepseek-v4-reasoning-bug",
+    "name": "DeepSeek V4 Reasoning Bug"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deepseek-v4-reasoning-bug",
+    "url": "https://clawhub.ai/skills/deepseek-v4-reasoning-bug",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deepseek-v4-reasoning-bug-c637709e4622963b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "排查 DeepSeek V4-Pro 在 tool-call 模式下因 reasoning_content 字段缺失导致的 API 400 错误。适用场景：(1) DeepSeek V4-Pro 使用 thinking/reasoning 模式时遇到 400 error, (2) 报错内容为 'The reaso..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "17329971",
+      "userId": "s1782z1gjmjm0sw9zjmmpggwz98421q0",
+      "displayName": "17329971",
+      "image": "https://avatars.githubusercontent.com/u/83849762?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 193,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777077040841,
+      "changelog": "Initial publish: document the reasoning_content 400 bug, trigger conditions, workaround, and OpenClaw PR tracking.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:40d01d87df783a9555ff4aa19f1b68ff17c280264c0a8e8b18060a4952eb3391"
+}

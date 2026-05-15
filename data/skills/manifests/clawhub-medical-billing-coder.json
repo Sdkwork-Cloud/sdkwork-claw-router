@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27638,
+  "uuid": "skill-clawhub-medical-billing-coder",
+  "skillKey": "clawhub-medical-billing-coder",
+  "name": "Medical Billing Coder",
+  "summary": "Use this skill when a clinician, biller, or practice manager needs to look up ICD-10 diagnosis codes, CPT procedure codes, or E&M visit level codes. Takes a...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.medical_billing_coder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "optimusprime19",
+      "features": [
+        "Use this skill when a clinician, biller, or practice manager needs to look up ICD-10 diagnosis.",
+        "Takes a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/medical-billing-coder@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11436472?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "medical-billing-coder",
+      "url": "https://clawhub.ai/skills/medical-billing-coder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "medical-billing-coder",
+    "url": "https://clawhub.ai/skills/medical-billing-coder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/medical-billing-coder-f5daf79ad534c95e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/medical-billing-coder@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-medical-billing-coder-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d8d5198f36391e99a127c4d5ebaa4f1dc1e4efb2d276deec6dbe052a57828bd7",
+      "artifactSizeBytes": 2017
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T23:32:50.401Z"
+}

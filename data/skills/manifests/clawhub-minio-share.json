@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19604,
+  "uuid": "skill-clawhub-minio-share",
+  "skillKey": "clawhub-minio-share",
+  "name": "Minio Share",
+  "summary": "Upload files to MinIO object storage and generate shareable links with Markdown formatting. Use when users ask to send files, share files, upload files, down...",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minio_share",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sinute",
+      "features": [
+        "Upload files to MinIO object storage and generate shareable links with Markdown formatting",
+        "Use when users ask to send files, share files, upload files, down..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/minio-share@0.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2202852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "minio-share",
+      "url": "https://clawhub.ai/skills/minio-share"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minio-share",
+    "url": "https://clawhub.ai/skills/minio-share",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minio-share-8dc96f3b82e9e2a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/minio-share@0.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-minio-share-0.1.3.json",
+      "version": "0.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:963b0c451d78090fdd504a086510c5eaacccb7ff46575dc7298c114c0c1fdc95",
+      "artifactSizeBytes": 2125
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T18:12:20.906Z"
+}

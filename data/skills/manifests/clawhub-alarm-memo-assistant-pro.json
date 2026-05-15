@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65253,
+  "uuid": "skill-clawhub-alarm-memo-assistant-pro",
+  "skillKey": "clawhub-alarm-memo-assistant-pro",
+  "name": "alarm-memo-assistant-pro",
+  "summary": "一个详细、全面的闹钟与备忘录管理技能。支持提醒、备忘录、待办、日程汇总、当日任务自动推送、重复提醒与高优先级触发词。优先使用 OpenClaw 的 cron / session / file 能力；若宿主没有相应能力，则退化为聊天内记录与人工确认模式。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alarm_memo_assistant_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "一个详细、全面的闹钟与备忘录管理技能。支持提醒、备忘录、待办、日程汇总、当日任务自动推送、重复提醒与高优先级触发词。优先使用 OpenClaw 的 cron / session / file."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alarm-memo-assistant-pro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alarm-memo-assistant-pro",
+      "url": "https://clawhub.ai/skills/alarm-memo-assistant-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alarm-memo-assistant-pro",
+    "url": "https://clawhub.ai/skills/alarm-memo-assistant-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alarm-memo-assistant-pro-2988d2f5731a71c9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alarm-memo-assistant-pro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-alarm-memo-assistant-pro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f270b151a58c05ef54e250ed48d7aa7f26f696c65fde4c4854c7517050dc723d",
+      "artifactSizeBytes": 2726
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T16:05:21.134Z"
+}

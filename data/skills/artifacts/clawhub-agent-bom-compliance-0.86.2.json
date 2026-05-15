@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-bom-compliance@0.86.2",
+  "version": "0.86.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_bom_compliance",
+  "skill": {
+    "id": 18558,
+    "skillKey": "clawhub-agent-bom-compliance",
+    "name": "agent-bom compliance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-bom-compliance",
+    "url": "https://clawhub.ai/skills/agent-bom-compliance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-bom-compliance-8e711c6a47aecdce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI compliance and policy engine — evaluate scan results against OWASP, NIST, SOC 2, ISO 27001, CMMC, EU AI Act, AISVS v1.0, and related frameworks. Generate..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "msaad00",
+      "userId": "s173dmtq1jwv3yxcgnmcxnn45583ey2y",
+      "displayName": "Agent Bom",
+      "image": "https://avatars.githubusercontent.com/u/34316639?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1216,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 46
+    },
+    "latestVersion": {
+      "version": "0.86.2",
+      "createdAt": 1778168719865,
+      "changelog": "Release v0.86.2",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:16029ecb033927b6ea3cbeaac841e98da511b64c1eafeffb60d2c19ebfe337b1"
+}

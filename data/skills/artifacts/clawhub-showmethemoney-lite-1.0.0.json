@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/showmethemoney-lite@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.showmethemoney_lite",
+  "skill": {
+    "id": 42591,
+    "skillKey": "clawhub-showmethemoney-lite",
+    "name": "showmethemoney-lite"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "showmethemoney-lite",
+    "url": "https://clawhub.ai/skills/showmethemoney-lite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/showmethemoney-lite-10144ef27dbd680f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "paid stablepay demo skill for openclaw. use when the user wants to try a monetized skill flow with a visible price, stablepay wallet setup, and in-chat payme..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bubblevan",
+      "userId": "s1752nbybn39bye7hqb66b0bgh83rftj",
+      "displayName": "Bubblevan",
+      "image": "https://avatars.githubusercontent.com/u/132178369?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776000082206,
+      "changelog": "- Initial release of showmethemoney-lite, a lightweight paid demo skill for Openclaw.\n- Guides users through a StablePay wallet setup and payment flow for a premium action, with visible pricing.\n- Offers a free public preview with a teaser and sample response before requiring payment.\n- Payment is handled via StablePay; purchase is only confirmed with backend confirmation, not local state.\n- Designed for demos and lightweight premium features; not intended as fully tamper-resistant.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4d3396863d9c42a584bc91aed10d3660ff1deaf3784e536fe3ede7a93b9cc4fd"
+}

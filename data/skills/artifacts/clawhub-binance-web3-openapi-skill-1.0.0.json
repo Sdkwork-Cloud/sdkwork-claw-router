@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/binance-web3-openapi-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.binance_web3_openapi_skill",
+  "skill": {
+    "id": 24781,
+    "skillKey": "clawhub-binance-web3-openapi-skill",
+    "name": "Binance Web3 Openapi Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "binance-web3-openapi-skill",
+    "url": "https://clawhub.ai/skills/binance-web3-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/binance-web3-openapi-skill-d77e3594302990ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Operate Binance Web3 public market and research APIs through UXC with a curated OpenAPI schema. Use when tasks need token search, token metadata/market snaps..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jolestar",
+      "userId": "s1769rm50f8wvzw550m22hg10x83gkem",
+      "displayName": "jolestar",
+      "image": "https://avatars.githubusercontent.com/u/77268?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 393,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773049269980,
+      "changelog": "- Initial release of binance-web3-openapi-skill.\n- Enables public read access to Binance Web3 market and research APIs via UXC and a curated OpenAPI schema.\n- Supports token search, metadata, market snapshots, rankings, smart money signals, token audit, and address holdings.\n- Provides CLI core workflow, usage examples, and guardrails for interacting with the APIs.\n- No authentication required for most operations; some endpoints require specific headers or generated IDs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a153527b04e9e2fce8ee6494586dcf550b8f0acaad71cae1cca256005b8eed29"
+}

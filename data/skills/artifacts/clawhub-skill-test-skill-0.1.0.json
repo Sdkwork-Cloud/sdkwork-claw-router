@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-test-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_test_skill",
+  "skill": {
+    "id": 32020,
+    "skillKey": "clawhub-skill-test-skill",
+    "name": "Skill Test Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-test-skill",
+    "url": "https://clawhub.ai/skills/skill-test-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-test-skill-b94d0454908effe2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Tests and scores any Agent Skill against the official anthropics/skills specification. Use this skill when you need to check if a skill repository or SKILL.m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "youngfreefjs",
+      "userId": "s17ex9gjk19e5v4z5550xr5fds83g6e9",
+      "displayName": "youngfree",
+      "image": "https://avatars.githubusercontent.com/u/46949537?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775115441899,
+      "changelog": "Initial release providing full skill audit and scoring against the Agent Skills specification.\n\n- Audits any Agent Skill repository or SKILL.md file for compliance with the official Agent Skills spec.\n- Auto-detects the request language (English or Chinese) and generates a detailed compliance report in that language.\n- Recursively reads and analyzes all files in the provided skill directory, including scripts, references, and assets.\n- Scores the skill across six dimensions: directory structure, frontmatter, content quality, progressive disclosure, optional directory usage, and trigger optimization.\n- Outputs a comprehensive Markdown report with findings, compliance score, and prioritized improvement suggestions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b93f21ae7f8fad0010e1a4778d3c4a6667ada8fbc02bff2473cff24dd5d0478a"
+}

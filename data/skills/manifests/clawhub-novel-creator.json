@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70979,
+  "uuid": "skill-clawhub-novel-creator",
+  "skillKey": "clawhub-novel-creator",
+  "name": "novel creator",
+  "summary": "为中文长篇小说、连载网文、章节样稿、已有草稿续写提供一套完整且内聚的创作流程：分流新建/续写/救稿任务，维护 plan/ 与 memory/ 记忆系统，在写正文前先学习指定题材的文风笔触，再按节奏持续产出章节，并在同一技能内完成文风校准、题材适配、连载维护与必要的创作研究。适用于用户要求写小说、开书、搭大纲、出样...",
+  "version": "3.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.novel_creator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "km1001",
+      "features": [
+        "为中文长篇小说、连载网文、章节样稿、已有草稿续写提供一套完整且内聚的创作流程：分流新建/续写/救稿任务，维护 plan/ 与 memory/ 记忆系统，在写正文前先学习指定题材的文风笔触，再."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/novel-creator@3.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9858637?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "novel-creator",
+      "url": "https://clawhub.ai/skills/novel-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "novel-creator",
+    "url": "https://clawhub.ai/skills/novel-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/novel-creator-eecb395231a8f847.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/novel-creator@3.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-novel-creator-3.0.1.json",
+      "version": "3.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:afe13c239c93bcfa4a3bc464728f6e6cb37ed10a1f9b9ce8ab25b0edbc191680",
+      "artifactSizeBytes": 2957
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T03:20:54.759Z"
+}

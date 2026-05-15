@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10168,
+  "uuid": "skill-clawhub-gevety",
+  "skillKey": "clawhub-gevety",
+  "name": "Gevety MCP",
+  "summary": "Access your Gevety health data - biomarkers, healthspan scores, biological age, what-if scenarios across bio-age clocks, biomarker trajectories, bio-age cloc...",
+  "version": "1.12.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gevety",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "moclippa",
+      "features": [
+        "Access your Gevety health data",
+        "biomarkers, healthspan scores, biological age, what-if scenarios across bio-age clocks, biomark."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gevety@1.12.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57849449?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gevety",
+      "url": "https://clawhub.ai/skills/gevety"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gevety",
+    "url": "https://clawhub.ai/skills/gevety",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gevety-47bb264e41dd8068.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gevety@1.12.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gevety-1.12.0.json",
+      "version": "1.12.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fd499719aa532a780c4d4fd2d68619423c71deba6d560b8573c0a1aa8ce9c41e",
+      "artifactSizeBytes": 2001
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T15:24:10.871Z"
+}

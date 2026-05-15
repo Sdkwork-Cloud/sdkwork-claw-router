@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38841,
+  "uuid": "skill-clawhub-webscraperio",
+  "skillKey": "clawhub-webscraperio",
+  "name": "Webscraperio",
+  "summary": "WebScraper.IO integration. Manage data, records, and automate workflows. Use when the user wants to interact with WebScraper.IO data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.webscraperio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "WebScraper.IO integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with WebScraper.IO data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/webscraperio@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "webscraperio",
+      "url": "https://clawhub.ai/skills/webscraperio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "webscraperio",
+    "url": "https://clawhub.ai/skills/webscraperio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/webscraperio-987f5134ec732c7c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/webscraperio@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-webscraperio-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:460105a635390c7623ae8e1044e7ffa00eb26cd2746f0501f11c1ab2524fb0a2",
+      "artifactSizeBytes": 1850
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T23:01:18.814Z"
+}

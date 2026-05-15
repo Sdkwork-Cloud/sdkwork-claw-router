@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53521,
+  "uuid": "skill-clawhub-safe-change",
+  "skillKey": "clawhub-safe-change",
+  "name": "Safe Change",
+  "summary": "Map blast radius before shipping — run when editing a service, controller, hook, or shared utility to surface all importers, affected API routes, test gaps,...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safe_change",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "brasco05",
+      "features": [
+        "Map blast radius before shipping — run when editing a service, controller, hook, or shared util."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/safe-change@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256532966?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "safe-change",
+      "url": "https://clawhub.ai/skills/safe-change"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safe-change",
+    "url": "https://clawhub.ai/skills/safe-change",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safe-change-052c219acb027fd4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/safe-change@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-safe-change-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ee119856ed7943db0893205ac32ce6f57e7bfa421b935bd6f870c6e6271f3c96",
+      "artifactSizeBytes": 1953
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T07:58:23.264Z"
+}

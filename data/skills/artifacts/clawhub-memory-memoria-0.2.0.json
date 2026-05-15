@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-memoria@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_memoria",
+  "skill": {
+    "id": 27343,
+    "skillKey": "clawhub-memory-memoria",
+    "name": "Memory Memoria"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-memoria",
+    "url": "https://clawhub.ai/skills/memory-memoria",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-memoria-07c43da650dbd2cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use Memoria as OpenClaw's durable memory slot. Triggers: \"remember this\", \"save to memory\", \"what do you remember\", \"continue from last time\", \"forget this\",..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "randomradio",
+      "userId": "s17e72pgft5cg422pxgn6b058x83nrhw",
+      "displayName": "i.an",
+      "image": "https://avatars.githubusercontent.com/u/2393895?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 250,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1774022315441,
+      "changelog": "- Major refocus and simplification: targets Memoria's use as OpenClaw's durable memory slot, with explicit flows and updated tool guidance.\n- Removed legacy and advanced references, including deployment, API, plugin development, architecture, and release docs.\n- Added new reference docs clarifying memory tool selection (`tool-surface.md`) and usage patterns (`patterns.md`).\n- Updated rules: clarified when and how to store, correct, branch, or snapshot memory; highlighted separation from file memory.\n- Improved quick start and routing to prioritize OpenClaw plugin scenarios and essential Memoria tools only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac184e5109c4d249ea89fa4ba67edd2061f26bad046f01a75a7648c4b83eab18"
+}

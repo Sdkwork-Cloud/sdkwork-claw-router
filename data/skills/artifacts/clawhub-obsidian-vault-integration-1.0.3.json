@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/obsidian-vault-integration@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_vault_integration",
+  "skill": {
+    "id": 23905,
+    "skillKey": "clawhub-obsidian-vault-integration",
+    "name": "Obsidian Vault Integration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-vault-integration",
+    "url": "https://clawhub.ai/skills/obsidian-vault-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-vault-integration-ce4395c9541ee07c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read and write data with an Obsidian vault used as a shared knowledge base. Use when an agent needs to read vault notes (business plan, tasks, milestones, te..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dmanock",
+      "userId": "publishers:dmanock",
+      "displayName": "dmanock",
+      "image": "https://avatars.githubusercontent.com/u/12874248?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 426,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773777737023,
+      "changelog": "- Added SVG logo asset at assets/logo.svg.\n- Updated SKILL.md to include structured metadata for environment variables.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:161cf66f774477afea821456029b31191531f861b3b6e0ebf891c8cfa1df267f"
+}

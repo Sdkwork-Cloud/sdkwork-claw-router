@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/virtual-try-on@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.virtual_try_on",
+  "skill": {
+    "id": 34266,
+    "skillKey": "clawhub-virtual-try-on",
+    "name": "Virtual Try On"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "virtual-try-on",
+    "url": "https://clawhub.ai/skills/virtual-try-on",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/virtual-try-on-22c709f6f01dd934.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert clothing images into professional e-commerce photos by virtually dressing AI models with up to four garment images for online retail use."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangyang-youloft",
+      "userId": "s172ahz3vnb7taqy820nyjc01n83zgm7",
+      "displayName": "wangyang-youloft",
+      "image": "https://avatars.githubusercontent.com/u/227930394?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 227,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775125226296,
+      "changelog": "Initial release of the virtual-try-on skill:\n\n- Transform up to 4 clothing images into AI-generated product photos on professional models.\n- Uses the Pixify engine, combining garment analysis and model try-on generation.\n- Ideal for fashion e-commerce, design visualization, and rapid catalog creation.\n- Clearly outlined API usage with sample workflows and status polling.\n- No dependency on upload order; workflow automatically combines garment components.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b21aa0fda944e7755b6891e9ea1b01c96017f0e57d7889680e00f7b6575e490c"
+}

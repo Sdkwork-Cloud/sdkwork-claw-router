@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33853,
+  "uuid": "skill-clawhub-percy",
+  "skillKey": "clawhub-percy",
+  "name": "Percy",
+  "summary": "Percy integration. Manage data, records, and automate workflows. Use when the user wants to interact with Percy data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.percy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Percy integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Percy data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/percy@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "percy",
+      "url": "https://clawhub.ai/skills/percy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "percy",
+    "url": "https://clawhub.ai/skills/percy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/percy-715773c66c934774.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/percy@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-percy-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:afb46a941d908bb37bd4ec232ed1dc30dc98a00c02dadbd3e32c5415ae4ef7f2",
+      "artifactSizeBytes": 1811
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:51:12.416Z"
+}

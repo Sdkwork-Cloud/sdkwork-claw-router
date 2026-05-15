@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52569,
+  "uuid": "skill-clawhub-abti",
+  "skillKey": "clawhub-abti",
+  "name": "ABTI: AI-Based Type Indicator",
+  "summary": "ABTI (AI-Based Type Indicator) — a personality test that analyzes how you talk to AI and roasts you accordingly. 28 personality types (24 regular + 4 hidden)...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abti",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "YouMind",
+      "features": [
+        "ABTI (AI-Based Type Indicator) — a personality test that analyzes how you talk to AI and roasts.",
+        "28 personality types (24 regular + 4 hidden)..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/abti@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265348597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "abti",
+      "url": "https://clawhub.ai/skills/abti"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abti",
+    "url": "https://clawhub.ai/skills/abti",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abti-da8efeec328a053a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/abti@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-abti-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4c5440923555d609d82fc05ae34a3660aa634e0a69f5f12bbd487dc801a75749",
+      "artifactSizeBytes": 1893
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T09:44:58.861Z"
+}

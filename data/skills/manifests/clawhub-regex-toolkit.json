@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33452,
+  "uuid": "skill-clawhub-regex-toolkit",
+  "skillKey": "clawhub-regex-toolkit",
+  "name": "Regex Toolkit",
+  "summary": "Test, match, extract, replace, explain, and validate regular expressions from the command line. Includes a library of 25+ common patterns (email, URL, IP, ph...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.regex_toolkit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "John Wang",
+      "features": [
+        "Test, match, extract, replace, explain, and validate regular expressions from the command line",
+        "Includes a library of 25+ common patterns (email, URL, IP, ph..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/regex-toolkit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20619402?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "regex-toolkit",
+      "url": "https://clawhub.ai/skills/regex-toolkit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "regex-toolkit",
+    "url": "https://clawhub.ai/skills/regex-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/regex-toolkit-8f94c5b4d4a73e19.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/regex-toolkit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-regex-toolkit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dc03d611f1a04c8c33de959d94d67e1bbcdde2174b81dd48a1781f74eac62b40",
+      "artifactSizeBytes": 2453
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T13:09:42.874Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawhub-stats-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_stats_tracker",
+  "skill": {
+    "id": 59556,
+    "skillKey": "clawhub-clawhub-stats-tracker",
+    "name": "Clawhub Stats Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-stats-tracker",
+    "url": "https://clawhub.ai/skills/clawhub-stats-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-stats-tracker-74e5f90ae4e6f4af.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查看 ClawHub 上已发布 Skill 的运营数据（Stars、Downloads、Installs、版本号、发布时间）。 从 ~/.clawhub/tracked-skills.json 读取跟踪列表，通过 clawhub inspect --json 获取实时数据， 支持单个查询、批量查询和按系列筛选。无..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fangshan101-coder",
+      "userId": "s1782arxyb13jw6g2c7z1z1n4183nyc9",
+      "displayName": "fangshan101-coder",
+      "image": "https://avatars.githubusercontent.com/u/267524233?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774534398482,
+      "changelog": "首次发布：ClawHub Skill 运营数据查看",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0d56eb077d1f6d3f517988064104a5717bd5a8b49d568a51ada2b5d205d37b7e"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42264,
+  "uuid": "skill-clawhub-nba-games",
+  "skillKey": "clawhub-nba-games",
+  "name": "NBA-games",
+  "summary": "Gets upcoming and/or recent NBA game results for a specified team. Use this skill when asked about scheduled, upcoming, or past games for any NBA team.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nba_games",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "highdeserthacker",
+      "features": [
+        "Gets upcoming and/or recent NBA game results for a specified team",
+        "Use this skill when asked about scheduled, upcoming, or past games for any NBA team."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nba-games@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109810963?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nba-games",
+      "url": "https://clawhub.ai/skills/nba-games"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nba-games",
+    "url": "https://clawhub.ai/skills/nba-games",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nba-games-e02168c500c9d8b9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nba-games@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-nba-games-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3f99d1bbfff1b49dd1fe2e682f4fa8d3db3b6cd944a9a603820e4a3d5ee59931",
+      "artifactSizeBytes": 2257
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T21:16:27.459Z"
+}

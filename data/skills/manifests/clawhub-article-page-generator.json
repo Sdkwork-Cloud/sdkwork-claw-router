@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32278,
+  "uuid": "skill-clawhub-article-page-generator",
+  "skillKey": "clawhub-article-page-generator",
+  "name": "article-page-generator",
+  "summary": "When the user wants to create, optimize, or audit a single article/post page (not the blog index). Also use when the user mentions \"article page,\" \"blog post...",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.article_page_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kostja Zhang",
+      "features": [
+        "When the user wants to create, optimize, or audit a single article/post page (not the blog inde.",
+        "Also use when the user mentions \"article page,\" \"blog post..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/article-page-generator@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168074885?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "article-page-generator",
+      "url": "https://clawhub.ai/skills/article-page-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "article-page-generator",
+    "url": "https://clawhub.ai/skills/article-page-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/article-page-generator-c7bb955a73e26948.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/article-page-generator@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-article-page-generator-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:55cce86c8357280fae8f9f4bad08d11ba4bb501e9de8a9acb214e9a33afccd66",
+      "artifactSizeBytes": 1972
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T12:31:32.729Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64110,
+  "uuid": "skill-clawhub-boss-geek",
+  "skillKey": "clawhub-boss-geek",
+  "name": "boss-geek",
+  "summary": "通过 Chrome 登录态操作 BOSS直聘，支持职位搜索、查看详情、向HR打招呼及管理聊天消息。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.boss_geek",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SPYQWER1",
+      "features": [
+        "通过 Chrome 登录态操作 BOSS直聘，支持职位搜索、查看详情、向HR打招呼及管理聊天消息。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/boss-geek@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/242195996?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "boss-geek",
+      "url": "https://clawhub.ai/skills/boss-geek"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "boss-geek",
+    "url": "https://clawhub.ai/skills/boss-geek",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/boss-geek-9c0eb3d139176bf9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/boss-geek@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-boss-geek-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6017630d83f28ffc3a82fa9b26f1bee5859a4a3bb511b446e351c39688cc98fc",
+      "artifactSizeBytes": 1985
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T02:16:30.119Z"
+}

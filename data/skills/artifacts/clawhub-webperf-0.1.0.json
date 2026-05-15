@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/webperf@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.webperf",
+  "skill": {
+    "id": 28029,
+    "skillKey": "clawhub-webperf",
+    "name": "Webperf"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "webperf",
+    "url": "https://clawhub.ai/skills/webperf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/webperf-f23c7d0932b68125.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Web performance measurement and debugging toolkit. Use when the user asks about web performance, wants to audit a page, or says \"analyze performance\", \"debug..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nucliweb",
+      "userId": "publishers:nucliweb",
+      "displayName": "nucliweb",
+      "image": "https://avatars.githubusercontent.com/u/1307927?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 336,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773226443274,
+      "changelog": "- Initial release of the webperf skill: a toolkit for measuring and debugging web performance.\n- Provides 47 JavaScript snippets for Chrome DevTools covering Core Web Vitals, loading, interaction, media, and resource/network quality.\n- Includes detailed guidance on which skill to use based on common user requests (e.g., \"debug LCP\", \"audit images\").\n- Outlines a step-by-step workflow for running audits and interpreting results within Chrome DevTools.\n- Open source under the MIT license and maintained by Joan Leon (@nucliweb).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6b602db6a41945e4e03e4bb8de591f2fc365415c3e10e53d7fb3eb1ee294faae"
+}

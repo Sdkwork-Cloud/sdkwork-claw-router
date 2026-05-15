@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-to-excel@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_to_excel",
+  "skill": {
+    "id": 65209,
+    "skillKey": "clawhub-web-to-excel",
+    "name": "Web to Excel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-to-excel",
+    "url": "https://clawhub.ai/skills/web-to-excel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-to-excel-22dbb15d12ffeb27.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "从网页抓取结构化数据并填写到任意 Excel 文件的通用技能。 触发场景： - 用户说\"帮我把网页上的参数填到 Excel\"、\"从网站抓数据到表格\"、 \"网页参数录入 Excel\"、\"爬取数据并填写 Excel\"、或任何类似表达 - 用户提供网址和 Excel 文件，要求自动抓取并填写 - 批量从多个网页抓取数据..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oreosofat",
+      "userId": "s173anxa6hnptm1n9tsz5n1wt584tknw",
+      "displayName": "Oreosofat",
+      "image": "https://avatars.githubusercontent.com/u/174687294?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776226139285,
+      "changelog": "web-to-excel 1.0.0 - Initial release\n\n- Allows users to extract structured data from any webpage and populate specified ranges in any Excel file.\n- All parameters, URLs, file paths, and field mappings are provided by the user at runtime (not hardcoded).\n- Supports confirmation workflow, including field mapping preview and user verification.\n- Handles web pages with lazy loading content; scrolls to ensure complete data extraction.\n- On repeat extraction, can optionally clear existing data before filling new data.\n- Provides clear prompts, step-by-step instructions, and a report summarizing updated rows and columns.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bcb6568ad80d4b629061f31f099ec96194091723fcd1c703530d08bbcd76b548"
+}

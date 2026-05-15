@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48832,
+  "uuid": "skill-clawhub-api3-feed-manager-executor",
+  "skillKey": "clawhub-api3-feed-manager-executor",
+  "name": "Api3 Feed Manager Executor",
+  "summary": "Plan and execute Api3 feed discovery, readiness checks, funding, activation, and maintenance for downstream agent projects. Use when an agent must not only i...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api3_feed_manager_executor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dave",
+      "features": [
+        "Plan and execute Api3 feed discovery, readiness checks, funding, activation, and maintenance fo.",
+        "Use when an agent must not only i..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/api3-feed-manager-executor@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49767509?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "api3-feed-manager-executor",
+      "url": "https://clawhub.ai/skills/api3-feed-manager-executor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api3-feed-manager-executor",
+    "url": "https://clawhub.ai/skills/api3-feed-manager-executor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api3-feed-manager-executor-6d5b42636a8f6f60.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/api3-feed-manager-executor@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-api3-feed-manager-executor-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c5fc062464cea3d509af29b26ce4af1ea45049b97dea045a5caf06bcb65a904e",
+      "artifactSizeBytes": 2082
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T15:40:45.335Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42429,
+  "uuid": "skill-clawhub-opportunity-intelligence",
+  "skillKey": "clawhub-opportunity-intelligence",
+  "name": "Opportunity Intelligence Engine",
+  "summary": "Analyzes and ranks your ideas by ROI, then provides a focused, actionable plan to quickly validate and execute the highest-leverage opportunity.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opportunity_intelligence",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "theshimaw-svg",
+      "features": [
+        "Analyzes and ranks your ideas by ROI, then provides a focused, actionable plan to quickly valid."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/opportunity-intelligence@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266850601?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "opportunity-intelligence",
+      "url": "https://clawhub.ai/skills/opportunity-intelligence"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opportunity-intelligence",
+    "url": "https://clawhub.ai/skills/opportunity-intelligence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opportunity-intelligence-b9043a6f5a73f189.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/opportunity-intelligence@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-opportunity-intelligence-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:228516483ce7d35dced87dd03431dbec6951aa6c9375996fdff9d89b6d3056f6",
+      "artifactSizeBytes": 1987
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T18:04:15.918Z"
+}

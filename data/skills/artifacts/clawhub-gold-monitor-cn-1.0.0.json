@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gold-monitor-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gold_monitor_cn",
+  "skill": {
+    "id": 65441,
+    "skillKey": "clawhub-gold-monitor-cn",
+    "name": "Gold Monitor CN 黄金监控"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gold-monitor-cn",
+    "url": "https://clawhub.ai/skills/gold-monitor-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gold-monitor-cn-5e0676be3bbafe02.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A股黄金生态链监控工具 - 国内黄金ETF（159937/518880等）、上海金交所AU9999现货、国际COMEX黄金期货、美元指数、人民币汇率USD/CNY、A股黄金矿业股（赤峰/山东/中金等）全链路监控。区别于其他黄金技能，独占黄金ETF和矿业股联动分析，适合中国投资者。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "song0828",
+      "userId": "s17ans2f5wrt5zbqakj54a479s83gy5g",
+      "displayName": "Song_0828",
+      "image": "https://avatars.githubusercontent.com/u/67455394?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 341,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774829439602,
+      "changelog": "Initial release - A股黄金生态链监控，独家支持黄金ETF和矿业股联动分析",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ab43ccaf238a1f57bd9e2b74ca0f055ea124b71f52d210e6e030d6cdd614d9a2"
+}

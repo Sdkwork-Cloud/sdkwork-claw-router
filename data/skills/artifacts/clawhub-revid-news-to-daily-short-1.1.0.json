@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/revid-news-to-daily-short@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.revid_news_to_daily_short",
+  "skill": {
+    "id": 56266,
+    "skillKey": "clawhub-revid-news-to-daily-short",
+    "name": "Daily News Short"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "revid-news-to-daily-short",
+    "url": "https://clawhub.ai/skills/revid-news-to-daily-short",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/revid-news-to-daily-short-af1e695764e04d91.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate a daily news short on a topic Revid researches itself. Use for a recurring \"news of the day in <niche>\" channel — the user only supplies the topic;..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "api00",
+      "userId": "s1728d1rdp70wm5hvmk61q153h85kp8x",
+      "displayName": "api00",
+      "image": "https://avatars.githubusercontent.com/u/57573621?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 122,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777216494149,
+      "changelog": "- Adds a detailed SKILL.md guide, clarifying use for generating daily news shorts on any topic with automated news fetching and summarization.\n- Explains required inputs, workflow steps, and provides API call templates for easy integration.\n- Lists common failure modes and troubleshooting tips.\n- Highlights differences from related skills for article-based or custom-angle videos.\n- Includes automation and scheduling advice for recurring daily video production.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:114dfcd57bfa541db3ff200b608dbc22aea5694bdcac104cc3d4cb0e52931072"
+}

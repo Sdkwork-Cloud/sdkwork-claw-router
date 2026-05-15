@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aiseact@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aiseact",
+  "skill": {
+    "id": 23751,
+    "skillKey": "clawhub-aiseact",
+    "name": "Aiseact"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aiseact",
+    "url": "https://clawhub.ai/skills/aiseact",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aiseact-7046cd7b16886cd7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI Search Enhancement and Cross-verification Tool. ALWAYS USE when performing ANY web search, regardless of who initiated it - whether user explicitly asks,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stephenlzc",
+      "userId": "publishers:stephenlzc",
+      "displayName": "stephenlzc",
+      "image": "https://avatars.githubusercontent.com/u/52523593?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 430,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773410599154,
+      "changelog": "**Major simplification and practical restructuring of AISEACT’s documentation and usage guidance.**\n\n- New quick-start, invocation, and override instructions for users.\n- Source priority scheme condensed (official, authoritative, professional, user-generated, content farm).\n- Critical search rules, go-to sources, and \"avoid\" sources now summarized and easy to reference.\n- Shortened, actionable workflow phases and clear checklist.\n- Search syntaxes and key reference files now highlighted for easy lookup.\n- Four new support documents added: CONFIGURATION.md, TRUST.md, SECURITY.md, and quick-reference.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3b4b5c1b0632aec1ac70c7baf9c6fc6dc6152aeca30dbcdab8f4665c479eff12"
+}

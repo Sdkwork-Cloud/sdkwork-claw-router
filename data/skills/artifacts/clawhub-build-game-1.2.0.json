@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/build-game@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.build_game",
+  "skill": {
+    "id": 15353,
+    "skillKey": "clawhub-build-game",
+    "name": "3D Game Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "build-game",
+    "url": "https://clawhub.ai/skills/build-game",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/build-game-85ac4b0a4933dec4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate and iteratively develop polished 3D browser games from natural language. Supports any genre (FPS, RPG, racing, platformer, tower defense, etc.), cus..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kewang0622",
+      "userId": "s1778kyayy99sdjad1wxsr97j983f9hx",
+      "displayName": "Ke Wang",
+      "image": "https://avatars.githubusercontent.com/u/30745273?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 790,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1773266902131,
+      "changelog": "Auto-publish games to here.now for shareable live URLs (24h anonymous, permanent with API key). Games now get both localhost and a public link.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:db0b4e80da4d5a76d2e7d87b937ada85ac5e5e2ed872f87525a2942b5824ce4c"
+}

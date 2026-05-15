@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43877,
+  "uuid": "skill-clawhub-pre-compact",
+  "skillKey": "clawhub-pre-compact",
+  "name": "Smart Compact",
+  "summary": "Smart context compaction for OpenClaw agents. 4-phase progressive strategy: Scan, Extract, Check, Compact. Before running /compact, this skill scans tool out...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pre_compact",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wavmson",
+      "features": [
+        "Smart context compaction for OpenClaw agents",
+        "4-phase progressive strategy: Scan, Extract, Check, Compact",
+        "Before running /compact, this skill scans tool out..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pre-compact@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/127436552?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pre-compact",
+      "url": "https://clawhub.ai/skills/pre-compact"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pre-compact",
+    "url": "https://clawhub.ai/skills/pre-compact",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pre-compact-284c2f499b81c966.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pre-compact@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pre-compact-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ff56f15aca561e51878c54ab5b60a262b734c9719435a851895086c2bcf6e6fd",
+      "artifactSizeBytes": 1975
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T17:54:33.154Z"
+}

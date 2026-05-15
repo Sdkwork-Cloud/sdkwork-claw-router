@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18806,
+  "uuid": "skill-clawhub-cyber-kev-triage",
+  "skillKey": "clawhub-cyber-kev-triage",
+  "name": "Cyber Kev Triage",
+  "summary": "Prioritize vulnerability remediation using KEV-style exploitation context plus asset criticality. Use for CVE triage, patch order decisions, and remediation...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cyber_kev_triage",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Muhammad Mazhar Saeed",
+      "features": [
+        "Prioritize vulnerability remediation using KEV-style exploitation context plus asset criticality",
+        "Use for CVE triage, patch order decisions, and remediation..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cyber-kev-triage@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/160357695?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cyber-kev-triage",
+      "url": "https://clawhub.ai/skills/cyber-kev-triage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cyber-kev-triage",
+    "url": "https://clawhub.ai/skills/cyber-kev-triage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cyber-kev-triage-70cd836ed89cdbf5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cyber-kev-triage@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cyber-kev-triage-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5a3dd259dfaf77d2208367337cdd22b601ac200c18650d4bd51358e636ec3ea5",
+      "artifactSizeBytes": 2276
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T18:20:07.281Z"
+}

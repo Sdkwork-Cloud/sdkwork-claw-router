@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sqlserver-tidb-replay@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sqlserver_tidb_replay",
+  "skill": {
+    "id": 45538,
+    "skillKey": "clawhub-sqlserver-tidb-replay",
+    "name": "sqlserver-tidb-replay"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sqlserver-tidb-replay",
+    "url": "https://clawhub.ai/skills/sqlserver-tidb-replay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sqlserver-tidb-replay-6d320f3313ec10d1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Replay SQL Server slow query logs on TiDB to verify compatibility, compare performance, and generate syntax conversion reports during migration."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dongdong-bryant",
+      "userId": "s176zxms56sje82aqvy0y88s1n84a9hs",
+      "displayName": "Dongdong-Bryant",
+      "image": "https://avatars.githubusercontent.com/u/114673067?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775963530530,
+      "changelog": "**Initial release of SQL Server → TiDB SQL Replay Tool**\n\n- Enables replay of SQL Server slow query logs for migration testing, performance comparison, and compatibility analysis with TiDB.\n- Provides end-to-end workflow: slow log collection, CSV-to-SQL conversion, parsing, parallel replay to TiDB, and result analysis.\n- Automatically transforms SQL Server-specific syntax to TiDB-compatible formats and generates syntax conversion suggestions.\n- Produces comprehensive reports, including error rates, performance metrics, and syntax compatibility statistics.\n- Supports PowerShell-based log collection, Python scripting, and detailed replay output for auditing and troubleshooting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:645b6f50b2ddfa311d54b8c7f3731956825f437c8804714fdc6c3f7c17410f48"
+}

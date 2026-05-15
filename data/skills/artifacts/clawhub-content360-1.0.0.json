@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/content360@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content360",
+  "skill": {
+    "id": 37496,
+    "skillKey": "clawhub-content360",
+    "name": "Content360"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content360",
+    "url": "https://clawhub.ai/skills/content360",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content360-e5409782304824d4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Integrates with Content360 (app.content360.io) to create, schedule, and publish social media content across Facebook, LinkedIn, X, Instagram, YouTube, TikTok..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "noesis-boss",
+      "userId": "s17dj9z3wyn8r8amkeq095sa0584gcne",
+      "displayName": "Noesis-Boss",
+      "image": "https://avatars.githubusercontent.com/u/10440510?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775925821811,
+      "changelog": "Initial release of the Content360 integration skill.\n\n- Connects Zo Computer with Content360 for social media management.\n- Supports creating, scheduling, and publishing content across major platforms including Facebook, LinkedIn, X, Instagram, YouTube, TikTok, Pinterest, and Reddit.\n- Enables media upload, analytics access, and inbox management.\n- Provides detailed API documentation for posts, accounts, media, tags, webhooks, and more.\n- Includes a sync script for automated post creation and scheduling from a Notion content calendar.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:879a0b664dee3d0af8273e3c761a930377d0da580f8328208953442e6a851c88"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qmt@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qmt",
+  "skill": {
+    "id": 67679,
+    "skillKey": "clawhub-qmt",
+    "name": "QMT"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qmt",
+    "url": "https://clawhub.ai/skills/qmt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qmt-7808c128746630ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "QMT迅投量化交易终端 - 内置Python策略开发、回测引擎和实盘交易，支持中国证券市场全品种。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "coderwpf",
+      "userId": "s170h18zjksf6t82v1asyztbz583hffb",
+      "displayName": "coderwpf",
+      "image": "https://avatars.githubusercontent.com/u/134041140?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 772,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 5,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774260241774,
+      "changelog": "- 新增 demo_project 示例目录，包含 demo.py 示例脚本和 README.md 说明文件。\n- 便于用户快速参考和上手 QMT 策略开发。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:189d76f83cd23ef779c86ed8adc4ce641adbc66828f19d80783bf6770f207e6d"
+}

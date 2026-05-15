@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/konektor@2.1.1",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.konektor",
+  "skill": {
+    "id": 25053,
+    "skillKey": "clawhub-konektor",
+    "name": "Konektor - CAPI & Lead Management"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "konektor",
+    "url": "https://clawhub.ai/skills/konektor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/konektor-a76f1dbd4d24c829.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access and manage marketing leads, update lead details, and retrieve analytics for lead performance and conversion tracking via Konektor API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ramaaditya49",
+      "userId": "s170c84r8gxf9j9992kfm7d9h184w312",
+      "displayName": "Rama Aditya",
+      "image": "https://avatars.githubusercontent.com/u/213913142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 397,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.1.1",
+      "createdAt": 1773180652906,
+      "changelog": "- Added a new Requirements section outlining environment variable setup and minimum scopes.\n- Specified that the KONEKTOR_API_KEY environment variable must be set to use the API.\n- Clarified key creation and assignment instructions.\n- Included details about required transport (HTTPS) and content type (`application/json`).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fae2dba6acd0f2062159a5ff4c60ccbd5efc2850c65bb8a601f4e5912c1a8b69"
+}

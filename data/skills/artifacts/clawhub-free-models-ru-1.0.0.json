@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-models-ru@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_models_ru",
+  "skill": {
+    "id": 60623,
+    "skillKey": "clawhub-free-models-ru",
+    "name": "Free Models for Russian Users"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-models-ru",
+    "url": "https://clawhub.ai/skills/free-models-ru",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-models-ru-1d5696bef7de6172.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Бесплатные AI модели для русскоязычных пользователей. Гайд по OpenRouter, SiliconFlow, Groq, Modal. Без VPN, без санкций."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maerolove",
+      "userId": "s17ckdqzs7gd3fc1a6gmhbwhq983w3jz",
+      "displayName": "maerolove",
+      "image": "https://avatars.githubusercontent.com/u/205047238?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774903423317,
+      "changelog": "Initial release: OpenRouter, SiliconFlow, Groq, Modal guides",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fac520e544ba34943ab3a1841aeab6710a251bf95ff65963657c133648c2e4ba"
+}

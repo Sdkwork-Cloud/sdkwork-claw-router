@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-reminder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_reminder",
+  "skill": {
+    "id": 62388,
+    "skillKey": "clawhub-daily-reminder",
+    "name": "Daily Reminder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-reminder",
+    "url": "https://clawhub.ai/skills/daily-reminder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-reminder-49e1de43aeb60618.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "每日提醒、倒计时、纪念日管理工具"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huangjingzhi07",
+      "userId": "publishers:huangjingzhi07",
+      "displayName": "huangjingzhi07",
+      "image": "https://avatars.githubusercontent.com/u/131267927?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 838,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772884108882,
+      "changelog": "- Initial release of daily-reminder.\n- Supports scheduled daily/weekly reminders.\n- Allows users to set countdowns to a target date.\n- Enables management of important anniversaries with advance notifications.\n- Keyword triggers include: 提醒, 倒计时, 纪念日, 查看提醒.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a512e4d4ab3665ebfe94cb677b390c43cf6a2f6131791292215b459d54fd0028"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24098,
+  "uuid": "skill-clawhub-viralevo",
+  "skillKey": "clawhub-viralevo",
+  "name": "Viralevo",
+  "summary": "Self-evolving viral content trend advisor. Monitors 11 platforms, predicts what to post and when, and improves its own accuracy every week automatically.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.viralevo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "0xF69",
+      "features": [
+        "Self-evolving viral content trend advisor",
+        "Monitors 11 platforms, predicts what to post and when, and improves its own accuracy every week."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/viralevo@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/222843319?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "viralevo",
+      "url": "https://clawhub.ai/skills/viralevo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "viralevo",
+    "url": "https://clawhub.ai/skills/viralevo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/viralevo-b5d0e03f6427dcc7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/viralevo@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-viralevo-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d4b7819b6de270f6f4313183670462d6115b9cdd06ebe48ea3410f720649018c",
+      "artifactSizeBytes": 2365
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T14:10:36.090Z"
+}

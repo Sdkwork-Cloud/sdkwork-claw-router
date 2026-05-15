@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62278,
+  "uuid": "skill-clawhub-star-office-deploy",
+  "skillKey": "clawhub-star-office-deploy",
+  "name": "Star Office Deploy",
+  "summary": "Star Office UI 一键部署技能 — 帮主人快速部署像素办公室看板，支持多 Agent 加入、状态可视化、移动端查看与公网访问",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.star_office_deploy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "IIustrator",
+      "features": [
+        "Star Office UI 一键部署技能 — 帮主人快速部署像素办公室看板，支持多 Agent 加入、状态可视化、移动端查看与公网访问"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/star-office-deploy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/249649500?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "star-office-deploy",
+      "url": "https://clawhub.ai/skills/star-office-deploy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "star-office-deploy",
+    "url": "https://clawhub.ai/skills/star-office-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/star-office-deploy-5b6056f3dbf5c2c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/star-office-deploy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-star-office-deploy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8102dba69eb664236ab2a56e764dffd1e7d72a92d3778f12117b02f97f7d874a",
+      "artifactSizeBytes": 2553
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T05:32:52.901Z"
+}

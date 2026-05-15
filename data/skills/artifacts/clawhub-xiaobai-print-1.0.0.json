@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaobai-print@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaobai_print",
+  "skill": {
+    "id": 64056,
+    "skillKey": "clawhub-xiaobai-print",
+    "name": "xiaobai-print"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaobai-print",
+    "url": "https://clawhub.ai/skills/xiaobai-print",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaobai-print-1798808d8e3c4828.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小白打印助手。通过仓库内置 wrapper 调用本地 MCP bridge，执行设备检查、能力确认、文件上传、任务创建和短状态确认。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zwwz22",
+      "userId": "publishers:zwwz22",
+      "displayName": "zhang sanfeng",
+      "image": "https://avatars.githubusercontent.com/u/5292922?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 327,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773486467073,
+      "changelog": "Initial release of 小白打印助手 skill.\n\n- 支持通过本地 MCP bridge 检查设备、确认能力、上传文件、创建/查询/取消打印任务\n- 严格定义五步打印工作流，确保可靠和安全使用流程\n- 提供丰富参数支持（如纸张尺寸、介质类型、单双面、页码范围等）\n- 明确设备与打印任务状态反馈，便于用户排查与确认\n- 完善失败处理及用户提示，提升使用体验",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6dc7d1b7d3df01dce47bcf3700ce27fb45f138337d2df3323a1214d24864ef94"
+}

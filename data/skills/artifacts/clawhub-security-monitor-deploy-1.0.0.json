@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/security-monitor-deploy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.security_monitor_deploy",
+  "skill": {
+    "id": 18304,
+    "skillKey": "clawhub-security-monitor-deploy",
+    "name": "Security Monitor Deploy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "security-monitor-deploy",
+    "url": "https://clawhub.ai/skills/security-monitor-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/security-monitor-deploy-ef06b552b1b9aaa4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive security audit for OpenClaw deployments. Checks Docker port bindings, SSH config, openclaw.json settings, file permissions, exposed services, a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiwithabidi",
+      "userId": "publishers:aiwithabidi",
+      "displayName": "aiwithabidi",
+      "image": "https://avatars.githubusercontent.com/u/208891229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 703,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771143891660,
+      "changelog": "Initial release of Security Monitor.\n\n- Performs comprehensive security audits for OpenClaw deployments.\n- Checks Docker port bindings, SSH configuration, OpenClaw JSON settings, file permissions, exposed services, and firewall rules.\n- Generates a security score (0–100) with detailed recommendations.\n- Supports detailed output in both standard and JSON formats.\n- Includes scoring rubric and actionable improvement tips for production readiness.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a641077eb051e3aff0a24bc505cd918d504aae8a2e00a600f515469e669d5309"
+}

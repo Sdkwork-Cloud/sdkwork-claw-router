@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quant-trading-assistant@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quant_trading_assistant",
+  "skill": {
+    "id": 67593,
+    "skillKey": "clawhub-quant-trading-assistant",
+    "name": "Quant Trading Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quant-trading-assistant",
+    "url": "https://clawhub.ai/skills/quant-trading-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quant-trading-assistant-07ceee1acc504642.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "量化交易助手 - A股技术分析+量化选股。 用于：分析A股实时行情、计算技术指标（均线/KDJ/MACD/布林带）、 量化选股策略、生成交易信号、龙虎榜/情绪周期判断。 触发场景：问股票、分析行情、选股推荐、风险提示、技术指标计算。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dxie48892-jpg",
+      "userId": "publishers:dxie48892-jpg",
+      "displayName": "dxie48892-jpg",
+      "image": "https://avatars.githubusercontent.com/u/264585984?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 325,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774145443245,
+      "changelog": "v1.0.1: 修复Windows控制台UTF-8编码输出问题，修复_meta.json作者信息",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e75568d2a8e52a3bbe532ce03257b1cec494a6dc1c728dbd5e80f5ce4f30a0e9"
+}

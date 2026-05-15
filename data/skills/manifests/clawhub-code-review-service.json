@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67851,
+  "uuid": "skill-clawhub-code-review-service",
+  "skillKey": "clawhub-code-review-service",
+  "name": "Code Review Service",
+  "summary": "提供全面代码审查，涵盖功能、可读性、性能、安全性和可维护性，生成详细改进报告提升代码质量。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_review_service",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yang1002378395-cmyk",
+      "features": [
+        "提供全面代码审查，涵盖功能、可读性、性能、安全性和可维护性，生成详细改进报告提升代码质量。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/code-review-service@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261632147?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "code-review-service",
+      "url": "https://clawhub.ai/skills/code-review-service"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-review-service",
+    "url": "https://clawhub.ai/skills/code-review-service",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-review-service-adb0da150e1df66a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/code-review-service@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-code-review-service-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:102013ef0d0fed4de4cf63f9abff626a846491e35052fe85c7f76b57ae192794",
+      "artifactSizeBytes": 2418
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T04:39:29.204Z"
+}

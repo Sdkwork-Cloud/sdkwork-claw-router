@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bria-ai-skill@1.2.5",
+  "version": "1.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bria_ai_skill",
+  "skill": {
+    "id": 47474,
+    "skillKey": "clawhub-bria-ai-skill",
+    "name": "Image generation, editing and remove background"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bria-ai-skill",
+    "url": "https://clawhub.ai/skills/bria-ai-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bria-ai-skill-37d823e0188049f8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate, edit, create product images with AI. Remove or replace backgrounds, lifestyle shots, transparent PNGs, visual assets, batch generation, illustratio..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "galbria",
+      "userId": "s176yy33gynx3j8dr2cp0nabad83gvey",
+      "displayName": "Gal Davidi",
+      "image": "https://avatars.githubusercontent.com/u/158810732?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 112,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.2.5",
+      "createdAt": 1773223898032,
+      "changelog": "briai-ai-skill 1.2.5\n\n- Expanded and clarified skill description to cover all major capabilities, including product image generation, editing, background removal, and batch workflows.\n- Improved setup instructions with step-by-step guidance for checking and setting the required API key.\n- Added comprehensive quick reference examples for core Bria AI API actions (image generation, edit, masking, outpainting, upscaling, lifestyle and product integration).\n- Detailed table of capabilities and use cases for easy overview.\n- Updated sync/async response instructions for single and batch image requests.\n- Enhanced guidance for advanced use with structured prompts (VGL).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0fceb6570c873f806835911914b0c87083c8b4dca3b94b48a4b754e90cf23725"
+}

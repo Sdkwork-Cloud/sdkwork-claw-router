@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-actions-commit-health-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_actions_commit_health_audit",
+  "skill": {
+    "id": 28846,
+    "skillKey": "clawhub-github-actions-commit-health-audit",
+    "name": "GitHub Actions Commit Health Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-actions-commit-health-audit",
+    "url": "https://clawhub.ai/skills/github-actions-commit-health-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-actions-commit-health-audit-c70c465bbfe178f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit GitHub Actions reliability by commit SHA to surface risky commits causing repeated workflow failures across branches."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daniellummis",
+      "userId": "publishers:daniellummis",
+      "displayName": "Daniel Lummis",
+      "image": "https://avatars.githubusercontent.com/u/65238171?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 316,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772846135175,
+      "changelog": "Initial release – Audits GitHub Actions by commit to identify and score risky commits:\n\n- Reads exported GitHub Actions run JSON and groups by repository + commit SHA\n- Scores and flags commits with high failure rates, volumes, and workflow spread\n- Provides configurable output (text or JSON), filtering, and thresholds\n- Supports optional fail-gate for CI blocking on critical commit risks\n- Outputs commit health summaries for CI checks and triage dashboards",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1cfe97686f36a74a8991613c2bcee10064d48551b58fe5a4dfaa5e4baac30473"
+}

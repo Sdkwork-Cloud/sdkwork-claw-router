@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72390,
+  "uuid": "skill-clawhub-laosi-context-opt",
+  "skillKey": "clawhub-laosi-context-opt",
+  "name": "上下文窗口优化器",
+  "summary": "上下文窗口优化器 - 原创技能。智能管理AI上下文窗口，自动压缩历史、去除冗余、保留关键信息，节省token提升效率。适用于长会话、多文件、大项目等场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.laosi_context_opt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "534422530",
+      "features": [
+        "上下文窗口优化器",
+        "原创技能。智能管理AI上下文窗口，自动压缩历史、去除冗余、保留关键信息，节省token提升效率。适用于长会话、多文件、大项目等场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/laosi-context-opt@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82763531?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "laosi-context-opt",
+      "url": "https://clawhub.ai/skills/laosi-context-opt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "laosi-context-opt",
+    "url": "https://clawhub.ai/skills/laosi-context-opt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/laosi-context-opt-1497492ec1e7b37f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/laosi-context-opt@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-laosi-context-opt-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b3a2f54c32885e4e73d4b2ffc33cca7e369d9b941427f6702e90402a5773133d",
+      "artifactSizeBytes": 1998
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T06:47:54.231Z"
+}

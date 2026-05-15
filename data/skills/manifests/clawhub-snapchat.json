@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16209,
+  "uuid": "skill-clawhub-snapchat",
+  "skillKey": "clawhub-snapchat",
+  "name": "Snapchat",
+  "summary": "Snapchat Marketing API integration with managed OAuth. Manage ad accounts, campaigns, ad squads, ads, creatives, and audiences. Use this skill when users wan...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.snapchat",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byungkyu",
+      "features": [
+        "Snapchat Marketing API integration with managed OAuth",
+        "Manage ad accounts, campaigns, ad squads, ads, creatives, and audiences",
+        "Use this skill when users wan..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/snapchat@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16563684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "snapchat",
+      "url": "https://clawhub.ai/skills/snapchat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "snapchat",
+    "url": "https://clawhub.ai/skills/snapchat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/snapchat-b200592c45d4fef7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/snapchat@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-snapchat-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ea1df231b37ce0d23548f0dc82e22362d1089444c553ab1c75d039478aeffde",
+      "artifactSizeBytes": 2279
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T22:28:31.370Z"
+}

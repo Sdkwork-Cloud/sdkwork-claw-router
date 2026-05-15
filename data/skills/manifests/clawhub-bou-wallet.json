@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51392,
+  "uuid": "skill-clawhub-bou-wallet",
+  "skillKey": "clawhub-bou-wallet",
+  "name": "Bou Wallet",
+  "summary": "Use this skill when an external agent already has an agent API key and needs to call this backend directly with curl for three capability groups: (1) `POST /...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bou_wallet",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "C9",
+      "features": [
+        "Use this skill when an external agent already has an agent API key and needs to call this backe."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bou-wallet@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210006044?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bou-wallet",
+      "url": "https://clawhub.ai/skills/bou-wallet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bou-wallet",
+    "url": "https://clawhub.ai/skills/bou-wallet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bou-wallet-b5742a9ae2624e68.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bou-wallet@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bou-wallet-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:de06c74a359a61880b6e8afa66be3230308f35f0bc6463f276befc3e2552324d",
+      "artifactSizeBytes": 2310
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T08:14:14.220Z"
+}

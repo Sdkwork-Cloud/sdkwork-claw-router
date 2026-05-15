@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73487,
+  "uuid": "skill-clawhub-music-festivals",
+  "skillKey": "clawhub-music-festivals",
+  "name": "网红音乐节",
+  "summary": "提供关于网红音乐节的推荐清单、打卡路线与指南。用户搜索网红音乐节或规划相关出行时调用。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.music_festivals",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codenova58",
+      "features": [
+        "提供关于网红音乐节的推荐清单、打卡路线与指南。用户搜索网红音乐节或规划相关出行时调用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/music-festivals@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191358186?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "music-festivals",
+      "url": "https://clawhub.ai/skills/music-festivals"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "music-festivals",
+    "url": "https://clawhub.ai/skills/music-festivals",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/music-festivals-2780cbdb6e948842.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/music-festivals@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-music-festivals-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8aa47ea7b917401ff7f62bd1508dfdee20b04e56209ec963121e915b075ae9a5",
+      "artifactSizeBytes": 2303
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T23:52:35.018Z"
+}

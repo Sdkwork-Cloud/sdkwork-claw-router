@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ze-ri-skill@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ze_ri_skill",
+  "skill": {
+    "id": 73561,
+    "skillKey": "clawhub-ze-ri-skill",
+    "name": "择日学技能"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ze-ri-skill",
+    "url": "https://clawhub.ai/skills/ze-ri-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ze-ri-skill-f34960aad50437dd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "择日学技能。支持查询吉日凶日、建除十二神、黄道黑道、神煞吉凶，提供婚嫁、开业、动土、出行等择日建议。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dglijin-oss",
+      "userId": "s175pfszyvgy3bfthfy24nke2s83wqz0",
+      "displayName": "dglijin-oss",
+      "image": "https://avatars.githubusercontent.com/u/251980243?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 240,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1775229059458,
+      "changelog": "建除十二神 + 黄道黑道 + 分类择日 + 吉日评分",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b39fdb101167e7f585581b9b6e0bc824f292b32eba9b1b6b1e9d14ad549206fb"
+}

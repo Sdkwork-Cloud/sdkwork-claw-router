@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59232,
+  "uuid": "skill-clawhub-article-tts",
+  "skillKey": "clawhub-article-tts",
+  "name": "article-tts",
+  "summary": "拍照或文字转音频：文章照片 OCR 提取文字，或直接接收文字，生成 Microsoft Edge TTS 语音，支持中英文、自动转写、语速调节、逐句拆分。| Capture article photos (OCR) or plain text, generate natural audio via Edge TT...",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.article_tts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "退役前写代码的",
+      "features": [
+        "拍照或文字转音频：文章照片 OCR 提取文字，或直接接收文字，生成 Microsoft Edge TTS 语音，支持中英文、自动转写、语速调节、逐句拆分。| Capture article."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/article-tts@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3349388?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "article-tts",
+      "url": "https://clawhub.ai/skills/article-tts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "article-tts",
+    "url": "https://clawhub.ai/skills/article-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/article-tts-a9c764fb9828ce93.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/article-tts@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-article-tts-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:31f1a1ad6d801548d5145e9b953b37ab6524ee099689122964cd2592abfc26f6",
+      "artifactSizeBytes": 2039
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T07:01:52.507Z"
+}

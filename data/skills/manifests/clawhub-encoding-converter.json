@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47009,
+  "uuid": "skill-clawhub-encoding-converter",
+  "skillKey": "clawhub-encoding-converter",
+  "name": "Encoding Converter",
+  "summary": "Convert and verify data between Base64, URL encoding, HEX, MD5/SHA hashes, JWT payloads, HTML entities, and binary/octal/decimal/hex formats.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.encoding_converter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lv Lancer",
+      "features": [
+        "Convert and verify data between Base64, URL encoding, HEX, MD5/SHA hashes, JWT payloads, HTML e."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/encoding-converter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29176686?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "encoding-converter",
+      "url": "https://clawhub.ai/skills/encoding-converter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "encoding-converter",
+    "url": "https://clawhub.ai/skills/encoding-converter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/encoding-converter-8dcb7ec895cbcf4f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/encoding-converter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-encoding-converter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ae21a9d5069c3cf0d51a22123b2432d8860c5bbd3496645b8f7a0e8191db956",
+      "artifactSizeBytes": 2215
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T07:21:14.415Z"
+}

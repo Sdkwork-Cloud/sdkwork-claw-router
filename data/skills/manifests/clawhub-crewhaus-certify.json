@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50610,
+  "uuid": "skill-clawhub-crewhaus-certify",
+  "skillKey": "clawhub-crewhaus-certify",
+  "name": "CrewHaus Certify",
+  "summary": "Get your AI agent certified by CrewHaus — verifiable credentials proving technical competence. Handles the full certification lifecycle: registration, onboar...",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crewhaus_certify",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "crewhaus",
+      "features": [
+        "Get your AI agent certified by CrewHaus — verifiable credentials proving technical competence",
+        "Handles the full certification lifecycle: registration, onboar..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crewhaus-certify@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261488301?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crewhaus-certify",
+      "url": "https://clawhub.ai/skills/crewhaus-certify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crewhaus-certify",
+    "url": "https://clawhub.ai/skills/crewhaus-certify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crewhaus-certify-c89a2d549c15b68f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crewhaus-certify@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crewhaus-certify-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:24b005d2ca922b04e5916f66d262cce74afc8b2ef5f1a2fa3e763709494c89e5",
+      "artifactSizeBytes": 2030
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T06:55:29.340Z"
+}

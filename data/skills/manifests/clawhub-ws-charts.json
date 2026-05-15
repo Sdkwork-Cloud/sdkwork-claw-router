@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68645,
+  "uuid": "skill-clawhub-ws-charts",
+  "skillKey": "clawhub-ws-charts",
+  "name": "Charts",
+  "summary": "图表生成。根据数据自动生成专业图表。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ws_charts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fhbillwer",
+      "features": [
+        "图表生成。根据数据自动生成专业图表。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ws-charts@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42957828?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ws-charts",
+      "url": "https://clawhub.ai/skills/ws-charts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ws-charts",
+    "url": "https://clawhub.ai/skills/ws-charts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ws-charts-8abb37e7821d1f39.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ws-charts@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ws-charts-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c6bb5a96244e3ae90978a599bebca48b140712508cd494d54a2e67b91b8cbf9",
+      "artifactSizeBytes": 1978
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T15:59:42.553Z"
+}

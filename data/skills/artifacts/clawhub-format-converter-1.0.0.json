@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/format-converter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.format_converter",
+  "skill": {
+    "id": 38049,
+    "skillKey": "clawhub-format-converter",
+    "name": "Format Converter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "format-converter",
+    "url": "https://clawhub.ai/skills/format-converter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/format-converter-ca2dc2a5a15d4823.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get converted MP4 files ready to post, without touching a single slider. Upload your video files (AVI, MOV, MKV, WebM, up to 500MB), say something like \"conv..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775951758155,
+      "changelog": "- Initial release of format-converter skill for converting video files to MP4 via a cloud-based processing backend.\n- Supports uploading AVI, MOV, MKV, WebM (up to 500MB) and returning downloadable 1080p MP4 files.\n- Handles user setup automatically, including token generation and session management.\n- Built-in commands for exporting videos, checking credits, viewing session state, and uploading files.\n- Clear mapping of user prompts to actions; processes requests via cloud API and summarizes progress and results.\n- Provides concise error handling and workflow tips for fast and compatible video conversions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b818a4d016fcee25920dc18b5cc21e15996ab3d698f694f70bb5480f7266944a"
+}

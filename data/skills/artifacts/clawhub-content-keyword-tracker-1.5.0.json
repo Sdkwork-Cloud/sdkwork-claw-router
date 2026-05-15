@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/content-keyword-tracker@1.5.0",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_keyword_tracker",
+  "skill": {
+    "id": 48250,
+    "skillKey": "clawhub-content-keyword-tracker",
+    "name": "Content Keyword Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-keyword-tracker",
+    "url": "https://clawhub.ai/skills/content-keyword-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-keyword-tracker-bc37259166b9deca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "An OpenClaw skill for tracking keyword trends and generating structured reports. Uses Tavily API for search and supports webhook notifications for daily repo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yesong-hue",
+      "userId": "s17865seb2fyk8mpkmjge2xwmd857k7c",
+      "displayName": "yesong-Hue",
+      "image": "https://avatars.githubusercontent.com/u/277589485?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 102,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.5.0",
+      "createdAt": 1777972295472,
+      "changelog": "完全重写，使用英文描述，移除所有中文和敏感词",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a1fdb326ff11e6e4d4da0d54b1b17239773666614ed900a2fd898b269a9583ec"
+}

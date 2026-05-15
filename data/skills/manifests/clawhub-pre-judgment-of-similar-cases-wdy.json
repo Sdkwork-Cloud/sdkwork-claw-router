@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68937,
+  "uuid": "skill-clawhub-pre-judgment-of-similar-cases-wdy",
+  "skillKey": "clawhub-pre-judgment-of-similar-cases-wdy",
+  "name": "Pre judgment of similar cases wdy",
+  "summary": "类案预判(法律检索 + 类似案例)。当用户描述一个纠纷或案件时（如'被骗了2万'、'朋友借钱不还'、'被打伤了'），自动检索相关法律条文和类似判例，分析法律后果、胜诉概率、可主张的赔偿及建议下一步行动。适用于：侵权责任、诈骗欺诈、合同纠纷、债务纠纷、治安纠纷、专利/商标/著作权等。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pre_judgment_of_similar_cases_wdy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rose-develop",
+      "features": [
+        "类案预判(法律检索 + 类似案例)。当用户描述一个纠纷或案件时（如'被骗了2万'、'朋友借钱不还'、'被打伤了'），自动检索相关法律条文和类似判例，分析法律后果、胜诉概率、可主张的赔偿及建议."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pre-judgment-of-similar-cases-wdy@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/157121738?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pre-judgment-of-similar-cases-wdy",
+      "url": "https://clawhub.ai/skills/pre-judgment-of-similar-cases-wdy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pre-judgment-of-similar-cases-wdy",
+    "url": "https://clawhub.ai/skills/pre-judgment-of-similar-cases-wdy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pre-judgment-of-similar-cases-wdy-5955290632e2216a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pre-judgment-of-similar-cases-wdy@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pre-judgment-of-similar-cases-wdy-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1b7e0139fa98df66eb3d0736930e1ecf0bd293564de6f103a8e66b7e757c5f57",
+      "artifactSizeBytes": 2684
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T06:59:36.105Z"
+}

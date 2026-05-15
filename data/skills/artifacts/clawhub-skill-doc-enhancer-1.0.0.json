@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-doc-enhancer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_doc_enhancer",
+  "skill": {
+    "id": 41039,
+    "skillKey": "clawhub-skill-doc-enhancer",
+    "name": "Skill Doc Enhancer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-doc-enhancer",
+    "url": "https://clawhub.ai/skills/skill-doc-enhancer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-doc-enhancer-052a1f8bd43ce8aa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically analyze and enhance content-short SKILL.md files by analyzing skill directory structure, adding usage examples, script documentation, common us..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "834948655",
+      "userId": "s173h1b07z7r3z0xnycw4b21zs84qtrg",
+      "displayName": "风风",
+      "image": "https://avatars.githubusercontent.com/u/59995606?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776002118011,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:452eb523ad172780068f5a2ff91835f58bed3f1040d8f1cc8b6b54cb49332938"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/edge-tts-cantonese@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edge_tts_cantonese",
+  "skill": {
+    "id": 39204,
+    "skillKey": "clawhub-edge-tts-cantonese",
+    "name": "Edge Tts Cantonese"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edge-tts-cantonese",
+    "url": "https://clawhub.ai/skills/edge-tts-cantonese",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edge-tts-cantonese-aa47a2dd5ce9bdc4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate Cantonese TTS audio in OGG format using Microsoft Edge TTS for voice replies on WhatsApp and Telegram with adjustable tone styles."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "skglau",
+      "userId": "s17b8dj1ek7nsrttsfqsq2xckd83hk2x",
+      "displayName": "Gabriel",
+      "image": "https://avatars.githubusercontent.com/u/23546493?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774411210287,
+      "changelog": "Edge TTS Cantonese Voice Skill 1.0.0 – Initial Release\n\n- Generate natural Cantonese TTS audio using Microsoft Edge TTS.\n- Supports WhatsApp and Telegram voice replies via trigger phrases.\n- Offers multiple tones: normal, slow (sad), fast (happy), and angry, each with custom rate and pitch settings.\n- Outputs OGG/Opus audio suitable for messaging platforms.\n- Includes example scripts for generating and sending voice notes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9853373d75bf0ba18c6d1051e333aebc47edd684c9822b37d82f13db252c3a15"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-generator-free-ai-tools@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_generator_free_ai_tools",
+  "skill": {
+    "id": 42174,
+    "skillKey": "clawhub-video-generator-free-ai-tools",
+    "name": "Video Generator Free Ai Tools"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-generator-free-ai-tools",
+    "url": "https://clawhub.ai/skills/video-generator-free-ai-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-generator-free-ai-tools-794b41c72f68e28e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get ready-to-share videos ready to post, without touching a single slider. Upload your text prompts or images (MP4, MOV, JPG, PNG, up to 200MB), say somethin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776792986360,
+      "changelog": "Initial release of Video Generator Free AI Tools:\n\n- Generate ready-to-share 1080p MP4 videos from text prompts or images (up to 200MB).\n- No editing required; simply describe your scene or upload assets for fast video creation.\n- Supports file uploads in MP4, MOV, JPG, PNG, and more.\n- Integrated anonymous token system with 100 free credits and 7-day validity for new users.\n- Full session management, cloud rendering, and easy workflow for content creators and marketers.\n- Clear error handling, status reporting, and support for common video generation actions (upload, generate, export, credit check).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f70fcf1d082e2eda6bf5733b89f241d22d8dcd7142820c2e0c94ef9f96dba3ea"
+}

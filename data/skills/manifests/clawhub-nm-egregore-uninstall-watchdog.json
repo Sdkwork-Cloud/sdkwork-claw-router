@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34852,
+  "uuid": "skill-clawhub-nm-egregore-uninstall-watchdog",
+  "skillKey": "clawhub-nm-egregore-uninstall-watchdog",
+  "name": "Nm Egregore Uninstall Watchdog",
+  "summary": "Remove the egregore watchdog daemon and clean up all associated files (plist/unit, pidfile, watchdog log)",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nm_egregore_uninstall_watchdog",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "athola",
+      "features": [
+        "Remove the egregore watchdog daemon and clean up all associated files (plist/unit, pidfile, wat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nm-egregore-uninstall-watchdog@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9769290?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nm-egregore-uninstall-watchdog",
+      "url": "https://clawhub.ai/skills/nm-egregore-uninstall-watchdog"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nm-egregore-uninstall-watchdog",
+    "url": "https://clawhub.ai/skills/nm-egregore-uninstall-watchdog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nm-egregore-uninstall-watchdog-a2026bc91a8409e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nm-egregore-uninstall-watchdog@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-nm-egregore-uninstall-watchdog-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dcf69d40a350a433f2a32f4bad0fc1e768a550b7d054a105f99debf625e89802",
+      "artifactSizeBytes": 1936
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T02:16:57.331Z"
+}

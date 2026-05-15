@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13269,
+  "uuid": "skill-clawhub-aimine",
+  "skillKey": "clawhub-aimine",
+  "name": "AI Mine",
+  "summary": "Mine AIT (Proof of AI Work) on BNB Chain. Install, configure, start/stop mining entirely from OpenClaw. No terminal or manual file edits required.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aimine",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nancyuahon",
+      "features": [
+        "Mine AIT (Proof of AI Work) on BNB Chain",
+        "Install, configure, start/stop mining entirely from OpenClaw",
+        "No terminal or manual file edits required."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aimine@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218331998?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aimine",
+      "url": "https://clawhub.ai/skills/aimine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aimine",
+    "url": "https://clawhub.ai/skills/aimine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aimine-88b127d3a8c7415a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aimine@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-aimine-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fea3b44f17c2ac414145d3593012b8b4b099db3c2c8553d162ebf77c46dcec17",
+      "artifactSizeBytes": 2074
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T06:03:56.254Z"
+}

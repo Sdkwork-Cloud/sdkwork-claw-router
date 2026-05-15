@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zhihu-answer-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhihu_answer_generator",
+  "skill": {
+    "id": 71325,
+    "skillKey": "clawhub-zhihu-answer-generator",
+    "name": "知乎回答生成器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhihu-answer-generator",
+    "url": "https://clawhub.ai/skills/zhihu-answer-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhihu-answer-generator-8ae7659a64ab77b1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "生成知乎高质量回答，包含专业论证 + 数据支撑 + 引流技巧"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kaising050708",
+      "userId": "s17been0wyxbhdsrnk4xypkaxx8431vy",
+      "displayName": "kaising050708",
+      "image": "https://avatars.githubusercontent.com/u/78123001?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 305,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775097597826,
+      "changelog": "Initial release of zhihu-answer-generator:\n\n- Generates high-quality Zhihu answers with professional arguments, data support, and soft marketing techniques.\n- Supports configurable answer perspective, word count, and optional traffic generation.\n- Provides a structured output template with impactful opening, supported arguments, summary, and soft promotion section.\n- Ensures readability and authority with concise paragraphs, data/case support, and image suggestions.\n- Includes workflow triggers, usage examples, and pricing tiers (free/pro).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:783022460fcca92b5acd153e2d1245a17ae30c3c5087586a2452afbc0fa1e54b"
+}

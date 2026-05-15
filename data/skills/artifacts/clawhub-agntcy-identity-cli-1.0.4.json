@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agntcy-identity-cli@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agntcy_identity_cli",
+  "skill": {
+    "id": 22631,
+    "skillKey": "clawhub-agntcy-identity-cli",
+    "name": "AGNTCY Identity CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agntcy-identity-cli",
+    "url": "https://clawhub.ai/skills/agntcy-identity-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agntcy-identity-cli-ce7ee99a5abf2e4a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AGNTCY Identity Issuer CLI and Node Backend for managing verifiable agent identities, metadata, and badges."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jadiaconu",
+      "userId": "publishers:jadiaconu",
+      "displayName": "Jean DIACONU",
+      "image": "https://avatars.githubusercontent.com/u/23049301?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 466,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1773162215143,
+      "changelog": "- Updated environment variable and config path requirements to use simplified \"env\" and \"config\" keys.\n- Added an explicit \"Security notes\" section with clear guidance on handling sensitive files and secrets (vault.json and CLIENT_SECRET).\n- Deprecated inline descriptions for env/config fields, moving to a more concise format.\n- No functional or command changes to the skill; documentation clarity and security emphasis improved.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f35b0a4b18d48d5953c80e72589fcee66e84b6ae5fcce73b131c3438b2a3b293"
+}

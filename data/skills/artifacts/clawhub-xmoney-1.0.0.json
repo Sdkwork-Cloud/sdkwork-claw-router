@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xmoney@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xmoney",
+  "skill": {
+    "id": 22423,
+    "skillKey": "clawhub-xmoney",
+    "name": "XMoney"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xmoney",
+    "url": "https://clawhub.ai/skills/xmoney",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xmoney-9f96bdd28db38cee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn messy monetization ideas into clearer revenue decisions. Analyze pricing, payout logic, conversion friction, and revenue model fit for creators, operato..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "duclawbot",
+      "userId": "publishers:duclawbot",
+      "displayName": "Duclawbot",
+      "image": "https://avatars.githubusercontent.com/u/216468018?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 474,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773169566015,
+      "changelog": "XMoney 1.0.0 — Initial Release\n\n- Launches XMoney, a skill for analyzing and clarifying monetization and revenue models for creators and digital businesses.\n- Provides structured assessments for pricing, payout logic, conversion friction, and revenue model fit.\n- Includes guidance to compare monetization options, identify friction and fit, and recommend next steps toward clearer revenue strategies.\n- Outlines strict boundaries: does not process payments, give legal/tax advice, or handle regulated financial functions.\n- Offers a standard assessment output, best use cases, operational principles, and activation rules for proper usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:df51ea9029ac245bd1960ebf5c0419b3f355ec3712d2ab98cb3005f4b182098e"
+}

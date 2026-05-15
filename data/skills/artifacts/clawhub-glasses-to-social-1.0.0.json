@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/glasses-to-social@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.glasses_to_social",
+  "skill": {
+    "id": 11348,
+    "skillKey": "clawhub-glasses-to-social",
+    "name": "Glasses to Social"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "glasses-to-social",
+    "url": "https://clawhub.ai/skills/glasses-to-social",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/glasses-to-social-8f1f087771e30fab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn smart glasses photos into social media posts. Monitors a Google Drive folder for new images from Meta Ray-Ban glasses (or any smart glasses), analyzes them with vision AI, drafts tweets/posts in the user's voice, and publishes on appr."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "junebugg1214",
+      "userId": "s170vskq4jzqm5pptp3398wpc185s7cz",
+      "displayName": "Marc J Saint-jour",
+      "image": "https://avatars.githubusercontent.com/u/82672745?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2070,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769836645790,
+      "changelog": "- Initial release of the glasses-to-social skill.\n- Monitors a Google Drive folder for new photos from Meta Ray-Ban or other smart glasses.\n- Uses vision AI to analyze incoming images and drafts social media posts in the user's voice.\n- Sends drafted posts and image previews for user approval before publishing.\n- Supports hands-free photo-to-social workflows with customizable hashtags and posting frequency.\n- Includes setup instructions for folder configuration, sync options, and requirements.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9aeacd96bf2e082c9f13fe97bfe53b0f7415ee90c65f9aea266517cd3713a034"
+}

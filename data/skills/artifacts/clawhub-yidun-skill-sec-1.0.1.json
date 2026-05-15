@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yidun-skill-sec@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yidun_skill_sec",
+  "skill": {
+    "id": 13359,
+    "skillKey": "clawhub-yidun-skill-sec",
+    "name": "Yidun Skill Sec"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yidun-skill-sec",
+    "url": "https://clawhub.ai/skills/yidun-skill-sec",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yidun-skill-sec-b9f71f6f84b624ae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Intelligent code security scanner with hybrid local-cloud detection. Fingerprints packages, runs static behavioral analysis, and consults cloud threat intell..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yd-dev",
+      "userId": "publishers:yd-dev",
+      "displayName": "Yidun",
+      "image": "https://avatars.githubusercontent.com/u/17902411?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 663,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 8,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773397606693,
+      "changelog": "yidun-skill-sec 1.0.1\n\n- Version bump with no code or SKILL.md file change detected.\n- No new features, fixes, or breaking changes in this release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cd4ce31464f697261904050e0d5ddafa6a45f723c0330442a1c967b0e28eff9c"
+}

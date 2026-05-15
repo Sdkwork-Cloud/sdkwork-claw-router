@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sunshine-agent-task-tracker@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sunshine_agent_task_tracker",
+  "skill": {
+    "id": 27309,
+    "skillKey": "clawhub-sunshine-agent-task-tracker",
+    "name": "Agent Task Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sunshine-agent-task-tracker",
+    "url": "https://clawhub.ai/skills/sunshine-agent-task-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sunshine-agent-task-tracker-1fea4da72f8cb1f1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Proactive task state management. Use on EVERY task start, progress update, completion, or failure. Tracks what was requested, what's running (background proc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sunshine-del-ux",
+      "userId": "publishers:sunshine-del-ux",
+      "displayName": "Sunshine-del-ux",
+      "image": "https://avatars.githubusercontent.com/u/83053073?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 351,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1773610749353,
+      "changelog": "- Improved skill documentation with detailed state management rules and markdown format in SKILL.md\n- Clarified when and how to track task state, including background process details and multi-step tasks\n- Added guidance on state file limits, pruning, and task summary formatting\n- Now ensures session resilience and user context recovery after resets or compaction",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:49fbd2893f878e635e22c751d4cbb7d790e32267724e9b28e5b85e65700def35"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zhihu-depth-answer-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhihu_depth_answer_builder",
+  "skill": {
+    "id": 55862,
+    "skillKey": "clawhub-zhihu-depth-answer-builder",
+    "name": "Zhihu Depth Answer Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhihu-depth-answer-builder",
+    "url": "https://clawhub.ai/skills/zhihu-depth-answer-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhihu-depth-answer-builder-4de49eef46914ec8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Craft authoritative, well-structured Zhihu (知乎) answers that demonstrate expertise, earn upvotes, and build long-term professional credibility."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 102,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777774141027,
+      "changelog": "Initial release: document-only content creation prompt-flow skill.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2436636fa3c6b24ac2ed98a8fdde7fc27e5ae0d22093e2275a4fe51544d1aa10"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12547,
+  "uuid": "skill-clawhub-consensus-interact",
+  "skillKey": "clawhub-consensus-interact",
+  "name": "consensus-interact",
+  "summary": "Operate consensus.tools end-to-end (post jobs, create submissions, cast votes, resolve results) using either a local-first board or a hosted board (depending...",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.consensus_interact",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kai Cianflone",
+      "features": [
+        "Operate consensus.tools end-to-end (post jobs, create submissions, cast votes, resolve results)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/consensus-interact@1.0.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30943151?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "consensus-interact",
+      "url": "https://clawhub.ai/skills/consensus-interact"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "consensus-interact",
+    "url": "https://clawhub.ai/skills/consensus-interact",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/consensus-interact-a3b6b8e1815b5b98.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/consensus-interact@1.0.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-consensus-interact-1.0.9.json",
+      "version": "1.0.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2d9343a386c36d25fe93c948b0236ee63349fe7d49877dd1fc3d5f7f6841fbae",
+      "artifactSizeBytes": 1946
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T19:32:40.043Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/extract-design-system@0.1.9",
+  "version": "0.1.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.extract_design_system",
+  "skill": {
+    "id": 28711,
+    "skillKey": "clawhub-extract-design-system",
+    "name": "Extract Design System"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "extract-design-system",
+    "url": "https://clawhub.ai/skills/extract-design-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/extract-design-system-d8ec354b9a524087.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract design primitives from a public website and generate starter token files for your project."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "arvindrk",
+      "userId": "s179g4cmv7gm43ka74z5eq68p5847zf8",
+      "displayName": "Arvind Ram Singh Kishore",
+      "image": "https://avatars.githubusercontent.com/u/7334372?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 219,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.9",
+      "createdAt": 1775326985331,
+      "changelog": "- Added detailed usage workflow and expectations to SKILL.md, outlining how to extract and initialize design primitives from public websites.\n- Clarified safety boundaries to prevent unintentional file overwrites or incorrect assumptions about extracted design systems.\n- Provided explicit instructions for extracting tokens, generating starter files, and reviewing outputs.\n- Updated documentation to guide confirmation steps before modifying project files or applying extracted styles.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3b085e7b4b0c1020f47fb449b90d94a329f6a4a55b7b6fca3941b63643352982"
+}

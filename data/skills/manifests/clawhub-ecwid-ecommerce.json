@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40131,
+  "uuid": "skill-clawhub-ecwid-ecommerce",
+  "skillKey": "clawhub-ecwid-ecommerce",
+  "name": "Ecwid Ecommerce",
+  "summary": "Ecwid REST API v3 integration for managing e-commerce store data including products, orders, customers, categories, discount coupons, promotions, abandoned c...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecwid_ecommerce",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "droneitgroup",
+      "features": [
+        "Ecwid REST API v3 integration for managing e-commerce store data including products, orders, cu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ecwid-ecommerce@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201618752?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ecwid-ecommerce",
+      "url": "https://clawhub.ai/skills/ecwid-ecommerce"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecwid-ecommerce",
+    "url": "https://clawhub.ai/skills/ecwid-ecommerce",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecwid-ecommerce-5f5d219e946a0347.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ecwid-ecommerce@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ecwid-ecommerce-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:52d8b81ea7ec72b50a10ba13b0048cf9b571baa13e7a858fc6f8c788500a875b",
+      "artifactSizeBytes": 2298
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T13:56:36.335Z"
+}

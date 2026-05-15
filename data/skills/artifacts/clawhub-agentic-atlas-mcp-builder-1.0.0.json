@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentic-atlas-mcp-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentic_atlas_mcp_builder",
+  "skill": {
+    "id": 31085,
+    "skillKey": "clawhub-agentic-atlas-mcp-builder",
+    "name": "Mcp Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentic-atlas-mcp-builder",
+    "url": "https://clawhub.ai/skills/agentic-atlas-mcp-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentic-atlas-mcp-builder-fa3822509887a421.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bootstraps new Model Context Protocol (MCP) servers from a natural language description. Use when the user asks to build an MCP server, create an MCP tool, s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "asimons81",
+      "userId": "s17cyvwqx8jp9cdsp14hbw4wgs83gw6d",
+      "displayName": "Tony Simons",
+      "image": "https://avatars.githubusercontent.com/u/214744153?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 271,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775944867841,
+      "changelog": "Initial release of the MCP Builder skill.\n\n- Bootstraps new Model Context Protocol (MCP) servers from natural language descriptions.\n- Supports TypeScript (recommended) and Python MCP server scaffolding.\n- Auto-generates tool definitions from OpenAPI or JSON schemas.\n- Includes both stdio (CLI) and SSE (web) transport options.\n- Provides built-in error handling, validation, and a test harness.\n- Supplies configuration snippets for Claude Code, Cursor, and OpenCode integrations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b1c0d65f72be189234db077c42975c0432cc74ed34818004df909f3b95bf6694"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reboot-checker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reboot_checker",
+  "skill": {
+    "id": 38699,
+    "skillKey": "clawhub-reboot-checker",
+    "name": "Reboot Checker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reboot-checker",
+    "url": "https://clawhub.ai/skills/reboot-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reboot-checker-9f439ba07b720d9a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detect unexpected system reboots and alert when the system comes back online. Tracks boot history and flags suspicious restarts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hostilespider",
+      "userId": "s174mjwnjbtsfngcadfcshpg5d83t2r2",
+      "displayName": "HostileSpider",
+      "image": "https://avatars.githubusercontent.com/u/47485616?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774812139123,
+      "changelog": "Initial release — Detect unexpected system reboots",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a706d798653765ab893b8dc90d04e4f8c646bd478d8dea06f8b7abd4e6ea9b60"
+}

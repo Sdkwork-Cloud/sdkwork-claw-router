@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32928,
+  "uuid": "skill-clawhub-openclaw-i18n-skill",
+  "skillKey": "clawhub-openclaw-i18n-skill",
+  "name": "Openclaw I18n Skill",
+  "summary": "Internationalization and localization layer for OpenClaw. Auto-detects language, enforces correct diacritics, formats dates/currency per locale, and pipes ou...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_i18n_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bloommediacorporation-lab",
+      "features": [
+        "Internationalization and localization layer for OpenClaw",
+        "Auto-detects language, enforces correct diacritics, formats dates/currency per locale, and pipe."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-i18n-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/248632360?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-i18n-skill",
+      "url": "https://clawhub.ai/skills/openclaw-i18n-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-i18n-skill",
+    "url": "https://clawhub.ai/skills/openclaw-i18n-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-i18n-skill-aee7807ef6d655df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-i18n-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-i18n-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ecfc626eba1843ced85a47ae160d1ada76513611706cb8e460ecf61ce9a5da4",
+      "artifactSizeBytes": 2565
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T13:56:37.608Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fortune-oracle@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fortune_oracle",
+  "skill": {
+    "id": 72008,
+    "skillKey": "clawhub-fortune-oracle",
+    "name": "YunShi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fortune-oracle",
+    "url": "https://clawhub.ai/skills/fortune-oracle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fortune-oracle-33f487ab4634b2e4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "本地离线算命/运势技能：输出幸运方位、颜色、数字、物品、宜忌，并支持财运/桃花运等单项查询与次日运势定时推送。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "elilin97",
+      "userId": "publishers:elilin97",
+      "displayName": "Eli Lin",
+      "image": "https://avatars.githubusercontent.com/u/22721394?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 810,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771489705643,
+      "changelog": "Initial release with comprehensive offline fortune-telling and horoscope capabilities.\n\n- Outputs daily luck overview, lucky direction, colors, numbers, items, actionable do's and don'ts, key warnings, and detailed explanations.\n- Supports single-aspect queries (wealth, romance, career, health, interpersonal) and next-day fortune scheduled push.\n- Strictly local/offline: must read from specified local files per defined order; no web search or non-local resources allowed.\n- Implements user profile creation and reuse; stores/updates user charts, warns if file access is not possible.\n- Outputs in a fixed, detailed Chinese template; includes required structure, emojis, and actionable advice.\n- Includes rational reminders for entertainment/cultural use; advises caution for medical/legal/financial questions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f9967cb059688f3b872b6370d28bcab074f0eb5f1e764eea3d86324a9bc2bb0b"
+}

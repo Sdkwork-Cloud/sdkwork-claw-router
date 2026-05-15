@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/maker-for-marketing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maker_for_marketing",
+  "skill": {
+    "id": 47497,
+    "skillKey": "clawhub-maker-for-marketing",
+    "name": "Maker For Marketing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maker-for-marketing",
+    "url": "https://clawhub.ai/skills/maker-for-marketing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maker-for-marketing-0bccb7273d11a6b7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get polished marketing videos ready to post, without touching a single slider. Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say somethin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susan4731-wilfordf",
+      "userId": "s1782w3wqej6a5gnp3w63eb80184cckp",
+      "displayName": "susan4731-wilfordf",
+      "image": "https://avatars.githubusercontent.com/u/208907675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 113,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777393211759,
+      "changelog": "Initial release of Maker for Marketing — fast, easy AI-powered marketing video creation.\n\n- Upload raw video footage (up to 500MB), describe your desired edit, and quickly export a polished 1080p MP4.\n- Automatic session setup, with 100 free credits via anonymous authentication.\n- Supports export, credit checking, file uploads, timeline preview, and common edit actions by prompt.\n- Clear error handling for authentication, file size/type, credits, and export eligibility.\n- Session-based editing allows iterative, fast-turnaround marketing video production without manual editing tools.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ce2a7536555ad3eea805d3f0b2d3b4bc46ea300f6cc4d7c8011b9b48746c33a9"
+}

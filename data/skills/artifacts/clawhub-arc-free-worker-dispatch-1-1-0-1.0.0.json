@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/arc-free-worker-dispatch-1-1-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arc_free_worker_dispatch_1_1_0",
+  "skill": {
+    "id": 24009,
+    "skillKey": "clawhub-arc-free-worker-dispatch-1-1-0",
+    "name": "Arc Free Worker Dispatch 1.1.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arc-free-worker-dispatch-1-1-0",
+    "url": "https://clawhub.ai/skills/arc-free-worker-dispatch-1-1-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arc-free-worker-dispatch-1-1-0-898d98e8d8771e9b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Route tasks to free AI models via OpenRouter to save money. Use when the agent needs to delegate content writing, research, code generation, or other tasks t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sieyer",
+      "userId": "s17ecg755jc4ww7frdpfdkdtbn83g8r9",
+      "displayName": "Sieyer",
+      "image": "https://avatars.githubusercontent.com/u/68283443?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 412,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772453036695,
+      "changelog": "Initial release of Free Worker Dispatch.\n\n- Route tasks to free AI models via OpenRouter to reduce API costs.\n- Supports task delegation for content writing, research, and code generation.\n- Offers auto-selection of free models based on task type.\n- Includes commands for dispatching tasks, listing models, checking model status, output redirection, and batch processing.\n- Helps prevent surprise API bills by using free models instead of expensive ones.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:308c69bd16bd286cb4e0c6b3e24a8ba0e438b86bba9a38be026038fb47c400c7"
+}

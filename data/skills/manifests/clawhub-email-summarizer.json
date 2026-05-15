@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24594,
+  "uuid": "skill-clawhub-email-summarizer",
+  "skillKey": "clawhub-email-summarizer",
+  "name": "email-summarizer",
+  "summary": "Email summary and contact profiling skill. Fetch emails from an IMAP mailbox or parse local exports (.pst / .mbox / .msg), build a contact profile report (HT...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_summarizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Momo",
+      "features": [
+        "Email summary and contact profiling skill",
+        "Fetch emails from an IMAP mailbox or parse local exports (.pst / .mbox / .msg), build a contact."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/email-summarizer@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35096042?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "email-summarizer",
+      "url": "https://clawhub.ai/skills/email-summarizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-summarizer",
+    "url": "https://clawhub.ai/skills/email-summarizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-summarizer-7e5e771d3a05a686.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/email-summarizer@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-email-summarizer-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:33d7d0dde8ed1974f5940a8be7c86e941c62208cf2512414887e47d4fbc0dcf2",
+      "artifactSizeBytes": 2411
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T07:42:55.100Z"
+}

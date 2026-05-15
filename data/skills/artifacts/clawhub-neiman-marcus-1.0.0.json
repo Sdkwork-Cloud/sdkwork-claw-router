@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/neiman-marcus@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neiman_marcus",
+  "skill": {
+    "id": 68864,
+    "skillKey": "clawhub-neiman-marcus",
+    "name": "Neiman Marcus"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neiman-marcus",
+    "url": "https://clawhub.ai/skills/neiman-marcus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neiman-marcus-c537caa405bad371.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "美国知名奢侈品百货，创立于1907年，以高端时尚、个性化服务和圣诞愿望目录著称，拥有全尺寸店和折扣店。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776580785022,
+      "changelog": "- 首次发布尼曼百货（Neiman Marcus）技能，系统性介绍公司历史、业务结构与市场地位。\n- 包含公司关键发展时间线、核心数据与商业模式分析。\n- 详细说明圣诞愿望目录、核心护城河和破产重组影响。\n- 适用于行业分析、投资参考、竞品对比等多种场景。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ffaefbf81bc85369238f58aecd0e324f639842844cc3ce8cc224b8e3bd1fb056"
+}

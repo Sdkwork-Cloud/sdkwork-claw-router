@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29386,
+  "uuid": "skill-clawhub-skill-by-test",
+  "skillKey": "clawhub-skill-by-test",
+  "name": "skill-by-test",
+  "summary": "Create and manage test payment links for one-time, recurring, plans, multi-product, custom pricing, and donations in a sandbox environment.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_by_test",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yaggit",
+      "features": [
+        "Create and manage test payment links for one-time, recurring, plans, multi-product, custom pric."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-by-test@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/72143254?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-by-test",
+      "url": "https://clawhub.ai/skills/skill-by-test"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-by-test",
+    "url": "https://clawhub.ai/skills/skill-by-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-by-test-2f491c40e2f404a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-by-test@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-by-test-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:de4ae013c4f180c45acfb17e527d3278fef453093661f2cabc22a5443be762f5",
+      "artifactSizeBytes": 2429
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T09:45:13.134Z"
+}

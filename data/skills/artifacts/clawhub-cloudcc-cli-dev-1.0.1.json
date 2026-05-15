@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cloudcc-cli-dev@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloudcc_cli_dev",
+  "skill": {
+    "id": 62492,
+    "skillKey": "clawhub-cloudcc-cli-dev",
+    "name": "cloudcc-cli-dev"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloudcc-cli-dev",
+    "url": "https://clawhub.ai/skills/cloudcc-cli-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloudcc-cli-dev-69ffdb0251a5bdf6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CloudCC CRM 二次开发 CLI 助手。用于需求拆解与方案选型，并通过 cloudcc-cli（cc 命令）创建/拉取/发布自定义对象、字段、菜单/应用、自定义类、定时器、触发器与 Vue 自定义组件等资产。用户提到 CloudCC、cloudcc-cli、cc 命令、对象/字段/触发器/定时器/自定义组..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "androidxhm",
+      "userId": "s17abdkesg6n2g72mjjr3rqt9s83h9yy",
+      "displayName": "androidxhm",
+      "image": "https://avatars.githubusercontent.com/u/3445930?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 540,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774323736401,
+      "changelog": "- 新增“工作目录”说明，明确在 openclaw 环境下需在 agent workspace 创建 code 文件夹，并在其中使用 cc create project 创建模版项目。\n- 其余配置和用法保持不变。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5ebc9a1c6bb40aa33e6f4a7783e4c86df8232db48643d63e8dd0c98149d1d99c"
+}

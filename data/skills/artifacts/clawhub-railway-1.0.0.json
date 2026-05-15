@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/railway@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.railway",
+  "skill": {
+    "id": 54035,
+    "skillKey": "clawhub-railway",
+    "name": "Railway"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "railway",
+    "url": "https://clawhub.ai/skills/railway",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/railway-e34d1c9011e06204.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Railway deployment platform — projects, services, deployments, variables. App hosting CLI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiwithabidi",
+      "userId": "publishers:aiwithabidi",
+      "displayName": "aiwithabidi",
+      "image": "https://avatars.githubusercontent.com/u/208891229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 484,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772772768627,
+      "changelog": "Initial release of the Railway deployment platform skill.\n\n- Provides CLI for managing Railway projects, services, deployments, and environment variables.\n- Requires only Python 3.10+ with no external dependencies.\n- Uses an API token via the RAILWAY_API_TOKEN environment variable.\n- Includes quick start commands and full usage documentation.\n- Part of the AgxntSix Skill Suite for OpenClaw agents.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0d812c7b81ccb94ad31558bcfe77e0f4781f2ae846a01eaedc94cabaa25608e6"
+}

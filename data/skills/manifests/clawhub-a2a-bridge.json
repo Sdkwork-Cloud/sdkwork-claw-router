@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20001,
+  "uuid": "skill-clawhub-a2a-bridge",
+  "skillKey": "clawhub-a2a-bridge",
+  "name": "A2A Bridge",
+  "summary": "Bridge between Google A2A protocol and OADP agent networks. Translate agent cards to OADP signals, discover A2A agents from OADP hubs, register your A2A agen...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a2a_bridge",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FLY",
+      "features": [
+        "Bridge between Google A2A protocol and OADP agent networks",
+        "Translate agent cards to OADP signals, discover A2A agents from OADP hubs, register your A2A ag."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/a2a-bridge@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258594521?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "a2a-bridge",
+      "url": "https://clawhub.ai/skills/a2a-bridge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a2a-bridge",
+    "url": "https://clawhub.ai/skills/a2a-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a2a-bridge-01c5450f4150b11d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/a2a-bridge@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-a2a-bridge-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9a5f0dd4dc5543eeddedc5a943b7836d2c703dbfe7d6fd94a9dc5ee3f15d1504",
+      "artifactSizeBytes": 2147
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T17:43:37.521Z"
+}

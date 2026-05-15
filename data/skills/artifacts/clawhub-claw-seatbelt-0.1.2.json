@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-seatbelt@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_seatbelt",
+  "skill": {
+    "id": 19874,
+    "skillKey": "clawhub-claw-seatbelt",
+    "name": "Claw Seatbelt"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-seatbelt",
+    "url": "https://clawhub.ai/skills/claw-seatbelt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-seatbelt-64cafc0d617f66ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides a 10-second automatic rollback and restart of OpenClaw Gateway if configuration changes cause it to fail, activating only during backup scripts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "segasonicye",
+      "userId": "s175jtg2zkeptqay59pjcsfe4s84da0z",
+      "displayName": "segasonicye",
+      "image": "https://avatars.githubusercontent.com/u/17370567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 585,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1771642425946,
+      "changelog": "Initial release of the configuration safety belt",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:973e010053c439069ce507d7997f0718098d14c920ff00bfdc329b6cf07c82f5"
+}

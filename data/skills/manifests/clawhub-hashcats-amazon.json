@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27101,
+  "uuid": "skill-clawhub-hashcats-amazon",
+  "skillKey": "clawhub-hashcats-amazon",
+  "name": "HashCats Amazon Intelligence",
+  "summary": "x402 pay-per-call API for Amazon product search, filtering, ranking, detailed extraction, and one-shot \"best products\" recommendations. No API keys required...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hashcats_amazon",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HashCatter",
+      "features": [
+        "x402 pay-per-call API for Amazon product search, filtering, ranking, detailed extraction, and o.",
+        "No API keys required..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hashcats-amazon@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274150681?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hashcats-amazon",
+      "url": "https://clawhub.ai/skills/hashcats-amazon"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hashcats-amazon",
+    "url": "https://clawhub.ai/skills/hashcats-amazon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hashcats-amazon-54197be863a6aefe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hashcats-amazon@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hashcats-amazon-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e17394737d654f92f502f04f231b3eef7bd51be802eb89dec9c379156ee475c9",
+      "artifactSizeBytes": 2468
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T21:01:02.014Z"
+}

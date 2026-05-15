@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/simple-file-tree@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.simple_file_tree",
+  "skill": {
+    "id": 27413,
+    "skillKey": "clawhub-simple-file-tree",
+    "name": "Simple File Tree"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "simple-file-tree",
+    "url": "https://clawhub.ai/skills/simple-file-tree",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/simple-file-tree-fefee7777473f37c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Show the directory tree structure of a folder. Displays files and subdirectories in a visual tree format. Use when the user wants to see what files are in a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jinwangmok",
+      "userId": "s1724v3p011w6ed31wyzjmnvbd83pd0b",
+      "displayName": "목진왕",
+      "image": "https://avatars.githubusercontent.com/u/80076897?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 249,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774707859517,
+      "changelog": "- Initial release of file-tree skill.\n- Displays a directory's file and subdirectory structure in a visual, indented tree format.\n- Uses Bash tools: find, sort, and sed.\n- Simple command interface with customizable directory path and maximum depth.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:daa860c9558fc41fde5518ac5f5346679d61d1b64e074fc27b88bbcd15c77c69"
+}

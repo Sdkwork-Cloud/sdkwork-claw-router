@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34064,
+  "uuid": "skill-clawhub-jpeng-api-tester",
+  "skillKey": "clawhub-jpeng-api-tester",
+  "name": "API Tester",
+  "summary": "API testing and monitoring skill. Test REST and GraphQL APIs, validate responses, and monitor uptime.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jpeng_api_tester",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jpengcheng523-netizen",
+      "features": [
+        "API testing and monitoring skill",
+        "Test REST and GraphQL APIs, validate responses, and monitor uptime."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jpeng-api-tester@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226868999?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jpeng-api-tester",
+      "url": "https://clawhub.ai/skills/jpeng-api-tester"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jpeng-api-tester",
+    "url": "https://clawhub.ai/skills/jpeng-api-tester",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jpeng-api-tester-2d6d4bb3c04ce775.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jpeng-api-tester@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jpeng-api-tester-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8276926e5daeef889b4366932c1f66de78ee31aada7cfe1c786b645f78dca282",
+      "artifactSizeBytes": 2180
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T13:32:32.007Z"
+}

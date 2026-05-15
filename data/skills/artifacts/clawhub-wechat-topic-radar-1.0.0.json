@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-topic-radar@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_topic_radar",
+  "skill": {
+    "id": 73531,
+    "skillKey": "clawhub-wechat-topic-radar",
+    "name": "公众号爆款选题雷达"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-topic-radar",
+    "url": "https://clawhub.ai/skills/wechat-topic-radar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-topic-radar-5bbd805b7ad67dbd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "聚合多平台热点，智能评估选题潜力，提供爆款切入角度、竞品分析及差异化内容方案，助力公众号内容创作。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sxzxlj",
+      "userId": "s1782aw5nf0jz8xaycka75mcp583tjxk",
+      "displayName": "sxzxlj",
+      "image": "https://avatars.githubusercontent.com/u/49936671?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774799813804,
+      "changelog": "- 首个版本发布，提供微信公众号爆款选题智能分析工具\n- 支持20+主流平台热点采集与集成（如知乎、微博、小红书、B站等）\n- 基于多维度热度算法评估选题价值，智能识别高潜力选题\n- 提供切入角度、标题优化、结构规划等智能建议\n- 实现竞品分析与差异化策略推荐\n- 生成包含可视化图表和关键词云的交互式HTML/JSON报告\n- 提供命令行工具及Python API，便于多场景使用",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:24de3b45085753767f30efaac6406d9b57f767ce348e9ff8b1767a60adcce609"
+}

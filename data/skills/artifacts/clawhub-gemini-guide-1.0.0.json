@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gemini-guide@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gemini_guide",
+  "skill": {
+    "id": 59295,
+    "skillKey": "clawhub-gemini-guide",
+    "name": "Gemini Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gemini-guide",
+    "url": "https://clawhub.ai/skills/gemini-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gemini-guide-1297ffe78d87d75a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Google Gemini API 开发助手，精通 Gemini Pro/Flash、多模态、函数调用、上下文缓存"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangifonly",
+      "userId": "publishers:zhangifonly",
+      "displayName": "zhangifonly",
+      "image": "https://avatars.githubusercontent.com/u/121886591?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774194522475,
+      "changelog": "Gemini Guide 1.0.0 – 首发版\n\n- 提供 Google Gemini API 接入与开发完整中文指南。\n- 详细介绍 Gemini Pro/Flash、多模态、函数调用、上下文缓存等核心特性及用法。\n- 涵盖主要模型对比、SDK 快速上手、多模态代码样例与价格对比。\n- 总结与 OpenAI/Claude API 的差异与最佳实践建议。\n- 适合 AI 应用开发者快速了解和上手 Gemini API。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e0db183e998e01f3a5ef2944877fb50c7a33d67ae5990f51728c09839eb79de0"
+}

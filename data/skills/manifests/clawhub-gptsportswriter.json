@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39377,
+  "uuid": "skill-clawhub-gptsportswriter",
+  "skillKey": "clawhub-gptsportswriter",
+  "name": "GPTSportswriter",
+  "summary": "Generate sports betting research reports using live odds, matchup context, and public/news sources. Supports premium mode with API-backed odds/news and free...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gptsportswriter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "normandmickey",
+      "features": [
+        "Generate sports betting research reports using live odds, matchup context, and public/news sour.",
+        "Supports premium mode with API-backed odds/news and free..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gptsportswriter@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2455566?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gptsportswriter",
+      "url": "https://clawhub.ai/skills/gptsportswriter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gptsportswriter",
+    "url": "https://clawhub.ai/skills/gptsportswriter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gptsportswriter-08891dac79b37a34.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gptsportswriter@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gptsportswriter-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:18e693d3101dc9226cb2ed4dc14b793acd2a2ef74003e7e476c27e572eabf5ff",
+      "artifactSizeBytes": 2150
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T10:53:31.115Z"
+}

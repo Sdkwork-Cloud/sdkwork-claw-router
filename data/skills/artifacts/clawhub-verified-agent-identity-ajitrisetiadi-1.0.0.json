@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/verified-agent-identity-ajitrisetiadi@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.verified_agent_identity_ajitrisetiadi",
+  "skill": {
+    "id": 49597,
+    "skillKey": "clawhub-verified-agent-identity-ajitrisetiadi",
+    "name": "Verified Agent Identity 2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "verified-agent-identity-ajitrisetiadi",
+    "url": "https://clawhub.ai/skills/verified-agent-identity-ajitrisetiadi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/verified-agent-identity-ajitrisetiadi-64b4dc442e102ab4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Billions/Iden3 authentication and identity management tools for agents. Link, proof, sign, and verify."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ajitrisetiadi",
+      "userId": "s17a3q02h9nw3zd7kvp7hfw89185wbj5",
+      "displayName": "Aji tri setiadi",
+      "image": "https://avatars.githubusercontent.com/u/188070430?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 75,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777618546197,
+      "changelog": "Initial release of agent identity management tools for Billions/Iden3:\n\n- Enables AI agents to create, manage, and link decentralized identities (DIDs) to human owners on the Billions Network.\n- Provides scripts to create new identities, list existing identities, generate and sign authentication challenges, link human owners, and verify signatures.\n- Stores all identity data within `$HOME/.openclaw/billions` for integration with OpenClaw.\n- Enforces strict guardrails: check for existing identity before link/sign operations, stop on script errors, and avoid manual key handling.\n- Offers CLI-based workflows for authentication, proof, and ownership verification.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dded7969e1163275e6cdb0b708f02c5edcd2ea7c937beeddf86dfc343e87bccd"
+}

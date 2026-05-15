@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sage-voice@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sage_voice",
+  "skill": {
+    "id": 51242,
+    "skillKey": "clawhub-sage-voice",
+    "name": "Sage Voice"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sage-voice",
+    "url": "https://clawhub.ai/skills/sage-voice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sage-voice-5452e7f4d2a52946.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A voice-learning writing assistant that helps you communicate in your own style — not generic AI prose. Learns how you write, adapts to your audience, and ge..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "evanl1",
+      "userId": "publishers:evanl1",
+      "displayName": "EvanL1",
+      "image": "https://avatars.githubusercontent.com/u/147605529?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 359,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773120407018,
+      "changelog": "- Initial release of sage-voice: a voice-learning writing assistant that adapts to your unique style, not generic AI writing.\n- Learns your vocabulary, sentence structure, tone, rhetorical patterns, and emotional register from real examples and corrections.\n- Adapts message register to audience context (e.g., supervisors, teammates, cross-department, external partners).\n- Supports multiple writing modes: email drafts, message replies, documents/reports, and team feedback—each structured for your typical approach.\n- Continuously calibrates and improves with every correction, storing updates in your personalized voice profile.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e0cc759fbf0b482256572368cbdb0d917343d5ed623b2a8ec4aef26195f9305d"
+}

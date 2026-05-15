@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/screenshot@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.screenshot",
+  "skill": {
+    "id": 8402,
+    "skillKey": "clawhub-screenshot",
+    "name": "Screenshot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "screenshot",
+    "url": "https://clawhub.ai/skills/screenshot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/screenshot-4441146b0fe1d5c6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Capture, inspect, and compare screenshots of screens, windows, regions, web pages, simulators, and CI runs with the right tool, wait strategy, viewport, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 14324,
+      "installsAllTime": 168,
+      "installsCurrent": 158,
+      "stars": 33,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773255336758,
+      "changelog": "Improved screenshot guidance with stronger browser, simulator, CI, and visual-stability rules while keeping the skill compact.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:effe2d55c0df81e65106a8767a218e472780f4a1625abefcfbca91344ae14b0a"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tiktok-content-creation-compliance@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tiktok_content_creation_compliance",
+  "skill": {
+    "id": 32507,
+    "skillKey": "clawhub-tiktok-content-creation-compliance",
+    "name": "TikTok Content Creation Compliance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tiktok-content-creation-compliance",
+    "url": "https://clawhub.ai/skills/tiktok-content-creation-compliance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tiktok-content-creation-compliance-560e6ee718dc5185.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Review TikTok Shop seller and creator promotional content compliance using official TikTok Shop Seller University guidance. Use when an AI agent needs to che..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "langyou",
+      "userId": "s17f85pszfa6x4zdvcmdvtdb7983kv80",
+      "displayName": "LangYou",
+      "image": "https://avatars.githubusercontent.com/u/6414956?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 241,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773983592434,
+      "changelog": "Initial release of TikTok Shop content compliance review skill:\n\n- Enables review and classification of TikTok Shop promotional content for policy compliance.\n- Applies official TikTok Shop Seller University guidance to videos, scripts, captions, images, and promotions.\n- Flags misleading claims, product mismatches, unoriginality, AI disclosure issues, prohibited edits, health or wellness risks, giveaways, gambling, IP risks, and platform-safety concerns.\n- Produces structured verdicts with reasons, policy references, and safer rewrite suggestions.\n- Prioritizes conservative interpretation and directs users to verify unclear or conflicting cases with live policy sources.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:83867f23b49d05d28b999da99de380e4aece2dc75cd7e06bc130e87f9176c07f"
+}

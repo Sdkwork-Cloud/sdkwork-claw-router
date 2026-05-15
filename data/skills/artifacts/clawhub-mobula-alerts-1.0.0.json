@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mobula-alerts@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mobula_alerts",
+  "skill": {
+    "id": 41964,
+    "skillKey": "clawhub-mobula-alerts",
+    "name": "Mobula - Smart Alerts & Monitoring"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mobula-alerts",
+    "url": "https://clawhub.ai/skills/mobula-alerts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mobula-alerts-2bb3930e40e8a729.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "24/7 autonomous monitoring for crypto portfolios, whales, and market conditions. Multi-condition alerts via OpenClaw heartbeat."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flotapponnier",
+      "userId": "s178k3rr25dp1cz7345y9ahpnd83kj2e",
+      "displayName": "Flotapponnier",
+      "image": "https://avatars.githubusercontent.com/u/160007691?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774456567969,
+      "changelog": "Mobula-alerts 1.0.0 introduces a comprehensive autonomous crypto monitoring and alert system:\n\n- 24/7 continuous monitoring for crypto portfolios, whale wallets, and market conditions using the OpenClaw heartbeat system.\n- Multi-condition, customizable alerts sent via Telegram, WhatsApp, or Discord.\n- Provides five core monitoring patterns: Portfolio Guardian, Whale Watching, Token Scout, Smart Price Alerts, and Market Briefs.\n- Designed with security in mind: read-only access, no private keys, open source, VirusTotal verified.\n- Extensive examples and setup instructions for various use cases included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6d97b19cb950aae63cb03170c79fa1ddb44a7df98784fa8c4c1765f892d38eaf"
+}

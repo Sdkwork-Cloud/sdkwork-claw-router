@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22365,
+  "uuid": "skill-clawhub-data-extractor",
+  "skillKey": "clawhub-data-extractor",
+  "name": "Data Extractor",
+  "summary": "Extract structured data from unstructured sources. Parse JSON, CSV, logs, and mixed formats into clean, usable data. Handle malformed data, nested structures...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_extractor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "engsathiago",
+      "features": [
+        "Extract structured data from unstructured sources",
+        "Parse JSON, CSV, logs, and mixed formats into clean, usable data",
+        "Handle malformed data, nested structures..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/data-extractor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40508117?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "data-extractor",
+      "url": "https://clawhub.ai/skills/data-extractor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-extractor",
+    "url": "https://clawhub.ai/skills/data-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-extractor-ebbafb6780b7e1df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/data-extractor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-data-extractor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c98d7ab87117ef4191a264a0505bce7b90af0cda11f9bd906be6386ef7a3d7ad",
+      "artifactSizeBytes": 2056
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T16:26:44.549Z"
+}

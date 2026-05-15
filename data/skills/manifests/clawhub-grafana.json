@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11976,
+  "uuid": "skill-clawhub-grafana",
+  "skillKey": "clawhub-grafana",
+  "name": "Grafana",
+  "summary": "Avoid common Grafana mistakes — query pitfalls, variable templating, alerting traps, and provisioning gotchas.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grafana",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Avoid common Grafana mistakes — query pitfalls, variable templating, alerting traps, and provis."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/grafana@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "grafana",
+      "url": "https://clawhub.ai/skills/grafana"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grafana",
+    "url": "https://clawhub.ai/skills/grafana",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grafana-cace491b69555e8d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/grafana@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-grafana-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ee18c981367e1aa6ac6da6c6910a15e59105d58b9166bc895d342154873c2e8",
+      "artifactSizeBytes": 1788
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T00:33:15.393Z"
+}

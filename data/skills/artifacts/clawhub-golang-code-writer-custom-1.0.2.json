@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/golang-code-writer-custom@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.golang_code_writer_custom",
+  "skill": {
+    "id": 59942,
+    "skillKey": "clawhub-golang-code-writer-custom",
+    "name": "个人SKILL"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "golang-code-writer-custom",
+    "url": "https://clawhub.ai/skills/golang-code-writer-custom",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/golang-code-writer-custom-d8b9ece3a1dc4a22.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Golang 开发 SKILL 集合。包含日志规范（SKILL-logging.md）和项目代码梳理与 API 流程分析（SKILL-flow-analysis.md）。 适用于 zhaocaijianghu-skills 项目中所有 Golang 开发场景，包括 MCP 客户端、后端服务、数据处理等。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "l2yf",
+      "userId": "s171xj3dzfyk3j8fr8vtans29984erjj",
+      "displayName": "L2yf",
+      "image": "https://avatars.githubusercontent.com/u/23046171?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775645115240,
+      "changelog": "- 优化为标准 SKILL 格式，统一 front matter 与结构，提升可读性。\n- 增加快速导航与应用场景说明，便于查找和使用相关 SKILL 文档。\n- 明确列出 Golang 开发的通用原则，要求日志、配置与文档规范。\n- 新增相关资源链接，便于查阅接口定义与配置文件。\n- 规范更新记录，便于后续追踪文档变更。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:47537267e72779730f077ad07e86bba802ecc07cd1f4631a4cb07f6e40bc787f"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48532,
+  "uuid": "skill-clawhub-sam-club",
+  "skillKey": "clawhub-sam-club",
+  "name": "Sam Club",
+  "summary": "Sam's Club is a Walmart-owned membership warehouse club founded in 1983, competing with Costco in the U.S. through membership fees, low margins, and shared s...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sam_club",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Sam's Club is a Walmart-owned membership warehouse club founded in 1983, competing with Costco.",
+        "through membership fees, low margins, and shared s..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sam-club@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sam-club",
+      "url": "https://clawhub.ai/skills/sam-club"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sam-club",
+    "url": "https://clawhub.ai/skills/sam-club",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sam-club-d3f09078410468f3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sam-club@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sam-club-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e2d44e5c70045cb04789da534697ad35d38aad8126def67e87112f85439223f7",
+      "artifactSizeBytes": 2153
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T11:06:26.021Z"
+}

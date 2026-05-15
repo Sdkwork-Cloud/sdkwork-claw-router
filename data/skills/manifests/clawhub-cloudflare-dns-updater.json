@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12222,
+  "uuid": "skill-clawhub-cloudflare-dns-updater",
+  "skillKey": "clawhub-cloudflare-dns-updater",
+  "name": "Cloudflare Dns Updater",
+  "summary": "Creates or updates a proxied Cloudflare DNS A record. Use when you need to programmatically point a subdomain to an IP address. Takes record name, zone name, and IP address as input.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloudflare_dns_updater",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xieyuanqing",
+      "features": [
+        "Creates or updates a proxied Cloudflare DNS A record",
+        "Use when you need to programmatically point a subdomain to an IP address",
+        "Takes record name, zone name, and IP address as input."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cloudflare-dns-updater@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43878017?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cloudflare-dns-updater",
+      "url": "https://clawhub.ai/skills/cloudflare-dns-updater"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloudflare-dns-updater",
+    "url": "https://clawhub.ai/skills/cloudflare-dns-updater",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloudflare-dns-updater-3c9912c09298d5d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cloudflare-dns-updater@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-cloudflare-dns-updater-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0aecb0c4093b3a4a0aca548436dcbd6e747e276334ab936a0b46f41f2838262e",
+      "artifactSizeBytes": 2022
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T09:16:06.099Z"
+}

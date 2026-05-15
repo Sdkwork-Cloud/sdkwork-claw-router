@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/harvard-uni@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.harvard_uni",
+  "skill": {
+    "id": 54067,
+    "skillKey": "clawhub-harvard-uni",
+    "name": "Harvard Uni"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "harvard-uni",
+    "url": "https://clawhub.ai/skills/harvard-uni",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/harvard-uni-bbf2a567c6561a1f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Harvard University, founded in 1636, is the oldest US university with a $53B+ endowment, known for elite admissions, Nobel laureates, and the HBS case method."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 85,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778090866788,
+      "changelog": "- Initial release of the harvard-uni skill.\n- Provides a detailed historical timeline of Harvard University from its founding in 1636 to a 2024 endowment milestone.\n- Includes an overview of Harvard's business model, endowment management, and key financial details.\n- Summarizes Harvard's enduring strengths: global brand, faculty excellence, alumni influence, and innovative teaching methods.\n- Contains essential statistics (enrollment, acceptance rate, faculty, Nobel laureates) and notable facts about Harvard's unique position in higher education and investment.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d0a51e62bf83a6b49e08867596454bc7b5a45427139e904a8afb6567be20254b"
+}

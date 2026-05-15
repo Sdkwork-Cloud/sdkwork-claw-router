@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/unified-memory-v5@5.2.4",
+  "version": "5.2.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unified_memory_v5",
+  "skill": {
+    "id": 38592,
+    "skillKey": "clawhub-unified-memory-v5",
+    "name": "Unified Memory V5"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unified-memory-v5",
+    "url": "https://clawhub.ai/skills/unified-memory-v5",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unified-memory-v5-a1c1719d1918d03f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides a layered memory management system with atomic transactions, smart deduplication, vector search optimization, and lifecycle management for consisten..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mouxangithub",
+      "userId": "s176s21g23d19kn327srqb81m183g3pd",
+      "displayName": "程序员小刘",
+      "image": "https://avatars.githubusercontent.com/u/48978046?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "5.2.4",
+      "createdAt": 1776735533165,
+      "changelog": "Bug fixes and performance improvements for v5.2.4",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:31ae4a40def956e25912a863d072a9f137b1525e63b2a506c6573d7a267de949"
+}

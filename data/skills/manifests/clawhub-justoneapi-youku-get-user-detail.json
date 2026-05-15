@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47208,
+  "uuid": "skill-clawhub-justoneapi-youku-get-user-detail",
+  "skillKey": "clawhub-justoneapi-youku-get-user-detail",
+  "name": "YOUKU User Profile API",
+  "summary": "Call GET /api/youku/get-user-detail/v1 for YOUKU User Profile through JustOneAPI with uid.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_youku_get_user_detail",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Call GET /api/youku/get-user-detail/v1 for YOUKU User Profile through JustOneAPI with uid."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-youku-get-user-detail@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-youku-get-user-detail",
+      "url": "https://clawhub.ai/skills/justoneapi-youku-get-user-detail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-youku-get-user-detail",
+    "url": "https://clawhub.ai/skills/justoneapi-youku-get-user-detail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-youku-get-user-detail-b0b9af94a1b996b1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-youku-get-user-detail@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-youku-get-user-detail-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1bc41aa1bf1fad44bb2758bf00988d6278f4b80c7599c604091574fb9a673c02",
+      "artifactSizeBytes": 1936
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T12:01:30.587Z"
+}

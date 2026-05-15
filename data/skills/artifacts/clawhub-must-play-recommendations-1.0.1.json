@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/must-play-recommendations@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.must_play_recommendations",
+  "skill": {
+    "id": 67095,
+    "skillKey": "clawhub-must-play-recommendations",
+    "name": "must-play-recommendations"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "must-play-recommendations",
+    "url": "https://clawhub.ai/skills/must-play-recommendations",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/must-play-recommendations-95e98887d1bbd4f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "为用户推荐城市的必玩景点。当用户询问某个城市有什么好玩的、景点推荐、必去景点、旅游攻略时触发。核心能力是基于 FlyAI CLI 获取城市的5A级景区和热门好评景点，提供详细推荐信息。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ysxiiun",
+      "userId": "s1754xrwme1hz6308mvbk0fc01840tfw",
+      "displayName": "SeaSon",
+      "image": "https://avatars.githubusercontent.com/u/26041981?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775036370421,
+      "changelog": "- 新增 FlyAI CLI 详细文档链接（flyai-readme.md）作为相关资源。\n- 功能和逻辑未变，仅补充文档说明与资源引用，完善使用指导。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:335ee4d3dc067cdfc6d17a358ec5b59bcd3abf9106033738f17f775cda1bb816"
+}

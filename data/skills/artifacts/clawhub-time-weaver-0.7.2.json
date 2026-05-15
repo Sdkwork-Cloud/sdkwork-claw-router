@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/time-weaver@0.7.2",
+  "version": "0.7.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.time_weaver",
+  "skill": {
+    "id": 69949,
+    "skillKey": "clawhub-time-weaver",
+    "name": "Time Weaver"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "time-weaver",
+    "url": "https://clawhub.ai/skills/time-weaver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/time-weaver-e58616a1406ab93d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "穿越小说探索式写作技能。让作者和主角一起探索未知时空，开放式剧情，选择驱动。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harry720320",
+      "userId": "s179jmvwtqbnssrx3d35h41w6h83xmb3",
+      "displayName": "harry720320",
+      "image": "https://avatars.githubusercontent.com/u/15187103?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 240,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "0.7.2",
+      "createdAt": 1774951204384,
+      "changelog": "精简主技能：删除被子技能覆盖的冗余内容，第4-7步仅保留调用说明，主技能聚焦整体流程",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:287d1496825c7c67beb8a9937cec1f7bea9cf66a747c513464f7e010ef71d1ff"
+}

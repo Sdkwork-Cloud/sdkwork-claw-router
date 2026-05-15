@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62066,
+  "uuid": "skill-clawhub-scenario-first-thinking",
+  "skillKey": "clawhub-scenario-first-thinking",
+  "name": "Scenario First Thinking",
+  "summary": "场景路由 + 8工具直接执行。将 TaskType → 场景 → 工具序列的映射固化到 SKILL.md 内部，无需外链文件即可执行。HEARTBEAT.md 中的路由规则已迁移至此，统一作为技能触发入口。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scenario_first_thinking",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WH laowu",
+      "features": [
+        "场景路由 + 8工具直接执行。将 TaskType → 场景 → 工具序列的映射固化到 SKILL.md 内部，无需外链文件即可执行。HEARTBEAT.md 中的路由规则已迁移至此，统一作."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/scenario-first-thinking@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/247759145?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "scenario-first-thinking",
+      "url": "https://clawhub.ai/skills/scenario-first-thinking"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scenario-first-thinking",
+    "url": "https://clawhub.ai/skills/scenario-first-thinking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scenario-first-thinking-2d184c945b6c9b01.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/scenario-first-thinking@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-scenario-first-thinking-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2f7b4509318e6422f35a724a63849d3b82448dba09dacaaa5de477f532cce3ba",
+      "artifactSizeBytes": 2158
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T04:55:32.570Z"
+}

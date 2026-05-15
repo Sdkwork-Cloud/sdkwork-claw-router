@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nansen-agent-guide@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nansen_agent_guide",
+  "skill": {
+    "id": 55103,
+    "skillKey": "clawhub-nansen-agent-guide",
+    "name": "Nansen Agent Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nansen-agent-guide",
+    "url": "https://clawhub.ai/skills/nansen-agent-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nansen-agent-guide-151d523af81f7e88.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Routing guide -- when to use `nansen agent` (AI research) vs direct CLI data commands. Use when deciding how to answer a user's research question with Nansen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nansen-devops",
+      "userId": "s174hnr0xtfypzan2x804p4me183nkqz",
+      "displayName": "Nansen AI",
+      "image": "https://avatars.githubusercontent.com/u/93130718?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 213,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774620321458,
+      "changelog": "- Increased expert `nansen agent` analysis cost from 600 to 750 credits.\n- Updated example command to reflect new expert analysis credit usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6b1ec7dd3603d9116c8e4a4e42f6383988beb038ecd89e31449f42cc2660edd8"
+}

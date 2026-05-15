@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/green-vault@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.green_vault",
+  "skill": {
+    "id": 59911,
+    "skillKey": "clawhub-green-vault",
+    "name": "Green Vault — AI Agent 安全与绿色运维顾问"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "green-vault",
+    "url": "https://clawhub.ai/skills/green-vault",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/green-vault-86f4e4bb1f7c6886.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI Agent 安全与绿色运维顾问。合并 EcoCompute（GPU 能耗优化）与 OpenClaw/Bagman（安全密钥管理）， 提供 LLM 推理部署的能效分析、密钥安全管理、泄露防护和注入防御一体化方案。 Use when handling GPU energy optimization for LL..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hongping-zh",
+      "userId": "s17fazq80es7pkdpeejesjxxj183ehpy",
+      "displayName": "hongping-zh",
+      "image": "https://avatars.githubusercontent.com/u/133202211?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 205,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774309837043,
+      "changelog": "v1.0.0 Initial Release: Merged EcoCompute (GPU energy efficiency) + OpenClaw/Bagman (secure key management). 5 energy protocols, 4 security core rules, SECURE-DEPLOY fusion protocol, 113+ empirical GPU measurements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0232c45d9241e4c38d40053469f0dc2184c75e360e7cf563bbe317f0f6501278"
+}

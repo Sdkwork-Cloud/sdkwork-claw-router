@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30577,
+  "uuid": "skill-clawhub-elixir-performance-review",
+  "skillKey": "clawhub-elixir-performance-review",
+  "name": "Elixir Performance Review",
+  "summary": "Reviews Elixir code for performance issues including GenServer bottlenecks, memory usage, and concurrency patterns. Use when reviewing high-throughput code o...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.elixir_performance_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kevin Anderson",
+      "features": [
+        "Reviews Elixir code for performance issues including GenServer bottlenecks, memory usage, and c.",
+        "Use when reviewing high-throughput code o..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/elixir-performance-review@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17010022?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "elixir-performance-review",
+      "url": "https://clawhub.ai/skills/elixir-performance-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "elixir-performance-review",
+    "url": "https://clawhub.ai/skills/elixir-performance-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/elixir-performance-review-cb693bbd399070cb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/elixir-performance-review@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-elixir-performance-review-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f66eb0a11374c77aece5700116fb201500765ee58b82348d3a5693b0d5f9b344",
+      "artifactSizeBytes": 2366
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T04:11:29.539Z"
+}

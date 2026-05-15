@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/docstrange@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docstrange",
+  "skill": {
+    "id": 8866,
+    "skillKey": "clawhub-docstrange",
+    "name": "Nanonets OCR"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docstrange",
+    "url": "https://clawhub.ai/skills/docstrange",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docstrange-ead7f975ec6e108b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Document extraction API by Nanonets. Convert PDFs and images to markdown, JSON, or CSV with confidence scoring. Use when you need to OCR documents, extract invoice fields, parse receipts, or convert tables to structured data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shhdwi",
+      "userId": "publishers:shhdwi",
+      "displayName": "shhdwi",
+      "image": "https://avatars.githubusercontent.com/u/72087189?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3934,
+      "installsAllTime": 34,
+      "installsCurrent": 32,
+      "stars": 21,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770803559686,
+      "changelog": "- Added detailed recommendations to use environment variables for API key management, with security precautions for storing keys in configuration files.\n- Introduced a new Security & Privacy section covering data handling, privacy policy review, PII guidance, API key handling, compliance, and operational safeguards.\n- Included best practices for limiting permissions, rotating API keys, and monitoring usage.\n- Documented file size limits and advice on endpoint usage for large documents.\n- Updated and expanded instructions and notes for improved security and operational rigor.\n- No functional changes to the API or code itself; documentation and instructions only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:428ace0041133ff923d4cc3bd5db01eea59c36e90bb7ea295e4a373e4e5e68c3"
+}

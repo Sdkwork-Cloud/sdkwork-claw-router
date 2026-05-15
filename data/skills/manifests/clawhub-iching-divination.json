@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70338,
+  "uuid": "skill-clawhub-iching-divination",
+  "skillKey": "clawhub-iching-divination",
+  "name": "Iching Divination",
+  "summary": "AI占卜大师 - 结合古老易经智慧与现代AI技术的智能占卜工具。当用户问到占卜、易经、算命、卦象、运势、创业决策、感情问题、事业发展等话题时使用。支持六十四卦解读、吉凶判断、决策建议。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iching_divination",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jaxint",
+      "features": [
+        "结合古老易经智慧与现代AI技术的智能占卜工具。当用户问到占卜、易经、算命、卦象、运势、创业决策、感情问题、事业发展等话题时使用。支持六十四卦解读、吉凶判断、决策建议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/iching-divination@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/190134904?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "iching-divination",
+      "url": "https://clawhub.ai/skills/iching-divination"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iching-divination",
+    "url": "https://clawhub.ai/skills/iching-divination",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iching-divination-fb47b87d08bd4d9e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/iching-divination@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-iching-divination-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c751547c96c25da40c6060c1ebb910ec8c3a2a42e05a9dcb9e2c2e9cbdf5dbe6",
+      "artifactSizeBytes": 2175
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T03:47:27.392Z"
+}

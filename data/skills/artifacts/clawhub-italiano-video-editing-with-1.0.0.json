@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/italiano-video-editing-with@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.italiano_video_editing_with",
+  "skill": {
+    "id": 45201,
+    "skillKey": "clawhub-italiano-video-editing-with",
+    "name": "Italiano Video Editing With"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "italiano-video-editing-with",
+    "url": "https://clawhub.ai/skills/italiano-video-editing-with",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/italiano-video-editing-with-280c866b4437fba5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Italian content creators edit raw video footage into edited Italian videos using this skill. Accepts MP4, MOV, AVI, WebM up to 500MB, renders on cloud GPUs a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775871947339,
+      "changelog": "italiano-video-editing-with 1.0.0\n\n- Initial release for AI-powered Italian video editing in the cloud.\n- Supports MP4, MOV, AVI, WebM uploads up to 500MB with 1080p rendering.\n- Handles Italian-language videos; automatic cuts and Italian captions.\n- Fast processing: most jobs complete in 1–2 minutes.\n- Simple start: upload raw video and describe your edit; receive downloadable MP4.\n- Includes session and authentication logic for seamless cloud interaction.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6e1fb3c922d7593cb75487ab78e8c804554a61c125cad6c762b90b3778f985f0"
+}

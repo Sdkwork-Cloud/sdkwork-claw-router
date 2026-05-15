@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/running-r-analysis-in-existing-projects@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.running_r_analysis_in_existing_projects",
+  "skill": {
+    "id": 17978,
+    "skillKey": "clawhub-running-r-analysis-in-existing-projects",
+    "name": "Running R Analysis In Existing Projects"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "running-r-analysis-in-existing-projects",
+    "url": "https://clawhub.ai/skills/running-r-analysis-in-existing-projects",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/running-r-analysis-in-existing-projects-01f011e6ba37f932.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Work inside an existing R project to extend analyses, modify scripts, run statistical models, update visualizations, and regenerate reports."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jackkuo666",
+      "userId": "publishers:jackkuo666",
+      "displayName": "JackKuo666",
+      "image": "https://avatars.githubusercontent.com/u/41313632?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 718,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772100009940,
+      "changelog": "- Initial release of the \"running-r-analysis-in-existing-projects\" skill.\n- Enables work within existing R projects to modify scripts, extend analyses, add models, update visualizations, and regenerate reports.\n- Detects and respects project structure, identifying key folders and files.\n- Supports debugging, including resolving missing packages and common R errors.\n- Focuses on incremental improvements without overwriting working components.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bd088df0c4ba21afdc24409d58a370804187dc4ebf433e55c983f3be30da3feb"
+}

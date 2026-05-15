@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/env-secure-manager@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.env_secure_manager",
+  "skill": {
+    "id": 23294,
+    "skillKey": "clawhub-env-secure-manager",
+    "name": "env-secure-manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "env-secure-manager",
+    "url": "https://clawhub.ai/skills/env-secure-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/env-secure-manager-a0083860de38e156.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Secure environment variable & secret management with AES-256 encryption, auto-redaction, permission control, prevent credential leakage"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ayalili",
+      "userId": "publishers:ayalili",
+      "displayName": "Ayalili",
+      "image": "https://avatars.githubusercontent.com/u/52843161?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 445,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773156469041,
+      "changelog": "- Removed the skill.yaml file.\n- Metadata previously in skill.yaml is now moved into SKILL.md for a simplified file structure.\n- No changes to features or core documentation content.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1a09d58cc9e58e05fa3668ec684aa7a749701b7c333576772a0574b7da026c3d"
+}

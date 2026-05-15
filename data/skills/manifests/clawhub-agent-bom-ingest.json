@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31668,
+  "uuid": "skill-clawhub-agent-bom-ingest",
+  "skillKey": "clawhub-agent-bom-ingest",
+  "name": "agent-bom ingest",
+  "summary": "Validate and ingest operator-pushed agent-bom inventory JSON from AWS, Azure, GCP, Snowflake, CMDB, or endpoint collectors. Use when a user has canonical inv...",
+  "version": "0.86.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_bom_ingest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Agent Bom",
+      "features": [
+        "Validate and ingest operator-pushed agent-bom inventory JSON from AWS, Azure, GCP, Snowflake, C.",
+        "Use when a user has canonical inv..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-bom-ingest@0.86.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34316639?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-bom-ingest",
+      "url": "https://clawhub.ai/skills/agent-bom-ingest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-bom-ingest",
+    "url": "https://clawhub.ai/skills/agent-bom-ingest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-bom-ingest-a5cd2c460c6db8ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-bom-ingest@0.86.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-bom-ingest-0.86.2.json",
+      "version": "0.86.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f210d0366f56ce4330782fc70b14becafc86993a2c15b24f7e752f2a449a25f4",
+      "artifactSizeBytes": 1902
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T15:45:36.085Z"
+}

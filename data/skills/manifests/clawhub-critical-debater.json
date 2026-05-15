@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28753,
+  "uuid": "skill-clawhub-critical-debater",
+  "skillKey": "clawhub-critical-debater",
+  "name": "Critical Debater Suite",
+  "summary": "Multi-agent adversarial debate system with 4 roles (Pro, Con, Judge, Orchestrator), per-round evidence refresh, 5-element reasoning chains, and structured bi...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.critical_debater",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xwxga",
+      "features": [
+        "Multi-agent adversarial debate system with 4 roles (Pro, Con, Judge, Orchestrator), per-round e."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/critical-debater@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17403035?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "critical-debater",
+      "url": "https://clawhub.ai/skills/critical-debater"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "critical-debater",
+    "url": "https://clawhub.ai/skills/critical-debater",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/critical-debater-53fe7a23851e46c5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/critical-debater@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-critical-debater-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2722b4863528e3c92c520f6c7e5e519d71ae2b51e896a2e6a36555dfb7b99cc4",
+      "artifactSizeBytes": 1962
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T02:13:43.488Z"
+}

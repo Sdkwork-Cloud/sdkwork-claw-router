@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54581,
+  "uuid": "skill-clawhub-ticktick-linux",
+  "skillKey": "clawhub-ticktick-linux",
+  "name": "Ticktick Linux",
+  "summary": "Manage TickTick tasks (add, list, complete) via the local `tickrs` CLI.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ticktick_linux",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "davidsmorais",
+      "features": [
+        "Manage TickTick tasks (add, list, complete) via the local `tickrs` CLI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ticktick-linux@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22729436?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ticktick-linux",
+      "url": "https://clawhub.ai/skills/ticktick-linux"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ticktick-linux",
+    "url": "https://clawhub.ai/skills/ticktick-linux",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ticktick-linux-3a81edb5c50e24e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ticktick-linux@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ticktick-linux-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:505d3ea933e680f73df91de2ea6fd42ded83f425148985952cfe7f8491151940",
+      "artifactSizeBytes": 2031
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T20:08:10.093Z"
+}

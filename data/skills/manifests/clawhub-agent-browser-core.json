@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8483,
+  "uuid": "skill-clawhub-agent-browser-core",
+  "skillKey": "clawhub-agent-browser-core",
+  "name": "Agent Browser Core",
+  "summary": "OpenClaw skill for the agent-browser CLI (Rust-based with Node.js fallback) enabling AI-friendly web automation with snapshots, refs, and structured commands.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_browser_core",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codedao12",
+      "features": [
+        "OpenClaw skill for the agent-browser CLI (Rust-based with Node.js fallback) enabling AI-friendl."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-browser-core@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/249323427?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-browser-core",
+      "url": "https://clawhub.ai/skills/agent-browser-core"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-browser-core",
+    "url": "https://clawhub.ai/skills/agent-browser-core",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-browser-core-695bde8d4b084247.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-browser-core@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-browser-core-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5aa90ce5e99704b33d5edd623779bd3497f90b3cf797a94eeafd0fc3956e0ac5",
+      "artifactSizeBytes": 2285
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T09:19:13.491Z"
+}

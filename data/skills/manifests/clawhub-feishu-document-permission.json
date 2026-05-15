@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67271,
+  "uuid": "skill-clawhub-feishu-document-permission",
+  "skillKey": "clawhub-feishu-document-permission",
+  "name": "Feishu Document Permission",
+  "summary": "设置飞书云文档为'获得链接的任何人可查看'，解决外部用户无法访问飞书文档的问题。适用于需要将飞书文档分享给组织外人员的场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_document_permission",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "harrot90-code",
+      "features": [
+        "设置飞书云文档为'获得链接的任何人可查看'，解决外部用户无法访问飞书文档的问题。适用于需要将飞书文档分享给组织外人员的场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-document-permission@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266251749?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-document-permission",
+      "url": "https://clawhub.ai/skills/feishu-document-permission"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-document-permission",
+    "url": "https://clawhub.ai/skills/feishu-document-permission",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-document-permission-421689f60bffd674.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-document-permission@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-document-permission-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:07b56be68892ff6c3a305193b10e106dcb96b35ca81e73e48d389d5dd743b1cd",
+      "artifactSizeBytes": 2516
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T09:35:25.919Z"
+}

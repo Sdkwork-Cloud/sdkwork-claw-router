@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64229,
+  "uuid": "skill-clawhub-footyclaw",
+  "skillKey": "clawhub-footyclaw",
+  "name": "FootyClaw: AI Quant Betting Agent",
+  "summary": "FootyClaw — 足球投注全流程助手。覆盖赛事信息抓取、足彩玩法规则、赔率获取（需用户提供 The Odds API Key）、基本面分析、EV期望值计算、Kelly公式仓位管理、最终下注方案推荐、 账本记账与资金曲线生成。 触发词：分析今晚比赛、查赔率、找投注机会、今天有什么场、EV分析、Kelly仓位、...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.footyclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "botaocai",
+      "features": [
+        "FootyClaw — 足球投注全流程助手。覆盖赛事信息抓取、足彩玩法规则、赔率获取（需用户提供 The Odds API Key）、基本面分析、EV期望值计算、Kelly公式仓位管理、最终."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/footyclaw@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/165651611?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "footyclaw",
+      "url": "https://clawhub.ai/skills/footyclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "footyclaw",
+    "url": "https://clawhub.ai/skills/footyclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/footyclaw-345196a65c3be0c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/footyclaw@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-footyclaw-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:030001599a02953e391197edeeab1d114d0c17248069ee4d54be5485a509eafd",
+      "artifactSizeBytes": 2500
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T07:26:49.230Z"
+}

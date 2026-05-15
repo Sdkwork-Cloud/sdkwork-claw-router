@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ragflow-skill-python0418@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ragflow_skill_python0418",
+  "skill": {
+    "id": 44298,
+    "skillKey": "clawhub-ragflow-skill-python0418",
+    "name": "ragflow-skill-python0418"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ragflow-skill-python0418",
+    "url": "https://clawhub.ai/skills/ragflow-skill-python0418",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ragflow-skill-python0418-148ef49b6d4eb4c7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use for RAGFlow dataset tasks: create, list, inspect, update, or delete datasets; upload, list, update, or delete documents; start or stop parsing; check par..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liberalchang",
+      "userId": "s1711a251cb269zj1bjvwcffxh83kcjh",
+      "displayName": "chang",
+      "image": "https://avatars.githubusercontent.com/u/79965108?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776511038893,
+      "changelog": "Initial release of ragflow-dataset-ingest skill:\n\n- Enables creation, listing, inspection, updating, and deletion of RAGFlow datasets.\n- Supports uploading, listing, updating, and deleting documents within datasets.\n- Provides commands for parsing management: start, stop, and check parse progress or status.\n- Allows chunk retrieval from datasets and listing of configured RAGFlow models.\n- Includes guardrails for safe deletion and parsing operations, with strict adherence to IDs and output fields.\n- Enforces output formatting and error handling as per reference guidelines.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ae8da7f6863573811b974a3b87867c6ead3dcb85a3f009e65a41dff0f7530405"
+}

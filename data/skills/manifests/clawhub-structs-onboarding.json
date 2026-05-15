@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19968,
+  "uuid": "skill-clawhub-structs-onboarding",
+  "skillKey": "clawhub-structs-onboarding",
+  "name": "Structs Onboarding",
+  "summary": "Onboards a new player into Structs. Handles key creation/recovery, player creation (via reactor-infuse or guild signup), planet exploration, and initial infr...",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.structs_onboarding",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Josh McDougall",
+      "features": [
+        "Onboards a new player into Structs",
+        "Handles key creation/recovery, player creation (via reactor-infuse or guild signup), planet exp."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/structs-onboarding@1.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/196776?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "structs-onboarding",
+      "url": "https://clawhub.ai/skills/structs-onboarding"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "structs-onboarding",
+    "url": "https://clawhub.ai/skills/structs-onboarding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/structs-onboarding-f40b511f616cf520.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/structs-onboarding@1.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-structs-onboarding-1.2.2.json",
+      "version": "1.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:014694e479f113c6076f2d3caad905659b6f3798a44e98c0e6235c80a8a9c303",
+      "artifactSizeBytes": 1955
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T03:13:08.595Z"
+}

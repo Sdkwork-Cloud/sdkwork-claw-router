@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/health-coach@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.health_coach",
+  "skill": {
+    "id": 51562,
+    "skillKey": "clawhub-health-coach",
+    "name": "Health Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "health-coach",
+    "url": "https://clawhub.ai/skills/health-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/health-coach-7407b0cb4176decf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "🌟 Your personal Garmin & AI health coach. Analyze sleep and biometric data daily for actionable functional medicine insights."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daasai",
+      "userId": "s17d56ybekmf1kevadsvk1txbx83v4bt",
+      "displayName": "daas.ai",
+      "image": "https://avatars.githubusercontent.com/u/48641543?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 401,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773365333818,
+      "changelog": "- Clarified and improved English descriptions and prompts throughout the skill.\n- Updated README and SKILL.md to provide a more concise, internationally oriented overview.\n- Added tags and improved intent names for better discoverability.\n- Enhanced dependency descriptions and setup instructions.\n- Refined health data focus (steps, sleep, HRV, body battery) and actionability in reports.\n- Improved security and compatibility notes for dependencies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ebe817337b2c5b27dd7e9a1a74d7968861828b717e4f2e85a397776b35e53ef2"
+}

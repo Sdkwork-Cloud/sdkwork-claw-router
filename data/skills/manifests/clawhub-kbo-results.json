@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46843,
+  "uuid": "skill-clawhub-kbo-results",
+  "skillKey": "clawhub-kbo-results",
+  "name": "kbo-results",
+  "summary": "Fetch KBO game schedules and results for a specific date with the kbo-game npm package. Use when the user asks for today's KBO games, yesterday's scores, or...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kbo_results",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "5eun",
+      "features": [
+        "Fetch KBO game schedules and results for a specific date with the kbo-game npm package",
+        "Use when the user asks for today's KBO games, yesterday's scores, or..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kbo-results@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/169572743?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kbo-results",
+      "url": "https://clawhub.ai/skills/kbo-results"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kbo-results",
+    "url": "https://clawhub.ai/skills/kbo-results",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kbo-results-a4c2a7f4329cc170.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kbo-results@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kbo-results-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a8830ecb8be7107f3f485940513eb7ddc677975744461bde82c8da77602989be",
+      "artifactSizeBytes": 2308
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T06:57:09.931Z"
+}

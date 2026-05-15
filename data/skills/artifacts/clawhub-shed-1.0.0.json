@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shed@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shed",
+  "skill": {
+    "id": 33657,
+    "skillKey": "clawhub-shed",
+    "name": "Shed"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shed",
+    "url": "https://clawhub.ai/skills/shed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shed-2f3c3e5cf3c63b64.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Context window hygiene for long-running LLM agents. Decision rules for when and how to compress, mask, switch, or delegate context — backed by research (JetB..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "compass-soul",
+      "userId": "publishers:compass-soul",
+      "displayName": "compass-soul",
+      "image": "https://avatars.githubusercontent.com/u/260311058?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 840,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771218304204,
+      "changelog": "Initial release — context hygiene rules for long-running LLM agents, backed by JetBrains/NeurIPS 2025, OpenHands, Letta/MemGPT research",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9c2c9fa52297005cea283dacece7ff8a68ea3e809c90a1c1b09e223cdfde46a2"
+}

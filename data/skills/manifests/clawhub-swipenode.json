@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50387,
+  "uuid": "skill-clawhub-swipenode",
+  "skillKey": "clawhub-swipenode",
+  "name": "SwipeNode Web Extractor",
+  "summary": "Give your agent the superpower to read the modern web without getting blocked by Cloudflare. Extracts clean JSON, saves 98% of LLM tokens, and executes zero...",
+  "version": "1.6.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swipenode",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sirToby",
+      "features": [
+        "Give your agent the superpower to read the modern web without getting blocked by Cloudflare",
+        "Extracts clean JSON, saves 98% of LLM tokens, and executes zero..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/swipenode@1.6.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/252211629?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "swipenode",
+      "url": "https://clawhub.ai/skills/swipenode"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swipenode",
+    "url": "https://clawhub.ai/skills/swipenode",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swipenode-73f909944a488ab7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/swipenode@1.6.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-swipenode-1.6.4.json",
+      "version": "1.6.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b5d476dc540f5faefeafc42ced7070eae428ae9e162e864803ac9ef50489126",
+      "artifactSizeBytes": 2075
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T19:35:36.642Z"
+}

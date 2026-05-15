@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50837,
+  "uuid": "skill-clawhub-gws-workspace",
+  "skillKey": "clawhub-gws-workspace",
+  "name": "Google Workspace (gws CLI)",
+  "summary": "Manage Google Workspace via the `gws` CLI — Drive, Gmail, Calendar, Sheets, Docs, Chat, Admin, Tasks, Meet, Slides, Forms, Contacts, and every other Workspac...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gws_workspace",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sway Liu",
+      "features": [
+        "Manage Google Workspace via the `gws` CLI — Drive, Gmail, Calendar, Sheets, Docs, Chat, Admin,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gws-workspace@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5630262?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gws-workspace",
+      "url": "https://clawhub.ai/skills/gws-workspace"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gws-workspace",
+    "url": "https://clawhub.ai/skills/gws-workspace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gws-workspace-f2079a450203a374.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gws-workspace@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gws-workspace-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5623d0a2db40c07cfe90575b1a89a7a73b50792be67bde2cb0b0f3ab2e871114",
+      "artifactSizeBytes": 1948
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T13:03:05.391Z"
+}

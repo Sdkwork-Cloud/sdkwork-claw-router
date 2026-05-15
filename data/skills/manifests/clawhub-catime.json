@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14561,
+  "uuid": "skill-clawhub-catime",
+  "skillKey": "clawhub-catime",
+  "name": "catime",
+  "summary": "Fetch and send AI-generated hourly cat images. Every hour a unique cat artwork is born via Google Gemini. Use when user asks for a cat picture, wants to browse the cat gallery, or requests the latest AI-generated cat image to be sent to th.",
+  "version": "0.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.catime",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yazelin",
+      "features": [
+        "Fetch and send AI-generated hourly cat images",
+        "Every hour a unique cat artwork is born via Google Gemini",
+        "Use when user asks for a cat picture, wants to browse the cat gallery, or requests the latest A."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/catime@0.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6235553?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "catime",
+      "url": "https://clawhub.ai/skills/catime"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "catime",
+    "url": "https://clawhub.ai/skills/catime",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/catime-244a034cab8ef213.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/catime@0.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-catime-0.5.0.json",
+      "version": "0.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a55a77bb039f3d85bdcb56d57adbe0679851ed8550b5f2a4290ec223fc40a78b",
+      "artifactSizeBytes": 1989
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T06:01:50.561Z"
+}

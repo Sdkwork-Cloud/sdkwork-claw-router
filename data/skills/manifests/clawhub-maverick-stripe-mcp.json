@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44777,
+  "uuid": "skill-clawhub-maverick-stripe-mcp",
+  "skillKey": "clawhub-maverick-stripe-mcp",
+  "name": "Stripe mcp",
+  "summary": "Search, read, and manage Stripe account data through Stripe's hosted MCP server. Thin pass-through to Stripe's official MCP; the live tool catalog is whateve...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maverick_stripe_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Maverick",
+      "features": [
+        "Search, read, and manage Stripe account data through Stripe's hosted MCP server",
+        "Thin pass-through to Stripe's official MCP",
+        "the live tool catalog is whateve..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/maverick-stripe-mcp@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261420589"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "maverick-stripe-mcp",
+      "url": "https://clawhub.ai/skills/maverick-stripe-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maverick-stripe-mcp",
+    "url": "https://clawhub.ai/skills/maverick-stripe-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maverick-stripe-mcp-a096c98110acc71a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/maverick-stripe-mcp@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-maverick-stripe-mcp-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0881524a5ff4e54bd0c2e8c4354414b7612c00245d3ec2659885157622e69481",
+      "artifactSizeBytes": 2399
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T09:32:53.901Z"
+}

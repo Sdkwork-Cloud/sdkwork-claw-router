@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10074,
+  "uuid": "skill-clawhub-miniflux-news",
+  "skillKey": "clawhub-miniflux-news",
+  "name": "Miniflux News",
+  "summary": "Fetch and triage the latest unread RSS/news entries from a Miniflux instance via its REST API using an API token. Use when the user asks to get the latest Miniflux unread items, list recent entries with titles/links, or generate short summ.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.miniflux_news",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hartlco",
+      "features": [
+        "Fetch and triage the latest unread RSS/news entries from a Miniflux instance via its REST API u.",
+        "Use when the user asks to get the latest Miniflux unread items, list recent entries with titles.",
+        "Includes a bundled script to query Miniflux (/v1/entries and /v1/entries/{id}) using credential."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/miniflux-news@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1497750?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "miniflux-news",
+      "url": "https://clawhub.ai/skills/miniflux-news"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "miniflux-news",
+    "url": "https://clawhub.ai/skills/miniflux-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/miniflux-news-b00b8b10f2b3afb0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/miniflux-news@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-miniflux-news-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:19abe6662d003e9ba0a97c690989f0713cc507515f95a61cce6f713db2c8eac9",
+      "artifactSizeBytes": 2023
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-23T09:01:26.872Z"
+}

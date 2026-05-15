@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71375,
+  "uuid": "skill-clawhub-mov-toa",
+  "skillKey": "clawhub-mov-toa",
+  "name": "mov-toa",
+  "summary": "加密货币毫秒级新闻源，获取全球最新市场异动、宏观经济新闻和项目突发公告。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mov_toa",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Skybound",
+      "features": [
+        "加密货币毫秒级新闻源，获取全球最新市场异动、宏观经济新闻和项目突发公告。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mov-toa@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109055875?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mov-toa",
+      "url": "https://clawhub.ai/skills/mov-toa"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mov-toa",
+    "url": "https://clawhub.ai/skills/mov-toa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mov-toa-ba227e5e709409a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mov-toa@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mov-toa-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:58b4e1b155259f36222f711fefc25f48fd020606bc2b4af641d229a819729dd4",
+      "artifactSizeBytes": 2273
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T13:39:33.674Z"
+}

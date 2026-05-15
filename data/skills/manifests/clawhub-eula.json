@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52418,
+  "uuid": "skill-clawhub-eula",
+  "skillKey": "clawhub-eula",
+  "name": "Eula",
+  "summary": "EULA drafting reference — license grant, restrictions, termination, IP ownership, and enforceability. Use when drafting or reviewing End User License Agreeme...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eula",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "EULA drafting reference — license grant, restrictions, termination, IP ownership, and enforceab.",
+        "Use when drafting or reviewing End User License Agreeme..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eula@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eula",
+      "url": "https://clawhub.ai/skills/eula"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eula",
+    "url": "https://clawhub.ai/skills/eula",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eula-62ea73129aaa9956.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eula@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-eula-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5feb522e55bc9fe97ef471978283380f0f911c090e6e0463c61c16ac2af97c1b",
+      "artifactSizeBytes": 1823
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T13:18:45.292Z"
+}

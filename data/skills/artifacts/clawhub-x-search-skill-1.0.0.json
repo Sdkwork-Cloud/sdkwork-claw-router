@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x-search-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_search_skill",
+  "skill": {
+    "id": 41865,
+    "skillKey": "clawhub-x-search-skill",
+    "name": "X-search-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-search-skill",
+    "url": "https://clawhub.ai/skills/x-search-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-search-skill-4a64aa70dc65b581.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search X (Twitter) posts using the xAI API. Use when the user wants to find tweets, search X/Twitter, look up what people are saying on X, or find social med..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pratikbhosale7",
+      "userId": "s17dz1pfsatf5gesb1y811j6sx849ny8",
+      "displayName": "Pratikbhosale7",
+      "image": "https://avatars.githubusercontent.com/u/77861600?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775417452315,
+      "changelog": "Initial release of x-search.\n\n- Search X (Twitter) posts using the xAI Grok API with real-time access.\n- Supports filtering and excluding specific handles, date range, and image/video understanding.\n- Results include readable summaries with post content, author info, and citations.\n- Requires an xAI API key and Python 3 for setup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b4b3f924e3d0ffe78bdd24bf41a25f457ecd72e890311a72264562636e297853"
+}

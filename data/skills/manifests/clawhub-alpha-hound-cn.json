@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64763,
+  "uuid": "skill-clawhub-alpha-hound-cn",
+  "skillKey": "clawhub-alpha-hound-cn",
+  "name": "Alpha Hound",
+  "summary": "基于复杂条件筛选股票并输出候选列表。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alpha_hound_cn",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhengxinjipai",
+      "features": [
+        "基于复杂条件筛选股票并输出候选列表。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alpha-hound-cn@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130424576?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alpha-hound-cn",
+      "url": "https://clawhub.ai/skills/alpha-hound-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alpha-hound-cn",
+    "url": "https://clawhub.ai/skills/alpha-hound-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alpha-hound-cn-6a19d707a481cf31.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alpha-hound-cn@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-alpha-hound-cn-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ec1619ac88f575c7f907cb88532f5c6e709d3c54fd5e1825501fac6281b20b46",
+      "artifactSizeBytes": 2222
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T08:43:00.498Z"
+}

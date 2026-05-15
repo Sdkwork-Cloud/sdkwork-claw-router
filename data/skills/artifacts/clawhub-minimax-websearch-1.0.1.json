@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/minimax-websearch@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_websearch",
+  "skill": {
+    "id": 59305,
+    "skillKey": "clawhub-minimax-websearch",
+    "name": "minimax-websearch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-websearch",
+    "url": "https://clawhub.ai/skills/minimax-websearch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-websearch-db56da555a83de35.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供基于 MiniMax Token Plan 的免费网络搜索功能，支持自动切换到 Brave Search 和 Qwen Chat 作为备用方案。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "godiao",
+      "userId": "s170j1q03jvax56yjxmnqzx6ex83hxqn",
+      "displayName": "GoDiao",
+      "image": "https://avatars.githubusercontent.com/u/104132148?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774321453521,
+      "changelog": "Big update with security and usability improvements:\n\n- Credentials moved to environment variables (no hardcoded API keys).\n- Config and instructions clarified for OpenClaw and Python venv on non-system drive.\n- Fixed SSL certificate compatibility for Windows Python venv.\n- Updated fallback chain for failed subscriptions.\n- Expanded documentation and troubleshooting for common Windows issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:14503ed9e9191f26955b890196380d8b8e2eec78b0dc5a1fbe06dc555dbe62ad"
+}

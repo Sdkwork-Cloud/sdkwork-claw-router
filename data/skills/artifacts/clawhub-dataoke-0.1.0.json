@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dataoke@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dataoke",
+  "skill": {
+    "id": 73608,
+    "skillKey": "clawhub-dataoke",
+    "name": "大淘客选品工具"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dataoke",
+    "url": "https://clawhub.ai/skills/dataoke",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dataoke-154a8244b7f8b72f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "大淘客淘宝客选品与数据服务工具，提供高佣商品筛选、实时榜单、选品数据分析，是淘客推广的基础设施级工具。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fangshan101-coder",
+      "userId": "s1782arxyb13jw6g2c7z1z1n4183nyc9",
+      "displayName": "fangshan101-coder",
+      "image": "https://avatars.githubusercontent.com/u/267524233?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774677730849,
+      "changelog": "初始发布",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ad6e538ce857d2ab160a6a746a9d8526d664261cb64e3273bb80858a3bf671aa"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43464,
+  "uuid": "skill-clawhub-action-network-integration",
+  "skillKey": "clawhub-action-network-integration",
+  "name": "Action Network",
+  "summary": "Action Network integration. Manage data, records, and automate workflows. Use when the user wants to interact with Action Network data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.action_network_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Action Network integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Action Network data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/action-network-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "action-network-integration",
+      "url": "https://clawhub.ai/skills/action-network-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "action-network-integration",
+    "url": "https://clawhub.ai/skills/action-network-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/action-network-integration-7eaab8baa6e23159.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/action-network-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-action-network-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5b79104670d2f00a6999c704b1a7e907b4b93fb4b97c535781b0b6607609ca62",
+      "artifactSizeBytes": 1964
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:08:02.658Z"
+}

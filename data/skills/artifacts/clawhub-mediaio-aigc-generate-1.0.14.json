@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mediaio-aigc-generate@1.0.14",
+  "version": "1.0.14",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mediaio_aigc_generate",
+  "skill": {
+    "id": 19992,
+    "skillKey": "clawhub-mediaio-aigc-generate",
+    "name": "Media.io AI Image & Video Generation API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mediaio-aigc-generate",
+    "url": "https://clawhub.ai/skills/mediaio-aigc-generate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mediaio-aigc-generate-9945e0fac4671ecb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate and edit AI images and videos with Media.io OpenAPI. Supports text-to-image, image-to-image, text-to-video, and image-to-video, plus task status and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wondershare-boop",
+      "userId": "s1707d6v06e1pv7bbn814sjdq583gtne",
+      "displayName": "wondershare-boop",
+      "image": "https://avatars.githubusercontent.com/u/208894930?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 480,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "1.0.14",
+      "createdAt": 1773317089266,
+      "changelog": "- Cleaned up the skill metadata by removing the pip install instructions and bins from the requirements.\n- All functionality and user guidance remain unchanged.\n- No code changes; documentation and metadata improvement only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:45e86fad80ab14063b6aa0b320ae38ce643aca969eb642f5bfc4f322f00113d7"
+}

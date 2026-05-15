@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30390,
+  "uuid": "skill-clawhub-kai-youtube",
+  "skillKey": "clawhub-kai-youtube",
+  "name": "Kai YouTube",
+  "summary": "Download and transcribe YouTube videos using yt-dlp and Whisper CLI, saving audio and transcripts for playback and summary from any YouTube URL.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kai_youtube",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Blaze🔥",
+      "features": [
+        "Download and transcribe YouTube videos using yt-dlp and Whisper CLI, saving audio and transcrip."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kai-youtube@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9932412?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kai-youtube",
+      "url": "https://clawhub.ai/skills/kai-youtube"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kai-youtube",
+    "url": "https://clawhub.ai/skills/kai-youtube",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kai-youtube-15a38dce179ec63d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kai-youtube@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kai-youtube-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cd3b6d2bcf90ab394a0b1a7a0c53912ae1a07dd05aa7be0876fee9344d80c210",
+      "artifactSizeBytes": 2123
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T22:11:07.009Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/online-video-editor-youtube@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.online_video_editor_youtube",
+  "skill": {
+    "id": 46858,
+    "skillKey": "clawhub-online-video-editor-youtube",
+    "name": "Online Video Editor Youtube"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "online-video-editor-youtube",
+    "url": "https://clawhub.ai/skills/online-video-editor-youtube",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/online-video-editor-youtube-8ecc879c31bf7314.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 10-minute YouTube vlog recording into 1080p YouTube-ready videos just by typing what you need. Whether it's editing and polishing videos for YouTube u..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777163708953,
+      "changelog": "- Initial release of Online Video Editor for YouTube.\n- Instantly edit and export YouTube-ready videos by describing your desired result; no timeline or export settings required.\n- Automatic token setup and seamless connection to cloud processing API; supports anonymous usage (free credits for 7 days).\n- Fast processing: upload video clips (MP4, MOV, AVI, WebM, etc.), describe edits (e.g., trim, add intro, polish), and download 1080p MP4 in 1-2 minutes.\n- Full support for video, audio, and text overlays via clear prompt recognition.\n- Error handling, session management, and job tracking built-in for a reliable editing experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2303120dafc51bd3f46cb581e78abe61e2d91818c5c67ad72262fa475b626831"
+}

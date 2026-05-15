@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12480,
+  "uuid": "skill-clawhub-arkade-wallet",
+  "skillKey": "clawhub-arkade-wallet",
+  "name": "Bitcoin and Tether on Arkade",
+  "summary": "Send and receive Bitcoin over Arkade (offchain), onchain (via onboard/offboard), and Lightning. Swap USDC/USDT stablecoins.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arkade_wallet",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tiero",
+      "features": [
+        "Send and receive Bitcoin over Arkade (offchain), onchain (via onboard/offboard), and Lightning",
+        "Swap USDC/USDT stablecoins."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/arkade-wallet@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3596602?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "arkade-wallet",
+      "url": "https://clawhub.ai/skills/arkade-wallet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arkade-wallet",
+    "url": "https://clawhub.ai/skills/arkade-wallet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arkade-wallet-1a9d2b9ebf924a5f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/arkade-wallet@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-arkade-wallet-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:07d00021a8504b0a0ff21c57cac0f3913da1a18068a0e3708ca3274eb21893fd",
+      "artifactSizeBytes": 2246
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T00:55:54.771Z"
+}

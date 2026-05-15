@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21162,
+  "uuid": "skill-clawhub-tracker",
+  "skillKey": "clawhub-tracker",
+  "name": "Tracker",
+  "summary": "Design, organize, and improve tracking systems for work, goals, follow-ups, pipelines, projects, habits, issues, and ongoing operations. Use when someone nee...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "depinHQ",
+      "features": [
+        "Design, organize, and improve tracking systems for work, goals, follow-ups, pipelines, projects.",
+        "Use when someone nee..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/216470578?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tracker",
+      "url": "https://clawhub.ai/skills/tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tracker",
+    "url": "https://clawhub.ai/skills/tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tracker-7ae4495c83dd7323.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:28b074937181de121751f015fd7c62fef29f6b06196a70d9d0d914979170c459",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T11:38:37.662Z"
+}

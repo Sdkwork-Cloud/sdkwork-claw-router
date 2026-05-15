@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dotld@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dotld",
+  "skill": {
+    "id": 21145,
+    "skillKey": "clawhub-dotld",
+    "name": "dotld"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dotld",
+    "url": "https://clawhub.ai/skills/dotld",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dotld-7bcad9584795d5f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search domain name availability and registration prices. Use when the user mentions domains, TLDs, domain registration, domain availability, or wants to find..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tedstonne",
+      "userId": "publishers:tedstonne",
+      "displayName": "tedstonne",
+      "image": "https://avatars.githubusercontent.com/u/237130265?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 520,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772236055751,
+      "changelog": "dotld 1.0.1 → 1.0.7\n\n- Added installation instructions for the dotld CLI tool.\n- Updated buy links to include a referral parameter (`&rscreg=github`).\n- No changes to usage, features, or output structure.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f424eb3341e885231598fee1aad9d9a23aac87950d5467101e5496be0ad34267"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61417,
+  "uuid": "skill-clawhub-keplerjai-image-gen",
+  "skillKey": "clawhub-keplerjai-image-gen",
+  "name": "Keplerjai Image Gen",
+  "summary": "通过 ThinkZone AI 生成图片。当用户说「画图」「生图」「生成图片」「AI 绘图」「做一张图」「图生图」等时使用。支持 3 个图片模型（Gemini/MiniMax/Seedream）。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.keplerjai_image_gen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "任佶",
+      "features": [
+        "通过 ThinkZone AI 生成图片。当用户说「画图」「生图」「生成图片」「AI 绘图」「做一张图」「图生图」等时使用。支持 3 个图片模型（Gemini/MiniMax/Seedrea."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/keplerjai-image-gen@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1422543?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "keplerjai-image-gen",
+      "url": "https://clawhub.ai/skills/keplerjai-image-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "keplerjai-image-gen",
+    "url": "https://clawhub.ai/skills/keplerjai-image-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/keplerjai-image-gen-15661a6f48f0941c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/keplerjai-image-gen@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-keplerjai-image-gen-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8555ff42b1d7ef9fff37965fc8bdf0b9b55a6db36d0365bb4b303b8cf7081e51",
+      "artifactSizeBytes": 2439
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T14:31:22.843Z"
+}

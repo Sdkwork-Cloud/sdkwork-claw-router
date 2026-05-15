@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58191,
+  "uuid": "skill-clawhub-chinese-punctuation-sentence-correction",
+  "skillKey": "clawhub-chinese-punctuation-sentence-correction",
+  "name": "chinese-punctuation-correction",
+  "summary": "Use when correcting Chinese ill-formed sentences with punctuation-focused errors (comma,顿号,分号,冒号,问号,叹号,引号,书名号,括号,省略号,破折号), including mixed punctuation-and-gr...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chinese_punctuation_sentence_correction",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "摸模鱼",
+      "features": [
+        "Use when correcting Chinese ill-formed sentences with punctuation-focused errors (comma,顿号,分号,冒."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chinese-punctuation-sentence-correction@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/56257239?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chinese-punctuation-sentence-correction",
+      "url": "https://clawhub.ai/skills/chinese-punctuation-sentence-correction"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chinese-punctuation-sentence-correction",
+    "url": "https://clawhub.ai/skills/chinese-punctuation-sentence-correction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chinese-punctuation-sentence-correction-cf1c53e0eb03c1f9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chinese-punctuation-sentence-correction@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chinese-punctuation-sentence-correction-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f984ee9b84334739e22359f14db7c797b3e150a1c69a0ee5bfdb524cdaefdcf9",
+      "artifactSizeBytes": 2582
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T08:55:29.357Z"
+}

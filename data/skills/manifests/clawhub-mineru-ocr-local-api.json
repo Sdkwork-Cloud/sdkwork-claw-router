@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24432,
+  "uuid": "skill-clawhub-mineru-ocr-local-api",
+  "skillKey": "clawhub-mineru-ocr-local-api",
+  "name": "MinerU OCR Local & API",
+  "summary": "Parse complex PDFs and document images with MinerU through either the hosted MinerU API or the local open-source MinerU runtime. Use when Codex, OpenClaw, Cl...",
+  "version": "1.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mineru_ocr_local_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ABear",
+      "features": [
+        "Parse complex PDFs and document images with MinerU through either the hosted MinerU API or the.",
+        "Use when Codex, OpenClaw, Cl..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mineru-ocr-local-api@1.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25022954?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mineru-ocr-local-api",
+      "url": "https://clawhub.ai/skills/mineru-ocr-local-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mineru-ocr-local-api",
+    "url": "https://clawhub.ai/skills/mineru-ocr-local-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mineru-ocr-local-api-8a08c51ea00cc47e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mineru-ocr-local-api@1.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-mineru-ocr-local-api-1.1.4.json",
+      "version": "1.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aaf7848264c8106e1e743d947c7fe4a3fc00db4f35923b6e0e858a9d8d63c5fe",
+      "artifactSizeBytes": 2021
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T09:22:59.691Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/volcengine-tts-feishu@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.volcengine_tts_feishu",
+  "skill": {
+    "id": 65153,
+    "skillKey": "clawhub-volcengine-tts-feishu",
+    "name": "volcengine-tts-feishu"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "volcengine-tts-feishu",
+    "url": "https://clawhub.ai/skills/volcengine-tts-feishu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/volcengine-tts-feishu-3650a469cf451c2e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "火山引擎豆包语音合成模型2.0 TTS。支持多种音色、情感参数、SSML标记，生成高质量中文语音，支持一键发送飞书语音气泡。使用HTTP单向流式API，稳定可靠。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "raydoomed",
+      "userId": "s1793ae330e8wwb5pepxqvhbvs83gsdh",
+      "displayName": "xRay",
+      "image": "https://avatars.githubusercontent.com/u/57515812?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 247,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1774889444507,
+      "changelog": "- 更新断句与停顿最佳实践说明，明确“…”仅用于大喘气/换气，完整语义不拆分\n- 优化断句总结，强调逗号“，”用于句内短停顿，过度拆分会导致语音不自然\n- 精简和强化断句用法示例，去除冗余，突出最终推荐规则\n- 其余功能和用法未更动，依然支持多音色、情感、SSML，飞书气泡一键发送",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1a8f3035c06f1bdb4fa87e66a42ba270cba931761a41a60b995943f0238064d1"
+}

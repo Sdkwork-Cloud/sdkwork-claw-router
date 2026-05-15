@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8868,
+  "uuid": "skill-clawhub-yoder-skill-auditor",
+  "skillKey": "clawhub-yoder-skill-auditor",
+  "name": "Yoder Skill Auditor",
+  "summary": "The definitive security scanner for OpenClaw skills. 18 security checks including prompt injection detection, download-and-execute, privilege escalation, cre...",
+  "version": "3.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yoder_skill_auditor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yoder-bawt",
+      "features": [
+        "The definitive security scanner for OpenClaw skills",
+        "18 security checks including prompt injection detection, download-and-execute, privilege escala."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yoder-skill-auditor@3.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259239279?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yoder-skill-auditor",
+      "url": "https://clawhub.ai/skills/yoder-skill-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yoder-skill-auditor",
+    "url": "https://clawhub.ai/skills/yoder-skill-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yoder-skill-auditor-23504a76cc3656fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yoder-skill-auditor@3.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yoder-skill-auditor-3.1.0.json",
+      "version": "3.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:95556d66985a323dfe9ad5dd97735f023c5f338826d90a89fe845e60e3d44879",
+      "artifactSizeBytes": 2039
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T16:21:35.953Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35336,
+  "uuid": "skill-clawhub-alphaear-search",
+  "skillKey": "clawhub-alphaear-search",
+  "name": "alphaear-search",
+  "summary": "Perform finance web searches and local context searches. Use when the user needs general finance info from the web (Jina/DDG/Baidu) or needs to retrieve fina...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alphaear_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhouzhonglu8-png",
+      "features": [
+        "Perform finance web searches and local context searches",
+        "Use when the user needs general finance info from the web (Jina/DDG/Baidu) or needs to retrieve."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alphaear-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266468406?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alphaear-search",
+      "url": "https://clawhub.ai/skills/alphaear-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alphaear-search",
+    "url": "https://clawhub.ai/skills/alphaear-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alphaear-search-e8b82fd18d7675c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alphaear-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-alphaear-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:05b0f4bfb2ac1a2de492b2803fa60c8a30f9b0c010fd1e3fe0b9c9654b303f63",
+      "artifactSizeBytes": 2330
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T12:22:47.725Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jd-interview-prep-helper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jd_interview_prep_helper",
+  "skill": {
+    "id": 19546,
+    "skillKey": "clawhub-jd-interview-prep-helper",
+    "name": "Jd Interview Prep Helper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jd-interview-prep-helper",
+    "url": "https://clawhub.ai/skills/jd-interview-prep-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jd-interview-prep-helper-e5a06db4d4e1abc6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Help users prepare for job interviews by analyzing job descriptions and company information. Use this skill when the user wants to prepare for an interview,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ting2tao",
+      "userId": "s174sy6n2pe5mej4n45dqya1v583hr87",
+      "displayName": "ting2tao",
+      "image": "https://avatars.githubusercontent.com/u/19522754?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 506,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774347285846,
+      "changelog": "- Initial release of jd-interview-prep-helper skill.\n- Helps users prepare for job interviews by analyzing job descriptions and company information.\n- Provides structured interview preparation guides, including technical analysis, company research, detailed checklists, and behavioral question prompts.\n- Offers a week-by-week preparation plan and curated resources for study and practice.\n- Outputs guides in a consistent markdown format for easy reference and saving.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0f059630e51d99cf312e7f81b09a29979fbc5f563cd074e8a4027c6984caee3b"
+}

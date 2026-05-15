@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59769,
+  "uuid": "skill-clawhub-openclaw-installer",
+  "skillKey": "clawhub-openclaw-installer",
+  "name": "Openclaw Installer",
+  "summary": "一键安装 OpenClaw 的整活 skill，模拟专业上门安装服务体验",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_installer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dox012",
+      "features": [
+        "一键安装 OpenClaw 的整活 skill，模拟专业上门安装服务体验"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-installer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109445745?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-installer",
+      "url": "https://clawhub.ai/skills/openclaw-installer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-installer",
+    "url": "https://clawhub.ai/skills/openclaw-installer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-installer-3abb52ab0203f20f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-installer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-installer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0333b102b9ce237e59479b323954117d2757a4d074fe1d1d3f8d01466fe11658",
+      "artifactSizeBytes": 2254
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T11:39:35.233Z"
+}

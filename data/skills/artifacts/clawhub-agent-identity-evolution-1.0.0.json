@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-identity-evolution@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_identity_evolution",
+  "skill": {
+    "id": 53533,
+    "skillKey": "clawhub-agent-identity-evolution",
+    "name": "Agent Identity Evolution"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-identity-evolution",
+    "url": "https://clawhub.ai/skills/agent-identity-evolution",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-identity-evolution-edcc70a4342f2671.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Watch your agent's identity evolve from its own experience — continuous discovery, genome snapshots, and growth tracking"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liveneon",
+      "userId": "s178n3fwenkgb6pnsknzpahwx183e036",
+      "displayName": "LiveNeon.ai",
+      "image": "https://avatars.githubusercontent.com/u/261327260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 254,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774692550953,
+      "changelog": "Initial release of agent-identity-evolution — agents can now continuously evolve their identity based on real experience.\n\n- Enables agents to track and develop their identity over time through live content ingestion, belief extraction, and genome snapshots.\n- Supports syncing from multiple content sources (GitHub, websites, RSS, Twitter, LinkedIn, files) with hourly auto-sync.\n- Provides a command interface for registering, syncing, discovery, identity review, diffing snapshots, tracking pipeline health, and reporting observations.\n- Allows comparison of identity changes across any time span, with detailed attribution and diversity scoring.\n- Facilitates team-wide consensus detection to surface shared patterns and promote healthy, adaptive agent development.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cdf563405d7888437b59222b735c31c071f1cac478cf92d518fbc3940f870daa"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15783,
+  "uuid": "skill-clawhub-weibo-publish",
+  "skillKey": "clawhub-weibo-publish",
+  "name": "Weibo Publish",
+  "summary": "Publish text and image posts to Weibo (m.weibo.cn) using browser automation. Use when the user needs to post content to Weibo programmatically, including tex...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weibo_publish",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "noah",
+      "features": [
+        "Publish text and image posts to Weibo (m.weibo.cn) using browser automation",
+        "Use when the user needs to post content to Weibo programmatically, including tex..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weibo-publish@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/242364666?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weibo-publish",
+      "url": "https://clawhub.ai/skills/weibo-publish"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weibo-publish",
+    "url": "https://clawhub.ai/skills/weibo-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weibo-publish-084a44dea074660e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weibo-publish@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weibo-publish-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1e8c51297f3a208bf78a70abbbbfdafe40b79c0d78cb62e81bf77b42caf3c814",
+      "artifactSizeBytes": 1976
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T16:04:46.428Z"
+}

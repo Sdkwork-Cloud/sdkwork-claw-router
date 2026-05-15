@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/beijing-house-pro@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beijing_house_pro",
+  "skill": {
+    "id": 72315,
+    "skillKey": "clawhub-beijing-house-pro",
+    "name": "北京住宅全信息助手 (房价/学区/交通)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beijing-house-pro",
+    "url": "https://clawhub.ai/skills/beijing-house-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beijing-house-pro-3b160f9143142399.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询北京住宅小区的基础信息（房价/区域/交通），并通过官方验证渠道核实学区划片信息。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "iamhankai",
+      "userId": "s17ffqaaj2deygv6gn951zkern845r6k",
+      "displayName": "Kai Han",
+      "image": "https://avatars.githubusercontent.com/u/9500784?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 689,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1772698622181,
+      "changelog": "v1.0.8: 修复了表头'学校名称'被误解析为一个虚假的'学校'条目的问题，清理了14条脏数据。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ac29744d7b5374295a2d09b89180f3e683891e83506daf3641d50aaabc8e914b"
+}

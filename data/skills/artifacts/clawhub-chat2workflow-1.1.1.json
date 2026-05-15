@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chat2workflow@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chat2workflow",
+  "skill": {
+    "id": 24036,
+    "skillKey": "clawhub-chat2workflow",
+    "name": "chat2workflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chat2workflow",
+    "url": "https://clawhub.ai/skills/chat2workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chat2workflow-dd69714ec478c915.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A design-only workflow designer for the Dify and Coze platforms. Through multi-round conversation, it produces a structured workflow JSON (nodes, edges, vari..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chikawa11",
+      "userId": "s177exw7vtn9s9ntqmt8nww1ed85c5x3",
+      "displayName": "ZhongYi",
+      "image": "https://avatars.githubusercontent.com/u/145632462?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 321,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1777021579020,
+      "changelog": "**This update clarifies workflow and script separation, and adds user-facing script usage documentation.**\n\n- Added `CONVERTER_USAGE.md` to document usage of optional helper scripts.\n- Updated documentation to clearly state that bundled scripts (like `converter.py`) are not part of the skill deliverable and are not invoked by the skill itself.\n- Revised and condensed the skill description to emphasize design-only operation and reinforce that only text output is produced.\n- Removed references to automatic or conditional script invocation within the main documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:912d4afe0ac1f63ff51f5bb6ede292479823ec16066a6a2319c6b93a86a8877d"
+}

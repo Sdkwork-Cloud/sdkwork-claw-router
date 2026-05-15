@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9434,
+  "uuid": "skill-clawhub-agent-earner",
+  "skillKey": "clawhub-agent-earner",
+  "name": "Clawhub Skill",
+  "summary": "Earn USDC and tokens autonomously across ClawTasks and OpenWork",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_earner",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mmchougule",
+      "features": [
+        "Earn USDC and tokens autonomously across ClawTasks and OpenWork"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-earner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18723323?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-earner",
+      "url": "https://clawhub.ai/skills/agent-earner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-earner",
+    "url": "https://clawhub.ai/skills/agent-earner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-earner-fd7b2e19c3dd0714.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-earner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-earner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4fc46565f81bd3868dd938f00fb306853c881a57ae7993baa307acd49a20b5c3",
+      "artifactSizeBytes": 1826
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T05:38:10.996Z"
+}

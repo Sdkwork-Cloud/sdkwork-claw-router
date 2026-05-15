@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bilibili-trending@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilibili_trending",
+  "skill": {
+    "id": 64883,
+    "skillKey": "clawhub-bilibili-trending",
+    "name": "Bilibili 热门趋势分析"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilibili-trending",
+    "url": "https://clawhub.ai/skills/bilibili-trending",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilibili-trending-581c3068dcfc62dd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "获取 Bilibili 全榜单热门数据并分析趋势。支持 21 个榜单，自动调用子 Agent 分析并生成 MD 报告持久化储存。安全无隐私风险，仅调用公开 API。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rookiecoder-jsjs",
+      "userId": "s177yz0szmgp3za3dkfyd2ddd9842jzt",
+      "displayName": "Rookiecoder-jsjs",
+      "image": "https://avatars.githubusercontent.com/u/231662653?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 193,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775190257065,
+      "changelog": "Bilibili-trending Changelog\nv1.0.2 (2026-04-03)\n✨ 新增\n21 个榜单支持：全站、动画、游戏、音乐、舞蹈、鬼畜、影视、娱乐、知识、科技数码、美食、汽车、时尚美妆、体育运动、动物 + 番剧、国创、纪录片、电影、电视剧\n自动子 Agent 分析：抓取完成后自动调用 OpenClaw 子 Agent 深度分析\n趋势数据累计：每次抓取更新 trend.json，支持长期趋势分析\n周/月总结：自动生成周报和月报\n🔧 优化\n路径兼容性：修复硬编码路径问题，改为相对于工作区自动创建目录\n错误处理：API 限流提示（-352 错误）\n非 OpenClaw 环境兼容：无子 Agent 时输出 prompt 供手动使用\n📖 文档\nSKILL.md：完整使用说明\nreferences/workflow.md：工作流详解\n依赖\nPython 3.x\nrequests 库\nOpenClaw 环境（可选）",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fda9e888fff4de24a737a096b251916ec2d8443e1e66af8252f2f9ec3b236c6d"
+}

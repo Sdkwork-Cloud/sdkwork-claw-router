@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38255,
+  "uuid": "skill-clawhub-game-sentiment",
+  "skillKey": "clawhub-game-sentiment",
+  "name": "Game Sentiment Monitor",
+  "summary": "Automated game sentiment monitoring skill for mobile/PC games. Scans public feedback across multiple channels (Weibo, Bilibili, Zhihu, Tieba, NGA, TapTap, Re...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.game_sentiment",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Robin9plus1",
+      "features": [
+        "Automated game sentiment monitoring skill for mobile/PC games",
+        "Scans public feedback across multiple channels (Weibo, Bilibili, Zhihu, Tieba, NGA, TapTap, Re.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/game-sentiment@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/214493332?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "game-sentiment",
+      "url": "https://clawhub.ai/skills/game-sentiment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "game-sentiment",
+    "url": "https://clawhub.ai/skills/game-sentiment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/game-sentiment-3445f76e560e9299.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/game-sentiment@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-game-sentiment-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4c3883a7e3222c0a42c8420947c1377f01642db0a5dfa38478f5b9865b6a958e",
+      "artifactSizeBytes": 2219
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T03:10:34.060Z"
+}

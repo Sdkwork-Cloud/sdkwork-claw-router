@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32289,
+  "uuid": "skill-clawhub-cloudmersive",
+  "skillKey": "clawhub-cloudmersive",
+  "name": "Cloudmersive",
+  "summary": "Cloudmersive integration. Manage data, records, and automate workflows. Use when the user wants to interact with Cloudmersive data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloudmersive",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Cloudmersive integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Cloudmersive data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cloudmersive@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cloudmersive",
+      "url": "https://clawhub.ai/skills/cloudmersive"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloudmersive",
+    "url": "https://clawhub.ai/skills/cloudmersive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloudmersive-0290221cc04e97d4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cloudmersive@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-cloudmersive-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:28c89717a8b3842b0bf53618926eec98576b3514b653f523b20d5874c52473f8",
+      "artifactSizeBytes": 1866
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:32:30.583Z"
+}

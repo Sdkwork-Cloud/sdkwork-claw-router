@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/soke-ai-exam-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.soke_ai_exam_skill",
+  "skill": {
+    "id": 67441,
+    "skillKey": "clawhub-soke-ai-exam-skill",
+    "name": "Ai Exam 授客AI智能考试"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "soke-ai-exam-skill",
+    "url": "https://clawhub.ai/skills/soke-ai-exam-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/soke-ai-exam-skill-4d6ddfbf6d68d047.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI智能出题考试系统 - 基于文档自动生成考试、指派学员并查询结果"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiangzidetiandi",
+      "userId": "s172esbwxj6hczdeq2a5h0g2hh83m5pq",
+      "displayName": "xiangzidetiandi",
+      "image": "https://avatars.githubusercontent.com/u/4446184?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774515358001,
+      "changelog": "ai-exam-skill 0.1.0 (Initial Public Release)\n\n- Introduces an AI-powered exam system supporting automatic question generation from documents, exam assignment, and result queries.\n- Supports multiple question types: single choice, multiple choice, alternative choice, true/false, fill-in-the-blank, and short answer.\n- Allows flexible assignment by user names and department names.\n- Provides methods for individual and batch result querying with built-in error handling.\n- Access token management is automated; no manual refresh required.\n- Includes detailed usage examples, configuration instructions, and API documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dc68a9cfd295533958d25477f8ee6b6d73c3018d56e48dbc1a1ae389c39da3df"
+}

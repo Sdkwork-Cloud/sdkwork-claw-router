@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/inspirai-bp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inspirai_bp",
+  "skill": {
+    "id": 59196,
+    "skillKey": "clawhub-inspirai-bp",
+    "name": "InspirAI Best Practices"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inspirai-bp",
+    "url": "https://clawhub.ai/skills/inspirai-bp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inspirai-bp-ea0799b0fc0b8176.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "最佳实践管理 - 记录验证通过的解决方案，跨项目复用，避免重复踩坑。Triggers: '最佳实践', 'best practice', '经验记录', '解决方案', '踩坑记录', 'bp capture', 'bp apply', 'bp search'."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alexxxiong",
+      "userId": "publishers:alexxxiong",
+      "displayName": "alexxiong",
+      "image": "https://avatars.githubusercontent.com/u/45865830?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 249,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773583630703,
+      "changelog": "Initial release - 最佳实践管理",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dfde86710c1b3cdb8a5db9670fe9eb8ea2eaee9cf317bce76432e945ca89cc92"
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52615,
+  "uuid": "skill-clawhub-okra-public-docs",
+  "skillKey": "clawhub-okra-public-docs",
+  "name": "OkraPDF Public Documents",
+  "summary": "Query pre-extracted public documents via OkraPDF MCP — arxiv AI papers, SEC 10-K/10-Q filings, and more. Read, ask questions, extract structured data. No upl...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.okra_public_docs",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Steven Tsao",
+      "features": [
+        "Query pre-extracted public documents via OkraPDF MCP — arxiv AI papers, SEC 10-K/10-Q filings,.",
+        "Read, ask questions, extract structured data",
+        "No upl..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/okra-public-docs@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15185301?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "okra-public-docs",
+      "url": "https://clawhub.ai/skills/okra-public-docs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "okra-public-docs",
+    "url": "https://clawhub.ai/skills/okra-public-docs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/okra-public-docs-794d5c46d463abf2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/okra-public-docs@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-okra-public-docs-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9438f7bab9644067dc8c0a4b689c2add3bc805ca7e45e6df9fe625df6874c44b",
+      "artifactSizeBytes": 1939
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T17:53:25.060Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/httpie@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.httpie",
+  "skill": {
+    "id": 59281,
+    "skillKey": "clawhub-httpie",
+    "name": "HTTPie"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "httpie",
+    "url": "https://clawhub.ai/skills/httpie",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/httpie-4a7fe0d7d51d96e2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "HTTPie - 人性化的 HTTP 命令行客户端"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cn-big-cabbage",
+      "userId": "s17dbd0j0kazk5ay31x9kv1z3n84f04v",
+      "displayName": "CN-big-cabbage",
+      "image": "https://avatars.githubusercontent.com/u/63539779?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1776214902210,
+      "changelog": "Initial release - HTTPie CLI skill for human-friendly API testing",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6bdd30f2cb8f272a88557ee82996b12311b2435f0bda0af971ba5316b7ab04e4"
+}

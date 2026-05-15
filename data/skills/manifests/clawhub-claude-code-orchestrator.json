@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14926,
+  "uuid": "skill-clawhub-claude-code-orchestrator",
+  "skillKey": "clawhub-claude-code-orchestrator",
+  "name": "Claude Code Orchestrator (tmux-first)",
+  "summary": "Trigger Claude Code development tasks in observable tmux sessions with stable startup, progress visibility, and completion callback to OpenClaw. Use when use...",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code_orchestrator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yaxuan42",
+      "features": [
+        "Trigger Claude Code development tasks in observable tmux sessions with stable startup, progress.",
+        "Use when use..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claude-code-orchestrator@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/184813557?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claude-code-orchestrator",
+      "url": "https://clawhub.ai/skills/claude-code-orchestrator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code-orchestrator",
+    "url": "https://clawhub.ai/skills/claude-code-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-orchestrator-2315f48740d8982e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claude-code-orchestrator@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claude-code-orchestrator-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cdacc49c0a2ec502400a8580f0e6c625387700d627cda35875e076fa42ec200c",
+      "artifactSizeBytes": 2023
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T08:08:23.561Z"
+}

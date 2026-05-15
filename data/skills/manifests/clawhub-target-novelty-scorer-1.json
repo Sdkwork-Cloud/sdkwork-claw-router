@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45321,
+  "uuid": "skill-clawhub-target-novelty-scorer-1",
+  "skillKey": "clawhub-target-novelty-scorer-1",
+  "name": "Target Novelty Scorer",
+  "summary": "Score the novelty of biological targets through literature mining and.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.target_novelty_scorer_1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Score the novelty of biological targets through literature mining and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/target-novelty-scorer-1@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "target-novelty-scorer-1",
+      "url": "https://clawhub.ai/skills/target-novelty-scorer-1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "target-novelty-scorer-1",
+    "url": "https://clawhub.ai/skills/target-novelty-scorer-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/target-novelty-scorer-1-d47810ab554d1fff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/target-novelty-scorer-1@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-target-novelty-scorer-1-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5d0003690a409dbbe87012547c84bfabdb55c587f5f765f8d679a3b30c7e4eff",
+      "artifactSizeBytes": 2577
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T02:05:30.600Z"
+}

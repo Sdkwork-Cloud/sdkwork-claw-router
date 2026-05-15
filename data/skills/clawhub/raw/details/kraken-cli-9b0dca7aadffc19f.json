@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "kraken-cli",
+    "displayName": "Kraken CLI",
+    "summary": "Use a Bash CLI to query Kraken Spot and Futures APIs, inspect account state, run guarded trading and funding actions, and work with Kraken websocket payloads...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 416,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1772654146297,
+    "updatedAt": 1778304156151
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1772654146297,
+    "changelog": "Initial release—migrates Kraken crypto skill from Python scripts to a modular Bash CLI:\n\n- Replaces Python implementation (kraken_api.py, kraken_cli.py) with Bash CLI under bin/openclaw-kraken and supporting shell/lib scripts.\n- Adds structured documentation, including usage examples, caveats, and full command references for Spot, Earn, Funding, and Futures APIs.\n- Introduces support for OpenClaw-managed secret injection and safer config/secret handling.\n- All primary functions (market data, account state, funding, earn, orders) are implemented as Bash functions/scripts.\n- Implements strict security and confirmation rules for state-changing operations.\n- Includes comprehensive test scripts and configuration examples.",
+    "license": null
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "oscraters",
+    "userId": "publishers:oscraters",
+    "displayName": "oscraters",
+    "image": "https://avatars.githubusercontent.com/u/93680161?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778304156151
+  }
+}

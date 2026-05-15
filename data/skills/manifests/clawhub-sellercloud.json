@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33940,
+  "uuid": "skill-clawhub-sellercloud",
+  "skillKey": "clawhub-sellercloud",
+  "name": "Sellercloud",
+  "summary": "Sellercloud integration. Manage data, records, and automate workflows. Use when the user wants to interact with Sellercloud data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sellercloud",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Sellercloud integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Sellercloud data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sellercloud@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sellercloud",
+      "url": "https://clawhub.ai/skills/sellercloud"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sellercloud",
+    "url": "https://clawhub.ai/skills/sellercloud",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sellercloud-26666b6641c97236.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sellercloud@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-sellercloud-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fd5a013d0d1a48e52a3d3c92fe089e8b2f59896877d4157994ffe2ea96099f5b",
+      "artifactSizeBytes": 1857
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:39:14.766Z"
+}

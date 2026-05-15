@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37186,
+  "uuid": "skill-clawhub-funded-account",
+  "skillKey": "clawhub-funded-account",
+  "name": "Hyperscaled Funded Account",
+  "summary": "Interact with the Hyperscaled funded trading platform. Use when the user wants to check their trading account, view positions/orders, submit or cancel trades...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.funded_account",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "taoshidev",
+      "features": [
+        "Interact with the Hyperscaled funded trading platform",
+        "Use when the user wants to check their trading account, view positions/orders, submit or cancel."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/funded-account@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/68529441?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "funded-account",
+      "url": "https://clawhub.ai/skills/funded-account"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "funded-account",
+    "url": "https://clawhub.ai/skills/funded-account",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/funded-account-d3b1a00b28f285fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/funded-account@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-funded-account-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6007974208d04bb4fdcbab50e09517b8ec6e058df7b2994150820ee84723f76a",
+      "artifactSizeBytes": 2493
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T23:44:57.000Z"
+}

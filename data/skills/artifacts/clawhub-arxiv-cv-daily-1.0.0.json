@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/arxiv-cv-daily@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arxiv_cv_daily",
+  "skill": {
+    "id": 39708,
+    "skillKey": "clawhub-arxiv-cv-daily",
+    "name": "arxiv-cv-daily"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arxiv-cv-daily",
+    "url": "https://clawhub.ai/skills/arxiv-cv-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arxiv-cv-daily-d6fb30709cf94f45.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch arXiv papers for a target date in cs.CV, screen them against a user topic, save logs under a user-chosen output directory, download matched PDFs, and s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrytea",
+      "userId": "s174j0zmbwekkgvqa6zj16ed2583gx3z",
+      "displayName": "Yonghui Wang",
+      "image": "https://avatars.githubusercontent.com/u/44457717?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774325990688,
+      "changelog": "arxiv-cv-daily 1.0.0\n\n- Initial release for automated, topic-centric daily arXiv cs.CV paper workflows.\n- Supports paper fetching, topic screening, PDF download, and full-text summarization, all controlled by a user-supplied topic and date.\n- Organized all workflow outputs—including logs, screening results, PDFs, and summaries—under a user-chosen output directory.\n- Sequential, day-by-day processing with clear user progress updates and mobile-friendly result formatting.\n- Allows detailed, citation-backed analysis for selected papers upon user request.\n- Workflow fully independent—no reliance on other research or ideation skills.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:87cf642c75a156a22355238fb1163424cd19f36b30de00d906d27d0c768c59df"
+}

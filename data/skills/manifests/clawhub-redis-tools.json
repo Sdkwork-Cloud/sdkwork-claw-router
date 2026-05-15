@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39327,
+  "uuid": "skill-clawhub-redis-tools",
+  "skillKey": "clawhub-redis-tools",
+  "name": "redis-tools",
+  "summary": "Lookup Redis commands by category, test Redis server connections, and monitor database key counts and memory usage, with offline cheatsheet support.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.redis_tools",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "Lookup Redis commands by category, test Redis server connections, and monitor database key coun."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/redis-tools@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "redis-tools",
+      "url": "https://clawhub.ai/skills/redis-tools"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "redis-tools",
+    "url": "https://clawhub.ai/skills/redis-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/redis-tools-e52009caaa48bbe9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/redis-tools@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-redis-tools-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:941a909779560698072aedc8212b46f7ea9d89973a1b830b48d45265b29ae224",
+      "artifactSizeBytes": 1859
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T01:13:36.966Z"
+}

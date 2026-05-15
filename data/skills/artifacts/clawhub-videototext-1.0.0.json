@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/videototext@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.videototext",
+  "skill": {
+    "id": 60586,
+    "skillKey": "clawhub-videototext",
+    "name": "VideoToText — subtitles & summary"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "videototext",
+    "url": "https://clawhub.ai/skills/videototext",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/videototext-8c4b45744673dc87.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "指导稳定拉取 B 站官方字幕（应对限流/登录可见轨道）、并用 OpenAI 兼容接口生成中文总结稿；技能包内含 code/ 镜像源码与 env 模板，可打 zip 给 OpenClaw 离线使用。 适用于 Bilibili 链接解析、字幕提取失败排查、SESSDATA/Cookie、WBI player 字幕、字..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "willguo715",
+      "userId": "s170faph9py3nrxe6s7wvgv6ad841jhc",
+      "displayName": "WillGuo",
+      "image": "https://avatars.githubusercontent.com/u/22400325?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775323271896,
+      "changelog": "Initial release of B 站字幕稳定提取与总结核心模块。\n\n- 首发提供 Bilibili 官方字幕提取、稳定排错、Cookie 及轨道选择全流程说明\n- 支持字幕抽取与多轮采样、轨道优先级判定、校验逻辑详解\n- 内含 OpenAI 兼容总结服务调用与回退说明，环境变量详尽标注\n- 附源码 code/ 目录镜像、requirements、参考文档组成完整技能包",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0865493589f8a8c8852c1bdfc6b20b9b3a44e1d899ad633d9f2ba32f038f9e97"
+}

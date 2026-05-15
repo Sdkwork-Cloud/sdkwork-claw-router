@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/swiftlint@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swiftlint",
+  "skill": {
+    "id": 25721,
+    "skillKey": "clawhub-swiftlint",
+    "name": "Swiftlint"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swiftlint",
+    "url": "https://clawhub.ai/skills/swiftlint",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swiftlint-fd0ae9abb1566e15.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Swift linting and style enforcement via CLI"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alexissan",
+      "userId": "s177nz9wz0wa1w09m3h47wbxk185r2ff",
+      "displayName": "Alexis Santos",
+      "image": "https://avatars.githubusercontent.com/u/266810?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 363,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773006597397,
+      "changelog": "Initial release of the swiftlint skill.\n\n- Enforces Swift style and conventions via SwiftLint CLI.\n- Guides users on installation, configuration, and basic usage (linting, autocorrect, and output formats).\n- Documents rule categories (enabled by default and opt-in) and common configuration options.\n- Includes agent guidance for handling code style checks and linting requests.\n- Provides reference commands for working with SwiftLint in local and CI environments.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac7bdc268aca13cd162e0e8be835596cf294c8126a076e22613ee95621c17e73"
+}

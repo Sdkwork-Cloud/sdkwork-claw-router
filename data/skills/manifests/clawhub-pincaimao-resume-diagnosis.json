@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58007,
+  "uuid": "skill-clawhub-pincaimao-resume-diagnosis",
+  "skillKey": "clawhub-pincaimao-resume-diagnosis",
+  "name": "聘才猫（Pincaimao）简历诊断",
+  "summary": "聘才猫 - 简历诊断 Use when calling Pincaimao Resume Diagnosis Assistant API to parse and diagnosis a candidate resume against a job description. Requires uploading...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pincaimao_resume_diagnosis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "聘才猫（Pincaimao）",
+      "features": [
+        "简历诊断 Use when calling Pincaimao Resume Diagnosis Assistant API to parse and diagnosis a candida.",
+        "Requires uploading..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pincaimao-resume-diagnosis@1.0.1",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/pincaimao-resume-diagnosis/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pincaimao-resume-diagnosis",
+      "url": "https://clawhub.ai/skills/pincaimao-resume-diagnosis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pincaimao-resume-diagnosis",
+    "url": "https://clawhub.ai/skills/pincaimao-resume-diagnosis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pincaimao-resume-diagnosis-760a418f33fe72a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pincaimao-resume-diagnosis@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pincaimao-resume-diagnosis-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:04354875436b4a38b7f8b048d06a9eca1485ae7382bf7913129646c159c82ffd",
+      "artifactSizeBytes": 2074
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T07:16:59.044Z"
+}

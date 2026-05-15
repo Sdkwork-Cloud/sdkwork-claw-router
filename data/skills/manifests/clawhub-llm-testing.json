@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38676,
+  "uuid": "skill-clawhub-llm-testing",
+  "skillKey": "clawhub-llm-testing",
+  "name": "LLM Testing",
+  "summary": "Provides curated prompts to test LLM security, bias, privacy, alignment, and robustness for authorized AI safety and red team assessments.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llm_testing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PandaAI-1337",
+      "features": [
+        "Provides curated prompts to test LLM security, bias, privacy, alignment, and robustness for aut."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/llm-testing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264713685?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "llm-testing",
+      "url": "https://clawhub.ai/skills/llm-testing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llm-testing",
+    "url": "https://clawhub.ai/skills/llm-testing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llm-testing-61335ad06f578f12.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/llm-testing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-llm-testing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:927aa64922a0dac42fd0255898c03baad528080c2e35fe7615ced5af11156a97",
+      "artifactSizeBytes": 2309
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T15:34:41.252Z"
+}

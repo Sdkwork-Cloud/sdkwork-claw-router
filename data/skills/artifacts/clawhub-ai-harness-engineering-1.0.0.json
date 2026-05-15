@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-harness-engineering@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_harness_engineering",
+  "skill": {
+    "id": 62708,
+    "skillKey": "clawhub-ai-harness-engineering",
+    "name": "AI Harness Engineering"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-harness-engineering",
+    "url": "https://clawhub.ai/skills/ai-harness-engineering",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-harness-engineering-cf819bc63002ada9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI驾驭工程错题本：记录OpenClaw所有被验证的错误、幻觉、缺陷、失误，形成可追溯错误台账，驱动模型自省与进化。 触发场景： (1) 用户纠正OpenClaw的回答（\"不对\"/\"错了\"/\"应该是\"/\"Actually\"等） (2) OpenClaw回答与事实不符，被用户指出 (3) 代码错误、逻辑错误被验证..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sqlskills",
+      "userId": "s1774kyr593ezfy7qtq3g4k9t983g3a1",
+      "displayName": "SQLSkills",
+      "image": "https://avatars.githubusercontent.com/u/199218417?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775041292581,
+      "changelog": "Initial release with automated error and learning tracking, supporting self-improving AI governance.\n\n- Added comprehensive scripts for recording, querying, summarizing, and promoting errors, feature requests, and learning events.\n- New ledger files: `error_ledger.jsonl`, `feature_ledger.jsonl`, `learnings_ledger.jsonl` for structured tracking.\n- Implemented auto-promotion of frequent learnings to workspace artifacts (SOUL.md, AGENTS.md, TOOLS.md, MEMORY.md) via scheduled tasks.\n- Automated error summary injection and pre-answer checks to avoid repeated mistakes.\n- Removed legacy README and obsolete reference/checklist files; fully revised documentation in SKILL.md with updated workflow and mechanisms.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cb6a99e3b3c6f3d4264ac096ad5961577e9fe3988752481b7b6989430df2a21d"
+}

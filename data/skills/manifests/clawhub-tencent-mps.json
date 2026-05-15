@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63265,
+  "uuid": "skill-clawhub-tencent-mps",
+  "skillKey": "clawhub-tencent-mps",
+  "name": "Tencent MPS",
+  "summary": "腾讯云 MPS 媒体处理服务，支持以下功能：【视频转码】转码/压缩/格式转换/H.264/H.265/AV1/MP4/编码/码率/分辨率/帧率。【画质增强】画质增强/老片修复/超分/视频超分/真人增强/漫剧增强/防抖/720P/1080P/2K/4K。【音频处理】音频分离/人声提取/伴奏提取/去人声/BGM分离。...",
+  "version": "1.1.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencent_mps",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mpaas-skills",
+      "features": [
+        "腾讯云 MPS 媒体处理服务，支持以下功能：【视频转码】转码/压缩/格式转换/H.264/H.265/AV1/MP4/编码/码率/分辨率/帧率。【画质增强】画质增强/老片修复/超分/视频超分."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tencent-mps@1.1.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2137816?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tencent-mps",
+      "url": "https://clawhub.ai/skills/tencent-mps"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencent-mps",
+    "url": "https://clawhub.ai/skills/tencent-mps",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencent-mps-bb46531cba351a29.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tencent-mps@1.1.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-tencent-mps-1.1.9.json",
+      "version": "1.1.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5e6a919f70e324e4ed5f6acb6c4920d3bfdb8c709c6664e74b7ece5be81d5cce",
+      "artifactSizeBytes": 2121
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-10T03:36:26.629Z"
+}

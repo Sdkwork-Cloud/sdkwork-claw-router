@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-gen-coze@1.1.4",
+  "version": "1.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_gen_coze",
+  "skill": {
+    "id": 58134,
+    "skillKey": "clawhub-image-gen-coze",
+    "name": "图像生成 / Image Generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-gen-coze",
+    "url": "https://clawhub.ai/skills/image-gen-coze",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-gen-coze-33152dc306a01b04.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Image Generation via Coze | 基于 Coze 的图像生成技能 Generate images using Coze workflows. 使用 Seedream 4.5 model. Handles parameter building and result parsing. 负责参数构..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "noah-1106",
+      "userId": "s1786dbb8r9dh5a5r5xxmjqs2s83gej1",
+      "displayName": "noah",
+      "image": "https://avatars.githubusercontent.com/u/242364666?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 507,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.4",
+      "createdAt": 1773581152213,
+      "changelog": "Add bilingual documentation support",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:295c2e4be55157ff484ffc6264ff7932cb8bdc247c7a96a68248e6192dc16d7c"
+}

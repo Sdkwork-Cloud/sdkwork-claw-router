@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40369,
+  "uuid": "skill-clawhub-anomaly-watcher",
+  "skillKey": "clawhub-anomaly-watcher",
+  "name": "Anomaly Watcher",
+  "summary": "Continuous behavioral monitoring for OpenClaw agents. Detect anomalies in command patterns, resource usage, and skill invocations against established baselines.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anomaly_watcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Adnane Arharbi",
+      "features": [
+        "Continuous behavioral monitoring for OpenClaw agents",
+        "Detect anomalies in command patterns, resource usage, and skill invocations against established."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/anomaly-watcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14889338?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "anomaly-watcher",
+      "url": "https://clawhub.ai/skills/anomaly-watcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anomaly-watcher",
+    "url": "https://clawhub.ai/skills/anomaly-watcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anomaly-watcher-f5bec3dcf47a5079.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/anomaly-watcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-anomaly-watcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6fcbc514c246892a111264882f2b3343b41866305842bd17d730de1f11d8e95c",
+      "artifactSizeBytes": 2433
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T21:51:24.224Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/turingsenseai-classify-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.turingsenseai_classify_skill",
+  "skill": {
+    "id": 65603,
+    "skillKey": "clawhub-turingsenseai-classify-skill",
+    "name": "turingsenseai-classify-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "turingsenseai-classify-skill",
+    "url": "https://clawhub.ai/skills/turingsenseai-classify-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/turingsenseai-classify-skill-5a8d46627b803414.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "当用户希望识别商品图片中的品类、品牌、系列或简要商品信息时，优先调用已配置的 turing-shikuan-mcp，并按固定格式输出识款结果；支持首次配置指引，但不用于真假鉴定、真伪判断或质量判断。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "turingsenseai",
+      "userId": "s17btre61j01dn2fnhhksbmmbd856jk5",
+      "displayName": "turingsenseai",
+      "image": "https://avatars.githubusercontent.com/u/223606201?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776661918761,
+      "changelog": "Initial release of turing-shikuan-demo for 商品图片识款\n\n- Uses turing-shikuan-mcp to extract 品类(kind)、品牌(brand)、系列(series)、简要商品信息(summary) from product images.\n- Guides user to configure MCP (API Key/Secret/environment variables) before use; provides both command line and manual JSON setup methods.\n- Strictly does not provide 假鉴定/真假/正品/质量等判断 — skill is for classification only, not authentication.\n- Requires a valid, accessible image URL as input; does not guess or supplement missing data.\n- Always outputs results in a fixed, structured Chinese template; clearly indicates if any field is missing or unrecognized.\n- Handles exceptions: prompts user if MCP is not configured, image URL is missing/unreachable, or if user requests authentication.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0aed320f642f5d01b981ea59aba714cc6b4ee791a78261ff704cf90180902722"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47725,
+  "uuid": "skill-clawhub-toby-gamma",
+  "skillKey": "clawhub-toby-gamma",
+  "name": "gamma",
+  "summary": "Generate AI-powered presentations, documents, and social posts using SkillBoss API Hub. Use when user asks to create a presentation, pitch deck, slide deck,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toby_gamma",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TobeyRebecca",
+      "features": [
+        "Generate AI-powered presentations, documents, and social posts using SkillBoss API Hub",
+        "Use when user asks to create a presentation, pitch deck, slide deck,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/toby-gamma@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260428668?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "toby-gamma",
+      "url": "https://clawhub.ai/skills/toby-gamma"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toby-gamma",
+    "url": "https://clawhub.ai/skills/toby-gamma",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toby-gamma-200c4b130be3a3d9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/toby-gamma@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-toby-gamma-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:45d6289f520de821bf2a19eaaa35018b26460182e2f6ad12c4ccec90f6a4a299",
+      "artifactSizeBytes": 2430
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T09:47:28.733Z"
+}

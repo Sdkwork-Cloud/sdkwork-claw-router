@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/random-question-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.random_question_skill",
+  "skill": {
+    "id": 72537,
+    "skillKey": "clawhub-random-question-skill",
+    "name": "**智能随机**：从8个维度、28个话题中均匀随机选择 - ⏰ **定时触发**：可配置的心跳机制，实现定时随机提问 - 🎨 **多维覆盖**：情绪、身体、思维、行动、关系、环境、反思、未来 - 🔧 **高度可定制**：支持话题库扩展、触发概率调整、."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "random-question-skill",
+    "url": "https://clawhub.ai/skills/random-question-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/random-question-skill-66411b0cc3a3b04a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "从8大维度28个话题中均匀随机提问，支持定时触发与个性化配置，结合上下文实现自然、灵活的随机提问体验。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wujiajun4433",
+      "userId": "s173myf08gqs98ds5trcym3f5983jae1",
+      "displayName": "wujiajun4433",
+      "image": "https://avatars.githubusercontent.com/u/118959779?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 179,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774425194390,
+      "changelog": "- 初始发布，版本 1.0.0。\n- 支持从8个维度、28个话题中智能均匀随机提问。\n- 问题覆盖情绪、身体、思维、行动、关系、环境、反思、未来等多方面。\n- 支持手动调用、定时触发、事件触发和 API 调用。\n- 可进行个性化配置和扩展自定义话题库。\n- 自动结合用户历史记录提升提问个性化体验。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8c3e9fdfec057eed4277906c9847bfed705b8d8da3316c5e98e258733909e23b"
+}

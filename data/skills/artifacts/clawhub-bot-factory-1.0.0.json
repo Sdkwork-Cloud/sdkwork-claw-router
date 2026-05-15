@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bot-factory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bot_factory",
+  "skill": {
+    "id": 41424,
+    "skillKey": "clawhub-bot-factory",
+    "name": "Bot Factory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bot-factory",
+    "url": "https://clawhub.ai/skills/bot-factory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bot-factory-9c0687cfbd00aae0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides 10+ deployable AI agent architecture templates with personas, toolkits, workflows, and success metrics for diverse professional roles."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776920821227,
+      "changelog": "Major update: Comprehensive redesign and rebranding as \"Agent Builder\" with production-grade AI Agent architecture templates.\n\n- Introduced 10+ detailed AI Agent templates (e.g., customer service, sales, engineering, ops), each with full personas, toolkits, workflows, and metrics.\n- Added step-by-step usage methods: select template, custom agent design, and multi-agent orchestration.\n- Defined core architecture elements for every agent: identity, capabilities, tools, workflow, metrics, security guardrails.\n- Expanded documentation and included related references (roles library, orchestration, self-improving agents).\n- Provided practical trigger phrases and usage instructions for seamless integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0756a7ae75d91fbb0f4205a0909893a3588926389e9fc6bd35e83815476ac35c"
+}

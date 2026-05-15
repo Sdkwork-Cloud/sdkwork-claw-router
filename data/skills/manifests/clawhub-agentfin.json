@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51728,
+  "uuid": "skill-clawhub-agentfin",
+  "skillKey": "clawhub-agentfin",
+  "name": "AgentFin",
+  "summary": "Issue virtual Visa/MC cards funded by USDT. Check balance, get card credentials, fetch OTP codes — all via REST API.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentfin",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "elvismusli",
+      "features": [
+        "Issue virtual Visa/MC cards funded by USDT",
+        "Check balance, get card credentials, fetch OTP codes — all via REST API."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentfin@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/149376360?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentfin",
+      "url": "https://clawhub.ai/skills/agentfin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentfin",
+    "url": "https://clawhub.ai/skills/agentfin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentfin-930b12537206f729.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentfin@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentfin-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:179dd94aad2c71e10995d701e51ce5198e605ca3ab0df8b1e34d5e9afc06aa89",
+      "artifactSizeBytes": 1859
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T14:01:27.170Z"
+}

@@ -11,6 +11,7 @@ import { asOpenApiJsonSchema } from './openapiTypes.ts';
 export interface ResolvedOpenApiSchema {
   schema: OpenApiJsonSchema;
   schemaName?: string;
+  seenRefs: Set<string>;
 }
 
 export interface OpenApiSchemaRuntimeOptions {
@@ -104,14 +105,16 @@ export function resolveOpenApiSchema(
           description: schemaName ? `Circular reference to ${schemaName}.` : 'Circular schema reference.',
         },
         schemaName,
+        seenRefs,
       };
     }
 
-    seenRefs.add(schema.$ref);
+    const nextSeenRefs = new Set(seenRefs);
+    nextSeenRefs.add(schema.$ref);
     const referenced = resolveLocalSchemaRef(spec, schema.$ref);
-    const resolved = resolveOpenApiSchema(referenced, spec, seenRefs);
+    const resolved = resolveOpenApiSchema(referenced, spec, nextSeenRefs);
     if (!resolved) {
-      return { schema, schemaName };
+      return { schema, schemaName, seenRefs: nextSeenRefs };
     }
     return {
       schema: {
@@ -119,13 +122,16 @@ export function resolveOpenApiSchema(
         description: schema.description || resolved.schema.description,
       },
       schemaName: schemaName || resolved.schemaName,
+      seenRefs: resolved.seenRefs,
     };
   }
 
   if (Array.isArray(schema.allOf) && schema.allOf.length > 0) {
+    const merged = mergeAllOfSchemas(schema, spec, seenRefs);
     return {
-      schema: mergeAllOfSchemas(schema, spec, seenRefs),
+      schema: merged.schema,
       schemaName: schema.title,
+      seenRefs: merged.seenRefs,
     };
   }
 
@@ -140,6 +146,7 @@ export function resolveOpenApiSchema(
   return {
     schema,
     schemaName: schema.title,
+    seenRefs,
   };
 }
 
@@ -158,7 +165,12 @@ export function schemaToApiParameters(
   if (!resolved) {
     return [];
   }
-  return resolvedSchemaToApiParameters(resolved.schema, options.spec, resolved.schema.required ?? []);
+  return resolvedSchemaToApiParameters(
+    resolved.schema,
+    options.spec,
+    resolved.schema.required ?? [],
+    resolved.seenRefs,
+  );
 }
 
 export function generateOpenApiSchemaExample(
@@ -171,7 +183,7 @@ export function generateOpenApiSchemaExample(
     return null;
   }
 
-  return generateResolvedSchemaExample(resolved.schema, options.spec, propertyName);
+  return generateResolvedSchemaExample(resolved.schema, options.spec, propertyName, resolved.seenRefs);
 }
 
 export function getOpenApiMediaExample(mediaType: OpenApiMediaType | undefined): unknown {
@@ -200,7 +212,7 @@ export function schemaToTypeLabel(
   if (!resolved) {
     return 'unknown';
   }
-  return schemaTypeLabel(resolved.schema, options.spec, resolved.schemaName);
+  return schemaTypeLabel(resolved.schema, options.spec, resolved.schemaName, resolved.seenRefs);
 }
 
 export function schemaToTypescriptType(
@@ -219,7 +231,7 @@ export function schemaToTypescriptType(
   if (resolved.schemaName && resolved.schemaName !== 'JsonObject') {
     return resolved.schemaName;
   }
-  return schemaToInlineTypescriptType(resolved.schema, options.spec);
+  return schemaToInlineTypescriptType(resolved.schema, options.spec, resolved.seenRefs);
 }
 
 export function isJsonObjectLikeSchema(schema: OpenApiJsonSchema | undefined, spec?: OpenApiDocument): boolean {
@@ -242,29 +254,32 @@ function resolvedSchemaToApiParameters(
   schema: OpenApiJsonSchema,
   spec: OpenApiDocument | undefined,
   requiredList: string[],
+  seenRefs: Set<string>,
 ): ApiParameter[] {
   const schemaTypes = normalizedSchemaTypes(schema);
 
   if (schemaTypes.includes('object')) {
     if (schema.properties && Object.keys(schema.properties).length > 0) {
       return Object.entries(schema.properties).map(([key, value]) => {
-        const resolvedChild = resolveOpenApiSchema(value, spec);
+        const resolvedChild = resolveOpenApiSchema(value, spec, seenRefs);
         const childSchema = resolvedChild?.schema ?? value;
+        const childSeenRefs = resolvedChild?.seenRefs ?? seenRefs;
         const param: ApiParameter = {
           name: key,
-          type: schemaTypeLabel(childSchema, spec, resolvedChild?.schemaName),
+          type: schemaTypeLabel(childSchema, spec, resolvedChild?.schemaName, childSeenRefs),
           desc: childSchema.description || value.description || '',
           required: requiredList.includes(key),
         };
 
         const childTypes = normalizedSchemaTypes(childSchema);
         if (childTypes.includes('object')) {
-          param.children = resolvedSchemaToApiParameters(childSchema, spec, childSchema.required || []);
+          param.children = resolvedSchemaToApiParameters(childSchema, spec, childSchema.required || [], childSeenRefs);
         } else if (childTypes.includes('array') && childSchema.items) {
-          const resolvedItem = resolveOpenApiSchema(childSchema.items, spec);
+          const resolvedItem = resolveOpenApiSchema(childSchema.items, spec, childSeenRefs);
           const itemSchema = resolvedItem?.schema ?? childSchema.items;
+          const itemSeenRefs = resolvedItem?.seenRefs ?? childSeenRefs;
           if (normalizedSchemaTypes(itemSchema).includes('object')) {
-            param.children = resolvedSchemaToApiParameters(itemSchema, spec, itemSchema.required || []);
+            param.children = resolvedSchemaToApiParameters(itemSchema, spec, itemSchema.required || [], itemSeenRefs);
             if (param.children.length === 0 && itemSchema.additionalProperties === true) {
               param.children = [freeFormObjectParameter(itemSchema.description)];
             }
@@ -310,6 +325,7 @@ function schemaTypeLabel(
   schema: OpenApiJsonSchema,
   spec: OpenApiDocument | undefined,
   resolvedSchemaName?: string,
+  seenRefs = new Set<string>(),
 ): string {
   const schemaName = resolvedSchemaName || getOpenApiSchemaName(schema);
   const schemaTypes = normalizedSchemaTypes(schema);
@@ -318,9 +334,9 @@ function schemaTypeLabel(
   }
 
   if (schemaTypes.includes('array')) {
-    const resolvedItem = resolveOpenApiSchema(schema.items, spec);
+    const resolvedItem = resolveOpenApiSchema(schema.items, spec, seenRefs);
     const itemSchema = resolvedItem?.schema ?? schema.items;
-    return `array<${itemSchema ? schemaTypeLabel(itemSchema, spec, resolvedItem?.schemaName) : 'unknown'}>`;
+    return `array<${itemSchema ? schemaTypeLabel(itemSchema, spec, resolvedItem?.schemaName, resolvedItem?.seenRefs ?? seenRefs) : 'unknown'}>`;
   }
   if (schemaTypes.includes('object')) {
     if (!schema.properties && schema.additionalProperties) {
@@ -334,11 +350,16 @@ function schemaTypeLabel(
   return `${type}${format}`;
 }
 
-function schemaToInlineTypescriptType(schema: OpenApiJsonSchema, spec: OpenApiDocument | undefined): string {
+function schemaToInlineTypescriptType(
+  schema: OpenApiJsonSchema,
+  spec: OpenApiDocument | undefined,
+  seenRefs = new Set<string>(),
+): string {
   const schemaTypes = normalizedSchemaTypes(schema);
   if (schemaTypes.includes('array')) {
-    const itemSchema = resolveOpenApiSchema(schema.items, spec)?.schema ?? schema.items;
-    return `${itemSchema ? schemaToInlineTypescriptType(itemSchema, spec) : 'unknown'}[]`;
+    const resolvedItem = resolveOpenApiSchema(schema.items, spec, seenRefs);
+    const itemSchema = resolvedItem?.schema ?? schema.items;
+    return `${itemSchema ? schemaToInlineTypescriptType(itemSchema, spec, resolvedItem?.seenRefs ?? seenRefs) : 'unknown'}[]`;
   }
   if (schemaTypes.includes('object')) {
     return 'Record<string, unknown>';
@@ -362,6 +383,7 @@ function generateResolvedSchemaExample(
   schema: OpenApiJsonSchema,
   spec: OpenApiDocument | undefined,
   propertyName: string,
+  seenRefs: Set<string>,
 ): unknown {
   if (Object.prototype.hasOwnProperty.call(schema, 'example')) {
     return schema.example;
@@ -380,14 +402,24 @@ function generateResolvedSchemaExample(
   if (schemaTypes.includes('object')) {
     const value: Record<string, unknown> = {};
     for (const [key, childSchema] of Object.entries(schema.properties ?? {})) {
-      const resolvedChild = resolveOpenApiSchema(childSchema, spec);
-      value[key] = generateResolvedSchemaExample(resolvedChild?.schema ?? childSchema, spec, key);
+      const resolvedChild = resolveOpenApiSchema(childSchema, spec, seenRefs);
+      value[key] = generateResolvedSchemaExample(
+        resolvedChild?.schema ?? childSchema,
+        spec,
+        key,
+        resolvedChild?.seenRefs ?? seenRefs,
+      );
     }
     return value;
   }
   if (schemaTypes.includes('array')) {
-    const itemSchema = resolveOpenApiSchema(schema.items, spec)?.schema ?? schema.items;
-    return [itemSchema ? generateResolvedSchemaExample(itemSchema, spec, propertyName) : null];
+    const resolvedItem = resolveOpenApiSchema(schema.items, spec, seenRefs);
+    const itemSchema = resolvedItem?.schema ?? schema.items;
+    return [
+      itemSchema
+        ? generateResolvedSchemaExample(itemSchema, spec, propertyName, resolvedItem?.seenRefs ?? seenRefs)
+        : null,
+    ];
   }
   if (schemaTypes.includes('string')) {
     if (schema.format === 'date-time') {
@@ -417,19 +449,21 @@ function mergeAllOfSchemas(
   schema: OpenApiJsonSchema,
   spec: OpenApiDocument | undefined,
   seenRefs: Set<string>,
-): OpenApiJsonSchema {
+): ResolvedOpenApiSchema {
   const merged: OpenApiJsonSchema = {
     ...schema,
     allOf: undefined,
     properties: { ...(schema.properties ?? {}) },
     required: [...(schema.required ?? [])],
   };
+  let mergedSeenRefs = new Set(seenRefs);
 
   for (const part of schema.allOf ?? []) {
-    const resolved = resolveOpenApiSchema(part, spec, new Set(seenRefs));
+    const resolved = resolveOpenApiSchema(part, spec, new Set(mergedSeenRefs));
     if (!resolved) {
       continue;
     }
+    mergedSeenRefs = new Set([...mergedSeenRefs, ...resolved.seenRefs]);
     merged.type = merged.type || resolved.schema.type;
     merged.description = merged.description || resolved.schema.description;
     merged.additionalProperties = merged.additionalProperties ?? resolved.schema.additionalProperties;
@@ -447,7 +481,11 @@ function mergeAllOfSchemas(
     delete merged.required;
   }
 
-  return merged;
+  return {
+    schema: merged,
+    schemaName: schema.title,
+    seenRefs: mergedSeenRefs,
+  };
 }
 
 function resolveLocalSchemaRef(spec: OpenApiDocument | undefined, ref: string): OpenApiJsonSchema | undefined {

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33667,
+  "uuid": "skill-clawhub-business-income-tracker",
+  "skillKey": "clawhub-business-income-tracker",
+  "name": "Business Income Tracker",
+  "summary": "Track daily income and expenses, auto-calculate weekly/monthly ROI, monitor channels, and compare expected vs actual business revenue.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.business_income_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gdp6539",
+      "features": [
+        "Track daily income and expenses, auto-calculate weekly/monthly ROI, monitor channels, and compa."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/business-income-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/198542148?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "business-income-tracker",
+      "url": "https://clawhub.ai/skills/business-income-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "business-income-tracker",
+    "url": "https://clawhub.ai/skills/business-income-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/business-income-tracker-ae1837c3bd2f002b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/business-income-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-business-income-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2cbccb96143b7ad713fc6cd5cb0daf55c7509ec5fb477070e2ff4fc9a4166113",
+      "artifactSizeBytes": 2324
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T21:50:23.050Z"
+}

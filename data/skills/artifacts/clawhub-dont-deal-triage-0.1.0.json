@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dont-deal-triage@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dont_deal_triage",
+  "skill": {
+    "id": 44624,
+    "skillKey": "clawhub-dont-deal-triage",
+    "name": "Dont Deal Triage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dont-deal-triage",
+    "url": "https://clawhub.ai/skills/dont-deal-triage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dont-deal-triage-0b89101a7cf08ea7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when a developer or desk worker reports chest pain, chest pressure, left arm or jaw discomfort, shortness of breath, unusual sweating, faintne..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shaoqing404",
+      "userId": "s17aac4c793h4twfj4krkyv0xh840711",
+      "displayName": "少卿",
+      "image": "https://avatars.githubusercontent.com/u/121151546?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775035393338,
+      "changelog": "dont-deal-triage 0.1.0 – Initial release\n\n- Provides conservative, local-first triage for chest pain or exhaustion reports among developers and desk workers.\n- Implements fast \"red vs yellow\" decision flow for emergency vs urgent response.\n- Integrates local context via host and git activity snapshot, prioritizing current symptoms.\n- Enforces privacy: reads only local git and host state; persists user history only with consent.\n- Maintains short, action-oriented conversations focused on safety, avoiding reassurance or long histories in emergencies.\n- Supports bystander use; includes clear, imperative instructions for emergency action.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3cbedb6b8b731b9310211903b306d91afe3ccc3f5fcdae4a70fb682c2749fbc2"
+}

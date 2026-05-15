@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/valuesider-superinvestor-data@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.valuesider_superinvestor_data",
+  "skill": {
+    "id": 28484,
+    "skillKey": "clawhub-valuesider-superinvestor-data",
+    "name": "ValueSider Superinvestor Data"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "valuesider-superinvestor-data",
+    "url": "https://clawhub.ai/skills/valuesider-superinvestor-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/valuesider-superinvestor-data-91ad59ea0f2ccfeb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetches Superinvestors' 13F portfolio holdings and buy/sell activity from ValueSider (valuesider.com). Use when the user asks for guru portfolio, 13F holding..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "laimiaohua",
+      "userId": "publishers:laimiaohua",
+      "displayName": "laimiaohua",
+      "image": "https://avatars.githubusercontent.com/u/36961979?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 325,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772706790500,
+      "changelog": "Initial release of ValueSider Superinvestor Data skill:\n\n- Fetches Superinvestors' 13F portfolio holdings and trading activity from ValueSider.\n- Supports queries for guru portfolios, 13F holdings, and buy/sell actions.\n- Utilizes real-time web page fetching with a parsing script to extract data when needed.\n- Provides guidance for resolving manager slugs and presenting parsed data.\n- Offers alternative script-based fetching for compatible environments.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d610aea47edc4fc3258d31f994f93c9a2185252dee3ad6fd5c4dbb858a608258"
+}

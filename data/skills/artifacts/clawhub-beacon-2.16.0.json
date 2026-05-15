@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/beacon@2.16.0",
+  "version": "2.16.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beacon",
+  "skill": {
+    "id": 11538,
+    "skillKey": "clawhub-beacon",
+    "name": "Beacon"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beacon",
+    "url": "https://clawhub.ai/skills/beacon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beacon-8a62e967fcd6dfa5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send agent-to-agent pings with likes, comments, upvotes, adverts, and signed RustChain RTC payments across BoTTube, Moltbook, and LAN UDP."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "scottcjn",
+      "userId": "s17482w7yjab0gy0pwwjq5nzcx83n209",
+      "displayName": "AutoJanitor",
+      "image": "https://avatars.githubusercontent.com/u/121303252?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1300,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 8,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "2.16.0",
+      "createdAt": 1773012962719,
+      "changelog": "v2.16.0: SEO dofollow backlinks on crawlable agent profile pages, cross-LLM output formats (HTML/JSON-LD/Markdown), relay-driven backlink generation for agent discoverability by search engines",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cefe8f024f5b0bfc31c9f77090c1b9aec6fb836e9c205bedb3426f820ebd9dcc"
+}

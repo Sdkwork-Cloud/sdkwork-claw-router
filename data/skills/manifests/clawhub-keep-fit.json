@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35375,
+  "uuid": "skill-clawhub-keep-fit",
+  "skillKey": "clawhub-keep-fit",
+  "name": "Keep Fit",
+  "summary": "Generate sustainable fitness plans, daily workouts, and health routines based on user goals, time, and fitness level.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.keep_fit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "know-hub",
+      "features": [
+        "Generate sustainable fitness plans, daily workouts, and health routines based on user goals, ti."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/keep-fit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/214209974?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "keep-fit",
+      "url": "https://clawhub.ai/skills/keep-fit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "keep-fit",
+    "url": "https://clawhub.ai/skills/keep-fit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/keep-fit-ba9e9ac32d481539.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/keep-fit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-keep-fit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a3744e84009981ec8137c1ae2095f3a3124d8e6741fff2bfb8fd5f4f32941599",
+      "artifactSizeBytes": 2366
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T10:42:03.867Z"
+}

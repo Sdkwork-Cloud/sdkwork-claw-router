@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/learning-method-coach@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.learning_method_coach",
+  "skill": {
+    "id": 21401,
+    "skillKey": "clawhub-learning-method-coach",
+    "name": "Learning Method Coach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "learning-method-coach",
+    "url": "https://clawhub.ai/skills/learning-method-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/learning-method-coach-daf0570cf30bf104.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate evidence-based learning plans using retrieval and spaced practice"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 481,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774495918478,
+      "changelog": "- Initial release of Learning Method Coach.\n- Generates actionable, evidence-based learning plans using retrieval and spaced practice.\n- Tailors plans to user goals, schedule, current level, and learning challenges.\n- Provides structured outputs: phased breakdown, weekly schedule, retrieval practice methods, spaced review, and clear completion standards.\n- Offers specific prompting guidelines to ensure effective, science-based advice.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:afd287ba4061594c9943184d4aecafbb41d97612e6f22d0311605e3ff6c1fb91"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26320,
+  "uuid": "skill-clawhub-casely",
+  "skillKey": "clawhub-casely",
+  "name": "Casely",
+  "summary": "Intelligent QA assistant that automates writing test cases from project documentation. Use when the user wants to generate test cases from requirements, runs...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.casely",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JohnWayneeee",
+      "features": [
+        "Intelligent QA assistant that automates writing test cases from project documentation",
+        "Use when the user wants to generate test cases from requirements, runs..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/casely@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/197433537?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "casely",
+      "url": "https://clawhub.ai/skills/casely"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "casely",
+    "url": "https://clawhub.ai/skills/casely",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/casely-4ec843b1016d4a96.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/casely@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-casely-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9f34a3689d7ab5613a1e7081f09a9519fd9c5a66ca6097a5cea69b2b189b7488",
+      "artifactSizeBytes": 2446
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T14:35:38.774Z"
+}

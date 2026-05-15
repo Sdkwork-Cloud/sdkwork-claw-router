@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40518,
+  "uuid": "skill-clawhub-contributor-guide-writer",
+  "skillKey": "clawhub-contributor-guide-writer",
+  "name": "Contributor Guide Writer",
+  "summary": "Analyze the current project structure, package manager, and build tools to generate a comprehensive, standardized CONTRIBUTING.md file. Trigger when the user...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.contributor_guide_writer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xudong Guo",
+      "features": [
+        "Analyze the current project structure, package manager, and build tools to generate a comprehen.",
+        "Trigger when the user..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/contributor-guide-writer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24563928?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "contributor-guide-writer",
+      "url": "https://clawhub.ai/skills/contributor-guide-writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "contributor-guide-writer",
+    "url": "https://clawhub.ai/skills/contributor-guide-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/contributor-guide-writer-92ae833b17f878ea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/contributor-guide-writer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-contributor-guide-writer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ce9db3d987895adca7b0f540090e40380d75c5e0660f0adf76e8da0d02d97cc",
+      "artifactSizeBytes": 2132
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T09:05:38.985Z"
+}

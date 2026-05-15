@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-model-manager@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_model_manager",
+  "skill": {
+    "id": 63160,
+    "skillKey": "clawhub-openclaw-model-manager",
+    "name": "Model Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-model-manager",
+    "url": "https://clawhub.ai/skills/openclaw-model-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-model-manager-6f9b3f61d908250c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw 模型配置管理技能。用于添加、删除、更新、查看、切换、检测模型配置。当用户需要：(1) 添加新模型到配置 (2) 删除模型 (3) 更新模型参数（contextWindow、maxTokens等）(4) 查看当前模型列表 (5) 切换主模型 (6) 检查模型可用状态（测试连接）(7) 修复模型配置..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "the2015",
+      "userId": "s17angrjdd1xvvcvrb8k08cdr9848vzr",
+      "displayName": "the2015",
+      "image": "https://avatars.githubusercontent.com/u/35129808?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775399297415,
+      "changelog": "v1.0.1 增强说明：\n\n- 补全和丰富了使用说明，新增适用场景、核心能力、常见用户请求示例等说明。\n- 明确了模型状态检测的并行测试方式、排序规则和分组逻辑。\n- 优化错误码处理说明，补充`401/403/429/400/5xx`等常见原因解释。\n- 增加了主模型切换前的检查建议，强调修改后需重启生效。\n- 进一步规范了文档结构和提示信息，便于日常维护和故障排查。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0e6c8f990644b42fd33650998ca9ec3b437517378274df032cc41f45986378c8"
+}

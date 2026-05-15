@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73434,
+  "uuid": "skill-clawhub-bw-invoice-verification-service",
+  "skillKey": "clawhub-bw-invoice-verification-service",
+  "name": "百望股份智能发票查验",
+  "summary": "百望股份智能发票查验，支持发票文本核验、图片核验、批量核验、额度查询、套餐查询和充值下单。",
+  "version": "0.6.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bw_invoice_verification_service",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "weidd130",
+      "features": [
+        "百望股份智能发票查验，支持发票文本核验、图片核验、批量核验、额度查询、套餐查询和充值下单。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bw-invoice-verification-service@0.6.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45308376?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bw-invoice-verification-service",
+      "url": "https://clawhub.ai/skills/bw-invoice-verification-service"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bw-invoice-verification-service",
+    "url": "https://clawhub.ai/skills/bw-invoice-verification-service",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bw-invoice-verification-service-33d0bedcc4823ce0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bw-invoice-verification-service@0.6.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-bw-invoice-verification-service-0.6.2.json",
+      "version": "0.6.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf35e80952e7b268a933035cda9c862666d59340362c53d05f24789df7a9f09c",
+      "artifactSizeBytes": 2053
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T05:57:26.560Z"
+}

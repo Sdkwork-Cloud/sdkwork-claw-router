@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/2026-02-10-clawhub-clawvault-1-5-1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.2026_02_10_clawhub_clawvault_1_5_1",
+  "skill": {
+    "id": 14392,
+    "skillKey": "clawhub-2026-02-10-clawhub-clawvault-1-5-1",
+    "name": "2026 02 10 Clawhub Clawvault 1.5.1"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "2026-02-10-clawhub-clawvault-1-5-1",
+    "url": "https://clawhub.ai/skills/2026-02-10-clawhub-clawvault-1-5-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/2026-02-10-clawhub-clawvault-1-5-1-4288a9acf1173dfb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Structured memory system for OpenClaw agents. Context death resilience (checkpoint/recover), structured storage, Obsidian-compatible markdown, local semantic search, and session transcript repair."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pin-alt",
+      "userId": "publishers:pin-alt",
+      "displayName": "pin-alt",
+      "image": "https://avatars.githubusercontent.com/u/139849587?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1119,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770876286850,
+      "changelog": "- Initial release of ClawVault v1.5.1 for OpenClaw agents.\n- Provides structured memory storage with context death resilience (checkpoint/recover flow).\n- Supports Obsidian-compatible markdown, local semantic search, and session transcript repair.\n- Includes commands for waking, sleeping, checkpointing, capturing, remembering by type, searching, linking, and health checks.\n- Features session transcript repair for fixing broken Anthropic API sessions.\n- Integrates with qmd for fast and semantic search within the vault.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c020b087b2518dbf19a9ef1f2266eb95bc2087daa3049b1938736188278bc904"
+}

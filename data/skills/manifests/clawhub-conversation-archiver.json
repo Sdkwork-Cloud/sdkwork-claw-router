@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23333,
+  "uuid": "skill-clawhub-conversation-archiver",
+  "skillKey": "clawhub-conversation-archiver",
+  "name": "Conversation Archiver",
+  "summary": "Archive completed conversations and projects. Use on project completion, resolved threads, or when asked to archive a conversation. Writes structured summari...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.conversation_archiver",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "npfaerber",
+      "features": [
+        "Archive completed conversations and projects",
+        "Use on project completion, resolved threads, or when asked to archive a conversation",
+        "Writes structured summari..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/conversation-archiver@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258851131?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "conversation-archiver",
+      "url": "https://clawhub.ai/skills/conversation-archiver"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "conversation-archiver",
+    "url": "https://clawhub.ai/skills/conversation-archiver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/conversation-archiver-ff7445fe367a3a28.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/conversation-archiver@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-conversation-archiver-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:44df24a71e8ed8d986972d260aabeb567b7cb354050f021c00863177c7a4c4bf",
+      "artifactSizeBytes": 2385
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T10:17:15.345Z"
+}

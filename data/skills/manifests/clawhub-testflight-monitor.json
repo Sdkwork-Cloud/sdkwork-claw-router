@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17331,
+  "uuid": "skill-clawhub-testflight-monitor",
+  "skillKey": "clawhub-testflight-monitor",
+  "name": "TestFlight Seat Monitor",
+  "summary": "Monitor available TestFlight beta slots with smart app lookups and silent batch checking. Get alerted when slots open up.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.testflight_monitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jon Newton",
+      "features": [
+        "Monitor available TestFlight beta slots with smart app lookups and silent batch checking",
+        "Get alerted when slots open up."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/testflight-monitor@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/73410390?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "testflight-monitor",
+      "url": "https://clawhub.ai/skills/testflight-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "testflight-monitor",
+    "url": "https://clawhub.ai/skills/testflight-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/testflight-monitor-db41c4a7482a4269.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/testflight-monitor@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-testflight-monitor-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c63191de3756e859755981aeb1e88e0205370cfe9c2d0c5bf05b8b2e8a423fb2",
+      "artifactSizeBytes": 1933
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T11:37:13.653Z"
+}

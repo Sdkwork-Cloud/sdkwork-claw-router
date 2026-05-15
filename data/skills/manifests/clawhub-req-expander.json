@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73396,
+  "uuid": "skill-clawhub-req-expander",
+  "skillKey": "clawhub-req-expander",
+  "name": "明源云需求扩写",
+  "summary": "依据需求概述，按明源定制开发设计要点输出可覆盖研发、测试的详细需求要点；",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.req_expander",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mamamacb",
+      "features": [
+        "依据需求概述，按明源定制开发设计要点输出可覆盖研发、测试的详细需求要点；"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/req-expander@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/232988242?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "req-expander",
+      "url": "https://clawhub.ai/skills/req-expander"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "req-expander",
+    "url": "https://clawhub.ai/skills/req-expander",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/req-expander-d5ee1de11dd6017a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/req-expander@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-req-expander-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fdae365b680e9e4799757a3a7b0aa2a7d27e7040cb0e7b441c526ee0f2be9ffb",
+      "artifactSizeBytes": 2089
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T09:19:40.454Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vikunja-api@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vikunja_api",
+  "skill": {
+    "id": 34890,
+    "skillKey": "clawhub-vikunja-api",
+    "name": "Vikunja"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vikunja-api",
+    "url": "https://clawhub.ai/skills/vikunja-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vikunja-api-4c57a93aa77bc689.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with a Vikunja task management instance via its REST API. Use this skill whenever the user wants to manage tasks, projects, labels, assignees, or re..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "seergs",
+      "userId": "s172f5mdjkczbw4jy6v3m5xw3s83z9b1",
+      "displayName": "Sergio",
+      "image": "https://avatars.githubusercontent.com/u/24534525?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775435616162,
+      "changelog": "Feat: Add support for tasks relationships",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8915168e1e3b7a6ba472364e7f3f67e7536510ba3759f64610013d098e05a7fa"
+}

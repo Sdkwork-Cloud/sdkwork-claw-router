@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69157,
+  "uuid": "skill-clawhub-project-assistant",
+  "skillKey": "clawhub-project-assistant",
+  "name": "project-assistant",
+  "summary": "项目初始化与智能分析工具。当用户要求初始化新项目、分析项目结构、项目问答时使用。触发词：初始化项目、init、分析项目、项目问答。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.project_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Northcipher",
+      "features": [
+        "项目初始化与智能分析工具。当用户要求初始化新项目、分析项目结构、项目问答时使用。触发词：初始化项目、init、分析项目、项目问答。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/project-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/71312216?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "project-assistant",
+      "url": "https://clawhub.ai/skills/project-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "project-assistant",
+    "url": "https://clawhub.ai/skills/project-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/project-assistant-0142ef274a812144.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/project-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-project-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1dcb9052d6107e9b7b94d32814bb92ca2f82b4b0868f2bf20ca8a0cdb088f31d",
+      "artifactSizeBytes": 2431
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T07:50:14.040Z"
+}

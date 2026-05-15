@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dlazy-kling-v3@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dlazy_kling_v3",
+  "skill": {
+    "id": 13949,
+    "skillKey": "clawhub-dlazy-kling-v3",
+    "name": "Dlazy Kling V3"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dlazy-kling-v3",
+    "url": "https://clawhub.ai/skills/dlazy-kling-v3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dlazy-kling-v3-860bb3ff03542740.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Powerful video generation with Kling v3. Supports high-quality text-to-video and image-to-video."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dlazyai",
+      "userId": "s170j1ymymrxasgd00dsk7tckx84cf45",
+      "displayName": "dlazy",
+      "image": "https://avatars.githubusercontent.com/u/274158181?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1302,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1778076442504,
+      "changelog": "- Updated to version 1.1.1\n- Help text for --generation_mode now clarifies option meanings: frames=Frames; components=Components\n- No functional or API changes; documentation improved for user clarity",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a1e95a5aebf6578bd7e20d431c220b926f04920b64da6a011ac208d3fcebc004"
+}

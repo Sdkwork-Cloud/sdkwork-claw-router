@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57172,
+  "uuid": "skill-clawhub-on-page-seo-auditor",
+  "skillKey": "clawhub-on-page-seo-auditor",
+  "name": "On Page Seo Auditor",
+  "summary": "Audit on-page SEO: titles, headers, images, links with scored report and fix priorities. 页面SEO审计/排名诊断",
+  "version": "9.9.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.on_page_seo_auditor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aaron Zhu",
+      "features": [
+        "Audit on-page SEO: titles, headers, images, links with scored report and fix priorities",
+        "页面SEO审计/排名诊断"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/on-page-seo-auditor@9.9.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139607425?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "on-page-seo-auditor",
+      "url": "https://clawhub.ai/skills/on-page-seo-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "on-page-seo-auditor",
+    "url": "https://clawhub.ai/skills/on-page-seo-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/on-page-seo-auditor-1f61e8e128332b27.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/on-page-seo-auditor@9.9.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-on-page-seo-auditor-9.9.5.json",
+      "version": "9.9.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a0fe0e9660156c641fb60a3337b91615156867fcbe042e053cebaf2fbcb48395",
+      "artifactSizeBytes": 1901
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T04:05:39.068Z"
+}

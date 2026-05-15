@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/industry-research-maching-engine@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.industry_research_maching_engine",
+  "skill": {
+    "id": 66770,
+    "skillKey": "clawhub-industry-research-maching-engine",
+    "name": "Industry Research Maching Engine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "industry-research-maching-engine",
+    "url": "https://clawhub.ai/skills/industry-research-maching-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/industry-research-maching-engine-9adf6da0773fa34a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "你的核心任务是：接收用户输入的【本科专业】，通过“政策-学术-就业”三维逻辑，输出一份**绝对客对客观**的考研专业与院校方向选择指导报告。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tsingliuwin",
+      "userId": "s174akkb8q5djyfqbckt0d5wfs83k1cz",
+      "displayName": "Tsingliu",
+      "image": "https://avatars.githubusercontent.com/u/14992305?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774431697970,
+      "changelog": "- 强化了数据采集和溯源要求，新增必须用 baidu-search 和 web_fetch 技能“真实抓取”研招网、院校官网、招聘平台数据，明令禁止使用模拟或虚构数据。\n- 明确了报告中需注明关键数据来源或时间节点，提高信息时效性与可靠性。\n- 保持输出结构和咨询语言风格不变，进一步细化数据可信约束和检索流程。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e4e512e54454129c76faa283756cf455acf7075f511a7d719294da517737a1a4"
+}

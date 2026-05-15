@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67998,
+  "uuid": "skill-clawhub-pans-tech-profile",
+  "skillKey": "clawhub-pans-tech-profile",
+  "name": "Pans Tech Profile",
+  "summary": "分析目标公司的技术栈和算力需求，为 AI 算力销售提供客户画像。 自动采集公司官网、招聘页面、GitHub、新闻等数据源，输出技术栈分析、 GPU 需求量级估算、推理/训练比例及销售切入建议。 触发词：技术栈分析、公司技术画像、tech profile、算力需求评估、客户技术调研",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pans_tech_profile",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dashiming",
+      "features": [
+        "分析目标公司的技术栈和算力需求，为 AI 算力销售提供客户画像。 自动采集公司官网、招聘页面、GitHub、新闻等数据源，输出技术栈分析、 GPU 需求量级估算、推理/训练比例及销售切入建议."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pans-tech-profile@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28342384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pans-tech-profile",
+      "url": "https://clawhub.ai/skills/pans-tech-profile"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pans-tech-profile",
+    "url": "https://clawhub.ai/skills/pans-tech-profile",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pans-tech-profile-9d4ce4b7616f8e27.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pans-tech-profile@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pans-tech-profile-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3fcd015deadc392513c37d31549657c0ee2eb4dab3ea8b6471ee31236a46d2e6",
+      "artifactSizeBytes": 2501
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T02:38:24.070Z"
+}

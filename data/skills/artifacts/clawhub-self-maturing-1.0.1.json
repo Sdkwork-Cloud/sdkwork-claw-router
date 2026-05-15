@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/self-maturing@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_maturing",
+  "skill": {
+    "id": 38702,
+    "skillKey": "clawhub-self-maturing",
+    "name": "Daily Growth & Maturity"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-maturing",
+    "url": "https://clawhub.ai/skills/self-maturing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-maturing-ec2d0157fec3bd4a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Self-reflection, correction logging, persistent memory, WAL protocol, cold-boot recovery, and automated daily review with self-healing cron. Evaluates own wo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "joelsalespossible",
+      "userId": "s17b0sq94ks1kwhv9gz1n05prx83h6qf",
+      "displayName": "Joel Yi - DeployAIBots.com",
+      "image": "https://avatars.githubusercontent.com/u/262135669?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774536622312,
+      "changelog": "- Latest release of \"self-maturing\" skill.\n- Added configuration file: clawhub.json.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f9315f34bf6d84863468c1dd5bcb738fbb6300f1143eba3571cef5c0c4a6e0b9"
+}

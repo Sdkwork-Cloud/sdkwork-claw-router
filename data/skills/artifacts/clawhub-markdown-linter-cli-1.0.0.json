@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/markdown-linter-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.markdown_linter_cli",
+  "skill": {
+    "id": 26284,
+    "skillKey": "clawhub-markdown-linter-cli",
+    "name": "Markdown Linter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "markdown-linter-cli",
+    "url": "https://clawhub.ai/skills/markdown-linter-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/markdown-linter-cli-e4e107edffcf3992.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Lint Markdown files for formatting issues, broken links, and style consistency."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "derick001",
+      "userId": "s17cgtq72c704n9jrtdh3v2eq983fhgb",
+      "displayName": "Derick",
+      "image": "https://avatars.githubusercontent.com/u/114499711?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 371,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773238007194,
+      "changelog": "Initial release of markdown-linter-cli.\n\n- Lints Markdown files for formatting issues, style consistency, and broken/bad links\n- Supports header hierarchy, image alt text, internal/external link validation, line length, trailing whitespace, and more\n- Provides configurable CLI options for input files, max line length, rule ignoring, and external link checking\n- Outputs detailed linting results and summaries in JSON format\n- Includes rule reference for all checks performed",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:97bdcc1d3a664104fd6bc35bcb9312457c3f2d60a2762ea941c5e48b0e982faf"
+}

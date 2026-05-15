@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nanobanana2-apiyi@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nanobanana2_apiyi",
+  "skill": {
+    "id": 22740,
+    "skillKey": "clawhub-nanobanana2-apiyi",
+    "name": "nanobanana2-apiyi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nanobanana2-apiyi",
+    "url": "https://clawhub.ai/skills/nanobanana2-apiyi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nanobanana2-apiyi-0a301d48473f9367.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images via APIYI (Gemini 3.1 Flash Image Preview). Use when user wants to generate images from text descriptions. Supports keyword extraction, promp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yunni123",
+      "userId": "s17d4pkdsm5dpha1f8ez2msak983g3gd",
+      "displayName": "Heaven",
+      "image": "https://avatars.githubusercontent.com/u/23333359?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 363,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773651000941,
+      "changelog": "- Updated skill name and functionality to \"nano-banana2-apiyi\", focusing on image generation using APIYI (Gemini 3.1 Flash Image Preview).\n- Added a structured, multi-step workflow for generating images from user text prompts, with mandatory Chinese keyword suggestion flow and user confirmation before image generation.\n- Introduced prompt restructuring guidance, including extracting key elements (subject, style, mood) and converting to optimized English prompts.\n- Provided detailed examples and templates for both Chinese and English prompt workflows.\n- Updated environment and API key setup instructions.\n- Removed obsolete metadata/config file: _meta.json.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a8eb38b2cbd53e40e77f06e697416a2745c21cc4c35aeac90bef071fd1e22f15"
+}

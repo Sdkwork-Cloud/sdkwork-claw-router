@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rf-customer-support@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rf_customer_support",
+  "skill": {
+    "id": 72274,
+    "skillKey": "clawhub-rf-customer-support",
+    "name": "射频领域客户项目技术支持"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rf-customer-support",
+    "url": "https://clawhub.ai/skills/rf-customer-support",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rf-customer-support-b700c0f209042269.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供射频领域客户项目技术支持的全流程指导。当用户询问射频项目发掘、器件选型、Design-In流程、客诉处理等问题时调用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mssnzxm",
+      "userId": "s178qb8q1v89cx2p2gxgah65rn83mkxn",
+      "displayName": "mssnzxm",
+      "image": "https://avatars.githubusercontent.com/u/3816752?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 205,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774496282511,
+      "changelog": "rf-customer-support v1.0.0\n\n- Initial release providing comprehensive technical support workflow for RF customer projects.\n- Covers project opportunity identification, device selection, Design-In processes, customer complaint (RMA) handling, and project management.\n- Includes detailed checklists, evaluation criteria, communication templates, and knowledge management best practices.\n- Structured guidance for project tracking, customer relationship management, and technical documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0686cdfc5c965c3d1b2cddea4846f4a9c990e27279ac96d9a4f55fcdbdb1cad1"
+}

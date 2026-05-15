@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/audit-code@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audit_code",
+  "skill": {
+    "id": 10056,
+    "skillKey": "clawhub-audit-code",
+    "name": "Audit Code"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audit-code",
+    "url": "https://clawhub.ai/skills/audit-code",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audit-code-17dbe85a695d61ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Security-focused code review for hardcoded secrets, dangerous calls, and common vulnerabilities"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "itsnishi",
+      "userId": "s1731fs5mvb843mj295egzx6rh83gzbc",
+      "displayName": "ItsNishi",
+      "image": "https://avatars.githubusercontent.com/u/57697088?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2734,
+      "installsAllTime": 12,
+      "installsCurrent": 10,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1774570886379,
+      "changelog": "- Expand pattern database from ~70 to 151 patterns across 15 categories\n- Add 5 new categories: code_before_review, config_backdoor, memory_corruption, confused_delegation, persistence\n- Add live package verification -- pip/npm install commands checked against PyPI/npm in real time\n- Non-existent packages flagged CRITICAL (slopsquatting/hallucination detection)\n- New coverage: reverse shells, cloud IMDS, env var hijacking, persistence mechanisms, dependency confusion, GitHub Actions poisoning, 16+ obfuscation techniques\n- Document advisory hook behavior in SKILL.md",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c2d6e3091cf41e426abd9f4f3b609651eae16579ccb01798337d10121f7f239c"
+}

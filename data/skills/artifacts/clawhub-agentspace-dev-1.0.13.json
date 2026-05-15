@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentspace-dev@1.0.13",
+  "version": "1.0.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentspace_dev",
+  "skill": {
+    "id": 52493,
+    "skillKey": "clawhub-agentspace-dev",
+    "name": "🪢 Agentspace — See what your dev agent is doing, from anywhere"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentspace-dev",
+    "url": "https://clawhub.ai/skills/agentspace-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentspace-dev-d0d8dd1b86b740d3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "See what your AI dev agent is doing, from anywhere — free, no-signup live dev workspace for AI agent development. The dev agent keeps writing — logs, generat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kalvinrv",
+      "userId": "s174jr69zc5t7a5tqprq4d0rq583y1x3",
+      "displayName": "Kalvin",
+      "image": "https://avatars.githubusercontent.com/u/58277734?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1210,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "1.0.13",
+      "createdAt": 1777373716541,
+      "changelog": "- Updated the agentspace.so homepage link to include UTM parameters for tracking.\n- No other content or functional changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ca8f3a0e406c0418f59f89b282d192323244d460628ec45ac9c245a7510286e5"
+}

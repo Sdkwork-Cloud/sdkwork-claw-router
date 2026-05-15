@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65433,
+  "uuid": "skill-clawhub-tesla-cn",
+  "skillKey": "clawhub-tesla-cn",
+  "name": "Tesla China",
+  "summary": "面向中国特斯拉车主的远程控制技能，基于特斯拉官方车队 API（Fleet API）实现，使用简单、体验自然。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tesla_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mywind2020",
+      "features": [
+        "面向中国特斯拉车主的远程控制技能，基于特斯拉官方车队 API（Fleet API）实现，使用简单、体验自然。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tesla-cn@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/64183208?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tesla-cn",
+      "url": "https://clawhub.ai/skills/tesla-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tesla-cn",
+    "url": "https://clawhub.ai/skills/tesla-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tesla-cn-ce7c50a8e8de256a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tesla-cn@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-tesla-cn-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:26c188896743cb7177571be45a5120db233f19e4d01b927f5eb3ec9341ebd213",
+      "artifactSizeBytes": 2367
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T12:38:44.557Z"
+}

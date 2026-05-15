@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tmp-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tmp_skill",
+  "skill": {
+    "id": 21442,
+    "skillKey": "clawhub-tmp-skill",
+    "name": "Tmp Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tmp-skill",
+    "url": "https://clawhub.ai/skills/tmp-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tmp-skill-4722fe0bc5af6743.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CRM integration, lead tracking, outreach automation, and pipeline management. Transform your AI agent into a sales assistant that never lets leads slip throu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alexeyvorobiev",
+      "userId": "publishers:alexeyvorobiev",
+      "displayName": "AlexeyVorobiev",
+      "image": "https://avatars.githubusercontent.com/u/4204488?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 499,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772307988409,
+      "changelog": "Initial release of the Sales Skill.\n\n- CRM integration for lead tracking and pipeline management.\n- Automated outreach sequences and follow-up reminders.\n- Templates and best practices for lead qualification, meeting prep, and objection handling.\n- Analytics tracking for pipeline metrics and deal velocity.\n- Designed to ensure no sales opportunity slips through the cracks.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f146b512734576483305e90c4c5fec075e82e60eadd5a5a4fcedd72acd33a6c1"
+}

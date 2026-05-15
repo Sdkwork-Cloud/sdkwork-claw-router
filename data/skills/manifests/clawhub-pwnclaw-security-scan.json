@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12913,
+  "uuid": "skill-clawhub-pwnclaw-security-scan",
+  "skillKey": "clawhub-pwnclaw-security-scan",
+  "name": "PwnClaw Security Scan",
+  "summary": "Test your AI agent for security vulnerabilities using PwnClaw. Runs 50+ attacks (prompt injection, jailbreaks, social engineering, MCP poisoning, and more) and provides fix instructions. Use when your agent needs a security check or harden.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pwnclaw_security_scan",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gemini2027",
+      "features": [
+        "Test your AI agent for security vulnerabilities using PwnClaw",
+        "Runs 50+ attacks (prompt injection, jailbreaks, social engineering, MCP poisoning, and more) an.",
+        "Use when your agent needs a security check or hardening."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pwnclaw-security-scan@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258200362?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pwnclaw-security-scan",
+      "url": "https://clawhub.ai/skills/pwnclaw-security-scan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pwnclaw-security-scan",
+    "url": "https://clawhub.ai/skills/pwnclaw-security-scan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pwnclaw-security-scan-d80aa3fe2acb9554.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pwnclaw-security-scan@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pwnclaw-security-scan-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b4f17a9bf35b4fe3de4b1a4f50880330c778a97d320d000588093ff5f3209e5b",
+      "artifactSizeBytes": 2234
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T21:26:26.926Z"
+}

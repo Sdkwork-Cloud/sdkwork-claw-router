@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/genlayer@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.genlayer",
+  "skill": {
+    "id": 12441,
+    "skillKey": "clawhub-genlayer",
+    "name": "Genlayer Claw Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "genlayer",
+    "url": "https://clawhub.ai/skills/genlayer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/genlayer-7df70b6629876fc3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Explain and discuss GenLayer, the AI-native blockchain enabling trustless, consensus-based decision-making with intelligent contracts and multi-LLM validators."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "acastellana",
+      "userId": "publishers:acastellana",
+      "displayName": "acastellana",
+      "image": "https://avatars.githubusercontent.com/u/4104509?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1689,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770056486863,
+      "changelog": "- Initial release of the genlayer-claw-skill for GenLayer protocol knowledge.\n- Explains GenLayer's vision, protocol architecture, and Optimistic Democracy consensus for trustless AI decision-making.\n- Includes quick-reference summaries, elevator pitches, and technical overviews for varied audiences.\n- Covers core concepts such as Intelligent Contracts, validator mechanics, consensus, staking, and the ecosystem.\n- Provides file references and key links to documentation, SDK, and community resources.\n- Clarifies use cases and differentiators from oracles and other AI chains.\n- Advises developers to use the separate skill for contract development (genlayer-dev-claw-skill).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2528c820eed9d129e1d1ed3db509cc9b003dd29187c4197c28a75f55bebb7b53"
+}

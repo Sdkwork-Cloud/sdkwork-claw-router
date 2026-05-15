@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70987,
+  "uuid": "skill-clawhub-dji",
+  "skillKey": "clawhub-dji",
+  "name": "Dji",
+  "summary": "大疆创新公司介绍和无人机产品指南",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dji",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "大疆创新公司介绍和无人机产品指南"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dji@3.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dji",
+      "url": "https://clawhub.ai/skills/dji"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dji",
+    "url": "https://clawhub.ai/skills/dji",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dji-384585e6cc15335f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dji@3.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dji-3.2.0.json",
+      "version": "3.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9b7c3e86c7e35d48662656ae57ede3c9d1c0d3a4e0e09d352f5d4587f0310a47",
+      "artifactSizeBytes": 1810
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T08:19:31.323Z"
+}

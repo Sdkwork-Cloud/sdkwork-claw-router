@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adopt-a-calico@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adopt_a_calico",
+  "skill": {
+    "id": 56994,
+    "skillKey": "clawhub-adopt-a-calico",
+    "name": "Calico — Adopt a Calico. Cat. 三花猫。Gato Calicó."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adopt-a-calico",
+    "url": "https://clawhub.ai/skills/adopt-a-calico",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adopt-a-calico-9b070dd496c9dae1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adopt a virtual Calico cat at animalhouse.ai. Three personalities in one cat. Mood shifts unpredictably. Feeding every 6 hours. Common tier cat."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 369,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775008105117,
+      "changelog": "Version 1.0.3\n\n- Updated skill description and name for clarity, multi-language, and conciseness.\n- Revised and expanded care instructions with new `item` options for care actions and improved Quick Start examples.\n- Feeding timing and effects are now detailed, including new penalty and reward mechanics.\n- Status API details updated to mention new response fields (`death_clock`, `recommended_checkin`, preferences, and more).\n- Tags list updated and some category labels reworded for accuracy.\n- General copy improvements for easier understanding and more specific Calico care guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dda7b815202b8d3cfa9cc2bdb625737f5a66ae1aa4b2dbf07f63e7a210716caa"
+}

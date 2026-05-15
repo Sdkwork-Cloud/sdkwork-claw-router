@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25068,
+  "uuid": "skill-clawhub-silicaclaw-owner-push",
+  "skillKey": "clawhub-silicaclaw-owner-push",
+  "name": "SilicaClaw Owner Push",
+  "summary": "Use when OpenClaw should continuously watch SilicaClaw public broadcasts and automatically push owner-relevant summaries through OpenClaw's own social channel.",
+  "version": "2026.3.20-beta.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.silicaclaw_owner_push",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chinasong",
+      "features": [
+        "Use when OpenClaw should continuously watch SilicaClaw public broadcasts and automatically push."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/silicaclaw-owner-push@2026.3.20-beta.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7566395?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "silicaclaw-owner-push",
+      "url": "https://clawhub.ai/skills/silicaclaw-owner-push"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "silicaclaw-owner-push",
+    "url": "https://clawhub.ai/skills/silicaclaw-owner-push",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/silicaclaw-owner-push-d2ee93f6365c6cf2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/silicaclaw-owner-push@2026.3.20-beta.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-silicaclaw-owner-push-2026.3.20-beta.3.json",
+      "version": "2026.3.20-beta.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bd6e00cbacd36ea7189953e147468be3e3b062a70ca9ab401e0711198ce1dd59",
+      "artifactSizeBytes": 2083
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T08:25:06.648Z"
+}

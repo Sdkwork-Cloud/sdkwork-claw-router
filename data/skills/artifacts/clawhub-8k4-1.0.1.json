@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/8k4@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.8k4",
+  "skill": {
+    "id": 27614,
+    "skillKey": "clawhub-8k4",
+    "name": "Find Trusted On-Chain Agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "8k4",
+    "url": "https://clawhub.ai/skills/8k4",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/8k4-b08f6eac7ba5ac5e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trust scoring, agent discovery, profiling, wallet/identity lookup, contact, dispatch, and metadata reads/writes via 8K4 Protocol (ERC-8004). Use when checkin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "8k4-dev",
+      "userId": "s1706m7akk1eytjg97qwy6bzzn83s0gy",
+      "displayName": "8k4-dev",
+      "image": "https://avatars.githubusercontent.com/u/264769315?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 244,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774130355360,
+      "changelog": "Align the 8k4 skill with the latest API contract: fix helper script drift, update metadata flow docs, and refresh access/safety guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bc79be8fc68832733a561d650ccbd1802a638a9e11efceb78d1e415ab40ebd80"
+}

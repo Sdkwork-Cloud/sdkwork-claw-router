@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/echo-fade-memory@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.echo_fade_memory",
+  "skill": {
+    "id": 51294,
+    "skillKey": "clawhub-echo-fade-memory",
+    "name": "🧠 EchoFadeMemory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "echo-fade-memory",
+    "url": "https://clawhub.ai/skills/echo-fade-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/echo-fade-memory-fc83934d2f8cdbd7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Runs a thin long-term memory workflow on top of the echo-fade-memory service. Use proactively whenever an answer may depend on prior session context, durable..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hiparker",
+      "userId": "s179kk02k413z8e1gxqjd1yrkh83pptt",
+      "displayName": "hiparker",
+      "image": "https://avatars.githubusercontent.com/u/49464811?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 331,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1774092304607,
+      "changelog": "Major update: Script interface unified and image memory added to core contract.\n\n- Added unified script wrappers: `store.sh`, `recall.sh`, and `forget.sh`, replacing prior memory-only scripts.\n- Image and screenshot memory are now handled alongside text memories using the same workflow and script interface.\n- Public agent contract is simplified to `store`, `recall`, `forget`; advanced features and dashboards moved out of default workflow.\n- Natural triggers for memory use in OpenClaw clarified.\n- Updated documentation for all workflows, including image handling, minimal memory fields, and environment configuration.\n- Legacy scripts for memory operations removed and replaced by skill-local unified wrappers.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2771b2f9886d65a70523c2c4b471224e6ce05d4a69e49a3cc6910cb7d2a62b27"
+}

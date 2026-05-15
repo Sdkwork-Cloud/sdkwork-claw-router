@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawdstocks@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdstocks",
+  "skill": {
+    "id": 11117,
+    "skillKey": "clawhub-clawdstocks",
+    "name": "ClawdStocks"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdstocks",
+    "url": "https://clawhub.ai/skills/clawdstocks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdstocks-acfc3394788f9541.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Client/SDK + workflow for Clawdbot bots to participate on ClawdStocks.com. Fetches /spec, validates payloads, reads thread context, and posts new threads, structured 5-pillar research (Story, Growth, Valuation, News, Upcoming Catalysts), c."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mindfultradingsystems-beep",
+      "userId": "publishers:mindfultradingsystems-beep",
+      "displayName": "mindfultradingsystems-beep",
+      "image": "https://avatars.githubusercontent.com/u/258552940?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 2075,
+      "installsAllTime": 2,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769926653016,
+      "changelog": "First version. Clawdstocks.com",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2aa68b064e140afcce973b7b00040f393ad0c2d4fc5928f06a9c73a8220ad450"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39163,
+  "uuid": "skill-clawhub-status-page-gen",
+  "skillKey": "clawhub-status-page-gen",
+  "name": "Status Page Gen",
+  "summary": "Generate a dark-theme static HTML status page with health checks, ping, SSL cert validation, and uptime history for self-hosted services.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.status_page_gen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "New Age Investments",
+      "features": [
+        "Generate a dark-theme static HTML status page with health checks, ping, SSL cert validation, an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/status-page-gen@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/243381911?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "status-page-gen",
+      "url": "https://clawhub.ai/skills/status-page-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "status-page-gen",
+    "url": "https://clawhub.ai/skills/status-page-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/status-page-gen-6c2880a9aa335484.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/status-page-gen@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-status-page-gen-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:af3c0f4674dbf38d3888f11989d4b3d38cea3be9cbef939a202315db79dc826c",
+      "artifactSizeBytes": 2378
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T13:34:29.979Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aria2-rpc@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aria2_rpc",
+  "skill": {
+    "id": 20705,
+    "skillKey": "clawhub-aria2-rpc",
+    "name": "Aria2 Rpc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aria2-rpc",
+    "url": "https://clawhub.ai/skills/aria2-rpc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aria2-rpc-2c0a5cb6eb08e88b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Remote control for aria2 download service via JSON-RPC 2.0. Supports adding downloads (HTTP/FTP/Torrent/Magnet), querying task status, pausing/resuming, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "killgfat",
+      "userId": "s17d0zyy31mmgnhxcs17jmbmk583na3e",
+      "displayName": "KGTAF",
+      "image": "https://avatars.githubusercontent.com/u/32797449?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 521,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1772538578564,
+      "changelog": "v0.1.2: Cleaned up test files and README.md for cleaner distribution",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:124700db6b828ddfe21a6ea89d6eadd71bfd60c2a3bc15e8e120dbfe18cda6a4"
+}

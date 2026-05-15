@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bratislava@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bratislava",
+  "skill": {
+    "id": 70952,
+    "skillKey": "clawhub-bratislava",
+    "name": "Bratislava"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bratislava",
+    "url": "https://clawhub.ai/skills/bratislava",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bratislava-97bc0db333ef8314.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "斯洛伐克首都城市指南 — 三国交汇、汽车制造中心、多瑙河明珠。当用户询问斯洛伐克旅行、中欧汽车产业时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 89,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777701822057,
+      "changelog": "Bratislava skill v1.0.0 — 发布首个版本\n\n- 提供布拉迪斯拉发（Bratislava）斯洛伐克首都的详细城市指南和背景资料\n- 涉及旅行、汽车制造业、哈布斯堡王朝历史与中欧经济转型等场景\n- 收录城市历史大事件时间线、关键经济数据、产业与护城河分析\n- 包含旅游景点和有趣事实介绍，如\"工作中的男人\"地标\n- 支持在用户咨询斯洛伐克旅行或欧洲汽车产业时自动触发",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d8ee4d2196d7cad1e82d4ca974db2c0676cac574dc45138684ee6772a954713d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apify-api@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apify_api",
+  "skill": {
+    "id": 31296,
+    "skillKey": "clawhub-apify-api",
+    "name": "Apify"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apify-api",
+    "url": "https://clawhub.ai/skills/apify-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apify-api-41bb3b06bdf709fe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Apify API integration with managed authentication. Run web scrapers, manage actors, datasets, key-value stores, and schedules. Use this skill when users want..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 268,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1777577072622,
+      "changelog": "- Added detailed notes about compute unit usage, persistent schedules/webhooks, and the importance of confirming before destructive actions.\n- Clarified base URL instructions; only documented endpoints are supported.\n- Expanded \"Security & Permissions\" guidance, emphasizing confirmation before running actors or modifying resources.\n- Updated connection management instructions, advising to always specify the Maton-Connection header when multiple connections exist.\n- Consolidated and clarified authentication and usage requirements in the skill description.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9ec01c580799a7615cf9eed81cfd409de31249f67c3faa9ae1417a28071ab0cd"
+}

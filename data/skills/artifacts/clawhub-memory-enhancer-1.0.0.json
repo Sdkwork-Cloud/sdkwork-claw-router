@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-enhancer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_enhancer",
+  "skill": {
+    "id": 26075,
+    "skillKey": "clawhub-memory-enhancer",
+    "name": "Memory Enhancer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-enhancer",
+    "url": "https://clawhub.ai/skills/memory-enhancer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-enhancer-0001423e1ceb9fe1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically extracts facts from daily logs to update and maintain structured long-term memory and summaries."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xpneuma",
+      "userId": "s174pybjnfq5kz3ff7r1kpkrvx841v1q",
+      "displayName": "xpneuma",
+      "image": "https://avatars.githubusercontent.com/u/2805947?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 324,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774029994680,
+      "changelog": "- Initial release of the Memory Enhancer Skill.\n- Automatically extracts structured facts from daily memory logs and maintains long-term memory.\n- Uses a sub-agent to identify preferences, contacts, habits, and project statuses from logs.\n- Updates relevant JSON stat files and appends concise summaries to MEMORY.md.\n- Runs daily by default (2:00 AM), with OpenRouter as the analysis backend.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:611ec6ddc58da1914d6b79383a5f7ff07f8887bcee77fe30af610338330e3116"
+}

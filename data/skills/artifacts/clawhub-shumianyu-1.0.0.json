@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shumianyu@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shumianyu",
+  "skill": {
+    "id": 70137,
+    "skillKey": "clawhub-shumianyu",
+    "name": "shumianyu"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shumianyu",
+    "url": "https://clawhub.ai/skills/shumianyu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shumianyu-dfcb348fae976a7e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将分段 asr 文本流在结束时统一整理成流畅书面语，并在用户指定 target_language 时输出译文。适用于语音听写、会议转写、采访整理、播客或视频字幕后处理等场景，尤其适合不需要实时字幕、只需要在整段结束后得到最终书面结果的任务。保持接口抽象、可替换，不绑定任何特定厂商 api。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hei-maom",
+      "userId": "publishers:hei-maom",
+      "displayName": "HeiMaoM",
+      "image": "https://avatars.githubusercontent.com/u/145641200?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 311,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773464411417,
+      "changelog": "- Initial release of the asr-written-rewriter-stream skill.\n- Accepts segmented ASR text streams and outputs a single, fluent written result only after receiving an explicit end signal.\n- Optionally translates the finalized written result when a target_language is provided.\n- Designed for post-processing meeting transcripts, interviews, podcasts, and similar scenarios—optimized for whole-segment finalization over real-time subtitle needs.\n- Keeps interfaces abstract and compatible with any upstream ASR provider; not tied to any specific API or service.\n- Respects and applies domain lexicons for consistent handling of names, technical terms, and abbreviations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6e3dc738e9371778d6747c0c27498cd51c510df946b00ddce10d1d1e1d7ef2a3"
+}

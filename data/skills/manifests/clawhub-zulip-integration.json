@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30495,
+  "uuid": "skill-clawhub-zulip-integration",
+  "skillKey": "clawhub-zulip-integration",
+  "name": "Zulip",
+  "summary": "Zulip integration. Manage data, records, and automate workflows. Use when the user wants to interact with Zulip data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zulip_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Zulip integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Zulip data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zulip-integration@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zulip-integration",
+      "url": "https://clawhub.ai/skills/zulip-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zulip-integration",
+    "url": "https://clawhub.ai/skills/zulip-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zulip-integration-d1b8fa9dfd4d1ea5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zulip-integration@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-zulip-integration-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ffa275e8d1dac73d88065407fddf219a4eb26709dd4db12033e0ba242cf2e196",
+      "artifactSizeBytes": 1875
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:06:32.319Z"
+}

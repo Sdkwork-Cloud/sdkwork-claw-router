@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13507,
+  "uuid": "skill-clawhub-openclaw-arbiter",
+  "skillKey": "clawhub-openclaw-arbiter",
+  "name": "Openclaw Arbiter",
+  "summary": "Audit installed skill permissions: detect network access, subprocess execution, file writes, unsafe deserialization, and environment variable usage. Permission matrix for every skill in your workspace. Free alert layer — upgrade to opencla.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_arbiter",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AtlasPA",
+      "features": [
+        "Audit installed skill permissions: detect network access, subprocess execution, file writes, un.",
+        "Permission matrix for every skill in your workspace",
+        "Free alert layer — upgrade to openclaw-arbiter-pro for revocation, quarantine, and policy enfor."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-arbiter@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/231540010?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-arbiter",
+      "url": "https://clawhub.ai/skills/openclaw-arbiter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-arbiter",
+    "url": "https://clawhub.ai/skills/openclaw-arbiter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-arbiter-67d4cc0b44ee3f8b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-arbiter@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-arbiter-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1a045b8b94febfce9c46a961349565f0a9a26ed6bb2858f028ec0136389a38b4",
+      "artifactSizeBytes": 2220
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T10:26:11.394Z"
+}

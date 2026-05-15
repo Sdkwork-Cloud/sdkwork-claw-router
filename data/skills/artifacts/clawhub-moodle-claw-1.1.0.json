@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moodle-claw@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moodle_claw",
+  "skill": {
+    "id": 35384,
+    "skillKey": "clawhub-moodle-claw",
+    "name": "Moodle Claw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moodle-claw",
+    "url": "https://clawhub.ai/skills/moodle-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moodle-claw-fb4c94961a94c3f4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with Moodle LMS to browse courses, access learning materials, and answer questions about course content."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "4strium",
+      "userId": "s1721kg3jaww8aer65csef1z8583mzkm",
+      "displayName": "Romain Mellaza",
+      "image": "https://avatars.githubusercontent.com/u/88449922?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 215,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774635054339,
+      "changelog": "- Added license, author, version, homepage, and repository metadata to SKILL.md.\n- Updated installation instructions to include SHA256 checksum verification.\n- Added a \"Security / Vetting\" section describing open-source nature, checksum, and local-only storage of credentials.\n- No command or functional changes; documentation improvements only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:63e463e0e27c7a51dc5c1331a3bf66c85d4645919db8e240c690ae44e7e4ee97"
+}

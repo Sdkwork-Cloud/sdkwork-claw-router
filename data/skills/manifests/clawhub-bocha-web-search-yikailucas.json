@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60098,
+  "uuid": "skill-clawhub-bocha-web-search-yikailucas",
+  "skillKey": "clawhub-bocha-web-search-yikailucas",
+  "name": "Bocha Web Search",
+  "summary": "统一封装博查（Bocha）全系搜索接口（Web Search / AI Search / Agent Search / Reranker），使用 Node.js 脚本调用并支持标准参数与原始 JSON 透传。用户提到“博查搜索/联网搜索/AI 搜索/Agent 搜索/重排/rerank/事实核查/行业研报检索”时使用。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bocha_web_search_yikailucas",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lucas",
+      "features": [
+        "统一封装博查（Bocha）全系搜索接口（Web Search / AI Search / Agent Search / Reranker），使用 Node.js 脚本调用并支持标准参数与原始."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bocha-web-search-yikailucas@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32409911?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bocha-web-search-yikailucas",
+      "url": "https://clawhub.ai/skills/bocha-web-search-yikailucas"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bocha-web-search-yikailucas",
+    "url": "https://clawhub.ai/skills/bocha-web-search-yikailucas",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bocha-web-search-yikailucas-53ab9f6d0af975e6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bocha-web-search-yikailucas@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-bocha-web-search-yikailucas-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5b2d20f0126c2b71014b8247c70a374689b95778fcdab62c705c510fc430a3ef",
+      "artifactSizeBytes": 2158
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T00:51:03.511Z"
+}

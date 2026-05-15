@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sushiswap-sdk@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sushiswap_sdk",
+  "skill": {
+    "id": 13273,
+    "skillKey": "clawhub-sushiswap-sdk",
+    "name": "SushiSwap SDK"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sushiswap-sdk",
+    "url": "https://clawhub.ai/skills/sushiswap-sdk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sushiswap-sdk-38688f593b22d3e2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "TypeScript SDK for interacting with the SushiSwap Aggregator and related primitives. This SDK is a typed wrapper over the SushiSwap API, providing ergonomic helpers for token amounts, prices, quotes, and swap transaction generation. USE TH."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xmasayoshi",
+      "userId": "publishers:0xmasayoshi",
+      "displayName": "0xMasayoshi",
+      "image": "https://avatars.githubusercontent.com/u/82962873?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1479,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770270698719,
+      "changelog": "- Initial release of the SushiSwap TypeScript SDK.\n- Provides typed wrappers over the SushiSwap API for tokens, prices, quotes, and swap transaction generation.\n- Introduces ergonomic helpers for safer arithmetic, formatting, and comparisons.\n- Supports integration with TypeScript/JavaScript applications using strongly typed primitives.\n- Requires a mandatory `referrer` parameter for all swap-related calls.\n- Exposes a list of supported swap networks and clarifies fee handling and customization policies.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ba7eea7a84bd56228b0c375972b86053518828833f66de699acd467ce265fbd5"
+}

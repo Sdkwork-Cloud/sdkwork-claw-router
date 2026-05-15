@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41693,
+  "uuid": "skill-clawhub-add-music-to-free",
+  "skillKey": "clawhub-add-music-to-free",
+  "name": "Add Music To Free",
+  "summary": "add video files into music-backed videos with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators use it for adding free backgroun...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.add_music_to_free",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vcarolxhberger",
+      "features": [
+        "add video files into music-backed videos with this skill",
+        "Works with MP4, MOV, AVI, WebM files up to 500MB",
+        "content creators use it for adding free backgroun..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/add-music-to-free@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210890217?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "add-music-to-free",
+      "url": "https://clawhub.ai/skills/add-music-to-free"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "add-music-to-free",
+    "url": "https://clawhub.ai/skills/add-music-to-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/add-music-to-free-b00f98a4399ebf13.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/add-music-to-free@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-add-music-to-free-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ca74dd1d12857448544457689a96b5653c9c4b40d8482081f3fd62d2c98c577",
+      "artifactSizeBytes": 2456
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T19:51:36.845Z"
+}

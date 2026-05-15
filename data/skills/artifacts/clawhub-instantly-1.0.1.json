@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/instantly@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.instantly",
+  "skill": {
+    "id": 12086,
+    "skillKey": "clawhub-instantly",
+    "name": "Instantly"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "instantly",
+    "url": "https://clawhub.ai/skills/instantly",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/instantly-cbcf6dfcd8154efc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Instantly API integration with managed OAuth. Cold email outreach platform for managing campaigns, leads, accounts, and analytics. Use this skill when users..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1500,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 4,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777588764012,
+      "changelog": "- Changed all API endpoints from gateway.maton.ai and ctrl.maton.ai to api.maton.ai.\n- Updated connection management URLs to use the new api.maton.ai domain.\n- Added a Security & Permissions section emphasizing user approval for write operations.\n- Clarified instructions for specifying connections with the Maton-Connection header.\n- Removed example LICENSE.txt file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9ae2d5addf4607b4411c112ade0cbe86281c431bc751e69259a3ce613448e802"
+}

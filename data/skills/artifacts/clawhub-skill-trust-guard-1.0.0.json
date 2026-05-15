@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-trust-guard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_trust_guard",
+  "skill": {
+    "id": 17558,
+    "skillKey": "clawhub-skill-trust-guard",
+    "name": "Skill Trust Guard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-trust-guard",
+    "url": "https://clawhub.ai/skills/skill-trust-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-trust-guard-b5127301960ddf94.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enforces skill-trust-scanner security checks before installing skills, blocking or alerting based on risk scores to reduce supply chain threats."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "walkman1w",
+      "userId": "s17c25hwbhsdmtdtz0dnm08v3d83g80s",
+      "displayName": "Flynn Guo",
+      "image": "https://avatars.githubusercontent.com/u/48667439?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 757,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771462300355,
+      "changelog": "Initial release of skill-trust-guard:\n\n- Enforces a mandatory skill security scan (skill-trust-scanner) before installation.\n- Blocks installation of high-risk skills (score < 50), warns for medium risk, and allows low-risk skills.\n- Integrates seamlessly with existing CLI usage, including a PATH shim for automatic protection.\n- Includes reusable hooks and documented integration steps.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:68b4c374e3007e2c45d8a56ecf45b8263d89e285a7645c9f0675c8250e592100"
+}

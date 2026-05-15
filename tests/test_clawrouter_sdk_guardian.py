@@ -18,7 +18,72 @@ class ClawRouterSdkGuardianTest(unittest.TestCase):
         *,
         write_dist: bool = True,
     ) -> None:
-        base = root / "sdks" / sdk_dir
+        package_dir = f"{sdk_dir}-typescript"
+        family = root / "sdks" / sdk_dir
+        base = family / package_dir
+        (family / "openapi").mkdir(parents=True, exist_ok=True)
+        (family / "bin").mkdir(parents=True, exist_ok=True)
+        (family / "tests").mkdir(parents=True, exist_ok=True)
+        (family / "README.md").write_text(f"# {sdk_dir}\n", encoding="utf-8")
+        (family / ".sdkwork-assembly.json").write_text(
+            json.dumps(
+                {
+                    "workspace": sdk_dir,
+                    "authoritySpec": f"openapi/{sdk_dir}.openapi.json",
+                    "derivedSpec": f"openapi/{sdk_dir}.sdkgen.json",
+                    "languages": [
+                        {
+                            "language": "typescript",
+                            "workspace": package_dir,
+                            "generationState": "materialized",
+                            "packagePath": package_dir,
+                            "manifestPath": f"{package_dir}/package.json",
+                            "name": package_name,
+                        }
+                    ]
+                    + [
+                        {
+                            "language": language,
+                            "workspace": f"{sdk_dir}-{language}",
+                            "generationState": "generation_available",
+                            "releaseState": "reserved",
+                            "generatedPath": f"{sdk_dir}-{language}/generated/server-openapi",
+                        }
+                        for language in [
+                            "flutter",
+                            "rust",
+                            "java",
+                            "csharp",
+                            "swift",
+                            "kotlin",
+                            "go",
+                            "python",
+                        ]
+                    ],
+                }
+            )
+            + "\n",
+            encoding="utf-8",
+        )
+        (family / "openapi" / f"{sdk_dir}.openapi.json").write_text(
+            '{"openapi":"3.0.3","info":{"title":"fixture","version":"0.1.0"},"paths":{}}\n',
+            encoding="utf-8",
+        )
+        (family / "openapi" / f"{sdk_dir}.sdkgen.json").write_text(
+            '{"openapi":"3.0.3","info":{"title":"fixture","version":"0.1.0"},"paths":{}}\n',
+            encoding="utf-8",
+        )
+        (family / "bin" / "generate-sdk.mjs").write_text(
+            "const OFFICIAL_LANGUAGES = ['typescript', 'flutter', 'rust', 'java', 'csharp', 'swift', 'kotlin', 'go', 'python'];\n"
+            "const sdkFamily = 'fixture';\n"
+            "const authorityInputPath = `sdks/${sdkFamily}/openapi/${sdkFamily}.openapi.json`;\n"
+            "const sdkgenInputPath = `sdks/${sdkFamily}/openapi/${sdkFamily}.sdkgen.json`;\n"
+            "console.log('--language');\n"
+            "console.log(\"'-i', sdkgenInputPath\");\n"
+            "console.log('sdks/${sdkFamily}/${sdkFamily}-${language}/generated/server-openapi');\n",
+            encoding="utf-8",
+        )
+        (family / "bin" / "verify-sdk.mjs").write_text("console.log('verify');\n", encoding="utf-8")
         (base / "src" / "api").mkdir(parents=True, exist_ok=True)
         (base / "src" / "types").mkdir(parents=True, exist_ok=True)
         (base / "src").mkdir(parents=True, exist_ok=True)
@@ -62,10 +127,48 @@ class ClawRouterSdkGuardianTest(unittest.TestCase):
         (base / "custom" / "README.md").write_text("custom code lives here\n", encoding="utf-8")
         (base / "custom" / "build-runtime.mjs").write_text("console.log('build');\n", encoding="utf-8")
         (base / ".sdkwork" / "sdkwork-generator-manifest.json").write_text("{}\n", encoding="utf-8")
-        (base / "src" / "sdk.ts").write_text(f"export class {client_name} {{}}\n", encoding="utf-8")
-        (base / "src" / "api" / "index.ts").write_text("export {};\n", encoding="utf-8")
+        sdk_source = f"export class {client_name} {{}}\n"
+        if sdk_dir == "clawrouter-backend-sdk":
+            sdk_source = (
+                "import { EcosystemApi, createEcosystemApi } from './api/ecosystem';\n"
+                f"export class {client_name} {{\n"
+                "  private httpClient: unknown;\n"
+                "  public readonly ecosystem: EcosystemApi;\n"
+                "  constructor() { this.ecosystem = createEcosystemApi(this.httpClient); }\n"
+                "}\n"
+            )
+        (base / "src" / "sdk.ts").write_text(sdk_source, encoding="utf-8")
+        if sdk_dir == "clawrouter-backend-sdk":
+            (base / "src" / "api" / "index.ts").write_text(
+                "export { EcosystemApi } from './ecosystem';\n",
+                encoding="utf-8",
+            )
+            (base / "src" / "api" / "ecosystem.ts").write_text(
+                "export class EcosystemSkillsReviewApi { async approve() {} async reject() {} }\n"
+                "export class EcosystemSkillsPackageApi { async create() {} async list() {} async delete() {} async retrieve() {} async update() {} async disable() {} async enable() {} }\n"
+                "export class EcosystemSkillsCategoriesApi { async list() {} async create() {} }\n"
+                "export class EcosystemSkillsAssetsApi { async list() {} async create() {} async delete() {} async retrieve() {} async update() {} }\n"
+                "export class EcosystemSkillsArtifactsApi { async list() {} async create() {} async delete() {} async retrieve() {} async update() {} }\n"
+                "export class EcosystemSkillsApi {\n"
+                "  public readonly categories: EcosystemSkillsCategoriesApi;\n"
+                "  public readonly package: EcosystemSkillsPackageApi;\n"
+                "  public readonly artifacts: EcosystemSkillsArtifactsApi;\n"
+                "  public readonly assets: EcosystemSkillsAssetsApi;\n"
+                "  public readonly review: EcosystemSkillsReviewApi;\n"
+                "  async create() {} async list() {} async delete() {} async retrieve() {} async update() {} async disable() {} async enable() {} async publish() {} async unpublish() {}\n"
+                "}\n"
+                "export class EcosystemApi { public readonly skills: EcosystemSkillsApi; }\n"
+                "export function createEcosystemApi(client: unknown): EcosystemApi { return new EcosystemApi(); }\n",
+                encoding="utf-8",
+            )
+        else:
+            (base / "src" / "api" / "index.ts").write_text("export {};\n", encoding="utf-8")
         (base / "src" / "api" / "paths.ts").write_text(api_prefix + "\n", encoding="utf-8")
         type_exports: list[str] = []
+        (base / "src" / "types" / "common.ts").write_text(
+            "export type { Page, RequestConfig, RequestOptions, QueryParams } from '@sdkwork/sdk-common';\n",
+            encoding="utf-8",
+        )
         if sdk_dir == "clawrouter-app-sdk":
             (base / "src" / "types" / "app-model-catalog-price-availability.ts").write_text(
                 "export interface AppModelCatalogPriceAvailability {\n"
@@ -105,6 +208,16 @@ class ClawRouterSdkGuardianTest(unittest.TestCase):
             (base / "dist" / "index.d.ts").write_text("export {};\n", encoding="utf-8")
 
     def write_portal_sdk_boundary(self, root: Path) -> None:
+        open_sdk = root / "sdks" / "clawrouter-open-sdk" / "clawrouter-open-sdk-typescript"
+        if not open_sdk.exists():
+            self.write_sdk(
+                root,
+                "clawrouter-open-sdk",
+                "@sdkwork/clawrouter-open-sdk",
+                "ai",
+                "SdkworkAiClient",
+                "/v1",
+            )
         portal = root / "apps" / "sdkwork-claw-router-portal"
         commons = portal / "packages" / "sdkwork-claw-router-commons"
         (commons / "src").mkdir(parents=True, exist_ok=True)
@@ -112,8 +225,8 @@ class ClawRouterSdkGuardianTest(unittest.TestCase):
             json.dumps(
                 {
                     "dependencies": {
-                        "@sdkwork/clawrouter-app-sdk": "file:../../sdks/clawrouter-app-sdk",
-                        "@sdkwork/clawrouter-backend-sdk": "file:../../sdks/clawrouter-backend-sdk",
+                        "@sdkwork/clawrouter-app-sdk": "workspace:*",
+                        "@sdkwork/clawrouter-backend-sdk": "workspace:*",
                     }
                 }
             )
@@ -124,8 +237,8 @@ class ClawRouterSdkGuardianTest(unittest.TestCase):
             json.dumps(
                 {
                     "dependencies": {
-                        "@sdkwork/clawrouter-app-sdk": "file:../../../../sdks/clawrouter-app-sdk",
-                        "@sdkwork/clawrouter-backend-sdk": "file:../../../../sdks/clawrouter-backend-sdk",
+                        "@sdkwork/clawrouter-app-sdk": "workspace:*",
+                        "@sdkwork/clawrouter-backend-sdk": "workspace:*",
                     }
                 }
             )
@@ -142,7 +255,7 @@ class ClawRouterSdkGuardianTest(unittest.TestCase):
             encoding="utf-8",
         )
 
-    def test_accepts_project_generated_app_and_backend_sdks(self) -> None:
+    def test_accepts_project_generated_three_sdk_systems(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             self.write_sdk(
@@ -167,7 +280,32 @@ class ClawRouterSdkGuardianTest(unittest.TestCase):
 
             self.assertTrue(result.ok, result.messages)
 
-    def test_reports_missing_sdk_and_wrong_package_name(self) -> None:
+    def test_accepts_sdk_paths_that_do_not_match_sdk_system_prefixes(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_sdk(
+                root,
+                "clawrouter-app-sdk",
+                "@sdkwork/clawrouter-app-sdk",
+                "app",
+                "SdkworkAppClient",
+                "/tenant-a/product-api",
+            )
+            self.write_sdk(
+                root,
+                "clawrouter-backend-sdk",
+                "@sdkwork/clawrouter-backend-sdk",
+                "backend",
+                "SdkworkBackendClient",
+                "/tenant-a/manage-api",
+            )
+            self.write_portal_sdk_boundary(root)
+
+            result = ClawRouterSdkGuardian(root=root).run()
+
+            self.assertTrue(result.ok, result.messages)
+
+    def test_reports_missing_required_sdk_system_and_wrong_package_name(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             self.write_sdk(root, "clawrouter-app-sdk", "@sdkwork/wrong", "app", "SdkworkAppClient", "/app/v3/api")
@@ -176,10 +314,140 @@ class ClawRouterSdkGuardianTest(unittest.TestCase):
             result = ClawRouterSdkGuardian(root=root).run()
 
             self.assertFalse(result.ok)
-            self.assertIn("clawrouter-app-sdk package.json name must be @sdkwork/clawrouter-app-sdk", result.messages)
-            self.assertIn(f"generated SDK is missing: {root / 'sdks' / 'clawrouter-backend-sdk'}", result.messages)
+            self.assertIn(
+                "clawrouter-app-sdk-typescript package.json name must be @sdkwork/clawrouter-app-sdk",
+                result.messages,
+            )
+            self.assertIn(f"generated SDK family is missing: {root / 'sdks' / 'clawrouter-backend-sdk'}", result.messages)
 
-    def test_reports_wrong_sdk_type_client_and_prefix(self) -> None:
+    def test_reports_missing_required_open_sdk_system(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_sdk(root, "clawrouter-app-sdk", "@sdkwork/clawrouter-app-sdk", "app", "SdkworkAppClient", "/app/v3/api")
+            self.write_sdk(
+                root,
+                "clawrouter-backend-sdk",
+                "@sdkwork/clawrouter-backend-sdk",
+                "backend",
+                "SdkworkBackendClient",
+                "/backend/v3/api",
+            )
+
+            result = ClawRouterSdkGuardian(root=root).run()
+
+            self.assertFalse(result.ok)
+            self.assertIn(f"generated SDK family is missing: {root / 'sdks' / 'clawrouter-open-sdk'}", result.messages)
+
+    def test_reports_unexpected_fourth_sdk_system(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_sdk(root, "clawrouter-app-sdk", "@sdkwork/clawrouter-app-sdk", "app", "SdkworkAppClient", "/app/v3/api")
+            self.write_sdk(
+                root,
+                "clawrouter-backend-sdk",
+                "@sdkwork/clawrouter-backend-sdk",
+                "backend",
+                "SdkworkBackendClient",
+                "/backend/v3/api",
+            )
+            self.write_portal_sdk_boundary(root)
+            (root / "sdks" / "clawrouter-admin-sdk").mkdir(parents=True)
+
+            result = ClawRouterSdkGuardian(root=root).run()
+
+            self.assertFalse(result.ok)
+            self.assertIn(
+                f"unexpected generated SDK family is present: {root / 'sdks' / 'clawrouter-admin-sdk'}",
+                result.messages,
+            )
+
+    def test_reports_sdk_family_without_official_multilanguage_generation_matrix(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_sdk(
+                root,
+                "clawrouter-app-sdk",
+                "@sdkwork/clawrouter-app-sdk",
+                "app",
+                "SdkworkAppClient",
+                "/app/v3/api",
+            )
+            self.write_sdk(
+                root,
+                "clawrouter-backend-sdk",
+                "@sdkwork/clawrouter-backend-sdk",
+                "backend",
+                "SdkworkBackendClient",
+                "/backend/v3/api",
+            )
+            self.write_portal_sdk_boundary(root)
+            family = root / "sdks" / "clawrouter-app-sdk"
+            assembly_path = family / ".sdkwork-assembly.json"
+            assembly = json.loads(assembly_path.read_text(encoding="utf-8"))
+            assembly["languages"] = [
+                item
+                for item in assembly["languages"]
+                if item.get("language") == "typescript"
+            ]
+            assembly_path.write_text(json.dumps(assembly) + "\n", encoding="utf-8")
+            (family / "bin" / "generate-sdk.mjs").write_text(
+                "console.log('typescript only');\n",
+                encoding="utf-8",
+            )
+
+            result = ClawRouterSdkGuardian(root=root).run()
+
+            self.assertFalse(result.ok)
+            self.assertIn(
+                "clawrouter-app-sdk .sdkwork-assembly.json must list official SDK language flutter",
+                result.messages,
+            )
+            self.assertIn(
+                "clawrouter-app-sdk .sdkwork-assembly.json must list official SDK language python",
+                result.messages,
+            )
+            self.assertIn(
+                "clawrouter-app-sdk bin/generate-sdk.mjs must support --language language selection",
+                result.messages,
+            )
+
+    def test_reports_sdk_family_generator_that_bypasses_family_sdkgen_contract(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_sdk(
+                root,
+                "clawrouter-app-sdk",
+                "@sdkwork/clawrouter-app-sdk",
+                "app",
+                "SdkworkAppClient",
+                "/app/v3/api",
+            )
+            self.write_sdk(
+                root,
+                "clawrouter-backend-sdk",
+                "@sdkwork/clawrouter-backend-sdk",
+                "backend",
+                "SdkworkBackendClient",
+                "/backend/v3/api",
+            )
+            self.write_portal_sdk_boundary(root)
+            (root / "sdks" / "clawrouter-app-sdk" / "bin" / "generate-sdk.mjs").write_text(
+                "const OFFICIAL_LANGUAGES = ['typescript', 'flutter', 'rust', 'java', 'csharp', 'swift', 'kotlin', 'go', 'python'];\n"
+                "console.log('--language');\n"
+                "console.log('generated/openapi/clawrouter-app-openapi.json');\n"
+                "console.log('sdks/${sdkFamily}/${sdkFamily}-${language}/generated/server-openapi');\n",
+                encoding="utf-8",
+            )
+
+            result = ClawRouterSdkGuardian(root=root).run()
+
+            self.assertFalse(result.ok)
+            self.assertIn(
+                "clawrouter-app-sdk bin/generate-sdk.mjs must generate from openapi/${sdkFamily}.sdkgen.json",
+                result.messages,
+            )
+
+    def test_reports_wrong_sdk_type_and_client_without_enforcing_url_prefix(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             self.write_sdk(root, "clawrouter-app-sdk", "@sdkwork/clawrouter-app-sdk", "backend", "WrongClient", "/wrong")
@@ -196,9 +464,12 @@ class ClawRouterSdkGuardianTest(unittest.TestCase):
             result = ClawRouterSdkGuardian(root=root).run()
 
             self.assertFalse(result.ok)
-            self.assertIn("clawrouter-app-sdk sdkwork-sdk.json sdkType must be app", result.messages)
-            self.assertIn("clawrouter-app-sdk src/sdk.ts must export SdkworkAppClient", result.messages)
-            self.assertIn("clawrouter-app-sdk src/api/paths.ts must contain /app/v3/api", result.messages)
+            self.assertIn("clawrouter-app-sdk-typescript sdkwork-sdk.json sdkType must be app", result.messages)
+            self.assertIn("clawrouter-app-sdk-typescript src/sdk.ts must export SdkworkAppClient", result.messages)
+            self.assertNotIn(
+                "clawrouter-app-sdk-typescript src/api/paths.ts must contain /app/v3/api",
+                result.messages,
+            )
 
     def test_reports_missing_runtime_export_artifacts(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -226,10 +497,22 @@ class ClawRouterSdkGuardianTest(unittest.TestCase):
             result = ClawRouterSdkGuardian(root=root).run()
 
             self.assertFalse(result.ok)
-            self.assertIn("clawrouter-app-sdk package.json main points to missing file: dist/index.cjs", result.messages)
-            self.assertIn("clawrouter-app-sdk package.json module points to missing file: dist/index.js", result.messages)
-            self.assertIn("clawrouter-app-sdk package.json types points to missing file: dist/index.d.ts", result.messages)
-            self.assertIn("clawrouter-backend-sdk package.json exports[.].require points to missing file: dist/index.cjs", result.messages)
+            self.assertIn(
+                "clawrouter-app-sdk-typescript package.json main points to missing file: dist/index.cjs",
+                result.messages,
+            )
+            self.assertIn(
+                "clawrouter-app-sdk-typescript package.json module points to missing file: dist/index.js",
+                result.messages,
+            )
+            self.assertIn(
+                "clawrouter-app-sdk-typescript package.json types points to missing file: dist/index.d.ts",
+                result.messages,
+            )
+            self.assertIn(
+                "clawrouter-backend-sdk-typescript package.json exports[.].require points to missing file: dist/index.cjs",
+                result.messages,
+            )
 
     def test_reports_unexported_generated_api_artifact(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -243,7 +526,7 @@ class ClawRouterSdkGuardianTest(unittest.TestCase):
                 "SdkworkBackendClient",
                 "/backend/v3/api",
             )
-            app = root / "sdks" / "clawrouter-app-sdk"
+            app = root / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript"
             (app / "src" / "api" / "index.ts").write_text(
                 "export { CouponsApi } from './coupons';\n",
                 encoding="utf-8",
@@ -258,7 +541,7 @@ class ClawRouterSdkGuardianTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "clawrouter-app-sdk must not contain unexported generated API artifact: src/api/coupon.ts",
+                "clawrouter-app-sdk-typescript must not contain unexported generated API artifact: src/api/coupon.ts",
                 result.messages,
             )
 
@@ -274,7 +557,9 @@ class ClawRouterSdkGuardianTest(unittest.TestCase):
                 "SdkworkBackendClient",
                 "/backend/v3/api",
             )
-            backend_types = root / "sdks" / "clawrouter-backend-sdk" / "src" / "types"
+            backend_types = (
+                root / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "types"
+            )
             (backend_types / "index.ts").write_text(
                 "export type { AdminSkillListResponse } from './admin-skill-list-response';\n",
                 encoding="utf-8",
@@ -293,7 +578,95 @@ class ClawRouterSdkGuardianTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "clawrouter-backend-sdk src/types/index.ts must export AdminSkillItem from ./admin-skill-item",
+                "clawrouter-backend-sdk-typescript src/types/index.ts must export AdminSkillItem from ./admin-skill-item",
+                result.messages,
+            )
+
+    def test_reports_weak_public_sdk_common_empty_operation_types_and_forbidden_no_data_type(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_sdk(root, "clawrouter-app-sdk", "@sdkwork/clawrouter-app-sdk", "app", "SdkworkAppClient", "/app/v3/api")
+            self.write_sdk(
+                root,
+                "clawrouter-backend-sdk",
+                "@sdkwork/clawrouter-backend-sdk",
+                "backend",
+                "SdkworkBackendClient",
+                "/backend/v3/api",
+            )
+            app_types = root / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types"
+            (app_types / "common.ts").write_text(
+                "export type { Page, PageResult, RequestConfig, RequestOptions, QueryParams } from '@sdkwork/sdk-common';\n",
+                encoding="utf-8",
+            )
+            (app_types / "no-data.ts").write_text(
+                "export type NoData = Record<string, unknown>;\n",
+                encoding="utf-8",
+            )
+            (app_types / "disable-skill-request.ts").write_text(
+                "export type DisableSkillRequest = Record<string, unknown>;\n",
+                encoding="utf-8",
+            )
+            (app_types / "metadata-bag.ts").write_text(
+                "export type MetadataBag = Record<string, unknown>;\n",
+                encoding="utf-8",
+            )
+            self.write_portal_sdk_boundary(root)
+
+            result = ClawRouterSdkGuardian(root=root).run()
+
+            self.assertFalse(result.ok)
+            self.assertIn(
+                "clawrouter-app-sdk-typescript src/types/common.ts must not re-export PageResult",
+                result.messages,
+            )
+            self.assertIn(
+                "clawrouter-app-sdk-typescript src/types/no-data.ts is forbidden; no-data operations use PlusApiResult",
+                result.messages,
+            )
+            self.assertIn(
+                "clawrouter-app-sdk-typescript src/types/no-data.ts must not declare NoData",
+                result.messages,
+            )
+            self.assertIn(
+                "clawrouter-app-sdk-typescript src/types/disable-skill-request.ts must not expose "
+                "DisableSkillRequest as Record<string, unknown>; use Record<string, never>",
+                result.messages,
+            )
+            self.assertNotIn(
+                "clawrouter-app-sdk-typescript src/types/metadata-bag.ts must not expose MetadataBag as "
+                "Record<string, unknown>; use Record<string, never>",
+                result.messages,
+            )
+
+    def test_reports_no_data_index_export(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_sdk(root, "clawrouter-app-sdk", "@sdkwork/clawrouter-app-sdk", "app", "SdkworkAppClient", "/app/v3/api")
+            self.write_sdk(
+                root,
+                "clawrouter-backend-sdk",
+                "@sdkwork/clawrouter-backend-sdk",
+                "backend",
+                "SdkworkBackendClient",
+                "/backend/v3/api",
+            )
+            app_types = root / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types"
+            (app_types / "index.ts").write_text(
+                "export type { NoData } from './no-data';\n",
+                encoding="utf-8",
+            )
+            (app_types / "no-data.ts").write_text(
+                "export type NoData = Record<string, never>;\n",
+                encoding="utf-8",
+            )
+            self.write_portal_sdk_boundary(root)
+
+            result = ClawRouterSdkGuardian(root=root).run()
+
+            self.assertFalse(result.ok)
+            self.assertIn(
+                "clawrouter-app-sdk-typescript src/types/index.ts must not export NoData from ./no-data",
                 result.messages,
             )
 
@@ -309,24 +682,46 @@ class ClawRouterSdkGuardianTest(unittest.TestCase):
                 "SdkworkBackendClient",
                 "/backend/v3/api",
             )
-            app_package_path = root / "sdks" / "clawrouter-app-sdk" / "package.json"
+            app_package_path = root / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "package.json"
             app_package = json.loads(app_package_path.read_text(encoding="utf-8"))
             app_package["scripts"]["build"] = "tsc --emitDeclarationOnly && vite build"
             app_package["scripts"]["dev"] = "vite build --watch"
             app_package["devDependencies"]["vite"] = "^7.0.0"
             app_package["devDependencies"]["vite-plugin-dts"] = "^4.0.0"
             app_package_path.write_text(json.dumps(app_package) + "\n", encoding="utf-8")
-            (root / "sdks" / "clawrouter-app-sdk" / "custom" / "build-runtime.mjs").unlink()
+            (
+                root
+                / "sdks"
+                / "clawrouter-app-sdk"
+                / "clawrouter-app-sdk-typescript"
+                / "custom"
+                / "build-runtime.mjs"
+            ).unlink()
             self.write_portal_sdk_boundary(root)
 
             result = ClawRouterSdkGuardian(root=root).run()
 
             self.assertFalse(result.ok)
-            self.assertIn("clawrouter-app-sdk package.json scripts.build must be node custom/build-runtime.mjs", result.messages)
-            self.assertIn("clawrouter-app-sdk package.json scripts.dev must be node custom/build-runtime.mjs", result.messages)
-            self.assertIn("clawrouter-app-sdk custom/build-runtime.mjs is required for SDK runtime builds", result.messages)
-            self.assertIn("clawrouter-app-sdk package.json devDependencies must not include vite", result.messages)
-            self.assertIn("clawrouter-app-sdk package.json devDependencies must not include vite-plugin-dts", result.messages)
+            self.assertIn(
+                "clawrouter-app-sdk-typescript package.json scripts.build must be node custom/build-runtime.mjs",
+                result.messages,
+            )
+            self.assertIn(
+                "clawrouter-app-sdk-typescript package.json scripts.dev must be node custom/build-runtime.mjs",
+                result.messages,
+            )
+            self.assertIn(
+                "clawrouter-app-sdk-typescript custom/build-runtime.mjs is required for SDK runtime builds",
+                result.messages,
+            )
+            self.assertIn(
+                "clawrouter-app-sdk-typescript package.json devDependencies must not include vite",
+                result.messages,
+            )
+            self.assertIn(
+                "clawrouter-app-sdk-typescript package.json devDependencies must not include vite-plugin-dts",
+                result.messages,
+            )
 
     def test_reports_public_app_model_catalog_private_pricing_type_regression(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -340,7 +735,7 @@ class ClawRouterSdkGuardianTest(unittest.TestCase):
                 "SdkworkBackendClient",
                 "/backend/v3/api",
             )
-            app_types = root / "sdks" / "clawrouter-app-sdk" / "src" / "types"
+            app_types = root / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types"
             (app_types / "app-model-catalog-item.ts").write_text(
                 "import type { AppModelCatalogPriceAvailability } from './app-model-catalog-price-availability';\n\n"
                 "export interface AppModelCatalogItem {\n"
@@ -366,15 +761,15 @@ class ClawRouterSdkGuardianTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "clawrouter-app-sdk AppModelCatalogPriceAvailability.status must be 'reference' | 'unavailable'",
+                "clawrouter-app-sdk-typescript AppModelCatalogPriceAvailability.status must be 'reference' | 'unavailable'",
                 result.messages,
             )
             self.assertIn(
-                "clawrouter-app-sdk AppModelCatalogPriceAvailability.status must not expose public available",
+                "clawrouter-app-sdk-typescript AppModelCatalogPriceAvailability.status must not expose public available",
                 result.messages,
             )
             self.assertIn(
-                "clawrouter-app-sdk AppModelCatalogItem must not expose public private pricing field lowestUpstreamCostUnitPrice",
+                "clawrouter-app-sdk-typescript AppModelCatalogItem must not expose public private pricing field lowestUpstreamCostUnitPrice",
                 result.messages,
             )
             for sensitive_field in (
@@ -384,10 +779,184 @@ class ClawRouterSdkGuardianTest(unittest.TestCase):
                 "groupCode",
             ):
                 self.assertIn(
-                    "clawrouter-app-sdk AppModelCatalogPriceAvailability must not expose public private "
+                    "clawrouter-app-sdk-typescript AppModelCatalogPriceAvailability must not expose public private "
                     f"pricing field {sensitive_field}",
                     result.messages,
                 )
+
+    def test_reports_app_sdk_query_parameter_standard_regression(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_sdk(root, "clawrouter-app-sdk", "@sdkwork/clawrouter-app-sdk", "app", "SdkworkAppClient", "/app/v3/api")
+            self.write_sdk(
+                root,
+                "clawrouter-backend-sdk",
+                "@sdkwork/clawrouter-backend-sdk",
+                "backend",
+                "SdkworkBackendClient",
+                "/backend/v3/api",
+            )
+            app_api = (
+                root
+                / "sdks"
+                / "clawrouter-app-sdk"
+                / "clawrouter-app-sdk-typescript"
+                / "src"
+                / "api"
+                / "ai.ts"
+            )
+            app_api.write_text(
+                "export interface RouterFetchModelsParams {\n"
+                "  vendorCodes?: string;\n"
+                "  q?: string;\n"
+                "  searchQuery?: string;\n"
+                "  search_query?: string;\n"
+                "  keyword?: string;\n"
+                "  search?: string;\n"
+                "}\n\n"
+                "export async function fetchModels(params?: RouterFetchModelsParams) {\n"
+                "  return [\n"
+                "    { name: 'vendor_codes', value: params?.vendorCodes, style: 'form', explode: true },\n"
+                "    { name: 'q', value: params?.q, style: 'form', explode: true },\n"
+                "    { name: 'search_query', value: params?.searchQuery, style: 'form', explode: true },\n"
+                "    { name: 'searchQuery', value: params?.search_query, style: 'form', explode: true },\n"
+                "    { name: 'keyword', value: params?.keyword, style: 'form', explode: true },\n"
+                "    { name: 'search', value: params?.search, style: 'form', explode: true },\n"
+                "  ];\n"
+                "}\n",
+                encoding="utf-8",
+            )
+            (
+                root
+                / "sdks"
+                / "clawrouter-app-sdk"
+                / "clawrouter-app-sdk-typescript"
+                / "src"
+                / "api"
+                / "index.ts"
+            ).write_text("export * from './ai';\n", encoding="utf-8")
+            self.write_portal_sdk_boundary(root)
+
+            result = ClawRouterSdkGuardian(root=root).run()
+
+            self.assertFalse(result.ok)
+            self.assertIn(
+                "clawrouter-app-sdk-typescript src/api/ai.ts must expose SDK search text as q, not searchQuery/search_query/keyword/search",
+                result.messages,
+            )
+            self.assertIn(
+                "clawrouter-app-sdk-typescript src/api/ai.ts must send URL search text as q, not search_query/searchQuery/keyword/search",
+                result.messages,
+            )
+            self.assertIn(
+                "clawrouter-app-sdk-typescript src/api/ai.ts must expose vendorCodes as string[] for multi-value query filters",
+                result.messages,
+            )
+            self.assertIn(
+                "clawrouter-app-sdk-typescript src/api/ai.ts must serialize vendor_codes with style=form and explode=false",
+                result.messages,
+            )
+
+    def test_allows_standard_query_parameters_with_later_exploded_scalar_filters(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_sdk(root, "clawrouter-app-sdk", "@sdkwork/clawrouter-app-sdk", "app", "SdkworkAppClient", "/app/v3/api")
+            self.write_sdk(
+                root,
+                "clawrouter-backend-sdk",
+                "@sdkwork/clawrouter-backend-sdk",
+                "backend",
+                "SdkworkBackendClient",
+                "/backend/v3/api",
+            )
+            app_api = (
+                root
+                / "sdks"
+                / "clawrouter-app-sdk"
+                / "clawrouter-app-sdk-typescript"
+                / "src"
+                / "api"
+                / "ai.ts"
+            )
+            app_api.write_text(
+                "export interface AiModelsListParams {\n"
+                "  vendorCodes?: string[];\n"
+                "  q?: string;\n"
+                "}\n\n"
+                "export async function list(params?: AiModelsListParams) {\n"
+                "  return [\n"
+                "    { name: 'vendor_codes', value: params?.vendorCodes, style: 'form', explode: false },\n"
+                "    { name: 'q', value: params?.q, style: 'form', explode: true },\n"
+                "  ];\n"
+                "}\n",
+                encoding="utf-8",
+            )
+            (
+                root
+                / "sdks"
+                / "clawrouter-app-sdk"
+                / "clawrouter-app-sdk-typescript"
+                / "src"
+                / "api"
+                / "index.ts"
+            ).write_text("export * from './ai';\n", encoding="utf-8")
+            self.write_portal_sdk_boundary(root)
+
+            result = ClawRouterSdkGuardian(root=root).run()
+
+            self.assertTrue(result.ok, result.messages)
+
+    def test_reports_backend_ecosystem_skill_resource_tree_regression(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_sdk(root, "clawrouter-app-sdk", "@sdkwork/clawrouter-app-sdk", "app", "SdkworkAppClient", "/app/v3/api")
+            self.write_sdk(
+                root,
+                "clawrouter-backend-sdk",
+                "@sdkwork/clawrouter-backend-sdk",
+                "backend",
+                "SdkworkBackendClient",
+                "/backend/v3/api",
+            )
+            ecosystem_api = (
+                root
+                / "sdks"
+                / "clawrouter-backend-sdk"
+                / "clawrouter-backend-sdk-typescript"
+                / "src"
+                / "api"
+                / "ecosystem.ts"
+            )
+            ecosystem_api.write_text(
+                "export class EcosystemSkillsApi {\n"
+                "  async enableSkill() {}\n"
+                "  async disableSkill() {}\n"
+                "  async publishSkill() {}\n"
+                "  async offlineSkill() {}\n"
+                "}\n",
+                encoding="utf-8",
+            )
+            self.write_portal_sdk_boundary(root)
+
+            result = ClawRouterSdkGuardian(root=root).run()
+
+            self.assertFalse(result.ok)
+            self.assertIn(
+                "clawrouter-backend-sdk-typescript src/api/ecosystem.ts must expose resource class EcosystemApi",
+                result.messages,
+            )
+            self.assertIn(
+                "clawrouter-backend-sdk-typescript src/api/ecosystem.ts must expose resource member public readonly package: EcosystemSkillsPackageApi;",
+                result.messages,
+            )
+            self.assertIn(
+                "clawrouter-backend-sdk-typescript src/api/ecosystem.ts EcosystemSkillsApi must expose async list(",
+                result.messages,
+            )
+            self.assertIn(
+                "clawrouter-backend-sdk-typescript src/api/ecosystem.ts must use standard resource-tree methods, not async enableSkill(",
+                result.messages,
+            )
 
     def test_reports_missing_portal_sdk_boundary(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:

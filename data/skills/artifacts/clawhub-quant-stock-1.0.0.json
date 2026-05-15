@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quant-stock@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quant_stock",
+  "skill": {
+    "id": 70176,
+    "skillKey": "clawhub-quant-stock",
+    "name": "Quant Stock"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quant-stock",
+    "url": "https://clawhub.ai/skills/quant-stock",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quant-stock-f0608d0f99f336e3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI量化选股系统 - 基于多维度评分模型的A股选股分析工具。扫描新能源、电力、半导体、医药、AI、机器人、军工、贵金属等行业，输出每日量化选股报告。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rix-zhang",
+      "userId": "s17e1mpv44gzs74myt134s9nxx83qkxy",
+      "displayName": "Rix Zhang",
+      "image": "https://avatars.githubusercontent.com/u/42019741?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775553698544,
+      "changelog": "quant-stock version 1.0.0\n\n- 首发上线，支持A股多行业量化选股分析\n- 基于6大评分模块对股票进行多维度评分与筛选\n- 自动生成每日精选股票及行业分析报告\n- 支持飞书消息推送及文本报告输出\n- 提供详细加分/扣分规则与配置说明\n- 支持股票池初始化与每日定时自动分析",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2ce02fd231edf3849c2181662383b14881908336748c0a90bdd643ba4c85688d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xerolite@0.1.4",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xerolite",
+  "skill": {
+    "id": 15262,
+    "skillKey": "clawhub-xerolite",
+    "name": "Xerolite"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xerolite",
+    "url": "https://clawhub.ai/skills/xerolite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xerolite-f3feedd1b9603335.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Integrate OpenClaw with Xerolite - IBKR. Use when: querying Xerolite API, placing orders, searching contracts, fetching portfolio."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xero-flex",
+      "userId": "s174vyk5hf2ajz3xt50ynq35td854s8f",
+      "displayName": "xeroflex",
+      "image": "https://avatars.githubusercontent.com/u/259915346?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1015,
+      "installsAllTime": 4,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "0.1.4",
+      "createdAt": 1776616916853,
+      "changelog": "- No user-facing changes in this version.\n- SKILL.md updated with minor formatting and wording tweaks.\n- No changes to code, commands, or functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6fd189fc2d5637862123dd45de67c82d666c3b25064c2586949b0fe55622fd25"
+}

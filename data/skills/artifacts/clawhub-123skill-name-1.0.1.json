@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/123skill-name@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.123skill_name",
+  "skill": {
+    "id": 39822,
+    "skillKey": "clawhub-123skill-name",
+    "name": "123skill-display-name"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "123skill-name",
+    "url": "https://clawhub.ai/skills/123skill-name",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/123skill-name-6eff4e35017447de.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "suncrespo",
+      "userId": "s174jjhgq8zzj493ffgcyq3g5d83vbby",
+      "displayName": "suncrespo",
+      "image": "https://avatars.githubusercontent.com/u/209358250?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776949628349,
+      "changelog": "- Major update: Skill repurposed from \"ontology\" (typed knowledge graph) to \"self-improvement\" (logging learnings and errors for continuous improvement).\n- Replaced all ontology and schema functionality with capturing learnings, errors, and feature requests in markdown files under `.learnings/`.\n- Added new asset/reference files: LEARNINGS.md, ERRORS.md, FEATURE_REQUESTS.md, skill template, OpenClaw integration docs, and setup scripts.\n- Removed legacy ontology references, schemas, and Python scripts.\n- Added OpenClaw-specific setup instructions and hook workflow for automatic reminders.\n- Provided structured logging formats and guidelines for promoting learnings to AGENTS.md, SOUL.md, TOOLS.md, and CLAUDE.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:13775f5803debe6a983d847a9bdedc627d798ce930423179013e638ca03e4359"
+}

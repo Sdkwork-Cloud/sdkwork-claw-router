@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aura-xhs-images@1.3.2",
+  "version": "1.3.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aura_xhs_images",
+  "skill": {
+    "id": 51691,
+    "skillKey": "clawhub-aura-xhs-images",
+    "name": "Aura Xhs Images"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aura-xhs-images",
+    "url": "https://clawhub.ai/skills/aura-xhs-images",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aura-xhs-images-b7382f88328e97ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Xiaohongshu infographic card style presets and prompt templates for astrology, tarot, and lifestyle content. Provides 8 visual styles × 8 layouts with ready-..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luoboask",
+      "userId": "s174p3mxqgx91w315yr250apk983kqhb",
+      "displayName": "luoboask",
+      "image": "https://avatars.githubusercontent.com/u/67533551?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 278,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.3.2",
+      "createdAt": 1774453797990,
+      "changelog": "- Added prominent notice: \"Upgraded: Use `aura-image-gen` for multi-platform support (Pinterest, Instagram, YouTube, etc.)\" to the description.\n- No functional or workflow changes; documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a3314e0333e9d59f5084fe4a952468512cbef3a899a1c2749714e7334e5bb0c2"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/miraix-lifi-earn-agent@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.miraix_lifi_earn_agent",
+  "skill": {
+    "id": 42563,
+    "skillKey": "clawhub-miraix-lifi-earn-agent",
+    "name": "Miraix LI.FI Earn Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "miraix-lifi-earn-agent",
+    "url": "https://clawhub.ai/skills/miraix-lifi-earn-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/miraix-lifi-earn-agent-20ac9022a697a8aa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when the user wants to discover the best USDC vaults with LI.FI Earn, ask an agent to choose a safe vault on Base/Arbitrum/Ethereum, prepare a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "richard7463",
+      "userId": "s171aabnhwf1azz5asdd7pk8sn83g299",
+      "displayName": "richard7463",
+      "image": "https://avatars.githubusercontent.com/u/13402558?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775983234611,
+      "changelog": "Initial release: discover vaults, recommend a safe USDC vault, prepare Composer deposits, and explain receipt tokens.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f2ced6d3a4da5c1b288272d592e5d61fdaa9ff22e0ca379ac52afc57dbf4f45e"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-weekly-report-system@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_weekly_report_system",
+  "skill": {
+    "id": 65780,
+    "skillKey": "clawhub-auto-weekly-report-system",
+    "name": "Auto Weekly Report System"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-weekly-report-system",
+    "url": "https://clawhub.ai/skills/auto-weekly-report-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-weekly-report-system-bcf704ea856ca503.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "全自动周报系统。定时收集v3.5、InStreet、价格监控等数据，生成周报并发布到企业微信文档。当需要自动化报告生成、团队数据同步、定时数据汇总时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rf-ai-wh",
+      "userId": "s1709sczjh4ahvc5v0c3e2gth183nwb4",
+      "displayName": "rf-AI-WH",
+      "image": "https://avatars.githubusercontent.com/u/265223072?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 214,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774502520791,
+      "changelog": "Initial release: fully automated weekly report system with data collection, report generation, and WeCom publishing",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8469b4b7af573bb1109d062dd4de709e6cf9dbf82e259ea8c6862294f810508b"
+}

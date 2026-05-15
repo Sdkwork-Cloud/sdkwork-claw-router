@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18100,
+  "uuid": "skill-clawhub-sonos-announce",
+  "skillKey": "clawhub-sonos-announce",
+  "name": "Sonos Announce",
+  "summary": "Play audio on Sonos with intelligent state restoration - pauses streaming, skips Line-In/TV/Bluetooth, resumes everything.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sonos_announce",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clawdia & crusta",
+      "features": [
+        "Play audio on Sonos with intelligent state restoration",
+        "pauses streaming, skips Line-In/TV/Bluetooth, resumes everything."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sonos-announce@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261586325?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sonos-announce",
+      "url": "https://clawhub.ai/skills/sonos-announce"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sonos-announce",
+    "url": "https://clawhub.ai/skills/sonos-announce",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sonos-announce-7b60ab630dcf1afa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sonos-announce@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-sonos-announce-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e0e281aa0242f7b0de60ca3ba652bae71b5017d2a5a045115030d99176f0db26",
+      "artifactSizeBytes": 2023
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T13:43:08.626Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19648,
+  "uuid": "skill-clawhub-personaldatahub",
+  "skillKey": "clawhub-personaldatahub",
+  "name": "Personaldatahub",
+  "summary": "Pull personal data (emails, issues) and propose outbound actions (drafts, replies) through the PersonalDataHub access control gateway. Data is filtered, reda...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personaldatahub",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Haojian Jin",
+      "features": [
+        "Pull personal data (emails, issues) and propose outbound actions (drafts, replies) through the.",
+        "Data is filtered, reda..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/personaldatahub@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/991519?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "personaldatahub",
+      "url": "https://clawhub.ai/skills/personaldatahub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personaldatahub",
+    "url": "https://clawhub.ai/skills/personaldatahub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personaldatahub-a2c6dbdf2c291149.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/personaldatahub@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-personaldatahub-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c0431598249109198ea0ce25c887c78850d5a7c250fc9ee158eb30f77e7a4f0",
+      "artifactSizeBytes": 2490
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T11:48:44.946Z"
+}

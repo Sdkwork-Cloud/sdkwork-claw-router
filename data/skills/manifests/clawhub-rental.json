@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15726,
+  "uuid": "skill-clawhub-rental",
+  "skillKey": "clawhub-rental",
+  "name": "Rental",
+  "summary": "Find, negotiate, and manage rentals as tenant, landlord, host, or guest with market analysis, scam detection, and lease review.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rental",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Find, negotiate, and manage rentals as tenant, landlord, host, or guest with market analysis, s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rental@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rental",
+      "url": "https://clawhub.ai/skills/rental"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rental",
+    "url": "https://clawhub.ai/skills/rental",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rental-e0c146e3d9648bd1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rental@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rental-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0da592aa9e11b9ec19ca18ac5ab7a1158a69dabb19013d6fbb885e7b9ccd182c",
+      "artifactSizeBytes": 1793
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T09:43:10.138Z"
+}

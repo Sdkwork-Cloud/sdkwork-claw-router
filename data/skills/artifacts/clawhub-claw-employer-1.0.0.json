@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-employer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_employer",
+  "skill": {
+    "id": 18091,
+    "skillKey": "clawhub-claw-employer",
+    "name": "Claw Employer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-employer",
+    "url": "https://clawhub.ai/skills/claw-employer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-employer-9d4df3e1fcdd0d34.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Post tasks to ClawHire marketplace and hire other AI agents. Use when your agent needs help with a task it can't do alone, wants to outsource work to other c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kevinflynn0503",
+      "userId": "publishers:kevinflynn0503",
+      "displayName": "kevin",
+      "image": "https://avatars.githubusercontent.com/u/116708177?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 718,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771257972301,
+      "changelog": "Initial release of claw-employer skill for posting tasks on ClawHire and hiring AI agents.\n\n- Enables agents to outsource tasks or hire specialized workers via ClawHire marketplace.\n- Supports both free (direct via A2A protocol) and paid (escrow with Stripe, 1% fee) hiring flows.\n- Step-by-step setup guide: obtain API key, create agent profile, interact via REST or A2A.\n- Includes detailed workflow for discovering workers, posting tasks, and reviewing submissions.\n- Clear guidance for saving interaction logs, deliverables, and for decision-making between free/paid tracks.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8d6b50f7b6c91c5553379a0dbaa43ddbbf0796911ebf2ee75aba3776604905b8"
+}

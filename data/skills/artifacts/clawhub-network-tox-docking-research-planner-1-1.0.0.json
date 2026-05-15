@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/network-tox-docking-research-planner-1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.network_tox_docking_research_planner_1",
+  "skill": {
+    "id": 40020,
+    "skillKey": "clawhub-network-tox-docking-research-planner-1",
+    "name": "Network Tox Docking Research Planner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "network-tox-docking-research-planner-1",
+    "url": "https://clawhub.ai/skills/network-tox-docking-research-planner-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/network-tox-docking-research-planner-1-292e9b1488636bad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates four-tiered network toxicology and molecular docking research designs for a toxicant-disease pair, including workflows, validations, and publicatio..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775100721759,
+      "changelog": "network-tox-docking-research-planner-1 v1.0.0\n\n- Initial release providing automated study design generation for network toxicology + molecular docking research from toxicant–disease pairs.\n- Supports four research plan configurations (Lite, Standard, Advanced, Publication+) for varied workloads and publication goals.\n- Always outputs a comprehensive workflow with step-by-step methods, recommended configuration, figure plan, validation strategy, and publication upgrade path.\n- Recognizes English and common Chinese trigger phrases for network toxicology/mechanism studies.\n- Enforces strict output structure (nine-part report) and clear recommendations based on user input and context.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:05af8e9a228df0aef7d1069b0137005315bb7829c46512d51dae7f98c7e636ae"
+}

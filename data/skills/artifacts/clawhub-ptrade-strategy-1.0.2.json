@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ptrade-strategy@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ptrade_strategy",
+  "skill": {
+    "id": 64416,
+    "skillKey": "clawhub-ptrade-strategy",
+    "name": "PTRADE量化策略生成器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ptrade-strategy",
+    "url": "https://clawhub.ai/skills/ptrade-strategy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ptrade-strategy-52ce9b6c8cafcc85.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "国金 PTRADE 量化平台策略生成技能。根据用户需求， 生成可在 PTRADE 平台运行 ?Python 量化交易策略代码 ? 触发关键词：PTRADE、ptrade、量化策略、量化交易、生成策略、写策略代码 ?"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weistiger",
+      "userId": "s179943dt1sesa833xm2xtd5vn83jagt",
+      "displayName": "weistiger",
+      "image": "https://avatars.githubusercontent.com/u/13916939?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 224,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775207669630,
+      "changelog": "- Clarified that the skill can now “生成或修改” (generate or modify) PTRADE 策略代码 in the overview section.\n- Standardized and corrected section titles such as “定时或周期 API”, “交易API”, “计算/指标 API”, and “其他工具API” for improved clarity.\n- Improved some description texts for accuracy and readability.\n- Aligned and cleaned up code and comments formatting.\n- Fixed some Chinese display issues and typos in layout and comments.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4f252b4e9a958429ad6c802e71a24f033608ede811b2195f8c055ae5f7bc65e0"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ancc@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ancc",
+  "skill": {
+    "id": 52340,
+    "skillKey": "clawhub-ancc",
+    "name": "ANCC"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ancc",
+    "url": "https://clawhub.ai/skills/ancc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ancc-3374f225444a719e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Grow limbs — discover, validate, and integrate ANCC-compliant CLI tools into your OpenClaw agent. Use when setting up new tools, auditing agent environment s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ppiankov",
+      "userId": "s17fzet2pk4zvezemyabzwzp6x83kp5d",
+      "displayName": "ppiankov",
+      "image": "https://avatars.githubusercontent.com/u/103106369?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 252,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774012071199,
+      "changelog": "Initial release — agent-native CLI convention: validate, audit, token budgets, tool scaffolding",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0de148854945606a090f7dd25d8d09fce94e151368873f471d9afc05fa65da52"
+}

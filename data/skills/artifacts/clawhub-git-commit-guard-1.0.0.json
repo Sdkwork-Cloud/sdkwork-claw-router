@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/git-commit-guard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_commit_guard",
+  "skill": {
+    "id": 29189,
+    "skillKey": "clawhub-git-commit-guard",
+    "name": "Dev Git Guard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-commit-guard",
+    "url": "https://clawhub.ai/skills/git-commit-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-commit-guard-80341cb149d6d233.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enforce a git-first workflow for repository coding tasks. Use when Codex is working inside a local git repository to inspect, modify, debug, refactor, implem..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ontheway23333",
+      "userId": "s1714p9jmpbfg3e7gs2n327d3x83hwkd",
+      "displayName": "ontheway23333",
+      "image": "https://avatars.githubusercontent.com/u/217304875?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 298,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773929871140,
+      "changelog": "Initial release.\n\nAdded a git-first development workflow skill for repository-based coding tasks.\n\nKey behaviors:\n- check git status before coding\n- review dirty workspace changes first\n- run relevant validation or tests when feasible\n- commit existing work with detailed Chinese commit messages before continuing\n- proceed with implementation only after the workspace is stabilized\n- run broader tests near completion\n- create a final detailed Chinese commit at the end of the task\n\nBest for debugging, refactoring, implementation, cleanup, and finishing partially completed work in repositories that may already contain uncommitted changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7f539113f8cd7b2b0ef88141c8b49e17d27c252603c53c9e7f6e802398635684"
+}

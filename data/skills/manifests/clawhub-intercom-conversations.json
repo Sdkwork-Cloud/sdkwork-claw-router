@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18171,
+  "uuid": "skill-clawhub-intercom-conversations",
+  "skillKey": "clawhub-intercom-conversations",
+  "name": "intercom-conversations",
+  "summary": "Read Intercom conversations by listing, finding, or searching them using the ConversationsClient with JSON input and output.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intercom_conversations",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "duyeng",
+      "features": [
+        "Read Intercom conversations by listing, finding, or searching them using the ConversationsClien."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/intercom-conversations@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/140710227?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "intercom-conversations",
+      "url": "https://clawhub.ai/skills/intercom-conversations"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intercom-conversations",
+    "url": "https://clawhub.ai/skills/intercom-conversations",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intercom-conversations-0a80425aaf0dcbe6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/intercom-conversations@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-intercom-conversations-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b54abaa2233a925c5d396e83ace581ac474b89c2c5d0a413400cc5565a613ad4",
+      "artifactSizeBytes": 2215
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T00:11:15.494Z"
+}

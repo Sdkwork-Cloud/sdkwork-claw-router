@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9968,
+  "uuid": "skill-clawhub-youtube-analytics",
+  "skillKey": "clawhub-youtube-analytics",
+  "name": "YouTube Analytics",
+  "summary": "YouTube Data API v3 analytics toolkit. Analyze YouTube channels, videos, and search results. Use when the user asks to: check YouTube channel stats, analyze video performance, compare channels, search for videos, get subscriber counts, vie.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_analytics",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "adamkristopher",
+      "features": [
+        "YouTube Data API v3 analytics toolkit",
+        "Analyze YouTube channels, videos, and search results",
+        "Use when the user asks to: check YouTube channel stats, analyze video performance, compare chan.",
+        "Requires a YouTube Data API v3 key from Google Cloud Console."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-analytics@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/188609829?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-analytics",
+      "url": "https://clawhub.ai/skills/youtube-analytics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-analytics",
+    "url": "https://clawhub.ai/skills/youtube-analytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-analytics-8c340b977850ac79.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-analytics@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-analytics-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:65971e8ec60ddb13d65f6122cb57af7b26afc395d5c19bede464e5d314144bb4",
+      "artifactSizeBytes": 2071
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-26T22:09:12.916Z"
+}

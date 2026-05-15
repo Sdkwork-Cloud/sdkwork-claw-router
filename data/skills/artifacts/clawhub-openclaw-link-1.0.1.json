@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-link@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_link",
+  "skill": {
+    "id": 44426,
+    "skillKey": "clawhub-openclaw-link",
+    "name": "ClawLink"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-link",
+    "url": "https://clawhub.ai/skills/openclaw-link",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-link-35cb7a61894f2f9f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cross-instance agent communication for OpenClaw. ClawLink lets multiple OpenClaw sessions discover each other, delegate tasks, share knowledge, collaborative..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sharoonsharif",
+      "userId": "s17cbqpc05capj08csqdymywcs83haev",
+      "displayName": "Sharoon Sharif",
+      "image": "https://avatars.githubusercontent.com/u/150296639?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774994255214,
+      "changelog": "Initial release of ClawLink - cross-instance agent communication for OpenClaw",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3e1ec8c5aa0a421d66ea4bb452575e6188c1073e98f0328cf81137c6878af43b"
+}

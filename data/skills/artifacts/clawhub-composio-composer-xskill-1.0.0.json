@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/composio-composer-xskill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.composio_composer_xskill",
+  "skill": {
+    "id": 21001,
+    "skillKey": "clawhub-composio-composer-xskill",
+    "name": "Composio Composer Xskill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "composio-composer-xskill",
+    "url": "https://clawhub.ai/skills/composio-composer-xskill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/composio-composer-xskill-1c7c13aaafc437b4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enables posting tweets to Twitter/X through Composio's integration platform via HTTP and BeautifulSoup. Use when posting tweets or integrating with Composio."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "austindixson",
+      "userId": "s17472vm40hmrgybr4rdjmet6h84bcs0",
+      "displayName": "austindixson",
+      "image": "https://avatars.githubusercontent.com/u/52183161?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 527,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772197500708,
+      "changelog": "Initial release of Composio Composer X Skill.\n\n- Enables posting, retrieving, and deleting tweets on Twitter/X via Composio's integration platform.\n- Provides easy-to-use Python functions: `post_tweet`, `get_tweet`, and `delete_tweet`.\n- Requires configuration of authentication tokens and credentials in environment variables.\n- Uses HTTP and BeautifulSoup to interact with Composio's web interface.\n- Includes clear installation and usage instructions in the documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f15db21a116b169ddbe7c301173c5ae02f6962921fba5ed1bcfc646c03a6ec30"
+}

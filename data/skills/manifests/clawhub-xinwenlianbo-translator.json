@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57810,
+  "uuid": "skill-clawhub-xinwenlianbo-translator",
+  "skillKey": "clawhub-xinwenlianbo-translator",
+  "name": "新闻联播中翻中",
+  "summary": "This skill translates CCTV XinWenLianBo (新闻联播) official language into plain Chinese that educated general audiences can understand. It fetches daily XinWenLi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xinwenlianbo_translator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ltryee",
+      "features": [
+        "This skill translates CCTV XinWenLianBo (新闻联播) official language into plain Chinese that educat.",
+        "It fetches daily XinWenLi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xinwenlianbo-translator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/854047?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xinwenlianbo-translator",
+      "url": "https://clawhub.ai/skills/xinwenlianbo-translator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xinwenlianbo-translator",
+    "url": "https://clawhub.ai/skills/xinwenlianbo-translator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xinwenlianbo-translator-aecd44ad9d976afd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xinwenlianbo-translator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xinwenlianbo-translator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cc2970b40f47d6a29ccbf53270d01e3d6a1e5bf82aee158ac58e1fb1d8cb223b",
+      "artifactSizeBytes": 2550
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T12:48:12.956Z"
+}

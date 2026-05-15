@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/macos-suite@0.2.3",
+  "version": "0.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.macos_suite",
+  "skill": {
+    "id": 58311,
+    "skillKey": "clawhub-macos-suite",
+    "name": "macos-suite"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "macos-suite",
+    "url": "https://clawhub.ai/skills/macos-suite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/macos-suite-a467564d91aaf4db.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "macOS 系统应用自动化：打开/读取/创建（Mail/Calendar/Reminders/Notes/Maps/Freeform/Photos/Weather/Stocks/Clock）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lilei0311",
+      "userId": "publishers:lilei0311",
+      "displayName": "MaxStormSpace",
+      "image": "https://avatars.githubusercontent.com/u/67162380?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 795,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.2.3",
+      "createdAt": 1772543719248,
+      "changelog": "Add structured needsConfirm response when confirm=YES is required; docs updated.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d3372ac07cabcd513f33584daf12712d04afdb8ced0bca7e2e558426ccee9c44"
+}

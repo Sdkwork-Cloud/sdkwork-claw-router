@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30590,
+  "uuid": "skill-clawhub-investment-risk-scanner",
+  "skillKey": "clawhub-investment-risk-scanner",
+  "name": "Investment Risk Scanner (Buffett + Porter Framework)",
+  "summary": "Investment risk scanner using Buffett + Porter's Five Forces framework. Triggers when users ask \"analyze XXX's risk\", \"is this project legit\", \"can I buy thi...",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.investment_risk_scanner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bear Xiong",
+      "features": [
+        "Investment risk scanner using Buffett + Porter's Five Forces framework",
+        "Triggers when users ask \"analyze XXX's risk\", \"is this project legit\", \"can I buy thi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/investment-risk-scanner@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5952306?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "investment-risk-scanner",
+      "url": "https://clawhub.ai/skills/investment-risk-scanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "investment-risk-scanner",
+    "url": "https://clawhub.ai/skills/investment-risk-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/investment-risk-scanner-95b70d1edc1e7819.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/investment-risk-scanner@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-investment-risk-scanner-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:86f9be6bd334071765e24d2d9dc6b3662487bb086cb7f4f70c6d2adc159965e0",
+      "artifactSizeBytes": 2708
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T02:20:35.185Z"
+}

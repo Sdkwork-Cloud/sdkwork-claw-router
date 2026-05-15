@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tcly-c@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tcly_c",
+  "skill": {
+    "id": 66466,
+    "skillKey": "clawhub-tcly-c",
+    "name": "Travel Customizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tcly-c",
+    "url": "https://clawhub.ai/skills/tcly-c",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tcly-c-cf41f9ef42f73169.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于飞书多维表格的智能旅游行程定制助手，可生成、查询和管理旅行计划。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lijingxu007",
+      "userId": "publishers:lijingxu007",
+      "displayName": "lijingxu007",
+      "image": "https://avatars.githubusercontent.com/u/27415257?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 400,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773257978582,
+      "changelog": "- Skill name changed to “Travel Customizer” and version updated to 1.0.1.\n- Description and author information updated.\n- Bilingual inbound tourism assistant features removed; focus is now solely on itinerary creation, query, and management via Feishu Bitable.\n- All features and instructions related to lead collection, language detection, and visa assistance were dropped.\n- Installation instructions, tags, and GitHub repository link updated to reflect the new project location and purpose.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c18edea3dd5282906c2610175069aa44ed3464f49745b620bb490ba4a13f9ad7"
+}

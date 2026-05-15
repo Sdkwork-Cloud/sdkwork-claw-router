@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tools-ui@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tools_ui",
+  "skill": {
+    "id": 11274,
+    "skillKey": "clawhub-tools-ui",
+    "name": "Tools Ui"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tools-ui",
+    "url": "https://clawhub.ai/skills/tools-ui",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tools-ui-230c224ad788c926.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Tool lifecycle UI components for React/Next.js from ui.inference.sh. Display tool calls: pending, progress, approval required, results. Capabilities: tool st..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "okaris",
+      "userId": "s1737xapsjy8k5qnagtfyf5nrx85t72x",
+      "displayName": "Ömer Karışman",
+      "image": "https://avatars.githubusercontent.com/u/1448702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2023,
+      "installsAllTime": 20,
+      "installsCurrent": 18,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1771403437694,
+      "changelog": "- Added initial SKILL.md with detailed documentation for tool lifecycle UI components for React/Next.js.\n- Includes usage instructions, supported states (pending, running, approval, success, error), and code examples for ToolCall, ToolResult, and ToolApproval components.\n- Describes automatic icon chooser, tool card styling, and integration with Agent component for automated tool workflows.\n- Lists related skills and links to further documentation and resources.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f287c83160cf61ab02832639e558a13918721289321c1e5b4109a25db516d588"
+}

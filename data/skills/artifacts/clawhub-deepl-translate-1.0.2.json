@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deepl-translate@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deepl_translate",
+  "skill": {
+    "id": 61770,
+    "skillKey": "clawhub-deepl-translate",
+    "name": "deepL Translate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deepl-translate",
+    "url": "https://clawhub.ai/skills/deepl-translate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deepl-translate-6d6c6f03830df31e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "当用户明确要求使用 DeepL 官方 API 时使用，适用于文本翻译、文档翻译、语言与用量查询，以及 glossary v2/v3 管理。仅连接 DeepL 官方 API 域名，使用环境变量中的 DEEPL_API_KEY，不读取其他凭证。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liaol99",
+      "userId": "s1710zfznyc28y8h6z43q6q5en83jkp5",
+      "displayName": "liaong",
+      "image": "https://avatars.githubusercontent.com/u/115599759?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 249,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774450121889,
+      "changelog": "本次更新主要提升了 skill 的通用性和可移植性，不再依赖特定宿主目录结构。\n\n  更新内容：\n\n  - 将文档中的调用方式改为更通用的 <skill-directory> 写法，适配不同安装环境\n  - 增加前置条件说明，明确仅依赖 python3、DEEPL_API_KEY 和 Python 标准库\n  - 增加 For Agents 和 For Humans 两类使用说明，便于不同宿主和用户理解调用方式\n  - 明确核心能力与扩展能力的分层，方便按场景选择使用\n  - 补充常见错误说明，降低跨平台接入和排障成本",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:300a21e3be95648a7baa247ff501a5a84c03526f05e731e3850cf78e2c00dd4f"
+}

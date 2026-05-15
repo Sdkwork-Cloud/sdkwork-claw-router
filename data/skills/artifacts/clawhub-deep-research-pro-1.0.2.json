@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deep-research-pro@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deep_research_pro",
+  "skill": {
+    "id": 8289,
+    "skillKey": "clawhub-deep-research-pro",
+    "name": "Deep Research Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deep-research-pro",
+    "url": "https://clawhub.ai/skills/deep-research-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deep-research-pro-6d12bc6fc1b6a133.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-source deep research agent. Searches the web, synthesizes findings, and delivers cited reports. No API keys required."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "parags",
+      "userId": "publishers:parags",
+      "displayName": "parags",
+      "image": "https://avatars.githubusercontent.com/u/48784?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 29881,
+      "installsAllTime": 359,
+      "installsCurrent": 334,
+      "stars": 78,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770303332827,
+      "changelog": "Re-publish to fix visibility",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1269dd6f4236e9d03b83d94338a34357075c8d96244e163248778c4218ade6a1"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flow-automation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flow_automation",
+  "skill": {
+    "id": 47267,
+    "skillKey": "clawhub-flow-automation",
+    "name": "Automation Workflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flow-automation",
+    "url": "https://clawhub.ai/skills/flow-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flow-automation-74d2f2991bca7d24.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and manage automation workflows for repetitive tasks. Use when user needs to schedule periodic data sync, chain API calls, set up triggered actions, b..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dinghaibin",
+      "userId": "s170ed26v1mh4qzy7v9cnn7msx85mrn1",
+      "displayName": "BIN",
+      "image": "https://avatars.githubusercontent.com/u/9191597?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 116,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777307075525,
+      "changelog": "Initial release: YAML-based automation workflow engine",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cd7eb0f45ed9fc3029cada3e6a6ca8501d5f6b026080bb29e4a8b067929e6089"
+}

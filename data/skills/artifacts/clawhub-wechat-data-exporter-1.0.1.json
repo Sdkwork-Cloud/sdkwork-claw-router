@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-data-exporter@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_data_exporter",
+  "skill": {
+    "id": 63127,
+    "skillKey": "clawhub-wechat-data-exporter",
+    "name": "WeChat Data Exporter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-data-exporter",
+    "url": "https://clawhub.ai/skills/wechat-data-exporter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-data-exporter-db2efe76c59e50cc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "(已验证) 可靠的视频号数据导出器，通过 API 直接获取指定客户的多维度数据报告。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ahsbnb",
+      "userId": "s17d6exthhg7wwbw0z502jz00183kevf",
+      "displayName": "an",
+      "image": "https://avatars.githubusercontent.com/u/208153467?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 231,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774494060855,
+      "changelog": "- No file or documentation changes detected in this version.\n- Version number remains unchanged in SKILL.md.\n- Functionality and usage remain consistent with previous release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5352b88c93ce786c2f435c57638eefb5cf804ff43d06f7a5de90adb18a0fc1b1"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35455,
+  "uuid": "skill-clawhub-cert-decode",
+  "skillKey": "clawhub-cert-decode",
+  "name": "Cert Decode",
+  "summary": "Decode and inspect X.509 SSL/TLS certificates. Use when the user asks to read a certificate, parse a PEM file, check certificate expiry, inspect a TLS cert,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cert_decode",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Omar Hernandez",
+      "features": [
+        "Decode and inspect X.509 SSL/TLS certificates",
+        "Use when the user asks to read a certificate, parse a PEM file, check certificate expiry, inspe."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cert-decode@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86250007?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cert-decode",
+      "url": "https://clawhub.ai/skills/cert-decode"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cert-decode",
+    "url": "https://clawhub.ai/skills/cert-decode",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cert-decode-8bf0ef7aef08ec60.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cert-decode@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cert-decode-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:353feb1cc8c764cdbac4cdbaa924450c28e0daa6b7dbfe250b8ee612ad96e3b5",
+      "artifactSizeBytes": 2392
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T00:54:08.396Z"
+}

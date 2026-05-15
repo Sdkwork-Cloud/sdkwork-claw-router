@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prompt-injection-protection@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_injection_protection",
+  "skill": {
+    "id": 14470,
+    "skillKey": "clawhub-prompt-injection-protection",
+    "name": "PROMPT INJECTION PROTECTION"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-injection-protection",
+    "url": "https://clawhub.ai/skills/prompt-injection-protection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-injection-protection-90395fb8d3772794.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Protects against prompt injection attacks by sanitizing, validating, and securely processing untrusted external content from websites, emails, and documents."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "blackworm",
+      "userId": "publishers:blackworm",
+      "displayName": "blackworm",
+      "image": "https://avatars.githubusercontent.com/u/5106762?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1005,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770652552068,
+      "changelog": "Initial release of the Prompt Injection Protection Skill.\n\n- Provides comprehensive protection against prompt injection attacks from untrusted sources.\n- Includes content sanitization, validation, and prompt injection detection features.\n- Securely processes web content, emails, documents, and other external inputs.\n- Implements robust security measures such as input sanitization, output encoding, and context isolation.\n- Offers functions for safe extraction and filtering of information to prevent manipulation or unintended actions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:841e6c41a1f2043b665f21737f1088c6f158b2fd195d2f7531f60cc865cd42de"
+}

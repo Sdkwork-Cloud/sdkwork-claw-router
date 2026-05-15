@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-sonar@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_sonar",
+  "skill": {
+    "id": 14126,
+    "skillKey": "clawhub-skill-sonar",
+    "name": "SKILL Sonar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-sonar",
+    "url": "https://clawhub.ai/skills/skill-sonar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-sonar-edd955499060eefe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Lifecycle guard. Route to preflight or runtime."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yxf203",
+      "userId": "s177qkberq3a1v4x1983nw58wd83g5w8",
+      "displayName": "Xiaofang Yang",
+      "image": "https://avatars.githubusercontent.com/u/128906103?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 772,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 5,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774316154755,
+      "changelog": "- Updated runtime guard to include four new focused checklists: mode transition, provenance, sensitive resources, and triage.\n- Removed nine previously separate preflight area checklists, using only one file.\n- No changes to routing or user-facing instructions.\n- Improves organization of runtime safety checks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3a942d1615fc6508f35311443804c5061da94804eac9d463d148b622186ae299"
+}

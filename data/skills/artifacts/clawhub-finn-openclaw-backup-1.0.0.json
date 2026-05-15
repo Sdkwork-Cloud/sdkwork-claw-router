@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/finn-openclaw-backup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finn_openclaw_backup",
+  "skill": {
+    "id": 60170,
+    "skillKey": "clawhub-finn-openclaw-backup",
+    "name": "Openclaw Backup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finn-openclaw-backup",
+    "url": "https://clawhub.ai/skills/finn-openclaw-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finn-openclaw-backup-6ad4dfc0ce648255.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "备份 OpenClaw 关键配置到桌面带时间戳的文件夹"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "meowlegemy-sudo",
+      "userId": "s17043qxbyq7qefytp1k4rqr59868917",
+      "displayName": "Finn",
+      "image": "https://avatars.githubusercontent.com/u/262774964?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 371,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772943132699,
+      "changelog": "- Initial release of openclaw-backup skill.\n- Backs up key OpenClaw files and folders (openclaw.json, agents, credentials, cron) to a time-stamped folder on the desktop.\n- Provides both an automated backup script and manual backup instructions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b72a82107141b98b39c7795ebe861441055c7301ec6dd534250dd3cf64656cfe"
+}

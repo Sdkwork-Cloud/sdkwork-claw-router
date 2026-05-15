@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46143,
+  "uuid": "skill-clawhub-ascii-excalidraw",
+  "skillKey": "clawhub-ascii-excalidraw",
+  "name": "Publish Ascii Excalidraw",
+  "summary": "Convert ASCII art diagrams to hand-drawn Excalidraw JSON files. Analyzes structure first, then generates incrementally module-by-module.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ascii_excalidraw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Walle",
+      "features": [
+        "Convert ASCII art diagrams to hand-drawn Excalidraw JSON files",
+        "Analyzes structure first, then generates incrementally module-by-module."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ascii-excalidraw@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9403745?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ascii-excalidraw",
+      "url": "https://clawhub.ai/skills/ascii-excalidraw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ascii-excalidraw",
+    "url": "https://clawhub.ai/skills/ascii-excalidraw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ascii-excalidraw-2ddfb7161dd0674f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ascii-excalidraw@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ascii-excalidraw-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8351be4c69a2ba17e6119fe403e528214719e5b996548b6091afe5fb39141519",
+      "artifactSizeBytes": 2594
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T02:46:03.822Z"
+}

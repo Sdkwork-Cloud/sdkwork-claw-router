@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/factorlang-expression@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.factorlang_expression",
+  "skill": {
+    "id": 69758,
+    "skillKey": "clawhub-factorlang-expression",
+    "name": "factorlang-expression"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "factorlang-expression",
+    "url": "https://clawhub.ai/skills/factorlang-expression",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/factorlang-expression-595f733297f9d051.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供完整的FactorLang量化因子表达式语言参考手册和规范。当用户需要编写因子表达式、策略开发、查询语法或设计交易策略时调用此技能。包含完整的变量、函数和最佳实践。基于原始文档，包含完整的变量、函数和最佳实践。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rxjhfmf",
+      "userId": "s17fev0wka4qdr752p33ngz30n83qzmt",
+      "displayName": "Frank",
+      "image": "https://avatars.githubusercontent.com/u/17841020?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774594427723,
+      "changelog": "- 文档路径从根目录移至 resources/ 下（FactorLang表达式系统规范.md → resources/FactorLang表达式系统规范.md）\n- SKILL.md 内的数据来源说明同步为新路径，引用为 [resources/FactorLang表达式系统规范.md]\n- 其余规范、内容、示例、规则均保持一致，没有其他功能或逻辑性调整",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cf9adbf8045c973b524334b0ff67a62e62b9dc073f3533643d9df90cfa376d2b"
+}

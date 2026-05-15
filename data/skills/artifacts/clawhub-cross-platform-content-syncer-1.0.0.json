@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cross-platform-content-syncer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cross_platform_content_syncer",
+  "skill": {
+    "id": 50885,
+    "skillKey": "clawhub-cross-platform-content-syncer",
+    "name": "Cross Platform Content Syncer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cross-platform-content-syncer",
+    "url": "https://clawhub.ai/skills/cross-platform-content-syncer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cross-platform-content-syncer-3e73d6adc3f18a94.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Publish content once, distribute everywhere—sync WordPress, Substack, Medium, and LinkedIn automatically. Use when the user needs multi-channel publishing, c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ncreighton",
+      "userId": "s1796aws4dkha8d1m3anczz2dn83hvxz",
+      "displayName": "ncreighton",
+      "image": "https://avatars.githubusercontent.com/u/15095223?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 361,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773588472496,
+      "changelog": "Initial release of cross-platform-content-syncer.\n\n- Automatically syncs content between WordPress, Substack, Medium, and LinkedIn with unified workflow.\n- Supports platform-specific formatting, SEO optimization, and metadata generation.\n- Enables scheduled or immediate publishing, batch operations, and staggered cross-platform distribution.\n- Includes analytics tracking, Slack notifications, and Google Drive backup/versioning.\n- Easy configuration via environment variables and customizable YAML options.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6c3c2be0682ceeaadc730b7ca811bd2152f85d2bfd09aec34018d9bbaecf7dfa"
+}

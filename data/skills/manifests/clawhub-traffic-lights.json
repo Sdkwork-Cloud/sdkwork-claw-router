@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36624,
+  "uuid": "skill-clawhub-traffic-lights",
+  "skillKey": "clawhub-traffic-lights",
+  "name": "Traffic Lights",
+  "summary": "Create multi-criteria comparison charts using traffic lights or Harvey balls. Use for option evaluation, competitive comparison, and executive dashboards.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.traffic_lights",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linuszz",
+      "features": [
+        "Create multi-criteria comparison charts using traffic lights or Harvey balls",
+        "Use for option evaluation, competitive comparison, and executive dashboards."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/traffic-lights@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46770204?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "traffic-lights",
+      "url": "https://clawhub.ai/skills/traffic-lights"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "traffic-lights",
+    "url": "https://clawhub.ai/skills/traffic-lights",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/traffic-lights-bd8a29a49d5a32a6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/traffic-lights@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-traffic-lights-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2300d2741e0756f4f46b2e18183702218db4d75120a8bfb9041126af81137361",
+      "artifactSizeBytes": 2417
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T15:05:20.303Z"
+}

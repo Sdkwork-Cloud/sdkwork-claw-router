@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67159,
+  "uuid": "skill-clawhub-tencentcloud-faceid-compareface",
+  "skillKey": "clawhub-tencentcloud-faceid-compareface",
+  "name": "TencentCloud FaceID CompareFace",
+  "summary": "腾讯云人脸比对(CompareFace)接口调用技能。当用户需要对两张人脸图片进行相似度比对时，应使用此技能。基于腾讯云人脸识别服务，对两张图片中的人脸进行相似度比较，返回人脸相似度分数。支持图片Base64和图片URL两种输入方式，可用于判断两张人脸是否为同一人。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencentcloud_faceid_compareface",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaoqiangjava",
+      "features": [
+        "腾讯云人脸比对(CompareFace)接口调用技能。当用户需要对两张人脸图片进行相似度比对时，应使用此技能。基于腾讯云人脸识别服务，对两张图片中的人脸进行相似度比较，返回人脸相似度分数。支."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tencentcloud-faceid-compareface@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28345639?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tencentcloud-faceid-compareface",
+      "url": "https://clawhub.ai/skills/tencentcloud-faceid-compareface"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencentcloud-faceid-compareface",
+    "url": "https://clawhub.ai/skills/tencentcloud-faceid-compareface",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencentcloud-faceid-compareface-817dcc8b6f651f48.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tencentcloud-faceid-compareface@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-tencentcloud-faceid-compareface-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:697c782fec790748e14cf31c4e8b3591089a3e753dfbcfbca30f50106ecbd357",
+      "artifactSizeBytes": 2585
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T09:58:51.001Z"
+}

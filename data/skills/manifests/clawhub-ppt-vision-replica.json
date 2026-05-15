@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64216,
+  "uuid": "skill-clawhub-ppt-vision-replica",
+  "skillKey": "clawhub-ppt-vision-replica",
+  "name": "PPT 视觉复刻",
+  "summary": "将PPT截图或信息图转换为可编辑的PPTX文件。此技能基于Images2Slides论文(arXiv:2602.07645)实现， 利用视觉-语言模型(VLM)进行区域理解，通过坐标映射算法将像素坐标转换为PPTX坐标。 支持复杂形状降级处理策略（custGeom/渐变/透明等无法直接还原的形状转为PNG嵌入）。...",
+  "version": "1.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ppt_vision_replica",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Allegro",
+      "features": [
+        "将PPT截图或信息图转换为可编辑的PPTX文件。此技能基于Images2Slides论文(arXiv:2602.07645)实现， 利用视觉-语言模型(VLM)进行区域理解，通过坐标映射算法."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ppt-vision-replica@1.4.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/136750165?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ppt-vision-replica",
+      "url": "https://clawhub.ai/skills/ppt-vision-replica"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ppt-vision-replica",
+    "url": "https://clawhub.ai/skills/ppt-vision-replica",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ppt-vision-replica-a122ca090be9e96f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ppt-vision-replica@1.4.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ppt-vision-replica-1.4.1.json",
+      "version": "1.4.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3a5c54a8090a2fcad73eb121f02a3c5addffe76361a66be9d13c35681a1d2d21",
+      "artifactSizeBytes": 2507
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T16:24:27.354Z"
+}

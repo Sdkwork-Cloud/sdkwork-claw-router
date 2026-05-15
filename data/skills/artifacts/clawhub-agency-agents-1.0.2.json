@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agency-agents@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agency_agents",
+  "skill": {
+    "id": 59133,
+    "skillKey": "clawhub-agency-agents",
+    "name": "Agency Agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agency-agents",
+    "url": "https://clawhub.ai/skills/agency-agents",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agency-agents-ad416884fab3976f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI Agent 团队 - 61 个专业 Agent，8 大部门，完整的 AI 代理机构。支持单 Agent 使用和多 Agent 协作编排。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jerry-guo-mys",
+      "userId": "publishers:jerry-guo-mys",
+      "displayName": "jerry-guo-mys",
+      "image": "https://avatars.githubusercontent.com/u/188930677?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4114,
+      "installsAllTime": 43,
+      "installsCurrent": 41,
+      "stars": 14,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772849594407,
+      "changelog": "v1.0.2 - 完整 61 Agent 团队 + 编排器 + Todo App Demo",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9f133715a22eaf8336dfae87d65fa2df5eb24b4fc607a0739236113959b2a709"
+}

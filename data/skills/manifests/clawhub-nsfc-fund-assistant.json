@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69711,
+  "uuid": "skill-clawhub-nsfc-fund-assistant",
+  "skillKey": "clawhub-nsfc-fund-assistant",
+  "name": "Nsfc",
+  "summary": "国家自然科学基金（NSFC）申请统一入口 - 从选题、撰写、优化到形式审查的全流程支持",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nsfc_fund_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JIRBOY",
+      "features": [
+        "国家自然科学基金（NSFC）申请统一入口",
+        "从选题、撰写、优化到形式审查的全流程支持"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nsfc-fund-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49422297?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nsfc-fund-assistant",
+      "url": "https://clawhub.ai/skills/nsfc-fund-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nsfc-fund-assistant",
+    "url": "https://clawhub.ai/skills/nsfc-fund-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nsfc-fund-assistant-a4f9225edeb7b9bd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nsfc-fund-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nsfc-fund-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:13b0beb9803bfcb7678a532781ffe15501b28817ad90a6e90cfda6db6bf03d16",
+      "artifactSizeBytes": 2488
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T09:48:31.052Z"
+}

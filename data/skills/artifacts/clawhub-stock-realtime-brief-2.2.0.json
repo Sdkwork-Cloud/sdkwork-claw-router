@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-realtime-brief@2.2.0",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_realtime_brief",
+  "skill": {
+    "id": 68557,
+    "skillKey": "clawhub-stock-realtime-brief",
+    "name": "Stock Realtime Brief"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-realtime-brief",
+    "url": "https://clawhub.ai/skills/stock-realtime-brief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-realtime-brief-129b4ef311563fa4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A股实时分析与可执行操作建议生成器。支持三种模式：(1) 持仓简报模式 — 针对用户持仓出盘前/盘中风险简报，含融资风险体检与重要公告检测；(2) 单股深度模式 — 针对一只股票出技术面 + 操作位 + 三档止损方案；(3) 多股对比模式 — 针对多只股票（自选股/同板块/比价）做横向对比与综合评分。触发短语：盘..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "michaelliugh",
+      "userId": "s17a3nrwsry4bm9jeg7vk5714h8691ef",
+      "displayName": "Michaelliugh",
+      "image": "https://avatars.githubusercontent.com/u/256581263?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 72,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.2.0",
+      "createdAt": 1778123869826,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:af7c77846e7133158bc6caa481e2a941015bc4a0df37984b6a8579afb09849bb"
+}

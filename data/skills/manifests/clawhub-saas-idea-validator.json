@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39791,
+  "uuid": "skill-clawhub-saas-idea-validator",
+  "skillKey": "clawhub-saas-idea-validator",
+  "name": "SaaS Idea Validator",
+  "summary": "Validate SaaS and product ideas before building. Market size estimation, competitor mapping, pricing validation, MVP scope definition, and go/no-go scoring....",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.saas_idea_validator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tktk-ai",
+      "features": [
+        "Validate SaaS and product ideas before building",
+        "Market size estimation, competitor mapping, pricing validation, MVP scope definition, and go/no."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/saas-idea-validator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59158345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "saas-idea-validator",
+      "url": "https://clawhub.ai/skills/saas-idea-validator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "saas-idea-validator",
+    "url": "https://clawhub.ai/skills/saas-idea-validator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/saas-idea-validator-802880db5348d288.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/saas-idea-validator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-saas-idea-validator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:724430d200a2dcb249160f1c97b7bf5ab61230c19a29e2e6f63d85c750324c73",
+      "artifactSizeBytes": 2012
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T15:29:16.762Z"
+}

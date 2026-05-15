@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pilot-alert@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_alert",
+  "skill": {
+    "id": 41633,
+    "skillKey": "clawhub-pilot-alert",
+    "name": "Pilot Alert"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-alert",
+    "url": "https://clawhub.ai/skills/pilot-alert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-alert-c350d71ff50b6316.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Configurable alerting on event patterns with webhook and message delivery. Use this skill when: 1. You need to trigger alerts based on event patterns or thre..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "teoslayer",
+      "userId": "s1774mw0xjm94md84a5rvrp9rd84fear",
+      "displayName": "Calin Teodor",
+      "image": "https://avatars.githubusercontent.com/u/45018530?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775680831576,
+      "changelog": "Initial release of pilot-alert.\n\n- Provides configurable alerting on event patterns with webhook and message delivery.\n- Supports aggregation, deduplication, and escalation to on-call agents.\n- Enables webhook delivery for external services (Slack, Discord, PagerDuty).\n- Includes example workflows for critical error, threshold, and deduplication alerting.\n- Requires pilot-protocol skill, pilotctl, jq, curl, and a running daemon.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5f64b83a5b8473df06100b31d9a2988ca9f944dbd58ec5324be231ac26358453"
+}

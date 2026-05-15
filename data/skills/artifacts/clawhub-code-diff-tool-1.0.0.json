@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/code-diff-tool@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_diff_tool",
+  "skill": {
+    "id": 44733,
+    "skillKey": "clawhub-code-diff-tool",
+    "name": "Code Diff Tool"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-diff-tool",
+    "url": "https://clawhub.ai/skills/code-diff-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-diff-tool-6ac9d2bb09acbdea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates beautiful side-by-side diff comparisons for code review"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776920891484,
+      "changelog": "Initial release of skylv-diff-viewer: a professional side-by-side code diff tool.\n\n- Unified and side-by-side code comparisons with LCS-based diff algorithm\n- Syntax highlighting, word-level diffs, and directory comparison support\n- Standalone HTML export with dark theme and stats\n- Git integration for repository-level diffs\n- Outperforms basic competitors with a full-featured tool for code review and comparison",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:04541a1eea1fba5d96aa16ad4c78c9a621154984fe197a9d7cc2c5274c74f622"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34222,
+  "uuid": "skill-clawhub-incident-triage",
+  "skillKey": "clawhub-incident-triage",
+  "name": "Incident Triage",
+  "summary": "Structured incident triage for alerts from any monitoring source. Five-step framework: classify severity, scope blast radius, correlate with recent changes,...",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.incident_triage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Grace Gettert",
+      "features": [
+        "Structured incident triage for alerts from any monitoring source",
+        "Five-step framework: classify severity, scope blast radius, correlate with recent changes,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/incident-triage@0.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9805362?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "incident-triage",
+      "url": "https://clawhub.ai/skills/incident-triage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "incident-triage",
+    "url": "https://clawhub.ai/skills/incident-triage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/incident-triage-17af5cfedd9567c0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/incident-triage@0.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-incident-triage-0.3.0.json",
+      "version": "0.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8096ad8bd9a5357bb4e7f476b3483cc7e541d00eeb37f73b75d2f2435d15a395",
+      "artifactSizeBytes": 2142
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T16:27:26.821Z"
+}

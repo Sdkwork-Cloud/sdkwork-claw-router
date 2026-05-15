@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73116,
+  "uuid": "skill-clawhub-chanlun-technical-analysis",
+  "skillKey": "clawhub-chanlun-technical-analysis",
+  "name": "技术分析-缠论",
+  "summary": "基于缠中说禅理论自动识别A股技术面要素，生成带分型、笔、线段、中枢、背驰的技术分析图表和报告。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chanlun_technical_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "赖根",
+      "features": [
+        "基于缠中说禅理论自动识别A股技术面要素，生成带分型、笔、线段、中枢、背驰的技术分析图表和报告。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chanlun-technical-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42961557?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chanlun-technical-analysis",
+      "url": "https://clawhub.ai/skills/chanlun-technical-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chanlun-technical-analysis",
+    "url": "https://clawhub.ai/skills/chanlun-technical-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chanlun-technical-analysis-52c66f24492d0b76.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chanlun-technical-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chanlun-technical-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:61838a03e297073e854b588d87e875109470dc5e0aaaa880b63ce980a6a4eb44",
+      "artifactSizeBytes": 2692
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T07:13:13.068Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23673,
+  "uuid": "skill-clawhub-elecz",
+  "skillKey": "clawhub-elecz",
+  "name": "Elecz Energy Signal",
+  "summary": "Real-time Nordic electricity prices and optimization for AI agents. Get spot prices, cheapest hours, and contract recommendations for Finland, Sweden, Norway...",
+  "version": "1.9.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.elecz",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sakari",
+      "features": [
+        "Real-time Nordic electricity prices and optimization for AI agents",
+        "Get spot prices, cheapest hours, and contract recommendations for Finland, Sweden, Norway..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/elecz@1.9.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261597728?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "elecz",
+      "url": "https://clawhub.ai/skills/elecz"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "elecz",
+    "url": "https://clawhub.ai/skills/elecz",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/elecz-a9df2de40913a937.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/elecz@1.9.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-elecz-1.9.2.json",
+      "version": "1.9.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fbd4b9e57803e08d65194797d54ac305bf8722cdfb4a6e1fd9e6833d987a8951",
+      "artifactSizeBytes": 1923
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T08:25:21.797Z"
+}

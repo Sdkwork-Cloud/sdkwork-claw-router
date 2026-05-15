@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33649,
+  "uuid": "skill-clawhub-vultr-integration",
+  "skillKey": "clawhub-vultr-integration",
+  "name": "Vultr",
+  "summary": "Vultr integration. Manage data, records, and automate workflows. Use when the user wants to interact with Vultr data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vultr_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Vultr integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Vultr data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vultr-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vultr-integration",
+      "url": "https://clawhub.ai/skills/vultr-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vultr-integration",
+    "url": "https://clawhub.ai/skills/vultr-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vultr-integration-ad6c7dbce6bfb5c5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vultr-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-vultr-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f2e12650088a8402826e3361f15954d266caabd9230c4db0792424ef84aa4a61",
+      "artifactSizeBytes": 1883
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:10:06.340Z"
+}

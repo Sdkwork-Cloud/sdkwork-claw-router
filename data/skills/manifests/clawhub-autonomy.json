@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13284,
+  "uuid": "skill-clawhub-autonomy",
+  "skillKey": "clawhub-autonomy",
+  "name": "Autonomy",
+  "summary": "Expand agent capabilities by identifying tasks where human approval adds no value. Systematic delegation.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autonomy",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Expand agent capabilities by identifying tasks where human approval adds no value",
+        "Systematic delegation."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/autonomy@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "autonomy",
+      "url": "https://clawhub.ai/skills/autonomy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autonomy",
+    "url": "https://clawhub.ai/skills/autonomy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autonomy-e94d787f61ea3ee8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/autonomy@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-autonomy-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:25b2bdc0e106e0eb053a295b17286b130146abd6aae9f7a7add8de706a722455",
+      "artifactSizeBytes": 1842
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T13:42:07.703Z"
+}

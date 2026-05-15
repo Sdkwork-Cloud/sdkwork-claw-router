@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/edgebric@0.9.6",
+  "version": "0.9.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edgebric",
+  "skill": {
+    "id": 36571,
+    "skillKey": "clawhub-edgebric",
+    "name": "Edgebric"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edgebric",
+    "url": "https://clawhub.ai/skills/edgebric",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edgebric-72a64f60370af25c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search and manage your private knowledge base. Find documents, query knowledge, upload files, and manage data sources in Edgebric."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jerv",
+      "userId": "s174qtp11z02vn7aj9738ey76n84b9gq",
+      "displayName": "Jeremy Venegas",
+      "image": "https://avatars.githubusercontent.com/u/4227052?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 204,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.9.6",
+      "createdAt": 1775720251740,
+      "changelog": "- Added metadata fields: version, author, homepage, repository, and license to SKILL.md.\n- Updated environment variable definitions to include field descriptions, required status, and scope in SKILL.md.\n- No code or functional changes—documentation metadata only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4b8894b68f3fb62f1a652b5b960479f97682341ae97eb7117143f37217175a5c"
+}

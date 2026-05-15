@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50461,
+  "uuid": "skill-clawhub-innerwarden-security",
+  "skillKey": "clawhub-innerwarden-security",
+  "name": "Inner Warden Security",
+  "summary": "Security advisor for Inner Warden — validates commands before execution, monitors server health, diagnoses issues. All operations on localhost only.",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.innerwarden_security",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "maiconburn",
+      "features": [
+        "Security advisor for Inner Warden — validates commands before execution, monitors server health.",
+        "All operations on localhost only."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/innerwarden-security@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22413880?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "innerwarden-security",
+      "url": "https://clawhub.ai/skills/innerwarden-security"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "innerwarden-security",
+    "url": "https://clawhub.ai/skills/innerwarden-security",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/innerwarden-security-1bd70583e590f653.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/innerwarden-security@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-innerwarden-security-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8b3d10eca78956fc90d4a2e2c6c4b732d81b8e1b14eb9f247f86f4fdb86dc0d6",
+      "artifactSizeBytes": 2709
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T11:47:26.991Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deck-web-converter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deck_web_converter",
+  "skill": {
+    "id": 43229,
+    "skillKey": "clawhub-deck-web-converter",
+    "name": "Deck Web Converter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deck-web-converter",
+    "url": "https://clawhub.ai/skills/deck-web-converter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deck-web-converter-5062d30b74889af1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert pitch deck PPT (.pptx) or PDF (.pdf) into beautiful, responsive, self-contained HTML presentations. Perfect for sharing pitch decks via email, WeChat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wulaosiji",
+      "userId": "s17eezdvd6bej1zyj145fpj30184r2mb",
+      "displayName": "Delta Wu",
+      "image": "https://avatars.githubusercontent.com/u/177007457?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776085314780,
+      "changelog": "Initial release – effortlessly convert pitch decks into beautiful, shareable web presentations.\n\n- Converts .pptx or .pdf pitch decks into responsive, single-file HTML presentations for easy sharing.\n- Extracts text, images, tables, and layout info; output includes slide navigation, keyboard controls, mobile support, and offline readiness.\n- Generates a polished HTML design with animated transitions, progress bar, and slide counter.\n- Saves the output in the same folder as the input, with the same base name plus \"_presentation.html\".\n- Designed for business plan (\"BP\") sharing via browser, QR code, email, or WeChat, with native support for Chinese and English decks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ab09a3045873f8958dd5f1bca96b301723d098372b1a6801d1469982399aea20"
+}

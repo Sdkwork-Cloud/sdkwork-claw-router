@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60995,
+  "uuid": "skill-clawhub-sql-master",
+  "skillKey": "clawhub-sql-master",
+  "name": "SQL Master",
+  "summary": "SQL 查询、数据获取智能体。覆盖 SQL 全链路能力：自然语言转生产级 SQL、慢查询诊断与执行计划分析、索引设计与优化、数仓建模、SQL 原理深度科普、查询结果可视化。支持 MySQL / PostgreSQL / Hive / Spark SQL / ClickHouse / BigQuery 多方言。触发...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sql_master",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SQLSkills",
+      "features": [
+        "SQL 查询、数据获取智能体。覆盖 SQL 全链路能力：自然语言转生产级 SQL、慢查询诊断与执行计划分析、索引设计与优化、数仓建模、SQL 原理深度科普、查询结果可视化。支持 MySQL."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sql-master@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199218417?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sql-master",
+      "url": "https://clawhub.ai/skills/sql-master"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sql-master",
+    "url": "https://clawhub.ai/skills/sql-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sql-master-6e52db6faa28f838.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sql-master@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sql-master-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:25c0a71ce62e99fcfdd96b8d9c4258b5b3b6f0a766be3ed198f35c8b737bf37d",
+      "artifactSizeBytes": 2245
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T10:31:31.453Z"
+}

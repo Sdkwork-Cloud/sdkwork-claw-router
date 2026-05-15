@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bookforge-benefit-statement-drafter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bookforge_benefit_statement_drafter",
+  "skill": {
+    "id": 38626,
+    "skillKey": "clawhub-bookforge-benefit-statement-drafter",
+    "name": "Benefit Statement Drafter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bookforge-benefit-statement-drafter",
+    "url": "https://clawhub.ai/skills/bookforge-benefit-statement-drafter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bookforge-benefit-statement-drafter-85e8f58697d87413.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Draft Benefit statements that link product capabilities to specific customer-expressed Explicit Needs. Use this skill when preparing follow-up emails, propos..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quochungto",
+      "userId": "s176b6gfk8djgcz320d83ta4e184bx1v",
+      "displayName": "Hung Quoc To",
+      "image": "https://avatars.githubusercontent.com/u/88069966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776765743347,
+      "changelog": "Initial release — drafts customer-facing Benefit statements linking product capabilities directly to Explicit Needs after discovery calls, with built-in guardrails.\n\n- Drafts one clear Benefit statement per matched (Explicit Need, product capability) pair for use in proposals, follow-up emails, or demos.\n- Refuses to draft Benefits when no Explicit Need is present in the needs log, redirecting to the discovery question planner.\n- Flags gaps where customer needs cannot be matched by current product capabilities.\n- Enforces separation between Explicit Needs and Implied Needs, preventing premature or misaligned Benefit claims.\n- Applies special sub-flow for new product launches, focusing on problem/need identification when no needs log exists.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5842fd1c34801c135c9594f94d70625fa3b9f5f5fd97169cc115bc3b4afc27af"
+}

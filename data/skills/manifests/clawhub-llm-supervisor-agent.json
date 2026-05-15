@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12425,
+  "uuid": "skill-clawhub-llm-supervisor-agent",
+  "skillKey": "clawhub-llm-supervisor-agent",
+  "name": "LLM Supervisor",
+  "summary": "Automatically switches between cloud and local LLMs on rate limits, with user confirmation required for local code generation.",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llm_supervisor_agent",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dhardie",
+      "features": [
+        "Automatically switches between cloud and local LLMs on rate limits, with user confirmation requ."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/llm-supervisor-agent@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36231544?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "llm-supervisor-agent",
+      "url": "https://clawhub.ai/skills/llm-supervisor-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llm-supervisor-agent",
+    "url": "https://clawhub.ai/skills/llm-supervisor-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llm-supervisor-agent-2459e4f79e5d0b9c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/llm-supervisor-agent@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-llm-supervisor-agent-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b931b41b64147a12caca14294f998e7c9813c70e2ad690c03c056dc87301a3a",
+      "artifactSizeBytes": 1929
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T16:25:21.321Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59060,
+  "uuid": "skill-clawhub-business-to-dev-smart",
+  "skillKey": "clawhub-business-to-dev-smart",
+  "name": "一个智能的业务需求转研发文档工具。AI 自主分析项目代码库，理解业务需求，参考实际代码，生成可直接执行的研发文档。支持任意技术栈，无需配置。",
+  "summary": "Smart business-to-dev requirement translator. AI first analyzes and memorizes project structure, then understands business requirements, references actual co...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.business_to_dev_smart",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wumaohua233",
+      "features": [
+        "Smart business-to-dev requirement translator",
+        "AI first analyzes and memorizes project structure, then understands business requirements, refe."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/business-to-dev-smart@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29728050?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "business-to-dev-smart",
+      "url": "https://clawhub.ai/skills/business-to-dev-smart"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "business-to-dev-smart",
+    "url": "https://clawhub.ai/skills/business-to-dev-smart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/business-to-dev-smart-ddd16de1dd87dc14.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/business-to-dev-smart@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-business-to-dev-smart-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ab919c1f2919bfa963725a734badb10503e62e9079b4a16aa2076bf06349006",
+      "artifactSizeBytes": 3122
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T03:09:34.656Z"
+}

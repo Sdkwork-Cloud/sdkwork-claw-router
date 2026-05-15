@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72164,
+  "uuid": "skill-clawhub-weekly-newspaper-assistant",
+  "skillKey": "clawhub-weekly-newspaper-assistant",
+  "name": "用来帮你写周报把图文周报变成漂亮图片的skill--当前版本是苹果的风格",
+  "summary": "周报助手 — 将用户的工作内容、周报、日报、总结一键生成一张 4:3 极简科技风汇报卡片（单张图，非多页PPT）。触发词：周报助手、周报卡片、日报卡片、一张图、汇报卡、生成卡片。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weekly_newspaper_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chenpipi0807",
+      "features": [
+        "周报助手 — 将用户的工作内容、周报、日报、总结一键生成一张 4:3 极简科技风汇报卡片（单张图，非多页PPT）。触发词：周报助手、周报卡片、日报卡片、一张图、汇报卡、生成卡片。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weekly-newspaper-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144689950?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weekly-newspaper-assistant",
+      "url": "https://clawhub.ai/skills/weekly-newspaper-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weekly-newspaper-assistant",
+    "url": "https://clawhub.ai/skills/weekly-newspaper-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weekly-newspaper-assistant-2976b1991ae00fd0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weekly-newspaper-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weekly-newspaper-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fa0a4d35e95f4426d37739d733fbd5294fd57f971dc32592a695c903061e6053",
+      "artifactSizeBytes": 2579
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T11:48:17.659Z"
+}

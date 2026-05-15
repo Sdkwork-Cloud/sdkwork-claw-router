@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14753,
+  "uuid": "skill-clawhub-claude-usage",
+  "skillKey": "clawhub-claude-usage",
+  "name": "Claude Usage",
+  "summary": "Calculate Claude Max subscription usage from OpenClaw session data. Shows credits consumed, weekly budget percentage, 5-hour rate limit window, and per-session breakdown.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_usage",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lemodigital",
+      "features": [
+        "Calculate Claude Max subscription usage from OpenClaw session data",
+        "Shows credits consumed, weekly budget percentage, 5-hour rate limit window, and per-session bre."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claude-usage@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258789404?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claude-usage",
+      "url": "https://clawhub.ai/skills/claude-usage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-usage",
+    "url": "https://clawhub.ai/skills/claude-usage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-usage-bddd2c3bccd66f5b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claude-usage@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claude-usage-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:481ffd2cf275405f1803835ddb274bf19da3cd7b9f0b4440d32ee6c9fee54090",
+      "artifactSizeBytes": 1985
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T22:00:16.296Z"
+}

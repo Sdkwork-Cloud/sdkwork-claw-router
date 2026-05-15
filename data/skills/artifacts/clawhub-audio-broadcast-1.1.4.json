@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/audio-broadcast@1.1.4",
+  "version": "1.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audio_broadcast",
+  "skill": {
+    "id": 63877,
+    "skillKey": "clawhub-audio-broadcast",
+    "name": "Audio Broadcast"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audio-broadcast",
+    "url": "https://clawhub.ai/skills/audio-broadcast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audio-broadcast-0f66ebcd567bc1c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "控制小播鼠广播系统进行音频播放和广播通知。使用当用户需要向广播设备播放音频、设置音量、管理定时广播任务、或查看设备状态时。支持播放音频文件、URL播放、音量调节、设备管理、定时任务管理、文字转语音(TTS)广播等功能。Control xiaoboshu broadcast system for audio pla..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oxiaom",
+      "userId": "s176060jhbc46428j1wbnfjc0983kx5p",
+      "displayName": "oxiaom",
+      "image": "https://avatars.githubusercontent.com/u/36081876?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 858,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.1.4",
+      "createdAt": 1774133877877,
+      "changelog": "更新联系方式",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c0274e007fd07aac5822d7aa951781da481a0e3927d4071c106f4f125153e700"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-feishu-multi-bot@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_feishu_multi_bot",
+  "skill": {
+    "id": 51400,
+    "skillKey": "clawhub-openclaw-feishu-multi-bot",
+    "name": "Feishu Multi-Bot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-feishu-multi-bot",
+    "url": "https://clawhub.ai/skills/openclaw-feishu-multi-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-feishu-multi-bot-3c4ee6cca530efe9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Configure multiple Feishu/Lark bot identities within a single OpenClaw instance — each Agent gets its own Feishu App, name, avatar, and message routing. Use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "simonlin1212",
+      "userId": "s17fa4ewwhvh1rmhe7rrt8eagd83xgfv",
+      "displayName": "simonlin",
+      "image": "https://avatars.githubusercontent.com/u/166034225?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775146257158,
+      "changelog": "Update display name to 'Feishu Multi-Bot'",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b88a72532bbe1ee50993da2e0b16ed1941d259aaec953199ab3a3793441f5bfc"
+}

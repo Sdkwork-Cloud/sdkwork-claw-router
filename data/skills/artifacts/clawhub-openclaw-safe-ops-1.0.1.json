@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-safe-ops@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_safe_ops",
+  "skill": {
+    "id": 19135,
+    "skillKey": "clawhub-openclaw-safe-ops",
+    "name": "OpenClaw Safe Ops"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-safe-ops",
+    "url": "https://clawhub.ai/skills/openclaw-safe-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-safe-ops-da66276c7ed2a9a8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guards high-risk OpenClaw operations with preflight backups, post-change health checks, and rollback guidance. Use when running gateway restart/start/stop, c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dhrxy",
+      "userId": "s17ep23tvtyn3spbjjbf8j6zj183jznd",
+      "displayName": "dhrxy",
+      "image": "https://avatars.githubusercontent.com/u/51009660?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 535,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773041271178,
+      "changelog": "Initial release: Guards high-risk OpenClaw operations with preflight backups and health checks",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:09c06e04b3ca0544ecc9184457a93766c47b9d11b9ea674cde3b5cf4bdd9b1a3"
+}

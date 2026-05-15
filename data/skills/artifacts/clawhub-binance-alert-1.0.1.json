@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/binance-alert@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.binance_alert",
+  "skill": {
+    "id": 27678,
+    "skillKey": "clawhub-binance-alert",
+    "name": "BinanceAlert"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "binance-alert",
+    "url": "https://clawhub.ai/skills/binance-alert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/binance-alert-f91685f4f26ce000.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Binance smart alert system. Monitors price/change alerts, new listings, Alpha airdrop opportunities, and HODLer announcements via Telegram. No Binance API Ke..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cnwpdb",
+      "userId": "s178vxpn57g1pfd5yjmdjerxyh83hfd8",
+      "displayName": "cnwpdb",
+      "image": "https://avatars.githubusercontent.com/u/20767942?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 342,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773937711077,
+      "changelog": "Explicitly declare TG_BOT_TOKEN and TG_CHAT_ID env dependencies to resolve security scan warning",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:22f04737533c737a746435533bbe48d94a2546f9c6ef0e95da38a43a64c3bd18"
+}

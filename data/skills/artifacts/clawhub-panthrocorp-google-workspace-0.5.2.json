@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/panthrocorp-google-workspace@0.5.2",
+  "version": "0.5.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.panthrocorp_google_workspace",
+  "skill": {
+    "id": 24966,
+    "skillKey": "clawhub-panthrocorp-google-workspace",
+    "name": "Google Workspace"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "panthrocorp-google-workspace",
+    "url": "https://clawhub.ai/skills/panthrocorp-google-workspace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/panthrocorp-google-workspace-b5b3b0cb788d2f09.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Gmail, Contacts, Calendar, Drive (with comments), Docs, and Sheets for OpenClaw agents"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "panthrocorp",
+      "userId": "s174crf4872n02q9tktnd619js83vvf5",
+      "displayName": "PanthroCorp",
+      "image": "https://avatars.githubusercontent.com/u/264519014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 399,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.5.2",
+      "createdAt": 1775681063024,
+      "changelog": "- Release v0.5.2\n- Updated version number in documentation and metadata\n- No user-facing feature changes or new capabilities\n- All usage instructions, limitations, and commands remain unchanged",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c6c517a0a413ecd08f59561fb6e661fe69f1db14f57f2072e9a49685f62df7b6"
+}

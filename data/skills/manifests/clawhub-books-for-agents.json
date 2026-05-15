@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18372,
+  "uuid": "skill-clawhub-books-for-agents",
+  "skillKey": "clawhub-books-for-agents",
+  "name": "Books For Agents",
+  "summary": "Access and search a structured open source knowledge base of book summaries optimized for AI agents via the MCP protocol.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.books_for_agents",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "danpalmieri",
+      "features": [
+        "Access and search a structured open source knowledge base of book summaries optimized for AI ag."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/books-for-agents@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1392562?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "books-for-agents",
+      "url": "https://clawhub.ai/skills/books-for-agents"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "books-for-agents",
+    "url": "https://clawhub.ai/skills/books-for-agents",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/books-for-agents-e72170fce210c9bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/books-for-agents@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-books-for-agents-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c7353a63a09631dd8aecba0b0a8ce57f7fce23b087bade40415df1b870362f3",
+      "artifactSizeBytes": 2396
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T15:31:48.640Z"
+}

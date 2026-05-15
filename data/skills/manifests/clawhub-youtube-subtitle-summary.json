@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47063,
+  "uuid": "skill-clawhub-youtube-subtitle-summary",
+  "skillKey": "clawhub-youtube-subtitle-summary",
+  "name": "Youtube and Bilibili Subtitle Extraction and Summary",
+  "summary": "Extract subtitles from YouTube or Bilibili, save raw transcript, and generate a structured summary. Triggers: ANY URL containing youtube.com, youtu.be, bilib...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_subtitle_summary",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xiapu Yang",
+      "features": [
+        "Extract subtitles from YouTube or Bilibili, save raw transcript, and generate a structured summ.",
+        "Triggers: ANY URL containing youtube.com, youtu.be, bilib..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-subtitle-summary@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/215984777?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-subtitle-summary",
+      "url": "https://clawhub.ai/skills/youtube-subtitle-summary"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-subtitle-summary",
+    "url": "https://clawhub.ai/skills/youtube-subtitle-summary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-subtitle-summary-8b5e236439f5a30e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-subtitle-summary@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-subtitle-summary-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2e8417d5b9a1cb1566a726f47df955b114213d349a048587c5c8354c0438bba0",
+      "artifactSizeBytes": 2439
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T18:33:14.305Z"
+}

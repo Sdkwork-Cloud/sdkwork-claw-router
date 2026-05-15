@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67318,
+  "uuid": "skill-clawhub-cnki-exp-search-automation",
+  "skillKey": "clawhub-cnki-exp-search-automation",
+  "name": "Cnki Exp Search Automation",
+  "summary": "CNKI（中国知网）高级搜索自动化技能。使用浏览器自动化技术搜索文献并获取结果列表及摘要信息。建议在有头浏览器环境下使用以便于处理反机器人验证。",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cnki_exp_search_automation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KGTAF",
+      "features": [
+        "CNKI（中国知网）高级搜索自动化技能。使用浏览器自动化技术搜索文献并获取结果列表及摘要信息。建议在有头浏览器环境下使用以便于处理反机器人验证。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cnki-exp-search-automation@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32797449?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cnki-exp-search-automation",
+      "url": "https://clawhub.ai/skills/cnki-exp-search-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cnki-exp-search-automation",
+    "url": "https://clawhub.ai/skills/cnki-exp-search-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cnki-exp-search-automation-bd61a87fbdc3822e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cnki-exp-search-automation@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cnki-exp-search-automation-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b26c30b60d5b4fc0fe570bfd44f450843d1314faa8f5df085655257dce368772",
+      "artifactSizeBytes": 2692
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T14:34:34.928Z"
+}

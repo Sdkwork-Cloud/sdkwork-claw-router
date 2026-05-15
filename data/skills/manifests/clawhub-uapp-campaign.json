@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62752,
+  "uuid": "skill-clawhub-uapp-campaign",
+  "skillKey": "clawhub-uapp-campaign",
+  "name": "小程序推广链接管理",
+  "summary": "友盟小程序推广链接管理技能，支持通过 umeng-cli call 调用友盟 OpenAPI（gateway.open.umeng.com）的 2 个推广接口（1 个写入 + 1 个只读），与旧 uapp-campaign 能力完全等价的 CLI 化。覆盖推广链接创建、活动/渠道清单查询。当用户需要为小程序创建推...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uapp_campaign",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Umeng+",
+      "features": [
+        "友盟小程序推广链接管理技能，支持通过 umeng-cli call 调用友盟 OpenAPI（gateway.open.umeng.com）的 2 个推广接口（1 个写入 + 1 个只读），."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uapp-campaign@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/195273084?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uapp-campaign",
+      "url": "https://clawhub.ai/skills/uapp-campaign"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uapp-campaign",
+    "url": "https://clawhub.ai/skills/uapp-campaign",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uapp-campaign-7c5f740700fbbaa7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uapp-campaign@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-uapp-campaign-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d19fbf96709c6a12fabff42b1f3bb37bd362724c7c6014dd0841e18ef974122",
+      "artifactSizeBytes": 2818
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T11:35:19.492Z"
+}

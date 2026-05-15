@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/persistent-memory@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.persistent_memory",
+  "skill": {
+    "id": 13319,
+    "skillKey": "clawhub-persistent-memory",
+    "name": "Persistent Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "persistent-memory",
+    "url": "https://clawhub.ai/skills/persistent-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/persistent-memory-fd17c61e940869df.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Three-layer persistent memory system (Markdown + ChromaDB vectors + NetworkX knowledge graph) for long-term agent recall across sessions. One-command setup w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jakebot-ops",
+      "userId": "publishers:jakebot-ops",
+      "displayName": "Jakebot-ops",
+      "image": "https://avatars.githubusercontent.com/u/259498883?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1415,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1771569201676,
+      "changelog": "🚀 ONE-COMMAND SETUP: Eliminates installation friction with unified_setup.sh that automatically handles 3-layer memory system creation, Python dependencies, OpenClaw memorySearch integration, and initial indexing. No more manual configuration steps.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ebcb5caab08278caa9490e9beb108fa3f17e6f3d42f29026597b7a2d09362c7a"
+}

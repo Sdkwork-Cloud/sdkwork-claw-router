@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36950,
+  "uuid": "skill-clawhub-nai-print-failure-analyst",
+  "skillKey": "clawhub-nai-print-failure-analyst",
+  "name": "Print Failure Analyst",
+  "summary": "Diagnose 3D print failures by symptoms or images, recommend slicer setting fixes, log issues, view history, and generate failure reports.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nai_print_failure_analyst",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "New Age Investments",
+      "features": [
+        "Diagnose 3D print failures by symptoms or images, recommend slicer setting fixes, log issues, v."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nai-print-failure-analyst@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/243381911?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nai-print-failure-analyst",
+      "url": "https://clawhub.ai/skills/nai-print-failure-analyst"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nai-print-failure-analyst",
+    "url": "https://clawhub.ai/skills/nai-print-failure-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nai-print-failure-analyst-53a73814f21ca03d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nai-print-failure-analyst@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nai-print-failure-analyst-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6921271df08d533a2aaed1b572ce02f423f0a3ea8d0ecda2c8698cc5b14c2887",
+      "artifactSizeBytes": 2446
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T14:15:04.813Z"
+}

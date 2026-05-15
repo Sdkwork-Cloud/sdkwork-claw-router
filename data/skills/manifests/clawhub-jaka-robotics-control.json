@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28052,
+  "uuid": "skill-clawhub-jaka-robotics-control",
+  "skillKey": "clawhub-jaka-robotics-control",
+  "name": "JAKA Robotics Control Skill",
+  "summary": "Control Zu20/Zu12/Zu7 collaborative robots via gRPC/TCP with joint, linear, and circular motion, real-time state monitoring, and simulation support.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jaka_robotics_control",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Robot_Qu",
+      "features": [
+        "Control Zu20/Zu12/Zu7 collaborative robots via gRPC/TCP with joint, linear, and circular motion."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jaka-robotics-control@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/117743580?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jaka-robotics-control",
+      "url": "https://clawhub.ai/skills/jaka-robotics-control"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jaka-robotics-control",
+    "url": "https://clawhub.ai/skills/jaka-robotics-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jaka-robotics-control-d513509e611db4a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jaka-robotics-control@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-jaka-robotics-control-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3529f49b3935ae2999c84bab5b1832410c548bd2c3e127fdbf91428a55fa67f1",
+      "artifactSizeBytes": 2334
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T11:28:41.347Z"
+}

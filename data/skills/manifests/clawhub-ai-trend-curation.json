@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16885,
+  "uuid": "skill-clawhub-ai-trend-curation",
+  "skillKey": "clawhub-ai-trend-curation",
+  "name": "Ai Trend Curation",
+  "summary": "Curate and post AI trend tweets from X (Twitter) with quote suggestions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_trend_curation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yusaku-0426",
+      "features": [
+        "Curate and post AI trend tweets from X (Twitter) with quote suggestions."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-trend-curation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/225117374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-trend-curation",
+      "url": "https://clawhub.ai/skills/ai-trend-curation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-trend-curation",
+    "url": "https://clawhub.ai/skills/ai-trend-curation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-trend-curation-5edcafca5ea4cb57.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-trend-curation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-trend-curation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d32a2c978c9ce2d2ba2c8acc1afa800e95ec74bcce7c2b7870787657a7b440c1",
+      "artifactSizeBytes": 2482
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T13:06:29.050Z"
+}

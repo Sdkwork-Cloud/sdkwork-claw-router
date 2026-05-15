@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/citic-bank@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.citic_bank",
+  "skill": {
+    "id": 57750,
+    "skillKey": "clawhub-citic-bank",
+    "name": "citic-bank"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "citic-bank",
+    "url": "https://clawhub.ai/skills/citic-bank",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/citic-bank-3c5c251c6e138ce7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Information assistant for 中信银行 CITIC Bank. Search products, news, financials, and official resources for 中信银行 CITIC Bank."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 179,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775260768821,
+      "changelog": "Initial release of the citic-bank information assistant skill.\n\n- Search and compare 中信银行 CITIC Bank products and pricing.\n- Get the latest news, press releases, and announcements.\n- Access financial info including stock price and earnings reports.\n- Find direct links to official websites and support resources.\n- Compare 中信银行 CITIC Bank with industry competitors.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aa7a5c407c3bd69f544fee47ba88357e1ded57eb71c5ea276604a6ce2e667ec0"
+}

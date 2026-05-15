@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56378,
+  "uuid": "skill-clawhub-gate-info-liveroomlocation-staging",
+  "skillKey": "clawhub-gate-info-liveroomlocation-staging",
+  "name": "Gate Info Liveroom Location (gate-info-liveroomlocation)",
+  "summary": "Gate live stream and replay listing skill. Use when the user asks to find live rooms or replays by tag, coin, or sort. Triggers on 'live room list', '最热直播',...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_info_liveroomlocation_staging",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gaixg",
+      "features": [
+        "Gate live stream and replay listing skill",
+        "Use when the user asks to find live rooms or replays by tag, coin, or sort",
+        "Triggers on 'live room list', '最热直播',..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gate-info-liveroomlocation-staging@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12163126?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gate-info-liveroomlocation-staging",
+      "url": "https://clawhub.ai/skills/gate-info-liveroomlocation-staging"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-info-liveroomlocation-staging",
+    "url": "https://clawhub.ai/skills/gate-info-liveroomlocation-staging",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-info-liveroomlocation-staging-dfdf40cbc28362f3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gate-info-liveroomlocation-staging@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gate-info-liveroomlocation-staging-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:575a81d7f82e241a7402d8d0732123efae8963f1c2a438412b7c09069dd6c36f",
+      "artifactSizeBytes": 2723
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T04:33:50.873Z"
+}

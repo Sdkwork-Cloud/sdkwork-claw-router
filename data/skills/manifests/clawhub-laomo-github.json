@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63150,
+  "uuid": "skill-clawhub-laomo-github",
+  "skillKey": "clawhub-laomo-github",
+  "name": "Github",
+  "summary": "老默 GitHub 助手 - 多账户管理、PR 一键推送/清理、代码审查、通知推送。v2.0 完整功能。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.laomo_github",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mrzhangkris",
+      "features": [
+        "老默 GitHub 助手",
+        "多账户管理、PR 一键推送/清理、代码审查、通知推送。v2.0 完整功能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/laomo-github@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/92247501?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "laomo-github",
+      "url": "https://clawhub.ai/skills/laomo-github"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "laomo-github",
+    "url": "https://clawhub.ai/skills/laomo-github",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/laomo-github-b9cce421b95b88ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/laomo-github@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-laomo-github-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dfd77ae37004c14b499802a072206eea7a9028306e61e508012b5cea3b12b47b",
+      "artifactSizeBytes": 2505
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T10:14:46.499Z"
+}

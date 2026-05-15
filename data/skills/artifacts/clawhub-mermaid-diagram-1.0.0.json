@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mermaid-diagram@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mermaid_diagram",
+  "skill": {
+    "id": 12643,
+    "skillKey": "clawhub-mermaid-diagram",
+    "name": "Mermaid Diagram"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mermaid-diagram",
+    "url": "https://clawhub.ai/skills/mermaid-diagram",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mermaid-diagram-be91056f6174486a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate valid Mermaid diagrams like flowcharts, sequence diagrams, mind maps, ER diagrams, or user journeys from text or product descriptions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pupujanet-eng",
+      "userId": "publishers:pupujanet-eng",
+      "displayName": "pupujanet-eng",
+      "image": "https://avatars.githubusercontent.com/u/235016310?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1663,
+      "installsAllTime": 5,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773680428113,
+      "changelog": "Initial release: Mermaid diagram generation for flowcharts, architecture, sequence diagrams",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5372a020faa99a52d91a3f7ffbf358f8142fdc02381f19c10d27fc787b160ca0"
+}

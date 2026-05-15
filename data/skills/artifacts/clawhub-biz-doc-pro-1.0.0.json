@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/biz-doc-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.biz_doc_pro",
+  "skill": {
+    "id": 65127,
+    "skillKey": "clawhub-biz-doc-pro",
+    "name": "Biz Doc Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "biz-doc-pro",
+    "url": "https://clawhub.ai/skills/biz-doc-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/biz-doc-pro-1cc5ac881a2c2aa7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "商务文档三件套：方案书+发票+合同一条龙。融合 Proposal + Invoice + Contract 三大技能优点，一站式生成专业商务文档。适合自由职业者、小企业主、创业者快速出方案、发发票、签合同。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "freeman88-tch",
+      "userId": "s175vqzthvtcgmgawcp7vz2q3d85s636",
+      "displayName": "Freeman88-tch",
+      "image": "https://avatars.githubusercontent.com/u/212022282?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 119,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777488455027,
+      "changelog": "Initial release: proposal + contract + invoice",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f546fb300d512618537c3bd1a3b15fb14cd09eeda688f8d12c461372741f7a03"
+}

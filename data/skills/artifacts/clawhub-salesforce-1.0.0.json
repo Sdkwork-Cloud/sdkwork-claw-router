@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/salesforce@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.salesforce",
+  "skill": {
+    "id": 11307,
+    "skillKey": "clawhub-salesforce",
+    "name": "Salesforce Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "salesforce",
+    "url": "https://clawhub.ai/skills/salesforce",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/salesforce-3ccbd9105a45d8fc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query and manage Salesforce CRM data via the Salesforce CLI (`sf`). Run SOQL/SOSL queries, inspect object schemas, create/update/delete records, bulk import/export, execute Apex, deploy metadata, and make raw REST API calls."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "arvorco",
+      "userId": "publishers:arvorco",
+      "displayName": "ArvorCo",
+      "image": "https://avatars.githubusercontent.com/u/133270316?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2929,
+      "installsAllTime": 11,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769484075138,
+      "changelog": "Initial release: comprehensive Salesforce CLI (sf) skill covering SOQL/SOSL queries, record CRUD, bulk operations, Apex execution, REST API, metadata deployment, and schema inspection.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fce54a18d251cdcb2054206f83c094cd5a4312a184012b9a87ea9b43ccf0592c"
+}

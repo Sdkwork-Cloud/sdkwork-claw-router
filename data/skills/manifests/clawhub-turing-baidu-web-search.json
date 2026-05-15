@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26009,
+  "uuid": "skill-clawhub-turing-baidu-web-search",
+  "skillKey": "clawhub-turing-baidu-web-search",
+  "name": "Turing Baidu Web Search",
+  "summary": "Search the web via the Turing Baidu proxy. Use when the user asks to search the web in Chinese, look up real-time information from Chinese sources, research...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.turing_baidu_web_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CAPREaaa",
+      "features": [
+        "Search the web via the Turing Baidu proxy",
+        "Use when the user asks to search the web in Chinese, look up real-time information from Chinese."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/turing-baidu-web-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/96684416?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "turing-baidu-web-search",
+      "url": "https://clawhub.ai/skills/turing-baidu-web-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "turing-baidu-web-search",
+    "url": "https://clawhub.ai/skills/turing-baidu-web-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/turing-baidu-web-search-c1d1c6325cf08225.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/turing-baidu-web-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-turing-baidu-web-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a6b2927a1727e77191912d27588cedbdf2bc45f75b897ce5bdc40c815265a2bc",
+      "artifactSizeBytes": 2386
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T03:42:37.524Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/volcengine-ai-entry-ark@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.volcengine_ai_entry_ark",
+  "skill": {
+    "id": 15708,
+    "skillKey": "clawhub-volcengine-ai-entry-ark",
+    "name": "Volcengine Ai Entry Ark"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "volcengine-ai-entry-ark",
+    "url": "https://clawhub.ai/skills/volcengine-ai-entry-ark",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/volcengine-ai-entry-ark-f5d1cfed2f6fcd47.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Entry skill for Volcengine ARK model invocation and routing. Use when users ask to start with ARK, need request templates, endpoint setup, model routing, or authentication troubleshooting."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cinience",
+      "userId": "s1707avh05gnzr3g6e3m9ka6fh840rtd",
+      "displayName": "cinience",
+      "image": "https://avatars.githubusercontent.com/u/557426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 983,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770769443532,
+      "changelog": "Initial ClawHub publish for Volcengine skills with agents metadata.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3d5c19746cd7888f7abfb40899e52b7a81088af74127b4873aba099665973047"
+}

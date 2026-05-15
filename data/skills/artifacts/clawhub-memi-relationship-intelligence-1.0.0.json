@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memi-relationship-intelligence@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memi_relationship_intelligence",
+  "skill": {
+    "id": 26799,
+    "skillKey": "clawhub-memi-relationship-intelligence",
+    "name": "Relationship Intelligence"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memi-relationship-intelligence",
+    "url": "https://clawhub.ai/skills/memi-relationship-intelligence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memi-relationship-intelligence-d5b51f2df5f610c0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Personal CRM and relationship intelligence. Extracts contacts from conversations, tracks commitments, detects cooling relationships, delivers morning briefs,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mukund2",
+      "userId": "publishers:mukund2",
+      "displayName": "Mukund Kunapareddy",
+      "image": "https://avatars.githubusercontent.com/u/29647736?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 360,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772931690126,
+      "changelog": "Initial release—introducing memi-relationship-intelligence:\n\n- Extracts and saves contacts from natural conversations, including all types of connections.\n- Tracks commitments, relationship health (warming/cooling/cold), and interaction history.\n- Delivers morning briefs, context before meetings, and reminders tailored to your style.\n- Learns and adapts to your communication style, relationship priorities, and networking patterns.\n- Uses an extensive SQLite database schema to store context, preferences, relationship events, archetypes, and more.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:03dac4ef3a2a1a86eed1d9b888e7f4e6b983811fab32a965fa10c6f80fc8941a"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/file-manager-1-0-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_manager_1_0_0",
+  "skill": {
+    "id": 69644,
+    "skillKey": "clawhub-file-manager-1-0-0",
+    "name": "File Manager 1.0.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-manager-1-0-0",
+    "url": "https://clawhub.ai/skills/file-manager-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-manager-1-0-0-4da6a6a4ed9c4a97.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw自动化文件管理助手，用于批量文件操作、智能分类、重复文件清理、文件重命名、目录同步等任务。当用户需要整理文件、批量重命名、清理重复文件、同步目录或自动化文件工作流时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yangzhenyoyo",
+      "userId": "publishers:yangzhenyoyo",
+      "displayName": "Jorkey Young",
+      "image": "https://avatars.githubusercontent.com/u/24644007?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1607,
+      "installsAllTime": 24,
+      "installsCurrent": 22,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772810565049,
+      "changelog": "Initial release of File Manager - OpenClaw 自动化文件管理\n\n- 支持智能文件分类、批量重命名、重复文件清理、目录同步、文件监控等核心功能\n- 提供常见整理、备份、清理等场景及详细用法说明\n- 强调安全原则：默认预览、优先隔离删除、操作日志记录\n- 依赖 Python 3.8+，需安装 tqdm、colorama 库\n- 所有脚本配有丰富命令行参数支持",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2e3d69a124de994cdc94a2a82bb6dfd70aff382d6baf8533be12d3543e43cd3a"
+}

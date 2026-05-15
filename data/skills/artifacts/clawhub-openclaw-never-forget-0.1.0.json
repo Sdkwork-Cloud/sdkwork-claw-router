@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-never-forget@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_never_forget",
+  "skill": {
+    "id": 24474,
+    "skillKey": "clawhub-openclaw-never-forget",
+    "name": "Openclaw Never Forget"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-never-forget",
+    "url": "https://clawhub.ai/skills/openclaw-never-forget",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-never-forget-082b0e89f6ebd15a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The ultimate bilingual (English/Chinese) memory management engine for Openclaw. Combines episodic daily logging, 30-minute short-term contextual snapshots, l..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenyh1226",
+      "userId": "s17fd05hy4z79hpsajz7bqcd7583mcz4",
+      "displayName": "chenyh1226",
+      "image": "https://avatars.githubusercontent.com/u/151823419?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 400,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773580017472,
+      "changelog": "Openclaw Never Forget 0.1.0 – First release: a robust bilingual memory management framework for persistent context in Openclaw.\n\n- Introduces dual-timeline architecture: episodic daily memory logs and long-term semantic knowledge base.\n- Automates 30-minute short-term context snapshots and daily initialization of memory files.\n- Extracts and appends major insights, rules, and preferences to long-term knowledge on significant events.\n- Provides explicit retrieval methods for user queries, synthesizing relevant log and knowledge data.\n- Enforces strict rules: no fabricating memory, always compress context, append-only history, language-adaptive output.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:87b6d285b646042e72b925b99ca713e73a3ee9ce0b3127202687e622bb84414a"
+}

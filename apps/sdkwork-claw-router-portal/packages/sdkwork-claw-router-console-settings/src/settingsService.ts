@@ -7,7 +7,10 @@ import {
   readString,
   type ApiRecord,
 } from 'sdkwork-claw-router-commons/runtime';
-import type { SettingsDataResponse as SdkSettingsDataResponse } from '@sdkwork/clawrouter-app-sdk';
+import type {
+  SettingsDataResponse as SdkSettingsDataResponse,
+  UpdateSettingsRequest as SdkUpdateSettingsRequest,
+} from '@sdkwork/clawrouter-app-sdk';
 
 type SdkSettingsNotifications = SdkSettingsDataResponse['notifications'];
 
@@ -26,18 +29,18 @@ export interface SettingsData {
 
 export class SettingsService {
   static async fetchSettings(): Promise<SettingsData> {
-    const result = await getClawRouterAppSdkClient().user.fetchSettings();
+    const result = await getClawRouterAppSdkClient().iam.users.settings.retrieve();
     ensurePlusApiSuccess(result, 'Failed to fetch settings');
     return normalizeSettings(readApiRecord(result));
   }
 
   static async updateSettings(data: SettingsData): Promise<void> {
-    const result = await getClawRouterAppSdkClient().user.updateSettings(toUpdateSettingsRequest(data));
+    const result = await getClawRouterAppSdkClient().iam.users.settings.update(toUpdateSettingsRequest(data));
     ensurePlusApiSuccess(result, 'Failed to update settings');
   }
 }
 
-function toUpdateSettingsRequest(data: SettingsData): SettingsData {
+function toUpdateSettingsRequest(data: SettingsData): SdkUpdateSettingsRequest {
   return {
     language: requiredText(data.language, 'language'),
     timezone: requiredText(data.timezone, 'timezone'),

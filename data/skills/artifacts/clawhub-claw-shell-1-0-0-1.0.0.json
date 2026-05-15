@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-shell-1-0-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_shell_1_0_0",
+  "skill": {
+    "id": 17793,
+    "skillKey": "clawhub-claw-shell-1-0-0",
+    "name": "Claw Shell 1.0.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-shell-1-0-0",
+    "url": "https://clawhub.ai/skills/claw-shell-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-shell-1-0-0-312b51e2a25bc97e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Runs shell commands exclusively inside tmux session 'claw', captures output, and requests confirmation for potentially destructive commands."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zlshiny",
+      "userId": "publishers:zlshiny",
+      "displayName": "shiny",
+      "image": "https://avatars.githubusercontent.com/u/4814669?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 635,
+      "installsAllTime": 11,
+      "installsCurrent": 11,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772617336022,
+      "changelog": "Initial release of claw-shell:\n\n- Runs shell commands exclusively inside a dedicated tmux session named \"claw\".\n- Captures and returns output from commands run in the session.\n- Ensures safety by restricting dangerous commands (e.g., sudo, rm, reboot) unless explicit user confirmation is received.\n- Provides a clear interface for running commands and handling approval for risky actions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:07ac356eab9338b6edb4a65e0c21bc5a4c206245c8ea58d4ebb19bc7caae6240"
+}

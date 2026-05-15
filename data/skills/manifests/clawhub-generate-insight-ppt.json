@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58639,
+  "uuid": "skill-clawhub-generate-insight-ppt",
+  "skillKey": "clawhub-generate-insight-ppt",
+  "name": "Tech Report PPT Generator",
+  "summary": "AI 驱动的技术洞察 PPT 生成器",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.generate_insight_ppt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DeepWater",
+      "features": [
+        "AI 驱动的技术洞察 PPT 生成器"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/generate-insight-ppt@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258605062?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "generate-insight-ppt",
+      "url": "https://clawhub.ai/skills/generate-insight-ppt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "generate-insight-ppt",
+    "url": "https://clawhub.ai/skills/generate-insight-ppt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/generate-insight-ppt-c6e0be74e4797672.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/generate-insight-ppt@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-generate-insight-ppt-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1a6e1f332e5a586de409a0b4379273ec8334d1b9249bdf3b9a0cc5536ebda86d",
+      "artifactSizeBytes": 2571
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T00:37:53.943Z"
+}

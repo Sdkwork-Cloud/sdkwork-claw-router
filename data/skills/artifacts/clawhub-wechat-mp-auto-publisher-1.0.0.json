@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-mp-auto-publisher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_mp_auto_publisher",
+  "skill": {
+    "id": 72802,
+    "skillKey": "clawhub-wechat-mp-auto-publisher",
+    "name": "微信公众号自动发布器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-mp-auto-publisher",
+    "url": "https://clawhub.ai/skills/wechat-mp-auto-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-mp-auto-publisher-1e25179980693e65.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动撰写技术文章并发布到微信公众号 - 从选题到发布全流程自动化"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lizz0725",
+      "userId": "s17fmxzdfh5wxfjsjn5j9jz6h983xvcw",
+      "displayName": "lizz0725",
+      "image": "https://avatars.githubusercontent.com/u/32251791?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774882749849,
+      "changelog": "初始版本 - 支持自动撰写文章 + 生成配图 + 发布到公众号，全流程 2 分钟完成",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6dedd6b34c2170368385d71e24076fdd4d45b38b0009729a2aebd5f1dd7ff4ca"
+}

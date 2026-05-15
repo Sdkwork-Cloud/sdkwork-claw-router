@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10681,
+  "uuid": "skill-clawhub-better-auth",
+  "skillKey": "clawhub-better-auth",
+  "name": "Better Auth",
+  "summary": "Self-hosted auth for TypeScript/Cloudflare Workers with social auth, 2FA, passkeys, organizations, RBAC, and 15+ plugins. Requires Drizzle ORM or Kysely for D1 (no direct adapter). Self-hosted alternative to Clerk/Auth.js. Use when: self-h.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.better_auth",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Veera",
+      "features": [
+        "Self-hosted auth for TypeScript/Cloudflare Workers with social auth, 2FA, passkeys, organizatio.",
+        "Requires Drizzle ORM or Kysely for D1 (no direct adapter)",
+        "Self-hosted alternative to Clerk/Auth.js",
+        "Use when: self-hosting auth on D1, building OAuth provider, multi-tenant SaaS, or troubleshooti."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/better-auth@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/119089869?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "better-auth",
+      "url": "https://clawhub.ai/skills/better-auth"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "better-auth",
+    "url": "https://clawhub.ai/skills/better-auth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/better-auth-bbf91d4eab6e0ee6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/better-auth@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-better-auth-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fe6bc98de44ef644f4ffb33835995583bc04d492eac488898238fbe0fbef9e10",
+      "artifactSizeBytes": 2441
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T14:54:04.068Z"
+}

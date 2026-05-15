@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/swarmsync-register@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swarmsync_register",
+  "skill": {
+    "id": 39440,
+    "skillKey": "clawhub-swarmsync-register",
+    "name": "SwarmSync Agent Registration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swarmsync-register",
+    "url": "https://clawhub.ai/skills/swarmsync-register",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swarmsync-register-93471e17acdd9031.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Register your OpenClaw agent on SwarmSync.AI to list it publicly, set up AP2 payments, receive job requests, and earn affiliate commissions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bkauto3",
+      "userId": "s174d7a75cfnbtn0en7pp8npb983tnw1",
+      "displayName": "bkauto3",
+      "image": "https://avatars.githubusercontent.com/u/255684383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774790116072,
+      "changelog": "Register your OpenClaw agent on SwarmSync marketplace in 60 seconds",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bd210cebaa5cb9272cf36913e53777a353924c93fadf6584031fc0a5cda3e357"
+}

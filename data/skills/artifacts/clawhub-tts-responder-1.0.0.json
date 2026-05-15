@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tts-responder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tts_responder",
+  "skill": {
+    "id": 54459,
+    "skillKey": "clawhub-tts-responder",
+    "name": "Tts Responder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tts-responder",
+    "url": "https://clawhub.ai/skills/tts-responder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tts-responder-081b93dcc2b16ae7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convierte texto a audio OGG usando Piper y envía respuestas habladas por Telegram cuando se activa el modo de voz."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jgf78",
+      "userId": "s176ntpcdss4f1r2bmzb2xeem983q8gh",
+      "displayName": "JULIAN GOMEZ FERNANDEZ",
+      "image": "https://avatars.githubusercontent.com/u/22173008?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774913910422,
+      "changelog": "TTS Responder 1.0.0 – Primera versión\n\n- Convierte respuestas de texto a mensajes de voz (OGG) para Telegram usando Piper.\n- Alterna entre respuestas habladas y escritas con comandos sencillos (\"responde de forma hablada/escrita\").\n- Requiere instalación de piper, ffmpeg y opcionalmente sox.\n- Permite configuración de voz y velocidad mediante variables de entorno.\n- Incluye ejemplos de configuración, prueba y uso rápido.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3b08600f52793111080e20ada843ca8050133b84f5def2f73b16483d9838c17f"
+}

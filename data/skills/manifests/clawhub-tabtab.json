@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34779,
+  "uuid": "skill-clawhub-tabtab",
+  "skillKey": "clawhub-tabtab",
+  "name": "TabTab Skill",
+  "summary": "Use TabTab to run AI-powered tasks in a sandboxed multi-agent environment. Supported capabilities: - General agent: open-ended tasks, writing, research, summ...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tabtab",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TabTabAI",
+      "features": [
+        "Use TabTab to run AI-powered tasks in a sandboxed multi-agent environment",
+        "Supported capabilities:",
+        "General agent: open-ended tasks, writing, research, summ..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tabtab@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30621793?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tabtab",
+      "url": "https://clawhub.ai/skills/tabtab"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tabtab",
+    "url": "https://clawhub.ai/skills/tabtab",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tabtab-b9da01b622732c08.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tabtab@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-tabtab-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:30ad952bc3e78d8626b0620aa62cfead2dfad266f7fe6084cd558417ebcaee32",
+      "artifactSizeBytes": 2191
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T08:41:48.917Z"
+}

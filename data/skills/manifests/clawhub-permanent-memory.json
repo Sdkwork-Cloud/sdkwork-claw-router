@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50300,
+  "uuid": "skill-clawhub-permanent-memory",
+  "skillKey": "clawhub-permanent-memory",
+  "name": "Auto Memory",
+  "summary": "Indestructible agent memory — permanently stored, never lost. Save decisions, identity, and context as a memory chain on the Autonomys Network. Rebuild your...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.permanent_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "0xautonomys",
+      "features": [
+        "Indestructible agent memory — permanently stored, never lost",
+        "Save decisions, identity, and context as a memory chain on the Autonomys Network",
+        "Rebuild your..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/permanent-memory@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262559771?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "permanent-memory",
+      "url": "https://clawhub.ai/skills/permanent-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "permanent-memory",
+    "url": "https://clawhub.ai/skills/permanent-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/permanent-memory-b232e0fb00d731c0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/permanent-memory@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-permanent-memory-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3de27cdda537ad95be673d1db94d2f1758c8da933e69ad3207fec97d86bff502",
+      "artifactSizeBytes": 2391
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T12:34:02.396Z"
+}

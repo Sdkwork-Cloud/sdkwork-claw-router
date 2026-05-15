@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mercadolibre-mcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mercadolibre_mcp",
+  "skill": {
+    "id": 53339,
+    "skillKey": "clawhub-mercadolibre-mcp",
+    "name": "Mercado Libre MCP Server"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mercadolibre-mcp",
+    "url": "https://clawhub.ai/skills/mercadolibre-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mercadolibre-mcp-9e9173b288d45844.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete MCP server for Mercado Libre seller operations — products, orders, pricing, stock, questions, ads, reputation, competitor analysis"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "marcosnahuel",
+      "userId": "s17djsfg5ekx4a1g48wf9y05hh83h7yt",
+      "displayName": "MarcosNahuel",
+      "image": "https://avatars.githubusercontent.com/u/69739045?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 188,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774380748998,
+      "changelog": "First complete MCP server for Mercado Libre. 11 tools for seller operations: products, orders, pricing, stock, questions, ads, metrics, reputation, competitors, categories.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0ac34929cd8c536da565445347b180e1a01a632b93352f774e23634c5f27e9d2"
+}

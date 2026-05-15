@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mafengwo@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mafengwo",
+  "skill": {
+    "id": 30209,
+    "skillKey": "clawhub-mafengwo",
+    "name": "Mafengwo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mafengwo",
+    "url": "https://clawhub.ai/skills/mafengwo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mafengwo-b56c4decc081e0ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Retrieve and summarize public travel notes and popular attraction data from Mafengwo for destinations, including ratings, reviews, tickets, and opening times."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codekungfu",
+      "userId": "s174hbct7jzfnq4tb6w04gnans83gh5h",
+      "displayName": "ClawKK",
+      "image": "https://avatars.githubusercontent.com/u/111570001?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 287,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773839218930,
+      "changelog": "Initial release of the \"mafengwo-hot-trend\" skill.\n\n- Provides summarized access to Mafengwo travel content, focusing on public pages for sights and travelogues.\n- Supports tasks like extracting top sights, rating/comment summaries, and travelogue topic statistics.\n- Emphasizes lightweight analysis with compliance to site rules (no batch scraping, no API reversal).\n- Includes automation tips for dynamic content and data freshness, with example usage scenarios.\n- Designed for internal analytics and notifications only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:49efa8483b3639364930a4418fdd96b4367b66071a143db45aae9fa63b18e6ad"
+}

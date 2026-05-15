@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/local-file-converter@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_file_converter",
+  "skill": {
+    "id": 61062,
+    "skillKey": "clawhub-local-file-converter",
+    "name": "Local File Converter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-file-converter",
+    "url": "https://clawhub.ai/skills/local-file-converter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-file-converter-adfe3c518f45ee63.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "本地文件转换技能，使用命令行工具实现 1000+ 格式互转。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tiantian-pago",
+      "userId": "s1704fqkpxm3w86kq78akycr5183j3e6",
+      "displayName": "tiantian-pago",
+      "image": "https://avatars.githubusercontent.com/u/47686704?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 433,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774016792104,
+      "changelog": "Initial clean release - no private info",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c467162020bd5cded5f007bdf3a85e7f56e283caa5e8684bec104f5ff0541aaf"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52674,
+  "uuid": "skill-clawhub-deps-mgmt",
+  "skillKey": "clawhub-deps-mgmt",
+  "name": "Deps Mgmt",
+  "summary": "Deep dependency management workflow—inventory, upgrade policy, security patches, licensing, lockfiles, and supply-chain hygiene. Use when upgrading framework...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deps_mgmt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawKK",
+      "features": [
+        "Deep dependency management workflow—inventory, upgrade policy, security patches, licensing, loc.",
+        "Use when upgrading framework..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deps-mgmt@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111570001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deps-mgmt",
+      "url": "https://clawhub.ai/skills/deps-mgmt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deps-mgmt",
+    "url": "https://clawhub.ai/skills/deps-mgmt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deps-mgmt-034c1dfd8d26387a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deps-mgmt@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-deps-mgmt-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ad40cf3317987013b5edd3f2ce87af6332c9d1d508ca015aa5ac7cf0afd29c6",
+      "artifactSizeBytes": 2380
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T08:43:50.589Z"
+}

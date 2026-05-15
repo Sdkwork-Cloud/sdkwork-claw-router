@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baidu-search-1-1-0-skip@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_search_1_1_0_skip",
+  "skill": {
+    "id": 39843,
+    "skillKey": "clawhub-baidu-search-1-1-0-skip",
+    "name": "Baidu Search 1 1 0.Skip"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-search-1-1-0-skip",
+    "url": "https://clawhub.ai/skills/baidu-search-1-1-0-skip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-search-1-1-0-skip-5eebb7934e942a81.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search the web using Baidu AI Search Engine (BDSE). Use for live information, documentation, or research topics."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lulu-owo",
+      "userId": "s172vsj2wt6qw7nj4r2qheeb8h84ab73",
+      "displayName": "Lulu-OwO",
+      "image": "https://avatars.githubusercontent.com/u/179379677?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775490535292,
+      "changelog": "Baidu Search Skill v1.0.0\n\n- Initial release: search the web using Baidu AI Search Engine (BDSE).\n- Supports three calling methods: file path (recommended), direct JSON string, and stdin pipe.\n- Handles UTF-8 BOM automatically to prevent JSON decoding errors.\n- Output encoding auto-configured to avoid Chinese character garbling in Windows terminals.\n- Offers flexible search parameters: keyword, resource type, site/time filters, safe search, and site blocking.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6bfa50eebbb20f83d7d7c3b496ba3138fd09a93f5dafbba5af5ed2f8d4317b5a"
+}

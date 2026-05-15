@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lark-toolkit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lark_toolkit",
+  "skill": {
+    "id": 14078,
+    "skillKey": "clawhub-lark-toolkit",
+    "name": "Lark Toolkit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lark-toolkit",
+    "url": "https://clawhub.ai/skills/lark-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lark-toolkit-071c87dfb66ceadc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive Lark/Feishu API skill for OpenClaw agents. Covers all Lark operations via three access paths: claw-lark plugin (message tool), MCP tools (mcpor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pengxiao-wang",
+      "userId": "publishers:pengxiao-wang",
+      "displayName": "Pengxiao-Wang",
+      "image": "https://avatars.githubusercontent.com/u/38279174?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1231,
+      "installsAllTime": 5,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771792976085,
+      "changelog": "Initial release: comprehensive Lark/Feishu API skill covering claw-lark plugin, MCP tools, and direct Open API paths",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a77f058323fe6f717cb4a5306a2236cc3e918f6e4eaa9a4d056c50e35d4c25de"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64616,
+  "uuid": "skill-clawhub-smart-file-organizer",
+  "skillKey": "clawhub-smart-file-organizer",
+  "name": "File Organizer",
+  "summary": "基于 AI 语义分析的智能文件整理技能，根据文件内容动态创建 Johnny Decimal 分类。 当用户提到以下内容时触发： - \"整理文件\"、\"分类文件\"、\"组织下载\"、\"文件归档\" - \"文件太多了\"、\"下载文件夹很乱\"、\"文件乱七八糟\" - \"把文件按类别整理\"、\"自动分类文件\" - \"清理下载文件夹\"、...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_file_organizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "akira82-ai",
+      "features": [
+        "基于 AI 语义分析的智能文件整理技能，根据文件内容动态创建 Johnny Decimal 分类。 当用户提到以下内容时触发：",
+        "\"整理文件\"、\"分类文件\"、\"组织下载\"、\"文件归档\"",
+        "\"文件太多了\"、\"下载文件夹很乱\"、\"文件乱七八糟\"",
+        "\"把文件按类别整理\"、\"自动分类文件\""
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-file-organizer@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201185414?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-file-organizer",
+      "url": "https://clawhub.ai/skills/smart-file-organizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-file-organizer",
+    "url": "https://clawhub.ai/skills/smart-file-organizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-file-organizer-6cf7c4250c952259.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-file-organizer@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-file-organizer-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4895c7c6bfed3962110772e153d86b55e71313f46d09df4edc9e57c67ccf9578",
+      "artifactSizeBytes": 2832
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T02:49:33.631Z"
+}

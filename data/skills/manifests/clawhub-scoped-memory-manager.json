@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28779,
+  "uuid": "skill-clawhub-scoped-memory-manager",
+  "skillKey": "clawhub-scoped-memory-manager",
+  "name": "Scoped Memory Manager",
+  "summary": "Installs and manages Scope-Based Memory and Automated REM Sleep (memory consolidation) for OpenClaw agents. Use this skill when an agent's MEMORY.md is bloat...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scoped_memory_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "john-20-ux",
+      "features": [
+        "Installs and manages Scope-Based Memory and Automated REM Sleep (memory consolidation) for Open.",
+        "Use this skill when an agent's MEMORY.md is bloat..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/scoped-memory-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/212563373?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "scoped-memory-manager",
+      "url": "https://clawhub.ai/skills/scoped-memory-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scoped-memory-manager",
+    "url": "https://clawhub.ai/skills/scoped-memory-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scoped-memory-manager-1fd2c74fb1053834.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/scoped-memory-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-scoped-memory-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:155f2f6a770661895e7919171e1a11dd1603d5cdff67f373879dc10977256ccf",
+      "artifactSizeBytes": 1982
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T19:16:17.333Z"
+}

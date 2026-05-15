@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tosr-test-skill-1774319824@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tosr_test_skill_1774319824",
+  "skill": {
+    "id": 44044,
+    "skillKey": "clawhub-tosr-test-skill-1774319824",
+    "name": "TOSR Test Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tosr-test-skill-1774319824",
+    "url": "https://clawhub.ai/skills/tosr-test-skill-1774319824",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tosr-test-skill-1774319824-d94de37781e0bccb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A test skill for validating skill creation, version update, and deletion workflows via the TOSR clawhub REST API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "simonlei",
+      "userId": "s171vbnjc88fqcmnw7bqppxbsn83hn9d",
+      "displayName": "simonlei",
+      "image": "https://avatars.githubusercontent.com/u/2107131?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774319829284,
+      "changelog": "Initial release for TOSR integration testing.\n\n- Validates skill creation, update, and deletion via the clawhub REST API.\n- Uses unique timestamped slugs for conflict-free test runs.\n- Designed solely for automated test workflows; not for production use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:79fbf6396f2084d4b8f8d720b19a76b73a381f0c106de4d96118dbfbf936357a"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20697,
+  "uuid": "skill-clawhub-skillinstall",
+  "skillKey": "clawhub-skillinstall",
+  "name": "skill_install",
+  "summary": "Install OpenClaw skills from clawhub.ai ZIP files with automatic detection, validation, and Gateway updates. Supports file search, duplicate checking, and in...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skillinstall",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "otho2966-ai",
+      "features": [
+        "Install OpenClaw skills from clawhub.ai ZIP files with automatic detection, validation, and Gat.",
+        "Supports file search, duplicate checking, and in..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skillinstall@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260169808?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skillinstall",
+      "url": "https://clawhub.ai/skills/skillinstall"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skillinstall",
+    "url": "https://clawhub.ai/skills/skillinstall",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skillinstall-a0f38d00e33d533d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skillinstall@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skillinstall-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:47226ae2d39d5e2f9d5c0239cd888ac06489f86f929f48773960fa812ff22265",
+      "artifactSizeBytes": 2843
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T00:55:45.672Z"
+}

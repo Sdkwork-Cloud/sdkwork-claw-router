@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/worth-it-auto-logger@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.worth_it_auto_logger",
+  "skill": {
+    "id": 41060,
+    "skillKey": "clawhub-worth-it-auto-logger",
+    "name": "Worth It Auto-Logger"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "worth-it-auto-logger",
+    "url": "https://clawhub.ai/skills/worth-it-auto-logger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/worth-it-auto-logger-92745c21a734db7b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically detects active projects, tracks session time, logs value signals and costs silently during conversations, then summarizes ROI with Worth It int..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "storyscriptapp",
+      "userId": "s17fq6t6vn9j4m6vz473xmbv1h84vafd",
+      "displayName": "storyscriptapp",
+      "image": "https://avatars.githubusercontent.com/u/217160468?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774168115293,
+      "changelog": "Clearer description + link to Worth It on ClawMart. No functional changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:efd635aa6fcf714b4d649d1c166e27bf46b7d67b31a2e18c7d41bdd804845330"
+}

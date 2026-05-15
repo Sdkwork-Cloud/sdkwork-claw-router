@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/technical-eval@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.technical_eval",
+  "skill": {
+    "id": 71536,
+    "skillKey": "clawhub-technical-eval",
+    "name": "Technical Eval"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "technical-eval",
+    "url": "https://clawhub.ai/skills/technical-eval",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/technical-eval-ae0c341d836990ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在市场全貌清楚之后，把需要对比的技术方案并排分析，输出结构化对比和推荐结论。工作流包含：技术问题定义、全景扫描、趋势雷达、深度评估、PoC验证、风险控制、选型决策、报告生成。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vincentlau2046-sudo",
+      "userId": "s177qxxtwn13trxmgd54c7a6wh83h7rc",
+      "displayName": "vincentlau2046-sudo",
+      "image": "https://avatars.githubusercontent.com/u/259013171?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774588401971,
+      "changelog": "Initial release of technical-eval: a comprehensive, professional technical evaluation workflow.\n\n- Defines an 8-step standardized process for technology selection (需求定义, 全景扫描, 趋势雷达, 深度评估, PoC验证, 风险控制, 选型决策, 报告生成)\n- Enforces strict quantification requirements for each evaluation step; qualitative content must be clearly labeled\n- Integrates multi-source data collection and structured comparison matrices (支持数据来源: 官方文档、GitHub、Stack Overflow、招聘数据等)\n- Provides 5 industry-specific evaluation templates (AI 基础设施、AI 软件、云原生、数据库、前端框架)\n- Outputs results in a fixed directory structure with automated report and presentation (ppt) generation\n- Guarantees process completeness, file existence, logical consistency, and transparency on data provenance and confidence intervals",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3fa5ac7eca9981ed19cc04a4a5a6493ae339f652049c157642a656da1e415b25"
+}

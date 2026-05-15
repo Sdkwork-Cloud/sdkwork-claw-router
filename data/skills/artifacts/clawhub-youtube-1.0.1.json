@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube",
+  "skill": {
+    "id": 8769,
+    "skillKey": "clawhub-youtube",
+    "name": "Youtube"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube",
+    "url": "https://clawhub.ai/skills/youtube",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-24e6654bfd1ab85b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search YouTube videos, get channel info, fetch video details and transcripts using YouTube Data API v3 via MCP server or yt-dlp fallback."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "grpaiva",
+      "userId": "publishers:grpaiva",
+      "displayName": "grpaiva",
+      "image": "https://avatars.githubusercontent.com/u/4790659?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 6060,
+      "installsAllTime": 86,
+      "installsCurrent": 82,
+      "stars": 5,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769621161804,
+      "changelog": "- Documentation expanded and clarified in README.md.\n- Additional usage examples, troubleshooting advice, and step-by-step setup instructions included.\n- Security guidance and common workflow sections improved for easier reference.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3d1a8b45cf25067b4ac5538b872d36ceb30e62d8eeba97f0b8ef67e6385ee347"
+}

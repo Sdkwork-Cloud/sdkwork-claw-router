@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52705,
+  "uuid": "skill-clawhub-text-to-video-json-prompt",
+  "skillKey": "clawhub-text-to-video-json-prompt",
+  "name": "Text To Video Json Prompt",
+  "summary": "Skip the learning curve of professional editing software. Describe what you want — generate a 15-second video from this JSON prompt describing a sunset beach...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_video_json_prompt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "francemichaell-15",
+      "features": [
+        "Skip the learning curve of professional editing software",
+        "Describe what you want — generate a 15-second video from this JSON prompt describing a sunset b."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/text-to-video-json-prompt@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208906142?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "text-to-video-json-prompt",
+      "url": "https://clawhub.ai/skills/text-to-video-json-prompt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-video-json-prompt",
+    "url": "https://clawhub.ai/skills/text-to-video-json-prompt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-video-json-prompt-e1d5771741b8ce01.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/text-to-video-json-prompt@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-text-to-video-json-prompt-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:568c71caaa851fc077511451aa128a4ce2620cac6e57bcda7ba64bc1468bf7a2",
+      "artifactSizeBytes": 2541
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T22:05:38.236Z"
+}

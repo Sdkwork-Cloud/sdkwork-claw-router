@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/expense-form@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.expense_form",
+  "skill": {
+    "id": 62619,
+    "skillKey": "clawhub-expense-form",
+    "name": "报销单生成"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "expense-form",
+    "url": "https://clawhub.ai/skills/expense-form",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/expense-form-e5670647a92d0a16.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能报销助手，支持差旅费用报销、发票管理、费用审批、报销进度查询、费用分析等功能。可处理机票、酒店、用车、餐饮等多种费用类型，自动识别发票信息，智能匹配差旅订单。Invoke when user needs to submit expense report, upload invoice, check reimb..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gaogao605",
+      "userId": "s17cxwwzm94v9ntkczkmq0r2x983km1s",
+      "displayName": "fenbeitong-trip",
+      "image": "https://avatars.githubusercontent.com/u/265222913?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774946567483,
+      "changelog": "fb-expense-skill v1.0.0\n\n- Initial release of 智能报销助手, providing an all-in-one expense management solution.\n- Supports travel expense reimbursement, invoice management (including verification and deduplication), automated approval workflow, status queries, and expense analytics.\n- Handles multiple expense types such as transport, hotel, dining, communications, office supplies, and travel allowances.\n- Features invoice image recognition, policy compliance checks, automatic report generation, and customizable approval steps.\n- Offers clear examples, output templates, and API interface documentation for streamlined reimbursement management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c68509eded04a7d5e86c87ff3ea8962ff1bd0fb19353cada2c049dcb39e13cc6"
+}

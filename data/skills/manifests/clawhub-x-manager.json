@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52164,
+  "uuid": "skill-clawhub-x-manager",
+  "skillKey": "clawhub-x-manager",
+  "name": "X Manager",
+  "summary": "Manage X (Twitter) accounts — post tweets, like, reply, retweet, view timeline, search, auto-interact, analyze data.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Parker",
+      "features": [
+        "Manage X (Twitter) accounts — post tweets, like, reply, retweet, view timeline, search, auto-in."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-manager@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/169116739?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-manager",
+      "url": "https://clawhub.ai/skills/x-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-manager",
+    "url": "https://clawhub.ai/skills/x-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-manager-d83d1315482551c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-manager@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-manager-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2643ff1ea31ffc663953b34494f83fdaae5eefbe08e3e2e5f0de4e6dc3887d62",
+      "artifactSizeBytes": 2312
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T10:26:34.578Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/discord-message-guard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.discord_message_guard",
+  "skill": {
+    "id": 42080,
+    "skillKey": "clawhub-discord-message-guard",
+    "name": "Discord Message Guard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "discord-message-guard",
+    "url": "https://clawhub.ai/skills/discord-message-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/discord-message-guard-13b022f85bb8f7d7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Filters and moderates Discord messages with spam detection, rate limiting, content checks, and pattern-based blocking before reaching agents."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jlkptom-prog",
+      "userId": "s173pzje6dnztj8xvh66jf921x84bch2",
+      "displayName": "jlkptom-prog",
+      "image": "https://avatars.githubusercontent.com/u/256688842?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775443878567,
+      "changelog": "Initial release of Discord Message Guard middleware skill.\n\n- Filters spam and unwanted messages in Discord.\n- Supports per-user and per-channel rate limiting.\n- Provides content moderation hooks.\n- Allows pattern-based message blocking.\n- Activates automatically when configured; no manual invocation required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9a01f74e7534101ab1fa6e411037fef34e68149f29f928805658434c7a23ba3d"
+}

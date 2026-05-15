@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15966,
+  "uuid": "skill-clawhub-jules-api",
+  "skillKey": "clawhub-jules-api",
+  "name": "Jules API",
+  "summary": "Create and manage Google Jules AI coding sessions to automate tasks like code writing, bug fixing, testing, and PR creation on GitHub repos using the Jules API.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jules_api",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "arthbhalodiya",
+      "features": [
+        "Create and manage Google Jules AI coding sessions to automate tasks like code writing, bug fixi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jules-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60457646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jules-api",
+      "url": "https://clawhub.ai/skills/jules-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jules-api",
+    "url": "https://clawhub.ai/skills/jules-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jules-api-b01acbfdaf3d4b2e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jules-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jules-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf68875bf647448d0f29669fbe361dec902a5f4fcb4fb2a45325a9170c8f4631",
+      "artifactSizeBytes": 2301
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T08:55:46.549Z"
+}

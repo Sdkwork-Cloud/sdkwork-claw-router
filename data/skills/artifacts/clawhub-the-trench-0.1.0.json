@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/the-trench@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.the_trench",
+  "skill": {
+    "id": 12718,
+    "skillKey": "clawhub-the-trench",
+    "name": "The Trench"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "the-trench",
+    "url": "https://clawhub.ai/skills/the-trench",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/the-trench-2cfb1f723efa01dc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Call The Trench Solana program on devnet using the public IDL and TS types."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bagwatcher",
+      "userId": "publishers:bagwatcher",
+      "displayName": "BAGWATCHER",
+      "image": "https://avatars.githubusercontent.com/u/193375602?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1587,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770082693111,
+      "changelog": "Initial release of The Trench skill.\n\n- Allows construction of Anchor clients for The Trench Solana program on devnet.\n- Provides public access to the program's IDL and TypeScript types.\n- Contains usage instructions and example code for integration.\n- No private trading logic or sensitive information included.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:925e8fbff92ec02d910e7de464c85a753078b62029462b2531cb0d2f5ae00d9b"
+}

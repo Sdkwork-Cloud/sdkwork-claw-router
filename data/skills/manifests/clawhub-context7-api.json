@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10939,
+  "uuid": "skill-clawhub-context7-api",
+  "skillKey": "clawhub-context7-api",
+  "name": "Context7 API Documentation Fetcher",
+  "summary": "Fetch up-to-date library documentation via Context7 API. Use PROACTIVELY when: (1) Working with ANY external library (React, Next.js, Supabase, etc.) (2) User asks about library APIs, patterns, or best practices (3) Implementing features t.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context7_api",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "am-will",
+      "features": [
+        "Fetch up-to-date library documentation via Context7 API",
+        "Use PROACTIVELY when: (1) Working with ANY external library (React, Next.js, Supabase, etc.) (2."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/context7-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42459108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "context7-api",
+      "url": "https://clawhub.ai/skills/context7-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context7-api",
+    "url": "https://clawhub.ai/skills/context7-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context7-api-8e51db6655364201.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/context7-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-context7-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6ea6dd1ffa053204272012b061bfb64e82bba7b207ced825eb9b2dcae0922ff2",
+      "artifactSizeBytes": 2069
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-17T18:59:18.349Z"
+}

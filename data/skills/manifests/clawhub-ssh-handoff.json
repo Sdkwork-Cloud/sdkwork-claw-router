@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40054,
+  "uuid": "skill-clawhub-ssh-handoff",
+  "skillKey": "clawhub-ssh-handoff",
+  "name": "SSH Handoff",
+  "summary": "Create and reuse a secure shared terminal handoff when a human must authenticate first and the agent must resume work in the same shell session afterward. Us...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ssh_handoff",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jonathan97480",
+      "features": [
+        "Create and reuse a secure shared terminal handoff when a human must authenticate first and the."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ssh-handoff@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59934702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ssh-handoff",
+      "url": "https://clawhub.ai/skills/ssh-handoff"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ssh-handoff",
+    "url": "https://clawhub.ai/skills/ssh-handoff",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ssh-handoff-fb81191903f56b06.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ssh-handoff@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ssh-handoff-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:efb7d90e6ac58fb61b6ee0219291376550b7757aa6e4bbc6117c87523bae9dff",
+      "artifactSizeBytes": 2696
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T09:59:43.876Z"
+}

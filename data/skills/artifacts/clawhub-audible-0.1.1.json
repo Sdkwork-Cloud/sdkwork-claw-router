@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/audible@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audible",
+  "skill": {
+    "id": 68766,
+    "skillKey": "clawhub-audible",
+    "name": "Audible"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audible",
+    "url": "https://clawhub.ai/skills/audible",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audible-961281ce5eace239.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "适用于用户希望围绕 Audible 规划有声书推荐、会员运营、内容消费提升、书单策划与收听问题排查时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mikeclaw007",
+      "userId": "s173n2mnssqbs3ebpdz3b52ssh83gshx",
+      "displayName": "mikeclaw007",
+      "image": "https://avatars.githubusercontent.com/u/265502950?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 258,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773925040454,
+      "changelog": "- Expanded skill description to emphasize usage boundaries and compliance.\n- Added clear sections on key entry points, common tasks, and data fields handled.\n- Included specific instructions on acceptable and prohibited behaviors (e.g., no piracy, no account sharing).\n- Provided step-by-step sample workflows for typical information extraction tasks.\n- Highlighted the importance of context and compliance when outputting content and guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:80f60aa10a9af1b0a24f085792be995da853999db2964c81fabb1080fbd39f9c"
+}

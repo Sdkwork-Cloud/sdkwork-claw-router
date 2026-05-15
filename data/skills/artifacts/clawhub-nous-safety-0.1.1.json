@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nous-safety@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nous_safety",
+  "skill": {
+    "id": 53161,
+    "skillKey": "clawhub-nous-safety",
+    "name": "Nous Safety"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nous-safety",
+    "url": "https://clawhub.ai/skills/nous-safety",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nous-safety-fb39623ac40bf44f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Ontology-driven Agent safety layer. Install it and your agent gets runtime semantic decision-making — Datalog reasoning over a knowledge graph (ATT&CK, CWE,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dario-github",
+      "userId": "s17f18nhhssgtbsjjaf6vc8z6n83kwr4",
+      "displayName": "Dario Zhang",
+      "image": "https://avatars.githubusercontent.com/u/40749119?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1774432870061,
+      "changelog": "Add star prompt and companion project links",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c5b82bcd36e77cd3d4e70733bed3c983327f701f3a2998649439ad7767310c39"
+}

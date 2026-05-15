@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60400,
+  "uuid": "skill-clawhub-blood-pressure-tracker",
+  "skillKey": "clawhub-blood-pressure-tracker",
+  "name": "Blood Pressure Tracker",
+  "summary": "血压追踪 - 血压记录、趋势分析、健康建议",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blood_pressure_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kaising-openclaw1",
+      "features": [
+        "血压记录、趋势分析、健康建议"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/blood-pressure-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266910723?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "blood-pressure-tracker",
+      "url": "https://clawhub.ai/skills/blood-pressure-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blood-pressure-tracker",
+    "url": "https://clawhub.ai/skills/blood-pressure-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blood-pressure-tracker-32b430fdec355a7c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/blood-pressure-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-blood-pressure-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:975ecceed0bdafc748337aa4d631e458d331aeacfd4737b1dfb1f6b7279a3c09",
+      "artifactSizeBytes": 2143
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T06:30:25.330Z"
+}

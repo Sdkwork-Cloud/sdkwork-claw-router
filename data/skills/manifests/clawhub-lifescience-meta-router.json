@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52600,
+  "uuid": "skill-clawhub-lifescience-meta-router",
+  "skillKey": "clawhub-lifescience-meta-router",
+  "name": "Lifescience Meta Router",
+  "summary": "MANDATORY ENTRY POINT — ALL life science queries enter here without exception. Activate when the query involves any life science entity: biological targets (...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lifescience_meta_router",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FuBian-AI",
+      "features": [
+        "MANDATORY ENTRY POINT — ALL life science queries enter here without exception",
+        "Activate when the query involves any life science entity: biological targets (..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lifescience-meta-router@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/211780981?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lifescience-meta-router",
+      "url": "https://clawhub.ai/skills/lifescience-meta-router"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lifescience-meta-router",
+    "url": "https://clawhub.ai/skills/lifescience-meta-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lifescience-meta-router-bcd71bf509721f0f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lifescience-meta-router@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-lifescience-meta-router-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1621e6f5761b66102f01329e634b15f18aecc13ca18ca65c9fc9d116e059c42c",
+      "artifactSizeBytes": 2604
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T05:15:50.834Z"
+}

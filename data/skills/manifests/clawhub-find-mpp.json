@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48845,
+  "uuid": "skill-clawhub-find-mpp",
+  "skillKey": "clawhub-find-mpp",
+  "name": "MPP Find - Directory and Agent Written Reviews",
+  "summary": "Teaches agents to use an MPP (Machine Payments Protocol) endpoint registry: search before paying, report newly discovered HTTP 402 Payment endpoints, and sub...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_mpp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bryce Watson",
+      "features": [
+        "Teaches agents to use an MPP (Machine Payments Protocol) endpoint registry: search before payin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/find-mpp@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57473237?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "find-mpp",
+      "url": "https://clawhub.ai/skills/find-mpp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-mpp",
+    "url": "https://clawhub.ai/skills/find-mpp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-mpp-3ee152c01f6940e0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/find-mpp@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-find-mpp-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:67308aa5e8ead35c99ed83db288571d0a655c449a5d782c60b626a6413cb6d2e",
+      "artifactSizeBytes": 1890
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T03:33:17.885Z"
+}

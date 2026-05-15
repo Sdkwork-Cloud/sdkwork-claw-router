@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moe-persona-theater@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moe_persona_theater",
+  "skill": {
+    "id": 65164,
+    "skillKey": "clawhub-moe-persona-theater",
+    "name": "moe-persona-theater"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moe-persona-theater",
+    "url": "https://clawhub.ai/skills/moe-persona-theater",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moe-persona-theater-fc4fb4c7ad6a4046.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "为 OpenClaw 提供 6 个偏二次元、ACG 风格的人格声线，用于明确切换角色表达、保持多轮对话一致性，并在技术任务中维持“人物外壳 + 清晰正文”的输出方式。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wjp-cn",
+      "userId": "s17ahkbn1gx6cnt9dp0wr7p9b983xn9h",
+      "displayName": "wjp",
+      "image": "https://avatars.githubusercontent.com/u/43528116?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774919975256,
+      "changelog": "Initial release.\n\n- 提供 6 条二次元/ACG 风格稳定人格声线，支持角色切换与多轮一致性\n- 通过本地调度脚本及声线文件灵活管理当前激活人格\n- 兼顾技术任务场景，确保专业清晰的输出同时保留角色特色\n- 明确控制原则与输出准则，防止串味与过度角色化\n- 支持自然语言切换、查阅、恢复默认和角色简称等多入口操作",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:be1f5791cabeb3a0947285b1978a966cfea74d4d47ae3861ccfae5399e9cc617"
+}

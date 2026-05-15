@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60753,
+  "uuid": "skill-clawhub-auto-test",
+  "skillKey": "clawhub-auto-test",
+  "name": "Auto Test",
+  "summary": "自动生成单元测试。分析代码逻辑，自动生成 pytest (Python)、JUnit (Java)、Jest (JavaScript) 等测试框架的测试用例。支持覆盖率报告生成。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_test",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zgbin",
+      "features": [
+        "自动生成单元测试。分析代码逻辑，自动生成 pytest (Python)、JUnit (Java)、Jest (JavaScript) 等测试框架的测试用例。支持覆盖率报告生成。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-test@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/126647178?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-test",
+      "url": "https://clawhub.ai/skills/auto-test"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-test",
+    "url": "https://clawhub.ai/skills/auto-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-test-90e60d332756fe70.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-test@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-test-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a098b58b1d16b1ecc3115fdff7d31885a38e131e3d612ef384b767f1e861d71d",
+      "artifactSizeBytes": 2251
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T21:41:05.418Z"
+}

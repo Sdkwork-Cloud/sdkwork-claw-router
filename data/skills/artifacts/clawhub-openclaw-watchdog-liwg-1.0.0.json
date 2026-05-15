@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-watchdog-liwg@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_watchdog_liwg",
+  "skill": {
+    "id": 60646,
+    "skillKey": "clawhub-openclaw-watchdog-liwg",
+    "name": "OpenClaw Watchdog Li"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-watchdog-liwg",
+    "url": "https://clawhub.ai/skills/openclaw-watchdog-liwg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-watchdog-liwg-ab3498025baab4cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw Gateway 看门狗技能。监控 OpenClaw Gateway 进程存活、WebSocket 错误、飞书/企业微信/微信通道状态、网络连通性。在检测到异常时自动重启 Gateway（最多2次，10分钟窗口），并记录通道暂停状态。当 OpenClaw Gateway 无响应、通道报错、sess..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lxwseeyouaska",
+      "userId": "s175wnexd6vqdf4ya0sd0efrgn83tasq",
+      "displayName": "lxwseeyouaska",
+      "image": "https://avatars.githubusercontent.com/u/264923469?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774749516726,
+      "changelog": "监控Gateway、飞书、企业微信、微信通道状态，自动重启",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2f2f7e7b7ec0244beb17f5a0e090db063405e0f4bd4062b1b9b968b225c4d8ac"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36662,
+  "uuid": "skill-clawhub-deadlinks",
+  "skillKey": "clawhub-deadlinks",
+  "name": "Deadlinks",
+  "summary": "Check Markdown files and websites for broken links. Use when asked to find dead links, validate URLs in docs, check if links still work, audit a README, or r...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deadlinks",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rogue-agent1",
+      "features": [
+        "Check Markdown files and websites for broken links",
+        "Use when asked to find dead links, validate URLs in docs, check if links still work, audit a RE."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deadlinks@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259556880?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deadlinks",
+      "url": "https://clawhub.ai/skills/deadlinks"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deadlinks",
+    "url": "https://clawhub.ai/skills/deadlinks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deadlinks-0cdf5f3a95a33184.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deadlinks@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-deadlinks-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7729f4cf5e01d80772d7ed470223c4d7856d88a720c8dec37a817ebdeda0488d",
+      "artifactSizeBytes": 2263
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T19:25:45.118Z"
+}

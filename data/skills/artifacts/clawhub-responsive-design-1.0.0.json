@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/responsive-design@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.responsive_design",
+  "skill": {
+    "id": 11508,
+    "skillKey": "clawhub-responsive-design",
+    "name": "Responsive Design"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "responsive-design",
+    "url": "https://clawhub.ai/skills/responsive-design",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/responsive-design-0623cc13768b3210.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Implement responsive layouts using container queries, fluid typography, CSS Grid, mobile-first breakpoints, responsive images, and adaptive navigation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wpank",
+      "userId": "publishers:wpank",
+      "displayName": "wpank",
+      "image": "https://avatars.githubusercontent.com/u/9498646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1913,
+      "installsAllTime": 21,
+      "installsCurrent": 19,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770728141707,
+      "changelog": "Initial release: Modern, comprehensive responsive design techniques in CSS and React.\n\n- Includes patterns for container queries, fluid typography, CSS Grid/Flexbox, and mobile-first breakpoints.\n- Provides fluid spacing and typography scales using clamp().\n- Features responsive images (art direction with <picture> and srcset) and navigation components.\n- Demonstrates responsive grids and tables, with Tailwind CSS-ready code samples.\n- Guides on common adaptive design scenarios for React and CSS.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4781241d637e42e6b74f7f0373c74f6904cf72a56e38bb6315bcccacaf918abf"
+}

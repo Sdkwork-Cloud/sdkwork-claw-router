@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ads-qa-assistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ads_qa_assistant",
+  "skill": {
+    "id": 24852,
+    "skillKey": "clawhub-ads-qa-assistant",
+    "name": "Ads Q&A Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ads-qa-assistant",
+    "url": "https://clawhub.ai/skills/ads-qa-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ads-qa-assistant-005defaf1f66f008.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Answer ads operations questions quickly for Meta (Facebook/Instagram), Google Ads, TikTok Ads, YouTube Ads, Amazon Ads, and Shopify Ads workflows."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danyangliu-sandwichlab",
+      "userId": "publishers:danyangliu-sandwichlab",
+      "displayName": "danyangliu",
+      "image": "https://avatars.githubusercontent.com/u/184733968?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 401,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772498944818,
+      "changelog": "ads-qa-assistant 1.0.0\n\n- Initial release providing rapid Q&A and playbook lookup for Meta, Google Ads, TikTok Ads, YouTube Ads, Amazon Ads, and Shopify Ads workflows.\n- Standardizes input and output contracts for actionable and measurable ad performance recommendations.\n- Includes decision rules for KPI inference, risk handling, and platform-agnostic guidance.\n- Features clear workflow steps, escalation paths, and real-world ad ops use case examples.\n- Implements guardrails against data fabrication and compliance risks.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cc739f7635f4da740adb7eb0b4c5b553211a8cec360744acecede7795b8753ed"
+}

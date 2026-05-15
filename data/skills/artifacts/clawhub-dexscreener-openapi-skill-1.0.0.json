@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dexscreener-openapi-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dexscreener_openapi_skill",
+  "skill": {
+    "id": 29321,
+    "skillKey": "clawhub-dexscreener-openapi-skill",
+    "name": "Dexscreener Openapi Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dexscreener-openapi-skill",
+    "url": "https://clawhub.ai/skills/dexscreener-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dexscreener-openapi-skill-185e290e4b80c9ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Operate DexScreener public market data APIs through UXC with a curated OpenAPI schema, no-auth setup, and read-first guardrails."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jolestar",
+      "userId": "s1769rm50f8wvzw550m22hg10x83gkem",
+      "displayName": "jolestar",
+      "image": "https://avatars.githubusercontent.com/u/77268?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 295,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773922254504,
+      "changelog": "Initial release – DexScreener public market data with curated OpenAPI and UXC integration.\n\n- Provides read-only access to select DexScreener public API operations through uxc and a no-auth OpenAPI setup.\n- Supports token profile and boost feeds, pair and token address lookups, and text-based searches.\n- Enforces guardrails for JSON output, schema-first use, and rate limits; excludes write and trading features.\n- Requires `uxc` CLI for execution, with reference commands and workflows included for setup and usage.\n- Includes references to usage docs and the public OpenAPI schema.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6302128fd1a9cd3de33cfe04a1af9cdad02dde754a724e44e9c10de022dd858d"
+}

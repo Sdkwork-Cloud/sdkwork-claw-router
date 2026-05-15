@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52484,
+  "uuid": "skill-clawhub-japan-seasons",
+  "skillKey": "clawhub-japan-seasons",
+  "name": "Japan Seasons API",
+  "summary": "Query Japanese seasonal data — cherry blossom forecasts, autumn foliage tracking, and festival search. Use when a user asks about sakura bloom dates, best ti...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.japan_seasons",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ko Syun / Gu Jun",
+      "features": [
+        "Query Japanese seasonal data — cherry blossom forecasts, autumn foliage tracking, and festival.",
+        "Use when a user asks about sakura bloom dates, best ti..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/japan-seasons@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/113325603?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "japan-seasons",
+      "url": "https://clawhub.ai/skills/japan-seasons"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "japan-seasons",
+    "url": "https://clawhub.ai/skills/japan-seasons",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/japan-seasons-1b503f2c07e703fb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/japan-seasons@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-japan-seasons-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eecfc55fe2b4ef33a2226a55ba3ac6de43bd260c8e5db5f3b76d2b17469c700b",
+      "artifactSizeBytes": 2303
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T06:45:56.273Z"
+}

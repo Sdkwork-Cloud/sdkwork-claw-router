@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fints-banking@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fints_banking",
+  "skill": {
+    "id": 15246,
+    "skillKey": "clawhub-fints-banking",
+    "name": "FinTS Banking"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fints-banking",
+    "url": "https://clawhub.ai/skills/fints-banking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fints-banking-7b5b595e1507eefb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Support for German personal online banking following FinTS banking standard. Out of the box support for many german banks. Uses system keychain to keep crede..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "h4gen",
+      "userId": "s1789vg92zcrdcbajdp87fjxsh8487xv",
+      "displayName": "Hagen Hoferichter",
+      "image": "https://avatars.githubusercontent.com/u/12556763?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 848,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1771350871658,
+      "changelog": "Add COMMANDS.md command reference and link from SKILL.md",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:82e2bbbddf6a3cdf1c40b33014d15d6d0238ea7ab54f20b9f220072683984cd0"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62301,
+  "uuid": "skill-clawhub-ftshare-index-data",
+  "skillKey": "clawhub-ftshare-index-data",
+  "name": "Skills of A-share index data released by ft.tech.",
+  "summary": "A 股指数数据技能集（market.ft.tech）。覆盖单只指数详情、指数分页列表（排序/筛选）、指数 K 线（日/周/月/年线）、指数分钟级分时。用户询问某只指数行情、指数列表、指数 K 线或分时时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ftshare_index_data",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shawn92",
+      "features": [
+        "A 股指数数据技能集（market.ft.tech）。覆盖单只指数详情、指数分页列表（排序/筛选）、指数 K 线（日/周/月/年线）、指数分钟级分时。用户询问某只指数行情、指数列表、指数 K."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ftshare-index-data@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17521361?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ftshare-index-data",
+      "url": "https://clawhub.ai/skills/ftshare-index-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ftshare-index-data",
+    "url": "https://clawhub.ai/skills/ftshare-index-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ftshare-index-data-79684bd15d7a8824.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ftshare-index-data@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ftshare-index-data-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cdd463b4dd32084dede9ad2061e05a700f762280ca8e28646157a4f31de3c478",
+      "artifactSizeBytes": 2065
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T05:19:20.323Z"
+}

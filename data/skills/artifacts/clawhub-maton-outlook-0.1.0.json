@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/maton-outlook@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maton_outlook",
+  "skill": {
+    "id": 43700,
+    "skillKey": "clawhub-maton-outlook",
+    "name": "Outlook"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maton-outlook",
+    "url": "https://clawhub.ai/skills/maton-outlook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maton-outlook-b53f1df364316c9a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Outlook / Microsoft mail integration via Maton managed OAuth and Microsoft Graph-compatible gateway. Use when users want to read, search, summarize, draft, s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "junzhongjunzi",
+      "userId": "s17b40rm38vhac791rmkn9y98983m2vk",
+      "displayName": "junzhongjunzi",
+      "image": "https://avatars.githubusercontent.com/u/129562429?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775230638877,
+      "changelog": "Initial release: Outlook / Microsoft mail integration via Maton with read, search, draft, and send helper scripts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0036eb7edc90855bb38c01a5d57494e6a25976db1f0c6296fe6545bacd62bbf9"
+}

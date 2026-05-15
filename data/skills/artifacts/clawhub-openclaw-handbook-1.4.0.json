@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-handbook@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_handbook",
+  "skill": {
+    "id": 51959,
+    "skillKey": "clawhub-openclaw-handbook",
+    "name": "OpenClaw Documentation Expert — Live Fetch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-handbook",
+    "url": "https://clawhub.ai/skills/openclaw-handbook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-handbook-07d3b59f8ff565a3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetches live from docs.openclaw.ai on every question. 395 pages indexed, working scripts (not echo placeholders), CI-style selftest for decision-tree rot, wo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "igornumeriano",
+      "userId": "s17f63g9fee71padxvjp08edk584p8pe",
+      "displayName": "igornumeriano",
+      "image": "https://avatars.githubusercontent.com/u/60715469?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1776031271147,
+      "changelog": "v1.4.0 — Evolution loop from real friction: record_miss.sh logs routing failures to ~/.openclaw/openclaw-docs/misses.md for human-reviewed promotion (3-comparable-hits rule). New Boundaries section prevents self-modification. Synonym Map for common term disambiguation. EXAMPLES.md with 13 worked routing cases. selftest.sh now covers SKILL.md + EXAMPLES.md (59 paths, 0 broken). Inspired by self-evolving-skill patterns adapted for deterministic docs routing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a1185ef932abd57b2de34dd29bfb90be9570f267a64ef7ff17fca78806ed339f"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mis-logbook-submit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mis_logbook_submit",
+  "skill": {
+    "id": 46459,
+    "skillKey": "clawhub-mis-logbook-submit",
+    "name": "MIS Logbook Submit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mis-logbook-submit",
+    "url": "https://clawhub.ai/skills/mis-logbook-submit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mis-logbook-submit-5fe6e57a35835b44.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Submit a daily PENS MIS Kerja Praktek logbook entry at online.mis.pens.ac.id after an approval-first workflow. Gather same-day work evidence, synthesize conc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mozaldy",
+      "userId": "s17btjckpn147s4wrqkbf3tkth84w7sa",
+      "displayName": "Mohammad Rizaldy Ramadhan",
+      "image": "https://avatars.githubusercontent.com/u/85663081?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 125,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776388175840,
+      "changelog": "Initial sanitized public release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c08c957749a312674a299df8619dd0f2b18c9a4f146cbfbeced7c78b00ae1acc"
+}

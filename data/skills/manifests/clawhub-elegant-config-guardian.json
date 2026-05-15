@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50310,
+  "uuid": "skill-clawhub-elegant-config-guardian",
+  "skillKey": "clawhub-elegant-config-guardian",
+  "name": "Elegant Config Guardian",
+  "summary": "Safely apply OpenClaw config changes with automatic rollback and ack timeout guard. Use when editing ~/.openclaw/openclaw.json, restarting gateway, enabling...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.elegant_config_guardian",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangwu-30",
+      "features": [
+        "Safely apply OpenClaw config changes with automatic rollback and ack timeout guard",
+        "Use when editing ~/.openclaw/openclaw.json, restarting gateway, enabling..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/elegant-config-guardian@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260053481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "elegant-config-guardian",
+      "url": "https://clawhub.ai/skills/elegant-config-guardian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "elegant-config-guardian",
+    "url": "https://clawhub.ai/skills/elegant-config-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/elegant-config-guardian-4bb24cbb9f8a50c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/elegant-config-guardian@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-elegant-config-guardian-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5f2c2621bbf2b1737676d84f9701eaf590112291629623556f6bbb9fbb311f42",
+      "artifactSizeBytes": 1981
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T16:09:23.545Z"
+}

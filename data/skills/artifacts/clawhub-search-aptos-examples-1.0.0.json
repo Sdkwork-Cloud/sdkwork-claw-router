@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/search-aptos-examples@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.search_aptos_examples",
+  "skill": {
+    "id": 35301,
+    "skillKey": "clawhub-search-aptos-examples",
+    "name": "Search Aptos Examples"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "search-aptos-examples",
+    "url": "https://clawhub.ai/skills/search-aptos-examples",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/search-aptos-examples-7b113daf3c279738.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Searches aptos-core and daily-move for reference implementations before writing contracts. Triggers on: 'search examples', 'find example', 'check aptos-core'..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "iskysun96",
+      "userId": "publishers:iskysun96",
+      "displayName": "iskysun96",
+      "image": "https://avatars.githubusercontent.com/u/52557585?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 216,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773867419002,
+      "changelog": "- Initial release of the Search Aptos Examples Skill.\n- Enables users to search and discover reference Move contract implementations in aptos-core and daily-move repositories.\n- Maps use cases (NFTs, tokens, DeFi, DAOs, etc.) to curated example projects and code patterns.\n- Provides guidance on identifying patterns, reviewing code, and adapting secure implementations.\n- Includes detailed workflow steps and a discovery table for fast lookup of relevant contract examples.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a5d3917ae47887d0b851ccb93bca68fb76a0f6f389530424abc2bfd5b2a75296"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21363,
+  "uuid": "skill-clawhub-api2cli",
+  "skillKey": "clawhub-api2cli",
+  "name": "api2cli",
+  "summary": "Generate or discover a CLI + AgentSkill for any REST API. Use when: user says 'create a CLI for X', 'wrap this API', 'search if a CLI exists', 'install an ex...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api2cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Melvyn",
+      "features": [
+        "Generate or discover a CLI + AgentSkill for any REST API",
+        "Use when: user says 'create a CLI for X', 'wrap this API', 'search if a CLI exists', 'install a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/api2cli@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/56388157?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "api2cli",
+      "url": "https://clawhub.ai/skills/api2cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api2cli",
+    "url": "https://clawhub.ai/skills/api2cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api2cli-bab1543badd5138e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/api2cli@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-api2cli-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:125ee90671c722818ac01c409cde7e439adbc85a923f40110aef5ecd551c62ad",
+      "artifactSizeBytes": 2386
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T16:01:41.167Z"
+}

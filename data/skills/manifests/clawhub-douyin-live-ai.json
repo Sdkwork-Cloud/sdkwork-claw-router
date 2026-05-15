@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70601,
+  "uuid": "skill-clawhub-douyin-live-ai",
+  "skillKey": "clawhub-douyin-live-ai",
+  "name": "抖音直播弹幕AI智能回复助手",
+  "summary": "实时采集抖音直播弹幕，使用DeepSeek AI分析用户意图，结合主播人设智能生成个性化回复并支持自动重连与缓存节省API调用。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_live_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "go522000",
+      "features": [
+        "实时采集抖音直播弹幕，使用DeepSeek AI分析用户意图，结合主播人设智能生成个性化回复并支持自动重连与缓存节省API调用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/douyin-live-ai@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1244397?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "douyin-live-ai",
+      "url": "https://clawhub.ai/skills/douyin-live-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-live-ai",
+    "url": "https://clawhub.ai/skills/douyin-live-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-live-ai-82f8b0135252a2d6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/douyin-live-ai@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-douyin-live-ai-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:032aef56b518ea2d2f477eba581b10a91888a7db1ee3a2afaeb954999c0d735c",
+      "artifactSizeBytes": 2394
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T03:18:58.526Z"
+}

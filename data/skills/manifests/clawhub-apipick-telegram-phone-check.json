@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19091,
+  "uuid": "skill-clawhub-apipick-telegram-phone-check",
+  "skillKey": "clawhub-apipick-telegram-phone-check",
+  "name": "Telegram Phone Checker",
+  "summary": "Check if a phone number is registered on Telegram using the apipick Telegram Checker API. Returns registration status, Telegram user ID, username, first/last...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apipick_telegram_phone_check",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "javainthinking",
+      "features": [
+        "Check if a phone number is registered on Telegram using the apipick Telegram Checker API",
+        "Returns registration status, Telegram user ID, username, first/last..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/apipick-telegram-phone-check@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2844583?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "apipick-telegram-phone-check",
+      "url": "https://clawhub.ai/skills/apipick-telegram-phone-check"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apipick-telegram-phone-check",
+    "url": "https://clawhub.ai/skills/apipick-telegram-phone-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apipick-telegram-phone-check-223f52545e7da8db.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/apipick-telegram-phone-check@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-apipick-telegram-phone-check-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:38220b2f2e32435048218573571d4bd96e172cd3956925202257200bc258d41d",
+      "artifactSizeBytes": 2556
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T14:36:56.540Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72115,
+  "uuid": "skill-clawhub-mt-travel-ai",
+  "skillKey": "clawhub-mt-travel-ai",
+  "name": "mt-travel-ai",
+  "summary": "基于美团酒旅供给，处理旅游出行需求，包括提供酒店、机火、门票、度假等商品的查询交易能力，以及定制化旅行攻略能力，打通从“灵感启发”到“一键下单”的全链路。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mt_travel_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Fitzwilliam Zhang",
+      "features": [
+        "基于美团酒旅供给，处理旅游出行需求，包括提供酒店、机火、门票、度假等商品的查询交易能力，以及定制化旅行攻略能力，打通从“灵感启发”到“一键下单”的全链路。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mt-travel-ai@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18302375?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mt-travel-ai",
+      "url": "https://clawhub.ai/skills/mt-travel-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mt-travel-ai",
+    "url": "https://clawhub.ai/skills/mt-travel-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mt-travel-ai-62d53b2635167e98.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mt-travel-ai@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-mt-travel-ai-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:170e3001a41555cf4007958c4c24cf42e22b04895cffa6d10a2c53c4ef3f5b58",
+      "artifactSizeBytes": 1959
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T08:30:37.195Z"
+}

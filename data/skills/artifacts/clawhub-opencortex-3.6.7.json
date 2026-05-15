@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/opencortex@3.6.7",
+  "version": "3.6.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opencortex",
+  "skill": {
+    "id": 11893,
+    "skillKey": "clawhub-opencortex",
+    "name": "OpenCortex"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opencortex",
+    "url": "https://clawhub.ai/skills/opencortex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opencortex-d2bf4dfa953fd6a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Self-improving memory architecture for OpenClaw agents. Structured memory files, nightly distillation, weekly synthesis, enforced principles (P0 for custom,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jd2005l",
+      "userId": "s170awkn07d8txrv4t9m1m3jxn83qbxy",
+      "displayName": "JD2005L",
+      "image": "https://avatars.githubusercontent.com/u/34459020?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1704,
+      "installsAllTime": 8,
+      "installsCurrent": 7,
+      "stars": 2,
+      "versions": 87
+    },
+    "latestVersion": {
+      "version": "3.6.7",
+      "createdAt": 1776014362551,
+      "changelog": "Fix verify script cron prompt checks for current OpenClaw cron JSON format (object.jobs + payload.message fallback). Includes 3.6.6 voice/infra isolated-cron flag persistence fixes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4893a4094aa4f25475fd6a52efc3dc05943bc5c58c482b8fad80e58fe847b364"
+}

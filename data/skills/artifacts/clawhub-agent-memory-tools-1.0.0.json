@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-memory-tools@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_memory_tools",
+  "skill": {
+    "id": 54914,
+    "skillKey": "clawhub-agent-memory-tools",
+    "name": "Agent Memory Tools"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-memory-tools",
+    "url": "https://clawhub.ai/skills/agent-memory-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-memory-tools-2e4ea69b9e0e9251.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Searches, stores, and manages agent memory across 4 sources (fact store, vector embeddings, BM25, knowledge graph). Runs 100% local via Ollama — no API keys,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "primo-studio",
+      "userId": "s1759mmcbs0k8efcjjtg0swbvd83gqhk",
+      "displayName": "Primo-Studio",
+      "image": null
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 185,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774318180331,
+      "changelog": "agent-memory-tools 1.0.0 — first release\n\n- Search, store, and manage workspace knowledge across four local sources: fact store (Convex/JSON), vector embeddings, BM25 full-text, and knowledge graph.\n- 100% local operation via Ollama; no API keys or cloud dependency required.\n- Includes unified search, multi-hop reasoning, fact extraction with contradiction checks, auto-ingest from file changes, and knowledge graph building.\n- Modular Python scripts for recall, extraction, ingestion, time-weighted search, and entity graph management.\n- Flexible configuration for storage backend, LLM, and embeddings provider.\n- Designed for privacy, extensibility, and easy local setup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:375a44a1b7e927fa5d8b2a32d1bd117ee5f5fb921429b0970208e6548ddfadb7"
+}

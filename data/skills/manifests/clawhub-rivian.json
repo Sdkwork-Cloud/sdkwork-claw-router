@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67630,
+  "uuid": "skill-clawhub-rivian",
+  "skillKey": "clawhub-rivian",
+  "name": "Rivian",
+  "summary": "提供Rivian电动皮卡/SUV及亚马逊电动配送车相关信息，涵盖公司发展、产品特点和行业动态。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rivian",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供Rivian电动皮卡/SUV及亚马逊电动配送车相关信息，涵盖公司发展、产品特点和行业动态。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rivian@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rivian",
+      "url": "https://clawhub.ai/skills/rivian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rivian",
+    "url": "https://clawhub.ai/skills/rivian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rivian-c7ad2ac22b4500bd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rivian@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rivian-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:656c7ad7919973a4fcd0dccb519300225c723953e434cfca8eb434a80a550474",
+      "artifactSizeBytes": 2228
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T19:04:51.535Z"
+}

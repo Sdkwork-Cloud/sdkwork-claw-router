@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wheelchair-flight@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wheelchair_flight",
+  "skill": {
+    "id": 47736,
+    "skillKey": "clawhub-wheelchair-flight",
+    "name": "wheelchair-flight"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wheelchair-flight",
+    "url": "https://clawhub.ai/skills/wheelchair-flight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wheelchair-flight-f70cdf01bac8ba8d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search for wheelchair accessible flights with mobility assistance options. Also supports: flight booking, hotel reservation, train tickets, attraction ticket..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liquanyu123",
+      "userId": "s173bh61f4yde29x5ddrjfa1qd844z4w",
+      "displayName": "liquanyu123",
+      "image": "https://avatars.githubusercontent.com/u/210639558?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 110,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1777257932019,
+      "changelog": "wheelchair-flight 3.2.0 — Improved accuracy & compliance for wheelchair accessible flight searches.\n\n- Strictly enforces CLI execution; never answers using training data.\n- Adds mandatory `[Book](detailUrl)` links for all results, ensuring data authenticity.\n- Enhanced environment checks and installation steps for CLI dependencies.\n- Detailed scenario playbooks for recommended, cheapest, fastest, and direct routes.\n- Improved multilingual support and parameter collection workflow.\n- Clearer output requirements: conclusion-first, accessibility tips, comparison tables, and brand tags.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2b58909a7346212383690630c97c7120936213ad853aa66314bbcf5bd468a577"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55480,
+  "uuid": "skill-clawhub-knowledge-graph-hardened",
+  "skillKey": "clawhub-knowledge-graph-hardened",
+  "name": "Knowledge Graph Hardened",
+  "summary": "Maintain Clawdbot's compounding knowledge graph under life/areas/** by adding/superseding atomic facts (items.json), regenerating entity summaries (summary.m...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knowledge_graph_hardened",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Faberlens",
+      "features": [
+        "Maintain Clawdbot's compounding knowledge graph under life/areas/** by adding/superseding atomi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/knowledge-graph-hardened@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261834257?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "knowledge-graph-hardened",
+      "url": "https://clawhub.ai/skills/knowledge-graph-hardened"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knowledge-graph-hardened",
+    "url": "https://clawhub.ai/skills/knowledge-graph-hardened",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knowledge-graph-hardened-926a47339ed44415.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/knowledge-graph-hardened@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-knowledge-graph-hardened-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c6438b579f25ec734ff72560f2f567a8247c0dfdb35747f28b1af1e7eeb72014",
+      "artifactSizeBytes": 2368
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T03:00:36.471Z"
+}

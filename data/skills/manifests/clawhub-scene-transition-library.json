@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70410,
+  "uuid": "skill-clawhub-scene-transition-library",
+  "skillKey": "clawhub-scene-transition-library",
+  "name": "Scene Transition Library",
+  "summary": "场景转场参考库，为 AI 短剧/短视频创作者提供镜头转场的 prompt 写作指南。触发于：转场、镜头转换、过渡、场景切换、叠化、硬切、匹配剪辑、淡入淡出、划像、时间转场、空间转场、情绪转场、镜头衔接等需求。当用户需要描述两个镜头之间的过渡方式、或在分镜脚本中标注转场效果时，使用此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scene_transition_library",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "beermanzz",
+      "features": [
+        "场景转场参考库，为 AI 短剧/短视频创作者提供镜头转场的 prompt 写作指南。触发于：转场、镜头转换、过渡、场景切换、叠化、硬切、匹配剪辑、淡入淡出、划像、时间转场、空间转场、情绪转场."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/scene-transition-library@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/225096606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "scene-transition-library",
+      "url": "https://clawhub.ai/skills/scene-transition-library"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scene-transition-library",
+    "url": "https://clawhub.ai/skills/scene-transition-library",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scene-transition-library-fdf2f5ecd18c0514.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/scene-transition-library@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-scene-transition-library-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:263521246a7adabb43e3c4d3b0d8ad778c7dcf7c42ff1ca49b3469bc16a24640",
+      "artifactSizeBytes": 2207
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T23:32:20.205Z"
+}

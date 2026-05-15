@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62911,
+  "uuid": "skill-clawhub-tcm-prescription-api",
+  "skillKey": "clawhub-tcm-prescription-api",
+  "name": "TCM Prescription API",
+  "summary": "中医药方剂API查询技能。通过HTTP API查询中医药方剂数据库中的方剂资料。支持方剂搜索、方剂详情查看、分类浏览、症状推荐等功能。This skill should be used when the user mentions: 查方剂、搜索方剂、方剂详情、中药方、方剂分类、症状推荐方剂、中医药方查询、方剂数...",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tcm_prescription_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Phal studio",
+      "features": [
+        "中医药方剂API查询技能。通过HTTP API查询中医药方剂数据库中的方剂资料。支持方剂搜索、方剂详情查看、分类浏览、症状推荐等功能。This skill should be used wh."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tcm-prescription-api@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/212455601?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tcm-prescription-api",
+      "url": "https://clawhub.ai/skills/tcm-prescription-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tcm-prescription-api",
+    "url": "https://clawhub.ai/skills/tcm-prescription-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tcm-prescription-api-41456eb6ed993bd2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tcm-prescription-api@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-tcm-prescription-api-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b313051342edfd4818860eb3f1e14413511ab70c8177c18f33ade1398d09c72f",
+      "artifactSizeBytes": 2264
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T08:36:11.461Z"
+}

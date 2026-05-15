@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50497,
+  "uuid": "skill-clawhub-openclaw-x",
+  "skillKey": "clawhub-openclaw-x",
+  "name": "OpenClaw X",
+  "summary": "Control your X/Twitter account — view timeline, search tweets, post, like, retweet, bookmark.",
+  "version": "0.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_x",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bosshuman",
+      "features": [
+        "Control your X/Twitter account — view timeline, search tweets, post, like, retweet, bookmark."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-x@0.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/107166483?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-x",
+      "url": "https://clawhub.ai/skills/openclaw-x"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-x",
+    "url": "https://clawhub.ai/skills/openclaw-x",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-x-3bab06476416eb64.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-x@0.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-x-0.2.2.json",
+      "version": "0.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:42728cd8441ec372f47eae24f6534bf1da4034efd5f193454604d5d65febaf76",
+      "artifactSizeBytes": 1800
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T04:16:22.220Z"
+}

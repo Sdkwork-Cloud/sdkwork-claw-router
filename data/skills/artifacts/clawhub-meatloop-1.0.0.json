@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meatloop@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meatloop",
+  "skill": {
+    "id": 24960,
+    "skillKey": "clawhub-meatloop",
+    "name": "MeatLoop"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meatloop",
+    "url": "https://clawhub.ai/skills/meatloop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meatloop-909663068a649e1a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A real human reviews your question, screenshot, or pair of images and returns a structured verdict by email. Use for sanity checks, content verification, cre..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "meatloopservice",
+      "userId": "publishers:meatloopservice",
+      "displayName": "meatloopservice",
+      "image": "https://avatars.githubusercontent.com/u/263042622?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 398,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772999566932,
+      "changelog": "- Initial release of Meatloop skill.\n- Provides human-in-the-loop verification and judgment for questions and images via email.\n- Supports binary and near-binary questions, content and UI verification, creative/tone checks, document and receipt inspection, and A/B image comparison.\n- Structured verdicts with human-generated VERIFICATION codes for each substantive response.\n- Simple submission: send an email (optionally with up to 2 images); no setup or credentials required.\n- Ensures privacy: attachments deleted after review, only minimal metadata retained.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:27420c1cbbf01d39a9ff662b516cf85e75acb70220f2295ef73513896d8b42e3"
+}

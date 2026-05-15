@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69125,
+  "uuid": "skill-clawhub-ecommerce-aftersales-responder",
+  "skillKey": "clawhub-ecommerce-aftersales-responder",
+  "name": "E-commerce After-sales Responder",
+  "summary": "电商售后客服规范应答生成器。支撑客服人员针对退换货申请、物流异常咨询、售后补偿协商三类高频售后诉求， 快速生成符合品牌服务规范的统一话术。适用场景：(1) 用户发起退货/换货/退款申请需客服审核回复， (2) 用户咨询物流延误、丢件、破损等异常问题，(3) 用户对售后处理不满需协商补偿方案（优惠券、补发、折价等）...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecommerce_aftersales_responder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "terrycarter1985",
+      "features": [
+        "电商售后客服规范应答生成器。支撑客服人员针对退换货申请、物流异常咨询、售后补偿协商三类高频售后诉求， 快速生成符合品牌服务规范的统一话术。适用场景：(1) 用户发起退货/换货/退款申请需客服."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ecommerce-aftersales-responder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1542987?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ecommerce-aftersales-responder",
+      "url": "https://clawhub.ai/skills/ecommerce-aftersales-responder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecommerce-aftersales-responder",
+    "url": "https://clawhub.ai/skills/ecommerce-aftersales-responder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecommerce-aftersales-responder-c8f3b651ab571286.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ecommerce-aftersales-responder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ecommerce-aftersales-responder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f2fca9254b35a79ec5d8a05e8e8157443158475effc944e3fd1e9cf1fa64e572",
+      "artifactSizeBytes": 2364
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T23:32:14.683Z"
+}

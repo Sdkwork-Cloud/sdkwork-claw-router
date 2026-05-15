@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zaker-category-news@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zaker_category_news",
+  "skill": {
+    "id": 60317,
+    "skillKey": "clawhub-zaker-category-news",
+    "name": "ZAKER category news 行业热门新闻"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zaker-category-news",
+    "url": "https://clawhub.ai/skills/zaker-category-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zaker-category-news-5cac08ec67db00ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "获取多个行业的最近热门新闻（娱乐、科技、财经等）。Use when the user asks about 科技新闻, 财经新闻, 体育新闻, 娱乐新闻, 行业新闻, 互联网动态, 汽车新闻、国内新闻、国际新闻、军事新闻、finance news, tech news, sports news, industry..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zaker-coder",
+      "userId": "s177c2gj6d5ztj0tca7ntw617s843myt",
+      "displayName": "ZAKER",
+      "image": "https://avatars.githubusercontent.com/u/129352537?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 278,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1776311977585,
+      "changelog": "No file changes detected.\n\n- No updates or modifications were made in this version.\n- Skill remains at version 1.0.8 with no differences from previous release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:37fc49cc98341c7455624434461b09226fdc24ba3a9982ff4407f11ce335984e"
+}

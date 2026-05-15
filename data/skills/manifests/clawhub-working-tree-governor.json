@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44580,
+  "uuid": "skill-clawhub-working-tree-governor",
+  "skillKey": "clawhub-working-tree-governor",
+  "name": "Working Tree Governor",
+  "summary": "Govern dirty git working trees by classifying runtime noise vs real source changes, defaulting to selective staging, verifying staged scope, and asking the o...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.working_tree_governor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LobsterQuant",
+      "features": [
+        "Govern dirty git working trees by classifying runtime noise vs real source changes, defaulting."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/working-tree-governor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261473916?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "working-tree-governor",
+      "url": "https://clawhub.ai/skills/working-tree-governor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "working-tree-governor",
+    "url": "https://clawhub.ai/skills/working-tree-governor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/working-tree-governor-d92811523794ca5a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/working-tree-governor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-working-tree-governor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b9777a5c3e08b66aa1bbb3265ec3ee785ca7d33df5c12989cbce9a77971ab67f",
+      "artifactSizeBytes": 2662
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T15:15:50.087Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16433,
+  "uuid": "skill-clawhub-congress-trades",
+  "skillKey": "clawhub-congress-trades",
+  "name": "Congress Trades Tracker",
+  "summary": "Track US congress member and politician stock trades in real-time using the Quiver Quant API. Syncs trades to a local SQLite database, detects new significan...",
+  "version": "1.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.congress_trades",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Arm4x",
+      "features": [
+        "Track US congress member and politician stock trades in real-time using the Quiver Quant API",
+        "Syncs trades to a local SQLite database, detects new significan..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/congress-trades@1.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1284939?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "congress-trades",
+      "url": "https://clawhub.ai/skills/congress-trades"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "congress-trades",
+    "url": "https://clawhub.ai/skills/congress-trades",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/congress-trades-92cf7a760ab496e1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/congress-trades@1.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-congress-trades-1.1.4.json",
+      "version": "1.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f1811baefd74300b7425ac3b35786e3fca8e08032fdd440a49b2e1f816eb1ced",
+      "artifactSizeBytes": 2000
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T18:37:03.021Z"
+}

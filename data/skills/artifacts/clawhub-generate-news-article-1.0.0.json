@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/generate-news-article@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.generate_news_article",
+  "skill": {
+    "id": 18469,
+    "skillKey": "clawhub-generate-news-article",
+    "name": "Generate News Article"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "generate-news-article",
+    "url": "https://clawhub.ai/skills/generate-news-article",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/generate-news-article-2cd01338c7f804a1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate individual Markdown articles from SerpAPI Google search results with images"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "near2sea",
+      "userId": "s1795htg8v4g7e069nyadee7zx84c4sm",
+      "displayName": "near2sea",
+      "image": "https://avatars.githubusercontent.com/u/4099187?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 688,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771913285207,
+      "changelog": "Initial release - generate Markdown news articles from Google search results.\n\n- Automatically generates individual Markdown articles from SerpAPI Google search results with images.\n- Supports keyword input and result count customization.\n- Downloads thumbnails into assets directory and links them in articles.\n- Saves articles in date-based folders with clean file names.\n- Each article includes title, cover image, summary, and source link.\n- Requires SerpAPI skill, API key, and Python 3 for execution.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ba68c5dcd7a4882a10bc179fa2ddfa47befec3827558a92d4796fca72b8a8d8c"
+}

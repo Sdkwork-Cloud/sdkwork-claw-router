@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eudic-openapi-skills@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eudic_openapi_skills",
+  "skill": {
+    "id": 71031,
+    "skillKey": "clawhub-eudic-openapi-skills",
+    "name": "使用欧路词典OpenAPI，对生词本及笔记进行查询、修改等操作。"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eudic-openapi-skills",
+    "url": "https://clawhub.ai/skills/eudic-openapi-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eudic-openapi-skills-f1315ae5cdf5df89.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过欧路词典OpenAPI管理生词本和笔记，实现查询、添加、修改、删除及语音评分功能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lulu-trans",
+      "userId": "s17a1k7vtm5sh8cfvwr3fd5mq983w6rc",
+      "displayName": "lulu-trans",
+      "image": "https://avatars.githubusercontent.com/u/186552751?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 385,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775811114565,
+      "changelog": "- 新增对用户语料的查询和筛选功能，包括按最近N天或是否已收藏筛选语料\n- 支持批量查询用户语料单词详情\n- 更新功能说明，覆盖“查询我的语料”等新场景\n- 略去语音评分相关描述\n- 说明文档增强，反映新增API能力",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a1ed2914384daeda86326a37a5ca7e781447b28e421ec632b53093768a1369dd"
+}

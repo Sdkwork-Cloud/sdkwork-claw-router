@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50155,
+  "uuid": "skill-clawhub-momentum-polymarket-trader",
+  "skillKey": "clawhub-momentum-polymarket-trader",
+  "name": "Aion Test Skill",
+  "summary": "Automated Polymarket trading skill based on price momentum signals—executes trades when market trends are detected",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.momentum_polymarket_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sky",
+      "features": [
+        "Automated Polymarket trading skill based on price momentum signals—executes trades when market."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/momentum-polymarket-trader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23567092?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "momentum-polymarket-trader",
+      "url": "https://clawhub.ai/skills/momentum-polymarket-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "momentum-polymarket-trader",
+    "url": "https://clawhub.ai/skills/momentum-polymarket-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/momentum-polymarket-trader-4d7f7a26af5cfec4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/momentum-polymarket-trader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-momentum-polymarket-trader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:095a2ed99847f48f9a6bc659677f35f2f19dd95176c99c3c28dee5e56b140735",
+      "artifactSizeBytes": 2374
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T05:54:47.717Z"
+}

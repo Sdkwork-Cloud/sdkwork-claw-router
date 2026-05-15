@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skylv-universal-bot-maker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_universal_bot_maker",
+  "skill": {
+    "id": 48129,
+    "skillKey": "clawhub-skylv-universal-bot-maker",
+    "name": "Skylv Universal Bot Maker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-universal-bot-maker",
+    "url": "https://clawhub.ai/skills/skylv-universal-bot-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-universal-bot-maker-13f9e06ed2c98923.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate and deploy Telegram, WeChat, Discord, and other platform bots with unified API for messaging, commands, media, and user management."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 94,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777863077863,
+      "changelog": "- Renamed skill to \"cross-platform-bot-builder\" (previously \"skylv-universal-bot-maker\")\n- Updated version to 1.0.2\n- Added comprehensive feature documentation, supported platforms matrix, and quick start guides (CLI, code, config file)\n- Documented unified API for message, command, and event handling\n- Included detailed instructions for platform adapters (Telegram, Discord, WeChat)\n- Added deployment guides for Docker and serverless environments\n- Provided example utility functions and usage instructions",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:752efd014252ba3660a0e9684a615da9473868bf2d5a5ec303d93113730772c6"
+}

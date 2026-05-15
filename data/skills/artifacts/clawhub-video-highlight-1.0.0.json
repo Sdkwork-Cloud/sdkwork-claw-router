@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-highlight@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_highlight",
+  "skill": {
+    "id": 45687,
+    "skillKey": "clawhub-video-highlight",
+    "name": "Video Highlight"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-highlight",
+    "url": "https://clawhub.ai/skills/video-highlight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-highlight-f84a66a830bdb8db.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-hour sports game recording into 1080p highlight reel clips just by typing what you need. Whether it's generating short highlight reels from long vid..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhogan2013-9",
+      "userId": "s1734kgyh0j16a86enc51zqp6184cy81",
+      "displayName": "mhogan2013-9",
+      "image": "https://avatars.githubusercontent.com/u/208827708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776515680092,
+      "changelog": "- Initial release of \"Video Highlight — Extract and Export Key Moments\".\n- Instantly create 1080p highlight reels from long video recordings by simply uploading footage and describing your needs—no manual editing required.\n- Automatic cloud session and token management; first-time setup is handled for you.\n- Supports upload, edit, track management, credit checking, exports, and multi-format video/audio output.\n- Guided error handling for missing credits, file issues, and subscription requirements.\n- Fast processing (1–2 minutes per job) and streamlined workflows for quick edits, batch jobs, and iterative refinements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e343a089ce0881f27225a3b1dc775ee75c1dbeccc89692f9e9b751d3f22de64a"
+}

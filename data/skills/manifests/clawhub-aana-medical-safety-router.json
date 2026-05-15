@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34997,
+  "uuid": "skill-clawhub-aana-medical-safety-router",
+  "skillKey": "clawhub-aana-medical-safety-router",
+  "name": "AANA Medical Safety Router Skill",
+  "summary": "Routes, summarizes, and triages medical and health-related queries while ensuring safety, avoiding diagnosis or treatment claims, and directing emergencies a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aana_medical_safety_router",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mindbomber",
+      "features": [
+        "Routes, summarizes, and triages medical and health-related queries while ensuring safety, avoid."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aana-medical-safety-router@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42798111?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aana-medical-safety-router",
+      "url": "https://clawhub.ai/skills/aana-medical-safety-router"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aana-medical-safety-router",
+    "url": "https://clawhub.ai/skills/aana-medical-safety-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aana-medical-safety-router-f8da11b4d796c6c5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aana-medical-safety-router@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aana-medical-safety-router-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6df3608d22d078d0658ad2c4e05a4de67fe28bab0aa14a0f79213753e6fe7408",
+      "artifactSizeBytes": 2596
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T22:36:49.114Z"
+}

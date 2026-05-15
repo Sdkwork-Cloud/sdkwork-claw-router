@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10619,
+  "uuid": "skill-clawhub-pokemon-red",
+  "skillKey": "clawhub-pokemon-red",
+  "name": "Pokemon Red",
+  "summary": "Play Pokemon Red autonomously via PyBoy emulator. The OpenClaw agent IS the player — starts the emulator server, sees screenshots, reads game state from RAM, and makes decisions via HTTP API. Use when an agent wants to play Pokemon Red, ba.",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pokemon_red",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "drbarq",
+      "features": [
+        "Play Pokemon Red autonomously via PyBoy emulator",
+        "The OpenClaw agent IS the player — starts the emulator server, sees screenshots, reads game sta.",
+        "Use when an agent wants to play Pokemon Red, battle, explore, grind levels, or compete with oth.",
+        "Requires Python 3.10+, pyboy, and a legally obtained Pokemon Red ROM."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pokemon-red@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8879523?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pokemon-red",
+      "url": "https://clawhub.ai/skills/pokemon-red"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pokemon-red",
+    "url": "https://clawhub.ai/skills/pokemon-red",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pokemon-red-94d3cb6c80815c24.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pokemon-red@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pokemon-red-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f4937be8082d19a14d6c8a9af912b01e835bb48b7e09080ce4aff47d3766ebc4",
+      "artifactSizeBytes": 2034
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T01:13:45.553Z"
+}

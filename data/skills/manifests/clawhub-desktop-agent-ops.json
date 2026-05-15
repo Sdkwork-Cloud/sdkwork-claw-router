@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26637,
+  "uuid": "skill-clawhub-desktop-agent-ops",
+  "skillKey": "clawhub-desktop-agent-ops",
+  "name": "Desktop Agent Ops",
+  "summary": "Execute cross-platform desktop tasks through a packaged desktop automation skill that guides the main agent to observe the screen, focus apps and windows, ca...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.desktop_agent_ops",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TRIP",
+      "features": [
+        "Execute cross-platform desktop tasks through a packaged desktop automation skill that guides th."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/desktop-agent-ops@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/192432815?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "desktop-agent-ops",
+      "url": "https://clawhub.ai/skills/desktop-agent-ops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "desktop-agent-ops",
+    "url": "https://clawhub.ai/skills/desktop-agent-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/desktop-agent-ops-153dc2172b1e98af.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/desktop-agent-ops@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-desktop-agent-ops-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf695495ab01157f18e9afbbc8cdf650213c7a5993b22af1f50c9aec5c9a604d",
+      "artifactSizeBytes": 2016
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T01:31:32.498Z"
+}

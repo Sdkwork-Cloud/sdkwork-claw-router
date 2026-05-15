@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mexico-city@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mexico_city",
+  "skill": {
+    "id": 66120,
+    "skillKey": "clawhub-mexico-city",
+    "name": "Mexico City"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mexico-city",
+    "url": "https://clawhub.ai/skills/mexico-city",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mexico-city-de1f3cb48003afed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "墨西哥联邦首都，拉美最大都市区，逾2200万人口，GDP约4000亿美元，是重要金融、文化和制造业中心。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776580760817,
+      "changelog": "Mexico City skill v1.0.0 – 拉美最大都市核心数据与深度行业分析\n\n- 新增墨西哥城基础档案，包括人口、GDP、地位及主要产业结构\n- 编排历史时间线，梳理从阿兹特克建城至今的重大里程碑\n- 详细分解金融、制造、科技、文化等业务板块现状与优势\n- 总结护城河与竞争力，包括 USMCA 地理优势、文化IP等\n- 列出核心数据表与特色冷知识，便于快速了解城市格局",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2a122d5fe4777a9c553a83537f8c988415ed147bf42f2ef9873d47412b971771"
+}

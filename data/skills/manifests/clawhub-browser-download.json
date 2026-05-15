@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16721,
+  "uuid": "skill-clawhub-browser-download",
+  "skillKey": "clawhub-browser-download",
+  "name": "Browser Download",
+  "summary": "Teaches ADA how to perform file downloads using the browser tool.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_download",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pbseiya",
+      "features": [
+        "Teaches ADA how to perform file downloads using the browser tool."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/browser-download@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34887773?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "browser-download",
+      "url": "https://clawhub.ai/skills/browser-download"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-download",
+    "url": "https://clawhub.ai/skills/browser-download",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-download-60447d549d1703e0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/browser-download@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-browser-download-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7717d5dac5ff537372da1c6d2664670528c5d23934c720a872060cc227cd88b2",
+      "artifactSizeBytes": 2199
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T17:39:54.596Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/itinerary-docx-template@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.itinerary_docx_template",
+  "skill": {
+    "id": 28971,
+    "skillKey": "clawhub-itinerary-docx-template",
+    "name": "Itinerary DOCX Template"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "itinerary-docx-template",
+    "url": "https://clawhub.ai/skills/itinerary-docx-template",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/itinerary-docx-template-3bcafc291789e005.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate tourism itinerary DOCX by replacing only matched itinerary sections inside a provided Chinese template document. Use when the user sends a simplifie..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nnswjlll",
+      "userId": "publishers:nnswjlll",
+      "displayName": "nnswjlll",
+      "image": "https://avatars.githubusercontent.com/u/132487069?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 313,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772765658970,
+      "changelog": "Richer itinerary wording, stronger day descriptions, and Telegram-first workflow",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:db226c4448a517370b76e6c69505d186a5ea6b489a974fb63611b8c31897b284"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18119,
+  "uuid": "skill-clawhub-cobo-agentic-wallet",
+  "skillKey": "clawhub-cobo-agentic-wallet",
+  "name": "Cobo Agentic Wallet",
+  "summary": "Create and manage agentic wallets with Cobo. Use for autonomous onchain operations via the caw CLI: token transfers, contract calls, pact creation and approv...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cobo_agentic_wallet",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cobogithub",
+      "features": [
+        "Create and manage agentic wallets with Cobo",
+        "Use for autonomous onchain operations via the caw CLI: token transfers, contract calls, pact cr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cobo-agentic-wallet@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/68044643?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cobo-agentic-wallet",
+      "url": "https://clawhub.ai/skills/cobo-agentic-wallet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cobo-agentic-wallet",
+    "url": "https://clawhub.ai/skills/cobo-agentic-wallet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cobo-agentic-wallet-9683a6fee921054c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cobo-agentic-wallet@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-cobo-agentic-wallet-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:43d9d1f8ccc6a8a8ba799be866573d9d4ef31adaff2babecc39407f9613c2888",
+      "artifactSizeBytes": 1930
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T03:40:11.249Z"
+}

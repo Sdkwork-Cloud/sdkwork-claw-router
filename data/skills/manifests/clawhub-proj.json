@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57598,
+  "uuid": "skill-clawhub-proj",
+  "skillKey": "clawhub-proj",
+  "name": "proj地理坐标系投影转换",
+  "summary": "Explain, compare, and choose geographic coordinate reference systems and map projections, including CRS selection, EPSG codes, datum differences, axis order,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proj",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jvy",
+      "features": [
+        "Explain, compare, and choose geographic coordinate reference systems and map projections, inclu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/proj@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5337221?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "proj",
+      "url": "https://clawhub.ai/skills/proj"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proj",
+    "url": "https://clawhub.ai/skills/proj",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proj-e73c023a2e8e9034.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/proj@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-proj-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ef87518d9999057280f2d91a1d26fb0762f69704dde3b66af3ca3f3d22d861b",
+      "artifactSizeBytes": 2570
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T01:14:57.583Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/legal-settlement-evaluation-framework@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.legal_settlement_evaluation_framework",
+  "skill": {
+    "id": 45294,
+    "skillKey": "clawhub-legal-settlement-evaluation-framework",
+    "name": "Legal Settlement Evaluation Framework"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "legal-settlement-evaluation-framework",
+    "url": "https://clawhub.ai/skills/legal-settlement-evaluation-framework",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/legal-settlement-evaluation-framework-c7033f051cb6cd6f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides structured checklists and templates to evaluate legal settlement options considering exposure, evidence, costs, timing, and non-monetary terms."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 125,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777243835160,
+      "changelog": "Initial release: document-only legal workflow skill.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8a000b3c3808b3dd9867136e17515d61e15568683fb5073baaef8310a4c86542"
+}

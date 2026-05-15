@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56006,
+  "uuid": "skill-clawhub-cnpj-lookup",
+  "skillKey": "clawhub-cnpj-lookup",
+  "name": "Cnpj Lookup",
+  "summary": "Consulta CNPJ via APIs públicas brasileiras (BrasilAPI, CNPJ.ws, OpenCNPJ) com fallback automático, cache e rate limit. Ativar quando o usuário pedir consult...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cnpj_lookup",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "runawaydevil",
+      "features": [
+        "Consulta CNPJ via APIs públicas brasileiras (BrasilAPI, CNPJ.ws, OpenCNPJ) com fallback automát.",
+        "Ativar quando o usuário pedir consult..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cnpj-lookup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8763225?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cnpj-lookup",
+      "url": "https://clawhub.ai/skills/cnpj-lookup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cnpj-lookup",
+    "url": "https://clawhub.ai/skills/cnpj-lookup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cnpj-lookup-3d176725beaa9614.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cnpj-lookup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cnpj-lookup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7ac5ac5bcec3c6d7cc7c1c2327869e56dc60cdec4f7e51612c48d111b097ebcd",
+      "artifactSizeBytes": 2315
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T15:10:06.174Z"
+}

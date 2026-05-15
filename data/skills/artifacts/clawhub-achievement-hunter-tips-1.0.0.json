@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/achievement-hunter-tips@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.achievement_hunter_tips",
+  "skill": {
+    "id": 42774,
+    "skillKey": "clawhub-achievement-hunter-tips",
+    "name": "Achievement Hunter Tips"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "achievement-hunter-tips",
+    "url": "https://clawhub.ai/skills/achievement-hunter-tips",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/achievement-hunter-tips-60006104b5ec3bb7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Prioritize multiple goals like an achievement board by separating must-have achievements, side achievements, missable windows, low-value grinds, and a realis..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776254606991,
+      "changelog": "Initial release of achievement-hunter-tips:\n\n- Helps users sequence multiple goals by categorizing achievements as main, side, missable, or low-value.\n- Provides a clear workflow for prioritizing wins and preventing perfectionist burnout.\n- Offers routes, warnings on missable opportunities, and “done enough” finish lines.\n- Designed for clarity, strategic focus, and avoidance of compulsive completionism.\n- Outputs include a value-ranked achievement board, route recommendations, and actionable next steps.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fe2a95096cc75332730e305e9f56eed86622ebc39bbba060f228de270786952c"
+}

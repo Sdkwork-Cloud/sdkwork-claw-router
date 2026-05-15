@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/whatsapp-context-manager@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whatsapp_context_manager",
+  "skill": {
+    "id": 18179,
+    "skillKey": "clawhub-whatsapp-context-manager",
+    "name": "Whatsapp Context Manager for Agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whatsapp-context-manager",
+    "url": "https://clawhub.ai/skills/whatsapp-context-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whatsapp-context-manager-432de6d8ac4d2f84.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered WhatsApp tool for agents providing instant customer history, sentiment, priority, order details, VIP detection, and response suggestions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cerbug45",
+      "userId": "s170r0ajc2x7b9pyqmvrajgtxx85hz4r",
+      "displayName": "cerbug45",
+      "image": "https://avatars.githubusercontent.com/u/43820349?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 702,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771184286757,
+      "changelog": "Initial release of WhatsApp Intelligent Context Manager.\n\n- Provides AI-powered context management for WhatsApp customer service agents.\n- Features instant access to customer history, automatic sentiment analysis, and smart response suggestions.\n- Supports order tracking, VIP customer detection, message categorization, and priority calculation.\n- Includes tools for adding orders, updating customer profiles, and displaying conversation history.\n- No external dependencies required; simple installation and example scripts included.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:10be0e641d7f4b0ac29363556b161fe06e2a5a2fcc335aa035aa33755496bd0b"
+}

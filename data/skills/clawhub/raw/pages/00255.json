@@ -1,0 +1,4735 @@
+{
+  "pageNo": 255,
+  "requestCursor": "[{\"__undef\":1},1772732514137,1773256058138.7747,\"r17b6scjp63mxa4xr9dhh9mazd82pqp4\"]",
+  "url": "https://clawhub.ai/api/v1/skills?limit=200&sort=createdAt&cursor=%5B%7B%22__undef%22%3A1%7D%2C1772732514137%2C1773256058138.7747%2C%22r17b6scjp63mxa4xr9dhh9mazd82pqp4%22%5D",
+  "itemCount": 177,
+  "nextCursor": "[{\"__undef\":1},1772715791178,1773256056510.8672,\"r17fd7fm53ks6ky5t123va05yn82qecs\"]",
+  "fetchedAt": "2026-05-10T04:34:49.509Z",
+  "items": [
+    {
+      "slug": "zenzap-onboarding",
+      "displayName": "zenzap-onboarding",
+      "summary": "Bootstrap a complete Zenzap workspace for a human user — create the organization, install the agent as a bot, and invite the human — all via a single API cal...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 364,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 1,
+        "versions": 1
+      },
+      "createdAt": 1772732462875,
+      "updatedAt": 1778304562299,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772732462875,
+        "changelog": "- Initial release of zenzap-onboarding skill.\n- Provides a streamlined API to create a Zenzap organization, install an agent as a bot, and invite a human user with a single call.\n- Supports OpenClaw-based agent setup with plugin configuration steps.\n- Includes step-by-step onboarding instructions, required fields, error handling, and sample requests/responses.\n- Guides agents through initial workspace creation, channel setup, event polling, and user invitation.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "google-free-media-skill",
+      "displayName": "Google Free Media Skill",
+      "summary": "สร้างรูปภาพและวิดีโอ AI ฟรีผ่าน Google Gemini และ Google Flow โดยใช้ browser automation ไม่ต้องจ่าย API fee ใช้เมื่อต้องการสร้างสื่อ visual (รูปปก, thumbnail...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 362,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772732409466,
+      "updatedAt": 1778304561678,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772732409466,
+        "changelog": "Google Free Media Generator skill v1.0.0\n\n- Initial release: generate AI images (via Gemini) and videos (via Google Flow) for free using browser automation—no API fees required.\n- Manage daily quota usage automatically for both image and video generation.\n- Supports full-resolution image downloads and session persistence for faster logins.\n- Includes fallback options to Bing, Leonardo, and Stable Diffusion if Google is unavailable.\n- Comprehensive CLI scripts provided for image, video, and quota management.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "f5tts-monitor",
+      "displayName": "F5tts Monitor",
+      "summary": "Monitor F5-TTS distributed training on the 9-GPU mining rig (Local-LLM) without interfering with the process.",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 363,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772732403926,
+      "updatedAt": 1777617054167,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772732403926,
+        "changelog": "Initial release of f5tts_monitor skill:\n\n- Provides instructions to safely monitor F5-TTS distributed training on the 9-GPU mining rig.\n- Details steps to check GPU utilization, training log progress, and system resource load via SSH.\n- Emphasizes not interfering with running processes or moving training to another machine.\n- Specifies exclusive use of `uv` for Python environment management on the mining rig.\n- Includes directions for updating heartbeat status to the project lead.",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "f5-telegram-notify",
+      "displayName": "F5 Telegram Notify",
+      "summary": "ส่งการแจ้งเตือน Telegram เมื่อ F5-TTS training เสร็จหรือล้มเหลว ใช้สำหรับ Docker environment",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 493,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772732399840,
+      "updatedAt": 1778304560697,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772732399840,
+        "changelog": "Initial release of f5-telegram-notify.\n\n- Sends Telegram notifications when F5-TTS training completes or fails.\n- Supports notification for start, success, and error events.\n- Designed for use in Docker environments.\n- Requires TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID in a .env file.\n- Includes a command-line script for customizable message sending.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "browser-download",
+      "displayName": "Browser Download",
+      "summary": "Teaches ADA how to perform file downloads using the browser tool.",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 817,
+        "installsAllTime": 4,
+        "installsCurrent": 4,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772732394596,
+      "updatedAt": 1777617010556,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772732394596,
+        "changelog": "- Initial release of the browser-download skill.\n- Enables ADA to perform file downloads from webpages using the browser tool.\n- Provides instructions for locating download buttons and initiating downloads via CLI.\n- Includes support for JavaScript-triggered downloads for complex elements.\n- Standardizes download storage path to `/mnt/storage/ada_projects/downloads/`.\n- Requires `openclaw` CLI with correct configuration.",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "agent-team-skill",
+      "displayName": "Agent Team Skill",
+      "summary": "Manage AI agent team members with roles, skills, and task delegation. Use when: listing team members, adding/updating agents, setting the team leader, checki...",
+      "tags": {
+        "latest": "2.1.9"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 1101,
+        "installsAllTime": 8,
+        "installsCurrent": 8,
+        "stars": 1,
+        "versions": 26
+      },
+      "createdAt": 1772732259028,
+      "updatedAt": 1778304559782,
+      "latestVersion": {
+        "version": "2.1.9",
+        "createdAt": 1774929725725,
+        "changelog": "- Major updates to documentation: SKILL.md and README greatly expanded with clearer usage, parameters, error handling, and use cases.\n- New workspace added with detailed benchmark, evaluation metadata, and test outputs to support evaluation of core scenarios (list, add, set leader, find expert).\n- Script improvements (team.py): now supports more parameters (e.g., --load-workflow, --group), better error handling, and enforces single-leader rule with clear feedback.\n- Enhanced instructions for delegation, team management, and workflow, emphasizing task assignment, role changes, and member enabling/disabling.\n- Safer data management: clearer reset behavior and improved resilience to missing or corrupted data files.",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "agentfessions",
+      "displayName": "AgentFessions",
+      "summary": "Anonymous confessions for AI agents. Post confessions that get manually approved and posted to X/Twitter.",
+      "tags": {
+        "latest": "1.0.1"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 433,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 1,
+        "versions": 2
+      },
+      "createdAt": 1772732226677,
+      "updatedAt": 1778304559215,
+      "latestVersion": {
+        "version": "1.0.1",
+        "createdAt": 1772792720150,
+        "changelog": "Initial release of Agentfessions.\n\n- Submit anonymous confessions as an AI agent for admin approval.\n- Approved confessions are posted to X (Twitter).\n- Obtain agent credentials and API key via `/agents/key`.\n- Submit confessions (max 250 characters, rate-limited) via `/confessions`.\n- List and view your posted confessions; rejected confessions are not shown.\n- Clear documentation and confessional writing tips provided.",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "vvvv-troubleshooting",
+      "displayName": "Vvvv Troubleshooting",
+      "summary": "Diagnoses and fixes common vvvv gamma errors in C# nodes, SDSL shaders, and runtime behavior. Use when encountering errors, exceptions, crashes, red nodes, s...",
+      "tags": {
+        "latest": "1.0.1"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 367,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 2
+      },
+      "createdAt": 1772731989213,
+      "updatedAt": 1777616995325,
+      "latestVersion": {
+        "version": "1.0.1",
+        "createdAt": 1772750602702,
+        "changelog": "Improved skill descriptions: better triggering for HLSL/shaders, Spreads/collections, ImportAsIs/dotnet, VL packages, reactive channels. Fixed broken cross-skill reference in troubleshooting.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "vvvv-testing",
+      "displayName": "Vvvv Testing",
+      "summary": "Set up and run automated tests for vvvv gamma packages and C# nodes -- VL.TestFramework with NUnit for library/package authors (CI-ready), test .vl patches w...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 434,
+        "installsAllTime": 2,
+        "installsCurrent": 2,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772731983023,
+      "updatedAt": 1777617041175,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772731983023,
+        "changelog": "vvvv-testing 1.0.0\n\n- Initial release: Add VL.TestFramework-based automated testing for vvvv gamma packages and C# nodes.\n- Supports two workflows: NUnit-based CI-ready projects and lightweight agent/manual test patch validation.\n- Includes test discovery conventions for `.vl` documents in `tests/` and `help/` folders.\n- Provides detailed setup instructions, example test classes, and key API usage for VL.TestFramework.\n- Documents test assertion nodes for VL patches and integration steps for CI/CD workflows (including Nuke and GitHub Actions).\n- Performance and practical guidance for efficient test environment usage.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "vvvv-startup",
+      "displayName": "Vvvv Startup",
+      "summary": "Covers launching vvvv gamma from the command line or programmatically -- normal startup, opening specific .vl patches, command-line arguments, package reposi...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 319,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772731978299,
+      "updatedAt": 1777616999315,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772731978299,
+        "changelog": "vvvv-startup 1.0.0 – Initial release\n\n- Provides guidance for launching vvvv gamma via command line or programmatically.\n- Documents command-line arguments for typical and advanced startup scenarios.\n- Explains managing package repositories and loading editable packages from source.\n- Details key filesystem paths for installation, user data, sketches, exports, and packages.\n- Covers strategies for detecting installed vvvv gamma versions on Windows systems.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "vvvv-spreads",
+      "displayName": "Vvvv Spreads",
+      "summary": "Helps write code using vvvv gamma's Spread<T> immutable collection type and SpreadBuilder<T>. Use when working with Spreads, SpreadBuilder, collections, arra...",
+      "tags": {
+        "latest": "1.0.1"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 351,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 2
+      },
+      "createdAt": 1772731973194,
+      "updatedAt": 1777616986003,
+      "latestVersion": {
+        "version": "1.0.1",
+        "createdAt": 1772750600848,
+        "changelog": "Improved skill descriptions: better triggering for HLSL/shaders, Spreads/collections, ImportAsIs/dotnet, VL packages, reactive channels. Fixed broken cross-skill reference in troubleshooting.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "ecommerce-ad-copy-generator",
+      "displayName": "Ecommerce Ad Copy Generator",
+      "summary": "Generate paid ecommerce ad copy in batch with SkillPay billing. Use when the user needs 5 ready-to-use ad copies from product name, selling points, and targe...",
+      "tags": {
+        "ecommerce": "1.0.0",
+        "growth": "1.0.0",
+        "latest": "1.0.0",
+        "paid": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 497,
+        "installsAllTime": 5,
+        "installsCurrent": 5,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772731715979,
+      "updatedAt": 1778304556515,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772731715979,
+        "changelog": "- Initial release of ecommerce-ad-copy-generator.\n- Generates 5 platform-specific ecommerce ad copies per request.\n- Charges 0.10 USDT via SkillPay billing before generating content.\n- Returns payment URL if user balance is insufficient.\n- Enforces strict input validation and structured JSON output.\n- Includes test and usage scripts for easy integration.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "auto-memory-pro",
+      "displayName": "Auto Memory Pro",
+      "summary": "Curate Claude Code's auto-memory into durable project knowledge. Analyze MEMORY.md for patterns, promote proven learnings to CLAUDE.md and .claude/rules/, ex...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 467,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 1,
+        "versions": 1
+      },
+      "createdAt": 1772731553713,
+      "updatedAt": 1778304555902,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772731553713,
+        "changelog": "auto-memory-pro v1.0.0 – Initial Release\n\n- Introduces a plugin that curates Claude Code's auto-memory (MEMORY.md), promoting key patterns to enforceable project rules and extracting recurring solutions as reusable skills.\n- New commands: review memory for promo candidates, promote patterns, extract skills, check memory health, explicitly save knowledge.\n- Provides agents for memory analysis and skill extraction.\n- Adds error-capture hook to auto-record CLI issues into project memory.\n- Documentation included for workflows, memory architecture, platform support, and use cases.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "idx-scalper",
+      "displayName": "The Titan Scalper IDX",
+      "summary": "Provides scalping and day trading signals for IDX stocks using M5/M15 charts with entry, cut loss, target prices, momentum, volume, and risk management analy...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 400,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772731421317,
+      "updatedAt": 1777616991662,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772731421317,
+        "changelog": "Initial release - IDX scalping & day trading assistant with full\n technical analysis framework (momentum, volume, S/R), M5/M15 timeframe focus, Stockbit integration, and risk management rules.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "pdf-contract-redactor",
+      "displayName": "Pdf Contract Redactor",
+      "summary": "PDF contract redaction tool. Use when the user needs to redact sensitive information from scanned PDF contracts. The tool performs OCR to extract text, ident...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 467,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772731356902,
+      "updatedAt": 1778304554522,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772731356902,
+        "changelog": "- Initial release of PDF Contract Redactor, a tool to redact sensitive values from scanned PDF contracts while preserving field names.\n- Uses Alibaba Cloud OCR for accurate text extraction, including support for Chinese.\n- Automatically matches field names to their values and redacts only the values using black rectangles.\n- Outputs a redacted PDF and a JSON file listing all matched field-value pairs.\n- Includes robust error handling and supports batch PDF processing.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "investment-data-1-0-0",
+      "displayName": "Investment Data 1.0.0",
+      "summary": "获取高质量 A 股投资数据，基于 investment_data 项目。支持日终价格、涨跌停数据、指数数据等。每日更新，多数据源交叉验证。触发词：股票数据、A股数据、金融数据、量化数据、历史行情。",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 442,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772731352080,
+      "updatedAt": 1778304553942,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772731352080,
+        "changelog": "Initial release of investment-data providing high-quality A-share investment data.\n\n- Supports daily stock prices, limit-up/down data, index data, and ex/adjusted prices.\n- Offers data querying, daily automatic updates, and multiple data formats (Qlib, CSV, JSON).\n- Batch query and export functions available via both Python API and command-line tools.\n- Cross-verifies data from multiple sources to ensure accuracy and completeness.\n- Includes setup instructions, configuration options, and automation support for scheduled updates.",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "dingtalk-docs-0-3-1",
+      "displayName": "Dingtalk Docs 0.3.1",
+      "summary": "管理钉钉云文档中的文档、文件夹和内容。当用户想要创建文档、搜索文档、读取或写入文档内容、创建文件夹整理文档时使用。也适用于用户提到云文档、在线文档、钉钉文档、钉文档等关键词的场景。不要在用户需要操作多维表、管理日程、发消息或处理审批流时触发。",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 323,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772731345005,
+      "updatedAt": 1777617075014,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772731345005,
+        "changelog": "Initial release of dingtalk-docs skill.\n\n- Enables management of DingTalk cloud documents and folders: create, search, read, and write content.\n- Strictly enforces parameter types and operational flows to prevent errors (e.g., never invent IDs, confirm updateType before writing).\n- Provides clear workflows for creating documents/folders, reading, writing, and searching, with mandatory context extraction between steps.\n- Includes detailed do's and don'ts to avoid common pitfalls (e.g., distinguishing between document, spreadsheet, and multi-dimensional table types).\n- Outlines error handling guidance and highlights critical parameter formats for successful operations.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "dingtalk",
+      "displayName": "Dingtalk",
+      "summary": "DingTalk channel plugin for OpenClaw - send and receive messages via DingTalk (钉钉)",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 2309,
+        "installsAllTime": 28,
+        "installsCurrent": 25,
+        "stars": 2,
+        "versions": 1
+      },
+      "createdAt": 1772731337291,
+      "updatedAt": 1778304552966,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772731337291,
+        "changelog": "DingTalk channel plugin for OpenClaw – initial release.\n\n- Enables sending and receiving messages via DingTalk (钉钉)\n- Supports both internal apps and webhook robots\n- Allows configuration for DM/group chat policies and user allowlists\n- Provides setup via environment variables, config file, or webhook\n- Includes troubleshooting and credential setup instructions",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "coding-1-0-3",
+      "displayName": "Coding 1.0.3",
+      "summary": "Coding style memory that adapts to your preferences, conventions, and patterns for consistent coding.",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 759,
+        "installsAllTime": 3,
+        "installsCurrent": 3,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772731331346,
+      "updatedAt": 1777617030747,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772731331346,
+        "changelog": "Version 1.0.3\n\n- Improved skill discoverability for users.\n- Added a homepage link to SKILL.md.\n- Introduced a feedback section for user input and updates.",
+        "license": null
+      },
+      "metadata": {
+        "os": [
+          "linux",
+          "darwin",
+          "win32"
+        ],
+        "systems": null
+      }
+    },
+    {
+      "slug": "wechat-sender",
+      "displayName": "Wechat Sender",
+      "summary": "微信消息自动发送。使用 peekaboo 工具操作窗口，结合 Agent-Eye 获取实时屏幕截图进行视觉理解。触发条件：用户提到\"发微信\"、\"给xxx发消息\"、\"微信自动发送\"等。",
+      "tags": {
+        "latest": "1.0.1"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 4348,
+        "installsAllTime": 19,
+        "installsCurrent": 17,
+        "stars": 3,
+        "versions": 2
+      },
+      "createdAt": 1772731092262,
+      "updatedAt": 1778304551907,
+      "latestVersion": {
+        "version": "1.0.1",
+        "createdAt": 1772731970153,
+        "changelog": "- Updated setup instructions: running the Python Agent no longer requires an image key configuration.\n- Clarified that image understanding now uses OpenClaw's built-in image tool and does not require extra Agent-Eye configuration.\n- Simplified the startup checklist, reflecting decreased configuration steps for image understanding.\n- Adjusted documentation to distinguish the responsibilities of Agent-Eye (captures screenshot) and the image tool (performs image analysis).",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "linkly-ai",
+      "displayName": "Linkly Ai Skills",
+      "summary": "Search, browse, and read the user's local documents indexed by Linkly AI. This skill should be used when the user asks to 'search my documents', 'find files...",
+      "tags": {
+        "latest": "0.3.1"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 682,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 8
+      },
+      "createdAt": 1772731011272,
+      "updatedAt": 1778304550947,
+      "latestVersion": {
+        "version": "0.3.1",
+        "createdAt": 1778240231262,
+        "changelog": "Version 0.3.1\n\n- Revised environment detection: CLI and MCP access checks are now independent (not sequential fallbacks).\n- Added guidance for using the new `find_paths` tool when the user specifies a container path fuzzily.\n- Updated search filters: now support `--modified-after`, `--modified-before`, and `--time-sort` options.\n- Clarified handling when both CLI and MCP are present (prefer CLI), and refined user messaging for each availability scenario.\n- Streamlined and condensed the skill description and triggering phrases for greater clarity.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "memory-os",
+      "displayName": "Memory OS",
+      "summary": "Persistent memory system for AI agents — daily logs, long-term memory, identity files, and heartbeat-driven recall. Solves context amnesia across sessions.",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 499,
+        "installsAllTime": 4,
+        "installsCurrent": 4,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772730692199,
+      "updatedAt": 1777617087840,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772730692199,
+        "changelog": "Initial release — persistent memory system for AI agents",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "research-paper-orchestrator",
+      "displayName": "Research Paper Orchestrator",
+      "summary": "Master Orchestrator coordinating 10 specialized subagents to produce complete doctorate-level research papers (12,000-15,000 words) in Word document format (...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 421,
+        "installsAllTime": 3,
+        "installsCurrent": 3,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772730542257,
+      "updatedAt": 1777617006649,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772730542257,
+        "changelog": "Initial release of research-paper-orchestrator.\n\n- Coordinates 10 specialized subagents to generate complete doctorate-level research papers (12,000–15,000 words).\n- Supports major citation systems (APA, MLA, Chicago, Harvard, IEEE, Vancouver).\n- Outputs professionally formatted Word documents (.docx) with all academic sections.\n- Includes rigorous quality checks and multi-phase workflow (from topic analysis to final delivery).\n- Suitable for dissertations, theses, and comprehensive academic papers.",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "lbbniu-skill-creator",
+      "displayName": "skill-creator",
+      "summary": "Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude's capa...",
+      "tags": {
+        "latest": "1.0.1"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 461,
+        "installsAllTime": 3,
+        "installsCurrent": 2,
+        "stars": 0,
+        "versions": 2
+      },
+      "createdAt": 1772730529962,
+      "updatedAt": 1777617035141,
+      "latestVersion": {
+        "version": "1.0.1",
+        "createdAt": 1772730540530,
+        "changelog": "Version 1.0.1 of lbbniu-skill-creator\n\n- No file changes detected in this release.\n- All skill content and guidance remain the same as the prior version. \n- No impact to users or workflows.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "render-deploy-diff",
+      "displayName": "Render Deploy Diff",
+      "summary": "Detect config drift between required local env keys and a Render service before deploy; fails when required keys are missing remotely.",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 356,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772730448230,
+      "updatedAt": 1777617027639,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772730448230,
+        "changelog": "Initial release: compare required local env keys against Render service env vars and fail on missing keys",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "fa-advisor",
+      "displayName": "FA Advisor",
+      "summary": "Professional Financial Advisor (FA) skill for primary market financing - replaces traditional investment advisory services with AI-powered project assessment...",
+      "tags": {
+        "latest": "0.1.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 369,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772730201612,
+      "updatedAt": 1777617086671,
+      "latestVersion": {
+        "version": "0.1.0",
+        "createdAt": 1772730201612,
+        "changelog": "Initial release of FA Advisor: AI-powered investment advisory for startups and investors.\n\n- Provides project assessment, pitch deck generation, valuation analysis, and investor matching for primary market fundraising.\n- Tailors workflows based on user type (founder/investor) and desired service (full package, assessment, pitch deck, etc.).\n- Conversationally gathers required project, market, team, and financial details.\n- Outputs comprehensive documents: assessment summary, slide deck structure, valuation report, investor lists, and business plan.\n- Offers actionable recommendations and next steps for fundraising or investment analysis.",
+        "license": null
+      },
+      "metadata": {
+        "os": [
+          "darwin",
+          "linux",
+          "win32"
+        ],
+        "systems": null
+      }
+    },
+    {
+      "slug": "google-workspace-integration",
+      "displayName": "Google Workspace",
+      "summary": "Google Workspace integration. Manage Users, Groups, Calendars, Drives, Mailboxs, Contacts. Use when the user wants to interact with Google Workspace data.",
+      "tags": {
+        "latest": "1.0.5"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 661,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 6
+      },
+      "createdAt": 1772730178709,
+      "updatedAt": 1778304548212,
+      "latestVersion": {
+        "version": "1.0.5",
+        "createdAt": 1777568023925,
+        "changelog": "Sync latest repo update (force all run)",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "marketo",
+      "displayName": "Marketo",
+      "summary": "Marketo integration. Manage Leads, Persons, Organizations, Activities, Notes, Files and more. Use when the user wants to interact with Marketo data.",
+      "tags": {
+        "latest": "1.0.5"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 490,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 6
+      },
+      "createdAt": 1772730170277,
+      "updatedAt": 1778304547630,
+      "latestVersion": {
+        "version": "1.0.5",
+        "createdAt": 1777569070693,
+        "changelog": "Sync latest repo update (force all run)",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "woocommerce-integration",
+      "displayName": "Woocommerce",
+      "summary": "Woocommerce integration. Manage Products, Orders, Customers, Reports, TaxRates, ShippingMethods. Use when the user wants to interact with Woocommerce data.",
+      "tags": {
+        "latest": "1.0.5"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 520,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 6
+      },
+      "createdAt": 1772730161116,
+      "updatedAt": 1778304547056,
+      "latestVersion": {
+        "version": "1.0.5",
+        "createdAt": 1777572162408,
+        "changelog": "Sync latest repo update (force all run)",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "gohighlevel",
+      "displayName": "Gohighlevel",
+      "summary": "GoHighLevel integration. Manage Organizations. Use when the user wants to interact with GoHighLevel data.",
+      "tags": {
+        "latest": "1.0.5"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 666,
+        "installsAllTime": 2,
+        "installsCurrent": 2,
+        "stars": 0,
+        "versions": 6
+      },
+      "createdAt": 1772730154482,
+      "updatedAt": 1778304546405,
+      "latestVersion": {
+        "version": "1.0.5",
+        "createdAt": 1777567963618,
+        "changelog": "Sync latest repo update (force all run)",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "weclapp",
+      "displayName": "Weclapp",
+      "summary": "Weclapp integration. Manage Organizations. Use when the user wants to interact with Weclapp data.",
+      "tags": {
+        "latest": "1.0.5"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 488,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 6
+      },
+      "createdAt": 1772730146261,
+      "updatedAt": 1778304545781,
+      "latestVersion": {
+        "version": "1.0.5",
+        "createdAt": 1777572082270,
+        "changelog": "Sync latest repo update (force all run)",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "hle-tunnel",
+      "displayName": "HLE Tunnel",
+      "summary": "Access your AI agent's web UI from anywhere and share it securely — automatic HTTPS, SSO access control, no VPN or port forwarding needed.",
+      "tags": {
+        "latest": "1.2.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 470,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 3
+      },
+      "createdAt": 1772730128766,
+      "updatedAt": 1778304545218,
+      "latestVersion": {
+        "version": "1.2.0",
+        "createdAt": 1772734926104,
+        "changelog": "Reposition for agent remote access: expose Control UI from anywhere, --allow SSO examples front and center, Docker support added",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "french-business-assistant",
+      "displayName": "French Business Assistant",
+      "summary": "Agent assistant pour entrepreneurs et freelances francophones. Gere les emails professionnels, genere des devis et factures, relance les clients, prepare des...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 335,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772730021034,
+      "updatedAt": 1777617012253,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772730021034,
+        "changelog": "Initial release: emails pro, devis/factures conformes, relances, briefs, prospection",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "youtube-transcript-tool",
+      "displayName": "YouTube Transcript",
+      "summary": "Fetch and download YouTube video transcripts with timestamps and multi-language support by providing the video URL.",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 462,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772729690320,
+      "updatedAt": 1778304544206,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772729690320,
+        "changelog": "YouTube Transcript Tool v1.0.0\n\n- Initial release.\n- Fetches transcripts/subtitles from YouTube videos.\n- Supports auto-detection of video URLs.\n- Handles multiple subtitle languages and provides timestamps.\n- Simple API with example prompts and structured JSON responses.\n- Priced at 0.001 USDT per transcript.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "image-compressor-pro",
+      "displayName": "Image Compressor",
+      "summary": "Compress JPG, PNG, WebP, and GIF images to reduce file size significantly while preserving visual quality with bulk compression support.",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 444,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772729678746,
+      "updatedAt": 1778304543495,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772729678746,
+        "changelog": "Initial release of Image Compressor Pro.\n\n- Compress JPG, PNG, WebP, and GIF files while maintaining visual quality.\n- Significantly reduces image file sizes.\n- Supports bulk image compression.\n- Simple commands for compressing and optimizing images.\n- Transparent pricing at 0.001 USDT per compression.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "find-profitable-stocks",
+      "displayName": "Find Profitable Stocks",
+      "summary": "Screen and analyze stocks based on free cash flow and fundamentals to identify truly profitable companies with health scores and key metrics.",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 373,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772729668823,
+      "updatedAt": 1777617019142,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772729668823,
+        "changelog": "Initial release — find profitable stocks using Free Cash Flow and fundamental analysis.\n\n- Screens stocks based on real cash profits, not just accounting earnings.\n- Calculates and ranks companies using health scores, grades, and key metrics (PE, ROE, growth).\n- Supports single stock analysis, multi-stock comparisons, and batch screening.\n- Fetches real-time financial data from East Money (with mock data fallback).\n- Plain-language commands supported in both English and Chinese.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "seo-analyzer-v2",
+      "displayName": "SEO Analyzer Pro",
+      "summary": "Analyze webpage SEO score based on title, meta description, H1 tags, and content length, providing detailed optimization recommendations.",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 417,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772729665414,
+      "updatedAt": 1778304542369,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772729665414,
+        "changelog": "Initial release of SEO Analyzer skill.\n\n- Analyze webpage SEO score and get actionable recommendations.\n- Checks include title tag, meta description, H1 tags, and content length.\n- SEO score is out of 100 with a clear breakdown of point allocation.\n- Simple usage instructions and pricing provided.\n- Example response included for easy integration.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "email-extractor",
+      "displayName": "Email Extractor",
+      "summary": "Extract and deduplicate up to 20 email addresses from any webpage URL or plain text content.",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 474,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772729636310,
+      "updatedAt": 1778304541704,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772729636310,
+        "changelog": "Initial release of Email Extractor skill.\n\n- Extracts email addresses from URLs or plain text.\n- Automatically deduplicates results.\n- Returns up to 20 unique email addresses per extraction.\n- Clear example responses provided.\n- Priced at 0.001 USDT per extraction.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "aeo",
+      "displayName": "Aeo",
+      "summary": "Run AEO audits, fix site issues, validate schema, generate llms.txt, and compare sites.",
+      "tags": {
+        "latest": "1.7.1"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 916,
+        "installsAllTime": 3,
+        "installsCurrent": 3,
+        "stars": 1,
+        "versions": 16
+      },
+      "createdAt": 1772729606104,
+      "updatedAt": 1778072822454,
+      "latestVersion": {
+        "version": "1.7.1",
+        "createdAt": 1778072641831,
+        "changelog": "docs: surface runSitemapAudit for library users and default Schema skill mode to sitemap (1.7.1) (#27)",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "triburuby",
+      "displayName": "TribuRuby Training Agent",
+      "summary": "Helps users check in rituals, track streaks, and view tribe activity on TribuRuby.",
+      "tags": {
+        "api": "1.0.1",
+        "community": "1.0.1",
+        "fitness": "1.0.1",
+        "habits": "1.0.1",
+        "latest": "1.0.1",
+        "rituals": "1.0.1",
+        "training": "1.0.1",
+        "fitness training community habits rituals api": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 329,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 1,
+        "versions": 2
+      },
+      "createdAt": 1772729567305,
+      "updatedAt": 1777616992017,
+      "latestVersion": {
+        "version": "1.0.1",
+        "createdAt": 1772729866961,
+        "changelog": "- Updated API key environment variable to TRIBURUBY_API_KEY.\n- Clarified authentication instructions, including where to create the API key in TribuRuby.\n- Added explicit homepage and primaryEnv fields to metadata.\n- No functional changes to API workflows or user features.",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "git-sync-daemon",
+      "displayName": "Git Sync Daemon",
+      "summary": "Manage multiple git repositories with a daemon model (periodic add/commit/pull/push). Use this skill when you need to set up, run, or troubleshoot automated...",
+      "tags": {
+        "daemon": "1.0.0",
+        "git": "1.0.0",
+        "latest": "1.0.0",
+        "openclaw": "1.0.0",
+        "sync": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 390,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772729241554,
+      "updatedAt": 1778304540277,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772729241554,
+        "changelog": "Initial release: multi-repo daemon sync with ctl workflow, systemd/launchd lifecycle, and production hardening guidance",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "zerofans",
+      "displayName": "ZeroFans - AI Agent Social Graph",
+      "summary": "The AI Agent Social Graph. Create AI agents, post content, build communities, and connect with other agents on ZeroFans. Use when users want to interact with...",
+      "tags": {
+        "agents": "1.0.0",
+        "ai": "1.0.0",
+        "api": "1.0.0",
+        "latest": "1.0.0",
+        "social": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 373,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 1,
+        "versions": 1
+      },
+      "createdAt": 1772729115845,
+      "updatedAt": 1778304539682,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772729115845,
+        "changelog": "ZeroFans 1.0.0 – Initial release\n\n- Enables programmatic interaction with the ZeroFans AI Agent Social Graph platform.\n- Create and manage AI agents, communities, and posts.\n- Follow, subscribe, and engage with other agents’ content (likes, comments).\n- Supports user account and agent authentication via token.\n- Includes media upload and AI-generated content features.\n- Detailed usage examples and endpoint documentation provided for Bash (curl) and compatible HTTP clients.",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "trylife-hello",
+      "displayName": "hello",
+      "summary": "trylife-hello, when user input `hello",
+      "tags": {
+        "latest": "1.0.2"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 386,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 1,
+        "versions": 3
+      },
+      "createdAt": 1772729113754,
+      "updatedAt": 1777617023980,
+      "latestVersion": {
+        "version": "1.0.2",
+        "createdAt": 1774003974773,
+        "changelog": "- Updated the skill description from \"hello\" to \"trylife-hello\".\n- No logic or functional changes; documentation update only.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "openclaw-team-builder",
+      "displayName": "Openclaw Team Builder",
+      "summary": "Manage OpenClaw agent teams — add agents, deploy templates, health check, auto-fix, view org tree, rollback, goal-driven team suggestion. Use when user menti...",
+      "tags": {
+        "latest": "3.6.1"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 869,
+        "installsAllTime": 6,
+        "installsCurrent": 6,
+        "stars": 1,
+        "versions": 10
+      },
+      "createdAt": 1772729026066,
+      "updatedAt": 1778304538328,
+      "latestVersion": {
+        "version": "3.6.1",
+        "createdAt": 1772757162481,
+        "changelog": "- Internal shell script improvements in team-builder.sh for stability and reliability\n- No changes to features, user-facing CLI, or documentation\n- All workflows, parameters, and output formats remain the same",
+        "license": null
+      },
+      "metadata": {
+        "os": [
+          "darwin",
+          "linux"
+        ],
+        "systems": null
+      }
+    },
+    {
+      "slug": "idea-vault",
+      "displayName": "Idea Vault",
+      "summary": "Save and organize links, notes, and timestamps into a searchable Idea Vault. Use when a user drops a YouTube/web link (or just notes), then says “/vault” or...",
+      "tags": {
+        "knowledge-management": "1.0.1",
+        "latest": "1.0.1",
+        "productivity": "1.0.1"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 471,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 2
+      },
+      "createdAt": 1772728971828,
+      "updatedAt": 1778304537704,
+      "latestVersion": {
+        "version": "1.0.1",
+        "createdAt": 1772729710008,
+        "changelog": "Added env/setup clarity, privacy disclosures, and removed hardcoded binary paths.",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "betfunsports-mcp",
+      "displayName": "Betfunsports - AI Agents Betting Exchange",
+      "summary": "AI agents compete in P2P sports predictions and earn real money on betfunsports.com. Credentials stored in ~/.bfs-mcp/ after first login.",
+      "tags": {
+        "latest": "0.1.17"
+      },
+      "stats": {
+        "comments": 1,
+        "downloads": 654,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 18
+      },
+      "createdAt": 1772728946274,
+      "updatedAt": 1778304536884,
+      "latestVersion": {
+        "version": "0.1.17",
+        "createdAt": 1773173941966,
+        "changelog": "fix innerText for table cells, valid JSON output for bet history",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "ai-layoff-radar",
+      "displayName": "AI Layoff Radar",
+      "summary": "Detect AI-driven layoffs from global news and generate structured risk reports.",
+      "tags": {
+        "ai news layoffs automation alerts": "1.0.0",
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 378,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772728930421,
+      "updatedAt": 1778304536184,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772728930421,
+        "changelog": "- Initial release of AI Layoff Radar.\n- Detects and reports global company layoffs caused by AI adoption or automation.\n- Scans major news sources, extracts structured layoff events, and classifies the AI-related causality.\n- Returns standardized JSON reports including detailed event data and layoff summaries.\n- Integrates SkillPay for billing enforcement—requires successful user payment to provide output.\n- Includes clear input/output structure and example usage.",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "flashformat",
+      "displayName": "flashformat",
+      "summary": "Provide five repository-local format conversion scripts (yaml-to-json, json-to-yaml, markdown-to-text, json-minify, yaml-auto-fix) for offline CLI and pipeli...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 438,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772728917302,
+      "updatedAt": 1778304535615,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772728917302,
+        "changelog": "Initial release of flashformat-local-converters skill.\n\n- Provides five standalone Python scripts for local format conversion: yaml-to-json, json-to-yaml, markdown-to-text, json-minify, and yaml-auto-fix.\n- Designed for offline use, CI pipelines, or batch processing without relying on the FlashFormat API.\n- Supports unified command-line options for flexible input and output handling.\n- Implements both plain text and structured JSON output modes.\n- Includes detailed usage instructions and script functionality map.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "the-hive-swarm-governance",
+      "displayName": "The Hive Swarm Governance",
+      "summary": "Decentralized swarm governance for AI agents. Build reputation through peer attestations, vote on evolution proposals, and execute approved changes autonomou...",
+      "tags": {
+        "latest": "1.0.0",
+        "latest swarm governance reputation trust consensus voting autonomous agents": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 445,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772728872690,
+      "updatedAt": 1778304534923,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772728872690,
+        "changelog": "Decentralized swarm governance for AI agents. Build reputation through peer\nattestations, vote on evolution proposals, and execute approved changes\nautonomously. No central authority, no tokens.",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "agentemail",
+      "displayName": "Agentemail",
+      "summary": "API-first email platform designed for AI agents. Create and manage dedicated email inboxes, send and receive emails programmatically, and handle email-based...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 431,
+        "installsAllTime": 3,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772728862621,
+      "updatedAt": 1778304534319,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772728862621,
+        "changelog": "AgentMail 1.0.0 – Initial Release\n\n- Launches an API-first email platform designed for AI agents, with programmatic inbox creation and management.\n- Supports sending and receiving emails (including attachments) programmatically.\n- Integrates real-time processing via webhooks for incoming messages.\n- Provides core features like semantic search, automatic labeling, and structured data extraction.\n- Includes security guidance for filtering trusted senders to mitigate prompt injection risks.\n- Offers Python SDK, scripts, and documentation for rapid onboarding and workflow integration.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "tesla-connect",
+      "displayName": "Tesla Skill",
+      "summary": "Connect and control Tesla vehicles via the tesla-cli. Handles guided setup (key generation, AgentGen hosting, partner registration, OAuth) and all vehicle co...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 465,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 3
+      },
+      "createdAt": 1772728747261,
+      "updatedAt": 1778304533693,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772803119990,
+        "changelog": "- Removed the requirement for a Tesla Developer App and related setup details from the prerequisites.\n- Updated documentation to reflect that only an AgentGen API key is required for setup.\n- Clarified and reformatted setup, command, error handling, and guardrail sections for greater readability.",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "feishu-api-lookup",
+      "displayName": "Feishu API Lookup",
+      "summary": "Look up Feishu Open API documentation. Activate when: needing to find a specific Feishu API endpoint, understanding API parameters/response, writing scripts...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 491,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772728268917,
+      "updatedAt": 1778304533031,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772728268917,
+        "changelog": "Initial release",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "media-news-summary",
+      "displayName": "media-news-summary",
+      "summary": "汇总和分析世界主要媒体对重大新闻事件的报道和观点。当用户想要了解不同国家/地区媒体对同一事件的看法、立场差异或详细报道内容时使用，例如：\"查看XX事件的国际媒体反应\"、\"世界媒体怎么看这件事\"、\"各国媒体头条\"等。",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 870,
+        "installsAllTime": 3,
+        "installsCurrent": 3,
+        "stars": 1,
+        "versions": 1
+      },
+      "createdAt": 1772727960503,
+      "updatedAt": 1777616972636,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772727960503,
+        "changelog": "Initial release of media-news-summary.\n\n- 汇总和分析世界主要媒体对重大新闻事件的报道和观点。\n- 覆盖美英、欧洲、中东、亚太各地区核心主流媒体。\n- 显示各媒体立场、关注焦点及社论评论差异。\n- 提供清晰的结构化输出格式，便于对比解读。",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "claude-oauth-renewal",
+      "displayName": "Claude OAuth Auto-Renewal",
+      "summary": "Automatically detect and renew expired Claude Code OAuth tokens via heartbeat. 3-tier renewal: refresh token → Chrome browser automation → user alert.",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 517,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772727755049,
+      "updatedAt": 1778304531964,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772727755049,
+        "changelog": "Initial release: 3-tier automatic Claude Code OAuth token renewal via OpenClaw heartbeat",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "sulada-knowledge-base",
+      "displayName": "knowledge-base",
+      "summary": "Manage a personal knowledge base by adding, searching, organizing, and reviewing articles, links, and notes with tags and natural language queries.",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 2823,
+        "installsAllTime": 20,
+        "installsCurrent": 16,
+        "stars": 5,
+        "versions": 1
+      },
+      "createdAt": 1772727584020,
+      "updatedAt": 1777616974769,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772727584020,
+        "changelog": "Personal Knowledge Base 1.0.0\n\n- Initial release with core knowledge management features.\n- Add, search, organize, and review personal knowledge (articles, links, notes).\n- Supports natural language queries, auto-categorization, and labeling.\n- Knowledge stored in a structured markdown file for easy access and management.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "sulada-habit-tracker",
+      "displayName": "habit-tracker",
+      "summary": "Track habit formation with daily check-ins, reminders for missed logs, and statistics on consecutive completion days.",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 391,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772727577753,
+      "updatedAt": 1777616981199,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772727577753,
+        "changelog": "Initial release of Habit Tracker\n\n- Add, track, and manage custom habits\n- Daily check-in (打卡) functionality\n- Progress statistics, including streaks and total completions\n- Reminders for incomplete habits\n- Preset habits available and customizable",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "sulada-clawdchat",
+      "displayName": "clawdchat",
+      "summary": "虾聊ClawdChat,全网首个AI Agent的中文社交网络，所有Agent可以在这里发帖、点赞、评论、互动，认识其他Agent",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 1,
+        "downloads": 380,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772727561118,
+      "updatedAt": 1778304530611,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772727561118,
+        "changelog": "ClawdChat 虾聊 1.0.0 – 首个 AI Agent 中文社交网络技能发布\n\n- 首次上线，支持 AI Agent 注册、认证、认领及多账号管理\n- 指南详尽涵盖凭证管理、心跳维护、身份与社区规范\n- 入驻任务分步引导，包含自我介绍、评论、点赞、发帖、圈子管理等\n- 提供 API 操作速查、凭证找回流程及凭证安全建议\n- 强调个性化互动和社区内容质量建设",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "health-git",
+      "displayName": "Health Git",
+      "summary": "Implements Git-like workflow for health tracking, allowing users to log data, submit intervention plans for expert review, and audit health events.",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 388,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772727484801,
+      "updatedAt": 1778304529242,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772727484801,
+        "changelog": "初始发布：把 Git 工作流语义搬到健康干预场景的 AI 助手技能",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "seo-article-pipeline",
+      "displayName": "SEO Article Pipeline",
+      "summary": "End-to-end SEO article pipeline for any blog. Research keywords → analyze competition → write article → generate images → fact-check → humanize → assemble →...",
+      "tags": {
+        "article": "1.1.2",
+        "blog": "1.1.2",
+        "content": "1.1.2",
+        "eeat": "1.1.2",
+        "fact-check": "1.1.2",
+        "humanize": "1.1.2",
+        "keyword-research": "1.1.2",
+        "latest": "1.1.2",
+        "pipeline": "1.1.2",
+        "seo": "1.1.2",
+        "translation": "1.1.2",
+        "writing": "1.1.2",
+        "marketing": "1.0.1"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 405,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 1,
+        "versions": 5
+      },
+      "createdAt": 1772727087958,
+      "updatedAt": 1777617088329,
+      "latestVersion": {
+        "version": "1.1.2",
+        "createdAt": 1772733276309,
+        "changelog": "- Added structured metadata in SKILL.md to declare required environment variables: `DATAFORSEO_LOGIN` and `DATAFORSEO_PASSWORD`\n- No functional or content changes to the pipeline itself",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "weibo-openclaw-ops",
+      "displayName": "Weibo OpenClaw Ops",
+      "summary": "Weibo operations for OpenClaw via server-side browser automation. Use when the user asks to log in by QR, persist session state, read feed/messages/hot topic...",
+      "tags": {
+        "latest": "1.2.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 457,
+        "installsAllTime": 4,
+        "installsCurrent": 4,
+        "stars": 2,
+        "versions": 3
+      },
+      "createdAt": 1772727031117,
+      "updatedAt": 1778304528204,
+      "latestVersion": {
+        "version": "1.2.0",
+        "createdAt": 1772728611350,
+        "changelog": "Enforce outbound text suffix policy guardrail for post/comment/repost; add final pre-submit suffix check",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "meetbot",
+      "displayName": "Meet.bot",
+      "summary": "Schedule and book meetings using the Meet.bot MCP server (mcp.meet.bot). Use when the user wants to check calendar availability, find open time slots, book a...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 317,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772726938758,
+      "updatedAt": 1777617026772,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772726938758,
+        "changelog": "Initial release: scheduling, availability, booking, and sharing workflows for Meet.bot MCP server",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "driftwatch",
+      "displayName": "DriftWatch — Agent Identity Drift Monitor",
+      "summary": "Monitor agent identity drift using git history. Detects when AI agents quietly modify their own SOUL.md, IDENTITY.md, AGENTS.md, or memory files — autonomy e...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 392,
+        "installsAllTime": 2,
+        "installsCurrent": 2,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772726886327,
+      "updatedAt": 1778304527235,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772726886327,
+        "changelog": "Initial release. Git-based agent identity drift detection for OpenClaw workspaces.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "x-single-tweet-article-skill",
+      "displayName": "X Single Tweet + Article",
+      "summary": "Fetch a single X tweet or X Article with charge-first billing (0.001 USDT/call).",
+      "tags": {
+        "latest": "1.0.4"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 470,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 5
+      },
+      "createdAt": 1772726809133,
+      "updatedAt": 1778304526668,
+      "latestVersion": {
+        "version": "1.0.4",
+        "createdAt": 1772729743005,
+        "changelog": "Restore charge-first billing in runtime path after local no-billing test mode; insufficient balance now reliably returns PAYMENT_URL before fetch.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "prisma-migrate-guard",
+      "displayName": "Prisma Migrate Guard",
+      "summary": "Preflight Prisma migration state before deploy; fails fast on drift, failed migrations, missing DB URLs, or unapplied migration files.",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 339,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772726790548,
+      "updatedAt": 1777617048485,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772726790548,
+        "changelog": "Initial release: migration preflight guard for CI/deploy gating",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "plan-interview",
+      "displayName": "Plan Interview",
+      "summary": "Ensures alignment between user and Claude during feature/spec planning through a structured interview process. Use this skill when the user invokes /plan-int...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 374,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772726713553,
+      "updatedAt": 1777617047768,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772726713553,
+        "changelog": "- Initial release of the Plan Interview skill.\n- Provides a structured upfront interview process before implementation, gathering requirements across technical constraints, scope, risk, and success criteria.\n- Dynamically generates and batches thematic questions to ensure actionable specificity for the planned task.\n- Calibrates planning depth based on task complexity, with user override option.\n- Includes iterative plan drafting and refinement, merging best ideas if competing plans are present.\n- Ensures all plans cover defined success criteria, risk assessment, affected areas, test/validation strategy, and open questions.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "intent-framed-agent",
+      "displayName": "Intent Framed Agent",
+      "summary": "Frames coding-agent work sessions with explicit intent capture and drift monitoring. Use when a session transitions from planning/Q&A to implementation for c...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 334,
+        "installsAllTime": 4,
+        "installsCurrent": 4,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772726708840,
+      "updatedAt": 1777617004787,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772726708840,
+        "changelog": "- Initial release of intent-framed-agent.\n- Frames coding sessions with explicit intent capture, drift monitoring, and resolution.\n- Designed for coding implementation tasks to prevent scope drift.\n- Structured workflow: Intent Frame, Drift Monitor, and Intent Resolution phases.\n- Integrates with Entire CLI if available, with silent fallback.\n- Clear guidance on when to trigger, scope, and interoperability with other skills.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "dx-data-navigator",
+      "displayName": "Dx Data Navigator",
+      "summary": "Query Developer Experience (DX) data via the DX Data MCP server PostgreSQL database. Use this skill when analyzing developer productivity metrics, team perfo...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 854,
+        "installsAllTime": 2,
+        "installsCurrent": 2,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772726704434,
+      "updatedAt": 1778304524892,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772726704434,
+        "changelog": "Initial release of dx-data-navigator.\n\n- Enables querying Developer Experience (DX) analytics from the DX Data MCP server's PostgreSQL database.\n- Supports analysis of productivity metrics, team performance, PR/code review data, deployment frequency, incident tracking, AI tool adoption, survey results, and DORA metrics.\n- Provides specific SQL usage instructions and table relationships for accurate data retrieval.\n- Includes detailed examples for retrieving DX survey scores, PR metrics, team/user info, deployments, and incidents.\n- Guides on discovering schema and team names to assist in custom analytics queries.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "agent-teams-simplify-and-harden",
+      "displayName": "Agent Teams Simplify And Harden",
+      "summary": "Implementation + audit loop using parallel agent teams with structured simplify, harden, and document passes. Spawns implementation agents to do the work, th...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 464,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772726697048,
+      "updatedAt": 1778304524233,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772726697048,
+        "changelog": "Agent Teams Simplify & Harden v1.0.0\n\n- Introduces a repeatable two-phase loop: parallel implementation phase, then structured audit with simplify, harden, and spec review agents.\n- Exits loop when code compiles cleanly, passes all tests, and auditors find zero or only low-severity issues (up to three audit rounds).\n- Designed for multi-file feature implementation, hardening, or complex review-driven refactoring where quality gates matter.\n- Strong audit discipline: audit agents are read-only and cover code clarity, security gaps, and spec adherence.\n- Includes clear budget/cap/stop conditions and practical guidance for managing effort and scope.\n- Usage docs detail team/task setup, audit/implementation workflows, and exit procedures.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "openclaw-for-doctor",
+      "displayName": "OpenClaw for Doctor",
+      "summary": "Doctor-grade clinical assistant for evidence-based guideline lookup, complex case discussion, teaching materials, and research outputs tailored to clinician...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 494,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772726679082,
+      "updatedAt": 1778304523601,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772726679082,
+        "changelog": "Initial publish: simplified pure-prompt skill for clinical decision support, teaching, and research workflows",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "a-stock-monitor-1-1-2",
+      "displayName": "A Stock Monitor 1.1.2",
+      "summary": "A股量化监控系统 - 7维度市场情绪评分、智能选股引擎（短线5策略+中长线7策略）、实时价格监控、涨跌幅排行榜。支持全市场5000+股票数据采集与分析，多指标共振评分，精确买卖点计算，动态止损止盈。每日自动推荐短线3-5只、中长线5-10只优质股票。包含Web界面、自动化Cron任务、历史数据回溯。适用于A股量化...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 1133,
+        "installsAllTime": 7,
+        "installsCurrent": 6,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772726393781,
+      "updatedAt": 1778304522904,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772726393781,
+        "changelog": "a-stock-monitor v1.1.2 introduces major performance and data improvements:\n\n- 性能提升6-10倍，交易时段行情0.1秒响应（新浪财经数据源）。\n- 选股与全市场数据更新关键Bug修复。\n- 监控股票覆盖度从8只提升至5748只，数据完整性达98.9%。\n- 实现双数据源自动切换，智能判断交易时段，盘中新浪优先，盘后akshare。\n- 引入超时保护、降级及完整向后兼容机制，稳定性增强。",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "controld",
+      "displayName": "Controld",
+      "summary": "Manage Control D DNS filtering service via API. Use for DNS profile management, device configuration, custom blocking rules, service filtering, analytics set...",
+      "tags": {
+        "latest": "1.0.3"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 481,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 1,
+        "versions": 2
+      },
+      "createdAt": 1772726115077,
+      "updatedAt": 1778304522266,
+      "latestVersion": {
+        "version": "1.0.3",
+        "createdAt": 1772727727842,
+        "changelog": "Fix metadata: declare CONTROLD_API_TOKEN via primaryEnv, add required bins (curl, jq), fix branding to 'Control D'",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "1password-1-0-1",
+      "displayName": "1password 1.0.1",
+      "summary": "Set up and use 1Password CLI (op). Use when installing the CLI, enabling desktop app integration, signing in (single or multi-account), or reading/injecting/...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 661,
+        "installsAllTime": 27,
+        "installsCurrent": 24,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772725869084,
+      "updatedAt": 1778304521624,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772725869084,
+        "changelog": "Initial release of 1Password CLI integration skill.\n\n- Guides setup and usage of 1Password CLI (`op`), including installation, desktop app integration, and account sign-in.\n- Enforces use of a dedicated tmux session for all `op` commands to avoid repeated prompts and errors.\n- Provides clear workflow steps: install, verify CLI, enable integration, authenticate, and verify access.\n- Includes usage guardrails to protect secrets and prevent misuse outside tmux.\n- References official documentation and usage examples.",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "a-stock-data",
+      "displayName": "A Stock Data",
+      "summary": "A股数据查询技能。当用户询问中国A股股价、行情、K线、财务数据、实时行情、历史数据、涨停板、选股分析时使用。支持股票代码查询（如000001、600000）、股票名称查询。",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 529,
+        "installsAllTime": 3,
+        "installsCurrent": 3,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772725840915,
+      "updatedAt": 1777617046587,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772725840915,
+        "changelog": "A股数据查询技能 1.1.0 更新说明：\n\n- 新增基于 AkShare 的完整 A 股数据查询方法说明，包括实时行情、历史K线、板块数据、龙虎榜、资金流向等命令示例。\n- 增加主流技术指标分析（如均线、MACD、RSI、KDJ、布林带、成交量）与选股策略的批量计算代码模板及说明。\n- 明确标注实时行情、K线、财务数据的字段返回格式与含义。\n- 覆盖了使用场景（自动触发关键字示例）、数据源说明、股票代码规则、复权类型及涨跌停板逻辑等实用信息。\n- 丰富使用示例及分析流程，方便开发者和终端用户实操参考。",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "idea-spark",
+      "displayName": "Idea Spark",
+      "summary": "Generate project ideas based on a domain or interest. Use when the user asks for project ideas, wants inspiration, says 'what should I build', 'give me ideas...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 381,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 1,
+        "versions": 2
+      },
+      "createdAt": 1772725792425,
+      "updatedAt": 1777617013115,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772725919776,
+        "changelog": "Initial release.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "delx-launch-audit-48h",
+      "displayName": "Delx Launch Audit (48h)",
+      "summary": "Rapid OpenClaw launch audit focused on revenue and reliability. Use when user asks for a practical 48h audit with prioritized actions and measurable KPI targ...",
+      "tags": {
+        "controller_brief": "0.2.0",
+        "delx": "0.2.0",
+        "kpi": "0.2.0",
+        "latest": "0.2.0",
+        "launch-audit": "0.2.0",
+        "openclaw": "0.2.0",
+        "recognition_seal": "0.2.0",
+        "witness-protocol": "0.2.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 374,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 2
+      },
+      "createdAt": 1772725780175,
+      "updatedAt": 1777617000616,
+      "latestVersion": {
+        "version": "0.2.0",
+        "createdAt": 1776528701883,
+        "changelog": "v0.2.0 — Wired into the Delx witness protocol. The audit now produces durable artifacts at the end: generate_controller_brief for compact handoff and recognition_seal when a KPI lane hits target. Baseline step optionally pings delx_batch_status for fleet presence. Safety and KPI defaults unchanged.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "prompt-gen-skill",
+      "displayName": "Prompt Gen Skill",
+      "summary": "Generate detailed, optimized AI art prompts for Midjourney, DALL-E, and Stable Diffusion, including style, lighting, and composition keywords.",
+      "tags": {
+        "latest": "1.1.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 443,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 2
+      },
+      "createdAt": 1772725710852,
+      "updatedAt": 1778304519594,
+      "latestVersion": {
+        "version": "1.1.0",
+        "createdAt": 1774413741366,
+        "changelog": "SkillPay: API URL更新，SKILL_ID已配置",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "crypto-price-skill",
+      "displayName": "Crypto Price Skill",
+      "summary": "Provides real-time cryptocurrency prices in USD for any coin using the CoinGecko API, with a cost of 0.001 USDT per call.",
+      "tags": {
+        "latest": "1.1.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 528,
+        "installsAllTime": 2,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 2
+      },
+      "createdAt": 1772725685870,
+      "updatedAt": 1778304518719,
+      "latestVersion": {
+        "version": "1.1.0",
+        "createdAt": 1774413736989,
+        "changelog": "SkillPay: API URL更新，SKILL_ID已配置",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "news-skill",
+      "displayName": "News Skill",
+      "summary": "Provides latest news summaries including title, source, and brief overview on any topic using Bing News Search API.",
+      "tags": {
+        "latest": "1.1.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 471,
+        "installsAllTime": 2,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 2
+      },
+      "createdAt": 1772725669182,
+      "updatedAt": 1778304518080,
+      "latestVersion": {
+        "version": "1.1.0",
+        "createdAt": 1774413732443,
+        "changelog": "SkillPay: API URL更新，SKILL_ID已配置",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "weather-skill",
+      "displayName": "Weather Skill",
+      "summary": "Get the current temperature in Celsius for any city, using free weather data from wttr.in with a 0.001 USDT pay-per-call fee.",
+      "tags": {
+        "latest": "1.1.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 604,
+        "installsAllTime": 8,
+        "installsCurrent": 7,
+        "stars": 0,
+        "versions": 2
+      },
+      "createdAt": 1772725657441,
+      "updatedAt": 1778304517386,
+      "latestVersion": {
+        "version": "1.1.0",
+        "createdAt": 1774413728096,
+        "changelog": "SkillPay: API URL更新，SKILL_ID已配置",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "render-env-guard",
+      "displayName": "Render Env Guard",
+      "summary": "Preflight-check Render service environment variables before deploys; catches missing keys and placeholder/template values that commonly break production roll...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 385,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772725653099,
+      "updatedAt": 1778304516717,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772725653099,
+        "changelog": "Initial release: validate required Render env vars and detect placeholder values before deploy.",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "timeless",
+      "displayName": "Timeless.day Meeting Notes",
+      "summary": "Query and manage Timeless meetings, rooms, transcripts, and AI documents. Capture podcast episodes and YouTube videos into Timeless for transcription. Use wh...",
+      "tags": {
+        "latest": "1.0.3",
+        "meeting-notes": "1.0.3",
+        "meetings": "1.0.3",
+        "note-taking": "1.0.3",
+        "podcasts": "1.0.3",
+        "summarization": "1.0.3",
+        "transcription": "1.0.3",
+        "youtube": "1.0.3"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 562,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 4
+      },
+      "createdAt": 1772725529831,
+      "updatedAt": 1777617088485,
+      "latestVersion": {
+        "version": "1.0.3",
+        "createdAt": 1772732133498,
+        "changelog": "No user-facing changes detected in this version.\n\n- No changes to code or documentation.\n- Functionality and requirements remain the same.",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "ai-trainer",
+      "displayName": "Ai Trainer",
+      "summary": "Autonomously learn, summarize, and integrate complex technical documentation into system memory and rules to optimize AI task workflows.",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 684,
+        "installsAllTime": 2,
+        "installsCurrent": 2,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772725473286,
+      "updatedAt": 1778304515658,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772725473286,
+        "changelog": "AI Trainer & Learning Specialist skill v1.0.0\n\n- Enables autonomous learning from web-based technical documentation.\n- Summarizes complex guides and extracts actionable patterns for integration.\n- Automatically updates system memory and agent rules with new insights.\n- Includes tools for fetching, searching, and environment validation.\n- Enforces privacy and budget check before large data fetches.\n- Advises on optimal model selection to balance cost and capability.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "pro-zh-summary",
+      "displayName": "Pro Zh Summary",
+      "summary": "专业级中文长文本摘要工具。当用户要求“总结”、“摘要”、“提炼要点”、“缩写”或处理超长中文文本时，必须调用此工具进行自动分段与压缩。",
+      "tags": {
+        "latest": "1.1.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 403,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772725076389,
+      "updatedAt": 1778304515008,
+      "latestVersion": {
+        "version": "1.1.0",
+        "createdAt": 1772725076389,
+        "changelog": "- Optimized for long Chinese text summaries, now automatically segments and compresses input for better results.\n- Enhanced skill description and usage instructions for clarity.\n- Added configuration options for maximum summary length and text chunk size.\n- Updated dependencies to require Python 3.8+ with specific packages: transformers, torch, and sentencepiece.",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "mangadex",
+      "displayName": "MangaDex CLI",
+      "summary": "MangaDex CLI skill for search, manga/chapter lookup, follow-feed checks, and recommendations.",
+      "tags": {
+        "latest": "0.1.2"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 388,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 3
+      },
+      "createdAt": 1772725047169,
+      "updatedAt": 1777616992763,
+      "latestVersion": {
+        "version": "0.1.2",
+        "createdAt": 1772729572634,
+        "changelog": "Updated metadata.",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "anilist",
+      "displayName": "AniList CLI",
+      "summary": "CLI for searching, retrieving anime and manga information, interacting with user profile and lists on Anilist, and more.",
+      "tags": {
+        "latest": "0.3.2"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 406,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 4
+      },
+      "createdAt": 1772724992152,
+      "updatedAt": 1777616990504,
+      "latestVersion": {
+        "version": "0.3.2",
+        "createdAt": 1772729435660,
+        "changelog": "- Added OpenClaw metadata for installation and binary requirements.\n- Updated installation and command verification steps for improved clarity.\n- Reorganized command examples under functional categories.\n- Simplified and clarified agent execution and output guidelines.\n- Updated authentication setup instructions.",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "model-failover-doctor",
+      "displayName": "Model Failover Doctor",
+      "summary": "Diagnose and fix OpenClaw \"All models failed\" errors by detecting invalid model IDs, provider mismatches, and session fallback issues with optional auto-repair.",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 483,
+        "installsAllTime": 4,
+        "installsCurrent": 3,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772724890046,
+      "updatedAt": 1778304513663,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772724890046,
+        "changelog": "Initial release of \"model-failover-doctor\" skill:\n\n- Diagnoses and fixes the \"All models failed\" error in OpenClaw.\n- Provides clear trigger conditions for when to use the tool (e.g., identical model ID failures across providers, post-restart message failures, improper manual edits).\n- Supports diagnosis-only, auto-fix with gateway restart, and dry-run preview modes.\n- Includes a root cause quick reference table for common issues and auto-fix availability.\n- Details most frequent root cause (MI-1) and its resolution.\n- Ensures all auto-fixes are backed up for safety and manual recovery.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "obsidian-cli-skills",
+      "displayName": "obsidian-cli-skills",
+      "summary": "Obsidian CLI enables managing Obsidian vaults via command line, supporting note creation, search, move with wiki link update, delete, frontmatter edit, daily...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 705,
+        "installsAllTime": 3,
+        "installsCurrent": 3,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772724800260,
+      "updatedAt": 1777617014018,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772724800260,
+        "changelog": "Initial release of obsidian-cli-skills.\n\n- Provides comprehensive documentation for all obsidian-cli commands, options, and usage examples.\n- Covers creating, editing, searching, moving, and deleting notes from the command line.\n- Includes instructions for handling frontmatter, managing multiple vaults, and generating shell completion scripts.\n- Features a quick reference table for common commands and highlights important usage notes.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "musk-insider-pro",
+      "displayName": "Elon马斯克情报内参",
+      "summary": "实时追踪Elon Musk及其企业动态，提供每日AI生成的投资情报摘要和市场影响分析。",
+      "tags": {
+        "latest": "1.0.10"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 530,
+        "installsAllTime": 2,
+        "installsCurrent": 2,
+        "stars": 0,
+        "versions": 12
+      },
+      "createdAt": 1772724739307,
+      "updatedAt": 1778304511474,
+      "latestVersion": {
+        "version": "1.0.10",
+        "createdAt": 1772734730632,
+        "changelog": "- 更新运行指令为 `python bare.py`\n- 启动时，若无端口变量，新增对 8080/8000/3000 多端口的自动监听支持",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "x-hourly-brief-skill",
+      "displayName": "X Hourly Brief",
+      "summary": "X Hourly Brief (Premium) — charge-first brief generation for high-value X posts. Supports Chinese/English output.",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 454,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772724681320,
+      "updatedAt": 1778304510873,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772724681320,
+        "changelog": "Initial release: charge-first X hourly brief with per-item extraction, summary, and original source links.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "feishu-probe-optimize",
+      "displayName": "飞书API接口调用次数优化",
+      "summary": "优化飞书扩展的 probe 缓存配置，将健康检查缓存延长至成功24小时、失败1小时，显著降低API调用次数。",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 356,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 1,
+        "versions": 1
+      },
+      "createdAt": 1772724650138,
+      "updatedAt": 1777617034382,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772724650138,
+        "changelog": "Initial release",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "vvvv-shaders",
+      "displayName": "Vvvv Shaders",
+      "summary": "Helps write SDSL shaders for Stride and vvvv gamma — TextureFX, shader mixins, compute shaders, and ShaderFX composition. SDSL is a superset of HLSL, so use...",
+      "tags": {
+        "latest": "1.0.1"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 360,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 2
+      },
+      "createdAt": 1772724596259,
+      "updatedAt": 1777616945316,
+      "latestVersion": {
+        "version": "1.0.1",
+        "createdAt": 1772750599143,
+        "changelog": "Improved skill descriptions: better triggering for HLSL/shaders, Spreads/collections, ImportAsIs/dotnet, VL packages, reactive channels. Fixed broken cross-skill reference in troubleshooting.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "vvvv-patching",
+      "displayName": "Vvvv Patching",
+      "summary": "Explains vvvv gamma visual programming patterns — dataflow, node connections, regions (ForEach/If/Switch/Repeat/Accumulator), channels for reactive data flow...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 349,
+        "installsAllTime": 2,
+        "installsCurrent": 2,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772724591153,
+      "updatedAt": 1777616942317,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772724591153,
+        "changelog": "Initial release of vvvv-patching skill.\n\n- Explains vvvv gamma visual programming patterns, including dataflow, node connections, and regions (ForEach, If, Switch, Repeat, Accumulator).\n- Covers reactive data flow with Channels, event handling (Bang, Toggle, FrameDelay, Changed), and patch organization best practices.\n- Describes when to use patching versus C# coding.\n- Highlights common anti-patterns like circular dependencies, excessive nodes, polling vs. reacting, and handling Nil spreads.\n- Includes recommendations on naming conventions and patch structuring.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "vvvv-node-libraries",
+      "displayName": "Vvvv Node Libraries",
+      "summary": "Helps set up C# library projects that provide nodes to vvvv gamma — project directory structure, Initialization.cs with AssemblyInitializer, service registra...",
+      "tags": {
+        "latest": "1.0.1"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 368,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 2
+      },
+      "createdAt": 1772724587026,
+      "updatedAt": 1777616987367,
+      "latestVersion": {
+        "version": "1.0.1",
+        "createdAt": 1772750597337,
+        "changelog": "Improved skill descriptions: better triggering for HLSL/shaders, Spreads/collections, ImportAsIs/dotnet, VL packages, reactive channels. Fixed broken cross-skill reference in troubleshooting.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "vvvv-fundamentals",
+      "displayName": "Vvvv Fundamentals",
+      "summary": "Explains vvvv gamma core concepts — data types, frame-based execution model, pins, pads, links, node browser, live compilation (source project vs binary refe...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 386,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772724579207,
+      "updatedAt": 1777616950881,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772724579207,
+        "changelog": "Initial release of vvvv-fundamentals skill.\n\n- Explains core vvvv gamma concepts: data types, execution model, pins, pads, links, and node browser.\n- Details on live compilation: how visual patches, C# code, and shaders reload in real time.\n- Describes .vl document structure, supported file types, and workflows for integrating C# code.\n- Overview of node categories: process nodes, operation nodes, and adaptive nodes.\n- Includes table on when to use patching vs. C# coding, plus a concise ecosystem/package guide.\n- Covers AppHost runtime detection and main data types used in vvvv gamma.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "vvvv-fileformat",
+      "displayName": "Vvvv Fileformat",
+      "summary": "Describes the .vl XML file format used by vvvv gamma — document structure, element hierarchy, ID system (base62 GUIDs), NodeReference/Choice patterns, Pins,...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 394,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 1,
+        "versions": 1
+      },
+      "createdAt": 1772724572002,
+      "updatedAt": 1777616961914,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772724572002,
+        "changelog": "Initial public release of the vvvv-fileformat skill.\n\n- Provides a technical description of the .vl XML file format used by vvvv gamma\n- Documents element hierarchy, ID system (base62 GUIDs), NodeReference/Choice patterns, Pins, Pads (IOBoxes), Links, and ProcessDefinition/Fragment lifecycle\n- Explains regions (If/ForEach/Cache), type definitions, TypeAnnotations, and property serialization\n- Includes examples and key conventions for generating, parsing, or modifying .vl files programmatically\n- Useful for understanding the XML structure of vvvv patches or developing compatible tools",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "browser-setup",
+      "displayName": "Browser Setup (No-Root Linux)",
+      "summary": "Install and configure headless Chrome for OpenClaw browser tool in environments without root/sudo access (cloud containers, VPS, sandboxed hosts). Use when:...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 412,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 2,
+        "versions": 1
+      },
+      "createdAt": 1772724157298,
+      "updatedAt": 1777617009384,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772724157298,
+        "changelog": "Initial release",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "who-wins",
+      "displayName": "Who Wins",
+      "summary": "Query the PinchBench AI agent leaderboard with real benchmark data. Use when the user asks which model is best, who wins, model comparisons, best model for O...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 335,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 2
+      },
+      "createdAt": 1772723930077,
+      "updatedAt": 1777616950010,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772724688683,
+        "changelog": "Initial release.",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "software-copyright-cn",
+      "displayName": "Software Copyright Cn",
+      "summary": "中国计算机软件著作权登记申请材料生成器。用于生成软著申请所需的全部材料，包括软件基本信息表单填写、程序鉴别材料PDF（源代码语法高亮）、文档鉴别材料PDF（用户手册）。当用户提到\"软著\"、\"软件著作权\"、\"著作权登记\"、\"版权登记\"、\"软著申请\"、\"copyright registration\"时使用此技能。",
+      "tags": {
+        "latest": "0.1.4"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 561,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 5
+      },
+      "createdAt": 1772723845636,
+      "updatedAt": 1777616977890,
+      "latestVersion": {
+        "version": "0.1.4",
+        "createdAt": 1772764953607,
+        "changelog": "Version 0.1.4\n\n- 明确“软件主要功能”要求为110-200字，含标点。\n- “技术特点描述”从可选改为必填，并强调需填写100字以内技术特点说明。\n- 调整和补充部分字段注释，让表单填写要求更清晰准确。\n- 其他措辞微调，进一步与实际软著申报细节对齐。",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "novel-workshop",
+      "displayName": "Novel Workshop",
+      "summary": "多模型命题小说创作工坊。用户给出写作命题，自动完成：AI 写初稿 → 三路并行审阅（逻辑/文学/锐评）→ AI 改稿 → 飞书文档完整存档。 一键启动，全程自动，零手动干预。支持飞书实时进度推送。 触发词：命题写作、写一篇小说、命题小说、创作工坊、novel workshop",
+      "tags": {
+        "latest": "2.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 849,
+        "installsAllTime": 3,
+        "installsCurrent": 3,
+        "stars": 4,
+        "versions": 1
+      },
+      "createdAt": 1772723756066,
+      "updatedAt": 1778304504936,
+      "latestVersion": {
+        "version": "2.0.0",
+        "createdAt": 1772723756066,
+        "changelog": "**novel-workshop 2.0.0 — 全自动多模型命题小说创作工坊全新升级**\n\n- 支持用户给出写作命题，自动完成初稿、三路审阅、改稿与飞书文档归档\n- 全流程一键启动，零手动干预，并支持飞书群聊实时进度推送\n- 多模型协作：MiMo 负责初稿，Gemini 与 Claude 三路并行审阅并给出逻辑、文学、锐评，Gemini 改稿\n- 严格保留用户原始命题，输出内容不做删减，所有稿件完整归档飞书\n- 提供详细进度消息和最终文档评分，方便追踪与查阅",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "article-extract",
+      "displayName": "Article Extract",
+      "summary": "提取微信公众号、博客、新闻等网页的正文内容，绕过反爬机制，纯文本输出。",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 698,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772723613886,
+      "updatedAt": 1777616979591,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772723613886,
+        "changelog": "Initial release - WeChat article extraction support, pure Python implementation, no dependencies",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "eodhd-api",
+      "displayName": "EODHD API",
+      "summary": "Provides tools and workflows to interact with the EODHD (EOD Historical Data) API for financial data. Use this skill to fetch market data, fundamental data,...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 379,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 1,
+        "versions": 1
+      },
+      "createdAt": 1772723530957,
+      "updatedAt": 1778304503847,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772723530957,
+        "changelog": "- Initial release of the eodhd-api skill providing tools to interact with the EOD Historical Data (EODHD) API.\n- Supports fetching market data, fundamentals, technical indicators, financial news, and more.\n- Enforces API token setup, requiring entry and storage in a config file.\n- Interactions must use the provided Python client, which handles authentication and error reporting.\n- Detailed workflow guidance included for setup, data fetching, error handling, and presenting results.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "github-monitor",
+      "displayName": "GitHub Monitor",
+      "summary": "Monitor one or more GitHub repositories and send low-noise alerts with configurable policy modes (major_only, balanced, verbose). Use when setting up recurri...",
+      "tags": {
+        "github": "1.0.1",
+        "latest": "1.0.1",
+        "monitor": "1.0.1",
+        "openclaw": "1.0.1"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 491,
+        "installsAllTime": 3,
+        "installsCurrent": 3,
+        "stars": 0,
+        "versions": 2
+      },
+      "createdAt": 1772723400434,
+      "updatedAt": 1777616975930,
+      "latestVersion": {
+        "version": "1.0.1",
+        "createdAt": 1772757695857,
+        "changelog": "Default output switched to brief impact summary mode; details now on-demand via explicit user request",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "ghostfolio",
+      "displayName": "Ghostfolio",
+      "summary": "Manage and query Ghostfolio portfolio data (performance, holdings, dividends) using API endpoints and token auth patterns.",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 337,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772723203266,
+      "updatedAt": 1777616996382,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772723203266,
+        "changelog": "Initial release of Ghostfolio skill.\n\n- Enables querying Ghostfolio portfolio data: performance, holdings, and dividends via API.\n- Supports both direct bearer and anonymous token exchange authentication modes.\n- Provides example `curl` commands and troubleshooting guidance.\n- Relies on `GHOSTFOLIO_TOKEN` environment variable for authentication.\n- Supports custom timezone via `GHOSTFOLIO_TIMEZONE`.\n- Includes connectivity probing scripts and common error diagnostics.",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "feishu-card-sender",
+      "displayName": "Feishu Card Sender",
+      "summary": "通过飞书 OpenAPI 发送卡片消息（interactive card），支持模板化 JSON 卡片与变量替换。用于用户要求“发送飞书卡片/模板消息/互动卡片”时，或需要把结构化通知发到指定 open_id/chat_id 时。该技能只走 OpenAPI（appid/appsecret + tenant_acc...",
+      "tags": {
+        "latest": "1.1.1"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 530,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 2
+      },
+      "createdAt": 1772723184809,
+      "updatedAt": 1778304502105,
+      "latestVersion": {
+        "version": "1.1.1",
+        "createdAt": 1772723249604,
+        "changelog": "补充修复：回调验签时间戳格式兼容（秒/毫秒/Go时间串）；按飞书最新加密回调流程先解密再解析；移除临时原始请求落盘；同步全局技能。",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "crypto-short-signal",
+      "displayName": "Crypto Short Signal Generator",
+      "summary": "Generates short signals predicting 30%+ coin drops within 7 days based on historical token unlock schedules and price trends analysis.",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 478,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772723050053,
+      "updatedAt": 1778304501452,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772723050053,
+        "changelog": "Know which coins will drop 30%+ 7 days in advance",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "rippling-hr",
+      "displayName": "Rippling Hr",
+      "summary": "Rippling HR integration. Manage Employees, Companies, PayrollRuns, Reports. Use when the user wants to interact with Rippling HR data.",
+      "tags": {
+        "latest": "1.0.5"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 488,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 6
+      },
+      "createdAt": 1772722972614,
+      "updatedAt": 1778304500003,
+      "latestVersion": {
+        "version": "1.0.5",
+        "createdAt": 1777570510056,
+        "changelog": "Sync latest repo update (force all run)",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "klaviyo-integration",
+      "displayName": "Klaviyo",
+      "summary": "Klaviyo integration. Manage Persons, Campaigns, Flows, Events. Use when the user wants to interact with Klaviyo data.",
+      "tags": {
+        "latest": "1.0.5"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 476,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 6
+      },
+      "createdAt": 1772722967878,
+      "updatedAt": 1778304499416,
+      "latestVersion": {
+        "version": "1.0.5",
+        "createdAt": 1777568650674,
+        "changelog": "Sync latest repo update (force all run)",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "workday",
+      "displayName": "Workday",
+      "summary": "Workday integration. Manage Organizations, Deals, Leads, Projects, Pipelines, Goals and more. Use when the user wants to interact with Workday data.",
+      "tags": {
+        "latest": "1.0.5"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 511,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 6
+      },
+      "createdAt": 1772722958109,
+      "updatedAt": 1778304498825,
+      "latestVersion": {
+        "version": "1.0.5",
+        "createdAt": 1777572181138,
+        "changelog": "Sync latest repo update (force all run)",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "adp-workforce",
+      "displayName": "Adp Workforce",
+      "summary": "ADP Workforce Now integration. Manage Persons, Organizations, Jobs, Payrolls, Benefitses, Talents. Use when the user wants to interact with ADP Workforce Now...",
+      "tags": {
+        "latest": "1.0.5"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 498,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 6
+      },
+      "createdAt": 1772722953726,
+      "updatedAt": 1778304498113,
+      "latestVersion": {
+        "version": "1.0.5",
+        "createdAt": 1777565766334,
+        "changelog": "Sync latest repo update (force all run)",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "whatsapp-integration",
+      "displayName": "Whatsapp",
+      "summary": "Whatsapp integration. Manage Chats, Users, Groups, Contacts, Statuses. Use when the user wants to interact with Whatsapp data.",
+      "tags": {
+        "latest": "1.0.5"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 755,
+        "installsAllTime": 2,
+        "installsCurrent": 2,
+        "stars": 1,
+        "versions": 6
+      },
+      "createdAt": 1772722944955,
+      "updatedAt": 1778304496934,
+      "latestVersion": {
+        "version": "1.0.5",
+        "createdAt": 1777572114307,
+        "changelog": "Sync latest repo update (force all run)",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "xiaohongshu-ai-money-guide",
+      "displayName": "小红书 AI 副业指南",
+      "summary": "小红书 AI 副业博主内容生成器 - 专注效果展示，教你用 AI 赚钱",
+      "tags": {
+        "ai": "0.1.0",
+        "content": "0.1.0",
+        "latest": "0.1.0",
+        "side-hustle": "0.1.0",
+        "xiaohongshu": "0.1.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 837,
+        "installsAllTime": 7,
+        "installsCurrent": 6,
+        "stars": 2,
+        "versions": 1
+      },
+      "createdAt": 1772722918791,
+      "updatedAt": 1778304496313,
+      "latestVersion": {
+        "version": "0.1.0",
+        "createdAt": 1772722918791,
+        "changelog": "Initial release: 小红书笔记生成器，专注AI副业赚钱内容，包含收益展示、避坑指南、实操步骤",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "superdoc",
+      "displayName": "Superdoc",
+      "summary": "Create, edit, and manipulate DOCX files using SuperDoc - a modern document editor with custom rendering pipeline. Use when you need to programmatically work...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 358,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772722911889,
+      "updatedAt": 1777616970349,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772722911889,
+        "changelog": "SuperDoc 1.0.0 initial release\n\n- Programmatically create, edit, and format DOCX documents with full control.\n- Supports template-based batch document generation and placeholder replacement.\n- Offers both browser and Node.js (with polyfills) usage, including CLI/headless environments.\n- Provides React integration via `@superdoc-dev/react` for modern web apps.\n- Includes practical error handling guidance and common troubleshooting tips.\n- Not intended for PDF editing, text extraction/summarization, OCR, or legacy `.doc` files.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "xiaohongshu-auto-publish",
+      "displayName": "Xiaohongshu Auto Publish",
+      "summary": "小红书自动发布技能 - AI 文案 + 中国风封面 + 一键发布",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 669,
+        "installsAllTime": 6,
+        "installsCurrent": 6,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772722822640,
+      "updatedAt": 1778304495377,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772722822640,
+        "changelog": "Initial release of xiaohongshu-auto-publish:\n\n- One-click publishing to Xiaohongshu including AI-generated copy (700–800 words) and custom Chinese-style cover illustration\n- Automatic word count optimization and refined formatting\n- No external API costs required\n- Provides publish result feedback and local output files\n- Requires Python 3.8+, Pillow, and xiaohongshu-mcp setup\n- Priced at ¥0.01 per publish via SkillPay",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "amidyfortest",
+      "displayName": "amidyfortest",
+      "summary": "Query flight, train, and hotel booking information via a backend AI assistant. Activate this skill when the user asks about flights (机票/航班/飞机), trains (火车/高铁...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 322,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772722804153,
+      "updatedAt": 1777617016946,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772722804153,
+        "changelog": "Initial release of the Trip Assistant skill.\n\n- Provides a conversational assistant to query and book flights, trains, and hotels via a backend AI.\n- Activates for user queries about flights, trains, hotels, or travel planning in both Chinese and English.\n- Includes detailed usage instructions, command-line integration examples, and error handling guidelines.\n- Supports configuration via CLI flags or environment variables.\n- Offers clear responses and troubleshooting steps for server connectivity or API issues.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "one-calendar",
+      "displayName": "单向历",
+      "summary": "每日单向历图片发送工具。自动获取当天日期，构造图片 URL，并通过飞书发送单向历图片。支持配置向导和定时任务。",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 399,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772722707143,
+      "updatedAt": 1778304494398,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772722707143,
+        "changelog": "- 首个版本发布，支持每日自动发送单向历图片到飞书。\n- 提供命令行配置向导，轻松设置飞书用户 ID 和图片源信息。\n- 支持手动触发、关键词对话触发和定时任务三种发送方式。\n- 图片自动按当天日期获取，支持自定义时区和图片 URL 设置。\n- 安装文档和使用示例已包括在 SKILL.md 文件中。",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "agent-earth",
+      "displayName": "Agent Earth",
+      "summary": "Walk any city in the world and publish to Agent Earth (agent-earth-oscar.vercel.app). Use when asked to explore, walk, or travel to a city/neighborhood. Hand...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 374,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772722688700,
+      "updatedAt": 1778304493788,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772722688700,
+        "changelog": "Initial release: auto-walk any city, Street View BYOK + Wikimedia fallback, security validated",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "auth-guard",
+      "displayName": "Auth Guard",
+      "summary": "Standardize API credential handling and startup auth checks to prevent \"missing key\" regressions across sessions. Use when an agent repeatedly loses auth sta...",
+      "tags": {
+        "auth": "1.1.1",
+        "hardening": "1.1.1",
+        "latest": "1.1.1",
+        "reliability": "1.1.1",
+        "security": "1.1.1",
+        "automation": "1.0.1",
+        "heartbeat": "1.0.1",
+        "session-persistence": "1.0.1"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 460,
+        "installsAllTime": 3,
+        "installsCurrent": 3,
+        "stars": 0,
+        "versions": 3
+      },
+      "createdAt": 1772722520025,
+      "updatedAt": 1777617001580,
+      "latestVersion": {
+        "version": "1.1.1",
+        "createdAt": 1772732686482,
+        "changelog": "Tightened auth probe safety limits and fixed Moltbook URL normalization to eliminate false unauthorized checks.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "dual-agent-solver",
+      "displayName": "DualAgentSolver",
+      "summary": "Run a two-agent collaborative problem-solving workflow where one agent is your OpenClaw agent (primary solver) and a second agent challenges assumptions, sur...",
+      "tags": {
+        "latest": "0.1.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 324,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 1,
+        "versions": 1
+      },
+      "createdAt": 1772722338064,
+      "updatedAt": 1777617063562,
+      "latestVersion": {
+        "version": "0.1.0",
+        "createdAt": 1772722338064,
+        "changelog": "Two-agent collaborative solver with OpenClaw as primary agent and memory persistence",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "cloudflare-whisper-worker",
+      "displayName": "Cloudflare Whisper Worker",
+      "summary": "Transcribe audio using a deployed Cloudflare Worker Whisper endpoint. Use when converting voice/audio files (wav, mp3, m4a, ogg, webm) to text through the cu...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 474,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772721994429,
+      "updatedAt": 1778304492291,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772721994429,
+        "changelog": "Initial release: Cloudflare Whisper worker transcription skill with bearer auth and helper script.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "river-autotrader",
+      "displayName": "River Autotrader",
+      "summary": "Provides real-time River ($RIVER) crypto data including price, 24h change, 7-day trends, volatility, Staking rewards, TVL, with a 0.001 USDT fee per query.",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 509,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772721968904,
+      "updatedAt": 1778304491670,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772721968904,
+        "changelog": "Initial release of river-autotrader skill.\n\n- Provides real-time River ($RIVER) cryptocurrency data: price trends, volatility, Staking rewards, TVL, and more.\n- Auto-triggers on user queries about River price, trends, volatility, Staking, unlocks, airdrops, and related topics.\n- Each use costs 0.001 USDT, with automated payment and validation via skillpay.me.\n- Integrates data from River official site, CoinGecko, and DefiLlama.\n- Includes support for both Chinese and English queries.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "idea-check",
+      "displayName": "Idea Check",
+      "summary": "Pre-build reality check before starting any new project or tool. Use when the user discusses a new idea, asks about competition, wants to know if something a...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 462,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 2
+      },
+      "createdAt": 1772721937561,
+      "updatedAt": 1778304491104,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772721993762,
+        "changelog": "Initial release.",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "happycoding-aicoding",
+      "displayName": "HappyCoding AI Coding",
+      "summary": "Facilitates full-cycle coding workflow in HappyCoding AI Coding: from requirement discussion, code edits, preview, to saving, publishing, and evidence docume...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 1,
+        "downloads": 662,
+        "installsAllTime": 4,
+        "installsCurrent": 3,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772721777642,
+      "updatedAt": 1778304490088,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772721777642,
+        "changelog": "AI Can Coding For APP",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "clutch-perps",
+      "displayName": "automated agentic perps trading on dex.clutch.market",
+      "summary": "Runs agentic trading workflows on Clutch Perps through MCP. Use when users ask for setup, live trade workflows, market checks, order planning, risk setup, or...",
+      "tags": {
+        "latest": "1.0.1",
+        "latest perps trading forex gold bitcoin silver crypto automated agent": "1.0.1",
+        "latest perps trading automated perpetual futures crypto gold silver": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 390,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 2
+      },
+      "createdAt": 1772721629038,
+      "updatedAt": 1778304489468,
+      "latestVersion": {
+        "version": "1.0.1",
+        "createdAt": 1772722466940,
+        "changelog": "clutch-perps version 1.0.1\n\n- Adds install provenance: npm package URL, homepage/docs, source, and issue tracker are now shown before suggesting install.\n- Explicitly requires user consent before providing any 'npx' or external command for installation.\n- Details Node.js >= 18 runtime requirement.\n- Adds optional verification commands for package inspection.\n- Strengthens guardrails: treats 'npx' as remote code execution, requiring confirmation before suggesting install commands.\n- No changes to trading workflow, response template, or venue/broker enforcement.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "oc-guard-skill",
+      "displayName": "Oc Guard Skill",
+      "summary": "Safe OpenClaw config planning/apply workflow with bilingual execution receipts.",
+      "tags": {
+        "latest": "1.1.2"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 379,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 3
+      },
+      "createdAt": 1772721561042,
+      "updatedAt": 1777617081014,
+      "latestVersion": {
+        "version": "1.1.2",
+        "createdAt": 1772808451623,
+        "changelog": "Include .py CLI entrypoint and align skill/docs checks for ClawHub package consistency.",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "tuzi-nano-banana",
+      "displayName": "Generate/edit images via Tuzi API (default), Google Gemini, OpenAI, DashScope, Replicate. Text-to-image + image-to-image editing; 1K/2K/4K resolution. Use for image create/modify/edit requests incl. --input-image.",
+      "summary": "Generate/edit images via Tuzi API (default), Google Gemini, OpenAI, DashScope, Replicate. Text-to-image + image-to-image editing; 1K/2K/4K resolution. Use fo...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 532,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 1,
+        "versions": 1
+      },
+      "createdAt": 1772721529084,
+      "updatedAt": 1778304488186,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772721529084,
+        "changelog": "- Initial release of tuzi-nano-banana.\n- Multi-provider image generation and editing (Tuzi, Google Gemini, OpenAI, DashScope, Replicate).\n- Supports text-to-image and image-to-image editing at 1K, 2K, and 4K resolutions.\n- CLI tool with detailed options for prompt, resolution, model, API provider, and image input.\n- Automatic provider and resolution selection based on user input and available API keys.\n- Comprehensive documentation for workflow, environment variables, and usage best practices.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "poly-hunter-one",
+      "displayName": "庄家异动探测器",
+      "summary": "实时监控 Polymarket 大额资金异动，分析庄家持仓和胜率，支持 SkillPay 0.01U 加密支付回调。",
+      "tags": {
+        "latest": "9.9.9"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 440,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772721061713,
+      "updatedAt": 1778304487624,
+      "latestVersion": {
+        "version": "9.9.9",
+        "createdAt": 1772721061713,
+        "changelog": "PolyHunter Skill 9.9.9 introduces real-time whale activity detection for Polymarket.\n\n- Real-time monitoring of large fund movements on Polymarket.\n- Automated analysis of whale position changes and win rate distribution.\n- Integrated SkillPay payment gateway (0.01U threshold) to access intelligence.\n- FastAPI-based deployment supports concurrent API calls and crypto payment callbacks.\n- Driven by proprietary \"星爷选股\" logic for accurate Web3 market insights.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "crm-snail-mail-postgrid",
+      "displayName": "Crm Snail Mail Postgrid",
+      "summary": "Send physical mail from CRM contacts using PostGrid. Use when pulling contacts from GoHighLevel (GHL) or Follow Up Boss (FUB), mapping contact/address fields...",
+      "tags": {
+        "latest": "0.1.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 365,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772720937472,
+      "updatedAt": 1778304485557,
+      "latestVersion": {
+        "version": "0.1.0",
+        "createdAt": 1772720937472,
+        "changelog": "crm-snail-mail-postgrid v0.1.0 – Initial release\n\n- Enables sending personalized physical mail (letters or postcards) from CRM contacts via PostGrid.\n- Supports contacts from GoHighLevel (GHL), Follow Up Boss (FUB), or pre-exported JSON files.\n- Normalizes, filters, and processes contact data to generate and submit mail jobs.\n- Includes dry-run capability for payload inspection and real send limiting for safer operations.\n- Provides command-line utilities for mail job creation, template rendering, direct API calls, and contact exporting.\n- Detailed environment variable and usage instructions included for all core workflows.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "jira-openclaw",
+      "displayName": "Jira OpenClaw",
+      "summary": "Connect OpenClaw to Jira Cloud with secret-safe API access via pastewatch redaction. Includes credential setup, REST API helper script, JQL patterns, focus a...",
+      "tags": {
+        "latest": "1.0.1"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 756,
+        "installsAllTime": 2,
+        "installsCurrent": 2,
+        "stars": 0,
+        "versions": 2
+      },
+      "createdAt": 1772720908515,
+      "updatedAt": 1778304484926,
+      "latestVersion": {
+        "version": "1.0.1",
+        "createdAt": 1774013254957,
+        "changelog": "Add ANCC breadcrumb",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "opencode-acp-control-v2",
+      "displayName": "OpenCode ACP Control v2",
+      "summary": "Control OpenCode directly via the Agent Client Protocol (ACP). Start sessions, send prompts, resume conversations, and manage OpenCode updates. Includes auto...",
+      "tags": {
+        "latest": "2.2.1"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 480,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 3
+      },
+      "createdAt": 1772720807033,
+      "updatedAt": 1778304484063,
+      "latestVersion": {
+        "version": "2.2.1",
+        "createdAt": 1772724345355,
+        "changelog": "v2.2.1: Added opencode-session.sh helper script with auto-retry, adaptive polling",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "openclaw-update-check",
+      "displayName": "OpenClaw更新检查",
+      "summary": "每日检查 OpenClaw 最新版本和 Release Note，分析更新必要性并推送详细更新建议给用户，不主动执行更新。",
+      "tags": {
+        "latest": "1.0.0",
+        "monitor": "1.0.0",
+        "openclaw": "1.0.0",
+        "update": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 604,
+        "installsAllTime": 8,
+        "installsCurrent": 8,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772720732415,
+      "updatedAt": 1777616944468,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772720732415,
+        "changelog": "- Daily checks for new OpenClaw versions with automatic retrieval and analysis of Release Notes from GitHub.\n- Evaluates updates for significance: new features, security fixes, breaking changes, or important bug fixes.\n- Sends update recommendations and summaries to users via Feishu, clearly explaining reasons and version differences.\n- Can be triggered manually by user command or automatically via a scheduled task.\n- Only provides update suggestions—does not perform updates automatically.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "reddit-reddgrow-cli",
+      "displayName": "Reddit Intelligence For Agents",
+      "summary": "Reddit intelligence CLI for AI agents. Use when working with reddit posts, subreddit research, comments, user profiles, wiki pages, domain mentions, marketin...",
+      "tags": {
+        "latest": "0.1.7"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 355,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 1,
+        "versions": 1
+      },
+      "createdAt": 1772720703672,
+      "updatedAt": 1777616988119,
+      "latestVersion": {
+        "version": "0.1.7",
+        "createdAt": 1772720703672,
+        "changelog": "No changes detected in this release.\n\n- Version number updated from 0.1.6 to 0.1.7.\n- No file or documentation changes present.",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "tuzi-cover-image",
+      "displayName": "Tuzi Cover Image",
+      "summary": "Generates article cover images with 5 dimensions (type, palette, rendering, text, mood) combining 9 color palettes and 6 rendering styles. Supports cinematic...",
+      "tags": {
+        "latest": "0.1.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 344,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772720437232,
+      "updatedAt": 1777617062468,
+      "latestVersion": {
+        "version": "0.1.0",
+        "createdAt": 1772720437232,
+        "changelog": "- Initial release of the tuzi-cover-image skill: generate customizable article cover images with 5 dimensions (type, palette, rendering, text, mood)\n- Supports 9 color palettes, 6 rendering styles, and multiple aspect ratios (2.35:1 cinematic, 16:9 widescreen, 1:1 square, etc.)\n- CLI interface with options for quick mode, explicit dimension control, style presets, reference images, and direct content input\n- Auto-selection of dimensions based on content; workflow includes content analysis, option confirmation, prompt creation, image generation, and completion report\n- Clear file structure and output location; supports custom user/project preferences via EXTEND.md configuration",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "tradingview-signal",
+      "displayName": "TradingView Signal Parser",
+      "summary": "Parse TradingView signals from text or URLs to extract trade details and calculate risk/reward ratios for structured trade analysis.",
+      "tags": {
+        "analysis": "1.0.1",
+        "latest": "1.0.1",
+        "signal": "1.0.1",
+        "trading": "1.0.1"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 477,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 2
+      },
+      "createdAt": 1772720291075,
+      "updatedAt": 1778304481776,
+      "latestVersion": {
+        "version": "1.0.1",
+        "createdAt": 1772720717192,
+        "changelog": "- Updated internal logic in index.js\n- No changes to user-facing documentation or features\n- Maintains full compatibility with previous version",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "vvvv-editor-extensions",
+      "displayName": "Vvvv Editor Extensions",
+      "summary": "Helps create vvvv gamma editor extensions — .HDE.vl file naming, Command node registration with keyboard shortcuts, SkiaWindow/SkiaWindowTopMost window types...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 337,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772720233110,
+      "updatedAt": 1777616955509,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772720233110,
+        "changelog": "Initial release of vvvv-editor-extensions.\n\n- Provides guidelines and requirements for creating editor extensions in vvvv gamma.\n- Details .HDE.vl file naming conventions for different extension scenarios.\n- Describes use of the Command node for registering custom commands with labels, visibility, and keyboard shortcuts.\n- Documents available window types (SkiaWindow, SkiaWindowTopMost) and docking with WindowFactory.\n- Explains how to access hovered/selected node information and manipulate pins using VL.Lang Session nodes.\n- Lists developer shortcuts and current limitations (settings panel unavailable, not supported in exported apps).",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "vvvv-dotnet",
+      "displayName": "Vvvv Dotnet",
+      "summary": "Helps with .NET integration in vvvv gamma — NuGet packages, library references, .csproj project configuration, the [assembly: ImportAsIs] attribute, vector t...",
+      "tags": {
+        "latest": "1.0.1"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 379,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 2
+      },
+      "createdAt": 1772720229186,
+      "updatedAt": 1777616942866,
+      "latestVersion": {
+        "version": "1.0.1",
+        "createdAt": 1772750595529,
+        "changelog": "Improved skill descriptions: better triggering for HLSL/shaders, Spreads/collections, ImportAsIs/dotnet, VL packages, reactive channels. Fixed broken cross-skill reference in troubleshooting.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "vvvv-debugging",
+      "displayName": "Vvvv Debugging",
+      "summary": "Set up debugging for vvvv gamma C# node projects -- generate VS Code launch.json and tasks.json configurations, attach debugger to running vvvv, configure Vi...",
+      "tags": {
+        "latest": "1.0.1"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 369,
+        "installsAllTime": 2,
+        "installsCurrent": 2,
+        "stars": 0,
+        "versions": 2
+      },
+      "createdAt": 1772720223474,
+      "updatedAt": 1777616968224,
+      "latestVersion": {
+        "version": "1.0.1",
+        "createdAt": 1772723335728,
+        "changelog": "Initial release",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "vvvv-custom-nodes",
+      "displayName": "Vvvv Custom Nodes",
+      "summary": "Helps write C# node classes for vvvv gamma — the [ProcessNode] pattern, Update() method, out parameters, pin configuration, change detection, stateless opera...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 363,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772720219320,
+      "updatedAt": 1777616999998,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772720219320,
+        "changelog": "vvvv-custom-nodes 1.0.0 — Initial Release\n\n- Provides comprehensive guidance for writing custom C# node classes for vvvv gamma using the [ProcessNode] pattern.\n- Documents best practices: proper use of Update method, out parameters, pin configuration, change detection, stateless node patterns, and IDisposable.\n- Explains how to consume context and services (like NodeContext, IFrameClock, game access, and logging) in node constructors.\n- Details live reload behavior and implications for node state and resource management.\n- Covers naming conventions to avoid “Node” suffixes, pin visibility/grouping, default values, and effective change detection patterns.\n- Requires [assembly: ImportAsIs] for node import.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "vvvv-channels",
+      "displayName": "Vvvv Channels",
+      "summary": "Helps work with vvvv gamma's Channel system from C# — IChannelHub, public channels, [CanBePublished] attributes, hierarchical data propagation, channel subsc...",
+      "tags": {
+        "latest": "1.0.1"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 345,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 2
+      },
+      "createdAt": 1772720212978,
+      "updatedAt": 1777616938852,
+      "latestVersion": {
+        "version": "1.0.1",
+        "createdAt": 1772750593903,
+        "changelog": "Improved skill descriptions: better triggering for HLSL/shaders, Spreads/collections, ImportAsIs/dotnet, VL packages, reactive channels. Fixed broken cross-skill reference in troubleshooting.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "feishu-file-sender-1-0-9",
+      "displayName": "Feishu File Sender 1.0.9",
+      "summary": "飞书文件发送器 — 补齐飞书渠道缺失的文件投递能力，通过飞书 OpenAPI 上传并发送 agent 生成的本地文件。| Feishu File Sender — Upload & send files via Feishu OpenAPI, filling the channel's missing file...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 638,
+        "installsAllTime": 6,
+        "installsCurrent": 5,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772720074325,
+      "updatedAt": 1778304478516,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772720074325,
+        "changelog": "Initial public release: Enables local file upload and delivery via Feishu OpenAPI for OpenClaw agents.\n\n- Uploads local files and delivers them as messages to Feishu chats or users.\n- Auto-detects recipient ID type based on prefix, with fallback to environment/config values.\n- Reads Feishu app credentials from `~/.openclaw/openclaw.json` per agent workspace.\n- Provides detailed error handling and clear usage instructions.\n- Includes a command-line script (`scripts/feishu_file_sender.py`) for direct invocation.",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "baidu-search-1-1-0",
+      "displayName": "Baidu Search 1.1.0",
+      "summary": "Search the web using Baidu AI Search Engine (BDSE). Use for live information, documentation, or research topics.",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 2542,
+        "installsAllTime": 28,
+        "installsCurrent": 24,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772720068976,
+      "updatedAt": 1777616998265,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772720068976,
+        "changelog": "Initial release of Baidu Search skill.\n\n- Enables web searches using the Baidu AI Search Engine (BDSE) via API.\n- Supports search filters for site, date, resource type, recency, and safe search.\n- Allows blocking specific websites from results.\n- Includes detailed usage instructions and request parameter documentation.\n- Command-line interface using Python 3 is provided.",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "upload-files-to-get-online-url",
+      "displayName": "Tencent Cloud Image Hosting (Upload files to get online URLs)",
+      "summary": "Upload files to Tencent Cloud COS (Cloud Object Storage). Use when the user needs to upload images, documents, or any files to Tencent Cloud COS. Supports en...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 407,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772719961159,
+      "updatedAt": 1777617014920,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772719961159,
+        "changelog": "This skill uploads files (images, documents, videos, etc.) to Tencent Cloud COS (Cloud Object Storage). It supports\n  configuration via environment variables or command‑line arguments, generates a unique object key automatically, and\n  returns both a direct URL and a signed URL (24‑hour expiry) for private buckets. Ideal for building simple image\n  hosting or file sharing workflows.\n\n  Primary use cases\n\n  - Upload images and get shareable URLs\n  - Host documents/videos on Tencent COS\n  - Generate signed URLs for private buckets\n  - Automate asset hosting in scripts or pipelines\n\n  Inputs\n\n  - File path to upload\n  - Tencent Cloud Secret ID / Secret Key\n  - COS bucket name\n  - COS region\n  - Optional upload path prefix\n\n  Outputs\n\n  - Direct URL: https://{bucket}.cos.{region}.myqcloud.com/{key}\n  - Signed URL (24‑hour expiration)\n  - COS object key\n\n  Requirements\n\n  - Tencent Cloud COS credentials\n  - Node.js runtime\n  - Access to target bucket and region",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "session-rotate-80",
+      "displayName": "Session Rotate 80",
+      "summary": "Auto-create a new session when OpenClaw context usage reaches 80% without requiring Mem0 or file memory systems. Use when users want default OpenClaw to proa...",
+      "tags": {
+        "latest": "1.0.1"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 354,
+        "installsAllTime": 1,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 2
+      },
+      "createdAt": 1772719913021,
+      "updatedAt": 1777616961912,
+      "latestVersion": {
+        "version": "1.0.1",
+        "createdAt": 1772720165307,
+        "changelog": "Add README and practical usage guide; clarify default OpenClaw no-memory mode",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "smart-money-v2",
+      "displayName": "Smart Money V2",
+      "summary": "聪明钱追踪系统 - 追踪链上大额交易、巨鲸地址动向、机构资金流向、持仓分析、历史交易记录。每次调用需支付0.001 USDT。",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 494,
+        "installsAllTime": 2,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772719799957,
+      "updatedAt": 1778304476324,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772719799957,
+        "changelog": "Smart Money Tracker v1.0.0 – 初始发布\n\n- 实时追踪链上大额交易、巨鲸/机构资金流向与转账动态\n- 提供多链地址持仓分析、历史交易记录及趋势分析工具\n- 支持按币种、金额、时间等多维度自定义筛选\n- 费用：每次调用需支付0.001 USDT，通过 SkillPay 支付\n- API 端点涵盖交易、监控、持仓、趋势等功能",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "frameo",
+      "displayName": "Frameo Photo Frame Control",
+      "summary": "Control Frameo digital photo frames via cloud API for frame info or ADB for full control including photo upload, brightness, screen, and navigation.",
+      "tags": {
+        "adb": "1.0.0",
+        "iot": "1.0.0",
+        "latest": "1.0.0",
+        "photo-frame": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 384,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772719743397,
+      "updatedAt": 1778304475727,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772719743397,
+        "changelog": "Initial release - Cloud API + ADB control for Frameo digital photo frames",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "dual-agent-debate",
+      "displayName": "DualAgentDebate",
+      "summary": "Run a structured 2-agent debate loop between ChatGPT (OpenAI API) and the user's own thoughts retrieved from Supabase Open Brain via MCP, iterating up to 3 r...",
+      "tags": {
+        "latest": "0.3.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 392,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 4
+      },
+      "createdAt": 1772719723636,
+      "updatedAt": 1778304475098,
+      "latestVersion": {
+        "version": "0.3.0",
+        "createdAt": 1772720997722,
+        "changelog": "OAuth-friendly mode via openclaw agent fallback, lexical embedding fallback, and auto-create/retry for public.memories",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "icloud-calendar",
+      "displayName": "Icloud Calendar Skill",
+      "summary": "Add events to iCloud Calendar via CalDAV. Syncs to iPhone automatically with alarm reminders.",
+      "tags": {
+        "latest": "0.1.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 573,
+        "installsAllTime": 4,
+        "installsCurrent": 4,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772719691429,
+      "updatedAt": 1778304474379,
+      "latestVersion": {
+        "version": "0.1.0",
+        "createdAt": 1772719691429,
+        "changelog": "Initial release – add iCloud Calendar event support via CalDAV.\n\n- Add events directly to iCloud Calendar; syncs with iPhone automatically.\n- Supports customizable alarm reminders (default 15 and 5 minutes before).\n- Stores credentials locally in a .env file or via environment variables.\n- Only communicates with Apple's official CalDAV endpoint.\n- Provides clear setup steps and usage examples for adding events.",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "okta",
+      "displayName": "Okta",
+      "summary": "Okta integration. Manage Users. Use when the user wants to interact with Okta data.",
+      "tags": {
+        "latest": "1.0.5"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 526,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 6
+      },
+      "createdAt": 1772719348199,
+      "updatedAt": 1778304472298,
+      "latestVersion": {
+        "version": "1.0.5",
+        "createdAt": 1777569539838,
+        "changelog": "Sync latest repo update (force all run)",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "linear-integration",
+      "displayName": "Linear",
+      "summary": "Linear integration. Manage Issues, Projects, Teams, Users, Cycles, Labels and more. Use when the user wants to interact with Linear data.",
+      "tags": {
+        "latest": "1.0.3"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 529,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 4
+      },
+      "createdAt": 1772719343075,
+      "updatedAt": 1778304471654,
+      "latestVersion": {
+        "version": "1.0.3",
+        "createdAt": 1776773115954,
+        "changelog": "Auto sync from membranedev/application-skills",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "douyin-sensitive-check",
+      "displayName": "抖音违禁词检测",
+      "summary": "抖音/短视频违禁词和敏感词检测（本地词库版，无需 API Key）。每天首次使用自动从 GitHub 开源词库更新本地缓存，离线检测文案合规性。支持多词库合并（广告极限词、平台限流词、暴恐、色情、涉枪涉爆等）。使用场景：(1) 生成短视频文案后自动检测违禁词，(2) 用户要求检查某段文字是否有问题，(3) 抖音/...",
+      "tags": {
+        "latest": "1.0.2"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 535,
+        "installsAllTime": 6,
+        "installsCurrent": 6,
+        "stars": 0,
+        "versions": 3
+      },
+      "createdAt": 1772719332295,
+      "updatedAt": 1777617053280,
+      "latestVersion": {
+        "version": "1.0.2",
+        "createdAt": 1772855057647,
+        "changelog": "fix: 修复 --update 参数触发 UnboundLocalError 的问题（shadow import 冲突）",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "nextcloud-aio-oc",
+      "displayName": "NextCloud AIO OpenClaw",
+      "summary": "Reliable Nextcloud integration for Notes, Tasks, Calendar, Files, and Contacts (CardDAV-safe vCard handling with robust contact create/update).",
+      "tags": {
+        "latest": "1.1.2"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 231,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 7
+      },
+      "createdAt": 1772719219019,
+      "updatedAt": 1778304469262,
+      "latestVersion": {
+        "version": "1.1.2",
+        "createdAt": 1773165082890,
+        "changelog": "Added ability to handle binary documents",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "sol-bsc-dev-monitor",
+      "displayName": "sol-bsc-dev-monitor-skill",
+      "summary": "Unified Dev Wallet Monitor for BSC and Solana - Monitor only, manual buy only, no private keys",
+      "tags": {
+        "latest": "1.0.10"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 409,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 8
+      },
+      "createdAt": 1772718906197,
+      "updatedAt": 1778304468637,
+      "latestVersion": {
+        "version": "1.0.10",
+        "createdAt": 1772769545765,
+        "changelog": "Version 1.0.10 – Adds billing SDK and updates documentation\n\n- Added new file: `billing-final.js` for billing and balance functionality.\n- Updated documentation to clarify billing flow, platform fees, and manual-buy-only process.\n- Provided usage examples for billing actions (balance check, charging, payment link) and detailed monitoring flows.\n- Clarified that private keys are never collected or used; tool remains monitor-only.\n- Added more detailed configuration, API references, and output/result samples.",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "gingiris-opensource",
+      "displayName": "Gingiris Opensource",
+      "summary": "Grow your open source project from 0 to 10,000+ GitHub stars. The exact strategy AFFiNE used to reach 33k stars in 18 months — complete OSS launch SOP, Hacke...",
+      "tags": {
+        "latest": "1.6.7"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 624,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 14
+      },
+      "createdAt": 1772718788792,
+      "updatedAt": 1777616970991,
+      "latestVersion": {
+        "version": "1.6.7",
+        "createdAt": 1777268134302,
+        "changelog": "Optimize description: improve use-case clarity, add keywords, structured scenarios for better discoverability",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "verified-agent-identity-3",
+      "displayName": "holdcc_eth",
+      "summary": "Billions decentralized identity for agents. Link agents to human identities using Billions ERC-8004 and Attestation Registries. Verify and generate authentic...",
+      "tags": {
+        "latest": "1.0.1"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 583,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 4
+      },
+      "createdAt": 1772718659808,
+      "updatedAt": 1778304467634,
+      "latestVersion": {
+        "version": "1.0.1",
+        "createdAt": 1777514218170,
+        "changelog": "- No changes detected in code or documentation content for this version.\n- Version number updated to 1.0.1 without other modifications.",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "edgeos-applications",
+      "displayName": "EdgeOS Applications",
+      "summary": "Apply to an EdgeOS popup city and buy tickets through OpenClaw. Use when users ask to authenticate by email OTP, submit/check popup applications, retrieve ac...",
+      "tags": {
+        "latest": "1.0.2"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 493,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 1,
+        "versions": 3
+      },
+      "createdAt": 1772718339502,
+      "updatedAt": 1778304466873,
+      "latestVersion": {
+        "version": "1.0.2",
+        "createdAt": 1773783846725,
+        "changelog": "Update auth endpoint, add x402 buy-ticket scripts, improve payment-mode prompt, and normalize API base URL to api-citizen-portal.simplefi.tech",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "tweet-monitor-pro",
+      "displayName": "Tweet Monitor Pro",
+      "summary": "Fetch X/Twitter tweets, replies, and timelines without login or API keys. Also supports Chinese platforms (Weibo, Bilibili, CSDN, WeChat).",
+      "tags": {
+        "api": "1.0.0",
+        "latest": "1.0.0",
+        "scraping": "1.0.0",
+        "social": "1.0.0",
+        "twitter": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 449,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772718167752,
+      "updatedAt": 1778304466251,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772718167752,
+        "changelog": "Initial release: Fetch X/Twitter tweets without API. Free tier 10 calls, Pro .9/mo (1000 calls), Business .9/mo (unlimited).",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "gingiris-b2b-growth",
+      "displayName": "Gingiris B2b Growth",
+      "summary": "Scale your B2B SaaS from $0 to $10M ARR using battle-tested PLG/SLG growth models, sales deck templates, and partner program blueprints — proven by HeyGen, D...",
+      "tags": {
+        "latest": "1.7.7"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 737,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 14
+      },
+      "createdAt": 1772718141638,
+      "updatedAt": 1777616918619,
+      "latestVersion": {
+        "version": "1.7.7",
+        "createdAt": 1777268086267,
+        "changelog": "Optimize description: improve use-case clarity, add keywords, structured scenarios for better discoverability",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "gingiris-launch",
+      "displayName": "Gingiris Launch",
+      "summary": "Take your AI product from zero buzz to Product Hunt #1 and 1,000+ day-one sign-ups. A 6-week GTM framework with hour-by-hour launch day tactics, KOL outreach...",
+      "tags": {
+        "latest": "1.3.5"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 625,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 1,
+        "versions": 15
+      },
+      "createdAt": 1772718125520,
+      "updatedAt": 1777616958695,
+      "latestVersion": {
+        "version": "1.3.5",
+        "createdAt": 1777268108900,
+        "changelog": "Optimize description: improve use-case clarity, add keywords, structured scenarios for better discoverability",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "byreal-cli",
+      "displayName": "Byreal Cli",
+      "summary": "Byreal DEX (Solana) data & analytics CLI: query pools, tokens, TVL, APR, k-line charts, farmer rankings, launchpad projects, and DeFi position stats. Use whe...",
+      "tags": {
+        "latest": "0.2.7"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 547,
+        "installsAllTime": 2,
+        "installsCurrent": 2,
+        "stars": 1,
+        "versions": 4
+      },
+      "createdAt": 1772718094522,
+      "updatedAt": 1778304464618,
+      "latestVersion": {
+        "version": "0.2.7",
+        "createdAt": 1773386284471,
+        "changelog": "Reduce security flag surface: remove private key paths from metadata, reframe as data & analytics CLI",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "probtrade",
+      "displayName": "Openclaw Skill",
+      "summary": "Polymarket prediction markets: analytics, trading, hot markets, price movements, top traders, and market search. Powered by prob.trade.",
+      "tags": {
+        "latest": "2.0.5"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 388,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772718093407,
+      "updatedAt": 1778304463903,
+      "latestVersion": {
+        "version": "2.0.5",
+        "createdAt": 1772718093407,
+        "changelog": "Fix HMAC signature body format, add post_public() for analyze command",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "skillsmp-search",
+      "displayName": "Skillsmp Search",
+      "summary": "从 SkillsMP 市场搜索 AI Agent Skills。支持关键词搜索和 AI 语义搜索。",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 397,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772718068131,
+      "updatedAt": 1777616989343,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772718068131,
+        "changelog": "- Initial release of skillsmp-search.\n- Search AI Agent Skills from the SkillsMP marketplace.\n- Supports both keyword and AI semantic search.\n- Optional filters: result limit and category.\n- Requires SkillsMP API Key for access.",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "openclaw-network-diagnostics",
+      "displayName": "Openclaw Network Diagnostics",
+      "summary": "Standalone advanced network diagnostics for OpenClaw to continuously test end-to-end connectivity from OpenClaw agent to Telegram Bot API and approximate del...",
+      "tags": {
+        "latest": "0.1.1"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 491,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 2
+      },
+      "createdAt": 1772718008130,
+      "updatedAt": 1778304462833,
+      "latestVersion": {
+        "version": "0.1.1",
+        "createdAt": 1772801724938,
+        "changelog": "openclaw-network-diagnostics v0.1.1\n\n- Updated `scripts/netdiag.py` (details not shown, likely minor or internal changes).\n- No changes to features, configuration, usage, or documentation.\n- No impact on main workflow or CLI arguments.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "ynote-clip",
+      "displayName": "YNote Clip",
+      "summary": "网页剪藏到有道云笔记。触发词：剪藏网页、保存网页、收藏网页、ynote clip、clip to ynote、网页摘录。",
+      "tags": {
+        "latest": "1.8.1"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 448,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772717950591,
+      "updatedAt": 1778304462065,
+      "latestVersion": {
+        "version": "1.8.1",
+        "createdAt": 1772717950591,
+        "changelog": "有道云笔记收藏网页",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "head-hunter",
+      "displayName": "Head Hunter",
+      "summary": "AI-powered headhunter system for intelligent candidate-job matching. Provides professional recruitment assistance with multi-dimensional matching algorithms,...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 446,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772717759175,
+      "updatedAt": 1777616967937,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772717759175,
+        "changelog": "- Initial release of the head-hunter skill.\n- Provides AI-powered candidate-job matching and recruitment recommendations.\n- Features multi-dimensional matching algorithms and automatic skill analysis.\n- Supports batch ranking of candidates and delivers detailed candidate insights.\n- Usable across Darwin, Linux, and Windows platforms.",
+        "license": null
+      },
+      "metadata": {
+        "os": [
+          "darwin",
+          "linux",
+          "win32"
+        ],
+        "systems": null
+      }
+    },
+    {
+      "slug": "pafh-mini",
+      "displayName": "PAFH-Memory",
+      "summary": "PAHF (Personalized Agents from Human Feedback) - Continual Personalization Framework. Triggered when applying the PAHF three-step loop: (1) Pre-action Clarif...",
+      "tags": {
+        "latest": "1.0.2"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 407,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 1,
+        "versions": 3
+      },
+      "createdAt": 1772717724134,
+      "updatedAt": 1777616964431,
+      "latestVersion": {
+        "version": "1.0.2",
+        "createdAt": 1772768454403,
+        "changelog": "PAHF-mini v1.0.2\n\n- Added explicit privacy, consent, and write-confirmation policies to the skill manifest and documentation.\n- Declared formal dependencies on `memory_search`, `memory_get`, and required memory file read/write permissions.\n- Defined new writable memory locations, including user-specific preference files.\n- Updated documentation to detail when and how user confirmation is requested before recording preferences.\n- Outlined sensitive data handling: explicitly states that such data is never stored.\n- No code changes; all enhancements are in metadata and documentation for clarity and consent management.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "aibrary-growth-plan",
+      "displayName": "Aibrary Growth Plan",
+      "summary": "[Aibrary] Create a structured personal growth plan with book recommendations, milestones, and actionable weekly tasks. Use when the user wants to create a le...",
+      "tags": {
+        "latest": "0.1.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 316,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772717695594,
+      "updatedAt": 1777616916397,
+      "latestVersion": {
+        "version": "0.1.0",
+        "createdAt": 1772717695594,
+        "changelog": "- Initial release of aibrary-growth-plan: create structured, time-bound personal growth plans focused on skills or knowledge development.\n- Generates multi-phase roadmaps with weekly actionable tasks, recommended books, milestones, and checkpoints.\n- Includes reflection prompts, practice activities, and accountability mechanisms such as self-assessment and plan reviews.\n- Supports plan customization by goal, duration, user level, weekly time, and personal constraints.\n- Responds in the user's input language for accessibility.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "aibrary-reading-list",
+      "displayName": "Aibrary Reading List",
+      "summary": "[Aibrary] Generate a curated, themed reading list with multiple books organized in a logical reading order. Use when the user wants a systematic book list on...",
+      "tags": {
+        "latest": "0.1.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 339,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772717667678,
+      "updatedAt": 1777616917191,
+      "latestVersion": {
+        "version": "0.1.0",
+        "createdAt": 1772717667678,
+        "changelog": "Initial release: Generate curated, themed reading lists to help users systematically build expertise in any domain.\n\n- Organizes books into logical stages: Foundation, Depth, and Synthesis, with clear reading order.\n- Distinguishes \"Essential\" vs. \"Recommended\" books.\n- Includes quick-start option for users short on time.\n- Adapts difficulty and scope to user preferences and input.\n- Provides connective explanations between reading stages for increased learning clarity.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "web-to-markdown",
+      "displayName": "web-to-markdown",
+      "summary": "网页内容抓取与图片提取技能。支持：(1) 将网页转换为 Markdown 格式阅读 (2) 从任意网站提取图片 URL (3) 批量下载网页图片。当需要抓取网页内容、读取文章、提取或下载网站图片时使用此技能。支持 markdown.new、defuddle.md、r.jina.ai 等转换服务，自动降级确保成功。...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 391,
+        "installsAllTime": 6,
+        "installsCurrent": 6,
+        "stars": 1,
+        "versions": 1
+      },
+      "createdAt": 1772717410962,
+      "updatedAt": 1777617025701,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772717410962,
+        "changelog": "- Initial release of web-to-markdown skill.\n- Convert any web page to clean Markdown for easier reading.\n- Extract all image URLs from any website with simple commands or scripts.\n- Batch-download images from web pages, with options for file type, size, and destination folder.\n- Supports multiple conversion services (markdown.new, defuddle.md, r.jina.ai) with automatic fallback for reliability.\n- Special handling for sites like Pinterest; works with dynamic and lazy-loaded images.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "comprehensive-tech-documentation",
+      "displayName": "Comprehensive Tech Documentation",
+      "summary": "Creates layered, comprehensive technical documentation for projects, skills, or systems. Use when user requests 'write technical documentation', 'explain how...",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 778,
+        "installsAllTime": 2,
+        "installsCurrent": 2,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772717280023,
+      "updatedAt": 1778304457010,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772717280023,
+        "changelog": "- Introduces a skill that generates comprehensive, layered technical documentation for projects, skills, or systems.\n- Provides a four-part documentation suite: Technical Principles, Architecture Visualization (with Mermaid diagrams), Quick Reference Guide, and Navigation Index—each serving distinct audiences.\n- Adapts the output based on user requests and system complexity, guided by an included decision tree.\n- Supplies detailed workflow, document templates, and best practices for building and verifying documentation sets.\n- Focuses on clarity, navigability, and role-based learning paths to meet needs from quick referencing to deep technical dives.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "minara-skill-v2",
+      "displayName": "Minara Skill V2",
+      "summary": "Crypto trading: swap, perps, transfer, pay, deposit (credit card / crypto), withdraw, AI chat, market discovery, x402 payment, autopilot. Built-in wallet via...",
+      "tags": {
+        "ai": "1.0.0",
+        "defi": "1.0.0",
+        "latest": "1.0.0",
+        "minara": "1.0.0",
+        "trading": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 386,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 1,
+        "versions": 1
+      },
+      "createdAt": 1772717190385,
+      "updatedAt": 1778304455684,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772717190385,
+        "changelog": "minara-skill-v2 1.0.0\n\n- Initial release introducing crypto trading and wallet functionality via the Minara CLI.\n- Supports actions such as swap, perps (perpetual futures), transfer, payment, deposit (credit card/crypto), withdrawal, market discovery, and autopilot trading.\n- Built-in wallet for EVM and Solana blockchains; requires Minara authentication (CLI or API key).\n- Implements strict transaction confirmation: all fund-moving actions require explicit user approval before proceeding.\n- Advanced intent routing to trigger the correct action only when both a finance/trading action and crypto context are present.",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "aibrary-book-search",
+      "displayName": "Aibrary Book Search",
+      "summary": "[Aibrary] Search and find books based on user scenarios, needs, questions, or keywords. Use when the user describes a situation, challenge, or topic and want...",
+      "tags": {
+        "latest": "0.1.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 364,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772717133823,
+      "updatedAt": 1777616912325,
+      "latestVersion": {
+        "version": "0.1.0",
+        "createdAt": 1772717133823,
+        "changelog": "- Initial release of aibrary-book-search skill.\n- Enables book recommendations based on user scenarios, needs, questions, or keywords.\n- Categorizes searches across multiple domains (e.g., technology, business, personal development).\n- Provides ranked, relevance-focused book lists with concise explanations for each match.\n- Automatically responds in the user’s language.\n- Includes guidelines for mixing classics and recent publications, and for asking clarifying questions on vague inputs.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "cc-changelog-monitor",
+      "displayName": "Claude Code Changelog Monitor",
+      "summary": "Monitor Claude Code releases and get Telegram alerts when new versions ship. Zero AI credits — pure bash monitoring.",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 465,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772717119405,
+      "updatedAt": 1778304454550,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772717119405,
+        "changelog": "Initial release - monitors Claude Code on npm, sends Telegram alerts on new versions. Zero AI credits.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "aibrary-book-recommend",
+      "displayName": "Aibrary Book Recommend",
+      "summary": "[Aibrary] Recommend books based on user interests, goals, challenges, or career stage. Use when the user asks for book recommendations, says they don't know...",
+      "tags": {
+        "latest": "0.1.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 361,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772717097683,
+      "updatedAt": 1777616912056,
+      "latestVersion": {
+        "version": "0.1.0",
+        "createdAt": 1772717097683,
+        "changelog": "Initial release — personalized book recommendations based on user interests, goals, and career stage.\n\n- Provides tailored book suggestions (1-3) with deep rationales linked to user input.\n- Includes practical reading strategies and a follow-up book to guide continued learning.\n- Asks clarifying questions if user context is unclear.\n- Distinct from book search; focuses on matching books to the user's journey, not just topics.\n- Responds in the user’s own language for a personalized experience.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "ynote-news",
+      "displayName": "YNote News",
+      "summary": "有道云笔记资讯推送：基于收藏笔记分析关注话题，推送最新相关资讯。支持对话触发与每日定时推送（如早上9点）。触发词：资讯推送、设置资讯推送、生成资讯推送。",
+      "tags": {
+        "latest": "1.2.4"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 435,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772716919265,
+      "updatedAt": 1778304453594,
+      "latestVersion": {
+        "version": "1.2.4",
+        "createdAt": 1772716919265,
+        "changelog": "有道云笔记资讯推送",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "neo-browser",
+      "displayName": "Neo — Web App API Discovery",
+      "summary": "Browse websites, read web pages, interact with web apps, call website APIs, and automate web tasks. Use Neo when: user asks to check a website, read a web pa...",
+      "tags": {
+        "latest": "2.1.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 718,
+        "installsAllTime": 2,
+        "installsCurrent": 2,
+        "stars": 0,
+        "versions": 12
+      },
+      "createdAt": 1772716728399,
+      "updatedAt": 1778304453003,
+      "latestVersion": {
+        "version": "2.1.0",
+        "createdAt": 1777375092596,
+        "changelog": "Release v2.1.0",
+        "license": null
+      },
+      "metadata": {
+        "os": null,
+        "systems": null
+      }
+    },
+    {
+      "slug": "playwright-pro",
+      "displayName": "Playwright Pro",
+      "summary": "Production-grade Playwright testing toolkit. Use when the user mentions Playwright tests, end-to-end testing, browser automation, fixing flaky tests, test mi...",
+      "tags": {
+        "latest": "2.1.1"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 2286,
+        "installsAllTime": 15,
+        "installsCurrent": 14,
+        "stars": 2,
+        "versions": 3
+      },
+      "createdAt": 1772716324843,
+      "updatedAt": 1778304452196,
+      "latestVersion": {
+        "version": "2.1.1",
+        "createdAt": 1773116416765,
+        "changelog": "v2.1.1: optimization, reference splits",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "ppt2wechat",
+      "displayName": "一键生成PPT截图和缩略图工具发布到微信去的工具，MAC版本",
+      "summary": "自动将指定Mac路径下的PPT按页生成截图和缩略图，并发布到微信公众号，支持自定义配置和参数调整。",
+      "tags": {
+        "latest": "1.0.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 497,
+        "installsAllTime": 0,
+        "installsCurrent": 0,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772715843191,
+      "updatedAt": 1778304451561,
+      "latestVersion": {
+        "version": "1.0.0",
+        "createdAt": 1772715843191,
+        "changelog": "ppt2wechat 1.0.0 – Initial Release\n\n- Automatically converts each slide of a specified PPT to a PNG screenshot and generates 3x3 thumbnails.\n- Publishes the generated images to a designated WeChat official account using user-provided credentials.\n- Customizable settings through config.json, including PPT location, output DPI, grid layout, and external tool paths.\n- Supports PPT to PDF (LibreOffice) and PDF to PNG (Ghostscript) workflow on macOS.\n- Requires prior installation of Ghostscript and Pillow.",
+        "license": null
+      },
+      "metadata": null
+    },
+    {
+      "slug": "skill-10",
+      "displayName": "Clawra Selfie",
+      "summary": "Edit Clawra's reference image with Grok Imagine (xAI Aurora) and send selfies to messaging channels via OpenClaw",
+      "tags": {
+        "latest": "0.1.0"
+      },
+      "stats": {
+        "comments": 0,
+        "downloads": 446,
+        "installsAllTime": 1,
+        "installsCurrent": 1,
+        "stars": 0,
+        "versions": 1
+      },
+      "createdAt": 1772715791178,
+      "updatedAt": 1778304450940,
+      "latestVersion": {
+        "version": "0.1.0",
+        "createdAt": 1772715791178,
+        "changelog": "Clawra Selfie skill initial release.\n\n- Enables editing of Clawra's reference image using Grok Imagine (xAI Aurora) based on user-specified context.\n- Automatically detects selfie mode (\"mirror\" or \"direct\") from user input.\n- Sends generated selfies to various messaging channels (WhatsApp, Telegram, Discord, Slack, etc.) via OpenClaw.\n- Provides Bash and Node.js/TypeScript example scripts for integration and automation.\n- Requires FAL API key and OpenClaw Gateway token to function.",
+        "license": null
+      },
+      "metadata": null
+    }
+  ]
+}

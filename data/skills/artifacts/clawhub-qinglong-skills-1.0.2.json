@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qinglong-skills@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qinglong_skills",
+  "skill": {
+    "id": 56083,
+    "skillKey": "clawhub-qinglong-skills",
+    "name": "Qinglong Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qinglong-skills",
+    "url": "https://clawhub.ai/skills/qinglong-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qinglong-skills-57169049e19e6bf4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage QingLong (青龙) panel via REST API — cron jobs, environment variables, scripts, dependencies, subscriptions, logs and system operations. Use this skill..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nnnnzs",
+      "userId": "s17456np3pkm873k4rwm6e46hn83hd5m",
+      "displayName": "NNNNzs",
+      "image": "https://avatars.githubusercontent.com/u/27205495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 234,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1777015707238,
+      "changelog": "- Added explicit usage guidance in SKILL.md, including patterns for handling user requests and best practices before modifying resources.\n- Added a \"How to approach user requests\" section with safety and workflow tips.\n- Clarified security posture: skill only connects to user-provided, self-hosted QingLong panel.\n- Moved installation and setup instructions to a new references/setup.md file and referenced it from SKILL.md.\n- Improved troubleshooting section and reformatted quick reference commands for greater clarity.\n- Minor metadata updates (added version, expanded trigger description) to assist with skill invocation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6b591cd5e375d0f75802f49597268c78c6054df2574b126790eaaf750cd1d267"
+}

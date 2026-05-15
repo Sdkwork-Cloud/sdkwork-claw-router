@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15941,
+  "uuid": "skill-clawhub-supurr-hyperliquid",
+  "skillKey": "clawhub-supurr-hyperliquid",
+  "name": "Supurr Hyperliquid Algorithmic Trading",
+  "summary": "Backtest, deploy, and monitor trading bots on Hyperliquid. Supports Grid, DCA, and Spot-Perp Arbitrage strategies across Native Perps, Spot markets (USDC/USDH), and HIP-3 sub-DEXes.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.supurr_hyperliquid",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yashagarwal1994",
+      "features": [
+        "Backtest, deploy, and monitor trading bots on Hyperliquid",
+        "Supports Grid, DCA, and Spot-Perp Arbitrage strategies across Native Perps, Spot markets (USDC/."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/supurr-hyperliquid@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/99706541?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "supurr-hyperliquid",
+      "url": "https://clawhub.ai/skills/supurr-hyperliquid"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "supurr-hyperliquid",
+    "url": "https://clawhub.ai/skills/supurr-hyperliquid",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/supurr-hyperliquid-b25c2b61bc3e4baa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/supurr-hyperliquid@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-supurr-hyperliquid-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4950dd53f377ed3b254213bcc767c576b98ec227254d54959f8316cafda250a",
+      "artifactSizeBytes": 2455
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T12:52:37.582Z"
+}

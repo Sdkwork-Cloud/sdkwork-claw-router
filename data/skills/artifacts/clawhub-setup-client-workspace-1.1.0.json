@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/setup-client-workspace@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.setup_client_workspace",
+  "skill": {
+    "id": 55137,
+    "skillKey": "clawhub-setup-client-workspace",
+    "name": "Setup Client Workspace (TNCG)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "setup-client-workspace",
+    "url": "https://clawhub.ai/skills/setup-client-workspace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/setup-client-workspace-0ac4fdeaad282f55.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Mise en place d'un workspace agent dédié pour un nouveau client TNCG. Utiliser quand Erwan demande de configurer un nouvel agent client (workspace, fichiers..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "superworldsavior",
+      "userId": "s1780dfmwpjesx1ngmtvpg2bds858vsj",
+      "displayName": "Erwan Lee Pesle",
+      "image": "https://avatars.githubusercontent.com/u/20945750?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774184653959,
+      "changelog": "v1.1.0: escalation via webhook gateway au lieu de sessions_send, skill escalation intégré au workflow d'onboarding",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c9c00d24c5d9fc8cabea626c420a31cceb041e9614a84a614a0ef0d591474deb"
+}

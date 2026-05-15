@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/maxun@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maxun",
+  "skill": {
+    "id": 18374,
+    "skillKey": "clawhub-maxun",
+    "name": "Maxun"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maxun",
+    "url": "https://clawhub.ai/skills/maxun",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maxun-64e7dd168a68c62a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "List and run Maxun web scraping robots. Use when asked to list robots, run a robot, scrape a website, or get robot results."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rohitr311",
+      "userId": "s179y76nfewvh4pns75xm3fv2584855h",
+      "displayName": "Rohit",
+      "image": "https://avatars.githubusercontent.com/u/70875861?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 596,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775842457129,
+      "changelog": "- Support for self-hosted instances",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9d04b6226afb6e65bff1647c689ee8bd5e4eed5532425dcd61897c0d758be156"
+}

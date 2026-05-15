@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/myfirstgit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.myfirstgit",
+  "skill": {
+    "id": 28063,
+    "skillKey": "clawhub-myfirstgit",
+    "name": "myfirstgit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "myfirstgit",
+    "url": "https://clawhub.ai/skills/myfirstgit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/myfirstgit-94f70f3a03fa05b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with GitHub via CLI to list repositories, issues, pull requests, and create new issues in your repositories."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "m3159",
+      "userId": "publishers:m3159",
+      "displayName": "M3159",
+      "image": "https://avatars.githubusercontent.com/u/194778408?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 334,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773747283218,
+      "changelog": "myfirstgit 1.0.0\n\n- Initial release with GitHub CLI integration.\n- List your repositories, issues, and pull requests from the command line.\n- Create issues directly from the terminal.\n- Requires GitHub CLI (`gh`), Node.js, and Claw Hub.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a30420692dbac365c8fce96e29aa359ebdb9fe4621156bb1a1e8e747cba798d2"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22240,
+  "uuid": "skill-clawhub-newsletter-kit",
+  "skillKey": "clawhub-newsletter-kit",
+  "name": "NewsletterKit Email Newsletter Builder",
+  "summary": "Build and format email newsletters from agent-curated content. Sections, formatting, subscriber-friendly HTML output. Works with any email service.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.newsletter_kit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shadow Rose",
+      "features": [
+        "Build and format email newsletters from agent-curated content",
+        "Sections, formatting, subscriber-friendly HTML output",
+        "Works with any email service."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/newsletter-kit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262919821?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "newsletter-kit",
+      "url": "https://clawhub.ai/skills/newsletter-kit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "newsletter-kit",
+    "url": "https://clawhub.ai/skills/newsletter-kit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/newsletter-kit-9bffd09f9f5c2dda.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/newsletter-kit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-newsletter-kit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f8329569623b4c2c7839aa2ee4ac022bad0eadb66340a35bb565dfd047abd8d1",
+      "artifactSizeBytes": 1904
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T02:30:08.014Z"
+}

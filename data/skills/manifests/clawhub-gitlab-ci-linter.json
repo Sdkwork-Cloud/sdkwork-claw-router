@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37608,
+  "uuid": "skill-clawhub-gitlab-ci-linter",
+  "skillKey": "clawhub-gitlab-ci-linter",
+  "name": "Gitlab CI Linter",
+  "summary": "Lint and validate GitLab CI/CD pipeline YAML files (.gitlab-ci.yml) for syntax errors, security issues, deprecated patterns, and best practices. Use when ask...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gitlab_ci_linter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Lint and validate GitLab CI/CD pipeline YAML files (.gitlab-ci.yml) for syntax errors, security.",
+        "Use when ask..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gitlab-ci-linter@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gitlab-ci-linter",
+      "url": "https://clawhub.ai/skills/gitlab-ci-linter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gitlab-ci-linter",
+    "url": "https://clawhub.ai/skills/gitlab-ci-linter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gitlab-ci-linter-d4912a0bedb18f3c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gitlab-ci-linter@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gitlab-ci-linter-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:71826ab6fc58b085b1d40c52d3d5eb69bbe24aba34955066fbfd5337b3e1e23e",
+      "artifactSizeBytes": 2034
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:01:38.985Z"
+}

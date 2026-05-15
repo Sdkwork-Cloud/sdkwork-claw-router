@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/create-agent-feishu@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.create_agent_feishu",
+  "skill": {
+    "id": 60071,
+    "skillKey": "clawhub-create-agent-feishu",
+    "name": "Openclaw Create Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "create-agent-feishu",
+    "url": "https://clawhub.ai/skills/create-agent-feishu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/create-agent-feishu-3ac859ed0ae16754.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在 OpenClaw 中创建一个新的 Agent 智能体，包括 workspace 目录结构、记忆系统文件、openclaw.json 配置修改、飞书 channel 与 binding 设置。适用于新增 AI 分身、多角色管理等场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "caoyachao",
+      "userId": "s17c8nwvz269n17p2y4dc46xfn83kk1d",
+      "displayName": "caoyachao",
+      "image": "https://avatars.githubusercontent.com/u/13848791?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1776331510944,
+      "changelog": "Add subagents.allowAgents configuration for multi-agent collaboration",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7cd4af1d659b135be2344a535c001bca8fdc16bedda51ef793a728bdbbf5cd7e"
+}

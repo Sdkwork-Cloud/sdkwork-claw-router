@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66481,
+  "uuid": "skill-clawhub-twitter-daily-digest",
+  "skillKey": "clawhub-twitter-daily-digest",
+  "name": "Twitter Daily Digest",
+  "summary": "批量获取并整理用户关注的所有 Twitter/X 账号最近 24 小时内的更新。当用户提到“每日推文摘要”“今日推文”“关注的人最近发了什么”“Twitter digest”“推特日报”“帮我看看推特”“刷推”，或要求查看单个/多个指定 X 账号最近动态时，都应触发此 skill。默认输出中文整合版正文；如需测试...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twitter_daily_digest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sycamore",
+      "features": [
+        "批量获取并整理用户关注的所有 Twitter/X 账号最近 24 小时内的更新。当用户提到“每日推文摘要”“今日推文”“关注的人最近发了什么”“Twitter digest”“推特日报”“帮."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/twitter-daily-digest@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24859127?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "twitter-daily-digest",
+      "url": "https://clawhub.ai/skills/twitter-daily-digest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twitter-daily-digest",
+    "url": "https://clawhub.ai/skills/twitter-daily-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twitter-daily-digest-685b0755298286ca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/twitter-daily-digest@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-twitter-daily-digest-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:11cad39298d7beabdbee7412cc131e3a27f398fdf2fae8a4be1f2d88d8750c94",
+      "artifactSizeBytes": 2735
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T14:10:22.815Z"
+}

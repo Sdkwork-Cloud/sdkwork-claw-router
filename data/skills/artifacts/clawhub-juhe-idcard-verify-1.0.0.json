@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/juhe-idcard-verify@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.juhe_idcard_verify",
+  "skill": {
+    "id": 71475,
+    "skillKey": "clawhub-juhe-idcard-verify",
+    "name": "身份证二要素核验 - 聚合数据"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "juhe-idcard-verify",
+    "url": "https://clawhub.ai/skills/juhe-idcard-verify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/juhe-idcard-verify-aa3eebf559ea5174.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "身份证实名认证。验证姓名与身份证号是否一致，支持全国居民身份证。使用场景：用户说\"身份证认证\"、\"实名认证\"、\"验证身份证\"、\"姓名和身份证是否匹配\"、\"身份证二要素核验\"等。通过聚合数据（juhe.cn）API 实时核验，免费注册每天免费调用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "juhemcp",
+      "userId": "s177jncsg336bzyjhff66cjn8n83j6jg",
+      "displayName": "juhe-skills",
+      "image": "https://avatars.githubusercontent.com/u/203600343?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774502373331,
+      "changelog": "- Initial release of juhe-idcard-verify skill for nationwide Chinese ID card real-name authentication.\n- Supports verification of name and ID number consistency via Juhe API.\n- Includes usage instructions for script and direct API calls.\n- Provides guidance for environment setup and error handling.\n- Suitable for scenarios like identity verification, real-name authentication, and ID number matching.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d779285966f5d2c4dcc1d3bafe4f7cc580db29975f4c0a0b83c16785f7b5cbf6"
+}

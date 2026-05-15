@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51079,
+  "uuid": "skill-clawhub-token-compressor",
+  "skillKey": "clawhub-token-compressor",
+  "name": "3-Layer Token Compressor — Cut AI API Costs 40-60%",
+  "summary": "Pre-process prompts through 3 compression layers before sending to paid APIs. Uses a local Ollama model to intelligently compress messages and summarize hist...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.token_compressor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shadow Rose",
+      "features": [
+        "Pre-process prompts through 3 compression layers before sending to paid APIs",
+        "Uses a local Ollama model to intelligently compress messages and summarize hist..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/token-compressor@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262919821?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "token-compressor",
+      "url": "https://clawhub.ai/skills/token-compressor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "token-compressor",
+    "url": "https://clawhub.ai/skills/token-compressor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/token-compressor-df3ec9f86e869324.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/token-compressor@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-token-compressor-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:960161c0aadcb4bc1207646f3c6f22ea2b6b0bdc80d642bdd86a628fce50bcf1",
+      "artifactSizeBytes": 2160
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T06:26:53.357Z"
+}

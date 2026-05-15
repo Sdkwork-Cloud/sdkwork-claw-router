@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ftp-client-zc@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ftp_client_zc",
+  "skill": {
+    "id": 47762,
+    "skillKey": "clawhub-ftp-client-zc",
+    "name": "ftp-client-zc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ftp-client-zc",
+    "url": "https://clawhub.ai/skills/ftp-client-zc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ftp-client-zc-e7470817508b36a8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Performs basic FTP operations like list, upload, download, delete, and rename using stored or provided credentials with Node.js basic-ftp."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openclawzhangchong",
+      "userId": "s178cqx9kma3mpnvqe8evteyr983hvb4",
+      "displayName": "张翀",
+      "image": "https://avatars.githubusercontent.com/u/270544860?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 109,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776486790783,
+      "changelog": "Initial release of FTP Client Skill (ZC):\n\n- Provides basic FTP operations: list, upload, download, delete, and rename.\n- Uses the Node.js `basic-ftp` library for all FTP actions.\n- Retrieves credentials securely from OpenClaw's secret store or a local `creds.json` fallback.\n- All network actions require explicit user approval before execution.\n- Credentials are never logged; local credential files are excluded from published packages.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3285e041c251d9e498357a7a6c92ecb06568b7cb4b00e26ea0153b5f20de5c1e"
+}

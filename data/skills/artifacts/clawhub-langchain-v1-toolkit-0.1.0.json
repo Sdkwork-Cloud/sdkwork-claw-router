@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/langchain-v1-toolkit@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.langchain_v1_toolkit",
+  "skill": {
+    "id": 58345,
+    "skillKey": "clawhub-langchain-v1-toolkit",
+    "name": "Langchain V1 Toolkit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "langchain-v1-toolkit",
+    "url": "https://clawhub.ai/skills/langchain-v1-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/langchain-v1-toolkit-a39a96f319bd0251.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "LangChain v1：把 LLM、prompt、tool、retriever、parser 暴露为 Runnable，用 `|` 操作符（LCEL）组合成统一 invoke / stream / batch 接口的链。 LangChain v1: exposes LLMs, prompts, tools, r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tangweigang-jpg",
+      "userId": "s17ewpx5vannmrm5gje4p746kd83hyk1",
+      "displayName": "Tang Weigang",
+      "image": "https://avatars.githubusercontent.com/u/259277235?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1777109930732,
+      "changelog": "LangChain v1 (LCEL + create_agent) skill — 51 constraints / 1 fatal. Covers v0→v1 migration traps.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9d3890c332eca4bc3a040d542a11d8c6aa8d85377932db514184e1a17e3e4ca4"
+}

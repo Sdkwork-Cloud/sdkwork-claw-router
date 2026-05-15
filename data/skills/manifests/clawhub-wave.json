@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52122,
+  "uuid": "skill-clawhub-wave",
+  "skillKey": "clawhub-wave",
+  "name": "Wave",
+  "summary": "Wave accounting — invoices, customers, transactions, accounts, products, taxes. Small business accounting CLI.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wave",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aiwithabidi",
+      "features": [
+        "Wave accounting — invoices, customers, transactions, accounts, products, taxes",
+        "Small business accounting CLI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wave@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208891229?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wave",
+      "url": "https://clawhub.ai/skills/wave"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wave",
+    "url": "https://clawhub.ai/skills/wave",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wave-4b125ec99a744705.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wave@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wave-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:140e72d66069845bdb5192c73f3e29b19f7d97132c1ecb6a4894193a96dac83c",
+      "artifactSizeBytes": 2183
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T00:52:37.504Z"
+}

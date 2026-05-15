@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60564,
+  "uuid": "skill-clawhub-web-novel-creator",
+  "skillKey": "clawhub-web-novel-creator",
+  "name": "Web Novel Creator (网文创作协调层)",
+  "summary": "网文创作兼容协调层。 定位：不做一个独立的创作引擎，而是让现有的优秀创作Skill（如 novel-generator、open-novel-writing、novel-orchestrator 等）能够无缝对接 Memory Manager Pro 的索引系统。 核心价值：(1) 提供统一的项目目录规范，让各S...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_novel_creator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cappuccino",
+      "features": [
+        "网文创作兼容协调层。 定位：不做一个独立的创作引擎，而是让现有的优秀创作Skill（如 novel-generator、open-novel-writing、novel-orchestrat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-novel-creator@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31878199?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-novel-creator",
+      "url": "https://clawhub.ai/skills/web-novel-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-novel-creator",
+    "url": "https://clawhub.ai/skills/web-novel-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-novel-creator-0ab75040fd58749e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-novel-creator@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-novel-creator-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d2d3b9820524be478081ec21ab8d893b706d98c30577bdb775fd8956fee5b4e3",
+      "artifactSizeBytes": 2291
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T13:54:31.501Z"
+}

@@ -1,0 +1,48 @@
+{
+  "skill": {
+    "slug": "clawcontract",
+    "displayName": "clawcontract",
+    "summary": "AI-powered smart contract generator, analyzer, and deployer for BNB Chain (BSC/opBNB). Use when you need to generate Solidity from natural language, run secu...",
+    "tags": {
+      "latest": "1.0.8"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 874,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 9
+    },
+    "createdAt": 1771004675405,
+    "updatedAt": 1778385626845
+  },
+  "latestVersion": {
+    "version": "1.0.8",
+    "createdAt": 1771074700485,
+    "changelog": "Version 1.0.8\n\n- Updated safety documentation:\n  - Mainnet deployment now issues a warning but does not block on user prompt; deploy proceeds automatically, supporting agent-driven use cases.\n  - The `delete` command is now the only interactive prompt; use `--force` to bypass confirmation when deleting local deployment metadata.\n  - Clarified that automatic AI-powered security fixes only affect generated contract files and added instructions for disabling auto-fix or deployment.\n  - Explicitly described safeguards against accidental mainnet deployment—both a funded key and manual mainnet selection are required.\n- Adjusted required environment variables; `CLAWCONTRACT_OPENROUTER_MODEL` is now optional.",
+    "license": null
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "sufnoobzac",
+    "userId": "publishers:sufnoobzac",
+    "displayName": "cvpfus",
+    "image": "https://avatars.githubusercontent.com/u/15175579?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778385626845
+  }
+}

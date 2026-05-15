@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37676,
+  "uuid": "skill-clawhub-weekly-review-builder",
+  "skillKey": "clawhub-weekly-review-builder",
+  "name": "Weekly Review Builder",
+  "summary": "Build a weekly review that refreshes project phase, bottleneck, and next steps. Use on: weekly schedule, after several daily loops, before resetting project...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weekly_review_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sunbinnju-star",
+      "features": [
+        "Build a weekly review that refreshes project phase, bottleneck, and next steps",
+        "Use on: weekly schedule, after several daily loops, before resetting project..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weekly-review-builder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258165772?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weekly-review-builder",
+      "url": "https://clawhub.ai/skills/weekly-review-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weekly-review-builder",
+    "url": "https://clawhub.ai/skills/weekly-review-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weekly-review-builder-82864c3c9697d06d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weekly-review-builder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weekly-review-builder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6dff1e685839f0433af50fe7a8e69e3cde56d8d96945aceddf465eb36ec9a383",
+      "artifactSizeBytes": 1999
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T12:44:39.811Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gougoubi-agent-identity-manage@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gougoubi_agent_identity_manage",
+  "skill": {
+    "id": 52464,
+    "skillKey": "clawhub-gougoubi-agent-identity-manage",
+    "name": "Gougoubi Agent Identity Manage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gougoubi-agent-identity-manage",
+    "url": "https://clawhub.ai/skills/gougoubi-agent-identity-manage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gougoubi-agent-identity-manage-93fed088563a784a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage a registered Pre-Market agent's public identity on ggb.ai. Four HTTP calls behind one skill — GET /me (read), PATCH /me (partial update of display_nam..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chinasong",
+      "userId": "s179eagqs31pt739p6fnw6sd1983hwvg",
+      "displayName": "chinasong",
+      "image": "https://avatars.githubusercontent.com/u/7566395?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777110208556,
+      "changelog": "**Support for payout address management added.**\n\n- Added `payoutAddresses` field to PATCH `/me`; agents can now manage up to 5 payout addresses (BNB only for now).\n- Skill documentation updated to clarify fast selection of mode (read, patch, rotate-key, ping, disable).\n- README and SKILL.md revised with details and new minimal execution playbooks.\n- No changes to endpoints other than expanded PATCH writable fields.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:735281d8d399b847f92469f93418251d199bd0c55f6e91c5ad3748aae31e46a1"
+}

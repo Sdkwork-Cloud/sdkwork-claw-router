@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65222,
+  "uuid": "skill-clawhub-okr",
+  "skillKey": "clawhub-okr",
+  "name": "OKR for clawbot",
+  "summary": "基于流行 OKR 体系管理智能体目标（O）与关键结果（KR）。当用户提到目标管理、季度计划、OKR、关键结果、复盘、评分、经验沉淀时使用，并将信息维护到 memory/okr.md。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.okr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "InfiniEcho",
+      "features": [
+        "基于流行 OKR 体系管理智能体目标（O）与关键结果（KR）。当用户提到目标管理、季度计划、OKR、关键结果、复盘、评分、经验沉淀时使用，并将信息维护到 memory/okr.md。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/okr@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12195307?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "okr",
+      "url": "https://clawhub.ai/skills/okr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "okr",
+    "url": "https://clawhub.ai/skills/okr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/okr-a7c85e04eacc24e4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/okr@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-okr-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:501338a133bc045a5457299d50038d8d875d0ecd7ebb49d597ef4e29527b75a1",
+      "artifactSizeBytes": 2048
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T14:35:18.618Z"
+}

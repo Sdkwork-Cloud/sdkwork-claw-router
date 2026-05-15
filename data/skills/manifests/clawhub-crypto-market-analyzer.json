@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12439,
+  "uuid": "skill-clawhub-crypto-market-analyzer",
+  "skillKey": "clawhub-crypto-market-analyzer",
+  "name": "Crypto Market Analyzer",
+  "summary": "Cryptocurrency market analysis for Bitcoin and Ethereum. Fetches 4h (24h) and 1d (30-day) data from Binance API, calculates technical indicators (RSI, SMAs, support/resistance), and provides bullish/bearish sentiment analysis with reasonin.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_market_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hmzo",
+      "features": [
+        "Cryptocurrency market analysis for Bitcoin and Ethereum",
+        "Fetches 4h (24h) and 1d (30-day) data from Binance API, calculates technical indicators (RSI, S.",
+        "Use when user asks for crypto market reports, BTC/ETH analysis, or daily market summaries."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crypto-market-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26140960?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crypto-market-analyzer",
+      "url": "https://clawhub.ai/skills/crypto-market-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-market-analyzer",
+    "url": "https://clawhub.ai/skills/crypto-market-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-market-analyzer-abb55320d7e0d837.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crypto-market-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crypto-market-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cfbf9bb3db6fc04ea7f4e612502837ebd5367ef6038716ee1188599edb168cc7",
+      "artifactSizeBytes": 2214
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T10:07:06.699Z"
+}

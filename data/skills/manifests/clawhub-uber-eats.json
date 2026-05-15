@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22508,
+  "uuid": "skill-clawhub-uber-eats",
+  "skillKey": "clawhub-uber-eats",
+  "name": "Uber Eats",
+  "summary": "Navigate Uber Eats in a live browser or app handoff to compare merchants, manage carts, and reach checkout safely.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uber_eats",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Navigate Uber Eats in a live browser or app handoff to compare merchants, manage carts, and rea."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uber-eats@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uber-eats",
+      "url": "https://clawhub.ai/skills/uber-eats"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uber-eats",
+    "url": "https://clawhub.ai/skills/uber-eats",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uber-eats-4264dd9e0dcdbf1f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uber-eats@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-uber-eats-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3a3e68461b626c55a2b1a03aef0a6b772185bbd2ec15536343341cb678bc73a2",
+      "artifactSizeBytes": 1923
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T23:43:36.304Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brand-protection-shopify@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brand_protection_shopify",
+  "skill": {
+    "id": 28492,
+    "skillKey": "clawhub-brand-protection-shopify",
+    "name": "Brand Protection Shopify"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brand-protection-shopify",
+    "url": "https://clawhub.ai/skills/brand-protection-shopify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brand-protection-shopify-48460d8498ef3c7f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Shopify/DTC brand protection toolkit. Detect counterfeit stores, unauthorized resellers, and trademark violations. Includes DMCA takedown templates, domain m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "phheng",
+      "userId": "s17cnrtda4fqzdjza3g2hx20bs83f18z",
+      "displayName": "Henk Nie",
+      "image": "https://avatars.githubusercontent.com/u/44972754?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 323,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773996799867,
+      "changelog": "Initial release of the Shopify/DTC Brand Protection skill.\n\n- Detects counterfeit stores, unauthorized resellers, and trademark violations.\n- Monitors domains and social media for brand misuse.\n- Includes DMCA takedown, cease & desist, and platform report templates.\n- No API key required; customizable input for your brand.\n- Provides actionable risk levels and response workflow for infringements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3d4e04cdc180586e54509673429df7652eeb12f7e300057477907a86e7ed71f7"
+}

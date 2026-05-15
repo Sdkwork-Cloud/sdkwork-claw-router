@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ces@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ces",
+  "skill": {
+    "id": 54830,
+    "skillKey": "clawhub-ces",
+    "name": "huodongyuan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ces",
+    "url": "https://clawhub.ai/skills/ces",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ces-48dd969488eb543b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage a self-hosted Trello-like board via `wekancli`. Create, move and archive cards, lists and boards on a WeKan server. Use when user asks about task boar..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "manman1104",
+      "userId": "publishers:manman1104",
+      "displayName": "manman1104",
+      "image": "https://avatars.githubusercontent.com/u/134038043?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 384,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773052661365,
+      "changelog": "测试",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1b9dc9d601437955c443df84cd40e3981c81176e087b5a4be296b67f7143424c"
+}

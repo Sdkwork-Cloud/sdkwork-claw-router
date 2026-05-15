@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-backfill@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_backfill",
+  "skill": {
+    "id": 66317,
+    "skillKey": "clawhub-memory-backfill",
+    "name": "Memory Backfill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-backfill",
+    "url": "https://clawhub.ai/skills/memory-backfill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-backfill-2a6e7050fdf0965f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "规范升级 Agent 记忆，将抽象原则转为包含项目事实和结果闭环的全面项目级记忆，并固化验收标准。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiangwill2023",
+      "userId": "s176dmskg9f2420hgcd84mmpqx85j318",
+      "displayName": "jiangwill2023",
+      "image": "https://avatars.githubusercontent.com/u/259636428?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1777212680437,
+      "changelog": "memory-backfill v2.0.0\n\n- Rewrote and standardized the methodology for improving Agent memory from \"framework\" to \"project\" and \"result closure\" levels.\n- Introduced a detailed two-layer architecture with clear criteria, templates, and checklists for each layer.\n- Added common pitfalls and solutions to ensure practical, actionable memory enhancement.\n- Defined a standardized task issuance, acceptance, and archiving process, improving consistency and traceability.\n- Aligned with related skills and provided reusable templates for immediate adoption.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0381baa6f1143d4b01a46f79c3faedb0bdac064e0e1549bcd99fb2988743e513"
+}

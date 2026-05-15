@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16353,
+  "uuid": "skill-clawhub-macos-notes",
+  "skillKey": "clawhub-macos-notes",
+  "name": "macOS Notes",
+  "summary": "Create, read, search, and manage macOS Notes via AppleScript. Use when the user asks to take a note, jot something down, save an idea, create meeting notes,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.macos_notes",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Luca",
+      "features": [
+        "Create, read, search, and manage macOS Notes via AppleScript",
+        "Use when the user asks to take a note, jot something down, save an idea, create meeting notes,.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/macos-notes@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1887122?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "macos-notes",
+      "url": "https://clawhub.ai/skills/macos-notes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "macos-notes",
+    "url": "https://clawhub.ai/skills/macos-notes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/macos-notes-5ca7d4debc2cc421.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/macos-notes@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-macos-notes-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b2015d7eca5e7fe6816a7ffe1f68b83d58546f1aa015a2c414ad1813636d2c9a",
+      "artifactSizeBytes": 2467
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T21:35:50.829Z"
+}

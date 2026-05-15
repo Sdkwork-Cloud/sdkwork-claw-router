@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alvisdunlop-gh@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alvisdunlop_gh",
+  "skill": {
+    "id": 43490,
+    "skillKey": "clawhub-alvisdunlop-gh",
+    "name": "Gh"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alvisdunlop-gh",
+    "url": "https://clawhub.ai/skills/alvisdunlop-gh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alvisdunlop-gh-847d01b5c798cbbb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the GitHub CLI (gh) to perform core GitHub operations: auth status, repo create/clone/fork, issues, pull requests, releases, and basic repo management. T..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alvisdunlop",
+      "userId": "s17fq465rgqaeb4mjcdf3p9dkh84s6zy",
+      "displayName": "AlvisDunlop",
+      "image": "https://avatars.githubusercontent.com/u/255881479?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776313763397,
+      "changelog": "- Added detailed usage guide for managing GitHub repositories, issues, pull requests, and releases via the GitHub CLI (`gh`).\n- Included explicit commands for common operations: auth status, repo creation (private by default), cloning, forking, issue and PR management, and releases.\n- Provided safety notes for confirming target repositories before destructive actions and ensuring private repo settings.\n- Linked complete setup guide for step-by-step onboarding.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0c969bd9c271e48bc4819f39322decd3e9ee4b12556070d5f661fbc9518b8edf"
+}

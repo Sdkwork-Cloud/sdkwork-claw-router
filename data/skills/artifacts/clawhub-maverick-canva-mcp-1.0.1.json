@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/maverick-canva-mcp@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maverick_canva_mcp",
+  "skill": {
+    "id": 43408,
+    "skillKey": "clawhub-maverick-canva-mcp",
+    "name": "Canva mcp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maverick-canva-mcp",
+    "url": "https://clawhub.ai/skills/maverick-canva-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maverick-canva-mcp-22c7940024113410.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search, read, and manage Canva design work through Canva's hosted MCP server. Thin pass-through to Canva's official MCP; the live tool catalog is whatever th..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maverick",
+      "userId": "s17b4scyfsybdcep8c0034pgs186087n",
+      "displayName": "Maverick",
+      "image": "https://avatars.githubusercontent.com/u/261420589"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778232801800,
+      "changelog": "- Switched skill interface to direct mcporter usage, removing the custom invoke wrapper script.\n- Updated documentation to instruct users to discover and call tools directly via mcporter, reflecting a server-driven tool catalog.\n- Simplified dependency requirements: dropped mention of jq, flock, and shasum, now only requiring mcporter.\n- Refreshed safety, authentication, and usage guidance to match the new pass-through model to Canva's hosted MCP.\n- Added install script; removed legacy invoke script.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ebb5a97b57db2a2da860b18bf383062eadbd9d84f32b58b6252c4e12459c8eaa"
+}

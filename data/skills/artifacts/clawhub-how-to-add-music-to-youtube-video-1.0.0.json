@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/how-to-add-music-to-youtube-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.how_to_add_music_to_youtube_video",
+  "skill": {
+    "id": 44637,
+    "skillKey": "clawhub-how-to-add-music-to-youtube-video",
+    "name": "How To Add Music To Youtube Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "how-to-add-music-to-youtube-video",
+    "url": "https://clawhub.ai/skills/how-to-add-music-to-youtube-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/how-to-add-music-to-youtube-video-9c1d92b87111e14d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 3-minute YouTube vlog in MP4 format into 1080p music-backed videos just by typing what you need. Whether it's adding background music to YouTube video..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776452660501,
+      "changelog": "- Initial release: quickly add background music and export 1080p videos from your MP4 vlog or social clips in 30–60 seconds.\n- Drag-and-drop video upload and simple, descriptive prompts—no manual editing or timeline needed.\n- Automatic backend setup with free token provisioning (100 credits, 7 days).\n- Supports multiple export formats (MP4, MOV, AVI, etc.) up to 500MB.\n- Clear error handling and prompt feedback for file type, size, credits, and backend issues.\n- Designed for intuitive workflows: upload, describe your change, and download your finished video.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:75d18ff488753a20538aae4e2284850917bcf6b1e016bb7818b51016c370100f"
+}

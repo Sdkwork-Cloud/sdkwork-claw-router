@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27269,
+  "uuid": "skill-clawhub-weather-mcp",
+  "skillKey": "clawhub-weather-mcp",
+  "name": "weather-mcp",
+  "summary": "Query weather information via a local/remote MCP weather server using the SSE endpoint https://api-dev.ljyd.cn/mcp-servers/myweather/sse. Use when the user a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "superproxy",
+      "features": [
+        "Query weather information via a local/remote MCP weather server using the SSE endpoint https://.",
+        "Use when the user a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weather-mcp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8399739?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weather-mcp",
+      "url": "https://clawhub.ai/skills/weather-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-mcp",
+    "url": "https://clawhub.ai/skills/weather-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-mcp-bc96adcf965b7a16.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weather-mcp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weather-mcp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5f90accbaeb27573c7902aa2894b56daf7013e1c2ee005c0242c80ab98f85e1b",
+      "artifactSizeBytes": 2293
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T13:15:08.005Z"
+}

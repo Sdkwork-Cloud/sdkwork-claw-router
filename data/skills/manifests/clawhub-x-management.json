@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40080,
+  "uuid": "skill-clawhub-x-management",
+  "skillKey": "clawhub-x-management",
+  "name": "X Management",
+  "summary": "Draft-first X/Twitter account management workflow for OpenClaw. Use when the user wants to read their X account context, draft tweets, replies, quote tweets,...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_management",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Prince Bansal",
+      "features": [
+        "Draft-first X/Twitter account management workflow for OpenClaw",
+        "Use when the user wants to read their X account context, draft tweets, replies, quote tweets,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-management@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11005121?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-management",
+      "url": "https://clawhub.ai/skills/x-management"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-management",
+    "url": "https://clawhub.ai/skills/x-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-management-79dd0ac654f75b93.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-management@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-management-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:faf3e7d18f284b93a3f900a59d1518230b86a6a4257d6b9f543dd5c369019e04",
+      "artifactSizeBytes": 1935
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T18:56:07.762Z"
+}

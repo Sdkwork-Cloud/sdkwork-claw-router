@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35862,
+  "uuid": "skill-clawhub-superpicky",
+  "skillKey": "clawhub-superpicky",
+  "name": "Superpicky Cli",
+  "summary": "SuperPicky CLI skill: use absolute paths to scripts/install.sh and scripts/run.sh for automation; run.sh three entries (superpicky_cli, birdid_cli, --region-...",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.superpicky",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yoshino-s",
+      "features": [
+        "SuperPicky CLI skill: use absolute paths to scripts/install.sh and scripts/run.sh for automation",
+        "run.sh three entries (superpicky_cli, birdid_cli, --region-..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/superpicky@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28624661?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "superpicky",
+      "url": "https://clawhub.ai/skills/superpicky"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "superpicky",
+    "url": "https://clawhub.ai/skills/superpicky",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/superpicky-4bb7202a6394a174.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/superpicky@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-superpicky-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2a335f56de4f16d66f1c3af5088213b6b4f2c12aede5b3797af501b5f4ff3dd2",
+      "artifactSizeBytes": 1952
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T10:07:10.553Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68866,
+  "uuid": "skill-clawhub-bandai",
+  "skillKey": "clawhub-bandai",
+  "name": "Bandai",
+  "summary": "提供万代（Bandai）公司的简介、主要产品、市场地位、全球布局及最新动态信息。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bandai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供万代（Bandai）公司的简介、主要产品、市场地位、全球布局及最新动态信息。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bandai@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bandai",
+      "url": "https://clawhub.ai/skills/bandai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bandai",
+    "url": "https://clawhub.ai/skills/bandai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bandai-e8fcca0a0b80b19f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bandai@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-bandai-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7aa6b441877c08bac2bfecb532974a0bd60be17b304d5c83ce41d8bf0bc3f946",
+      "artifactSizeBytes": 1825
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T06:01:49.321Z"
+}

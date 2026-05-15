@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seekdb-memory@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seekdb_memory",
+  "skill": {
+    "id": 34872,
+    "skillKey": "clawhub-seekdb-memory",
+    "name": "SeekDB Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seekdb-memory",
+    "url": "https://clawhub.ai/skills/seekdb-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seekdb-memory-035936e2acecc0e4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cloud-native persistent memory for OpenClaw agents. Auto-captures facts after conversations, auto-recalls relevant context before each reply. Hybrid search (..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "frf12",
+      "userId": "s17a9hgtycrvcegajjw9q6e2bn849tz1",
+      "displayName": "Rongfeng Fu",
+      "image": "https://avatars.githubusercontent.com/u/23054695?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 122,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1775482194627,
+      "changelog": "Initial release — cloud-native agent memory guide",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ce4cf53d5320e50fa0941fed37020734ed6f0feb59932c8eeeb2084e9e0f6924"
+}

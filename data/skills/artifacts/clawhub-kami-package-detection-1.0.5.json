@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kami-package-detection@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kami_package_detection",
+  "skill": {
+    "id": 35160,
+    "skillKey": "clawhub-kami-package-detection",
+    "name": "Kami Package Detection"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kami-package-detection",
+    "url": "https://clawhub.ai/skills/kami-package-detection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kami-package-detection-9568323521b91e84.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A free skill by Kami SmartHome. Get notified the moment a package arrives at your door. Detects packages, parcels, and bags from RTSP camera streams using AI..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "13681882136",
+      "userId": "s170wja1qf8kmkzj5brvhsj1r185a522",
+      "displayName": "KamiVision",
+      "image": "https://avatars.githubusercontent.com/u/78515090?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 217,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1776923383804,
+      "changelog": "- Expanded tags to include \"home-assistant\", \"home assistant\", \"smart home delivery\", and related phrases for broader discoverability.\n- Added more trigger phrases such as \"kami smart home\", \"home assistant package\", \"delivery notification\", and \"parcel alert\".\n- No changes to core functionality or usage documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1c5c4672088434b36856695b5424f12ffbabe485ede43f61dc918eea3df7d00e"
+}

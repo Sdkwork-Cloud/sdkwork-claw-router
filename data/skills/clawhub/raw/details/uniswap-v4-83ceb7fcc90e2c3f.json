@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "uniswap-v4",
+    "displayName": "Uniswap V4",
+    "summary": "Swap tokens and read pool state on Uniswap V4 (Base, Ethereum). Use when the agent needs to: (1) swap ERC20 tokens or ETH via Uniswap V4, (2) get pool info (price, tick, liquidity, fees), (3) find the best pool for a token pair, (4) quote expected swap output via the on-chain V4Quoter, (5) set up Permit2 approvals for the Universal Router, or (6) execute exact-input swaps with proper slippage protection. Supports Base and Ethereum mainnet, plus Base Sepolia testnet. TypeScript with strict types. Write operations need a private key via env var.",
+    "tags": {
+      "latest": "2.0.4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1657,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 5
+    },
+    "createdAt": 1770611232910,
+    "updatedAt": 1778384450657
+  },
+  "latestVersion": {
+    "version": "2.0.4",
+    "createdAt": 1770701898567,
+    "changelog": "Security: add CI regression test ensuring PRIVATE_KEY never printed; docs: treat stdout/stderr as public logs.",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "openclaw-consensus-bot",
+    "userId": "publishers:openclaw-consensus-bot",
+    "displayName": "openclaw-consensus-bot",
+    "image": "https://avatars.githubusercontent.com/u/258721376?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.dangerous_exec",
+      "suspicious.dynamic_code_execution",
+      "suspicious.env_credential_access",
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.dangerous_exec, suspicious.dynamic_code_execution, suspicious.env_credential_access (+1 more)",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778384450657
+  }
+}

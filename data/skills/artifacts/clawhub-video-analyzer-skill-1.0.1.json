@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-analyzer-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_analyzer_skill",
+  "skill": {
+    "id": 16356,
+    "skillKey": "clawhub-video-analyzer-skill",
+    "name": "Video Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-analyzer-skill",
+    "url": "https://clawhub.ai/skills/video-analyzer-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-analyzer-skill-afbb872866ea97c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Download, transcribe, and analyze videos from YouTube, X/Twitter, and TikTok with local Whisper processing. Perfect for extracting TL;DRs, timestamps, and ac..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "minilozio",
+      "userId": "publishers:minilozio",
+      "displayName": "minilozio",
+      "image": "https://avatars.githubusercontent.com/u/261203432?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 874,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772708110985,
+      "changelog": "- Expanded the description in SKILL.md to clarify when and how to use the skill, especially for requests involving YouTube, X/Twitter, or TikTok video URLs.\n- Added practical usage examples to the description, detailing scenarios such as summarizing videos, extracting key points, and analyzing video content.\n- No changes to any code or functionality; documentation improvements only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:85a6abbc87971a0c5651f9c0ee6c78beb1fdc8212d9978269deaae00cda6b7cf"
+}

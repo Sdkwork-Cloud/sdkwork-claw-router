@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42240,
+  "uuid": "skill-clawhub-helpwise-integration",
+  "skillKey": "clawhub-helpwise-integration",
+  "name": "Helpwise",
+  "summary": "Helpwise integration. Manage Organizations. Use when the user wants to interact with Helpwise data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.helpwise_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Helpwise integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Helpwise data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/helpwise-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "helpwise-integration",
+      "url": "https://clawhub.ai/skills/helpwise-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "helpwise-integration",
+    "url": "https://clawhub.ai/skills/helpwise-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/helpwise-integration-ddc5810157d069f8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/helpwise-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-helpwise-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8e2989eee84eebc64b00094a9bb4d75b6d8f30762b5e2430b4c4eeeed8abdb0f",
+      "artifactSizeBytes": 1886
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:33:03.631Z"
+}

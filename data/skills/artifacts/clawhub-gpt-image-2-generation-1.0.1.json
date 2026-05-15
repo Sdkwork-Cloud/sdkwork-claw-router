@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gpt-image-2-generation@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gpt_image_2_generation",
+  "skill": {
+    "id": 49915,
+    "skillKey": "clawhub-gpt-image-2-generation",
+    "name": "gpt image 2 generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gpt-image-2-generation",
+    "url": "https://clawhub.ai/skills/gpt-image-2-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gpt-image-2-generation-9db9e3588666c79c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images from text prompts using the WellAPI gpt-image-2 model. Use this skill whenever the user asks to create, draw, render, or generate an image, p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "laolujava",
+      "userId": "s17f6wwwdbyz238kxwh90tkmex86aewb",
+      "displayName": "LuTong",
+      "image": "https://avatars.githubusercontent.com/u/7344866?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 60,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778374161624,
+      "changelog": "- Streamlined and shortened API key onboarding prompt for first-time users.\n- Added group capacity error handling guidance for non-200 responses, including recommended group settings for WellAPI API Keys.\n- Documented new `--timeout` argument to handle potentially long synchronous image generation (default 600s).\n- Clarified workflow to wait for script completion and only retry upon user confirmation after group change.\n- Minor documentation updates for clarity and to reduce unnecessary information during setup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4cb673bc8d5d5b2672f0c81caabdf0c0111c84caef34c3b2de694d8d23e56df3"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-skill-creator@1.1.0-en2",
+  "version": "1.1.0-en2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_skill_creator",
+  "skill": {
+    "id": 59016,
+    "skillKey": "clawhub-ai-skill-creator",
+    "name": "AI Skill Creator (EN)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-skill-creator",
+    "url": "https://clawhub.ai/skills/ai-skill-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-skill-creator-0de814bac72cbd32.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI公司 Skill 创作工作流（CTO MLOps + CISO securitystandard版）。当需要从头create新 Skill（包括初始化目录结构、编写 SKILL.md、引用文件、脚本资源、securityreview、quality gate）时使用。trigger关键词：createSkil..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johnsmithfan",
+      "userId": "s17ar8yxm9wh64zhr7mr0xemcn84gs16",
+      "displayName": "JohnSmithfan",
+      "image": "https://avatars.githubusercontent.com/u/147225147?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 227,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0-en2",
+      "createdAt": 1776678571475,
+      "changelog": "Full body English translation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f3f1c071712bcb69308854e4da08cc96e492813e8e72bc436e72495afb77b6d7"
+}

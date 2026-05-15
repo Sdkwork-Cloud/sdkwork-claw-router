@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_skills",
+  "skill": {
+    "id": 63955,
+    "skillKey": "clawhub-claw-skills",
+    "name": "Claw Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-skills",
+    "url": "https://clawhub.ai/skills/claw-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-skills-63faaeb335ae3f54.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw 插件开发助手，输出可运行的插件骨架、安装命令和调试步骤。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "boleyn",
+      "userId": "s178twzv85nhtpzkgxdawkbb7s83pe5j",
+      "displayName": "santian",
+      "image": "https://avatars.githubusercontent.com/u/24293664?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 349,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773121075806,
+      "changelog": "initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f4ff1b1f6c9002cc056d5875e9d5c2598d8dfd57729a4b04a1f3760638494e07"
+}

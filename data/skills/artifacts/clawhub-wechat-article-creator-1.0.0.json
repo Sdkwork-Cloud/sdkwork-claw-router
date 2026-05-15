@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-article-creator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_article_creator",
+  "skill": {
+    "id": 63573,
+    "skillKey": "clawhub-wechat-article-creator",
+    "name": "WeChat Article Creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-article-creator",
+    "url": "https://clawhub.ai/skills/wechat-article-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-article-creator-d188f851d70273ee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据主题自动生成微信公众号文章草稿。流程：搜索主题相关内容 → AI总结分析 → 排版美化 → 保存到公众号草稿箱。Use when user needs to write 公众号文章、微信公众号内容、自动创作文章、根据主题写文章。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "onwalking",
+      "userId": "s17f0ca7fc0mj2413zvn7qc30183g796",
+      "displayName": "onWalking",
+      "image": "https://avatars.githubusercontent.com/u/20391812?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1024,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773804146051,
+      "changelog": "Initial release: auto-generate WeChat articles from topics",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac5bf4507e5ec28d43f8a716e53feda9f47f3b8b86ff59f2ccbed35d499f40cd"
+}

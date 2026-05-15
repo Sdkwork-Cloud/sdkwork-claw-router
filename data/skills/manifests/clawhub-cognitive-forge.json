@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57207,
+  "uuid": "skill-clawhub-cognitive-forge",
+  "skillKey": "clawhub-cognitive-forge",
+  "name": "AI Self-Evolution Engine( AI 自我进化引擎）",
+  "summary": "Dual-value learning system - extracts reusable mental models from books, writes individual pattern files (patterns/{id}.md) with YAML frontmatter for buildin...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cognitive_forge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KeDouPi(珂抖屁)",
+      "features": [
+        "Dual-value learning system",
+        "extracts reusable mental models from books, writes individual pattern files (patterns/{id}.md)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cognitive-forge@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11420318?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cognitive-forge",
+      "url": "https://clawhub.ai/skills/cognitive-forge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cognitive-forge",
+    "url": "https://clawhub.ai/skills/cognitive-forge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cognitive-forge-7adb405fffc88974.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cognitive-forge@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-cognitive-forge-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8c8f473a28c20ec87ec483346ba6149a3a03310401d4d3557d24350dd8927ef5",
+      "artifactSizeBytes": 2508
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T16:44:56.780Z"
+}

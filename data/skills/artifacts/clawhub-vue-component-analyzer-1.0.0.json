@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vue-component-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vue_component_analyzer",
+  "skill": {
+    "id": 67169,
+    "skillKey": "clawhub-vue-component-analyzer",
+    "name": "vue-component-analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vue-component-analyzer",
+    "url": "https://clawhub.ai/skills/vue-component-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vue-component-analyzer-62496f370441c616.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "分析 Vue 前端项目的组件依赖关系，从入口文件开始递归分析所有组件，生成组件层级关系图。支持 Vue 2 和 Vue 3 项目，输出包含组件名称、文件路径和所需属性。使用当用户需要分析 Vue 组件结构、排查组件依赖关系或理解项目架构时。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "baozaibuding",
+      "userId": "s174a84b2v42svj4c7ryqjws1184d0cm",
+      "displayName": "baozaibuding",
+      "image": "https://avatars.githubusercontent.com/u/194209572?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775541171676,
+      "changelog": "Initial release of vue-component-analyzer:\n\n- Recursively analyzes Vue 2 and Vue 3 component dependencies from the entry file.\n- Extracts component names, file paths, and props (name, type, required, default).\n- Supports both Options API and Composition API (including <script setup>).\n- Outputs results in Markdown tree, JSON, and Mermaid chart formats.\n- Ignores third-party library components; handles path aliases and circular dependencies.\n- Recognizes static and dynamic component imports and async components.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:05609f6827d3dcd34157cb5949508152ad6ebef38aaf60a780e1ef0350737d8f"
+}

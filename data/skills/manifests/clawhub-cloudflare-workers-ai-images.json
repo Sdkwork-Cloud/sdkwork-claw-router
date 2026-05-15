@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26151,
+  "uuid": "skill-clawhub-cloudflare-workers-ai-images",
+  "skillKey": "clawhub-cloudflare-workers-ai-images",
+  "name": "Cloudflare Workers Ai Images",
+  "summary": "Generate and edit images through Cloudflare Workers AI using one skill that supports text-to-image and image-to-image. Use when the user asks to generate, dr...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloudflare_workers_ai_images",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sheepgreen",
+      "features": [
+        "Generate and edit images through Cloudflare Workers AI using one skill that supports text-to-im.",
+        "Use when the user asks to generate, dr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cloudflare-workers-ai-images@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58287293?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cloudflare-workers-ai-images",
+      "url": "https://clawhub.ai/skills/cloudflare-workers-ai-images"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloudflare-workers-ai-images",
+    "url": "https://clawhub.ai/skills/cloudflare-workers-ai-images",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloudflare-workers-ai-images-67fa3169537e43f3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cloudflare-workers-ai-images@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-cloudflare-workers-ai-images-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:31f13c14bfccdd8037a4463df9bf497a72334445b1f2c514cd229818476a634c",
+      "artifactSizeBytes": 2102
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T13:05:56.970Z"
+}

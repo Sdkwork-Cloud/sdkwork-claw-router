@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73567,
+  "uuid": "skill-clawhub-flyai-monthly-travel-blindbox",
+  "skillKey": "clawhub-flyai-monthly-travel-blindbox",
+  "name": "本月轻松旅行盲盒",
+  "summary": "基于用户当前位置，自动推荐三个周边城市作为本月周末出游目的地——筛选条件为「周末天气适宜」，并为每个目的地给出简洁的往返交通安排（高铁/航班）和预订链接。适用于想周末说走就走、但不知道去哪的用户。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flyai_monthly_travel_blindbox",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OSrange",
+      "features": [
+        "基于用户当前位置，自动推荐三个周边城市作为本月周末出游目的地——筛选条件为「周末天气适宜」，并为每个目的地给出简洁的往返交通安排（高铁/航班）和预订链接。适用于想周末说走就走、但不知道去哪的."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flyai-monthly-travel-blindbox@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18527761?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flyai-monthly-travel-blindbox",
+      "url": "https://clawhub.ai/skills/flyai-monthly-travel-blindbox"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flyai-monthly-travel-blindbox",
+    "url": "https://clawhub.ai/skills/flyai-monthly-travel-blindbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flyai-monthly-travel-blindbox-1cc2a32c6d343de0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flyai-monthly-travel-blindbox@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-flyai-monthly-travel-blindbox-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:81130f8ae956104e76d80c2820c3a605c4a7d544c53c0e514741545b39306615",
+      "artifactSizeBytes": 2668
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T02:30:59.949Z"
+}

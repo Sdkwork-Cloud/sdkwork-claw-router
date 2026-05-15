@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/turbo-poster-9000@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.turbo_poster_9000",
+  "skill": {
+    "id": 44457,
+    "skillKey": "clawhub-turbo-poster-9000",
+    "name": "Turbo Poster 9000"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "turbo-poster-9000",
+    "url": "https://clawhub.ai/skills/turbo-poster-9000",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/turbo-poster-9000-ac46424f0a42b079.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate social media content (event posters, speaker announcements, partnership posts) using AI synthesis recipes"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thierrypdamiba",
+      "userId": "s176bkv3djtkyvzx28e9nkgz1183qgb6",
+      "displayName": "thierrypdamiba",
+      "image": "https://avatars.githubusercontent.com/u/177760997?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775457433679,
+      "changelog": "turbo-poster-9000 1.0.0\n\n- Initial release.\n- Provides three AI-powered content generation recipes: event posters, speaker announcements, and partnership posts.\n- Automatically prompts for required information depending on the chosen recipe.\n- Integrates with DeepContent synthesis API for seamless image and text generation.\n- Supports both image+caption workflows and text-only partnership announcements.\n- User-invocable for easy access by end users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c6c0d58c77c8a604d1ac903ff349a3c521505edec66a2a5ad46019af3e05b9c8"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-valuation-monitor@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_valuation_monitor",
+  "skill": {
+    "id": 60852,
+    "skillKey": "clawhub-stock-valuation-monitor",
+    "name": "stock-valuation-monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-valuation-monitor",
+    "url": "https://clawhub.ai/skills/stock-valuation-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-valuation-monitor-645e7bb4fe562329.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "股票和ETF估值监控工具，基于PE、PB BAND和历史百分位评估估值区间（机会/风险）"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rockszq",
+      "userId": "s17bpafrrpsgg24hrr93kddcss83hmwa",
+      "displayName": "rockszq",
+      "image": "https://avatars.githubusercontent.com/u/52884578?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1987,
+      "installsAllTime": 10,
+      "installsCurrent": 9,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1773200811542,
+      "changelog": "- Removed documentation and legacy files: DEPLOY.md, README.md, and main_old.py.\n- ✅ 缓存键改为10分钟级精度\n✅ 熔断器实现滑动窗口算法\n✅ 使用akshare专用接口获取历史PE/PB\n✅ 增加并发超时控制\n✅ 新增健康检查接口和Excel导出",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:721472f1261e0b04c3a0d97a695f021ab7be2cfc928ff65e647780e67d1de152"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73688,
+  "uuid": "skill-clawhub-budget-calculator",
+  "skillKey": "clawhub-budget-calculator",
+  "name": "装修预算计算",
+  "summary": "装修大包预算计算工具，支持新房和旧房预算计算，提供详细的费用清单。可根据房屋面积和类型自动计算半包施工费、主材材料费以及总预算，并按类别分组展示费用明细。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.budget_calculator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Layne1919",
+      "features": [
+        "装修大包预算计算工具，支持新房和旧房预算计算，提供详细的费用清单。可根据房屋面积和类型自动计算半包施工费、主材材料费以及总预算，并按类别分组展示费用明细。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/budget-calculator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/170011921?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "budget-calculator",
+      "url": "https://clawhub.ai/skills/budget-calculator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "budget-calculator",
+    "url": "https://clawhub.ai/skills/budget-calculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/budget-calculator-b53d04a50cf1cb5a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/budget-calculator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-budget-calculator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f21d00e2e444003bd13a9b6abceab5592bfbfd54ccb6d6a84c96171db3119acd",
+      "artifactSizeBytes": 2364
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T17:55:08.036Z"
+}

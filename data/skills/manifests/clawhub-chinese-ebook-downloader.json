@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56568,
+  "uuid": "skill-clawhub-chinese-ebook-downloader",
+  "skillKey": "clawhub-chinese-ebook-downloader",
+  "name": "Chinese Ebook Downloader",
+  "summary": "Download Chinese-language ebooks from multiple sources with automatic A→B→C fallback. Primary source: online book library with ~100% coverage, no daily limit...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chinese_ebook_downloader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lb1121",
+      "features": [
+        "Download Chinese-language ebooks from multiple sources with automatic A→B→C fallback",
+        "Primary source: online book library with ~100% coverage, no daily limit..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chinese-ebook-downloader@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4757885?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chinese-ebook-downloader",
+      "url": "https://clawhub.ai/skills/chinese-ebook-downloader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chinese-ebook-downloader",
+    "url": "https://clawhub.ai/skills/chinese-ebook-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chinese-ebook-downloader-e77a4bf57c781b20.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chinese-ebook-downloader@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chinese-ebook-downloader-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ec2c714c9b11dd7bf765ab0be25cda24a9330c740de9944b806c96e7ca7e3d1c",
+      "artifactSizeBytes": 2681
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T09:09:14.416Z"
+}

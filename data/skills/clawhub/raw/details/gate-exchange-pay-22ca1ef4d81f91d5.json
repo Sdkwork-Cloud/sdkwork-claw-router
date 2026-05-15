@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "gate-exchange-pay",
+    "displayName": "Gate Pay Payment Skill",
+    "summary": "Gate Pay payment execution skill. Use when the user asks to pay with Gate Pay, complete a merchant charge, or satisfy pay-first flows (e.g. HTTP 402). Trigge...",
+    "tags": {
+      "latest": "1.0.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1774685915213,
+    "updatedAt": 1777624501598
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1775115283160,
+    "changelog": "- Added a dedicated MCP reference file (`references/mcp.md`) and clarified that workflow and execution details must align with this authoritative reference.\n- Updated authentication and authorization instructions for MCP tooling, specifying API key and prior Gate Pay authorization requirements.\n- Revised description and intro sections for greater clarity, including shortened summary and improved trigger phrase guidance.\n- Clarified separation of responsibilities between `SKILL.md` (user intent, product boundaries) and `references/mcp.md` (charge execution logic).\n- No changes to payment logic or workflow; documentation and process specificity improved for maintainability.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "gate-exchange",
+    "userId": "s172g4d1dcv6ccs6desbb2xw1583qza9",
+    "displayName": "Gate",
+    "image": "https://avatars.githubusercontent.com/u/33109813?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777624501598
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25439,
+  "uuid": "skill-clawhub-agentwallex-openclaw",
+  "skillKey": "clawhub-agentwallex-openclaw",
+  "name": "AgentWallex Payment",
+  "summary": "Create and manage AI agents, send USDC/USDT payments, check balances across Ethereum, BSC, and Tron",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentwallex_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HexCupe",
+      "features": [
+        "Create and manage AI agents, send USDC/USDT payments, check balances across Ethereum, BSC, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentwallex-openclaw@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74308792?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentwallex-openclaw",
+      "url": "https://clawhub.ai/skills/agentwallex-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentwallex-openclaw",
+    "url": "https://clawhub.ai/skills/agentwallex-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentwallex-openclaw-b19ac7ebf6fe1b84.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentwallex-openclaw@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentwallex-openclaw-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:38e92e5c4760cc3ea82d684fde565c593dc70f328bd2a6936d373678b38e230d",
+      "artifactSizeBytes": 2165
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T11:51:23.250Z"
+}

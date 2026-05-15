@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70864,
+  "uuid": "skill-clawhub-1688-marketing",
+  "skillKey": "clawhub-1688-marketing",
+  "name": "1688 Marketing",
+  "summary": "1688营销 Skill —— 帮助商家进行招商活动报名、查看商机推荐等营销操作。 核心工具能力：招商活动查询、商品建议价查询、活动报名提交、商机推荐查询。 触发词：报名活动、招商活动、查询活动、提报、报名、活动报名、查看建议价、商机推荐、商机、市场机会、找商机、查商机，不要在用户仅询问非1688业务（如闲聊、天...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.1688_marketing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1688AiInfra",
+      "features": [
+        "1688营销 Skill —— 帮助商家进行招商活动报名、查看商机推荐等营销操作。 核心工具能力：招商活动查询、商品建议价查询、活动报名提交、商机推荐查询。 触发词：报名活动、招商活动、查询."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/1688-marketing@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266033968?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "1688-marketing",
+      "url": "https://clawhub.ai/skills/1688-marketing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "1688-marketing",
+    "url": "https://clawhub.ai/skills/1688-marketing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/1688-marketing-9f44237349b7767a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/1688-marketing@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-1688-marketing-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf9f314f11974fd3b28c1b9d991c5e1bc618bf916d95cdc25ed7243eef1d423d",
+      "artifactSizeBytes": 2597
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T07:12:51.463Z"
+}

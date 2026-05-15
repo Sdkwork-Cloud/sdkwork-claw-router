@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42699,
+  "uuid": "skill-clawhub-lukaizj-ambari-api",
+  "skillKey": "clawhub-lukaizj-ambari-api",
+  "name": "Ambari API",
+  "summary": "Manage Hadoop clusters via Ambari REST API. Supports service start/stop/restart, component operations, and cluster monitoring. Use when managing Ambari clust...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lukaizj_ambari_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lukaizj",
+      "features": [
+        "Manage Hadoop clusters via Ambari REST API",
+        "Supports service start/stop/restart, component operations, and cluster monitoring",
+        "Use when managing Ambari clust..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lukaizj-ambari-api@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/92360203?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lukaizj-ambari-api",
+      "url": "https://clawhub.ai/skills/lukaizj-ambari-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lukaizj-ambari-api",
+    "url": "https://clawhub.ai/skills/lukaizj-ambari-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lukaizj-ambari-api-2c693b23f0ce2471.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lukaizj-ambari-api@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lukaizj-ambari-api-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba4b4a878ddad88bb22208564d6a9c6978c5eab14d35c476b5a2fb52d74887fd",
+      "artifactSizeBytes": 2322
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T09:19:30.580Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38587,
+  "uuid": "skill-clawhub-technical-analyst-lite",
+  "skillKey": "clawhub-technical-analyst-lite",
+  "name": "Technical Analyst Lite",
+  "summary": "Basic technical analysis of price charts. Identifies trend direction, reads two key support/resistance levels, and gives a simple moving average assessment....",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.technical_analyst_lite",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jseale",
+      "features": [
+        "Basic technical analysis of price charts",
+        "Identifies trend direction, reads two key support/resistance levels, and gives a simple moving."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/technical-analyst-lite@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3369929?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "technical-analyst-lite",
+      "url": "https://clawhub.ai/skills/technical-analyst-lite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "technical-analyst-lite",
+    "url": "https://clawhub.ai/skills/technical-analyst-lite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/technical-analyst-lite-655b9bb0ddb61432.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/technical-analyst-lite@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-technical-analyst-lite-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8ce03a7a227278b9dd7f8a4c8e8a627028de7062cb5ef770b52d78fca177520c",
+      "artifactSizeBytes": 1995
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T16:21:46.371Z"
+}

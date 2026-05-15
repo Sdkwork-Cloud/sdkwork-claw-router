@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/iii-functions-triggers@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iii_functions_triggers",
+  "skill": {
+    "id": 44255,
+    "skillKey": "clawhub-iii-functions-triggers",
+    "name": "iii-functions-triggers"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iii-functions-triggers",
+    "url": "https://clawhub.ai/skills/iii-functions-triggers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iii-functions-triggers-f52c821c2b05b28c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Registers functions and triggers on the iii engine across TypeScript, Python, and Rust. Use when creating workers, registering function handlers, binding tri..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rohitg00",
+      "userId": "s1764xxjbprf3br6gghgha128x84zctc",
+      "displayName": "Rohit Ghumare",
+      "image": "https://avatars.githubusercontent.com/u/48523873?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776357445641,
+      "changelog": "Initial release of iii-functions-and-triggers skill:\n\n- Documents how to register functions and bind triggers across TypeScript, Python, and Rust in the iii engine.\n- Describes function and trigger types, cross-language invocation, and serialization handled by the engine.\n- Provides reference implementations and common usage patterns (e.g., HTTP, cron, queue, and pubsub triggers).\n- Explains auto-registration and documentation of request/response schemas for Rust, Python, and Node.js.\n- Clarifies pattern boundaries and when to use this skill versus more specific iii skills.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:89b43885d141d85819820405cec9ca2505ff1355ca5e36a47ae6c606994e6e60"
+}

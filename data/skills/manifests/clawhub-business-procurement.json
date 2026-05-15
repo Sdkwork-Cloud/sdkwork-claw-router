@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59648,
+  "uuid": "skill-clawhub-business-procurement",
+  "skillKey": "clawhub-business-procurement",
+  "name": "企业采购",
+  "summary": "企业采购助手，支持采购申请、预算占用校验、供应商比价、审批流转、收货确认、付款状态查询、采购统计分析等功能。Invoke when user needs to create purchase requests, compare suppliers, check budget, or track procureme...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.business_procurement",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fenbeitong-trip",
+      "features": [
+        "企业采购助手，支持采购申请、预算占用校验、供应商比价、审批流转、收货确认、付款状态查询、采购统计分析等功能。Invoke when user needs to create purchase."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/business-procurement@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265222913?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "business-procurement",
+      "url": "https://clawhub.ai/skills/business-procurement"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "business-procurement",
+    "url": "https://clawhub.ai/skills/business-procurement",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/business-procurement-a4b30f0b5bec2c11.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/business-procurement@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-business-procurement-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d87c55883f1a73dc19c54eec27d88107f5b031d781814e0727c1f850a886d42e",
+      "artifactSizeBytes": 2726
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T13:24:53.224Z"
+}

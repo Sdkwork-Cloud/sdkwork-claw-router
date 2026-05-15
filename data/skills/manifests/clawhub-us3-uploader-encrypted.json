@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59948,
+  "uuid": "skill-clawhub-us3-uploader-encrypted",
+  "skillKey": "clawhub-us3-uploader-encrypted",
+  "name": "us3-uploader-encrypted",
+  "summary": "Upload files to UCloud US3 (UFile) object storage and generate download URLs. 当用户需要：上传文件、发送文件、分享文件、生成文件链接、把文件发给用户、导出文件、 生成PDF/图片/文档后发送、任何文件产出需要给用户时，必须使用此 ski...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.us3_uploader_encrypted",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qianjunye",
+      "features": [
+        "Upload files to UCloud US3 (UFile) object storage and generate download URLs",
+        "当用户需要：上传文件、发送文件、分享文件、生成文件链接、把文件发给用户、导出文件、 生成PDF/图片/文档后发送、任何文件产出需要给用户时，必须使用此 ski..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/us3-uploader-encrypted@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3345643?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "us3-uploader-encrypted",
+      "url": "https://clawhub.ai/skills/us3-uploader-encrypted"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "us3-uploader-encrypted",
+    "url": "https://clawhub.ai/skills/us3-uploader-encrypted",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/us3-uploader-encrypted-6465e3318d2e96e3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/us3-uploader-encrypted@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-us3-uploader-encrypted-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:397b257e8767e6928999f5d8011ce17c7ca3c54c83e159fe6cf254245b377d33",
+      "artifactSizeBytes": 2587
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T04:15:25.370Z"
+}

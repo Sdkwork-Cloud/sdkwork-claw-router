@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52332,
+  "uuid": "skill-clawhub-session-scribe-openclaw",
+  "skillKey": "clawhub-session-scribe-openclaw",
+  "name": "Session Scribe",
+  "summary": "Automatically summarize active OpenClaw session transcripts into daily memory files using a cheap LLM. Run as a system cron job — reads new transcript entrie...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_scribe_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kitsune",
+      "features": [
+        "Automatically summarize active OpenClaw session transcripts into daily memory files using a che.",
+        "Run as a system cron job — reads new transcript entrie..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/session-scribe-openclaw@1.0.1",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/session-scribe-openclaw/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "session-scribe-openclaw",
+      "url": "https://clawhub.ai/skills/session-scribe-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-scribe-openclaw",
+    "url": "https://clawhub.ai/skills/session-scribe-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-scribe-openclaw-b2fc0799a635f74c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/session-scribe-openclaw@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-session-scribe-openclaw-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a30c248c886988204a6ec6565d2554d2d6547f56b730e278c242da7431f9ca56",
+      "artifactSizeBytes": 2369
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T05:04:44.484Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30588,
+  "uuid": "skill-clawhub-humanizer-local-backup",
+  "skillKey": "clawhub-humanizer-local-backup",
+  "name": "Humanizer.Local.Backup",
+  "summary": "Remove signs of AI-generated writing from text. Use when editing or reviewing text to make it sound more natural and human-written. Based on Wikipedia's comp...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.humanizer_local_backup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "12357851",
+      "features": [
+        "Remove signs of AI-generated writing from text",
+        "Use when editing or reviewing text to make it sound more natural and human-written",
+        "Based on Wikipedia's comp..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/humanizer-local-backup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/200716084?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "humanizer-local-backup",
+      "url": "https://clawhub.ai/skills/humanizer-local-backup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "humanizer-local-backup",
+    "url": "https://clawhub.ai/skills/humanizer-local-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/humanizer-local-backup-069496c40f92183a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/humanizer-local-backup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-humanizer-local-backup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b6935e403971554bae6c6a09be499e70597d253777619af3567e1e73d2368d9",
+      "artifactSizeBytes": 2399
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T06:10:29.810Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zx@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zx",
+  "skill": {
+    "id": 54007,
+    "skillKey": "clawhub-zx",
+    "name": "zx"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zx",
+    "url": "https://clawhub.ai/skills/zx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zx-b2ab54fd83e5770a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive guide for writing shell scripts with Google zx — a tool for writing better scripts using JavaScript/TypeScript. Use when writing, debugging, or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openlark",
+      "userId": "s1727wv2g20pc729snzcm4nf8183hy72",
+      "displayName": "OpenLark",
+      "image": "https://avatars.githubusercontent.com/u/260858787?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 123,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777857936406,
+      "changelog": "Initial release of zx skill — a guide for shell scripting using Google zx.\n\n- Provides comprehensive documentation and usage patterns for zx in JavaScript/TypeScript scripts.\n- Covers core concepts: the $ command, piping, ProcessPromise/ProcessOutput APIs, option presets, and CLI usage.\n- Includes quick start instructions and a decision tree for common scripting tasks.\n- Documents built-in helpers and best practices for writing, debugging, and refactoring zx scripts.\n- Clarifies the scope: for shell scripting with zx, not for unrelated Node.js questions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2857ac553d6d12ec7b62f579469f6524d8c412b6e805a63b7f9500b054f698ca"
+}

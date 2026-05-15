@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/schwab@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.schwab",
+  "skill": {
+    "id": 64737,
+    "skillKey": "clawhub-schwab",
+    "name": "Schwab"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "schwab",
+    "url": "https://clawhub.ai/skills/schwab",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/schwab-a929c5789c0b2460.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供嘉信理财 Charles Schwab 公司的详细信息、历史、业务架构、财务概况及行业竞争分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776396333811,
+      "changelog": "- 全新发布，详尽介绍嘉信理财 Charles Schwab 的公司背景、发展历程及业务结构\n- 覆盖创始人故事、1975 年折扣经纪革命、与 TD Ameritrade 的整合等关键节点\n- 梳理核心业务（经纪、财富管理、银行、ETF）与财务数据（2023 收入、客户数等）\n- 提供与主要竞争对手（Fidelity、E*TRADE、Interactive Brokers、Robinhood）的横向对比\n- 附公司总部及主要运营地点、基本信息卡，并标示适用查询场景",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f71ef88fddea5951d997a1181f11993a3287ba9a10a55449b65dcf00d52fc5a1"
+}

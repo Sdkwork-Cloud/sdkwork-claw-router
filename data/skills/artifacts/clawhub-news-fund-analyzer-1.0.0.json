@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/news-fund-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_fund_analyzer",
+  "skill": {
+    "id": 70876,
+    "skillKey": "clawhub-news-fund-analyzer",
+    "name": "News Fund Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-fund-analyzer",
+    "url": "https://clawhub.ai/skills/news-fund-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-fund-analyzer-a95ec364f26d2a29.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于实时新闻分析基金涨跌原因并预测走势，提供投资建议。根据宏观环境、市场资金情绪、基金自身持仓与管理、行业政策四大维度分析，区分股票/混合、债券基金的侧重点。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nidhov01",
+      "userId": "publishers:nidhov01",
+      "displayName": "nidhov01",
+      "image": "https://avatars.githubusercontent.com/u/235751867?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 300,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773614547509,
+      "changelog": "Manual publish - scheme 1",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3cd5c000c678929090dc225ff8b4b563ddfe730934676a3619be3870f4d91045"
+}

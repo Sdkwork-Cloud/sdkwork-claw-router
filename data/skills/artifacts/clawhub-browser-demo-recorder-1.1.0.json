@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/browser-demo-recorder@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_demo_recorder",
+  "skill": {
+    "id": 38133,
+    "skillKey": "clawhub-browser-demo-recorder",
+    "name": "Browser Demo Recorder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-demo-recorder",
+    "url": "https://clawhub.ai/skills/browser-demo-recorder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-demo-recorder-09ce5d1871ffff7c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Record browser demo videos from a plain-language brief by turning the requested flow into a plan, driving the OpenClaw browser via CDP, encoding an MP4, writ..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "smile618",
+      "userId": "s17dmvh5qt5g2jmfw9fmggxm9n83kz5e",
+      "displayName": "smile618",
+      "image": "https://avatars.githubusercontent.com/u/119727144?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774450776084,
+      "changelog": "Improve recording fidelity with a visible cursor overlay on the current page, wheel-based scrolling that stays anchored near the last interaction, and cross-platform input clearing. Also update docs to reflect human-like cursor, click, type, and scroll behavior.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cc3cf39d06efddbcca5c6e49e6129310c2796f3ef0ffb1fcd9cc810cfff98179"
+}

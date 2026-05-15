@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/subscription-audit-toolkit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subscription_audit_toolkit",
+  "skill": {
+    "id": 49888,
+    "skillKey": "clawhub-subscription-audit-toolkit",
+    "name": "Subscription Audit Toolkit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subscription-audit-toolkit",
+    "url": "https://clawhub.ai/skills/subscription-audit-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subscription-audit-toolkit-815bef9bf7c47e59.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helps you identify unused subscriptions, evaluate their value and usage, and create a plan to reduce costs and manage recurring payments efficiently."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 62,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778282203734,
+      "changelog": "- Initial release of the Subscription Audit Toolkit.\n- Provides step-by-step workflow to discover, inventory, and assess all recurring subscriptions.\n- Introduces a usage-value matrix for cancellation and optimization decisions.\n- Offers practical strategies such as annual billing, family plans, and service rotation.\n- Includes routines for ongoing monthly review and new subscription evaluation.\n- Delivers clear guidance without financial advice or code execution.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7518f93d35ed78323d1ce693e127aeb0ca582df98c708a588a924eff70f5b5c6"
+}

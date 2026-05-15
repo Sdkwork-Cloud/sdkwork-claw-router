@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/8@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.8",
+  "skill": {
+    "id": 73231,
+    "skillKey": "clawhub-8",
+    "name": "娱乐八卦"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "8",
+    "url": "https://clawhub.ai/skills/8",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/8-2c624232cdd22177.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供与数字8相关的明星八卦、娱乐新闻、事件分析及娱乐数字密码解读，关联娱乐热点与八卦趋势。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hgta23",
+      "userId": "s176ns9wb0zkz6m56ha2rk438x843wcn",
+      "displayName": "bittao",
+      "image": "https://avatars.githubusercontent.com/u/17961407?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775456095494,
+      "changelog": "Version 1.0.0 – Initial release of the \"8\" Entertainment Gossip Skill:\n\n- Explore gossip and entertainment news themed around the number 8.\n- Features celebrity–8 connections, including stories, birthdays, and significant dates.\n- Provides 8-based gossip rankings updated daily, weekly, and monthly.\n- Analyzes major entertainment events related to 8 and predicts future trends.\n- Explores the symbolism and frequency of 8 in celebrity and entertainment contexts.\n- Offers real-time updates, smart analysis, and personalized content recommendations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1e8cb108c6284537353d5c1f44d763b0b491e6eb530c5a330e543e4b69cf9671"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65655,
+  "uuid": "skill-clawhub-minimax-tts-zh",
+  "skillKey": "clawhub-minimax-tts-zh",
+  "name": "Minimax Tts Cn",
+  "summary": "使用 MiniMax API 将文字转换为 MP3 语音文件。触发词：文字转语音、TTS、生成语音、生成音频、把文字转成语音、文字转MP3、生成MP3。触发后按交互流程引导用户完成 Token 配置、文字输入、音色选择，最终生成 MP3 文件发给用户。严禁使用 say 命令或通过喇叭播放，必须生成 MP3 文件。",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_tts_zh",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ggttol",
+      "features": [
+        "使用 MiniMax API 将文字转换为 MP3 语音文件。触发词：文字转语音、TTS、生成语音、生成音频、把文字转成语音、文字转MP3、生成MP3。触发后按交互流程引导用户完成 Toke."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/minimax-tts-zh@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30802623?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "minimax-tts-zh",
+      "url": "https://clawhub.ai/skills/minimax-tts-zh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-tts-zh",
+    "url": "https://clawhub.ai/skills/minimax-tts-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-tts-zh-6570133e1c44d509.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/minimax-tts-zh@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-minimax-tts-zh-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e7e372926382997e88f46a983bd059122a94803e7985b2c35e91208759b2c90c",
+      "artifactSizeBytes": 2518
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T03:33:42.828Z"
+}

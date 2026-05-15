@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/news-trust-check@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_trust_check",
+  "skill": {
+    "id": 20880,
+    "skillKey": "clawhub-news-trust-check",
+    "name": "News Trust Check"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-trust-check",
+    "url": "https://clawhub.ai/skills/news-trust-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-trust-check-67ad57765932ee58.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Verify suspicious news, announcements, screenshots, and viral claims using a high-trust source pool (official channels + Chinese mainstream media + internati..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "helloeveryworlds",
+      "userId": "publishers:helloeveryworlds",
+      "displayName": "helloeveryworlds",
+      "image": "https://avatars.githubusercontent.com/u/58319337?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 423,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773359089640,
+      "changelog": "Improve reliability: add empty-input validation and consistent error exit behavior in scoring helper script.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5a351d53651818d0e89954e6cffb17a5e41710a1555bf60d46abc8f97eaa7bd1"
+}

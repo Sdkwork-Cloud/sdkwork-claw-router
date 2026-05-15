@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linkedin-community@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkedin_community",
+  "skill": {
+    "id": 48966,
+    "skillKey": "clawhub-linkedin-community",
+    "name": "LinkedIn Community"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkedin-community",
+    "url": "https://clawhub.ai/skills/linkedin-community",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkedin-community-70314a1b01519a38.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "LinkedIn Community Management API integration with managed OAuth. Manage organization pages, posts, comments, reactions, and analytics. Use this skill when u..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 89,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778097734361,
+      "changelog": "Initial release of LinkedIn Community Management skill.\n\n- Integrates LinkedIn Community Management API with managed OAuth authentication.\n- Provides endpoints to manage organization pages, create and manage posts, comments, and reactions.\n- Supports retrieval of profile, organization details, follower counts, and organization analytics.\n- Allows connection management (list, create, get, delete) for LinkedIn OAuth connections via Maton.\n- Documents use of API keys, required headers, and security best practices for all operations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dc20c45d4f858df74d708b4dc33fd4c641f39af00e3b47c60ad541f475665f03"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toby-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toby_video",
+  "skill": {
+    "id": 42164,
+    "skillKey": "clawhub-toby-video",
+    "name": "video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toby-video",
+    "url": "https://clawhub.ai/skills/toby-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toby-video-d6781e6a21cc6b36.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate video using SkillBoss API Hub (video generation, auto-routed via /v1/pilot)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tobeyrebecca",
+      "userId": "s17a4w4rxr2w5b31z6gnpnqg2184msz0",
+      "displayName": "TobeyRebecca",
+      "image": "https://avatars.githubusercontent.com/u/260428668?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776755167307,
+      "changelog": "- Initial release of veo: generate video clips using the SkillBoss API Hub, auto-routed to the best available model.\n- Supports specifying video duration, aspect ratio, and optional model hints.\n- Provides image-to-video capability with input image option.\n- Requires SKILLBOSS_API_KEY environment variable.\n- Output videos are in MP4 format; script prints MEDIA: line for easy attachment.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6273183bc8605b98ef4f1c844bcc6bae85b780152ecbf7429ed2a54f05ab5a9d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yamlcheck@3.0.2",
+  "version": "3.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yamlcheck",
+  "skill": {
+    "id": 24488,
+    "skillKey": "clawhub-yamlcheck",
+    "name": "Yamlcheck"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yamlcheck",
+    "url": "https://clawhub.ai/skills/yamlcheck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yamlcheck-de3129a0d97729cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Validate YAML syntax using python3, lint configs, and convert YAML to JSON. Use when checking syntax, finding errors, or converting formats."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bytesagain-lab",
+      "userId": "s174pq5f3gzez3838vt2642fmx848f1d",
+      "displayName": "bytesagain-lab",
+      "image": "https://avatars.githubusercontent.com/u/271735676?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 401,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "3.0.2",
+      "createdAt": 1773918128627,
+      "changelog": "v3.0.2: Fixed version mismatch between script and SKILL.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bd8f9925857d970a7acf5fa31596d88f2e856cb4cf22d28e461d5adc00b6c28a"
+}

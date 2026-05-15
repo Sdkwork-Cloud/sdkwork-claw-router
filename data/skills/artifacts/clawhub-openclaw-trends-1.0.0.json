@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-trends@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_trends",
+  "skill": {
+    "id": 29908,
+    "skillKey": "clawhub-openclaw-trends",
+    "name": "OpenClaw Trends"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-trends",
+    "url": "https://clawhub.ai/skills/openclaw-trends",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-trends-ecb752daca505a35.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch and aggregate OpenClaw-related content from across the internet. Use when the user asks about OpenClaw trends, news, tutorials, videos, community discu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andremashukov",
+      "userId": "publishers:andremashukov",
+      "displayName": "Andrey Mashukov",
+      "image": "https://avatars.githubusercontent.com/u/35621055?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 293,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773841831902,
+      "changelog": "Initial release.\n\n- Fetches trending OpenClaw-related content from YouTube, GitHub, X/Twitter, Reddit, and Hacker News.\n- Aggregates, deduplicates, and ranks results by date and relevance.\n- Supports structured summaries including source, title, short description, URL, and date.\n- Provides both CLI and cron-based daily update options.\n- Uses official APIs where possible and web search for platforms without APIs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:84da707f9589c3eed2d535cc1b660c6edae79b8e124a5906b59e5eca640fa193"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28672,
+  "uuid": "skill-clawhub-nginx-explorer",
+  "skillKey": "clawhub-nginx-explorer",
+  "name": "nginx-explorer",
+  "summary": "Explore nginx-proxied directories to discover tools and utilities. Use when: user asks to explore available tools, find utilities for specific tasks, or when...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nginx_explorer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shaojun0",
+      "features": [
+        "Explore nginx-proxied directories to discover tools and utilities",
+        "Use when: user asks to explore available tools, find utilities for specific tasks, or when..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nginx-explorer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/104407395?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nginx-explorer",
+      "url": "https://clawhub.ai/skills/nginx-explorer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nginx-explorer",
+    "url": "https://clawhub.ai/skills/nginx-explorer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nginx-explorer-ad4bc4864fdc6811.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nginx-explorer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nginx-explorer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:06a7f43cbcd15e6496e0459d2dfcc4e9f46ba4bfbea5597793d414005c556551",
+      "artifactSizeBytes": 2509
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T09:45:18.703Z"
+}

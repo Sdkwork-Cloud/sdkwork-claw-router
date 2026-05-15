@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28466,
+  "uuid": "skill-clawhub-document-sanitizer",
+  "skillKey": "clawhub-document-sanitizer",
+  "name": "Document Sanitizer",
+  "summary": "Batch desensitize docx/xlsx files via keyword and regex rules, with one-click reversible restoration. Replace sensitive terms (company names, personal info,...",
+  "version": "1.5.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.document_sanitizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "juanfenglong",
+      "features": [
+        "Batch desensitize docx/xlsx files via keyword and regex rules, with one-click reversible restor.",
+        "Replace sensitive terms (company names, personal info,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/document-sanitizer@1.5.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38432924?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "document-sanitizer",
+      "url": "https://clawhub.ai/skills/document-sanitizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "document-sanitizer",
+    "url": "https://clawhub.ai/skills/document-sanitizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/document-sanitizer-1988c1ca84c7d6b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/document-sanitizer@1.5.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-document-sanitizer-1.5.1.json",
+      "version": "1.5.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:18325855f983701cf53fc55255f991fcbfc7767c1a8c8ab0a628a4983c8faaf6",
+      "artifactSizeBytes": 2026
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T04:13:40.485Z"
+}

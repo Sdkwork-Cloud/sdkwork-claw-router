@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/harmony-next@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.harmony_next",
+  "skill": {
+    "id": 26276,
+    "skillKey": "clawhub-harmony-next",
+    "name": "HarmonyOS NEXT Expert"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "harmony-next",
+    "url": "https://clawhub.ai/skills/harmony-next",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/harmony-next-07b8781be67ce79c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Expert guidance for HarmonyOS NEXT (API 12+) development. Use this skill for ArkTS, ArkUI, and NDK development using official offline documentation for 3,300..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linhay",
+      "userId": "publishers:linhay",
+      "displayName": "linhay",
+      "image": "https://avatars.githubusercontent.com/u/15262434?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 361,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773370904738,
+      "changelog": "Ship compact retrieval bundle (SKILL + KITS + TASK_MAP + INDEX) to fit ClawHub size limit",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9f802a5a5b033eae6675adf885983135e44972833e2467c537fde03523d4c936"
+}

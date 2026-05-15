@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/comman-felo-slides@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.comman_felo_slides",
+  "skill": {
+    "id": 19053,
+    "skillKey": "clawhub-comman-felo-slides",
+    "name": "Felo Slides"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "comman-felo-slides",
+    "url": "https://clawhub.ai/skills/comman-felo-slides",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/comman-felo-slides-1115f6046b7783b3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate PPT/slides with Felo PPT Task API in Claude Code. Use when users ask to create/make/generate/export presentations or slide decks, or when explicit c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "comman-kaide",
+      "userId": "publishers:comman-kaide",
+      "displayName": "comman-kaide",
+      "image": "https://avatars.githubusercontent.com/u/138638755?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 440,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772806708238,
+      "changelog": "Initial release: Generate PPT/slides with Felo PPT Task API",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cf9c7d27f582019551c5ab87a69389295e63d14e5fb27af6b874c3c525244cee"
+}

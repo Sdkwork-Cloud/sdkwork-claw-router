@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skylv-bot-factory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_bot_factory",
+  "skill": {
+    "id": 45667,
+    "skillKey": "clawhub-skylv-bot-factory",
+    "name": "Skylv Bot Factory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-bot-factory",
+    "url": "https://clawhub.ai/skills/skylv-bot-factory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-bot-factory-2ada18e8dfb26c71.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides 10+ production-grade AI Agent architecture templates with personas, tools, workflows, and metrics for immediate deployment in various roles."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 122,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777679349683,
+      "changelog": "Agent Builder skill initial release, delivering AI Agent architecture templates and design tools.\n\n- Provides 10+ ready-to-deploy AI Agent architecture templates (e.g., customer service, sales, dev, ops) with personas, toolkits, and workflows.\n- Includes usage methods: template selection, custom agent design, and multi-agent collaboration scenarios.\n- Templates feature clear breakdowns: identity, capabilities, tools, workflow, metrics, and guardrails.\n- Designed for fast deployment and customization, not “generic assistants.”\n- Offers trigger phrases and manual commands for easy activation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:69290f761cd847aa69ea7001572a04fbbf546fb5fabf78a511aabee9d702a4c7"
+}

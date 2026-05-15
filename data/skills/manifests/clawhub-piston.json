@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52339,
+  "uuid": "skill-clawhub-piston",
+  "skillKey": "clawhub-piston",
+  "name": "Piston",
+  "summary": "Reference tool for devtools — covers intro, quickstart, patterns and more. Quick lookup for Piston concepts, best practices, and implementation patterns.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.piston",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "Reference tool for devtools — covers intro, quickstart, patterns and more",
+        "Quick lookup for Piston concepts, best practices, and implementation patterns."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/piston@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "piston",
+      "url": "https://clawhub.ai/skills/piston"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "piston",
+    "url": "https://clawhub.ai/skills/piston",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/piston-7ef4bc34a4974515.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/piston@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-piston-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5b2595c839e0af268eda7520892bc4d65b8d29d11641d747ea60547168eb4560",
+      "artifactSizeBytes": 1831
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T00:48:40.175Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/install-scientify@1.7.3",
+  "version": "1.7.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.install_scientify",
+  "skill": {
+    "id": 10582,
+    "skillKey": "clawhub-install-scientify",
+    "name": "Scientify - AI-powered collaborator for your scientific research works."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "install-scientify",
+    "url": "https://clawhub.ai/skills/install-scientify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/install-scientify-771c1acc565c1da5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this when the user wants to install or set up the Scientify research plugin. Adds research-pipeline, literature-survey, idea-generation, arxiv tools, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "springleave",
+      "userId": "s179gfj1x0bwk4jphq6kj4ne09845h3t",
+      "displayName": "Springleave",
+      "image": "https://avatars.githubusercontent.com/u/134937667?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2053,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 5,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.7.3",
+      "createdAt": 1771842029746,
+      "changelog": "Major update with expanded features and improved installation instructions.\n\n- Added new skills: literature-survey, research-survey, research-plan, research-implement, research-review, research-experiment, and write-review-paper.\n- Expanded toolset: now includes arxiv_search, arxiv_download, openalex_search, unpaywall_download, github_search, and paper_browser.\n- Updated installation method: now requires installation via openclaw plugins install scientify, not npm.\n- Revised workspace management commands for enhanced project tracking and control.\n- Expanded and improved skill and tool descriptions for clarity.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:35d79087ff63a21bc46472376fff6a4821185cedb2fb3d0ce6aa00cebe86f7ca"
+}

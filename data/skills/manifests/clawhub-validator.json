@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22107,
+  "uuid": "skill-clawhub-validator",
+  "skillKey": "clawhub-validator",
+  "name": "Validator",
+  "summary": "Validate emails, URLs, phones, dates, and custom patterns. Use when sanitizing input, verifying form fields, checking formats, or enforcing rules.",
+  "version": "3.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.validator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "Validate emails, URLs, phones, dates, and custom patterns",
+        "Use when sanitizing input, verifying form fields, checking formats, or enforcing rules."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/validator@3.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "validator",
+      "url": "https://clawhub.ai/skills/validator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "validator",
+    "url": "https://clawhub.ai/skills/validator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/validator-f82af32160bc5311.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/validator@3.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-validator-3.0.1.json",
+      "version": "3.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c772ae29add93d4aa88ca05c3fe73805929f60d782829412980b90e96b2b53bd",
+      "artifactSizeBytes": 1884
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T09:54:09.443Z"
+}

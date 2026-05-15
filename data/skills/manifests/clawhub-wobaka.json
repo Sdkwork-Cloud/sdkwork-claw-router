@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27270,
+  "uuid": "skill-clawhub-wobaka",
+  "skillKey": "clawhub-wobaka",
+  "name": "Wobaka",
+  "summary": "Wobaka integration. Manage data, records, and automate workflows. Use when the user wants to interact with Wobaka data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wobaka",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Wobaka integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Wobaka data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wobaka@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wobaka",
+      "url": "https://clawhub.ai/skills/wobaka"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wobaka",
+    "url": "https://clawhub.ai/skills/wobaka",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wobaka-9dcef1fa918742bf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wobaka@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-wobaka-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8f4c441c8d246a0bfa8da87eb9dd4c5aa050a210e3e8dd1d4948f7b392540192",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:02:35.487Z"
+}

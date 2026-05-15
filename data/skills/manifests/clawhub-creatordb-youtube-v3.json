@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10620,
+  "uuid": "skill-clawhub-creatordb-youtube-v3",
+  "skillKey": "clawhub-creatordb-youtube-v3",
+  "name": "Youtube Reporter by CreatorDB",
+  "summary": "Can search and get YouTuber information",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.creatordb_youtube_v3",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "poi5305",
+      "features": [
+        "Can search and get YouTuber information"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/creatordb-youtube-v3@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1979487?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "creatordb-youtube-v3",
+      "url": "https://clawhub.ai/skills/creatordb-youtube-v3"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "creatordb-youtube-v3",
+    "url": "https://clawhub.ai/skills/creatordb-youtube-v3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/creatordb-youtube-v3-c38ddcbc95177c9d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/creatordb-youtube-v3@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-creatordb-youtube-v3-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:395c3e61bc1c7132e6259070435316b74af19d9d6c5ca782aeb440c752affffd",
+      "artifactSizeBytes": 2201
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-29T07:24:16.856Z"
+}

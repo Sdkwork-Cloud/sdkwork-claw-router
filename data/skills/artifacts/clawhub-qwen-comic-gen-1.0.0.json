@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qwen-comic-gen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qwen_comic_gen",
+  "skill": {
+    "id": 17244,
+    "skillKey": "clawhub-qwen-comic-gen",
+    "name": "Qwen Comic Gen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qwen-comic-gen",
+    "url": "https://clawhub.ai/skills/qwen-comic-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qwen-comic-gen-cc8a23e49fa298d8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate/edit images with Nano Banana Pro (Gemini 3 Pro Image). Use for image create/modify requests incl. edits. Supports text-to-image + image-to-image; 1K..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "icesumer-lgtm",
+      "userId": "s177qrnn1tw4tydz6g6neevw0d83tmha",
+      "displayName": "icesumer-lgtm",
+      "image": "https://avatars.githubusercontent.com/u/262824601?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 800,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773741256286,
+      "changelog": "Nano Banana Pro image generation and editing initial release:\n\n- Generate new images or edit existing ones using Gemini 3 Pro Image API.\n- Supports text-to-image and image-to-image workflows; choose 1K, 2K, or 4K resolution.\n- Handles API key via CLI argument or environment variable.\n- Smart filename generation using timestamp and prompt keywords.\n- Output images saved to current working directory; clear error handling for common failures.\n- Includes workflow tips, prompt suggestions, and resolution mapping.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:38e5168be4ade0be46dd628c7515c7839158df20266b3d19cac01efd54e76588"
+}

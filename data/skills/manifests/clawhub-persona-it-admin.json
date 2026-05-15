@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54628,
+  "uuid": "skill-clawhub-persona-it-admin",
+  "skillKey": "clawhub-persona-it-admin",
+  "name": "Persona It Admin",
+  "summary": "Administer IT — monitor security and configure Workspace.",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.persona_it_admin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Administer IT — monitor security and configure Workspace."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/persona-it-admin@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "persona-it-admin",
+      "url": "https://clawhub.ai/skills/persona-it-admin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "persona-it-admin",
+    "url": "https://clawhub.ai/skills/persona-it-admin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/persona-it-admin-d3436d08fbec618e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/persona-it-admin@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-persona-it-admin-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d8dc916bab683ac4ba354405f7214f4f24281e93029db97afcebf393ac3f829e",
+      "artifactSizeBytes": 1933
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:35:26.767Z"
+}

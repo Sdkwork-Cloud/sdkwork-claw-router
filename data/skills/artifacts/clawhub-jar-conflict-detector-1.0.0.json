@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jar-conflict-detector@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jar_conflict_detector",
+  "skill": {
+    "id": 57011,
+    "skillKey": "clawhub-jar-conflict-detector",
+    "name": "jar冲突检测器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jar-conflict-detector",
+    "url": "https://clawhub.ai/skills/jar-conflict-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jar-conflict-detector-775bffd36d72e054.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when the user needs to detect JAR package conflicts, version inconsistencies, or known incompatible dependency pairs in a Spring Bo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yssnb",
+      "userId": "s17fbebb55e798xm5nek0qfweh84d738",
+      "displayName": "yssNB",
+      "image": "https://avatars.githubusercontent.com/u/46145241?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775555831580,
+      "changelog": "This skill should be used when the user needs to detect JAR package conflicts,\n  version inconsistencies, or known incompatible dependency pairs in a Spring Boot\n  microservices project. Trigger phrases include: \"检测 jar 包冲突\", \"依赖冲突分析\",\n  \"dependency conflict\", \"jar 版本冲突\", \"pom 依赖检查\", \"排查 NoSuchMethodError\",\n  \"Spring Boot 升级冲突\", or any request involving Maven/Gradle dependency resolution\n  issues in a Java/Spring Boot project.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:222cc61b10c88218e0318f4baf973dab6dedf295404ab69d13bfc0df7307bdd3"
+}

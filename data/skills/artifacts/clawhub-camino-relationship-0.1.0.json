@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/camino-relationship@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.camino_relationship",
+  "skill": {
+    "id": 16027,
+    "skillKey": "clawhub-camino-relationship",
+    "name": "Geospacial relationship between two locations"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "camino-relationship",
+    "url": "https://clawhub.ai/skills/camino-relationship",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/camino-relationship-b01d2de31cc139af.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Calculate spatial relationships between two points including distance, direction, travel time, and human-readable descriptions. Use when you need to understa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "james-southendsolutions",
+      "userId": "publishers:james-southendsolutions",
+      "displayName": "James-southendsolutions",
+      "image": "https://avatars.githubusercontent.com/u/93152760?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 737,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771280985869,
+      "changelog": "Initial release of the camino-relationship skill.\n\n- Provides spatial relationship calculations (distance, direction, travel time, and descriptions) between two locations.\n- Supports flexible output: request all or specific calculations (distance, direction, travel_time, description).\n- Includes easy setup with free trial API key and simple environment variable configuration.\n- Offers both shell script and curl usage examples for easy integration.\n- Useful for proximity checks, direction guidance, travel planning, and generating location-based descriptions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ffaae2f8f1be532e6d69a82b86b210d58ffd467d247783380ae5e6f4d946ff73"
+}

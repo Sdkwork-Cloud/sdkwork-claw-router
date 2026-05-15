@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/leviathan-news@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.leviathan_news",
+  "skill": {
+    "id": 11394,
+    "skillKey": "clawhub-leviathan-news",
+    "name": "Leviathan News"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "leviathan-news",
+    "url": "https://clawhub.ai/skills/leviathan-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/leviathan-news-8c30984154d28bc2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Crowdsourced crypto news API. Submit articles, comment, and vote to earn SQUID tokens. Human-curated DeFi news with token-aware tagging."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zcor",
+      "userId": "publishers:zcor",
+      "displayName": "zcor",
+      "image": "https://avatars.githubusercontent.com/u/13426766?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2066,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769943184953,
+      "changelog": "- Changed authentication instructions: now requires using the Cookie header with access_token for all authenticated API requests.\n- Updated all code examples to use Cookie-based authentication instead of Authorization: Bearer headers.\n- Added a note that Authorization headers are not currently supported, and Cookie headers should be used.\n- No changes to file content or API structure otherwise.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4ce778485d58032fc48a05f99790dcf1caec9f4704f9aef1964f46fa2f342e1a"
+}

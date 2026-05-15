@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42272,
+  "uuid": "skill-clawhub-openclaw-exec-truncate",
+  "skillKey": "clawhub-openclaw-exec-truncate",
+  "name": "Exec Truncate",
+  "summary": "AI agent tool for compressing/executing shell commands with domain-aware output truncation. Use when exec tool output needs to be compressed, when running gi...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_exec_truncate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "austrian_guy",
+      "features": [
+        "AI agent tool for compressing/executing shell commands with domain-aware output truncation",
+        "Use when exec tool output needs to be compressed, when running gi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-exec-truncate@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33156212?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-exec-truncate",
+      "url": "https://clawhub.ai/skills/openclaw-exec-truncate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-exec-truncate",
+    "url": "https://clawhub.ai/skills/openclaw-exec-truncate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-exec-truncate-8d372cc0db78f9e8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-exec-truncate@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-exec-truncate-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ec6f715e0a6d1d03f5612c05fad9c300ef5efe4332134897dade1a213fcb379",
+      "artifactSizeBytes": 2058
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T23:03:54.196Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tomoviee-image-recognition@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tomoviee_image_recognition",
+  "skill": {
+    "id": 22847,
+    "skillKey": "clawhub-tomoviee-image-recognition",
+    "name": "Tomoviee Image Recognition"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tomoviee-image-recognition",
+    "url": "https://clawhub.ai/skills/tomoviee-image-recognition",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tomoviee-image-recognition-74f1780b8f9a54b2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Auto-generate masks for objects/regions in images. Use when users request image_recognition operations or related tasks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wondershare-boop",
+      "userId": "s1707d6v06e1pv7bbn814sjdq583gtne",
+      "displayName": "wondershare-boop",
+      "image": "https://avatars.githubusercontent.com/u/208894930?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 450,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774622273602,
+      "changelog": "- Added _meta.json for improved metadata management.\n- Included compiled Python cache file scripts/__pycache__/tomoviee_recognition_client.cpython-312.pyc.\n- No changes to the documentation or core functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c7bbedb4dfd0419e867546dc94b79d39c37ecc0d6607ca0520d861f41e360a4e"
+}

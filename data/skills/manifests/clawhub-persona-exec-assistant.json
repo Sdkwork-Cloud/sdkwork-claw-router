@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13077,
+  "uuid": "skill-clawhub-persona-exec-assistant",
+  "skillKey": "clawhub-persona-exec-assistant",
+  "name": "Persona Exec Assistant",
+  "summary": "Manage an executive's schedule, inbox, and communications.",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.persona_exec_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Manage an executive's schedule, inbox, and communications."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/persona-exec-assistant@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "persona-exec-assistant",
+      "url": "https://clawhub.ai/skills/persona-exec-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "persona-exec-assistant",
+    "url": "https://clawhub.ai/skills/persona-exec-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/persona-exec-assistant-38e686c99c9a4ed2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/persona-exec-assistant@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-persona-exec-assistant-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:55344c9f5ea65b4f7a1c0c5cc9fb19b3bc03636fc76d61f65090fe66a3e0f962",
+      "artifactSizeBytes": 1972
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:35:21.262Z"
+}

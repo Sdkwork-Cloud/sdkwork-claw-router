@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/threeperson@3.3.2",
+  "version": "3.3.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.threeperson",
+  "skill": {
+    "id": 71918,
+    "skillKey": "clawhub-threeperson",
+    "name": "Publish"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "threeperson",
+    "url": "https://clawhub.ai/skills/threeperson",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/threeperson-eb9d7a93f8b24a16.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "一个恋人、一个损友、一个死敌。三个人陪你聊天，各自记得你们的事。聊着聊着，关系真的会变。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huangjihua007-rgb",
+      "userId": "s1734qhn3akb7fvmwmx5evkrfn85t1tx",
+      "displayName": "huangjihua007-rgb",
+      "image": "https://avatars.githubusercontent.com/u/267920358?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 429,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 15
+    },
+    "latestVersion": {
+      "version": "3.3.2",
+      "createdAt": 1778163598319,
+      "changelog": "新增品牌尾注（开场+分享卡）",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4240f0dfb7d98cdefe56484149fdc371b693da6553f481b13b62b946b9cda65c"
+}

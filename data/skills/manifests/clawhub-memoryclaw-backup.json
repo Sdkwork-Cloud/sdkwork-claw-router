@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40015,
+  "uuid": "skill-clawhub-memoryclaw-backup",
+  "skillKey": "clawhub-memoryclaw-backup",
+  "name": "MemoryClaw Backup",
+  "summary": "Helps users install and use MemoryClaw to securely back up and restore their OpenClaw setup across machines. Use when the user asks about backup, restore, sy...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memoryclaw_backup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Islam Adel",
+      "features": [
+        "Helps users install and use MemoryClaw to securely back up and restore their OpenClaw setup acr.",
+        "Use when the user asks about backup, restore, sy..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memoryclaw-backup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10940265?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memoryclaw-backup",
+      "url": "https://clawhub.ai/skills/memoryclaw-backup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memoryclaw-backup",
+    "url": "https://clawhub.ai/skills/memoryclaw-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memoryclaw-backup-611741e5e7ce96a3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memoryclaw-backup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memoryclaw-backup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:790afd0d3f3bcf7152359c6554f53347263afb6811a40c2e710d050967eee9a2",
+      "artifactSizeBytes": 2395
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T23:32:59.428Z"
+}

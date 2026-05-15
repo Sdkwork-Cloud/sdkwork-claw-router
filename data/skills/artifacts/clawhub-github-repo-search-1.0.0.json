@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-repo-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_repo_search",
+  "skill": {
+    "id": 62038,
+    "skillKey": "clawhub-github-repo-search",
+    "name": "github-repo-search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-repo-search",
+    "url": "https://clawhub.ai/skills/github-repo-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-repo-search-fc4b07388d22a31b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "帮助用户搜索和筛选 GitHub 开源项目，输出结构化推荐报告。当用户说\"帮我找开源项目\"、\"搜一下GitHub上有什么\"、\"找找XX方向的仓库\"、\"开源项目推荐\"、\"github搜索\"、\"/github-search\"时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jackhua6",
+      "userId": "s1748a181h4pg1m8348ycfqst583k5mk",
+      "displayName": "JackHua6",
+      "image": "https://avatars.githubusercontent.com/u/266310299?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 348,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774453501030,
+      "changelog": "Initial registration",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4876c6261eeff4adbb3a402ec53136b757d352e218d4d85b6eee47e10dee5d51"
+}

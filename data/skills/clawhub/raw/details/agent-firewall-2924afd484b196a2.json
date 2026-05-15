@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "agent-firewall",
+    "displayName": "Agent Firewall",
+    "summary": "Real-time input/output filtering for agent communications. Block prompt injection, data exfiltration, and unauthorized commands before they reach the model.",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1775253080558,
+    "updatedAt": 1777527145173
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1775253080558,
+    "changelog": "Initial release of agent-firewall: real-time input/output filtering for agent communications.\n\n- Blocks prompt injections, data exfiltration, and unauthorized commands before reaching the model.\n- Includes layered input filters: injection detection, Unicode sanitization, encoding checks, rate/size limits, and role confusion detection.\n- Adds output filters: secret scanning, PII redaction, internal path scrubbing, malicious URL blocking, and consistency checks.\n- YAML-based configuration with clear, customizable rules for both input and output.\n- Built-in guardrails: append-only rules, logging for all blocks, human approval for rules deletion, and resistance to agent tampering.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "arhadnane",
+    "userId": "s17atsjv2c1a86fqvanj1x35as83yc1w",
+    "displayName": "Adnane Arharbi",
+    "image": "https://avatars.githubusercontent.com/u/14889338?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527145173
+  }
+}

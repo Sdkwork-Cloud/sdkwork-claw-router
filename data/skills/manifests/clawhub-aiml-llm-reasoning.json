@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12728,
+  "uuid": "skill-clawhub-aiml-llm-reasoning",
+  "skillKey": "clawhub-aiml-llm-reasoning",
+  "name": "AI/ML API LLM + Reasoning for OpenClaw",
+  "summary": "Run AIMLAPI LLM and reasoning workflows through chat completions with retries, structured outputs, and explicit User-Agent headers. Use when Codex needs scripted prompting/reasoning calls against AIMLAPI models.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aiml_llm_reasoning",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AI/ML API",
+      "features": [
+        "Run AIMLAPI LLM and reasoning workflows through chat completions with retries, structured outpu.",
+        "Use when Codex needs scripted prompting/reasoning calls against AIMLAPI models."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aiml-llm-reasoning@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/187510884?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aiml-llm-reasoning",
+      "url": "https://clawhub.ai/skills/aiml-llm-reasoning"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aiml-llm-reasoning",
+    "url": "https://clawhub.ai/skills/aiml-llm-reasoning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aiml-llm-reasoning-1caa08e7591822f4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aiml-llm-reasoning@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-aiml-llm-reasoning-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f052bb3d5b6e180839f6b484afc4e18091e1446677fcaee37b336f1fe4a6ce16",
+      "artifactSizeBytes": 2092
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T14:51:59.502Z"
+}

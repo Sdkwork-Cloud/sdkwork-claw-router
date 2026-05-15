@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54912,
+  "uuid": "skill-clawhub-create-agent-with-telegram-group",
+  "skillKey": "clawhub-create-agent-with-telegram-group",
+  "name": "Create Agent With Telegram Group",
+  "summary": "Create a new OpenClaw agent and bind it to a dedicated Telegram group with workspace ~/claw-<agent-name>. Use when the user asks for one-agent-one-group setu...",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.create_agent_with_telegram_group",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sheeta",
+      "features": [
+        "Create a new OpenClaw agent and bind it to a dedicated Telegram group with workspace ~/claw-<ag.",
+        "Use when the user asks for one-agent-one-group setu..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/create-agent-with-telegram-group@0.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4032009?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "create-agent-with-telegram-group",
+      "url": "https://clawhub.ai/skills/create-agent-with-telegram-group"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "create-agent-with-telegram-group",
+    "url": "https://clawhub.ai/skills/create-agent-with-telegram-group",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/create-agent-with-telegram-group-623c3338a19c620d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/create-agent-with-telegram-group@0.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-create-agent-with-telegram-group-0.1.5.json",
+      "version": "0.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:957cb04626879456f0398663b6fa6f7a491d3ee2140bdf4b73ab4cf05c1a2cfd",
+      "artifactSizeBytes": 2144
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T15:48:03.227Z"
+}

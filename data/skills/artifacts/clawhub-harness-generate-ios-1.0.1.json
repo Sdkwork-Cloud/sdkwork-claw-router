@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/harness-generate-ios@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.harness_generate_ios",
+  "skill": {
+    "id": 23451,
+    "skillKey": "clawhub-harness-generate-ios",
+    "name": "harness-generate-iOS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "harness-generate-ios",
+    "url": "https://clawhub.ai/skills/harness-generate-ios",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/harness-generate-ios-32405b5fc6587240.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Auto-generate the full Claude Code harness for an iOS project (CLAUDE.md, docs/, README quick-cards, .claude/rules/). Default scans the entire project; pass..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lidian6864677",
+      "userId": "s179089mhbj4rm9r04csgch4zh83hjnt",
+      "displayName": "Dian",
+      "image": "https://avatars.githubusercontent.com/u/20558274?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 340,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773840228038,
+      "changelog": "No user-visible changes in this release.  \n- Updated internal metadata (name normalization/correction)\n- No file content or behavior changes detected",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5951fad99c040bbd9d81ee74014bb8f54762dc47444e0e5658c9bd4a304fe543"
+}

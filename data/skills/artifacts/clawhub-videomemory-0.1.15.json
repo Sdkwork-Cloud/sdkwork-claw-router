@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/videomemory@0.1.15",
+  "version": "0.1.15",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.videomemory",
+  "skill": {
+    "id": 32946,
+    "skillKey": "clawhub-videomemory",
+    "name": "VideoMemory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "videomemory",
+    "url": "https://clawhub.ai/skills/videomemory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/videomemory-b8757481de61feba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Start VideoMemory from OpenClaw and return the local UI link."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clamepending",
+      "userId": "s178h1kg2w1scaptgs20fxyxcn857xb6",
+      "displayName": "Clamepending",
+      "image": "https://avatars.githubusercontent.com/u/57735073?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 245,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "0.1.15",
+      "createdAt": 1776833261748,
+      "changelog": "- Bumped Videomemory plugin version references from 0.1.6 to 0.1.7.\n- Updated CLI commands to use videomemory package version 0.1.7.\n- Changed default --repo-ref from v0.1.2 to v0.1.3 in onboarding and relaunch commands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:df2c261d6ae77affef954cd1d79e65d3ef41e06d35ada8f22b7f6ed80ba64b34"
+}

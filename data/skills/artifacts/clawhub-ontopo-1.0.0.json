@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ontopo@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ontopo",
+  "skill": {
+    "id": 18207,
+    "skillKey": "clawhub-ontopo",
+    "name": "ontopo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ontopo",
+    "url": "https://clawhub.ai/skills/ontopo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ontopo-ec361f45c4b1ca1c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search Israeli restaurants, check table availability, view menus, and get booking links on Ontopo. Use for \"restaurant reservation\", \"table booking\", \"ontopo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alexpolonsky",
+      "userId": "publishers:alexpolonsky",
+      "displayName": "alexpolonsky",
+      "image": "https://avatars.githubusercontent.com/u/7319921?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 690,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771625715133,
+      "changelog": "Initial ClawHub release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:133a10a605965dc95ea9c40988b74c2d21c8c98ae064962e5269dcf808859ac5"
+}

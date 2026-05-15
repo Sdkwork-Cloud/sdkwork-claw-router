@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/markdown-publish-share@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.markdown_publish_share",
+  "skill": {
+    "id": 13567,
+    "skillKey": "clawhub-markdown-publish-share",
+    "name": "Markdown Publish & Share"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "markdown-publish-share",
+    "url": "https://clawhub.ai/skills/markdown-publish-share",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/markdown-publish-share-ece596f40248a7c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Publish markdown and return share links using curl. Support markdown with mermaid diagrams such as component diagrams, flowcharts, and sequence diagrams. Also supports KaTex and code blocks. AutEng will return a shareable link to the publi."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "operator-auteng-ai",
+      "userId": "publishers:operator-auteng-ai",
+      "displayName": "Operator @ AutEng AI",
+      "image": "https://avatars.githubusercontent.com/u/191052735?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1389,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1770918772390,
+      "changelog": "- Renamed skill from \"auteng-docs-curl-publish\" to \"markdown-publish-share\".\n- Updated description to include new use cases: Software Architecture diagrams and documentation, Maths and Physics derivations, and Systems documentation.\n- No changes to API usage or example commands.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3903b65460d02761409382ab00c1feb6a3ccc99243591d52f21356abc84b6815"
+}

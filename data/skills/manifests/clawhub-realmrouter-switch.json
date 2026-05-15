@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22130,
+  "uuid": "skill-clawhub-realmrouter-switch",
+  "skillKey": "clawhub-realmrouter-switch",
+  "name": "RealmRouter Switch",
+  "summary": "Zero-friction RealmRouter model manager for OpenClaw. Chat-first workflow for setting API key, guided model picking, switching with availability check, rollb...",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.realmrouter_switch",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Imba",
+      "features": [
+        "Zero-friction RealmRouter model manager for OpenClaw",
+        "Chat-first workflow for setting API key, guided model picking, switching with availability chec."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/realmrouter-switch@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15225035?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "realmrouter-switch",
+      "url": "https://clawhub.ai/skills/realmrouter-switch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "realmrouter-switch",
+    "url": "https://clawhub.ai/skills/realmrouter-switch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/realmrouter-switch-9f920ece5466de37.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/realmrouter-switch@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-realmrouter-switch-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:995158339fc173deead1fb9458d66a0aec86783388d68994b95ea82f91c4d3d8",
+      "artifactSizeBytes": 2028
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T06:50:12.753Z"
+}

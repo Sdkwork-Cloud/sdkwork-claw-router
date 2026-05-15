@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44163,
+  "uuid": "skill-clawhub-pipeworx-wikipedia",
+  "skillKey": "clawhub-pipeworx-wikipedia",
+  "name": "Pipeworx wikipedia",
+  "summary": "Search, summarize, and explore the structure of English Wikipedia articles with full-text search, section info, and random article retrieval.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_wikipedia",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Search, summarize, and explore the structure of English Wikipedia articles with full-text searc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-wikipedia@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138315805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-wikipedia",
+      "url": "https://clawhub.ai/skills/pipeworx-wikipedia"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-wikipedia",
+    "url": "https://clawhub.ai/skills/pipeworx-wikipedia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-wikipedia-1ce378f885151428.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-wikipedia@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-wikipedia-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3f71d445799251ef984b4161d83adbf38e1c32e6115e099edec2b2e0e7c80c52",
+      "artifactSizeBytes": 1902
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T00:32:51.097Z"
+}

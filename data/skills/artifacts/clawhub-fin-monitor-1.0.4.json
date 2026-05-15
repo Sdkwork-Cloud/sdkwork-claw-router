@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fin-monitor@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fin_monitor",
+  "skill": {
+    "id": 60787,
+    "skillKey": "clawhub-fin-monitor",
+    "name": "finance_monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fin-monitor",
+    "url": "https://clawhub.ai/skills/fin-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fin-monitor-2d97147ee109ae2b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "从 CNBC 抓取 18 个金融指标数据（宏观经济、指数ETF、美股个股），写入本地 SQLite 数据库。纯 stdlib，无需任何 API Key。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "loonslo",
+      "userId": "s17fx97n8s9qyne18vv7vbdg9h83hheq",
+      "displayName": "loonslo",
+      "image": "https://avatars.githubusercontent.com/u/12945268?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 225,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1774715280704,
+      "changelog": "- 仅用 CNBC 数据源，现可无需任何 API Key 获取全部 18 个指标数据\n- 移除 NasDaq API 与 Finnhub 依赖，简化为纯标准库实现\n- Skill 描述和功能更新为“从 CNBC 抓取金融指标”，覆盖宏观、ETF、主要美股个股\n- 使用方式和依赖说明相应简化，支持零配置直接运行",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:71e613cde3ac1d5bf3bb9ed4be77cdc26d445be5da5db1212f293882f7466c76"
+}

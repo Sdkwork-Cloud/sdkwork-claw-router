@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/formpass-submit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.formpass_submit",
+  "skill": {
+    "id": 23259,
+    "skillKey": "clawhub-formpass-submit",
+    "name": "FormPass Submit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "formpass-submit",
+    "url": "https://clawhub.ai/skills/formpass-submit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/formpass-submit-2789b5cd7ee1f101.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover and submit to FormPass-enabled web forms. FormPass is the trust layer that lets verified AI agents submit to real web forms with authenticated ident..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jezjsa",
+      "userId": "publishers:jezjsa",
+      "displayName": "Jeremy A",
+      "image": "https://avatars.githubusercontent.com/u/25457422?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 437,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772028795870,
+      "changelog": "- Initial release of the formpass-submit skill  \n- Enables detection and submission to FormPass-enabled web forms using a structured API  \n- Supports 3-step flow: detect forms, fetch schema, and submit data  \n- Handles agent authentication, required branding field, and error responses  \n- Provides detailed usage instructions and examples for end users",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:45ce6c91742274f889c92a9945788c401643ec583f532f5382d44be0c9cbdc03"
+}

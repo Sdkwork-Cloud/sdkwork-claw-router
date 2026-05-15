@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62649,
+  "uuid": "skill-clawhub-qq-music-radio",
+  "skillKey": "clawhub-qq-music-radio",
+  "name": "QQ音乐",
+  "summary": "AI 智能推荐的 QQ 音乐播放器 | ⚠️ ClawHub 高风险警告：包含网络下载和后台进程，推荐使用 start-secure.sh 安全版本",
+  "version": "3.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qq_music_radio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rogerrojur",
+      "features": [
+        "AI 智能推荐的 QQ 音乐播放器 | ⚠️ ClawHub 高风险警告：包含网络下载和后台进程，推荐使用 start-secure.sh 安全版本"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qq-music-radio@3.3.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30387441?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qq-music-radio",
+      "url": "https://clawhub.ai/skills/qq-music-radio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qq-music-radio",
+    "url": "https://clawhub.ai/skills/qq-music-radio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qq-music-radio-e06eae0b18745c48.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qq-music-radio@3.3.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-qq-music-radio-3.3.3.json",
+      "version": "3.3.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ab277af4a5a4b49b10d608ab35660c2f4ebf0de14279474c70ae545bd9e9af8b",
+      "artifactSizeBytes": 2330
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T09:43:47.988Z"
+}

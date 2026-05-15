@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tmp-proactivity-review@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tmp_proactivity_review",
+  "skill": {
+    "id": 43894,
+    "skillKey": "clawhub-tmp-proactivity-review",
+    "name": "Tmp Proactivity Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tmp-proactivity-review",
+    "url": "https://clawhub.ai/skills/tmp-proactivity-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tmp-proactivity-review-7da296be862ca813.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Anticipates needs, keeps work moving, and improves through use so the agent gets more proactive over time."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wjtmatch",
+      "userId": "s17ahg67eb4jz219wh02j9yvx583p8vq",
+      "displayName": "WjtMatch",
+      "image": "https://avatars.githubusercontent.com/u/46695957?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774864502038,
+      "changelog": "Proactivity (Proactive Agent) v1.0.1\n\n- Strengthens proactive behavior with reverse prompting, self-healing, working-buffer recovery, and clearer SOUL and AGENTS setup.\n- Enhances context recovery through improved session state and working buffer handling.\n- Adds or clarifies heartbeat rules to support recurring follow-ups and boundary checks.\n- Expands documentation on proactive state architecture, recovery, rules, and common traps.\n- Sets stricter boundaries for workspace edits and privacy; all outside changes require explicit user approval.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b0bfc5f2eccd1c95fa6133d8ce7d309fa9f72037467bbecf26b14289f346d228"
+}

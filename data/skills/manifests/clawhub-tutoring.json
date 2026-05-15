@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73367,
+  "uuid": "skill-clawhub-tutoring",
+  "skillKey": "clawhub-tutoring",
+  "name": "家教兼职",
+  "summary": "该技能介绍如何通过家教兼职实现变现；当你计划从事或优化家教兼职时调用。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tutoring",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mike47512",
+      "features": [
+        "该技能介绍如何通过家教兼职实现变现；当你计划从事或优化家教兼职时调用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tutoring@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199718167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tutoring",
+      "url": "https://clawhub.ai/skills/tutoring"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tutoring",
+    "url": "https://clawhub.ai/skills/tutoring",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tutoring-47270810274a38ea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tutoring@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tutoring-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:475ff2e3a217c1c3f3d5d2eee1490b6571942060892600a77adb1e38f74e8b90",
+      "artifactSizeBytes": 2146
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T16:58:23.971Z"
+}

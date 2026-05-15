@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49908,
+  "uuid": "skill-clawhub-tutorclaw-shim",
+  "skillKey": "clawhub-tutorclaw-shim",
+  "name": "TutorClaw Shim",
+  "summary": "Offline fallback for TutorClaw. When the TutorClaw MCP server is unreachable, follow these PRIMM-Lite teaching instructions for Chapters 1-5 of the beginner...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tutorclaw_shim",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hassan khan",
+      "features": [
+        "Offline fallback for TutorClaw",
+        "When the TutorClaw MCP server is unreachable, follow these PRIMM-Lite teaching instructions for."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tutorclaw-shim@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/228322316?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tutorclaw-shim",
+      "url": "https://clawhub.ai/skills/tutorclaw-shim"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tutorclaw-shim",
+    "url": "https://clawhub.ai/skills/tutorclaw-shim",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tutorclaw-shim-02de89dc808c467e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tutorclaw-shim@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tutorclaw-shim-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:faceb2dd3682e6c5e485f4775270b382caba73cb9a1c2add9fff4f453233bb68",
+      "artifactSizeBytes": 2281
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T19:10:48.459Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73004,
+  "uuid": "skill-clawhub-shortplay-generator",
+  "skillKey": "clawhub-shortplay-generator",
+  "name": "短剧本生成器",
+  "summary": "AI短剧生成器。当用户说“生成短剧”“写个剧本”“帮我做个短剧”时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shortplay_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kdm-bigmodel",
+      "features": [
+        "AI短剧生成器。当用户说“生成短剧”“写个剧本”“帮我做个短剧”时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shortplay-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/233250289?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shortplay-generator",
+      "url": "https://clawhub.ai/skills/shortplay-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shortplay-generator",
+    "url": "https://clawhub.ai/skills/shortplay-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shortplay-generator-76aaa34975307d25.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shortplay-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shortplay-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0243b165b8d0ba879980f7edbcc7287297f85ff7f4d9b69b0d159b18f96eda55",
+      "artifactSizeBytes": 1860
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T09:41:42.466Z"
+}

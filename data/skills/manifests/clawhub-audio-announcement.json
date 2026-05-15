@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65521,
+  "uuid": "skill-clawhub-audio-announcement",
+  "skillKey": "clawhub-audio-announcement",
+  "name": "Audio Announcement",
+  "summary": "实时语音播报 AI 操作状态，支持多语言和消息队列，提升透明度与安全感，适配多平台。",
+  "version": "2.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audio_announcement",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AI-GUO",
+      "features": [
+        "实时语音播报 AI 操作状态，支持多语言和消息队列，提升透明度与安全感，适配多平台。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/audio-announcement@2.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8183952?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "audio-announcement",
+      "url": "https://clawhub.ai/skills/audio-announcement"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audio-announcement",
+    "url": "https://clawhub.ai/skills/audio-announcement",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audio-announcement-6e3a6bc98c5d005c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/audio-announcement@2.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-audio-announcement-2.0.8.json",
+      "version": "2.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c6744d3216b9f323321b800bb351c6a7a300ea9a5211f3282641230c76a3e883",
+      "artifactSizeBytes": 2767
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T15:04:57.734Z"
+}

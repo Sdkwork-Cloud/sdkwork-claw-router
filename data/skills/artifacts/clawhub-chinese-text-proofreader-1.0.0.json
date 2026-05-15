@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chinese-text-proofreader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chinese_text_proofreader",
+  "skill": {
+    "id": 68429,
+    "skillKey": "clawhub-chinese-text-proofreader",
+    "name": "中文文本校验"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chinese-text-proofreader",
+    "url": "https://clawhub.ai/skills/chinese-text-proofreader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chinese-text-proofreader-316131e084628b52.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "中文文本校验专家。对PPT、Word、Markdown等文档中的中文文本进行全面校验， 包括错别字、标点符号、格式规范、学术用语、逻辑表达及PPT/Word文档专项问题。 触发关键词：校对、校验、检查错别字、检查文档、proofreading、文字校验、 检查PPT、检查Word、检查标点、中文排版。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hntong",
+      "userId": "s17abk0gx2h3tq21t4ek8nba85869mf5",
+      "displayName": "HNTong",
+      "image": "https://avatars.githubusercontent.com/u/86836226?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 80,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778133944839,
+      "changelog": "- 初始版本发布，提供中文文本全面校验能力。\n- 支持PPT、Word、Markdown文档的错别字、标点、格式、用语、逻辑等六大维度检查。\n- 输出结构化校验报告，按严重程度分类问题，并可提供修改后文本。\n- 明确处理PPT和Word文件的专项校验要求。\n- 提供详细校验流程和使用示例，便于用户理解和操作。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bcaf943c961969194be71246a3f9632c6e182fd38aad515fb389707ff9719d6e"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memos-cli@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memos_cli",
+  "skill": {
+    "id": 20528,
+    "skillKey": "clawhub-memos-cli",
+    "name": "Memos Cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memos-cli",
+    "url": "https://clawhub.ai/skills/memos-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memos-cli-84e2f94b5689e083.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when a user needs to read, search, create, update, delete, comment on, tag, or inspect Memos data through this repository's Go CLI, especially when the a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rogeecn",
+      "userId": "publishers:rogeecn",
+      "displayName": "Rogee",
+      "image": "https://avatars.githubusercontent.com/u/1506578?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 540,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773398693792,
+      "changelog": "- Initial release of the memos-cli skill for interacting with the Memos repository via its Go CLI.\n- Enables agents and users to list, search, create, update, delete, comment on, tag, and inspect Memos data using real CLI commands instead of HTTP API calls.\n- Includes detailed setup, configuration checks, usage examples, and command references to ensure safe and effective CLI operations.\n- Emphasizes secure handling of API keys, preflight config checks, and explicit user confirmation for destructive actions.\n- Supports both human-readable and structured JSON output for flexible workflows and automation.\n- Documents common errors, safety notes, and best practices for reliable use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c7834d8ac57440e27dd415e81ed120d8252bcc79e2d796b8f5091428951bbe01"
+}

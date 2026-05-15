@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ask-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ask_search",
+  "skill": {
+    "id": 22113,
+    "skillKey": "clawhub-ask-search",
+    "name": "Ask Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ask-search",
+    "url": "https://clawhub.ai/skills/ask-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ask-search-24c40bcd46987d42.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Web search via self-hosted SearxNG. Aggregates Google, Bing, DuckDuckGo, Brave. Returns title/url/snippet. Zero API key required."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sexychina",
+      "userId": "publishers:sexychina",
+      "displayName": "sexychina",
+      "image": "https://avatars.githubusercontent.com/u/1031673?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 425,
+      "installsAllTime": 6,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773445554417,
+      "changelog": "Initial release of ask-search: simple, private web search via SearxNG.\n\n- Aggregates results from Google, Bing, DuckDuckGo, and Brave with no API key required.\n- Offers multiple filters (engine, language, category, number of results).\n- Provides several output formats: concise list, URLs only, or raw JSON.\n- Designed for agent workflows: fetch snippets quickly, escalate to web_fetch for full content if needed.\n- Simple local setup with customizable SearxNG URL.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac4d8b1cc8d2f8a9d73f779f9ab5c3d3a04b9e122d85cf0ff1752fd54de29602"
+}

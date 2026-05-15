@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawhub-publish-doctor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_publish_doctor",
+  "skill": {
+    "id": 17526,
+    "skillKey": "clawhub-clawhub-publish-doctor",
+    "name": "ClawHub Publish Doctor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-publish-doctor",
+    "url": "https://clawhub.ai/skills/clawhub-publish-doctor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-publish-doctor-77967eebe19b4a04.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Diagnose and mitigate ClawHub/ClawDHUB publish failures (auth, browser-login, missing dependencies, pending security-scan visibility errors, and wrong profil..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bluebirdback",
+      "userId": "s1704v7bqw4d7b7nnh5exa3n958471ys",
+      "displayName": "BlueBirdBack ✨",
+      "image": "https://avatars.githubusercontent.com/u/126304167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 770,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771234714214,
+      "changelog": "Initial public release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c42f9b8639c1493b1c139cfa34e5f531ec63742190472e7239bd25a957cdc724"
+}

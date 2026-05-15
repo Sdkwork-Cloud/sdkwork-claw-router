@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47759,
+  "uuid": "skill-clawhub-file-bug-report",
+  "skillKey": "clawhub-file-bug-report",
+  "name": "OpenClaw Bug Report",
+  "summary": "Create triage-ready OpenClaw GitHub issue drafts for reports that an agent is slow, broken, not responding, tool-starved, degraded, or \"not as smart.\" Use wh...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_bug_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Eva",
+      "features": [
+        "Create triage-ready OpenClaw GitHub issue drafts for reports that an agent is slow, broken, not."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/file-bug-report@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/239388517?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "file-bug-report",
+      "url": "https://clawhub.ai/skills/file-bug-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-bug-report",
+    "url": "https://clawhub.ai/skills/file-bug-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-bug-report-c555b20024b401f0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/file-bug-report@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-file-bug-report-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8cc6c90317317f473ad8035b2d1d0394580288a7828156406c19482ef0fb5b7b",
+      "artifactSizeBytes": 2026
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T22:54:46.179Z"
+}

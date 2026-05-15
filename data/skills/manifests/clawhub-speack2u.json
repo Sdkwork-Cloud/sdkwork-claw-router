@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58300,
+  "uuid": "skill-clawhub-speack2u",
+  "skillKey": "clawhub-speack2u",
+  "name": "speack2u",
+  "summary": "Configure TTS in OpenClaw. Adapt speech output to user preferences. / 配置 OpenClaw TTS，根据用户偏好调整语音输出。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.speack2u",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lllleo",
+      "features": [
+        "Configure TTS in OpenClaw",
+        "Adapt speech output to user preferences",
+        "/ 配置 OpenClaw TTS，根据用户偏好调整语音输出。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/speack2u@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13727156?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "speack2u",
+      "url": "https://clawhub.ai/skills/speack2u"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "speack2u",
+    "url": "https://clawhub.ai/skills/speack2u",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/speack2u-d1309422eb5d7ac0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/speack2u@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-speack2u-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bca523717db75dc5074a996163532a59bf2609b3f08881a301111e0c0a599750",
+      "artifactSizeBytes": 1854
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T14:22:42.199Z"
+}

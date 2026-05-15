@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17266,
+  "uuid": "skill-clawhub-launchthatbot-git-team-ops",
+  "skillKey": "clawhub-launchthatbot-git-team-ops",
+  "name": "Launchthatbot Git Team Ops",
+  "summary": "Role-based GitOps skill for OpenClaw agents with junior and senior operating modes.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.launchthatbot_git_team_ops",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "launchthatbot",
+      "features": [
+        "Role-based GitOps skill for OpenClaw agents with junior and senior operating modes."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/launchthatbot-git-team-ops@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261104215?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "launchthatbot-git-team-ops",
+      "url": "https://clawhub.ai/skills/launchthatbot-git-team-ops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "launchthatbot-git-team-ops",
+    "url": "https://clawhub.ai/skills/launchthatbot-git-team-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/launchthatbot-git-team-ops-65bb8670e19ec0d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/launchthatbot-git-team-ops@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-launchthatbot-git-team-ops-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e96b3bdbd65be74697fd6650c0b8800c0c5ddd0025491459f36853100f3b4f9b",
+      "artifactSizeBytes": 2219
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T17:36:50.346Z"
+}

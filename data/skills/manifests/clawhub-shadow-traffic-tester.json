@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47907,
+  "uuid": "skill-clawhub-shadow-traffic-tester",
+  "skillKey": "clawhub-shadow-traffic-tester",
+  "name": "Shadow Traffic Tester",
+  "summary": "Set up and analyze shadow traffic testing to compare new service versions against production without user impact",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shadow_traffic_tester",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Set up and analyze shadow traffic testing to compare new service versions against production wi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shadow-traffic-tester@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shadow-traffic-tester",
+      "url": "https://clawhub.ai/skills/shadow-traffic-tester"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shadow-traffic-tester",
+    "url": "https://clawhub.ai/skills/shadow-traffic-tester",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shadow-traffic-tester-b9b5eb25ef11eb79.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shadow-traffic-tester@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shadow-traffic-tester-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:85bdf653101af1b57f0c7bb154baed2815173d910dd704df550155f6f9114820",
+      "artifactSizeBytes": 2411
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T13:46:50.844Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/excel-auto-clean@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.excel_auto_clean",
+  "skill": {
+    "id": 60823,
+    "skillKey": "clawhub-excel-auto-clean",
+    "name": "Excel Auto Clean"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "excel-auto-clean",
+    "url": "https://clawhub.ai/skills/excel-auto-clean",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/excel-auto-clean-5470dc2bc79cc5b0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动整理Excel表格、去重、排序、生成报表"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sfxia",
+      "userId": "s17c8v6j2cet9xfefw3zqgj1md83jzsr",
+      "displayName": "橙子",
+      "image": "https://avatars.githubusercontent.com/u/23025523?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 238,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774493643901,
+      "changelog": "- Initial code file (index.js) added.\n- Documentation updated to reflect version 1.0.1.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:43f9a54b37cd151034531ee26ee3913af6403e0806833440c19c6e868dc5fb63"
+}

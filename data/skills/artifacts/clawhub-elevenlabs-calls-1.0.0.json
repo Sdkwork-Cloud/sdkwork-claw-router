@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/elevenlabs-calls@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.elevenlabs_calls",
+  "skill": {
+    "id": 21396,
+    "skillKey": "clawhub-elevenlabs-calls",
+    "name": "Elevenlabs Calls"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "elevenlabs-calls",
+    "url": "https://clawhub.ai/skills/elevenlabs-calls",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/elevenlabs-calls-937300439e6fe2c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Make AI phone calls using ElevenLabs Conversational AI and Twilio."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luke-deltadesk",
+      "userId": "publishers:luke-deltadesk",
+      "displayName": "luke-deltadesk",
+      "image": "https://avatars.githubusercontent.com/u/143728034?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 490,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772593461122,
+      "changelog": "Initial release – make outbound AI phone calls using ElevenLabs Conversational AI and Twilio.\n\n- List, create, and manage ElevenLabs conversational agents for calls.\n- Make outbound calls with dynamic variables via provided shell scripts.\n- Retrieve and review call transcripts and audio recordings.\n- Requires ElevenLabs API key, configured agent, and Twilio phone number.\n- Includes documentation for setup, usage, and best practices.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0dd00c6fcd004003fa365d2516c3098e238b2e1ce64ae1339d8630d67b1fe615"
+}

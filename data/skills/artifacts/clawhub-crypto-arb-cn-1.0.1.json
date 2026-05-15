@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crypto-arb-cn@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_arb_cn",
+  "skill": {
+    "id": 58582,
+    "skillKey": "clawhub-crypto-arb-cn",
+    "name": "Crypto Arbitrage CN | 加密货币套利监控"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-arb-cn",
+    "url": "https://clawhub.ai/skills/crypto-arb-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-arb-cn-c938a64aae90caf7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "加密货币套利监控 | Cryptocurrency Arbitrage Monitor. 支持币安、OKX、Gate.io、火币 | Supports Binance, OKX, Gate.io, Huobi. 实时价格监控、利润计算、Telegram通知 | Real-time price monitoring..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guohongbin-git",
+      "userId": "s171qwkar0v16rk324ta5jz7wd83ts19",
+      "displayName": "Guohongbin",
+      "image": "https://avatars.githubusercontent.com/u/202475309?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1122,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771314038968,
+      "changelog": "Added bilingual description | 添加中英文双语描述",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:617a7bfc73b24f7df634a9516f69978f28f99c1cbb40f604c4cebb1b03f3deeb"
+}

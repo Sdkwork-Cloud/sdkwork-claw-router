@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48382,
+  "uuid": "skill-clawhub-repo-cleaner",
+  "skillKey": "clawhub-repo-cleaner",
+  "name": "Repo Cleaner",
+  "summary": "Safely removes merged and stale Git branches. Identifies branches already on main/master. Triggers: clean branches, remove old branches, delete merged branch...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.repo_cleaner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "Safely removes merged and stale Git branches",
+        "Identifies branches already on main/master",
+        "Triggers: clean branches, remove old branches, delete merged branch..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/repo-cleaner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "repo-cleaner",
+      "url": "https://clawhub.ai/skills/repo-cleaner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "repo-cleaner",
+    "url": "https://clawhub.ai/skills/repo-cleaner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/repo-cleaner-06cc50f7b1190892.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/repo-cleaner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-repo-cleaner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb819d0b26e6ab82832b4cd27d20bc1e9ed802162bbcc887210e5a8267272391",
+      "artifactSizeBytes": 2276
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T23:47:37.546Z"
+}

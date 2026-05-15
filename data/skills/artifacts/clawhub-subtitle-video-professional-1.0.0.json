@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/subtitle-video-professional@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subtitle_video_professional",
+  "skill": {
+    "id": 45231,
+    "skillKey": "clawhub-subtitle-video-professional",
+    "name": "Subtitle Video Professional"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subtitle-video-professional",
+    "url": "https://clawhub.ai/skills/subtitle-video-professional",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subtitle-video-professional-3b66c1fac228e44f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "add video files into captioned video files with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators, marketers, educators use it f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775926001259,
+      "changelog": "Initial release of Subtitle Video Professional\n\n- Add professional subtitles to videos (MP4, MOV, AVI, WebM up to 500MB) and export in 1080p MP4.\n- Supports AI-powered transcription and multi-language captions for creators, marketers, and educators.\n- Simple workflow: upload videos, describe desired captions/styles, receive completed, subtitle-burned video in 1-2 minutes.\n- Manage sessions, credits, exports, and file uploads seamlessly with built-in cloud processing.\n- Automatic error handling and clear status updates for connectivity, quota, and export issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d55f48d30eb7b33b0ca13da516c5613e70e91536e33abc626702750057041067"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60441,
+  "uuid": "skill-clawhub-daily-notes",
+  "skillKey": "clawhub-daily-notes",
+  "name": "Daily Notes",
+  "summary": "日常随笔记录，收录一切想记下来的东西——奇思妙想、灵感片段、日常感想、碎碎念、发现、备忘录，支持图片附件与多图关联。Daily notes with image attachments and multi-image association support.",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_notes",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kazuya",
+      "features": [
+        "日常随笔记录，收录一切想记下来的东西——奇思妙想、灵感片段、日常感想、碎碎念、发现、备忘录，支持图片附件与多图关联。Daily notes with image attachments an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-notes@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94837947?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-notes",
+      "url": "https://clawhub.ai/skills/daily-notes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-notes",
+    "url": "https://clawhub.ai/skills/daily-notes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-notes-7c1d293cac52d6f2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-notes@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-notes-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5a96eb33d577967f6d79812ce351099d8f17531551ee529d6a5e6e5aad42fff0",
+      "artifactSizeBytes": 2139
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T08:38:32.631Z"
+}

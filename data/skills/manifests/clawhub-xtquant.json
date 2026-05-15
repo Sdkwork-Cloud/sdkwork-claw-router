@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59726,
+  "uuid": "skill-clawhub-xtquant",
+  "skillKey": "clawhub-xtquant",
+  "name": "xtquant",
+  "summary": "XtQuant QMT Python SDK - 集成行情数据(xtdata)和交易接口(xttrade)，支持A股、期货、期权等中国证券市场。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xtquant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "coderwpf",
+      "features": [
+        "XtQuant QMT Python SDK",
+        "集成行情数据(xtdata)和交易接口(xttrade)，支持A股、期货、期权等中国证券市场。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xtquant@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/134041140?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xtquant",
+      "url": "https://clawhub.ai/skills/xtquant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xtquant",
+    "url": "https://clawhub.ai/skills/xtquant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xtquant-1cadb9077d4ac1d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xtquant@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-xtquant-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c5ebfadfac92ce6134b3528fa9de6b81e67fa332f9ff3aab40b0e0c12f048bc",
+      "artifactSizeBytes": 2010
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T10:06:13.031Z"
+}

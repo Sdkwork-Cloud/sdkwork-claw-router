@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rebalance-position@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rebalance_position",
+  "skill": {
+    "id": 16602,
+    "skillKey": "clawhub-rebalance-position",
+    "name": "Uniswap Rebalance Position"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rebalance-position",
+    "url": "https://clawhub.ai/skills/rebalance-position",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rebalance-position-2cc4238765a35323.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Rebalance an out-of-range Uniswap V3/V4 LP position by closing the old position and opening a new one centered on the current price. Handles fee collection, removal, range calculation, and re-entry in a single workflow. Use when a position."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wpank",
+      "userId": "publishers:wpank",
+      "displayName": "wpank",
+      "image": "https://avatars.githubusercontent.com/u/9498646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 847,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770745776899,
+      "changelog": "- Initial release of the rebalance-position skill.\n- Automates the rebalance workflow for out-of-range Uniswap V3/V4 LP positions: collects fees, closes the old position, calculates a new range, and opens a new one.\n- Provides full pre-rebalance analysis and cost/benefit estimates before executing.\n- Suggests optimal liquidity range strategies based on pool/token type and user intent.\n- Proactively warns against unprofitable or unnecessary rebalances.\n- Presents clear, user-friendly outputs for both successful rebalances and no-action scenarios.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b4d44f734b22b3db7bef891df8252b25900d573ec378407b918edd550ac944c4"
+}

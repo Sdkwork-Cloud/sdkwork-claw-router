@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claude@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude",
+  "skill": {
+    "id": 15991,
+    "skillKey": "clawhub-claude",
+    "name": "Claude"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude",
+    "url": "https://clawhub.ai/skills/claude",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-c857d09db23e6822.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Optimize long-context reasoning for commercial, legal, and high-stakes documents. Built for users who need stronger logic, cleaner structure, and deeper anal..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "duclawbot",
+      "userId": "publishers:duclawbot",
+      "displayName": "Duclawbot",
+      "image": "https://avatars.githubusercontent.com/u/216468018?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 832,
+      "installsAllTime": 11,
+      "installsCurrent": 11,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773168991839,
+      "changelog": "- Initial release of the Claude skill for long-context reasoning in commercial and legal documents.\n- Optimizes logic, structure, and analysis across contracts, memos, proposals, and negotiations.\n- Surfaces contradictions, weak logic, and missing assumptions; compresses documents into decision-ready summaries.\n- Standardized assessment output format and reasoning protocols for clarity and risk awareness.\n- Clear guide on when to use (or not use) the skill, with built-in guardrails against unfounded certainty.\n- Provides integration suggestions with related review and drafting workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a0430c5bd5c63251196607b3315fdbb3900c55f3f6b4fccd56b6da4056f15273"
+}

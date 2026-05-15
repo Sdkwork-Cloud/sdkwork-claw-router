@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63686,
+  "uuid": "skill-clawhub-story-deslop",
+  "skillKey": "clawhub-story-deslop",
+  "name": "Story Deslop",
+  "summary": "网文去AI味。检测并清除文本中的AI写作痕迹，让文字回归自然、有人味。 触发方式：/story-deslop、/去AI味、「去AI味」「去味」「deslop」「这篇太AI了」",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.story_deslop",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "worldwonderer",
+      "features": [
+        "网文去AI味。检测并清除文本中的AI写作痕迹，让文字回归自然、有人味。 触发方式：/story-deslop、/去AI味、「去AI味」「去味」「deslop」「这篇太AI了」"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/story-deslop@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49583093?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "story-deslop",
+      "url": "https://clawhub.ai/skills/story-deslop"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "story-deslop",
+    "url": "https://clawhub.ai/skills/story-deslop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/story-deslop-658e7d0aba4491bf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/story-deslop@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-story-deslop-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e3dc1d9713a0192e0d98342dd2dad5b1cf21689b83fc858328abf83c8763388",
+      "artifactSizeBytes": 1971
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T15:09:00.280Z"
+}

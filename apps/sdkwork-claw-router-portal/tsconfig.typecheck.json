@@ -1,0 +1,80 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "@sdkwork/clawrouter-app-sdk": [
+        "../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/index.ts"
+      ],
+      "@sdkwork/clawrouter-backend-sdk": [
+        "../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/src/index.ts"
+      ],
+      "@sdkwork/appbase-pc-react": [
+        "./src/typecheck-shims.d.ts"
+      ],
+      "@sdkwork/auth-pc-react": [
+        "./src/typecheck-shims.d.ts"
+      ],
+      "@sdkwork/auth-runtime-pc-react": [
+        "./src/typecheck-shims.d.ts"
+      ],
+      "@sdkwork/core-pc-react": [
+        "./src/auth/corePcReactCompat.ts"
+      ],
+      "@sdkwork/generation-pc-react": [
+        "./src/typecheck-shims.d.ts"
+      ],
+      "@sdkwork/host-pc-react": [
+        "./src/typecheck-shims.d.ts"
+      ],
+      "@sdkwork/host-tauri-pc-react": [
+        "./src/typecheck-shims.d.ts"
+      ],
+      "@sdkwork/i18n-pc-react": [
+        "./src/typecheck-shims.d.ts"
+      ],
+      "@sdkwork/iam-contracts": [
+        "./src/typecheck-shims.d.ts"
+      ],
+      "@sdkwork/iam-core-pc-react": [
+        "./src/typecheck-shims.d.ts"
+      ],
+      "@sdkwork/iam-react": [
+        "./src/typecheck-shims.d.ts"
+      ],
+      "@sdkwork/iam-runtime": [
+        "./src/typecheck-shims.d.ts"
+      ],
+      "@sdkwork/iam-sdk-ports": [
+        "./src/typecheck-shims.d.ts"
+      ],
+      "@sdkwork/iam-service": [
+        "./src/typecheck-shims.d.ts"
+      ],
+      "@sdkwork/ui-pc-react": [
+        "./src/typecheck-shims.d.ts"
+      ],
+      "@sdkwork/ui-pc-react/theme": [
+        "./src/typecheck-shims.d.ts"
+      ],
+      "@sdkwork/sdk-common": [
+        "node_modules/@sdkwork/sdk-common/dist/index.d.ts"
+      ],
+      "@/*": [
+        "./*"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "packages/*/src/**/*.ts",
+    "packages/*/src/**/*.tsx"
+  ],
+  "exclude": [
+    "dist/**",
+    "node_modules/**",
+    "packages/*/dist/**",
+    "../../../sdkwork-appbase/**",
+    "../../../sdkwork-ui/**"
+  ]
+}

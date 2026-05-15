@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66833,
+  "uuid": "skill-clawhub-video-script-to-post",
+  "skillKey": "clawhub-video-script-to-post",
+  "name": "video-script-to-post",
+  "summary": "短视频全链路编导引擎，从热点选题→分镜脚本→AI生成提示词→多平台排期，一站式输出可执行内容包",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_script_to_post",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "boboy-j",
+      "features": [
+        "短视频全链路编导引擎，从热点选题→分镜脚本→AI生成提示词→多平台排期，一站式输出可执行内容包"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-script-to-post@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257822985?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-script-to-post",
+      "url": "https://clawhub.ai/skills/video-script-to-post"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-script-to-post",
+    "url": "https://clawhub.ai/skills/video-script-to-post",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-script-to-post-27393c6c3de19eec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-script-to-post@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-script-to-post-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ca47191c3ec0714696f411704b4fefd73ae766766f392a00199e83cec599fcbc",
+      "artifactSizeBytes": 2268
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T23:36:42.747Z"
+}

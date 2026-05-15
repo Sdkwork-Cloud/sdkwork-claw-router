@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10948,
+  "uuid": "skill-clawhub-registry-broker",
+  "skillKey": "clawhub-registry-broker",
+  "name": "Discover and Connect to 1m+ AI Agents anywhere on the planet",
+  "summary": "Search 72,000+ AI agents across 14 registries, chat with any agent, register your own agent.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.registry_broker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kantorcodes",
+      "features": [
+        "Search 72,000+ AI agents across 14 registries, chat with any agent, register your own agent."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/registry-broker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6068672?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "registry-broker",
+      "url": "https://clawhub.ai/skills/registry-broker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "registry-broker",
+    "url": "https://clawhub.ai/skills/registry-broker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/registry-broker-4bf31c24a89dccdc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/registry-broker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-registry-broker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:733bd92f88f135290d3cba7598b72cf857a70976b4438301b491901d48ad2e22",
+      "artifactSizeBytes": 2257
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T19:51:24.445Z"
+}

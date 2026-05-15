@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59680,
+  "uuid": "skill-clawhub-skill-patterns",
+  "skillKey": "clawhub-skill-patterns",
+  "name": "Agent Skill Design Patterns",
+  "summary": "Agent Skill 设计模式模板库。当用户要创建新 skill、优化现有技能结构、或需要技能设计指导时激活。提供 5 个可复用模式：Tool Wrapper、Generator、Reviewer、Inversion、Pipeline。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_patterns",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Auther",
+      "features": [
+        "Agent Skill 设计模式模板库。当用户要创建新 skill、优化现有技能结构、或需要技能设计指导时激活。提供 5 个可复用模式：Tool Wrapper、Generator、Revi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-patterns@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7876001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-patterns",
+      "url": "https://clawhub.ai/skills/skill-patterns"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-patterns",
+    "url": "https://clawhub.ai/skills/skill-patterns",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-patterns-9c88661b967f4efa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-patterns@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-patterns-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6b0b68be32f0dd1d3d25d8532a6831b52d798bcc214ad0e528aae2add705f48a",
+      "artifactSizeBytes": 2102
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T04:09:30.864Z"
+}

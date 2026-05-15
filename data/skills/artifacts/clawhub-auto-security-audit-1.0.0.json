@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-security-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_security_audit",
+  "skill": {
+    "id": 59588,
+    "skillKey": "clawhub-auto-security-audit",
+    "name": "Auto Security Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-security-audit",
+    "url": "https://clawhub.ai/skills/auto-security-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-security-audit-e4a55ae99fbafa35.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "一键自动化安全审计：nmap 端口扫描 + nuclei 12000+ CVE 漏洞检测（内外网双扫）+ SSL/TLS 检查 + SSH/防火墙/fail2ban 系统审计 + Markdown 报告生成。支持 cron 定时扫描 + 飞书推送。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nashbuaa-ops",
+      "userId": "publishers:nashbuaa-ops",
+      "displayName": "nashbuaa-ops",
+      "image": "https://avatars.githubusercontent.com/u/234331966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 490,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772640273119,
+      "changelog": "Initial release of auto-security-audit.\n\n- One-click automated security audit: combines nmap port/service scan, nuclei CVE/web vulnerability detection (12,000+ templates, internal+external), SSL/TLS and SSH checks, firewall and fail2ban status, plus patch and login audits.\n- Generates structured Markdown reports, including summaries for cron/Feishu (Lark) push notifications.\n- Supports scheduled scans via cron integration and Feishu notifications.\n- Results classified as CRITICAL, WARN, or SAFE for easy risk assessment.\n- Requires nmap, nuclei, and sslscan as dependencies.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:412eff989a6a96543ea579c8f68a553e2c9f2fae876030cf5ace540779513e88"
+}

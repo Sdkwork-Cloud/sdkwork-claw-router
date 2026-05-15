@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ijpay-sdk@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ijpay_sdk",
+  "skill": {
+    "id": 67156,
+    "skillKey": "clawhub-ijpay-sdk",
+    "name": "IJPay支付SDK"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ijpay-sdk",
+    "url": "https://clawhub.ai/skills/ijpay-sdk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ijpay-sdk-196ceb2790260022.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "支付接入技能 — 基于 IJPay SDK 封装微信支付、支付宝、QQ支付、银联、京东、PayPal 等主流支付渠道。触发场景包括：用户说\"接入支付\"、\"配置支付\"、\"微信支付\"、\"支付宝\"、\"订单支付\"、\"支付回调\"、\"支付对账\"、\"IJPay\"等关键词，或需要为项目添加在线支付功能时激活。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zmy1006-sudo",
+      "userId": "s178943e0sqbs17b9qd9x38x7583wvdq",
+      "displayName": "mingyuan",
+      "image": "https://avatars.githubusercontent.com/u/267627552?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775572286979,
+      "changelog": "Initial release: supports Alipay/WeChatPay/QQPay/UnionPay/JDPay/PayPal with Spring Boot integration guide",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:29c88a772f6bfad031de0f0c6fefd8cbf11249597547ed9d965707757c7102f4"
+}

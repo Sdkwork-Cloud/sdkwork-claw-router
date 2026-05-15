@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bitrefill@2.1.2",
+  "version": "2.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bitrefill",
+  "skill": {
+    "id": 53941,
+    "skillKey": "clawhub-bitrefill",
+    "name": "bitrefill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bitrefill",
+    "url": "https://clawhub.ai/skills/bitrefill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bitrefill-6ec59a5f76e390a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Buy or browse Bitrefill — 1,500+ gift cards, mobile top-ups, and eSIMs across 180+ countries, payable in crypto, Lightning, USDC via x402, or pre-funded acco..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "marcopesani",
+      "userId": "s17c7ebza79ev6d50w7tjkxqfd83ybkg",
+      "displayName": "Marco Pesani",
+      "image": "https://avatars.githubusercontent.com/u/50498?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 110,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.1.2",
+      "createdAt": 1777296106972,
+      "changelog": "Version 1.0.0 of Bitrefill skill\n\n- Initial release supporting browsing and purchasing Bitrefill gift cards, mobile top-ups, and eSIMs in 180+ countries.\n- Adaptive channel routing: automatically chooses the highest-fidelity integration (browser, MCP, CLI, API) based on host environment.\n- Supports crypto, Lightning, USDC via x402, and pre-funded balance payments.\n- Safety and spending safeguard instructions included; warns before any transaction.\n- Reference guides provided for all technical paths and environments, including special OpenClaw integration.\n- Thorough compatibility instructions for common agent/AI platforms.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:279c862e257fb1ef9fe41b38a13cd4d1ab39db99f2c7947221b164150cd27b8e"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/monolith@0.1.10",
+  "version": "0.1.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.monolith",
+  "skill": {
+    "id": 17944,
+    "skillKey": "clawhub-monolith",
+    "name": "Monolith — Crypto Wallet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "monolith",
+    "url": "https://clawhub.ai/skills/monolith",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/monolith-405dc7565658c749.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Secure crypto wallet for AI agents. Hardware-isolated keys (Apple Secure Enclave), ERC-4337 smart wallet, on-chain spending caps, default-deny policy engine."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "slaviquee",
+      "userId": "publishers:slaviquee",
+      "displayName": "slavique",
+      "image": "https://avatars.githubusercontent.com/u/16038025?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 860,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 4,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "0.1.10",
+      "createdAt": 1772011871965,
+      "changelog": "- Updated documentation formatting in SKILL.md for improved readability.\n- No functional changes to the skill's logic or commands.\n- Updated package files (package.json, package-lock.json) with this version bump.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:262c56736c57e6f6b2936cd889d3bc0aa3916bf7f9b79b4b2950525d6adbf3b1"
+}

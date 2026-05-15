@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jimeng-video@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jimeng_video",
+  "skill": {
+    "id": 66547,
+    "skillKey": "clawhub-jimeng-video",
+    "name": "Jimeng Video Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jimeng-video",
+    "url": "https://clawhub.ai/skills/jimeng-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jimeng-video-49396bba2fb55a9a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "即梦AI视频生成工具（带声音版本），通过火山引擎API自动生成带音频的高质量视频。支持文生视频、图生视频，适用于短视频内容创作。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tel18610240060-collab",
+      "userId": "publishers:tel18610240060-collab",
+      "displayName": "Buck",
+      "image": "https://avatars.githubusercontent.com/u/249694746?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 2161,
+      "installsAllTime": 16,
+      "installsCurrent": 16,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1772259140335,
+      "changelog": "jimeng-video v2.0.0 – Now supports generating videos with audio!\n\n- Default model upgraded to `doubao-seedance-1-5-pro-251215`, producing videos with automatic sound (background music, sound effects, ambience)\n- Added support for both text-to-video and image-to-video with audio\n- Expanded documentation with usage examples, prompt tips for audio, and model comparisons\n- Batch generation and task management features improved\n- Detailed API usage, configuration, troubleshooting, and scenario guides added",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:01e163fff78d4b610e9e4a67c7198eed61eb6b4850177a97481464b6ce443a9d"
+}

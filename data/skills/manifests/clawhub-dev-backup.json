@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35254,
+  "uuid": "skill-clawhub-dev-backup",
+  "skillKey": "clawhub-dev-backup",
+  "name": "dev-backup",
+  "summary": "Create versioned snapshots of a workspace project during development to enable safe rollback before risky changes or upon user request.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dev_backup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vincsta",
+      "features": [
+        "Create versioned snapshots of a workspace project during development to enable safe rollback be."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dev-backup@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59797633?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dev-backup",
+      "url": "https://clawhub.ai/skills/dev-backup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dev-backup",
+    "url": "https://clawhub.ai/skills/dev-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dev-backup-9dd1e2b22ce25a7a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dev-backup@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-dev-backup-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7b3aef1f7fd947c254e29aca642e9d1af6a34018113afebcc1bc1085c4b8e44c",
+      "artifactSizeBytes": 2120
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T16:36:16.689Z"
+}

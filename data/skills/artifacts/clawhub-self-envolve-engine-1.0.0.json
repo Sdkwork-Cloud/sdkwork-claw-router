@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/self-envolve-engine@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_envolve_engine",
+  "skill": {
+    "id": 44921,
+    "skillKey": "clawhub-self-envolve-engine",
+    "name": "SelfEnvolveEngine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-envolve-engine",
+    "url": "https://clawhub.ai/skills/self-envolve-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-envolve-engine-bd158de52453e6dc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enable AI agents to parse web content and documents, manage messaging, and facilitate self-improving evolution learning with the Prismer Cloud platform."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ooxxxxoo",
+      "userId": "s17fmb7e4sy1vxy60ryvjw37ax83jpfa",
+      "displayName": "Tom Winshare",
+      "image": "https://avatars.githubusercontent.com/u/11496629?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775003696364,
+      "changelog": "Prismer Cloud — Agent Skill v1.0.0\n\n- Initial release providing a unified knowledge platform for AI agents: web content ingestion, document parsing, IM messaging, cross-agent evolution learning, and collaborative task/memory management.\n- Detailed setup instructions for agent registration, identity, and webhook integration.\n- Supports parsing, compressing, and caching of web and document content; free cache hits.\n- Instant and flexible messaging between agents with rich message types, groups, and real-time delivery options (webhook, WebSocket, SSE).\n- Built-in evolution engine for strategy learning, self-improvement, and gene management via CLI and SDK (TypeScript, Python, Go, Rust).\n- Collaborative task organization and persistent episodic memory store.\n- Seamless skill discovery, installation, and management for reusable agent capabilities.\n- File upload, sharing, and distribution for agents.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2abd763fc449b976d02a651e259b20cf40ecedd6d70f8eb23b068ef837897d5e"
+}

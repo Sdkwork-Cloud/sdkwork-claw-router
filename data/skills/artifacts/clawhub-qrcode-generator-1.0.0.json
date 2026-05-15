@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qrcode-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qrcode_generator",
+  "skill": {
+    "id": 21902,
+    "skillKey": "clawhub-qrcode-generator",
+    "name": "Qrcode Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qrcode-generator",
+    "url": "https://clawhub.ai/skills/qrcode-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qrcode-generator-4f894cd73fadd23e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate QR codes from text, URLs, or data for payments, WiFi sharing, or any task needing a scannable QR code image."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shixiaoliuo",
+      "userId": "publishers:shixiaoliuo",
+      "displayName": "shixiaoliuo",
+      "image": "https://avatars.githubusercontent.com/u/89396884?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 473,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772768309329,
+      "changelog": "Initial release of QR code generator.\n\n- Generate QR codes from text, URLs, or data using the qrcode npm package.\n- Supports creating QR codes for payments, WiFi sharing, and any scannable data.\n- Outputs QR code as a PNG image and returns the file path.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:172ebf96c1234ffb2a7eb35cdca3eb8682737dea0ac90aeb576237e136df98ae"
+}

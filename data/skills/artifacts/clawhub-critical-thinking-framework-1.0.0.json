@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/critical-thinking-framework@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.critical_thinking_framework",
+  "skill": {
+    "id": 70718,
+    "skillKey": "clawhub-critical-thinking-framework",
+    "name": "critical-thinking-framework"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "critical-thinking-framework",
+    "url": "https://clawhub.ai/skills/critical-thinking-framework",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/critical-thinking-framework-c611f9914ce6be22.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于津巴多心理学六问法，对任何新观点、主张或信息进行系统性、结构化的批判性审视。通过六个递进维度的分析，识别潜在偏差、验证逻辑有效性，并形成经过多重检验的审慎结论。适用于评估新闻报道、科学主张、政策建议及日常决策。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ljt1469",
+      "userId": "publishers:ljt1469",
+      "displayName": "ljt1469",
+      "image": "https://avatars.githubusercontent.com/u/23637603?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 507,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773726698856,
+      "changelog": "Initial release of the critical-thinking-framework skill:\n\n- Provides a structured 6-step framework, based on Zimbardo's critical thinking method, for evaluating new claims and information.\n- Covers source credibility, claim plausibility, evidence hierarchy, cognitive biases, logical fallacies, and multi-perspective integration.\n- Outputs systematic assessment results and actionable recommendations.\n- Supports use cases such as news evaluation, scientific claims, policy proposals, and daily decision-making.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:50dfd2a244e21206a5222eceaa49501ac6388e168ab83eb821dd68bcd0b12454"
+}

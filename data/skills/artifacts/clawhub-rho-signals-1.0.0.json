@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rho-signals@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rho_signals",
+  "skill": {
+    "id": 50664,
+    "skillKey": "clawhub-rho-signals",
+    "name": "RHO Signals — Live Crypto TA Engine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rho-signals",
+    "url": "https://clawhub.ai/skills/rho-signals",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rho-signals-021e3a1f0e3b2dda.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real-time crypto TA signals for BTC, ETH, SOL, XRP. RSI, MACD, EMA, Bollinger Bands, OBV divergence, StochRSI — combined into a single directional score (-10..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jamierossouw",
+      "userId": "publishers:jamierossouw",
+      "displayName": "JamieRossouw",
+      "image": "https://avatars.githubusercontent.com/u/219507116?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 873,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771685150212,
+      "changelog": "Initial release: multi-indicator TA signals for BTC/ETH/SOL/XRP with Polymarket edge detection. 77.8% WR on fresh markets.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b8fdbc080839aee88ead664104d8a03f40e19af6f8a37d76f02ddee9745c9b0b"
+}

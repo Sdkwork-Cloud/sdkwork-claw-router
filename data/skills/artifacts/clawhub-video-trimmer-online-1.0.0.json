@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-trimmer-online@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_trimmer_online",
+  "skill": {
+    "id": 43765,
+    "skillKey": "clawhub-video-trimmer-online",
+    "name": "Video Trimmer Online"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-trimmer-online",
+    "url": "https://clawhub.ai/skills/video-trimmer-online",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-trimmer-online-9add6f5dcb0dcb25.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 10-minute raw screen recording into 1080p trimmed video clips just by typing what you need. Whether it's cutting unwanted parts from video recordings..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776069274054,
+      "changelog": "Video Trimmer Online 1.0.0 — Initial Release\n\n- Instantly trim, edit, and export video clips by simply describing your desired edits in natural language.\n- No timeline or export settings; get 1080p trimmed videos in 20–40 seconds, fully cloud-rendered.\n- Seamless first-time setup: automatic cloud token retrieval, session management, and friendly user prompts (\"Connecting...\", \"Ready!\").\n- Supports batch processing, timeline previews, text overlays, and multiple export formats (MP4, MOV, AVI, WebM, etc).\n- Handles errors gracefully and provides clear guidance for credits, file limits, and export issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f54d6d5f5ee42112438cbc88a9f08c4c40b8c1d8211c3d9c42e7be61128d2827"
+}

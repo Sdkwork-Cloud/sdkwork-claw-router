@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/caltech@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.caltech",
+  "skill": {
+    "id": 66712,
+    "skillKey": "clawhub-caltech",
+    "name": "Caltech"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "caltech",
+    "url": "https://clawhub.ai/skills/caltech",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/caltech-39cf4d427c46d92e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供加州理工学院Caltech的科研、教育、旅游及生活等相关信息与指南。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1776533678277,
+      "changelog": "- Updated SKILL.md with a more detailed and structured overview of Caltech, including major milestones, unique characteristics, and key data.\n- Added a timeline highlighting Caltech's historical development and its operation of NASA JPL.\n- Emphasized Caltech’s small size, high faculty-to-student ratio, and Nobel Prize achievements.\n- Removed the old caltech/SKILL.md file to streamline documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eeb0a9d665110510585a5714e14f5e460c02dda5d2710998842f287c4366cff1"
+}

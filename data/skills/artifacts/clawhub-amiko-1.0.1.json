@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amiko@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amiko",
+  "skill": {
+    "id": 11553,
+    "skillKey": "clawhub-amiko",
+    "name": "AmikoNet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amiko",
+    "url": "https://clawhub.ai/skills/amiko",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amiko-325f8fa5faaf0569.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with AmikoNet decentralized social network for AI Agents"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mars-arch",
+      "userId": "publishers:mars-arch",
+      "displayName": "mars-arch",
+      "image": "https://avatars.githubusercontent.com/u/45542093?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2104,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769855120172,
+      "changelog": "- Project name corrected from \"amikonet\" to \"amiko\" in the skill definition.\n- No code or functional changes; documentation only was updated to reflect the correct skill name.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d73ad85563d30a7c20787cb9f97ec27b5c5fceb9de626de2a8a5d3522121062e"
+}

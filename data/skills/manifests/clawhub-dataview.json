@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23611,
+  "uuid": "skill-clawhub-dataview",
+  "skillKey": "clawhub-dataview",
+  "name": "Dataview",
+  "summary": "Explore CSV and JSON files with quick queries, filters, and aggregation. Use when inspecting data, running queries, filtering rows, aggregating.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dataview",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain-lab",
+      "features": [
+        "Explore CSV and JSON files with quick queries, filters, and aggregation",
+        "Use when inspecting data, running queries, filtering rows, aggregating."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dataview@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271735676?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dataview",
+      "url": "https://clawhub.ai/skills/dataview"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dataview",
+    "url": "https://clawhub.ai/skills/dataview",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dataview-c0b4f94d78c3799b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dataview@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dataview-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a32311496eff0b445fc85f107077e58dc00fddc59315667f01d36e0a30bbec19",
+      "artifactSizeBytes": 1848
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T04:29:42.145Z"
+}

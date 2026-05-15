@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/text-to-video-best-app@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_video_best_app",
+  "skill": {
+    "id": 44182,
+    "skillKey": "clawhub-text-to-video-best-app",
+    "name": "Text To Video Best App"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-video-best-app",
+    "url": "https://clawhub.ai/skills/text-to-video-best-app",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-video-best-app-de043e066b07d3a2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 150-word product description into 1080p ready-to-share videos just by typing what you need. Whether it's generating videos from written scripts or tex..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776355296016,
+      "changelog": "- Initial release of Text to Video Best App: convert text prompts or scripts into ready-to-share 1080p videos in minutes.\n- Automatically handles authentication and session setup; 100 free credits for new users.\n- Supports direct uploads, script-to-video conversion, audio/background music, and quick export to MP4 and other formats.\n- Includes error handling, session state management, and workflow tips for efficient video production.\n- Easy prompt matching to streamline tasks like upload, credits check, export, and video editing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:12cb215edb72757f67fedb892beab6339aa4255134a699a33c78ca438c939c83"
+}

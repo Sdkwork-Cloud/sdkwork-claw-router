@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18549,
+  "uuid": "skill-clawhub-telegram-colored-choices-buttons",
+  "skillKey": "clawhub-telegram-colored-choices-buttons",
+  "name": "tg buttons",
+  "summary": "Automatically colors Telegram bot choice buttons as default, destructive (red), or secondary (gray) based on the action's criticality and reversibility.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.telegram_colored_choices_buttons",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daniil Burykin",
+      "features": [
+        "Automatically colors Telegram bot choice buttons as default, destructive (red), or secondary (g."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/telegram-colored-choices-buttons@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/232385700?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "telegram-colored-choices-buttons",
+      "url": "https://clawhub.ai/skills/telegram-colored-choices-buttons"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "telegram-colored-choices-buttons",
+    "url": "https://clawhub.ai/skills/telegram-colored-choices-buttons",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/telegram-colored-choices-buttons-20b15293e1a4c411.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/telegram-colored-choices-buttons@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-telegram-colored-choices-buttons-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d633795b6d4d9c475d894d393a0210df3e8e6c155ea74af6352d22122f9fdbbd",
+      "artifactSizeBytes": 2629
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T15:46:14.070Z"
+}

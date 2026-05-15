@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20314,
+  "uuid": "skill-clawhub-alista",
+  "skillKey": "clawhub-alista",
+  "name": "alista",
+  "summary": "Save restaurants, bars, and cafes from TikTok and Instagram videos. Search your saved places and get weekend suggestions.",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alista",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Brian",
+      "features": [
+        "Save restaurants, bars, and cafes from TikTok and Instagram videos",
+        "Search your saved places and get weekend suggestions."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alista@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7087466?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alista",
+      "url": "https://clawhub.ai/skills/alista"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alista",
+    "url": "https://clawhub.ai/skills/alista",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alista-801f415ad9be0eb1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alista@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-alista-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a4a6e51deb3cb4a9f02b39ee5f1660b807651451475986428457ae67f3cf9937",
+      "artifactSizeBytes": 1817
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T12:22:15.665Z"
+}

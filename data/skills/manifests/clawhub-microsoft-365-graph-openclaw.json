@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17587,
+  "uuid": "skill-clawhub-microsoft-365-graph-openclaw",
+  "skillKey": "clawhub-microsoft-365-graph-openclaw",
+  "name": "Microsoft 365 Graph Openclaw",
+  "summary": "Microsoft 365 Graph for OpenClaw with webhook-based wake signals. Reduce recurring LLM cost from inbox polling while managing Outlook mail, calendar, OneDriv...",
+  "version": "0.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.microsoft_365_graph_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "draeden79",
+      "features": [
+        "Microsoft 365 Graph for OpenClaw with webhook-based wake signals",
+        "Reduce recurring LLM cost from inbox polling while managing Outlook mail, calendar, OneDriv..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/microsoft-365-graph-openclaw@0.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/197928474?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "microsoft-365-graph-openclaw",
+      "url": "https://clawhub.ai/skills/microsoft-365-graph-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "microsoft-365-graph-openclaw",
+    "url": "https://clawhub.ai/skills/microsoft-365-graph-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/microsoft-365-graph-openclaw-0609a9428e2bd703.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/microsoft-365-graph-openclaw@0.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-microsoft-365-graph-openclaw-0.2.2.json",
+      "version": "0.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c372c914402e3979939b8fa0a05dbcdb2c94aed5ceffcc0f9e13fc2e809e8177",
+      "artifactSizeBytes": 2484
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T11:49:56.927Z"
+}

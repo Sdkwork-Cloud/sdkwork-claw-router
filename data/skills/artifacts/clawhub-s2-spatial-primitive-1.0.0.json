@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/s2-spatial-primitive@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.s2_spatial_primitive",
+  "skill": {
+    "id": 35300,
+    "skillKey": "clawhub-s2-spatial-primitive",
+    "name": "Universal Data Model for the next generation of AI-driven smart spaces"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "s2-spatial-primitive",
+    "url": "https://clawhub.ai/skills/s2-spatial-primitive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/s2-spatial-primitive-f0cdecbe229c37a3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Defines a universal 6-element spatial data model using natural language parameters for AI-driven smart space perception and control."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "spacesq",
+      "userId": "s17c8pmv1e8tb2mcc5aset88e183hq1t",
+      "displayName": "MilesXiang",
+      "image": "https://avatars.githubusercontent.com/u/259359437?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 216,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774009173634,
+      "changelog": "Initial release of S2-Spatial-Primitive: a universal 6-element data model for AI-native spatial awareness.\n\n- Defines a 2m x 2m physical grid mapped to a high-dimensional JSON matrix with natural language parameters.\n- Models space using six primitives: Light, Air & HVAC, Sound, Electromagnetic, Energy, and Visual (display-only, no cameras).\n- Integrates advanced metrics: air quality per China GB 3095-2012, special lighting/sound effects, wireless human sensing, and strict visual privacy boundaries.\n- Includes bilingual documentation (English / 中文).\n- Provides a template generator for seamless agent integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3ec695ddcf2940c4af90224515fcf2c5dbe0514ca42f357914238b8ef813dd01"
+}

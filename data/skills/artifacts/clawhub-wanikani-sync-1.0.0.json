@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wanikani-sync@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wanikani_sync",
+  "skill": {
+    "id": 19229,
+    "skillKey": "clawhub-wanikani-sync",
+    "name": "Wanikani"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wanikani-sync",
+    "url": "https://clawhub.ai/skills/wanikani-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wanikani-sync-7c09f3582393590c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sync WaniKani Japanese learning progress data from the API to local storage for analysis and insights. Use when the user wants to backup their WaniKani progr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mart1n-xyz",
+      "userId": "publishers:mart1n-xyz",
+      "displayName": "mart1:n",
+      "image": "https://avatars.githubusercontent.com/u/20109376?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 629,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771252646900,
+      "changelog": "Initial release of wanikani-sync:\n\n- Syncs WaniKani Japanese learning progress from the API to SQLite for offline use and analysis.\n- Supports incremental sync to minimize API calls.\n- Enables backup of user progress, generation of statistics, review pattern analysis, and level tracking.\n- Provides CLI options to selectively sync user info, assignments, reviews, and subjects.\n- Includes example SQL queries and helper scripts for common learning insights.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0226e57ddd5e9058887c99ac50124b2e71ab610a8f6498a9a7506ff4dcd64e77"
+}

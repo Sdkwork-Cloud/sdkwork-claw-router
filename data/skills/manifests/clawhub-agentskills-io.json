@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10342,
+  "uuid": "skill-clawhub-agentskills-io",
+  "skillKey": "clawhub-agentskills-io",
+  "name": "agentskills-io",
+  "summary": "Create, validate, and publish Agent Skills following the official open standard from agentskills.io. Use when (1) creating new skills for AI agents, (2) validating skill structure and metadata, (3) understanding the Agent Skills specificat.",
+  "version": "2.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentskills_io",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vaskin Kissoyan",
+      "features": [
+        "Create, validate, and publish Agent Skills following the official open standard from agentskill.",
+        "Use when (1) creating new skills for AI agents, (2) validating skill structure and metadata, (3."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentskills-io@2.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31700?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentskills-io",
+      "url": "https://clawhub.ai/skills/agentskills-io"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentskills-io",
+    "url": "https://clawhub.ai/skills/agentskills-io",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentskills-io-14fe59b98b274a93.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentskills-io@2.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentskills-io-2.5.0.json",
+      "version": "2.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:750dfde70f73a2fe5eed537076b67e926b235751c1abacf928197ceb7d6de219",
+      "artifactSizeBytes": 2046
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T03:47:10.322Z"
+}

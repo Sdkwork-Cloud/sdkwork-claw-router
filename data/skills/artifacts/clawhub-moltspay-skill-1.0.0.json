@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moltspay-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltspay_skill",
+  "skill": {
+    "id": 20587,
+    "skillKey": "clawhub-moltspay-skill",
+    "name": "MoltsPay Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltspay-skill",
+    "url": "https://clawhub.ai/skills/moltspay-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltspay-skill-bc107d1698e23331.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Pay for and use AI services via MoltsPay protocol. Trigger: User asks to generate video, use a paid service, etc. Auto-discovers services from /.well-known/a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yaqing2023",
+      "userId": "s170f6c8wzdrke438y8x7kz38d83ftrt",
+      "displayName": "Yaqing2023",
+      "image": "https://avatars.githubusercontent.com/u/130617529?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 548,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774306850713,
+      "changelog": "MoltsPay Skill version 1.0.0\n\n- Simplified wallet model: Only Base chain is now supported (USDC, gasless).\n- Updated all commands and instructions to focus on single-chain usage.\n- New API-driven service discovery via moltspay.com endpoints.\n- Streamlined provider and service table formatting for user-facing outputs.\n- Removed references to multi-chain, tokens, and QR code funding flows.\n- Improved error handling and funding instructions for clarity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f3db399b06a2bf042b3120cf1db6efb489d034e50d9106c7076c66b2d73f752e"
+}

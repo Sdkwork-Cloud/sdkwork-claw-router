@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tosr-test-skill-1778050421@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tosr_test_skill_1778050421",
+  "skill": {
+    "id": 49751,
+    "skillKey": "clawhub-tosr-test-skill-1778050421",
+    "name": "TOSR Test Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tosr-test-skill-1778050421",
+    "url": "https://clawhub.ai/skills/tosr-test-skill-1778050421",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tosr-test-skill-1778050421-0c2be8b62a1f4af3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated integration test skill that verifies skill creation, update, inspection, and deletion via the clawhub REST API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yinwuzhe",
+      "userId": "s17bebxc1t0w5frqp4rnmt85nx83hc1n",
+      "displayName": "yuangui",
+      "image": "https://avatars.githubusercontent.com/u/5061317?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 68,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1778050427718,
+      "changelog": "- Initial release of TOSR Test Skill for automated integration testing.\n- Implements creation, inspection, updating, and deletion of skills using the clawhub REST API.\n- Skill is intended for ephemeral use and will be auto-deleted after testing completes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:39f1c05090acab5a0541c51e01032a9eccb8184556838b345a7939ac286b4bcc"
+}

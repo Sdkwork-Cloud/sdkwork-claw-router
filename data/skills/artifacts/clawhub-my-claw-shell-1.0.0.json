@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/my-claw-shell@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_claw_shell",
+  "skill": {
+    "id": 15382,
+    "skillKey": "clawhub-my-claw-shell",
+    "name": "My Claw Shell"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-claw-shell",
+    "url": "https://clawhub.ai/skills/my-claw-shell",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-claw-shell-5c272ec698a7a99c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Runs shell commands inside a dedicated tmux session named claw, returning the command output while restricting dangerous commands without confirmation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "biosaylom",
+      "userId": "publishers:biosaylom",
+      "displayName": "biosaylom",
+      "image": "https://avatars.githubusercontent.com/u/167272159?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 915,
+      "installsAllTime": 12,
+      "installsCurrent": 10,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771402684844,
+      "changelog": "Initial release of my-claw-shell skill.\n\n- Runs shell commands exclusively inside a dedicated tmux session named \"claw\"\n- Returns output from the tmux session back to the agent\n- Protects against dangerous commands, asking for user confirmation before executing commands like sudo, rm, reboot, or shutdown\n- Provides a simple tool interface: `claw_shell_run(command)`\n- Automatically creates and manages the \"claw\" tmux session as needed",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6100f477ccb0d23d1f08110a5562eb3b40001a3f5498e88c9f7fa2e3b6ffed64"
+}

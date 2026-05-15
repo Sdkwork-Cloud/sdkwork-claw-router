@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/este-lauder@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.este_lauder",
+  "skill": {
+    "id": 64946,
+    "skillKey": "clawhub-este-lauder",
+    "name": "Este Lauder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "este-lauder",
+    "url": "https://clawhub.ai/skills/este-lauder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/este-lauder-270d9a1744a1a085.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供Este Lauder品牌历史、产品线、行业地位、全球布局及最新动态的详细信息查询服务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1776238607864,
+      "changelog": "- 优化文档结构，增加内容导航，提升信息检索体验。\n- 明确常见使用场景，简化查询指引。\n- 部分表达更口语化，便于理解。\n- 官方网站和深度阅读建议保留。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:02172aa87e84102dc77f34004ae3baf499587f0f042e170e00fe209b45843bb3"
+}

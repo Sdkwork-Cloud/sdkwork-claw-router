@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10110,
+  "uuid": "skill-clawhub-readwise",
+  "skillKey": "clawhub-readwise",
+  "name": "Readwise & Reader",
+  "summary": "Access Readwise highlights and Reader saved articles",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.readwise",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "refrigerator",
+      "features": [
+        "Access Readwise highlights and Reader saved articles"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/readwise@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/983210?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "readwise",
+      "url": "https://clawhub.ai/skills/readwise"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "readwise",
+    "url": "https://clawhub.ai/skills/readwise",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/readwise-8c3908175a49e353.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/readwise@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-readwise-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b495d9548d4998be789ef5d6b15903a7ecb8e4b704197b50a065208f3293f9ff",
+      "artifactSizeBytes": 1817
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-08T12:08:37.110Z"
+}

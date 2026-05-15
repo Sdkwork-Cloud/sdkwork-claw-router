@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46659,
+  "uuid": "skill-clawhub-postgres-hardened",
+  "skillKey": "clawhub-postgres-hardened",
+  "name": "Postgres Hardened",
+  "summary": "PostgreSQL database patterns for query optimization, schema design, indexing, and security. Based on Supabase best practices.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.postgres_hardened",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Faberlens",
+      "features": [
+        "PostgreSQL database patterns for query optimization, schema design, indexing, and security",
+        "Based on Supabase best practices."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/postgres-hardened@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261834257?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "postgres-hardened",
+      "url": "https://clawhub.ai/skills/postgres-hardened"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "postgres-hardened",
+    "url": "https://clawhub.ai/skills/postgres-hardened",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/postgres-hardened-548dd1a7cdad2a45.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/postgres-hardened@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-postgres-hardened-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:533e819b72279a3bbde6b59d59c22272681ed3ef7203c963417c1815f01c8ce7",
+      "artifactSizeBytes": 2432
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T11:01:00.191Z"
+}

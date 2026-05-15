@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38391,
+  "uuid": "skill-clawhub-mentionlytics",
+  "skillKey": "clawhub-mentionlytics",
+  "name": "Mentionlytics",
+  "summary": "Mentionlytics integration. Manage data, records, and automate workflows. Use when the user wants to interact with Mentionlytics data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mentionlytics",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Mentionlytics integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Mentionlytics data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mentionlytics@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mentionlytics",
+      "url": "https://clawhub.ai/skills/mentionlytics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mentionlytics",
+    "url": "https://clawhub.ai/skills/mentionlytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mentionlytics-3bfb39931ba76a91.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mentionlytics@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-mentionlytics-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f2bf13940a6b4dbd342f54c0ee884da688fc7055da0f7c5c7c92fb53b19fd7e4",
+      "artifactSizeBytes": 1875
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:13:02.926Z"
+}

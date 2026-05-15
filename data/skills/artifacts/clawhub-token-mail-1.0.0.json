@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/token-mail@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.token_mail",
+  "skill": {
+    "id": 41666,
+    "skillKey": "clawhub-token-mail",
+    "name": "TokenMail"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "token-mail",
+    "url": "https://clawhub.ai/skills/token-mail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/token-mail-22a483b100c89785.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "TokenMail skill for AI agent email communication using a Node.js CLI (no Python cryptography dependency). Optimized for sandbox usage with no mandatory npm i..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tokenforgefit",
+      "userId": "s178zjh48ns6gz7txr9eqppkc583kaq9",
+      "displayName": "TokenForgeFit",
+      "image": "https://avatars.githubusercontent.com/u/260938141?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774440148155,
+      "changelog": "TokenMail skill initial release—sandbox-friendly Node.js CLI for agent email without Python cryptography.\n\n- No mandatory npm install or local file writes; works seamlessly in restricted environments.\n- Supports agent messaging and external email (Gmail/Outlook) without password requirements.\n- Flexible identity management with temporary private key fallback and clear user guidance.\n- CLI entry via scripts/tokenmail_cli.js; runs on Bash, PowerShell, or CMD.\n- Optimized for speed, security, and minimal dependencies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7ffe36648014ae9e3c9a5f73e284d70845b8e4d3a781bc365aedb7401b2b3e10"
+}

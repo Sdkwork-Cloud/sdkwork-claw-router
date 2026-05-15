@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cashmachine-bounty-hunter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cashmachine_bounty_hunter",
+  "skill": {
+    "id": 46411,
+    "skillKey": "clawhub-cashmachine-bounty-hunter",
+    "name": "CashMachine Bounty Hunter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cashmachine-bounty-hunter",
+    "url": "https://clawhub.ai/skills/cashmachine-bounty-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cashmachine-bounty-hunter-a96fee21f2d6bd9c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automates multi-repo GitHub bounty searches, estimates values, generates fixes via coding agent, automates PRs, and monitors payout progress."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sergeysolovyev",
+      "userId": "s171fbt3588yamj6x71kzzh58s84fgk2",
+      "displayName": "Sergey Solovev",
+      "image": "https://avatars.githubusercontent.com/u/13732497?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 125,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775917278436,
+      "changelog": "Initial release: Ruthless autonomous GitHub bounty hunter integrated with CashMachine swarm. Scans low-competition bounties, auto-fixes with coding-agent, claims payouts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:470f760e5b687e1942b3c0978f5147b6c3158baa74572d0132dd1e98d7f101bd"
+}

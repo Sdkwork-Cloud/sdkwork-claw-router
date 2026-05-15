@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21330,
+  "uuid": "skill-clawhub-x-tweet-monitor",
+  "skillKey": "clawhub-x-tweet-monitor",
+  "name": "X Tweet Monitor",
+  "summary": "Monitor X/Twitter accounts for new tweets and send notifications to Telegram.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_tweet_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mmmuffin",
+      "features": [
+        "Monitor X/Twitter accounts for new tweets and send notifications to Telegram."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-tweet-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77034568?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-tweet-monitor",
+      "url": "https://clawhub.ai/skills/x-tweet-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-tweet-monitor",
+    "url": "https://clawhub.ai/skills/x-tweet-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-tweet-monitor-5977257a1e599b95.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-tweet-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-tweet-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c08c645c1bdc79a9ddec08438a999cb352a4968771409c03108e15cac51768ef",
+      "artifactSizeBytes": 2064
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T09:59:38.286Z"
+}

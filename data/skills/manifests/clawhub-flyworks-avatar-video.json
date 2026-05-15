@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9250,
+  "uuid": "skill-clawhub-flyworks-avatar-video",
+  "skillKey": "clawhub-flyworks-avatar-video",
+  "name": "Flyworks Avatar Video",
+  "summary": "Generate videos using Flyworks (a.k.a HiFly) Digital Humans. Create talking photo videos from images, use public avatars with TTS, or clone voices for custom audio.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flyworks_avatar_video",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hui Lin",
+      "features": [
+        "Generate videos using Flyworks (a.k.a HiFly) Digital Humans",
+        "Create talking photo videos from images, use public avatars with TTS, or clone voices for custo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flyworks-avatar-video@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2088255?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flyworks-avatar-video",
+      "url": "https://clawhub.ai/skills/flyworks-avatar-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flyworks-avatar-video",
+    "url": "https://clawhub.ai/skills/flyworks-avatar-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flyworks-avatar-video-b9fb0710208e6046.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flyworks-avatar-video@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-flyworks-avatar-video-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bf0477acc5f88b3622ddf11debee5e8c626b23436f1f679352d71f9172adcd22",
+      "artifactSizeBytes": 2420
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T16:38:13.366Z"
+}

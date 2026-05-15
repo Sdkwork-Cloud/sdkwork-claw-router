@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32607,
+  "uuid": "skill-clawhub-memory-latch",
+  "skillKey": "clawhub-memory-latch",
+  "name": "memory-latch",
+  "summary": "Detect and recover from context resets, memory/index outages, and cache clears with deterministic, trust-preserving reconstruction. Use when continuity break...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_latch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OtherPowers",
+      "features": [
+        "Detect and recover from context resets, memory/index outages, and cache clears with determinist.",
+        "Use when continuity break..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-latch@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44530314?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-latch",
+      "url": "https://clawhub.ai/skills/memory-latch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-latch",
+    "url": "https://clawhub.ai/skills/memory-latch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-latch-6809914a02bed6ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-latch@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-latch-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e47ae7a048978496c209678da7d3ddab79a68a1dc92f0a93fc67cbbab9bae9b5",
+      "artifactSizeBytes": 2402
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T16:47:04.360Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38525,
+  "uuid": "skill-clawhub-swagger-skills",
+  "skillKey": "clawhub-swagger-skills",
+  "name": "swagger-skills",
+  "summary": "Use this skill to turn Swagger UI or OpenAPI/Swagger documentation links into organized API calling skills, including Python clients, field references, domai...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swagger_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "月面仙人刺",
+      "features": [
+        "Use this skill to turn Swagger UI or OpenAPI/Swagger documentation links into organized API cal."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/swagger-skills@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109655007?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "swagger-skills",
+      "url": "https://clawhub.ai/skills/swagger-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swagger-skills",
+    "url": "https://clawhub.ai/skills/swagger-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swagger-skills-2ba0ea6bc9f9ab47.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/swagger-skills@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-swagger-skills-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fb51ddcc5396606d56c8daf7a459d7410ea3660d340822f610b0cc8fc293b067",
+      "artifactSizeBytes": 2081
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T02:13:10.672Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41721,
+  "uuid": "skill-clawhub-anything-to-md",
+  "skillKey": "clawhub-anything-to-md",
+  "name": "Skill",
+  "summary": "Convert any URL or file to Markdown. Supports webpage, WeChat, YouTube, Bilibili, Douyin, Xiaohongshu, PDF, and Office files.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anything_to_md",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haiwenai",
+      "features": [
+        "Convert any URL or file to Markdown",
+        "Supports webpage, WeChat, YouTube, Bilibili, Douyin, Xiaohongshu, PDF, and Office files."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/anything-to-md@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/117875349?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "anything-to-md",
+      "url": "https://clawhub.ai/skills/anything-to-md"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anything-to-md",
+    "url": "https://clawhub.ai/skills/anything-to-md",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anything-to-md-64e217df558906ab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/anything-to-md@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-anything-to-md-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:99f5fbb2e0ef12605dde5f1bd324b4155d3b59e4b2720bb18f43c59cd65813af",
+      "artifactSizeBytes": 2365
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T16:16:24.726Z"
+}

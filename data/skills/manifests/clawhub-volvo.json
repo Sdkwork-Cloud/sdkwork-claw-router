@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30773,
+  "uuid": "skill-clawhub-volvo",
+  "skillKey": "clawhub-volvo",
+  "name": "Volvo",
+  "summary": "Volvo Cars and Trucks. Safety-first Swedish vehicles, EX90, XC90, electric lineup, specs, and pricing.",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.volvo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Volvo Cars and Trucks",
+        "Safety-first Swedish vehicles, EX90, XC90, electric lineup, specs, and pricing."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/volvo@0.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "volvo",
+      "url": "https://clawhub.ai/skills/volvo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "volvo",
+    "url": "https://clawhub.ai/skills/volvo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/volvo-bccae4ce7be65100.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/volvo@0.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-volvo-0.1.3.json",
+      "version": "0.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f43bb0f2c8224e5bfd28246e3555df71621afe1b5273403b5785374c1d847f53",
+      "artifactSizeBytes": 2241
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T17:39:39.248Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawhealth@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhealth",
+  "skill": {
+    "id": 44613,
+    "skillKey": "clawhub-clawhealth",
+    "name": "test"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhealth",
+    "url": "https://clawhub.ai/skills/clawhealth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhealth-4d4ecd9617380835.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Performs a two-phase audit with a fast structural scan and a detailed expert review focusing on security, cron jobs, config, and skill quality."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "merlinrabens",
+      "userId": "s172qh2cwvn3fe19ns3c6set5s83hsf5",
+      "displayName": "merlinrabens",
+      "image": "https://avatars.githubusercontent.com/u/3186610?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1774440567881,
+      "changelog": "- Initial release of ClawCheck: a two-phase audit for OpenClaw skills and configuration.\n- Phase 1: Fast deterministic scan for structural/security issues, produces actionable JSON findings.\n- Phase 2: Deep quality review of config, cron jobs, skills, and secrets based on Phase 1 results.\n- Provides scoring, improvement recommendations, and prioritization for remediation.\n- Cross-references cron and skill health; enhances existing `openclaw doctor` checks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d092dd1359e55c42fc22a2d11c1fab7f634e41985976b354f9dffadec76af467"
+}

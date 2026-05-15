@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43776,
+  "uuid": "skill-clawhub-add-pi-events-d1",
+  "skillKey": "clawhub-add-pi-events-d1",
+  "name": "Add Pi Events D1",
+  "summary": "Add or update PI events in the Cloudflare D1 mb-events database using parsed details, ISO 8601 dates, and SQL insert commands executed remotely.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.add_pi_events_d1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alexander Babenchuk",
+      "features": [
+        "Add or update PI events in the Cloudflare D1 mb-events database using parsed details, ISO 8601."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/add-pi-events-d1@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15933756?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "add-pi-events-d1",
+      "url": "https://clawhub.ai/skills/add-pi-events-d1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "add-pi-events-d1",
+    "url": "https://clawhub.ai/skills/add-pi-events-d1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/add-pi-events-d1-d886823ba99aaa0c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/add-pi-events-d1@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-add-pi-events-d1-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9075ffd719e45ff662f2efbff4c5f3fa73c3bebee17c7c6eb715d2c9cf82c17c",
+      "artifactSizeBytes": 2424
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T18:46:02.046Z"
+}

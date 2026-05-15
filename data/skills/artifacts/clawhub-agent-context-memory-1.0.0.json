@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-context-memory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_context_memory",
+  "skill": {
+    "id": 62709,
+    "skillKey": "clawhub-agent-context-memory",
+    "name": "上下文管理"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-context-memory",
+    "url": "https://clawhub.ai/skills/agent-context-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-context-memory-36d0b3bae3ad2a3d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent 上下文管理方法论：通过分层文件体系实现跨 session 记忆延续、职责分离和高效上下文恢复。Use when: (1) 搭建新 agent 工作区, (2) 优化 agent 记忆和上下文管理, (3) 长期运行 agent 的记忆维护。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "349840432m-dev",
+      "userId": "s17250cp6hefh46chds3rm869583k5e8",
+      "displayName": "349840432m-dev",
+      "image": "https://avatars.githubusercontent.com/u/230963354?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 300,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773388210558,
+      "changelog": "- Initial release of the \"Agent 上下文管理方法论 (context-management)\" skill.\n- Introduces a layered file system to enable memory persistence, context recovery, and role separation across agent sessions.\n- Defines five core layers: SOUL.md (identity), USER.md (user info), AGENTS.md (routing/workflow), TOOLS.md (environment), and memory/MEMORY.md (short/long-term memory).\n- Provides guidelines for regular memory distillation, cleanup routines, and heartbeat-based maintenance.\n- Includes an automated script (memory_distill.py) for extracting and refining technical learnings from daily memory files.\n- Outlines best practices, quick start instructions, and usage scenarios for robust context management in agents.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:46fa8c84de9649f3e640e2a042c5dc7de1bbc91be52278f82a3f2e4f59455adc"
+}

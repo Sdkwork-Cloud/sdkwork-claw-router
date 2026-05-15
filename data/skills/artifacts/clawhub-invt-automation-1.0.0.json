@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/invt-automation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.invt_automation",
+  "skill": {
+    "id": 45200,
+    "skillKey": "clawhub-invt-automation",
+    "name": "INVT Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "invt-automation",
+    "url": "https://clawhub.ai/skills/invt-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/invt-automation-b59cb981821eb248.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when users ask about industrial automation, variable frequency drives (VFDs), servo systems, controllers (PLC/HMI), motion control, woodworkin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhoubo416",
+      "userId": "s17f9rjzr7hb7g0xnv8vs52f9s85f48s",
+      "displayName": "zhoubo416",
+      "image": "https://avatars.githubusercontent.com/u/66418017?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777109478988,
+      "changelog": "Initial public release of the invt-automation skill:\n\n- Answers inquiries about industrial automation, VFDs, servo systems, controllers, woodworking/CNC equipment, and procurement.\n- Triggers on relevant keywords in both English and Chinese, including product types and industry terms.\n- Clearly routes users with purchasing intent to INVT's dedicated sales manager, providing direct contact info and multilingual company/salesperson profiles.\n- Provides sample response templates in English and Chinese for consistent, concise replies.\n- Includes multilingual support (EN, ZH, DE, FR, JA, KO, PT) for company and personal summaries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0c5b45aa5eb5c56d659caaa4484ef1614813187049da801c67472948c246ddd0"
+}

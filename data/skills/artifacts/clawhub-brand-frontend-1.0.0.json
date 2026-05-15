@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brand-frontend@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brand_frontend",
+  "skill": {
+    "id": 52771,
+    "skillKey": "clawhub-brand-frontend",
+    "name": "Brand Frontend"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brand-frontend",
+    "url": "https://clawhub.ai/skills/brand-frontend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brand-frontend-307954a5903f1ff0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Brand-first landing page designer — interviews the user to discover brand identity (adjectives, colors, typography, shape language), then generates and itera..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "davidbergman121",
+      "userId": "s17famks4317rpe114m59s5eys855zd1",
+      "displayName": "davidbergman121",
+      "image": "https://avatars.githubusercontent.com/u/270659359?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776616424938,
+      "changelog": "Brand Landing Page Designer v1.0.0\n\n- Introduces a skill for designing polished, brand-first landing and marketing pages for users without established brand identity.\n- Guides users through an interactive brand interview to clarify identity, feel, and visual direction before generating any design.\n- Leverages Google Stitch SDK to generate, refine, and deliver deployment-ready HTML bundles.\n- Clearly defines scope: single-purpose landing pages; excludes dashboards, app UIs, or component-level tasks.\n- Provides structured workflow across setup, interview, design system creation, iterative review, and final delivery.\n- Includes special handling for user-supplied images: describes and saves them for user reference, but does not use them in generation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8d0b4c695649dd993925d81af8f8007f8fb145cf1abbe71bad86b25754a384bb"
+}

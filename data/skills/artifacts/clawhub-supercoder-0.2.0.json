@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/supercoder@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.supercoder",
+  "skill": {
+    "id": 45906,
+    "skillKey": "clawhub-supercoder",
+    "name": "Supercoder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "supercoder",
+    "url": "https://clawhub.ai/skills/supercoder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/supercoder-5c34771191356bd1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trigger when the user provides a requirement, PRD, specification, or feature request and wants it analyzed and implemented against the codebase. Use when the..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "unfallenwill",
+      "userId": "s175dtb5vmeyta7tsty6b2jydn84z9hv",
+      "displayName": "unfallenwill",
+      "image": "https://avatars.githubusercontent.com/u/150224887?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1776316206905,
+      "changelog": "AI pair programmer: 6-phase requirement-to-code workflow",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8d624ddbe74bf9dd1727164155494bbf8b4103c262c1d4a379cc57eac56b4d83"
+}

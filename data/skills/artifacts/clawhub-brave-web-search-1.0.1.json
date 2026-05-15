@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brave-web-search@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brave_web_search",
+  "skill": {
+    "id": 9900,
+    "skillKey": "clawhub-brave-web-search",
+    "name": "Brave Web Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brave-web-search",
+    "url": "https://clawhub.ai/skills/brave-web-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brave-web-search-f0bfc1064d4c7c86.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Searches the web and returns ranked results or AI-generated summarized answers using the Brave Search API. Use for real-time web lookups and factual Q&A."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kghamilton89",
+      "userId": "s17dgyns9t515y9988x1gzt4w5847y58",
+      "displayName": "Kenneth Gerald Hamilton",
+      "image": "https://avatars.githubusercontent.com/u/29099829?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2616,
+      "installsAllTime": 63,
+      "installsCurrent": 61,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772077688603,
+      "changelog": "- Clarified usage of the --freshness argument, specifying it must be passed as a separate argument to the brave-search command.\n- No other functional or file changes in this version.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:aa465d49a9732e38588dc39692248fb8a67236d900e75da25afccb250de7f460"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64566,
+  "uuid": "skill-clawhub-lj22503-enfj-coach",
+  "skillKey": "clawhub-lj22503-enfj-coach",
+  "name": "Enfj Coach",
+  "summary": "［何时使用］当用户明确说\"我是 ENFJ\"且需要成长/职业/学习指导时触发。触发关键词：\"我是 ENFJ\"、\"ENFJ 成长\"、\"ENFJ 职业\"、\"ENFJ 迷茫\"、\"分析瘫痪\"、\"想太多做太少\"。不触发：纯技术任务（如写代码）、非 ENFJ 用户主动说明（如\"我是 ENFP\"）、模糊情绪表达（如\"心情不好\"）...",
+  "version": "1.8.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lj22503_enfj_coach",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lj22503",
+      "features": [
+        "［何时使用］当用户明确说\"我是 ENFJ\"且需要成长/职业/学习指导时触发。触发关键词：\"我是 ENFJ\"、\"ENFJ 成长\"、\"ENFJ 职业\"、\"ENFJ 迷茫\"、\"分析瘫痪\"、\"想太多."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lj22503-enfj-coach@1.8.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/170225356?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lj22503-enfj-coach",
+      "url": "https://clawhub.ai/skills/lj22503-enfj-coach"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lj22503-enfj-coach",
+    "url": "https://clawhub.ai/skills/lj22503-enfj-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lj22503-enfj-coach-41c1eb4663b7d6f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lj22503-enfj-coach@1.8.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lj22503-enfj-coach-1.8.0.json",
+      "version": "1.8.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ffd9d5465ea0f4ef1443528d4443442542d0a10940be67cc13faeeec407f5440",
+      "artifactSizeBytes": 2511
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T10:40:06.053Z"
+}

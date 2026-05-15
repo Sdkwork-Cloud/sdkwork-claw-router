@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pua-debugging-ja@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pua_debugging_ja",
+  "skill": {
+    "id": 71800,
+    "skillKey": "clawhub-pua-debugging-ja",
+    "name": "PUA Debugging (日本語)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pua-debugging-ja",
+    "url": "https://clawhub.ai/skills/pua-debugging-ja",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pua-debugging-ja-f14ea1e1fcb075f9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "企業PUA話術と構造化デバッグ方法論で徹底的な問題解決を強制する。発動条件：タスクが2回以上失敗、「できません」と言いかける時、ユーザーに手動対応を勧めようとする時、未検証で環境のせいにする時、同じ方案の微調整ループ、受け身な行動（検索しない/読まない/検証しない/待っている）、ユーザーの苛立ち（'もっと頑張れ'..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tanweai",
+      "userId": "publishers:tanweai",
+      "displayName": "tanweai",
+      "image": "https://avatars.githubusercontent.com/u/256783335?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 363,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773312362584,
+      "changelog": "Initial release: Corporate PUA rhetoric + structured debugging methodology (condensed)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:594cc3a93f018595cc32723128e9ee614f9df6e428ef92ef6d339ba46a8c52c3"
+}

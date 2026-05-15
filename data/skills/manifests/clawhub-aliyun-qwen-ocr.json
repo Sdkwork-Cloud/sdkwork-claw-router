@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56720,
+  "uuid": "skill-clawhub-aliyun-qwen-ocr",
+  "skillKey": "clawhub-aliyun-qwen-ocr",
+  "name": "Aliyun Qwen Ocr",
+  "summary": "Use when OCR-specialized extraction is needed with Alibaba Cloud Model Studio Qwen OCR models (`qwen-vl-ocr`, `qwen-vl-ocr-latest`, and snapshots), including...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun_qwen_ocr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cinience",
+      "features": [
+        "Use when OCR-specialized extraction is needed with Alibaba Cloud Model Studio Qwen OCR models (."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aliyun-qwen-ocr@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/557426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aliyun-qwen-ocr",
+      "url": "https://clawhub.ai/skills/aliyun-qwen-ocr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun-qwen-ocr",
+    "url": "https://clawhub.ai/skills/aliyun-qwen-ocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-qwen-ocr-4df564d4a0e41b4e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aliyun-qwen-ocr@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aliyun-qwen-ocr-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d28bafb8241f7f68140ad87b5708680531fed516a33749cbf818caeba510f2d4",
+      "artifactSizeBytes": 2369
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T15:51:25.281Z"
+}

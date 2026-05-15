@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stockselectionmodel-bak@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stockselectionmodel_bak",
+  "skill": {
+    "id": 65251,
+    "skillKey": "clawhub-stockselectionmodel-bak",
+    "name": "Stockselectionmodel.Bak"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stockselectionmodel-bak",
+    "url": "https://clawhub.ai/skills/stockselectionmodel-bak",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stockselectionmodel-bak-38910a5057c4f6cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A股板块实时研报。全球新闻→A股映射、板块趋势研判、美股关联、利好利空、大事件提醒。零配置可用，输出兼容飞书/扣子/Markdown平台。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xujianbo0426",
+      "userId": "s17edhs0e24wywdrjg8mjpkmx584r5fg",
+      "displayName": "xujianbo0426",
+      "image": "https://avatars.githubusercontent.com/u/266253530?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 123,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776072877386,
+      "changelog": "**Major update: Complete redesign and rebranding of the skill, now focused on real-time sector research for China A-shares with global news integration.**\n\n- Skill renamed to \"ai-stock-insider\" and upgraded to version 3.0.0.\n- Now delivers professional real-time sector reports: live market data, news, US stock linkage, and major events.\n- Added fixed, comprehensive markdown report layout for all outputs to ensure consistency and completeness.\n- Zero-setup, out-of-the-box compatibility with Feishu, Coze, and other Markdown platforms.\n- Optional integration with Tavily API for enhanced news coverage.\n- Workflow optimized to minimize LLM API usage, focusing LLM only on in-depth user-requested analysis.\n- Expanded and clarified documentation for supported sectors, usage methods, and working process.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:342e697fcb90115a7c4208ffca5979bf126e97058f04465c28e5bfd489cdec44"
+}

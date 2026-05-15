@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53540,
+  "uuid": "skill-clawhub-hiveram",
+  "skillKey": "clawhub-hiveram",
+  "name": "Hiveram",
+  "summary": "Agent coordination layer via Workledger — shared work orders, claim/release leases, cross-machine memory sync, and handoff between OpenClaw instances. Use wh...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hiveram",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ppiankov",
+      "features": [
+        "Agent coordination layer via Workledger — shared work orders, claim/release leases, cross-machi.",
+        "Use wh..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hiveram@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/103106369?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hiveram",
+      "url": "https://clawhub.ai/skills/hiveram"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hiveram",
+    "url": "https://clawhub.ai/skills/hiveram",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hiveram-b53648fc04a57cd1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hiveram@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hiveram-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f5455400d7e0cb9721e17e142ae31bdb5201b1fcb103fb05c1a0291eebdd669d",
+      "artifactSizeBytes": 1936
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T15:21:52.756Z"
+}

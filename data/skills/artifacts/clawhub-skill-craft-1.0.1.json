@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-craft@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_craft",
+  "skill": {
+    "id": 53169,
+    "skillKey": "clawhub-skill-craft",
+    "name": "skill-craft"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-craft",
+    "url": "https://clawhub.ai/skills/skill-craft",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-craft-dcd5e02bae64e0b2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create, optimize, or update AgentSkills with evidence-based design. Two modes: (1) CREATE — build new skills from scratch with proven design patterns. (2) OP..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leonardo-lb",
+      "userId": "s173fecesqz6npp546249nqprd83jtfx",
+      "displayName": "LeoNardo-LB",
+      "image": "https://avatars.githubusercontent.com/u/58056860?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776235211108,
+      "changelog": "No user-facing or internal changes detected in this version.\n\n- No file changes were made between the previous and current version.\n- Functionality and documentation remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6270ee6c997c3cf2831f12f827a6c0442c953498ab589e9446a642164f9dfb2b"
+}

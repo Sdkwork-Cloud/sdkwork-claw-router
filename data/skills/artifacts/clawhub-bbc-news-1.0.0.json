@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bbc-news@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bbc_news",
+  "skill": {
+    "id": 8814,
+    "skillKey": "clawhub-bbc-news",
+    "name": "BBC News"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bbc-news",
+    "url": "https://clawhub.ai/skills/bbc-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bbc-news-f0dd2aa84248c1c6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch and display BBC News stories from various sections and regions via RSS feeds. Use when the user asks for BBC news, UK news headlines, world news from BBC, or news from specific BBC sections (technology, business, politics, science, h."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ddrayne",
+      "userId": "publishers:ddrayne",
+      "displayName": "ddrayne",
+      "image": "https://avatars.githubusercontent.com/u/250331?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 5877,
+      "installsAllTime": 56,
+      "installsCurrent": 51,
+      "stars": 5,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1768398865276,
+      "changelog": "Initial release: Fetch BBC News from various sections (UK, World, Business, Politics, Technology, etc.) and regions via RSS feeds. Supports text and JSON output.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e76acbea82c72454ac78bbefc4b1bc663662830d2a51373386a53857fc3038b1"
+}

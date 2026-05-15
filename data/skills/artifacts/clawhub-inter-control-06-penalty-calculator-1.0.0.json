@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/inter-control-06-penalty-calculator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inter_control_06_penalty_calculator",
+  "skill": {
+    "id": 61480,
+    "skillKey": "clawhub-inter-control-06-penalty-calculator",
+    "name": "06 Penalty Calculator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inter-control-06-penalty-calculator",
+    "url": "https://clawhub.ai/skills/inter-control-06-penalty-calculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inter-control-06-penalty-calculator-bb57a2c749ecc520.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于淘宝/天猫官方处罚体系和行业合规标准， 输入违规类型和情节，给出建议处罚方案和处罚依据。 覆盖商家违规、驿站违规、供应商违规三类主体。 v1.7 新增：统一引用 GLOSSARY.md、INSUFFICIENCY-HANDLING.md、RULE-UPDATE-SOP.md。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nic-yuan",
+      "userId": "s17601s6pc41mkraa1bkeshfx983kdsw",
+      "displayName": "nic-yuan",
+      "image": "https://avatars.githubusercontent.com/u/195308903?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 109,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777635371507,
+      "changelog": "处罚裁量器 v1.7.0 主要更新内容：\n\n- 统一引用术语表（GLOSSARY.md）、信息不足处理（INSUFFICIENCY-HANDLING.md）、规则更新流程（RULE-UPDATE-SOP.md）等辅助文档，提升规则一致性。\n- 明确历史加重系数、处罚分级、合并裁量等处罚原则和依据。\n- 强化处罚建议输出模板和对话示例，覆盖商家、驿站、供应商多类违规场景。\n- 补充适用范围、处罚体系、申诉机制及整改跟踪说明。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:39f5b574e704724a0416da74a2527ff7f915fd458c57dffded4b886cc6fc35ad"
+}

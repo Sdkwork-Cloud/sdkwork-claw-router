@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/session-history-enhancements@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_history_enhancements",
+  "skill": {
+    "id": 50266,
+    "skillKey": "clawhub-session-history-enhancements",
+    "name": "Session History Enhanced"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-history-enhancements",
+    "url": "https://clawhub.ai/skills/session-history-enhancements",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-history-enhancements-9a78f16d023e2c0d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Session history system for OpenClaw — persistent, browsable, resumable chat sessions with SQLite index, archive/restore, migration, paginated UI, and chat dr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maverick-software",
+      "userId": "s172zy52hz8d9fxcmyr9padghd842s7c",
+      "displayName": "maverick-software",
+      "image": "https://avatars.githubusercontent.com/u/85259593?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 522,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772218110328,
+      "changelog": "- Added direct archival of active sessions from the dashboard via an Archive button (excluding Main Session).\n- Introduced the `sessions.archive` RPC endpoint to support on-demand session archiving.\n- Updated UI to include Archive action, clearer Session History section, and enhanced pagination controls.\n- Extended documentation for all 5 session history RPC endpoints and clarified their parameters and behavior.\n- Improved dropdown integration: archived sessions selectable via a dedicated value format and with better filtering.\n- Expanded Common Pitfalls and architectural notes to reflect new archive/resume workflow and dropdown usage patterns.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f59e4bd4773d1b5bb7dd5c8aa28797f57bd5267784be2a994bc12d68182d36f8"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qr-code-generator@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qr_code_generator",
+  "skill": {
+    "id": 12364,
+    "skillKey": "clawhub-qr-code-generator",
+    "name": "Qr Code Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qr-code-generator",
+    "url": "https://clawhub.ai/skills/qr-code-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qr-code-generator-11d5d362d833e115.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when users need to create QR codes for any purpose. Triggers include: requests to \"generate QR code\", \"create QR\", \"make a QR code for\", or mentions of encoding data into scannable codes. Supports URLs, text, WiFi credential."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anisafifi",
+      "userId": "publishers:anisafifi",
+      "displayName": "Anis Afifi",
+      "image": "https://avatars.githubusercontent.com/u/174696450?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1730,
+      "installsAllTime": 9,
+      "installsCurrent": 9,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770540083376,
+      "changelog": "Initial release – powerful QR code generator for many data types, with customization and batch capabilities.\n\n- Supports generation of QR codes for URLs, text, WiFi credentials, vCards, email, phone, SMS, geo coordinates, events, and custom data.\n- Offers extensive customization: colors, error correction level, logo embedding, and multiple export formats (PNG, SVG, PDF, EPS, ASCII).\n- Enables batch QR code creation from text, CSV, or JSON files.\n- Includes detailed usage examples and command references.\n- Requires prior installation of OpenClawCLI from clawhub.ai.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9b9cc7e470c47718e122a05bb1232f2c85fce0a065371c83ee56ecb445d0ef27"
+}

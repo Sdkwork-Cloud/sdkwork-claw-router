@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68885,
+  "uuid": "skill-clawhub-dygod-movies",
+  "skillKey": "clawhub-dygod-movies",
+  "name": "Dygod Movies",
+  "summary": "爬取电影天堂(dygod.net)最新电影和电视剧信息，支持查询最近更新、高分电影， 并可一键下载到群晖NAS。当用户询问最近更新的电影/电视剧、高分电影、或想下载影视资源时使用此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dygod_movies",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "anlinxi",
+      "features": [
+        "爬取电影天堂(dygod.net)最新电影和电视剧信息，支持查询最近更新、高分电影， 并可一键下载到群晖NAS。当用户询问最近更新的电影/电视剧、高分电影、或想下载影视资源时使用此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dygod-movies@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40064822?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dygod-movies",
+      "url": "https://clawhub.ai/skills/dygod-movies"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dygod-movies",
+    "url": "https://clawhub.ai/skills/dygod-movies",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dygod-movies-b5de14854aae562d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dygod-movies@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dygod-movies-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2a18efe5b241873f631262467b6f8ab49a7a0e3d6462a05e5c4c11faa1e1bc42",
+      "artifactSizeBytes": 1987
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T23:55:33.482Z"
+}

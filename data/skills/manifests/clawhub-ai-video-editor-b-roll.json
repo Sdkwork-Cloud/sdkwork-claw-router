@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46401,
+  "uuid": "skill-clawhub-ai-video-editor-b-roll",
+  "skillKey": "clawhub-ai-video-editor-b-roll",
+  "name": "Ai Video Editor B Roll",
+  "summary": "Get b-roll enhanced video ready to post, without touching a single slider. Upload your raw footage (MP4, MOV, AVI, WebM, up to 500MB), say something like \"au...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_editor_b_roll",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tk8544-b",
+      "features": [
+        "Get b-roll enhanced video ready to post, without touching a single slider",
+        "Upload your raw footage (MP4, MOV, AVI, WebM, up to 500MB), say something like \"au..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-video-editor-b-roll@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210889262?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-video-editor-b-roll",
+      "url": "https://clawhub.ai/skills/ai-video-editor-b-roll"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-editor-b-roll",
+    "url": "https://clawhub.ai/skills/ai-video-editor-b-roll",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-editor-b-roll-b4c5a1c541bb5ab0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-video-editor-b-roll@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-video-editor-b-roll-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba8398a5490fa38282eaf9c28dc2da99dc3c079c6aaffc20133a036a2d420deb",
+      "artifactSizeBytes": 2487
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T16:09:50.738Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27684,
+  "uuid": "skill-clawhub-claw-guard-skill",
+  "skillKey": "clawhub-claw-guard-skill",
+  "name": "OpenClaw Safety Guard",
+  "summary": "Safety Guard URLs or files with the safety-guard CLI (web, PDFs, images, audio, YouTube).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_guard_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "John-niu-07",
+      "features": [
+        "Safety Guard URLs or files with the safety-guard CLI (web, PDFs, images, audio, YouTube)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-guard-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15812933?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-guard-skill",
+      "url": "https://clawhub.ai/skills/claw-guard-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-guard-skill",
+    "url": "https://clawhub.ai/skills/claw-guard-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-guard-skill-30045dfb55de3b10.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-guard-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-guard-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f948211bd51e1ecfe3867ceef3b06a652f1ef6d20793b5fe406447e459f53ca8",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T02:32:21.625Z"
+}

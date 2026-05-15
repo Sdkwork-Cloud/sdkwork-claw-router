@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45676,
+  "uuid": "skill-clawhub-tosr-test-pub-update-1776925224",
+  "skillKey": "clawhub-tosr-test-pub-update-1776925224",
+  "name": "TOSR Publish Then Update Test",
+  "summary": "Automated test skill validating creation, inspection, update, and deletion of skills via the clawhub REST API lifecycle.",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tosr_test_pub_update_1776925224",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yuangui",
+      "features": [
+        "Automated test skill validating creation, inspection, update, and deletion of skills via the cl."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tosr-test-pub-update-1776925224@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5061317?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tosr-test-pub-update-1776925224",
+      "url": "https://clawhub.ai/skills/tosr-test-pub-update-1776925224"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tosr-test-pub-update-1776925224",
+    "url": "https://clawhub.ai/skills/tosr-test-pub-update-1776925224",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tosr-test-pub-update-1776925224-79db2b898ba22549.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tosr-test-pub-update-1776925224@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tosr-test-pub-update-1776925224-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7925f016fc2b64c15a1143c879764d586a2c75abdeba696a047d7804de7a93bc",
+      "artifactSizeBytes": 2051
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T06:20:49.587Z"
+}

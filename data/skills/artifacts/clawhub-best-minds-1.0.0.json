@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/best-minds@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.best_minds",
+  "skill": {
+    "id": 66803,
+    "skillKey": "clawhub-best-minds",
+    "name": "Best Minds"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "best-minds",
+    "url": "https://clawhub.ai/skills/best-minds",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/best-minds-67bc947746abff4b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "模拟器思维：不问\"你怎么看\"，而是问\"世界上谁最懂这个？TA 会怎么说？\"。触发词：最强大脑、顶级专家、世界级、best minds、谁最懂这个"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ru63num07",
+      "userId": "s176bqz4he83nb1v9pqan0v45d845gyq",
+      "displayName": "ru63num07",
+      "image": "https://avatars.githubusercontent.com/u/159872607?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 277,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775389433904,
+      "changelog": "- Initial release of the \"best-minds\" skill.\n- Provides expert-level answers by simulating the world's top minds in relevant fields.\n- Focuses on sourcing responses from the most knowledgeable individuals, using their real statements or publications when possible.\n- Encourages basing simulations on authentic, publicly available thoughts rather than generic or preset personas.\n- Differentiates itself from other skills by prioritizing genuine expertise and avoiding AI's own opinions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1f10fe2657a56847a42c811e97ef94e5925fd8b67e0c415a1849151e2df107bb"
+}

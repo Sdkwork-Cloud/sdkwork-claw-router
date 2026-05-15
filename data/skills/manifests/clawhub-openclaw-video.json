@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46103,
+  "uuid": "skill-clawhub-openclaw-video",
+  "skillKey": "clawhub-openclaw-video",
+  "name": "Openclaw Video",
+  "summary": "Turn a 2-minute unedited screen recording into 1080p edited video clips just by typing what you need. Whether it's quickly editing and trimming raw video foo...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linmillsd7",
+      "features": [
+        "Turn a 2-minute unedited screen recording into 1080p edited video clips just by typing what you.",
+        "Whether it's quickly editing and trimming raw video foo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-video@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208832666?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-video",
+      "url": "https://clawhub.ai/skills/openclaw-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-video",
+    "url": "https://clawhub.ai/skills/openclaw-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-video-c63dddf26bf9e795.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-video@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-video-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb23dd3438b5c185542dd5fc7e4c2aeab1806be124a3beda54708dd0eb596d1a",
+      "artifactSizeBytes": 2654
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T05:28:04.572Z"
+}

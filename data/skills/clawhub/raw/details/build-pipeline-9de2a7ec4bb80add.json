@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "build-pipeline",
+    "displayName": "Build Pipeline",
+    "summary": "Orchestrate agent build workflow. you handle parse and research, then delegates the full build to Builder. Use for new builds and error handling.",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 354,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1773578388716,
+    "updatedAt": 1778309439109
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1773578388716,
+    "changelog": "build-pipeline v1.0.0\n\n- Initial release introducing a full build orchestration pipeline for agent creation.\n- Automates: parsing user requests, parallel spawning of research workers and builder, collecting research outputs, and coordinating the build process.\n- Enforces structured stepper event progress updates for user-friendly, non-technical status reporting.\n- Defines strict sub-agent patterns—requiring workers to follow their SKILL.md, write YAML outputs, and exit silently.\n- Standardizes task prompts, research worker roles, and pipeline step schemas for consistent execution and error handling.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "dweikanas",
+    "userId": "publishers:dweikanas",
+    "displayName": "Anas Dweik",
+    "image": "https://avatars.githubusercontent.com/u/159037900?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778309439109
+  }
+}

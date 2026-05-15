@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57011,
+  "uuid": "skill-clawhub-jar-conflict-detector",
+  "skillKey": "clawhub-jar-conflict-detector",
+  "name": "jar冲突检测器",
+  "summary": "This skill should be used when the user needs to detect JAR package conflicts, version inconsistencies, or known incompatible dependency pairs in a Spring Bo...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jar_conflict_detector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yssNB",
+      "features": [
+        "This skill should be used when the user needs to detect JAR package conflicts, version inconsis."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jar-conflict-detector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46145241?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jar-conflict-detector",
+      "url": "https://clawhub.ai/skills/jar-conflict-detector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jar-conflict-detector",
+    "url": "https://clawhub.ai/skills/jar-conflict-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jar-conflict-detector-775bffd36d72e054.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jar-conflict-detector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jar-conflict-detector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:222cc61b10c88218e0318f4baf973dab6dedf295404ab69d13bfc0df7307bdd3",
+      "artifactSizeBytes": 2409
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T09:57:11.580Z"
+}

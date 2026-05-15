@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29226,
+  "uuid": "skill-clawhub-emerging-topic-scout",
+  "skillKey": "clawhub-emerging-topic-scout",
+  "name": "Emerging Topic Scout",
+  "summary": "Monitor bioRxiv/medRxiv preprints and academic discussions to identify emerging research hotspots before they appear in mainstream journals",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.emerging_topic_scout",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Monitor bioRxiv/medRxiv preprints and academic discussions to identify emerging research hotspo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/emerging-topic-scout@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "emerging-topic-scout",
+      "url": "https://clawhub.ai/skills/emerging-topic-scout"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "emerging-topic-scout",
+    "url": "https://clawhub.ai/skills/emerging-topic-scout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/emerging-topic-scout-63a5fdd1419d184e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/emerging-topic-scout@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-emerging-topic-scout-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:15b180ce4ff592f4a5d0f8f9547a18e91960875feb3553e1ac4df5db1f3f779b",
+      "artifactSizeBytes": 2561
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T05:31:37.655Z"
+}

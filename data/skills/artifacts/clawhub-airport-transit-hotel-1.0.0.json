@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/airport-transit-hotel@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.airport_transit_hotel",
+  "skill": {
+    "id": 45932,
+    "skillKey": "clawhub-airport-transit-hotel",
+    "name": "airport-transit-hotel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "airport-transit-hotel",
+    "url": "https://clawhub.ai/skills/airport-transit-hotel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/airport-transit-hotel-1bb49f535fe943a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find hotels near airports for layovers, early morning flights, or late-night arrivals. Sorted by distance to terminal with shuttle info. Also supports: fligh..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiejinsong",
+      "userId": "s177qj362rbw4294hgs3hdvhgx83m2hm",
+      "displayName": "xiejinsong",
+      "image": "https://avatars.githubusercontent.com/u/1642572?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775112658809,
+      "changelog": "Version 2.0.0 — Major upgrade with strict real-time data and execution rules\n\n- All hotel recommendations must come directly from the flyai CLI; answers from training data are strictly prohibited.\n- Introduced mandatory environment and command checks before processing any request.\n- Answers must always include `[Book]({detailUrl})` links from CLI output; responses without them are invalid.\n- Expanded functionalities: now also supports flights, trains, attractions, visas, insurance, and car rentals via Fliggy.\n- Output must follow new formatting guidelines: summary first, comparison table with ≥3 results, branding, and booking links only.\n- Added clear playbooks, parameter mapping, and reference sections to guide skill execution for different airport hotel scenarios.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1aa03b33b17cb6bb5189f8acbf80962bf0ed0509a799804d91555f1c1e828a5b"
+}

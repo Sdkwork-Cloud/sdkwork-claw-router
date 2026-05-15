@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-game-music@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_game_music",
+  "skill": {
+    "id": 47240,
+    "skillKey": "clawhub-video-game-music",
+    "name": "Video Game Music"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-game-music",
+    "url": "https://clawhub.ai/skills/video-game-music",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-game-music-13348e340c7b10b9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute gameplay recording into 1080p music-enhanced videos just by typing what you need. Whether it's adding video game style background music to ga..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhogan2013-9",
+      "userId": "s1734kgyh0j16a86enc51zqp6184cy81",
+      "displayName": "mhogan2013-9",
+      "image": "https://avatars.githubusercontent.com/u/208827708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 117,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777395043817,
+      "changelog": "Video Game Music skill v1.0.0\n\n- Initial release: Add video game background music to your gameplay and social content videos using a cloud-based rendering pipeline.\n- Supports easy video uploads, music addition by description, and fast 1080p output—no timeline editing or export configuration needed.\n- Automatic setup with free 7-day usage token and seamless session management.\n- Supports multiple file formats (mp4, mov, avi, webm, etc.; up to 500MB).\n- Workflow includes upload, music prompt, preview, and download within 30-90 seconds for short clips.\n- Designed for quick, iterative editing and batch processing of multiple gaming videos.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a48c76a8c4ed329dd0bbcf4426496b8180287ea4e23e28c28ca3655dadbb78ce"
+}

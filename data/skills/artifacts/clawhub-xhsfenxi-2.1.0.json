@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xhsfenxi@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhsfenxi",
+  "skill": {
+    "id": 71384,
+    "skillKey": "clawhub-xhsfenxi",
+    "name": "Xhsfenxi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhsfenxi",
+    "url": "https://clawhub.ai/skills/xhsfenxi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhsfenxi-1156331d35e42bcb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小红书博主分析全流程 skill — 拆解账号定位、提炼爆款选题公式、输出结构化报告和商业版 Word。内置三型博主分类体系（荒诞美学型 / 共鸣命名型 / 现实策略型），基于多位真实博主的深度分析沉淀。支持单账号深度拆解、多账号对比、自定义学习报告，证据分级（公开主页→截图→第三方公开资料→推断），所有交付物可..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cosmofang",
+      "userId": "s171tf9j3dvx7de9j9b2wg5mzs83g5b4",
+      "displayName": "Cosmos Fang",
+      "image": "https://avatars.githubusercontent.com/u/255512740?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1775736792696,
+      "changelog": "xhsfenxi 2.1.0\n\n- Switches report generation to always output three standard DOCX files directly—intermediate Markdown step is no longer needed.\n- Updated skill workflow and documentation to clarify that all deliverables are produced as DOCX by default.\n- Refined instructions in SKILL.md for file naming, output process, and business deliverable workflows.\n- Reference templates and scripts updated to align with new DOCX-first output approach.\n- Package and metadata updated to reflect these workflow changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5e97375f1149e0a56594cd7c08a75dedb1dbe5327f3ddc92c530b330ce5ddf9e"
+}

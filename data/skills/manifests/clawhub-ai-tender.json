@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69615,
+  "uuid": "skill-clawhub-ai-tender",
+  "skillKey": "clawhub-ai-tender",
+  "name": "AI-Tender",
+  "summary": "实现从招标文件读取到招标要求抽取的全流程自动化。当用户需要解析招标文件并提取招标要求时，请使用此 Skill。",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_tender",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tender-cc",
+      "features": [
+        "实现从招标文件读取到招标要求抽取的全流程自动化。当用户需要解析招标文件并提取招标要求时，请使用此 Skill。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-tender@1.0.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/53079012?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-tender",
+      "url": "https://clawhub.ai/skills/ai-tender"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-tender",
+    "url": "https://clawhub.ai/skills/ai-tender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-tender-8dcd0f230201ed12.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-tender@1.0.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-tender-1.0.9.json",
+      "version": "1.0.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:74785ae16226f610c0fc6260c4cffde733eb759534f603740b8b0999ae9095a5",
+      "artifactSizeBytes": 1852
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T08:59:07.740Z"
+}

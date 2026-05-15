@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31225,
+  "uuid": "skill-clawhub-bigmailer",
+  "skillKey": "clawhub-bigmailer",
+  "name": "Bigmailer",
+  "summary": "BigMailer integration. Manage data, records, and automate workflows. Use when the user wants to interact with BigMailer data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bigmailer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "BigMailer integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with BigMailer data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bigmailer@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bigmailer",
+      "url": "https://clawhub.ai/skills/bigmailer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bigmailer",
+    "url": "https://clawhub.ai/skills/bigmailer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bigmailer-66e1da866ccf83fe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bigmailer@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-bigmailer-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4f008056a20b771eb830fb8b3859a5f778a6bd30935017312a143e081ebbbeee",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:23:32.991Z"
+}

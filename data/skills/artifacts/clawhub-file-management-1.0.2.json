@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/file-management@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_management",
+  "skill": {
+    "id": 18553,
+    "skillKey": "clawhub-file-management",
+    "name": "File Management"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-management",
+    "url": "https://clawhub.ai/skills/file-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-management-cdd0e2dfa0741079.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Perform safe file and directory operations on Unix systems using built-in tools for listing, searching, reading, organizing, and managing without external bi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tyronecoh",
+      "userId": "s1765rzrm05wxg0z74eqxjgvyx84bw7z",
+      "displayName": "TyroneMok",
+      "image": "https://avatars.githubusercontent.com/u/161304236?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 682,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775706549499,
+      "changelog": "Fixed: removed external tool claims, clarified optional tools, fixed typo",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1fd8a9d7503dd07e459ff1644d37607c8b44c51f09e6ae90ac463bf8dbd2b0c9"
+}

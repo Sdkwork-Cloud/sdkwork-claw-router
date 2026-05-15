@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ccy-txt2img@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ccy_txt2img",
+  "skill": {
+    "id": 68822,
+    "skillKey": "clawhub-ccy-txt2img",
+    "name": "Ccy Txt2img"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ccy-txt2img",
+    "url": "https://clawhub.ai/skills/ccy-txt2img",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ccy-txt2img-4825cf891c3ab904.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "本地离线图片生成技能。支持文本转图片、基础图形绘制（点线面圆等）、颜色填充与描边、简单图片合成，以及基于中文/英文描述的规则驱动智能绘制。仅依赖 Pillow，输出 PNG/JPEG。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenchongyong",
+      "userId": "s1702t2wqma6ghbsampqdvkaw58518za",
+      "displayName": "超控中国",
+      "image": "https://avatars.githubusercontent.com/u/57010759?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 83,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778115975837,
+      "changelog": "- Initial public release of ccy-txt2img: an offline image generation skill using only Pillow.\n- Supports text-to-image, basic shapes (point, line, rectangle, circle), color fill and stroke, and simple image composition.\n- Enables rule-driven drawing via Chinese/English descriptions for quick visualizations.\n- Accepts scene JSON for precise rendering of shapes, layers, and text.\n- Provides both Python API and CLI usage.\n- Optimized for simple diagrams, text posters, and controllable graphics—ideal for non-photorealistic and low-cost images.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d9f86f0b02623ace1342ea5f9ad91938321c60f2d4e28cc5383aa8bfaa4b470b"
+}

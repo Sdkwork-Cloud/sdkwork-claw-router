@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68647,
+  "uuid": "skill-clawhub-xungen",
+  "skillKey": "clawhub-xungen",
+  "name": "Xungen",
+  "summary": "寻根问祖——商朝身世鉴定引擎。用户输入姓氏或家乡省市，Agent 基于知识库将其映射到商朝的氏族、方国、图腾、职官和封地，生成一份趣味《商朝身世鉴定书》。触发条件：(1) 用户提到姓氏来源、祖先、家族历史、寻根；(2) 用户说'我姓X'、'我是X地人'、'寻根'、'查族谱'；(3) 使用 /xungen 命令。适...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xungen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yi Liu",
+      "features": [
+        "寻根问祖——商朝身世鉴定引擎。用户输入姓氏或家乡省市，Agent 基于知识库将其映射到商朝的氏族、方国、图腾、职官和封地，生成一份趣味《商朝身世鉴定书》。触发条件：(1) 用户提到姓氏来源、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xungen@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29517764?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xungen",
+      "url": "https://clawhub.ai/skills/xungen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xungen",
+    "url": "https://clawhub.ai/skills/xungen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xungen-f94f28d5544f62dc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xungen@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xungen-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dd96412fd590baea2494b583e4209007befa961820b5d491da85f5b76b068ba7",
+      "artifactSizeBytes": 2924
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T08:11:52.362Z"
+}

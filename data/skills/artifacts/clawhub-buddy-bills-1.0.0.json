@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/buddy-bills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.buddy_bills",
+  "skill": {
+    "id": 69165,
+    "skillKey": "clawhub-buddy-bills",
+    "name": "账单伙伴"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "buddy-bills",
+    "url": "https://clawhub.ai/skills/buddy-bills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/buddy-bills-de7f3bb6fe6f74e1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能收支手帐。记录个人和家庭日常收支、管理固定支出、生成月度汇总报告。 触发场景：用户说\"记账\"、\"花了多少\"、\"买了xxx花了xxx\"、\"这个月支出\"、\"工资发了\"、\"转账给xxx\"、\"消费记录\"、\"月底汇总\"、\"固定支出\"、\"收支明细\"、\"结余多少\"、\"储蓄率\"、\"帮我记一笔\"、\"调出账单\"、\"查看消费\"等与..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kiss1952",
+      "userId": "s17dj5ganpb8yjxf658g5m2nj183z8vd",
+      "displayName": "kiss1952",
+      "image": "https://avatars.githubusercontent.com/u/8142299?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774943106390,
+      "changelog": "Initial release of smart-expense-tracker:\n\n- Added new smart expense tracker skill for personal and family income/expense logging and management.\n- Supports fast natural language entry, fixed costs configuration, and monthly summary reporting.\n- All records are stored locally in structured YAML files; no network or cloud sync.\n- Includes user onboarding and guided setup for new users.\n- Modular data schema, category system, and fixed costs rules included via references.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:630b21d762e171ce91e47f662cd224515862c35e963ebaf087def3bbee6b3863"
+}

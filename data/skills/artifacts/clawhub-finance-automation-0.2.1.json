@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/finance-automation@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finance_automation",
+  "skill": {
+    "id": 13127,
+    "skillKey": "clawhub-finance-automation",
+    "name": "Finance Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finance-automation",
+    "url": "https://clawhub.ai/skills/finance-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finance-automation-91db92577f7c5028.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automates payments, invoices, expenses, and financial reports with Stripe webhooks and real-time Telegram notifications for streamlined finance management."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chloepark85",
+      "userId": "s176h4kgd3ahcdsgj48g3epf1584a12v",
+      "displayName": "Chloe Park",
+      "image": "https://avatars.githubusercontent.com/u/15118976?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1429,
+      "installsAllTime": 13,
+      "installsCurrent": 13,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1772621501152,
+      "changelog": "Update SKILL.md to English",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:27fd6419e368b9ba4d0d1ac8d12d50b1ff3675cc8c811854bc088c167146d40a"
+}

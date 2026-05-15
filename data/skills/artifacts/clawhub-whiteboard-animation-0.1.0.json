@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/whiteboard-animation@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whiteboard_animation",
+  "skill": {
+    "id": 68573,
+    "skillKey": "clawhub-whiteboard-animation",
+    "name": "Whiteboard Animation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whiteboard-animation",
+    "url": "https://clawhub.ai/skills/whiteboard-animation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whiteboard-animation-efa56f0286c2ff8a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "从图片生成白板手绘动画视频。将任意彩色图片转换为包含线稿绘制和上色两个阶段的动画，带手部覆盖效果，输出 H.264 MP4 视频。支持单张和批量两种模式。当用户说\"把图片做成白板动画\"、\"白板动画\"、\"批量白板动画\"时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yangagent",
+      "userId": "s172zj4d0p6hg4d1r4w2ymmqxs847211",
+      "displayName": "YangAgent",
+      "image": "https://avatars.githubusercontent.com/u/211436187?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775287100840,
+      "changelog": "Initial release: Generate whiteboard-style hand-drawing animation videos from images.\n\n- Converts any color image into a two-stage animation (line drawing & coloring) with realistic hand overlay.\n- Supports single image and batch processing modes.\n- Outputs H.264 MP4 videos; images with white backgrounds work best.\n- Includes full setup script for environment and dependencies.\n- Returns final video paths (single) or summary info (batch), with progress and error reporting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3e50e46aed225613850a6f29a716d861db1278f350e8c3c8a12cb5206d1013b5"
+}

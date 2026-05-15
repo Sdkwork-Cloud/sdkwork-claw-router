@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13325,
+  "uuid": "skill-clawhub-sushiswap-api",
+  "skillKey": "clawhub-sushiswap-api",
+  "name": "SushiSwap API",
+  "summary": "REST API for optimized token swapping (including executable transaction generation), swap quoting, and pricing using the SushiSwap Aggregator. Use this skill when the user wants to: - Get a swap quote between two tokens on 40+ evm networks.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sushiswap_api",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "0xMasayoshi",
+      "features": [
+        "REST API for optimized token swapping (including executable transaction generation), swap quoti.",
+        "Use this skill when the user wants to:",
+        "Get a swap quote between two tokens on 40+ evm networks",
+        "Generate executable swap transaction data"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sushiswap-api@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82962873?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sushiswap-api",
+      "url": "https://clawhub.ai/skills/sushiswap-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sushiswap-api",
+    "url": "https://clawhub.ai/skills/sushiswap-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sushiswap-api-9ecc0b194679e8b9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sushiswap-api@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sushiswap-api-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ef3d81a676ab5cef2ce39341d129b0a1161a668447ea4e43f069d4adba61485e",
+      "artifactSizeBytes": 2359
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T05:51:19.374Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65585,
+  "uuid": "skill-clawhub-patent-scout",
+  "skillKey": "clawhub-patent-scout",
+  "name": "Patent Scout",
+  "summary": "通过百度或Google Patents在线检索中国专利信息，支持关键词和专利号查询，输出结构化专利摘要和申请人等数据。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.patent_scout",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yjstrivesh",
+      "features": [
+        "通过百度或Google Patents在线检索中国专利信息，支持关键词和专利号查询，输出结构化专利摘要和申请人等数据。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/patent-scout@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265766392?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "patent-scout",
+      "url": "https://clawhub.ai/skills/patent-scout"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "patent-scout",
+    "url": "https://clawhub.ai/skills/patent-scout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/patent-scout-9fa4b103a3ba1307.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/patent-scout@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-patent-scout-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d2f7a812c28966e626bddc05a4e6e71f8e4b75fcf73c70412bca5fa98f502e8b",
+      "artifactSizeBytes": 1889
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T10:03:48.111Z"
+}

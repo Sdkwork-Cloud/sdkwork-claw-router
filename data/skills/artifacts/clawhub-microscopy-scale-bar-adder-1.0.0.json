@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/microscopy-scale-bar-adder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.microscopy_scale_bar_adder",
+  "skill": {
+    "id": 43557,
+    "skillKey": "clawhub-microscopy-scale-bar-adder",
+    "name": "Microscopy Scale Bar Adder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "microscopy-scale-bar-adder",
+    "url": "https://clawhub.ai/skills/microscopy-scale-bar-adder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/microscopy-scale-bar-adder-32f7a184f23c3b39.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Add accurate, publication-ready scale bars to microscopy images given pixel-to-unit calibration data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774589255105,
+      "changelog": "Initial production release — now fully functional and ready for evaluation.\n\n- Implements adding accurate, publication-quality scale bars to microscopy images using Pillow.\n- Supports command-line interface with parameters for calibration, appearance, and output control.\n- Enforces path traversal protection and robust error handling.\n- Works with TIFF, PNG, JPG, and BMP images, extracting calibration from metadata or user input.\n- Fallback and validation behaviors ensure clarity for unsupported or incomplete tasks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:23bb6b0a1d2983466e42cd251226b64a8b43f00477f24cc615f8ff3e79540d7c"
+}

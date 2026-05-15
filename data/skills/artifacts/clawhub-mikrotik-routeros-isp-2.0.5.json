@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mikrotik-routeros-isp@2.0.5",
+  "version": "2.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mikrotik_routeros_isp",
+  "skill": {
+    "id": 36486,
+    "skillKey": "clawhub-mikrotik-routeros-isp",
+    "name": "Mikrotik Routeros"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mikrotik-routeros-isp",
+    "url": "https://clawhub.ai/skills/mikrotik-routeros-isp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mikrotik-routeros-isp-d0edce32aec8e3e3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Expert-level management of MikroTik RouterOS devices and VSOL GPON OLTs via SSH or RouterOS API (port 8728/8729) and REST API (port 80/443). Use this skill w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charllesvale",
+      "userId": "s17b9ddyv8zzse6ax5b3d1kcjn84jtbx",
+      "displayName": "charllesvale",
+      "image": "https://avatars.githubusercontent.com/u/92033027?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 205,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "2.0.5",
+      "createdAt": 1776604634537,
+      "changelog": "- Skill renamed from `mikrotik-routeros-isp` to `mikrotik-routeros-isp-br`.\n- Updated TOOLS.md instructions to recommend storing SSH key paths instead of passwords.\n- Added a security notice: plaintext passwords should never be kept in TOOLS.md.\n- Minor clarifications and rewording in the documentation; no logic changes.\n- No changes to functional code detected.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bad15165ca74ce7a725b1a212da147708b2681c3b24e1947c988caa52045d85e"
+}

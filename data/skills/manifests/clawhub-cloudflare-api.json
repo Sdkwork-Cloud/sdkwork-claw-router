@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9749,
+  "uuid": "skill-clawhub-cloudflare-api",
+  "skillKey": "clawhub-cloudflare-api",
+  "name": "Cloudflare API",
+  "summary": "Connect to Cloudflare API for DNS management, tunnels, and zone administration. Use when user needs to manage domains, DNS records, or create tunnels.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloudflare_api",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lucas Synnott",
+      "features": [
+        "Connect to Cloudflare API for DNS management, tunnels, and zone administration",
+        "Use when user needs to manage domains, DNS records, or create tunnels."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cloudflare-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3947311?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cloudflare-api",
+      "url": "https://clawhub.ai/skills/cloudflare-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloudflare-api",
+    "url": "https://clawhub.ai/skills/cloudflare-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloudflare-api-99687f43b5132fa2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cloudflare-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cloudflare-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d18940808288f41962ca850ae33e0848eacccfcfb86bdd470f05a98c632435e",
+      "artifactSizeBytes": 1924
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-13T16:47:33.150Z"
+}

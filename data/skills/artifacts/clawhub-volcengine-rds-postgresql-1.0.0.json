@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/volcengine-rds-postgresql@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.volcengine_rds_postgresql",
+  "skill": {
+    "id": 59566,
+    "skillKey": "clawhub-volcengine-rds-postgresql",
+    "name": "Volcengine RDS PostgreSQL"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "volcengine-rds-postgresql",
+    "url": "https://clawhub.ai/skills/volcengine-rds-postgresql",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/volcengine-rds-postgresql-c3b58c27895884ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用火山引擎 RDS PostgreSQL，帮助用户完成 RDS PostgreSQL 相关的实例管理、数据库操作、账号管理和运维任务，可直接调用 uv run ./scripts/call_rds_postgresql.py 脚本获取实时结果。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ybamazing",
+      "userId": "s17b0kgyzgme94p07yhnfhpqz583qspq",
+      "displayName": "ybAmazing",
+      "image": "https://avatars.githubusercontent.com/u/5507782?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 258,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773910352541,
+      "changelog": "v0.1.0\n\nInitial release of the `volcengine-rds-postgresql` skill.\n\n\nHighlights \n- Added natural-language support for common Volcengine RDS PostgreSQL operations\n- Added support for querying instances, databases, accounts, parameters, parameter templates, VPCs/subnets, and pricing\n- Added the built-in `call_rds_postgresql.py` script for real-time interactions with Volcengine RDS PostgreSQL",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:afe1f1dbde5475b05096996b36f3cbc8a10d419039118da421093022ef35b452"
+}

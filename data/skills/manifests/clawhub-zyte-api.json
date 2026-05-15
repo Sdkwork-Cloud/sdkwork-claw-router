@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28787,
+  "uuid": "skill-clawhub-zyte-api",
+  "skillKey": "clawhub-zyte-api",
+  "name": "Zyte Api",
+  "summary": "Zyte API integration. Manage data, records, and automate workflows. Use when the user wants to interact with Zyte API data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zyte_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Zyte API integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Zyte API data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zyte-api@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zyte-api",
+      "url": "https://clawhub.ai/skills/zyte-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zyte-api",
+    "url": "https://clawhub.ai/skills/zyte-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zyte-api-db8429e6272caab7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zyte-api@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-zyte-api-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ca9e8351e99d1b3d91c8fce6d2a50f0ff5fa91c4fb500dd55b4915a3c9155651",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:06:42.524Z"
+}

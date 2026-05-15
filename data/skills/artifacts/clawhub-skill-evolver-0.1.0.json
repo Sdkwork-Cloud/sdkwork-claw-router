@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-evolver@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_evolver",
+  "skill": {
+    "id": 21250,
+    "skillKey": "clawhub-skill-evolver",
+    "name": "Skill Evolver"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-evolver",
+    "url": "https://clawhub.ai/skills/skill-evolver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-evolver-bd244f3334833d30.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A complete skill lifecycle manager for discovering, orchestrating, fusing, and evolving skills. Helps decide which skills to use, how to compose or fuse them..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "testlbin",
+      "userId": "s17a1adew75ja24yjj5kwffm3183nd0k",
+      "displayName": "testlbin",
+      "image": "https://avatars.githubusercontent.com/u/123958008?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 377,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773114355347,
+      "changelog": "Initial release of skill-evolver: a full lifecycle manager for discovering, orchestrating, fusing, and evolving skills.\n\n- Introduces a multi-phase workflow: intent analysis, skill search, deep inspection, orchestration, execution, and optional materialization.\n- Includes clear checkpoints for user decision-making at key steps (approach selection, plan confirmation, preservation).\n- Supports both skill orchestration and fusion workflows, with audit and security checks.\n- Emphasizes “solve first, materialize later” and prioritizes native solutions when possible.\n- Provides templates, file output structure, and guidance for each phase.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:efb5bf3181a24f9779b250483a5aed6d0c3d8664fc39d3ccf9eed7760b5b9dd4"
+}

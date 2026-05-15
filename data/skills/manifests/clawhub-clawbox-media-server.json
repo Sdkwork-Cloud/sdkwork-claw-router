@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21174,
+  "uuid": "skill-clawhub-clawbox-media-server",
+  "skillKey": "clawhub-clawbox-media-server",
+  "name": "Clawbox Media Server",
+  "summary": "Bidirectional LAN file sharing for AI agents. Provides a static file server (port 18801) for serving files to users, and an upload server (port 18802) with d...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawbox_media_server",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "techthrasher",
+      "features": [
+        "Bidirectional LAN file sharing for AI agents",
+        "Provides a static file server (port 18801) for serving files to users, and an upload server (po."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawbox-media-server@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/110098765?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawbox-media-server",
+      "url": "https://clawhub.ai/skills/clawbox-media-server"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawbox-media-server",
+    "url": "https://clawhub.ai/skills/clawbox-media-server",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawbox-media-server-47a6beadc74ef1b1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawbox-media-server@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawbox-media-server-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ae85da4551fe0e700ed53b912cbcb85bf9eb7d8b39d26aa70f8842297d8cd6fd",
+      "artifactSizeBytes": 2093
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T18:56:06.231Z"
+}

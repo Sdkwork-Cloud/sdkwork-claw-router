@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40798,
+  "uuid": "skill-clawhub-axodus-trading-integration",
+  "skillKey": "clawhub-axodus-trading-integration",
+  "name": "Axodus Trading Integration",
+  "summary": "Integrate trading infrastructure (hummingbot/MCP) with paper-first mode and audit logs.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.axodus_trading_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mauricio Z.",
+      "features": [
+        "Integrate trading infrastructure (hummingbot/MCP) with paper-first mode and audit logs."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/axodus-trading-integration@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26634695?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "axodus-trading-integration",
+      "url": "https://clawhub.ai/skills/axodus-trading-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "axodus-trading-integration",
+    "url": "https://clawhub.ai/skills/axodus-trading-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/axodus-trading-integration-44be7cc0aa70f968.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/axodus-trading-integration@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-axodus-trading-integration-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:472fa6a4e7ddbb1438033de2155a6ab04af61379eee746b026cf36ae6e099d71",
+      "artifactSizeBytes": 2379
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T16:18:01.287Z"
+}

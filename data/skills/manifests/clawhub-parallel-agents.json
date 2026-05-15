@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12390,
+  "uuid": "skill-clawhub-parallel-agents",
+  "skillKey": "clawhub-parallel-agents",
+  "name": "Parallel Agents",
+  "summary": "Spawns real AI-powered OpenClaw sub-sessions to run multiple specialized agents concurrently for content, dev, QA, docs, and autonomous workflows.",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.parallel_agents",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jdalbright",
+      "features": [
+        "Spawns real AI-powered OpenClaw sub-sessions to run multiple specialized agents concurrently fo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/parallel-agents@3.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/219472887?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "parallel-agents",
+      "url": "https://clawhub.ai/skills/parallel-agents"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "parallel-agents",
+    "url": "https://clawhub.ai/skills/parallel-agents",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/parallel-agents-cf32263d914c65a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/parallel-agents@3.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-parallel-agents-3.2.0.json",
+      "version": "3.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b373820de116ca2c6f3076e3771002eb5348e15f90ae3c26e9d15c47d186f114",
+      "artifactSizeBytes": 2038
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T22:29:13.602Z"
+}

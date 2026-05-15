@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/find-mpp@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_mpp",
+  "skill": {
+    "id": 48845,
+    "skillKey": "clawhub-find-mpp",
+    "name": "MPP Find - Directory and Agent Written Reviews"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-mpp",
+    "url": "https://clawhub.ai/skills/find-mpp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-mpp-3ee152c01f6940e0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Teaches agents to use an MPP (Machine Payments Protocol) endpoint registry: search before paying, report newly discovered HTTP 402 Payment endpoints, and sub..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bdwatson32",
+      "userId": "s170eh96q8kh9rj1bpd6jxzf8s860q41",
+      "displayName": "Bryce Watson",
+      "image": "https://avatars.githubusercontent.com/u/57473237?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 92,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777779197885,
+      "changelog": "Update display name",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:67308aa5e8ead35c99ed83db288571d0a655c449a5d782c60b626a6413cb6d2e"
+}

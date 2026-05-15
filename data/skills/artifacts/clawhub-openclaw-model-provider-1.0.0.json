@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-model-provider@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_model_provider",
+  "skill": {
+    "id": 31420,
+    "skillKey": "clawhub-openclaw-model-provider",
+    "name": "OpenClaw Model Provider"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-model-provider",
+    "url": "https://clawhub.ai/skills/openclaw-model-provider",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-model-provider-746e57e69c3f9eac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Help users add custom model providers to OpenClaw. Use when the user wants to add a new AI model provider (like custom OpenAI-compatible APIs, local LLMs, or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ksbbs",
+      "userId": "s172d5qs4m468q3j7nqshx7j7x83p7pj",
+      "displayName": "ksbbs",
+      "image": "https://avatars.githubusercontent.com/u/99734497?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 267,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774099153369,
+      "changelog": "Initial release: Help users add custom model providers to OpenClaw",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e38e6033c1db1aa830b2d0ca69349ffe87b9a1fc90adb7be8e97e895710948b5"
+}

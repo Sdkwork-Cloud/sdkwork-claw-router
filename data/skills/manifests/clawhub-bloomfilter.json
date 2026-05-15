@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20652,
+  "uuid": "skill-clawhub-bloomfilter",
+  "skillKey": "clawhub-bloomfilter",
+  "name": "Bloomfilter",
+  "summary": "Search, register, and manage domains via Bloomfilter x402 API - pay with USDC on Base",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bloomfilter",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Erons",
+      "features": [
+        "Search, register, and manage domains via Bloomfilter x402 API",
+        "pay with USDC on Base"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bloomfilter@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37238033?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bloomfilter",
+      "url": "https://clawhub.ai/skills/bloomfilter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bloomfilter",
+    "url": "https://clawhub.ai/skills/bloomfilter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bloomfilter-24b152d919908ddd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bloomfilter@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-bloomfilter-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc78b557ec92f3f67503cbb86a356ecd491b2436f805eb4a1c53d891b916b17c",
+      "artifactSizeBytes": 1861
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T01:42:37.923Z"
+}

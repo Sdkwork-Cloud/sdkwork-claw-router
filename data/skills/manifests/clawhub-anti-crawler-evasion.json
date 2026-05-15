@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70476,
+  "uuid": "skill-clawhub-anti-crawler-evasion",
+  "skillKey": "clawhub-anti-crawler-evasion",
+  "name": "Anti-Crawler Evasion",
+  "summary": "防止被反爬虫机制识别和封禁。当用户需要进行网页爬取、数据采集、API访问，或询问如何绕过反爬、避免IP封禁、隐藏爬虫身份时使用。触发词包括：反爬、反爬虫、绕过反爬、避免封禁、爬虫伪装、隐身爬取。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anti_crawler_evasion",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "plover061",
+      "features": [
+        "防止被反爬虫机制识别和封禁。当用户需要进行网页爬取、数据采集、API访问，或询问如何绕过反爬、避免IP封禁、隐藏爬虫身份时使用。触发词包括：反爬、反爬虫、绕过反爬、避免封禁、爬虫伪装、隐身爬."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/anti-crawler-evasion@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/98512436?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "anti-crawler-evasion",
+      "url": "https://clawhub.ai/skills/anti-crawler-evasion"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anti-crawler-evasion",
+    "url": "https://clawhub.ai/skills/anti-crawler-evasion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anti-crawler-evasion-15dd80fec335f446.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/anti-crawler-evasion@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-anti-crawler-evasion-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1cbb545bb2ee28cacb223d0219b10a5359c8341a4440f7cf4e6a8eaa8d61169f",
+      "artifactSizeBytes": 2768
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T07:57:02.045Z"
+}

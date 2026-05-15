@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42269,
+  "uuid": "skill-clawhub-openclaw-autopilot-v9",
+  "skillKey": "clawhub-openclaw-autopilot-v9",
+  "name": "Autopilot",
+  "summary": "OpenClaw is the high-autonomy agent mode. It proactively decides, plans, and executes tasks with deep context fusion, including a full sweep of historical me...",
+  "version": "9.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_autopilot_v9",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hendrik Schmitz",
+      "features": [
+        "OpenClaw is the high-autonomy agent mode",
+        "It proactively decides, plans, and executes tasks with deep context fusion, including a full sw."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-autopilot-v9@9.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46162994?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-autopilot-v9",
+      "url": "https://clawhub.ai/skills/openclaw-autopilot-v9"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-autopilot-v9",
+    "url": "https://clawhub.ai/skills/openclaw-autopilot-v9",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-autopilot-v9-3a3259e075c6cca0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-autopilot-v9@9.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-autopilot-v9-9.0.1.json",
+      "version": "9.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ce4ebc704a0d4a39fd85f1b83ecd436287c1d362b7c4c63fbb0628443a89e400",
+      "artifactSizeBytes": 1963
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T18:00:13.302Z"
+}

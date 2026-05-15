@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/director-calendar-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.director_calendar_manager",
+  "skill": {
+    "id": 41124,
+    "skillKey": "clawhub-director-calendar-manager",
+    "name": "Calendar Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "director-calendar-manager",
+    "url": "https://clawhub.ai/skills/director-calendar-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/director-calendar-manager-1edb5fb99368e25f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage calendar availability, schedule meetings across timezones, find optimal meeting times, and send calendar invites. Use when user wants to (1) find avai..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "di5cip1e",
+      "userId": "s17ewhty0883w7qaxe537w985583mxaf",
+      "displayName": "di5cip1e",
+      "image": "https://avatars.githubusercontent.com/u/87604837?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775580967031,
+      "changelog": "Initial release - find availability, schedule meetings, timezone conversion",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eb500a48a08ea09860f74c5a013028ff7e9675cd8a3b64ba01e0e08a50ddd417"
+}

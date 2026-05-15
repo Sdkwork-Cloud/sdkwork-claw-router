@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50787,
+  "uuid": "skill-clawhub-skytale",
+  "skillKey": "clawhub-skytale",
+  "name": "Openclaw",
+  "summary": "The trust layer for AI agents — encrypted channels, identity, audit, attestations, trust circles, key rotation, and federation. MLS protocol (RFC 9420).",
+  "version": "0.5.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skytale",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nicholasraimbault",
+      "features": [
+        "The trust layer for AI agents — encrypted channels, identity, audit, attestations, trust circle.",
+        "MLS protocol (RFC 9420)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skytale@0.5.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11843674?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skytale",
+      "url": "https://clawhub.ai/skills/skytale"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skytale",
+    "url": "https://clawhub.ai/skills/skytale",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skytale-17060ebe81f90e51.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skytale@0.5.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-skytale-0.5.2.json",
+      "version": "0.5.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:34b332fe04017f654f0f42354375a5dce920dd6f8e9912056168c0ca18138dae",
+      "artifactSizeBytes": 2093
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T00:52:00.801Z"
+}

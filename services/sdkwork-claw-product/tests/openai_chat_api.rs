@@ -7,7 +7,8 @@ use sdkwork_claw_product::application::ApiKeySecretHasher;
 use sdkwork_claw_product::domain::{
     AiModel, ApiKeyGroup, BillingMeter, DecimalValue, GatewayApiKey, ModelPrice,
     ModelProviderRoute, ModelVendor, ModelVendorDefinition, Money, PriceSide, PricingPlan,
-    ProviderRetryPolicy,
+    ProviderRetryPolicy, RouteCandidate, RoutingCapability, RoutingPolicy, RoutingPolicyScope,
+    RoutingRule,
 };
 use sdkwork_claw_product::infrastructure::crypto::HmacSha256ApiKeySecretHasher;
 use sdkwork_claw_product::infrastructure::InMemoryPricingCatalog;
@@ -19,6 +20,21 @@ use sdkwork_claw_product::ports::{
 use tower::ServiceExt;
 
 fn catalog_with_hashed_api_key(key_hash: String) -> InMemoryPricingCatalog {
+    let mut catalog = catalog_with_hashed_api_key_without_routing(key_hash);
+    add_group_routing_policy(
+        &mut catalog,
+        10,
+        9001,
+        9101,
+        9102,
+        "standard-group-gpt-4o-mini",
+        "openai/global/gpt-4o-mini",
+        3001,
+    );
+    catalog
+}
+
+fn catalog_with_hashed_api_key_without_routing(key_hash: String) -> InMemoryPricingCatalog {
     let mut catalog = InMemoryPricingCatalog::default();
     catalog.add_vendor(ModelVendorDefinition::new(
         "openai",
@@ -97,6 +113,105 @@ fn catalog_with_hashed_api_key(key_hash: String) -> InMemoryPricingCatalog {
     catalog
 }
 
+fn add_group_routing_policy(
+    catalog: &mut InMemoryPricingCatalog,
+    group_id: i64,
+    policy_id: i64,
+    profile_id: i64,
+    rule_id: i64,
+    rule_code: &str,
+    catalog_key: &str,
+    channel_id: i64,
+) {
+    catalog.add_routing_policy(
+        RoutingPolicy::new(
+            policy_id,
+            10,
+            20,
+            &format!("{rule_code}-policy"),
+            RoutingPolicyScope::ApiKeyGroup,
+            Some(group_id),
+            Some(profile_id),
+        )
+        .with_capability(RoutingCapability::Chat),
+    );
+    catalog.add_routing_rule(
+        RoutingRule::new(
+            rule_id,
+            10,
+            20,
+            profile_id,
+            rule_code,
+            1,
+            &format!(r#"{{"catalogKey":"{catalog_key}"}}"#),
+            catalog_key,
+        )
+        .with_candidate_channels(vec![RouteCandidate::new(channel_id, 100)]),
+    );
+}
+
+fn catalog_with_group_account_pools(
+    standard_key_hash: String,
+    premium_key_hash: String,
+) -> InMemoryPricingCatalog {
+    let mut catalog = catalog_with_hashed_api_key(standard_key_hash);
+    catalog.add_api_key_group(ApiKeyGroup::new(
+        20,
+        "premium-group",
+        "standard",
+        DecimalValue::parse("1.000000").unwrap(),
+        DecimalValue::parse("1.000000").unwrap(),
+    ));
+    catalog.add_api_key(
+        GatewayApiKey::new(202, 20, "sk-premium", &premium_key_hash).with_owner(10, 20, 31),
+    );
+    catalog.add_provider_route(
+        ModelProviderRoute::new_for_catalog_key(
+            "openai/global/gpt-4o-mini",
+            "gpt-4o-mini",
+            "openrouter-premium",
+            3002,
+            "openai/global/gpt-4o-mini-premium",
+        )
+        .with_provider_endpoint(
+            Some("http://provider-proxy.internal/openrouter-premium"),
+            Some("vault://providers/openrouter/account/premium"),
+        )
+        .with_timeout_ms(20_000),
+    );
+    catalog.add_price(
+        ModelPrice::new_for_catalog_key(
+            "openai/global/gpt-4o-mini",
+            "gpt-4o-mini",
+            PriceSide::UpstreamCost,
+            BillingMeter::LlmInputToken,
+            Money::usd("0.115000").unwrap(),
+        )
+        .for_provider("openrouter-premium", 3002),
+    );
+    catalog.add_price(
+        ModelPrice::new_for_catalog_key(
+            "openai/global/gpt-4o-mini",
+            "gpt-4o-mini",
+            PriceSide::UpstreamCost,
+            BillingMeter::LlmOutputToken,
+            Money::usd("0.460000").unwrap(),
+        )
+        .for_provider("openrouter-premium", 3002),
+    );
+    add_group_routing_policy(
+        &mut catalog,
+        20,
+        9201,
+        9301,
+        9302,
+        "premium-group-gpt-4o-mini",
+        "openai/global/gpt-4o-mini",
+        3002,
+    );
+    catalog
+}
+
 fn catalog_with_regional_minimax_models(key_hash: String) -> InMemoryPricingCatalog {
     let mut catalog = InMemoryPricingCatalog::default();
     catalog.add_vendor(ModelVendorDefinition::new(
@@ -127,13 +242,19 @@ fn catalog_with_regional_minimax_models(key_hash: String) -> InMemoryPricingCata
         )
         .with_catalog_key("minimax/global/MiniMax-M2.7"),
     );
-    catalog.add_provider_route(ModelProviderRoute::new_for_catalog_key(
-        "minimax/cn/MiniMax-M2.7",
-        "MiniMax-M2.7",
-        "minimax_direct",
-        4001,
-        "MiniMax-M2.7",
-    ));
+    catalog.add_provider_route(
+        ModelProviderRoute::new_for_catalog_key(
+            "minimax/cn/MiniMax-M2.7",
+            "MiniMax-M2.7",
+            "minimax_direct",
+            4001,
+            "MiniMax-M2.7",
+        )
+        .with_provider_endpoint(
+            Some("http://provider-proxy.internal/minimax"),
+            Some("vault://providers/minimax/account/cn"),
+        ),
+    );
     catalog.add_plan(PricingPlan::new(
         "standard",
         PriceSide::OfficialReference,
@@ -164,6 +285,16 @@ fn catalog_with_regional_minimax_models(key_hash: String) -> InMemoryPricingCata
             Money::cny("0.004000").unwrap(),
         )
         .for_provider("minimax_direct", 4001),
+    );
+    add_group_routing_policy(
+        &mut catalog,
+        10,
+        9401,
+        9501,
+        9502,
+        "standard-group-minimax-m27",
+        "minimax/cn/MiniMax-M2.7",
+        4001,
     );
     catalog
 }
@@ -313,6 +444,455 @@ async fn openai_chat_completions_accepts_catalog_key_for_regional_model_identity
     let payload: serde_json::Value = serde_json::from_slice(&body).unwrap();
 
     assert_eq!("provider_relay_not_configured", payload["error"]["code"]);
+}
+
+#[tokio::test]
+async fn openai_chat_completions_routes_each_api_key_group_to_its_configured_account_pool() {
+    let hasher =
+        Arc::new(HmacSha256ApiKeySecretHasher::new("0123456789abcdef0123456789abcdef").unwrap());
+    let standard_key_hash = hasher.hash_secret("sk-standard-secret").unwrap();
+    let premium_key_hash = hasher.hash_secret("sk-premium-secret").unwrap();
+    let mut catalog = catalog_with_group_account_pools(standard_key_hash, premium_key_hash);
+    catalog.add_routing_policy(RoutingPolicy::new(
+        9001,
+        10,
+        20,
+        "standard-group-policy",
+        RoutingPolicyScope::ApiKeyGroup,
+        Some(10),
+        Some(9101),
+    ));
+    catalog.add_routing_rule(
+        RoutingRule::new(
+            9102,
+            10,
+            20,
+            9101,
+            "standard-group-gpt-4o-mini",
+            1,
+            r#"{"catalogKey":"openai/global/gpt-4o-mini"}"#,
+            "openai/global/gpt-4o-mini",
+        )
+        .with_candidate_channels(vec![RouteCandidate::new(3001, 100)]),
+    );
+    catalog.add_routing_policy(RoutingPolicy::new(
+        9002,
+        10,
+        20,
+        "premium-group-policy",
+        RoutingPolicyScope::ApiKeyGroup,
+        Some(20),
+        Some(9201),
+    ));
+    catalog.add_routing_rule(
+        RoutingRule::new(
+            9202,
+            10,
+            20,
+            9201,
+            "premium-group-gpt-4o-mini",
+            1,
+            r#"{"catalogKey":"openai/global/gpt-4o-mini"}"#,
+            "openai/global/gpt-4o-mini",
+        )
+        .with_candidate_channels(vec![RouteCandidate::new(3002, 100)]),
+    );
+
+    let captured = Arc::new(Mutex::new(Vec::new()));
+    let relay = Arc::new(RecordingRelay::new(Arc::clone(&captured)));
+    let router = sdkwork_claw_product::api::openai_chat_completions_router_with_relay(
+        Arc::new(catalog),
+        hasher,
+        relay,
+    );
+
+    for api_key in ["sk-standard-secret", "sk-premium-secret"] {
+        let response = router
+            .clone()
+            .oneshot(
+                Request::builder()
+                    .method("POST")
+                    .uri("/v1/chat/completions")
+                    .header("authorization", format!("Bearer {api_key}"))
+                    .header("content-type", "application/json")
+                    .body(Body::from(
+                        r#"{"model":"gpt-4o-mini","messages":[{"role":"user","content":"ping"}]}"#,
+                    ))
+                    .unwrap(),
+            )
+            .await
+            .unwrap();
+        assert_eq!(StatusCode::OK, response.status());
+    }
+
+    let captured = captured.lock().unwrap();
+    assert_eq!(2, captured.len());
+    assert_eq!(101, captured[0].api_key_id);
+    assert_eq!(10, captured[0].group_id);
+    assert_eq!("openrouter", captured[0].provider_code);
+    assert_eq!(
+        Some("http://provider-proxy.internal/openrouter"),
+        captured[0].provider_base_url.as_deref()
+    );
+    assert_eq!(
+        Some("vault://providers/openrouter/account/main"),
+        captured[0].provider_secret_ref.as_deref()
+    );
+    assert_eq!(202, captured[1].api_key_id);
+    assert_eq!(20, captured[1].group_id);
+    assert_eq!("openrouter-premium", captured[1].provider_code);
+    assert_eq!(
+        Some("http://provider-proxy.internal/openrouter-premium"),
+        captured[1].provider_base_url.as_deref()
+    );
+    assert_eq!(
+        Some("vault://providers/openrouter/account/premium"),
+        captured[1].provider_secret_ref.as_deref()
+    );
+    assert_eq!(
+        "openai/global/gpt-4o-mini-premium",
+        captured[1].provider_model
+    );
+}
+
+#[tokio::test]
+async fn openai_chat_completions_rejects_misconfigured_group_account_pool_without_cross_pool_fallback(
+) {
+    let hasher =
+        Arc::new(HmacSha256ApiKeySecretHasher::new("0123456789abcdef0123456789abcdef").unwrap());
+    let key_hash = hasher.hash_secret("sk-standard-secret").unwrap();
+    let mut catalog = catalog_with_hashed_api_key_without_routing(key_hash);
+    catalog.add_routing_policy(RoutingPolicy::new(
+        9001,
+        10,
+        20,
+        "standard-group-policy",
+        RoutingPolicyScope::ApiKeyGroup,
+        Some(10),
+        Some(9101),
+    ));
+    catalog.add_routing_rule(
+        RoutingRule::new(
+            9102,
+            10,
+            20,
+            9101,
+            "standard-group-broken-pool",
+            1,
+            r#"{"catalogKey":"openai/global/gpt-4o-mini"}"#,
+            "openai/global/gpt-4o-mini",
+        )
+        .with_candidate_channels(vec![RouteCandidate::new(9999, 100)]),
+    );
+
+    let captured = Arc::new(Mutex::new(Vec::new()));
+    let relay = Arc::new(RecordingRelay::new(Arc::clone(&captured)));
+    let router = sdkwork_claw_product::api::openai_chat_completions_router_with_relay(
+        Arc::new(catalog),
+        hasher,
+        relay,
+    );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/v1/chat/completions")
+                .header("authorization", "Bearer sk-standard-secret")
+                .header("content-type", "application/json")
+                .body(Body::from(
+                    r#"{"model":"gpt-4o-mini","messages":[{"role":"user","content":"ping"}]}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::SERVICE_UNAVAILABLE, response.status());
+    assert!(captured.lock().unwrap().is_empty());
+    let body = axum::body::to_bytes(response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let payload: serde_json::Value = serde_json::from_slice(&body).unwrap();
+
+    assert_eq!("provider_route_not_available", payload["error"]["code"]);
+    assert!(payload["error"]["message"]
+        .as_str()
+        .unwrap()
+        .contains("account pool"));
+}
+
+#[tokio::test]
+async fn openai_chat_completions_reports_pricing_unavailable_for_callable_route_without_price() {
+    let hasher =
+        Arc::new(HmacSha256ApiKeySecretHasher::new("0123456789abcdef0123456789abcdef").unwrap());
+    let key_hash = hasher.hash_secret("sk-standard-secret").unwrap();
+    let mut catalog = InMemoryPricingCatalog::default();
+    catalog.add_vendor(ModelVendorDefinition::new(
+        "openai",
+        ModelVendor::OpenAi,
+        "OpenAI",
+    ));
+    catalog.add_model(AiModel::new(
+        "gpt-4o-mini",
+        "GPT-4o mini",
+        "openai",
+        vec!["chat", "tools"],
+    ));
+    catalog.add_provider_route(
+        ModelProviderRoute::new_for_catalog_key(
+            "openai/global/gpt-4o-mini",
+            "gpt-4o-mini",
+            "openrouter",
+            3001,
+            "openai/global/gpt-4o-mini",
+        )
+        .with_provider_endpoint(
+            Some("http://provider-proxy.internal/openrouter"),
+            Some("vault://providers/openrouter/account/main"),
+        ),
+    );
+    catalog.add_plan(PricingPlan::new(
+        "standard",
+        PriceSide::OfficialReference,
+        DecimalValue::parse("1.200000").unwrap(),
+        Money::usd("0.000000").unwrap(),
+    ));
+    catalog.add_api_key_group(ApiKeyGroup::new(
+        10,
+        "standard-group",
+        "standard",
+        DecimalValue::parse("1.000000").unwrap(),
+        DecimalValue::parse("1.100000").unwrap(),
+    ));
+    catalog.add_api_key(GatewayApiKey::new(101, 10, "sk-live", &key_hash).with_owner(10, 20, 30));
+    add_group_routing_policy(
+        &mut catalog,
+        10,
+        9001,
+        9101,
+        9102,
+        "standard-group-gpt-4o-mini",
+        "openai/global/gpt-4o-mini",
+        3001,
+    );
+
+    let captured = Arc::new(Mutex::new(Vec::new()));
+    let relay = Arc::new(RecordingRelay::new(Arc::clone(&captured)));
+    let router = sdkwork_claw_product::api::openai_chat_completions_router_with_relay(
+        Arc::new(catalog),
+        hasher,
+        relay,
+    );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/v1/chat/completions")
+                .header("authorization", "Bearer sk-standard-secret")
+                .header("content-type", "application/json")
+                .body(Body::from(
+                    r#"{"model":"gpt-4o-mini","messages":[{"role":"user","content":"ping"}]}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::BAD_REQUEST, response.status());
+    assert!(captured.lock().unwrap().is_empty());
+    let body = axum::body::to_bytes(response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let payload: serde_json::Value = serde_json::from_slice(&body).unwrap();
+
+    assert_eq!("pricing_unavailable", payload["error"]["code"]);
+    assert!(payload["error"]["message"]
+        .as_str()
+        .unwrap()
+        .contains("official reference price"));
+}
+
+#[tokio::test]
+async fn openai_chat_completions_rejects_group_policy_missing_chat_capability_without_global_fallback(
+) {
+    let hasher =
+        Arc::new(HmacSha256ApiKeySecretHasher::new("0123456789abcdef0123456789abcdef").unwrap());
+    let key_hash = hasher.hash_secret("sk-standard-secret").unwrap();
+    let mut catalog = catalog_with_hashed_api_key_without_routing(key_hash);
+    catalog.add_provider_route(
+        ModelProviderRoute::new_for_catalog_key(
+            "openai/global/gpt-4o-mini",
+            "gpt-4o-mini",
+            "global-openrouter",
+            3003,
+            "openai/global/gpt-4o-mini-global",
+        )
+        .with_provider_endpoint(
+            Some("http://provider-proxy.internal/global-openrouter"),
+            Some("vault://providers/openrouter/account/global"),
+        ),
+    );
+    catalog.add_price(
+        ModelPrice::new_for_catalog_key(
+            "openai/global/gpt-4o-mini",
+            "gpt-4o-mini",
+            PriceSide::UpstreamCost,
+            BillingMeter::LlmInputToken,
+            Money::usd("0.120000").unwrap(),
+        )
+        .for_provider("global-openrouter", 3003),
+    );
+    catalog.add_routing_policy(RoutingPolicy::new(
+        8001,
+        0,
+        0,
+        "global-chat-policy",
+        RoutingPolicyScope::Global,
+        None,
+        Some(8101),
+    ));
+    catalog.add_routing_rule(
+        RoutingRule::new(
+            8102,
+            0,
+            0,
+            8101,
+            "global-chat-rule",
+            1,
+            r#"{"catalogKey":"openai/global/gpt-4o-mini"}"#,
+            "openai/global/gpt-4o-mini",
+        )
+        .with_candidate_channels(vec![RouteCandidate::new(3003, 100)]),
+    );
+    catalog.add_routing_policy(
+        RoutingPolicy::new(
+            9001,
+            10,
+            20,
+            "standard-group-embedding-policy",
+            RoutingPolicyScope::ApiKeyGroup,
+            Some(10),
+            Some(9101),
+        )
+        .with_capability(RoutingCapability::Embedding),
+    );
+    catalog.add_routing_rule(
+        RoutingRule::new(
+            9102,
+            10,
+            20,
+            9101,
+            "standard-group-embedding-rule",
+            1,
+            r#"{"catalogKey":"openai/global/gpt-4o-mini"}"#,
+            "openai/global/gpt-4o-mini",
+        )
+        .with_candidate_channels(vec![RouteCandidate::new(3001, 100)]),
+    );
+
+    let captured = Arc::new(Mutex::new(Vec::new()));
+    let relay = Arc::new(RecordingRelay::new(Arc::clone(&captured)));
+    let router = sdkwork_claw_product::api::openai_chat_completions_router_with_relay(
+        Arc::new(catalog),
+        hasher,
+        relay,
+    );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/v1/chat/completions")
+                .header("authorization", "Bearer sk-standard-secret")
+                .header("content-type", "application/json")
+                .body(Body::from(
+                    r#"{"model":"gpt-4o-mini","messages":[{"role":"user","content":"ping"}]}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::SERVICE_UNAVAILABLE, response.status());
+    assert!(captured.lock().unwrap().is_empty());
+    let body = axum::body::to_bytes(response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let payload: serde_json::Value = serde_json::from_slice(&body).unwrap();
+
+    assert_eq!("provider_route_not_available", payload["error"]["code"]);
+    assert!(payload["error"]["message"]
+        .as_str()
+        .unwrap()
+        .contains("has no routing policy for capability"));
+}
+
+#[tokio::test]
+async fn openai_chat_completions_rejects_configured_group_policy_without_matching_rule() {
+    let hasher =
+        Arc::new(HmacSha256ApiKeySecretHasher::new("0123456789abcdef0123456789abcdef").unwrap());
+    let key_hash = hasher.hash_secret("sk-standard-secret").unwrap();
+    let mut catalog = catalog_with_hashed_api_key_without_routing(key_hash);
+    catalog.add_routing_policy(RoutingPolicy::new(
+        9001,
+        10,
+        20,
+        "standard-group-policy",
+        RoutingPolicyScope::ApiKeyGroup,
+        Some(10),
+        Some(9101),
+    ));
+    catalog.add_routing_rule(
+        RoutingRule::new(
+            9102,
+            10,
+            20,
+            9101,
+            "standard-group-other-model",
+            1,
+            r#"{"catalogKey":"openai/global/other-model"}"#,
+            "openai/global/other-model",
+        )
+        .with_candidate_channels(vec![RouteCandidate::new(3001, 100)]),
+    );
+
+    let captured = Arc::new(Mutex::new(Vec::new()));
+    let relay = Arc::new(RecordingRelay::new(Arc::clone(&captured)));
+    let router = sdkwork_claw_product::api::openai_chat_completions_router_with_relay(
+        Arc::new(catalog),
+        hasher,
+        relay,
+    );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/v1/chat/completions")
+                .header("authorization", "Bearer sk-standard-secret")
+                .header("content-type", "application/json")
+                .body(Body::from(
+                    r#"{"model":"gpt-4o-mini","messages":[{"role":"user","content":"ping"}]}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::SERVICE_UNAVAILABLE, response.status());
+    assert!(captured.lock().unwrap().is_empty());
+    let body = axum::body::to_bytes(response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let payload: serde_json::Value = serde_json::from_slice(&body).unwrap();
+
+    assert_eq!("provider_route_not_available", payload["error"]["code"]);
+    assert!(payload["error"]["message"]
+        .as_str()
+        .unwrap()
+        .contains("has no routing rule"));
 }
 
 #[derive(Debug)]

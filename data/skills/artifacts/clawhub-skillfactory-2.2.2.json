@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skillfactory@2.2.2",
+  "version": "2.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skillfactory",
+  "skill": {
+    "id": 39555,
+    "skillKey": "clawhub-skillfactory",
+    "name": "Skill Factory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skillfactory",
+    "url": "https://clawhub.ai/skills/skillfactory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skillfactory-4890fd8b43b34779.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A meta-skill for creating, iterating, and publishing OpenClaw skills from scratch. Use this skill when the user wants to: build a new skill from an idea or U..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhelunsun",
+      "userId": "s178q41vf3nvhgdhvwtgx794p5858ce6",
+      "displayName": "zhelunSun",
+      "image": "https://avatars.githubusercontent.com/u/202214845?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.2.2",
+      "createdAt": 1776777377359,
+      "changelog": "## Skill Factory 2.2.2\n\n- fix text error",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5571b4c87582bd5334a04abdd72a83d78236762b4804176013345e9bbab8f168"
+}

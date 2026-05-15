@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58649,
+  "uuid": "skill-clawhub-5gc-automation",
+  "skillKey": "clawhub-5gc-automation",
+  "name": "5GC Automation",
+  "summary": "5GC Web仪表自动化技能，支持AMF/UDM/AUSF/SMF/PGW-C/UPF/PGW-U/GNB/UE/PCF/NRF/QoS/TC/PCC/smpolicy的批量添加与编辑及PCF默认规则一键配置",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.5gc_automation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liuwei120",
+      "features": [
+        "5GC Web仪表自动化技能，支持AMF/UDM/AUSF/SMF/PGW-C/UPF/PGW-U/GNB/UE/PCF/NRF/QoS/TC/PCC/smpolicy的批量添加与编辑及PC."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/5gc-automation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/89309534?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "5gc-automation",
+      "url": "https://clawhub.ai/skills/5gc-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "5gc-automation",
+    "url": "https://clawhub.ai/skills/5gc-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/5gc-automation-a4c7c62217b595f8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/5gc-automation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-5gc-automation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:931a18f36545ea18abbfc82510a71897efde59bd27bcb179c45e14849733359e",
+      "artifactSizeBytes": 1944
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T08:28:16.152Z"
+}

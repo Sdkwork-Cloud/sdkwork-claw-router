@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14284,
+  "uuid": "skill-clawhub-openclaw-healthcheck-cron",
+  "skillKey": "clawhub-openclaw-healthcheck-cron",
+  "name": "OpenClaw Healthcheck Cron",
+  "summary": "Create and run a reusable OpenClaw deep healthcheck automation using a cron job plus a script. Use when setting up scheduled OpenClaw health audits, standard...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_healthcheck_cron",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pedro Gonzalez",
+      "features": [
+        "Create and run a reusable OpenClaw deep healthcheck automation using a cron job plus a script",
+        "Use when setting up scheduled OpenClaw health audits, standard..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-healthcheck-cron@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19900049?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-healthcheck-cron",
+      "url": "https://clawhub.ai/skills/openclaw-healthcheck-cron"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-healthcheck-cron",
+    "url": "https://clawhub.ai/skills/openclaw-healthcheck-cron",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-healthcheck-cron-8179b13676c978dc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-healthcheck-cron@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-healthcheck-cron-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6c40c3a83813f085e857fd3ec8606ed381008eeb3635e049d2616f3829aeb9e7",
+      "artifactSizeBytes": 2019
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T23:37:11.204Z"
+}

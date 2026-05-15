@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/soulpass@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.soulpass",
+  "skill": {
+    "id": 52454,
+    "skillKey": "clawhub-soulpass",
+    "name": "Solana Trading Terminal — SoulPass"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "soulpass",
+    "url": "https://clawhub.ai/skills/soulpass",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/soulpass-2a50aba8d79f04ad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Solana trading and DeFi skill for AI agents with hardware-secured wallet. Swap tokens on Jupiter DEX, trade meme coins with rug-pull detection, earn yield vi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "soulpassai",
+      "userId": "s17fkgza0syknwx2795wz2rwb583xw56",
+      "displayName": "soulpassai",
+      "image": "https://avatars.githubusercontent.com/u/267532598?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774842463074,
+      "changelog": "Initial release of Solana Trading Terminal — SoulPass.\n\n- Provides a hardware-secured Solana wallet using Apple Secure Enclave — no extractable private keys or seed phrases.\n- Enables instant token swaps on Jupiter DEX, including real-time price checks and custom slippage controls.\n- Adds safety tools for meme coin trading, with risk signals and rug-pull detection before executing trades.\n- Supports copy trading workflows, whale tracking, and trade automation for DeFi strategies.\n- Integrates DeFi yield options via Jupiter Lend for idle tokens.\n- Offers a fast JSON-RPC daemon for building automated trading bots and agent-to-agent payments.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:372f2108dd62fde9215384848d2a62d6095fb68ed984413a9d08a79c71fbd9e0"
+}

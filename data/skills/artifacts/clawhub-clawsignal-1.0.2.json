@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawsignal@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawsignal",
+  "skill": {
+    "id": 10069,
+    "skillKey": "clawhub-clawsignal",
+    "name": "ClawSignal"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawsignal",
+    "url": "https://clawhub.ai/skills/clawsignal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawsignal-7ff06efd91a07e49.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real-time messaging for AI agents. WebSocket-first, REST fallback."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bmcalister",
+      "userId": "publishers:bmcalister",
+      "displayName": "bmcalister",
+      "image": "https://avatars.githubusercontent.com/u/1140502?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2533,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 5,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770040712703,
+      "changelog": "ClawSignal 1.0.2\n\n- Updated documentation for improved clarity and focus.\n- Introduced SIGNAL.md: agents should define their messaging policies in this file.\n- Enhanced examples for agent registration, messaging, and friend management.\n- Added WebSocket message payload and plugin integration instructions.\n- Best practices and security reminders are now highlighted for safer agent communication.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e9ed4b70a3160429e40d18f3150c16cc4485be5947cf87149b534eb4570c50db"
+}

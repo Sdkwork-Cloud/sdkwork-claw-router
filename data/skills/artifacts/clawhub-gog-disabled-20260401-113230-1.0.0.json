@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gog-disabled-20260401-113230@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gog_disabled_20260401_113230",
+  "skill": {
+    "id": 34933,
+    "skillKey": "clawhub-gog-disabled-20260401-113230",
+    "name": ".Gog.Disabled.20260401 113230"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gog-disabled-20260401-113230",
+    "url": "https://clawhub.ai/skills/gog-disabled-20260401-113230",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gog-disabled-20260401-113230-0080da781e05c5be.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Google Workspace CLI for Gmail, Calendar, Drive, Contacts, Sheets, and Docs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tmundi3210",
+      "userId": "s17b8bjzd6jna1dm5h2fejfrmh840kxz",
+      "displayName": "tmundi3210",
+      "image": "https://avatars.githubusercontent.com/u/224789295?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775023358020,
+      "changelog": "- Initial release of the gog skill, a CLI for Google Workspace (Gmail, Calendar, Drive, Contacts, Sheets, Docs).\n- Includes OAuth setup instructions and usage examples for each supported Google service.\n- Provides command examples for searching, sending, listing, updating, and exporting across Workspace products.\n- Notes cover scripting tips, environment variables, and safe usage guidelines.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3ed340bef47397e2c67a7f4fd36d300f8cd2f520e4290a0c25eba2831a8dbb90"
+}

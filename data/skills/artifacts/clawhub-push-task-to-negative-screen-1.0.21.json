@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/push-task-to-negative-screen@1.0.21",
+  "version": "1.0.21",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.push_task_to_negative_screen",
+  "skill": {
+    "id": 66113,
+    "skillKey": "clawhub-push-task-to-negative-screen",
+    "name": "push-task-to-negative-screen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "push-task-to-negative-screen",
+    "url": "https://clawhub.ai/skills/push-task-to-negative-screen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/push-task-to-negative-screen-092a5a20bbda3a8d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通用任务结果推送器，当任务完成后将结果推送到负一屏。使用统一的标准数据格式，支持各种类型的任务结果推送。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ganhaiyang3",
+      "userId": "s179tnpykt8we3kpe9hvyf682n83x73n",
+      "displayName": "Minus One Screen",
+      "image": "https://avatars.githubusercontent.com/u/90141367?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 331,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 16
+    },
+    "latestVersion": {
+      "version": "1.0.21",
+      "createdAt": 1775742380820,
+      "changelog": "- Minor update to code files: scripts/hiboards_client.py and scripts/task_pusher.py.\n- No significant user-facing changes; main skill documentation and usage remain the same.\n- Internal code changes may include refactoring or bug fixes not affecting public APIs or workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f70131787c060bc6ec99a5832cf13c6ace80f795d7fe746ab6a16b4f758ece9e"
+}

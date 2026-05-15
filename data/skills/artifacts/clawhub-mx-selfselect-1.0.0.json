@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mx-selfselect@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mx_selfselect",
+  "skill": {
+    "id": 68808,
+    "skillKey": "clawhub-mx-selfselect",
+    "name": "Mx Selfselect"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mx-selfselect",
+    "url": "https://clawhub.ai/skills/mx-selfselect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mx-selfselect-10a8e37332361902.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "妙想自选管理skill，基于东方财富通行证账户数据及行情底层数据构建，支持通过自然语言查询、添加、删除自选股。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jessecq1995",
+      "userId": "s17fe78e4sg7hnt93xmyj48mc183hn4w",
+      "displayName": "Jessecq1995",
+      "image": "https://avatars.githubusercontent.com/u/185338792?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 338,
+      "installsAllTime": 13,
+      "installsCurrent": 13,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774738122642,
+      "changelog": "Initial release of mx_self_select skill for managing stock watchlists via natural language.\n\n- Supports querying, adding, and deleting self-selected stocks under your Eastmoney account using natural language commands.\n- Requires API key configuration via the MX_APIKEY environment variable.\n- Outputs results as CSV and raw JSON files in a dedicated directory.\n- Provides clear usage examples and error handling for missing configuration or API issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:52f2f3c6839599cd8321da82d5785f8307c20f30f1c885c116f8b42b7adf537b"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72417,
+  "uuid": "skill-clawhub-bilibili-summary-raise",
+  "skillKey": "clawhub-bilibili-summary-raise",
+  "name": "B站视频分析",
+  "summary": "通过内置脚本获取B站视频信息并总结",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilibili_summary_raise",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "raise7727",
+      "features": [
+        "通过内置脚本获取B站视频信息并总结"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bilibili-summary-raise@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/203483347?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bilibili-summary-raise",
+      "url": "https://clawhub.ai/skills/bilibili-summary-raise"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilibili-summary-raise",
+    "url": "https://clawhub.ai/skills/bilibili-summary-raise",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilibili-summary-raise-007b71c76a93db52.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bilibili-summary-raise@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bilibili-summary-raise-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6a1bb86c682daf1f6c702e6188219f3b10de00e3abd1c2b0dc2e22fe92ae62a4",
+      "artifactSizeBytes": 2366
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T16:35:05.104Z"
+}

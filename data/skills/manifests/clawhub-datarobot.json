@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22761,
+  "uuid": "skill-clawhub-datarobot",
+  "skillKey": "clawhub-datarobot",
+  "name": "Datarobot",
+  "summary": "Datarobot integration. Manage Projects, Users. Use when the user wants to interact with Datarobot data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.datarobot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Datarobot integration",
+        "Manage Projects, Users",
+        "Use when the user wants to interact with Datarobot data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/datarobot@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "datarobot",
+      "url": "https://clawhub.ai/skills/datarobot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "datarobot",
+    "url": "https://clawhub.ai/skills/datarobot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/datarobot-4a01fd8f06fe85aa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/datarobot@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-datarobot-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a5d88ceac0386097029e2adebfd859626f49f22be61b31718e7633a3c0c57a7e",
+      "artifactSizeBytes": 1825
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:22:42.803Z"
+}

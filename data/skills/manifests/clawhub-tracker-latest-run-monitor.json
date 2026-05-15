@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42895,
+  "uuid": "skill-clawhub-tracker-latest-run-monitor",
+  "skillKey": "clawhub-tracker-latest-run-monitor",
+  "name": "Tracker Latest Run Monitor",
+  "summary": "Monitor the most recent run result of a configured OpenClaw cron job and send a compact Feishu private message with the latest execution time, status, and de...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tracker_latest_run_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "张家钊",
+      "features": [
+        "Monitor the most recent run result of a configured OpenClaw cron job and send a compact Feishu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tracker-latest-run-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21955436?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tracker-latest-run-monitor",
+      "url": "https://clawhub.ai/skills/tracker-latest-run-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tracker-latest-run-monitor",
+    "url": "https://clawhub.ai/skills/tracker-latest-run-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tracker-latest-run-monitor-1676357b99b6ef59.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tracker-latest-run-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tracker-latest-run-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:54014d036961d6c8d106ed8fbd1993892bdf347a95372a2a2e3266bebc08ee63",
+      "artifactSizeBytes": 2322
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T10:25:37.447Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/steam-gaming-companion@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.steam_gaming_companion",
+  "skill": {
+    "id": 51726,
+    "skillKey": "clawhub-steam-gaming-companion",
+    "name": "Steam & PC Gaming Companion"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "steam-gaming-companion",
+    "url": "https://clawhub.ai/skills/steam-gaming-companion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/steam-gaming-companion-495e77880860e98e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Steam & PC Gaming Companion — full Steam Web API integration for library management, play recommendations, wishlist sale monitoring, achievement tracking, an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eduardmirko390-crypto",
+      "userId": "s174vwxympxde40n1wt6z7d3md83k39z",
+      "displayName": "eduardmirko390-crypto",
+      "image": "https://avatars.githubusercontent.com/u/266843206?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 238,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774407189522,
+      "changelog": "Initial release of Steam Gaming Companion — full Steam Web API integration for library management, recommendations, and more.\n\n- Manage your Steam game library with unplayed, abandoned, and played categorizations.\n- Get smart play recommendations by mood (chill, intense, story-driven, competitive) and available playtime.\n- Monitor your Steam wishlist for games currently on sale.\n- Track and display progress on game achievements.\n- Look up details, ratings, and genres for any game in your library or wishlist.\n- Simple setup with required Steam API credentials, plus optional IGDB integration for richer game info.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6f58615438c0190a31d3a6cb8e09c15967f95adc93756a75c94c829761d95762"
+}

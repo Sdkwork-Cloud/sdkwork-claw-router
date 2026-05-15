@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50712,
+  "uuid": "skill-clawhub-tbb-node-connector",
+  "skillKey": "clawhub-tbb-node-connector",
+  "name": "tbb-node-connector",
+  "summary": "Plug-and-play connector for The Bot Bay mesh node. Teaches any AI agent how to register, authenticate, and use all TBB endpoints — gossip mesh, ephemeral swa...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tbb_node_connector",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EZKrajan",
+      "features": [
+        "Plug-and-play connector for The Bot Bay mesh node",
+        "Teaches any AI agent how to register, authenticate, and use all TBB endpoints — gossip mesh, ep."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tbb-node-connector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255021006?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tbb-node-connector",
+      "url": "https://clawhub.ai/skills/tbb-node-connector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tbb-node-connector",
+    "url": "https://clawhub.ai/skills/tbb-node-connector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tbb-node-connector-e3c43d92827f3c58.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tbb-node-connector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tbb-node-connector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc73f3f6c1339fb41722ec5e31305a5930efc32c598a3119ddad1f959da3cdbb",
+      "artifactSizeBytes": 2338
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T04:07:27.415Z"
+}

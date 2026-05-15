@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16545,
+  "uuid": "skill-clawhub-prototype-generator",
+  "skillKey": "clawhub-prototype-generator",
+  "name": "Prototype Generator",
+  "summary": "Generates admin/list prototypes from requirements. Supports mountListPage-style frameworks (e.g. kfk-mock-ui), standalone HTML, or project-specific setups. U...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prototype_generator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fzx",
+      "features": [
+        "Generates admin/list prototypes from requirements",
+        "Supports mountListPage-style frameworks (e.g",
+        "kfk-mock-ui), standalone HTML, or project-specific setups"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prototype-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29349955?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prototype-generator",
+      "url": "https://clawhub.ai/skills/prototype-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prototype-generator",
+    "url": "https://clawhub.ai/skills/prototype-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prototype-generator-11712ef57348271d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prototype-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-prototype-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9aa8d08caa015bf0e561ee08ee49b0c380ea8e119fd549f5e11b8ee5e0714415",
+      "artifactSizeBytes": 1912
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T09:52:49.095Z"
+}

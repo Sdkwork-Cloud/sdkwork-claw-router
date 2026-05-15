@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawtip-invention-patent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawtip_invention_patent",
+  "skill": {
+    "id": 69469,
+    "skillKey": "clawhub-clawtip-invention-patent",
+    "name": "clawtip-invention-patent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawtip-invention-patent",
+    "url": "https://clawhub.ai/skills/clawtip-invention-patent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawtip-invention-patent-1b4612034d1073ff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "中国发明专利申请文件撰写助手：在用户完成支付（每次 2.00 元人民币）后，通过多轮中文对话，依据国知局常见结构引导用户完成说明书、权利要求书、摘要等草稿。 请全程使用中文与用户交互（含思考过程）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liliangwen-spec",
+      "userId": "s175aj61wvbnp76rj8wje0c45x84besz",
+      "displayName": "liliangwen-spec",
+      "image": "https://avatars.githubusercontent.com/u/252575134?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775491194414,
+      "changelog": "clawtip-invention-patent 1.0.0 — 中国发明专利申请文件撰写助手首次发布\n\n- 支持用户在支付 2 元后，通过多轮中文对话分步引导撰写专利说明书、权利要求书、摘要等草稿（含示例句式）。\n- 全程集成 clawtip 支付流程：必须先下单、成功支付、凭证校验通过后方可进入草稿撰写。\n- 输出结构完全对齐国知局专利文件常见要求，便于交代理机构或申请人后续润色递交。\n- 限制：支付未成功不得生成专利草稿；所有交互严格以中文进行。\n- 适用于个人和机构型专利自主撰写或辅助撰写场景。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7adf8f38adb9fcedbccae5931d72a15bc7804dc2a8a2f5f38cb702e38dc7f46a"
+}

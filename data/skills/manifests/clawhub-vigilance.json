@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37264,
+  "uuid": "skill-clawhub-vigilance",
+  "skillKey": "clawhub-vigilance",
+  "name": "Vigilance",
+  "summary": "Evaluate-before-Execute (EBE) guardrail for OpenClaw agents. Issues a mandatory GO / NO-GO decision before any high-stakes tool call. Enforces child-safety p...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vigilance",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sanjeet-toosi",
+      "features": [
+        "Evaluate-before-Execute (EBE) guardrail for OpenClaw agents",
+        "Issues a mandatory GO / NO-GO decision before any high-stakes tool call",
+        "Enforces child-safety p..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vigilance@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139010128?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vigilance",
+      "url": "https://clawhub.ai/skills/vigilance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vigilance",
+    "url": "https://clawhub.ai/skills/vigilance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vigilance-6077e63824e7f482.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vigilance@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-vigilance-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:14d79db10ac4d3b1586bb4b07e68dfee0493bc080b0dadf4439a8d877348df02",
+      "artifactSizeBytes": 2738
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T21:17:46.196Z"
+}

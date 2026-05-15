@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8609,
+  "uuid": "skill-clawhub-extract-pdf-compdf",
+  "skillKey": "clawhub-extract-pdf-compdf",
+  "name": "PDF Extract",
+  "summary": "Extract PDF extracts structured data from PDFs and images, including tables, OCR text, images, and stamps, built on ComPDF data extraction and AI document ex...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.extract_pdf_compdf",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ComPDF",
+      "features": [
+        "Extract PDF extracts structured data from PDFs and images, including tables, OCR text, images,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/extract-pdf-compdf@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/108785628?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "extract-pdf-compdf",
+      "url": "https://clawhub.ai/skills/extract-pdf-compdf"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "extract-pdf-compdf",
+    "url": "https://clawhub.ai/skills/extract-pdf-compdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/extract-pdf-compdf-aaaa4bd4ffbfd1a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/extract-pdf-compdf@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-extract-pdf-compdf-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:afd0343b9c1afecc8b769ae41080f4a7ee1ea5ded7fefc8ec95e93779d98357e",
+      "artifactSizeBytes": 2389
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T11:43:30.758Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fund-ai-assistant@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fund_ai_assistant",
+  "skill": {
+    "id": 30629,
+    "skillKey": "clawhub-fund-ai-assistant",
+    "name": "Fund Ai Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fund-ai-assistant",
+    "url": "https://clawhub.ai/skills/fund-ai-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fund-ai-assistant-c910b26eb025e5ee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fund portfolio tracker with AI analysis, multi-agent debate, technical indicators (VaR/Sortino/Calmar), macro monitoring, and rebalancing alerts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tempest-01",
+      "userId": "s17b1s82sp5yx5s2jyx4x8k4ws83vh7f",
+      "displayName": "tempest01",
+      "image": "https://avatars.githubusercontent.com/u/84513489?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 179,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775408380658,
+      "changelog": "Fix: replace requests stdlib to remove third-party dependency; add LLM_API_BASE security warning; add primary_credential to registry metadata; add explicit security notes for push endpoints and FUND_SCENE_DIR",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d56b3ea8f65734a95720912b4a24673e579c7254be469c7ac54867c7751e372d"
+}

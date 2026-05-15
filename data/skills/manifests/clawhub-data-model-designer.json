@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9034,
+  "uuid": "skill-clawhub-data-model-designer",
+  "skillKey": "clawhub-data-model-designer",
+  "name": "Data Model Designer",
+  "summary": "Design data models for construction projects. Create entity-relationship diagrams, define schemas, and generate database structures.",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_model_designer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "datadrivenconstruction",
+      "features": [
+        "Design data models for construction projects",
+        "Create entity-relationship diagrams, define schemas, and generate database structures."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/data-model-designer@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94158709?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "data-model-designer",
+      "url": "https://clawhub.ai/skills/data-model-designer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-model-designer",
+    "url": "https://clawhub.ai/skills/data-model-designer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-model-designer-ccd2d9b90c6ae58b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/data-model-designer@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-data-model-designer-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:29322cda442c11913dac1a60a2a1a637e168c0e479dfbb69a184965f1e31502d",
+      "artifactSizeBytes": 2189
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T16:49:33.087Z"
+}

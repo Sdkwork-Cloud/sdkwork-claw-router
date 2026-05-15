@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bytepluscdn@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bytepluscdn",
+  "skill": {
+    "id": 24678,
+    "skillKey": "clawhub-bytepluscdn",
+    "name": "BytePlusCDN"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bytepluscdn",
+    "url": "https://clawhub.ai/skills/bytepluscdn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bytepluscdn-ee6e31b3dc9fc254.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skill for BytePlus CDN domain and policy management, purge and prefetch, and log delivery. When you need to use BytePlus CDN acceleration services, you can r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitechenyingxi-maker",
+      "userId": "s17awk12gyqrny2nhf819gwjm5866nwn",
+      "displayName": "whitechenyingxi-maker",
+      "image": "https://avatars.githubusercontent.com/u/268568067?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 105,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1778072061447,
+      "changelog": "Version 1.1 of bytepluscdn introduces security best practices and improvements to credential handling.\n\n- Added recommendations for securely storing BytePlus API credentials and using least privilege.\n- Updated guidance to discourage committing `.env` files to version control.\n- Minor clarification to installation and authentication steps.\n- No changes to features, commands, or required environment variables.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cb8b08544ce9eca7cec3fa5a9d2a915fb0e0a23e5efae50102c3cea4ea75af1a"
+}

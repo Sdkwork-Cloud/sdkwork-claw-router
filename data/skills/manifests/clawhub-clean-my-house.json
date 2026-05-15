@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38356,
+  "uuid": "skill-clawhub-clean-my-house",
+  "skillKey": "clawhub-clean-my-house",
+  "name": "Clean My House",
+  "summary": "Helps plan, organize, and guide household cleaning tasks room by room, including quick tidy-ups, deep cleaning, and recurring routines.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clean_my_house",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "know-hub",
+      "features": [
+        "Helps plan, organize, and guide household cleaning tasks room by room, including quick tidy-ups."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clean-my-house@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/214209974?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clean-my-house",
+      "url": "https://clawhub.ai/skills/clean-my-house"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clean-my-house",
+    "url": "https://clawhub.ai/skills/clean-my-house",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clean-my-house-72c07d96a62b2a63.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clean-my-house@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clean-my-house-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dbf84a4985805288f3038c47d0a04b4412fb60094c025ceb68190d8c799b2be7",
+      "artifactSizeBytes": 2327
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T10:56:40.051Z"
+}

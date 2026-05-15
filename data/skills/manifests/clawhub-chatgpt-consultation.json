@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64475,
+  "uuid": "skill-clawhub-chatgpt-consultation",
+  "skillKey": "clawhub-chatgpt-consultation",
+  "name": "Chatgpt Consultation",
+  "summary": "自动识别复杂或专业问题，调用ChatGPT提供最新、精准的技术咨询和解答，支持手动或自动触发。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chatgpt_consultation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mahaoxiong",
+      "features": [
+        "自动识别复杂或专业问题，调用ChatGPT提供最新、精准的技术咨询和解答，支持手动或自动触发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chatgpt-consultation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/133113522?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chatgpt-consultation",
+      "url": "https://clawhub.ai/skills/chatgpt-consultation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chatgpt-consultation",
+    "url": "https://clawhub.ai/skills/chatgpt-consultation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chatgpt-consultation-4cedc741dc80164b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chatgpt-consultation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chatgpt-consultation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fb02eb49561a8366e753d02d7248248976e4e9c11e29ad22ff8dd3ae52e7cc8d",
+      "artifactSizeBytes": 2509
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T20:02:10.857Z"
+}

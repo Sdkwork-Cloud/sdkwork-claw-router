@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36129,
+  "uuid": "skill-clawhub-health-records-ingest",
+  "skillKey": "clawhub-health-records-ingest",
+  "name": "Health Recorts",
+  "summary": "Interview a user and build a personalized health-record system around their goals, reports, and tracking needs. Use when someone wants to organize their heal...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.health_records_ingest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hsongra11",
+      "features": [
+        "Interview a user and build a personalized health-record system around their goals, reports, and.",
+        "Use when someone wants to organize their heal..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/health-records-ingest@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/98663913?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "health-records-ingest",
+      "url": "https://clawhub.ai/skills/health-records-ingest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "health-records-ingest",
+    "url": "https://clawhub.ai/skills/health-records-ingest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/health-records-ingest-bc0d5bed3a5c6270.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/health-records-ingest@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-health-records-ingest-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:369ec709d80ad4fac262ff23a6a705a93fd48b903a2da4c0c95ed78c27ac52fb",
+      "artifactSizeBytes": 2478
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T18:09:34.514Z"
+}

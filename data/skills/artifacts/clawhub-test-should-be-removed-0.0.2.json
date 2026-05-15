@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/test-should-be-removed@0.0.2",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_should_be_removed",
+  "skill": {
+    "id": 55085,
+    "skillKey": "clawhub-test-should-be-removed",
+    "name": "test-should-be-removed"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-should-be-removed",
+    "url": "https://clawhub.ai/skills/test-should-be-removed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-should-be-removed-33cf42238d8ac525.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI image generation, editing, and background removal API via Bria.ai — authenticates via OAuth device flow and caches credentials in ~/.bria/credentials, the..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "galbria",
+      "userId": "s176yy33gynx3j8dr2cp0nabad83gvey",
+      "displayName": "Gal Davidi",
+      "image": "https://avatars.githubusercontent.com/u/158810732?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.2",
+      "createdAt": 1774524308573,
+      "changelog": "- No functional or documentation changes in this version.\n- No file changes detected.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6b9c7d37f6eb501e0dc883bbacc57f43947c4a1127af35e5f146bd0df41e2067"
+}

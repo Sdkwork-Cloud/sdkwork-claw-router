@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skincare-manager@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skincare_manager",
+  "skill": {
+    "id": 59287,
+    "skillKey": "clawhub-skincare-manager",
+    "name": "Skincare Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skincare-manager",
+    "url": "https://clawhub.ai/skills/skincare-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skincare-manager-71c8075a0a74302b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "护肤管家 - 护肤 routine 管理 + 成分查询 + 产品追踪"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linzmin",
+      "userId": "s17eepdr8qnckgm3n0pc6619md83mm15",
+      "displayName": "linzmin",
+      "image": "https://avatars.githubusercontent.com/u/14884257?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 215,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1775699084537,
+      "changelog": "v0.2.0: 完整产品管理（添加/列表/到期检查）+ 分级提醒（已过期/7 天/30 天）+ 成分库扩充至 8 个常见成分（烟酰胺/视黄醇/VC/水杨酸等）+ 支持模糊查询 + 用户反馈展示 + 体验优化",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:43872adb9655f6fcb2592de57dfb70d5064cb4b11b7394a88ac5396d9de444fd"
+}

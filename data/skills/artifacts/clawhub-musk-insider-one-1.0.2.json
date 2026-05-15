@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/musk-insider-one@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.musk_insider_one",
+  "skill": {
+    "id": 71953,
+    "skillKey": "clawhub-musk-insider-one",
+    "name": "Elon马斯克情报内参"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "musk-insider-one",
+    "url": "https://clawhub.ai/skills/musk-insider-one",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/musk-insider-one-0015f59787a443a9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供马斯克资讯简报预览和支付链接的演示HTTP服务，无外部数据爬取或模型推理，仅用于功能演示。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xqw1377-prog",
+      "userId": "publishers:xqw1377-prog",
+      "displayName": "xqw1377-prog",
+      "image": "https://avatars.githubusercontent.com/u/238859824?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 365,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772760753370,
+      "changelog": "- No changes detected in this version.  \n- All functionality and documentation remain the same as the previous release.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6a01fb69c0402cc58dae4e2abd0a5643a20971adb7111bffcecb33e73d1f8712"
+}

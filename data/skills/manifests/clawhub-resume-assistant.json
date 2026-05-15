@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8381,
+  "uuid": "skill-clawhub-resume-assistant",
+  "skillKey": "clawhub-resume-assistant",
+  "name": "Resume Assistant",
+  "summary": "Assist job seekers by polishing, customizing, scoring, and exporting resumes with detailed checklist reviews and multi-format support.",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resume_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "enoyao",
+      "features": [
+        "Assist job seekers by polishing, customizing, scoring, and exporting resumes with detailed chec."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/resume-assistant@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17243165?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "resume-assistant",
+      "url": "https://clawhub.ai/skills/resume-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resume-assistant",
+    "url": "https://clawhub.ai/skills/resume-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resume-assistant-d5a88ed7dbd59a6f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/resume-assistant@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-resume-assistant-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8552fb85308f42cbb7d0019f7db0948f5697a278bc8e4ecc1461a1cc2434b469",
+      "artifactSizeBytes": 2071
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T04:18:09.571Z"
+}

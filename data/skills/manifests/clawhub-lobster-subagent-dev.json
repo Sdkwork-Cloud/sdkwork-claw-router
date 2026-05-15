@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39640,
+  "uuid": "skill-clawhub-lobster-subagent-dev",
+  "skillKey": "clawhub-lobster-subagent-dev",
+  "name": "Lobster Subagent Dev",
+  "summary": "Subagent-driven development. Dispatch fresh subagent per task with 2-stage review (spec + quality). Cost-aware model routing. From Superpowers by Jesse Vincent.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobster_subagent_dev",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangxiaofei860208-source",
+      "features": [
+        "Subagent-driven development",
+        "Dispatch fresh subagent per task with 2-stage review (spec + quality)",
+        "Cost-aware model routing",
+        "From Superpowers by Jesse Vincent."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lobster-subagent-dev@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260913269?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lobster-subagent-dev",
+      "url": "https://clawhub.ai/skills/lobster-subagent-dev"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobster-subagent-dev",
+    "url": "https://clawhub.ai/skills/lobster-subagent-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobster-subagent-dev-e06d5eb3980c566a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lobster-subagent-dev@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lobster-subagent-dev-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:86f12cc08db3df63d1fa317e8ca6d5ee6fd92eba7bd4bc6ec7bb2bb05aac4774",
+      "artifactSizeBytes": 2520
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T08:33:06.385Z"
+}

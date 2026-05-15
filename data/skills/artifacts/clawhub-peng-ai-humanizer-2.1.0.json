@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/peng-ai-humanizer@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.peng_ai_humanizer",
+  "skill": {
+    "id": 29910,
+    "skillKey": "clawhub-peng-ai-humanizer",
+    "name": "ai-humanizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "peng-ai-humanizer",
+    "url": "https://clawhub.ai/skills/peng-ai-humanizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/peng-ai-humanizer-a2df4daf25f1e7c8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Humanize AI-generated text by detecting and removing patterns typical of LLM output. Rewrites text to sound natural, specific, and human. Uses 24 pattern det..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "penglovemeng",
+      "userId": "publishers:penglovemeng",
+      "displayName": "penglovemeng",
+      "image": "https://avatars.githubusercontent.com/u/10802924?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 293,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1773713331326,
+      "changelog": "Update",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7c509328797cfdb9f3169bd9cd06b71486a090d273cf2d114929c4a457f68d7d"
+}

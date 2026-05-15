@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64366,
+  "uuid": "skill-clawhub-token-analyzer",
+  "skillKey": "clawhub-token-analyzer",
+  "name": "Token Analyzer",
+  "summary": "基于官方 GMGN API 的代币分析工具。通过合约地址查询代币在 SOL/BSC/Base 链上的准确市场数据、安全检测、KOL 分析、开发者分析和 AI 智能分析（叙事/筹码/老鼠仓/机器人）。支持自动识别链。",
+  "version": "2.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.token_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "0xshahai",
+      "features": [
+        "基于官方 GMGN API 的代币分析工具。通过合约地址查询代币在 SOL/BSC/Base 链上的准确市场数据、安全检测、KOL 分析、开发者分析和 AI 智能分析（叙事/筹码/老鼠仓/机."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/token-analyzer@2.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/79915694?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "token-analyzer",
+      "url": "https://clawhub.ai/skills/token-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "token-analyzer",
+    "url": "https://clawhub.ai/skills/token-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/token-analyzer-8cc73280d79dcc26.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/token-analyzer@2.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-token-analyzer-2.5.0.json",
+      "version": "2.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:17cf91f3c00c66d39e217bb0a768f7c952a73c36e7bc6128c0dca2b094c3a928",
+      "artifactSizeBytes": 2394
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T03:37:34.084Z"
+}

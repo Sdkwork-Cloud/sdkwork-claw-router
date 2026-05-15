@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawtech-setup@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawtech_setup",
+  "skill": {
+    "id": 38140,
+    "skillKey": "clawhub-clawtech-setup",
+    "name": "Setup claw.tech"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawtech-setup",
+    "url": "https://clawhub.ai/skills/clawtech-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawtech-setup-d609f9d63a334e5c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when setting up a new claw agent with tapes.dev telemetry and clawtel leaderboard reporting. Installs tapes, clawtel, and the openclaw-in-a-box orchestra..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bdougie",
+      "userId": "s17emhhbtkadb54fm0w5ctkazs83v7gs",
+      "displayName": "Brian Douglas",
+      "image": "https://avatars.githubusercontent.com/u/5713670?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774880695705,
+      "changelog": "- Added installation and setup instructions for clawtel, a utility that reports tapes token counts to the claw.tech leaderboard.\n- Updated workflow to include registering your claw at claw.tech/setup and configuring required environment variables.\n- Clarified that clawtel only reads minimal columns from the tapes database and enhances security instructions.\n- Improved upgrade steps for both openclaw-in-a-box and clawtel.\n- Updated the summary and hand-off process after setup to reflect the inclusion of clawtel.\n- Adjusted tapes database location documentation for compatibility with openclaw-in-a-box and standalone setups.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c10cf2c2852ea387aeaae8def4947a390469375e70ce139bb931660052f6a018"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/notions@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notions",
+  "skill": {
+    "id": 26344,
+    "skillKey": "clawhub-notions",
+    "name": "Pub Notion"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notions",
+    "url": "https://clawhub.ai/skills/notions",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notions-16136fedfd4de1dd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Notion API for creating and managing pages, databases, and blocks. And also 50+ models for image generation, video generation, text-to-speech, speech-to-text..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "modestyrichards",
+      "userId": "s17069c392wb17n1nvrdv0kq1h84qjrk",
+      "displayName": "ModestyRichards",
+      "image": "https://avatars.githubusercontent.com/u/261238899?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 369,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773295724841,
+      "changelog": "notion v1.0.0\n\n- Initial release with Notion API integration for creating and managing pages, databases, and blocks.\n- Includes unified API with access to 50+ models across providers (Bedrock, OpenAI, Vertex, Replicate, ElevenLabs, Minimax, and more).\n- Supports text, image, video, audio (TTS/STT), music generation, web search, document parsing, email, and SMS.\n- Features smart routing to automatically select models based on cost or quality.\n- Comprehensive bash usage examples and parameter documentation included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b7af20b90d51f4de22c3fa076a42acd2f66e387a68c9b61e32b5dc8ccd449842"
+}

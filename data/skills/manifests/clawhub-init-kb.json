@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27397,
+  "uuid": "skill-clawhub-init-kb",
+  "skillKey": "clawhub-init-kb",
+  "name": "Init Kb",
+  "summary": "Initialize or update a knowledge base for a project, business, or client. Triggers on \"init kb\", \"build kb\", \"create kb for X\", \"set up kb\", \"new kb\" (init),...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.init_kb",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kevin Jeppesen @ TheOperatorVault.io",
+      "features": [
+        "Initialize or update a knowledge base for a project, business, or client",
+        "Triggers on \"init kb\", \"build kb\", \"create kb for X\", \"set up kb\", \"new kb\" (init),..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/init-kb@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/205432013?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "init-kb",
+      "url": "https://clawhub.ai/skills/init-kb"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "init-kb",
+    "url": "https://clawhub.ai/skills/init-kb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/init-kb-6fb2f1abc4966139.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/init-kb@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-init-kb-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc4d5e68804eaabea51edc96db7fa29fd941f3790aee11a56019199f12349b27",
+      "artifactSizeBytes": 2094
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T18:53:58.197Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15987,
+  "uuid": "skill-clawhub-openclaw-accounting",
+  "skillKey": "clawhub-openclaw-accounting",
+  "name": "Accounting",
+  "summary": "Local AI assistant for recording income/expenses, querying transactions, generating reports, and analyzing stats with secure, offline data storage.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_accounting",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chuhemiao",
+      "features": [
+        "Local AI assistant for recording income/expenses, querying transactions, generating reports, an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-accounting@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11025090?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-accounting",
+      "url": "https://clawhub.ai/skills/openclaw-accounting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-accounting",
+    "url": "https://clawhub.ai/skills/openclaw-accounting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-accounting-3acd5ffb8cfdb16d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-accounting@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-accounting-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fcca7687bdcb1c42d0846d716d8ab6a2624710fd2100acff4d5b3bc9a4b077af",
+      "artifactSizeBytes": 2415
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T08:56:04.871Z"
+}

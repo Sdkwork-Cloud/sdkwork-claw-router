@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73124,
+  "uuid": "skill-clawhub-reading-assistant-skill",
+  "skillKey": "clawhub-reading-assistant-skill",
+  "name": "对话读书助理",
+  "summary": "新一代读书辅助工具，支持智能标签管理、全文搜索、批量导入导出和阅读统计；当用户输入\"读书\"开头的内容记录摘录、说\"读完了\"结束阅读、搜索笔记内容或导出阅读记录时使用",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reading_assistant_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ludiansheng",
+      "features": [
+        "新一代读书辅助工具，支持智能标签管理、全文搜索、批量导入导出和阅读统计；当用户输入\"读书\"开头的内容记录摘录、说\"读完了\"结束阅读、搜索笔记内容或导出阅读记录时使用"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reading-assistant-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269368209?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reading-assistant-skill",
+      "url": "https://clawhub.ai/skills/reading-assistant-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reading-assistant-skill",
+    "url": "https://clawhub.ai/skills/reading-assistant-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reading-assistant-skill-a09dae8cca2f5f36.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reading-assistant-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-reading-assistant-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e9f1ddef9ceb819280eacffda67f8567b4dd5af91ac09bedd6c4e3e670320562",
+      "artifactSizeBytes": 2882
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T09:46:54.240Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65315,
+  "uuid": "skill-clawhub-clawbrain-pro-doctor",
+  "skillKey": "clawhub-clawbrain-pro-doctor",
+  "name": "ClawBrain Doctor",
+  "summary": "诊断你的 OpenClaw 配置和运行状态，基于 v1.2 的输出验证、模型健康监控、知识图谱检查、记忆来源标注、降级通知和长对话截断诊断",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawbrain_pro_doctor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "michaelfeng",
+      "features": [
+        "诊断你的 OpenClaw 配置和运行状态，基于 v1.2 的输出验证、模型健康监控、知识图谱检查、记忆来源标注、降级通知和长对话截断诊断"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawbrain-pro-doctor@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2228296?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawbrain-pro-doctor",
+      "url": "https://clawhub.ai/skills/clawbrain-pro-doctor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawbrain-pro-doctor",
+    "url": "https://clawhub.ai/skills/clawbrain-pro-doctor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawbrain-pro-doctor-0a74d6231939954f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawbrain-pro-doctor@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawbrain-pro-doctor-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d8bf2cfcac4d3054781d738af89c481a064f12080a0366697e3da71e014faaac",
+      "artifactSizeBytes": 1980
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T04:56:33.208Z"
+}

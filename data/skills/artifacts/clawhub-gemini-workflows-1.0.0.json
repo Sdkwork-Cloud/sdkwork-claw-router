@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gemini-workflows@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gemini_workflows",
+  "skill": {
+    "id": 45965,
+    "skillKey": "clawhub-gemini-workflows",
+    "name": "Gemini Workflows"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gemini-workflows",
+    "url": "https://clawhub.ai/skills/gemini-workflows",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gemini-workflows-84db034a78f5b566.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use Gemini CLI for deep thinking, planning, workflow design, and non-code desktop task orchestration."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mcdoolz",
+      "userId": "s179af3c9axca028xpeyr9wghn83f99f",
+      "displayName": "Dooley",
+      "image": "https://avatars.githubusercontent.com/u/11405101?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776412273115,
+      "changelog": "Initial release of gemini-workflows skill.\n\n- Enables deep thinking, planning, and strategy workflows via Gemini CLI.\n- Adds commands: `gemini` for planning and `flash` for rapid iteration.\n- Defines prompt structure for objectives, context, deliverables, and decision criteria.\n- Includes routing rules for seamless handoff between planning and code implementation tasks.\n- Details step-by-step handoff process to code execution using the daedalus-code skill.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:67920e1c6663b4e9b18d9e3c0bba482adf527f468f4e794f601c08ebbe9a2df6"
+}

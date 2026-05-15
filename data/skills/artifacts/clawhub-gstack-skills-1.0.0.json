@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gstack-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gstack_skills",
+  "skill": {
+    "id": 35583,
+    "skillKey": "clawhub-gstack-skills",
+    "name": "Gstack Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gstack-skills",
+    "url": "https://clawhub.ai/skills/gstack-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gstack-skills-9b9fc03fb9b6fde4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete development workflow suite from Y Combinator CEO Garry Tan's gstack. Use /gstack or any gstack command (/office-hours, /review, /ship, etc.) to acce..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsg12te-del",
+      "userId": "s17fbq86kdc2s9j5dd592hwces83y5hs",
+      "displayName": "dsg12te-del",
+      "image": "https://avatars.githubusercontent.com/u/251736425?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774945281972,
+      "changelog": "gstack-skills 2.0.0 is a complete development workflow suite based on Garry Tan's gstack, adapted for OpenClaw/WorkBuddy.\n\n- Introduces a single entrypoint and router for 15 specialized commands covering ideation, code review, QA, shipping, and more.\n- Offers detailed usage guidance for each workflow command with recommended development lifecycle steps.\n- Provides clear help, onboarding, and routing for both new and experienced users.\n- Enhances productivity by connecting each command to a dedicated specialized skill for seamless task execution.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:666502b413a5f19e877fd613871853fef4287e053ac8e337b36f149704555fca"
+}

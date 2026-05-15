@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hpm-solver@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hpm_solver",
+  "skill": {
+    "id": 70035,
+    "skillKey": "clawhub-hpm-solver",
+    "name": "HPM Solver"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hpm-solver",
+    "url": "https://clawhub.ai/skills/hpm-solver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hpm-solver-f7f4001d256d9b20.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "哈利波特魔法觉醒(HPM)交易求解器 - 基于多元一次方程组的购买组合穷举求解。支持双系数模型(p/q)、等价物品合并、智能过滤、等价替换还原。触发词：哈皮马求解、HPM求解、魔法觉醒计算、金币求解、宝石求解、购买组合、残值计算、hpm工具、hpm计算器。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xilowei920",
+      "userId": "s17ccn4vn6mjnp0tm4kbxakjrd848cbt",
+      "displayName": "xilowei920",
+      "image": "https://avatars.githubusercontent.com/u/48010821?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775400189721,
+      "changelog": "哈利波特魔法觉醒交易求解器，支持双系数模型、等价物品合并、智能过滤，包含完整微信小程序代码",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:83b68ecf1c74a0d0f7095639c1f05a7ce3c201f3ac2a4e3587f3549b4f5eff92"
+}

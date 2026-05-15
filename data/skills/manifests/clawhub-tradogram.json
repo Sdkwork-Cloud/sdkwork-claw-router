@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36201,
+  "uuid": "skill-clawhub-tradogram",
+  "skillKey": "clawhub-tradogram",
+  "name": "Tradogram",
+  "summary": "Tradogram integration. Manage data, records, and automate workflows. Use when the user wants to interact with Tradogram data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tradogram",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Tradogram integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Tradogram data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tradogram@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tradogram",
+      "url": "https://clawhub.ai/skills/tradogram"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tradogram",
+    "url": "https://clawhub.ai/skills/tradogram",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tradogram-84821ee140e89451.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tradogram@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-tradogram-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:59e387de35c3b43393a0f72d0e5ddf3574ecf8cb3d59c266fa40c048fbd5ae11",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:54:48.103Z"
+}

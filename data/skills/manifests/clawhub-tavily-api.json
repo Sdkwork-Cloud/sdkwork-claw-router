@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21697,
+  "uuid": "skill-clawhub-tavily-api",
+  "skillKey": "clawhub-tavily-api",
+  "name": "Tavily Search",
+  "summary": "Tavily API integration with managed API key authentication. Perform AI-powered web search, extract content from URLs, crawl websites, map site structure, and...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tavily_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byungkyu",
+      "features": [
+        "Tavily API integration with managed API key authentication",
+        "Perform AI-powered web search, extract content from URLs, crawl websites, map site structure, a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tavily-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16563684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tavily-api",
+      "url": "https://clawhub.ai/skills/tavily-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tavily-api",
+    "url": "https://clawhub.ai/skills/tavily-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tavily-api-c3f223d6a56d35e0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tavily-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tavily-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b12ec190aa099f76fa023d884cbcfa0e19b0701d9974c813f13cc8dc262c9602",
+      "artifactSizeBytes": 2471
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T21:40:17.783Z"
+}

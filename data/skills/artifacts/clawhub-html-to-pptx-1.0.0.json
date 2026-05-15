@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/html-to-pptx@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.html_to_pptx",
+  "skill": {
+    "id": 24463,
+    "skillKey": "clawhub-html-to-pptx",
+    "name": "html-to-pptx"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "html-to-pptx",
+    "url": "https://clawhub.ai/skills/html-to-pptx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/html-to-pptx-de2fbfa3112a44dc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert multi-slide HTML presentations into styled PPTX files for easy sharing and distribution."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "manshan-lin",
+      "userId": "s172dr0x9c83kb7cxsvavq02s183vacv",
+      "displayName": "Manshan-Lin",
+      "image": "https://avatars.githubusercontent.com/u/122161798?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 301,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774752475101,
+      "changelog": "I noticed that many LLMs are great at building HTML presentation slides, so I created this skill to convert beautiful HTML into PPTX for easy sharing and wide distribution. Enjoy!",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9bfac1defcdcb5ff01ad1a5eb011e835a39ffe1f5c5535e824dd790139c39856"
+}

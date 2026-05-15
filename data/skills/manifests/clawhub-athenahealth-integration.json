@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38866,
+  "uuid": "skill-clawhub-athenahealth-integration",
+  "skillKey": "clawhub-athenahealth-integration",
+  "name": "Athenahealth",
+  "summary": "Athenahealth integration. Manage Patients, Appointments, Providers, Practices, Departments, Claims. Use when the user wants to interact with Athenahealth data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.athenahealth_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Athenahealth integration",
+        "Manage Patients, Appointments, Providers, Practices, Departments, Claims",
+        "Use when the user wants to interact with Athenahealth data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/athenahealth-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "athenahealth-integration",
+      "url": "https://clawhub.ai/skills/athenahealth-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "athenahealth-integration",
+    "url": "https://clawhub.ai/skills/athenahealth-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/athenahealth-integration-dae51b4a829bd06a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/athenahealth-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-athenahealth-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:def69ed0767873de91f8192d2fdd3d5de20db130d96888581e4b158976032ef1",
+      "artifactSizeBytes": 1974
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:12:34.116Z"
+}

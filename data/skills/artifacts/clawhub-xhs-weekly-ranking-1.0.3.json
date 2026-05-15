@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xhs-weekly-ranking@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhs_weekly_ranking",
+  "skill": {
+    "id": 70899,
+    "skillKey": "clawhub-xhs-weekly-ranking",
+    "name": "xhs-weekly-ranking（小红书七日热榜）"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhs-weekly-ranking",
+    "url": "https://clawhub.ai/skills/xhs-weekly-ranking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhs-weekly-ranking-a0198d540f7fd218.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "获取小红书平台爆款内容榜单，支持按分类查询热门笔记；当用户需要查询小红书热门内容、分析爆款笔记、了解各领域趋势或获取创作灵感时使用"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "if530770",
+      "userId": "s17dj64hf08x3mak1j99vesphd84gs9c",
+      "displayName": "if530770",
+      "image": "https://avatars.githubusercontent.com/u/46310539?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1778239842852,
+      "changelog": "- 文档“简介”部分补充了热榜功能介绍，突出趋势分析、内容特征识别及创作建议等新亮点\n- 优化“简介”描述，更突出每日订阅、热门内容深度洞察、形式对比等能力\n- 其他内容、功能与用法保持一致，无新增核心功能或接口变更",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3d7b4289301cd61f9839a97aa17c89ff5015f8413ee49f2eb2c5a8c3d75911bd"
+}

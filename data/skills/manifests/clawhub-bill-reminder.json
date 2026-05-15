@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63489,
+  "uuid": "skill-clawhub-bill-reminder",
+  "skillKey": "clawhub-bill-reminder",
+  "name": "Bill Reminder",
+  "summary": "账单提醒技能 - 自动监控账单到期并发送微信提醒",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bill_reminder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linzmin",
+      "features": [
+        "自动监控账单到期并发送微信提醒"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bill-reminder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14884257?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bill-reminder",
+      "url": "https://clawhub.ai/skills/bill-reminder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bill-reminder",
+    "url": "https://clawhub.ai/skills/bill-reminder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bill-reminder-5d71218f87e1a38d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bill-reminder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bill-reminder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a731a8cb409e698c6acfd5f73c391b1c4b45f5837d467737579a0b249f9203b3",
+      "artifactSizeBytes": 2112
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T05:58:38.435Z"
+}

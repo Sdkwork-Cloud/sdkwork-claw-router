@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/viral-video-analysis@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.viral_video_analysis",
+  "skill": {
+    "id": 13438,
+    "skillKey": "clawhub-viral-video-analysis",
+    "name": "Viral Video Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "viral-video-analysis",
+    "url": "https://clawhub.ai/skills/viral-video-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/viral-video-analysis-637d9e53d14f46b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze video ad performance and provide actionable feedback to creators. Use when asked to analyze why videos underperform, give creator coaching feedback,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shawnshenopeninterx",
+      "userId": "s17f692n7fasjhhr39vctv6kmd83mwkn",
+      "displayName": "shawnshenopeninterx",
+      "image": "https://avatars.githubusercontent.com/u/174261186?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1413,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771873639454,
+      "changelog": "Fixed manifest: declared MEMORIES_API_KEY requirement, documented external API calls and Python dependencies, added privacy note",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2a9216ef7e23dd16ce5e12c69c1cfaf99d07f223f68beb19ca960fcc892c15e2"
+}

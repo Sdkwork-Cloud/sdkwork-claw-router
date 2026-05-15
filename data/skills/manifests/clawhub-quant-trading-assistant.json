@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67593,
+  "uuid": "skill-clawhub-quant-trading-assistant",
+  "skillKey": "clawhub-quant-trading-assistant",
+  "name": "Quant Trading Assistant",
+  "summary": "量化交易助手 - A股技术分析+量化选股。 用于：分析A股实时行情、计算技术指标（均线/KDJ/MACD/布林带）、 量化选股策略、生成交易信号、龙虎榜/情绪周期判断。 触发场景：问股票、分析行情、选股推荐、风险提示、技术指标计算。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quant_trading_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dxie48892-jpg",
+      "features": [
+        "A股技术分析+量化选股。 用于：分析A股实时行情、计算技术指标（均线/KDJ/MACD/布林带）、 量化选股策略、生成交易信号、龙虎榜/情绪周期判断。 触发场景：问股票、分析行情、选股推荐、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quant-trading-assistant@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264585984?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quant-trading-assistant",
+      "url": "https://clawhub.ai/skills/quant-trading-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quant-trading-assistant",
+    "url": "https://clawhub.ai/skills/quant-trading-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quant-trading-assistant-07ceee1acc504642.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quant-trading-assistant@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-quant-trading-assistant-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e75568d2a8e52a3bbe532ce03257b1cec494a6dc1c728dbd5e80f5ce4f30a0e9",
+      "artifactSizeBytes": 2168
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T02:10:43.245Z"
+}

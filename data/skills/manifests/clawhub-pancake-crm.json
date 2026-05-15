@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39151,
+  "uuid": "skill-clawhub-pancake-crm",
+  "skillKey": "clawhub-pancake-crm",
+  "name": "Pancake Crm",
+  "summary": "Pancake CRM integration. Manage Recordses. Use when the user wants to interact with Pancake CRM data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pancake_crm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Pancake CRM integration",
+        "Manage Recordses",
+        "Use when the user wants to interact with Pancake CRM data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pancake-crm@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pancake-crm",
+      "url": "https://clawhub.ai/skills/pancake-crm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pancake-crm",
+    "url": "https://clawhub.ai/skills/pancake-crm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pancake-crm-7b42af82f534566c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pancake-crm@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-pancake-crm-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5f353660a557cfdd1d9c49f514f1b29eabdf453ba5f8ace96c4bdb85b7fbc966",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:21:24.838Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-cv-maker-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_cv_maker_free",
+  "skill": {
+    "id": 41222,
+    "skillKey": "clawhub-video-cv-maker-free",
+    "name": "Video Cv Maker Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-cv-maker-free",
+    "url": "https://clawhub.ai/skills/video-cv-maker-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-cv-maker-free-57c8efbd3826bf6c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a headshot photo and resume text into 1080p professional video CV just by typing what you need. Whether it's creating a video resume to send to employer..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776768774218,
+      "changelog": "- Initial release of Video CV Maker Free, enabling users to create and export professional 1080p video resumes from photos and resume text.\n- Supports rapid creation: upload your content, describe the desired video, and receive a finished MP4 within minutes.\n- Cloud-based rendering pipeline handles video composition, background music, aspect ratios, and text overlays automatically.\n- No timeline editing or complex export settings required; simply specify your requirements in plain language.\n- Supports common file formats (JPG, PNG, PDF, DOCX) with a 200MB upload limit.\n- Includes a free credit system and anonymous access option for new users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2ffc41bbb27a0af96aa1dc7a496539845c47104bedbd64561401ebcdeaaa9e90"
+}

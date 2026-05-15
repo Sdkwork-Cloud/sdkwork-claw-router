@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/partner-enable-kit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.partner_enable_kit",
+  "skill": {
+    "id": 59106,
+    "skillKey": "clawhub-partner-enable-kit",
+    "name": "Partner Enable Kit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "partner-enable-kit",
+    "url": "https://clawhub.ai/skills/partner-enable-kit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/partner-enable-kit-8abb699edcefb885.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "为渠道或合作伙伴生成 enablement 包，按伙伴类型拆分版本与 FAQ。；use for partner, enablement, channel workflows；do not use for 公开内部敏感政策, 替代正式合作协议."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "52yuanchangxing",
+      "userId": "s178sqjkywrs4vbnfcrr7wx7f583gef5",
+      "displayName": "vx：17605205782",
+      "image": "https://avatars.githubusercontent.com/u/39086567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 217,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773887147173,
+      "changelog": "Initial release of partner-enable-kit skill.\n\n- Generates enablement kits for channels or partners, splitting versions and FAQs by partner type.\n- Focuses on producing partner profiles, essential materials, FAQs, blockers, version differences, and update rhythms.\n- Explicitly states where user info is missing and provides review drafts before executable checklists.\n- Defines clear boundaries: does not expose internal sensitive policies or replace formal partnership agreements.\n- Supports output from templates and scripts, with safe default behaviors.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:540e07afa935d5ac9f8dfa564152a7965f7edd2a0530c90268d7ce9e2e57382a"
+}

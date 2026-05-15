@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/acedatacloud-hailuo-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acedatacloud_hailuo_video",
+  "skill": {
+    "id": 37891,
+    "skillKey": "clawhub-acedatacloud-hailuo-video",
+    "name": "Hailuo Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acedatacloud-hailuo-video",
+    "url": "https://clawhub.ai/skills/acedatacloud-hailuo-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acedatacloud-hailuo-video-ef228a012f2ff189.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate AI videos with Hailuo (MiniMax) via AceDataCloud API. Use when creating videos from text descriptions or animating images into video. Supports text-..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "germey",
+      "userId": "publishers:germey",
+      "displayName": "Germey",
+      "image": "https://avatars.githubusercontent.com/u/8678661?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774154341186,
+      "changelog": "Initial release of Hailuo AI Video generation via AceDataCloud API.\n\n- Generate AI videos from text or animate a still image into a video\n- Supports three models: text-to-video, image-to-video, and image-to-video with director mode for precise control\n- Requires ACEDATACLOUD_API_TOKEN for authentication\n- Simple API: specify action, prompt, model, and (for i2v) source image URL\n- Added guidance on supported parameters, workflows, and polling for video generation status",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3f09763ca820114124cde8fc475dc7233b6d373c57b79bbef88aeff759d01fa2"
+}

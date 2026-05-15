@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24650,
+  "uuid": "skill-clawhub-gws-cloudidentity",
+  "skillKey": "clawhub-gws-cloudidentity",
+  "name": "Gws Cloudidentity",
+  "summary": "Google Cloud Identity: Manage identity groups and memberships.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gws_cloudidentity",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Google Cloud Identity: Manage identity groups and memberships."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gws-cloudidentity@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gws-cloudidentity",
+      "url": "https://clawhub.ai/skills/gws-cloudidentity"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gws-cloudidentity",
+    "url": "https://clawhub.ai/skills/gws-cloudidentity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gws-cloudidentity-b17e28ada491ee8f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gws-cloudidentity@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gws-cloudidentity-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f35b83dd10e43b148f5546204769184cbdc3bb65217ac07c11869e008230e571",
+      "artifactSizeBytes": 2260
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T23:04:49.523Z"
+}

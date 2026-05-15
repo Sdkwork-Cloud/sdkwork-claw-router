@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8847,
+  "uuid": "skill-clawhub-daily-report",
+  "skillKey": "clawhub-daily-report",
+  "name": "Daily Report",
+  "summary": "Generate daily, weekly, and alert reports tracking leads, outreach, cost, priorities, and issues, saving structured summaries for progress monitoring.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_report",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "visualdeptcreative",
+      "features": [
+        "Generate daily, weekly, and alert reports tracking leads, outreach, cost, priorities, and issue."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-report@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257858472?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-report",
+      "url": "https://clawhub.ai/skills/daily-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-report",
+    "url": "https://clawhub.ai/skills/daily-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-report-e91bf0bd726d98dc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-report@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-report-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8f5681b7e89eb684c3faaae1f6283de60dd0deb9f63c6cff17df0d125ec38e10",
+      "artifactSizeBytes": 2298
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T11:45:15.487Z"
+}

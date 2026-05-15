@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/spaced-repetition-teaching@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spaced_repetition_teaching",
+  "skill": {
+    "id": 27602,
+    "skillKey": "clawhub-spaced-repetition-teaching",
+    "name": "Spaced Repetition Teaching"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spaced-repetition-teaching",
+    "url": "https://clawhub.ai/skills/spaced-repetition-teaching",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spaced-repetition-teaching-3f284dc3ae7fee8d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adaptive spaced repetition engine using the FSRS-6 algorithm (Free Spaced Repetition Scheduler, Ye et al. 2024). Manages flashcard reviews with scientificall..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tylerbittner",
+      "userId": "s174wwbe334k4bfpqaj8pvyz8h83pzyf",
+      "displayName": "tylerbittner",
+      "image": "https://avatars.githubusercontent.com/u/22528533?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 345,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773465217150,
+      "changelog": "Initial release: FSRS-6 adaptive flashcard review system",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c746ddab3d5b8940c329d42cb269b5a2cab2774f3f844fb28a711cdba192c5b2"
+}

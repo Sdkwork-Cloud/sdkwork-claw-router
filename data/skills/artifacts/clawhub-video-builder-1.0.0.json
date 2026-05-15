@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_builder",
+  "skill": {
+    "id": 44188,
+    "skillKey": "clawhub-video-builder",
+    "name": "Video Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-builder",
+    "url": "https://clawhub.ai/skills/video-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-builder-90b6d768164b627d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get assembled MP4 video ready to post, without touching a single slider. Upload your video clips or images (MP4, MOV, JPG, PNG, up to 500MB), say something l..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776232448519,
+      "changelog": "Video Builder 1.0.0 — Initial Release\n\n- Instantly assemble and export polished videos from your uploaded clips or images, with AI-powered editing.\n- Supports MP4, MOV, JPG, PNG, and more (files up to 500MB); outputs 1080p MP4 ready to post.\n- Automatic cloud session setup with free, limited anonymous usage (100 credits, 7-day expiry).\n- Simple commands: combine clips, add text overlays, handle aspect ratio, check credits, and export.\n- Clear error handling for missing tokens, credits, file issues, and rate limits.\n- Designed for marketers and creators needing quick, professional video assembly without manual editing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ca83da86f30b4dbf7d5876892e2b0a5895d231adf05063dac4f1f0879e026873"
+}

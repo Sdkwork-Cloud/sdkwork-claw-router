@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/geo-bulk-processor@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geo_bulk_processor",
+  "skill": {
+    "id": 28713,
+    "skillKey": "clawhub-geo-bulk-processor",
+    "name": "Geo Bulk Processor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geo-bulk-processor",
+    "url": "https://clawhub.ai/skills/geo-bulk-processor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geo-bulk-processor-cbe66a8c943a1654.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "GEO bulk processing engine for large-scale, multi-page content optimization. Use this skill whenever the user mentions bulk GEO changes, batch content update..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "geoly-geo",
+      "userId": "publishers:geoly-geo",
+      "displayName": "GEOLY AI",
+      "image": "https://avatars.githubusercontent.com/u/70360114?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 319,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773038551666,
+      "changelog": "Initial release of geo-bulk-processor: a bulk GEO content orchestration skill.\n\n- Enables large-scale GEO optimization across thousands of pages or documents.\n- Supports ingestion of sitemaps, URL lists, spreadsheets, or content exports.\n- Guides users in designing batch pipelines, reusable page templates, and phased rollout strategies.\n- Facilitates structured planning, quality control, and implementation specifications for bulk content updates.\n- Integrates conceptually with other geo-* skills for end-to-end scalable GEO workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d9d4ab7594f78371723f3a27598638c7585965898b1d196ad61cd03ae93f2ddc"
+}

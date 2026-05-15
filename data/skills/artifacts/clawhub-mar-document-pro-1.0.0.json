@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mar-document-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mar_document_pro",
+  "skill": {
+    "id": 62959,
+    "skillKey": "clawhub-mar-document-pro",
+    "name": "mar-document-pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mar-document-pro",
+    "url": "https://clawhub.ai/skills/mar-document-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mar-document-pro-b37405afa4237ce6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "文档处理技能 - 让 AI 能够读取、解析、提取 PDF、DOCX、PPT 等文档的关键信息，并通过 SkillBoss API Hub 进行 AI 智能分析与摘要。当用户要求分析文档、提取内容、总结报告时触发此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "marjoriebroad",
+      "userId": "s17evr8hna69xbf4mv5z0nppgx84m26f",
+      "displayName": "MarjorieBroad",
+      "image": "https://avatars.githubusercontent.com/u/260425366?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777001993753,
+      "changelog": "Initial release of Document Pro - AI-powered document processing skill.\n\n- Supports reading, extracting, and summarizing PDF, Word, PowerPoint, Excel, TXT, and Markdown files.\n- Integrates with SkillBoss API Hub for AI-powered document analysis, summarization, and keyword extraction.\n- Enables content extraction, format conversion, and structured summaries in Chinese.\n- Provides example code for processing each supported format.\n- Lists environment variable requirements and output formats.\n- Documents limitations such as the need for OCR with scanned PDFs and limited handling of complex or image-based content.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7091d72856a10b1bd7635eca8d13d50910bb3f45e48a53ffa5e057dd0820c84a"
+}

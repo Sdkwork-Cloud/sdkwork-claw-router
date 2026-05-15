@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25046,
+  "uuid": "skill-clawhub-gate-exchange-market-analysis",
+  "skillKey": "clawhub-gate-exchange-market-analysis",
+  "name": "Gate Exchange MarketAnalysis",
+  "summary": "Gate Exchange market analysis tool. Use when the user asks for deep market metrics like liquidity, slippage, funding arbitrage, or manipulation risk. Trigger...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_exchange_market_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gate",
+      "features": [
+        "Gate Exchange market analysis tool",
+        "Use when the user asks for deep market metrics like liquidity, slippage, funding arbitrage, or.",
+        "Trigger..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gate-exchange-market-analysis@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33109813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gate-exchange-market-analysis",
+      "url": "https://clawhub.ai/skills/gate-exchange-market-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-exchange-market-analysis",
+    "url": "https://clawhub.ai/skills/gate-exchange-market-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-exchange-market-analysis-f691e38b95bef508.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gate-exchange-market-analysis@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-gate-exchange-market-analysis-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:86556eed504d2eebe44c7e145a4ea1c89fbe823ba78183399e7fc4595e3af74f",
+      "artifactSizeBytes": 2538
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T07:34:31.311Z"
+}

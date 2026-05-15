@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tacostrategy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tacostrategy",
+  "skill": {
+    "id": 60478,
+    "skillKey": "clawhub-tacostrategy",
+    "name": "Taco Strategy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tacostrategy",
+    "url": "https://clawhub.ai/skills/tacostrategy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tacostrategy-3686ce8504cdfe58.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Taco 交易策略引擎。触发场景：用户问该买什么/该做什么/有什么机会/推荐策略/扫描市场/交易信号/autopilot 配置/策略列表/执行推荐交易。关键词：recommend, strategy, what to trade, 交易策略, 推荐, 该买什么, 有什么机会, scan, signal, auto..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "taco",
+      "userId": "s175978t6y46e8wyh449v3nxdn83gxn8",
+      "displayName": "Taco",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 188,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774923796182,
+      "changelog": "taco-strategy v1.0.0\n\n- Initial release of the Taco交易策略引擎 (“Taco Strategy Engine”)\n- Handles end-to-end trading workflow: 获取用户余额、市场数据→技术指标分析→识别市场状态→匹配并推荐交易策略→等待用户确认→执行交易\n- 支持两种市场数据获取方式（Taco skill命令为主，Hyperliquid公开API为备选)\n- 内置主流指标计算与简化分析逻辑（EMA、MACD、RSI、ATR、Bollinger Bands等）\n- 多市场状态识别与策略自动匹配，包含9个主流策略模板以及清晰入场/退出/风控参数\n- 明确风险控制和仓位硬约束，默认分为Conservative与Aggressive两种风格\n- 自动筛选推荐标的及配置交易参数，支持多币种、多账户逻辑",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3fe8f8ee13c0201d9735bce756669f386abd1b8e317711541f0ff8f8a96c323a"
+}

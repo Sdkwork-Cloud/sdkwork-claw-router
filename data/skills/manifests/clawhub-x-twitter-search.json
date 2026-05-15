@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10115,
+  "uuid": "skill-clawhub-x-twitter-search",
+  "skillKey": "clawhub-x-twitter-search",
+  "name": "X / Twitter Search",
+  "summary": "Search X/Twitter in real-time using Grok or X API. Find tweets, trends, and discussions with citations.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_twitter_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "blueberrywoodsym",
+      "features": [
+        "Search X/Twitter in real-time using Grok or X API",
+        "Find tweets, trends, and discussions with citations."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-twitter-search@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256029437?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-twitter-search",
+      "url": "https://clawhub.ai/skills/x-twitter-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-twitter-search",
+    "url": "https://clawhub.ai/skills/x-twitter-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-twitter-search-b1997651e41ff445.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-twitter-search@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-twitter-search-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:51691fbb36724e243e32affb4415a1fde8172043d943e46c3239513bcde58d0b",
+      "artifactSizeBytes": 2035
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T21:22:02.239Z"
+}

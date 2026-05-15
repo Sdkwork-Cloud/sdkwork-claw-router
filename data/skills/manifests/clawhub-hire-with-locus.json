@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16141,
+  "uuid": "skill-clawhub-hire-with-locus",
+  "skillKey": "clawhub-hire-with-locus",
+  "name": "Locus Contractors",
+  "summary": "Enables AI agents to send USDC payments and order freelance services through an escrow-backed marketplace on Base. Handles wallet management, Fiverr-style gig ordering with tiered pricing, and order status polling. Use when the agent needs.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hire_with_locus",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wjorgensen",
+      "features": [
+        "Enables AI agents to send USDC payments and order freelance services through an escrow-backed m.",
+        "Handles wallet management, Fiverr-style gig ordering with tiered pricing, and order status poll.",
+        "Use when the agent needs to make crypto payments, hire freelancers, or check order status on Lo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hire-with-locus@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/71576996?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hire-with-locus",
+      "url": "https://clawhub.ai/skills/hire-with-locus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hire-with-locus",
+    "url": "https://clawhub.ai/skills/hire-with-locus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hire-with-locus-a563a3b29bacec5b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hire-with-locus@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hire-with-locus-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:121b17901f82ef3b4c711f2223878d4cb04656d9519f3af1a1c968720308de80",
+      "artifactSizeBytes": 2544
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T02:03:15.592Z"
+}

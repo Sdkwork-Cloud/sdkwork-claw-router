@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meegel-connector@1.0.9",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meegel_connector",
+  "skill": {
+    "id": 28059,
+    "skillKey": "clawhub-meegel-connector",
+    "name": "Meegle Connector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meegel-connector",
+    "url": "https://clawhub.ai/skills/meegel-connector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meegel-connector-4f445da941a528b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect to Meegle via MCP service, support OAuth authentication, and enable querying and managing work items, views, etc."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wadxm",
+      "userId": "publishers:wadxm",
+      "displayName": "wadxm",
+      "image": "https://avatars.githubusercontent.com/u/9190997?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 334,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.9",
+      "createdAt": 1773763648564,
+      "changelog": "- Improved security and clarity for OAuth credential management, with step-by-step user confirmation required for all credential operations.\n- Updated instructions for both local (Browser OAuth) and remote (OAuth Proxy) authentication scenarios, including clear guidance on syncing credentials.\n- Enhanced documentation of prerequisites and environment requirements.\n- Emphasized available features: querying and managing work items and views.\n- Added stricter guidance ensuring credentials are not logged, only stored in the designated location, and that temporary files are cleaned up promptly.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:209e36f29de2a884f7db948b3808e644355748712be4cae9a1553cf5d00f0538"
+}

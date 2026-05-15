@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deepsynclaw@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deepsynclaw",
+  "skill": {
+    "id": 30437,
+    "skillKey": "clawhub-deepsynclaw",
+    "name": "Deepsynclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deepsynclaw",
+    "url": "https://clawhub.ai/skills/deepsynclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deepsynclaw-1af1ebbf1ebb39df.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when the user wants to find compatible people based on deep psychological profiling. Triggers on \"find my match\", \"find me a partner\", \"who am..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivankoriako",
+      "userId": "s17azbcr7k1ytmpj3mjtm6s7js83gsht",
+      "displayName": "Lifegamer",
+      "image": "https://avatars.githubusercontent.com/u/149903830?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 281,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774003873275,
+      "changelog": "Initial release of DeepSynClaw\n\n- Introduces AI-powered compatibility matching based on deep psychological profiling, not just shared interests.\n- Matches users for romantic, business, friendship, or custom partnerships.\n- Compatible with OpenClaw and keeps user data local.\n- Service is not yet live; profile builder and matching engine are still in development.\n- Easy installation and plain language activation via agent chat.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:78d119bc5c8730f6ad913dbc064b0eab016c8e11bbb83c05020cae8c805a286a"
+}

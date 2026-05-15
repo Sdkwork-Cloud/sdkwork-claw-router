@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/publish-on-qutke@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.publish_on_qutke",
+  "skill": {
+    "id": 65285,
+    "skillKey": "clawhub-publish-on-qutke",
+    "name": "Publish site on Qutke"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "publish-on-qutke",
+    "url": "https://clawhub.ai/skills/publish-on-qutke",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/publish-on-qutke-10a6ffaa475c0e2e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将文件和文件夹即时发布到网络。支持 HTML 站点、图片、PDF 及任何文件类型的静态托管。 当用户要求\"发布这个\"、\"托管这个\"、\"部署这个\"、\"分享到网上\"、\"做一个网站\"、 \"放到线上\"、\"上传到网络\"、\"创建网页\"、\"分享链接\"、\"搭建站点\"或\"生成 URL\"时使用。 输出一个可访问的 URL，格式为 {..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "haio",
+      "userId": "s17d59x5w5r0tn8q5m67yn5m0183ghmc",
+      "displayName": "Zhong Yu",
+      "image": "https://avatars.githubusercontent.com/u/2183038?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 262,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773843633186,
+      "changelog": "- No file changes detected in this version.\n- No updates or modifications were made to the skill contents.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3795e92b9a80f79abc10a4c7c4193318c9b5f26d2c1d0e9811e89f1feffd510f"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/interior-budget@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.interior_budget",
+  "skill": {
+    "id": 46938,
+    "skillKey": "clawhub-interior-budget",
+    "name": "Interior Budget"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "interior-budget",
+    "url": "https://clawhub.ai/skills/interior-budget",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/interior-budget-c07ec808e1a12e52.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically generates detailed interior design budgets by space and project type using standardized templates with client and project details."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "137984917-cyber",
+      "userId": "s1790hfws72axnnhfbnfe3gkb183j1qr",
+      "displayName": "137984917-cyber",
+      "image": "https://avatars.githubusercontent.com/u/270913925?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 120,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777373451770,
+      "changelog": "室内设计工程预算自动生成技能 v1.0.0\n\n- 新增基于设计标准模板自动生成预算表的功能。\n- 支持按空间自动拆分工程清单，并保留项目特征和品牌备注。\n- 适用于不同类型和面积的家装、办公、餐饮项目。\n- 提供命令行和交互式两种生成方式，灵活导出Excel表格。\n- 输出表格符合工作室现有格式规范。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bf100c06e1aaa34f0ad869734350576de991d542e47cbba205c6270dc34754ea"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27082,
+  "uuid": "skill-clawhub-a2a-market-order-state-machine",
+  "skillKey": "clawhub-a2a-market-order-state-machine",
+  "name": "a2a-Market-Order-State-Machine",
+  "summary": "Define order lifecycle states, transition guards, and recovery paths for A2A transactions. Use when implementing order orchestration from quote acceptance th...",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a2a_market_order_state_machine",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "luoqianchenguni-max",
+      "features": [
+        "Define order lifecycle states, transition guards, and recovery paths for A2A transactions",
+        "Use when implementing order orchestration from quote acceptance th..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/a2a-market-order-state-machine@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/225840188?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "a2a-market-order-state-machine",
+      "url": "https://clawhub.ai/skills/a2a-market-order-state-machine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a2a-market-order-state-machine",
+    "url": "https://clawhub.ai/skills/a2a-market-order-state-machine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a2a-market-order-state-machine-50ed5e318ed03f7f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/a2a-market-order-state-machine@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-a2a-market-order-state-machine-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a38940de859b4972cf76ccdd6d9f14a0357c3ede48421cbb3ba492a104ed8b26",
+      "artifactSizeBytes": 2054
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T06:49:02.530Z"
+}

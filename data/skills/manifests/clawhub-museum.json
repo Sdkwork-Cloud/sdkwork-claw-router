@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25996,
+  "uuid": "skill-clawhub-museum",
+  "skillKey": "clawhub-museum",
+  "name": "Museum Data Manager",
+  "summary": "Manage and query museum database records, track data collection status, verify completeness, and export museum data in JSON, CSV, or SQL formats.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.museum",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jackandking",
+      "features": [
+        "Manage and query museum database records, track data collection status, verify completeness, an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/museum@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4838682?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "museum",
+      "url": "https://clawhub.ai/skills/museum"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "museum",
+    "url": "https://clawhub.ai/skills/museum",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/museum-4919063719e8c388.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/museum@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-museum-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:99ad9d750c8606910080bdec559d9819c56ba018b3f6f9b0a93358e0d5c2b738",
+      "artifactSizeBytes": 2293
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T13:44:01.688Z"
+}

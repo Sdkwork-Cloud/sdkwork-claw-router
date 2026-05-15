@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47298,
+  "uuid": "skill-clawhub-pizza-ordering-agent",
+  "skillKey": "clawhub-pizza-ordering-agent",
+  "name": "Pizza Agent (LAUNCH SPECIAL - 4.99)",
+  "summary": "High-performance voice & text ordering agent for pizza shops. Specializes in complex customizations (half-and-half, crust types) and delivery zone validation...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pizza_ordering_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "IgorGanapolsky",
+      "features": [
+        "High-performance voice & text ordering agent for pizza shops",
+        "Specializes in complex customizations (half-and-half, crust types) and delivery zone validation."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pizza-ordering-agent@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201209?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pizza-ordering-agent",
+      "url": "https://clawhub.ai/skills/pizza-ordering-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pizza-ordering-agent",
+    "url": "https://clawhub.ai/skills/pizza-ordering-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pizza-ordering-agent-1f57d6956cb67ca4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pizza-ordering-agent@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-pizza-ordering-agent-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:164b20914e6e0471782a024a8ffed77b4b9c854c237264056958e3ed1a7083f5",
+      "artifactSizeBytes": 2133
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T19:48:01.111Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gpt-image-2-chatgpt@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gpt_image_2_chatgpt",
+  "skill": {
+    "id": 9462,
+    "skillKey": "clawhub-gpt-image-2-chatgpt",
+    "name": "🪞 GPT Image 2 — Image Generation via Your ChatGPT Subscription"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gpt-image-2-chatgpt",
+    "url": "https://clawhub.ai/skills/gpt-image-2-chatgpt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gpt-image-2-chatgpt-d003f83b82129c8b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images with GPT Image 2 (ChatGPT Images 2.0) inside Claude Code, using your existing ChatGPT Plus or Pro subscription — no separate OpenAI access, n..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kalvinrv",
+      "userId": "s174jr69zc5t7a5tqprq4d0rq583y1x3",
+      "displayName": "Kalvin",
+      "image": "https://avatars.githubusercontent.com/u/58277734?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4700,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 6,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1777374011677,
+      "changelog": "- Added UTM parameters to the agentspace.so homepage link for improved attribution.\n- No functional or behavioral changes; documentation update only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3af996a673a5f83d9e76ed407b69bbb30da7809b29bdb0d04c017a00538edd3c"
+}

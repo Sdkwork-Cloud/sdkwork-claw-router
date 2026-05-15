@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51470,
+  "uuid": "skill-clawhub-engramclaw",
+  "skillKey": "clawhub-engramclaw",
+  "name": "EngramClaw",
+  "summary": "Sistema de memoria persistente para agentes IA. Usa mem_save después de bugfixes, decisiones, descubrimientos, cambios de config. Usa mem_search cuando el us...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.engramclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DragonJAR",
+      "features": [
+        "Sistema de memoria persistente para agentes IA",
+        "Usa mem_save después de bugfixes, decisiones, descubrimientos, cambios de config",
+        "Usa mem_search cuando el us..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/engramclaw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28887492?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "engramclaw",
+      "url": "https://clawhub.ai/skills/engramclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "engramclaw",
+    "url": "https://clawhub.ai/skills/engramclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/engramclaw-d81d646dd3ceb6b7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/engramclaw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-engramclaw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb3bda045b48c0e347417d0d97cee0d25a4f1a51c69b575ea7b22423c21af412",
+      "artifactSizeBytes": 2488
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T23:15:04.874Z"
+}

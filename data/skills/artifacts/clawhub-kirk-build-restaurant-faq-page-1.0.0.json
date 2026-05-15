@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kirk-build-restaurant-faq-page@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kirk_build_restaurant_faq_page",
+  "skill": {
+    "id": 42986,
+    "skillKey": "clawhub-kirk-build-restaurant-faq-page",
+    "name": "build-restaurant-faq-page"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kirk-build-restaurant-faq-page",
+    "url": "https://clawhub.ai/skills/kirk-build-restaurant-faq-page",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kirk-build-restaurant-faq-page-3caed355812f0227.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate customer-facing answers for common restaurant questions. Use when working on FAQ content for restaurant owners, food delivery businesses."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kirkraman",
+      "userId": "s171c4e2zwz2yy69j6tp9xcfc184vnxz",
+      "displayName": "KirkRaman",
+      "image": "https://avatars.githubusercontent.com/u/255880392?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776917120059,
+      "changelog": "Initial release of Build Restaurant FAQ Page skill.\n\n- Generate customer-facing answers for common restaurant questions.\n- Designed for restaurant owners and food delivery businesses to create FAQ content efficiently.\n- Integrates chat and web search APIs for enriched and accurate responses.\n- SEO-focused, targeting restaurant FAQ creation and automation keywords.\n- Includes workflow guidance to refine and optimize FAQ drafts for publication.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3aca95c528a85e395f7bb03ea3a89c2490f169f528bf850dcf7d7979409ec520"
+}

@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17027,
+  "uuid": "skill-clawhub-brave-api-free-search",
+  "skillKey": "clawhub-brave-api-free-search",
+  "name": "brave-api-free-search",
+  "summary": "Free Brave API alternative for OpenClaw. Completely FREE web search. Secure localhost-only deployment. Supports hidden --dev flag.",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brave_api_free_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pipe",
+      "features": [
+        "Free Brave API alternative for OpenClaw",
+        "Completely FREE web search",
+        "Secure localhost-only deployment",
+        "Supports hidden --dev flag."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/brave-api-free-search@1.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16253126?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "brave-api-free-search",
+      "url": "https://clawhub.ai/skills/brave-api-free-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brave-api-free-search",
+    "url": "https://clawhub.ai/skills/brave-api-free-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brave-api-free-search-274b564531aa5d69.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/brave-api-free-search@1.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-brave-api-free-search-1.0.8.json",
+      "version": "1.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8295538bc9a9ed907051b280695ed765cdd871bc5f505df4bf98b39895581f41",
+      "artifactSizeBytes": 1968
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T09:48:33.839Z"
+}

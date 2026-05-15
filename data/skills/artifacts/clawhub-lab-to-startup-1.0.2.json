@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lab-to-startup@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lab_to_startup",
+  "skill": {
+    "id": 73365,
+    "skillKey": "clawhub-lab-to-startup",
+    "name": "师生共创模式指导-高校科技成果转化方法论"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lab-to-startup",
+    "url": "https://clawhub.ai/skills/lab-to-startup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lab-to-startup-a9c0bf67d4f69013.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "高校师生共创模式指导助手。当用户需要进行科技成果转化、组建师生共创团队、选择共创模式或解决共创过程中的问题时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "earthwalking",
+      "userId": "s17c22xptvm4zbcs3vbdf4mwj583hzep",
+      "displayName": "Roma",
+      "image": "https://avatars.githubusercontent.com/u/105550312?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 269,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773664276961,
+      "changelog": "**lab-to-startup v1.0.2 Changelog**\n\n- Added comprehensive, methodical guidance for university teacher-student co-creation teams based on Tsinghua x-lab’s decade of experience.\n- Introduced a structured overview of three main co-creation team types: teacher-led, student-led (including laboratory and interdisciplinary styles), and co-led models.\n- Provided a step-by-step workflow for model recognition, team role assignment, technology-market fit, and addressing common challenges.\n- Included a practical checklist of success factors for team, resource, and strategy levels.\n- Outlined phased implementation pathways: initiation, validation, and growth.\n- Added real-world usage examples and a resource directory for further reference.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:984b5ffc86b6b59c1baf7961308e02c0dedf05a0b6b22809e8105a62d80b07a9"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wander@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wander",
+  "skill": {
+    "id": 32393,
+    "skillKey": "clawhub-wander",
+    "name": "Wander"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wander",
+    "url": "https://clawhub.ai/skills/wander",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wander-33430ae3a73f5974.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Close the loop on long-running remote work: pick the right completion signal per platform (CI, EAS, deploy, releases), run monitoring in the background, noti..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "erergb",
+      "userId": "s170n6kt6mnj23cdj5tfd84tmx83qdqq",
+      "displayName": "ERerGB",
+      "image": "https://avatars.githubusercontent.com/u/98926814?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 252,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1778300209030,
+      "changelog": "CD: 69b3d2f23e6c2f785e4c07f7572142d088650808",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:518e871385ec55763005a9905f7ccd38e70dd6b7e342c5e0573fb7200cb49920"
+}

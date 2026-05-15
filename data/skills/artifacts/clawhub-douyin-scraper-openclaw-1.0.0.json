@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/douyin-scraper-openclaw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_scraper_openclaw",
+  "skill": {
+    "id": 67058,
+    "skillKey": "clawhub-douyin-scraper-openclaw",
+    "name": "Douyin Scraper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-scraper-openclaw",
+    "url": "https://clawhub.ai/skills/douyin-scraper-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-scraper-openclaw-9c4e91e9dced2900.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "抖音内容爬虫，支持自然语言搜索视频内容，基于浏览器自动化实现"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "terrycarter1985",
+      "userId": "s17brwfrqyjhbjgadkvar20h8x8492g8",
+      "displayName": "terrycarter1985",
+      "image": "https://avatars.githubusercontent.com/u/1542987?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 63,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778278236975,
+      "changelog": "- Initial release of douyin-scraper skill.\n- Enables natural language video search on Douyin using browser automation.\n- Supports extracting video title, author, and engagement metrics from search results.\n- No-code, fully natural language driven interaction.\n- Session persistence and authentication state saving supported.\n- Handles common edge cases like missing search box, login popups, or slow pages.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2a9e577686d0dc412f9c40c5401be806d874fd29c2dbdd3692f161505a9b6598"
+}

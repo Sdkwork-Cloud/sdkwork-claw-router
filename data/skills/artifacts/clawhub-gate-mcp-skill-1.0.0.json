@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gate-mcp-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_mcp_skill",
+  "skill": {
+    "id": 31989,
+    "skillKey": "clawhub-gate-mcp-skill",
+    "name": "Gate MCP Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-mcp-skill",
+    "url": "https://clawhub.ai/skills/gate-mcp-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-mcp-skill-ccf5ad19ee229d85.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use Gate MCP through UXC for public spot and futures market data workflows with a fixed streamable-http endpoint and read-first guardrails."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jolestar",
+      "userId": "s1769rm50f8wvzw550m22hg10x83gkem",
+      "displayName": "jolestar",
+      "image": "https://avatars.githubusercontent.com/u/77268?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 249,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773712971684,
+      "changelog": "Initial release of gate-mcp-skill.\n\n- Enables public spot and futures market data workflows via Gate MCP using a fixed streamable-http endpoint.\n- Provides core commands for market discovery, tickers, order books, trades, candlesticks, funding rates, and premium data.\n- Enforces read-only guardrails with a focus on stable JSON output parsing.\n- Reuses `uxc` skill for MCP execution, output handling, and authentication guidance.\n- Excludes private account, trading, and wallet/funding operations.\n- Includes detailed usage instructions and references for setup and usage patterns.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:67bbca22a6b08636a0d08a114bf535669d06100f0a477f02c4e2782993e877d3"
+}

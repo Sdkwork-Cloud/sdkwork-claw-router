@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-colorizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_colorizer",
+  "skill": {
+    "id": 46905,
+    "skillKey": "clawhub-ai-video-colorizer",
+    "name": "Ai Video Colorizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-colorizer",
+    "url": "https://clawhub.ai/skills/ai-video-colorizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-colorizer-f1e837d2462795e1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn dull, grayscale footage into rich, lifelike color with this ai-video-colorizer skill. Upload black-and-white clips or faded archival video and receive r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 120,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775131269789,
+      "changelog": "ai-video-colorizer 1.0.0\n\n- Initial release of AI Video Colorizer: transform black-and-white or faded videos into vivid color using AI.\n- Automatic, scene-aware colorization with period-accurate palettes and natural results.\n- Simple upload or description-based workflow; supports footage restoration without manual editing.\n- Handles user requests for upload, export, credit balance, and status with robust API integration.\n- Built-in authentication, error handling, and detailed user guidance for a seamless experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:559a2dc825a4783afe971227b045eefd0a3722ee2268ce2d3aaaa012b2893d73"
+}

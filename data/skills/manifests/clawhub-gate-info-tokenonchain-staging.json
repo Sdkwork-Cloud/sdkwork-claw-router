@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42965,
+  "uuid": "skill-clawhub-gate-info-tokenonchain-staging",
+  "skillKey": "clawhub-gate-info-tokenonchain-staging",
+  "name": "gate-info-tokenonchain",
+  "summary": "Token on-chain analysis via Gate-Info MCP: holder distribution, on-chain activity, and large or unusual transfers (scopes holders / activity / transfers). Sm...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_info_tokenonchain_staging",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gaixg",
+      "features": [
+        "Token on-chain analysis via Gate-Info MCP: holder distribution, on-chain activity, and large or."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gate-info-tokenonchain-staging@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12163126?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gate-info-tokenonchain-staging",
+      "url": "https://clawhub.ai/skills/gate-info-tokenonchain-staging"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-info-tokenonchain-staging",
+    "url": "https://clawhub.ai/skills/gate-info-tokenonchain-staging",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-info-tokenonchain-staging-e044118b63ffd57f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gate-info-tokenonchain-staging@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gate-info-tokenonchain-staging-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7e786dc1de15556cbbd13e9e013ab2083b6e6ccde95efe476843e45d1773a36d",
+      "artifactSizeBytes": 2473
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T02:33:15.179Z"
+}

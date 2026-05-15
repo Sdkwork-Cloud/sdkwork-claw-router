@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/strategy-optimizer-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.strategy_optimizer_agent",
+  "skill": {
+    "id": 65273,
+    "skillKey": "clawhub-strategy-optimizer-agent",
+    "name": "Strategy Optimizer Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "strategy-optimizer-agent",
+    "url": "https://clawhub.ai/skills/strategy-optimizer-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/strategy-optimizer-agent-63f24505ff5da175.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "策略优化智能体。当需要优化创作策略、调整发布节奏、分析ROI、沉淀方法论时触发本技能。用于：(1) 评估当前策略有效性 (2) 提出选题/发布/文风优化建议 (3) 计算投入产出比 (4) 沉淀方法论到知识库 (5) 预测市场趋势"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ouyang198000",
+      "userId": "s17epgek7r0dqrspt31mgsk23s8436f0",
+      "displayName": "Ouyang198000",
+      "image": "https://avatars.githubusercontent.com/u/136032898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775133194908,
+      "changelog": "strategy-optimizer-agent 1.0.0 – Initial release\n\n- Introduces a strategy optimization agent for evaluating, optimizing, and tracking creative and publishing strategies.\n- Supports data-driven strategy assessment (effectiveness measurement, ROI calculation, and actionable improvement suggestions).\n- Enables topic selection, publication rhythm, and writing style optimization based on multi-factor evaluation.\n- Provides structured methods for knowledge base accumulation (best practices, mistakes, and methodology curation).\n- Includes forecasting for market trends, type popularity, and platform shifts to guide future planning.\n- Establishes workflow and constraints to ensure evidence-based, iterative strategy refinement.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4b9d4bddb63a8950bcf3568c9bfe43f5825f03c9a2c27753876bdb45d3247f8b"
+}

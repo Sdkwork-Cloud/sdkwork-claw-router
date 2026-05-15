@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ad-account-support@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ad_account_support",
+  "skill": {
+    "id": 26310,
+    "skillKey": "clawhub-ad-account-support",
+    "name": "ad-account-support"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ad-account-support",
+    "url": "https://clawhub.ai/skills/ad-account-support",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ad-account-support-e9056646f0644a29.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when users mention advertising accounts, ad account setup, Business Manager (BM), ad account suspension or ban, ad payment issues, or cross-pl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "strongerzhuang",
+      "userId": "publishers:strongerzhuang",
+      "displayName": "Zion",
+      "image": "https://avatars.githubusercontent.com/u/45931088?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 369,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773298115577,
+      "changelog": "No file changes detected in this version.  \n- No updates or modifications were made to the skill in version 1.0.1.\n- regulation revise",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:be6cc38a67c73e93bfe1090d07c228bf7503091496f718ccefc0fdc67a135dd9"
+}

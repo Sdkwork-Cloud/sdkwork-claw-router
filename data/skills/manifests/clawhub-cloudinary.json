@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54323,
+  "uuid": "skill-clawhub-cloudinary",
+  "skillKey": "clawhub-cloudinary",
+  "name": "Cloudinary",
+  "summary": "Cloudinary — manage images/videos, upload, transform, and search assets via REST API",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloudinary",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aiwithabidi",
+      "features": [
+        "Cloudinary — manage images/videos, upload, transform, and search assets via REST API"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cloudinary@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208891229?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cloudinary",
+      "url": "https://clawhub.ai/skills/cloudinary"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloudinary",
+    "url": "https://clawhub.ai/skills/cloudinary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloudinary-4afcef5dd73bf324.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cloudinary@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cloudinary-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6cd457c93a471977d75e0d5a6bceb0625bf5379531aa0e2ec06d5af72ff9db68",
+      "artifactSizeBytes": 2145
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T04:06:21.465Z"
+}

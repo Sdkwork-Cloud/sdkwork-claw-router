@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59853,
+  "uuid": "skill-clawhub-idiom-dictionary",
+  "skillKey": "clawhub-idiom-dictionary",
+  "name": "Idiom Dictionary",
+  "summary": "成语词典。成语查询、典故故事、成语接龙、成语猜谜、造句示例、分类浏览。Chinese idiom dictionary with stories, chain game, quiz. 成语、典故、国学。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.idiom_dictionary",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain1",
+      "features": [
+        "成语词典。成语查询、典故故事、成语接龙、成语猜谜、造句示例、分类浏览。Chinese idiom dictionary with stories, chain game, quiz",
+        "成语、典故、国学。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/idiom-dictionary@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261107384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "idiom-dictionary",
+      "url": "https://clawhub.ai/skills/idiom-dictionary"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "idiom-dictionary",
+    "url": "https://clawhub.ai/skills/idiom-dictionary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/idiom-dictionary-b00d2417399158a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/idiom-dictionary@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-idiom-dictionary-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:382dd0305d11553adbc21edd6ca62be63cebe282d7ad7d08416554434e2776d4",
+      "artifactSizeBytes": 1981
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T18:48:39.216Z"
+}

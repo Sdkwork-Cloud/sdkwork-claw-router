@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68543,
+  "uuid": "skill-clawhub-mac-system-control",
+  "skillKey": "clawhub-mac-system-control",
+  "name": "mac-system-control",
+  "summary": "管理和控制 macOS 系统功能。包括查看系统信息、管理进程、控制音量/亮度、 网络管理、电源管理、截图、剪贴板、Finder 操作等。当用户要求查看系统状态、 控制系统设置、管理进程、截图、调节音量亮度、查看网络信息、 关机重启睡眠等 Mac 系统操作时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mac_system_control",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wei.wu",
+      "features": [
+        "管理和控制 macOS 系统功能。包括查看系统信息、管理进程、控制音量/亮度、 网络管理、电源管理、截图、剪贴板、Finder 操作等。当用户要求查看系统状态、 控制系统设置、管理进程、截图."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mac-system-control@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3362483?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mac-system-control",
+      "url": "https://clawhub.ai/skills/mac-system-control"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mac-system-control",
+    "url": "https://clawhub.ai/skills/mac-system-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mac-system-control-f1a85ae28014058f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mac-system-control@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mac-system-control-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ee3d1feb7606326dfb7f35d6f0f4e42875709a1ecaa6634577d7781f3fa7f37",
+      "artifactSizeBytes": 2399
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T02:18:45.438Z"
+}

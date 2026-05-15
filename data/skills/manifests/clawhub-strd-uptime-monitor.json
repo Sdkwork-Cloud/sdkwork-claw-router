@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34606,
+  "uuid": "skill-clawhub-strd-uptime-monitor",
+  "skillKey": "clawhub-strd-uptime-monitor",
+  "name": "Uptime Monitor",
+  "summary": "Monitor uptime of websites/services and alert when down. Use when checking if a website is reachable, monitoring service health, or getting alerted on downtime.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.strd_uptime_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KRYZL19",
+      "features": [
+        "Monitor uptime of websites/services and alert when down",
+        "Use when checking if a website is reachable, monitoring service health, or getting alerted on d."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/strd-uptime-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/220403544?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "strd-uptime-monitor",
+      "url": "https://clawhub.ai/skills/strd-uptime-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "strd-uptime-monitor",
+    "url": "https://clawhub.ai/skills/strd-uptime-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/strd-uptime-monitor-4f3e85d913ad830f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/strd-uptime-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-strd-uptime-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ec4b9d4cbb3b5a2c0523ca65bf1f484e1ab3b2f0562e79df753757f50dc7765",
+      "artifactSizeBytes": 2326
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T14:45:59.876Z"
+}

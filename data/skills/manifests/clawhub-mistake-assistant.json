@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68502,
+  "uuid": "skill-clawhub-mistake-assistant",
+  "skillKey": "clawhub-mistake-assistant",
+  "name": "错题小助手",
+  "summary": "智能错题管理助手，支持错题记录、分类整理、复习提醒、统计分析和导出分享。使用场景：(1) 记录做错的题目（支持手动录入、OCR识别、截图上传）(2) 按科目/知识点/难度分类管理错题 (3) 智能复习提醒（艾宾浩斯遗忘曲线）(4) 分析薄弱知识点和错误趋势 (5) 导出错题本为Markdown/PDF/HTML格...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mistake_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smallKeyboy",
+      "features": [
+        "智能错题管理助手，支持错题记录、分类整理、复习提醒、统计分析和导出分享。使用场景：(1) 记录做错的题目（支持手动录入、OCR识别、截图上传）(2) 按科目/知识点/难度分类管理错题 (3)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mistake-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/68474019?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mistake-assistant",
+      "url": "https://clawhub.ai/skills/mistake-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mistake-assistant",
+    "url": "https://clawhub.ai/skills/mistake-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mistake-assistant-4f1b5bb3d547ff57.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mistake-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mistake-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:16f3d8255a499f541fe5ef4cd10420335610205777e2a54c8062f7d9b468eb64",
+      "artifactSizeBytes": 2228
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T10:06:40.715Z"
+}

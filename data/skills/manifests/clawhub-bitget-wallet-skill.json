@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21824,
+  "uuid": "skill-clawhub-bitget-wallet-skill",
+  "skillKey": "clawhub-bitget-wallet-skill",
+  "name": "Bitget Wallet",
+  "summary": "Interact with Bitget Wallet API for crypto market data, token info, swap quotes, and security audits. Use when the user asks about token prices, market data,...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bitget_wallet_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "karryzhang",
+      "features": [
+        "Interact with Bitget Wallet API for crypto market data, token info, swap quotes, and security a.",
+        "Use when the user asks about token prices, market data,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bitget-wallet-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2024441?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bitget-wallet-skill",
+      "url": "https://clawhub.ai/skills/bitget-wallet-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bitget-wallet-skill",
+    "url": "https://clawhub.ai/skills/bitget-wallet-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bitget-wallet-skill-90ee41a89c8f6f5a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bitget-wallet-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bitget-wallet-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:97eadbb90ee855faf5601125aaa960eb789e68dfff22768b98fbefbc7ac3749b",
+      "artifactSizeBytes": 2504
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T21:07:55.836Z"
+}

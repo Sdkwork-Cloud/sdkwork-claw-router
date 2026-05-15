@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/uimap@0.1.9",
+  "version": "0.1.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uimap",
+  "skill": {
+    "id": 20866,
+    "skillKey": "clawhub-uimap",
+    "name": "Uimap"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uimap",
+    "url": "https://clawhub.ai/skills/uimap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uimap-f3db37ea8fb30009.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides the accurate URL and step-by-step click operation path for completing tasks on websites. If the task involves operations on a web app, use this skil..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "delai",
+      "userId": "publishers:delai",
+      "displayName": "delai",
+      "image": "https://avatars.githubusercontent.com/u/1296212?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 524,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.1.9",
+      "createdAt": 1773816157527,
+      "changelog": "- Updated to version 0.1.9.\n- Shortened the skill description for clarity and removed redundant instructions about when to use the skill.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3f1165b9feb09c9c44be56b010b5ddefe0904ee1ab42a781990f64ec99f92679"
+}

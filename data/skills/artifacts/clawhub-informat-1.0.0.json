@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/informat@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.informat",
+  "skill": {
+    "id": 43842,
+    "skillKey": "clawhub-informat",
+    "name": "informat"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "informat",
+    "url": "https://clawhub.ai/skills/informat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/informat-169b1b2a14984e4e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Informat AI intelligent development platform system method calling skill. Core rules (strictly follow): 1. Before any creation or modification operation, you..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "informat365",
+      "userId": "s175qs0rkhg83ce5htjr5e2qw184b6f0",
+      "displayName": "cornerstone365",
+      "image": "https://avatars.githubusercontent.com/u/95614103?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775458190725,
+      "changelog": "- Initial release of the informat AI intelligent development platform skill.\n- Implements strict operational rules: always query existing structure and real IDs before any create/modify action; never construct IDs or field names manually.\n- Requires reading parameter definitions for methods from reference JSON files before passing any parameters.\n- Clarifies agent interface selection logic based on method name prefixes.\n- Includes detailed step-by-step instructions and examples for common operations (application, table, dashboard, automation, workflow, script, data records).\n- Emphasizes strict compliance with parameter types, required fields, and system constraints to ensure successful operations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cf6ee2616a9893c8adceb7d3f4795fe6efa570fbcc921ce3da1375d143cf1cf8"
+}

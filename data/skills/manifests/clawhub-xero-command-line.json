@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55026,
+  "uuid": "skill-clawhub-xero-command-line",
+  "skillKey": "clawhub-xero-command-line",
+  "name": "Official Xero skill",
+  "summary": "Interact with the Xero accounting API using the `xero` CLI tool. Manage contacts, invoices, quotes, credit notes, payments, bank transactions, items, manual...",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xero_command_line",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TheRegan",
+      "features": [
+        "Interact with the Xero accounting API using the `xero` CLI tool",
+        "Manage contacts, invoices, quotes, credit notes, payments, bank transactions, items, manual..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xero-command-line@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9703307?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xero-command-line",
+      "url": "https://clawhub.ai/skills/xero-command-line"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xero-command-line",
+    "url": "https://clawhub.ai/skills/xero-command-line",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xero-command-line-4612858ab47fa0e0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xero-command-line@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-xero-command-line-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b13ea010f8a7763947fc03df17267f48bd16f466178a1afe443c3b6e76857db",
+      "artifactSizeBytes": 2522
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T03:27:26.382Z"
+}

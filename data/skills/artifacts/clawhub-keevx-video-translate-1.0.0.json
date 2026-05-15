@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/keevx-video-translate@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.keevx_video_translate",
+  "skill": {
+    "id": 15671,
+    "skillKey": "clawhub-keevx-video-translate",
+    "name": "keevx-video-translate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "keevx-video-translate",
+    "url": "https://clawhub.ai/skills/keevx-video-translate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/keevx-video-translate-270f54eff1572318.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Translate videos into a specified target language using the Keevx API. Supports audio-only translation, subtitle generation, and dynamic duration adjustment...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "baidu-xiling",
+      "userId": "publishers:baidu-xiling",
+      "displayName": "baidu-xiling",
+      "image": "https://avatars.githubusercontent.com/u/218880360?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 389,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 6,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773833118669,
+      "changelog": "Keevx Video Translation Skill 1.0.0 – Initial Release\n\n- Translate videos into a specified target language via Keevx API, supporting both URL and local file inputs.\n- Offers options for audio-only translation, subtitle generation, and dynamic video duration adjustment.\n- Provides endpoints to check supported target languages and to query translation task status.\n- Includes required user messaging: task submission always returns a task ID and re-query instructions.\n- Detailed setup and API authentication instructions provided in documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a0c432c87b4ae97116bcbcf8c2def53358b3ea074ad975ccc1d5b89586763e9d"
+}

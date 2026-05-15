@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/postavel@1.5.0",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.postavel",
+  "skill": {
+    "id": 17964,
+    "skillKey": "clawhub-postavel",
+    "name": "Postavel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "postavel",
+    "url": "https://clawhub.ai/skills/postavel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/postavel-7ff2598e0e9368da.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect to Postavel social media management platform via MCP (Model Context Protocol). Create, schedule, and manage social media posts across Facebook, Insta..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nezaboravi",
+      "userId": "publishers:nezaboravi",
+      "displayName": "Vladimir Nikolic",
+      "image": "https://avatars.githubusercontent.com/u/1515172?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 729,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.5.0",
+      "createdAt": 1772005901096,
+      "changelog": "Fix mcporter workflow: use config add + auth, not auth URL directly",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:75c6e842beb3e11ce1ae28eef0d990a0d85129df0d5c46f31da1ade0a082cba2"
+}

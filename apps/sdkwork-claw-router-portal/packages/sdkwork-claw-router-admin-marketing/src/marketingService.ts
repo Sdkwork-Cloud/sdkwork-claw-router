@@ -1,5 +1,5 @@
 import {
-  createRequestToken,
+  createRequestParams,
   ensurePlusApiSuccess,
   getClawRouterBackendSdkClient,
   isRecord,
@@ -17,6 +17,8 @@ import type {
   AdminCouponBatchGenerateRequest,
   AdminCouponCreateRequest,
   AdminPromoCodeStatusUpdateRequest,
+  CommerceExchangeRuleUpsertRequest,
+  CommerceRechargePackageMutationRequest,
 } from '@sdkwork/clawrouter-backend-sdk';
 
 export interface Coupon {
@@ -66,6 +68,14 @@ export interface RechargeRecord {
   time: string;
 }
 
+export interface RechargePackage {
+  id: string;
+  rmb: string;
+  bonus: number;
+  points: number;
+  status: 'active' | 'inactive';
+}
+
 export interface ReferralStat {
   id: string;
   inviter: string;
@@ -90,66 +100,66 @@ export type CouponBatchGenerateInput = {
 
 export class MarketingService {
   static async fetchCoupons(): Promise<Coupon[]> {
-    const result = await getClawRouterBackendSdkClient().coupon.fetchCoupons();
+    const result = await getClawRouterBackendSdkClient().billing.coupons.list();
     ensurePlusApiSuccess(result, 'Failed to fetch coupons');
     return readRequiredApiItems(result, 'Failed to fetch coupons')
       .map(normalizeCoupon);
   }
 
   static async fetchBatches(): Promise<Batch[]> {
-    const result = await getClawRouterBackendSdkClient().router.fetchBatches();
+    const result = await getClawRouterBackendSdkClient().billing.couponBatches.list();
     ensurePlusApiSuccess(result, 'Failed to fetch coupon batches');
     return readRequiredApiItems(result, 'Failed to fetch coupon batches')
       .map(normalizeBatch);
   }
 
   static async fetchPromoCodes(): Promise<PromoCode[]> {
-    const result = await getClawRouterBackendSdkClient().router.fetchPromoCodes();
+    const result = await getClawRouterBackendSdkClient().billing.couponCodes.list();
     ensurePlusApiSuccess(result, 'Failed to fetch promo codes');
     return readRequiredApiItems(result, 'Failed to fetch promo codes')
       .map(normalizePromoCode);
   }
 
   static async fetchRedemptionRecords(): Promise<RedemptionRecord[]> {
-    const result = await getClawRouterBackendSdkClient().user.fetchRedemptionRecords();
+    const result = await getClawRouterBackendSdkClient().billing.users.coupons.list();
     ensurePlusApiSuccess(result, 'Failed to fetch redemption records');
     return readRequiredApiItems(result, 'Failed to fetch redemption records')
       .map(normalizeRedemptionRecord);
   }
 
   static async fetchRechargeRecords(): Promise<RechargeRecord[]> {
-    const result = await getClawRouterBackendSdkClient().vip.fetchRechargeRecords();
+    const result = await getClawRouterBackendSdkClient().billing.recharges.records.list();
     ensurePlusApiSuccess(result, 'Failed to fetch recharge records');
     return readRequiredApiItems(result, 'Failed to fetch recharge records')
       .map(normalizeRechargeRecord);
   }
 
   static async fetchReferralStats(): Promise<ReferralStat[]> {
-    const result = await getClawRouterBackendSdkClient().router.fetchReferralStats();
+    const result = await getClawRouterBackendSdkClient().billing.referrals.stats.list();
     ensurePlusApiSuccess(result, 'Failed to fetch referral stats');
     return readRequiredApiItems(result, 'Failed to fetch referral stats')
       .map(normalizeReferralStat);
   }
 
   static async addCoupon(coupon: CouponCreateInput): Promise<Coupon> {
-    const result = await getClawRouterBackendSdkClient().coupon.add(
+    const result = await getClawRouterBackendSdkClient().billing.coupons.create(
       toCreateCouponRequest(coupon),
-      requestToken('admin-coupon-create'),
+      createRequestParams('admin-coupon-create'),
     );
     ensurePlusApiSuccess(result, 'Failed to add coupon');
     return normalizeCoupon(readRequiredApiItem(result, 'Created coupon response is missing data'));
   }
 
   static async deleteCoupon(id: string): Promise<boolean> {
-    const result = await getClawRouterBackendSdkClient().coupon.deleteCoupon(requiredSafePathSegment(id, 'couponId'));
+    const result = await getClawRouterBackendSdkClient().billing.coupons.delete(requiredSafePathSegment(id, 'couponId'));
     ensurePlusApiSuccess(result, 'Failed to delete coupon');
     return true;
   }
 
   static async generateBatch(batch: CouponBatchGenerateInput): Promise<{ batch: Batch; codes: PromoCode[] }> {
-    const result = await getClawRouterBackendSdkClient().router.generateBatch(
+    const result = await getClawRouterBackendSdkClient().billing.couponBatches.create(
       toGenerateBatchRequest(batch),
-      requestToken('admin-coupon-batch-generate'),
+      createRequestParams('admin-coupon-batch-generate'),
     );
     ensurePlusApiSuccess(result, 'Failed to generate promo code batch');
     const data = readApiRecord(result);
@@ -164,13 +174,86 @@ export class MarketingService {
   }
 
   static async updatePromoCodeStatus(id: string, status: PromoCode['status']): Promise<boolean> {
-    const result = await getClawRouterBackendSdkClient().router.updatePromoCodeStatus(
-      requiredSafePathSegment(id, 'promoCodeId'),
+    const result = await getClawRouterBackendSdkClient().billing.couponCodes.status.update(
+      requiredSafePathSegment(id, 'codeId'),
       toUpdatePromoCodeStatusRequest(status),
-      requestToken('admin-promo-code-status-update'),
+      createRequestParams('admin-promo-code-status-update'),
     );
     ensurePlusApiSuccess(result, 'Failed to update promo code status');
     return true;
+  }
+
+  static async updateCoupon(id: string, coupon: CouponCreateInput): Promise<Coupon> {
+    const result = await getClawRouterBackendSdkClient().billing.coupons.update(
+      requiredSafePathSegment(id, 'couponId'),
+      toCreateCouponRequest(coupon),
+      createRequestParams('admin-coupon-update'),
+    );
+    ensurePlusApiSuccess(result, 'Failed to update coupon');
+    return normalizeCoupon(readRequiredApiItem(result, 'Updated coupon response is missing data'));
+  }
+
+  static async retrieveRechargeRecord(orderNo: string): Promise<unknown> {
+    const result = await getClawRouterBackendSdkClient().billing.recharges.records.retrieve(
+      requiredSafePathSegment(orderNo, 'orderNo'),
+    );
+    ensurePlusApiSuccess(result, 'Failed to fetch recharge record');
+    return readApiRecord(result);
+  }
+
+  static async listRechargePackages(): Promise<RechargePackage[]> {
+    const result = await getClawRouterBackendSdkClient().billing.recharges.packages.list();
+    ensurePlusApiSuccess(result, 'Failed to fetch recharge packages');
+    return readRequiredApiItems(result, 'Failed to fetch recharge packages')
+      .map(normalizeRechargePackage);
+  }
+
+  static async createRechargePackage(body: CommerceRechargePackageMutationRequest): Promise<RechargePackage> {
+    const result = await getClawRouterBackendSdkClient().billing.recharges.packages.create(
+      toRechargePackageMutationRequest(body),
+      createRequestParams('admin-recharge-package-create'),
+    );
+    ensurePlusApiSuccess(result, 'Failed to create recharge package');
+    return normalizeRechargePackage(readRequiredApiItem(result, 'Created recharge package response is missing data', ['item']));
+  }
+
+  static async updateRechargePackage(packageId: string, body: CommerceRechargePackageMutationRequest): Promise<RechargePackage> {
+    const result = await getClawRouterBackendSdkClient().billing.recharges.packages.update(
+      requiredSafePathSegment(packageId, 'packageId'),
+      toRechargePackageMutationRequest(body),
+      createRequestParams('admin-recharge-package-update'),
+    );
+    ensurePlusApiSuccess(result, 'Failed to update recharge package');
+    return normalizeRechargePackage(readRequiredApiItem(result, 'Updated recharge package response is missing data', ['item']));
+  }
+
+  static async deleteRechargePackage(packageId: string): Promise<boolean> {
+    const result = await getClawRouterBackendSdkClient().billing.recharges.packages.delete(
+      requiredSafePathSegment(packageId, 'packageId'),
+    );
+    ensurePlusApiSuccess(result, 'Failed to delete recharge package');
+    return true;
+  }
+
+  static async listExchangeRules(params?: Record<string, unknown>): Promise<unknown> {
+    const result = await getClawRouterBackendSdkClient().billing.exchangeRules.list(params);
+    ensurePlusApiSuccess(result, 'Failed to fetch exchange rules');
+    return readApiRecord(result);
+  }
+
+  static async upsertExchangeRule(body: CommerceExchangeRuleUpsertRequest): Promise<unknown> {
+    const result = await getClawRouterBackendSdkClient().billing.exchangeRules.update(
+      body,
+      createRequestParams('admin-exchange-rule-upsert'),
+    );
+    ensurePlusApiSuccess(result, 'Failed to upsert exchange rule');
+    return readApiRecord(result);
+  }
+
+  static async listPaymentAttempts(params?: Record<string, unknown>): Promise<unknown> {
+    const result = await getClawRouterBackendSdkClient().billing.payments.attempts.list(params);
+    ensurePlusApiSuccess(result, 'Failed to fetch payment attempts');
+    return readApiRecord(result);
   }
 }
 
@@ -193,6 +276,20 @@ function toGenerateBatchRequest(batch: CouponBatchGenerateInput): AdminCouponBat
 
 function toUpdatePromoCodeStatusRequest(status: PromoCode['status']): AdminPromoCodeStatusUpdateRequest {
   return { status: promoCodeStatus(status) };
+}
+
+function toRechargePackageMutationRequest(
+  value: CommerceRechargePackageMutationRequest,
+): CommerceRechargePackageMutationRequest {
+  const record = readRequiredRecord(value, 'Recharge package request is required');
+  const request: CommerceRechargePackageMutationRequest = {
+    rmb: moneyAmount(readRequiredString(record, 'rmb', 'rmb is required'), 'rmb'),
+    bonus: nonNegativeIntegerInput(record.bonus, 'bonus'),
+  };
+  if (record.status !== undefined && record.status !== null && readString(record, 'status').trim()) {
+    request.status = rechargePackageStatusInput(record.status);
+  }
+  return request;
 }
 
 function requiredText(value: string, fieldName: string): string {
@@ -235,10 +332,6 @@ function codePrefix(value: string): string {
     throw new Error('prefix may only contain letters, numbers, -, and _');
   }
   return normalized;
-}
-
-function requestToken(scope: string): string {
-  return createRequestToken(scope);
 }
 
 function normalizeCoupon(value: unknown): Coupon {
@@ -306,6 +399,32 @@ function normalizeRechargeRecord(value: unknown): RechargeRecord {
     method: readRequiredString(item, 'method', 'Recharge method is required'),
     status: readRechargeStatus(item),
     time: readRequiredString(item, 'time', 'Recharge time is required'),
+  };
+}
+
+function normalizeRechargePackage(value: unknown): RechargePackage {
+  const item = readRequiredRecord(value, 'Recharge package record is required');
+  return {
+    id: readRequiredString(item, 'id', 'Recharge package id is required'),
+    rmb: readCanonicalMoneyString(
+      item,
+      'rmb',
+      'Recharge package money amount is required',
+      'Recharge package money amount must be a money string',
+    ),
+    bonus: readRequiredNonNegativeInteger(
+      item,
+      'bonus',
+      'Recharge package bonus is required',
+      'Recharge package bonus must be a non-negative integer',
+    ),
+    points: readRequiredNonNegativeInteger(
+      item,
+      'points',
+      'Recharge package credited points are required',
+      'Recharge package credited points must be a non-negative integer',
+    ),
+    status: readRechargePackageStatus(item),
   };
 }
 
@@ -386,12 +505,59 @@ function readRechargeStatus(item: ApiRecord): RechargeRecord['status'] {
   throw new Error(`Unsupported recharge status: ${status}`);
 }
 
+function readRechargePackageStatus(item: ApiRecord): RechargePackage['status'] {
+  const rawStatus = readString(item, 'status').trim().toLowerCase();
+  if (!rawStatus) {
+    return 'active';
+  }
+  if (rawStatus === 'active' || rawStatus === 'enabled' || rawStatus === 'normal') {
+    return 'active';
+  }
+  if (rawStatus === 'inactive' || rawStatus === 'disabled') {
+    return 'inactive';
+  }
+  throw new Error(`Unsupported recharge package status: ${rawStatus}`);
+}
+
+function rechargePackageStatusInput(value: unknown): CommerceRechargePackageMutationRequest['status'] {
+  const status = typeof value === 'string' ? value.trim().toLowerCase() : '';
+  if (status === 'active' || status === 'inactive') {
+    return status;
+  }
+  throw new Error('status must be active or inactive');
+}
+
 function readDisplayMoneyString(item: ApiRecord, key: string, missingMessage: string, invalidMessage: string): string {
   const value = readRequiredString(item, key, missingMessage);
   if (!isDisplayMoneyString(value)) {
     throw new Error(invalidMessage);
   }
   return value;
+}
+
+function readCanonicalMoneyString(item: ApiRecord, key: string, missingMessage: string, invalidMessage: string): string {
+  const value = readRequiredString(item, key, missingMessage);
+  if (!isCanonicalMoneyString(value)) {
+    throw new Error(invalidMessage);
+  }
+  return formatMoneyString(value);
+}
+
+function readRequiredNonNegativeInteger(
+  item: ApiRecord,
+  key: string,
+  missingMessage: string,
+  invalidMessage: string,
+): number {
+  const value = item[key];
+  const numberValue = typeof value === 'string' && value.trim() !== '' ? Number(value) : value;
+  if (typeof numberValue !== 'number' || !Number.isFinite(numberValue)) {
+    throw new Error(missingMessage);
+  }
+  if (!Number.isSafeInteger(numberValue) || numberValue < 0) {
+    throw new Error(invalidMessage);
+  }
+  return numberValue;
 }
 
 function readNonNegativeIntegerString(
@@ -409,6 +575,38 @@ function readNonNegativeIntegerString(
 
 function isDisplayMoneyString(value: string): boolean {
   return /^\$?\d+(?:\.\d{1,2})?$/.test(value.trim());
+}
+
+function moneyAmount(value: string, fieldName: string): string {
+  const normalized = value.trim().replace(/,/g, '');
+  if (!isCanonicalMoneyString(normalized)) {
+    throw new Error(`${fieldName} must be a positive money amount`);
+  }
+  if (!/[1-9]/.test(normalized.replace('.', ''))) {
+    throw new Error(`${fieldName} must be greater than zero`);
+  }
+  return formatMoneyString(normalized);
+}
+
+function nonNegativeIntegerInput(value: unknown, fieldName: string): number {
+  const textValue = typeof value === 'number' ? String(value) : typeof value === 'string' ? value.trim() : '';
+  if (!/^\d+$/.test(textValue)) {
+    throw new Error(`${fieldName} must be a non-negative integer`);
+  }
+  const numberValue = Number(textValue);
+  if (!Number.isSafeInteger(numberValue)) {
+    throw new Error(`${fieldName} must be a non-negative integer`);
+  }
+  return numberValue;
+}
+
+function isCanonicalMoneyString(value: string): boolean {
+  return /^\d+(?:\.\d{1,2})?$/.test(value.trim());
+}
+
+function formatMoneyString(value: string): string {
+  const [whole, fraction = ''] = value.trim().split('.');
+  return `${whole}.${fraction.padEnd(2, '0').slice(0, 2)}`;
 }
 
 function isPercentageString(value: string): boolean {

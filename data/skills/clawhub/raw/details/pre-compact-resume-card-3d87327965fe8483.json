@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "pre-compact-resume-card",
+    "displayName": "Pre-Compact Resume Card",
+    "summary": "Generates an operational resume card before Claude context compaction — so the next session knows exactly where it left off, what mode it was in, and what to...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1776560228864,
+    "updatedAt": 1777527730375
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1776560228864,
+    "changelog": "- Initial release of pre-compact-resume-card skill.\n- Automatically saves an operational resume card before context compaction, capturing branch, commit, user/assistant actions, mode, and next step.\n- Transcript is backed up to `thinking/session-logs/` and last 30 are kept.\n- Resume card (`.claude/session-resume-card.md`) is injected into context on session start, restoring previous state automatically.\n- Installation via Clawhub or manual script setup; example hook registration provided.\n- Ensures Claude resumes work exactly where the last session ended, without manual intervention.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "nadalpiantini",
+    "userId": "s173nx8zeb6rjfnddvrzgbjq098555y6",
+    "displayName": "nadalpiantini",
+    "image": "https://avatars.githubusercontent.com/u/152635440?v=4"
+  },
+  "moderation": null
+}

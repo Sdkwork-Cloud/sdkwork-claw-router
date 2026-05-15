@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25915,
+  "uuid": "skill-clawhub-openclaw-session-recall",
+  "skillKey": "clawhub-openclaw-session-recall",
+  "name": "Session Recall",
+  "summary": "Search past session transcripts to recover lost conversation context. MUST use when: (1) the current session is new or has very few messages AND the user's m...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_session_recall",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ethan Chen",
+      "features": [
+        "Search past session transcripts to recover lost conversation context",
+        "MUST use when: (1) the current session is new or has very few messages AND the user's m..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-session-recall@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3998350?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-session-recall",
+      "url": "https://clawhub.ai/skills/openclaw-session-recall"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-session-recall",
+    "url": "https://clawhub.ai/skills/openclaw-session-recall",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-session-recall-c6c34b2303d518b5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-session-recall@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-session-recall-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d9a86a4d7e51f938a0352a4688cb460e4d98d6e3660c20118101515e4039f6f3",
+      "artifactSizeBytes": 2030
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T20:37:30.047Z"
+}

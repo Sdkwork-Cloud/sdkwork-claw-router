@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34445,
+  "uuid": "skill-clawhub-zizo",
+  "skillKey": "clawhub-zizo",
+  "name": "skill for searching images and boards in zizo library (https://zizo.pro).",
+  "summary": "Search images and boards in zizo library. Use when user asks to search for images, photos, pictures, visual assets, or boards/collections.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zizo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "foobar",
+      "features": [
+        "Search images and boards in zizo library",
+        "Use when user asks to search for images, photos, pictures, visual assets, or boards/collections."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zizo@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1496544?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zizo",
+      "url": "https://clawhub.ai/skills/zizo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zizo",
+    "url": "https://clawhub.ai/skills/zizo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zizo-6672ea2bd4a443c5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zizo@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-zizo-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:392622b0bc614a5ad0ef95f9a5de79ce0324d9ab011c5233f1d9df32457bda5e",
+      "artifactSizeBytes": 1995
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T15:14:12.581Z"
+}

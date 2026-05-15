@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35574,
+  "uuid": "skill-clawhub-engrm-sentinel",
+  "skillKey": "clawhub-engrm-sentinel",
+  "name": "Engrm Sentinel",
+  "summary": "Use Engrm packs and Sentinel context to surface likely mistakes, risky patterns, and lessons that would have prevented them.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.engrm_sentinel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dr12hes",
+      "features": [
+        "Use Engrm packs and Sentinel context to surface likely mistakes, risky patterns, and lessons th."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/engrm-sentinel@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/216645480?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "engrm-sentinel",
+      "url": "https://clawhub.ai/skills/engrm-sentinel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "engrm-sentinel",
+    "url": "https://clawhub.ai/skills/engrm-sentinel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/engrm-sentinel-acec585ced2d2f79.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/engrm-sentinel@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-engrm-sentinel-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c22e6ae59596c7f1bb2eca3af37e2ea5cec4335d818f9e76502bdcfe86f957a1",
+      "artifactSizeBytes": 1855
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T21:09:35.952Z"
+}

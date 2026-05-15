@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/selfimproving@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.selfimproving",
+  "skill": {
+    "id": 23649,
+    "skillKey": "clawhub-selfimproving",
+    "name": "self_improving_agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "selfimproving",
+    "url": "https://clawhub.ai/skills/selfimproving",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/selfimproving-0fd013a0edd1238a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "richardan01",
+      "userId": "publishers:richardan01",
+      "displayName": "richieriri",
+      "image": "https://avatars.githubusercontent.com/u/54435798?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 434,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774019319357,
+      "changelog": "self improving agent",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4be50267a74d170504a17b500349ae528f779b7df7a3248ad205c6d4d2111d25"
+}

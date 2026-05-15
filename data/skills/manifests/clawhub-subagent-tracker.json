@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26174,
+  "uuid": "skill-clawhub-subagent-tracker",
+  "skillKey": "clawhub-subagent-tracker",
+  "name": "Subagent Tracker",
+  "summary": "Say \"agent status\" and get updates on all subagent progress. Track subagent actions while they run; list active subagents, status, and tail transcripts. Inst...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subagent_tracker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "austindixson",
+      "features": [
+        "Say \"agent status\" and get updates on all subagent progress",
+        "Track subagent actions while they run",
+        "list active subagents, status, and tail transcripts"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/subagent-tracker@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52183161?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "subagent-tracker",
+      "url": "https://clawhub.ai/skills/subagent-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subagent-tracker",
+    "url": "https://clawhub.ai/skills/subagent-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subagent-tracker-634256d40131e902.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/subagent-tracker@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-subagent-tracker-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b0ec4356a44183ebe52bcaccd8a8069edb9b6cb205c16e0e888570fe82f9410",
+      "artifactSizeBytes": 2654
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T02:22:22.032Z"
+}

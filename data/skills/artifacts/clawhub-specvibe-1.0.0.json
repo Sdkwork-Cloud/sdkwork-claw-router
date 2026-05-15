@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/specvibe@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.specvibe",
+  "skill": {
+    "id": 21354,
+    "skillKey": "clawhub-specvibe",
+    "name": "SpecVibe"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "specvibe",
+    "url": "https://clawhub.ai/skills/specvibe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/specvibe-d5116b83b734a9bf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A world-class, spec-driven development framework for building production-ready, AI-native applications. Use for any new project to ensure adherence to the mo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "badideal-2046",
+      "userId": "publishers:badideal-2046",
+      "displayName": "Badideal",
+      "image": "https://avatars.githubusercontent.com/u/132630688?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 493,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772009886643,
+      "changelog": "Initial release of SpecVibe: a spec-driven framework for AI-native app development.\n\n- Introduces a universal, seven-stage process for building production-ready apps (specify, plan, test, implement, review, document, deploy).\n- Enforces a \"Specification-as-Source-of-Truth\" philosophy, where spec.md guides all work.\n- Defines clear Delegate/Review/Own roles to facilitate human-AI collaboration at each stage.\n- Includes detailed quality gates and checklists to ensure adherence to 2026 best practices in architecture, security, testing, and deployment.\n- Promotes automation across testing, code review, documentation, and CI/CD.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1ba5b9b5d91d423468f6eeae983eec18cc7d5b3062c9a2982359ebe486afc990"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cloud189-storage@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloud189_storage",
+  "skill": {
+    "id": 67234,
+    "skillKey": "clawhub-cloud189-storage",
+    "name": "cloud189-storage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloud189-storage",
+    "url": "https://clawhub.ai/skills/cloud189-storage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloud189-storage-b21e331001f95bf3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "操作天翼云盘，包括：登录获取鉴权Token、智能图片搜索、查询目录、查询文件列表、搜索文件、文件下载。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "youngcrazy",
+      "userId": "s17f0sy886q0bznh3bn48kmdp584egwa",
+      "displayName": "Cloud189-netdisk",
+      "image": "https://avatars.githubusercontent.com/u/23095024?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 301,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776001823111,
+      "changelog": "支持天翼云盘文件管理，包括下载、列表、智能搜图、文件搜索等操作",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:52b0ee9dbb0fa2b9537c189f063d4325bdadc2d8329efbdcedd10c1185dfd7de"
+}

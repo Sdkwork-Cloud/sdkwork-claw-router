@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trycloudflare-proxy-verify@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trycloudflare_proxy_verify",
+  "skill": {
+    "id": 46118,
+    "skillKey": "clawhub-trycloudflare-proxy-verify",
+    "name": "TryCloudflare Proxy Verify"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trycloudflare-proxy-verify",
+    "url": "https://clawhub.ai/skills/trycloudflare-proxy-verify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trycloudflare-proxy-verify-735058125ec828b3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Expose a local file, local folder, screenshot, or local HTTP service through a temporary trycloudflare.com tunnel and verify the public URL before sharing it..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ojbkxiongdei",
+      "userId": "s17fq4rfdxf3nmdmgtj5y0n8bs83wqqc",
+      "displayName": "ojbkxiongdei",
+      "image": "https://avatars.githubusercontent.com/u/55149555?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 128,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775813203962,
+      "changelog": "- Initial release of trycloudflare-proxy-verify.\n- Enables users to expose local files, folders, screenshots, or web services via temporary trycloudflare.com tunnels.\n- Ensures all public URLs are verified for accessibility and correctness before sharing.\n- Provides scripts and a verification checklist for reliable, repeatable sharing flow.\n- Guides use for downloadable URLs to local resources, stressing best practices and temporary nature of links.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a8f836af6a6c7c66b714426643c597a5bd1f4fce702d495a12b4908ab64fda04"
+}

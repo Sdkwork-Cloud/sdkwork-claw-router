@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21249,
+  "uuid": "skill-clawhub-sardis-cards",
+  "skillKey": "clawhub-sardis-cards",
+  "name": "Sardis Cards",
+  "summary": "Virtual card issuance and management for AI agents to make real-world purchases",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sardis_cards",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EfeDurmaz16",
+      "features": [
+        "Virtual card issuance and management for AI agents to make real-world purchases"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sardis-cards@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/75971010?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sardis-cards",
+      "url": "https://clawhub.ai/skills/sardis-cards"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sardis-cards",
+    "url": "https://clawhub.ai/skills/sardis-cards",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sardis-cards-54b91107c88125e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sardis-cards@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sardis-cards-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b769d71f2973c89421ec91fdab9f18f870cb61122555246ec502c42851439f40",
+      "artifactSizeBytes": 2327
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T12:24:42.136Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28203,
+  "uuid": "skill-clawhub-bitpanda-official",
+  "skillKey": "clawhub-bitpanda-official",
+  "name": "Bitpanda Official",
+  "summary": "Query a Bitpanda account via the Bitpanda API using a bundled bash CLI. Covers all read-only endpoints: balances, trades, transactions, asset info, and live...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bitpanda_official",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mrtlopes",
+      "features": [
+        "Query a Bitpanda account via the Bitpanda API using a bundled bash CLI",
+        "Covers all read-only endpoints: balances, trades, transactions, asset info, and live..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bitpanda-official@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1341274?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bitpanda-official",
+      "url": "https://clawhub.ai/skills/bitpanda-official"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bitpanda-official",
+    "url": "https://clawhub.ai/skills/bitpanda-official",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bitpanda-official-20af7f5570dace13.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bitpanda-official@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-bitpanda-official-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:013203a40193f289c6fbd3ab8804ea69be65dd7464bf5b76a27aa52e2a4de546",
+      "artifactSizeBytes": 2135
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T16:07:28.879Z"
+}

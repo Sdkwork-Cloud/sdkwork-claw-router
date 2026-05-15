@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18162,
+  "uuid": "skill-clawhub-notion-integration",
+  "skillKey": "clawhub-notion-integration",
+  "name": "Notion",
+  "summary": "Notion integration. Manage project management and document management data, records, and workflows. Use when the user wants to interact with Notion data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notion_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Notion integration",
+        "Manage project management and document management data, records, and workflows",
+        "Use when the user wants to interact with Notion data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/notion-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "notion-integration",
+      "url": "https://clawhub.ai/skills/notion-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notion-integration",
+    "url": "https://clawhub.ai/skills/notion-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notion-integration-3c7d85200171bc2c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/notion-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-notion-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b6e646099386f2227533b9a1b757938bd1f52892e68e501725244ebae9aed359",
+      "artifactSizeBytes": 1900
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T20:38:48.223Z"
+}

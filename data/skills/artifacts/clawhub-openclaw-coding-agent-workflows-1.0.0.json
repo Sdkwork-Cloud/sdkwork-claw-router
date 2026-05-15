@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-coding-agent-workflows@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_coding_agent_workflows",
+  "skill": {
+    "id": 30695,
+    "skillKey": "clawhub-openclaw-coding-agent-workflows",
+    "name": "OpenClaw Coding Agent Workflows"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-coding-agent-workflows",
+    "url": "https://clawhub.ai/skills/openclaw-coding-agent-workflows",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-coding-agent-workflows-04596df1d74525d2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Delegate coding tasks to Codex, Claude Code, Pi, or OpenCode from bash with safe launch modes, background monitoring, and repo-isolated review workflows."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danielsinewe",
+      "userId": "s176jv075hrkmn3rxtgbyd914583nrry",
+      "displayName": "Daniel Sinewe",
+      "image": "https://avatars.githubusercontent.com/u/128365422?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 268,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776409275039,
+      "changelog": "Initial release: OpenClaw coding-agent orchestration workflow with execution matrix, background session control, and repo-safe review patterns.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:95db34c40f0a9ed83315083ec57362f3be1184e05f920e4753dfc79820333cf7"
+}

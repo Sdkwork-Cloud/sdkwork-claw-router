@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62800,
+  "uuid": "skill-clawhub-android-adb-skill",
+  "skillKey": "clawhub-android-adb-skill",
+  "name": "Android Adb Skill",
+  "summary": "Android 开发调试技能，通过系统 ADB 工具操作 Android 设备。以下场景必须触发此技能：(1) 直接 ADB 操作——安装 APK、查看设备列表、抓取 logcat 日志、查看已安装应用、清除应用数据、截图、重启设备、拉取/推送文件、查看 CPU/内存/电池信息、adb shell 操作；(2)...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.android_adb_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yhongm",
+      "features": [
+        "Android 开发调试技能，通过系统 ADB 工具操作 Android 设备。以下场景必须触发此技能：(1) 直接 ADB 操作——安装 APK、查看设备列表、抓取 logcat 日志、查."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/android-adb-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3638074?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "android-adb-skill",
+      "url": "https://clawhub.ai/skills/android-adb-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "android-adb-skill",
+    "url": "https://clawhub.ai/skills/android-adb-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/android-adb-skill-d3efa6093d0341bd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/android-adb-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-android-adb-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f3ccbed6cd6773f49dbbf885dd6981e017cc5c7f29dcaf4c09d1b1d88686d4c6",
+      "artifactSizeBytes": 2571
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T09:21:43.824Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15855,
+  "uuid": "skill-clawhub-pdf-toolkit",
+  "skillKey": "clawhub-pdf-toolkit",
+  "name": "Pdf Toolkit",
+  "summary": "Run a local script to work with PDF files, DOCX documents, OCR, and text-to-speech. Use the read tool to load this SKILL.md, then exec the uv run command ins...",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_toolkit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "youpele52",
+      "features": [
+        "Run a local script to work with PDF files, DOCX documents, OCR, and text-to-speech",
+        "Use the read tool to load this SKILL.md, then exec the uv run command ins..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf-toolkit@0.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43122220?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf-toolkit",
+      "url": "https://clawhub.ai/skills/pdf-toolkit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-toolkit",
+    "url": "https://clawhub.ai/skills/pdf-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-toolkit-31e489537861bd99.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf-toolkit@0.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf-toolkit-0.0.3.json",
+      "version": "0.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7a3804ef1fd0b2707e0c4e47f328e183e70700da3a2f9fa5e0455d23c0f04a11",
+      "artifactSizeBytes": 2171
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T15:21:23.188Z"
+}

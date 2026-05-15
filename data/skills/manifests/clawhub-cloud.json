@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11060,
+  "uuid": "skill-clawhub-cloud",
+  "skillKey": "clawhub-cloud",
+  "name": "Cloud",
+  "summary": "Choose, organize, sync, share, and back up personal files across iCloud, Google Drive, Dropbox, and OneDrive.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloud",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Choose, organize, sync, share, and back up personal files across iCloud, Google Drive, Dropbox,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cloud@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cloud",
+      "url": "https://clawhub.ai/skills/cloud"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloud",
+    "url": "https://clawhub.ai/skills/cloud",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloud-56681010b753e1ab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cloud@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cloud-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ec2161c496209aac1b22ef521970e1244068b7a438a7485d7c9997e219ce602d",
+      "artifactSizeBytes": 1771
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T17:40:21.294Z"
+}

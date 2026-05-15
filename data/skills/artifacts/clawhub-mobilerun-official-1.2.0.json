@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mobilerun-official@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mobilerun_official",
+  "skill": {
+    "id": 51264,
+    "skillKey": "clawhub-mobilerun-official",
+    "name": "Mobilerun"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mobilerun-official",
+    "url": "https://clawhub.ai/skills/mobilerun-official",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mobilerun-official-cd6604cb278e932d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Give your OpenClaw agent hands on a real Android phone. Tap, swipe, type, take screenshots, read the UI accessibility tree, and manage apps — all through the..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pelae1",
+      "userId": "publishers:pelae1",
+      "displayName": "PeLae1",
+      "image": "https://avatars.githubusercontent.com/u/224088420?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 359,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1773993545471,
+      "changelog": "Security scan fixes: removed hardcoded LLM model names (use GET /models endpoint instead), removed publishedAt timestamp from meta, added security context for Accessibility Service permission. All security vendors: Undetected.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1ccf061a2acd88c20f9458b458c1df96c951efa880c11bf721c012ce1e8fc072"
+}

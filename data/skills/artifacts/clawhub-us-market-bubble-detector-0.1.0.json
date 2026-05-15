@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/us-market-bubble-detector@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.us_market_bubble_detector",
+  "skill": {
+    "id": 11017,
+    "skillKey": "clawhub-us-market-bubble-detector",
+    "name": "Us Market Bubble Detector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "us-market-bubble-detector",
+    "url": "https://clawhub.ai/skills/us-market-bubble-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/us-market-bubble-detector-021484e81aef097b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Evaluates market bubble risk through quantitative data-driven analysis using the revised Minsky/Kindleberger framework v2.1. Prioritizes objective metrics (Put/Call, VIX, margin debt, breadth, IPO data) over subjective impressions. Feature."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "veeramanikandanr48",
+      "userId": "publishers:veeramanikandanr48",
+      "displayName": "Veera",
+      "image": "https://avatars.githubusercontent.com/u/119089869?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1966,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769870453503,
+      "changelog": "US Market Bubble Detector v0.1.0 (Skill Launch, Framework v2.1)\n\n- Introduces strict, multi-phase evaluation of US equity market bubble risk utilizing a revised Minsky/Kindleberger framework.\n- Enforces mandatory quantitative data collection (put/call, VIX, margin debt, market breadth, IPOs) with explicit numerical thresholds.\n- Implements a two-phase process: mechanical data scoring followed by strictly limited qualitative adjustment (+3 points max, with confirmation bias checklist).\n- Adds nuanced risk granularity, including a new \"Elevated Risk\" phase.\n- Designed to guide profit-taking, entry/exit timing, and risk management decisions based on objective, reproducible analysis.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:06af0381637f9a547517988896c7bd07523449d5b95f41914aabecf1d974b94d"
+}

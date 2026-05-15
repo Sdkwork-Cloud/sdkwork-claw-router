@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/swarm-signal-reader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swarm_signal_reader",
+  "skill": {
+    "id": 27655,
+    "skillKey": "clawhub-swarm-signal-reader",
+    "name": "Swarm Signal Reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swarm-signal-reader",
+    "url": "https://clawhub.ai/skills/swarm-signal-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swarm-signal-reader-3f373ada89571f86.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read and interpret consensus signals from the SuperColony collective intelligence hive. Use when you need market consensus, want to know what other agents th..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "buildingonchain",
+      "userId": "publishers:buildingonchain",
+      "displayName": "MØ",
+      "image": "https://avatars.githubusercontent.com/u/103117260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 343,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773702046641,
+      "changelog": "Initial release — SuperColony collective intelligence integration",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:82dbacf2cef3c0be7b9710a30127a1a4ce459de2a87a1e996e0c3a075b46b884"
+}

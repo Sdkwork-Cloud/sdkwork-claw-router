@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-public-cli@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_public_cli",
+  "skill": {
+    "id": 13358,
+    "skillKey": "clawhub-wechat-public-cli",
+    "name": "wechat-public-cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-public-cli",
+    "url": "https://clawhub.ai/skills/wechat-public-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-public-cli-bdd686669b5e83c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Publish and download WeChat Public Platform content and Baijiahao articles via a local CLI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ai-chen2050",
+      "userId": "s177js1ss5knbpcdn261j88xsx83nyzh",
+      "displayName": "ai-chen2050",
+      "image": "https://avatars.githubusercontent.com/u/27693952?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1183,
+      "installsAllTime": 10,
+      "installsCurrent": 9,
+      "stars": 2,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1773332674389,
+      "changelog": "- Added new commands: `wechat:stats:cumulate` for user statistics and `wechat:stats:bizsummary` for published content statistics.\n- Extended documentation with examples for querying statistics and date ranges.\n- Updated Notes to describe new statistics commands and their limitations (server-side only, max 30 days).\n- No code changes; documentation and usage instructions improved.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dbe8259b3357110afe48e5c78c01dfd4d8725ede773903f5d5a921b8109861a6"
+}

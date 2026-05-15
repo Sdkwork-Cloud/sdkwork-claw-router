@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45379,
+  "uuid": "skill-clawhub-cluster-gateway",
+  "skillKey": "clawhub-cluster-gateway",
+  "name": "Cluster Gateway",
+  "summary": "Verwaltet das OpenClaw Cluster Gateway als zentralen Hub zur Koordination, Task-Verteilung und Kommunikation zwischen Sub-Agenten im Cluster.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cluster_gateway",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KikiKari",
+      "features": [
+        "Verwaltet das OpenClaw Cluster Gateway als zentralen Hub zur Koordination, Task-Verteilung und."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cluster-gateway@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/272986081?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cluster-gateway",
+      "url": "https://clawhub.ai/skills/cluster-gateway"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cluster-gateway",
+    "url": "https://clawhub.ai/skills/cluster-gateway",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cluster-gateway-95bc2cf8cf306b39.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cluster-gateway@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cluster-gateway-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a824261f1420d8c40aecd29504d80e858e54fcda9ab1d59fbf74d57177a1e179",
+      "artifactSizeBytes": 2353
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T06:22:19.543Z"
+}

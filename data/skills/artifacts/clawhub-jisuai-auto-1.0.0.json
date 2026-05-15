@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jisuai-auto@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jisuai_auto",
+  "skill": {
+    "id": 59651,
+    "skillKey": "clawhub-jisuai-auto",
+    "name": "jisuai-auto"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jisuai-auto",
+    "url": "https://clawhub.ai/skills/jisuai-auto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jisuai-auto-8aa1562774f61fff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "一键配置 OpenClaw 对接 aicodee.com MiniMax 模型中转服务。当用户需要配置、设置、激活 aicodee 的 MiniMax API 时触发。触发词：jisuai-auto、配置jisuai、配置爱代码、配置MiniMax。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "outrice",
+      "userId": "s177ke50tbr8w9y2t7bjnjw6ws83hcdg",
+      "displayName": "outRice",
+      "image": "https://avatars.githubusercontent.com/u/20294997?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774416711798,
+      "changelog": "- Initial release of jisuai-auto for one-click configuration of OpenClaw with aicodee.com MiniMax model relay service.\n- Supports triggering via multiple Chinese and English keywords.\n- Automatically extracts API Base URL, API Key, and MiniMax model from user messages using robust pattern matching.\n- Runs a configuration script to update openclaw.json and set the default agent model.\n- Includes error handling for missing API Key and script execution failures, providing clear user feedback.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d4eefa9a66b18dfbe9906aacc940a63b05f9249597bbd6a1c976aebaf5c94309"
+}

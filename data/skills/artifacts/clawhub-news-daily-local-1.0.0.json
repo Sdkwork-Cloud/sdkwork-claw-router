@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/news-daily-local@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_daily_local",
+  "skill": {
+    "id": 65583,
+    "skillKey": "clawhub-news-daily-local",
+    "name": "News Daily Local"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-daily-local",
+    "url": "https://clawhub.ai/skills/news-daily-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-daily-local-539f8bf29f5da562.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "获取新闻热榜（国内、国际、科技、AI）并发送到飞书。不依赖本地工程，直接从 RSS 获取数据。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "morrison230",
+      "userId": "s17e2ws5n9ev1vzxen73zmg6ws83tzyz",
+      "displayName": "morrison230",
+      "image": "https://avatars.githubusercontent.com/u/120681849?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 265,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774030363397,
+      "changelog": "news-daily-local 1.0.0\n\n- Initial release of the news-daily skill.\n- Fetches top news from multiple categories (domestic, international, technology, AI) via RSS.\n- Formats news into Feishu card messages with clickable titles.\n- Supports scheduled or manual message sending to Feishu groups.\n- Flexible configuration via environment variables or config file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3298db32510809ed61618263fc939721385729659b013c057484f289801a38f5"
+}

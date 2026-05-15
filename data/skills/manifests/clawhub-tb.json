@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62466,
+  "uuid": "skill-clawhub-tb",
+  "skillKey": "clawhub-tb",
+  "name": "Teambition",
+  "summary": "连接和管理 Teambition（项目管理系统），通过 Teambition MCP 服务实现任务、项目、成员等数据查询和管理。当用户提到 Teambition、项目管理、任务管理等时使用此 skill。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tb",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rainco",
+      "features": [
+        "连接和管理 Teambition（项目管理系统），通过 Teambition MCP 服务实现任务、项目、成员等数据查询和管理。当用户提到 Teambition、项目管理、任务管理等时使用此."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tb@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20264327?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tb",
+      "url": "https://clawhub.ai/skills/tb"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tb",
+    "url": "https://clawhub.ai/skills/tb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tb-7aa5ae9ecf82f6fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tb@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tb-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e8fe9eb95dab4abd9c736b0f33aeed24f4ddba77a30510198f68a59641f176bf",
+      "artifactSizeBytes": 1865
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T12:48:22.870Z"
+}

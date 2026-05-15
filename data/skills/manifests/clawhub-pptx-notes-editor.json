@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38694,
+  "uuid": "skill-clawhub-pptx-notes-editor",
+  "skillKey": "clawhub-pptx-notes-editor",
+  "name": "pptx-notes-editor",
+  "summary": "PowerPoint speaker notes editor for AI agents. Use when the user needs to: (1) modify PPT speaker notes, (2) export notes to Markdown, (3) rewrite notes in n...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pptx_notes_editor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cm8421",
+      "features": [
+        "PowerPoint speaker notes editor for AI agents",
+        "Use when the user needs to: (1) modify PPT speaker notes, (2) export notes to Markdown, (3) rew."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pptx-notes-editor@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11962058?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pptx-notes-editor",
+      "url": "https://clawhub.ai/skills/pptx-notes-editor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pptx-notes-editor",
+    "url": "https://clawhub.ai/skills/pptx-notes-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pptx-notes-editor-95e5d95d1482fde6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pptx-notes-editor@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pptx-notes-editor-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dbc30cec2d053ab9dc19cc11a82ecf3acb348d9d461679bc2b59c5ab19bcd09f",
+      "artifactSizeBytes": 1990
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T06:38:32.568Z"
+}

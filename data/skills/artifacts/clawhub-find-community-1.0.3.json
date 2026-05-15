@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/find-community@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_community",
+  "skill": {
+    "id": 30583,
+    "skillKey": "clawhub-find-community",
+    "name": "Find Community"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-community",
+    "url": "https://clawhub.ai/skills/find-community",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-community-d961270b1b834acf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Help identify and evaluate communities to build a minimalist business around. Use when someone is looking for a business idea, trying to find their community..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "carollili",
+      "userId": "s17azmw6dq9sp51pe6gwsyjgax844n33",
+      "displayName": "Aoli",
+      "image": "https://avatars.githubusercontent.com/u/86242993?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 240,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775554644596,
+      "changelog": "SKILL.md 新增中文技能说明和适用场景",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8bc4212ceb20edfb49b9848fd77c3f3b189ff1e043b66681102557c1f773770b"
+}

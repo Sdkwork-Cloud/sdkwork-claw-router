@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/opencode-model-benchmark@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opencode_model_benchmark",
+  "skill": {
+    "id": 61298,
+    "skillKey": "clawhub-opencode-model-benchmark",
+    "name": "opencode-model-benchmark"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opencode-model-benchmark",
+    "url": "https://clawhub.ai/skills/opencode-model-benchmark",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opencode-model-benchmark-0d33e2510d25ba2d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenCode Zen 免费模型基准测试工具。 当用户想测试 OpenCode Zen 平台上免费模型的性能（响应时间、tokens/s、生成速度）时使用此 Skill。 触发词：模型测试、性能测试、基准测试、benchmark、测速、tokens/s、吞吐量、opencode 测试、免费模型速度比较。 该 S..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "braveheartzjh",
+      "userId": "s179a8e8mw6y7qs767qrm25vwx83j3j9",
+      "displayName": "BraveHeartZJH",
+      "image": "https://avatars.githubusercontent.com/u/69007802?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776589404155,
+      "changelog": "OpenCode Zen 免费模型基准测试工具初始版本发布：\n\n- 新增自动化脚本，用于基准测试 OpenCode Zen 平台上所有免费模型的性能（响应时间、tokens/s、吞吐量等）\n- 自动抓取并测试最新免费模型清单，支持智能过滤已下架模型\n- 生成结构化 Markdown 测试报告，按 tokens/s 对模型性能排名，报告直接输出到对话窗口\n- 无需 API Key，使用官方公开 API，测试过程完全自动化\n- 提供标准测试用例和可配置的参数",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d83103fbeb0bdd2947e53a96b312d1b0ad81bf363d2fcebbb7e835f1ceab6745"
+}

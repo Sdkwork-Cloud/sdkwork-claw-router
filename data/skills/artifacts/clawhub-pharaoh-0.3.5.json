@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pharaoh@0.3.5",
+  "version": "0.3.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pharaoh",
+  "skill": {
+    "id": 28072,
+    "skillKey": "clawhub-pharaoh",
+    "name": "pharaoh"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pharaoh",
+    "url": "https://clawhub.ai/skills/pharaoh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pharaoh-976eaac55ceff215.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Codebase knowledge graph with 23 development workflow skills. Query architecture, dependencies, blast radius, dead code, and test coverage via MCP. Requires..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xuxdesign",
+      "userId": "s17aa3x04hr4yr6ntjkyyy2g9183h17r",
+      "displayName": "Dan Greer",
+      "image": "https://avatars.githubusercontent.com/u/132718879?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 235,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.3.5",
+      "createdAt": 1774501799695,
+      "changelog": "Release v0.3.5 — see https://github.com/Pharaoh-so/pharaoh/releases/tag/clawhub-v0.3.5",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ccb548b3bf9f78b654853b0e2d4befdd9905d06f861225aea3cc9f39c1384e36"
+}

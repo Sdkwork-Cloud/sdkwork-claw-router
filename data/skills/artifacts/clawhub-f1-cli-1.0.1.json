@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/f1-cli@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.f1_cli",
+  "skill": {
+    "id": 26589,
+    "skillKey": "clawhub-f1-cli",
+    "name": "F1 CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "f1-cli",
+    "url": "https://clawhub.ai/skills/f1-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/f1-cli-027829faf4b6c332.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Formula 1 data using the f1-cli command-line tool (wraps OpenF1 API). Use when the user asks about F1 race results, lap times, driver standings, pit st..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "barronlroth",
+      "userId": "s177zvqjex93natn61ys5f46tn840qq2",
+      "displayName": "Barron Roth",
+      "image": "https://avatars.githubusercontent.com/u/5567884?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 355,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773275971766,
+      "changelog": "Remove hardcoded local paths from skill file",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9b24d9513d7e9f6b00d8fe22b77f1ffd32786897b2c702d76cfc25cad4171eda"
+}

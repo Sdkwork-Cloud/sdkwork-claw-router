@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-reply-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_reply_ai",
+  "skill": {
+    "id": 69333,
+    "skillKey": "clawhub-wechat-reply-ai",
+    "name": "wechat-reply-ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-reply-ai",
+    "url": "https://clawhub.ai/skills/wechat-reply-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-reply-ai-f951e2fd8b3fe601.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Windows 本地微信自动回复与消息处理工具。用于 Codex 需要在已登录的 PC 微信上执行联系人定位、OCR 读取最新消息、生成并发送中文回复、发送图片/视频/文件、截图最新图片预览、或启动常驻守护进程加速代回时。适用于“回 xxx”“查看微信最新消息”“帮我发图片/视频”“把微信代回流程固化成快路径”等场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pddsa",
+      "userId": "s17a5czxcakkgg9jeydxkh7z7983k3cn",
+      "displayName": "PDDsa",
+      "image": "https://avatars.githubusercontent.com/u/20320390?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 239,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774431095861,
+      "changelog": "wechat-auto-reply-toolkit 1.0.0\n\n- Initial release with Windows PC WeChat auto-reply and message processing tools.\n- Supports reading latest messages, sending replies (text, images, video, files), and session acceleration via daemon process.\n- Includes command examples and best practices for single and multi-turn operations.\n- Emphasizes local processing, minimal repeated OCR, and safe reply rules for sensitive scenarios.\n- Provides detailed resource navigation for setup, troubleshooting, and workflow optimization.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b28e516999b4137a4dee8763ccb1a67304018b5d904c6ebcb99a6d3aaa72fac1"
+}

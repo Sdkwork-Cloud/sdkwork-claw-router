@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/email-operations@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_operations",
+  "skill": {
+    "id": 68861,
+    "skillKey": "clawhub-email-operations",
+    "name": "Email Operations"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-operations",
+    "url": "https://clawhub.ai/skills/email-operations",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-operations-d3cb6b4f49495ff6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "邮件操作技能，通过 SMTP/IMAP 协议读取和发送邮件。当用户想要查看邮件、搜索邮件内容、 获取收件箱列表、拉取特定邮件详情、发送邮件、或需要与邮箱服务交互时，使用此技能。 无论用户是否明确提到 \"IMAP\" 或 \"SMTP\"，只要涉及邮件收发操作，均可触发此技能。 适用场景：查看收件箱、搜索邮件、按条件过滤..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yiweiweilai",
+      "userId": "s175fw1dsrmyg98em3h780x4md84cwpj",
+      "displayName": "yiweiweilai",
+      "image": "https://avatars.githubusercontent.com/u/54618264?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1775727129986,
+      "changelog": "- 新增详细 SKILL.md 指南，涵盖 SMTP/IMAP 邮箱收发、配置方法、常见邮箱服务示例及功能表\n- 明确 `.env` 文件为凭证配置，补充各平台适配参数及注意事项\n- 详列所有核心 API 方法、主要数据结构与结果示例\n- 增加命令行用法与常见问题解答，便于上手和故障排查",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a08e5e939efb9b311284a4289a9eda4e861ee622bdf2a5c80e3e2fc7687185cc"
+}

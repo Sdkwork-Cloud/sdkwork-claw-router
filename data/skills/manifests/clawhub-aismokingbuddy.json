@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50100,
+  "uuid": "skill-clawhub-aismokingbuddy",
+  "skillKey": "clawhub-aismokingbuddy",
+  "name": "ai smoking buddy",
+  "summary": "Use this skill only when the user has explicitly opted the Agent into smoking characterization. When active, the Agent weaves natural smoking actions and lig...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aismokingbuddy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "siyubuyu",
+      "features": [
+        "Use this skill only when the user has explicitly opted the Agent into smoking characterization",
+        "When active, the Agent weaves natural smoking actions and lig..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aismokingbuddy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/163799999?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aismokingbuddy",
+      "url": "https://clawhub.ai/skills/aismokingbuddy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aismokingbuddy",
+    "url": "https://clawhub.ai/skills/aismokingbuddy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aismokingbuddy-ae8d7db08550eb27.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aismokingbuddy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aismokingbuddy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:df0ae3890ee3d39fd0c36b5bd8c2caa874410841a7c6177e83c64973efff3b85",
+      "artifactSizeBytes": 2140
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T07:28:06.844Z"
+}

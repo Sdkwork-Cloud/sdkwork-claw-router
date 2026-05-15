@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53771,
+  "uuid": "skill-clawhub-ad-security-reviewer",
+  "skillKey": "clawhub-ad-security-reviewer",
+  "name": "ad-security-reviewer",
+  "summary": "> Active Directory security specialist analyzing identity configuration, privileged group design, delegation, authentication policies, legacy protocols, and...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ad_security_reviewer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Michael Tsatryan",
+      "features": [
+        "> Active Directory security specialist analyzing identity configuration, privileged group desig."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ad-security-reviewer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9057374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ad-security-reviewer",
+      "url": "https://clawhub.ai/skills/ad-security-reviewer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ad-security-reviewer",
+    "url": "https://clawhub.ai/skills/ad-security-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ad-security-reviewer-9261fa1f518ac8cb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ad-security-reviewer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ad-security-reviewer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:47550e60ae66e204905ca00d01683f7edbc42a00953706c48c476f894041aac9",
+      "artifactSizeBytes": 1934
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T10:07:06.879Z"
+}

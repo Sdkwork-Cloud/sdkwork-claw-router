@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35782,
+  "uuid": "skill-clawhub-budget-insight",
+  "skillKey": "clawhub-budget-insight",
+  "name": "Budget Insight",
+  "summary": "Budget Insight integration. Manage data, records, and automate workflows. Use when the user wants to interact with Budget Insight data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.budget_insight",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Budget Insight integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Budget Insight data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/budget-insight@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "budget-insight",
+      "url": "https://clawhub.ai/skills/budget-insight"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "budget-insight",
+    "url": "https://clawhub.ai/skills/budget-insight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/budget-insight-fa47067c3f26dd65.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/budget-insight@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-budget-insight-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:96bdbf802691e8cbdb2b1ac8e58c8d90fb5ef61be2d81e059669a157d821c9e6",
+      "artifactSizeBytes": 1892
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:15:40.461Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/news-homepage-fetcher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_homepage_fetcher",
+  "skill": {
+    "id": 44659,
+    "skillKey": "clawhub-news-homepage-fetcher",
+    "name": "news-homepage-fetcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-homepage-fetcher",
+    "url": "https://clawhub.ai/skills/news-homepage-fetcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-homepage-fetcher-38451306d9718557.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Homepage-first news collection from major international, Singaporean, and China-focused outlets. Use for: opening news homepages, clicking article links, ext..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alanwu2024",
+      "userId": "s173rcbw1ttkxvfs83rd2mfstx84s974",
+      "displayName": "AlanWu2024",
+      "image": "https://avatars.githubusercontent.com/u/130763970?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776316825374,
+      "changelog": "If you want to stay informed with major domestic and international news efficiently without wasting time browsing dozens of websites, here is a practical and time-saving method:\nFirst, select 2–3 highly authoritative, real-time updated news platforms as your core information sources. For global updates, trusted agencies like Reuters, BBC, or AP News deliver fast, objective breaking news. For Chinese news, official outlets such as Xinhuanet or People’s Daily Online provide the most accurate and important domestic headlines.\nInstead of reading every article, focus only on headlines, lead paragraphs, and key event summaries. Most top news sites highlight “Today’s Top Stories” or “Breaking News” sections, allowing you to grasp core facts within five minutes.\nYou can further improve efficiency by using browser bookmarks to group these websites together, so you can open them all at once. This method helps you avoid information overload, filter out low-value content, and stay updated with the world’s most important news quickly and reliably.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d960cf612affe125fef1d95533fe5c3b927f017ec043ccee61aa90e498813ae7"
+}

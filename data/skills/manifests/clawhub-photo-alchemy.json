@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45014,
+  "uuid": "skill-clawhub-photo-alchemy",
+  "skillKey": "clawhub-photo-alchemy",
+  "name": "photo-alchemy",
+  "summary": "Transform any photo into surrealist AI art. Uses Claude to write a story about your photo, then Gemini generates a reimagined version in one of 35+ visual st...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.photo_alchemy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Harold Martin",
+      "features": [
+        "Transform any photo into surrealist AI art",
+        "Uses Claude to write a story about your photo, then Gemini generates a reimagined version in on."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/photo-alchemy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/745166?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "photo-alchemy",
+      "url": "https://clawhub.ai/skills/photo-alchemy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "photo-alchemy",
+    "url": "https://clawhub.ai/skills/photo-alchemy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/photo-alchemy-3e5d2684e89c0c60.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/photo-alchemy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-photo-alchemy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:06c4d77fb8fc0f12e5d154ab073c50d2654a6c72232d27caa3f1fd8584304fef",
+      "artifactSizeBytes": 2423
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T23:26:27.765Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sms-sender@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sms_sender",
+  "skill": {
+    "id": 27807,
+    "skillKey": "clawhub-sms-sender",
+    "name": "CMI CPaaS - SMS Sender"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sms-sender",
+    "url": "https://clawhub.ai/skills/sms-sender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sms-sender-66933282e7de45a1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send batch SMS messages to up to 100 domestic or international numbers via CloudSMS API with optional custom signature and content."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "picccabo-art",
+      "userId": "publishers:picccabo-art",
+      "displayName": "CMI CPaaS",
+      "image": "https://avatars.githubusercontent.com/u/246207015?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 340,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773828053881,
+      "changelog": "- Major rewrite: the skill has been revamped for CloudSMS bulk messaging with new workflow and technical requirements.\n- Added Python script scripts/send_bulk_sms.py for sending SMS via CloudSMS API.\n- Removed obsolete shell script scripts/script.sh.\n- Updated documentation to detail CloudSMS account setup, required parameters, credential handling, and error troubleshooting.\n- Now supports sending to up to 100 phone numbers at once, optional signature, and custom message content.\n- Provided new usage examples, return formats, and practical notes for successful SMS delivery.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1d4e41057fe690106476a4b2d0381a20b0a6af8a05c27467fbe32db96a8fb719"
+}

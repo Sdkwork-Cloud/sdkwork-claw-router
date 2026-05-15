@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66895,
+  "uuid": "skill-clawhub-meituan-coupon-auto",
+  "skillKey": "clawhub-meituan-coupon-auto",
+  "name": "美团优惠券自动领取",
+  "summary": "自动领取美团优惠券。触发词: 领取美团优惠券, 运行美团优惠券技能, 设置每日自动领取, 查看优惠券, meituan coupon, 美团领券",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meituan_coupon_auto",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ayue-oss",
+      "features": [
+        "自动领取美团优惠券。触发词: 领取美团优惠券, 运行美团优惠券技能, 设置每日自动领取, 查看优惠券, meituan coupon, 美团领券"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meituan-coupon-auto@2.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/204550474?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meituan-coupon-auto",
+      "url": "https://clawhub.ai/skills/meituan-coupon-auto"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meituan-coupon-auto",
+    "url": "https://clawhub.ai/skills/meituan-coupon-auto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meituan-coupon-auto-7d8d7179bbeeb65a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meituan-coupon-auto@2.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-meituan-coupon-auto-2.1.1.json",
+      "version": "2.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:481dea56e8b46d7ffccbaf36b14216888b406a75bfcacf3b1517776fa471d7c7",
+      "artifactSizeBytes": 2011
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T05:34:06.356Z"
+}

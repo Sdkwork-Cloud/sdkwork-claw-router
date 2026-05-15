@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/okx-data-collector@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.okx_data_collector",
+  "skill": {
+    "id": 64174,
+    "skillKey": "clawhub-okx-data-collector",
+    "name": "Okx Data Collector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "okx-data-collector",
+    "url": "https://clawhub.ai/skills/okx-data-collector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/okx-data-collector-71c8b26232188cc7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "采集和分析OKX交易所的实时tick及多周期历史K线数据，支持策略需求分析和存储容量预估。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ugpoor",
+      "userId": "s177qqrp481qedfn5w9m5nmte183ge14",
+      "displayName": "superStupidBear",
+      "image": "https://avatars.githubusercontent.com/u/6762468?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 181,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776774531426,
+      "changelog": "Initial release of okx-data-collector skill:\n\n- Supports real-time tick-level data collection via WebSocket.\n- Enables batch historical K-line data fetching using REST API.\n- Multiple time interval support: 1m, 5m, 15m, 1H, 4H, 1D, 1W, etc.\n- Provides strategy-based data collection recommendations and storage size estimates.\n- Includes usage guides, storage suggestions, and troubleshooting instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:db3ae145f2826d3947bc5793a41a56f29f8fd0bbe07963f0e3d7883184ec7e06"
+}

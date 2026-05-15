@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62197,
+  "uuid": "skill-clawhub-linux-sysadmin",
+  "skillKey": "clawhub-linux-sysadmin",
+  "name": "linux-sysadmin",
+  "summary": "Linux 系统管理专家 — 覆盖用户权限、SSH、存储、网络、systemd、防火墙、 监控日志、备份恢复、证书TLS、Ansible、容器、IaC 十二大模块。 提供配置→验证→加固→监控→备份→自动化→故障排查→回滚完整闭环。 触发关键词：useradd/sudo/sshd_config/chmod/SEL...",
+  "version": "3.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linux_sysadmin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "joeytao",
+      "features": [
+        "Linux 系统管理专家 — 覆盖用户权限、SSH、存储、网络、systemd、防火墙、 监控日志、备份恢复、证书TLS、Ansible、容器、IaC 十二大模块。 提供配置→验证→加固→监."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linux-sysadmin@3.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3353002?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linux-sysadmin",
+      "url": "https://clawhub.ai/skills/linux-sysadmin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linux-sysadmin",
+    "url": "https://clawhub.ai/skills/linux-sysadmin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linux-sysadmin-a5b419ea14c7f3db.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linux-sysadmin@3.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-linux-sysadmin-3.0.2.json",
+      "version": "3.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:60b4d6984bca748948357377e86700bc5591166ba2fc806c849a02936925f052",
+      "artifactSizeBytes": 2862
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T02:54:37.133Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fieldy-ai-webhook@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fieldy_ai_webhook",
+  "skill": {
+    "id": 10472,
+    "skillKey": "clawhub-fieldy-ai-webhook",
+    "name": "Fieldy AI Webhook"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fieldy-ai-webhook",
+    "url": "https://clawhub.ai/skills/fieldy-ai-webhook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fieldy-ai-webhook-542d61db7b5aaf87.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Wire a Fieldy webhook transform into Moltbot hooks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mrzilvis",
+      "userId": "publishers:mrzilvis",
+      "displayName": "mrzilvis",
+      "image": "https://avatars.githubusercontent.com/u/17772723?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2351,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 3,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1769603680586,
+      "changelog": "fieldy-ai-webhook 0.1.2\n\n- Transcripts without the wake word are now logged to JSONL files under `<workspace>/fieldy/transcripts/`.\n- Updated documentation to clarify transcript logging behavior.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:982898f73d5c80fedcdf512597002c8c126f247e4201597c440407e5c2ab86bd"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66468,
+  "uuid": "skill-clawhub-deepaistudy-errors",
+  "skillKey": "clawhub-deepaistudy-errors",
+  "name": "Deepaistudy Errors",
+  "summary": "拍照上传错题，AI自动分析生成深度学习内容与变式题，支持掌握状态标记和PDF导出，提升错题复习效率。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deepaistudy_errors",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "stoneyshum",
+      "features": [
+        "拍照上传错题，AI自动分析生成深度学习内容与变式题，支持掌握状态标记和PDF导出，提升错题复习效率。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deepaistudy-errors@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/99589709?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deepaistudy-errors",
+      "url": "https://clawhub.ai/skills/deepaistudy-errors"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deepaistudy-errors",
+    "url": "https://clawhub.ai/skills/deepaistudy-errors",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deepaistudy-errors-5b1ee4218b3783d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deepaistudy-errors@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-deepaistudy-errors-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:32e0640671a3b620f2dc0ac368fa844caf18704f9546625e4db3706b53bfe699",
+      "artifactSizeBytes": 2241
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T02:05:41.470Z"
+}

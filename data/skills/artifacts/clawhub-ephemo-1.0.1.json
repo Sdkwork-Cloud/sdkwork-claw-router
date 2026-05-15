@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ephemo@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ephemo",
+  "skill": {
+    "id": 40271,
+    "skillKey": "clawhub-ephemo",
+    "name": "Ephemo: Instant Agentic Hosting"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ephemo",
+    "url": "https://clawhub.ai/skills/ephemo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ephemo-211586b71862b6d6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Publish files and folders to the web instantly. Static hosting for HTML sites and UI assets."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sandrakottos",
+      "userId": "s171t05e4bvtpkjj6t9nf7e1zx83wm6p",
+      "displayName": "sandrakottos",
+      "image": "https://avatars.githubusercontent.com/u/145170863?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774977541629,
+      "changelog": "- Updated license from MIT to MIT-0.\n- Clarified handling and permissions of the `~/.ephemo_credentials` file; users are now informed that this file exists, stores their API key, and should be kept out of source control.\n- Metadata updated to include `config_paths` for persisted credential file.\n- Minor language tweaks in documentation around credential storage and user instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:55856cd37469d2b606008001cedc51c4f6f8504d40dacc94fb75c6a1f5a3fa0d"
+}

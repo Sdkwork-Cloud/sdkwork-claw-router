@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26716,
+  "uuid": "skill-clawhub-social-media-analytics",
+  "skillKey": "clawhub-social-media-analytics",
+  "name": "Social Media Analytics",
+  "summary": "Track social media performance and analytics across all platforms. Use when the user says 'show my analytics', 'check social media performance', 'how are my...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_media_analytics",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "snoopyrain",
+      "features": [
+        "Track social media performance and analytics across all platforms",
+        "Use when the user says 'show my analytics', 'check social media performance', 'how are my..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/social-media-analytics@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9717776?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "social-media-analytics",
+      "url": "https://clawhub.ai/skills/social-media-analytics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-media-analytics",
+    "url": "https://clawhub.ai/skills/social-media-analytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-media-analytics-6a412e7a8500a1cb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/social-media-analytics@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-social-media-analytics-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f4e578bbffb4d38d6e323322fa38b42768e0c1ee34f8960f200da71c55b6cf28",
+      "artifactSizeBytes": 1965
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T14:39:04.049Z"
+}

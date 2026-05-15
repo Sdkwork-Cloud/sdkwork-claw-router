@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/noisepan-digest@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.noisepan_digest",
+  "skill": {
+    "id": 19739,
+    "skillKey": "clawhub-noisepan-digest",
+    "name": "Noisepan Digest"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "noisepan-digest",
+    "url": "https://clawhub.ai/skills/noisepan-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/noisepan-digest-10f8721ae44c3c02.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set up automated news digests using noisepan (signal extraction), entropia (source verification), and HN blind spot detection. Use when configuring daily new..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ppiankov",
+      "userId": "s17fzet2pk4zvezemyabzwzp6x83kp5d",
+      "displayName": "ppiankov",
+      "image": "https://avatars.githubusercontent.com/u/103106369?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 594,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1774013250766,
+      "changelog": "Add ANCC breadcrumb",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:69e518625e1e01357570160cf3a3329386219c08e0e76b8214a8bc4e2f2e7a1a"
+}

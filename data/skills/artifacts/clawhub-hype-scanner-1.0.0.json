@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hype-scanner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hype_scanner",
+  "skill": {
+    "id": 18745,
+    "skillKey": "clawhub-hype-scanner",
+    "name": "Hype Scanner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hype-scanner",
+    "url": "https://clawhub.ai/skills/hype-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hype-scanner-443f043c9f1da5e0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real-time crypto and stock hype detection using Reddit, CoinGecko, DEXScreener, and StockTwits. AI-powered signal validation with local Ollama model. Only re..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peti0402",
+      "userId": "publishers:peti0402",
+      "displayName": "peti0402",
+      "image": "https://avatars.githubusercontent.com/u/262060346?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 654,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771916083571,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8bea4a5fe0d82e5867151e361a284f46617c09382155f6909c7642e6fdc39c37"
+}

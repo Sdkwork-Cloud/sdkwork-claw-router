@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70337,
+  "uuid": "skill-clawhub-blind-boxes",
+  "skillKey": "clawhub-blind-boxes",
+  "name": "Blind Boxes",
+  "summary": "提供关于网红盲盒的推荐清单、打卡路线与指南。用户搜索网红盲盒或规划相关出行时调用。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blind_boxes",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mike47512",
+      "features": [
+        "提供关于网红盲盒的推荐清单、打卡路线与指南。用户搜索网红盲盒或规划相关出行时调用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/blind-boxes@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199718167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "blind-boxes",
+      "url": "https://clawhub.ai/skills/blind-boxes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blind-boxes",
+    "url": "https://clawhub.ai/skills/blind-boxes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blind-boxes-f6e703ec381f7c6d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/blind-boxes@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-blind-boxes-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1df3b576e58361856a1553d19d9e3bd0ba0721ea024e08fa2782cf9e557e435b",
+      "artifactSizeBytes": 2301
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T18:57:35.138Z"
+}

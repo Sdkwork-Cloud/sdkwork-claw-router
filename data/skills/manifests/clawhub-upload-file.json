@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42758,
+  "uuid": "skill-clawhub-upload-file",
+  "skillKey": "clawhub-upload-file",
+  "name": "upload-file",
+  "summary": "MUST be used for any browser file upload task. Provides reliable, step-by-step automation for uploading files via agent-browser CLI. Includes strict executio...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.upload_file",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "m1ss-cell",
+      "features": [
+        "MUST be used for any browser file upload task",
+        "Provides reliable, step-by-step automation for uploading files via agent-browser CLI",
+        "Includes strict executio..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/upload-file@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245515589?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "upload-file",
+      "url": "https://clawhub.ai/skills/upload-file"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "upload-file",
+    "url": "https://clawhub.ai/skills/upload-file",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/upload-file-5c96ab908e0ff351.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/upload-file@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-upload-file-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ca7e4baaa82632e34e3fa4af7775d57e570ed9926ce7eefcb291c17b72d02228",
+      "artifactSizeBytes": 2377
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T11:26:25.735Z"
+}

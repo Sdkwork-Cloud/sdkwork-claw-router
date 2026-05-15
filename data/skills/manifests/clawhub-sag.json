@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8294,
+  "uuid": "skill-clawhub-sag",
+  "skillKey": "clawhub-sag",
+  "name": "Sag",
+  "summary": "ElevenLabs text-to-speech with mac-style say UX.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sag",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Peter Steinberger",
+      "features": [
+        "ElevenLabs text-to-speech with mac-style say UX."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sag@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58493?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sag",
+      "url": "https://clawhub.ai/skills/sag"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sag",
+    "url": "https://clawhub.ai/skills/sag",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sag-da5bcc8845f81fa2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sag@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sag-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb7a7154527002b0d4a8bb42f417574f79042a1a002a01f1dd7deab7d7f43214",
+      "artifactSizeBytes": 1692
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-04T16:49:36.535Z"
+}

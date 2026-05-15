@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/model-tester@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_tester",
+  "skill": {
+    "id": 21431,
+    "skillKey": "clawhub-model-tester",
+    "name": "Model Tester"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-tester",
+    "url": "https://clawhub.ai/skills/model-tester",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-tester-0765731f507aafb6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Test agents or models against predefined test cases to validate model routing, performance, and output quality. Use when: (1) verifying a specific agent or m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nandorocker",
+      "userId": "publishers:nandorocker",
+      "displayName": "Nando Rossi",
+      "image": "https://avatars.githubusercontent.com/u/1476836?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 479,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773232981985,
+      "changelog": "Initial release of model-tester.\n\n- Provides a command-line tool to validate agents or models against predefined test cases.\n- Supports testing model routing, performance, and output quality with structured JSON reporting.\n- Allows targeting specific agents or models using `--agent`, `--model`, and `--case` parameters.\n- Extracts actual model usage, token counts, and runtime from OpenClaw logs for verification.\n- Ensures privacy by using only static prompts and structured log fields—no user data involved.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e28f26b8df03bffc9dbdfb190af7590d2845d7924477e1ef16e8ad4582cf61da"
+}

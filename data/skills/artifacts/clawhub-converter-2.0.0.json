@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/converter@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.converter",
+  "skill": {
+    "id": 20079,
+    "skillKey": "clawhub-converter",
+    "name": "Converter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "converter",
+    "url": "https://clawhub.ai/skills/converter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/converter-428457d1ce5a0721.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A local-first conversion router and format strategist. Identifies the safest local path for document, image, audio, video, archive, and data transformations...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agisearch",
+      "userId": "publishers:agisearch",
+      "displayName": "AGIsearch",
+      "image": "https://avatars.githubusercontent.com/u/216465592?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 574,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773227967909,
+      "changelog": "Converter 2.0.0 — Major local-first overhaul:\n\n- Now acts as a local-first \"conversion router,\" identifying the safest local path and toolchain for every conversion.\n- Uses host-available binaries (e.g., FFmpeg, Pandoc, ImageMagick, LibreOffice, 7-Zip); if tools are missing, provides a manual fallback plan instead of bluffing.\n- Strong privacy focus: no cloud uploads or DRM bypass; no file leaves local environment without explicit user consent.\n- Adds detailed \"Conversion Route Analysis\" for every request, including fidelity notes and command recommendations.\n- Fully documents supported toolchains, conversion domains, and best-practice guidelines for each file type.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:652f744f77354ad93c2a2d14603ebf51abea69fa300fb3fbd68f06f39e3a3193"
+}

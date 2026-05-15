@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73626,
+  "uuid": "skill-clawhub-qxbent",
+  "skillKey": "clawhub-qxbent",
+  "name": "企业信息查询",
+  "summary": "启信宝企业信息查询工具，提供企业工商信息、股东信息、主要人员、变更记录等查询功能。支持通过企业名称查询，返回标准化的企业数据。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qxbent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "llx-26",
+      "features": [
+        "启信宝企业信息查询工具，提供企业工商信息、股东信息、主要人员、变更记录等查询功能。支持通过企业名称查询，返回标准化的企业数据。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qxbent@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/73281691?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qxbent",
+      "url": "https://clawhub.ai/skills/qxbent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qxbent",
+    "url": "https://clawhub.ai/skills/qxbent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qxbent-cee0b9131bb1badc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qxbent@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-qxbent-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3fa80525b03fcb77d30dd7c56522663394a6ca327c11437292662d67ddb3132c",
+      "artifactSizeBytes": 2053
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T09:55:12.541Z"
+}

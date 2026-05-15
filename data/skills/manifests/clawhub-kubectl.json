@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9195,
+  "uuid": "skill-clawhub-kubectl",
+  "skillKey": "clawhub-kubectl",
+  "name": "kubectl",
+  "summary": "Execute and manage Kubernetes clusters via kubectl commands. Query resources, deploy applications, debug containers, manage configurations, and monitor cluster health. Use when working with Kubernetes clusters, containers, deployments, or.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kubectl",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ddevaal",
+      "features": [
+        "Execute and manage Kubernetes clusters via kubectl commands",
+        "Query resources, deploy applications, debug containers, manage configurations, and monitor clus.",
+        "Use when working with Kubernetes clusters, containers, deployments, or pod diagnostics."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kubectl@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74067645?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kubectl",
+      "url": "https://clawhub.ai/skills/kubectl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kubectl",
+    "url": "https://clawhub.ai/skills/kubectl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kubectl-7a7f09de08e3dc01.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kubectl@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kubectl-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e5d17887aecae7b5a0c09aca8890bcece7a3fde3eb9f3764626a733862758f2d",
+      "artifactSizeBytes": 2367
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-24T09:44:03.962Z"
+}

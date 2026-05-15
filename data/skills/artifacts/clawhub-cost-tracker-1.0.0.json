@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cost-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cost_tracker",
+  "skill": {
+    "id": 25292,
+    "skillKey": "clawhub-cost-tracker",
+    "name": "Cost Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cost-tracker",
+    "url": "https://clawhub.ai/skills/cost-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cost-tracker-44fcc6eed812693c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI spending monitor — track costs across OpenRouter models with daily, weekly, and monthly reports. Budget limits with alerts, per-model analysis, savings re..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiwithabidi",
+      "userId": "publishers:aiwithabidi",
+      "displayName": "aiwithabidi",
+      "image": "https://avatars.githubusercontent.com/u/208891229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 890,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771430471672,
+      "changelog": "Initial release of cost-tracker — an AI spending monitor for OpenRouter.\n\n- Track AI costs per model with daily, weekly, and monthly reports\n- Set monthly budget limits and receive alerts at 80% usage\n- Analyze spending across models with historical tracking in SQLite\n- Get savings recommendations to optimize model selection\n- Export usage data as JSON or CSV for further analysis",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:266e60874de2561ab0c4bda219e9421dbd62e3814a62f68c17e852f920c6dd21"
+}

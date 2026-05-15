@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22561,
+  "uuid": "skill-clawhub-rednote-research",
+  "skillKey": "clawhub-rednote-research",
+  "name": "RedNote Research",
+  "summary": "Research a topic through RedNote/Xiaohongshu discussion signals using either public-web mode (no login) or optional login-enhanced browser review when the us...",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rednote_research",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pippin",
+      "features": [
+        "Research a topic through RedNote/Xiaohongshu discussion signals using either public-web mode (n."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rednote-research@0.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/184304990?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rednote-research",
+      "url": "https://clawhub.ai/skills/rednote-research"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rednote-research",
+    "url": "https://clawhub.ai/skills/rednote-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rednote-research-cfd7bf9d0ade8cb2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rednote-research@0.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rednote-research-0.4.0.json",
+      "version": "0.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8044694936fc51b508896069daa0bc05f01be6b9f3a95adac9197c254d2a157a",
+      "artifactSizeBytes": 2118
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T13:57:46.966Z"
+}

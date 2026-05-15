@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bamdra-memory-upgrade-operator@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bamdra_memory_upgrade_operator",
+  "skill": {
+    "id": 41545,
+    "skillKey": "clawhub-bamdra-memory-upgrade-operator",
+    "name": "Bamdra Memory Upgrade Operator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bamdra-memory-upgrade-operator",
+    "url": "https://clawhub.ai/skills/bamdra-memory-upgrade-operator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bamdra-memory-upgrade-operator-fef4a2d181528653.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Safely install, uninstall, reinstall, or upgrade the Bamdra OpenClaw memory suite when stale config, existing plugin directories, or partial installs break n..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bamdra",
+      "userId": "publishers:bamdra",
+      "displayName": "Wood",
+      "image": "https://avatars.githubusercontent.com/u/34589275?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774191828997,
+      "changelog": "Initial release of bamdra-memory-upgrade-operator.\n\n- Provides safe install, uninstall, repair, and upgrade operations for the Bamdra OpenClaw memory suite.\n- Handles common issues such as stale configs, conflicting plugin directories, and partial installs.\n- Includes scripted commands for upgrade, install, and uninstall modes with options for specific versions and custom OpenClaw home directories.\n- Creates backups before making changes and informs users about backup locations.\n- Ensures openclaw.json integrity and provides reminders to restart OpenClaw if needed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:914fc87d2680bc18aceb2962dcec7da866c671bb82aca8722b1cc70230b43170"
+}

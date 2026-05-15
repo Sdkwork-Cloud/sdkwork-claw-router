@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qsnctf-practice-dynamic@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qsnctf_practice_dynamic",
+  "skill": {
+    "id": 58290,
+    "skillKey": "clawhub-qsnctf-practice-dynamic",
+    "name": "qsnctf-practice-dynamic"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qsnctf-practice-dynamic",
+    "url": "https://clawhub.ai/skills/qsnctf-practice-dynamic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qsnctf-practice-dynamic-9f6533e9c55d57e6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "获取青少年CTF练习场的排行榜和解题动态。Invoke when user wants to check QSNCTF leaderboard or recent solve activities."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "moxin1044",
+      "userId": "s179edwyjyfjkwyce78c44wve983ejpk",
+      "displayName": "末心",
+      "image": "https://avatars.githubusercontent.com/u/59173630?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 241,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774119619756,
+      "changelog": "Initial release—fetch QSNCTF leaderboard and solve activity\n\n- Added commands to retrieve the top 20 users from the 青少年CTF练习场 (QSNCTF) leaderboard.\n- Enabled fetching recent solve activity with options to specify the number of results.\n- Provided example command usage and outputs.\n- Requires Python 3.x and the requests library.\n- Uses official QSNCTF public APIs for data retrieval.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c5f62be2542482b097c0c7d9b5f4018db28afa656fe10187d1b984eefa38f012"
+}

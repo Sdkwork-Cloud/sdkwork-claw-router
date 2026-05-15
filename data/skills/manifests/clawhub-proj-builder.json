@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38808,
+  "uuid": "skill-clawhub-proj-builder",
+  "skillKey": "clawhub-proj-builder",
+  "name": "proj-builder",
+  "summary": "Generate structured project scaffolds and template files for Node.js, Python, and Go using predefined templates via bash commands.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proj_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "Generate structured project scaffolds and template files for Node.js, Python, and Go using pred."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/proj-builder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "proj-builder",
+      "url": "https://clawhub.ai/skills/proj-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proj-builder",
+    "url": "https://clawhub.ai/skills/proj-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proj-builder-6615c50af3e8ed3c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/proj-builder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-proj-builder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5f834f1d4637727e1fbbb2050e77b383d528177bbaf350f0dcbe289e213f24e5",
+      "artifactSizeBytes": 1848
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T01:13:23.879Z"
+}

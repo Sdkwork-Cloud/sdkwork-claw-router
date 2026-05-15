@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/diagforge-visio-user@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.diagforge_visio_user",
+  "skill": {
+    "id": 30027,
+    "skillKey": "clawhub-diagforge-visio-user",
+    "name": "DiagForge Bootstrap"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "diagforge-visio-user",
+    "url": "https://clawhub.ai/skills/diagforge-visio-user",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/diagforge-visio-user-013ec08d6022e8f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bootstrap skill for DiagForge. Use this skill to onboard an agent into the DiagForge GitHub repository, understand the project structure, run the canonical c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qweadzchn",
+      "userId": "s1744dp5ndps31d1bbqe4dg80n83g5z2",
+      "displayName": "qweadzchn",
+      "image": "https://avatars.githubusercontent.com/u/176938253?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 289,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1774005740313,
+      "changelog": "No code changes in this release. SKILL.md has been expanded for clarity and onboarding guidance.\n\n- Added an overview of DiagForge’s workflow and goals.\n- Clarified what this skill can do and typical outcomes for new agents.\n- Added scenarios for when to use this skill.\n- Minor rewording for easier onboarding and improved context.\n- No technical or behavioral changes to the skill itself.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:474c378b56a0ff92cea7b3cfa3f1fedf39395dc33fcf09cb45b10dcecf9c08af"
+}

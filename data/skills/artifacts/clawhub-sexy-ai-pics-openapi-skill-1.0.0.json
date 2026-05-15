@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sexy-ai-pics-openapi-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sexy_ai_pics_openapi_skill",
+  "skill": {
+    "id": 56409,
+    "skillKey": "clawhub-sexy-ai-pics-openapi-skill",
+    "name": "AI Sexy Pics Generator – Create Glamorous AI Photos Online – API-powered"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sexy-ai-pics-openapi-skill",
+    "url": "https://clawhub.ai/skills/sexy-ai-pics-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sexy-ai-pics-openapi-skill-1600c7c6d9018f1e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI sexy pics generator — generate stylish and attractive photos from a person image"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkleming",
+      "userId": "s173eywkn9gkx5va9p2tb6kh5h843s3s",
+      "displayName": "sparkleMing",
+      "image": "https://avatars.githubusercontent.com/u/38350996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776832616487,
+      "changelog": "- Initial release of the sexy-ai-pics OpenAPI skill.\n- Allows stylish and attractive AI-generated photos from a user's input person image.\n- Requires a WeShop API key, with strict security and HTTPS requirements.\n- Supports uploading images and running photo generation with custom scene descriptions and batch options.\n- Features endpoints for starting runs, checking status, and uploading images.\n- Clear instructions for authentication and safe API key usage included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b259991174d135f934d72c3c105ef4f96ee53c4e332c6917ce5a6d934e89584e"
+}

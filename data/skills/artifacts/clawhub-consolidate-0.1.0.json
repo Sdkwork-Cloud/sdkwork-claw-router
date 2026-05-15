@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/consolidate@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.consolidate",
+  "skill": {
+    "id": 46296,
+    "skillKey": "clawhub-consolidate",
+    "name": "Consolidate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "consolidate",
+    "url": "https://clawhub.ai/skills/consolidate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/consolidate-291cf1ed742e8a35.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Consolidate and respond to external feedback on PRs/issues. pr-review - review AI bot feedback (CodeRabbit, Copilot) and post summary comments [pr-review.md]..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "drumrobot",
+      "userId": "s17ay1v6v88r2m102pvvc44gz183qcrm",
+      "displayName": "es6kr",
+      "image": "https://avatars.githubusercontent.com/u/819969?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1776241442300,
+      "changelog": "Initial release: PR review consolidation for AI bot feedback (CodeRabbit, Copilot)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0301ae48d20d0aecc5d391886bb1481f6deeb51c67a9b3a02cb460d4b21446fe"
+}

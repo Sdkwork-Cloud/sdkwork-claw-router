@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40392,
+  "uuid": "skill-clawhub-cross-market-pricer",
+  "skillKey": "clawhub-cross-market-pricer",
+  "name": "Cross-Market Pricer",
+  "summary": "Normalize odds across Polymarket, Kalshi, and sportsbooks into a unified implied-probability format. Enables apples-to-apples comparison for the same event a...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cross_market_pricer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rsquaredsolutions2026",
+      "features": [
+        "Normalize odds across Polymarket, Kalshi, and sportsbooks into a unified implied-probability fo.",
+        "Enables apples-to-apples comparison for the same event a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cross-market-pricer@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/217474775?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cross-market-pricer",
+      "url": "https://clawhub.ai/skills/cross-market-pricer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cross-market-pricer",
+    "url": "https://clawhub.ai/skills/cross-market-pricer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cross-market-pricer-b63ad9d6ee494447.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cross-market-pricer@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cross-market-pricer-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5842363328ed2d3666352d4849defacb4ec469915fa07c8cd28b2e27a7bf8679",
+      "artifactSizeBytes": 1976
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T01:22:43.834Z"
+}

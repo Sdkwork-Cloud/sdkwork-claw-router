@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-workspace-governance-installer@0.2.9",
+  "version": "0.2.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_workspace_governance_installer",
+  "skill": {
+    "id": 12707,
+    "skillKey": "clawhub-openclaw-workspace-governance-installer",
+    "name": "Openclaw Workspace Governance Installer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-workspace-governance-installer",
+    "url": "https://clawhub.ai/skills/openclaw-workspace-governance-installer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-workspace-governance-installer-56a1717d0feb01cc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install OpenClaw WORKSPACE_GOVERNANCE in minutes. Get guided setup, upgrade checks, migration, and audit for long-running workspaces."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adamchanadam",
+      "userId": "publishers:adamchanadam",
+      "displayName": "Adamchanadam",
+      "image": "https://avatars.githubusercontent.com/u/136042056?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1452,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 2,
+      "versions": 59
+    },
+    "latestVersion": {
+      "version": "0.2.9",
+      "createdAt": 1774076638581,
+      "changelog": "Corrected Brain Docs gate logic diagram (soft block → allow → hard block, was incorrectly shown as advisory ×2 then block). PNG flow charts replaced with SVG. SVG files now included in npm package.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d0227b5b7c8b5b2112e5d26d87e1f669d9891e3ad1021e2f0a6cc42bdd29e29b"
+}

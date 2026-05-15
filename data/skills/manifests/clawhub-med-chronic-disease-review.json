@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61660,
+  "uuid": "skill-clawhub-med-chronic-disease-review",
+  "skillKey": "clawhub-med-chronic-disease-review",
+  "name": "med-chronic-disease-review",
+  "summary": "门诊慢病审核（糖尿病/高血压）。输入 OCR 结果数组 JSON，输出审核结论与原因（原始 JSON + 自然语言结论）。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.med_chronic_disease_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Unisound-LLM",
+      "features": [
+        "门诊慢病审核（糖尿病/高血压）。输入 OCR 结果数组 JSON，输出审核结论与原因（原始 JSON + 自然语言结论）。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/med-chronic-disease-review@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269350907?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "med-chronic-disease-review",
+      "url": "https://clawhub.ai/skills/med-chronic-disease-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "med-chronic-disease-review",
+    "url": "https://clawhub.ai/skills/med-chronic-disease-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/med-chronic-disease-review-78940cb949df53e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/med-chronic-disease-review@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-med-chronic-disease-review-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a906c87e3beee502e48eab732a7405845e02d2b89a3c6d7412ab73c8cd7b0d65",
+      "artifactSizeBytes": 2402
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T03:27:42.799Z"
+}

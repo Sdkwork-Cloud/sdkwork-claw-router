@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/livestream-commerce@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.livestream_commerce",
+  "skill": {
+    "id": 72602,
+    "skillKey": "clawhub-livestream-commerce",
+    "name": "直播带货"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "livestream-commerce",
+    "url": "https://clawhub.ai/skills/livestream-commerce",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/livestream-commerce-99c88feb3ec562e6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供直播带货的可落地指南与SOP。在开展直播带货相关工作时调用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mike47512",
+      "userId": "s17916ncgb6bpm0fs1wdm6932d83gha4",
+      "displayName": "mike47512",
+      "image": "https://avatars.githubusercontent.com/u/199718167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 317,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774161797622,
+      "changelog": "Initial release of the livestream-commerce skill.\n\n- Provides a practical, step-by-step guide (SOP) for conducting livestream commerce.\n- Covers goal setting, resource allocation, piloting, data dashboard setup, and process standardization.\n- Includes a systematic approach to metrics, risk management, and regulatory compliance for China.\n- Offers reusable templates, scripts, checklists, report formats, and meeting note structures.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1046add521eba418b7a7a3ca5644edebae46105946e02a28349d408d14a2403e"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54317,
+  "uuid": "skill-clawhub-opencron-skill-repo",
+  "skillKey": "clawhub-opencron-skill-repo",
+  "name": "Opencron Skill Repo",
+  "summary": "Visual cron job dashboard for OpenClaw — live countdown timers, run history, calendar view",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opencron_skill_repo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Floris Jan-Werner van der Harst",
+      "features": [
+        "Visual cron job dashboard for OpenClaw — live countdown timers, run history, calendar view"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/opencron-skill-repo@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63602213?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "opencron-skill-repo",
+      "url": "https://clawhub.ai/skills/opencron-skill-repo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opencron-skill-repo",
+    "url": "https://clawhub.ai/skills/opencron-skill-repo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opencron-skill-repo-f8ad63d24c196420.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/opencron-skill-repo@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-opencron-skill-repo-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:781a451184ef4278b0fa2833b1b0a303c69166f5510dc47eb080d625b640fbf3",
+      "artifactSizeBytes": 2213
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T13:37:52.767Z"
+}

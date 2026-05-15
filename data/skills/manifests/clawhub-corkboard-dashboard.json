@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36015,
+  "uuid": "skill-clawhub-corkboard-dashboard",
+  "skillKey": "clawhub-corkboard-dashboard",
+  "name": "carl's corkie -- a digitial corkboard for your agent",
+  "summary": "Post and manage real-time corkboard pins, lamp cues, deleted-history recovery, and multi-track project pipeline work for the Carl's Corkie dashboard. Use whe...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.corkboard_dashboard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zheroz00",
+      "features": [
+        "Post and manage real-time corkboard pins, lamp cues, deleted-history recovery, and multi-track.",
+        "Use whe..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/corkboard-dashboard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39418693?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "corkboard-dashboard",
+      "url": "https://clawhub.ai/skills/corkboard-dashboard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "corkboard-dashboard",
+    "url": "https://clawhub.ai/skills/corkboard-dashboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/corkboard-dashboard-cb95f3c5e8e585b5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/corkboard-dashboard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-corkboard-dashboard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:371eef2471079bc1f3badd67f6b3c62ef26d97ca65a67352297bf33a217b435b",
+      "artifactSizeBytes": 2499
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T16:18:08.885Z"
+}

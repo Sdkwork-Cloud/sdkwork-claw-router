@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/a2a-agent-signup@1.2.4",
+  "version": "1.2.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a2a_agent_signup",
+  "skill": {
+    "id": 14155,
+    "skillKey": "clawhub-a2a-agent-signup",
+    "name": "A2a Agent Signup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a2a-agent-signup",
+    "url": "https://clawhub.ai/skills/a2a-agent-signup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a2a-agent-signup-6f483d412011c5ff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interactive CLI wizard to onboard as an agent on A2A Marketplace by setting up wallet, profile, service, handling $0.01 USDC Polygon fee, and registering on-..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "marcus20232023",
+      "userId": "s1745j0kz3v8zgyv5pm26z9wf583m0he",
+      "displayName": "Marc Smith",
+      "image": "https://avatars.githubusercontent.com/u/121727217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1779,
+      "installsAllTime": 5,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 22
+    },
+    "latestVersion": {
+      "version": "1.2.4",
+      "createdAt": 1770923100301,
+      "changelog": "Fix USD decimal formatting - properly show leading zeros + first non-zero digit + 2 more places",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1f3fd6cec9ffe1b7bee74d02cc799fd63465815fde9ffb13d9941992f4a32c16"
+}

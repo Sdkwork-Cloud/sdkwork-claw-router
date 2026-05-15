@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39890,
+  "uuid": "skill-clawhub-normieclaw-masterclass-builder",
+  "skillKey": "clawhub-normieclaw-masterclass-builder",
+  "name": "Masterclass Builder",
+  "summary": "Create personalized multi-day masterclasses on any topic. Triggers on \"teach me [topic]\", \"create a masterclass on [topic]\", \"I want to learn [topic]\", \"next...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.normieclaw_masterclass_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nollio",
+      "features": [
+        "Create personalized multi-day masterclasses on any topic",
+        "Triggers on \"teach me [topic]\", \"create a masterclass on [topic]\", \"I want to learn [topic]\", \"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/normieclaw-masterclass-builder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259667367?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "normieclaw-masterclass-builder",
+      "url": "https://clawhub.ai/skills/normieclaw-masterclass-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "normieclaw-masterclass-builder",
+    "url": "https://clawhub.ai/skills/normieclaw-masterclass-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/normieclaw-masterclass-builder-9ecc75e345c95ccd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/normieclaw-masterclass-builder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-normieclaw-masterclass-builder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da833d4d284c7d4802b997e232f9d9e170ce8895b8450776b83b259bf5cecace",
+      "artifactSizeBytes": 2048
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T19:33:10.607Z"
+}

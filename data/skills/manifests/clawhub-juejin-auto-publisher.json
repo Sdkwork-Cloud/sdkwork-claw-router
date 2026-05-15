@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72976,
+  "uuid": "skill-clawhub-juejin-auto-publisher",
+  "skillKey": "clawhub-juejin-auto-publisher",
+  "name": "掘金自动发布",
+  "summary": "掘金自动发布 - 一键发布文章到掘金，支持定时发布、标签优化、封面设置。适合：内容创作者、技术博主。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.juejin_auto_publisher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yang1002378395-cmyk",
+      "features": [
+        "一键发布文章到掘金，支持定时发布、标签优化、封面设置。适合：内容创作者、技术博主。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/juejin-auto-publisher@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261632147?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "juejin-auto-publisher",
+      "url": "https://clawhub.ai/skills/juejin-auto-publisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "juejin-auto-publisher",
+    "url": "https://clawhub.ai/skills/juejin-auto-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/juejin-auto-publisher-b4c351b23489a8c0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/juejin-auto-publisher@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-juejin-auto-publisher-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a50567ac5334e7112266f111a66ea2916471fa49fc6b53df5e1d1910ab4376be",
+      "artifactSizeBytes": 1935
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T13:51:19.688Z"
+}

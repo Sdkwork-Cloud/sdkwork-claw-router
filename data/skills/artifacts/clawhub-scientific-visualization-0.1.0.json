@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/scientific-visualization@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scientific_visualization",
+  "skill": {
+    "id": 17361,
+    "skillKey": "clawhub-scientific-visualization",
+    "name": "Scientific Visualization"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scientific-visualization",
+    "url": "https://clawhub.ai/skills/scientific-visualization",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scientific-visualization-eedb4fcc9a6d058f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Meta-skill for publication-ready figures. Use when creating journal submission figures requiring multi-panel layouts, significance annotations, error bars, c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yxr191202",
+      "userId": "s170evhh38bgpfbvrm2zw8v44583ha0v",
+      "displayName": "yxr191202",
+      "image": "https://avatars.githubusercontent.com/u/45127651?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 709,
+      "installsAllTime": 8,
+      "installsCurrent": 7,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773906525678,
+      "changelog": "- Initial release of the scientific-visualization skill.\n- Provides tools for creating publication-ready figures with multi-panel layouts, error bars, statistical annotations, and colorblind-safe palettes.\n- Supports journal-specific formatting (Nature, Science, Cell) and figure export in required formats (PDF, EPS, TIFF).\n- Includes quick start guides, best practices, and ready-to-use style presets for matplotlib, seaborn, and plotly.\n- Emphasizes accessibility, proper typography, and compliance with journal submission guidelines.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:17952b61fc30d65f82116a925633868114ccb86b9e113bff27fc03dd406509d0"
+}

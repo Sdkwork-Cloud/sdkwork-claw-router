@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-video-easy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_video_easy",
+  "skill": {
+    "id": 46722,
+    "skillKey": "clawhub-free-video-easy",
+    "name": "Free Video Easy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-video-easy",
+    "url": "https://clawhub.ai/skills/free-video-easy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-video-easy-c4aaee940c145051.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute smartphone recording into 1080p polished MP4 clips just by typing what you need. Whether it's quickly editing raw footage into shareable vide..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 122,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777166987696,
+      "changelog": "Initial release of Free Video Easy — fast, free AI-powered video editing from raw footage to polished MP4.\n\n- Instantly edit, trim, or enhance up to 2-minute videos with simple text instructions — no timeline or export settings needed.\n- Anonymous users receive a free 7-day token with 100 credits for video processing on sign-up.\n- Supports quick exports (MP4, MOV, AVI, WebM, GIF, JPG, audio formats) with 30–90s cloud processing via GPU.\n- Intelligent intent routing: auto-detects user actions like export, credits, upload, and more from chat.\n- All-backend errors and status updates auto-translated into helpful feedback; no technical jargon for users.\n- Iterative drafts, batch uploads, and timeline refinements supported within a session.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d9581603506df6e4597d80691818c13da06bbd463caa44734130f20ce907adcb"
+}

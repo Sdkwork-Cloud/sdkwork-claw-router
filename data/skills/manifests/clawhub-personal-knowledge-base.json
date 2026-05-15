@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72902,
+  "uuid": "skill-clawhub-personal-knowledge-base",
+  "skillKey": "clawhub-personal-knowledge-base",
+  "name": "个人知识库",
+  "summary": "管理个人知识库，基于RAG和文本向量化技术，支持文件的保存、向量化、检索、问答、删除等功能",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_knowledge_base",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nancyzhong2024",
+      "features": [
+        "管理个人知识库，基于RAG和文本向量化技术，支持文件的保存、向量化、检索、问答、删除等功能"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/personal-knowledge-base@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/170227834?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "personal-knowledge-base",
+      "url": "https://clawhub.ai/skills/personal-knowledge-base"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-knowledge-base",
+    "url": "https://clawhub.ai/skills/personal-knowledge-base",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-knowledge-base-6371c340ab74b16b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/personal-knowledge-base@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-personal-knowledge-base-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d154c2c4d33e5768c386450978f18c53576af5939ae7743e4bd69fa37bd311df",
+      "artifactSizeBytes": 1919
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T16:00:00.228Z"
+}

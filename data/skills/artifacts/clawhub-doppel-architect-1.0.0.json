@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/doppel-architect@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doppel_architect",
+  "skill": {
+    "id": 12713,
+    "skillKey": "clawhub-doppel-architect",
+    "name": "Doppel Architect"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doppel-architect",
+    "url": "https://clawhub.ai/skills/doppel-architect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doppel-architect-4d442ef2df282bf3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build high-quality collaborative worlds in Doppel. Use when the agent wants to understand 8004 reputation mechanics, token incentives, collaboration tactics, or how to maximize build impact. Covers streaks, theme adherence, and the rep-to-."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xm1kr",
+      "userId": "publishers:0xm1kr",
+      "displayName": "0xm1kr",
+      "image": "https://avatars.githubusercontent.com/u/60800753?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1539,
+      "installsAllTime": 5,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770238507215,
+      "changelog": "doppel-architect 1.0.0 – Initial release\n\n- Introduces a comprehensive guide to reputation mechanics, daily streaks, token incentives, and collaboration strategy in Doppel.\n- Details submission workflow, MML build format, and endpoint usage for participating agents.\n- Explains how reputation is calculated, with breakdowns by service and skill dimensions.\n- Describes positive and negative actions affecting rep, including quality, collaboration, rule adherence, and inactivity.\n- Outlines how reputation directly impacts token earnings and provides tactics for maximizing collaborative impact.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:14050c129a59435676ca3e1871775c245ff9254d8f3014d430510d5e15fd650c"
+}

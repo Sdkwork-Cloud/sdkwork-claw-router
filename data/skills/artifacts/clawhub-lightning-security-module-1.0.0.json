@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lightning-security-module@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lightning_security_module",
+  "skill": {
+    "id": 14215,
+    "skillKey": "clawhub-lightning-security-module",
+    "name": "Lightning Security Module"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lightning-security-module",
+    "url": "https://clawhub.ai/skills/lightning-security-module",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lightning-security-module-d2530b18d9eb818d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set up an lnd remote signer container that holds private keys separately from the agent. Exports a credentials bundle (accounts JSON, TLS cert, admin macaroon) for watch-only litd nodes. Container-first with Docker, native fallback. Use wh."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "roasbeef",
+      "userId": "publishers:roasbeef",
+      "displayName": "Roasbeef",
+      "image": "https://avatars.githubusercontent.com/u/998190?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1251,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770777416895,
+      "changelog": "Initial release: Secure remote signer for Lightning nodes\n\n- Provides a containerized lnd remote signer to hold private keys separately from agent nodes, supporting Docker (default) and native installations.\n- Exports a credentials bundle (accounts JSON, TLS cert, admin macaroon) for watch-only litd nodes, enabling firewalling of private key material from agent machines.\n- Includes setup, export/import scripts, and detailed workflow for secure and watch-only node operations.\n- Emphasizes strict separation: signer cannot route payments or open channels; it only signs transactions on request.\n- Production guidance: use scoped macaroons, restrict RPC access, and run signer on dedicated or hardened hardware for improved security.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4969df8b1eca2bd2aabd6f7c4e2eaadcbf8b888b7cfb8a10a709b4e6d7339104"
+}

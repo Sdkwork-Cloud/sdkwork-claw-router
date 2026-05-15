@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meta-mcp-creator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meta_mcp_creator",
+  "skill": {
+    "id": 36369,
+    "skillKey": "clawhub-meta-mcp-creator",
+    "name": "Create MCP Servers using Meta-MCP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meta-mcp-creator",
+    "url": "https://clawhub.ai/skills/meta-mcp-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meta-mcp-creator-ddc0c92cb3c0e585.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the MCPHero Meta-MCP server inside AI clients (Claude Desktop, Cursor, etc.) to create, deploy, and manage MCP servers through the wizard pipeline. Use t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "arterialist",
+      "userId": "s17bk3kc4g5en8stef8k2kpe3h83hws9",
+      "displayName": "Andrew",
+      "image": "https://avatars.githubusercontent.com/u/37044735?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774106624241,
+      "changelog": "Initial release of Meta-MCP Wizard skill.\n\n- Enables creation, deployment, and management of MCP servers using the MCPHero Meta-MCP server through a step-by-step wizard pipeline.\n- Supports integration with Claude Desktop, Cursor, or any MCP-compatible client via the documented `meta-mcp` endpoint.\n- Provides detailed instructions for setup and client configuration.\n- Lists and describes available tools for each step of the server building process, including async/sync distinctions.\n- Includes guidelines for managing server states, polling patterns, and post-deployment configuration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:39efda29ea6d71ad3021e6a9d6425f104129eb70034e4ba5ab280bb1f9385f14"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62356,
+  "uuid": "skill-clawhub-clawhub-manager",
+  "skillKey": "clawhub-clawhub-manager",
+  "name": "Clawhub Manager",
+  "summary": "ClawHub 技能管理工具。封装技能的发布、删除、查询和搜索功能，方便管理 ClawHub 上的技能。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaofei",
+      "features": [
+        "ClawHub 技能管理工具。封装技能的发布、删除、查询和搜索功能，方便管理 ClawHub 上的技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawhub-manager@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/236318269?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawhub-manager",
+      "url": "https://clawhub.ai/skills/clawhub-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-manager",
+    "url": "https://clawhub.ai/skills/clawhub-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-manager-84f3acdb3f3a6d3f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawhub-manager@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawhub-manager-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:485531ab2147ccdcaee690586f02e4be9a94d553de3b09663307274992d7a470",
+      "artifactSizeBytes": 1978
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T17:59:35.001Z"
+}

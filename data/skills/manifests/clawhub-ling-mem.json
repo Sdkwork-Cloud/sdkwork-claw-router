@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56280,
+  "uuid": "skill-clawhub-ling-mem",
+  "skillKey": "clawhub-ling-mem",
+  "name": "Ling Mem",
+  "summary": "Durable memory across sessions — a model of who the user is, not a log of what was done. Markdown core plus a RAG store via the `ling-mem` daemon. Same seman...",
+  "version": "0.4.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ling_mem",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Linggen",
+      "features": [
+        "Durable memory across sessions — a model of who the user is, not a log of what was done",
+        "Markdown core plus a RAG store via the `ling-mem` daemon",
+        "Same seman..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ling-mem@0.4.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/247240390?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ling-mem",
+      "url": "https://clawhub.ai/skills/ling-mem"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ling-mem",
+    "url": "https://clawhub.ai/skills/ling-mem",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ling-mem-9df7ed1f5c6e6241.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ling-mem@0.4.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-ling-mem-0.4.4.json",
+      "version": "0.4.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0dae8b063a36f8f7abd8e1517f9680e6251db487e78f35d3b7223c0b142de6d3",
+      "artifactSizeBytes": 2212
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T17:27:18.291Z"
+}

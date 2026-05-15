@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chongjie-skill-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chongjie_skill_generator",
+  "skill": {
+    "id": 62638,
+    "skillKey": "clawhub-chongjie-skill-generator",
+    "name": "自然语言Skill生成器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chongjie-skill-generator",
+    "url": "https://clawhub.ai/skills/chongjie-skill-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chongjie-skill-generator-1837589f8f70e887.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自然语言描述需求，AI自动生成可复用的Skill。用于：(1)根据需求创建新Skill (2)生成Skill结构 (3)批量生成Skill模板。触发词：创建skill、生成skill、做一个skill"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chongjie-ran",
+      "userId": "s1707y5b73c4ws6mf3t4wppz6583w17d",
+      "displayName": "chongjie-ran",
+      "image": "https://avatars.githubusercontent.com/u/198864991?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 465,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773402532945,
+      "changelog": "- 首次发布 Skill生成器，支持用自然语言描述需求，自动生成可复用 Skill。\n- 支持解析需求、生成标准 Skill 结构（name、description、triggers、body）。\n- 提供 Skill 预览编辑、一键保存与自动发布到 ClawHub/GitHub。\n- 内置批量模板生成与抖音宣传文案自动创建。\n- 补充详细使用示例及底层快速调用方法。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:538a012bc34e2434ac19cd27898bef7709b87e6043a4254086daf10832fcba04"
+}

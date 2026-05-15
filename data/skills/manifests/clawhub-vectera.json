@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35214,
+  "uuid": "skill-clawhub-vectera",
+  "skillKey": "clawhub-vectera",
+  "name": "Vectera",
+  "summary": "Vectera integration. Manage data, records, and automate workflows. Use when the user wants to interact with Vectera data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vectera",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Vectera integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Vectera data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vectera@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vectera",
+      "url": "https://clawhub.ai/skills/vectera"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vectera",
+    "url": "https://clawhub.ai/skills/vectera",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vectera-6b294aa1fe47edea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vectera@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-vectera-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2964bad7f9ea07a6eb6088ffa878a21e088f1f30393d93e472525b310bebb9c2",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:58:29.039Z"
+}

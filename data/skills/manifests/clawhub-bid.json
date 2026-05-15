@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73052,
+  "uuid": "skill-clawhub-bid",
+  "skillKey": "clawhub-bid",
+  "name": "标书服务",
+  "summary": "专业解析工程类招标文件，提供标书编写指导及注意事项，支持标书魔方官网AI制作与社群交流服务。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bid",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jasonwang18",
+      "features": [
+        "专业解析工程类招标文件，提供标书编写指导及注意事项，支持标书魔方官网AI制作与社群交流服务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bid@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11740335?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bid",
+      "url": "https://clawhub.ai/skills/bid"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bid",
+    "url": "https://clawhub.ai/skills/bid",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bid-c0e0efc4fc56af49.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bid@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-bid-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b1cf0a15a77b35acfe1777a04b0d93dfe740b362901580f15f516c99f5cbbaf2",
+      "artifactSizeBytes": 2032
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T07:59:34.937Z"
+}

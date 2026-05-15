@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58307,
+  "uuid": "skill-clawhub-file-upload-test",
+  "skillKey": "clawhub-file-upload-test",
+  "name": "文件上传",
+  "summary": "上传文件到内部 BS3 存储（免签名）。Use when user asks to upload files, images, documents to storage, or get a shareable URL for a file.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_upload_test",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bagayalu",
+      "features": [
+        "上传文件到内部 BS3 存储（免签名）。Use when user asks to upload files, images, documents to storage, or get a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/file-upload-test@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7814975?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "file-upload-test",
+      "url": "https://clawhub.ai/skills/file-upload-test"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-upload-test",
+    "url": "https://clawhub.ai/skills/file-upload-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-upload-test-e42f05760bb05c3c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/file-upload-test@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-file-upload-test-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:839e7f895923d3ce1cdfe2cf50510079db6597bfcdd285d6bc1e97513f99d158",
+      "artifactSizeBytes": 2143
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T10:01:01.232Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/project-heartbeat@0.4.1",
+  "version": "0.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.project_heartbeat",
+  "skill": {
+    "id": 31503,
+    "skillKey": "clawhub-project-heartbeat",
+    "name": "Project Heartbeat"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "project-heartbeat",
+    "url": "https://clawhub.ai/skills/project-heartbeat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/project-heartbeat-bce3ed9411ddf874.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design controlled continuation loops for long-running projects. Use when a task is too large for one session, benefits from periodic wake-ups, and needs expl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daowuu",
+      "userId": "s17ekd62805dxqaxqw8vt41qds83h8aa",
+      "displayName": "wuu Dao",
+      "image": "https://avatars.githubusercontent.com/u/74347577?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 266,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.4.1",
+      "createdAt": 1774417669429,
+      "changelog": "Remove TODO/todo false-positive wording, rename deferred backlog reference, and keep release-auditor preflight clean.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d4302438191d2636518b76e1ddc0ae07f064f86ae67ee27163553a75d84d8d50"
+}

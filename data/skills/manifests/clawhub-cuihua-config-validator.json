@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35675,
+  "uuid": "skill-clawhub-cuihua-config-validator",
+  "skillKey": "clawhub-cuihua-config-validator",
+  "name": "Cuihua Config Validator",
+  "summary": "AI-powered configuration validator. Automatically validate JSON/YAML configs, detect conflicts, and suggest best practices.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cuihua_config_validator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "supermario11",
+      "features": [
+        "AI-powered configuration validator",
+        "Automatically validate JSON/YAML configs, detect conflicts, and suggest best practices."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cuihua-config-validator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7620217?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cuihua-config-validator",
+      "url": "https://clawhub.ai/skills/cuihua-config-validator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cuihua-config-validator",
+    "url": "https://clawhub.ai/skills/cuihua-config-validator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cuihua-config-validator-e179de2db0200d93.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cuihua-config-validator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cuihua-config-validator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d9915bb689437f224e2f4a9173dd75bb32b60cbb6cab589f91656cebef5e444",
+      "artifactSizeBytes": 1965
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T07:58:06.991Z"
+}

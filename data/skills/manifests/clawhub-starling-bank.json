@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17560,
+  "uuid": "skill-clawhub-starling-bank",
+  "skillKey": "clawhub-starling-bank",
+  "name": "Starling Bank",
+  "summary": "Manage Starling Bank accounts via the starling-bank-mcp server. Check balances, list transactions, create payees, make payments, manage savings goals, and tr...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.starling_bank",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gpunter",
+      "features": [
+        "Manage Starling Bank accounts via the starling-bank-mcp server",
+        "Check balances, list transactions, create payees, make payments, manage savings goals, and tr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/starling-bank@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130869336?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "starling-bank",
+      "url": "https://clawhub.ai/skills/starling-bank"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "starling-bank",
+    "url": "https://clawhub.ai/skills/starling-bank",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/starling-bank-8376a178187f3b8c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/starling-bank@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-starling-bank-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2dfdc5b3392968b711e0cb8a1a6dd63d888c911d311c3460796aff5fb8faad3e",
+      "artifactSizeBytes": 2017
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T23:22:20.859Z"
+}

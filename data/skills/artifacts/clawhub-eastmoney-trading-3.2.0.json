@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eastmoney-trading@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eastmoney_trading",
+  "skill": {
+    "id": 70403,
+    "skillKey": "clawhub-eastmoney-trading",
+    "name": "Eastmoney Trading"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eastmoney-trading",
+    "url": "https://clawhub.ai/skills/eastmoney-trading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eastmoney-trading-98f0672bbc652802.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "东方财富证券交易技能，支持自动登录、持仓查询、持仓分析、条件选股、买入、卖出、撤单、委托查询、资金查询等完整交易功能。使用 CDP 连接浏览器，支持验证码自动识别。⚠️ 高风险操作，需谨慎使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenchaoqun",
+      "userId": "publishers:chenchaoqun",
+      "displayName": "chenchaoqun",
+      "image": "https://avatars.githubusercontent.com/u/11999246?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1589,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1773505155826,
+      "changelog": "新增条件选股功能（无需登录）",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c3c280d0f498c39ff23ea73d6a0d5f00abe2d5b3db03bcb232e41496502b7b73"
+}

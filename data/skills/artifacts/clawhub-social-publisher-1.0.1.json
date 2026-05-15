@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/social-publisher@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_publisher",
+  "skill": {
+    "id": 62804,
+    "skillKey": "clawhub-social-publisher",
+    "name": "Social Publisher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-publisher",
+    "url": "https://clawhub.ai/skills/social-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-publisher-c52174c8ec7c86a7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "多平台内容发布工具 - 自动将 Markdown 转换为微信公众号/小红书/知乎/抖音格式，支持预览和发布"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "utopiabenben",
+      "userId": "s17cnh4v6k2vf1742dfy2z5vj183qz0q",
+      "displayName": "utopiabenben",
+      "image": "https://avatars.githubusercontent.com/u/19267750?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 471,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774021578096,
+      "changelog": "优化ClawHub描述：应用爆款公式，强调一键发布四平台",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0c1981560249a9b7814ca38a6a6ed770334ef21fbe6b96234c312d708f0f13b3"
+}

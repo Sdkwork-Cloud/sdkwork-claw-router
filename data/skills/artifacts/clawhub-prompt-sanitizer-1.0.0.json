@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prompt-sanitizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_sanitizer",
+  "skill": {
+    "id": 20904,
+    "skillKey": "clawhub-prompt-sanitizer",
+    "name": "prompt-sanitizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-sanitizer",
+    "url": "https://clawhub.ai/skills/prompt-sanitizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-sanitizer-074debd1ea68e1ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sanitize prompts before sending to LLMs. Detects PII, prompt injection, toxicity, and off-topic content. Returns cleaned text + risk score. Use when: sanitiz..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daisuke134",
+      "userId": "publishers:daisuke134",
+      "displayName": "Daisuke Narita",
+      "image": "https://avatars.githubusercontent.com/u/140220114?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 522,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772413498028,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a67d574ba9cccf65fac1746163bd07f9f0034b718d8fd89a42c6db899158555b"
+}

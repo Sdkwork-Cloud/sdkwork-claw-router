@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/email-designer@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_designer",
+  "skill": {
+    "id": 63578,
+    "skillKey": "clawhub-email-designer",
+    "name": "email-designer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-designer",
+    "url": "https://clawhub.ai/skills/email-designer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-designer-f4bd13be05af0cc0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "为企业打造具有强烈视觉识别度的 Email HTML 邮件设计。 当用户提供 内容 或 大纲，需要生成 HTML 邮件代码、设计邮件模板、创建 EDM 时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dongfeng3692",
+      "userId": "s179k86n30t13q1x2jhfpers9x83gxhm",
+      "displayName": "dongfeng3692",
+      "image": "https://avatars.githubusercontent.com/u/144754734?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 353,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773398772917,
+      "changelog": "- Initial release of the email-designer skill for visually striking fixed-width HTML email creation.\n- Enforces critical rules: strict 700px table layout (no responsive design) and image gap/color standards.\n- Provides three core HTML UI presets: edge-to-edge card, side-by-side feature, and minimalist spacer.\n- Supports five modern email design systems (magazine, tech, organic, minimalist, enterprise) with required Google Fonts and color schemes.\n- Includes a detailed workflow: select design style, assemble UI presets, generate compliant HTML, and perform self-checks for quality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:14a6ed5247abdedfc0858ae6070772a26990ad4d8c97722d80403a77cc1fd299"
+}

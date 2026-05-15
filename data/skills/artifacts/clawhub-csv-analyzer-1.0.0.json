@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/csv-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.csv_analyzer",
+  "skill": {
+    "id": 18886,
+    "skillKey": "clawhub-csv-analyzer",
+    "name": "Csv Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "csv-analyzer",
+    "url": "https://clawhub.ai/skills/csv-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/csv-analyzer-8d253d9f3b51fbe2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze CSV/Excel files with natural language. Get statistics, filter rows, find anomalies, generate summaries, and export results. No pandas needed — uses P..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zacjiang",
+      "userId": "publishers:zacjiang",
+      "displayName": "Shihao Jiang (Zac)",
+      "image": "https://avatars.githubusercontent.com/u/15880609?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1161,
+      "installsAllTime": 7,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772891423729,
+      "changelog": "Initial release of csv-analyzer — a lightweight tool for CSV/Excel file analysis using only the Python standard library.\n\n- Analyze, filter, and generate statistics from CSV files without pandas.\n- Features include statistics summary, flexible row filtering, top/bottom N values, anomaly detection, and group aggregation.\n- Supports exporting processed and filtered data.\n- Zero external dependencies; optimized for low-memory environments.\n- Designed for datasets up to ~100MB in size.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ef8330b7d2e96201cd9f1e8d93f9f1163ef4c23b99fdf719218dc32f7d63409a"
+}

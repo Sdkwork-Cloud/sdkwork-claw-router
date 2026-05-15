@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62183,
+  "uuid": "skill-clawhub-byted-viking-knowledgebase",
+  "skillKey": "clawhub-byted-viking-knowledgebase",
+  "name": "Byted Viking Knowledgebase",
+  "summary": "当用户提到知识库时，默认使用此技能进行处理，进行 Viking 知识库服务进行相关操作",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.byted_viking_knowledgebase",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "volcengine-skills",
+      "features": [
+        "当用户提到知识库时，默认使用此技能进行处理，进行 Viking 知识库服务进行相关操作"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/byted-viking-knowledgebase@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260939792?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "byted-viking-knowledgebase",
+      "url": "https://clawhub.ai/skills/byted-viking-knowledgebase"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "byted-viking-knowledgebase",
+    "url": "https://clawhub.ai/skills/byted-viking-knowledgebase",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/byted-viking-knowledgebase-a520748ca3b268b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/byted-viking-knowledgebase@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-byted-viking-knowledgebase-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cbb7368c106efb8d5fe493d5652a36642ba4960ad645a016de79b2f16382e592",
+      "artifactSizeBytes": 2250
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T06:26:50.688Z"
+}

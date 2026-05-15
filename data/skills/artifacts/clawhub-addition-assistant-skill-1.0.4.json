@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/addition-assistant-skill@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.addition_assistant_skill",
+  "skill": {
+    "id": 27722,
+    "skillKey": "clawhub-addition-assistant-skill",
+    "name": "addition-assistant-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "addition-assistant-skill",
+    "url": "https://clawhub.ai/skills/addition-assistant-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/addition-assistant-skill-a59ccf2cded541a1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Calculate addition expressions from user input, including integers, decimals, and negative numbers, and return concise step-by-step results."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenyihang1993",
+      "userId": "publishers:chenyihang1993",
+      "displayName": "1111",
+      "image": "https://avatars.githubusercontent.com/u/31203698?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 332,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1773196575042,
+      "changelog": "Addition Assistant 1.0.4\n\n- Improved input handling for numbers separated by commas, spaces, and Chinese wording (e.g., \"加\").\n- Normalizes full-width symbols to half-width for accurate parsing.\n- Outputs clear, step-by-step addition results, including expression and final sum.\n- Supports addition of integers, decimals, and negative numbers exclusively.\n- Ensures only valid addition requests are processed; prompts user for clarification if input is ambiguous.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4952832bb9379fe2917d0c5a66631de76337fee02886f6068b8b2222e9a25dfd"
+}

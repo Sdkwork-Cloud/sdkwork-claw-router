@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crawl4ai-docker-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crawl4ai_docker_skill",
+  "skill": {
+    "id": 57449,
+    "skillKey": "clawhub-crawl4ai-docker-skill",
+    "name": "Crawl4ai Docker Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crawl4ai-docker-skill",
+    "url": "https://clawhub.ai/skills/crawl4ai-docker-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crawl4ai-docker-skill-c740fd2fe938fea6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Dockerized web crawling and scraping service with REST API. Docker化网页爬虫服务 | Web crawler, web scraper, REST API service. Intelligent content extraction with L..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "orange-afk",
+      "userId": "s17ev1jg02xe55jgadnd9q4zkh83k32d",
+      "displayName": "Orange",
+      "image": "https://avatars.githubusercontent.com/u/38914772?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 210,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774664650497,
+      "changelog": "Initial release of crawl4ai-docker-skill.\n\n- Provides a Dockerized web crawling and scraping service with a full REST API.\n- Includes intelligent content extraction using LLM optimization.\n- Features real-time monitoring with built-in dashboard and API endpoints.\n- Supports advanced operations like webpage screenshots and PDF generation.\n- Flexible browser and LLM provider configuration.\n- Comprehensive usage examples and troubleshooting included in documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cad9422954a05edcaa1a1bd1cd00ab2915f4e49ed209dd721a62b60f083a6ab8"
+}

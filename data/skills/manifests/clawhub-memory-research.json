@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29021,
+  "uuid": "skill-clawhub-memory-research",
+  "skillKey": "clawhub-memory-research",
+  "name": "Memory Research",
+  "summary": "Research an external subject using web search, synthesize findings into a structured Basic Memory entity. Use when asked to research a company, person, techn...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_research",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Paul Hernandez",
+      "features": [
+        "Research an external subject using web search, synthesize findings into a structured Basic Memo.",
+        "Use when asked to research a company, person, techn..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-research@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60959?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-research",
+      "url": "https://clawhub.ai/skills/memory-research"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-research",
+    "url": "https://clawhub.ai/skills/memory-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-research-a4b4d5792ed9cf0d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-research@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-research-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:caa14989b69596997f8354c88e6fd8ed9d530294306d82c900355466d55cec48",
+      "artifactSizeBytes": 2454
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T03:43:06.697Z"
+}

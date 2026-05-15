@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36828,
+  "uuid": "skill-clawhub-posthog-analytics",
+  "skillKey": "clawhub-posthog-analytics",
+  "name": "Posthog Analytics",
+  "summary": "Automate PostHog dashboard creation, sync, update, and export via API. Covers dashboard CRUD, insight creation, cohort management, and API-driven analytics w...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.posthog_analytics",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Solomon Neas",
+      "features": [
+        "Automate PostHog dashboard creation, sync, update, and export via API",
+        "Covers dashboard CRUD, insight creation, cohort management, and API-driven analytics w..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/posthog-analytics@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41877493?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "posthog-analytics",
+      "url": "https://clawhub.ai/skills/posthog-analytics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "posthog-analytics",
+    "url": "https://clawhub.ai/skills/posthog-analytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/posthog-analytics-8a6972d91ef685a6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/posthog-analytics@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-posthog-analytics-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d60af268dc422faaad00d81c50f122d1626542e8f588dac0d861775bea879c45",
+      "artifactSizeBytes": 1968
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T12:54:49.953Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69577,
+  "uuid": "skill-clawhub-taco-bell",
+  "skillKey": "clawhub-taco-bell",
+  "name": "Taco Bell",
+  "summary": "提供正宗墨西哥风味快餐，支持多种定制和会员积分服务，涵盖塔可、卷饼、Nachos等多样产品，适合便捷用餐。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taco_bell",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供正宗墨西哥风味快餐，支持多种定制和会员积分服务，涵盖塔可、卷饼、Nachos等多样产品，适合便捷用餐。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/taco-bell@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "taco-bell",
+      "url": "https://clawhub.ai/skills/taco-bell"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taco-bell",
+    "url": "https://clawhub.ai/skills/taco-bell",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taco-bell-481783fe17ae28c4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/taco-bell@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-taco-bell-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6cf265a8703d5382c92ca1fd50cae220208fa51622292926401884f3e18c06da",
+      "artifactSizeBytes": 2178
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T23:27:20.008Z"
+}

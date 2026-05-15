@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34906,
+  "uuid": "skill-clawhub-ai-code-generator",
+  "skillKey": "clawhub-ai-code-generator",
+  "name": "Ai Code Generator",
+  "summary": "AI code generator using Plan-and-Solve + ReAct for generating complete, runnable code from requirements and specifications.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_code_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "banxian87",
+      "features": [
+        "AI code generator using Plan-and-Solve + ReAct for generating complete, runnable code from requ."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-code-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264314218?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-code-generator",
+      "url": "https://clawhub.ai/skills/ai-code-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-code-generator",
+    "url": "https://clawhub.ai/skills/ai-code-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-code-generator-e0f973506032d920.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-code-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-code-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:efd66bf0e1a56e33971058f190085464f6c91b3621eee1278fe066b9dfd7017b",
+      "artifactSizeBytes": 1933
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T03:15:11.414Z"
+}

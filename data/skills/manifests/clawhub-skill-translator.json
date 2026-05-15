@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67090,
+  "uuid": "skill-clawhub-skill-translator",
+  "skillKey": "clawhub-skill-translator",
+  "name": "翻译SKILL.md文档",
+  "summary": "翻译技能文档的工具。当用户想要翻译 SKILL.md 文件的内容为中文时使用此技能。用户输入技能路径，工具会读取该路径下的 SKILL.md 文件，将其内容翻译成中文，并输出命名为 SKILL(1).md 的文件到同一文件夹中。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_translator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JEyeshield",
+      "features": [
+        "翻译技能文档的工具。当用户想要翻译 SKILL.md 文件的内容为中文时使用此技能。用户输入技能路径，工具会读取该路径下的 SKILL.md 文件，将其内容翻译成中文，并输出命名为 SKIL."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-translator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25786840?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-translator",
+      "url": "https://clawhub.ai/skills/skill-translator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-translator",
+    "url": "https://clawhub.ai/skills/skill-translator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-translator-f42373845d4f3a7e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-translator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-translator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c0cd92ca2cd9b7ecb739bbc5c239ca9fb7f3f83ba75228006c451a47e3683334",
+      "artifactSizeBytes": 2365
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T09:28:09.180Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59872,
+  "uuid": "skill-clawhub-notify-hub",
+  "skillKey": "clawhub-notify-hub",
+  "name": "notify-hub",
+  "summary": "多平台通知聚合分层。把 GitHub、Stripe、Linear 等 SaaS 平台的通知邮件统一收到一个子邮箱，按紧急度分层：收款/CI 失败立即转发到 claw 注册邮箱，其他通知每天一封汇总。Use when: (1) setting up a unified notification inbox for...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notify_hub",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gucha",
+      "features": [
+        "多平台通知聚合分层。把 GitHub、Stripe、Linear 等 SaaS 平台的通知邮件统一收到一个子邮箱，按紧急度分层：收款/CI 失败立即转发到 claw 注册邮箱，其他通知每天一."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/notify-hub@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23452561?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "notify-hub",
+      "url": "https://clawhub.ai/skills/notify-hub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notify-hub",
+    "url": "https://clawhub.ai/skills/notify-hub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notify-hub-598f479263c19ce0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/notify-hub@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-notify-hub-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e10782301d31bc278c6c70bc485a08e5974015d59a71a7e904151bc7cbe390f7",
+      "artifactSizeBytes": 2368
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T07:26:43.838Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42707,
+  "uuid": "skill-clawhub-minimum-advertised-price",
+  "skillKey": "clawhub-minimum-advertised-price",
+  "name": "Minimum Advertised Price",
+  "summary": "AI-driven Minimum Advertised Price policy creation, violation monitoring, compliance management, and enforcement workflow design for e-commerce brands.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimum_advertised_price",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nexscope-ai",
+      "features": [
+        "AI-driven Minimum Advertised Price policy creation, violation monitoring, compliance management."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/minimum-advertised-price@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265748176?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "minimum-advertised-price",
+      "url": "https://clawhub.ai/skills/minimum-advertised-price"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimum-advertised-price",
+    "url": "https://clawhub.ai/skills/minimum-advertised-price",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimum-advertised-price-6c7f4173e24402b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/minimum-advertised-price@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-minimum-advertised-price-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cd9f95defe6e6c51bbcb076d0fea491cfda671fab55ae3cc41b3b0a8ebef732e",
+      "artifactSizeBytes": 1950
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T02:35:26.391Z"
+}

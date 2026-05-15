@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/china-weather-query@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_weather_query",
+  "skill": {
+    "id": 67778,
+    "skillKey": "clawhub-china-weather-query",
+    "name": "China Weather Query"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-weather-query",
+    "url": "https://clawhub.ai/skills/china-weather-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-weather-query-53fc672586012ece.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询中国任意城市的实时天气、多日预报和生活指数。数据来源中国天气网（weather.com.cn）。当用户询问中国城市天气、气温、降雨、空气质量、穿衣建议、出行建议等天气相关问题时使用。支持全国 350 个城市。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brucelau1987cn",
+      "userId": "s171g32hcs3gcssgqe3z6bcefx855sgx",
+      "displayName": "Bruce Lau",
+      "image": "https://avatars.githubusercontent.com/u/100419916?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 231,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777216365083,
+      "changelog": "fix: 修复城市数据加载路径硬编码问题；修复生活指数解析(dataZS)未正确提取 .zs 子对象的 bug",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a10268555a3d50e30d648055bd809f0319c1d2e4b535ef9b2ec5d15bb6686a45"
+}

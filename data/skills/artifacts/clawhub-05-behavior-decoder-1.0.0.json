@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/05-behavior-decoder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.05_behavior_decoder",
+  "skill": {
+    "id": 62510,
+    "skillKey": "clawhub-05-behavior-decoder",
+    "name": "05 Behavior Decoder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "05-behavior-decoder",
+    "url": "https://clawhub.ai/skills/05-behavior-decoder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/05-behavior-decoder-b25384bb106d2b3a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Miki行为解码 · 解读12-36月龄常见行为（打人/扔东西/哭闹/说\"不\"），判断是否正常，给出应对策略"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nic-yuan",
+      "userId": "s17601s6pc41mkraa1bkeshfx983kdsw",
+      "displayName": "nic-yuan",
+      "image": "https://avatars.githubusercontent.com/u/195308903?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 116,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777740212984,
+      "changelog": "miki-05-behavior-decoder v1.0.0 released.\n\n- New skill for decoding common behaviors in children aged 12–36 months (e.g., hitting, throwing things, tantrums, saying \"no\").\n- Provides normalcy assessment, reasons, and response strategies for each behavior.\n- Includes clear input and output templates for behavior consultation.\n- Contains detailed breakdowns for five typical behaviors, explanations, and concrete intervention tips.\n- Offers extra sections on order-sensitive periods and recommended resources.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d7e794e737d9c9b18ba3513629b72f5b60bdfeb714688fc24673ce46c9a16c8f"
+}

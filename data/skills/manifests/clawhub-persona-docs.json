@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15288,
+  "uuid": "skill-clawhub-persona-docs",
+  "skillKey": "clawhub-persona-docs",
+  "name": "Persona Docs",
+  "summary": "Create persona documentation for a product or codebase. Use when asked to create persona docs, document target users, define user journeys, document onboarding flows, or when starting a new product and needing to define its audience. Perso.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.persona_docs",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wpank",
+      "features": [
+        "Create persona documentation for a product or codebase",
+        "Use when asked to create persona docs, document target users, define user journeys, document on.",
+        "Persona docs should be the first documentation created for any product."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/persona-docs@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9498646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "persona-docs",
+      "url": "https://clawhub.ai/skills/persona-docs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "persona-docs",
+    "url": "https://clawhub.ai/skills/persona-docs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/persona-docs-71053b344a5aa3a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/persona-docs@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-persona-docs-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:96aa1690e5d53d276be71e3f73ef7228471151f5861807f2bfb6098b826eeb48",
+      "artifactSizeBytes": 2512
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T13:40:30.105Z"
+}

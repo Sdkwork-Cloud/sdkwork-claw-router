@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24514,
+  "uuid": "skill-clawhub-n8n-mcp",
+  "skillKey": "clawhub-n8n-mcp",
+  "name": "N8n Mcp",
+  "summary": "Operate n8n workflow automation platform via MCP (Model Context Protocol). Use when: (1) Creating, updating, or managing n8n workflows, (2) Executing or test...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.n8n_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "itian",
+      "features": [
+        "Operate n8n workflow automation platform via MCP (Model Context Protocol)",
+        "Use when: (1) Creating, updating, or managing n8n workflows, (2) Executing or test..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/n8n-mcp@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67038207?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "n8n-mcp",
+      "url": "https://clawhub.ai/skills/n8n-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "n8n-mcp",
+    "url": "https://clawhub.ai/skills/n8n-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/n8n-mcp-6dc85ce73371d853.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/n8n-mcp@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-n8n-mcp-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f8cb6a5e151af855366ea9755d2e64ac6d04f83dc3625688380d85423432ceb3",
+      "artifactSizeBytes": 1898
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T06:15:16.436Z"
+}

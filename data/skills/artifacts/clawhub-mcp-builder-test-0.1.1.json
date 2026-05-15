@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mcp-builder-test@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcp_builder_test",
+  "skill": {
+    "id": 49554,
+    "skillKey": "clawhub-mcp-builder-test",
+    "name": "Mcp Builder test"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcp-builder-test",
+    "url": "https://clawhub.ai/skills/mcp-builder-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcp-builder-test-7f06e379556951ed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use whe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "uniquevme",
+      "userId": "s1704yvad7pvg5512xsammqjq983jyk4",
+      "displayName": "uniquevme",
+      "image": "https://avatars.githubusercontent.com/u/107660058?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 75,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1778142629947,
+      "changelog": "mcp-builder-test v0.1.1\n\n- Added comprehensive SKILL.md documentation covering the process for building high-quality MCP servers integrating external services.\n- Includes detailed guidance on modern MCP design, tool development, code quality, testing, and evaluation creation.\n- Provides extensive references and links for both TypeScript and Python development workflows.\n- Outlines evaluation best practices and required formats for assessing server effectiveness.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3c4b24b9cc5e2f4cb03c778155e21de0916f6411c3a3cde1319f3d33f0e02c9c"
+}

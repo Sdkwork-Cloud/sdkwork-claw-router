@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36357,
+  "uuid": "skill-clawhub-hermit-search",
+  "skillKey": "clawhub-hermit-search",
+  "name": "Hermit Search Publish",
+  "summary": "Local semantic search over knowledge base collections powered by Hermit. Use when: searching knowledge base, semantic search, querying documents, managing co...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hermit_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xxxgqcoder",
+      "features": [
+        "Local semantic search over knowledge base collections powered by Hermit",
+        "Use when: searching knowledge base, semantic search, querying documents, managing co..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hermit-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/69912914?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hermit-search",
+      "url": "https://clawhub.ai/skills/hermit-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hermit-search",
+    "url": "https://clawhub.ai/skills/hermit-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hermit-search-ab2bb8d8877a3313.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hermit-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hermit-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:83620a81948125ae6c8f42e62fafb7e5677d6a87c3400be98ac1f5b5f694c7cb",
+      "artifactSizeBytes": 1890
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T10:37:39.334Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34416,
+  "uuid": "skill-clawhub-peoplehr",
+  "skillKey": "clawhub-peoplehr",
+  "name": "Peoplehr",
+  "summary": "PeopleHR integration. Manage data, records, and automate workflows. Use when the user wants to interact with PeopleHR data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.peoplehr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "PeopleHR integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with PeopleHR data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/peoplehr@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "peoplehr",
+      "url": "https://clawhub.ai/skills/peoplehr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "peoplehr",
+    "url": "https://clawhub.ai/skills/peoplehr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/peoplehr-c8217fafeb6cf64c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/peoplehr@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-peoplehr-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d8a5e3be35466238e4417c0efd3c6914ad938f068351309f858ad250e01f31c3",
+      "artifactSizeBytes": 1838
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:51:05.696Z"
+}

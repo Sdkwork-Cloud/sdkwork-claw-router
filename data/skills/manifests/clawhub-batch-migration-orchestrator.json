@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45364,
+  "uuid": "skill-clawhub-batch-migration-orchestrator",
+  "skillKey": "clawhub-batch-migration-orchestrator",
+  "name": "Batch Migration Orchestrator",
+  "summary": "Use when the user wants a large, mechanical change split into many independent units and executed in parallel with isolated workers and PRs.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.batch_migration_orchestrator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wimi321",
+      "features": [
+        "Use when the user wants a large, mechanical change split into many independent units and execut."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/batch-migration-orchestrator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34830250?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "batch-migration-orchestrator",
+      "url": "https://clawhub.ai/skills/batch-migration-orchestrator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "batch-migration-orchestrator",
+    "url": "https://clawhub.ai/skills/batch-migration-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/batch-migration-orchestrator-31bd1325dfb2c5a3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/batch-migration-orchestrator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-batch-migration-orchestrator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e55d22be1fef9c492c2538f3055da99da265dc19f552db047ce2fdb3cfbc7353",
+      "artifactSizeBytes": 1994
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T12:44:28.231Z"
+}

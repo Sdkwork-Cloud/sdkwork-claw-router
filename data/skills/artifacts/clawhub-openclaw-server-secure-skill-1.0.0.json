@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-server-secure-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_server_secure_skill",
+  "skill": {
+    "id": 9580,
+    "skillKey": "clawhub-openclaw-server-secure-skill",
+    "name": "openclaw-server-secure-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-server-secure-skill",
+    "url": "https://clawhub.ai/skills/openclaw-server-secure-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-server-secure-skill-9f2413eb2724c5e3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive security hardening and installation guide for OpenClaw (formerly Clawdbot/Moltbot). Use this skill when the user wants to secure a server, install the OpenClaw agent, or configure Tailscale/Firewall for the agent."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kime541200",
+      "userId": "publishers:kime541200",
+      "displayName": "kime541200",
+      "image": "https://avatars.githubusercontent.com/u/48781152?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3420,
+      "installsAllTime": 22,
+      "installsCurrent": 18,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770005241071,
+      "changelog": "- Initial release of openclaw-server-secure-skill.\n- Provides a step-by-step guide for securing and installing OpenClaw, including SSH and firewall hardening, brute-force protection, and VPN configuration with Tailscale.\n- Covers OpenClaw agent installation and secure configuration.\n- Includes instructions for owner access setup and running a security audit.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:df163e9c19fef52c760b0e5a84001401c3898e20beca4bdc2ff435cddbc11ed5"
+}

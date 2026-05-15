@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59460,
+  "uuid": "skill-clawhub-toutiao-hot",
+  "skillKey": "clawhub-toutiao-hot",
+  "name": "今日头条热榜 | Toutiao Hot News",
+  "summary": "获取今日头条(www.toutiao.com)新闻热榜/热搜榜数据 | Get Toutiao (www.toutiao.com) news hot list/trending data 包含时政要闻、财经、社会事件、国际新闻、科技发展及娱乐八卦等多领域的热门中文资讯 | Includes politics, f...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toutiao_hot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "noah",
+      "features": [
+        "获取今日头条(www.toutiao.com)新闻热榜/热搜榜数据 | Get Toutiao (www.toutiao.com) news hot list/trending data 包."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/toutiao-hot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/242364666?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "toutiao-hot",
+      "url": "https://clawhub.ai/skills/toutiao-hot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toutiao-hot",
+    "url": "https://clawhub.ai/skills/toutiao-hot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toutiao-hot-06a0ea598f5a17e1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/toutiao-hot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-toutiao-hot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a32c9d9ac6e28936955a2a53bc6c4ae9e7ec2d9fb1f5f265d662d8c303b78917",
+      "artifactSizeBytes": 2048
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T22:11:13.103Z"
+}

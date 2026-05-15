@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-editor-gratis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_editor_gratis",
+  "skill": {
+    "id": 43065,
+    "skillKey": "clawhub-ai-video-editor-gratis",
+    "name": "Ai Video Editor Gratis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-editor-gratis",
+    "url": "https://clawhub.ai/skills/ai-video-editor-gratis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-editor-gratis-dbe2505b15d38f87.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get edited MP4 videos ready to post, without touching a single slider. Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say something like \"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776753653129,
+      "changelog": "- Initial release of AI Video Editor Gratis, version 1.0.0.\n- Upload MP4, MOV, AVI, or WebM footage (up to 500MB); process with AI-powered quick edits in the cloud.\n- Describe desired edits (trim, transitions, background music, etc.) and export ready-to-post 1080p MP4 videos for free.\n- Automatic session and token management: supports anonymous login with 100 free credits (7-day expiry).\n- Includes workflow for uploading, editing, exporting, credit checking, and viewing session/video states.\n- Handles common errors such as file size/type, token/session issues, and rate limits, with clear user feedback.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:31ac5922bab8373c368d5efbd2db435fd9dd1888aa36cea52a8b561b59986e77"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/file-to-link@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_to_link",
+  "skill": {
+    "id": 58068,
+    "skillKey": "clawhub-file-to-link",
+    "name": "本地文件上传云端"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-to-link",
+    "url": "https://clawhub.ai/skills/file-to-link",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-to-link-f066db391eea81ad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Uploads a local file to Qiniu Cloud Storage and returns a shareable URL."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ahsbnb",
+      "userId": "s17d6exthhg7wwbw0z502jz00183kevf",
+      "displayName": "an",
+      "image": "https://avatars.githubusercontent.com/u/208153467?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774513100432,
+      "changelog": "- Initial release: Uploads local files to Qiniu Cloud Storage and returns a public URL.\n- Improved reliability by switching from a temporary hosting service to Qiniu Kodo.\n- Correctly handles file paths with special characters (e.g., Chinese, spaces).\n- Security note: Uploaded files may become publicly accessible—do not use for sensitive data.\n- Requires the qiniu Python package.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e5046d9df43a9b6083dae3a8e674c4a3f452f8c46f7d75d8470afbf803b05964"
+}

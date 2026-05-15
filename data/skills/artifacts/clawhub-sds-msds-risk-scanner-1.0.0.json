@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sds-msds-risk-scanner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sds_msds_risk_scanner",
+  "skill": {
+    "id": 39663,
+    "skillKey": "clawhub-sds-msds-risk-scanner",
+    "name": "SDS/MSDS Risk Scanner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sds-msds-risk-scanner",
+    "url": "https://clawhub.ai/skills/sds-msds-risk-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sds-msds-risk-scanner-459abf01d44e0352.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract hazard codes and safety info from chemical safety datasheets."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774947111560,
+      "changelog": "- Initial release of sds-msds-risk-scanner.\n- Extracts hazard codes and safety information from chemical safety datasheets (SDS/MSDS).\n- Provides structured outputs: H-codes, P-codes, safety summary, PPE recommendations.\n- Includes documented workflows for validated, reproducible results and clear error handling.\n- Supports use cases such as lab safety, hazard communication, and compliance documentation.\n- No external dependencies or network access; designed for local execution and audit readiness.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0de74c6aa41052859a93d6efa37b01f9db1bdef0dd75b280187a387cf40c7feb"
+}

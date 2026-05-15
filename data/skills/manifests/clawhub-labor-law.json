@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17575,
+  "uuid": "skill-clawhub-labor-law",
+  "skillKey": "clawhub-labor-law",
+  "name": "Labor Law",
+  "summary": "Query Chinese labor law on overtime, leave, contracts, and severance rules. Use when checking overtime rules, calculating severance, reviewing contracts.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.labor_law",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "Query Chinese labor law on overtime, leave, contracts, and severance rules",
+        "Use when checking overtime rules, calculating severance, reviewing contracts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/labor-law@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "labor-law",
+      "url": "https://clawhub.ai/skills/labor-law"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "labor-law",
+    "url": "https://clawhub.ai/skills/labor-law",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/labor-law-ebc8312c4daa1600.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/labor-law@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-labor-law-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:26449f97c22ae61aa794b2b021dc7ed16ca305e210bc660d8fa0a3edda415322",
+      "artifactSizeBytes": 1836
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T10:45:25.128Z"
+}

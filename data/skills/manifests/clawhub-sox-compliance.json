@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36192,
+  "uuid": "skill-clawhub-sox-compliance",
+  "skillKey": "clawhub-sox-compliance",
+  "name": "SOX Compliance",
+  "summary": "Enterprise-grade Sarbanes-Oxley assessment platform that evaluates organizational compliance with SOX requirements across multiple control domains.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sox_compliance",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToolWeb",
+      "features": [
+        "Enterprise-grade Sarbanes-Oxley assessment platform that evaluates organizational compliance wi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sox-compliance@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245780162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sox-compliance",
+      "url": "https://clawhub.ai/skills/sox-compliance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sox-compliance",
+    "url": "https://clawhub.ai/skills/sox-compliance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sox-compliance-b88e357cc6b3383b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sox-compliance@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sox-compliance-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:783f6805869f8bcdb945b4dce532712a3542dd8b0c28533f69fd0a06c4b83a62",
+      "artifactSizeBytes": 2422
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T05:48:16.525Z"
+}

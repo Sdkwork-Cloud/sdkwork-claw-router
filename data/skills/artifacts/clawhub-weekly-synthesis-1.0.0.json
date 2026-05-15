@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weekly-synthesis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weekly_synthesis",
+  "skill": {
+    "id": 10054,
+    "skillKey": "clawhub-weekly-synthesis",
+    "name": "Weekly Synthesis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weekly-synthesis",
+    "url": "https://clawhub.ai/skills/weekly-synthesis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weekly-synthesis-7c30d4a431782b7b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create a comprehensive synthesis of the week's work and thinking"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "itsflow",
+      "userId": "publishers:itsflow",
+      "displayName": "ItsFlow",
+      "image": "https://avatars.githubusercontent.com/u/10375649?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2583,
+      "installsAllTime": 8,
+      "installsCurrent": 6,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769256782262,
+      "changelog": "Initial release of weekly-synthesis skill.\n\n- Synthesizes weekly work, noting patterns, learning, and progress.\n- Analyzes all notes and projects updated or created during the week.\n- Outputs a structured weekly synthesis note covering themes, insights, connections, and plans.\n- Supports project tracking, energy auditing, and identification of key questions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:50a0c4585830c73f9dc7ec78276c87f608560f4babe8d45299630d98549fd61e"
+}

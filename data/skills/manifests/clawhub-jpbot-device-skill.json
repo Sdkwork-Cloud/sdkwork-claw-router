@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71004,
+  "uuid": "skill-clawhub-jpbot-device-skill",
+  "skillKey": "clawhub-jpbot-device-skill",
+  "name": "jpbot-device-skill",
+  "summary": "当用户查询九号电动（包含电动自行车和电动摩托车）的车辆信息（车辆开关机状态、车辆充电状态、车辆位置、车辆剩余电量、车辆剩余里程、车辆剩余充电时间）时使用。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jpbot_device_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "微笑",
+      "features": [
+        "当用户查询九号电动（包含电动自行车和电动摩托车）的车辆信息（车辆开关机状态、车辆充电状态、车辆位置、车辆剩余电量、车辆剩余里程、车辆剩余充电时间）时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jpbot-device-skill@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32324916?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jpbot-device-skill",
+      "url": "https://clawhub.ai/skills/jpbot-device-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jpbot-device-skill",
+    "url": "https://clawhub.ai/skills/jpbot-device-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jpbot-device-skill-6fc56db25a5b2b01.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jpbot-device-skill@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-jpbot-device-skill-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0c1b37cbef40f4cf91f2cc4d407b49b2d3ae63aa3b4313f0c18ab212c7df3bcb",
+      "artifactSizeBytes": 2181
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T08:39:56.802Z"
+}

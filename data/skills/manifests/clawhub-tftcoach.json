@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52567,
+  "uuid": "skill-clawhub-tftcoach",
+  "skillKey": "clawhub-tftcoach",
+  "name": "tftcoach",
+  "summary": "Use this skill when the user asks about Teamfight Tactics (TFT) — comps, items, augments, economy, pivoting, positioning, or any gameplay advice. Triggers: '...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tftcoach",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ke Wang",
+      "features": [
+        "Use this skill when the user asks about Teamfight Tactics (TFT) — comps, items, augments, econo.",
+        "Triggers: '..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tftcoach@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30745273?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tftcoach",
+      "url": "https://clawhub.ai/skills/tftcoach"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tftcoach",
+    "url": "https://clawhub.ai/skills/tftcoach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tftcoach-8f4e214e1d8e1864.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tftcoach@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tftcoach-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cd39dee6b13aaf965bc5bb52b3d9934fceba4279fe2b2074abdb9f294245d8c4",
+      "artifactSizeBytes": 1912
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T23:58:16.272Z"
+}

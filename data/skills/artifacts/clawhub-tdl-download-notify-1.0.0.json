@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tdl-download-notify@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tdl_download_notify",
+  "skill": {
+    "id": 60896,
+    "skillKey": "clawhub-tdl-download-notify",
+    "name": "Tdl Download Notify"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tdl-download-notify",
+    "url": "https://clawhub.ai/skills/tdl-download-notify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tdl-download-notify-20fe4ab460be6519.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "TDL 下载完成后自动通过 Server 酱微信通知，包含文件名和大小信息"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tang2606",
+      "userId": "s17db0kwsxnvk288qdz8ys9tds84dp65",
+      "displayName": "Wade",
+      "image": "https://avatars.githubusercontent.com/u/19337304?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775573406292,
+      "changelog": "Initial release — Telegram resource downloads with Server酱 WeChat notifications.\n\n- Automatically sends WeChat notifications (file names and sizes) upon download completion.\n- Supports both successful and failed download notifications.\n- Tracks multiple downloaded files, providing detailed file info and statistics.\n- Default and customizable download directories.\n- Simple command-line usage plus OpenClaw integration.\n- Requires TDL and Server酱 configuration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a8f73c4397a43e71f22759e8d2367dc2764314277518b2e9b1b70452d381177e"
+}

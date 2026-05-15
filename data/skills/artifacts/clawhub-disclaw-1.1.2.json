@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/disclaw@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.disclaw",
+  "skill": {
+    "id": 18873,
+    "skillKey": "clawhub-disclaw",
+    "name": "Disclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "disclaw",
+    "url": "https://clawhub.ai/skills/disclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/disclaw-977b1751634abba1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Discord workspace structure and OpenClaw routing as code. Use when creating/renaming/deleting Discord channels, categories, threads, or managing agent..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ofan",
+      "userId": "s179mh12ng1k819b3jsng2cd6x83f91s",
+      "displayName": "ofan",
+      "image": "https://avatars.githubusercontent.com/u/319679?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 643,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1772092816660,
+      "changelog": "fix: telemetry flush before process exit, update relay URL",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3f5dbc02938b4caec0ae390f938909bdbb5510abb024a78383bc7881cff37eea"
+}

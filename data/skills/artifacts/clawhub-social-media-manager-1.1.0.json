@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/social-media-manager@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_media_manager",
+  "skill": {
+    "id": 12217,
+    "skillKey": "clawhub-social-media-manager",
+    "name": "Social Media Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-media-manager",
+    "url": "https://clawhub.ai/skills/social-media-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-media-manager-19afa0c6d1523463.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate high-engagement 6-slide TikTok carousels using AI-generated consistent images and Postiz API for draft scheduling and notification."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tryan310",
+      "userId": "publishers:tryan310",
+      "displayName": "tryan310",
+      "image": "https://avatars.githubusercontent.com/u/102454844?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1690,
+      "installsAllTime": 18,
+      "installsCurrent": 18,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1771275210608,
+      "changelog": "Expanded to cover all social media platforms via Postiz API, not just TikTok",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b03fdf4b6b0668806a51eb2e8f2bf3f5fbcf4d43e84f4eb1c18c95539035bee5"
+}

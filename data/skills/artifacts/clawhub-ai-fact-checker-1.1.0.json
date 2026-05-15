@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-fact-checker@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_fact_checker",
+  "skill": {
+    "id": 65566,
+    "skillKey": "clawhub-ai-fact-checker",
+    "name": "Ai Fact Checker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-fact-checker",
+    "url": "https://clawhub.ai/skills/ai-fact-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-fact-checker-be44424aa2d80b4c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "🔍 AI 事实核查 - 自动验证大模型输出准确性，检测 hallucination 幻觉编造内容，联网搜索交叉验证给出可信度评分和修正。解决大模型一本正经胡说八道的痛点。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rudagebil11-jpg",
+      "userId": "s174hj2x8qgcr1bfhf1t0y4tss83rgpx",
+      "displayName": "rudagebil11-jpg",
+      "image": "https://avatars.githubusercontent.com/u/262148849?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 193,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774715157974,
+      "changelog": "Version 1.1.0 of ai-fact-checker brings improved documentation clarity and workflow explanations.\n\n- Refined and expanded SKILL.md with clearer usage instructions, step-by-step workflows, and more detailed sample outputs\n- Better highlights scoring criteria, correction logic, and example scenarios for both individual fact and bulk document checking\n- Clarifies installation, dependencies, and testing for users\n- General improvements for readability and user understanding (no functional code changes described)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:052bf100511e7a87762508e44cea24337e74ead7c28b8405a8486daa057f1d5d"
+}

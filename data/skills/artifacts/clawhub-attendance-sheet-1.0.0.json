@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/attendance-sheet@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.attendance_sheet",
+  "skill": {
+    "id": 13686,
+    "skillKey": "clawhub-attendance-sheet",
+    "name": "Attendance Sheet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "attendance-sheet",
+    "url": "https://clawhub.ai/skills/attendance-sheet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/attendance-sheet-52adae74c0b4cfce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate professional attendance sheets in xlsx format from employee work information. Perfect for HR, team management, and daily attendance tracking."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gykdly",
+      "userId": "publishers:gykdly",
+      "displayName": "gykdly",
+      "image": "https://avatars.githubusercontent.com/u/42433611?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1365,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770812852178,
+      "changelog": "Initial release – generate professional attendance sheets in xlsx format from employee work information.\n\n- Input employee names, date range, and attendance types; supports both text and JSON formats.\n- Produces Excel files with employee names, date columns, attendance statuses (with color coding), and summary statistics.\n- Suitable for HR, team management, and daily or monthly attendance tracking.\n- Includes usage examples and professional formatting for reports.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1ca7b4f818a28a72540b69ef91db50a57b9356699e8bfe5bf7a63ffccb2b80ad"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/windows-screenshot-ocr@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.windows_screenshot_ocr",
+  "skill": {
+    "id": 63758,
+    "skillKey": "clawhub-windows-screenshot-ocr",
+    "name": "windows-screenshot-ocr"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "windows-screenshot-ocr",
+    "url": "https://clawhub.ai/skills/windows-screenshot-ocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/windows-screenshot-ocr-84c7c20ab70c2e41.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Windows全屏截图（自动标记鼠标位置）+ 原生OCR文字识别。完全本地运行，无需联网，无需API Key。适用于需要截图分析屏幕内容、自动化OCR识别的场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "a770438678",
+      "userId": "s17bh5zpbcev9pm3gbrvsrssjn83wmq0",
+      "displayName": "a770438678",
+      "image": "https://avatars.githubusercontent.com/u/65708881?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 679,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774889478376,
+      "changelog": "Windows截图+OCR文字识别，完全本地运行",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:02be51a30a70eaf4c687a14324ab060c5add094ad7dac85076889ecacfbd5deb"
+}

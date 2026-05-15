@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39299,
+  "uuid": "skill-clawhub-gitlab-api-client",
+  "skillKey": "clawhub-gitlab-api-client",
+  "name": "GitLab API Client",
+  "summary": "Interact with GitLab API for managing projects, issues, merge requests, branches, pipelines, users, groups, and more. Use when the user needs to perform GitL...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gitlab_api_client",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JonasGao",
+      "features": [
+        "Interact with GitLab API for managing projects, issues, merge requests, branches, pipelines, us.",
+        "Use when the user needs to perform GitL..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gitlab-api-client@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4549584?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gitlab-api-client",
+      "url": "https://clawhub.ai/skills/gitlab-api-client"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gitlab-api-client",
+    "url": "https://clawhub.ai/skills/gitlab-api-client",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gitlab-api-client-a5e4c178354a4fab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gitlab-api-client@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gitlab-api-client-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e920ee59012acbd0b1beb85167526eacc0755dfb6d0bbbd188d44048eb8e1b94",
+      "artifactSizeBytes": 1979
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T04:47:32.110Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lingjingtest@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lingjingtest",
+  "skill": {
+    "id": 65929,
+    "skillKey": "clawhub-lingjingtest",
+    "name": "lingjingtest"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lingjingtest",
+    "url": "https://clawhub.ai/skills/lingjingtest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lingjingtest-ad2c298e9cf3039f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "调用京东云灵境(Lingjing) JoyCreator 平台的 AI 生成 API。具备三阶段智能管线：① 意图理解（解析自然语言为结构化 JSON）→ ② 模型推荐（根据场景特征自动匹配最优模型）→ ③ API 调用（构造请求并提交任务）。支持文生图、文生视频、图生视频、参考图生视频，覆盖豆包/海螺/可灵/拍..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "scorpiongao",
+      "userId": "publishers:scorpiongao",
+      "displayName": "Scorpiongao",
+      "image": "https://avatars.githubusercontent.com/u/44964729?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 293,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773732260364,
+      "changelog": "- Major content overhaul: unified SKILL.md with a structured, modular format and detailed pipeline.\n- Added granular documentation for each component under references/ (including choice-rules, doubao, hailuo, kling, paiwo, router-rules).\n- Introduced scripts/joycreator.py and scripts/.env.example for code generation and environment setup.\n- Centralized all previous scattered documentation into a single, comprehensive SKILL.md.\n- Enhanced clarity on authentication flow, API call structure, model selection logic, and error handling.\n- Removed outdated All_In_One documentation (ApiBuilder, Choice, Router, Skill.md) to reduce confusion.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1664fa6539979241dfae9d2e3b4ef73d09ebc3e4352b23464d5b2923f741538a"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/social-parser@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_parser",
+  "skill": {
+    "id": 72031,
+    "skillKey": "clawhub-social-parser",
+    "name": "social-parser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-parser",
+    "url": "https://clawhub.ai/skills/social-parser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-parser-c81fd12cc761de00.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "解析抖音视频和小红书笔记，提取标题、封面、描述、标签、作者等核心信息。当用户想解析、获取、抓取、提取抖音视频数据、小红书笔记内容，或粘贴了抖音/小红书链接希望查看内容详情时调用。常见表达：'帮我解析这个抖音链接'、'获取小红书笔记内容'、'抓取视频信息'、'提取这条小红书的标题标签'、'分析这个视频'。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huyi9531",
+      "userId": "s170a0qka1xk58nc8bmxjg53ns8430cc",
+      "displayName": "AIconductor",
+      "image": "https://avatars.githubusercontent.com/u/128768925?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775108679616,
+      "changelog": "No file changes detected in this version.\n\n- No code or documentation updates were made.\n- Version number was incremented without any detected modifications.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2653a0d2e45fb0619a132bae3f613e9dafd75d64da78882e580dd34e41ab52fe"
+}

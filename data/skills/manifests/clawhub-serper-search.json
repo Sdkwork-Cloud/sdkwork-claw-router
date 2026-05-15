@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9939,
+  "uuid": "skill-clawhub-serper-search",
+  "skillKey": "clawhub-serper-search",
+  "name": "serper-search",
+  "summary": "Fetches real Google search or news results with links, snippets, knowledge graph data, and related questions via the Serper.dev API.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.serper_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Samoppakiks",
+      "features": [
+        "Fetches real Google search or news results with links, snippets, knowledge graph data, and rela."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/serper-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/87269875?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "serper-search",
+      "url": "https://clawhub.ai/skills/serper-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "serper-search",
+    "url": "https://clawhub.ai/skills/serper-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/serper-search-891638416dbfd420.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/serper-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-serper-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ae449449e4cab52f6ad679bef121b0aa285390f7620039510d65fc1221ee082",
+      "artifactSizeBytes": 2276
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T15:00:16.789Z"
+}

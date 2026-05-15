@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9356,
+  "uuid": "skill-clawhub-active-campaign",
+  "skillKey": "clawhub-active-campaign",
+  "name": "ActiveCampaign",
+  "summary": "ActiveCampaign API integration with managed OAuth. Marketing automation, CRM, contacts, deals, and email campaigns. Use this skill when users want to manage...",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.active_campaign",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byungkyu",
+      "features": [
+        "ActiveCampaign API integration with managed OAuth",
+        "Marketing automation, CRM, contacts, deals, and email campaigns",
+        "Use this skill when users want to manage..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/active-campaign@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16563684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "active-campaign",
+      "url": "https://clawhub.ai/skills/active-campaign"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "active-campaign",
+    "url": "https://clawhub.ai/skills/active-campaign",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/active-campaign-65cea89dfcbab733.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/active-campaign@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-active-campaign-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e03ffe62cba3414af3efc73251c531f0b6cd59d6bec1da38e7e2fff4af21a6ea",
+      "artifactSizeBytes": 2242
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T22:44:20.175Z"
+}

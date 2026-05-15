@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-self-evolution@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_self_evolution",
+  "skill": {
+    "id": 66572,
+    "skillKey": "clawhub-claw-self-evolution",
+    "name": "Claw Self Evolution"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-self-evolution",
+    "url": "https://clawhub.ai/skills/claw-self-evolution",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-self-evolution-42049b692474113e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "实现自动发现、记录、隔离实验和审批合并的安全可控AI自我进化闭环，保障系统稳定持续改进。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kenz1117",
+      "userId": "s17ctgcqmt6jkbew4drmyvberd83habd",
+      "displayName": "kenz1117",
+      "image": "https://avatars.githubusercontent.com/u/229862838?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 337,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773799317894,
+      "changelog": "- 新增初始安装脚本 install.sh，支持一键部署与目录初始化\n- 增加 verify_directory_structure.py，实现目录结构自动规范验证\n- 强化安全设计，明确最小权限原则与核心配置二次确认保护\n- 提供详细定时任务（jobs.json）配置示例，支持 UTC 时区自动任务\n- 更新文档结构，拆分安装/权限说明，明确文件与目录要求",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:84ec0b33377dda5016bfb58d4dae7619e160416c734d4f7ff67f78b73fc0a8e2"
+}

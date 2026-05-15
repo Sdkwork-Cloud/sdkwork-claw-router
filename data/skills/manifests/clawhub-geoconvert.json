@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66139,
+  "uuid": "skill-clawhub-geoconvert",
+  "skillKey": "clawhub-geoconvert",
+  "name": "GEO & Address Conversion - 经纬度地址转换",
+  "summary": "在百度/Google 坐标系下做经纬度与地址互转。当用户说：把这个地址转成经纬度、这两个坐标是什么地方？或类似地图坐标问题时，使用本技能。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geoconvert",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "极速数据",
+      "features": [
+        "在百度/Google 坐标系下做经纬度与地址互转。当用户说：把这个地址转成经纬度、这两个坐标是什么地方？或类似地图坐标问题时，使用本技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/geoconvert@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30516426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "geoconvert",
+      "url": "https://clawhub.ai/skills/geoconvert"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geoconvert",
+    "url": "https://clawhub.ai/skills/geoconvert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geoconvert-afee4ca89e6f4962.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/geoconvert@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-geoconvert-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ab4bcd749ccae7cff6ab0280323d58a2993a5194bf5a7a673026e31acde54a8d",
+      "artifactSizeBytes": 2312
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T09:56:24.716Z"
+}

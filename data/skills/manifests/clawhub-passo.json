@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18290,
+  "uuid": "skill-clawhub-passo",
+  "skillKey": "clawhub-passo",
+  "name": "Passo - Remote Browser Access",
+  "summary": "Enables secure remote access to a browser on your server for manual tasks like logins, 2FA, and captchas via a protected URL.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.passo",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Felipe Goulu",
+      "features": [
+        "Enables secure remote access to a browser on your server for manual tasks like logins, 2FA, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/passo@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58408397?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "passo",
+      "url": "https://clawhub.ai/skills/passo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "passo",
+    "url": "https://clawhub.ai/skills/passo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/passo-6a22c80180e5c98e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/passo@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-passo-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:429bb5d11ab608357647cceeece538fd2a5d13e7f28d03b96aee30f437121b5c",
+      "artifactSizeBytes": 2168
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T01:26:56.242Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dingtalk-link-smb@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dingtalk_link_smb",
+  "skill": {
+    "id": 62069,
+    "skillKey": "clawhub-dingtalk-link-smb",
+    "name": "dingtalk-link"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dingtalk-link-smb",
+    "url": "https://clawhub.ai/skills/dingtalk-link-smb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dingtalk-link-smb-00e2fc67f46a0c2c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "钉钉机器人连接配置指南。用于安装、配置和排查 OpenClaw 钉钉连接器 (dingtalk-connector) 的问题。当用户需要连接钉钉机器人、配置 AppKey/AppSecret、或排查钉钉消息收发问题时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chao980",
+      "userId": "s171vc3z4bws72jj7prfcnyv3d83h90h",
+      "displayName": "chao980",
+      "image": "https://avatars.githubusercontent.com/u/133481658?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 217,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774419419951,
+      "changelog": "Initial release of dingtalk-link-smb.\n\n- Added a comprehensive setup guide for configuring the OpenClaw DingTalk connector.\n- Included step-by-step instructions for plugin installation, DingTalk app creation, and credential setup.\n- Documented troubleshooting steps for common issues such as authentication errors and version incompatibility.\n- Provided advanced configuration options for async mode and session management.\n- Linked to relevant external documentation for further reference.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dff25b243c6b31d4269e759bf09e4081afff90bd92c3175e7ef5a3e39c43090e"
+}

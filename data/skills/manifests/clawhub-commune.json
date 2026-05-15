@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49426,
+  "uuid": "skill-clawhub-commune",
+  "skillKey": "clawhub-commune",
+  "name": "Commune — Agent Email Inbox",
+  "summary": "Create and manage a persistent agent-only email inbox with full send/receive, semantic search, tagging, webhooks, and AI-powered structured data extraction.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.commune",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shanjai Raj",
+      "features": [
+        "Create and manage a persistent agent-only email inbox with full send/receive, semantic search,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/commune@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/53570970?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "commune",
+      "url": "https://clawhub.ai/skills/commune"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "commune",
+    "url": "https://clawhub.ai/skills/commune",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/commune-21d99998c151b467.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/commune@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-commune-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e796e9047b481ba702b6077a064378acaf5840210804b6fc90879c9b4beac375",
+      "artifactSizeBytes": 2030
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T10:17:39.116Z"
+}

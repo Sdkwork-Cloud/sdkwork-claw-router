@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37304,
+  "uuid": "skill-clawhub-fx-sdk-agent",
+  "skillKey": "clawhub-fx-sdk-agent",
+  "name": "Fx Sdk Agent",
+  "summary": "Use FX Protocol TypeScript SDK (fx-sdk) to query positions (getPositions returns PositionInfo[] with rawColls, rawDebts, rawCollsToken, rawDebtsToken, decima...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fx_sdk_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tao Wang",
+      "features": [
+        "Use FX Protocol TypeScript SDK (fx-sdk) to query positions (getPositions returns PositionInfo[]."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fx-sdk-agent@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3118467?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fx-sdk-agent",
+      "url": "https://clawhub.ai/skills/fx-sdk-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fx-sdk-agent",
+    "url": "https://clawhub.ai/skills/fx-sdk-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fx-sdk-agent-19f24f50bdaebb67.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fx-sdk-agent@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-fx-sdk-agent-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:101c793a57cbe506d72e82a69966655f5806abdd1b00dcbfe39e5be1f3577982",
+      "artifactSizeBytes": 2460
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T03:39:10.590Z"
+}

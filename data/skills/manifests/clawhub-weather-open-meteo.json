@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49214,
+  "uuid": "skill-clawhub-weather-open-meteo",
+  "skillKey": "clawhub-weather-open-meteo",
+  "name": "Weather Open‑Meteo",
+  "summary": "Get current weather and forecasts via open-meteo.com with optional fallback to wttr.in if available. No API key required.",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_open_meteo",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DiogoSousa",
+      "features": [
+        "Get current weather and forecasts via open-meteo.com with optional fallback to wttr.in if avail.",
+        "No API key required."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weather-open-meteo@0.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27956837?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weather-open-meteo",
+      "url": "https://clawhub.ai/skills/weather-open-meteo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-open-meteo",
+    "url": "https://clawhub.ai/skills/weather-open-meteo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-open-meteo-6b2c75b39dd8e7da.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weather-open-meteo@0.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-weather-open-meteo-0.1.5.json",
+      "version": "0.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:815ade4924ef05597a3d69fd9884754ea44fbb30276de1ffe744106570d03d1f",
+      "artifactSizeBytes": 1899
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T23:00:01.710Z"
+}

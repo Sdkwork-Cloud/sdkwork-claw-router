@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44115,
+  "uuid": "skill-clawhub-free-video-generation-gemini",
+  "skillKey": "clawhub-free-video-generation-gemini",
+  "name": "Free Video Generation Gemini",
+  "summary": "Get AI generated videos ready to post, without touching a single slider. Upload your text prompts (MP4, MOV, WebM, GIF, up to 500MB), say something like \"gen...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_video_generation_gemini",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vynbosserman65",
+      "features": [
+        "Get AI generated videos ready to post, without touching a single slider",
+        "Upload your text prompts (MP4, MOV, WebM, GIF, up to 500MB), say something like \"gen..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/free-video-generation-gemini@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208823770?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "free-video-generation-gemini",
+      "url": "https://clawhub.ai/skills/free-video-generation-gemini"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-video-generation-gemini",
+    "url": "https://clawhub.ai/skills/free-video-generation-gemini",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-video-generation-gemini-bbf9d193dcf72ff6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/free-video-generation-gemini@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-free-video-generation-gemini-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c92792ff2500ddf5e3da5208d9ebee3cfaab5c015b67117b0d7d3e0458d6d9f3",
+      "artifactSizeBytes": 2602
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T17:26:38.214Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/checkout-friction-audit@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.checkout_friction_audit",
+  "skill": {
+    "id": 26980,
+    "skillKey": "clawhub-checkout-friction-audit",
+    "name": "Checkout Friction Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "checkout-friction-audit",
+    "url": "https://clawhub.ai/skills/checkout-friction-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/checkout-friction-audit-619eb01803a60caa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit checkout friction points and prioritize fixes that improve completed purchases without increasing risk. Use when the user reports high add-to-cart but..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leooooooow",
+      "userId": "s17974h9acjg4h7h5djv1hg51d83hcca",
+      "displayName": "LeroyCreates",
+      "image": "https://avatars.githubusercontent.com/u/130833525?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 347,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773838893275,
+      "changelog": "Add browser-first guidance or interactive Python workflow improvements",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:174e00f61527666f5b8264fc12618f067b6fea2416175ed02bccc72436815dff"
+}

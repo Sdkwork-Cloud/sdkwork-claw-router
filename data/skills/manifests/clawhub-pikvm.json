@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33932,
+  "uuid": "skill-clawhub-pikvm",
+  "skillKey": "clawhub-pikvm",
+  "name": "PiKVM",
+  "summary": "Control and inspect PiKVM devices over the PiKVM HTTP API. Use when asked to operate a PiKVM, query power or HID status, type text or shortcuts remotely, tak...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pikvm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cody Cook",
+      "features": [
+        "Control and inspect PiKVM devices over the PiKVM HTTP API",
+        "Use when asked to operate a PiKVM, query power or HID status, type text or shortcuts remotely,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pikvm@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1329077?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pikvm",
+      "url": "https://clawhub.ai/skills/pikvm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pikvm",
+    "url": "https://clawhub.ai/skills/pikvm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pikvm-6395a2239e3f1618.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pikvm@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pikvm-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:92f1bd29ba8f6defc40005acf60ccf93ca8111aade179a2e6b83d5232f215457",
+      "artifactSizeBytes": 2256
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T05:08:16.357Z"
+}

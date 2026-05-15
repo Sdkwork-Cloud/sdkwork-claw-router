@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58604,
+  "uuid": "skill-clawhub-sql-generator",
+  "skillKey": "clawhub-sql-generator",
+  "name": "Sql Generator",
+  "summary": "SQL生成器。自然语言转SQL、SQL解释、性能优化、建表语句、测试数据生成、数据库迁移、SQL速查表。SQL generator from natural language, explainer, optimizer, DDL creator, mock data, migration scripts, che...",
+  "version": "2.3.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sql_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "SQL生成器。自然语言转SQL、SQL解释、性能优化、建表语句、测试数据生成、数据库迁移、SQL速查表。SQL generator from natural language, explai."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sql-generator@2.3.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sql-generator",
+      "url": "https://clawhub.ai/skills/sql-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sql-generator",
+    "url": "https://clawhub.ai/skills/sql-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sql-generator-f142457505cf67b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sql-generator@2.3.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-sql-generator-2.3.7.json",
+      "version": "2.3.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:63271786d83cade1cbc19af2335fd02a345f9ef708ff9234ba497fbf4905d68a",
+      "artifactSizeBytes": 2006
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T18:55:01.824Z"
+}

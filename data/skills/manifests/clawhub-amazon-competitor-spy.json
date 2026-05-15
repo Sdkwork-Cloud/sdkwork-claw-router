@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51099,
+  "uuid": "skill-clawhub-amazon-competitor-spy",
+  "skillKey": "clawhub-amazon-competitor-spy",
+  "name": "Amazon Competitor Spy",
+  "summary": "Amazon competitor intelligence agent. Tracks competitor ASINs over time — price changes, BSR movements, review count velocity, listing changes, new images/va...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_competitor_spy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mguozhen",
+      "features": [
+        "Amazon competitor intelligence agent",
+        "Tracks competitor ASINs over time — price changes, BSR movements, review count velocity, listin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amazon-competitor-spy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1411875?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amazon-competitor-spy",
+      "url": "https://clawhub.ai/skills/amazon-competitor-spy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-competitor-spy",
+    "url": "https://clawhub.ai/skills/amazon-competitor-spy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-competitor-spy-4019398a11fe7797.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amazon-competitor-spy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-amazon-competitor-spy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:94691bad55b70ced575fe487ce5cc48647fb15fc7399e22ff9469bc28689b23a",
+      "artifactSizeBytes": 2443
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T06:48:08.770Z"
+}

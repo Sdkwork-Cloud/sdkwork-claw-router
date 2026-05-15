@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8527,
+  "uuid": "skill-clawhub-ai-ppt-generate",
+  "skillKey": "clawhub-ai-ppt-generate",
+  "name": "AI PPT generate",
+  "summary": "The intelligent PPT generation tool is provided by Baidu. It is a tool that intelligently generates PPTS based on the themes or questions given by users. Users can choose PPT themes, templates, or even customize their own templates. It als.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_ppt_generate",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "baidu_qianfan",
+      "features": [
+        "The intelligent PPT generation tool is provided by Baidu",
+        "It is a tool that intelligently generates PPTS based on the themes or questions given by users",
+        "Users can choose PPT themes, templates, or even customize their own templates",
+        "It also provides image or resource files (such as pdf,word,txt, etc.)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-ppt-generate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41750260?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-ppt-generate",
+      "url": "https://clawhub.ai/skills/ai-ppt-generate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-ppt-generate",
+    "url": "https://clawhub.ai/skills/ai-ppt-generate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-ppt-generate-25f8800175902d6a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-ppt-generate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-ppt-generate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6541adc0dbd7327c149fabb3063823b87576e559117c81cce791a6d61ee4bc01",
+      "artifactSizeBytes": 2518
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T15:00:25.629Z"
+}

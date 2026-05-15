@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33440,
+  "uuid": "skill-clawhub-local-qrcode",
+  "skillKey": "clawhub-local-qrcode",
+  "name": "Local QR Code Generator",
+  "summary": "Generate QR codes locally from text/URL to PNG image or ASCII art. Pure local generation using qrcode library. No API key required. Use when users need to cr...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_qrcode",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alone86136",
+      "features": [
+        "Generate QR codes locally from text/URL to PNG image or ASCII art",
+        "Pure local generation using qrcode library",
+        "No API key required",
+        "Use when users need to cr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/local-qrcode@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266516065?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "local-qrcode",
+      "url": "https://clawhub.ai/skills/local-qrcode"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-qrcode",
+    "url": "https://clawhub.ai/skills/local-qrcode",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-qrcode-2e6724dbbc2c9467.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/local-qrcode@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-local-qrcode-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6b53433ac5f59a30186c7eead67561ece304f7b322891d5679f3c7fdb079944d",
+      "artifactSizeBytes": 2077
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T03:13:21.976Z"
+}

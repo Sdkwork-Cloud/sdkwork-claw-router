@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45721,
+  "uuid": "skill-clawhub-drakon-agent-optimizer",
+  "skillKey": "clawhub-drakon-agent-optimizer",
+  "name": "Agent Optimizer by Drakon Systems",
+  "summary": "CLI tool that audits OpenClaw config files for misconfigurations, token waste, security issues, and stale auth. Reads local JSON config files only. No data l...",
+  "version": "0.8.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.drakon_agent_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jarvis-drakon",
+      "features": [
+        "CLI tool that audits OpenClaw config files for misconfigurations, token waste, security issues,.",
+        "Reads local JSON config files only",
+        "No data l..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/drakon-agent-optimizer@0.8.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257379654?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "drakon-agent-optimizer",
+      "url": "https://clawhub.ai/skills/drakon-agent-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "drakon-agent-optimizer",
+    "url": "https://clawhub.ai/skills/drakon-agent-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/drakon-agent-optimizer-b49ce7e105dc39e9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/drakon-agent-optimizer@0.8.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-drakon-agent-optimizer-0.8.1.json",
+      "version": "0.8.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0216d8500b10af17b19e7cefed377e0eef979236fa99ee9245fecb576f1b1962",
+      "artifactSizeBytes": 2083
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T21:01:17.921Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/blockbuster-therapy-predictor@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blockbuster_therapy_predictor",
+  "skill": {
+    "id": 33048,
+    "skillKey": "clawhub-blockbuster-therapy-predictor",
+    "name": "Blockbuster Therapy Predictor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blockbuster-therapy-predictor",
+    "url": "https://clawhub.ai/skills/blockbuster-therapy-predictor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blockbuster-therapy-predictor-cb02b8edb51a99f9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Predict which early-stage biotechnology platforms (PROTAC, mRNA, gene editing, etc.) have the highest potential to become blockbuster therapies. Analyzes cli..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 243,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773718619330,
+      "changelog": "Initial release of Blockbuster Therapy Predictor – a tool to forecast the blockbuster potential of early-stage biotechnology platforms.\n\n- Predictive scoring system analyzes clinical, patent, and funding data to rank emerging therapeutic technologies.\n- Offers customizable analysis with technology filtering, thresholding, and console/JSON output options.\n- Outputs include blockbuster index, technology maturity, market potential, momentum, and investment recommendations.\n- Comprehensive documentation on methodology, usage, dependencies, evaluation, risks, and limitations.\n- Uses mock data; real-time data integration planned for future updates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a1366c1201a7c8fb1eac4fbda8b1d465876570d992f94fa3f26ce6a3266ac89e"
+}

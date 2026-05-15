@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-portfolio-zh-aisa@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_portfolio_zh_aisa",
+  "skill": {
+    "id": 67499,
+    "skillKey": "clawhub-stock-portfolio-zh-aisa",
+    "name": "stock-portfolio-zh-aisa"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-portfolio-zh-aisa",
+    "url": "https://clawhub.ai/skills/stock-portfolio-zh-aisa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-portfolio-zh-aisa-d501ba93451175d3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过 AISA 的实时价格与盈亏跟踪来创建和管理股票加密投资组合。触发条件：当用户想新增持仓、查看组合表现、重命名组合或审查当前盈亏时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aisadocs",
+      "userId": "s172yz541n4361fw0sapygg0r583eghk",
+      "displayName": "AIsa",
+      "image": "https://avatars.githubusercontent.com/u/245991925?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776517090533,
+      "changelog": "- Initial release of stock-portfolio-zh.\n- Enables creation and management of stock and crypto portfolios with real-time price and profit/loss tracking via AISA.\n- Supports portfolio creation, updates, listing, renaming, and deletion from the command line.\n- Stores local state within the repository instead of the home directory by default.\n- Requires AISA_API_KEY for operation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2121bd38d189be4a11f7c907b729a20d77a0a1ea68bcf325d2b4359ee6bc83fa"
+}

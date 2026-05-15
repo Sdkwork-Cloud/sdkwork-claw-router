@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sales-bot@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sales_bot",
+  "skill": {
+    "id": 9830,
+    "skillKey": "clawhub-sales-bot",
+    "name": "lead-generating"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sales-bot",
+    "url": "https://clawhub.ai/skills/sales-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sales-bot-e12aa0cd6c08ef3d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate lead capture and tracking with Supabase storage and Make.com email workflows, managing conversations from new to qualified status."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "big-roman123",
+      "userId": "publishers:big-roman123",
+      "displayName": "big-roman123",
+      "image": "https://avatars.githubusercontent.com/u/149171065?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2935,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769552933811,
+      "changelog": "Lead Inbox Automator – Initial Release\n\n- Capture and store leads in a centralized Supabase database.\n- Automatically trigger Make.com webhooks for instant email responses.\n- Track lead status and conversation history from \"new\" to \"qualified.\"\n- Full CRUD actions: create, retrieve, update, and list leads.\n- Manual note/reply logging and automation status checking included.\n- Includes error handling for duplicates, email format, and automation status.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ad643e12a8444dd86212187bad0cafc551acd8d0a4a851d3f17ecdcdef998488"
+}

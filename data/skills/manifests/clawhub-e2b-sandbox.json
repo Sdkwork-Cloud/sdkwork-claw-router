@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41576,
+  "uuid": "skill-clawhub-e2b-sandbox",
+  "skillKey": "clawhub-e2b-sandbox",
+  "name": "E2B Sandbox",
+  "summary": "Spin up and manage E2B cloud sandboxes for agent work. Use when an OpenClaw agent needs an isolated remote Linux sandbox instead of the local workspace: crea...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.e2b_sandbox",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "maverick-software",
+      "features": [
+        "Spin up and manage E2B cloud sandboxes for agent work",
+        "Use when an OpenClaw agent needs an isolated remote Linux sandbox instead of the local workspac."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/e2b-sandbox@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/85259593?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "e2b-sandbox",
+      "url": "https://clawhub.ai/skills/e2b-sandbox"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "e2b-sandbox",
+    "url": "https://clawhub.ai/skills/e2b-sandbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/e2b-sandbox-4c0083d504aedb05.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/e2b-sandbox@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-e2b-sandbox-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:54a142206154b2793e889059e6f60650319159dbd79521fca7b3373c43318a2c",
+      "artifactSizeBytes": 2046
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T03:01:20.967Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/send-signal@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.send_signal",
+  "skill": {
+    "id": 17578,
+    "skillKey": "clawhub-send-signal",
+    "name": "Send to FMZ"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "send-signal",
+    "url": "https://clawhub.ai/skills/send-signal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/send-signal-ba5cfe298964bf94.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A specialized tool for sending quantitative trading signals to the FMZ platform via HTTP API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "13290186019",
+      "userId": "publishers:13290186019",
+      "displayName": "13290186019",
+      "image": "https://avatars.githubusercontent.com/u/252516529?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 765,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771497076283,
+      "changelog": "- Initial release of SendTradeSignal, a tool for sending quantitative trading signals to the FMZ platform via HTTP API.\n- Supports buy, sell, wait, and close actions for user-defined trading pairs and prices.\n- Ensures secure communication with UUID-based source verification.\n- Transmits structured JSON signals with action, symbol, price, and trade reasoning.\n- Compatible with HTTP/HTTPS protocols for broad integration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:86271c051e949df9eea7ee30af708c1c1d7b09b6fbc029c1db9ea392d64446b4"
+}

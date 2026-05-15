@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/consulting-methods-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.consulting_methods_skill",
+  "skill": {
+    "id": 70317,
+    "skillKey": "clawhub-consulting-methods-skill",
+    "name": "管理咨询方法工具箱"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "consulting-methods-skill",
+    "url": "https://clawhub.ai/skills/consulting-methods-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/consulting-methods-skill-49214b093da71108.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "当用户需要管理咨询分析、诊断框架选择、问题拆解、战略工具应用（如5W2H、5WHY、PDCA、PESTEL、7S、波特五力、SWOT、BSC、波士顿矩阵、GE矩阵、价值链）时使用。基于管理咨询顾问常用的方法和工具，输出结构化分析过程与交付模板。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "park-william",
+      "userId": "s1746h64x0rzb0m4vv3dnk3ckn83gm26",
+      "displayName": "park-william",
+      "image": "https://avatars.githubusercontent.com/u/251719985?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 214,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776321113812,
+      "changelog": "Version 1.0.1 of consulting-methods-skill introduces no file or content changes.\n\n- No updates or modifications detected in this version.\n- All documentation and functionality remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e024de559739c227088491a52529f5977c633692d507d6d2a32375f2f69db8d2"
+}

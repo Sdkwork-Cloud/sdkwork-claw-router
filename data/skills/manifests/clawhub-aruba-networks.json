@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35990,
+  "uuid": "skill-clawhub-aruba-networks",
+  "skillKey": "clawhub-aruba-networks",
+  "name": "Aruba Networks",
+  "summary": "Aruba Networks integration. Manage data, records, and automate workflows. Use when the user wants to interact with Aruba Networks data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aruba_networks",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Aruba Networks integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Aruba Networks data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aruba-networks@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aruba-networks",
+      "url": "https://clawhub.ai/skills/aruba-networks"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aruba-networks",
+    "url": "https://clawhub.ai/skills/aruba-networks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aruba-networks-51721276acc494d6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aruba-networks@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-aruba-networks-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:449ea7acbebe1f2ec6abc6274f24d69498ce9b0671bd5251ae17a21ec5222600",
+      "artifactSizeBytes": 1892
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:12:02.682Z"
+}

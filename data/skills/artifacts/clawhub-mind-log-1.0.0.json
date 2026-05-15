@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mind-log@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mind_log",
+  "skill": {
+    "id": 45300,
+    "skillKey": "clawhub-mind-log",
+    "name": "MindLogger"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mind-log",
+    "url": "https://clawhub.ai/skills/mind-log",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mind-log-5d55fb5cf44bcaf0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sends daily journal prompts via Telegram, stores user replies in MindLog, and delivers weekly pattern analysis reports every Sunday at 2pm ET."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ualiu",
+      "userId": "s1773a8mvv2eqpx4cmzmeqw56x843sse",
+      "displayName": "Urim Aliu",
+      "image": "https://avatars.githubusercontent.com/u/103965667?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 135,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775144761180,
+      "changelog": "Initial release of the MindLog skill for OpenClaw.\n\n- Enables daily journal prompts and weekly pattern analysis via Telegram.\n- Guides users through setup by collecting required API key, Telegram bot token, and chat ID.\n- Verifies API and Telegram connectivity before activating scheduling.\n- Supports flexible scheduling using either cron jobs or heartbeat polling.\n- Automates daily prompting, reply capture, and weekly analysis/report delivery.\n- Robust error handling and clear user notifications throughout setup and operation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7103a038d24fcf90042174b44466e0d01a0e2f4de3d5a0ce160fb11a4103ef16"
+}

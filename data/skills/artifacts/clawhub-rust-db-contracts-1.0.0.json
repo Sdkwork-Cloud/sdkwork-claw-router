@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rust-db-contracts@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rust_db_contracts",
+  "skill": {
+    "id": 59826,
+    "skillKey": "clawhub-rust-db-contracts",
+    "name": "Rust + SeaORM Database Explicit Contracts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rust-db-contracts",
+    "url": "https://clawhub.ai/skills/rust-db-contracts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rust-db-contracts-e05659cd175680bc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Rust + SeaORM 数据库显式契约规范。当项目涉及 Rust + SeaORM 数据库开发时自动激活。 核心：Entity 文件完全表达数据表，消灭隐式契约。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiamu-ssr",
+      "userId": "s177dn84jxsxgyb98cepwjbacn83n6d8",
+      "displayName": "Xiamu-ssr",
+      "image": "https://avatars.githubusercontent.com/u/77220168?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 338,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773974047348,
+      "changelog": "Initial release of rust-db-contracts: explicit database contract standard for Rust + SeaORM projects.\n\n- Defines core conventions for Entity files as the single source of truth for database schemas.\n- Introduces strict type mapping, mandatory status transition checks, and documentation standards.\n- Enforces business constant centralization, transaction use for cross-table operations, and soft delete query filtering.\n- Provides optional best practices and a detection script for CI integration.\n- Lists prohibited patterns to prevent implicit or unsafe database contracts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:102630e6ca9c00a55888be46d479894fd958ec9abd2cd1818ab7901c75b04c55"
+}

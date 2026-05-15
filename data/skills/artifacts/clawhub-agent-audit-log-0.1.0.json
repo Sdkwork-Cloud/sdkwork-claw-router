@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-audit-log@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_audit_log",
+  "skill": {
+    "id": 18370,
+    "skillKey": "clawhub-agent-audit-log",
+    "name": "Agent Audit Log"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-audit-log",
+    "url": "https://clawhub.ai/skills/agent-audit-log",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-audit-log-4086635b5073106e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Lightweight operational audit logging for AI assistants, agent workspaces, and personal automation systems. Use when you need a structured way to record high..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lethehades",
+      "userId": "publishers:lethehades",
+      "displayName": "lethehades",
+      "image": "https://avatars.githubusercontent.com/u/41109318?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 676,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773151332816,
+      "changelog": "First public draft of a lightweight operational audit logging skill for AI assistants, agent workspaces, and personal automation systems.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:59b08394512bc2055cdcabc9ca36b9712cf1db61135ceb1960ee20dd5b94b5e9"
+}

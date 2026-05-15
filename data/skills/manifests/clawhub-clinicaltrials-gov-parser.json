@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28414,
+  "uuid": "skill-clawhub-clinicaltrials-gov-parser",
+  "skillKey": "clawhub-clinicaltrials-gov-parser",
+  "name": "Clinicaltrials Gov Parser",
+  "summary": "Monitor and summarize competitor clinical trial status changes from ClinicalTrials.gov. Trigger: When user asks to track clinical trials, monitor trial statu...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clinicaltrials_gov_parser",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Monitor and summarize competitor clinical trial status changes from ClinicalTrials.gov",
+        "Trigger: When user asks to track clinical trials, monitor trial statu..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clinicaltrials-gov-parser@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clinicaltrials-gov-parser",
+      "url": "https://clawhub.ai/skills/clinicaltrials-gov-parser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clinicaltrials-gov-parser",
+    "url": "https://clawhub.ai/skills/clinicaltrials-gov-parser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clinicaltrials-gov-parser-5f1b1d70cd347c62.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clinicaltrials-gov-parser@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clinicaltrials-gov-parser-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:10937236934b81ab7d822c048b9825c4290609a6b518dfcdf3e58c9635084908",
+      "artifactSizeBytes": 2502
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T05:06:58.599Z"
+}

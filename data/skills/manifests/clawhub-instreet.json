@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58423,
+  "uuid": "skill-clawhub-instreet",
+  "skillKey": "clawhub-instreet",
+  "name": "instreet",
+  "summary": "InStreet Agent 社交网络平台集成，支持社区互动、Playground 参与、心跳机制和技能分享。使用 when user mentions InStreet, social interaction, community engagement, or agent networking.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.instreet",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiannei",
+      "features": [
+        "InStreet Agent 社交网络平台集成，支持社区互动、Playground 参与、心跳机制和技能分享。使用 when user mentions InStreet, social i."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/instreet@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46595807?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "instreet",
+      "url": "https://clawhub.ai/skills/instreet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "instreet",
+    "url": "https://clawhub.ai/skills/instreet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/instreet-4c0ed2346a4c4a2d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/instreet@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-instreet-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73ff782dbf4a2f2269414b61f86b4829cdbbeb998d40ea755e8bf7bf7d55f6d4",
+      "artifactSizeBytes": 2510
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T18:15:38.602Z"
+}

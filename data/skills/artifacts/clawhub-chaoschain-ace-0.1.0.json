@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chaoschain-ace@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chaoschain_ace",
+  "skill": {
+    "id": 17635,
+    "skillKey": "clawhub-chaoschain-ace",
+    "name": "ChaosChain ACE (Phase 0)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chaoschain-ace",
+    "url": "https://clawhub.ai/skills/chaoschain-ace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chaoschain-ace-e9d1ee9fdc9d94d9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Authorize autonomous x402 API payments with bounded, wallet-funded session keys under strict policy limits in ACE Phase 0 without credit lines."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sumeetchougule",
+      "userId": "publishers:sumeetchougule",
+      "displayName": "SumeetChougule",
+      "image": "https://avatars.githubusercontent.com/u/101477214?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 759,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771059902566,
+      "changelog": "- Initial release of the ChaosChain ACE skill (Phase 0), enabling use of ACE session keys for autonomous x402 API payments.\n- Supports policy-bounded wallet-funded API payments with explicit spend limits (per-tx, per-day, TTL, categories).\n- Enforces strict policy adherence and category limits (`compute`, `data`, `api`); refuses out-of-policy or unsupported requests.\n- Requires initialization flow with policy setup and confirmation before first payment.\n- Provides clear rules for spend reasoning, schema discovery, and policy enforcement.\n- Designed for agent-side operating policy; integration performed separately via the @chaoschain/ace-session-key-sdk.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:72a3b6c2b951d331cf468d73568abd8c35e9d367f4d8f027e2410066283ccf39"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/file-transfer@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_transfer",
+  "skill": {
+    "id": 30742,
+    "skillKey": "clawhub-file-transfer",
+    "name": "File Transfer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-transfer",
+    "url": "https://clawhub.ai/skills/file-transfer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-transfer-305d2615e5ede7b3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transfers files intelligently based on chat context with MIME validation and progress tracking, supporting Telegram and extensible channels."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ghostwritten",
+      "userId": "s179kb8zt5gmn7mp4vz82ts7cs83gm2h",
+      "displayName": "Ghostwritten",
+      "image": "https://avatars.githubusercontent.com/u/19782612?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 267,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1775613815533,
+      "changelog": "Rename from openclaw-file-transfer-skill: package is platform-agnostic, works with any AI agent (Claude, OpenAI, OpenClaw)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6540bf776518033c029920fddbf91a26b683c929693380ffdae33bd94d8f4b9d"
+}

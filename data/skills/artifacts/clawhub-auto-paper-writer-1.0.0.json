@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-paper-writer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_paper_writer",
+  "skill": {
+    "id": 62147,
+    "skillKey": "clawhub-auto-paper-writer",
+    "name": "Auto Paper Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-paper-writer",
+    "url": "https://clawhub.ai/skills/auto-paper-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-paper-writer-787a9212df3ae09d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动撰写科研论文的完整 AI pipeline。当用户说\"撰写[方向]论文\"、\"自动写论文\"、\"生成论文\"时触发。功能包括：(1) 搜索 ArXiv 最新论文并下载原始 PDF；(2) 总结现有工作局限性；(3) 设计创新模型框架；(4) 撰写双栏 LaTeX 论文（IEEEtran格式）；(5) 生成科研级 m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "myjackcat",
+      "userId": "s1707fwtrskw8ty82m939rhcb9857z08",
+      "displayName": "MyJackCat",
+      "image": "https://avatars.githubusercontent.com/u/74531165?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 197,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776647805404,
+      "changelog": "Initial release: 自动撰写科研论文完整pipeline，支持从ArXiv搜索到PDF编译的端到端自动化",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cd0d76d4f71646183a346be28906c3c88c502b403f8194aec3e3941e363ca684"
+}

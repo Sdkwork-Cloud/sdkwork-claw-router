@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63622,
+  "uuid": "skill-clawhub-company-onepager",
+  "skillKey": "clawhub-company-onepager",
+  "name": "Company Onepager",
+  "summary": "生成上市公司\"一页纸\"调研简报，整合基本信息、市场数据、近10年财务数据表格、近10年月K线图、股东结构、近期新闻。数据优先级：iFinD → Tushare → AkShare + Web Search。每个章节标注数据来源。使用场景：(1) 调研股票/公司信息 (2) 生成股票分析报告 (3) 整合多维数据形...",
+  "version": "7.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.company_onepager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "赖根",
+      "features": [
+        "生成上市公司\"一页纸\"调研简报，整合基本信息、市场数据、近10年财务数据表格、近10年月K线图、股东结构、近期新闻。数据优先级：iFinD → Tushare → AkShare + Web."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/company-onepager@7.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42961557?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "company-onepager",
+      "url": "https://clawhub.ai/skills/company-onepager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "company-onepager",
+    "url": "https://clawhub.ai/skills/company-onepager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/company-onepager-6d05f6f1b00aa5ab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/company-onepager@7.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-company-onepager-7.1.0.json",
+      "version": "7.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a0de316bb555d0f85a023c35acfe8fc2ce187977593b35e067748cb773097bd8",
+      "artifactSizeBytes": 2248
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T08:13:38.357Z"
+}

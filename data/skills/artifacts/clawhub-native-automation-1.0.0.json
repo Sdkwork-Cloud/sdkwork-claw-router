@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/native-automation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.native_automation",
+  "skill": {
+    "id": 36375,
+    "skillKey": "clawhub-native-automation",
+    "name": "Native Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "native-automation",
+    "url": "https://clawhub.ai/skills/native-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/native-automation-f651cca11fa8af47.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Apple Native Automation & Testing Skill"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "soponcd",
+      "userId": "s17028c8y9t26ss5fgt6rycpw183jt9x",
+      "displayName": "soponcd",
+      "image": "https://avatars.githubusercontent.com/u/31302208?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774433477669,
+      "changelog": "Initial release of the Native Automation Skill.\n\n- Provides a unified approach to Apple platform testing using first-party tools (XCTest, XCUITest, Instruments).\n- Supports unit, UI, snapshot, performance, and accessibility testing for iOS and macOS projects.\n- Introduces script-based test execution with multiple testing modes (unit, ui, fast, full).\n- Documents best practices for isolation, accessibility, and concurrency in tests.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ceb2befb3d507b4716e26b44ec85e4eb03fb3c77028b73811ddb7dd2838d4490"
+}

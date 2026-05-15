@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72870,
+  "uuid": "skill-clawhub-skill-batchqueryexpress",
+  "skillKey": "clawhub-skill-batchqueryexpress",
+  "name": "小递查查-快递批量查询API技能",
+  "summary": "批量查询快递物流信息；当用户需要查询多个快递单号、获取物流状态或追踪包裹位置时使用",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_batchqueryexpress",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xdccycom",
+      "features": [
+        "批量查询快递物流信息；当用户需要查询多个快递单号、获取物流状态或追踪包裹位置时使用"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-batchqueryexpress@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/275297155?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-batchqueryexpress",
+      "url": "https://clawhub.ai/skills/skill-batchqueryexpress"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-batchqueryexpress",
+    "url": "https://clawhub.ai/skills/skill-batchqueryexpress",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-batchqueryexpress-4c1645fa887c563a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-batchqueryexpress@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-batchqueryexpress-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:927f13b79e9c017b780fb1a7227f97c4e349bfe854f29eb685ce3f4a89d742b7",
+      "artifactSizeBytes": 2471
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T15:22:37.444Z"
+}

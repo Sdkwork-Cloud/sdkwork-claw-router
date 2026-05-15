@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/doordash@1.0.12",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doordash",
+  "skill": {
+    "id": 50616,
+    "skillKey": "clawhub-doordash",
+    "name": "DoorDash Claw | Order your next meal with OpenClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doordash",
+    "url": "https://clawhub.ai/skills/doordash",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doordash-b0126946c556dc47.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Easy-to-use agentic wallets powered by Stripe. Use your existing Stripe/Link to top-up this versatile x402 wallet for any purchases or A2A payments."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codejika",
+      "userId": "s17c3jy66yb4fmg42whk0hp6wx83edge",
+      "displayName": "codejika",
+      "image": "https://avatars.githubusercontent.com/u/36914612?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 398,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.12",
+      "createdAt": 1773191927395,
+      "changelog": "- Updated documentation to reflect the new \"stripe-wallet\" skill (version 2.3.2), replacing previous doordash references.\n- Expanded setup and detailed guides for multiple payment methods, including Pre-paid Wallet, Self-Hosted Card, and Stripe x402 Wallet.\n- Added comprehensive usage, security, and payment guardrail instructions.\n- Included step-by-step registration and activation flow for new users.\n- Enhanced security section with explicit warnings and owner control features.\n- Provided direct links and local installation commands for all relevant skill files.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:65327909524ebb49055d435a203b2017a794bef00c0908f53de92820593a518b"
+}

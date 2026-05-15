@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71126,
+  "uuid": "skill-clawhub-gold-investment",
+  "skillKey": "clawhub-gold-investment",
+  "name": "gold-investment",
+  "summary": "黄金投资分析工具，提供实时金价查询、技术指标分析、新闻基本面分析功能。当用户询问黄金价格、黄金走势、黄金投资、黄金分析、黄金新闻、黄金技术分析、黄金支撑位阻力位等相关问题时触发此 Skill。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gold_investment",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FMouse",
+      "features": [
+        "黄金投资分析工具，提供实时金价查询、技术指标分析、新闻基本面分析功能。当用户询问黄金价格、黄金走势、黄金投资、黄金分析、黄金新闻、黄金技术分析、黄金支撑位阻力位等相关问题时触发此 Skill。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gold-investment@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36061597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gold-investment",
+      "url": "https://clawhub.ai/skills/gold-investment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gold-investment",
+    "url": "https://clawhub.ai/skills/gold-investment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gold-investment-5a0f2b9137e3e0b1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gold-investment@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gold-investment-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b669387a34f1f0e9e07551bdb64a47ca8aff7dae810722f40c368642e747344e",
+      "artifactSizeBytes": 2458
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T11:48:36.744Z"
+}

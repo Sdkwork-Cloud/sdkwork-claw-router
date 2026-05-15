@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21638,
+  "uuid": "skill-clawhub-nylas",
+  "skillKey": "clawhub-nylas",
+  "name": "Nylas Email, Calendar & Contacts",
+  "summary": "Access and manage email, calendar, and contacts across multiple providers using the Nylas API for unified communication and scheduling tasks.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nylas",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qasim-nylas",
+      "features": [
+        "Access and manage email, calendar, and contacts across multiple providers using the Nylas API f."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nylas@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81189970?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nylas",
+      "url": "https://clawhub.ai/skills/nylas"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nylas",
+    "url": "https://clawhub.ai/skills/nylas",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nylas-e96bf6686a3c3510.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nylas@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-nylas-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c2e2cce631c0d386d5b843903cd3bfd8b1aa2cc59efe2b6564cb972b9d803fa9",
+      "artifactSizeBytes": 1930
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T14:44:38.051Z"
+}

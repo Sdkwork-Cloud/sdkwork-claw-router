@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memos-memory-guide@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memos_memory_guide",
+  "skill": {
+    "id": 12900,
+    "skillKey": "clawhub-memos-memory-guide",
+    "name": "memos-memory-guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memos-memory-guide",
+    "url": "https://clawhub.ai/skills/memos-memory-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memos-memory-guide-6b5f1fb7be9f4e5f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the MemOS Local memory system to search and use the user's past conversations. Use this skill whenever the user refers to past chats, their own preferenc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "binyuli",
+      "userId": "s17fatbbsyqydf5gs8ansxg3fh83hsz1",
+      "displayName": "binyuli",
+      "image": "https://avatars.githubusercontent.com/u/20180924?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 854,
+      "installsAllTime": 77,
+      "installsCurrent": 77,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773674724701,
+      "changelog": "Initial release of memos-memory-guide.\n\n- Introduces the MemOS Local memory system for searching and leveraging user conversation history and preferences.\n- Provides agent guidance for using memory-related tools (`memory_search`, `memory_get`, `memory_write_public`, etc.).\n- Details when and how to search, retrieve, or share memories, including public vs private access for multi-agent environments.\n- Explains tools for skill discovery, installation, and sharing across agents.\n- Includes quick decision flow for efficient use of memory and skill features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d5077ae57f94db13e0558e07eb4762604d8d357d1e3a08ef471c01307ebd011d"
+}

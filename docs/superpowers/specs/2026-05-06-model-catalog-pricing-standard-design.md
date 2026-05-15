@@ -172,7 +172,7 @@ Public model lists include only effective, not deleted, `listed`, and `routing_s
 
 ### App API
 
-- `GET /app/v3/api/router/models`
+- `GET /app/v3/api/ai/models`
   - Reads canonical vendor, `ai_model`, capability, and pricing rows.
   - Returns current UI-compatible model cards projected from canonical data.
   - Excludes unlisted, hidden, disabled, blocked, and retired models.

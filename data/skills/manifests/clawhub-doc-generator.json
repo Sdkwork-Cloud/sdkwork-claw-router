@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38151,
+  "uuid": "skill-clawhub-doc-generator",
+  "skillKey": "clawhub-doc-generator",
+  "name": "Doc Generator",
+  "summary": "Auto-generates professional README.md from code structure, package.json, and directory analysis. Triggers: generate readme, create readme, readme from code,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doc_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "Auto-generates professional README.md from code structure, package.json, and directory analysis",
+        "Triggers: generate readme, create readme, readme from code,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doc-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doc-generator",
+      "url": "https://clawhub.ai/skills/doc-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doc-generator",
+    "url": "https://clawhub.ai/skills/doc-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doc-generator-fb0b23a07d5b8118.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doc-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-doc-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ee834257d310e1057ef9f927dc609e24fc93087f045aea929021c9396dcb7bc8",
+      "artifactSizeBytes": 2296
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T08:11:07.693Z"
+}

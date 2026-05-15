@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/customer-feedback-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.customer_feedback_analysis",
+  "skill": {
+    "id": 36566,
+    "skillKey": "clawhub-customer-feedback-analysis",
+    "name": "Customer Feedback Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "customer-feedback-analysis",
+    "url": "https://clawhub.ai/skills/customer-feedback-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/customer-feedback-analysis-e1cdca81f3c0ecc2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyzes customer reviews from e-commerce platforms to identify sentiment, pain points, feature requests, and improvement priorities with actionable insights."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nexscope",
+      "userId": "s17dwyzs7t74hqkesy6xh9wszx83hgt0",
+      "displayName": "nexscope-ai",
+      "image": "https://avatars.githubusercontent.com/u/265748176?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774584308769,
+      "changelog": "Beta release — functional skill for e-commerce AI agents. Built by Nexscope.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fd319a3aa069f5daa426c29e5c02aec4e26bd3b9888af7c547dea00fb220c8c1"
+}

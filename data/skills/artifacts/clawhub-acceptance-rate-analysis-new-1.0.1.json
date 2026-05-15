@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/acceptance-rate-analysis-new@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acceptance_rate_analysis_new",
+  "skill": {
+    "id": 71281,
+    "skillKey": "clawhub-acceptance-rate-analysis-new",
+    "name": "my_acceptance_rate_analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acceptance-rate-analysis-new",
+    "url": "https://clawhub.ai/skills/acceptance-rate-analysis-new",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acceptance-rate-analysis-new-3a85f0c84b2ad062.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "对承接率下降做阶段式归因分析。适用于“今天/本周承接率为什么下降”“分析承接率下降原因”“看一下承接率环比是否下降及原因”等场景。先定位异常切片，再逐层判断是一级切片结构迁移、资方总量明显减少或分布左移、资产维度异常，还是进一步闭环到敏感资方侧收缩。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mzhou1982",
+      "userId": "s172cmbgtxx5y3nbd5t3640z6d86936k",
+      "displayName": "mzhou1982",
+      "image": "https://avatars.githubusercontent.com/u/16053655?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 72,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778147739741,
+      "changelog": "acceptance-rate-analysis 1.0.1\n\n- No file changes detected in this release.\n- No user-facing features, logic, or documentation updates were made.\n- Behavior and usage remain fully consistent with the previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:82cafcf4d0dc8d55c7fa865cd2be30729c96bcaac6c6f0a5899f6cab659139d5"
+}

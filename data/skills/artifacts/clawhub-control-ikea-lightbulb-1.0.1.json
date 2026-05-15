@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/control-ikea-lightbulb@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.control_ikea_lightbulb",
+  "skill": {
+    "id": 11934,
+    "skillKey": "clawhub-control-ikea-lightbulb",
+    "name": "Control Ikea Lightbulb"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "control-ikea-lightbulb",
+    "url": "https://clawhub.ai/skills/control-ikea-lightbulb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/control-ikea-lightbulb-604b7110d64d02db.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control IKEA/TP-Link Kasa smart bulbs (set on/off, brightness, and color). Use when you want to programmatically control a local smart bulb by IP on the LAN."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "antgly",
+      "userId": "publishers:antgly",
+      "displayName": "antgly",
+      "image": "https://avatars.githubusercontent.com/u/40376804?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1853,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770316747659,
+      "changelog": "**Switched to uv for dependency management and simplified setup.**\n\n- Removed the custom virtualenv bootstrap script; now uses uv and pyproject.toml for managing dependencies.\n- Added pyproject.toml with updated Python and python-kasa version constraints to address resolver issues.\n- Updated wrapper and helper scripts to use uv instead of manual virtualenv activation.\n- Updated documentation to reflect the new uv-based workflow, with quick start instructions.\n- Dropped mention of the old virtualenv in favor of uv; Git ignore advice simplified.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c7adbaacb28fde8c99b5ad8e96805ff4de282c0aadefbf8c4f0fbd9debcde871"
+}

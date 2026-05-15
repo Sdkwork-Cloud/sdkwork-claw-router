@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ollama-herd@1.5.3",
+  "version": "1.5.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ollama_herd",
+  "skill": {
+    "id": 51393,
+    "skillKey": "clawhub-ollama-herd",
+    "name": "Ollama Herd"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ollama-herd",
+    "url": "https://clawhub.ai/skills/ollama-herd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ollama-herd-0f5c83e329479512.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Ollama multimodal model router for Llama, Qwen, DeepSeek, Phi, and Mistral — plus mflux image generation, speech-to-text, and embeddings. Self-hosted Ollama..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 308,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.5.3",
+      "createdAt": 1775610452825,
+      "changelog": "Added /api/pull endpoint docs and examples",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b063a28cc4a65c17cf447cdf88c1f6e943ddb4fcdc8637ab9cc9aa5fd078fd1f"
+}

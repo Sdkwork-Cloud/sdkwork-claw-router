@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rhythm-master@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rhythm_master",
+  "skill": {
+    "id": 56340,
+    "skillKey": "clawhub-rhythm-master",
+    "name": "rhythm-master"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rhythm-master",
+    "url": "https://clawhub.ai/skills/rhythm-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rhythm-master-6017f6f0117ed325.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill enables playing a rhythm game called \"节奏大师\" (Rhythm Master) similar to QQ Dance/DDR. Players press arrow keys and spacebar in time with falling no..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dletter2",
+      "userId": "s178mn3kdbzpnjfy6dntfr3sh9845ezk",
+      "displayName": "dletter2",
+      "image": "https://avatars.githubusercontent.com/u/34131199?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 422,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773295338189,
+      "changelog": "This skill enables playing a rhythm game called \"节奏大师\" (Rhythm Master) similar to QQ Dance/DDR. Players press arrow keys and spacebar in time with falling notes to score points. The game features multiple difficulty levels, combo system, judgment ratings (PERFECT/GREAT/GOOD/BAD/MISS), local leaderboard, and can be extended with online leaderboards. Use this skill when the user wants to play a rhythm game, test their reflexes, or have fun with a keyboard-based music game.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:13a519911c6cdd6a7b9400e4093fe097e9227320320bf09f7f62d6e3e50055c7"
+}

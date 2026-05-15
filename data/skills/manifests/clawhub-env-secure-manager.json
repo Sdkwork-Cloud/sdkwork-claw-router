@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23294,
+  "uuid": "skill-clawhub-env-secure-manager",
+  "skillKey": "clawhub-env-secure-manager",
+  "name": "env-secure-manager",
+  "summary": "Secure environment variable & secret management with AES-256 encryption, auto-redaction, permission control, prevent credential leakage",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.env_secure_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ayalili",
+      "features": [
+        "Secure environment variable & secret management with AES-256 encryption, auto-redaction, permis."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/env-secure-manager@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52843161?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "env-secure-manager",
+      "url": "https://clawhub.ai/skills/env-secure-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "env-secure-manager",
+    "url": "https://clawhub.ai/skills/env-secure-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/env-secure-manager-a0083860de38e156.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/env-secure-manager@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-env-secure-manager-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1a09d58cc9e58e05fa3668ec684aa7a749701b7c333576772a0574b7da026c3d",
+      "artifactSizeBytes": 2041
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T15:27:49.041Z"
+}

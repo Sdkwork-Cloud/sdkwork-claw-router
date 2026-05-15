@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68393,
+  "uuid": "skill-clawhub-aupu-knowledge-base",
+  "skillKey": "clawhub-aupu-knowledge-base",
+  "name": "aupu-knowledge-base",
+  "summary": "当用户提及任何与本地文档、知识库、参考资料、历史记录、配置文件、说明文档、内部资料、已有内容、文件创建/读取等相关需求时，必须使用本技能从 /mnt/data 目录中检索或操作文件。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aupu_knowledge_base",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jianyi",
+      "features": [
+        "当用户提及任何与本地文档、知识库、参考资料、历史记录、配置文件、说明文档、内部资料、已有内容、文件创建/读取等相关需求时，必须使用本技能从 /mnt/data 目录中检索或操作文件。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aupu-knowledge-base@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42903286?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aupu-knowledge-base",
+      "url": "https://clawhub.ai/skills/aupu-knowledge-base"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aupu-knowledge-base",
+    "url": "https://clawhub.ai/skills/aupu-knowledge-base",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aupu-knowledge-base-6b66013a55c56403.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aupu-knowledge-base@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-aupu-knowledge-base-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ed685a0f23eadaeee8d639dfaf68378776ffda4bc60800d2ac7305952f13370",
+      "artifactSizeBytes": 2554
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T02:29:53.253Z"
+}

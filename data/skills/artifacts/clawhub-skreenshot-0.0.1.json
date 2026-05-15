@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skreenshot@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skreenshot",
+  "skill": {
+    "id": 29488,
+    "skillKey": "clawhub-skreenshot",
+    "name": "Skreenshot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skreenshot",
+    "url": "https://clawhub.ai/skills/skreenshot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skreenshot-3d01e3fa73795d5b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Organize, tag, search, and manage macOS screenshots with OCR, bulk renaming, folder categorization, cleanup, and CleanShot X integration."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "10oss",
+      "userId": "s1774rc120ef75h67qnxw731ps83g1kh",
+      "displayName": "X",
+      "image": "https://avatars.githubusercontent.com/u/2422383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 302,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1773445432270,
+      "changelog": "Skreenshot 0.0.1 – Initial Release\n\n- Organize, tag, search, and manage screenshots on macOS.\n- Provides workflows for finding, categorizing, renaming, and archiving screenshots.\n- Supports OCR searching of screenshot content.\n- Includes automation scripts for batch renaming, archiving, and OCR search.\n- Offers integration tips for CleanShot X and macOS screenshot tools.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0c11b3d11e91b7ba59b6a7d23b37b0c3cd9b0a0df1e631ef81778d5d0abdbb7e"
+}

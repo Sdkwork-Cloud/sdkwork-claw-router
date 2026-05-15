@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61263,
+  "uuid": "skill-clawhub-moss-voice-generator",
+  "skillKey": "clawhub-moss-voice-generator",
+  "name": "MOSS Voice Generator 指令式音色生成",
+  "summary": "MOSI Studio 指令式音色生成（moss-voice-generator）： 用自然语言描述想要的音色风格，无需指定预设 voice_id， 模型根据描述实时生成对应的声音。 触发词：指令式语音、按描述生成声音、自定义音色、描述一个声音、 \"voice generator\"、\"generate voice...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moss_voice_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "YYL",
+      "features": [
+        "MOSI Studio 指令式音色生成（moss-voice-generator）： 用自然语言描述想要的音色风格，无需指定预设 voice_id， 模型根据描述实时生成对应的声音。 触发词."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moss-voice-generator@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39012250?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moss-voice-generator",
+      "url": "https://clawhub.ai/skills/moss-voice-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moss-voice-generator",
+    "url": "https://clawhub.ai/skills/moss-voice-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moss-voice-generator-19050b2db8410977.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moss-voice-generator@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-moss-voice-generator-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c80d7580b0bbe1aee7cb45e792badb65f12e1308d8b102c4da623cdec8cd4a4b",
+      "artifactSizeBytes": 2173
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T03:15:25.359Z"
+}

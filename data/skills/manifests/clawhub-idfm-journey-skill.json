@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50436,
+  "uuid": "skill-clawhub-idfm-journey-skill",
+  "skillKey": "clawhub-idfm-journey-skill",
+  "name": "IDFM Journey",
+  "summary": "Query Île-de-France Mobilités (IDFM) PRIM/Navitia for Paris + suburbs public transport (Île-de-France) — place resolution, journey planning, and disruptions/...",
+  "version": "0.1.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.idfm_journey_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "anthonymq",
+      "features": [
+        "Query Île-de-France Mobilités (IDFM) PRIM/Navitia for Paris + suburbs public transport (Île-de-."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/idfm-journey-skill@0.1.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1382637?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "idfm-journey-skill",
+      "url": "https://clawhub.ai/skills/idfm-journey-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "idfm-journey-skill",
+    "url": "https://clawhub.ai/skills/idfm-journey-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/idfm-journey-skill-75e395e6b99439b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/idfm-journey-skill@0.1.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-idfm-journey-skill-0.1.6.json",
+      "version": "0.1.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:29e492554166fdf92f14c3a0f5ba4c64ed851d08211a4bc4061352781b874731",
+      "artifactSizeBytes": 1963
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T17:01:21.473Z"
+}

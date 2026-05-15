@@ -1,0 +1,42 @@
+{
+  "skill": {
+    "slug": "eastmoney-roadshow-digest",
+    "displayName": "EastMoney Roadshow Digest (Transcript + Summary)｜东方财富路演纪要生成",
+    "summary": "EastMoney Roadshow Digest (Transcript + Summary)｜东方财富路演纪要生成. A reliability-first transcript & summary skill for public EastMoney roadshow replays, focused on...",
+    "tags": {
+      "eastmoney": "v0.1.2-rc1",
+      "finance": "v0.1.2-rc1",
+      "latest": "v0.1.2-rc1",
+      "research": "v0.1.2-rc1",
+      "roadshow": "v0.1.2-rc1",
+      "summary": "v0.1.2-rc1",
+      "transcript": "v0.1.2-rc1",
+      "video": "v0.1.2-rc1",
+      "llm": "0.1.2-release-candidate"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 244,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "createdAt": 1775541401883,
+    "updatedAt": 1777527268889
+  },
+  "latestVersion": {
+    "version": "v0.1.2-rc1",
+    "createdAt": 1775740419576,
+    "changelog": "v0.1.2-rc1\n\nLLM Integration Fixed & Enabled\n\nFixed critical issue where LLM enhancement was detected but not actually executed\nImplemented real LLM call via OpenAI-compatible API\nAdded multi-provider support (OpenAI / OpenRouter / Moonshot-compatible endpoints)\nRemoved hard dependency on any single provider\nIntroduced unified call_llm() interface\n\nBehavior Improvements\n\nLLM enhancement is now only marked as enabled after successful execution\nAdded robust fallback when LLM is unavailable or fails\nImproved run report to clearly indicate LLM usage status\n\nArchitecture Alignment\n\nConverted from implicit external calls to explicit, documented LLM enhancement\nEnsured consistency between code behavior and documentation\nMaintained compatibility with environments without LLM configuration\n\n\nv0.1.2-rc1\n\nLLM 能力修复并正式接通\n\n修复“检测到 LLM 但实际未执行”的核心问题\n实现基于 OpenAI-compatible API 的真实 LLM 调用\n支持多模型提供方（OpenAI / OpenRouter / Moonshot 等兼容接口）\n移除对单一供应商的绑定\n引入统一的 call_llm() 调用接口\n\n行为改进\n\n仅在 LLM 实际成功执行后才标记为启用\n增强失败时自动降级，不影响整体流程\nrun_report 中明确记录 LLM 是否启用及执行结果\n\n架构与规范对齐\n\n从“隐式外部调用”改为“显式 LLM 增强能力”\n保证代码行为与文档描述完全一致\n在未配置模型的情况下仍可降级运行",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "sunxq1017-hash",
+    "userId": "s17cyk9xswwfv2weh29ahn6z7983fgp8",
+    "displayName": "sunxq1017",
+    "image": "https://avatars.githubusercontent.com/u/266310142?v=4"
+  },
+  "moderation": null
+}

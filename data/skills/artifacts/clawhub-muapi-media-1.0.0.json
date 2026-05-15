@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/muapi-media@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.muapi_media",
+  "skill": {
+    "id": 50919,
+    "skillKey": "clawhub-muapi-media",
+    "name": "muapi-media-generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "muapi-media",
+    "url": "https://clawhub.ai/skills/muapi-media",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/muapi-media-4252cf67fcd1aca6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate AI images, videos, music, and audio from the terminal via muapi.ai — supports 100+ models including Flux, Midjourney v7, Kling 3.0, Veo3, and Suno V5"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anil-matcha",
+      "userId": "publishers:anil-matcha",
+      "displayName": "Anil Chandra Naidu Matcha",
+      "image": "https://avatars.githubusercontent.com/u/4326215?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 379,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773403158987,
+      "changelog": "- Initial release of muapi-media-generation skill.\n- Generate AI images, videos, music, and audio directly from the terminal using muapi.ai.\n- Supports 100+ models, including Flux, Midjourney v7, Kling 3.0, Veo3, and Suno V5.\n- Includes scripts for text-to-image, text-to-video, image-to-video animation, music/audio creation, and file uploads.\n- Provides flexible script flags and easy integration via environment variables.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:77383c99bbf9d124a625f729f45333e6964a9dd22cd492357e855117b3924ced"
+}

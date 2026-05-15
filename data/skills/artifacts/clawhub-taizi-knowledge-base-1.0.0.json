@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/taizi-knowledge-base@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taizi_knowledge_base",
+  "skill": {
+    "id": 61403,
+    "skillKey": "clawhub-taizi-knowledge-base",
+    "name": "Taizi Knowledge Base"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taizi-knowledge-base",
+    "url": "https://clawhub.ai/skills/taizi-knowledge-base",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taizi-knowledge-base-85694dc4dcfb322a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "个人知识库 - 融合向量检索、实体关系、笔记管理"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tangepier-crypto",
+      "userId": "s17dtj2m1yw3bcnp6y7rq3ms2s83j2ga",
+      "displayName": "tangepier",
+      "image": "https://avatars.githubusercontent.com/u/264827789?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774526266030,
+      "changelog": "taizi-knowledge-base v1.0.0\n\n- 首次发布，集成个人知识库管理功能。\n- 支持向量检索、实体关系管理、笔记存储一体化。\n- 提供便捷命令行操作：知识内容存入、检索、统计、添加笔记文件。\n- 支持自动分块文本、实体关系抽取、文件索引检索。\n- 统一管理知识数据，提升个人信息的组织与查找效率。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8b1e7b242b41d0ff14ba1feb66aaa2889aa9c3f7fa34be583a3f252df9c20a51"
+}

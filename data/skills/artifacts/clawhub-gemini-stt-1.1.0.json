@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gemini-stt@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gemini_stt",
+  "skill": {
+    "id": 9661,
+    "skillKey": "clawhub-gemini-stt",
+    "name": "Gemini STT"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gemini-stt",
+    "url": "https://clawhub.ai/skills/gemini-stt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gemini-stt-811b054c9b0e1403.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transcribe audio files using Google's Gemini API or Vertex AI"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "araa47",
+      "userId": "publishers:araa47",
+      "displayName": "araa47",
+      "image": "https://avatars.githubusercontent.com/u/22760261?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3276,
+      "installsAllTime": 11,
+      "installsCurrent": 11,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1768651581889,
+      "changelog": "Added support for Google Vertex AI with Application Default Credentials (ADC). Now supports both GEMINI_API_KEY and gcloud ADC authentication methods. Auto-detects authentication method.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e1adaef44392d2102e87741ca973048228783e0b4f374660dd735e097d2fd640"
+}

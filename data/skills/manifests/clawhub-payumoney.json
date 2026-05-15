@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34582,
+  "uuid": "skill-clawhub-payumoney",
+  "skillKey": "clawhub-payumoney",
+  "name": "Payumoney",
+  "summary": "PayUmoney integration. Manage data, records, and automate workflows. Use when the user wants to interact with PayUmoney data.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.payumoney",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "PayUmoney integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with PayUmoney data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/payumoney@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "payumoney",
+      "url": "https://clawhub.ai/skills/payumoney"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "payumoney",
+    "url": "https://clawhub.ai/skills/payumoney",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/payumoney-c865132ccef7f605.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/payumoney@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-payumoney-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d879df06f3ddccd3b87f6cde0267f4658f324bfa76599b247a6409abd39a8410",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:50:31.904Z"
+}

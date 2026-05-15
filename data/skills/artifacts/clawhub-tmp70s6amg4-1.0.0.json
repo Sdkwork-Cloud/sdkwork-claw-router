@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tmp70s6amg4@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tmp70s6amg4",
+  "skill": {
+    "id": 63997,
+    "skillKey": "clawhub-tmp70s6amg4",
+    "name": "article-taster"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tmp70s6amg4",
+    "url": "https://clawhub.ai/skills/tmp70s6amg4",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tmp70s6amg4-a1bbee204cb2267b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "文章品鉴师 - 多维度评估文章质量、检测AI味/大便味、识别原创内容"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "forealmy",
+      "userId": "s17d4esfzgz8wrg6e6y93yfsm1842ryh",
+      "displayName": "forealmy",
+      "image": "https://avatars.githubusercontent.com/u/34614792?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775705196998,
+      "changelog": "Initial release of Article Taster – a comprehensive tool for multidimensional article quality evaluation.\n\n- Supports detection of article type (technical, essay, novel, etc.) with specialized analyzers for each.\n- Provides quality scoring across multiple dimensions, including technical depth, structure, originality, and readability for technical articles, and tailored criteria for essays/novels.\n- Features advanced AI-generation and “AI flavor” (大便味) detection with exemption rules for classical poetry and literature.\n- Outputs detailed JSON reports and concise Markdown summaries with ratings, recommendations, and AI detection results.\n- Command-line usage for single or batch article analysis, with optional quick scoring and type enforcement.\n- Requires Python 3.10+, jieba, scikit-learn, and optionally LLM APIs for enhanced assessments.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ae67add7b0aa00f1e0e940a3d189cc1e2344d37ba5a5f5410537b6d3a4631dca"
+}

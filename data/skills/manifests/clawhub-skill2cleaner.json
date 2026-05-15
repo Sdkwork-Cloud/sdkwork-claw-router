@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64169,
+  "uuid": "skill-clawhub-skill2cleaner",
+  "skillKey": "clawhub-skill2cleaner",
+  "name": "Skill-cleaner",
+  "summary": "扫描工作区所有 Skill，检测授权、配置和环境变量是否齐全， 并可按需禁用或卸载无效 Skill。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill2cleaner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Edde-101",
+      "features": [
+        "扫描工作区所有 Skill，检测授权、配置和环境变量是否齐全， 并可按需禁用或卸载无效 Skill。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill2cleaner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63782363?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill2cleaner",
+      "url": "https://clawhub.ai/skills/skill2cleaner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill2cleaner",
+    "url": "https://clawhub.ai/skills/skill2cleaner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill2cleaner-a94532f6f19768cd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill2cleaner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill2cleaner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8424a7aab8a43919ca74db6b440df84832a5ad3c6d6246375d5c29440b5cb6ba",
+      "artifactSizeBytes": 2266
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T02:59:21.553Z"
+}

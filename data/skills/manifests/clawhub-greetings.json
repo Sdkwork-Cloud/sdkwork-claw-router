@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22767,
+  "uuid": "skill-clawhub-greetings",
+  "skillKey": "clawhub-greetings",
+  "name": "Greetings",
+  "summary": "Greet users in multiple languages with culturally appropriate phrases and expressions.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.greetings",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Viki-ii",
+      "features": [
+        "Greet users in multiple languages with culturally appropriate phrases and expressions."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/greetings@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83322020?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "greetings",
+      "url": "https://clawhub.ai/skills/greetings"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "greetings",
+    "url": "https://clawhub.ai/skills/greetings",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/greetings-7dd4f2f077e449b4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/greetings@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-greetings-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dc4df8aa678eedb7250fa01af7fff20ee98b04601d413660b57110c085e1b94d",
+      "artifactSizeBytes": 1747
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T15:16:38.332Z"
+}

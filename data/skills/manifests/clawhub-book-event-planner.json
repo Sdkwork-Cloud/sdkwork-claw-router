@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12805,
+  "uuid": "skill-clawhub-book-event-planner",
+  "skillKey": "clawhub-book-event-planner",
+  "name": "Book Event Planner",
+  "summary": "Book event-planner services through Lokuli MCP. Use when user needs to find and book event-planner. Triggers on requests like \"book a event-planner\", \"find event-planner near me\", or any event-planner service request.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_event_planner",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lokuli",
+      "features": [
+        "Book event-planner services through Lokuli MCP",
+        "Use when user needs to find and book event-planner",
+        "Triggers on requests like \"book a event-planner\", \"find event-planner near me\", or any event-pl."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-event-planner@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224194606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-event-planner",
+      "url": "https://clawhub.ai/skills/book-event-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-event-planner",
+    "url": "https://clawhub.ai/skills/book-event-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-event-planner-47f22efabc2d03bd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-event-planner@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-event-planner-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d13a9036250cb8a1b4a09e0c18a4c8c31e852d549681ae8d68279a4f59295823",
+      "artifactSizeBytes": 1995
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T01:06:13.019Z"
+}

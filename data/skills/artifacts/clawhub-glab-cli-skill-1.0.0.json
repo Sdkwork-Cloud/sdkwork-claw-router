@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/glab-cli-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.glab_cli_skill",
+  "skill": {
+    "id": 55210,
+    "skillKey": "clawhub-glab-cli-skill",
+    "name": "glab-cli-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "glab-cli-skill",
+    "url": "https://clawhub.ai/skills/glab-cli-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/glab-cli-skill-dc3ca8fc13e71bcc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guidance for using the GitLab CLI (`glab`) from the terminal for merge requests, issues, CI/CD pipelines and jobs, repository targeting and inspection, clone..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wufei-png",
+      "userId": "s17ff8qt8kgjp387vqdhv9ht3583grte",
+      "displayName": "Wu Fei",
+      "image": "https://avatars.githubusercontent.com/u/63766429?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774542001164,
+      "changelog": "- Initial release of glab-cli skill.\n- Added comprehensive guidance for using the GitLab CLI (`glab`) to manage merge requests, issues, CI/CD, repository targeting, authentication, and API calls.\n- Introduced a more focused execution policy and preflight checks.\n- Expanded support for self-hosted GitLab instances.\n- Modularized documentation through reference files for quick lookup and deep-dive use cases.\n- Replaced and enhanced SKILL.md to match new skill scope and usage style.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fd8e6b846b4f892173ddeaade172449375ab70765e8a28328d4d1b30fa8ad153"
+}

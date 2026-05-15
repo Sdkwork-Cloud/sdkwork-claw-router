@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ibm-company@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ibm_company",
+  "skill": {
+    "id": 67036,
+    "skillKey": "clawhub-ibm-company",
+    "name": "Ibm Company"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ibm-company",
+    "url": "https://clawhub.ai/skills/ibm-company",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ibm-company-8727f9cf7a1abc59.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "介绍IBM百年发展历程，涵盖其跨周期转型、AI与云计算布局及量子计算技术进展。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 118,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777219634709,
+      "changelog": "- 初始版本发布，介绍IBM自1911年以来的四次关键转型与重生路径。\n- 增加对IBM在量子计算领域布局的近期进展说明。\n- 总结IBM当前在企业服务、混合云和AI咨询的行业地位及最新营收情况。\n- 适用于分析科技企业跨周期生存策略、AI转型影响和企业服务市场竞争格局。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:13ef76d6bd1775414743aed4a254e2da103a28d6f0ddc93bbf771986d3765e37"
+}

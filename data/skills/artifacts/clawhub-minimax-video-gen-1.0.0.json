@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/minimax-video-gen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_video_gen",
+  "skill": {
+    "id": 29630,
+    "skillKey": "clawhub-minimax-video-gen",
+    "name": "MiniMax Video Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-video-gen",
+    "url": "https://clawhub.ai/skills/minimax-video-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-video-gen-21c09e9079f73653.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate videos using MiniMax by uploading start/end frames or describing scenes, then query status and download results."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hongjiahao371-pixel",
+      "userId": "s172drmjfggz6kkkd9qxtb9bwn83mzpn",
+      "displayName": "hongjiahao371-pixel",
+      "image": "https://avatars.githubusercontent.com/u/249543018?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 299,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774096570228,
+      "changelog": "Initial release: MiniMax Hailuo video generation with first-frame/last-frame mode support",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:02ba7e56ebbfbf34f91dc5e761b157a6b513bfde293f317fedd4496376880462"
+}

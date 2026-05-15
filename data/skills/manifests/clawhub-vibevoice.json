@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16122,
+  "uuid": "skill-clawhub-vibevoice",
+  "skillKey": "clawhub-vibevoice",
+  "name": "VibeVoice TTS",
+  "summary": "Local Spanish TTS using Microsoft VibeVoice. Generate natural voice audio from text, optimized for WhatsApp voice messages.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vibevoice",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hoddix",
+      "features": [
+        "Local Spanish TTS using Microsoft VibeVoice",
+        "Generate natural voice audio from text, optimized for WhatsApp voice messages."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vibevoice@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258680334?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vibevoice",
+      "url": "https://clawhub.ai/skills/vibevoice"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vibevoice",
+    "url": "https://clawhub.ai/skills/vibevoice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vibevoice-2c9cd0d376da23f8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vibevoice@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vibevoice-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1a614fc7a935fe3355cd0b9023c66a041981584c2c9a40136d1add3434a74502",
+      "artifactSizeBytes": 1846
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T12:10:12.296Z"
+}

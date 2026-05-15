@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70704,
+  "uuid": "skill-clawhub-lifelog2",
+  "skillKey": "clawhub-lifelog2",
+  "name": "lifelog2",
+  "summary": "碎片化日记记录和汇总技能。当用户想要记录当天碎片化的想法、心情、事件，或者需要汇总、存档日记时使用。触发场景包括：用户发送\"记日记\"记录碎片内容、发送\"汇总日记\"整理当天内容、发送\"日记存档\"将日记写入 flomo 和 ima。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lifelog2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "quanmengli",
+      "features": [
+        "碎片化日记记录和汇总技能。当用户想要记录当天碎片化的想法、心情、事件，或者需要汇总、存档日记时使用。触发场景包括：用户发送\"记日记\"记录碎片内容、发送\"汇总日记\"整理当天内容、发送\"日记存档."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lifelog2@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199542653?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lifelog2",
+      "url": "https://clawhub.ai/skills/lifelog2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lifelog2",
+    "url": "https://clawhub.ai/skills/lifelog2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lifelog2-0fe0cbcfe3dd6cd6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lifelog2@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-lifelog2-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d3775dab953d2a9f5c834618a06b4595540536423e6879636101be5385441a1f",
+      "artifactSizeBytes": 2444
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T17:08:26.295Z"
+}

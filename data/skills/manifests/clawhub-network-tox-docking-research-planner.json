@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24242,
+  "uuid": "skill-clawhub-network-tox-docking-research-planner",
+  "skillKey": "clawhub-network-tox-docking-research-planner",
+  "name": "Network Tox Docking Research Planner",
+  "summary": "Generates four-tier network toxicology and molecular docking research plans from a toxicant and disease input, detailing targets, pathways, docking, workflow...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.network_tox_docking_research_planner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shanruoyu",
+      "features": [
+        "Generates four-tier network toxicology and molecular docking research plans from a toxicant and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/network-tox-docking-research-planner@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/56035842?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "network-tox-docking-research-planner",
+      "url": "https://clawhub.ai/skills/network-tox-docking-research-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "network-tox-docking-research-planner",
+    "url": "https://clawhub.ai/skills/network-tox-docking-research-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/network-tox-docking-research-planner-387d946702811726.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/network-tox-docking-research-planner@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-network-tox-docking-research-planner-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:671be3a68266eeb3eb9cd7182cb7be0dbda400fc27c6f6dd874be8a76c1d1873",
+      "artifactSizeBytes": 2659
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T09:36:00.118Z"
+}

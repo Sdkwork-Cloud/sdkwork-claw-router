@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/saa-agent@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.saa_agent",
+  "skill": {
+    "id": 14524,
+    "skillKey": "clawhub-saa-agent",
+    "name": "SAA Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "saa-agent",
+    "url": "https://clawhub.ai/skills/saa-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/saa-agent-f1946dc530e4dae9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enables AI agents to generate images using the Character Select Stand Alone App (SAA) image generation backend via command-line interface."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mirabarukaso",
+      "userId": "s170bars9bcb0c1n4zhb9ff02x83g3rc",
+      "displayName": "mirabarukaso",
+      "image": "https://avatars.githubusercontent.com/u/79326992?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1196,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770808585067,
+      "changelog": "saa-agent 1.0.1\n\n- Update README_HUMAN.md\n- No code changes; documentation and user guidance remain as before.\n- No modifications detected between this and the previous version.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e379d780e2969341d258b91db8a7a1f6cb9b7b42ff1aa42ad5257ca3c1b1f251"
+}

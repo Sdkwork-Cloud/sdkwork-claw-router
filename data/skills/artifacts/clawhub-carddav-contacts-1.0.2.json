@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/carddav-contacts@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.carddav_contacts",
+  "skill": {
+    "id": 14056,
+    "skillKey": "clawhub-carddav-contacts",
+    "name": "CardDAV Contacts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "carddav-contacts",
+    "url": "https://clawhub.ai/skills/carddav-contacts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/carddav-contacts-743d6690eeaa795a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sync and manage CardDAV contacts (Google, iCloud, Nextcloud, etc.) using vdirsyncer + khard."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jcromero",
+      "userId": "publishers:jcromero",
+      "displayName": "jcromero",
+      "image": "https://avatars.githubusercontent.com/u/984714?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1288,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770758609632,
+      "changelog": "Actualización desde CLI",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d9fd6f7e72caaf40b4a5046688863c870c5056195633fc59b72f3ffc60376560"
+}

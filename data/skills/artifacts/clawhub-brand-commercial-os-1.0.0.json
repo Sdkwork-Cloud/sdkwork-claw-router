@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brand-commercial-os@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brand_commercial_os",
+  "skill": {
+    "id": 69980,
+    "skillKey": "clawhub-brand-commercial-os",
+    "name": "Brand Commercial OS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brand-commercial-os",
+    "url": "https://clawhub.ai/skills/brand-commercial-os",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brand-commercial-os-e903cf5f932cb89d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "品牌商务谈判全链路自动化系统，生成品牌能力包、GEO知识包、跨平台内容包、报价策略包、分发编排包与谈判总包；适用于平台合作、渠道招商、联名共建等商务场景"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "e2e5g",
+      "userId": "s177nbcv26z7ksbd8gps9thykh83hgt3",
+      "displayName": "e2e5g",
+      "image": "https://avatars.githubusercontent.com/u/130967590?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774257459492,
+      "changelog": "Brand Commercial OS v1.0.0 – Initial Release\n\n- Launches a full-chain brand commercial negotiation automation system, covering brand capability pack, GEO knowledge pack, cross-platform content bundle, pricing strategy package, distribution orchestration, and negotiation master kit.\n- Strict role boundaries and compliance protocols: all user interactions routed through a single Negotiation Agent, with clear rejection of unverifiable or non-compliant requests.\n- Supports multiple commercial scenarios such as platform collaboration, channel development, and co-branded partnerships.\n- Outputs minimally include six core deliverables per run, with optional compliance, risk, and metrics add-ons.\n- Modular skill node structure enables scalable orchestration and clear calling rules between negotiation, brand, pricing, and distribution modules.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e5f1742175022919ba13f1d52607a752d7a517475342db52f0babe2ba5be37db"
+}

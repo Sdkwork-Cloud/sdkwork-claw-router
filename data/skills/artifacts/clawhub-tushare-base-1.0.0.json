@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tushare-base@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tushare_base",
+  "skill": {
+    "id": 9807,
+    "skillKey": "clawhub-tushare-base",
+    "name": "tushare-base"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tushare-base",
+    "url": "https://clawhub.ai/skills/tushare-base",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tushare-base-4bc607da6addb64c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch Chinese stock and futures market data via Tushare API. Supports stock quotes, futures data, company fundamentals, and macroeconomic indicators. Use when the user needs financial data from Chinese markets. Requires TUSHARE_TOKEN envir."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wdblink",
+      "userId": "publishers:wdblink",
+      "displayName": "WdBlink",
+      "image": "https://avatars.githubusercontent.com/u/42338898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2926,
+      "installsAllTime": 14,
+      "installsCurrent": 11,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770259896528,
+      "changelog": "Initial release of the tushare skill.\n\n- Fetch Chinese stock and futures market data via the Tushare API.\n- Supports stock quotes, futures data, company fundamentals, and macroeconomic indicators.\n- Requires TUSHARE_TOKEN environment variable.\n- Includes usage instructions, command quick reference, and troubleshooting FAQ.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4732858b63534662b1ea90071e8f07faddd5591cd737bce0023c426f25d12618"
+}

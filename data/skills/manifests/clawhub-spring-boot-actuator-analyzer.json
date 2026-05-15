@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53104,
+  "uuid": "skill-clawhub-spring-boot-actuator-analyzer",
+  "skillKey": "clawhub-spring-boot-actuator-analyzer",
+  "name": "Spring Boot Actuator Analyzer",
+  "summary": "Analyze Spring Boot Actuator endpoints for security, health checks, metrics exposure, and production configuration — audit info, health, and custom endpoints.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spring_boot_actuator_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Analyze Spring Boot Actuator endpoints for security, health checks, metrics exposure, and produ."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/spring-boot-actuator-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "spring-boot-actuator-analyzer",
+      "url": "https://clawhub.ai/skills/spring-boot-actuator-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spring-boot-actuator-analyzer",
+    "url": "https://clawhub.ai/skills/spring-boot-actuator-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spring-boot-actuator-analyzer-18900ffdf3913cef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/spring-boot-actuator-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-spring-boot-actuator-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5fff682103839c7bb3ca0891d2a4f90f474a076951e044d553b5597082f54b3c",
+      "artifactSizeBytes": 2466
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T13:48:20.046Z"
+}

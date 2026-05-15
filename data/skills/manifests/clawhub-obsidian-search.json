@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30936,
+  "uuid": "skill-clawhub-obsidian-search",
+  "skillKey": "clawhub-obsidian-search",
+  "name": "Obsidian Search",
+  "summary": "Semantic search for Obsidian notes using AI vector embeddings. Find notes by meaning, discover connections, filter by tags/dates/folders, and retrieve full c...",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "snoopyrain",
+      "features": [
+        "Semantic search for Obsidian notes using AI vector embeddings",
+        "Find notes by meaning, discover connections, filter by tags/dates/folders, and retrieve full c.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/obsidian-search@1.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9717776?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "obsidian-search",
+      "url": "https://clawhub.ai/skills/obsidian-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-search",
+    "url": "https://clawhub.ai/skills/obsidian-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-search-cbbe5140770c94bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/obsidian-search@1.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-obsidian-search-1.0.8.json",
+      "version": "1.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2af62cf260968330155e4e66707ce517ea9beb44856364cd6e8b4adb241d3d9a",
+      "artifactSizeBytes": 1962
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T12:22:20.932Z"
+}

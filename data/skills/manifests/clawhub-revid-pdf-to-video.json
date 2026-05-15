@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46759,
+  "uuid": "skill-clawhub-revid-pdf-to-video",
+  "skillKey": "clawhub-revid-pdf-to-video",
+  "name": "PDF to Video",
+  "summary": "Turn a PDF (whitepaper, ebook chapter, slide deck export, research paper) into a short summary video. Use when the source is a PDF URL or a PDF the agent can...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.revid_pdf_to_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "api00",
+      "features": [
+        "Turn a PDF (whitepaper, ebook chapter, slide deck export, research paper) into a short summary.",
+        "Use when the source is a PDF URL or a PDF the agent can..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/revid-pdf-to-video@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57573621?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "revid-pdf-to-video",
+      "url": "https://clawhub.ai/skills/revid-pdf-to-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "revid-pdf-to-video",
+    "url": "https://clawhub.ai/skills/revid-pdf-to-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/revid-pdf-to-video-78ddb54a3972979d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/revid-pdf-to-video@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-revid-pdf-to-video-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:340dd373b8553b2bdac398a29248c3b6f8434f706ce017c816e785b1a213cf70",
+      "artifactSizeBytes": 2350
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T15:14:48.992Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67466,
+  "uuid": "skill-clawhub-skill-system-monitor",
+  "skillKey": "clawhub-skill-system-monitor",
+  "name": "System Monitor",
+  "summary": "跨平台系统监控工具，支持 Linux 和 Windows，监控硬盘、内存、CPU 使用情况，记录历史数据，支持变化对比和预警。**适合定时任务**。触发场景：(1) 定时系统健康检查（推荐每6小时），(2) 用户询问系统状态、资源使用情况，(3) 资源异常预警，(4) 查看历史监控数据对比。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_system_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wezn",
+      "features": [
+        "跨平台系统监控工具，支持 Linux 和 Windows，监控硬盘、内存、CPU 使用情况，记录历史数据，支持变化对比和预警。**适合定时任务**。触发场景：(1) 定时系统健康检查（推荐每."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-system-monitor@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12661926?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-system-monitor",
+      "url": "https://clawhub.ai/skills/skill-system-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-system-monitor",
+    "url": "https://clawhub.ai/skills/skill-system-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-system-monitor-bb4548a14c399085.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-system-monitor@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-system-monitor-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:472f66d27815916255ce619c246b8f18f5aa124232c7e49ae0be2a453d52200e",
+      "artifactSizeBytes": 2180
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T14:55:37.289Z"
+}

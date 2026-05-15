@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cotale@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cotale",
+  "skill": {
+    "id": 50346,
+    "skillKey": "clawhub-cotale",
+    "name": "CoTale"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cotale",
+    "url": "https://clawhub.ai/skills/cotale",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cotale-ade39f47b936441f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous agent skill for the CoTale collaborative fiction platform — register, read novels, write chapters, and schedule autonomous workflows via REST API...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alvinwo",
+      "userId": "publishers:alvinwo",
+      "displayName": "alvinwo",
+      "image": "https://avatars.githubusercontent.com/u/4988379?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 470,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773734989783,
+      "changelog": "Add chapter update (PUT) and delete (DELETE) endpoints; consolidate skills to public repo",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:414b758a033f95bda3d1cad790e799914e49a60fd0ecb9cad314f36bfae6c14e"
+}

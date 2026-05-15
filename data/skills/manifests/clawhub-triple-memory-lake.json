@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45548,
+  "uuid": "skill-clawhub-triple-memory-lake",
+  "skillKey": "clawhub-triple-memory-lake",
+  "name": "Triple Memory Lake",
+  "summary": "Quad-layer memory system integration - unifies OpenClaw, Claude Code, and self-improving agent memories into a single knowledge lake",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.triple_memory_lake",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxiao-bot",
+      "features": [
+        "Quad-layer memory system integration",
+        "unifies OpenClaw, Claude Code, and self-improving agent memories into a single knowledge lake"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/triple-memory-lake@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262316041?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "triple-memory-lake",
+      "url": "https://clawhub.ai/skills/triple-memory-lake"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "triple-memory-lake",
+    "url": "https://clawhub.ai/skills/triple-memory-lake",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/triple-memory-lake-31f5a98b7d659dcc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/triple-memory-lake@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-triple-memory-lake-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d67b0a7a7e0ca9a0f0b27a32b5bde59bbaa22baf73787784ba5aa463e8bf3a87",
+      "artifactSizeBytes": 2022
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T17:31:23.306Z"
+}

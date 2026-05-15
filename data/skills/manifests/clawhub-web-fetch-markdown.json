@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15043,
+  "uuid": "skill-clawhub-web-fetch-markdown",
+  "skillKey": "clawhub-web-fetch-markdown",
+  "name": "Web fetch markdown of page",
+  "summary": "Fetch web pages as reduced markdown via jina.ai. Use when user wants to fetch a URL and get condensed markdown content to save tokens. Triggered by phrases l...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_fetch_markdown",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "christo",
+      "features": [
+        "Fetch web pages as reduced markdown via jina.ai",
+        "Use when user wants to fetch a URL and get condensed markdown content to save tokens",
+        "Triggered by phrases l..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-fetch-markdown@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1757861?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-fetch-markdown",
+      "url": "https://clawhub.ai/skills/web-fetch-markdown"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-fetch-markdown",
+    "url": "https://clawhub.ai/skills/web-fetch-markdown",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-fetch-markdown-fcd90ac784c2a94c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-fetch-markdown@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-fetch-markdown-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:72835e67258c75a0740bf634480670ce4fe5ff65fb85c78b317cc6a3af576b01",
+      "artifactSizeBytes": 2295
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T15:37:42.836Z"
+}

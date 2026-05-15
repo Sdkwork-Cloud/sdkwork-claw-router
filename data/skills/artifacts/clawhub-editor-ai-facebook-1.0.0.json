@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/editor-ai-facebook@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.editor_ai_facebook",
+  "skill": {
+    "id": 41580,
+    "skillKey": "clawhub-editor-ai-facebook",
+    "name": "Editor Ai Facebook"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "editor-ai-facebook",
+    "url": "https://clawhub.ai/skills/editor-ai-facebook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/editor-ai-facebook-8417c04bde65d3f1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Facebook marketers and page owners edit raw video clips into Facebook-ready videos using this skill. Accepts MP4, MOV, AVI, WebM up to 500MB, renders on clou..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775862167175,
+      "changelog": "Initial release of editor-ai-facebook — AI-powered video editing for Facebook.\n\n- Edit and export Facebook-ready videos from raw clips (MP4, MOV, AVI, WebM up to 500MB), rendered remotely at 1080p.\n- Simple workflows: upload clips, describe edits, and receive finished MP4 files in 1–2 minutes.\n- Automated cloud session management, including anonymous token handling if needed.\n- Supports timeline editing, captions, audio tracks, and formatting for Facebook posts and ads.\n- Clear user prompts and status updates; technical details handled in the background.\n- Comprehensive error handling and support for credit management, session state, and export tracking.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:66d3c0ba244eaaf8a16f376ec2d9090c6a1ed11423d90563dfe6cbffb217fa1e"
+}

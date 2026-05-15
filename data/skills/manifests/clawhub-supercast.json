@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26907,
+  "uuid": "skill-clawhub-supercast",
+  "skillKey": "clawhub-supercast",
+  "name": "Supercast",
+  "summary": "Supercast integration. Manage Persons, Organizations, Deals, Leads, Projects, Pipelines and more. Use when the user wants to interact with Supercast data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.supercast",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Supercast integration",
+        "Manage Persons, Organizations, Deals, Leads, Projects, Pipelines and more",
+        "Use when the user wants to interact with Supercast data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/supercast@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "supercast",
+      "url": "https://clawhub.ai/skills/supercast"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "supercast",
+    "url": "https://clawhub.ai/skills/supercast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/supercast-9ca4188f7e46b606.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/supercast@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-supercast-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ebcdc6919df84b3be250029b2393c30465ce903449c3cfc2f3b413e97b95387",
+      "artifactSizeBytes": 1868
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:48:34.229Z"
+}

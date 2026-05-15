@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45774,
+  "uuid": "skill-clawhub-pilot-event-replay",
+  "skillKey": "clawhub-pilot-event-replay",
+  "name": "Pilot Event Replay",
+  "summary": "Record and replay event streams for debugging, testing, and audit purposes. Use this skill when: 1. You need to capture event streams for later analysis 2. Y...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_event_replay",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "Record and replay event streams for debugging, testing, and audit purposes",
+        "Use this skill when: 1",
+        "You need to capture event streams for later analysis 2"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-event-replay@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-event-replay",
+      "url": "https://clawhub.ai/skills/pilot-event-replay"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-event-replay",
+    "url": "https://clawhub.ai/skills/pilot-event-replay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-event-replay-486dc61a3412b96b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-event-replay@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-event-replay-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b4a8fdf3dfa7e0d7f1006dae07c813e675ec4fad3720a1c19871a6240a1773aa",
+      "artifactSizeBytes": 1918
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T03:20:24.907Z"
+}

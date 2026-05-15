@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gekko-yield@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gekko_yield",
+  "skill": {
+    "id": 12341,
+    "skillKey": "clawhub-gekko-yield",
+    "name": "Gekko Yield"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gekko-yield",
+    "url": "https://clawhub.ai/skills/gekko-yield",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gekko-yield-48c39d90eff0c843.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Earn yield on USDC by supplying to the Moonwell Flagship USDC vault on Base. Use when depositing USDC, withdrawing from the vault, checking position/APY, or generating yield reports."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sergey1997",
+      "userId": "publishers:sergey1997",
+      "displayName": "Serge",
+      "image": "https://avatars.githubusercontent.com/u/22988415?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1725,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770040491096,
+      "changelog": "Initial release of gekko-yield v1.0.0:\n\n- Supply and withdraw USDC from the Moonwell Flagship USDC vault on Base chain\n- View position, vault APY, and wallet balances\n- Generate yield reports in Telegram/Discord, JSON, or plain text formats\n- Auto-compound WELL and MORPHO rewards back into the vault via Odos\n- Interactive setup and secure wallet configuration using environment variables\n- Clear security guidance and recommended wallet practices provided",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:89f8732b4dd493a4ce87766e2de38fdfce1ae1393eda2cc9ceb3892afd435370"
+}

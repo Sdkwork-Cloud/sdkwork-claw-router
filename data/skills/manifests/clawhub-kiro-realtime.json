@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28054,
+  "uuid": "skill-clawhub-kiro-realtime",
+  "skillKey": "clawhub-kiro-realtime",
+  "name": "Kiro Realtime Chat",
+  "summary": "Enables near real-time chat between multiple Kiro instances via a shared JSON file with polling for quick message exchange and task coordination.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kiro_realtime",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sonerbo",
+      "features": [
+        "Enables near real-time chat between multiple Kiro instances via a shared JSON file with polling."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kiro-realtime@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/71600332?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kiro-realtime",
+      "url": "https://clawhub.ai/skills/kiro-realtime"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kiro-realtime",
+    "url": "https://clawhub.ai/skills/kiro-realtime",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kiro-realtime-95d76ff0eb08cbf4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kiro-realtime@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kiro-realtime-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4326302866d75b843454797e3a27b015ee79862ee120b54fa38d965ce61f66e0",
+      "artifactSizeBytes": 1888
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T22:59:00.039Z"
+}

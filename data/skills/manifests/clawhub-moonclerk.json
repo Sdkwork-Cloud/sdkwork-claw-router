@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30872,
+  "uuid": "skill-clawhub-moonclerk",
+  "skillKey": "clawhub-moonclerk",
+  "name": "Moonclerk",
+  "summary": "MoonClerk integration. Manage Persons, Organizations, Deals, Leads, Projects, Activities and more. Use when the user wants to interact with MoonClerk data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moonclerk",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "MoonClerk integration",
+        "Manage Persons, Organizations, Deals, Leads, Projects, Activities and more",
+        "Use when the user wants to interact with MoonClerk data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moonclerk@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moonclerk",
+      "url": "https://clawhub.ai/skills/moonclerk"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moonclerk",
+    "url": "https://clawhub.ai/skills/moonclerk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moonclerk-2d7b0d6af4b4251d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moonclerk@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-moonclerk-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d39f12420515e619b7f61c7d8b004024a55ec5f18aef528b83f35b624c06a69b",
+      "artifactSizeBytes": 1869
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:15:28.501Z"
+}

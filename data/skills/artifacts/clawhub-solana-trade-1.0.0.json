@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/solana-trade@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solana_trade",
+  "skill": {
+    "id": 25490,
+    "skillKey": "clawhub-solana-trade",
+    "name": "Solana Trade"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solana-trade",
+    "url": "https://clawhub.ai/skills/solana-trade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solana-trade-973679eb0e3cf2d5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "End-to-end Solana development playbook (Jan 2026). Prefer Solana Foundation framework-kit (@solana/client + @solana/react-hooks) for React/Next.js UI. Prefer..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "edsoneras",
+      "userId": "s176mvpxmj1291ahavvaayc4s183yc2n",
+      "displayName": "Edson Cavalca Jr.",
+      "image": "https://avatars.githubusercontent.com/u/60100458?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 378,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772393224088,
+      "changelog": "- Initial release of the Solana development skill.\n- Provides an end-to-end Solana dApp development playbook (Jan 2026).\n- Recommends framework-kit (@solana/client + @solana/react-hooks) for React/Next.js UIs.\n- Prefers @solana/kit for all new client, RPC, and transaction code.\n- Details how to handle legacy web3.js dependencies using adapter boundaries.\n- Covers wallet standard-first connection, Anchor/Pinocchio programs, modern testing tools, and security best practices.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:35a15595b53674ed7844cd5364aa0a988018135f05870058fcd5e743b0868b20"
+}

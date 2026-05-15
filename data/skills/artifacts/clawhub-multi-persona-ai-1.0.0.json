@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/multi-persona-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_persona_ai",
+  "skill": {
+    "id": 45301,
+    "skillKey": "clawhub-multi-persona-ai",
+    "name": "Multi Persona Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-persona-ai",
+    "url": "https://clawhub.ai/skills/multi-persona-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-persona-ai-67997007fbe71c49.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Builds consensus-driven AI personas from multiple perspectives"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 125,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777241062122,
+      "changelog": "- Initial release of skylv-consensus-persona-engine\n- Enables multiple AI agents to build a consensus-driven persona via voting on key personality traits\n- Supports 6 personality dimensions: tone, verbosity, risk_tolerance, autonomy, safety_level, creativity\n- Provides commands for voting, consensus calculation, and listing dimensions\n- Outputs a consensus personality profile with confidence scores, generated rules, and JSON config for agent setup\n- Designed for low-competition, blue ocean scenarios",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a2cbe82e0388dca26ca19add2a7cca22e91bea3497eaf8ffa8ac22881f7d4cd4"
+}

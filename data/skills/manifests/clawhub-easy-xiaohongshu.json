@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61725,
+  "uuid": "skill-clawhub-easy-xiaohongshu",
+  "skillKey": "clawhub-easy-xiaohongshu",
+  "name": "Easy Xiaohongshu",
+  "summary": "根据主题生成小红书图文内容，并在本地 `xiaohongshu-mcp` 可用时辅助发布图文笔记。",
+  "version": "0.2.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.easy_xiaohongshu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "baoshan685",
+      "features": [
+        "根据主题生成小红书图文内容，并在本地 `xiaohongshu-mcp` 可用时辅助发布图文笔记。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/easy-xiaohongshu@0.2.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38556157?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "easy-xiaohongshu",
+      "url": "https://clawhub.ai/skills/easy-xiaohongshu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "easy-xiaohongshu",
+    "url": "https://clawhub.ai/skills/easy-xiaohongshu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/easy-xiaohongshu-d852649005708247.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/easy-xiaohongshu@0.2.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-easy-xiaohongshu-0.2.4.json",
+      "version": "0.2.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e94e5bd5b52300e219b9bd8dd8f25ef0f59264d6c1abb4c453e0a518dcc5cf1e",
+      "artifactSizeBytes": 1861
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T03:49:46.069Z"
+}

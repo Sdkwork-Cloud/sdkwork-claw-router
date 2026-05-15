@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62624,
+  "uuid": "skill-clawhub-grafana-inspection",
+  "skillKey": "clawhub-grafana-inspection",
+  "name": "grafana-insepction",
+  "summary": "Grafana 自动化巡检技能。支持浏览器截图 + API 数据巡检，多仪表盘批量巡检，自动发现仪表盘。",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grafana_inspection",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ken",
+      "features": [
+        "Grafana 自动化巡检技能。支持浏览器截图 + API 数据巡检，多仪表盘批量巡检，自动发现仪表盘。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/grafana-inspection@0.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6222602?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "grafana-inspection",
+      "url": "https://clawhub.ai/skills/grafana-inspection"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grafana-inspection",
+    "url": "https://clawhub.ai/skills/grafana-inspection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grafana-inspection-9b2473abf1738985.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/grafana-inspection@0.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-grafana-inspection-0.0.3.json",
+      "version": "0.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a82180d833ee0a8958834a12d8f800ad025f99772533cda19a765796599c110c",
+      "artifactSizeBytes": 2431
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T14:44:04.127Z"
+}

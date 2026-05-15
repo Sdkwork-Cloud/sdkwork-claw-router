@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/service-now@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.service_now",
+  "skill": {
+    "id": 45025,
+    "skillKey": "clawhub-service-now",
+    "name": "Service Now"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "service-now",
+    "url": "https://clawhub.ai/skills/service-now",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/service-now-a095e55080d9294e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides information on ServiceNow, a leading IT service management and enterprise workflow automation platform."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776539100729,
+      "changelog": "- 初始版本，新增 ServiceNow 技能介绍。\n- 提供发展历程、核心特点与优势的简介。\n- 补充关键数据，包括年营收与员工数。\n- 适用于查询 ServiceNow 及行业相关信息。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f130ff59094ea18c83b8c09fc969165ca5b0abc1e70ddd376c9df90e6cc791a7"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17901,
+  "uuid": "skill-clawhub-angus-bounty-hunter",
+  "skillKey": "clawhub-angus-bounty-hunter",
+  "name": "Angus Bounty Hunter",
+  "summary": "Automated smart contract bug bounty hunting. Scans Immunefi/Code4rena targets with Slither static analysis, triages findings with local LLMs, and generates P...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.angus_bounty_hunter",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chipp11",
+      "features": [
+        "Automated smart contract bug bounty hunting",
+        "Scans Immunefi/Code4rena targets with Slither static analysis, triages findings with local LLMs."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/angus-bounty-hunter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/131332137?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "angus-bounty-hunter",
+      "url": "https://clawhub.ai/skills/angus-bounty-hunter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "angus-bounty-hunter",
+    "url": "https://clawhub.ai/skills/angus-bounty-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/angus-bounty-hunter-3c46ed52eb6e93be.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/angus-bounty-hunter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-angus-bounty-hunter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:540b915e324a7baecedc65916658cb8223bbf7075a43b204503a599946607bd2",
+      "artifactSizeBytes": 1957
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T20:05:31.485Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/powerskills@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.powerskills",
+  "skill": {
+    "id": 20396,
+    "skillKey": "clawhub-powerskills",
+    "name": "PowerSkills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "powerskills",
+    "url": "https://clawhub.ai/skills/powerskills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/powerskills-e60f2f8e80ff4f1b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Windows automation toolkit for AI agents. Provides Outlook email/calendar, Edge browser (CDP), desktop screenshots/window management, and shell commands via..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aloth",
+      "userId": "publishers:aloth",
+      "displayName": "aloth",
+      "image": "https://avatars.githubusercontent.com/u/12732979?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 547,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772881897686,
+      "changelog": "Initial release - Outlook, Edge browser, desktop, and system automation for Windows via PowerShell",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c779b6d8175289834f42d16289ca651229b70fd576e39b3fe9ed7cd98efb5340"
+}

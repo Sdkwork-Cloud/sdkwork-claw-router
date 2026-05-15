@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/my-shell@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_shell",
+  "skill": {
+    "id": 20738,
+    "skillKey": "clawhub-my-shell",
+    "name": "My Shell"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-shell",
+    "url": "https://clawhub.ai/skills/my-shell",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-shell-887d1378d9d37002.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Runs shell commands inside a dedicated tmux session named claw, captures output, and prompts before executing potentially destructive commands."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "idienet",
+      "userId": "s174de9javw7pcdkqye3pnaxyn83vfh4",
+      "displayName": "IdIeNet",
+      "image": "https://avatars.githubusercontent.com/u/83342047?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 510,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772887364493,
+      "changelog": "claw-shell 1.0.0 initial release\n\n- Introduces a shell command tool that always runs inside tmux session named `claw`.\n- Ensures only the `claw` session is used and never interacts with other tmux sessions.\n- Returns the output of shell commands back to the agent after execution.\n- Implements safety checks prohibiting commands like `sudo`, `rm` (without confirmation), `reboot`, and `shutdown`; requests user confirmation before running dangerous commands.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5aab310f17bb05ad94fd99858ca374088ff95479b3684e7485315b2ede9c80ef"
+}

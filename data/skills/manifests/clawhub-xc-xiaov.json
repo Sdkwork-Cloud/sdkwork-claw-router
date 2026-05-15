@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71140,
+  "uuid": "skill-clawhub-xc-xiaov",
+  "skillKey": "clawhub-xc-xiaov",
+  "name": "xc-xiaov",
+  "summary": "唯品会专属 AI 购物助手“小v”。当用户提及购物、穿搭建议、时尚趋势或特定商品搜索时，小v 会动态调用内部子技能提供商品推荐、详情查询及促销活动。",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xc_xiaov",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bfkkkd",
+      "features": [
+        "唯品会专属 AI 购物助手“小v”。当用户提及购物、穿搭建议、时尚趋势或特定商品搜索时，小v 会动态调用内部子技能提供商品推荐、详情查询及促销活动。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xc-xiaov@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29848293?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xc-xiaov",
+      "url": "https://clawhub.ai/skills/xc-xiaov"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xc-xiaov",
+    "url": "https://clawhub.ai/skills/xc-xiaov",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xc-xiaov-3df48e262c0cc515.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xc-xiaov@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-xc-xiaov-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4f939e668d9474f16c66cc8bead169bb8146644c7541e2a9047d0948ff8906f4",
+      "artifactSizeBytes": 2029
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T08:56:09.528Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-hook@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_hook",
+  "skill": {
+    "id": 17609,
+    "skillKey": "clawhub-youtube-hook",
+    "name": "YouTube-Hook"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-hook",
+    "url": "https://clawhub.ai/skills/youtube-hook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-hook-20cb56d4a7303d91.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate high-performing YouTube video scripts, titles, thumbnails, descriptions, and chapter markers from any topic or content"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "markusmikely",
+      "userId": "publishers:markusmikely",
+      "displayName": "Markus Mikely",
+      "image": "https://avatars.githubusercontent.com/u/6523259?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 762,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771767723905,
+      "changelog": "Initial release: full video script generator for YouTube",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:15843c6b573d650f544fe447456405b38a311ab646259aa2ea39e928d284309e"
+}

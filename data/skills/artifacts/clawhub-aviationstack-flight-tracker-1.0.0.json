@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aviationstack-flight-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aviationstack_flight_tracker",
+  "skill": {
+    "id": 10770,
+    "skillKey": "clawhub-aviationstack-flight-tracker",
+    "name": "Flight Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aviationstack-flight-tracker",
+    "url": "https://clawhub.ai/skills/aviationstack-flight-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aviationstack-flight-tracker-bae09135d76837fa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track flights in real-time with detailed status, gate info, delays, and live position. Use when user asks to track a flight, check flight status, look up flight information by flight number (e.g., \"track AA100\", \"what's the status of Unite."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "copey02",
+      "userId": "publishers:copey02",
+      "displayName": "copey02",
+      "image": "https://avatars.githubusercontent.com/u/28310613?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2414,
+      "installsAllTime": 6,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769364033237,
+      "changelog": "Initial release of flight-tracker skill.\n\n- Track any commercial flight worldwide in real-time using AviationStack API.\n- Provides detailed status, gate/terminal info, live airplane position, and delay calculations.\n- Presents information in a clear, formatted style modeled after the Flighty app.\n- Easy setup with free API key and simple command-line usage.\n- Supports output as formatted text or raw JSON for integrations.\n- Robust error handling and support for most IATA flight numbers.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3186661e5a3a863832db5a1cb8fb55ea8e1270d2f559f602265d362a03b2daf6"
+}

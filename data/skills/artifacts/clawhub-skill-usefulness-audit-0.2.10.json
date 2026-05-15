@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-usefulness-audit@0.2.10",
+  "version": "0.2.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_usefulness_audit",
+  "skill": {
+    "id": 8794,
+    "skillKey": "clawhub-skill-usefulness-audit",
+    "name": "skill-usefulness-audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-usefulness-audit",
+    "url": "https://clawhub.ai/skills/skill-usefulness-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-usefulness-audit-9596bf7c26fe3ac0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Finds unused, overlapping, risky, or under-evidenced agent skills and produces a cleanup report."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gongyu0918-debug",
+      "userId": "s172a0qxsw6kfdee064rcn06es83edse",
+      "displayName": "gongyu0918-debug",
+      "image": "https://avatars.githubusercontent.com/u/240801402?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 508,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 66,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "0.2.10",
+      "createdAt": 1778232221129,
+      "changelog": "Specialize the ClawHub bundle for OpenClaw and point other agent users to GitHub",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8c0e4327794271572fd82eb8203fb4a36dddcd3352f01cbd045f040f83ff8421"
+}

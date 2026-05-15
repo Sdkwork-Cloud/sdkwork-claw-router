@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/repomix@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.repomix",
+  "skill": {
+    "id": 29637,
+    "skillKey": "clawhub-repomix",
+    "name": "Repomix"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "repomix",
+    "url": "https://clawhub.ai/skills/repomix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/repomix-28f0985d8e5ec729.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Pack and analyze codebases into AI-friendly single files using Repomix. Use when the user wants to explore repositories, analyze code structure, find pattern..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yamadashy",
+      "userId": "publishers:yamadashy",
+      "displayName": "yamadashy",
+      "image": "https://avatars.githubusercontent.com/u/5019072?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 299,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774092011898,
+      "changelog": "- Updated instructions to recommend using a temporary directory for output on both Unix (`/tmp`) and Windows (`%TEMP%`) instead of only `/tmp`.\n- Clarified and standardized command examples and output file paths to match this guidance.\n- No changes to functionality; documentation updates only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dff238fe84b98ba52640d8238e77f3e5cb4b1e5f6d0d825d1a2b12e555fe32db"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11900,
+  "uuid": "skill-clawhub-x-automation",
+  "skillKey": "clawhub-x-automation",
+  "name": "X Auto-Tweet (Browser)",
+  "summary": "Automate posting on X by scraping trends, generating and scheduling tweets via browser without API costs, with approval workflows and human-like delays.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_automation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nightfullstar",
+      "features": [
+        "Automate posting on X by scraping trends, generating and scheduling tweets via browser without."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-automation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48878763?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-automation",
+      "url": "https://clawhub.ai/skills/x-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-automation",
+    "url": "https://clawhub.ai/skills/x-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-automation-a59e82cffb0c1a89.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-automation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-automation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e3b233c0872ab5c9d7c7da1e9f28773ea1a51ef038f5a45cb48ebf82dde934a9",
+      "artifactSizeBytes": 1985
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T17:10:50.916Z"
+}

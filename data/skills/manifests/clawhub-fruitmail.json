@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56090,
+  "uuid": "skill-clawhub-fruitmail",
+  "skillKey": "clawhub-fruitmail",
+  "name": "fruitmail — Apple Mail Search",
+  "summary": "Fast Apple Mail search via SQLite on macOS. Search emails by subject, sender, date, body, threads, attachments — results in ~50ms vs 8+ minutes with AppleScr...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fruitmail",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rahul Sethuram",
+      "features": [
+        "Fast Apple Mail search via SQLite on macOS",
+        "Search emails by subject, sender, date, body, threads, attachments — results in ~50ms vs 8+ min."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fruitmail@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11512787?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fruitmail",
+      "url": "https://clawhub.ai/skills/fruitmail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fruitmail",
+    "url": "https://clawhub.ai/skills/fruitmail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fruitmail-b9484df473d5d3d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fruitmail@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fruitmail-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5548bf7e68eb9473d2797a583d385b9e740c3887cbf3c654a142ec8696c7cf00",
+      "artifactSizeBytes": 2066
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T09:17:10.467Z"
+}

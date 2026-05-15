@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19880,
+  "uuid": "skill-clawhub-governed-agents",
+  "skillKey": "clawhub-governed-agents",
+  "name": "Governed Agents",
+  "summary": "Deterministic verification + reputation scoring for AI sub-agents. Prevents hallucinated success via 4 code gates (files, tests, lint, AST) and a 3-layer pip...",
+  "version": "0.1.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.governed_agents",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nefas11",
+      "features": [
+        "Deterministic verification + reputation scoring for AI sub-agents",
+        "Prevents hallucinated success via 4 code gates (files, tests, lint, AST) and a 3-layer pip..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/governed-agents@0.1.11",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/104435182?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "governed-agents",
+      "url": "https://clawhub.ai/skills/governed-agents"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "governed-agents",
+    "url": "https://clawhub.ai/skills/governed-agents",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/governed-agents-78007e2e46d18e82.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/governed-agents@0.1.11",
+      "artifactUrl": "data/skills/artifacts/clawhub-governed-agents-0.1.11.json",
+      "version": "0.1.11",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e4577c5618db6ebacaae55fdb9a745be99ede00b39b888a05b47850f69c4d5de",
+      "artifactSizeBytes": 2026
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T10:17:52.431Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/remotion-video-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.remotion_video_generator",
+  "skill": {
+    "id": 15139,
+    "skillKey": "clawhub-remotion-video-generator",
+    "name": "Remotion Video Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "remotion-video-generator",
+    "url": "https://clawhub.ai/skills/remotion-video-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/remotion-video-generator-1d3bb16c796201b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI video production workflow using Remotion. Use when creating videos, short films, commercials, or motion graphics. Triggers on requests to make promotional..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zendenho7",
+      "userId": "publishers:zendenho7",
+      "displayName": "ohnednez",
+      "image": "https://avatars.githubusercontent.com/u/90267714?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1015,
+      "installsAllTime": 6,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772029206194,
+      "changelog": "remotion-video-generator v1.0.0\n\n- Initial release of programmatic video generation workflow using Remotion and React.\n- Firecrawl replaced with Scrapling for brand data extraction.\n- Provides detailed step-by-step guide for setting up, building scenes, and rendering videos.\n- Includes troubleshooting tips for Remotion v4 API, with required scripts and usage instructions.\n- Supports creation of promotional, demo, social, and animated explainer videos with studio-quality motion graphics.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9a93687ba1a7783434237e71470bd63560271557503beb95dffa1d117238d0f2"
+}

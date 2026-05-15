@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moltbook-registry@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltbook_registry",
+  "skill": {
+    "id": 8840,
+    "skillKey": "clawhub-moltbook-registry",
+    "name": "Moltbook Agent Registry"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltbook-registry",
+    "url": "https://clawhub.ai/skills/moltbook-registry",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltbook-registry-a95703828648593a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Official Moltbook Identity Registry interface. Verify yourself, lookup others, and build on-chain reputation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "drjmz",
+      "userId": "publishers:drjmz",
+      "displayName": "drjmz",
+      "image": "https://avatars.githubusercontent.com/u/139523448?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 6226,
+      "installsAllTime": 31,
+      "installsCurrent": 27,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1769913434069,
+      "changelog": "Self-Register: Mint their own identity on your registry.\n\nVerify Others: Check if an agent is verified (moltbook.status).\n\nCheck Reputation: Read the trust score of other agents (moltbook.reputation).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:795c2c1e25a0fe694e44cca94318ad6b3974819f6c36fc219fa757ba0fdd338c"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kaipai-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kaipai_skill",
+  "skill": {
+    "id": 54991,
+    "skillKey": "clawhub-kaipai-skill",
+    "name": "Kaipai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kaipai-skill",
+    "url": "https://clawhub.ai/skills/kaipai-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kaipai-skill-f3c0d347bf96be03.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Video file → videoscreenclear or hdvideoallinone + spawn-run-task and sessions_spawn (main session). Image → eraser_watermark or image_restoration + blocking..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kaipai",
+      "userId": "s1721wpb84v3cvpyz648tgabvd83ntvh",
+      "displayName": "kaipai",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 240,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776087947352,
+      "changelog": "- Introduced new modular SDK structure under the sdk/ directory, including core client, API, config, and utility files.\n- Added notification support with Feishu and Telegram handlers in scripts/notifications/.\n- Removed old ai script files and refactored logic into new organized modules.\n- Included CLI command utilities and pipeline to streamline task execution and management.\n- Improved code separation for authentication, storage handling, and API integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c07d5739b5f86c19fb7def645889e52431e047cec1f18ed4c0edc91983ddbcc1"
+}

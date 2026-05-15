@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bitmap-vectorize@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bitmap_vectorize",
+  "skill": {
+    "id": 71136,
+    "skillKey": "clawhub-bitmap-vectorize",
+    "name": "Bitmap Vectorize"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bitmap-vectorize",
+    "url": "https://clawhub.ai/skills/bitmap-vectorize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bitmap-vectorize-9a410ecd3d07e86f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将位图图像（截图、手绘照片、示意图等）转换为精确的矢量图形代码（SVG或Canvas）。当用户提供一张图片并希望将其重新绘制成可缩放、可编辑的矢量图形时，应使用本技能。特别适合物理示意图、几何图形、电路图、标注图等需要精确还原的场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wxdwqy",
+      "userId": "s17e2k3m41498pdbmx5e20e05d83t0pt",
+      "displayName": "wxdwqy",
+      "image": "https://avatars.githubusercontent.com/u/161022141?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 243,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774785050183,
+      "changelog": "Initial release.\n\n- Converts bitmap physics diagrams (screenshots, sketches, etc.) into precise vector graphic code (SVG or HTML Canvas).\n- Designed for workflows requiring careful identification and verification of physical elements before vectorization.\n- Highlights critical differences between Canvas and mathematical coordinate systems (y-axis direction, angle orientation).\n- Default output is HTML Canvas code, suitable for further animation processing.\n- Includes bilingual documentation (Chinese/English) with clear 6-step procedure for accurate and interactive diagram preparation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:561a4021e54e85c24a8b9700f1e48ddf68762c254bab066565e55b7f509615fb"
+}

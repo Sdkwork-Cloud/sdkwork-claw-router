@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65762,
+  "uuid": "skill-clawhub-china-stock-sentiment",
+  "skillKey": "clawhub-china-stock-sentiment",
+  "name": "China Stock Sentiment",
+  "summary": "实时监控A股舆情、百度热搜及新闻情感，追踪热点板块与个股，辅助投资决策与风险管理。",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_stock_sentiment",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "daimingvip-a11y",
+      "features": [
+        "实时监控A股舆情、百度热搜及新闻情感，追踪热点板块与个股，辅助投资决策与风险管理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/china-stock-sentiment@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/232273827?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "china-stock-sentiment",
+      "url": "https://clawhub.ai/skills/china-stock-sentiment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-stock-sentiment",
+    "url": "https://clawhub.ai/skills/china-stock-sentiment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-stock-sentiment-39c4845fc4ff2b84.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/china-stock-sentiment@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-china-stock-sentiment-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:49d3a817ff5d2968a6e0bd9b4c92ba483357e9241a3b883095897f03cb4bd95a",
+      "artifactSizeBytes": 1946
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T18:43:40.612Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/elizacloud@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.elizacloud",
+  "skill": {
+    "id": 14776,
+    "skillKey": "clawhub-elizacloud",
+    "name": "elizaOS Cloud"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "elizacloud",
+    "url": "https://clawhub.ai/skills/elizacloud",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/elizacloud-45e2017581892c85.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage elizaOS Cloud - deploy AI agents, chat completions, image/video generation, voice cloning, knowledge base, containers, and marketplace. Use when interacting with elizaOS Cloud, elizacloud.ai, deploying eliza agents, or managing clou."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "odilitime",
+      "userId": "publishers:odilitime",
+      "displayName": "Odilitime",
+      "image": "https://avatars.githubusercontent.com/u/16395496?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1130,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1770863448897,
+      "changelog": "Fix metadata requirements, add onboarding, x402 payments, wallet RPCs, credit management",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f6d53e912cd38989859ecb45f56febee297ca08b3befbc679ee3e45fc3dc14b5"
+}

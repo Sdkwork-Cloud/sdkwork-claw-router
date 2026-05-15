@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15399,
+  "uuid": "skill-clawhub-sovereign-accessibility-auditor",
+  "skillKey": "clawhub-sovereign-accessibility-auditor",
+  "name": "Web Accessibility Auditor",
+  "summary": "Audits HTML/CSS for WCAG 2.1 compliance. Color contrast, ARIA labels, keyboard navigation, screen reader support.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sovereign_accessibility_auditor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ryudi84",
+      "features": [
+        "Audits HTML/CSS for WCAG 2.1 compliance",
+        "Color contrast, ARIA labels, keyboard navigation, screen reader support."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sovereign-accessibility-auditor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67792598?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sovereign-accessibility-auditor",
+      "url": "https://clawhub.ai/skills/sovereign-accessibility-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sovereign-accessibility-auditor",
+    "url": "https://clawhub.ai/skills/sovereign-accessibility-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sovereign-accessibility-auditor-86be397e7ffe3f9a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sovereign-accessibility-auditor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sovereign-accessibility-auditor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7812b795531e9bd1027ce120dcbd117006ecf0b7b32337eea89fb18b37c8eae4",
+      "artifactSizeBytes": 2261
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T02:12:03.327Z"
+}

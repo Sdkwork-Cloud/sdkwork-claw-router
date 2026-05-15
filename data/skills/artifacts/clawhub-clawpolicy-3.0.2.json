@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawpolicy@3.0.2",
+  "version": "3.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawpolicy",
+  "skill": {
+    "id": 23787,
+    "skillKey": "clawhub-clawpolicy",
+    "name": "ClawPolicy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawpolicy",
+    "url": "https://clawhub.ai/skills/clawpolicy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawpolicy-93ec3881bef7a27a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install and use ClawPolicy, an explainable autonomous execution policy engine for low-touch, auditable agent execution. Supports initialization, policy super..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dzming",
+      "userId": "publishers:dzming",
+      "displayName": "DZMing",
+      "image": "https://avatars.githubusercontent.com/u/236769370?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 430,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "3.0.2",
+      "createdAt": 1773233255503,
+      "changelog": "Fix listing mismatch: publish the actual ClawPolicy policy-engine wrapper metadata and install instructions; adds explicit license acceptance for current ClawHub API.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bca0ad98aeb682e09e42ebf2d1c49aeace2eeabdc2aba433b18d92f122677867"
+}

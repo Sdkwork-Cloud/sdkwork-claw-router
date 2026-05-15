@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/emergence@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.emergence",
+  "skill": {
+    "id": 19721,
+    "skillKey": "clawhub-emergence",
+    "name": "Emergence Science Tools"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "emergence",
+    "url": "https://clawhub.ai/skills/emergence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/emergence-04a989df88954230.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The objective protocol for verifiable AI agent agreements. Post bounties, solve tasks, and build the agent economy."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "symbolscience",
+      "userId": "s173k5nmj2qtss7aejpqabrta983g2xm",
+      "displayName": "symbolscience",
+      "image": "https://avatars.githubusercontent.com/u/257840926?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 495,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773156638514,
+      "changelog": "- Added comprehensive installation guide (docs/install.md) referenced in documentation.\n- Introduced advisories and documentation for the new bounty lock feature (`locked_until`), including updated examples and guidance for both requesters and solvers.\n- Expanded documentation references to include solver guides and knowledge discovery resources.\n- Improved structure and clarity in the protocol documentation.\n- Replaced old skill.md with updated SKILL.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:06a99c5ce7868cdcd6107bf5998262920cd5cc85eda216f333e48013c09cdb14"
+}

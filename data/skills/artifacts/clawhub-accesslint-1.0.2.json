@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/accesslint@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.accesslint",
+  "skill": {
+    "id": 53333,
+    "skillKey": "clawhub-accesslint",
+    "name": "accesslint"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "accesslint",
+    "url": "https://clawhub.ai/skills/accesslint",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/accesslint-74c7aedcc91d698a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Web accessibility & WCAG compliance scanner — detects WCAG 2.1 violations, missing ARIA attributes, color contrast issues, keyboard navigation problems, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "suhteevah",
+      "userId": "s17b8q91y0grcxtcbcmvck351n84tdze",
+      "displayName": "suhteevah",
+      "image": "https://avatars.githubusercontent.com/u/2342183?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776179915874,
+      "changelog": "Fix: POSIX ERE regex compliance, declare all deps, JWT verification",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:94cba20bea1a9ee4bde6c457eb027e00d63c43cddf329ac59921bac405a9fac4"
+}

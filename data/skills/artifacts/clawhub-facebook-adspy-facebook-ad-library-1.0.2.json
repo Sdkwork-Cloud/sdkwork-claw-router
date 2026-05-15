@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/facebook-adspy-facebook-ad-library@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.facebook_adspy_facebook_ad_library",
+  "skill": {
+    "id": 32827,
+    "skillKey": "clawhub-facebook-adspy-facebook-ad-library",
+    "name": "Facebook Adspy & Facebook Ad Library"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "facebook-adspy-facebook-ad-library",
+    "url": "https://clawhub.ai/skills/facebook-adspy-facebook-ad-library",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/facebook-adspy-facebook-ad-library-02adada75b651c2d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Research Facebook ad creatives and Meta Ad Library results using PipiAds adspy and ad library tools."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fanyanggod",
+      "userId": "s176gtyby3x3jz51q780av8wjn83paxt",
+      "displayName": "fanyanggod",
+      "image": "https://avatars.githubusercontent.com/u/44659216?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 246,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775098594552,
+      "changelog": "- Updated setup instructions to clarify where to view dashboard data and where to obtain/manage API keys and billing.\n- Added links to both official product UI (pipiads.com) and account management (pipispy.com) in the setup section.\n- No functional or code changes; documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:66344f419f09954749c448eba8732e39040479c2cd1653071410ab13a495d641"
+}

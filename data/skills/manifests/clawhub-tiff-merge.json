@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60851,
+  "uuid": "skill-clawhub-tiff-merge",
+  "skillKey": "clawhub-tiff-merge",
+  "name": "TIFF Merge & Split",
+  "summary": "合并图片为 TIFF 或拆分 TIFF 为单张图片（本地处理，隐私安全）",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tiff_merge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fly3094",
+      "features": [
+        "合并图片为 TIFF 或拆分 TIFF 为单张图片（本地处理，隐私安全）"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tiff-merge@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23025507?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tiff-merge",
+      "url": "https://clawhub.ai/skills/tiff-merge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tiff-merge",
+    "url": "https://clawhub.ai/skills/tiff-merge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tiff-merge-2d78b48dab930365.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tiff-merge@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-tiff-merge-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8048ddf9a71284d34727beaa707d760439b6e978283beb9d4626940c291ee59e",
+      "artifactSizeBytes": 1841
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T11:19:21.315Z"
+}

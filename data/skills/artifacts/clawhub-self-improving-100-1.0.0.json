@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/self-improving-100@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_improving_100",
+  "skill": {
+    "id": 29541,
+    "skillKey": "clawhub-self-improving-100",
+    "name": "Self improving"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-improving-100",
+    "url": "https://clawhub.ai/skills/self-improving-100",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-improving-100-6035dcdb613a1033.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Self-reflection + Self-criticism + Self-learning + Self-organizing memory. Agent evaluates its own work, catches mistakes, and improves permanently. Use when..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "keyserkazi1",
+      "userId": "s17bvxr9ghaw7616fae0pa41g983p16z",
+      "displayName": "Keyserkazi1",
+      "image": "https://avatars.githubusercontent.com/u/255859250?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 300,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773731609930,
+      "changelog": "- Initial release of the self-improving skill.\n- Introduces tiered memory storage with HOT, WARM, and COLD layers.\n- Supports logging corrections, preferences, and self-reflection lessons.\n- Provides quick queries for inspecting and managing memory.\n- Fully local storage; no credentials or external access required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:23fec0c54a4f9e4fe316e7f01cf7865f81bc96da2a4d99b53119c671746f1b00"
+}

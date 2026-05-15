@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32840,
+  "uuid": "skill-clawhub-nansen-token-transfer-analysis",
+  "skillKey": "clawhub-nansen-token-transfer-analysis",
+  "name": "Nansen Token Transfer Analysis",
+  "summary": "Where is this token moving and why? Large transfers, flow trends over time, and breakdown by wallet label.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nansen_token_transfer_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nansen AI",
+      "features": [
+        "Where is this token moving and why? Large transfers, flow trends over time, and breakdown by wa."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nansen-token-transfer-analysis@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/93130718?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nansen-token-transfer-analysis",
+      "url": "https://clawhub.ai/skills/nansen-token-transfer-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nansen-token-transfer-analysis",
+    "url": "https://clawhub.ai/skills/nansen-token-transfer-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nansen-token-transfer-analysis-aba13a2e5a81da14.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nansen-token-transfer-analysis@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nansen-token-transfer-analysis-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e99ae74951222c5636e1f3c59f1da0533ccdd2a53543ad851b826bcf58045cf",
+      "artifactSizeBytes": 2366
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T09:34:03.806Z"
+}

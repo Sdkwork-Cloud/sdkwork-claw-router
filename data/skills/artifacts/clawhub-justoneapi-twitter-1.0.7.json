@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/justoneapi-twitter@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_twitter",
+  "skill": {
+    "id": 32304,
+    "skillKey": "clawhub-justoneapi-twitter",
+    "name": "Twitter API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-twitter",
+    "url": "https://clawhub.ai/skills/justoneapi-twitter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-twitter-9faaca044e6a6013.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze Twitter workflows with JustOneAPI, including user Profile and user Published Posts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "justoneapi",
+      "userId": "s17ayjxfh4atw7gc7dgat7n40x845p6b",
+      "displayName": "justoneapi",
+      "image": "https://avatars.githubusercontent.com/u/139095138?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 244,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1776924499181,
+      "changelog": "- Operation IDs updated from getUserDetailV1 / getUserPostsV1 to getTwitterUserDetailV1 / getTwitterUserPostsV1 to better clarify endpoint purposes.\n- Documentation and references updated to align with new operation names.\n- No changes to required parameters, authentication, or skill functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:581c51bb96695c10bb80e442ffd4e07d9e1a05cef922d6ec9dd400b915b20b24"
+}

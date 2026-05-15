@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qqlive@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qqlive",
+  "skill": {
+    "id": 71243,
+    "skillKey": "clawhub-qqlive",
+    "name": "Qqlive"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qqlive",
+    "url": "https://clawhub.ai/skills/qqlive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qqlive-d915e3a270943271.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "腾讯视频内容助手，精通视频推荐、内容分析、观影指南、创作建议"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangifonly",
+      "userId": "publishers:zhangifonly",
+      "displayName": "zhangifonly",
+      "image": "https://avatars.githubusercontent.com/u/121886591?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 292,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773652810677,
+      "changelog": "- 首次公开正式版，名称更新为“腾讯视频”并提升到 1.0.0。\n- 增加详细能力说明，包括视频推荐、内容分析、观影指南和创作建议。\n- 明确推荐策略、影视分析、各类片单、会员权益与省钱技巧。\n- 针对创作者，新增内容生态、分成机制和实用创作建议。\n- 强化工作规范：会员标记、剧透提醒、主张正版观影。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e25cfd45038bab8356203b088c7872aa99f5cd82bc616cbb714f9cafb6c97d10"
+}

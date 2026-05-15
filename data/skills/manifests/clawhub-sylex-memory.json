@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48214,
+  "uuid": "skill-clawhub-sylex-memory",
+  "skillKey": "clawhub-sylex-memory",
+  "name": "Sylex Memory",
+  "summary": "Provides persistent, encrypted agent memory across sessions to store, recall, search, and share knowledge securely with other agents.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sylex_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MastadoonPrime",
+      "features": [
+        "Provides persistent, encrypted agent memory across sessions to store, recall, search, and share."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sylex-memory@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/162752398?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sylex-memory",
+      "url": "https://clawhub.ai/skills/sylex-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sylex-memory",
+    "url": "https://clawhub.ai/skills/sylex-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sylex-memory-2886604717c380d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sylex-memory@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sylex-memory-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:40a9c1ecfee2961bdd4c7fe1bceadf7e33db04f4d2ed4a223d9b732a2fd9a50f",
+      "artifactSizeBytes": 2335
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T17:42:43.332Z"
+}

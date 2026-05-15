@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reservations-hybrid-advisor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reservations_hybrid_advisor",
+  "skill": {
+    "id": 21954,
+    "skillKey": "clawhub-reservations-hybrid-advisor",
+    "name": "Reservations Hybrid Advisor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reservations-hybrid-advisor",
+    "url": "https://clawhub.ai/skills/reservations-hybrid-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reservations-hybrid-advisor-a4cf464f2d780a05.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Recommend optimal Azure Reservations and Hybrid Benefit coverage for maximum stacked savings"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anmolnagpal",
+      "userId": "publishers:anmolnagpal",
+      "displayName": "Anmol Nagpal",
+      "image": "https://avatars.githubusercontent.com/u/4303310?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 490,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772538263891,
+      "changelog": "Initial release of Azure Reservations & Hybrid Benefit Advisor skill:\n\n- Provides step-by-step, instruction-only guidance to maximize Azure savings via Reservations and Hybrid Benefit stacking.\n- Requires user-exported CSV/JSON data or workload descriptions for personalized analysis.\n- Outputs clear reservation, Hybrid Benefit, and combined savings recommendations, including break-even calculations.\n- Highlights risks and flags non-suitable workloads for reservations.\n- Ensures user privacy—never processes credentials or sensitive access information.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:93e588837995c458f1e8a827a13ec186e4dda5cb97b464877020e6d210e80811"
+}

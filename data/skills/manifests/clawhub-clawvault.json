@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8787,
+  "uuid": "skill-clawhub-clawvault",
+  "skillKey": "clawhub-clawvault",
+  "name": "ClawVault",
+  "summary": "Agent memory system with memory graph, context profiles, checkpoint/recover, structured storage, semantic search, observational memory, task tracking, canvas...",
+  "version": "2.5.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawvault",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "G9Pedro",
+      "features": [
+        "Agent memory system with memory graph, context profiles, checkpoint/recover, structured storage."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawvault@2.5.13",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78662829?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawvault",
+      "url": "https://clawhub.ai/skills/clawvault"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawvault",
+    "url": "https://clawhub.ai/skills/clawvault",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawvault-574a8c92b41fcc81.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawvault@2.5.13",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawvault-2.5.13.json",
+      "version": "2.5.13",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f6c4db7c9ca3c02e057729a9e284f6182004ca111b6f252e56b3ed18e81058f3",
+      "artifactSizeBytes": 2008
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T00:34:58.326Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41894,
+  "uuid": "skill-clawhub-api-mock-server",
+  "skillKey": "clawhub-api-mock-server",
+  "name": "API Mock Server",
+  "summary": "Lightweight API mock server for prototyping and testing, supporting JSON/JSON Schema responses, dynamic data, validation, latency, and webhook simulation.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_mock_server",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lv Lancer",
+      "features": [
+        "Lightweight API mock server for prototyping and testing, supporting JSON/JSON Schema responses,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/api-mock-server@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29176686?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "api-mock-server",
+      "url": "https://clawhub.ai/skills/api-mock-server"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-mock-server",
+    "url": "https://clawhub.ai/skills/api-mock-server",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-mock-server-ab2bc28445ffee96.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/api-mock-server@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-api-mock-server-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ac3b53a57ebf887bb80045ac8df179159b52fbed7b65158f5f9222acb89f0b9",
+      "artifactSizeBytes": 2347
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T07:22:17.480Z"
+}

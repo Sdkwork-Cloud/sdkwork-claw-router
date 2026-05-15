@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/project-timeline-board@2.2.0",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.project_timeline_board",
+  "skill": {
+    "id": 66610,
+    "skillKey": "clawhub-project-timeline-board",
+    "name": "project-timeline-board"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "project-timeline-board",
+    "url": "https://clawhub.ai/skills/project-timeline-board",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/project-timeline-board-b005643a315ae61b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "一个真正零门槛的项目时间线管理页面——只需编辑一个 JS 配置文件（projectName / 关键节点 / 甘特图 / 待办清单），即可生成包含智能时间轴、甘特图、里程碑追踪和待办看板的完整页面。自动根据当前日期判断每个节点是'已完成'/'今日'/'即将到来'/'待启动'，无需手动标注；甘特图支持交互/视觉/前..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ildar981105-create",
+      "userId": "s17cftxcpmw4jz83rwx7gb0zzs85135c",
+      "displayName": "ildar981105-create",
+      "image": "https://avatars.githubusercontent.com/u/265237862?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.2.0",
+      "createdAt": 1776416866975,
+      "changelog": "Update description: 突出全数据驱动+智能时间轴的创新点",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cd53b12a11296581012e569aa0ec4342a582582944f002ba7b510ebfc3fb475f"
+}

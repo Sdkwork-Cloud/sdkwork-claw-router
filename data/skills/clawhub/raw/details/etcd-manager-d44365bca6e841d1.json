@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "etcd-manager",
+    "displayName": "etcd-manager",
+    "summary": "Manage etcd key-value store operations (list, get, put, delete) with safety checks and backup mechanisms. Use when: reading/writing configuration, managing d...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "createdAt": 1774352646399,
+    "updatedAt": 1777623184015
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1774352646399,
+    "changelog": "Initial release of the etcd-manager skill:\n\n- Provides clean and safe management for etcd key-value store operations: list, get, put, and delete.\n- Enforces safety rules with read-first preference, backups before modification, and explicit confirmation for destructive actions.\n- Distinguishes between dev, test, and prod environments, applying extra caution in production.\n- Standardizes command conventions and output formats to ensure clear, auditable interactions.\n- Supports TLS connections and logging for added security and traceability.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "fpbear",
+    "userId": "s174q2182dscg46xsx6c4qv8x583gr48",
+    "displayName": "FPbear",
+    "image": "https://avatars.githubusercontent.com/u/35688426?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.destructive_delete_command",
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.destructive_delete_command, suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777623184015
+  }
+}

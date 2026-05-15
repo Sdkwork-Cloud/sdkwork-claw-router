@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-video-editing-app@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_video_editing_app",
+  "skill": {
+    "id": 47485,
+    "skillKey": "clawhub-free-video-editing-app",
+    "name": "Free Video Editing App"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-video-editing-app",
+    "url": "https://clawhub.ai/skills/free-video-editing-app",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-video-editing-app-d95e34d3e04c55f0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get edited MP4 clips ready to post, without touching a single slider. Upload your raw video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"tri..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susan4731-wilfordf",
+      "userId": "s1782w3wqej6a5gnp3w63eb80184cckp",
+      "displayName": "susan4731-wilfordf",
+      "image": "https://avatars.githubusercontent.com/u/208907675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 113,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777162227325,
+      "changelog": "Initial release of Free Video Editing App.\n\n- Edit and export MP4 clips up to 500MB with automated AI editing—no manual controls needed.\n- Supports uploads in MP4, MOV, AVI, WebM; outputs polished 1080p MP4 files.\n- Simple prompts trigger edits like pause trimming, adding background music, and exporting.\n- On first use, automatically connects to a cloud backend for GPU-powered video processing.\n- Built-in session and token management, with 100 free credits valid for 7 days per account.\n- Handles uploads, exports, credit checks, and live status/polling with clear user feedback.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cbe77bdb72c81caf2b45f8fe1034bd3ce171a35f3d8b3fa2932cf091ae2efa3c"
+}

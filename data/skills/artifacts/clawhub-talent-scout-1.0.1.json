@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/talent-scout@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.talent_scout",
+  "skill": {
+    "id": 54579,
+    "skillKey": "clawhub-talent-scout",
+    "name": "Talent Scout — Competitor Talent Intelligence"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "talent-scout",
+    "url": "https://clawhub.ai/skills/talent-scout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/talent-scout-dfe24db02f87574e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Steal your competitors' best people — scrape LinkedIn, AI-rank candidates, and generate personalized outreach DMs in one command"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "behruamm",
+      "userId": "s1758ymmnqz6zfynsqdk2jrbnn8434sv",
+      "displayName": "Behruamm",
+      "image": "https://avatars.githubusercontent.com/u/90729321?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 482,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772848909487,
+      "changelog": "- Updated skill description to be bolder and more direct.\n- No command, flag, or output changes; functionality remains the same.\n- Documentation update only — all usage and output details are unchanged.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4fecacc4cd3963da45e50e9fbade889d0504757d0e303915b511f2fe6e79652e"
+}

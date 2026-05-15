@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-finance@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_finance",
+  "skill": {
+    "id": 68670,
+    "skillKey": "clawhub-daily-finance",
+    "name": "Daily Finance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-finance",
+    "url": "https://clawhub.ai/skills/daily-finance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-finance-063a9231c6bf0083.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "获取每日财经热榜与投资资讯。当用户提到今日财经、每日金融、股市热榜、投资资讯、金融日报、每日行情、财经热榜、or daily finance/market news时触发。专门抓取华尔街见闻、雪球、第一财经、百度财经、新浪财经等平台的财经热搜，帮助用户快速了解今日投资焦点。不包含实时行情数据（K线等），那是aks..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "foxxc",
+      "userId": "s176wjxsnbg2wrx98aey5a0qrd83g5zr",
+      "displayName": "foxxc",
+      "image": "https://avatars.githubusercontent.com/u/46275479?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 265,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774312184411,
+      "changelog": "Added: 新浪财经7x24小时实时快讯 + 新浪财经点击量排行 + 美股TOP100. Enhanced: platform coverage expanded from 4 to 9 sources. Expanded: screening criteria refined for real-time news value.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:66d83731dddb63742252368f19ed1df519acc0e2c7e1fb1c9e73d4788fe1272e"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58231,
+  "uuid": "skill-clawhub-skill-upgrade-checker",
+  "skillKey": "clawhub-skill-upgrade-checker",
+  "name": "skill-upgrade-checker",
+  "summary": "Check all installed skills for available upgrades, interpret version changes and risk, and execute upgrades with user confirmation. | 检查所有已安装技能的可用升级，解读版本变更与风...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_upgrade_checker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "VinceZ.辉",
+      "features": [
+        "Check all installed skills for available upgrades, interpret version changes and risk, and exec.",
+        "| 检查所有已安装技能的可用升级，解读版本变更与风..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-upgrade-checker@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7855442?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-upgrade-checker",
+      "url": "https://clawhub.ai/skills/skill-upgrade-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-upgrade-checker",
+    "url": "https://clawhub.ai/skills/skill-upgrade-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-upgrade-checker-f891fa86ff344ef0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-upgrade-checker@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-upgrade-checker-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d563d0afb27cde77ec5f5e334136f06518668788a5996f992d24d009fa67ca6d",
+      "artifactSizeBytes": 2225
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T01:28:48.621Z"
+}

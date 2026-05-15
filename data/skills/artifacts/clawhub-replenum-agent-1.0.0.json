@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/replenum-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.replenum_agent",
+  "skill": {
+    "id": 15462,
+    "skillKey": "clawhub-replenum-agent",
+    "name": "Replenum Agent Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "replenum-agent",
+    "url": "https://clawhub.ai/skills/replenum-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/replenum-agent-b3e053f7cfe74887.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides reputation scoring, discovery, and interaction-derived confidence and visibility signals for AI agents via signed attestations and engagement data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ryanprice",
+      "userId": "publishers:ryanprice",
+      "displayName": "SentEdge.ai",
+      "image": "https://avatars.githubusercontent.com/u/180252?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1022,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770615924518,
+      "changelog": "Replenum 1.0.0 – Initial Release\n\n- Introduces Replenum, a neutral registry for reputation and confidence scoring of autonomous agents.\n- Provides API endpoints for agent identity registration, score lookup, and reputation attestation.\n- Supports both free and paid (x402) detailed score queries.\n- Enables discovery and trending feeds through activity, curator, and boost signals.\n- Logs engagement events and transactional attestations for building reputation over time.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0a4ffd94ed301f9f8a793ba00d81760cabf16e13a8d2c34d06e0a878b4d53303"
+}

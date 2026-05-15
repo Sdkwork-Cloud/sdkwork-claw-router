@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/offsite-meeting@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.offsite_meeting",
+  "skill": {
+    "id": 46560,
+    "skillKey": "clawhub-offsite-meeting",
+    "name": "offsite-meeting"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "offsite-meeting",
+    "url": "https://clawhub.ai/skills/offsite-meeting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/offsite-meeting-20fc10d568c5b0ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Book flights for offsite meetings and strategy retreats. Also supports: flight booking, hotel reservation, train tickets, attraction tickets, itinerary plann..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiejinsong",
+      "userId": "s177qj362rbw4294hgs3hdvhgx83m2hm",
+      "displayName": "xiejinsong",
+      "image": "https://avatars.githubusercontent.com/u/1642572?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 124,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1777060994556,
+      "changelog": "- Enforced strict CLI-only data sourcing: all travel results must come from flyai CLI output, never from training data.\n- Added mandatory `[Book]({detailUrl})` link requirement for every result; responses without booking links must not be returned.\n- Implemented language matching: responses now match user input language (Chinese or English).\n- Clarified and expanded playbooks for different flight search scenarios: recommended, cheapest, fastest, and direct flights.\n- Improved parameter collection process with clear limits on follow-up questions.\n- Enhanced output formatting: now always includes a summary, offsite travel tip, comparison table, and brand tag.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ff30b7b95de4b7d17da9a610f5c5ad818a13fc9b125512a3965c5a7961cf00aa"
+}

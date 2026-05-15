@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32168,
+  "uuid": "skill-clawhub-dandelion",
+  "skillKey": "clawhub-dandelion",
+  "name": "Dandelion",
+  "summary": "Dandelion integration. Manage Organizations. Use when the user wants to interact with Dandelion data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dandelion",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Dandelion integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Dandelion data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dandelion@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dandelion",
+      "url": "https://clawhub.ai/skills/dandelion"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dandelion",
+    "url": "https://clawhub.ai/skills/dandelion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dandelion-077ff8c245bf1f45.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dandelion@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-dandelion-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:37a28ad6f4edb7e0a22c7bf68450b713318d4c2ea50c524c25a4f222680f3d4c",
+      "artifactSizeBytes": 1815
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:37:16.694Z"
+}

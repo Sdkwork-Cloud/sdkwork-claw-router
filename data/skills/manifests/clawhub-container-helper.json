@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41116,
+  "uuid": "skill-clawhub-container-helper",
+  "skillKey": "clawhub-container-helper",
+  "name": "Container Helper",
+  "summary": "Assist with Docker container management, image building, Dockerfile creation, and container network configuration.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.container_helper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "Assist with Docker container management, image building, Dockerfile creation, and container net."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/container-helper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "container-helper",
+      "url": "https://clawhub.ai/skills/container-helper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "container-helper",
+    "url": "https://clawhub.ai/skills/container-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/container-helper-06ba8655f11bf17e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/container-helper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-container-helper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:511b7ae2799a219dad959ea91f4cbef6c665b4200e348f712a125b5c870c893e",
+      "artifactSizeBytes": 2135
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T06:10:04.683Z"
+}

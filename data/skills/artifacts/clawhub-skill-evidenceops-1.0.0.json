@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-evidenceops@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_evidenceops",
+  "skill": {
+    "id": 17108,
+    "skillKey": "clawhub-skill-evidenceops",
+    "name": "EvidenceOps - Forensic Evidence Management"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-evidenceops",
+    "url": "https://clawhub.ai/skills/skill-evidenceops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-evidenceops-4e459a3489df8666.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Forensic media triage with chain of custody. Use when receiving images, videos, audio, PDFs, or documents that need evidence-grade handling, integrity verifi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "msrovani",
+      "userId": "publishers:msrovani",
+      "displayName": "msrovani",
+      "image": "https://avatars.githubusercontent.com/u/40367525?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 715,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771349502788,
+      "changelog": "This is the initial release of EvidenceOps, a forensic-grade evidence management system for OpenClaw. It provides:\n\n1. **Complete Skill for ClawHub** - Ready-to-publish skill with comprehensive documentation\n2. **Dual Storage Drivers** - Filesystem (local) and S3/MinIO (cloud) backends\n3. **Chain of Custody** - Cryptographic hash chain for evidence integrity\n4. **Security-First Design** - Path sanitization, secret redaction, channel controls\n5. **Full Test Coverage** - Unit and integration tests for core functionality\n\nThe skill teaches OpenClaw agents how to:\n- Accept media from any channel\n- Create/manage cases with proper IDs\n- Stage originals without modification\n- Extract metadata (EXIF, duration, pages)\n- Generate derivatives in separate folders\n- Maintain tamper-evident audit trails\n- Return evidence receipts to users\n\nThe plugin provides the backend implementation with:\n- Pluggable storage architecture\n- Deterministic manifest generation\n- Channel-based access control\n- Comprehensive error handling",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:64f7dbfa654fa9f55db916b866bfcbf2f511f425a8a7b90fccc0d17df46ac030"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31808,
+  "uuid": "skill-clawhub-uniqlo",
+  "skillKey": "clawhub-uniqlo",
+  "name": "Uniqlo",
+  "summary": "Information assistant for Uniqlo. Search products, news, financials, and official resources for Uniqlo.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uniqlo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Information assistant for Uniqlo",
+        "Search products, news, financials, and official resources for Uniqlo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uniqlo@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uniqlo",
+      "url": "https://clawhub.ai/skills/uniqlo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uniqlo",
+    "url": "https://clawhub.ai/skills/uniqlo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uniqlo-0681c0b3731722d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uniqlo@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-uniqlo-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:550ffaf4a5981be7a959b9b794cbea6dc124796eadc5bba51834a8f32f7e7cba",
+      "artifactSizeBytes": 2122
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T23:28:05.402Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14868,
+  "uuid": "skill-clawhub-vr",
+  "skillKey": "clawhub-vr",
+  "name": "VR",
+  "summary": "Set up VR headsets, troubleshoot common issues, optimize comfort, and recommend experiences by use case.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vr",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Set up VR headsets, troubleshoot common issues, optimize comfort, and recommend experiences by."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vr@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vr",
+      "url": "https://clawhub.ai/skills/vr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vr",
+    "url": "https://clawhub.ai/skills/vr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vr-6a16485f31a6434e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vr@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vr-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1d5d37236e0b25bebfe4588e0b0050013b126f2de16289ccf2c0693ed2ef83ca",
+      "artifactSizeBytes": 1742
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T11:39:06.050Z"
+}

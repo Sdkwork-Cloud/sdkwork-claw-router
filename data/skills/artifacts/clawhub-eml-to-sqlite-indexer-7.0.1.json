@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eml-to-sqlite-indexer@7.0.1",
+  "version": "7.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eml_to_sqlite_indexer",
+  "skill": {
+    "id": 32739,
+    "skillKey": "clawhub-eml-to-sqlite-indexer",
+    "name": "eml to sqlite indexer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eml-to-sqlite-indexer",
+    "url": "https://clawhub.ai/skills/eml-to-sqlite-indexer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eml-to-sqlite-indexer-6f7ae4861cf2e3ad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Indexes EML emails into an SQLite database, providing a web interface for searching, management, Excel export, and file deletion, with IP access control and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "williamfromtw",
+      "userId": "s172gm48fqagcy43ty8mc63mas83v1ht",
+      "displayName": "william",
+      "image": "https://avatars.githubusercontent.com/u/5213198?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 247,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "7.0.1",
+      "createdAt": 1774887725912,
+      "changelog": "- Added config.json for runtime configuration.\n- Integrated Bootstrap for improved web UI with static/css/bootstrap.min.css and static/js/bootstrap.bundle.min.js.\n- No other major features or changes introduced in this version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1c2de557d8f42536a284ec34a921dcd1e6cfe10c54c26bf8a397162ffcbc2aef"
+}

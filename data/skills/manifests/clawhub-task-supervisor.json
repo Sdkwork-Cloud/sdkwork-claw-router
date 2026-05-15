@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50205,
+  "uuid": "skill-clawhub-task-supervisor",
+  "skillKey": "clawhub-task-supervisor",
+  "name": "Task Supervisor",
+  "summary": "Manage complex tasks with 5+ steps or duration >20 min, tracking progress via task files and sending periodic status reports until completion or pause.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_supervisor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Peng Shu",
+      "features": [
+        "Manage complex tasks with 5+ steps or duration >20 min, tracking progress via task files and se."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/task-supervisor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58142289?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "task-supervisor",
+      "url": "https://clawhub.ai/skills/task-supervisor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-supervisor",
+    "url": "https://clawhub.ai/skills/task-supervisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-supervisor-4e027df4fef2b8d7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/task-supervisor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-task-supervisor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:56abef4261340807a0e551736540e58816491b3e0375ab6ee7160850a3a4a889",
+      "artifactSizeBytes": 1989
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T15:55:37.222Z"
+}

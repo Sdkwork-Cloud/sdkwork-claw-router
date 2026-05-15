@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pdf-batch-tool@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_batch_tool",
+  "skill": {
+    "id": 37640,
+    "skillKey": "clawhub-pdf-batch-tool",
+    "name": "Pdf Batch Tool"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-batch-tool",
+    "url": "https://clawhub.ai/skills/pdf-batch-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-batch-tool-a16582addcd74755.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Batch process PDFs with merging, splitting, converting to images, extracting text, adding watermarks, and compressing while preserving quality."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bingze00000",
+      "userId": "s171p56g2sqsp1dnezw0ar4w1183swz6",
+      "displayName": "bingze00000",
+      "image": "https://avatars.githubusercontent.com/u/268100670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774690236979,
+      "changelog": "PDF Toolkit - PDF 处理工具 v1.0.0\n\n- 首次发布，支持批量合并、拆分 PDF 文件\n- 支持 PDF 转为 PNG/JPG 图片\n- 提取 PDF 中文本内容\n- 添加文本水印至 PDF\n- 提供 PDF 压缩功能\n- 命令行简单易用，支持多种输出格式 (PDF、PNG、JPG、TXT)\n- 优化中文处理和批量处理性能",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7e63ceda278f1831763eb4a612dae65e212525e8e0f7bdd0f627651ca6105b68"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68880,
+  "uuid": "skill-clawhub-linkfox-sellersprite-product-search",
+  "skillKey": "clawhub-linkfox-sellersprite-product-search",
+  "name": "Sellersprite Product Search",
+  "summary": "使用卖家精灵数据搜索和筛选亚马逊商品，支持价格、月销量、BSR排名、毛利率、评分、配送方式、标签、卖家来源等多维度条件，覆盖多个亚马逊站点。当用户提到亚马逊选品调研、产品筛选、销量过滤、产品发掘、BSR分析、小众商品发现、竞品分析、市场机会评估、按商品维度的市场规模估算、毛利率筛选、SellerSprite pr...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkfox_sellersprite_product_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linkfox-ai",
+      "features": [
+        "使用卖家精灵数据搜索和筛选亚马逊商品，支持价格、月销量、BSR排名、毛利率、评分、配送方式、标签、卖家来源等多维度条件，覆盖多个亚马逊站点。当用户提到亚马逊选品调研、产品筛选、销量过滤、产品."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linkfox-sellersprite-product-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267242260?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linkfox-sellersprite-product-search",
+      "url": "https://clawhub.ai/skills/linkfox-sellersprite-product-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkfox-sellersprite-product-search",
+    "url": "https://clawhub.ai/skills/linkfox-sellersprite-product-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkfox-sellersprite-product-search-f97fea7b5b5dc0eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linkfox-sellersprite-product-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-linkfox-sellersprite-product-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b382a7895137b78dc94736e66815e8d487d0f76462e8ed48e05538555af9ba0f",
+      "artifactSizeBytes": 2301
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T10:45:17.567Z"
+}

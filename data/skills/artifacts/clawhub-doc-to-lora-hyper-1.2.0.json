@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/doc-to-lora-hyper@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doc_to_lora_hyper",
+  "skill": {
+    "id": 22801,
+    "skillKey": "clawhub-doc-to-lora-hyper",
+    "name": "Doc-to-LoRA"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doc-to-lora-hyper",
+    "url": "https://clawhub.ai/skills/doc-to-lora-hyper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doc-to-lora-hyper-6cbe6fea033a3788.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Internalize a document into a small language model (Gemma 2 2B) using Doc-to-LoRA so it can answer questions WITHOUT the document in the prompt. Use when the..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "manojbhat09",
+      "userId": "publishers:manojbhat09",
+      "displayName": "Manoj Bhat",
+      "image": "https://avatars.githubusercontent.com/u/12574642?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 450,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1773543811328,
+      "changelog": "Address all security scan flags: declare requires.env/bins in OpenClaw metadata, document torch.load safety, validate all prerequisites in setup.sh",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cdcb68fddeeb0f1fbea2e5a048d67bc2d9bafb006908ba1fb92879f0378e89ad"
+}

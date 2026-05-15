@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27758,
+  "uuid": "skill-clawhub-memory-governor",
+  "skillKey": "clawhub-memory-governor",
+  "name": "Memory Governor",
+  "summary": "Memory governance kernel for AI agents that complements OpenClaw Dreaming with explicit correction staging, target-class routing, adapter boundaries, and saf...",
+  "version": "0.2.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_governor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Saken",
+      "features": [
+        "Memory governance kernel for AI agents that complements OpenClaw Dreaming with explicit correct."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-governor@0.2.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16665726?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-governor",
+      "url": "https://clawhub.ai/skills/memory-governor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-governor",
+    "url": "https://clawhub.ai/skills/memory-governor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-governor-fd3138d9ee35d9d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-governor@0.2.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-governor-0.2.9.json",
+      "version": "0.2.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d3539bd6f042be7ccd28605cccf02d20cad44e3ae9cc0568629154507b5a95f",
+      "artifactSizeBytes": 2369
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T23:43:44.688Z"
+}

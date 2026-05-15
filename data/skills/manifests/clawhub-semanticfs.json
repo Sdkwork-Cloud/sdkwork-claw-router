@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26528,
+  "uuid": "skill-clawhub-semanticfs",
+  "skillKey": "clawhub-semanticfs",
+  "name": "Semanticfs",
+  "summary": "Search your local filesystem and codebase semantically. Use instead of grep/find/ls/cat chains when looking for files, functions, symbols, or code patterns....",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.semanticfs",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Navneeth",
+      "features": [
+        "Search your local filesystem and codebase semantically",
+        "Use instead of grep/find/ls/cat chains when looking for files, functions, symbols, or code patt."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/semanticfs@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52849887?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "semanticfs",
+      "url": "https://clawhub.ai/skills/semanticfs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "semanticfs",
+    "url": "https://clawhub.ai/skills/semanticfs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/semanticfs-59041179b7a05d1d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/semanticfs@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-semanticfs-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:641645b0e639d2205825db6cf9a58f2b55eb5573d642760fbc956e30cde47456",
+      "artifactSizeBytes": 2316
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T15:53:30.932Z"
+}

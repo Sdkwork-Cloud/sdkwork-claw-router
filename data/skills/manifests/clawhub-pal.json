@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46104,
+  "uuid": "skill-clawhub-pal",
+  "skillKey": "clawhub-pal",
+  "name": "Project Analyzer",
+  "summary": "Analyze any project directory and produce a detailed report covering what the project does, its tech stack, folder structure, entry points, how to run it, an...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pal",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gavriel Donovan",
+      "features": [
+        "Analyze any project directory and produce a detailed report covering what the project does, its."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pal@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168168157?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pal",
+      "url": "https://clawhub.ai/skills/pal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pal",
+    "url": "https://clawhub.ai/skills/pal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pal-a1a38b5bae5866d7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pal@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pal-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:254a65d58a616125d0f80b92a65c26c05faf36b5ae58bdee5b562f712b3db504",
+      "artifactSizeBytes": 2284
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T08:41:33.819Z"
+}

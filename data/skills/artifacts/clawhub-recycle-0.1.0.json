@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/recycle@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recycle",
+  "skill": {
+    "id": 70598,
+    "skillKey": "clawhub-recycle",
+    "name": "Recycle"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recycle",
+    "url": "https://clawhub.ai/skills/recycle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recycle-ef5988103d7b93b7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供旧衣、空瓶、废旧电子产品上门回收预约及绿色碳账户指引。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codenova58",
+      "userId": "s173fekm3yw84k7gp861dme7dd83gvyf",
+      "displayName": "codenova58",
+      "image": "https://avatars.githubusercontent.com/u/191358186?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 261,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773858226478,
+      "changelog": "- Initial release of Recycle skill, providing appointment scheduling for old clothes, bottle, and electronic product recycling, as well as a green carbon account guide.\n- Added filtering options by processing speed, interaction cost, and authority.\n- Specified output fields such as parsing accuracy, tool usage records, backup, and permission details.\n- Included sample request formats for quick usage and new feature/offer inquiries.\n- Implemented periodic updates to reflect API stability, policy changes, and data freshness.\n- Noted that some tools are advisory and official channels should be used for complex situations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:12f0736fa97282e0c6667b99be488a9cf5aa3488bbda25059f145034f4e9b255"
+}

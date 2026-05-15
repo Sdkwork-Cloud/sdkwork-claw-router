@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tianshu-homework-split@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tianshu_homework_split",
+  "skill": {
+    "id": 65421,
+    "skillKey": "clawhub-tianshu-homework-split",
+    "name": "Tianshu Homework Split"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tianshu-homework-split",
+    "url": "https://clawhub.ai/skills/tianshu-homework-split",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tianshu-homework-split-2bd02705c1e76b95.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "把课程作业说明、大纲要求或长段文字拆成带序号的学习任务清单（Markdown 勾选框）。 Use when: 学生要整理作业、拆 DDL、把老师发的要求变成待办；用户说「作业拆分」「学习任务清单」「大作业拆步」。 NOT for: 自动替写作业内容；代替日历 App 的提醒推送。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangshengli0421",
+      "userId": "s173hn02a3sr3war78x7qzxnhn83nttz",
+      "displayName": "tianshu",
+      "image": "https://avatars.githubusercontent.com/u/100948785?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 282,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774014613994,
+      "changelog": "Initial student skill: 作业拆清单",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:559312cf3535e42ce734cf1c9e1c67331f36d2c7180d944d47617a4a51083b57"
+}

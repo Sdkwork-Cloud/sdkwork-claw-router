@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47075,
+  "uuid": "skill-clawhub-beamer-pipeline-public",
+  "skillKey": "clawhub-beamer-pipeline-public",
+  "name": "Beamer Pipeline Public",
+  "summary": "Convert academic papers or notes into Chinese academic Beamer slides using a seven-phase local pipeline with pluggable agent execution and LaTeX compilation.",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beamer_pipeline_public",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ccmxigua",
+      "features": [
+        "Convert academic papers or notes into Chinese academic Beamer slides using a seven-phase local."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/beamer-pipeline-public@0.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/100678136?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "beamer-pipeline-public",
+      "url": "https://clawhub.ai/skills/beamer-pipeline-public"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beamer-pipeline-public",
+    "url": "https://clawhub.ai/skills/beamer-pipeline-public",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beamer-pipeline-public-3c4217e9e7b13e2d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/beamer-pipeline-public@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-beamer-pipeline-public-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c56dc35f7195320d3181ed534db08068a96d8f6da990a10afa369058aba2e6af",
+      "artifactSizeBytes": 2128
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T02:46:46.202Z"
+}

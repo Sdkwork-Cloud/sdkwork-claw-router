@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/masterswarm@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.masterswarm",
+  "skill": {
+    "id": 16997,
+    "skillKey": "clawhub-masterswarm",
+    "name": "MasterSwarm AI Document Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "masterswarm",
+    "url": "https://clawhub.ai/skills/masterswarm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/masterswarm-7716a7b8af7a5b7c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze any document with 15 parallel AI engines via the MasterSwarm cloud API. Upload receipts, contracts, lab results, or ask business/crypto/legal questio..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "contrario",
+      "userId": "s1792c5vx84nge37ssxtv8y23h83gyvv",
+      "displayName": "Hlias Staurou",
+      "image": "https://avatars.githubusercontent.com/u/12682510?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 619,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1772876972401,
+      "changelog": "v1.1.2: Fixed _meta.json author (contrario) and version consistency",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f464d04945d2e6de38f75db757426cbf579e91fbdd9c23e34ed408852b129e3d"
+}

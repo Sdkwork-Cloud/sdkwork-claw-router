@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/autooptimise@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autooptimise",
+  "skill": {
+    "id": 42055,
+    "skillKey": "clawhub-autooptimise",
+    "name": "Autooptimise"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autooptimise",
+    "url": "https://clawhub.ai/skills/autooptimise",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autooptimise-f42dd73db098251d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomously optimise any OpenClaw skill using a benchmark-driven experiment loop. Scores skill outputs 0-10 across 4 dimensions, identifies the lowest-scori..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wealthvisionai-source",
+      "userId": "s178md4fnchf6hy55w35nska3983kc9j",
+      "displayName": "WealthVisionAI-Source",
+      "image": "https://avatars.githubusercontent.com/u/241807302?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774446685092,
+      "changelog": "- Initial release of autooptimise: Autonomous benchmark-driven skill improvement for OpenClaw. Measure quality objectively, propose targeted changes, validate with live testing.\n- Implements a modify → test → score → keep/discard experiment loop inspired by autoresearch.\n- Scores skills 0–10 across four dimensions: Accuracy, Conciseness, Tool usage, and Formatting.\n- Identifies weakest performance areas, proposes targeted SKILL.md changes, and re-tests up to 3 iterations per run.\n- Always presents proposed changes for human approval; never auto-applies modifications.\n- Includes clear safety rules and logging; does not alter benchmarks or scoring rubrics during runs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8200361c696a90e445689664f1b74db04788e4109a8ff49e575955a55f03f444"
+}

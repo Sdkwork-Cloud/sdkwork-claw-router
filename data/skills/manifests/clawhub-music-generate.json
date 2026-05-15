@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43136,
+  "uuid": "skill-clawhub-music-generate",
+  "skillKey": "clawhub-music-generate",
+  "name": "music generate",
+  "summary": "Music composition assistant. Accepts natural language input, guides the user through multi-turn interaction to define genre, mood, theme, tempo, and other mu...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.music_generate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GentleYo",
+      "features": [
+        "Music composition assistant",
+        "Accepts natural language input, guides the user through multi-turn interaction to define genre,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/music-generate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/131584446?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "music-generate",
+      "url": "https://clawhub.ai/skills/music-generate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "music-generate",
+    "url": "https://clawhub.ai/skills/music-generate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/music-generate-f74319cb7900477a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/music-generate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-music-generate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c165ea603cf0dce6a37014958a6ba0bd89bbe31da5840867fd7edd27b96e0c43",
+      "artifactSizeBytes": 2424
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T03:30:23.149Z"
+}

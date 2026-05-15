@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mi-trading@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mi_trading",
+  "skill": {
+    "id": 17975,
+    "skillKey": "clawhub-mi-trading",
+    "name": "Mi Trading"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mi-trading",
+    "url": "https://clawhub.ai/skills/mi-trading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mi-trading-893af841d54d6a47.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trade tokens on Solana using the ClawDex CLI. Use when the user asks to swap tokens, check balances, get quotes, or manage a Solana trading wallet."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "davidpolotm",
+      "userId": "publishers:davidpolotm",
+      "displayName": "davidpolotm",
+      "image": "https://avatars.githubusercontent.com/u/242968260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 708,
+      "installsAllTime": 2,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771330246807,
+      "changelog": "Initial release of the ClawDex skill for Solana DEX trading:\n\n- Enables trading any Solana token via the ClawDex CLI and Jupiter aggregator.\n- Supports checking wallet balances, getting swap quotes, simulating trades, and executing swaps with safety guardrails.\n- Requires all CLI commands to use `--json` for machine-parseable output.\n- Includes detailed trading workflow, token specification, exit codes, and safety features.\n- Provides onboarding guidance and troubleshooting steps for user setup.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2133a341b1fff0a356f84bbc4e36c5d0b0be310737f8969949bca91a9c2b8117"
+}

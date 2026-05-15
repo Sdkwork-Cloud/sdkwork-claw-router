@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hyjaixiao-competitor-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hyjaixiao_competitor_analysis",
+  "skill": {
+    "id": 72753,
+    "skillKey": "clawhub-hyjaixiao-competitor-analysis",
+    "name": "竞品分析神器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hyjaixiao-competitor-analysis",
+    "url": "https://clawhub.ai/skills/hyjaixiao-competitor-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hyjaixiao-competitor-analysis-253d30f2a2eb5264.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "竞品分析神器 v1.0。输入你的产品和竞品列表，自动生成结构化竞品分析报告，含对比矩阵、战略建议、风险预警。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hyjaixiao",
+      "userId": "s178vfnjzek9axaw33xdacxmjd85g8xw",
+      "displayName": "Hyjaixiao",
+      "image": "https://avatars.githubusercontent.com/u/102917158?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777102476580,
+      "changelog": "初版发布：输入产品和竞品列表，自动输出结构化竞品分析报告",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8d42b1c01c495edb184382ed5134e2298eb3a6f119142277c6005c0450d85f02"
+}

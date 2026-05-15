@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23347,
+  "uuid": "skill-clawhub-mysearch",
+  "skillKey": "clawhub-mysearch",
+  "name": "MySearch",
+  "summary": "DEFAULT search skill for OpenClaw. Aggregates Tavily, Firecrawl, Exa, and optional X/social search behind one search path. Use for ANY external lookup that n...",
+  "version": "0.1.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mysearch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "skernelx",
+      "features": [
+        "DEFAULT search skill for OpenClaw",
+        "Aggregates Tavily, Firecrawl, Exa, and optional X/social search behind one search path",
+        "Use for ANY external lookup that n..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mysearch@0.1.11",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/250769487?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mysearch",
+      "url": "https://clawhub.ai/skills/mysearch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mysearch",
+    "url": "https://clawhub.ai/skills/mysearch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mysearch-687dceddc79900c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mysearch@0.1.11",
+      "artifactUrl": "data/skills/artifacts/clawhub-mysearch-0.1.11.json",
+      "version": "0.1.11",
+      "runtime": "metadata",
+      "checksumHash": "sha256:15b895293a478e6043ca2e74fcf71744ad34b7ce35279e8ee687843930394342",
+      "artifactSizeBytes": 1875
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T05:42:22.354Z"
+}

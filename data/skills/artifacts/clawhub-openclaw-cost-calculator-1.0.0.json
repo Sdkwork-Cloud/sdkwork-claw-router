@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-cost-calculator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_cost_calculator",
+  "skill": {
+    "id": 64869,
+    "skillKey": "clawhub-openclaw-cost-calculator",
+    "name": "OpenClaw 成本计算器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-cost-calculator",
+    "url": "https://clawhub.ai/skills/openclaw-cost-calculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-cost-calculator-c7296bca4828aa5c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw 成本计算器 - 精确计算 OpenClaw + AI 模型的完整使用成本，对比不同模型组合，优化支出。适合：个人用户、企业用户、成本优化。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yang1002378395-cmyk",
+      "userId": "s17627rpbb3atq3mbfabqbgtm983g9et",
+      "displayName": "yang1002378395-cmyk",
+      "image": "https://avatars.githubusercontent.com/u/261632147?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 245,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774044790124,
+      "changelog": "首次发布",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9c1e28d06f81c54237e0bd66da14a905667fe4addd14257bccd3cc2c74f43c9f"
+}

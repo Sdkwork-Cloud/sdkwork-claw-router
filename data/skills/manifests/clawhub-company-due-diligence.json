@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63276,
+  "uuid": "skill-clawhub-company-due-diligence",
+  "skillKey": "clawhub-company-due-diligence",
+  "name": "MyCompanyDueDiligence",
+  "summary": "企业尽职调查自动化工具。基于 Playwright/agent-browser 实现多数据源自动抓取，支持企查查、天眼查、东方财富、中国裁判文书网四个网站的综合信息抓取，生成专业尽调报告（含截图+Markdown+PDF）。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.company_due_diligence",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "guangningsun",
+      "features": [
+        "企业尽职调查自动化工具。基于 Playwright/agent-browser 实现多数据源自动抓取，支持企查查、天眼查、东方财富、中国裁判文书网四个网站的综合信息抓取，生成专业尽调报告（含."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/company-due-diligence@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8732059?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "company-due-diligence",
+      "url": "https://clawhub.ai/skills/company-due-diligence"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "company-due-diligence",
+    "url": "https://clawhub.ai/skills/company-due-diligence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/company-due-diligence-220fc5a828d9d9fe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/company-due-diligence@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-company-due-diligence-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2c2560310b57506ea289fbfc99343197b5feacec1fcb228085e207b9c8665a2",
+      "artifactSizeBytes": 2040
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T06:04:49.332Z"
+}
